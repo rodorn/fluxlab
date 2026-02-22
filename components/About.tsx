@@ -66,7 +66,7 @@ export default function About() {
                 {[
                   { label: "Wdrożeń", value: "30+" },
                   { label: "Godz. zaoszczędzonych / mies.", value: "500+" },
-                  { label: "Najkrótsze wdrożenie", value: "9 dni" },
+                  { label: "Najkrótsze wdrożenie", value: "5 godzin" },
                   { label: "Zadowolenie klientów", value: "100%" },
                 ].map((item) => (
                   <div key={item.label} className="bg-white/10 backdrop-blur-sm rounded-lg px-3 py-2 border border-white/20">
