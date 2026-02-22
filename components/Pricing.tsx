@@ -2,43 +2,43 @@ const services = [
   {
     title: "Integracja CRM z zewnętrznymi systemami",
     description:
-      "Połączenie CRM (Pipedrive, HubSpot i in.) z narzędziami, których już używasz — formularzami, e-mailem, arkuszami, systemem fakturowania lub magazynem. Dane przepływają automatycznie, bez ręcznego przepisywania.",
-    range: "1 200 – 2 400 zł",
+      "Połączenie CRM (Pipedrive, HubSpot i in.) z narzędziami, których już używasz - formularzami, e-mailem, arkuszami, systemem fakturowania lub magazynem. Dane przepływają automatycznie, bez ręcznego przepisywania.",
+    range: "1 200 - 2 400 zł",
     tools: ["CRM", "API", "Webhooks"],
   },
   {
     title: "Automatyzacja przepływu leadów",
     description:
       "Zbieranie leadów z różnych źródeł, wzbogacanie danych, automatyczne przypisywanie do CRM i uruchamianie sekwencji follow-up. Skracasz czas reakcji, nie tracisz żadnego kontaktu.",
-    range: "1 500 – 3 900 zł",
+    range: "1 500 - 3 900 zł",
     tools: ["Python", "n8n", "CRM"],
   },
   {
     title: "Automatyczne raportowanie",
     description:
-      "Raporty generowane i wysyłane samodzielnie — codziennie, tygodniowo lub na żądanie. Bez ręcznego zbierania danych z wielu miejsc, bez Excela uzupełnianego w piątek wieczór.",
-    range: "1 100 – 4 400 zł",
+      "Raporty generowane i wysyłane samodzielnie - codziennie, tygodniowo lub na żądanie. Bez ręcznego zbierania danych z wielu miejsc, bez Excela uzupełnianego w piątek wieczór.",
+    range: "1 100 - 4 400 zł",
     tools: ["Python", "Zapier", "Google Sheets"],
   },
   {
     title: "Prosta automatyzacja procesów (no-code)",
     description:
       "Automatyzacje oparte o Make, n8n lub Zapier dla powtarzalnych zadań: powiadomienia, synchronizacja danych między aplikacjami, routing zgłoszeń, automatyczne odpowiedzi.",
-    range: "400 – 1 600 zł",
+    range: "400 - 1 600 zł",
     tools: ["Make", "n8n", "Zapier"],
   },
   {
     title: "Dedykowana integracja API / skrypt Python",
     description:
       "Niestandardowe połączenia między systemami, które nie mają gotowych integracji. Scraping danych, przetwarzanie plików, automatyzacje wymagające logiki biznesowej lub większej kontroli nad procesem.",
-    range: "2 200 – 11 500 zł",
+    range: "2 200 - 11 500 zł",
     tools: ["Python", "REST API", "Supabase"],
   },
   {
     title: "Automatyzacja z wykorzystaniem AI",
     description:
-      "Wzbogacenie istniejących procesów o możliwości AI — kategoryzacja, streszczenia, generowanie treści, analiza danych wejściowych. Integracja z OpenAI API w ramach istniejącego workflow.",
-    range: "1 600 – 8 200 zł",
+      "Wzbogacenie istniejących procesów o możliwości AI - kategoryzacja, streszczenia, generowanie treści, analiza danych wejściowych. Integracja z OpenAI API w ramach istniejącego workflow.",
+    range: "1 600 - 8 200 zł",
     tools: ["OpenAI API", "Python", "n8n"],
   },
 ];
@@ -57,7 +57,7 @@ export default function Pricing() {
             Poniższe widełki to orientacyjne zakresy dla typowych realizacji.
             Ostateczna cena zależy od liczby integrowanych systemów, złożoności
             logiki i wymaganego czasu wdrożenia. Zawsze dostajesz stałą wycenę
-            przed startem — bez niespodzianek w trakcie.
+            przed startem - bez niespodzianek w trakcie.
           </p>
         </div>
 
@@ -120,7 +120,7 @@ export default function Pricing() {
         {/* Value statement */}
         <p className="text-sm text-gray-400 dark:text-gray-500 text-center max-w-2xl mx-auto">
           Automatyzacja jednego procesu zajmującego 10 godzin miesięcznie zwraca
-          koszt wdrożenia w ciągu kilku miesięcy — i działa dalej bez dodatkowych nakładów.
+          koszt wdrożenia w ciągu kilku miesięcy - i działa dalej bez dodatkowych nakładów.
         </p>
       </div>
     </section>

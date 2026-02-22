@@ -5,7 +5,7 @@ export default function Hero() {
     <section className="pt-20 pb-4 lg:pt-24 lg:pb-6 overflow-hidden">
       <div className="container-wide">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left — text */}
+          {/* Left - text */}
           <div>
             {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-accent-light dark:bg-accent-dark-light text-accent text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
@@ -24,7 +24,7 @@ export default function Hero() {
             <p className="text-lg text-gray-500 dark:text-gray-400 leading-relaxed mb-10 max-w-lg">
               Automatyzujemy powtarzalne procesy, żebyś Ty i Twój zespół
               mogli poświęcać czas na to, co rzeczywiście tworzy wartość.
-              Pierwsze efekty widoczne w ciągu 2–4 tygodni.
+              Pierwsze efekty widoczne w ciągu 2-4 tygodni.
             </p>
 
             {/* CTAs */}
@@ -43,7 +43,7 @@ export default function Hero() {
             </p>
           </div>
 
-          {/* Right — image */}
+          {/* Right - image */}
           <div className="relative hidden lg:block">
             <div className="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-2xl">
               <Image
@@ -81,7 +81,7 @@ export default function Hero() {
         <div className="mt-4 grid grid-cols-2 lg:grid-cols-4 gap-8">
           {[
             { value: "80%", label: "średnia redukcja czasu na procesy" },
-            { value: "2–4 tyg.", label: "czas wdrożenia pierwszej automatyzacji" },
+            { value: "2-4 tyg.", label: "czas wdrożenia pierwszej automatyzacji" },
             { value: "0 błędów", label: "w zautomatyzowanych procesach" },
             { value: "ROI < 3 mies.", label: "zwrot inwestycji" },
           ].map((stat) => (

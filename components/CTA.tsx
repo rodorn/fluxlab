@@ -23,7 +23,7 @@ export default function CTA() {
             Zacznijmy od rozmowy
           </h2>
           <p className="text-gray-500 dark:text-gray-400 text-lg mb-12">
-            Napisz kilka słów o swoim procesie — odpiszę w ciągu 24 godzin
+            Napisz kilka słów o swoim procesie - odpiszę w ciągu 24 godzin
             i zaproponuję termin bezpłatnej konsultacji.
           </p>
 

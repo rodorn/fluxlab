@@ -3,7 +3,7 @@ const steps = [
     number: "01",
     title: "Bezpłatna konsultacja",
     description:
-      "Rozmawiamy o Twoich procesach i identyfikujemy, gdzie automatyzacja przyniesie największy zysk. Żadnej sprzedaży — tylko konkretna analiza.",
+      "Rozmawiamy o Twoich procesach i identyfikujemy, gdzie automatyzacja przyniesie największy zysk. Żadnej sprzedaży - tylko konkretna analiza.",
   },
   {
     number: "02",

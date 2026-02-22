@@ -3,7 +3,7 @@ import Image from "next/image";
 const points = [
   "Pracujemy z firmami z sektorów: logistyka, e-commerce, usługi profesjonalne",
   "Budujemy na narzędziach, które Twój zespół może samodzielnie utrzymać",
-  "Nie wdrażamy zbędnych technologii — wybieramy to, co faktycznie rozwiązuje problem",
+  "Nie wdrażamy zbędnych technologii - wybieramy to, co faktycznie rozwiązuje problem",
   "Stały kontakt, terminowość i pełna transparentność kosztów",
 ];
 
@@ -20,12 +20,12 @@ export default function About() {
             </h2>
             <p className="text-gray-500 dark:text-gray-400 text-lg leading-relaxed mb-6">
               Fluxlab to studio automatyzacji procesów biznesowych. Nie masz do
-              czynienia z korporacyjną strukturą i anonimowym działem IT — rozmawiasz
+              czynienia z korporacyjną strukturą i anonimowym działem IT - rozmawiasz
               bezpośrednio z zespołem, który projektuje i wdraża Twoje rozwiązanie.
             </p>
             <p className="text-gray-500 dark:text-gray-400 text-lg leading-relaxed mb-10">
               Automatyzacja procesów biznesowych to jedyna rzecz, którą robimy.
-              Nie jesteśmy agencją z piętnastoma usługami w ofercie — jesteśmy
+              Nie jesteśmy agencją z piętnastoma usługami w ofercie - jesteśmy
               specjalistami w jednej dziedzinie i robimy to dobrze.
             </p>
 
@@ -49,12 +49,12 @@ export default function About() {
             </ul>
           </div>
 
-          {/* Right — photo */}
+          {/* Right - photo */}
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-xl">
               <Image
                 src="/photos/mechanism.jpg"
-                alt="Mechanizm — symbol automatyzacji"
+                alt="Mechanizm - symbol automatyzacji"
                 fill
                 className="object-cover grayscale"
               />

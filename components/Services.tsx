@@ -70,13 +70,13 @@ export default function Services() {
         />
         <div className="absolute inset-0 hidden dark:block bg-gray-950/90" />
 
-        {/* Fade top — light */}
+        {/* Fade top - light */}
         <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-white to-transparent dark:hidden" />
-        {/* Fade bottom — light */}
+        {/* Fade bottom - light */}
         <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white to-transparent dark:hidden" />
-        {/* Fade top — dark */}
+        {/* Fade top - dark */}
         <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-gray-950 to-transparent hidden dark:block" />
-        {/* Fade bottom — dark */}
+        {/* Fade bottom - dark */}
         <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-gray-950 to-transparent hidden dark:block" />
       </div>
 
@@ -88,7 +88,7 @@ export default function Services() {
           </h2>
           <p className="text-gray-700 dark:text-gray-300 text-lg">
             Skupiamy się na procesach, które kosztują Cię najwięcej czasu.
-            Nie sprzedajemy narzędzi — dostarczamy gotowe rozwiązania.
+            Nie sprzedajemy narzędzi - dostarczamy gotowe rozwiązania.
           </p>
         </div>
 
