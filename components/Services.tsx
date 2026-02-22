@@ -52,22 +52,22 @@ export default function Services() {
   return (
     <section id="uslugi" className="relative py-20 lg:py-32 overflow-hidden">
       <div className="absolute inset-0 -z-10">
-        {/* Light mode: grayscale + invert = biały tunel, ciemne elementy */}
+        {/* Light mode: jasne niebieskie tło + zdjęcie jako ledwo widoczny akcent */}
+        <div className="absolute inset-0 bg-sky-50 dark:hidden" />
         <img
           src="/photos/Flow.avif"
           alt=""
           aria-hidden="true"
-          className="w-full h-full object-cover dark:hidden"
-          style={{ filter: "grayscale(1) invert(1) sepia(1) saturate(2) brightness(1.6)" }}
+          className="absolute inset-0 w-full h-full object-cover opacity-[0.06] dark:hidden"
         />
-        {/* Dark mode: oryginalne zdjęcie */}
+        {/* Dark mode: oryginalne zdjęcie bez zmian */}
         <img
           src="/photos/Flow.avif"
           alt=""
           aria-hidden="true"
           className="w-full h-full object-cover hidden dark:block"
         />
-        <div className="absolute inset-0 bg-gray-950/90 hidden dark:block" />
+        <div className="absolute inset-0 hidden dark:block bg-gray-950/90" />
       </div>
 
       <div className="container-wide">
