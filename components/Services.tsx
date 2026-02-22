@@ -81,7 +81,7 @@ export default function Services() {
       </div>
 
       <div className="container-wide">
-        <div className="max-w-xl mb-16">
+        <div className="max-w-xl mb-8">
           <p className="section-label mb-3">Co robimy</p>
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Automatyzacje, które realnie odciążają Twój zespół

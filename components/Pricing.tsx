@@ -48,7 +48,7 @@ export default function Pricing() {
     <section id="cennik" className="py-8 lg:py-14">
       <div className="container-wide">
         {/* Header */}
-        <div className="max-w-2xl mb-16">
+        <div className="max-w-2xl mb-8">
           <p className="section-label mb-3">Cennik</p>
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Każdy projekt wyceniamy indywidualnie
