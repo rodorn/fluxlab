@@ -52,13 +52,13 @@ export default function Services() {
   return (
     <section id="uslugi" className="relative py-20 lg:py-32 overflow-hidden">
       <div className="absolute inset-0 -z-10">
-        {/* Light mode: zdjęcie z odwróconymi kolorami */}
+        {/* Light mode: grayscale + invert = biały tunel, ciemne elementy */}
         <img
           src="/photos/Flow.avif"
           alt=""
           aria-hidden="true"
           className="w-full h-full object-cover dark:hidden"
-          style={{ filter: "invert(1)" }}
+          style={{ filter: "grayscale(1) invert(1) brightness(1.4)" }}
         />
         {/* Dark mode: oryginalne zdjęcie */}
         <img
