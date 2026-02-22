@@ -10,6 +10,20 @@ export default function CTA() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [contactMethod, setContactMethod] = useState<"email" | "phone">("email");
+  const [showContactTime, setShowContactTime] = useState(false);
+  const [contactTimeVisible, setContactTimeVisible] = useState(false);
+
+  function handleContactMethodChange(method: "email" | "phone") {
+    if (method === contactMethod) return;
+    setContactMethod(method);
+    if (method === "phone") {
+      setShowContactTime(true);
+      setTimeout(() => setContactTimeVisible(true), 16);
+    } else {
+      setContactTimeVisible(false);
+      setTimeout(() => setShowContactTime(false), 300);
+    }
+  }
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -149,17 +163,23 @@ export default function CTA() {
                   <p className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
                     Preferowany kontakt
                   </p>
-                  <div className="flex rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden">
+                  <div className="relative flex bg-gray-100 dark:bg-gray-900/60 rounded-lg p-0.5">
+                    {/* sliding indicator */}
+                    <div
+                      className={`absolute top-0.5 bottom-0.5 left-0.5 w-[calc(50%-2px)] bg-accent rounded-md shadow-sm transition-transform duration-200 ease-in-out ${
+                        contactMethod === "phone" ? "translate-x-full" : "translate-x-0"
+                      }`}
+                    />
                     <button
                       type="button"
-                      onClick={() => setContactMethod("email")}
-                      className={`flex-1 flex items-center justify-center gap-2 py-2.5 text-sm font-medium transition-colors ${
+                      onClick={() => handleContactMethodChange("email")}
+                      className={`relative z-10 flex-1 flex items-center justify-center gap-1.5 py-2.5 text-sm font-medium transition-colors duration-200 ${
                         contactMethod === "email"
-                          ? "bg-accent text-white"
-                          : "bg-white dark:bg-gray-900 text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800"
+                          ? "text-white"
+                          : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200"
                       }`}
                     >
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <rect x="2" y="4" width="20" height="16" rx="2" />
                         <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
                       </svg>
@@ -167,14 +187,14 @@ export default function CTA() {
                     </button>
                     <button
                       type="button"
-                      onClick={() => setContactMethod("phone")}
-                      className={`flex-1 flex items-center justify-center gap-2 py-2.5 text-sm font-medium transition-colors ${
+                      onClick={() => handleContactMethodChange("phone")}
+                      className={`relative z-10 flex-1 flex items-center justify-center gap-1.5 py-2.5 text-sm font-medium transition-colors duration-200 ${
                         contactMethod === "phone"
-                          ? "bg-accent text-white"
-                          : "bg-white dark:bg-gray-900 text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800"
+                          ? "text-white"
+                          : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200"
                       }`}
                     >
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.07 6.07l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
                       </svg>
                       Telefon
@@ -183,8 +203,14 @@ export default function CTA() {
                 </div>
               </div>
 
-              {contactMethod === "phone" && (
-                <div>
+              {showContactTime && (
+                <div
+                  className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                    contactTimeVisible
+                      ? "max-h-28 opacity-100"
+                      : "max-h-0 opacity-0 !mt-0"
+                  }`}
+                >
                   <label
                     htmlFor="contactTime"
                     className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5"
