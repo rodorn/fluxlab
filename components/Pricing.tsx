@@ -45,7 +45,7 @@ const services = [
 
 export default function Pricing() {
   return (
-    <section id="cennik" className="py-12 lg:py-20">
+    <section id="cennik" className="py-8 lg:py-14">
       <div className="container-wide">
         {/* Header */}
         <div className="max-w-2xl mb-16">

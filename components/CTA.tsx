@@ -15,7 +15,7 @@ export default function CTA() {
   }
 
   return (
-    <section id="kontakt" className="py-12 lg:py-20">
+    <section id="kontakt" className="py-8 lg:py-14">
       <div className="container-wide">
         <div className="max-w-2xl mx-auto text-center">
           <p className="section-label mb-3">Kontakt</p>

@@ -50,7 +50,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="uslugi" className="relative py-12 lg:py-20 overflow-hidden">
+    <section id="uslugi" className="relative py-8 lg:py-14 overflow-hidden">
       <div className="absolute inset-0 -z-10">
         {/* Light mode: jasne niebieskie tło + zdjęcie jako ledwo widoczny akcent */}
         <div className="absolute inset-0 bg-sky-50 dark:hidden" />
