@@ -50,7 +50,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="uslugi" className="relative py-20 lg:py-32 overflow-hidden">
+    <section id="uslugi" className="relative py-12 lg:py-20 overflow-hidden">
       <div className="absolute inset-0 -z-10">
         {/* Light mode: jasne niebieskie tło + zdjęcie jako ledwo widoczny akcent */}
         <div className="absolute inset-0 bg-sky-50 dark:hidden" />
@@ -69,6 +69,15 @@ export default function Services() {
           className="w-full h-full object-cover hidden dark:block"
         />
         <div className="absolute inset-0 hidden dark:block bg-gray-950/90" />
+
+        {/* Fade top — light */}
+        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-white to-transparent dark:hidden" />
+        {/* Fade bottom — light */}
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white to-transparent dark:hidden" />
+        {/* Fade top — dark */}
+        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-gray-950 to-transparent hidden dark:block" />
+        {/* Fade bottom — dark */}
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-gray-950 to-transparent hidden dark:block" />
       </div>
 
       <div className="container-wide">
