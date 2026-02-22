@@ -36,7 +36,7 @@ const faqs = [
   {
     question: "Jak długo trwa wdrożenie?",
     answer:
-      "Pierwsze wdrożenie zajmuje zazwyczaj 2-4 tygodnie od zatwierdzenia zakresu. Prostsze automatyzacje mogą być gotowe szybciej - najkrótszy projekt zrealizowaliśmy w 9 dni. Czas zależy od liczby integrowanych systemów i złożoności logiki procesu.",
+      "Pierwsze wdrożenie zajmuje zazwyczaj 2-4 dni od zatwierdzenia zakresu. Prostsze automatyzacje mogą być gotowe szybciej - najkrótszy projekt zrealizowaliśmy w ciągu kilku godzin. Czas zależy od liczby integrowanych systemów i złożoności logiki procesu.",
   },
 ];
 
