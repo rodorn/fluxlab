@@ -79,7 +79,7 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
 
 export default function FAQ() {
   return (
-    <section className="py-20 lg:py-32 bg-gray-50 dark:bg-gray-900">
+    <section id="faq" className="py-20 lg:py-32 bg-gray-50 dark:bg-gray-900">
       <div className="container-wide">
         <div className="grid lg:grid-cols-3 gap-16">
           {/* Left — heading */}
