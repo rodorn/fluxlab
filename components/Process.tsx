@@ -27,7 +27,7 @@ const steps = [
 
 export default function Process() {
   return (
-    <section id="proces" className="py-4 lg:py-7">
+    <section id="proces" className="scroll-mt-16 py-4 lg:py-7">
       <div className="container-wide">
         <div className="max-w-xl mb-4">
           <p className="section-label mb-3">Jak działamy</p>
