@@ -59,19 +59,16 @@ export default function Services() {
           aria-hidden="true"
           className="w-full h-full object-cover"
         />
-        {/* Light mode: heavy white overlay */}
-        <div className="absolute inset-0 bg-white/55 dark:hidden" />
-        {/* Dark mode: heavy dark overlay */}
-        <div className="absolute inset-0 bg-gray-950/90 hidden dark:block" />
+        <div className="absolute inset-0 bg-gray-950/65 dark:bg-gray-950/90" />
       </div>
 
       <div className="container-wide">
         <div className="max-w-xl mb-16">
           <p className="section-label mb-3">Co robimy</p>
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
             Automatyzacje, które realnie odciążają Twój zespół
           </h2>
-          <p className="text-gray-700 dark:text-gray-300 text-lg">
+          <p className="text-gray-300 text-lg">
             Skupiamy się na procesach, które kosztują Cię najwięcej czasu.
             Nie sprzedajemy narzędzi — dostarczamy gotowe rozwiązania.
           </p>
@@ -81,22 +78,22 @@ export default function Services() {
           {services.map((service) => (
             <div
               key={service.title}
-              className="bg-white/80 backdrop-blur-sm dark:bg-white/10 rounded-2xl p-8 border border-white/60 dark:border-white/10 hover:border-accent/40 dark:hover:border-accent/50 hover:bg-white/90 dark:hover:bg-white/15 transition-all"
+              className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-accent/50 hover:bg-white/15 transition-all"
             >
-              <div className="w-10 h-10 flex items-center justify-center text-accent bg-accent-light dark:bg-accent-dark-light rounded-xl mb-5">
+              <div className="w-10 h-10 flex items-center justify-center text-accent bg-accent-dark-light rounded-xl mb-5">
                 {service.icon}
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+              <h3 className="text-lg font-semibold text-white mb-2">
                 {service.title}
               </h3>
-              <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed mb-5">
+              <p className="text-gray-300 text-sm leading-relaxed mb-5">
                 {service.description}
               </p>
               <div className="flex flex-wrap gap-2">
                 {service.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="text-xs font-medium px-2.5 py-1 bg-white/70 dark:bg-white/10 text-gray-600 dark:text-gray-300 rounded-full"
+                    className="text-xs font-medium px-2.5 py-1 bg-white/10 text-gray-300 rounded-full"
                   >
                     {tag}
                   </span>
