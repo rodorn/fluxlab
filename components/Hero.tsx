@@ -59,8 +59,8 @@ export default function Hero() {
 
             {/* Floating stats card */}
             <div className="absolute -bottom-6 -left-6 bg-white dark:bg-gray-800 rounded-xl shadow-xl border border-gray-100 dark:border-gray-700 p-4">
-              <p className="text-2xl font-bold text-gray-900 dark:text-white">80%</p>
-              <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">redukcja czasu<br />na procesy</p>
+              <p className="text-2xl font-bold text-gray-900 dark:text-white">500+</p>
+              <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">godzin zwróconych<br />klientom miesięcznie</p>
             </div>
 
             {/* Decorative dot grid */}
