@@ -9,6 +9,7 @@ export default function CTA() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
+  const [contactMethod, setContactMethod] = useState<"email" | "phone">("email");
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -20,8 +21,10 @@ export default function CTA() {
       company: (form.elements.namedItem("company") as HTMLInputElement).value,
       email: (form.elements.namedItem("email") as HTMLInputElement).value,
       phone: (form.elements.namedItem("phone") as HTMLInputElement).value,
-      contactMethod: (form.elements.namedItem("contactMethod") as HTMLSelectElement).value,
-      contactTime: (form.elements.namedItem("contactTime") as HTMLInputElement).value,
+      contactMethod,
+      contactTime: contactMethod === "phone"
+        ? (form.elements.namedItem("contactTime") as HTMLInputElement).value
+        : "",
       message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
     };
     const res = await fetch("/api/contact", {
@@ -138,43 +141,65 @@ export default function CTA() {
                     id="phone"
                     name="phone"
                     type="tel"
-                    placeholder="+48 500 000 000"
+                    placeholder="500 000 000"
                     className={inputClass}
                   />
                 </div>
                 <div>
-                  <label
-                    htmlFor="contactMethod"
-                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5"
-                  >
+                  <p className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
                     Preferowany kontakt
-                  </label>
-                  <select
-                    id="contactMethod"
-                    name="contactMethod"
-                    className={inputClass}
-                  >
-                    <option value="email">E-mail</option>
-                    <option value="phone">Telefon</option>
-                  </select>
+                  </p>
+                  <div className="flex rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden">
+                    <button
+                      type="button"
+                      onClick={() => setContactMethod("email")}
+                      className={`flex-1 flex items-center justify-center gap-2 py-2.5 text-sm font-medium transition-colors ${
+                        contactMethod === "email"
+                          ? "bg-accent text-white"
+                          : "bg-white dark:bg-gray-900 text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800"
+                      }`}
+                    >
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <rect x="2" y="4" width="20" height="16" rx="2" />
+                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                      </svg>
+                      E-mail
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setContactMethod("phone")}
+                      className={`flex-1 flex items-center justify-center gap-2 py-2.5 text-sm font-medium transition-colors ${
+                        contactMethod === "phone"
+                          ? "bg-accent text-white"
+                          : "bg-white dark:bg-gray-900 text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800"
+                      }`}
+                    >
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.07 6.07l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                      </svg>
+                      Telefon
+                    </button>
+                  </div>
                 </div>
               </div>
 
-              <div>
-                <label
-                  htmlFor="contactTime"
-                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5"
-                >
-                  Preferowany czas kontaktu
-                </label>
-                <input
-                  id="contactTime"
-                  name="contactTime"
-                  type="text"
-                  placeholder="Np. pon-pt 10:00-14:00"
-                  className={inputClass}
-                />
-              </div>
+              {contactMethod === "phone" && (
+                <div>
+                  <label
+                    htmlFor="contactTime"
+                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5"
+                  >
+                    Preferowany czas kontaktu
+                  </label>
+                  <input
+                    id="contactTime"
+                    name="contactTime"
+                    type="text"
+                    placeholder="Np. pon-pt 10:00-14:00"
+                    className={inputClass}
+                  />
+                </div>
+              )}
 
               <div>
                 <label
