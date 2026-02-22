@@ -58,7 +58,7 @@ export default function Services() {
           alt=""
           aria-hidden="true"
           className="w-full h-full object-cover dark:hidden"
-          style={{ filter: "grayscale(1) invert(1) brightness(1.4)" }}
+          style={{ filter: "grayscale(1) invert(1) sepia(1) saturate(2) brightness(1.6)" }}
         />
         {/* Dark mode: oryginalne zdjęcie */}
         <img
@@ -86,7 +86,7 @@ export default function Services() {
           {services.map((service) => (
             <div
               key={service.title}
-              className="bg-white/70 backdrop-blur-sm dark:bg-white/10 dark:backdrop-blur-sm rounded-2xl p-8 border border-white/80 dark:border-white/10 hover:bg-white/85 dark:hover:bg-white/15 hover:border-accent/30 dark:hover:border-accent/50 transition-all"
+              className="bg-white/90 backdrop-blur-sm dark:bg-white/10 rounded-2xl p-8 border border-white dark:border-white/10 hover:bg-white dark:hover:bg-white/15 hover:border-accent/30 dark:hover:border-accent/50 transition-all shadow-sm"
             >
               <div className="w-10 h-10 flex items-center justify-center text-accent bg-accent-light dark:bg-accent-dark-light rounded-xl mb-5">
                 {service.icon}
