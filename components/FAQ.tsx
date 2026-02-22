@@ -4,39 +4,39 @@ import { useState } from "react";
 
 const faqs = [
   {
-    question: "Od czego zacząć, jeśli nie wiem, co chcę zautomatyzować?",
+    question: "Od czego zacząć, jeśli nie wiemy, co chcemy zautomatyzować?",
     answer:
-      "Zaczynamy od krótkiej rozmowy wstępnej — bezpłatnie. Opowiadasz, jak wygląda Twoja codzienność w firmie. Razem identyfikujemy, gdzie tracisz najwięcej czasu lub gdzie najczęściej pojawiają się błędy. Jeśli widzę potencjał, proponuję płatny audyt procesu, który kończy się konkretną mapą i wyceną wdrożenia.",
+      "Zaczynamy od krótkiej rozmowy wstępnej — bezpłatnie. Opowiadasz, jak wygląda codzienność w Twojej firmie. Wspólnie identyfikujemy, gdzie tracisz najwięcej czasu lub gdzie najczęściej pojawiają się błędy. Jeśli widzimy potencjał, proponujemy audyt procesu, który kończy się konkretną mapą i wyceną wdrożenia.",
   },
   {
     question: "Ile kosztuje automatyzacja?",
     answer:
-      "Pierwszym krokiem jest audyt procesu — zazwyczaj 1000–2000 zł. Na jego podstawie przygotowuję stałą wycenę wdrożenia. Projekty automatyzacji zaczynają się od kilku tysięcy złotych, w zależności od liczby systemów i złożoności logiki. Jeśli masz mniejszy problem, możliwa jest jednorazowa konsultacja. Nie ma ukrytych kosztów — dostajesz jasny zakres i cenę za efekt.",
+      "Pierwszym krokiem jest audyt procesu — jego koszt zależy od wielkości firmy i liczby analizowanych procesów, dzięki czemu płacisz adekwatnie do skali swojego biznesu. Na podstawie audytu przygotowujemy stałą wycenę wdrożenia. Projekty zaczynają się od kilku tysięcy złotych. Jeśli masz mniejszy problem, możliwa jest jednorazowa konsultacja. Żadnych ukrytych kosztów — dostajesz jasny zakres i cenę za efekt, zanim wyrazisz zgodę.",
   },
   {
-    question: "Dlaczego nie rozliczasz godzinowo?",
+    question: "Dlaczego nie rozliczacie godzinowo?",
     answer:
-      "Bo nie powinieneś płacić za mój czas — powinieneś płacić za wynik. Rozliczenie godzinowe premiuje wolniejszą pracę i generuje niepewność budżetową po Twojej stronie. Stała cena za zakres oznacza, że wiesz dokładnie, co dostajesz i ile to kosztuje, zanim wyrazisz zgodę.",
+      "Bo nie powinieneś płacić za nasz czas — powinieneś płacić za wynik. Rozliczenie godzinowe premiuje wolniejszą pracę i generuje niepewność budżetową po Twojej stronie. Stała cena za zakres oznacza, że wiesz dokładnie, co dostajesz i ile to kosztuje, zanim projekt ruszy.",
   },
   {
-    question: "Z jakich narzędzi korzystasz?",
+    question: "Z jakich narzędzi korzystacie?",
     answer:
-      "Dobieram stack do problemu i budżetu — nie jestem przywiązany do jednego narzędzia. Pracuję z Pythonem (API, automatyzacje, web scraping), n8n, Make i Zapierem, REST API i webhookami, bazami danych (m.in. Supabase), CRM-ami (Pipedrive, HubSpot i innymi) oraz OpenAI API. W projektach wymagających większej kontroli i elastyczności preferuję rozwiązania oparte o kod.",
+      "Dobieramy stack do problemu i budżetu — nie jesteśmy przywiązani do jednego narzędzia. Pracujemy z Pythonem (API, automatyzacje, web scraping), n8n, Make i Zapierem, REST API i webhookami, bazami danych (m.in. Supabase), CRM-ami (Pipedrive, HubSpot i innymi) oraz OpenAI API. W projektach wymagających większej kontroli i elastyczności preferujemy rozwiązania oparte o kod.",
   },
   {
     question: "Co po wdrożeniu — zostanę z tym sam?",
     answer:
-      "Nie. Po wdrożeniu oferuję monitoring działania automatyzacji, poprawki oraz dalszy rozwój. Współpraca może przyjąć formę miesięcznego abonamentu albo rozliczenia za konkretny zakres zmian — zależnie od tego, czego potrzebujesz. Przekazuję też dokumentację i szkolenie, żebyś rozumiał, co działa i dlaczego.",
+      "Nie. Po wdrożeniu oferujemy monitoring działania automatyzacji, poprawki oraz dalszy rozwój. Współpraca może przyjąć formę miesięcznego abonamentu albo rozliczenia za konkretny zakres zmian — zależnie od tego, czego potrzebujesz. Przekazujemy też dokumentację i szkolenie, żebyś rozumiał, co działa i dlaczego.",
   },
   {
-    question: "Czy pracujesz tylko z polskimi firmami?",
+    question: "Czy pracujecie tylko z polskimi firmami?",
     answer:
-      "Nie — pracuję z firmami z Polski oraz z klientami anglojęzycznymi. Wszystkie projekty realizuję zdalnie, więc lokalizacja nie ma znaczenia.",
+      "Nie — współpracujemy z firmami z Polski oraz z klientami anglojęzycznymi. Wszystkie projekty realizujemy zdalnie, więc lokalizacja nie ma znaczenia.",
   },
   {
     question: "Jak długo trwa wdrożenie?",
     answer:
-      "Pierwsze wdrożenie zajmuje zazwyczaj 2–4 tygodnie od zatwierdzenia zakresu. Prostsze automatyzacje mogą być gotowe szybciej — najkrótszy projekt zrealizowałem w 9 dni. Czas zależy od liczby integrowanych systemów i złożoności logiki procesu.",
+      "Pierwsze wdrożenie zajmuje zazwyczaj 2–4 tygodnie od zatwierdzenia zakresu. Prostsze automatyzacje mogą być gotowe szybciej — najkrótszy projekt zrealizowaliśmy w 9 dni. Czas zależy od liczby integrowanych systemów i złożoności logiki procesu.",
   },
 ];
 
