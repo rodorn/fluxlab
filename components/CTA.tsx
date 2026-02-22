@@ -7,11 +7,31 @@ const inputClass =
 
 export default function CTA() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    // TODO: integrate with email service (e.g. Resend)
-    setSubmitted(true);
+    setLoading(true);
+    setError(false);
+    const form = e.currentTarget;
+    const data = {
+      name: (form.elements.namedItem("name") as HTMLInputElement).value,
+      company: (form.elements.namedItem("company") as HTMLInputElement).value,
+      email: (form.elements.namedItem("email") as HTMLInputElement).value,
+      message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
+    };
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+    setLoading(false);
+    if (res.ok) {
+      setSubmitted(true);
+    } else {
+      setError(true);
+    }
   }
 
   return (
@@ -120,9 +140,15 @@ export default function CTA() {
                 />
               </div>
 
-              <button type="submit" className="btn-primary w-full py-3.5 text-base">
-                Wyślij wiadomość
+              <button type="submit" disabled={loading} className="btn-primary w-full py-3.5 text-base disabled:opacity-60">
+                {loading ? "Wysyłanie..." : "Wyślij wiadomość"}
               </button>
+
+              {error && (
+                <p className="text-center text-sm text-red-500">
+                  Coś poszło nie tak. Spróbuj ponownie lub napisz bezpośrednio na iwanekpawel55@gmail.com.
+                </p>
+              )}
 
               <p className="text-center text-xs text-gray-400 dark:text-gray-500">
                 Dane są bezpieczne i nie będą udostępniane osobom trzecim.
