@@ -58,7 +58,8 @@ export default function Services() {
           src="/photos/Flow.avif"
           alt=""
           aria-hidden="true"
-          className="absolute inset-0 w-full h-full object-cover opacity-[0.06] dark:hidden"
+          className="absolute inset-0 w-full h-full object-cover opacity-[0.08] dark:hidden"
+          style={{ filter: "invert(1)" }}
         />
         {/* Dark mode: oryginalne zdjęcie bez zmian */}
         <img
