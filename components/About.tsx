@@ -19,13 +19,14 @@ export default function About() {
               Praktyczne podejście, mierzalne efekty
             </h2>
             <p className="text-gray-500 dark:text-gray-400 text-lg leading-relaxed mb-6">
-              Fluxlab to jednoosobowe studio automatyzacji. Nie masz do czynienia
-              z korporacyjną strukturą i anonimowym działem IT — rozmawiasz
-              bezpośrednio ze specjalistą, który projektuje i wdraża Twoje rozwiązanie.
+              Fluxlab to studio automatyzacji procesów biznesowych. Nie masz do
+              czynienia z korporacyjną strukturą i anonimowym działem IT — rozmawiasz
+              bezpośrednio z zespołem, który projektuje i wdraża Twoje rozwiązanie.
             </p>
             <p className="text-gray-500 dark:text-gray-400 text-lg leading-relaxed mb-10">
-              Skupiam się wyłącznie na automatyzacji procesów biznesowych. To nie
-              jest jeden z piętnastu serwisów w ofercie — to jedyna rzecz, którą robię.
+              Automatyzacja procesów biznesowych to jedyna rzecz, którą robimy.
+              Nie jesteśmy agencją z piętnastoma usługami w ofercie — jesteśmy
+              specjalistami w jednej dziedzinie i robimy to dobrze.
             </p>
 
             <ul className="space-y-4">
