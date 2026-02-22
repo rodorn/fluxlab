@@ -50,7 +50,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="uslugi" className="relative py-8 lg:py-14 overflow-hidden">
+    <section id="uslugi" className="relative py-4 lg:py-7 overflow-hidden">
       <div className="absolute inset-0 -z-10">
         {/* Light mode: jasne niebieskie tło + zdjęcie jako ledwo widoczny akcent */}
         <div className="absolute inset-0 bg-sky-50 dark:hidden" />
@@ -81,7 +81,7 @@ export default function Services() {
       </div>
 
       <div className="container-wide">
-        <div className="max-w-xl mb-8">
+        <div className="max-w-xl mb-4">
           <p className="section-label mb-3">Co robimy</p>
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Automatyzacje, które realnie odciążają Twój zespół

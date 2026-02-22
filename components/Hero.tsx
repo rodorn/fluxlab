@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="pt-24 pb-8 lg:pt-28 lg:pb-10 overflow-hidden">
+    <section className="pt-20 pb-4 lg:pt-24 lg:pb-6 overflow-hidden">
       <div className="container-wide">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left — text */}
@@ -75,10 +75,10 @@ export default function Hero() {
         </div>
 
         {/* Divider */}
-        <div className="mt-10 border-t border-gray-100 dark:border-gray-800" />
+        <div className="mt-6 border-t border-gray-100 dark:border-gray-800" />
 
         {/* Stats */}
-        <div className="mt-8 grid grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="mt-4 grid grid-cols-2 lg:grid-cols-4 gap-8">
           {[
             { value: "80%", label: "średnia redukcja czasu na procesy" },
             { value: "2–4 tyg.", label: "czas wdrożenia pierwszej automatyzacji" },

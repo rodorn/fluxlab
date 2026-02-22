@@ -45,10 +45,10 @@ const services = [
 
 export default function Pricing() {
   return (
-    <section id="cennik" className="py-8 lg:py-14">
+    <section id="cennik" className="py-4 lg:py-7">
       <div className="container-wide">
         {/* Header */}
-        <div className="max-w-2xl mb-8">
+        <div className="max-w-2xl mb-4">
           <p className="section-label mb-3">Cennik</p>
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Każdy projekt wyceniamy indywidualnie

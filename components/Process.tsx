@@ -27,9 +27,9 @@ const steps = [
 
 export default function Process() {
   return (
-    <section id="proces" className="py-8 lg:py-14">
+    <section id="proces" className="py-4 lg:py-7">
       <div className="container-wide">
-        <div className="max-w-xl mb-8">
+        <div className="max-w-xl mb-4">
           <p className="section-label mb-3">Jak działamy</p>
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Od rozmowy do działającej automatyzacji
