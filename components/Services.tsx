@@ -50,16 +50,19 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="uslugi" className="relative py-20 lg:py-32 overflow-hidden bg-gray-50 dark:bg-transparent">
-      {/* Background image — dark mode only */}
-      <div className="absolute inset-0 -z-10 hidden dark:block">
+    <section id="uslugi" className="relative py-20 lg:py-32 overflow-hidden">
+      {/* Background image — both modes */}
+      <div className="absolute inset-0 -z-10">
         <img
           src="/photos/Flow.avif"
           alt=""
           aria-hidden="true"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gray-950/90" />
+        {/* Light mode: heavy white overlay */}
+        <div className="absolute inset-0 bg-white/88 dark:hidden" />
+        {/* Dark mode: heavy dark overlay */}
+        <div className="absolute inset-0 bg-gray-950/90 hidden dark:block" />
       </div>
 
       <div className="container-wide">
