@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const points = [
   "Pracujemy z firmami z sektorów: logistyka, e-commerce, usługi profesjonalne",
   "Budujemy na narzędziach, które Twój zespół może samodzielnie utrzymać",
@@ -46,38 +48,35 @@ export default function About() {
             </ul>
           </div>
 
-          {/* Right — visual block */}
+          {/* Right — photo */}
           <div className="relative">
-            <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 p-8 shadow-sm">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center text-white font-bold text-sm">
-                  FL
-                </div>
-                <div>
-                  <p className="font-semibold text-gray-900 dark:text-white text-sm">Fluxlab</p>
-                  <p className="text-xs text-gray-400 dark:text-gray-500">Automatyzacja procesów B2B</p>
-                </div>
-              </div>
+            <div className="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-xl">
+              <Image
+                src="/photos/mechanism.jpg"
+                alt="Mechanizm — symbol automatyzacji"
+                fill
+                className="object-cover grayscale"
+              />
+              {/* Dark overlay for readability of overlay card */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
 
-              <div className="space-y-3">
+              {/* Stats overlay */}
+              <div className="absolute bottom-0 left-0 right-0 p-6 grid grid-cols-2 gap-3">
                 {[
-                  { label: "Wdrożeń zrealizowanych", value: "30+" },
-                  { label: "Godzin zaoszczędzonych klientom / mies.", value: "500+" },
-                  { label: "Najkrótszy czas wdrożenia", value: "9 dni" },
+                  { label: "Wdrożeń", value: "30+" },
+                  { label: "Godz. zaoszczędzonych / mies.", value: "500+" },
+                  { label: "Najkrótsze wdrożenie", value: "9 dni" },
                   { label: "Zadowolenie klientów", value: "100%" },
                 ].map((item) => (
-                  <div
-                    key={item.label}
-                    className="flex items-center justify-between py-3 border-b border-gray-50 dark:border-gray-700 last:border-0"
-                  >
-                    <span className="text-sm text-gray-500 dark:text-gray-400">{item.label}</span>
-                    <span className="text-sm font-semibold text-gray-900 dark:text-white">{item.value}</span>
+                  <div key={item.label} className="bg-white/10 backdrop-blur-sm rounded-lg px-3 py-2 border border-white/20">
+                    <p className="text-white font-bold text-lg leading-none">{item.value}</p>
+                    <p className="text-white/70 text-xs mt-1 leading-tight">{item.label}</p>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Decorative element */}
+            {/* Decorative accent */}
             <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-accent-light dark:bg-accent-dark-light rounded-2xl -z-10" />
           </div>
         </div>
