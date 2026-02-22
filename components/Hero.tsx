@@ -47,7 +47,7 @@ export default function Hero() {
           <div className="relative hidden lg:block">
             <div className="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-2xl">
               <Image
-                src="/photos/lines.jpg"
+                src="/photos/digital_eye.avif"
                 alt="Wizualizacja przepływu danych"
                 fill
                 className="object-cover"
