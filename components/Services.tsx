@@ -50,25 +50,25 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="uslugi" className="relative py-20 lg:py-32 overflow-hidden">
-      {/* Background image */}
-      <div className="absolute inset-0 -z-10">
+    <section id="uslugi" className="relative py-20 lg:py-32 overflow-hidden bg-gray-50 dark:bg-transparent">
+      {/* Background image — dark mode only */}
+      <div className="absolute inset-0 -z-10 hidden dark:block">
         <img
           src="/photos/Flow.avif"
           alt=""
           aria-hidden="true"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gray-950/85 dark:bg-gray-950/90" />
+        <div className="absolute inset-0 bg-gray-950/90" />
       </div>
 
       <div className="container-wide">
         <div className="max-w-xl mb-16">
-          <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-3">Co robimy</p>
-          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+          <p className="section-label mb-3">Co robimy</p>
+          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Automatyzacje, które realnie odciążają Twój zespół
           </h2>
-          <p className="text-gray-300 text-lg">
+          <p className="text-gray-500 dark:text-gray-300 text-lg">
             Skupiamy się na procesach, które kosztują Cię najwięcej czasu.
             Nie sprzedajemy narzędzi — dostarczamy gotowe rozwiązania.
           </p>
@@ -78,22 +78,22 @@ export default function Services() {
           {services.map((service) => (
             <div
               key={service.title}
-              className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-accent/50 hover:bg-white/15 transition-all"
+              className="bg-white dark:bg-white/10 dark:backdrop-blur-sm rounded-2xl p-8 border border-gray-100 dark:border-white/10 hover:border-accent/30 dark:hover:border-accent/50 hover:shadow-sm dark:hover:bg-white/15 transition-all"
             >
-              <div className="w-10 h-10 flex items-center justify-center text-accent bg-accent-dark-light rounded-xl mb-5">
+              <div className="w-10 h-10 flex items-center justify-center text-accent bg-accent-light dark:bg-accent-dark-light rounded-xl mb-5">
                 {service.icon}
               </div>
-              <h3 className="text-lg font-semibold text-white mb-2">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
                 {service.title}
               </h3>
-              <p className="text-gray-300 text-sm leading-relaxed mb-5">
+              <p className="text-gray-500 dark:text-gray-300 text-sm leading-relaxed mb-5">
                 {service.description}
               </p>
               <div className="flex flex-wrap gap-2">
                 {service.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="text-xs font-medium px-2.5 py-1 bg-white/10 text-gray-300 rounded-full"
+                    className="text-xs font-medium px-2.5 py-1 bg-gray-100 dark:bg-white/10 text-gray-500 dark:text-gray-300 rounded-full"
                   >
                     {tag}
                   </span>
