@@ -15,16 +15,16 @@ export default function Hero() {
 
             {/* Headline */}
             <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.1] mb-6 text-gray-900 dark:text-white">
-              Automatyzujemy to,{" "}
-              <span className="text-accent">co marnuje</span>{" "}
-              Twój czas i pieniądze
+              Skup się na tym,{" "}
+              <span className="text-accent">co napędza</span>{" "}
+              Twój biznes
             </h1>
 
             {/* Subheadline */}
             <p className="text-lg text-gray-500 dark:text-gray-400 leading-relaxed mb-10 max-w-lg">
-              Budujemy systemy automatyzacji dla firm, które mają dość
-              ręcznej pracy, błędów w Excelu i procesów opartych na kopiuj‑wklej.
-              Efekty widoczne w ciągu kilku tygodni.
+              Automatyzujemy powtarzalne procesy, żebyś Ty i Twój zespół
+              mogli poświęcać czas na to, co rzeczywiście tworzy wartość.
+              Pierwsze efekty widoczne w ciągu 2–4 tygodni.
             </p>
 
             {/* CTAs */}
