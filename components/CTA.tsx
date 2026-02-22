@@ -19,6 +19,9 @@ export default function CTA() {
       name: (form.elements.namedItem("name") as HTMLInputElement).value,
       company: (form.elements.namedItem("company") as HTMLInputElement).value,
       email: (form.elements.namedItem("email") as HTMLInputElement).value,
+      phone: (form.elements.namedItem("phone") as HTMLInputElement).value,
+      contactMethod: (form.elements.namedItem("contactMethod") as HTMLSelectElement).value,
+      contactTime: (form.elements.namedItem("contactTime") as HTMLInputElement).value,
       message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
     };
     const res = await fetch("/api/contact", {
@@ -119,6 +122,56 @@ export default function CTA() {
                   type="email"
                   required
                   placeholder="jan@firma.pl"
+                  className={inputClass}
+                />
+              </div>
+
+              <div className="grid sm:grid-cols-2 gap-5">
+                <div>
+                  <label
+                    htmlFor="phone"
+                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5"
+                  >
+                    Numer telefonu
+                  </label>
+                  <input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    placeholder="+48 500 000 000"
+                    className={inputClass}
+                  />
+                </div>
+                <div>
+                  <label
+                    htmlFor="contactMethod"
+                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5"
+                  >
+                    Preferowany kontakt
+                  </label>
+                  <select
+                    id="contactMethod"
+                    name="contactMethod"
+                    className={inputClass}
+                  >
+                    <option value="email">E-mail</option>
+                    <option value="phone">Telefon</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label
+                  htmlFor="contactTime"
+                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5"
+                >
+                  Preferowany czas kontaktu
+                </label>
+                <input
+                  id="contactTime"
+                  name="contactTime"
+                  type="text"
+                  placeholder="Np. pon-pt 10:00-14:00"
                   className={inputClass}
                 />
               </div>
