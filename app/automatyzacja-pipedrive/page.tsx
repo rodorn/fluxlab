@@ -198,7 +198,7 @@ export default function AutomatyzacjaPipedrive() {
                 unoptimized
               />
               <Image
-                src="/photos/pipedrive-dark.jpg"
+                src="/photos/pipedrive-dark.webp"
                 alt="Pipedrive automatyzacja – demo"
                 width={1200}
                 height={675}
