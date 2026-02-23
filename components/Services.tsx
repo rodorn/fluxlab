@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const services = [
   {
     icon: (
@@ -9,6 +11,7 @@ const services = [
     description:
       "Eliminujemy ręczne przenoszenie danych między systemami. Integrujemy ERP, CRM, arkusze, e-mail i inne narzędzia, które już używasz.",
     tags: ["Make", "n8n", "API", "Webhooks"],
+    link: { href: "/automatyzacja-pipedrive", label: "Automatyzacja Pipedrive →" },
   },
   {
     icon: (
@@ -107,7 +110,7 @@ export default function Services() {
               <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-5">
                 {service.description}
               </p>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 mb-4">
                 {service.tags.map((tag) => (
                   <span
                     key={tag}
@@ -117,6 +120,14 @@ export default function Services() {
                   </span>
                 ))}
               </div>
+              {"link" in service && service.link && (
+                <Link
+                  href={service.link.href}
+                  className="text-xs font-medium text-accent hover:text-accent-hover transition-colors"
+                >
+                  {service.link.label}
+                </Link>
+              )}
             </div>
           ))}
         </div>
