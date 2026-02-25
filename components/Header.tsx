@@ -18,13 +18,15 @@ const articles = [
     title: "Automatyzacja Pipedrive",
     description: "Jak wycisnąć 100% z CRM dzięki API i webhookom",
     href: "/automatyzacja-pipedrive",
-    image: "/photos/pipedrive-dark.webp",
+    imageLight: "/photos/pipedrive-light.gif",
+    imageDark: "/photos/pipedrive-dark.webp",
   },
   {
     title: "Automatyzacja Salesforce",
     description: "Zaawansowane integracje i custom development",
     href: "/automatyzacja-salesforce",
-    image: "/photos/salesforce_dark.png",
+    imageLight: "/photos/Salesforce-light.webp",
+    imageDark: "/photos/salesforce_dark.png",
   },
 ];
 
@@ -119,11 +121,19 @@ export default function Header() {
                         >
                           <div className="shrink-0 w-16 h-11 rounded-lg overflow-hidden border border-gray-100 dark:border-gray-700 bg-gray-100 dark:bg-gray-800">
                             <Image
-                              src={article.image}
+                              src={article.imageLight}
                               alt={article.title}
                               width={64}
                               height={44}
-                              className="w-full h-full object-cover"
+                              className="w-full h-full object-cover dark:hidden"
+                              unoptimized
+                            />
+                            <Image
+                              src={article.imageDark}
+                              alt={article.title}
+                              width={64}
+                              height={44}
+                              className="w-full h-full object-cover hidden dark:block"
                             />
                           </div>
                           <div className="min-w-0 pt-0.5">
@@ -247,7 +257,15 @@ export default function Header() {
                   >
                     <div className="shrink-0 w-10 h-7 rounded-md overflow-hidden border border-gray-100 dark:border-gray-700">
                       <Image
-                        src={article.image}
+                        src={article.imageLight}
+                        alt={article.title}
+                        width={40}
+                        height={28}
+                        className="w-full h-full object-cover dark:hidden"
+                        unoptimized
+                      />
+                      <Image
+                        src={article.imageDark}
                         alt={article.title}
                         width={40}
                         height={28}
