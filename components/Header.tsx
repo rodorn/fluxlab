@@ -20,6 +20,12 @@ const articles = [
     href: "/automatyzacja-pipedrive",
     image: "/photos/pipedrive-dark.webp",
   },
+  {
+    title: "Automatyzacja Salesforce",
+    description: "Zaawansowane integracje i custom development",
+    href: "/automatyzacja-salesforce",
+    image: "/photos/salesforce_dark.png",
+  },
 ];
 
 const tools: { title: string; description: string; href: string }[] = [];
