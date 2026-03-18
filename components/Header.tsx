@@ -30,7 +30,13 @@ const articles = [
   },
 ];
 
-const tools: { title: string; description: string; href: string }[] = [];
+const tools: { title: string; description: string; href: string }[] = [
+  {
+    title: "Dobór samochodu",
+    description: "Znajdź idealny segment, nadwozie i moc dla siebie",
+    href: "/dobor-samochodu",
+  },
+];
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
