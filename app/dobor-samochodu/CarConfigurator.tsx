@@ -11,6 +11,7 @@ interface Answers {
   height: number;
   passengers: number;
   longTrips: number; // 0 = tylko miasto, 100 = tylko trasa
+  segmentOverride: Segment | null;
   bodyStyle: BodyStyle | null;
   bodyShape: BodyShape | null;
   luggageFreq: number; // 0‑100
@@ -23,6 +24,7 @@ const INITIAL: Answers = {
   height: 175,
   passengers: 1,
   longTrips: 30,
+  segmentOverride: null,
   bodyStyle: null,
   bodyShape: null,
   luggageFreq: 30,
@@ -386,7 +388,8 @@ export default function CarConfigurator() {
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Answers>(INITIAL);
 
-  const segment = useMemo(() => calcSegment(answers), [answers]);
+  const suggestedSegment = useMemo(() => calcSegment(answers), [answers]);
+  const segment = answers.segmentOverride ?? suggestedSegment;
   const suggestedHP = useMemo(
     () => calcSuggestedHP(answers, segment),
     [answers, segment],
@@ -473,12 +476,53 @@ export default function CarConfigurator() {
         />
       </div>
 
-      {/* segment result */}
-      <div className="rounded-2xl border border-gray-200 dark:border-gray-700 p-6 text-center">
-        <p className="text-xs uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-1">
-          Sugerowany segment
-        </p>
-        <p className="text-2xl font-bold text-accent">{SEGMENT_NAMES[segment]}</p>
+      {/* segment result + override */}
+      <div className="rounded-2xl border border-gray-200 dark:border-gray-700 p-6 space-y-4">
+        <div className="text-center">
+          <p className="text-xs uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-1">
+            Sugerowany segment
+          </p>
+          <p className="text-2xl font-bold text-accent">{SEGMENT_NAMES[suggestedSegment]}</p>
+        </div>
+
+        <div className="space-y-2">
+          <p className="text-xs text-gray-500 dark:text-gray-400 text-center">
+            Możesz wybrać inny segment, jeśli nasza sugestia nie pasuje:
+          </p>
+          <div className="flex flex-wrap justify-center gap-2">
+            {(Object.keys(SEGMENT_NAMES) as Segment[]).map((s) => {
+              const isActive = segment === s;
+              const isSuggested = suggestedSegment === s && !answers.segmentOverride;
+              return (
+                <button
+                  key={s}
+                  type="button"
+                  onClick={() =>
+                    set("segmentOverride", s === suggestedSegment ? null : s)
+                  }
+                  className={`px-4 py-2 rounded-xl text-sm font-medium border-2 transition-all ${
+                    isActive
+                      ? "border-accent bg-accent/10 text-accent"
+                      : "border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-gray-300 dark:hover:border-gray-600"
+                  } ${isSuggested ? "ring-2 ring-accent/30" : ""}`}
+                >
+                  {s}
+                </button>
+              );
+            })}
+          </div>
+          {answers.segmentOverride && (
+            <p className="text-center">
+              <button
+                type="button"
+                onClick={() => set("segmentOverride", null)}
+                className="text-xs text-accent hover:underline"
+              >
+                Przywróć sugerowany segment ({suggestedSegment})
+              </button>
+            </p>
+          )}
+        </div>
       </div>
     </div>
   );
