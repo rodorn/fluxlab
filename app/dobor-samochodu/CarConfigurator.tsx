@@ -21,7 +21,7 @@ interface Answers {
 
 const INITIAL: Answers = {
   height: 175,
-  passengers: 2,
+  passengers: 1,
   longTrips: 30,
   bodyStyle: null,
   bodyShape: null,
@@ -64,26 +64,25 @@ function calcSegment(a: Answers): Segment {
 /* ──────────────── power logic ──────────────── */
 
 function calcSuggestedHP(a: Answers, segment: Segment): number {
-  // bazowa moc wg prędkości (przybliżenie oporu powietrza ~ v^2)
-  const speedFactor = Math.pow(a.maxSpeed / 130, 2);
+  // bazowa moc wg prędkości (przybliżenie oporu powietrza ~ v^3), optymalne zużycie połowy mocy
+  const speedFactor = Math.pow(a.maxSpeed / 200, 3) * 2;
   const segmentWeights: Record<Segment, number> = {
-    A: 900,
-    B: 1100,
-    C: 1300,
-    D: 1500,
-    E: 1750,
-    F: 2100,
+    A: 120,
+    B: 125,
+    C: 135,
+    D: 145,
+    E: 155,
+    F: 165,
   };
   const bodyMult: Record<BodyStyle, number> = {
-    sportowy: 0.85,
+    sportowy: 0.9,
     sedan: 1,
-    crossover: 1.1,
-    suv: 1.25,
-    terenowy: 1.35,
+    crossover: 1.2,
+    suv: 1.3,
+    terenowy: 1.5,
   };
   const weight = segmentWeights[segment] * (bodyMult[a.bodyStyle ?? "sedan"]);
-  // P = weight * speedFactor * 0.08  (heuristic, caps to sensible range)
-  let hp = Math.round(weight * speedFactor * 0.08);
+  let hp = Math.round(weight * speedFactor);
   hp = Math.max(65, Math.min(hp, 500));
   return hp;
 }
@@ -397,11 +396,8 @@ export default function CarConfigurator() {
   const set = <K extends keyof Answers>(key: K, val: Answers[K]) =>
     setAnswers((prev) => ({ ...prev, [key]: val }));
 
-  const canNext = (): boolean => {
-    if (step === 1 && !answers.bodyStyle) return false;
-    if (step === 2 && !answers.bodyShape) return false;
-    return true;
-  };
+  const canNext = (): boolean =>
+    !(step === 1 && !answers.bodyStyle) && !(step === 2 && !answers.bodyShape);
 
   /* ──── render helpers ──── */
 

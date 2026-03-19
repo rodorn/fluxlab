@@ -6,11 +6,11 @@ import Image from "next/image";
 import ThemeToggle from "./ThemeToggle";
 
 const navLinks = [
-  { label: "Usługi", href: "#uslugi" },
-  { label: "Cennik", href: "#cennik" },
-  { label: "Jak działamy", href: "#proces" },
-  { label: "O nas", href: "#o-nas" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Usługi", href: "/#uslugi" },
+  { label: "Cennik", href: "/#cennik" },
+  { label: "Jak działamy", href: "/#proces" },
+  { label: "O nas", href: "/#o-nas" },
+  { label: "FAQ", href: "/#faq" },
 ];
 
 const articles = [
@@ -194,7 +194,7 @@ export default function Header() {
         {/* Right side */}
         <div className="hidden md:flex items-center gap-3">
           <ThemeToggle />
-          <a href="#kontakt" className="btn-primary">
+          <a href="/#kontakt" className="btn-primary">
             Porozmawiajmy
           </a>
         </div>
@@ -306,7 +306,7 @@ export default function Header() {
           </div>
 
           <a
-            href="#kontakt"
+            href="/#kontakt"
             className="btn-primary text-center"
             onClick={() => setMenuOpen(false)}
           >
