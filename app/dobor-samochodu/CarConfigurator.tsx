@@ -376,8 +376,8 @@ const BODY_SHAPES: {
 /* ──────────────── steps ──────────────── */
 
 const STEP_TITLES = [
+  "Typ samochodu",
   "Segment",
-  "Typ nadwozia",
   "Forma nadwozia",
   "Moc silnika",
 ];
@@ -400,7 +400,7 @@ export default function CarConfigurator() {
     setAnswers((prev) => ({ ...prev, [key]: val }));
 
   const canNext = (): boolean =>
-    !(step === 1 && !answers.bodyStyle) && !(step === 2 && !answers.bodyShape);
+    !(step === 0 && !answers.bodyStyle) && !(step === 2 && !answers.bodyShape);
 
   /* ──── render helpers ──── */
 
@@ -531,7 +531,7 @@ export default function CarConfigurator() {
     <div className="space-y-8">
       <div className="rounded-2xl bg-accent/5 dark:bg-accent/10 border border-accent/20 p-6">
         <h3 className="text-sm font-semibold text-accent mb-2">
-          Jaki typ nadwozia do Ciebie pasuje?
+          Jaki typ samochodu do Ciebie pasuje?
         </h3>
         <p className="text-sm text-gray-600 dark:text-gray-400">
           Każdy typ ma swoje zalety i wady. Kliknij kartę, która najlepiej
@@ -680,7 +680,7 @@ export default function CarConfigurator() {
           <div className="grid sm:grid-cols-2 gap-4 text-sm">
             <SummaryRow label="Segment" value={SEGMENT_NAMES[segment]} />
             <SummaryRow
-              label="Typ nadwozia"
+              label="Typ samochodu"
               value={
                 BODY_STYLES.find((b) => b.id === answers.bodyStyle)?.title ??
                 "—"
@@ -708,7 +708,7 @@ export default function CarConfigurator() {
     );
   };
 
-  const steps = [renderStep0, renderStep1, renderStep2, renderStep3];
+  const steps = [renderStep1, renderStep0, renderStep2, renderStep3];
 
   return (
     <div className="max-w-3xl mx-auto">
