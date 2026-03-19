@@ -4,7 +4,7 @@ import { useState, useMemo } from "react";
 
 /* ───────────────────────── types ───────────────────────── */
 
-type BodyStyle = "sportowy" | "sedan" | "crossover" | "suv" | "terenowy";
+type BodyStyle = "sportowy" | "sedan" | "van" | "crossover" | "suv" | "terenowy";
 type BodyShape = "hatchback" | "sedan" | "kombi" | "liftback";
 
 interface Answers {
@@ -79,6 +79,7 @@ function calcSuggestedHP(a: Answers, segment: Segment): number {
   const bodyMult: Record<BodyStyle, number> = {
     sportowy: 0.9,
     sedan: 1,
+    van: 1.15,
     crossover: 1.2,
     suv: 1.3,
     terenowy: 1.5,
@@ -244,7 +245,7 @@ const BODY_STYLES: {
   },
   {
     id: "sedan",
-    title: "Osobowy / Sedan",
+    title: "Osobowy",
     icon: "🚗",
     pros: [
       "Uniwersalny – sprawdzi się wszędzie",
@@ -254,6 +255,21 @@ const BODY_STYLES: {
     cons: [
       "Mniejszy bagażnik niż kombi",
       "Przeciętne na nierównej drodze",
+    ],
+  },
+  {
+    id: "van",
+    title: "Van",
+    icon: "🚐",
+    pros: [
+      "Ogromna przestrzeń pasażerska i bagażowa",
+      "Przesuwane drzwi – wygodne parkowanie",
+      "Idealny dla dużych rodzin",
+    ],
+    cons: [
+      "Duże gabaryty – trudniej w mieście",
+      "Wyższe spalanie niż osobowy",
+      "Gorsze prowadzenie – wysoki środek ciężkości",
     ],
   },
   {
