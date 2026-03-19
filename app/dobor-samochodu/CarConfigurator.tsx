@@ -33,34 +33,32 @@ const INITIAL: Answers = {
 
 /* ──────────────── segment logic ──────────────── */
 
-type Segment = "A" | "B" | "C" | "D" | "E";
+type Segment = "A" | "B" | "C" | "D" | "E" | "F";
 
 const SEGMENT_NAMES: Record<Segment, string> = {
   A: "A – mini (np. Fiat 500, Toyota Aygo)",
   B: "B – małe (np. VW Polo, Mazda 2)",
-  C: "C – kompakt (np. VW Golf, Toyota Corolla)",
-  D: "D – średnie (np. BMW 3, Mazda 6)",
-  E: "E – duże (np. BMW 5, Mercedes E)",
+  C: "C – klasa średnia niższa, kompakt (np. VW Golf, Toyota Corolla)",
+  D: "D – klasa średnia (np. BMW serii 3, Mazda 6)",
+  E: "E – klasa średnia wyższa (np. BMW serii 5, Mercedes klasy E)",
+  F: "F – klasa wyższa (np. BMW serii 7, Mercedes klasy S)",
 };
 
 function calcSegment(a: Answers): Segment {
   let score = 0;
   // wzrost
-  if (a.height >= 190) score += 3;
-  else if (a.height >= 180) score += 2;
-  else if (a.height >= 170) score += 1;
+  if (a.height >= 170) score += a.height-170;
   // pasażerowie
-  if (a.passengers >= 4) score += 3;
-  else if (a.passengers >= 3) score += 2;
-  else if (a.passengers >= 2) score += 1;
+  score += a.passengers * 10
   // trasy
-  score += Math.round((a.longTrips / 100) * 2);
+  score *= ((a.longTrips + 100) / 100);
 
-  if (score <= 2) return "A";
-  if (score <= 4) return "B";
-  if (score <= 6) return "C";
-  if (score <= 8) return "D";
-  return "E";
+  if (score <= 20) return "A";
+  if (score <= 40) return "B";
+  if (score <= 60) return "C";
+  if (score <= 80) return "D";
+  if (score <= 120) return "E";
+  return "F";
 }
 
 /* ──────────────── power logic ──────────────── */
@@ -74,6 +72,7 @@ function calcSuggestedHP(a: Answers, segment: Segment): number {
     C: 1300,
     D: 1500,
     E: 1750,
+    F: 2100,
   };
   const bodyMult: Record<BodyStyle, number> = {
     sportowy: 0.85,
