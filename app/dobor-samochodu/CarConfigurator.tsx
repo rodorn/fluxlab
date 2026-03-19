@@ -37,14 +37,60 @@ const INITIAL: Answers = {
 
 type Segment = "A" | "B" | "C" | "D" | "E" | "F";
 
-const SEGMENT_NAMES: Record<Segment, string> = {
-  A: "A – mini (np. Fiat 500, Toyota Aygo)",
-  B: "B – małe (np. VW Polo, Mazda 2)",
-  C: "C – klasa średnia niższa, kompakt (np. VW Golf, Toyota Corolla)",
-  D: "D – klasa średnia (np. BMW serii 3, Mazda 6)",
-  E: "E – klasa średnia wyższa (np. BMW serii 5, Mercedes klasy E)",
-  F: "F – klasa wyższa (np. BMW serii 7, Mercedes klasy S)",
+const SEGMENT_DESCRIPTIONS: Record<BodyStyle, Record<Segment, string>> = {
+  sportowy: {
+    A: "A – mini sport (np. Abarth 500, Mini Cooper S)",
+    B: "B – małe sport (np. Mazda MX-5, Toyota GR86)",
+    C: "C – kompaktowe sport (np. VW Golf GTI, Honda Civic Type R)",
+    D: "D – średnie sport (np. BMW M2, Audi S3)",
+    E: "E – wyższe sport (np. BMW M4, Porsche Cayman)",
+    F: "F – klasa wyższa sport (np. Porsche 911, Jaguar F-Type)",
+  },
+  sedan: {
+    A: "A – mini (np. Fiat 500, Toyota Aygo)",
+    B: "B – małe (np. VW Polo, Mazda 2)",
+    C: "C – kompakt (np. VW Golf, Toyota Corolla)",
+    D: "D – klasa średnia (np. BMW serii 3, Mazda 6)",
+    E: "E – klasa średnia wyższa (np. BMW serii 5, Mercedes klasy E)",
+    F: "F – klasa wyższa (np. BMW serii 7, Mercedes klasy S)",
+  },
+  van: {
+    A: "A – –",
+    B: "B – małe vany (np. VW Caddy, Renault Kangoo)",
+    C: "C – kompaktowe vany (np. VW Touran, Citroën Berlingo)",
+    D: "D – średnie vany (np. VW Multivan, Ford Tourneo Custom)",
+    E: "E – duże vany (np. Mercedes klasy V, VW Caravelle)",
+    F: "F – –",
+  },
+  crossover: {
+    A: "A – mini crossover (np. Fiat 500X, Suzuki Ignis)",
+    B: "B – małe crossover (np. Hyundai Kona, VW T-Cross)",
+    C: "C – kompaktowe crossover (np. Mazda CX-30, Kia Sportage)",
+    D: "D – średnie crossover (np. BMW X3, Audi Q5)",
+    E: "E – duże crossover (np. BMW X5, Volvo XC60)",
+    F: "F – premium crossover (np. Porsche Cayenne, BMW X7)",
+  },
+  suv: {
+    A: "A – –",
+    B: "B – małe SUV (np. Suzuki Jimny, Dacia Duster)",
+    C: "C – kompaktowe SUV (np. Toyota RAV4, Hyundai Tucson)",
+    D: "D – średnie SUV (np. BMW X3, VW Tiguan Allspace)",
+    E: "E – duże SUV (np. BMW X5, Toyota Land Cruiser 150)",
+    F: "F – premium SUV (np. Range Rover, Mercedes GLS)",
+  },
+  terenowy: {
+    A: "A – –",
+    B: "B – małe terenowe (np. Suzuki Jimny, Lada Niva)",
+    C: "C – kompaktowe terenowe (np. Jeep Wrangler 2d, Dacia Duster 4x4)",
+    D: "D – średnie terenowe (np. Toyota Land Cruiser Prado, Jeep Wrangler 4d)",
+    E: "E – duże terenowe (np. Toyota Land Cruiser 300, Nissan Patrol)",
+    F: "F – –",
+  },
 };
+
+function getSegmentName(segment: Segment, bodyStyle: BodyStyle | null): string {
+  return SEGMENT_DESCRIPTIONS[bodyStyle ?? "sedan"][segment];
+}
 
 const SEGMENT_RANGE: Record<BodyStyle, { min: Segment; max: Segment }> = {
   sportowy: { min: "A", max: "F" },
@@ -531,7 +577,7 @@ export default function CarConfigurator() {
           <p className="text-xs uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-1">
             Sugerowany segment
           </p>
-          <p className="text-2xl font-bold text-accent">{SEGMENT_NAMES[suggestedSegment]}</p>
+          <p className="text-2xl font-bold text-accent">{getSegmentName(suggestedSegment, answers.bodyStyle)}</p>
         </div>
 
         <div className="space-y-2">
@@ -539,7 +585,7 @@ export default function CarConfigurator() {
             Możesz wybrać inny segment, jeśli nasza sugestia nie pasuje:
           </p>
           <div className="flex flex-wrap justify-center gap-2">
-            {(Object.keys(SEGMENT_NAMES) as Segment[]).filter((s) => {
+            {SEGMENTS_ORDERED.filter((s) => {
               const range = SEGMENT_RANGE[answers.bodyStyle ?? "sedan"];
               const idx = SEGMENTS_ORDERED.indexOf(s);
               return idx >= SEGMENTS_ORDERED.indexOf(range.min) && idx <= SEGMENTS_ORDERED.indexOf(range.max);
@@ -731,7 +777,7 @@ export default function CarConfigurator() {
             Twój idealny samochód
           </h3>
           <div className="grid sm:grid-cols-2 gap-4 text-sm">
-            <SummaryRow label="Segment" value={SEGMENT_NAMES[segment]} />
+            <SummaryRow label="Segment" value={getSegmentName(segment, answers.bodyStyle)} />
             <SummaryRow
               label="Typ samochodu"
               value={
