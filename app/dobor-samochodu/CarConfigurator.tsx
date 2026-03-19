@@ -46,21 +46,45 @@ const SEGMENT_NAMES: Record<Segment, string> = {
   F: "F – klasa wyższa (np. BMW serii 7, Mercedes klasy S)",
 };
 
+const SEGMENT_RANGE: Record<BodyStyle, { min: Segment; max: Segment }> = {
+  sportowy: { min: "A", max: "F" },
+  sedan: { min: "A", max: "F" },
+  van: { min: "B", max: "E" },
+  crossover: { min: "A", max: "F" },
+  suv: { min: "B", max: "F" },
+  terenowy: { min: "B", max: "E" },
+};
+
+const SEGMENTS_ORDERED: Segment[] = ["A", "B", "C", "D", "E", "F"];
+
+function clampSegment(seg: Segment, bodyStyle: BodyStyle | null): Segment {
+  const range = SEGMENT_RANGE[bodyStyle ?? "sedan"];
+  const idx = SEGMENTS_ORDERED.indexOf(seg);
+  const minIdx = SEGMENTS_ORDERED.indexOf(range.min);
+  const maxIdx = SEGMENTS_ORDERED.indexOf(range.max);
+  return SEGMENTS_ORDERED[Math.max(minIdx, Math.min(maxIdx, idx))];
+}
+
 function calcSegment(a: Answers): Segment {
   let score = 0;
   // wzrost
   if (a.height >= 170) score += a.height-170;
   // pasażerowie
-  score += a.passengers * 10
+  score += a.passengers * 10;
   // trasy
   score *= ((a.longTrips + 100) / 100);
+  // van – mniejszy score (więcej osób nie wymusza większego segmentu tak mocno)
+  if (a.bodyStyle === "van") score -= 20;
 
-  if (score <= 20) return "A";
-  if (score <= 40) return "B";
-  if (score <= 60) return "C";
-  if (score <= 80) return "D";
-  if (score <= 120) return "E";
-  return "F";
+  let seg: Segment;
+  if (score <= 20) seg = "A";
+  else if (score <= 40) seg = "B";
+  else if (score <= 60) seg = "C";
+  else if (score <= 80) seg = "D";
+  else if (score <= 120) seg = "E";
+  else seg = "F";
+
+  return clampSegment(seg, a.bodyStyle);
 }
 
 /* ──────────────── power logic ──────────────── */
@@ -405,7 +429,9 @@ export default function CarConfigurator() {
   const [answers, setAnswers] = useState<Answers>(INITIAL);
 
   const suggestedSegment = useMemo(() => calcSegment(answers), [answers]);
-  const segment = answers.segmentOverride ?? suggestedSegment;
+  const segment = answers.segmentOverride
+    ? clampSegment(answers.segmentOverride, answers.bodyStyle)
+    : suggestedSegment;
   const suggestedHP = useMemo(
     () => calcSuggestedHP(answers, segment),
     [answers, segment],
@@ -413,7 +439,14 @@ export default function CarConfigurator() {
   const displayHP = answers.powerOverride ?? suggestedHP;
 
   const set = <K extends keyof Answers>(key: K, val: Answers[K]) =>
-    setAnswers((prev) => ({ ...prev, [key]: val }));
+    setAnswers((prev) => {
+      const next = { ...prev, [key]: val };
+      // clamp passengers when switching away from van
+      if (key === "bodyStyle" && val !== "van" && next.passengers > 5) {
+        next.passengers = 5;
+      }
+      return next;
+    });
 
   const canNext = (): boolean =>
     !(step === 0 && !answers.bodyStyle) && !(step === 2 && !answers.bodyShape);
@@ -473,7 +506,7 @@ export default function CarConfigurator() {
           label="Typowa liczba pasażerów (z kierowcą)"
           value={answers.passengers}
           min={1}
-          max={5}
+          max={answers.bodyStyle === "van" ? 8 : 5}
           step={1}
           unit="os."
           hint="Ile osób jednocześnie przewozisz najczęściej?"
@@ -506,7 +539,11 @@ export default function CarConfigurator() {
             Możesz wybrać inny segment, jeśli nasza sugestia nie pasuje:
           </p>
           <div className="flex flex-wrap justify-center gap-2">
-            {(Object.keys(SEGMENT_NAMES) as Segment[]).map((s) => {
+            {(Object.keys(SEGMENT_NAMES) as Segment[]).filter((s) => {
+              const range = SEGMENT_RANGE[answers.bodyStyle ?? "sedan"];
+              const idx = SEGMENTS_ORDERED.indexOf(s);
+              return idx >= SEGMENTS_ORDERED.indexOf(range.min) && idx <= SEGMENTS_ORDERED.indexOf(range.max);
+            }).map((s) => {
               const isActive = segment === s;
               const isSuggested = suggestedSegment === s && !answers.segmentOverride;
               return (
