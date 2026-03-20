@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import React, { useState, useMemo } from "react";
 
 /* ───────────────────────── types ───────────────────────── */
 
@@ -240,7 +240,7 @@ function CardSelector<T extends string>({
   value,
   onChange,
 }: {
-  options: { id: T; title: string; icon: string; pros: string[]; cons: string[] }[];
+  options: { id: T; title: string; icon: string; pros: string[]; cons: string[]; note?: React.ReactNode }[];
   value: T | null;
   onChange: (v: T) => void;
 }) {
@@ -285,6 +285,11 @@ function CardSelector<T extends string>({
                 </div>
               ))}
             </div>
+            {opt.note && (
+              <div className="mt-3 pt-3 border-t border-gray-100 dark:border-gray-700 text-xs text-amber-600 dark:text-amber-400">
+                {opt.note}
+              </div>
+            )}
           </button>
         );
       })}
@@ -300,6 +305,7 @@ const BODY_STYLES: {
   icon: string;
   pros: string[];
   cons: string[];
+  note?: React.ReactNode;
 }[] = [
   {
     id: "sportowy",
@@ -374,6 +380,7 @@ const BODY_STYLES: {
       "Gorsze prowadzenie – wysoki środek ciężkości",
       "Trudniej zaparkować w mieście",
     ],
+    note: (<>SUV-y i crossovery mają w większości pokrywający się wybór modeli. <strong>Sugerujemy wybór SUV-a wyłącznie jeśli planujesz zjeżdżać z asfaltu</strong> – w przeciwnym razie crossover będzie lepszym wyborem.</>),
   },
   {
     id: "terenowy",
