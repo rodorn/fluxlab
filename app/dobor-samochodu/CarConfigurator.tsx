@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useMemo } from "react";
+import Image from "next/image";
 
 /* ───────────────────────── types ───────────────────────── */
 
@@ -357,7 +358,7 @@ function CardSelector<T extends string>({
   onChange,
   multiple,
 }: {
-  options: { id: T; title: string; icon: string; pros: string[]; cons: string[]; note?: React.ReactNode }[];
+  options: { id: T; title: string; image: string; pros: string[]; cons: string[]; note?: React.ReactNode }[];
   value: T | T[] | null;
   onChange: (v: T) => void;
   multiple?: boolean;
@@ -373,14 +374,26 @@ function CardSelector<T extends string>({
             key={opt.id}
             type="button"
             onClick={() => onChange(opt.id)}
-            className={`text-left p-5 rounded-2xl border-2 transition-all ${
+            className={`text-left rounded-2xl border-2 transition-all overflow-hidden ${
               selected
-                ? "border-accent bg-accent/5 dark:bg-accent/10 shadow-sm"
+                ? "border-accent shadow-md ring-1 ring-accent/30"
                 : "border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600"
             }`}
           >
-            <div className="flex items-center gap-3 mb-3">
-              <span className="text-2xl">{opt.icon}</span>
+            <div className="relative w-full h-32 bg-gray-100 dark:bg-gray-800">
+              <Image
+                src={opt.image}
+                alt={opt.title}
+                fill
+                className="object-cover"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                unoptimized
+              />
+              {selected && (
+                <div className="absolute inset-0 bg-accent/10" />
+              )}
+            </div>
+            <div className="p-4">
               <span
                 className={`font-semibold text-sm ${
                   selected
@@ -390,26 +403,26 @@ function CardSelector<T extends string>({
               >
                 {opt.title}
               </span>
-            </div>
-            <div className="space-y-1.5 text-xs">
-              {opt.pros.map((p) => (
-                <div key={p} className="flex gap-1.5 text-emerald-600 dark:text-emerald-400">
-                  <span className="shrink-0">+</span>
-                  <span>{p}</span>
-                </div>
-              ))}
-              {opt.cons.map((c) => (
-                <div key={c} className="flex gap-1.5 text-red-500 dark:text-red-400">
-                  <span className="shrink-0">−</span>
-                  <span>{c}</span>
-                </div>
-              ))}
-            </div>
-            {opt.note && (
-              <div className="mt-3 pt-3 border-t border-gray-100 dark:border-gray-700 text-xs text-amber-600 dark:text-amber-400">
-                {opt.note}
+              <div className="mt-2 space-y-1 text-xs">
+                {opt.pros.map((p) => (
+                  <div key={p} className="flex gap-1.5 text-emerald-600 dark:text-emerald-400">
+                    <span className="shrink-0">+</span>
+                    <span>{p}</span>
+                  </div>
+                ))}
+                {opt.cons.map((c) => (
+                  <div key={c} className="flex gap-1.5 text-red-500 dark:text-red-400">
+                    <span className="shrink-0">−</span>
+                    <span>{c}</span>
+                  </div>
+                ))}
               </div>
-            )}
+              {opt.note && (
+                <div className="mt-3 pt-3 border-t border-gray-100 dark:border-gray-700 text-xs text-amber-600 dark:text-amber-400">
+                  {opt.note}
+                </div>
+              )}
+            </div>
           </button>
         );
       })}
@@ -419,10 +432,21 @@ function CardSelector<T extends string>({
 
 /* ──────────────── body style options ──────────────── */
 
+const IMG = "/photos/car-chooser";
+
+const BG_IMAGES: Record<BodyStyle, { light: string; dark: string }> = {
+  sportowy:  { light: `${IMG}/bg-sport-light.jpg`,      dark: `${IMG}/bg-sport-dark.png` },
+  sedan:     { light: `${IMG}/bg-osobowy-light.jpg`,     dark: `${IMG}/bg-osobowy-dark.jpg` },
+  van:       { light: `${IMG}/bg-van-light.avif`,        dark: `${IMG}/bg-van-dark.jpg` },
+  crossover: { light: `${IMG}/bg-crossover-light.webp`,  dark: `${IMG}/bg-crossover-dark.jpg` },
+  suv:       { light: `${IMG}/bg-suv-light.jpg`,         dark: `${IMG}/bg-suv-dark.jpeg` },
+  terenowy:  { light: `${IMG}/bg-terenowy-light.jpg`,    dark: `${IMG}/bg-terenowy-dark.avif` },
+};
+
 const BODY_STYLES: {
   id: BodyStyle;
   title: string;
-  icon: string;
+  image: string;
   pros: string[];
   cons: string[];
   note?: React.ReactNode;
@@ -430,7 +454,7 @@ const BODY_STYLES: {
   {
     id: "sportowy",
     title: "Sportowy / Coupé",
-    icon: "🏎️",
+    image: `${IMG}/type-sport.webp`,
     pros: [
       "Niski środek ciężkości",
       "Doskonałe prowadzenie i reakcje",
@@ -445,7 +469,7 @@ const BODY_STYLES: {
   {
     id: "sedan",
     title: "Osobowy",
-    icon: "🚗",
+    image: `${IMG}/type-osobowy.jpg`,
     pros: [
       "Uniwersalny – sprawdzi się wszędzie",
       "Dobry komfort na trasie",
@@ -458,7 +482,7 @@ const BODY_STYLES: {
   {
     id: "van",
     title: "Van",
-    icon: "🚐",
+    image: `${IMG}/type-van.jpeg`,
     pros: [
       "Doskonała funkcjonalnoś",
       "Optymalne wykorzystanie przestrzeni"
@@ -471,7 +495,7 @@ const BODY_STYLES: {
   {
     id: "crossover",
     title: "Crossover",
-    icon: "🚙",
+    image: `${IMG}/type-crossover.jpg`,
     pros: [
       "Wyższa pozycja – lepsza widoczność",
       "Wygodne wsiadanie/wysiadanie",
@@ -486,7 +510,7 @@ const BODY_STYLES: {
   {
     id: "suv",
     title: "SUV",
-    icon: "🛻",
+    image: `${IMG}/type-suv.jpg`,
     pros: [
         "Wyższa pozycja – lepsza widoczność",
         "Wygodne wsiadanie/wysiadanie",
@@ -502,7 +526,7 @@ const BODY_STYLES: {
   {
     id: "terenowy",
     title: "Terenowy / Off-road",
-    icon: "⛰️",
+    image: `${IMG}/type-terenowy.webp`,
     pros: [
       "Prawdziwy napęd 4x4 z reduktorem",
       "Duży prześwit i możliwości terenowe",
@@ -519,13 +543,13 @@ const BODY_STYLES: {
 
 /* ──────────────── body shape options ──────────────── */
 
-type ShapeOption = { id: BodyShape; title: string; icon: string; pros: string[]; cons: string[] };
+type ShapeOption = { id: BodyShape; title: string; image: string; pros: string[]; cons: string[] };
 
 const SHAPES_STANDARD: ShapeOption[] = [
   {
     id: "hatchback",
     title: "Hatchback",
-    icon: "🚗",
+    image: `${IMG}/shape-hatchback.jpg`,
     pros: [
       "Kompaktowy – idealny do miasta",
       "Uchylna klapa – łatwy załadunek",
@@ -539,7 +563,7 @@ const SHAPES_STANDARD: ShapeOption[] = [
   {
     id: "sedan",
     title: "Sedan",
-    icon: "🚘",
+    image: `${IMG}/shape-sedan.jpg`,
     pros: [
       "Cichsza kabina – bagażnik oddzielony",
       "Elegancki wygląd",
@@ -554,7 +578,7 @@ const SHAPES_STANDARD: ShapeOption[] = [
   {
     id: "kombi",
     title: "Kombi",
-    icon: "🚃",
+    image: `${IMG}/shape-kombi.jpg`,
     pros: [
       "Ogromny bagażnik – idealny na rodzinę",
       "Łatwo składane tylne siedzenia",
@@ -569,7 +593,7 @@ const SHAPES_STANDARD: ShapeOption[] = [
   {
     id: "liftback",
     title: "Liftback",
-    icon: "🏁",
+    image: `${IMG}/shape-liftback.jpg`,
     pros: [
       "Wygląd sedana + praktyczność hatchbacka",
       "Duży otwór bagażnika",
@@ -586,7 +610,7 @@ const SHAPES_SPORT: ShapeOption[] = [
   {
     id: "coupe-2",
     title: "Coupé 2-osobowe",
-    icon: "🏎️",
+    image: `${IMG}/shape-coupe-2.avif`,
     pros: [
       "Najlepsza dynamika i prowadzenie",
       "Niska masa – świetne osiągi",
@@ -601,7 +625,7 @@ const SHAPES_SPORT: ShapeOption[] = [
   {
     id: "roadster-2",
     title: "Roadster 2-osobowy",
-    icon: "🏁",
+    image: `${IMG}/shape-roadster-2.webp`,
     pros: [
       "Otwarte nadwozie – jazda z wiatrem",
       "Lekki – świetne prowadzenie",
@@ -616,7 +640,7 @@ const SHAPES_SPORT: ShapeOption[] = [
   {
     id: "coupe-2plus2",
     title: "Coupé 2+2",
-    icon: "🚗",
+    image: `${IMG}/shape-coupe-2plus2.jpg`,
     pros: [
       "Sportowy charakter + awaryjne tylne miejsca",
       "Kompromis między stylem a użytecznością",
@@ -631,7 +655,7 @@ const SHAPES_SPORT: ShapeOption[] = [
   {
     id: "cabriolet-2plus2",
     title: "Cabriolet 2+2",
-    icon: "🌅",
+    image: `${IMG}/shape-cabriolet-2plus2.avif`,
     pros: [
       "Otwarte nadwozie + 4 miejsca",
       "Elegancki wygląd",
@@ -646,7 +670,7 @@ const SHAPES_SPORT: ShapeOption[] = [
   {
     id: "hot-hatch",
     title: "Hot Hatch",
-    icon: "🔥",
+    image: `${IMG}/shape-hot-hatch.jpg`,
     pros: [
       "Praktyczność hatchbacka + sportowe osiągi",
       "5 miejsc i użyteczny bagażnik",
@@ -661,7 +685,7 @@ const SHAPES_SPORT: ShapeOption[] = [
   {
     id: "4door-coupe",
     title: "4-door Coupé",
-    icon: "💎",
+    image: `${IMG}/shape-4door-coupe.jpg`,
     pros: [
       "Sportowa sylwetka + 4 drzwi",
       "Wygodne wsiadanie do tyłu",
@@ -676,7 +700,7 @@ const SHAPES_SPORT: ShapeOption[] = [
   {
     id: "sport-sedan",
     title: "Sedan sportowy",
-    icon: "🚘",
+    image: `${IMG}/shape-sport-sedan.avif`,
     pros: [
       "4 drzwi i pełne 5 miejsc",
       "Duży bagażnik",
@@ -691,7 +715,7 @@ const SHAPES_SPORT: ShapeOption[] = [
   {
     id: "sport-crossover",
     title: "Crossover sportowy",
-    icon: "🏔️",
+    image: `${IMG}/shape-sport-crossover.avif`,
     pros: [
       "Wyższa pozycja + sportowe osiągi",
       "Dobra widoczność i przestronność",
@@ -709,7 +733,7 @@ const SHAPES_CROSSOVER_SUV: ShapeOption[] = [
   {
     id: "standard",
     title: "Zwykły",
-    icon: "🚙",
+    image: `${IMG}/shape-standard.webp`,
     pros: [
       "Więcej miejsca w bagażniku",
       "Lepsza widoczność do tyłu",
@@ -722,7 +746,7 @@ const SHAPES_CROSSOVER_SUV: ShapeOption[] = [
   {
     id: "coupe",
     title: "Coupé (ścięty tył)",
-    icon: "💎",
+    image: `${IMG}/shape-coupe.avif`,
     pros: [
       "Sportowa sylwetka",
       "Lepsza aerodynamika",
@@ -740,7 +764,7 @@ const SHAPES_TERENOWY: ShapeOption[] = [
   {
     id: "standard",
     title: "Zwykły",
-    icon: "⛰️",
+    image: `${IMG}/shape-terenowy-standard.avif`,
     pros: [
       "Zamknięte nadwozie – ochrona bagażu",
       "Komfort pasażerów z tyłu",
@@ -753,7 +777,7 @@ const SHAPES_TERENOWY: ShapeOption[] = [
   {
     id: "pickup",
     title: "Pick-up",
-    icon: "🛻",
+    image: `${IMG}/shape-pickup.jpg`,
     pros: [
       "Otwarta skrzynia ładunkowa",
       "Ogromna ładowność",
@@ -1166,8 +1190,32 @@ export default function CarConfigurator() {
     ? [renderStep1, renderStep2, renderStep0, renderStep3]
     : [renderStep1, renderStep0, renderStep3];
 
+  const bg = answers.bodyStyle ? BG_IMAGES[answers.bodyStyle] : null;
+
   return (
-    <div className="max-w-3xl mx-auto">
+    <div className="relative max-w-3xl mx-auto">
+      {/* dynamic background */}
+      {bg && (
+        <div className="absolute inset-0 -mx-6 -my-4 -z-10 overflow-hidden rounded-3xl">
+          <Image
+            src={bg.light}
+            alt=""
+            fill
+            className="object-cover opacity-10 dark:hidden"
+            sizes="100vw"
+            unoptimized
+          />
+          <Image
+            src={bg.dark}
+            alt=""
+            fill
+            className="object-cover opacity-0 dark:opacity-15"
+            sizes="100vw"
+            unoptimized
+          />
+        </div>
+      )}
+
       {/* step indicator */}
       <div className="flex items-center gap-2 mb-10">
         {stepTitles.map((title: string, i: number) => (
