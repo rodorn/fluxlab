@@ -380,7 +380,7 @@ function CardSelector<T extends string>({
                 : "border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600"
             }`}
           >
-            <div className="relative w-full h-36 shrink-0 bg-gray-100 dark:bg-gray-800">
+            <div className="relative w-full h-44 sm:h-36 shrink-0 bg-gray-100 dark:bg-gray-800">
               <Image
                 src={opt.image}
                 alt={opt.title}
