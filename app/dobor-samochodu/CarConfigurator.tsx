@@ -5,7 +5,10 @@ import { useState, useMemo } from "react";
 /* ───────────────────────── types ───────────────────────── */
 
 type BodyStyle = "sportowy" | "sedan" | "van" | "crossover" | "suv" | "terenowy";
-type BodyShape = "hatchback" | "sedan" | "kombi" | "liftback";
+type BodyShape =
+  | "hatchback" | "sedan" | "kombi" | "liftback"
+  | "coupe-2" | "roadster-2" | "coupe-2plus2" | "cabriolet-2plus2"
+  | "hot-hatch" | "4door-coupe" | "sport-sedan" | "sport-crossover";
 
 interface Answers {
   height: number;
@@ -392,13 +395,9 @@ const BODY_STYLES: {
 
 /* ──────────────── body shape options ──────────────── */
 
-const BODY_SHAPES: {
-  id: BodyShape;
-  title: string;
-  icon: string;
-  pros: string[];
-  cons: string[];
-}[] = [
+type ShapeOption = { id: BodyShape; title: string; icon: string; pros: string[]; cons: string[] };
+
+const SHAPES_STANDARD: ShapeOption[] = [
   {
     id: "hatchback",
     title: "Hatchback",
@@ -459,12 +458,140 @@ const BODY_SHAPES: {
   },
 ];
 
+const SHAPES_SPORT: ShapeOption[] = [
+  {
+    id: "coupe-2",
+    title: "Coupé 2-osobowe",
+    icon: "🏎️",
+    pros: [
+      "Najlepsza dynamika i prowadzenie",
+      "Niska masa – świetne osiągi",
+      "Najniższy środek ciężkości",
+    ],
+    cons: [
+      "Tylko 2 miejsca",
+      "Minimalny bagażnik",
+      "Niska praktyczność na co dzień",
+    ],
+  },
+  {
+    id: "roadster-2",
+    title: "Roadster 2-osobowy",
+    icon: "🏁",
+    pros: [
+      "Otwarte nadwozie – jazda z wiatrem",
+      "Lekki – świetne prowadzenie",
+      "Wyjątkowe doznania z jazdy",
+    ],
+    cons: [
+      "Mniej sztywna konstrukcja niż coupé",
+      "Brak praktyczności",
+      "Wrażliwy na pogodę",
+    ],
+  },
+  {
+    id: "coupe-2plus2",
+    title: "Coupé 2+2",
+    icon: "🚗",
+    pros: [
+      "Sportowy charakter + awaryjne tylne miejsca",
+      "Kompromis między stylem a użytecznością",
+      "Dobra aerodynamika",
+    ],
+    cons: [
+      "Tylne miejsca ciasne – raczej dla dzieci",
+      "Mały bagażnik",
+      "Droższe od standardowego coupé",
+    ],
+  },
+  {
+    id: "cabriolet-2plus2",
+    title: "Cabriolet 2+2",
+    icon: "🌅",
+    pros: [
+      "Otwarte nadwozie + 4 miejsca",
+      "Elegancki wygląd",
+      "Większa praktyczność niż roadster",
+    ],
+    cons: [
+      "Cięższy od roadsterów – gorsza dynamika",
+      "Drogi w zakupie i utrzymaniu",
+      "Tylne miejsca nadal ciasne",
+    ],
+  },
+  {
+    id: "hot-hatch",
+    title: "Hot Hatch",
+    icon: "🔥",
+    pros: [
+      "Praktyczność hatchbacka + sportowe osiągi",
+      "5 miejsc i użyteczny bagażnik",
+      "Świetny do codziennej jazdy",
+    ],
+    cons: [
+      "Wyższy środek ciężkości niż coupé",
+      "Twarde zawieszenie – mniej komfortu",
+      "Wyższe ubezpieczenie",
+    ],
+  },
+  {
+    id: "4door-coupe",
+    title: "4-door Coupé",
+    icon: "💎",
+    pros: [
+      "Sportowa sylwetka + 4 drzwi",
+      "Wygodne wsiadanie do tyłu",
+      "Elegancki kompromis",
+    ],
+    cons: [
+      "Mniej miejsca nad głową z tyłu",
+      "Mniejszy bagażnik niż sedan",
+      "Wyższa cena od sedana",
+    ],
+  },
+  {
+    id: "sport-sedan",
+    title: "Sedan sportowy",
+    icon: "🚘",
+    pros: [
+      "4 drzwi i pełne 5 miejsc",
+      "Duży bagażnik",
+      "Sportowy charakter w praktycznym nadwoziu",
+    ],
+    cons: [
+      "Cięższy od coupé – gorsze prowadzenie",
+      "Mniej wyrazisty wygląd",
+      "Wyższe spalanie niż zwykły sedan",
+    ],
+  },
+  {
+    id: "sport-crossover",
+    title: "Crossover sportowy",
+    icon: "🏔️",
+    pros: [
+      "Wyższa pozycja + sportowe osiągi",
+      "Dobra widoczność i przestronność",
+      "Modny segment – duży wybór",
+    ],
+    cons: [
+      "Najgorsze prowadzenie z opcji sportowych",
+      "Wysokie spalanie",
+      "Wysoki środek ciężkości",
+    ],
+  },
+];
+
+function getBodyShapes(bodyStyle: BodyStyle | null): ShapeOption[] {
+  if (bodyStyle === "sportowy") return SHAPES_SPORT;
+  return SHAPES_STANDARD;
+}
+
 /* ──────────────── steps ──────────────── */
 
 const STEP_TITLES = [
   "Typ samochodu",
-  "Segment",
   "Forma nadwozia",
+  "Segment",
   "Moc silnika",
 ];
 
@@ -487,15 +614,21 @@ export default function CarConfigurator() {
   const set = <K extends keyof Answers>(key: K, val: Answers[K]) =>
     setAnswers((prev) => {
       const next = { ...prev, [key]: val };
-      // clamp passengers when switching away from van
-      if (key === "bodyStyle" && val !== "van" && next.passengers > 5) {
-        next.passengers = 5;
+      if (key === "bodyStyle") {
+        // clamp passengers when switching away from van
+        if (val !== "van" && next.passengers > 5) {
+          next.passengers = 5;
+        }
+        // reset body shape when type changes (options differ)
+        if (val !== prev.bodyStyle) {
+          next.bodyShape = null;
+        }
       }
       return next;
     });
 
   const canNext = (): boolean =>
-    !(step === 0 && !answers.bodyStyle) && !(step === 2 && !answers.bodyShape);
+    !(step === 0 && !answers.bodyStyle) && !(step === 1 && !answers.bodyShape);
 
   /* ──── render helpers ──── */
 
@@ -646,73 +779,81 @@ export default function CarConfigurator() {
     </div>
   );
 
-  const renderStep2 = () => (
-    <div className="space-y-8">
-      <div className="rounded-2xl bg-accent/5 dark:bg-accent/10 border border-accent/20 p-6">
-        <h3 className="text-sm font-semibold text-accent mb-2">
-          Jaka forma nadwozia?
-        </h3>
-        <p className="text-sm text-gray-600 dark:text-gray-400">
-          Forma nadwozia wpływa na praktyczność na co dzień – wielkość
-          bagażnika, łatwość załadunku i możliwość przewozu dużych rzeczy.
-        </p>
-      </div>
-
+  const renderStep2 = () => {
+    const isSport = answers.bodyStyle === "sportowy";
+    return (
       <div className="space-y-8">
-        <Slider
-          label="Jak często przewozisz dużo bagaży?"
-          value={answers.luggageFreq}
-          min={0}
-          max={100}
-          step={5}
-          onChange={(v) => set("luggageFreq", v)}
-          labels={{
-            left: "📱 Prawie nigdy",
-            right: "📦 Bardzo często",
-          }}
-        />
-
-        <div className="flex items-center gap-3">
-          <button
-            type="button"
-            onClick={() => set("foldSeats", !answers.foldSeats)}
-            className={`relative w-12 h-7 rounded-full transition-colors ${
-              answers.foldSeats
-                ? "bg-accent"
-                : "bg-gray-300 dark:bg-gray-600"
-            }`}
-          >
-            <span
-              className={`absolute top-0.5 left-0.5 w-6 h-6 rounded-full bg-white shadow transition-transform ${
-                answers.foldSeats ? "translate-x-5" : ""
-              }`}
-            />
-          </button>
-          <span className="text-sm text-gray-700 dark:text-gray-300">
-            Potrzebuję składanych tylnych siedzeń
-          </span>
+        <div className="rounded-2xl bg-accent/5 dark:bg-accent/10 border border-accent/20 p-6">
+          <h3 className="text-sm font-semibold text-accent mb-2">
+            {isSport ? "Jaki rodzaj nadwozia sportowego?" : "Jaka forma nadwozia?"}
+          </h3>
+          <p className="text-sm text-gray-600 dark:text-gray-400">
+            {isSport
+              ? "Wybierz formę, która odpowiada Twojemu stylowi jazdy – od czystego coupé po praktycznego hot hatcha."
+              : "Forma nadwozia wpływa na praktyczność na co dzień – wielkość bagażnika, łatwość załadunku i możliwość przewozu dużych rzeczy."}
+          </p>
         </div>
-      </div>
 
-      {/* recommendation */}
-      <div className="rounded-2xl bg-accent/5 dark:bg-accent/10 border border-accent/20 p-4">
-        <p className="text-xs text-gray-500 dark:text-gray-400 mb-2">Na podstawie Twoich odpowiedzi sugerujemy:</p>
-        <p className="text-sm font-medium text-accent">
-          {answers.luggageFreq > 60 || answers.foldSeats
-            ? "Kombi – duży bagażnik i łatwo składane siedzenia"
-            : answers.luggageFreq > 30
-              ? "Liftback – kompromis między stylem a praktycznością"
-              : "Hatchback lub sedan – wystarczą do codziennego użytku"}
-        </p>
-      </div>
+        {!isSport && (
+          <>
+            <div className="space-y-8">
+              <Slider
+                label="Jak często przewozisz dużo bagaży?"
+                value={answers.luggageFreq}
+                min={0}
+                max={100}
+                step={5}
+                onChange={(v) => set("luggageFreq", v)}
+                labels={{
+                  left: "📱 Prawie nigdy",
+                  right: "📦 Bardzo często",
+                }}
+              />
 
-      <CardSelector<BodyShape>
-        options={BODY_SHAPES}
-        value={answers.bodyShape}
-        onChange={(v) => set("bodyShape", v)}
-      />
-    </div>
-  );
+              <div className="flex items-center gap-3">
+                <button
+                  type="button"
+                  onClick={() => set("foldSeats", !answers.foldSeats)}
+                  className={`relative w-12 h-7 rounded-full transition-colors ${
+                    answers.foldSeats
+                      ? "bg-accent"
+                      : "bg-gray-300 dark:bg-gray-600"
+                  }`}
+                >
+                  <span
+                    className={`absolute top-0.5 left-0.5 w-6 h-6 rounded-full bg-white shadow transition-transform ${
+                      answers.foldSeats ? "translate-x-5" : ""
+                    }`}
+                  />
+                </button>
+                <span className="text-sm text-gray-700 dark:text-gray-300">
+                  Potrzebuję składanych tylnych siedzeń
+                </span>
+              </div>
+            </div>
+
+            {/* recommendation */}
+            <div className="rounded-2xl bg-accent/5 dark:bg-accent/10 border border-accent/20 p-4">
+              <p className="text-xs text-gray-500 dark:text-gray-400 mb-2">Na podstawie Twoich odpowiedzi sugerujemy:</p>
+              <p className="text-sm font-medium text-accent">
+                {answers.luggageFreq > 60 || answers.foldSeats
+                  ? "Kombi – duży bagażnik i łatwo składane siedzenia"
+                  : answers.luggageFreq > 30
+                    ? "Liftback – kompromis między stylem a praktycznością"
+                    : "Hatchback lub sedan – wystarczą do codziennego użytku"}
+              </p>
+            </div>
+          </>
+        )}
+
+        <CardSelector<BodyShape>
+          options={getBodyShapes(answers.bodyStyle)}
+          value={answers.bodyShape}
+          onChange={(v) => set("bodyShape", v)}
+        />
+      </div>
+    );
+  };
 
   const renderStep3 = () => {
     return (
@@ -788,7 +929,7 @@ export default function CarConfigurator() {
             <SummaryRow
               label="Forma nadwozia"
               value={
-                BODY_SHAPES.find((b) => b.id === answers.bodyShape)?.title ??
+                getBodyShapes(answers.bodyStyle).find((b) => b.id === answers.bodyShape)?.title ??
                 "—"
               }
             />
@@ -807,7 +948,7 @@ export default function CarConfigurator() {
     );
   };
 
-  const steps = [renderStep1, renderStep0, renderStep2, renderStep3];
+  const steps = [renderStep1, renderStep2, renderStep0, renderStep3];
 
   return (
     <div className="max-w-3xl mx-auto">
