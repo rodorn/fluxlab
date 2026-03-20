@@ -17,7 +17,7 @@ interface Answers {
   longTrips: number; // 0 = tylko miasto, 100 = tylko trasa
   segmentOverride: Segment | null;
   bodyStyle: BodyStyle | null;
-  bodyShape: BodyShape | null;
+  bodyShapes: BodyShape[];
   luggageFreq: number; // 0‑100
   foldSeats: boolean;
   maxSpeed: number;
@@ -30,7 +30,7 @@ const INITIAL: Answers = {
   longTrips: 30,
   segmentOverride: null,
   bodyStyle: null,
-  bodyShape: null,
+  bodyShapes: [],
   luggageFreq: 30,
   foldSeats: false,
   maxSpeed: 130,
@@ -163,10 +163,12 @@ const STYLE_DESCRIPTIONS: Record<BodyStyle, Partial<Record<Segment, string>>> = 
   },
 };
 
-function getSegmentName(segment: Segment, bodyStyle: BodyStyle | null, bodyShape: BodyShape | null): string {
-  // 1. bodyShape-specific description
-  const shapeDesc = bodyShape && SHAPE_DESCRIPTIONS[bodyShape]?.[segment];
-  if (shapeDesc) return shapeDesc;
+function getSegmentName(segment: Segment, bodyStyle: BodyStyle | null, bodyShapes: BodyShape[]): string {
+  // 1. bodyShape-specific description (first match)
+  for (const shape of bodyShapes) {
+    const desc = SHAPE_DESCRIPTIONS[shape]?.[segment];
+    if (desc) return desc;
+  }
   // 2. bodyStyle fallback
   const styleDesc = STYLE_DESCRIPTIONS[bodyStyle ?? "sedan"]?.[segment];
   if (styleDesc) return styleDesc;
@@ -205,15 +207,23 @@ const SHAPE_SEGMENT_OVERRIDE: Partial<Record<BodyShape, { min: Segment; max: Seg
   "roadster-2": { min: "B", max: "E" },
 };
 
-function getSegmentRange(bodyStyle: BodyStyle | null, bodyShape: BodyShape | null): { min: Segment; max: Segment } {
-  if (bodyShape && SHAPE_SEGMENT_OVERRIDE[bodyShape]) {
-    return SHAPE_SEGMENT_OVERRIDE[bodyShape]!;
+function getSegmentRange(bodyStyle: BodyStyle | null, bodyShapes: BodyShape[]): { min: Segment; max: Segment } {
+  if (bodyShapes.length === 0) return SEGMENT_RANGE[bodyStyle ?? "sedan"];
+  // union of all selected shapes' ranges
+  let minIdx = 5; // start at F
+  let maxIdx = 0; // start at A
+  for (const shape of bodyShapes) {
+    const range = SHAPE_SEGMENT_OVERRIDE[shape] ?? SEGMENT_RANGE[bodyStyle ?? "sedan"];
+    const lo = SEGMENTS_ORDERED.indexOf(range.min);
+    const hi = SEGMENTS_ORDERED.indexOf(range.max);
+    if (lo < minIdx) minIdx = lo;
+    if (hi > maxIdx) maxIdx = hi;
   }
-  return SEGMENT_RANGE[bodyStyle ?? "sedan"];
+  return { min: SEGMENTS_ORDERED[minIdx], max: SEGMENTS_ORDERED[maxIdx] };
 }
 
-function clampSegment(seg: Segment, bodyStyle: BodyStyle | null, bodyShape: BodyShape | null): Segment {
-  const range = getSegmentRange(bodyStyle, bodyShape);
+function clampSegment(seg: Segment, bodyStyle: BodyStyle | null, bodyShapes: BodyShape[]): Segment {
+  const range = getSegmentRange(bodyStyle, bodyShapes);
   const idx = SEGMENTS_ORDERED.indexOf(seg);
   const minIdx = SEGMENTS_ORDERED.indexOf(range.min);
   const maxIdx = SEGMENTS_ORDERED.indexOf(range.max);
@@ -239,7 +249,7 @@ function calcSegment(a: Answers): Segment {
   else if (score <= 120) seg = "E";
   else seg = "F";
 
-  return clampSegment(seg, a.bodyStyle, a.bodyShape);
+  return clampSegment(seg, a.bodyStyle, a.bodyShapes);
 }
 
 /* ──────────────── power logic ──────────────── */
@@ -345,15 +355,19 @@ function CardSelector<T extends string>({
   options,
   value,
   onChange,
+  multiple,
 }: {
   options: { id: T; title: string; icon: string; pros: string[]; cons: string[]; note?: React.ReactNode }[];
-  value: T | null;
+  value: T | T[] | null;
   onChange: (v: T) => void;
+  multiple?: boolean;
 }) {
   return (
     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
       {options.map((opt) => {
-        const selected = value === opt.id;
+        const selected = multiple
+          ? Array.isArray(value) && value.includes(opt.id)
+          : value === opt.id;
         return (
           <button
             key={opt.id}
@@ -784,7 +798,7 @@ export default function CarConfigurator() {
 
   const suggestedSegment = useMemo(() => calcSegment(answers), [answers]);
   const segment = answers.segmentOverride
-    ? clampSegment(answers.segmentOverride, answers.bodyStyle, answers.bodyShape)
+    ? clampSegment(answers.segmentOverride, answers.bodyStyle, answers.bodyShapes)
     : suggestedSegment;
   const suggestedHP = useMemo(
     () => calcSuggestedHP(answers, segment),
@@ -801,14 +815,14 @@ export default function CarConfigurator() {
           next.passengers = 5;
         }
         // reset body shape when type changes (options differ)
-        next.bodyShape = null;
+        next.bodyShapes = [];
       }
       return next;
     });
 
   const canNext = (): boolean => {
     if (step === 0 && !answers.bodyStyle) return false;
-    if (hasShapeStep && step === 1 && !answers.bodyShape) return false;
+    if (hasShapeStep && step === 1 && answers.bodyShapes.length === 0) return false;
     return true;
   };
 
@@ -890,20 +904,20 @@ export default function CarConfigurator() {
       <div className="rounded-2xl border border-gray-200 dark:border-gray-700 p-6 space-y-4">
         <div className="text-center">
           <p className="text-xs uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-1">
-            {(answers.bodyShape === "coupe-2" || answers.bodyShape === "roadster-2") ? "Sugerowana klasa" : "Sugerowany segment"}
+            {(answers.bodyShapes.includes("coupe-2") || answers.bodyShapes.includes("roadster-2")) ? "Sugerowana klasa" : "Sugerowany segment"}
           </p>
-          <p className="text-2xl font-bold text-accent">{getSegmentName(suggestedSegment, answers.bodyStyle, answers.bodyShape)}</p>
+          <p className="text-2xl font-bold text-accent">{getSegmentName(suggestedSegment, answers.bodyStyle, answers.bodyShapes)}</p>
         </div>
 
         <div className="space-y-2">
           <p className="text-xs text-gray-500 dark:text-gray-400 text-center">
-            {(answers.bodyShape === "coupe-2" || answers.bodyShape === "roadster-2")
+            {(answers.bodyShapes.includes("coupe-2") || answers.bodyShapes.includes("roadster-2"))
               ? "Możesz wybrać inną klasę, jeśli nasza sugestia nie pasuje:"
               : "Możesz wybrać inny segment, jeśli nasza sugestia nie pasuje:"}
           </p>
           <div className="flex flex-wrap justify-center gap-2">
             {SEGMENTS_ORDERED.filter((s) => {
-              const range = getSegmentRange(answers.bodyStyle, answers.bodyShape);
+              const range = getSegmentRange(answers.bodyStyle, answers.bodyShapes);
               const idx = SEGMENTS_ORDERED.indexOf(s);
               return idx >= SEGMENTS_ORDERED.indexOf(range.min) && idx <= SEGMENTS_ORDERED.indexOf(range.max);
             }).map((s) => {
@@ -934,7 +948,7 @@ export default function CarConfigurator() {
                 onClick={() => set("segmentOverride", null)}
                 className="text-xs text-accent hover:underline"
               >
-                {(answers.bodyShape === "coupe-2" || answers.bodyShape === "roadster-2")
+                {(answers.bodyShapes.includes("coupe-2") || answers.bodyShapes.includes("roadster-2"))
                   ? `Przywróć sugerowaną klasę (${suggestedSegment})`
                   : `Przywróć sugerowany segment (${suggestedSegment})`}
               </button>
@@ -1034,8 +1048,16 @@ export default function CarConfigurator() {
 
         <CardSelector<BodyShape>
           options={getBodyShapes(answers.bodyStyle)}
-          value={answers.bodyShape}
-          onChange={(v) => set("bodyShape", v)}
+          value={answers.bodyShapes}
+          multiple
+          onChange={(v) =>
+            set(
+              "bodyShapes",
+              answers.bodyShapes.includes(v)
+                ? answers.bodyShapes.filter((s) => s !== v)
+                : [...answers.bodyShapes, v],
+            )
+          }
         />
       </div>
     );
@@ -1104,7 +1126,7 @@ export default function CarConfigurator() {
             Twój idealny samochód
           </h3>
           <div className="grid sm:grid-cols-2 gap-4 text-sm">
-            <SummaryRow label="Segment" value={getSegmentName(segment, answers.bodyStyle, answers.bodyShape)} />
+            <SummaryRow label="Segment" value={getSegmentName(segment, answers.bodyStyle, answers.bodyShapes)} />
             <SummaryRow
               label="Typ samochodu"
               value={
@@ -1116,8 +1138,12 @@ export default function CarConfigurator() {
               <SummaryRow
                 label="Forma nadwozia"
                 value={
-                  getBodyShapes(answers.bodyStyle).find((b) => b.id === answers.bodyShape)?.title ??
-                  "—"
+                  answers.bodyShapes.length > 0
+                    ? getBodyShapes(answers.bodyStyle)
+                        .filter((b) => answers.bodyShapes.includes(b.id))
+                        .map((b) => b.title)
+                        .join(", ")
+                    : "—"
                 }
               />
             )}
