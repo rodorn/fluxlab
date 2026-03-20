@@ -41,59 +41,137 @@ const INITIAL: Answers = {
 
 type Segment = "A" | "B" | "C" | "D" | "E" | "F";
 
-const SEGMENT_DESCRIPTIONS: Record<BodyStyle, Record<Segment, string>> = {
-  sportowy: {
-    A: "A – mini sport (np. Abarth 500, Mini Cooper S)",
-    B: "B – budżetowe sport (np. Mazda MX-5, Toyota GR86)",
-    C: "C – kompaktowe sport (np. VW Golf GTI, Honda Civic Type R)",
-    D: "D – średnie sport (np. BMW M2, Audi S3)",
-    E: "E – premium sport (np. BMW M4, Porsche Cayman, Porsche 911)",
-    F: "F – klasa wyższa sport (np. Mercedes AMG GT, Audi R8)",
+/* Opisy segmentów per forma nadwozia (bodyShape).
+   Fallback: per typ samochodu (bodyStyle), potem generyczny. */
+
+const SHAPE_DESCRIPTIONS: Partial<Record<BodyShape, Partial<Record<Segment, string>>>> = {
+  /* ── osobowe ── */
+  hatchback: {
+    A: "A – mini hatchback (np. Fiat 500, Toyota Aygo)",
+    B: "B – małe hatchback (np. VW Polo, Mazda 2)",
+    C: "C – kompaktowe hatchback (np. VW Golf, Toyota Corolla HB)",
   },
   sedan: {
-    A: "A – mini (np. Fiat 500, Toyota Aygo)",
-    B: "B – małe (np. VW Polo, Mazda 2)",
-    C: "C – kompakt (np. VW Golf, Toyota Corolla)",
-    D: "D – klasa średnia (np. BMW serii 3, Mazda 6)",
-    E: "E – klasa średnia wyższa (np. BMW serii 5, Mercedes klasy E)",
-    F: "F – klasa wyższa (np. BMW serii 7, Mercedes klasy S)",
+    B: "B – małe sedany (np. Toyota Yaris Sedan, Honda City)",
+    C: "C – kompaktowe sedany (np. Toyota Corolla Sedan, VW Jetta)",
+    D: "D – średnie sedany (np. BMW serii 3, VW Passat)",
+    E: "E – duże sedany (np. BMW serii 5, Mercedes klasy E)",
+    F: "F – luksusowe sedany (np. BMW serii 7, Mercedes klasy S)",
   },
+  kombi: {
+    B: "B – małe kombi (np. Skoda Fabia Combi, Dacia Logan MCV)",
+    C: "C – kompaktowe kombi (np. Toyota Corolla TS, Skoda Octavia Combi)",
+    D: "D – średnie kombi (np. BMW serii 3 Touring, VW Passat Variant)",
+    E: "E – duże kombi (np. BMW serii 5 Touring, Mercedes klasy E T-Modell)",
+  },
+  liftback: {
+    C: "C – kompaktowe liftbacki (np. Skoda Octavia, Mazda 3)",
+    D: "D – średnie liftbacki (np. BMW serii 4, VW Arteon)",
+    E: "E – premium liftbacki (np. Audi A7, Porsche Panamera)",
+  },
+  /* ── sportowe ── */
+  "coupe-2": {
+    B: "B – budżetowe (np. Mazda MX-5 RF, Toyota GR86)",
+    C: "C – średnie (np. Alpine A110, Lotus Emira)",
+    D: "D – premium (np. Porsche Cayman, BMW M2)",
+    E: "E – super (np. Porsche 911, Audi R8)",
+  },
+  "roadster-2": {
+    B: "B – budżetowe (np. Mazda MX-5, Fiat 124 Spider)",
+    C: "C – średnie (np. BMW Z4, Porsche Boxster)",
+    D: "D – premium (np. Jaguar F-Type, Mercedes AMG GT Roadster)",
+    E: "E – super (np. Audi R8 Spyder, McLaren Spider)",
+  },
+  "coupe-2plus2": {
+    B: "B – małe (np. Toyota GR86, Subaru BRZ)",
+    C: "C – kompaktowe (np. BMW serii 2 Coupé)",
+    D: "D – średnie (np. BMW M4, Audi RS5)",
+    E: "E – premium (np. Porsche 911, Lexus LC)",
+    F: "F – luksusowe (np. Bentley Continental GT, Ferrari Roma)",
+  },
+  "cabriolet-2plus2": {
+    B: "B – małe (np. Mini Cabrio, Fiat 500C)",
+    C: "C – kompaktowe (np. BMW serii 2 Cabrio)",
+    D: "D – średnie (np. BMW serii 4 Cabrio, Mercedes C Cabrio)",
+    E: "E – premium (np. Mercedes E Cabrio, BMW serii 8 Cabrio)",
+    F: "F – luksusowe (np. Bentley Continental GTC, Rolls-Royce Dawn)",
+  },
+  "hot-hatch": {
+    A: "A – mini hot hatch (np. Abarth 500)",
+    B: "B – małe hot hatch (np. Ford Fiesta ST, Suzuki Swift Sport)",
+    C: "C – kompaktowe hot hatch (np. VW Golf GTI, Honda Civic Type R)",
+  },
+  "4door-coupe": {
+    C: "C – kompaktowe (np. Mercedes CLA, BMW serii 2 Gran Coupé)",
+    D: "D – średnie (np. BMW serii 4 Gran Coupé, Audi A5 Sportback)",
+    E: "E – premium (np. Mercedes CLS, BMW serii 8 Gran Coupé)",
+  },
+  "sport-sedan": {
+    D: "D – średnie (np. BMW M3, Mercedes C63 AMG)",
+    E: "E – premium (np. BMW M5, Mercedes E63 AMG)",
+    F: "F – luksusowe (np. Mercedes S63 AMG, BMW M760i)",
+  },
+  "sport-crossover": {
+    B: "B – małe (np. VW T-Roc R)",
+    C: "C – kompaktowe (np. VW Tiguan R, Mercedes GLA AMG)",
+    D: "D – średnie (np. BMW X4 M, Mercedes GLC AMG)",
+    E: "E – duże (np. BMW X5 M, Porsche Cayenne Turbo)",
+    F: "F – premium (np. Bentley Bentayga, Aston Martin DBX)",
+  },
+  /* ── crossover/SUV coupé ── */
+  coupe: {
+    D: "D – średnie coupé (np. BMW X4, Mercedes GLC Coupé)",
+    E: "E – duże coupé (np. BMW X6, Mercedes GLE Coupé)",
+  },
+  /* ── terenowy pickup ── */
+  pickup: {
+    D: "D – średnie pick-upy (np. Toyota Hilux, Ford Ranger)",
+    E: "E – duże pick-upy (np. Dodge RAM, Ford F-150)",
+  },
+};
+
+/* Fallback per bodyStyle (dla standard crossover/SUV/terenowy bez nadpisania kształtem) */
+const STYLE_DESCRIPTIONS: Record<BodyStyle, Partial<Record<Segment, string>>> = {
+  sportowy: {},
+  sedan: {},
   van: {
-    A: "A – –",
-    B: "B – małe vany (np. VW Caddy, Renault Kangoo)",
-    C: "C – kompaktowe vany (np. VW Touran, Citroën Berlingo)",
-    D: "D – średnie vany (np. VW Multivan, Ford Tourneo Custom)",
+    B: "B – kombivany (np. VW Caddy, Renault Kangoo)",
+    C: "C – minivany (np. VW Touran, Ford S-Max)",
+    D: "D – średnie vany (np. VW Sharan, Ford Galaxy)",
     E: "E – duże vany (np. Mercedes klasy V, VW Caravelle)",
-    F: "F – –",
   },
   crossover: {
     A: "A – mini crossover (np. Fiat 500X, Suzuki Ignis)",
     B: "B – małe crossover (np. Hyundai Kona, VW T-Cross)",
-    C: "C – kompaktowe crossover (np. Mazda CX-30, Kia Sportage)",
+    C: "C – kompaktowe crossover (np. Mazda CX-30, VW Tiguan)",
     D: "D – średnie crossover (np. BMW X3, Audi Q5)",
-    E: "E – duże crossover (np. BMW X5, Volvo XC60)",
-    F: "F – premium crossover (np. Porsche Cayenne, BMW X7)",
+    E: "E – duże crossover (np. BMW X5, Volvo XC90)",
+    F: "F – premium crossover (np. Mercedes GLS, BMW X7)",
   },
   suv: {
-    A: "A – –",
     B: "B – małe SUV (np. Suzuki Jimny, Dacia Duster)",
     C: "C – kompaktowe SUV (np. Toyota RAV4, Hyundai Tucson)",
     D: "D – średnie SUV (np. BMW X3, VW Tiguan Allspace)",
     E: "E – duże SUV (np. BMW X5, Toyota Land Cruiser 150)",
-    F: "F – premium SUV (np. Range Rover, Mercedes GLS)",
+    F: "F – premium SUV (np. BMW X7, Mercedes GLS)",
   },
   terenowy: {
-    A: "A – –",
     B: "B – małe terenowe (np. Suzuki Jimny, Lada Niva)",
     C: "C – kompaktowe terenowe (np. Jeep Wrangler 2d, Dacia Duster 4x4)",
     D: "D – średnie terenowe (np. Toyota Land Cruiser Prado, Jeep Wrangler 4d)",
     E: "E – duże terenowe (np. Toyota Land Cruiser 300, Nissan Patrol)",
-    F: "F – –",
   },
 };
 
-function getSegmentName(segment: Segment, bodyStyle: BodyStyle | null): string {
-  return SEGMENT_DESCRIPTIONS[bodyStyle ?? "sedan"][segment];
+function getSegmentName(segment: Segment, bodyStyle: BodyStyle | null, bodyShape: BodyShape | null): string {
+  // 1. bodyShape-specific description
+  const shapeDesc = bodyShape && SHAPE_DESCRIPTIONS[bodyShape]?.[segment];
+  if (shapeDesc) return shapeDesc;
+  // 2. bodyStyle fallback
+  const styleDesc = STYLE_DESCRIPTIONS[bodyStyle ?? "sedan"]?.[segment];
+  if (styleDesc) return styleDesc;
+  // 3. generic
+  return segment;
 }
 
 const SEGMENT_RANGE: Record<BodyStyle, { min: Segment; max: Segment }> = {
@@ -340,9 +418,9 @@ const BODY_STYLES: {
     title: "Sportowy / Coupé",
     icon: "🏎️",
     pros: [
-      "Nisko osadzony – świetna przyczepność",
+      "Niski środek ciężkości",
       "Doskonałe prowadzenie i reakcje",
-      "Niski współczynnik oporu Cx",
+      "Atrakcyjny wygląd",
     ],
     cons: [
       "Mało miejsca dla pasażerów",
@@ -360,8 +438,7 @@ const BODY_STYLES: {
       "Rozsądna cena i spalanie",
     ],
     cons: [
-      "Mniejszy bagażnik niż kombi",
-      "Przeciętne na nierównej drodze",
+      "Niska pozycja za kierownicą",
     ],
   },
   {
@@ -369,12 +446,10 @@ const BODY_STYLES: {
     title: "Van",
     icon: "🚐",
     pros: [
-      "Ogromna przestrzeń pasażerska i bagażowa",
-      "Przesuwane drzwi – wygodne parkowanie",
-      "Idealny dla dużych rodzin",
+      "Doskonała funkcjonalnoś",
+      "Optymalne wykorzystanie przestrzeni"
     ],
     cons: [
-      "Duże gabaryty – trudniej w mieście",
       "Wyższe spalanie niż osobowy",
       "Gorsze prowadzenie – wysoki środek ciężkości",
     ],
@@ -386,12 +461,12 @@ const BODY_STYLES: {
     pros: [
       "Wyższa pozycja – lepsza widoczność",
       "Wygodne wsiadanie/wysiadanie",
-      "Kompromis między SUV a osobowym",
+      "Wyższe zawieszenie niż w osobowym",
     ],
     cons: [
-      "Wyższe spalanie niż sedan",
+      "Wyższa cena i spalanie niż osobowy",
       "Gorsze prowadzenie niż niski samochód",
-      "Często droższy od odpowiednika sedan",
+      "Gorsze osiągi",
     ],
   },
   {
@@ -399,14 +474,14 @@ const BODY_STYLES: {
     title: "SUV",
     icon: "🛻",
     pros: [
-      "Dużo miejsca i wysoka pozycja",
-      "Poczucie bezpieczeństwa",
-      "Dobra widoczność drogi",
+        "Wyższa pozycja – lepsza widoczność",
+        "Wygodne wsiadanie/wysiadanie",
+        "Podstawowe zdolności terenowe",
     ],
     cons: [
       "Wysokie spalanie i cena",
       "Gorsze prowadzenie – wysoki środek ciężkości",
-      "Trudniej zaparkować w mieście",
+      "Gorsze osiągi",
     ],
     note: (<>SUV-y i crossovery mają w większości pokrywający się wybór modeli. <strong>Sugerujemy wybór SUV-a wyłącznie jeśli planujesz zjeżdżać z asfaltu</strong> – w przeciwnym razie crossover będzie lepszym wyborem.</>),
   },
@@ -817,7 +892,7 @@ export default function CarConfigurator() {
           <p className="text-xs uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-1">
             {(answers.bodyShape === "coupe-2" || answers.bodyShape === "roadster-2") ? "Sugerowana klasa" : "Sugerowany segment"}
           </p>
-          <p className="text-2xl font-bold text-accent">{getSegmentName(suggestedSegment, answers.bodyStyle)}</p>
+          <p className="text-2xl font-bold text-accent">{getSegmentName(suggestedSegment, answers.bodyStyle, answers.bodyShape)}</p>
         </div>
 
         <div className="space-y-2">
@@ -1029,7 +1104,7 @@ export default function CarConfigurator() {
             Twój idealny samochód
           </h3>
           <div className="grid sm:grid-cols-2 gap-4 text-sm">
-            <SummaryRow label="Segment" value={getSegmentName(segment, answers.bodyStyle)} />
+            <SummaryRow label="Segment" value={getSegmentName(segment, answers.bodyStyle, answers.bodyShape)} />
             <SummaryRow
               label="Typ samochodu"
               value={
