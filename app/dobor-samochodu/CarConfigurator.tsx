@@ -8,7 +8,8 @@ type BodyStyle = "sportowy" | "sedan" | "van" | "crossover" | "suv" | "terenowy"
 type BodyShape =
   | "hatchback" | "sedan" | "kombi" | "liftback"
   | "coupe-2" | "roadster-2" | "coupe-2plus2" | "cabriolet-2plus2"
-  | "hot-hatch" | "4door-coupe" | "sport-sedan" | "sport-crossover";
+  | "hot-hatch" | "4door-coupe" | "sport-sedan" | "sport-crossover"
+  | "standard" | "coupe" | "pickup";
 
 interface Answers {
   height: number;
@@ -106,8 +107,17 @@ const SEGMENT_RANGE: Record<BodyStyle, { min: Segment; max: Segment }> = {
 
 const SEGMENTS_ORDERED: Segment[] = ["A", "B", "C", "D", "E", "F"];
 
-function clampSegment(seg: Segment, bodyStyle: BodyStyle | null): Segment {
-  const range = SEGMENT_RANGE[bodyStyle ?? "sedan"];
+function getSegmentRange(bodyStyle: BodyStyle | null, bodyShape: BodyShape | null): { min: Segment; max: Segment } {
+  const base = SEGMENT_RANGE[bodyStyle ?? "sedan"];
+  // coupe (crossover/SUV) i pickup (terenowy) → tylko D-E
+  if (bodyShape === "coupe" || bodyShape === "pickup") {
+    return { min: "D", max: "E" };
+  }
+  return base;
+}
+
+function clampSegment(seg: Segment, bodyStyle: BodyStyle | null, bodyShape: BodyShape | null): Segment {
+  const range = getSegmentRange(bodyStyle, bodyShape);
   const idx = SEGMENTS_ORDERED.indexOf(seg);
   const minIdx = SEGMENTS_ORDERED.indexOf(range.min);
   const maxIdx = SEGMENTS_ORDERED.indexOf(range.max);
@@ -133,7 +143,7 @@ function calcSegment(a: Answers): Segment {
   else if (score <= 120) seg = "E";
   else seg = "F";
 
-  return clampSegment(seg, a.bodyStyle);
+  return clampSegment(seg, a.bodyStyle, a.bodyShape);
 }
 
 /* ──────────────── power logic ──────────────── */
@@ -588,19 +598,87 @@ const SHAPES_SPORT: ShapeOption[] = [
   },
 ];
 
+const SHAPES_CROSSOVER_SUV: ShapeOption[] = [
+  {
+    id: "standard",
+    title: "Zwykły",
+    icon: "🚙",
+    pros: [
+      "Więcej miejsca w bagażniku",
+      "Lepsza widoczność do tyłu",
+      "Większy wybór modeli",
+    ],
+    cons: [
+      "Mniej dynamiczny wygląd",
+    ],
+  },
+  {
+    id: "coupe",
+    title: "Coupé (ścięty tył)",
+    icon: "💎",
+    pros: [
+      "Sportowa sylwetka",
+      "Lepsza aerodynamika",
+      "Wyróżnia się na drodze",
+    ],
+    cons: [
+      "Mniejszy bagażnik",
+      "Gorsza widoczność do tyłu",
+      "Wyższa cena",
+    ],
+  },
+];
+
+const SHAPES_TERENOWY: ShapeOption[] = [
+  {
+    id: "standard",
+    title: "Zwykły",
+    icon: "⛰️",
+    pros: [
+      "Zamknięte nadwozie – ochrona bagażu",
+      "Komfort pasażerów z tyłu",
+      "Lepsze wyciszenie kabiny",
+    ],
+    cons: [
+      "Mniejsza ładowność niż pick-up",
+    ],
+  },
+  {
+    id: "pickup",
+    title: "Pick-up",
+    icon: "🛻",
+    pros: [
+      "Otwarta skrzynia ładunkowa",
+      "Ogromna ładowność",
+      "Idealny do ciężkiej pracy",
+    ],
+    cons: [
+      "Bagaż narażony na pogodę",
+      "Bardzo duże gabaryty",
+      "Wysokie spalanie",
+    ],
+  },
+];
+
 function getBodyShapes(bodyStyle: BodyStyle | null): ShapeOption[] {
-  if (bodyStyle === "sportowy") return SHAPES_SPORT;
-  return SHAPES_STANDARD;
+  switch (bodyStyle) {
+    case "sportowy": return SHAPES_SPORT;
+    case "crossover":
+    case "suv": return SHAPES_CROSSOVER_SUV;
+    case "terenowy": return SHAPES_TERENOWY;
+    default: return SHAPES_STANDARD;
+  }
 }
 
 /* ──────────────── steps ──────────────── */
 
-const STEP_TITLES = [
-  "Typ samochodu",
-  "Forma nadwozia",
-  "Segment",
-  "Moc silnika",
-];
+function getStepConfig(bodyStyle: BodyStyle | null) {
+  const hasShapeStep = bodyStyle !== "van";
+  const titles = hasShapeStep
+    ? ["Typ samochodu", "Forma nadwozia", "Segment", "Moc silnika"]
+    : ["Typ samochodu", "Segment", "Moc silnika"];
+  return { titles, hasShapeStep };
+}
 
 /* ──────────────── main component ──────────────── */
 
@@ -608,9 +686,12 @@ export default function CarConfigurator() {
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Answers>(INITIAL);
 
+  const { titles: stepTitles, hasShapeStep } = getStepConfig(answers.bodyStyle);
+  const lastStep = stepTitles.length - 1;
+
   const suggestedSegment = useMemo(() => calcSegment(answers), [answers]);
   const segment = answers.segmentOverride
-    ? clampSegment(answers.segmentOverride, answers.bodyStyle)
+    ? clampSegment(answers.segmentOverride, answers.bodyStyle, answers.bodyShape)
     : suggestedSegment;
   const suggestedHP = useMemo(
     () => calcSuggestedHP(answers, segment),
@@ -621,21 +702,22 @@ export default function CarConfigurator() {
   const set = <K extends keyof Answers>(key: K, val: Answers[K]) =>
     setAnswers((prev) => {
       const next = { ...prev, [key]: val };
-      if (key === "bodyStyle") {
+      if (key === "bodyStyle" && val !== prev.bodyStyle) {
         // clamp passengers when switching away from van
         if (val !== "van" && next.passengers > 5) {
           next.passengers = 5;
         }
         // reset body shape when type changes (options differ)
-        if (val !== prev.bodyStyle) {
-          next.bodyShape = null;
-        }
+        next.bodyShape = null;
       }
       return next;
     });
 
-  const canNext = (): boolean =>
-    !(step === 0 && !answers.bodyStyle) && !(step === 1 && !answers.bodyShape);
+  const canNext = (): boolean => {
+    if (step === 0 && !answers.bodyStyle) return false;
+    if (hasShapeStep && step === 1 && !answers.bodyShape) return false;
+    return true;
+  };
 
   /* ──── render helpers ──── */
 
@@ -726,7 +808,7 @@ export default function CarConfigurator() {
           </p>
           <div className="flex flex-wrap justify-center gap-2">
             {SEGMENTS_ORDERED.filter((s) => {
-              const range = SEGMENT_RANGE[answers.bodyStyle ?? "sedan"];
+              const range = getSegmentRange(answers.bodyStyle, answers.bodyShape);
               const idx = SEGMENTS_ORDERED.indexOf(s);
               return idx >= SEGMENTS_ORDERED.indexOf(range.min) && idx <= SEGMENTS_ORDERED.indexOf(range.max);
             }).map((s) => {
@@ -933,13 +1015,15 @@ export default function CarConfigurator() {
                 "—"
               }
             />
-            <SummaryRow
-              label="Forma nadwozia"
-              value={
-                getBodyShapes(answers.bodyStyle).find((b) => b.id === answers.bodyShape)?.title ??
-                "—"
-              }
-            />
+            {hasShapeStep && (
+              <SummaryRow
+                label="Forma nadwozia"
+                value={
+                  getBodyShapes(answers.bodyStyle).find((b) => b.id === answers.bodyShape)?.title ??
+                  "—"
+                }
+              />
+            )}
             <SummaryRow label="Moc silnika" value={`${displayHP} KM`} />
             <SummaryRow
               label="Maks. prędkość"
@@ -955,13 +1039,15 @@ export default function CarConfigurator() {
     );
   };
 
-  const steps = [renderStep1, renderStep2, renderStep0, renderStep3];
+  const steps = hasShapeStep
+    ? [renderStep1, renderStep2, renderStep0, renderStep3]
+    : [renderStep1, renderStep0, renderStep3];
 
   return (
     <div className="max-w-3xl mx-auto">
       {/* step indicator */}
       <div className="flex items-center gap-2 mb-10">
-        {STEP_TITLES.map((title, i) => (
+        {stepTitles.map((title: string, i: number) => (
           <button
             key={title}
             type="button"
@@ -994,7 +1080,7 @@ export default function CarConfigurator() {
       </div>
 
       {/* step content */}
-      <div className="min-h-[400px]">{steps[step]()}</div>
+      <div className="min-h-[400px]">{steps[Math.min(step, lastStep)]()}</div>
 
       {/* navigation */}
       <div className="flex justify-between mt-10">
@@ -1006,10 +1092,10 @@ export default function CarConfigurator() {
         >
           ← Wstecz
         </button>
-        {step < 3 ? (
+        {step < lastStep ? (
           <button
             type="button"
-            onClick={() => setStep((s) => Math.min(3, s + 1))}
+            onClick={() => setStep((s) => Math.min(lastStep, s + 1))}
             disabled={!canNext()}
             className="btn-primary disabled:opacity-30 disabled:pointer-events-none"
           >
