@@ -1082,7 +1082,7 @@ export default function CarConfigurator() {
             {suggestedHP} KM
           </p>
           <p className="text-xs text-gray-500 dark:text-gray-500">
-            Dla segmentu {segment}, {answers.bodyStyle ?? "sedan"},{" "}
+            Dla segmentu {segment}, {BODY_STYLES.find((b) => b.id === answers.bodyStyle)?.title ?? "—"},{" "}
             {answers.maxSpeed} km/h
           </p>
         </div>
