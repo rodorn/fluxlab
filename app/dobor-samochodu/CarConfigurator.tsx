@@ -108,6 +108,11 @@ const SEGMENT_RANGE: Record<BodyStyle, { min: Segment; max: Segment }> = {
 const SEGMENTS_ORDERED: Segment[] = ["A", "B", "C", "D", "E", "F"];
 
 const SHAPE_SEGMENT_OVERRIDE: Partial<Record<BodyShape, { min: Segment; max: Segment }>> = {
+  // osobowe
+  hatchback: { min: "A", max: "C" },
+  sedan: { min: "B", max: "F" },
+  kombi: { min: "B", max: "E" },
+  liftback: { min: "C", max: "E" },
   // crossover/SUV coupé, terenowy pickup
   coupe: { min: "D", max: "E" },
   pickup: { min: "D", max: "E" },
