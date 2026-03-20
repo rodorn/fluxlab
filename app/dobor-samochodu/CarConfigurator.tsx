@@ -484,7 +484,7 @@ const BODY_STYLES: {
     title: "Van",
     image: `${IMG}/type-van.jpeg`,
     pros: [
-      "Doskonała funkcjonalnoś",
+      "Doskonała funkcjonalność",
       "Optymalne wykorzystanie przestrzeni"
     ],
     cons: [
