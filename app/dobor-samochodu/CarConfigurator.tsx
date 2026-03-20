@@ -374,13 +374,13 @@ function CardSelector<T extends string>({
             key={opt.id}
             type="button"
             onClick={() => onChange(opt.id)}
-            className={`text-left rounded-2xl border-2 transition-all overflow-hidden ${
+            className={`flex flex-col text-left rounded-2xl border-2 transition-all overflow-hidden ${
               selected
                 ? "border-accent shadow-md ring-1 ring-accent/30"
                 : "border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600"
             }`}
           >
-            <div className="relative w-full h-32 bg-gray-100 dark:bg-gray-800">
+            <div className="relative w-full h-36 shrink-0 bg-gray-100 dark:bg-gray-800">
               <Image
                 src={opt.image}
                 alt={opt.title}
@@ -393,7 +393,7 @@ function CardSelector<T extends string>({
                 <div className="absolute inset-0 bg-accent/10" />
               )}
             </div>
-            <div className="p-4">
+            <div className="p-4 flex-1 flex flex-col">
               <span
                 className={`font-semibold text-sm ${
                   selected
@@ -403,7 +403,7 @@ function CardSelector<T extends string>({
               >
                 {opt.title}
               </span>
-              <div className="mt-2 space-y-1 text-xs">
+              <div className="mt-2 space-y-1 text-xs flex-1">
                 {opt.pros.map((p) => (
                   <div key={p} className="flex gap-1.5 text-emerald-600 dark:text-emerald-400">
                     <span className="shrink-0">+</span>
@@ -1194,14 +1194,14 @@ export default function CarConfigurator() {
 
   return (
     <div className="relative max-w-3xl mx-auto">
-      {/* dynamic background */}
+      {/* dynamic background – fixed to viewport, clipped to container */}
       {bg && (
-        <div className="absolute inset-0 -mx-6 -my-4 -z-10 overflow-hidden rounded-3xl">
+        <div className="fixed inset-0 -z-10 pointer-events-none">
           <Image
             src={bg.light}
             alt=""
             fill
-            className="object-cover opacity-10 dark:hidden"
+            className="object-cover opacity-[0.07] dark:hidden"
             sizes="100vw"
             unoptimized
           />
@@ -1209,7 +1209,7 @@ export default function CarConfigurator() {
             src={bg.dark}
             alt=""
             fill
-            className="object-cover opacity-0 dark:opacity-15"
+            className="object-cover opacity-0 dark:opacity-[0.12]"
             sizes="100vw"
             unoptimized
           />
