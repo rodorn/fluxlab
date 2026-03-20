@@ -44,11 +44,11 @@ type Segment = "A" | "B" | "C" | "D" | "E" | "F";
 const SEGMENT_DESCRIPTIONS: Record<BodyStyle, Record<Segment, string>> = {
   sportowy: {
     A: "A – mini sport (np. Abarth 500, Mini Cooper S)",
-    B: "B – małe sport (np. Mazda MX-5, Toyota GR86)",
+    B: "B – budżetowe sport (np. Mazda MX-5, Toyota GR86)",
     C: "C – kompaktowe sport (np. VW Golf GTI, Honda Civic Type R)",
     D: "D – średnie sport (np. BMW M2, Audi S3)",
-    E: "E – wyższe sport (np. BMW M4, Porsche Cayman)",
-    F: "F – klasa wyższa sport (np. Porsche 911, Jaguar F-Type)",
+    E: "E – premium sport (np. BMW M4, Porsche Cayman, Porsche 911)",
+    F: "F – klasa wyższa sport (np. Mercedes AMG GT, Audi R8)",
   },
   sedan: {
     A: "A – mini (np. Fiat 500, Toyota Aygo)",
@@ -107,13 +107,26 @@ const SEGMENT_RANGE: Record<BodyStyle, { min: Segment; max: Segment }> = {
 
 const SEGMENTS_ORDERED: Segment[] = ["A", "B", "C", "D", "E", "F"];
 
+const SHAPE_SEGMENT_OVERRIDE: Partial<Record<BodyShape, { min: Segment; max: Segment }>> = {
+  // crossover/SUV coupé, terenowy pickup
+  coupe: { min: "D", max: "E" },
+  pickup: { min: "D", max: "E" },
+  // sportowe
+  "hot-hatch": { min: "A", max: "C" },
+  "4door-coupe": { min: "C", max: "E" },
+  "sport-sedan": { min: "D", max: "F" },
+  "sport-crossover": { min: "B", max: "F" },
+  "coupe-2plus2": { min: "B", max: "F" },
+  "cabriolet-2plus2": { min: "B", max: "F" },
+  "coupe-2": { min: "B", max: "E" },
+  "roadster-2": { min: "B", max: "E" },
+};
+
 function getSegmentRange(bodyStyle: BodyStyle | null, bodyShape: BodyShape | null): { min: Segment; max: Segment } {
-  const base = SEGMENT_RANGE[bodyStyle ?? "sedan"];
-  // coupe (crossover/SUV) i pickup (terenowy) → tylko D-E
-  if (bodyShape === "coupe" || bodyShape === "pickup") {
-    return { min: "D", max: "E" };
+  if (bodyShape && SHAPE_SEGMENT_OVERRIDE[bodyShape]) {
+    return SHAPE_SEGMENT_OVERRIDE[bodyShape]!;
   }
-  return base;
+  return SEGMENT_RANGE[bodyStyle ?? "sedan"];
 }
 
 function clampSegment(seg: Segment, bodyStyle: BodyStyle | null, bodyShape: BodyShape | null): Segment {
@@ -797,14 +810,16 @@ export default function CarConfigurator() {
       <div className="rounded-2xl border border-gray-200 dark:border-gray-700 p-6 space-y-4">
         <div className="text-center">
           <p className="text-xs uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-1">
-            Sugerowany segment
+            {(answers.bodyShape === "coupe-2" || answers.bodyShape === "roadster-2") ? "Sugerowana klasa" : "Sugerowany segment"}
           </p>
           <p className="text-2xl font-bold text-accent">{getSegmentName(suggestedSegment, answers.bodyStyle)}</p>
         </div>
 
         <div className="space-y-2">
           <p className="text-xs text-gray-500 dark:text-gray-400 text-center">
-            Możesz wybrać inny segment, jeśli nasza sugestia nie pasuje:
+            {(answers.bodyShape === "coupe-2" || answers.bodyShape === "roadster-2")
+              ? "Możesz wybrać inną klasę, jeśli nasza sugestia nie pasuje:"
+              : "Możesz wybrać inny segment, jeśli nasza sugestia nie pasuje:"}
           </p>
           <div className="flex flex-wrap justify-center gap-2">
             {SEGMENTS_ORDERED.filter((s) => {
@@ -839,7 +854,9 @@ export default function CarConfigurator() {
                 onClick={() => set("segmentOverride", null)}
                 className="text-xs text-accent hover:underline"
               >
-                Przywróć sugerowany segment ({suggestedSegment})
+                {(answers.bodyShape === "coupe-2" || answers.bodyShape === "roadster-2")
+                  ? `Przywróć sugerowaną klasę (${suggestedSegment})`
+                  : `Przywróć sugerowany segment (${suggestedSegment})`}
               </button>
             </p>
           )}
