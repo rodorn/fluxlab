@@ -901,10 +901,11 @@ export default function CarConfigurator() {
       const minHP = displayHP;
       const currentYear = new Date().getFullYear();
       for (const cat of data.categories) {
-        // Filter out cars whose age doesn't match the category
+        // Filter out cars whose production years don't overlap with category age range
         cat.cars = cat.cars.filter((car) => {
-          const age = currentYear - car.yearFrom;
-          return age >= cat.ageFrom && (cat.ageTo === 0 || age <= cat.ageTo);
+          const newestAge = currentYear - car.yearTo;
+          const oldestAge = currentYear - car.yearFrom;
+          return oldestAge >= cat.ageFrom && (cat.ageTo === 0 || newestAge <= cat.ageTo);
         });
         for (const car of cat.cars) {
           // Filter variants: must meet power and budget
@@ -1210,7 +1211,6 @@ export default function CarConfigurator() {
         <Slider label="Planowany okres użytkowania" value={answers.yearsOwned} min={1} max={20} step={1} unit="lat"
           onChange={(v) => set("yearsOwned", v)} />
       </div>
-Ni
       <div className="space-y-2">
         <label className="text-sm font-medium text-gray-700 dark:text-gray-300">
           Dodatkowe wymagania <span className="text-gray-400 font-normal">(opcjonalnie)</span>
