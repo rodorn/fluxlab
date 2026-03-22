@@ -881,9 +881,11 @@ export default function CarConfigurator() {
           // Filter variants: must meet power and budget
           car.variants = car.variants.filter((v) => v.hp >= minHP && v.priceFrom <= budget);
           // Auto-generate LPG variant for each benzyna variant
+          // Skip LPG for 2-seaters (no space for tank) and mid/rear-engine cars
+          const noLpg = answers.bodyShapes.some((s) => s === "coupe-2" || s === "roadster-2");
           const lpgVariants: CarVariant[] = [];
           for (const v of car.variants) {
-            if (v.fuelType === "benzyna") {
+            if (v.fuelType === "benzyna" && !noLpg) {
               const lpgCost = getLpgInstallCost(v);
               lpgVariants.push({
                 ...v,
