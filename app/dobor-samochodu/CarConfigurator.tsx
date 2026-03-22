@@ -271,6 +271,7 @@ interface CarVariant {
   fuelHighway: number;
   engineLayout: EngineLayout;
   engineReliability: number;
+  directInjection: boolean;
 }
 
 interface CarRecommendation {
@@ -295,6 +296,13 @@ const ENGINE_MULT: Record<EngineLayout, number> = {
 };
 const FUEL_MULT: Record<FuelType, number> = { benzyna: 1, elektryczny: 1, gaz: 1.2, diesel: 1.6 };
 const YEAR_NOW = 2025;
+const LAYOUT_CYLINDERS: Record<EngineLayout, number> = {
+  elektryczny: 0, R3: 3, R4: 4, R5: 5, R6: 6, V6: 6, V8: 8, V10: 10, V12: 12, W12: 12, W16: 16,
+};
+
+function getLpgInstallCost(v: CarVariant): number {
+  return LAYOUT_CYLINDERS[v.engineLayout] * 1000 + (v.directInjection ? 4000 : 0);
+}
 
 interface CostResult {
   totalCost: number;
@@ -303,17 +311,26 @@ interface CostResult {
   fuelCost: number;
   lostValue: number;
   repairs: number;
+  lpgInstallCost: number;
 }
 
 function calcVariantCost(car: CarRecommendation, v: CarVariant, kmCity: number, kmHighway: number, yearsOwned: number): CostResult {
-  const price = (v.priceFrom + v.priceTo) / 2;
+  const lpgInstallCost = v.fuelType === "gaz" ? getLpgInstallCost(v) : 0;
+  const price = (v.priceFrom + v.priceTo) / 2 - lpgInstallCost;
   const year = Math.round((car.yearFrom + car.yearTo) / 2);
   const mileage = Math.max(1000, (YEAR_NOW - year) * 15000);
 
   const totalKm = (kmCity + kmHighway) * yearsOwned;
-  const fuelCost =
-    ((kmCity * v.fuelCity + kmHighway * v.fuelHighway) / 100) *
-    FUEL_PRICES[v.fuelType] * yearsOwned;
+
+  // Fuel cost: for direct injection LPG, 10% of fuel is benzyna
+  let fuelCost: number;
+  if (v.fuelType === "gaz" && v.directInjection) {
+    const gasConsumption = ((kmCity * v.fuelCity + kmHighway * v.fuelHighway) / 100) * 0.9;
+    const benzynaConsumption = ((kmCity * v.fuelCity + kmHighway * v.fuelHighway) / 100) * 0.1;
+    fuelCost = (gasConsumption * FUEL_PRICES.gaz + benzynaConsumption * FUEL_PRICES.benzyna) * yearsOwned;
+  } else {
+    fuelCost = ((kmCity * v.fuelCity + kmHighway * v.fuelHighway) / 100) * FUEL_PRICES[v.fuelType] * yearsOwned;
+  }
 
   const ageStart = YEAR_NOW - year;
   const ageEnd = ageStart + yearsOwned;
@@ -336,11 +353,11 @@ function calcVariantCost(car: CarRecommendation, v: CarVariant, kmCity: number, 
   const weightedKm = totalKmCity * 2 + totalKmHighway;
   const repairs = reliabilityFactor * weightedKm;
 
-  const totalCost = fuelCost + repairs + lostValue;
+  const totalCost = fuelCost + repairs + lostValue + lpgInstallCost;
   const monthly = totalCost / (12 * yearsOwned);
   const costPerKm = totalKm > 0 ? totalCost / totalKm : 0;
 
-  return { totalCost, monthly, costPerKm, fuelCost, lostValue, repairs };
+  return { totalCost, monthly, costPerKm, fuelCost, lostValue, repairs, lpgInstallCost };
 }
 
 interface AgeCategory {
@@ -716,6 +733,51 @@ function getBodyShapes(bodyStyle: BodyStyle | null): ShapeOption[] {
   }
 }
 
+/* ──────────────── donut chart ──────────────── */
+
+function DonutChart({ segments }: { segments: { value: number; color: string; label: string }[] }) {
+  const total = segments.reduce((s, x) => s + x.value, 0);
+  if (total === 0) return null;
+  const r = 36;
+  const cx = 50;
+  const cy = 50;
+  const circumference = 2 * Math.PI * r;
+  let offset = 0;
+
+  return (
+    <svg viewBox="0 0 100 100" className="w-28 h-28 shrink-0">
+      {segments.filter((s) => s.value > 0).map((seg, i) => {
+        const pct = seg.value / total;
+        const dashArray = `${circumference * pct} ${circumference * (1 - pct)}`;
+        const currentOffset = -circumference * offset;
+        offset += pct;
+        return (
+          <circle
+            key={i}
+            cx={cx}
+            cy={cy}
+            r={r}
+            fill="none"
+            stroke={seg.color}
+            strokeWidth="14"
+            strokeDasharray={dashArray}
+            strokeDashoffset={currentOffset}
+            transform={`rotate(-90 ${cx} ${cy})`}
+            className="transition-all duration-500"
+          />
+        );
+      })}
+    </svg>
+  );
+}
+
+const COST_COLORS = {
+  fuel: "#f59e0b",
+  depreciation: "#6366f1",
+  repairs: "#ef4444",
+  lpg: "#10b981",
+};
+
 /* ──────────────── steps config ──────────────── */
 
 function getStepConfig(bodyStyle: BodyStyle | null) {
@@ -819,16 +881,17 @@ export default function CarConfigurator() {
         for (const car of cat.cars) {
           // Filter variants: must meet power and budget
           car.variants = car.variants.filter((v) => v.hp >= minHP && v.priceFrom <= budget);
-          // Auto-generate LPG variant for each benzyna variant (engine >= 1.4L)
+          // Auto-generate LPG variant for each benzyna variant
           const lpgVariants: CarVariant[] = [];
           for (const v of car.variants) {
             if (v.fuelType === "benzyna") {
+              const lpgCost = getLpgInstallCost(v);
               lpgVariants.push({
                 ...v,
                 engine: v.engine + " + LPG",
                 fuelType: "gaz",
-                priceFrom: v.priceFrom + 4000,
-                priceTo: v.priceTo + 4000,
+                priceFrom: v.priceFrom + lpgCost,
+                priceTo: v.priceTo + lpgCost,
                 fuelCity: Math.round(v.fuelCity * 1.12 * 10) / 10,
                 fuelHighway: Math.round(v.fuelHighway * 1.12 * 10) / 10,
               });
@@ -1243,10 +1306,155 @@ export default function CarConfigurator() {
                 {cat.ageLabel}
               </button>
             ))}
+            {costsMap.size > 0 && (
+              <button
+                type="button"
+                onClick={() => setExpandedCategory(-1)}
+                className={`px-4 py-2 rounded-xl text-sm font-medium border-2 transition-all ${
+                  expandedCategory === -1
+                    ? "border-emerald-500 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400"
+                    : "border-emerald-200 dark:border-emerald-800 text-emerald-600 dark:text-emerald-400 hover:border-emerald-300 dark:hover:border-emerald-700"
+                }`}
+              >
+                Podsumowanie
+              </button>
+            )}
           </div>
 
+          {/* Summary tab */}
+          {expandedCategory === -1 && costsMap.size > 0 && (() => {
+            const bestPerCategory: { cat: AgeCategory; catIdx: number; car: CarRecommendation; carIdx: number; variant: CarVariant; variantIdx: number; cost: CostResult }[] = [];
+            for (let ci = 0; ci < results.categories.length; ci++) {
+              const cat = results.categories[ci];
+              let best: { car: CarRecommendation; carIdx: number; variant: CarVariant; variantIdx: number; cost: CostResult } | null = null;
+              for (let carI = 0; carI < cat.cars.length; carI++) {
+                for (let vi = 0; vi < cat.cars[carI].variants.length; vi++) {
+                  const c = costsMap.get(`${ci}-${carI}-${vi}`);
+                  if (c && (!best || c.costPerKm < best.cost.costPerKm)) {
+                    best = { car: cat.cars[carI], carIdx: carI, variant: cat.cars[carI].variants[vi], variantIdx: vi, cost: c };
+                  }
+                }
+              }
+              if (best) bestPerCategory.push({ cat, catIdx: ci, ...best });
+            }
+
+            const globalBest = bestPerCategory.reduce((a, b) => a.cost.costPerKm < b.cost.costPerKm ? a : b, bestPerCategory[0]);
+
+            const fuelBadge: Record<FuelType, { bg: string; label: string }> = {
+              benzyna: { bg: "bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-400", label: "Benzyna" },
+              diesel: { bg: "bg-gray-200 text-gray-700 dark:bg-gray-700 dark:text-gray-300", label: "Diesel" },
+              gaz: { bg: "bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-400", label: "LPG" },
+              elektryczny: { bg: "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-400", label: "Elektryk" },
+            };
+
+            return (
+              <div className="space-y-6">
+                <div className="rounded-2xl bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-200 dark:border-emerald-800 p-5">
+                  <h3 className="text-sm font-semibold text-emerald-700 dark:text-emerald-400 mb-1">
+                    Najtańszy model z każdej kategorii wiekowej
+                  </h3>
+                  <p className="text-xs text-emerald-600 dark:text-emerald-500">
+                    Porównanie najtańszych wariantów (wg kosztu/km) przy {fmt((answers.kmCity + answers.kmHighway) * KM_MULTIPLIER[answers.kmPeriod])} km/rok przez {answers.yearsOwned} lat.
+                  </p>
+                </div>
+
+                {bestPerCategory.map((entry) => {
+                  const { cat, cost, car, variant } = entry;
+                  const isGlobalBest = entry === globalBest;
+                  const costSegments = [
+                    { value: cost.fuelCost, color: COST_COLORS.fuel, label: "Paliwo" },
+                    { value: cost.lostValue, color: COST_COLORS.depreciation, label: "Utrata wartości" },
+                    { value: cost.repairs, color: COST_COLORS.repairs, label: "Serwis i naprawy" },
+                    ...(cost.lpgInstallCost > 0 ? [{ value: cost.lpgInstallCost, color: COST_COLORS.lpg, label: "Instalacja LPG" }] : []),
+                  ];
+
+                  return (
+                    <div
+                      key={cat.ageLabel}
+                      className={`rounded-2xl border-2 p-5 transition-all ${
+                        isGlobalBest
+                          ? "border-emerald-400 dark:border-emerald-600 bg-emerald-50/50 dark:bg-emerald-900/10 ring-1 ring-emerald-300/50 dark:ring-emerald-700/50"
+                          : "border-gray-200 dark:border-gray-700"
+                      }`}
+                    >
+                      <div className="flex items-start justify-between gap-2 mb-3">
+                        <div>
+                          <div className="flex items-center gap-2">
+                            <span className="text-xs font-semibold uppercase tracking-wider text-gray-400 dark:text-gray-500">
+                              {cat.ageLabel}
+                            </span>
+                            {isGlobalBest && (
+                              <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 bg-emerald-100 dark:bg-emerald-900/40 px-2 py-0.5 rounded-full">
+                                Najlepszy wybór
+                              </span>
+                            )}
+                          </div>
+                          <h4 className="font-bold text-gray-900 dark:text-white mt-1">
+                            {car.make} {car.model}{" "}
+                            <span className="text-gray-400 font-normal text-sm">{car.generation}</span>
+                          </h4>
+                          <p className="text-sm text-gray-500 dark:text-gray-400">
+                            {car.yearFrom}–{car.yearTo} · {variant.engine}
+                          </p>
+                        </div>
+                        <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-full shrink-0 ${fuelBadge[variant.fuelType].bg}`}>
+                          {fuelBadge[variant.fuelType].label}
+                        </span>
+                      </div>
+
+                      <div className="flex gap-6 items-center">
+                        <DonutChart segments={costSegments} />
+                        <div className="flex-1 space-y-3">
+                          {/* Key metrics */}
+                          <div className="grid grid-cols-2 gap-2">
+                            <div className="p-2.5 rounded-xl bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800">
+                              <span className="text-[10px] uppercase tracking-wider text-gray-400 block">Koszt/km</span>
+                              <span className={`text-lg font-bold tabular-nums ${isGlobalBest ? "text-emerald-600 dark:text-emerald-400" : "text-accent"}`}>
+                                {cost.costPerKm.toFixed(2)} <span className="text-xs font-normal text-gray-400">PLN</span>
+                              </span>
+                            </div>
+                            <div className="p-2.5 rounded-xl bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800">
+                              <span className="text-[10px] uppercase tracking-wider text-gray-400 block">Miesięcznie</span>
+                              <span className="text-lg font-bold tabular-nums text-gray-900 dark:text-white">
+                                {fmt(Math.round(cost.monthly))} <span className="text-xs font-normal text-gray-400">PLN</span>
+                              </span>
+                            </div>
+                          </div>
+                          {/* Cost breakdown legend */}
+                          <div className="space-y-1">
+                            {costSegments.map((seg) => (
+                              <div key={seg.label} className="flex items-center justify-between text-xs">
+                                <div className="flex items-center gap-1.5">
+                                  <span className="w-2.5 h-2.5 rounded-full shrink-0" style={{ backgroundColor: seg.color }} />
+                                  <span className="text-gray-600 dark:text-gray-400">{seg.label}</span>
+                                </div>
+                                <span className="text-gray-900 dark:text-white font-medium tabular-nums">
+                                  {fmt(Math.round(seg.value))} PLN
+                                  <span className="text-gray-400 ml-1">({Math.round(seg.value / cost.totalCost * 100)}%)</span>
+                                </span>
+                              </div>
+                            ))}
+                          </div>
+                          {/* Total + price */}
+                          <div className="flex items-center justify-between pt-2 border-t border-gray-100 dark:border-gray-800 text-xs">
+                            <span className="text-gray-500">Łącznie ({answers.yearsOwned} lat)</span>
+                            <span className="font-bold text-gray-900 dark:text-white">{fmt(Math.round(cost.totalCost))} PLN</span>
+                          </div>
+                          <div className="flex items-center justify-between text-xs">
+                            <span className="text-gray-500">Cena zakupu</span>
+                            <span className="font-medium text-gray-700 dark:text-gray-300">{fmt(variant.priceFrom)} – {fmt(variant.priceTo)} PLN</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            );
+          })()}
+
           {/* Cars in selected category */}
-          {results.categories[expandedCategory] && (
+          {expandedCategory >= 0 && results.categories[expandedCategory] && (
             <div className="space-y-6">
               {results.categories[expandedCategory].cars.map((car, i) => {
                 const carKey = `${expandedCategory}-${i}`;
@@ -1320,31 +1528,34 @@ export default function CarConfigurator() {
                       <div className="flex flex-wrap gap-x-6 gap-y-1 text-xs border-t border-gray-100 dark:border-gray-800 pt-2">
                         <span className="text-gray-500 dark:text-gray-400 relative group cursor-help">
                           Koszt/mies.: <span className="font-semibold text-gray-900 dark:text-white">{fmt(Math.round(cost.monthly))} PLN</span>
-                          <span className="absolute bottom-full left-0 mb-2 hidden group-hover:block w-56 p-2.5 rounded-xl bg-gray-900 dark:bg-gray-700 text-white text-[11px] leading-relaxed shadow-lg z-20 pointer-events-none">
+                          <span className="absolute bottom-full left-0 mb-2 hidden group-hover:block w-64 p-2.5 rounded-xl bg-gray-900 dark:bg-gray-700 text-white text-[11px] leading-relaxed shadow-lg z-20 pointer-events-none">
                             <span className="block font-semibold mb-1">Składowe kosztu miesięcznego:</span>
                             <span className="block">Paliwo: {fmt(Math.round(cost.fuelCost / (12 * answers.yearsOwned)))} PLN/mies.</span>
                             <span className="block">Utrata wartości: {fmt(Math.round(cost.lostValue / (12 * answers.yearsOwned)))} PLN/mies.</span>
                             <span className="block">Serwis i naprawy: {fmt(Math.round(cost.repairs / (12 * answers.yearsOwned)))} PLN/mies.</span>
+                            {cost.lpgInstallCost > 0 && <span className="block">Instalacja LPG: {fmt(Math.round(cost.lpgInstallCost / (12 * answers.yearsOwned)))} PLN/mies.</span>}
                           </span>
                         </span>
                         <span className="text-gray-500 dark:text-gray-400 relative group cursor-help">
                           Koszt/km: <span className="font-semibold text-gray-900 dark:text-white">{cost.costPerKm.toFixed(2)} PLN</span>
-                          <span className="absolute bottom-full left-0 mb-2 hidden group-hover:block w-56 p-2.5 rounded-xl bg-gray-900 dark:bg-gray-700 text-white text-[11px] leading-relaxed shadow-lg z-20 pointer-events-none">
+                          <span className="absolute bottom-full left-0 mb-2 hidden group-hover:block w-64 p-2.5 rounded-xl bg-gray-900 dark:bg-gray-700 text-white text-[11px] leading-relaxed shadow-lg z-20 pointer-events-none">
                             <span className="block font-semibold mb-1">Składowe kosztu na km:</span>
                             {(() => { const totalKm = (answers.kmCity + answers.kmHighway) * KM_MULTIPLIER[answers.kmPeriod] * answers.yearsOwned; return totalKm > 0 ? (<>
                               <span className="block">Paliwo: {(cost.fuelCost / totalKm).toFixed(2)} PLN/km</span>
                               <span className="block">Utrata wartości: {(cost.lostValue / totalKm).toFixed(2)} PLN/km</span>
                               <span className="block">Serwis i naprawy: {(cost.repairs / totalKm).toFixed(2)} PLN/km</span>
+                              {cost.lpgInstallCost > 0 && <span className="block">Instalacja LPG: {(cost.lpgInstallCost / totalKm).toFixed(2)} PLN/km</span>}
                             </>) : null; })()}
                           </span>
                         </span>
                         <span className="text-gray-500 dark:text-gray-400 relative group cursor-help">
                           Łącznie ({answers.yearsOwned} lat): <span className="font-semibold text-gray-900 dark:text-white">{fmt(Math.round(cost.totalCost))} PLN</span>
-                          <span className="absolute bottom-full right-0 mb-2 hidden group-hover:block w-56 p-2.5 rounded-xl bg-gray-900 dark:bg-gray-700 text-white text-[11px] leading-relaxed shadow-lg z-20 pointer-events-none">
+                          <span className="absolute bottom-full right-0 mb-2 hidden group-hover:block w-64 p-2.5 rounded-xl bg-gray-900 dark:bg-gray-700 text-white text-[11px] leading-relaxed shadow-lg z-20 pointer-events-none">
                             <span className="block font-semibold mb-1">Rozbicie kosztów łącznych:</span>
                             <span className="block">Paliwo: {fmt(Math.round(cost.fuelCost))} PLN ({Math.round(cost.fuelCost / cost.totalCost * 100)}%)</span>
                             <span className="block">Utrata wartości: {fmt(Math.round(cost.lostValue))} PLN ({Math.round(cost.lostValue / cost.totalCost * 100)}%)</span>
                             <span className="block">Serwis i naprawy: {fmt(Math.round(cost.repairs))} PLN ({Math.round(cost.repairs / cost.totalCost * 100)}%)</span>
+                            {cost.lpgInstallCost > 0 && <span className="block">Instalacja LPG: {fmt(Math.round(cost.lpgInstallCost))} PLN ({Math.round(cost.lpgInstallCost / cost.totalCost * 100)}%)</span>}
                           </span>
                         </span>
                       </div>

@@ -90,8 +90,12 @@ const tools = [
                             type: "number",
                             description: "Awaryjność silnika: 1=trwały, 2=sprawdzony, 3=średni, 4=złożony, 5=egzotyczny",
                           },
+                          directInjection: {
+                            type: "boolean",
+                            description: "Czy silnik ma wtrysk bezpośredni (FSI, TSI, TFSI, GDI, T-GDI, Skyactiv-G direct, CDI, itp.). Port injection / MPI = false.",
+                          },
                         },
-                        required: ["engine", "hp", "fuelType", "priceFrom", "priceTo", "fuelCity", "fuelHighway", "engineLayout", "engineReliability"],
+                        required: ["engine", "hp", "fuelType", "priceFrom", "priceTo", "fuelCity", "fuelHighway", "engineLayout", "engineReliability", "directInjection"],
                         additionalProperties: false,
                       },
                     },
@@ -187,6 +191,7 @@ CENY – NAJWAŻNIEJSZE:
 - Budżet użytkownika to ${body.budget.toLocaleString("pl-PL")} PLN – służy Ci TYLKO jako wskazówka, jakie modele mogą go zainteresować. Filtrowanie po cenie robimy sami.
 - Przykłady realnych cen: VW Golf VIII 2020 = 75-95k, BMW 320i G20 2020 = 120-150k, Audi A4 B9 2018 = 80-110k, Mercedes C200 W205 2017 = 70-100k.
 
+WTRYSK: dla każdego wariantu określ czy silnik ma wtrysk bezpośredni (directInjection: true) czy pośredni/MPI (false). Przykłady bezpośredniego: TSI, FSI, TFSI, GDI, T-GDI, Skyactiv-G (od 2.0), CDI. Przykłady pośredniego: MPI, starsze silniki benzynowe, LPG-friendly.
 FORMAT: konkretne silniki ("2.0 TDI 150KM"), konkretne generacje ("F30", "B8"). Zalety/wady konkretne dla modelu. Popularne w Polsce.
 
 Wywołaj recommend_cars.`,
