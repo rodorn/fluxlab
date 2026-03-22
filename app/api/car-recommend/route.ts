@@ -139,8 +139,8 @@ export async function POST(req: Request) {
   const shapesLabel = body.bodyShapes.length > 0 ? body.bodyShapes.join(", ") : "dowolne";
 
   const segmentExamples: Record<string, string> = {
-    A: "A/B – miejskie (Fiat 500, VW Up, Toyota Aygo, VW Polo, Hyundai i20)",
-    B: "B – małe (VW Polo GTI, Toyota Yaris GR, Ford Fiesta ST, Hyundai i20 N, Abarth 595, Mini Cooper S, Renault Clio RS, Skoda Fabia, Mazda 2)",
+    A: "A/B – miejskie (Fiat 500, Abarth 595/695, VW Up GTI, Toyota Aygo, Hyundai i10 N Line)",
+    B: "B – małe (VW Polo GTI, Toyota Yaris GR, Ford Fiesta ST, Hyundai i20 N, Mini Cooper S, Renault Clio RS, Skoda Fabia, Mazda 2)",
     C: "C – kompaktowe (VW Golf GTI/R, Honda Civic Type R, Hyundai i30 N, Toyota Corolla, Mazda 3, Skoda Octavia RS)",
     D: "D – średnia klasa (BMW 3, Audi A4, Mercedes C, VW Passat, Volvo S60)",
     E: "E – wyższa średnia (BMW 5, Audi A6, Mercedes E, Volvo S90)",
