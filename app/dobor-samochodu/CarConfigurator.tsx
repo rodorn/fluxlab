@@ -987,12 +987,13 @@ export default function CarConfigurator() {
             if (lv.priceFrom <= budget) car.variants.push(lv);
           }
         }
-        const bestByFuel = new Map<FuelType, CarVariant>();
+        const bestByKey = new Map<string, CarVariant>();
         for (const v of car.variants) {
-          const existing = bestByFuel.get(v.fuelType);
-          if (!existing || v.priceFrom < existing.priceFrom) bestByFuel.set(v.fuelType, v);
+          const key = v.hybrid ? `${v.fuelType}-hybrid` : v.fuelType;
+          const existing = bestByKey.get(key);
+          if (!existing || v.priceFrom < existing.priceFrom) bestByKey.set(key, v);
         }
-        car.variants = [...bestByFuel.values()];
+        car.variants = [...bestByKey.values()];
       }
 
       // 3. Define age categories on frontend — ignore LLM assignment
