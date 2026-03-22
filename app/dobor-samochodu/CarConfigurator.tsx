@@ -272,6 +272,7 @@ interface CarVariant {
   engineLayout: EngineLayout;
   engineReliability: number;
   directInjection: boolean;
+  hybrid: boolean;
 }
 
 interface CarRecommendation {
@@ -772,6 +773,22 @@ function DonutChart({ segments }: { segments: { value: number; color: string; la
 }
 
 /* ──────────────── variant description ──────────────── */
+
+const FUEL_BADGE_STYLES: Record<FuelType, { bg: string; label: string }> = {
+  benzyna: { bg: "bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-400", label: "Benzyna" },
+  diesel: { bg: "bg-gray-200 text-gray-700 dark:bg-gray-700 dark:text-gray-300", label: "Diesel" },
+  gaz: { bg: "bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-400", label: "LPG" },
+  elektryczny: { bg: "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-400", label: "Elektryk" },
+};
+function getFuelBadge(v: CarVariant): { bg: string; label: string } {
+  if (v.hybrid && v.fuelType !== "gaz") {
+    return { bg: "bg-teal-100 text-teal-700 dark:bg-teal-900/40 dark:text-teal-400", label: v.fuelType === "diesel" ? "Hybryda diesel" : "Hybryda" };
+  }
+  if (v.hybrid && v.fuelType === "gaz") {
+    return { bg: "bg-cyan-100 text-cyan-700 dark:bg-cyan-900/40 dark:text-cyan-400", label: "Hybryda + LPG" };
+  }
+  return FUEL_BADGE_STYLES[v.fuelType];
+}
 
 function getVariantDesc(car: CarRecommendation, v: CarVariant, long: boolean): string {
   // Model-specific characteristics from LLM (emotional, unique to this car)
@@ -1452,13 +1469,6 @@ export default function CarConfigurator() {
             const reliability = (e: typeof deduped[0]) => e.car.brandReliability + e.variant.engineReliability;
             const globalBest = deduped.reduce((a, b) => reliability(a) < reliability(b) ? a : reliability(a) === reliability(b) ? (a.cost.costPerKm < b.cost.costPerKm ? a : b) : b, deduped[0]);
 
-            const fuelBadge: Record<FuelType, { bg: string; label: string }> = {
-              benzyna: { bg: "bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-400", label: "Benzyna" },
-              diesel: { bg: "bg-gray-200 text-gray-700 dark:bg-gray-700 dark:text-gray-300", label: "Diesel" },
-              gaz: { bg: "bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-400", label: "LPG" },
-              elektryczny: { bg: "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-400", label: "Elektryk" },
-            };
-
             return (
               <div className="space-y-6">
                 <div className="rounded-2xl bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-200 dark:border-emerald-800 p-5">
@@ -1512,8 +1522,8 @@ export default function CarConfigurator() {
                             {car.yearFrom}–{car.yearTo} · {variant.engine}
                           </p>
                         </div>
-                        <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-full shrink-0 ${fuelBadge[variant.fuelType].bg}`}>
-                          {fuelBadge[variant.fuelType].label}
+                        <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-full shrink-0 ${getFuelBadge(variant).bg}`}>
+                          {getFuelBadge(variant).label}
                         </span>
                       </div>
 
@@ -1581,12 +1591,6 @@ export default function CarConfigurator() {
                 const v = car.variants[selIdx] ?? car.variants[0];
                 const vi = car.variants.indexOf(v);
                 const cost = costsMap.get(`${expandedCategory}-${i}-${vi}`) ?? null;
-                const fuelBadge: Record<FuelType, { bg: string; label: string }> = {
-                  benzyna: { bg: "bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-400", label: "Benzyna" },
-                  diesel: { bg: "bg-gray-200 text-gray-700 dark:bg-gray-700 dark:text-gray-300", label: "Diesel" },
-                  gaz: { bg: "bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-400", label: "LPG" },
-                  elektryczny: { bg: "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-400", label: "Elektryk" },
-                };
 
                 return (
                   <div
@@ -1615,7 +1619,7 @@ export default function CarConfigurator() {
                     {car.variants.length > 1 && (
                       <div className="flex gap-1.5 flex-wrap">
                         {car.variants.map((vt, vtIdx) => {
-                          const badge = fuelBadge[vt.fuelType];
+                          const badge = getFuelBadge(vt);
                           const isActive = vtIdx === vi;
                           return (
                             <button
@@ -1637,8 +1641,8 @@ export default function CarConfigurator() {
 
                     {/* Single variant badge if only one */}
                     {car.variants.length === 1 && (
-                      <span className={`text-[10px] font-semibold px-1.5 py-0.5 rounded-full inline-block ${fuelBadge[v.fuelType].bg}`}>
-                        {fuelBadge[v.fuelType].label}
+                      <span className={`text-[10px] font-semibold px-1.5 py-0.5 rounded-full inline-block ${getFuelBadge(v).bg}`}>
+                        {getFuelBadge(v).label}
                       </span>
                     )}
 

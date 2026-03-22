@@ -76,7 +76,7 @@ const tools = [
                           fuelType: {
                             type: "string",
                             enum: ["benzyna", "diesel", "elektryczny"],
-                            description: "Typ paliwa",
+                            description: "Typ paliwa bazowego (hybrydy benzynowe = benzyna, hybrydy dieslowe = diesel)",
                           },
                           priceFrom: { type: "number", description: "Szacowana cena od (PLN)" },
                           priceTo: { type: "number", description: "Szacowana cena do (PLN)" },
@@ -95,8 +95,12 @@ const tools = [
                             type: "boolean",
                             description: "Czy silnik ma wtrysk bezpośredni (FSI, TSI, TFSI, GDI, T-GDI, Skyactiv-G direct, CDI, itp.). Port injection / MPI = false.",
                           },
+                          hybrid: {
+                            type: "boolean",
+                            description: "Czy to hybryda (silnik spalinowy + elektryczny). Np. Toyota Prius, Corolla Hybrid, Yaris Hybrid, Lexus hybryd, BMW iPerformance. Hybrydy mają niższe spalanie.",
+                          },
                         },
-                        required: ["engine", "hp", "fuelType", "priceFrom", "priceTo", "fuelCity", "fuelHighway", "engineLayout", "engineReliability", "directInjection"],
+                        required: ["engine", "hp", "fuelType", "priceFrom", "priceTo", "fuelCity", "fuelHighway", "engineLayout", "engineReliability", "directInjection", "hybrid"],
                         additionalProperties: false,
                       },
                     },
@@ -192,7 +196,8 @@ Podaj do ${body.extended ? 8 : 5} modeli na kategorię. Jeśli w danej kategorii
 TYP SAMOCHODU: użytkownik wybrał "${bodyStyleLabel}". Rekomenduj WYŁĄCZNIE samochody tego typu.
 ${body.bodyStyle === "sedan" ? "OSOBOWY = wszystkie formy nadwozia osobowego: sedan, hatchback, kombi, liftback, coupe, cabrio. Np. VW Golf, Toyota Corolla, BMW 3, Mazda 3, Audi A3, Toyota Yaris GR (hot hatch B-segment!). NIE ograniczaj się do klasycznych sedanów." : ""}${body.bodyStyle === "van" ? "VAN = samochody dostawczo-osobowe i vany (np. VW Transporter, Mercedes Vito, Renault Trafic, Ford Transit Custom, Toyota Proace, Opel Vivaro, VW Caddy, Citroën Berlingo). NIE zwracaj sedanów, SUV-ów ani crossoverów." : ""}${body.bodyStyle === "suv" ? "SUV = duże SUV-y (np. Toyota Land Cruiser, BMW X5, Hyundai Santa Fe, Kia Sorento). NIE zwracaj sedanów, vanów ani crossoverów." : ""}${body.bodyStyle === "crossover" ? "CROSSOVER = kompaktowe crossovery/SUV-y (np. Toyota RAV4, Mazda CX-5, VW Tiguan, Hyundai Tucson). NIE zwracaj sedanów, vanów ani dużych SUV-ów." : ""}${body.bodyStyle === "terenowy" ? "TERENOWY = samochody terenowe (np. Jeep Wrangler, Toyota Land Cruiser, Suzuki Jimny, Land Rover Defender). NIE zwracaj sedanów, crossoverów ani vanów." : ""}${body.bodyStyle === "sportowy" ? "SPORTOWY = samochody sportowe (np. Mazda MX-5, Toyota GR86, BMW M2, Porsche Cayman). NIE zwracaj sedanów, vanów ani SUV-ów." : ""}
 MOC: KAŻDY wariant >= ${body.hp || 150} KM. Nie dodawaj słabszych wariantów.
-WARIANTY: podaj benzyna i diesel jeśli oba spełniają moc. Nie dodawaj LPG. Nie wymuszaj diesla jeśli nie spełnia mocy.
+WARIANTY: podaj benzyna, diesel i hybrydy jeśli spełniają moc. Nie dodawaj LPG. Nie wymuszaj diesla jeśli nie spełnia mocy.
+HYBRYDY: jeśli model ma wersję hybrydową — dodaj ją jako osobny wariant z hybrid=true, fuelType="benzyna" (lub "diesel" dla hybrydy diesla), i NIŻSZYM spalaniem. Np. Toyota Prius, Corolla Hybrid, Yaris Hybrid, Lexus CT/IS/ES/RX hybrid, Kia Niro, Hyundai Ioniq hybrid. Hybrydy to popularne, tanie w eksploatacji samochody — NIE pomijaj ich!
 
 CENY – NAJWAŻNIEJSZE:
 - Podawaj REALNE ceny rynkowe z polskich portali (Otomoto, OLX) na dziś.
