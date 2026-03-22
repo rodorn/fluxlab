@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect, useRef } from "react";
 import Image from "next/image";
 
 /* ───────────────────────── types ───────────────────────── */
@@ -12,10 +12,13 @@ type BodyShape =
   | "hot-hatch" | "4door-coupe" | "sport-sedan" | "sport-crossover"
   | "standard" | "coupe" | "pickup";
 
+type KmPeriod = "dzien" | "tydzien" | "miesiac" | "rok";
+const KM_MULTIPLIER: Record<KmPeriod, number> = { dzien: 365, tydzien: 52, miesiac: 12, rok: 1 };
+const KM_PERIOD_LABELS: Record<KmPeriod, string> = { dzien: "dziennie", tydzien: "tygodniowo", miesiac: "miesięcznie", rok: "rocznie" };
+
 interface Answers {
   height: number;
   passengers: number;
-  longTrips: number;
   segmentOverride: Segment | null;
   bodyStyle: BodyStyle | null;
   bodyShapes: BodyShape[];
@@ -26,6 +29,7 @@ interface Answers {
   budget: number;
   kmCity: number;
   kmHighway: number;
+  kmPeriod: KmPeriod;
   yearsOwned: number;
   additionalInfo: string;
 }
@@ -33,7 +37,6 @@ interface Answers {
 const INITIAL: Answers = {
   height: 175,
   passengers: 1,
-  longTrips: 30,
   segmentOverride: null,
   bodyStyle: null,
   bodyShapes: [],
@@ -42,8 +45,9 @@ const INITIAL: Answers = {
   maxSpeed: 130,
   powerOverride: null,
   budget: 50000,
-  kmCity: 5000,
-  kmHighway: 10000,
+  kmCity: 800,
+  kmHighway: 1500,
+  kmPeriod: "miesiac",
   yearsOwned: 5,
   additionalInfo: "",
 };
@@ -222,11 +226,11 @@ function clampSegment(seg: Segment, bodyStyle: BodyStyle | null, bodyShapes: Bod
   return SEGMENTS_ORDERED[Math.max(minIdx, Math.min(maxIdx, idx))];
 }
 
-function calcSegment(a: Answers): Segment {
+function calcSegment(a: Answers, longTrips: number): Segment {
   let score = 0;
   if (a.height >= 170) score += a.height - 170;
   score += a.passengers * 10;
-  score *= (a.longTrips + 100) / 100;
+  score *= (longTrips + 100) / 100;
   if (a.bodyStyle === "van") score -= 20;
 
   let seg: Segment;
@@ -257,25 +261,29 @@ function calcSuggestedHP(a: Answers, segment: Segment): number {
 type FuelType = "benzyna" | "diesel" | "gaz" | "elektryczny";
 type EngineLayout = "elektryczny" | "R3" | "R4" | "R5" | "R6" | "V6" | "V8" | "V10" | "V12" | "W12" | "W16";
 
+interface CarVariant {
+  engine: string;
+  hp: number;
+  fuelType: FuelType;
+  priceFrom: number;
+  priceTo: number;
+  fuelCity: number;
+  fuelHighway: number;
+  engineLayout: EngineLayout;
+  engineReliability: number;
+}
+
 interface CarRecommendation {
   make: string;
   model: string;
   generation: string;
   yearFrom: number;
   yearTo: number;
-  engine: string;
-  priceFrom: number;
-  priceTo: number;
   pros: string[];
   cons: string[];
-  // cost estimation fields from LLM
-  fuelType: FuelType;
-  fuelCity: number;
-  fuelHighway: number;
-  engineLayout: EngineLayout;
   brandReliability: number;
-  engineReliability: number;
   complexity: number;
+  variants: CarVariant[];
 }
 
 /* ──────────────── cost calculation (shared with kalkulator) ──────────────── */
@@ -292,17 +300,20 @@ interface CostResult {
   totalCost: number;
   monthly: number;
   costPerKm: number;
+  fuelCost: number;
+  lostValue: number;
+  repairs: number;
 }
 
-function calcCarCost(car: CarRecommendation, kmCity: number, kmHighway: number, yearsOwned: number): CostResult {
-  const price = (car.priceFrom + car.priceTo) / 2;
+function calcVariantCost(car: CarRecommendation, v: CarVariant, kmCity: number, kmHighway: number, yearsOwned: number): CostResult {
+  const price = (v.priceFrom + v.priceTo) / 2;
   const year = Math.round((car.yearFrom + car.yearTo) / 2);
-  const mileage = Math.max(1000, (YEAR_NOW - year) * 15000); // estimated
+  const mileage = Math.max(1000, (YEAR_NOW - year) * 15000);
 
   const totalKm = (kmCity + kmHighway) * yearsOwned;
   const fuelCost =
-    ((kmCity * car.fuelCity + kmHighway * car.fuelHighway) / 100) *
-    FUEL_PRICES[car.fuelType] * yearsOwned;
+    ((kmCity * v.fuelCity + kmHighway * v.fuelHighway) / 100) *
+    FUEL_PRICES[v.fuelType] * yearsOwned;
 
   const ageStart = YEAR_NOW - year;
   const ageEnd = ageStart + yearsOwned;
@@ -316,9 +327,9 @@ function calcCarCost(car: CarRecommendation, kmCity: number, kmHighway: number, 
       : car.brandReliability);
   const engineFactor =
     (averageKm < 300000
-      ? Math.max(0, car.engineReliability - (car.engineReliability - 1) * ((300000 - averageKm) / 300000))
-      : car.engineReliability) *
-    ENGINE_MULT[car.engineLayout] * FUEL_MULT[car.fuelType];
+      ? Math.max(0, v.engineReliability - (v.engineReliability - 1) * ((300000 - averageKm) / 300000))
+      : v.engineReliability) *
+    ENGINE_MULT[v.engineLayout] * FUEL_MULT[v.fuelType];
   const reliabilityFactor = (brandFactor + engineFactor) / 50;
   const totalKmCity = kmCity * yearsOwned;
   const totalKmHighway = kmHighway * yearsOwned;
@@ -329,7 +340,7 @@ function calcCarCost(car: CarRecommendation, kmCity: number, kmHighway: number, 
   const monthly = totalCost / (12 * yearsOwned);
   const costPerKm = totalKm > 0 ? totalCost / totalKm : 0;
 
-  return { totalCost, monthly, costPerKm };
+  return { totalCost, monthly, costPerKm, fuelCost, lostValue, repairs };
 }
 
 interface AgeCategory {
@@ -721,10 +732,24 @@ export default function CarConfigurator() {
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Answers>(INITIAL);
   const [loading, setLoading] = useState(false);
+  const [loadingElapsed, setLoadingElapsed] = useState(0);
+  const loadingTimer = useRef<ReturnType<typeof setInterval> | null>(null);
   const [error, setError] = useState("");
   const [results, setResults] = useState<RecommendResult | null>(null);
   const [expandedCategory, setExpandedCategory] = useState<number>(0);
-  const [showCosts, setShowCosts] = useState(false);
+  const [costsMap, setCostsMap] = useState<Map<string, CostResult>>(new Map());
+  const [calculatingCosts, setCalculatingCosts] = useState(false);
+  const [selectedVariants, setSelectedVariants] = useState<Map<string, number>>(new Map());
+
+  useEffect(() => {
+    if (loading) {
+      setLoadingElapsed(0);
+      loadingTimer.current = setInterval(() => setLoadingElapsed((s) => s + 1), 1000);
+    } else {
+      if (loadingTimer.current) clearInterval(loadingTimer.current);
+    }
+    return () => { if (loadingTimer.current) clearInterval(loadingTimer.current); };
+  }, [loading]);
 
   const { titles: stepTitles, hasShapeStep } = getStepConfig(answers.bodyStyle);
   const lastStep = stepTitles.length - 1;
@@ -744,7 +769,12 @@ export default function CarConfigurator() {
       return next;
     });
 
-  const suggestedSegment = useMemo(() => calcSegment(answers), [answers]);
+  const longTrips = useMemo(() => {
+    const total = answers.kmCity + answers.kmHighway;
+    return total > 0 ? Math.round((answers.kmHighway / total) * 100) : 30;
+  }, [answers.kmCity, answers.kmHighway]);
+
+  const suggestedSegment = useMemo(() => calcSegment(answers, longTrips), [answers, longTrips]);
   const segment = answers.segmentOverride
     ? clampSegment(answers.segmentOverride, answers.bodyStyle, answers.bodyShapes)
     : suggestedSegment;
@@ -761,6 +791,7 @@ export default function CarConfigurator() {
     setLoading(true);
     setError("");
     setResults(null);
+    setCostsMap(new Map());
     try {
       const res = await fetch("/api/car-recommend", {
         method: "POST",
@@ -770,7 +801,7 @@ export default function CarConfigurator() {
           bodyStyle: answers.bodyStyle,
           bodyShapes: answers.bodyShapes,
           passengers: answers.passengers,
-          longTrips: answers.longTrips,
+          longTrips,
           height: answers.height,
           segment,
           hp: displayHP,
@@ -782,8 +813,38 @@ export default function CarConfigurator() {
         return;
       }
       const data: RecommendResult = await res.json();
+      const budget = answers.budget;
+      const minHP = displayHP;
+      for (const cat of data.categories) {
+        for (const car of cat.cars) {
+          // Filter variants: must meet power and budget
+          car.variants = car.variants.filter((v) => v.hp >= minHP && v.priceFrom <= budget);
+          // Auto-generate LPG variant for each benzyna variant (engine >= 1.4L)
+          const lpgVariants: CarVariant[] = [];
+          for (const v of car.variants) {
+            if (v.fuelType === "benzyna") {
+              lpgVariants.push({
+                ...v,
+                engine: v.engine + " + LPG",
+                fuelType: "gaz",
+                priceFrom: v.priceFrom + 4000,
+                priceTo: v.priceTo + 4000,
+                fuelCity: Math.round(v.fuelCity * 1.12 * 10) / 10,
+                fuelHighway: Math.round(v.fuelHighway * 1.12 * 10) / 10,
+              });
+            }
+          }
+          // Add LPG variants that still fit in budget
+          for (const lv of lpgVariants) {
+            if (lv.priceFrom <= budget) car.variants.push(lv);
+          }
+        }
+        cat.cars = cat.cars.filter((car) => car.variants.length > 0);
+      }
+      data.categories = data.categories.filter((cat) => cat.cars.length > 0);
       setResults(data);
       setExpandedCategory(0);
+      setSelectedVariants(new Map());
     } catch {
       setError("Nie udało się połączyć z serwerem");
     } finally {
@@ -914,10 +975,42 @@ export default function CarConfigurator() {
           min={1} max={answers.bodyStyle === "van" ? 8 : 5} step={1} unit="os."
           hint="Ile osób jednocześnie przewozisz najczęściej?"
           onChange={(v) => set("passengers", v)} />
-        <Slider label="Rodzaj tras" value={answers.longTrips} min={0} max={100} step={5}
-          onChange={(v) => set("longTrips", v)}
-          labels={{ left: "🏙️ Głównie miasto", right: "🛣️ Głównie trasa" }}
-          hint="Na trasie liczy się komfort i stabilność – to wymaga większego auta." />
+      </div>
+
+      {/* Km przebiegi – wpływają na segment */}
+      <div className="space-y-8">
+        <div className="space-y-2">
+          <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Przebiegi podaję</span>
+          <div className="flex gap-1 p-1 rounded-xl bg-gray-100 dark:bg-gray-800 w-fit">
+            {(["dzien", "tydzien", "miesiac", "rok"] as KmPeriod[]).map((p) => (
+              <button
+                key={p}
+                type="button"
+                onClick={() => {
+                  if (p === answers.kmPeriod) return;
+                  const from = KM_MULTIPLIER[answers.kmPeriod];
+                  const to = KM_MULTIPLIER[p];
+                  const ratio = from / to;
+                  set("kmPeriod", p);
+                  set("kmCity", Math.max(1, Math.round(answers.kmCity * ratio)));
+                  set("kmHighway", Math.max(1, Math.round(answers.kmHighway * ratio)));
+                }}
+                className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
+                  answers.kmPeriod === p
+                    ? "bg-white dark:bg-gray-700 text-accent shadow-sm"
+                    : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
+                }`}
+              >
+                {KM_PERIOD_LABELS[p]}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <LogSlider label={`Km w mieście (${KM_PERIOD_LABELS[answers.kmPeriod]})`} value={answers.kmCity} min={1} max={Math.round(100000 / KM_MULTIPLIER[answers.kmPeriod])} unit="km"
+          onChange={(v) => set("kmCity", v)} />
+        <LogSlider label={`Km w trasie (${KM_PERIOD_LABELS[answers.kmPeriod]})`} value={answers.kmHighway} min={1} max={Math.round(100000 / KM_MULTIPLIER[answers.kmPeriod])} unit="km"
+          onChange={(v) => set("kmHighway", v)} />
       </div>
 
       {/* Segment result */}
@@ -987,9 +1080,9 @@ export default function CarConfigurator() {
   const renderPreferences = () => (
     <div className="space-y-10">
       <div className="rounded-2xl bg-accent/5 dark:bg-accent/10 border border-accent/20 p-6">
-        <h3 className="text-sm font-semibold text-accent mb-2">Budżet i przebiegi</h3>
+        <h3 className="text-sm font-semibold text-accent mb-2">Budżet i użytkowanie</h3>
         <p className="text-sm text-gray-600 dark:text-gray-400">
-          AI dobierze modele do Twojego budżetu. Podaj też roczne przebiegi i planowany okres użytkowania, żeby wyliczyć koszty posiadania.
+          AI dobierze modele do Twojego budżetu. Podaj planowany okres użytkowania, żeby wyliczyć koszty posiadania.
         </p>
       </div>
 
@@ -997,10 +1090,6 @@ export default function CarConfigurator() {
         onChange={(v) => set("budget", v)} />
 
       <div className="space-y-8">
-        <LogSlider label="Km w mieście (rocznie)" value={answers.kmCity} min={100} max={100000} unit="km"
-          onChange={(v) => set("kmCity", v)} />
-        <LogSlider label="Km w trasie (rocznie)" value={answers.kmHighway} min={100} max={100000} unit="km"
-          onChange={(v) => set("kmHighway", v)} />
         <Slider label="Planowany okres użytkowania" value={answers.yearsOwned} min={1} max={20} step={1} unit="lat"
           onChange={(v) => set("yearsOwned", v)} />
       </div>
@@ -1026,7 +1115,7 @@ export default function CarConfigurator() {
           <SummaryRow label="Typ" value={BODY_STYLES.find((b) => b.id === answers.bodyStyle)?.title ?? "—"} />
           <SummaryRow label="Segment" value={getSegmentName(segment, answers.bodyStyle, answers.bodyShapes)} />
           <SummaryRow label="Moc" value={`${displayHP} KM`} />
-          <SummaryRow label="Km/rok" value={`${fmt(answers.kmCity + answers.kmHighway)} km`} />
+          <SummaryRow label="Km/rok" value={`${fmt((answers.kmCity + answers.kmHighway) * KM_MULTIPLIER[answers.kmPeriod])} km`} />
           <SummaryRow label="Okres" value={`${answers.yearsOwned} ${answers.yearsOwned === 1 ? "rok" : answers.yearsOwned < 5 ? "lata" : "lat"}`} />
         </div>
       </div>
@@ -1037,15 +1126,36 @@ export default function CarConfigurator() {
 
   const renderResults = () => (
     <div className="space-y-8">
-      {loading && (
-        <div className="flex flex-col items-center justify-center py-20 gap-4">
-          <svg className="animate-spin h-8 w-8 text-accent" viewBox="0 0 24 24" fill="none">
-            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
-          </svg>
-          <p className="text-sm text-gray-500 dark:text-gray-400">AI analizuje rynek i dobiera modele...</p>
-        </div>
-      )}
+      {loading && (() => {
+        const steps = [
+          { t: 0,  text: "Wysyłam zapytanie do AI..." },
+          { t: 3,  text: "AI analizuje rynek wtórny..." },
+          { t: 8,  text: `Szukam modeli w segmencie ${segment} i wyższych...` },
+          { t: 15, text: `Dobieram warianty paliwowe (benzyna, diesel, LPG)...` },
+          { t: 22, text: "Weryfikuję ceny na polskim rynku..." },
+          { t: 30, text: "Prawie gotowe — finalizuję rekomendacje..." },
+          { t: 45, text: "To trwa dłużej niż zwykle — proszę o cierpliwość..." },
+        ];
+        const current = [...steps].reverse().find((s) => loadingElapsed >= s.t) ?? steps[0];
+        const pct = Math.min(95, Math.round((loadingElapsed / 40) * 100));
+        return (
+          <div className="flex flex-col items-center justify-center py-20 gap-5">
+            <div className="relative w-16 h-16">
+              <svg className="w-16 h-16 -rotate-90" viewBox="0 0 64 64">
+                <circle cx="32" cy="32" r="28" fill="none" stroke="currentColor" strokeWidth="4" className="text-gray-200 dark:text-gray-700" />
+                <circle cx="32" cy="32" r="28" fill="none" stroke="currentColor" strokeWidth="4" className="text-accent transition-all duration-1000"
+                  strokeDasharray={`${2 * Math.PI * 28}`}
+                  strokeDashoffset={`${2 * Math.PI * 28 * (1 - pct / 100)}`}
+                  strokeLinecap="round"
+                />
+              </svg>
+              <span className="absolute inset-0 flex items-center justify-center text-xs font-bold text-accent tabular-nums">{pct}%</span>
+            </div>
+            <p className="text-sm text-gray-500 dark:text-gray-400 text-center transition-opacity">{current.text}</p>
+            <p className="text-xs text-gray-400 dark:text-gray-600 tabular-nums">{loadingElapsed}s</p>
+          </div>
+        );
+      })()}
 
       {error && (
         <div className="rounded-2xl border border-red-200 dark:border-red-800 bg-red-50 dark:bg-red-900/20 p-6 text-center">
@@ -1056,7 +1166,21 @@ export default function CarConfigurator() {
         </div>
       )}
 
-      {results && (
+      {results && results.categories.length === 0 && (
+        <div className="rounded-2xl border border-amber-200 dark:border-amber-800 bg-amber-50 dark:bg-amber-900/20 p-6 text-center space-y-3">
+          <p className="text-sm text-amber-700 dark:text-amber-400">
+            Nie znaleziono modeli spełniających kryteria w budżecie {fmt(answers.budget)} PLN.
+          </p>
+          <p className="text-xs text-amber-600 dark:text-amber-500">
+            Spróbuj zwiększyć budżet, obniżyć wymaganą moc lub wybrać niższy segment.
+          </p>
+          <button type="button" onClick={() => setStep(Math.max(0, lastStep - 2))} className="btn-secondary text-sm mt-2">
+            Zmień kryteria
+          </button>
+        </div>
+      )}
+
+      {results && results.categories.length > 0 && (
         <>
           <div className="rounded-2xl bg-accent/5 dark:bg-accent/10 border border-accent/20 p-6 space-y-3">
             <div className="flex items-start justify-between gap-4">
@@ -1069,20 +1193,36 @@ export default function CarConfigurator() {
                 </p>
               </div>
             </div>
-            {/* Cost toggle */}
+            {/* Cost calculation button */}
             <div className="flex items-center gap-3 pt-1">
               <button
                 type="button"
-                onClick={() => setShowCosts(!showCosts)}
-                className={`relative w-12 h-7 rounded-full transition-colors ${showCosts ? "bg-accent" : "bg-gray-300 dark:bg-gray-600"}`}
+                disabled={calculatingCosts}
+                onClick={() => {
+                  setCalculatingCosts(true);
+                  const mult = KM_MULTIPLIER[answers.kmPeriod];
+                  const annualCity = answers.kmCity * mult;
+                  const annualHighway = answers.kmHighway * mult;
+                  const map = new Map<string, CostResult>();
+                  for (let ci = 0; ci < results.categories.length; ci++) {
+                    for (let carI = 0; carI < results.categories[ci].cars.length; carI++) {
+                      const car = results.categories[ci].cars[carI];
+                      for (let vi = 0; vi < car.variants.length; vi++) {
+                        map.set(`${ci}-${carI}-${vi}`, calcVariantCost(car, car.variants[vi], annualCity, annualHighway, answers.yearsOwned));
+                      }
+                    }
+                  }
+                  setCostsMap(map);
+                  setCalculatingCosts(false);
+                }}
+                className="btn-secondary text-sm disabled:opacity-50"
               >
-                <span className={`absolute top-0.5 left-0.5 w-6 h-6 rounded-full bg-white shadow transition-transform ${showCosts ? "translate-x-5" : ""}`} />
+                {calculatingCosts ? "Obliczanie..." : costsMap.size > 0 ? "Przelicz ponownie" : "Przelicz szacunkowe koszty"}
               </button>
-              <span className="text-sm text-gray-700 dark:text-gray-300">
-                Pokaż szacunkowe koszty posiadania
-              </span>
-              {showCosts && (
-                <span className="text-xs text-gray-400">({fmt(answers.kmCity + answers.kmHighway)} km/rok, {answers.yearsOwned} lat)</span>
+              {costsMap.size > 0 && (
+                <span className="text-xs text-gray-400">
+                  ({fmt((answers.kmCity + answers.kmHighway) * KM_MULTIPLIER[answers.kmPeriod])} km/rok, {answers.yearsOwned} lat)
+                </span>
               )}
             </div>
           </div>
@@ -1107,14 +1247,26 @@ export default function CarConfigurator() {
 
           {/* Cars in selected category */}
           {results.categories[expandedCategory] && (
-            <div className="space-y-4">
+            <div className="space-y-6">
               {results.categories[expandedCategory].cars.map((car, i) => {
-                const cost = showCosts ? calcCarCost(car, answers.kmCity, answers.kmHighway, answers.yearsOwned) : null;
+                const carKey = `${expandedCategory}-${i}`;
+                const selIdx = selectedVariants.get(carKey) ?? 0;
+                const v = car.variants[selIdx] ?? car.variants[0];
+                const vi = car.variants.indexOf(v);
+                const cost = costsMap.get(`${expandedCategory}-${i}-${vi}`) ?? null;
+                const fuelBadge: Record<FuelType, { bg: string; label: string }> = {
+                  benzyna: { bg: "bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-400", label: "Benzyna" },
+                  diesel: { bg: "bg-gray-200 text-gray-700 dark:bg-gray-700 dark:text-gray-300", label: "Diesel" },
+                  gaz: { bg: "bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-400", label: "LPG" },
+                  elektryczny: { bg: "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-400", label: "Elektryk" },
+                };
+
                 return (
                   <div
                     key={i}
                     className="rounded-2xl border border-gray-200 dark:border-gray-700 p-5 space-y-3 hover:border-accent/30 transition-colors"
                   >
+                    {/* Header: name + price */}
                     <div className="flex items-start justify-between gap-4">
                       <div>
                         <h4 className="font-bold text-gray-900 dark:text-white">
@@ -1122,30 +1274,83 @@ export default function CarConfigurator() {
                           <span className="text-gray-400 font-normal text-sm">{car.generation}</span>
                         </h4>
                         <p className="text-sm text-gray-500 dark:text-gray-400 mt-0.5">
-                          {car.yearFrom}–{car.yearTo} · {car.engine}
+                          {car.yearFrom}–{car.yearTo} · {v.engine}
                         </p>
                       </div>
                       <div className="text-right shrink-0">
                         <p className="text-sm font-semibold text-accent">
-                          {fmt(car.priceFrom)} – {fmt(car.priceTo)} PLN
+                          {fmt(v.priceFrom)} – {fmt(v.priceTo)} PLN
                         </p>
                       </div>
                     </div>
 
+                    {/* Fuel variant switcher */}
+                    {car.variants.length > 1 && (
+                      <div className="flex gap-1.5 flex-wrap">
+                        {car.variants.map((vt, vtIdx) => {
+                          const badge = fuelBadge[vt.fuelType];
+                          const isActive = vtIdx === vi;
+                          return (
+                            <button
+                              key={vtIdx}
+                              type="button"
+                              onClick={() => setSelectedVariants((prev) => new Map(prev).set(carKey, vtIdx))}
+                              className={`text-xs font-medium px-2.5 py-1 rounded-lg border-2 transition-all ${
+                                isActive
+                                  ? `border-accent ${badge.bg}`
+                                  : "border-transparent bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 hover:border-gray-300 dark:hover:border-gray-600"
+                              }`}
+                            >
+                              {badge.label}
+                            </button>
+                          );
+                        })}
+                      </div>
+                    )}
+
+                    {/* Single variant badge if only one */}
+                    {car.variants.length === 1 && (
+                      <span className={`text-[10px] font-semibold px-1.5 py-0.5 rounded-full inline-block ${fuelBadge[v.fuelType].bg}`}>
+                        {fuelBadge[v.fuelType].label}
+                      </span>
+                    )}
+
+                    {/* Cost row */}
                     {cost && (
                       <div className="flex flex-wrap gap-x-6 gap-y-1 text-xs border-t border-gray-100 dark:border-gray-800 pt-2">
-                        <span className="text-gray-500 dark:text-gray-400">
+                        <span className="text-gray-500 dark:text-gray-400 relative group cursor-help">
                           Koszt/mies.: <span className="font-semibold text-gray-900 dark:text-white">{fmt(Math.round(cost.monthly))} PLN</span>
+                          <span className="absolute bottom-full left-0 mb-2 hidden group-hover:block w-56 p-2.5 rounded-xl bg-gray-900 dark:bg-gray-700 text-white text-[11px] leading-relaxed shadow-lg z-20 pointer-events-none">
+                            <span className="block font-semibold mb-1">Składowe kosztu miesięcznego:</span>
+                            <span className="block">Paliwo: {fmt(Math.round(cost.fuelCost / (12 * answers.yearsOwned)))} PLN/mies.</span>
+                            <span className="block">Utrata wartości: {fmt(Math.round(cost.lostValue / (12 * answers.yearsOwned)))} PLN/mies.</span>
+                            <span className="block">Serwis i naprawy: {fmt(Math.round(cost.repairs / (12 * answers.yearsOwned)))} PLN/mies.</span>
+                          </span>
                         </span>
-                        <span className="text-gray-500 dark:text-gray-400">
+                        <span className="text-gray-500 dark:text-gray-400 relative group cursor-help">
                           Koszt/km: <span className="font-semibold text-gray-900 dark:text-white">{cost.costPerKm.toFixed(2)} PLN</span>
+                          <span className="absolute bottom-full left-0 mb-2 hidden group-hover:block w-56 p-2.5 rounded-xl bg-gray-900 dark:bg-gray-700 text-white text-[11px] leading-relaxed shadow-lg z-20 pointer-events-none">
+                            <span className="block font-semibold mb-1">Składowe kosztu na km:</span>
+                            {(() => { const totalKm = (answers.kmCity + answers.kmHighway) * KM_MULTIPLIER[answers.kmPeriod] * answers.yearsOwned; return totalKm > 0 ? (<>
+                              <span className="block">Paliwo: {(cost.fuelCost / totalKm).toFixed(2)} PLN/km</span>
+                              <span className="block">Utrata wartości: {(cost.lostValue / totalKm).toFixed(2)} PLN/km</span>
+                              <span className="block">Serwis i naprawy: {(cost.repairs / totalKm).toFixed(2)} PLN/km</span>
+                            </>) : null; })()}
+                          </span>
                         </span>
-                        <span className="text-gray-500 dark:text-gray-400">
+                        <span className="text-gray-500 dark:text-gray-400 relative group cursor-help">
                           Łącznie ({answers.yearsOwned} lat): <span className="font-semibold text-gray-900 dark:text-white">{fmt(Math.round(cost.totalCost))} PLN</span>
+                          <span className="absolute bottom-full right-0 mb-2 hidden group-hover:block w-56 p-2.5 rounded-xl bg-gray-900 dark:bg-gray-700 text-white text-[11px] leading-relaxed shadow-lg z-20 pointer-events-none">
+                            <span className="block font-semibold mb-1">Rozbicie kosztów łącznych:</span>
+                            <span className="block">Paliwo: {fmt(Math.round(cost.fuelCost))} PLN ({Math.round(cost.fuelCost / cost.totalCost * 100)}%)</span>
+                            <span className="block">Utrata wartości: {fmt(Math.round(cost.lostValue))} PLN ({Math.round(cost.lostValue / cost.totalCost * 100)}%)</span>
+                            <span className="block">Serwis i naprawy: {fmt(Math.round(cost.repairs))} PLN ({Math.round(cost.repairs / cost.totalCost * 100)}%)</span>
+                          </span>
                         </span>
                       </div>
                     )}
 
+                    {/* Pros/cons */}
                     <div className="grid sm:grid-cols-2 gap-2 text-xs">
                       <div className="space-y-1">
                         {car.pros.map((p) => (

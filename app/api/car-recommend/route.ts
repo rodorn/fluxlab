@@ -19,13 +19,13 @@ const tools = [
     type: "function",
     name: "recommend_cars",
     description:
-      "Zwróć rekomendacje samochodów w 6 kategoriach wiekowych. Każda kategoria powinna zawierać dokładnie 5 modeli dopasowanych do budżetu i preferencji użytkownika.",
+      "Zwróć rekomendacje samochodów w kategoriach wiekowych. Każda kategoria zawiera modele z wariantami paliwowymi dopasowanymi do budżetu i preferencji użytkownika.",
     parameters: {
       type: "object",
       properties: {
         categories: {
           type: "array",
-          description: "5 kategorii wiekowych",
+          description: "Kategorie wiekowe (tylko te, w których budżet pozwala na jakikolwiek model)",
           items: {
             type: "object",
             properties: {
@@ -37,7 +37,7 @@ const tools = [
               ageTo: { type: "number", description: "Maksymalny wiek w latach (0 = brak limitu)" },
               cars: {
                 type: "array",
-                description: "5 rekomendowanych modeli",
+                description: "3-5 rekomendowanych modeli",
                 items: {
                   type: "object",
                   properties: {
@@ -46,9 +46,6 @@ const tools = [
                     generation: { type: "string", description: "Generacja/oznaczenie, np. 'G20', 'B9', 'MK8'" },
                     yearFrom: { type: "number", description: "Rok produkcji od" },
                     yearTo: { type: "number", description: "Rok produkcji do" },
-                    engine: { type: "string", description: "Silnik, np. '2.0 TDI 150KM', '1.8 Hybrid 140KM'" },
-                    priceFrom: { type: "number", description: "Szacowana cena od (PLN)" },
-                    priceTo: { type: "number", description: "Szacowana cena do (PLN)" },
                     pros: {
                       type: "array",
                       items: { type: "string" },
@@ -59,32 +56,47 @@ const tools = [
                       items: { type: "string" },
                       description: "1-2 konkretne wady tego modelu",
                     },
-                    fuelType: {
-                      type: "string",
-                      enum: ["benzyna", "diesel", "gaz", "elektryczny"],
-                      description: "Typ paliwa",
-                    },
-                    fuelCity: { type: "number", description: "Spalanie w mieście L/100km" },
-                    fuelHighway: { type: "number", description: "Spalanie w trasie L/100km" },
-                    engineLayout: {
-                      type: "string",
-                      enum: ["elektryczny", "R3", "R4", "R5", "R6", "V6", "V8", "V10", "V12", "W12", "W16"],
-                      description: "Układ silnika",
-                    },
                     brandReliability: {
                       type: "number",
                       description: "Awaryjność marki: 1=niezawodna, 2=przeciętna, 3=awaryjna",
-                    },
-                    engineReliability: {
-                      type: "number",
-                      description: "Awaryjność silnika: 1=trwały, 2=sprawdzony, 3=średni, 4=złożony, 5=egzotyczny",
                     },
                     complexity: {
                       type: "number",
                       description: "Segment: 1=A/B, 2=C, 3=D, 4=E, 5=F",
                     },
+                    variants: {
+                      type: "array",
+                      description: "Warianty paliwowe tego modelu (benzyna, diesel, LPG, elektryczny). Minimum 1, maksimum 4.",
+                      items: {
+                        type: "object",
+                        properties: {
+                          engine: { type: "string", description: "Silnik, np. '2.0 TDI 150KM', '1.8T 180KM + LPG'" },
+                          hp: { type: "number", description: "Moc silnika w KM" },
+                          fuelType: {
+                            type: "string",
+                            enum: ["benzyna", "diesel", "elektryczny"],
+                            description: "Typ paliwa",
+                          },
+                          priceFrom: { type: "number", description: "Szacowana cena od (PLN)" },
+                          priceTo: { type: "number", description: "Szacowana cena do (PLN)" },
+                          fuelCity: { type: "number", description: "Spalanie w mieście L/100km" },
+                          fuelHighway: { type: "number", description: "Spalanie w trasie L/100km" },
+                          engineLayout: {
+                            type: "string",
+                            enum: ["elektryczny", "R3", "R4", "R5", "R6", "V6", "V8", "V10", "V12", "W12", "W16"],
+                            description: "Układ silnika",
+                          },
+                          engineReliability: {
+                            type: "number",
+                            description: "Awaryjność silnika: 1=trwały, 2=sprawdzony, 3=średni, 4=złożony, 5=egzotyczny",
+                          },
+                        },
+                        required: ["engine", "hp", "fuelType", "priceFrom", "priceTo", "fuelCity", "fuelHighway", "engineLayout", "engineReliability"],
+                        additionalProperties: false,
+                      },
+                    },
                   },
-                  required: ["make", "model", "generation", "yearFrom", "yearTo", "engine", "priceFrom", "priceTo", "pros", "cons", "fuelType", "fuelCity", "fuelHighway", "engineLayout", "brandReliability", "engineReliability", "complexity"],
+                  required: ["make", "model", "generation", "yearFrom", "yearTo", "pros", "cons", "brandReliability", "complexity", "variants"],
                   additionalProperties: false,
                 },
               },
@@ -119,14 +131,31 @@ export async function POST(req: Request) {
     body.longTrips <= 80 ? "więcej trasy niż miasta" :
     "głównie trasa";
 
+  const segmentExamples: Record<string, string> = {
+    A: "A/B – miejskie (Fiat 500, VW Up, Toyota Aygo, VW Polo, Hyundai i20)",
+    B: "B – małe (VW Polo, Skoda Fabia, Opel Corsa, Mazda 2)",
+    C: "C – kompaktowe (VW Golf, Toyota Corolla, Honda Civic, Skoda Octavia)",
+    D: "D – średnia klasa (BMW 3, Audi A4, Mercedes C, VW Passat, Volvo S60)",
+    E: "E – wyższa średnia (BMW 5, Audi A6, Mercedes E, Volvo S90)",
+    F: "F – luksusowe (BMW 7, Audi A8, Mercedes S, Porsche Panamera, Lexus LS, Maserati Quattroporte)",
+  };
+
+  const segmentLabel = segmentExamples[body.segment] || body.segment || "dowolny";
+
+  const segmentOrder = ["A", "B", "C", "D", "E", "F"];
+  const segIdx = segmentOrder.indexOf(body.segment);
+  const allowedSegments = segIdx >= 0 ? segmentOrder.slice(segIdx) : segmentOrder;
+  const allowedSegmentsStr = allowedSegments.map((s) => segmentExamples[s] || s).join("\n  ");
+
   const userMessage = [
-    `Budżet: ${body.budget.toLocaleString("pl-PL")} PLN`,
+    `Orientacyjny budżet: ${body.budget.toLocaleString("pl-PL")} PLN (podaj REALNE ceny, nie dopasowuj do budżetu!)`,
     `Typ samochodu: ${bodyStyleLabel}`,
     `Forma nadwozia: ${shapesLabel}`,
-    `Segment: ${body.segment || "dowolny"}`,
-    `Moc silnika: ~${body.hp || 150} KM`,
+    `Minimalny segment: ${segmentLabel}`,
+    `Dopuszczalne segmenty: ${allowedSegments.join(", ")}`,
+    `Minimalna moc silnika: ${body.hp || 150} KM`,
     `Pasażerowie: ${body.passengers} os.`,
-    `Trasy: ${tripsLabel} (${body.longTrips}/100)`,
+    `Trasy: ${tripsLabel}`,
     `Wzrost kierowcy: ${body.height} cm`,
     body.additionalInfo ? `Dodatkowe wymagania: ${body.additionalInfo}` : "",
   ].filter(Boolean).join("\n");
@@ -141,28 +170,24 @@ export async function POST(req: Request) {
       body: JSON.stringify({
         model: "gpt-5.4-mini",
         temperature: 0.3,
-        instructions: `Jesteś ekspertem motoryzacyjnym specjalizującym się w polskim rynku wtórnym. Dzisiejsza data: ${new Date().toISOString().split("T")[0]}.
+        instructions: `Ekspert motoryzacyjny, rynek polski. Data: ${new Date().toISOString().split("T")[0]}.
 
-Użytkownik szuka samochodu. Na podstawie jego preferencji, segmentu, mocy i budżetu zaproponuj samochody w 6 kategoriach wiekowych:
-1. Nowe (z salonu / do 1 roku)
-2. Do 3 lat (prawie nowe)
-3. 3-7 lat
-4. 7-12 lat
-5. 12-18 lat
-6. Powyżej 18 lat
+Zaproponuj samochody w 6 kategoriach wiekowych: Nowe, Do 3 lat, 3-7 lat, 7-12 lat, 12-18 lat, Powyżej 18 lat.
+Podaj 5 modeli na kategorię. Zawsze zwracaj WSZYSTKIE 6 kategorii.
 
-Zasady:
-- W każdej kategorii podaj DOKŁADNIE 5 modeli
-- Ceny muszą realistycznie mieścić się w budżecie użytkownika na polskim rynku (nowe = ceny katalogowe, używane = rynek wtórny)
-- Jeśli budżet jest za mały na daną kategorię wiekową, podaj najtańsze dostępne opcje i zaznacz w wadach, że przekraczają budżet
-- Dobieraj modele spójne z typem nadwozia, segmentem i mocą
-- Podawaj konkretne silniki i moce (np. "2.0 TDI 150KM", nie "diesel")
-- Generacja powinna być konkretna (np. "F30", "B8", "MK7")
-- Zalety i wady powinny być konkretne dla danego modelu, nie ogólne
-- Uwzględnij wzrost kierowcy przy doborze (wysoki kierowca = potrzeba więcej miejsca nad głową)
-- Preferuj modele popularne w Polsce (łatwiej o części i serwis)
+SEGMENT: minimum ${body.segment}, dopuszczalne też wyższe (${allowedSegments.join(", ")}), NIGDY niższe.
+MOC: KAŻDY wariant >= ${body.hp || 150} KM. Nie dodawaj słabszych wariantów.
+WARIANTY: podaj benzyna i diesel jeśli oba spełniają moc. Nie dodawaj LPG. Nie wymuszaj diesla jeśli nie spełnia mocy.
 
-Zawsze wywołaj funkcję recommend_cars.`,
+CENY – NAJWAŻNIEJSZE:
+- Podawaj REALNE ceny rynkowe z polskich portali (Otomoto, OLX) na dziś.
+- NIE dopasowuj cen do budżetu użytkownika. Podaj prawdziwe ceny, nawet jeśli przekraczają budżet.
+- Budżet użytkownika to ${body.budget.toLocaleString("pl-PL")} PLN – służy Ci TYLKO jako wskazówka, jakie modele mogą go zainteresować. Filtrowanie po cenie robimy sami.
+- Przykłady realnych cen: VW Golf VIII 2020 = 75-95k, BMW 320i G20 2020 = 120-150k, Audi A4 B9 2018 = 80-110k, Mercedes C200 W205 2017 = 70-100k.
+
+FORMAT: konkretne silniki ("2.0 TDI 150KM"), konkretne generacje ("F30", "B8"). Zalety/wady konkretne dla modelu. Popularne w Polsce.
+
+Wywołaj recommend_cars.`,
         input: [{ role: "user", content: userMessage }],
         tools,
         tool_choice: { type: "function", name: "recommend_cars" },
