@@ -127,7 +127,15 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Podaj budżet" }, { status: 400 });
   }
 
-  const bodyStyleLabel = body.bodyStyle ?? "dowolny";
+  const bodyStyleLabels: Record<string, string> = {
+    sedan: "osobowy (sedan, hatchback, kombi, liftback, coupe)",
+    suv: "SUV",
+    crossover: "crossover",
+    van: "van",
+    terenowy: "terenowy / off-road",
+    sportowy: "sportowy",
+  };
+  const bodyStyleLabel = body.bodyStyle ? (bodyStyleLabels[body.bodyStyle] ?? body.bodyStyle) : "dowolny";
   const shapesLabel = body.bodyShapes.length > 0 ? body.bodyShapes.join(", ") : "dowolne";
 
   const segmentExamples: Record<string, string> = {
@@ -170,6 +178,8 @@ export async function POST(req: Request) {
         max_output_tokens: body.extended ? 32000 : 16000,
         instructions: `Ekspert motoryzacyjny, rynek polski. Data: ${new Date().toISOString().split("T")[0]}.
 
+NAJWAŻNIEJSZE — SEGMENT: minimum ${body.segment}, dopuszczalne też wyższe (${allowedSegments.join(", ")}), NIGDY niższe. Zacznij od NAJNIŻSZEGO dopuszczalnego segmentu, w którym istnieją modele spełniające wymaganą moc. NIE przeskakuj do wyższych segmentów jeśli w niższych są pasujące modele (np. segment B z 250+ KM: Toyota Yaris GR; segment C: Golf GTI/R, Civic Type R, i30 N, Megane RS). W każdej kategorii wiekowej najpierw szukaj modeli z najniższego pasującego segmentu, dopiero potem uzupełniaj wyższymi.
+
 Dzisiejszy rok: ${new Date().getFullYear()}. Zaproponuj samochody w 6 kategoriach wiekowych:
 - Nowe (yearFrom >= ${new Date().getFullYear() - 1})
 - Do 3 lat (yearFrom >= ${new Date().getFullYear() - 3})
@@ -181,8 +191,7 @@ WAŻNE: Auto z yearFrom=2008 w roku ${new Date().getFullYear()} ma ${new Date().
 Podaj do ${body.extended ? 8 : 5} modeli na kategorię. Jeśli w danej kategorii nie istnieją modele spełniające kryteria (typ, segment, moc) — zwróć pustą tablicę cars: []. NIGDY nie wstawiaj modelu do kategorii, w której się nie mieści wiekiem. Lepiej zwrócić 0-1 modeli niż kłamać.
 
 TYP SAMOCHODU: użytkownik wybrał "${bodyStyleLabel}". Rekomenduj WYŁĄCZNIE samochody tego typu.
-${body.bodyStyle === "van" ? "VAN = samochody dostawczo-osobowe i vany (np. VW Transporter, Mercedes Vito, Renault Trafic, Ford Transit Custom, Toyota Proace, Opel Vivaro, VW Caddy, Citroën Berlingo). NIE zwracaj sedanów, SUV-ów ani crossoverów." : ""}${body.bodyStyle === "suv" ? "SUV = duże SUV-y (np. Toyota Land Cruiser, BMW X5, Hyundai Santa Fe, Kia Sorento). NIE zwracaj sedanów, vanów ani crossoverów." : ""}${body.bodyStyle === "crossover" ? "CROSSOVER = kompaktowe crossovery/SUV-y (np. Toyota RAV4, Mazda CX-5, VW Tiguan, Hyundai Tucson). NIE zwracaj sedanów, vanów ani dużych SUV-ów." : ""}${body.bodyStyle === "terenowy" ? "TERENOWY = samochody terenowe (np. Jeep Wrangler, Toyota Land Cruiser, Suzuki Jimny, Land Rover Defender). NIE zwracaj sedanów, crossoverów ani vanów." : ""}${body.bodyStyle === "sportowy" ? "SPORTOWY = samochody sportowe (np. Mazda MX-5, Toyota GR86, BMW M2, Porsche Cayman). NIE zwracaj sedanów, vanów ani SUV-ów." : ""}
-SEGMENT: minimum ${body.segment}, dopuszczalne też wyższe (${allowedSegments.join(", ")}), NIGDY niższe. Zacznij od NAJNIŻSZEGO dopuszczalnego segmentu, w którym istnieją modele spełniające wymaganą moc. NIE przeskakuj do wyższych segmentów jeśli w niższych są pasujące modele (np. segment B z 250+ KM: Toyota Yaris GR; segment C: Golf GTI/R, Civic Type R, i30 N, Megane RS).
+${body.bodyStyle === "sedan" ? "OSOBOWY = wszystkie formy nadwozia osobowego: sedan, hatchback, kombi, liftback, coupe, cabrio. Np. VW Golf, Toyota Corolla, BMW 3, Mazda 3, Audi A3, Toyota Yaris GR (hot hatch B-segment!). NIE ograniczaj się do klasycznych sedanów." : ""}${body.bodyStyle === "van" ? "VAN = samochody dostawczo-osobowe i vany (np. VW Transporter, Mercedes Vito, Renault Trafic, Ford Transit Custom, Toyota Proace, Opel Vivaro, VW Caddy, Citroën Berlingo). NIE zwracaj sedanów, SUV-ów ani crossoverów." : ""}${body.bodyStyle === "suv" ? "SUV = duże SUV-y (np. Toyota Land Cruiser, BMW X5, Hyundai Santa Fe, Kia Sorento). NIE zwracaj sedanów, vanów ani crossoverów." : ""}${body.bodyStyle === "crossover" ? "CROSSOVER = kompaktowe crossovery/SUV-y (np. Toyota RAV4, Mazda CX-5, VW Tiguan, Hyundai Tucson). NIE zwracaj sedanów, vanów ani dużych SUV-ów." : ""}${body.bodyStyle === "terenowy" ? "TERENOWY = samochody terenowe (np. Jeep Wrangler, Toyota Land Cruiser, Suzuki Jimny, Land Rover Defender). NIE zwracaj sedanów, crossoverów ani vanów." : ""}${body.bodyStyle === "sportowy" ? "SPORTOWY = samochody sportowe (np. Mazda MX-5, Toyota GR86, BMW M2, Porsche Cayman). NIE zwracaj sedanów, vanów ani SUV-ów." : ""}
 MOC: KAŻDY wariant >= ${body.hp || 150} KM. Nie dodawaj słabszych wariantów.
 WARIANTY: podaj benzyna i diesel jeśli oba spełniają moc. Nie dodawaj LPG. Nie wymuszaj diesla jeśli nie spełnia mocy.
 
