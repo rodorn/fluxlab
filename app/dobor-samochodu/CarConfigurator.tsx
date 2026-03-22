@@ -928,13 +928,13 @@ export default function CarConfigurator() {
           for (const lv of lpgVariants) {
             if (lv.priceFrom <= budget) car.variants.push(lv);
           }
-          // Deduplicate variants by engine name
-          const seenEngines = new Set<string>();
-          car.variants = car.variants.filter((v) => {
-            if (seenEngines.has(v.engine)) return false;
-            seenEngines.add(v.engine);
-            return true;
-          });
+          // Keep only the cheapest variant per fuel type
+          const bestByFuel = new Map<FuelType, CarVariant>();
+          for (const v of car.variants) {
+            const existing = bestByFuel.get(v.fuelType);
+            if (!existing || v.priceFrom < existing.priceFrom) bestByFuel.set(v.fuelType, v);
+          }
+          car.variants = [...bestByFuel.values()];
         }
         cat.cars = cat.cars.filter((car) => car.variants.length > 0);
       }
