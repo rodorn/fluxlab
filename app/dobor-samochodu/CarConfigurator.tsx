@@ -942,7 +942,7 @@ export default function CarConfigurator() {
 
       // 1b. Fix directInjection based on engine name — LLM often gets this wrong
       const DI_TRUE_PATTERN = /FSI|FSE|TSI|TFSI|GDI|T-GDI|D-4|Skyactiv-G/i;
-      const DI_FALSE_PATTERN = /MPI/i;
+      const DI_FALSE_PATTERN = /MPI|1\.8\s*Hybrid|1\.5\s*Hybrid/i;
       for (const car of allCars) {
         for (const v of car.variants) {
           if (v.fuelType !== "benzyna") continue;
