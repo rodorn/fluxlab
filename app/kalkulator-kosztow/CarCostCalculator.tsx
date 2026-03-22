@@ -496,23 +496,17 @@ export default function CarCostCalculator() {
   const formTopRef = useRef<HTMLDivElement>(null);
   const compareRef = useRef<HTMLDivElement>(null);
 
-  const set = <K extends keyof Data>(key: K, val: Data[K]) =>
+  const set = <K extends keyof Data>(key: K, val: Data[K]) => {
     setData((prev) => ({ ...prev, [key]: val }));
+    // Live-sync form edits to the active saved car
+    if (activeCarId != null) {
+      setSavedCars((prev) =>
+        prev.map((c) => c.id === activeCarId ? { ...c, data: { ...c.data, [key]: val } } : c),
+      );
+    }
+  };
 
   const result = useMemo(() => calculate(data, kmPeriod), [data, kmPeriod]);
-
-  // Active car for results view (from comparison or current form)
-  const activeCarData = useMemo(() => {
-    if (activeCarId == null) return null;
-    const car = savedCars.find((c) => c.id === activeCarId);
-    if (!car) return null;
-    return { ...car.data, kmCity: data.kmCity, kmHighway: data.kmHighway, yearsOwned: data.yearsOwned };
-  }, [activeCarId, savedCars, data.kmCity, data.kmHighway, data.yearsOwned]);
-
-  const displayResult = useMemo(
-    () => activeCarData ? calculate(activeCarData, kmPeriod) : result,
-    [activeCarData, kmPeriod, result],
-  );
 
   const displayLabel = activeCarId != null
     ? savedCars.find((c) => c.id === activeCarId)?.name ?? null
@@ -529,17 +523,13 @@ export default function CarCostCalculator() {
   };
 
   const addToCompare = () => {
-    const isFirst = savedCars.length === 0;
-    const defaultName = query.trim() || `Pojazd ${nextId}`;
-    setSavedCars((prev) => [...prev, { id: nextId, name: defaultName, data: { ...data } }]);
+    const newId = nextId;
+    const defaultName = query.trim() || `Pojazd ${newId}`;
+    setSavedCars((prev) => [...prev, { id: newId, name: defaultName, data: { ...data } }]);
+    setActiveCarId(newId);
     setNextId((n) => n + 1);
-    setTimeout(() => {
-      if (isFirst) {
-        scrollToRef(formTopRef);
-      } else {
-        scrollToRef(compareRef);
-      }
-    }, 100);
+    setShowResults(true);
+    setTimeout(() => scrollToRef(compareRef), 100);
   };
 
   const scrollToRef = (ref: React.RefObject<HTMLDivElement | null>) => {
@@ -549,10 +539,10 @@ export default function CarCostCalculator() {
     window.scrollTo({ top, behavior: "smooth" });
   };
 
-  const scrollToForm = () => scrollToRef(formTopRef);
-
-  const removeSavedCar = (id: number) =>
+  const removeSavedCar = (id: number) => {
     setSavedCars((prev) => prev.filter((c) => c.id !== id));
+    if (activeCarId === id) setActiveCarId(null);
+  };
 
   const loadSavedCar = (car: SavedCar) => {
     setData((prev) => ({
@@ -561,6 +551,7 @@ export default function CarCostCalculator() {
       kmHighway: prev.kmHighway,
       yearsOwned: prev.yearsOwned,
     }));
+    setActiveCarId(car.id);
     setQuery(car.name);
     setShowResults(true);
   };
@@ -634,23 +625,28 @@ export default function CarCostCalculator() {
         setNextId(currentId);
         setShowResults(true);
 
+        // Select the first new car
+        if (newCars.length > 0) {
+          setActiveCarId(newCars[0].id);
+          setData((prev) => ({ ...newCars[0].data, kmCity: prev.kmCity, kmHighway: prev.kmHighway, yearsOwned: prev.yearsOwned }));
+        }
+
         if (errors.length > 0) {
           setParseError(`Nie udało się: ${errors.join(", ")}`);
         }
         const addedCount = newCars.length;
         setParsedLabel(addedCount > 0 ? `Dodano ${addedCount} ${addedCount === 1 ? "pojazd" : addedCount < 5 ? "pojazdy" : "pojazdów"} do porównania` : "");
 
-        setTimeout(() => {
-          compareRef.current?.scrollIntoView({ behavior: "smooth" });
-        }, 100);
+        setTimeout(() => scrollToRef(compareRef), 100);
       } else {
-        // Single car — fill form as before
-        const result = await fetchOneCar(parts[0]);
-        if (!result) {
+        // Single car — fill form and add to comparison
+        const r = await fetchOneCar(parts[0]);
+        if (!r) {
           setParseError("Wystąpił błąd");
           return;
         }
-        setData((prev) => ({ ...prev, ...parsedToData(result.parsed) }));
+        const carData: Data = { ...data, ...parsedToData(r.parsed) };
+        setData(carData);
         setParsedLabel("Dane uzupełnione");
       }
     } catch {
@@ -704,8 +700,19 @@ export default function CarCostCalculator() {
 
       {/* ── Dane pojazdu ── */}
       <div className="space-y-2">
-        <h2 className="text-lg font-bold text-gray-900 dark:text-white">Dane pojazdu</h2>
-        <p className="text-sm text-gray-500 dark:text-gray-400">Podstawowe informacje o samochodzie</p>
+        <div className="flex items-center gap-3">
+          <h2 className="text-lg font-bold text-gray-900 dark:text-white">Dane pojazdu</h2>
+          {displayLabel && (
+            <span className="text-xs font-semibold text-accent bg-accent/10 px-2.5 py-1 rounded-full">
+              {displayLabel}
+            </span>
+          )}
+        </div>
+        <p className="text-sm text-gray-500 dark:text-gray-400">
+          {activeCarId != null
+            ? "Edytujesz zapisany pojazd — zmiany aktualizują się na żywo"
+            : "Podstawowe informacje o samochodzie"}
+        </p>
       </div>
 
       <div className="space-y-6">
@@ -856,18 +863,20 @@ export default function CarCostCalculator() {
       <div className="flex gap-3">
         <button
           type="button"
-          onClick={() => setShowResults(true)}
+          onClick={() => { setShowResults(true); if (savedCars.length > 0) setTimeout(() => scrollToRef(compareRef), 100); }}
           className="btn-primary flex-1 text-center text-lg"
         >
           Oblicz koszty
         </button>
-        <button
-          type="button"
-          onClick={() => { setShowResults(true); addToCompare(); }}
-          className="px-5 py-3 rounded-xl text-sm font-medium border-2 border-accent text-accent hover:bg-accent/10 transition-colors shrink-0"
-        >
-          + Porównaj
-        </button>
+        {activeCarId == null && (
+          <button
+            type="button"
+            onClick={addToCompare}
+            className="px-5 py-3 rounded-xl text-sm font-medium border-2 border-accent text-accent hover:bg-accent/10 transition-colors shrink-0"
+          >
+            + Porównaj
+          </button>
+        )}
       </div>
 
       {/* ── Porównanie ── */}
@@ -879,7 +888,7 @@ export default function CarCostCalculator() {
             </h2>
             <button
               type="button"
-              onClick={() => setSavedCars([])}
+              onClick={() => { setSavedCars([]); setActiveCarId(null); }}
               className="text-xs text-gray-400 hover:text-red-500 transition-colors"
             >
               Wyczyść wszystkie
@@ -888,31 +897,40 @@ export default function CarCostCalculator() {
 
           {/* Saved car chips */}
           <div className="flex flex-wrap gap-2">
-            {savedCars.map((car, i) => (
-              <div
-                key={car.id}
-                className="flex items-center gap-2 pl-3 pr-1.5 py-1.5 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-sm"
-              >
-                <div className={`w-2.5 h-2.5 rounded-full shrink-0 ${COMPARE_COLORS[i % COMPARE_COLORS.length]}`} />
-                <button
-                  type="button"
-                  onClick={() => loadSavedCar(car)}
-                  className="text-gray-700 dark:text-gray-300 hover:text-accent transition-colors truncate max-w-[200px]"
-                  title="Załaduj dane tego pojazdu"
+            {savedCars.map((car, i) => {
+              const isActive = activeCarId === car.id;
+              return (
+                <div
+                  key={car.id}
+                  className={`flex items-center gap-2 pl-3 pr-1.5 py-1.5 rounded-lg border-2 text-sm transition-all ${
+                    isActive
+                      ? "border-accent bg-accent/5 dark:bg-accent/10"
+                      : "border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900"
+                  }`}
                 >
-                  {car.name}
-                </button>
-                <button
-                  type="button"
-                  onClick={() => removeSavedCar(car.id)}
-                  className="p-1 text-gray-300 dark:text-gray-600 hover:text-red-500 transition-colors"
-                >
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                    <path d="M3 3l8 8M11 3l-8 8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                  </svg>
-                </button>
-              </div>
-            ))}
+                  <div className={`w-2.5 h-2.5 rounded-full shrink-0 ${COMPARE_COLORS[i % COMPARE_COLORS.length]}`} />
+                  <button
+                    type="button"
+                    onClick={() => { loadSavedCar(car); scrollToRef(formTopRef); }}
+                    className={`transition-colors truncate max-w-[200px] ${
+                      isActive ? "text-accent font-medium" : "text-gray-700 dark:text-gray-300 hover:text-accent"
+                    }`}
+                    title="Edytuj ten pojazd w formularzu"
+                  >
+                    {car.name}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => removeSavedCar(car.id)}
+                    className="p-1 text-gray-300 dark:text-gray-600 hover:text-red-500 transition-colors"
+                  >
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                      <path d="M3 3l8 8M11 3l-8 8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                    </svg>
+                  </button>
+                </div>
+              );
+            })}
           </div>
 
           {/* Comparison table */}
@@ -996,10 +1014,15 @@ export default function CarCostCalculator() {
 
           <button
             type="button"
-            onClick={scrollToForm}
+            onClick={() => {
+              setActiveCarId(null);
+              setData((prev) => ({ ...INITIAL, kmCity: prev.kmCity, kmHighway: prev.kmHighway, yearsOwned: prev.yearsOwned }));
+              setQuery("");
+              scrollToRef(formTopRef);
+            }}
             className="w-full py-3 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-600 text-sm font-medium text-gray-500 dark:text-gray-400 hover:border-accent hover:text-accent transition-colors"
           >
-            + Dodaj samochód do porównania
+            + Dodaj nowy samochód
           </button>
         </div>
       )}
@@ -1063,42 +1086,9 @@ export default function CarCostCalculator() {
       {/* ── Wyniki ── */}
       {showResults && (
         <div className="space-y-6">
-          {/* Model switcher */}
-          {savedCars.length > 0 && (
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="text-sm text-gray-500 dark:text-gray-400 mr-1">Kalkulacja dla:</span>
-              <button
-                type="button"
-                onClick={() => setActiveCarId(null)}
-                className={`px-3 py-1.5 rounded-lg text-sm font-medium border-2 transition-all ${
-                  activeCarId == null
-                    ? "border-accent bg-accent/10 text-accent"
-                    : "border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-gray-300 dark:hover:border-gray-600"
-                }`}
-              >
-                Formularz
-              </button>
-              {savedCars.map((car, i) => (
-                <button
-                  key={car.id}
-                  type="button"
-                  onClick={() => setActiveCarId(car.id)}
-                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium border-2 transition-all ${
-                    activeCarId === car.id
-                      ? "border-accent bg-accent/10 text-accent"
-                      : "border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-gray-300 dark:hover:border-gray-600"
-                  }`}
-                >
-                  <div className={`w-2 h-2 rounded-full shrink-0 ${COMPARE_COLORS[i % COMPARE_COLORS.length]}`} />
-                  <span className="truncate max-w-[150px]">{car.name}</span>
-                </button>
-              ))}
-            </div>
-          )}
-
           {(() => {
-            const d = activeCarData ?? data;
-            const r = displayResult;
+            const d = data;
+            const r = result;
             const fuelPrice = FUEL_PRICES[d.fuelType];
             const kmTotal = r.totalKm;
             return (
