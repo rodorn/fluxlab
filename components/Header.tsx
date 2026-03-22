@@ -37,6 +37,12 @@ const tools: { title: string; description: string; href: string; image: string }
     href: "/dobor-samochodu",
     image: "/photos/car-chooser/type-sport.webp",
   },
+  {
+    title: "Kalkulator kosztów",
+    description: "Oblicz pełny koszt posiadania samochodu",
+    href: "/kalkulator-kosztow",
+    image: "/photos/car-chooser/type-osobowy.jpg",
+  },
 ];
 
 export default function Header() {
