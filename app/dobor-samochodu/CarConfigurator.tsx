@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import Image from "next/image";
 
 /* ───────────────────────── types ───────────────────────── */
@@ -16,10 +16,13 @@ interface Answers {
   height: number;
   passengers: number;
   longTrips: number;
+  segmentOverride: Segment | null;
   bodyStyle: BodyStyle | null;
   bodyShapes: BodyShape[];
   luggageFreq: number;
   foldSeats: boolean;
+  maxSpeed: number;
+  powerOverride: number | null;
   budget: number;
   additionalInfo: string;
 }
@@ -28,13 +31,220 @@ const INITIAL: Answers = {
   height: 175,
   passengers: 1,
   longTrips: 30,
+  segmentOverride: null,
   bodyStyle: null,
   bodyShapes: [],
   luggageFreq: 30,
   foldSeats: false,
+  maxSpeed: 130,
+  powerOverride: null,
   budget: 50000,
   additionalInfo: "",
 };
+
+/* ──────────────── segment logic ──────────────── */
+
+type Segment = "A" | "B" | "C" | "D" | "E" | "F";
+
+const SHAPE_DESCRIPTIONS: Partial<Record<BodyShape, Partial<Record<Segment, string>>>> = {
+  hatchback: {
+    A: "A – mini hatchbacki (np. Fiat 500, Toyota Aygo)",
+    B: "B – małe hatchbacki (np. VW Polo, Mazda 2)",
+    C: "C – kompaktowe hatchbacki (np. VW Golf, Toyota Corolla)",
+  },
+  sedan: {
+    B: "B – małe sedany (np. Toyota Yaris Sedan, Honda City)",
+    C: "C – kompaktowe sedany (np. Toyota Corolla Sedan, VW Jetta)",
+    D: "D – sedany klasy średniej (np. BMW serii 3, VW Passat)",
+    E: "E – sedany klasy średniej wyższej (np. BMW serii 5, Mercedes klasy E)",
+    F: "F – sedany klasy wyższej (np. BMW serii 7, Mercedes klasy S)",
+  },
+  kombi: {
+    B: "B – małe kombi (np. Skoda Fabia Combi, Dacia Logan MCV)",
+    C: "C – kompaktowe kombi (np. Toyota Corolla TS, Skoda Octavia Combi)",
+    D: "D – średnie kombi (np. BMW serii 3 Touring, VW Passat Variant)",
+    E: "E – duże kombi (np. BMW serii 5 Touring, Mercedes klasy E T-Modell)",
+  },
+  liftback: {
+    C: "C – kompaktowe liftbacki (np. Skoda Octavia, Mazda 3)",
+    D: "D – liftbacki klasy średniej (np. BMW serii 4, VW Arteon)",
+    E: "E – liftbacki klasy średniej wyższej (np. Audi A7, Porsche Panamera)",
+  },
+  "coupe-2": {
+    A: "A – ciasne (np. Lotus Elise, Alpine A110, Mazda MX-5 RF)",
+    B: "B – wygodne (np. Porsche 911, BMW M2, Toyota GR86)",
+  },
+  "roadster-2": {
+    A: "A – ciasne (np. Mazda MX-5, Lotus Elise, Caterham)",
+    B: "B – wygodne (np. BMW Z4, Porsche Boxster, Jaguar F-Type)",
+  },
+  "coupe-2plus2": {
+    B: "B – małe (np. Toyota GR86, Subaru BRZ)",
+    C: "C – kompaktowe (np. BMW serii 2 Coupé)",
+    D: "D – średnie (np. BMW M4, Audi RS5)",
+    E: "E – premium (np. Porsche 911, Lexus LC)",
+    F: "F – luksusowe (np. Bentley Continental GT, Ferrari Roma)",
+  },
+  "cabriolet-2plus2": {
+    B: "B – małe (np. Mini Cabrio, Fiat 500C)",
+    C: "C – kompaktowe (np. BMW serii 2 Cabrio)",
+    D: "D – średnie (np. BMW serii 4 Cabrio, Mercedes C Cabrio)",
+    E: "E – premium (np. Mercedes E Cabrio, BMW serii 8 Cabrio)",
+    F: "F – luksusowe (np. Bentley Continental GTC, Rolls-Royce Dawn)",
+  },
+  "hot-hatch": {
+    A: "A – mini hot hatch (np. Abarth 500)",
+    B: "B – małe hot hatch (np. Ford Fiesta ST, Suzuki Swift Sport)",
+    C: "C – kompaktowe hot hatch (np. VW Golf GTI, Honda Civic Type R)",
+  },
+  "4door-coupe": {
+    C: "C – kompaktowe (np. Mercedes CLA, BMW serii 2 Gran Coupé)",
+    D: "D – średnie (np. BMW serii 4 Gran Coupé, Audi A5 Sportback)",
+    E: "E – premium (np. Mercedes CLS, BMW serii 8 Gran Coupé)",
+  },
+  "sport-sedan": {
+    D: "D – średnie (np. BMW M3, Mercedes C63 AMG)",
+    E: "E – premium (np. BMW M5, Mercedes E63 AMG)",
+    F: "F – luksusowe (np. Mercedes S63 AMG, BMW M760i)",
+  },
+  "sport-crossover": {
+    B: "B – małe (np. VW T-Roc R)",
+    C: "C – kompaktowe (np. VW Tiguan R, Mercedes GLA AMG)",
+    D: "D – średnie (np. BMW X4 M, Mercedes GLC AMG)",
+    E: "E – duże (np. BMW X5 M, Porsche Cayenne Turbo)",
+    F: "F – premium (np. Bentley Bentayga, Aston Martin DBX)",
+  },
+  coupe: {
+    D: "D – średnie coupé (np. BMW X4, Mercedes GLC Coupé)",
+    E: "E – duże coupé (np. BMW X6, Mercedes GLE Coupé)",
+  },
+  pickup: {
+    D: "D – średnie pick-upy (np. Toyota Hilux, Ford Ranger)",
+    E: "E – duże pick-upy (np. Dodge RAM, Ford F-150)",
+  },
+};
+
+const STYLE_DESCRIPTIONS: Record<BodyStyle, Partial<Record<Segment, string>>> = {
+  sportowy: {},
+  sedan: {},
+  van: {
+    B: "B – kombivany (np. VW Caddy, Renault Kangoo)",
+    C: "C – minivany (np. VW Touran, Ford S-Max)",
+    D: "D – średnie vany (np. VW Sharan, Ford Galaxy)",
+    E: "E – duże vany (np. Mercedes klasy V, VW Caravelle)",
+  },
+  crossover: {
+    A: "A – mini crossover (np. Fiat 500X, Suzuki Ignis)",
+    B: "B – małe crossover (np. Hyundai Kona, VW T-Cross)",
+    C: "C – kompaktowe crossover (np. Mazda CX-30, VW Tiguan)",
+    D: "D – średnie crossover (np. BMW X3, Audi Q5)",
+    E: "E – duże crossover (np. BMW X5, Volvo XC90)",
+    F: "F – premium crossover (np. Mercedes GLS, BMW X7)",
+  },
+  suv: {
+    B: "B – małe SUV (np. Suzuki Jimny, Dacia Duster)",
+    C: "C – kompaktowe SUV (np. Toyota RAV4, Hyundai Tucson)",
+    D: "D – średnie SUV (np. BMW X3, VW Tiguan Allspace)",
+    E: "E – duże SUV (np. BMW X5, Toyota Land Cruiser 150)",
+    F: "F – premium SUV (np. BMW X7, Mercedes GLS)",
+  },
+  terenowy: {
+    B: "B – małe terenowe (np. Suzuki Jimny, Lada Niva)",
+    C: "C – kompaktowe terenowe (np. Jeep Wrangler 2d, Dacia Duster 4x4)",
+    D: "D – średnie terenowe (np. Toyota Land Cruiser Prado, Jeep Wrangler 4d)",
+    E: "E – duże terenowe (np. Toyota Land Cruiser 300, Nissan Patrol)",
+  },
+};
+
+function getSegmentName(segment: Segment, bodyStyle: BodyStyle | null, bodyShapes: BodyShape[]): string {
+  for (const shape of bodyShapes) {
+    const desc = SHAPE_DESCRIPTIONS[shape]?.[segment];
+    if (desc) return desc;
+  }
+  const styleDesc = STYLE_DESCRIPTIONS[bodyStyle ?? "sedan"]?.[segment];
+  if (styleDesc) return styleDesc;
+  return segment;
+}
+
+const SEGMENT_RANGE: Record<BodyStyle, { min: Segment; max: Segment }> = {
+  sportowy: { min: "A", max: "F" },
+  sedan: { min: "A", max: "F" },
+  van: { min: "B", max: "E" },
+  crossover: { min: "A", max: "F" },
+  suv: { min: "B", max: "F" },
+  terenowy: { min: "B", max: "E" },
+};
+
+const SEGMENTS_ORDERED: Segment[] = ["A", "B", "C", "D", "E", "F"];
+
+const SHAPE_SEGMENT_OVERRIDE: Partial<Record<BodyShape, { min: Segment; max: Segment }>> = {
+  hatchback: { min: "A", max: "C" },
+  sedan: { min: "B", max: "F" },
+  kombi: { min: "B", max: "E" },
+  liftback: { min: "C", max: "E" },
+  coupe: { min: "D", max: "E" },
+  pickup: { min: "D", max: "E" },
+  "hot-hatch": { min: "A", max: "C" },
+  "4door-coupe": { min: "C", max: "E" },
+  "sport-sedan": { min: "D", max: "F" },
+  "sport-crossover": { min: "B", max: "F" },
+  "coupe-2plus2": { min: "B", max: "F" },
+  "cabriolet-2plus2": { min: "B", max: "F" },
+  "coupe-2": { min: "A", max: "B" },
+  "roadster-2": { min: "A", max: "B" },
+};
+
+function getSegmentRange(bodyStyle: BodyStyle | null, bodyShapes: BodyShape[]): { min: Segment; max: Segment } {
+  if (bodyShapes.length === 0) return SEGMENT_RANGE[bodyStyle ?? "sedan"];
+  let minIdx = 5;
+  let maxIdx = 0;
+  for (const shape of bodyShapes) {
+    const range = SHAPE_SEGMENT_OVERRIDE[shape] ?? SEGMENT_RANGE[bodyStyle ?? "sedan"];
+    const lo = SEGMENTS_ORDERED.indexOf(range.min);
+    const hi = SEGMENTS_ORDERED.indexOf(range.max);
+    if (lo < minIdx) minIdx = lo;
+    if (hi > maxIdx) maxIdx = hi;
+  }
+  return { min: SEGMENTS_ORDERED[minIdx], max: SEGMENTS_ORDERED[maxIdx] };
+}
+
+function clampSegment(seg: Segment, bodyStyle: BodyStyle | null, bodyShapes: BodyShape[]): Segment {
+  const range = getSegmentRange(bodyStyle, bodyShapes);
+  const idx = SEGMENTS_ORDERED.indexOf(seg);
+  const minIdx = SEGMENTS_ORDERED.indexOf(range.min);
+  const maxIdx = SEGMENTS_ORDERED.indexOf(range.max);
+  return SEGMENTS_ORDERED[Math.max(minIdx, Math.min(maxIdx, idx))];
+}
+
+function calcSegment(a: Answers): Segment {
+  let score = 0;
+  if (a.height >= 170) score += a.height - 170;
+  score += a.passengers * 10;
+  score *= (a.longTrips + 100) / 100;
+  if (a.bodyStyle === "van") score -= 20;
+
+  let seg: Segment;
+  if (score <= 20) seg = "A";
+  else if (score <= 40) seg = "B";
+  else if (score <= 60) seg = "C";
+  else if (score <= 80) seg = "D";
+  else if (score <= 120) seg = "E";
+  else seg = "F";
+
+  return clampSegment(seg, a.bodyStyle, a.bodyShapes);
+}
+
+/* ──────────────── power logic ──────────────── */
+
+function calcSuggestedHP(a: Answers, segment: Segment): number {
+  const speedFactor = Math.pow(a.maxSpeed / 200, 3) * 2;
+  const segmentWeights: Record<Segment, number> = { A: 120, B: 125, C: 135, D: 145, E: 155, F: 165 };
+  const bodyMult: Record<BodyStyle, number> = { sportowy: 0.9, sedan: 1, van: 1.25, crossover: 1.2, suv: 1.3, terenowy: 1.5 };
+  const weight = segmentWeights[segment] * bodyMult[a.bodyStyle ?? "sedan"];
+  let hp = Math.round(weight * speedFactor);
+  hp = Math.max(50, Math.min(hp, 1000));
+  return hp;
+}
 
 /* ───────────────────────── car recommendation types ───────────────────────── */
 
@@ -429,8 +639,8 @@ function getBodyShapes(bodyStyle: BodyStyle | null): ShapeOption[] {
 function getStepConfig(bodyStyle: BodyStyle | null) {
   const hasShapeStep = bodyStyle !== "van";
   const titles = hasShapeStep
-    ? ["Typ samochodu", "Forma nadwozia", "Budżet i preferencje", "Wyniki"]
-    : ["Typ samochodu", "Budżet i preferencje", "Wyniki"];
+    ? ["Typ samochodu", "Forma nadwozia", "Segment", "Moc silnika", "Budżet", "Wyniki"]
+    : ["Typ samochodu", "Segment", "Moc silnika", "Budżet", "Wyniki"];
   return { titles, hasShapeStep };
 }
 
@@ -462,6 +672,13 @@ export default function CarConfigurator() {
       return next;
     });
 
+  const suggestedSegment = useMemo(() => calcSegment(answers), [answers]);
+  const segment = answers.segmentOverride
+    ? clampSegment(answers.segmentOverride, answers.bodyStyle, answers.bodyShapes)
+    : suggestedSegment;
+  const suggestedHP = useMemo(() => calcSuggestedHP(answers, segment), [answers, segment]);
+  const displayHP = answers.powerOverride ?? suggestedHP;
+
   const canNext = (): boolean => {
     if (step === 0 && !answers.bodyStyle) return false;
     if (hasShapeStep && step === 1 && answers.bodyShapes.length === 0) return false;
@@ -483,6 +700,8 @@ export default function CarConfigurator() {
           passengers: answers.passengers,
           longTrips: answers.longTrips,
           height: answers.height,
+          segment,
+          hp: displayHP,
           additionalInfo: answers.additionalInfo,
         }),
       });
@@ -602,53 +821,124 @@ export default function CarConfigurator() {
     );
   };
 
-  /* ──── render: step 2 = budget & preferences ──── */
+  /* ──── render: segment ──── */
+
+  const renderSegment = () => (
+    <div className="space-y-10">
+      <div className="rounded-2xl bg-accent/5 dark:bg-accent/10 border border-accent/20 p-6">
+        <h3 className="text-sm font-semibold text-accent mb-2">
+          Dlaczego mniejszy samochód to zwykle lepszy wybór?
+        </h3>
+        <ul className="space-y-1.5 text-sm text-gray-600 dark:text-gray-400">
+          <li><span className="font-medium text-gray-800 dark:text-gray-200">Niższa cena</span> – zarówno zakupu jak i ubezpieczenia</li>
+          <li><span className="font-medium text-gray-800 dark:text-gray-200">Mniejsze spalanie</span> – lżejszy samochód = mniej paliwa</li>
+          <li><span className="font-medium text-gray-800 dark:text-gray-200">Lepsze prowadzenie</span> – mniejsza masa = szybsze reakcje, krótsze hamowanie</li>
+          <li><span className="font-medium text-gray-800 dark:text-gray-200">Łatwiejsze parkowanie</span> – w mieście to bezcenne</li>
+          <li><span className="font-medium text-gray-800 dark:text-gray-200">Szybszy</span> – przy tej samej mocy lżejszy samochód przyspiesza lepiej</li>
+        </ul>
+        <p className="mt-3 text-xs text-gray-500 dark:text-gray-500 italic">
+          Zasada ceteris paribus – przy porównywalnym wyposażeniu i mocy, mniejszy samochód wygrywa w niemal każdej kategorii.
+        </p>
+      </div>
+
+      <div className="space-y-8">
+        <Slider label="Twój wzrost" value={answers.height} min={150} max={210} step={1} unit="cm"
+          hint="Wyższe osoby mogą potrzebować większego segmentu dla komfortu."
+          onChange={(v) => set("height", v)} />
+        <Slider label="Typowa liczba pasażerów (z kierowcą)" value={answers.passengers}
+          min={1} max={answers.bodyStyle === "van" ? 8 : 5} step={1} unit="os."
+          hint="Ile osób jednocześnie przewozisz najczęściej?"
+          onChange={(v) => set("passengers", v)} />
+        <Slider label="Rodzaj tras" value={answers.longTrips} min={0} max={100} step={5}
+          onChange={(v) => set("longTrips", v)}
+          labels={{ left: "🏙️ Głównie miasto", right: "🛣️ Głównie trasa" }}
+          hint="Na trasie liczy się komfort i stabilność – to wymaga większego auta." />
+      </div>
+
+      <div className="rounded-2xl border border-gray-200 dark:border-gray-700 p-6 space-y-4">
+        <div className="text-center">
+          <p className="text-xs uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-1">
+            {(answers.bodyShapes.includes("coupe-2") || answers.bodyShapes.includes("roadster-2")) ? "Sugerowana ilość miejsca" : "Sugerowany segment"}
+          </p>
+          <p className="text-2xl font-bold text-accent">{getSegmentName(suggestedSegment, answers.bodyStyle, answers.bodyShapes)}</p>
+        </div>
+        <div className="space-y-2">
+          <p className="text-xs text-gray-500 dark:text-gray-400 text-center">
+            Możesz wybrać inny segment, jeśli nasza sugestia nie pasuje:
+          </p>
+          <div className="flex flex-wrap justify-center gap-2">
+            {SEGMENTS_ORDERED.filter((s) => {
+              const range = getSegmentRange(answers.bodyStyle, answers.bodyShapes);
+              const idx = SEGMENTS_ORDERED.indexOf(s);
+              return idx >= SEGMENTS_ORDERED.indexOf(range.min) && idx <= SEGMENTS_ORDERED.indexOf(range.max);
+            }).map((s) => {
+              const isActive = segment === s;
+              const isSuggested = suggestedSegment === s && !answers.segmentOverride;
+              return (
+                <button key={s} type="button"
+                  onClick={() => set("segmentOverride", s === suggestedSegment ? null : s)}
+                  className={`px-4 py-2 rounded-xl text-sm font-medium border-2 transition-all ${
+                    isActive ? "border-accent bg-accent/10 text-accent" : "border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-gray-300 dark:hover:border-gray-600"
+                  } ${isSuggested ? "ring-2 ring-accent/30" : ""}`}
+                >{s}</button>
+              );
+            })}
+          </div>
+          {answers.segmentOverride && (
+            <p className="text-center">
+              <button type="button" onClick={() => set("segmentOverride", null)} className="text-xs text-accent hover:underline">
+                Przywróć sugerowany segment ({suggestedSegment})
+              </button>
+            </p>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+
+  /* ──── render: power ──── */
+
+  const renderPower = () => (
+    <div className="space-y-8">
+      <div className="rounded-2xl bg-accent/5 dark:bg-accent/10 border border-accent/20 p-6">
+        <h3 className="text-sm font-semibold text-accent mb-2">Ile mocy naprawdę potrzebujesz?</h3>
+        <p className="text-sm text-gray-600 dark:text-gray-400">
+          Moc silnika powinna wynikać z Twoich realnych potrzeb. Ustaw maksymalną prędkość, z jaką regularnie jeździsz, a przeliczymy sugerowaną moc.
+        </p>
+      </div>
+
+      <Slider label="Maksymalna prędkość, z jaką jeździsz regularnie"
+        value={answers.maxSpeed} min={100} max={250} step={10} unit="km/h"
+        onChange={(v) => { set("maxSpeed", v); set("powerOverride", null); }}
+        labels={{ left: "🏙️ 80 km/h – miasto", right: "🏁 240 km/h – autostrada DE" }} />
+
+      <div className="rounded-2xl border border-gray-200 dark:border-gray-700 p-6 text-center space-y-1">
+        <p className="text-xs uppercase tracking-widest text-gray-400 dark:text-gray-500">Sugerowana moc</p>
+        <p className="text-3xl font-bold text-accent tabular-nums">{suggestedHP} KM</p>
+        <p className="text-xs text-gray-500 dark:text-gray-500">
+          Dla segmentu {segment}, {BODY_STYLES.find((b) => b.id === answers.bodyStyle)?.title ?? "—"}, {answers.maxSpeed} km/h
+        </p>
+      </div>
+
+      <Slider label="Twoja korekta mocy" value={displayHP} min={50} max={700} step={5} unit="KM"
+        onChange={(v) => set("powerOverride", v)}
+        hint="Przesuń, jeśli chcesz więcej lub mniej mocy niż sugerujemy." />
+    </div>
+  );
+
+  /* ──── render: budget & preferences ──── */
 
   const renderPreferences = () => (
     <div className="space-y-10">
       <div className="rounded-2xl bg-accent/5 dark:bg-accent/10 border border-accent/20 p-6">
-        <h3 className="text-sm font-semibold text-accent mb-2">
-          Budżet i preferencje
-        </h3>
+        <h3 className="text-sm font-semibold text-accent mb-2">Budżet</h3>
         <p className="text-sm text-gray-600 dark:text-gray-400">
-          Na tej podstawie AI dobierze konkretne modele samochodów
-          w różnych kategoriach wiekowych — od prawie nowych po starsze, sprawdzone egzemplarze.
+          Na tej podstawie AI dobierze konkretne modele samochodów w różnych kategoriach wiekowych — od nowych po starsze, sprawdzone egzemplarze.
         </p>
       </div>
 
-      <LogSlider
-        label="Budżet"
-        value={answers.budget}
-        min={5000}
-        max={500000}
-        unit="PLN"
-        onChange={(v) => set("budget", v)}
-      />
-
-      <div className="space-y-8">
-        <Slider
-          label="Twój wzrost"
-          value={answers.height} min={150} max={210} step={1} unit="cm"
-          hint="Wyższe osoby mogą potrzebować większego samochodu dla komfortu."
-          onChange={(v) => set("height", v)}
-        />
-
-        <Slider
-          label="Typowa liczba pasażerów (z kierowcą)"
-          value={answers.passengers}
-          min={1} max={answers.bodyStyle === "van" ? 8 : 5} step={1} unit="os."
-          hint="Ile osób jednocześnie przewozisz najczęściej?"
-          onChange={(v) => set("passengers", v)}
-        />
-
-        <Slider
-          label="Rodzaj tras"
-          value={answers.longTrips} min={0} max={100} step={5}
-          onChange={(v) => set("longTrips", v)}
-          labels={{ left: "🏙️ Głównie miasto", right: "🛣️ Głównie trasa" }}
-          hint="Na trasie liczy się komfort i stabilność."
-        />
-      </div>
+      <LogSlider label="Budżet" value={answers.budget} min={5000} max={500000} unit="PLN"
+        onChange={(v) => set("budget", v)} />
 
       <div className="space-y-2">
         <label className="text-sm font-medium text-gray-700 dark:text-gray-300">
@@ -657,26 +947,24 @@ export default function CarConfigurator() {
         <textarea
           value={answers.additionalInfo}
           onChange={(e) => set("additionalInfo", e.target.value)}
-          placeholder="np. automat, napęd 4x4, niskie spalanie, hybryda, dużo mocy, niezawodny silnik..."
+          placeholder="np. automat, napęd 4x4, niskie spalanie, hybryda, niezawodny silnik..."
           rows={3}
           className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-sm text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent resize-none"
         />
       </div>
 
-      {/* Summary before search */}
+      {/* Summary */}
       <div className="rounded-2xl border border-gray-200 dark:border-gray-700 p-6 space-y-3">
-        <h3 className="text-sm font-bold text-gray-900 dark:text-white">Twoje preferencje</h3>
+        <h3 className="text-sm font-bold text-gray-900 dark:text-white">Podsumowanie</h3>
         <div className="grid sm:grid-cols-2 gap-3 text-sm">
           <SummaryRow label="Budżet" value={`${fmt(answers.budget)} PLN`} />
           <SummaryRow label="Typ" value={BODY_STYLES.find((b) => b.id === answers.bodyStyle)?.title ?? "—"} />
           {answers.bodyShapes.length > 0 && (
-            <SummaryRow
-              label="Nadwozie"
-              value={getBodyShapes(answers.bodyStyle)
-                .filter((b) => answers.bodyShapes.includes(b.id))
-                .map((b) => b.title).join(", ")}
-            />
+            <SummaryRow label="Nadwozie"
+              value={getBodyShapes(answers.bodyStyle).filter((b) => answers.bodyShapes.includes(b.id)).map((b) => b.title).join(", ")} />
           )}
+          <SummaryRow label="Segment" value={getSegmentName(segment, answers.bodyStyle, answers.bodyShapes)} />
+          <SummaryRow label="Moc" value={`${displayHP} KM`} />
           <SummaryRow label="Pasażerowie" value={`${answers.passengers} os.`} />
         </div>
       </div>
@@ -797,8 +1085,8 @@ export default function CarConfigurator() {
   /* ──── step array & navigation ──── */
 
   const steps = hasShapeStep
-    ? [renderStep0, renderStep1, renderPreferences, renderResults]
-    : [renderStep0, renderPreferences, renderResults];
+    ? [renderStep0, renderStep1, renderSegment, renderPower, renderPreferences, renderResults]
+    : [renderStep0, renderSegment, renderPower, renderPreferences, renderResults];
 
   const bg = answers.bodyStyle ? BG_IMAGES[answers.bodyStyle] : null;
 

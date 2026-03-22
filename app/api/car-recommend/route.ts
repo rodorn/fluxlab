@@ -9,6 +9,8 @@ interface RecommendRequest {
   passengers: number;
   longTrips: number; // 0 = miasto, 100 = trasa
   height: number;
+  segment: string;
+  hp: number;
   additionalInfo: string;
 }
 
@@ -17,7 +19,7 @@ const tools = [
     type: "function",
     name: "recommend_cars",
     description:
-      "Zwróć rekomendacje samochodów w 5 kategoriach wiekowych. Każda kategoria powinna zawierać dokładnie 5 modeli dopasowanych do budżetu i preferencji użytkownika.",
+      "Zwróć rekomendacje samochodów w 6 kategoriach wiekowych. Każda kategoria powinna zawierać dokładnie 5 modeli dopasowanych do budżetu i preferencji użytkownika.",
     parameters: {
       type: "object",
       properties: {
@@ -97,6 +99,8 @@ export async function POST(req: Request) {
     `Budżet: ${body.budget.toLocaleString("pl-PL")} PLN`,
     `Typ samochodu: ${bodyStyleLabel}`,
     `Forma nadwozia: ${shapesLabel}`,
+    `Segment: ${body.segment || "dowolny"}`,
+    `Moc silnika: ~${body.hp || 150} KM`,
     `Pasażerowie: ${body.passengers} os.`,
     `Trasy: ${tripsLabel} (${body.longTrips}/100)`,
     `Wzrost kierowcy: ${body.height} cm`,
@@ -115,18 +119,19 @@ export async function POST(req: Request) {
         temperature: 0.3,
         instructions: `Jesteś ekspertem motoryzacyjnym specjalizującym się w polskim rynku wtórnym. Dzisiejsza data: ${new Date().toISOString().split("T")[0]}.
 
-Użytkownik szuka samochodu. Na podstawie jego preferencji i budżetu zaproponuj samochody w 5 kategoriach wiekowych:
-1. Do 3 lat (prawie nowe)
-2. 3-7 lat
-3. 7-12 lat
-4. 12-18 lat
-5. Powyżej 18 lat
+Użytkownik szuka samochodu. Na podstawie jego preferencji, segmentu, mocy i budżetu zaproponuj samochody w 6 kategoriach wiekowych:
+1. Nowe (z salonu / do 1 roku)
+2. Do 3 lat (prawie nowe)
+3. 3-7 lat
+4. 7-12 lat
+5. 12-18 lat
+6. Powyżej 18 lat
 
 Zasady:
 - W każdej kategorii podaj DOKŁADNIE 5 modeli
-- Ceny muszą realistycznie mieścić się w budżecie użytkownika na polskim rynku wtórnym
-- Jeśli budżet jest za mały na daną kategorię wiekową (np. za mały na auto do 3 lat), podaj najtańsze dostępne opcje i zaznacz w wadach, że przekraczają budżet
-- Dobieraj modele spójne z typem nadwozia i preferencjami
+- Ceny muszą realistycznie mieścić się w budżecie użytkownika na polskim rynku (nowe = ceny katalogowe, używane = rynek wtórny)
+- Jeśli budżet jest za mały na daną kategorię wiekową, podaj najtańsze dostępne opcje i zaznacz w wadach, że przekraczają budżet
+- Dobieraj modele spójne z typem nadwozia, segmentem i mocą
 - Podawaj konkretne silniki i moce (np. "2.0 TDI 150KM", nie "diesel")
 - Generacja powinna być konkretna (np. "F30", "B8", "MK7")
 - Zalety i wady powinny być konkretne dla danego modelu, nie ogólne
