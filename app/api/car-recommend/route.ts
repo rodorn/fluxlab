@@ -12,6 +12,7 @@ interface RecommendRequest {
   segment: string;
   hp: number;
   additionalInfo: string;
+  extended?: boolean;
 }
 
 const tools = [
@@ -172,9 +173,9 @@ export async function POST(req: Request) {
         Authorization: `Bearer ${OPENAI_API_KEY}`,
       },
       body: JSON.stringify({
-        model: "gpt-5.4-mini",
+        model: body.extended ? "gpt-5.4" : "gpt-5.4-mini",
         temperature: 0.3,
-        max_output_tokens: 16000,
+        max_output_tokens: body.extended ? 32000 : 16000,
         instructions: `Ekspert motoryzacyjny, rynek polski. Data: ${new Date().toISOString().split("T")[0]}.
 
 Dzisiejszy rok: ${new Date().getFullYear()}. Zaproponuj samochody w 6 kategoriach wiekowych:
@@ -185,7 +186,7 @@ Dzisiejszy rok: ${new Date().getFullYear()}. Zaproponuj samochody w 6 kategoriac
 - 12-18 lat (yearFrom ${new Date().getFullYear() - 18}–${new Date().getFullYear() - 12})
 - Powyżej 18 lat (yearFrom < ${new Date().getFullYear() - 18}, czyli PRZED ${new Date().getFullYear() - 18} rokiem)
 WAŻNE: Auto z yearFrom=2008 w roku ${new Date().getFullYear()} ma ${new Date().getFullYear() - 2008} lat → kategoria ${new Date().getFullYear() - 2008 <= 18 ? "12-18 lat" : "Powyżej 18 lat"}. Licz poprawnie!
-Podaj do 5 modeli na kategorię. Jeśli w danej kategorii nie istnieją modele spełniające kryteria (typ, segment, moc) — zwróć pustą tablicę cars: []. NIGDY nie wstawiaj modelu do kategorii, w której się nie mieści wiekiem. Lepiej zwrócić 0-1 modeli niż kłamać.
+Podaj do ${body.extended ? 8 : 5} modeli na kategorię. Jeśli w danej kategorii nie istnieją modele spełniające kryteria (typ, segment, moc) — zwróć pustą tablicę cars: []. NIGDY nie wstawiaj modelu do kategorii, w której się nie mieści wiekiem. Lepiej zwrócić 0-1 modeli niż kłamać.
 
 TYP SAMOCHODU: użytkownik wybrał "${bodyStyleLabel}". Rekomenduj WYŁĄCZNIE samochody tego typu.
 ${body.bodyStyle === "van" ? "VAN = samochody dostawczo-osobowe i vany (np. VW Transporter, Mercedes Vito, Renault Trafic, Ford Transit Custom, Toyota Proace, Opel Vivaro, VW Caddy, Citroën Berlingo). NIE zwracaj sedanów, SUV-ów ani crossoverów." : ""}${body.bodyStyle === "suv" ? "SUV = duże SUV-y (np. Toyota Land Cruiser, BMW X5, Hyundai Santa Fe, Kia Sorento). NIE zwracaj sedanów, vanów ani crossoverów." : ""}${body.bodyStyle === "crossover" ? "CROSSOVER = kompaktowe crossovery/SUV-y (np. Toyota RAV4, Mazda CX-5, VW Tiguan, Hyundai Tucson). NIE zwracaj sedanów, vanów ani dużych SUV-ów." : ""}${body.bodyStyle === "terenowy" ? "TERENOWY = samochody terenowe (np. Jeep Wrangler, Toyota Land Cruiser, Suzuki Jimny, Land Rover Defender). NIE zwracaj sedanów, crossoverów ani vanów." : ""}${body.bodyStyle === "sportowy" ? "SPORTOWY = samochody sportowe (np. Mazda MX-5, Toyota GR86, BMW M2, Porsche Cayman). NIE zwracaj sedanów, vanów ani SUV-ów." : ""}
