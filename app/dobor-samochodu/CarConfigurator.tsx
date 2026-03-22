@@ -800,7 +800,6 @@ export default function CarConfigurator() {
   const [results, setResults] = useState<RecommendResult | null>(null);
   const [expandedCategory, setExpandedCategory] = useState<number>(0);
   const [costsMap, setCostsMap] = useState<Map<string, CostResult>>(new Map());
-  const [calculatingCosts, setCalculatingCosts] = useState(false);
   const [selectedVariants, setSelectedVariants] = useState<Map<string, number>>(new Map());
 
   useEffect(() => {
@@ -905,6 +904,20 @@ export default function CarConfigurator() {
         cat.cars = cat.cars.filter((car) => car.variants.length > 0);
       }
       data.categories = data.categories.filter((cat) => cat.cars.length > 0);
+      // Auto-calculate costs
+      const mult = KM_MULTIPLIER[answers.kmPeriod];
+      const annualCity = answers.kmCity * mult;
+      const annualHighway = answers.kmHighway * mult;
+      const map = new Map<string, CostResult>();
+      for (let ci = 0; ci < data.categories.length; ci++) {
+        for (let carI = 0; carI < data.categories[ci].cars.length; carI++) {
+          const car = data.categories[ci].cars[carI];
+          for (let vi = 0; vi < car.variants.length; vi++) {
+            map.set(`${ci}-${carI}-${vi}`, calcVariantCost(car, car.variants[vi], annualCity, annualHighway, answers.yearsOwned));
+          }
+        }
+      }
+      setCostsMap(map);
       setResults(data);
       setExpandedCategory(0);
       setSelectedVariants(new Map());
@@ -1256,38 +1269,9 @@ export default function CarConfigurator() {
                 </p>
               </div>
             </div>
-            {/* Cost calculation button */}
-            <div className="flex items-center gap-3 pt-1">
-              <button
-                type="button"
-                disabled={calculatingCosts}
-                onClick={() => {
-                  setCalculatingCosts(true);
-                  const mult = KM_MULTIPLIER[answers.kmPeriod];
-                  const annualCity = answers.kmCity * mult;
-                  const annualHighway = answers.kmHighway * mult;
-                  const map = new Map<string, CostResult>();
-                  for (let ci = 0; ci < results.categories.length; ci++) {
-                    for (let carI = 0; carI < results.categories[ci].cars.length; carI++) {
-                      const car = results.categories[ci].cars[carI];
-                      for (let vi = 0; vi < car.variants.length; vi++) {
-                        map.set(`${ci}-${carI}-${vi}`, calcVariantCost(car, car.variants[vi], annualCity, annualHighway, answers.yearsOwned));
-                      }
-                    }
-                  }
-                  setCostsMap(map);
-                  setCalculatingCosts(false);
-                }}
-                className="btn-secondary text-sm disabled:opacity-50"
-              >
-                {calculatingCosts ? "Obliczanie..." : costsMap.size > 0 ? "Przelicz ponownie" : "Przelicz szacunkowe koszty"}
-              </button>
-              {costsMap.size > 0 && (
-                <span className="text-xs text-gray-400">
-                  ({fmt((answers.kmCity + answers.kmHighway) * KM_MULTIPLIER[answers.kmPeriod])} km/rok, {answers.yearsOwned} lat)
-                </span>
-              )}
-            </div>
+            <p className="text-xs text-gray-400 pt-1">
+              Szacunkowe koszty przy {fmt((answers.kmCity + answers.kmHighway) * KM_MULTIPLIER[answers.kmPeriod])} km/rok przez {answers.yearsOwned} lat
+            </p>
           </div>
 
           {/* Age category tabs */}
