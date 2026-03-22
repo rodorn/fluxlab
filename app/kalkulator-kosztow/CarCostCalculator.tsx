@@ -428,15 +428,26 @@ function RatingSelector({
 
 /* ──────────────── result row ──────────────── */
 
-function ResultRow({ label, value, accent }: { label: string; value: string; accent?: boolean }) {
+function ResultRow({ label, value, accent, tooltip }: { label: string; value: string; accent?: boolean; tooltip?: string }) {
   return (
-    <div className="flex flex-col gap-0.5 p-3 rounded-xl bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800">
-      <span className="text-[11px] uppercase tracking-wider text-gray-400 dark:text-gray-500">
+    <div className="relative group flex flex-col gap-0.5 p-3 rounded-xl bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800">
+      <span className="text-[11px] uppercase tracking-wider text-gray-400 dark:text-gray-500 flex items-center gap-1">
         {label}
+        {tooltip && (
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="shrink-0 opacity-40 group-hover:opacity-70 transition-opacity">
+            <circle cx="6" cy="6" r="5.5" stroke="currentColor" />
+            <path d="M6 5.5V8.5M6 3.5V4" stroke="currentColor" strokeLinecap="round" />
+          </svg>
+        )}
       </span>
       <span className={`font-medium ${accent ? "text-accent text-lg" : "text-gray-900 dark:text-white"}`}>
         {value}
       </span>
+      {tooltip && (
+        <span className="absolute left-0 right-0 bottom-full mb-2 rounded-lg bg-gray-900 dark:bg-gray-700 text-xs text-white px-3 py-2 opacity-0 group-hover:opacity-100 transition pointer-events-none z-20 leading-relaxed whitespace-pre-line">
+          {tooltip}
+        </span>
+      )}
     </div>
   );
 }
@@ -1085,43 +1096,95 @@ export default function CarCostCalculator() {
             </div>
           )}
 
+          {(() => {
+            const d = activeCarData ?? data;
+            const r = displayResult;
+            const fuelPrice = FUEL_PRICES[d.fuelType];
+            const kmTotal = r.totalKm;
+            return (
+            <>
           <div className="rounded-2xl border-2 border-accent/30 bg-accent/5 dark:bg-accent/10 p-8 space-y-4">
             <h3 className="text-lg font-bold text-gray-900 dark:text-white text-center">
               {displayLabel && <span className="text-accent">{displayLabel}</span>}
               {displayLabel ? " — " : ""}Podsumowanie kosztów ({data.yearsOwned} {data.yearsOwned === 1 ? "rok" : data.yearsOwned < 5 ? "lata" : "lat"})
             </h3>
-            <div className="grid sm:grid-cols-2 gap-4 text-sm">
-              <ResultRow label="Całkowity koszt" value={`${fmt(displayResult.totalCost)} PLN`} accent />
-              <ResultRow label="Koszt miesięczny" value={`${fmt(displayResult.monthly)} PLN`} accent />
-              <ResultRow label="Koszt na km" value={`${fmt2(displayResult.costPerKm)} PLN`} />
-              <ResultRow label="Koszt na godzinę jazdy" value={`${fmt2(displayResult.costPerHour)} PLN`} />
+              <div className="grid sm:grid-cols-2 gap-4 text-sm">
+                <ResultRow
+                  label="Całkowity koszt" value={`${fmt(r.totalCost)} PLN`} accent
+                  tooltip={`Paliwo ${fmt(r.fuelCost)} + spadek wartości ${fmt(r.lostValue)} + serwis ${fmt(r.repairs)} PLN`}
+                />
+                <ResultRow
+                  label="Koszt miesięczny" value={`${fmt(r.monthly)} PLN`} accent
+                  tooltip={`${fmt(r.totalCost)} PLN / ${data.yearsOwned * 12} mies. = ${fmt(r.monthly)} PLN/mies.`}
+                />
+                <ResultRow
+                  label="Koszt na km" value={`${fmt2(r.costPerKm)} PLN`}
+                  tooltip={`${fmt(r.totalCost)} PLN / ${fmt(kmTotal)} km = ${fmt2(r.costPerKm)} PLN/km`}
+                />
+                <ResultRow
+                  label="Koszt na godzinę jazdy" value={`${fmt2(r.costPerHour)} PLN`}
+                  tooltip={`${fmt(r.totalCost)} PLN / ${fmt(Math.round(r.totalHours))} godz.\nMiasto ~25 km/h, trasa ~80 km/h`}
+                />
+              </div>
             </div>
-          </div>
 
-          <div className="rounded-2xl border border-gray-200 dark:border-gray-700 p-6 space-y-3">
-            <h3 className="text-sm font-bold text-gray-900 dark:text-white">Szczegóły kalkulacji</h3>
-            <div className="grid sm:grid-cols-2 gap-3 text-sm">
-              <ResultRow label="Wiek na starcie" value={`${displayResult.ageStart} lat`} />
-              <ResultRow label="Wiek na koniec" value={`${displayResult.ageEnd} lat`} />
-              <ResultRow label="Km rocznie (miasto)" value={`${fmt(displayResult.kmCityYear)} km`} />
-              <ResultRow label="Km rocznie (trasa)" value={`${fmt(displayResult.kmHighwayYear)} km`} />
-              <ResultRow label="Łączny przebieg" value={`${fmt(displayResult.totalKm)} km`} />
-              <ResultRow label="Końcowy przebieg" value={`${fmt(displayResult.finalMileage)} km`} />
-            </div>
+            <div className="rounded-2xl border border-gray-200 dark:border-gray-700 p-6 space-y-3">
+              <h3 className="text-sm font-bold text-gray-900 dark:text-white">Szczegóły kalkulacji</h3>
+              <div className="grid sm:grid-cols-2 gap-3 text-sm">
+                <ResultRow
+                  label="Wiek na starcie" value={`${r.ageStart} lat`}
+                  tooltip={`${YEAR_NOW} - ${d.year} = ${r.ageStart} lat`}
+                />
+                <ResultRow
+                  label="Wiek na koniec" value={`${r.ageEnd} lat`}
+                  tooltip={`${r.ageStart} + ${data.yearsOwned} lat użytkowania = ${r.ageEnd} lat`}
+                />
+                <ResultRow
+                  label="Km rocznie (miasto)" value={`${fmt(r.kmCityYear)} km`}
+                  tooltip={`${fmt(d.kmCity)} km × ${KM_MULTIPLIER[kmPeriod]} = ${fmt(r.kmCityYear)} km/rok`}
+                />
+                <ResultRow
+                  label="Km rocznie (trasa)" value={`${fmt(r.kmHighwayYear)} km`}
+                  tooltip={`${fmt(d.kmHighway)} km × ${KM_MULTIPLIER[kmPeriod]} = ${fmt(r.kmHighwayYear)} km/rok`}
+                />
+                <ResultRow
+                  label="Łączny przebieg" value={`${fmt(r.totalKm)} km`}
+                  tooltip={`(${fmt(r.kmCityYear)} + ${fmt(r.kmHighwayYear)}) × ${data.yearsOwned} lat = ${fmt(r.totalKm)} km`}
+                />
+                <ResultRow
+                  label="Końcowy przebieg" value={`${fmt(r.finalMileage)} km`}
+                  tooltip={`${fmt(d.mileage)} km aktualny + ${fmt(r.totalKm)} km = ${fmt(r.finalMileage)} km`}
+                />
+              </div>
 
-            <div className="border-t border-gray-100 dark:border-gray-800 pt-3 mt-3">
-              <h4 className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2">Podział kosztów</h4>
-              <div className="space-y-2">
-                {[
-                  { label: "Paliwo", value: displayResult.fuelCost, color: "bg-blue-500" },
-                  { label: "Spadek wartości", value: displayResult.lostValue, color: "bg-amber-500" },
-                  { label: "Serwis i naprawy", value: displayResult.repairs, color: "bg-red-500" },
-                ].map((item) => {
-                  const pct = displayResult.totalCost > 0 ? (item.value / displayResult.totalCost) * 100 : 0;
+              <div className="border-t border-gray-100 dark:border-gray-800 pt-3 mt-3">
+                <h4 className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2">Podział kosztów</h4>
+                <div className="space-y-2">
+                  {[
+                    {
+                      label: "Paliwo", value: r.fuelCost, color: "bg-blue-500",
+                      tip: `Miasto: ${fmt(r.kmCityYear)} km × ${d.fuelCity} L/100km\nTrasa: ${fmt(r.kmHighwayYear)} km × ${d.fuelHighway} L/100km\nCena ${d.fuelType}: ${fuelPrice.toFixed(2)} PLN/L × ${data.yearsOwned} lat`,
+                    },
+                    {
+                      label: "Spadek wartości", value: r.lostValue, color: "bg-amber-500",
+                      tip: `Cena ${fmt(d.price)} PLN\nWiek ${r.ageStart} → ${r.ageEnd} lat\nSzybsza utrata wartości w pierwszych latach, wolniejsza potem`,
+                    },
+                    {
+                      label: "Serwis i naprawy", value: r.repairs, color: "bg-red-500",
+                      tip: `Awaryjność marki: ${d.brandReliability}/3, silnika: ${d.engineReliability}/5\nSilnik ${d.engine}, segment ${d.complexity}/5\nKm w mieście ×2 (większe zużycie)`,
+                    },
+                  ].map((item) => {
+                    const pct = r.totalCost > 0 ? (item.value / r.totalCost) * 100 : 0;
                   return (
-                    <div key={item.label}>
+                    <div key={item.label} className="relative group">
                       <div className="flex justify-between text-sm mb-1">
-                        <span className="text-gray-600 dark:text-gray-400">{item.label}</span>
+                        <span className="text-gray-600 dark:text-gray-400 flex items-center gap-1">
+                          {item.label}
+                          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="shrink-0 opacity-40 group-hover:opacity-70 transition-opacity">
+                            <circle cx="6" cy="6" r="5.5" stroke="currentColor" />
+                            <path d="M6 5.5V8.5M6 3.5V4" stroke="currentColor" strokeLinecap="round" />
+                          </svg>
+                        </span>
                         <span className="font-medium text-gray-900 dark:text-white">
                           {fmt(item.value)} PLN ({pct.toFixed(0)}%)
                         </span>
@@ -1132,12 +1195,18 @@ export default function CarCostCalculator() {
                           style={{ width: `${pct}%` }}
                         />
                       </div>
+                      <span className="absolute left-0 right-0 bottom-full mb-2 rounded-lg bg-gray-900 dark:bg-gray-700 text-xs text-white px-3 py-2 opacity-0 group-hover:opacity-100 transition pointer-events-none z-20 leading-relaxed whitespace-pre-line">
+                        {item.tip}
+                      </span>
                     </div>
                   );
                 })}
               </div>
             </div>
           </div>
+          </>
+              );
+            })()}
         </div>
       )}
     </div>
