@@ -129,12 +129,6 @@ export async function POST(req: Request) {
 
   const bodyStyleLabel = body.bodyStyle ?? "dowolny";
   const shapesLabel = body.bodyShapes.length > 0 ? body.bodyShapes.join(", ") : "dowolne";
-  const tripsLabel =
-    body.longTrips <= 20 ? "głównie miasto" :
-    body.longTrips <= 40 ? "więcej miasta niż trasy" :
-    body.longTrips <= 60 ? "pół na pół" :
-    body.longTrips <= 80 ? "więcej trasy niż miasta" :
-    "głównie trasa";
 
   const segmentExamples: Record<string, string> = {
     A: "A/B – miejskie (Fiat 500, VW Up, Toyota Aygo, VW Polo, Hyundai i20)",
@@ -160,8 +154,6 @@ export async function POST(req: Request) {
     `Dopuszczalne segmenty: ${allowedSegments.join(", ")}`,
     `Minimalna moc silnika: ${body.hp || 150} KM`,
     `Pasażerowie: ${body.passengers} os.`,
-    `Trasy: ${tripsLabel}`,
-    `Wzrost kierowcy: ${body.height} cm`,
     body.additionalInfo ? `Dodatkowe wymagania: ${body.additionalInfo}` : "",
   ].filter(Boolean).join("\n");
 
