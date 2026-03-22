@@ -48,16 +48,16 @@ type Segment = "A" | "B" | "C" | "D" | "E" | "F";
 const SHAPE_DESCRIPTIONS: Partial<Record<BodyShape, Partial<Record<Segment, string>>>> = {
   /* ── osobowe ── */
   hatchback: {
-    A: "A – mini hatchback (np. Fiat 500, Toyota Aygo)",
-    B: "B – małe hatchback (np. VW Polo, Mazda 2)",
-    C: "C – kompaktowe hatchback (np. VW Golf, Toyota Corolla HB)",
+    A: "A – mini hatchbacki (np. Fiat 500, Toyota Aygo)",
+    B: "B – małe hatchbacki (np. VW Polo, Mazda 2)",
+    C: "C – kompaktowe hatchbacki (np. VW Golf, Toyota Corolla)",
   },
   sedan: {
     B: "B – małe sedany (np. Toyota Yaris Sedan, Honda City)",
     C: "C – kompaktowe sedany (np. Toyota Corolla Sedan, VW Jetta)",
-    D: "D – średnie sedany (np. BMW serii 3, VW Passat)",
-    E: "E – duże sedany (np. BMW serii 5, Mercedes klasy E)",
-    F: "F – luksusowe sedany (np. BMW serii 7, Mercedes klasy S)",
+    D: "D – sedany klasy średniej (np. BMW serii 3, VW Passat)",
+    E: "E – sedany klasy średniej wyższej (np. BMW serii 5, Mercedes klasy E)",
+    F: "F – sedany klasy wyższej (np. BMW serii 7, Mercedes klasy S)",
   },
   kombi: {
     B: "B – małe kombi (np. Skoda Fabia Combi, Dacia Logan MCV)",
@@ -67,8 +67,8 @@ const SHAPE_DESCRIPTIONS: Partial<Record<BodyShape, Partial<Record<Segment, stri
   },
   liftback: {
     C: "C – kompaktowe liftbacki (np. Skoda Octavia, Mazda 3)",
-    D: "D – średnie liftbacki (np. BMW serii 4, VW Arteon)",
-    E: "E – premium liftbacki (np. Audi A7, Porsche Panamera)",
+    D: "D – liftbacki klasy średniej (np. BMW serii 4, VW Arteon)",
+    E: "E – liftbacki klasy średniej wyższej (np. Audi A7, Porsche Panamera)",
   },
   /* ── sportowe ── */
   "coupe-2": {

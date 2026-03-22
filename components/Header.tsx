@@ -30,11 +30,12 @@ const articles = [
   },
 ];
 
-const tools: { title: string; description: string; href: string }[] = [
+const tools: { title: string; description: string; href: string; image: string }[] = [
   {
     title: "Dobór samochodu",
     description: "Znajdź idealny segment, nadwozie i moc dla siebie",
     href: "/dobor-samochodu",
+    image: "/photos/car-chooser/type-sport.webp",
   },
 ];
 
@@ -171,14 +172,26 @@ export default function Header() {
                             key={tool.href}
                             href={tool.href}
                             onClick={() => setKnowledgeOpen(false)}
-                            className="flex flex-col px-2.5 py-2 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors group"
+                            className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors group"
                           >
-                            <p className="text-sm font-medium text-gray-900 dark:text-white group-hover:text-accent transition-colors">
-                              {tool.title}
-                            </p>
-                            <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
-                              {tool.description}
-                            </p>
+                            <div className="shrink-0 w-16 h-11 rounded-lg overflow-hidden border border-gray-100 dark:border-gray-700 bg-gray-100 dark:bg-gray-800">
+                              <Image
+                                src={tool.image}
+                                alt={tool.title}
+                                width={64}
+                                height={44}
+                                className="w-full h-full object-cover"
+                                unoptimized
+                              />
+                            </div>
+                            <div className="min-w-0 pt-0.5">
+                              <p className="text-sm font-medium text-gray-900 dark:text-white group-hover:text-accent transition-colors leading-snug">
+                                {tool.title}
+                              </p>
+                              <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5 leading-snug">
+                                {tool.description}
+                              </p>
+                            </div>
                           </Link>
                         ))}
                       </div>
@@ -295,9 +308,21 @@ export default function Header() {
                       key={tool.href}
                       href={tool.href}
                       onClick={() => setMenuOpen(false)}
-                      className="block text-sm text-gray-700 dark:text-gray-300 hover:text-accent transition-colors"
+                      className="flex items-center gap-2.5 group"
                     >
-                      {tool.title}
+                      <div className="shrink-0 w-10 h-7 rounded-md overflow-hidden border border-gray-100 dark:border-gray-700">
+                        <Image
+                          src={tool.image}
+                          alt={tool.title}
+                          width={40}
+                          height={28}
+                          className="w-full h-full object-cover"
+                          unoptimized
+                        />
+                      </div>
+                      <span className="text-sm text-gray-700 dark:text-gray-300 group-hover:text-accent transition-colors">
+                        {tool.title}
+                      </span>
                     </Link>
                   ))
                 )}
