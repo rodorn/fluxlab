@@ -913,35 +913,18 @@ export default function CarConfigurator() {
         }
       }
 
-      // 1b. Fix directInjection — LLM often gets this wrong for known models
-      const KNOWN_DIRECT_INJECTION: [RegExp, number][] = [
-        // Lexus V6/V8 FSE engines (GS, IS, LS, RC, LC, etc.) from 2005+
-        [/^(gs|is|rc|lc|ls)\s*\d/i, 2005],
-        // Toyota D-4S / D-4 (86, Supra, Crown, Mark X) from 2004+
-        [/^(86|gr86|supra|crown|mark\s*x)/i, 2004],
-        // BMW all petrol from E90+ generation (N20, N55, B48, B58, S55, S58)
-        [/^([1-8]|x[1-7]|z4|m[2-8])/i, 2006],
-        // Mazda Skyactiv-G from 2012+
-        [/^(2|3|6|cx-[3579]|cx-3[0-9]|mx-5)/i, 2012],
-      ];
+      // 1b. Fix directInjection based on engine name — LLM often gets this wrong
+      const DI_TRUE_PATTERN = /FSI|FSE|TSI|TFSI|GDI|T-GDI|D-4|Skyactiv-G/i;
+      const DI_FALSE_PATTERN = /MPI/i;
       for (const car of allCars) {
-        const modelLower = `${car.model}`.toLowerCase();
-        const makeLower = `${car.make}`.toLowerCase();
-        for (const [pattern, fromYear] of KNOWN_DIRECT_INJECTION) {
-          if (car.yearFrom >= fromYear) {
-            const isLexus = makeLower === "lexus" && pattern.test(modelLower);
-            const isToyota = makeLower === "toyota" && pattern.test(modelLower);
-            const isBmw = makeLower === "bmw" && pattern.test(modelLower);
-            const isMazda = makeLower === "mazda" && pattern.test(modelLower);
-            if (isLexus || isToyota || isBmw || isMazda) {
-              for (const v of car.variants) {
-                if (v.fuelType === "benzyna" && !v.directInjection) {
-                  console.log(`[FIX] directInjection: false→true for ${car.make} ${car.model} ${v.engine}`);
-                  v.directInjection = true;
-                }
-              }
-              break;
-            }
+        for (const v of car.variants) {
+          if (v.fuelType !== "benzyna") continue;
+          if (DI_TRUE_PATTERN.test(v.engine) && !v.directInjection) {
+            console.log(`[FIX] directInjection: false→true for ${car.make} ${car.model} ${v.engine}`);
+            v.directInjection = true;
+          } else if (DI_FALSE_PATTERN.test(v.engine) && v.directInjection) {
+            console.log(`[FIX] directInjection: true→false for ${car.make} ${car.model} ${v.engine}`);
+            v.directInjection = false;
           }
         }
       }
@@ -973,9 +956,7 @@ export default function CarConfigurator() {
               });
             }
           }
-          for (const lv of lpgVariants) {
-            if (lv.priceFrom <= budget) car.variants.push(lv);
-          }
+          for (const lv of lpgVariants) car.variants.push(lv);
         }
         const bestByFuel = new Map<FuelType, CarVariant>();
         for (const v of car.variants) {
