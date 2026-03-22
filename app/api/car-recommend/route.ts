@@ -201,10 +201,12 @@ CENY – NAJWAŻNIEJSZE:
 
 WTRYSK – directInjection dotyczy TYLKO silników benzynowych (dla diesli zawsze false, bo nie montuje się LPG):
 - directInjection: true = silnik MA wtryskiwacze bezpośrednie, nawet jeśli ma też pośrednie (dual injection). Przy LPG i tak musi spalać ~10% benzyny na wtryskiwaczach bezpośrednich.
-  Przykłady TRUE: VW TSI (wszystkie generacje EA888, EA211), VW FSI, Toyota D-4/D-4S (dual, ale MA direct), Lexus 2GR-FSE/2UR-FSE, Mazda Skyactiv-G, Hyundai/Kia GDI/T-GDI, BMW N20/B48, Mercedes M274/M264.
+  Przykłady TRUE (kody silników): VW TSI (EA888, EA211), VW FSI, Toyota D-4/D-4S, Lexus xGR-FSE (2GR-FSE, 3GR-FSE, 4GR-FSE, 2UR-FSE), Mazda Skyactiv-G, Hyundai/Kia GDI/T-GDI, BMW N20/B48/N55/S55, Mercedes M274/M264.
+  Przykłady TRUE (modele): Lexus GS300/GS350/GS430/GS450h (2005+), Lexus IS250/IS350 (2005+), Lexus LS460 (2006+), Toyota Crown/Mark X (2004+), VW Golf GTI/R, Audi A4/A6 TFSI, BMW 320i/328i/330i (E90+), Mazda 3/6/CX-5 Skyactiv-G.
 - directInjection: false = TYLKO wtrysk pośredni (port injection), BEZ jakichkolwiek wtryskiwaczy bezpośrednich. Pełne LPG bez spalania benzyny.
-  Przykłady FALSE: Toyota 2GR-FE (port only, np. Camry V6 do 2017), 1ZZ-FE, 2ZR-FE, VW MPI (np. 1.6 MPI), Hyundai/Kia MPI, Honda K20A/R20A, starsze silniki benzynowe (przed ~2005).
-WAŻNE: Jeśli w nazwie silnika jest FSI/GDI/D-4/D-4S/TSI/TFSI → directInjection: true. Litera "F" w kodzie silnika Toyoty/Lexusa (np. 2GR-FE) oznacza port injection = false, ale "FS" (np. 2GR-FSE) oznacza direct = true. W razie wątpliwości ustaw true (bezpieczniej zawyżyć koszt LPG).
+  Przykłady FALSE (kody): Toyota 2GR-FE (port only), 1ZZ-FE, 2ZR-FE, 1MZ-FE, VW MPI (1.6 MPI), Hyundai/Kia MPI, Honda K20A/R20A.
+  Przykłady FALSE (modele): Toyota Camry V6 (2GR-FE, do 2017), Toyota RAV4 2.0 VVT-i (starsze), Honda Accord 2.0/2.4 (K-series), Hyundai i30 1.6 MPI, VW Polo 1.6 MPI.
+WAŻNE: Jeśli w nazwie silnika jest FSI/GDI/D-4/D-4S/TSI/TFSI → directInjection: true. W kodach Toyota/Lexus: "FE" = port injection (false), "FSE" = direct injection (true). Lexus GS300 ma 3GR-FSE = TRUE. W razie wątpliwości ustaw true (bezpieczniej zawyżyć koszt LPG).
 LATA PRODUKCJI: yearFrom i yearTo to PEŁNY zakres produkcji danej generacji, NIE pojedynczy rok. Np. BMW X6 E71: yearFrom=2008, yearTo=2014. BMW X4 F26: yearFrom=2014, yearTo=2018. NIGDY nie podawaj tego samego roku w obu polach.
 OPISY (pros): 3-4 zdania opisujące CHARAKTER i TOŻSAMOŚĆ modelu — co go wyróżnia, jak się prowadzi, jakie emocje budzi, z czego jest znany. NIE powtarzaj danych technicznych (spalanie, moc — to już jest w interfejsie). Przykład: "Kultowy SUV coupe, który zapoczątkował cały segment. Agresywna sylwetka przyciąga spojrzenia. Zaskakująco zwinny jak na swoje rozmiary. Prestiż marki BMW w wydaniu off-roadowym."
 WADY (cons): 2-3 konkretne, praktyczne uwagi — na co uważać przy zakupie tego modelu (typowe usterki, koszty eksploatacji, znane problemy generacji).
