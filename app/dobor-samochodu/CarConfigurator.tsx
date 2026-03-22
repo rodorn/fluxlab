@@ -904,14 +904,22 @@ export default function CarConfigurator() {
       // 1. Collect all cars from all LLM categories into a flat pool
       const allCars: CarRecommendation[] = [];
       for (const cat of data.categories) {
-        for (const car of cat.cars) allCars.push(car);
+        console.log(`[DEBUG] LLM category "${cat.ageLabel}": ${cat.cars.length} cars`);
+        for (const car of cat.cars) {
+          console.log(`  ${car.make} ${car.model} ${car.generation} yearFrom=${car.yearFrom} yearTo=${car.yearTo} variants=${car.variants.length}`);
+          allCars.push(car);
+        }
       }
 
       // 2. Process each car: filter variants, generate LPG, deduplicate
       const rearEngineModels = ["911", "cayman", "boxster", "a110", "elise", "exige", "emira"];
       const noLpg = answers.bodyShapes.some((s) => s === "coupe-2" || s === "roadster-2");
       for (const car of allCars) {
+        const beforeFilter = car.variants.length;
         car.variants = car.variants.filter((v) => v.hp >= minHP && v.priceFrom <= budget);
+        if (car.variants.length === 0 && beforeFilter > 0) {
+          console.log(`[DEBUG] ALL variants filtered for ${car.make} ${car.model} (had ${beforeFilter}, minHP=${minHP}, budget=${budget})`);
+        }
         const isRearEngine = rearEngineModels.some((m) => car.model.toLowerCase().includes(m));
         if (!noLpg && !isRearEngine) {
           const lpgVariants: CarVariant[] = [];
@@ -953,6 +961,11 @@ export default function CarConfigurator() {
       ];
 
       // 4. Assign each car to the correct bucket based on yearTo (newest examples)
+      console.log(`[DEBUG] Cars with variants after filtering: ${allCars.filter(c => c.variants.length > 0).length}/${allCars.length}`);
+      for (const car of allCars.filter(c => c.variants.length > 0)) {
+        const age = currentYear - car.yearTo;
+        console.log(`[DEBUG] ${car.make} ${car.model} yearTo=${car.yearTo} age=${age}`);
+      }
       const newCategories: AgeCategory[] = [];
       for (const bucket of AGE_BUCKETS) {
         const seen = new Set<string>();
