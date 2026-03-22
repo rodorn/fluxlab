@@ -780,9 +780,9 @@ function getVariantDesc(car: CarRecommendation, v: CarVariant, long: boolean): s
   // Brief fuel-specific note
   const fuelNote: Record<FuelType, string> = {
     benzyna: "",
-    diesel: "Wersja diesel — idealny kompan na długie trasy",
-    gaz: `Na gazie — paliwo za ${FUEL_PRICES.gaz} PLN/L, realna oszczędność przy każdym tankowaniu`,
-    elektryczny: "Napęd elektryczny — cicha, dynamiczna jazda bez wizyt na stacji",
+    diesel: "",
+    gaz: "",
+    elektryczny: "",
   };
 
   const parts = [desc, fuelNote[v.fuelType]].filter(Boolean);
