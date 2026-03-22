@@ -639,12 +639,13 @@ export default function CarCostCalculator() {
 
         setTimeout(() => scrollToRef(compareRef), 100);
       } else {
-        // Single car — fill form and add to comparison
+        // Single car — fill form as new (unsaved) car
         const r = await fetchOneCar(parts[0]);
         if (!r) {
           setParseError("Wystąpił błąd");
           return;
         }
+        setActiveCarId(null);
         const carData: Data = { ...data, ...parsedToData(r.parsed) };
         setData(carData);
         setParsedLabel("Dane uzupełnione");
