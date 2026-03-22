@@ -214,7 +214,7 @@ WTRYSK – directInjection dotyczy TYLKO silników benzynowych (dla diesli zawsz
   Przykłady TRUE (modele): Lexus GS300/GS350/GS450h (2005+), Lexus IS250/IS350 (2005+), Lexus LS460 (2006+), Toyota Crown/Mark X (2004+), VW Golf GTI/R, Audi A4/A6 TFSI, BMW 320i/328i/330i (E90+), Mazda 3/6/CX-5 Skyactiv-G.
 - directInjection: false = TYLKO wtrysk pośredni (port injection), BEZ jakichkolwiek wtryskiwaczy bezpośrednich. Pełne LPG bez spalania benzyny.
   Przykłady FALSE (kody): Toyota 2GR-FE (port only), 1ZZ-FE, 2ZR-FE, 2ZR-FXE (hybryda 1.8), 1MZ-FE, VW MPI (1.6 MPI), Hyundai/Kia MPI, Honda K20A/R20A.
-  Przykłady FALSE (modele): Toyota Corolla/Prius/Yaris 1.8 Hybrid (2ZR-FXE = port injection!), Toyota Camry V6 (2GR-FE, do 2017), Honda Jazz Hybrid, Honda Accord 2.0/2.4, Hyundai i30 1.6 MPI, VW Polo 1.6 MPI.
+  Przykłady FALSE (modele): Toyota 1.8 Hybrid (Corolla, Prius, C-HR — silnik 2ZR-FXE = port injection!), Toyota 1.5 Hybrid (Yaris, Yaris Cross — silnik M15A-FXE = port injection!), Toyota Camry V6 (2GR-FE, do 2017), Honda Jazz Hybrid, Honda Accord 2.0/2.4, Hyundai i30 1.6 MPI, VW Polo 1.6 MPI.
   Przykłady TRUE (hybrydy z DI): Toyota Corolla/RAV4/Camry 2.0/2.5 Hybrid (Dynamic Force M20A/A25A = direct injection), Lexus ES/NX/RX hybrid (2.5 DI).
 WAŻNE: Jeśli w nazwie silnika jest FSI/GDI/D-4/D-4S/TSI/TFSI → directInjection: true. W kodach Toyota/Lexus: "FE" = port injection (false), "FSE" = direct injection (true). Lexus GS300 ma 3GR-FSE = TRUE. W razie wątpliwości ustaw true (bezpieczniej zawyżyć koszt LPG).
 LATA PRODUKCJI: yearFrom i yearTo to PEŁNY zakres produkcji danej generacji, NIE pojedynczy rok. Np. BMW X6 E71: yearFrom=2008, yearTo=2014. BMW X4 F26: yearFrom=2014, yearTo=2018. NIGDY nie podawaj tego samego roku w obu polach.
