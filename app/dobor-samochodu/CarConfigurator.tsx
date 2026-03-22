@@ -774,55 +774,22 @@ function DonutChart({ segments }: { segments: { value: number; color: string; la
 /* ──────────────── variant description ──────────────── */
 
 function getVariantDesc(car: CarRecommendation, v: CarVariant, long: boolean): string {
-  const parts: string[] = [];
+  // Model-specific characteristics from LLM (emotional, unique to this car)
+  const desc = car.pros.join(". ");
 
-  const layoutName: Record<EngineLayout, string> = {
-    elektryczny: "elektryczny", R3: "3-cylindrowy", R4: "4-cylindrowy", R5: "5-cylindrowy",
-    R6: "rzędowa szóstka", V6: "V6", V8: "V8", V10: "V10", V12: "V12", W12: "W12", W16: "W16",
+  // Brief fuel-specific note
+  const fuelNote: Record<FuelType, string> = {
+    benzyna: "",
+    diesel: "Wersja diesel — idealny kompan na długie trasy",
+    gaz: `Na gazie — paliwo za ${FUEL_PRICES.gaz} PLN/L, realna oszczędność przy każdym tankowaniu`,
+    elektryczny: "Napęd elektryczny — cicha, dynamiczna jazda bez wizyt na stacji",
   };
 
-  // Engine character
-  const layout = layoutName[v.engineLayout] ?? "";
+  const parts = [desc, fuelNote[v.fuelType]].filter(Boolean);
 
-  const cylinders = LAYOUT_CYLINDERS[v.engineLayout];
-  const hpPerCyl = cylinders > 0 ? Math.round(v.hp / cylinders) : 0;
-  const avgFuel = ((v.fuelCity + v.fuelHighway) / 2).toFixed(1);
-
-  switch (v.fuelType) {
-    case "benzyna":
-      parts.push(`Silnik benzynowy ${layout} o mocy ${v.hp} KM (${hpPerCyl} KM/cyl)`);
-      parts.push(`Spalanie ${v.fuelCity}L w mieście, ${v.fuelHighway}L w trasie (średnio ${avgFuel}L)`);
-      parts.push(v.directInjection
-        ? "Wtrysk bezpośredni — wyższe ciśnienie wtrysku, droższe wtryskiwacze, mniej przyjazny LPG"
-        : "Wtrysk pośredni (MPI) — prostsza konstrukcja, tańsze części, przyjazny instalacji LPG");
-      if (hpPerCyl > 60) parts.push("Wysoko doładowany — większe obciążenie turbo i układu chłodzenia");
-      break;
-    case "diesel":
-      parts.push(`Diesel ${layout} o mocy ${v.hp} KM (${hpPerCyl} KM/cyl)`);
-      parts.push(`Spalanie ${v.fuelCity}L w mieście, ${v.fuelHighway}L w trasie (średnio ${avgFuel}L)`);
-      parts.push("Serwis diesla: filtr DPF, dwumasowe koło zamachowe, wtryskiwacze piezo, EGR");
-      if (long) parts.push("Diesel opłaca się przy przebiegach powyżej ~20 000 km/rok dzięki niższemu spalaniu");
-      break;
-    case "gaz":
-      parts.push(`LPG na bazie silnika benzynowego ${layout}, ${v.hp} KM (${hpPerCyl} KM/cyl)`);
-      parts.push(`Paliwo ${FUEL_PRICES.gaz} PLN/L zamiast ${FUEL_PRICES.benzyna} PLN/L`);
-      parts.push(`Spalanie ${v.fuelCity}L w mieście, ${v.fuelHighway}L w trasie (średnio ${avgFuel}L)`);
-      parts.push(`Koszt instalacji: ~${getLpgInstallCost(v).toLocaleString("pl-PL")} PLN (${cylinders} cyl.${v.directInjection ? " + wtrysk bezpośredni" : ""})`);
-      if (v.directInjection) parts.push("Wtrysk bezpośredni — spala ~10% benzyny obok gazu, droższy montaż i kalibracja");
-      break;
-    case "elektryczny":
-      parts.push(`Silnik elektryczny ${v.hp} KM — natychmiastowy moment obrotowy, cicha praca`);
-      parts.push(`Zużycie ${v.fuelCity} kWh/100km w mieście, ${v.fuelHighway} kWh/100km w trasie`);
-      parts.push("Brak oleju silnikowego, filtrów, sprzęgła, układu wydechowego — minimalny serwis");
-      break;
+  if (long && car.cons.length > 0) {
+    parts.push("Na co uważać: " + car.cons.join("; "));
   }
-
-  // Reliability
-  const brandLabels = ["", "Niezawodna marka — tanie części, rzadkie usterki", "Przeciętna niezawodność marki — zdarzają się kosztowne usterki", "Awaryjna marka — drogie części, częste wizyty w serwisie"];
-  const engineLabels = ["", "bardzo trwały silnik", "sprawdzony i popularny silnik, łatwo dostępne części", "silnik o średniej trwałości, znane typowe usterki", "złożony silnik, wymaga doświadczonego mechanika", "egzotyczny silnik, ograniczona dostępność części i specjalistów"];
-  const bl = brandLabels[car.brandReliability] ?? "";
-  const el = engineLabels[v.engineReliability] ?? "";
-  if (bl && el) parts.push(`${bl}, ${el}`);
 
   return parts.join(". ") + ".";
 }
@@ -961,6 +928,13 @@ export default function CarConfigurator() {
           for (const lv of lpgVariants) {
             if (lv.priceFrom <= budget) car.variants.push(lv);
           }
+          // Deduplicate variants by engine name
+          const seenEngines = new Set<string>();
+          car.variants = car.variants.filter((v) => {
+            if (seenEngines.has(v.engine)) return false;
+            seenEngines.add(v.engine);
+            return true;
+          });
         }
         cat.cars = cat.cars.filter((car) => car.variants.length > 0);
       }
@@ -1383,8 +1357,25 @@ Ni
               if (best) bestPerCategory.push({ cat, catIdx: ci, ...best });
             }
 
-            const reliability = (e: typeof bestPerCategory[0]) => e.car.brandReliability + e.variant.engineReliability;
-            const globalBest = bestPerCategory.reduce((a, b) => reliability(a) < reliability(b) ? a : reliability(a) === reliability(b) ? (a.cost.costPerKm < b.cost.costPerKm ? a : b) : b, bestPerCategory[0]);
+            // Deduplicate: if same make+model appears in multiple categories, keep only the best one
+            const seen = new Map<string, number>();
+            const deduped = bestPerCategory.filter((entry, idx) => {
+              const key = `${entry.car.make} ${entry.car.model}`.toLowerCase();
+              const existing = seen.get(key);
+              if (existing !== undefined) {
+                // Keep the one with lower costPerKm
+                if (entry.cost.costPerKm < bestPerCategory[existing].cost.costPerKm) {
+                  seen.set(key, idx);
+                  return true;
+                }
+                return false;
+              }
+              seen.set(key, idx);
+              return true;
+            });
+
+            const reliability = (e: typeof deduped[0]) => e.car.brandReliability + e.variant.engineReliability;
+            const globalBest = deduped.reduce((a, b) => reliability(a) < reliability(b) ? a : reliability(a) === reliability(b) ? (a.cost.costPerKm < b.cost.costPerKm ? a : b) : b, deduped[0]);
 
             const fuelBadge: Record<FuelType, { bg: string; label: string }> = {
               benzyna: { bg: "bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-400", label: "Benzyna" },
@@ -1404,7 +1395,7 @@ Ni
                   </p>
                 </div>
 
-                {bestPerCategory.map((entry) => {
+                {deduped.map((entry) => {
                   const { cat, cost, car, variant } = entry;
                   const isGlobalBest = entry === globalBest;
                   const totalAnnualKm = (answers.kmCity + answers.kmHighway) * KM_MULTIPLIER[answers.kmPeriod];

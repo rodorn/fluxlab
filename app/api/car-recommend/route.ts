@@ -177,7 +177,14 @@ export async function POST(req: Request) {
         max_output_tokens: 16000,
         instructions: `Ekspert motoryzacyjny, rynek polski. Data: ${new Date().toISOString().split("T")[0]}.
 
-Zaproponuj samochody w 6 kategoriach wiekowych: Nowe, Do 3 lat, 3-7 lat, 7-12 lat, 12-18 lat, Powyżej 18 lat.
+Dzisiejszy rok: ${new Date().getFullYear()}. Zaproponuj samochody w 6 kategoriach wiekowych:
+- Nowe (yearFrom >= ${new Date().getFullYear() - 1})
+- Do 3 lat (yearFrom >= ${new Date().getFullYear() - 3})
+- 3-7 lat (yearFrom ${new Date().getFullYear() - 7}–${new Date().getFullYear() - 3})
+- 7-12 lat (yearFrom ${new Date().getFullYear() - 12}–${new Date().getFullYear() - 7})
+- 12-18 lat (yearFrom ${new Date().getFullYear() - 18}–${new Date().getFullYear() - 12})
+- Powyżej 18 lat (yearFrom < ${new Date().getFullYear() - 18}, czyli PRZED ${new Date().getFullYear() - 18} rokiem)
+WAŻNE: Auto z yearFrom=2008 w roku ${new Date().getFullYear()} ma ${new Date().getFullYear() - 2008} lat → kategoria ${new Date().getFullYear() - 2008 <= 18 ? "12-18 lat" : "Powyżej 18 lat"}. Licz poprawnie!
 Podaj 5 modeli na kategorię. Zawsze zwracaj WSZYSTKIE 6 kategorii.
 
 TYP SAMOCHODU: użytkownik wybrał "${bodyStyleLabel}". Rekomenduj WYŁĄCZNIE samochody tego typu.
@@ -199,7 +206,10 @@ WTRYSK – directInjection dotyczy TYLKO silników benzynowych (dla diesli zawsz
   Przykłady FALSE: Toyota 2GR-FE (port only, np. Camry V6 do 2017), 1ZZ-FE, 2ZR-FE, VW MPI (np. 1.6 MPI), Hyundai/Kia MPI, Honda K20A/R20A, starsze silniki benzynowe (przed ~2005).
 WAŻNE: Jeśli w nazwie silnika jest FSI/GDI/D-4/D-4S/TSI/TFSI → directInjection: true. Litera "F" w kodzie silnika Toyoty/Lexusa (np. 2GR-FE) oznacza port injection = false, ale "FS" (np. 2GR-FSE) oznacza direct = true. W razie wątpliwości ustaw true (bezpieczniej zawyżyć koszt LPG).
 LATA PRODUKCJI: yearFrom i yearTo to PEŁNY zakres produkcji danej generacji, NIE pojedynczy rok. Np. BMW X6 E71: yearFrom=2008, yearTo=2014. BMW X4 F26: yearFrom=2014, yearTo=2018. NIGDY nie podawaj tego samego roku w obu polach.
-FORMAT: konkretne silniki ("2.0 TDI 150KM"), konkretne generacje ("F30", "B8"). Zalety — 3-4 konkretne, szczegółowe zalety modelu. Wady — 2-3 konkretne wady. Popularne w Polsce.
+OPISY (pros): 3-4 zdania opisujące CHARAKTER i TOŻSAMOŚĆ modelu — co go wyróżnia, jak się prowadzi, jakie emocje budzi, z czego jest znany. NIE powtarzaj danych technicznych (spalanie, moc — to już jest w interfejsie). Przykład: "Kultowy SUV coupe, który zapoczątkował cały segment. Agresywna sylwetka przyciąga spojrzenia. Zaskakująco zwinny jak na swoje rozmiary. Prestiż marki BMW w wydaniu off-roadowym."
+WADY (cons): 2-3 konkretne, praktyczne uwagi — na co uważać przy zakupie tego modelu (typowe usterki, koszty eksploatacji, znane problemy generacji).
+UNIKALNE MODELE: w każdej kategorii wiekowej podaj 5 RÓŻNYCH modeli. NIE powtarzaj tego samego modelu w sąsiednich kategoriach (np. jeśli BMW X6 E71 jest w 12-18 lat, NIE dawaj go też w Powyżej 18 lat).
+FORMAT: konkretne silniki ("2.0 TDI 150KM"), konkretne generacje ("F30", "B8"). Popularne w Polsce.
 
 Wywołaj recommend_cars.`,
         input: [{ role: "user", content: userMessage }],
