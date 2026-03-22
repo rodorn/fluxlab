@@ -24,6 +24,9 @@ interface Answers {
   maxSpeed: number;
   powerOverride: number | null;
   budget: number;
+  kmCity: number;
+  kmHighway: number;
+  yearsOwned: number;
   additionalInfo: string;
 }
 
@@ -39,6 +42,9 @@ const INITIAL: Answers = {
   maxSpeed: 130,
   powerOverride: null,
   budget: 50000,
+  kmCity: 5000,
+  kmHighway: 10000,
+  yearsOwned: 5,
   additionalInfo: "",
 };
 
@@ -248,6 +254,9 @@ function calcSuggestedHP(a: Answers, segment: Segment): number {
 
 /* ───────────────────────── car recommendation types ───────────────────────── */
 
+type FuelType = "benzyna" | "diesel" | "gaz" | "elektryczny";
+type EngineLayout = "elektryczny" | "R3" | "R4" | "R5" | "R6" | "V6" | "V8" | "V10" | "V12" | "W12" | "W16";
+
 interface CarRecommendation {
   make: string;
   model: string;
@@ -259,6 +268,68 @@ interface CarRecommendation {
   priceTo: number;
   pros: string[];
   cons: string[];
+  // cost estimation fields from LLM
+  fuelType: FuelType;
+  fuelCity: number;
+  fuelHighway: number;
+  engineLayout: EngineLayout;
+  brandReliability: number;
+  engineReliability: number;
+  complexity: number;
+}
+
+/* ──────────────── cost calculation (shared with kalkulator) ──────────────── */
+
+const FUEL_PRICES: Record<FuelType, number> = { benzyna: 6.5, diesel: 6.2, gaz: 3.2, elektryczny: 1.5 };
+const ENGINE_MULT: Record<EngineLayout, number> = {
+  elektryczny: 1, R3: 1, R4: 1, R5: 1.25, R6: 1.5, V6: 1.75,
+  V8: 2.25, V10: 2.75, V12: 3.25, W12: 3.5, W16: 4,
+};
+const FUEL_MULT: Record<FuelType, number> = { benzyna: 1, elektryczny: 1, gaz: 1.2, diesel: 1.6 };
+const YEAR_NOW = 2025;
+
+interface CostResult {
+  totalCost: number;
+  monthly: number;
+  costPerKm: number;
+}
+
+function calcCarCost(car: CarRecommendation, kmCity: number, kmHighway: number, yearsOwned: number): CostResult {
+  const price = (car.priceFrom + car.priceTo) / 2;
+  const year = Math.round((car.yearFrom + car.yearTo) / 2);
+  const mileage = Math.max(1000, (YEAR_NOW - year) * 15000); // estimated
+
+  const totalKm = (kmCity + kmHighway) * yearsOwned;
+  const fuelCost =
+    ((kmCity * car.fuelCity + kmHighway * car.fuelHighway) / 100) *
+    FUEL_PRICES[car.fuelType] * yearsOwned;
+
+  const ageStart = YEAR_NOW - year;
+  const ageEnd = ageStart + yearsOwned;
+  const lostValue = price * (1.05 - (ageStart + 6) / (ageEnd + 6));
+
+  const averageKm = (totalKm + 2 * mileage) / 2;
+  const brandFactor =
+    (car.complexity + 1) *
+    (averageKm < 200000
+      ? Math.max(0, car.brandReliability - (car.brandReliability - 1) * ((200000 - averageKm) / 200000))
+      : car.brandReliability);
+  const engineFactor =
+    (averageKm < 300000
+      ? Math.max(0, car.engineReliability - (car.engineReliability - 1) * ((300000 - averageKm) / 300000))
+      : car.engineReliability) *
+    ENGINE_MULT[car.engineLayout] * FUEL_MULT[car.fuelType];
+  const reliabilityFactor = (brandFactor + engineFactor) / 50;
+  const totalKmCity = kmCity * yearsOwned;
+  const totalKmHighway = kmHighway * yearsOwned;
+  const weightedKm = totalKmCity * 2 + totalKmHighway;
+  const repairs = reliabilityFactor * weightedKm;
+
+  const totalCost = fuelCost + repairs + lostValue;
+  const monthly = totalCost / (12 * yearsOwned);
+  const costPerKm = totalKm > 0 ? totalCost / totalKm : 0;
+
+  return { totalCost, monthly, costPerKm };
 }
 
 interface AgeCategory {
@@ -639,8 +710,8 @@ function getBodyShapes(bodyStyle: BodyStyle | null): ShapeOption[] {
 function getStepConfig(bodyStyle: BodyStyle | null) {
   const hasShapeStep = bodyStyle !== "van";
   const titles = hasShapeStep
-    ? ["Typ samochodu", "Forma nadwozia", "Segment", "Moc silnika", "Budżet", "Wyniki"]
-    : ["Typ samochodu", "Segment", "Moc silnika", "Budżet", "Wyniki"];
+    ? ["Typ samochodu", "Forma nadwozia", "Segment i moc", "Budżet i przebiegi", "Wyniki"]
+    : ["Typ samochodu", "Segment i moc", "Budżet i przebiegi", "Wyniki"];
   return { titles, hasShapeStep };
 }
 
@@ -653,6 +724,7 @@ export default function CarConfigurator() {
   const [error, setError] = useState("");
   const [results, setResults] = useState<RecommendResult | null>(null);
   const [expandedCategory, setExpandedCategory] = useState<number>(0);
+  const [showCosts, setShowCosts] = useState(false);
 
   const { titles: stepTitles, hasShapeStep } = getStepConfig(answers.bodyStyle);
   const lastStep = stepTitles.length - 1;
@@ -821,26 +893,19 @@ export default function CarConfigurator() {
     );
   };
 
-  /* ──── render: segment ──── */
+  /* ──── render: segment & power (combined) ──── */
 
-  const renderSegment = () => (
+  const renderSegmentAndPower = () => (
     <div className="space-y-10">
+      {/* Segment info */}
       <div className="rounded-2xl bg-accent/5 dark:bg-accent/10 border border-accent/20 p-6">
-        <h3 className="text-sm font-semibold text-accent mb-2">
-          Dlaczego mniejszy samochód to zwykle lepszy wybór?
-        </h3>
-        <ul className="space-y-1.5 text-sm text-gray-600 dark:text-gray-400">
-          <li><span className="font-medium text-gray-800 dark:text-gray-200">Niższa cena</span> – zarówno zakupu jak i ubezpieczenia</li>
-          <li><span className="font-medium text-gray-800 dark:text-gray-200">Mniejsze spalanie</span> – lżejszy samochód = mniej paliwa</li>
-          <li><span className="font-medium text-gray-800 dark:text-gray-200">Lepsze prowadzenie</span> – mniejsza masa = szybsze reakcje, krótsze hamowanie</li>
-          <li><span className="font-medium text-gray-800 dark:text-gray-200">Łatwiejsze parkowanie</span> – w mieście to bezcenne</li>
-          <li><span className="font-medium text-gray-800 dark:text-gray-200">Szybszy</span> – przy tej samej mocy lżejszy samochód przyspiesza lepiej</li>
-        </ul>
-        <p className="mt-3 text-xs text-gray-500 dark:text-gray-500 italic">
-          Zasada ceteris paribus – przy porównywalnym wyposażeniu i mocy, mniejszy samochód wygrywa w niemal każdej kategorii.
+        <h3 className="text-sm font-semibold text-accent mb-2">Segment i moc</h3>
+        <p className="text-sm text-gray-600 dark:text-gray-400">
+          Odpowiedz na pytania, a dobierzemy optymalny segment i moc. Możesz je potem skorygować ręcznie.
         </p>
       </div>
 
+      {/* Sliders for segment */}
       <div className="space-y-8">
         <Slider label="Twój wzrost" value={answers.height} min={150} max={210} step={1} unit="cm"
           hint="Wyższe osoby mogą potrzebować większego segmentu dla komfortu."
@@ -855,6 +920,7 @@ export default function CarConfigurator() {
           hint="Na trasie liczy się komfort i stabilność – to wymaga większego auta." />
       </div>
 
+      {/* Segment result */}
       <div className="rounded-2xl border border-gray-200 dark:border-gray-700 p-6 space-y-4">
         <div className="text-center">
           <p className="text-xs uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-1">
@@ -864,7 +930,7 @@ export default function CarConfigurator() {
         </div>
         <div className="space-y-2">
           <p className="text-xs text-gray-500 dark:text-gray-400 text-center">
-            Możesz wybrać inny segment, jeśli nasza sugestia nie pasuje:
+            Możesz wybrać inny segment:
           </p>
           <div className="flex flex-wrap justify-center gap-2">
             {SEGMENTS_ORDERED.filter((s) => {
@@ -887,58 +953,57 @@ export default function CarConfigurator() {
           {answers.segmentOverride && (
             <p className="text-center">
               <button type="button" onClick={() => set("segmentOverride", null)} className="text-xs text-accent hover:underline">
-                Przywróć sugerowany segment ({suggestedSegment})
+                Przywróć sugerowany ({suggestedSegment})
               </button>
             </p>
           )}
         </div>
       </div>
+
+      {/* Power */}
+      <div className="space-y-8">
+        <Slider label="Maksymalna prędkość, z jaką jeździsz regularnie"
+          value={answers.maxSpeed} min={100} max={250} step={10} unit="km/h"
+          onChange={(v) => { set("maxSpeed", v); set("powerOverride", null); }}
+          labels={{ left: "🏙️ 80 km/h – miasto", right: "🏁 240 km/h – autostrada DE" }} />
+
+        <div className="rounded-2xl border border-gray-200 dark:border-gray-700 p-6 text-center space-y-1">
+          <p className="text-xs uppercase tracking-widest text-gray-400 dark:text-gray-500">Sugerowana moc</p>
+          <p className="text-3xl font-bold text-accent tabular-nums">{suggestedHP} KM</p>
+          <p className="text-xs text-gray-500">
+            Dla segmentu {segment}, {BODY_STYLES.find((b) => b.id === answers.bodyStyle)?.title ?? "—"}, {answers.maxSpeed} km/h
+          </p>
+        </div>
+
+        <Slider label="Twoja korekta mocy" value={displayHP} min={50} max={700} step={5} unit="KM"
+          onChange={(v) => set("powerOverride", v)}
+          hint="Przesuń, jeśli chcesz więcej lub mniej mocy niż sugerujemy." />
+      </div>
     </div>
   );
 
-  /* ──── render: power ──── */
-
-  const renderPower = () => (
-    <div className="space-y-8">
-      <div className="rounded-2xl bg-accent/5 dark:bg-accent/10 border border-accent/20 p-6">
-        <h3 className="text-sm font-semibold text-accent mb-2">Ile mocy naprawdę potrzebujesz?</h3>
-        <p className="text-sm text-gray-600 dark:text-gray-400">
-          Moc silnika powinna wynikać z Twoich realnych potrzeb. Ustaw maksymalną prędkość, z jaką regularnie jeździsz, a przeliczymy sugerowaną moc.
-        </p>
-      </div>
-
-      <Slider label="Maksymalna prędkość, z jaką jeździsz regularnie"
-        value={answers.maxSpeed} min={100} max={250} step={10} unit="km/h"
-        onChange={(v) => { set("maxSpeed", v); set("powerOverride", null); }}
-        labels={{ left: "🏙️ 80 km/h – miasto", right: "🏁 240 km/h – autostrada DE" }} />
-
-      <div className="rounded-2xl border border-gray-200 dark:border-gray-700 p-6 text-center space-y-1">
-        <p className="text-xs uppercase tracking-widest text-gray-400 dark:text-gray-500">Sugerowana moc</p>
-        <p className="text-3xl font-bold text-accent tabular-nums">{suggestedHP} KM</p>
-        <p className="text-xs text-gray-500 dark:text-gray-500">
-          Dla segmentu {segment}, {BODY_STYLES.find((b) => b.id === answers.bodyStyle)?.title ?? "—"}, {answers.maxSpeed} km/h
-        </p>
-      </div>
-
-      <Slider label="Twoja korekta mocy" value={displayHP} min={50} max={700} step={5} unit="KM"
-        onChange={(v) => set("powerOverride", v)}
-        hint="Przesuń, jeśli chcesz więcej lub mniej mocy niż sugerujemy." />
-    </div>
-  );
-
-  /* ──── render: budget & preferences ──── */
+  /* ──── render: budget & usage ──── */
 
   const renderPreferences = () => (
     <div className="space-y-10">
       <div className="rounded-2xl bg-accent/5 dark:bg-accent/10 border border-accent/20 p-6">
-        <h3 className="text-sm font-semibold text-accent mb-2">Budżet</h3>
+        <h3 className="text-sm font-semibold text-accent mb-2">Budżet i przebiegi</h3>
         <p className="text-sm text-gray-600 dark:text-gray-400">
-          Na tej podstawie AI dobierze konkretne modele samochodów w różnych kategoriach wiekowych — od nowych po starsze, sprawdzone egzemplarze.
+          AI dobierze modele do Twojego budżetu. Podaj też roczne przebiegi i planowany okres użytkowania, żeby wyliczyć koszty posiadania.
         </p>
       </div>
 
       <LogSlider label="Budżet" value={answers.budget} min={5000} max={500000} unit="PLN"
         onChange={(v) => set("budget", v)} />
+
+      <div className="space-y-8">
+        <LogSlider label="Km w mieście (rocznie)" value={answers.kmCity} min={100} max={100000} unit="km"
+          onChange={(v) => set("kmCity", v)} />
+        <LogSlider label="Km w trasie (rocznie)" value={answers.kmHighway} min={100} max={100000} unit="km"
+          onChange={(v) => set("kmHighway", v)} />
+        <Slider label="Planowany okres użytkowania" value={answers.yearsOwned} min={1} max={20} step={1} unit="lat"
+          onChange={(v) => set("yearsOwned", v)} />
+      </div>
 
       <div className="space-y-2">
         <label className="text-sm font-medium text-gray-700 dark:text-gray-300">
@@ -959,13 +1024,10 @@ export default function CarConfigurator() {
         <div className="grid sm:grid-cols-2 gap-3 text-sm">
           <SummaryRow label="Budżet" value={`${fmt(answers.budget)} PLN`} />
           <SummaryRow label="Typ" value={BODY_STYLES.find((b) => b.id === answers.bodyStyle)?.title ?? "—"} />
-          {answers.bodyShapes.length > 0 && (
-            <SummaryRow label="Nadwozie"
-              value={getBodyShapes(answers.bodyStyle).filter((b) => answers.bodyShapes.includes(b.id)).map((b) => b.title).join(", ")} />
-          )}
           <SummaryRow label="Segment" value={getSegmentName(segment, answers.bodyStyle, answers.bodyShapes)} />
           <SummaryRow label="Moc" value={`${displayHP} KM`} />
-          <SummaryRow label="Pasażerowie" value={`${answers.passengers} os.`} />
+          <SummaryRow label="Km/rok" value={`${fmt(answers.kmCity + answers.kmHighway)} km`} />
+          <SummaryRow label="Okres" value={`${answers.yearsOwned} ${answers.yearsOwned === 1 ? "rok" : answers.yearsOwned < 5 ? "lata" : "lat"}`} />
         </div>
       </div>
     </div>
@@ -988,11 +1050,7 @@ export default function CarConfigurator() {
       {error && (
         <div className="rounded-2xl border border-red-200 dark:border-red-800 bg-red-50 dark:bg-red-900/20 p-6 text-center">
           <p className="text-sm text-red-600 dark:text-red-400">{error}</p>
-          <button
-            type="button"
-            onClick={fetchRecommendations}
-            className="mt-3 btn-primary text-sm"
-          >
+          <button type="button" onClick={fetchRecommendations} className="mt-3 btn-primary text-sm">
             Spróbuj ponownie
           </button>
         </div>
@@ -1000,13 +1058,33 @@ export default function CarConfigurator() {
 
       {results && (
         <>
-          <div className="rounded-2xl bg-accent/5 dark:bg-accent/10 border border-accent/20 p-6">
-            <h3 className="text-sm font-semibold text-accent mb-1">
-              Rekomendacje dla budżetu {fmt(answers.budget)} PLN
-            </h3>
-            <p className="text-sm text-gray-600 dark:text-gray-400">
-              {BODY_STYLES.find((b) => b.id === answers.bodyStyle)?.title ?? "Samochód"} — kliknij kategorię wiekową, żeby zobaczyć propozycje.
-            </p>
+          <div className="rounded-2xl bg-accent/5 dark:bg-accent/10 border border-accent/20 p-6 space-y-3">
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <h3 className="text-sm font-semibold text-accent mb-1">
+                  Rekomendacje dla budżetu {fmt(answers.budget)} PLN
+                </h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400">
+                  {BODY_STYLES.find((b) => b.id === answers.bodyStyle)?.title ?? "Samochód"} — kliknij kategorię wiekową, żeby zobaczyć propozycje.
+                </p>
+              </div>
+            </div>
+            {/* Cost toggle */}
+            <div className="flex items-center gap-3 pt-1">
+              <button
+                type="button"
+                onClick={() => setShowCosts(!showCosts)}
+                className={`relative w-12 h-7 rounded-full transition-colors ${showCosts ? "bg-accent" : "bg-gray-300 dark:bg-gray-600"}`}
+              >
+                <span className={`absolute top-0.5 left-0.5 w-6 h-6 rounded-full bg-white shadow transition-transform ${showCosts ? "translate-x-5" : ""}`} />
+              </button>
+              <span className="text-sm text-gray-700 dark:text-gray-300">
+                Pokaż szacunkowe koszty posiadania
+              </span>
+              {showCosts && (
+                <span className="text-xs text-gray-400">({fmt(answers.kmCity + answers.kmHighway)} km/rok, {answers.yearsOwned} lat)</span>
+              )}
+            </div>
           </div>
 
           {/* Age category tabs */}
@@ -1030,45 +1108,63 @@ export default function CarConfigurator() {
           {/* Cars in selected category */}
           {results.categories[expandedCategory] && (
             <div className="space-y-4">
-              {results.categories[expandedCategory].cars.map((car, i) => (
-                <div
-                  key={i}
-                  className="rounded-2xl border border-gray-200 dark:border-gray-700 p-5 space-y-3 hover:border-accent/30 transition-colors"
-                >
-                  <div className="flex items-start justify-between gap-4">
-                    <div>
-                      <h4 className="font-bold text-gray-900 dark:text-white">
-                        {car.make} {car.model}{" "}
-                        <span className="text-gray-400 font-normal text-sm">{car.generation}</span>
-                      </h4>
-                      <p className="text-sm text-gray-500 dark:text-gray-400 mt-0.5">
-                        {car.yearFrom}–{car.yearTo} · {car.engine}
-                      </p>
+              {results.categories[expandedCategory].cars.map((car, i) => {
+                const cost = showCosts ? calcCarCost(car, answers.kmCity, answers.kmHighway, answers.yearsOwned) : null;
+                return (
+                  <div
+                    key={i}
+                    className="rounded-2xl border border-gray-200 dark:border-gray-700 p-5 space-y-3 hover:border-accent/30 transition-colors"
+                  >
+                    <div className="flex items-start justify-between gap-4">
+                      <div>
+                        <h4 className="font-bold text-gray-900 dark:text-white">
+                          {car.make} {car.model}{" "}
+                          <span className="text-gray-400 font-normal text-sm">{car.generation}</span>
+                        </h4>
+                        <p className="text-sm text-gray-500 dark:text-gray-400 mt-0.5">
+                          {car.yearFrom}–{car.yearTo} · {car.engine}
+                        </p>
+                      </div>
+                      <div className="text-right shrink-0">
+                        <p className="text-sm font-semibold text-accent">
+                          {fmt(car.priceFrom)} – {fmt(car.priceTo)} PLN
+                        </p>
+                      </div>
                     </div>
-                    <div className="text-right shrink-0">
-                      <p className="text-sm font-semibold text-accent">
-                        {fmt(car.priceFrom)} – {fmt(car.priceTo)} PLN
-                      </p>
+
+                    {cost && (
+                      <div className="flex flex-wrap gap-x-6 gap-y-1 text-xs border-t border-gray-100 dark:border-gray-800 pt-2">
+                        <span className="text-gray-500 dark:text-gray-400">
+                          Koszt/mies.: <span className="font-semibold text-gray-900 dark:text-white">{fmt(Math.round(cost.monthly))} PLN</span>
+                        </span>
+                        <span className="text-gray-500 dark:text-gray-400">
+                          Koszt/km: <span className="font-semibold text-gray-900 dark:text-white">{cost.costPerKm.toFixed(2)} PLN</span>
+                        </span>
+                        <span className="text-gray-500 dark:text-gray-400">
+                          Łącznie ({answers.yearsOwned} lat): <span className="font-semibold text-gray-900 dark:text-white">{fmt(Math.round(cost.totalCost))} PLN</span>
+                        </span>
+                      </div>
+                    )}
+
+                    <div className="grid sm:grid-cols-2 gap-2 text-xs">
+                      <div className="space-y-1">
+                        {car.pros.map((p) => (
+                          <div key={p} className="flex gap-1.5 text-emerald-600 dark:text-emerald-400">
+                            <span className="shrink-0">+</span><span>{p}</span>
+                          </div>
+                        ))}
+                      </div>
+                      <div className="space-y-1">
+                        {car.cons.map((c) => (
+                          <div key={c} className="flex gap-1.5 text-red-500 dark:text-red-400">
+                            <span className="shrink-0">−</span><span>{c}</span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
-                  <div className="grid sm:grid-cols-2 gap-2 text-xs">
-                    <div className="space-y-1">
-                      {car.pros.map((p) => (
-                        <div key={p} className="flex gap-1.5 text-emerald-600 dark:text-emerald-400">
-                          <span className="shrink-0">+</span><span>{p}</span>
-                        </div>
-                      ))}
-                    </div>
-                    <div className="space-y-1">
-                      {car.cons.map((c) => (
-                        <div key={c} className="flex gap-1.5 text-red-500 dark:text-red-400">
-                          <span className="shrink-0">−</span><span>{c}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           )}
         </>
@@ -1085,8 +1181,8 @@ export default function CarConfigurator() {
   /* ──── step array & navigation ──── */
 
   const steps = hasShapeStep
-    ? [renderStep0, renderStep1, renderSegment, renderPower, renderPreferences, renderResults]
-    : [renderStep0, renderSegment, renderPower, renderPreferences, renderResults];
+    ? [renderStep0, renderStep1, renderSegmentAndPower, renderPreferences, renderResults]
+    : [renderStep0, renderSegmentAndPower, renderPreferences, renderResults];
 
   const bg = answers.bodyStyle ? BG_IMAGES[answers.bodyStyle] : null;
 

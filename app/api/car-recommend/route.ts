@@ -59,8 +59,32 @@ const tools = [
                       items: { type: "string" },
                       description: "1-2 konkretne wady tego modelu",
                     },
+                    fuelType: {
+                      type: "string",
+                      enum: ["benzyna", "diesel", "gaz", "elektryczny"],
+                      description: "Typ paliwa",
+                    },
+                    fuelCity: { type: "number", description: "Spalanie w mieście L/100km" },
+                    fuelHighway: { type: "number", description: "Spalanie w trasie L/100km" },
+                    engineLayout: {
+                      type: "string",
+                      enum: ["elektryczny", "R3", "R4", "R5", "R6", "V6", "V8", "V10", "V12", "W12", "W16"],
+                      description: "Układ silnika",
+                    },
+                    brandReliability: {
+                      type: "number",
+                      description: "Awaryjność marki: 1=niezawodna, 2=przeciętna, 3=awaryjna",
+                    },
+                    engineReliability: {
+                      type: "number",
+                      description: "Awaryjność silnika: 1=trwały, 2=sprawdzony, 3=średni, 4=złożony, 5=egzotyczny",
+                    },
+                    complexity: {
+                      type: "number",
+                      description: "Segment: 1=A/B, 2=C, 3=D, 4=E, 5=F",
+                    },
                   },
-                  required: ["make", "model", "generation", "yearFrom", "yearTo", "engine", "priceFrom", "priceTo", "pros", "cons"],
+                  required: ["make", "model", "generation", "yearFrom", "yearTo", "engine", "priceFrom", "priceTo", "pros", "cons", "fuelType", "fuelCity", "fuelHighway", "engineLayout", "brandReliability", "engineReliability", "complexity"],
                   additionalProperties: false,
                 },
               },
