@@ -881,8 +881,10 @@ export default function CarConfigurator() {
           // Filter variants: must meet power and budget
           car.variants = car.variants.filter((v) => v.hp >= minHP && v.priceFrom <= budget);
           // Auto-generate LPG variant for each benzyna variant
-          // Skip LPG for 2-seaters (no space for tank) and mid/rear-engine cars
-          const noLpg = answers.bodyShapes.some((s) => s === "coupe-2" || s === "roadster-2");
+          // Skip LPG for 2-seaters (no space for tank) and rear/mid-engine cars
+          const rearEngineModels = ["911", "cayman", "boxster", "a110", "elise", "exige", "emira"];
+          const isRearEngine = rearEngineModels.some((m) => car.model.toLowerCase().includes(m));
+          const noLpg = isRearEngine || answers.bodyShapes.some((s) => s === "coupe-2" || s === "roadster-2");
           const lpgVariants: CarVariant[] = [];
           for (const v of car.variants) {
             if (v.fuelType === "benzyna" && !noLpg) {
