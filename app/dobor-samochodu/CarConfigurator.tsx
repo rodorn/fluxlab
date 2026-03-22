@@ -899,7 +899,13 @@ export default function CarConfigurator() {
       const data: RecommendResult = await res.json();
       const budget = answers.budget;
       const minHP = displayHP;
+      const currentYear = new Date().getFullYear();
       for (const cat of data.categories) {
+        // Filter out cars whose age doesn't match the category
+        cat.cars = cat.cars.filter((car) => {
+          const age = currentYear - car.yearFrom;
+          return age >= cat.ageFrom && (cat.ageTo === 0 || age <= cat.ageTo);
+        });
         for (const car of cat.cars) {
           // Filter variants: must meet power and budget
           car.variants = car.variants.filter((v) => v.hp >= minHP && v.priceFrom <= budget);
