@@ -900,25 +900,24 @@ export default function CarConfigurator() {
       const budget = answers.budget;
       const minHP = displayHP;
       const currentYear = new Date().getFullYear();
+
+      // 1. Collect all cars from all LLM categories into a flat pool
+      const allCars: CarRecommendation[] = [];
       for (const cat of data.categories) {
-        // Filter out cars whose production years don't overlap with category age range
-        cat.cars = cat.cars.filter((car) => {
-          const newestAge = currentYear - car.yearTo;
-          const oldestAge = currentYear - car.yearFrom;
-          return oldestAge >= cat.ageFrom && (cat.ageTo === 0 || newestAge <= cat.ageTo);
-        });
-        for (const car of cat.cars) {
-          // Filter variants: must meet power and budget
-          car.variants = car.variants.filter((v) => v.hp >= minHP && v.priceFrom <= budget);
-          // Auto-generate LPG variant for each benzyna variant
-          // Skip LPG for 2-seaters (no space for tank) and rear/mid-engine cars
-          const rearEngineModels = ["911", "cayman", "boxster", "a110", "elise", "exige", "emira"];
-          const isRearEngine = rearEngineModels.some((m) => car.model.toLowerCase().includes(m));
-          const noLpg = isRearEngine || answers.bodyShapes.some((s) => s === "coupe-2" || s === "roadster-2");
+        for (const car of cat.cars) allCars.push(car);
+      }
+
+      // 2. Process each car: filter variants, generate LPG, deduplicate
+      const rearEngineModels = ["911", "cayman", "boxster", "a110", "elise", "exige", "emira"];
+      const noLpg = answers.bodyShapes.some((s) => s === "coupe-2" || s === "roadster-2");
+      for (const car of allCars) {
+        car.variants = car.variants.filter((v) => v.hp >= minHP && v.priceFrom <= budget);
+        const isRearEngine = rearEngineModels.some((m) => car.model.toLowerCase().includes(m));
+        if (!noLpg && !isRearEngine) {
           const lpgVariants: CarVariant[] = [];
           for (const v of car.variants) {
             const cylinders = LAYOUT_CYLINDERS[v.engineLayout];
-            if (v.fuelType === "benzyna" && !noLpg && cylinders > 0 && v.hp / cylinders <= 75) {
+            if (v.fuelType === "benzyna" && cylinders > 0 && v.hp / cylinders <= 75) {
               const lpgCost = getLpgInstallCost(v);
               lpgVariants.push({
                 ...v,
@@ -931,21 +930,48 @@ export default function CarConfigurator() {
               });
             }
           }
-          // Add LPG variants that still fit in budget
           for (const lv of lpgVariants) {
             if (lv.priceFrom <= budget) car.variants.push(lv);
           }
-          // Keep only the cheapest variant per fuel type
-          const bestByFuel = new Map<FuelType, CarVariant>();
-          for (const v of car.variants) {
-            const existing = bestByFuel.get(v.fuelType);
-            if (!existing || v.priceFrom < existing.priceFrom) bestByFuel.set(v.fuelType, v);
-          }
-          car.variants = [...bestByFuel.values()];
         }
-        cat.cars = cat.cars.filter((car) => car.variants.length > 0);
+        const bestByFuel = new Map<FuelType, CarVariant>();
+        for (const v of car.variants) {
+          const existing = bestByFuel.get(v.fuelType);
+          if (!existing || v.priceFrom < existing.priceFrom) bestByFuel.set(v.fuelType, v);
+        }
+        car.variants = [...bestByFuel.values()];
       }
-      data.categories = data.categories.filter((cat) => cat.cars.length > 0);
+
+      // 3. Define age categories on frontend — ignore LLM assignment
+      const AGE_BUCKETS: { label: string; from: number; to: number }[] = [
+        { label: "Nowe", from: 0, to: 1 },
+        { label: "Do 3 lat", from: 0, to: 3 },
+        { label: "3-7 lat", from: 3, to: 7 },
+        { label: "7-12 lat", from: 7, to: 12 },
+        { label: "12-18 lat", from: 12, to: 18 },
+        { label: "Powyżej 18 lat", from: 18, to: 0 },
+      ];
+
+      // 4. Assign each car to the correct bucket based on yearTo (newest examples)
+      const newCategories: AgeCategory[] = [];
+      for (const bucket of AGE_BUCKETS) {
+        const seen = new Set<string>();
+        const cars: CarRecommendation[] = [];
+        for (const car of allCars) {
+          if (car.variants.length === 0) continue;
+          const age = currentYear - car.yearTo;
+          const fits = age >= bucket.from && (bucket.to === 0 || age < bucket.to);
+          if (!fits) continue;
+          const key = `${car.make} ${car.model}`.toLowerCase();
+          if (seen.has(key)) continue;
+          seen.add(key);
+          cars.push(car);
+        }
+        if (cars.length > 0) {
+          newCategories.push({ ageLabel: bucket.label, ageFrom: bucket.from, ageTo: bucket.to, cars });
+        }
+      }
+      data.categories = newCategories;
       // Auto-calculate costs
       const mult = KM_MULTIPLIER[answers.kmPeriod];
       const annualCity = answers.kmCity * mult;
