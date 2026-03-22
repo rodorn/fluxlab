@@ -1345,8 +1345,11 @@ export default function CarConfigurator() {
                 {bestPerCategory.map((entry) => {
                   const { cat, cost, car, variant } = entry;
                   const isGlobalBest = entry === globalBest;
+                  const totalAnnualKm = (answers.kmCity + answers.kmHighway) * KM_MULTIPLIER[answers.kmPeriod];
+                  const cityRatio = totalAnnualKm > 0 ? (answers.kmCity * KM_MULTIPLIER[answers.kmPeriod]) / totalAnnualKm : 0.5;
+                  const avgConsumption = variant.fuelCity * cityRatio + variant.fuelHighway * (1 - cityRatio);
                   const costSegments = [
-                    { value: cost.fuelCost, color: COST_COLORS.fuel, label: "Paliwo" },
+                    { value: cost.fuelCost, color: COST_COLORS.fuel, label: `Paliwo (~${avgConsumption.toFixed(1)} L/100km)` },
                     { value: cost.lostValue, color: COST_COLORS.depreciation, label: "Utrata wartości" },
                     { value: cost.repairs, color: COST_COLORS.repairs, label: "Serwis i naprawy" },
                     ...(cost.lpgInstallCost > 0 ? [{ value: cost.lpgInstallCost, color: COST_COLORS.lpg, label: "Instalacja LPG" }] : []),

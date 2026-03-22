@@ -191,7 +191,12 @@ CENY – NAJWAŻNIEJSZE:
 - Budżet użytkownika to ${body.budget.toLocaleString("pl-PL")} PLN – służy Ci TYLKO jako wskazówka, jakie modele mogą go zainteresować. Filtrowanie po cenie robimy sami.
 - Przykłady realnych cen: VW Golf VIII 2020 = 75-95k, BMW 320i G20 2020 = 120-150k, Audi A4 B9 2018 = 80-110k, Mercedes C200 W205 2017 = 70-100k.
 
-WTRYSK: dla każdego wariantu określ czy silnik ma wtrysk bezpośredni (directInjection: true) czy pośredni/MPI (false). Przykłady bezpośredniego: TSI, FSI, TFSI, GDI, T-GDI, Skyactiv-G (od 2.0), CDI. Przykłady pośredniego: MPI, starsze silniki benzynowe, LPG-friendly.
+WTRYSK – directInjection dotyczy TYLKO silników benzynowych (dla diesli zawsze false, bo nie montuje się LPG):
+- directInjection: true = silnik MA wtryskiwacze bezpośrednie, nawet jeśli ma też pośrednie (dual injection). Przy LPG i tak musi spalać ~10% benzyny na wtryskiwaczach bezpośrednich.
+  Przykłady TRUE: VW TSI (wszystkie generacje EA888, EA211), VW FSI, Toyota D-4/D-4S (dual, ale MA direct), Lexus 2GR-FSE/2UR-FSE, Mazda Skyactiv-G, Hyundai/Kia GDI/T-GDI, BMW N20/B48, Mercedes M274/M264.
+- directInjection: false = TYLKO wtrysk pośredni (port injection), BEZ jakichkolwiek wtryskiwaczy bezpośrednich. Pełne LPG bez spalania benzyny.
+  Przykłady FALSE: Toyota 2GR-FE (port only, np. Camry V6 do 2017), 1ZZ-FE, 2ZR-FE, VW MPI (np. 1.6 MPI), Hyundai/Kia MPI, Honda K20A/R20A, starsze silniki benzynowe (przed ~2005).
+WAŻNE: Jeśli w nazwie silnika jest FSI/GDI/D-4/D-4S/TSI/TFSI → directInjection: true. Litera "F" w kodzie silnika Toyoty/Lexusa (np. 2GR-FE) oznacza port injection = false, ale "FS" (np. 2GR-FSE) oznacza direct = true. W razie wątpliwości ustaw true (bezpieczniej zawyżyć koszt LPG).
 FORMAT: konkretne silniki ("2.0 TDI 150KM"), konkretne generacje ("F30", "B8"). Zalety/wady konkretne dla modelu. Popularne w Polsce.
 
 Wywołaj recommend_cars.`,
