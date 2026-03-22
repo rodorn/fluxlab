@@ -887,7 +887,8 @@ export default function CarConfigurator() {
           const noLpg = isRearEngine || answers.bodyShapes.some((s) => s === "coupe-2" || s === "roadster-2");
           const lpgVariants: CarVariant[] = [];
           for (const v of car.variants) {
-            if (v.fuelType === "benzyna" && !noLpg) {
+            const cylinders = LAYOUT_CYLINDERS[v.engineLayout];
+            if (v.fuelType === "benzyna" && !noLpg && cylinders > 0 && v.hp / cylinders <= 75) {
               const lpgCost = getLpgInstallCost(v);
               lpgVariants.push({
                 ...v,
