@@ -784,43 +784,45 @@ function getVariantDesc(car: CarRecommendation, v: CarVariant, long: boolean): s
   // Engine character
   const layout = layoutName[v.engineLayout] ?? "";
 
-  // Fuel-specific opening
+  const cylinders = LAYOUT_CYLINDERS[v.engineLayout];
+  const hpPerCyl = cylinders > 0 ? Math.round(v.hp / cylinders) : 0;
+  const avgFuel = ((v.fuelCity + v.fuelHighway) / 2).toFixed(1);
+
   switch (v.fuelType) {
     case "benzyna":
-      parts.push(`Silnik benzynowy ${layout} o mocy ${v.hp} KM`);
-      parts.push(`Spalanie ${v.fuelCity}L w mieście i ${v.fuelHighway}L w trasie`);
-      if (v.directInjection) parts.push("Wtrysk bezpośredni — dynamiczny, ale droższy w serwisie");
-      else parts.push("Wtrysk pośredni — prostszy i tańszy w utrzymaniu");
+      parts.push(`Silnik benzynowy ${layout} o mocy ${v.hp} KM (${hpPerCyl} KM/cyl)`);
+      parts.push(`Spalanie ${v.fuelCity}L w mieście, ${v.fuelHighway}L w trasie (średnio ${avgFuel}L)`);
+      parts.push(v.directInjection
+        ? "Wtrysk bezpośredni — wyższe ciśnienie wtrysku, droższe wtryskiwacze, mniej przyjazny LPG"
+        : "Wtrysk pośredni (MPI) — prostsza konstrukcja, tańsze części, przyjazny instalacji LPG");
+      if (hpPerCyl > 60) parts.push("Wysoko doładowany — większe obciążenie turbo i układu chłodzenia");
       break;
     case "diesel":
-      parts.push(`Diesel ${layout} o mocy ${v.hp} KM — wysoki moment obrotowy`);
-      parts.push(`Spalanie ${v.fuelCity}L w mieście i ${v.fuelHighway}L w trasie, oszczędny zwłaszcza na trasie`);
-      parts.push("Wyższy koszt serwisu (DPF, dwumas, wtryskiwacze) w porównaniu z benzyną");
+      parts.push(`Diesel ${layout} o mocy ${v.hp} KM (${hpPerCyl} KM/cyl)`);
+      parts.push(`Spalanie ${v.fuelCity}L w mieście, ${v.fuelHighway}L w trasie (średnio ${avgFuel}L)`);
+      parts.push("Serwis diesla: filtr DPF, dwumasowe koło zamachowe, wtryskiwacze piezo, EGR");
+      if (long) parts.push("Diesel opłaca się przy przebiegach powyżej ~20 000 km/rok dzięki niższemu spalaniu");
       break;
     case "gaz":
-      parts.push(`LPG na bazie silnika benzynowego ${layout}, ${v.hp} KM`);
-      parts.push(`Paliwo ${FUEL_PRICES.gaz} PLN/L zamiast ${FUEL_PRICES.benzyna} PLN/L — duża oszczędność na paliwie`);
-      parts.push(`Spalanie ${v.fuelCity}L w mieście i ${v.fuelHighway}L w trasie`);
-      if (v.directInjection) parts.push("Wtrysk bezpośredni — spala dodatkowo ~10% benzyny, droższy montaż LPG");
+      parts.push(`LPG na bazie silnika benzynowego ${layout}, ${v.hp} KM (${hpPerCyl} KM/cyl)`);
+      parts.push(`Paliwo ${FUEL_PRICES.gaz} PLN/L zamiast ${FUEL_PRICES.benzyna} PLN/L`);
+      parts.push(`Spalanie ${v.fuelCity}L w mieście, ${v.fuelHighway}L w trasie (średnio ${avgFuel}L)`);
+      parts.push(`Koszt instalacji: ~${getLpgInstallCost(v).toLocaleString("pl-PL")} PLN (${cylinders} cyl.${v.directInjection ? " + wtrysk bezpośredni" : ""})`);
+      if (v.directInjection) parts.push("Wtrysk bezpośredni — spala ~10% benzyny obok gazu, droższy montaż i kalibracja");
       break;
     case "elektryczny":
-      parts.push(`Silnik elektryczny ${v.hp} KM — natychmiastowy moment obrotowy`);
-      parts.push(`Zużycie ${v.fuelCity} kWh/100km w mieście i ${v.fuelHighway} kWh/100km w trasie`);
-      parts.push("Niski koszt na km, brak emisji, minimalny serwis");
+      parts.push(`Silnik elektryczny ${v.hp} KM — natychmiastowy moment obrotowy, cicha praca`);
+      parts.push(`Zużycie ${v.fuelCity} kWh/100km w mieście, ${v.fuelHighway} kWh/100km w trasie`);
+      parts.push("Brak oleju silnikowego, filtrów, sprzęgła, układu wydechowego — minimalny serwis");
       break;
   }
 
   // Reliability
-  const brandLabels = ["", "Niezawodna marka — niskie koszty napraw", "Przeciętna niezawodność marki", "Awaryjna marka — wyższe ryzyko kosztownych napraw"];
-  const engineLabels = ["", "bardzo trwały silnik", "sprawdzony i popularny silnik", "silnik o średniej trwałości", "złożony silnik — droższy w naprawach", "egzotyczny silnik — ograniczona dostępność części"];
+  const brandLabels = ["", "Niezawodna marka — tanie części, rzadkie usterki", "Przeciętna niezawodność marki — zdarzają się kosztowne usterki", "Awaryjna marka — drogie części, częste wizyty w serwisie"];
+  const engineLabels = ["", "bardzo trwały silnik", "sprawdzony i popularny silnik, łatwo dostępne części", "silnik o średniej trwałości, znane typowe usterki", "złożony silnik, wymaga doświadczonego mechanika", "egzotyczny silnik, ograniczona dostępność części i specjalistów"];
   const bl = brandLabels[car.brandReliability] ?? "";
   const el = engineLabels[v.engineReliability] ?? "";
   if (bl && el) parts.push(`${bl}, ${el}`);
-
-  if (long) {
-    if (car.pros.length > 0) parts.push(car.pros.join(". "));
-    if (car.cons.length > 0) parts.push("Uwaga: " + car.cons.join("; "));
-  }
 
   return parts.join(". ") + ".";
 }
@@ -1228,7 +1230,7 @@ export default function CarConfigurator() {
         <Slider label="Planowany okres użytkowania" value={answers.yearsOwned} min={1} max={20} step={1} unit="lat"
           onChange={(v) => set("yearsOwned", v)} />
       </div>
-
+Ni
       <div className="space-y-2">
         <label className="text-sm font-medium text-gray-700 dark:text-gray-300">
           Dodatkowe wymagania <span className="text-gray-400 font-normal">(opcjonalnie)</span>

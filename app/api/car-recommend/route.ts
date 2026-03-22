@@ -174,6 +174,7 @@ export async function POST(req: Request) {
       body: JSON.stringify({
         model: "gpt-5.4-mini",
         temperature: 0.3,
+        max_output_tokens: 16000,
         instructions: `Ekspert motoryzacyjny, rynek polski. Data: ${new Date().toISOString().split("T")[0]}.
 
 Zaproponuj samochody w 6 kategoriach wiekowych: Nowe, Do 3 lat, 3-7 lat, 7-12 lat, 12-18 lat, Powyżej 18 lat.
@@ -197,7 +198,8 @@ WTRYSK – directInjection dotyczy TYLKO silników benzynowych (dla diesli zawsz
 - directInjection: false = TYLKO wtrysk pośredni (port injection), BEZ jakichkolwiek wtryskiwaczy bezpośrednich. Pełne LPG bez spalania benzyny.
   Przykłady FALSE: Toyota 2GR-FE (port only, np. Camry V6 do 2017), 1ZZ-FE, 2ZR-FE, VW MPI (np. 1.6 MPI), Hyundai/Kia MPI, Honda K20A/R20A, starsze silniki benzynowe (przed ~2005).
 WAŻNE: Jeśli w nazwie silnika jest FSI/GDI/D-4/D-4S/TSI/TFSI → directInjection: true. Litera "F" w kodzie silnika Toyoty/Lexusa (np. 2GR-FE) oznacza port injection = false, ale "FS" (np. 2GR-FSE) oznacza direct = true. W razie wątpliwości ustaw true (bezpieczniej zawyżyć koszt LPG).
-FORMAT: konkretne silniki ("2.0 TDI 150KM"), konkretne generacje ("F30", "B8"). Zalety/wady konkretne dla modelu. Popularne w Polsce.
+LATA PRODUKCJI: yearFrom i yearTo to PEŁNY zakres produkcji danej generacji, NIE pojedynczy rok. Np. BMW X6 E71: yearFrom=2008, yearTo=2014. BMW X4 F26: yearFrom=2014, yearTo=2018. NIGDY nie podawaj tego samego roku w obu polach.
+FORMAT: konkretne silniki ("2.0 TDI 150KM"), konkretne generacje ("F30", "B8"). Zalety — 3-4 konkretne, szczegółowe zalety modelu. Wady — 2-3 konkretne wady. Popularne w Polsce.
 
 Wywołaj recommend_cars.`,
         input: [{ role: "user", content: userMessage }],
