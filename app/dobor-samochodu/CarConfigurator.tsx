@@ -776,27 +776,46 @@ function DonutChart({ segments }: { segments: { value: number; color: string; la
 function getVariantDesc(car: CarRecommendation, v: CarVariant, long: boolean): string {
   const parts: string[] = [];
 
+  const layoutName: Record<EngineLayout, string> = {
+    elektryczny: "elektryczny", R3: "3-cylindrowy", R4: "4-cylindrowy", R5: "5-cylindrowy",
+    R6: "rzędowa szóstka", V6: "V6", V8: "V8", V10: "V10", V12: "V12", W12: "W12", W16: "W16",
+  };
+
+  // Engine character
+  const layout = layoutName[v.engineLayout] ?? "";
+
   // Fuel-specific opening
   switch (v.fuelType) {
     case "benzyna":
-      parts.push(`Benzyna ${v.fuelCity}L miasto / ${v.fuelHighway}L trasa`);
+      parts.push(`Silnik benzynowy ${layout} o mocy ${v.hp} KM`);
+      parts.push(`Spalanie ${v.fuelCity}L w mieście i ${v.fuelHighway}L w trasie`);
+      if (v.directInjection) parts.push("Wtrysk bezpośredni — dynamiczny, ale droższy w serwisie");
+      else parts.push("Wtrysk pośredni — prostszy i tańszy w utrzymaniu");
       break;
     case "diesel":
-      parts.push(`Diesel ${v.fuelCity}L miasto / ${v.fuelHighway}L trasa — wysoki moment, oszczędny na trasie`);
+      parts.push(`Diesel ${layout} o mocy ${v.hp} KM — wysoki moment obrotowy`);
+      parts.push(`Spalanie ${v.fuelCity}L w mieście i ${v.fuelHighway}L w trasie, oszczędny zwłaszcza na trasie`);
+      parts.push("Wyższy koszt serwisu (DPF, dwumas, wtryskiwacze) w porównaniu z benzyną");
       break;
     case "gaz":
-      parts.push(`LPG — paliwo ${FUEL_PRICES.gaz} PLN/L zamiast ${FUEL_PRICES.benzyna} PLN/L, spalanie ${v.fuelCity}L/${v.fuelHighway}L`);
-      if (v.directInjection) parts.push("wtrysk bezpośredni — spala ~10% benzyny");
+      parts.push(`LPG na bazie silnika benzynowego ${layout}, ${v.hp} KM`);
+      parts.push(`Paliwo ${FUEL_PRICES.gaz} PLN/L zamiast ${FUEL_PRICES.benzyna} PLN/L — duża oszczędność na paliwie`);
+      parts.push(`Spalanie ${v.fuelCity}L w mieście i ${v.fuelHighway}L w trasie`);
+      if (v.directInjection) parts.push("Wtrysk bezpośredni — spala dodatkowo ~10% benzyny, droższy montaż LPG");
       break;
     case "elektryczny":
-      parts.push(`Elektryczny — ${v.fuelCity} kWh/100km miasto, ${v.fuelHighway} kWh/100km trasa`);
+      parts.push(`Silnik elektryczny ${v.hp} KM — natychmiastowy moment obrotowy`);
+      parts.push(`Zużycie ${v.fuelCity} kWh/100km w mieście i ${v.fuelHighway} kWh/100km w trasie`);
+      parts.push("Niski koszt na km, brak emisji, minimalny serwis");
       break;
   }
 
   // Reliability
-  const brandLabel = ["", "niezawodna marka", "przeciętna niezawodność", "awaryjna marka"][car.brandReliability] ?? "";
-  const engineLabel = ["", "trwały silnik", "sprawdzony silnik", "średnia trwałość silnika", "złożony silnik", "egzotyczny silnik"][v.engineReliability] ?? "";
-  if (brandLabel && engineLabel) parts.push(`${brandLabel[0].toUpperCase()}${brandLabel.slice(1)}, ${engineLabel}`);
+  const brandLabels = ["", "Niezawodna marka — niskie koszty napraw", "Przeciętna niezawodność marki", "Awaryjna marka — wyższe ryzyko kosztownych napraw"];
+  const engineLabels = ["", "bardzo trwały silnik", "sprawdzony i popularny silnik", "silnik o średniej trwałości", "złożony silnik — droższy w naprawach", "egzotyczny silnik — ograniczona dostępność części"];
+  const bl = brandLabels[car.brandReliability] ?? "";
+  const el = engineLabels[v.engineReliability] ?? "";
+  if (bl && el) parts.push(`${bl}, ${el}`);
 
   if (long) {
     if (car.pros.length > 0) parts.push(car.pros.join(". "));
@@ -1362,7 +1381,8 @@ export default function CarConfigurator() {
               if (best) bestPerCategory.push({ cat, catIdx: ci, ...best });
             }
 
-            const globalBest = bestPerCategory.reduce((a, b) => a.cost.costPerKm < b.cost.costPerKm ? a : b, bestPerCategory[0]);
+            const reliability = (e: typeof bestPerCategory[0]) => e.car.brandReliability + e.variant.engineReliability;
+            const globalBest = bestPerCategory.reduce((a, b) => reliability(a) < reliability(b) ? a : reliability(a) === reliability(b) ? (a.cost.costPerKm < b.cost.costPerKm ? a : b) : b, bestPerCategory[0]);
 
             const fuelBadge: Record<FuelType, { bg: string; label: string }> = {
               benzyna: { bg: "bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-400", label: "Benzyna" },
