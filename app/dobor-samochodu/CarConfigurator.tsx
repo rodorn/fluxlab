@@ -431,12 +431,12 @@ function CardSelector<T extends string>({
 const IMG = "/photos/car-chooser";
 
 const BG_IMAGES: Record<BodyStyle, { light: string; dark: string }> = {
-  sportowy:  { light: `${IMG}/bg-sport-light.jpg`,      dark: `${IMG}/bg-sport-dark.png` },
-  sedan:     { light: `${IMG}/bg-osobowy-light.jpg`,     dark: `${IMG}/bg-osobowy-dark.jpg` },
-  van:       { light: `${IMG}/bg-van-light.avif`,        dark: `${IMG}/bg-van-dark.jpg` },
+  sportowy:  { light: `${IMG}/bg-sport-light.jpg`,      dark: `${IMG}/bg-sport-dark.webp` },
+  sedan:     { light: `${IMG}/bg-osobowy-light.webp`,     dark: `${IMG}/bg-osobowy-dark.jpg` },
+  van:       { light: `${IMG}/bg-van-light.webp`,        dark: `${IMG}/bg-van-dark.jpg` },
   crossover: { light: `${IMG}/bg-crossover-light.webp`,  dark: `${IMG}/bg-crossover-dark.jpg` },
-  suv:       { light: `${IMG}/bg-suv-light.jpg`,         dark: `${IMG}/bg-suv-dark.jpeg` },
-  terenowy:  { light: `${IMG}/bg-terenowy-light.jpg`,    dark: `${IMG}/bg-terenowy-dark.avif` },
+  suv:       { light: `${IMG}/bg-suv-light.webp`,         dark: `${IMG}/bg-suv-dark.jpeg` },
+  terenowy:  { light: `${IMG}/bg-terenowy-light.webp`,    dark: `${IMG}/bg-terenowy-dark.avif` },
 };
 
 const BODY_STYLES: {
@@ -491,7 +491,7 @@ const BODY_STYLES: {
   {
     id: "crossover",
     title: "Crossover",
-    image: `${IMG}/type-crossover.jpg`,
+    image: `${IMG}/type-crossover.webp`,
     pros: [
       "Wyższa pozycja – lepsza widoczność",
       "Wygodne wsiadanie/wysiadanie",
@@ -559,7 +559,7 @@ const SHAPES_STANDARD: ShapeOption[] = [
   {
     id: "sedan",
     title: "Sedan",
-    image: `${IMG}/shape-sedan.jpg`,
+    image: `${IMG}/shape-sedan.webp`,
     pros: [
       "Cichsza kabina – bagażnik oddzielony",
       "Elegancki wygląd",
@@ -574,7 +574,7 @@ const SHAPES_STANDARD: ShapeOption[] = [
   {
     id: "kombi",
     title: "Kombi",
-    image: `${IMG}/shape-kombi.jpg`,
+    image: `${IMG}/shape-kombi.webp`,
     pros: [
       "Ogromny bagażnik – idealny na rodzinę",
       "Łatwo składane tylne siedzenia",
@@ -589,7 +589,7 @@ const SHAPES_STANDARD: ShapeOption[] = [
   {
     id: "liftback",
     title: "Liftback",
-    image: `${IMG}/shape-liftback.jpg`,
+    image: `${IMG}/shape-liftback.webp`,
     pros: [
       "Wygląd sedana + praktyczność hatchbacka",
       "Duży otwór bagażnika",
@@ -681,7 +681,7 @@ const SHAPES_SPORT: ShapeOption[] = [
   {
     id: "4door-coupe",
     title: "4-door Coupé",
-    image: `${IMG}/shape-4door-coupe.jpg`,
+    image: `${IMG}/shape-4door-coupe.webp`,
     pros: [
       "Sportowa sylwetka + 4 drzwi",
       "Wygodne wsiadanie do tyłu",
@@ -696,7 +696,7 @@ const SHAPES_SPORT: ShapeOption[] = [
   {
     id: "sport-sedan",
     title: "Sedan sportowy",
-    image: `${IMG}/shape-sport-sedan.avif`,
+    image: `${IMG}/shape-sport-sedan.webp`,
     pros: [
       "4 drzwi i pełne 5 miejsc",
       "Duży bagażnik",
@@ -711,7 +711,7 @@ const SHAPES_SPORT: ShapeOption[] = [
   {
     id: "sport-crossover",
     title: "Crossover sportowy",
-    image: `${IMG}/shape-sport-crossover.avif`,
+    image: `${IMG}/shape-sport-crossover.webp`,
     pros: [
       "Wyższa pozycja + sportowe osiągi",
       "Dobra widoczność i przestronność",
@@ -773,7 +773,7 @@ const SHAPES_TERENOWY: ShapeOption[] = [
   {
     id: "pickup",
     title: "Pick-up",
-    image: `${IMG}/shape-pickup.jpg`,
+    image: `${IMG}/shape-pickup.webp`,
     pros: [
       "Otwarta skrzynia ładunkowa",
       "Ogromna ładowność",

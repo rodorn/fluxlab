@@ -506,16 +506,21 @@ export default function CarCostCalculator() {
     setNextId((n) => n + 1);
     setTimeout(() => {
       if (isFirst) {
-        formTopRef.current?.scrollIntoView({ behavior: "smooth" });
+        scrollToRef(formTopRef);
       } else {
-        compareRef.current?.scrollIntoView({ behavior: "smooth" });
+        scrollToRef(compareRef);
       }
     }, 100);
   };
 
-  const scrollToForm = () => {
-    formTopRef.current?.scrollIntoView({ behavior: "smooth" });
+  const scrollToRef = (ref: React.RefObject<HTMLDivElement | null>) => {
+    const el = ref.current;
+    if (!el) return;
+    const top = el.getBoundingClientRect().top + window.scrollY - 80;
+    window.scrollTo({ top, behavior: "smooth" });
   };
+
+  const scrollToForm = () => scrollToRef(formTopRef);
 
   const removeSavedCar = (id: number) =>
     setSavedCars((prev) => prev.filter((c) => c.id !== id));
