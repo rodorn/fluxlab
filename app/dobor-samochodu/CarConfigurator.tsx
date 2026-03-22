@@ -780,6 +780,16 @@ const FUEL_BADGE_STYLES: Record<FuelType, { bg: string; label: string }> = {
   gaz: { bg: "bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-400", label: "LPG" },
   elektryczny: { bg: "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-400", label: "Elektryk" },
 };
+function formatConsumption(v: CarVariant, cityRatio: number): string {
+  const avg = v.fuelCity * cityRatio + v.fuelHighway * (1 - cityRatio);
+  if (v.fuelType === "gaz" && v.directInjection) {
+    const lpg = (avg * 0.9).toFixed(1);
+    const benz = (avg * 0.1).toFixed(1);
+    return `~${lpg}L LPG + ${benz}L benzyna`;
+  }
+  return `~${avg.toFixed(1)} L/100km`;
+}
+
 function getFuelBadge(v: CarVariant): { bg: string; label: string } {
   if (v.hybrid && v.fuelType !== "gaz") {
     return { bg: "bg-teal-100 text-teal-700 dark:bg-teal-900/40 dark:text-teal-400", label: v.fuelType === "diesel" ? "Hybryda diesel" : "Hybryda" };
@@ -1485,9 +1495,8 @@ export default function CarConfigurator() {
                   const isGlobalBest = entry === globalBest;
                   const totalAnnualKm = (answers.kmCity + answers.kmHighway) * KM_MULTIPLIER[answers.kmPeriod];
                   const cityRatio = totalAnnualKm > 0 ? (answers.kmCity * KM_MULTIPLIER[answers.kmPeriod]) / totalAnnualKm : 0.5;
-                  const avgConsumption = variant.fuelCity * cityRatio + variant.fuelHighway * (1 - cityRatio);
                   const costSegments = [
-                    { value: cost.fuelCost, color: COST_COLORS.fuel, label: `Paliwo (~${avgConsumption.toFixed(1)} L/100km)` },
+                    { value: cost.fuelCost, color: COST_COLORS.fuel, label: `Paliwo (${formatConsumption(variant, cityRatio)})` },
                     { value: cost.lostValue, color: COST_COLORS.depreciation, label: "Utrata wartości" },
                     { value: cost.repairs, color: COST_COLORS.repairs, label: "Serwis i naprawy" },
                     ...(cost.lpgInstallCost > 0 ? [{ value: cost.lpgInstallCost, color: COST_COLORS.lpg, label: "Instalacja LPG" }] : []),

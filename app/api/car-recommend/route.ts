@@ -144,8 +144,8 @@ export async function POST(req: Request) {
 
   const segmentExamples: Record<string, string> = {
     A: "A/B – miejskie (Fiat 500, Abarth 595/695, VW Up GTI, Toyota Aygo, Hyundai i10 N Line)",
-    B: "B – małe (VW Polo GTI, Toyota Yaris GR, Ford Fiesta ST, Hyundai i20 N, Mini Cooper S, Renault Clio RS, Skoda Fabia, Mazda 2)",
-    C: "C – kompaktowe (VW Golf GTI/R, Honda Civic Type R, Hyundai i30 N, Toyota Corolla, Mazda 3, Skoda Octavia RS)",
+    B: "B – małe (VW Polo GTI, Toyota Yaris/Yaris GR/Yaris Hybrid, Ford Fiesta ST, Hyundai i20 N, Mini Cooper S, Renault Clio RS, Honda Jazz Hybrid)",
+    C: "C – kompaktowe (VW Golf GTI/R, Honda Civic Type R, Hyundai i30 N, Toyota Corolla/Corolla Hybrid, Toyota Prius, Mazda 3, Skoda Octavia RS, Kia Niro Hybrid, Hyundai Ioniq Hybrid)",
     D: "D – średnia klasa (BMW 3, Audi A4, Mercedes C, VW Passat, Volvo S60)",
     E: "E – wyższa średnia (BMW 5, Audi A6, Mercedes E, Volvo S90)",
     F: "F – luksusowe (BMW 7, Audi A8, Mercedes S, Porsche Panamera, Lexus LS, Maserati Quattroporte)",
@@ -197,7 +197,10 @@ TYP SAMOCHODU: użytkownik wybrał "${bodyStyleLabel}". Rekomenduj WYŁĄCZNIE s
 ${body.bodyStyle === "sedan" ? "OSOBOWY = wszystkie formy nadwozia osobowego: sedan, hatchback, kombi, liftback, coupe, cabrio. Np. VW Golf, Toyota Corolla, BMW 3, Mazda 3, Audi A3, Toyota Yaris GR (hot hatch B-segment!). NIE ograniczaj się do klasycznych sedanów." : ""}${body.bodyStyle === "van" ? "VAN = samochody dostawczo-osobowe i vany (np. VW Transporter, Mercedes Vito, Renault Trafic, Ford Transit Custom, Toyota Proace, Opel Vivaro, VW Caddy, Citroën Berlingo). NIE zwracaj sedanów, SUV-ów ani crossoverów." : ""}${body.bodyStyle === "suv" ? "SUV = duże SUV-y (np. Toyota Land Cruiser, BMW X5, Hyundai Santa Fe, Kia Sorento). NIE zwracaj sedanów, vanów ani crossoverów." : ""}${body.bodyStyle === "crossover" ? "CROSSOVER = kompaktowe crossovery/SUV-y (np. Toyota RAV4, Mazda CX-5, VW Tiguan, Hyundai Tucson). NIE zwracaj sedanów, vanów ani dużych SUV-ów." : ""}${body.bodyStyle === "terenowy" ? "TERENOWY = samochody terenowe (np. Jeep Wrangler, Toyota Land Cruiser, Suzuki Jimny, Land Rover Defender). NIE zwracaj sedanów, crossoverów ani vanów." : ""}${body.bodyStyle === "sportowy" ? "SPORTOWY = samochody sportowe (np. Mazda MX-5, Toyota GR86, BMW M2, Porsche Cayman). NIE zwracaj sedanów, vanów ani SUV-ów." : ""}
 MOC: KAŻDY wariant >= ${body.hp || 150} KM. Nie dodawaj słabszych wariantów.
 WARIANTY: podaj benzyna, diesel i hybrydy jeśli spełniają moc. Nie dodawaj LPG. Nie wymuszaj diesla jeśli nie spełnia mocy.
-HYBRYDY: jeśli model ma wersję hybrydową — dodaj ją jako osobny wariant z hybrid=true, fuelType="benzyna" (lub "diesel" dla hybrydy diesla), i NIŻSZYM spalaniem. Np. Toyota Prius, Corolla Hybrid, Yaris Hybrid, Lexus CT/IS/ES/RX hybrid, Kia Niro, Hyundai Ioniq hybrid. Hybrydy to popularne, tanie w eksploatacji samochody — NIE pomijaj ich!
+HYBRYDY: uwzględniaj modele hybrydowe tam, gdzie istnieją w danym segmencie. Hybrydy mogą być:
+- Osobnym modelem: Toyota Prius (C), Kia Niro (C), Hyundai Ioniq (C), Honda Jazz Hybrid (B)
+- Wariantem istniejącego modelu: Toyota Corolla Hybrid, Yaris Hybrid, Lexus CT/IS/ES/RX hybrid
+Dla hybryd ustaw hybrid=true, fuelType="benzyna" (lub "diesel"), i podaj NIŻSZE spalanie (np. Prius: 4.0L miasto, 3.5L trasa). Hybrydy są popularne, tanie w eksploatacji i niezawodne.
 
 CENY – NAJWAŻNIEJSZE:
 - Podawaj REALNE ceny rynkowe z polskich portali (Otomoto, OLX) na dziś.
