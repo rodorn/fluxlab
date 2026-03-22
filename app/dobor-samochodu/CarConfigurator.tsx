@@ -956,7 +956,9 @@ export default function CarConfigurator() {
               });
             }
           }
-          for (const lv of lpgVariants) car.variants.push(lv);
+          for (const lv of lpgVariants) {
+            if (lv.priceFrom <= budget) car.variants.push(lv);
+          }
         }
         const bestByFuel = new Map<FuelType, CarVariant>();
         for (const v of car.variants) {
