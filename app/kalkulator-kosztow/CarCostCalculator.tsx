@@ -481,6 +481,7 @@ export default function CarCostCalculator() {
   const [parsedLabel, setParsedLabel] = useState("");
   const [savedCars, setSavedCars] = useState<SavedCar[]>([]);
   const [nextId, setNextId] = useState(1);
+  const [activeCarId, setActiveCarId] = useState<number | null>(null);
   const formTopRef = useRef<HTMLDivElement>(null);
   const compareRef = useRef<HTMLDivElement>(null);
 
@@ -488,6 +489,23 @@ export default function CarCostCalculator() {
     setData((prev) => ({ ...prev, [key]: val }));
 
   const result = useMemo(() => calculate(data, kmPeriod), [data, kmPeriod]);
+
+  // Active car for results view (from comparison or current form)
+  const activeCarData = useMemo(() => {
+    if (activeCarId == null) return null;
+    const car = savedCars.find((c) => c.id === activeCarId);
+    if (!car) return null;
+    return { ...car.data, kmCity: data.kmCity, kmHighway: data.kmHighway, yearsOwned: data.yearsOwned };
+  }, [activeCarId, savedCars, data.kmCity, data.kmHighway, data.yearsOwned]);
+
+  const displayResult = useMemo(
+    () => activeCarData ? calculate(activeCarData, kmPeriod) : result,
+    [activeCarData, kmPeriod, result],
+  );
+
+  const displayLabel = activeCarId != null
+    ? savedCars.find((c) => c.id === activeCarId)?.name ?? null
+    : null;
 
   const fmt = (n: number) => n.toLocaleString("pl-PL", { minimumFractionDigits: 0, maximumFractionDigits: 0 });
   const fmt2 = (n: number) => n.toLocaleString("pl-PL", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
@@ -823,63 +841,6 @@ export default function CarCostCalculator() {
         )}
       </div>
 
-      {/* ── Przebiegi ── */}
-      <div className="space-y-2">
-        <div className="flex items-center gap-3">
-          <h2 className="text-lg font-bold text-gray-900 dark:text-white">Przebiegi</h2>
-          {savedCars.length > 0 && (
-            <span className="text-[10px] font-semibold uppercase tracking-wider text-accent bg-accent/10 px-2 py-0.5 rounded-full">
-              Wspólne dla porównania
-            </span>
-          )}
-        </div>
-      </div>
-
-      <div className="space-y-6">
-        <PillSelector<KmPeriod>
-          label="Podaj przebiegi za okres"
-          options={[
-            { id: "dzien", label: "Dzień" },
-            { id: "tydzien", label: "Tydzień" },
-            { id: "miesiac", label: "Miesiąc" },
-            { id: "rok", label: "Rok" },
-          ]}
-          value={kmPeriod}
-          onChange={setKmPeriod}
-        />
-
-        <LogSlider
-          label={`Km w mieście (${periodLabels[kmPeriod]})`}
-          value={data.kmCity}
-          min={1}
-          max={KM_MAX[kmPeriod]}
-          unit="km"
-          onChange={(v) => set("kmCity", v)}
-        />
-
-        <LogSlider
-          label={`Km w trasie (${periodLabels[kmPeriod]})`}
-          value={data.kmHighway}
-          min={1}
-          max={KM_MAX[kmPeriod]}
-          unit="km"
-          onChange={(v) => set("kmHighway", v)}
-        />
-      </div>
-
-      {/* ── Okres użytkowania ── */}
-      <div className="space-y-6">
-        <Slider
-          label={`Planowany okres użytkowania${savedCars.length > 0 ? " (wspólne)" : ""}`}
-          value={data.yearsOwned}
-          min={1}
-          max={20}
-          step={1}
-          unit="lat"
-          onChange={(v) => set("yearsOwned", v)}
-        />
-      </div>
-
       {/* ── Przyciski ── */}
       <div className="flex gap-3">
         <button
@@ -897,64 +858,6 @@ export default function CarCostCalculator() {
           + Porównaj
         </button>
       </div>
-
-      {/* ── Wyniki ── */}
-      {showResults && (
-        <div className="space-y-6">
-          <div className="rounded-2xl border-2 border-accent/30 bg-accent/5 dark:bg-accent/10 p-8 space-y-4">
-            <h3 className="text-lg font-bold text-gray-900 dark:text-white text-center">
-              Podsumowanie kosztów ({data.yearsOwned} {data.yearsOwned === 1 ? "rok" : data.yearsOwned < 5 ? "lata" : "lat"})
-            </h3>
-            <div className="grid sm:grid-cols-2 gap-4 text-sm">
-              <ResultRow label="Całkowity koszt" value={`${fmt(result.totalCost)} PLN`} accent />
-              <ResultRow label="Koszt miesięczny" value={`${fmt(result.monthly)} PLN`} accent />
-              <ResultRow label="Koszt na km" value={`${fmt2(result.costPerKm)} PLN`} />
-              <ResultRow label="Koszt na godzinę jazdy" value={`${fmt2(result.costPerHour)} PLN`} />
-            </div>
-          </div>
-
-          <div className="rounded-2xl border border-gray-200 dark:border-gray-700 p-6 space-y-3">
-            <h3 className="text-sm font-bold text-gray-900 dark:text-white">Szczegóły kalkulacji</h3>
-            <div className="grid sm:grid-cols-2 gap-3 text-sm">
-              <ResultRow label="Wiek na starcie" value={`${result.ageStart} lat`} />
-              <ResultRow label="Wiek na koniec" value={`${result.ageEnd} lat`} />
-              <ResultRow label="Km rocznie (miasto)" value={`${fmt(result.kmCityYear)} km`} />
-              <ResultRow label="Km rocznie (trasa)" value={`${fmt(result.kmHighwayYear)} km`} />
-              <ResultRow label="Łączny przebieg" value={`${fmt(result.totalKm)} km`} />
-              <ResultRow label="Końcowy przebieg" value={`${fmt(result.finalMileage)} km`} />
-            </div>
-
-            <div className="border-t border-gray-100 dark:border-gray-800 pt-3 mt-3">
-              <h4 className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2">Podział kosztów</h4>
-              <div className="space-y-2">
-                {[
-                  { label: "Paliwo", value: result.fuelCost, color: "bg-blue-500" },
-                  { label: "Spadek wartości", value: result.lostValue, color: "bg-amber-500" },
-                  { label: "Serwis i naprawy", value: result.repairs, color: "bg-red-500" },
-                ].map((item) => {
-                  const pct = result.totalCost > 0 ? (item.value / result.totalCost) * 100 : 0;
-                  return (
-                    <div key={item.label}>
-                      <div className="flex justify-between text-sm mb-1">
-                        <span className="text-gray-600 dark:text-gray-400">{item.label}</span>
-                        <span className="font-medium text-gray-900 dark:text-white">
-                          {fmt(item.value)} PLN ({pct.toFixed(0)}%)
-                        </span>
-                      </div>
-                      <div className="h-2 rounded-full bg-gray-200 dark:bg-gray-700">
-                        <div
-                          className={`h-2 rounded-full ${item.color} transition-all`}
-                          style={{ width: `${pct}%` }}
-                        />
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
 
       {/* ── Porównanie ── */}
       {savedCars.length > 0 && (
@@ -1087,6 +990,154 @@ export default function CarCostCalculator() {
           >
             + Dodaj samochód do porównania
           </button>
+        </div>
+      )}
+
+      {/* ── Przebiegi & okres (wspólne) ── */}
+      {showResults && (
+        <div className="space-y-6">
+          <div className="space-y-2">
+            <div className="flex items-center gap-3">
+              <h2 className="text-lg font-bold text-gray-900 dark:text-white">Przebiegi i użytkowanie</h2>
+              {savedCars.length > 0 && (
+                <span className="text-[10px] font-semibold uppercase tracking-wider text-accent bg-accent/10 px-2 py-0.5 rounded-full">
+                  Wspólne dla porównania
+                </span>
+              )}
+            </div>
+          </div>
+
+          <PillSelector<KmPeriod>
+            label="Podaj przebiegi za okres"
+            options={[
+              { id: "dzien", label: "Dzień" },
+              { id: "tydzien", label: "Tydzień" },
+              { id: "miesiac", label: "Miesiąc" },
+              { id: "rok", label: "Rok" },
+            ]}
+            value={kmPeriod}
+            onChange={setKmPeriod}
+          />
+
+          <LogSlider
+            label={`Km w mieście (${periodLabels[kmPeriod]})`}
+            value={data.kmCity}
+            min={1}
+            max={KM_MAX[kmPeriod]}
+            unit="km"
+            onChange={(v) => set("kmCity", v)}
+          />
+
+          <LogSlider
+            label={`Km w trasie (${periodLabels[kmPeriod]})`}
+            value={data.kmHighway}
+            min={1}
+            max={KM_MAX[kmPeriod]}
+            unit="km"
+            onChange={(v) => set("kmHighway", v)}
+          />
+
+          <Slider
+            label="Planowany okres użytkowania"
+            value={data.yearsOwned}
+            min={1}
+            max={20}
+            step={1}
+            unit="lat"
+            onChange={(v) => set("yearsOwned", v)}
+          />
+        </div>
+      )}
+
+      {/* ── Wyniki ── */}
+      {showResults && (
+        <div className="space-y-6">
+          {/* Model switcher */}
+          {savedCars.length > 0 && (
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="text-sm text-gray-500 dark:text-gray-400 mr-1">Kalkulacja dla:</span>
+              <button
+                type="button"
+                onClick={() => setActiveCarId(null)}
+                className={`px-3 py-1.5 rounded-lg text-sm font-medium border-2 transition-all ${
+                  activeCarId == null
+                    ? "border-accent bg-accent/10 text-accent"
+                    : "border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-gray-300 dark:hover:border-gray-600"
+                }`}
+              >
+                Formularz
+              </button>
+              {savedCars.map((car, i) => (
+                <button
+                  key={car.id}
+                  type="button"
+                  onClick={() => setActiveCarId(car.id)}
+                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium border-2 transition-all ${
+                    activeCarId === car.id
+                      ? "border-accent bg-accent/10 text-accent"
+                      : "border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-gray-300 dark:hover:border-gray-600"
+                  }`}
+                >
+                  <div className={`w-2 h-2 rounded-full shrink-0 ${COMPARE_COLORS[i % COMPARE_COLORS.length]}`} />
+                  <span className="truncate max-w-[150px]">{car.name}</span>
+                </button>
+              ))}
+            </div>
+          )}
+
+          <div className="rounded-2xl border-2 border-accent/30 bg-accent/5 dark:bg-accent/10 p-8 space-y-4">
+            <h3 className="text-lg font-bold text-gray-900 dark:text-white text-center">
+              {displayLabel && <span className="text-accent">{displayLabel}</span>}
+              {displayLabel ? " — " : ""}Podsumowanie kosztów ({data.yearsOwned} {data.yearsOwned === 1 ? "rok" : data.yearsOwned < 5 ? "lata" : "lat"})
+            </h3>
+            <div className="grid sm:grid-cols-2 gap-4 text-sm">
+              <ResultRow label="Całkowity koszt" value={`${fmt(displayResult.totalCost)} PLN`} accent />
+              <ResultRow label="Koszt miesięczny" value={`${fmt(displayResult.monthly)} PLN`} accent />
+              <ResultRow label="Koszt na km" value={`${fmt2(displayResult.costPerKm)} PLN`} />
+              <ResultRow label="Koszt na godzinę jazdy" value={`${fmt2(displayResult.costPerHour)} PLN`} />
+            </div>
+          </div>
+
+          <div className="rounded-2xl border border-gray-200 dark:border-gray-700 p-6 space-y-3">
+            <h3 className="text-sm font-bold text-gray-900 dark:text-white">Szczegóły kalkulacji</h3>
+            <div className="grid sm:grid-cols-2 gap-3 text-sm">
+              <ResultRow label="Wiek na starcie" value={`${displayResult.ageStart} lat`} />
+              <ResultRow label="Wiek na koniec" value={`${displayResult.ageEnd} lat`} />
+              <ResultRow label="Km rocznie (miasto)" value={`${fmt(displayResult.kmCityYear)} km`} />
+              <ResultRow label="Km rocznie (trasa)" value={`${fmt(displayResult.kmHighwayYear)} km`} />
+              <ResultRow label="Łączny przebieg" value={`${fmt(displayResult.totalKm)} km`} />
+              <ResultRow label="Końcowy przebieg" value={`${fmt(displayResult.finalMileage)} km`} />
+            </div>
+
+            <div className="border-t border-gray-100 dark:border-gray-800 pt-3 mt-3">
+              <h4 className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2">Podział kosztów</h4>
+              <div className="space-y-2">
+                {[
+                  { label: "Paliwo", value: displayResult.fuelCost, color: "bg-blue-500" },
+                  { label: "Spadek wartości", value: displayResult.lostValue, color: "bg-amber-500" },
+                  { label: "Serwis i naprawy", value: displayResult.repairs, color: "bg-red-500" },
+                ].map((item) => {
+                  const pct = displayResult.totalCost > 0 ? (item.value / displayResult.totalCost) * 100 : 0;
+                  return (
+                    <div key={item.label}>
+                      <div className="flex justify-between text-sm mb-1">
+                        <span className="text-gray-600 dark:text-gray-400">{item.label}</span>
+                        <span className="font-medium text-gray-900 dark:text-white">
+                          {fmt(item.value)} PLN ({pct.toFixed(0)}%)
+                        </span>
+                      </div>
+                      <div className="h-2 rounded-full bg-gray-200 dark:bg-gray-700">
+                        <div
+                          className={`h-2 rounded-full ${item.color} transition-all`}
+                          style={{ width: `${pct}%` }}
+                        />
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
         </div>
       )}
     </div>
