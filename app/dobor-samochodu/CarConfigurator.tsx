@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 
 /* ───────────────────────── types ───────────────────────── */
@@ -15,279 +15,84 @@ type BodyShape =
 interface Answers {
   height: number;
   passengers: number;
-  longTrips: number; // 0 = tylko miasto, 100 = tylko trasa
-  segmentOverride: Segment | null;
+  longTrips: number;
   bodyStyle: BodyStyle | null;
   bodyShapes: BodyShape[];
-  luggageFreq: number; // 0‑100
+  luggageFreq: number;
   foldSeats: boolean;
-  maxSpeed: number;
-  powerOverride: number | null;
+  budget: number;
+  additionalInfo: string;
 }
 
 const INITIAL: Answers = {
   height: 175,
   passengers: 1,
   longTrips: 30,
-  segmentOverride: null,
   bodyStyle: null,
   bodyShapes: [],
   luggageFreq: 30,
   foldSeats: false,
-  maxSpeed: 130,
-  powerOverride: null,
+  budget: 50000,
+  additionalInfo: "",
 };
 
-/* ──────────────── segment logic ──────────────── */
+/* ───────────────────────── car recommendation types ───────────────────────── */
 
-type Segment = "A" | "B" | "C" | "D" | "E" | "F";
+interface CarRecommendation {
+  make: string;
+  model: string;
+  generation: string;
+  yearFrom: number;
+  yearTo: number;
+  engine: string;
+  priceFrom: number;
+  priceTo: number;
+  pros: string[];
+  cons: string[];
+}
 
-/* Opisy segmentów per forma nadwozia (bodyShape).
-   Fallback: per typ samochodu (bodyStyle), potem generyczny. */
+interface AgeCategory {
+  ageLabel: string;
+  ageFrom: number;
+  ageTo: number;
+  cars: CarRecommendation[];
+}
 
-const SHAPE_DESCRIPTIONS: Partial<Record<BodyShape, Partial<Record<Segment, string>>>> = {
-  /* ── osobowe ── */
-  hatchback: {
-    A: "A – mini hatchbacki (np. Fiat 500, Toyota Aygo)",
-    B: "B – małe hatchbacki (np. VW Polo, Mazda 2)",
-    C: "C – kompaktowe hatchbacki (np. VW Golf, Toyota Corolla)",
-  },
-  sedan: {
-    B: "B – małe sedany (np. Toyota Yaris Sedan, Honda City)",
-    C: "C – kompaktowe sedany (np. Toyota Corolla Sedan, VW Jetta)",
-    D: "D – sedany klasy średniej (np. BMW serii 3, VW Passat)",
-    E: "E – sedany klasy średniej wyższej (np. BMW serii 5, Mercedes klasy E)",
-    F: "F – sedany klasy wyższej (np. BMW serii 7, Mercedes klasy S)",
-  },
-  kombi: {
-    B: "B – małe kombi (np. Skoda Fabia Combi, Dacia Logan MCV)",
-    C: "C – kompaktowe kombi (np. Toyota Corolla TS, Skoda Octavia Combi)",
-    D: "D – średnie kombi (np. BMW serii 3 Touring, VW Passat Variant)",
-    E: "E – duże kombi (np. BMW serii 5 Touring, Mercedes klasy E T-Modell)",
-  },
-  liftback: {
-    C: "C – kompaktowe liftbacki (np. Skoda Octavia, Mazda 3)",
-    D: "D – liftbacki klasy średniej (np. BMW serii 4, VW Arteon)",
-    E: "E – liftbacki klasy średniej wyższej (np. Audi A7, Porsche Panamera)",
-  },
-  /* ── sportowe ── */
-  "coupe-2": {
-    A: "A – ciasne (np. Lotus Elise, Alpine A110, Mazda MX-5 RF)",
-    B: "B – wygodne (np. Porsche 911, BMW M2, Toyota GR86)",
-  },
-  "roadster-2": {
-    A: "A – ciasne (np. Mazda MX-5, Lotus Elise, Caterham)",
-    B: "B – wygodne (np. BMW Z4, Porsche Boxster, Jaguar F-Type)",
-  },
-  "coupe-2plus2": {
-    B: "B – małe (np. Toyota GR86, Subaru BRZ)",
-    C: "C – kompaktowe (np. BMW serii 2 Coupé)",
-    D: "D – średnie (np. BMW M4, Audi RS5)",
-    E: "E – premium (np. Porsche 911, Lexus LC)",
-    F: "F – luksusowe (np. Bentley Continental GT, Ferrari Roma)",
-  },
-  "cabriolet-2plus2": {
-    B: "B – małe (np. Mini Cabrio, Fiat 500C)",
-    C: "C – kompaktowe (np. BMW serii 2 Cabrio)",
-    D: "D – średnie (np. BMW serii 4 Cabrio, Mercedes C Cabrio)",
-    E: "E – premium (np. Mercedes E Cabrio, BMW serii 8 Cabrio)",
-    F: "F – luksusowe (np. Bentley Continental GTC, Rolls-Royce Dawn)",
-  },
-  "hot-hatch": {
-    A: "A – mini hot hatch (np. Abarth 500)",
-    B: "B – małe hot hatch (np. Ford Fiesta ST, Suzuki Swift Sport)",
-    C: "C – kompaktowe hot hatch (np. VW Golf GTI, Honda Civic Type R)",
-  },
-  "4door-coupe": {
-    C: "C – kompaktowe (np. Mercedes CLA, BMW serii 2 Gran Coupé)",
-    D: "D – średnie (np. BMW serii 4 Gran Coupé, Audi A5 Sportback)",
-    E: "E – premium (np. Mercedes CLS, BMW serii 8 Gran Coupé)",
-  },
-  "sport-sedan": {
-    D: "D – średnie (np. BMW M3, Mercedes C63 AMG)",
-    E: "E – premium (np. BMW M5, Mercedes E63 AMG)",
-    F: "F – luksusowe (np. Mercedes S63 AMG, BMW M760i)",
-  },
-  "sport-crossover": {
-    B: "B – małe (np. VW T-Roc R)",
-    C: "C – kompaktowe (np. VW Tiguan R, Mercedes GLA AMG)",
-    D: "D – średnie (np. BMW X4 M, Mercedes GLC AMG)",
-    E: "E – duże (np. BMW X5 M, Porsche Cayenne Turbo)",
-    F: "F – premium (np. Bentley Bentayga, Aston Martin DBX)",
-  },
-  /* ── crossover/SUV coupé ── */
-  coupe: {
-    D: "D – średnie coupé (np. BMW X4, Mercedes GLC Coupé)",
-    E: "E – duże coupé (np. BMW X6, Mercedes GLE Coupé)",
-  },
-  /* ── terenowy pickup ── */
-  pickup: {
-    D: "D – średnie pick-upy (np. Toyota Hilux, Ford Ranger)",
-    E: "E – duże pick-upy (np. Dodge RAM, Ford F-150)",
-  },
-};
+interface RecommendResult {
+  categories: AgeCategory[];
+}
 
-/* Fallback per bodyStyle (dla standard crossover/SUV/terenowy bez nadpisania kształtem) */
-const STYLE_DESCRIPTIONS: Record<BodyStyle, Partial<Record<Segment, string>>> = {
-  sportowy: {},
-  sedan: {},
-  van: {
-    B: "B – kombivany (np. VW Caddy, Renault Kangoo)",
-    C: "C – minivany (np. VW Touran, Ford S-Max)",
-    D: "D – średnie vany (np. VW Sharan, Ford Galaxy)",
-    E: "E – duże vany (np. Mercedes klasy V, VW Caravelle)",
-  },
-  crossover: {
-    A: "A – mini crossover (np. Fiat 500X, Suzuki Ignis)",
-    B: "B – małe crossover (np. Hyundai Kona, VW T-Cross)",
-    C: "C – kompaktowe crossover (np. Mazda CX-30, VW Tiguan)",
-    D: "D – średnie crossover (np. BMW X3, Audi Q5)",
-    E: "E – duże crossover (np. BMW X5, Volvo XC90)",
-    F: "F – premium crossover (np. Mercedes GLS, BMW X7)",
-  },
-  suv: {
-    B: "B – małe SUV (np. Suzuki Jimny, Dacia Duster)",
-    C: "C – kompaktowe SUV (np. Toyota RAV4, Hyundai Tucson)",
-    D: "D – średnie SUV (np. BMW X3, VW Tiguan Allspace)",
-    E: "E – duże SUV (np. BMW X5, Toyota Land Cruiser 150)",
-    F: "F – premium SUV (np. BMW X7, Mercedes GLS)",
-  },
-  terenowy: {
-    B: "B – małe terenowe (np. Suzuki Jimny, Lada Niva)",
-    C: "C – kompaktowe terenowe (np. Jeep Wrangler 2d, Dacia Duster 4x4)",
-    D: "D – średnie terenowe (np. Toyota Land Cruiser Prado, Jeep Wrangler 4d)",
-    E: "E – duże terenowe (np. Toyota Land Cruiser 300, Nissan Patrol)",
-  },
-};
+/* ──────────────── auto-selection ──────────────── */
 
-function getSegmentName(segment: Segment, bodyStyle: BodyStyle | null, bodyShapes: BodyShape[]): string {
-  // 1. bodyShape-specific description (first match)
-  for (const shape of bodyShapes) {
-    const desc = SHAPE_DESCRIPTIONS[shape]?.[segment];
-    if (desc) return desc;
+const SHAPE_RELEVANT_KEYS: (keyof Answers)[] = ["luggageFreq", "foldSeats"];
+
+function getRecommendedShapes(style: BodyStyle | null, a: Answers): BodyShape[] {
+  switch (style) {
+    case "sedan": {
+      if (a.luggageFreq > 60 || a.foldSeats) return ["kombi"];
+      if (a.luggageFreq > 30) return ["liftback", "kombi"];
+      return ["hatchback", "sedan"];
+    }
+    case "sportowy": {
+      if (a.luggageFreq <= 25) return ["coupe-2", "roadster-2"];
+      if (a.luggageFreq <= 55) return ["coupe-2plus2", "cabriolet-2plus2"];
+      if (a.luggageFreq <= 75) return ["4door-coupe", "sport-sedan"];
+      return ["hot-hatch", "sport-crossover"];
+    }
+    case "crossover":
+    case "suv":
+      return ["standard"];
+    case "terenowy":
+      return ["standard"];
+    default:
+      return [];
   }
-  // 2. bodyStyle fallback
-  const styleDesc = STYLE_DESCRIPTIONS[bodyStyle ?? "sedan"]?.[segment];
-  if (styleDesc) return styleDesc;
-  // 3. generic
-  return segment;
-}
-
-const SEGMENT_RANGE: Record<BodyStyle, { min: Segment; max: Segment }> = {
-  sportowy: { min: "A", max: "F" },
-  sedan: { min: "A", max: "F" },
-  van: { min: "B", max: "E" },
-  crossover: { min: "A", max: "F" },
-  suv: { min: "B", max: "F" },
-  terenowy: { min: "B", max: "E" },
-};
-
-const SEGMENTS_ORDERED: Segment[] = ["A", "B", "C", "D", "E", "F"];
-
-const SHAPE_SEGMENT_OVERRIDE: Partial<Record<BodyShape, { min: Segment; max: Segment }>> = {
-  // osobowe
-  hatchback: { min: "A", max: "C" },
-  sedan: { min: "B", max: "F" },
-  kombi: { min: "B", max: "E" },
-  liftback: { min: "C", max: "E" },
-  // crossover/SUV coupé, terenowy pickup
-  coupe: { min: "D", max: "E" },
-  pickup: { min: "D", max: "E" },
-  // sportowe
-  "hot-hatch": { min: "A", max: "C" },
-  "4door-coupe": { min: "C", max: "E" },
-  "sport-sedan": { min: "D", max: "F" },
-  "sport-crossover": { min: "B", max: "F" },
-  "coupe-2plus2": { min: "B", max: "F" },
-  "cabriolet-2plus2": { min: "B", max: "F" },
-  "coupe-2": { min: "A", max: "B" },
-  "roadster-2": { min: "A", max: "B" },
-};
-
-function getSegmentRange(bodyStyle: BodyStyle | null, bodyShapes: BodyShape[]): { min: Segment; max: Segment } {
-  if (bodyShapes.length === 0) return SEGMENT_RANGE[bodyStyle ?? "sedan"];
-  // union of all selected shapes' ranges
-  let minIdx = 5; // start at F
-  let maxIdx = 0; // start at A
-  for (const shape of bodyShapes) {
-    const range = SHAPE_SEGMENT_OVERRIDE[shape] ?? SEGMENT_RANGE[bodyStyle ?? "sedan"];
-    const lo = SEGMENTS_ORDERED.indexOf(range.min);
-    const hi = SEGMENTS_ORDERED.indexOf(range.max);
-    if (lo < minIdx) minIdx = lo;
-    if (hi > maxIdx) maxIdx = hi;
-  }
-  return { min: SEGMENTS_ORDERED[minIdx], max: SEGMENTS_ORDERED[maxIdx] };
-}
-
-function clampSegment(seg: Segment, bodyStyle: BodyStyle | null, bodyShapes: BodyShape[]): Segment {
-  const range = getSegmentRange(bodyStyle, bodyShapes);
-  const idx = SEGMENTS_ORDERED.indexOf(seg);
-  const minIdx = SEGMENTS_ORDERED.indexOf(range.min);
-  const maxIdx = SEGMENTS_ORDERED.indexOf(range.max);
-  return SEGMENTS_ORDERED[Math.max(minIdx, Math.min(maxIdx, idx))];
-}
-
-function calcSegment(a: Answers): Segment {
-  let score = 0;
-  // wzrost
-  if (a.height >= 170) score += a.height-170;
-  // pasażerowie
-  score += a.passengers * 10;
-  // trasy
-  score *= ((a.longTrips + 100) / 100);
-  // van – mniejszy score (więcej osób nie wymusza większego segmentu tak mocno)
-  if (a.bodyStyle === "van") score -= 20;
-
-  let seg: Segment;
-  if (score <= 20) seg = "A";
-  else if (score <= 40) seg = "B";
-  else if (score <= 60) seg = "C";
-  else if (score <= 80) seg = "D";
-  else if (score <= 120) seg = "E";
-  else seg = "F";
-
-  return clampSegment(seg, a.bodyStyle, a.bodyShapes);
-}
-
-/* ──────────────── power logic ──────────────── */
-
-function calcSuggestedHP(a: Answers, segment: Segment): number {
-  // bazowa moc wg prędkości (przybliżenie oporu powietrza ~ v^3), optymalne zużycie połowy mocy
-  const speedFactor = Math.pow(a.maxSpeed / 200, 3) * 2;
-  const segmentWeights: Record<Segment, number> = {
-    A: 120,
-    B: 125,
-    C: 135,
-    D: 145,
-    E: 155,
-    F: 165,
-  };
-  const bodyMult: Record<BodyStyle, number> = {
-    sportowy: 0.9,
-    sedan: 1,
-    van: 1.25,
-    crossover: 1.2,
-    suv: 1.3,
-    terenowy: 1.5,
-  };
-  const weight = segmentWeights[segment] * (bodyMult[a.bodyStyle ?? "sedan"]);
-  let hp = Math.round(weight * speedFactor);
-  hp = Math.max(50, Math.min(hp, 1000));
-  return hp;
 }
 
 /* ──────────────── slider component ──────────────── */
 
 function Slider({
-  label,
-  value,
-  min,
-  max,
-  step,
-  unit,
-  hint,
-  onChange,
-  labels,
+  label, value, min, max, step, unit, hint, onChange, labels,
 }: {
   label: string;
   value: number;
@@ -303,31 +108,20 @@ function Slider({
   return (
     <div className="space-y-2">
       <div className="flex items-baseline justify-between">
-        <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
-          {label}
-        </span>
+        <span className="text-sm font-medium text-gray-700 dark:text-gray-300">{label}</span>
         <span className="text-sm font-semibold text-accent tabular-nums">
-          {value}
-          {unit && <span className="text-gray-400 font-normal"> {unit}</span>}
+          {value}{unit && <span className="text-gray-400 font-normal"> {unit}</span>}
         </span>
       </div>
       <div className="relative group">
         <div className="h-2 rounded-full bg-gray-200 dark:bg-gray-700">
-          <div
-            className="h-2 rounded-full bg-accent transition-all"
-            style={{ width: `${pct}%` }}
-          />
+          <div className="h-2 rounded-full bg-accent transition-all" style={{ width: `${pct}%` }} />
         </div>
         <input
-          type="range"
-          min={min}
-          max={max}
-          step={step}
-          value={value}
+          type="range" min={min} max={max} step={step} value={value}
           onChange={(e) => onChange(Number(e.target.value))}
           className="absolute inset-0 w-full h-2 opacity-0 cursor-pointer"
         />
-        {/* thumb indicator */}
         <div
           className="absolute top-1/2 -translate-y-1/2 w-5 h-5 rounded-full bg-white border-2 border-accent shadow-md pointer-events-none transition-all"
           style={{ left: `calc(${pct}% - 10px)` }}
@@ -339,9 +133,59 @@ function Slider({
           <span>{labels.right}</span>
         </div>
       )}
-      {hint && (
-        <p className="text-xs text-gray-400 dark:text-gray-500">{hint}</p>
-      )}
+      {hint && <p className="text-xs text-gray-400 dark:text-gray-500">{hint}</p>}
+    </div>
+  );
+}
+
+/* ──────────────── log slider ──────────────── */
+
+function LogSlider({
+  label, value, min, max, unit, onChange,
+}: {
+  label: string;
+  value: number;
+  min: number;
+  max: number;
+  unit?: string;
+  onChange: (v: number) => void;
+}) {
+  const logMin = Math.log(min);
+  const logMax = Math.log(max);
+  const pct = ((Math.log(value) - logMin) / (logMax - logMin)) * 100;
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const raw = Number(e.target.value) / 1000;
+    const val = Math.round(Math.exp(logMin + raw * (logMax - logMin)));
+    onChange(Math.max(min, Math.min(max, val)));
+  };
+
+  const sliderVal = ((Math.log(value) - logMin) / (logMax - logMin)) * 1000;
+
+  const fmt = (n: number) => n.toLocaleString("pl-PL");
+
+  return (
+    <div className="space-y-2">
+      <div className="flex items-baseline justify-between">
+        <span className="text-sm font-medium text-gray-700 dark:text-gray-300">{label}</span>
+        <span className="text-sm font-semibold text-accent tabular-nums">
+          {fmt(value)}{unit && <span className="text-gray-400 font-normal"> {unit}</span>}
+        </span>
+      </div>
+      <div className="relative group">
+        <div className="h-2 rounded-full bg-gray-200 dark:bg-gray-700">
+          <div className="h-2 rounded-full bg-accent transition-all" style={{ width: `${pct}%` }} />
+        </div>
+        <input
+          type="range" min={0} max={1000} step={1} value={sliderVal}
+          onChange={handleChange}
+          className="absolute inset-0 w-full h-2 opacity-0 cursor-pointer"
+        />
+        <div
+          className="absolute top-1/2 -translate-y-1/2 w-5 h-5 rounded-full bg-white border-2 border-accent shadow-md pointer-events-none transition-all"
+          style={{ left: `calc(${pct}% - 10px)` }}
+        />
+      </div>
     </div>
   );
 }
@@ -349,10 +193,7 @@ function Slider({
 /* ──────────────── card selector ──────────────── */
 
 function CardSelector<T extends string>({
-  options,
-  value,
-  onChange,
-  multiple,
+  options, value, onChange, multiple,
 }: {
   options: { id: T; title: string; image: string; pros: string[]; cons: string[]; note?: React.ReactNode }[];
   value: T | T[] | null;
@@ -385,31 +226,21 @@ function CardSelector<T extends string>({
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 unoptimized
               />
-              {selected && (
-                <div className="absolute inset-0 bg-accent/10" />
-              )}
+              {selected && <div className="absolute inset-0 bg-accent/10" />}
             </div>
             <div className="p-4 flex-1 flex flex-col">
-              <span
-                className={`font-semibold text-sm ${
-                  selected
-                    ? "text-accent"
-                    : "text-gray-900 dark:text-white"
-                }`}
-              >
+              <span className={`font-semibold text-sm ${selected ? "text-accent" : "text-gray-900 dark:text-white"}`}>
                 {opt.title}
               </span>
               <div className="mt-2 space-y-1 text-xs flex-1">
                 {opt.pros.map((p) => (
                   <div key={p} className="flex gap-1.5 text-emerald-600 dark:text-emerald-400">
-                    <span className="shrink-0">+</span>
-                    <span>{p}</span>
+                    <span className="shrink-0">+</span><span>{p}</span>
                   </div>
                 ))}
                 {opt.cons.map((c) => (
                   <div key={c} className="flex gap-1.5 text-red-500 dark:text-red-400">
-                    <span className="shrink-0">−</span>
-                    <span>{c}</span>
+                    <span className="shrink-0">−</span><span>{c}</span>
                   </div>
                 ))}
               </div>
@@ -432,108 +263,58 @@ const IMG = "/photos/car-chooser";
 
 const BG_IMAGES: Record<BodyStyle, { light: string; dark: string }> = {
   sportowy:  { light: `${IMG}/bg-sport-light.jpg`,      dark: `${IMG}/bg-sport-dark.webp` },
-  sedan:     { light: `${IMG}/bg-osobowy-light.webp`,     dark: `${IMG}/bg-osobowy-dark.jpg` },
+  sedan:     { light: `${IMG}/bg-osobowy-light.webp`,    dark: `${IMG}/bg-osobowy-dark.jpg` },
   van:       { light: `${IMG}/bg-van-light.webp`,        dark: `${IMG}/bg-van-dark.jpg` },
   crossover: { light: `${IMG}/bg-crossover-light.webp`,  dark: `${IMG}/bg-crossover-dark.jpg` },
-  suv:       { light: `${IMG}/bg-suv-light.webp`,         dark: `${IMG}/bg-suv-dark.jpeg` },
-  terenowy:  { light: `${IMG}/bg-terenowy-light.webp`,    dark: `${IMG}/bg-terenowy-dark.avif` },
+  suv:       { light: `${IMG}/bg-suv-light.webp`,        dark: `${IMG}/bg-suv-dark.jpeg` },
+  terenowy:  { light: `${IMG}/bg-terenowy-light.webp`,   dark: `${IMG}/bg-terenowy-dark.avif` },
 };
 
 const BODY_STYLES: {
-  id: BodyStyle;
-  title: string;
-  image: string;
-  pros: string[];
-  cons: string[];
-  note?: React.ReactNode;
+  id: BodyStyle; title: string; image: string; pros: string[]; cons: string[]; note?: React.ReactNode;
 }[] = [
   {
     id: "sportowy",
     title: "Sportowy / Coupé",
     image: `${IMG}/type-sport.webp`,
-    pros: [
-      "Niski środek ciężkości",
-      "Doskonałe prowadzenie i reakcje",
-      "Atrakcyjny wygląd",
-    ],
-    cons: [
-      "Mało miejsca dla pasażerów",
-      "Niska – trudniej wsiadać/wysiadać",
-      "Mały bagażnik",
-    ],
+    pros: ["Niski środek ciężkości", "Doskonałe prowadzenie i reakcje", "Atrakcyjny wygląd"],
+    cons: ["Mało miejsca dla pasażerów", "Niska – trudniej wsiadać/wysiadać", "Mały bagażnik"],
   },
   {
     id: "sedan",
     title: "Osobowy",
     image: `${IMG}/type-osobowy.jpg`,
-    pros: [
-      "Uniwersalny – sprawdzi się wszędzie",
-      "Dobry komfort na trasie",
-      "Rozsądna cena i spalanie",
-    ],
-    cons: [
-      "Niska pozycja za kierownicą",
-    ],
+    pros: ["Uniwersalny – sprawdzi się wszędzie", "Dobry komfort na trasie", "Rozsądna cena i spalanie"],
+    cons: ["Niska pozycja za kierownicą"],
   },
   {
     id: "van",
     title: "Van",
     image: `${IMG}/type-van.jpeg`,
-    pros: [
-      "Doskonała funkcjonalność",
-      "Optymalne wykorzystanie przestrzeni"
-    ],
-    cons: [
-      "Wyższe spalanie niż osobowy",
-      "Gorsze prowadzenie – wysoki środek ciężkości",
-    ],
+    pros: ["Doskonała funkcjonalność", "Optymalne wykorzystanie przestrzeni"],
+    cons: ["Wyższe spalanie niż osobowy", "Gorsze prowadzenie – wysoki środek ciężkości"],
   },
   {
     id: "crossover",
     title: "Crossover",
     image: `${IMG}/type-crossover.webp`,
-    pros: [
-      "Wyższa pozycja – lepsza widoczność",
-      "Wygodne wsiadanie/wysiadanie",
-      "Wyższe zawieszenie niż w osobowym",
-    ],
-    cons: [
-      "Wyższa cena i spalanie niż osobowy",
-      "Gorsze prowadzenie niż niski samochód",
-      "Gorsze osiągi",
-    ],
+    pros: ["Wyższa pozycja – lepsza widoczność", "Wygodne wsiadanie/wysiadanie", "Wyższe zawieszenie niż w osobowym"],
+    cons: ["Wyższa cena i spalanie niż osobowy", "Gorsze prowadzenie niż niski samochód", "Gorsze osiągi"],
   },
   {
     id: "suv",
     title: "SUV",
     image: `${IMG}/type-suv.jpg`,
-    pros: [
-        "Wyższa pozycja – lepsza widoczność",
-        "Wygodne wsiadanie/wysiadanie",
-        "Podstawowe zdolności terenowe",
-    ],
-    cons: [
-      "Wysokie spalanie i cena",
-      "Gorsze prowadzenie – wysoki środek ciężkości",
-      "Gorsze osiągi",
-    ],
+    pros: ["Wyższa pozycja – lepsza widoczność", "Wygodne wsiadanie/wysiadanie", "Podstawowe zdolności terenowe"],
+    cons: ["Wysokie spalanie i cena", "Gorsze prowadzenie – wysoki środek ciężkości", "Gorsze osiągi"],
     note: (<>SUV-y i crossovery mają w większości pokrywający się wybór modeli. <strong>Sugerujemy wybór SUV-a wyłącznie jeśli planujesz zjeżdżać z asfaltu</strong> – w przeciwnym razie crossover będzie lepszym wyborem.</>),
   },
   {
     id: "terenowy",
     title: "Terenowy / Off-road",
     image: `${IMG}/type-terenowy.webp`,
-    pros: [
-      "Prawdziwy napęd 4x4 z reduktorem",
-      "Duży prześwit i możliwości terenowe",
-      "Wytrzymała konstrukcja",
-    ],
-    cons: [
-      "Bardzo wysokie spalanie",
-      "Słabe prowadzenie na asfalcie",
-      "Drogi w zakupie i utrzymaniu",
-      "Parkowanie to wyzwanie",
-    ],
+    pros: ["Prawdziwy napęd 4x4 z reduktorem", "Duży prześwit i możliwości terenowe", "Wytrzymała konstrukcja"],
+    cons: ["Bardzo wysokie spalanie", "Słabe prowadzenie na asfalcie", "Drogi w zakupie i utrzymaniu", "Parkowanie to wyzwanie"],
   },
 ];
 
@@ -543,247 +324,93 @@ type ShapeOption = { id: BodyShape; title: string; image: string; pros: string[]
 
 const SHAPES_STANDARD: ShapeOption[] = [
   {
-    id: "hatchback",
-    title: "Hatchback",
-    image: `${IMG}/shape-hatchback.jpg`,
-    pros: [
-      "Kompaktowy – idealny do miasta",
-      "Uchylna klapa – łatwy załadunek",
-      "Niższa cena od sedana/kombi",
-    ],
-    cons: [
-      "Mniej miejsca na bagaże niż kombi",
-      "Hałas z bagażnika dochodzi do kabiny",
-    ],
+    id: "hatchback", title: "Hatchback", image: `${IMG}/shape-hatchback.jpg`,
+    pros: ["Kompaktowy – idealny do miasta", "Uchylna klapa – łatwy załadunek", "Niższa cena od sedana/kombi"],
+    cons: ["Mniej miejsca na bagaże niż kombi", "Hałas z bagażnika dochodzi do kabiny"],
   },
   {
-    id: "sedan",
-    title: "Sedan",
-    image: `${IMG}/shape-sedan.webp`,
-    pros: [
-      "Cichsza kabina – bagażnik oddzielony",
-      "Elegancki wygląd",
-      "Dobra aerodynamika",
-    ],
-    cons: [
-      "Mały otwór załadunkowy",
-      "Nie przewieziesz dużych przedmiotów",
-      "Nie złożysz siedzeń tak łatwo",
-    ],
+    id: "sedan", title: "Sedan", image: `${IMG}/shape-sedan.webp`,
+    pros: ["Cichsza kabina – bagażnik oddzielony", "Elegancki wygląd", "Dobra aerodynamika"],
+    cons: ["Mały otwór załadunkowy", "Nie przewieziesz dużych przedmiotów", "Nie złożysz siedzeń tak łatwo"],
   },
   {
-    id: "kombi",
-    title: "Kombi",
-    image: `${IMG}/shape-kombi.webp`,
-    pros: [
-      "Ogromny bagażnik – idealny na rodzinę",
-      "Łatwo składane tylne siedzenia",
-      "Niska krawędź załadunku",
-    ],
-    cons: [
-      "Dłuższy – trudniej parkować",
-      "Zwykle trochę droższy",
-      "Hałas z bagażnika",
-    ],
+    id: "kombi", title: "Kombi", image: `${IMG}/shape-kombi.webp`,
+    pros: ["Ogromny bagażnik – idealny na rodzinę", "Łatwo składane tylne siedzenia", "Niska krawędź załadunku"],
+    cons: ["Dłuższy – trudniej parkować", "Zwykle trochę droższy", "Hałas z bagażnika"],
   },
   {
-    id: "liftback",
-    title: "Liftback",
-    image: `${IMG}/shape-liftback.webp`,
-    pros: [
-      "Wygląd sedana + praktyczność hatchbacka",
-      "Duży otwór bagażnika",
-      "Świetna aerodynamika",
-    ],
-    cons: [
-      "Mniej popularny – mniejszy wybór",
-      "Cena bliżej sedana niż hatchbacka",
-    ],
+    id: "liftback", title: "Liftback", image: `${IMG}/shape-liftback.webp`,
+    pros: ["Wygląd sedana + praktyczność hatchbacka", "Duży otwór bagażnika", "Świetna aerodynamika"],
+    cons: ["Mniej popularny – mniejszy wybór", "Cena bliżej sedana niż hatchbacka"],
   },
 ];
 
 const SHAPES_SPORT: ShapeOption[] = [
   {
-    id: "coupe-2",
-    title: "Coupé 2-osobowe",
-    image: `${IMG}/shape-coupe-2.avif`,
-    pros: [
-      "Najlepsza dynamika i prowadzenie",
-      "Niska masa – świetne osiągi",
-      "Najniższy środek ciężkości",
-    ],
-    cons: [
-      "Tylko 2 miejsca",
-      "Minimalny bagażnik",
-      "Niska praktyczność na co dzień",
-    ],
+    id: "coupe-2", title: "Coupé 2-osobowe", image: `${IMG}/shape-coupe-2.avif`,
+    pros: ["Najlepsza dynamika i prowadzenie", "Niska masa – świetne osiągi", "Najniższy środek ciężkości"],
+    cons: ["Tylko 2 miejsca", "Minimalny bagażnik", "Niska praktyczność na co dzień"],
   },
   {
-    id: "roadster-2",
-    title: "Roadster 2-osobowy",
-    image: `${IMG}/shape-roadster-2.webp`,
-    pros: [
-      "Otwarte nadwozie – jazda z wiatrem",
-      "Lekki – świetne prowadzenie",
-      "Wyjątkowe doznania z jazdy",
-    ],
-    cons: [
-      "Mniej sztywna konstrukcja niż coupé",
-      "Brak praktyczności",
-      "Wrażliwy na pogodę",
-    ],
+    id: "roadster-2", title: "Roadster 2-osobowy", image: `${IMG}/shape-roadster-2.webp`,
+    pros: ["Otwarte nadwozie – jazda z wiatrem", "Lekki – świetne prowadzenie", "Wyjątkowe doznania z jazdy"],
+    cons: ["Mniej sztywna konstrukcja niż coupé", "Brak praktyczności", "Wrażliwy na pogodę"],
   },
   {
-    id: "coupe-2plus2",
-    title: "Coupé 2+2",
-    image: `${IMG}/shape-coupe-2plus2.jpg`,
-    pros: [
-      "Sportowy charakter + awaryjne tylne miejsca",
-      "Kompromis między stylem a użytecznością",
-      "Dobra aerodynamika",
-    ],
-    cons: [
-      "Tylne miejsca ciasne – raczej dla dzieci",
-      "Mały bagażnik",
-      "Droższe od standardowego coupé",
-    ],
+    id: "coupe-2plus2", title: "Coupé 2+2", image: `${IMG}/shape-coupe-2plus2.jpg`,
+    pros: ["Sportowy charakter + awaryjne tylne miejsca", "Kompromis między stylem a użytecznością", "Dobra aerodynamika"],
+    cons: ["Tylne miejsca ciasne – raczej dla dzieci", "Mały bagażnik", "Droższe od standardowego coupé"],
   },
   {
-    id: "cabriolet-2plus2",
-    title: "Cabriolet 2+2",
-    image: `${IMG}/shape-cabriolet-2plus2.avif`,
-    pros: [
-      "Otwarte nadwozie + 4 miejsca",
-      "Elegancki wygląd",
-      "Większa praktyczność niż roadster",
-    ],
-    cons: [
-      "Cięższy od roadsterów – gorsza dynamika",
-      "Drogi w zakupie i utrzymaniu",
-      "Tylne miejsca nadal ciasne",
-    ],
+    id: "cabriolet-2plus2", title: "Cabriolet 2+2", image: `${IMG}/shape-cabriolet-2plus2.avif`,
+    pros: ["Otwarte nadwozie + 4 miejsca", "Elegancki wygląd", "Większa praktyczność niż roadster"],
+    cons: ["Cięższy od roadsterów – gorsza dynamika", "Drogi w zakupie i utrzymaniu", "Tylne miejsca nadal ciasne"],
   },
   {
-    id: "hot-hatch",
-    title: "Hot Hatch",
-    image: `${IMG}/shape-hot-hatch.jpg`,
-    pros: [
-      "Praktyczność hatchbacka + sportowe osiągi",
-      "5 miejsc i użyteczny bagażnik",
-      "Świetny do codziennej jazdy",
-    ],
-    cons: [
-      "Wyższy środek ciężkości niż coupé",
-      "Twarde zawieszenie – mniej komfortu",
-      "Wyższe ubezpieczenie",
-    ],
+    id: "hot-hatch", title: "Hot Hatch", image: `${IMG}/shape-hot-hatch.jpg`,
+    pros: ["Praktyczność hatchbacka + sportowe osiągi", "5 miejsc i użyteczny bagażnik", "Świetny do codziennej jazdy"],
+    cons: ["Wyższy środek ciężkości niż coupé", "Twarde zawieszenie – mniej komfortu", "Wyższe ubezpieczenie"],
   },
   {
-    id: "4door-coupe",
-    title: "4-door Coupé",
-    image: `${IMG}/shape-4door-coupe.webp`,
-    pros: [
-      "Sportowa sylwetka + 4 drzwi",
-      "Wygodne wsiadanie do tyłu",
-      "Elegancki kompromis",
-    ],
-    cons: [
-      "Mniej miejsca nad głową z tyłu",
-      "Mniejszy bagażnik niż sedan",
-      "Wyższa cena od sedana",
-    ],
+    id: "4door-coupe", title: "4-door Coupé", image: `${IMG}/shape-4door-coupe.webp`,
+    pros: ["Sportowa sylwetka + 4 drzwi", "Wygodne wsiadanie do tyłu", "Elegancki kompromis"],
+    cons: ["Mniej miejsca nad głową z tyłu", "Mniejszy bagażnik niż sedan", "Wyższa cena od sedana"],
   },
   {
-    id: "sport-sedan",
-    title: "Sedan sportowy",
-    image: `${IMG}/shape-sport-sedan.webp`,
-    pros: [
-      "4 drzwi i pełne 5 miejsc",
-      "Duży bagażnik",
-      "Sportowy charakter w praktycznym nadwoziu",
-    ],
-    cons: [
-      "Cięższy od coupé – gorsze prowadzenie",
-      "Mniej wyrazisty wygląd",
-      "Wyższe spalanie niż zwykły sedan",
-    ],
+    id: "sport-sedan", title: "Sedan sportowy", image: `${IMG}/shape-sport-sedan.webp`,
+    pros: ["4 drzwi i pełne 5 miejsc", "Duży bagażnik", "Sportowy charakter w praktycznym nadwoziu"],
+    cons: ["Cięższy od coupé – gorsze prowadzenie", "Mniej wyrazisty wygląd", "Wyższe spalanie niż zwykły sedan"],
   },
   {
-    id: "sport-crossover",
-    title: "Crossover sportowy",
-    image: `${IMG}/shape-sport-crossover.webp`,
-    pros: [
-      "Wyższa pozycja + sportowe osiągi",
-      "Dobra widoczność i przestronność",
-      "Modny segment – duży wybór",
-    ],
-    cons: [
-      "Najgorsze prowadzenie z opcji sportowych",
-      "Wysokie spalanie",
-      "Wysoki środek ciężkości",
-    ],
+    id: "sport-crossover", title: "Crossover sportowy", image: `${IMG}/shape-sport-crossover.webp`,
+    pros: ["Wyższa pozycja + sportowe osiągi", "Dobra widoczność i przestronność", "Modny segment – duży wybór"],
+    cons: ["Najgorsze prowadzenie z opcji sportowych", "Wysokie spalanie", "Wysoki środek ciężkości"],
   },
 ];
 
 const SHAPES_CROSSOVER_SUV: ShapeOption[] = [
   {
-    id: "standard",
-    title: "Zwykły",
-    image: `${IMG}/shape-standard.webp`,
-    pros: [
-      "Więcej miejsca w bagażniku",
-      "Lepsza widoczność do tyłu",
-      "Większy wybór modeli",
-    ],
-    cons: [
-      "Mniej dynamiczny wygląd",
-    ],
+    id: "standard", title: "Zwykły", image: `${IMG}/shape-standard.webp`,
+    pros: ["Więcej miejsca w bagażniku", "Lepsza widoczność do tyłu", "Większy wybór modeli"],
+    cons: ["Mniej dynamiczny wygląd"],
   },
   {
-    id: "coupe",
-    title: "Coupé (ścięty tył)",
-    image: `${IMG}/shape-coupe.avif`,
-    pros: [
-      "Sportowa sylwetka",
-      "Lepsza aerodynamika",
-      "Wyróżnia się na drodze",
-    ],
-    cons: [
-      "Mniejszy bagażnik",
-      "Gorsza widoczność do tyłu",
-      "Wyższa cena",
-    ],
+    id: "coupe", title: "Coupé (ścięty tył)", image: `${IMG}/shape-coupe.avif`,
+    pros: ["Sportowa sylwetka", "Lepsza aerodynamika", "Wyróżnia się na drodze"],
+    cons: ["Mniejszy bagażnik", "Gorsza widoczność do tyłu", "Wyższa cena"],
   },
 ];
 
 const SHAPES_TERENOWY: ShapeOption[] = [
   {
-    id: "standard",
-    title: "Zwykły",
-    image: `${IMG}/shape-terenowy-standard.avif`,
-    pros: [
-      "Zamknięte nadwozie – ochrona bagażu",
-      "Komfort pasażerów z tyłu",
-      "Lepsze wyciszenie kabiny",
-    ],
-    cons: [
-      "Mniejsza ładowność niż pick-up",
-    ],
+    id: "standard", title: "Zwykły", image: `${IMG}/shape-terenowy-standard.avif`,
+    pros: ["Zamknięte nadwozie – ochrona bagażu", "Komfort pasażerów z tyłu", "Lepsze wyciszenie kabiny"],
+    cons: ["Mniejsza ładowność niż pick-up"],
   },
   {
-    id: "pickup",
-    title: "Pick-up",
-    image: `${IMG}/shape-pickup.webp`,
-    pros: [
-      "Otwarta skrzynia ładunkowa",
-      "Ogromna ładowność",
-      "Idealny do ciężkiej pracy",
-    ],
-    cons: [
-      "Bagaż narażony na pogodę",
-      "Bardzo duże gabaryty",
-      "Wysokie spalanie",
-    ],
+    id: "pickup", title: "Pick-up", image: `${IMG}/shape-pickup.webp`,
+    pros: ["Otwarta skrzynia ładunkowa", "Ogromna ładowność", "Idealny do ciężkiej pracy"],
+    cons: ["Bagaż narażony na pogodę", "Bardzo duże gabaryty", "Wysokie spalanie"],
   },
 ];
 
@@ -797,154 +424,13 @@ function getBodyShapes(bodyStyle: BodyStyle | null): ShapeOption[] {
   }
 }
 
-/* ──────────────── otomoto link builder ──────────────── */
-
-function getOtomotoSegments(shape: BodyShape, seg: Segment): string[] {
-  switch (shape) {
-    case "hatchback":
-      return seg <= "B" ? ["seg-city-car"] : ["seg-compact"];
-    case "sedan":
-    case "4door-coupe":
-    case "sport-sedan":
-      return ["seg-sedan"];
-    case "kombi":
-      return ["seg-combi"];
-    case "liftback":
-      return ["seg-sedan", "seg-compact"];
-    case "coupe-2":
-    case "coupe-2plus2":
-      return ["seg-coupe"];
-    case "roadster-2":
-    case "cabriolet-2plus2":
-      return ["seg-cabrio"];
-    case "hot-hatch":
-      return ["seg-compact"];
-    case "sport-crossover":
-    case "standard":
-    case "coupe":
-      return ["seg-suv"];
-    case "pickup":
-      return ["seg-suv"];
-    default:
-      return [];
-  }
-}
-
-// liczba drzwi per nadwozie
-function getOtomotoDoors(shape: BodyShape): number[] {
-  switch (shape) {
-    case "coupe-2":
-    case "coupe-2plus2":
-      return [2, 3]; // 2-drzwiowe + 3 (z klapą)
-    case "roadster-2":
-    case "cabriolet-2plus2":
-      return [2];
-    case "pickup":
-      return [4]; // 4-drzwiowe pickupy
-    default:
-      return [4, 5];
-  }
-}
-
-const OTOMOTO_STYLE_SEGMENTS: Partial<Record<BodyStyle, string[]>> = {
-  van: ["seg-minivan"],
-};
-
-function buildOtomotoUrl(a: Answers, hp: number, seg: Segment): string {
-  // segmenty otomoto
-  const segs = new Set<string>();
-  if (a.bodyShapes.length > 0) {
-    for (const shape of a.bodyShapes) {
-      for (const s of getOtomotoSegments(shape, seg)) segs.add(s);
-    }
-  } else if (a.bodyStyle && OTOMOTO_STYLE_SEGMENTS[a.bodyStyle]) {
-    for (const s of OTOMOTO_STYLE_SEGMENTS[a.bodyStyle]!) segs.add(s);
-  }
-
-  const segPath = segs.size > 0 ? [...segs].join("--") : "";
-  const base = `https://www.otomoto.pl/osobowe${segPath ? "/" + segPath : ""}`;
-
-  const params = new URLSearchParams();
-
-  // moc silnika: ±20%
-  const hpFrom = Math.round(hp * 0.8);
-  const hpTo = Math.round(hp * 1.2);
-  params.set("search[filter_float_engine_power:from]", String(hpFrom));
-  params.set("search[filter_float_engine_power:to]", String(hpTo));
-
-  // liczba miejsc: wybrana lub wyższa
-  const seatValues = a.bodyStyle === "van"
-    ? Array.from({ length: 10 - a.passengers }, (_, i) => a.passengers + i)
-    : a.passengers <= 2
-      ? [2, 4, 5]
-      : Array.from({ length: 10 - a.passengers }, (_, i) => a.passengers + i);
-  seatValues.forEach((v, i) => {
-    params.set(`search[filter_float_nr_seats][${i}]`, String(v));
-  });
-
-  // liczba drzwi
-  const doors = new Set<number>();
-  if (a.bodyShapes.length > 0) {
-    for (const shape of a.bodyShapes) {
-      for (const d of getOtomotoDoors(shape)) doors.add(d);
-    }
-  } else {
-    doors.add(4);
-    doors.add(5);
-  }
-  [...doors].forEach((d, i) => {
-    params.set(`search[filter_enum_door_count][${i}]`, String(d));
-  });
-
-  // SUV / terenowy – wyłącznie napęd 4x4
-  if (a.bodyStyle === "suv" || a.bodyStyle === "terenowy") {
-    params.set("search[filter_enum_transmission][0]", "all-wheel-auto");
-    params.set("search[filter_enum_transmission][1]", "all-wheel-lock");
-    params.set("search[filter_enum_transmission][2]", "all-wheel-permanent");
-  }
-
-  params.set("search[advanced_search_expanded]", "true");
-
-  return `${base}?${params.toString()}`;
-}
-
-/* ──────────────── auto-selection ──────────────── */
-
-function getRecommendedShapes(style: BodyStyle | null, a: Answers): BodyShape[] {
-  switch (style) {
-    case "sedan": {
-      if (a.luggageFreq > 60 || a.foldSeats) return ["kombi"];
-      if (a.luggageFreq > 30) return ["liftback", "kombi"];
-      return ["hatchback", "sedan"];
-    }
-    case "sportowy": {
-      // luggageFreq reused as "funkcjonalność" slider 0-100
-      if (a.luggageFreq <= 25) return ["coupe-2", "roadster-2"];
-      if (a.luggageFreq <= 55) return ["coupe-2plus2", "cabriolet-2plus2"];
-      if (a.luggageFreq <= 75) return ["4door-coupe", "sport-sedan"];
-      return ["hot-hatch", "sport-crossover"];
-    }
-    case "crossover":
-    case "suv":
-      return ["standard"];
-    case "terenowy":
-      return ["standard"];
-    default:
-      return [];
-  }
-}
-
-const SHAPE_RELEVANT_KEYS: (keyof Answers)[] = [
-  "luggageFreq", "foldSeats",
-];
-
-/* ──────────────── steps ──────────────── */
+/* ──────────────── steps config ──────────────── */
 
 function getStepConfig(bodyStyle: BodyStyle | null) {
   const hasShapeStep = bodyStyle !== "van";
   const titles = hasShapeStep
-    ? ["Typ samochodu", "Forma nadwozia", "Segment", "Moc silnika"]
-    : ["Typ samochodu", "Segment", "Moc silnika"];
+    ? ["Typ samochodu", "Forma nadwozia", "Budżet i preferencje", "Wyniki"]
+    : ["Typ samochodu", "Budżet i preferencje", "Wyniki"];
   return { titles, hasShapeStep };
 }
 
@@ -953,34 +439,23 @@ function getStepConfig(bodyStyle: BodyStyle | null) {
 export default function CarConfigurator() {
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Answers>(INITIAL);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [results, setResults] = useState<RecommendResult | null>(null);
+  const [expandedCategory, setExpandedCategory] = useState<number>(0);
 
   const { titles: stepTitles, hasShapeStep } = getStepConfig(answers.bodyStyle);
   const lastStep = stepTitles.length - 1;
-
-  const suggestedSegment = useMemo(() => calcSegment(answers), [answers]);
-  const segment = answers.segmentOverride
-    ? clampSegment(answers.segmentOverride, answers.bodyStyle, answers.bodyShapes)
-    : suggestedSegment;
-  const suggestedHP = useMemo(
-    () => calcSuggestedHP(answers, segment),
-    [answers, segment],
-  );
-  const displayHP = answers.powerOverride ?? suggestedHP;
 
   const set = <K extends keyof Answers>(key: K, val: Answers[K]) =>
     setAnswers((prev) => {
       const next = { ...prev, [key]: val };
       if (key === "bodyStyle" && val !== prev.bodyStyle) {
-        // clamp passengers when switching away from van
-        if (val !== "van" && next.passengers > 5) {
-          next.passengers = 5;
-        }
-        // reset shape-related state when type changes
+        if (val !== "van" && next.passengers > 5) next.passengers = 5;
         next.bodyShapes = [];
         next.luggageFreq = 30;
         next.foldSeats = false;
       }
-      // auto-select shapes when relevant questions change
       if (SHAPE_RELEVANT_KEYS.includes(key as keyof Answers) || (key === "bodyStyle" && val !== prev.bodyStyle)) {
         next.bodyShapes = getRecommendedShapes(next.bodyStyle, next);
       }
@@ -993,140 +468,43 @@ export default function CarConfigurator() {
     return true;
   };
 
-  /* ──── render helpers ──── */
+  const fetchRecommendations = async () => {
+    setLoading(true);
+    setError("");
+    setResults(null);
+    try {
+      const res = await fetch("/api/car-recommend", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          budget: answers.budget,
+          bodyStyle: answers.bodyStyle,
+          bodyShapes: answers.bodyShapes,
+          passengers: answers.passengers,
+          longTrips: answers.longTrips,
+          height: answers.height,
+          additionalInfo: answers.additionalInfo,
+        }),
+      });
+      if (!res.ok) {
+        setError("Nie udało się pobrać rekomendacji");
+        return;
+      }
+      const data: RecommendResult = await res.json();
+      setResults(data);
+      setExpandedCategory(0);
+    } catch {
+      setError("Nie udało się połączyć z serwerem");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const fmt = (n: number) => n.toLocaleString("pl-PL");
+
+  /* ──── render: step 0 = body style ──── */
 
   const renderStep0 = () => (
-    <div className="space-y-10">
-      {/* info box */}
-      <div className="rounded-2xl bg-accent/5 dark:bg-accent/10 border border-accent/20 p-6">
-        <h3 className="text-sm font-semibold text-accent mb-2">
-          Dlaczego mniejszy samochód to zwykle lepszy wybór?
-        </h3>
-        <ul className="space-y-1.5 text-sm text-gray-600 dark:text-gray-400">
-          <li>
-            <span className="font-medium text-gray-800 dark:text-gray-200">Niższa cena</span>{" "}
-            – zarówno zakupu jak i ubezpieczenia
-          </li>
-          <li>
-            <span className="font-medium text-gray-800 dark:text-gray-200">Mniejsze spalanie</span>{" "}
-            – lżejszy samochód = mniej paliwa
-          </li>
-          <li>
-            <span className="font-medium text-gray-800 dark:text-gray-200">Lepsze prowadzenie</span>{" "}
-            – mniejsza masa = szybsze reakcje, krótsze hamowanie
-          </li>
-          <li>
-            <span className="font-medium text-gray-800 dark:text-gray-200">Łatwiejsze parkowanie</span>{" "}
-            – w mieście to bezcenne
-          </li>
-          <li>
-            <span className="font-medium text-gray-800 dark:text-gray-200">Szybszy</span>{" "}
-            – przy tej samej mocy lżejszy samochód przyspiesza lepiej
-          </li>
-        </ul>
-        <p className="mt-3 text-xs text-gray-500 dark:text-gray-500 italic">
-          Zasada ceteris paribus – przy porównywalnym wyposażeniu i mocy,
-          mniejszy samochód wygrywa w niemal każdej kategorii. Wybieraj
-          większy tylko wtedy, gdy naprawdę go potrzebujesz.
-        </p>
-      </div>
-
-      {/* sliders */}
-      <div className="space-y-8">
-        <Slider
-          label="Twój wzrost"
-          value={answers.height}
-          min={150}
-          max={210}
-          step={1}
-          unit="cm"
-          hint="Wyższe osoby mogą potrzebować większego segmentu dla komfortu."
-          onChange={(v) => set("height", v)}
-        />
-
-        <Slider
-          label="Typowa liczba pasażerów (z kierowcą)"
-          value={answers.passengers}
-          min={1}
-          max={answers.bodyStyle === "van" ? 8 : 5}
-          step={1}
-          unit="os."
-          hint="Ile osób jednocześnie przewozisz najczęściej?"
-          onChange={(v) => set("passengers", v)}
-        />
-
-        <Slider
-          label="Rodzaj tras"
-          value={answers.longTrips}
-          min={0}
-          max={100}
-          step={5}
-          onChange={(v) => set("longTrips", v)}
-          labels={{ left: "🏙️ Głównie miasto", right: "🛣️ Głównie trasa" }}
-          hint="Na trasie liczy się komfort i stabilność – to wymaga większego auta."
-        />
-      </div>
-
-      {/* segment result + override */}
-      <div className="rounded-2xl border border-gray-200 dark:border-gray-700 p-6 space-y-4">
-        <div className="text-center">
-          <p className="text-xs uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-1">
-            {(answers.bodyShapes.includes("coupe-2") || answers.bodyShapes.includes("roadster-2")) ? "Sugerowana ilość miejsca" : "Sugerowany segment"}
-          </p>
-          <p className="text-2xl font-bold text-accent">{getSegmentName(suggestedSegment, answers.bodyStyle, answers.bodyShapes)}</p>
-        </div>
-
-        <div className="space-y-2">
-          <p className="text-xs text-gray-500 dark:text-gray-400 text-center">
-            {(answers.bodyShapes.includes("coupe-2") || answers.bodyShapes.includes("roadster-2"))
-              ? "Możesz wybrać inną opcję, jeśli nasza sugestia nie pasuje:"
-              : "Możesz wybrać inny segment, jeśli nasza sugestia nie pasuje:"}
-          </p>
-          <div className="flex flex-wrap justify-center gap-2">
-            {SEGMENTS_ORDERED.filter((s) => {
-              const range = getSegmentRange(answers.bodyStyle, answers.bodyShapes);
-              const idx = SEGMENTS_ORDERED.indexOf(s);
-              return idx >= SEGMENTS_ORDERED.indexOf(range.min) && idx <= SEGMENTS_ORDERED.indexOf(range.max);
-            }).map((s) => {
-              const isActive = segment === s;
-              const isSuggested = suggestedSegment === s && !answers.segmentOverride;
-              return (
-                <button
-                  key={s}
-                  type="button"
-                  onClick={() =>
-                    set("segmentOverride", s === suggestedSegment ? null : s)
-                  }
-                  className={`px-4 py-2 rounded-xl text-sm font-medium border-2 transition-all ${
-                    isActive
-                      ? "border-accent bg-accent/10 text-accent"
-                      : "border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-gray-300 dark:hover:border-gray-600"
-                  } ${isSuggested ? "ring-2 ring-accent/30" : ""}`}
-                >
-                  {s}
-                </button>
-              );
-            })}
-          </div>
-          {answers.segmentOverride && (
-            <p className="text-center">
-              <button
-                type="button"
-                onClick={() => set("segmentOverride", null)}
-                className="text-xs text-accent hover:underline"
-              >
-                {(answers.bodyShapes.includes("coupe-2") || answers.bodyShapes.includes("roadster-2"))
-                  ? `Przywróć sugerowaną opcję (${suggestedSegment})`
-                  : `Przywróć sugerowany segment (${suggestedSegment})`}
-              </button>
-            </p>
-          )}
-        </div>
-      </div>
-    </div>
-  );
-
-  const renderStep1 = () => (
     <div className="space-y-8">
       <div className="rounded-2xl bg-accent/5 dark:bg-accent/10 border border-accent/20 p-6">
         <h3 className="text-sm font-semibold text-accent mb-2">
@@ -1134,8 +512,7 @@ export default function CarConfigurator() {
         </h3>
         <p className="text-sm text-gray-600 dark:text-gray-400">
           Każdy typ ma swoje zalety i wady. Kliknij kartę, która najlepiej
-          odpowiada Twoim potrzebom. Pamiętaj – im niżej osadzony samochód,
-          tym lepiej się prowadzi na asfalcie.
+          odpowiada Twoim potrzebom.
         </p>
       </div>
       <CardSelector<BodyStyle>
@@ -1146,27 +523,23 @@ export default function CarConfigurator() {
     </div>
   );
 
-  const renderStep2 = () => {
-    const style = answers.bodyStyle;
+  /* ──── render: step 1 = body shape ──── */
 
+  const renderStep1 = () => {
+    const style = answers.bodyStyle;
     return (
       <div className="space-y-8">
-        {/* ── Osobowy ── */}
         {style === "sedan" && (
           <>
             <div className="rounded-2xl bg-accent/5 dark:bg-accent/10 border border-accent/20 p-6">
               <h3 className="text-sm font-semibold text-accent mb-2">Jaka forma nadwozia?</h3>
               <p className="text-sm text-gray-600 dark:text-gray-400">
                 Odpowiedz na pytania poniżej, a automatycznie podpowiemy najlepsze nadwozia.
-                Możesz też ręcznie zaznaczyć lub odznaczyć dowolne opcje.
               </p>
             </div>
             <Slider
               label="Jak często przewozisz dużo bagaży?"
-              value={answers.luggageFreq}
-              min={0}
-              max={100}
-              step={5}
+              value={answers.luggageFreq} min={0} max={100} step={5}
               onChange={(v) => set("luggageFreq", v)}
               labels={{ left: "📱 Prawie nigdy", right: "📦 Bardzo często" }}
             />
@@ -1174,9 +547,7 @@ export default function CarConfigurator() {
               <button
                 type="button"
                 onClick={() => set("foldSeats", !answers.foldSeats)}
-                className={`relative w-12 h-7 rounded-full transition-colors ${
-                  answers.foldSeats ? "bg-accent" : "bg-gray-300 dark:bg-gray-600"
-                }`}
+                className={`relative w-12 h-7 rounded-full transition-colors ${answers.foldSeats ? "bg-accent" : "bg-gray-300 dark:bg-gray-600"}`}
               >
                 <span className={`absolute top-0.5 left-0.5 w-6 h-6 rounded-full bg-white shadow transition-transform ${answers.foldSeats ? "translate-x-5" : ""}`} />
               </button>
@@ -1187,29 +558,23 @@ export default function CarConfigurator() {
           </>
         )}
 
-        {/* ── Sportowy ── */}
         {style === "sportowy" && (
           <>
             <div className="rounded-2xl bg-accent/5 dark:bg-accent/10 border border-accent/20 p-6">
               <h3 className="text-sm font-semibold text-accent mb-2">Jaki rodzaj nadwozia sportowego?</h3>
               <p className="text-sm text-gray-600 dark:text-gray-400">
                 Przesuń suwak, żeby określić ile funkcjonalności potrzebujesz.
-                Możesz też ręcznie zaznaczyć kilka opcji.
               </p>
             </div>
             <Slider
               label="Ile funkcjonalności potrzebujesz?"
-              value={answers.luggageFreq}
-              min={0}
-              max={100}
-              step={5}
+              value={answers.luggageFreq} min={0} max={100} step={5}
               onChange={(v) => set("luggageFreq", v)}
               labels={{ left: "🏎️ Minimum – czysta jazda", right: "🧳 Maximum – codzienny samochód" }}
             />
           </>
         )}
 
-        {/* ── Crossover / SUV / Terenowy ── */}
         {(style === "crossover" || style === "suv" || style === "terenowy") && (
           <div className="rounded-2xl bg-accent/5 dark:bg-accent/10 border border-accent/20 p-6">
             <h3 className="text-sm font-semibold text-accent mb-2">
@@ -1226,8 +591,7 @@ export default function CarConfigurator() {
           value={answers.bodyShapes}
           multiple
           onChange={(v) =>
-            set(
-              "bodyShapes",
+            set("bodyShapes",
               answers.bodyShapes.includes(v)
                 ? answers.bodyShapes.filter((s) => s !== v)
                 : [...answers.bodyShapes, v],
@@ -1238,150 +602,217 @@ export default function CarConfigurator() {
     );
   };
 
-  const renderStep3 = () => {
-    return (
+  /* ──── render: step 2 = budget & preferences ──── */
+
+  const renderPreferences = () => (
+    <div className="space-y-10">
+      <div className="rounded-2xl bg-accent/5 dark:bg-accent/10 border border-accent/20 p-6">
+        <h3 className="text-sm font-semibold text-accent mb-2">
+          Budżet i preferencje
+        </h3>
+        <p className="text-sm text-gray-600 dark:text-gray-400">
+          Na tej podstawie AI dobierze konkretne modele samochodów
+          w różnych kategoriach wiekowych — od prawie nowych po starsze, sprawdzone egzemplarze.
+        </p>
+      </div>
+
+      <LogSlider
+        label="Budżet"
+        value={answers.budget}
+        min={5000}
+        max={500000}
+        unit="PLN"
+        onChange={(v) => set("budget", v)}
+      />
+
       <div className="space-y-8">
-        <div className="rounded-2xl bg-accent/5 dark:bg-accent/10 border border-accent/20 p-6">
-          <h3 className="text-sm font-semibold text-accent mb-2">
-            Ile mocy naprawdę potrzebujesz?
-          </h3>
-          <p className="text-sm text-gray-600 dark:text-gray-400">
-            Moc silnika powinna wynikać z Twoich realnych potrzeb – nie
-            marketingowych haseł. Ustaw maksymalną prędkość, z jaką
-            regularnie jeździsz, a przeliczymy sugerowaną moc. Możesz ją
-            potem skorygować ręcznie.
-          </p>
-        </div>
-
         <Slider
-          label="Maksymalna prędkość, z jaką jeździsz regularnie"
-          value={answers.maxSpeed}
-          min={100}
-          max={250}
-          step={10}
-          unit="km/h"
-          onChange={(v) => {
-            set("maxSpeed", v);
-            set("powerOverride", null);
-          }}
-          labels={{
-            left: "🏙️ 80 km/h – miasto",
-            right: "🏁 240 km/h – autostrada DE",
-          }}
+          label="Twój wzrost"
+          value={answers.height} min={150} max={210} step={1} unit="cm"
+          hint="Wyższe osoby mogą potrzebować większego samochodu dla komfortu."
+          onChange={(v) => set("height", v)}
         />
 
-        {/* suggested HP */}
-        <div className="rounded-2xl border border-gray-200 dark:border-gray-700 p-6 text-center space-y-1">
-          <p className="text-xs uppercase tracking-widest text-gray-400 dark:text-gray-500">
-            Sugerowana moc
-          </p>
-          <p className="text-3xl font-bold text-accent tabular-nums">
-            {suggestedHP} KM
-          </p>
-          <p className="text-xs text-gray-500 dark:text-gray-500">
-            Dla segmentu {segment}, {BODY_STYLES.find((b) => b.id === answers.bodyStyle)?.title ?? "—"},{" "}
-            {answers.maxSpeed} km/h
-          </p>
-        </div>
-
         <Slider
-          label="Twoja korekta mocy"
-          value={displayHP}
-          min={50}
-          max={700}
-          step={5}
-          unit="KM"
-          onChange={(v) => set("powerOverride", v)}
-          hint="Przesuń, jeśli chcesz więcej lub mniej mocy niż sugerujemy."
+          label="Typowa liczba pasażerów (z kierowcą)"
+          value={answers.passengers}
+          min={1} max={answers.bodyStyle === "van" ? 8 : 5} step={1} unit="os."
+          hint="Ile osób jednocześnie przewozisz najczęściej?"
+          onChange={(v) => set("passengers", v)}
         />
 
-        {/* final summary */}
-        <div className="rounded-2xl border-2 border-accent/30 bg-accent/5 dark:bg-accent/10 p-8 space-y-4">
-          <h3 className="text-lg font-bold text-gray-900 dark:text-white text-center">
-            Twój idealny samochód
-          </h3>
-          <div className="grid sm:grid-cols-2 gap-4 text-sm">
-            <SummaryRow
-              label={(answers.bodyShapes.includes("coupe-2") || answers.bodyShapes.includes("roadster-2")) ? "Ilość miejsca" : "Segment"}
-              value={getSegmentName(segment, answers.bodyStyle, answers.bodyShapes)}
-            />
-            <SummaryRow
-              label="Typ samochodu"
-              value={
-                BODY_STYLES.find((b) => b.id === answers.bodyStyle)?.title ??
-                "—"
-              }
-            />
-            {hasShapeStep && (
-              <SummaryRow
-                label="Forma nadwozia"
-                value={
-                  answers.bodyShapes.length > 0
-                    ? getBodyShapes(answers.bodyStyle)
-                        .filter((b) => answers.bodyShapes.includes(b.id))
-                        .map((b) => b.title)
-                        .join(", ")
-                    : "—"
-                }
-              />
-            )}
-            <SummaryRow label="Moc silnika" value={`${displayHP} KM`} />
-            <SummaryRow
-              label="Maks. prędkość"
-              value={`${answers.maxSpeed} km/h`}
-            />
-            <SummaryRow
-              label="Pasażerowie"
-              value={`${answers.passengers} os.`}
-            />
-          </div>
+        <Slider
+          label="Rodzaj tras"
+          value={answers.longTrips} min={0} max={100} step={5}
+          onChange={(v) => set("longTrips", v)}
+          labels={{ left: "🏙️ Głównie miasto", right: "🛣️ Głównie trasa" }}
+          hint="Na trasie liczy się komfort i stabilność."
+        />
+      </div>
 
-          <a
-            href={buildOtomotoUrl(answers, displayHP, segment)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 w-full mt-4 px-6 py-3 rounded-xl bg-accent text-white font-semibold text-sm hover:bg-accent/90 transition-colors"
-          >
-            Szukaj na Otomoto
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="shrink-0">
-              <path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </a>
-          <p className="text-[11px] text-gray-400 dark:text-gray-600 text-center">
-            Otomoto otworzy się w nowej karcie z filtrami dopasowanymi do Twoich wyborów
-          </p>
+      <div className="space-y-2">
+        <label className="text-sm font-medium text-gray-700 dark:text-gray-300">
+          Dodatkowe wymagania <span className="text-gray-400 font-normal">(opcjonalnie)</span>
+        </label>
+        <textarea
+          value={answers.additionalInfo}
+          onChange={(e) => set("additionalInfo", e.target.value)}
+          placeholder="np. automat, napęd 4x4, niskie spalanie, hybryda, dużo mocy, niezawodny silnik..."
+          rows={3}
+          className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-sm text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent resize-none"
+        />
+      </div>
+
+      {/* Summary before search */}
+      <div className="rounded-2xl border border-gray-200 dark:border-gray-700 p-6 space-y-3">
+        <h3 className="text-sm font-bold text-gray-900 dark:text-white">Twoje preferencje</h3>
+        <div className="grid sm:grid-cols-2 gap-3 text-sm">
+          <SummaryRow label="Budżet" value={`${fmt(answers.budget)} PLN`} />
+          <SummaryRow label="Typ" value={BODY_STYLES.find((b) => b.id === answers.bodyStyle)?.title ?? "—"} />
+          {answers.bodyShapes.length > 0 && (
+            <SummaryRow
+              label="Nadwozie"
+              value={getBodyShapes(answers.bodyStyle)
+                .filter((b) => answers.bodyShapes.includes(b.id))
+                .map((b) => b.title).join(", ")}
+            />
+          )}
+          <SummaryRow label="Pasażerowie" value={`${answers.passengers} os.`} />
         </div>
       </div>
-    );
-  };
+    </div>
+  );
+
+  /* ──── render: step 3 = results ──── */
+
+  const renderResults = () => (
+    <div className="space-y-8">
+      {loading && (
+        <div className="flex flex-col items-center justify-center py-20 gap-4">
+          <svg className="animate-spin h-8 w-8 text-accent" viewBox="0 0 24 24" fill="none">
+            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+          </svg>
+          <p className="text-sm text-gray-500 dark:text-gray-400">AI analizuje rynek i dobiera modele...</p>
+        </div>
+      )}
+
+      {error && (
+        <div className="rounded-2xl border border-red-200 dark:border-red-800 bg-red-50 dark:bg-red-900/20 p-6 text-center">
+          <p className="text-sm text-red-600 dark:text-red-400">{error}</p>
+          <button
+            type="button"
+            onClick={fetchRecommendations}
+            className="mt-3 btn-primary text-sm"
+          >
+            Spróbuj ponownie
+          </button>
+        </div>
+      )}
+
+      {results && (
+        <>
+          <div className="rounded-2xl bg-accent/5 dark:bg-accent/10 border border-accent/20 p-6">
+            <h3 className="text-sm font-semibold text-accent mb-1">
+              Rekomendacje dla budżetu {fmt(answers.budget)} PLN
+            </h3>
+            <p className="text-sm text-gray-600 dark:text-gray-400">
+              {BODY_STYLES.find((b) => b.id === answers.bodyStyle)?.title ?? "Samochód"} — kliknij kategorię wiekową, żeby zobaczyć propozycje.
+            </p>
+          </div>
+
+          {/* Age category tabs */}
+          <div className="flex flex-wrap gap-2">
+            {results.categories.map((cat, i) => (
+              <button
+                key={i}
+                type="button"
+                onClick={() => setExpandedCategory(i)}
+                className={`px-4 py-2 rounded-xl text-sm font-medium border-2 transition-all ${
+                  expandedCategory === i
+                    ? "border-accent bg-accent/10 text-accent"
+                    : "border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-gray-300 dark:hover:border-gray-600"
+                }`}
+              >
+                {cat.ageLabel}
+              </button>
+            ))}
+          </div>
+
+          {/* Cars in selected category */}
+          {results.categories[expandedCategory] && (
+            <div className="space-y-4">
+              {results.categories[expandedCategory].cars.map((car, i) => (
+                <div
+                  key={i}
+                  className="rounded-2xl border border-gray-200 dark:border-gray-700 p-5 space-y-3 hover:border-accent/30 transition-colors"
+                >
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <h4 className="font-bold text-gray-900 dark:text-white">
+                        {car.make} {car.model}{" "}
+                        <span className="text-gray-400 font-normal text-sm">{car.generation}</span>
+                      </h4>
+                      <p className="text-sm text-gray-500 dark:text-gray-400 mt-0.5">
+                        {car.yearFrom}–{car.yearTo} · {car.engine}
+                      </p>
+                    </div>
+                    <div className="text-right shrink-0">
+                      <p className="text-sm font-semibold text-accent">
+                        {fmt(car.priceFrom)} – {fmt(car.priceTo)} PLN
+                      </p>
+                    </div>
+                  </div>
+                  <div className="grid sm:grid-cols-2 gap-2 text-xs">
+                    <div className="space-y-1">
+                      {car.pros.map((p) => (
+                        <div key={p} className="flex gap-1.5 text-emerald-600 dark:text-emerald-400">
+                          <span className="shrink-0">+</span><span>{p}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="space-y-1">
+                      {car.cons.map((c) => (
+                        <div key={c} className="flex gap-1.5 text-red-500 dark:text-red-400">
+                          <span className="shrink-0">−</span><span>{c}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </>
+      )}
+
+      {!loading && !error && !results && (
+        <div className="flex flex-col items-center justify-center py-20 gap-4">
+          <p className="text-sm text-gray-500 dark:text-gray-400">Kliknij &quot;Szukaj modeli&quot;, żeby zobaczyć rekomendacje</p>
+        </div>
+      )}
+    </div>
+  );
+
+  /* ──── step array & navigation ──── */
 
   const steps = hasShapeStep
-    ? [renderStep1, renderStep2, renderStep0, renderStep3]
-    : [renderStep1, renderStep0, renderStep3];
+    ? [renderStep0, renderStep1, renderPreferences, renderResults]
+    : [renderStep0, renderPreferences, renderResults];
 
   const bg = answers.bodyStyle ? BG_IMAGES[answers.bodyStyle] : null;
 
+  const goToResults = () => {
+    setStep(lastStep);
+    fetchRecommendations();
+  };
+
   return (
     <div className="relative max-w-3xl mx-auto">
-      {/* dynamic background – fixed to viewport, clipped to container */}
       {bg && (
         <div className="fixed inset-0 -z-10 pointer-events-none">
-          <Image
-            src={bg.light}
-            alt=""
-            fill
-            className="object-cover opacity-[0.07] dark:hidden"
-            sizes="100vw"
-            unoptimized
-          />
-          <Image
-            src={bg.dark}
-            alt=""
-            fill
-            className="object-cover opacity-0 dark:opacity-[0.12]"
-            sizes="100vw"
-            unoptimized
-          />
+          <Image src={bg.light} alt="" fill className="object-cover opacity-[0.07] dark:hidden" sizes="100vw" unoptimized />
+          <Image src={bg.dark} alt="" fill className="object-cover opacity-0 dark:opacity-[0.12]" sizes="100vw" unoptimized />
         </div>
       )}
 
@@ -1392,27 +823,20 @@ export default function CarConfigurator() {
             key={title}
             type="button"
             onClick={() => {
-              // allow going back freely, forward only if current step valid
-              if (i <= step || canNext()) setStep(i);
+              if (i <= step || canNext()) {
+                if (i === lastStep && step !== lastStep) {
+                  goToResults();
+                } else {
+                  setStep(i);
+                }
+              }
             }}
             className="flex-1 group"
           >
-            <div
-              className={`h-1.5 rounded-full mb-2 transition-colors ${
-                i <= step
-                  ? "bg-accent"
-                  : "bg-gray-200 dark:bg-gray-700"
-              }`}
-            />
-            <p
-              className={`text-xs font-medium transition-colors ${
-                i === step
-                  ? "text-accent"
-                  : i < step
-                    ? "text-gray-600 dark:text-gray-400"
-                    : "text-gray-400 dark:text-gray-600"
-              }`}
-            >
+            <div className={`h-1.5 rounded-full mb-2 transition-colors ${i <= step ? "bg-accent" : "bg-gray-200 dark:bg-gray-700"}`} />
+            <p className={`text-xs font-medium transition-colors ${
+              i === step ? "text-accent" : i < step ? "text-gray-600 dark:text-gray-400" : "text-gray-400 dark:text-gray-600"
+            }`}>
               {title}
             </p>
           </button>
@@ -1432,7 +856,7 @@ export default function CarConfigurator() {
         >
           ← Wstecz
         </button>
-        {step < lastStep ? (
+        {step < lastStep - 1 ? (
           <button
             type="button"
             onClick={() => setStep((s) => Math.min(lastStep, s + 1))}
@@ -1441,12 +865,22 @@ export default function CarConfigurator() {
           >
             Dalej →
           </button>
+        ) : step === lastStep - 1 ? (
+          <button
+            type="button"
+            onClick={goToResults}
+            disabled={!canNext()}
+            className="btn-primary disabled:opacity-30 disabled:pointer-events-none"
+          >
+            Szukaj modeli →
+          </button>
         ) : (
           <button
             type="button"
             onClick={() => {
               setStep(0);
               setAnswers(INITIAL);
+              setResults(null);
             }}
             className="btn-secondary"
           >
@@ -1463,9 +897,7 @@ export default function CarConfigurator() {
 function SummaryRow({ label, value }: { label: string; value: string }) {
   return (
     <div className="flex flex-col gap-0.5 p-3 rounded-xl bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800">
-      <span className="text-[11px] uppercase tracking-wider text-gray-400 dark:text-gray-500">
-        {label}
-      </span>
+      <span className="text-[11px] uppercase tracking-wider text-gray-400 dark:text-gray-500">{label}</span>
       <span className="font-medium text-gray-900 dark:text-white">{value}</span>
     </div>
   );
