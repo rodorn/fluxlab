@@ -771,6 +771,41 @@ function DonutChart({ segments }: { segments: { value: number; color: string; la
   );
 }
 
+/* ──────────────── variant description ──────────────── */
+
+function getVariantDesc(car: CarRecommendation, v: CarVariant, long: boolean): string {
+  const parts: string[] = [];
+
+  // Fuel-specific opening
+  switch (v.fuelType) {
+    case "benzyna":
+      parts.push(`Benzyna ${v.fuelCity}L miasto / ${v.fuelHighway}L trasa`);
+      break;
+    case "diesel":
+      parts.push(`Diesel ${v.fuelCity}L miasto / ${v.fuelHighway}L trasa — wysoki moment, oszczędny na trasie`);
+      break;
+    case "gaz":
+      parts.push(`LPG — paliwo ${FUEL_PRICES.gaz} PLN/L zamiast ${FUEL_PRICES.benzyna} PLN/L, spalanie ${v.fuelCity}L/${v.fuelHighway}L`);
+      if (v.directInjection) parts.push("wtrysk bezpośredni — spala ~10% benzyny");
+      break;
+    case "elektryczny":
+      parts.push(`Elektryczny — ${v.fuelCity} kWh/100km miasto, ${v.fuelHighway} kWh/100km trasa`);
+      break;
+  }
+
+  // Reliability
+  const brandLabel = ["", "niezawodna marka", "przeciętna niezawodność", "awaryjna marka"][car.brandReliability] ?? "";
+  const engineLabel = ["", "trwały silnik", "sprawdzony silnik", "średnia trwałość silnika", "złożony silnik", "egzotyczny silnik"][v.engineReliability] ?? "";
+  if (brandLabel && engineLabel) parts.push(`${brandLabel[0].toUpperCase()}${brandLabel.slice(1)}, ${engineLabel}`);
+
+  if (long) {
+    if (car.pros.length > 0) parts.push(car.pros.join(". "));
+    if (car.cons.length > 0) parts.push("Uwaga: " + car.cons.join("; "));
+  }
+
+  return parts.join(". ") + ".";
+}
+
 const COST_COLORS = {
   fuel: "#f59e0b",
   depreciation: "#6366f1",
@@ -1394,6 +1429,10 @@ export default function CarConfigurator() {
                         </span>
                       </div>
 
+                      <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed mb-1">
+                        {getVariantDesc(car, variant, true)}
+                      </p>
+
                       <div className="flex gap-6 items-center">
                         <DonutChart segments={costSegments} />
                         <div className="flex-1 space-y-3">
@@ -1553,23 +1592,10 @@ export default function CarConfigurator() {
                       </div>
                     )}
 
-                    {/* Pros/cons */}
-                    <div className="grid sm:grid-cols-2 gap-2 text-xs">
-                      <div className="space-y-1">
-                        {car.pros.map((p) => (
-                          <div key={p} className="flex gap-1.5 text-emerald-600 dark:text-emerald-400">
-                            <span className="shrink-0">+</span><span>{p}</span>
-                          </div>
-                        ))}
-                      </div>
-                      <div className="space-y-1">
-                        {car.cons.map((c) => (
-                          <div key={c} className="flex gap-1.5 text-red-500 dark:text-red-400">
-                            <span className="shrink-0">−</span><span>{c}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
+                    {/* Description */}
+                    <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+                      {getVariantDesc(car, v, false)}
+                    </p>
                   </div>
                 );
               })}
