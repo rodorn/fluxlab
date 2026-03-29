@@ -895,8 +895,16 @@ export default function TaxCalculator() {
                           <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="3" strokeDasharray="31.4 31.4" /></svg>
                         </span>
                       )}
+                      {vatMode !== "zwolniony" && (
+                        <div className="flex rounded-md overflow-hidden border border-gray-300 dark:border-gray-600 flex-shrink-0">
+                          <button type="button" onClick={() => updateSource(src.id, { brutto: false })}
+                            className={`px-2 py-0.5 text-[10px] font-bold transition ${!src.brutto ? "bg-accent text-white" : "bg-white dark:bg-gray-800 text-gray-400"}`}>N</button>
+                          <button type="button" onClick={() => updateSource(src.id, { brutto: true })}
+                            className={`px-2 py-0.5 text-[10px] font-bold transition ${src.brutto ? "bg-accent text-white" : "bg-white dark:bg-gray-800 text-gray-400"}`}>B</button>
+                        </div>
+                      )}
                       {ryczaltSources.length > 1 && (
-                        <button type="button" onClick={() => removeSource(src.id)} className="text-gray-400 hover:text-red-500 transition" title="Usuń">
+                        <button type="button" onClick={() => removeSource(src.id)} className="text-gray-400 hover:text-red-500 transition flex-shrink-0" title="Usuń">
                           <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
                         </button>
                       )}
@@ -904,19 +912,9 @@ export default function TaxCalculator() {
                     {aiRateHint?.id === src.id && (
                       <p className="text-[11px] text-accent/80 leading-snug px-0.5">AI: {aiRateHint.text}</p>
                     )}
-                    <div className="flex items-end gap-3">
-                      <div className="flex-1">
-                        <div className="flex items-center justify-between mb-1">
-                          <label className="text-xs text-gray-500">Kwota/mies.</label>
-                          {vatMode !== "zwolniony" && (
-                            <div className="flex rounded-md overflow-hidden border border-gray-300 dark:border-gray-600">
-                              <button type="button" onClick={() => updateSource(src.id, { brutto: false })}
-                                className={`px-2 py-0.5 text-[10px] font-bold transition ${!src.brutto ? "bg-accent text-white" : "bg-white dark:bg-gray-800 text-gray-400"}`}>N</button>
-                              <button type="button" onClick={() => updateSource(src.id, { brutto: true })}
-                                className={`px-2 py-0.5 text-[10px] font-bold transition ${src.brutto ? "bg-accent text-white" : "bg-white dark:bg-gray-800 text-gray-400"}`}>B</button>
-                            </div>
-                          )}
-                        </div>
+                    <div className="grid grid-cols-2 gap-3">
+                      <div>
+                        <label className="block text-xs text-gray-500 mb-1">Kwota/mies.</label>
                         <input type="number" value={src.amount || ""} min={0} step={500}
                           onChange={(e) => updateSource(src.id, { amount: Number(e.target.value) || 0 })}
                           onBlur={(e) => { if (!e.target.value) updateSource(src.id, { amount: 0 }); }}
@@ -925,7 +923,7 @@ export default function TaxCalculator() {
                           <p className="mt-1 text-xs text-gray-400">Netto: {pln(srcNetto)}</p>
                         )}
                       </div>
-                      <div className="flex-1">
+                      <div>
                         <label className="block text-xs text-gray-500 mb-1">Stawka ryczałtu</label>
                         <select
                           value={src.isNajem ? "najem" : String(src.rate)}
