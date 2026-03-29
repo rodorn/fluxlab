@@ -327,7 +327,7 @@ function calculate(p: {
       netAfterTax: annRevBrutto - totalWithVat,
       disposable: annRevBrutto - totalWithVat - annBizCosts,
       privateSavings: privSav,
-      effectiveRate: annRevBrutto > 0 ? totalWithVat / annRevBrutto : 0,
+      effectiveRate: base > 0 ? totalWithVat / base : 0,
     };
   };
 
@@ -467,23 +467,26 @@ const CHART_COLORS = [
   "#94a3b8", // slate – koszty firmowe
 ];
 
-function DonutChart({ slices }: { slices: { label: string; value: number; color: string }[] }) {
+function DonutChart({ slices, viewMode }: { slices: { label: string; value: number; color: string }[]; viewMode: ViewMode }) {
+  const [activeIdx, setActiveIdx] = useState<number | null>(null);
   const total = slices.reduce((s, sl) => s + sl.value, 0);
   if (total <= 0) return null;
 
+  const d = viewMode === "monthly" ? 12 : 1;
+  const sfx = viewMode === "monthly" ? "/mies." : "/rok";
   const size = 120;
   const cx = size / 2;
   const cy = size / 2;
   const outerR = 52;
   const innerR = 34;
 
-  let startAngle = -90; // start from top
-  const paths: { d: string; color: string; label: string; pct: number }[] = [];
+  let startAngle = -90;
+  const paths: { d: string; color: string; label: string; pct: number; value: number }[] = [];
 
   for (const sl of slices) {
     if (sl.value <= 0) continue;
-    const pct = sl.value / total;
-    const sweep = pct * 360;
+    const pctVal = sl.value / total;
+    const sweep = pctVal * 360;
     const endAngle = startAngle + sweep;
     const largeArc = sweep > 180 ? 1 : 0;
 
@@ -497,7 +500,7 @@ function DonutChart({ slices }: { slices: { label: string; value: number; color:
     const x2i = cx + innerR * Math.cos(toRad(startAngle));
     const y2i = cy + innerR * Math.sin(toRad(startAngle));
 
-    const d = [
+    const pathD = [
       `M ${x1o} ${y1o}`,
       `A ${outerR} ${outerR} 0 ${largeArc} 1 ${x2o} ${y2o}`,
       `L ${x1i} ${y1i}`,
@@ -505,23 +508,49 @@ function DonutChart({ slices }: { slices: { label: string; value: number; color:
       "Z",
     ].join(" ");
 
-    paths.push({ d, color: sl.color, label: sl.label, pct: pct * 100 });
+    paths.push({ d: pathD, color: sl.color, label: sl.label, pct: pctVal * 100, value: sl.value });
     startAngle = endAngle;
   }
 
+  const active = activeIdx !== null ? paths[activeIdx] : null;
+
   return (
     <div className="flex items-center gap-4">
-      <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} className="flex-shrink-0">
-        {paths.map((p, i) => (
-          <path key={i} d={p.d} fill={p.color} className="transition-opacity hover:opacity-80" />
-        ))}
-      </svg>
+      <div className="relative flex-shrink-0">
+        <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
+          {paths.map((p, i) => (
+            <path
+              key={i}
+              d={p.d}
+              fill={p.color}
+              opacity={activeIdx === null || activeIdx === i ? 1 : 0.3}
+              className="transition-all duration-200 cursor-pointer"
+              style={{ transform: activeIdx === i ? `scale(1.06)` : "scale(1)", transformOrigin: `${cx}px ${cy}px` }}
+              onClick={() => setActiveIdx(activeIdx === i ? null : i)}
+            />
+          ))}
+        </svg>
+        {active && (
+          <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+            <span className="text-[10px] font-bold text-gray-900 dark:text-white tabular-nums">{pln(Math.round(active.value / d))}</span>
+            <span className="text-[8px] text-gray-400">{sfx}</span>
+          </div>
+        )}
+      </div>
       <div className="flex flex-col gap-1 min-w-0">
         {paths.map((p, i) => (
-          <div key={i} className="flex items-center gap-1.5 text-[11px] leading-tight">
+          <div
+            key={i}
+            className={`flex items-center gap-1.5 text-[11px] leading-tight cursor-pointer rounded px-1 -mx-1 transition-all duration-200 ${
+              activeIdx === i ? "bg-gray-100 dark:bg-gray-800" : activeIdx !== null ? "opacity-40" : "hover:bg-gray-50 dark:hover:bg-gray-800/50"
+            }`}
+            onClick={() => setActiveIdx(activeIdx === i ? null : i)}
+          >
             <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: p.color }} />
             <span className="text-gray-600 dark:text-gray-400 truncate">{p.label}</span>
-            <span className="text-gray-400 dark:text-gray-500 tabular-nums ml-auto flex-shrink-0">{p.pct.toFixed(1)}%</span>
+            <span className="text-gray-400 dark:text-gray-500 tabular-nums ml-auto flex-shrink-0">
+              {activeIdx === i ? pln(Math.round(p.value / d)) : `${p.pct.toFixed(1)}%`}
+            </span>
           </div>
         ))}
       </div>
@@ -638,12 +667,12 @@ function ResultCard({ result, isBest, viewMode, showVat }: {
           </span>
           <span className="text-sm text-gray-400">{sfx}</span>
         </div>
-        <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">Efektywna stawka: {pct(result.effectiveRate)}</p>
+        <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">Efektywna stawka od dochodu: {pct(result.effectiveRate)}</p>
       </div>
 
       {/* Donut chart */}
       <div className="px-6 py-4 border-t border-b border-gray-100 dark:border-gray-800">
-        <DonutChart slices={chartSlices} />
+        <DonutChart slices={chartSlices} viewMode={viewMode} />
       </div>
 
       {/* Rows */}
