@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
+import Image from "next/image";
 
 /* ═══════════════════════════════════════════════════
    STAŁE PODATKOWE 2026
@@ -667,7 +668,7 @@ function ResultCard({ result, isBest, viewMode, showVat }: {
           </span>
           <span className="text-sm text-gray-400">{sfx}</span>
         </div>
-        <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">Efektywna stawka od dochodu: {pct(result.effectiveRate)}</p>
+        <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">Efektywna stawka: {pct(result.effectiveRate)}</p>
       </div>
 
       {/* Donut chart */}
@@ -1052,8 +1053,13 @@ export default function TaxCalculator() {
           </div>
 
           {/* ZUS summary */}
-          <div className="rounded-xl bg-gray-50 dark:bg-gray-800/50 p-4 space-y-2">
-            <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-300">Podsumowanie ZUS</h3>
+          <div className="rounded-xl bg-gray-50 dark:bg-gray-800/50 p-4 space-y-3">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0 border border-gray-200 dark:border-gray-700">
+                <Image src="/photos/tax-calculation/zus_logo.png" alt="ZUS" width={40} height={40} className="w-full h-full object-cover" />
+              </div>
+              <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-300">Podsumowanie ZUS</h3>
+            </div>
             <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-sm">
               <span className="text-gray-500">Społeczne:</span>
               <span className="tabular-nums font-medium text-right">{pln(Math.round(zusM))}/mies.</span>
@@ -1136,12 +1142,16 @@ export default function TaxCalculator() {
       </div>
 
       {/* ── INFO TABLE ── */}
-      <div className="rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900/50 p-6 text-sm text-gray-600 dark:text-gray-400">
-        <h3 className="flex items-center gap-2 font-semibold text-gray-900 dark:text-white mb-3">
-          <svg className="w-4 h-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-          Stawki i założenia ({YEAR})
-        </h3>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-2 text-xs">
+      <div className="rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900/50 overflow-hidden text-sm text-gray-600 dark:text-gray-400">
+        <div className="relative h-32 sm:h-40">
+          <Image src="/photos/tax-calculation/urzad-skarbowy-plate.jpg" alt="Urząd Skarbowy" fill className="object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/70 flex items-end p-6">
+            <h3 className="flex items-center gap-2 font-semibold text-white text-lg">
+              Stawki i założenia ({YEAR})
+            </h3>
+          </div>
+        </div>
+        <div className="p-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-2 text-xs">
           <div><strong>Kwota wolna:</strong> {pln(TAX_FREE)}</div>
           <div><strong>Próg skali:</strong> {pln(BRACKET_LIMIT)}</div>
           <div><strong>Stawki skali:</strong> {RATE_12 * 100}% / {RATE_32 * 100}%</div>
