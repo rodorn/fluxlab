@@ -43,6 +43,12 @@ const tools: { title: string; description: string; href: string; image: string }
     href: "/kalkulator-kosztow",
     image: "/photos/car-chooser/type-osobowy.jpg",
   },
+  {
+    title: "Kalkulator podatkowy JDG",
+    description: "Porównaj skalę, liniowy i ryczałt – składki, VAT, ulgi",
+    href: "/kalkulator-podatkowy",
+    image: "/photos/car-chooser/type-osobowy.jpg",
+  },
 ];
 
 export default function Header() {
