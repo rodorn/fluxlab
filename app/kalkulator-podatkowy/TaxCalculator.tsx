@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef, useCallback } from "react";
 import Image from "next/image";
 
 /* ═══════════════════════════════════════════════════
@@ -740,6 +740,66 @@ export default function TaxCalculator() {
 
   const [nextId, setNextId] = useState(200);
 
+  // AI state
+  const [aiLoadingRate, setAiLoadingRate] = useState<number | null>(null); // source id being detected
+  const [aiRateHint, setAiRateHint] = useState<{ id: number; text: string } | null>(null);
+  const [aiCostLoading, setAiCostLoading] = useState<CostType | null>(null);
+  const rateDebounce = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const detectRate = useCallback((sourceId: number, name: string) => {
+    if (rateDebounce.current) clearTimeout(rateDebounce.current);
+    if (name.trim().length < 3) { setAiRateHint(null); return; }
+    setAiLoadingRate(sourceId);
+    rateDebounce.current = setTimeout(async () => {
+      try {
+        const res = await fetch("/api/tax-ai", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ action: "detect_rate", sourceName: name }),
+        });
+        if (!res.ok) return;
+        const data = await res.json();
+        setRyczaltSources((prev) =>
+          prev.map((s) => s.id === sourceId ? { ...s, rate: data.rate, isNajem: data.isNajem } : s),
+        );
+        setAiRateHint({ id: sourceId, text: data.reasoning });
+      } catch { /* ignore */ }
+      finally { setAiLoadingRate(null); }
+    }, 800);
+  }, []);
+
+  const suggestCosts = useCallback(async (costType: CostType) => {
+    setAiCostLoading(costType);
+    try {
+      const revDesc = ryczaltSources.map((s) => `${s.name || "bez nazwy"}: ${s.amount} zł`).join(", ");
+      const costDesc = costItems.map((c) => `${c.name || "bez nazwy"} (${c.type}): ${c.amount} zł`).join(", ");
+      const res = await fetch("/api/tax-ai", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          action: "suggest_costs",
+          costType,
+          existingRevenues: revDesc || "brak",
+          existingCosts: costDesc || "brak",
+        }),
+      });
+      if (!res.ok) return;
+      const data = await res.json();
+      if (data.costs?.length) {
+        const newItems: CostItem[] = data.costs.map((c: { name: string; amount: number; type: CostType }, i: number) => ({
+          id: nextId + i,
+          name: c.name,
+          amount: c.amount,
+          type: costType,
+          brutto: false,
+        }));
+        setCostItems((prev) => [...prev, ...newItems]);
+        setNextId((n) => n + newItems.length);
+      }
+    } catch { /* ignore */ }
+    finally { setAiCostLoading(null); }
+  }, [ryczaltSources, costItems, nextId]);
+
   // Per-field brutto→netto conversion (only when VAT active)
   const n = (v: number, isBrutto: boolean, rate: number) =>
     isBrutto && vatMode !== "zwolniony" ? Math.round(v / (1 + rate / 100)) : v;
@@ -813,7 +873,9 @@ export default function TaxCalculator() {
             <svg className="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
             Przychody i koszty
           </h2>
-          <p className="text-xs text-gray-400 -mt-4">Przy każdym polu przełącznik N/B (netto/brutto). Brutto przeliczane na netto wg stawki VAT.</p>
+          {vatMode !== "zwolniony" && (
+            <p className="text-xs text-gray-400 -mt-4">Przy każdym polu przełącznik N/B (netto/brutto). Brutto przeliczane na netto wg stawki VAT.</p>
+          )}
 
           {/* Źródła przychodu */}
           <div>
@@ -829,24 +891,37 @@ export default function TaxCalculator() {
                   <div key={src.id} className="rounded-lg bg-gray-50 dark:bg-gray-800/50 p-3 space-y-2">
                     <div className="flex items-center gap-2">
                       <input type="text" value={src.name} placeholder="Nazwa źródła..."
-                        onChange={(e) => updateSource(src.id, { name: e.target.value })}
+                        onChange={(e) => {
+                          updateSource(src.id, { name: e.target.value });
+                          detectRate(src.id, e.target.value);
+                        }}
                         className="flex-1 rounded-md border border-gray-200 dark:border-gray-700 bg-transparent px-2 py-1 text-xs text-gray-600 dark:text-gray-400 focus:border-accent focus:ring-1 focus:ring-accent/30 outline-none" />
+                      {aiLoadingRate === src.id && (
+                        <span className="text-accent animate-spin flex-shrink-0">
+                          <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="3" strokeDasharray="31.4 31.4" /></svg>
+                        </span>
+                      )}
                       {ryczaltSources.length > 1 && (
                         <button type="button" onClick={() => removeSource(src.id)} className="text-gray-400 hover:text-red-500 transition" title="Usuń">
                           <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
                         </button>
                       )}
                     </div>
+                    {aiRateHint?.id === src.id && (
+                      <p className="text-[11px] text-accent/80 leading-snug px-0.5">AI: {aiRateHint.text}</p>
+                    )}
                     <div className="flex items-end gap-3">
                       <div className="flex-1">
                         <div className="flex items-center justify-between mb-1">
                           <label className="text-xs text-gray-500">Kwota/mies.</label>
-                          <div className="flex rounded-md overflow-hidden border border-gray-300 dark:border-gray-600">
-                            <button type="button" onClick={() => updateSource(src.id, { brutto: false })}
-                              className={`px-2 py-0.5 text-[10px] font-bold transition ${!src.brutto ? "bg-accent text-white" : "bg-white dark:bg-gray-800 text-gray-400"}`}>N</button>
-                            <button type="button" onClick={() => updateSource(src.id, { brutto: true })}
-                              className={`px-2 py-0.5 text-[10px] font-bold transition ${src.brutto ? "bg-accent text-white" : "bg-white dark:bg-gray-800 text-gray-400"}`}>B</button>
-                          </div>
+                          {vatMode !== "zwolniony" && (
+                            <div className="flex rounded-md overflow-hidden border border-gray-300 dark:border-gray-600">
+                              <button type="button" onClick={() => updateSource(src.id, { brutto: false })}
+                                className={`px-2 py-0.5 text-[10px] font-bold transition ${!src.brutto ? "bg-accent text-white" : "bg-white dark:bg-gray-800 text-gray-400"}`}>N</button>
+                              <button type="button" onClick={() => updateSource(src.id, { brutto: true })}
+                                className={`px-2 py-0.5 text-[10px] font-bold transition ${src.brutto ? "bg-accent text-white" : "bg-white dark:bg-gray-800 text-gray-400"}`}>B</button>
+                            </div>
+                          )}
                         </div>
                         <input type="number" value={src.amount || ""} min={0} step={500}
                           onChange={(e) => updateSource(src.id, { amount: Number(e.target.value) || 0 })}
@@ -910,9 +985,24 @@ export default function TaxCalculator() {
             const total = items.reduce((s, c) => s + n(c.amount, c.brutto, vatCostsRate), 0);
             return (
               <div key={type}>
-                <div className="flex items-center justify-between mb-1">
+                <div className="flex items-center justify-between mb-1 gap-2">
                   <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-300">{label}</h3>
-                  <button type="button" onClick={() => addCost(type)} className="text-xs font-medium text-accent hover:text-accent/80 transition">+ Dodaj</button>
+                  <div className="flex items-center gap-2">
+                    <button
+                      type="button"
+                      onClick={() => suggestCosts(type)}
+                      disabled={aiCostLoading === type}
+                      className="flex items-center gap-1 text-xs font-medium text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 transition disabled:opacity-50"
+                    >
+                      {aiCostLoading === type ? (
+                        <svg className="w-3 h-3 animate-spin" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="3" strokeDasharray="31.4 31.4" /></svg>
+                      ) : (
+                        <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" /></svg>
+                      )}
+                      Dodaj z AI
+                    </button>
+                    <button type="button" onClick={() => addCost(type)} className="text-xs font-medium text-accent hover:text-accent/80 transition">+ Dodaj</button>
+                  </div>
                 </div>
                 <p className="text-xs text-gray-400 mb-2">{hint}</p>
                 <div className="space-y-2">
@@ -934,12 +1024,14 @@ export default function TaxCalculator() {
                           <div className="flex-1">
                             <div className="flex items-center justify-between mb-1">
                               <label className="text-xs text-gray-500">Kwota/mies.</label>
-                              <div className="flex rounded-md overflow-hidden border border-gray-300 dark:border-gray-600">
-                                <button type="button" onClick={() => updateCost(c.id, { brutto: false })}
-                                  className={`px-2 py-0.5 text-[10px] font-bold transition ${!c.brutto ? "bg-accent text-white" : "bg-white dark:bg-gray-800 text-gray-400"}`}>N</button>
-                                <button type="button" onClick={() => updateCost(c.id, { brutto: true })}
-                                  className={`px-2 py-0.5 text-[10px] font-bold transition ${c.brutto ? "bg-accent text-white" : "bg-white dark:bg-gray-800 text-gray-400"}`}>B</button>
-                              </div>
+                              {vatMode !== "zwolniony" && (
+                                <div className="flex rounded-md overflow-hidden border border-gray-300 dark:border-gray-600">
+                                  <button type="button" onClick={() => updateCost(c.id, { brutto: false })}
+                                    className={`px-2 py-0.5 text-[10px] font-bold transition ${!c.brutto ? "bg-accent text-white" : "bg-white dark:bg-gray-800 text-gray-400"}`}>N</button>
+                                  <button type="button" onClick={() => updateCost(c.id, { brutto: true })}
+                                    className={`px-2 py-0.5 text-[10px] font-bold transition ${c.brutto ? "bg-accent text-white" : "bg-white dark:bg-gray-800 text-gray-400"}`}>B</button>
+                                </div>
+                              )}
                             </div>
                             <input type="number" value={c.amount || ""} min={0} step={100}
                               onChange={(e) => updateCost(c.id, { amount: Number(e.target.value) || 0 })}
@@ -969,7 +1061,7 @@ export default function TaxCalculator() {
             <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-300">Koszty samochodu <span className="font-normal text-gray-400">(koszt prywatny – i tak ponoszone)</span></h3>
             <NumberInput label="Koszty samochodu miesięcznie" value={carCosts} onChange={setCarCosts} step={100}
               hint="Paliwo, leasing/rata, ubezpieczenie, serwis, myjnia..."
-              brutto={carBrutto} onBruttoChange={setCarBrutto} vatPct={vatCostsRate} />
+              brutto={vatMode !== "zwolniony" ? carBrutto : undefined} onBruttoChange={vatMode !== "zwolniony" ? setCarBrutto : undefined} vatPct={vatCostsRate} />
             <RadioGroup
               label="Użytkowanie samochodu"
               value={carUsage}
@@ -1072,8 +1164,8 @@ export default function TaxCalculator() {
               <span className="tabular-nums font-medium text-right">{pln(Math.round(results.linear.healthInsurance / 12))}/mies.</span>
               <span className="text-gray-500">Zdrowotna (ryczałt):</span>
               <span className="tabular-nums font-medium text-right">{pln(Math.round(results.ryczalt.healthInsurance / 12))}/mies.</span>
-              <span className="text-gray-500 font-semibold border-t border-gray-200 dark:border-gray-700 pt-1">Razem (bez zdrow.):</span>
-              <span className="tabular-nums font-bold text-right border-t border-gray-200 dark:border-gray-700 pt-1">{pln(Math.round(zusM + fpM))}/mies.</span>
+              <span className="text-gray-500 font-semibold border-t border-gray-200 dark:border-gray-700 pt-1">Razem ({best.label.toLowerCase()}):</span>
+              <span className="tabular-nums font-bold text-right border-t border-gray-200 dark:border-gray-700 pt-1">{pln(Math.round(zusM + fpM + best.healthInsurance / 12))}/mies.</span>
             </div>
           </div>
 
