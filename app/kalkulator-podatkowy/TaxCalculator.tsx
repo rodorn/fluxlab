@@ -208,8 +208,8 @@ function calculate(p: {
   vatRate: number;
   vatCostsRate: number;
   hasMarza: boolean;
-  marzaRevenue: number; // monthly revenue from marża sales (netto)
-  vatMarza: number;     // monthly margin amount (netto)
+  marzaSell: number;  // monthly selling price (marża transactions)
+  marzaBuy: number;   // monthly purchase cost (marża transactions)
 }): { skala: TaxResult; linear: TaxResult; ryczalt: TaxResult } {
   const annRev = p.monthlyRevenue * 12;
   const annBizCosts = p.businessCosts * 12;
@@ -218,7 +218,16 @@ function calculate(p: {
   const carPitPct = p.carUsage === "business" ? CAR_PIT_BUSINESS : CAR_PIT_MIXED;
   const carVatPct = p.carUsage === "business" ? CAR_VAT_BUSINESS : CAR_VAT_MIXED;
   const annCarDeductible = Math.round(annCarCosts * carPitPct);
-  const totalDeductible = annBizCosts + annPrivCosts + annCarDeductible;
+
+  // Marża: dodatkowe przychody i koszty (nie wchodzą w główne pola)
+  const annMarzaSell = p.hasMarza ? p.marzaSell * 12 : 0;
+  const annMarzaBuy = p.hasMarza ? p.marzaBuy * 12 : 0;
+  const annMargin = Math.max(0, annMarzaSell - annMarzaBuy);
+
+  // Łączne koszty odliczalne (skala/liniowy): firmowe + prywatne + samochód + zakup marżowy
+  const totalDeductible = annBizCosts + annPrivCosts + annCarDeductible + annMarzaBuy;
+  // Łączny przychód PIT (ze źródeł + sprzedaż marżowa)
+  const totalPitRev = annRev + annMarzaSell;
 
   const zusM = zusMonthly(p.zusStatus, p.chorobowa, p.prevYearIncome);
   const fpM = fpMonthly(p.zusStatus);
@@ -226,32 +235,23 @@ function calculate(p: {
   const annFP = Math.round(fpM * 12);
 
   // VAT
-  // Standard: pass-through (inkaso od klientów → urząd). Nie wpływa na dochód.
-  //   Jedyny realny koszt: nieodliczalny VAT od samochodu (50% przy mieszanym).
-  // Marża (opcjonalnie, część sprzedaży): VAT "w stu" od marży — realny koszt.
-  //   Na przychód z marży nie nalicza się standardowego VAT.
-  // Zwolniony: brak VAT, ale koszty zawierają nieodliczalny VAT dostawców.
-  let vatPassThrough = 0; // ile odprowadzasz do US (standard)
-  let vatRealCost = 0; // faktyczny koszt VAT obciążający kieszenie
-  let vatPrivateSavings = 0; // oszczędność: odliczony VAT od kosztów prywatnych + samochodu
-  let vatMarzaCost = 0; // VAT od marży — osobna pozycja
+  // Standard: pass-through na zwykłym przychodzie. Marża: VAT "w stu" od marży — realny koszt.
+  let vatPassThrough = 0;
+  let vatRealCost = 0;
+  let vatPrivateSavings = 0;
+  let vatMarzaCost = 0;
   if (p.vatMode === "standard") {
-    // Standard VAT: tylko na przychód NIE objęty marżą
-    const annMarzaRev = p.hasMarza ? p.marzaRevenue * 12 : 0;
-    const standardRev = Math.max(0, annRev - annMarzaRev);
-    const vatOut = standardRev * (p.vatRate / 100);
+    // Standard VAT na zwykły przychód (marża NIE dostaje standardowego VAT na górę)
+    const vatOut = annRev * (p.vatRate / 100);
     const vatInBiz = annBizCosts * (p.vatCostsRate / 100);
     const vatInPriv = annPrivCosts * (p.vatCostsRate / 100);
     const vatInCar = annCarCosts * (p.vatCostsRate / 100) * carVatPct;
     vatPassThrough = Math.max(0, Math.round(vatOut - vatInBiz - vatInPriv - vatInCar));
-    // Nieodliczalny VAT od samochodu (np. 50% przy mieszanym użytkowaniu)
     vatRealCost = Math.round(annCarCosts * (p.vatCostsRate / 100) * (1 - carVatPct));
-    // Odliczony VAT od kosztów prywatnych i samochodu = realna oszczędność
     vatPrivateSavings = Math.round(vatInPriv + vatInCar);
-    // VAT marża: VAT "w stu" od marży — realny koszt (obniża zysk z transakcji)
-    if (p.hasMarza) {
-      const annMarza = p.vatMarza * 12;
-      vatMarzaCost = Math.round(annMarza * p.vatRate / (100 + p.vatRate));
+    // VAT marża: "w stu" od marży (sprzedaż − zakup)
+    if (p.hasMarza && annMargin > 0) {
+      vatMarzaCost = Math.round(annMargin * p.vatRate / (100 + p.vatRate));
     }
   }
 
@@ -259,31 +259,35 @@ function calculate(p: {
   const calcPrivateSavings = (taxWithout: number, taxWith: number) =>
     Math.max(0, Math.round(taxWithout - taxWith));
 
+  // Monthly income for health insurance (includes marża profit = sell − buy)
+  const monthlyMarzaProfit = (annMarzaSell - annMarzaBuy) / 12;
+
   // ── SKALA ──
-  const skalaMonthlyInc = Math.max(0, p.monthlyRevenue - p.businessCosts - p.privateCosts - Math.round(p.carCosts * carPitPct) - zusM);
+  const skalaMonthlyInc = Math.max(0, p.monthlyRevenue + monthlyMarzaProfit - p.businessCosts - p.privateCosts - Math.round(p.carCosts * carPitPct) - zusM);
   const skalaHealthM = healthSkala(skalaMonthlyInc);
   const skalaHealthAnn = Math.round(skalaHealthM * 12);
-  const skalaTaxBase = Math.max(0, Math.round(annRev - totalDeductible - annZus));
+  const skalaTaxBase = Math.max(0, Math.round(totalPitRev - totalDeductible - annZus));
   const skalaTax = taxSkala(skalaTaxBase);
-  const skalaTaxBaseNoPriv = Math.max(0, Math.round(annRev - annBizCosts - annCarDeductible - annZus));
+  const skalaTaxBaseNoPriv = Math.max(0, Math.round(totalPitRev - annBizCosts - annCarDeductible - annMarzaBuy - annZus));
   const skalaTaxNoPriv = taxSkala(skalaTaxBaseNoPriv);
   const skalaPrivSav = calcPrivateSavings(skalaTaxNoPriv, skalaTax);
   const skalaBurden = annZus + annFP + skalaHealthAnn + skalaTax + vatRealCost + vatMarzaCost;
 
   // ── LINIOWY ──
-  const linearMonthlyInc = Math.max(0, p.monthlyRevenue - p.businessCosts - p.privateCosts - Math.round(p.carCosts * carPitPct) - zusM);
+  const linearMonthlyInc = Math.max(0, p.monthlyRevenue + monthlyMarzaProfit - p.businessCosts - p.privateCosts - Math.round(p.carCosts * carPitPct) - zusM);
   const linearHealthM = healthLinear(linearMonthlyInc);
   const linearHealthAnn = Math.round(linearHealthM * 12);
   const linearHealthDed = Math.min(linearHealthAnn, LINEAR_HEALTH_CAP);
-  const linearTaxBase = Math.max(0, Math.round(annRev - totalDeductible - annZus - linearHealthDed));
+  const linearTaxBase = Math.max(0, Math.round(totalPitRev - totalDeductible - annZus - linearHealthDed));
   const linearTax = taxLinear(linearTaxBase);
-  const linearTaxBaseNoPriv = Math.max(0, Math.round(annRev - annBizCosts - annCarDeductible - annZus - linearHealthDed));
+  const linearTaxBaseNoPriv = Math.max(0, Math.round(totalPitRev - annBizCosts - annCarDeductible - annMarzaBuy - annZus - linearHealthDed));
   const linearTaxNoPriv = taxLinear(linearTaxBaseNoPriv);
   const linearPrivSav = calcPrivateSavings(linearTaxNoPriv, linearTax);
   const linearBurden = annZus + annFP + linearHealthAnn + linearTax + vatRealCost + vatMarzaCost;
 
   // ── RYCZAŁT ──
-  const ryczHealthM = healthRyczalt(annRev);
+  // Ryczałt: przychód ze źródeł (bez marży — marża powinna być dodana jako osobne źródło ryczałtowe)
+  const ryczHealthM = healthRyczalt(totalPitRev);
   const ryczHealthAnn = Math.round(ryczHealthM * 12);
   const ryczHealthDed = Math.round(ryczHealthAnn * 0.5);
 
@@ -303,11 +307,9 @@ function calculate(p: {
   }
   const ryczBurden = annZus + annFP + ryczHealthAnn + ryczTax + vatRealCost + vatMarzaCost;
 
-  // Przychód brutto = netto + VAT należny (standard, bez marży — marża nie dolicza VAT na górę)
-  const annMarzaRev = (p.vatMode === "standard" && p.hasMarza) ? p.marzaRevenue * 12 : 0;
-  const standardRevForVat = Math.max(0, annRev - annMarzaRev);
-  const vatOutStandard = p.vatMode === "standard" ? Math.round(standardRevForVat * (p.vatRate / 100)) : 0;
-  const annRevBrutto = annRev + vatOutStandard;
+  // Przychód brutto = przychód PIT + VAT standardowy na górze (marża nie dolicza VAT)
+  const vatOutStandard = p.vatMode === "standard" ? Math.round(annRev * (p.vatRate / 100)) : 0;
+  const annRevBrutto = totalPitRev + vatOutStandard;
 
   const mk = (
     label: string,
@@ -319,7 +321,6 @@ function calculate(p: {
     burden: number,
     privSav: number,
   ): TaxResult => {
-    // Łączne obciążenia z perspektywy brutto: burden + cały VAT do US
     const totalWithVat = burden + vatPassThrough;
     return {
       label,
@@ -508,7 +509,7 @@ function ResultCard({ result, isBest, viewMode, showVat }: {
       tip: `Nieodliczalny VAT od samochodu: ${v(r.vatRealCost)}${sfx}. Np. 50% VAT przy mieszanym użytku.` }] : []),
     ...(r.deductibleCosts > 0 ? [
       { label: "Koszty odliczone (PIT)", value: -r.deductibleCosts, negative: true as const,
-        tip: `Firmowe + prywatne (${v(costsNoCar)}) + samochód (${v(r.carCostsDeducted)}). Obniżają podstawę opodatkowania.` },
+        tip: `Firmowe + prywatne + zakup marżowy (${v(costsNoCar)}) + samochód (${v(r.carCostsDeducted)}). Obniżają podstawę opodatkowania.` },
       ...(r.carCostsDeducted > 0 ? [{ label: "↳ w tym samochód", value: -r.carCostsDeducted, dimmed: true as const,
         tip: `Odliczana część kosztów samochodu: 75% przy mieszanym / 100% przy firmowym. Tu: ${v(r.carCostsDeducted)}${sfx}.` }] : []),
     ] : []),
@@ -611,8 +612,8 @@ export default function TaxCalculator() {
   const [vatRate, setVatRate] = useState(23);
   const [vatCostsRate, setVatCostsRate] = useState(23);
   const [hasMarza, setHasMarza] = useState(false);
-  const [marzaRevenue, setMarzaRevenue] = useState(5_000);
-  const [vatMarza, setVatMarza] = useState(3_000);
+  const [marzaSell, setMarzaSell] = useState(10_000);
+  const [marzaBuy, setMarzaBuy] = useState(7_000);
   const [viewMode, setViewMode] = useState<ViewMode>("monthly");
 
   // Ryczałt sources
@@ -625,11 +626,9 @@ export default function TaxCalculator() {
   const n = (v: number, isBrutto: boolean, rate: number) =>
     isBrutto && vatMode !== "zwolniony" ? Math.round(v / (1 + rate / 100)) : v;
 
-  // Przychód = suma źródeł (przeliczony na netto)
-  // Marża: nie konwertuj brutto→netto dla marżowej części (na marży nie ma VAT na górze, kwota = PIT przychód)
+  // Przychód = suma źródeł (przeliczony na netto). Marża to osobne przychody/koszty.
   const monthlyRevenueRaw = ryczaltSources.reduce((s, src) => s + src.amount, 0);
-  const marzaClamp = (hasMarza && vatMode === "standard") ? Math.min(marzaRevenue, monthlyRevenueRaw) : 0;
-  const monthlyRevenue = n(monthlyRevenueRaw - marzaClamp, revBrutto, vatRate) + marzaClamp;
+  const monthlyRevenue = n(monthlyRevenueRaw, revBrutto, vatRate);
   const businessCostsNet = n(businessCosts, bizBrutto, vatCostsRate);
   const privateCostsNet = n(privateCosts, privBrutto, vatCostsRate);
   const carCostsNet = n(carCosts, carBrutto, vatCostsRate);
@@ -649,12 +648,10 @@ export default function TaxCalculator() {
         zusStatus, chorobowa, prevYearIncome,
         ryczaltSources: ryczaltSources.map((s) => ({ ...s, amount: n(s.amount, revBrutto, vatRate) })),
         vatMode, vatRate, vatCostsRate,
-        hasMarza,
-        marzaRevenue,
-        vatMarza,
+        hasMarza, marzaSell, marzaBuy,
       }),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [monthlyRevenue, businessCostsNet, privateCostsNet, carCostsNet, carUsage, zusStatus, chorobowa, prevYearIncome, ryczaltSources, vatMode, vatRate, vatCostsRate, hasMarza, marzaRevenue, vatMarza, revBrutto, bizBrutto, privBrutto, carBrutto],
+    [monthlyRevenue, businessCostsNet, privateCostsNet, carCostsNet, carUsage, zusStatus, chorobowa, prevYearIncome, ryczaltSources, vatMode, vatRate, vatCostsRate, hasMarza, marzaSell, marzaBuy, revBrutto, bizBrutto, privBrutto, carBrutto],
   );
 
   // Limity
@@ -860,18 +857,18 @@ export default function TaxCalculator() {
                 </div>
 
                 <Toggle
-                  label="Część sprzedaży na VAT marży"
+                  label="Sprzedaż na VAT marży"
                   checked={hasMarza}
                   onChange={setHasMarza}
-                  desc="Np. handel używanymi towarami — VAT płacony od marży (różnica sprzedaż − zakup), nie od pełnej ceny"
+                  desc="Dodatkowe przychody i koszty zakupu, np. handel używanymi towarami. VAT tylko od marży."
                 />
 
                 {hasMarza && (
                   <div className="grid grid-cols-2 gap-4 pl-7">
-                    <NumberInput label="Przychód na marży (mies.)" value={marzaRevenue} onChange={setMarzaRevenue} step={100}
-                      hint="Cena sprzedaży brutto — na fakturze VAT marża nie ma rozbicia netto/VAT" />
-                    <NumberInput label="Marża miesięczna" value={vatMarza} onChange={setVatMarza} step={100}
-                      hint="Cena sprzedaży − cena zakupu (kwota brutto, zawiera VAT)" />
+                    <NumberInput label="Sprzedaż marżowa (mies.)" value={marzaSell} onChange={setMarzaSell} step={500}
+                      hint="Cena sprzedaży — dodatkowy przychód PIT" />
+                    <NumberInput label="Koszt zakupu (mies.)" value={marzaBuy} onChange={setMarzaBuy} step={500}
+                      hint="Cena zakupu towaru — dodatkowy koszt PIT (skala/liniowy)" />
                   </div>
                 )}
               </div>
