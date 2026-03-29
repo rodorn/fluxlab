@@ -60,7 +60,7 @@ const CAR_VAT_MIXED = 0.5;
 const CAR_VAT_BUSINESS = 1.0;
 
 // Limity
-const VAT_EXEMPT_LIMIT = 200_000; // roczny obrót – zwolnienie podmiotowe
+const VAT_EXEMPT_LIMIT = 240_000; // roczny obrót – zwolnienie podmiotowe (od 2025)
 const MALY_PLUS_REVENUE_LIMIT = 120_000; // max przychód z poprzedniego roku
 const MALY_PLUS_MAX_MONTHS = 36; // max miesięcy w 60-miesięcznym oknie
 
