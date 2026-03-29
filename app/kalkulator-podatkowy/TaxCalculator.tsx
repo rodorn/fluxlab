@@ -721,21 +721,28 @@ export default function TaxCalculator() {
   const [carUsage, setCarUsage] = useState<CarUsage>("mixed");
   const [zusStatus, setZusStatus] = useState<ZusStatus>("pelny");
   const [prevYearIncome, setPrevYearIncome] = useState(120_000);
-  const [chorobowa, setChorobowa] = useState(true);
-  const [vatMode, setVatMode] = useState<VatMode>("zwolniony");
+  const [chorobowa, setChorobowa] = useState(false);
+  const [vatMode, setVatMode] = useState<VatMode>("standard");
   const [vatRate, setVatRate] = useState(23);
   const [vatCostsRate, setVatCostsRate] = useState(23);
   const [viewMode, setViewMode] = useState<ViewMode>("monthly");
 
   // Źródła przychodu
   const [ryczaltSources, setRyczaltSources] = useState<RyczaltSource[]>([
-    { id: 1, name: "Główne źródło", amount: 15_000, rate: 12, isNajem: false, brutto: false },
+    { id: 1, name: "Stermedia – programowanie", amount: 14_000, rate: 12, isNajem: false, brutto: false },
+    { id: 2, name: "Provoke – sprzedaż ubrań", amount: 5_000, rate: 3, isNajem: false, brutto: true },
+    { id: 3, name: "Sprzedaż elektroniki", amount: 30_000, rate: 3, isNajem: false, brutto: true },
   ]);
 
   // Koszty (firmowe + prywatne w jednej liście)
-  const [costItems, setCostItems] = useState<CostItem[]>([]);
+  const [costItems, setCostItems] = useState<CostItem[]>([
+    { id: 101, name: "Provoke – szycie", amount: 2_500, type: "business", brutto: true },
+    { id: 102, name: "Elektronika – zakupy", amount: 20_000, type: "business", brutto: true },
+    { id: 103, name: "Sprzęt", amount: 450, type: "private", brutto: true },
+    { id: 104, name: "Szkolenia", amount: 300, type: "private", brutto: true },
+  ]);
 
-  const [nextId, setNextId] = useState(200);
+  const [nextId, setNextId] = useState(300);
 
   // AI state
   const [aiLoadingRate, setAiLoadingRate] = useState<number | null>(null); // source id being detected
