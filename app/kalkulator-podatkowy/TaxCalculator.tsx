@@ -102,6 +102,7 @@ interface RyczaltSource {
   amount: number;
   rate: number;
   isNajem: boolean;
+  brutto: boolean;
 }
 
 interface TaxResult {
@@ -567,7 +568,6 @@ function ResultCard({ result, isBest, viewMode, showVat }: {
 
 export default function TaxCalculator() {
   // Per-field brutto flags
-  const [revBrutto, setRevBrutto] = useState(false);
   const [bizBrutto, setBizBrutto] = useState(false);
   const [privBrutto, setPrivBrutto] = useState(false);
   const [carBrutto, setCarBrutto] = useState(false);
@@ -586,7 +586,7 @@ export default function TaxCalculator() {
 
   // Ryczałt sources
   const [ryczaltSources, setRyczaltSources] = useState<RyczaltSource[]>([
-    { id: 1, amount: 15_000, rate: 12, isNajem: false },
+    { id: 1, amount: 15_000, rate: 12, isNajem: false, brutto: false },
   ]);
   const [nextId, setNextId] = useState(2);
 
@@ -594,15 +594,14 @@ export default function TaxCalculator() {
   const n = (v: number, isBrutto: boolean, rate: number) =>
     isBrutto && vatMode !== "zwolniony" ? Math.round(v / (1 + rate / 100)) : v;
 
-  // Przychód = suma źródeł (przeliczony na netto). Marża to osobne przychody/koszty.
-  const monthlyRevenueRaw = ryczaltSources.reduce((s, src) => s + src.amount, 0);
-  const monthlyRevenue = n(monthlyRevenueRaw, revBrutto, vatRate);
+  // Przychód = suma źródeł (każde przeliczone indywidualnie na netto)
+  const monthlyRevenue = ryczaltSources.reduce((s, src) => s + n(src.amount, src.brutto, vatRate), 0);
   const businessCostsNet = n(businessCosts, bizBrutto, vatCostsRate);
   const privateCostsNet = n(privateCosts, privBrutto, vatCostsRate);
   const carCostsNet = n(carCosts, carBrutto, vatCostsRate);
 
   const addSource = () => {
-    setRyczaltSources((prev) => [...prev, { id: nextId, amount: 0, rate: 8.5, isNajem: false }]);
+    setRyczaltSources((prev) => [...prev, { id: nextId, amount: 0, rate: 8.5, isNajem: false, brutto: false }]);
     setNextId((n) => n + 1);
   };
   const removeSource = (id: number) => setRyczaltSources((prev) => prev.filter((s) => s.id !== id));
@@ -614,11 +613,11 @@ export default function TaxCalculator() {
       calculate({
         monthlyRevenue, businessCosts: businessCostsNet, privateCosts: privateCostsNet, carCosts: carCostsNet, carUsage,
         zusStatus, chorobowa, prevYearIncome,
-        ryczaltSources: ryczaltSources.map((s) => ({ ...s, amount: n(s.amount, revBrutto, vatRate) })),
+        ryczaltSources: ryczaltSources.map((s) => ({ ...s, amount: n(s.amount, s.brutto, vatRate) })),
         vatMode, vatRate, vatCostsRate,
       }),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [monthlyRevenue, businessCostsNet, privateCostsNet, carCostsNet, carUsage, zusStatus, chorobowa, prevYearIncome, ryczaltSources, vatMode, vatRate, vatCostsRate, revBrutto, bizBrutto, privBrutto, carBrutto],
+    [monthlyRevenue, businessCostsNet, privateCostsNet, carCostsNet, carUsage, zusStatus, chorobowa, prevYearIncome, ryczaltSources, vatMode, vatRate, vatCostsRate, bizBrutto, privBrutto, carBrutto],
   );
 
   // Limity
@@ -651,29 +650,33 @@ export default function TaxCalculator() {
           <div>
             <div className="flex items-center justify-between mb-1">
               <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-300">Źródła przychodu</h3>
-              <div className="flex items-center gap-3">
-                <div className="flex rounded-md overflow-hidden border border-gray-300 dark:border-gray-600" title="Netto / Brutto dla przychodów">
-                  <button type="button" onClick={() => setRevBrutto(false)}
-                    className={`px-2 py-0.5 text-[10px] font-bold transition ${!revBrutto ? "bg-accent text-white" : "bg-white dark:bg-gray-800 text-gray-400"}`}>N</button>
-                  <button type="button" onClick={() => setRevBrutto(true)}
-                    className={`px-2 py-0.5 text-[10px] font-bold transition ${revBrutto ? "bg-accent text-white" : "bg-white dark:bg-gray-800 text-gray-400"}`}>B</button>
-                </div>
-                <button type="button" onClick={addSource} className="text-xs font-medium text-accent hover:text-accent/80 transition">+ Dodaj źródło</button>
-              </div>
+              <button type="button" onClick={addSource} className="text-xs font-medium text-accent hover:text-accent/80 transition">+ Dodaj źródło</button>
             </div>
             <div className="space-y-3">
               {ryczaltSources.map((src, i) => {
                 const selectedOpt = RYCZALT_OPTIONS.find((o) => o.isNajem ? src.isNajem : !src.isNajem && o.rate === src.rate);
+                const srcNetto = n(src.amount, src.brutto, vatRate);
                 return (
                   <div key={src.id} className="rounded-lg bg-gray-50 dark:bg-gray-800/50 p-3 space-y-2">
                     <div className="flex items-end gap-3">
                       <div className="flex-1">
-                        <label className="block text-xs text-gray-500 mb-1">
-                          Kwota/mies. {revBrutto ? "(brutto)" : "(netto)"} {ryczaltSources.length > 1 ? `#${i + 1}` : ""}
-                        </label>
+                        <div className="flex items-center justify-between mb-1">
+                          <label className="text-xs text-gray-500">
+                            Kwota/mies. {ryczaltSources.length > 1 ? `#${i + 1}` : ""}
+                          </label>
+                          <div className="flex rounded-md overflow-hidden border border-gray-300 dark:border-gray-600">
+                            <button type="button" onClick={() => updateSource(src.id, { brutto: false })}
+                              className={`px-2 py-0.5 text-[10px] font-bold transition ${!src.brutto ? "bg-accent text-white" : "bg-white dark:bg-gray-800 text-gray-400"}`}>N</button>
+                            <button type="button" onClick={() => updateSource(src.id, { brutto: true })}
+                              className={`px-2 py-0.5 text-[10px] font-bold transition ${src.brutto ? "bg-accent text-white" : "bg-white dark:bg-gray-800 text-gray-400"}`}>B</button>
+                          </div>
+                        </div>
                         <input type="number" value={src.amount} min={0} step={500}
                           onChange={(e) => updateSource(src.id, { amount: Number(e.target.value) || 0 })}
                           className="w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-3 py-2 text-sm tabular-nums focus:border-accent focus:ring-2 focus:ring-accent/30 outline-none" />
+                        {src.brutto && vatMode !== "zwolniony" && srcNetto !== src.amount && (
+                          <p className="mt-1 text-xs text-gray-400">Netto: {pln(srcNetto)}</p>
+                        )}
                       </div>
                       <div className="flex-1">
                         <label className="block text-xs text-gray-500 mb-1">Stawka ryczałtu</label>
@@ -702,7 +705,6 @@ export default function TaxCalculator() {
                         </button>
                       )}
                     </div>
-                    {/* Tooltip / explanation */}
                     {selectedOpt && (
                       <p className="text-xs text-gray-400 dark:text-gray-500 leading-relaxed">
                         {selectedOpt.tooltip}
@@ -719,17 +721,11 @@ export default function TaxCalculator() {
                 );
               })}
             </div>
-            <div className="mt-3 px-1 space-y-1">
+            <div className="mt-3 px-1">
               <div className="flex justify-between items-baseline">
-                <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">Łączny przychód:</span>
-                <span className="text-lg font-bold text-accent tabular-nums">{pln(monthlyRevenueRaw)}/mies. {revBrutto ? "(brutto)" : "(netto)"}</span>
+                <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">Łączny przychód netto:</span>
+                <span className="text-lg font-bold text-accent tabular-nums">{pln(monthlyRevenue)}/mies.</span>
               </div>
-              {revBrutto && vatMode !== "zwolniony" && monthlyRevenue !== monthlyRevenueRaw && (
-                <div className="flex justify-between items-baseline">
-                  <span className="text-xs text-gray-400">Netto (do obliczeń):</span>
-                  <span className="text-sm font-medium text-gray-500 tabular-nums">{pln(monthlyRevenue)}/mies.</span>
-                </div>
-              )}
             </div>
           </div>
 
