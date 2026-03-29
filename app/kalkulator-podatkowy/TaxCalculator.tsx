@@ -609,9 +609,7 @@ export default function TaxCalculator() {
   const [vatCostsRate, setVatCostsRate] = useState(23);
   const [hasMarza, setHasMarza] = useState(false);
   const [marzaRevenue, setMarzaRevenue] = useState(5_000);
-  const [marzaRevBrutto, setMarzaRevBrutto] = useState(false);
   const [vatMarza, setVatMarza] = useState(3_000);
-  const [marzaBrutto, setMarzaBrutto] = useState(false);
   const [viewMode, setViewMode] = useState<ViewMode>("monthly");
 
   // Ryczałt sources
@@ -647,11 +645,11 @@ export default function TaxCalculator() {
         ryczaltSources: ryczaltSources.map((s) => ({ ...s, amount: n(s.amount, revBrutto, vatRate) })),
         vatMode, vatRate, vatCostsRate,
         hasMarza,
-        marzaRevenue: n(marzaRevenue, marzaRevBrutto, vatRate),
-        vatMarza: n(vatMarza, marzaBrutto, vatRate),
+        marzaRevenue,
+        vatMarza,
       }),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [monthlyRevenue, businessCostsNet, privateCostsNet, carCostsNet, carUsage, zusStatus, chorobowa, prevYearIncome, ryczaltSources, vatMode, vatRate, vatCostsRate, hasMarza, marzaRevenue, marzaRevBrutto, vatMarza, revBrutto, bizBrutto, privBrutto, carBrutto, marzaBrutto],
+    [monthlyRevenue, businessCostsNet, privateCostsNet, carCostsNet, carUsage, zusStatus, chorobowa, prevYearIncome, ryczaltSources, vatMode, vatRate, vatCostsRate, hasMarza, marzaRevenue, vatMarza, revBrutto, bizBrutto, privBrutto, carBrutto],
   );
 
   // Limity
@@ -866,11 +864,9 @@ export default function TaxCalculator() {
                 {hasMarza && (
                   <div className="grid grid-cols-2 gap-4 pl-7">
                     <NumberInput label="Przychód na marży (mies.)" value={marzaRevenue} onChange={setMarzaRevenue} step={100}
-                      hint="Ile z przychodu pochodzi ze sprzedaży na marży"
-                      brutto={marzaRevBrutto} onBruttoChange={setMarzaRevBrutto} vatPct={vatRate} />
+                      hint="Cena sprzedaży brutto — na fakturze VAT marża nie ma rozbicia netto/VAT" />
                     <NumberInput label="Marża miesięczna" value={vatMarza} onChange={setVatMarza} step={100}
-                      hint="Cena sprzedaży − cena zakupu (brutto, zawiera VAT)"
-                      brutto={marzaBrutto} onBruttoChange={setMarzaBrutto} vatPct={vatRate} />
+                      hint="Cena sprzedaży − cena zakupu (kwota brutto, zawiera VAT)" />
                   </div>
                 )}
               </div>
