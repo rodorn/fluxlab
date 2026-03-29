@@ -259,7 +259,7 @@ function calculate(p: {
   const skalaTaxBaseNoPriv = Math.max(0, Math.round(annRev - annBizCosts - annCarDeductible - annZus));
   const skalaTaxNoPriv = taxSkala(skalaTaxBaseNoPriv);
   const skalaPrivSav = calcPrivateSavings(skalaTaxNoPriv, skalaTax);
-  const skalaBurden = annZus + annFP + skalaHealthAnn + skalaTax + vatRealCost;
+  const skalaBurden = annZus + annFP + skalaHealthAnn + skalaTax;
 
   // ── LINIOWY ──
   const linearMonthlyInc = Math.max(0, p.monthlyRevenue - p.businessCosts - p.privateCosts - Math.round(p.carCosts * carPitPct) - zusM);
@@ -271,7 +271,7 @@ function calculate(p: {
   const linearTaxBaseNoPriv = Math.max(0, Math.round(annRev - annBizCosts - annCarDeductible - annZus - linearHealthDed));
   const linearTaxNoPriv = taxLinear(linearTaxBaseNoPriv);
   const linearPrivSav = calcPrivateSavings(linearTaxNoPriv, linearTax);
-  const linearBurden = annZus + annFP + linearHealthAnn + linearTax + vatRealCost;
+  const linearBurden = annZus + annFP + linearHealthAnn + linearTax;
 
   // ── RYCZAŁT ──
   const ryczHealthM = healthRyczalt(annRev);
@@ -292,7 +292,7 @@ function calculate(p: {
       ryczTax += Math.round(srcTaxable * (src.rate / 100));
     }
   }
-  const ryczBurden = annZus + annFP + ryczHealthAnn + ryczTax + vatRealCost;
+  const ryczBurden = annZus + annFP + ryczHealthAnn + ryczTax;
 
   // Przychód brutto = netto + VAT należny
   const vatOutStandard = p.vatMode === "standard" ? Math.round(annRev * (p.vatRate / 100)) : 0;
@@ -547,7 +547,7 @@ function ResultCard({ result, isBest, viewMode, showVat }: {
   const v = (ann: number) => pln(Math.round(ann / d));
 
   // Przychód netto (do tooltipów — obliczenia PIT bazują na netto)
-  const revNetto = r.annualRevenue - (showVat ? r.vatPassThrough + r.vatRealCost : 0);
+  const revNetto = r.annualRevenue - (showVat ? r.vatPassThrough : 0);
 
   const burdenParts = [
     ...(r.vatPassThrough > 0 ? [`VAT do US (${v(r.vatPassThrough)})`] : []),
@@ -555,7 +555,6 @@ function ResultCard({ result, isBest, viewMode, showVat }: {
     ...(r.funduszPracy > 0 ? [`FP (${v(r.funduszPracy)})`] : []),
     `zdrowotna (${v(r.healthInsurance)})`,
     `podatek (${v(r.incomeTax)})`,
-    ...(r.vatRealCost > 0 ? [`nieodlicz. VAT sam. (${v(r.vatRealCost)})`] : []),
   ].join(" + ");
 
   // Pie chart slices
@@ -576,8 +575,6 @@ function ResultCard({ result, isBest, viewMode, showVat }: {
         : `Łączny przychód ze wszystkich źródeł: ${v(r.annualRevenue)}${sfx}.` },
     ...(showVat && r.vatPassThrough > 0 ? [{ label: "VAT do urzędu skarbowego", value: -r.vatPassThrough, negative: true as const,
       tip: `VAT należny od sprzedaży standardowej minus VAT naliczony od kosztów. Odprowadzasz ${v(r.vatPassThrough)}${sfx} do US.` }] : []),
-    ...(r.vatRealCost > 0 ? [{ label: "Nieodliczalny VAT (samochód)", value: -r.vatRealCost, negative: true as const,
-      tip: `Nieodliczalny VAT od samochodu: ${v(r.vatRealCost)}${sfx}. Np. 50% VAT przy mieszanym użytku.` }] : []),
     ...(r.deductibleCosts > 0 ? [
       { label: "Koszty odliczone (PIT)", value: -r.deductibleCosts, negative: true as const,
         tip: `Firmowe + prywatne (${v(costsNoCar)}) + samochód (${v(r.carCostsDeducted)}). Obniżają podstawę opodatkowania.` },
