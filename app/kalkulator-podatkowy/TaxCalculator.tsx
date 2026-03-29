@@ -294,6 +294,10 @@ function calculate(p: {
   }
   const ryczBurden = annZus + annFP + ryczHealthAnn + ryczTax + vatRealCost;
 
+  // Przychód brutto = netto + VAT należny (który zbierasz od klientów)
+  const vatOut = p.vatMode === "standard" ? Math.round(annRev * (p.vatRate / 100)) : 0;
+  const annRevBrutto = annRev + vatOut;
+
   const mk = (
     label: string,
     deductible: number,
@@ -303,26 +307,30 @@ function calculate(p: {
     tax: number,
     burden: number,
     privSav: number,
-  ): TaxResult => ({
-    label,
-    annualRevenue: annRev,
-    deductibleCosts: deductible,
-    carCostsDeducted: annCarDeductible,
-    zusSpoleczne: annZus,
-    funduszPracy: annFP,
-    healthInsurance: health,
-    healthDeduction: healthDed,
-    taxBase: base,
-    incomeTax: tax,
-    vatPassThrough,
-    vatRealCost,
-    vatPrivateSavings,
-    totalBurden: burden,
-    netAfterTax: annRev - burden,
-    disposable: annRev - burden - annBizCosts,
-    privateSavings: privSav,
-    effectiveRate: annRev > 0 ? burden / annRev : 0,
-  });
+  ): TaxResult => {
+    // Łączne obciążenia z perspektywy brutto: burden + cały VAT do US
+    const totalWithVat = burden + vatPassThrough;
+    return {
+      label,
+      annualRevenue: annRevBrutto,
+      deductibleCosts: deductible,
+      carCostsDeducted: annCarDeductible,
+      zusSpoleczne: annZus,
+      funduszPracy: annFP,
+      healthInsurance: health,
+      healthDeduction: healthDed,
+      taxBase: base,
+      incomeTax: tax,
+      vatPassThrough,
+      vatRealCost,
+      vatPrivateSavings,
+      totalBurden: totalWithVat,
+      netAfterTax: annRevBrutto - totalWithVat,
+      disposable: annRevBrutto - totalWithVat - annBizCosts,
+      privateSavings: privSav,
+      effectiveRate: annRevBrutto > 0 ? totalWithVat / annRevBrutto : 0,
+    };
+  };
 
   return {
     skala: mk("Skala podatkowa", totalDeductible, skalaHealthAnn, 0, skalaTaxBase, skalaTax, skalaBurden, skalaPrivSav),
@@ -457,20 +465,31 @@ function ResultCard({ result, isBest, viewMode, showVat }: {
 
   const r = result;
   const costsNoCar = r.deductibleCosts - r.carCostsDeducted;
+  const bizCostsAnn = r.annualRevenue - r.totalBurden - r.disposable;
+
+  // Przychód netto (do tooltipów — obliczenia PIT bazują na netto)
+  const revNetto = r.annualRevenue - (showVat ? r.vatPassThrough + r.vatRealCost : 0);
+
   const burdenParts = [
+    ...(r.vatPassThrough > 0 ? [`VAT do US (${pln(r.vatPassThrough)})`] : []),
     `ZUS (${pln(r.zusSpoleczne)})`,
     ...(r.funduszPracy > 0 ? [`FP (${pln(r.funduszPracy)})`] : []),
     `zdrowotna (${pln(r.healthInsurance)})`,
     `podatek (${pln(r.incomeTax)})`,
-    ...(r.vatRealCost > 0 ? [`nieodliczalny VAT (${pln(r.vatRealCost)})`] : []),
+    ...(r.vatRealCost > 0 ? [`nieodlicz. VAT (${pln(r.vatRealCost)})`] : []),
   ].join(" + ");
-  const bizCostsAnn = r.annualRevenue - r.totalBurden - r.disposable; // = annBizCosts (derived)
 
   const rows: { label: string; value: number; tip?: string; bold?: boolean; accent?: boolean; dimmed?: boolean; negative?: boolean; green?: boolean }[] = [
-    { label: "Przychód", value: r.annualRevenue, bold: true,
-      tip: `Łączny przychód netto (bez VAT) ze wszystkich źródeł: ${pln(r.annualRevenue)}/rok (${pln(Math.round(r.annualRevenue / 12))}/mies.)` },
+    { label: showVat ? "Przychód brutto" : "Przychód", value: r.annualRevenue, bold: true,
+      tip: showVat
+        ? `Przychód brutto (netto + VAT): ${pln(r.annualRevenue)}/rok (${pln(Math.round(r.annualRevenue / 12))}/mies.). Netto: ${pln(revNetto)}.`
+        : `Łączny przychód ze wszystkich źródeł: ${pln(r.annualRevenue)}/rok (${pln(Math.round(r.annualRevenue / 12))}/mies.)` },
+    ...(showVat && r.vatPassThrough > 0 ? [{ label: "VAT do urzędu skarbowego", value: -r.vatPassThrough, negative: true as const,
+      tip: `VAT należny od sprzedaży minus VAT naliczony od kosztów. Odprowadzasz ${pln(r.vatPassThrough)}/rok (${pln(Math.round(r.vatPassThrough / 12))}/mies.) do US.` }] : []),
+    ...(r.vatRealCost > 0 ? [{ label: "Nieodliczalny VAT", value: -r.vatRealCost, negative: true as const,
+      tip: `VAT, którego nie odliczysz: ${pln(r.vatRealCost)}/rok (${pln(Math.round(r.vatRealCost / 12))}/mies.). Np. 50% VAT od samochodu przy mieszanym użytku lub VAT od marży.` }] : []),
     ...(r.deductibleCosts > 0 ? [
-      { label: "Koszty odliczone", value: -r.deductibleCosts, negative: true as const,
+      { label: "Koszty odliczone (PIT)", value: -r.deductibleCosts, negative: true as const,
         tip: `Firmowe + prywatne (${pln(costsNoCar)}) + samochód (${pln(r.carCostsDeducted)}). Obniżają podstawę opodatkowania.` },
       ...(r.carCostsDeducted > 0 ? [{ label: "↳ w tym samochód", value: -r.carCostsDeducted, dimmed: true as const,
         tip: `Odliczana część kosztów samochodu: 75% przy mieszanym / 100% przy firmowym. Tu: ${pln(r.carCostsDeducted)}/rok.` }] : []),
@@ -491,8 +510,8 @@ function ResultCard({ result, isBest, viewMode, showVat }: {
         : `50% składki zdrowotnej: ${pln(r.healthDeduction)} odliczone od przychodu przed naliczeniem ryczałtu` }] : []),
     { label: "Podstawa opodatkowania", value: r.taxBase, dimmed: true,
       tip: r.label === "Ryczałt"
-        ? `Przychód (${pln(r.annualRevenue)}) − 50% zdrowotnej (${pln(r.healthDeduction)}) = ${pln(r.taxBase)}`
-        : `Przychód (${pln(r.annualRevenue)}) − koszty (${pln(r.deductibleCosts)}) − ZUS (${pln(r.zusSpoleczne)})${r.healthDeduction > 0 ? ` − odlicz. zdrow. (${pln(r.healthDeduction)})` : ""} = ${pln(r.taxBase)}` },
+        ? `Przychód netto (${pln(revNetto)}) − 50% zdrowotnej (${pln(r.healthDeduction)}) = ${pln(r.taxBase)}`
+        : `Przychód netto (${pln(revNetto)}) − koszty (${pln(r.deductibleCosts)}) − ZUS (${pln(r.zusSpoleczne)})${r.healthDeduction > 0 ? ` − odlicz. zdrow. (${pln(r.healthDeduction)})` : ""} = ${pln(r.taxBase)}` },
     { label: "Podatek dochodowy", value: -r.incomeTax, negative: true,
       tip: r.label === "Skala podatkowa"
         ? r.taxBase <= BRACKET_LIMIT
@@ -501,20 +520,16 @@ function ResultCard({ result, isBest, viewMode, showVat }: {
         : r.label === "Podatek liniowy"
           ? `19% × ${pln(r.taxBase)} = ${pln(r.incomeTax)} (bez kwoty wolnej)`
           : `Ryczałt wg stawek od przychodu po odliczeniu zdrowotnej. Podatek: ${pln(r.incomeTax)}/rok.` },
-    ...(r.vatRealCost > 0 ? [{ label: "Nieodliczalny VAT", value: -r.vatRealCost, negative: true as const,
-      tip: `VAT, którego nie odliczysz: ${pln(r.vatRealCost)}/rok (${pln(Math.round(r.vatRealCost / 12))}/mies.). Np. 50% VAT od samochodu przy mieszanym użytku lub VAT od marży.` }] : []),
-    ...(showVat && r.vatPassThrough > 0 ? [{ label: "↳ VAT do US (przepływ)", value: r.vatPassThrough, dimmed: true as const,
-      tip: `${pln(r.vatPassThrough)}/rok odprowadzane do urzędu skarbowego. To nie Twój koszt — zbierasz go od klientów i przekazujesz.` }] : []),
     { label: "Obciążenia łącznie", value: r.totalBurden, bold: true,
       tip: `${burdenParts} = ${pln(r.totalBurden)}/rok (${pln(Math.round(r.totalBurden / 12))}/mies.)` },
     { label: "Netto (przed kosztami)", value: r.netAfterTax, bold: true,
-      tip: `Przychód (${pln(r.annualRevenue)}) − obciążenia (${pln(r.totalBurden)}) = ${pln(r.netAfterTax)}` },
+      tip: `Przychód brutto (${pln(r.annualRevenue)}) − obciążenia (${pln(r.totalBurden)}) = ${pln(r.netAfterTax)}` },
     { label: "Do dyspozycji", value: r.disposable, bold: true, accent: true,
-      tip: `Przychód (${pln(r.annualRevenue)}) − obciążenia (${pln(r.totalBurden)}) − koszty firmowe (${pln(bizCostsAnn)}) = ${pln(r.disposable)}. Koszty prywatne i samochodu nie odejmowane (i tak ponoszone).` },
+      tip: `Przychód brutto (${pln(r.annualRevenue)}) − obciążenia (${pln(r.totalBurden)}) − koszty firmowe (${pln(bizCostsAnn)}) = ${pln(r.disposable)}. Koszty prywatne i samochodu nie odejmowane (i tak ponoszone).` },
     ...(r.privateSavings > 0 ? [{ label: "↳ oszczędność PIT z kosztów prywatnych", value: r.privateSavings, green: true as const,
-      tip: `Dzięki wliczeniu kosztów prywatnych płacisz ${pln(r.privateSavings)}/rok mniej podatku dochodowego. To realna oszczędność — te wydatki ponosisz niezależnie od działalności.` }] : []),
+      tip: `Dzięki wliczeniu kosztów prywatnych płacisz ${pln(r.privateSavings)}/rok mniej podatku dochodowego.` }] : []),
     ...(r.vatPrivateSavings > 0 ? [{ label: "↳ oszczędność VAT z kosztów prywatnych", value: r.vatPrivateSavings, green: true as const,
-      tip: `Odliczony VAT od kosztów prywatnych i samochodu: ${pln(r.vatPrivateSavings)}/rok (${pln(Math.round(r.vatPrivateSavings / 12))}/mies.). To pieniądze, które odzyskujesz z VAT, a i tak byś te koszty ponosił.` }] : []),
+      tip: `Odliczony VAT od kosztów prywatnych i samochodu: ${pln(r.vatPrivateSavings)}/rok (${pln(Math.round(r.vatPrivateSavings / 12))}/mies.). Pieniądze odzyskane z VAT od kosztów i tak ponoszonych.` }] : []),
   ];
 
   return (
