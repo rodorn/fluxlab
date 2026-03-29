@@ -448,51 +448,64 @@ function ResultCard({ result, isBest, viewMode, showVat }: {
   const d = viewMode === "monthly" ? 12 : 1;
   const sfx = viewMode === "monthly" ? "/mies." : "/rok";
 
+  const r = result;
+  const costsNoCar = r.deductibleCosts - r.carCostsDeducted;
+  const burdenParts = [
+    `ZUS (${pln(r.zusSpoleczne)})`,
+    ...(r.funduszPracy > 0 ? [`FP (${pln(r.funduszPracy)})`] : []),
+    `zdrowotna (${pln(r.healthInsurance)})`,
+    `podatek (${pln(r.incomeTax)})`,
+    ...(r.vatRealCost > 0 ? [`nieodliczalny VAT (${pln(r.vatRealCost)})`] : []),
+  ].join(" + ");
+  const bizCostsAnn = r.annualRevenue - r.totalBurden - r.disposable; // = annBizCosts (derived)
+
   const rows: { label: string; value: number; tip?: string; bold?: boolean; accent?: boolean; dimmed?: boolean; negative?: boolean; green?: boolean }[] = [
-    { label: "Przychód", value: result.annualRevenue, bold: true,
-      tip: "Łączny przychód netto (bez VAT) ze wszystkich źródeł" },
-    ...(result.deductibleCosts > 0 ? [
-      { label: "Koszty odliczone", value: -result.deductibleCosts, negative: true as const,
-        tip: "Suma kosztów firmowych, prywatnych dopisanych do firmy i odliczanej części kosztów samochodu. Obniżają podstawę opodatkowania." },
-      ...(result.carCostsDeducted > 0 ? [{ label: "↳ w tym samochód", value: -result.carCostsDeducted, dimmed: true as const,
-        tip: "Odliczana część kosztów samochodu: 75% przy użytkowaniu mieszanym, 100% przy wyłącznie firmowym" }] : []),
+    { label: "Przychód", value: r.annualRevenue, bold: true,
+      tip: `Łączny przychód netto (bez VAT) ze wszystkich źródeł: ${pln(r.annualRevenue)}/rok (${pln(Math.round(r.annualRevenue / 12))}/mies.)` },
+    ...(r.deductibleCosts > 0 ? [
+      { label: "Koszty odliczone", value: -r.deductibleCosts, negative: true as const,
+        tip: `Firmowe + prywatne (${pln(costsNoCar)}) + samochód (${pln(r.carCostsDeducted)}). Obniżają podstawę opodatkowania.` },
+      ...(r.carCostsDeducted > 0 ? [{ label: "↳ w tym samochód", value: -r.carCostsDeducted, dimmed: true as const,
+        tip: `Odliczana część kosztów samochodu: 75% przy mieszanym / 100% przy firmowym. Tu: ${pln(r.carCostsDeducted)}/rok.` }] : []),
     ] : []),
-    { label: "ZUS społeczne", value: -result.zusSpoleczne, negative: true,
-      tip: "Składki: emerytalna (19,52%), rentowa (8%), wypadkowa (1,67%) + opcjonalnie chorobowa (2,45%). Podstawa zależy od statusu ZUS." },
-    ...(result.funduszPracy > 0 ? [{ label: "Fundusz Pracy", value: -result.funduszPracy, negative: true as const,
-      tip: "2,45% od podstawy pełnego ZUS. Nie dotyczy ulgi na start, małego ZUS ani Małego ZUS Plus." }] : []),
-    { label: "Składka zdrowotna", value: -result.healthInsurance, negative: true,
-      tip: result.label === "Skala podatkowa"
-        ? "9% dochodu (przychód − koszty − ZUS). Nie podlega odliczeniu od podatku."
-        : result.label === "Podatek liniowy"
-          ? "4,9% dochodu. Można odliczyć od dochodu do limitu rocznego."
-          : "Stała kwota zależna od progu przychodu rocznego (60k / 300k). 50% odliczalne od przychodu." },
-    ...(result.healthDeduction > 0 ? [{ label: "↳ odliczenie zdrowotnej", value: result.healthDeduction, dimmed: true as const,
-      tip: result.label === "Podatek liniowy"
-        ? `Składka zdrowotna odliczona od dochodu (max ${pln(LINEAR_HEALTH_CAP)}/rok)`
-        : "50% składki zdrowotnej odliczone od przychodu przed naliczeniem ryczałtu" }] : []),
-    { label: "Podstawa opodatkowania", value: result.taxBase, dimmed: true,
-      tip: result.label === "Ryczałt"
-        ? "Przychód pomniejszony o 50% składki zdrowotnej (bez odliczania kosztów – ryczałt nie pozwala na koszty)"
-        : "Przychód − koszty − ZUS społeczne (− odliczenie zdrowotnej przy liniowym)" },
-    { label: "Podatek dochodowy", value: -result.incomeTax, negative: true,
-      tip: result.label === "Skala podatkowa"
-        ? `12% do ${pln(BRACKET_LIMIT)}, 32% powyżej. Kwota wolna ${pln(TAX_FREE)} (zmniejsza podatek o ${pln(TAX_REDUCTION)}).`
-        : result.label === "Podatek liniowy"
-          ? "Stała stawka 19% od dochodu, bez kwoty wolnej"
-          : "Podatek wg stawki ryczałtu od przychodu (po odliczeniu 50% zdrowotnej). Najem: 8,5% do 100k + 12,5% powyżej." },
-    ...(result.vatRealCost > 0 ? [{ label: "Nieodliczalny VAT", value: -result.vatRealCost, negative: true as const,
-      tip: "VAT, którego nie możesz odliczyć — np. 50% VAT od samochodu przy użytku mieszanym, lub VAT od marży." }] : []),
-    ...(showVat && result.vatPassThrough > 0 ? [{ label: "↳ VAT do US (przepływ)", value: result.vatPassThrough, dimmed: true as const,
-      tip: "VAT odprowadzany do urzędu skarbowego. To nie jest Twój koszt — zbierasz go od klientów i przekazujesz dalej." }] : []),
-    { label: "Obciążenia łącznie", value: result.totalBurden, bold: true,
-      tip: "Suma: ZUS + Fundusz Pracy + składka zdrowotna + podatek dochodowy + VAT" },
-    { label: "Netto (przed kosztami)", value: result.netAfterTax, bold: true,
-      tip: "Przychód minus wszystkie obciążenia (podatki i składki). Nie uwzględnia wydatków firmowych." },
-    { label: "Do dyspozycji", value: result.disposable, bold: true, accent: true,
-      tip: "Kwota, która realnie zostaje: przychód − obciążenia − koszty firmowe. Koszty prywatne i samochodu nie są odejmowane (i tak byś je ponosił)." },
-    ...(result.privateSavings > 0 ? [{ label: "↳ oszczędność z kosztów prywatnych", value: result.privateSavings, green: true as const,
-      tip: "O tyle mniej podatku płacisz dzięki wliczeniu kosztów prywatnych (telefon, internet itp.) w koszty firmy. To realna oszczędność, bo te wydatki ponosisz niezależnie od działalności." }] : []),
+    { label: "ZUS społeczne", value: -r.zusSpoleczne, negative: true,
+      tip: `Emerytalna 19,52% (${pln(Math.round(r.zusSpoleczne * EMERYTALNA / ZUS_WITH))}) + rentowa 8% (${pln(Math.round(r.zusSpoleczne * RENTOWA / ZUS_WITH))}) + wypadkowa 1,67% (${pln(Math.round(r.zusSpoleczne * WYPADKOWA / ZUS_WITH))}) + chorobowa 2,45% (${pln(Math.round(r.zusSpoleczne * CHOROBOWA / ZUS_WITH))}). Razem: ${pln(r.zusSpoleczne)}/rok (${pln(Math.round(r.zusSpoleczne / 12))}/mies.)` },
+    ...(r.funduszPracy > 0 ? [{ label: "Fundusz Pracy", value: -r.funduszPracy, negative: true as const,
+      tip: `2,45% × podstawa ${pln(FULL_ZUS_BASE)} = ${pln(Math.round(r.funduszPracy / 12))}/mies. (${pln(r.funduszPracy)}/rok). Tylko przy pełnym ZUS.` }] : []),
+    { label: "Składka zdrowotna", value: -r.healthInsurance, negative: true,
+      tip: r.label === "Skala podatkowa"
+        ? `9% dochodu. ${pln(r.healthInsurance)}/rok (${pln(Math.round(r.healthInsurance / 12))}/mies.). Nie podlega odliczeniu od podatku.`
+        : r.label === "Podatek liniowy"
+          ? `4,9% dochodu. ${pln(r.healthInsurance)}/rok (${pln(Math.round(r.healthInsurance / 12))}/mies.). Odliczalna od dochodu do ${pln(LINEAR_HEALTH_CAP)}/rok.`
+          : `Stała kwota wg progu przychodu (60k/300k). ${pln(r.healthInsurance)}/rok (${pln(Math.round(r.healthInsurance / 12))}/mies.). 50% odliczalne od przychodu.` },
+    ...(r.healthDeduction > 0 ? [{ label: "↳ odliczenie zdrowotnej", value: r.healthDeduction, dimmed: true as const,
+      tip: r.label === "Podatek liniowy"
+        ? `Odliczone od dochodu: ${pln(r.healthDeduction)} (max ${pln(LINEAR_HEALTH_CAP)}/rok)`
+        : `50% składki zdrowotnej: ${pln(r.healthDeduction)} odliczone od przychodu przed naliczeniem ryczałtu` }] : []),
+    { label: "Podstawa opodatkowania", value: r.taxBase, dimmed: true,
+      tip: r.label === "Ryczałt"
+        ? `Przychód (${pln(r.annualRevenue)}) − 50% zdrowotnej (${pln(r.healthDeduction)}) = ${pln(r.taxBase)}`
+        : `Przychód (${pln(r.annualRevenue)}) − koszty (${pln(r.deductibleCosts)}) − ZUS (${pln(r.zusSpoleczne)})${r.healthDeduction > 0 ? ` − odlicz. zdrow. (${pln(r.healthDeduction)})` : ""} = ${pln(r.taxBase)}` },
+    { label: "Podatek dochodowy", value: -r.incomeTax, negative: true,
+      tip: r.label === "Skala podatkowa"
+        ? r.taxBase <= BRACKET_LIMIT
+          ? `12% × ${pln(r.taxBase)} − kwota wolna ${pln(TAX_REDUCTION)} = ${pln(r.incomeTax)}`
+          : `12% × ${pln(BRACKET_LIMIT)} − ${pln(TAX_REDUCTION)} + 32% × ${pln(r.taxBase - BRACKET_LIMIT)} = ${pln(r.incomeTax)}`
+        : r.label === "Podatek liniowy"
+          ? `19% × ${pln(r.taxBase)} = ${pln(r.incomeTax)} (bez kwoty wolnej)`
+          : `Ryczałt wg stawek od przychodu po odliczeniu zdrowotnej. Podatek: ${pln(r.incomeTax)}/rok.` },
+    ...(r.vatRealCost > 0 ? [{ label: "Nieodliczalny VAT", value: -r.vatRealCost, negative: true as const,
+      tip: `VAT, którego nie odliczysz: ${pln(r.vatRealCost)}/rok (${pln(Math.round(r.vatRealCost / 12))}/mies.). Np. 50% VAT od samochodu przy mieszanym użytku lub VAT od marży.` }] : []),
+    ...(showVat && r.vatPassThrough > 0 ? [{ label: "↳ VAT do US (przepływ)", value: r.vatPassThrough, dimmed: true as const,
+      tip: `${pln(r.vatPassThrough)}/rok odprowadzane do urzędu skarbowego. To nie Twój koszt — zbierasz go od klientów i przekazujesz.` }] : []),
+    { label: "Obciążenia łącznie", value: r.totalBurden, bold: true,
+      tip: `${burdenParts} = ${pln(r.totalBurden)}/rok (${pln(Math.round(r.totalBurden / 12))}/mies.)` },
+    { label: "Netto (przed kosztami)", value: r.netAfterTax, bold: true,
+      tip: `Przychód (${pln(r.annualRevenue)}) − obciążenia (${pln(r.totalBurden)}) = ${pln(r.netAfterTax)}` },
+    { label: "Do dyspozycji", value: r.disposable, bold: true, accent: true,
+      tip: `Przychód (${pln(r.annualRevenue)}) − obciążenia (${pln(r.totalBurden)}) − koszty firmowe (${pln(bizCostsAnn)}) = ${pln(r.disposable)}. Koszty prywatne i samochodu nie odejmowane (i tak ponoszone).` },
+    ...(r.privateSavings > 0 ? [{ label: "↳ oszczędność z kosztów prywatnych", value: r.privateSavings, green: true as const,
+      tip: `Dzięki wliczeniu kosztów prywatnych płacisz ${pln(r.privateSavings)}/rok mniej podatku. To realna oszczędność — te wydatki ponosisz niezależnie od działalności.` }] : []),
   ];
 
   return (
