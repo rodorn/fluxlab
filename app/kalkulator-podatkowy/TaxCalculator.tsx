@@ -501,6 +501,7 @@ function ResultCard({ result, isBest, viewMode, showVat }: {
    ═══════════════════════════════════════════════════ */
 
 export default function TaxCalculator() {
+  const [inputBrutto, setInputBrutto] = useState(false); // false = netto, true = brutto
   const [businessCosts, setBusinessCosts] = useState(1_500);
   const [privateCosts, setPrivateCosts] = useState(500);
   const [carCosts, setCarCosts] = useState(1_000);
@@ -520,8 +521,16 @@ export default function TaxCalculator() {
   ]);
   const [nextId, setNextId] = useState(2);
 
-  // Przychód = suma źródeł ryczałtu (źródła napędzają przychód)
-  const monthlyRevenue = ryczaltSources.reduce((s, src) => s + src.amount, 0);
+  // Przeliczenie brutto → netto (jeśli użytkownik podaje brutto)
+  const toNetto = (v: number, rate: number) => inputBrutto && vatMode !== "zwolniony" ? Math.round(v / (1 + rate / 100)) : v;
+  const nettoLabel = inputBrutto ? " (brutto)" : " (netto)";
+
+  // Przychód = suma źródeł (w netto)
+  const monthlyRevenueRaw = ryczaltSources.reduce((s, src) => s + src.amount, 0);
+  const monthlyRevenue = toNetto(monthlyRevenueRaw, vatRate);
+  const businessCostsNet = toNetto(businessCosts, vatCostsRate);
+  const privateCostsNet = toNetto(privateCosts, vatCostsRate);
+  const carCostsNet = toNetto(carCosts, vatCostsRate);
 
   const addSource = () => {
     setRyczaltSources((prev) => [...prev, { id: nextId, amount: 0, rate: 8.5, isNajem: false }]);
@@ -534,11 +543,12 @@ export default function TaxCalculator() {
   const results = useMemo(
     () =>
       calculate({
-        monthlyRevenue, businessCosts, privateCosts, carCosts, carUsage,
-        zusStatus, chorobowa, prevYearIncome, ryczaltSources,
-        vatMode, vatRate, vatCostsRate, vatMarza,
+        monthlyRevenue, businessCosts: businessCostsNet, privateCosts: privateCostsNet, carCosts: carCostsNet, carUsage,
+        zusStatus, chorobowa, prevYearIncome, ryczaltSources: ryczaltSources.map((s) => ({ ...s, amount: toNetto(s.amount, vatRate) })),
+        vatMode, vatRate, vatCostsRate, vatMarza: inputBrutto && vatMode === "marza" ? Math.round(vatMarza / (1 + vatRate / 100)) : vatMarza,
       }),
-    [monthlyRevenue, businessCosts, privateCosts, carCosts, carUsage, zusStatus, chorobowa, prevYearIncome, ryczaltSources, vatMode, vatRate, vatCostsRate, vatMarza],
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [monthlyRevenue, businessCostsNet, privateCostsNet, carCostsNet, carUsage, zusStatus, chorobowa, prevYearIncome, ryczaltSources, vatMode, vatRate, vatCostsRate, vatMarza, inputBrutto],
   );
 
   const best = [results.skala, results.linear, results.ryczalt].reduce((a, b) => (a.disposable >= b.disposable ? a : b));
@@ -559,7 +569,29 @@ export default function TaxCalculator() {
 
         {/* ────── LEFT: Przychody i koszty ────── */}
         <div className="space-y-6 rounded-2xl border border-gray-200 dark:border-gray-700 p-6">
-          <h2 className="text-lg font-bold text-gray-900 dark:text-white">Przychody i koszty</h2>
+          <div className="flex items-center justify-between">
+            <h2 className="text-lg font-bold text-gray-900 dark:text-white">Przychody i koszty</h2>
+            <div className="flex items-center gap-2">
+              <button type="button" onClick={() => setInputBrutto(false)}
+                className={`px-3 py-1 rounded-md text-xs font-medium transition ${!inputBrutto ? "bg-accent text-white" : "bg-gray-100 dark:bg-gray-800 text-gray-500 hover:bg-gray-200 dark:hover:bg-gray-700"}`}>
+                Netto
+              </button>
+              <button type="button" onClick={() => setInputBrutto(true)}
+                className={`px-3 py-1 rounded-md text-xs font-medium transition ${inputBrutto ? "bg-accent text-white" : "bg-gray-100 dark:bg-gray-800 text-gray-500 hover:bg-gray-200 dark:hover:bg-gray-700"}`}>
+                Brutto
+              </button>
+            </div>
+          </div>
+          {inputBrutto && vatMode !== "zwolniony" && (
+            <p className="text-xs text-amber-600 dark:text-amber-400 -mt-4">
+              Kwoty brutto zostaną przeliczone na netto (÷ {(1 + vatRate / 100).toFixed(2)}) do obliczeń podatkowych.
+            </p>
+          )}
+          {inputBrutto && vatMode === "zwolniony" && (
+            <p className="text-xs text-gray-400 -mt-4">
+              Przy zwolnieniu z VAT kwoty brutto = netto (brak przeliczenia).
+            </p>
+          )}
 
           {/* Źródła przychodu = ryczałt sources = łączny przychód */}
           <div>
@@ -574,7 +606,7 @@ export default function TaxCalculator() {
                   <div key={src.id} className="rounded-lg bg-gray-50 dark:bg-gray-800/50 p-3 space-y-2">
                     <div className="flex items-end gap-3">
                       <div className="flex-1">
-                        <label className="block text-xs text-gray-500 mb-1">Kwota/mies. {ryczaltSources.length > 1 ? `#${i + 1}` : ""}</label>
+                        <label className="block text-xs text-gray-500 mb-1">Kwota/mies.{nettoLabel} {ryczaltSources.length > 1 ? `#${i + 1}` : ""}</label>
                         <input type="number" value={src.amount} min={0} step={500}
                           onChange={(e) => updateSource(src.id, { amount: Number(e.target.value) || 0 })}
                           className="w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-3 py-2 text-sm tabular-nums focus:border-accent focus:ring-2 focus:ring-accent/30 outline-none" />
@@ -623,23 +655,31 @@ export default function TaxCalculator() {
                 );
               })}
             </div>
-            <div className="mt-3 flex justify-between items-baseline px-1">
-              <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">Łączny przychód:</span>
-              <span className="text-lg font-bold text-accent tabular-nums">{pln(monthlyRevenue)}/mies.</span>
+            <div className="mt-3 px-1 space-y-1">
+              <div className="flex justify-between items-baseline">
+                <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">Łączny przychód{nettoLabel}:</span>
+                <span className="text-lg font-bold text-accent tabular-nums">{pln(monthlyRevenueRaw)}/mies.</span>
+              </div>
+              {inputBrutto && vatMode !== "zwolniony" && (
+                <div className="flex justify-between items-baseline">
+                  <span className="text-xs text-gray-400">Po przeliczeniu na netto:</span>
+                  <span className="text-sm font-medium text-gray-500 tabular-nums">{pln(monthlyRevenue)}/mies.</span>
+                </div>
+              )}
             </div>
           </div>
 
           <div className="grid grid-cols-2 gap-4">
-            <NumberInput label="Koszty firmowe" value={businessCosts} onChange={setBusinessCosts} step={100}
+            <NumberInput label={`Koszty firmowe${nettoLabel}`} value={businessCosts} onChange={setBusinessCosts} step={100}
               hint="Wydatki czysto na firmę" />
-            <NumberInput label="Koszty prywatne w firmie" value={privateCosts} onChange={setPrivateCosts} step={100}
+            <NumberInput label={`Koszty prywatne w firmie${nettoLabel}`} value={privateCosts} onChange={setPrivateCosts} step={100}
               hint="Telefon, internet, biuro – i tak ponoszone" />
           </div>
 
           {/* Samochód */}
           <div className="border-t border-gray-200 dark:border-gray-700 pt-5 space-y-4">
             <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-300">Koszty samochodu</h3>
-            <NumberInput label="Koszty samochodu miesięcznie" value={carCosts} onChange={setCarCosts} step={100}
+            <NumberInput label={`Koszty samochodu miesięcznie${nettoLabel}`} value={carCosts} onChange={setCarCosts} step={100}
               hint="Paliwo, leasing/rata, ubezpieczenie, serwis, myjnia..." />
             <RadioGroup
               label="Użytkowanie samochodu"
