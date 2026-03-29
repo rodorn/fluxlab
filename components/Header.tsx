@@ -47,7 +47,7 @@ const tools: { title: string; description: string; href: string; image: string }
     title: "Kalkulator podatkowy JDG",
     description: "Porównaj skalę, liniowy i ryczałt – składki, VAT, ulgi",
     href: "/kalkulator-podatkowy",
-    image: "/photos/car-chooser/type-osobowy.jpg",
+    image: "/photos/tax-calculation/calculator.jpg",
   },
 ];
 
