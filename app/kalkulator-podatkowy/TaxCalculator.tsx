@@ -454,6 +454,82 @@ function Toggle({ label, checked, onChange, desc }: {
 }
 
 /* ═══════════════════════════════════════════════════
+   DONUT CHART
+   ═══════════════════════════════════════════════════ */
+
+const CHART_COLORS = [
+  "#6366f1", // accent – do dyspozycji
+  "#ef4444", // red – podatek
+  "#f59e0b", // amber – ZUS
+  "#10b981", // emerald – zdrowotna
+  "#3b82f6", // blue – VAT
+  "#8b5cf6", // violet – FP
+  "#94a3b8", // slate – koszty firmowe
+];
+
+function DonutChart({ slices }: { slices: { label: string; value: number; color: string }[] }) {
+  const total = slices.reduce((s, sl) => s + sl.value, 0);
+  if (total <= 0) return null;
+
+  const size = 120;
+  const cx = size / 2;
+  const cy = size / 2;
+  const outerR = 52;
+  const innerR = 34;
+
+  let startAngle = -90; // start from top
+  const paths: { d: string; color: string; label: string; pct: number }[] = [];
+
+  for (const sl of slices) {
+    if (sl.value <= 0) continue;
+    const pct = sl.value / total;
+    const sweep = pct * 360;
+    const endAngle = startAngle + sweep;
+    const largeArc = sweep > 180 ? 1 : 0;
+
+    const toRad = (deg: number) => (deg * Math.PI) / 180;
+    const x1o = cx + outerR * Math.cos(toRad(startAngle));
+    const y1o = cy + outerR * Math.sin(toRad(startAngle));
+    const x2o = cx + outerR * Math.cos(toRad(endAngle));
+    const y2o = cy + outerR * Math.sin(toRad(endAngle));
+    const x1i = cx + innerR * Math.cos(toRad(endAngle));
+    const y1i = cy + innerR * Math.sin(toRad(endAngle));
+    const x2i = cx + innerR * Math.cos(toRad(startAngle));
+    const y2i = cy + innerR * Math.sin(toRad(startAngle));
+
+    const d = [
+      `M ${x1o} ${y1o}`,
+      `A ${outerR} ${outerR} 0 ${largeArc} 1 ${x2o} ${y2o}`,
+      `L ${x1i} ${y1i}`,
+      `A ${innerR} ${innerR} 0 ${largeArc} 0 ${x2i} ${y2i}`,
+      "Z",
+    ].join(" ");
+
+    paths.push({ d, color: sl.color, label: sl.label, pct: pct * 100 });
+    startAngle = endAngle;
+  }
+
+  return (
+    <div className="flex items-center gap-4">
+      <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} className="flex-shrink-0">
+        {paths.map((p, i) => (
+          <path key={i} d={p.d} fill={p.color} className="transition-opacity hover:opacity-80" />
+        ))}
+      </svg>
+      <div className="flex flex-col gap-1 min-w-0">
+        {paths.map((p, i) => (
+          <div key={i} className="flex items-center gap-1.5 text-[11px] leading-tight">
+            <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: p.color }} />
+            <span className="text-gray-600 dark:text-gray-400 truncate">{p.label}</span>
+            <span className="text-gray-400 dark:text-gray-500 tabular-nums ml-auto flex-shrink-0">{p.pct.toFixed(1)}%</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+/* ═══════════════════════════════════════════════════
    RESULT CARD
    ═══════════════════════════════════════════════════ */
 
@@ -481,6 +557,17 @@ function ResultCard({ result, isBest, viewMode, showVat }: {
     `podatek (${v(r.incomeTax)})`,
     ...(r.vatRealCost > 0 ? [`nieodlicz. VAT sam. (${v(r.vatRealCost)})`] : []),
   ].join(" + ");
+
+  // Pie chart slices
+  const chartSlices = [
+    { label: "Do dyspozycji", value: Math.max(0, r.disposable), color: CHART_COLORS[0] },
+    { label: "Podatek", value: r.incomeTax, color: CHART_COLORS[1] },
+    { label: "ZUS społeczne", value: r.zusSpoleczne, color: CHART_COLORS[2] },
+    { label: "Zdrowotna", value: r.healthInsurance, color: CHART_COLORS[3] },
+    ...(r.vatPassThrough > 0 ? [{ label: "VAT", value: r.vatPassThrough, color: CHART_COLORS[4] }] : []),
+    ...(r.funduszPracy > 0 ? [{ label: "Fund. Pracy", value: r.funduszPracy, color: CHART_COLORS[5] }] : []),
+    ...(bizCostsAnn > 0 ? [{ label: "Koszty firmowe", value: bizCostsAnn, color: CHART_COLORS[6] }] : []),
+  ];
 
   const rows: { label: string; value: number; tip?: string; bold?: boolean; accent?: boolean; dimmed?: boolean; negative?: boolean; green?: boolean }[] = [
     { label: showVat ? "Przychód brutto" : "Przychód", value: r.annualRevenue, bold: true,
@@ -536,17 +623,34 @@ function ResultCard({ result, isBest, viewMode, showVat }: {
   ];
 
   return (
-    <div className={`rounded-2xl border p-6 transition relative ${
-      isBest ? "border-accent bg-accent/5 dark:bg-accent/10 shadow-lg shadow-accent/10" : "border-gray-200 dark:border-gray-700"
+    <div className={`rounded-2xl border overflow-hidden transition relative ${
+      isBest ? "border-accent shadow-lg shadow-accent/10" : "border-gray-200 dark:border-gray-700"
     }`}>
       {isBest && (
-        <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full whitespace-nowrap">
+        <div className="absolute top-4 right-4 bg-accent text-white text-[10px] font-bold px-2.5 py-1 rounded-full whitespace-nowrap z-10">
           NAJKORZYSTNIEJSZY
         </div>
       )}
-      <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-1">{result.label}</h3>
-      <p className="text-xs text-gray-500 dark:text-gray-400 mb-4">Efektywna stawka: {pct(result.effectiveRate)}</p>
-      <div className="space-y-2">
+
+      {/* Header */}
+      <div className={`px-6 pt-6 pb-4 ${isBest ? "bg-accent/5 dark:bg-accent/10" : "bg-gray-50 dark:bg-gray-800/50"}`}>
+        <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-0.5">{result.label}</h3>
+        <div className="flex items-baseline gap-2">
+          <span className={`text-2xl font-bold tabular-nums ${isBest ? "text-accent" : "text-gray-900 dark:text-white"}`}>
+            {pln(Math.round(r.disposable / d))}
+          </span>
+          <span className="text-sm text-gray-400">{sfx}</span>
+        </div>
+        <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">Efektywna stawka: {pct(result.effectiveRate)}</p>
+      </div>
+
+      {/* Donut chart */}
+      <div className="px-6 py-4 border-t border-b border-gray-100 dark:border-gray-800">
+        <DonutChart slices={chartSlices} />
+      </div>
+
+      {/* Rows */}
+      <div className="px-6 py-4 space-y-2">
         {rows.map((r) => (
           <div
             key={r.label}
@@ -677,8 +781,11 @@ export default function TaxCalculator() {
       <div className="grid lg:grid-cols-2 gap-8">
 
         {/* ────── LEFT: Przychody i koszty ────── */}
-        <div className="space-y-6 rounded-2xl border border-gray-200 dark:border-gray-700 p-6">
-          <h2 className="text-lg font-bold text-gray-900 dark:text-white">Przychody i koszty</h2>
+        <div className="space-y-6 rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900/50 p-6">
+          <h2 className="flex items-center gap-2 text-lg font-bold text-gray-900 dark:text-white">
+            <svg className="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            Przychody i koszty
+          </h2>
           <p className="text-xs text-gray-400 -mt-4">Przy każdym polu przełącznik N/B (netto/brutto). Brutto przeliczane na netto wg stawki VAT.</p>
 
           {/* Źródła przychodu */}
@@ -850,8 +957,11 @@ export default function TaxCalculator() {
         </div>
 
         {/* ────── RIGHT: ZUS, VAT ────── */}
-        <div className="space-y-6 rounded-2xl border border-gray-200 dark:border-gray-700 p-6">
-          <h2 className="text-lg font-bold text-gray-900 dark:text-white">Składki i VAT</h2>
+        <div className="space-y-6 rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900/50 p-6">
+          <h2 className="flex items-center gap-2 text-lg font-bold text-gray-900 dark:text-white">
+            <svg className="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+            Składki i VAT
+          </h2>
 
           <RadioGroup
             label="Status ZUS"
@@ -949,27 +1059,23 @@ export default function TaxCalculator() {
         </div>
       </div>
 
-      {/* ── VIEW TOGGLE ── */}
-      <div className="flex items-center justify-center gap-2">
-        {(["monthly", "annual"] as ViewMode[]).map((m) => (
-          <button key={m} type="button" onClick={() => setViewMode(m)}
-            className={`px-4 py-2 rounded-lg text-sm font-medium transition ${
-              viewMode === m ? "bg-accent text-white" : "bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700"
-            }`}>
-            {m === "monthly" ? "Miesięcznie" : "Rocznie"}
-          </button>
-        ))}
-      </div>
-
-      {/* ── RESULTS ── */}
-      <div className="grid md:grid-cols-3 gap-6">
-        {([results.skala, results.linear, results.ryczalt] as TaxResult[]).map((r) => (
-          <ResultCard key={r.label} result={r} isBest={r.label === best.label} viewMode={viewMode} showVat={vatMode !== "zwolniony"} />
-        ))}
+      {/* ── VIEW TOGGLE + RESULTS HEADER ── */}
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <h2 className="text-xl font-bold text-gray-900 dark:text-white">Porównanie form opodatkowania</h2>
+        <div className="flex items-center gap-1 bg-gray-100 dark:bg-gray-800 rounded-lg p-1">
+          {(["monthly", "annual"] as ViewMode[]).map((m) => (
+            <button key={m} type="button" onClick={() => setViewMode(m)}
+              className={`px-4 py-2 rounded-md text-sm font-medium transition ${
+                viewMode === m ? "bg-white dark:bg-gray-700 text-gray-900 dark:text-white shadow-sm" : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
+              }`}>
+              {m === "monthly" ? "Miesięcznie" : "Rocznie"}
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* ── COMPARISON BAR ── */}
-      <div className="rounded-2xl border border-gray-200 dark:border-gray-700 p-6">
+      <div className="rounded-2xl border border-gray-200 dark:border-gray-700 p-6 bg-white dark:bg-gray-900/50">
         <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-4">
           Do dyspozycji {viewMode === "monthly" ? "miesięcznie" : "rocznie"}
         </h3>
@@ -986,8 +1092,8 @@ export default function TaxCalculator() {
                     {pln(Math.round(r.disposable / d))}
                   </span>
                 </div>
-                <div className="h-3 rounded-full bg-gray-100 dark:bg-gray-800">
-                  <div className={`h-3 rounded-full transition-all duration-500 ${r.label === best.label ? "bg-accent" : "bg-gray-300 dark:bg-gray-600"}`}
+                <div className="h-3 rounded-full bg-gray-100 dark:bg-gray-800 overflow-hidden">
+                  <div className={`h-3 rounded-full transition-all duration-500 ${r.label === best.label ? "bg-gradient-to-r from-accent to-indigo-400" : "bg-gray-300 dark:bg-gray-600"}`}
                     style={{ width: `${Math.max(0, w)}%` }} />
                 </div>
               </div>
@@ -996,9 +1102,19 @@ export default function TaxCalculator() {
         </div>
       </div>
 
+      {/* ── RESULTS ── */}
+      <div className="grid md:grid-cols-3 gap-6">
+        {([results.skala, results.linear, results.ryczalt] as TaxResult[]).map((r) => (
+          <ResultCard key={r.label} result={r} isBest={r.label === best.label} viewMode={viewMode} showVat={vatMode !== "zwolniony"} />
+        ))}
+      </div>
+
       {/* ── INFO TABLE ── */}
-      <div className="rounded-2xl border border-gray-200 dark:border-gray-700 p-6 text-sm text-gray-600 dark:text-gray-400">
-        <h3 className="font-semibold text-gray-900 dark:text-white mb-3">Stawki i założenia ({YEAR})</h3>
+      <div className="rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900/50 p-6 text-sm text-gray-600 dark:text-gray-400">
+        <h3 className="flex items-center gap-2 font-semibold text-gray-900 dark:text-white mb-3">
+          <svg className="w-4 h-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+          Stawki i założenia ({YEAR})
+        </h3>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-2 text-xs">
           <div><strong>Kwota wolna:</strong> {pln(TAX_FREE)}</div>
           <div><strong>Próg skali:</strong> {pln(BRACKET_LIMIT)}</div>
