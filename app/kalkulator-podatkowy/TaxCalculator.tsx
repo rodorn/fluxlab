@@ -59,6 +59,11 @@ const CAR_PIT_BUSINESS = 1.0;
 const CAR_VAT_MIXED = 0.5;
 const CAR_VAT_BUSINESS = 1.0;
 
+// Limity
+const VAT_EXEMPT_LIMIT = 200_000; // roczny obrót – zwolnienie podmiotowe
+const MALY_PLUS_REVENUE_LIMIT = 120_000; // max przychód z poprzedniego roku
+const MALY_PLUS_MAX_MONTHS = 36; // max miesięcy w 60-miesięcznym oknie
+
 // Stawki ryczałtu
 const RYCZALT_OPTIONS: { rate: number; desc: string; tooltip: string; isNajem?: boolean }[] = [
   { rate: 2, desc: "Sprzedaż produktów rolnych",
@@ -110,7 +115,8 @@ interface TaxResult {
   healthDeduction: number;
   taxBase: number;
   incomeTax: number;
-  vatToPay: number;
+  vatPassThrough: number;
+  vatRealCost: number;
   totalBurden: number;
   netAfterTax: number;
   disposable: number;
@@ -216,14 +222,22 @@ function calculate(p: {
   const annFP = Math.round(fpM * 12);
 
   // VAT
-  let vatToPay = 0;
+  // Standard: pass-through (inkaso od klientów → urząd). Nie wpływa na dochód.
+  //   Jedyny realny koszt: nieodliczalny VAT od samochodu (50% przy mieszanym).
+  // Marża: VAT z marży zmniejsza realny zysk.
+  // Zwolniony: brak VAT, ale koszty zawierają nieodliczalny VAT dostawców.
+  let vatPassThrough = 0; // informacyjny: ile odprowadzasz do US (standard)
+  let vatRealCost = 0; // faktyczny koszt VAT obciążający kieszenie
   if (p.vatMode === "standard") {
     const vatOut = annRev * (p.vatRate / 100);
     const vatInCosts = (annBizCosts + annPrivCosts) * (p.vatCostsRate / 100);
     const vatInCar = annCarCosts * (p.vatCostsRate / 100) * carVatPct;
-    vatToPay = Math.max(0, Math.round(vatOut - vatInCosts - vatInCar));
+    vatPassThrough = Math.max(0, Math.round(vatOut - vatInCosts - vatInCar));
+    // Nieodliczalny VAT od samochodu (np. 50% przy mieszanym użytkowaniu)
+    vatRealCost = Math.round(annCarCosts * (p.vatCostsRate / 100) * (1 - carVatPct));
   } else if (p.vatMode === "marza") {
-    vatToPay = Math.max(0, Math.round(p.vatMarza * 12 * (p.vatRate / 100)));
+    // VAT marża: VAT pochodzi z marży — to realny koszt
+    vatRealCost = Math.max(0, Math.round(p.vatMarza * 12 * (p.vatRate / 100)));
   }
 
   // Helper: tax savings from private costs
@@ -239,7 +253,7 @@ function calculate(p: {
   const skalaTaxBaseNoPriv = Math.max(0, Math.round(annRev - annBizCosts - annCarDeductible - annZus));
   const skalaTaxNoPriv = taxSkala(skalaTaxBaseNoPriv);
   const skalaPrivSav = calcPrivateSavings(skalaTaxNoPriv, skalaTax);
-  const skalaBurden = annZus + annFP + skalaHealthAnn + skalaTax + vatToPay;
+  const skalaBurden = annZus + annFP + skalaHealthAnn + skalaTax + vatRealCost;
 
   // ── LINIOWY ──
   const linearMonthlyInc = Math.max(0, p.monthlyRevenue - p.businessCosts - p.privateCosts - Math.round(p.carCosts * carPitPct) - zusM);
@@ -251,7 +265,7 @@ function calculate(p: {
   const linearTaxBaseNoPriv = Math.max(0, Math.round(annRev - annBizCosts - annCarDeductible - annZus - linearHealthDed));
   const linearTaxNoPriv = taxLinear(linearTaxBaseNoPriv);
   const linearPrivSav = calcPrivateSavings(linearTaxNoPriv, linearTax);
-  const linearBurden = annZus + annFP + linearHealthAnn + linearTax + vatToPay;
+  const linearBurden = annZus + annFP + linearHealthAnn + linearTax + vatRealCost;
 
   // ── RYCZAŁT ──
   const ryczHealthM = healthRyczalt(annRev);
@@ -272,7 +286,7 @@ function calculate(p: {
       ryczTax += Math.round(srcTaxable * (src.rate / 100));
     }
   }
-  const ryczBurden = annZus + annFP + ryczHealthAnn + ryczTax + vatToPay;
+  const ryczBurden = annZus + annFP + ryczHealthAnn + ryczTax + vatRealCost;
 
   const mk = (
     label: string,
@@ -294,10 +308,11 @@ function calculate(p: {
     healthDeduction: healthDed,
     taxBase: base,
     incomeTax: tax,
-    vatToPay,
+    vatPassThrough,
+    vatRealCost,
     totalBurden: burden,
     netAfterTax: annRev - burden,
-    disposable: annRev - burden - annBizCosts - annCarCosts,
+    disposable: annRev - burden - annBizCosts,
     privateSavings: privSav,
     effectiveRate: annRev > 0 ? burden / annRev : 0,
   });
@@ -327,13 +342,31 @@ function pct(v: number): string {
 
 function NumberInput({
   label, value, onChange, min = 0, max = 10_000_000, step = 100, unit = "zł", hint,
+  brutto, onBruttoChange, vatPct,
 }: {
   label: string; value: number; onChange: (v: number) => void;
   min?: number; max?: number; step?: number; unit?: string; hint?: string;
+  brutto?: boolean; onBruttoChange?: (v: boolean) => void; vatPct?: number;
 }) {
+  const showBrutto = brutto !== undefined && onBruttoChange !== undefined;
+  const nettoVal = showBrutto && brutto && vatPct ? Math.round(value / (1 + vatPct / 100)) : value;
   return (
     <div>
-      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">{label}</label>
+      <div className="flex items-center justify-between mb-1">
+        <label className="text-sm font-medium text-gray-700 dark:text-gray-300">{label}</label>
+        {showBrutto && (
+          <div className="flex rounded-md overflow-hidden border border-gray-300 dark:border-gray-600">
+            <button type="button" onClick={() => onBruttoChange!(false)}
+              className={`px-2 py-0.5 text-[10px] font-bold transition ${!brutto ? "bg-accent text-white" : "bg-white dark:bg-gray-800 text-gray-400 hover:text-gray-600"}`}>
+              N
+            </button>
+            <button type="button" onClick={() => onBruttoChange!(true)}
+              className={`px-2 py-0.5 text-[10px] font-bold transition ${brutto ? "bg-accent text-white" : "bg-white dark:bg-gray-800 text-gray-400 hover:text-gray-600"}`}>
+              B
+            </button>
+          </div>
+        )}
+      </div>
       <div className="relative">
         <input
           type="number"
@@ -346,6 +379,9 @@ function NumberInput({
         />
         <span className="absolute right-4 top-1/2 -translate-y-1/2 text-xs text-gray-400 pointer-events-none">{unit}</span>
       </div>
+      {showBrutto && brutto && vatPct && vatPct > 0 && value > 0 && (
+        <p className="mt-1 text-xs text-gray-400">Netto: {pln(nettoVal)}</p>
+      )}
       {hint && <p className="mt-1 text-xs text-gray-400">{hint}</p>}
     </div>
   );
@@ -445,14 +481,16 @@ function ResultCard({ result, isBest, viewMode, showVat }: {
         : result.label === "Podatek liniowy"
           ? "Stała stawka 19% od dochodu, bez kwoty wolnej"
           : "Podatek wg stawki ryczałtu od przychodu (po odliczeniu 50% zdrowotnej). Najem: 8,5% do 100k + 12,5% powyżej." },
-    ...(showVat ? [{ label: "VAT do zapłaty", value: -result.vatToPay, negative: true as const,
-      tip: "VAT należny (od sprzedaży) minus VAT naliczony (od kosztów i samochodu). Przy VAT marża: VAT tylko od marży." }] : []),
+    ...(result.vatRealCost > 0 ? [{ label: "Nieodliczalny VAT", value: -result.vatRealCost, negative: true as const,
+      tip: "VAT, którego nie możesz odliczyć — np. 50% VAT od samochodu przy użytku mieszanym, lub VAT od marży." }] : []),
+    ...(showVat && result.vatPassThrough > 0 ? [{ label: "↳ VAT do US (przepływ)", value: result.vatPassThrough, dimmed: true as const,
+      tip: "VAT odprowadzany do urzędu skarbowego. To nie jest Twój koszt — zbierasz go od klientów i przekazujesz dalej." }] : []),
     { label: "Obciążenia łącznie", value: result.totalBurden, bold: true,
       tip: "Suma: ZUS + Fundusz Pracy + składka zdrowotna + podatek dochodowy + VAT" },
     { label: "Netto (przed kosztami)", value: result.netAfterTax, bold: true,
       tip: "Przychód minus wszystkie obciążenia (podatki i składki). Nie uwzględnia wydatków firmowych." },
     { label: "Do dyspozycji", value: result.disposable, bold: true, accent: true,
-      tip: "Kwota, która realnie zostaje: przychód − obciążenia − koszty firmowe − koszty samochodu. Koszty prywatne nie są odejmowane (i tak byś je ponosił)." },
+      tip: "Kwota, która realnie zostaje: przychód − obciążenia − koszty firmowe. Koszty prywatne i samochodu nie są odejmowane (i tak byś je ponosił)." },
     ...(result.privateSavings > 0 ? [{ label: "↳ oszczędność z kosztów prywatnych", value: result.privateSavings, green: true as const,
       tip: "O tyle mniej podatku płacisz dzięki wliczeniu kosztów prywatnych (telefon, internet itp.) w koszty firmy. To realna oszczędność, bo te wydatki ponosisz niezależnie od działalności." }] : []),
   ];
@@ -501,7 +539,12 @@ function ResultCard({ result, isBest, viewMode, showVat }: {
    ═══════════════════════════════════════════════════ */
 
 export default function TaxCalculator() {
-  const [inputBrutto, setInputBrutto] = useState(false); // false = netto, true = brutto
+  // Per-field brutto flags
+  const [revBrutto, setRevBrutto] = useState(false);
+  const [bizBrutto, setBizBrutto] = useState(false);
+  const [privBrutto, setPrivBrutto] = useState(false);
+  const [carBrutto, setCarBrutto] = useState(false);
+
   const [businessCosts, setBusinessCosts] = useState(1_500);
   const [privateCosts, setPrivateCosts] = useState(500);
   const [carCosts, setCarCosts] = useState(1_000);
@@ -513,6 +556,7 @@ export default function TaxCalculator() {
   const [vatRate, setVatRate] = useState(23);
   const [vatCostsRate, setVatCostsRate] = useState(23);
   const [vatMarza, setVatMarza] = useState(3_000);
+  const [marzaBrutto, setMarzaBrutto] = useState(false);
   const [viewMode, setViewMode] = useState<ViewMode>("monthly");
 
   // Ryczałt sources
@@ -521,16 +565,16 @@ export default function TaxCalculator() {
   ]);
   const [nextId, setNextId] = useState(2);
 
-  // Przeliczenie brutto → netto (jeśli użytkownik podaje brutto)
-  const toNetto = (v: number, rate: number) => inputBrutto && vatMode !== "zwolniony" ? Math.round(v / (1 + rate / 100)) : v;
-  const nettoLabel = inputBrutto ? " (brutto)" : " (netto)";
+  // Per-field brutto→netto conversion (only when VAT active)
+  const n = (v: number, isBrutto: boolean, rate: number) =>
+    isBrutto && vatMode !== "zwolniony" ? Math.round(v / (1 + rate / 100)) : v;
 
-  // Przychód = suma źródeł (w netto)
+  // Przychód = suma źródeł (przeliczony na netto)
   const monthlyRevenueRaw = ryczaltSources.reduce((s, src) => s + src.amount, 0);
-  const monthlyRevenue = toNetto(monthlyRevenueRaw, vatRate);
-  const businessCostsNet = toNetto(businessCosts, vatCostsRate);
-  const privateCostsNet = toNetto(privateCosts, vatCostsRate);
-  const carCostsNet = toNetto(carCosts, vatCostsRate);
+  const monthlyRevenue = n(monthlyRevenueRaw, revBrutto, vatRate);
+  const businessCostsNet = n(businessCosts, bizBrutto, vatCostsRate);
+  const privateCostsNet = n(privateCosts, privBrutto, vatCostsRate);
+  const carCostsNet = n(carCosts, carBrutto, vatCostsRate);
 
   const addSource = () => {
     setRyczaltSources((prev) => [...prev, { id: nextId, amount: 0, rate: 8.5, isNajem: false }]);
@@ -544,12 +588,19 @@ export default function TaxCalculator() {
     () =>
       calculate({
         monthlyRevenue, businessCosts: businessCostsNet, privateCosts: privateCostsNet, carCosts: carCostsNet, carUsage,
-        zusStatus, chorobowa, prevYearIncome, ryczaltSources: ryczaltSources.map((s) => ({ ...s, amount: toNetto(s.amount, vatRate) })),
-        vatMode, vatRate, vatCostsRate, vatMarza: inputBrutto && vatMode === "marza" ? Math.round(vatMarza / (1 + vatRate / 100)) : vatMarza,
+        zusStatus, chorobowa, prevYearIncome,
+        ryczaltSources: ryczaltSources.map((s) => ({ ...s, amount: n(s.amount, revBrutto, vatRate) })),
+        vatMode, vatRate, vatCostsRate,
+        vatMarza: n(vatMarza, marzaBrutto, vatRate),
       }),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [monthlyRevenue, businessCostsNet, privateCostsNet, carCostsNet, carUsage, zusStatus, chorobowa, prevYearIncome, ryczaltSources, vatMode, vatRate, vatCostsRate, vatMarza, inputBrutto],
+    [monthlyRevenue, businessCostsNet, privateCostsNet, carCostsNet, carUsage, zusStatus, chorobowa, prevYearIncome, ryczaltSources, vatMode, vatRate, vatCostsRate, vatMarza, revBrutto, bizBrutto, privBrutto, carBrutto, marzaBrutto],
   );
+
+  // Limity
+  const annualRevenue = monthlyRevenue * 12;
+  const vatExemptExceeded = vatMode === "zwolniony" && annualRevenue > VAT_EXEMPT_LIMIT;
+  const malyPlusRevExceeded = zusStatus === "malyPlus" && annualRevenue > MALY_PLUS_REVENUE_LIMIT;
 
   const best = [results.skala, results.linear, results.ryczalt].reduce((a, b) => (a.disposable >= b.disposable ? a : b));
   const zusM = zusMonthly(zusStatus, chorobowa, prevYearIncome);
@@ -569,35 +620,22 @@ export default function TaxCalculator() {
 
         {/* ────── LEFT: Przychody i koszty ────── */}
         <div className="space-y-6 rounded-2xl border border-gray-200 dark:border-gray-700 p-6">
-          <div className="flex items-center justify-between">
-            <h2 className="text-lg font-bold text-gray-900 dark:text-white">Przychody i koszty</h2>
-            <div className="flex items-center gap-2">
-              <button type="button" onClick={() => setInputBrutto(false)}
-                className={`px-3 py-1 rounded-md text-xs font-medium transition ${!inputBrutto ? "bg-accent text-white" : "bg-gray-100 dark:bg-gray-800 text-gray-500 hover:bg-gray-200 dark:hover:bg-gray-700"}`}>
-                Netto
-              </button>
-              <button type="button" onClick={() => setInputBrutto(true)}
-                className={`px-3 py-1 rounded-md text-xs font-medium transition ${inputBrutto ? "bg-accent text-white" : "bg-gray-100 dark:bg-gray-800 text-gray-500 hover:bg-gray-200 dark:hover:bg-gray-700"}`}>
-                Brutto
-              </button>
-            </div>
-          </div>
-          {inputBrutto && vatMode !== "zwolniony" && (
-            <p className="text-xs text-amber-600 dark:text-amber-400 -mt-4">
-              Kwoty brutto zostaną przeliczone na netto (÷ {(1 + vatRate / 100).toFixed(2)}) do obliczeń podatkowych.
-            </p>
-          )}
-          {inputBrutto && vatMode === "zwolniony" && (
-            <p className="text-xs text-gray-400 -mt-4">
-              Przy zwolnieniu z VAT kwoty brutto = netto (brak przeliczenia).
-            </p>
-          )}
+          <h2 className="text-lg font-bold text-gray-900 dark:text-white">Przychody i koszty</h2>
+          <p className="text-xs text-gray-400 -mt-4">Przy każdym polu przełącznik N/B (netto/brutto). Brutto przeliczane na netto wg stawki VAT.</p>
 
-          {/* Źródła przychodu = ryczałt sources = łączny przychód */}
+          {/* Źródła przychodu */}
           <div>
-            <div className="flex items-center justify-between mb-3">
+            <div className="flex items-center justify-between mb-1">
               <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-300">Źródła przychodu</h3>
-              <button type="button" onClick={addSource} className="text-xs font-medium text-accent hover:text-accent/80 transition">+ Dodaj źródło</button>
+              <div className="flex items-center gap-3">
+                <div className="flex rounded-md overflow-hidden border border-gray-300 dark:border-gray-600" title="Netto / Brutto dla przychodów">
+                  <button type="button" onClick={() => setRevBrutto(false)}
+                    className={`px-2 py-0.5 text-[10px] font-bold transition ${!revBrutto ? "bg-accent text-white" : "bg-white dark:bg-gray-800 text-gray-400"}`}>N</button>
+                  <button type="button" onClick={() => setRevBrutto(true)}
+                    className={`px-2 py-0.5 text-[10px] font-bold transition ${revBrutto ? "bg-accent text-white" : "bg-white dark:bg-gray-800 text-gray-400"}`}>B</button>
+                </div>
+                <button type="button" onClick={addSource} className="text-xs font-medium text-accent hover:text-accent/80 transition">+ Dodaj źródło</button>
+              </div>
             </div>
             <div className="space-y-3">
               {ryczaltSources.map((src, i) => {
@@ -606,7 +644,9 @@ export default function TaxCalculator() {
                   <div key={src.id} className="rounded-lg bg-gray-50 dark:bg-gray-800/50 p-3 space-y-2">
                     <div className="flex items-end gap-3">
                       <div className="flex-1">
-                        <label className="block text-xs text-gray-500 mb-1">Kwota/mies.{nettoLabel} {ryczaltSources.length > 1 ? `#${i + 1}` : ""}</label>
+                        <label className="block text-xs text-gray-500 mb-1">
+                          Kwota/mies. {revBrutto ? "(brutto)" : "(netto)"} {ryczaltSources.length > 1 ? `#${i + 1}` : ""}
+                        </label>
                         <input type="number" value={src.amount} min={0} step={500}
                           onChange={(e) => updateSource(src.id, { amount: Number(e.target.value) || 0 })}
                           className="w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-3 py-2 text-sm tabular-nums focus:border-accent focus:ring-2 focus:ring-accent/30 outline-none" />
@@ -657,12 +697,12 @@ export default function TaxCalculator() {
             </div>
             <div className="mt-3 px-1 space-y-1">
               <div className="flex justify-between items-baseline">
-                <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">Łączny przychód{nettoLabel}:</span>
-                <span className="text-lg font-bold text-accent tabular-nums">{pln(monthlyRevenueRaw)}/mies.</span>
+                <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">Łączny przychód:</span>
+                <span className="text-lg font-bold text-accent tabular-nums">{pln(monthlyRevenueRaw)}/mies. {revBrutto ? "(brutto)" : "(netto)"}</span>
               </div>
-              {inputBrutto && vatMode !== "zwolniony" && (
+              {revBrutto && vatMode !== "zwolniony" && monthlyRevenue !== monthlyRevenueRaw && (
                 <div className="flex justify-between items-baseline">
-                  <span className="text-xs text-gray-400">Po przeliczeniu na netto:</span>
+                  <span className="text-xs text-gray-400">Netto (do obliczeń):</span>
                   <span className="text-sm font-medium text-gray-500 tabular-nums">{pln(monthlyRevenue)}/mies.</span>
                 </div>
               )}
@@ -670,17 +710,20 @@ export default function TaxCalculator() {
           </div>
 
           <div className="grid grid-cols-2 gap-4">
-            <NumberInput label={`Koszty firmowe${nettoLabel}`} value={businessCosts} onChange={setBusinessCosts} step={100}
-              hint="Wydatki czysto na firmę" />
-            <NumberInput label={`Koszty prywatne w firmie${nettoLabel}`} value={privateCosts} onChange={setPrivateCosts} step={100}
-              hint="Telefon, internet, biuro – i tak ponoszone" />
+            <NumberInput label="Koszty firmowe" value={businessCosts} onChange={setBusinessCosts} step={100}
+              hint="Wydatki czysto na firmę"
+              brutto={bizBrutto} onBruttoChange={setBizBrutto} vatPct={vatCostsRate} />
+            <NumberInput label="Koszty prywatne w firmie" value={privateCosts} onChange={setPrivateCosts} step={100}
+              hint="Telefon, internet, biuro – i tak ponoszone"
+              brutto={privBrutto} onBruttoChange={setPrivBrutto} vatPct={vatCostsRate} />
           </div>
 
-          {/* Samochód */}
+          {/* Samochód – koszt prywatny */}
           <div className="border-t border-gray-200 dark:border-gray-700 pt-5 space-y-4">
-            <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-300">Koszty samochodu</h3>
-            <NumberInput label={`Koszty samochodu miesięcznie${nettoLabel}`} value={carCosts} onChange={setCarCosts} step={100}
-              hint="Paliwo, leasing/rata, ubezpieczenie, serwis, myjnia..." />
+            <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-300">Koszty samochodu <span className="font-normal text-gray-400">(koszt prywatny – i tak ponoszone)</span></h3>
+            <NumberInput label="Koszty samochodu miesięcznie" value={carCosts} onChange={setCarCosts} step={100}
+              hint="Paliwo, leasing/rata, ubezpieczenie, serwis, myjnia..."
+              brutto={carBrutto} onBruttoChange={setCarBrutto} vatPct={vatCostsRate} />
             <RadioGroup
               label="Użytkowanie samochodu"
               value={carUsage}
@@ -705,15 +748,25 @@ export default function TaxCalculator() {
             options={[
               { value: "ulga", label: "Ulga na start", desc: "Pierwsze 6 mies. – brak składek społecznych, tylko zdrowotna" },
               { value: "maly", label: "Mały ZUS (preferencyjny)", desc: `Mies. 7–30 – podstawa ${pln(SMALL_ZUS_BASE)} → ${pln(Math.round(zusMonthly("maly", true)))}/mies.` },
-              { value: "malyPlus", label: "Mały ZUS Plus", desc: `Podstawa od dochodu z poprzedniego roku (min ${pln(Math.round(MIN_WAGE * 0.3))}, max ${pln(FULL_ZUS_BASE)})` },
+              { value: "malyPlus", label: "Mały ZUS Plus", desc: `Przychód z poprz. roku ≤ ${pln(MALY_PLUS_REVENUE_LIMIT)}. Max ${MALY_PLUS_MAX_MONTHS} mies. w 60. Podstawa od dochodu.` },
               { value: "pelny", label: "Pełny ZUS", desc: `Podstawa ${pln(FULL_ZUS_BASE)} → ${pln(Math.round(zusMonthly("pelny", true) + fpMonthly("pelny")))}/mies. (z FP)` },
             ]}
           />
 
           {zusStatus === "malyPlus" && (
-            <div className="pl-7">
+            <div className="pl-7 space-y-2">
               <NumberInput label="Roczny dochód z poprzedniego roku" value={prevYearIncome} onChange={setPrevYearIncome} step={1000}
                 hint={`Podstawa: ${pln(Math.round(malyPlusBase))} → składki: ${pln(Math.round(zusMonthly("malyPlus", chorobowa, prevYearIncome)))}/mies.`} />
+              {malyPlusRevExceeded && (
+                <div className="rounded-lg bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 px-3 py-2 text-xs text-red-700 dark:text-red-300">
+                  Twój roczny przychód ({pln(annualRevenue)}) przekracza limit Małego ZUS Plus ({pln(MALY_PLUS_REVENUE_LIMIT)}).
+                  Nie kwalifikujesz się – przejdź na pełny ZUS.
+                </div>
+              )}
+              <p className="text-xs text-gray-400">
+                Mały ZUS Plus można stosować max {MALY_PLUS_MAX_MONTHS} miesięcy w ciągu 60 miesięcy.
+                Nie przysługuje w pierwszym roku działalności.
+              </p>
             </div>
           )}
 
@@ -727,11 +780,18 @@ export default function TaxCalculator() {
               value={vatMode}
               onChange={setVatMode}
               options={[
-                { value: "zwolniony", label: "Zwolniony z VAT", desc: "Brak naliczania i odliczania VAT" },
+                { value: "zwolniony", label: "Zwolniony z VAT", desc: `Limit obrotu ${pln(VAT_EXEMPT_LIMIT)}/rok. Brak naliczania i odliczania.` },
                 { value: "standard", label: "VAT standardowy", desc: "VAT naliczony na sprzedaży minus VAT od kosztów" },
                 { value: "marza", label: "VAT marża", desc: "VAT tylko od marży (różnica sprzedaż – zakup), np. handel używanymi" },
               ]}
             />
+
+            {vatExemptExceeded && (
+              <div className="rounded-lg bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 px-3 py-2 text-xs text-red-700 dark:text-red-300">
+                Twój roczny przychód ({pln(annualRevenue)}) przekracza limit zwolnienia z VAT ({pln(VAT_EXEMPT_LIMIT)}).
+                Musisz zarejestrować się jako czynny podatnik VAT.
+              </div>
+            )}
 
             {vatMode === "standard" && (
               <div className="grid grid-cols-2 gap-4 pl-7">
@@ -743,7 +803,8 @@ export default function TaxCalculator() {
             {vatMode === "marza" && (
               <div className="grid grid-cols-2 gap-4 pl-7">
                 <NumberInput label="Marża miesięczna" value={vatMarza} onChange={setVatMarza} step={100}
-                  hint="Różnica: cena sprzedaży – cena zakupu" />
+                  hint="Różnica: cena sprzedaży – cena zakupu"
+                  brutto={marzaBrutto} onBruttoChange={setMarzaBrutto} vatPct={vatRate} />
                 <NumberInput label="Stawka VAT" value={vatRate} onChange={setVatRate} min={0} max={23} step={1} unit="%" />
               </div>
             )}
@@ -844,6 +905,8 @@ export default function TaxCalculator() {
           <div><strong>Mały ZUS – podstawa:</strong> {pln(SMALL_ZUS_BASE)}</div>
           <div><strong>Samochód mieszany:</strong> {CAR_PIT_MIXED * 100}% PIT / {CAR_VAT_MIXED * 100}% VAT</div>
           <div><strong>Najem ryczałt:</strong> {NAJEM_RATE_LOW}% do {pln(NAJEM_THRESHOLD)}, {NAJEM_RATE_HIGH}% powyżej</div>
+          <div><strong>Zwolnienie VAT:</strong> do {pln(VAT_EXEMPT_LIMIT)} obrotu/rok</div>
+          <div><strong>Mały ZUS Plus:</strong> przychód ≤ {pln(MALY_PLUS_REVENUE_LIMIT)}, max {MALY_PLUS_MAX_MONTHS} mies.</div>
           <div><strong>Min. wynagrodzenie:</strong> {pln(MIN_WAGE)}</div>
           <div><strong>Przeciętne wynagr.:</strong> {pln(AVG_SALARY)}</div>
         </div>
