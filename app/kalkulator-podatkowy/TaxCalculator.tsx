@@ -59,17 +59,28 @@ const CAR_PIT_BUSINESS = 1.0;
 const CAR_VAT_MIXED = 0.5;
 const CAR_VAT_BUSINESS = 1.0;
 
-// Stawki ryczałtu (bez najmu – najem obsługiwany osobno)
-const RYCZALT_OPTIONS = [
-  { rate: 2, desc: "Sprzedaż wyrobów z własnej produkcji rolnej" },
-  { rate: 3, desc: "Gastronomia, handel detaliczny" },
-  { rate: 5.5, desc: "Produkcja, budownictwo" },
-  { rate: 8.5, desc: "Usługi inne" },
-  { rate: 10, desc: "Kupno i sprzedaż nieruchomości" },
-  { rate: 12, desc: "IT, programowanie, usługi techniczne" },
-  { rate: 14, desc: "Usługi zdrowotne" },
-  { rate: 15, desc: "Usługi prawne, doradcze, księgowe" },
-  { rate: 17, desc: "Wolne zawody" },
+// Stawki ryczałtu
+const RYCZALT_OPTIONS: { rate: number; desc: string; tooltip: string; isNajem?: boolean }[] = [
+  { rate: 2, desc: "Sprzedaż produktów rolnych",
+    tooltip: "Przychody ze sprzedaży wyrobów z własnej działalności rolniczej (przetwory, miód, warzywa itp.)" },
+  { rate: 3, desc: "Gastronomia, handel detaliczny",
+    tooltip: "Działalność gastronomiczna (z wyjątkiem sprzedaży napojów o zawartości alkoholu >1,5%), handel detaliczny, usługi związane z produkcją zwierzęcą" },
+  { rate: 5.5, desc: "Produkcja, budownictwo",
+    tooltip: "Działalność wytwórcza, roboty budowlane, przewóz ładunków pojazdami o ładowności >2 tony, prowizje z handlu" },
+  { rate: 8.5, desc: "Usługi inne",
+    tooltip: "Większość usług nie sklasyfikowanych w wyższych stawkach, np. usługi transportowe, pośrednictwo, wynajem ruchomości, usługi gastronomiczne ze sprzedażą alkoholu" },
+  { rate: -1, desc: "Najem (8,5% / 12,5%)", isNajem: true,
+    tooltip: `Najem prywatny lub w ramach działalności: 8,5% od przychodu do ${(NAJEM_THRESHOLD).toLocaleString("pl-PL")} zł/rok, 12,5% od nadwyżki powyżej tego progu. Przeliczane automatycznie.` },
+  { rate: 10, desc: "Obrót nieruchomościami",
+    tooltip: "Kupno i sprzedaż nieruchomości na własny rachunek, przychody z odpłatnego zbycia praw majątkowych lub nieruchomości" },
+  { rate: 12, desc: "IT, programowanie",
+    tooltip: "Usługi związane z oprogramowaniem, doradztwem w zakresie informatyki, przetwarzaniem danych, zarządzaniem stronami internetowymi (hosting)" },
+  { rate: 14, desc: "Usługi zdrowotne",
+    tooltip: "Świadczenie usług w zakresie opieki zdrowotnej (lekarze, dentyści, fizjoterapeuci, pielęgniarki prowadzące prywatną praktykę)" },
+  { rate: 15, desc: "Usługi prawne, doradcze, księgowe",
+    tooltip: "Usługi prawnicze, rachunkowo-księgowe, doradztwo podatkowe, usługi architektoniczne i inżynierskie, reklama, badanie rynku, fotografia" },
+  { rate: 17, desc: "Wolne zawody",
+    tooltip: "Przychody z wolnych zawodów: tłumacze, biegli rewidenci, rzecznicy patentowi, doradcy podatkowi, maklerzy, agenci ubezpieczeniowi (jeśli osobista praca bez zatrudniania)" },
 ];
 
 /* ═══════════════════════════════════════════════════
@@ -401,23 +412,49 @@ function ResultCard({ result, isBest, viewMode, showVat }: {
   const d = viewMode === "monthly" ? 12 : 1;
   const sfx = viewMode === "monthly" ? "/mies." : "/rok";
 
-  const rows: { label: string; value: number; bold?: boolean; accent?: boolean; dimmed?: boolean; negative?: boolean; green?: boolean }[] = [
-    { label: "Przychód", value: result.annualRevenue, bold: true },
+  const rows: { label: string; value: number; tip?: string; bold?: boolean; accent?: boolean; dimmed?: boolean; negative?: boolean; green?: boolean }[] = [
+    { label: "Przychód", value: result.annualRevenue, bold: true,
+      tip: "Łączny przychód netto (bez VAT) ze wszystkich źródeł" },
     ...(result.deductibleCosts > 0 ? [
-      { label: "Koszty odliczone", value: -result.deductibleCosts, negative: true as const },
-      ...(result.carCostsDeducted > 0 ? [{ label: "↳ w tym samochód", value: -result.carCostsDeducted, dimmed: true as const }] : []),
+      { label: "Koszty odliczone", value: -result.deductibleCosts, negative: true as const,
+        tip: "Suma kosztów firmowych, prywatnych dopisanych do firmy i odliczanej części kosztów samochodu. Obniżają podstawę opodatkowania." },
+      ...(result.carCostsDeducted > 0 ? [{ label: "↳ w tym samochód", value: -result.carCostsDeducted, dimmed: true as const,
+        tip: "Odliczana część kosztów samochodu: 75% przy użytkowaniu mieszanym, 100% przy wyłącznie firmowym" }] : []),
     ] : []),
-    { label: "ZUS społeczne", value: -result.zusSpoleczne, negative: true },
-    ...(result.funduszPracy > 0 ? [{ label: "Fundusz Pracy", value: -result.funduszPracy, negative: true as const }] : []),
-    { label: "Składka zdrowotna", value: -result.healthInsurance, negative: true },
-    ...(result.healthDeduction > 0 ? [{ label: "↳ odliczenie zdrowotnej", value: result.healthDeduction, dimmed: true as const }] : []),
-    { label: "Podstawa opodatkowania", value: result.taxBase, dimmed: true },
-    { label: "Podatek dochodowy", value: -result.incomeTax, negative: true },
-    ...(showVat ? [{ label: "VAT do zapłaty", value: -result.vatToPay, negative: true as const }] : []),
-    { label: "Obciążenia łącznie", value: result.totalBurden, bold: true },
-    { label: "Netto (przed kosztami)", value: result.netAfterTax, bold: true },
-    { label: "Do dyspozycji", value: result.disposable, bold: true, accent: true },
-    ...(result.privateSavings > 0 ? [{ label: "↳ oszczędność z kosztów prywatnych", value: result.privateSavings, green: true as const }] : []),
+    { label: "ZUS społeczne", value: -result.zusSpoleczne, negative: true,
+      tip: "Składki: emerytalna (19,52%), rentowa (8%), wypadkowa (1,67%) + opcjonalnie chorobowa (2,45%). Podstawa zależy od statusu ZUS." },
+    ...(result.funduszPracy > 0 ? [{ label: "Fundusz Pracy", value: -result.funduszPracy, negative: true as const,
+      tip: "2,45% od podstawy pełnego ZUS. Nie dotyczy ulgi na start, małego ZUS ani Małego ZUS Plus." }] : []),
+    { label: "Składka zdrowotna", value: -result.healthInsurance, negative: true,
+      tip: result.label === "Skala podatkowa"
+        ? "9% dochodu (przychód − koszty − ZUS). Nie podlega odliczeniu od podatku."
+        : result.label === "Podatek liniowy"
+          ? "4,9% dochodu. Można odliczyć od dochodu do limitu rocznego."
+          : "Stała kwota zależna od progu przychodu rocznego (60k / 300k). 50% odliczalne od przychodu." },
+    ...(result.healthDeduction > 0 ? [{ label: "↳ odliczenie zdrowotnej", value: result.healthDeduction, dimmed: true as const,
+      tip: result.label === "Podatek liniowy"
+        ? `Składka zdrowotna odliczona od dochodu (max ${pln(LINEAR_HEALTH_CAP)}/rok)`
+        : "50% składki zdrowotnej odliczone od przychodu przed naliczeniem ryczałtu" }] : []),
+    { label: "Podstawa opodatkowania", value: result.taxBase, dimmed: true,
+      tip: result.label === "Ryczałt"
+        ? "Przychód pomniejszony o 50% składki zdrowotnej (bez odliczania kosztów – ryczałt nie pozwala na koszty)"
+        : "Przychód − koszty − ZUS społeczne (− odliczenie zdrowotnej przy liniowym)" },
+    { label: "Podatek dochodowy", value: -result.incomeTax, negative: true,
+      tip: result.label === "Skala podatkowa"
+        ? `12% do ${pln(BRACKET_LIMIT)}, 32% powyżej. Kwota wolna ${pln(TAX_FREE)} (zmniejsza podatek o ${pln(TAX_REDUCTION)}).`
+        : result.label === "Podatek liniowy"
+          ? "Stała stawka 19% od dochodu, bez kwoty wolnej"
+          : "Podatek wg stawki ryczałtu od przychodu (po odliczeniu 50% zdrowotnej). Najem: 8,5% do 100k + 12,5% powyżej." },
+    ...(showVat ? [{ label: "VAT do zapłaty", value: -result.vatToPay, negative: true as const,
+      tip: "VAT należny (od sprzedaży) minus VAT naliczony (od kosztów i samochodu). Przy VAT marża: VAT tylko od marży." }] : []),
+    { label: "Obciążenia łącznie", value: result.totalBurden, bold: true,
+      tip: "Suma: ZUS + Fundusz Pracy + składka zdrowotna + podatek dochodowy + VAT" },
+    { label: "Netto (przed kosztami)", value: result.netAfterTax, bold: true,
+      tip: "Przychód minus wszystkie obciążenia (podatki i składki). Nie uwzględnia wydatków firmowych." },
+    { label: "Do dyspozycji", value: result.disposable, bold: true, accent: true,
+      tip: "Kwota, która realnie zostaje: przychód − obciążenia − koszty firmowe − koszty samochodu. Koszty prywatne nie są odejmowane (i tak byś je ponosił)." },
+    ...(result.privateSavings > 0 ? [{ label: "↳ oszczędność z kosztów prywatnych", value: result.privateSavings, green: true as const,
+      tip: "O tyle mniej podatku płacisz dzięki wliczeniu kosztów prywatnych (telefon, internet itp.) w koszty firmy. To realna oszczędność, bo te wydatki ponosisz niezależnie od działalności." }] : []),
   ];
 
   return (
@@ -435,11 +472,19 @@ function ResultCard({ result, isBest, viewMode, showVat }: {
         {rows.map((r) => (
           <div
             key={r.label}
-            className={`flex justify-between items-baseline text-sm ${r.bold ? "font-semibold" : ""} ${r.dimmed ? "text-gray-400 dark:text-gray-500 text-xs" : ""} ${
+            title={r.tip}
+            className={`flex justify-between items-baseline text-sm cursor-help ${r.bold ? "font-semibold" : ""} ${r.dimmed ? "text-gray-400 dark:text-gray-500 text-xs" : ""} ${
               r.accent ? "text-accent text-base" : r.green ? "text-emerald-600 dark:text-emerald-400 text-xs" : "text-gray-700 dark:text-gray-300"
             }`}
           >
-            <span>{r.label}</span>
+            <span className="flex items-center gap-1">
+              {r.label}
+              {r.tip && (
+                <svg className="w-3.5 h-3.5 text-gray-300 dark:text-gray-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <circle cx="12" cy="12" r="10" /><path d="M12 16v-4M12 8h.01" />
+                </svg>
+              )}
+            </span>
             <span className={`tabular-nums ${r.negative ? "text-red-500 dark:text-red-400" : ""}`}>
               {r.negative ? "−\u00A0" : ""}{pln(Math.abs(Math.round(r.value / d)))}
               <span className="text-gray-400 text-xs ml-1">{sfx}</span>
@@ -523,45 +568,60 @@ export default function TaxCalculator() {
               <button type="button" onClick={addSource} className="text-xs font-medium text-accent hover:text-accent/80 transition">+ Dodaj źródło</button>
             </div>
             <div className="space-y-3">
-              {ryczaltSources.map((src, i) => (
-                <div key={src.id} className="rounded-lg bg-gray-50 dark:bg-gray-800/50 p-3 space-y-2">
-                  <div className="flex items-end gap-3">
-                    <div className="flex-1">
-                      <label className="block text-xs text-gray-500 mb-1">Kwota/mies. {ryczaltSources.length > 1 ? `#${i + 1}` : ""}</label>
-                      <input type="number" value={src.amount} min={0} step={500}
-                        onChange={(e) => updateSource(src.id, { amount: Number(e.target.value) || 0 })}
-                        className="w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-3 py-2 text-sm tabular-nums focus:border-accent focus:ring-2 focus:ring-accent/30 outline-none" />
-                    </div>
-                    {!src.isNajem ? (
+              {ryczaltSources.map((src, i) => {
+                const selectedOpt = RYCZALT_OPTIONS.find((o) => o.isNajem ? src.isNajem : !src.isNajem && o.rate === src.rate);
+                return (
+                  <div key={src.id} className="rounded-lg bg-gray-50 dark:bg-gray-800/50 p-3 space-y-2">
+                    <div className="flex items-end gap-3">
+                      <div className="flex-1">
+                        <label className="block text-xs text-gray-500 mb-1">Kwota/mies. {ryczaltSources.length > 1 ? `#${i + 1}` : ""}</label>
+                        <input type="number" value={src.amount} min={0} step={500}
+                          onChange={(e) => updateSource(src.id, { amount: Number(e.target.value) || 0 })}
+                          className="w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-3 py-2 text-sm tabular-nums focus:border-accent focus:ring-2 focus:ring-accent/30 outline-none" />
+                      </div>
                       <div className="flex-1">
                         <label className="block text-xs text-gray-500 mb-1">Stawka ryczałtu</label>
-                        <select value={src.rate} onChange={(e) => updateSource(src.id, { rate: Number(e.target.value) })}
-                          className="w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-3 py-2 text-sm focus:border-accent focus:ring-2 focus:ring-accent/30 outline-none">
-                          {RYCZALT_OPTIONS.map((o) => <option key={o.rate} value={o.rate}>{o.rate}% – {o.desc}</option>)}
+                        <select
+                          value={src.isNajem ? "najem" : String(src.rate)}
+                          onChange={(e) => {
+                            const val = e.target.value;
+                            if (val === "najem") {
+                              updateSource(src.id, { isNajem: true, rate: NAJEM_RATE_LOW });
+                            } else {
+                              updateSource(src.id, { isNajem: false, rate: Number(val) });
+                            }
+                          }}
+                          className="w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-3 py-2 text-sm focus:border-accent focus:ring-2 focus:ring-accent/30 outline-none"
+                        >
+                          {RYCZALT_OPTIONS.map((o) => (
+                            <option key={o.isNajem ? "najem" : o.rate} value={o.isNajem ? "najem" : o.rate}>
+                              {o.isNajem ? `${NAJEM_RATE_LOW}/${NAJEM_RATE_HIGH}%` : `${o.rate}%`} – {o.desc}
+                            </option>
+                          ))}
                         </select>
                       </div>
-                    ) : (
-                      <div className="flex-1">
-                        <label className="block text-xs text-gray-500 mb-1">Stawka (auto)</label>
-                        <div className="px-3 py-2 text-sm text-gray-500 bg-gray-100 dark:bg-gray-700 rounded-md">
-                          {src.amount * 12 <= NAJEM_THRESHOLD
-                            ? `${NAJEM_RATE_LOW}% (≤ ${pln(NAJEM_THRESHOLD)}/rok)`
-                            : `${NAJEM_RATE_LOW}%/${NAJEM_RATE_HIGH}%`}
-                        </div>
-                      </div>
-                    )}
-                    {ryczaltSources.length > 1 && (
-                      <button type="button" onClick={() => removeSource(src.id)} className="text-gray-400 hover:text-red-500 transition p-2" title="Usuń">
-                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
-                      </button>
+                      {ryczaltSources.length > 1 && (
+                        <button type="button" onClick={() => removeSource(src.id)} className="text-gray-400 hover:text-red-500 transition p-2" title="Usuń">
+                          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+                        </button>
+                      )}
+                    </div>
+                    {/* Tooltip / explanation */}
+                    {selectedOpt && (
+                      <p className="text-xs text-gray-400 dark:text-gray-500 leading-relaxed">
+                        {selectedOpt.tooltip}
+                        {src.isNajem && src.amount > 0 && (
+                          <span className="block mt-1 text-gray-500 dark:text-gray-400 font-medium">
+                            {src.amount * 12 <= NAJEM_THRESHOLD
+                              ? `Cały przychód ({pln(src.amount * 12)}/rok) objęty stawką ${NAJEM_RATE_LOW}%.`
+                              : `${pln(NAJEM_THRESHOLD)} × ${NAJEM_RATE_LOW}% + ${pln(src.amount * 12 - NAJEM_THRESHOLD)} × ${NAJEM_RATE_HIGH}%`}
+                          </span>
+                        )}
+                      </p>
                     )}
                   </div>
-                  <label className="flex items-center gap-2 cursor-pointer">
-                    <input type="checkbox" checked={src.isNajem} onChange={(e) => updateSource(src.id, { isNajem: e.target.checked })} className="accent-accent" />
-                    <span className="text-xs text-gray-500">Najem (auto {NAJEM_RATE_LOW}% / {NAJEM_RATE_HIGH}% przy progu {pln(NAJEM_THRESHOLD)}/rok)</span>
-                  </label>
-                </div>
-              ))}
+                );
+              })}
             </div>
             <div className="mt-3 flex justify-between items-baseline px-1">
               <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">Łączny przychód:</span>
