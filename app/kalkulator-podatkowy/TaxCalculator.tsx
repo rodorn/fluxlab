@@ -860,11 +860,6 @@ export default function TaxCalculator() {
 
   return (
     <div className="max-w-6xl mx-auto space-y-10">
-      {/* Disclaimer */}
-      <div className="rounded-xl bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 p-4 text-sm text-amber-800 dark:text-amber-200">
-        <strong>Uwaga:</strong> Kalkulator ma charakter poglądowy (stawki {YEAR}). Skonsultuj się z księgowym przed podjęciem decyzji.
-      </div>
-
       {/* ── INPUTS ── */}
       <div className="grid lg:grid-cols-2 gap-8">
 
@@ -1234,6 +1229,11 @@ export default function TaxCalculator() {
         {([results.skala, results.linear, results.ryczalt] as TaxResult[]).map((r) => (
           <ResultCard key={r.label} result={r} isBest={r.label === best.label} viewMode={viewMode} showVat={vatMode !== "zwolniony"} />
         ))}
+      </div>
+
+      {/* Disclaimer */}
+      <div className="rounded-xl bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 p-4 text-sm text-amber-800 dark:text-amber-200">
+        <strong>Uwaga:</strong> Kalkulator ma charakter poglądowy (stawki {YEAR}). Skonsultuj się z księgowym przed podjęciem decyzji.
       </div>
 
       {/* ── INFO TABLE ── */}
