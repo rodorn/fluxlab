@@ -373,11 +373,12 @@ function NumberInput({
       <div className="relative">
         <input
           type="number"
-          value={value}
+          value={value || ""}
           min={min}
           max={max}
           step={step}
           onChange={(e) => onChange(Math.max(min, Math.min(max, Number(e.target.value) || 0)))}
+          onBlur={() => { if (!value) onChange(0); }}
           className="w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-4 py-2.5 pr-12 text-sm text-gray-900 dark:text-white focus:border-accent focus:ring-2 focus:ring-accent/30 outline-none transition tabular-nums"
         />
         <span className="absolute right-4 top-1/2 -translate-y-1/2 text-xs text-gray-400 pointer-events-none">{unit}</span>
@@ -671,8 +672,9 @@ export default function TaxCalculator() {
                               className={`px-2 py-0.5 text-[10px] font-bold transition ${src.brutto ? "bg-accent text-white" : "bg-white dark:bg-gray-800 text-gray-400"}`}>B</button>
                           </div>
                         </div>
-                        <input type="number" value={src.amount} min={0} step={500}
+                        <input type="number" value={src.amount || ""} min={0} step={500}
                           onChange={(e) => updateSource(src.id, { amount: Number(e.target.value) || 0 })}
+                          onBlur={(e) => { if (!e.target.value) updateSource(src.id, { amount: 0 }); }}
                           className="w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-3 py-2 text-sm tabular-nums focus:border-accent focus:ring-2 focus:ring-accent/30 outline-none" />
                         {src.brutto && vatMode !== "zwolniony" && srcNetto !== src.amount && (
                           <p className="mt-1 text-xs text-gray-400">Netto: {pln(srcNetto)}</p>
