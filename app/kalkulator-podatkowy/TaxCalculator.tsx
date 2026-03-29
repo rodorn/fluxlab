@@ -117,6 +117,7 @@ interface TaxResult {
   incomeTax: number;
   vatPassThrough: number;
   vatRealCost: number;
+  vatPrivateSavings: number;
   totalBurden: number;
   netAfterTax: number;
   disposable: number;
@@ -228,13 +229,18 @@ function calculate(p: {
   // Zwolniony: brak VAT, ale koszty zawierają nieodliczalny VAT dostawców.
   let vatPassThrough = 0; // informacyjny: ile odprowadzasz do US (standard)
   let vatRealCost = 0; // faktyczny koszt VAT obciążający kieszenie
+  let vatPrivateSavings = 0; // oszczędność: odliczony VAT od kosztów prywatnych + samochodu
   if (p.vatMode === "standard") {
     const vatOut = annRev * (p.vatRate / 100);
-    const vatInCosts = (annBizCosts + annPrivCosts) * (p.vatCostsRate / 100);
+    const vatInBiz = annBizCosts * (p.vatCostsRate / 100);
+    const vatInPriv = annPrivCosts * (p.vatCostsRate / 100);
     const vatInCar = annCarCosts * (p.vatCostsRate / 100) * carVatPct;
-    vatPassThrough = Math.max(0, Math.round(vatOut - vatInCosts - vatInCar));
+    vatPassThrough = Math.max(0, Math.round(vatOut - vatInBiz - vatInPriv - vatInCar));
     // Nieodliczalny VAT od samochodu (np. 50% przy mieszanym użytkowaniu)
     vatRealCost = Math.round(annCarCosts * (p.vatCostsRate / 100) * (1 - carVatPct));
+    // Odliczony VAT od kosztów prywatnych i samochodu = realna oszczędność
+    // (te koszty i tak ponosisz, ale dzięki firmie odliczasz z nich VAT)
+    vatPrivateSavings = Math.round(vatInPriv + vatInCar);
   } else if (p.vatMode === "marza") {
     // VAT marża: VAT pochodzi z marży — to realny koszt
     vatRealCost = Math.max(0, Math.round(p.vatMarza * 12 * (p.vatRate / 100)));
@@ -310,6 +316,7 @@ function calculate(p: {
     incomeTax: tax,
     vatPassThrough,
     vatRealCost,
+    vatPrivateSavings,
     totalBurden: burden,
     netAfterTax: annRev - burden,
     disposable: annRev - burden - annBizCosts,
@@ -504,8 +511,10 @@ function ResultCard({ result, isBest, viewMode, showVat }: {
       tip: `Przychód (${pln(r.annualRevenue)}) − obciążenia (${pln(r.totalBurden)}) = ${pln(r.netAfterTax)}` },
     { label: "Do dyspozycji", value: r.disposable, bold: true, accent: true,
       tip: `Przychód (${pln(r.annualRevenue)}) − obciążenia (${pln(r.totalBurden)}) − koszty firmowe (${pln(bizCostsAnn)}) = ${pln(r.disposable)}. Koszty prywatne i samochodu nie odejmowane (i tak ponoszone).` },
-    ...(r.privateSavings > 0 ? [{ label: "↳ oszczędność z kosztów prywatnych", value: r.privateSavings, green: true as const,
-      tip: `Dzięki wliczeniu kosztów prywatnych płacisz ${pln(r.privateSavings)}/rok mniej podatku. To realna oszczędność — te wydatki ponosisz niezależnie od działalności.` }] : []),
+    ...(r.privateSavings > 0 ? [{ label: "↳ oszczędność PIT z kosztów prywatnych", value: r.privateSavings, green: true as const,
+      tip: `Dzięki wliczeniu kosztów prywatnych płacisz ${pln(r.privateSavings)}/rok mniej podatku dochodowego. To realna oszczędność — te wydatki ponosisz niezależnie od działalności.` }] : []),
+    ...(r.vatPrivateSavings > 0 ? [{ label: "↳ oszczędność VAT z kosztów prywatnych", value: r.vatPrivateSavings, green: true as const,
+      tip: `Odliczony VAT od kosztów prywatnych i samochodu: ${pln(r.vatPrivateSavings)}/rok (${pln(Math.round(r.vatPrivateSavings / 12))}/mies.). To pieniądze, które odzyskujesz z VAT, a i tak byś te koszty ponosił.` }] : []),
   ];
 
   return (
