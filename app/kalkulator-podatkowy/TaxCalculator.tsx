@@ -733,10 +733,7 @@ export default function TaxCalculator() {
   ]);
 
   // Koszty (firmowe + prywatne w jednej liście)
-  const [costItems, setCostItems] = useState<CostItem[]>([
-    { id: 101, name: "Koszty firmowe", amount: 1_500, type: "business", brutto: false },
-    { id: 102, name: "Telefon, internet", amount: 500, type: "private", brutto: false },
-  ]);
+  const [costItems, setCostItems] = useState<CostItem[]>([]);
 
   const [nextId, setNextId] = useState(200);
 
@@ -786,15 +783,12 @@ export default function TaxCalculator() {
       if (!res.ok) return;
       const data = await res.json();
       if (data.costs?.length) {
-        const newItems: CostItem[] = data.costs.map((c: { name: string; amount: number; type: CostType }, i: number) => ({
-          id: nextId + i,
-          name: c.name,
-          amount: c.amount,
-          type: costType,
-          brutto: false,
-        }));
-        setCostItems((prev) => [...prev, ...newItems]);
-        setNextId((n) => n + newItems.length);
+        let idCounter = nextId;
+        for (const c of data.costs as { name: string; amount: number }[]) {
+          const newItem: CostItem = { id: idCounter++, name: c.name, amount: c.amount, type: costType, brutto: false };
+          setCostItems((prev) => [...prev, newItem]);
+        }
+        setNextId(idCounter);
       }
     } catch { /* ignore */ }
     finally { setAiCostLoading(null); }
@@ -1144,14 +1138,11 @@ export default function TaxCalculator() {
             )}
           </div>
 
-          {/* ZUS + US summary */}
+          {/* ZUS summary */}
           <div className="rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700">
-            <div className="relative h-24">
-              <Image src="/photos/tax-calculation/urzad-skarbowy-plate.jpg" alt="Urząd Skarbowy" fill className="object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-black/30 flex items-center px-4 gap-3">
-                <Image src="/photos/tax-calculation/zus_logo.png" alt="ZUS" width={36} height={36} className="flex-shrink-0" />
-                <h3 className="text-sm font-semibold text-white">Podsumowanie składek</h3>
-              </div>
+            <div className="flex items-center gap-3 px-4 pt-4 pb-2">
+              <Image src="/photos/tax-calculation/zus_logo.png" alt="ZUS" width={32} height={32} className="flex-shrink-0" />
+              <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-300">Podsumowanie składek</h3>
             </div>
             <div className="p-4 bg-gray-50 dark:bg-gray-800/50 grid grid-cols-2 gap-x-4 gap-y-1 text-sm">
               <span className="text-gray-500">Społeczne:</span>
