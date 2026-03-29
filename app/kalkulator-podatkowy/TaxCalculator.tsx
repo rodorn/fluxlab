@@ -1052,21 +1052,28 @@ export default function TaxCalculator() {
             )}
           </div>
 
-          {/* ZUS summary */}
-          <div className="rounded-xl bg-gray-50 dark:bg-gray-800/50 p-4 space-y-3">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0 border border-gray-200 dark:border-gray-700">
-                <Image src="/photos/tax-calculation/zus_logo.png" alt="ZUS" width={40} height={40} className="w-full h-full object-cover" />
+          {/* ZUS + US summary */}
+          <div className="rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700">
+            <div className="relative h-24">
+              <Image src="/photos/tax-calculation/urzad-skarbowy-plate.jpg" alt="Urząd Skarbowy" fill className="object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-black/30 flex items-center px-4 gap-3">
+                <Image src="/photos/tax-calculation/zus_logo.png" alt="ZUS" width={36} height={36} className="flex-shrink-0" />
+                <h3 className="text-sm font-semibold text-white">Podsumowanie składek</h3>
               </div>
-              <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-300">Podsumowanie ZUS</h3>
             </div>
-            <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-sm">
+            <div className="p-4 bg-gray-50 dark:bg-gray-800/50 grid grid-cols-2 gap-x-4 gap-y-1 text-sm">
               <span className="text-gray-500">Społeczne:</span>
               <span className="tabular-nums font-medium text-right">{pln(Math.round(zusM))}/mies.</span>
               <span className="text-gray-500">Fundusz Pracy:</span>
               <span className="tabular-nums font-medium text-right">{pln(Math.round(fpM))}/mies.</span>
-              <span className="text-gray-500 font-semibold">Razem ZUS:</span>
-              <span className="tabular-nums font-bold text-right">{pln(Math.round(zusM + fpM))}/mies.</span>
+              <span className="text-gray-500">Zdrowotna (skala):</span>
+              <span className="tabular-nums font-medium text-right">{pln(Math.round(results.skala.healthInsurance / 12))}/mies.</span>
+              <span className="text-gray-500">Zdrowotna (liniowy):</span>
+              <span className="tabular-nums font-medium text-right">{pln(Math.round(results.linear.healthInsurance / 12))}/mies.</span>
+              <span className="text-gray-500">Zdrowotna (ryczałt):</span>
+              <span className="tabular-nums font-medium text-right">{pln(Math.round(results.ryczalt.healthInsurance / 12))}/mies.</span>
+              <span className="text-gray-500 font-semibold border-t border-gray-200 dark:border-gray-700 pt-1">Razem (bez zdrow.):</span>
+              <span className="tabular-nums font-bold text-right border-t border-gray-200 dark:border-gray-700 pt-1">{pln(Math.round(zusM + fpM))}/mies.</span>
             </div>
           </div>
 
