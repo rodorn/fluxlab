@@ -99,9 +99,20 @@ type ViewMode = "annual" | "monthly";
 
 interface RyczaltSource {
   id: number;
+  name: string;
   amount: number;
   rate: number;
   isNajem: boolean;
+  brutto: boolean;
+}
+
+type CostType = "business" | "private";
+
+interface CostItem {
+  id: number;
+  name: string;
+  amount: number;
+  type: CostType;
   brutto: boolean;
 }
 
@@ -568,14 +579,8 @@ function ResultCard({ result, isBest, viewMode, showVat }: {
    ═══════════════════════════════════════════════════ */
 
 export default function TaxCalculator() {
-  // Per-field brutto flags
-  const [bizBrutto, setBizBrutto] = useState(false);
-  const [privBrutto, setPrivBrutto] = useState(false);
-  const [carBrutto, setCarBrutto] = useState(false);
-
-  const [businessCosts, setBusinessCosts] = useState(1_500);
-  const [privateCosts, setPrivateCosts] = useState(500);
   const [carCosts, setCarCosts] = useState(1_000);
+  const [carBrutto, setCarBrutto] = useState(false);
   const [carUsage, setCarUsage] = useState<CarUsage>("mixed");
   const [zusStatus, setZusStatus] = useState<ZusStatus>("pelny");
   const [prevYearIncome, setPrevYearIncome] = useState(120_000);
@@ -585,11 +590,18 @@ export default function TaxCalculator() {
   const [vatCostsRate, setVatCostsRate] = useState(23);
   const [viewMode, setViewMode] = useState<ViewMode>("monthly");
 
-  // Ryczałt sources
+  // Źródła przychodu
   const [ryczaltSources, setRyczaltSources] = useState<RyczaltSource[]>([
-    { id: 1, amount: 15_000, rate: 12, isNajem: false, brutto: false },
+    { id: 1, name: "Główne źródło", amount: 15_000, rate: 12, isNajem: false, brutto: false },
   ]);
-  const [nextId, setNextId] = useState(2);
+
+  // Koszty (firmowe + prywatne w jednej liście)
+  const [costItems, setCostItems] = useState<CostItem[]>([
+    { id: 101, name: "Koszty firmowe", amount: 1_500, type: "business", brutto: false },
+    { id: 102, name: "Telefon, internet", amount: 500, type: "private", brutto: false },
+  ]);
+
+  const [nextId, setNextId] = useState(200);
 
   // Per-field brutto→netto conversion (only when VAT active)
   const n = (v: number, isBrutto: boolean, rate: number) =>
@@ -597,17 +609,33 @@ export default function TaxCalculator() {
 
   // Przychód = suma źródeł (każde przeliczone indywidualnie na netto)
   const monthlyRevenue = ryczaltSources.reduce((s, src) => s + n(src.amount, src.brutto, vatRate), 0);
-  const businessCostsNet = n(businessCosts, bizBrutto, vatCostsRate);
-  const privateCostsNet = n(privateCosts, privBrutto, vatCostsRate);
+
+  // Koszty netto: firmowe i prywatne osobno
+  const businessCostsNet = costItems
+    .filter((c) => c.type === "business")
+    .reduce((s, c) => s + n(c.amount, c.brutto, vatCostsRate), 0);
+  const privateCostsNet = costItems
+    .filter((c) => c.type === "private")
+    .reduce((s, c) => s + n(c.amount, c.brutto, vatCostsRate), 0);
   const carCostsNet = n(carCosts, carBrutto, vatCostsRate);
 
+  // Sources helpers
   const addSource = () => {
-    setRyczaltSources((prev) => [...prev, { id: nextId, amount: 0, rate: 8.5, isNajem: false, brutto: false }]);
-    setNextId((n) => n + 1);
+    setRyczaltSources((prev) => [...prev, { id: nextId, name: "", amount: 0, rate: 8.5, isNajem: false, brutto: false }]);
+    setNextId((i) => i + 1);
   };
   const removeSource = (id: number) => setRyczaltSources((prev) => prev.filter((s) => s.id !== id));
   const updateSource = (id: number, patch: Partial<RyczaltSource>) =>
     setRyczaltSources((prev) => prev.map((s) => (s.id === id ? { ...s, ...patch } : s)));
+
+  // Cost helpers
+  const addCost = (type: CostType) => {
+    setCostItems((prev) => [...prev, { id: nextId, name: "", amount: 0, type, brutto: false }]);
+    setNextId((i) => i + 1);
+  };
+  const removeCost = (id: number) => setCostItems((prev) => prev.filter((c) => c.id !== id));
+  const updateCost = (id: number, patch: Partial<CostItem>) =>
+    setCostItems((prev) => prev.map((c) => (c.id === id ? { ...c, ...patch } : c)));
 
   const results = useMemo(
     () =>
@@ -618,7 +646,7 @@ export default function TaxCalculator() {
         vatMode, vatRate, vatCostsRate,
       }),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [monthlyRevenue, businessCostsNet, privateCostsNet, carCostsNet, carUsage, zusStatus, chorobowa, prevYearIncome, ryczaltSources, vatMode, vatRate, vatCostsRate, bizBrutto, privBrutto, carBrutto],
+    [monthlyRevenue, businessCostsNet, privateCostsNet, carCostsNet, carUsage, zusStatus, chorobowa, prevYearIncome, ryczaltSources, costItems, vatMode, vatRate, vatCostsRate, carBrutto],
   );
 
   // Limity
@@ -654,17 +682,25 @@ export default function TaxCalculator() {
               <button type="button" onClick={addSource} className="text-xs font-medium text-accent hover:text-accent/80 transition">+ Dodaj źródło</button>
             </div>
             <div className="space-y-3">
-              {ryczaltSources.map((src, i) => {
+              {ryczaltSources.map((src) => {
                 const selectedOpt = RYCZALT_OPTIONS.find((o) => o.isNajem ? src.isNajem : !src.isNajem && o.rate === src.rate);
                 const srcNetto = n(src.amount, src.brutto, vatRate);
                 return (
                   <div key={src.id} className="rounded-lg bg-gray-50 dark:bg-gray-800/50 p-3 space-y-2">
+                    <div className="flex items-center gap-2">
+                      <input type="text" value={src.name} placeholder="Nazwa źródła..."
+                        onChange={(e) => updateSource(src.id, { name: e.target.value })}
+                        className="flex-1 rounded-md border border-gray-200 dark:border-gray-700 bg-transparent px-2 py-1 text-xs text-gray-600 dark:text-gray-400 focus:border-accent focus:ring-1 focus:ring-accent/30 outline-none" />
+                      {ryczaltSources.length > 1 && (
+                        <button type="button" onClick={() => removeSource(src.id)} className="text-gray-400 hover:text-red-500 transition" title="Usuń">
+                          <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+                        </button>
+                      )}
+                    </div>
                     <div className="flex items-end gap-3">
                       <div className="flex-1">
                         <div className="flex items-center justify-between mb-1">
-                          <label className="text-xs text-gray-500">
-                            Kwota/mies. {ryczaltSources.length > 1 ? `#${i + 1}` : ""}
-                          </label>
+                          <label className="text-xs text-gray-500">Kwota/mies.</label>
                           <div className="flex rounded-md overflow-hidden border border-gray-300 dark:border-gray-600">
                             <button type="button" onClick={() => updateSource(src.id, { brutto: false })}
                               className={`px-2 py-0.5 text-[10px] font-bold transition ${!src.brutto ? "bg-accent text-white" : "bg-white dark:bg-gray-800 text-gray-400"}`}>N</button>
@@ -701,11 +737,6 @@ export default function TaxCalculator() {
                           ))}
                         </select>
                       </div>
-                      {ryczaltSources.length > 1 && (
-                        <button type="button" onClick={() => removeSource(src.id)} className="text-gray-400 hover:text-red-500 transition p-2" title="Usuń">
-                          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
-                        </button>
-                      )}
                     </div>
                     {selectedOpt && (
                       <p className="text-xs text-gray-400 dark:text-gray-500 leading-relaxed">
@@ -731,14 +762,67 @@ export default function TaxCalculator() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
-            <NumberInput label="Koszty firmowe" value={businessCosts} onChange={setBusinessCosts} step={100}
-              hint="Wydatki czysto na firmę"
-              brutto={bizBrutto} onBruttoChange={setBizBrutto} vatPct={vatCostsRate} />
-            <NumberInput label="Koszty prywatne w firmie" value={privateCosts} onChange={setPrivateCosts} step={100}
-              hint="Telefon, internet, biuro – i tak ponoszone"
-              brutto={privBrutto} onBruttoChange={setPrivBrutto} vatPct={vatCostsRate} />
-          </div>
+          {/* Koszty (firmowe + prywatne) */}
+          {(["business", "private"] as CostType[]).map((type) => {
+            const items = costItems.filter((c) => c.type === type);
+            const label = type === "business" ? "Koszty firmowe" : "Koszty prywatne w firmie";
+            const hint = type === "business" ? "Wydatki czysto na firmę" : "Telefon, internet, biuro – i tak ponoszone";
+            const total = items.reduce((s, c) => s + n(c.amount, c.brutto, vatCostsRate), 0);
+            return (
+              <div key={type}>
+                <div className="flex items-center justify-between mb-1">
+                  <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-300">{label}</h3>
+                  <button type="button" onClick={() => addCost(type)} className="text-xs font-medium text-accent hover:text-accent/80 transition">+ Dodaj</button>
+                </div>
+                <p className="text-xs text-gray-400 mb-2">{hint}</p>
+                <div className="space-y-2">
+                  {items.map((c) => {
+                    const cNetto = n(c.amount, c.brutto, vatCostsRate);
+                    return (
+                      <div key={c.id} className="rounded-lg bg-gray-50 dark:bg-gray-800/50 p-3 space-y-2">
+                        <div className="flex items-center gap-2">
+                          <input type="text" value={c.name} placeholder="Nazwa kosztu..."
+                            onChange={(e) => updateCost(c.id, { name: e.target.value })}
+                            className="flex-1 rounded-md border border-gray-200 dark:border-gray-700 bg-transparent px-2 py-1 text-xs text-gray-600 dark:text-gray-400 focus:border-accent focus:ring-1 focus:ring-accent/30 outline-none" />
+                          {items.length > 1 && (
+                            <button type="button" onClick={() => removeCost(c.id)} className="text-gray-400 hover:text-red-500 transition" title="Usuń">
+                              <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+                            </button>
+                          )}
+                        </div>
+                        <div className="flex items-end gap-3">
+                          <div className="flex-1">
+                            <div className="flex items-center justify-between mb-1">
+                              <label className="text-xs text-gray-500">Kwota/mies.</label>
+                              <div className="flex rounded-md overflow-hidden border border-gray-300 dark:border-gray-600">
+                                <button type="button" onClick={() => updateCost(c.id, { brutto: false })}
+                                  className={`px-2 py-0.5 text-[10px] font-bold transition ${!c.brutto ? "bg-accent text-white" : "bg-white dark:bg-gray-800 text-gray-400"}`}>N</button>
+                                <button type="button" onClick={() => updateCost(c.id, { brutto: true })}
+                                  className={`px-2 py-0.5 text-[10px] font-bold transition ${c.brutto ? "bg-accent text-white" : "bg-white dark:bg-gray-800 text-gray-400"}`}>B</button>
+                              </div>
+                            </div>
+                            <input type="number" value={c.amount || ""} min={0} step={100}
+                              onChange={(e) => updateCost(c.id, { amount: Number(e.target.value) || 0 })}
+                              onBlur={(e) => { if (!e.target.value) updateCost(c.id, { amount: 0 }); }}
+                              className="w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-3 py-2 text-sm tabular-nums focus:border-accent focus:ring-2 focus:ring-accent/30 outline-none" />
+                            {c.brutto && vatMode !== "zwolniony" && cNetto !== c.amount && (
+                              <p className="mt-1 text-xs text-gray-400">Netto: {pln(cNetto)}</p>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+                {items.length > 1 && (
+                  <div className="mt-2 px-1 flex justify-between items-baseline">
+                    <span className="text-xs text-gray-500">Razem netto:</span>
+                    <span className="text-sm font-semibold text-gray-700 dark:text-gray-300 tabular-nums">{pln(total)}/mies.</span>
+                  </div>
+                )}
+              </div>
+            );
+          })}
 
           {/* Samochód – koszt prywatny */}
           <div className="border-t border-gray-200 dark:border-gray-700 pt-5 space-y-4">
