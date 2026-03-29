@@ -550,8 +550,7 @@ function ResultCard({ result, isBest, viewMode, showVat }: {
         {rows.map((r) => (
           <div
             key={r.label}
-            title={r.tip}
-            className={`flex justify-between items-baseline text-sm cursor-help ${r.bold ? "font-semibold" : ""} ${r.dimmed ? "text-gray-400 dark:text-gray-500 text-xs" : ""} ${
+            className={`relative group/row flex justify-between items-baseline text-sm ${r.tip ? "cursor-help" : ""} ${r.bold ? "font-semibold" : ""} ${r.dimmed ? "text-gray-400 dark:text-gray-500 text-xs" : ""} ${
               r.accent ? "text-accent text-base" : r.green ? "text-emerald-600 dark:text-emerald-400 text-xs" : "text-gray-700 dark:text-gray-300"
             }`}
           >
@@ -567,6 +566,13 @@ function ResultCard({ result, isBest, viewMode, showVat }: {
               {r.negative ? "−\u00A0" : ""}{pln(Math.abs(Math.round(r.value / d)))}
               <span className="text-gray-400 text-xs ml-1">{sfx}</span>
             </span>
+            {r.tip && (
+              <div className="absolute left-0 right-0 bottom-full mb-2 hidden group-hover/row:block z-20 pointer-events-none">
+                <div className="bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 text-xs rounded-lg px-3 py-2 leading-relaxed shadow-lg max-w-sm">
+                  {r.tip}
+                </div>
+              </div>
+            )}
           </div>
         ))}
       </div>
