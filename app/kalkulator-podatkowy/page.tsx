@@ -47,13 +47,13 @@ export default function KalkulatorPodatkowyPage() {
                     priority
                   />
                 </div>
-                <div className="absolute -bottom-4 -left-4 w-20 h-20 rounded-xl overflow-hidden shadow-lg border-2 border-white dark:border-gray-900">
+                <div className="absolute -bottom-4 -left-4 w-20 h-20 rounded-xl shadow-lg bg-white dark:bg-gray-900 flex items-center justify-center p-2">
                   <Image
                     src="/photos/tax-calculation/zus_logo.png"
                     alt="ZUS"
-                    width={80}
-                    height={80}
-                    className="w-full h-full object-cover"
+                    width={64}
+                    height={64}
+                    className="w-full h-full object-contain"
                   />
                 </div>
                 <div className="absolute -top-3 -right-3 w-16 h-16 rounded-xl overflow-hidden shadow-lg border-2 border-white dark:border-gray-900">
