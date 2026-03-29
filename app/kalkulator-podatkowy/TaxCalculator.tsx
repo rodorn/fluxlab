@@ -339,7 +339,7 @@ function calculate(p: {
       vatPrivateSavings,
       totalBurden: totalWithVat,
       netAfterTax: annRevBrutto - totalWithVat,
-      disposable: annRevBrutto - totalWithVat - annBizCosts,
+      disposable: annRevBrutto - totalWithVat - annBizCosts - annMarzaBuy,
       privateSavings: privSav,
       effectiveRate: annRevBrutto > 0 ? totalWithVat / annRevBrutto : 0,
     };
