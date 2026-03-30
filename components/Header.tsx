@@ -165,81 +165,13 @@ export default function Header() {
             </a>
           ))}
 
-          {/* Strefa wiedzy — tylko artykuły */}
-          <div
-            className="relative"
-            onMouseEnter={openKnowledge}
-            onMouseLeave={scheduleClose}
+          {/* Strefa wiedzy — link do huba */}
+          <Link
+            href="/strefa-wiedzy"
+            className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
           >
-            <button
-              className={`flex items-center gap-1 text-sm transition-colors ${
-                knowledgeOpen
-                  ? "text-gray-900 dark:text-white"
-                  : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
-              }`}
-            >
-              Strefa wiedzy
-              <svg
-                width="12"
-                height="12"
-                viewBox="0 0 12 12"
-                fill="none"
-                className={`transition-transform duration-200 mt-px ${knowledgeOpen ? "rotate-180" : ""}`}
-              >
-                <path d="M2 4l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </button>
-
-            {knowledgeOpen && (
-              <div
-                className="absolute top-full right-0 mt-4 w-[280px] bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-xl shadow-gray-200/60 dark:shadow-black/40 p-5"
-                onMouseEnter={openKnowledge}
-                onMouseLeave={scheduleClose}
-              >
-                <div className="absolute -top-[7px] right-8 w-3.5 h-3.5 bg-white dark:bg-gray-900 border-l border-t border-gray-100 dark:border-gray-800 rotate-45 rounded-tl-sm" />
-
-                <p className="text-[10px] font-semibold text-gray-400 dark:text-gray-600 uppercase tracking-widest mb-3 px-1">
-                  Artykuły
-                </p>
-                <div className="space-y-1">
-                  {articles.map((article) => (
-                    <Link
-                      key={article.href}
-                      href={article.href}
-                      onClick={() => setKnowledgeOpen(false)}
-                      className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors group"
-                    >
-                      <div className="shrink-0 w-16 h-11 rounded-lg overflow-hidden border border-gray-100 dark:border-gray-700 bg-gray-100 dark:bg-gray-800">
-                        <Image
-                          src={article.imageLight}
-                          alt={article.title}
-                          width={64}
-                          height={44}
-                          className="w-full h-full object-cover dark:hidden"
-                          unoptimized
-                        />
-                        <Image
-                          src={article.imageDark}
-                          alt={article.title}
-                          width={64}
-                          height={44}
-                          className="w-full h-full object-cover hidden dark:block"
-                        />
-                      </div>
-                      <div className="min-w-0 pt-0.5">
-                        <p className="text-sm font-medium text-gray-900 dark:text-white group-hover:text-accent transition-colors leading-snug">
-                          {article.title}
-                        </p>
-                        <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5 leading-snug">
-                          {article.description}
-                        </p>
-                      </div>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
+            Strefa wiedzy
+          </Link>
 
           {/* Narzędzia — osobny dropdown */}
           <div className="relative group/tools">
