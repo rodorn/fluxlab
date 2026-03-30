@@ -21,9 +21,8 @@ export default function Hero() {
 
             {/* Subheadline */}
             <p className="text-lg text-gray-500 dark:text-gray-400 leading-relaxed mb-10 max-w-lg">
-              Automatyzujemy CRM, raportowanie, przepływ leadów i integracje
-              API, żeby Twoja firma pracowała szybciej, taniej i bez ręcznego
-              przepisywania danych.
+              Skup się na tym, co napędza Twój biznes. My zautomatyzujemy
+              CRM, raportowanie i powtarzalne procesy.
             </p>
 
             {/* CTAs */}
