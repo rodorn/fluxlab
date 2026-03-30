@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
+
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -95,33 +95,29 @@ export default function AutomatyzacjaProcesowBiznesowych() {
       <Header />
       <main className="pt-16">
         {/* Hero */}
-        <section className="py-16 lg:py-24 border-b border-gray-100 dark:border-gray-800">
-          <div className="container-wide max-w-5xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-10 items-center">
-              <div className="text-center lg:text-left">
-                <p className="section-label mb-4">Usługa</p>
-                <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
-                  Automatyzacja procesów biznesowych
-                </h1>
-                <p className="text-lg text-gray-500 dark:text-gray-400">
-                  Pomagamy firmom eliminować ręczną, powtarzalną pracę i zastępować
-                  ją sprawnymi procesami opartymi o automatyzację. Projektujemy
-                  rozwiązania, które porządkują obieg danych, skracają czas
-                  realizacji zadań i zmniejszają liczbę błędów operacyjnych.
-                </p>
-              </div>
-              <div className="relative mx-auto lg:mx-0 w-full max-w-md">
-                <div className="rounded-2xl overflow-hidden shadow-xl shadow-gray-200/50 dark:shadow-black/30 border border-gray-100 dark:border-gray-800">
-                  <Image
-                    src="/photos/plan.jpg"
-                    alt="Automatyzacja procesów biznesowych"
-                    width={480}
-                    height={320}
-                    className="w-full h-auto object-cover"
-                    priority
-                  />
-                </div>
-              </div>
+        <section className="relative py-16 lg:py-24 overflow-hidden">
+          <div className="absolute inset-0 -z-10">
+            <div className="absolute inset-0 bg-sky-50 dark:hidden" />
+            <img src="/photos/Flow.avif" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover opacity-[0.08] dark:hidden" style={{ filter: "invert(1)" }} />
+            <img src="/photos/Flow.avif" alt="" aria-hidden="true" className="w-full h-full object-cover hidden dark:block" />
+            <div className="absolute inset-0 hidden dark:block bg-gray-950/90" />
+            <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-white to-transparent dark:hidden" />
+            <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white to-transparent dark:hidden" />
+            <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-gray-950 to-transparent hidden dark:block" />
+            <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-gray-950 to-transparent hidden dark:block" />
+          </div>
+          <div className="container-wide">
+            <div className="max-w-3xl mx-auto text-center">
+              <p className="section-label mb-4">Usługa</p>
+              <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+                Automatyzacja procesów biznesowych
+              </h1>
+              <p className="text-lg text-gray-600 dark:text-gray-300">
+                Pomagamy firmom eliminować ręczną, powtarzalną pracę i zastępować
+                ją sprawnymi procesami opartymi o automatyzację. Projektujemy
+                rozwiązania, które porządkują obieg danych, skracają czas
+                realizacji zadań i zmniejszają liczbę błędów operacyjnych.
+              </p>
             </div>
           </div>
         </section>
