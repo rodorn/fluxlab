@@ -3,6 +3,8 @@ import Link from "next/link";
 const serviceLinks = [
   { href: "/automatyzacja-procesow-biznesowych", label: "Automatyzacja procesów" },
   { href: "/automatyzacja-crm", label: "Automatyzacja CRM" },
+  { href: "/automatyzacja-pipedrive", label: "Automatyzacja Pipedrive" },
+  { href: "/automatyzacja-salesforce", label: "Automatyzacja Salesforce" },
   { href: "/integracje-api", label: "Integracje API" },
   { href: "/automatyzacja-raportowania", label: "Automatyzacja raportowania" },
   { href: "/automatyzacja-leadow", label: "Automatyzacja leadów" },

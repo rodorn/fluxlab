@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 
 const services = [
   {
@@ -12,7 +11,6 @@ const services = [
     description:
       "Eliminujemy ręczne przenoszenie danych między systemami. Integrujemy ERP, CRM, arkusze, e-mail i inne narzędzia, które już używasz.",
     tags: ["Make", "n8n", "API", "Webhooks"],
-    image: "/photos/api.png",
     href: "/integracje-api",
     links: [
       { href: "/integracje-api", label: "Integracje API →" },
@@ -30,7 +28,6 @@ const services = [
     description:
       "Raporty, które wcześniej zajmowały kilka godzin, generują się automatycznie. Dane zawsze aktualne, w odpowiednim formacie i czasie.",
     tags: ["Google Sheets", "Power BI", "E-mail", "PDF"],
-    image: "/photos/raport.jpg",
     href: "/automatyzacja-raportowania",
     links: [
       { href: "/automatyzacja-raportowania", label: "Dowiedz się więcej →" },
@@ -47,7 +44,6 @@ const services = [
     description:
       "Automatyczne odpowiedzi, routing zgłoszeń, powiadomienia i follow-upy. Twój zespół zajmuje się tylko tym, co wymaga ludzkiej uwagi.",
     tags: ["Helpdesk", "CRM", "E-mail", "Slack"],
-    image: "/photos/crm.jpeg",
     href: "/automatyzacja-crm",
     links: [
       { href: "/automatyzacja-crm", label: "Automatyzacja CRM →" },
@@ -65,7 +61,6 @@ const services = [
     description:
       "Każda firma ma unikalny sposób pracy. Mapujemy Twoje procesy i projektujemy automatyzację dopasowaną do tego, jak rzeczywiście działasz.",
     tags: ["Audyt", "Projektowanie", "Wdrożenie", "Szkolenie"],
-    image: "/photos/technology.jpg",
     href: "/automatyzacja-procesow-biznesowych",
     links: [
       { href: "/automatyzacja-procesow-biznesowych", label: "Dowiedz się więcej →" },
@@ -123,17 +118,8 @@ export default function Services() {
             <Link
               key={service.title}
               href={service.href}
-              className="block bg-white/90 backdrop-blur-sm dark:bg-white/10 rounded-2xl overflow-hidden border border-white dark:border-white/10 hover:bg-white dark:hover:bg-white/15 hover:border-accent/30 dark:hover:border-accent/50 transition-all shadow-sm group"
+              className="block bg-white/90 backdrop-blur-sm dark:bg-white/10 rounded-2xl p-8 border border-white dark:border-white/10 hover:bg-white dark:hover:bg-white/15 hover:border-accent/30 dark:hover:border-accent/50 transition-all shadow-sm group"
             >
-              <div className="relative h-40 overflow-hidden">
-                <Image
-                  src={service.image}
-                  alt={service.title}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <div className="p-8">
               <div className="w-10 h-10 flex items-center justify-center text-accent bg-accent-light dark:bg-accent-dark-light rounded-xl mb-5">
                 {service.icon}
               </div>
@@ -162,7 +148,6 @@ export default function Services() {
                     {link.label}
                   </span>
                 ))}
-              </div>
               </div>
             </Link>
           ))}

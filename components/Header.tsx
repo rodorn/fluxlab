@@ -13,12 +13,14 @@ const navLinks = [
 ];
 
 const servicePages = [
-  { title: "Automatyzacja procesów", href: "/automatyzacja-procesow-biznesowych", image: "/photos/plan.jpg" },
-  { title: "Automatyzacja CRM", href: "/automatyzacja-crm", image: "/photos/crm.jpeg" },
-  { title: "Integracje API", href: "/integracje-api", image: "/photos/api.png" },
-  { title: "Automatyzacja raportowania", href: "/automatyzacja-raportowania", image: "/photos/raport.jpg" },
-  { title: "Automatyzacja leadów", href: "/automatyzacja-leadow", image: "/photos/data.jpg" },
-  { title: "Automatyzacja z AI", href: "/automatyzacja-ai", image: "/photos/ai.webp" },
+  { title: "Automatyzacja procesów", href: "/automatyzacja-procesow-biznesowych" },
+  { title: "Automatyzacja CRM", href: "/automatyzacja-crm" },
+  { title: "Automatyzacja Pipedrive", href: "/automatyzacja-pipedrive" },
+  { title: "Automatyzacja Salesforce", href: "/automatyzacja-salesforce" },
+  { title: "Integracje API", href: "/integracje-api" },
+  { title: "Automatyzacja raportowania", href: "/automatyzacja-raportowania" },
+  { title: "Automatyzacja leadów", href: "/automatyzacja-leadow" },
+  { title: "Automatyzacja z AI", href: "/automatyzacja-ai" },
 ];
 
 const articles = [
@@ -126,7 +128,7 @@ export default function Header() {
 
             {servicesOpen && (
               <div
-                className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[320px] bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-xl shadow-gray-200/60 dark:shadow-black/40 p-4"
+                className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-64 bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-xl shadow-gray-200/60 dark:shadow-black/40 p-4"
                 onMouseEnter={openServices}
                 onMouseLeave={scheduleServicesClose}
               >
@@ -137,21 +139,9 @@ export default function Header() {
                       key={sp.href}
                       href={sp.href}
                       onClick={() => setServicesOpen(false)}
-                      className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors group"
+                      className="block px-3 py-2 rounded-xl text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-accent transition-colors"
                     >
-                      <div className="shrink-0 w-12 h-8 rounded-lg overflow-hidden border border-gray-100 dark:border-gray-700 bg-gray-100 dark:bg-gray-800">
-                        <Image
-                          src={sp.image}
-                          alt={sp.title}
-                          width={48}
-                          height={32}
-                          className="w-full h-full object-cover"
-                          unoptimized
-                        />
-                      </div>
-                      <span className="text-sm text-gray-700 dark:text-gray-300 group-hover:text-accent transition-colors">
-                        {sp.title}
-                      </span>
+                      {sp.title}
                     </Link>
                   ))}
                 </div>
@@ -169,7 +159,7 @@ export default function Header() {
             </a>
           ))}
 
-          {/* Strefa wiedzy */}
+          {/* Strefa wiedzy — tylko artykuły */}
           <div
             className="relative"
             onMouseEnter={openKnowledge}
@@ -196,103 +186,97 @@ export default function Header() {
 
             {knowledgeOpen && (
               <div
-                className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[540px] bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-xl shadow-gray-200/60 dark:shadow-black/40 p-5"
+                className="absolute top-full right-0 mt-4 w-[280px] bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-xl shadow-gray-200/60 dark:shadow-black/40 p-5"
                 onMouseEnter={openKnowledge}
                 onMouseLeave={scheduleClose}
               >
-                {/* Notch */}
-                <div className="absolute -top-[7px] left-1/2 -translate-x-1/2 w-3.5 h-3.5 bg-white dark:bg-gray-900 border-l border-t border-gray-100 dark:border-gray-800 rotate-45 rounded-tl-sm" />
+                <div className="absolute -top-[7px] right-8 w-3.5 h-3.5 bg-white dark:bg-gray-900 border-l border-t border-gray-100 dark:border-gray-800 rotate-45 rounded-tl-sm" />
 
-                <div className="grid grid-cols-2 gap-6">
-
-                  {/* Artykuły */}
-                  <div>
-                    <p className="text-[10px] font-semibold text-gray-400 dark:text-gray-600 uppercase tracking-widest mb-3 px-1">
-                      Artykuły
-                    </p>
-                    <div className="space-y-1">
-                      {articles.map((article) => (
-                        <Link
-                          key={article.href}
-                          href={article.href}
-                          onClick={() => setKnowledgeOpen(false)}
-                          className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors group"
-                        >
-                          <div className="shrink-0 w-16 h-11 rounded-lg overflow-hidden border border-gray-100 dark:border-gray-700 bg-gray-100 dark:bg-gray-800">
-                            <Image
-                              src={article.imageLight}
-                              alt={article.title}
-                              width={64}
-                              height={44}
-                              className="w-full h-full object-cover dark:hidden"
-                              unoptimized
-                            />
-                            <Image
-                              src={article.imageDark}
-                              alt={article.title}
-                              width={64}
-                              height={44}
-                              className="w-full h-full object-cover hidden dark:block"
-                            />
-                          </div>
-                          <div className="min-w-0 pt-0.5">
-                            <p className="text-sm font-medium text-gray-900 dark:text-white group-hover:text-accent transition-colors leading-snug">
-                              {article.title}
-                            </p>
-                            <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5 leading-snug">
-                              {article.description}
-                            </p>
-                          </div>
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Narzędzia */}
-                  <div>
-                    <p className="text-[10px] font-semibold text-gray-400 dark:text-gray-600 uppercase tracking-widest mb-3 px-1">
-                      Narzędzia
-                    </p>
-                    {tools.length === 0 ? (
-                      <div className="flex items-center justify-center h-14 rounded-xl border border-dashed border-gray-200 dark:border-gray-700">
-                        <p className="text-xs text-gray-400 dark:text-gray-600">Wkrótce</p>
+                <p className="text-[10px] font-semibold text-gray-400 dark:text-gray-600 uppercase tracking-widest mb-3 px-1">
+                  Artykuły
+                </p>
+                <div className="space-y-1">
+                  {articles.map((article) => (
+                    <Link
+                      key={article.href}
+                      href={article.href}
+                      onClick={() => setKnowledgeOpen(false)}
+                      className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors group"
+                    >
+                      <div className="shrink-0 w-16 h-11 rounded-lg overflow-hidden border border-gray-100 dark:border-gray-700 bg-gray-100 dark:bg-gray-800">
+                        <Image
+                          src={article.imageLight}
+                          alt={article.title}
+                          width={64}
+                          height={44}
+                          className="w-full h-full object-cover dark:hidden"
+                          unoptimized
+                        />
+                        <Image
+                          src={article.imageDark}
+                          alt={article.title}
+                          width={64}
+                          height={44}
+                          className="w-full h-full object-cover hidden dark:block"
+                        />
                       </div>
-                    ) : (
-                      <div className="space-y-1">
-                        {tools.map((tool) => (
-                          <Link
-                            key={tool.href}
-                            href={tool.href}
-                            onClick={() => setKnowledgeOpen(false)}
-                            className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors group"
-                          >
-                            <div className="shrink-0 w-16 h-11 rounded-lg overflow-hidden border border-gray-100 dark:border-gray-700 bg-gray-100 dark:bg-gray-800">
-                              <Image
-                                src={tool.image}
-                                alt={tool.title}
-                                width={64}
-                                height={44}
-                                className="w-full h-full object-cover"
-                                unoptimized
-                              />
-                            </div>
-                            <div className="min-w-0 pt-0.5">
-                              <p className="text-sm font-medium text-gray-900 dark:text-white group-hover:text-accent transition-colors leading-snug">
-                                {tool.title}
-                              </p>
-                              <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5 leading-snug">
-                                {tool.description}
-                              </p>
-                            </div>
-                          </Link>
-                        ))}
+                      <div className="min-w-0 pt-0.5">
+                        <p className="text-sm font-medium text-gray-900 dark:text-white group-hover:text-accent transition-colors leading-snug">
+                          {article.title}
+                        </p>
+                        <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5 leading-snug">
+                          {article.description}
+                        </p>
                       </div>
-                    )}
-                  </div>
-
+                    </Link>
+                  ))}
                 </div>
               </div>
             )}
+          </div>
+
+          {/* Narzędzia — osobny dropdown */}
+          <div className="relative group/tools">
+            <Link
+              href="#"
+              className="flex items-center gap-1 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors peer"
+            >
+              Narzędzia
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="transition-transform duration-200 mt-px group-hover/tools:rotate-180">
+                <path d="M2 4l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </Link>
+            <div className="absolute top-full right-0 mt-4 w-[280px] bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-xl shadow-gray-200/60 dark:shadow-black/40 p-5 opacity-0 pointer-events-none group-hover/tools:opacity-100 group-hover/tools:pointer-events-auto transition-opacity">
+              <div className="absolute -top-[7px] right-8 w-3.5 h-3.5 bg-white dark:bg-gray-900 border-l border-t border-gray-100 dark:border-gray-800 rotate-45 rounded-tl-sm" />
+              <div className="space-y-1">
+                {tools.map((tool) => (
+                  <Link
+                    key={tool.href}
+                    href={tool.href}
+                    className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors group"
+                  >
+                    <div className="shrink-0 w-16 h-11 rounded-lg overflow-hidden border border-gray-100 dark:border-gray-700 bg-gray-100 dark:bg-gray-800">
+                      <Image
+                        src={tool.image}
+                        alt={tool.title}
+                        width={64}
+                        height={44}
+                        className="w-full h-full object-cover"
+                        unoptimized
+                      />
+                    </div>
+                    <div className="min-w-0 pt-0.5">
+                      <p className="text-sm font-medium text-gray-900 dark:text-white group-hover:text-accent transition-colors leading-snug">
+                        {tool.title}
+                      </p>
+                      <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5 leading-snug">
+                        {tool.description}
+                      </p>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
           </div>
         </nav>
 
@@ -350,21 +334,9 @@ export default function Header() {
                     key={sp.href}
                     href={sp.href}
                     onClick={() => setMenuOpen(false)}
-                    className="flex items-center gap-2.5 group"
+                    className="block text-sm text-gray-700 dark:text-gray-300 hover:text-accent transition-colors"
                   >
-                    <div className="shrink-0 w-10 h-7 rounded-md overflow-hidden border border-gray-100 dark:border-gray-700">
-                      <Image
-                        src={sp.image}
-                        alt={sp.title}
-                        width={40}
-                        height={28}
-                        className="w-full h-full object-cover"
-                        unoptimized
-                      />
-                    </div>
-                    <span className="text-sm text-gray-700 dark:text-gray-300 group-hover:text-accent transition-colors">
-                      {sp.title}
-                    </span>
+                    {sp.title}
                   </Link>
                 ))}
               </div>
@@ -382,7 +354,7 @@ export default function Header() {
             </a>
           ))}
 
-          {/* Strefa wiedzy mobile */}
+          {/* Strefa wiedzy mobile — tylko artykuły */}
           <div>
             <button
               className="flex items-center gap-1.5 text-sm text-gray-700 dark:text-gray-300 w-full"
@@ -399,9 +371,6 @@ export default function Header() {
 
             {mobileKnowledgeOpen && (
               <div className="mt-3 pl-3 border-l-2 border-accent/20 space-y-3">
-                <p className="text-[10px] font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-widest">
-                  Artykuły
-                </p>
                 {articles.map((article) => (
                   <Link
                     key={article.href}
@@ -431,38 +400,39 @@ export default function Header() {
                     </span>
                   </Link>
                 ))}
-
-                <p className="text-[10px] font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-widest pt-1">
-                  Narzędzia
-                </p>
-                {tools.length === 0 ? (
-                  <p className="text-xs text-gray-400 dark:text-gray-600">Wkrótce</p>
-                ) : (
-                  tools.map((tool) => (
-                    <Link
-                      key={tool.href}
-                      href={tool.href}
-                      onClick={() => setMenuOpen(false)}
-                      className="flex items-center gap-2.5 group"
-                    >
-                      <div className="shrink-0 w-10 h-7 rounded-md overflow-hidden border border-gray-100 dark:border-gray-700">
-                        <Image
-                          src={tool.image}
-                          alt={tool.title}
-                          width={40}
-                          height={28}
-                          className="w-full h-full object-cover"
-                          unoptimized
-                        />
-                      </div>
-                      <span className="text-sm text-gray-700 dark:text-gray-300 group-hover:text-accent transition-colors">
-                        {tool.title}
-                      </span>
-                    </Link>
-                  ))
-                )}
               </div>
             )}
+          </div>
+
+          {/* Narzędzia mobile — osobna sekcja */}
+          <div>
+            <p className="text-[10px] font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-2">
+              Narzędzia
+            </p>
+            <div className="space-y-3">
+              {tools.map((tool) => (
+                <Link
+                  key={tool.href}
+                  href={tool.href}
+                  onClick={() => setMenuOpen(false)}
+                  className="flex items-center gap-2.5 group"
+                >
+                  <div className="shrink-0 w-10 h-7 rounded-md overflow-hidden border border-gray-100 dark:border-gray-700">
+                    <Image
+                      src={tool.image}
+                      alt={tool.title}
+                      width={40}
+                      height={28}
+                      className="w-full h-full object-cover"
+                      unoptimized
+                    />
+                  </div>
+                  <span className="text-sm text-gray-700 dark:text-gray-300 group-hover:text-accent transition-colors">
+                    {tool.title}
+                  </span>
+                </Link>
+              ))}
+            </div>
           </div>
 
           <a
