@@ -15,13 +15,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Fluxlab - Automatyzacja procesów biznesowych",
+  title: "Automatyzacja procesów biznesowych i CRM dla firm B2B | Fluxlab",
   description:
-    "Fluxlab automatyzuje powtarzalne procesy, żebyś Ty i Twój zespół mogli skupić się na tym, co napędza biznes. Integracje CRM, automatyczne raportowanie, przepływ danych. Pierwsze efekty w 2-4 dni.",
+    "Projektujemy i wdrażamy automatyzacje procesów biznesowych, CRM, raportowania i integracji API. Pierwsze efekty w 2–4 dni. Bezpłatna konsultacja.",
   openGraph: {
-    title: "Fluxlab - Automatyzacja procesów biznesowych",
+    title: "Automatyzacja procesów biznesowych i CRM dla firm B2B | Fluxlab",
     description:
-      "Fluxlab automatyzuje powtarzalne procesy, żebyś Ty i Twój zespół mogli skupić się na tym, co napędza biznes. Integracje CRM, automatyczne raportowanie, przepływ danych. Pierwsze efekty w 2-4 dni.",
+      "Projektujemy i wdrażamy automatyzacje procesów biznesowych, CRM, raportowania i integracji API. Pierwsze efekty w 2–4 dni. Bezpłatna konsultacja.",
     locale: "pl_PL",
     type: "website",
   },

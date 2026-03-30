@@ -15,16 +15,15 @@ export default function Hero() {
 
             {/* Headline */}
             <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.1] mb-6 text-gray-900 dark:text-white">
-              Skup się na tym,{" "}
-              <span className="text-accent">co napędza</span>{" "}
-              Twój biznes
+              <span className="text-accent">Automatyzacja</span> procesów
+              biznesowych dla firm B2B
             </h1>
 
             {/* Subheadline */}
             <p className="text-lg text-gray-500 dark:text-gray-400 leading-relaxed mb-10 max-w-lg">
-              Automatyzujemy powtarzalne procesy, żebyś Ty i Twój zespół
-              mogli poświęcać czas na to, co rzeczywiście tworzy wartość.
-              Pierwsze efekty widoczne w ciągu 2-4 dni.
+              Automatyzujemy CRM, raportowanie, przepływ leadów i integracje
+              API, żeby Twoja firma pracowała szybciej, taniej i bez ręcznego
+              przepisywania danych.
             </p>
 
             {/* CTAs */}
