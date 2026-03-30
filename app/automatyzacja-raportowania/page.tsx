@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -99,18 +100,32 @@ export default function AutomatyzacjaRaportowania() {
       <main className="pt-16">
         {/* Hero */}
         <section className="py-16 lg:py-24 border-b border-gray-100 dark:border-gray-800">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto text-center">
-              <p className="section-label mb-4">Usługa</p>
-              <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
-                Automatyzacja raportowania
-              </h1>
-              <p className="text-lg text-gray-500 dark:text-gray-400">
-                Ręczne raportowanie zabiera czas, generuje błędy i opóźnia
-                decyzje. Wdrażamy automatyzację raportowania, dzięki której dane
-                z różnych źródeł zbierają się same, a zespół pracuje na
-                aktualnych, spójnych liczbach.
-              </p>
+          <div className="container-wide max-w-5xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-10 items-center">
+              <div className="text-center lg:text-left">
+                <p className="section-label mb-4">Usługa</p>
+                <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+                  Automatyzacja raportowania
+                </h1>
+                <p className="text-lg text-gray-500 dark:text-gray-400">
+                  Ręczne raportowanie zabiera czas, generuje błędy i opóźnia
+                  decyzje. Wdrażamy automatyzację raportowania, dzięki której dane
+                  z różnych źródeł zbierają się same, a zespół pracuje na
+                  aktualnych, spójnych liczbach.
+                </p>
+              </div>
+              <div className="relative mx-auto lg:mx-0 w-full max-w-md">
+                <div className="rounded-2xl overflow-hidden shadow-xl shadow-gray-200/50 dark:shadow-black/30 border border-gray-100 dark:border-gray-800">
+                  <Image
+                    src="/photos/raport.jpg"
+                    alt="Automatyzacja raportowania"
+                    width={480}
+                    height={320}
+                    className="w-full h-auto object-cover"
+                    priority
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </section>

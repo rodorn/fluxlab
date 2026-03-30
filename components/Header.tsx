@@ -13,12 +13,12 @@ const navLinks = [
 ];
 
 const servicePages = [
-  { title: "Automatyzacja procesów", href: "/automatyzacja-procesow-biznesowych" },
-  { title: "Automatyzacja CRM", href: "/automatyzacja-crm" },
-  { title: "Integracje API", href: "/integracje-api" },
-  { title: "Automatyzacja raportowania", href: "/automatyzacja-raportowania" },
-  { title: "Automatyzacja leadów", href: "/automatyzacja-leadow" },
-  { title: "Automatyzacja z AI", href: "/automatyzacja-ai" },
+  { title: "Automatyzacja procesów", href: "/automatyzacja-procesow-biznesowych", image: "/photos/plan.jpg" },
+  { title: "Automatyzacja CRM", href: "/automatyzacja-crm", image: "/photos/crm.jpeg" },
+  { title: "Integracje API", href: "/integracje-api", image: "/photos/api.png" },
+  { title: "Automatyzacja raportowania", href: "/automatyzacja-raportowania", image: "/photos/raport.jpg" },
+  { title: "Automatyzacja leadów", href: "/automatyzacja-leadow", image: "/photos/data.jpg" },
+  { title: "Automatyzacja z AI", href: "/automatyzacja-ai", image: "/photos/ai.webp" },
 ];
 
 const articles = [
@@ -126,7 +126,7 @@ export default function Header() {
 
             {servicesOpen && (
               <div
-                className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-64 bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-xl shadow-gray-200/60 dark:shadow-black/40 p-4"
+                className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[320px] bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-xl shadow-gray-200/60 dark:shadow-black/40 p-4"
                 onMouseEnter={openServices}
                 onMouseLeave={scheduleServicesClose}
               >
@@ -137,9 +137,21 @@ export default function Header() {
                       key={sp.href}
                       href={sp.href}
                       onClick={() => setServicesOpen(false)}
-                      className="block px-3 py-2 rounded-xl text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-accent transition-colors"
+                      className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors group"
                     >
-                      {sp.title}
+                      <div className="shrink-0 w-12 h-8 rounded-lg overflow-hidden border border-gray-100 dark:border-gray-700 bg-gray-100 dark:bg-gray-800">
+                        <Image
+                          src={sp.image}
+                          alt={sp.title}
+                          width={48}
+                          height={32}
+                          className="w-full h-full object-cover"
+                          unoptimized
+                        />
+                      </div>
+                      <span className="text-sm text-gray-700 dark:text-gray-300 group-hover:text-accent transition-colors">
+                        {sp.title}
+                      </span>
                     </Link>
                   ))}
                 </div>
@@ -338,9 +350,21 @@ export default function Header() {
                     key={sp.href}
                     href={sp.href}
                     onClick={() => setMenuOpen(false)}
-                    className="block text-sm text-gray-700 dark:text-gray-300 hover:text-accent transition-colors"
+                    className="flex items-center gap-2.5 group"
                   >
-                    {sp.title}
+                    <div className="shrink-0 w-10 h-7 rounded-md overflow-hidden border border-gray-100 dark:border-gray-700">
+                      <Image
+                        src={sp.image}
+                        alt={sp.title}
+                        width={40}
+                        height={28}
+                        className="w-full h-full object-cover"
+                        unoptimized
+                      />
+                    </div>
+                    <span className="text-sm text-gray-700 dark:text-gray-300 group-hover:text-accent transition-colors">
+                      {sp.title}
+                    </span>
                   </Link>
                 ))}
               </div>
