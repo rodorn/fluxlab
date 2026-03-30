@@ -11,7 +11,11 @@ const services = [
     description:
       "Eliminujemy ręczne przenoszenie danych między systemami. Integrujemy ERP, CRM, arkusze, e-mail i inne narzędzia, które już używasz.",
     tags: ["Make", "n8n", "API", "Webhooks"],
-    link: { href: "/automatyzacja-pipedrive", label: "Automatyzacja Pipedrive →" },
+    href: "/integracje-api",
+    links: [
+      { href: "/integracje-api", label: "Integracje API →" },
+      { href: "/automatyzacja-pipedrive", label: "Automatyzacja Pipedrive →" },
+    ],
   },
   {
     icon: (
@@ -24,6 +28,10 @@ const services = [
     description:
       "Raporty, które wcześniej zajmowały kilka godzin, generują się automatycznie. Dane zawsze aktualne, w odpowiednim formacie i czasie.",
     tags: ["Google Sheets", "Power BI", "E-mail", "PDF"],
+    href: "/automatyzacja-raportowania",
+    links: [
+      { href: "/automatyzacja-raportowania", label: "Dowiedz się więcej →" },
+    ],
   },
   {
     icon: (
@@ -36,6 +44,11 @@ const services = [
     description:
       "Automatyczne odpowiedzi, routing zgłoszeń, powiadomienia i follow-upy. Twój zespół zajmuje się tylko tym, co wymaga ludzkiej uwagi.",
     tags: ["Helpdesk", "CRM", "E-mail", "Slack"],
+    href: "/automatyzacja-crm",
+    links: [
+      { href: "/automatyzacja-crm", label: "Automatyzacja CRM →" },
+      { href: "/automatyzacja-leadow", label: "Automatyzacja leadów →" },
+    ],
   },
   {
     icon: (
@@ -48,6 +61,11 @@ const services = [
     description:
       "Każda firma ma unikalny sposób pracy. Mapujemy Twoje procesy i projektujemy automatyzację dopasowaną do tego, jak rzeczywiście działasz.",
     tags: ["Audyt", "Projektowanie", "Wdrożenie", "Szkolenie"],
+    href: "/automatyzacja-procesow-biznesowych",
+    links: [
+      { href: "/automatyzacja-procesow-biznesowych", label: "Dowiedz się więcej →" },
+      { href: "/automatyzacja-ai", label: "Automatyzacja z AI →" },
+    ],
   },
 ];
 
@@ -97,14 +115,15 @@ export default function Services() {
 
         <div className="grid md:grid-cols-2 gap-6">
           {services.map((service) => (
-            <div
+            <Link
               key={service.title}
-              className="bg-white/90 backdrop-blur-sm dark:bg-white/10 rounded-2xl p-8 border border-white dark:border-white/10 hover:bg-white dark:hover:bg-white/15 hover:border-accent/30 dark:hover:border-accent/50 transition-all shadow-sm"
+              href={service.href}
+              className="block bg-white/90 backdrop-blur-sm dark:bg-white/10 rounded-2xl p-8 border border-white dark:border-white/10 hover:bg-white dark:hover:bg-white/15 hover:border-accent/30 dark:hover:border-accent/50 transition-all shadow-sm group"
             >
               <div className="w-10 h-10 flex items-center justify-center text-accent bg-accent-light dark:bg-accent-dark-light rounded-xl mb-5">
                 {service.icon}
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-accent transition-colors">
                 {service.title}
               </h3>
               <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-5">
@@ -120,15 +139,17 @@ export default function Services() {
                   </span>
                 ))}
               </div>
-              {"link" in service && service.link && (
-                <Link
-                  href={service.link.href}
-                  className="text-xs font-medium text-accent hover:text-accent-hover transition-colors"
-                >
-                  {service.link.label}
-                </Link>
-              )}
-            </div>
+              <div className="flex flex-wrap gap-x-4 gap-y-1">
+                {service.links.map((link) => (
+                  <span
+                    key={link.href}
+                    className="text-xs font-medium text-accent group-hover:text-accent-hover transition-colors"
+                  >
+                    {link.label}
+                  </span>
+                ))}
+              </div>
+            </Link>
           ))}
         </div>
       </div>
