@@ -2,7 +2,6 @@
 
 import { useState, useRef } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import ThemeToggle from "./ThemeToggle";
 
 const navLinks = [
@@ -25,61 +24,11 @@ const servicePages: { title: string; href: string; indent?: boolean }[] = [
   { title: "Zapier vs Make", href: "/zapier-make" },
 ];
 
-const articles = [
-  {
-    title: "Automatyzacja Pipedrive",
-    description: "Jak wycisnąć 100% z CRM dzięki API i webhookom",
-    href: "/automatyzacja-pipedrive",
-    imageLight: "/photos/pipedrive-light.gif",
-    imageDark: "/photos/pipedrive-dark.webp",
-  },
-  {
-    title: "Automatyzacja Salesforce",
-    description: "Zaawansowane integracje i custom development",
-    href: "/automatyzacja-salesforce",
-    imageLight: "/photos/Salesforce-light.webp",
-    imageDark: "/photos/salesforce_dark.png",
-  },
-];
-
-const tools: { title: string; description: string; href: string; image: string }[] = [
-  {
-    title: "Dobór samochodu",
-    description: "Znajdź idealny segment, nadwozie i moc dla siebie",
-    href: "/dobor-samochodu",
-    image: "/photos/car-chooser/type-sport.webp",
-  },
-  {
-    title: "Kalkulator kosztów",
-    description: "Oblicz pełny koszt posiadania samochodu",
-    href: "/kalkulator-kosztow",
-    image: "/photos/car-chooser/type-osobowy.jpg",
-  },
-  {
-    title: "Kalkulator podatkowy JDG",
-    description: "Porównaj skalę, liniowy i ryczałt – składki, VAT, ulgi",
-    href: "/kalkulator-podatkowy",
-    image: "/photos/tax-calculation/calculator.jpg",
-  },
-];
-
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
-  const [knowledgeOpen, setKnowledgeOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
-  const [mobileKnowledgeOpen, setMobileKnowledgeOpen] = useState(false);
-  const closeTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
   const servicesCloseTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  function openKnowledge() {
-    if (closeTimeout.current) clearTimeout(closeTimeout.current);
-    setKnowledgeOpen(true);
-  }
-
-  function scheduleClose() {
-    closeTimeout.current = setTimeout(() => setKnowledgeOpen(false), 150);
-  }
 
   function openServices() {
     if (servicesCloseTimeout.current) clearTimeout(servicesCloseTimeout.current);
@@ -173,49 +122,12 @@ export default function Header() {
             Strefa wiedzy
           </Link>
 
-          {/* Narzędzia — osobny dropdown */}
-          <div className="relative group/tools">
-            <Link
-              href="#"
-              className="flex items-center gap-1 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors peer"
-            >
-              Narzędzia
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="transition-transform duration-200 mt-px group-hover/tools:rotate-180">
-                <path d="M2 4l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </Link>
-            <div className="absolute top-full right-0 mt-4 w-[280px] bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-xl shadow-gray-200/60 dark:shadow-black/40 p-5 opacity-0 pointer-events-none group-hover/tools:opacity-100 group-hover/tools:pointer-events-auto transition-opacity">
-              <div className="absolute -top-[7px] right-8 w-3.5 h-3.5 bg-white dark:bg-gray-900 border-l border-t border-gray-100 dark:border-gray-800 rotate-45 rounded-tl-sm" />
-              <div className="space-y-1">
-                {tools.map((tool) => (
-                  <Link
-                    key={tool.href}
-                    href={tool.href}
-                    className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors group"
-                  >
-                    <div className="shrink-0 w-16 h-11 rounded-lg overflow-hidden border border-gray-100 dark:border-gray-700 bg-gray-100 dark:bg-gray-800">
-                      <Image
-                        src={tool.image}
-                        alt={tool.title}
-                        width={64}
-                        height={44}
-                        className="w-full h-full object-cover"
-                        unoptimized
-                      />
-                    </div>
-                    <div className="min-w-0 pt-0.5">
-                      <p className="text-sm font-medium text-gray-900 dark:text-white group-hover:text-accent transition-colors leading-snug">
-                        {tool.title}
-                      </p>
-                      <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5 leading-snug">
-                        {tool.description}
-                      </p>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </div>
+          <Link
+            href="/narzedzia"
+            className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+          >
+            Narzędzia
+          </Link>
         </nav>
 
         {/* Right side */}
@@ -296,86 +208,21 @@ export default function Header() {
             </a>
           ))}
 
-          {/* Strefa wiedzy mobile — tylko artykuły */}
-          <div>
-            <button
-              className="flex items-center gap-1.5 text-sm text-gray-700 dark:text-gray-300 w-full"
-              onClick={() => setMobileKnowledgeOpen(!mobileKnowledgeOpen)}
-            >
-              Strefa wiedzy
-              <svg
-                width="12" height="12" viewBox="0 0 12 12" fill="none"
-                className={`transition-transform duration-200 mt-px ${mobileKnowledgeOpen ? "rotate-180" : ""}`}
-              >
-                <path d="M2 4l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </button>
+          <Link
+            href="/strefa-wiedzy"
+            className="text-sm text-gray-700 dark:text-gray-300"
+            onClick={() => setMenuOpen(false)}
+          >
+            Strefa wiedzy
+          </Link>
 
-            {mobileKnowledgeOpen && (
-              <div className="mt-3 pl-3 border-l-2 border-accent/20 space-y-3">
-                {articles.map((article) => (
-                  <Link
-                    key={article.href}
-                    href={article.href}
-                    onClick={() => setMenuOpen(false)}
-                    className="flex items-center gap-2.5 group"
-                  >
-                    <div className="shrink-0 w-10 h-7 rounded-md overflow-hidden border border-gray-100 dark:border-gray-700">
-                      <Image
-                        src={article.imageLight}
-                        alt={article.title}
-                        width={40}
-                        height={28}
-                        className="w-full h-full object-cover dark:hidden"
-                        unoptimized
-                      />
-                      <Image
-                        src={article.imageDark}
-                        alt={article.title}
-                        width={40}
-                        height={28}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <span className="text-sm text-gray-700 dark:text-gray-300 group-hover:text-accent transition-colors">
-                      {article.title}
-                    </span>
-                  </Link>
-                ))}
-              </div>
-            )}
-          </div>
-
-          {/* Narzędzia mobile — osobna sekcja */}
-          <div>
-            <p className="text-[10px] font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-2">
-              Narzędzia
-            </p>
-            <div className="space-y-3">
-              {tools.map((tool) => (
-                <Link
-                  key={tool.href}
-                  href={tool.href}
-                  onClick={() => setMenuOpen(false)}
-                  className="flex items-center gap-2.5 group"
-                >
-                  <div className="shrink-0 w-10 h-7 rounded-md overflow-hidden border border-gray-100 dark:border-gray-700">
-                    <Image
-                      src={tool.image}
-                      alt={tool.title}
-                      width={40}
-                      height={28}
-                      className="w-full h-full object-cover"
-                      unoptimized
-                    />
-                  </div>
-                  <span className="text-sm text-gray-700 dark:text-gray-300 group-hover:text-accent transition-colors">
-                    {tool.title}
-                  </span>
-                </Link>
-              ))}
-            </div>
-          </div>
+          <Link
+            href="/narzedzia"
+            className="text-sm text-gray-700 dark:text-gray-300"
+            onClick={() => setMenuOpen(false)}
+          >
+            Narzędzia
+          </Link>
 
           <a
             href="/#kontakt"
