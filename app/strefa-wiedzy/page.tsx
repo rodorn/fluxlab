@@ -92,6 +92,41 @@ const categories = [
       },
     ],
   },
+  {
+    name: "JDG i podatki",
+    articles: [
+      {
+        href: "/strefa-wiedzy/jaka-forma-opodatkowania-jdg-2026",
+        title: "Jaka forma opodatkowania JDG w 2026?",
+        description: "Porównanie skali, liniowego i ryczałtu — kryteria wyboru, progi, pułapki.",
+      },
+      {
+        href: "/strefa-wiedzy/ryczalt-czy-liniowy",
+        title: "Ryczałt czy liniowy — co się bardziej opłaca",
+        description: "Kiedy ryczałt wygrywa, kiedy przegrywa i jak to policzyć.",
+      },
+      {
+        href: "/strefa-wiedzy/skala-czy-liniowy-jdg",
+        title: "Skala czy liniowy — porównanie dla JDG",
+        description: "Kwota wolna, progi, zdrowotna i realne scenariusze.",
+      },
+      {
+        href: "/strefa-wiedzy/jak-liczyc-zdrowotna-jdg",
+        title: "Jak liczyć składkę zdrowotną w JDG",
+        description: "Zasady 2026 dla skali, liniowego i ryczałtu.",
+      },
+      {
+        href: "/strefa-wiedzy/maly-zus-plus-kiedy-sie-oplaca",
+        title: "Mały ZUS Plus — kiedy się opłaca",
+        description: "Warunki, limity, oszczędności i kiedy lepiej z niego nie korzystać.",
+      },
+      {
+        href: "/strefa-wiedzy/vat-w-jdg-kiedy-warto",
+        title: "VAT w JDG — kiedy warto być vatowcem",
+        description: "Zwolnienie podmiotowe, próg 200 000 zł i wpływ na cashflow.",
+      },
+    ],
+  },
 ];
 
 export default function StrefaWiedzy() {
