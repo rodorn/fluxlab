@@ -6,13 +6,13 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Integracje API i łączenie systemów w firmie | Fluxlab",
+  title: "Zapier vs Make (Integromat) — porównanie i wdrożenie automatyzacji | Fluxlab",
   description:
-    "Tworzymy integracje API między CRM, ERP, formularzami, bazami danych i narzędziami operacyjnymi. Łączymy systemy tak, żeby dane przepływały automatycznie.",
+    "Zapier czy Make? Porównujemy platformy automatyzacji, pomagamy wybrać najlepsze narzędzie i wdrażamy workflow dopasowane do potrzeb Twojej firmy.",
   openGraph: {
-    title: "Integracje API i łączenie systemów w firmie | Fluxlab",
+    title: "Zapier vs Make (Integromat) — porównanie i wdrożenie automatyzacji | Fluxlab",
     description:
-      "Tworzymy integracje API między CRM, ERP, formularzami, bazami danych i narzędziami operacyjnymi. Łączymy systemy tak, żeby dane przepływały automatycznie.",
+      "Zapier czy Make? Porównujemy platformy automatyzacji, pomagamy wybrać najlepsze narzędzie i wdrażamy workflow dopasowane do potrzeb Twojej firmy.",
     locale: "pl_PL",
     type: "article",
   },
@@ -20,51 +20,46 @@ export const metadata: Metadata = {
 
 const useCases = [
   {
-    title: "Integracja CRM z formularzami i źródłami leadów",
+    title: "Zapier — prostota i szybkość wdrożenia",
     description:
-      "Nowe dane trafiają automatycznie do CRM, bez opóźnień i bez przepisywania. Można od razu uruchomić scoring, routing albo zadanie dla handlowca.",
+      "Zapier najlepiej sprawdza się, gdy potrzebujesz szybko połączyć dwa narzędzia prostym przepływem: nowy lead w formularzu trafia do CRM, faktura generuje się po zamówieniu, powiadomienie leci na Slacka. Ponad 7 000 integracji, intuicyjny interfejs i minimalna krzywa uczenia się.",
   },
   {
-    title: "Integracja systemów operacyjnych i finansowych",
+    title: "Make — zaawansowana logika i kontrola",
     description:
-      "Statusy, dane klientów, zamówienia lub informacje o realizacji są synchronizowane między systemami, co ogranicza błędy i rozjazdy danych.",
+      "Make (dawniej Integromat) to wybór, gdy workflow wymaga rozgałęzień, pętli, obsługi błędów, transformacji danych czy operacji na wielu systemach jednocześnie. Wizualny builder pozwala budować scenariusze, które w Zapier wymagałyby kilku osobnych Zapów lub nie byłyby możliwe.",
   },
   {
-    title: "Integracje z raportowaniem i bazami danych",
+    title: "Kiedy użyć obu naraz",
     description:
-      "Zamiast ręcznie zbierać dane z kilku narzędzi, firma ma jeden uporządkowany przepływ danych do raportów, dashboardów i analiz.",
+      "W praktyce wiele firm korzysta z obu platform jednocześnie. Zapier obsługuje proste, liniowe automatyzacje (np. marketing, powiadomienia), a Make przejmuje wieloetapowe procesy operacyjne. Kluczem jest świadomy podział — nie narzędzie, a dopasowanie do konkretnego problemu.",
   },
 ];
 
 const faq = [
   {
-    question: "Czym różni się integracja API od zwykłej automatyzacji?",
+    question: "Czy Zapier jest lepszy od Make?",
     answer:
-      "Integracja API skupia się na bezpośredniej wymianie danych między systemami, często w bardziej stabilny i elastyczny sposób.",
+      "Nie ma jednej odpowiedzi. Zapier jest prostszy i ma więcej gotowych integracji, więc sprawdza się w prostych workflow. Make daje większą kontrolę nad logiką i jest tańszy przy dużej liczbie operacji. Najlepszy wybór zależy od konkretnego procesu.",
   },
   {
-    question: "Czy da się połączyć systemy bez otwartego API?",
+    question: "Czy mogę przenieść automatyzacje z jednej platformy na drugą?",
     answer:
-      "Czasem tak, ale zależy to od konkretnego narzędzia i dostępnych metod obejścia.",
+      "Tak, ale nie ma automatycznej migracji. Trzeba odtworzyć logikę w nowym narzędziu. Pomagamy w takich migracjach — analizujemy istniejące workflow i przenosimy je z optymalizacją.",
   },
   {
-    question: "Czy integracje API są tylko dla dużych firm?",
+    question: "Ile kosztuje Zapier vs Make?",
     answer:
-      "Nie. Często właśnie mniejsze firmy szybciej odczuwają wartość, bo eliminują ręczną pracę na małym zespole.",
+      "Zapier rozlicza się za liczbę zadań (tasks), Make za liczbę operacji. Przy prostych workflow koszty są zbliżone. Przy dużej skali Make bywa znacznie tańszy, bo operacje są wyceniane korzystniej. Pomagamy dobrać plan tak, żeby nie przepłacać.",
   },
 ];
 
 const relatedServices = [
   { href: "/automatyzacja-procesow-biznesowych", label: "Automatyzacja procesów biznesowych" },
-  { href: "/automatyzacja-ai", label: "Automatyzacja AI" },
+  { href: "/n8n", label: "n8n — self-hosted automatyzacja" },
 ];
 
-const relatedArticles = [
-  { href: "/strefa-wiedzy/integracje-api-w-firmie-kiedy-warto", label: "Integracje API w firmie — kiedy warto?" },
-  { href: "/strefa-wiedzy/jak-polaczyc-crm-z-innymi-systemami", label: "Jak połączyć CRM z innymi systemami?" },
-];
-
-export default function IntegracjeApi() {
+export default function ZapierMake() {
   return (
     <>
       <Header />
@@ -87,45 +82,52 @@ export default function IntegracjeApi() {
               <div className="text-center lg:text-left">
                 <p className="section-label mb-4">Usługa</p>
                 <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
-                  Integracje API
+                  Zapier vs Make
                 </h1>
                 <p className="text-lg text-gray-600 dark:text-gray-300">
-                  Firmy tracą czas i pieniądze, gdy ich narzędzia nie wymieniają danych
-                  automatycznie. Projektujemy integracje API, które łączą systemy używane
-                  w sprzedaży, operacjach i raportowaniu, dzięki czemu informacje trafiają
-                  tam, gdzie trzeba, bez ręcznego przepisywania.
+                  Dwie najpopularniejsze platformy automatyzacji no-code na rynku.
+                  Pomagamy wybrać właściwe narzędzie, zaprojektować workflow
+                  i wdrożyć automatyzacje, które realnie oszczędzają czas i eliminują
+                  ręczną pracę.
                 </p>
               </div>
               <div className="relative mx-auto lg:mx-0 w-full max-w-md">
                 <div className="rounded-2xl overflow-hidden shadow-xl shadow-gray-200/50 dark:shadow-black/30 border border-gray-100 dark:border-gray-800">
-                  <Image
-                    src="/photos/api.png"
-                    alt="Integracje API"
-                    width={480}
-                    height={320}
-                    className="w-full h-auto object-cover"
-                    priority
-                  />
+                  <Image src="/photos/electronics.jpg" alt="Zapier vs Make — automatyzacja workflow" width={480} height={320} className="w-full h-auto object-cover" priority />
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Po co firmie integracje API */}
+        {/* Czym są Zapier i Make */}
         <section className="py-16 lg:py-24">
           <div className="container-wide">
             <div className="max-w-3xl mx-auto">
               <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                Po co firmie integracje API
+                Czym są Zapier i Make
               </h2>
-              <p className="text-gray-500 dark:text-gray-400 text-lg leading-relaxed">
-                Gdy CRM, formularze, ERP, systemy mailingowe, arkusze i inne narzędzia
-                działają osobno, ludzie zaczynają robić za łącznik między nimi. Integracje
-                API likwidują ten problem. Umożliwiają automatyczne przesyłanie danych,
-                aktualizację rekordów, synchronizację statusów i uruchamianie kolejnych
-                akcji w innych systemach.
-              </p>
+              <div className="space-y-4 text-gray-500 dark:text-gray-400 text-lg leading-relaxed">
+                <p>
+                  Zapier i Make (dawniej Integromat) to platformy no-code, które pozwalają
+                  łączyć aplikacje i automatyzować przepływy danych bez pisania kodu.
+                  Obie działają w chmurze i obsługują tysiące integracji — od CRM-ów,
+                  przez narzędzia marketingowe, po systemy finansowe i bazy danych.
+                </p>
+                <p>
+                  Różnią się podejściem. Zapier stawia na prostotę: liniowe przepływy
+                  (trigger + action), ogromną bazę gotowych konektorów i szybkość
+                  konfiguracji. Make daje wizualny builder scenariuszy z pełną kontrolą
+                  nad logiką — rozgałęzienia, pętle, iteratory, routery, obsługa błędów
+                  i transformacje danych na każdym kroku.
+                </p>
+                <p>
+                  W Fluxlab pracujemy z obiema platformami na co dzień. Dobieramy
+                  narzędzie do problemu, a nie odwrotnie. Czasem wystarczy prosty Zap,
+                  czasem trzeba zbudować wieloetapowy scenariusz w Make, a czasem
+                  najlepsza odpowiedź to połączenie obu.
+                </p>
+              </div>
             </div>
           </div>
         </section>
@@ -134,6 +136,9 @@ export default function IntegracjeApi() {
         <section className="py-16 lg:py-24 border-t border-gray-100 dark:border-gray-800">
           <div className="container-wide">
             <div className="max-w-3xl mx-auto">
+              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-8">
+                Kiedy Zapier, kiedy Make
+              </h2>
               <div className="grid gap-6">
                 {useCases.map((uc, i) => (
                   <div
@@ -169,9 +174,10 @@ export default function IntegracjeApi() {
                   Dla kogo
                 </h2>
                 <p className="text-gray-500 dark:text-gray-400 leading-relaxed">
-                  Dla firm, które korzystają z kilku narzędzi jednocześnie i czują, że dane
-                  są rozproszone, nieaktualne albo wymagają ręcznego przenoszenia. To
-                  szczególnie ważne w sprzedaży, operacjach, marketingu i raportowaniu.
+                  Dla firm, które chcą automatyzować powtarzalne zadania bez budowania
+                  własnego oprogramowania. Szczególnie dla zespołów sprzedaży, marketingu
+                  i operacji, które codziennie przenoszą dane między narzędziami, wysyłają
+                  powiadomienia ręcznie albo kopiują informacje z systemu do systemu.
                 </p>
               </div>
               <div>
@@ -179,10 +185,10 @@ export default function IntegracjeApi() {
                   Ile to kosztuje
                 </h2>
                 <p className="text-gray-500 dark:text-gray-400 leading-relaxed">
-                  Koszt integracji API zależy od liczby systemów, jakości dokumentacji,
-                  logiki biznesowej i liczby wyjątków do obsłużenia. Prostsze integracje są
-                  relatywnie szybkie. Integracje niestandardowe, wieloetapowe albo krytyczne
-                  biznesowo wymagają szerszej analizy i wyceny.
+                  Koszt wdrożenia zależy od liczby automatyzacji, złożoności logiki
+                  i integrowanych systemów. Do tego dochodzą koszty subskrypcji platformy.
+                  Pomagamy dobrać plan i architekturę tak, żeby nie przepłacać za
+                  operacje i utrzymać koszty pod kontrolą w miarę skalowania.
                 </p>
               </div>
             </div>
@@ -227,10 +233,10 @@ export default function IntegracjeApi() {
           <div className="container-wide">
             <div className="max-w-2xl mx-auto text-center bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-10">
               <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                Masz kilka systemów, które nie gadają ze sobą?
+                Nie wiesz, czy wybrać Zapier czy Make?
               </h2>
               <p className="text-gray-500 dark:text-gray-400 mb-8">
-                Pokaż nam stack, a zaproponujemy sensowną architekturę integracji.
+                Opowiedz nam o swoim procesie, a dobierzemy narzędzie i zaprojektujemy workflow.
               </p>
               <Link href="/#kontakt" className="btn-primary px-8 py-3.5 text-base">
                 Porozmawiajmy
@@ -243,42 +249,21 @@ export default function IntegracjeApi() {
         <section className="py-16 lg:py-24 border-t border-gray-100 dark:border-gray-800">
           <div className="container-wide">
             <div className="max-w-3xl mx-auto">
-              <div className="grid md:grid-cols-2 gap-12">
-                <div>
-                  <h3 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-4">
-                    Powiązane usługi
-                  </h3>
-                  <ul className="space-y-3">
-                    {relatedServices.map((s) => (
-                      <li key={s.href}>
-                        <Link
-                          href={s.href}
-                          className="text-accent hover:underline text-sm font-medium"
-                        >
-                          {s.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-4">
-                    Powiązane artykuły
-                  </h3>
-                  <ul className="space-y-3">
-                    {relatedArticles.map((a) => (
-                      <li key={a.href}>
-                        <Link
-                          href={a.href}
-                          className="text-accent hover:underline text-sm font-medium"
-                        >
-                          {a.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
+              <h3 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-4">
+                Powiązane usługi
+              </h3>
+              <ul className="space-y-3">
+                {relatedServices.map((s) => (
+                  <li key={s.href}>
+                    <Link
+                      href={s.href}
+                      className="text-accent hover:underline text-sm font-medium"
+                    >
+                      {s.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </section>

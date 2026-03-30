@@ -12,15 +12,17 @@ const navLinks = [
   { label: "FAQ", href: "/#faq" },
 ];
 
-const servicePages = [
+const servicePages: { title: string; href: string; indent?: boolean }[] = [
   { title: "Automatyzacja procesów", href: "/automatyzacja-procesow-biznesowych" },
   { title: "Automatyzacja CRM", href: "/automatyzacja-crm" },
-  { title: "Automatyzacja Pipedrive", href: "/automatyzacja-pipedrive" },
-  { title: "Automatyzacja Salesforce", href: "/automatyzacja-salesforce" },
+  { title: "Pipedrive", href: "/automatyzacja-pipedrive", indent: true },
+  { title: "Salesforce", href: "/automatyzacja-salesforce", indent: true },
   { title: "Integracje API", href: "/integracje-api" },
   { title: "Automatyzacja raportowania", href: "/automatyzacja-raportowania" },
   { title: "Automatyzacja leadów", href: "/automatyzacja-leadow" },
   { title: "Automatyzacja z AI", href: "/automatyzacja-ai" },
+  { title: "n8n", href: "/n8n" },
+  { title: "Zapier vs Make", href: "/zapier-make" },
 ];
 
 const articles = [
@@ -133,15 +135,19 @@ export default function Header() {
                 onMouseLeave={scheduleServicesClose}
               >
                 <div className="absolute -top-[7px] left-1/2 -translate-x-1/2 w-3.5 h-3.5 bg-white dark:bg-gray-900 border-l border-t border-gray-100 dark:border-gray-800 rotate-45 rounded-tl-sm" />
-                <div className="space-y-1">
+                <div className="space-y-0.5">
                   {servicePages.map((sp) => (
                     <Link
                       key={sp.href}
                       href={sp.href}
                       onClick={() => setServicesOpen(false)}
-                      className="block px-3 py-2 rounded-xl text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-accent transition-colors"
+                      className={`block px-3 py-1.5 rounded-xl text-sm hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-accent transition-colors ${
+                        sp.indent
+                          ? "pl-7 text-gray-500 dark:text-gray-400 text-xs"
+                          : "text-gray-700 dark:text-gray-300"
+                      }`}
                     >
-                      {sp.title}
+                      {sp.indent ? `└ ${sp.title}` : sp.title}
                     </Link>
                   ))}
                 </div>
@@ -334,9 +340,13 @@ export default function Header() {
                     key={sp.href}
                     href={sp.href}
                     onClick={() => setMenuOpen(false)}
-                    className="block text-sm text-gray-700 dark:text-gray-300 hover:text-accent transition-colors"
+                    className={`block hover:text-accent transition-colors ${
+                      sp.indent
+                        ? "pl-4 text-xs text-gray-500 dark:text-gray-400"
+                        : "text-sm text-gray-700 dark:text-gray-300"
+                    }`}
                   >
-                    {sp.title}
+                    {sp.indent ? `└ ${sp.title}` : sp.title}
                   </Link>
                 ))}
               </div>

@@ -6,13 +6,13 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Automatyzacja CRM dla sprzedaży i obsługi klienta | Fluxlab",
+  title: "n8n — automatyzacja workflow z pełną kontrolą | Fluxlab",
   description:
-    "Wdrażamy automatyzację CRM: leady, follow-upy, statusy, zadania, pipeline i integracje. Mniej ręcznej pracy, lepsza kontrola sprzedaży i szybsza reakcja zespołu.",
+    "Wdrażamy automatyzacje na platformie n8n: self-hosted lub cloud, integracje API, webhooki, własne nody. Alternatywa dla Zapier i Make z pełną kontrolą nad infrastrukturą.",
   openGraph: {
-    title: "Automatyzacja CRM dla sprzedaży i obsługi klienta | Fluxlab",
+    title: "n8n — automatyzacja workflow z pełną kontrolą | Fluxlab",
     description:
-      "Wdrażamy automatyzację CRM: leady, follow-upy, statusy, zadania, pipeline i integracje. Mniej ręcznej pracy, lepsza kontrola sprzedaży i szybsza reakcja zespołu.",
+      "Wdrażamy automatyzacje na platformie n8n: self-hosted lub cloud, integracje API, webhooki, własne nody. Alternatywa dla Zapier i Make z pełną kontrolą nad infrastrukturą.",
     locale: "pl_PL",
     type: "article",
   },
@@ -20,57 +20,49 @@ export const metadata: Metadata = {
 
 const useCases = [
   {
-    title: "Automatyczne tworzenie i kwalifikacja leadów",
+    title: "Integracja systemów przez API i webhooki",
     description:
-      "Nowe zapytania z formularzy, kampanii, maili i innych źródeł automatycznie trafiają do CRM. System może przypisać źródło leada, ocenić priorytet i skierować go do odpowiedniej osoby.",
+      "n8n łączy CRM, ERP, bazy danych, narzędzia marketingowe i dowolne API w jeden spójny workflow. Webhooki pozwalają reagować na zdarzenia w czasie rzeczywistym, bez pollingu i opóźnień.",
   },
   {
-    title: "Automatyczne zadania i follow-upy",
+    title: "Automatyzacja procesów wewnętrznych",
     description:
-      "Po zmianie statusu lub braku odpowiedzi CRM sam tworzy kolejne zadanie, przypomina o kontakcie i pilnuje, żeby lead nie zniknął z procesu.",
+      "Onboarding klientów, generowanie dokumentów, synchronizacja danych między systemami, powiadomienia Slack — n8n pozwala zautomatyzować powtarzalne zadania bez pisania aplikacji od zera.",
   },
   {
-    title: "Porządkowanie pipeline i danych",
+    title: "Przetwarzanie danych z logiką kodu",
     description:
-      "Automatyzacja CRM może aktualizować pola, pilnować kompletności danych, wykrywać duplikaty i synchronizować informacje z innymi systemami.",
+      "Dzięki nodom JavaScript i Python możesz dodać własną logikę tam, gdzie standardowe integracje nie wystarczają. Transformacje danych, walidacje, warunkowe rozgałęzienia — wszystko w jednym workflow.",
   },
 ];
 
 const faq = [
   {
-    question: "Czy automatyzacja CRM zastąpi handlowca?",
+    question: "Czym n8n różni się od Zapier i Make?",
     answer:
-      "Nie. Ma usunąć ręczne klikanie i pilnowanie procesu, żeby handlowiec mógł skupić się na sprzedaży.",
+      "n8n daje pełną kontrolę nad infrastrukturą — możesz go hostować na własnym serwerze, masz dostęp do kodu źródłowego i nie płacisz za każde wykonanie. Dodatkowo oferuje nody z kodem (JavaScript, Python), co pozwala na bardziej zaawansowaną logikę niż w Zapier czy Make.",
   },
   {
-    question: "Z jakimi CRM pracujecie?",
+    question: "Czy n8n nadaje się dla małej firmy?",
     answer:
-      "Wdrażamy automatyzacje w popularnych systemach CRM i łączymy je z innymi narzędziami używanymi w firmie.",
+      "Tak. n8n Cloud pozwala zacząć bez własnej infrastruktury, a wersja self-hosted jest darmowa. Koszt rośnie dopiero z liczbą workflow i potrzebą wsparcia, nie z liczbą wykonań.",
   },
   {
-    question: "Czy można zautomatyzować follow-up bez utraty kontroli?",
+    question: "Czy mogę przenieść automatyzacje z Zapier/Make do n8n?",
     answer:
-      "Tak, pod warunkiem że proces jest dobrze zaprojektowany, a wyjątki są obsługiwane świadomie.",
+      "Tak, większość scenariuszy da się odtworzyć w n8n. Migracja wymaga przeprojektowania workflow, ale daje szansę na ich uproszczenie i lepszą kontrolę nad danymi.",
   },
 ];
 
 const relatedServices = [
-  { label: "Automatyzacja Pipedrive", href: "/automatyzacja-pipedrive" },
-  { label: "Automatyzacja leadów", href: "/automatyzacja-leadow" },
+  {
+    label: "Automatyzacja procesów biznesowych",
+    href: "/automatyzacja-procesow-biznesowych",
+  },
+  { label: "Integracje API", href: "/integracje-api" },
 ];
 
-const relatedArticles = [
-  {
-    label: "Automatyzacja CRM — od czego zacząć",
-    href: "/strefa-wiedzy/automatyzacja-crm-od-czego-zaczac",
-  },
-  {
-    label: "Jak uporządkować proces sprzedaży w CRM",
-    href: "/strefa-wiedzy/jak-uporzadkowac-proces-sprzedazy-w-crm",
-  },
-];
-
-export default function AutomatyzacjaCRM() {
+export default function N8nPage() {
   return (
     <>
       <Header />
@@ -93,20 +85,20 @@ export default function AutomatyzacjaCRM() {
               <div className="text-center lg:text-left">
                 <p className="section-label mb-4">Usługa</p>
                 <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
-                  Automatyzacja CRM
+                  Automatyzacja z n8n
                 </h1>
                 <p className="text-lg text-gray-600 dark:text-gray-300">
-                  Automatyzacja CRM pozwala uporządkować sprzedaż, przyspieszyć reakcję na
-                  leady i ograniczyć chaos w pipeline. Projektujemy procesy, dzięki którym
-                  CRM nie jest tylko bazą kontaktów, ale realnym narzędziem pracy handlowców
-                  i operacji.
+                  n8n to platforma do budowania workflow, która łączy systemy, API
+                  i logikę biznesową w jednym miejscu. Self-hosted lub cloud — z
+                  pełną kontrolą nad danymi i infrastrukturą. Alternatywa dla
+                  Zapier i Make dla firm, które chcą więcej niż drag-and-drop.
                 </p>
               </div>
               <div className="relative mx-auto lg:mx-0 w-full max-w-md">
                 <div className="rounded-2xl overflow-hidden shadow-xl shadow-gray-200/50 dark:shadow-black/30 border border-gray-100 dark:border-gray-800">
                   <Image
-                    src="/photos/crm.jpeg"
-                    alt="Automatyzacja CRM"
+                    src="/photos/cloud.webp"
+                    alt="n8n automatyzacja"
                     width={480}
                     height={320}
                     className="w-full h-auto object-cover"
@@ -118,18 +110,26 @@ export default function AutomatyzacjaCRM() {
           </div>
         </section>
 
-        {/* Co daje automatyzacja CRM */}
+        {/* Czym jest n8n */}
         <section className="py-16 lg:py-24">
           <div className="container-wide">
             <div className="max-w-3xl mx-auto">
               <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                Co daje automatyzacja CRM
+                Czym jest n8n i dlaczego warto
               </h2>
+              <p className="text-gray-500 dark:text-gray-400 mb-6">
+                n8n to open-source&apos;owa platforma automatyzacji, która
+                pozwala budować złożone workflow łączące dowolne systemy.
+                W odróżnieniu od Zapier czy Make, n8n daje możliwość
+                self-hostingu — dane zostają na Twoim serwerze, a koszt nie
+                rośnie z każdym wykonaniem scenariusza.
+              </p>
               <p className="text-gray-500 dark:text-gray-400 mb-10">
-                Dobrze wdrożony CRM powinien automatycznie porządkować dane, przypisywać
-                leady, pilnować kolejnych kroków i dostarczać zespołowi aktualnych
-                informacji. Jeśli handlowcy ręcznie tworzą zadania, przenoszą statusy,
-                dopisują notatki i gubią follow-upy, to znaczy, że CRM pracuje za słabo.
+                Platforma oferuje ponad 400 gotowych integracji, webhooki,
+                nody z kodem JavaScript i Python, warunkową logikę, pętle
+                i obsługę błędów. To narzędzie dla firm, które potrzebują
+                czegoś więcej niż proste &quot;jeśli X to Y&quot; — i chcą
+                mieć pełną własność swojej infrastruktury automatyzacji.
               </p>
 
               <div className="space-y-6">
@@ -159,10 +159,13 @@ export default function AutomatyzacjaCRM() {
                 Dla kogo
               </h2>
               <p className="text-gray-500 dark:text-gray-400">
-                Dla firm, które mają zespół sprzedaży, korzystają z CRM i chcą przyspieszyć
-                pracę handlowców bez dokładania kolejnej ręcznej roboty. Szczególnie dla
-                organizacji, które rosną i zaczynają tracić kontrolę nad leadami, statusami
-                i jakością danych.
+                Dla firm, które chcą mieć własność swojej infrastruktury
+                automatyzacji — nie chcą być zależne od limitu wykonań w
+                Zapier ani od zamkniętego ekosystemu. Szczególnie dla
+                zespołów technicznych, firm z własnymi API i organizacji,
+                które przetwarzają wrażliwe dane i potrzebują self-hostingu.
+                Sprawdza się też u firm, które przerosły możliwości prostych
+                narzędzi no-code i potrzebują logiki z kodem w workflow.
               </p>
             </div>
           </div>
@@ -176,10 +179,12 @@ export default function AutomatyzacjaCRM() {
                 Ile to kosztuje
               </h2>
               <p className="text-gray-500 dark:text-gray-400">
-                Proste automatyzacje CRM, takie jak routing leadów, zadania czy
-                synchronizacja pól, mają zwykle niski próg wejścia. Bardziej zaawansowane
-                wdrożenia, obejmujące wiele źródeł danych, scoring, integracje API i logikę
-                sprzedażową, wymagają indywidualnej wyceny.
+                Sam n8n w wersji self-hosted jest darmowy — płacisz tylko za
+                serwer. n8n Cloud zaczyna się od niskich kwot miesięcznie.
+                Koszt wdrożenia zależy od liczby workflow, złożoności
+                integracji i tego, czy potrzebujesz konfiguracji
+                infrastruktury. Proste scenariusze wdrażamy szybko,
+                bardziej zaawansowane projekty wyceniamy indywidualnie.
               </p>
             </div>
           </div>
@@ -228,10 +233,10 @@ export default function AutomatyzacjaCRM() {
           <div className="container-wide">
             <div className="max-w-2xl mx-auto text-center bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-10">
               <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                Masz CRM, ale zespół nadal robi za dużo ręcznie?
+                Chcesz zbudować automatyzacje na n8n?
               </h2>
               <p className="text-gray-500 dark:text-gray-400 mb-8">
-                Pokaż nam proces sprzedaży, a wskażemy, co da się zautomatyzować.
+                Opowiedz nam o procesach, które chcesz zautomatyzować — dobierzemy architekturę i wdrożymy workflow.
               </p>
               <Link href="/#kontakt" className="btn-primary px-8 py-3.5 text-base">
                 Porozmawiajmy
@@ -247,72 +252,36 @@ export default function AutomatyzacjaCRM() {
         <section className="py-16 lg:py-24 border-t border-gray-100 dark:border-gray-800">
           <div className="container-wide">
             <div className="max-w-3xl mx-auto">
-              <div className="grid md:grid-cols-2 gap-12">
-                <div>
-                  <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-                    Powiązane usługi
-                  </h2>
-                  <ul className="space-y-3">
-                    {relatedServices.map((item) => (
-                      <li key={item.href}>
-                        <Link
-                          href={item.href}
-                          className="flex items-center gap-2.5 text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
-                        >
-                          <svg
-                            className="shrink-0 text-accent"
-                            width="14"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            fill="none"
-                          >
-                            <path
-                              d="M2.5 7l3 3 6-6"
-                              stroke="currentColor"
-                              strokeWidth="1.5"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
-                          {item.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-                    Powiązane artykuły
-                  </h2>
-                  <ul className="space-y-3">
-                    {relatedArticles.map((item) => (
-                      <li key={item.href}>
-                        <Link
-                          href={item.href}
-                          className="flex items-center gap-2.5 text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
-                        >
-                          <svg
-                            className="shrink-0 text-accent"
-                            width="14"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            fill="none"
-                          >
-                            <path
-                              d="M2.5 7l3 3 6-6"
-                              stroke="currentColor"
-                              strokeWidth="1.5"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
-                          {item.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
+              <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+                Powiązane usługi
+              </h2>
+              <ul className="space-y-3">
+                {relatedServices.map((item) => (
+                  <li key={item.href}>
+                    <Link
+                      href={item.href}
+                      className="flex items-center gap-2.5 text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
+                    >
+                      <svg
+                        className="shrink-0 text-accent"
+                        width="14"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        fill="none"
+                      >
+                        <path
+                          d="M2.5 7l3 3 6-6"
+                          stroke="currentColor"
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </section>

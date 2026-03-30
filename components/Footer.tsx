@@ -3,12 +3,14 @@ import Link from "next/link";
 const serviceLinks = [
   { href: "/automatyzacja-procesow-biznesowych", label: "Automatyzacja procesów" },
   { href: "/automatyzacja-crm", label: "Automatyzacja CRM" },
-  { href: "/automatyzacja-pipedrive", label: "Automatyzacja Pipedrive" },
-  { href: "/automatyzacja-salesforce", label: "Automatyzacja Salesforce" },
+  { href: "/automatyzacja-pipedrive", label: "Pipedrive", indent: true },
+  { href: "/automatyzacja-salesforce", label: "Salesforce", indent: true },
   { href: "/integracje-api", label: "Integracje API" },
   { href: "/automatyzacja-raportowania", label: "Automatyzacja raportowania" },
   { href: "/automatyzacja-leadow", label: "Automatyzacja leadów" },
   { href: "/automatyzacja-ai", label: "Automatyzacja z AI" },
+  { href: "/n8n", label: "n8n" },
+  { href: "/zapier-make", label: "Zapier vs Make" },
 ];
 
 export default function Footer() {
@@ -33,9 +35,13 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
+                    className={`hover:text-accent transition-colors ${
+                      "indent" in link && link.indent
+                        ? "text-xs text-gray-500 dark:text-gray-500 pl-3"
+                        : "text-sm text-gray-600 dark:text-gray-400"
+                    }`}
                   >
-                    {link.label}
+                    {"indent" in link && link.indent ? `└ ${link.label}` : link.label}
                   </Link>
                 </li>
               ))}
