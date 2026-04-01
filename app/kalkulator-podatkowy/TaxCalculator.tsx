@@ -674,14 +674,8 @@ function ResultCard({ result, isBest, viewMode, showVat }: {
       tip: `Wpłata na IKZE: ${v(r.ikzeContribution)}${sfx}. Odliczona od dochodu — zmniejsza podatek, ale środki trafiają na konto emerytalne.` }] : []),
     { label: "Do dyspozycji", value: r.disposable, bold: true, accent: true,
       tip: `Przychód brutto (${v(r.annualRevenue)}) − obciążenia (${v(r.totalBurden)}) − koszty firmowe (${v(bizCostsAnn)})${r.ikzeContribution > 0 ? ` − IKZE (${v(r.ikzeContribution)})` : ""} = ${v(r.disposable)}. Koszty prywatne i samochodu nie odejmowane (i tak ponoszone).` },
-    ...(r.ikzeContribution > 0 ? [{ label: "↳ w tym na konto IKZE", value: r.ikzeContribution, dimmed: true as const,
-      tip: `Z kwoty do dyspozycji ${v(r.ikzeContribution)}${sfx} trafia na konto IKZE.` }] : []),
-    ...(r.ikzeTaxSavings > 0 ? [{ label: "↳ oszczędność PIT dzięki IKZE", value: r.ikzeTaxSavings, green: true as const,
-      tip: `Dzięki wpłacie na IKZE (${v(r.ikzeContribution)}${sfx}) płacisz ${v(r.ikzeTaxSavings)}${sfx} mniej podatku dochodowego.` }] : []),
-    ...(r.privateSavings > 0 ? [{ label: "↳ oszczędność PIT z kosztów prywatnych", value: r.privateSavings, green: true as const,
-      tip: `Dzięki wliczeniu kosztów prywatnych płacisz ${v(r.privateSavings)}${sfx} mniej podatku dochodowego.` }] : []),
-    ...(r.vatPrivateSavings > 0 ? [{ label: "↳ oszczędność VAT z kosztów prywatnych", value: r.vatPrivateSavings, green: true as const,
-      tip: `Odliczony VAT od kosztów prywatnych i samochodu: ${v(r.vatPrivateSavings)}${sfx}. Pieniądze odzyskane z VAT od kosztów i tak ponoszonych.` }] : []),
+    ...(r.ikzeContribution > 0 ? [{ label: "↳ dodatkowo na konto IKZE", value: r.ikzeContribution, green: true as const,
+      tip: `Oprócz kwoty do dyspozycji, ${v(r.ikzeContribution)}${sfx} trafia na Twoje konto IKZE. Dzięki odliczeniu od dochodu oszczędzasz ${v(r.ikzeTaxSavings)}${sfx} na podatku.` }] : []),
   ];
 
   return (
