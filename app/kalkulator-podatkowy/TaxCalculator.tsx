@@ -60,6 +60,9 @@ const CAR_PIT_BUSINESS = 1.0;
 const CAR_VAT_MIXED = 0.5;
 const CAR_VAT_BUSINESS = 1.0;
 
+// IKZE (Indywidualne Konto Zabezpieczenia Emerytalnego)
+const IKZE_LIMIT_JDG = Math.round(AVG_SALARY * 1.8 * 100) / 100; // roczny limit wpłat JDG
+
 // Limity
 const VAT_EXEMPT_LIMIT = 240_000; // roczny obrót – zwolnienie podmiotowe (od 2025)
 const MALY_PLUS_REVENUE_LIMIT = 120_000; // max przychód z poprzedniego roku
@@ -134,6 +137,8 @@ interface TaxResult {
   totalBurden: number;
   netAfterTax: number;
   disposable: number;
+  ikzeContribution: number;
+  ikzeTaxSavings: number;
   privateSavings: number;
   effectiveRate: number;
 }
@@ -219,6 +224,7 @@ function calculate(p: {
   vatMode: VatMode;
   vatRate: number;
   vatCostsRate: number;
+  ikzeAnnual: number;
 }): { skala: TaxResult; linear: TaxResult; ryczalt: TaxResult } {
   const annRev = p.monthlyRevenue * 12;
   const annBizCosts = p.businessCosts * 12;
@@ -251,13 +257,19 @@ function calculate(p: {
   const calcPrivateSavings = (taxWithout: number, taxWith: number) =>
     Math.max(0, Math.round(taxWithout - taxWith));
 
+  // IKZE – odliczenie od dochodu/przychodu
+  const ikze = p.ikzeAnnual;
+
   // ── SKALA ──
   const skalaMonthlyInc = Math.max(0, p.monthlyRevenue - p.businessCosts - p.privateCosts - Math.round(p.carCosts * carPitPct) - zusM);
   const skalaHealthM = healthSkala(skalaMonthlyInc);
   const skalaHealthAnn = Math.round(skalaHealthM * 12);
-  const skalaTaxBase = Math.max(0, Math.round(annRev - totalDeductible - annZus));
+  const skalaTaxBaseNoIkze = Math.max(0, Math.round(annRev - totalDeductible - annZus));
+  const skalaTaxBase = Math.max(0, Math.round(skalaTaxBaseNoIkze - ikze));
+  const skalaTaxNoIkze = taxSkala(skalaTaxBaseNoIkze);
   const skalaTax = taxSkala(skalaTaxBase);
-  const skalaTaxBaseNoPriv = Math.max(0, Math.round(annRev - annBizCosts - annCarDeductible - annZus));
+  const skalaIkzeSav = Math.max(0, skalaTaxNoIkze - skalaTax);
+  const skalaTaxBaseNoPriv = Math.max(0, Math.round(annRev - annBizCosts - annCarDeductible - annZus - ikze));
   const skalaTaxNoPriv = taxSkala(skalaTaxBaseNoPriv);
   const skalaPrivSav = calcPrivateSavings(skalaTaxNoPriv, skalaTax);
   const skalaBurden = annZus + annFP + skalaHealthAnn + skalaTax;
@@ -267,9 +279,12 @@ function calculate(p: {
   const linearHealthM = healthLinear(linearMonthlyInc);
   const linearHealthAnn = Math.round(linearHealthM * 12);
   const linearHealthDed = Math.min(linearHealthAnn, LINEAR_HEALTH_CAP);
-  const linearTaxBase = Math.max(0, Math.round(annRev - totalDeductible - annZus - linearHealthDed));
+  const linearTaxBaseNoIkze = Math.max(0, Math.round(annRev - totalDeductible - annZus - linearHealthDed));
+  const linearTaxBase = Math.max(0, Math.round(linearTaxBaseNoIkze - ikze));
+  const linearTaxNoIkze = taxLinear(linearTaxBaseNoIkze);
   const linearTax = taxLinear(linearTaxBase);
-  const linearTaxBaseNoPriv = Math.max(0, Math.round(annRev - annBizCosts - annCarDeductible - annZus - linearHealthDed));
+  const linearIkzeSav = Math.max(0, linearTaxNoIkze - linearTax);
+  const linearTaxBaseNoPriv = Math.max(0, Math.round(annRev - annBizCosts - annCarDeductible - annZus - linearHealthDed - ikze));
   const linearTaxNoPriv = taxLinear(linearTaxBaseNoPriv);
   const linearPrivSav = calcPrivateSavings(linearTaxNoPriv, linearTax);
   const linearBurden = annZus + annFP + linearHealthAnn + linearTax;
@@ -280,19 +295,26 @@ function calculate(p: {
   const ryczHealthDed = Math.round(ryczHealthAnn * 0.5);
 
   const totalRyczRev = p.ryczaltSources.reduce((s, src) => s + src.amount * 12, 0);
+  // Ryczałt: IKZE odliczane od przychodu proporcjonalnie do źródeł
   let ryczTax = 0;
+  let ryczTaxNoIkze = 0;
   for (const src of p.ryczaltSources) {
     const srcAnn = src.amount * 12;
     const proportion = totalRyczRev > 0 ? srcAnn / totalRyczRev : 0;
-    const srcDed = Math.round(ryczHealthDed * proportion);
-    const srcTaxable = Math.max(0, srcAnn - srcDed);
+    const srcHealthDed = Math.round(ryczHealthDed * proportion);
+    const srcIkzeDed = Math.round(ikze * proportion);
+    const srcTaxableNoIkze = Math.max(0, srcAnn - srcHealthDed);
+    const srcTaxable = Math.max(0, srcAnn - srcHealthDed - srcIkzeDed);
 
     if (src.isNajem) {
+      ryczTaxNoIkze += calcRyczaltNajem(srcTaxableNoIkze);
       ryczTax += calcRyczaltNajem(srcTaxable);
     } else {
+      ryczTaxNoIkze += Math.round(srcTaxableNoIkze * (src.rate / 100));
       ryczTax += Math.round(srcTaxable * (src.rate / 100));
     }
   }
+  const ryczIkzeSav = Math.max(0, ryczTaxNoIkze - ryczTax);
   const ryczBurden = annZus + annFP + ryczHealthAnn + ryczTax;
 
   // Przychód brutto = netto + VAT należny
@@ -308,6 +330,7 @@ function calculate(p: {
     tax: number,
     burden: number,
     privSav: number,
+    ikzeSav: number,
   ): TaxResult => {
     const totalWithVat = burden + vatPassThrough;
     return {
@@ -326,16 +349,18 @@ function calculate(p: {
       vatPrivateSavings,
       totalBurden: totalWithVat,
       netAfterTax: annRevBrutto - totalWithVat,
-      disposable: annRevBrutto - totalWithVat - annBizCosts,
+      disposable: annRevBrutto - totalWithVat - annBizCosts - ikze,
+      ikzeContribution: ikze,
+      ikzeTaxSavings: ikzeSav,
       privateSavings: privSav,
       effectiveRate: (annRevBrutto - annBizCosts) > 0 ? totalWithVat / (annRevBrutto - annBizCosts) : 0,
     };
   };
 
   return {
-    skala: mk("Skala podatkowa", totalDeductible, skalaHealthAnn, 0, skalaTaxBase, skalaTax, skalaBurden, skalaPrivSav),
-    linear: mk("Podatek liniowy", totalDeductible, linearHealthAnn, linearHealthDed, linearTaxBase, linearTax, linearBurden, linearPrivSav),
-    ryczalt: mk("Ryczałt", 0, ryczHealthAnn, ryczHealthDed, totalRyczRev, ryczTax, ryczBurden, 0),
+    skala: mk("Skala podatkowa", totalDeductible, skalaHealthAnn, 0, skalaTaxBase, skalaTax, skalaBurden, skalaPrivSav, skalaIkzeSav),
+    linear: mk("Podatek liniowy", totalDeductible, linearHealthAnn, linearHealthDed, linearTaxBase, linearTax, linearBurden, linearPrivSav, linearIkzeSav),
+    ryczalt: mk("Ryczałt", 0, ryczHealthAnn, ryczHealthDed, totalRyczRev, ryczTax, ryczBurden, 0, ryczIkzeSav),
   };
 }
 
@@ -466,6 +491,7 @@ const CHART_COLORS = [
   "#3b82f6", // blue – VAT
   "#8b5cf6", // violet – FP
   "#94a3b8", // slate – koszty firmowe
+  "#14b8a6", // teal – IKZE
 ];
 
 function DonutChart({ slices, viewMode }: { slices: { label: string; value: number; color: string }[]; viewMode: ViewMode }) {
@@ -596,6 +622,7 @@ function ResultCard({ result, isBest, viewMode, showVat }: {
     ...(r.vatPassThrough > 0 ? [{ label: "VAT", value: r.vatPassThrough, color: CHART_COLORS[4] }] : []),
     ...(r.funduszPracy > 0 ? [{ label: "Fund. Pracy", value: r.funduszPracy, color: CHART_COLORS[5] }] : []),
     ...(bizCostsAnn > 0 ? [{ label: "Koszty firmowe", value: bizCostsAnn, color: CHART_COLORS[6] }] : []),
+    ...(r.ikzeContribution > 0 ? [{ label: "IKZE", value: r.ikzeContribution, color: CHART_COLORS[7] }] : []),
   ];
 
   const rows: { label: string; value: number; tip?: string; bold?: boolean; accent?: boolean; dimmed?: boolean; negative?: boolean; green?: boolean }[] = [
@@ -641,8 +668,12 @@ function ResultCard({ result, isBest, viewMode, showVat }: {
       tip: `${burdenParts} = ${v(r.totalBurden)}${sfx}.` },
     { label: "Netto (przed kosztami)", value: r.netAfterTax, bold: true,
       tip: `Przychód brutto (${v(r.annualRevenue)}) − obciążenia (${v(r.totalBurden)}) = ${v(r.netAfterTax)}.` },
+    ...(r.ikzeContribution > 0 ? [{ label: "Wpłata IKZE", value: -r.ikzeContribution, negative: true as const,
+      tip: `Wpłata na IKZE: ${v(r.ikzeContribution)}${sfx}. Odliczona od dochodu — zmniejsza podatek, ale środki trafiają na konto emerytalne.` }] : []),
     { label: "Do dyspozycji", value: r.disposable, bold: true, accent: true,
-      tip: `Przychód brutto (${v(r.annualRevenue)}) − obciążenia (${v(r.totalBurden)}) − koszty firmowe (${v(bizCostsAnn)}) = ${v(r.disposable)}. Koszty prywatne i samochodu nie odejmowane (i tak ponoszone).` },
+      tip: `Przychód brutto (${v(r.annualRevenue)}) − obciążenia (${v(r.totalBurden)}) − koszty firmowe (${v(bizCostsAnn)})${r.ikzeContribution > 0 ? ` − IKZE (${v(r.ikzeContribution)})` : ""} = ${v(r.disposable)}. Koszty prywatne i samochodu nie odejmowane (i tak ponoszone).` },
+    ...(r.ikzeTaxSavings > 0 ? [{ label: "↳ oszczędność PIT dzięki IKZE", value: r.ikzeTaxSavings, green: true as const,
+      tip: `Dzięki wpłacie na IKZE (${v(r.ikzeContribution)}${sfx}) płacisz ${v(r.ikzeTaxSavings)}${sfx} mniej podatku dochodowego.` }] : []),
     ...(r.privateSavings > 0 ? [{ label: "↳ oszczędność PIT z kosztów prywatnych", value: r.privateSavings, green: true as const,
       tip: `Dzięki wliczeniu kosztów prywatnych płacisz ${v(r.privateSavings)}${sfx} mniej podatku dochodowego.` }] : []),
     ...(r.vatPrivateSavings > 0 ? [{ label: "↳ oszczędność VAT z kosztów prywatnych", value: r.vatPrivateSavings, green: true as const,
@@ -722,6 +753,7 @@ export default function TaxCalculator() {
   const [zusStatus, setZusStatus] = useState<ZusStatus>("pelny");
   const [prevYearIncome, setPrevYearIncome] = useState(120_000);
   const [chorobowa, setChorobowa] = useState(false);
+  const [ikzeMonthly, setIkzeMonthly] = useState(0);
   const [vatMode, setVatMode] = useState<VatMode>("standard");
   const [vatRate, setVatRate] = useState(23);
   const [vatCostsRate, setVatCostsRate] = useState(23);
@@ -842,9 +874,10 @@ export default function TaxCalculator() {
         zusStatus, chorobowa, prevYearIncome,
         ryczaltSources: ryczaltSources.map((s) => ({ ...s, amount: n(s.amount, s.brutto, vatRate) })),
         vatMode, vatRate, vatCostsRate,
+        ikzeAnnual: ikzeMonthly * 12,
       }),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [monthlyRevenue, businessCostsNet, privateCostsNet, carCostsNet, carUsage, zusStatus, chorobowa, prevYearIncome, ryczaltSources, costItems, vatMode, vatRate, vatCostsRate, carBrutto],
+    [monthlyRevenue, businessCostsNet, privateCostsNet, carCostsNet, carUsage, zusStatus, chorobowa, prevYearIncome, ryczaltSources, costItems, vatMode, vatRate, vatCostsRate, carBrutto, ikzeMonthly],
   );
 
   // Limity
@@ -1108,6 +1141,31 @@ export default function TaxCalculator() {
           <Toggle label="Składka chorobowa (dobrowolna)" checked={chorobowa} onChange={setChorobowa}
             desc={`+${pln(Math.round(zusBase(zusStatus, prevYearIncome) * CHOROBOWA))}/mies. – prawo do zasiłku chorobowego`} />
 
+          {/* IKZE */}
+          <div className="border-t border-gray-200 dark:border-gray-700 pt-5 space-y-3">
+            <div className="flex items-center justify-between">
+              <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Wpłata IKZE</span>
+              <span className="text-sm font-semibold tabular-nums text-gray-900 dark:text-white">{pln(ikzeMonthly)}/mies.</span>
+            </div>
+            <input
+              type="range"
+              min={0}
+              max={Math.round(IKZE_LIMIT_JDG / 12)}
+              step={10}
+              value={ikzeMonthly}
+              onChange={(e) => setIkzeMonthly(Number(e.target.value))}
+              className="w-full h-2 rounded-full appearance-none cursor-pointer bg-gray-200 dark:bg-gray-700 accent-accent"
+            />
+            <div className="flex justify-between text-xs text-gray-400">
+              <span>0 zł</span>
+              <span>Limit: {pln(Math.round(IKZE_LIMIT_JDG))}/rok</span>
+            </div>
+            <p className="text-xs text-gray-400">
+              Wpłaty na IKZE odliczasz od dochodu — obniżają podatek dochodowy.
+              Rocznie: {pln(ikzeMonthly * 12)}.
+            </p>
+          </div>
+
           {/* VAT */}
           <div className="border-t border-gray-200 dark:border-gray-700 pt-5 space-y-4">
             <RadioGroup
@@ -1259,6 +1317,7 @@ export default function TaxCalculator() {
           <div><strong>Najem ryczałt:</strong> {NAJEM_RATE_LOW}% do {pln(NAJEM_THRESHOLD)}, {NAJEM_RATE_HIGH}% powyżej</div>
           <div><strong>Zwolnienie VAT:</strong> do {pln(VAT_EXEMPT_LIMIT)} obrotu/rok</div>
           <div><strong>Mały ZUS Plus:</strong> przychód ≤ {pln(MALY_PLUS_REVENUE_LIMIT)}, max {MALY_PLUS_MAX_MONTHS} mies.</div>
+          <div><strong>IKZE (limit JDG):</strong> {pln(Math.round(IKZE_LIMIT_JDG))}/rok</div>
           <div><strong>Min. wynagrodzenie:</strong> {pln(MIN_WAGE)}</div>
           <div><strong>Przeciętne wynagr.:</strong> {pln(AVG_SALARY)}</div>
         </div>
