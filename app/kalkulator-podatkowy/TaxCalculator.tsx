@@ -61,7 +61,7 @@ const CAR_VAT_MIXED = 0.5;
 const CAR_VAT_BUSINESS = 1.0;
 
 // IKZE (Indywidualne Konto Zabezpieczenia Emerytalnego)
-const IKZE_LIMIT_JDG = Math.round(AVG_SALARY * 1.8 * 100) / 100; // roczny limit wpłat JDG
+const IKZE_LIMIT_JDG = 16_956; // roczny limit wpłat JDG 2026 (M.P. 2025 poz. 1156)
 
 // Limity
 const VAT_EXEMPT_LIMIT = 240_000; // roczny obrót – zwolnienie podmiotowe (od 2025)
