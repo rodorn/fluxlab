@@ -17,7 +17,7 @@ const RYCZALT_RATES = [
 const detectRateTool = {
   type: "function",
   name: "set_ryczalt_rate",
-  description: "Ustaw stawkę ryczałtu dla podanego źródła przychodu",
+  description: "Ustaw stawkę ryczałtu i stawkę VAT dla podanego źródła przychodu",
   parameters: {
     type: "object",
     properties: {
@@ -30,12 +30,17 @@ const detectRateTool = {
         type: "boolean",
         description: "Czy to najem/dzierżawa (stawka 8.5/12.5%)",
       },
+      vatRate: {
+        type: "number",
+        enum: [0, 5, 8, 23],
+        description: "Stawka VAT w % (0 dla zwolnionych przedmiotowo, 5 np. książki/żywność, 8 np. budownictwo/gastronomia, 23 standardowa)",
+      },
       reasoning: {
         type: "string",
-        description: "Krótkie uzasadnienie wyboru stawki (1 zdanie, po polsku)",
+        description: "Krótkie uzasadnienie wyboru stawki ryczałtu i VAT (1 zdanie, po polsku)",
       },
     },
-    required: ["rate", "isNajem", "reasoning"],
+    required: ["rate", "isNajem", "vatRate", "reasoning"],
   },
 };
 
@@ -54,8 +59,9 @@ const suggestCostsTool = {
             name: { type: "string", description: "Nazwa kosztu" },
             amount: { type: "number", description: "Szacunkowa kwota netto miesięcznie w PLN" },
             type: { type: "string", enum: ["business", "private"], description: "Typ kosztu" },
+            vatRate: { type: "number", enum: [0, 5, 8, 23], description: "Stawka VAT kosztu (0, 5, 8 lub 23%). Domyślnie 23%." },
           },
-          required: ["name", "amount", "type"],
+          required: ["name", "amount", "type", "vatRate"],
         },
         description: "Lista 3-5 sugerowanych kosztów",
       },
@@ -97,7 +103,14 @@ Dostępne stawki:
 ${ratesDesc}
 Najem/dzierżawa: 8.5% do 100k/rok, 12.5% powyżej (isNajem=true)
 
-Wybierz JEDNĄ najlepiej pasującą stawkę. Jeśli niepewny, wybierz 8.5% (usługi inne).`,
+Wybierz JEDNĄ najlepiej pasującą stawkę ryczałtu. Jeśli niepewny, wybierz 8.5% (usługi inne).
+
+Stawki VAT:
+0% – eksport, usługi wewnątrzwspólnotowe, zwolnienia przedmiotowe
+5% – żywność, książki, czasopisma
+8% – budownictwo mieszkaniowe, gastronomia, transport pasażerski
+23% – standardowa stawka (większość usług i towarów)
+Jeśli niepewny, wybierz 23%.`,
         input: `Źródło przychodu: "${sourceName}"`,
         tools: [detectRateTool],
         tool_choice: { type: "function", name: "set_ryczalt_rate" },

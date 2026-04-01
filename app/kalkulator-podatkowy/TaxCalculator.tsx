@@ -101,6 +101,8 @@ type VatMode = "zwolniony" | "standard";
 type CarUsage = "mixed" | "business";
 type ViewMode = "annual" | "monthly";
 
+const VAT_RATES = [0, 5, 8, 23] as const;
+
 interface RyczaltSource {
   id: number;
   name: string;
@@ -108,6 +110,7 @@ interface RyczaltSource {
   rate: number;
   isNajem: boolean;
   brutto: boolean;
+  vatRate: number;
 }
 
 type CostType = "business" | "private";
@@ -118,6 +121,7 @@ interface CostItem {
   amount: number;
   type: CostType;
   brutto: boolean;
+  vatRate: number;
 }
 
 interface TaxResult {
@@ -222,8 +226,10 @@ function calculate(p: {
   prevYearIncome: number;
   ryczaltSources: RyczaltSource[];
   vatMode: VatMode;
-  vatRate: number;
-  vatCostsRate: number;
+  vatOutAnn: number;
+  vatInBizAnn: number;
+  vatInPrivAnn: number;
+  vatInCarAnn: number;
   ikzeAnnual: number;
 }): { skala: TaxResult; linear: TaxResult; ryczalt: TaxResult } {
   const annRev = p.monthlyRevenue * 12;
@@ -240,18 +246,15 @@ function calculate(p: {
   const annZus = Math.round(zusM * 12);
   const annFP = Math.round(fpM * 12);
 
-  // VAT
+  // VAT (kwoty roczne, pre-computed z per-item stawek)
   let vatPassThrough = 0;
   let vatRealCost = 0;
   let vatPrivateSavings = 0;
   if (p.vatMode === "standard") {
-    const vatOut = annRev * (p.vatRate / 100);
-    const vatInBiz = annBizCosts * (p.vatCostsRate / 100);
-    const vatInPriv = annPrivCosts * (p.vatCostsRate / 100);
-    const vatInCar = annCarCosts * (p.vatCostsRate / 100) * carVatPct;
-    vatPassThrough = Math.max(0, Math.round(vatOut - vatInBiz - vatInPriv - vatInCar));
-    vatRealCost = Math.round(annCarCosts * (p.vatCostsRate / 100) * (1 - carVatPct));
-    vatPrivateSavings = Math.round(vatInPriv + vatInCar);
+    const vatInCar = p.vatInCarAnn * carVatPct;
+    vatPassThrough = Math.max(0, Math.round(p.vatOutAnn - p.vatInBizAnn - p.vatInPrivAnn - vatInCar));
+    vatRealCost = Math.round(p.vatInCarAnn * (1 - carVatPct));
+    vatPrivateSavings = Math.round(p.vatInPrivAnn + vatInCar);
   }
 
   const calcPrivateSavings = (taxWithout: number, taxWith: number) =>
@@ -318,8 +321,7 @@ function calculate(p: {
   const ryczBurden = annZus + annFP + ryczHealthAnn + ryczTax;
 
   // Przychód brutto = netto + VAT należny
-  const vatOutStandard = p.vatMode === "standard" ? Math.round(annRev * (p.vatRate / 100)) : 0;
-  const annRevBrutto = annRev + vatOutStandard;
+  const annRevBrutto = annRev + (p.vatMode === "standard" ? p.vatOutAnn : 0);
 
   const mk = (
     label: string,
@@ -755,23 +757,22 @@ export default function TaxCalculator() {
   const [chorobowa, setChorobowa] = useState(false);
   const [ikzeMonthly, setIkzeMonthly] = useState(0);
   const [vatMode, setVatMode] = useState<VatMode>("standard");
-  const [vatRate, setVatRate] = useState(23);
-  const [vatCostsRate, setVatCostsRate] = useState(23);
+  const [carVatRate, setCarVatRate] = useState(23);
   const [viewMode, setViewMode] = useState<ViewMode>("monthly");
 
   // Źródła przychodu
   const [ryczaltSources, setRyczaltSources] = useState<RyczaltSource[]>([
-    { id: 1, name: "Stermedia – programowanie", amount: 14_000, rate: 12, isNajem: false, brutto: false },
-    { id: 2, name: "Provoke – sprzedaż ubrań", amount: 5_000, rate: 3, isNajem: false, brutto: true },
-    { id: 3, name: "Sprzedaż elektroniki", amount: 30_000, rate: 3, isNajem: false, brutto: true },
+    { id: 1, name: "Stermedia – programowanie", amount: 14_000, rate: 12, isNajem: false, brutto: false, vatRate: 23 },
+    { id: 2, name: "Provoke – sprzedaż ubrań", amount: 5_000, rate: 3, isNajem: false, brutto: true, vatRate: 23 },
+    { id: 3, name: "Sprzedaż elektroniki", amount: 30_000, rate: 3, isNajem: false, brutto: true, vatRate: 23 },
   ]);
 
   // Koszty (firmowe + prywatne w jednej liście)
   const [costItems, setCostItems] = useState<CostItem[]>([
-    { id: 101, name: "Provoke – szycie", amount: 2_500, type: "business", brutto: true },
-    { id: 102, name: "Elektronika – zakupy", amount: 20_000, type: "business", brutto: true },
-    { id: 103, name: "Sprzęt", amount: 450, type: "private", brutto: true },
-    { id: 104, name: "Szkolenia", amount: 300, type: "private", brutto: true },
+    { id: 101, name: "Provoke – szycie", amount: 2_500, type: "business", brutto: true, vatRate: 23 },
+    { id: 102, name: "Elektronika – zakupy", amount: 20_000, type: "business", brutto: true, vatRate: 23 },
+    { id: 103, name: "Sprzęt", amount: 450, type: "private", brutto: true, vatRate: 23 },
+    { id: 104, name: "Szkolenia", amount: 300, type: "private", brutto: true, vatRate: 23 },
   ]);
 
   const [nextId, setNextId] = useState(300);
@@ -796,7 +797,7 @@ export default function TaxCalculator() {
         if (!res.ok) return;
         const data = await res.json();
         setRyczaltSources((prev) =>
-          prev.map((s) => s.id === sourceId ? { ...s, rate: data.rate, isNajem: data.isNajem } : s),
+          prev.map((s) => s.id === sourceId ? { ...s, rate: data.rate, isNajem: data.isNajem, ...(data.vatRate != null ? { vatRate: data.vatRate } : {}) } : s),
         );
         setAiRateHint({ id: sourceId, text: data.reasoning });
       } catch { /* ignore */ }
@@ -823,8 +824,8 @@ export default function TaxCalculator() {
       const data = await res.json();
       if (data.costs?.length) {
         let idCounter = nextId;
-        for (const c of data.costs as { name: string; amount: number }[]) {
-          const newItem: CostItem = { id: idCounter++, name: c.name, amount: c.amount, type: costType, brutto: false };
+        for (const c of data.costs as { name: string; amount: number; vatRate?: number }[]) {
+          const newItem: CostItem = { id: idCounter++, name: c.name, amount: c.amount, type: costType, brutto: false, vatRate: c.vatRate ?? 23 };
           setCostItems((prev) => [...prev, newItem]);
         }
         setNextId(idCounter);
@@ -837,21 +838,35 @@ export default function TaxCalculator() {
   const n = (v: number, isBrutto: boolean, rate: number) =>
     isBrutto && vatMode !== "zwolniony" ? Math.round(v / (1 + rate / 100)) : v;
 
-  // Przychód = suma źródeł (każde przeliczone indywidualnie na netto)
-  const monthlyRevenue = ryczaltSources.reduce((s, src) => s + n(src.amount, src.brutto, vatRate), 0);
+  // Przychód = suma źródeł (każde przeliczone wg własnej stawki VAT)
+  const monthlyRevenue = ryczaltSources.reduce((s, src) => s + n(src.amount, src.brutto, src.vatRate), 0);
 
   // Koszty netto: firmowe i prywatne osobno
   const businessCostsNet = costItems
     .filter((c) => c.type === "business")
-    .reduce((s, c) => s + n(c.amount, c.brutto, vatCostsRate), 0);
+    .reduce((s, c) => s + n(c.amount, c.brutto, c.vatRate), 0);
   const privateCostsNet = costItems
     .filter((c) => c.type === "private")
-    .reduce((s, c) => s + n(c.amount, c.brutto, vatCostsRate), 0);
-  const carCostsNet = n(carCosts, carBrutto, vatCostsRate);
+    .reduce((s, c) => s + n(c.amount, c.brutto, c.vatRate), 0);
+  const carCostsNet = n(carCosts, carBrutto, carVatRate);
+
+  // VAT: roczne kwoty per-item
+  const vatOutAnn = vatMode === "standard"
+    ? Math.round(ryczaltSources.reduce((s, src) => s + n(src.amount, src.brutto, src.vatRate) * (src.vatRate / 100), 0) * 12)
+    : 0;
+  const vatInBizAnn = vatMode === "standard"
+    ? Math.round(costItems.filter((c) => c.type === "business").reduce((s, c) => s + n(c.amount, c.brutto, c.vatRate) * (c.vatRate / 100), 0) * 12)
+    : 0;
+  const vatInPrivAnn = vatMode === "standard"
+    ? Math.round(costItems.filter((c) => c.type === "private").reduce((s, c) => s + n(c.amount, c.brutto, c.vatRate) * (c.vatRate / 100), 0) * 12)
+    : 0;
+  const vatInCarAnn = vatMode === "standard"
+    ? Math.round(carCostsNet * (carVatRate / 100) * 12)
+    : 0;
 
   // Sources helpers
   const addSource = () => {
-    setRyczaltSources((prev) => [...prev, { id: nextId, name: "", amount: 0, rate: 8.5, isNajem: false, brutto: false }]);
+    setRyczaltSources((prev) => [...prev, { id: nextId, name: "", amount: 0, rate: 8.5, isNajem: false, brutto: false, vatRate: 23 }]);
     setNextId((i) => i + 1);
   };
   const removeSource = (id: number) => setRyczaltSources((prev) => prev.filter((s) => s.id !== id));
@@ -860,7 +875,7 @@ export default function TaxCalculator() {
 
   // Cost helpers
   const addCost = (type: CostType) => {
-    setCostItems((prev) => [...prev, { id: nextId, name: "", amount: 0, type, brutto: false }]);
+    setCostItems((prev) => [...prev, { id: nextId, name: "", amount: 0, type, brutto: false, vatRate: 23 }]);
     setNextId((i) => i + 1);
   };
   const removeCost = (id: number) => setCostItems((prev) => prev.filter((c) => c.id !== id));
@@ -872,12 +887,12 @@ export default function TaxCalculator() {
       calculate({
         monthlyRevenue, businessCosts: businessCostsNet, privateCosts: privateCostsNet, carCosts: carCostsNet, carUsage,
         zusStatus, chorobowa, prevYearIncome,
-        ryczaltSources: ryczaltSources.map((s) => ({ ...s, amount: n(s.amount, s.brutto, vatRate) })),
-        vatMode, vatRate, vatCostsRate,
+        ryczaltSources: ryczaltSources.map((s) => ({ ...s, amount: n(s.amount, s.brutto, s.vatRate) })),
+        vatMode, vatOutAnn, vatInBizAnn, vatInPrivAnn, vatInCarAnn,
         ikzeAnnual: ikzeMonthly * 12,
       }),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [monthlyRevenue, businessCostsNet, privateCostsNet, carCostsNet, carUsage, zusStatus, chorobowa, prevYearIncome, ryczaltSources, costItems, vatMode, vatRate, vatCostsRate, carBrutto, ikzeMonthly],
+    [monthlyRevenue, businessCostsNet, privateCostsNet, carCostsNet, carUsage, zusStatus, chorobowa, prevYearIncome, ryczaltSources, costItems, vatMode, vatOutAnn, vatInBizAnn, vatInPrivAnn, vatInCarAnn, carBrutto, ikzeMonthly],
   );
 
   // Limity
@@ -915,7 +930,7 @@ export default function TaxCalculator() {
             <div className="space-y-3">
               {ryczaltSources.map((src) => {
                 const selectedOpt = RYCZALT_OPTIONS.find((o) => o.isNajem ? src.isNajem : !src.isNajem && o.rate === src.rate);
-                const srcNetto = n(src.amount, src.brutto, vatRate);
+                const srcNetto = n(src.amount, src.brutto, src.vatRate);
                 return (
                   <div key={src.id} className="rounded-lg bg-gray-50 dark:bg-gray-800/50 p-3 space-y-2">
                     <div className="flex items-center gap-2">
@@ -947,7 +962,7 @@ export default function TaxCalculator() {
                     {aiRateHint?.id === src.id && (
                       <p className="text-[11px] text-accent/80 leading-snug px-0.5">AI: {aiRateHint.text}</p>
                     )}
-                    <div className="grid grid-cols-2 gap-3">
+                    <div className={`grid gap-3 ${vatMode !== "zwolniony" ? "grid-cols-[1fr_auto_1fr]" : "grid-cols-2"}`}>
                       <div>
                         <label className="block text-xs text-gray-500 mb-1">Kwota/mies.</label>
                         <input type="number" value={src.amount || ""} min={0} step={500}
@@ -958,6 +973,20 @@ export default function TaxCalculator() {
                           <p className="mt-1 text-xs text-gray-400">Netto: {pln(srcNetto)}</p>
                         )}
                       </div>
+                      {vatMode !== "zwolniony" && (
+                        <div>
+                          <label className="block text-xs text-gray-500 mb-1">VAT</label>
+                          <select
+                            value={src.vatRate}
+                            onChange={(e) => updateSource(src.id, { vatRate: Number(e.target.value) })}
+                            className="w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-2 py-2 text-sm focus:border-accent focus:ring-2 focus:ring-accent/30 outline-none"
+                          >
+                            {VAT_RATES.map((r) => (
+                              <option key={r} value={r}>{r}%</option>
+                            ))}
+                          </select>
+                        </div>
+                      )}
                       <div>
                         <label className="block text-xs text-gray-500 mb-1">Stawka ryczałtu</label>
                         <select
@@ -1009,7 +1038,7 @@ export default function TaxCalculator() {
             const items = costItems.filter((c) => c.type === type);
             const label = type === "business" ? "Koszty firmowe" : "Koszty prywatne w firmie";
             const hint = type === "business" ? "Wydatki czysto na firmę" : "Telefon, internet, biuro – i tak ponoszone";
-            const total = items.reduce((s, c) => s + n(c.amount, c.brutto, vatCostsRate), 0);
+            const total = items.reduce((s, c) => s + n(c.amount, c.brutto, c.vatRate), 0);
             return (
               <div key={type}>
                 <div className="flex items-center justify-between mb-1 gap-2">
@@ -1034,7 +1063,7 @@ export default function TaxCalculator() {
                 <p className="text-xs text-gray-400 mb-2">{hint}</p>
                 <div className="space-y-2">
                   {items.map((c) => {
-                    const cNetto = n(c.amount, c.brutto, vatCostsRate);
+                    const cNetto = n(c.amount, c.brutto, c.vatRate);
                     return (
                       <div key={c.id} className="rounded-lg bg-gray-50 dark:bg-gray-800/50 p-3 space-y-2">
                         <div className="flex items-center gap-2">
@@ -1047,8 +1076,8 @@ export default function TaxCalculator() {
                             </button>
                           )}
                         </div>
-                        <div className="flex items-end gap-3">
-                          <div className="flex-1">
+                        <div className={`grid gap-3 ${vatMode !== "zwolniony" ? "grid-cols-[1fr_auto]" : ""}`}>
+                          <div>
                             <div className="flex items-center justify-between mb-1">
                               <label className="text-xs text-gray-500">Kwota/mies.</label>
                               {vatMode !== "zwolniony" && (
@@ -1068,6 +1097,20 @@ export default function TaxCalculator() {
                               <p className="mt-1 text-xs text-gray-400">Netto: {pln(cNetto)}</p>
                             )}
                           </div>
+                          {vatMode !== "zwolniony" && (
+                            <div>
+                              <label className="block text-xs text-gray-500 mb-1">VAT</label>
+                              <select
+                                value={c.vatRate}
+                                onChange={(e) => updateCost(c.id, { vatRate: Number(e.target.value) })}
+                                className="w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-2 py-2 text-sm focus:border-accent focus:ring-2 focus:ring-accent/30 outline-none"
+                              >
+                                {VAT_RATES.map((r) => (
+                                  <option key={r} value={r}>{r}%</option>
+                                ))}
+                              </select>
+                            </div>
+                          )}
                         </div>
                       </div>
                     );
@@ -1088,7 +1131,18 @@ export default function TaxCalculator() {
             <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-300">Koszty samochodu <span className="font-normal text-gray-400">(koszt prywatny – i tak ponoszone)</span></h3>
             <NumberInput label="Koszty samochodu miesięcznie" value={carCosts} onChange={setCarCosts} step={100}
               hint="Paliwo, leasing/rata, ubezpieczenie, serwis, myjnia..."
-              brutto={vatMode !== "zwolniony" ? carBrutto : undefined} onBruttoChange={vatMode !== "zwolniony" ? setCarBrutto : undefined} vatPct={vatCostsRate} />
+              brutto={vatMode !== "zwolniony" ? carBrutto : undefined} onBruttoChange={vatMode !== "zwolniony" ? setCarBrutto : undefined} vatPct={carVatRate} />
+            {vatMode !== "zwolniony" && (
+              <div>
+                <label className="block text-xs text-gray-500 mb-1">Stawka VAT samochodu</label>
+                <select value={carVatRate} onChange={(e) => setCarVatRate(Number(e.target.value))}
+                  className="w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-3 py-2 text-sm focus:border-accent focus:ring-2 focus:ring-accent/30 outline-none">
+                  {VAT_RATES.map((r) => (
+                    <option key={r} value={r}>{r}%</option>
+                  ))}
+                </select>
+              </div>
+            )}
             <RadioGroup
               label="Użytkowanie samochodu"
               value={carUsage}
@@ -1186,13 +1240,7 @@ export default function TaxCalculator() {
             )}
 
             {vatMode === "standard" && (
-              <div className="space-y-4 pl-7">
-                <div className="grid grid-cols-2 gap-4">
-                  <NumberInput label="Stawka VAT sprzedaży" value={vatRate} onChange={setVatRate} min={0} max={23} step={1} unit="%" />
-                  <NumberInput label="Stawka VAT kosztów" value={vatCostsRate} onChange={setVatCostsRate} min={0} max={23} step={1} unit="%" />
-                </div>
-
-              </div>
+              <p className="text-xs text-gray-400 pl-7">Stawki VAT ustawiane osobno przy każdym przychodzie i koszcie.</p>
             )}
           </div>
 
@@ -1230,7 +1278,7 @@ export default function TaxCalculator() {
                 {vatMode !== "zwolniony" && (
                   <>
                     <span className="text-gray-500">Odliczenie VAT ({(carUsage === "mixed" ? CAR_VAT_MIXED : CAR_VAT_BUSINESS) * 100}%):</span>
-                    <span className="tabular-nums text-right">{pln(Math.round(carCosts * (vatCostsRate / 100) * (carUsage === "mixed" ? CAR_VAT_MIXED : CAR_VAT_BUSINESS)))}/mies.</span>
+                    <span className="tabular-nums text-right">{pln(Math.round(carCostsNet * (carVatRate / 100) * (carUsage === "mixed" ? CAR_VAT_MIXED : CAR_VAT_BUSINESS)))}/mies.</span>
                   </>
                 )}
               </div>
