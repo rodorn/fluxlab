@@ -674,6 +674,8 @@ function ResultCard({ result, isBest, viewMode, showVat }: {
       tip: `Wpłata na IKZE: ${v(r.ikzeContribution)}${sfx}. Odliczona od dochodu — zmniejsza podatek, ale środki trafiają na konto emerytalne.` }] : []),
     { label: "Do dyspozycji", value: r.disposable, bold: true, accent: true,
       tip: `Przychód brutto (${v(r.annualRevenue)}) − obciążenia (${v(r.totalBurden)}) − koszty firmowe (${v(bizCostsAnn)})${r.ikzeContribution > 0 ? ` − IKZE (${v(r.ikzeContribution)})` : ""} = ${v(r.disposable)}. Koszty prywatne i samochodu nie odejmowane (i tak ponoszone).` },
+    ...(r.ikzeContribution > 0 ? [{ label: "↳ w tym na konto IKZE", value: r.ikzeContribution, dimmed: true as const,
+      tip: `Z kwoty do dyspozycji ${v(r.ikzeContribution)}${sfx} trafia na konto IKZE.` }] : []),
     ...(r.ikzeTaxSavings > 0 ? [{ label: "↳ oszczędność PIT dzięki IKZE", value: r.ikzeTaxSavings, green: true as const,
       tip: `Dzięki wpłacie na IKZE (${v(r.ikzeContribution)}${sfx}) płacisz ${v(r.ikzeTaxSavings)}${sfx} mniej podatku dochodowego.` }] : []),
     ...(r.privateSavings > 0 ? [{ label: "↳ oszczędność PIT z kosztów prywatnych", value: r.privateSavings, green: true as const,
