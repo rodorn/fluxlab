@@ -627,33 +627,34 @@ function ResultCard({ result, isBest, viewMode, showVat }: {
     ...(r.ikzeContribution > 0 ? [{ label: "IKZE", value: r.ikzeContribution, color: CHART_COLORS[7] }] : []),
   ];
 
-  const rows: { label: string; value: number; tip?: string; bold?: boolean; accent?: boolean; dimmed?: boolean; negative?: boolean; green?: boolean }[] = [
+  const na = "—";
+  const rows: { label: string; value: number; tip?: string; bold?: boolean; accent?: boolean; dimmed?: boolean; negative?: boolean; green?: boolean; notApplicable?: boolean }[] = [
     { label: showVat ? "Przychód brutto" : "Przychód", value: r.annualRevenue, bold: true,
       tip: showVat
         ? `Przychód brutto (netto + VAT): ${v(r.annualRevenue)}${sfx}. Netto: ${v(revNetto)}.`
         : `Łączny przychód ze wszystkich źródeł: ${v(r.annualRevenue)}${sfx}.` },
-    ...(showVat && r.vatPassThrough > 0 ? [{ label: "VAT do urzędu skarbowego", value: -r.vatPassThrough, negative: true as const,
-      tip: `VAT należny od sprzedaży standardowej minus VAT naliczony od kosztów. Odprowadzasz ${v(r.vatPassThrough)}${sfx} do US.` }] : []),
-    ...(r.deductibleCosts > 0 ? [
-      { label: "Koszty odliczone (PIT)", value: -r.deductibleCosts, negative: true as const,
-        tip: `Firmowe + prywatne (${v(costsNoCar)}) + samochód (${v(r.carCostsDeducted)}). Obniżają podstawę opodatkowania.` },
-      ...(r.carCostsDeducted > 0 ? [{ label: "↳ w tym samochód", value: -r.carCostsDeducted, dimmed: true as const,
-        tip: `Odliczana część kosztów samochodu: 75% przy mieszanym / 100% przy firmowym. Tu: ${v(r.carCostsDeducted)}${sfx}.` }] : []),
-    ] : []),
+    ...(showVat ? [{ label: "VAT do urzędu skarbowego", value: -r.vatPassThrough, negative: true as const, notApplicable: r.vatPassThrough === 0,
+      tip: r.vatPassThrough > 0 ? `VAT należny od sprzedaży standardowej minus VAT naliczony od kosztów. Odprowadzasz ${v(r.vatPassThrough)}${sfx} do US.` : undefined }] : []),
+    { label: "Koszty odliczone (PIT)", value: -r.deductibleCosts, negative: true, notApplicable: r.deductibleCosts === 0,
+      tip: r.deductibleCosts > 0 ? `Firmowe + prywatne (${v(costsNoCar)}) + samochód (${v(r.carCostsDeducted)}). Obniżają podstawę opodatkowania.` : `Ryczałt nie pozwala odliczać kosztów.` },
+    { label: "↳ w tym samochód", value: -r.carCostsDeducted, dimmed: true, notApplicable: r.carCostsDeducted === 0,
+      tip: r.carCostsDeducted > 0 ? `Odliczana część kosztów samochodu: 75% przy mieszanym / 100% przy firmowym. Tu: ${v(r.carCostsDeducted)}${sfx}.` : undefined },
     { label: "ZUS społeczne", value: -r.zusSpoleczne, negative: true,
       tip: `Emerytalna 19,52% (${v(r.zusSpoleczne * EMERYTALNA / ZUS_WITH)}) + rentowa 8% (${v(r.zusSpoleczne * RENTOWA / ZUS_WITH)}) + wypadkowa 1,67% (${v(r.zusSpoleczne * WYPADKOWA / ZUS_WITH)}) + chorobowa 2,45% (${v(r.zusSpoleczne * CHOROBOWA / ZUS_WITH)}). Razem: ${v(r.zusSpoleczne)}${sfx}.` },
-    ...(r.funduszPracy > 0 ? [{ label: "Fundusz Pracy", value: -r.funduszPracy, negative: true as const,
-      tip: `2,45% × podstawa ${pln(FULL_ZUS_BASE)} = ${v(r.funduszPracy)}${sfx}. Tylko przy pełnym ZUS.` }] : []),
+    { label: "Fundusz Pracy", value: -r.funduszPracy, negative: true, notApplicable: r.funduszPracy === 0,
+      tip: r.funduszPracy > 0 ? `2,45% × podstawa ${pln(FULL_ZUS_BASE)} = ${v(r.funduszPracy)}${sfx}. Tylko przy pełnym ZUS.` : `Fundusz Pracy nie dotyczy przy wybranej formie ZUS.` },
     { label: "Składka zdrowotna", value: -r.healthInsurance, negative: true,
       tip: r.label === "Skala podatkowa"
         ? `9% dochodu. ${v(r.healthInsurance)}${sfx}. Nie podlega odliczeniu od podatku.`
         : r.label === "Podatek liniowy"
           ? `4,9% dochodu. ${v(r.healthInsurance)}${sfx}. Odliczalna od dochodu do ${pln(LINEAR_HEALTH_CAP)}/rok.`
           : `Stała kwota wg progu przychodu (60k/300k). ${v(r.healthInsurance)}${sfx}. 50% odliczalne od przychodu.` },
-    ...(r.healthDeduction > 0 ? [{ label: "↳ odliczenie zdrowotnej", value: r.healthDeduction, dimmed: true as const,
-      tip: r.label === "Podatek liniowy"
-        ? `Odliczone od dochodu: ${v(r.healthDeduction)} (max ${pln(LINEAR_HEALTH_CAP)}/rok)`
-        : `50% składki zdrowotnej: ${v(r.healthDeduction)} odliczone od przychodu przed naliczeniem ryczałtu` }] : []),
+    { label: "↳ odliczenie zdrowotnej", value: r.healthDeduction, dimmed: true, notApplicable: r.healthDeduction === 0,
+      tip: r.healthDeduction > 0
+        ? r.label === "Podatek liniowy"
+          ? `Odliczone od dochodu: ${v(r.healthDeduction)} (max ${pln(LINEAR_HEALTH_CAP)}/rok)`
+          : `50% składki zdrowotnej: ${v(r.healthDeduction)} odliczone od przychodu przed naliczeniem ryczałtu`
+        : `Na skali podatkowej nie przysługuje odliczenie składki zdrowotnej.` },
     { label: "Podstawa opodatkowania", value: r.taxBase, dimmed: true,
       tip: r.label === "Ryczałt"
         ? `Przychód netto (${v(revNetto)}) − 50% zdrowotnej (${v(r.healthDeduction)}) = ${v(r.taxBase)}`
@@ -670,8 +671,8 @@ function ResultCard({ result, isBest, viewMode, showVat }: {
       tip: `${burdenParts} = ${v(r.totalBurden)}${sfx}.` },
     { label: "Netto (przed kosztami)", value: r.netAfterTax, bold: true,
       tip: `Przychód brutto (${v(r.annualRevenue)}) − obciążenia (${v(r.totalBurden)}) = ${v(r.netAfterTax)}.` },
-    ...(r.ikzeContribution > 0 ? [{ label: "Wpłata IKZE", value: -r.ikzeContribution, negative: true as const,
-      tip: `Wpłata na IKZE: ${v(r.ikzeContribution)}${sfx}. Odliczona od dochodu — zmniejsza podatek, ale środki trafiają na konto emerytalne.` }] : []),
+    { label: "Wpłata IKZE", value: -r.ikzeContribution, negative: true, notApplicable: r.ikzeContribution === 0,
+      tip: r.ikzeContribution > 0 ? `Wpłata na IKZE: ${v(r.ikzeContribution)}${sfx}. Odliczona od dochodu — zmniejsza podatek, ale środki trafiają na konto emerytalne.` : undefined },
     { label: "Do dyspozycji", value: r.disposable, bold: true, accent: true,
       tip: `Przychód brutto (${v(r.annualRevenue)}) − obciążenia (${v(r.totalBurden)}) − koszty firmowe (${v(bizCostsAnn)})${r.ikzeContribution > 0 ? ` − IKZE (${v(r.ikzeContribution)})` : ""} = ${v(r.disposable)}. Koszty prywatne i samochodu nie odejmowane (i tak ponoszone).` },
     ...(r.ikzeContribution > 0 ? [{ label: "↳ dodatkowo na konto IKZE", value: r.ikzeContribution, green: true as const,
@@ -722,9 +723,8 @@ function ResultCard({ result, isBest, viewMode, showVat }: {
                 </svg>
               )}
             </span>
-            <span className={`tabular-nums ${r.negative ? "text-red-500 dark:text-red-400" : ""}`}>
-              {r.negative ? "−\u00A0" : ""}{pln(Math.abs(Math.round(r.value / d)))}
-              <span className="text-gray-400 text-xs ml-1">{sfx}</span>
+            <span className={`tabular-nums ${r.notApplicable ? "text-gray-300 dark:text-gray-600" : r.negative ? "text-red-500 dark:text-red-400" : ""}`}>
+              {r.notApplicable ? na : <>{r.negative ? "−\u00A0" : ""}{pln(Math.abs(Math.round(r.value / d)))}<span className="text-gray-400 text-xs ml-1">{sfx}</span></>}
             </span>
             {r.tip && (
               <div className="absolute left-0 right-0 bottom-full mb-2 hidden group-hover/row:block z-20 pointer-events-none">
@@ -904,7 +904,7 @@ export default function TaxCalculator() {
 
   return (
     <div className="max-w-[120rem] mx-auto">
-      <div className="grid 2xl:grid-cols-[1fr_1fr] gap-10">
+      <div className="grid min-[1800px]:grid-cols-[1fr_1fr] gap-10">
 
       {/* ══════ LEFT COLUMN (inputs) ══════ */}
       <div className="max-w-6xl space-y-10">
@@ -1291,7 +1291,7 @@ export default function TaxCalculator() {
       </div>{/* /max-w-6xl (left column inputs) */}
 
       {/* ══════ RIGHT COLUMN (results) ══════ */}
-      <div className="space-y-10 2xl:self-start 2xl:sticky 2xl:top-20">
+      <div className="space-y-10 min-[1800px]:self-start min-[1800px]:sticky min-[1800px]:top-20">
 
       {/* ── VIEW TOGGLE + RESULTS HEADER ── */}
       <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
