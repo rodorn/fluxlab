@@ -123,7 +123,7 @@ export default function KalkulatorPodatkowyPage() {
 
         {/* Calculator */}
         <section className="pb-16 lg:pb-24">
-          <div className="container-wide">
+          <div className="mx-auto px-6 lg:px-8">
             <TaxCalculator />
           </div>
         </section>

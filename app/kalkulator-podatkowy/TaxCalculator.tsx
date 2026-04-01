@@ -903,7 +903,12 @@ export default function TaxCalculator() {
   const malyPlusBase = zusBase("malyPlus", prevYearIncome);
 
   return (
-    <div className="max-w-6xl mx-auto space-y-10">
+    <div className="max-w-[120rem] mx-auto">
+      <div className="grid 2xl:grid-cols-[1fr_1fr] gap-10">
+
+      {/* ══════ LEFT COLUMN (inputs) ══════ */}
+      <div className="max-w-6xl space-y-10">
+
       {/* ── INPUTS ── */}
       <div className="grid lg:grid-cols-2 gap-8">
 
@@ -1283,6 +1288,11 @@ export default function TaxCalculator() {
         </div>
       </div>
 
+      </div>{/* /max-w-6xl (left column inputs) */}
+
+      {/* ══════ RIGHT COLUMN (results) ══════ */}
+      <div className="space-y-10 2xl:self-start 2xl:sticky 2xl:top-20">
+
       {/* ── VIEW TOGGLE + RESULTS HEADER ── */}
       <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
         <h2 className="text-xl font-bold text-gray-900 dark:text-white">Porównanie form opodatkowania</h2>
@@ -1366,6 +1376,9 @@ export default function TaxCalculator() {
           <div><strong>Przeciętne wynagr.:</strong> {pln(AVG_SALARY)}</div>
         </div>
       </div>
+
+      </div>{/* /right column */}
+      </div>{/* /grid 2xl */}
     </div>
   );
 }
