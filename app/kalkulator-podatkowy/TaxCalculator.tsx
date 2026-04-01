@@ -977,12 +977,12 @@ export default function TaxCalculator() {
                         <div>
                           <label className="block text-xs text-gray-500 mb-1">VAT</label>
                           <select
-                            value={src.vatRate}
+                            value={String(src.vatRate)}
                             onChange={(e) => updateSource(src.id, { vatRate: Number(e.target.value) })}
                             className="w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-2 py-2 text-sm focus:border-accent focus:ring-2 focus:ring-accent/30 outline-none"
                           >
                             {VAT_RATES.map((r) => (
-                              <option key={r} value={r}>{r}%</option>
+                              <option key={r} value={String(r)}>{r}%</option>
                             ))}
                           </select>
                         </div>
@@ -1101,12 +1101,12 @@ export default function TaxCalculator() {
                             <div>
                               <label className="block text-xs text-gray-500 mb-1">VAT</label>
                               <select
-                                value={c.vatRate}
+                                value={String(c.vatRate)}
                                 onChange={(e) => updateCost(c.id, { vatRate: Number(e.target.value) })}
                                 className="w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-2 py-2 text-sm focus:border-accent focus:ring-2 focus:ring-accent/30 outline-none"
                               >
                                 {VAT_RATES.map((r) => (
-                                  <option key={r} value={r}>{r}%</option>
+                                  <option key={r} value={String(r)}>{r}%</option>
                                 ))}
                               </select>
                             </div>
@@ -1135,10 +1135,10 @@ export default function TaxCalculator() {
             {vatMode !== "zwolniony" && (
               <div>
                 <label className="block text-xs text-gray-500 mb-1">Stawka VAT samochodu</label>
-                <select value={carVatRate} onChange={(e) => setCarVatRate(Number(e.target.value))}
+                <select value={String(carVatRate)} onChange={(e) => setCarVatRate(Number(e.target.value))}
                   className="w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-3 py-2 text-sm focus:border-accent focus:ring-2 focus:ring-accent/30 outline-none">
                   {VAT_RATES.map((r) => (
-                    <option key={r} value={r}>{r}%</option>
+                    <option key={r} value={String(r)}>{r}%</option>
                   ))}
                 </select>
               </div>
