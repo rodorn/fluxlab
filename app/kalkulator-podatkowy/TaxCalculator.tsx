@@ -1150,8 +1150,8 @@ export default function TaxCalculator() {
             <input
               type="range"
               min={0}
-              max={Math.round(IKZE_LIMIT_JDG / 12)}
-              step={10}
+              max={Math.ceil(IKZE_LIMIT_JDG / 12)}
+              step={1}
               value={ikzeMonthly}
               onChange={(e) => setIkzeMonthly(Number(e.target.value))}
               className="w-full h-2 rounded-full appearance-none cursor-pointer bg-gray-200 dark:bg-gray-700 accent-accent"
