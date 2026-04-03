@@ -145,7 +145,8 @@ export default function AutomatyzacjaCrmOdCzegoZaczacArticle() {
                 </li>
               </ul>
               <p className="mt-6 text-gray-600 dark:text-gray-400 leading-relaxed">
-                To właśnie tam zwykle leży najszybszy zwrot.
+                To właśnie tam zwykle leży najszybszy zwrot. Szczególnie w obszarze{" "}
+                <Link href="/automatyzacja-leadow" className="text-accent hover:underline">automatyzacji leadów</Link>, gdzie ręczna praca generuje największe straty.
               </p>
             </div>
 
@@ -312,7 +313,7 @@ export default function AutomatyzacjaCrmOdCzegoZaczacArticle() {
                 Krok 4: dodaj walidację i wyjątki
               </h2>
               <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                Dobrze zrobiona automatyzacja CRM nie tylko przesuwa dane, ale
+                Dobrze zrobiona <Link href="/automatyzacja-crm" className="text-accent hover:underline">automatyzacja CRM</Link> nie tylko przesuwa dane, ale
                 też pilnuje jakości. Sprawdza duplikaty, brakujące pola
                 i sytuacje, które trzeba oddać człowiekowi.
               </p>

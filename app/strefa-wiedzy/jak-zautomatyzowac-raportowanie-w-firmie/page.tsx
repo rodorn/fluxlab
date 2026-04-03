@@ -67,7 +67,7 @@ export default function AutomatyzacjaRaportowaniaArticle() {
               Co tak naprawdę oznacza automatyzacja raportowania
             </h2>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              Automatyzacja raportowania to zbudowanie procesu, w którym:
+              <Link href="/automatyzacja-raportowania" className="text-accent hover:underline">Automatyzacja raportowania</Link> to zbudowanie procesu, w którym:
             </p>
             <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
               <li>dane są pobierane automatycznie,</li>
@@ -144,7 +144,7 @@ export default function AutomatyzacjaRaportowaniaArticle() {
             <p className="text-gray-600 dark:text-gray-400 mb-4">
               Spisz wszystkie miejsca, z których raport ma korzystać: CRM,
               formularze, kampanie reklamowe, system sprzedażowy, arkusze,
-              narzędzia operacyjne, baza danych.
+              narzędzia operacyjne, baza danych. Jeśli jest ich kilka, prawdopodobnie potrzebujesz <Link href="/integracje-api" className="text-accent hover:underline">integracji API</Link>, żeby dane spływały automatycznie.
             </p>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
               Dla każdego źródła odpowiedz: jakie dane zawiera, kto
@@ -230,7 +230,7 @@ export default function AutomatyzacjaRaportowaniaArticle() {
             <p className="text-gray-600 dark:text-gray-400 mb-4">
               Liczba leadów, źródła leadów, czas reakcji, konwersja między
               etapami, liczba wygranych i przegranych szans, wartość
-              pipeline&apos;u, aktywności handlowców.
+              pipeline&apos;u, aktywności handlowców. Żeby te dane były rzetelne, potrzebujesz uporządkowanej <Link href="/automatyzacja-crm" className="text-accent hover:underline">automatyzacji CRM</Link>.
             </p>
 
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">

@@ -62,7 +62,7 @@ export default function IntegracjeApiArticle() {
               Czym są integracje API
             </h2>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              API to sposób, w jaki systemy komunikują się ze sobą. Dzięki temu
+              API to sposób, w jaki systemy komunikują się ze sobą. Dzięki <Link href="/integracje-api" className="text-accent hover:underline">integracjom API</Link>{" "}
               CRM, formularz, ERP, narzędzie mailingowe, baza danych czy system
               raportowy mogą wymieniać informacje bez ręcznego udziału
               człowieka.
@@ -103,8 +103,8 @@ export default function IntegracjeApiArticle() {
             <p className="text-gray-600 dark:text-gray-400 mb-4">
               Najczęstszy przypadek: firma ma CRM, formularze, arkusze,
               narzędzie mailingowe, system fakturowy i raportowanie. Każdy
-              działa osobno, ludzie sklejają proces ręcznie. Jeżeli dane muszą
-              przepływać regularnie, API zwykle ma sens.
+              działa osobno, ludzie sklejają proces ręcznie. Dobra <Link href="/automatyzacja-procesow-biznesowych" className="text-accent hover:underline">automatyzacja procesów biznesowych</Link>{" "}
+              zaczyna się właśnie od spięcia tych systemów, a API jest do tego najlepszym narzędziem.
             </p>
 
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
@@ -188,7 +188,7 @@ export default function IntegracjeApiArticle() {
             </h3>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
               Nowe zapytanie trafia automatycznie do CRM, jest oznaczane
-              źródłem, przypisywane do handlowca i wyzwala zadanie follow-up.
+              źródłem, przypisywane do handlowca i wyzwala zadanie follow-up. To klasyczny scenariusz <Link href="/automatyzacja-crm" className="text-accent hover:underline">automatyzacji CRM</Link>.
             </p>
 
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">

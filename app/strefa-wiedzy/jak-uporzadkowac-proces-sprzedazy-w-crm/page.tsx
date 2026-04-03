@@ -160,7 +160,7 @@ export default function JakUporzadkowacProcesSprzedazyArticle() {
               <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
                 Bez pól obowiązkowych, walidacji i prostych reguł CRM szybko
                 zamienia się w luźny notatnik. Dane muszą być kompletne, bo
-                tylko wtedy pipeline, follow-up i raportowanie mają sens.
+                tylko wtedy pipeline, follow-up i <Link href="/automatyzacja-raportowania" className="text-accent hover:underline">raportowanie</Link> mają sens.
               </p>
             </div>
 
@@ -170,9 +170,9 @@ export default function JakUporzadkowacProcesSprzedazyArticle() {
                 Połącz proces z automatyzacją
               </h2>
               <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                Dopiero uporządkowany proces warto automatyzować. Wtedy CRM może
-                sam tworzyć zadania, przypominać o follow-upie, pilnować braków
-                i zasilać raporty.
+                Dopiero uporządkowany proces warto automatyzować. Wtedy <Link href="/automatyzacja-crm" className="text-accent hover:underline">automatyzacja CRM</Link> może
+                sprawić, że system sam tworzy zadania, przypomina o follow-upie, pilnuje braków
+                i zasila raporty.
               </p>
             </div>
 

@@ -75,7 +75,7 @@ export default function BledyRaportowanieArticle() {
                 Klasyczny problem: część danych jest w CRM, część w Excelu,
                 część w mailu, a końcowy raport ktoś skleja ręcznie. To prawie
                 gwarantuje opóźnienia, błędy i brak zaufania do liczb. Im więcej
-                ręcznego przeklejania, tym mniejsza wiarygodność raportu.
+                ręcznego przeklejania, tym mniejsza wiarygodność raportu. Rozwiązaniem jest <Link href="/automatyzacja-raportowania" className="text-accent hover:underline">automatyzacja raportowania</Link> z jednym źródłem prawdy.
               </p>
             </div>
 
@@ -109,7 +109,7 @@ export default function BledyRaportowanieArticle() {
                 Jak to naprawić
               </h2>
               <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                Najpierw ustal definicje. Potem uporządkuj CRM i źródła danych.
+                Najpierw ustal definicje. Potem uporządkuj CRM i źródła danych — pomaga w tym <Link href="/automatyzacja-crm" className="text-accent hover:underline">automatyzacja CRM</Link> z walidacją pól i statusów.
                 Dopiero później automatyzuj raport. W przeciwnym razie
                 zautomatyzujesz bałagan.
               </p>

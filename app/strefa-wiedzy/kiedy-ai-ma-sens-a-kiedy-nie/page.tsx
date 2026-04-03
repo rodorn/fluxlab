@@ -132,8 +132,8 @@ export default function KiedyAiMaSensPage() {
               </h2>
               <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
                 Jeżeli proces jest słaby, AI go nie naprawi. Najpierw trzeba
-                ustalić logikę działania, odpowiedzialność i przepływ danych.
-                Dopiero potem dodawać warstwę AI.
+                ustalić logikę działania, odpowiedzialność i przepływ danych — to zadanie dla <Link href="/automatyzacja-procesow-biznesowych" className="text-accent hover:underline">automatyzacji procesów biznesowych</Link>.
+                Dopiero potem dodawać warstwę <Link href="/automatyzacja-ai" className="text-accent hover:underline">AI</Link>.
               </p>
             </div>
           </div>

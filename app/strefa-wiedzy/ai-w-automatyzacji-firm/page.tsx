@@ -61,7 +61,7 @@ export default function AiWAutomatyzacjiFirmPage() {
                 Gdzie AI daje realny efekt
               </h2>
               <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                AI świetnie radzi sobie z klasyfikacją treści, streszczaniem
+                <Link href="/automatyzacja-ai" className="text-accent hover:underline">AI w automatyzacji</Link> świetnie radzi sobie z klasyfikacją treści, streszczaniem
                 informacji, porządkowaniem zgłoszeń, wyciąganiem kluczowych
                 danych i przygotowaniem roboczych odpowiedzi. To są zadania,
                 które wcześniej wykonywali ludzie ręcznie, często w sposób
@@ -109,7 +109,7 @@ export default function AiWAutomatyzacjiFirmPage() {
               <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
                 Najlepsze wdrożenia AI często nie wyglądają widowiskowo. Nie są
                 chatbotem „do wszystkiego". Są małym, praktycznym elementem
-                procesu, który oszczędza czas i poprawia jakość.
+                szerszej <Link href="/automatyzacja-procesow-biznesowych" className="text-accent hover:underline">automatyzacji procesów biznesowych</Link>, który oszczędza czas i poprawia jakość.
               </p>
               <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
                 To właśnie takie wdrożenia najczęściej mają sens biznesowy.

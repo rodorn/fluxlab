@@ -144,7 +144,7 @@ export default function CrmIntegracjaArticle() {
                 Najczęstszy scenariusz jest prosty: formularz lub kampania
                 generuje leada, CRM tworzy rekord, system przypisuje go do
                 osoby, a później informacje z CRM trafiają do raportów, narzędzi
-                operacyjnych albo systemów fakturowych.
+                operacyjnych albo systemów fakturowych. Kluczem są tutaj dobrze zaprojektowane <Link href="/integracje-api" className="text-accent hover:underline">integracje API</Link>, które łączą te systemy w jeden spójny przepływ.
               </p>
               <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
                 W bardziej zaawansowanych procesach CRM staje się centrum
@@ -171,7 +171,7 @@ export default function CrmIntegracjaArticle() {
               <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
                 Trzeci błąd to automatyzowanie bałaganu. Jeśli pipeline i statusy
                 w CRM są nieuporządkowane, integracja tylko ten bałagan
-                rozprowadzi.
+                rozprowadzi. Dlatego warto najpierw uporządkować sam proces — pomaga w tym dobrze wdrożona <Link href="/automatyzacja-crm" className="text-accent hover:underline">automatyzacja CRM</Link>.
               </p>
             </div>
 
