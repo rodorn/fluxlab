@@ -16,6 +16,14 @@ export const metadata: Metadata = {
       "Automatyzujemy raportowanie sprzedaży, marketingu i operacji. Łączymy dane z wielu źródeł i eliminujemy ręczne przygotowywanie raportów.",
     locale: "pl_PL",
     type: "article",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Fluxlab — Automatyzacja procesów biznesowych i CRM dla firm B2B",
+      },
+    ],
   },
   alternates: {
     canonical: "/automatyzacja-raportowania",

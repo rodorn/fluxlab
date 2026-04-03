@@ -14,6 +14,14 @@ export const metadata: Metadata = {
       "Oblicz pełny koszt posiadania samochodu: paliwo, serwis, spadek wartości.",
     locale: "pl_PL",
     type: "website",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Fluxlab — Automatyzacja procesów biznesowych i CRM dla firm B2B",
+      },
+    ],
   },
   alternates: {
     canonical: "/kalkulator-kosztow",

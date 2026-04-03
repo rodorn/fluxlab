@@ -14,6 +14,14 @@ export const metadata: Metadata = {
       "Jak wykorzystać AI w automatyzacji firm: klasyfikacja zapytań, streszczenia, analiza treści, wsparcie obsługi i sprzedaży. Bez marketingowej mgły.",
     locale: "pl_PL",
     type: "article",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Fluxlab — Automatyzacja procesów biznesowych i CRM dla firm B2B",
+      },
+    ],
   },
   alternates: {
     canonical: "/strefa-wiedzy/ai-w-automatyzacji-firm",

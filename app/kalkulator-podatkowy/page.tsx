@@ -16,6 +16,14 @@ export const metadata: Metadata = {
       "Porównaj ryczałt, podatek liniowy i skalę podatkową dla JDG w 2026. ZUS, zdrowotna, VAT, koszty prywatne i samochód.",
     locale: "pl_PL",
     type: "website",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Fluxlab — Automatyzacja procesów biznesowych i CRM dla firm B2B",
+      },
+    ],
   },
   alternates: {
     canonical: "/kalkulator-podatkowy",

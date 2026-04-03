@@ -16,6 +16,14 @@ export const metadata: Metadata = {
       "Mały ZUS Plus w 2026: kto może skorzystać, jakie są warunki, limity przychodowe i ile realnie oszczędzasz. Porównanie z pełnym ZUS i ulgą na start.",
     locale: "pl_PL",
     type: "article",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Fluxlab — Automatyzacja procesów biznesowych i CRM dla firm B2B",
+      },
+    ],
   },
   alternates: {
     canonical: "/strefa-wiedzy/maly-zus-plus-kiedy-sie-oplaca",

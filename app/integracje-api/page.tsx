@@ -16,6 +16,14 @@ export const metadata: Metadata = {
       "Tworzymy integracje API między CRM, ERP, formularzami, bazami danych i narzędziami operacyjnymi. Łączymy systemy tak, żeby dane przepływały automatycznie.",
     locale: "pl_PL",
     type: "article",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Fluxlab — Automatyzacja procesów biznesowych i CRM dla firm B2B",
+      },
+    ],
   },
   alternates: {
     canonical: "/integracje-api",
@@ -104,7 +112,7 @@ export default function IntegracjeApi() {
               <div className="relative mx-auto lg:mx-0 w-full max-w-md">
                 <div className="rounded-2xl overflow-hidden shadow-xl shadow-gray-200/50 dark:shadow-black/30 border border-gray-100 dark:border-gray-800">
                   <Image
-                    src="/photos/api.png"
+                    src="/photos/api.webp"
                     alt="Integracje API"
                     width={480}
                     height={320}

@@ -15,6 +15,14 @@ export const metadata: Metadata = {
       "Projektuję i wdrażam zaawansowane automatyzacje Salesforce: integracje przez API, logika w Apex i Flow, webhooki, hurtownie danych i eliminacja ręcznej pracy zespołu sprzedaży.",
     locale: "pl_PL",
     type: "article",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Fluxlab — Automatyzacja procesów biznesowych i CRM dla firm B2B",
+      },
+    ],
   },
   alternates: {
     canonical: "/automatyzacja-salesforce",

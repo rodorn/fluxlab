@@ -14,6 +14,14 @@ export const metadata: Metadata = {
       "Jak zacząć automatyzację CRM w firmie: audyt procesu, leady, zadania, statusy, walidacja danych i pierwsze wdrożenia o największym zwrocie.",
     locale: "pl_PL",
     type: "article",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Fluxlab — Automatyzacja procesów biznesowych i CRM dla firm B2B",
+      },
+    ],
   },
   alternates: {
     canonical: "/strefa-wiedzy/automatyzacja-crm-od-czego-zaczac",
@@ -326,6 +334,31 @@ export default function AutomatyzacjaCrmOdCzegoZaczacArticle() {
         </section>
       </main>
       <Footer />
+
+      {/* Article Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: "Automatyzacja CRM — od czego zacząć",
+            description:
+              "Jak zacząć automatyzację CRM w firmie: audyt procesu, leady, zadania, statusy, walidacja danych i pierwsze wdrożenia o największym zwrocie.",
+            datePublished: "2026-03-30",
+            author: {
+              "@type": "Organization",
+              name: "Fluxlab",
+              url: "https://fluxlab.pl",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "Fluxlab",
+              url: "https://fluxlab.pl",
+            },
+          }),
+        }}
+      />
     </>
   );
 }

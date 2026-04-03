@@ -16,6 +16,14 @@ export const metadata: Metadata = {
       "Którą formę opodatkowania wybrać w 2026: skalę podatkową, podatek liniowy czy ryczałt? Kryteria wyboru, progi, składka zdrowotna i pułapki.",
     locale: "pl_PL",
     type: "article",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Fluxlab — Automatyzacja procesów biznesowych i CRM dla firm B2B",
+      },
+    ],
   },
   alternates: {
     canonical: "/strefa-wiedzy/jaka-forma-opodatkowania-jdg-2026",

@@ -16,6 +16,14 @@ export const metadata: Metadata = {
       "Jak krok po kroku zautomatyzować raportowanie sprzedaży, marketingu i operacji. Spójne dane, mniej błędów, krótszy czas przygotowania raportów i szybsze decyzje.",
     locale: "pl_PL",
     type: "article",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Fluxlab — Automatyzacja procesów biznesowych i CRM dla firm B2B",
+      },
+    ],
   },
   alternates: {
     canonical: "/strefa-wiedzy/jak-zautomatyzowac-raportowanie-w-firmie",

@@ -15,6 +15,14 @@ export const metadata: Metadata = {
       "Tworzę zaawansowane automatyzacje w oparciu o Pipedrive API, webhooki i integracje systemowe. Obsługa leadów, synchronizacja danych, raporty i eliminacja ręcznej pracy handlowców.",
     locale: "pl_PL",
     type: "article",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Fluxlab — Automatyzacja procesów biznesowych i CRM dla firm B2B",
+      },
+    ],
   },
   alternates: {
     canonical: "/automatyzacja-pipedrive",

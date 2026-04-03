@@ -13,6 +13,14 @@ export const metadata: Metadata = {
     description: "Praktyczne narzędzia online: dobór samochodu, kalkulator kosztów posiadania auta i kalkulator podatkowy JDG.",
     locale: "pl_PL",
     type: "website",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Fluxlab — Automatyzacja procesów biznesowych i CRM dla firm B2B",
+      },
+    ],
   },
   alternates: {
     canonical: "/narzedzia",

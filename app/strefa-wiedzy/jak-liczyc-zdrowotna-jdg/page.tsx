@@ -16,6 +16,14 @@ export const metadata: Metadata = {
       "Zasady obliczania składki zdrowotnej w JDG w 2026 roku. Różnice między skalą, liniowym i ryczałtem. Progi, podstawy wymiaru i wpływ na opłacalność formy opodatkowania.",
     locale: "pl_PL",
     type: "article",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Fluxlab — Automatyzacja procesów biznesowych i CRM dla firm B2B",
+      },
+    ],
   },
   alternates: {
     canonical: "/strefa-wiedzy/jak-liczyc-zdrowotna-jdg",

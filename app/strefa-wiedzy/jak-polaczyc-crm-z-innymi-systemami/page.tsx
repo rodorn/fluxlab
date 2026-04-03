@@ -14,6 +14,14 @@ export const metadata: Metadata = {
       "Jak połączyć CRM z formularzami, ERP, mailami i raportowaniem bez chaosu. Praktyczny model wdrożenia i najczęstsze błędy.",
     locale: "pl_PL",
     type: "article",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Fluxlab — Automatyzacja procesów biznesowych i CRM dla firm B2B",
+      },
+    ],
   },
   alternates: {
     canonical: "/strefa-wiedzy/jak-polaczyc-crm-z-innymi-systemami",
@@ -203,6 +211,31 @@ export default function CrmIntegracjaArticle() {
         </section>
       </main>
       <Footer />
+
+      {/* Article Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: "Jak połączyć CRM z innymi systemami",
+            description:
+              "Jak połączyć CRM z formularzami, ERP, mailami i raportowaniem bez chaosu. Praktyczny model wdrożenia i najczęstsze błędy.",
+            datePublished: "2026-03-30",
+            author: {
+              "@type": "Organization",
+              name: "Fluxlab",
+              url: "https://fluxlab.pl",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "Fluxlab",
+              url: "https://fluxlab.pl",
+            },
+          }),
+        }}
+      />
     </>
   );
 }

@@ -40,6 +40,18 @@ export const metadata: Metadata = {
       "Projektujemy i wdrażamy automatyzacje procesów biznesowych, CRM, raportowania i integracji API. Pierwsze efekty w 2–4 dni. Bezpłatna konsultacja.",
     locale: "pl_PL",
     type: "website",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Fluxlab — Automatyzacja procesów biznesowych i CRM dla firm B2B",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/opengraph-image"],
   },
 };
 

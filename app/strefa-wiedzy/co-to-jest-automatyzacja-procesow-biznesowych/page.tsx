@@ -16,6 +16,14 @@ export const metadata: Metadata = {
       "Czym jest automatyzacja procesów biznesowych, gdzie daje największy efekt i od czego zacząć wdrożenie w firmie. Przykłady, błędy, ROI i praktyczne wskazówki.",
     locale: "pl_PL",
     type: "article",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Fluxlab — Automatyzacja procesów biznesowych i CRM dla firm B2B",
+      },
+    ],
   },
   alternates: {
     canonical: "/strefa-wiedzy/co-to-jest-automatyzacja-procesow-biznesowych",
@@ -58,7 +66,7 @@ export default function AutomatyzacjaProcesowArticle() {
               Czym naprawdę jest automatyzacja procesów biznesowych
             </h2>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              Najprościej mówiąc, automatyzacja procesów biznesowych polega na
+              Najprościej mówiąc, <Link href="/automatyzacja-procesow-biznesowych" className="text-accent hover:underline">automatyzacja procesów biznesowych</Link> polega na
               tym, że powtarzalne działania wykonywane według określonych zasad
               przestają być robione ręcznie. Zamiast człowieka kopiującego dane
               między systemami, ustawiasz przepływ, który robi to automatycznie.
@@ -136,7 +144,7 @@ export default function AutomatyzacjaProcesowArticle() {
               To jeden z najbardziej oczywistych obszarów. Leady wpadają
               z formularza, reklam, maila albo poleceń. Ktoś musi je zebrać,
               wpisać do CRM, przypisać do właściwej osoby, ustawić kolejny krok,
-              pilnować follow-upu i raportować wynik.
+              pilnować follow-upu i raportować wynik. Właśnie dlatego <Link href="/automatyzacja-leadow" className="text-accent hover:underline">automatyzacja leadów</Link> to zwykle jeden z pierwszych kroków.
             </p>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
               Automatyzacja może tu obejmować:
@@ -283,7 +291,7 @@ export default function AutomatyzacjaProcesowArticle() {
             <p className="text-gray-600 dark:text-gray-400 mb-4">
               Firmy za często pytają &bdquo;czy lepszy będzie Make, Zapier, n8n
               albo własne API?&rdquo;, zanim odpowiedzą sobie na pytanie, co
-              w ogóle chcą osiągnąć.
+              w ogóle chcą osiągnąć. Dobór narzędzia zależy od procesu — czasem wystarczy prosta automatyzacja, a czasem potrzebne są pełne <Link href="/integracje-api" className="text-accent hover:underline">integracje API</Link>.
             </p>
 
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
@@ -756,6 +764,32 @@ export default function AutomatyzacjaProcesowArticle() {
         </section>
       </main>
       <Footer />
+
+      {/* Article Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline:
+              "Co to jest automatyzacja procesów biznesowych?",
+            description:
+              "Czym jest automatyzacja procesów biznesowych, gdzie daje największy efekt i od czego zacząć wdrożenie w firmie. Przykłady, błędy, ROI i praktyczne wskazówki.",
+            datePublished: "2026-03-30",
+            author: {
+              "@type": "Organization",
+              name: "Fluxlab",
+              url: "https://fluxlab.pl",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "Fluxlab",
+              url: "https://fluxlab.pl",
+            },
+          }),
+        }}
+      />
     </>
   );
 }

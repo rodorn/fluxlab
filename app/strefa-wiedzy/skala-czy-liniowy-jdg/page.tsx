@@ -16,6 +16,14 @@ export const metadata: Metadata = {
       "Porównanie skali podatkowej i podatku liniowego dla JDG w 2026. Kwota wolna, progi, składka zdrowotna, realne scenariusze i kalkulator.",
     locale: "pl_PL",
     type: "article",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Fluxlab — Automatyzacja procesów biznesowych i CRM dla firm B2B",
+      },
+    ],
   },
   alternates: {
     canonical: "/strefa-wiedzy/skala-czy-liniowy-jdg",

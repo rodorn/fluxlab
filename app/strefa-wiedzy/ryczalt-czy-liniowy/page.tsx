@@ -16,6 +16,14 @@ export const metadata: Metadata = {
       "Porównanie ryczałtu i podatku liniowego dla JDG w 2026. Kiedy ryczałt wygrywa, kiedy przegrywa i jak to policzyć na konkretnych liczbach.",
     locale: "pl_PL",
     type: "article",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Fluxlab — Automatyzacja procesów biznesowych i CRM dla firm B2B",
+      },
+    ],
   },
   alternates: {
     canonical: "/strefa-wiedzy/ryczalt-czy-liniowy",

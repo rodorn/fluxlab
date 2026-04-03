@@ -14,6 +14,14 @@ export const metadata: Metadata = {
       "Interaktywne narzędzie do doboru samochodu. Dopasuj segment, nadwozie i moc do swoich potrzeb.",
     locale: "pl_PL",
     type: "website",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Fluxlab — Automatyzacja procesów biznesowych i CRM dla firm B2B",
+      },
+    ],
   },
   alternates: {
     canonical: "/dobor-samochodu",
