@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Automatyzacja Pipedrive – jak wycisnąć 100% z CRM | Fluxlab",
@@ -14,6 +15,9 @@ export const metadata: Metadata = {
       "Tworzę zaawansowane automatyzacje w oparciu o Pipedrive API, webhooki i integracje systemowe. Obsługa leadów, synchronizacja danych, raporty i eliminacja ręcznej pracy handlowców.",
     locale: "pl_PL",
     type: "article",
+  },
+  alternates: {
+    canonical: "/automatyzacja-pipedrive",
   },
 };
 
@@ -148,6 +152,7 @@ export default function AutomatyzacjaPipedrive() {
     <>
       <Header />
       <main className="pt-16">
+        <Breadcrumbs items={[{ label: "Automatyzacja Pipedrive" }]} />
 
         {/* Hero */}
         <section className="py-16 lg:py-24 border-b border-gray-100 dark:border-gray-800">

@@ -4,6 +4,7 @@ import Image from "next/image";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Automatyzacja CRM dla sprzedaży i obsługi klienta | Fluxlab",
@@ -15,6 +16,9 @@ export const metadata: Metadata = {
       "Wdrażamy automatyzację CRM: leady, follow-upy, statusy, zadania, pipeline i integracje. Mniej ręcznej pracy, lepsza kontrola sprzedaży i szybsza reakcja zespołu.",
     locale: "pl_PL",
     type: "article",
+  },
+  alternates: {
+    canonical: "/automatyzacja-crm",
   },
 };
 
@@ -75,6 +79,7 @@ export default function AutomatyzacjaCRM() {
     <>
       <Header />
       <main className="pt-16">
+        <Breadcrumbs items={[{ label: "Automatyzacja CRM" }]} />
 
         {/* Hero */}
         <section className="relative py-16 lg:py-24 overflow-hidden">

@@ -4,6 +4,7 @@ import Image from "next/image";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Integracje API i łączenie systemów w firmie | Fluxlab",
@@ -15,6 +16,9 @@ export const metadata: Metadata = {
       "Tworzymy integracje API między CRM, ERP, formularzami, bazami danych i narzędziami operacyjnymi. Łączymy systemy tak, żeby dane przepływały automatycznie.",
     locale: "pl_PL",
     type: "article",
+  },
+  alternates: {
+    canonical: "/integracje-api",
   },
 };
 
@@ -69,6 +73,7 @@ export default function IntegracjeApi() {
     <>
       <Header />
       <main className="pt-16">
+        <Breadcrumbs items={[{ label: "Integracje API" }]} />
 
         {/* Hero */}
         <section className="relative py-16 lg:py-24 overflow-hidden">

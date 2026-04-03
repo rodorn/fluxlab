@@ -4,6 +4,7 @@ import Image from "next/image";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Automatyzacja procesów biznesowych dla firm | Fluxlab",
@@ -15,6 +16,9 @@ export const metadata: Metadata = {
       "Projektujemy i wdrażamy automatyzację procesów biznesowych w firmach B2B. Mniej ręcznej pracy, mniej błędów, szybsze działanie i realny zwrot z wdrożenia.",
     locale: "pl_PL",
     type: "article",
+  },
+  alternates: {
+    canonical: "/automatyzacja-procesow-biznesowych",
   },
 };
 
@@ -95,6 +99,7 @@ export default function AutomatyzacjaProcesowBiznesowych() {
     <>
       <Header />
       <main className="pt-16">
+        <Breadcrumbs items={[{ label: "Automatyzacja procesów" }]} />
         {/* Hero */}
         <section className="relative py-16 lg:py-24 overflow-hidden">
           <div className="absolute inset-0 -z-10">

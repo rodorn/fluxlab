@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Strefa wiedzy — automatyzacja procesów, CRM, API, raportowanie, AI | Fluxlab",
@@ -13,6 +14,9 @@ export const metadata: Metadata = {
       "Praktyczne artykuły o automatyzacji procesów biznesowych, CRM, integracjach API, raportowaniu i AI.",
     locale: "pl_PL",
     type: "website",
+  },
+  alternates: {
+    canonical: "/strefa-wiedzy",
   },
 };
 
@@ -134,6 +138,7 @@ export default function StrefaWiedzy() {
     <>
       <Header />
       <main className="pt-16">
+        <Breadcrumbs items={[{ label: "Strefa wiedzy" }]} />
         {/* Hero */}
         <section className="py-16 lg:py-24 bg-gray-50 dark:bg-gray-900/50 border-b border-gray-100 dark:border-gray-800">
           <div className="container-wide">

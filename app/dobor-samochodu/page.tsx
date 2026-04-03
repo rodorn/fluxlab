@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CarConfigurator from "./CarConfigurator";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Dobór samochodu – Znajdź idealny samochód dla siebie | Fluxlab",
@@ -14,6 +15,9 @@ export const metadata: Metadata = {
     locale: "pl_PL",
     type: "website",
   },
+  alternates: {
+    canonical: "/dobor-samochodu",
+  },
 };
 
 export default function DoborSamochoduPage() {
@@ -21,6 +25,7 @@ export default function DoborSamochoduPage() {
     <>
       <Header />
       <main className="pt-16">
+        <Breadcrumbs items={[{ label: "Dobór samochodu" }]} />
         {/* Hero */}
         <section className="py-16 lg:py-24">
           <div className="container-wide text-center max-w-3xl mx-auto">

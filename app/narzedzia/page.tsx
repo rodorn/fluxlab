@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Narzędzia — kalkulator kosztów, dobór samochodu, kalkulator podatkowy | Fluxlab",
@@ -12,6 +13,9 @@ export const metadata: Metadata = {
     description: "Praktyczne narzędzia online: dobór samochodu, kalkulator kosztów posiadania auta i kalkulator podatkowy JDG.",
     locale: "pl_PL",
     type: "website",
+  },
+  alternates: {
+    canonical: "/narzedzia",
   },
 };
 
@@ -41,6 +45,7 @@ export default function Narzedzia() {
     <>
       <Header />
       <main className="pt-16">
+        <Breadcrumbs items={[{ label: "Narzędzia" }]} />
         {/* Hero */}
         <section className="py-16 lg:py-24 bg-gray-50 dark:bg-gray-900/50 border-b border-gray-100 dark:border-gray-800">
           <div className="container-wide">

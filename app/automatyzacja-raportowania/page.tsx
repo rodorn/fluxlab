@@ -4,6 +4,7 @@ import Image from "next/image";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Automatyzacja raportowania i danych w firmie | Fluxlab",
@@ -15,6 +16,9 @@ export const metadata: Metadata = {
       "Automatyzujemy raportowanie sprzedaży, marketingu i operacji. Łączymy dane z wielu źródeł i eliminujemy ręczne przygotowywanie raportów.",
     locale: "pl_PL",
     type: "article",
+  },
+  alternates: {
+    canonical: "/automatyzacja-raportowania",
   },
 };
 
@@ -99,6 +103,7 @@ export default function AutomatyzacjaRaportowania() {
     <>
       <Header />
       <main className="pt-16">
+        <Breadcrumbs items={[{ label: "Automatyzacja raportowania" }]} />
         {/* Hero */}
         <section className="relative py-16 lg:py-24 overflow-hidden">
           <div className="absolute inset-0 -z-10">

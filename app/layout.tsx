@@ -15,6 +15,21 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://fluxlab.pl"),
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
+  },
   title: "Automatyzacja procesów biznesowych i CRM dla firm B2B | Fluxlab",
   description:
     "Projektujemy i wdrażamy automatyzacje procesów biznesowych, CRM, raportowania i integracji API. Pierwsze efekty w 2–4 dni. Bezpłatna konsultacja.",

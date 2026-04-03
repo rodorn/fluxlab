@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Kiedy AI ma sens w firmie, a kiedy nie | Fluxlab",
@@ -14,6 +15,9 @@ export const metadata: Metadata = {
     locale: "pl_PL",
     type: "article",
   },
+  alternates: {
+    canonical: "/strefa-wiedzy/kiedy-ai-ma-sens-a-kiedy-nie",
+  },
 };
 
 export default function KiedyAiMaSensPage() {
@@ -21,6 +25,7 @@ export default function KiedyAiMaSensPage() {
     <>
       <Header />
       <main className="pt-16">
+        <Breadcrumbs items={[{ label: "Strefa wiedzy", href: "/strefa-wiedzy" }, { label: "Kiedy AI ma sens, a kiedy nie" }]} />
         {/* Hero */}
         <section className="bg-gray-50 dark:bg-gray-900/50 py-16 lg:py-24">
           <div className="container-wide">

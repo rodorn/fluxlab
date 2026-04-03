@@ -4,6 +4,7 @@ import Image from "next/image";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "n8n — automatyzacja workflow z pełną kontrolą | Fluxlab",
@@ -15,6 +16,9 @@ export const metadata: Metadata = {
       "Wdrażamy automatyzacje na platformie n8n: self-hosted lub cloud, integracje API, webhooki, własne nody. Alternatywa dla Zapier i Make z pełną kontrolą nad infrastrukturą.",
     locale: "pl_PL",
     type: "article",
+  },
+  alternates: {
+    canonical: "/n8n",
   },
 };
 
@@ -67,6 +71,7 @@ export default function N8nPage() {
     <>
       <Header />
       <main className="pt-16">
+        <Breadcrumbs items={[{ label: "n8n" }]} />
 
         {/* Hero */}
         <section className="relative py-16 lg:py-24 overflow-hidden">

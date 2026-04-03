@@ -4,6 +4,7 @@ import Image from "next/image";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Zapier vs Make (Integromat) — porównanie i wdrożenie automatyzacji | Fluxlab",
@@ -15,6 +16,9 @@ export const metadata: Metadata = {
       "Zapier czy Make? Porównujemy platformy automatyzacji, pomagamy wybrać najlepsze narzędzie i wdrażamy workflow dopasowane do potrzeb Twojej firmy.",
     locale: "pl_PL",
     type: "article",
+  },
+  alternates: {
+    canonical: "/zapier-make",
   },
 };
 
@@ -64,6 +68,7 @@ export default function ZapierMake() {
     <>
       <Header />
       <main className="pt-16">
+        <Breadcrumbs items={[{ label: "Zapier / Make" }]} />
 
         {/* Hero */}
         <section className="relative py-16 lg:py-24 overflow-hidden">

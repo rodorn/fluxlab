@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Automatyzacja Salesforce – zaawansowane integracje i custom development | Fluxlab",
@@ -14,6 +15,9 @@ export const metadata: Metadata = {
       "Projektuję i wdrażam zaawansowane automatyzacje Salesforce: integracje przez API, logika w Apex i Flow, webhooki, hurtownie danych i eliminacja ręcznej pracy zespołu sprzedaży.",
     locale: "pl_PL",
     type: "article",
+  },
+  alternates: {
+    canonical: "/automatyzacja-salesforce",
   },
 };
 
@@ -150,6 +154,7 @@ export default function AutomatyzacjaSalesforce() {
     <>
       <Header />
       <main className="pt-16">
+        <Breadcrumbs items={[{ label: "Automatyzacja Salesforce" }]} />
 
         {/* Hero */}
         <section className="py-16 lg:py-24 border-b border-gray-100 dark:border-gray-800">

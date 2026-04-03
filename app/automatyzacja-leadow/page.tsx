@@ -4,6 +4,7 @@ import Image from "next/image";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Automatyzacja leadów i obsługi zapytań sprzedażowych | Fluxlab",
@@ -15,6 +16,9 @@ export const metadata: Metadata = {
       "Wdrażamy automatyzację leadów: zbieranie, routing, kwalifikacja, powiadomienia i follow-up. Szybsza reakcja, mniej chaosu i lepsze wykorzystanie szans sprzedażowych.",
     locale: "pl_PL",
     type: "article",
+  },
+  alternates: {
+    canonical: "/automatyzacja-leadow",
   },
 };
 
@@ -75,6 +79,7 @@ export default function AutomatyzacjaLeadow() {
     <>
       <Header />
       <main className="pt-16">
+        <Breadcrumbs items={[{ label: "Automatyzacja leadów" }]} />
 
         {/* Hero */}
         <section className="relative py-16 lg:py-24 overflow-hidden">

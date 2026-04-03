@@ -4,6 +4,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import TaxCalculator from "./TaxCalculator";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Kalkulator JDG 2026: ryczałt, liniowy, skala i ZUS | Fluxlab",
@@ -15,6 +16,9 @@ export const metadata: Metadata = {
       "Porównaj ryczałt, podatek liniowy i skalę podatkową dla JDG w 2026. ZUS, zdrowotna, VAT, koszty prywatne i samochód.",
     locale: "pl_PL",
     type: "website",
+  },
+  alternates: {
+    canonical: "/kalkulator-podatkowy",
   },
 };
 
@@ -56,6 +60,7 @@ export default function KalkulatorPodatkowyPage() {
     <>
       <Header />
       <main className="pt-16">
+        <Breadcrumbs items={[{ label: "Kalkulator podatkowy" }]} />
         {/* Hero */}
         <section className="py-16 lg:py-24">
           <div className="container-wide max-w-5xl mx-auto">

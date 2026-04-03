@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CarCostCalculator from "./CarCostCalculator";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Kalkulator kosztów samochodu – Ile naprawdę kosztuje Twoje auto? | Fluxlab",
@@ -14,6 +15,9 @@ export const metadata: Metadata = {
     locale: "pl_PL",
     type: "website",
   },
+  alternates: {
+    canonical: "/kalkulator-kosztow",
+  },
 };
 
 export default function KalkulatorKosztowPage() {
@@ -21,6 +25,7 @@ export default function KalkulatorKosztowPage() {
     <>
       <Header />
       <main className="pt-16">
+        <Breadcrumbs items={[{ label: "Kalkulator kosztów" }]} />
         <section className="py-16 lg:py-24">
           <div className="container-wide text-center max-w-3xl mx-auto">
             <p className="section-label mb-4">Narzędzie</p>

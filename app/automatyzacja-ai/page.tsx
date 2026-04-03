@@ -4,6 +4,7 @@ import Image from "next/image";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Automatyzacja AI w procesach firmowych | Fluxlab",
@@ -15,6 +16,9 @@ export const metadata: Metadata = {
       "Wdrażamy automatyzację AI w firmie: klasyfikacja danych, streszczenia, analiza treści, wsparcie obsługi i inteligentne workflow połączone z CRM i innymi systemami.",
     locale: "pl_PL",
     type: "article",
+  },
+  alternates: {
+    canonical: "/automatyzacja-ai",
   },
 };
 
@@ -95,6 +99,7 @@ export default function AutomatyzacjaAI() {
     <>
       <Header />
       <main className="pt-16">
+        <Breadcrumbs items={[{ label: "Automatyzacja AI" }]} />
         {/* Hero */}
         <section className="relative py-16 lg:py-24 overflow-hidden">
           <div className="absolute inset-0 -z-10">

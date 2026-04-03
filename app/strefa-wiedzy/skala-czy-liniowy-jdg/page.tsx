@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title:
@@ -15,6 +16,9 @@ export const metadata: Metadata = {
       "Porównanie skali podatkowej i podatku liniowego dla JDG w 2026. Kwota wolna, progi, składka zdrowotna, realne scenariusze i kalkulator.",
     locale: "pl_PL",
     type: "article",
+  },
+  alternates: {
+    canonical: "/strefa-wiedzy/skala-czy-liniowy-jdg",
   },
 };
 
@@ -46,6 +50,7 @@ export default function SkalaCzyLiniowyJdgArticle() {
     <>
       <Header />
       <main className="pt-16">
+        <Breadcrumbs items={[{ label: "Strefa wiedzy", href: "/strefa-wiedzy" }, { label: "Skala czy liniowy — JDG" }]} />
         {/* Hero */}
         <section className="bg-gray-50 dark:bg-gray-900/50 py-20 lg:py-28">
           <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
