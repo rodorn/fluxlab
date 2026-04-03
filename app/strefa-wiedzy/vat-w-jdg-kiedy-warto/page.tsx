@@ -8,6 +8,14 @@ export const metadata: Metadata = {
     "VAT w JDG — kiedy warto być vatowcem w 2026? | Fluxlab",
   description:
     "Kiedy warto zarejestrować się jako czynny VAT w JDG? Zwolnienie podmiotowe, próg 200 000 zł, wpływ na cashflow, koszty i współpracę z firmami.",
+  openGraph: {
+    title:
+      "VAT w JDG — kiedy warto być vatowcem w 2026? | Fluxlab",
+    description:
+      "Kiedy warto zarejestrować się jako czynny VAT w JDG? Zwolnienie podmiotowe, próg 200 000 zł, wpływ na cashflow, koszty i współpracę z firmami.",
+    locale: "pl_PL",
+    type: "article",
+  },
 };
 
 export default function VatWJdgArticle() {

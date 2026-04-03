@@ -8,6 +8,14 @@ export const metadata: Metadata = {
     "Co to jest automatyzacja procesów biznesowych? Praktyczny przewodnik dla firm | Fluxlab",
   description:
     "Czym jest automatyzacja procesów biznesowych, gdzie daje największy efekt i od czego zacząć wdrożenie w firmie. Przykłady, błędy, ROI i praktyczne wskazówki.",
+  openGraph: {
+    title:
+      "Co to jest automatyzacja procesów biznesowych? Praktyczny przewodnik dla firm | Fluxlab",
+    description:
+      "Czym jest automatyzacja procesów biznesowych, gdzie daje największy efekt i od czego zacząć wdrożenie w firmie. Przykłady, błędy, ROI i praktyczne wskazówki.",
+    locale: "pl_PL",
+    type: "article",
+  },
 };
 
 export default function AutomatyzacjaProcesowArticle() {

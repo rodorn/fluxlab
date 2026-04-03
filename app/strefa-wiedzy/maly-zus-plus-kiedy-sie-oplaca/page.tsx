@@ -8,6 +8,14 @@ export const metadata: Metadata = {
     "Mały ZUS Plus w 2026 — kiedy się opłaca, warunki, limity | Fluxlab",
   description:
     "Mały ZUS Plus w 2026: kto może skorzystać, jakie są warunki, limity przychodowe i ile realnie oszczędzasz. Porównanie z pełnym ZUS i ulgą na start.",
+  openGraph: {
+    title:
+      "Mały ZUS Plus w 2026 — kiedy się opłaca, warunki, limity | Fluxlab",
+    description:
+      "Mały ZUS Plus w 2026: kto może skorzystać, jakie są warunki, limity przychodowe i ile realnie oszczędzasz. Porównanie z pełnym ZUS i ulgą na start.",
+    locale: "pl_PL",
+    type: "article",
+  },
 };
 
 export default function MalyZusPlusArticle() {

@@ -8,6 +8,14 @@ export const metadata: Metadata = {
     "Ryczałt czy liniowy w 2026? Które opodatkowanie się bardziej opłaca | Fluxlab",
   description:
     "Porównanie ryczałtu i podatku liniowego dla JDG w 2026. Kiedy ryczałt wygrywa, kiedy przegrywa i jak to policzyć na konkretnych liczbach.",
+  openGraph: {
+    title:
+      "Ryczałt czy liniowy w 2026? Które opodatkowanie się bardziej opłaca | Fluxlab",
+    description:
+      "Porównanie ryczałtu i podatku liniowego dla JDG w 2026. Kiedy ryczałt wygrywa, kiedy przegrywa i jak to policzyć na konkretnych liczbach.",
+    locale: "pl_PL",
+    type: "article",
+  },
 };
 
 export default function RyczaltCzyLiniowyArticle() {

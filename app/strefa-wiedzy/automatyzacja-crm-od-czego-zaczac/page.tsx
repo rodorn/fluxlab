@@ -7,6 +7,13 @@ export const metadata: Metadata = {
   title: "Automatyzacja CRM — od czego zacząć | Fluxlab",
   description:
     "Jak zacząć automatyzację CRM w firmie: audyt procesu, leady, zadania, statusy, walidacja danych i pierwsze wdrożenia o największym zwrocie.",
+  openGraph: {
+    title: "Automatyzacja CRM — od czego zacząć | Fluxlab",
+    description:
+      "Jak zacząć automatyzację CRM w firmie: audyt procesu, leady, zadania, statusy, walidacja danych i pierwsze wdrożenia o największym zwrocie.",
+    locale: "pl_PL",
+    type: "article",
+  },
 };
 
 export default function AutomatyzacjaCrmOdCzegoZaczacArticle() {

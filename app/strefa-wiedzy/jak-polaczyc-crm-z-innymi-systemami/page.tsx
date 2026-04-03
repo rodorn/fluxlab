@@ -7,6 +7,13 @@ export const metadata: Metadata = {
   title: "Jak połączyć CRM z innymi systemami w firmie | Fluxlab",
   description:
     "Jak połączyć CRM z formularzami, ERP, mailami i raportowaniem bez chaosu. Praktyczny model wdrożenia i najczęstsze błędy.",
+  openGraph: {
+    title: "Jak połączyć CRM z innymi systemami w firmie | Fluxlab",
+    description:
+      "Jak połączyć CRM z formularzami, ERP, mailami i raportowaniem bez chaosu. Praktyczny model wdrożenia i najczęstsze błędy.",
+    locale: "pl_PL",
+    type: "article",
+  },
 };
 
 export default function CrmIntegracjaArticle() {

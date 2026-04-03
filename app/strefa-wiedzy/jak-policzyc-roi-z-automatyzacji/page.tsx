@@ -8,6 +8,14 @@ export const metadata: Metadata = {
     "Jak policzyć ROI z automatyzacji? Prosty model dla firm | Fluxlab",
   description:
     "Zobacz, jak policzyć ROI z automatyzacji procesów biznesowych. Oszczędność czasu, koszt pracy, błędy, opóźnienia i wpływ na sprzedaż — bez marketingowej mgły.",
+  openGraph: {
+    title:
+      "Jak policzyć ROI z automatyzacji? Prosty model dla firm | Fluxlab",
+    description:
+      "Zobacz, jak policzyć ROI z automatyzacji procesów biznesowych. Oszczędność czasu, koszt pracy, błędy, opóźnienia i wpływ na sprzedaż — bez marketingowej mgły.",
+    locale: "pl_PL",
+    type: "article",
+  },
 };
 
 export default function RoiAutomatyzacjiArticle() {

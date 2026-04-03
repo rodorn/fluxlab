@@ -8,6 +8,14 @@ export const metadata: Metadata = {
     "Skala czy liniowy dla JDG w 2026? Porównanie i próg opłacalności | Fluxlab",
   description:
     "Porównanie skali podatkowej i podatku liniowego dla JDG w 2026. Kwota wolna, progi, składka zdrowotna, realne scenariusze i kalkulator.",
+  openGraph: {
+    title:
+      "Skala czy liniowy dla JDG w 2026? Porównanie i próg opłacalności | Fluxlab",
+    description:
+      "Porównanie skali podatkowej i podatku liniowego dla JDG w 2026. Kwota wolna, progi, składka zdrowotna, realne scenariusze i kalkulator.",
+    locale: "pl_PL",
+    type: "article",
+  },
 };
 
 export default function SkalaCzyLiniowyJdgArticle() {

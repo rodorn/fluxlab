@@ -8,6 +8,14 @@ export const metadata: Metadata = {
     "Integracje API w firmie — kiedy warto, a kiedy to przesada | Fluxlab",
   description:
     "Kiedy integracje API mają sens w firmie, jakie problemy rozwiązują i kiedy lepiej wybrać prostsze podejście. Przykłady, błędy i praktyczne scenariusze.",
+  openGraph: {
+    title:
+      "Integracje API w firmie — kiedy warto, a kiedy to przesada | Fluxlab",
+    description:
+      "Kiedy integracje API mają sens w firmie, jakie problemy rozwiązują i kiedy lepiej wybrać prostsze podejście. Przykłady, błędy i praktyczne scenariusze.",
+    locale: "pl_PL",
+    type: "article",
+  },
 };
 
 export default function IntegracjeApiArticle() {

@@ -7,6 +7,13 @@ export const metadata: Metadata = {
   title: "Najczęstsze błędy w raportowaniu sprzedaży | Fluxlab",
   description:
     "Sprawdź najczęstsze błędy w raportowaniu sprzedaży: złe definicje, rozjazd danych, vanity metrics i ręczne arkusze, które fałszują obraz biznesu.",
+  openGraph: {
+    title: "Najczęstsze błędy w raportowaniu sprzedaży | Fluxlab",
+    description:
+      "Sprawdź najczęstsze błędy w raportowaniu sprzedaży: złe definicje, rozjazd danych, vanity metrics i ręczne arkusze, które fałszują obraz biznesu.",
+    locale: "pl_PL",
+    type: "article",
+  },
 };
 
 export default function BledyRaportowanieArticle() {

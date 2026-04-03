@@ -36,6 +36,37 @@ export default function RootLayout({
     <html lang="pl" suppressHydrationWarning>
       <head>
         <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "Organization",
+                  "@id": "https://fluxlab.pl/#organization",
+                  name: "Fluxlab",
+                  url: "https://fluxlab.pl",
+                  description:
+                    "Automatyzacja procesów biznesowych, CRM, raportowania i integracji API dla firm B2B.",
+                  contactPoint: {
+                    "@type": "ContactPoint",
+                    contactType: "sales",
+                    availableLanguage: "Polish",
+                  },
+                },
+                {
+                  "@type": "WebSite",
+                  "@id": "https://fluxlab.pl/#website",
+                  url: "https://fluxlab.pl",
+                  name: "Fluxlab",
+                  publisher: { "@id": "https://fluxlab.pl/#organization" },
+                  inLanguage: "pl-PL",
+                },
+              ],
+            }),
+          }}
+        />
+        <script
           dangerouslySetInnerHTML={{
             __html: `(function(){var s=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(s==='dark'||(s===null&&d)){document.documentElement.classList.add('dark')}else{document.documentElement.classList.remove('dark')}})()`,
           }}

@@ -7,6 +7,13 @@ export const metadata: Metadata = {
   title: "Jak uporządkować proces sprzedaży w CRM | Fluxlab",
   description:
     "Jak uporządkować proces sprzedaży w CRM: etapy, kryteria przejścia, pola obowiązkowe, follow-up i raportowanie.",
+  openGraph: {
+    title: "Jak uporządkować proces sprzedaży w CRM | Fluxlab",
+    description:
+      "Jak uporządkować proces sprzedaży w CRM: etapy, kryteria przejścia, pola obowiązkowe, follow-up i raportowanie.",
+    locale: "pl_PL",
+    type: "article",
+  },
 };
 
 export default function JakUporzadkowacProcesSprzedazyArticle() {

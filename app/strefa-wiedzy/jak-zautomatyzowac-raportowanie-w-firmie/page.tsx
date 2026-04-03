@@ -8,6 +8,14 @@ export const metadata: Metadata = {
     "Jak zautomatyzować raportowanie w firmie i przestać składać liczby ręcznie | Fluxlab",
   description:
     "Jak krok po kroku zautomatyzować raportowanie sprzedaży, marketingu i operacji. Spójne dane, mniej błędów, krótszy czas przygotowania raportów i szybsze decyzje.",
+  openGraph: {
+    title:
+      "Jak zautomatyzować raportowanie w firmie i przestać składać liczby ręcznie | Fluxlab",
+    description:
+      "Jak krok po kroku zautomatyzować raportowanie sprzedaży, marketingu i operacji. Spójne dane, mniej błędów, krótszy czas przygotowania raportów i szybsze decyzje.",
+    locale: "pl_PL",
+    type: "article",
+  },
 };
 
 export default function AutomatyzacjaRaportowaniaArticle() {

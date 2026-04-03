@@ -7,6 +7,13 @@ export const metadata: Metadata = {
   title: "Kiedy AI ma sens w firmie, a kiedy nie | Fluxlab",
   description:
     "Jak ocenić, czy AI ma sens w Twojej firmie. Prosty framework decyzji: wolumen, powtarzalność, jakość danych, koszt błędu i rola człowieka.",
+  openGraph: {
+    title: "Kiedy AI ma sens w firmie, a kiedy nie | Fluxlab",
+    description:
+      "Jak ocenić, czy AI ma sens w Twojej firmie. Prosty framework decyzji: wolumen, powtarzalność, jakość danych, koszt błędu i rola człowieka.",
+    locale: "pl_PL",
+    type: "article",
+  },
 };
 
 export default function KiedyAiMaSensPage() {

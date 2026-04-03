@@ -7,6 +7,13 @@ export const metadata: Metadata = {
   title: "AI w automatyzacji firm — praktyczne zastosowania | Fluxlab",
   description:
     "Jak wykorzystać AI w automatyzacji firm: klasyfikacja zapytań, streszczenia, analiza treści, wsparcie obsługi i sprzedaży. Bez marketingowej mgły.",
+  openGraph: {
+    title: "AI w automatyzacji firm — praktyczne zastosowania | Fluxlab",
+    description:
+      "Jak wykorzystać AI w automatyzacji firm: klasyfikacja zapytań, streszczenia, analiza treści, wsparcie obsługi i sprzedaży. Bez marketingowej mgły.",
+    locale: "pl_PL",
+    type: "article",
+  },
 };
 
 export default function AiWAutomatyzacjiFirmPage() {
