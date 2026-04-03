@@ -156,6 +156,31 @@ export default function KiedyAiMaSensPage() {
         </section>
       </main>
       <Footer />
+
+      {/* Article Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: "Kiedy AI ma sens, a kiedy nie",
+            description:
+              "Jak ocenić, czy AI ma sens w Twojej firmie. Prosty framework decyzji: wolumen, powtarzalność, jakość danych, koszt błędu i rola człowieka.",
+            datePublished: "2026-03-30",
+            author: {
+              "@type": "Organization",
+              name: "Fluxlab",
+              url: "https://fluxlab.pl",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "Fluxlab",
+              url: "https://fluxlab.pl",
+            },
+          }),
+        }}
+      />
     </>
   );
 }

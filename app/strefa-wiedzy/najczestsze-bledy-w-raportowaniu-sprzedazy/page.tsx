@@ -131,6 +131,31 @@ export default function BledyRaportowanieArticle() {
         </section>
       </main>
       <Footer />
+
+      {/* Article Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: "Najczęstsze błędy w raportowaniu sprzedaży",
+            description:
+              "Sprawdź najczęstsze błędy w raportowaniu sprzedaży: złe definicje, rozjazd danych, vanity metrics i ręczne arkusze, które fałszują obraz biznesu.",
+            datePublished: "2026-03-30",
+            author: {
+              "@type": "Organization",
+              name: "Fluxlab",
+              url: "https://fluxlab.pl",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "Fluxlab",
+              url: "https://fluxlab.pl",
+            },
+          }),
+        }}
+      />
     </>
   );
 }

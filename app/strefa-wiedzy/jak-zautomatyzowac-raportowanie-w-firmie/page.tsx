@@ -778,6 +778,31 @@ export default function AutomatyzacjaRaportowaniaArticle() {
         </section>
       </main>
       <Footer />
+
+      {/* Article Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: "Jak zautomatyzować raportowanie w firmie",
+            description:
+              "Jak krok po kroku zautomatyzować raportowanie sprzedaży, marketingu i operacji. Spójne dane, mniej błędów, krótszy czas przygotowania raportów i szybsze decyzje.",
+            datePublished: "2026-03-30",
+            author: {
+              "@type": "Organization",
+              name: "Fluxlab",
+              url: "https://fluxlab.pl",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "Fluxlab",
+              url: "https://fluxlab.pl",
+            },
+          }),
+        }}
+      />
     </>
   );
 }

@@ -135,6 +135,31 @@ export default function AiWAutomatyzacjiFirmPage() {
         </section>
       </main>
       <Footer />
+
+      {/* Article Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: "AI w automatyzacji firm",
+            description:
+              "Jak wykorzystać AI w automatyzacji firm: klasyfikacja zapytań, streszczenia, analiza treści, wsparcie obsługi i sprzedaży. Bez marketingowej mgły.",
+            datePublished: "2026-03-30",
+            author: {
+              "@type": "Organization",
+              name: "Fluxlab",
+              url: "https://fluxlab.pl",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "Fluxlab",
+              url: "https://fluxlab.pl",
+            },
+          }),
+        }}
+      />
     </>
   );
 }

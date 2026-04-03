@@ -66,8 +66,9 @@ export default function RoiAutomatyzacjiArticle() {
             </h2>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
               ROI, czyli zwrot z inwestycji, pokazuje, czy wdrożenie
-              przyniosło więcej korzyści niż kosztowało. W przypadku
-              automatyzacji nie chodzi tylko o &bdquo;zaoszczędzone
+              przyniosło więcej korzyści niż kosztowało. W przypadku{" "}
+              <Link href="/automatyzacja-procesow-biznesowych" className="text-accent hover:underline">automatyzacji procesów biznesowych</Link>{" "}
+              nie chodzi tylko o &bdquo;zaoszczędzone
               godziny&rdquo;. Trzeba patrzeć szerzej:
             </p>
             <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
@@ -286,6 +287,8 @@ export default function RoiAutomatyzacjiArticle() {
               Przykład 1: ROI z automatyzacji leadów
             </h2>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
+              Weźmy konkretny przykład z obszaru{" "}
+              <Link href="/automatyzacja-leadow" className="text-accent hover:underline">automatyzacji leadów</Link>.
               Czas na jednego leada: 8 minut. 180 leadów miesięcznie =
               24 godziny. Koszt godziny 85 zł = 2040 zł/mies =
               24&nbsp;480 zł/rok.
@@ -311,6 +314,8 @@ export default function RoiAutomatyzacjiArticle() {
               Przykład 2: ROI z automatyzacji raportowania
             </h2>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
+              Drugi przykład dotyczy{" "}
+              <Link href="/automatyzacja-raportowania" className="text-accent hover:underline">automatyzacji raportowania</Link>.
               2,5h na raport, 2 osoby, co tydzień = 20h/mies. Koszt
               100 zł/h = 2000 zł/mies = 24&nbsp;000 zł/rok.
             </p>
