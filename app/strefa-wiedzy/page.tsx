@@ -3,6 +3,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import { categories } from "@/lib/categories";
 
 export const metadata: Metadata = {
   title: "Strefa wiedzy — automatyzacja procesów, CRM, API, raportowanie, AI | Fluxlab",
@@ -19,119 +20,6 @@ export const metadata: Metadata = {
     canonical: "/strefa-wiedzy",
   },
 };
-
-const categories = [
-  {
-    name: "Procesy",
-    articles: [
-      {
-        href: "/strefa-wiedzy/co-to-jest-automatyzacja-procesow-biznesowych",
-        title: "Co to jest automatyzacja procesów biznesowych?",
-        description: "Praktyczny przewodnik — czym jest, gdzie daje efekt i od czego zacząć.",
-      },
-      {
-        href: "/strefa-wiedzy/jak-policzyc-roi-z-automatyzacji",
-        title: "Jak policzyć ROI z automatyzacji",
-        description: "Prosty model bez ściemy: czas, koszt pracy, błędy i skala procesu.",
-      },
-    ],
-  },
-  {
-    name: "CRM",
-    articles: [
-      {
-        href: "/strefa-wiedzy/automatyzacja-crm-od-czego-zaczac",
-        title: "Automatyzacja CRM — od czego zacząć",
-        description: "Audyt procesu, leady, zadania, statusy i pierwsze wdrożenia.",
-      },
-      {
-        href: "/strefa-wiedzy/jak-uporzadkowac-proces-sprzedazy-w-crm",
-        title: "Jak uporządkować proces sprzedaży w CRM",
-        description: "Etapy, kryteria przejścia, pola obowiązkowe i raportowanie.",
-      },
-      {
-        href: "/strefa-wiedzy/jak-polaczyc-crm-z-innymi-systemami",
-        title: "Jak połączyć CRM z innymi systemami",
-        description: "Model wdrożenia, najczęstsze błędy i jedno źródło prawdy.",
-      },
-    ],
-  },
-  {
-    name: "Integracje",
-    articles: [
-      {
-        href: "/strefa-wiedzy/integracje-api-w-firmie-kiedy-warto",
-        title: "Integracje API w firmie — kiedy warto?",
-        description: "Kiedy API ma sens, jakie problemy rozwiązuje i kiedy lepiej nie komplikować.",
-      },
-    ],
-  },
-  {
-    name: "Raportowanie",
-    articles: [
-      {
-        href: "/strefa-wiedzy/jak-zautomatyzowac-raportowanie-w-firmie",
-        title: "Jak zautomatyzować raportowanie w firmie",
-        description: "Krok po kroku: definicje, źródła danych, automatyczne dostarczanie.",
-      },
-      {
-        href: "/strefa-wiedzy/najczestsze-bledy-w-raportowaniu-sprzedazy",
-        title: "Najczęstsze błędy w raportowaniu sprzedaży",
-        description: "Złe definicje, rozjazd danych, vanity metrics i ręczne arkusze.",
-      },
-    ],
-  },
-  {
-    name: "AI",
-    articles: [
-      {
-        href: "/strefa-wiedzy/ai-w-automatyzacji-firm",
-        title: "AI w automatyzacji firm",
-        description: "Praktyczne zastosowania: klasyfikacja, streszczenia, wsparcie obsługi.",
-      },
-      {
-        href: "/strefa-wiedzy/kiedy-ai-ma-sens-a-kiedy-nie",
-        title: "Kiedy AI ma sens, a kiedy nie",
-        description: "Prosty framework decyzji: wolumen, powtarzalność, jakość danych.",
-      },
-    ],
-  },
-  {
-    name: "JDG i podatki",
-    articles: [
-      {
-        href: "/strefa-wiedzy/jaka-forma-opodatkowania-jdg-2026",
-        title: "Jaka forma opodatkowania JDG w 2026?",
-        description: "Porównanie skali, liniowego i ryczałtu — kryteria wyboru, progi, pułapki.",
-      },
-      {
-        href: "/strefa-wiedzy/ryczalt-czy-liniowy",
-        title: "Ryczałt czy liniowy — co się bardziej opłaca",
-        description: "Kiedy ryczałt wygrywa, kiedy przegrywa i jak to policzyć.",
-      },
-      {
-        href: "/strefa-wiedzy/skala-czy-liniowy-jdg",
-        title: "Skala czy liniowy — porównanie dla JDG",
-        description: "Kwota wolna, progi, zdrowotna i realne scenariusze.",
-      },
-      {
-        href: "/strefa-wiedzy/jak-liczyc-zdrowotna-jdg",
-        title: "Jak liczyć składkę zdrowotną w JDG",
-        description: "Zasady 2026 dla skali, liniowego i ryczałtu.",
-      },
-      {
-        href: "/strefa-wiedzy/maly-zus-plus-kiedy-sie-oplaca",
-        title: "Mały ZUS Plus — kiedy się opłaca",
-        description: "Warunki, limity, oszczędności i kiedy lepiej z niego nie korzystać.",
-      },
-      {
-        href: "/strefa-wiedzy/vat-w-jdg-kiedy-warto",
-        title: "VAT w JDG — kiedy warto być vatowcem",
-        description: "Zwolnienie podmiotowe, próg 200 000 zł i wpływ na cashflow.",
-      },
-    ],
-  },
-];
 
 export default function StrefaWiedzy() {
   return (
@@ -162,9 +50,12 @@ export default function StrefaWiedzy() {
             <div className="max-w-4xl mx-auto space-y-16">
               {categories.map((category) => (
                 <div key={category.name}>
-                  <h2 className="text-sm font-semibold text-accent uppercase tracking-widest mb-6">
+                  <Link
+                    href={`/strefa-wiedzy/kategoria/${category.slug}`}
+                    className="inline-block text-sm font-semibold text-accent uppercase tracking-widest mb-6 hover:underline"
+                  >
                     {category.name}
-                  </h2>
+                  </Link>
                   <div className="grid md:grid-cols-2 gap-4">
                     {category.articles.map((article) => (
                       <Link
