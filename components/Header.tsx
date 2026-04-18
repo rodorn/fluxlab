@@ -3,6 +3,7 @@
 import { useState, useRef } from "react";
 import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
+import { event as gaEvent } from "@/lib/gtag";
 
 const navLinks = [
   { label: "Cennik", href: "/#cennik" },
@@ -12,7 +13,10 @@ const navLinks = [
 ];
 
 const servicePages: { title: string; href: string; indent?: boolean }[] = [
-  { title: "Automatyzacja procesów", href: "/automatyzacja-procesow-biznesowych" },
+  {
+    title: "Automatyzacja procesów",
+    href: "/automatyzacja-procesow-biznesowych",
+  },
   { title: "Automatyzacja CRM", href: "/automatyzacja-crm" },
   { title: "Pipedrive", href: "/automatyzacja-pipedrive", indent: true },
   { title: "Salesforce", href: "/automatyzacja-salesforce", indent: true },
@@ -28,21 +32,26 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
-  const servicesCloseTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const servicesCloseTimeout = useRef<ReturnType<typeof setTimeout> | null>(
+    null,
+  );
 
   function openServices() {
-    if (servicesCloseTimeout.current) clearTimeout(servicesCloseTimeout.current);
+    if (servicesCloseTimeout.current)
+      clearTimeout(servicesCloseTimeout.current);
     setServicesOpen(true);
   }
 
   function scheduleServicesClose() {
-    servicesCloseTimeout.current = setTimeout(() => setServicesOpen(false), 150);
+    servicesCloseTimeout.current = setTimeout(
+      () => setServicesOpen(false),
+      150,
+    );
   }
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-gray-950/90 backdrop-blur-md border-b border-gray-100 dark:border-gray-800">
       <div className="container-wide flex items-center justify-between h-16">
-
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <span className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -73,7 +82,13 @@ export default function Header() {
                 fill="none"
                 className={`transition-transform duration-200 mt-px ${servicesOpen ? "rotate-180" : ""}`}
               >
-                <path d="M2 4l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                <path
+                  d="M2 4l4 4 4-4"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
               </svg>
             </button>
 
@@ -133,7 +148,16 @@ export default function Header() {
         {/* Right side */}
         <div className="hidden md:flex items-center gap-3">
           <ThemeToggle />
-          <a href="/#kontakt" className="btn-primary">
+          <a
+            href="/#kontakt"
+            className="btn-primary"
+            onClick={() =>
+              gaEvent("cta_click", {
+                location: "header",
+                label: "porozmawiajmy",
+              })
+            }
+          >
             Porozmawiajmy
           </a>
         </div>
@@ -148,11 +172,21 @@ export default function Header() {
           >
             {menuOpen ? (
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path d="M4 4L16 16M16 4L4 16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                <path
+                  d="M4 4L16 16M16 4L4 16"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                />
               </svg>
             ) : (
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                <path
+                  d="M3 5h14M3 10h14M3 15h14"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                />
               </svg>
             )}
           </button>
@@ -170,10 +204,19 @@ export default function Header() {
             >
               Usługi
               <svg
-                width="12" height="12" viewBox="0 0 12 12" fill="none"
+                width="12"
+                height="12"
+                viewBox="0 0 12 12"
+                fill="none"
                 className={`transition-transform duration-200 mt-px ${mobileServicesOpen ? "rotate-180" : ""}`}
               >
-                <path d="M2 4l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                <path
+                  d="M2 4l4 4 4-4"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
               </svg>
             </button>
 
@@ -227,7 +270,13 @@ export default function Header() {
           <a
             href="/#kontakt"
             className="btn-primary text-center"
-            onClick={() => setMenuOpen(false)}
+            onClick={() => {
+              setMenuOpen(false);
+              gaEvent("cta_click", {
+                location: "mobile_menu",
+                label: "porozmawiajmy",
+              });
+            }}
           >
             Porozmawiajmy
           </a>

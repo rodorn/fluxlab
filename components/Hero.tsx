@@ -1,4 +1,5 @@
 import Image from "next/image";
+import TrackedCTA from "@/components/TrackedCTA";
 
 export default function Hero() {
   return (
@@ -21,18 +22,28 @@ export default function Hero() {
 
             {/* Subheadline */}
             <p className="text-lg text-gray-500 dark:text-gray-400 leading-relaxed mb-10 max-w-lg">
-              Skup się na tym, co napędza Twój biznes. My zautomatyzujemy
-              CRM, raportowanie i powtarzalne procesy.
+              Skup się na tym, co napędza Twój biznes. My zautomatyzujemy CRM,
+              raportowanie i powtarzalne procesy.
             </p>
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="#kontakt" className="btn-primary text-base px-8 py-3.5">
+              <TrackedCTA
+                href="#kontakt"
+                location="hero"
+                label="konsultacja"
+                className="btn-primary text-base px-8 py-3.5"
+              >
                 Umów bezpłatną konsultację
-              </a>
-              <a href="#uslugi" className="btn-secondary text-base px-8 py-3.5">
+              </TrackedCTA>
+              <TrackedCTA
+                href="#uslugi"
+                location="hero"
+                label="services"
+                className="btn-secondary text-base px-8 py-3.5"
+              >
                 Zobacz co robimy
-              </a>
+              </TrackedCTA>
             </div>
 
             {/* Social proof */}
@@ -57,15 +68,22 @@ export default function Hero() {
 
             {/* Floating stats card */}
             <div className="absolute -bottom-6 -left-6 bg-white dark:bg-gray-800 rounded-xl shadow-xl border border-gray-100 dark:border-gray-700 p-4">
-              <p className="text-2xl font-bold text-gray-900 dark:text-white">500+</p>
-              <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">godzin zwróconych<br />klientom miesięcznie</p>
+              <p className="text-2xl font-bold text-gray-900 dark:text-white">
+                500+
+              </p>
+              <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
+                godzin zwróconych
+                <br />
+                klientom miesięcznie
+              </p>
             </div>
 
             {/* Decorative dot grid */}
             <div
               className="absolute -top-4 -right-4 w-32 h-32 opacity-20 dark:opacity-10"
               style={{
-                backgroundImage: "radial-gradient(circle, #6366f1 1px, transparent 1px)",
+                backgroundImage:
+                  "radial-gradient(circle, #6366f1 1px, transparent 1px)",
                 backgroundSize: "12px 12px",
               }}
             />
@@ -79,13 +97,20 @@ export default function Hero() {
         <div className="mt-4 grid grid-cols-2 lg:grid-cols-4 gap-8">
           {[
             { value: "80%", label: "średnia redukcja czasu na procesy" },
-            { value: "2-4 dni", label: "czas wdrożenia pierwszej automatyzacji" },
+            {
+              value: "2-4 dni",
+              label: "czas wdrożenia pierwszej automatyzacji",
+            },
             { value: "0 błędów", label: "w zautomatyzowanych procesach" },
             { value: "ROI < 1 mies.", label: "zwrot inwestycji" },
           ].map((stat) => (
             <div key={stat.label}>
-              <p className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">{stat.value}</p>
-              <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">{stat.label}</p>
+              <p className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
+                {stat.value}
+              </p>
+              <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
+                {stat.label}
+              </p>
             </div>
           ))}
         </div>

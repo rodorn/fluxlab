@@ -27,25 +27,45 @@ export default function Breadcrumbs({ items }: { items: BreadcrumbItem[] }) {
       />
       <nav aria-label="Breadcrumb" className="container-wide pt-20 pb-0">
         <ol className="flex flex-wrap items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400">
-          {fullItems.map((item, index) => (
-            <li key={index} className="flex items-center gap-1.5">
-              {index > 0 && (
-                <span className="text-gray-300 dark:text-gray-600">/</span>
-              )}
-              {item.href ? (
-                <Link
-                  href={item.href}
-                  className="hover:text-accent transition-colors"
-                >
-                  {item.label}
-                </Link>
-              ) : (
-                <span className="text-gray-900 dark:text-white font-medium">
-                  {item.label}
-                </span>
-              )}
-            </li>
-          ))}
+          {fullItems.map((item, index) => {
+            const isFirst = index === 0;
+            const isLast = index === fullItems.length - 1;
+            const isMiddle = !isFirst && !isLast;
+            const showEllipsis = isLast && fullItems.length > 2;
+            return (
+              <li
+                key={index}
+                className={`items-center gap-1.5 ${isMiddle ? "hidden sm:flex" : "flex"}`}
+              >
+                {index > 0 && (
+                  <>
+                    {showEllipsis && (
+                      <span className="text-gray-300 dark:text-gray-600 sm:hidden">
+                        …
+                      </span>
+                    )}
+                    <span
+                      className={`text-gray-300 dark:text-gray-600 ${showEllipsis ? "hidden sm:inline" : ""}`}
+                    >
+                      /
+                    </span>
+                  </>
+                )}
+                {item.href ? (
+                  <Link
+                    href={item.href}
+                    className="hover:text-accent transition-colors"
+                  >
+                    {item.label}
+                  </Link>
+                ) : (
+                  <span className="text-gray-900 dark:text-white font-medium">
+                    {item.label}
+                  </span>
+                )}
+              </li>
+            );
+          })}
         </ol>
       </nav>
     </>
