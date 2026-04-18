@@ -85,8 +85,19 @@ export default function N8nPage() {
         <section className="relative py-16 lg:py-24 overflow-hidden">
           <div className="absolute inset-0 -z-10">
             <div className="absolute inset-0 bg-sky-50 dark:hidden" />
-            <img src="/photos/Flow.avif" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover opacity-[0.08] dark:hidden" style={{ filter: "invert(1)" }} />
-            <img src="/photos/Flow.avif" alt="" aria-hidden="true" className="w-full h-full object-cover hidden dark:block" />
+            <img
+              src="/photos/Flow.avif"
+              alt=""
+              aria-hidden="true"
+              className="absolute inset-0 w-full h-full object-cover opacity-[0.08] dark:hidden"
+              style={{ filter: "invert(1)" }}
+            />
+            <img
+              src="/photos/Flow.avif"
+              alt=""
+              aria-hidden="true"
+              className="w-full h-full object-cover hidden dark:block"
+            />
             <div className="absolute inset-0 hidden dark:block bg-gray-950/90" />
             <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-white to-transparent dark:hidden" />
             <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white to-transparent dark:hidden" />
@@ -101,10 +112,11 @@ export default function N8nPage() {
                   Automatyzacja z n8n
                 </h1>
                 <p className="text-lg text-gray-600 dark:text-gray-300">
-                  n8n to platforma do budowania workflow, która łączy systemy, API
-                  i logikę biznesową w jednym miejscu. Self-hosted lub cloud — z
-                  pełną kontrolą nad danymi i infrastrukturą. Alternatywa dla
-                  Zapier i Make dla firm, które chcą więcej niż drag-and-drop.
+                  n8n to platforma do budowania workflow, która łączy systemy,
+                  API i logikę biznesową w jednym miejscu. Self-hosted lub cloud
+                  — z pełną kontrolą nad danymi i infrastrukturą. Alternatywa
+                  dla Zapier i Make dla firm, które chcą więcej niż
+                  drag-and-drop.
                 </p>
               </div>
               <div className="relative mx-auto lg:mx-0 w-full max-w-md">
@@ -132,17 +144,17 @@ export default function N8nPage() {
               </h2>
               <p className="text-gray-500 dark:text-gray-400 mb-6">
                 n8n to open-source&apos;owa platforma automatyzacji, która
-                pozwala budować złożone workflow łączące dowolne systemy.
-                W odróżnieniu od Zapier czy Make, n8n daje możliwość
-                self-hostingu — dane zostają na Twoim serwerze, a koszt nie
-                rośnie z każdym wykonaniem scenariusza.
+                pozwala budować złożone workflow łączące dowolne systemy. W
+                odróżnieniu od Zapier czy Make, n8n daje możliwość self-hostingu
+                — dane zostają na Twoim serwerze, a koszt nie rośnie z każdym
+                wykonaniem scenariusza.
               </p>
               <p className="text-gray-500 dark:text-gray-400 mb-10">
-                Platforma oferuje ponad 400 gotowych integracji, webhooki,
-                nody z kodem JavaScript i Python, warunkową logikę, pętle
-                i obsługę błędów. To narzędzie dla firm, które potrzebują
-                czegoś więcej niż proste &quot;jeśli X to Y&quot; — i chcą
-                mieć pełną własność swojej infrastruktury automatyzacji.
+                Platforma oferuje ponad 400 gotowych integracji, webhooki, nody
+                z kodem JavaScript i Python, warunkową logikę, pętle i obsługę
+                błędów. To narzędzie dla firm, które potrzebują czegoś więcej
+                niż proste &quot;jeśli X to Y&quot; — i chcą mieć pełną własność
+                swojej infrastruktury automatyzacji.
               </p>
 
               <div className="space-y-6">
@@ -173,12 +185,12 @@ export default function N8nPage() {
               </h2>
               <p className="text-gray-500 dark:text-gray-400">
                 Dla firm, które chcą mieć własność swojej infrastruktury
-                automatyzacji — nie chcą być zależne od limitu wykonań w
-                Zapier ani od zamkniętego ekosystemu. Szczególnie dla
-                zespołów technicznych, firm z własnymi API i organizacji,
-                które przetwarzają wrażliwe dane i potrzebują self-hostingu.
-                Sprawdza się też u firm, które przerosły możliwości prostych
-                narzędzi no-code i potrzebują logiki z kodem w workflow.
+                automatyzacji — nie chcą być zależne od limitu wykonań w Zapier
+                ani od zamkniętego ekosystemu. Szczególnie dla zespołów
+                technicznych, firm z własnymi API i organizacji, które
+                przetwarzają wrażliwe dane i potrzebują self-hostingu. Sprawdza
+                się też u firm, które przerosły możliwości prostych narzędzi
+                no-code i potrzebują logiki z kodem w workflow.
               </p>
             </div>
           </div>
@@ -193,11 +205,11 @@ export default function N8nPage() {
               </h2>
               <p className="text-gray-500 dark:text-gray-400">
                 Sam n8n w wersji self-hosted jest darmowy — płacisz tylko za
-                serwer. n8n Cloud zaczyna się od niskich kwot miesięcznie.
-                Koszt wdrożenia zależy od liczby workflow, złożoności
-                integracji i tego, czy potrzebujesz konfiguracji
-                infrastruktury. Proste scenariusze wdrażamy szybko,
-                bardziej zaawansowane projekty wyceniamy indywidualnie.
+                serwer. n8n Cloud zaczyna się od niskich kwot miesięcznie. Koszt
+                wdrożenia zależy od liczby workflow, złożoności integracji i
+                tego, czy potrzebujesz konfiguracji infrastruktury. Proste
+                scenariusze wdrażamy szybko, bardziej zaawansowane projekty
+                wyceniamy indywidualnie.
               </p>
             </div>
           </div>
@@ -249,9 +261,13 @@ export default function N8nPage() {
                 Chcesz zbudować automatyzacje na n8n?
               </h2>
               <p className="text-gray-500 dark:text-gray-400 mb-8">
-                Opowiedz nam o procesach, które chcesz zautomatyzować — dobierzemy architekturę i wdrożymy workflow.
+                Opowiedz nam o procesach, które chcesz zautomatyzować —
+                dobierzemy architekturę i wdrożymy workflow.
               </p>
-              <Link href="/#kontakt" className="btn-primary px-8 py-3.5 text-base">
+              <Link
+                href="/#kontakt"
+                className="btn-primary px-8 py-3.5 text-base"
+              >
                 Porozmawiajmy
               </Link>
               <p className="mt-4 text-xs text-gray-400 dark:text-gray-500">
@@ -298,8 +314,45 @@ export default function N8nPage() {
             </div>
           </div>
         </section>
-
       </main>
+
+      {/* Service Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: "Automatyzacja z n8n",
+            description:
+              "Wdrażamy automatyzacje na platformie n8n: self-hosted lub cloud, integracje API, webhooki, własne nody. Alternatywa dla Zapier i Make z pełną kontrolą nad infrastrukturą.",
+            provider: { "@id": "https://fluxlab.pl/#organization" },
+            areaServed: { "@type": "Country", name: "Polska" },
+            serviceType: "Automatyzacja procesów biznesowych",
+            url: "https://fluxlab.pl/n8n",
+          }),
+        }}
+      />
+
+      {/* FAQPage Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faq.map((item) => ({
+              "@type": "Question",
+              name: item.question,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: item.answer,
+              },
+            })),
+          }),
+        }}
+      />
+
       <Footer />
     </>
   );

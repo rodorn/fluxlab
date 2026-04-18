@@ -5,13 +5,11 @@ import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
-  title:
-    "Jak policzyć ROI z automatyzacji? Prosty model dla firm | Fluxlab",
+  title: "Jak policzyć ROI z automatyzacji? Prosty model dla firm | Fluxlab",
   description:
     "Zobacz, jak policzyć ROI z automatyzacji procesów biznesowych. Oszczędność czasu, koszt pracy, błędy, opóźnienia i wpływ na sprzedaż — bez marketingowej mgły.",
   openGraph: {
-    title:
-      "Jak policzyć ROI z automatyzacji? Prosty model dla firm | Fluxlab",
+    title: "Jak policzyć ROI z automatyzacji? Prosty model dla firm | Fluxlab",
     description:
       "Zobacz, jak policzyć ROI z automatyzacji procesów biznesowych. Oszczędność czasu, koszt pracy, błędy, opóźnienia i wpływ na sprzedaż — bez marketingowej mgły.",
     locale: "pl_PL",
@@ -35,7 +33,12 @@ export default function RoiAutomatyzacjiArticle() {
     <>
       <Header />
       <main className="pt-16">
-        <Breadcrumbs items={[{ label: "Strefa wiedzy", href: "/strefa-wiedzy" }, { label: "Jak policzyć ROI z automatyzacji" }]} />
+        <Breadcrumbs
+          items={[
+            { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
+            { label: "Jak policzyć ROI z automatyzacji" },
+          ]}
+        />
         {/* Hero */}
         <section className="bg-gray-50 dark:bg-gray-900/50 py-20 lg:py-28">
           <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
@@ -44,16 +47,15 @@ export default function RoiAutomatyzacjiArticle() {
               Jak policzyć ROI z automatyzacji
             </h1>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-              Wiele firm intuicyjnie czuje, że automatyzacja
-              &bdquo;powinna się opłacać&rdquo;, ale nie potrafi tego
-              przełożyć na liczby. Efekt jest prosty: decyzja o wdrożeniu
-              jest odwlekana, bo nikt nie chce inwestować w coś, czego nie
-              potrafi obronić finansowo.
+              Wiele firm intuicyjnie czuje, że automatyzacja &bdquo;powinna się
+              opłacać&rdquo;, ale nie potrafi tego przełożyć na liczby. Efekt
+              jest prosty: decyzja o wdrożeniu jest odwlekana, bo nikt nie chce
+              inwestować w coś, czego nie potrafi obronić finansowo.
             </p>
             <p className="mt-4 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
               Problem w tym, że ROI z automatyzacji bardzo często da się
-              policzyć znacznie prościej, niż się wydaje — pod warunkiem,
-              że nie próbujesz budować idealnego modelu na start.
+              policzyć znacznie prościej, niż się wydaje — pod warunkiem, że nie
+              próbujesz budować idealnego modelu na start.
             </p>
           </div>
         </section>
@@ -65,11 +67,16 @@ export default function RoiAutomatyzacjiArticle() {
               Czym właściwie jest ROI z automatyzacji
             </h2>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              ROI, czyli zwrot z inwestycji, pokazuje, czy wdrożenie
-              przyniosło więcej korzyści niż kosztowało. W przypadku{" "}
-              <Link href="/automatyzacja-procesow-biznesowych" className="text-accent hover:underline">automatyzacji procesów biznesowych</Link>{" "}
-              nie chodzi tylko o &bdquo;zaoszczędzone
-              godziny&rdquo;. Trzeba patrzeć szerzej:
+              ROI, czyli zwrot z inwestycji, pokazuje, czy wdrożenie przyniosło
+              więcej korzyści niż kosztowało. W przypadku{" "}
+              <Link
+                href="/automatyzacja-procesow-biznesowych"
+                className="text-accent hover:underline"
+              >
+                automatyzacji procesów biznesowych
+              </Link>{" "}
+              nie chodzi tylko o &bdquo;zaoszczędzone godziny&rdquo;. Trzeba
+              patrzeć szerzej:
             </p>
             <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
               <li>oszczędność czasu,</li>
@@ -96,10 +103,9 @@ export default function RoiAutomatyzacjiArticle() {
               Dlaczego firmy źle liczą ROI z automatyzacji
             </h2>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              Najczęstszy błąd: liczą tylko najbardziej oczywiste
-              kliknięcia, a pomijają całą resztę kosztu procesu. Ktoś
-              mówi: &bdquo;To tylko 10 minut dziennie, nie ma co
-              liczyć&rdquo;. Tylko że te 10 minut:
+              Najczęstszy błąd: liczą tylko najbardziej oczywiste kliknięcia, a
+              pomijają całą resztę kosztu procesu. Ktoś mówi: &bdquo;To tylko 10
+              minut dziennie, nie ma co liczyć&rdquo;. Tylko że te 10 minut:
             </p>
             <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
               <li>powtarza się codziennie,</li>
@@ -139,17 +145,16 @@ export default function RoiAutomatyzacjiArticle() {
               Koszt utrzymania
             </h3>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              Abonamenty narzędzi, monitoring działania, poprawki przy
-              zmianach procesu, drobne aktualizacje lub rozwój.
+              Abonamenty narzędzi, monitoring działania, poprawki przy zmianach
+              procesu, drobne aktualizacje lub rozwój.
             </p>
 
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
               Koszt wewnętrznego zaangażowania
             </h3>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              Jeżeli po stronie firmy kilka osób musi poświęcić czas na
-              zebranie wymagań, testy i dopięcie wdrożenia, to też jest
-              koszt.
+              Jeżeli po stronie firmy kilka osób musi poświęcić czas na zebranie
+              wymagań, testy i dopięcie wdrożenia, to też jest koszt.
             </p>
           </div>
         </section>
@@ -165,37 +170,34 @@ export default function RoiAutomatyzacjiArticle() {
               1. Oszczędność czasu
             </h3>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              Najłatwiej policzyć. Jeżeli pracownik spędza 20 godzin
-              miesięcznie na ręcznych czynnościach, a koszt jednej godziny
-              wynosi 80 zł, to mówimy o 1600 zł miesięcznie
-              i 19&nbsp;200 zł rocznie.
+              Najłatwiej policzyć. Jeżeli pracownik spędza 20 godzin miesięcznie
+              na ręcznych czynnościach, a koszt jednej godziny wynosi 80 zł, to
+              mówimy o 1600 zł miesięcznie i 19&nbsp;200 zł rocznie.
             </p>
 
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
               2. Ograniczenie błędów
             </h3>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              Błąd w danych może kosztować dużo więcej niż jedno
-              kliknięcie: pomyłka w leadzie, źle przypisana sprawa, brak
-              follow-upu, błędny raport, niepotrzebna praca naprawcza.
+              Błąd w danych może kosztować dużo więcej niż jedno kliknięcie:
+              pomyłka w leadzie, źle przypisana sprawa, brak follow-upu, błędny
+              raport, niepotrzebna praca naprawcza.
             </p>
 
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
               3. Szybszy czas reakcji
             </h3>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              W procesach sprzedażowych czas reakcji ma realną wartość.
-              Lead obsłużony szybciej ma większą szansę na przejście
-              dalej.
+              W procesach sprzedażowych czas reakcji ma realną wartość. Lead
+              obsłużony szybciej ma większą szansę na przejście dalej.
             </p>
 
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
               4. Lepsze wykorzystanie zasobów ludzi
             </h3>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              Jeżeli handlowiec przestaje wykonywać ręczne,
-              niskowartościowe czynności, to ten czas może zostać
-              wykorzystany lepiej.
+              Jeżeli handlowiec przestaje wykonywać ręczne, niskowartościowe
+              czynności, to ten czas może zostać wykorzystany lepiej.
             </p>
 
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
@@ -219,21 +221,19 @@ export default function RoiAutomatyzacjiArticle() {
               Krok 1: policz czas ręcznej pracy
             </h3>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              Sprawdź ile razy proces dzieje się w tygodniu/miesiącu, ile
-              trwa średnio, ile osób jest zaangażowanych.
+              Sprawdź ile razy proces dzieje się w tygodniu/miesiącu, ile trwa
+              średnio, ile osób jest zaangażowanych.
             </p>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              Przykład: 15 minut na obsługę jednego zgłoszenia,
-              80 zgłoszeń miesięcznie = 1200 minut = 20 godzin
-              miesięcznie.
+              Przykład: 15 minut na obsługę jednego zgłoszenia, 80 zgłoszeń
+              miesięcznie = 1200 minut = 20 godzin miesięcznie.
             </p>
 
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
               Krok 2: przemnóż przez koszt godziny
             </h3>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              20 godzin x 90 zł = 1800 zł miesięcznie,
-              21&nbsp;600 zł rocznie.
+              20 godzin x 90 zł = 1800 zł miesięcznie, 21&nbsp;600 zł rocznie.
             </p>
 
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
@@ -248,16 +248,16 @@ export default function RoiAutomatyzacjiArticle() {
               Krok 4: określ realistyczny poziom poprawy
             </h3>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              Np. 60% redukcji ręcznej pracy, 50% mniej błędów, 30%
-              szybszy czas reakcji.
+              Np. 60% redukcji ręcznej pracy, 50% mniej błędów, 30% szybszy czas
+              reakcji.
             </p>
 
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
               Krok 5: porównaj to z kosztem wdrożenia
             </h3>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              Jeżeli wdrożenie kosztuje 7000 zł, a roczna korzyść netto
-              wynosi 18&nbsp;000 zł, to decyzja jest prosta.
+              Jeżeli wdrożenie kosztuje 7000 zł, a roczna korzyść netto wynosi
+              18&nbsp;000 zł, to decyzja jest prosta.
             </p>
           </div>
         </section>
@@ -267,8 +267,7 @@ export default function RoiAutomatyzacjiArticle() {
           <div className="max-w-3xl mx-auto px-6 lg:px-8">
             <div className="bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-8 text-center">
               <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                Chcesz policzyć ROI dla konkretnego procesu w Twojej
-                firmie?
+                Chcesz policzyć ROI dla konkretnego procesu w Twojej firmie?
               </h2>
               <p className="text-gray-600 dark:text-gray-400 mb-4">
                 Bezpłatna konsultacja, bez zobowiązań.
@@ -288,18 +287,20 @@ export default function RoiAutomatyzacjiArticle() {
             </h2>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
               Weźmy konkretny przykład z obszaru{" "}
-              <Link href="/automatyzacja-leadow" className="text-accent hover:underline">automatyzacji leadów</Link>.
-              Czas na jednego leada: 8 minut. 180 leadów miesięcznie =
-              24 godziny. Koszt godziny 85 zł = 2040 zł/mies =
-              24&nbsp;480 zł/rok.
+              <Link
+                href="/automatyzacja-leadow"
+                className="text-accent hover:underline"
+              >
+                automatyzacji leadów
+              </Link>
+              . Czas na jednego leada: 8 minut. 180 leadów miesięcznie = 24
+              godziny. Koszt godziny 85 zł = 2040 zł/mies = 24&nbsp;480 zł/rok.
             </p>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              70% redukcja = 17h mniej = 1428 zł/mies =
-              17&nbsp;136 zł/rok.
+              70% redukcja = 17h mniej = 1428 zł/mies = 17&nbsp;136 zł/rok.
             </p>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              Wdrożenie 6500 zł + utrzymanie 200 zł/mies =
-              8900 zł/rok.
+              Wdrożenie 6500 zł + utrzymanie 200 zł/mies = 8900 zł/rok.
             </p>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
               Korzyść netto: ponad 8200 zł w pierwszym roku.
@@ -315,13 +316,18 @@ export default function RoiAutomatyzacjiArticle() {
             </h2>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
               Drugi przykład dotyczy{" "}
-              <Link href="/automatyzacja-raportowania" className="text-accent hover:underline">automatyzacji raportowania</Link>.
-              2,5h na raport, 2 osoby, co tydzień = 20h/mies. Koszt
-              100 zł/h = 2000 zł/mies = 24&nbsp;000 zł/rok.
+              <Link
+                href="/automatyzacja-raportowania"
+                className="text-accent hover:underline"
+              >
+                automatyzacji raportowania
+              </Link>
+              . 2,5h na raport, 2 osoby, co tydzień = 20h/mies. Koszt 100 zł/h =
+              2000 zł/mies = 24&nbsp;000 zł/rok.
             </p>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              Po wdrożeniu: 4h/mies = 400 zł. Oszczędność:
-              19&nbsp;200 zł/rok. Wdrożenie: 9000 zł.
+              Po wdrożeniu: 4h/mies = 400 zł. Oszczędność: 19&nbsp;200 zł/rok.
+              Wdrożenie: 9000 zł.
             </p>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
               Więcej o tym w{" "}
@@ -343,21 +349,20 @@ export default function RoiAutomatyzacjiArticle() {
               Mini-case 1: Firma usługowa i chaos leadowy
             </h2>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              Firma usługowa z kilkuosobowym zespołem handlowym traci
-              leady, bo nikt nie ogarnia ręcznie, które zapytania zostały
-              obsłużone. Część leadów ginie w skrzynce mailowej, część
-              trafia do CRM z opóźnieniem, a follow-upy są nieregularne.
+              Firma usługowa z kilkuosobowym zespołem handlowym traci leady, bo
+              nikt nie ogarnia ręcznie, które zapytania zostały obsłużone. Część
+              leadów ginie w skrzynce mailowej, część trafia do CRM z
+              opóźnieniem, a follow-upy są nieregularne.
             </p>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              Po automatyzacji: leady trafiają do CRM natychmiast,
-              handlowiec dostaje powiadomienie, follow-up jest
-              zaplanowany automatycznie. Czas reakcji spadł z kilku
-              godzin do kilku minut.
+              Po automatyzacji: leady trafiają do CRM natychmiast, handlowiec
+              dostaje powiadomienie, follow-up jest zaplanowany automatycznie.
+              Czas reakcji spadł z kilku godzin do kilku minut.
             </p>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              ROI było dodatnie jeszcze zanim policzono miękkie
-              korzyści: mniej stresu, mniej pytań &bdquo;kto to
-              miał zrobić&rdquo;, lepsze nastroje w zespole.
+              ROI było dodatnie jeszcze zanim policzono miękkie korzyści: mniej
+              stresu, mniej pytań &bdquo;kto to miał zrobić&rdquo;, lepsze
+              nastroje w zespole.
             </p>
           </div>
         </section>
@@ -369,17 +374,15 @@ export default function RoiAutomatyzacjiArticle() {
               Mini-case 2: Zespół operacyjny i raporty z trzech źródeł
             </h2>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              Zespół operacyjny co tydzień zbiera dane z trzech
-              systemów, skleja je w Excelu i wysyła raport do zarządu.
-              Proces trwa kilka godzin, a dane i tak bywają
-              niespójne. Zaufanie do raportów jest niskie, a
+              Zespół operacyjny co tydzień zbiera dane z trzech systemów, skleja
+              je w Excelu i wysyła raport do zarządu. Proces trwa kilka godzin,
+              a dane i tak bywają niespójne. Zaufanie do raportów jest niskie, a
               decyzje opóźnione.
             </p>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              Po automatyzacji: dane są pobierane automatycznie,
-              raport generuje się sam, a zespół zajmuje się
-              analizą zamiast klejeniem danych. Czas przygotowania
-              spadł o 80%, a jakość danych wzrosła.
+              Po automatyzacji: dane są pobierane automatycznie, raport generuje
+              się sam, a zespół zajmuje się analizą zamiast klejeniem danych.
+              Czas przygotowania spadł o 80%, a jakość danych wzrosła.
             </p>
           </div>
         </section>
@@ -402,25 +405,24 @@ export default function RoiAutomatyzacjiArticle() {
               Nie licz tylko czasu kliknięcia
             </h3>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              Uwzględnij: poprawki, pytania między działami,
-              opóźnienia, koszt utraconych szans, koszt chaosu
-              informacyjnego.
+              Uwzględnij: poprawki, pytania między działami, opóźnienia, koszt
+              utraconych szans, koszt chaosu informacyjnego.
             </p>
 
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
               Nie zakładaj 100% oszczędności
             </h3>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              Automatyzacja ogranicza ręczną pracę, ale nie zawsze
-              eliminuje ją do zera.
+              Automatyzacja ogranicza ręczną pracę, ale nie zawsze eliminuje ją
+              do zera.
             </p>
 
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
               Nie ignoruj skali
             </h3>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              Proces, który dziś wydaje się &bdquo;mały&rdquo;, po
-              wzroście firmy może być już bardzo kosztowny.
+              Proces, który dziś wydaje się &bdquo;mały&rdquo;, po wzroście
+              firmy może być już bardzo kosztowny.
             </p>
           </div>
         </section>
@@ -452,8 +454,8 @@ export default function RoiAutomatyzacjiArticle() {
                 className="text-accent hover:underline"
               >
                 Integracje API w firmie — kiedy warto
-              </Link>
-              {" "}oraz{" "}
+              </Link>{" "}
+              oraz{" "}
               <Link
                 href="/strefa-wiedzy/jak-zautomatyzowac-raportowanie-w-firmie"
                 className="text-accent hover:underline"
@@ -474,8 +476,7 @@ export default function RoiAutomatyzacjiArticle() {
             <div className="space-y-4">
               <details className="group rounded-2xl border border-gray-200 dark:border-gray-700">
                 <summary className="flex cursor-pointer items-center justify-between p-6 text-gray-900 dark:text-white font-medium">
-                  Czy ROI z automatyzacji da się policzyć bez idealnych
-                  danych?
+                  Czy ROI z automatyzacji da się policzyć bez idealnych danych?
                   <span className="ml-4 shrink-0 text-gray-400 transition-transform group-open:rotate-45">
                     <svg
                       width="20"
@@ -491,8 +492,8 @@ export default function RoiAutomatyzacjiArticle() {
                   </span>
                 </summary>
                 <p className="px-6 pb-6 text-gray-600 dark:text-gray-400">
-                  Tak. W większości przypadków wystarczy uczciwe
-                  oszacowanie czasu, kosztu pracy i skali procesu.
+                  Tak. W większości przypadków wystarczy uczciwe oszacowanie
+                  czasu, kosztu pracy i skali procesu.
                 </p>
               </details>
 
@@ -514,8 +515,8 @@ export default function RoiAutomatyzacjiArticle() {
                   </span>
                 </summary>
                 <p className="px-6 pb-6 text-gray-600 dark:text-gray-400">
-                  Nie. Warto uwzględnić też błędy, opóźnienia i wpływ
-                  na wykorzystanie leadów.
+                  Nie. Warto uwzględnić też błędy, opóźnienia i wpływ na
+                  wykorzystanie leadów.
                 </p>
               </details>
 
@@ -537,8 +538,8 @@ export default function RoiAutomatyzacjiArticle() {
                   </span>
                 </summary>
                 <p className="px-6 pb-6 text-gray-600 dark:text-gray-400">
-                  Sprawdź, czy nie daje dużej poprawy jakości,
-                  przewidywalności albo czasu reakcji.
+                  Sprawdź, czy nie daje dużej poprawy jakości, przewidywalności
+                  albo czasu reakcji.
                 </p>
               </details>
 
@@ -582,8 +583,8 @@ export default function RoiAutomatyzacjiArticle() {
                   </span>
                 </summary>
                 <p className="px-6 pb-6 text-gray-600 dark:text-gray-400">
-                  Tak. Często właśnie małe, dobrze trafione wdrożenia
-                  dają najlepszy stosunek kosztu do efektu.
+                  Tak. Często właśnie małe, dobrze trafione wdrożenia dają
+                  najlepszy stosunek kosztu do efektu.
                 </p>
               </details>
             </div>
@@ -597,15 +598,13 @@ export default function RoiAutomatyzacjiArticle() {
               Podsumowanie
             </h2>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              ROI z automatyzacji nie musi być skomplikowany. Wystarczy
-              policzyć koszt ręcznej pracy, koszt błędów i opóźnień,
-              oszacować realistyczną poprawę i porównać to z kosztem
-              wdrożenia.
+              ROI z automatyzacji nie musi być skomplikowany. Wystarczy policzyć
+              koszt ręcznej pracy, koszt błędów i opóźnień, oszacować
+              realistyczną poprawę i porównać to z kosztem wdrożenia.
             </p>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              Największy błąd to w ogóle nie liczyć i zostawiać procesy
-              ręczne tylko dlatego, że &bdquo;tak się zawsze
-              robiło&rdquo;.
+              Największy błąd to w ogóle nie liczyć i zostawiać procesy ręczne
+              tylko dlatego, że &bdquo;tak się zawsze robiło&rdquo;.
             </p>
           </div>
         </section>
@@ -615,12 +614,11 @@ export default function RoiAutomatyzacjiArticle() {
           <div className="max-w-3xl mx-auto px-6 lg:px-8">
             <div className="bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-8 text-center">
               <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                Chcesz policzyć ROI dla konkretnego procesu w Twojej
-                firmie, a nie w teorii?
+                Chcesz policzyć ROI dla konkretnego procesu w Twojej firmie, a
+                nie w teorii?
               </h2>
               <p className="text-gray-600 dark:text-gray-400 mb-4">
-                Zobacz usługę automatyzacji i porównaj z artykułami
-                poniżej.
+                Zobacz usługę automatyzacji i porównaj z artykułami poniżej.
               </p>
               <Link href="/#kontakt" className="btn-primary inline-block">
                 Umów bezpłatną konsultację
@@ -730,6 +728,59 @@ export default function RoiAutomatyzacjiArticle() {
               name: "Fluxlab",
               url: "https://fluxlab.pl",
             },
+          }),
+        }}
+      />
+
+      {/* FAQPage Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "Czy ROI z automatyzacji da się policzyć bez idealnych danych?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Tak. W większości przypadków wystarczy uczciwe oszacowanie czasu, kosztu pracy i skali procesu.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Czy trzeba liczyć tylko twarde oszczędności?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Nie. Warto uwzględnić też błędy, opóźnienia i wpływ na wykorzystanie leadów.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Co jeśli proces nie daje dużej oszczędności czasu?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Sprawdź, czy nie daje dużej poprawy jakości, przewidywalności albo czasu reakcji.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Jaki proces najłatwiej policzyć?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Zwykle raportowanie, leady, CRM i zadania operacyjne.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Czy małe wdrożenia też mają sens ekonomiczny?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Tak. Często właśnie małe, dobrze trafione wdrożenia dają najlepszy stosunek kosztu do efektu.",
+                },
+              },
+            ],
           }),
         }}
       />

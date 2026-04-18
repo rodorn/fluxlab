@@ -67,7 +67,10 @@ const faqs = [
 ];
 
 const relatedServices = [
-  { href: "/automatyzacja-procesow-biznesowych", label: "Automatyzacja procesów biznesowych" },
+  {
+    href: "/automatyzacja-procesow-biznesowych",
+    label: "Automatyzacja procesów biznesowych",
+  },
   { href: "/integracje-api", label: "Integracje API" },
 ];
 
@@ -112,8 +115,19 @@ export default function AutomatyzacjaAI() {
         <section className="relative py-16 lg:py-24 overflow-hidden">
           <div className="absolute inset-0 -z-10">
             <div className="absolute inset-0 bg-sky-50 dark:hidden" />
-            <img src="/photos/Flow.avif" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover opacity-[0.08] dark:hidden" style={{ filter: "invert(1)" }} />
-            <img src="/photos/Flow.avif" alt="" aria-hidden="true" className="w-full h-full object-cover hidden dark:block" />
+            <img
+              src="/photos/Flow.avif"
+              alt=""
+              aria-hidden="true"
+              className="absolute inset-0 w-full h-full object-cover opacity-[0.08] dark:hidden"
+              style={{ filter: "invert(1)" }}
+            />
+            <img
+              src="/photos/Flow.avif"
+              alt=""
+              aria-hidden="true"
+              className="w-full h-full object-cover hidden dark:block"
+            />
             <div className="absolute inset-0 hidden dark:block bg-gray-950/90" />
             <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-white to-transparent dark:hidden" />
             <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white to-transparent dark:hidden" />
@@ -129,10 +143,10 @@ export default function AutomatyzacjaAI() {
                 </h1>
                 <p className="text-lg text-gray-600 dark:text-gray-300">
                   Automatyzacja AI pozwala rozszerzyć zwykłe workflow o analizę
-                  treści, klasyfikację danych, generowanie odpowiedzi
-                  i podejmowanie prostych decyzji według ustalonych reguł. Nie
-                  sprzedajemy modnego hasła. Wdrażamy AI tam, gdzie realnie skraca
-                  czas pracy i poprawia jakość procesu.
+                  treści, klasyfikację danych, generowanie odpowiedzi i
+                  podejmowanie prostych decyzji według ustalonych reguł. Nie
+                  sprzedajemy modnego hasła. Wdrażamy AI tam, gdzie realnie
+                  skraca czas pracy i poprawia jakość procesu.
                 </p>
               </div>
               <div className="relative mx-auto lg:mx-0 w-full max-w-md">
@@ -206,8 +220,8 @@ export default function AutomatyzacjaAI() {
                 Dla kogo
               </h2>
               <p className="text-gray-600 dark:text-gray-400">
-                Dla firm, które przetwarzają dużo tekstu, zapytań lub danych
-                i chcą przyspieszyć ich analizę bez zwiększania zespołu.
+                Dla firm, które przetwarzają dużo tekstu, zapytań lub danych i
+                chcą przyspieszyć ich analizę bez zwiększania zespołu.
                 Szczególnie dobrze sprawdza się w obsłudze klienta, sprzedaży,
                 marketingu i operacjach.
               </p>
@@ -223,10 +237,10 @@ export default function AutomatyzacjaAI() {
                 Ile to kosztuje
               </h2>
               <p className="text-gray-600 dark:text-gray-400">
-                Koszt zależy od złożoności modelu, liczby procesów do objęcia
-                i wymaganej jakości wyników. Proste klasyfikacje i streszczenia
-                mają niski próg wejścia. Bardziej zaawansowane wdrożenia
-                z logiką biznesową, walidacją i integracjami wymagają
+                Koszt zależy od złożoności modelu, liczby procesów do objęcia i
+                wymaganej jakości wyników. Proste klasyfikacje i streszczenia
+                mają niski próg wejścia. Bardziej zaawansowane wdrożenia z
+                logiką biznesową, walidacją i integracjami wymagają
                 indywidualnej wyceny.
               </p>
             </div>
@@ -281,7 +295,10 @@ export default function AutomatyzacjaAI() {
               <p className="text-gray-500 dark:text-gray-400 mb-8">
                 Pokaż nam proces, a ocenimy, czy AI da tu wartość i jak szybko.
               </p>
-              <Link href="/#kontakt" className="btn-primary px-8 py-3.5 text-base">
+              <Link
+                href="/#kontakt"
+                className="btn-primary px-8 py-3.5 text-base"
+              >
                 Umów bezpłatną konsultację
               </Link>
             </div>
@@ -334,6 +351,44 @@ export default function AutomatyzacjaAI() {
           </div>
         </section>
       </main>
+
+      {/* Service Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: "Automatyzacja AI",
+            description:
+              "Wdrażamy automatyzację AI w firmie: klasyfikacja danych, streszczenia, analiza treści, wsparcie obsługi i inteligentne workflow połączone z CRM i innymi systemami.",
+            provider: { "@id": "https://fluxlab.pl/#organization" },
+            areaServed: { "@type": "Country", name: "Polska" },
+            serviceType: "Automatyzacja procesów biznesowych",
+            url: "https://fluxlab.pl/automatyzacja-ai",
+          }),
+        }}
+      />
+
+      {/* FAQPage Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map((faq) => ({
+              "@type": "Question",
+              name: faq.question,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: faq.answer,
+              },
+            })),
+          }),
+        }}
+      />
+
       <Footer />
     </>
   );

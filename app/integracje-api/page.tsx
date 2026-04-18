@@ -67,13 +67,22 @@ const faq = [
 ];
 
 const relatedServices = [
-  { href: "/automatyzacja-procesow-biznesowych", label: "Automatyzacja procesów biznesowych" },
+  {
+    href: "/automatyzacja-procesow-biznesowych",
+    label: "Automatyzacja procesów biznesowych",
+  },
   { href: "/automatyzacja-ai", label: "Automatyzacja AI" },
 ];
 
 const relatedArticles = [
-  { href: "/strefa-wiedzy/integracje-api-w-firmie-kiedy-warto", label: "Integracje API w firmie — kiedy warto?" },
-  { href: "/strefa-wiedzy/jak-polaczyc-crm-z-innymi-systemami", label: "Jak połączyć CRM z innymi systemami?" },
+  {
+    href: "/strefa-wiedzy/integracje-api-w-firmie-kiedy-warto",
+    label: "Integracje API w firmie — kiedy warto?",
+  },
+  {
+    href: "/strefa-wiedzy/jak-polaczyc-crm-z-innymi-systemami",
+    label: "Jak połączyć CRM z innymi systemami?",
+  },
 ];
 
 export default function IntegracjeApi() {
@@ -87,8 +96,19 @@ export default function IntegracjeApi() {
         <section className="relative py-16 lg:py-24 overflow-hidden">
           <div className="absolute inset-0 -z-10">
             <div className="absolute inset-0 bg-sky-50 dark:hidden" />
-            <img src="/photos/Flow.avif" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover opacity-[0.08] dark:hidden" style={{ filter: "invert(1)" }} />
-            <img src="/photos/Flow.avif" alt="" aria-hidden="true" className="w-full h-full object-cover hidden dark:block" />
+            <img
+              src="/photos/Flow.avif"
+              alt=""
+              aria-hidden="true"
+              className="absolute inset-0 w-full h-full object-cover opacity-[0.08] dark:hidden"
+              style={{ filter: "invert(1)" }}
+            />
+            <img
+              src="/photos/Flow.avif"
+              alt=""
+              aria-hidden="true"
+              className="w-full h-full object-cover hidden dark:block"
+            />
             <div className="absolute inset-0 hidden dark:block bg-gray-950/90" />
             <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-white to-transparent dark:hidden" />
             <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white to-transparent dark:hidden" />
@@ -103,10 +123,11 @@ export default function IntegracjeApi() {
                   Integracje API
                 </h1>
                 <p className="text-lg text-gray-600 dark:text-gray-300">
-                  Firmy tracą czas i pieniądze, gdy ich narzędzia nie wymieniają danych
-                  automatycznie. Projektujemy integracje API, które łączą systemy używane
-                  w sprzedaży, operacjach i raportowaniu, dzięki czemu informacje trafiają
-                  tam, gdzie trzeba, bez ręcznego przepisywania.
+                  Firmy tracą czas i pieniądze, gdy ich narzędzia nie wymieniają
+                  danych automatycznie. Projektujemy integracje API, które łączą
+                  systemy używane w sprzedaży, operacjach i raportowaniu, dzięki
+                  czemu informacje trafiają tam, gdzie trzeba, bez ręcznego
+                  przepisywania.
                 </p>
               </div>
               <div className="relative mx-auto lg:mx-0 w-full max-w-md">
@@ -133,11 +154,12 @@ export default function IntegracjeApi() {
                 Po co firmie integracje API
               </h2>
               <p className="text-gray-500 dark:text-gray-400 text-lg leading-relaxed">
-                Gdy CRM, formularze, ERP, systemy mailingowe, arkusze i inne narzędzia
-                działają osobno, ludzie zaczynają robić za łącznik między nimi. Integracje
-                API likwidują ten problem. Umożliwiają automatyczne przesyłanie danych,
-                aktualizację rekordów, synchronizację statusów i uruchamianie kolejnych
-                akcji w innych systemach.
+                Gdy CRM, formularze, ERP, systemy mailingowe, arkusze i inne
+                narzędzia działają osobno, ludzie zaczynają robić za łącznik
+                między nimi. Integracje API likwidują ten problem. Umożliwiają
+                automatyczne przesyłanie danych, aktualizację rekordów,
+                synchronizację statusów i uruchamianie kolejnych akcji w innych
+                systemach.
               </p>
             </div>
           </div>
@@ -182,9 +204,10 @@ export default function IntegracjeApi() {
                   Dla kogo
                 </h2>
                 <p className="text-gray-500 dark:text-gray-400 leading-relaxed">
-                  Dla firm, które korzystają z kilku narzędzi jednocześnie i czują, że dane
-                  są rozproszone, nieaktualne albo wymagają ręcznego przenoszenia. To
-                  szczególnie ważne w sprzedaży, operacjach, marketingu i raportowaniu.
+                  Dla firm, które korzystają z kilku narzędzi jednocześnie i
+                  czują, że dane są rozproszone, nieaktualne albo wymagają
+                  ręcznego przenoszenia. To szczególnie ważne w sprzedaży,
+                  operacjach, marketingu i raportowaniu.
                 </p>
               </div>
               <div>
@@ -192,9 +215,10 @@ export default function IntegracjeApi() {
                   Ile to kosztuje
                 </h2>
                 <p className="text-gray-500 dark:text-gray-400 leading-relaxed">
-                  Koszt integracji API zależy od liczby systemów, jakości dokumentacji,
-                  logiki biznesowej i liczby wyjątków do obsłużenia. Prostsze integracje są
-                  relatywnie szybkie. Integracje niestandardowe, wieloetapowe albo krytyczne
+                  Koszt integracji API zależy od liczby systemów, jakości
+                  dokumentacji, logiki biznesowej i liczby wyjątków do
+                  obsłużenia. Prostsze integracje są relatywnie szybkie.
+                  Integracje niestandardowe, wieloetapowe albo krytyczne
                   biznesowo wymagają szerszej analizy i wyceny.
                 </p>
               </div>
@@ -222,7 +246,12 @@ export default function IntegracjeApi() {
                         viewBox="0 0 20 20"
                         fill="none"
                       >
-                        <path d="M10 4v12M4 10h12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                        <path
+                          d="M10 4v12M4 10h12"
+                          stroke="currentColor"
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
+                        />
                       </svg>
                     </summary>
                     <div className="px-6 pb-5 text-sm text-gray-500 dark:text-gray-400">
@@ -243,9 +272,13 @@ export default function IntegracjeApi() {
                 Masz kilka systemów, które nie gadają ze sobą?
               </h2>
               <p className="text-gray-500 dark:text-gray-400 mb-8">
-                Pokaż nam stack, a zaproponujemy sensowną architekturę integracji.
+                Pokaż nam stack, a zaproponujemy sensowną architekturę
+                integracji.
               </p>
-              <Link href="/#kontakt" className="btn-primary px-8 py-3.5 text-base">
+              <Link
+                href="/#kontakt"
+                className="btn-primary px-8 py-3.5 text-base"
+              >
                 Porozmawiajmy
               </Link>
             </div>
@@ -295,8 +328,45 @@ export default function IntegracjeApi() {
             </div>
           </div>
         </section>
-
       </main>
+
+      {/* Service Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: "Integracje API",
+            description:
+              "Tworzymy integracje API między CRM, ERP, formularzami, bazami danych i narzędziami operacyjnymi. Łączymy systemy tak, żeby dane przepływały automatycznie.",
+            provider: { "@id": "https://fluxlab.pl/#organization" },
+            areaServed: { "@type": "Country", name: "Polska" },
+            serviceType: "Automatyzacja procesów biznesowych",
+            url: "https://fluxlab.pl/integracje-api",
+          }),
+        }}
+      />
+
+      {/* FAQPage Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faq.map((item) => ({
+              "@type": "Question",
+              name: item.question,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: item.answer,
+              },
+            })),
+          }),
+        }}
+      />
+
       <Footer />
     </>
   );

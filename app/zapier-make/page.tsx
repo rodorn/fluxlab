@@ -7,11 +7,13 @@ import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
-  title: "Zapier vs Make (Integromat) — porównanie i wdrożenie automatyzacji | Fluxlab",
+  title:
+    "Zapier vs Make (Integromat) — porównanie i wdrożenie automatyzacji | Fluxlab",
   description:
     "Zapier czy Make? Porównujemy platformy automatyzacji, pomagamy wybrać najlepsze narzędzie i wdrażamy workflow dopasowane do potrzeb Twojej firmy.",
   openGraph: {
-    title: "Zapier vs Make (Integromat) — porównanie i wdrożenie automatyzacji | Fluxlab",
+    title:
+      "Zapier vs Make (Integromat) — porównanie i wdrożenie automatyzacji | Fluxlab",
     description:
       "Zapier czy Make? Porównujemy platformy automatyzacji, pomagamy wybrać najlepsze narzędzie i wdrażamy workflow dopasowane do potrzeb Twojej firmy.",
     locale: "pl_PL",
@@ -67,7 +69,10 @@ const faq = [
 ];
 
 const relatedServices = [
-  { href: "/automatyzacja-procesow-biznesowych", label: "Automatyzacja procesów biznesowych" },
+  {
+    href: "/automatyzacja-procesow-biznesowych",
+    label: "Automatyzacja procesów biznesowych",
+  },
   { href: "/n8n", label: "n8n — self-hosted automatyzacja" },
 ];
 
@@ -82,8 +87,19 @@ export default function ZapierMake() {
         <section className="relative py-16 lg:py-24 overflow-hidden">
           <div className="absolute inset-0 -z-10">
             <div className="absolute inset-0 bg-sky-50 dark:hidden" />
-            <img src="/photos/Flow.avif" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover opacity-[0.08] dark:hidden" style={{ filter: "invert(1)" }} />
-            <img src="/photos/Flow.avif" alt="" aria-hidden="true" className="w-full h-full object-cover hidden dark:block" />
+            <img
+              src="/photos/Flow.avif"
+              alt=""
+              aria-hidden="true"
+              className="absolute inset-0 w-full h-full object-cover opacity-[0.08] dark:hidden"
+              style={{ filter: "invert(1)" }}
+            />
+            <img
+              src="/photos/Flow.avif"
+              alt=""
+              aria-hidden="true"
+              className="w-full h-full object-cover hidden dark:block"
+            />
             <div className="absolute inset-0 hidden dark:block bg-gray-950/90" />
             <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-white to-transparent dark:hidden" />
             <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white to-transparent dark:hidden" />
@@ -98,15 +114,22 @@ export default function ZapierMake() {
                   Zapier vs Make
                 </h1>
                 <p className="text-lg text-gray-600 dark:text-gray-300">
-                  Dwie najpopularniejsze platformy automatyzacji no-code na rynku.
-                  Pomagamy wybrać właściwe narzędzie, zaprojektować workflow
-                  i wdrożyć automatyzacje, które realnie oszczędzają czas i eliminują
-                  ręczną pracę.
+                  Dwie najpopularniejsze platformy automatyzacji no-code na
+                  rynku. Pomagamy wybrać właściwe narzędzie, zaprojektować
+                  workflow i wdrożyć automatyzacje, które realnie oszczędzają
+                  czas i eliminują ręczną pracę.
                 </p>
               </div>
               <div className="relative mx-auto lg:mx-0 w-full max-w-md">
                 <div className="rounded-2xl overflow-hidden shadow-xl shadow-gray-200/50 dark:shadow-black/30 border border-gray-100 dark:border-gray-800">
-                  <Image src="/photos/electronics.jpg" alt="Zapier vs Make — automatyzacja workflow" width={480} height={320} className="w-full h-auto object-cover" priority />
+                  <Image
+                    src="/photos/electronics.jpg"
+                    alt="Zapier vs Make — automatyzacja workflow"
+                    width={480}
+                    height={320}
+                    className="w-full h-auto object-cover"
+                    priority
+                  />
                 </div>
               </div>
             </div>
@@ -122,23 +145,26 @@ export default function ZapierMake() {
               </h2>
               <div className="space-y-4 text-gray-500 dark:text-gray-400 text-lg leading-relaxed">
                 <p>
-                  Zapier i Make (dawniej Integromat) to platformy no-code, które pozwalają
-                  łączyć aplikacje i automatyzować przepływy danych bez pisania kodu.
-                  Obie działają w chmurze i obsługują tysiące integracji — od CRM-ów,
-                  przez narzędzia marketingowe, po systemy finansowe i bazy danych.
+                  Zapier i Make (dawniej Integromat) to platformy no-code, które
+                  pozwalają łączyć aplikacje i automatyzować przepływy danych
+                  bez pisania kodu. Obie działają w chmurze i obsługują tysiące
+                  integracji — od CRM-ów, przez narzędzia marketingowe, po
+                  systemy finansowe i bazy danych.
                 </p>
                 <p>
-                  Różnią się podejściem. Zapier stawia na prostotę: liniowe przepływy
-                  (trigger + action), ogromną bazę gotowych konektorów i szybkość
-                  konfiguracji. Make daje wizualny builder scenariuszy z pełną kontrolą
-                  nad logiką — rozgałęzienia, pętle, iteratory, routery, obsługa błędów
-                  i transformacje danych na każdym kroku.
+                  Różnią się podejściem. Zapier stawia na prostotę: liniowe
+                  przepływy (trigger + action), ogromną bazę gotowych konektorów
+                  i szybkość konfiguracji. Make daje wizualny builder
+                  scenariuszy z pełną kontrolą nad logiką — rozgałęzienia,
+                  pętle, iteratory, routery, obsługa błędów i transformacje
+                  danych na każdym kroku.
                 </p>
                 <p>
-                  W Fluxlab pracujemy z obiema platformami na co dzień. Dobieramy
-                  narzędzie do problemu, a nie odwrotnie. Czasem wystarczy prosty Zap,
-                  czasem trzeba zbudować wieloetapowy scenariusz w Make, a czasem
-                  najlepsza odpowiedź to połączenie obu.
+                  W Fluxlab pracujemy z obiema platformami na co dzień.
+                  Dobieramy narzędzie do problemu, a nie odwrotnie. Czasem
+                  wystarczy prosty Zap, czasem trzeba zbudować wieloetapowy
+                  scenariusz w Make, a czasem najlepsza odpowiedź to połączenie
+                  obu.
                 </p>
               </div>
             </div>
@@ -187,10 +213,11 @@ export default function ZapierMake() {
                   Dla kogo
                 </h2>
                 <p className="text-gray-500 dark:text-gray-400 leading-relaxed">
-                  Dla firm, które chcą automatyzować powtarzalne zadania bez budowania
-                  własnego oprogramowania. Szczególnie dla zespołów sprzedaży, marketingu
-                  i operacji, które codziennie przenoszą dane między narzędziami, wysyłają
-                  powiadomienia ręcznie albo kopiują informacje z systemu do systemu.
+                  Dla firm, które chcą automatyzować powtarzalne zadania bez
+                  budowania własnego oprogramowania. Szczególnie dla zespołów
+                  sprzedaży, marketingu i operacji, które codziennie przenoszą
+                  dane między narzędziami, wysyłają powiadomienia ręcznie albo
+                  kopiują informacje z systemu do systemu.
                 </p>
               </div>
               <div>
@@ -198,10 +225,11 @@ export default function ZapierMake() {
                   Ile to kosztuje
                 </h2>
                 <p className="text-gray-500 dark:text-gray-400 leading-relaxed">
-                  Koszt wdrożenia zależy od liczby automatyzacji, złożoności logiki
-                  i integrowanych systemów. Do tego dochodzą koszty subskrypcji platformy.
-                  Pomagamy dobrać plan i architekturę tak, żeby nie przepłacać za
-                  operacje i utrzymać koszty pod kontrolą w miarę skalowania.
+                  Koszt wdrożenia zależy od liczby automatyzacji, złożoności
+                  logiki i integrowanych systemów. Do tego dochodzą koszty
+                  subskrypcji platformy. Pomagamy dobrać plan i architekturę
+                  tak, żeby nie przepłacać za operacje i utrzymać koszty pod
+                  kontrolą w miarę skalowania.
                 </p>
               </div>
             </div>
@@ -228,7 +256,12 @@ export default function ZapierMake() {
                         viewBox="0 0 20 20"
                         fill="none"
                       >
-                        <path d="M10 4v12M4 10h12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                        <path
+                          d="M10 4v12M4 10h12"
+                          stroke="currentColor"
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
+                        />
                       </svg>
                     </summary>
                     <div className="px-6 pb-5 text-sm text-gray-500 dark:text-gray-400">
@@ -249,9 +282,13 @@ export default function ZapierMake() {
                 Nie wiesz, czy wybrać Zapier czy Make?
               </h2>
               <p className="text-gray-500 dark:text-gray-400 mb-8">
-                Opowiedz nam o swoim procesie, a dobierzemy narzędzie i zaprojektujemy workflow.
+                Opowiedz nam o swoim procesie, a dobierzemy narzędzie i
+                zaprojektujemy workflow.
               </p>
-              <Link href="/#kontakt" className="btn-primary px-8 py-3.5 text-base">
+              <Link
+                href="/#kontakt"
+                className="btn-primary px-8 py-3.5 text-base"
+              >
                 Porozmawiajmy
               </Link>
             </div>
@@ -280,8 +317,45 @@ export default function ZapierMake() {
             </div>
           </div>
         </section>
-
       </main>
+
+      {/* Service Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: "Zapier vs Make — wdrożenie automatyzacji",
+            description:
+              "Zapier czy Make? Porównujemy platformy automatyzacji, pomagamy wybrać najlepsze narzędzie i wdrażamy workflow dopasowane do potrzeb Twojej firmy.",
+            provider: { "@id": "https://fluxlab.pl/#organization" },
+            areaServed: { "@type": "Country", name: "Polska" },
+            serviceType: "Automatyzacja procesów biznesowych",
+            url: "https://fluxlab.pl/zapier-make",
+          }),
+        }}
+      />
+
+      {/* FAQPage Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faq.map((item) => ({
+              "@type": "Question",
+              name: item.question,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: item.answer,
+              },
+            })),
+          }),
+        }}
+      />
+
       <Footer />
     </>
   );

@@ -5,8 +5,7 @@ import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
-  title:
-    "Integracje API w firmie — kiedy warto, a kiedy to przesada | Fluxlab",
+  title: "Integracje API w firmie — kiedy warto, a kiedy to przesada | Fluxlab",
   description:
     "Kiedy integracje API mają sens w firmie, jakie problemy rozwiązują i kiedy lepiej wybrać prostsze podejście. Przykłady, błędy i praktyczne scenariusze.",
   openGraph: {
@@ -35,7 +34,12 @@ export default function IntegracjeApiArticle() {
     <>
       <Header />
       <main className="pt-16">
-        <Breadcrumbs items={[{ label: "Strefa wiedzy", href: "/strefa-wiedzy" }, { label: "Integracje API w firmie — kiedy warto?" }]} />
+        <Breadcrumbs
+          items={[
+            { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
+            { label: "Integracje API w firmie — kiedy warto?" },
+          ]}
+        />
         {/* Hero */}
         <section className="bg-gray-50 dark:bg-gray-900/50 py-20 lg:py-28">
           <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
@@ -48,9 +52,9 @@ export default function IntegracjeApiArticle() {
               biznesowy. W praktyce chodzi o jedno: czy dane między systemami
               mają przepływać automatycznie, czy dalej mają być przenoszone
               ręcznie przez ludzi. Jeżeli firma używa kilku narzędzi
-              jednocześnie i każde z nich żyje własnym życiem, to integracje
-              API przestają być &bdquo;opcją dla działu IT&rdquo;. Zaczynają
-              być elementem sprawnej operacji.
+              jednocześnie i każde z nich żyje własnym życiem, to integracje API
+              przestają być &bdquo;opcją dla działu IT&rdquo;. Zaczynają być
+              elementem sprawnej operacji.
             </p>
           </div>
         </section>
@@ -62,7 +66,13 @@ export default function IntegracjeApiArticle() {
               Czym są integracje API
             </h2>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              API to sposób, w jaki systemy komunikują się ze sobą. Dzięki <Link href="/integracje-api" className="text-accent hover:underline">integracjom API</Link>{" "}
+              API to sposób, w jaki systemy komunikują się ze sobą. Dzięki{" "}
+              <Link
+                href="/integracje-api"
+                className="text-accent hover:underline"
+              >
+                integracjom API
+              </Link>{" "}
               CRM, formularz, ERP, narzędzie mailingowe, baza danych czy system
               raportowy mogą wymieniać informacje bez ręcznego udziału
               człowieka.
@@ -74,8 +84,8 @@ export default function IntegracjeApiArticle() {
               <li>dane są pobierane i wysyłane automatycznie,</li>
               <li>można synchronizować rekordy, statusy i pola,</li>
               <li>
-                jedno zdarzenie w systemie może uruchamiać kolejne akcje
-                w innym,
+                jedno zdarzenie w systemie może uruchamiać kolejne akcje w
+                innym,
               </li>
               <li>
                 firma przestaje polegać na kopiowaniu danych z miejsca do
@@ -103,8 +113,15 @@ export default function IntegracjeApiArticle() {
             <p className="text-gray-600 dark:text-gray-400 mb-4">
               Najczęstszy przypadek: firma ma CRM, formularze, arkusze,
               narzędzie mailingowe, system fakturowy i raportowanie. Każdy
-              działa osobno, ludzie sklejają proces ręcznie. Dobra <Link href="/automatyzacja-procesow-biznesowych" className="text-accent hover:underline">automatyzacja procesów biznesowych</Link>{" "}
-              zaczyna się właśnie od spięcia tych systemów, a API jest do tego najlepszym narzędziem.
+              działa osobno, ludzie sklejają proces ręcznie. Dobra{" "}
+              <Link
+                href="/automatyzacja-procesow-biznesowych"
+                className="text-accent hover:underline"
+              >
+                automatyzacja procesów biznesowych
+              </Link>{" "}
+              zaczyna się właśnie od spięcia tych systemów, a API jest do tego
+              najlepszym narzędziem.
             </p>
 
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
@@ -121,8 +138,8 @@ export default function IntegracjeApiArticle() {
               3. Gdy liczy się aktualność danych
             </h3>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              Lead ma być od razu w CRM. Status ma się zmienić szybko. Raport
-              ma bazować na aktualnych danych.
+              Lead ma być od razu w CRM. Status ma się zmienić szybko. Raport ma
+              bazować na aktualnych danych.
             </p>
 
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
@@ -188,7 +205,15 @@ export default function IntegracjeApiArticle() {
             </h3>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
               Nowe zapytanie trafia automatycznie do CRM, jest oznaczane
-              źródłem, przypisywane do handlowca i wyzwala zadanie follow-up. To klasyczny scenariusz <Link href="/automatyzacja-crm" className="text-accent hover:underline">automatyzacji CRM</Link>.
+              źródłem, przypisywane do handlowca i wyzwala zadanie follow-up. To
+              klasyczny scenariusz{" "}
+              <Link
+                href="/automatyzacja-crm"
+                className="text-accent hover:underline"
+              >
+                automatyzacji CRM
+              </Link>
+              .
             </p>
 
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
@@ -218,8 +243,8 @@ export default function IntegracjeApiArticle() {
               Obsługa zgłoszeń + powiadomienia + klasyfikacja
             </h3>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              Zgłoszenie trafia do odpowiedniego zespołu, jest kategoryzowane
-              i uruchamia kolejne akcje automatycznie.
+              Zgłoszenie trafia do odpowiedniego zespołu, jest kategoryzowane i
+              uruchamia kolejne akcje automatycznie.
             </p>
           </div>
         </section>
@@ -281,8 +306,8 @@ export default function IntegracjeApiArticle() {
               Integracja bez walidacji
             </h3>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              Jeżeli integracja nie sprawdza, czy dane są kompletne, poprawne
-              i nieduplikowane, to nie rozwiązuje problemu — tylko szybciej
+              Jeżeli integracja nie sprawdza, czy dane są kompletne, poprawne i
+              nieduplikowane, to nie rozwiązuje problemu — tylko szybciej
               rozprowadza błędy.
             </p>
 
@@ -325,10 +350,10 @@ export default function IntegracjeApiArticle() {
               Mini-case 2: CRM, raportowanie i zespół operacyjny
             </h2>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              Raportowanie wymagało ręcznego wyciągania danych z CRM
-              i weryfikacji w innych źródłach. Po integracji: dane nie
-              przenoszone ręcznie, raport oparty na stałym modelu, zespół
-              przestał korygować liczby &bdquo;na czuja&rdquo;.
+              Raportowanie wymagało ręcznego wyciągania danych z CRM i
+              weryfikacji w innych źródłach. Po integracji: dane nie przenoszone
+              ręcznie, raport oparty na stałym modelu, zespół przestał korygować
+              liczby &bdquo;na czuja&rdquo;.
             </p>
           </div>
         </section>
@@ -344,16 +369,12 @@ export default function IntegracjeApiArticle() {
             </p>
             <ol className="list-decimal pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
               <li>Czy ten proces dzieje się często?</li>
-              <li>
-                Czy dane muszą przechodzić między systemami regularnie?
-              </li>
-              <li>
-                Czy ręczne przenoszenie powoduje błędy lub opóźnienia?
-              </li>
+              <li>Czy dane muszą przechodzić między systemami regularnie?</li>
+              <li>Czy ręczne przenoszenie powoduje błędy lub opóźnienia?</li>
               <li>Czy aktualność danych ma znaczenie biznesowe?</li>
               <li>
-                Czy proces jest już na tyle uporządkowany, że wiadomo, co ma
-                się dziać?
+                Czy proces jest już na tyle uporządkowany, że wiadomo, co ma się
+                dziać?
               </li>
             </ol>
           </div>
@@ -367,9 +388,7 @@ export default function IntegracjeApiArticle() {
             </h2>
             <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
               <li>Automatyzacja procesów biznesowych to szerszy cel.</li>
-              <li>
-                Integracje API to sposób, by systemy wymieniały dane.
-              </li>
+              <li>Integracje API to sposób, by systemy wymieniały dane.</li>
               <li>
                 AI ma sens tam, gdzie trzeba analizować treści, klasyfikować
                 dane lub wspierać decyzje.
@@ -657,6 +676,59 @@ export default function IntegracjeApiArticle() {
               name: "Fluxlab",
               url: "https://fluxlab.pl",
             },
+          }),
+        }}
+      />
+
+      {/* FAQPage Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "Czy integracje API są tylko dla dużych firm?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Nie. Mniejsze firmy często szybciej odczuwają korzyść.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Czy API zawsze jest lepsze od prostych automatyzacji?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Nie. Zależy od procesu, skali, krytyczności i potrzebnej elastyczności.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Czy można połączyć CRM z innymi systemami bez pełnego developmentu?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Często tak, ale zależy to od narzędzi i zakresu procesu.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Co jest ważniejsze: narzędzie czy logika procesu?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Logika procesu. Źle przemyślana integracja będzie złym wdrożeniem niezależnie od technologii.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Jaki pierwszy scenariusz integracji zwykle daje najlepszy efekt?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Bardzo często jest to obszar leadów, CRM i raportowania.",
+                },
+              },
+            ],
           }),
         }}
       />

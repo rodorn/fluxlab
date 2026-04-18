@@ -35,7 +35,12 @@ export default function AutomatyzacjaProcesowArticle() {
     <>
       <Header />
       <main className="pt-16">
-        <Breadcrumbs items={[{ label: "Strefa wiedzy", href: "/strefa-wiedzy" }, { label: "Co to jest automatyzacja procesów biznesowych?" }]} />
+        <Breadcrumbs
+          items={[
+            { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
+            { label: "Co to jest automatyzacja procesów biznesowych?" },
+          ]}
+        />
         {/* Hero */}
         <section className="bg-gray-50 dark:bg-gray-900/50 py-20 lg:py-28">
           <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
@@ -44,17 +49,17 @@ export default function AutomatyzacjaProcesowArticle() {
               Co to jest automatyzacja procesów biznesowych?
             </h1>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-              Automatyzacja procesów biznesowych to nie modne hasło, które dobrze
-              wygląda na slajdzie sprzedażowym. To bardzo praktyczne podejście do
-              pracy w firmie: zamiast opierać codzienne działania na ręcznym
-              przepisywaniu danych, pamięci ludzi i ciągłym pilnowaniu kolejnych
-              kroków, budujesz procesy, które działają szybciej, stabilniej
-              i z mniejszą liczbą błędów.
+              Automatyzacja procesów biznesowych to nie modne hasło, które
+              dobrze wygląda na slajdzie sprzedażowym. To bardzo praktyczne
+              podejście do pracy w firmie: zamiast opierać codzienne działania
+              na ręcznym przepisywaniu danych, pamięci ludzi i ciągłym
+              pilnowaniu kolejnych kroków, budujesz procesy, które działają
+              szybciej, stabilniej i z mniejszą liczbą błędów.
             </p>
             <p className="mt-4 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
               W praktyce automatyzacja pozwala firmie rosnąć bez dokładania
-              proporcjonalnie takiej samej ilości chaosu, ręcznej pracy
-              i kosztów operacyjnych.
+              proporcjonalnie takiej samej ilości chaosu, ręcznej pracy i
+              kosztów operacyjnych.
             </p>
           </div>
         </section>
@@ -66,14 +71,20 @@ export default function AutomatyzacjaProcesowArticle() {
               Czym naprawdę jest automatyzacja procesów biznesowych
             </h2>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              Najprościej mówiąc, <Link href="/automatyzacja-procesow-biznesowych" className="text-accent hover:underline">automatyzacja procesów biznesowych</Link> polega na
-              tym, że powtarzalne działania wykonywane według określonych zasad
-              przestają być robione ręcznie. Zamiast człowieka kopiującego dane
-              między systemami, ustawiasz przepływ, który robi to automatycznie.
-              Zamiast handlowca pamiętającego o follow-upie, system tworzy
-              zadanie i pilnuje terminu. Zamiast raportu składanego ręcznie
-              z kilku arkuszy, dane łączą się same i gotowy raport trafia do
-              odpowiednich osób.
+              Najprościej mówiąc,{" "}
+              <Link
+                href="/automatyzacja-procesow-biznesowych"
+                className="text-accent hover:underline"
+              >
+                automatyzacja procesów biznesowych
+              </Link>{" "}
+              polega na tym, że powtarzalne działania wykonywane według
+              określonych zasad przestają być robione ręcznie. Zamiast człowieka
+              kopiującego dane między systemami, ustawiasz przepływ, który robi
+              to automatycznie. Zamiast handlowca pamiętającego o follow-upie,
+              system tworzy zadanie i pilnuje terminu. Zamiast raportu
+              składanego ręcznie z kilku arkuszy, dane łączą się same i gotowy
+              raport trafia do odpowiednich osób.
             </p>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
               To nie oznacza, że firma &bdquo;wyrzuca ludzi z procesu&rdquo;.
@@ -83,9 +94,9 @@ export default function AutomatyzacjaProcesowArticle() {
             </p>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
               Dlatego automatyzacja nie zaczyna się od narzędzia. Zaczyna się od
-              pytania: które działania w firmie są częste, powtarzalne, oparte na
-              prostych regułach i jednocześnie kosztują nas za dużo czasu albo
-              błędów?
+              pytania: które działania w firmie są częste, powtarzalne, oparte
+              na prostych regułach i jednocześnie kosztują nas za dużo czasu
+              albo błędów?
             </p>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
               Jeżeli potrafisz wskazać taki obszar, to najprawdopodobniej masz
@@ -103,17 +114,22 @@ export default function AutomatyzacjaProcesowArticle() {
             <p className="text-gray-600 dark:text-gray-400 mb-4">
               Nie każdy proces trzeba automatyzować. Niektóre rzeczy są zbyt
               rzadkie, zbyt niestandardowe albo zbyt zależne od decyzji
-              człowieka. Ale są bardzo wyraźne sygnały, że proces aż prosi się
-              o wdrożenie.
+              człowieka. Ale są bardzo wyraźne sygnały, że proces aż prosi się o
+              wdrożenie.
             </p>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
               Najczęściej wygląda to tak:
             </p>
             <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
-              <li>dane są ręcznie przepisywane między formularzem, CRM, arkuszem i mailem,</li>
+              <li>
+                dane są ręcznie przepisywane między formularzem, CRM, arkuszem i
+                mailem,
+              </li>
               <li>kilka osób wykonuje te same kroki w różnych miejscach,</li>
               <li>ktoś musi &bdquo;pilnować&rdquo;, żeby coś nie utknęło,</li>
-              <li>zespół regularnie pyta: &bdquo;na jakim etapie to jest?&rdquo;,</li>
+              <li>
+                zespół regularnie pyta: &bdquo;na jakim etapie to jest?&rdquo;,
+              </li>
               <li>pojawiają się duplikaty, błędy i niepełne dane,</li>
               <li>raporty są robione ręcznie,</li>
               <li>czas reakcji na leady lub zgłoszenia jest zbyt długi,</li>
@@ -124,8 +140,8 @@ export default function AutomatyzacjaProcesowArticle() {
             </ul>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
               Jeżeli te objawy brzmią znajomo, to problemem zwykle nie jest brak
-              pracy ludzi, tylko zbyt duża ilość pracy, która nie powinna już być
-              wykonywana ręcznie.
+              pracy ludzi, tylko zbyt duża ilość pracy, która nie powinna już
+              być wykonywana ręcznie.
             </p>
           </div>
         </section>
@@ -141,10 +157,17 @@ export default function AutomatyzacjaProcesowArticle() {
               Sprzedaż i obsługa leadów
             </h3>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              To jeden z najbardziej oczywistych obszarów. Leady wpadają
-              z formularza, reklam, maila albo poleceń. Ktoś musi je zebrać,
+              To jeden z najbardziej oczywistych obszarów. Leady wpadają z
+              formularza, reklam, maila albo poleceń. Ktoś musi je zebrać,
               wpisać do CRM, przypisać do właściwej osoby, ustawić kolejny krok,
-              pilnować follow-upu i raportować wynik. Właśnie dlatego <Link href="/automatyzacja-leadow" className="text-accent hover:underline">automatyzacja leadów</Link> to zwykle jeden z pierwszych kroków.
+              pilnować follow-upu i raportować wynik. Właśnie dlatego{" "}
+              <Link
+                href="/automatyzacja-leadow"
+                className="text-accent hover:underline"
+              >
+                automatyzacja leadów
+              </Link>{" "}
+              to zwykle jeden z pierwszych kroków.
             </p>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
               Automatyzacja może tu obejmować:
@@ -173,9 +196,9 @@ export default function AutomatyzacjaProcesowArticle() {
               Raportowanie i analiza danych
             </h3>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              W wielu firmach raportowanie jest nadal ręcznym składaniem liczb
-              z kilku źródeł. CRM mówi jedno, arkusz drugie, kampanie trzecie,
-              a finalnie ktoś &bdquo;uzgadnia&rdquo; wynik ręcznie.
+              W wielu firmach raportowanie jest nadal ręcznym składaniem liczb z
+              kilku źródeł. CRM mówi jedno, arkusz drugie, kampanie trzecie, a
+              finalnie ktoś &bdquo;uzgadnia&rdquo; wynik ręcznie.
             </p>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
               Automatyzacja raportowania pozwala:
@@ -216,9 +239,7 @@ export default function AutomatyzacjaProcesowArticle() {
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
               Obsługa klienta i zgłoszeń
             </h3>
-            <p className="text-gray-600 dark:text-gray-400 mb-4">
-              Przykłady:
-            </p>
+            <p className="text-gray-600 dark:text-gray-400 mb-4">Przykłady:</p>
             <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
               <li>klasyfikacja zgłoszeń,</li>
               <li>kierowanie spraw do odpowiedniej osoby,</li>
@@ -253,9 +274,8 @@ export default function AutomatyzacjaProcesowArticle() {
               kroku.
             </p>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              Dobrze wdrożona automatyzacja nie jest widoczna jako
-              &bdquo;fajny efekt&rdquo;. Ona po prostu sprawia, że proces
-              przestaje boleć.
+              Dobrze wdrożona automatyzacja nie jest widoczna jako &bdquo;fajny
+              efekt&rdquo;. Ona po prostu sprawia, że proces przestaje boleć.
             </p>
           </div>
         </section>
@@ -272,9 +292,9 @@ export default function AutomatyzacjaProcesowArticle() {
             </h3>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
               Jeżeli proces jest źle poukładany, automatyzacja go nie naprawi.
-              Przyspieszy tylko bałagan. Dlatego przed wdrożeniem trzeba ustalić:
-              kto za co odpowiada, kiedy proces przechodzi do kolejnego etapu,
-              jakie dane są obowiązkowe, gdzie jest źródło prawdy.
+              Przyspieszy tylko bałagan. Dlatego przed wdrożeniem trzeba
+              ustalić: kto za co odpowiada, kiedy proces przechodzi do kolejnego
+              etapu, jakie dane są obowiązkowe, gdzie jest źródło prawdy.
             </p>
 
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
@@ -290,8 +310,16 @@ export default function AutomatyzacjaProcesowArticle() {
             </h3>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
               Firmy za często pytają &bdquo;czy lepszy będzie Make, Zapier, n8n
-              albo własne API?&rdquo;, zanim odpowiedzą sobie na pytanie, co
-              w ogóle chcą osiągnąć. Dobór narzędzia zależy od procesu — czasem wystarczy prosta automatyzacja, a czasem potrzebne są pełne <Link href="/integracje-api" className="text-accent hover:underline">integracje API</Link>.
+              albo własne API?&rdquo;, zanim odpowiedzą sobie na pytanie, co w
+              ogóle chcą osiągnąć. Dobór narzędzia zależy od procesu — czasem
+              wystarczy prosta automatyzacja, a czasem potrzebne są pełne{" "}
+              <Link
+                href="/integracje-api"
+                className="text-accent hover:underline"
+              >
+                integracje API
+              </Link>
+              .
             </p>
 
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
@@ -350,8 +378,8 @@ export default function AutomatyzacjaProcesowArticle() {
             <p className="text-gray-600 dark:text-gray-400 mb-4">
               Firma B2B zbierała leady z kilku źródeł: formularz na stronie,
               reklamy i wiadomości mailowe. Dane trafiały do różnych osób, część
-              była wpisywana do CRM ręcznie, część lądowała w skrzynce
-              i czekała.
+              była wpisywana do CRM ręcznie, część lądowała w skrzynce i
+              czekała.
             </p>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
               Po uporządkowaniu procesu i wdrożeniu automatyzacji:
@@ -367,8 +395,8 @@ export default function AutomatyzacjaProcesowArticle() {
               </li>
             </ul>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              Największa wartość pojawiła się w czasie reakcji
-              i przewidywalności procesu.
+              Największa wartość pojawiła się w czasie reakcji i
+              przewidywalności procesu.
             </p>
           </div>
         </section>
@@ -458,8 +486,8 @@ export default function AutomatyzacjaProcesowArticle() {
             </h2>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
               Nie. Często właśnie mniejsze i średnie firmy odczuwają wartość
-              szybciej, bo każda oszczędzona godzina i każda utracona szansa ważą
-              więcej niż w dużej organizacji.
+              szybciej, bo każda oszczędzona godzina i każda utracona szansa
+              ważą więcej niż w dużej organizacji.
             </p>
           </div>
         </section>
@@ -475,9 +503,7 @@ export default function AutomatyzacjaProcesowArticle() {
               CRM, integracje API czy AI.
             </p>
             <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
-              <li>
-                CRM porządkuje proces sprzedaży i dane o klientach.
-              </li>
+              <li>CRM porządkuje proces sprzedaży i dane o klientach.</li>
               <li>
                 Integracje API pozwalają systemom wymieniać dane bez ręcznego
                 pośrednictwa ludzi.
@@ -542,13 +568,17 @@ export default function AutomatyzacjaProcesowArticle() {
                     stroke="currentColor"
                     strokeWidth={2}
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M12 4v16m8-8H4"
+                    />
                   </svg>
                 </summary>
                 <div className="px-6 pb-6 text-gray-600 dark:text-gray-400">
                   Nie. Najczęściej oznacza przesunięcie ludzi z ręcznej pracy do
-                  zadań, które naprawdę wymagają myślenia, kontaktu z klientem
-                  i kontroli jakości.
+                  zadań, które naprawdę wymagają myślenia, kontaktu z klientem i
+                  kontroli jakości.
                 </div>
               </details>
 
@@ -562,7 +592,11 @@ export default function AutomatyzacjaProcesowArticle() {
                     stroke="currentColor"
                     strokeWidth={2}
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M12 4v16m8-8H4"
+                    />
                   </svg>
                 </summary>
                 <div className="px-6 pb-6 text-gray-600 dark:text-gray-400">
@@ -581,7 +615,11 @@ export default function AutomatyzacjaProcesowArticle() {
                     stroke="currentColor"
                     strokeWidth={2}
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M12 4v16m8-8H4"
+                    />
                   </svg>
                 </summary>
                 <div className="px-6 pb-6 text-gray-600 dark:text-gray-400">
@@ -600,12 +638,16 @@ export default function AutomatyzacjaProcesowArticle() {
                     stroke="currentColor"
                     strokeWidth={2}
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M12 4v16m8-8H4"
+                    />
                   </svg>
                 </summary>
                 <div className="px-6 pb-6 text-gray-600 dark:text-gray-400">
-                  Nie. Działa wszędzie tam, gdzie są powtarzalne procesy, dane
-                  i reguły.
+                  Nie. Działa wszędzie tam, gdzie są powtarzalne procesy, dane i
+                  reguły.
                 </div>
               </details>
 
@@ -619,7 +661,11 @@ export default function AutomatyzacjaProcesowArticle() {
                     stroke="currentColor"
                     strokeWidth={2}
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M12 4v16m8-8H4"
+                    />
                   </svg>
                 </summary>
                 <div className="px-6 pb-6 text-gray-600 dark:text-gray-400">
@@ -639,12 +685,16 @@ export default function AutomatyzacjaProcesowArticle() {
                     stroke="currentColor"
                     strokeWidth={2}
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M12 4v16m8-8H4"
+                    />
                   </svg>
                 </summary>
                 <div className="px-6 pb-6 text-gray-600 dark:text-gray-400">
-                  Nie. W wielu przypadkach klasyczna automatyzacja procesów
-                  i integracje API dają większy i szybszy efekt niż dokładanie AI
+                  Nie. W wielu przypadkach klasyczna automatyzacja procesów i
+                  integracje API dają większy i szybszy efekt niż dokładanie AI
                   na siłę.
                 </div>
               </details>
@@ -661,8 +711,8 @@ export default function AutomatyzacjaProcesowArticle() {
             <p className="text-gray-600 dark:text-gray-400 mb-4">
               Automatyzacja procesów biznesowych to sposób na to, żeby firma
               działała szybciej, stabilniej i z mniejszą ilością ręcznej pracy.
-              Nie chodzi o samo &bdquo;wdrożenie narzędzia&rdquo;, tylko
-              o zbudowanie procesu, który nie rozpada się przy większej skali.
+              Nie chodzi o samo &bdquo;wdrożenie narzędzia&rdquo;, tylko o
+              zbudowanie procesu, który nie rozpada się przy większej skali.
             </p>
           </div>
         </section>
@@ -772,8 +822,7 @@ export default function AutomatyzacjaProcesowArticle() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Article",
-            headline:
-              "Co to jest automatyzacja procesów biznesowych?",
+            headline: "Co to jest automatyzacja procesów biznesowych?",
             description:
               "Czym jest automatyzacja procesów biznesowych, gdzie daje największy efekt i od czego zacząć wdrożenie w firmie. Przykłady, błędy, ROI i praktyczne wskazówki.",
             datePublished: "2026-03-30",
@@ -787,6 +836,67 @@ export default function AutomatyzacjaProcesowArticle() {
               name: "Fluxlab",
               url: "https://fluxlab.pl",
             },
+          }),
+        }}
+      />
+
+      {/* FAQPage Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "Czy automatyzacja procesów biznesowych oznacza zwolnienia?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Nie. Najczęściej oznacza przesunięcie ludzi z ręcznej pracy do zadań, które naprawdę wymagają myślenia, kontaktu z klientem i kontroli jakości.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Czy trzeba od razu wdrażać duży system?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Nie. Najlepiej zacząć od jednego procesu o wysokiej wartości biznesowej.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Co najczęściej automatyzuje się jako pierwsze?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Obsługę leadów, CRM, raportowanie, przekazywanie zadań i obieg danych między systemami.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Czy automatyzacja działa tylko w firmach technologicznych?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Nie. Działa wszędzie tam, gdzie są powtarzalne procesy, dane i reguły.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Jak szybko widać efekty?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "To zależy od procesu, ale dobrze dobrane wdrożenie bardzo często daje odczuwalny efekt szybciej niż duże projekty transformacyjne.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Czy każda firma potrzebuje AI do automatyzacji?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Nie. W wielu przypadkach klasyczna automatyzacja procesów i integracje API dają większy i szybszy efekt niż dokładanie AI na siłę.",
+                },
+              },
+            ],
           }),
         }}
       />

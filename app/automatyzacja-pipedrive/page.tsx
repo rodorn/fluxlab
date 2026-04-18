@@ -38,9 +38,13 @@ const sections = [
       "Automatyczne tworzenie Deala po pojawieniu się leada",
       "Przypisywanie do handlowca na podstawie regionu, źródła, typu produktu lub obciążenia pipeline'u",
       "Automatyczne ustawienie wartości, prawdopodobieństwa i etapu",
-      'Tworzenie pierwszego zadania (np. \u201EKontakt w 5 minut\u201D)',
+      "Tworzenie pierwszego zadania (np. \u201EKontakt w 5 minut\u201D)",
     ],
-    effect: ['Brak \u201Ezapomnianych\u201D leadów', "Standaryzacja procesu sprzedaży", "Natychmiastowa reakcja"],
+    effect: [
+      "Brak \u201Ezapomnianych\u201D leadów",
+      "Standaryzacja procesu sprzedaży",
+      "Natychmiastowa reakcja",
+    ],
   },
   {
     number: "02",
@@ -52,7 +56,11 @@ const sections = [
       "Dedykowane pola niestandardowe (custom fields)",
       "Walidacja danych przed wysłaniem do CRM",
     ],
-    effect: ["Czysta baza danych", "Brak duplikatów", "Spójne dane do raportowania"],
+    effect: [
+      "Czysta baza danych",
+      "Brak duplikatów",
+      "Spójne dane do raportowania",
+    ],
   },
   {
     number: "03",
@@ -168,12 +176,13 @@ export default function AutomatyzacjaPipedrive() {
             <div className="max-w-3xl mx-auto text-center mb-12">
               <p className="section-label mb-4">Pipedrive CRM</p>
               <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
-                Automatyzacja Pipedrive –<br className="hidden sm:block" /> jak wycisnąć 100% z Twojego CRM
+                Automatyzacja Pipedrive –<br className="hidden sm:block" /> jak
+                wycisnąć 100% z Twojego CRM
               </h1>
               <p className="text-lg text-gray-500 dark:text-gray-400 mb-8">
-                Większość firm używa Pipedrive jak notatnika do leadów. Tymczasem
-                Pipedrive z dobrze zaprojektowanymi automatyzacjami staje się silnikiem
-                sprzedaży.
+                Większość firm używa Pipedrive jak notatnika do leadów.
+                Tymczasem Pipedrive z dobrze zaprojektowanymi automatyzacjami
+                staje się silnikiem sprzedaży.
               </p>
               <div className="flex flex-wrap justify-center gap-3 mb-10 text-sm">
                 {[
@@ -188,14 +197,23 @@ export default function AutomatyzacjaPipedrive() {
                     className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-accent/10 text-accent text-xs font-medium"
                   >
                     <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
-                      <circle cx="5" cy="5" r="5" fill="currentColor" opacity="0.3" />
+                      <circle
+                        cx="5"
+                        cy="5"
+                        r="5"
+                        fill="currentColor"
+                        opacity="0.3"
+                      />
                       <circle cx="5" cy="5" r="2" fill="currentColor" />
                     </svg>
                     {item}
                   </span>
                 ))}
               </div>
-              <a href="#kontakt-pipedrive" className="btn-primary px-8 py-3.5 text-base">
+              <a
+                href="#kontakt-pipedrive"
+                className="btn-primary px-8 py-3.5 text-base"
+              >
                 Porozmawiajmy o automatyzacji
               </a>
             </div>
@@ -244,13 +262,30 @@ export default function AutomatyzacjaPipedrive() {
                       <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-0.5">
                         {section.title}
                       </h3>
-                      <p className="text-sm text-accent font-medium mb-4">{section.subtitle}</p>
+                      <p className="text-sm text-accent font-medium mb-4">
+                        {section.subtitle}
+                      </p>
 
                       <ul className="space-y-2">
                         {section.items.map((item) => (
-                          <li key={item} className="flex items-start gap-2.5 text-sm text-gray-600 dark:text-gray-400">
-                            <svg className="shrink-0 mt-0.5 text-accent" width="14" height="14" viewBox="0 0 14 14" fill="none">
-                              <path d="M2.5 7l3 3 6-6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                          <li
+                            key={item}
+                            className="flex items-start gap-2.5 text-sm text-gray-600 dark:text-gray-400"
+                          >
+                            <svg
+                              className="shrink-0 mt-0.5 text-accent"
+                              width="14"
+                              height="14"
+                              viewBox="0 0 14 14"
+                              fill="none"
+                            >
+                              <path
+                                d="M2.5 7l3 3 6-6"
+                                stroke="currentColor"
+                                strokeWidth="1.5"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                              />
                             </svg>
                             {item}
                           </li>
@@ -264,9 +299,23 @@ export default function AutomatyzacjaPipedrive() {
                           </p>
                           <ul className="space-y-1.5">
                             {section.syncItems.map((item) => (
-                              <li key={item} className="flex items-start gap-2.5 text-sm text-gray-600 dark:text-gray-400">
-                                <svg className="shrink-0 mt-0.5 text-gray-400" width="14" height="14" viewBox="0 0 14 14" fill="none">
-                                  <path d="M7 2v10M2 7h10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                              <li
+                                key={item}
+                                className="flex items-start gap-2.5 text-sm text-gray-600 dark:text-gray-400"
+                              >
+                                <svg
+                                  className="shrink-0 mt-0.5 text-gray-400"
+                                  width="14"
+                                  height="14"
+                                  viewBox="0 0 14 14"
+                                  fill="none"
+                                >
+                                  <path
+                                    d="M7 2v10M2 7h10"
+                                    stroke="currentColor"
+                                    strokeWidth="1.5"
+                                    strokeLinecap="round"
+                                  />
                                 </svg>
                                 {item}
                               </li>
@@ -313,7 +362,9 @@ export default function AutomatyzacjaPipedrive() {
               <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
                 Dlaczego nie wystarczy wbudowana automatyzacja Pipedrive?
               </h2>
-              <p className="text-gray-500 dark:text-gray-400 mb-6">Bo jest ograniczona. Nie obsługuje:</p>
+              <p className="text-gray-500 dark:text-gray-400 mb-6">
+                Bo jest ograniczona. Nie obsługuje:
+              </p>
               <div className="grid sm:grid-cols-2 gap-3">
                 {[
                   "Złożonej logiki warunkowej",
@@ -326,15 +377,29 @@ export default function AutomatyzacjaPipedrive() {
                     key={item}
                     className="flex items-center gap-3 p-4 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700"
                   >
-                    <svg className="shrink-0 text-red-400" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                      <path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                    <svg
+                      className="shrink-0 text-red-400"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                    >
+                      <path
+                        d="M4 4l8 8M12 4l-8 8"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                      />
                     </svg>
-                    <span className="text-sm text-gray-700 dark:text-gray-300">{item}</span>
+                    <span className="text-sm text-gray-700 dark:text-gray-300">
+                      {item}
+                    </span>
                   </div>
                 ))}
               </div>
               <p className="mt-6 text-gray-500 dark:text-gray-400">
-                Jeśli firma rośnie, potrzebuje warstwy automatyzacji opartej o API.
+                Jeśli firma rośnie, potrzebuje warstwy automatyzacji opartej o
+                API.
               </p>
             </div>
           </div>
@@ -355,13 +420,23 @@ export default function AutomatyzacjaPipedrive() {
                         <span className="shrink-0 w-7 h-7 flex items-center justify-center rounded-full border-2 border-accent text-accent text-xs font-bold">
                           {i + 1}
                         </span>
-                        <span className="text-sm text-gray-700 dark:text-gray-300 pt-0.5">{step}</span>
+                        <span className="text-sm text-gray-700 dark:text-gray-300 pt-0.5">
+                          {step}
+                        </span>
                       </li>
                     ))}
                   </ol>
                   <div className="mt-6 flex flex-wrap gap-2">
-                    {["Skalowalne", "Bezpieczne", "Szybkie", "Odporne na zmiany"].map((q) => (
-                      <span key={q} className="px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-medium">
+                    {[
+                      "Skalowalne",
+                      "Bezpieczne",
+                      "Szybkie",
+                      "Odporne na zmiany",
+                    ].map((q) => (
+                      <span
+                        key={q}
+                        className="px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-medium"
+                      >
                         {q}
                       </span>
                     ))}
@@ -374,9 +449,24 @@ export default function AutomatyzacjaPipedrive() {
                   </h2>
                   <ul className="space-y-3">
                     {forWhom.map((item) => (
-                      <li key={item} className="flex items-center gap-3 text-sm text-gray-700 dark:text-gray-300">
-                        <svg className="shrink-0 text-accent" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                          <path d="M3 8l4 4 6-6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                      <li
+                        key={item}
+                        className="flex items-center gap-3 text-sm text-gray-700 dark:text-gray-300"
+                      >
+                        <svg
+                          className="shrink-0 text-accent"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          fill="none"
+                        >
+                          <path
+                            d="M3 8l4 4 6-6"
+                            stroke="currentColor"
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
                         </svg>
                         {item}
                       </li>
@@ -389,7 +479,10 @@ export default function AutomatyzacjaPipedrive() {
         </section>
 
         {/* CTA */}
-        <section id="kontakt-pipedrive" className="py-16 border-t border-gray-100 dark:border-gray-800">
+        <section
+          id="kontakt-pipedrive"
+          className="py-16 border-t border-gray-100 dark:border-gray-800"
+        >
           <div className="container-wide">
             <div className="max-w-2xl mx-auto text-center bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-10">
               <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
@@ -398,7 +491,10 @@ export default function AutomatyzacjaPipedrive() {
               <p className="text-gray-500 dark:text-gray-400 mb-8">
                 Staje się systemem, który pracuje za zespół.
               </p>
-              <Link href="/#kontakt" className="btn-primary px-8 py-3.5 text-base">
+              <Link
+                href="/#kontakt"
+                className="btn-primary px-8 py-3.5 text-base"
+              >
                 Zacznijmy od rozmowy
               </Link>
               <p className="mt-4 text-xs text-gray-400 dark:text-gray-500">
@@ -407,8 +503,26 @@ export default function AutomatyzacjaPipedrive() {
             </div>
           </div>
         </section>
-
       </main>
+
+      {/* Service Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: "Automatyzacja Pipedrive",
+            description:
+              "Tworzę zaawansowane automatyzacje w oparciu o Pipedrive API, webhooki i integracje systemowe. Obsługa leadów, synchronizacja danych, raporty i eliminacja ręcznej pracy handlowców.",
+            provider: { "@id": "https://fluxlab.pl/#organization" },
+            areaServed: { "@type": "Country", name: "Polska" },
+            serviceType: "Automatyzacja procesów biznesowych",
+            url: "https://fluxlab.pl/automatyzacja-pipedrive",
+          }),
+        }}
+      />
+
       <Footer />
     </>
   );

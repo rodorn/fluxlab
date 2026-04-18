@@ -112,8 +112,19 @@ export default function AutomatyzacjaProcesowBiznesowych() {
         <section className="relative py-16 lg:py-24 overflow-hidden">
           <div className="absolute inset-0 -z-10">
             <div className="absolute inset-0 bg-sky-50 dark:hidden" />
-            <img src="/photos/Flow.avif" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover opacity-[0.08] dark:hidden" style={{ filter: "invert(1)" }} />
-            <img src="/photos/Flow.avif" alt="" aria-hidden="true" className="w-full h-full object-cover hidden dark:block" />
+            <img
+              src="/photos/Flow.avif"
+              alt=""
+              aria-hidden="true"
+              className="absolute inset-0 w-full h-full object-cover opacity-[0.08] dark:hidden"
+              style={{ filter: "invert(1)" }}
+            />
+            <img
+              src="/photos/Flow.avif"
+              alt=""
+              aria-hidden="true"
+              className="w-full h-full object-cover hidden dark:block"
+            />
             <div className="absolute inset-0 hidden dark:block bg-gray-950/90" />
             <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-white to-transparent dark:hidden" />
             <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white to-transparent dark:hidden" />
@@ -128,10 +139,11 @@ export default function AutomatyzacjaProcesowBiznesowych() {
                   Automatyzacja procesów biznesowych
                 </h1>
                 <p className="text-lg text-gray-600 dark:text-gray-300">
-                  Pomagamy firmom eliminować ręczną, powtarzalną pracę i zastępować
-                  ją sprawnymi procesami opartymi o automatyzację. Projektujemy
-                  rozwiązania, które porządkują obieg danych, skracają czas
-                  realizacji zadań i zmniejszają liczbę błędów operacyjnych.
+                  Pomagamy firmom eliminować ręczną, powtarzalną pracę i
+                  zastępować ją sprawnymi procesami opartymi o automatyzację.
+                  Projektujemy rozwiązania, które porządkują obieg danych,
+                  skracają czas realizacji zadań i zmniejszają liczbę błędów
+                  operacyjnych.
                 </p>
               </div>
               <div className="relative mx-auto lg:mx-0 w-full max-w-md">
@@ -215,8 +227,8 @@ export default function AutomatyzacjaProcesowBiznesowych() {
               </h2>
               <p className="text-gray-600 dark:text-gray-400">
                 Ta usługa jest dla firm, które mają coraz więcej pracy
-                operacyjnej, korzystają z kilku narzędzi jednocześnie i czują, że
-                ludzie marnują czas na rzeczy, które da się uporządkować.
+                operacyjnej, korzystają z kilku narzędzi jednocześnie i czują,
+                że ludzie marnują czas na rzeczy, które da się uporządkować.
                 Szczególnie dobrze sprawdza się w firmach B2B, sprzedaży,
                 obsłudze klienta, operacjach i back office.
               </p>
@@ -290,7 +302,10 @@ export default function AutomatyzacjaProcesowBiznesowych() {
               <p className="text-gray-500 dark:text-gray-400 mb-8">
                 Umów konsultację i pokaż nam swój obecny workflow.
               </p>
-              <Link href="/#kontakt" className="btn-primary px-8 py-3.5 text-base">
+              <Link
+                href="/#kontakt"
+                className="btn-primary px-8 py-3.5 text-base"
+              >
                 Umów bezpłatną konsultację
               </Link>
             </div>
@@ -343,6 +358,44 @@ export default function AutomatyzacjaProcesowBiznesowych() {
           </div>
         </section>
       </main>
+
+      {/* Service Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: "Automatyzacja procesów biznesowych",
+            description:
+              "Projektujemy i wdrażamy automatyzację procesów biznesowych w firmach B2B. Mniej ręcznej pracy, mniej błędów, szybsze działanie i realny zwrot z wdrożenia.",
+            provider: { "@id": "https://fluxlab.pl/#organization" },
+            areaServed: { "@type": "Country", name: "Polska" },
+            serviceType: "Automatyzacja procesów biznesowych",
+            url: "https://fluxlab.pl/automatyzacja-procesow-biznesowych",
+          }),
+        }}
+      />
+
+      {/* FAQPage Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map((faq) => ({
+              "@type": "Question",
+              name: faq.question,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: faq.answer,
+              },
+            })),
+          }),
+        }}
+      />
+
       <Footer />
     </>
   );

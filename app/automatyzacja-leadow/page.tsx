@@ -56,8 +56,7 @@ const faq = [
   },
   {
     question: "Czy można ustawić różne reguły przypisywania leadów?",
-    answer:
-      "Tak, routing może być oparty o dowolne warunki biznesowe.",
+    answer: "Tak, routing może być oparty o dowolne warunki biznesowe.",
   },
   {
     question: "Czy da się zautomatyzować pierwszy kontakt?",
@@ -93,8 +92,19 @@ export default function AutomatyzacjaLeadow() {
         <section className="relative py-16 lg:py-24 overflow-hidden">
           <div className="absolute inset-0 -z-10">
             <div className="absolute inset-0 bg-sky-50 dark:hidden" />
-            <img src="/photos/Flow.avif" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover opacity-[0.08] dark:hidden" style={{ filter: "invert(1)" }} />
-            <img src="/photos/Flow.avif" alt="" aria-hidden="true" className="w-full h-full object-cover hidden dark:block" />
+            <img
+              src="/photos/Flow.avif"
+              alt=""
+              aria-hidden="true"
+              className="absolute inset-0 w-full h-full object-cover opacity-[0.08] dark:hidden"
+              style={{ filter: "invert(1)" }}
+            />
+            <img
+              src="/photos/Flow.avif"
+              alt=""
+              aria-hidden="true"
+              className="w-full h-full object-cover hidden dark:block"
+            />
             <div className="absolute inset-0 hidden dark:block bg-gray-950/90" />
             <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-white to-transparent dark:hidden" />
             <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white to-transparent dark:hidden" />
@@ -109,10 +119,10 @@ export default function AutomatyzacjaLeadow() {
                   Automatyzacja leadów
                 </h1>
                 <p className="text-lg text-gray-600 dark:text-gray-300">
-                  Leady tracą wartość, kiedy wpadają do firmy i czekają na ręczne
-                  ogarnięcie. Automatyzacja leadów pozwala szybciej reagować,
-                  porządkować zapytania i kierować je do właściwych osób bez chaosu
-                  i opóźnień.
+                  Leady tracą wartość, kiedy wpadają do firmy i czekają na
+                  ręczne ogarnięcie. Automatyzacja leadów pozwala szybciej
+                  reagować, porządkować zapytania i kierować je do właściwych
+                  osób bez chaosu i opóźnień.
                 </p>
               </div>
               <div className="relative mx-auto lg:mx-0 w-full max-w-md">
@@ -139,8 +149,8 @@ export default function AutomatyzacjaLeadow() {
                 Co obejmuje automatyzacja leadów
               </h2>
               <p className="text-gray-500 dark:text-gray-400 mb-10">
-                Automatyzujemy cały przepływ od momentu pojawienia się zapytania:
-                pobranie danych, zapis w CRM, kwalifikację, routing,
+                Automatyzujemy cały przepływ od momentu pojawienia się
+                zapytania: pobranie danych, zapis w CRM, kwalifikację, routing,
                 powiadomienie odpowiedniej osoby, a w razie potrzeby także
                 follow-up i dalsze etapy procesu.
               </p>
@@ -196,9 +206,9 @@ export default function AutomatyzacjaLeadow() {
               </h2>
               <p className="text-gray-500 dark:text-gray-400">
                 Cena zależy od liczby źródeł leadów, CRM, reguł kwalifikacji i
-                poziomu złożoności procesu. Proste wdrożenia można zrobić szybko.
-                Zaawansowane procesy z scoringiem, AI lub wieloma wyjątkami
-                wymagają większego zakresu prac.
+                poziomu złożoności procesu. Proste wdrożenia można zrobić
+                szybko. Zaawansowane procesy z scoringiem, AI lub wieloma
+                wyjątkami wymagają większego zakresu prac.
               </p>
             </div>
           </div>
@@ -253,7 +263,10 @@ export default function AutomatyzacjaLeadow() {
                 Pokaż nam, skąd wpadają i jak są obsługiwane, a zaprojektujemy
                 prostszy przepływ.
               </p>
-              <Link href="/#kontakt" className="btn-primary px-8 py-3.5 text-base">
+              <Link
+                href="/#kontakt"
+                className="btn-primary px-8 py-3.5 text-base"
+              >
                 Porozmawiajmy
               </Link>
             </div>
@@ -303,8 +316,45 @@ export default function AutomatyzacjaLeadow() {
             </div>
           </div>
         </section>
-
       </main>
+
+      {/* Service Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: "Automatyzacja leadów",
+            description:
+              "Wdrażamy automatyzację leadów: zbieranie, routing, kwalifikacja, powiadomienia i follow-up. Szybsza reakcja, mniej chaosu i lepsze wykorzystanie szans sprzedażowych.",
+            provider: { "@id": "https://fluxlab.pl/#organization" },
+            areaServed: { "@type": "Country", name: "Polska" },
+            serviceType: "Automatyzacja procesów biznesowych",
+            url: "https://fluxlab.pl/automatyzacja-leadow",
+          }),
+        }}
+      />
+
+      {/* FAQPage Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faq.map((item) => ({
+              "@type": "Question",
+              name: item.question,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: item.answer,
+              },
+            })),
+          }),
+        }}
+      />
+
       <Footer />
     </>
   );

@@ -93,8 +93,19 @@ export default function AutomatyzacjaCRM() {
         <section className="relative py-16 lg:py-24 overflow-hidden">
           <div className="absolute inset-0 -z-10">
             <div className="absolute inset-0 bg-sky-50 dark:hidden" />
-            <img src="/photos/Flow.avif" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover opacity-[0.08] dark:hidden" style={{ filter: "invert(1)" }} />
-            <img src="/photos/Flow.avif" alt="" aria-hidden="true" className="w-full h-full object-cover hidden dark:block" />
+            <img
+              src="/photos/Flow.avif"
+              alt=""
+              aria-hidden="true"
+              className="absolute inset-0 w-full h-full object-cover opacity-[0.08] dark:hidden"
+              style={{ filter: "invert(1)" }}
+            />
+            <img
+              src="/photos/Flow.avif"
+              alt=""
+              aria-hidden="true"
+              className="w-full h-full object-cover hidden dark:block"
+            />
             <div className="absolute inset-0 hidden dark:block bg-gray-950/90" />
             <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-white to-transparent dark:hidden" />
             <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white to-transparent dark:hidden" />
@@ -109,10 +120,10 @@ export default function AutomatyzacjaCRM() {
                   Automatyzacja CRM
                 </h1>
                 <p className="text-lg text-gray-600 dark:text-gray-300">
-                  Automatyzacja CRM pozwala uporządkować sprzedaż, przyspieszyć reakcję na
-                  leady i ograniczyć chaos w pipeline. Projektujemy procesy, dzięki którym
-                  CRM nie jest tylko bazą kontaktów, ale realnym narzędziem pracy handlowców
-                  i operacji.
+                  Automatyzacja CRM pozwala uporządkować sprzedaż, przyspieszyć
+                  reakcję na leady i ograniczyć chaos w pipeline. Projektujemy
+                  procesy, dzięki którym CRM nie jest tylko bazą kontaktów, ale
+                  realnym narzędziem pracy handlowców i operacji.
                 </p>
               </div>
               <div className="relative mx-auto lg:mx-0 w-full max-w-md">
@@ -139,10 +150,11 @@ export default function AutomatyzacjaCRM() {
                 Co daje automatyzacja CRM
               </h2>
               <p className="text-gray-500 dark:text-gray-400 mb-10">
-                Dobrze wdrożony CRM powinien automatycznie porządkować dane, przypisywać
-                leady, pilnować kolejnych kroków i dostarczać zespołowi aktualnych
-                informacji. Jeśli handlowcy ręcznie tworzą zadania, przenoszą statusy,
-                dopisują notatki i gubią follow-upy, to znaczy, że CRM pracuje za słabo.
+                Dobrze wdrożony CRM powinien automatycznie porządkować dane,
+                przypisywać leady, pilnować kolejnych kroków i dostarczać
+                zespołowi aktualnych informacji. Jeśli handlowcy ręcznie tworzą
+                zadania, przenoszą statusy, dopisują notatki i gubią follow-upy,
+                to znaczy, że CRM pracuje za słabo.
               </p>
 
               <div className="space-y-6">
@@ -172,10 +184,10 @@ export default function AutomatyzacjaCRM() {
                 Dla kogo
               </h2>
               <p className="text-gray-500 dark:text-gray-400">
-                Dla firm, które mają zespół sprzedaży, korzystają z CRM i chcą przyspieszyć
-                pracę handlowców bez dokładania kolejnej ręcznej roboty. Szczególnie dla
-                organizacji, które rosną i zaczynają tracić kontrolę nad leadami, statusami
-                i jakością danych.
+                Dla firm, które mają zespół sprzedaży, korzystają z CRM i chcą
+                przyspieszyć pracę handlowców bez dokładania kolejnej ręcznej
+                roboty. Szczególnie dla organizacji, które rosną i zaczynają
+                tracić kontrolę nad leadami, statusami i jakością danych.
               </p>
             </div>
           </div>
@@ -190,9 +202,10 @@ export default function AutomatyzacjaCRM() {
               </h2>
               <p className="text-gray-500 dark:text-gray-400">
                 Proste automatyzacje CRM, takie jak routing leadów, zadania czy
-                synchronizacja pól, mają zwykle niski próg wejścia. Bardziej zaawansowane
-                wdrożenia, obejmujące wiele źródeł danych, scoring, integracje API i logikę
-                sprzedażową, wymagają indywidualnej wyceny.
+                synchronizacja pól, mają zwykle niski próg wejścia. Bardziej
+                zaawansowane wdrożenia, obejmujące wiele źródeł danych, scoring,
+                integracje API i logikę sprzedażową, wymagają indywidualnej
+                wyceny.
               </p>
             </div>
           </div>
@@ -244,9 +257,13 @@ export default function AutomatyzacjaCRM() {
                 Masz CRM, ale zespół nadal robi za dużo ręcznie?
               </h2>
               <p className="text-gray-500 dark:text-gray-400 mb-8">
-                Pokaż nam proces sprzedaży, a wskażemy, co da się zautomatyzować.
+                Pokaż nam proces sprzedaży, a wskażemy, co da się
+                zautomatyzować.
               </p>
-              <Link href="/#kontakt" className="btn-primary px-8 py-3.5 text-base">
+              <Link
+                href="/#kontakt"
+                className="btn-primary px-8 py-3.5 text-base"
+              >
                 Porozmawiajmy
               </Link>
               <p className="mt-4 text-xs text-gray-400 dark:text-gray-500">
@@ -329,8 +346,45 @@ export default function AutomatyzacjaCRM() {
             </div>
           </div>
         </section>
-
       </main>
+
+      {/* Service Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: "Automatyzacja CRM",
+            description:
+              "Wdrażamy automatyzację CRM: leady, follow-upy, statusy, zadania, pipeline i integracje. Mniej ręcznej pracy, lepsza kontrola sprzedaży i szybsza reakcja zespołu.",
+            provider: { "@id": "https://fluxlab.pl/#organization" },
+            areaServed: { "@type": "Country", name: "Polska" },
+            serviceType: "Automatyzacja procesów biznesowych",
+            url: "https://fluxlab.pl/automatyzacja-crm",
+          }),
+        }}
+      />
+
+      {/* FAQPage Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faq.map((item) => ({
+              "@type": "Question",
+              name: item.question,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: item.answer,
+              },
+            })),
+          }),
+        }}
+      />
+
       <Footer />
     </>
   );

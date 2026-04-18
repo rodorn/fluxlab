@@ -33,7 +33,12 @@ export default function AutomatyzacjaCrmOdCzegoZaczacArticle() {
     <>
       <Header />
       <main className="pt-16">
-        <Breadcrumbs items={[{ label: "Strefa wiedzy", href: "/strefa-wiedzy" }, { label: "Automatyzacja CRM — od czego zacząć" }]} />
+        <Breadcrumbs
+          items={[
+            { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
+            { label: "Automatyzacja CRM — od czego zacząć" },
+          ]}
+        />
         {/* Hero */}
         <section className="bg-gray-50 dark:bg-gray-900/50 py-16 lg:py-24">
           <div className="container-wide max-w-3xl mx-auto text-center">
@@ -44,8 +49,8 @@ export default function AutomatyzacjaCrmOdCzegoZaczacArticle() {
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
               Firmy często wdrażają CRM, a dopiero później odkrywają, że zespół
               dalej robi większość pracy ręcznie. Automatyzacja CRM ma sens
-              dopiero wtedy, gdy system zaczyna aktywnie wspierać sprzedaż, a nie
-              tylko przechowuje kontakty.
+              dopiero wtedy, gdy system zaczyna aktywnie wspierać sprzedaż, a
+              nie tylko przechowuje kontakty.
             </p>
           </div>
         </section>
@@ -145,8 +150,15 @@ export default function AutomatyzacjaCrmOdCzegoZaczacArticle() {
                 </li>
               </ul>
               <p className="mt-6 text-gray-600 dark:text-gray-400 leading-relaxed">
-                To właśnie tam zwykle leży najszybszy zwrot. Szczególnie w obszarze{" "}
-                <Link href="/automatyzacja-leadow" className="text-accent hover:underline">automatyzacji leadów</Link>, gdzie ręczna praca generuje największe straty.
+                To właśnie tam zwykle leży najszybszy zwrot. Szczególnie w
+                obszarze{" "}
+                <Link
+                  href="/automatyzacja-leadow"
+                  className="text-accent hover:underline"
+                >
+                  automatyzacji leadów
+                </Link>
+                , gdzie ręczna praca generuje największe straty.
               </p>
             </div>
 
@@ -313,9 +325,16 @@ export default function AutomatyzacjaCrmOdCzegoZaczacArticle() {
                 Krok 4: dodaj walidację i wyjątki
               </h2>
               <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                Dobrze zrobiona <Link href="/automatyzacja-crm" className="text-accent hover:underline">automatyzacja CRM</Link> nie tylko przesuwa dane, ale
-                też pilnuje jakości. Sprawdza duplikaty, brakujące pola
-                i sytuacje, które trzeba oddać człowiekowi.
+                Dobrze zrobiona{" "}
+                <Link
+                  href="/automatyzacja-crm"
+                  className="text-accent hover:underline"
+                >
+                  automatyzacja CRM
+                </Link>{" "}
+                nie tylko przesuwa dane, ale też pilnuje jakości. Sprawdza
+                duplikaty, brakujące pola i sytuacje, które trzeba oddać
+                człowiekowi.
               </p>
             </div>
 
@@ -357,6 +376,40 @@ export default function AutomatyzacjaCrmOdCzegoZaczacArticle() {
               name: "Fluxlab",
               url: "https://fluxlab.pl",
             },
+          }),
+        }}
+      />
+
+      {/* HowTo Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            name: "Jak zacząć automatyzację CRM w firmie",
+            step: [
+              {
+                "@type": "HowToStep",
+                name: "Krok 1: sprawdź, gdzie CRM dziś nie działa",
+                text: "Zacznij od pytania: co dziś handlowcy robią ręcznie codziennie? Najczęściej: tworzenie zadań, przenoszenie statusów, follow-upy, uzupełnianie pól, przepisywanie leadów. Tam zwykle leży najszybszy zwrot.",
+              },
+              {
+                "@type": "HowToStep",
+                name: "Krok 2: nie automatyzuj wszystkiego naraz",
+                text: "Zacznij od 2–3 prostych scenariuszy: automatyczne tworzenie leada, przypisanie go do właściwej osoby, zadanie follow-up po określonym czasie, kontrola obowiązkowych pól.",
+              },
+              {
+                "@type": "HowToStep",
+                name: "Krok 3: uporządkuj zasady procesu",
+                text: "Zanim ustawisz workflow, ustal: kiedy lead trafia do jakiego etapu, kto odpowiada za kolejny ruch, jakie pola są obowiązkowe, kiedy sprawa jest zamknięta.",
+              },
+              {
+                "@type": "HowToStep",
+                name: "Krok 4: dodaj walidację i wyjątki",
+                text: "Dobra automatyzacja CRM nie tylko przesuwa dane, ale pilnuje jakości. Sprawdza duplikaty, brakujące pola i sytuacje, które trzeba oddać człowiekowi.",
+              },
+            ],
           }),
         }}
       />

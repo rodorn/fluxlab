@@ -57,8 +57,7 @@ const faqs = [
   },
   {
     question: "Czy można połączyć dane z kilku źródeł?",
-    answer:
-      "Tak, to jedna z głównych korzyści automatyzacji raportowania.",
+    answer: "Tak, to jedna z głównych korzyści automatyzacji raportowania.",
   },
   {
     question: "Co jeśli dane są dziś niespójne?",
@@ -116,8 +115,19 @@ export default function AutomatyzacjaRaportowania() {
         <section className="relative py-16 lg:py-24 overflow-hidden">
           <div className="absolute inset-0 -z-10">
             <div className="absolute inset-0 bg-sky-50 dark:hidden" />
-            <img src="/photos/Flow.avif" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover opacity-[0.08] dark:hidden" style={{ filter: "invert(1)" }} />
-            <img src="/photos/Flow.avif" alt="" aria-hidden="true" className="w-full h-full object-cover hidden dark:block" />
+            <img
+              src="/photos/Flow.avif"
+              alt=""
+              aria-hidden="true"
+              className="absolute inset-0 w-full h-full object-cover opacity-[0.08] dark:hidden"
+              style={{ filter: "invert(1)" }}
+            />
+            <img
+              src="/photos/Flow.avif"
+              alt=""
+              aria-hidden="true"
+              className="w-full h-full object-cover hidden dark:block"
+            />
             <div className="absolute inset-0 hidden dark:block bg-gray-950/90" />
             <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-white to-transparent dark:hidden" />
             <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white to-transparent dark:hidden" />
@@ -133,8 +143,8 @@ export default function AutomatyzacjaRaportowania() {
                 </h1>
                 <p className="text-lg text-gray-600 dark:text-gray-300">
                   Ręczne raportowanie zabiera czas, generuje błędy i opóźnia
-                  decyzje. Wdrażamy automatyzację raportowania, dzięki której dane
-                  z różnych źródeł zbierają się same, a zespół pracuje na
+                  decyzje. Wdrażamy automatyzację raportowania, dzięki której
+                  dane z różnych źródeł zbierają się same, a zespół pracuje na
                   aktualnych, spójnych liczbach.
                 </p>
               </div>
@@ -164,8 +174,8 @@ export default function AutomatyzacjaRaportowania() {
               <p className="text-gray-600 dark:text-gray-400">
                 Automatyzujemy pobieranie, czyszczenie i łączenie danych z CRM,
                 arkuszy, kampanii, formularzy i innych systemów. Dzięki temu
-                raporty nie powstają w pośpiechu na koniec tygodnia lub miesiąca,
-                tylko są gotowe regularnie i bez ręcznej składanki.
+                raporty nie powstają w pośpiechu na koniec tygodnia lub
+                miesiąca, tylko są gotowe regularnie i bez ręcznej składanki.
               </p>
             </div>
           </div>
@@ -340,6 +350,44 @@ export default function AutomatyzacjaRaportowania() {
           </div>
         </section>
       </main>
+
+      {/* Service Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: "Automatyzacja raportowania",
+            description:
+              "Automatyzujemy raportowanie sprzedaży, marketingu i operacji. Łączymy dane z wielu źródeł i eliminujemy ręczne przygotowywanie raportów.",
+            provider: { "@id": "https://fluxlab.pl/#organization" },
+            areaServed: { "@type": "Country", name: "Polska" },
+            serviceType: "Automatyzacja procesów biznesowych",
+            url: "https://fluxlab.pl/automatyzacja-raportowania",
+          }),
+        }}
+      />
+
+      {/* FAQPage Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map((faq) => ({
+              "@type": "Question",
+              name: faq.question,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: faq.answer,
+              },
+            })),
+          }),
+        }}
+      />
+
       <Footer />
     </>
   );
