@@ -56,6 +56,62 @@ export const categories: Category[] = [
         description:
           "Model wdrożenia, najczęstsze błędy i jedno źródło prawdy.",
       },
+      {
+        href: "/strefa-wiedzy/pipedrive-vs-salesforce",
+        title: "Pipedrive vs Salesforce — które CRM wybrać",
+        description:
+          "Porównanie cen, funkcji i modelu danych. Dla kogo Pipedrive, a dla kogo Salesforce.",
+      },
+      {
+        href: "/strefa-wiedzy/hubspot-vs-pipedrive",
+        title: "HubSpot vs Pipedrive — co wybrać",
+        description:
+          "Freemium HubSpot kontra prostota Pipedrive. Pricing, skalowanie, realne koszty.",
+      },
+      {
+        href: "/strefa-wiedzy/crm-dla-jednoosobowej-firmy",
+        title: "CRM dla jednoosobowej firmy",
+        description:
+          "Czy solo-firma potrzebuje CRM. Pipedrive, HubSpot Free, Folk — co wybrać i kiedy.",
+      },
+      {
+        href: "/strefa-wiedzy/salesforce-dla-malej-firmy",
+        title: "Salesforce dla małej firmy — czy ma sens",
+        description:
+          "Starter Suite, Enterprise, koszty wdrożenia i typowe pułapki w MŚP.",
+      },
+    ],
+  },
+  {
+    name: "Narzędzia",
+    slug: "narzedzia",
+    description:
+      "Porównania narzędzi automatyzacji — Zapier, Make, n8n. Kiedy co wybrać w praktyce MŚP.",
+    articles: [
+      {
+        href: "/strefa-wiedzy/zapier-vs-make",
+        title: "Zapier vs Make — co wybrać w 2026",
+        description:
+          "Porównanie prostoty, elastyczności i kosztów. Praktyczne scenariusze MŚP.",
+      },
+      {
+        href: "/strefa-wiedzy/n8n-vs-zapier",
+        title: "n8n vs Zapier — kiedy warto iść w self-hosting",
+        description:
+          "Open-source kontra SaaS. Koszt, kontrola danych, wymagania techniczne.",
+      },
+      {
+        href: "/strefa-wiedzy/make-vs-n8n",
+        title: "Make vs n8n — porównanie dla MŚP",
+        description:
+          "Koszt, elastyczność, krzywa nauki i lokalizacja danych w UE.",
+      },
+      {
+        href: "/strefa-wiedzy/zapier-make-n8n-porownanie",
+        title: "Zapier vs Make vs n8n — wielkie porównanie 2026",
+        description:
+          "Pełne porównanie trzech największych narzędzi automatyzacji — ceny, ograniczenia, rekomendacje.",
+      },
     ],
   },
   {

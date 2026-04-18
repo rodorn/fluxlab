@@ -90,6 +90,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.85,
     },
+    {
+      url: `${baseUrl}/automatyzacja-dla-ecommerce`,
+      changeFrequency: "monthly" as const,
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/automatyzacja-dla-agencji-marketingowych`,
+      changeFrequency: "monthly" as const,
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/automatyzacja-dla-biur-rachunkowych`,
+      changeFrequency: "monthly" as const,
+      priority: 0.85,
+    },
   ];
 
   const articles = [
@@ -109,6 +124,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "jak-liczyc-zdrowotna-jdg",
     "maly-zus-plus-kiedy-sie-oplaca",
     "vat-w-jdg-kiedy-warto",
+    "zapier-vs-make",
+    "n8n-vs-zapier",
+    "make-vs-n8n",
+    "zapier-make-n8n-porownanie",
+    "pipedrive-vs-salesforce",
+    "hubspot-vs-pipedrive",
+    "crm-dla-jednoosobowej-firmy",
+    "salesforce-dla-malej-firmy",
   ];
 
   const articlePages = articles.map((slug) => ({
