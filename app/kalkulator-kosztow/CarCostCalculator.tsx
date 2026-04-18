@@ -1,11 +1,23 @@
 "use client";
 
 import { useState, useMemo, useRef, useEffect } from "react";
+import { event as gaEvent } from "@/lib/gtag";
 
 /* ──────────────── types & constants ──────────────── */
 
 type FuelType = "benzyna" | "diesel" | "gaz" | "elektryczny";
-type EngineLayout = "elektryczny" | "R3" | "R4" | "R5" | "R6" | "V6" | "V8" | "V10" | "V12" | "W12" | "W16";
+type EngineLayout =
+  | "elektryczny"
+  | "R3"
+  | "R4"
+  | "R5"
+  | "R6"
+  | "V6"
+  | "V8"
+  | "V10"
+  | "V12"
+  | "W12"
+  | "W16";
 type KmPeriod = "dzien" | "tydzien" | "miesiac" | "rok";
 
 interface Data {
@@ -62,14 +74,24 @@ const FUEL_PRICES: Record<FuelType, number> = {
 };
 
 const ENGINE_MULT: Record<EngineLayout, number> = {
-  elektryczny: 1, R3: 1, R4: 1,
-  R5: 1.25, R6: 1.5, V6: 1.75,
-  V8: 2.25, V10: 2.75, V12: 3.25,
-  W12: 3.5, W16: 4,
+  elektryczny: 1,
+  R3: 1,
+  R4: 1,
+  R5: 1.25,
+  R6: 1.5,
+  V6: 1.75,
+  V8: 2.25,
+  V10: 2.75,
+  V12: 3.25,
+  W12: 3.5,
+  W16: 4,
 };
 
 const FUEL_MULT: Record<FuelType, number> = {
-  benzyna: 1, elektryczny: 1, gaz: 1.2, diesel: 1.6,
+  benzyna: 1,
+  elektryczny: 1,
+  gaz: 1.2,
+  diesel: 1.6,
 };
 
 const YEAR_NOW = 2025;
@@ -112,12 +134,20 @@ function calculate(d: Data, kmPeriod: KmPeriod): Result {
   const brandFactor =
     (d.complexity + 1) *
     (averageKm < 200000
-      ? Math.max(0, d.brandReliability - (d.brandReliability - 1) * ((200000 - averageKm) / 200000))
+      ? Math.max(
+          0,
+          d.brandReliability -
+            (d.brandReliability - 1) * ((200000 - averageKm) / 200000),
+        )
       : d.brandReliability);
 
   const engineFactor =
     (averageKm < 300000
-      ? Math.max(0, d.engineReliability - (d.engineReliability - 1) * ((300000 - averageKm) / 300000))
+      ? Math.max(
+          0,
+          d.engineReliability -
+            (d.engineReliability - 1) * ((300000 - averageKm) / 300000),
+        )
       : d.engineReliability) *
     ENGINE_MULT[d.engine] *
     FUEL_MULT[d.fuelType];
@@ -186,7 +216,10 @@ function EditableValue({
     const raw = parseFloat(draft.replace(/\s/g, "").replace(",", "."));
     if (isNaN(raw)) return;
     const clamped = Math.min(max, Math.max(min, raw));
-    const snapped = step >= 1 ? Math.round(clamped / step) * step : Math.round(clamped * (1 / step)) / (1 / step);
+    const snapped =
+      step >= 1
+        ? Math.round(clamped / step) * step
+        : Math.round(clamped * (1 / step)) / (1 / step);
     onChange(snapped);
   };
 
@@ -206,7 +239,9 @@ function EditableValue({
           }}
           className="w-20 text-right text-sm font-semibold text-accent tabular-nums bg-accent/10 border border-accent/30 rounded-md px-1.5 py-0.5 focus:outline-none focus:ring-2 focus:ring-accent/50"
         />
-        {unit && <span className="text-gray-400 text-sm font-normal">{unit}</span>}
+        {unit && (
+          <span className="text-gray-400 text-sm font-normal">{unit}</span>
+        )}
       </span>
     );
   }
@@ -214,7 +249,10 @@ function EditableValue({
   return (
     <button
       type="button"
-      onClick={() => { setDraft(String(value)); setEditing(true); }}
+      onClick={() => {
+        setDraft(String(value));
+        setEditing(true);
+      }}
       className="text-sm font-semibold text-accent tabular-nums hover:bg-accent/10 rounded-md px-1.5 py-0.5 -mr-1.5 transition-colors cursor-text"
       title="Kliknij, aby wpisać wartość"
     >
@@ -252,7 +290,14 @@ function Slider({
         <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
           {label}
         </span>
-        <EditableValue value={value} min={min} max={max} step={step} unit={unit} onChange={onChange} />
+        <EditableValue
+          value={value}
+          min={min}
+          max={max}
+          step={step}
+          unit={unit}
+          onChange={onChange}
+        />
       </div>
       <div className="relative group">
         <div className="h-2 rounded-full bg-gray-200 dark:bg-gray-700">
@@ -312,7 +357,14 @@ function LogSlider({
         <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
           {label}
         </span>
-        <EditableValue value={value} min={min} max={max} step={1} unit={unit} onChange={onChange} />
+        <EditableValue
+          value={value}
+          min={min}
+          max={max}
+          step={1}
+          unit={unit}
+          onChange={onChange}
+        />
       </div>
       <div className="relative group">
         <div className="h-2 rounded-full bg-gray-200 dark:bg-gray-700">
@@ -428,19 +480,41 @@ function RatingSelector({
 
 /* ──────────────── result row ──────────────── */
 
-function ResultRow({ label, value, accent, tooltip }: { label: string; value: string; accent?: boolean; tooltip?: string }) {
+function ResultRow({
+  label,
+  value,
+  accent,
+  tooltip,
+}: {
+  label: string;
+  value: string;
+  accent?: boolean;
+  tooltip?: string;
+}) {
   return (
     <div className="relative group flex flex-col gap-0.5 p-3 rounded-xl bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800">
       <span className="text-[11px] uppercase tracking-wider text-gray-400 dark:text-gray-500 flex items-center gap-1">
         {label}
         {tooltip && (
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="shrink-0 opacity-40 group-hover:opacity-70 transition-opacity">
+          <svg
+            width="12"
+            height="12"
+            viewBox="0 0 12 12"
+            fill="none"
+            className="shrink-0 opacity-40 group-hover:opacity-70 transition-opacity"
+          >
             <circle cx="6" cy="6" r="5.5" stroke="currentColor" />
-            <path d="M6 5.5V8.5M6 3.5V4" stroke="currentColor" strokeLinecap="round" />
+            <path
+              d="M6 5.5V8.5M6 3.5V4"
+              stroke="currentColor"
+              strokeLinecap="round"
+            />
           </svg>
         )}
       </span>
-      <span className={`font-medium ${accent ? "text-accent text-lg" : "text-gray-900 dark:text-white"}`}>
+      <span
+        className={`font-medium ${accent ? "text-accent text-lg" : "text-gray-900 dark:text-white"}`}
+      >
         {value}
       </span>
       {tooltip && (
@@ -474,6 +548,10 @@ export default function CarCostCalculator() {
   const [data, setData] = useState<Data>(INITIAL);
   const [kmPeriod, setKmPeriodRaw] = useState<KmPeriod>("rok");
 
+  useEffect(() => {
+    gaEvent("calculator_viewed", { calculator: "car_cost" });
+  }, []);
+
   const setKmPeriod = (newPeriod: KmPeriod) => {
     const oldMult = KM_MULTIPLIER[kmPeriod];
     const newMult = KM_MULTIPLIER[newPeriod];
@@ -501,19 +579,30 @@ export default function CarCostCalculator() {
     // Live-sync form edits to the active saved car
     if (activeCarId != null) {
       setSavedCars((prev) =>
-        prev.map((c) => c.id === activeCarId ? { ...c, data: { ...c.data, [key]: val } } : c),
+        prev.map((c) =>
+          c.id === activeCarId ? { ...c, data: { ...c.data, [key]: val } } : c,
+        ),
       );
     }
   };
 
   const result = useMemo(() => calculate(data, kmPeriod), [data, kmPeriod]);
 
-  const displayLabel = activeCarId != null
-    ? savedCars.find((c) => c.id === activeCarId)?.name ?? null
-    : null;
+  const displayLabel =
+    activeCarId != null
+      ? (savedCars.find((c) => c.id === activeCarId)?.name ?? null)
+      : null;
 
-  const fmt = (n: number) => n.toLocaleString("pl-PL", { minimumFractionDigits: 0, maximumFractionDigits: 0 });
-  const fmt2 = (n: number) => n.toLocaleString("pl-PL", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  const fmt = (n: number) =>
+    n.toLocaleString("pl-PL", {
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    });
+  const fmt2 = (n: number) =>
+    n.toLocaleString("pl-PL", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    });
 
   const periodLabels: Record<KmPeriod, string> = {
     dzien: "dziennie",
@@ -525,7 +614,10 @@ export default function CarCostCalculator() {
   const addToCompare = () => {
     const newId = nextId;
     const defaultName = query.trim() || `Pojazd ${newId}`;
-    setSavedCars((prev) => [...prev, { id: newId, name: defaultName, data: { ...data } }]);
+    setSavedCars((prev) => [
+      ...prev,
+      { id: newId, name: defaultName, data: { ...data } },
+    ]);
     setActiveCarId(newId);
     setNextId((n) => n + 1);
     setShowResults(true);
@@ -562,7 +654,12 @@ export default function CarCostCalculator() {
       savedCars.map((car) => ({
         ...car,
         result: calculate(
-          { ...car.data, kmCity: data.kmCity, kmHighway: data.kmHighway, yearsOwned: data.yearsOwned },
+          {
+            ...car.data,
+            kmCity: data.kmCity,
+            kmHighway: data.kmHighway,
+            yearsOwned: data.yearsOwned,
+          },
           kmPeriod,
         ),
       })),
@@ -577,14 +674,19 @@ export default function CarCostCalculator() {
     if (parsed.fuelType) out.fuelType = parsed.fuelType as FuelType;
     if (parsed.engine) out.engine = parsed.engine as EngineLayout;
     if (parsed.fuelCity != null) out.fuelCity = parsed.fuelCity as number;
-    if (parsed.fuelHighway != null) out.fuelHighway = parsed.fuelHighway as number;
-    if (parsed.brandReliability != null) out.brandReliability = parsed.brandReliability as number;
-    if (parsed.engineReliability != null) out.engineReliability = parsed.engineReliability as number;
+    if (parsed.fuelHighway != null)
+      out.fuelHighway = parsed.fuelHighway as number;
+    if (parsed.brandReliability != null)
+      out.brandReliability = parsed.brandReliability as number;
+    if (parsed.engineReliability != null)
+      out.engineReliability = parsed.engineReliability as number;
     if (parsed.complexity != null) out.complexity = parsed.complexity as number;
     return out;
   };
 
-  const fetchOneCar = async (q: string): Promise<{ name: string; parsed: Record<string, unknown> } | null> => {
+  const fetchOneCar = async (
+    q: string,
+  ): Promise<{ name: string; parsed: Record<string, unknown> } | null> => {
     const res = await fetch("/api/car-parse", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -600,7 +702,10 @@ export default function CarCostCalculator() {
     setParseError("");
     setParsedLabel("");
 
-    const parts = query.split(";").map((s) => s.trim()).filter(Boolean);
+    const parts = query
+      .split(";")
+      .map((s) => s.trim())
+      .filter(Boolean);
     const isMulti = parts.length > 1;
 
     try {
@@ -616,7 +721,14 @@ export default function CarCostCalculator() {
             errors.push(parts[i]);
             return;
           }
-          const carData: Data = { ...INITIAL, ...data, ...parsedToData(r.parsed), kmCity: data.kmCity, kmHighway: data.kmHighway, yearsOwned: data.yearsOwned };
+          const carData: Data = {
+            ...INITIAL,
+            ...data,
+            ...parsedToData(r.parsed),
+            kmCity: data.kmCity,
+            kmHighway: data.kmHighway,
+            yearsOwned: data.yearsOwned,
+          };
           newCars.push({ id: currentId, name: r.name, data: carData });
           currentId++;
         });
@@ -628,14 +740,23 @@ export default function CarCostCalculator() {
         // Select the first new car
         if (newCars.length > 0) {
           setActiveCarId(newCars[0].id);
-          setData((prev) => ({ ...newCars[0].data, kmCity: prev.kmCity, kmHighway: prev.kmHighway, yearsOwned: prev.yearsOwned }));
+          setData((prev) => ({
+            ...newCars[0].data,
+            kmCity: prev.kmCity,
+            kmHighway: prev.kmHighway,
+            yearsOwned: prev.yearsOwned,
+          }));
         }
 
         if (errors.length > 0) {
           setParseError(`Nie udało się: ${errors.join(", ")}`);
         }
         const addedCount = newCars.length;
-        setParsedLabel(addedCount > 0 ? `Dodano ${addedCount} ${addedCount === 1 ? "pojazd" : addedCount < 5 ? "pojazdy" : "pojazdów"} do porównania` : "");
+        setParsedLabel(
+          addedCount > 0
+            ? `Dodano ${addedCount} ${addedCount === 1 ? "pojazd" : addedCount < 5 ? "pojazdy" : "pojazdów"} do porównania`
+            : "",
+        );
 
         setTimeout(() => scrollToRef(compareRef), 100);
       } else {
@@ -660,10 +781,16 @@ export default function CarCostCalculator() {
   return (
     <div className="max-w-3xl mx-auto space-y-10">
       {/* ── AI input ── */}
-      <div ref={formTopRef} className="rounded-2xl bg-accent/5 dark:bg-accent/10 border border-accent/20 p-6 space-y-3">
-        <h2 className="text-sm font-semibold text-accent">Szybkie wypełnianie</h2>
+      <div
+        ref={formTopRef}
+        className="rounded-2xl bg-accent/5 dark:bg-accent/10 border border-accent/20 p-6 space-y-3"
+      >
+        <h2 className="text-sm font-semibold text-accent">
+          Szybkie wypełnianie
+        </h2>
         <p className="text-sm text-gray-600 dark:text-gray-400">
-          Wklej link do ogłoszenia lub opisz samochód. Rozdziel średnikiem, żeby porównać kilka naraz.
+          Wklej link do ogłoszenia lub opisz samochód. Rozdziel średnikiem, żeby
+          porównać kilka naraz.
         </p>
         <div className="flex gap-2">
           <input
@@ -682,27 +809,46 @@ export default function CarCostCalculator() {
           >
             {parsing ? (
               <span className="flex items-center gap-2">
-                <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24" fill="none">
-                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                <svg
+                  className="animate-spin h-4 w-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <circle
+                    className="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                  />
+                  <path
+                    className="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
+                  />
                 </svg>
                 Analizuję...
               </span>
-            ) : "Uzupełnij"}
+            ) : (
+              "Uzupełnij"
+            )}
           </button>
         </div>
-        {parseError && (
-          <p className="text-sm text-red-500">{parseError}</p>
-        )}
+        {parseError && <p className="text-sm text-red-500">{parseError}</p>}
         {parsedLabel && (
-          <p className="text-sm text-emerald-600 dark:text-emerald-400">{parsedLabel}</p>
+          <p className="text-sm text-emerald-600 dark:text-emerald-400">
+            {parsedLabel}
+          </p>
         )}
       </div>
 
       {/* ── Dane pojazdu ── */}
       <div className="space-y-2">
         <div className="flex items-center gap-3">
-          <h2 className="text-lg font-bold text-gray-900 dark:text-white">Dane pojazdu</h2>
+          <h2 className="text-lg font-bold text-gray-900 dark:text-white">
+            Dane pojazdu
+          </h2>
           {displayLabel && (
             <span className="text-xs font-semibold text-accent bg-accent/10 px-2.5 py-1 rounded-full">
               {displayLabel}
@@ -743,12 +889,13 @@ export default function CarCostCalculator() {
           unit="km"
           onChange={(v) => set("mileage", v)}
         />
-
       </div>
 
       {/* ── Silnik i paliwo ── */}
       <div className="space-y-2">
-        <h2 className="text-lg font-bold text-gray-900 dark:text-white">Silnik i paliwo</h2>
+        <h2 className="text-lg font-bold text-gray-900 dark:text-white">
+          Silnik i paliwo
+        </h2>
       </div>
 
       <div className="space-y-6">
@@ -793,8 +940,12 @@ export default function CarCostCalculator() {
           className="w-full flex items-center justify-between px-6 py-4 text-left hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors"
         >
           <div>
-            <h2 className="text-lg font-bold text-gray-900 dark:text-white">Zaawansowane</h2>
-            <p className="text-sm text-gray-500 dark:text-gray-400">Awaryjność i segment pojazdu</p>
+            <h2 className="text-lg font-bold text-gray-900 dark:text-white">
+              Zaawansowane
+            </h2>
+            <p className="text-sm text-gray-500 dark:text-gray-400">
+              Awaryjność i segment pojazdu
+            </p>
           </div>
           <svg
             width="20"
@@ -803,19 +954,40 @@ export default function CarCostCalculator() {
             fill="none"
             className={`shrink-0 text-gray-400 transition-transform duration-200 ${showAdvanced ? "rotate-180" : ""}`}
           >
-            <path d="M5 7.5l5 5 5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            <path
+              d="M5 7.5l5 5 5-5"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
           </svg>
         </button>
 
         {showAdvanced && (
           <div className="px-6 pb-6 space-y-6 border-t border-gray-100 dark:border-gray-800 pt-4">
-            <p className="text-xs text-gray-400 dark:text-gray-500">Najedź na ikonę, żeby zobaczyć opis. Te wartości są ustawiane automatycznie przez AI.</p>
+            <p className="text-xs text-gray-400 dark:text-gray-500">
+              Najedź na ikonę, żeby zobaczyć opis. Te wartości są ustawiane
+              automatycznie przez AI.
+            </p>
 
             <PillSelector<EngineLayout>
               label="Układ silnika"
-              options={([
-                "elektryczny", "R3", "R4", "R5", "R6", "V6", "V8", "V10", "V12", "W12", "W16",
-              ] as EngineLayout[]).map((e) => ({ id: e, label: e }))}
+              options={(
+                [
+                  "elektryczny",
+                  "R3",
+                  "R4",
+                  "R5",
+                  "R6",
+                  "V6",
+                  "V8",
+                  "V10",
+                  "V12",
+                  "W12",
+                  "W16",
+                ] as EngineLayout[]
+              ).map((e) => ({ id: e, label: e }))}
               value={data.engine}
               onChange={(v) => set("engine", v)}
             />
@@ -825,9 +997,22 @@ export default function CarCostCalculator() {
               value={data.brandReliability}
               onChange={(v) => set("brandReliability", v)}
               options={[
-                { value: 1, icon: "\u{1F7E2}", tooltip: "Niezawodne: Toyota, Porsche, Lexus, Honda" },
-                { value: 2, icon: "\u{1F7E0}", tooltip: "Przeciętne: większość marek (VW, Ford, Hyundai...)" },
-                { value: 3, icon: "\u{1F534}", tooltip: "Znane z awaryjności (np. starsze Audi, Land Rover, Alfa Romeo)" },
+                {
+                  value: 1,
+                  icon: "\u{1F7E2}",
+                  tooltip: "Niezawodne: Toyota, Porsche, Lexus, Honda",
+                },
+                {
+                  value: 2,
+                  icon: "\u{1F7E0}",
+                  tooltip: "Przeciętne: większość marek (VW, Ford, Hyundai...)",
+                },
+                {
+                  value: 3,
+                  icon: "\u{1F534}",
+                  tooltip:
+                    "Znane z awaryjności (np. starsze Audi, Land Rover, Alfa Romeo)",
+                },
               ]}
             />
 
@@ -836,22 +1021,67 @@ export default function CarCostCalculator() {
               value={data.engineReliability}
               onChange={(v) => set("engineReliability", v)}
               options={[
-                { value: 1, icon: "\u{1F512}", tooltip: "Wyjątkowo trwały, klasyczna konstrukcja, minimum elektroniki (np. wolnossący japoński R4, Mercedes OM617)" },
-                { value: 2, icon: "\u{2699}\u{FE0F}", tooltip: "Prosty, sprawdzony silnik (np. TDI PD, benzynowe VAG, Toyota R4, Ford Zetec)" },
-                { value: 3, icon: "\u{1F9F0}", tooltip: "Średnio zaawansowany - turbo, więcej elektroniki (np. 1.4 TSI, Ford EcoBoost, PSA THP)" },
-                { value: 4, icon: "\u{1F6D1}", tooltip: "Złożony technicznie, kosztowne usterki (np. BMW N47, Audi V6/V8 TFSI, nowsze diesle)" },
-                { value: 5, icon: "\u{1F4B8}", tooltip: "Egzotyka, bardzo drogie części i naprawy (np. V10, V12, W12, W16, stare FSI Audi)" },
+                {
+                  value: 1,
+                  icon: "\u{1F512}",
+                  tooltip:
+                    "Wyjątkowo trwały, klasyczna konstrukcja, minimum elektroniki (np. wolnossący japoński R4, Mercedes OM617)",
+                },
+                {
+                  value: 2,
+                  icon: "\u{2699}\u{FE0F}",
+                  tooltip:
+                    "Prosty, sprawdzony silnik (np. TDI PD, benzynowe VAG, Toyota R4, Ford Zetec)",
+                },
+                {
+                  value: 3,
+                  icon: "\u{1F9F0}",
+                  tooltip:
+                    "Średnio zaawansowany - turbo, więcej elektroniki (np. 1.4 TSI, Ford EcoBoost, PSA THP)",
+                },
+                {
+                  value: 4,
+                  icon: "\u{1F6D1}",
+                  tooltip:
+                    "Złożony technicznie, kosztowne usterki (np. BMW N47, Audi V6/V8 TFSI, nowsze diesle)",
+                },
+                {
+                  value: 5,
+                  icon: "\u{1F4B8}",
+                  tooltip:
+                    "Egzotyka, bardzo drogie części i naprawy (np. V10, V12, W12, W16, stare FSI Audi)",
+                },
               ]}
             />
 
             <PillSelector
               label="Segment pojazdu"
               options={[
-                { id: "1", label: "A/B", tooltip: "Mikrosamochody, miejskie, hatchbacki segmentu B" },
-                { id: "2", label: "C", tooltip: "Kompaktowe: Golf, Astra, Focus, Corolla" },
-                { id: "3", label: "D", tooltip: "Klasa średnia: Passat, Mondeo, Mazda 6, Superb" },
-                { id: "4", label: "E", tooltip: "Wyższa średnia: BMW 5, E-klasa, A6, Lexus GS" },
-                { id: "5", label: "F", tooltip: "Limuzyny, luksusowe: BMW 7, S-klasa, A8" },
+                {
+                  id: "1",
+                  label: "A/B",
+                  tooltip: "Mikrosamochody, miejskie, hatchbacki segmentu B",
+                },
+                {
+                  id: "2",
+                  label: "C",
+                  tooltip: "Kompaktowe: Golf, Astra, Focus, Corolla",
+                },
+                {
+                  id: "3",
+                  label: "D",
+                  tooltip: "Klasa średnia: Passat, Mondeo, Mazda 6, Superb",
+                },
+                {
+                  id: "4",
+                  label: "E",
+                  tooltip: "Wyższa średnia: BMW 5, E-klasa, A6, Lexus GS",
+                },
+                {
+                  id: "5",
+                  label: "F",
+                  tooltip: "Limuzyny, luksusowe: BMW 7, S-klasa, A8",
+                },
               ]}
               value={String(data.complexity)}
               onChange={(v) => set("complexity", Number(v))}
@@ -864,7 +1094,11 @@ export default function CarCostCalculator() {
       <div className="flex gap-3">
         <button
           type="button"
-          onClick={() => { setShowResults(true); if (savedCars.length > 0) setTimeout(() => scrollToRef(compareRef), 100); }}
+          onClick={() => {
+            setShowResults(true);
+            if (savedCars.length > 0)
+              setTimeout(() => scrollToRef(compareRef), 100);
+          }}
           className="btn-primary flex-1 text-center text-lg"
         >
           Oblicz koszty
@@ -889,7 +1123,10 @@ export default function CarCostCalculator() {
             </h2>
             <button
               type="button"
-              onClick={() => { setSavedCars([]); setActiveCarId(null); }}
+              onClick={() => {
+                setSavedCars([]);
+                setActiveCarId(null);
+              }}
               className="text-xs text-gray-400 hover:text-red-500 transition-colors"
             >
               Wyczyść wszystkie
@@ -909,12 +1146,19 @@ export default function CarCostCalculator() {
                       : "border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900"
                   }`}
                 >
-                  <div className={`w-2.5 h-2.5 rounded-full shrink-0 ${COMPARE_COLORS[i % COMPARE_COLORS.length]}`} />
+                  <div
+                    className={`w-2.5 h-2.5 rounded-full shrink-0 ${COMPARE_COLORS[i % COMPARE_COLORS.length]}`}
+                  />
                   <button
                     type="button"
-                    onClick={() => { loadSavedCar(car); scrollToRef(formTopRef); }}
+                    onClick={() => {
+                      loadSavedCar(car);
+                      scrollToRef(formTopRef);
+                    }}
                     className={`transition-colors truncate max-w-[200px] ${
-                      isActive ? "text-accent font-medium" : "text-gray-700 dark:text-gray-300 hover:text-accent"
+                      isActive
+                        ? "text-accent font-medium"
+                        : "text-gray-700 dark:text-gray-300 hover:text-accent"
                     }`}
                     title="Edytuj ten pojazd w formularzu"
                   >
@@ -926,7 +1170,12 @@ export default function CarCostCalculator() {
                     className="p-1 text-gray-300 dark:text-gray-600 hover:text-red-500 transition-colors"
                   >
                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                      <path d="M3 3l8 8M11 3l-8 8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                      <path
+                        d="M3 3l8 8M11 3l-8 8"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                      />
                     </svg>
                   </button>
                 </div>
@@ -943,9 +1192,14 @@ export default function CarCostCalculator() {
                     Parametr
                   </th>
                   {compareResults.map((car, i) => (
-                    <th key={car.id} className="text-right py-3 px-3 min-w-[120px]">
+                    <th
+                      key={car.id}
+                      className="text-right py-3 px-3 min-w-[120px]"
+                    >
                       <div className="flex items-center justify-end gap-2">
-                        <div className={`w-2 h-2 rounded-full shrink-0 ${COMPARE_COLORS[i % COMPARE_COLORS.length]}`} />
+                        <div
+                          className={`w-2 h-2 rounded-full shrink-0 ${COMPARE_COLORS[i % COMPARE_COLORS.length]}`}
+                        />
                         <span className="text-xs font-semibold text-gray-700 dark:text-gray-300 truncate max-w-[100px]">
                           {car.name}
                         </span>
@@ -955,19 +1209,72 @@ export default function CarCostCalculator() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-100 dark:divide-gray-800">
-                {([
-                  { label: "Cena zakupu", key: "price", format: (r: Result, d: Data) => `${fmt(d.price)} PLN` },
-                  { label: "Rok / przebieg", key: "yearMileage", format: (r: Result, d: Data) => `${d.year} / ${fmt(d.mileage)} km` },
-                  { label: "Paliwo", key: "fuel", format: (_r: Result, d: Data) => `${d.fuelType} ${d.engine}` },
-                  { label: "Koszt całkowity", key: "total", format: (r: Result) => `${fmt(r.totalCost)} PLN`, bold: true },
-                  { label: "Koszt miesięczny", key: "monthly", format: (r: Result) => `${fmt(r.monthly)} PLN`, bold: true },
-                  { label: "Koszt / km", key: "perKm", format: (r: Result) => `${fmt2(r.costPerKm)} PLN` },
-                  { label: "Koszt / godz.", key: "perHour", format: (r: Result) => `${fmt2(r.costPerHour)} PLN` },
-                  { label: "Paliwo", key: "fuelCost", format: (r: Result) => `${fmt(r.fuelCost)} PLN` },
-                  { label: "Spadek wartości", key: "depreciation", format: (r: Result) => `${fmt(r.lostValue)} PLN` },
-                  { label: "Serwis i naprawy", key: "repairs", format: (r: Result) => `${fmt(r.repairs)} PLN` },
-                ] as { label: string; key: string; format: (r: Result, d: Data) => string; bold?: boolean }[]).map((row) => {
-                  const isMoneyRow = !["price", "yearMileage", "fuel"].includes(row.key);
+                {(
+                  [
+                    {
+                      label: "Cena zakupu",
+                      key: "price",
+                      format: (r: Result, d: Data) => `${fmt(d.price)} PLN`,
+                    },
+                    {
+                      label: "Rok / przebieg",
+                      key: "yearMileage",
+                      format: (r: Result, d: Data) =>
+                        `${d.year} / ${fmt(d.mileage)} km`,
+                    },
+                    {
+                      label: "Paliwo",
+                      key: "fuel",
+                      format: (_r: Result, d: Data) =>
+                        `${d.fuelType} ${d.engine}`,
+                    },
+                    {
+                      label: "Koszt całkowity",
+                      key: "total",
+                      format: (r: Result) => `${fmt(r.totalCost)} PLN`,
+                      bold: true,
+                    },
+                    {
+                      label: "Koszt miesięczny",
+                      key: "monthly",
+                      format: (r: Result) => `${fmt(r.monthly)} PLN`,
+                      bold: true,
+                    },
+                    {
+                      label: "Koszt / km",
+                      key: "perKm",
+                      format: (r: Result) => `${fmt2(r.costPerKm)} PLN`,
+                    },
+                    {
+                      label: "Koszt / godz.",
+                      key: "perHour",
+                      format: (r: Result) => `${fmt2(r.costPerHour)} PLN`,
+                    },
+                    {
+                      label: "Paliwo",
+                      key: "fuelCost",
+                      format: (r: Result) => `${fmt(r.fuelCost)} PLN`,
+                    },
+                    {
+                      label: "Spadek wartości",
+                      key: "depreciation",
+                      format: (r: Result) => `${fmt(r.lostValue)} PLN`,
+                    },
+                    {
+                      label: "Serwis i naprawy",
+                      key: "repairs",
+                      format: (r: Result) => `${fmt(r.repairs)} PLN`,
+                    },
+                  ] as {
+                    label: string;
+                    key: string;
+                    format: (r: Result, d: Data) => string;
+                    bold?: boolean;
+                  }[]
+                ).map((row) => {
+                  const isMoneyRow = !["price", "yearMileage", "fuel"].includes(
+                    row.key,
+                  );
                   const values = isMoneyRow
                     ? compareResults.map((car) => {
                         const r = car.result;
@@ -990,7 +1297,10 @@ export default function CarCostCalculator() {
                       </td>
                       {compareResults.map((car, i) => {
                         const val = isMoneyRow ? values[i] : -1;
-                        const isBest = isMoneyRow && compareResults.length > 1 && val === minVal;
+                        const isBest =
+                          isMoneyRow &&
+                          compareResults.length > 1 &&
+                          val === minVal;
                         return (
                           <td
                             key={car.id}
@@ -1017,7 +1327,12 @@ export default function CarCostCalculator() {
             type="button"
             onClick={() => {
               setActiveCarId(null);
-              setData((prev) => ({ ...INITIAL, kmCity: prev.kmCity, kmHighway: prev.kmHighway, yearsOwned: prev.yearsOwned }));
+              setData((prev) => ({
+                ...INITIAL,
+                kmCity: prev.kmCity,
+                kmHighway: prev.kmHighway,
+                yearsOwned: prev.yearsOwned,
+              }));
               setQuery("");
               scrollToRef(formTopRef);
             }}
@@ -1033,7 +1348,9 @@ export default function CarCostCalculator() {
         <div className="space-y-6">
           <div className="space-y-2">
             <div className="flex items-center gap-3">
-              <h2 className="text-lg font-bold text-gray-900 dark:text-white">Przebiegi i użytkowanie</h2>
+              <h2 className="text-lg font-bold text-gray-900 dark:text-white">
+                Przebiegi i użytkowanie
+              </h2>
               {savedCars.length > 0 && (
                 <span className="text-[10px] font-semibold uppercase tracking-wider text-accent bg-accent/10 px-2 py-0.5 rounded-full">
                   Wspólne dla porównania
@@ -1093,111 +1410,160 @@ export default function CarCostCalculator() {
             const fuelPrice = FUEL_PRICES[d.fuelType];
             const kmTotal = r.totalKm;
             return (
-            <>
-          <div className="rounded-2xl border-2 border-accent/30 bg-accent/5 dark:bg-accent/10 p-8 space-y-4">
-            <h3 className="text-lg font-bold text-gray-900 dark:text-white text-center">
-              {displayLabel && <span className="text-accent">{displayLabel}</span>}
-              {displayLabel ? " — " : ""}Podsumowanie kosztów ({data.yearsOwned} {data.yearsOwned === 1 ? "rok" : data.yearsOwned < 5 ? "lata" : "lat"})
-            </h3>
-              <div className="grid sm:grid-cols-2 gap-4 text-sm">
-                <ResultRow
-                  label="Całkowity koszt" value={`${fmt(r.totalCost)} PLN`} accent
-                  tooltip={`Paliwo ${fmt(r.fuelCost)} + spadek wartości ${fmt(r.lostValue)} + serwis ${fmt(r.repairs)} PLN`}
-                />
-                <ResultRow
-                  label="Koszt miesięczny" value={`${fmt(r.monthly)} PLN`} accent
-                  tooltip={`${fmt(r.totalCost)} PLN / ${data.yearsOwned * 12} mies. = ${fmt(r.monthly)} PLN/mies.`}
-                />
-                <ResultRow
-                  label="Koszt na km" value={`${fmt2(r.costPerKm)} PLN`}
-                  tooltip={`${fmt(r.totalCost)} PLN / ${fmt(kmTotal)} km = ${fmt2(r.costPerKm)} PLN/km`}
-                />
-                <ResultRow
-                  label="Koszt na godzinę jazdy" value={`${fmt2(r.costPerHour)} PLN`}
-                  tooltip={`${fmt(r.totalCost)} PLN / ${fmt(Math.round(r.totalHours))} godz.\nMiasto ~25 km/h, trasa ~80 km/h`}
-                />
-              </div>
-            </div>
+              <>
+                <div className="rounded-2xl border-2 border-accent/30 bg-accent/5 dark:bg-accent/10 p-8 space-y-4">
+                  <h3 className="text-lg font-bold text-gray-900 dark:text-white text-center">
+                    {displayLabel && (
+                      <span className="text-accent">{displayLabel}</span>
+                    )}
+                    {displayLabel ? " — " : ""}Podsumowanie kosztów (
+                    {data.yearsOwned}{" "}
+                    {data.yearsOwned === 1
+                      ? "rok"
+                      : data.yearsOwned < 5
+                        ? "lata"
+                        : "lat"}
+                    )
+                  </h3>
+                  <div className="grid sm:grid-cols-2 gap-4 text-sm">
+                    <ResultRow
+                      label="Całkowity koszt"
+                      value={`${fmt(r.totalCost)} PLN`}
+                      accent
+                      tooltip={`Paliwo ${fmt(r.fuelCost)} + spadek wartości ${fmt(r.lostValue)} + serwis ${fmt(r.repairs)} PLN`}
+                    />
+                    <ResultRow
+                      label="Koszt miesięczny"
+                      value={`${fmt(r.monthly)} PLN`}
+                      accent
+                      tooltip={`${fmt(r.totalCost)} PLN / ${data.yearsOwned * 12} mies. = ${fmt(r.monthly)} PLN/mies.`}
+                    />
+                    <ResultRow
+                      label="Koszt na km"
+                      value={`${fmt2(r.costPerKm)} PLN`}
+                      tooltip={`${fmt(r.totalCost)} PLN / ${fmt(kmTotal)} km = ${fmt2(r.costPerKm)} PLN/km`}
+                    />
+                    <ResultRow
+                      label="Koszt na godzinę jazdy"
+                      value={`${fmt2(r.costPerHour)} PLN`}
+                      tooltip={`${fmt(r.totalCost)} PLN / ${fmt(Math.round(r.totalHours))} godz.\nMiasto ~25 km/h, trasa ~80 km/h`}
+                    />
+                  </div>
+                </div>
 
-            <div className="rounded-2xl border border-gray-200 dark:border-gray-700 p-6 space-y-3">
-              <h3 className="text-sm font-bold text-gray-900 dark:text-white">Szczegóły kalkulacji</h3>
-              <div className="grid sm:grid-cols-2 gap-3 text-sm">
-                <ResultRow
-                  label="Wiek na starcie" value={`${r.ageStart} lat`}
-                  tooltip={`${YEAR_NOW} - ${d.year} = ${r.ageStart} lat`}
-                />
-                <ResultRow
-                  label="Wiek na koniec" value={`${r.ageEnd} lat`}
-                  tooltip={`${r.ageStart} + ${data.yearsOwned} lat użytkowania = ${r.ageEnd} lat`}
-                />
-                <ResultRow
-                  label="Km rocznie (miasto)" value={`${fmt(r.kmCityYear)} km`}
-                  tooltip={`${fmt(d.kmCity)} km × ${KM_MULTIPLIER[kmPeriod]} = ${fmt(r.kmCityYear)} km/rok`}
-                />
-                <ResultRow
-                  label="Km rocznie (trasa)" value={`${fmt(r.kmHighwayYear)} km`}
-                  tooltip={`${fmt(d.kmHighway)} km × ${KM_MULTIPLIER[kmPeriod]} = ${fmt(r.kmHighwayYear)} km/rok`}
-                />
-                <ResultRow
-                  label="Łączny przebieg" value={`${fmt(r.totalKm)} km`}
-                  tooltip={`(${fmt(r.kmCityYear)} + ${fmt(r.kmHighwayYear)}) × ${data.yearsOwned} lat = ${fmt(r.totalKm)} km`}
-                />
-                <ResultRow
-                  label="Końcowy przebieg" value={`${fmt(r.finalMileage)} km`}
-                  tooltip={`${fmt(d.mileage)} km aktualny + ${fmt(r.totalKm)} km = ${fmt(r.finalMileage)} km`}
-                />
-              </div>
+                <div className="rounded-2xl border border-gray-200 dark:border-gray-700 p-6 space-y-3">
+                  <h3 className="text-sm font-bold text-gray-900 dark:text-white">
+                    Szczegóły kalkulacji
+                  </h3>
+                  <div className="grid sm:grid-cols-2 gap-3 text-sm">
+                    <ResultRow
+                      label="Wiek na starcie"
+                      value={`${r.ageStart} lat`}
+                      tooltip={`${YEAR_NOW} - ${d.year} = ${r.ageStart} lat`}
+                    />
+                    <ResultRow
+                      label="Wiek na koniec"
+                      value={`${r.ageEnd} lat`}
+                      tooltip={`${r.ageStart} + ${data.yearsOwned} lat użytkowania = ${r.ageEnd} lat`}
+                    />
+                    <ResultRow
+                      label="Km rocznie (miasto)"
+                      value={`${fmt(r.kmCityYear)} km`}
+                      tooltip={`${fmt(d.kmCity)} km × ${KM_MULTIPLIER[kmPeriod]} = ${fmt(r.kmCityYear)} km/rok`}
+                    />
+                    <ResultRow
+                      label="Km rocznie (trasa)"
+                      value={`${fmt(r.kmHighwayYear)} km`}
+                      tooltip={`${fmt(d.kmHighway)} km × ${KM_MULTIPLIER[kmPeriod]} = ${fmt(r.kmHighwayYear)} km/rok`}
+                    />
+                    <ResultRow
+                      label="Łączny przebieg"
+                      value={`${fmt(r.totalKm)} km`}
+                      tooltip={`(${fmt(r.kmCityYear)} + ${fmt(r.kmHighwayYear)}) × ${data.yearsOwned} lat = ${fmt(r.totalKm)} km`}
+                    />
+                    <ResultRow
+                      label="Końcowy przebieg"
+                      value={`${fmt(r.finalMileage)} km`}
+                      tooltip={`${fmt(d.mileage)} km aktualny + ${fmt(r.totalKm)} km = ${fmt(r.finalMileage)} km`}
+                    />
+                  </div>
 
-              <div className="border-t border-gray-100 dark:border-gray-800 pt-3 mt-3">
-                <h4 className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2">Podział kosztów</h4>
-                <div className="space-y-2">
-                  {[
-                    {
-                      label: "Paliwo", value: r.fuelCost, color: "bg-blue-500",
-                      tip: `Miasto: ${fmt(r.kmCityYear)} km × ${d.fuelCity} L/100km\nTrasa: ${fmt(r.kmHighwayYear)} km × ${d.fuelHighway} L/100km\nCena ${d.fuelType}: ${fuelPrice.toFixed(2)} PLN/L × ${data.yearsOwned} lat`,
-                    },
-                    {
-                      label: "Spadek wartości", value: r.lostValue, color: "bg-amber-500",
-                      tip: `Cena ${fmt(d.price)} PLN\nWiek ${r.ageStart} → ${r.ageEnd} lat\nSzybsza utrata wartości w pierwszych latach, wolniejsza potem`,
-                    },
-                    {
-                      label: "Serwis i naprawy", value: r.repairs, color: "bg-red-500",
-                      tip: `Awaryjność marki: ${d.brandReliability}/3, silnika: ${d.engineReliability}/5\nSilnik ${d.engine}, segment ${d.complexity}/5\nKm w mieście ×2 (większe zużycie)`,
-                    },
-                  ].map((item) => {
-                    const pct = r.totalCost > 0 ? (item.value / r.totalCost) * 100 : 0;
-                  return (
-                    <div key={item.label} className="relative group">
-                      <div className="flex justify-between text-sm mb-1">
-                        <span className="text-gray-600 dark:text-gray-400 flex items-center gap-1">
-                          {item.label}
-                          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="shrink-0 opacity-40 group-hover:opacity-70 transition-opacity">
-                            <circle cx="6" cy="6" r="5.5" stroke="currentColor" />
-                            <path d="M6 5.5V8.5M6 3.5V4" stroke="currentColor" strokeLinecap="round" />
-                          </svg>
-                        </span>
-                        <span className="font-medium text-gray-900 dark:text-white">
-                          {fmt(item.value)} PLN ({pct.toFixed(0)}%)
-                        </span>
-                      </div>
-                      <div className="h-2 rounded-full bg-gray-200 dark:bg-gray-700">
-                        <div
-                          className={`h-2 rounded-full ${item.color} transition-all`}
-                          style={{ width: `${pct}%` }}
-                        />
-                      </div>
-                      <span className="absolute left-0 right-0 bottom-full mb-2 rounded-lg bg-gray-900 dark:bg-gray-700 text-xs text-white px-3 py-2 opacity-0 group-hover:opacity-100 transition pointer-events-none z-20 leading-relaxed whitespace-pre-line">
-                        {item.tip}
-                      </span>
+                  <div className="border-t border-gray-100 dark:border-gray-800 pt-3 mt-3">
+                    <h4 className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2">
+                      Podział kosztów
+                    </h4>
+                    <div className="space-y-2">
+                      {[
+                        {
+                          label: "Paliwo",
+                          value: r.fuelCost,
+                          color: "bg-blue-500",
+                          tip: `Miasto: ${fmt(r.kmCityYear)} km × ${d.fuelCity} L/100km\nTrasa: ${fmt(r.kmHighwayYear)} km × ${d.fuelHighway} L/100km\nCena ${d.fuelType}: ${fuelPrice.toFixed(2)} PLN/L × ${data.yearsOwned} lat`,
+                        },
+                        {
+                          label: "Spadek wartości",
+                          value: r.lostValue,
+                          color: "bg-amber-500",
+                          tip: `Cena ${fmt(d.price)} PLN\nWiek ${r.ageStart} → ${r.ageEnd} lat\nSzybsza utrata wartości w pierwszych latach, wolniejsza potem`,
+                        },
+                        {
+                          label: "Serwis i naprawy",
+                          value: r.repairs,
+                          color: "bg-red-500",
+                          tip: `Awaryjność marki: ${d.brandReliability}/3, silnika: ${d.engineReliability}/5\nSilnik ${d.engine}, segment ${d.complexity}/5\nKm w mieście ×2 (większe zużycie)`,
+                        },
+                      ].map((item) => {
+                        const pct =
+                          r.totalCost > 0
+                            ? (item.value / r.totalCost) * 100
+                            : 0;
+                        return (
+                          <div key={item.label} className="relative group">
+                            <div className="flex justify-between text-sm mb-1">
+                              <span className="text-gray-600 dark:text-gray-400 flex items-center gap-1">
+                                {item.label}
+                                <svg
+                                  width="12"
+                                  height="12"
+                                  viewBox="0 0 12 12"
+                                  fill="none"
+                                  className="shrink-0 opacity-40 group-hover:opacity-70 transition-opacity"
+                                >
+                                  <circle
+                                    cx="6"
+                                    cy="6"
+                                    r="5.5"
+                                    stroke="currentColor"
+                                  />
+                                  <path
+                                    d="M6 5.5V8.5M6 3.5V4"
+                                    stroke="currentColor"
+                                    strokeLinecap="round"
+                                  />
+                                </svg>
+                              </span>
+                              <span className="font-medium text-gray-900 dark:text-white">
+                                {fmt(item.value)} PLN ({pct.toFixed(0)}%)
+                              </span>
+                            </div>
+                            <div className="h-2 rounded-full bg-gray-200 dark:bg-gray-700">
+                              <div
+                                className={`h-2 rounded-full ${item.color} transition-all`}
+                                style={{ width: `${pct}%` }}
+                              />
+                            </div>
+                            <span className="absolute left-0 right-0 bottom-full mb-2 rounded-lg bg-gray-900 dark:bg-gray-700 text-xs text-white px-3 py-2 opacity-0 group-hover:opacity-100 transition pointer-events-none z-20 leading-relaxed whitespace-pre-line">
+                              {item.tip}
+                            </span>
+                          </div>
+                        );
+                      })}
                     </div>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-          </>
-              );
-            })()}
+                  </div>
+                </div>
+              </>
+            );
+          })()}
         </div>
       )}
     </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { event as gaEvent } from "@/lib/gtag";
 
 const inputClass =
   "w-full px-4 py-2.5 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-sm text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-colors";
@@ -8,8 +9,10 @@ const inputClass =
 export default function CTA() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
-  const [contactMethod, setContactMethod] = useState<"email" | "phone">("email");
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
+  const [contactMethod, setContactMethod] = useState<"email" | "phone">(
+    "email",
+  );
   const [showContactTime, setShowContactTime] = useState(false);
   const [contactTimeVisible, setContactTimeVisible] = useState(false);
 
@@ -28,7 +31,7 @@ export default function CTA() {
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setLoading(true);
-    setError(false);
+    setErrorMsg(null);
     const form = e.currentTarget;
     const data = {
       name: (form.elements.namedItem("name") as HTMLInputElement).value,
@@ -36,21 +39,43 @@ export default function CTA() {
       email: (form.elements.namedItem("email") as HTMLInputElement).value,
       phone: (form.elements.namedItem("phone") as HTMLInputElement).value,
       contactMethod,
-      contactTime: contactMethod === "phone"
-        ? (form.elements.namedItem("contactTime") as HTMLInputElement).value
-        : "",
-      message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
+      contactTime:
+        contactMethod === "phone"
+          ? (form.elements.namedItem("contactTime") as HTMLInputElement).value
+          : "",
+      message: (form.elements.namedItem("message") as HTMLTextAreaElement)
+        .value,
+      website:
+        (form.elements.namedItem("website") as HTMLInputElement | null)
+          ?.value ?? "",
     };
-    const res = await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    });
-    setLoading(false);
-    if (res.ok) {
-      setSubmitted(true);
-    } else {
-      setError(true);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      setLoading(false);
+      if (res.ok) {
+        setSubmitted(true);
+        gaEvent("form_submit", {
+          form_id: "contact",
+          contact_method: contactMethod,
+        });
+      } else {
+        const payload = (await res.json().catch(() => null)) as {
+          error?: string;
+        } | null;
+        setErrorMsg(
+          payload?.error ??
+            "Coś poszło nie tak. Spróbuj ponownie lub napisz bezpośrednio na iwanekpawel55@gmail.com.",
+        );
+      }
+    } catch {
+      setLoading(false);
+      setErrorMsg(
+        "Problem z połączeniem. Spróbuj ponownie lub napisz na iwanekpawel55@gmail.com.",
+      );
     }
   }
 
@@ -63,8 +88,8 @@ export default function CTA() {
             Zacznijmy od rozmowy
           </h2>
           <p className="text-gray-500 dark:text-gray-400 text-lg mb-12">
-            Napisz kilka słów o swoim procesie - odpiszę w ciągu 24 godzin
-            i zaproponuję termin bezpłatnej konsultacji.
+            Napisz kilka słów o swoim procesie - odpiszę w ciągu 24 godzin i
+            zaproponuję termin bezpłatnej konsultacji.
           </p>
 
           {submitted ? (
@@ -92,6 +117,28 @@ export default function CTA() {
               onSubmit={handleSubmit}
               className="bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-2xl p-8 shadow-sm text-left space-y-5"
             >
+              {/* Honeypot – niewidoczny dla ludzi, boty wypełniają. */}
+              <div
+                aria-hidden="true"
+                style={{
+                  position: "absolute",
+                  left: "-9999px",
+                  width: 1,
+                  height: 1,
+                  overflow: "hidden",
+                }}
+              >
+                <label htmlFor="website">Nie wypełniaj tego pola</label>
+                <input
+                  id="website"
+                  name="website"
+                  type="text"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  defaultValue=""
+                />
+              </div>
+
               <div className="grid sm:grid-cols-2 gap-5">
                 <div>
                   <label
@@ -167,7 +214,9 @@ export default function CTA() {
                     {/* sliding indicator */}
                     <div
                       className={`absolute top-0.5 bottom-0.5 left-0.5 w-[calc(50%-2px)] bg-accent rounded-md shadow-sm transition-transform duration-200 ease-in-out ${
-                        contactMethod === "phone" ? "translate-x-full" : "translate-x-0"
+                        contactMethod === "phone"
+                          ? "translate-x-full"
+                          : "translate-x-0"
                       }`}
                     />
                     <button
@@ -179,7 +228,16 @@ export default function CTA() {
                           : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200"
                       }`}
                     >
-                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <svg
+                        width="15"
+                        height="15"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
                         <rect x="2" y="4" width="20" height="16" rx="2" />
                         <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
                       </svg>
@@ -194,7 +252,16 @@ export default function CTA() {
                           : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200"
                       }`}
                     >
-                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <svg
+                        width="15"
+                        height="15"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
                         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.07 6.07l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
                       </svg>
                       Telefon
@@ -244,14 +311,16 @@ export default function CTA() {
                 />
               </div>
 
-              <button type="submit" disabled={loading} className="btn-primary w-full py-3.5 text-base disabled:opacity-60">
+              <button
+                type="submit"
+                disabled={loading}
+                className="btn-primary w-full py-3.5 text-base disabled:opacity-60"
+              >
                 {loading ? "Wysyłanie..." : "Wyślij wiadomość"}
               </button>
 
-              {error && (
-                <p className="text-center text-sm text-red-500">
-                  Coś poszło nie tak. Spróbuj ponownie lub napisz bezpośrednio na iwanekpawel55@gmail.com.
-                </p>
+              {errorMsg && (
+                <p className="text-center text-sm text-red-500">{errorMsg}</p>
               )}
 
               <p className="text-center text-xs text-gray-400 dark:text-gray-500">

@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, useMemo, useRef, useCallback } from "react";
+import { useState, useMemo, useRef, useCallback, useEffect } from "react";
 import Image from "next/image";
+import { event as gaEvent } from "@/lib/gtag";
 
 /* ═══════════════════════════════════════════════════
    STAŁE PODATKOWE 2026
@@ -1133,6 +1134,10 @@ function ResultCard({
    ═══════════════════════════════════════════════════ */
 
 export default function TaxCalculator() {
+  useEffect(() => {
+    gaEvent("calculator_viewed", { calculator: "tax" });
+  }, []);
+
   const [carCosts, setCarCosts] = useState(0);
   const [carBrutto, setCarBrutto] = useState(false);
   const [carUsage, setCarUsage] = useState<CarUsage>("mixed");
