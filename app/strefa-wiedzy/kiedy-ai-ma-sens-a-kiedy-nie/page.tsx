@@ -3,6 +3,8 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import TableOfContents from "@/components/TableOfContents";
+import PrevNextArticle from "@/components/PrevNextArticle";
 
 export const metadata: Metadata = {
   title: "Kiedy AI ma sens w firmie, a kiedy nie | Fluxlab",
@@ -33,7 +35,12 @@ export default function KiedyAiMaSensPage() {
     <>
       <Header />
       <main className="pt-16">
-        <Breadcrumbs items={[{ label: "Strefa wiedzy", href: "/strefa-wiedzy" }, { label: "Kiedy AI ma sens, a kiedy nie" }]} />
+        <Breadcrumbs
+          items={[
+            { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
+            { label: "Kiedy AI ma sens, a kiedy nie" },
+          ]}
+        />
         {/* Hero */}
         <section className="bg-gray-50 dark:bg-gray-900/50 py-16 lg:py-24">
           <div className="container-wide">
@@ -52,90 +59,121 @@ export default function KiedyAiMaSensPage() {
           </div>
         </section>
 
-        {/* AI ma sens, gdy… */}
-        <section className="py-16 lg:py-24">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                AI ma sens, gdy…
-              </h2>
-              <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                AI ma sens wtedy, gdy:
-              </p>
-              <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-400 mb-6">
-                <li>proces dotyczy dużej liczby podobnych danych lub treści,</li>
-                <li>da się określić oczekiwany wynik,</li>
-                <li>jakość danych wejściowych jest wystarczająca,</li>
-                <li>
-                  koszt błędu nie jest katastrofalny albo można go kontrolować,
-                </li>
-                <li>człowiek nie musi analizować wszystkiego od zera.</li>
-              </ul>
-              <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                Jeśli te warunki są spełnione, AI zwykle pomaga.
-              </p>
-            </div>
-          </div>
-        </section>
+        <div className="container-wide">
+          <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_220px] lg:gap-8">
+            <article>
+              {/* AI ma sens, gdy… */}
+              <section className="py-16 lg:py-24">
+                <div className="container-wide">
+                  <div className="max-w-3xl mx-auto">
+                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                      AI ma sens, gdy…
+                    </h2>
+                    <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                      AI ma sens wtedy, gdy:
+                    </p>
+                    <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-400 mb-6">
+                      <li>
+                        proces dotyczy dużej liczby podobnych danych lub treści,
+                      </li>
+                      <li>da się określić oczekiwany wynik,</li>
+                      <li>jakość danych wejściowych jest wystarczająca,</li>
+                      <li>
+                        koszt błędu nie jest katastrofalny albo można go
+                        kontrolować,
+                      </li>
+                      <li>człowiek nie musi analizować wszystkiego od zera.</li>
+                    </ul>
+                    <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                      Jeśli te warunki są spełnione, AI zwykle pomaga.
+                    </p>
+                  </div>
+                </div>
+              </section>
 
-        {/* AI nie ma sensu, gdy… */}
-        <section className="py-16 lg:py-24">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                AI nie ma sensu, gdy…
-              </h2>
-              <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                AI nie ma sensu wtedy, gdy proces jest rzadki, nieuporządkowany,
-                oparty na chaosie danych albo wymaga stuprocentowej trafności
-                bez walidacji. Nie ma też sensu, gdy firma nie wie jeszcze, jaki
-                problem chce rozwiązać.
-              </p>
-              <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                Wtedy AI staje się tylko drogim dodatkiem do źle zaprojektowanego
-                procesu.
-              </p>
-            </div>
-          </div>
-        </section>
+              {/* AI nie ma sensu, gdy… */}
+              <section className="py-16 lg:py-24">
+                <div className="container-wide">
+                  <div className="max-w-3xl mx-auto">
+                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                      AI nie ma sensu, gdy…
+                    </h2>
+                    <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                      AI nie ma sensu wtedy, gdy proces jest rzadki,
+                      nieuporządkowany, oparty na chaosie danych albo wymaga
+                      stuprocentowej trafności bez walidacji. Nie ma też sensu,
+                      gdy firma nie wie jeszcze, jaki problem chce rozwiązać.
+                    </p>
+                    <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                      Wtedy AI staje się tylko drogim dodatkiem do źle
+                      zaprojektowanego procesu.
+                    </p>
+                  </div>
+                </div>
+              </section>
 
-        {/* Prosty test */}
-        <section className="py-16 lg:py-24">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                Prosty test
-              </h2>
-              <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                Zadaj sobie pięć pytań:
-              </p>
-              <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-400 mb-6">
-                <li>Czy ten proces powtarza się często?</li>
-                <li>Czy dane wejściowe są w miarę uporządkowane?</li>
-                <li>Czy wynik da się ocenić jako dobry lub zły?</li>
-                <li>Czy można dodać kontrolę człowieka?</li>
-                <li>Czy oszczędność czasu lub jakości jest realna?</li>
-              </ul>
-              <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                Im więcej odpowiedzi „tak", tym większy sens ma wdrożenie.
-              </p>
-            </div>
-          </div>
-        </section>
+              {/* Prosty test */}
+              <section className="py-16 lg:py-24">
+                <div className="container-wide">
+                  <div className="max-w-3xl mx-auto">
+                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                      Prosty test
+                    </h2>
+                    <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                      Zadaj sobie pięć pytań:
+                    </p>
+                    <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-400 mb-6">
+                      <li>Czy ten proces powtarza się często?</li>
+                      <li>Czy dane wejściowe są w miarę uporządkowane?</li>
+                      <li>Czy wynik da się ocenić jako dobry lub zły?</li>
+                      <li>Czy można dodać kontrolę człowieka?</li>
+                      <li>Czy oszczędność czasu lub jakości jest realna?</li>
+                    </ul>
+                    <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                      Im więcej odpowiedzi „tak", tym większy sens ma wdrożenie.
+                    </p>
+                  </div>
+                </div>
+              </section>
 
-        {/* Najpierw proces, potem AI */}
-        <section className="py-16 lg:py-24">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                Najpierw proces, potem AI
-              </h2>
-              <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                Jeżeli proces jest słaby, AI go nie naprawi. Najpierw trzeba
-                ustalić logikę działania, odpowiedzialność i przepływ danych — to zadanie dla <Link href="/automatyzacja-procesow-biznesowych" className="text-accent hover:underline">automatyzacji procesów biznesowych</Link>.
-                Dopiero potem dodawać warstwę <Link href="/automatyzacja-ai" className="text-accent hover:underline">AI</Link>.
-              </p>
-            </div>
+              {/* Najpierw proces, potem AI */}
+              <section className="py-16 lg:py-24">
+                <div className="container-wide">
+                  <div className="max-w-3xl mx-auto">
+                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                      Najpierw proces, potem AI
+                    </h2>
+                    <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                      Jeżeli proces jest słaby, AI go nie naprawi. Najpierw
+                      trzeba ustalić logikę działania, odpowiedzialność i
+                      przepływ danych — to zadanie dla{" "}
+                      <Link
+                        href="/automatyzacja-procesow-biznesowych"
+                        className="text-accent hover:underline"
+                      >
+                        automatyzacji procesów biznesowych
+                      </Link>
+                      . Dopiero potem dodawać warstwę{" "}
+                      <Link
+                        href="/automatyzacja-ai"
+                        className="text-accent hover:underline"
+                      >
+                        AI
+                      </Link>
+                      .
+                    </p>
+                  </div>
+                </div>
+              </section>
+            </article>
+            <TableOfContents containerSelector="article" />
+          </div>
+        </div>
+
+        {/* Prev / Next */}
+        <section className="py-12 lg:py-16">
+          <div className="max-w-3xl mx-auto px-6 lg:px-8">
+            <PrevNextArticle currentHref="/strefa-wiedzy/kiedy-ai-ma-sens-a-kiedy-nie" />
           </div>
         </section>
 
