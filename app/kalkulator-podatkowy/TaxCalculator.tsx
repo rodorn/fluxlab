@@ -1158,9 +1158,18 @@ export default function TaxCalculator() {
   ]);
 
   // Koszty (firmowe + prywatne w jednej liście)
-  const [costItems, setCostItems] = useState<CostItem[]>([]);
+  const [costItems, setCostItems] = useState<CostItem[]>([
+    {
+      id: 101,
+      name: "Księgowość",
+      amount: 200,
+      type: "business",
+      brutto: true,
+      vatRate: 23,
+    },
+  ]);
 
-  const [nextId, setNextId] = useState(100);
+  const [nextId, setNextId] = useState(200);
 
   // AI state
   const [aiLoadingRate, setAiLoadingRate] = useState<number | null>(null); // source id being detected
