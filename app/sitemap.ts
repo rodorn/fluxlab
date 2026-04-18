@@ -5,21 +5,91 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const staticPages = [
     { url: baseUrl, changeFrequency: "weekly" as const, priority: 1.0 },
-    { url: `${baseUrl}/automatyzacja-procesow-biznesowych`, changeFrequency: "monthly" as const, priority: 0.9 },
-    { url: `${baseUrl}/automatyzacja-crm`, changeFrequency: "monthly" as const, priority: 0.9 },
-    { url: `${baseUrl}/automatyzacja-raportowania`, changeFrequency: "monthly" as const, priority: 0.9 },
-    { url: `${baseUrl}/integracje-api`, changeFrequency: "monthly" as const, priority: 0.9 },
-    { url: `${baseUrl}/automatyzacja-ai`, changeFrequency: "monthly" as const, priority: 0.9 },
-    { url: `${baseUrl}/automatyzacja-leadow`, changeFrequency: "monthly" as const, priority: 0.9 },
-    { url: `${baseUrl}/automatyzacja-pipedrive`, changeFrequency: "monthly" as const, priority: 0.8 },
-    { url: `${baseUrl}/automatyzacja-salesforce`, changeFrequency: "monthly" as const, priority: 0.8 },
-    { url: `${baseUrl}/n8n`, changeFrequency: "monthly" as const, priority: 0.8 },
-    { url: `${baseUrl}/zapier-make`, changeFrequency: "monthly" as const, priority: 0.8 },
-    { url: `${baseUrl}/narzedzia`, changeFrequency: "monthly" as const, priority: 0.7 },
-    { url: `${baseUrl}/kalkulator-kosztow`, changeFrequency: "monthly" as const, priority: 0.7 },
-    { url: `${baseUrl}/kalkulator-podatkowy`, changeFrequency: "monthly" as const, priority: 0.7 },
-    { url: `${baseUrl}/dobor-samochodu`, changeFrequency: "monthly" as const, priority: 0.6 },
-    { url: `${baseUrl}/strefa-wiedzy`, changeFrequency: "weekly" as const, priority: 0.8 },
+    {
+      url: `${baseUrl}/automatyzacja-procesow-biznesowych`,
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/automatyzacja-crm`,
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/automatyzacja-raportowania`,
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/integracje-api`,
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/automatyzacja-ai`,
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/automatyzacja-leadow`,
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/automatyzacja-pipedrive`,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/automatyzacja-salesforce`,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/n8n`,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/zapier-make`,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/narzedzia`,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/kalkulator-kosztow`,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/kalkulator-podatkowy`,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/dobor-samochodu`,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/strefa-wiedzy`,
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/jak-pracuje`,
+      changeFrequency: "monthly" as const,
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/pilotaz`,
+      changeFrequency: "monthly" as const,
+      priority: 0.85,
+    },
   ];
 
   const articles = [

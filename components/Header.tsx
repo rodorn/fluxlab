@@ -6,8 +6,8 @@ import ThemeToggle from "./ThemeToggle";
 import { event as gaEvent } from "@/lib/gtag";
 
 const navLinks = [
+  { label: "Jak pracuję", href: "/jak-pracuje" },
   { label: "Cennik", href: "/#cennik" },
-  { label: "Jak działamy", href: "/#proces" },
   { label: "O nas", href: "/#o-nas" },
   { label: "FAQ", href: "/#faq" },
 ];

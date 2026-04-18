@@ -1,7 +1,10 @@
 import Link from "next/link";
 
 const serviceLinks = [
-  { href: "/automatyzacja-procesow-biznesowych", label: "Automatyzacja procesów" },
+  {
+    href: "/automatyzacja-procesow-biznesowych",
+    label: "Automatyzacja procesów",
+  },
   { href: "/automatyzacja-crm", label: "Automatyzacja CRM" },
   { href: "/automatyzacja-pipedrive", label: "Pipedrive", indent: true },
   { href: "/automatyzacja-salesforce", label: "Salesforce", indent: true },
@@ -41,7 +44,9 @@ export default function Footer() {
                         : "text-sm text-gray-600 dark:text-gray-400"
                     }`}
                   >
-                    {"indent" in link && link.indent ? `└ ${link.label}` : link.label}
+                    {"indent" in link && link.indent
+                      ? `└ ${link.label}`
+                      : link.label}
                   </Link>
                 </li>
               ))}
@@ -52,10 +57,38 @@ export default function Footer() {
               Narzędzia
             </p>
             <ul className="space-y-2">
-              <li><Link href="/narzedzia" className="text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors">Wszystkie narzędzia</Link></li>
-              <li><Link href="/kalkulator-kosztow" className="text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors">Kalkulator kosztów</Link></li>
-              <li><Link href="/kalkulator-podatkowy" className="text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors">Kalkulator podatkowy</Link></li>
-              <li><Link href="/dobor-samochodu" className="text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors">Dobór samochodu</Link></li>
+              <li>
+                <Link
+                  href="/narzedzia"
+                  className="text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
+                >
+                  Wszystkie narzędzia
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/kalkulator-kosztow"
+                  className="text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
+                >
+                  Kalkulator kosztów
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/kalkulator-podatkowy"
+                  className="text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
+                >
+                  Kalkulator podatkowy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/dobor-samochodu"
+                  className="text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
+                >
+                  Dobór samochodu
+                </Link>
+              </li>
             </ul>
           </div>
           <div>
@@ -63,12 +96,62 @@ export default function Footer() {
               Firma
             </p>
             <ul className="space-y-2">
-              <li><a href="/#o-nas" className="text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors">O nas</a></li>
-              <li><a href="/#proces" className="text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors">Jak działamy</a></li>
-              <li><a href="/#cennik" className="text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors">Cennik</a></li>
-              <li><a href="/#kontakt" className="text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors">Kontakt</a></li>
-              <li><Link href="/polityka-prywatnosci" className="text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors">Polityka prywatności</Link></li>
-              <li><Link href="/regulamin" className="text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors">Regulamin</Link></li>
+              <li>
+                <a
+                  href="/#o-nas"
+                  className="text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
+                >
+                  O nas
+                </a>
+              </li>
+              <li>
+                <Link
+                  href="/jak-pracuje"
+                  className="text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
+                >
+                  Jak pracuję
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/pilotaz"
+                  className="text-sm text-accent font-medium hover:underline transition-colors"
+                >
+                  Pilotaż (–50%)
+                </Link>
+              </li>
+              <li>
+                <a
+                  href="/#cennik"
+                  className="text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
+                >
+                  Cennik
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/#kontakt"
+                  className="text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
+                >
+                  Kontakt
+                </a>
+              </li>
+              <li>
+                <Link
+                  href="/polityka-prywatnosci"
+                  className="text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
+                >
+                  Polityka prywatności
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/regulamin"
+                  className="text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
+                >
+                  Regulamin
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
@@ -77,8 +160,18 @@ export default function Footer() {
             © {new Date().getFullYear()} Fluxlab. Wszelkie prawa zastrzeżone.
           </p>
           <div className="flex gap-4">
-            <Link href="/polityka-prywatnosci" className="text-xs text-gray-400 dark:text-gray-500 hover:text-accent transition-colors">Polityka prywatności</Link>
-            <Link href="/regulamin" className="text-xs text-gray-400 dark:text-gray-500 hover:text-accent transition-colors">Regulamin</Link>
+            <Link
+              href="/polityka-prywatnosci"
+              className="text-xs text-gray-400 dark:text-gray-500 hover:text-accent transition-colors"
+            >
+              Polityka prywatności
+            </Link>
+            <Link
+              href="/regulamin"
+              className="text-xs text-gray-400 dark:text-gray-500 hover:text-accent transition-colors"
+            >
+              Regulamin
+            </Link>
           </div>
         </div>
       </div>
