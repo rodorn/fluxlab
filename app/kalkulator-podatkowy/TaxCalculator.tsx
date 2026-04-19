@@ -655,34 +655,49 @@ function RadioGroup<T extends string>({
         {label}
       </span>
       <div className="grid gap-2">
-        {options.map((o) => (
-          <label
-            key={o.value}
-            className={`flex items-start gap-3 rounded-lg border px-4 py-3 cursor-pointer transition ${
-              value === o.value
-                ? "border-accent bg-accent/5 dark:bg-accent/10"
-                : "border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600"
-            }`}
-          >
-            <input
-              type="radio"
-              name={label}
-              checked={value === o.value}
-              onChange={() => onChange(o.value)}
-              className="mt-0.5 accent-accent"
-            />
-            <div>
-              <span className="text-sm font-medium text-gray-900 dark:text-white">
-                {o.label}
+        {options.map((o) => {
+          const selected = value === o.value;
+          return (
+            <label
+              key={o.value}
+              className={`flex items-start gap-3 rounded-lg border px-4 py-3 cursor-pointer transition ${
+                selected
+                  ? "border-accent bg-accent/5 dark:bg-accent/10"
+                  : "border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600"
+              }`}
+            >
+              <input
+                type="radio"
+                name={label}
+                checked={selected}
+                onChange={() => onChange(o.value)}
+                className="sr-only"
+              />
+              <span
+                aria-hidden="true"
+                className={`mt-0.5 flex-shrink-0 w-4 h-4 rounded-full border-2 flex items-center justify-center transition ${
+                  selected
+                    ? "border-accent bg-white dark:bg-gray-900"
+                    : "border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900"
+                }`}
+              >
+                {selected && (
+                  <span className="w-2 h-2 rounded-full bg-accent" />
+                )}
               </span>
-              {o.desc && (
-                <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
-                  {o.desc}
-                </p>
-              )}
-            </div>
-          </label>
-        ))}
+              <div>
+                <span className="text-sm font-medium text-gray-900 dark:text-white">
+                  {o.label}
+                </span>
+                {o.desc && (
+                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
+                    {o.desc}
+                  </p>
+                )}
+              </div>
+            </label>
+          );
+        })}
       </div>
     </div>
   );
