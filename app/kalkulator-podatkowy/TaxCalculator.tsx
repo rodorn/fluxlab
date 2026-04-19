@@ -191,6 +191,25 @@ interface TaxResult {
   ikzeTaxSavings: number;
   privateSavings: number;
   effectiveRate: number;
+  // Debug: komponenty składowe (wszystko roczne)
+  dbgAnnBizCosts: number;
+  dbgAnnPrivCosts: number;
+  dbgAnnCarCostsGross: number;
+  dbgCarPitPct: number;
+  dbgCarVatPct: number;
+  dbgVatOut: number;
+  dbgVatInBiz: number;
+  dbgVatInPriv: number;
+  dbgVatInCar: number;
+  dbgZusBase: number;
+  dbgZusRate: number;
+  dbgMonthlyRevenue: number;
+  dbgRyczaltSources?: {
+    name: string;
+    rate: number;
+    annual: number;
+    isNajem: boolean;
+  }[];
 }
 
 /* ═══════════════════════════════════════════════════
@@ -275,6 +294,9 @@ function calculate(p: {
   businessCosts: number;
   privateCosts: number;
   carCosts: number;
+  businessCostsBrutto: number;
+  privateCostsBrutto: number;
+  carCostsBrutto: number;
   carUsage: CarUsage;
   zusStatus: ZusStatus;
   chorobowa: boolean;
@@ -291,6 +313,9 @@ function calculate(p: {
   const annBizCosts = p.businessCosts * 12;
   const annPrivCosts = p.privateCosts * 12;
   const annCarCosts = p.carCosts * 12;
+  const annBizCostsBrutto = p.businessCostsBrutto * 12;
+  const annPrivCostsBrutto = p.privateCostsBrutto * 12;
+  const annCarCostsBrutto = p.carCostsBrutto * 12;
   const carPitPct =
     p.carUsage === "business" ? CAR_PIT_BUSINESS : CAR_PIT_MIXED;
   const carVatPct =
@@ -442,14 +467,34 @@ function calculate(p: {
       vatPrivateSavings,
       totalBurden: totalWithVat,
       netAfterTax: annRevBrutto - totalWithVat,
-      disposable: annRevBrutto - totalWithVat - annBizCosts - ikze,
+      // Cashflow: od przychodu brutto odejmujemy obciążenia + VAT do US + RZECZYWISTE (brutto) koszty firmowe
+      disposable: annRevBrutto - totalWithVat - annBizCostsBrutto - ikze,
       ikzeContribution: ikze,
       ikzeTaxSavings: ikzeSav,
       privateSavings: privSav,
       effectiveRate:
-        annRevBrutto - annBizCosts > 0
-          ? totalWithVat / (annRevBrutto - annBizCosts)
+        annRevBrutto - annBizCostsBrutto > 0
+          ? totalWithVat / (annRevBrutto - annBizCostsBrutto)
           : 0,
+      // ── Debug ──
+      dbgAnnBizCosts: annBizCosts,
+      dbgAnnPrivCosts: annPrivCosts,
+      dbgAnnCarCostsGross: annCarCosts,
+      dbgCarPitPct: carPitPct,
+      dbgCarVatPct: carVatPct,
+      dbgVatOut: p.vatOutAnn,
+      dbgVatInBiz: p.vatInBizAnn,
+      dbgVatInPriv: p.vatInPrivAnn,
+      dbgVatInCar: p.vatInCarAnn,
+      dbgZusBase: zusBase(p.zusStatus, p.prevYearIncome),
+      dbgZusRate: p.chorobowa ? ZUS_WITH : ZUS_WITHOUT,
+      dbgMonthlyRevenue: p.monthlyRevenue,
+      dbgRyczaltSources: p.ryczaltSources.map((s) => ({
+        name: s.name,
+        rate: s.rate,
+        annual: s.amount * 12,
+        isNajem: s.isNajem,
+      })),
     };
   };
 
@@ -838,6 +883,7 @@ function ResultCard({
 
   const r = result;
   const costsNoCar = r.deductibleCosts - r.carCostsDeducted;
+  // bizCostsAnn = koszty firmowe BRUTTO (rzeczywisty odpływ gotówki, używane w disposable)
   const bizCostsAnn = r.annualRevenue - r.totalBurden - r.disposable;
 
   // Helper: kwota w aktualnym viewMode
@@ -845,6 +891,14 @@ function ResultCard({
 
   // Przychód netto (do tooltipów — obliczenia PIT bazują na netto)
   const revNetto = r.annualRevenue - (showVat ? r.vatPassThrough : 0);
+
+  // Debug: komponenty kosztów (z calculate())
+  const bizNet = r.dbgAnnBizCosts;
+  const privNet = r.dbgAnnPrivCosts;
+  const carGross = r.dbgAnnCarCostsGross;
+  const carPitPctStr = Math.round(r.dbgCarPitPct * 100);
+  const carVatPctStr = Math.round(r.dbgCarVatPct * 100);
+  const vatInCarEff = Math.round(r.dbgVatInCar * r.dbgCarVatPct);
 
   const burdenParts = [
     ...(r.vatPassThrough > 0 ? [`VAT do US (${v(r.vatPassThrough)})`] : []),
@@ -905,8 +959,8 @@ function ResultCard({
       value: r.annualRevenue,
       bold: true,
       tip: showVat
-        ? `Przychód brutto (netto + VAT): ${v(r.annualRevenue)}${sfx}. Netto: ${v(revNetto)}.`
-        : `Łączny przychód ze wszystkich źródeł: ${v(r.annualRevenue)}${sfx}.`,
+        ? `DEBUG: miesięczny netto ${pln(r.dbgMonthlyRevenue)} × 12 = ${pln(r.dbgMonthlyRevenue * 12)}/rok netto. + VAT należny ${pln(r.dbgVatOut)}/rok = ${pln(r.dbgMonthlyRevenue * 12 + r.dbgVatOut)}/rok brutto. Wyświetlane: ${v(r.annualRevenue)}${sfx}.`
+        : `DEBUG: miesięczny netto ${pln(r.dbgMonthlyRevenue)} × 12 = ${pln(r.dbgMonthlyRevenue * 12)}/rok. Wyświetlane: ${v(r.annualRevenue)}${sfx}.`,
     },
     ...(showVat && r.vatPassThrough > 0
       ? [
@@ -914,7 +968,7 @@ function ResultCard({
             label: "VAT do urzędu skarbowego",
             value: -r.vatPassThrough,
             negative: true as const,
-            tip: `VAT należny od sprzedaży standardowej minus VAT naliczony od kosztów. Odprowadzasz ${v(r.vatPassThrough)}${sfx} do US.`,
+            tip: `DEBUG VAT: należny (${pln(r.dbgVatOut)}/rok) − naliczony firmowy (${pln(r.dbgVatInBiz)}) − naliczony prywatny (${pln(r.dbgVatInPriv)}) − naliczony samochód (${pln(r.dbgVatInCar)} × ${carVatPctStr}% = ${pln(vatInCarEff)}) = ${pln(r.vatPassThrough)}/rok. Wyświetlane: ${v(r.vatPassThrough)}${sfx}.`,
           },
         ]
       : []),
@@ -924,7 +978,7 @@ function ResultCard({
             label: "Koszty odliczone (PIT)",
             value: -r.deductibleCosts,
             negative: true as const,
-            tip: `Firmowe + prywatne (${v(costsNoCar)}) + samochód (${v(r.carCostsDeducted)}). Obniżają podstawę opodatkowania.`,
+            tip: `DEBUG PIT (netto): firmowe ${pln(bizNet)}/rok + prywatne ${pln(privNet)}/rok + samochód ${pln(carGross)}/rok × ${carPitPctStr}% = ${pln(r.carCostsDeducted)}/rok. Suma: ${pln(r.deductibleCosts)}/rok (${v(r.deductibleCosts)}${sfx}). Uwaga: to kwota odliczana od PIT (netto). Cashflow (brutto) = koszty firmowe ${v(bizCostsAnn)}${sfx} — widoczne w "Do dyspozycji".`,
           },
           ...(r.carCostsDeducted > 0
             ? [
@@ -932,7 +986,7 @@ function ResultCard({
                   label: "↳ w tym samochód",
                   value: -r.carCostsDeducted,
                   dimmed: true as const,
-                  tip: `Odliczana część kosztów samochodu: 75% przy mieszanym / 100% przy firmowym. Tu: ${v(r.carCostsDeducted)}${sfx}.`,
+                  tip: `DEBUG: roczne koszty samochodu ${pln(carGross)} × ${carPitPctStr}% PIT = ${pln(r.carCostsDeducted)}/rok. Wyświetlane: ${v(r.carCostsDeducted)}${sfx}.`,
                 },
               ]
             : []),
@@ -942,7 +996,7 @@ function ResultCard({
       label: "ZUS społeczne",
       value: -r.zusSpoleczne,
       negative: true,
-      tip: `Emerytalna 19,52% (${v((r.zusSpoleczne * EMERYTALNA) / ZUS_WITH)}) + rentowa 8% (${v((r.zusSpoleczne * RENTOWA) / ZUS_WITH)}) + wypadkowa 1,67% (${v((r.zusSpoleczne * WYPADKOWA) / ZUS_WITH)}) + chorobowa 2,45% (${v((r.zusSpoleczne * CHOROBOWA) / ZUS_WITH)}). Razem: ${v(r.zusSpoleczne)}${sfx}.`,
+      tip: `DEBUG ZUS: podstawa ${pln(r.dbgZusBase)}/mies × stawka ${(r.dbgZusRate * 100).toFixed(2)}% × 12 = ${pln(Math.round(r.dbgZusBase * r.dbgZusRate * 12))}/rok. Rozbicie: emerytalna 19,52% (${v((r.zusSpoleczne * EMERYTALNA) / r.dbgZusRate)}) + rentowa 8% (${v((r.zusSpoleczne * RENTOWA) / r.dbgZusRate)}) + wypadkowa 1,67% (${v((r.zusSpoleczne * WYPADKOWA) / r.dbgZusRate)})${r.dbgZusRate === ZUS_WITH ? ` + chorobowa 2,45% (${v((r.zusSpoleczne * CHOROBOWA) / r.dbgZusRate)})` : ""}. Razem: ${v(r.zusSpoleczne)}${sfx}.`,
     },
     ...(r.funduszPracy > 0
       ? [
@@ -984,8 +1038,8 @@ function ResultCard({
       dimmed: true,
       tip:
         r.label === "Ryczałt"
-          ? `Przychód netto (${v(revNetto)}) − 50% zdrowotnej (${v(r.healthDeduction)}) = ${v(r.taxBase)}`
-          : `Przychód netto (${v(revNetto)}) − koszty (${v(r.deductibleCosts)}) − ZUS (${v(r.zusSpoleczne)})${r.healthDeduction > 0 ? ` − odlicz. zdrow. (${v(r.healthDeduction)})` : ""} = ${v(r.taxBase)}`,
+          ? `DEBUG: przychód roczny netto ${pln(r.dbgMonthlyRevenue * 12)} − 50% zdrowotnej (${pln(r.healthDeduction)}) − IKZE (${pln(r.ikzeContribution)}) = ${pln(r.taxBase)}/rok. Wyświetlane: ${v(r.taxBase)}${sfx}.`
+          : `DEBUG: przychód roczny netto ${pln(r.dbgMonthlyRevenue * 12)} − koszty odliczone (${pln(r.deductibleCosts)}) − ZUS (${pln(r.zusSpoleczne)})${r.healthDeduction > 0 ? ` − odliczenie zdrowotnej (${pln(r.healthDeduction)})` : ""} − IKZE (${pln(r.ikzeContribution)}) = ${pln(r.taxBase)}/rok. Wyświetlane: ${v(r.taxBase)}${sfx}.`,
     },
     {
       label: "Podatek dochodowy",
@@ -1004,13 +1058,13 @@ function ResultCard({
       label: "Obciążenia łącznie",
       value: r.totalBurden,
       bold: true,
-      tip: `${burdenParts} = ${v(r.totalBurden)}${sfx}.`,
+      tip: `DEBUG: ${burdenParts} = ${pln(r.totalBurden)}/rok. Wyświetlane: ${v(r.totalBurden)}${sfx}.`,
     },
     {
       label: "Netto (przed kosztami)",
       value: r.netAfterTax,
       bold: true,
-      tip: `Przychód brutto (${v(r.annualRevenue)}) − obciążenia (${v(r.totalBurden)}) = ${v(r.netAfterTax)}.`,
+      tip: `DEBUG: przychód brutto (${pln(r.annualRevenue)}) − obciążenia (${pln(r.totalBurden)}) = ${pln(r.netAfterTax)}/rok. Wyświetlane: ${v(r.netAfterTax)}${sfx}.`,
     },
     ...(r.ikzeContribution > 0
       ? [
@@ -1027,7 +1081,7 @@ function ResultCard({
       value: r.disposable,
       bold: true,
       accent: true,
-      tip: `Przychód brutto (${v(r.annualRevenue)}) − obciążenia (${v(r.totalBurden)}) − koszty firmowe (${v(bizCostsAnn)})${r.ikzeContribution > 0 ? ` − IKZE (${v(r.ikzeContribution)})` : ""} = ${v(r.disposable)}. Koszty prywatne i samochodu nie odejmowane (i tak ponoszone).`,
+      tip: `DEBUG cashflow: przychód brutto (${pln(r.annualRevenue)}) − obciążenia z VAT (${pln(r.totalBurden)}) − koszty firmowe BRUTTO (${pln(bizCostsAnn)})${r.ikzeContribution > 0 ? ` − IKZE (${pln(r.ikzeContribution)})` : ""} = ${pln(r.disposable)}/rok. Wyświetlane: ${v(r.disposable)}${sfx}. Koszty firmowe wg rzeczywistego odpływu gotówki (brutto, nie netto). Prywatne i samochód nie odejmowane (i tak ponoszone poza firmą).`,
     },
     ...(r.ikzeContribution > 0
       ? [
@@ -1282,7 +1336,11 @@ export default function TaxCalculator() {
     0,
   );
 
-  // Koszty netto: firmowe i prywatne osobno
+  // Brutto → netto: pełna kwota zapłacona (brutto) vs kwota bez VAT (netto).
+  // PIT liczy się od netto; cashflow od brutto (rzeczywisty odpływ gotówki).
+  const b = (v: number, isBrutto: boolean, rate: number) =>
+    isBrutto || vatMode === "zwolniony" ? v : Math.round(v * (1 + rate / 100));
+
   const businessCostsNet = costItems
     .filter((c) => c.type === "business")
     .reduce((s, c) => s + n(c.amount, c.brutto, c.vatRate), 0);
@@ -1290,6 +1348,14 @@ export default function TaxCalculator() {
     .filter((c) => c.type === "private")
     .reduce((s, c) => s + n(c.amount, c.brutto, c.vatRate), 0);
   const carCostsNet = n(carCosts, carBrutto, carVatRate);
+
+  const businessCostsBrutto = costItems
+    .filter((c) => c.type === "business")
+    .reduce((s, c) => s + b(c.amount, c.brutto, c.vatRate), 0);
+  const privateCostsBrutto = costItems
+    .filter((c) => c.type === "private")
+    .reduce((s, c) => s + b(c.amount, c.brutto, c.vatRate), 0);
+  const carCostsBrutto = b(carCosts, carBrutto, carVatRate);
 
   // VAT: roczne kwoty per-item
   const vatOutAnn =
@@ -1376,6 +1442,9 @@ export default function TaxCalculator() {
         businessCosts: businessCostsNet,
         privateCosts: privateCostsNet,
         carCosts: carCostsNet,
+        businessCostsBrutto,
+        privateCostsBrutto,
+        carCostsBrutto,
         carUsage,
         zusStatus,
         chorobowa,
@@ -1397,6 +1466,9 @@ export default function TaxCalculator() {
       businessCostsNet,
       privateCostsNet,
       carCostsNet,
+      businessCostsBrutto,
+      privateCostsBrutto,
+      carCostsBrutto,
       carUsage,
       zusStatus,
       chorobowa,
