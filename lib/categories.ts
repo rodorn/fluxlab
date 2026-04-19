@@ -30,6 +30,12 @@ export const categories: Category[] = [
         description:
           "Prosty model bez ściemy: czas, koszt pracy, błędy i skala procesu.",
       },
+      {
+        href: "/strefa-wiedzy/automatyzacja-vs-zatrudnienie",
+        title: "Automatyzacja vs zatrudnienie — co się bardziej opłaca",
+        description:
+          "Realne koszty, ryzyka, framework decyzji i praktyczne scenariusze dla firm B2B.",
+      },
     ],
   },
   {

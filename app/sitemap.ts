@@ -132,6 +132,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "hubspot-vs-pipedrive",
     "crm-dla-jednoosobowej-firmy",
     "salesforce-dla-malej-firmy",
+    "automatyzacja-vs-zatrudnienie",
   ];
 
   const articlePages = articles.map((slug) => ({
