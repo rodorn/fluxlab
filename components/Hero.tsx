@@ -11,19 +11,21 @@ export default function Hero() {
             {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-accent-light dark:bg-accent-dark-light text-accent text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
               <span className="w-1.5 h-1.5 bg-accent rounded-full" />
-              Automatyzacja procesów B2B
+              Automatyzacja leadów, CRM i raportowania
             </div>
 
             {/* Headline */}
             <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.1] mb-6 text-gray-900 dark:text-white">
-              <span className="text-accent">Automatyzacja</span> procesów
-              biznesowych dla firm B2B
+              <span className="text-accent">Automatyzacja</span> leadów, CRM i
+              raportowania dla firm B2B
             </h1>
 
             {/* Subheadline */}
-            <p className="text-lg text-gray-500 dark:text-gray-400 leading-relaxed mb-10 max-w-lg">
-              Skup się na tym, co napędza Twój biznes. My zautomatyzujemy CRM,
-              raportowanie i powtarzalne procesy.
+            <p className="text-lg text-gray-500 dark:text-gray-400 leading-relaxed mb-10 max-w-xl">
+              Leady z formularzy, reklam, maili i landing page&rsquo;y
+              automatycznie trafiają do CRM, dostają właściciela, zadanie,
+              follow-up i raport. Bez ręcznego przepisywania, bez zgubionych
+              zapytań, bez Excela robionego w piątek wieczorem.
             </p>
 
             {/* CTAs */}
@@ -31,24 +33,26 @@ export default function Hero() {
               <TrackedCTA
                 href="#kontakt"
                 location="hero"
-                label="konsultacja"
+                label="diagnoza"
+                eventName="cta_click_hero_audit"
                 className="btn-primary text-base px-8 py-3.5"
               >
-                Umów bezpłatną konsultację
+                Zamów bezpłatną diagnozę procesu
               </TrackedCTA>
               <TrackedCTA
-                href="#uslugi"
+                href="#workflow"
                 location="hero"
-                label="services"
+                label="workflow"
                 className="btn-secondary text-base px-8 py-3.5"
               >
-                Zobacz co robimy
+                Zobacz przykładowy workflow
               </TrackedCTA>
             </div>
 
             {/* Social proof */}
             <p className="mt-8 text-sm text-gray-400 dark:text-gray-500">
-              Bezpłatna konsultacja · Bez zobowiązań · Odpowiedź w 24h
+              Odpowiedź w 24h · mapa automatyzacji · szacowany ROI · bez
+              zobowiązań
             </p>
           </div>
 
@@ -69,12 +73,12 @@ export default function Hero() {
             {/* Floating stats card */}
             <div className="absolute -bottom-6 -left-6 bg-white dark:bg-gray-800 rounded-xl shadow-xl border border-gray-100 dark:border-gray-700 p-4">
               <p className="text-2xl font-bold text-gray-900 dark:text-white">
-                500+
+                &lt; 5 min
               </p>
               <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
-                godzin zwróconych
+                czas reakcji na leada
                 <br />
-                klientom miesięcznie
+                po wdrożeniu
               </p>
             </div>
 
@@ -96,13 +100,22 @@ export default function Hero() {
         {/* Stats */}
         <div className="mt-4 grid grid-cols-2 lg:grid-cols-4 gap-8">
           {[
-            { value: "80%", label: "średnia redukcja czasu na procesy" },
+            {
+              value: "60-90%",
+              label: "mniej ręcznej pracy w zautomatyzowanych krokach",
+            },
             {
               value: "2-4 dni",
               label: "czas wdrożenia pierwszej automatyzacji",
             },
-            { value: "0 błędów", label: "w zautomatyzowanych procesach" },
-            { value: "ROI < 1 mies.", label: "zwrot inwestycji" },
+            {
+              value: "< 5 min",
+              label: "czas reakcji na nowego leada",
+            },
+            {
+              value: "ROI < 1 mies.",
+              label: "dla typowego procesu z wolumenem",
+            },
           ].map((stat) => (
             <div key={stat.label}>
               <p className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">

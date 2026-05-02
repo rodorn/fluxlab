@@ -1,16 +1,21 @@
 import Link from "next/link";
 
 const serviceLinks = [
+  { href: "/automatyzacja-leadow-crm", label: "Automatyzacja leadów i CRM" },
+  { href: "/automatyzacja-crm", label: "Automatyzacja CRM", indent: true },
+  { href: "/automatyzacja-pipedrive", label: "Pipedrive", indent: true },
+  { href: "/automatyzacja-salesforce", label: "Salesforce", indent: true },
+  {
+    href: "/automatyzacja-leadow",
+    label: "Automatyzacja leadów",
+    indent: true,
+  },
+  { href: "/automatyzacja-raportowania", label: "Automatyzacja raportowania" },
+  { href: "/integracje-api", label: "Integracje API" },
   {
     href: "/automatyzacja-procesow-biznesowych",
     label: "Automatyzacja procesów",
   },
-  { href: "/automatyzacja-crm", label: "Automatyzacja CRM" },
-  { href: "/automatyzacja-pipedrive", label: "Pipedrive", indent: true },
-  { href: "/automatyzacja-salesforce", label: "Salesforce", indent: true },
-  { href: "/integracje-api", label: "Integracje API" },
-  { href: "/automatyzacja-raportowania", label: "Automatyzacja raportowania" },
-  { href: "/automatyzacja-leadow", label: "Automatyzacja leadów" },
   { href: "/automatyzacja-ai", label: "Automatyzacja z AI" },
   { href: "/n8n", label: "n8n" },
   { href: "/zapier-make", label: "Zapier vs Make" },
@@ -26,7 +31,7 @@ export default function Footer() {
               flux<span className="text-accent">lab</span>
             </span>
             <p className="mt-2 text-xs text-gray-400 dark:text-gray-500 max-w-xs">
-              Automatyzacja procesów biznesowych dla firm B2B
+              Automatyzacja leadów, CRM i raportowania dla firm B2B
             </p>
           </div>
           <div>
@@ -63,6 +68,14 @@ export default function Footer() {
                   className="text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
                 >
                   Wszystkie narzędzia
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/kalkulator-leadow"
+                  className="text-sm text-accent font-medium hover:underline transition-colors"
+                >
+                  Kalkulator kosztu leadów
                 </Link>
               </li>
               <li>
@@ -117,7 +130,15 @@ export default function Footer() {
                   href="/pilotaz"
                   className="text-sm text-accent font-medium hover:underline transition-colors"
                 >
-                  Pilotaż (–50%)
+                  Program case study (–50%)
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/case-study"
+                  className="text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
+                >
+                  Case study
                 </Link>
               </li>
               <li>

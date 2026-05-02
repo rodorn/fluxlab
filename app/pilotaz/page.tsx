@@ -5,13 +5,13 @@ import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
-  title: "Program pilotażowy — 50% ceny dla pierwszych 3 klientów | Fluxlab",
+  title: "3 miejsca na publiczne case study — 50% ceny wdrożenia | Fluxlab",
   description:
-    "Pierwsi 3 klienci otrzymują wdrożenie automatyzacji za 50% ceny w zamian za case study i testimonial. Oferta dla firm B2B gotowych na realny pilotaż.",
+    "3 firmy B2B otrzymają wdrożenie automatyzacji za 50% standardowej ceny w zamian za zgodę na publiczne case study. Publikujemy tylko to, co zaakceptujesz — bez danych wrażliwych.",
   openGraph: {
-    title: "Program pilotażowy — 50% ceny dla pierwszych 3 klientów | Fluxlab",
+    title: "3 miejsca na publiczne case study — 50% ceny wdrożenia | Fluxlab",
     description:
-      "Pierwsi 3 klienci otrzymują wdrożenie automatyzacji za 50% ceny w zamian za case study i testimonial.",
+      "3 firmy B2B otrzymają wdrożenie automatyzacji za 50% standardowej ceny w zamian za zgodę na publiczne case study.",
     locale: "pl_PL",
     type: "website",
     images: [
@@ -75,11 +75,19 @@ const whatYouGive = [
 ];
 
 const criteria = [
-  "Firma B2B (produkt lub usługa dla firm, nie dla konsumentów końcowych)",
-  "Realny proces do zautomatyzowania (CRM, leady, raportowanie, integracje API, n8n, AI) — nie koncepcja „może by coś usprawnić”",
-  "Decydent dostępny na 2–3 rozmowy w trakcie wdrożenia",
-  "Gotowość na publikację case study w ciągu 30 dni od zakończenia wdrożenia",
+  "Firma B2B z konkretnym, powtarzalnym procesem: obsługa leadów, CRM, raportowanie, integracje API, n8n lub automatyzacje z AI",
+  "Zespół sprzedaży, kilka źródeł leadów, CRM (lub gotowość do jego doboru) i problem z ręczną obsługą danych",
+  "Decydent po Twojej stronie dostępny na 2–3 rozmowy w trakcie wdrożenia",
+  "Gotowość na publikację case study w ciągu 30 dni od zakończenia wdrożenia (treść akceptujesz przed publikacją)",
   "Działalność w Polsce (ze względu na zgodność prawną umowy)",
+];
+
+const notSuitable = [
+  "Firmy, które „może kiedyś coś zautomatyzują” — bez konkretnego problemu na stole",
+  "Brak osoby decyzyjnej po stronie firmy do prowadzenia wdrożenia",
+  "Oczekiwanie, że AI magicznie naprawi źle zaprojektowany proces",
+  "Proces nieuporządkowany na poziomie biznesowym — najpierw proces, potem automatyzacja, nie odwrotnie",
+  "Pojedyncze, niepowtarzalne zadanie zamiast cyklicznego procesu",
 ];
 
 const faq = [
@@ -89,9 +97,9 @@ const faq = [
       "Najszybciej sprawdzimy to na bezpłatnej 30-minutowej konsultacji. Ogólnie: nadajesz się, jeśli masz konkretny, powtarzalny proces, który chcesz zautomatyzować, i jesteś w stanie pokazać mierzalny efekt po wdrożeniu.",
   },
   {
-    question: "Ile trwa pilotażowe wdrożenie?",
+    question: "Ile trwa wdrożenie w programie case study?",
     answer:
-      "Tyle samo co zwykłe — zależnie od zakresu od 2 do 8 tygodni. Pilotaż nie oznacza „na szybko”, oznacza obniżoną cenę w zamian za publikację rezultatu.",
+      "Tyle samo co zwykłe — zależnie od zakresu od 2 do 8 tygodni. Program case study nie oznacza „na szybko”, oznacza obniżoną cenę w zamian za publikację rezultatu.",
   },
   {
     question: "Czy muszę ujawnić nazwę firmy w case study?",
@@ -104,9 +112,9 @@ const faq = [
       "W ciągu 30 dni od zakończenia wdrożenia i odbioru wszystkich kamieni milowych. Daję ci projekt case study do akceptacji — nic nie publikuję bez twojej zgody.",
   },
   {
-    question: "Czy to oznacza niższą jakość pracy?",
+    question: "Czy 50% ceny oznacza niższą jakość pracy?",
     answer:
-      "Nie — to oznacza wyższą. Na pilotażach mi szczególnie zależy, bo budują moje portfolio. Jakość techniczna, dokumentacja i wsparcie są takie same lub lepsze niż w standardowych projektach.",
+      "Nie. Rabat nie wynika z tego, że jestem na początku drogi — wynika z tego, że publiczne case study jest dla mnie cenniejsze niż pełna marża na pojedynczym projekcie. Jakość techniczna, dokumentacja, testy i wsparcie są takie same jak w pełnopłatnych wdrożeniach. Często wyższe, bo pilnuję, żeby efekt nadawał się do publikacji.",
   },
   {
     question: "Co jeśli projekt się nie uda?",
@@ -116,7 +124,7 @@ const faq = [
   {
     question: "Dlaczego tylko 3 miejsca?",
     answer:
-      "Bo jako solo consultant mogę realnie poprowadzić maksymalnie 3 pilotaże równolegle bez spadku jakości. Po zrealizowaniu 3 case studies oferta pilotażowa kończy się.",
+      "Bo jako solo consultant mogę realnie poprowadzić maksymalnie 3 takie projekty równolegle bez spadku jakości. Po zrealizowaniu 3 case studies oferta kończy się i wracam do standardowych stawek.",
   },
   {
     question: "Jak wygląda aplikacja?",
@@ -143,7 +151,7 @@ export default function Pilotaz() {
     <>
       <Header />
       <main className="pt-16">
-        <Breadcrumbs items={[{ label: "Program pilotażowy" }]} />
+        <Breadcrumbs items={[{ label: "Program case study" }]} />
 
         {/* Hero */}
         <section className="py-16 lg:py-24 bg-gradient-to-b from-accent/10 to-transparent border-b border-gray-100 dark:border-gray-800">
@@ -154,20 +162,26 @@ export default function Pilotaz() {
                 Zostały 3 miejsca
               </div>
               <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
-                Program pilotażowy
+                3 miejsca na publiczne case study
               </h1>
               <p className="text-xl text-gray-700 dark:text-gray-300 mb-4 font-medium">
-                50% ceny w zamian za case study
+                50% ceny wdrożenia w zamian za publiczny opis efektu
               </p>
               <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-                Pierwsi 3 klienci otrzymują pełne wdrożenie automatyzacji za
-                połowę standardowej ceny. W zamian dzielimy się efektem: krótki
-                case study i testimonial, które pomagają mi budować portfolio, a
-                tobie dają znaczną oszczędność.
+                3 firmy B2B otrzymają wdrożenie automatyzacji za 50%
+                standardowej ceny w zamian za zgodę na przygotowanie case study
+                i krótkiej referencji po zakończeniu projektu. Publikujemy tylko
+                to, co wcześniej zaakceptujesz — bez danych wrażliwych, bez
+                tajemnic handlowych, bez wrzucania Twojej firmy pod autobus.
+              </p>
+              <p className="mt-6 text-sm text-gray-500 dark:text-gray-500 leading-relaxed max-w-2xl mx-auto">
+                To nie jest oferta dla &bdquo;pierwszych klientów&rdquo;. Rabat
+                wynika z tego, że chcę opublikować mocny dowód działania — a nie
+                z braku doświadczenia. Akceptacja treści jest po Twojej stronie.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/#kontakt" className="btn-primary">
-                  Aplikuj do pilotażu
+                  Aplikuj do programu case study
                 </Link>
                 <Link href="/jak-pracuje" className="btn-secondary">
                   Zobacz jak pracuję
@@ -246,12 +260,12 @@ export default function Pilotaz() {
               <div className="text-center mb-12">
                 <span className="section-label">Kryteria</span>
                 <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4">
-                  Dla kogo jest pilotaż
+                  Dla kogo
                 </h2>
                 <p className="text-gray-600 dark:text-gray-400 mt-4">
-                  Program jest celowo wąski — chcę mieć pewność, że pilotaże
-                  zakończą się sukcesem. Weryfikuję dopasowanie na bezpłatnej
-                  konsultacji.
+                  Program jest celowo wąski — chcę mieć pewność, że projekty
+                  zakończą się sukcesem nadającym się do publikacji. Dopasowanie
+                  weryfikuję na bezpłatnej konsultacji.
                 </p>
               </div>
               <ul className="space-y-3">
@@ -269,6 +283,51 @@ export default function Pilotaz() {
                     >
                       <path
                         d="M4 10l4 4 8-8"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                    <span className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                      {c}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* Dla kogo NIE */}
+        <section className="py-16 lg:py-24 bg-gray-50 dark:bg-gray-900/50 border-y border-gray-100 dark:border-gray-800">
+          <div className="container-wide">
+            <div className="max-w-3xl mx-auto">
+              <div className="text-center mb-12">
+                <span className="section-label">Wykluczenia</span>
+                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4">
+                  Dla kogo NIE
+                </h2>
+                <p className="text-gray-600 dark:text-gray-400 mt-4 leading-relaxed">
+                  Najpierw proces, potem automatyzacja. Nie odwrotnie — bo wtedy
+                  powstaje szybki chaos zamiast wolnego chaosu.
+                </p>
+              </div>
+              <ul className="space-y-3">
+                {notSuitable.map((c) => (
+                  <li
+                    key={c}
+                    className="flex items-start gap-3 bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-xl px-5 py-4"
+                  >
+                    <svg
+                      className="flex-shrink-0 mt-0.5 text-gray-400"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                    >
+                      <path
+                        d="M5 5l10 10M15 5L5 15"
                         stroke="currentColor"
                         strokeWidth="2"
                         strokeLinecap="round"
@@ -310,7 +369,7 @@ export default function Pilotaz() {
                   {
                     n: "3",
                     title: "Audyt i decyzja",
-                    desc: "Jeśli pilotaż ma sens, robię audyt (koszt obniżony), po którym dostajesz konkretną wycenę i harmonogram. Startujemy po akceptacji.",
+                    desc: "Jeśli widzę dopasowanie, robię audyt (koszt obniżony), po którym dostajesz konkretną wycenę i harmonogram. Startujemy po akceptacji.",
                   },
                 ].map((s) => (
                   <div
@@ -388,7 +447,7 @@ export default function Pilotaz() {
                 48 h dostaniesz szczerą odpowiedź.
               </p>
               <Link href="/#kontakt" className="btn-primary">
-                Aplikuj do pilotażu
+                Aplikuj do programu case study
               </Link>
             </div>
           </div>

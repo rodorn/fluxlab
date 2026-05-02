@@ -8,6 +8,8 @@ interface Props {
   href: string;
   location: string;
   label?: string;
+  /** Optional named event – wysyłany OBOK zbiorczego `cta_click`. */
+  eventName?: string;
   className?: string;
   children: ReactNode;
 }
@@ -16,15 +18,20 @@ export default function TrackedCTA({
   href,
   location,
   label,
+  eventName,
   className,
   children,
 }: Props) {
   const handleClick = () => {
-    gaEvent("cta_click", {
+    const params = {
       location,
       label: label ?? (typeof children === "string" ? children : ""),
       href,
-    });
+    };
+    gaEvent("cta_click", params);
+    if (eventName) {
+      gaEvent(eventName, params);
+    }
   };
 
   const isInternal = href.startsWith("/") && !href.startsWith("//");

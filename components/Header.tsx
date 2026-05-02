@@ -13,16 +13,21 @@ const navLinks = [
 ];
 
 const servicePages: { title: string; href: string; indent?: boolean }[] = [
+  { title: "Automatyzacja leadów i CRM", href: "/automatyzacja-leadow-crm" },
+  { title: "Automatyzacja CRM", href: "/automatyzacja-crm", indent: true },
+  { title: "Pipedrive", href: "/automatyzacja-pipedrive", indent: true },
+  { title: "Salesforce", href: "/automatyzacja-salesforce", indent: true },
+  {
+    title: "Automatyzacja leadów",
+    href: "/automatyzacja-leadow",
+    indent: true,
+  },
+  { title: "Automatyzacja raportowania", href: "/automatyzacja-raportowania" },
+  { title: "Integracje API", href: "/integracje-api" },
   {
     title: "Automatyzacja procesów",
     href: "/automatyzacja-procesow-biznesowych",
   },
-  { title: "Automatyzacja CRM", href: "/automatyzacja-crm" },
-  { title: "Pipedrive", href: "/automatyzacja-pipedrive", indent: true },
-  { title: "Salesforce", href: "/automatyzacja-salesforce", indent: true },
-  { title: "Integracje API", href: "/integracje-api" },
-  { title: "Automatyzacja raportowania", href: "/automatyzacja-raportowania" },
-  { title: "Automatyzacja leadów", href: "/automatyzacja-leadow" },
   { title: "Automatyzacja z AI", href: "/automatyzacja-ai" },
   { title: "n8n", href: "/n8n" },
   { title: "Zapier vs Make", href: "/zapier-make" },
@@ -151,14 +156,16 @@ export default function Header() {
           <a
             href="/#kontakt"
             className="btn-primary"
-            onClick={() =>
-              gaEvent("cta_click", {
+            onClick={() => {
+              const params = {
                 location: "header",
-                label: "porozmawiajmy",
-              })
-            }
+                label: "diagnoza",
+              };
+              gaEvent("cta_click", params);
+              gaEvent("cta_click_header", params);
+            }}
           >
-            Porozmawiajmy
+            Zamów diagnozę
           </a>
         </div>
 
@@ -272,13 +279,15 @@ export default function Header() {
             className="btn-primary text-center"
             onClick={() => {
               setMenuOpen(false);
-              gaEvent("cta_click", {
+              const params = {
                 location: "mobile_menu",
-                label: "porozmawiajmy",
-              });
+                label: "diagnoza",
+              };
+              gaEvent("cta_click", params);
+              gaEvent("cta_click_header", params);
             }}
           >
-            Porozmawiajmy
+            Zamów diagnozę
           </a>
         </div>
       )}

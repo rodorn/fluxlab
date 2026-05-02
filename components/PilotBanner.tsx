@@ -18,15 +18,17 @@ export default function PilotBanner() {
             <div className="flex-1">
               <div className="inline-flex items-center gap-2 bg-accent text-white text-xs font-semibold px-3 py-1 rounded-full mb-3">
                 <span className="w-1.5 h-1.5 bg-white rounded-full animate-pulse" />
-                Program pilotażowy · 3 miejsca
+                Program case study · 3 miejsca
               </div>
               <h2 className="text-xl lg:text-2xl font-bold text-gray-900 dark:text-white tracking-tight">
-                50% taniej dla pierwszych 3 klientów
+                3 miejsca na publiczne case study — 50% ceny wdrożenia
               </h2>
               <p className="mt-1.5 text-sm lg:text-base text-gray-600 dark:text-gray-400 max-w-2xl">
-                Wdrożenie w pełnym zakresie za połowę ceny w zamian za case
-                study i referencję. Bez ukrytych kosztów — płacisz tylko za
-                wdrożenie.
+                Szukam 3 firm B2B z realnym procesem do automatyzacji, które
+                zgodzą się pokazać efekt wdrożenia jako case study. W zamian
+                dostajesz pełny zakres prac za 50% standardowej ceny,
+                rozszerzone wsparcie po wdrożeniu i priorytetową obsługę.
+                Publikujemy tylko to, co zaakceptujesz.
               </p>
             </div>
 
@@ -35,9 +37,10 @@ export default function PilotBanner() {
                 href="/pilotaz"
                 location="homepage_banner"
                 label="pilotaz"
+                eventName="cta_click_pilot"
                 className="btn-primary inline-flex items-center gap-2 text-sm px-6 py-3 whitespace-nowrap"
               >
-                Zobacz warunki pilotażu
+                Aplikuj do programu case study
                 <svg
                   width="14"
                   height="14"

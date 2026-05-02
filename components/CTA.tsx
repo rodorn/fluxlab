@@ -1,31 +1,98 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import { event as gaEvent } from "@/lib/gtag";
 
 const inputClass =
   "w-full px-4 py-2.5 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-sm text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-colors";
 
+const PROBLEM_TYPES = [
+  { value: "", label: "Wybierz obszar..." },
+  { value: "leady", label: "Obsługa leadów" },
+  { value: "crm", label: "CRM (Pipedrive / HubSpot / Salesforce)" },
+  { value: "raportowanie", label: "Raportowanie" },
+  { value: "integracje", label: "Integracje API" },
+  { value: "przepisywanie", label: "Ręczne przepisywanie danych" },
+  { value: "diagnoza", label: "Nie wiem, chcę diagnozy" },
+];
+
+const PROBLEM_SCALES = [
+  { value: "", label: "Wybierz skalę..." },
+  { value: "do-30", label: "Do 30 leadów miesięcznie" },
+  { value: "30-100", label: "30–100 leadów miesięcznie" },
+  { value: "100-plus", label: "100+ leadów miesięcznie" },
+  {
+    value: "nie-leady",
+    label: "Nie chodzi o leady, tylko o ręczną pracę",
+  },
+  { value: "nie-wiem", label: "Nie wiem" },
+];
+
+const CONTACT_PREFS = [
+  { value: "email", label: "E-mail" },
+  { value: "phone", label: "Telefon" },
+  { value: "meet", label: "Google Meet" },
+];
+
+interface UtmFields {
+  utm_source: string;
+  utm_medium: string;
+  utm_campaign: string;
+  utm_term: string;
+  utm_content: string;
+  landing_page: string;
+  referrer: string;
+}
+
+function readUtm(): UtmFields {
+  if (typeof window === "undefined") {
+    return {
+      utm_source: "",
+      utm_medium: "",
+      utm_campaign: "",
+      utm_term: "",
+      utm_content: "",
+      landing_page: "",
+      referrer: "",
+    };
+  }
+  const params = new URLSearchParams(window.location.search);
+  return {
+    utm_source: params.get("utm_source") ?? "",
+    utm_medium: params.get("utm_medium") ?? "",
+    utm_campaign: params.get("utm_campaign") ?? "",
+    utm_term: params.get("utm_term") ?? "",
+    utm_content: params.get("utm_content") ?? "",
+    landing_page: window.location.pathname,
+    referrer: document.referrer ?? "",
+  };
+}
+
 export default function CTA() {
-  const [submitted, setSubmitted] = useState(false);
+  const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
-  const [contactMethod, setContactMethod] = useState<"email" | "phone">(
-    "email",
-  );
-  const [showContactTime, setShowContactTime] = useState(false);
-  const [contactTimeVisible, setContactTimeVisible] = useState(false);
+  const [contactPref, setContactPref] = useState("email");
+  const [utm, setUtm] = useState<UtmFields>(() => ({
+    utm_source: "",
+    utm_medium: "",
+    utm_campaign: "",
+    utm_term: "",
+    utm_content: "",
+    landing_page: "",
+    referrer: "",
+  }));
+  const formStartedRef = useRef(false);
 
-  function handleContactMethodChange(method: "email" | "phone") {
-    if (method === contactMethod) return;
-    setContactMethod(method);
-    if (method === "phone") {
-      setShowContactTime(true);
-      setTimeout(() => setContactTimeVisible(true), 16);
-    } else {
-      setContactTimeVisible(false);
-      setTimeout(() => setShowContactTime(false), 300);
-    }
+  useEffect(() => {
+    setUtm(readUtm());
+  }, []);
+
+  function handleFormStart() {
+    if (formStartedRef.current) return;
+    formStartedRef.current = true;
+    gaEvent("form_start", { form_id: "diagnosis" });
   }
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -34,20 +101,20 @@ export default function CTA() {
     setErrorMsg(null);
     const form = e.currentTarget;
     const data = {
-      name: (form.elements.namedItem("name") as HTMLInputElement).value,
-      company: (form.elements.namedItem("company") as HTMLInputElement).value,
       email: (form.elements.namedItem("email") as HTMLInputElement).value,
-      phone: (form.elements.namedItem("phone") as HTMLInputElement).value,
-      contactMethod,
-      contactTime:
-        contactMethod === "phone"
-          ? (form.elements.namedItem("contactTime") as HTMLInputElement).value
-          : "",
+      company: (form.elements.namedItem("company") as HTMLInputElement).value,
+      problemType: (form.elements.namedItem("problemType") as HTMLSelectElement)
+        .value,
+      problemScale: (
+        form.elements.namedItem("problemScale") as HTMLSelectElement
+      ).value,
       message: (form.elements.namedItem("message") as HTMLTextAreaElement)
         .value,
+      contactPref,
       website:
         (form.elements.namedItem("website") as HTMLInputElement | null)
           ?.value ?? "",
+      ...utm,
     };
     try {
       const res = await fetch("/api/contact", {
@@ -55,22 +122,28 @@ export default function CTA() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
-      setLoading(false);
       if (res.ok) {
-        setSubmitted(true);
-        gaEvent("form_submit", {
-          form_id: "contact",
-          contact_method: contactMethod,
+        gaEvent("generate_lead", {
+          form_id: "diagnosis",
+          lead_type: data.problemType,
+          lead_scale: data.problemScale,
+          contact_pref: contactPref,
         });
-      } else {
-        const payload = (await res.json().catch(() => null)) as {
-          error?: string;
-        } | null;
-        setErrorMsg(
-          payload?.error ??
-            "Coś poszło nie tak. Spróbuj ponownie lub napisz bezpośrednio na iwanekpawel55@gmail.com.",
-        );
+        const params = new URLSearchParams({
+          type: data.problemType,
+          scale: data.problemScale,
+        });
+        router.push(`/dziekuje?${params.toString()}`);
+        return;
       }
+      const payload = (await res.json().catch(() => null)) as {
+        error?: string;
+      } | null;
+      setLoading(false);
+      setErrorMsg(
+        payload?.error ??
+          "Coś poszło nie tak. Spróbuj ponownie lub napisz bezpośrednio na iwanekpawel55@gmail.com.",
+      );
     } catch {
       setLoading(false);
       setErrorMsg(
@@ -85,249 +158,192 @@ export default function CTA() {
         <div className="max-w-2xl mx-auto text-center">
           <p className="section-label mb-3">Kontakt</p>
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Zacznijmy od rozmowy
+            Sprawdźmy, czy automatyzacja ma u Ciebie sens
           </h2>
           <p className="text-gray-500 dark:text-gray-400 text-lg mb-12">
-            Napisz kilka słów o swoim procesie - odpiszę w ciągu 24 godzin i
-            zaproponuję termin bezpłatnej konsultacji.
+            Wyślij krótki opis problemu. W odpowiedzi dostaniesz informację, czy
+            widzę potencjał na automatyzację, co można poprawić jako pierwsze i
+            jaki byłby sensowny kolejny krok.
           </p>
 
-          {submitted ? (
-            <div className="bg-accent-light dark:bg-accent-dark-light rounded-2xl p-10">
-              <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path
-                    d="M4 10l4 4 8-8"
-                    stroke="white"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                Wiadomość wysłana!
-              </h3>
-              <p className="text-gray-500 dark:text-gray-400 text-sm">
-                Odpiszę najszybciej jak to możliwe, zwykle w ciągu kilku godzin.
-              </p>
-            </div>
-          ) : (
-            <form
-              onSubmit={handleSubmit}
-              className="bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-2xl p-8 shadow-sm text-left space-y-5"
+          <form
+            onSubmit={handleSubmit}
+            onFocus={handleFormStart}
+            className="bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-2xl p-8 shadow-sm text-left space-y-5"
+          >
+            {/* Honeypot */}
+            <div
+              aria-hidden="true"
+              style={{
+                position: "absolute",
+                left: "-9999px",
+                width: 1,
+                height: 1,
+                overflow: "hidden",
+              }}
             >
-              {/* Honeypot – niewidoczny dla ludzi, boty wypełniają. */}
-              <div
-                aria-hidden="true"
-                style={{
-                  position: "absolute",
-                  left: "-9999px",
-                  width: 1,
-                  height: 1,
-                  overflow: "hidden",
-                }}
-              >
-                <label htmlFor="website">Nie wypełniaj tego pola</label>
-                <input
-                  id="website"
-                  name="website"
-                  type="text"
-                  tabIndex={-1}
-                  autoComplete="off"
-                  defaultValue=""
-                />
-              </div>
+              <label htmlFor="website">Nie wypełniaj tego pola</label>
+              <input
+                id="website"
+                name="website"
+                type="text"
+                tabIndex={-1}
+                autoComplete="off"
+                defaultValue=""
+              />
+            </div>
 
-              <div className="grid sm:grid-cols-2 gap-5">
-                <div>
-                  <label
-                    htmlFor="name"
-                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5"
-                  >
-                    Imię i nazwisko
-                  </label>
-                  <input
-                    id="name"
-                    name="name"
-                    type="text"
-                    required
-                    placeholder="Jan Kowalski"
-                    className={inputClass}
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="company"
-                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5"
-                  >
-                    Firma
-                  </label>
-                  <input
-                    id="company"
-                    name="company"
-                    type="text"
-                    placeholder="Nazwa firmy"
-                    className={inputClass}
-                  />
-                </div>
-              </div>
-
+            <div className="grid sm:grid-cols-2 gap-5">
               <div>
                 <label
                   htmlFor="email"
                   className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5"
                 >
-                  Adres e-mail
+                  E-mail służbowy <span className="text-accent">*</span>
                 </label>
                 <input
                   id="email"
                   name="email"
                   type="email"
                   required
-                  placeholder="jan@firma.pl"
+                  placeholder="np. pawel@firma.pl"
                   className={inputClass}
                 />
               </div>
-
-              <div className="grid sm:grid-cols-2 gap-5">
-                <div>
-                  <label
-                    htmlFor="phone"
-                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5"
-                  >
-                    Numer telefonu
-                  </label>
-                  <input
-                    id="phone"
-                    name="phone"
-                    type="tel"
-                    placeholder="500 000 000"
-                    className={inputClass}
-                  />
-                </div>
-                <div>
-                  <p className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
-                    Preferowany kontakt
-                  </p>
-                  <div className="relative flex bg-gray-100 dark:bg-gray-900/60 rounded-lg p-0.5">
-                    {/* sliding indicator */}
-                    <div
-                      className={`absolute top-0.5 bottom-0.5 left-0.5 w-[calc(50%-2px)] bg-accent rounded-md shadow-sm transition-transform duration-200 ease-in-out ${
-                        contactMethod === "phone"
-                          ? "translate-x-full"
-                          : "translate-x-0"
-                      }`}
-                    />
-                    <button
-                      type="button"
-                      onClick={() => handleContactMethodChange("email")}
-                      className={`relative z-10 flex-1 flex items-center justify-center gap-1.5 py-2.5 text-sm font-medium transition-colors duration-200 ${
-                        contactMethod === "email"
-                          ? "text-white"
-                          : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200"
-                      }`}
-                    >
-                      <svg
-                        width="15"
-                        height="15"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <rect x="2" y="4" width="20" height="16" rx="2" />
-                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-                      </svg>
-                      E-mail
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => handleContactMethodChange("phone")}
-                      className={`relative z-10 flex-1 flex items-center justify-center gap-1.5 py-2.5 text-sm font-medium transition-colors duration-200 ${
-                        contactMethod === "phone"
-                          ? "text-white"
-                          : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200"
-                      }`}
-                    >
-                      <svg
-                        width="15"
-                        height="15"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.07 6.07l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
-                      </svg>
-                      Telefon
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              {showContactTime && (
-                <div
-                  className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                    contactTimeVisible
-                      ? "max-h-28 opacity-100"
-                      : "max-h-0 opacity-0 !mt-0"
-                  }`}
-                >
-                  <label
-                    htmlFor="contactTime"
-                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5"
-                  >
-                    Preferowany czas kontaktu
-                  </label>
-                  <input
-                    id="contactTime"
-                    name="contactTime"
-                    type="text"
-                    placeholder="Np. pon-pt 10:00-14:00"
-                    className={inputClass}
-                  />
-                </div>
-              )}
-
               <div>
                 <label
-                  htmlFor="message"
+                  htmlFor="company"
                   className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5"
                 >
-                  Opisz proces, który chcesz zautomatyzować
+                  Firma{" "}
+                  <span className="text-gray-400 font-normal text-xs">
+                    (opcjonalnie)
+                  </span>
                 </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  required
-                  rows={4}
-                  placeholder="Np. Co tydzień ręcznie przenoszę dane z 5 arkuszy do raportu PDF i wysyłam go do 3 osób..."
-                  className={`${inputClass} resize-none`}
+                <input
+                  id="company"
+                  name="company"
+                  type="text"
+                  placeholder="Nazwa firmy"
+                  className={inputClass}
                 />
               </div>
+            </div>
 
-              <button
-                type="submit"
-                disabled={loading}
-                className="btn-primary w-full py-3.5 text-base disabled:opacity-60"
+            <div className="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label
+                  htmlFor="problemType"
+                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5"
+                >
+                  Co chcesz usprawnić? <span className="text-accent">*</span>
+                </label>
+                <select
+                  id="problemType"
+                  name="problemType"
+                  required
+                  defaultValue=""
+                  className={inputClass}
+                >
+                  {PROBLEM_TYPES.map((opt) => (
+                    <option
+                      key={opt.value}
+                      value={opt.value}
+                      disabled={opt.value === ""}
+                    >
+                      {opt.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              <div>
+                <label
+                  htmlFor="problemScale"
+                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5"
+                >
+                  Skala problemu <span className="text-accent">*</span>
+                </label>
+                <select
+                  id="problemScale"
+                  name="problemScale"
+                  required
+                  defaultValue=""
+                  className={inputClass}
+                >
+                  {PROBLEM_SCALES.map((opt) => (
+                    <option
+                      key={opt.value}
+                      value={opt.value}
+                      disabled={opt.value === ""}
+                    >
+                      {opt.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label
+                htmlFor="message"
+                className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5"
               >
-                {loading ? "Wysyłanie..." : "Wyślij wiadomość"}
-              </button>
+                Opisz problem w 2–3 zdaniach{" "}
+                <span className="text-gray-400 font-normal text-xs">
+                  (opcjonalnie)
+                </span>
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                rows={4}
+                placeholder="Np. leady wpadają z formularza i maila, handlowcy ręcznie przepisują dane do CRM, a raport robimy w Google Sheets."
+                className={`${inputClass} resize-none`}
+              />
+            </div>
 
-              {errorMsg && (
-                <p className="text-center text-sm text-red-500">{errorMsg}</p>
-              )}
-
-              <p className="text-center text-xs text-gray-400 dark:text-gray-500">
-                Dane są bezpieczne i nie będą udostępniane osobom trzecim.
+            <div>
+              <p className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                Preferowany kontakt{" "}
+                <span className="text-gray-400 font-normal text-xs">
+                  (opcjonalnie)
+                </span>
               </p>
-            </form>
-          )}
+              <div className="flex flex-wrap gap-2">
+                {CONTACT_PREFS.map((opt) => (
+                  <button
+                    key={opt.value}
+                    type="button"
+                    onClick={() => setContactPref(opt.value)}
+                    className={`px-4 py-2 rounded-lg text-sm font-medium border transition-colors ${
+                      contactPref === opt.value
+                        ? "bg-accent text-white border-accent"
+                        : "bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-accent/50"
+                    }`}
+                  >
+                    {opt.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <button
+              type="submit"
+              disabled={loading}
+              className="btn-primary w-full py-3.5 text-base disabled:opacity-60"
+            >
+              {loading ? "Wysyłanie..." : "Chcę diagnozę procesu"}
+            </button>
+
+            {errorMsg && (
+              <p className="text-center text-sm text-red-500">{errorMsg}</p>
+            )}
+
+            <p className="text-center text-xs text-gray-400 dark:text-gray-500">
+              Odpowiedź w 24h. Bez spamu, bez newslettera, bez &bdquo;szybkiej
+              rozmowy&rdquo; wciskanej na siłę.
+            </p>
+          </form>
         </div>
       </div>
     </section>

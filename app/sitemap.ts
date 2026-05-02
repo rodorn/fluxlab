@@ -36,6 +36,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/automatyzacja-leadow-crm`,
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/automatyzacja-pipedrive`,
       changeFrequency: "monthly" as const,
       priority: 0.8,
@@ -71,6 +76,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${baseUrl}/kalkulator-leadow`,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/dobor-samochodu`,
       changeFrequency: "monthly" as const,
       priority: 0.6,
@@ -89,6 +99,71 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/pilotaz`,
       changeFrequency: "monthly" as const,
       priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/case-study`,
+      changeFrequency: "monthly" as const,
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/koszt-recznej-obslugi-leadow`,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/automatyzacja-formularza-do-pipedrive`,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/raportowanie-z-pipedrive`,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/automatyczne-przypisywanie-leadow`,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/czas-reakcji-na-leada`,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/automatyzacja-follow-up`,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/crm-jako-system-pracy`,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/n8n-dla-crm`,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/make-vs-n8n-crm`,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/automatyzacja-crm-leasing`,
+      changeFrequency: "monthly" as const,
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/audyt-crm`,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/zatrudnic-czy-zautomatyzowac`,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
     },
     {
       url: `${baseUrl}/automatyzacja-dla-ecommerce`,
