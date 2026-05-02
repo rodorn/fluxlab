@@ -61,7 +61,13 @@ const fmtRange = (min: number, max: number) =>
 
 /* ──────────────── recommendation logic ──────────────── */
 
-type RecommendationKind = "automate" | "manual" | "review" | "consider";
+type RecommendationKind = "automate" | "manual" | "consider";
+
+const TEAM_LABELS: Record<TeamSize, string> = {
+  "1": "1 osoba",
+  "2-3": "2–3 osoby",
+  zespol: "zespół",
+};
 
 interface Recommendation {
   kind: RecommendationKind;
@@ -69,42 +75,99 @@ interface Recommendation {
   detail: string;
 }
 
+const TEAM_INSIGHT: Record<TeamSize, string> = {
+  "1": "Jedna osoba obsługująca proces to single point of failure — choroba, urlop albo zmiana pracy zatrzymuje cały przepływ. Automatyzacja działa tu też jako ubezpieczenie ciągłości, nie tylko oszczędność czasu.",
+  "2-3":
+    "Przy 2–3 osobach zaczyna kosztować koordynacja: każdy ma trochę inny sposób, dane wpisywane są niespójnie, a follow-up zależy od tego, kto akurat zauważył maila. Automat usuwa rozjazd między osobami.",
+  zespol:
+    "Zespół oznacza, że automatyzacja skaluje się od razu na wszystkich — co jest największą dźwignią ROI. Każda godzina zaoszczędzona w procesie mnoży się przez liczbę osób.",
+};
+
 function recommend(d: Inputs): Recommendation {
   const isHighFrequency =
     d.frequency === "codziennie" || d.frequency === "kilka_w_tyg";
+  const isMidFrequency =
+    d.frequency === "raz_w_tyg" || d.frequency === "kilka_w_mies";
+  const isLowFrequency = d.frequency === "okazjonalnie";
+  const teamInsight = TEAM_INSIGHT[d.team];
 
-  if (d.repetitive && isHighFrequency) {
-    return {
-      kind: "automate",
-      headline: "Mocna rekomendacja: zautomatyzuj.",
-      detail:
-        "Powtarzalny proces o wysokiej częstotliwości to klasyczny case dla automatyzacji. Wdrożenie zwykle zwraca się w 1–4 miesiące, a oszczędność czasu jest stała każdego miesiąca, nie tylko raz. Co więcej, automat nie zapomina, nie idzie na urlop i nie myli się przy 50. powtórzeniu z rzędu.",
-    };
-  }
-
+  // 1) Niestabilny proces → ręcznie, niezależnie od reszty
   if (!d.repetitive) {
     return {
       kind: "manual",
       headline: "Automatyzacja ma niski sens — proces jest niestabilny.",
-      detail:
-        "Jeśli wymagania ciągle się zmieniają, automatyzacja będzie wymagała ciągłego dopisywania wyjątków. To koszt nie tylko wdrożeniowy, ale też operacyjny — częściej niż częściowo zautomatyzowany proces lepiej trzymać jako ludzki, ale dobrze opisany (checklisty, szablony, SOP-y). Zautomatyzuj dopiero, gdy proces sam się ustabilizuje.",
+      detail: `Jeśli wymagania ciągle się zmieniają, automatyzacja będzie wymagała ciągłego dopisywania wyjątków. To koszt nie tylko wdrożeniowy, ale też operacyjny — częściej niż częściowo zautomatyzowany proces lepiej trzymać jako ludzki, ale dobrze opisany (checklisty, szablony, SOP-y). Zautomatyzuj dopiero, gdy proces sam się ustabilizuje. ${teamInsight}`,
     };
   }
 
-  if (d.czasH < 5 && d.frequency === "okazjonalnie") {
+  // 2) Bardzo niska skala → ręcznie
+  if (isLowFrequency && d.czasH < 5) {
     return {
       kind: "manual",
       headline: "Ręczna obsługa OK — skala nie uzasadnia wdrożenia.",
-      detail:
-        "Mniej niż 5 godzin miesięcznie i okazjonalna częstotliwość to za mała baza, żeby ROI z automatyzacji wyszło sensownie. Lepiej skupić się na procesach o większej skali. Wróć do tego, jeśli wolumen wzrośnie 3–4 razy.",
+      detail: `Mniej niż 5 godzin miesięcznie i okazjonalna częstotliwość to za mała baza, żeby ROI z automatyzacji wyszło sensownie. Lepiej skupić się na procesach o większej skali. ${teamInsight}`,
+    };
+  }
+
+  // 3) Wysoka częstotliwość — wariant zależnie od zespołu
+  if (isHighFrequency) {
+    if (d.team === "zespol") {
+      return {
+        kind: "automate",
+        headline: "Zdecydowanie automatyzuj — skala robi największą różnicę.",
+        detail: `Codziennie/kilka razy w tygodniu × cały zespół = klasyczny case z największą dźwignią ROI. Wdrożenie typowo zwraca się w 1–3 miesiące, a oszczędność rośnie liniowo z liczbą osób. ${teamInsight}`,
+      };
+    }
+    if (d.team === "1") {
+      return {
+        kind: "automate",
+        headline: "Automatyzuj — i zabezpiecz proces przed człowiekiem.",
+        detail: `Wysoka częstotliwość + jedna osoba to nie tylko marnowanie czasu, ale też ryzyko operacyjne. Automatyzacja oddaje proces systemowi, który nie zapomina, nie idzie na urlop i nie myli się przy 50. powtórzeniu z rzędu. ${teamInsight}`,
+      };
+    }
+    return {
+      kind: "automate",
+      headline: "Mocna rekomendacja: zautomatyzuj.",
+      detail: `Powtarzalny proces o wysokiej częstotliwości to klasyczny case dla automatyzacji. Wdrożenie zwykle zwraca się w 1–4 miesiące, a oszczędność czasu jest stała każdego miesiąca, nie tylko raz. ${teamInsight}`,
+    };
+  }
+
+  // 4) Średnia częstotliwość — zespół pcha w stronę automatyzacji
+  if (isMidFrequency) {
+    if (d.team === "zespol") {
+      return {
+        kind: "automate",
+        headline: "Automatyzacja ma sens — wygrywa skala, nie częstotliwość.",
+        detail: `Częstotliwość średnia, ale zespół oznacza, że jedno wdrożenie skaluje się na wielu. Suma godzin × osób zwykle robi z tego zwrot w 3–6 miesięcy. ${teamInsight}`,
+      };
+    }
+    return {
+      kind: "consider",
+      headline: "Warto policzyć dokładniej — wynik zależy od konkretu.",
+      detail: `Przy raz/kilka razy w miesiącu kluczowe są: liczba systemów do zintegrowania, koszt błędu i rozkład pracy między osoby. Zwrot często jest, ale nie zawsze szybko — to typowy przypadek na 30-minutową diagnozę. ${teamInsight}`,
+    };
+  }
+
+  // 5) Okazjonalnie + większa skala czasowa
+  if (isLowFrequency) {
+    if (d.team === "zespol" && d.czasH >= 20) {
+      return {
+        kind: "consider",
+        headline: "Granicznie sensowne — tylko jeśli proces jest krytyczny.",
+        detail: `Okazjonalnie, ale przy zespole i 20+ godzinach miesięcznie zsumowanych — automatyzacja może mieć sens, jeśli proces jest powtarzalny w treści (a tylko nieregularny w czasie). Inaczej koszt utrzymania kodu, którego nikt nie używa, zje oszczędność. ${teamInsight}`,
+      };
+    }
+    return {
+      kind: "manual",
+      headline: "Ręczna obsługa zwykle wygrywa.",
+      detail: `Okazjonalna częstotliwość oznacza, że wdrożona automatyzacja będzie się rozjeżdżać z dokumentacją między uruchomieniami. Lepiej trzymać proces jako ludzki ze SOP-em. ${teamInsight}`,
     };
   }
 
   return {
-    kind: "review",
+    kind: "consider",
     headline: "Warto policzyć dokładniej.",
-    detail:
-      "Twoje parametry są w środku przedziału — automatyzacja może mieć sens, ale wynik zależy od konkretu: jak skomplikowany jest proces, jakie systemy są w grze, ile osób się nim zajmuje. To dobry moment na bezpłatną diagnozę: 30 minut wystarczy, żeby ustalić, czy ten konkretny proces zwróci się w 3 miesiące, czy w 12.",
+    detail: `Twoje parametry są w środku przedziału — automatyzacja może mieć sens, ale wynik zależy od konkretu. To dobry moment na bezpłatną diagnozę. ${teamInsight}`,
   };
 }
 
@@ -245,14 +308,14 @@ function MetricCard({
   value: string;
   highlight?: boolean;
   hint?: string;
-  variant?: "automate" | "manual" | "review";
+  variant?: "automate" | "manual" | "consider";
 }) {
   const variantStyles: Record<string, string> = {
     automate:
       "border-emerald-500/40 bg-emerald-500/5 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-300",
     manual:
       "border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800/40 text-gray-700 dark:text-gray-300",
-    review:
+    consider:
       "border-amber-500/40 bg-amber-500/5 dark:bg-amber-500/10 text-amber-700 dark:text-amber-300",
   };
 
@@ -426,6 +489,28 @@ export default function Kalkulator() {
             </strong>
             ) ręcznej pracy.
           </p>
+          <div className="mt-4 flex flex-wrap gap-2">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-white dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 px-3 py-1 text-xs text-gray-700 dark:text-gray-300">
+              <span className="text-gray-400 dark:text-gray-500">
+                Częstotliwość:
+              </span>{" "}
+              <strong className="text-gray-900 dark:text-white">
+                {FREQUENCY_LABELS[data.frequency]}
+              </strong>
+            </span>
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-white dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 px-3 py-1 text-xs text-gray-700 dark:text-gray-300">
+              <span className="text-gray-400 dark:text-gray-500">Obsługa:</span>{" "}
+              <strong className="text-gray-900 dark:text-white">
+                {TEAM_LABELS[data.team]}
+              </strong>
+            </span>
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-white dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 px-3 py-1 text-xs text-gray-700 dark:text-gray-300">
+              <span className="text-gray-400 dark:text-gray-500">Proces:</span>{" "}
+              <strong className="text-gray-900 dark:text-white">
+                {data.repetitive ? "powtarzalny" : "niestabilny"}
+              </strong>
+            </span>
+          </div>
           <p className="mt-4 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
             <strong className="text-gray-900 dark:text-white">
               {result.recommendation.headline}
@@ -455,14 +540,8 @@ export default function Kalkulator() {
                   ? "Zostań przy ręcznej"
                   : "Policz dokładniej"
             }
-            variant={
-              result.recommendation.kind === "automate"
-                ? "automate"
-                : result.recommendation.kind === "manual"
-                  ? "manual"
-                  : "review"
-            }
-            hint={`Częstotliwość: ${FREQUENCY_LABELS[data.frequency]}`}
+            variant={result.recommendation.kind}
+            hint={`${FREQUENCY_LABELS[data.frequency]} · ${TEAM_LABELS[data.team]}`}
           />
         </div>
 

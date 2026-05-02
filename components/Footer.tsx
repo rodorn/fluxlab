@@ -80,10 +80,26 @@ export default function Footer() {
               </li>
               <li>
                 <Link
+                  href="/audyt-crm"
+                  className="text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
+                >
+                  Audyt CRM (10 pytań)
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/zatrudnic-czy-zautomatyzowac"
+                  className="text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
+                >
+                  Zatrudnić czy zautomatyzować?
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/kalkulator-kosztow"
                   className="text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
                 >
-                  Kalkulator kosztów
+                  Kalkulator kosztów auta
                 </Link>
               </li>
               <li>
