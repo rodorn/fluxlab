@@ -3,7 +3,16 @@ import Link from "next/link";
 const services = [
   {
     icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
         <path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18" />
       </svg>
     ),
@@ -19,7 +28,16 @@ const services = [
   },
   {
     icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
         <rect x="2" y="3" width="20" height="14" rx="2" />
         <path d="M8 21h8m-4-4v4" />
       </svg>
@@ -35,14 +53,23 @@ const services = [
   },
   {
     icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
         <path d="M12 20h9" />
         <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
       </svg>
     ),
     title: "Obsługa klienta bez chaosu",
     description:
-      "Automatyczne odpowiedzi, routing zgłoszeń, powiadomienia i follow-upy. Twój zespół zajmuje się tylko tym, co wymaga ludzkiej uwagi.",
+      "Automatyczne odpowiedzi, routing zgłoszeń, powiadomienia i follow-upy. Twoi handlowcy zajmują się tylko tym, co wymaga ludzkiej uwagi.",
     tags: ["Helpdesk", "CRM", "E-mail", "Slack"],
     href: "/automatyzacja-crm",
     links: [
@@ -52,18 +79,30 @@ const services = [
   },
   {
     icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
         <circle cx="12" cy="12" r="3" />
         <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83" />
       </svg>
     ),
     title: "Procesy na miarę",
     description:
-      "Każda firma ma unikalny sposób pracy. Mapujemy Twoje procesy i projektujemy automatyzację dopasowaną do tego, jak rzeczywiście działasz.",
+      "Każda firma ma unikalny sposób pracy. Mapuję Twoje procesy i projektuję automatyzację dopasowaną do tego, jak rzeczywiście działasz.",
     tags: ["Audyt", "Projektowanie", "Wdrożenie", "Szkolenie"],
     href: "/automatyzacja-procesow-biznesowych",
     links: [
-      { href: "/automatyzacja-procesow-biznesowych", label: "Dowiedz się więcej →" },
+      {
+        href: "/automatyzacja-procesow-biznesowych",
+        label: "Dowiedz się więcej →",
+      },
       { href: "/automatyzacja-ai", label: "Automatyzacja z AI →" },
     ],
   },
@@ -71,7 +110,10 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="uslugi" className="scroll-mt-16 relative py-4 lg:py-7 overflow-hidden">
+    <section
+      id="uslugi"
+      className="scroll-mt-16 relative py-4 lg:py-7 overflow-hidden"
+    >
       <div className="absolute inset-0 -z-10">
         {/* Light mode: jasne niebieskie tło + zdjęcie jako ledwo widoczny akcent */}
         <div className="absolute inset-0 bg-sky-50 dark:hidden" />
@@ -105,11 +147,11 @@ export default function Services() {
         <div className="max-w-xl mb-4">
           <p className="section-label mb-3">Co robimy</p>
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Automatyzacje, które realnie odciążają Twój zespół
+            Automatyzacje, które realnie odciążają Twoich handlowców
           </h2>
           <p className="text-gray-700 dark:text-gray-300 text-lg">
-            Skupiamy się na procesach, które kosztują Cię najwięcej czasu.
-            Nie sprzedajemy narzędzi - dostarczamy gotowe rozwiązania.
+            Skupiam się na procesach, które kosztują Cię najwięcej czasu. Nie
+            sprzedaję narzędzi — dostarczam gotowe rozwiązania.
           </p>
         </div>
 

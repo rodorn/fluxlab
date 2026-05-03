@@ -463,10 +463,10 @@ export default function AutomatyzacjaDlaAgencjiMarketingowych() {
                 href="/#kontakt"
                 className="btn-primary px-8 py-3.5 text-base"
               >
-                Porozmawiajmy
+                Zamów diagnozę
               </Link>
               <p className="mt-4 text-xs text-gray-400 dark:text-gray-500">
-                Bezpłatna konsultacja · Odpowiedź w 24h
+                Bezpłatna diagnoza · Odpowiedź w 24h
               </p>
             </div>
           </div>

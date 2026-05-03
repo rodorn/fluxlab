@@ -37,7 +37,7 @@ const whatYouGet = [
   {
     title: "Priorytet i zaangażowanie",
     description:
-      "Pilotażowe projekty mają dla mnie najwyższy priorytet — bo ich powodzenie buduje moje portfolio. Dostajesz szybszą reakcję, więcej uwagi, pełne zaangażowanie.",
+      "Te projekty mają dla mnie najwyższy priorytet — bo ich powodzenie buduje publiczną bibliotekę case studies, na której opieram dalszą sprzedaż. Dostajesz szybszą reakcję, więcej uwagi, pełne zaangażowanie.",
   },
   {
     title: "Rozszerzone wsparcie po wdrożeniu",

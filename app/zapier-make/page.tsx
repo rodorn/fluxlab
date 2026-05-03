@@ -289,7 +289,7 @@ export default function ZapierMake() {
                 href="/#kontakt"
                 className="btn-primary px-8 py-3.5 text-base"
               >
-                Porozmawiajmy
+                Zamów diagnozę
               </Link>
             </div>
           </div>

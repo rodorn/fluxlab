@@ -1,7 +1,7 @@
 const steps = [
   {
     number: "01",
-    title: "Bezpłatna konsultacja",
+    title: "Bezpłatna diagnoza",
     description:
       "Rozmawiamy o Twoich procesach i identyfikujemy, gdzie automatyzacja przyniesie największy zysk. Żadnej sprzedaży - tylko konkretna analiza.",
   },

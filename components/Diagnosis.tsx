@@ -1,17 +1,17 @@
 import TrackedCTA from "@/components/TrackedCTA";
 
 const youGet = [
-  "mapa obecnego procesu",
-  "lista ręcznych kroków i wąskich gardeł",
-  "3 automatyzacje o największym wpływie",
-  "szacowany koszt ręcznej pracy",
-  "rekomendowany pierwszy etap",
-  "orientacyjna wycena",
+  "wstępna ocena — czy automatyzacja w ogóle ma sens",
+  "wskazanie 1–3 obszarów z największym potencjałem",
+  "szacunkowy rząd kosztu ręcznej pracy",
+  "rekomendowany pierwszy krok",
+  "orientacyjne widełki wyceny",
 ];
 
 const youDontGet = [
-  "pełnej dokumentacji technicznej",
-  "gotowej architektury do przekazania innemu wykonawcy",
+  "pełnej mapy AS-IS → TO-BE (to jest płatny audyt)",
+  "architektury technicznej do przekazania komuś innemu",
+  "stałej ceny wdrożenia bez wcześniejszego audytu",
   "wielogodzinnego warsztatu za darmo",
 ];
 
@@ -28,11 +28,15 @@ export default function Diagnosis() {
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-5">
               Zacznij od diagnozy, nie od wdrożenia
             </h2>
-            <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-6">
+            <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-4">
               Najpierw sprawdzam, czy automatyzacja ma sens. Nie każdy proces
-              warto automatyzować i nie każde narzędzie trzeba integrować. W
-              diagnozie ustalamy, gdzie dziś uciekają leady, czas albo dane, a
-              potem wybieramy pierwszy etap, który da mierzalny efekt.
+              warto automatyzować i nie każde narzędzie trzeba integrować.
+              Diagnoza jest <strong>bezpłatna</strong> i daje wstępny kierunek.
+            </p>
+            <p className="text-sm text-gray-500 dark:text-gray-500 leading-relaxed mb-6">
+              Jeśli idziemy dalej — robię płatny <strong>audyt procesu</strong>{" "}
+              z mapą AS-IS → TO-BE, priorytetami, narzędziami, harmonogramem i
+              ROI. Koszt audytu odliczam od wdrożenia, jeśli kontynuujemy.
             </p>
             <TrackedCTA
               href="#kontakt"

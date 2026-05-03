@@ -290,10 +290,10 @@ export default function AutomatyzacjaRaportowaniaArticle() {
                       Masz dane w kilku miejscach i nie ufasz raportom?
                     </h2>
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Bezpłatna konsultacja, bez zobowiązań.
+                      Bezpłatna diagnoza, bez zobowiązań.
                     </p>
                     <Link href="/#kontakt" className="btn-primary inline-block">
-                      Umów rozmowę
+                      Zamów diagnozę procesu
                     </Link>
                   </div>
                 </div>

@@ -226,7 +226,7 @@ export default function AutomatyzacjaSalesforce() {
                 href="#kontakt-salesforce"
                 className="btn-primary px-8 py-3.5 text-base"
               >
-                Porozmawiajmy o automatyzacji
+                Sprawdźmy proces
               </a>
             </div>
 
@@ -490,10 +490,10 @@ export default function AutomatyzacjaSalesforce() {
                 href="/#kontakt"
                 className="btn-primary px-8 py-3.5 text-base"
               >
-                Zacznijmy od rozmowy
+                Sprawdźmy proces
               </Link>
               <p className="mt-4 text-xs text-gray-400 dark:text-gray-500">
-                Bezpłatna konsultacja · Odpowiedź w 24h
+                Bezpłatna diagnoza · Odpowiedź w 24h
               </p>
             </div>
           </div>

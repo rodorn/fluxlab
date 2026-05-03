@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 const steps = [
   {
     number: "01",
-    title: "Bezpłatna konsultacja (30 min)",
+    title: "Bezpłatna diagnoza (30 min)",
     duration: "30 minut · online",
     description:
       "Rozmawiamy o tym, co chcesz usprawnić. Opisujesz problem, ja dopytuję o szczegóły i mówię wprost, czy widzę sens automatyzacji, czy raczej trzeba najpierw uporządkować proces. Jeśli to nie mój obszar — powiem i skieruję gdzie indziej.",
@@ -346,7 +346,7 @@ export default function JakPracuje() {
                 sensu — powiem to wprost na pierwszej rozmowie.
               </p>
               <Link href="/#kontakt" className="btn-primary">
-                Porozmawiajmy
+                Zamów diagnozę
               </Link>
             </div>
           </div>

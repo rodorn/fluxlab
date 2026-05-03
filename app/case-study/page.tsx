@@ -29,30 +29,76 @@ export const metadata: Metadata = {
   },
 };
 
-const examples = [
+type CaseKind = "synteza" | "anonim" | "pelne";
+
+interface Example {
+  slug: string;
+  kind: CaseKind;
+  industry: string;
+  title: string;
+  problem: string;
+  before: string;
+  after: string;
+  metrics: { value: string; label: string }[];
+  limits: string;
+}
+
+const KIND_META: Record<
+  CaseKind,
+  { label: string; tone: "synteza" | "anonim" | "pelne" }
+> = {
+  synteza: {
+    label: "Synteza projektów",
+    tone: "synteza",
+  },
+  anonim: {
+    label: "Anonimowe wdrożenie",
+    tone: "anonim",
+  },
+  pelne: {
+    label: "Pełne case study",
+    tone: "pelne",
+  },
+};
+
+const examples: Example[] = [
   {
     slug: "lead-flow-firma-uslugowa",
-    industry: "Firma usługowa B2B (50–100 leadów / mies)",
+    kind: "synteza",
+    industry: "Firma usługowa B2B · 50–100 leadów / mies",
     title: "Lead z formularza do CRM w mniej niż 60 sekund",
-    summary:
-      "Lead z formularza i reklam Meta Ads automatycznie ląduje w CRM jako osoba, firma i deal. Routing według regionu, zadanie kontaktu z deadline, eskalacja przy braku reakcji.",
+    problem:
+      "Leady z formularza i reklam Meta Ads wpadały na wspólną skrzynkę. Recepcja przepisywała dane do Pipedrive, przypisywała handlowca i zakładała zadanie kontaktu. Średni czas reakcji wynosił 1–2 godziny, część leadów ginęła w wątkach mailowych.",
+    before:
+      "Formularz → e-mail → recepcja przepisuje dane → ręczne założenie deala → e-mail do handlowca → handlowiec sam pamięta o follow-upie.",
+    after:
+      "Formularz/Meta Ads → walidacja → utworzenie kontaktu, firmy i deala w Pipedrive → routing wg regionu → zadanie z deadline → eskalacja przy braku reakcji w 30 min → dane do raportu.",
     metrics: [
       { value: "z 12 min do 0", label: "ręcznej pracy na lead" },
       { value: "< 5 min", label: "średni czas reakcji" },
       { value: "+18%", label: "konwersji lead → spotkanie" },
     ],
+    limits:
+      "Synteza kilku podobnych wdrożeń, nie pojedynczy projekt. Liczby zaokrąglone w górę do najbliższej znaczącej wartości — realny zakres mieścił się w 10–15 min ręcznej pracy i 12–22% wzrostu konwersji w zależności od źródła leadów.",
   },
   {
     slug: "raport-pipedrive-bez-excela",
-    industry: "Software house (zespół 6 handlowców)",
+    kind: "synteza",
+    industry: "Software house · zespół 6 handlowców",
     title: "Tygodniowy raport sprzedaży bez Excela",
-    summary:
-      "Dane z Pipedrive, Google Ads i arkusza prowizji łączone automatycznie w jeden dashboard. Co poniedziałek 8:00 raport w Slacku — bez ręcznego klejenia.",
+    problem:
+      "Co poniedziałek jedna osoba poświęcała pół dnia na sklejenie danych z Pipedrive, Google Ads, arkusza prowizji i mailowych zamówień w jeden dashboard. Liczby często rozjeżdżały się między raportami, bo każde źródło miało inny format.",
+    before:
+      "Eksport CSV z Pipedrive → ręczne kopiowanie kolumn → arkusz prowizji → ręczna walidacja → wklejenie do prezentacji → mail do zarządu.",
+    after:
+      "Skrypt zbiera dane z Pipedrive API, Google Ads API i arkusza prowizji raz na dobę, normalizuje do jednego schematu, generuje raport jako PDF + post w Slacku w poniedziałek 8:00. Anomalia (np. brak danych w API) → alert na e-mail.",
     metrics: [
       { value: "z 4h do 0", label: "tygodniowo na raport" },
-      { value: "1 źródło", label: "prawdy zamiast 4" },
-      { value: "100%", label: "powtarzalność" },
+      { value: "1", label: "źródło prawdy zamiast 4" },
+      { value: "stała pora", label: "publikacji raportu" },
     ],
+    limits:
+      "Synteza dwóch wdrożeń. Dane wejściowe i strukturę raportu zanonimizowano. Czas oszczędności (4h/tydz.) odnosi się do osoby kompletującej raport — nie do ogólnego ROI dla firmy.",
   },
 ];
 
@@ -92,39 +138,102 @@ export default function CaseStudy() {
         <section className="py-8 lg:py-12 bg-gray-50 dark:bg-gray-900/50 border-y border-gray-100 dark:border-gray-800">
           <div className="container-wide">
             <div className="max-w-4xl space-y-6">
-              {examples.map((ex) => (
-                <article
-                  key={ex.slug}
-                  className="bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-2xl p-6 lg:p-8"
-                >
-                  <p className="text-xs font-semibold uppercase tracking-widest text-accent mb-2">
-                    {ex.industry}
-                  </p>
-                  <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-3 leading-snug">
-                    {ex.title}
-                  </h2>
-                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
-                    {ex.summary}
-                  </p>
-                  <div className="grid grid-cols-3 gap-4 mb-6 pt-5 border-t border-gray-100 dark:border-gray-700">
-                    {ex.metrics.map((m) => (
-                      <div key={m.label}>
-                        <p className="text-lg lg:text-2xl font-bold text-accent leading-tight">
-                          {m.value}
+              {examples.map((ex) => {
+                const meta = KIND_META[ex.kind];
+                const badgeClass =
+                  meta.tone === "pelne"
+                    ? "bg-accent text-white"
+                    : meta.tone === "anonim"
+                      ? "bg-amber-500/15 text-amber-700 dark:text-amber-300 border border-amber-500/30"
+                      : "bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300";
+                return (
+                  <article
+                    key={ex.slug}
+                    className="bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-2xl p-6 lg:p-8"
+                  >
+                    <div className="flex flex-wrap items-center gap-2 mb-3">
+                      <span
+                        className={`text-xs font-semibold px-2.5 py-1 rounded-full ${badgeClass}`}
+                      >
+                        {meta.label}
+                      </span>
+                      <span className="text-xs font-medium text-gray-500 dark:text-gray-400">
+                        {ex.industry}
+                      </span>
+                    </div>
+                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-5 leading-snug">
+                      {ex.title}
+                    </h2>
+
+                    <div className="space-y-5 mb-6">
+                      <div>
+                        <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-1.5">
+                          Problem
                         </p>
-                        <p className="text-xs text-gray-500 dark:text-gray-400 mt-1 leading-snug">
-                          {m.label}
+                        <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+                          {ex.problem}
                         </p>
                       </div>
-                    ))}
-                  </div>
-                  <p className="text-xs text-gray-400 dark:text-gray-500 leading-relaxed">
-                    Synteza typowego wdrożenia. Dane zaokrąglone, nazwa firmy
-                    nieujawniona. Pełne case study z imienia — po zgodzie
-                    klienta z programu case study.
-                  </p>
-                </article>
-              ))}
+
+                      <div className="grid sm:grid-cols-2 gap-4">
+                        <div className="bg-gray-50 dark:bg-gray-900/50 border border-gray-100 dark:border-gray-700 rounded-xl p-4">
+                          <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-2">
+                            Proces przed
+                          </p>
+                          <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                            {ex.before}
+                          </p>
+                        </div>
+                        <div className="bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-xl p-4">
+                          <p className="text-xs font-semibold uppercase tracking-widest text-accent mb-2">
+                            Proces po
+                          </p>
+                          <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+                            {ex.after}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-3 gap-4 mb-5 pt-5 border-t border-gray-100 dark:border-gray-700">
+                      {ex.metrics.map((m) => (
+                        <div key={m.label}>
+                          <p className="text-lg lg:text-2xl font-bold text-accent leading-tight">
+                            {m.value}
+                          </p>
+                          <p className="text-xs text-gray-500 dark:text-gray-400 mt-1 leading-snug">
+                            {m.label}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="bg-gray-50 dark:bg-gray-900/30 border border-gray-100 dark:border-gray-700 rounded-lg p-3">
+                      <p className="text-xs font-semibold uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-1">
+                        Ograniczenia danych
+                      </p>
+                      <p className="text-xs text-gray-500 dark:text-gray-500 leading-relaxed">
+                        {ex.limits}
+                      </p>
+                    </div>
+                  </article>
+                );
+              })}
+
+              <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed pt-2">
+                <strong className="text-gray-900 dark:text-white">
+                  Pełne case studies z nazwą klienta
+                </strong>{" "}
+                publikuję tylko po pisemnej akceptacji klienta. Pierwsze pojawią
+                się tutaj w ramach{" "}
+                <Link
+                  href="/pilotaz"
+                  className="text-accent hover:underline font-medium"
+                >
+                  programu case study
+                </Link>
+                .
+              </p>
             </div>
           </div>
         </section>

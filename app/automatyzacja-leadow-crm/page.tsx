@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TrackedCTA from "@/components/TrackedCTA";
+import LandingForm from "@/components/LandingForm";
 
 export const metadata: Metadata = {
   title: "Automatyzacja leadów i CRM dla firm B2B | Fluxlab",
@@ -225,7 +226,7 @@ export default function AutomatyzacjaLeadowCRM() {
               </p>
               <div className="mt-8 flex justify-center">
                 <TrackedCTA
-                  href="/#kontakt"
+                  href="#diagnoza"
                   location="lp_leadow_hero"
                   label="diagnoza"
                   eventName="cta_click_landing_audit"
@@ -495,7 +496,7 @@ export default function AutomatyzacjaLeadowCRM() {
               </div>
               <div className="mt-10 flex justify-center">
                 <TrackedCTA
-                  href="/#kontakt"
+                  href="#diagnoza"
                   location="lp_leadow_pricing"
                   label="cennik"
                   eventName="cta_click_pricing"
@@ -551,30 +552,18 @@ export default function AutomatyzacjaLeadowCRM() {
           </div>
         </section>
 
-        {/* Final CTA */}
-        <section className="py-16 lg:py-24 bg-accent/10 border-t border-gray-100 dark:border-gray-800">
+        {/* Form — diagnoza */}
+        <section
+          id="diagnoza"
+          className="scroll-mt-20 py-16 lg:py-24 bg-accent/10 border-t border-gray-100 dark:border-gray-800"
+        >
           <div className="container-wide">
-            <div className="max-w-2xl mx-auto text-center">
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                Sprawdź, gdzie tracisz leady
-              </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-                Krótka diagnoza procesu, mapa pierwszej automatyzacji i
-                szacowany ROI. Bez zobowiązań.
-              </p>
-              <TrackedCTA
-                href="/#kontakt"
-                location="lp_leadow_final"
-                label="diagnoza"
-                eventName="cta_click_landing_audit"
-                className="btn-primary px-8 py-3.5 text-base"
-              >
-                Zamów bezpłatną diagnozę
-              </TrackedCTA>
-              <p className="mt-4 text-sm text-gray-500 dark:text-gray-500">
-                Odpowiedź w 24h · mapa procesu · szacowany ROI · bez zobowiązań
-              </p>
-            </div>
+            <LandingForm
+              formId="diagnosis_lp_leadow"
+              heading="Sprawdźmy, gdzie tracisz leady"
+              intro="Opisz krótko, skąd wpadają leady, gdzie trafiają dane i co dziś robicie ręcznie. W odpowiedzi dostaniesz informację, czy automatyzacja ma sens i jaki pierwszy etap da największy efekt."
+              submitLabel="Chcę mapę pierwszej automatyzacji"
+            />
           </div>
         </section>
       </main>

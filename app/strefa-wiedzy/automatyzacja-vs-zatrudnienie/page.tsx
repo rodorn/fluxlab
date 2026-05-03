@@ -597,7 +597,7 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
                       Zastanawiasz się, zatrudnić czy zautomatyzować?
                     </h2>
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Bezpłatna konsultacja 30 min — zrobimy rachunek dla
+                      Bezpłatna diagnoza 30 min — policzymy razem dla
                       Twojego konkretnego procesu i pokażemy, co da więcej
                       zwrotu.
                     </p>
