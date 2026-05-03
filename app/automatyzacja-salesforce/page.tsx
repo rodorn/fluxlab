@@ -4,6 +4,7 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import LandingForm from "@/components/LandingForm";
 
 export const metadata: Metadata = {
   title:
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Automatyzacja procesów biznesowych i CRM dla firm B2B",
+        alt: "Fluxlab — Automatyzacja leadów, CRM i raportowania dla firm B2B",
       },
     ],
   },
@@ -223,7 +224,7 @@ export default function AutomatyzacjaSalesforce() {
                 ))}
               </div>
               <a
-                href="#kontakt-salesforce"
+                href="#diagnoza"
                 className="btn-primary px-8 py-3.5 text-base"
               >
                 Sprawdźmy proces
@@ -473,29 +474,18 @@ export default function AutomatyzacjaSalesforce() {
           </div>
         </section>
 
-        {/* CTA */}
+        {/* Form — diagnoza */}
         <section
-          id="kontakt-salesforce"
-          className="py-16 border-t border-gray-100 dark:border-gray-800"
+          id="diagnoza"
+          className="scroll-mt-20 py-16 lg:py-20 bg-accent/10 border-t border-gray-100 dark:border-gray-800"
         >
           <div className="container-wide">
-            <div className="max-w-2xl mx-auto text-center bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-10">
-              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                Salesforce przestaje być kosztem.
-              </h2>
-              <p className="text-gray-500 dark:text-gray-400 mb-8">
-                Zaczyna być przewagą operacyjną.
-              </p>
-              <Link
-                href="/#kontakt"
-                className="btn-primary px-8 py-3.5 text-base"
-              >
-                Sprawdźmy proces
-              </Link>
-              <p className="mt-4 text-xs text-gray-400 dark:text-gray-500">
-                Bezpłatna diagnoza · Odpowiedź w 24h
-              </p>
-            </div>
+            <LandingForm
+              formId="diagnosis_salesforce"
+              heading="Sprawdźmy Twój proces w Salesforce"
+              intro="Opisz krótko, jak dziś wygląda obsługa leadów i deali w Salesforce: jakie dane wchodzą, gdzie się gubią, co handlowcy klikają ręcznie. W odpowiedzi dostaniesz informację, czy automatyzacja ma sens i jaki pierwszy etap da największy efekt."
+              submitLabel="Chcę diagnozę procesu Salesforce"
+            />
           </div>
         </section>
       </main>

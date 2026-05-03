@@ -130,7 +130,7 @@ export default function Footer() {
                   href="/#o-nas"
                   className="text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
                 >
-                  O nas
+                  O Fluxlabie
                 </a>
               </li>
               <li>

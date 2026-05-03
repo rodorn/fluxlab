@@ -156,7 +156,7 @@ const faq = [
   {
     question: "Czy szybsza reakcja realnie przekłada się na sprzedaż?",
     answer:
-      "Tak — i to jest jeden z najlepiej zbadanych wskaźników w sprzedaży B2B. Spadek czasu reakcji z 1 godziny do 5 minut zwiększa szansę na rozmowę kilkukrotnie (różne badania mówią o 8–21x). Powód jest prosty: klient w trakcie zapytania jest „gorący”. Po godzinie ma już inne sprawy. Po dniu — często rozmawia z konkurencją.",
+      "Tak — i to jest jeden z najlepiej zbadanych wskaźników w sprzedaży B2B. Skrócenie reakcji z godziny do kilku minut wyraźnie zwiększa szansę na realną rozmowę: klient w trakcie zapytania jest „gorący”, po godzinie ma już inne sprawy, a po dniu zwykle rozmawia z konkurencją. Skala tej różnicy zależy od branży i wartości leada — w diagnozie weryfikuję, jaki przedział jest realistyczny dla Twojego procesu.",
   },
   {
     question: "Jak mierzyć speed-to-lead w praktyce?",
@@ -219,7 +219,8 @@ export default function CzasReakcjiNaLeada() {
                 </TrackedCTA>
               </div>
               <p className="mt-6 text-sm text-gray-500 dark:text-gray-500">
-                Bezpłatna diagnoza w 24h · mapa procesu · szacowany ROI
+                Bezpłatna diagnoza w 24h · wstępna mapa pierwszego kroku ·
+                szacowany ROI
               </p>
             </div>
           </div>
@@ -734,9 +735,9 @@ export default function CzasReakcjiNaLeada() {
                 Chcesz, żeby leady były odbierane w 5 minut zamiast 5 godzin?
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-                30-minutowa diagnoza, mapa procesu i szacowany ROI. Bez
-                zobowiązań. Po rozmowie wiesz, czy w twoim przypadku to ma sens
-                — i ile by kosztowało.
+                30-minutowa diagnoza, wstępna mapa pierwszego kroku i szacowany
+                ROI. Bez zobowiązań. Po rozmowie wiesz, czy w twoim przypadku to
+                ma sens — i ile by kosztowało.
               </p>
               <TrackedCTA
                 href="/#kontakt"

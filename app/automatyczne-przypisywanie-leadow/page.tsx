@@ -218,7 +218,8 @@ export default function AutomatycznePrzypisywanieLeadow() {
                 </TrackedCTA>
               </div>
               <p className="mt-6 text-sm text-gray-500 dark:text-gray-500">
-                Bezpłatna diagnoza w 24h · mapa procesu · szacowany ROI
+                Bezpłatna diagnoza w 24h · wstępna mapa pierwszego kroku ·
+                szacowany ROI
               </p>
             </div>
           </div>
@@ -356,8 +357,10 @@ export default function AutomatycznePrzypisywanieLeadow() {
                 </p>
                 <p className="text-gray-700 dark:text-gray-300">
                   <span className="text-accent font-semibold">Konwersja:</span>{" "}
-                  badania pokazują, że spadek z 5 min do 4 h to nawet 60–80%
-                  mniej kontaktów (lead już rozmawia z konkurencją)
+                  modelowo: spadek z 5 min do 4 h oznacza znacząco mniej
+                  realnych kontaktów (lead w międzyczasie rozmawia z
+                  konkurencją). Konkretną wartość referencyjną dobieram w
+                  diagnozie pod Twoją branżę.
                 </p>
                 <p className="text-gray-700 dark:text-gray-300">
                   <span className="text-accent font-semibold">
@@ -731,9 +734,9 @@ export default function AutomatycznePrzypisywanieLeadow() {
                 Chcesz, żeby leady same trafiały do właściwego handlowca?
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-                30-minutowa diagnoza, mapa procesu i szacowany ROI. Bez
-                zobowiązań. Po rozmowie wiesz, czy w twoim przypadku to ma sens
-                — i ile by kosztowało.
+                30-minutowa diagnoza, wstępna mapa pierwszego kroku i szacowany
+                ROI. Bez zobowiązań. Po rozmowie wiesz, czy w twoim przypadku to
+                ma sens — i ile by kosztowało.
               </p>
               <TrackedCTA
                 href="/#kontakt"

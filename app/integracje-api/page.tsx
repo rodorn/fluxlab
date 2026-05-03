@@ -22,7 +22,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Automatyzacja procesów biznesowych i CRM dla firm B2B",
+        alt: "Fluxlab — Automatyzacja leadów, CRM i raportowania dla firm B2B",
       },
     ],
   },

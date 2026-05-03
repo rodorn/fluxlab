@@ -8,7 +8,7 @@ import { event as gaEvent } from "@/lib/gtag";
 const navLinks = [
   { label: "Jak pracuję", href: "/jak-pracuje" },
   { label: "Cennik", href: "/#cennik" },
-  { label: "O nas", href: "/#o-nas" },
+  { label: "O Fluxlabie", href: "/#o-nas" },
   { label: "FAQ", href: "/#faq" },
 ];
 

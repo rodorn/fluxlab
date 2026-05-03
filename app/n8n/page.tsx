@@ -5,6 +5,7 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import LandingForm from "@/components/LandingForm";
 
 export const metadata: Metadata = {
   title: "n8n — automatyzacja workflow z pełną kontrolą | Fluxlab",
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Automatyzacja procesów biznesowych i CRM dla firm B2B",
+        alt: "Fluxlab — Automatyzacja leadów, CRM i raportowania dla firm B2B",
       },
     ],
   },
@@ -209,7 +210,7 @@ export default function N8nPage() {
                 wdrożenia zależy od liczby workflow, złożoności integracji i
                 tego, czy potrzebujesz konfiguracji infrastruktury. Proste
                 scenariusze wdrażam szybko, bardziej zaawansowane projekty
-                wyceniamy indywidualnie.
+                wyceniam indywidualnie.
               </p>
             </div>
           </div>
@@ -253,27 +254,18 @@ export default function N8nPage() {
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="py-16 lg:py-24 border-t border-gray-100 dark:border-gray-800">
+        {/* Form — diagnoza */}
+        <section
+          id="diagnoza"
+          className="scroll-mt-20 py-16 lg:py-20 bg-accent/10 border-t border-gray-100 dark:border-gray-800"
+        >
           <div className="container-wide">
-            <div className="max-w-2xl mx-auto text-center bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-10">
-              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                Chcesz zbudować automatyzacje na n8n?
-              </h2>
-              <p className="text-gray-500 dark:text-gray-400 mb-8">
-                Opowiedz nam o procesach, które chcesz zautomatyzować —
-                dobiorę architekturę i wdrożymy workflow.
-              </p>
-              <Link
-                href="/#kontakt"
-                className="btn-primary px-8 py-3.5 text-base"
-              >
-                Zamów diagnozę
-              </Link>
-              <p className="mt-4 text-xs text-gray-400 dark:text-gray-500">
-                Bezpłatna diagnoza · Odpowiedź w 24h
-              </p>
-            </div>
+            <LandingForm
+              formId="diagnosis_n8n"
+              heading="Sprawdźmy Twój workflow w n8n"
+              intro="Opisz krótko, jakie procesy chcesz zautomatyzować w n8n: jakie systemy łączymy, jaki wolumen, czy potrzebujesz self-hosted czy cloud. W odpowiedzi dostaniesz wstępną propozycję architektury i informację, od którego workflow zacząć."
+              submitLabel="Chcę diagnozę workflow n8n"
+            />
           </div>
         </section>
 

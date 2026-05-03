@@ -5,6 +5,7 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import LandingForm from "@/components/LandingForm";
 
 export const metadata: Metadata = {
   title: "Automatyzacja procesów biznesowych dla firm | Fluxlab",
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Automatyzacja procesów biznesowych i CRM dla firm B2B",
+        alt: "Fluxlab — Automatyzacja leadów, CRM i raportowania dla firm B2B",
       },
     ],
   },
@@ -139,7 +140,7 @@ export default function AutomatyzacjaProcesowBiznesowych() {
                   Automatyzacja procesów biznesowych
                 </h1>
                 <p className="text-lg text-gray-600 dark:text-gray-300">
-                  Pomagamy firmom eliminować ręczną, powtarzalną pracę i
+                  Pomagam firmom eliminować ręczną, powtarzalną pracę i
                   zastępować ją sprawnymi procesami opartymi o automatyzację.
                   Projektuję rozwiązania, które porządkują obieg danych,
                   skracają czas realizacji zadań i zmniejszają liczbę błędów
@@ -247,7 +248,7 @@ export default function AutomatyzacjaProcesowBiznesowych() {
                 Koszt zależy od liczby systemów, złożoności procesu i tego, czy
                 wystarczy no-code, czy potrzebna jest również integracja API lub
                 logika szyta pod firmę. Proste wdrożenia zaczynają się od kilku
-                tysięcy złotych. Bardziej rozbudowane projekty wyceniamy po
+                tysięcy złotych. Bardziej rozbudowane projekty wyceniam po
                 analizie procesu i zakresu integracji.
               </p>
             </div>
@@ -292,23 +293,18 @@ export default function AutomatyzacjaProcesowBiznesowych() {
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="py-16 lg:py-24">
+        {/* Form — diagnoza */}
+        <section
+          id="diagnoza"
+          className="scroll-mt-20 py-16 lg:py-20 bg-accent/10"
+        >
           <div className="container-wide">
-            <div className="max-w-2xl mx-auto text-center bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-10">
-              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                Chcesz sprawdzić, które procesy warto zautomatyzować?
-              </h2>
-              <p className="text-gray-500 dark:text-gray-400 mb-8">
-                Zamów diagnozę i pokaż nam swój obecny workflow.
-              </p>
-              <Link
-                href="/#kontakt"
-                className="btn-primary px-8 py-3.5 text-base"
-              >
-                Zamów diagnozę procesu
-              </Link>
-            </div>
+            <LandingForm
+              formId="diagnosis_procesy"
+              heading="Sprawdźmy, który proces warto zautomatyzować"
+              intro="Opisz krótko, jakie procesy najbardziej kosztują Cię czas: ręczne raporty, przepisywanie danych, follow-upy, obieg dokumentów. W odpowiedzi dostaniesz informację, który z nich da największy efekt po automatyzacji i jaki byłby pierwszy krok."
+              submitLabel="Sprawdźmy, który proces zautomatyzować"
+            />
           </div>
         </section>
 

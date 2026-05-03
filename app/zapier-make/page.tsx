@@ -5,6 +5,7 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import LandingForm from "@/components/LandingForm";
 
 export const metadata: Metadata = {
   title:
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Automatyzacja procesów biznesowych i CRM dla firm B2B",
+        alt: "Fluxlab — Automatyzacja leadów, CRM i raportowania dla firm B2B",
       },
     ],
   },
@@ -274,24 +275,18 @@ export default function ZapierMake() {
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="py-16 lg:py-24 border-t border-gray-100 dark:border-gray-800">
+        {/* Form — diagnoza */}
+        <section
+          id="diagnoza"
+          className="scroll-mt-20 py-16 lg:py-20 bg-accent/10 border-t border-gray-100 dark:border-gray-800"
+        >
           <div className="container-wide">
-            <div className="max-w-2xl mx-auto text-center bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-10">
-              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                Nie wiesz, czy wybrać Zapier czy Make?
-              </h2>
-              <p className="text-gray-500 dark:text-gray-400 mb-8">
-                Opowiedz nam o swoim procesie, a dobiorę narzędzie i
-                zaprojektuję workflow.
-              </p>
-              <Link
-                href="/#kontakt"
-                className="btn-primary px-8 py-3.5 text-base"
-              >
-                Zamów diagnozę
-              </Link>
-            </div>
+            <LandingForm
+              formId="diagnosis_zapier_make"
+              heading="Dobierz narzędzie do procesu"
+              intro="Opisz krótko, jaki proces chcesz zautomatyzować, jakie systemy łączymy i jaki masz wolumen. W odpowiedzi dostaniesz informację, czy lepsze dla Ciebie będzie Zapier, Make, n8n — i jaki workflow zbudować jako pierwszy."
+              submitLabel="Dobierz narzędzie"
+            />
           </div>
         </section>
 

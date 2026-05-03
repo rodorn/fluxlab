@@ -20,7 +20,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Automatyzacja procesów biznesowych i CRM dla firm B2B",
+        alt: "Fluxlab — Automatyzacja leadów, CRM i raportowania dla firm B2B",
       },
     ],
   },
@@ -822,7 +822,7 @@ export default function AutomatyzacjaFollowUp() {
                 Zautomatyzuj follow-upy
               </TrackedCTA>
               <p className="mt-4 text-sm text-gray-500 dark:text-gray-500">
-                Odpowiedź w 24h · mapa procesu · bez zobowiązań
+                Odpowiedź w 24h · wstępna mapa pierwszego kroku · bez zobowiązań
               </p>
             </div>
           </div>

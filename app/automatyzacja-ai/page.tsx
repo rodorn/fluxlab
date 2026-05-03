@@ -5,6 +5,7 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import LandingForm from "@/components/LandingForm";
 
 export const metadata: Metadata = {
   title: "Automatyzacja AI w procesach firmowych | Fluxlab",
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Automatyzacja procesów biznesowych i CRM dla firm B2B",
+        alt: "Fluxlab — Automatyzacja leadów, CRM i raportowania dla firm B2B",
       },
     ],
   },
@@ -145,8 +146,8 @@ export default function AutomatyzacjaAI() {
                   Automatyzacja AI pozwala rozszerzyć zwykłe workflow o analizę
                   treści, klasyfikację danych, generowanie odpowiedzi i
                   podejmowanie prostych decyzji według ustalonych reguł. Nie
-                  sprzedaję modnego hasła. Wdrażam AI tam, gdzie realnie
-                  skraca czas pracy i poprawia jakość procesu.
+                  sprzedaję modnego hasła. Wdrażam AI tam, gdzie realnie skraca
+                  czas pracy i poprawia jakość procesu.
                 </p>
               </div>
               <div className="relative mx-auto lg:mx-0 w-full max-w-md">
@@ -285,23 +286,18 @@ export default function AutomatyzacjaAI() {
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="py-16 lg:py-24">
+        {/* Form — diagnoza */}
+        <section
+          id="diagnoza"
+          className="scroll-mt-20 py-16 lg:py-20 bg-accent/10"
+        >
           <div className="container-wide">
-            <div className="max-w-2xl mx-auto text-center bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-10">
-              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                Chcesz sprawdzić, gdzie AI realnie pomoże w Twojej firmie?
-              </h2>
-              <p className="text-gray-500 dark:text-gray-400 mb-8">
-                Opisz proces, a ocenię, czy AI da tu wartość i jak szybko.
-              </p>
-              <Link
-                href="/#kontakt"
-                className="btn-primary px-8 py-3.5 text-base"
-              >
-                Zamów diagnozę procesu
-              </Link>
-            </div>
+            <LandingForm
+              formId="diagnosis_ai"
+              heading="Sprawdźmy, gdzie AI ma sens"
+              intro="Opisz krótko, jaki proces chcesz wzbogacić o AI: co dziś robi człowiek ręcznie, na jakich danych i w jakiej skali. W odpowiedzi dostaniesz informację, czy AI rozwiąże problem szybko, czy najpierw potrzebujesz porządnego procesu bez AI."
+              submitLabel="Sprawdźmy, gdzie AI ma sens"
+            />
           </div>
         </section>
 

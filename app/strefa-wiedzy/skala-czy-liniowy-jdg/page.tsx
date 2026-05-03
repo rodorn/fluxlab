@@ -23,7 +23,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Automatyzacja procesów biznesowych i CRM dla firm B2B",
+        alt: "Fluxlab — Automatyzacja leadów, CRM i raportowania dla firm B2B",
       },
     ],
   },
@@ -592,7 +592,7 @@ export default function SkalaCzyLiniowyJdgArticle() {
                 Potrzebujesz pomocy w wyborze formy?
               </h2>
               <p className="text-gray-600 dark:text-gray-400 mb-4">
-                Skontaktuj się z nami — pomożemy policzyć i wybrać optymalną
+                Napisz do mnie — pomogę policzyć i wybrać optymalną
                 formę opodatkowania dla Twojej JDG.
               </p>
               <Link href="/#kontakt" className="btn-primary inline-block">

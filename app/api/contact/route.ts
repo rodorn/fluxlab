@@ -131,9 +131,9 @@ export async function POST(req: Request) {
       subject: "Dostałem zgłoszenie — Fluxlab",
       text: `Cześć,
 
-dzięki za opis procesu. Przejrzę zgłoszenie i wrócę z odpowiedzią w ciągu 24h.
+dzięki za opis procesu. Przejrzę zgłoszenie i wrócę z informacją, czy widzę potencjał na automatyzację oraz jaki byłby sensowny pierwszy krok — zwykle w ciągu 24h.
 
-Jeśli od razu widzę potencjał na automatyzację, zaproponuję termin krótkiej rozmowy. Jeśli nie, napiszę wprost, dlaczego moim zdaniem nie warto tego automatyzować na tym etapie.
+Jeśli widzę dopasowanie, zaproponuję termin krótkiej rozmowy. Jeśli proces wygląda na zbyt mały albo nieopłacalny do automatyzacji na tym etapie, napiszę to wprost — bez owijania w bawełnę.
 
 Paweł
 Fluxlab — Automatyzacja leadów, CRM i raportowania dla firm B2B
