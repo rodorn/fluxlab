@@ -814,7 +814,7 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
                 procesów.
               </p>
               <Link href="/#kontakt" className="btn-primary inline-block">
-                Umów bezpłatną konsultację
+                Zamów diagnozę procesu
               </Link>
             </div>
           </div>

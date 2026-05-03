@@ -539,7 +539,7 @@ export default function MakeVsN8nArticle() {
                 naprawdę pasuje do Twojej skali i procesów.
               </p>
               <Link href="/#kontakt" className="btn-primary inline-block">
-                Umów bezpłatną konsultację
+                Zamów diagnozę procesu
               </Link>
             </div>
           </div>

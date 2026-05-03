@@ -5,15 +5,16 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import LandingForm from "@/components/LandingForm";
 
 export const metadata: Metadata = {
   title: "Automatyzacja CRM dla sprzedaży i obsługi klienta | Fluxlab",
   description:
-    "Wdrażamy automatyzację CRM: leady, follow-upy, statusy, zadania, pipeline i integracje. Mniej ręcznej pracy, lepsza kontrola sprzedaży i szybsza reakcja zespołu.",
+    "Wdrażam automatyzację CRM: leady, follow-upy, statusy, zadania, pipeline i integracje. Mniej ręcznej pracy, lepsza kontrola sprzedaży i szybsza reakcja zespołu.",
   openGraph: {
     title: "Automatyzacja CRM dla sprzedaży i obsługi klienta | Fluxlab",
     description:
-      "Wdrażamy automatyzację CRM: leady, follow-upy, statusy, zadania, pipeline i integracje. Mniej ręcznej pracy, lepsza kontrola sprzedaży i szybsza reakcja zespołu.",
+      "Wdrażam automatyzację CRM: leady, follow-upy, statusy, zadania, pipeline i integracje. Mniej ręcznej pracy, lepsza kontrola sprzedaży i szybsza reakcja zespołu.",
     locale: "pl_PL",
     type: "article",
     images: [
@@ -57,7 +58,7 @@ const faq = [
   {
     question: "Z jakimi CRM pracujecie?",
     answer:
-      "Wdrażamy automatyzacje w popularnych systemach CRM i łączymy je z innymi narzędziami używanymi w firmie.",
+      "Wdrażam automatyzacje w popularnych systemach CRM i łączymy je z innymi narzędziami używanymi w firmie.",
   },
   {
     question: "Czy można zautomatyzować follow-up bez utraty kontroli?",
@@ -121,7 +122,7 @@ export default function AutomatyzacjaCRM() {
                 </h1>
                 <p className="text-lg text-gray-600 dark:text-gray-300">
                   Automatyzacja CRM pozwala uporządkować sprzedaż, przyspieszyć
-                  reakcję na leady i ograniczyć chaos w pipeline. Projektujemy
+                  reakcję na leady i ograniczyć chaos w pipeline. Projektuję
                   procesy, dzięki którym CRM nie jest tylko bazą kontaktów, ale
                   realnym narzędziem pracy handlowców i operacji.
                 </p>
@@ -249,27 +250,18 @@ export default function AutomatyzacjaCRM() {
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="py-16 lg:py-24 border-t border-gray-100 dark:border-gray-800">
+        {/* Form — diagnoza */}
+        <section
+          id="diagnoza"
+          className="scroll-mt-20 py-16 lg:py-20 bg-accent/10 border-t border-gray-100 dark:border-gray-800"
+        >
           <div className="container-wide">
-            <div className="max-w-2xl mx-auto text-center bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-10">
-              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                Masz CRM, ale zespół nadal robi za dużo ręcznie?
-              </h2>
-              <p className="text-gray-500 dark:text-gray-400 mb-8">
-                Pokaż nam proces sprzedaży, a wskażemy, co da się
-                zautomatyzować.
-              </p>
-              <Link
-                href="/#kontakt"
-                className="btn-primary px-8 py-3.5 text-base"
-              >
-                Zamów diagnozę
-              </Link>
-              <p className="mt-4 text-xs text-gray-400 dark:text-gray-500">
-                Bezpłatna diagnoza · Odpowiedź w 24h
-              </p>
-            </div>
+            <LandingForm
+              formId="diagnosis_crm"
+              heading="Sprawdźmy Twój proces sprzedaży"
+              intro="Opisz krótko, jak dziś wygląda obsługa leadów i deali w Twoim CRM: skąd wpadają, kto je obsługuje, gdzie pojawia się ręczna praca. W odpowiedzi dostaniesz informację, czy automatyzacja ma sens i jaki pierwszy krok da największy efekt."
+              submitLabel="Chcę diagnozę procesu CRM"
+            />
           </div>
         </section>
 
@@ -357,7 +349,7 @@ export default function AutomatyzacjaCRM() {
             "@type": "Service",
             name: "Automatyzacja CRM",
             description:
-              "Wdrażamy automatyzację CRM: leady, follow-upy, statusy, zadania, pipeline i integracje. Mniej ręcznej pracy, lepsza kontrola sprzedaży i szybsza reakcja zespołu.",
+              "Wdrażam automatyzację CRM: leady, follow-upy, statusy, zadania, pipeline i integracje. Mniej ręcznej pracy, lepsza kontrola sprzedaży i szybsza reakcja zespołu.",
             provider: { "@id": "https://fluxlab.pl/#organization" },
             areaServed: { "@type": "Country", name: "Polska" },
             serviceType: "Automatyzacja procesów biznesowych",

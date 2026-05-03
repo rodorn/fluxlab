@@ -456,7 +456,7 @@ export default function KalkulatorKosztowPage() {
                 księgowym zjadają Ci czas, porozmawiajmy.
               </p>
               <Link href="/#kontakt" className="btn-primary px-8 py-3.5 text-base">
-                Umów bezpłatną konsultację
+                Zamów diagnozę procesu
               </Link>
             </div>
           </div>

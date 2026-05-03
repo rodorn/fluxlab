@@ -246,7 +246,7 @@ export default function KalkulatorPodatkowyPage() {
                 skonsultuj się z ekspertem.
               </p>
               <Link href="/#kontakt" className="btn-primary px-8 py-3 text-base">
-                Umów konsultację
+                Zamów diagnozę
               </Link>
             </div>
           </div>
@@ -494,7 +494,7 @@ export default function KalkulatorPodatkowyPage() {
                 lub integracje, porozmawiajmy.
               </p>
               <Link href="/#kontakt" className="btn-primary px-8 py-3.5 text-base">
-                Umów bezpłatną konsultację
+                Zamów diagnozę procesu
               </Link>
             </div>
           </div>

@@ -631,7 +631,7 @@ export default function ZapierMakeN8nPorownanieArticle() {
                 Twoich procesów, skali i kompetencji w zespole.
               </p>
               <Link href="/#kontakt" className="btn-primary inline-block">
-                Umów bezpłatną konsultację
+                Zamów diagnozę procesu
               </Link>
             </div>
           </div>

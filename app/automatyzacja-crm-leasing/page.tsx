@@ -120,7 +120,7 @@ const faq = [
   {
     question: "Co z RODO i tajemnicą bankową?",
     answer:
-      "Dla branży leasingowej standardowo wdrażamy automatyzację na n8n self-hosted na waszym serwerze (Polska / EOG). Dane klientów nie wychodzą poza waszą infrastrukturę poza tymi, do których jawnie wysyłacie zapytania (BIK, KRD, leasingodawca). Konfigurujemy retencję, rejestr zgód i logi dostępu. To wymaganie twarde — przed startem audytujemy obecny stan ze strony compliance.",
+      "Dla branży leasingowej standardowo wdrażam automatyzację na n8n self-hosted na waszym serwerze (Polska / EOG). Dane klientów nie wychodzą poza waszą infrastrukturę poza tymi, do których jawnie wysyłacie zapytania (BIK, KRD, leasingodawca). Konfigurujemy retencję, rejestr zgód i logi dostępu. To wymaganie twarde — przed startem audytujemy obecny stan ze strony compliance.",
   },
   {
     question: "Ile kosztuje wdrożenie i ile trwa?",

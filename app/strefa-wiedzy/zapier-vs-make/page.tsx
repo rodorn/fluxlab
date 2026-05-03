@@ -548,7 +548,7 @@ export default function ZapierVsMakeArticle() {
                 ciągu 2 tygodni.
               </p>
               <Link href="/#kontakt" className="btn-primary inline-block">
-                Umów bezpłatną konsultację
+                Zamów diagnozę procesu
               </Link>
             </div>
           </div>

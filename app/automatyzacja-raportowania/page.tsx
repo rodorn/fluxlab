@@ -5,6 +5,7 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import LandingForm from "@/components/LandingForm";
 
 export const metadata: Metadata = {
   title: "Automatyzacja raportowania i danych w firmie | Fluxlab",
@@ -143,7 +144,7 @@ export default function AutomatyzacjaRaportowania() {
                 </h1>
                 <p className="text-lg text-gray-600 dark:text-gray-300">
                   Ręczne raportowanie zabiera czas, generuje błędy i opóźnia
-                  decyzje. Wdrażamy automatyzację raportowania, dzięki której
+                  decyzje. Wdrażam automatyzację raportowania, dzięki której
                   dane z różnych źródeł zbierają się same, a zespół pracuje na
                   aktualnych, spójnych liczbach.
                 </p>
@@ -283,24 +284,18 @@ export default function AutomatyzacjaRaportowania() {
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="py-16 lg:py-24">
+        {/* Form — diagnoza */}
+        <section
+          id="diagnoza"
+          className="scroll-mt-20 py-16 lg:py-20 bg-accent/10"
+        >
           <div className="container-wide">
-            <div className="max-w-2xl mx-auto text-center bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-10">
-              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                Masz dane w kilku miejscach i nie ufasz raportom?
-              </h2>
-              <p className="text-gray-500 dark:text-gray-400 mb-8">
-                Pokaż nam obecny układ, a zaproponujemy prostszy i bardziej
-                wiarygodny model raportowania.
-              </p>
-              <Link
-                href="/#kontakt"
-                className="btn-primary px-8 py-3.5 text-base"
-              >
-                Umów bezpłatną konsultację
-              </Link>
-            </div>
+            <LandingForm
+              formId="diagnosis_raport"
+              heading="Sprawdźmy Twój proces raportowania"
+              intro="Opisz krótko, skąd pochodzą dane, kto składa raport i jak często. W odpowiedzi dostaniesz informację, czy raport da się zautomatyzować i co z tego wyniknie — szybciej, mniej błędów albo prostszy model danych."
+              submitLabel="Chcę diagnozę raportowania"
+            />
           </div>
         </section>
 

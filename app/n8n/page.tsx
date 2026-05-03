@@ -9,11 +9,11 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 export const metadata: Metadata = {
   title: "n8n — automatyzacja workflow z pełną kontrolą | Fluxlab",
   description:
-    "Wdrażamy automatyzacje na platformie n8n: self-hosted lub cloud, integracje API, webhooki, własne nody. Alternatywa dla Zapier i Make z pełną kontrolą nad infrastrukturą.",
+    "Wdrażam automatyzacje na platformie n8n: self-hosted lub cloud, integracje API, webhooki, własne nody. Alternatywa dla Zapier i Make z pełną kontrolą nad infrastrukturą.",
   openGraph: {
     title: "n8n — automatyzacja workflow z pełną kontrolą | Fluxlab",
     description:
-      "Wdrażamy automatyzacje na platformie n8n: self-hosted lub cloud, integracje API, webhooki, własne nody. Alternatywa dla Zapier i Make z pełną kontrolą nad infrastrukturą.",
+      "Wdrażam automatyzacje na platformie n8n: self-hosted lub cloud, integracje API, webhooki, własne nody. Alternatywa dla Zapier i Make z pełną kontrolą nad infrastrukturą.",
     locale: "pl_PL",
     type: "article",
     images: [
@@ -208,7 +208,7 @@ export default function N8nPage() {
                 serwer. n8n Cloud zaczyna się od niskich kwot miesięcznie. Koszt
                 wdrożenia zależy od liczby workflow, złożoności integracji i
                 tego, czy potrzebujesz konfiguracji infrastruktury. Proste
-                scenariusze wdrażamy szybko, bardziej zaawansowane projekty
+                scenariusze wdrażam szybko, bardziej zaawansowane projekty
                 wyceniamy indywidualnie.
               </p>
             </div>
@@ -262,7 +262,7 @@ export default function N8nPage() {
               </h2>
               <p className="text-gray-500 dark:text-gray-400 mb-8">
                 Opowiedz nam o procesach, które chcesz zautomatyzować —
-                dobierzemy architekturę i wdrożymy workflow.
+                dobiorę architekturę i wdrożymy workflow.
               </p>
               <Link
                 href="/#kontakt"
@@ -325,7 +325,7 @@ export default function N8nPage() {
             "@type": "Service",
             name: "Automatyzacja z n8n",
             description:
-              "Wdrażamy automatyzacje na platformie n8n: self-hosted lub cloud, integracje API, webhooki, własne nody. Alternatywa dla Zapier i Make z pełną kontrolą nad infrastrukturą.",
+              "Wdrażam automatyzacje na platformie n8n: self-hosted lub cloud, integracje API, webhooki, własne nody. Alternatywa dla Zapier i Make z pełną kontrolą nad infrastrukturą.",
             provider: { "@id": "https://fluxlab.pl/#organization" },
             areaServed: { "@type": "Country", name: "Polska" },
             serviceType: "Automatyzacja procesów biznesowych",

@@ -5,6 +5,7 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import LandingForm from "@/components/LandingForm";
 
 export const metadata: Metadata = {
   title: "Integracje API i łączenie systemów w firmie | Fluxlab",
@@ -124,7 +125,7 @@ export default function IntegracjeApi() {
                 </h1>
                 <p className="text-lg text-gray-600 dark:text-gray-300">
                   Firmy tracą czas i pieniądze, gdy ich narzędzia nie wymieniają
-                  danych automatycznie. Projektujemy integracje API, które łączą
+                  danych automatycznie. Projektuję integracje API, które łączą
                   systemy używane w sprzedaży, operacjach i raportowaniu, dzięki
                   czemu informacje trafiają tam, gdzie trzeba, bez ręcznego
                   przepisywania.
@@ -264,24 +265,18 @@ export default function IntegracjeApi() {
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="py-16 lg:py-24 border-t border-gray-100 dark:border-gray-800">
+        {/* Form — diagnoza */}
+        <section
+          id="diagnoza"
+          className="scroll-mt-20 py-16 lg:py-20 bg-accent/10 border-t border-gray-100 dark:border-gray-800"
+        >
           <div className="container-wide">
-            <div className="max-w-2xl mx-auto text-center bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-10">
-              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                Masz kilka systemów, które nie gadają ze sobą?
-              </h2>
-              <p className="text-gray-500 dark:text-gray-400 mb-8">
-                Pokaż nam stack, a zaproponujemy sensowną architekturę
-                integracji.
-              </p>
-              <Link
-                href="/#kontakt"
-                className="btn-primary px-8 py-3.5 text-base"
-              >
-                Zamów diagnozę
-              </Link>
-            </div>
+            <LandingForm
+              formId="diagnosis_api"
+              heading="Sprawdźmy Twój stack integracji"
+              intro="Opisz krótko, jakie systemy chcesz połączyć, gdzie dziś pojawia się ręczne przepisywanie danych i co powinno przepływać automatycznie. W odpowiedzi dostaniesz wstępną propozycję architektury i informację, od którego kroku zacząć."
+              submitLabel="Chcę diagnozę integracji"
+            />
           </div>
         </section>
 

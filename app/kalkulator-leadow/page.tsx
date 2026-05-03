@@ -44,7 +44,7 @@ const faqs = [
   {
     question: "Skąd założenie, że 30% opóźnionych leadów jest utraconych?",
     answer:
-      "To uproszczenie oparte o znane badania (m.in. Harvard Business Review, InsideSales) pokazujące, że szansa na konwersję spada drastycznie po pierwszych minutach: lead, do którego nikt nie odzywa się w godzinę, ma kilka razy mniejszą szansę zostać klientem niż lead obsłużony w 5 minut. 30% to konserwatywny środek przedziału — w niektórych branżach (leasing, finanse) realny ubytek jest większy, w innych mniejszy. Kalkulator pokazuje skalę problemu, nie precyzyjną prognozę.",
+      "To model uproszczony. W sprzedaży inbound czas reakcji silnie wpływa na konwersję — lead obsłużony w kilka minut ma znacząco większą szansę zostać klientem niż ten odebrany po godzinie. 30% to konserwatywny środek przedziału, oparty na obserwacjach z moich projektów; w niektórych branżach (leasing, finanse) realny ubytek jest większy, w innych mniejszy. Kalkulator pokazuje skalę problemu, nie precyzyjną prognozę — w diagnozie dopasowuję parametr do Twojej branży i danych.",
   },
   {
     question: "Czy automatyzacja na pewno usunie ten koszt?",

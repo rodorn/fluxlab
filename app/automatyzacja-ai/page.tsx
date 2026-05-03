@@ -9,11 +9,11 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 export const metadata: Metadata = {
   title: "Automatyzacja AI w procesach firmowych | Fluxlab",
   description:
-    "Wdrażamy automatyzację AI w firmie: klasyfikacja danych, streszczenia, analiza treści, wsparcie obsługi i inteligentne workflow połączone z CRM i innymi systemami.",
+    "Wdrażam automatyzację AI w firmie: klasyfikacja danych, streszczenia, analiza treści, wsparcie obsługi i inteligentne workflow połączone z CRM i innymi systemami.",
   openGraph: {
     title: "Automatyzacja AI w procesach firmowych | Fluxlab",
     description:
-      "Wdrażamy automatyzację AI w firmie: klasyfikacja danych, streszczenia, analiza treści, wsparcie obsługi i inteligentne workflow połączone z CRM i innymi systemami.",
+      "Wdrażam automatyzację AI w firmie: klasyfikacja danych, streszczenia, analiza treści, wsparcie obsługi i inteligentne workflow połączone z CRM i innymi systemami.",
     locale: "pl_PL",
     type: "article",
     images: [
@@ -57,7 +57,7 @@ const faqs = [
   {
     question: "Czy AI się myli?",
     answer:
-      "Tak, dlatego projektujemy procesy z weryfikacją i fallbackiem na człowieka tam, gdzie to potrzebne.",
+      "Tak, dlatego projektuję procesy z weryfikacją i fallbackiem na człowieka tam, gdzie to potrzebne.",
   },
   {
     question: "Czy potrzebuję własnych danych do treningu?",
@@ -145,7 +145,7 @@ export default function AutomatyzacjaAI() {
                   Automatyzacja AI pozwala rozszerzyć zwykłe workflow o analizę
                   treści, klasyfikację danych, generowanie odpowiedzi i
                   podejmowanie prostych decyzji według ustalonych reguł. Nie
-                  sprzedajemy modnego hasła. Wdrażamy AI tam, gdzie realnie
+                  sprzedaję modnego hasła. Wdrażam AI tam, gdzie realnie
                   skraca czas pracy i poprawia jakość procesu.
                 </p>
               </div>
@@ -293,13 +293,13 @@ export default function AutomatyzacjaAI() {
                 Chcesz sprawdzić, gdzie AI realnie pomoże w Twojej firmie?
               </h2>
               <p className="text-gray-500 dark:text-gray-400 mb-8">
-                Pokaż nam proces, a ocenimy, czy AI da tu wartość i jak szybko.
+                Opisz proces, a ocenię, czy AI da tu wartość i jak szybko.
               </p>
               <Link
                 href="/#kontakt"
                 className="btn-primary px-8 py-3.5 text-base"
               >
-                Umów bezpłatną konsultację
+                Zamów diagnozę procesu
               </Link>
             </div>
           </div>
@@ -361,7 +361,7 @@ export default function AutomatyzacjaAI() {
             "@type": "Service",
             name: "Automatyzacja AI",
             description:
-              "Wdrażamy automatyzację AI w firmie: klasyfikacja danych, streszczenia, analiza treści, wsparcie obsługi i inteligentne workflow połączone z CRM i innymi systemami.",
+              "Wdrażam automatyzację AI w firmie: klasyfikacja danych, streszczenia, analiza treści, wsparcie obsługi i inteligentne workflow połączone z CRM i innymi systemami.",
             provider: { "@id": "https://fluxlab.pl/#organization" },
             areaServed: { "@type": "Country", name: "Polska" },
             serviceType: "Automatyzacja procesów biznesowych",

@@ -389,7 +389,7 @@ export default function AutomatyzacjaDlaAgencjiMarketingowych() {
                 fakturowanie zaczyna pożerać tygodnie pracy zespołu. Pracujemy z
                 agencjami performance (Google Ads, Meta Ads, kampanie B2B),
                 agencjami SEO, social media oraz pełnoserwisowymi 360°.
-                Szczególnie często wdrażamy automatyzację procesów ofertowania
+                Szczególnie często wdrażam automatyzację procesów ofertowania
                 (więcej w sekcji{" "}
                 <Link
                   href="/automatyzacja-leadow"
@@ -456,7 +456,7 @@ export default function AutomatyzacjaDlaAgencjiMarketingowych() {
                 Zespół spędza więcej czasu na raportach niż na klientach?
               </h2>
               <p className="text-gray-500 dark:text-gray-400 mb-8">
-                Pokaż nam Wasz proces. Wskażemy konkretne miejsca, gdzie
+                Opisz Wasz proces. Wskażemy konkretne miejsca, gdzie
                 automatyzacja odda zespołowi 10–20 godzin tygodniowo.
               </p>
               <Link

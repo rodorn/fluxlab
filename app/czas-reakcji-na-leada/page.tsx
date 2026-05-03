@@ -141,7 +141,7 @@ const faq = [
   {
     question: "Jaki czas reakcji na leada jest realistyczny w B2B?",
     answer:
-      "5 minut to standard w branżach z wysoką konkurencją (leasing, nieruchomości, usługi finansowe). 15–30 minut to przyzwoity wynik dla większości firm B2B w godzinach pracy. Powyżej 1 godziny — tracisz statystycznie 50–70% szans na rozmowę. Dane Harvard Business Review (Oldroyd 2011) i ich późniejsze powtórki konsekwentnie pokazują, że wskaźnik kontaktu spada wykładniczo po pierwszych 5 minutach.",
+      "5 minut to standard w branżach z wysoką konkurencją (leasing, nieruchomości, usługi finansowe). 15–30 minut to przyzwoity wynik dla większości firm B2B w godzinach pracy. Powyżej godziny szansa na dodzwonienie się i jakościową rozmowę spada bardzo mocno — różne badania B2B konsekwentnie pokazują wykładniczy spadek po pierwszych minutach. Konkretną wartość referencyjną dobieramy w diagnozie pod Twoją branżę i typ leada.",
   },
   {
     question: "Czy auto-odpowiedź zastępuje kontakt handlowca?",

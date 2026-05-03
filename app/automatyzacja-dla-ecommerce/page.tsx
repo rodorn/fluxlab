@@ -325,7 +325,7 @@ export default function AutomatyzacjaDlaEcommerce() {
                 Narzędzia, z którymi pracujemy w e-commerce
               </h2>
               <p className="text-gray-500 dark:text-gray-400 mb-10">
-                Nie sprzedajemy konkretnego narzędzia. Dobieramy je do skali
+                Nie sprzedaję konkretnego narzędzia. Dobieramy je do skali
                 sklepu, liczby kanałów i tego, co już działa. Najczęściej
                 spotykany stack dla polskiego e-commerce wygląda jednak podobnie
                 i poniżej opisujemy te narzędzia, w których robimy najwięcej
@@ -448,7 +448,7 @@ export default function AutomatyzacjaDlaEcommerce() {
                 Twój sklep rośnie, a operacja zaczyna gasić pożary?
               </h2>
               <p className="text-gray-500 dark:text-gray-400 mb-8">
-                Pokaż nam stack i procesy. Wskażemy konkretne miejsca, gdzie
+                Opisz stack i procesy. Wskażemy konkretne miejsca, gdzie
                 automatyzacja zwróci się w 2–3 miesiące.
               </p>
               <Link

@@ -113,8 +113,8 @@ export default function Hero() {
               label: "czas reakcji na nowego leada",
             },
             {
-              value: "ROI < 1 mies.",
-              label: "dla typowego procesu z wolumenem",
+              value: "ROI 1–3 mies.",
+              label: "dla procesów z dużym wolumenem ręcznej pracy",
             },
           ].map((stat) => (
             <div key={stat.label}>

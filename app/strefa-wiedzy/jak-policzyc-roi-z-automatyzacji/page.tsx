@@ -651,7 +651,7 @@ export default function RoiAutomatyzacjiArticle() {
                 Zobacz usługę automatyzacji i porównaj z artykułami poniżej.
               </p>
               <Link href="/#kontakt" className="btn-primary inline-block">
-                Umów bezpłatną konsultację
+                Zamów diagnozę procesu
               </Link>
             </div>
           </div>

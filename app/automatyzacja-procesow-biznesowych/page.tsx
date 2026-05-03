@@ -9,11 +9,11 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 export const metadata: Metadata = {
   title: "Automatyzacja procesów biznesowych dla firm | Fluxlab",
   description:
-    "Projektujemy i wdrażamy automatyzację procesów biznesowych w firmach B2B. Mniej ręcznej pracy, mniej błędów, szybsze działanie i realny zwrot z wdrożenia.",
+    "Projektuję i wdrażam automatyzację procesów biznesowych w firmach B2B. Mniej ręcznej pracy, mniej błędów, szybsze działanie i realny zwrot z wdrożenia.",
   openGraph: {
     title: "Automatyzacja procesów biznesowych dla firm | Fluxlab",
     description:
-      "Projektujemy i wdrażamy automatyzację procesów biznesowych w firmach B2B. Mniej ręcznej pracy, mniej błędów, szybsze działanie i realny zwrot z wdrożenia.",
+      "Projektuję i wdrażam automatyzację procesów biznesowych w firmach B2B. Mniej ręcznej pracy, mniej błędów, szybsze działanie i realny zwrot z wdrożenia.",
     locale: "pl_PL",
     type: "article",
     images: [
@@ -141,7 +141,7 @@ export default function AutomatyzacjaProcesowBiznesowych() {
                 <p className="text-lg text-gray-600 dark:text-gray-300">
                   Pomagamy firmom eliminować ręczną, powtarzalną pracę i
                   zastępować ją sprawnymi procesami opartymi o automatyzację.
-                  Projektujemy rozwiązania, które porządkują obieg danych,
+                  Projektuję rozwiązania, które porządkują obieg danych,
                   skracają czas realizacji zadań i zmniejszają liczbę błędów
                   operacyjnych.
                 </p>
@@ -300,13 +300,13 @@ export default function AutomatyzacjaProcesowBiznesowych() {
                 Chcesz sprawdzić, które procesy warto zautomatyzować?
               </h2>
               <p className="text-gray-500 dark:text-gray-400 mb-8">
-                Umów konsultację i pokaż nam swój obecny workflow.
+                Zamów diagnozę i pokaż nam swój obecny workflow.
               </p>
               <Link
                 href="/#kontakt"
                 className="btn-primary px-8 py-3.5 text-base"
               >
-                Umów bezpłatną konsultację
+                Zamów diagnozę procesu
               </Link>
             </div>
           </div>
@@ -368,7 +368,7 @@ export default function AutomatyzacjaProcesowBiznesowych() {
             "@type": "Service",
             name: "Automatyzacja procesów biznesowych",
             description:
-              "Projektujemy i wdrażamy automatyzację procesów biznesowych w firmach B2B. Mniej ręcznej pracy, mniej błędów, szybsze działanie i realny zwrot z wdrożenia.",
+              "Projektuję i wdrażam automatyzację procesów biznesowych w firmach B2B. Mniej ręcznej pracy, mniej błędów, szybsze działanie i realny zwrot z wdrożenia.",
             provider: { "@id": "https://fluxlab.pl/#organization" },
             areaServed: { "@type": "Country", name: "Polska" },
             serviceType: "Automatyzacja procesów biznesowych",

@@ -4,6 +4,7 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import LandingForm from "@/components/LandingForm";
 
 export const metadata: Metadata = {
   title: "Automatyzacja Pipedrive – jak wycisnąć 100% z CRM | Fluxlab",
@@ -210,10 +211,7 @@ export default function AutomatyzacjaPipedrive() {
                   </span>
                 ))}
               </div>
-              <a
-                href="#kontakt-pipedrive"
-                className="btn-primary px-8 py-3.5 text-base"
-              >
+              <a href="#diagnoza" className="btn-primary px-8 py-3.5 text-base">
                 Sprawdźmy proces
               </a>
             </div>
@@ -478,29 +476,18 @@ export default function AutomatyzacjaPipedrive() {
           </div>
         </section>
 
-        {/* CTA */}
+        {/* Form — diagnoza */}
         <section
-          id="kontakt-pipedrive"
-          className="py-16 border-t border-gray-100 dark:border-gray-800"
+          id="diagnoza"
+          className="scroll-mt-20 py-16 lg:py-20 bg-accent/10 border-t border-gray-100 dark:border-gray-800"
         >
           <div className="container-wide">
-            <div className="max-w-2xl mx-auto text-center bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-10">
-              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                CRM przestaje być miejscem, gdzie wpisuje się dane.
-              </h2>
-              <p className="text-gray-500 dark:text-gray-400 mb-8">
-                Staje się systemem, który pracuje za zespół.
-              </p>
-              <Link
-                href="/#kontakt"
-                className="btn-primary px-8 py-3.5 text-base"
-              >
-                Sprawdźmy proces
-              </Link>
-              <p className="mt-4 text-xs text-gray-400 dark:text-gray-500">
-                Bezpłatna diagnoza · Odpowiedź w 24h
-              </p>
-            </div>
+            <LandingForm
+              formId="diagnosis_pipedrive"
+              heading="Sprawdźmy Twój proces w Pipedrive"
+              intro="Opisz krótko, jak dziś wygląda obsługa leadów i deali w Pipedrive: skąd wpadają, kto je obsługuje, gdzie pojawia się ręczna praca. W odpowiedzi dostaniesz informację, czy automatyzacja ma sens i jaki pierwszy etap da największy efekt."
+              submitLabel="Chcę diagnozę procesu Pipedrive"
+            />
           </div>
         </section>
       </main>

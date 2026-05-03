@@ -395,7 +395,7 @@ export default function AutomatyzacjaDlaBiurRachunkowych() {
                 za dokumentami i klepanie raportów miesięcznych zaczyna
                 pochłaniać większość czasu zespołu. Pracujemy zarówno z biurami
                 pełnoksięgowymi, jak i z biurami obsługującymi głównie
-                JDG/KPiR/ryczałt. Szczególnie często wdrażamy{" "}
+                JDG/KPiR/ryczałt. Szczególnie często wdrażam{" "}
                 <Link
                   href="/automatyzacja-raportowania"
                   className="text-accent hover:underline"
@@ -461,7 +461,7 @@ export default function AutomatyzacjaDlaBiurRachunkowych() {
                 KSeF blisko, a zespół już dziś nie wyrabia z papierami?
               </h2>
               <p className="text-gray-500 dark:text-gray-400 mb-8">
-                Pokaż nam, jak dziś wygląda obieg dokumentów w biurze. Wskażemy
+                Opisz, jak dziś wygląda obieg dokumentów w biurze. Wskażemy
                 konkretne miejsca, gdzie automatyzacja odda zespołowi
                 kilkanaście godzin tygodniowo.
               </p>

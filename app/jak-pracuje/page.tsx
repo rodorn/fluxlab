@@ -339,7 +339,7 @@ export default function JakPracuje() {
           <div className="container-wide">
             <div className="max-w-2xl mx-auto text-center">
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                Umów bezpłatną konsultację
+                Zamów diagnozę procesu
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
                 30 minut, bez zobowiązań. Jeśli widzę, że automatyzacja nie ma

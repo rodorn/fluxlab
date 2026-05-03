@@ -501,7 +501,7 @@ export default function N8nVsZapierArticle() {
                 miesiące — bez sprzedażowej presji.
               </p>
               <Link href="/#kontakt" className="btn-primary inline-block">
-                Umów bezpłatną konsultację
+                Zamów diagnozę procesu
               </Link>
             </div>
           </div>

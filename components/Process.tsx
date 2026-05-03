@@ -15,7 +15,7 @@ const steps = [
     number: "03",
     title: "Budowa i testy",
     description:
-      "Wdrażamy automatyzację, testujemy na rzeczywistych danych i iterujemy do momentu, gdy działa bezbłędnie w każdym scenariuszu.",
+      "Wdrażam automatyzację, testujemy na rzeczywistych danych i iterujemy do momentu, gdy działa bezbłędnie w każdym scenariuszu.",
   },
   {
     number: "04",

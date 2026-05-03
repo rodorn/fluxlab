@@ -432,7 +432,7 @@ export default function DoborSamochoduPage() {
                 samochodowej, możemy pomóc w analizie kosztów i procesu.
               </p>
               <Link href="/#kontakt" className="btn-primary px-8 py-3.5 text-base">
-                Umów bezpłatną konsultację
+                Zamów diagnozę procesu
               </Link>
             </div>
           </div>

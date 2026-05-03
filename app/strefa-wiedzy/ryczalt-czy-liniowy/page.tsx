@@ -535,7 +535,7 @@ export default function RyczaltCzyLiniowyArticle() {
                 formę opodatkowania.
               </p>
               <Link href="/#kontakt" className="btn-primary inline-block">
-                Umów bezpłatną konsultację
+                Zamów diagnozę procesu
               </Link>
             </div>
           </div>

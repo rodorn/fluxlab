@@ -5,15 +5,16 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import LandingForm from "@/components/LandingForm";
 
 export const metadata: Metadata = {
   title: "Automatyzacja leadów i obsługi zapytań sprzedażowych | Fluxlab",
   description:
-    "Wdrażamy automatyzację leadów: zbieranie, routing, kwalifikacja, powiadomienia i follow-up. Szybsza reakcja, mniej chaosu i lepsze wykorzystanie szans sprzedażowych.",
+    "Wdrażam automatyzację leadów: zbieranie, routing, kwalifikacja, powiadomienia i follow-up. Szybsza reakcja, mniej chaosu i lepsze wykorzystanie szans sprzedażowych.",
   openGraph: {
     title: "Automatyzacja leadów i obsługi zapytań sprzedażowych | Fluxlab",
     description:
-      "Wdrażamy automatyzację leadów: zbieranie, routing, kwalifikacja, powiadomienia i follow-up. Szybsza reakcja, mniej chaosu i lepsze wykorzystanie szans sprzedażowych.",
+      "Wdrażam automatyzację leadów: zbieranie, routing, kwalifikacja, powiadomienia i follow-up. Szybsza reakcja, mniej chaosu i lepsze wykorzystanie szans sprzedażowych.",
     locale: "pl_PL",
     type: "article",
     images: [
@@ -72,12 +73,20 @@ const relatedServices = [
 
 const relatedArticles = [
   {
-    href: "/strefa-wiedzy/jak-zautomatyzowac-obsluge-leadow",
-    label: "Jak zautomatyzować obsługę leadów",
+    href: "/automatyczne-przypisywanie-leadow",
+    label: "Automatyczne przypisywanie leadów do handlowców",
   },
   {
-    href: "/strefa-wiedzy/jak-skrocic-czas-reakcji-na-leada",
+    href: "/czas-reakcji-na-leada",
     label: "Jak skrócić czas reakcji na leada",
+  },
+  {
+    href: "/automatyzacja-formularza-do-pipedrive",
+    label: "Integracja formularza z Pipedrive",
+  },
+  {
+    href: "/automatyzacja-follow-up",
+    label: "Automatyzacja follow-upów w CRM",
   },
 ];
 
@@ -252,24 +261,18 @@ export default function AutomatyzacjaLeadow() {
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="py-16 lg:py-24">
+        {/* Form — diagnoza */}
+        <section
+          id="diagnoza"
+          className="scroll-mt-20 py-16 lg:py-20 bg-accent/10"
+        >
           <div className="container-wide">
-            <div className="max-w-2xl mx-auto text-center bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-10">
-              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                Masz leady, ale proces ich obsługi jest chaotyczny?
-              </h2>
-              <p className="text-gray-500 dark:text-gray-400 mb-8">
-                Pokaż nam, skąd wpadają i jak są obsługiwane, a zaprojektujemy
-                prostszy przepływ.
-              </p>
-              <Link
-                href="/#kontakt"
-                className="btn-primary px-8 py-3.5 text-base"
-              >
-                Zamów diagnozę
-              </Link>
-            </div>
+            <LandingForm
+              formId="diagnosis_leadow"
+              heading="Sprawdźmy Twój proces obsługi leadów"
+              intro="Opisz krótko, skąd wpadają zapytania, kto je odbiera i co dziś robicie ręcznie. W odpowiedzi dostaniesz informację, gdzie najprawdopodobniej giną leady i jaki pierwszy krok da największy efekt."
+              submitLabel="Chcę diagnozę procesu leadów"
+            />
           </div>
         </section>
 
@@ -327,7 +330,7 @@ export default function AutomatyzacjaLeadow() {
             "@type": "Service",
             name: "Automatyzacja leadów",
             description:
-              "Wdrażamy automatyzację leadów: zbieranie, routing, kwalifikacja, powiadomienia i follow-up. Szybsza reakcja, mniej chaosu i lepsze wykorzystanie szans sprzedażowych.",
+              "Wdrażam automatyzację leadów: zbieranie, routing, kwalifikacja, powiadomienia i follow-up. Szybsza reakcja, mniej chaosu i lepsze wykorzystanie szans sprzedażowych.",
             provider: { "@id": "https://fluxlab.pl/#organization" },
             areaServed: { "@type": "Country", name: "Polska" },
             serviceType: "Automatyzacja procesów biznesowych",

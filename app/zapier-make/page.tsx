@@ -10,12 +10,12 @@ export const metadata: Metadata = {
   title:
     "Zapier vs Make (Integromat) — porównanie i wdrożenie automatyzacji | Fluxlab",
   description:
-    "Zapier czy Make? Porównujemy platformy automatyzacji, pomagamy wybrać najlepsze narzędzie i wdrażamy workflow dopasowane do potrzeb Twojej firmy.",
+    "Zapier czy Make? Porównujemy platformy automatyzacji, pomagamy wybrać najlepsze narzędzie i wdrażam workflow dopasowane do potrzeb Twojej firmy.",
   openGraph: {
     title:
       "Zapier vs Make (Integromat) — porównanie i wdrożenie automatyzacji | Fluxlab",
     description:
-      "Zapier czy Make? Porównujemy platformy automatyzacji, pomagamy wybrać najlepsze narzędzie i wdrażamy workflow dopasowane do potrzeb Twojej firmy.",
+      "Zapier czy Make? Porównujemy platformy automatyzacji, pomagamy wybrać najlepsze narzędzie i wdrażam workflow dopasowane do potrzeb Twojej firmy.",
     locale: "pl_PL",
     type: "article",
     images: [
@@ -282,8 +282,8 @@ export default function ZapierMake() {
                 Nie wiesz, czy wybrać Zapier czy Make?
               </h2>
               <p className="text-gray-500 dark:text-gray-400 mb-8">
-                Opowiedz nam o swoim procesie, a dobierzemy narzędzie i
-                zaprojektujemy workflow.
+                Opowiedz nam o swoim procesie, a dobiorę narzędzie i
+                zaprojektuję workflow.
               </p>
               <Link
                 href="/#kontakt"
@@ -328,7 +328,7 @@ export default function ZapierMake() {
             "@type": "Service",
             name: "Zapier vs Make — wdrożenie automatyzacji",
             description:
-              "Zapier czy Make? Porównujemy platformy automatyzacji, pomagamy wybrać najlepsze narzędzie i wdrażamy workflow dopasowane do potrzeb Twojej firmy.",
+              "Zapier czy Make? Porównujemy platformy automatyzacji, pomagamy wybrać najlepsze narzędzie i wdrażam workflow dopasowane do potrzeb Twojej firmy.",
             provider: { "@id": "https://fluxlab.pl/#organization" },
             areaServed: { "@type": "Country", name: "Polska" },
             serviceType: "Automatyzacja procesów biznesowych",
