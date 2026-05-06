@@ -1,223 +1,329 @@
-# TODO — Fluxlab: ruch + leady
+# Fluxlab — Plan działania (Strategiczny / Taktyczny / Operacyjny)
 
-Uporządkowane wg kolejności wdrożenia. Zaczynamy od góry.
-
----
-
-## 🔴 ETAP 1 — Fundament (bez tego reszta jest ślepa)
-
-### Backend formularza kontaktowego
-
-- [ ] Zweryfikować stan `/api/contact` — czy faktycznie wysyła mail (Resend / SendGrid)
-- [ ] Jeśli brak — podpiąć Resend (darmowy plan, 3000 maili/mies.)
-- [ ] Test end-to-end: wysłać z produkcji, sprawdzić czy dotarł
-- [ ] Dodać walidację w `components/CTA.tsx`: `required` na message, `type="email"`, per-field error
-- [ ] Dodać stan sukcesu (komunikat „Dzięki, odezwę się w 24h")
-- [ ] Dodać anty-spam (honeypot lub Cloudflare Turnstile)
-
-### GA4 — zdarzenia konwersji
-
-- [ ] Zweryfikować `NEXT_PUBLIC_GA_MEASUREMENT_ID` w produkcji
-- [ ] Event: `form_submit` (formularz kontaktowy)
-- [ ] Event: `calculator_used` (trzy kalkulatory)
-- [ ] Event: `cta_click` (przyciski „Porozmawiajmy" itp.)
-- [ ] Ustawić konwersję na `form_submit` w GA4
-- [ ] Skonfigurować Google Search Console + połączyć z GA4
+> Aktualizacja: **2026-05-07**
+> Stan wyjściowy: deployment z 2026-05-04 (commit `676062e`).
+> 3 dni od startu — 0 leadów, brak aktywnej dystrybucji.
+> Stary TODO.md (kwiecień 2026, sprzed repositioningu) — nadpisany. Historia w `git log -- TODO.md`.
+> Templates outbound, LinkedIn, copy — `BRIEF.md` (źródło prawdy, nie powtarzane tutaj).
 
 ---
 
-## 🔴 ETAP 2 — Zamień ruch w leady (największy potencjał)
+## TL;DR
 
-### Kalkulatory jako lead magnet
+- **Diagnoza:** zbudowana strona bez kanału dystrybucji = martwy folder. To nie awaria, to baseline.
+- **0–14 dni:** weryfikacja trackingu → LinkedIn → outbound. SEO **nie ratuje** pierwszego kwartału.
+- **30 dni** bez leada = problem w kanale, nie w stronie. Reset taktyczny, nie rebuild.
+- **3 m-ce** to minimum dla decyzji o pivocie pozycjonowania.
 
-- [ ] `kalkulator-podatkowy`: modal „Wyślij wyniki na email + PDF" po obliczeniu
-- [ ] `kalkulator-kosztow`: to samo
-- [ ] `dobor-samochodu`: to samo
-- [ ] Pod każdym kalkulatorem: CTA „Chcesz omówić swój przypadek? Bezpłatna konsultacja 30 min"
-- [ ] Eksport wyników do PDF (jspdf lub server-side)
-
-### Lead magnets — PDF-y / checklisty
-
-- [ ] PDF „Checklist: 10 procesów do automatyzacji w firmie B2B"
-- [ ] PDF „Porównanie Zapier vs Make vs n8n — tabela decyzyjna"
-- [ ] PDF „Kalkulator ROI z automatyzacji — szablon Excel"
-- [ ] Formularz email na końcu każdego artykułu w `strefa-wiedzy`
-- [ ] Popup exit-intent z lead magnetem (np. ConvertBox, lub własny)
-
-### Redukcja tarcia w kontakcie
-
-- [ ] Embed Cal.com / Calendly — rezerwacja bez formularza
-- [ ] Dedykowana strona `/kontakt` (nie tylko anchor na homepage)
-- [ ] Przycisk WhatsApp (float bottom-right)
-- [ ] Per-service CTA: „Darmowy audyt CRM" (na `/automatyzacja-crm`), „Darmowy audyt n8n" (na `/n8n`) itp.
+Reguły z `BRIEF.md` § P8 (czego nie robić) — obowiązują.
 
 ---
 
-## 🟠 ETAP 3 — Techniczne SEO (quick wins, hurtowo)
+## 0. Co jest już zbudowane (źródło prawdy, baseline aktyw)
 
-### Schemy JSON-LD
+Zanim zaczniesz nowe zadania, miej w głowie czym dysponujesz. Plan zakłada **dystrybucję tego, co już jest**, nie budowę kolejnych podstron.
 
-- [ ] `FAQPage` schema na artykułach z sekcją FAQ (masz treść, brakuje schematu → Featured Snippets)
-- [ ] `Service` schema na wszystkich stronach usługowych (`automatyzacja-*`, `n8n`, `zapier-make`, `integracje-api`)
-  - `areaServed: "PL"`, `priceRange`, `provider`
-- [ ] `HowTo` schema na artykułach typu „jak zautomatyzować X"
-- [ ] `BreadcrumbList` schema (jeśli `Breadcrumbs.tsx` jeszcze nie ma)
-- [ ] `Organization` schema w `app/layout.tsx` (logo, sameAs, kontakt)
-
-### Sitemap + robots
-
-- [ ] Priorytety w `app/sitemap.ts`: strony bramkowe („co-to-jest-\*", „jak-policzyc-roi") → 0.85
-- [ ] Ping Google/Bing po nowych publikacjach (IndexNow)
-- [ ] Zweryfikować `robots.txt` — czy nie blokuje nic ważnego
-
-### Core Web Vitals
-
-- [ ] Sprawdzić LCP / CLS / INP w GSC
-- [ ] Fontsoptymalizacja (Geist — sprawdź `display: swap`, subset)
-- [ ] `next/image` na wszystkich grafikach (widths + priority dla hero)
+- **Homepage**: hero / pain / workflow / pilotaż / services / diagnoza / pricing / proof / process / about / FAQ / CTA
+- **Flagowy landing**: `/automatyzacja-leadow-crm` z inline form (formId `diagnosis_lp_leadow`)
+- **11 podstron usługowych** — każda z `LandingForm` + dedykowanym formId (atrybucja per-podstrona w GA4):
+  - `/automatyzacja-leadow`, `/automatyzacja-crm`, `/automatyzacja-pipedrive`, `/automatyzacja-raportowania`
+  - `/integracje-api`, `/automatyzacja-salesforce`, `/automatyzacja-ai`
+  - `/n8n`, `/zapier-make`, `/automatyzacja-procesow-biznesowych`
+- **10 SEO artykułów P3** — patrz `app/sitemap.ts`
+- **4 narzędzia**: `/kalkulator-leadow`, `/audyt-crm`, `/zatrudnic-czy-zautomatyzowac`, `/kalkulator-kosztow`
+- **3 strony nawigacyjne**: `/case-study`, `/pilotaz`, `/jak-pracuje`
+- **Strefa wiedzy**: 24 artykuły w `/strefa-wiedzy/*`
+- **Backend**: `app/api/contact/route.ts` → Resend → `iwanekpawel55@gmail.com` + auto-reply
+- **Tracking GA4** (`lib/gtag.ts`): `form_start`, `generate_lead`, `cta_click`, `pricing_view`, `email_click`, `phone_click`
+- **JSON-LD**: Organization, Service, FAQPage, BreadcrumbList
+- **Atrybucja**: UTM + `landing_page` + `referrer` w każdym formularzu
 
 ---
 
-## 🟡 ETAP 4 — UX strefy wiedzy (retencja + linkowanie wewnętrzne)
+## 1. STRATEGICZNE (horyzont 3–6 miesięcy)
 
-### Komponenty artykułu
+### 1.1 Lock-in pozycjonowania (do 2026-08-07)
 
-- [ ] Komponent `TableOfContents` — auto-generacja z h2/h3, sticky sidebar desktop
-- [ ] Komponent `PrevNextArticle` — nawigacja na końcu artykułu
-- [ ] Sekcja „Powiązane artykuły" (3–4) na końcu każdego
-- [ ] Data publikacji + reading time na górze artykułu
-- [ ] Share buttons (LinkedIn, X, kopiuj link)
+Nie zmieniaj „automatyzacja leadów, CRM i raportowania dla firm B2B" przez minimum 8 tygodni dystrybucji. Porzucenie po 4 tyg zerowych leadów = błąd. Decyzja o pivocie — najwcześniej 2026-08-07, po 3 m-cach z aktywnym kanałem.
 
-### Klastry tematyczne (linkowanie wewnętrzne)
+**Wzmocnienia w okienku** (nie zmiany pozycjonowania):
 
-- [ ] Zmapować istniejące artykuły na klastry: CRM / Automatyzacja / JDG-podatki / AI
-- [ ] W każdym artykule: min. 3–5 linków do innych w tym samym klastrze
-- [ ] Hub dla każdego klastra (np. `/strefa-wiedzy/crm`, `/strefa-wiedzy/jdg`)
+- [ ] Doprecyzować ICP w outboundzie: leasing/finanse/dealerzy → najbardziej wąski → najlepsza konwersja
+- [ ] „Pipedrive operator" jako sub-niche dla LinkedIn („jestem od ludzi, którzy mają Pipedrive i ręczny chaos")
+- [ ] Komunikacja „studio prowadzone przez Pawła" — nie cofać do „solo freelancer"
 
-### Hub strefy wiedzy
+### 1.2 Authority assets (M1–M3, każde 2–8h jednorazowo)
 
-- [ ] „Najnowsze artykuły" (top 5) na `/strefa-wiedzy`
-- [ ] Filtrowanie po klastrze/tagu
-- [ ] RSS feed `/feed.xml`
+- [ ] **1 publiczne case study z nazwiskiem klienta** — wymaga zgody klienta z portfolio (P1.1 z poprzedniej iteracji, niezamknięte)
+- [ ] **3 demo Loom (3–5 min każde)**: Pipedrive lead routing / n8n raport / formularz→CRM integracja
+- [ ] **Public repo `fluxlab-templates` na GitHub**: 5 gotowych workflow `.json` (n8n/Make) jako lead magnet → wymaga formularza email do pobrania (sekcja 1.3)
 
-### Thin content — narzędzia
+### 1.3 Distribution moat (M1–M6)
 
-- [ ] `kalkulator-kosztow` — dodać 3–4 sekcje eksperckie + FAQ (min. 300 słów komentarza)
-- [ ] `dobor-samochodu` — jak wyżej
+Bez własnego kanału jesteś zależny od Google. Cele do końca Q3 (2026-08-07):
 
-### Mobile UX
+- [ ] LinkedIn: **+500 followers w niszy** (start: zmierzyć dziś)
+- [ ] Email lista: **100 subskrybentów** (driver: lead magnet workflow templates)
+- [ ] **1 podcast guesting** (np. „Mała Wielka Firma", „Przedsiębiorca Po Godzinach", „BiznesNoc")
 
-- [ ] `Breadcrumbs.tsx` — zwijać do „Home > bieżąca" na <640px
-- [ ] Test mobilny wszystkich kalkulatorów (inputy, scroll, CTA)
+### 1.4 Produktyzacja oferty
 
----
+Cennik z `BRIEF.md` § P5 jest dobry. Cel: zamknąć dyskusję „ile to kosztuje" w 3 produktach + 1 retainerze.
 
-## 🟢 ETAP 5 — Content (długoterminowy ruch organiczny)
+- [x] **Diagnoza** (0 zł) — istnieje
+- [ ] **Pierwsza automatyzacja** (od 1 500 zł) — istnieje, dorobić **2 sample SOW** jako PDF (pdf z gotową strukturą wdrożenia)
+- [x] **Automatyzacja procesu sprzedaży** (wycena indywidualna) — istnieje
+- [ ] **Retainer „CRM Operations"** (NEW, M2 trigger): 2 500–5 000 zł/mies, 8h pracy + monitoring + drobne zmiany. Uruchamiać dopiero po pierwszym closed deal.
 
-### Artykuły porównawcze (SEO long-tail, wysoki intent)
+### 1.5 Decyzja solo-vs-studio
 
-- [ ] Zapier vs Make — co wybrać do automatyzacji?
-- [ ] Pipedrive vs Salesforce — porównanie CRM dla MŚP
-- [ ] n8n vs Zapier — kiedy warto self-hosting?
-- [ ] HubSpot vs Pipedrive — który CRM dla małej firmy?
-- [ ] Automatyzacja vs zatrudnienie — co się bardziej opłaca?
-- [ ] Make vs n8n — porównanie narzędzi
-- [ ] Zapier vs Make vs n8n — wielkie porównanie 2026
-- [ ] CRM dla jednoosobowej firmy — co wybrać?
-- [ ] Salesforce — czy warto dla małej firmy?
-- [ ] Automatyzacja procesów — własne skrypty vs no-code?
+**Trigger podwykonawcy:** 2 aktywne retainery + 3 wdrożenia w pipeline. Wcześniej solo. Nie skalować przed product-market fit.
 
-### Artykuły poradnikowe
+### Metryki strategiczne (review: 2026-08-07, koniec Q3)
 
-- [ ] Jak zautomatyzować onboarding klienta w 5 krokach
-- [ ] Automatyzacja e-mail marketingu — od czego zacząć
-- [ ] Jak zintegrować formularz na stronie z CRM
-- [ ] Automatyzacja fakturowania — narzędzia i integracje
-- [ ] Jak wybrać narzędzie do automatyzacji — checklist
-- [ ] 10 procesów które każda firma B2B powinna zautomatyzować
-- [ ] Automatyzacja obsługi klienta — chatbot vs workflow
-- [ ] Jak mierzyć efektywność automatyzacji w firmie
-- [ ] Automatyzacja dla e-commerce — od zamówienia do wysyłki
-- [ ] Jak połączyć Kalendarz Google z CRM i automatyzacją
-
-### Strony branżowe (SEO + konwersja B2B)
-
-- [ ] `/automatyzacja-dla-ecommerce`
-- [ ] `/automatyzacja-dla-logistyki`
-- [ ] `/automatyzacja-dla-agencji-marketingowych`
-- [ ] `/automatyzacja-dla-biur-rachunkowych`
-- [ ] `/automatyzacja-dla-software-house`
+| Metryka                      | Realistyczny | Optymistyczny |
+| ---------------------------- | ------------ | ------------- |
+| Płatne wdrożenia closed      | 3            | 6             |
+| Aktywny retainer MRR         | 1 (2,5k zł)  | 2 (7,5k zł)   |
+| Publiczne case study (named) | 1            | 2             |
+| Sesje organic / mies         | 1 500        | 4 000         |
+| LinkedIn followers (gain)    | +500         | +1 200        |
+| Słowa kluczowe top 10 GSC    | 5            | 15            |
+| MQL (kwalifikowane leady)    | 15           | 40            |
 
 ---
 
-## 🟣 ETAP 6 — Social proof BEZ kłamstwa (zamiast case studies)
+## 2. TAKTYCZNE (horyzont 4–8 tygodni)
 
-Nie masz realizacji → nie wymyślamy ich. Budujemy wiarygodność inaczej:
+### 2.1 Mix kanałów — priorytety
 
-### Opcja A: „Laboratorium" (pasuje do nazwy FluxLab)
+SEO **nie wystartuje** wcześniej niż w tygodniu 6–10. Nie zaczynaj od ads bez baseline'u CR.
 
-- [ ] Sekcja `/laboratorium` lub `/eksperymenty` — własne automatyzacje opisane szczegółowo
-  - Przykłady: automatyzacja samej strony Fluxlab, workflow do researchu, integracje własnych narzędzi
-  - Format: problem → narzędzia → kroki → mierzalny efekt (ile godzin zaoszczędziłeś)
-  - To NIE są case studies klientów — to twoje eksperymenty, 100% prawda
-- [ ] Każdy eksperyment → artykuł + screencast / gif / screenshoty workflow
+| Kanał      | Priorytet | Czas dziennie | First effect  | Główne ryzyko                 |
+| ---------- | --------- | ------------- | ------------- | ----------------------------- |
+| LinkedIn   | **P0**    | 30 min        | 2–4 tyg       | brak engagement               |
+| Outbound   | **P0**    | 60 min        | 1–2 tyg       | spam reports                  |
+| SEO        | P1        | 30 min/tydz   | 6–12 tyg      | brak indeksacji               |
+| Polecenia  | P2        | passive       | unpredictable | mała sieć                     |
+| Płatne ads | P3 (lock) | 0             | natychmiast   | spalenie kasy bez baseline CR |
 
-### Opcja B: Open source / public portfolio
+### 2.2 LinkedIn cadence (4–8 tyg)
 
-- [ ] Publiczne repo z template'ami workflow n8n/Make (.json do importu)
-- [ ] Gist-y / repo ze skryptami do integracji API
-- [ ] Link na stronie: „Zobacz moje publiczne workflow na GitHubie"
+- **3 posty/tydz** (pon/śr/pt 8:30 CET — nisza B2B czyta przed pracą)
+- Treści gotowe w `BRIEF.md` § P4 (Post 1 problem / Post 2 Pipedrive / Post 3 ROI). Kolejne — pisać wg tego samego patternu (problem → mechanizm → konkretna rada → 1 zdanie filozofii).
+- **5 connection requestów/dzień** (pn–pt) — target: Heads of Sales / CRM Owners / Operations Managers w leasingu/finansach/dealerach. Tekst zaproszenia: `BRIEF.md` § P4 „Zaproszenie LinkedIn".
+- **5 wartościowych komentarzy/dzień** pod cudzymi postami z niszy. Komentarz dłuższy niż „świetny post" — z konkretnym insightem.
+- Po akceptacji zaproszenia: wiadomość z `BRIEF.md` § P4 „Wiadomość po akceptacji" (NIE pitch — tylko ramowe „pomagam X-om robić Y, gdyby coś było").
 
-### Opcja C: „Jak pracuję" — transparentność
+### 2.3 Outbound cadence
 
-- [ ] Strona `/jak-pracuje` (proces krok po kroku)
-  - Darmowa konsultacja 30 min
-  - Audyt (co, ile trwa, co otrzymujesz)
-  - Wdrożenie (milestones, płatność, gwarancja)
-  - Wsparcie po wdrożeniu
-- [ ] Transparentne ceny / widełki cenowe (rzadkość w branży = przewaga)
-- [ ] FAQ „co jeśli automatyzacja przestanie działać", „kto to utrzymuje" itp.
+- **Sekwencja 3-mailowa** z `BRIEF.md` § P4 (E-mail outbound): Wiadomość 1 → Follow-up 1 (po 4 dniach) → Follow-up 2 (po kolejnych 5 dniach).
+- **Linkować do podstrony niszowej**, NIE do homepage (`BRIEF.md` § P8). Mapowanie ICP → landing:
+  - leasing/finanse → `/automatyzacja-crm-leasing`
+  - dealerzy → `/automatyzacja-crm-leasing` (na razie wspólne — w M3 osobny landing jeśli sygnał)
+  - Pipedrive heavy users → `/automatyzacja-pipedrive`
+  - bałagan w raportach → `/automatyzacja-raportowania`
+  - lead routing problem → `/automatyzacja-leadow`
+- **20 maili/tydz** (4×5 pn–pt) × 4 tyg = 80 firm × 3 wiadomości = **240 wysyłek**. Cel: 5–10 odpowiedzi pozytywnych.
+- A/B test: subject line co batch 10 maili.
+- **Tool**: domena pocztowa `pawel@fluxlab.pl` lub `kontakt@fluxlab.pl` (NIE Gmail — szanse na spam folder rosną).
 
-### Opcja D: Pilotaż za case study (pozyskaj pierwsze realizacje)
+### 2.4 Dystrybucja contentu (repurpose, nie pisanie nowego)
 
-- [ ] Oferta: „Pierwsi 3 klienci — 50% ceny w zamian za case study + testimonial"
-- [ ] Dedykowana strona `/pilotaz` z tą ofertą
-- [ ] Target: NGO, startupy znajomych, freelancerzy z sieci
-- [ ] Po 2–3 pilotach → realne case studies na stronę
+Każdy istniejący artykuł = materiał na 1–3 posty LinkedIn.
 
-### Opcja E: Ekspertyza zamiast logotypów
+- [ ] `/automatyzacja-crm-leasing` → 3 posty (problem leasingu / anonimowy case / metoda)
+- [ ] `/koszt-recznej-obslugi-leadow` → 1 post (kalkulator + screenshot wyniku)
+- [ ] `/case-study` → 1 post per anonimowe wdrożenie (3 posty)
+- [ ] `/zatrudnic-czy-zautomatyzowac` → 1 post (kalkulator + scenariusz „kogo nie zatrudnisz")
+- [ ] `/raportowanie-z-pipedrive` → 1 post (technical breakdown)
 
-- [ ] Badge partnerskie narzędzi, których faktycznie używasz (n8n, Make, Zapier) — linkuj do własnych publikacji/repo
-- [ ] Certyfikaty (jeśli masz) — n8n Creator, Make Partner itp. — jeśli nie, zrób je (są darmowe/tanie)
-- [ ] Profile eksperckie: odpowiedzi na Stack Overflow / n8n community / subredditach → sekcja „Gdzie mnie znajdziesz"
+### 2.5 Konwersja & atrybucja
+
+- [ ] **Hidden field `source_page`** w `components/LandingForm.tsx` — przekazać `window.location.pathname` jawnie (jest już w `landing_page` UTM, ale doprecyzować w treści maila — łatwiej skanować skrzynkę)
+- [ ] **GA4 custom dimension `form_id`** → raportowanie konwersji per landing
+- [ ] **GA4 conversion event `generate_lead`** ustawić jako konwersję (sprawdzić: Admin → Events → mark as conversion)
+- [ ] **Microsoft Clarity** (free tier) na produkcji → heatmapa + session recording. 5 min konfiguracja, najwyższy ROI/min wśród narzędzi.
+- [ ] **Cotygodniowy funnel review w GA4** (piątek 17:00, 30 min):
+  - Sesje: organic / direct / referral / linkedin
+  - `form_start` per `form_id`
+  - `generate_lead` per `form_id`
+  - drop-off między `form_start` a `generate_lead` (jeśli >70% — debug formularza)
+
+### Metryki taktyczne (mierzone tygodniowo, każdy piątek)
+
+- LinkedIn: impressions, profile views, connection acceptance rate, post engagement rate
+- Outbound: open rate, reply rate, **positive reply rate**, meeting rate
+- Strona: sesje organic vs direct vs LinkedIn referral, `form_start` → `generate_lead` CR
+- Funnel: sesje → form_start → generate_lead → booked call → kwalifikacja
 
 ---
 
-## 🔵 ETAP 7 — Retargeting + płatny ruch (dopiero gdy ETAP 1–3 działa)
+## 3. OPERACYJNE (najbliższe 14 dni — z datami)
 
-- [ ] Meta Pixel (FB/IG remarketing)
-- [ ] Google Ads remarketing tag
-- [ ] LinkedIn Insight Tag (B2B — kluczowe!)
-- [ ] Kampania Google Ads na brandowe + long-tail „zapier konsultacja", „n8n wdrożenie"
-- [ ] LinkedIn Ads na decision makerów w MŚP (CEO, COO, Head of Ops)
+### Tydzień 1 (07–14 maja)
+
+#### Dzień 0 — 2026-05-07 (czw, blok 2–3h, P0 wszystko)
+
+- [ ] **Tracking sanity check**:
+  - [ ] GA4 Realtime → produkcja → wypełnić formularz na `/automatyzacja-leadow-crm`, potwierdzić `form_start` + `generate_lead`
+  - [ ] Sprawdzić, czy Resend wysłał maila (skrzynka iwanekpawel55@gmail.com)
+  - [ ] Sprawdzić, czy auto-reply doszedł na adres testowy
+  - [ ] Sprawdzić `RESEND_API_KEY` w Vercel env (Production)
+- [ ] **GSC inicjacja**:
+  - [ ] Zalogować się do Search Console
+  - [ ] Dodać/potwierdzić własność `fluxlab.pl`
+  - [ ] Submit `/sitemap.xml`
+  - [ ] Request indexing dla **11 URL-i priorytetowych** (lista poniżej)
+- [ ] **Domena pocztowa do outboundu**:
+  - [ ] Decyzja: `pawel@fluxlab.pl` czy `kontakt@fluxlab.pl`
+  - [ ] Skonfigurować SPF/DKIM/DMARC (jeśli jeszcze nie ma w DNS)
+- [ ] **Baseline**: zapisać dziś (07-05) liczby: LinkedIn followers, sesje GA4 cumulative od deployu, GSC impressions
+
+#### Dzień 1 — 2026-05-08 (pt, blok 1.5h)
+
+- [ ] **LinkedIn Post 1** (Post „problem" z BRIEF.md § P4) → publikacja 8:30
+- [ ] **Lista outbound**: 50 firm leasingowych/finansowych z LinkedIn Sales Navigator (lub manualnie z firm leasingowych — KRRiF). Arkusz Google Sheets z kolumnami: firma, imię, nazwisko, rola, email, status, data wysłania, odpowiedź.
+- [ ] **5 connection requestów** z LinkedIn (tekst z BRIEF.md)
+- [ ] **5 komentarzy** pod cudzymi postami z niszy
+- [ ] **Tygodniowe retro** 17:00 (30 min) — pierwsza iteracja, jeszcze bez liczb, ale zapisać impressions/profile views
+
+#### Dzień 2-3 — 2026-05-09/10 (sb/nd) — pauza lub:
+
+- [ ] Nagrać **Loom #1** (Pipedrive lead routing demo, 3–5 min)
+
+#### Dzień 4 — 2026-05-11 (pn, blok 2h)
+
+- [ ] **Outbound batch #1**: 10 firm — wiadomość 1 z BRIEF.md, subject **A** („Leady z formularza → CRM bez ręcznego przepisywania")
+- [ ] **5 connection requestów** + **5 komentarzy**
+
+#### Dzień 5 — 2026-05-12 (wt, blok 2h)
+
+- [ ] **LinkedIn Post 2** (Pipedrive z BRIEF.md) → publikacja 8:30
+- [ ] **5 connection requestów** + **5 komentarzy**
+
+#### Dzień 6 — 2026-05-13 (śr, blok 1.5h)
+
+- [ ] **Outbound batch #2**: 10 nowych firm, subject **B** (testować: „Pipedrive jako notatnik vs system pracy" — A/B vs subject A)
+- [ ] **5 connection requestów** + **5 komentarzy**
+
+#### Dzień 7 — 2026-05-14 (czw, blok 2h)
+
+- [ ] **LinkedIn Post 3** (ROI z BRIEF.md) → publikacja 8:30
+- [ ] **Loom #1 publikacja** → embed na `/case-study` (jeśli nagrane w weekend)
+- [ ] **5 connection requestów** + **5 komentarzy**
+
+### Tydzień 2 (15–21 maja)
+
+#### Dzień 8-13 — kontynuacja cadence
+
+- Codziennie pn-pt: 5 connection requestów + 5 komentarzy
+- Pn/Śr/Pt 8:30: post LinkedIn (po 3 gotowych z BRIEF — tworzysz nowe wg patternu)
+- Pn: 10 outbound nowych (subject zwycięski z A/B)
+- Wt: follow-up #1 do batch #1 (z dnia 4)
+- Śr: 10 outbound nowych
+- Pt: follow-up #1 do batch #2 (z dnia 6)
+- Pt 17:00: tygodniowe retro (porównanie do tyg 1, decyzja o subject line)
+
+#### Dzień 14 — 2026-05-21 (śr) — **MILESTONE RETRO**
+
+**Pierwsze realne dane do oceny:**
+
+| Metryka                              | Realistyczny | Optymistyczny |
+| ------------------------------------ | ------------ | ------------- |
+| Sesje GA4 (cumulative od 2026-05-04) | 200          | 500           |
+| `form_start` events                  | 5            | 15            |
+| `generate_lead` events               | **1–2**      | 5             |
+| Booked call                          | 0–1          | 2             |
+| LinkedIn followers gain              | +20          | +50           |
+| Outbound positive replies            | 1–2          | 5             |
+| Indeksacja w GSC (z 11 URL)          | 8/11         | 11/11         |
+
+**Decyzja po 14 dniach:**
+
+- ≥ realistyczny → kontynuować cadence
+- Poniżej → audyt: czy outbound nie idzie do spamu (test inboxchecker.com), czy LinkedIn jest poprawnie targetowany (review listy connections), czy formularz konwertuje (Microsoft Clarity nagrania)
+
+### URL-e priorytetowe do GSC (Day 0)
+
+```
+https://fluxlab.pl/
+https://fluxlab.pl/automatyzacja-leadow-crm
+https://fluxlab.pl/automatyzacja-leadow
+https://fluxlab.pl/automatyzacja-crm
+https://fluxlab.pl/automatyzacja-pipedrive
+https://fluxlab.pl/automatyzacja-raportowania
+https://fluxlab.pl/automatyzacja-crm-leasing
+https://fluxlab.pl/case-study
+https://fluxlab.pl/audyt-crm
+https://fluxlab.pl/kalkulator-leadow
+https://fluxlab.pl/zatrudnic-czy-zautomatyzowac
+```
 
 ---
 
-## ⚪ NICE-TO-HAVE (kiedyś)
+## 4. Backlog techniczny (P1, do 30 dni jeśli starczy czasu)
 
-- [ ] Newsletter — cykliczny mailing z nowymi artykułami (wymaga narzędzia: Beehiiv / MailerLite)
-- [ ] Webinar / demo video — landing page z zapisem
-- [ ] Program poleceń (rabat za polecenie klienta)
-- [ ] Integracja formularza z CRM (Pipedrive/HubSpot) zamiast samego maila
-- [ ] Hreflang jeśli planujesz wersję EN
-- [ ] Backlinki: guest posty na blogach (np. Zapier blog PL, MamStartup), katalogi branżowe, fora
-- [ ] Monitoring pozycji (Senuto / Semstorm — darmowy trial starczy na MVP)
+- [ ] Hidden `source_page` w `components/LandingForm.tsx` (przy okazji: w treści maila do siebie dopisać „Zgłoszenie z: {source_page}")
+- [ ] **Microsoft Clarity** — heatmapa + session recording (5 min, free)
+- [ ] OG image per landing (zamiast jednego globalnego)
+- [ ] `@vercel/speed-insights` — Web Vitals do GA4
+- [ ] Demo video #2 (lead routing) i #3 (raportowanie automatycznie z Pipedrive)
+- [ ] Lead magnet `/szablony` z 5 workflow `.json` (n8n/Make) + formularz email
+- [ ] Newsletter setup (Beehiiv free → 2 500 subów free)
+- [ ] Calendly/Cal.com embed na `/jak-pracuje` (eliminacja tarcia bookingu rozmowy)
+- [ ] Hidden source UTM w outboundzie: `?utm_source=outbound&utm_campaign=leasing-{tydz}` per batch — atrybucja gotowa, tylko trzeba używać
 
 ---
 
-## Notatki robocze
+## 5. Czego NIE robimy w najbliższych 30 dniach (lock)
 
-- Każdy ukończony punkt → commit + push
-- Przy każdym nowym artykule/stronie → update `sitemap.ts`
-- Co tydzień sprawdzić GSC (indeksacja, zapytania, pozycje)
-- Cel 3 miesiące: 500 odwiedzin/dobę organic + 10 leadów/mies.
+Zgodnie z `BRIEF.md` § P8 + decyzja taktyczna:
+
+- ❌ Nowe usługi / kategorie (zostajemy przy leady/CRM/raportowanie)
+- ❌ Refactor strony bez sygnału z danych (Clarity/GA4 musi to uzasadnić)
+- ❌ Reklamy płatne (Google Ads / LinkedIn Ads / Meta Ads) — wracamy do tematu po Q3
+- ❌ Kolejne SEO artykuły, jeśli pierwsze 10 P3 nie zaindeksuje się i nie zacznie rankingować w 4 tyg
+- ❌ Hiring / podwykonawcy (trigger: 2 retainery + 3 wdrożenia w pipe)
+- ❌ Nowy lead magnet, zanim aktualne formularze nie zaczną konwertować
+- ❌ Ruch outboundu na homepage (zawsze na podstronę niszową)
+- ❌ „Pierwsi klienci" w copy, gdy w About pokazujemy 30+ wdrożeń
+- ❌ Obietnice „0 błędów", „X% wzrostu", konkretne %% bez definicji okresu i kontekstu
+
+---
+
+## 6. Decision points (triggery, nie pytania)
+
+| Trigger                               | Termin          | Decyzja                                                 |
+| ------------------------------------- | --------------- | ------------------------------------------------------- |
+| 0 leadów po 14 dniach                 | 2026-05-21      | Audyt: spam outbound? heatmapa? targeting LinkedIn?     |
+| 0 leadów po 28 dniach                 | 2026-06-04      | **Reset taktyczny.** Zmiana ICP albo kanału.            |
+| 1+ kwalifikowany lead w 14 dni        | 2026-05-21      | Kontynuować cadence, dorobić Loom #2                    |
+| 3+ leady w 30 dniach                  | 2026-06-07      | Skalować outbound do 30 maili/tydz                      |
+| 1 closed deal                         | gdy się wydarzy | Dorobić sample SOW.pdf, zaktualizować Pricing           |
+| 2 closed deals                        | gdy się wydarzy | Pilotaż retainera „CRM Operations"                      |
+| 1 case study z named client zamknięte | gdy się wydarzy | Refactor `/case-study`, podbicie autorytetu w Hero      |
+| 8 tyg, < 5 MQL                        | 2026-07-02      | Audyt pozycjonowania (czy nisza, czy kanał, czy oferta) |
+
+---
+
+## 7. Anchory w repo (gdzie co siedzi)
+
+- Brief źródłowy (templates outbound, LinkedIn, copy): `BRIEF.md`
+- Backend formularza: `app/api/contact/route.ts` (Resend, auto-reply, walidacja, honeypot)
+- Komponenty formularza: `components/LandingForm.tsx`, `components/CTA.tsx`
+- Tracking GA4: `lib/gtag.ts`, `components/SectionViewTracker.tsx`, `components/ContactClickTracker.tsx`, `components/TrackedCTA.tsx`
+- Sitemap: `app/sitemap.ts` (źródło prawdy URL-i)
+- Pricing/oferta: `components/Pricing.tsx`, `components/Diagnosis.tsx`
+- Pilotaż: `app/pilotaz/page.tsx`, `components/PilotBanner.tsx`
+- Layout/SEO globalne: `app/layout.tsx` (JSON-LD Organization, OG)
+
+---
+
+## 8. Notatki robocze
+
+- Każdy ukończony punkt → checkbox + commit (jeśli kod) lub data odhaczenia (jeśli marketing)
+- Co tydzień piątek 17:00 → tygodniowe retro (30 min, **w kalendarzu blok**)
+- Co miesiąc → review metryk strategicznych (sekcja 1)
+- Stary `TODO.md` (sprzed repositioningu) — historia w `git log -- TODO.md`. Nie wracać.
+- Nie podejmować decyzji strategicznej w środku „dnia z zerem" — emocje. Decyzje tylko na piątkowym retro.
