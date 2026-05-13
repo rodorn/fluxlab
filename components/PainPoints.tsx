@@ -1,3 +1,5 @@
+import RevealOnScroll from "@/components/RevealOnScroll";
+
 const painPoints = [
   {
     title: "Lead wpada, ale nikt nie reaguje od razu",
@@ -25,7 +27,7 @@ export default function PainPoints() {
   return (
     <section id="problem" className="scroll-mt-16 py-12 lg:py-16">
       <div className="container-wide">
-        <div className="max-w-2xl mb-10">
+        <RevealOnScroll className="max-w-2xl mb-10">
           <p className="section-label mb-3">Problem</p>
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Gdzie najczęściej uciekają leady i czas?
@@ -34,12 +36,13 @@ export default function PainPoints() {
             Cztery sytuacje, które kosztują firmy B2B najwięcej — i które zwykle
             nie wyglądają jak katastrofa, dopóki ktoś ich nie policzy.
           </p>
-        </div>
+        </RevealOnScroll>
 
         <div className="grid md:grid-cols-2 gap-5 lg:gap-6">
           {painPoints.map((p, i) => (
-            <div
+            <RevealOnScroll
               key={p.title}
+              delay={Math.min(i + 1, 4) as 1 | 2 | 3 | 4}
               className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-6 lg:p-7"
             >
               <div className="flex items-baseline gap-3 mb-3">
@@ -53,7 +56,7 @@ export default function PainPoints() {
               <p className="text-sm lg:text-base text-gray-600 dark:text-gray-400 leading-relaxed pl-9">
                 {p.description}
               </p>
-            </div>
+            </RevealOnScroll>
           ))}
         </div>
       </div>

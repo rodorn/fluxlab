@@ -40,38 +40,57 @@ const faqs = [
   },
 ];
 
-function FAQItem({ question, answer }: { question: string; answer: string }) {
+function FAQItem({
+  question,
+  answer,
+  index,
+}: {
+  question: string;
+  answer: string;
+  index: number;
+}) {
   const [open, setOpen] = useState(false);
+  const panelId = `faq-panel-${index}`;
+  const buttonId = `faq-trigger-${index}`;
 
   return (
     <div className="border-b border-gray-100 dark:border-gray-800 last:border-0">
-      <button
-        onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between gap-6 py-5 text-left"
-        aria-expanded={open}
-      >
-        <span className="text-base font-medium text-gray-900 dark:text-white">
-          {question}
-        </span>
-        <span
-          className={`flex-shrink-0 w-5 h-5 flex items-center justify-center rounded-full border border-gray-200 dark:border-gray-700 text-gray-400 dark:text-gray-500 transition-transform duration-200 ${
-            open
-              ? "rotate-45 border-accent text-accent dark:border-accent dark:text-accent"
-              : ""
-          }`}
+      <h3 className="m-0">
+        <button
+          id={buttonId}
+          onClick={() => setOpen(!open)}
+          className="w-full flex items-center justify-between gap-6 py-5 text-left"
+          aria-expanded={open}
+          aria-controls={panelId}
         >
-          <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
-            <path
-              d="M5 1v8M1 5h8"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-            />
-          </svg>
-        </span>
-      </button>
+          <span className="text-base font-medium text-gray-900 dark:text-white">
+            {question}
+          </span>
+          <span
+            aria-hidden="true"
+            className={`flex-shrink-0 w-5 h-5 flex items-center justify-center rounded-full border border-gray-200 dark:border-gray-700 text-gray-400 dark:text-gray-500 transition-transform duration-200 ${
+              open
+                ? "rotate-45 border-accent text-accent dark:border-accent dark:text-accent"
+                : ""
+            }`}
+          >
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+              <path
+                d="M5 1v8M1 5h8"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+              />
+            </svg>
+          </span>
+        </button>
+      </h3>
 
       <div
+        id={panelId}
+        role="region"
+        aria-labelledby={buttonId}
+        aria-hidden={!open}
         className={`overflow-hidden transition-all duration-300 ease-in-out ${
           open ? "max-h-96 pb-5" : "max-h-0"
         }`}
@@ -88,14 +107,35 @@ export default function FAQ() {
   return (
     <section
       id="faq"
+      aria-labelledby="faq-heading"
       className="scroll-mt-16 py-4 lg:py-7 bg-gray-50 dark:bg-gray-900"
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map((f) => ({
+              "@type": "Question",
+              name: f.question,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: f.answer,
+              },
+            })),
+          }),
+        }}
+      />
       <div className="container-wide">
         <div className="grid lg:grid-cols-3 gap-16">
           {/* Left - heading */}
           <div>
             <p className="section-label mb-3">FAQ</p>
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            <h2
+              id="faq-heading"
+              className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4"
+            >
               Najczęstsze pytania
             </h2>
             <p className="text-gray-500 dark:text-gray-400 text-base leading-relaxed mb-6">
@@ -109,11 +149,12 @@ export default function FAQ() {
 
           {/* Right - accordion */}
           <div className="lg:col-span-2">
-            {faqs.map((faq) => (
+            {faqs.map((faq, i) => (
               <FAQItem
                 key={faq.question}
                 question={faq.question}
                 answer={faq.answer}
+                index={i}
               />
             ))}
           </div>

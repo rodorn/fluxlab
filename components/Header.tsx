@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
 import { event as gaEvent } from "@/lib/gtag";
@@ -37,9 +37,19 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const servicesCloseTimeout = useRef<ReturnType<typeof setTimeout> | null>(
     null,
   );
+
+  useEffect(() => {
+    function onScroll() {
+      setScrolled(window.scrollY > 8);
+    }
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   function openServices() {
     if (servicesCloseTimeout.current)
@@ -55,7 +65,13 @@ export default function Header() {
   }
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-gray-950/90 backdrop-blur-md border-b border-gray-100 dark:border-gray-800">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "glass-strong shadow-sm shadow-gray-200/40 dark:shadow-black/40 border-b border-gray-200/60 dark:border-gray-800/80"
+          : "glass-subtle border-b border-gray-100/60 dark:border-gray-800/60"
+      }`}
+    >
       <div className="container-wide flex items-center justify-between h-16">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
@@ -73,6 +89,8 @@ export default function Header() {
             onMouseLeave={scheduleServicesClose}
           >
             <button
+              aria-haspopup="menu"
+              aria-expanded={servicesOpen}
               className={`flex items-center gap-1 text-sm transition-colors ${
                 servicesOpen
                   ? "text-gray-900 dark:text-white"
@@ -99,7 +117,8 @@ export default function Header() {
 
             {servicesOpen && (
               <div
-                className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-64 bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-xl shadow-gray-200/60 dark:shadow-black/40 p-4"
+                role="menu"
+                className="animate-fade-up absolute top-full left-1/2 -translate-x-1/2 mt-4 w-64 bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-xl shadow-gray-200/60 dark:shadow-black/40 p-4"
                 onMouseEnter={openServices}
                 onMouseLeave={scheduleServicesClose}
               >
@@ -109,6 +128,7 @@ export default function Header() {
                     <Link
                       key={sp.href}
                       href={sp.href}
+                      role="menuitem"
                       onClick={() => setServicesOpen(false)}
                       className={`block px-3 py-1.5 rounded-xl text-sm hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-accent transition-colors ${
                         sp.indent
@@ -176,6 +196,7 @@ export default function Header() {
             className="p-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Menu"
+            aria-expanded={menuOpen}
           >
             {menuOpen ? (
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">

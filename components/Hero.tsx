@@ -3,25 +3,35 @@ import TrackedCTA from "@/components/TrackedCTA";
 
 export default function Hero() {
   return (
-    <section className="pt-20 pb-4 lg:pt-24 lg:pb-6 overflow-hidden">
-      <div className="container-wide">
+    <section className="relative pt-20 pb-4 lg:pt-24 lg:pb-6 overflow-hidden">
+      {/* Decorative gradient blobs — background */}
+      <div
+        aria-hidden="true"
+        className="blob blob-accent animate-drift-slow -z-10 top-[-20%] left-[-15%] w-[600px] h-[600px]"
+      />
+      <div
+        aria-hidden="true"
+        className="blob blob-violet animate-drift -z-10 bottom-[-30%] right-[-10%] w-[500px] h-[500px]"
+      />
+
+      <div className="container-wide relative">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left - text */}
           <div>
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-accent-light dark:bg-accent-dark-light text-accent text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
-              <span className="w-1.5 h-1.5 bg-accent rounded-full" />
+            <div className="animate-fade-up-1 inline-flex items-center gap-2 bg-accent-light dark:bg-accent-dark-light text-accent text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
+              <span className="w-1.5 h-1.5 bg-accent rounded-full animate-soft-pulse" />
               Automatyzacja leadów, CRM i raportowania
             </div>
 
             {/* Headline */}
-            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.1] mb-6 text-gray-900 dark:text-white">
+            <h1 className="display-xl animate-fade-up-2 mb-6 text-gray-900 dark:text-white">
               <span className="text-accent">Automatyzacja</span> leadów, CRM i
               raportowania dla firm B2B
             </h1>
 
             {/* Subheadline */}
-            <p className="text-lg text-gray-500 dark:text-gray-400 leading-relaxed mb-10 max-w-xl">
+            <p className="animate-fade-up-3 text-lg text-gray-500 dark:text-gray-400 leading-relaxed mb-10 max-w-xl">
               Leady z formularzy, reklam, maili i landing page&rsquo;y
               automatycznie trafiają do CRM, dostają właściciela, zadanie,
               follow-up i raport. Bez ręcznego przepisywania, bez zgubionych
@@ -29,7 +39,7 @@ export default function Hero() {
             </p>
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="animate-fade-up-4 flex flex-col sm:flex-row gap-4">
               <TrackedCTA
                 href="#kontakt"
                 location="hero"
@@ -50,7 +60,7 @@ export default function Hero() {
             </div>
 
             {/* Social proof */}
-            <p className="mt-8 text-sm text-gray-400 dark:text-gray-500">
+            <p className="animate-fade-up-4 mt-8 text-sm text-gray-400 dark:text-gray-500">
               Odpowiedź w 24h · mapa automatyzacji · szacowany ROI · bez
               zobowiązań
             </p>
@@ -84,7 +94,8 @@ export default function Hero() {
 
             {/* Decorative dot grid */}
             <div
-              className="absolute -top-4 -right-4 w-32 h-32 opacity-20 dark:opacity-10"
+              aria-hidden="true"
+              className="absolute -top-4 -right-4 w-32 h-32 opacity-25 dark:opacity-15"
               style={{
                 backgroundImage:
                   "radial-gradient(circle, #6366f1 1px, transparent 1px)",
@@ -98,7 +109,7 @@ export default function Hero() {
         <div className="mt-6 border-t border-gray-100 dark:border-gray-800" />
 
         {/* Stats */}
-        <div className="mt-4 grid grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="animate-fade-up-4 mt-4 grid grid-cols-2 lg:grid-cols-4 gap-8">
           {[
             {
               value: "60-90%",

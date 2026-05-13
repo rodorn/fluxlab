@@ -1,4 +1,5 @@
 import TrackedCTA from "@/components/TrackedCTA";
+import RevealOnScroll from "@/components/RevealOnScroll";
 
 const steps = [
   {
@@ -52,7 +53,7 @@ export default function ExampleWorkflow() {
       className="scroll-mt-16 py-12 lg:py-16 bg-gray-50 dark:bg-gray-900/50 border-y border-gray-100 dark:border-gray-800"
     >
       <div className="container-wide">
-        <div className="max-w-2xl mb-10">
+        <RevealOnScroll className="max-w-2xl mb-10">
           <p className="section-label mb-3">Jak to działa</p>
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Przykład: automatyczna obsługa leada od formularza do raportu
@@ -61,11 +62,16 @@ export default function ExampleWorkflow() {
             Pierwszy etap, który wdrażam u większości klientów. Każdy krok można
             zbudować osobno — i mierzyć efekt po kolei.
           </p>
-        </div>
+        </RevealOnScroll>
 
         <ol className="relative max-w-4xl space-y-3 lg:space-y-4">
           {steps.map((s, i) => (
-            <li key={s.n} className="relative">
+            <RevealOnScroll
+              key={s.n}
+              as="li"
+              delay={Math.min(i + 1, 4) as 1 | 2 | 3 | 4}
+              className="relative"
+            >
               <div
                 className={`flex gap-4 lg:gap-5 items-start bg-white dark:bg-gray-800/80 border rounded-2xl p-5 lg:p-6 ${
                   s.accent
@@ -111,7 +117,7 @@ export default function ExampleWorkflow() {
                   </svg>
                 </div>
               )}
-            </li>
+            </RevealOnScroll>
           ))}
         </ol>
 

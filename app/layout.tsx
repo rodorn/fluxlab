@@ -71,17 +71,68 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@graph": [
                 {
-                  "@type": "Organization",
+                  "@type": "ProfessionalService",
                   "@id": "https://fluxlab.pl/#organization",
                   name: "Fluxlab",
+                  alternateName: "Fluxlab — automatyzacja B2B",
                   url: "https://fluxlab.pl",
                   logo: "https://fluxlab.pl/opengraph-image",
                   image: "https://fluxlab.pl/opengraph-image",
                   description:
                     "Automatyzacja obsługi leadów, CRM i raportowania dla firm B2B. Leady trafiają do CRM, dostają handlowca, zadanie i raport bez ręcznej pracy.",
+                  founder: {
+                    "@type": "Person",
+                    name: "Paweł Iwanek",
+                  },
+                  knowsAbout: [
+                    "Automatyzacja procesów biznesowych",
+                    "CRM",
+                    "Pipedrive",
+                    "Salesforce",
+                    "HubSpot",
+                    "n8n",
+                    "Zapier",
+                    "Make",
+                    "Integracje API",
+                    "Raportowanie sprzedaży",
+                    "Obsługa leadów B2B",
+                  ],
                   areaServed: {
                     "@type": "Country",
                     name: "Poland",
+                  },
+                  serviceType: [
+                    "Automatyzacja obsługi leadów",
+                    "Automatyzacja CRM",
+                    "Automatyzacja raportowania",
+                    "Integracje API",
+                  ],
+                  hasOfferCatalog: {
+                    "@type": "OfferCatalog",
+                    name: "Usługi Fluxlab",
+                    itemListElement: [
+                      {
+                        "@type": "Offer",
+                        itemOffered: {
+                          "@type": "Service",
+                          name: "Bezpłatna diagnoza procesu",
+                        },
+                        price: "0",
+                        priceCurrency: "PLN",
+                      },
+                      {
+                        "@type": "Offer",
+                        itemOffered: {
+                          "@type": "Service",
+                          name: "Pierwsza automatyzacja",
+                        },
+                        priceSpecification: {
+                          "@type": "PriceSpecification",
+                          priceCurrency: "PLN",
+                          minPrice: "1500",
+                        },
+                      },
+                    ],
                   },
                   contactPoint: {
                     "@type": "ContactPoint",
@@ -98,6 +149,15 @@ export default function RootLayout({
                   name: "Fluxlab",
                   publisher: { "@id": "https://fluxlab.pl/#organization" },
                   inLanguage: "pl-PL",
+                  potentialAction: {
+                    "@type": "SearchAction",
+                    target: {
+                      "@type": "EntryPoint",
+                      urlTemplate:
+                        "https://fluxlab.pl/strefa-wiedzy?q={search_term_string}",
+                    },
+                    "query-input": "required name=search_term_string",
+                  },
                 },
               ],
             }),

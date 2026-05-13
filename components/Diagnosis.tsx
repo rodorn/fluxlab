@@ -19,13 +19,17 @@ export default function Diagnosis() {
   return (
     <section
       id="diagnoza"
+      aria-labelledby="diagnoza-heading"
       className="scroll-mt-16 py-12 lg:py-16 bg-gray-50 dark:bg-gray-900/50 border-y border-gray-100 dark:border-gray-800"
     >
       <div className="container-wide">
         <div className="grid lg:grid-cols-5 gap-10 lg:gap-12 items-start">
           <div className="lg:col-span-2">
             <p className="section-label mb-3">Punkt startowy</p>
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-5">
+            <h2
+              id="diagnoza-heading"
+              className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-5"
+            >
               Zacznij od diagnozy, nie od wdrożenia
             </h2>
             <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-4">

@@ -18,14 +18,42 @@ export default function About() {
   return (
     <section
       id="o-nas"
+      aria-labelledby="o-nas-heading"
       className="scroll-mt-16 py-4 lg:py-7 bg-gray-50 dark:bg-gray-900"
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            name: "Paweł Iwanek",
+            jobTitle: "Konsultant automatyzacji procesów B2B",
+            worksFor: { "@id": "https://fluxlab.pl/#organization" },
+            knowsAbout: [
+              "Automatyzacja procesów biznesowych",
+              "Integracje API",
+              "CRM (Pipedrive, HubSpot, Salesforce)",
+              "n8n",
+              "Make",
+              "Zapier",
+              "Python",
+              "Raportowanie sprzedaży",
+              "Obsługa leadów B2B",
+            ],
+            knowsLanguage: ["pl", "en"],
+          }),
+        }}
+      />
       <div className="container-wide">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left */}
           <div>
             <p className="section-label mb-3">O Fluxlabie</p>
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-6">
+            <h2
+              id="o-nas-heading"
+              className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-6"
+            >
               Praktyczne podejście, mierzalne efekty
             </h2>
             <p className="text-gray-500 dark:text-gray-400 text-lg leading-relaxed mb-6">

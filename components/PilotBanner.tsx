@@ -2,7 +2,11 @@ import TrackedCTA from "@/components/TrackedCTA";
 
 export default function PilotBanner() {
   return (
-    <section className="py-6 lg:py-8">
+    <section
+      id="program-case-study"
+      aria-labelledby="pilot-banner-heading"
+      className="py-6 lg:py-8 scroll-mt-16"
+    >
       <div className="container-wide">
         <div className="relative overflow-hidden rounded-2xl border border-accent/20 bg-gradient-to-br from-accent/5 via-accent/10 to-accent/5 dark:from-accent/10 dark:via-accent/15 dark:to-accent/10 p-6 lg:p-8">
           <div
@@ -20,7 +24,10 @@ export default function PilotBanner() {
                 <span className="w-1.5 h-1.5 bg-white rounded-full animate-pulse" />
                 Program case study · 3 miejsca
               </div>
-              <h2 className="text-xl lg:text-2xl font-bold text-gray-900 dark:text-white tracking-tight">
+              <h2
+                id="pilot-banner-heading"
+                className="text-xl lg:text-2xl font-bold text-gray-900 dark:text-white tracking-tight"
+              >
                 3 miejsca na publiczne case study — 50% ceny wdrożenia
               </h2>
               <p className="mt-1.5 text-sm lg:text-base text-gray-600 dark:text-gray-400 max-w-2xl">
@@ -47,6 +54,7 @@ export default function PilotBanner() {
                   viewBox="0 0 14 14"
                   fill="none"
                   className="mt-px"
+                  aria-hidden="true"
                 >
                   <path
                     d="M3 7h8m0 0L7.5 3.5M11 7l-3.5 3.5"

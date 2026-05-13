@@ -153,11 +153,18 @@ export default function CTA() {
   }
 
   return (
-    <section id="kontakt" className="scroll-mt-16 py-4 lg:py-7">
+    <section
+      id="kontakt"
+      aria-labelledby="kontakt-heading"
+      className="scroll-mt-16 py-4 lg:py-7"
+    >
       <div className="container-wide">
         <div className="max-w-2xl mx-auto text-center">
           <p className="section-label mb-3">Kontakt</p>
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2
+            id="kontakt-heading"
+            className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4"
+          >
             Sprawdźmy, czy automatyzacja ma u Ciebie sens
           </h2>
           <p className="text-gray-500 dark:text-gray-400 text-lg mb-12">
@@ -302,8 +309,11 @@ export default function CTA() {
               />
             </div>
 
-            <div>
-              <p className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <div role="group" aria-labelledby="contact-pref-label">
+              <p
+                id="contact-pref-label"
+                className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+              >
                 Preferowany kontakt{" "}
                 <span className="text-gray-400 font-normal text-xs">
                   (opcjonalnie)
@@ -315,6 +325,7 @@ export default function CTA() {
                     key={opt.value}
                     type="button"
                     onClick={() => setContactPref(opt.value)}
+                    aria-pressed={contactPref === opt.value}
                     className={`px-4 py-2 rounded-lg text-sm font-medium border transition-colors ${
                       contactPref === opt.value
                         ? "bg-accent text-white border-accent"
@@ -336,7 +347,13 @@ export default function CTA() {
             </button>
 
             {errorMsg && (
-              <p className="text-center text-sm text-red-500">{errorMsg}</p>
+              <p
+                role="alert"
+                aria-live="polite"
+                className="text-center text-sm text-red-500"
+              >
+                {errorMsg}
+              </p>
             )}
 
             <p className="text-center text-xs text-gray-400 dark:text-gray-500">

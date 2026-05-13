@@ -76,11 +76,18 @@ const cards = [
 
 export default function Proof() {
   return (
-    <section className="py-12 lg:py-16">
+    <section
+      id="dowody"
+      aria-labelledby="dowody-heading"
+      className="py-12 lg:py-16 scroll-mt-16"
+    >
       <div className="container-wide">
         <div className="max-w-2xl mb-10">
           <p className="section-label mb-3">Dowody</p>
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2
+            id="dowody-heading"
+            className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4"
+          >
             Nie musisz wierzyć w obietnice. Zobacz, jak wygląda proces.
           </h2>
           <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">

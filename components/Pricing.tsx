@@ -1,4 +1,5 @@
 import TrackedCTA from "@/components/TrackedCTA";
+import RevealOnScroll from "@/components/RevealOnScroll";
 
 const tracks = [
   {
@@ -52,7 +53,7 @@ export default function Pricing() {
   return (
     <section id="cennik" className="scroll-mt-16 py-12 lg:py-16">
       <div className="container-wide">
-        <div className="max-w-2xl mb-10">
+        <RevealOnScroll className="max-w-2xl mb-10">
           <p className="section-label mb-3">Cennik</p>
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Wybierz punkt startowy
@@ -62,12 +63,13 @@ export default function Pricing() {
             projekt wyceniam po diagnozie, bo koszt zależy od liczby źródeł
             leadów, CRM i jakości danych.
           </p>
-        </div>
+        </RevealOnScroll>
 
         <div className="grid md:grid-cols-3 gap-5 lg:gap-6">
-          {tracks.map((t) => (
-            <div
+          {tracks.map((t, idx) => (
+            <RevealOnScroll
               key={t.title}
+              delay={Math.min(idx + 1, 4) as 1 | 2 | 3 | 4}
               className={`flex flex-col bg-white dark:bg-gray-800/60 border rounded-2xl p-6 lg:p-7 ${
                 t.accent
                   ? "border-accent shadow-lg shadow-accent/10 ring-1 ring-accent/30"
@@ -133,7 +135,7 @@ export default function Pricing() {
               >
                 {t.cta}
               </TrackedCTA>
-            </div>
+            </RevealOnScroll>
           ))}
         </div>
 
