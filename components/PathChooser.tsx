@@ -32,13 +32,10 @@ export const PATH_STATS: Record<PathOrDefault, PathStat[]> = {
     { value: "Walidacja live", label: "błędne dane wyłapane od razu" },
   ],
   default: [
-    { value: "60-90%", label: "mniej ręcznej pracy" },
+    { value: "30+", label: "wdrożeń w różnych branżach B2B" },
+    { value: "24h", label: "odpowiedź na zgłoszenie" },
     { value: "2-4 dni", label: "czas pierwszego efektu" },
-    { value: "AI w każdym projekcie", label: "kod, tekst, dźwięk, obraz" },
-    {
-      value: "0% rozliczania godzinowego",
-      label: "wycena za zakres, nie czas",
-    },
+    { value: "0% godzin", label: "wycena za zakres, nie czas pracy" },
   ],
 };
 
