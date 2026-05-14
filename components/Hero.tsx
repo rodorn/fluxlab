@@ -27,7 +27,7 @@ export default function Hero() {
         <div className="max-w-4xl mx-auto text-center mb-12 lg:mb-16 px-2">
           <div className="animate-fade-up-1 inline-flex items-center gap-2 glass-card text-accent text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
             <span className="w-1.5 h-1.5 bg-accent rounded-full animate-soft-pulse" />
-            Fluxlab — wspomagane AI
+            Fluxlab — strony, automatyzacja, dane
           </div>
 
           <h1

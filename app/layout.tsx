@@ -32,13 +32,13 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
-  title: "Strony, automatyzacja, dane. Wspomagane AI | Fluxlab",
+  title: "Strony, automatyzacja, dane dla firm B2B | Fluxlab",
   description:
-    "Trzy ścieżki: tworzę strony WWW, automatyzuję CRM i obsługę leadów, wyciągam dane z różnych źródeł. Wszystko wspomagane AI — kod, tekst, dźwięk, obraz.",
+    "Trzy ścieżki: tworzę strony WWW, automatyzuję CRM i obsługę leadów, wyciągam dane z różnych źródeł. Stała cena, mierzalne efekty, pierwsze wdrożenia w 2-4 dni.",
   openGraph: {
-    title: "Strony, automatyzacja, dane. Wspomagane AI | Fluxlab",
+    title: "Strony, automatyzacja, dane dla firm B2B | Fluxlab",
     description:
-      "Trzy ścieżki: tworzę strony WWW, automatyzuję CRM i obsługę leadów, wyciągam dane z różnych źródeł. Wszystko wspomagane AI.",
+      "Tworzę strony WWW, automatyzuję CRM i leady, wyciągam dane z web/PDF/maili. Stała cena, mierzalne efekty.",
     locale: "pl_PL",
     type: "website",
     images: [
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — strony, automatyzacja, dane, wspomagane AI",
+        alt: "Fluxlab — strony, automatyzacja, dane dla firm B2B",
       },
     ],
   },

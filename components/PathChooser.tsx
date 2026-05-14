@@ -35,7 +35,7 @@ export const PATH_STATS: Record<PathOrDefault, PathStat[]> = {
     { value: "30+", label: "wdrożeń w różnych branżach B2B" },
     { value: "24h", label: "odpowiedź na zgłoszenie" },
     { value: "2-4 dni", label: "czas pierwszego efektu" },
-    { value: "0% godzin", label: "wycena za zakres, nie czas pracy" },
+    { value: "Stała cena", label: "uzgodniona przed startem projektu" },
   ],
 };
 
