@@ -3,6 +3,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { event as gaEvent } from "@/lib/gtag";
+import useMagnetic from "@/lib/use-magnetic";
 
 interface Props {
   href: string;
@@ -11,6 +12,8 @@ interface Props {
   /** Optional named event – wysyłany OBOK zbiorczego `cta_click`. */
   eventName?: string;
   className?: string;
+  /** Wymuś / wyłącz magnetic (domyślnie: auto-on gdy btn-primary w className). */
+  magnetic?: boolean;
   children: ReactNode;
 }
 
@@ -20,8 +23,13 @@ export default function TrackedCTA({
   label,
   eventName,
   className,
+  magnetic,
   children,
 }: Props) {
+  const autoMagnetic = (className ?? "").includes("btn-primary");
+  const useMag = magnetic ?? autoMagnetic;
+  const linkRef = useMagnetic<HTMLAnchorElement>({ strength: 5 });
+
   const handleClick = () => {
     const params = {
       location,
@@ -34,16 +42,31 @@ export default function TrackedCTA({
     }
   };
 
+  const finalClassName = useMag
+    ? `magnetic ${className ?? ""}`.trim()
+    : className;
+  const refToUse = useMag ? linkRef : undefined;
+
   const isInternal = href.startsWith("/") && !href.startsWith("//");
   if (isInternal) {
     return (
-      <Link href={href} onClick={handleClick} className={className}>
+      <Link
+        ref={refToUse}
+        href={href}
+        onClick={handleClick}
+        className={finalClassName}
+      >
         {children}
       </Link>
     );
   }
   return (
-    <a href={href} onClick={handleClick} className={className}>
+    <a
+      ref={refToUse}
+      href={href}
+      onClick={handleClick}
+      className={finalClassName}
+    >
       {children}
     </a>
   );

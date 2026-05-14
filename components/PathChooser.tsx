@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useCallback, useState, type ReactElement } from "react";
 import { event as gaEvent } from "@/lib/gtag";
+import useTilt from "@/lib/use-tilt";
 
 export type PathKey = "web" | "crm" | "scraping";
 export type PathOrDefault = PathKey | "default";
@@ -164,49 +165,75 @@ export default function PathChooser({ onPathChange }: PathChooserProps) {
   return (
     <div className="grid gap-4 sm:gap-5 md:grid-cols-3">
       {PILLARS.map((pillar) => (
-        <Link
+        <PillarCard
           key={pillar.key}
-          href={pillar.href}
-          aria-label={`Filar: ${pillar.name}`}
-          tabIndex={0}
-          onMouseEnter={() => setActive(pillar.key)}
-          onMouseLeave={() => setActive(null)}
-          onFocus={() => setActive(pillar.key)}
-          onBlur={() => setActive(null)}
+          pillar={pillar}
+          onActivate={() => setActive(pillar.key)}
+          onDeactivate={() => setActive(null)}
           onClick={() => handleClick(pillar.key)}
-          className={`group relative card-lift cursor-pointer rounded-2xl p-6 ring-1 ring-gray-200/60 dark:ring-white/10 hover:ring-accent/40 dark:hover:ring-accent/50 focus-visible:ring-accent/60 transition-all duration-300 hover:scale-[1.02] focus-visible:scale-[1.02] bg-white/70 dark:bg-white/5 backdrop-blur-sm ${pillar.animation}`}
-        >
-          <div
-            className={`pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-br transition-all duration-300 ${pillar.gradient}`}
-            aria-hidden="true"
-          />
-
-          <div className="relative flex flex-col gap-4">
-            <div className="flex items-start justify-between gap-3">
-              <div className="w-11 h-11 flex items-center justify-center text-accent bg-accent-light dark:bg-accent-dark-light rounded-xl">
-                {pillar.icon}
-              </div>
-              <span className="inline-flex items-center text-[10px] font-semibold uppercase tracking-widest text-accent bg-accent-light dark:bg-accent-dark-light px-2 py-1 rounded-full">
-                AI
-              </span>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1.5 group-hover:text-accent transition-colors">
-                {pillar.name}
-              </h3>
-              <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-                {pillar.caption}
-              </p>
-            </div>
-
-            <span className="text-sm font-medium text-accent group-hover:text-accent-hover group-hover:translate-x-0.5 transition-all duration-200 inline-flex items-center gap-1">
-              Zobacz
-              <span aria-hidden="true">→</span>
-            </span>
-          </div>
-        </Link>
+        />
       ))}
     </div>
+  );
+}
+
+type PillarCardProps = {
+  pillar: PillarDef;
+  onActivate: () => void;
+  onDeactivate: () => void;
+  onClick: () => void;
+};
+
+function PillarCard({
+  pillar,
+  onActivate,
+  onDeactivate,
+  onClick,
+}: PillarCardProps) {
+  const tiltRef = useTilt<HTMLAnchorElement>({ maxDeg: 6 });
+
+  return (
+    <Link
+      ref={tiltRef}
+      href={pillar.href}
+      aria-label={`Filar: ${pillar.name}`}
+      tabIndex={0}
+      onMouseEnter={onActivate}
+      onMouseLeave={onDeactivate}
+      onFocus={onActivate}
+      onBlur={onDeactivate}
+      onClick={onClick}
+      className={`group relative card-tilt card-lift cursor-pointer rounded-2xl p-6 ring-1 ring-gray-200/60 dark:ring-white/10 hover:ring-accent/40 dark:hover:ring-accent/50 focus-visible:ring-accent/60 hover:scale-[1.02] focus-visible:scale-[1.02] bg-white/70 dark:bg-white/5 backdrop-blur-sm ${pillar.animation}`}
+    >
+      <div
+        className={`pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-br transition-all duration-300 ${pillar.gradient}`}
+        aria-hidden="true"
+      />
+
+      <div className="relative flex flex-col gap-4">
+        <div className="flex items-start justify-between gap-3">
+          <div className="w-11 h-11 flex items-center justify-center text-accent bg-accent-light dark:bg-accent-dark-light rounded-xl">
+            {pillar.icon}
+          </div>
+          <span className="inline-flex items-center text-[10px] font-semibold uppercase tracking-widest text-accent bg-accent-light dark:bg-accent-dark-light px-2 py-1 rounded-full">
+            AI
+          </span>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1.5 group-hover:text-accent transition-colors">
+            {pillar.name}
+          </h3>
+          <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+            {pillar.caption}
+          </p>
+        </div>
+
+        <span className="text-sm font-medium text-accent group-hover:text-accent-hover group-hover:translate-x-0.5 transition-all duration-200 inline-flex items-center gap-1">
+          Zobacz
+          <span aria-hidden="true">→</span>
+        </span>
+      </div>
+    </Link>
   );
 }

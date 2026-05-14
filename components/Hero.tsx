@@ -2,6 +2,8 @@
 
 import PathChooser, { usePathHover } from "@/components/PathChooser";
 import TrackedCTA from "@/components/TrackedCTA";
+import InteractiveWorkflow from "@/components/InteractiveWorkflow";
+import RotatingSubline from "@/components/RotatingSubline";
 
 export default function Hero() {
   const { activePath, activeStats } = usePathHover();
@@ -23,15 +25,15 @@ export default function Hero() {
       />
 
       <div className="container-wide relative">
-        {/* Top intro — krótki, klarowny */}
-        <div className="max-w-4xl mx-auto text-center mb-12 lg:mb-16 px-2">
+        {/* Top intro */}
+        <div className="max-w-4xl mx-auto text-center mb-10 lg:mb-12 px-2">
           <p className="animate-fade-up-1 section-label mb-5 inline-flex items-center gap-2">
             <span className="w-1.5 h-1.5 bg-accent rounded-full animate-soft-pulse" />
             Fluxlab
           </p>
 
           <h1
-            className="display-xl animate-fade-up-2 mb-6 text-balance"
+            className="display-xl animate-fade-up-2 mb-5 text-balance"
             style={{ textWrap: "balance" }}
           >
             <span className="text-gradient-flow">
@@ -39,19 +41,27 @@ export default function Hero() {
             </span>
           </h1>
 
-          <p className="animate-fade-up-3 text-lg lg:text-xl text-gray-600 dark:text-gray-400 leading-relaxed max-w-2xl mx-auto">
+          <p className="animate-fade-up-3 text-lg lg:text-xl text-gray-600 dark:text-gray-400 leading-relaxed max-w-2xl mx-auto mb-3">
             Trzy ścieżki, jeden cel: mniej ręcznej pracy, więcej rzeczy
-            zrobionych. Wybierz, w którym obszarze potrzebujesz pomocy — albo
-            zamów bezpłatną diagnozę, jeśli nie wiesz, od czego zacząć.
+            zrobionych.
+          </p>
+
+          <p className="animate-fade-up-3 text-base lg:text-lg text-gray-500 dark:text-gray-500 max-w-2xl mx-auto">
+            Robię to <RotatingSubline />.
           </p>
         </div>
 
-        {/* 3 karty filarów — centralna część */}
+        {/* Interactive workflow — działający pipeline */}
+        <div className="animate-fade-up-4 mb-12 lg:mb-16">
+          <InteractiveWorkflow />
+        </div>
+
+        {/* 3 karty filarów */}
         <div className="max-w-5xl mx-auto mb-10 lg:mb-14">
           <PathChooser />
         </div>
 
-        {/* Secondary CTA — dla niezdecydowanych */}
+        {/* Secondary CTA */}
         <div className="animate-fade-up-4 text-center mb-16 lg:mb-20">
           <p className="text-sm text-gray-500 dark:text-gray-500 mb-3">
             Nie wiesz, co automatyzować?
@@ -61,7 +71,7 @@ export default function Hero() {
             location="hero"
             label="what_to_automate"
             eventName="cta_click_hero_what_to_automate"
-            className="btn-secondary text-base px-6 py-3"
+            className="btn-secondary text-base"
           >
             Pokaż mi sygnały, że warto →
           </TrackedCTA>
