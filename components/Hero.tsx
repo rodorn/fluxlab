@@ -25,10 +25,10 @@ export default function Hero() {
       <div className="container-wide relative">
         {/* Top intro — krótki, klarowny */}
         <div className="max-w-4xl mx-auto text-center mb-12 lg:mb-16 px-2">
-          <div className="animate-fade-up-1 inline-flex items-center gap-2 glass-card text-accent text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
+          <p className="animate-fade-up-1 section-label mb-5 inline-flex items-center gap-2">
             <span className="w-1.5 h-1.5 bg-accent rounded-full animate-soft-pulse" />
-            Fluxlab — strony, automatyzacja, dane
-          </div>
+            Fluxlab
+          </p>
 
           <h1
             className="display-xl animate-fade-up-2 mb-6 text-balance"

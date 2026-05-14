@@ -135,11 +135,11 @@ export default function Header() {
             {servicesOpen && (
               <div
                 role="menu"
-                className="animate-fade-up absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[420px] glass-card rounded-2xl shadow-xl shadow-gray-200/60 dark:shadow-black/40 p-5"
+                className="animate-fade-up absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[420px] bg-white dark:bg-gray-900 rounded-2xl shadow-xl shadow-gray-200/60 dark:shadow-black/40 border border-gray-200 dark:border-gray-800 p-5"
                 onMouseEnter={openServices}
                 onMouseLeave={scheduleServicesClose}
               >
-                <div className="absolute -top-[7px] left-1/2 -translate-x-1/2 w-3.5 h-3.5 bg-white/80 dark:bg-gray-900/80 border-l border-t border-gray-100 dark:border-gray-800 rotate-45 rounded-tl-sm" />
+                <div className="absolute -top-[7px] left-1/2 -translate-x-1/2 w-3.5 h-3.5 bg-white dark:bg-gray-900 border-l border-t border-gray-200 dark:border-gray-800 rotate-45 rounded-tl-sm" />
 
                 {/* 3 filary — primary cards */}
                 <p className="text-[10px] font-semibold uppercase tracking-widest text-accent mb-3 px-1">
