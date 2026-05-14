@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { useCallback, useState, type ReactElement } from "react";
 import { event as gaEvent } from "@/lib/gtag";
-import { useSound } from "@/components/SoundProvider";
 
 export type PathKey = "web" | "crm" | "scraping";
 export type PathOrDefault = PathKey | "default";
@@ -149,24 +148,18 @@ type PathChooserProps = {
 
 export default function PathChooser({ onPathChange }: PathChooserProps) {
   const [, setLocalActive] = useState<PathKey | null>(null);
-  const { play } = useSound();
 
   const setActive = useCallback(
     (path: PathKey | null) => {
       setLocalActive(path);
       onPathChange?.(path);
-      if (path !== null) play("hover");
     },
-    [onPathChange, play],
+    [onPathChange],
   );
 
-  const handleClick = useCallback(
-    (path: PathKey) => {
-      gaEvent("path_chooser_click", { path });
-      play("swell");
-    },
-    [play],
-  );
+  const handleClick = useCallback((path: PathKey) => {
+    gaEvent("path_chooser_click", { path });
+  }, []);
 
   return (
     <div className="grid gap-4 sm:gap-5 md:grid-cols-3">

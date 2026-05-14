@@ -3,9 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
-import SoundToggle from "./SoundToggle";
 import { event as gaEvent } from "@/lib/gtag";
-import { useSound } from "@/components/SoundProvider";
 
 const navLinks = [
   { label: "Jak pracuję", href: "/jak-pracuje" },
@@ -53,7 +51,6 @@ const servicePages: { title: string; href: string; indent?: boolean }[] = [
 ];
 
 export default function Header() {
-  const { play } = useSound();
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
@@ -154,11 +151,7 @@ export default function Header() {
                       key={pp.href}
                       href={pp.href}
                       role="menuitem"
-                      onMouseEnter={() => play("hover")}
-                      onClick={() => {
-                        setServicesOpen(false);
-                        play("click");
-                      }}
+                      onClick={() => setServicesOpen(false)}
                       className="block p-3 rounded-xl hover:bg-accent/5 dark:hover:bg-accent/10 border border-transparent hover:border-accent/20 transition-all group"
                     >
                       <p className="text-sm font-semibold text-gray-900 dark:text-white group-hover:text-accent transition-colors">
@@ -227,7 +220,6 @@ export default function Header() {
 
         {/* Right side */}
         <div className="hidden md:flex items-center gap-3">
-          <SoundToggle />
           <ThemeToggle />
           <a
             href="/#kontakt"
@@ -239,7 +231,6 @@ export default function Header() {
               };
               gaEvent("cta_click", params);
               gaEvent("cta_click_header", params);
-              play("click");
             }}
           >
             Zamów diagnozę
@@ -248,7 +239,6 @@ export default function Header() {
 
         {/* Mobile: toggle + hamburger */}
         <div className="md:hidden flex items-center gap-1">
-          <SoundToggle />
           <ThemeToggle />
           <button
             className="p-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
@@ -387,7 +377,6 @@ export default function Header() {
               };
               gaEvent("cta_click", params);
               gaEvent("cta_click_header", params);
-              play("click");
             }}
           >
             Zamów diagnozę

@@ -1,8 +1,5 @@
-"use client";
-
 import Link from "next/link";
 import RevealOnScroll from "@/components/RevealOnScroll";
-import { useSound } from "@/components/SoundProvider";
 
 const services = [
   {
@@ -113,7 +110,6 @@ const services = [
 ];
 
 export default function Services() {
-  const { play } = useSound();
   return (
     <section
       id="uslugi"
@@ -168,8 +164,6 @@ export default function Services() {
             >
               <Link
                 href={service.href}
-                onMouseEnter={() => play("hover")}
-                onFocus={() => play("hover")}
                 className="card-lift block bg-white/90 backdrop-blur-sm dark:bg-white/10 rounded-2xl p-8 border border-white dark:border-white/10 hover:bg-white dark:hover:bg-white/15 hover:border-accent/40 dark:hover:border-accent/60 shadow-sm group"
               >
                 <div className="w-10 h-10 flex items-center justify-center text-accent bg-accent-light dark:bg-accent-dark-light rounded-xl mb-5">
