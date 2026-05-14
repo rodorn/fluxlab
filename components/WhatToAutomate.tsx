@@ -1,7 +1,10 @@
+"use client";
+
 import Link from "next/link";
 import type { ReactNode } from "react";
 import TrackedCTA from "@/components/TrackedCTA";
 import RevealOnScroll from "@/components/RevealOnScroll";
+import { useSound } from "@/components/SoundProvider";
 
 type Signal = {
   title: string;
@@ -153,6 +156,7 @@ const signals: Signal[] = [
 ];
 
 export default function WhatToAutomate() {
+  const { play } = useSound();
   return (
     <section
       id="co-automatyzowac"
@@ -183,6 +187,8 @@ export default function WhatToAutomate() {
               <RevealOnScroll key={signal.title} delay={delay}>
                 <Link
                   href={signal.href}
+                  onMouseEnter={() => play("hover")}
+                  onFocus={() => play("hover")}
                   className="card-lift h-full rounded-2xl bg-white/80 dark:bg-gray-900/40 backdrop-blur-sm border border-gray-200/60 dark:border-gray-800/60 hover:border-accent/40 dark:hover:border-accent/60 p-6 lg:p-7 flex flex-col group"
                 >
                   <div className="w-12 h-12 rounded-xl bg-accent/10 text-accent flex items-center justify-center mb-4 group-hover:bg-accent group-hover:text-white transition-colors">

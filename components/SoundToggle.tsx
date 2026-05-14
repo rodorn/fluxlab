@@ -8,10 +8,9 @@ export default function SoundToggle() {
   function handleToggle() {
     const next = !enabled;
     setEnabled(next);
-    // Gdy włączamy — odtwórz potwierdzenie, żeby user wiedział że działa
+    // Gdy włączamy — odtwórz pełny swell jako potwierdzenie
     if (next) {
-      // setTimeout żeby kontekst zdążył się odpalić po user gesture
-      setTimeout(() => play("hover"), 50);
+      setTimeout(() => play("swell"), 60);
     }
   }
 
