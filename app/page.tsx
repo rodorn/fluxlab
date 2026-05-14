@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import Marquee from "@/components/Marquee";
 import PainPoints from "@/components/PainPoints";
 import ExampleWorkflow from "@/components/ExampleWorkflow";
 import PilotBanner from "@/components/PilotBanner";
@@ -20,6 +21,7 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <Marquee />
         <PainPoints />
         <ExampleWorkflow />
         <PilotBanner />

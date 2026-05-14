@@ -20,49 +20,60 @@ export default function Diagnosis() {
     <section
       id="diagnoza"
       aria-labelledby="diagnoza-heading"
-      className="scroll-mt-16 py-12 lg:py-16 bg-gray-50 dark:bg-gray-900/50 border-y border-gray-100 dark:border-gray-800"
+      className="scroll-mt-16 relative py-20 lg:py-28 bg-gray-950 text-white overflow-hidden noise-overlay"
     >
-      <div className="container-wide">
-        <div className="grid lg:grid-cols-5 gap-10 lg:gap-12 items-start">
+      {/* Decorative blobs — visible on dark background */}
+      <div
+        aria-hidden="true"
+        className="blob-strong blob-accent -z-0 top-[10%] right-[-10%] w-[600px] h-[600px] opacity-30"
+      />
+      <div
+        aria-hidden="true"
+        className="blob blob-violet -z-0 bottom-[-20%] left-[-5%] w-[500px] h-[500px] opacity-25"
+      />
+
+      <div className="container-wide relative z-10">
+        <div className="grid lg:grid-cols-5 gap-10 lg:gap-16 items-start">
           <div className="lg:col-span-2">
-            <p className="section-label mb-3">Punkt startowy</p>
-            <h2
-              id="diagnoza-heading"
-              className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-5"
-            >
-              Zacznij od diagnozy, nie od wdrożenia
+            <p className="section-label mb-4">Punkt startowy</p>
+            <h2 id="diagnoza-heading" className="display-lg mb-6 text-white">
+              Zacznij od <span className="text-gradient-flow">diagnozy</span>,
+              <br />
+              nie od wdrożenia
             </h2>
-            <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-4">
+            <p className="text-gray-300 text-lg leading-relaxed mb-5">
               Najpierw sprawdzam, czy automatyzacja ma sens. Nie każdy proces
               warto automatyzować i nie każde narzędzie trzeba integrować.
-              Diagnoza jest <strong>bezpłatna</strong> i daje wstępny kierunek.
+              Diagnoza jest <strong className="text-white">bezpłatna</strong> i
+              daje wstępny kierunek.
             </p>
-            <p className="text-sm text-gray-500 dark:text-gray-500 leading-relaxed mb-6">
-              Jeśli idziemy dalej — robię płatny <strong>audyt procesu</strong>{" "}
-              z mapą AS-IS → TO-BE, priorytetami, narzędziami, harmonogramem i
-              ROI. Koszt audytu odliczam od wdrożenia, jeśli kontynuujemy.
+            <p className="text-sm text-gray-400 leading-relaxed mb-8">
+              Jeśli idziemy dalej — robię płatny{" "}
+              <strong className="text-white">audyt procesu</strong> z mapą AS-IS
+              → TO-BE, priorytetami, narzędziami, harmonogramem i ROI. Koszt
+              audytu odliczam od wdrożenia, jeśli kontynuujemy.
             </p>
             <TrackedCTA
               href="#kontakt"
               location="diagnosis"
               label="diagnoza"
               eventName="cta_click_diagnosis"
-              className="btn-primary text-base px-7 py-3"
+              className="btn-primary text-base px-8 py-4 glow-accent"
             >
               Zamów bezpłatną diagnozę
             </TrackedCTA>
-            <p className="mt-4 text-xs text-gray-500 dark:text-gray-500">
+            <p className="mt-4 text-xs text-gray-500">
               Odpowiedź w 24h · bez prezentacji sprzedażowej · bez zobowiązań
             </p>
           </div>
 
           <div className="lg:col-span-3 grid sm:grid-cols-2 gap-5">
-            <div className="bg-white dark:bg-gray-800/80 border border-accent/30 rounded-2xl p-6">
-              <div className="flex items-center gap-2 mb-4">
-                <span className="w-7 h-7 rounded-full bg-accent flex items-center justify-center">
+            <div className="card-lift glass-subtle rounded-2xl p-7 border border-accent/30 bg-white/[0.04]">
+              <div className="flex items-center gap-3 mb-5">
+                <span className="w-9 h-9 rounded-xl bg-accent flex items-center justify-center glow-accent">
                   <svg
-                    width="14"
-                    height="14"
+                    width="16"
+                    height="16"
                     viewBox="0 0 14 14"
                     fill="none"
                     aria-hidden="true"
@@ -70,34 +81,35 @@ export default function Diagnosis() {
                     <path
                       d="M3 7l3 3 5-6"
                       stroke="white"
-                      strokeWidth="2"
+                      strokeWidth="2.2"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     />
                   </svg>
                 </span>
-                <h3 className="font-semibold text-gray-900 dark:text-white">
+                <h3 className="font-semibold text-white text-lg">
                   Co dostajesz
                 </h3>
               </div>
-              <ul className="space-y-2.5">
+              <ul className="space-y-3">
                 {youGet.map((item) => (
                   <li
                     key={item}
-                    className="text-sm text-gray-700 dark:text-gray-300 leading-snug pl-1"
+                    className="text-sm text-gray-200 leading-snug flex gap-2"
                   >
-                    • {item}
+                    <span className="text-accent mt-1 shrink-0">•</span>
+                    <span>{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="bg-white dark:bg-gray-800/40 border border-gray-200 dark:border-gray-700 rounded-2xl p-6">
-              <div className="flex items-center gap-2 mb-4">
-                <span className="w-7 h-7 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+            <div className="card-lift rounded-2xl p-7 border border-white/10 bg-white/[0.02]">
+              <div className="flex items-center gap-3 mb-5">
+                <span className="w-9 h-9 rounded-xl bg-gray-800 border border-gray-700 flex items-center justify-center">
                   <svg
-                    width="14"
-                    height="14"
+                    width="16"
+                    height="16"
                     viewBox="0 0 14 14"
                     fill="none"
                     aria-hidden="true"
@@ -105,27 +117,28 @@ export default function Diagnosis() {
                     <path
                       d="M4 4l6 6M10 4l-6 6"
                       stroke="currentColor"
-                      strokeWidth="1.8"
+                      strokeWidth="2"
                       strokeLinecap="round"
-                      className="text-gray-500 dark:text-gray-400"
+                      className="text-gray-400"
                     />
                   </svg>
                 </span>
-                <h3 className="font-semibold text-gray-900 dark:text-white">
+                <h3 className="font-semibold text-white text-lg">
                   Czego NIE dostajesz
                 </h3>
               </div>
-              <ul className="space-y-2.5">
+              <ul className="space-y-3">
                 {youDontGet.map((item) => (
                   <li
                     key={item}
-                    className="text-sm text-gray-500 dark:text-gray-500 leading-snug pl-1"
+                    className="text-sm text-gray-400 leading-snug flex gap-2"
                   >
-                    • {item}
+                    <span className="mt-1 shrink-0">•</span>
+                    <span>{item}</span>
                   </li>
                 ))}
               </ul>
-              <p className="mt-5 text-xs text-gray-500 dark:text-gray-500 leading-relaxed">
+              <p className="mt-6 pt-5 border-t border-white/10 text-xs text-gray-500 leading-relaxed">
                 Diagnoza to konkretna mapa pierwszego kroku, nie darmowa
                 konsultacja techniczna do przekazania komuś innemu.
               </p>
