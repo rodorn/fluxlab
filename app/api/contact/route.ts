@@ -15,22 +15,7 @@ function str(v: unknown, max: number): string {
   return v.trim().slice(0, max);
 }
 
-const PROBLEM_TYPE_LABELS: Record<string, string> = {
-  leady: "Obsługa leadów",
-  crm: "CRM (Pipedrive / HubSpot / Salesforce)",
-  raportowanie: "Raportowanie",
-  integracje: "Integracje API",
-  przepisywanie: "Ręczne przepisywanie danych",
-  diagnoza: "Nie wiem, chcę diagnozy",
-};
-
-const PROBLEM_SCALE_LABELS: Record<string, string> = {
-  "do-30": "Do 30 leadów miesięcznie",
-  "30-100": "30–100 leadów miesięcznie",
-  "100-plus": "100+ leadów miesięcznie",
-  "nie-leady": "Nie chodzi o leady, tylko o ręczną pracę",
-  "nie-wiem": "Nie wiem",
-};
+import { PROBLEM_TYPE_LABELS, PROBLEM_SCALE_LABELS } from "@/lib/form-options";
 
 const CONTACT_PREF_LABELS: Record<string, string> = {
   email: "E-mail",

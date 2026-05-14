@@ -3,31 +3,10 @@
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { event as gaEvent } from "@/lib/gtag";
+import { PROBLEM_TYPES, getScalesForType } from "@/lib/form-options";
 
 const inputClass =
-  "w-full px-4 py-2.5 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-sm text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-colors";
-
-const PROBLEM_TYPES = [
-  { value: "", label: "Wybierz obszar..." },
-  { value: "leady", label: "Obsługa leadów" },
-  { value: "crm", label: "CRM (Pipedrive / HubSpot / Salesforce)" },
-  { value: "raportowanie", label: "Raportowanie" },
-  { value: "integracje", label: "Integracje API" },
-  { value: "przepisywanie", label: "Ręczne przepisywanie danych" },
-  { value: "diagnoza", label: "Nie wiem, chcę diagnozy" },
-];
-
-const PROBLEM_SCALES = [
-  { value: "", label: "Wybierz skalę..." },
-  { value: "do-30", label: "Do 30 leadów miesięcznie" },
-  { value: "30-100", label: "30–100 leadów miesięcznie" },
-  { value: "100-plus", label: "100+ leadów miesięcznie" },
-  {
-    value: "nie-leady",
-    label: "Nie chodzi o leady, tylko o ręczną pracę",
-  },
-  { value: "nie-wiem", label: "Nie wiem" },
-];
+  "w-full px-4 py-2.5 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-sm text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-colors disabled:opacity-50 disabled:cursor-not-allowed";
 
 const CONTACT_PREFS = [
   { value: "email", label: "E-mail" },
@@ -90,6 +69,9 @@ export default function LandingForm({
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [contactPref, setContactPref] = useState("email");
+  const [problemType, setProblemType] = useState("");
+  const [problemScale, setProblemScale] = useState("");
+  const scaleOptions = getScalesForType(problemType);
   const [utm, setUtm] = useState<UtmFields>(() => ({
     utm_source: "",
     utm_medium: "",
@@ -295,7 +277,11 @@ export default function LandingForm({
               id="problemType"
               name="problemType"
               required
-              defaultValue=""
+              value={problemType}
+              onChange={(e) => {
+                setProblemType(e.target.value);
+                setProblemScale("");
+              }}
               className={inputClass}
             >
               {PROBLEM_TYPES.map((opt) => (
@@ -314,22 +300,28 @@ export default function LandingForm({
               htmlFor="problemScale"
               className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5"
             >
-              Skala problemu <span className="text-accent">*</span>
+              Skala / typ <span className="text-accent">*</span>
             </label>
             <select
               id="problemScale"
               name="problemScale"
               required
-              defaultValue=""
+              value={problemScale}
+              onChange={(e) => setProblemScale(e.target.value)}
+              disabled={!problemType}
               className={inputClass}
             >
-              {PROBLEM_SCALES.map((opt) => (
+              {scaleOptions.map((opt) => (
                 <option
                   key={opt.value}
                   value={opt.value}
                   disabled={opt.value === ""}
                 >
-                  {opt.label}
+                  {problemType
+                    ? opt.label
+                    : opt.value === ""
+                      ? "Najpierw wybierz obszar..."
+                      : opt.label}
                 </option>
               ))}
             </select>
