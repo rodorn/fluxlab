@@ -369,7 +369,7 @@ export default function StronyWww() {
                 <RevealOnScroll
                   key={item.title}
                   delay={Math.min(idx + 1, 4) as 1 | 2 | 3 | 4}
-                  className="card-lift bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-6 lg:p-7"
+                  className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-6 lg:p-7"
                 >
                   <div className="flex items-start gap-4">
                     <span className="shrink-0 w-10 h-10 flex items-center justify-center rounded-xl bg-accent/10 text-accent text-sm font-bold">
@@ -413,7 +413,7 @@ export default function StronyWww() {
                 <RevealOnScroll
                   key={area.title}
                   delay={Math.min(idx + 1, 4) as 1 | 2 | 3 | 4}
-                  className="card-lift bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-5 lg:p-6"
+                  className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-5 lg:p-6"
                 >
                   <h3 className="text-base font-bold text-gray-900 dark:text-white mb-2">
                     {area.title}
@@ -532,7 +532,7 @@ export default function StronyWww() {
                 <RevealOnScroll
                   key={track.title}
                   delay={Math.min(idx + 1, 4) as 1 | 2 | 3 | 4}
-                  className={`card-lift flex flex-col bg-white dark:bg-gray-800/60 border rounded-2xl p-6 lg:p-7 ${
+                  className={`flex flex-col bg-white dark:bg-gray-800/60 border rounded-2xl p-6 lg:p-7 ${
                     track.accent
                       ? "border-accent shadow-lg shadow-accent/10 ring-1 ring-accent/30"
                       : "border-gray-100 dark:border-gray-700"

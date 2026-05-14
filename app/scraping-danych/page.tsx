@@ -359,7 +359,7 @@ export default function ScrapingDanychPage() {
                   key={src.title}
                   delay={((idx % 4) + 1) as 1 | 2 | 3 | 4}
                 >
-                  <article className="card-lift glass-card rounded-2xl p-7 h-full">
+                  <article className="glass-card rounded-2xl p-7 h-full">
                     <div className="flex items-center gap-3 mb-4">
                       <span className="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-accent/10 text-accent">
                         {src.icon}
@@ -430,7 +430,7 @@ export default function ScrapingDanychPage() {
                 >
                   <article
                     id={uc.id}
-                    className="card-lift bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-7 h-full"
+                    className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-7 h-full"
                   >
                     <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-5">
                       {uc.title}
@@ -542,7 +542,7 @@ export default function ScrapingDanychPage() {
               </p>
             </div>
             <div className="grid md:grid-cols-2 gap-6 max-w-5xl">
-              <article className="card-lift rounded-2xl p-7 bg-white dark:bg-gray-800/60 border border-emerald-200/60 dark:border-emerald-900/40">
+              <article className="rounded-2xl p-7 bg-white dark:bg-gray-800/60 border border-emerald-200/60 dark:border-emerald-900/40">
                 <div className="flex items-center gap-2 mb-5">
                   <span className="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-emerald-100 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-400">
                     <svg
@@ -589,7 +589,7 @@ export default function ScrapingDanychPage() {
                   ))}
                 </ul>
               </article>
-              <article className="card-lift rounded-2xl p-7 bg-white dark:bg-gray-800/60 border border-rose-200/60 dark:border-rose-900/40">
+              <article className="rounded-2xl p-7 bg-white dark:bg-gray-800/60 border border-rose-200/60 dark:border-rose-900/40">
                 <div className="flex items-center gap-2 mb-5">
                   <span className="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-rose-100 dark:bg-rose-900/40 text-rose-600 dark:text-rose-400">
                     <svg
@@ -662,7 +662,7 @@ export default function ScrapingDanychPage() {
                   as="li"
                   delay={((idx % 4) + 1) as 1 | 2 | 3 | 4}
                 >
-                  <div className="card-lift glass-card rounded-2xl p-6 h-full">
+                  <div className="glass-card rounded-2xl p-6 h-full">
                     <p className="text-3xl font-bold text-gradient-flow mb-3">
                       {p.step}
                     </p>
@@ -706,7 +706,7 @@ export default function ScrapingDanychPage() {
                   delay={((idx % 4) + 1) as 1 | 2 | 3 | 4}
                 >
                   <article
-                    className={`card-lift rounded-2xl p-7 h-full flex flex-col ${
+                    className={`rounded-2xl p-7 h-full flex flex-col ${
                       tier.highlight
                         ? "bg-white dark:bg-gray-800/80 border-2 border-accent shadow-xl shadow-accent/10"
                         : "bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700"

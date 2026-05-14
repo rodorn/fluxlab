@@ -68,7 +68,7 @@ export default function Diagnosis() {
           </div>
 
           <div className="lg:col-span-3 grid sm:grid-cols-2 gap-5">
-            <div className="card-lift glass-subtle rounded-2xl p-7 border border-accent/30 bg-white/[0.04]">
+            <div className="glass-subtle rounded-2xl p-7 border border-accent/30 bg-white/[0.04]">
               <div className="flex items-center gap-3 mb-5">
                 <span className="w-9 h-9 rounded-xl bg-accent flex items-center justify-center glow-accent">
                   <svg
@@ -104,7 +104,7 @@ export default function Diagnosis() {
               </ul>
             </div>
 
-            <div className="card-lift rounded-2xl p-7 border border-white/10 bg-white/[0.02]">
+            <div className="rounded-2xl p-7 border border-white/10 bg-white/[0.02]">
               <div className="flex items-center gap-3 mb-5">
                 <span className="w-9 h-9 rounded-xl bg-gray-800 border border-gray-700 flex items-center justify-center">
                   <svg

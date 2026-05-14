@@ -181,25 +181,23 @@ export default function WhatToAutomate() {
             const delay = Math.min(idx + 1, 4) as 1 | 2 | 3 | 4;
             return (
               <RevealOnScroll key={signal.title} delay={delay}>
-                <article className="card-lift h-full rounded-2xl bg-white/80 dark:bg-gray-900/40 backdrop-blur-sm border border-gray-200/60 dark:border-gray-800/60 hover:border-accent/40 dark:hover:border-accent/60 p-6 lg:p-7 flex flex-col">
-                  <div className="w-12 h-12 rounded-xl bg-accent/10 text-accent flex items-center justify-center mb-4">
+                <Link
+                  href={signal.href}
+                  className="card-lift h-full rounded-2xl bg-white/80 dark:bg-gray-900/40 backdrop-blur-sm border border-gray-200/60 dark:border-gray-800/60 hover:border-accent/40 dark:hover:border-accent/60 p-6 lg:p-7 flex flex-col group"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-accent/10 text-accent flex items-center justify-center mb-4 group-hover:bg-accent group-hover:text-white transition-colors">
                     {signal.icon}
                   </div>
-                  <h3 className="font-semibold text-lg lg:text-xl text-gray-900 dark:text-white">
+                  <h3 className="font-semibold text-lg lg:text-xl text-gray-900 dark:text-white group-hover:text-accent transition-colors">
                     „{signal.title}”
                   </h3>
                   <p className="mt-2 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
                     {signal.description}
                   </p>
-                  <div className="mt-4 pt-2">
-                    <Link
-                      href={signal.href}
-                      className="text-sm font-medium text-accent hover:text-accent-hover"
-                    >
-                      → Zobacz rozwiązanie
-                    </Link>
-                  </div>
-                </article>
+                  <span className="mt-4 pt-2 text-sm font-medium text-accent inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                    Zobacz rozwiązanie <span aria-hidden="true">→</span>
+                  </span>
+                </Link>
               </RevealOnScroll>
             );
           })}

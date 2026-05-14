@@ -70,7 +70,7 @@ export default function Pricing() {
             <RevealOnScroll
               key={t.title}
               delay={Math.min(idx + 1, 4) as 1 | 2 | 3 | 4}
-              className={`card-lift flex flex-col bg-white dark:bg-gray-800/60 border rounded-2xl p-6 lg:p-7 ${
+              className={`flex flex-col bg-white dark:bg-gray-800/60 border rounded-2xl p-6 lg:p-7 ${
                 t.accent
                   ? "border-accent shadow-lg shadow-accent/10 ring-1 ring-accent/30"
                   : "border-gray-100 dark:border-gray-700"
