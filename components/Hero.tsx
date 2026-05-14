@@ -24,16 +24,19 @@ export default function Hero() {
 
       <div className="container-wide relative">
         {/* Top intro — krótki, klarowny */}
-        <div className="max-w-3xl mx-auto text-center mb-12 lg:mb-16">
+        <div className="max-w-4xl mx-auto text-center mb-12 lg:mb-16 px-2">
           <div className="animate-fade-up-1 inline-flex items-center gap-2 glass-card text-accent text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
             <span className="w-1.5 h-1.5 bg-accent rounded-full animate-soft-pulse" />
             Fluxlab — wspomagane AI
           </div>
 
-          <h1 className="display-xl animate-fade-up-2 mb-6 text-gray-900 dark:text-white">
-            <span className="text-gradient-flow">Strony</span>,{" "}
-            <span className="text-gradient-flow">automatyzacja</span>,{" "}
-            <span className="text-gradient-flow">dane</span>.
+          <h1
+            className="display-xl animate-fade-up-2 mb-6 text-balance"
+            style={{ textWrap: "balance" }}
+          >
+            <span className="text-gradient-flow">
+              Strony, automatyzacja, dane.
+            </span>
           </h1>
 
           <p className="animate-fade-up-3 text-lg lg:text-xl text-gray-600 dark:text-gray-400 leading-relaxed max-w-2xl mx-auto">
@@ -91,7 +94,7 @@ export default function Hero() {
           >
             {activeStats.map((stat) => (
               <div key={stat.label} className="text-center lg:text-left">
-                <p className="stat-number text-gradient-accent">{stat.value}</p>
+                <p className="stat-number text-gradient-flow">{stat.value}</p>
                 <p className="mt-2 text-sm text-gray-600 dark:text-gray-400 leading-snug">
                   {stat.label}
                 </p>

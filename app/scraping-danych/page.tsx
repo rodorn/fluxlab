@@ -497,19 +497,19 @@ export default function ScrapingDanychPage() {
                 </p>
                 <div className="grid sm:grid-cols-3 gap-6 border-t border-gray-200/60 dark:border-gray-700/60 pt-8">
                   <div>
-                    <p className="stat-number text-gradient-accent">95%+</p>
+                    <p className="stat-number text-gradient-flow">95%+</p>
                     <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
                       dokładność rozpoznawania pól
                     </p>
                   </div>
                   <div>
-                    <p className="stat-number text-gradient-accent">tysiące</p>
+                    <p className="stat-number text-gradient-flow">tysiące</p>
                     <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
                       rekordów przetworzonych w godzinę
                     </p>
                   </div>
                   <div>
-                    <p className="stat-number text-gradient-accent">0</p>
+                    <p className="stat-number text-gradient-flow">0</p>
                     <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
                       ręcznego copy-paste w pipeline
                     </p>
@@ -663,7 +663,7 @@ export default function ScrapingDanychPage() {
                   delay={((idx % 4) + 1) as 1 | 2 | 3 | 4}
                 >
                   <div className="card-lift glass-card rounded-2xl p-6 h-full">
-                    <p className="text-3xl font-bold text-gradient-accent mb-3">
+                    <p className="text-3xl font-bold text-gradient-flow mb-3">
                       {p.step}
                     </p>
                     <h3 className="text-base font-semibold text-gray-900 dark:text-white mb-2">

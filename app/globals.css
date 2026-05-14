@@ -42,25 +42,31 @@
     @apply text-accent text-xs font-semibold uppercase tracking-widest;
   }
 
-  /* Bold display typography — tighter tracking, fluid scale */
+  /* Bold display typography — tighter tracking, fluid scale.
+     leading celowo > 1 + padding-bottom: bez tego bg-clip-text ucina
+     descendery (y/j/g/p) przy ciasnym leading. */
   .display-2xl {
-    @apply font-bold tracking-[-0.04em] leading-[0.95];
+    @apply font-bold tracking-[-0.04em] leading-[1.05];
     font-size: clamp(3rem, 9vw, 7rem);
+    padding-bottom: 0.08em;
   }
 
   .display-xl {
-    @apply font-bold tracking-[-0.03em] leading-[1.0];
+    @apply font-bold tracking-[-0.03em] leading-[1.1];
     font-size: clamp(2.75rem, 7vw, 5.5rem);
+    padding-bottom: 0.08em;
   }
 
   .display-lg {
-    @apply font-bold tracking-[-0.025em] leading-[1.08];
+    @apply font-bold tracking-[-0.025em] leading-[1.12];
     font-size: clamp(2rem, 4vw, 3.25rem);
+    padding-bottom: 0.06em;
   }
 
   .display-md {
-    @apply font-bold tracking-[-0.02em] leading-[1.12];
+    @apply font-bold tracking-[-0.02em] leading-[1.15];
     font-size: clamp(1.75rem, 3vw, 2.5rem);
+    padding-bottom: 0.05em;
   }
 
   /* Animated gradient text — flow indigo → violet → cyan → indigo */
@@ -79,15 +85,6 @@
     -webkit-text-fill-color: transparent;
     color: transparent;
     animation: gradient-flow 8s ease-in-out infinite;
-  }
-
-  /* Static gradient text — for headings without animation */
-  .text-gradient-accent {
-    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #06b6d4 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
   }
 
   /* Mesh gradient — wielowarstwowy animowany background */
