@@ -32,13 +32,13 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
-  title: "Automatyzacja leadów, CRM i raportowania dla firm B2B | Fluxlab",
+  title: "Strony, automatyzacja, dane. Wspomagane AI | Fluxlab",
   description:
-    "Wdrażam automatyzację obsługi leadów, CRM i raportowania w firmach B2B. Lead trafia do CRM, dostaje handlowca, zadanie i raport bez ręcznej pracy. Pierwsze efekty w 2–4 dni.",
+    "Trzy ścieżki: tworzę strony WWW, automatyzuję CRM i obsługę leadów, wyciągam dane z różnych źródeł. Wszystko wspomagane AI — kod, tekst, dźwięk, obraz.",
   openGraph: {
-    title: "Automatyzacja leadów, CRM i raportowania dla firm B2B | Fluxlab",
+    title: "Strony, automatyzacja, dane. Wspomagane AI | Fluxlab",
     description:
-      "Wdrażam automatyzację obsługi leadów, CRM i raportowania w firmach B2B. Lead trafia do CRM, dostaje handlowca, zadanie i raport bez ręcznej pracy.",
+      "Trzy ścieżki: tworzę strony WWW, automatyzuję CRM i obsługę leadów, wyciągam dane z różnych źródeł. Wszystko wspomagane AI.",
     locale: "pl_PL",
     type: "website",
     images: [
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Automatyzacja leadów, CRM i raportowania dla firm B2B",
+        alt: "Fluxlab — strony, automatyzacja, dane, wspomagane AI",
       },
     ],
   },
@@ -85,6 +85,9 @@ export default function RootLayout({
                     name: "Paweł Iwanek",
                   },
                   knowsAbout: [
+                    "Tworzenie stron internetowych",
+                    "Web development",
+                    "Next.js",
                     "Automatyzacja procesów biznesowych",
                     "CRM",
                     "Pipedrive",
@@ -96,16 +99,23 @@ export default function RootLayout({
                     "Integracje API",
                     "Raportowanie sprzedaży",
                     "Obsługa leadów B2B",
+                    "Web scraping",
+                    "Ekstrakcja danych z PDF",
+                    "OCR",
+                    "AI w automatyzacji",
+                    "LLM",
+                    "Whisper",
                   ],
                   areaServed: {
                     "@type": "Country",
                     name: "Poland",
                   },
                   serviceType: [
-                    "Automatyzacja obsługi leadów",
-                    "Automatyzacja CRM",
-                    "Automatyzacja raportowania",
+                    "Tworzenie stron WWW",
+                    "Automatyzacja CRM i leadów",
+                    "Scraping i ekstrakcja danych",
                     "Integracje API",
+                    "AI w automatyzacji",
                   ],
                   hasOfferCatalog: {
                     "@type": "OfferCatalog",

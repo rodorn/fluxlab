@@ -1,7 +1,8 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Marquee from "@/components/Marquee";
-import PainPoints from "@/components/PainPoints";
+import WhatToAutomate from "@/components/WhatToAutomate";
+import AICapabilities from "@/components/AICapabilities";
 import ExampleWorkflow from "@/components/ExampleWorkflow";
 import PilotBanner from "@/components/PilotBanner";
 import Services from "@/components/Services";
@@ -22,7 +23,8 @@ export default function Home() {
       <main>
         <Hero />
         <Marquee />
-        <PainPoints />
+        <WhatToAutomate />
+        <AICapabilities />
         <ExampleWorkflow />
         <PilotBanner />
         <Services />
@@ -37,6 +39,11 @@ export default function Home() {
       <Footer />
       <SectionViewTracker target="#cennik" eventName="pricing_view" />
       <SectionViewTracker target="#workflow" eventName="workflow_view" />
+      <SectionViewTracker target="#ai" eventName="ai_view" />
+      <SectionViewTracker
+        target="#co-automatyzowac"
+        eventName="what_to_automate_view"
+      />
     </>
   );
 }

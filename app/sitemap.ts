@@ -6,6 +6,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = [
     { url: baseUrl, changeFrequency: "weekly" as const, priority: 1.0 },
     {
+      url: `${baseUrl}/strony-www`,
+      changeFrequency: "monthly" as const,
+      priority: 0.95,
+    },
+    {
+      url: `${baseUrl}/scraping-danych`,
+      changeFrequency: "monthly" as const,
+      priority: 0.95,
+    },
+    {
       url: `${baseUrl}/automatyzacja-procesow-biznesowych`,
       changeFrequency: "monthly" as const,
       priority: 0.9,

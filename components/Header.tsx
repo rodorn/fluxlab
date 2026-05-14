@@ -8,12 +8,29 @@ import { event as gaEvent } from "@/lib/gtag";
 const navLinks = [
   { label: "Jak pracuję", href: "/jak-pracuje" },
   { label: "Cennik", href: "/#cennik" },
-  { label: "O Fluxlabie", href: "/#o-nas" },
   { label: "FAQ", href: "/#faq" },
 ];
 
+// 3 filary — główne ścieżki Fluxlab
+const pillarPages = [
+  {
+    title: "Strony WWW",
+    subtitle: "Nowa strona albo poprawki w obecnej",
+    href: "/strony-www",
+  },
+  {
+    title: "Automatyzacja CRM i leadów",
+    subtitle: "Lead → CRM → handlowiec → raport",
+    href: "/automatyzacja-leadow-crm",
+  },
+  {
+    title: "Scraping danych",
+    subtitle: "Web, PDF, maile, dokumenty",
+    href: "/scraping-danych",
+  },
+];
+
 const servicePages: { title: string; href: string; indent?: boolean }[] = [
-  { title: "Automatyzacja leadów i CRM", href: "/automatyzacja-leadow-crm" },
   { title: "Automatyzacja CRM", href: "/automatyzacja-crm", indent: true },
   { title: "Pipedrive", href: "/automatyzacja-pipedrive", indent: true },
   { title: "Salesforce", href: "/automatyzacja-salesforce", indent: true },
@@ -118,11 +135,42 @@ export default function Header() {
             {servicesOpen && (
               <div
                 role="menu"
-                className="animate-fade-up absolute top-full left-1/2 -translate-x-1/2 mt-4 w-64 bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-xl shadow-gray-200/60 dark:shadow-black/40 p-4"
+                className="animate-fade-up absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[420px] glass-card rounded-2xl shadow-xl shadow-gray-200/60 dark:shadow-black/40 p-5"
                 onMouseEnter={openServices}
                 onMouseLeave={scheduleServicesClose}
               >
-                <div className="absolute -top-[7px] left-1/2 -translate-x-1/2 w-3.5 h-3.5 bg-white dark:bg-gray-900 border-l border-t border-gray-100 dark:border-gray-800 rotate-45 rounded-tl-sm" />
+                <div className="absolute -top-[7px] left-1/2 -translate-x-1/2 w-3.5 h-3.5 bg-white/80 dark:bg-gray-900/80 border-l border-t border-gray-100 dark:border-gray-800 rotate-45 rounded-tl-sm" />
+
+                {/* 3 filary — primary cards */}
+                <p className="text-[10px] font-semibold uppercase tracking-widest text-accent mb-3 px-1">
+                  3 filary
+                </p>
+                <div className="space-y-2 mb-4">
+                  {pillarPages.map((pp) => (
+                    <Link
+                      key={pp.href}
+                      href={pp.href}
+                      role="menuitem"
+                      onClick={() => setServicesOpen(false)}
+                      className="block p-3 rounded-xl hover:bg-accent/5 dark:hover:bg-accent/10 border border-transparent hover:border-accent/20 transition-all group"
+                    >
+                      <p className="text-sm font-semibold text-gray-900 dark:text-white group-hover:text-accent transition-colors">
+                        {pp.title}
+                      </p>
+                      <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
+                        {pp.subtitle}
+                      </p>
+                    </Link>
+                  ))}
+                </div>
+
+                {/* Separator */}
+                <div className="border-t border-gray-200/60 dark:border-gray-700/60 my-3" />
+
+                {/* Pozostałe usługi */}
+                <p className="text-[10px] font-semibold uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-2 px-1">
+                  Szczegółowe usługi
+                </p>
                 <div className="space-y-0.5">
                   {servicePages.map((sp) => (
                     <Link
@@ -130,13 +178,13 @@ export default function Header() {
                       href={sp.href}
                       role="menuitem"
                       onClick={() => setServicesOpen(false)}
-                      className={`block px-3 py-1.5 rounded-xl text-sm hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-accent transition-colors ${
+                      className={`block px-3 py-1.5 rounded-lg text-sm hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-accent transition-colors ${
                         sp.indent
-                          ? "pl-7 text-gray-500 dark:text-gray-400 text-xs"
+                          ? "pl-5 text-gray-500 dark:text-gray-400 text-xs"
                           : "text-gray-700 dark:text-gray-300"
                       }`}
                     >
-                      {sp.indent ? `└ ${sp.title}` : sp.title}
+                      {sp.title}
                     </Link>
                   ))}
                 </div>
@@ -249,21 +297,44 @@ export default function Header() {
             </button>
 
             {mobileServicesOpen && (
-              <div className="mt-3 pl-3 border-l-2 border-accent/20 space-y-2">
-                {servicePages.map((sp) => (
+              <div className="mt-3 pl-3 border-l-2 border-accent/20 space-y-3">
+                {/* 3 filary primary */}
+                {pillarPages.map((pp) => (
                   <Link
-                    key={sp.href}
-                    href={sp.href}
+                    key={pp.href}
+                    href={pp.href}
                     onClick={() => setMenuOpen(false)}
-                    className={`block hover:text-accent transition-colors ${
-                      sp.indent
-                        ? "pl-4 text-xs text-gray-500 dark:text-gray-400"
-                        : "text-sm text-gray-700 dark:text-gray-300"
-                    }`}
+                    className="block hover:text-accent transition-colors"
                   >
-                    {sp.indent ? `└ ${sp.title}` : sp.title}
+                    <p className="text-sm font-semibold text-gray-900 dark:text-white">
+                      {pp.title}
+                    </p>
+                    <p className="text-xs text-gray-500 dark:text-gray-400">
+                      {pp.subtitle}
+                    </p>
                   </Link>
                 ))}
+
+                {/* Separator */}
+                <div className="border-t border-gray-200/60 dark:border-gray-700/60 pt-2 mt-2">
+                  <p className="text-[10px] font-semibold uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-1.5">
+                    Szczegółowe usługi
+                  </p>
+                  {servicePages.map((sp) => (
+                    <Link
+                      key={sp.href}
+                      href={sp.href}
+                      onClick={() => setMenuOpen(false)}
+                      className={`block hover:text-accent transition-colors ${
+                        sp.indent
+                          ? "pl-3 text-xs text-gray-500 dark:text-gray-400 py-0.5"
+                          : "text-sm text-gray-700 dark:text-gray-300 py-0.5"
+                      }`}
+                    >
+                      {sp.title}
+                    </Link>
+                  ))}
+                </div>
               </div>
             )}
           </div>
