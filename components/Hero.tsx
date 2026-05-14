@@ -4,40 +4,38 @@ import TrackedCTA from "@/components/TrackedCTA";
 export default function Hero() {
   return (
     <section className="relative pt-20 pb-8 lg:pt-28 lg:pb-12 overflow-hidden bg-mesh noise-overlay">
-      {/* Decorative gradient blobs — silniejsze, mniej blur */}
+      {/* Decorative gradient blobs — wyciszone, nie konkurują z tekstem */}
       <div
         aria-hidden="true"
-        className="blob-strong blob-accent animate-drift-slow -z-10 top-[-10%] left-[-10%] w-[700px] h-[700px]"
+        className="blob blob-accent animate-drift-slow -z-10 top-[-15%] left-[-15%] w-[600px] h-[600px]"
       />
       <div
         aria-hidden="true"
-        className="blob-strong blob-violet animate-drift -z-10 bottom-[-30%] right-[-5%] w-[600px] h-[600px]"
+        className="blob blob-violet animate-drift -z-10 bottom-[-25%] right-[-10%] w-[500px] h-[500px]"
       />
       <div
         aria-hidden="true"
-        className="blob blob-cyan animate-drift-slow -z-10 top-[20%] right-[25%] w-[400px] h-[400px]"
+        className="blob blob-cyan animate-drift-slow -z-10 top-[30%] right-[30%] w-[300px] h-[300px] opacity-40 dark:opacity-25"
       />
 
       <div className="container-wide relative">
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-          {/* Left - text (7 kolumn — większa proporcja) */}
+          {/* Left - text */}
           <div className="lg:col-span-7">
             {/* Badge */}
-            <div className="animate-fade-up-1 inline-flex items-center gap-2 bg-white/80 dark:bg-gray-900/70 backdrop-blur-sm border border-gray-200/60 dark:border-gray-700/60 text-accent text-xs font-semibold px-3 py-1.5 rounded-full mb-8 shadow-sm">
+            <div className="animate-fade-up-1 inline-flex items-center gap-2 glass-card text-accent text-xs font-semibold px-3 py-1.5 rounded-full mb-8">
               <span className="w-1.5 h-1.5 bg-accent rounded-full animate-soft-pulse" />
               Automatyzacja leadów, CRM i raportowania dla firm B2B
             </div>
 
-            {/* Headline — GIGANTYCZNY z animowanym gradient flow */}
-            <h1 className="display-2xl animate-fade-up-2 mb-8 text-gray-900 dark:text-white">
-              <span className="text-gradient-flow">Automatyzacja</span>
-              <br />
-              leadów, CRM
-              <br />i raportowania.
+            {/* Headline — 2 linie, czytelna skala */}
+            <h1 className="display-xl animate-fade-up-2 mb-8 text-gray-900 dark:text-white">
+              <span className="text-gradient-flow">Automatyzacja</span> leadów,
+              CRM i raportowania.
             </h1>
 
             {/* Subheadline */}
-            <p className="animate-fade-up-3 text-lg lg:text-xl text-gray-600 dark:text-gray-400 leading-relaxed mb-10 max-w-2xl">
+            <p className="animate-fade-up-3 text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-10 max-w-2xl">
               Lead z formularza, reklamy lub maila trafia do CRM, dostaje
               właściciela, zadanie, follow-up i raport. Bez ręcznego
               przepisywania, bez zgubionych zapytań, bez Excela robionego w
@@ -51,7 +49,7 @@ export default function Hero() {
                 location="hero"
                 label="diagnoza"
                 eventName="cta_click_hero_audit"
-                className="btn-primary text-base px-8 py-4 glow-accent"
+                className="btn-primary text-base px-8 py-4"
               >
                 Zamów bezpłatną diagnozę procesu
               </TrackedCTA>
@@ -72,7 +70,7 @@ export default function Hero() {
             </p>
           </div>
 
-          {/* Right - image (5 kolumn) */}
+          {/* Right - image */}
           <div className="lg:col-span-5 relative hidden lg:block animate-fade-up-3">
             <div className="relative rounded-3xl overflow-hidden aspect-[4/5] shadow-2xl ring-1 ring-gray-900/5 dark:ring-white/10">
               <Image
@@ -82,32 +80,21 @@ export default function Hero() {
                 className="object-cover"
                 priority
               />
-              {/* Gradient overlay — mocniejszy, kolorowy */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-accent/40 via-violet-500/20 to-cyan-500/10 mix-blend-multiply dark:mix-blend-overlay" />
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-gray-950/40" />
-            </div>
+              <div className="absolute inset-0 bg-gradient-to-tr from-accent/35 via-violet-500/15 to-transparent mix-blend-multiply dark:mix-blend-overlay" />
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-gray-950/30" />
 
-            {/* Floating stats card — z glassmorphism */}
-            <div className="absolute -bottom-6 -left-6 glass-strong rounded-2xl shadow-xl border border-white/40 dark:border-white/10 p-5 max-w-[200px]">
-              <p className="stat-number text-gradient-accent">&lt; 5 min</p>
-              <p className="text-xs text-gray-600 dark:text-gray-400 mt-1.5 leading-snug">
-                czas reakcji na leada po wdrożeniu
-              </p>
-            </div>
-
-            {/* Floating mini-card prawy górny */}
-            <div className="absolute -top-4 -right-4 glass-subtle rounded-xl border border-white/40 dark:border-white/10 p-3 shadow-lg">
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-green-500 rounded-full animate-soft-pulse" />
-                <p className="text-xs font-medium text-gray-700 dark:text-gray-300">
-                  Workflow aktywny
+              {/* Floating stat — wewnątrz image div, nie wystaje na tekst */}
+              <div className="absolute bottom-5 left-5 right-5 glass-card rounded-2xl p-4">
+                <p className="stat-number text-gradient-accent">&lt; 5 min</p>
+                <p className="text-xs text-gray-700 dark:text-gray-200 mt-1 leading-snug font-medium">
+                  czas reakcji na leada po wdrożeniu
                 </p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Stats — większe liczby z gradientem */}
+        {/* Stats */}
         <div className="animate-fade-up-4 mt-20 lg:mt-28 grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10 border-t border-gray-200/60 dark:border-gray-800/60 pt-10">
           {[
             {

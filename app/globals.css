@@ -124,19 +124,20 @@
       radial-gradient(at 10% 90%, rgba(99, 102, 241, 0.15) 0px, transparent 50%);
   }
 
-  /* Subtle noise overlay — modern texture */
+  /* Subtle noise overlay — drobne ziarno, prawie niewidoczne */
   .noise-overlay::before {
     content: "";
     position: absolute;
     inset: 0;
     pointer-events: none;
     z-index: 1;
-    opacity: 0.04;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' /%3E%3C/svg%3E");
+    opacity: 0.025;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 320 320' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.6' numOctaves='2' stitchTiles='stitch' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' /%3E%3C/svg%3E");
+    background-size: 160px 160px;
   }
 
   .dark .noise-overlay::before {
-    opacity: 0.08;
+    opacity: 0.04;
   }
 
   /* Card lift on hover — subtle 3D */
@@ -169,17 +170,33 @@
     font-size: clamp(2rem, 4vw, 3.25rem);
   }
 
-  /* Glassmorphism 2.0 — subtle / strong wariants */
+  /* Glassmorphism 2.0 — subtle / strong / card wariants */
   .glass-subtle {
     @apply backdrop-blur-md bg-white/70 dark:bg-gray-950/70;
-    -webkit-backdrop-filter: blur(12px) saturate(140%);
-    backdrop-filter: blur(12px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(160%);
+    backdrop-filter: blur(14px) saturate(160%);
   }
 
   .glass-strong {
-    @apply backdrop-blur-xl bg-white/80 dark:bg-gray-950/80;
-    -webkit-backdrop-filter: blur(20px) saturate(160%);
-    backdrop-filter: blur(20px) saturate(160%);
+    @apply backdrop-blur-xl bg-white/75 dark:bg-gray-950/75;
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    backdrop-filter: blur(24px) saturate(180%);
+  }
+
+  /* Glass card — większa transparentność, mocny blur, biały ring — wygląda jak szkło */
+  .glass-card {
+    @apply bg-white/40 dark:bg-gray-900/30 ring-1 ring-white/40 dark:ring-white/15;
+    -webkit-backdrop-filter: blur(28px) saturate(180%);
+    backdrop-filter: blur(28px) saturate(180%);
+    box-shadow:
+      0 8px 32px -8px rgba(15, 23, 42, 0.12),
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.6);
+  }
+
+  .dark .glass-card {
+    box-shadow:
+      0 8px 32px -8px rgba(0, 0, 0, 0.4),
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
   }
 
   /* Decorative gradient blobs — używane jako tło sekcji hero */
