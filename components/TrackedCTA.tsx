@@ -3,6 +3,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { event as gaEvent } from "@/lib/gtag";
+import { useSound } from "@/components/SoundProvider";
 
 interface Props {
   href: string;
@@ -22,6 +23,7 @@ export default function TrackedCTA({
   className,
   children,
 }: Props) {
+  const { play } = useSound();
   const handleClick = () => {
     const params = {
       location,
@@ -32,6 +34,7 @@ export default function TrackedCTA({
     if (eventName) {
       gaEvent(eventName, params);
     }
+    play("click");
   };
 
   const isInternal = href.startsWith("/") && !href.startsWith("//");

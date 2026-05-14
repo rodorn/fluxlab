@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { event as gaEvent } from "@/lib/gtag";
 import { PROBLEM_TYPES, getScalesForType } from "@/lib/form-options";
+import { useSound } from "@/components/SoundProvider";
 
 const inputClass =
   "w-full px-4 py-2.5 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-sm text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-colors disabled:opacity-50 disabled:cursor-not-allowed";
@@ -66,6 +67,7 @@ export default function LandingForm({
   microCopy = "Odpowiedź w 24h. Bez spamu, bez newslettera, bez „szybkiej rozmowy” wciskanej na siłę.",
 }: Props) {
   const router = useRouter();
+  const { play } = useSound();
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [contactPref, setContactPref] = useState("email");
@@ -127,6 +129,7 @@ export default function LandingForm({
           lead_scale: data.problemScale,
           contact_pref: contactPref,
         });
+        play("success");
         const params = new URLSearchParams({
           type: data.problemType,
           scale: data.problemScale,

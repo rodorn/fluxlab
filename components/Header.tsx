@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
+import SoundToggle from "./SoundToggle";
 import { event as gaEvent } from "@/lib/gtag";
 
 const navLinks = [
@@ -220,6 +221,7 @@ export default function Header() {
 
         {/* Right side */}
         <div className="hidden md:flex items-center gap-3">
+          <SoundToggle />
           <ThemeToggle />
           <a
             href="/#kontakt"
@@ -239,6 +241,7 @@ export default function Header() {
 
         {/* Mobile: toggle + hamburger */}
         <div className="md:hidden flex items-center gap-1">
+          <SoundToggle />
           <ThemeToggle />
           <button
             className="p-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
