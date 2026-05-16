@@ -306,6 +306,33 @@ export default function LiveDiagnosis() {
                   </div>
                 </div>
 
+                {/* Promocja — program case study */}
+                <a
+                  href="/pilotaz"
+                  className="mt-4 block rounded-xl border border-accent/30 bg-gradient-to-br from-accent/10 via-violet-500/10 to-accent/10 p-5 transition-colors hover:border-accent/50"
+                >
+                  <div className="flex items-start gap-3">
+                    <span className="flex-shrink-0 inline-flex items-center justify-center px-2.5 py-1 rounded-lg bg-accent text-white text-sm font-bold">
+                      −50%
+                    </span>
+                    <div>
+                      <p className="text-sm font-semibold text-gray-900 dark:text-white">
+                        Program case study — zostały 3 miejsca
+                      </p>
+                      <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">
+                        Zgadzasz się, żebym opisał efekt wdrożenia jako
+                        publiczne case study — płacisz{" "}
+                        <strong>połowę ceny</strong>. Wycena powyżej spada wtedy
+                        o 50%.
+                      </p>
+                      <span className="mt-1.5 inline-flex items-center gap-1 text-sm font-medium text-accent">
+                        Zobacz zasady programu
+                        <span aria-hidden="true">→</span>
+                      </span>
+                    </div>
+                  </div>
+                </a>
+
                 <div className="mt-4 rounded-xl border border-accent/20 bg-accent/5 p-5">
                   <p className="text-xs font-semibold uppercase tracking-wide text-accent">
                     Pierwszy krok
