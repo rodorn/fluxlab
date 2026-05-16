@@ -4,6 +4,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import ContactClickTracker from "@/components/ContactClickTracker";
+import ScrollProgress from "@/components/ScrollProgress";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -182,6 +183,7 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} font-sans`}>
         <GoogleAnalytics />
         <ContactClickTracker />
+        <ScrollProgress />
         {children}
         <SpeedInsights />
         <Analytics />

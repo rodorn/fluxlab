@@ -1,4 +1,5 @@
 import Image from "next/image";
+import CountUp from "@/components/CountUp";
 
 const points = [
   "Główny segment: firmy B2B z dużą liczbą leadów — leasing, finansowanie, brokerzy, dealerzy, usługi profesjonalne",
@@ -114,7 +115,7 @@ export default function About() {
                     className="bg-white/10 backdrop-blur-sm rounded-lg px-3 py-2 border border-white/20"
                   >
                     <p className="text-white font-bold text-lg leading-none">
-                      {item.value}
+                      <CountUp value={item.value} />
                     </p>
                     <p className="text-white/70 text-xs mt-1 leading-tight">
                       {item.label}
