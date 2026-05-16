@@ -1,33 +1,36 @@
 "use client";
 
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 
 /**
- * InteractiveWorkflow — animowany diagram przepływu leada.
- *   Lead → Walidacja → CRM → Handlowiec → Raport
+ * InteractiveWorkflow — żywy diagram automatyzacji.
  *
- * Kropka leci CIĄGŁĄ ścieżką po obrysie kart (górny półobwód każdej karty
- * + łączniki, zaokrąglone rogi) — żadnych skoków. Aktywna karta świeci.
+ * Kulki (leady) wpadają z lewej i płyną po obrysie kart:
+ *   Lead → Walidacja → CRM → Handlowiec → wpadają do kafelka Raport.
+ * Kafelek świeci, gdy kulka W NIM jest (wchodzi → świeci, wychodzi → gaśnie).
+ * Raport gromadzi kulki — gdy się zapełni, "wysyła się" jako mail i resetuje.
  */
 
-type NodeDef = {
+type CardDef = {
   id: string;
   title: string;
-  caption: string;
   color: string;
   icon: ReactNode;
 };
 
-// Geometria — 5 kart w rzędzie
 const VB_W = 720;
-const VB_H = 230;
+const VB_H = 240;
 const CARD_W = 118;
 const CARD_H = 104;
-const CARD_Y = 64;
+const CARD_Y = 70;
 const RX = 16;
 const CARD_X = [20, 160, 301, 441, 582];
-const MID_Y = CARD_Y + CARD_H / 2; // 116
-const STEP_MS = 1500;
+const MID_Y = CARD_Y + CARD_H / 2;
+const REPORT_IDX = 4;
+const MAX_FILL = 5;
+const SPAWN_MS = 1050;
+const TRAVEL_MS = 5200; // czas przejścia kulki przez całą ścieżkę
+const SEND_MS = 1300;
 
 const ICON_LEAD = (
   <path
@@ -144,89 +147,179 @@ const ICON_CHART = (
   </>
 );
 
-const NODES: NodeDef[] = [
-  {
-    id: "lead",
-    title: "Lead",
-    caption: "Lead wpada z formularza, reklamy albo maila.",
-    color: "#f59e0b",
-    icon: ICON_LEAD,
-  },
-  {
-    id: "valid",
-    title: "Walidacja",
-    caption: "AI sprawdza kompletność i klasyfikuje zapytanie.",
-    color: "#06b6d4",
-    icon: ICON_CHECK,
-  },
-  {
-    id: "crm",
-    title: "CRM",
-    caption: "Powstaje osoba, firma i deal — bez przepisywania.",
-    color: "#6366f1",
-    icon: ICON_DB,
-  },
-  {
-    id: "sales",
-    title: "Handlowiec",
-    caption: "Przypisanie właściciela i zadanie kontaktu w 5 minut.",
-    color: "#8b5cf6",
-    icon: ICON_PERSON,
-  },
-  {
-    id: "report",
-    title: "Raport",
-    caption: "Źródło, czas reakcji i wynik trafiają do raportu.",
-    color: "#10b981",
-    icon: ICON_CHART,
-  },
+const CARDS: CardDef[] = [
+  { id: "lead", title: "Lead", color: "#f59e0b", icon: ICON_LEAD },
+  { id: "valid", title: "Walidacja", color: "#06b6d4", icon: ICON_CHECK },
+  { id: "crm", title: "CRM", color: "#6366f1", icon: ICON_DB },
+  { id: "sales", title: "Handlowiec", color: "#8b5cf6", icon: ICON_PERSON },
+  { id: "report", title: "Raport", color: "#10b981", icon: ICON_CHART },
 ];
 
-/** Ciągła ścieżka: górny półobwód każdej karty + łączniki. Zero skoków. */
+/** Ścieżka kulki: górny półobwód kart 0–3, potem zejście do środka Raportu. */
 function buildFlowPath(): string {
   let d = `M ${CARD_X[0]} ${MID_Y}`;
-  CARD_X.forEach((x, i) => {
+  for (let i = 0; i < REPORT_IDX; i++) {
+    const x = CARD_X[i];
     const r = x + CARD_W;
-    // w górę po lewej krawędzi
     d += ` L ${x} ${CARD_Y + RX}`;
-    // lewy górny róg
     d += ` Q ${x} ${CARD_Y} ${x + RX} ${CARD_Y}`;
-    // wzdłuż górnej krawędzi
     d += ` L ${r - RX} ${CARD_Y}`;
-    // prawy górny róg
     d += ` Q ${r} ${CARD_Y} ${r} ${CARD_Y + RX}`;
-    // w dół po prawej krawędzi do środka
     d += ` L ${r} ${MID_Y}`;
-    // łącznik do następnej karty
-    if (i < CARD_X.length - 1) {
-      d += ` L ${CARD_X[i + 1]} ${MID_Y}`;
-    }
-  });
+    d += ` L ${CARD_X[i + 1]} ${MID_Y}`;
+  }
+  // wejście do środka kafelka Raport
+  d += ` L ${CARD_X[REPORT_IDX] + CARD_W / 2} ${MID_Y}`;
   return d;
 }
 
 const FLOW_PATH = buildFlowPath();
 
+type Ball = { id: number; dist: number };
+type RenderBall = { id: number; x: number; y: number };
+
+type Scene = {
+  balls: RenderBall[];
+  fill: number;
+  sending: boolean;
+  active: boolean[];
+};
+
 export default function InteractiveWorkflow() {
-  const [activeStep, setActiveStep] = useState(0);
+  const pathRef = useRef<SVGPathElement | null>(null);
+  const ballsRef = useRef<Ball[]>([]);
+  const fillRef = useRef(0);
+  const sendingRef = useRef(false);
+  const nextId = useRef(0);
+  const lastSpawn = useRef(0);
+  const pausedRef = useRef(false);
+
   const [paused, setPaused] = useState(false);
+  const [scene, setScene] = useState<Scene>({
+    balls: [],
+    fill: 0,
+    sending: false,
+    active: [false, false, false, false, false],
+  });
 
   useEffect(() => {
-    if (paused) return;
-    const t = setInterval(() => {
-      setActiveStep((p) => (p + 1) % NODES.length);
-    }, STEP_MS);
-    return () => clearInterval(t);
-  }, [paused]);
+    const path = pathRef.current;
+    if (!path) return;
+    if (typeof window === "undefined") return;
 
-  const active = NODES[activeStep];
+    const total = path.getTotalLength();
+    const speed = total / TRAVEL_MS; // px / ms
+
+    const reduced = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    if (reduced) {
+      // Statyczny render — kulki rozłożone, raport częściowo pełny
+      const staticBalls: RenderBall[] = [0.15, 0.4, 0.62, 0.85].map((f, i) => {
+        const p = path.getPointAtLength(total * f);
+        return { id: i, x: p.x, y: p.y };
+      });
+      setScene({
+        balls: staticBalls,
+        fill: 2,
+        sending: false,
+        active: [true, true, true, true, true],
+      });
+      return;
+    }
+
+    let raf = 0;
+    let prev = performance.now();
+
+    function frame(now: number) {
+      const dt = Math.min(48, now - prev);
+      prev = now;
+
+      if (!pausedRef.current) {
+        // spawn nowej kulki
+        if (
+          now - lastSpawn.current > SPAWN_MS &&
+          !sendingRef.current &&
+          ballsRef.current.length < 8
+        ) {
+          ballsRef.current.push({ id: nextId.current++, dist: 0 });
+          lastSpawn.current = now;
+        }
+        // advance kulek
+        const remaining: Ball[] = [];
+        for (const b of ballsRef.current) {
+          b.dist += speed * dt;
+          if (b.dist >= total) {
+            // kulka wpadła do Raportu
+            if (!sendingRef.current && fillRef.current < MAX_FILL) {
+              fillRef.current += 1;
+            }
+          } else {
+            remaining.push(b);
+          }
+        }
+        ballsRef.current = remaining;
+        // raport pełny → wyślij
+        if (fillRef.current >= MAX_FILL && !sendingRef.current) {
+          sendingRef.current = true;
+          window.setTimeout(() => {
+            fillRef.current = 0;
+            sendingRef.current = false;
+          }, SEND_MS);
+        }
+      }
+
+      // pozycje kulek + które karty aktywne
+      const pts: RenderBall[] = ballsRef.current.map((b) => {
+        const p = path!.getPointAtLength(b.dist);
+        return { id: b.id, x: p.x, y: p.y };
+      });
+      const active = CARD_X.map((cx, i) => {
+        if (i === REPORT_IDX) {
+          return fillRef.current > 0 || sendingRef.current;
+        }
+        return pts.some(
+          (pt) =>
+            pt.x >= cx - 8 &&
+            pt.x <= cx + CARD_W + 8 &&
+            pt.y >= CARD_Y - 28 &&
+            pt.y <= CARD_Y + CARD_H + 12,
+        );
+      });
+
+      setScene({
+        balls: pts,
+        fill: fillRef.current,
+        sending: sendingRef.current,
+        active,
+      });
+
+      raf = requestAnimationFrame(frame);
+    }
+
+    raf = requestAnimationFrame(frame);
+    return () => cancelAnimationFrame(raf);
+  }, []);
+
+  function onEnter() {
+    pausedRef.current = true;
+    setPaused(true);
+  }
+  function onLeave() {
+    pausedRef.current = false;
+    setPaused(false);
+  }
+
+  const reportCard = CARDS[REPORT_IDX];
+  const reportCx = CARD_X[REPORT_IDX] + CARD_W / 2;
 
   return (
     <div
       className="relative w-full max-w-[680px] mx-auto select-none"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-      aria-label="Animowany diagram automatyzacji leada"
+      onMouseEnter={onEnter}
+      onMouseLeave={onLeave}
+      aria-label="Animowany diagram automatyzacji leadów"
     >
       <svg
         viewBox={`0 0 ${VB_W} ${VB_H}`}
@@ -237,20 +330,20 @@ export default function InteractiveWorkflow() {
         xmlns="http://www.w3.org/2000/svg"
       >
         <title>
-          Diagram automatyzacji leada: formularz → walidacja → CRM → handlowiec
-          → raport
+          Diagram automatyzacji: leady płyną przez walidację, CRM i handlowca,
+          gromadzą się w raporcie, który wysyła się automatycznie.
         </title>
 
         <defs>
           <linearGradient id="iw-flow-grad" x1="0" y1="0" x2="1" y2="0">
             <stop offset="0%" stopColor="#f59e0b" />
-            <stop offset="28%" stopColor="#06b6d4" />
-            <stop offset="55%" stopColor="#6366f1" />
-            <stop offset="80%" stopColor="#8b5cf6" />
+            <stop offset="33%" stopColor="#06b6d4" />
+            <stop offset="62%" stopColor="#6366f1" />
+            <stop offset="88%" stopColor="#8b5cf6" />
             <stop offset="100%" stopColor="#10b981" />
           </linearGradient>
-          <filter id="iw-glow" x="-80%" y="-80%" width="260%" height="260%">
-            <feGaussianBlur stdDeviation="3.4" result="b" />
+          <filter id="iw-glow" x="-90%" y="-90%" width="280%" height="280%">
+            <feGaussianBlur stdDeviation="3.2" result="b" />
             <feMerge>
               <feMergeNode in="b" />
               <feMergeNode in="SourceGraphic" />
@@ -258,7 +351,10 @@ export default function InteractiveWorkflow() {
           </filter>
         </defs>
 
-        {/* Ścieżka bazowa — dim trace po obrysie kart */}
+        {/* Ścieżka — referencyjna (ukryta geometria) */}
+        <path ref={pathRef} d={FLOW_PATH} fill="none" stroke="none" />
+
+        {/* Ścieżka — widoczny dim trace */}
         <path
           d={FLOW_PATH}
           fill="none"
@@ -268,31 +364,25 @@ export default function InteractiveWorkflow() {
           strokeLinecap="round"
           strokeLinejoin="round"
         />
-
-        {/* Ścieżka aktywna — gradient, biegnący dash */}
+        {/* Ścieżka — gradient overlay */}
         <path
           d={FLOW_PATH}
           fill="none"
           stroke="url(#iw-flow-grad)"
-          strokeWidth="2.6"
+          strokeWidth="2.4"
           strokeLinecap="round"
           strokeLinejoin="round"
-          strokeDasharray="10 14"
-          style={{
-            opacity: 0.85,
-            animation: paused ? "none" : "iw-trace 1.4s linear infinite",
-          }}
+          opacity="0.5"
         />
 
         {/* Karty */}
-        {NODES.map((n, i) => {
+        {CARDS.map((c, i) => {
           const x = CARD_X[i];
-          const isActive = activeStep === i;
-          const isDone =
-            activeStep > i || (activeStep === 0 && i === NODES.length - 1);
+          const isActive = scene.active[i];
+          const isReport = i === REPORT_IDX;
           return (
-            <g key={n.id}>
-              {/* Glow ring na aktywnej */}
+            <g key={c.id}>
+              {/* Glow ring gdy aktywna */}
               <rect
                 x={x - 5}
                 y={CARD_Y - 5}
@@ -300,14 +390,14 @@ export default function InteractiveWorkflow() {
                 height={CARD_H + 10}
                 rx={RX + 5}
                 fill="none"
-                stroke={n.color}
+                stroke={c.color}
                 strokeWidth="2"
                 style={{
-                  opacity: isActive ? 0.6 : 0,
-                  transition: "opacity 0.35s ease",
+                  opacity: isActive ? 0.65 : 0,
+                  transition: "opacity 0.25s ease",
                 }}
               />
-              {/* Tło karty */}
+              {/* Tło */}
               <rect
                 x={x}
                 y={CARD_Y}
@@ -317,9 +407,9 @@ export default function InteractiveWorkflow() {
                 className="fill-white dark:fill-gray-900"
                 style={{
                   filter: isActive
-                    ? `drop-shadow(0 10px 22px ${n.color}45)`
+                    ? `drop-shadow(0 10px 22px ${c.color}50)`
                     : "drop-shadow(0 3px 8px rgba(15,23,42,0.07))",
-                  transition: "filter 0.35s ease",
+                  transition: "filter 0.25s ease",
                 }}
               />
               {/* Tint */}
@@ -329,10 +419,10 @@ export default function InteractiveWorkflow() {
                 width={CARD_W}
                 height={CARD_H}
                 rx={RX}
-                fill={n.color}
+                fill={c.color}
                 style={{
-                  opacity: isActive ? 0.13 : 0.05,
-                  transition: "opacity 0.35s ease",
+                  opacity: isActive ? 0.14 : 0.05,
+                  transition: "opacity 0.25s ease",
                 }}
               />
               {/* Border */}
@@ -343,35 +433,35 @@ export default function InteractiveWorkflow() {
                 height={CARD_H}
                 rx={RX}
                 fill="none"
-                stroke={isActive ? n.color : "currentColor"}
-                strokeWidth={isActive ? 1.6 : 1}
+                stroke={isActive ? c.color : "currentColor"}
+                strokeWidth={isActive ? 1.7 : 1}
                 className={isActive ? "" : "text-gray-200 dark:text-gray-700"}
-                style={{ transition: "stroke 0.35s ease" }}
+                style={{ transition: "stroke 0.25s ease" }}
               />
 
-              {/* Ikona w kółku — wycentrowana */}
+              {/* Ikona */}
               <g
-                transform={`translate(${x + CARD_W / 2 - 17}, ${CARD_Y + 18})`}
+                transform={`translate(${x + CARD_W / 2 - 17}, ${CARD_Y + 16})`}
               >
                 <circle
                   cx={17}
                   cy={17}
                   r={20}
-                  fill={n.color}
+                  fill={c.color}
                   style={{
-                    opacity: isActive ? 0.2 : 0.1,
-                    transition: "opacity 0.35s ease",
+                    opacity: isActive ? 0.22 : 0.1,
+                    transition: "opacity 0.25s ease",
                   }}
                 />
-                <g transform="translate(5, 5)" style={{ color: n.color }}>
-                  {n.icon}
+                <g transform="translate(5, 5)" style={{ color: c.color }}>
+                  {c.icon}
                 </g>
               </g>
 
               {/* Tytuł */}
               <text
                 x={x + CARD_W / 2}
-                y={CARD_Y + CARD_H - 22}
+                y={CARD_Y + CARD_H - 26}
                 textAnchor="middle"
                 className="fill-gray-900 dark:fill-gray-50"
                 style={{
@@ -380,86 +470,109 @@ export default function InteractiveWorkflow() {
                   letterSpacing: "-0.01em",
                 }}
               >
-                {n.title}
+                {c.title}
               </text>
 
-              {/* Numer kroku */}
-              <text
-                x={x + CARD_W / 2}
-                y={CARD_Y + CARD_H - 8}
-                textAnchor="middle"
-                className="fill-gray-400 dark:fill-gray-500"
-                style={{ fontSize: "9px", letterSpacing: "0.08em" }}
-              >
-                KROK {i + 1}
-              </text>
-
-              {/* Checkmark gdy ukończony */}
-              {isDone && !isActive && (
-                <g transform={`translate(${x + CARD_W - 20}, ${CARD_Y + 8})`}>
-                  <circle cx={6} cy={6} r={6.5} fill={n.color} />
-                  <path
-                    d="M3.3 6.3l1.9 1.9 3.4-3.6"
-                    stroke="white"
-                    strokeWidth="1.5"
-                    fill="none"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
+              {/* Raport: licznik wypełnienia kropkami */}
+              {isReport ? (
+                <g>
+                  {Array.from({ length: MAX_FILL }).map((_, k) => (
+                    <circle
+                      key={k}
+                      cx={x + CARD_W / 2 - ((MAX_FILL - 1) * 11) / 2 + k * 11}
+                      cy={CARD_Y + CARD_H - 13}
+                      r={3.6}
+                      fill={c.color}
+                      style={{
+                        opacity: k < scene.fill ? 1 : 0.18,
+                        transition: "opacity 0.2s ease",
+                      }}
+                    />
+                  ))}
                 </g>
+              ) : (
+                <text
+                  x={x + CARD_W / 2}
+                  y={CARD_Y + CARD_H - 11}
+                  textAnchor="middle"
+                  className="fill-gray-400 dark:fill-gray-500"
+                  style={{ fontSize: "9px", letterSpacing: "0.08em" }}
+                >
+                  KROK {i + 1}
+                </text>
               )}
             </g>
           );
         })}
 
-        {/* Lead-dot — leci po ciągłej ścieżce obrysu */}
-        {!paused && (
-          <circle r="6.5" fill="#ffffff" filter="url(#iw-glow)">
-            <animateMotion
-              dur={`${(STEP_MS * NODES.length) / 1000}s`}
-              repeatCount="indefinite"
-              path={FLOW_PATH}
-              rotate="auto"
-            />
-            <animate
-              attributeName="fill"
-              dur={`${(STEP_MS * NODES.length) / 1000}s`}
-              repeatCount="indefinite"
-              values="#f59e0b;#06b6d4;#6366f1;#8b5cf6;#10b981;#f59e0b"
-              keyTimes="0;0.2;0.45;0.7;0.92;1"
-            />
-          </circle>
+        {/* Kulki w locie */}
+        {scene.balls.map((b) => (
+          <circle
+            key={b.id}
+            cx={b.x}
+            cy={b.y}
+            r="6"
+            fill="#ffffff"
+            stroke="#6366f1"
+            strokeWidth="2"
+            filter="url(#iw-glow)"
+          />
+        ))}
+
+        {/* Wysyłka raportu — koperta wylatuje w górę */}
+        {scene.sending && (
+          <g style={{ animation: `iw-send ${SEND_MS}ms ease-out forwards` }}>
+            <g transform={`translate(${reportCx - 16}, ${CARD_Y - 6})`}>
+              <rect x="0" y="0" width="32" height="22" rx="4" fill="#10b981" />
+              <path
+                d="M2 3l14 10L30 3"
+                fill="none"
+                stroke="#ffffff"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </g>
+          </g>
         )}
       </svg>
 
-      {/* Dynamiczny opis aktywnego kroku */}
-      <div className="mt-3 flex items-center justify-center gap-2.5 min-h-[24px] text-center">
-        <span
-          className="inline-block w-2 h-2 rounded-full shrink-0"
-          style={{ background: active.color }}
-          aria-hidden
-        />
-        <p
-          key={active.id}
-          className="text-sm text-gray-600 dark:text-gray-300 animate-fade-up"
-        >
-          <span className="font-semibold" style={{ color: active.color }}>
-            {active.title}:
-          </span>{" "}
-          {active.caption}
-        </p>
-      </div>
+      {/* Caption */}
+      <p
+        className="mt-3 text-center text-sm text-gray-600 dark:text-gray-300"
+        aria-live="polite"
+      >
+        {scene.sending ? (
+          <span className="font-semibold text-emerald-600 dark:text-emerald-400">
+            Raport gotowy — wysłany na maila ✓
+          </span>
+        ) : (
+          <>
+            Leady płyną przez proces i gromadzą się w raporcie.{" "}
+            <span className="text-gray-400 dark:text-gray-500">
+              {paused ? "Wstrzymane." : `Zebrano ${scene.fill}/${MAX_FILL}.`}
+            </span>
+          </>
+        )}
+      </p>
 
       <style jsx>{`
-        @keyframes iw-trace {
-          to {
-            stroke-dashoffset: -24;
+        @keyframes iw-send {
+          0% {
+            transform: translateY(0) scale(0.6);
+            opacity: 0;
           }
-        }
-        @media (prefers-reduced-motion: reduce) {
-          :global(svg path),
-          :global(svg circle) {
-            animation: none !important;
+          25% {
+            transform: translateY(-4px) scale(1);
+            opacity: 1;
+          }
+          70% {
+            transform: translateY(-46px) scale(1);
+            opacity: 1;
+          }
+          100% {
+            transform: translateY(-86px) scale(0.85);
+            opacity: 0;
           }
         }
       `}</style>
