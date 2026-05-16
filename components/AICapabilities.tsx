@@ -109,7 +109,7 @@ export default function AICapabilities() {
     <section
       id="ai"
       aria-labelledby="ai-heading"
-      className="scroll-mt-16 py-16 lg:py-24 relative overflow-hidden bg-gray-50/50 dark:bg-gray-900/30"
+      className="section-violet scroll-mt-16 py-16 lg:py-24 relative overflow-hidden"
     >
       <div
         aria-hidden="true"

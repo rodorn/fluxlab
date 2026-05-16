@@ -157,9 +157,12 @@ export default function WhatToAutomate() {
     <section
       id="co-automatyzowac"
       aria-labelledby="co-automatyzowac-heading"
-      className="scroll-mt-16 py-16 lg:py-24 relative overflow-hidden"
+      className="section-amber scroll-mt-16 py-16 lg:py-24 relative overflow-hidden"
     >
-      <div className="blob-accent -z-10 opacity-40" aria-hidden="true" />
+      <div
+        aria-hidden="true"
+        className="blob blob-amber animate-drift-slow -z-10 top-[-15%] left-[-10%] w-[480px] h-[480px] opacity-50 dark:opacity-30"
+      />
 
       <div className="container-wide">
         <div className="max-w-3xl">

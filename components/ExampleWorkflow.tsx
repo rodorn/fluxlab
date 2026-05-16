@@ -50,9 +50,13 @@ export default function ExampleWorkflow() {
   return (
     <section
       id="workflow"
-      className="scroll-mt-16 py-12 lg:py-16 bg-gray-50 dark:bg-gray-900/50 border-y border-gray-100 dark:border-gray-800"
+      className="section-emerald scroll-mt-16 py-12 lg:py-16 relative overflow-hidden border-y border-emerald-100/60 dark:border-emerald-900/30"
     >
-      <div className="container-wide">
+      <div
+        aria-hidden="true"
+        className="blob blob-emerald animate-drift -z-10 bottom-[-25%] right-[-10%] w-[460px] h-[460px] opacity-45 dark:opacity-25"
+      />
+      <div className="container-wide relative">
         <RevealOnScroll className="max-w-2xl mb-10">
           <p className="section-label mb-3">Jak to działa</p>
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">

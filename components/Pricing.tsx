@@ -51,8 +51,15 @@ const tracks = [
 
 export default function Pricing() {
   return (
-    <section id="cennik" className="scroll-mt-16 py-12 lg:py-16">
-      <div className="container-wide">
+    <section
+      id="cennik"
+      className="section-cyan scroll-mt-16 py-12 lg:py-16 relative overflow-hidden"
+    >
+      <div
+        aria-hidden="true"
+        className="blob blob-cyan animate-drift-slow -z-10 top-[-10%] right-[-12%] w-[420px] h-[420px] opacity-40 dark:opacity-25"
+      />
+      <div className="container-wide relative">
         <RevealOnScroll className="max-w-2xl mb-10">
           <p className="section-label mb-3">Cennik</p>
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
