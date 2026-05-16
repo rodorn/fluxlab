@@ -82,6 +82,16 @@ const tools = [
           type: "string",
           description: "Krótka uwaga skąd ten szacunek i od czego zależy",
         },
+        estimatedCost: {
+          type: "string",
+          description:
+            "Orientacyjne widełki kosztu wdrożenia w PLN, np. '1 500 – 3 000 zł' albo 'od 5 000 zł'. Dla dużych/niestandardowych: 'wycena indywidualna'.",
+        },
+        costNote: {
+          type: "string",
+          description:
+            "Krótka uwaga, że to wstępne widełki, a finalna wycena powstaje po bezpłatnej diagnozie i zależy od liczby źródeł, integracji i jakości danych.",
+        },
         firstStep: {
           type: "string",
           description: "Rekomendowany pierwszy krok do wdrożenia",
@@ -100,6 +110,8 @@ const tools = [
         "automationSteps",
         "timeSavedHours",
         "timeSavedNote",
+        "estimatedCost",
+        "costNote",
         "firstStep",
         "honestNote",
       ],
@@ -163,6 +175,14 @@ ZASADY:
 - honestNote zostaw pusty ("") gdy proces nadaje się do automatyzacji bez zastrzeżeń.
 - processName maksymalnie 60 znaków. automationSteps: 3-5 kroków.
 - Pisz po polsku, rzeczowo, bez marketingowego żargonu.
+
+WSTĘPNA WYCENA (estimatedCost) — orientacyjne widełki na bazie cennika Fluxlab:
+- Pojedyncza, prosta automatyzacja (1 proces, 1-2 integracje): 1 500 – 3 000 zł
+- Średnie wdrożenie (kilka kroków, integracje, routing, follow-up): 3 000 – 7 000 zł
+- Większy proces sprzedaży / multi-source / niestandardowa logika: od 7 000 zł lub "wycena indywidualna"
+- Scraping: prosty POC 2 000 – 4 000 zł, pełny pipeline od 5 000 zł
+- Strona WWW: poprawki/landing 2 000 – 4 500 zł, strona firmowa od 4 500 zł
+Podawaj WIDEŁKI, nie pojedynczą liczbę. Zawyżaj raczej niż zaniżaj — lepiej, żeby finalna wycena była niższa niż wstępna. W costNote zaznacz, że to wstępny szacunek, a wiążąca wycena powstaje po bezpłatnej diagnozie.
 
 Wywołaj generate_diagnosis.`,
         input: [{ role: "user", content: input }],

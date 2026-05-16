@@ -16,6 +16,8 @@ interface DiagnosisResult {
   automationSteps: AutomationStep[];
   timeSavedHours: number;
   timeSavedNote: string;
+  estimatedCost: string;
+  costNote: string;
   firstStep: string;
   honestNote: string;
 }
@@ -268,21 +270,40 @@ export default function LiveDiagnosis() {
                   </ol>
                 </div>
 
-                <div className="mt-6 rounded-xl border border-gray-100 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 p-5">
-                  {result.timeSavedHours > 0 ? (
-                    <>
-                      <p className="stat-number text-gradient-flow">
-                        ~{result.timeSavedHours}h / mies.
-                      </p>
-                      <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
+                <div className="mt-6 grid sm:grid-cols-2 gap-4">
+                  {/* Oszczędność czasu */}
+                  <div className="rounded-xl border border-gray-100 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 p-5">
+                    <p className="text-xs font-semibold uppercase tracking-wide text-gray-400 dark:text-gray-500 mb-1.5">
+                      Szacowana oszczędność
+                    </p>
+                    {result.timeSavedHours > 0 ? (
+                      <>
+                        <p className="stat-number text-gradient-flow">
+                          ~{result.timeSavedHours}h / mies.
+                        </p>
+                        <p className="mt-1.5 text-xs text-gray-500 dark:text-gray-400">
+                          {result.timeSavedNote}
+                        </p>
+                      </>
+                    ) : (
+                      <p className="text-sm text-gray-600 dark:text-gray-300">
                         {result.timeSavedNote}
                       </p>
-                    </>
-                  ) : (
-                    <p className="text-sm text-gray-600 dark:text-gray-300">
-                      {result.timeSavedNote}
+                    )}
+                  </div>
+
+                  {/* Wstępna wycena */}
+                  <div className="rounded-xl border border-gray-100 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 p-5">
+                    <p className="text-xs font-semibold uppercase tracking-wide text-gray-400 dark:text-gray-500 mb-1.5">
+                      Wstępna wycena wdrożenia
                     </p>
-                  )}
+                    <p className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                      {result.estimatedCost}
+                    </p>
+                    <p className="mt-1.5 text-xs text-gray-500 dark:text-gray-400">
+                      {result.costNote}
+                    </p>
+                  </div>
                 </div>
 
                 <div className="mt-4 rounded-xl border border-accent/20 bg-accent/5 p-5">
