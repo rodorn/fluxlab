@@ -23,13 +23,13 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <LiveDiagnosis />
         <Marquee />
         <WhatToAutomate />
         <AICapabilities />
         <ExampleWorkflow />
         <PilotBanner />
         <Services />
-        <LiveDiagnosis />
         <Diagnosis />
         <Pricing />
         <Proof />
