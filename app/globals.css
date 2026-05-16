@@ -23,6 +23,39 @@
   ::selection {
     @apply bg-accent/30 text-gray-900 dark:text-white;
   }
+
+  /* Custom scrollbar — cienki, accent na hover */
+  ::-webkit-scrollbar {
+    width: 11px;
+    height: 11px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 dark:bg-gray-700;
+    border-radius: 9999px;
+    border: 3px solid transparent;
+    background-clip: padding-box;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-accent/60 dark:bg-accent/60;
+    background-clip: padding-box;
+  }
+
+  /* Firefox */
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(209 213 219) transparent;
+  }
+
+  .dark html,
+  html.dark {
+    scrollbar-color: rgb(55 65 81) transparent;
+  }
 }
 
 @layer components {

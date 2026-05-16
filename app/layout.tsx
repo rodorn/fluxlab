@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/next";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import ContactClickTracker from "@/components/ContactClickTracker";
 import ScrollProgress from "@/components/ScrollProgress";
+import ScrollToTop from "@/components/ScrollToTop";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -185,6 +186,7 @@ export default function RootLayout({
         <ContactClickTracker />
         <ScrollProgress />
         {children}
+        <ScrollToTop />
         <SpeedInsights />
         <Analytics />
       </body>
