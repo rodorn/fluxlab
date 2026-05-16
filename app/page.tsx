@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Marquee from "@/components/Marquee";
 import WhatToAutomate from "@/components/WhatToAutomate";
+import LiveDiagnosis from "@/components/LiveDiagnosis";
 import AICapabilities from "@/components/AICapabilities";
 import ExampleWorkflow from "@/components/ExampleWorkflow";
 import PilotBanner from "@/components/PilotBanner";
@@ -24,6 +25,7 @@ export default function Home() {
         <Hero />
         <Marquee />
         <WhatToAutomate />
+        <LiveDiagnosis />
         <AICapabilities />
         <ExampleWorkflow />
         <PilotBanner />
@@ -40,6 +42,7 @@ export default function Home() {
       <SectionViewTracker target="#cennik" eventName="pricing_view" />
       <SectionViewTracker target="#workflow" eventName="workflow_view" />
       <SectionViewTracker target="#ai" eventName="ai_view" />
+      <SectionViewTracker target="#generator" eventName="ai_generator_view" />
       <SectionViewTracker
         target="#co-automatyzowac"
         eventName="what_to_automate_view"

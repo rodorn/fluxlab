@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import RevealOnScroll from "@/components/RevealOnScroll";
 
 const faqs = [
   {
@@ -54,27 +55,40 @@ function FAQItem({
   const buttonId = `faq-trigger-${index}`;
 
   return (
-    <div className="border-b border-gray-100 dark:border-gray-800 last:border-0">
+    <RevealOnScroll
+      delay={Math.min(index + 1, 4) as 1 | 2 | 3 | 4}
+      className={`group rounded-xl border transition-all duration-300 ${
+        open
+          ? "border-accent/40 bg-white dark:bg-gray-800/70 shadow-md shadow-accent/5"
+          : "border-gray-100 dark:border-gray-800 bg-white/60 dark:bg-gray-800/30 hover:border-accent/30 hover:bg-white dark:hover:bg-gray-800/60"
+      }`}
+    >
       <h3 className="m-0">
         <button
           id={buttonId}
           onClick={() => setOpen(!open)}
-          className="w-full flex items-center justify-between gap-6 py-5 text-left"
+          className="w-full flex items-center justify-between gap-6 px-5 py-4 text-left rounded-xl"
           aria-expanded={open}
           aria-controls={panelId}
         >
-          <span className="text-base font-medium text-gray-900 dark:text-white">
+          <span
+            className={`text-base font-medium transition-colors duration-200 ${
+              open
+                ? "text-accent"
+                : "text-gray-900 dark:text-white group-hover:text-accent"
+            }`}
+          >
             {question}
           </span>
           <span
             aria-hidden="true"
-            className={`flex-shrink-0 w-5 h-5 flex items-center justify-center rounded-full border border-gray-200 dark:border-gray-700 text-gray-400 dark:text-gray-500 transition-transform duration-200 ${
+            className={`flex-shrink-0 w-7 h-7 flex items-center justify-center rounded-full border transition-all duration-300 ${
               open
-                ? "rotate-45 border-accent text-accent dark:border-accent dark:text-accent"
-                : ""
+                ? "rotate-45 border-accent bg-accent text-white"
+                : "border-gray-200 dark:border-gray-700 text-gray-400 dark:text-gray-500 group-hover:border-accent group-hover:text-accent"
             }`}
           >
-            <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+            <svg width="11" height="11" viewBox="0 0 10 10" fill="none">
               <path
                 d="M5 1v8M1 5h8"
                 stroke="currentColor"
@@ -91,15 +105,21 @@ function FAQItem({
         role="region"
         aria-labelledby={buttonId}
         aria-hidden={!open}
-        className={`overflow-hidden transition-all duration-300 ease-in-out ${
-          open ? "max-h-96 pb-5" : "max-h-0"
+        className={`grid transition-[grid-template-rows] duration-300 ease-in-out ${
+          open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
         }`}
       >
-        <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed pr-10">
-          {answer}
-        </p>
+        <div className="overflow-hidden">
+          <p
+            className={`text-gray-500 dark:text-gray-400 text-sm leading-relaxed px-5 pb-5 transition-opacity duration-300 ${
+              open ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            {answer}
+          </p>
+        </div>
       </div>
-    </div>
+    </RevealOnScroll>
   );
 }
 
@@ -108,7 +128,7 @@ export default function FAQ() {
     <section
       id="faq"
       aria-labelledby="faq-heading"
-      className="scroll-mt-16 py-4 lg:py-7 bg-gray-50 dark:bg-gray-900"
+      className="section-cyan scroll-mt-16 py-4 lg:py-7 bg-gray-50 dark:bg-gray-900 relative overflow-hidden"
     >
       <script
         type="application/ld+json"
@@ -127,14 +147,24 @@ export default function FAQ() {
           }),
         }}
       />
-      <div className="container-wide">
-        <div className="grid lg:grid-cols-3 gap-16">
+
+      <div
+        aria-hidden="true"
+        className="blob blob-cyan animate-drift-slow -z-10 top-[-14%] right-[-10%] w-[440px] h-[440px] opacity-40 dark:opacity-25"
+      />
+      <div
+        aria-hidden="true"
+        className="blob blob-accent animate-drift-slow -z-10 bottom-[-16%] left-[-12%] w-[360px] h-[360px] opacity-35 dark:opacity-20"
+      />
+
+      <div className="container-wide relative">
+        <div className="grid lg:grid-cols-3 gap-10 lg:gap-16 lg:items-start">
           {/* Left - heading */}
-          <div>
+          <RevealOnScroll className="lg:sticky lg:top-24">
             <p className="section-label mb-3">FAQ</p>
             <h2
               id="faq-heading"
-              className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4"
+              className="display-md font-bold text-gray-900 dark:text-white mb-4"
             >
               Najczęstsze pytania
             </h2>
@@ -145,10 +175,10 @@ export default function FAQ() {
             <a href="#kontakt" className="btn-primary">
               Zadaj pytanie
             </a>
-          </div>
+          </RevealOnScroll>
 
           {/* Right - accordion */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-2 flex flex-col gap-3">
             {faqs.map((faq, i) => (
               <FAQItem
                 key={faq.question}

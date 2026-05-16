@@ -1,4 +1,5 @@
 import Link from "next/link";
+import RevealOnScroll from "@/components/RevealOnScroll";
 
 const cards = [
   {
@@ -79,10 +80,14 @@ export default function Proof() {
     <section
       id="dowody"
       aria-labelledby="dowody-heading"
-      className="py-12 lg:py-16 scroll-mt-16"
+      className="section-violet relative overflow-hidden py-12 lg:py-16 scroll-mt-16"
     >
+      {/* Atmosfera tła */}
+      <div className="blob blob-violet -z-10 -top-20 right-0 h-80 w-80" />
+      <div className="blob blob-accent -z-10 bottom-0 -left-24 h-72 w-72" />
+
       <div className="container-wide">
-        <div className="max-w-2xl mb-10">
+        <RevealOnScroll className="max-w-2xl mb-10">
           <p className="section-label mb-3">Dowody</p>
           <h2
             id="dowody-heading"
@@ -94,47 +99,56 @@ export default function Proof() {
             Trzy sposoby, żeby sprawdzić, czy moje podejście pasuje do Twojej
             firmy — bez żadnej rozmowy sprzedażowej.
           </p>
-        </div>
+        </RevealOnScroll>
 
         <div className="grid md:grid-cols-3 gap-5 lg:gap-6">
-          {cards.map((c) => (
-            <Link
+          {cards.map((c, index) => (
+            <RevealOnScroll
               key={c.title}
-              href={c.href}
-              className="group flex flex-col bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-6 lg:p-7 hover:border-accent/40 dark:hover:border-accent/50 transition-colors"
+              delay={Math.min(index + 1, 4) as 1 | 2 | 3 | 4}
             >
-              <div className="w-10 h-10 rounded-xl bg-accent-light dark:bg-accent-dark-light text-accent flex items-center justify-center mb-4">
-                {c.icon}
-              </div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-accent mb-2">
-                {c.label}
-              </p>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3 group-hover:text-accent transition-colors">
-                {c.title}
-              </h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-5 flex-1">
-                {c.description}
-              </p>
-              <span className="text-sm font-medium text-accent inline-flex items-center gap-1.5">
-                {c.cta}
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 14 14"
-                  fill="none"
-                  className="transition-transform group-hover:translate-x-0.5"
+              <Link
+                href={c.href}
+                className="card-lift group relative flex h-full flex-col overflow-hidden bg-white/85 backdrop-blur-sm dark:bg-white/[0.06] border border-gray-100 dark:border-white/10 rounded-2xl p-6 lg:p-7 hover:border-accent/40 dark:hover:border-accent/50"
+              >
+                {/* Akcent gradientowy u góry karty */}
+                <div
                   aria-hidden="true"
-                >
-                  <path
-                    d="M3 7h8m0 0L7.5 3.5M11 7l-3.5 3.5"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </span>
-            </Link>
+                  className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                />
+                <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-accent-light to-violet-100 dark:from-accent-dark-light dark:to-violet-500/15 text-accent flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-105">
+                  {c.icon}
+                </div>
+                <p className="text-xs font-semibold uppercase tracking-widest text-accent mb-2">
+                  {c.label}
+                </p>
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3 group-hover:text-accent transition-colors">
+                  {c.title}
+                </h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-5 flex-1">
+                  {c.description}
+                </p>
+                <span className="text-sm font-medium text-accent inline-flex items-center gap-1.5">
+                  {c.cta}
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 14 14"
+                    fill="none"
+                    className="transition-transform group-hover:translate-x-1"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M3 7h8m0 0L7.5 3.5M11 7l-3.5 3.5"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </span>
+              </Link>
+            </RevealOnScroll>
           ))}
         </div>
       </div>

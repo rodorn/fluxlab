@@ -22,6 +22,7 @@ const services = [
       "Eliminujemy ręczne przenoszenie danych między systemami. Integrujemy ERP, CRM, arkusze, e-mail i inne narzędzia, które już używasz.",
     tags: ["Make", "n8n", "API", "Webhooks"],
     href: "/integracje-api",
+    accent: "accent",
     links: [
       { href: "/integracje-api", label: "Integracje API →" },
       { href: "/automatyzacja-pipedrive", label: "Automatyzacja Pipedrive →" },
@@ -48,6 +49,7 @@ const services = [
       "Raporty, które wcześniej zajmowały kilka godzin, generują się automatycznie. Dane zawsze aktualne, w odpowiednim formacie i czasie.",
     tags: ["Google Sheets", "Power BI", "E-mail", "PDF"],
     href: "/automatyzacja-raportowania",
+    accent: "cyan",
     links: [
       { href: "/automatyzacja-raportowania", label: "Dowiedz się więcej →" },
     ],
@@ -73,6 +75,7 @@ const services = [
       "Automatyczne odpowiedzi, routing zgłoszeń, powiadomienia i follow-upy. Twoi handlowcy zajmują się tylko tym, co wymaga ludzkiej uwagi.",
     tags: ["Helpdesk", "CRM", "E-mail", "Slack"],
     href: "/automatyzacja-crm",
+    accent: "emerald",
     links: [
       { href: "/automatyzacja-crm", label: "Automatyzacja CRM →" },
       { href: "/automatyzacja-leadow", label: "Automatyzacja leadów →" },
@@ -99,6 +102,7 @@ const services = [
       "Każda firma ma unikalny sposób pracy. Mapuję Twoje procesy i projektuję automatyzację dopasowaną do tego, jak rzeczywiście działasz.",
     tags: ["Audyt", "Projektowanie", "Wdrożenie", "Szkolenie"],
     href: "/automatyzacja-procesow-biznesowych",
+    accent: "violet",
     links: [
       {
         href: "/automatyzacja-procesow-biznesowych",
@@ -108,6 +112,55 @@ const services = [
     ],
   },
 ];
+
+const accentStyles: Record<
+  string,
+  {
+    blob: string;
+    iconText: string;
+    iconBg: string;
+    hoverBorder: string;
+    glowFrom: string;
+    linkText: string;
+  }
+> = {
+  accent: {
+    blob: "blob-accent",
+    iconText: "text-accent",
+    iconBg: "bg-accent-light dark:bg-accent-dark-light",
+    hoverBorder:
+      "group-hover:border-accent/50 dark:group-hover:border-accent/60",
+    glowFrom: "from-accent/15",
+    linkText: "text-accent group-hover:text-accent-hover",
+  },
+  cyan: {
+    blob: "blob-cyan",
+    iconText: "text-cyan-600 dark:text-cyan-400",
+    iconBg: "bg-cyan-100 dark:bg-cyan-500/15",
+    hoverBorder:
+      "group-hover:border-cyan-400/50 dark:group-hover:border-cyan-400/50",
+    glowFrom: "from-cyan-400/15",
+    linkText: "text-accent group-hover:text-accent-hover",
+  },
+  emerald: {
+    blob: "blob-emerald",
+    iconText: "text-emerald-600 dark:text-emerald-400",
+    iconBg: "bg-emerald-100 dark:bg-emerald-500/15",
+    hoverBorder:
+      "group-hover:border-emerald-400/50 dark:group-hover:border-emerald-400/50",
+    glowFrom: "from-emerald-400/15",
+    linkText: "text-accent group-hover:text-accent-hover",
+  },
+  violet: {
+    blob: "blob-violet",
+    iconText: "text-violet-600 dark:text-violet-400",
+    iconBg: "bg-violet-100 dark:bg-violet-500/15",
+    hoverBorder:
+      "group-hover:border-violet-400/50 dark:group-hover:border-violet-400/50",
+    glowFrom: "from-violet-400/15",
+    linkText: "text-accent group-hover:text-accent-hover",
+  },
+};
 
 export default function Services() {
   return (
@@ -157,47 +210,63 @@ export default function Services() {
         </RevealOnScroll>
 
         <div className="grid md:grid-cols-2 gap-6">
-          {services.map((service, idx) => (
-            <RevealOnScroll
-              key={service.title}
-              delay={Math.min(idx + 1, 4) as 1 | 2 | 3 | 4}
-            >
-              <Link
-                href={service.href}
-                className="card-lift block bg-white/90 backdrop-blur-sm dark:bg-white/10 rounded-2xl p-8 border border-white dark:border-white/10 hover:bg-white dark:hover:bg-white/15 hover:border-accent/40 dark:hover:border-accent/60 shadow-sm group"
+          {services.map((service, idx) => {
+            const style = accentStyles[service.accent];
+            return (
+              <RevealOnScroll
+                key={service.title}
+                delay={Math.min(idx + 1, 4) as 1 | 2 | 3 | 4}
               >
-                <div className="w-10 h-10 flex items-center justify-center text-accent bg-accent-light dark:bg-accent-dark-light rounded-xl mb-5">
-                  {service.icon}
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-accent transition-colors">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-5">
-                  {service.description}
-                </p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {service.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="text-xs font-medium px-2.5 py-1 bg-white/70 dark:bg-white/10 text-gray-500 dark:text-gray-300 rounded-full"
+                <Link
+                  href={service.href}
+                  className={`card-lift relative block overflow-hidden bg-white/90 backdrop-blur-sm dark:bg-white/10 rounded-2xl p-8 border border-white dark:border-white/10 hover:bg-white dark:hover:bg-white/15 ${style.hoverBorder} shadow-sm group transition-colors duration-300`}
+                >
+                  {/* Kolorystyczny blob — rozjaśnia się na hover */}
+                  <div
+                    className={`blob ${style.blob} w-44 h-44 -top-16 -right-16 opacity-0 group-hover:opacity-60 dark:group-hover:opacity-40 transition-opacity duration-500`}
+                  />
+                  {/* Delikatny gradient od góry karty na hover */}
+                  <div
+                    className={`absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent ${style.glowFrom.replace("from-", "via-")} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
+                  />
+
+                  <div className="relative">
+                    <div
+                      className={`w-12 h-12 flex items-center justify-center ${style.iconText} ${style.iconBg} rounded-xl mb-5 transition-transform duration-300 ease-out group-hover:scale-110 group-hover:-rotate-3`}
                     >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                <div className="flex flex-wrap gap-x-4 gap-y-1">
-                  {service.links.map((link) => (
-                    <span
-                      key={link.href}
-                      className="text-xs font-medium text-accent group-hover:text-accent-hover transition-colors"
-                    >
-                      {link.label}
-                    </span>
-                  ))}
-                </div>
-              </Link>
-            </RevealOnScroll>
-          ))}
+                      {service.icon}
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-accent transition-colors">
+                      {service.title}
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-5">
+                      {service.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {service.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="text-xs font-medium px-2.5 py-1 bg-white/70 dark:bg-white/10 text-gray-500 dark:text-gray-300 rounded-full ring-1 ring-black/[0.04] dark:ring-white/[0.06] transition-colors duration-300 group-hover:text-gray-700 dark:group-hover:text-gray-200"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="flex flex-wrap gap-x-4 gap-y-1">
+                      {service.links.map((link) => (
+                        <span
+                          key={link.href}
+                          className={`text-xs font-medium ${style.linkText} transition-all duration-300 group-hover:translate-x-0.5`}
+                        >
+                          {link.label}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </Link>
+              </RevealOnScroll>
+            );
+          })}
         </div>
       </div>
     </section>
