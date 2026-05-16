@@ -25,11 +25,11 @@ export default function Home() {
         <Hero />
         <Marquee />
         <WhatToAutomate />
-        <LiveDiagnosis />
         <AICapabilities />
         <ExampleWorkflow />
         <PilotBanner />
         <Services />
+        <LiveDiagnosis />
         <Diagnosis />
         <Pricing />
         <Proof />
