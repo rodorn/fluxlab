@@ -30,8 +30,15 @@ const MID_Y = CARD_Y + CARD_H / 2;
 const REPORT_IDX = 4;
 const MAX_FILL = 5;
 const TRAVEL_MS = 6200; // przejście jednej kulki przez całą ścieżkę
-const GAP_MS = 420; // pauza między kulkami
+const LANDING_MS = 460; // czas "wpadania" kulki na slot w Raporcie
+const GAP_MS = 380; // pauza między kulkami
 const SEND_MS = 1400;
+const BALL_R = 6.5;
+const SLOT_R = 3.6;
+const SLOT_Y = CARD_Y + CARD_H - 13;
+function slotX(k: number): number {
+  return CARD_X[REPORT_IDX] + CARD_W / 2 - ((MAX_FILL - 1) * 11) / 2 + k * 11;
+}
 
 const ICON_LEAD = (
   <path
@@ -205,9 +212,12 @@ function buildFlowPath(): string {
 
 const FLOW_PATH = buildFlowPath();
 
+type Phase = "fly" | "land" | "wait";
+
 type Scene = {
   ballX: number;
   ballY: number;
+  ballR: number;
   ballVisible: boolean;
   activeIdx: number; // która karta aktywna (kulka w niej)
   fill: number;
@@ -216,8 +226,10 @@ type Scene = {
 
 export default function InteractiveWorkflow() {
   const pathRef = useRef<SVGPathElement | null>(null);
+  const phaseRef = useRef<Phase>("fly");
   const distRef = useRef(0);
-  const visibleRef = useRef(true);
+  const landTRef = useRef(0);
+  const landFromRef = useRef({ x: 0, y: 0 });
   const waitUntilRef = useRef(0);
   const fillRef = useRef(0);
   const sendingRef = useRef(false);
@@ -228,6 +240,7 @@ export default function InteractiveWorkflow() {
   const [scene, setScene] = useState<Scene>({
     ballX: CARD_X[0],
     ballY: MID_Y,
+    ballR: BALL_R,
     ballVisible: true,
     activeIdx: 0,
     fill: 0,
@@ -251,6 +264,7 @@ export default function InteractiveWorkflow() {
       setScene({
         ballX: p.x,
         ballY: p.y,
+        ballR: BALL_R,
         ballVisible: true,
         activeIdx: 1,
         fill: 2,
@@ -283,18 +297,29 @@ export default function InteractiveWorkflow() {
       prev = now;
 
       if (!pausedRef.current) {
-        if (visibleRef.current) {
+        if (phaseRef.current === "fly") {
           distRef.current += speed * dt;
           if (distRef.current >= total) {
-            // kulka wpadła do Raportu
+            // kulka dotarła do Raportu — przejście w fazę "land"
             distRef.current = total;
-            visibleRef.current = false;
-            waitUntilRef.current = now + GAP_MS;
+            const p = path!.getPointAtLength(total);
+            landFromRef.current = { x: p.x, y: p.y };
+            landTRef.current = 0;
+            phaseRef.current = "land";
+          }
+        } else if (phaseRef.current === "land") {
+          landTRef.current += dt / LANDING_MS;
+          if (landTRef.current >= 1) {
+            landTRef.current = 1;
+            // kulka wpadła na swój slot — licznik rośnie
             if (!sendingRef.current && fillRef.current < MAX_FILL) {
               fillRef.current += 1;
             }
+            phaseRef.current = "wait";
+            waitUntilRef.current = now + GAP_MS;
             if (fillRef.current >= MAX_FILL && !sendingRef.current) {
               sendingRef.current = true;
+              waitUntilRef.current = now + SEND_MS;
               window.setTimeout(() => {
                 fillRef.current = 0;
                 sendingRef.current = false;
@@ -302,24 +327,44 @@ export default function InteractiveWorkflow() {
             }
           }
         } else if (now >= waitUntilRef.current) {
-          // start nowej kulki
-          visibleRef.current = true;
+          phaseRef.current = "fly";
           distRef.current = 0;
           lastIdxRef.current = 0;
         }
       }
 
-      const p = path!.getPointAtLength(Math.min(distRef.current, total));
-      let idx = cardAt(p.x, p.y);
-      if (idx === -1) idx = lastIdxRef.current;
-      else lastIdxRef.current = idx;
-      // gdy kulka wpadła — aktywny jest Raport
-      const activeIdx = visibleRef.current ? idx : REPORT_IDX;
+      let ballX: number;
+      let ballY: number;
+      let ballR = BALL_R;
+      let activeIdx: number;
+      const visible = phaseRef.current !== "wait";
+
+      if (phaseRef.current === "land") {
+        // interpolacja od punktu wejścia do slotu licznika (ease-out)
+        const t = landTRef.current;
+        const eased = 1 - (1 - t) * (1 - t);
+        const target = { x: slotX(fillRef.current), y: SLOT_Y };
+        ballX =
+          landFromRef.current.x + (target.x - landFromRef.current.x) * eased;
+        ballY =
+          landFromRef.current.y + (target.y - landFromRef.current.y) * eased;
+        ballR = BALL_R + (SLOT_R - BALL_R) * eased;
+        activeIdx = REPORT_IDX;
+      } else {
+        const p = path!.getPointAtLength(Math.min(distRef.current, total));
+        ballX = p.x;
+        ballY = p.y;
+        let idx = cardAt(p.x, p.y);
+        if (idx === -1) idx = lastIdxRef.current;
+        else lastIdxRef.current = idx;
+        activeIdx = phaseRef.current === "wait" ? REPORT_IDX : idx;
+      }
 
       setScene({
-        ballX: p.x,
-        ballY: p.y,
-        ballVisible: visibleRef.current,
+        ballX,
+        ballY,
+        ballR,
+        ballVisible: visible,
         activeIdx,
         fill: fillRef.current,
         sending: sendingRef.current,
@@ -528,19 +573,15 @@ export default function InteractiveWorkflow() {
           );
         })}
 
-        {/* Kulka — zmienia kolor wraz z kartą (CSS transition na fill/stroke) */}
+        {/* Kulka — zmienia kolor wraz z kartą, bez obwoluty */}
         {scene.ballVisible && (
           <circle
             cx={scene.ballX}
             cy={scene.ballY}
-            r="6.5"
+            r={scene.ballR}
             fill={activeCard.color}
-            stroke="#ffffff"
-            strokeWidth="2"
             filter="url(#iw-glow)"
-            style={{
-              transition: "fill 0.5s ease",
-            }}
+            style={{ transition: "fill 0.5s ease" }}
           />
         )}
 
