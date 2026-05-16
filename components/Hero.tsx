@@ -4,25 +4,24 @@ import PathChooser, { usePathHover } from "@/components/PathChooser";
 import TrackedCTA from "@/components/TrackedCTA";
 import InteractiveWorkflow from "@/components/InteractiveWorkflow";
 import RotatingSubline from "@/components/RotatingSubline";
+import useParallax from "@/lib/use-parallax";
 
 export default function Hero() {
   const { activePath, activeStats } = usePathHover();
+  const blobLayer = useParallax<HTMLDivElement>({ speed: 0.15 });
 
   return (
     <section className="relative pt-24 pb-12 lg:pt-32 lg:pb-16 overflow-hidden bg-mesh noise-overlay">
-      {/* Decorative gradient blobs */}
+      {/* Decorative gradient blobs — parallax layer */}
       <div
+        ref={blobLayer}
         aria-hidden="true"
-        className="blob blob-accent animate-drift-slow -z-10 top-[-20%] left-[-15%] w-[600px] h-[600px]"
-      />
-      <div
-        aria-hidden="true"
-        className="blob blob-violet animate-drift -z-10 bottom-[-30%] right-[-10%] w-[500px] h-[500px]"
-      />
-      <div
-        aria-hidden="true"
-        className="blob blob-cyan animate-drift-slow -z-10 top-[20%] right-[20%] w-[350px] h-[350px] opacity-40 dark:opacity-25"
-      />
+        className="absolute inset-0 -z-10"
+      >
+        <div className="blob blob-accent animate-drift-slow top-[-20%] left-[-15%] w-[600px] h-[600px]" />
+        <div className="blob blob-violet animate-drift bottom-[-30%] right-[-10%] w-[500px] h-[500px]" />
+        <div className="blob blob-cyan animate-drift-slow top-[20%] right-[20%] w-[350px] h-[350px] opacity-40 dark:opacity-25" />
+      </div>
 
       <div className="container-wide relative">
         {/* Top intro */}
@@ -52,7 +51,11 @@ export default function Hero() {
         </div>
 
         {/* Interactive workflow — działający pipeline */}
-        <div className="animate-fade-up-4 mb-12 lg:mb-16">
+        <div className="animate-fade-up-4 relative mb-12 lg:mb-16">
+          <div
+            aria-hidden="true"
+            className="absolute inset-x-8 -inset-y-2 -z-10 rounded-[2rem] bg-accent/10 blur-3xl"
+          />
           <InteractiveWorkflow />
         </div>
 
