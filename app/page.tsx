@@ -7,21 +7,21 @@ const PILLARS = [
     img: "/abstract/web.webp",
     num: "01",
     title: "Strony WWW",
-    desc: "Nowa strona albo poprawki w obecnej — szybko, mobilnie, z naciskiem na konwersję.",
+    desc: "Tworzę nowe strony i poprawiam istniejące. Szybko, mobilnie, z naciskiem na konwersję. Treści i grafikę wspiera AI.",
   },
   {
     href: "/automatyzacja-leadow-crm",
     img: "/abstract/automation.webp",
     num: "02",
     title: "Automatyzacja",
-    desc: "Narzędzia no-code automatyzują proste elementy pracy niskim kosztem. API łączy większość narzędzi i pozwala na zaawansowane reguły interakcji między nimi. AI przetwarza kod, tekst, obraz i dźwięk — ogromne możliwości przyspieszania pracy.",
+    desc: "No-code tanio automatyzuje proste, powtarzalne zadania. API łączy większość narzędzi w zaawansowane reguły. AI przetwarza kod, tekst, obraz i dźwięk.",
   },
   {
     href: "/scraping-danych",
     img: "/abstract/data.webp",
     num: "03",
     title: "Dane",
-    desc: "Wyszukiwanie, pozyskiwanie, analiza i raportowanie danych.",
+    desc: "Wyszukiwanie i pozyskiwanie danych z dowolnych źródeł. Analiza i porządkowanie tego, co rozproszone. Raportowanie bez ręcznej pracy.",
   },
 ];
 
@@ -53,28 +53,40 @@ export default function Home() {
             href={p.href}
             className="group relative flex flex-col justify-end overflow-hidden min-h-[34vh] lg:min-h-0 border-t lg:border-t-0 lg:border-l border-white/10 first:border-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-accent"
           >
-            {/* Abstrakcyjne tło */}
+            {/* Abstrakcyjne tło — mocny zoom + rozjaśnienie na hover */}
             <Image
               src={p.img}
               alt=""
               fill
               priority
               sizes="(max-width: 1024px) 100vw, 33vw"
-              className="object-cover opacity-55 transition-all duration-700 ease-out group-hover:opacity-85 group-hover:scale-105"
+              className="object-cover opacity-50 saturate-[0.85] transition-all duration-700 ease-out group-hover:opacity-100 group-hover:scale-110 group-hover:saturate-125"
             />
             {/* Przyciemnienie dla czytelności */}
-            <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/55 to-gray-950/10 transition-opacity duration-500 group-hover:from-gray-950/95" />
+            <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/55 to-gray-950/10 transition-all duration-500 group-hover:from-gray-950/90 group-hover:via-gray-950/35" />
+            {/* Akcentowa poświata od dołu — pojawia się na hover */}
+            <div
+              aria-hidden="true"
+              className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-accent/30 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+            />
+            {/* Ramka akcentowa na hover */}
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 ring-0 ring-inset ring-accent transition-all duration-300 group-hover:ring-[3px]"
+            />
 
-            {/* Treść */}
-            <div className="relative p-7 lg:p-10 transition-transform duration-500 ease-out group-hover:-translate-y-1">
-              <span className="text-sm font-mono text-white/40">{p.num}</span>
+            {/* Treść — unosi się na hover */}
+            <div className="relative p-7 lg:p-10 transition-transform duration-500 ease-out group-hover:-translate-y-2">
+              <span className="text-sm font-mono text-white/40 transition-colors duration-300 group-hover:text-accent">
+                {p.num}
+              </span>
               <h2 className="mt-1.5 text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tight">
                 {p.title}
               </h2>
               <p className="mt-2.5 text-sm lg:text-base text-white/65 leading-relaxed max-w-sm">
                 {p.desc}
               </p>
-              <span className="mt-5 inline-flex items-center gap-2 text-accent font-semibold transition-all duration-300 group-hover:gap-3.5">
+              <span className="mt-5 inline-flex items-center gap-2 rounded-lg px-3 py-1.5 -ml-3 text-accent font-semibold transition-all duration-300 group-hover:gap-3.5 group-hover:bg-accent group-hover:text-white">
                 Wejdź
                 <span aria-hidden="true">→</span>
               </span>
