@@ -5,6 +5,7 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
   title:
@@ -199,8 +200,8 @@ export default function AutomatyzacjaDlaAgencjiMarketingowych() {
           items={[{ label: "Automatyzacja dla agencji marketingowych" }]}
         />
 
-        {/* Hero */}
-        <section className="relative py-16 lg:py-24 overflow-hidden">
+        {/* Hero — kompaktowy */}
+        <section className="relative pt-24 pb-12 overflow-hidden">
           <div className="absolute inset-0 -z-10">
             <div className="absolute inset-0 bg-sky-50 dark:hidden" />
             <img
@@ -253,298 +254,308 @@ export default function AutomatyzacjaDlaAgencjiMarketingowych() {
           </div>
         </section>
 
-        {/* Co automatyzujemy */}
-        <section className="py-16 lg:py-24">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                Co automatyzujemy w agencji marketingowej
-              </h2>
-              <p className="text-gray-500 dark:text-gray-400 mb-10">
-                Agencja to setki powtarzalnych mikro-procesów: nowy klient, nowy
-                projekt, nowy raport, nowa faktura, nowa kampania, nowy
-                kontrakt. Każdy z nich ręcznie zajmuje 10–60 minut komuś
-                kompetentnemu. Pomnożone przez liczbę klientów i tygodni daje to
-                etat lub dwa rocznie. Automatyzacja przenosi te mikro-procesy na
-                maszynę, zostawiając ludziom strategię i pracę z klientem.
-              </p>
+        {/* Treść w zakładkach — nic nie wycięte, podzielone */}
+        <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
+          <Tabs
+            ariaLabel="Sekcje oferty dla agencji marketingowych"
+            tabs={[
+              {
+                label: "Co automatyzujemy",
+                content: (
+                  <div className="py-10 lg:py-12">
+                    <div className="max-w-3xl mx-auto">
+                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
+                        Co automatyzujemy w agencji marketingowej
+                      </h2>
+                      <p className="text-gray-500 dark:text-gray-400 mb-10">
+                        Agencja to setki powtarzalnych mikro-procesów: nowy
+                        klient, nowy projekt, nowy raport, nowa faktura, nowa
+                        kampania, nowy kontrakt. Każdy z nich ręcznie zajmuje
+                        10–60 minut komuś kompetentnemu. Pomnożone przez liczbę
+                        klientów i tygodni daje to etat lub dwa rocznie.
+                        Automatyzacja przenosi te mikro-procesy na maszynę,
+                        zostawiając ludziom strategię i pracę z klientem.
+                      </p>
 
-              <div className="space-y-6">
-                {useCases.map((useCase) => (
-                  <div
-                    key={useCase.title}
-                    className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-8"
-                  >
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                      {useCase.title}
-                    </h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">
-                      {useCase.description}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Konkretne problemy */}
-        <section className="py-16 lg:py-24 border-t border-gray-100 dark:border-gray-800">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                Konkretne problemy, które rozwiązujemy
-              </h2>
-              <p className="text-gray-500 dark:text-gray-400 mb-10">
-                Poniżej najczęstsze sytuacje z agencji performance i agencji
-                360°. Każdy z tych bólów spotykamy w niemal każdej rozmowie — i
-                każdy ma dość konkretne rozwiązanie technologiczne.
-              </p>
-
-              <div className="space-y-6">
-                {painPoints.map((item) => (
-                  <div
-                    key={item.pain}
-                    className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-8"
-                  >
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                      „{item.pain}”
-                    </h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">
-                      {item.solution}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Narzędzia */}
-        <section className="py-16 lg:py-24 border-t border-gray-100 dark:border-gray-800">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                Narzędzia, z którymi pracujemy w agencjach
-              </h2>
-              <p className="text-gray-500 dark:text-gray-400 mb-10">
-                Większość agencji używa podobnego stacku: CRM, project
-                management, time tracking, raportowanie, komunikacja, platformy
-                reklamowe. Nasza rola polega na spięciu tego, co już macie — nie
-                na sprzedaży nowego oprogramowania.
-              </p>
-
-              <div className="space-y-6">
-                {tools.map((tool) => (
-                  <div
-                    key={tool.name}
-                    className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-8"
-                  >
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                      {tool.name}
-                    </h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">
-                      {tool.description}
-                    </p>
-                  </div>
-                ))}
-              </div>
-
-              <p className="text-sm text-gray-500 dark:text-gray-400 mt-8">
-                Po szczegóły dotyczące samych platform automatyzacji zajrzyj do{" "}
-                <Link href="/n8n" className="text-accent hover:underline">
-                  n8n
-                </Link>{" "}
-                lub{" "}
-                <Link
-                  href="/zapier-make"
-                  className="text-accent hover:underline"
-                >
-                  Zapier i Make
-                </Link>
-                . Część integracji robimy bezpośrednio na API platform
-                reklamowych — opisujemy to na stronie{" "}
-                <Link
-                  href="/integracje-api"
-                  className="text-accent hover:underline"
-                >
-                  integracji API
-                </Link>
-                .
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Dla kogo */}
-        <section className="py-16 lg:py-24 border-t border-gray-100 dark:border-gray-800">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                Dla kogo
-              </h2>
-              <p className="text-gray-500 dark:text-gray-400">
-                Dla agencji marketingowych z portfelem przynajmniej kilkunastu
-                aktywnych klientów, gdzie ręczne raportowanie, onboarding i
-                fakturowanie zaczyna pożerać tygodnie pracy zespołu. Pracujemy z
-                agencjami performance (Google Ads, Meta Ads, kampanie B2B),
-                agencjami SEO, social media oraz pełnoserwisowymi 360°.
-                Szczególnie często wdrażam automatyzację procesów ofertowania
-                (więcej w sekcji{" "}
-                <Link
-                  href="/automatyzacja-leadow"
-                  className="text-accent hover:underline"
-                >
-                  automatyzacja leadów
-                </Link>
-                ) i raportowania klienckiego (
-                <Link
-                  href="/automatyzacja-raportowania"
-                  className="text-accent hover:underline"
-                >
-                  automatyzacja raportowania
-                </Link>
-                ).
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* FAQ */}
-        <section className="py-16 lg:py-24 border-t border-gray-100 dark:border-gray-800">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-8">
-                Najczęściej zadawane pytania
-              </h2>
-              <div className="space-y-4">
-                {faq.map((item) => (
-                  <details
-                    key={item.question}
-                    className="group bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl"
-                  >
-                    <summary className="flex items-center justify-between cursor-pointer p-6 text-gray-900 dark:text-white font-medium">
-                      {item.question}
-                      <svg
-                        className="shrink-0 ml-4 w-5 h-5 text-gray-400 transition-transform group-open:rotate-45"
-                        viewBox="0 0 20 20"
-                        fill="none"
-                      >
-                        <path
-                          d="M10 4v12M4 10h12"
-                          stroke="currentColor"
-                          strokeWidth="1.5"
-                          strokeLinecap="round"
-                        />
-                      </svg>
-                    </summary>
-                    <div className="px-6 pb-6 text-sm text-gray-500 dark:text-gray-400">
-                      {item.answer}
+                      <div className="space-y-6">
+                        {useCases.map((useCase) => (
+                          <div
+                            key={useCase.title}
+                            className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-8"
+                          >
+                            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                              {useCase.title}
+                            </h3>
+                            <p className="text-sm text-gray-600 dark:text-gray-400">
+                              {useCase.description}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                  </details>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
+                  </div>
+                ),
+              },
+              {
+                label: "Problemy",
+                content: (
+                  <div className="py-10 lg:py-12">
+                    <div className="max-w-3xl mx-auto">
+                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
+                        Konkretne problemy, które rozwiązujemy
+                      </h2>
+                      <p className="text-gray-500 dark:text-gray-400 mb-10">
+                        Poniżej najczęstsze sytuacje z agencji performance i
+                        agencji 360°. Każdy z tych bólów spotykamy w niemal
+                        każdej rozmowie — i każdy ma dość konkretne rozwiązanie
+                        technologiczne.
+                      </p>
 
-        {/* CTA */}
-        <section className="py-16 lg:py-24 border-t border-gray-100 dark:border-gray-800">
-          <div className="container-wide">
-            <div className="max-w-2xl mx-auto text-center bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-10">
-              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                Zespół spędza więcej czasu na raportach niż na klientach?
-              </h2>
-              <p className="text-gray-500 dark:text-gray-400 mb-8">
-                Opisz Wasz proces. Wskażemy konkretne miejsca, gdzie
-                automatyzacja odda zespołowi 10–20 godzin tygodniowo.
-              </p>
-              <Link
-                href="/#kontakt"
-                className="btn-primary px-8 py-3.5 text-base"
-              >
-                Zamów diagnozę
-              </Link>
-              <p className="mt-4 text-xs text-gray-400 dark:text-gray-500">
-                Bezpłatna diagnoza · Odpowiedź w 24h
-              </p>
-            </div>
-          </div>
-        </section>
+                      <div className="space-y-6">
+                        {painPoints.map((item) => (
+                          <div
+                            key={item.pain}
+                            className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-8"
+                          >
+                            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
+                              „{item.pain}”
+                            </h3>
+                            <p className="text-sm text-gray-600 dark:text-gray-400">
+                              {item.solution}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ),
+              },
+              {
+                label: "Narzędzia",
+                content: (
+                  <div className="py-10 lg:py-12">
+                    <div className="max-w-3xl mx-auto">
+                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
+                        Narzędzia, z którymi pracujemy w agencjach
+                      </h2>
+                      <p className="text-gray-500 dark:text-gray-400 mb-10">
+                        Większość agencji używa podobnego stacku: CRM, project
+                        management, time tracking, raportowanie, komunikacja,
+                        platformy reklamowe. Nasza rola polega na spięciu tego,
+                        co już macie — nie na sprzedaży nowego oprogramowania.
+                      </p>
 
-        {/* Related */}
-        <section className="py-16 lg:py-24 border-t border-gray-100 dark:border-gray-800">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <div className="grid md:grid-cols-2 gap-12">
-                <div>
-                  <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-                    Powiązane usługi
-                  </h2>
-                  <ul className="space-y-3">
-                    {relatedServices.map((item) => (
-                      <li key={item.href}>
-                        <Link
-                          href={item.href}
-                          className="flex items-center gap-2.5 text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
-                        >
-                          <svg
-                            className="shrink-0 text-accent"
-                            width="14"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            fill="none"
+                      <div className="space-y-6">
+                        {tools.map((tool) => (
+                          <div
+                            key={tool.name}
+                            className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-8"
                           >
-                            <path
-                              d="M2.5 7l3 3 6-6"
-                              stroke="currentColor"
-                              strokeWidth="1.5"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
-                          {item.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-                    Powiązane artykuły
-                  </h2>
-                  <ul className="space-y-3">
-                    {relatedArticles.map((item) => (
-                      <li key={item.href}>
+                            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                              {tool.name}
+                            </h3>
+                            <p className="text-sm text-gray-600 dark:text-gray-400">
+                              {tool.description}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+
+                      <p className="text-sm text-gray-500 dark:text-gray-400 mt-8">
+                        Po szczegóły dotyczące samych platform automatyzacji
+                        zajrzyj do{" "}
                         <Link
-                          href={item.href}
-                          className="flex items-center gap-2.5 text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
+                          href="/n8n"
+                          className="text-accent hover:underline"
                         >
-                          <svg
-                            className="shrink-0 text-accent"
-                            width="14"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            fill="none"
-                          >
-                            <path
-                              d="M2.5 7l3 3 6-6"
-                              stroke="currentColor"
-                              strokeWidth="1.5"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
-                          {item.label}
+                          n8n
+                        </Link>{" "}
+                        lub{" "}
+                        <Link
+                          href="/zapier-make"
+                          className="text-accent hover:underline"
+                        >
+                          Zapier i Make
                         </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+                        . Część integracji robimy bezpośrednio na API platform
+                        reklamowych — opisujemy to na stronie{" "}
+                        <Link
+                          href="/integracje-api"
+                          className="text-accent hover:underline"
+                        >
+                          integracji API
+                        </Link>
+                        .
+                      </p>
+                    </div>
+                  </div>
+                ),
+              },
+              {
+                label: "Dla kogo i FAQ",
+                content: (
+                  <div className="py-10 lg:py-12">
+                    <div className="max-w-3xl mx-auto">
+                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
+                        Dla kogo
+                      </h2>
+                      <p className="text-gray-500 dark:text-gray-400 mb-12">
+                        Dla agencji marketingowych z portfelem przynajmniej
+                        kilkunastu aktywnych klientów, gdzie ręczne
+                        raportowanie, onboarding i fakturowanie zaczyna pożerać
+                        tygodnie pracy zespołu. Pracujemy z agencjami
+                        performance (Google Ads, Meta Ads, kampanie B2B),
+                        agencjami SEO, social media oraz pełnoserwisowymi 360°.
+                        Szczególnie często wdrażam automatyzację procesów
+                        ofertowania (więcej w sekcji{" "}
+                        <Link
+                          href="/automatyzacja-leadow"
+                          className="text-accent hover:underline"
+                        >
+                          automatyzacja leadów
+                        </Link>
+                        ) i raportowania klienckiego (
+                        <Link
+                          href="/automatyzacja-raportowania"
+                          className="text-accent hover:underline"
+                        >
+                          automatyzacja raportowania
+                        </Link>
+                        ).
+                      </p>
+
+                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-8">
+                        Najczęściej zadawane pytania
+                      </h2>
+                      <div className="space-y-4">
+                        {faq.map((item) => (
+                          <details
+                            key={item.question}
+                            className="group bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl"
+                          >
+                            <summary className="flex items-center justify-between cursor-pointer p-6 text-gray-900 dark:text-white font-medium">
+                              {item.question}
+                              <svg
+                                className="shrink-0 ml-4 w-5 h-5 text-gray-400 transition-transform group-open:rotate-45"
+                                viewBox="0 0 20 20"
+                                fill="none"
+                              >
+                                <path
+                                  d="M10 4v12M4 10h12"
+                                  stroke="currentColor"
+                                  strokeWidth="1.5"
+                                  strokeLinecap="round"
+                                />
+                              </svg>
+                            </summary>
+                            <div className="px-6 pb-6 text-sm text-gray-500 dark:text-gray-400">
+                              {item.answer}
+                            </div>
+                          </details>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ),
+              },
+              {
+                label: "Kontakt",
+                content: (
+                  <div className="py-10 lg:py-12">
+                    <div className="max-w-3xl mx-auto">
+                      <div className="max-w-2xl mx-auto text-center bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-10 mb-16">
+                        <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
+                          Zespół spędza więcej czasu na raportach niż na
+                          klientach?
+                        </h2>
+                        <p className="text-gray-500 dark:text-gray-400 mb-8">
+                          Opisz Wasz proces. Wskażemy konkretne miejsca, gdzie
+                          automatyzacja odda zespołowi 10–20 godzin tygodniowo.
+                        </p>
+                        <Link
+                          href="/#kontakt"
+                          className="btn-primary px-8 py-3.5 text-base"
+                        >
+                          Zamów diagnozę
+                        </Link>
+                        <p className="mt-4 text-xs text-gray-400 dark:text-gray-500">
+                          Bezpłatna diagnoza · Odpowiedź w 24h
+                        </p>
+                      </div>
+
+                      <div className="grid md:grid-cols-2 gap-12">
+                        <div>
+                          <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+                            Powiązane usługi
+                          </h2>
+                          <ul className="space-y-3">
+                            {relatedServices.map((item) => (
+                              <li key={item.href}>
+                                <Link
+                                  href={item.href}
+                                  className="flex items-center gap-2.5 text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
+                                >
+                                  <svg
+                                    className="shrink-0 text-accent"
+                                    width="14"
+                                    height="14"
+                                    viewBox="0 0 14 14"
+                                    fill="none"
+                                  >
+                                    <path
+                                      d="M2.5 7l3 3 6-6"
+                                      stroke="currentColor"
+                                      strokeWidth="1.5"
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                    />
+                                  </svg>
+                                  {item.label}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                        <div>
+                          <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+                            Powiązane artykuły
+                          </h2>
+                          <ul className="space-y-3">
+                            {relatedArticles.map((item) => (
+                              <li key={item.href}>
+                                <Link
+                                  href={item.href}
+                                  className="flex items-center gap-2.5 text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
+                                >
+                                  <svg
+                                    className="shrink-0 text-accent"
+                                    width="14"
+                                    height="14"
+                                    viewBox="0 0 14 14"
+                                    fill="none"
+                                  >
+                                    <path
+                                      d="M2.5 7l3 3 6-6"
+                                      stroke="currentColor"
+                                      strokeWidth="1.5"
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                    />
+                                  </svg>
+                                  {item.label}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ),
+              },
+            ]}
+          />
+        </div>
       </main>
 
       {/* Service Schema */}

@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TrackedCTA from "@/components/TrackedCTA";
+import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
   title: "n8n dla CRM | Automatyzacja leadów, zadań i raportów",
@@ -90,6 +91,51 @@ const workflows = [
   },
 ];
 
+const diagramSteps = [
+  {
+    n: "1",
+    title: "Webhook z formularza",
+    desc: "n8n nasłuchuje na endpoint, do którego wysyłają wszystkie źródła leadów (formularz, lead ads, e-mail).",
+    accent: false,
+  },
+  {
+    n: "2",
+    title: "Walidacja + wzbogacenie",
+    desc: "Code node sprawdza NIP w GUS, domenę w Clearbit/własnym scoringu, dedup w CRM.",
+    accent: true,
+  },
+  {
+    n: "3",
+    title: "Tworzenie w CRM (Pipedrive/HubSpot/Salesforce)",
+    desc: "Osoba + organizacja + deal w jednym kroku, z pełnymi custom fieldami i UTM-ami.",
+    accent: true,
+  },
+  {
+    n: "4",
+    title: "Routing do handlowca",
+    desc: "Region, produkt, obciążenie pipeline'u — n8n wybiera odbiorcę po regule biznesowej.",
+    accent: false,
+  },
+  {
+    n: "5",
+    title: "Zadanie + powiadomienie",
+    desc: "Task „kontakt w 5 minut” w CRM + push do Slacka/SMS-a do przypisanego handlowca.",
+    accent: false,
+  },
+  {
+    n: "6",
+    title: "Sync ze światem zewnętrznym",
+    desc: "Po zmianie etapu deala — fakturowanie, księgowość, magazyn, slack: wszystko przez n8n.",
+    accent: true,
+  },
+  {
+    n: "7",
+    title: "Raport",
+    desc: "Cron buduje codzienny/tygodniowy raport KPI i wysyła go zarządowi mailem albo do Slacka.",
+    accent: false,
+  },
+];
+
 const firstStage = [
   "Mapping źródeł leadów do jednego wejścia n8n (formularze, reklamy, lead ads, e-mail)",
   "Walidacja + wzbogacenie (GUS, biała lista VAT, scoring) i deduplikacja w CRM",
@@ -156,11 +202,11 @@ export default function N8nDlaCrm() {
   return (
     <>
       <Header />
-      <main className="pt-16">
+      <main>
         <Breadcrumbs items={[{ label: "n8n dla CRM" }]} />
 
-        {/* Hero */}
-        <section className="py-16 lg:py-24 bg-gradient-to-b from-accent/10 to-transparent border-b border-gray-100 dark:border-gray-800">
+        {/* Hero — kompaktowy */}
+        <section className="pt-24 pb-12 bg-gradient-to-b from-accent/10 to-transparent border-b border-gray-100 dark:border-gray-800">
           <div className="container-wide">
             <div className="max-w-3xl mx-auto text-center">
               <p className="section-label mb-4">n8n dla CRM</p>
@@ -176,7 +222,7 @@ export default function N8nDlaCrm() {
                 do końca.
               </p>
               <TrackedCTA
-                href="/#kontakt"
+                href="#sekcje"
                 location="article_n8n-dla-crm_hero"
                 label="Sprawdź, czy n8n ma sens u mnie"
                 eventName="cta_click_article_audit"
@@ -188,714 +234,715 @@ export default function N8nDlaCrm() {
           </div>
         </section>
 
-        {/* Problem biznesowy */}
-        <section className="py-16 lg:py-24">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <span className="section-label">Problem biznesowy</span>
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-6">
-                CRM przestaje wyrabiać tam, gdzie kończy się jego natywna
-                automatyzacja
-              </h2>
-              <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
-                Pierwsze pytanie nie brzmi: „jakiego narzędzia użyć?”. Pierwsze
-                pytanie brzmi: „który proces powtarza się często i kosztuje nas
-                czas albo sprzedaż?”. W praktyce odpowiedź u 80% firm B2B
-                wygląda tak samo: lead wpada, ktoś go ręcznie wpisuje, ktoś inny
-                ręcznie aktualizuje status, raport klei się w Excelu na koniec
-                tygodnia. Wbudowane automatyzacje CRM łatają część problemu, ale
-                po kilku miesiącach trafia się na ścianę: brak HTTP request,
-                brak code node, brak warunków zagnieżdżonych, limit kroków na
-                workflow. n8n jest tym, co zaczyna się tam, gdzie kończy się
-                natywne workflow.
-              </p>
-              <ul className="space-y-3">
-                {[
-                  "Lead z formularza nie trafia do CRM, tylko do skrzynki marketingu",
-                  "Custom fieldy i UTM-y giną w drodze przez natywne integracje",
-                  "Brak wzbogacenia (NIP→GUS, domena→branża, scoring) po stronie CRM",
-                  "Status w CRM ≠ status w księgowości ≠ status w fakturowaniu",
-                  "Raport sprzedaży powstaje ręcznie z 3 eksportów CSV",
-                  "Workflow Pipedrive/HubSpot przekracza limity logiczne lub liczbowe",
-                ].map((p) => (
-                  <li
-                    key={p}
-                    className="flex items-start gap-3 bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-xl px-5 py-4"
-                  >
-                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />
-                    <span className="text-gray-700 dark:text-gray-300">
-                      {p}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* Objawy */}
-        <section className="py-16 lg:py-24 bg-gray-50 dark:bg-gray-900/50 border-y border-gray-100 dark:border-gray-800">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <span className="section-label">Objawy</span>
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-6">
-                Po czym poznasz, że CRM dojechał do swojego sufitu
-              </h2>
-              <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
-                Nie chodzi o „zły CRM” — chodzi o to, że pojedynczy CRM nie umie
-                obsłużyć całego procesu sprzedaży i obsługi klienta. Konkretne
-                zachowania, które pojawiają się u 9 na 10 firm B2B przed
-                wdrożeniem n8n:
-              </p>
-              <ul className="space-y-3">
-                {symptoms.map((s) => (
-                  <li
-                    key={s}
-                    className="flex items-start gap-3 bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-xl px-5 py-4"
-                  >
-                    <svg
-                      className="flex-shrink-0 mt-0.5 text-accent"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 20 20"
-                      fill="none"
-                    >
-                      <path
-                        d="M10 2v6m0 4v.01M10 18a8 8 0 100-16 8 8 0 000 16z"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                      />
-                    </svg>
-                    <span className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                      {s}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* Koszt problemu */}
-        <section className="py-16 lg:py-24">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <span className="section-label">Koszt problemu</span>
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-6">
-                Ile to realnie kosztuje firmę
-              </h2>
-              <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
-                Konkretny rachunek z firmy, którą obsługiwałem niedawno: 4
-                handlowców, 600 leadów miesięcznie, średni czas reakcji 3
-                godziny w godzinach pracy. Każdy lead to ok. 3 minuty ręcznego
-                wprowadzania do CRM (kopiuj-wklej z maila, dodanie organizacji,
-                ustawienie etapu) plus ok. 5 minut na sprawdzenie firmy ręcznie
-                w GUS i Google.
-              </p>
-              <div className="grid sm:grid-cols-2 gap-4 mb-6">
-                <div className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-6">
-                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">
-                    Ręczne wprowadzanie leadów
-                  </p>
-                  <p className="text-2xl font-bold text-gray-900 dark:text-white">
-                    600 × 8 min = 80 h/mies.
-                  </p>
-                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
-                    Połowa etatu wyrzucona na klepanie
-                  </p>
-                </div>
-                <div className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-6">
-                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">
-                    Stracone leady przez czas reakcji
-                  </p>
-                  <p className="text-2xl font-bold text-gray-900 dark:text-white">
-                    ~12% konwersji w dół
-                  </p>
-                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
-                    Reakcja powyżej godziny vs poniżej 5 min
-                  </p>
-                </div>
-                <div className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-6">
-                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">
-                    Klejenie raportu tygodniowego
-                  </p>
-                  <p className="text-2xl font-bold text-gray-900 dark:text-white">
-                    4 h × 4 tyg. = 16 h/mies.
-                  </p>
-                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
-                    Czas managera, najdroższa godzina w firmie
-                  </p>
-                </div>
-                <div className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-6">
-                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">
-                    Łączny koszt miesięczny
-                  </p>
-                  <p className="text-2xl font-bold text-accent">
-                    ~12–18 tys. zł
-                  </p>
-                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
-                    Praca + utracone deale (konserwatywnie)
-                  </p>
-                </div>
-              </div>
-              <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                Wdrożenie n8n na warstwie CRM (pierwszy etap) to typowo 4–8 tys.
-                zł netto i 2–3 tygodnie pracy. ROI w pierwszym miesiącu po
-                uruchomieniu, jeśli zespół ma więcej niż 2 handlowców i więcej
-                niż 200 leadów miesięcznie.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Proces przed */}
-        <section className="py-16 lg:py-24 bg-gray-50 dark:bg-gray-900/50 border-y border-gray-100 dark:border-gray-800">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <span className="section-label">Przed wdrożeniem</span>
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-8">
-                Jak to wygląda dziś, ręcznie
-              </h2>
-              <ol className="space-y-3">
-                {beforeSteps.map((step, i) => (
-                  <li
-                    key={step}
-                    className="flex items-start gap-4 bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-xl p-5"
-                  >
-                    <span className="flex-shrink-0 w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 flex items-center justify-center text-sm font-semibold">
-                      {i + 1}
-                    </span>
-                    <span className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                      {step}
-                    </span>
-                  </li>
-                ))}
-              </ol>
-            </div>
-          </div>
-        </section>
-
-        {/* Proces po */}
-        <section className="py-16 lg:py-24">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <span className="section-label">Po wdrożeniu</span>
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-8">
-                Jak to wygląda po wpięciu n8n
-              </h2>
-              <ol className="space-y-3">
-                {afterSteps.map((step, i) => (
-                  <li
-                    key={step}
-                    className="flex items-start gap-4 bg-white dark:bg-gray-800/60 border border-accent/20 rounded-xl p-5"
-                  >
-                    <span className="flex-shrink-0 w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center text-sm font-semibold">
-                      {i + 1}
-                    </span>
-                    <span className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                      {step}
-                    </span>
-                  </li>
-                ))}
-              </ol>
-            </div>
-          </div>
-        </section>
-
-        {/* Diagram (stepper) */}
-        <section className="py-16 lg:py-24 bg-gray-50 dark:bg-gray-900/50 border-y border-gray-100 dark:border-gray-800">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto mb-10">
-              <span className="section-label">Diagram</span>
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-4">
-                Anatomia workflow „lead → CRM → handlowiec → raport”
-              </h2>
-              <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                Każdy krok można zbudować osobno i mierzyć efekt po kolei.
-                Akcentowane kafelki to miejsca, w których natywne workflow CRM
-                najczęściej się wykładają.
-              </p>
-            </div>
-            <ol className="relative max-w-3xl mx-auto space-y-3 lg:space-y-4">
-              {[
-                {
-                  n: "1",
-                  title: "Webhook z formularza",
-                  desc: "n8n nasłuchuje na endpoint, do którego wysyłają wszystkie źródła leadów (formularz, lead ads, e-mail).",
-                  accent: false,
-                },
-                {
-                  n: "2",
-                  title: "Walidacja + wzbogacenie",
-                  desc: "Code node sprawdza NIP w GUS, domenę w Clearbit/własnym scoringu, dedup w CRM.",
-                  accent: true,
-                },
-                {
-                  n: "3",
-                  title: "Tworzenie w CRM (Pipedrive/HubSpot/Salesforce)",
-                  desc: "Osoba + organizacja + deal w jednym kroku, z pełnymi custom fieldami i UTM-ami.",
-                  accent: true,
-                },
-                {
-                  n: "4",
-                  title: "Routing do handlowca",
-                  desc: "Region, produkt, obciążenie pipeline'u — n8n wybiera odbiorcę po regule biznesowej.",
-                  accent: false,
-                },
-                {
-                  n: "5",
-                  title: "Zadanie + powiadomienie",
-                  desc: "Task „kontakt w 5 minut” w CRM + push do Slacka/SMS-a do przypisanego handlowca.",
-                  accent: false,
-                },
-                {
-                  n: "6",
-                  title: "Sync ze światem zewnętrznym",
-                  desc: "Po zmianie etapu deala — fakturowanie, księgowość, magazyn, slack: wszystko przez n8n.",
-                  accent: true,
-                },
-                {
-                  n: "7",
-                  title: "Raport",
-                  desc: "Cron buduje codzienny/tygodniowy raport KPI i wysyła go zarządowi mailem albo do Slacka.",
-                  accent: false,
-                },
-              ].map((s, i, arr) => (
-                <li key={s.n} className="relative">
-                  <div
-                    className={`flex gap-4 lg:gap-5 items-start bg-white dark:bg-gray-800/80 border rounded-2xl p-5 lg:p-6 ${
-                      s.accent
-                        ? "border-accent/40 shadow-sm"
-                        : "border-gray-100 dark:border-gray-700"
-                    }`}
-                  >
-                    <div
-                      className={`flex-shrink-0 w-10 h-10 lg:w-11 lg:h-11 rounded-full flex items-center justify-center font-bold text-sm tabular-nums ${
-                        s.accent
-                          ? "bg-accent text-white"
-                          : "bg-accent-light dark:bg-accent-dark-light text-accent"
-                      }`}
-                    >
-                      {s.n}
+        {/* Treść w zakładkach — nic nie wycięte, podzielone */}
+        <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
+          <Tabs
+            ariaLabel="Sekcje artykułu o n8n dla CRM"
+            tabs={[
+              {
+                label: "Problem biznesowy",
+                content: (
+                  <div className="py-10 lg:py-12">
+                    <div className="max-w-3xl mx-auto">
+                      <span className="section-label">Problem biznesowy</span>
+                      <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-6">
+                        CRM przestaje wyrabiać tam, gdzie kończy się jego
+                        natywna automatyzacja
+                      </h2>
+                      <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
+                        Pierwsze pytanie nie brzmi: „jakiego narzędzia użyć?”.
+                        Pierwsze pytanie brzmi: „który proces powtarza się
+                        często i kosztuje nas czas albo sprzedaż?”. W praktyce
+                        odpowiedź u 80% firm B2B wygląda tak samo: lead wpada,
+                        ktoś go ręcznie wpisuje, ktoś inny ręcznie aktualizuje
+                        status, raport klei się w Excelu na koniec tygodnia.
+                        Wbudowane automatyzacje CRM łatają część problemu, ale
+                        po kilku miesiącach trafia się na ścianę: brak HTTP
+                        request, brak code node, brak warunków zagnieżdżonych,
+                        limit kroków na workflow. n8n jest tym, co zaczyna się
+                        tam, gdzie kończy się natywne workflow.
+                      </p>
+                      <ul className="space-y-3">
+                        {[
+                          "Lead z formularza nie trafia do CRM, tylko do skrzynki marketingu",
+                          "Custom fieldy i UTM-y giną w drodze przez natywne integracje",
+                          "Brak wzbogacenia (NIP→GUS, domena→branża, scoring) po stronie CRM",
+                          "Status w CRM ≠ status w księgowości ≠ status w fakturowaniu",
+                          "Raport sprzedaży powstaje ręcznie z 3 eksportów CSV",
+                          "Workflow Pipedrive/HubSpot przekracza limity logiczne lub liczbowe",
+                        ].map((p) => (
+                          <li
+                            key={p}
+                            className="flex items-start gap-3 bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-xl px-5 py-4"
+                          >
+                            <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />
+                            <span className="text-gray-700 dark:text-gray-300">
+                              {p}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
-                    <div className="flex-1 min-w-0">
-                      <h3 className="text-base lg:text-lg font-semibold text-gray-900 dark:text-white mb-1">
-                        {s.title}
-                      </h3>
-                      <p className="text-sm lg:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
-                        {s.desc}
+                  </div>
+                ),
+              },
+              {
+                label: "Objawy",
+                content: (
+                  <div className="py-10 lg:py-12">
+                    <div className="max-w-3xl mx-auto">
+                      <span className="section-label">Objawy</span>
+                      <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-6">
+                        Po czym poznasz, że CRM dojechał do swojego sufitu
+                      </h2>
+                      <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
+                        Nie chodzi o „zły CRM” — chodzi o to, że pojedynczy CRM
+                        nie umie obsłużyć całego procesu sprzedaży i obsługi
+                        klienta. Konkretne zachowania, które pojawiają się u 9
+                        na 10 firm B2B przed wdrożeniem n8n:
+                      </p>
+                      <ul className="space-y-3">
+                        {symptoms.map((s) => (
+                          <li
+                            key={s}
+                            className="flex items-start gap-3 bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-xl px-5 py-4"
+                          >
+                            <svg
+                              className="flex-shrink-0 mt-0.5 text-accent"
+                              width="20"
+                              height="20"
+                              viewBox="0 0 20 20"
+                              fill="none"
+                            >
+                              <path
+                                d="M10 2v6m0 4v.01M10 18a8 8 0 100-16 8 8 0 000 16z"
+                                stroke="currentColor"
+                                strokeWidth="1.5"
+                                strokeLinecap="round"
+                              />
+                            </svg>
+                            <span className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                              {s}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                ),
+              },
+              {
+                label: "Koszt problemu",
+                content: (
+                  <div className="py-10 lg:py-12">
+                    <div className="max-w-3xl mx-auto">
+                      <span className="section-label">Koszt problemu</span>
+                      <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-6">
+                        Ile to realnie kosztuje firmę
+                      </h2>
+                      <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
+                        Konkretny rachunek z firmy, którą obsługiwałem niedawno:
+                        4 handlowców, 600 leadów miesięcznie, średni czas
+                        reakcji 3 godziny w godzinach pracy. Każdy lead to ok. 3
+                        minuty ręcznego wprowadzania do CRM (kopiuj-wklej z
+                        maila, dodanie organizacji, ustawienie etapu) plus ok. 5
+                        minut na sprawdzenie firmy ręcznie w GUS i Google.
+                      </p>
+                      <div className="grid sm:grid-cols-2 gap-4 mb-6">
+                        <div className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-6">
+                          <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">
+                            Ręczne wprowadzanie leadów
+                          </p>
+                          <p className="text-2xl font-bold text-gray-900 dark:text-white">
+                            600 × 8 min = 80 h/mies.
+                          </p>
+                          <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
+                            Połowa etatu wyrzucona na klepanie
+                          </p>
+                        </div>
+                        <div className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-6">
+                          <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">
+                            Stracone leady przez czas reakcji
+                          </p>
+                          <p className="text-2xl font-bold text-gray-900 dark:text-white">
+                            ~12% konwersji w dół
+                          </p>
+                          <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
+                            Reakcja powyżej godziny vs poniżej 5 min
+                          </p>
+                        </div>
+                        <div className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-6">
+                          <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">
+                            Klejenie raportu tygodniowego
+                          </p>
+                          <p className="text-2xl font-bold text-gray-900 dark:text-white">
+                            4 h × 4 tyg. = 16 h/mies.
+                          </p>
+                          <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
+                            Czas managera, najdroższa godzina w firmie
+                          </p>
+                        </div>
+                        <div className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-6">
+                          <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">
+                            Łączny koszt miesięczny
+                          </p>
+                          <p className="text-2xl font-bold text-accent">
+                            ~12–18 tys. zł
+                          </p>
+                          <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
+                            Praca + utracone deale (konserwatywnie)
+                          </p>
+                        </div>
+                      </div>
+                      <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                        Wdrożenie n8n na warstwie CRM (pierwszy etap) to typowo
+                        4–8 tys. zł netto i 2–3 tygodnie pracy. ROI w pierwszym
+                        miesiącu po uruchomieniu, jeśli zespół ma więcej niż 2
+                        handlowców i więcej niż 200 leadów miesięcznie.
                       </p>
                     </div>
                   </div>
-                  {i < arr.length - 1 && (
-                    <div className="flex justify-center py-1.5">
-                      <svg
-                        className="text-gray-300 dark:text-gray-600"
-                        width="14"
-                        height="14"
-                        viewBox="0 0 14 14"
-                        fill="none"
-                        aria-hidden="true"
-                      >
-                        <path
-                          d="M7 2v8m0 0l-3-3m3 3l3-3"
-                          stroke="currentColor"
-                          strokeWidth="1.5"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
+                ),
+              },
+              {
+                label: "Proces przed",
+                content: (
+                  <div className="py-10 lg:py-12">
+                    <div className="max-w-3xl mx-auto">
+                      <span className="section-label">Przed wdrożeniem</span>
+                      <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-8">
+                        Jak to wygląda dziś, ręcznie
+                      </h2>
+                      <ol className="space-y-3">
+                        {beforeSteps.map((step, i) => (
+                          <li
+                            key={step}
+                            className="flex items-start gap-4 bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-xl p-5"
+                          >
+                            <span className="flex-shrink-0 w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 flex items-center justify-center text-sm font-semibold">
+                              {i + 1}
+                            </span>
+                            <span className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                              {step}
+                            </span>
+                          </li>
+                        ))}
+                      </ol>
                     </div>
-                  )}
-                </li>
-              ))}
-            </ol>
-          </div>
-        </section>
-
-        {/* Self-hosted vs cloud */}
-        <section className="py-16 lg:py-24">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <span className="section-label">Decyzja techniczna</span>
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-6">
-                Self-hosted czy n8n.cloud — co wybrać do CRM
-              </h2>
-              <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
-                Krótka odpowiedź: zacznij od cloud, jeśli nie masz osoby od
-                infrastruktury. Migracja na self-hosted jest prosta, gdy już
-                wiesz, jakie workflow naprawdę u was działają. Dłuższa odpowiedź
-                — kryteria po kolei:
-              </p>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-6">
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                    Wybierz n8n.cloud, gdy:
-                  </h3>
-                  <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
-                    <li>• Wolumen do 5–10 tys. wykonań miesięcznie</li>
-                    <li>• Brak osoby technicznej w firmie / na retainerze</li>
-                    <li>• Chcecie ruszyć w tym tygodniu</li>
-                    <li>• UE i DPA wystarczają wam do RODO</li>
-                    <li>• Brak własnych systemów wewnętrznych do spinania</li>
-                  </ul>
-                </div>
-                <div className="bg-white dark:bg-gray-800/60 border border-accent/30 rounded-2xl p-6">
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                    Wybierz self-hosted, gdy:
-                  </h3>
-                  <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
-                    <li>• Wolumen powyżej 30 tys. wykonań miesięcznie</li>
-                    <li>• Macie własne API/bazy w sieci wewnętrznej</li>
-                    <li>
-                      • Branża regulowana (finanse, zdrowie, sektor publiczny)
-                    </li>
-                    <li>• Chcecie pisać własne moduły / mocno custom logikę</li>
-                    <li>• Macie kogoś, kto rozumie Linuksa i Dockera</li>
-                  </ul>
-                </div>
-              </div>
-              <p className="text-gray-600 dark:text-gray-400 leading-relaxed mt-6">
-                Realne koszty: n8n.cloud Pro ok. 60 EUR/mies. za 10 tys.
-                wykonań. Self-hosted — Hetzner CX22 za ok. 25 zł/mies. plus
-                koszt utrzymania (200–500 zł/mies., jeśli outsourcujecie). Pełne
-                porównanie z innymi narzędziami zostawiłem w{" "}
-                <Link
-                  href="/strefa-wiedzy/make-vs-n8n"
-                  className="text-accent hover:underline"
-                >
-                  Make vs n8n
-                </Link>{" "}
-                i{" "}
-                <Link
-                  href="/strefa-wiedzy/n8n-vs-zapier"
-                  className="text-accent hover:underline"
-                >
-                  n8n vs Zapier
-                </Link>
-                .
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Typowe workflow n8n dla CRM */}
-        <section className="py-16 lg:py-24 bg-gray-50 dark:bg-gray-900/50 border-y border-gray-100 dark:border-gray-800">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <span className="section-label">5 typowych workflow</span>
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-6">
-                Co buduje się w n8n nad CRM-em najczęściej
-              </h2>
-              <div className="space-y-4">
-                {workflows.map((w) => (
-                  <div
-                    key={w.n}
-                    className={`flex gap-5 items-start bg-white dark:bg-gray-800/60 border rounded-2xl p-6 ${
-                      w.accent
-                        ? "border-accent/30 shadow-sm"
-                        : "border-gray-100 dark:border-gray-700"
-                    }`}
-                  >
-                    <span
-                      className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm ${
-                        w.accent
-                          ? "bg-accent text-white"
-                          : "bg-accent-light dark:bg-accent-dark-light text-accent"
-                      }`}
-                    >
-                      {w.n}
-                    </span>
-                    <div>
-                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                        {w.title}
-                      </h3>
-                      <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                        {w.desc}
+                  </div>
+                ),
+              },
+              {
+                label: "Proces po",
+                content: (
+                  <div className="py-10 lg:py-12">
+                    <div className="max-w-3xl mx-auto">
+                      <span className="section-label">Po wdrożeniu</span>
+                      <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-8">
+                        Jak to wygląda po wpięciu n8n
+                      </h2>
+                      <ol className="space-y-3">
+                        {afterSteps.map((step, i) => (
+                          <li
+                            key={step}
+                            className="flex items-start gap-4 bg-white dark:bg-gray-800/60 border border-accent/20 rounded-xl p-5"
+                          >
+                            <span className="flex-shrink-0 w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center text-sm font-semibold">
+                              {i + 1}
+                            </span>
+                            <span className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                              {step}
+                            </span>
+                          </li>
+                        ))}
+                      </ol>
+                    </div>
+                  </div>
+                ),
+              },
+              {
+                label: "Diagram",
+                content: (
+                  <div className="py-10 lg:py-12">
+                    <div className="max-w-3xl mx-auto mb-10">
+                      <span className="section-label">Diagram</span>
+                      <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-4">
+                        Anatomia workflow „lead → CRM → handlowiec → raport”
+                      </h2>
+                      <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                        Każdy krok można zbudować osobno i mierzyć efekt po
+                        kolei. Akcentowane kafelki to miejsca, w których natywne
+                        workflow CRM najczęściej się wykładają.
+                      </p>
+                    </div>
+                    <ol className="relative max-w-3xl mx-auto space-y-3 lg:space-y-4">
+                      {diagramSteps.map((s, i, arr) => (
+                        <li key={s.n} className="relative">
+                          <div
+                            className={`flex gap-4 lg:gap-5 items-start bg-white dark:bg-gray-800/80 border rounded-2xl p-5 lg:p-6 ${
+                              s.accent
+                                ? "border-accent/40 shadow-sm"
+                                : "border-gray-100 dark:border-gray-700"
+                            }`}
+                          >
+                            <div
+                              className={`flex-shrink-0 w-10 h-10 lg:w-11 lg:h-11 rounded-full flex items-center justify-center font-bold text-sm tabular-nums ${
+                                s.accent
+                                  ? "bg-accent text-white"
+                                  : "bg-accent-light dark:bg-accent-dark-light text-accent"
+                              }`}
+                            >
+                              {s.n}
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <h3 className="text-base lg:text-lg font-semibold text-gray-900 dark:text-white mb-1">
+                                {s.title}
+                              </h3>
+                              <p className="text-sm lg:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
+                                {s.desc}
+                              </p>
+                            </div>
+                          </div>
+                          {i < arr.length - 1 && (
+                            <div className="flex justify-center py-1.5">
+                              <svg
+                                className="text-gray-300 dark:text-gray-600"
+                                width="14"
+                                height="14"
+                                viewBox="0 0 14 14"
+                                fill="none"
+                                aria-hidden="true"
+                              >
+                                <path
+                                  d="M7 2v8m0 0l-3-3m3 3l3-3"
+                                  stroke="currentColor"
+                                  strokeWidth="1.5"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                />
+                              </svg>
+                            </div>
+                          )}
+                        </li>
+                      ))}
+                    </ol>
+                  </div>
+                ),
+              },
+              {
+                label: "Decyzja techniczna",
+                content: (
+                  <div className="py-10 lg:py-12">
+                    <div className="max-w-3xl mx-auto">
+                      <span className="section-label">Decyzja techniczna</span>
+                      <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-6">
+                        Self-hosted czy n8n.cloud — co wybrać do CRM
+                      </h2>
+                      <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
+                        Krótka odpowiedź: zacznij od cloud, jeśli nie masz osoby
+                        od infrastruktury. Migracja na self-hosted jest prosta,
+                        gdy już wiesz, jakie workflow naprawdę u was działają.
+                        Dłuższa odpowiedź — kryteria po kolei:
+                      </p>
+                      <div className="grid md:grid-cols-2 gap-6">
+                        <div className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-6">
+                          <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
+                            Wybierz n8n.cloud, gdy:
+                          </h3>
+                          <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+                            <li>• Wolumen do 5–10 tys. wykonań miesięcznie</li>
+                            <li>
+                              • Brak osoby technicznej w firmie / na retainerze
+                            </li>
+                            <li>• Chcecie ruszyć w tym tygodniu</li>
+                            <li>• UE i DPA wystarczają wam do RODO</li>
+                            <li>
+                              • Brak własnych systemów wewnętrznych do spinania
+                            </li>
+                          </ul>
+                        </div>
+                        <div className="bg-white dark:bg-gray-800/60 border border-accent/30 rounded-2xl p-6">
+                          <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
+                            Wybierz self-hosted, gdy:
+                          </h3>
+                          <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+                            <li>
+                              • Wolumen powyżej 30 tys. wykonań miesięcznie
+                            </li>
+                            <li>• Macie własne API/bazy w sieci wewnętrznej</li>
+                            <li>
+                              • Branża regulowana (finanse, zdrowie, sektor
+                              publiczny)
+                            </li>
+                            <li>
+                              • Chcecie pisać własne moduły / mocno custom
+                              logikę
+                            </li>
+                            <li>
+                              • Macie kogoś, kto rozumie Linuksa i Dockera
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <p className="text-gray-600 dark:text-gray-400 leading-relaxed mt-6">
+                        Realne koszty: n8n.cloud Pro ok. 60 EUR/mies. za 10 tys.
+                        wykonań. Self-hosted — Hetzner CX22 za ok. 25 zł/mies.
+                        plus koszt utrzymania (200–500 zł/mies., jeśli
+                        outsourcujecie). Pełne porównanie z innymi narzędziami
+                        zostawiłem w{" "}
+                        <Link
+                          href="/strefa-wiedzy/make-vs-n8n"
+                          className="text-accent hover:underline"
+                        >
+                          Make vs n8n
+                        </Link>{" "}
+                        i{" "}
+                        <Link
+                          href="/strefa-wiedzy/n8n-vs-zapier"
+                          className="text-accent hover:underline"
+                        >
+                          n8n vs Zapier
+                        </Link>
+                        .
                       </p>
                     </div>
                   </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Co wdrożyć w pierwszym etapie */}
-        <section className="py-16 lg:py-24">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <span className="section-label">Pierwszy etap</span>
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-6">
-                Co wdrażam u klienta w pierwszych 2–3 tygodniach
-              </h2>
-              <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
-                Nie zaczynam od pełnej warstwy automatyzacji. Zaczynam od pętli,
-                którą da się zmierzyć w 2 tygodnie i pokazać klientowi liczbę
-                godzin oszczędności w miesiącu. Reszta dochodzi etapami, gdy
-                fundament działa.
-              </p>
-              <ul className="space-y-3">
-                {firstStage.map((s, i) => (
-                  <li
-                    key={s}
-                    className="flex items-start gap-3 bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-xl px-5 py-4"
-                  >
-                    <span className="flex-shrink-0 w-7 h-7 rounded-full bg-accent text-white flex items-center justify-center text-xs font-bold">
-                      {i + 1}
-                    </span>
-                    <span className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                      {s}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* Typowe błędy */}
-        <section className="py-16 lg:py-24 bg-gray-50 dark:bg-gray-900/50 border-y border-gray-100 dark:border-gray-800">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <span className="section-label">Antywzorce</span>
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-6">
-                Typowe błędy przy wdrażaniu n8n nad CRM
-              </h2>
-              <ul className="space-y-3">
-                {mistakes.map((m) => (
-                  <li
-                    key={m}
-                    className="flex items-start gap-3 bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-xl px-5 py-4"
-                  >
-                    <svg
-                      className="flex-shrink-0 mt-0.5 text-red-400"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 20 20"
-                      fill="none"
-                    >
-                      <path
-                        d="M5 5l10 10M15 5L5 15"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                    <span className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                      {m}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* Cennik */}
-        <section className="py-16 lg:py-24">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <span className="section-label">Cennik</span>
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-4">
-                Ile to kosztuje
-              </h2>
-              <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
-                Stała cena projektowa, kamienie milowe, płatność po odbiorze
-                etapu. Wycenę dostajesz po godzinnej rozmowie i przejrzeniu
-                obecnego stacku. Pełen cennik usług automatyzacji CRM jest
-                rozpisany osobno.
-              </p>
-              <div className="grid md:grid-cols-2 gap-6 mb-8">
-                <div className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-6">
-                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">
-                    Pierwszy etap
-                  </p>
-                  <p className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
-                    4–8 tys. zł
-                  </p>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                    Routing leadów + walidacja + tworzenie w CRM + prosty
-                    raport. 2–3 tygodnie pracy.
-                  </p>
-                </div>
-                <div className="bg-white dark:bg-gray-800/60 border border-accent/30 rounded-2xl p-6">
-                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">
-                    Pełna warstwa nad CRM
-                  </p>
-                  <p className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
-                    12–25 tys. zł
-                  </p>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                    Routing + sync z zewnętrznymi systemami + raporty +
-                    follow-up + onboarding. 4–8 tygodni etapami.
-                  </p>
-                </div>
-              </div>
-              <Link href="/automatyzacja-leadow-crm" className="btn-secondary">
-                Zobacz pełny cennik automatyzacji CRM
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* FAQ */}
-        <section className="py-16 lg:py-24 bg-gray-50 dark:bg-gray-900/50 border-y border-gray-100 dark:border-gray-800">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-12 text-center">
-                Najczęstsze pytania
-              </h2>
-              <div className="space-y-4">
-                {faq.map((item) => (
-                  <details
-                    key={item.question}
-                    className="group bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl overflow-hidden"
-                  >
-                    <summary className="cursor-pointer px-6 py-5 flex items-center justify-between gap-4 list-none">
-                      <span className="font-semibold text-gray-900 dark:text-white">
-                        {item.question}
-                      </span>
-                      <svg
-                        className="flex-shrink-0 transition-transform group-open:rotate-180"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 20 20"
-                        fill="none"
-                      >
-                        <path
-                          d="M5 7l5 5 5-5"
-                          stroke="currentColor"
-                          strokeWidth="1.5"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </summary>
-                    <div className="px-6 pb-5 text-gray-600 dark:text-gray-400 leading-relaxed">
-                      {item.answer}
+                ),
+              },
+              {
+                label: "5 typowych workflow",
+                content: (
+                  <div className="py-10 lg:py-12">
+                    <div className="max-w-3xl mx-auto">
+                      <span className="section-label">5 typowych workflow</span>
+                      <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-6">
+                        Co buduje się w n8n nad CRM-em najczęściej
+                      </h2>
+                      <div className="space-y-4">
+                        {workflows.map((w) => (
+                          <div
+                            key={w.n}
+                            className={`flex gap-5 items-start bg-white dark:bg-gray-800/60 border rounded-2xl p-6 ${
+                              w.accent
+                                ? "border-accent/30 shadow-sm"
+                                : "border-gray-100 dark:border-gray-700"
+                            }`}
+                          >
+                            <span
+                              className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm ${
+                                w.accent
+                                  ? "bg-accent text-white"
+                                  : "bg-accent-light dark:bg-accent-dark-light text-accent"
+                              }`}
+                            >
+                              {w.n}
+                            </span>
+                            <div>
+                              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                                {w.title}
+                              </h3>
+                              <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                                {w.desc}
+                              </p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                  </details>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Powiązane */}
-        <section className="py-16 lg:py-24">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-                Powiązane
-              </h2>
-              <div className="grid md:grid-cols-2 gap-8">
-                <div>
-                  <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-3">
-                    Usługi
-                  </h3>
-                  <ul className="space-y-2 text-sm">
-                    <li>
-                      <Link href="/n8n" className="text-accent hover:underline">
-                        n8n — wdrożenia
-                      </Link>
-                    </li>
-                    <li>
+                  </div>
+                ),
+              },
+              {
+                label: "Pierwszy etap",
+                content: (
+                  <div className="py-10 lg:py-12">
+                    <div className="max-w-3xl mx-auto">
+                      <span className="section-label">Pierwszy etap</span>
+                      <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-6">
+                        Co wdrażam u klienta w pierwszych 2–3 tygodniach
+                      </h2>
+                      <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
+                        Nie zaczynam od pełnej warstwy automatyzacji. Zaczynam
+                        od pętli, którą da się zmierzyć w 2 tygodnie i pokazać
+                        klientowi liczbę godzin oszczędności w miesiącu. Reszta
+                        dochodzi etapami, gdy fundament działa.
+                      </p>
+                      <ul className="space-y-3">
+                        {firstStage.map((s, i) => (
+                          <li
+                            key={s}
+                            className="flex items-start gap-3 bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-xl px-5 py-4"
+                          >
+                            <span className="flex-shrink-0 w-7 h-7 rounded-full bg-accent text-white flex items-center justify-center text-xs font-bold">
+                              {i + 1}
+                            </span>
+                            <span className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                              {s}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                ),
+              },
+              {
+                label: "Antywzorce",
+                content: (
+                  <div className="py-10 lg:py-12">
+                    <div className="max-w-3xl mx-auto">
+                      <span className="section-label">Antywzorce</span>
+                      <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-6">
+                        Typowe błędy przy wdrażaniu n8n nad CRM
+                      </h2>
+                      <ul className="space-y-3">
+                        {mistakes.map((m) => (
+                          <li
+                            key={m}
+                            className="flex items-start gap-3 bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-xl px-5 py-4"
+                          >
+                            <svg
+                              className="flex-shrink-0 mt-0.5 text-red-400"
+                              width="20"
+                              height="20"
+                              viewBox="0 0 20 20"
+                              fill="none"
+                            >
+                              <path
+                                d="M5 5l10 10M15 5L5 15"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                              />
+                            </svg>
+                            <span className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                              {m}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                ),
+              },
+              {
+                label: "Cennik",
+                content: (
+                  <div className="py-10 lg:py-12">
+                    <div className="max-w-3xl mx-auto">
+                      <span className="section-label">Cennik</span>
+                      <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-4">
+                        Ile to kosztuje
+                      </h2>
+                      <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
+                        Stała cena projektowa, kamienie milowe, płatność po
+                        odbiorze etapu. Wycenę dostajesz po godzinnej rozmowie i
+                        przejrzeniu obecnego stacku. Pełen cennik usług
+                        automatyzacji CRM jest rozpisany osobno.
+                      </p>
+                      <div className="grid md:grid-cols-2 gap-6 mb-8">
+                        <div className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-6">
+                          <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">
+                            Pierwszy etap
+                          </p>
+                          <p className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
+                            4–8 tys. zł
+                          </p>
+                          <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                            Routing leadów + walidacja + tworzenie w CRM +
+                            prosty raport. 2–3 tygodnie pracy.
+                          </p>
+                        </div>
+                        <div className="bg-white dark:bg-gray-800/60 border border-accent/30 rounded-2xl p-6">
+                          <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">
+                            Pełna warstwa nad CRM
+                          </p>
+                          <p className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
+                            12–25 tys. zł
+                          </p>
+                          <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                            Routing + sync z zewnętrznymi systemami + raporty +
+                            follow-up + onboarding. 4–8 tygodni etapami.
+                          </p>
+                        </div>
+                      </div>
                       <Link
                         href="/automatyzacja-leadow-crm"
-                        className="text-accent hover:underline"
+                        className="btn-secondary"
                       >
-                        Automatyzacja leadów i CRM
+                        Zobacz pełny cennik automatyzacji CRM
                       </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="/automatyzacja-pipedrive"
-                        className="text-accent hover:underline"
+                    </div>
+                  </div>
+                ),
+              },
+              {
+                label: "FAQ",
+                content: (
+                  <div className="py-10 lg:py-12">
+                    <div className="max-w-3xl mx-auto">
+                      <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-12 text-center">
+                        Najczęstsze pytania
+                      </h2>
+                      <div className="space-y-4">
+                        {faq.map((item) => (
+                          <details
+                            key={item.question}
+                            className="group bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl overflow-hidden"
+                          >
+                            <summary className="cursor-pointer px-6 py-5 flex items-center justify-between gap-4 list-none">
+                              <span className="font-semibold text-gray-900 dark:text-white">
+                                {item.question}
+                              </span>
+                              <svg
+                                className="flex-shrink-0 transition-transform group-open:rotate-180"
+                                width="20"
+                                height="20"
+                                viewBox="0 0 20 20"
+                                fill="none"
+                              >
+                                <path
+                                  d="M5 7l5 5 5-5"
+                                  stroke="currentColor"
+                                  strokeWidth="1.5"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                />
+                              </svg>
+                            </summary>
+                            <div className="px-6 pb-5 text-gray-600 dark:text-gray-400 leading-relaxed">
+                              {item.answer}
+                            </div>
+                          </details>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ),
+              },
+              {
+                label: "Powiązane",
+                content: (
+                  <div className="py-10 lg:py-12">
+                    <div className="max-w-3xl mx-auto">
+                      <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+                        Powiązane
+                      </h2>
+                      <div className="grid md:grid-cols-2 gap-8">
+                        <div>
+                          <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-3">
+                            Usługi
+                          </h3>
+                          <ul className="space-y-2 text-sm">
+                            <li>
+                              <Link
+                                href="/n8n"
+                                className="text-accent hover:underline"
+                              >
+                                n8n — wdrożenia
+                              </Link>
+                            </li>
+                            <li>
+                              <Link
+                                href="/automatyzacja-leadow-crm"
+                                className="text-accent hover:underline"
+                              >
+                                Automatyzacja leadów i CRM
+                              </Link>
+                            </li>
+                            <li>
+                              <Link
+                                href="/automatyzacja-pipedrive"
+                                className="text-accent hover:underline"
+                              >
+                                Automatyzacja Pipedrive
+                              </Link>
+                            </li>
+                            <li>
+                              <Link
+                                href="/automatyzacja-salesforce"
+                                className="text-accent hover:underline"
+                              >
+                                Automatyzacja Salesforce
+                              </Link>
+                            </li>
+                            <li>
+                              <Link
+                                href="/zapier-make"
+                                className="text-accent hover:underline"
+                              >
+                                Zapier i Make
+                              </Link>
+                            </li>
+                          </ul>
+                        </div>
+                        <div>
+                          <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-3">
+                            Strefa wiedzy
+                          </h3>
+                          <ul className="space-y-2 text-sm">
+                            <li>
+                              <Link
+                                href="/strefa-wiedzy/make-vs-n8n"
+                                className="text-accent hover:underline"
+                              >
+                                Make vs n8n — porównanie dla MŚP
+                              </Link>
+                            </li>
+                            <li>
+                              <Link
+                                href="/strefa-wiedzy/n8n-vs-zapier"
+                                className="text-accent hover:underline"
+                              >
+                                n8n vs Zapier
+                              </Link>
+                            </li>
+                            <li>
+                              <Link
+                                href="/make-vs-n8n-crm"
+                                className="text-accent hover:underline"
+                              >
+                                Make vs n8n dla CRM — decyzja
+                              </Link>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ),
+              },
+              {
+                label: "Kontakt",
+                content: (
+                  <div className="py-10 lg:py-12">
+                    <div className="max-w-2xl mx-auto text-center">
+                      <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                        Sprawdźmy, gdzie u was n8n ma sens
+                      </h2>
+                      <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
+                        30 minut na rozmowę o procesie. Wyjdziesz z konkretną
+                        listą miejsc, gdzie automatyzacja zwraca się w pierwszym
+                        miesiącu — albo z uczciwą informacją, że na tym etapie
+                        n8n nie ma sensu.
+                      </p>
+                      <TrackedCTA
+                        href="/#kontakt"
+                        location="article_n8n-dla-crm_final"
+                        label="Sprawdź, czy n8n ma sens u mnie"
+                        eventName="cta_click_article_audit"
+                        className="btn-primary"
                       >
-                        Automatyzacja Pipedrive
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="/automatyzacja-salesforce"
-                        className="text-accent hover:underline"
-                      >
-                        Automatyzacja Salesforce
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="/zapier-make"
-                        className="text-accent hover:underline"
-                      >
-                        Zapier i Make
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-3">
-                    Strefa wiedzy
-                  </h3>
-                  <ul className="space-y-2 text-sm">
-                    <li>
-                      <Link
-                        href="/strefa-wiedzy/make-vs-n8n"
-                        className="text-accent hover:underline"
-                      >
-                        Make vs n8n — porównanie dla MŚP
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="/strefa-wiedzy/n8n-vs-zapier"
-                        className="text-accent hover:underline"
-                      >
-                        n8n vs Zapier
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="/make-vs-n8n-crm"
-                        className="text-accent hover:underline"
-                      >
-                        Make vs n8n dla CRM — decyzja
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Final CTA */}
-        <section className="py-16 lg:py-24 bg-accent/10 border-t border-gray-100 dark:border-gray-800">
-          <div className="container-wide">
-            <div className="max-w-2xl mx-auto text-center">
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                Sprawdźmy, gdzie u was n8n ma sens
-              </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-                30 minut na rozmowę o procesie. Wyjdziesz z konkretną listą
-                miejsc, gdzie automatyzacja zwraca się w pierwszym miesiącu —
-                albo z uczciwą informacją, że na tym etapie n8n nie ma sensu.
-              </p>
-              <TrackedCTA
-                href="/#kontakt"
-                location="article_n8n-dla-crm_final"
-                label="Sprawdź, czy n8n ma sens u mnie"
-                eventName="cta_click_article_audit"
-                className="btn-primary"
-              >
-                Sprawdź, czy n8n ma sens u mnie
-              </TrackedCTA>
-            </div>
-          </div>
-        </section>
+                        Sprawdź, czy n8n ma sens u mnie
+                      </TrackedCTA>
+                    </div>
+                  </div>
+                ),
+              },
+            ]}
+          />
+        </div>
       </main>
       <Footer />
 

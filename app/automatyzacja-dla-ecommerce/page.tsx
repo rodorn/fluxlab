@@ -5,6 +5,7 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
   title:
@@ -191,11 +192,11 @@ export default function AutomatyzacjaDlaEcommerce() {
   return (
     <>
       <Header />
-      <main className="pt-16">
+      <main>
         <Breadcrumbs items={[{ label: "Automatyzacja dla e-commerce" }]} />
 
-        {/* Hero */}
-        <section className="relative py-16 lg:py-24 overflow-hidden">
+        {/* Hero — kompaktowy */}
+        <section className="relative pt-24 pb-12 overflow-hidden">
           <div className="absolute inset-0 -z-10">
             <div className="absolute inset-0 bg-sky-50 dark:hidden" />
             <img
@@ -224,13 +225,18 @@ export default function AutomatyzacjaDlaEcommerce() {
                 <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
                   Automatyzacja dla e-commerce
                 </h1>
-                <p className="text-lg text-gray-600 dark:text-gray-300">
+                <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
                   Sklep internetowy ma kilkadziesiąt punktów, w których ludzie
                   ręcznie przepisują dane między systemami. Magazyn, faktury,
                   etykiety, mail marketing, Allegro, BaseLinker. Każdy z tych
                   punktów da się spiąć tak, żeby działał sam — a Ty miał czas na
                   sprzedaż, nie na klepanie.
                 </p>
+                <div>
+                  <a href="#sekcje" className="btn-primary">
+                    Zamów diagnozę
+                  </a>
+                </div>
               </div>
               <div className="relative mx-auto lg:mx-0 w-full max-w-md">
                 <div className="rounded-2xl overflow-hidden shadow-xl shadow-gray-200/50 dark:shadow-black/30 border border-gray-100 dark:border-gray-800">
@@ -248,295 +254,318 @@ export default function AutomatyzacjaDlaEcommerce() {
           </div>
         </section>
 
-        {/* Co automatyzujemy */}
-        <section className="py-16 lg:py-24">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                Co automatyzujemy w e-commerce
-              </h2>
-              <p className="text-gray-500 dark:text-gray-400 mb-10">
-                Sklep internetowy to kilkanaście systemów, które muszą ze sobą
-                rozmawiać: platforma sklepowa, marketplace, magazyn,
-                fakturowanie, kurier, e-mail marketing, księgowość. Im większa
-                skala, tym większy koszt każdego ręcznego punktu styku.
-                Automatyzacja e-commerce polega na tym, żeby te systemy spiąć
-                tak, by zamówienie przeszło całą drogę bez udziału człowieka —
-                chyba że człowiek jest naprawdę potrzebny.
-              </p>
+        {/* Treść w zakładkach — nic nie wycięte, podzielone */}
+        <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
+          <Tabs
+            ariaLabel="Sekcje strony automatyzacji dla e-commerce"
+            tabs={[
+              {
+                label: "Co automatyzujemy",
+                content: (
+                  <div className="py-10 lg:py-12">
+                    <div className="max-w-3xl mx-auto">
+                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
+                        Co automatyzujemy w e-commerce
+                      </h2>
+                      <p className="text-gray-500 dark:text-gray-400 mb-10">
+                        Sklep internetowy to kilkanaście systemów, które muszą
+                        ze sobą rozmawiać: platforma sklepowa, marketplace,
+                        magazyn, fakturowanie, kurier, e-mail marketing,
+                        księgowość. Im większa skala, tym większy koszt każdego
+                        ręcznego punktu styku. Automatyzacja e-commerce polega
+                        na tym, żeby te systemy spiąć tak, by zamówienie
+                        przeszło całą drogę bez udziału człowieka — chyba że
+                        człowiek jest naprawdę potrzebny.
+                      </p>
 
-              <div className="space-y-6">
-                {useCases.map((useCase) => (
-                  <div
-                    key={useCase.title}
-                    className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-8"
-                  >
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                      {useCase.title}
-                    </h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">
-                      {useCase.description}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Konkretne problemy */}
-        <section className="py-16 lg:py-24 border-t border-gray-100 dark:border-gray-800">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                Konkretne problemy, które rozwiązujemy
-              </h2>
-              <p className="text-gray-500 dark:text-gray-400 mb-10">
-                Poniżej najczęstsze sytuacje, z którymi zgłaszają się sklepy
-                internetowe — i to, jak podchodzimy do nich od strony
-                technicznej. Każda z tych rzeczy jest do zrobienia w kilka dni
-                lub tygodni, nie miesięcy.
-              </p>
-
-              <div className="space-y-6">
-                {painPoints.map((item) => (
-                  <div
-                    key={item.pain}
-                    className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-8"
-                  >
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                      „{item.pain}”
-                    </h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">
-                      {item.solution}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Narzędzia */}
-        <section className="py-16 lg:py-24 border-t border-gray-100 dark:border-gray-800">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                Narzędzia, z którymi pracujemy w e-commerce
-              </h2>
-              <p className="text-gray-500 dark:text-gray-400 mb-10">
-                Nie sprzedaję konkretnego narzędzia. Dobieramy je do skali
-                sklepu, liczby kanałów i tego, co już działa. Najczęściej
-                spotykany stack dla polskiego e-commerce wygląda jednak podobnie
-                i poniżej opisujemy te narzędzia, w których robimy najwięcej
-                wdrożeń.
-              </p>
-
-              <div className="space-y-6">
-                {tools.map((tool) => (
-                  <div
-                    key={tool.name}
-                    className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-8"
-                  >
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                      {tool.name}
-                    </h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">
-                      {tool.description}
-                    </p>
-                  </div>
-                ))}
-              </div>
-
-              <p className="text-sm text-gray-500 dark:text-gray-400 mt-8">
-                Jeśli dopiero zastanawiasz się, czy wybrać{" "}
-                <Link href="/n8n" className="text-accent hover:underline">
-                  n8n
-                </Link>{" "}
-                czy{" "}
-                <Link
-                  href="/zapier-make"
-                  className="text-accent hover:underline"
-                >
-                  Zapier lub Make
-                </Link>
-                , opisaliśmy to w sekcji usług. Dla bardziej rozbudowanych
-                integracji bezpośrednio z API platform sklepowych zajrzyj do{" "}
-                <Link
-                  href="/integracje-api"
-                  className="text-accent hover:underline"
-                >
-                  integracji API
-                </Link>
-                .
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Dla kogo */}
-        <section className="py-16 lg:py-24 border-t border-gray-100 dark:border-gray-800">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                Dla kogo
-              </h2>
-              <p className="text-gray-500 dark:text-gray-400">
-                Dla sklepów internetowych z realnym wolumenem zamówień
-                (orientacyjnie od kilkudziesięciu miesięcznie wzwyż), które
-                tracą czas na ręczne przepisywanie danych między systemami.
-                Szczególnie dla firm sprzedających wielokanałowo (sklep +
-                Allegro + ewentualnie Amazon czy eBay), gdzie chaos rośnie
-                szybciej niż przychody. Pracujemy zarówno z e-commerce B2C, jak
-                i B2B — w tym drugim przypadku często łączymy automatyzację
-                sklepu z{" "}
-                <Link
-                  href="/automatyzacja-leadow"
-                  className="text-accent hover:underline"
-                >
-                  automatyzacją leadów
-                </Link>{" "}
-                i procesem ofertowania.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* FAQ */}
-        <section className="py-16 lg:py-24 border-t border-gray-100 dark:border-gray-800">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-8">
-                Najczęściej zadawane pytania
-              </h2>
-              <div className="space-y-4">
-                {faq.map((item) => (
-                  <details
-                    key={item.question}
-                    className="group bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl"
-                  >
-                    <summary className="flex items-center justify-between cursor-pointer p-6 text-gray-900 dark:text-white font-medium">
-                      {item.question}
-                      <svg
-                        className="shrink-0 ml-4 w-5 h-5 text-gray-400 transition-transform group-open:rotate-45"
-                        viewBox="0 0 20 20"
-                        fill="none"
-                      >
-                        <path
-                          d="M10 4v12M4 10h12"
-                          stroke="currentColor"
-                          strokeWidth="1.5"
-                          strokeLinecap="round"
-                        />
-                      </svg>
-                    </summary>
-                    <div className="px-6 pb-6 text-sm text-gray-500 dark:text-gray-400">
-                      {item.answer}
+                      <div className="space-y-6">
+                        {useCases.map((useCase) => (
+                          <div
+                            key={useCase.title}
+                            className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-8"
+                          >
+                            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                              {useCase.title}
+                            </h3>
+                            <p className="text-sm text-gray-600 dark:text-gray-400">
+                              {useCase.description}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                  </details>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
+                  </div>
+                ),
+              },
+              {
+                label: "Konkretne problemy",
+                content: (
+                  <div className="py-10 lg:py-12">
+                    <div className="max-w-3xl mx-auto">
+                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
+                        Konkretne problemy, które rozwiązujemy
+                      </h2>
+                      <p className="text-gray-500 dark:text-gray-400 mb-10">
+                        Poniżej najczęstsze sytuacje, z którymi zgłaszają się
+                        sklepy internetowe — i to, jak podchodzimy do nich od
+                        strony technicznej. Każda z tych rzeczy jest do
+                        zrobienia w kilka dni lub tygodni, nie miesięcy.
+                      </p>
 
-        {/* CTA */}
-        <section className="py-16 lg:py-24 border-t border-gray-100 dark:border-gray-800">
-          <div className="container-wide">
-            <div className="max-w-2xl mx-auto text-center bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-10">
-              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                Twój sklep rośnie, a operacja zaczyna gasić pożary?
-              </h2>
-              <p className="text-gray-500 dark:text-gray-400 mb-8">
-                Opisz stack i procesy. Wskażemy konkretne miejsca, gdzie
-                automatyzacja zwróci się w 2–3 miesiące.
-              </p>
-              <Link
-                href="/#kontakt"
-                className="btn-primary px-8 py-3.5 text-base"
-              >
-                Zamów diagnozę
-              </Link>
-              <p className="mt-4 text-xs text-gray-400 dark:text-gray-500">
-                Bezpłatna diagnoza · Odpowiedź w 24h
-              </p>
-            </div>
-          </div>
-        </section>
+                      <div className="space-y-6">
+                        {painPoints.map((item) => (
+                          <div
+                            key={item.pain}
+                            className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-8"
+                          >
+                            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
+                              „{item.pain}”
+                            </h3>
+                            <p className="text-sm text-gray-600 dark:text-gray-400">
+                              {item.solution}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ),
+              },
+              {
+                label: "Narzędzia",
+                content: (
+                  <div className="py-10 lg:py-12">
+                    <div className="max-w-3xl mx-auto">
+                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
+                        Narzędzia, z którymi pracujemy w e-commerce
+                      </h2>
+                      <p className="text-gray-500 dark:text-gray-400 mb-10">
+                        Nie sprzedaję konkretnego narzędzia. Dobieramy je do
+                        skali sklepu, liczby kanałów i tego, co już działa.
+                        Najczęściej spotykany stack dla polskiego e-commerce
+                        wygląda jednak podobnie i poniżej opisujemy te
+                        narzędzia, w których robimy najwięcej wdrożeń.
+                      </p>
 
-        {/* Related */}
-        <section className="py-16 lg:py-24 border-t border-gray-100 dark:border-gray-800">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <div className="grid md:grid-cols-2 gap-12">
-                <div>
-                  <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-                    Powiązane usługi
-                  </h2>
-                  <ul className="space-y-3">
-                    {relatedServices.map((item) => (
-                      <li key={item.href}>
-                        <Link
-                          href={item.href}
-                          className="flex items-center gap-2.5 text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
-                        >
-                          <svg
-                            className="shrink-0 text-accent"
-                            width="14"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            fill="none"
+                      <div className="space-y-6">
+                        {tools.map((tool) => (
+                          <div
+                            key={tool.name}
+                            className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-8"
                           >
-                            <path
-                              d="M2.5 7l3 3 6-6"
-                              stroke="currentColor"
-                              strokeWidth="1.5"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
-                          {item.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-                    Powiązane artykuły
-                  </h2>
-                  <ul className="space-y-3">
-                    {relatedArticles.map((item) => (
-                      <li key={item.href}>
+                            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                              {tool.name}
+                            </h3>
+                            <p className="text-sm text-gray-600 dark:text-gray-400">
+                              {tool.description}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+
+                      <p className="text-sm text-gray-500 dark:text-gray-400 mt-8">
+                        Jeśli dopiero zastanawiasz się, czy wybrać{" "}
                         <Link
-                          href={item.href}
-                          className="flex items-center gap-2.5 text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
+                          href="/n8n"
+                          className="text-accent hover:underline"
                         >
-                          <svg
-                            className="shrink-0 text-accent"
-                            width="14"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            fill="none"
-                          >
-                            <path
-                              d="M2.5 7l3 3 6-6"
-                              stroke="currentColor"
-                              strokeWidth="1.5"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
-                          {item.label}
+                          n8n
+                        </Link>{" "}
+                        czy{" "}
+                        <Link
+                          href="/zapier-make"
+                          className="text-accent hover:underline"
+                        >
+                          Zapier lub Make
                         </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+                        , opisaliśmy to w sekcji usług. Dla bardziej
+                        rozbudowanych integracji bezpośrednio z API platform
+                        sklepowych zajrzyj do{" "}
+                        <Link
+                          href="/integracje-api"
+                          className="text-accent hover:underline"
+                        >
+                          integracji API
+                        </Link>
+                        .
+                      </p>
+                    </div>
+                  </div>
+                ),
+              },
+              {
+                label: "Dla kogo",
+                content: (
+                  <div className="py-10 lg:py-12">
+                    <div className="max-w-3xl mx-auto">
+                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
+                        Dla kogo
+                      </h2>
+                      <p className="text-gray-500 dark:text-gray-400">
+                        Dla sklepów internetowych z realnym wolumenem zamówień
+                        (orientacyjnie od kilkudziesięciu miesięcznie wzwyż),
+                        które tracą czas na ręczne przepisywanie danych między
+                        systemami. Szczególnie dla firm sprzedających
+                        wielokanałowo (sklep + Allegro + ewentualnie Amazon czy
+                        eBay), gdzie chaos rośnie szybciej niż przychody.
+                        Pracujemy zarówno z e-commerce B2C, jak i B2B — w tym
+                        drugim przypadku często łączymy automatyzację sklepu z{" "}
+                        <Link
+                          href="/automatyzacja-leadow"
+                          className="text-accent hover:underline"
+                        >
+                          automatyzacją leadów
+                        </Link>{" "}
+                        i procesem ofertowania.
+                      </p>
+                    </div>
+                  </div>
+                ),
+              },
+              {
+                label: "FAQ",
+                content: (
+                  <div className="py-10 lg:py-12">
+                    <div className="max-w-3xl mx-auto">
+                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-8">
+                        Najczęściej zadawane pytania
+                      </h2>
+                      <div className="space-y-4">
+                        {faq.map((item) => (
+                          <details
+                            key={item.question}
+                            className="group bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl"
+                          >
+                            <summary className="flex items-center justify-between cursor-pointer p-6 text-gray-900 dark:text-white font-medium">
+                              {item.question}
+                              <svg
+                                className="shrink-0 ml-4 w-5 h-5 text-gray-400 transition-transform group-open:rotate-45"
+                                viewBox="0 0 20 20"
+                                fill="none"
+                              >
+                                <path
+                                  d="M10 4v12M4 10h12"
+                                  stroke="currentColor"
+                                  strokeWidth="1.5"
+                                  strokeLinecap="round"
+                                />
+                              </svg>
+                            </summary>
+                            <div className="px-6 pb-6 text-sm text-gray-500 dark:text-gray-400">
+                              {item.answer}
+                            </div>
+                          </details>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ),
+              },
+              {
+                label: "Diagnoza",
+                content: (
+                  <div className="py-10 lg:py-12">
+                    <div className="container-wide">
+                      <div className="max-w-2xl mx-auto text-center bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-10">
+                        <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
+                          Twój sklep rośnie, a operacja zaczyna gasić pożary?
+                        </h2>
+                        <p className="text-gray-500 dark:text-gray-400 mb-8">
+                          Opisz stack i procesy. Wskażemy konkretne miejsca,
+                          gdzie automatyzacja zwróci się w 2–3 miesiące.
+                        </p>
+                        <Link
+                          href="/#kontakt"
+                          className="btn-primary px-8 py-3.5 text-base"
+                        >
+                          Zamów diagnozę
+                        </Link>
+                        <p className="mt-4 text-xs text-gray-400 dark:text-gray-500">
+                          Bezpłatna diagnoza · Odpowiedź w 24h
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                ),
+              },
+              {
+                label: "Powiązane",
+                content: (
+                  <div className="py-10 lg:py-12">
+                    <div className="max-w-3xl mx-auto">
+                      <div className="grid md:grid-cols-2 gap-12">
+                        <div>
+                          <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+                            Powiązane usługi
+                          </h2>
+                          <ul className="space-y-3">
+                            {relatedServices.map((item) => (
+                              <li key={item.href}>
+                                <Link
+                                  href={item.href}
+                                  className="flex items-center gap-2.5 text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
+                                >
+                                  <svg
+                                    className="shrink-0 text-accent"
+                                    width="14"
+                                    height="14"
+                                    viewBox="0 0 14 14"
+                                    fill="none"
+                                  >
+                                    <path
+                                      d="M2.5 7l3 3 6-6"
+                                      stroke="currentColor"
+                                      strokeWidth="1.5"
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                    />
+                                  </svg>
+                                  {item.label}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                        <div>
+                          <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+                            Powiązane artykuły
+                          </h2>
+                          <ul className="space-y-3">
+                            {relatedArticles.map((item) => (
+                              <li key={item.href}>
+                                <Link
+                                  href={item.href}
+                                  className="flex items-center gap-2.5 text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
+                                >
+                                  <svg
+                                    className="shrink-0 text-accent"
+                                    width="14"
+                                    height="14"
+                                    viewBox="0 0 14 14"
+                                    fill="none"
+                                  >
+                                    <path
+                                      d="M2.5 7l3 3 6-6"
+                                      stroke="currentColor"
+                                      strokeWidth="1.5"
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                    />
+                                  </svg>
+                                  {item.label}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ),
+              },
+            ]}
+          />
+        </div>
       </main>
 
       {/* Service Schema */}

@@ -3,7 +3,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import TableOfContents from "@/components/TableOfContents";
+import Tabs from "@/components/Tabs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 
 export const metadata: Metadata = {
@@ -41,112 +41,115 @@ export default function AiWAutomatyzacjiFirmPage() {
             { label: "AI w automatyzacji firm" },
           ]}
         />
-        {/* Hero */}
-        <section className="bg-gray-50 dark:bg-gray-900/50 py-16 lg:py-24">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto text-center">
-              <span className="section-label">Strefa wiedzy</span>
-              <h1 className="text-3xl lg:text-5xl font-bold text-gray-900 dark:text-white mt-4 mb-6">
-                AI w automatyzacji firm
-              </h1>
-              <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-                AI nie ma sensu dlatego, że jest modne. Ma sens wtedy, gdy
-                przyspiesza konkretny proces i nie obniża jakości działania
-                firmy. W praktyce najlepiej działa tam, gdzie trzeba szybko
-                zrozumieć dużą liczbę wiadomości, zgłoszeń, leadów albo
-                dokumentów.
-              </p>
-            </div>
+
+        {/* Nagłówek artykułu — kompaktowy */}
+        <section className="pt-24 pb-10">
+          <div className="container-wide max-w-3xl mx-auto">
+            <span className="section-label">Strefa wiedzy</span>
+            <h1 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">
+              AI w automatyzacji firm
+            </h1>
+            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+              AI nie ma sensu dlatego, że jest modne. Ma sens wtedy, gdy
+              przyspiesza konkretny proces i nie obniża jakości działania firmy.
+              W praktyce najlepiej działa tam, gdzie trzeba szybko zrozumieć
+              dużą liczbę wiadomości, zgłoszeń, leadów albo dokumentów.
+            </p>
           </div>
         </section>
 
-        <div className="container-wide">
-          <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_220px] lg:gap-8">
-            <article>
-              {/* Gdzie AI daje realny efekt */}
-              <section className="py-16 lg:py-24">
-                <div className="container-wide">
-                  <div className="max-w-3xl mx-auto">
-                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                      Gdzie AI daje realny efekt
-                    </h2>
-                    <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                      <Link
-                        href="/automatyzacja-ai"
-                        className="text-accent hover:underline"
-                      >
-                        AI w automatyzacji
-                      </Link>{" "}
-                      świetnie radzi sobie z klasyfikacją treści, streszczaniem
-                      informacji, porządkowaniem zgłoszeń, wyciąganiem
-                      kluczowych danych i przygotowaniem roboczych odpowiedzi.
-                      To są zadania, które wcześniej wykonywali ludzie ręcznie,
-                      często w sposób powolny i niespójny.
-                    </p>
-                    <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                      W firmie oznacza to krótszy czas reakcji i mniejsze
-                      obciążenie zespołu.
-                    </p>
+        {/* Treść w zakładkach — nic nie wycięte, podzielone wg rozdziałów */}
+        <div className="container-wide pb-8">
+          <Tabs
+            ariaLabel="Rozdziały artykułu"
+            tabs={[
+              {
+                label: "Gdzie AI daje efekt",
+                content: (
+                  <div className="py-10 lg:py-12">
+                    <div className="max-w-3xl mx-auto">
+                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                        Gdzie AI daje realny efekt
+                      </h2>
+                      <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                        <Link
+                          href="/automatyzacja-ai"
+                          className="text-accent hover:underline"
+                        >
+                          AI w automatyzacji
+                        </Link>{" "}
+                        świetnie radzi sobie z klasyfikacją treści,
+                        streszczaniem informacji, porządkowaniem zgłoszeń,
+                        wyciąganiem kluczowych danych i przygotowaniem roboczych
+                        odpowiedzi. To są zadania, które wcześniej wykonywali
+                        ludzie ręcznie, często w sposób powolny i niespójny.
+                      </p>
+                      <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                        W firmie oznacza to krótszy czas reakcji i mniejsze
+                        obciążenie zespołu.
+                      </p>
+                    </div>
                   </div>
-                </div>
-              </section>
-
-              {/* Gdzie AI nie powinno działać samodzielnie */}
-              <section className="py-16 lg:py-24">
-                <div className="container-wide">
-                  <div className="max-w-3xl mx-auto">
-                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                      Gdzie AI nie powinno działać samodzielnie
-                    </h2>
-                    <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                      AI nie jest dobrym zamiennikiem człowieka w procesach,
-                      gdzie koszt błędu jest wysoki i nie ma walidacji. W takich
-                      miejscach AI powinno wspierać, a nie decydować
-                      samodzielnie.
-                    </p>
-                    <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                      Najlepszy model to zwykle:
-                    </p>
-                    <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-400">
-                      <li>AI robi pierwszy etap analizy,</li>
-                      <li>system przekazuje wynik dalej,</li>
-                      <li>
-                        człowiek zatwierdza tam, gdzie ryzyko jest wyższe.
-                      </li>
-                    </ul>
+                ),
+              },
+              {
+                label: "Gdzie nie samodzielnie",
+                content: (
+                  <div className="py-10 lg:py-12">
+                    <div className="max-w-3xl mx-auto">
+                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                        Gdzie AI nie powinno działać samodzielnie
+                      </h2>
+                      <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                        AI nie jest dobrym zamiennikiem człowieka w procesach,
+                        gdzie koszt błędu jest wysoki i nie ma walidacji. W
+                        takich miejscach AI powinno wspierać, a nie decydować
+                        samodzielnie.
+                      </p>
+                      <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                        Najlepszy model to zwykle:
+                      </p>
+                      <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-400">
+                        <li>AI robi pierwszy etap analizy,</li>
+                        <li>system przekazuje wynik dalej,</li>
+                        <li>
+                          człowiek zatwierdza tam, gdzie ryzyko jest wyższe.
+                        </li>
+                      </ul>
+                    </div>
                   </div>
-                </div>
-              </section>
-
-              {/* Najlepsze wdrożenia są nudne */}
-              <section className="py-16 lg:py-24">
-                <div className="container-wide">
-                  <div className="max-w-3xl mx-auto">
-                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                      Najlepsze wdrożenia są nudne
-                    </h2>
-                    <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                      Najlepsze wdrożenia AI często nie wyglądają widowiskowo.
-                      Nie są chatbotem „do wszystkiego". Są małym, praktycznym
-                      elementem szerszej{" "}
-                      <Link
-                        href="/automatyzacja-procesow-biznesowych"
-                        className="text-accent hover:underline"
-                      >
-                        automatyzacji procesów biznesowych
-                      </Link>
-                      , który oszczędza czas i poprawia jakość.
-                    </p>
-                    <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                      To właśnie takie wdrożenia najczęściej mają sens
-                      biznesowy.
-                    </p>
+                ),
+              },
+              {
+                label: "Najlepsze wdrożenia",
+                content: (
+                  <div className="py-10 lg:py-12">
+                    <div className="max-w-3xl mx-auto">
+                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                        Najlepsze wdrożenia są nudne
+                      </h2>
+                      <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                        Najlepsze wdrożenia AI często nie wyglądają widowiskowo.
+                        Nie są chatbotem „do wszystkiego". Są małym, praktycznym
+                        elementem szerszej{" "}
+                        <Link
+                          href="/automatyzacja-procesow-biznesowych"
+                          className="text-accent hover:underline"
+                        >
+                          automatyzacji procesów biznesowych
+                        </Link>
+                        , który oszczędza czas i poprawia jakość.
+                      </p>
+                      <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                        To właśnie takie wdrożenia najczęściej mają sens
+                        biznesowy.
+                      </p>
+                    </div>
                   </div>
-                </div>
-              </section>
-            </article>
-            <TableOfContents containerSelector="article" />
-          </div>
+                ),
+              },
+            ]}
+          />
         </div>
 
         {/* Prev / Next */}

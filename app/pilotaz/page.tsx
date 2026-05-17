@@ -3,6 +3,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
   title: "3 miejsca na publiczne case study — 50% ceny wdrożenia | Fluxlab",
@@ -153,8 +154,8 @@ export default function Pilotaz() {
       <main className="pt-16">
         <Breadcrumbs items={[{ label: "Program case study" }]} />
 
-        {/* Hero */}
-        <section className="py-16 lg:py-24 bg-gradient-to-b from-accent/10 to-transparent border-b border-gray-100 dark:border-gray-800">
+        {/* Hero — kompaktowy */}
+        <section className="pt-24 pb-12 bg-gradient-to-b from-accent/10 to-transparent border-b border-gray-100 dark:border-gray-800">
           <div className="container-wide">
             <div className="max-w-3xl mx-auto text-center">
               <div className="inline-flex items-center gap-2 bg-accent/15 text-accent text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
@@ -180,7 +181,7 @@ export default function Pilotaz() {
                 z braku doświadczenia. Akceptacja treści jest po Twojej stronie.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/#kontakt" className="btn-primary">
+                <Link href="#sekcje" className="btn-primary">
                   Aplikuj do programu case study
                 </Link>
                 <Link href="/jak-pracuje" className="btn-secondary">
@@ -191,267 +192,286 @@ export default function Pilotaz() {
           </div>
         </section>
 
-        {/* Co dostajesz */}
-        <section className="py-16 lg:py-24">
-          <div className="container-wide">
-            <div className="max-w-4xl mx-auto">
-              <div className="text-center mb-12">
-                <span className="section-label">Twoja strona umowy</span>
-                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4">
-                  Co dostajesz
-                </h2>
-              </div>
-              <div className="grid md:grid-cols-2 gap-6">
-                {whatYouGet.map((item) => (
-                  <div
-                    key={item.title}
-                    className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-6"
-                  >
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                      {item.title}
-                    </h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                      {item.description}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Co dajesz w zamian */}
-        <section className="py-16 lg:py-24 bg-gray-50 dark:bg-gray-900/50 border-y border-gray-100 dark:border-gray-800">
-          <div className="container-wide">
-            <div className="max-w-4xl mx-auto">
-              <div className="text-center mb-12">
-                <span className="section-label">Moja strona umowy</span>
-                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4">
-                  Co dajesz w zamian
-                </h2>
-                <p className="text-gray-600 dark:text-gray-400 mt-4 max-w-2xl mx-auto">
-                  Nic, co wymagałoby ujawnienia wrażliwych danych. Wszystko
-                  akceptujesz przed publikacją.
-                </p>
-              </div>
-              <div className="grid md:grid-cols-2 gap-6">
-                {whatYouGive.map((item) => (
-                  <div
-                    key={item.title}
-                    className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-6"
-                  >
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                      {item.title}
-                    </h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                      {item.description}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Kryteria kwalifikacji */}
-        <section className="py-16 lg:py-24">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <div className="text-center mb-12">
-                <span className="section-label">Kryteria</span>
-                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4">
-                  Dla kogo
-                </h2>
-                <p className="text-gray-600 dark:text-gray-400 mt-4">
-                  Program jest celowo wąski — chcę mieć pewność, że projekty
-                  zakończą się sukcesem nadającym się do publikacji. Dopasowanie
-                  weryfikuję na bezpłatnej konsultacji.
-                </p>
-              </div>
-              <ul className="space-y-3">
-                {criteria.map((c) => (
-                  <li
-                    key={c}
-                    className="flex items-start gap-3 bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-xl px-5 py-4"
-                  >
-                    <svg
-                      className="flex-shrink-0 mt-0.5 text-accent"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 20 20"
-                      fill="none"
-                    >
-                      <path
-                        d="M4 10l4 4 8-8"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                    <span className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                      {c}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* Dla kogo NIE */}
-        <section className="py-16 lg:py-24 bg-gray-50 dark:bg-gray-900/50 border-y border-gray-100 dark:border-gray-800">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <div className="text-center mb-12">
-                <span className="section-label">Wykluczenia</span>
-                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4">
-                  Dla kogo NIE
-                </h2>
-                <p className="text-gray-600 dark:text-gray-400 mt-4 leading-relaxed">
-                  Najpierw proces, potem automatyzacja. Nie odwrotnie — bo wtedy
-                  powstaje szybki chaos zamiast wolnego chaosu.
-                </p>
-              </div>
-              <ul className="space-y-3">
-                {notSuitable.map((c) => (
-                  <li
-                    key={c}
-                    className="flex items-start gap-3 bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-xl px-5 py-4"
-                  >
-                    <svg
-                      className="flex-shrink-0 mt-0.5 text-gray-400"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 20 20"
-                      fill="none"
-                    >
-                      <path
-                        d="M5 5l10 10M15 5L5 15"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                    <span className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                      {c}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* Proces aplikacji */}
-        <section className="py-16 lg:py-24 bg-gray-50 dark:bg-gray-900/50 border-y border-gray-100 dark:border-gray-800">
-          <div className="container-wide">
-            <div className="max-w-4xl mx-auto">
-              <div className="text-center mb-12">
-                <span className="section-label">Proces</span>
-                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4">
-                  Jak wygląda aplikacja
-                </h2>
-              </div>
-              <div className="grid md:grid-cols-3 gap-6">
-                {[
-                  {
-                    n: "1",
-                    title: "Zgłoszenie",
-                    desc: "Wysyłasz krótki opis problemu przez formularz lub e-mail. Nie musisz znać rozwiązania — wystarczy opisać ból.",
-                  },
-                  {
-                    n: "2",
-                    title: "Konsultacja (48 h)",
-                    desc: "W ciągu 48 h odpowiadam: albo umawiamy bezpłatną 30-minutową konsultację, albo mówię wprost, że nie widzę dopasowania.",
-                  },
-                  {
-                    n: "3",
-                    title: "Audyt i decyzja",
-                    desc: "Jeśli widzę dopasowanie, robię audyt (koszt obniżony), po którym dostajesz konkretną wycenę i harmonogram. Startujemy po akceptacji.",
-                  },
-                ].map((s) => (
-                  <div
-                    key={s.n}
-                    className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-6"
-                  >
-                    <span className="text-3xl font-bold text-accent">
-                      {s.n}
-                    </span>
-                    <h3 className="mt-3 text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                      {s.title}
-                    </h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                      {s.desc}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* FAQ */}
-        <section className="py-16 lg:py-24">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-12 text-center">
-                Najczęstsze pytania
-              </h2>
-              <div className="space-y-4">
-                {faq.map((item) => (
-                  <details
-                    key={item.question}
-                    className="group bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl overflow-hidden"
-                  >
-                    <summary className="cursor-pointer px-6 py-5 flex items-center justify-between gap-4 list-none">
-                      <span className="font-semibold text-gray-900 dark:text-white">
-                        {item.question}
-                      </span>
-                      <svg
-                        className="flex-shrink-0 transition-transform group-open:rotate-180"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 20 20"
-                        fill="none"
-                      >
-                        <path
-                          d="M5 7l5 5 5-5"
-                          stroke="currentColor"
-                          strokeWidth="1.5"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </summary>
-                    <div className="px-6 pb-5 text-gray-600 dark:text-gray-400 leading-relaxed">
-                      {item.answer}
+        {/* Treść w zakładkach — nic nie wycięte, podzielone */}
+        <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
+          <Tabs
+            ariaLabel="Sekcje programu case study"
+            tabs={[
+              {
+                label: "Co dostajesz",
+                content: (
+                  <div className="py-10 lg:py-12">
+                    <div className="max-w-4xl mx-auto">
+                      <div className="text-center mb-12">
+                        <span className="section-label">
+                          Twoja strona umowy
+                        </span>
+                        <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4">
+                          Co dostajesz
+                        </h2>
+                      </div>
+                      <div className="grid md:grid-cols-2 gap-6">
+                        {whatYouGet.map((item) => (
+                          <div
+                            key={item.title}
+                            className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-6"
+                          >
+                            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                              {item.title}
+                            </h3>
+                            <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                              {item.description}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                  </details>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Final CTA */}
-        <section className="py-16 lg:py-24 bg-accent/10 border-t border-gray-100 dark:border-gray-800">
-          <div className="container-wide">
-            <div className="max-w-2xl mx-auto text-center">
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                3 miejsca. Kończą się jak się skończą.
-              </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-                Aplikuj, nawet jeśli nie masz pewności czy się kwalifikujesz — w
-                48 h dostaniesz szczerą odpowiedź.
-              </p>
-              <Link href="/#kontakt" className="btn-primary">
-                Aplikuj do programu case study
-              </Link>
-            </div>
-          </div>
-        </section>
+                  </div>
+                ),
+              },
+              {
+                label: "Co dajesz w zamian",
+                content: (
+                  <div className="py-10 lg:py-12">
+                    <div className="max-w-4xl mx-auto">
+                      <div className="text-center mb-12">
+                        <span className="section-label">Moja strona umowy</span>
+                        <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4">
+                          Co dajesz w zamian
+                        </h2>
+                        <p className="text-gray-600 dark:text-gray-400 mt-4 max-w-2xl mx-auto">
+                          Nic, co wymagałoby ujawnienia wrażliwych danych.
+                          Wszystko akceptujesz przed publikacją.
+                        </p>
+                      </div>
+                      <div className="grid md:grid-cols-2 gap-6">
+                        {whatYouGive.map((item) => (
+                          <div
+                            key={item.title}
+                            className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-6"
+                          >
+                            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                              {item.title}
+                            </h3>
+                            <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                              {item.description}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ),
+              },
+              {
+                label: "Dla kogo",
+                content: (
+                  <div className="py-10 lg:py-12">
+                    <div className="max-w-3xl mx-auto">
+                      <div className="text-center mb-12">
+                        <span className="section-label">Kryteria</span>
+                        <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4">
+                          Dla kogo
+                        </h2>
+                        <p className="text-gray-600 dark:text-gray-400 mt-4">
+                          Program jest celowo wąski — chcę mieć pewność, że
+                          projekty zakończą się sukcesem nadającym się do
+                          publikacji. Dopasowanie weryfikuję na bezpłatnej
+                          konsultacji.
+                        </p>
+                      </div>
+                      <ul className="space-y-3">
+                        {criteria.map((c) => (
+                          <li
+                            key={c}
+                            className="flex items-start gap-3 bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-xl px-5 py-4"
+                          >
+                            <svg
+                              className="flex-shrink-0 mt-0.5 text-accent"
+                              width="20"
+                              height="20"
+                              viewBox="0 0 20 20"
+                              fill="none"
+                            >
+                              <path
+                                d="M4 10l4 4 8-8"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                              />
+                            </svg>
+                            <span className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                              {c}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                ),
+              },
+              {
+                label: "Dla kogo NIE",
+                content: (
+                  <div className="py-10 lg:py-12">
+                    <div className="max-w-3xl mx-auto">
+                      <div className="text-center mb-12">
+                        <span className="section-label">Wykluczenia</span>
+                        <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4">
+                          Dla kogo NIE
+                        </h2>
+                        <p className="text-gray-600 dark:text-gray-400 mt-4 leading-relaxed">
+                          Najpierw proces, potem automatyzacja. Nie odwrotnie —
+                          bo wtedy powstaje szybki chaos zamiast wolnego chaosu.
+                        </p>
+                      </div>
+                      <ul className="space-y-3">
+                        {notSuitable.map((c) => (
+                          <li
+                            key={c}
+                            className="flex items-start gap-3 bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-xl px-5 py-4"
+                          >
+                            <svg
+                              className="flex-shrink-0 mt-0.5 text-gray-400"
+                              width="20"
+                              height="20"
+                              viewBox="0 0 20 20"
+                              fill="none"
+                            >
+                              <path
+                                d="M5 5l10 10M15 5L5 15"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                              />
+                            </svg>
+                            <span className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                              {c}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                ),
+              },
+              {
+                label: "Proces aplikacji",
+                content: (
+                  <div className="py-10 lg:py-12">
+                    <div className="max-w-4xl mx-auto">
+                      <div className="text-center mb-12">
+                        <span className="section-label">Proces</span>
+                        <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4">
+                          Jak wygląda aplikacja
+                        </h2>
+                      </div>
+                      <div className="grid md:grid-cols-3 gap-6">
+                        {[
+                          {
+                            n: "1",
+                            title: "Zgłoszenie",
+                            desc: "Wysyłasz krótki opis problemu przez formularz lub e-mail. Nie musisz znać rozwiązania — wystarczy opisać ból.",
+                          },
+                          {
+                            n: "2",
+                            title: "Konsultacja (48 h)",
+                            desc: "W ciągu 48 h odpowiadam: albo umawiamy bezpłatną 30-minutową konsultację, albo mówię wprost, że nie widzę dopasowania.",
+                          },
+                          {
+                            n: "3",
+                            title: "Audyt i decyzja",
+                            desc: "Jeśli widzę dopasowanie, robię audyt (koszt obniżony), po którym dostajesz konkretną wycenę i harmonogram. Startujemy po akceptacji.",
+                          },
+                        ].map((s) => (
+                          <div
+                            key={s.n}
+                            className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-6"
+                          >
+                            <span className="text-3xl font-bold text-accent">
+                              {s.n}
+                            </span>
+                            <h3 className="mt-3 text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                              {s.title}
+                            </h3>
+                            <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                              {s.desc}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ),
+              },
+              {
+                label: "FAQ",
+                content: (
+                  <div className="py-10 lg:py-12">
+                    <div className="max-w-3xl mx-auto">
+                      <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-12 text-center">
+                        Najczęstsze pytania
+                      </h2>
+                      <div className="space-y-4">
+                        {faq.map((item) => (
+                          <details
+                            key={item.question}
+                            className="group bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl overflow-hidden"
+                          >
+                            <summary className="cursor-pointer px-6 py-5 flex items-center justify-between gap-4 list-none">
+                              <span className="font-semibold text-gray-900 dark:text-white">
+                                {item.question}
+                              </span>
+                              <svg
+                                className="flex-shrink-0 transition-transform group-open:rotate-180"
+                                width="20"
+                                height="20"
+                                viewBox="0 0 20 20"
+                                fill="none"
+                              >
+                                <path
+                                  d="M5 7l5 5 5-5"
+                                  stroke="currentColor"
+                                  strokeWidth="1.5"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                />
+                              </svg>
+                            </summary>
+                            <div className="px-6 pb-5 text-gray-600 dark:text-gray-400 leading-relaxed">
+                              {item.answer}
+                            </div>
+                          </details>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ),
+              },
+              {
+                label: "Aplikuj",
+                content: (
+                  <div className="py-10 lg:py-12">
+                    <div className="max-w-2xl mx-auto text-center bg-accent/10 border border-gray-100 dark:border-gray-800 rounded-2xl p-10">
+                      <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                        3 miejsca. Kończą się jak się skończą.
+                      </h2>
+                      <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
+                        Aplikuj, nawet jeśli nie masz pewności czy się
+                        kwalifikujesz — w 48 h dostaniesz szczerą odpowiedź.
+                      </p>
+                      <Link href="/#kontakt" className="btn-primary">
+                        Aplikuj do programu case study
+                      </Link>
+                    </div>
+                  </div>
+                ),
+              },
+            ]}
+          />
+        </div>
       </main>
       <Footer />
 

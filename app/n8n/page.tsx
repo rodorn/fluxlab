@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import LandingForm from "@/components/LandingForm";
+import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
   title: "n8n — automatyzacja workflow z pełną kontrolą | Fluxlab",
@@ -57,9 +58,9 @@ export default function N8nPage() {
   return (
     <>
       <Header />
-      <main className="pt-16">
-        {/* Hero */}
-        <section className="relative overflow-hidden py-24 lg:py-32">
+      <main>
+        {/* Hero — kompaktowy */}
+        <section className="relative overflow-hidden pt-24 pb-12">
           <div className="blob blob-violet -z-10 top-[-10%] left-[-5%]" />
           <div className="container-wide max-w-3xl mx-auto text-center">
             <p className="section-label mb-5">Usługa</p>
@@ -71,86 +72,101 @@ export default function N8nPage() {
               miejscu. Self-hosted lub cloud — z pełną kontrolą nad danymi.
             </p>
             <div className="mt-8">
-              <a href="#diagnoza" className="btn-primary">
+              <a href="#sekcje" className="btn-primary">
                 Sprawdź swój workflow
               </a>
             </div>
           </div>
         </section>
 
-        {/* Co oferuję */}
-        <section className="py-20 lg:py-28 border-t border-gray-100 dark:border-gray-800">
-          <div className="container-wide max-w-3xl mx-auto">
-            <h2 className="display-md text-gray-900 dark:text-white mb-10">
-              Co oferuję
-            </h2>
-            <ul className="space-y-5">
-              {offer.map((item) => (
-                <li
-                  key={item}
-                  className="flex items-start gap-4 text-lg text-gray-700 dark:text-gray-300"
-                >
-                  <span
-                    className="shrink-0 mt-1 w-2.5 h-2.5 rounded-full bg-accent"
-                    aria-hidden="true"
-                  />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
-
-        {/* FAQ */}
-        <section className="py-20 lg:py-28 border-t border-gray-100 dark:border-gray-800">
-          <div className="container-wide max-w-3xl mx-auto">
-            <h2 className="display-md text-gray-900 dark:text-white mb-10">
-              Częste pytania
-            </h2>
-            <div className="space-y-4">
-              {faq.map((item) => (
-                <details
-                  key={item.question}
-                  className="group card-lift bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl"
-                >
-                  <summary className="flex items-center justify-between cursor-pointer p-6 text-gray-900 dark:text-white font-medium list-none">
-                    {item.question}
-                    <svg
-                      className="shrink-0 ml-4 w-5 h-5 text-gray-400 transition-transform group-open:rotate-45"
-                      viewBox="0 0 20 20"
-                      fill="none"
-                    >
-                      <path
-                        d="M10 4v12M4 10h12"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                      />
-                    </svg>
-                  </summary>
-                  <div className="px-6 pb-6 text-sm text-gray-500 dark:text-gray-400">
-                    {item.answer}
+        {/* Treść w zakładkach — nic nie wycięte, podzielone */}
+        <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
+          <Tabs
+            ariaLabel="Sekcje usługi automatyzacji z n8n"
+            tabs={[
+              {
+                label: "Co oferuję",
+                content: (
+                  <div className="py-10 lg:py-12">
+                    <div className="max-w-3xl mx-auto">
+                      <h2 className="display-md text-gray-900 dark:text-white mb-10">
+                        Co oferuję
+                      </h2>
+                      <ul className="space-y-5">
+                        {offer.map((item) => (
+                          <li
+                            key={item}
+                            className="flex items-start gap-4 text-lg text-gray-700 dark:text-gray-300"
+                          >
+                            <span
+                              className="shrink-0 mt-1 w-2.5 h-2.5 rounded-full bg-accent"
+                              aria-hidden="true"
+                            />
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
-                </details>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Form — diagnoza */}
-        <section
-          id="diagnoza"
-          className="scroll-mt-20 py-20 lg:py-24 bg-accent/10 border-t border-gray-100 dark:border-gray-800"
-        >
-          <div className="container-wide">
-            <LandingForm
-              formId="diagnosis_n8n"
-              heading="Sprawdźmy Twój workflow w n8n"
-              intro="Opisz krótko, jakie procesy chcesz zautomatyzować: jakie systemy łączymy, jaki wolumen, self-hosted czy cloud. Dostaniesz wstępną propozycję architektury."
-              submitLabel="Chcę diagnozę workflow n8n"
-            />
-          </div>
-        </section>
+                ),
+              },
+              {
+                label: "FAQ",
+                content: (
+                  <div className="py-10 lg:py-12">
+                    <div className="max-w-3xl mx-auto">
+                      <h2 className="display-md text-gray-900 dark:text-white mb-10">
+                        Częste pytania
+                      </h2>
+                      <div className="space-y-4">
+                        {faq.map((item) => (
+                          <details
+                            key={item.question}
+                            className="group card-lift bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl"
+                          >
+                            <summary className="flex items-center justify-between cursor-pointer p-6 text-gray-900 dark:text-white font-medium list-none">
+                              {item.question}
+                              <svg
+                                className="shrink-0 ml-4 w-5 h-5 text-gray-400 transition-transform group-open:rotate-45"
+                                viewBox="0 0 20 20"
+                                fill="none"
+                              >
+                                <path
+                                  d="M10 4v12M4 10h12"
+                                  stroke="currentColor"
+                                  strokeWidth="1.5"
+                                  strokeLinecap="round"
+                                />
+                              </svg>
+                            </summary>
+                            <div className="px-6 pb-6 text-sm text-gray-500 dark:text-gray-400">
+                              {item.answer}
+                            </div>
+                          </details>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ),
+              },
+              {
+                label: "Diagnoza",
+                content: (
+                  <div id="diagnoza" className="scroll-mt-20 py-10 lg:py-12">
+                    <div className="container-wide">
+                      <LandingForm
+                        formId="diagnosis_n8n"
+                        heading="Sprawdźmy Twój workflow w n8n"
+                        intro="Opisz krótko, jakie procesy chcesz zautomatyzować: jakie systemy łączymy, jaki wolumen, self-hosted czy cloud. Dostaniesz wstępną propozycję architektury."
+                        submitLabel="Chcę diagnozę workflow n8n"
+                      />
+                    </div>
+                  </div>
+                ),
+              },
+            ]}
+          />
+        </div>
       </main>
 
       {/* Service Schema */}

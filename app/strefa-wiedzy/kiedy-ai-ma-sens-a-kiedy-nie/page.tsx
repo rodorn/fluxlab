@@ -3,8 +3,8 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import TableOfContents from "@/components/TableOfContents";
 import PrevNextArticle from "@/components/PrevNextArticle";
+import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
   title: "Kiedy AI ma sens w firmie, a kiedy nie | Fluxlab",
@@ -41,12 +41,12 @@ export default function KiedyAiMaSensPage() {
             { label: "Kiedy AI ma sens, a kiedy nie" },
           ]}
         />
-        {/* Hero */}
-        <section className="bg-gray-50 dark:bg-gray-900/50 py-16 lg:py-24">
+        {/* Kompaktowy nagłówek */}
+        <section className="pt-24 pb-10">
           <div className="container-wide">
             <div className="max-w-3xl mx-auto text-center">
               <span className="section-label">Strefa wiedzy</span>
-              <h1 className="text-3xl lg:text-5xl font-bold text-gray-900 dark:text-white mt-4 mb-6">
+              <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-6">
                 Kiedy AI ma sens, a kiedy nie
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -59,13 +59,15 @@ export default function KiedyAiMaSensPage() {
           </div>
         </section>
 
-        <div className="container-wide">
-          <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_220px] lg:gap-8">
-            <article>
-              {/* AI ma sens, gdy… */}
-              <section className="py-16 lg:py-24">
-                <div className="container-wide">
-                  <div className="max-w-3xl mx-auto">
+        {/* Treść w zakładkach — nic nie wycięte, podzielone wg rozdziałów */}
+        <div className="container-wide pb-20">
+          <Tabs
+            ariaLabel="Rozdziały artykułu o tym, kiedy AI ma sens"
+            tabs={[
+              {
+                label: "AI ma sens, gdy…",
+                content: (
+                  <div className="py-10 lg:py-12 max-w-3xl mx-auto">
                     <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                       AI ma sens, gdy…
                     </h2>
@@ -88,13 +90,12 @@ export default function KiedyAiMaSensPage() {
                       Jeśli te warunki są spełnione, AI zwykle pomaga.
                     </p>
                   </div>
-                </div>
-              </section>
-
-              {/* AI nie ma sensu, gdy… */}
-              <section className="py-16 lg:py-24">
-                <div className="container-wide">
-                  <div className="max-w-3xl mx-auto">
+                ),
+              },
+              {
+                label: "AI nie ma sensu, gdy…",
+                content: (
+                  <div className="py-10 lg:py-12 max-w-3xl mx-auto">
                     <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                       AI nie ma sensu, gdy…
                     </h2>
@@ -109,13 +110,12 @@ export default function KiedyAiMaSensPage() {
                       zaprojektowanego procesu.
                     </p>
                   </div>
-                </div>
-              </section>
-
-              {/* Prosty test */}
-              <section className="py-16 lg:py-24">
-                <div className="container-wide">
-                  <div className="max-w-3xl mx-auto">
+                ),
+              },
+              {
+                label: "Prosty test",
+                content: (
+                  <div className="py-10 lg:py-12 max-w-3xl mx-auto">
                     <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                       Prosty test
                     </h2>
@@ -133,13 +133,12 @@ export default function KiedyAiMaSensPage() {
                       Im więcej odpowiedzi „tak", tym większy sens ma wdrożenie.
                     </p>
                   </div>
-                </div>
-              </section>
-
-              {/* Najpierw proces, potem AI */}
-              <section className="py-16 lg:py-24">
-                <div className="container-wide">
-                  <div className="max-w-3xl mx-auto">
+                ),
+              },
+              {
+                label: "Najpierw proces",
+                content: (
+                  <div className="py-10 lg:py-12 max-w-3xl mx-auto">
                     <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                       Najpierw proces, potem AI
                     </h2>
@@ -162,36 +161,26 @@ export default function KiedyAiMaSensPage() {
                       </Link>
                       .
                     </p>
-                  </div>
-                </div>
-              </section>
-            </article>
-            <TableOfContents containerSelector="article" />
-          </div>
-        </div>
 
-        {/* Prev / Next */}
-        <section className="py-12 lg:py-16">
-          <div className="max-w-3xl mx-auto px-6 lg:px-8">
+                    <div className="mt-10 bg-accent/10 rounded-2xl p-8 lg:p-12 text-center">
+                      <p className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+                        Nie wiesz, czy AI ma sens w Twoim procesie?
+                      </p>
+                      <Link href="/automatyzacja-ai" className="btn-primary">
+                        Zobacz usługę Automatyzacja AI
+                      </Link>
+                    </div>
+                  </div>
+                ),
+              },
+            ]}
+          />
+
+          {/* Prev / Next */}
+          <div className="max-w-3xl mx-auto mt-16">
             <PrevNextArticle currentHref="/strefa-wiedzy/kiedy-ai-ma-sens-a-kiedy-nie" />
           </div>
-        </section>
-
-        {/* CTA */}
-        <section className="py-16 lg:py-24">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <div className="bg-accent/10 rounded-2xl p-8 lg:p-12 text-center">
-                <p className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-                  Nie wiesz, czy AI ma sens w Twoim procesie?
-                </p>
-                <Link href="/automatyzacja-ai" className="btn-primary">
-                  Zobacz usługę Automatyzacja AI
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
+        </div>
       </main>
       <Footer />
 

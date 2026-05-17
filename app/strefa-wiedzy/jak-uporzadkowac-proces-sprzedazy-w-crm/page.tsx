@@ -3,8 +3,8 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import TableOfContents from "@/components/TableOfContents";
 import PrevNextArticle from "@/components/PrevNextArticle";
+import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
   title: "Jak uporządkować proces sprzedaży w CRM | Fluxlab",
@@ -41,8 +41,8 @@ export default function JakUporzadkowacProcesSprzedazyArticle() {
             { label: "Jak uporządkować proces sprzedaży w CRM" },
           ]}
         />
-        {/* Hero */}
-        <section className="bg-gray-50 dark:bg-gray-900/50 py-16 lg:py-24">
+        {/* Kompaktowy nagłówek */}
+        <section className="pt-24 pb-10">
           <div className="container-wide max-w-3xl mx-auto text-center">
             <span className="section-label">Strefa wiedzy</span>
             <h1 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">
@@ -57,170 +57,180 @@ export default function JakUporzadkowacProcesSprzedazyArticle() {
           </div>
         </section>
 
-        {/* Content */}
-        <section className="py-16 lg:py-24">
-          <div className="container-wide">
-            <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_220px] lg:gap-8">
-              <article className="max-w-3xl mx-auto lg:mx-0 w-full space-y-16">
-                {/* Section 1 */}
-                <div>
-                  <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                    Zacznij od etapów pipeline
-                  </h2>
-                  <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                    Pipeline powinien odzwierciedlać realny proces, a nie
-                    życzeniowy model. Każdy etap musi mieć jasne znaczenie.
-                    Handlowiec powinien wiedzieć, co oznacza przejście dalej i
-                    kiedy sprawa realnie zmienia status.
-                  </p>
-                  <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                    Zbyt wiele etapów komplikuje pracę. Zbyt mało nie daje
-                    kontroli. W praktyce lepiej mieć mniej etapów, ale z
-                    wyraźnymi kryteriami.
-                  </p>
-                </div>
-
-                {/* Section 2 */}
-                <div>
-                  <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                    Ustal kryteria przejścia
-                  </h2>
-                  <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                    Najważniejsze pytanie brzmi: po czym poznajesz, że lead
-                    przeszedł z etapu A do B? Jeśli nie ma obiektywnej
-                    odpowiedzi, proces jest uznaniowy.
-                  </p>
-                  <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                    Dla każdego etapu określ:
-                  </p>
-                  <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-400">
-                    <li className="flex items-start gap-2">
-                      <svg
-                        className="w-5 h-5 text-accent shrink-0 mt-0.5"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth={2}
+        {/* Treść w zakładkach — nic nie wycięte, podzielone wg rozdziałów */}
+        <div className="container-wide pb-20">
+          <Tabs
+            ariaLabel="Rozdziały artykułu o porządkowaniu procesu sprzedaży w CRM"
+            tabs={[
+              {
+                label: "Etapy pipeline",
+                content: (
+                  <div className="py-10 lg:py-12 max-w-3xl mx-auto">
+                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                      Zacznij od etapów pipeline
+                    </h2>
+                    <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                      Pipeline powinien odzwierciedlać realny proces, a nie
+                      życzeniowy model. Każdy etap musi mieć jasne znaczenie.
+                      Handlowiec powinien wiedzieć, co oznacza przejście dalej i
+                      kiedy sprawa realnie zmienia status.
+                    </p>
+                    <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                      Zbyt wiele etapów komplikuje pracę. Zbyt mało nie daje
+                      kontroli. W praktyce lepiej mieć mniej etapów, ale z
+                      wyraźnymi kryteriami.
+                    </p>
+                  </div>
+                ),
+              },
+              {
+                label: "Kryteria przejścia",
+                content: (
+                  <div className="py-10 lg:py-12 max-w-3xl mx-auto">
+                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                      Ustal kryteria przejścia
+                    </h2>
+                    <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                      Najważniejsze pytanie brzmi: po czym poznajesz, że lead
+                      przeszedł z etapu A do B? Jeśli nie ma obiektywnej
+                      odpowiedzi, proces jest uznaniowy.
+                    </p>
+                    <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                      Dla każdego etapu określ:
+                    </p>
+                    <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-400">
+                      <li className="flex items-start gap-2">
+                        <svg
+                          className="w-5 h-5 text-accent shrink-0 mt-0.5"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          strokeWidth={2}
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M5 13l4 4L19 7"
+                          />
+                        </svg>
+                        warunek wejścia,
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <svg
+                          className="w-5 h-5 text-accent shrink-0 mt-0.5"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          strokeWidth={2}
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M5 13l4 4L19 7"
+                          />
+                        </svg>
+                        obowiązkowe dane,
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <svg
+                          className="w-5 h-5 text-accent shrink-0 mt-0.5"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          strokeWidth={2}
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M5 13l4 4L19 7"
+                          />
+                        </svg>
+                        kolejny ruch,
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <svg
+                          className="w-5 h-5 text-accent shrink-0 mt-0.5"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          strokeWidth={2}
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M5 13l4 4L19 7"
+                          />
+                        </svg>
+                        odpowiedzialną osobę.
+                      </li>
+                    </ul>
+                  </div>
+                ),
+              },
+              {
+                label: "Jakość danych",
+                content: (
+                  <div className="py-10 lg:py-12 max-w-3xl mx-auto">
+                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                      Wymuś jakość danych
+                    </h2>
+                    <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                      Bez pól obowiązkowych, walidacji i prostych reguł CRM
+                      szybko zamienia się w luźny notatnik. Dane muszą być
+                      kompletne, bo tylko wtedy pipeline, follow-up i{" "}
+                      <Link
+                        href="/automatyzacja-raportowania"
+                        className="text-accent hover:underline"
                       >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                      warunek wejścia,
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <svg
-                        className="w-5 h-5 text-accent shrink-0 mt-0.5"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth={2}
+                        raportowanie
+                      </Link>{" "}
+                      mają sens.
+                    </p>
+                  </div>
+                ),
+              },
+              {
+                label: "Połącz z automatyzacją",
+                content: (
+                  <div className="py-10 lg:py-12 max-w-3xl mx-auto">
+                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                      Połącz proces z automatyzacją
+                    </h2>
+                    <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                      Dopiero uporządkowany proces warto automatyzować. Wtedy{" "}
+                      <Link
+                        href="/automatyzacja-crm"
+                        className="text-accent hover:underline"
                       >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                      obowiązkowe dane,
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <svg
-                        className="w-5 h-5 text-accent shrink-0 mt-0.5"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth={2}
+                        automatyzacja CRM
+                      </Link>{" "}
+                      może sprawić, że system sam tworzy zadania, przypomina o
+                      follow-upie, pilnuje braków i zasila raporty.
+                    </p>
+
+                    <div className="mt-10 rounded-2xl bg-accent/10 p-8 lg:p-12 text-center">
+                      <p className="text-lg font-medium text-gray-900 dark:text-white">
+                        Chcesz uporządkować proces sprzedaży, zanim zaczniesz go
+                        automatyzować?
+                      </p>
+                      <Link
+                        href="/automatyzacja-crm"
+                        className="btn-primary mt-6 inline-block"
                       >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                      kolejny ruch,
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <svg
-                        className="w-5 h-5 text-accent shrink-0 mt-0.5"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth={2}
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                      odpowiedzialną osobę.
-                    </li>
-                  </ul>
-                </div>
+                        Zobacz usługę Automatyzacja CRM
+                      </Link>
+                    </div>
+                  </div>
+                ),
+              },
+            ]}
+          />
 
-                {/* Section 3 */}
-                <div>
-                  <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                    Wymuś jakość danych
-                  </h2>
-                  <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                    Bez pól obowiązkowych, walidacji i prostych reguł CRM szybko
-                    zamienia się w luźny notatnik. Dane muszą być kompletne, bo
-                    tylko wtedy pipeline, follow-up i{" "}
-                    <Link
-                      href="/automatyzacja-raportowania"
-                      className="text-accent hover:underline"
-                    >
-                      raportowanie
-                    </Link>{" "}
-                    mają sens.
-                  </p>
-                </div>
-
-                {/* Section 4 */}
-                <div>
-                  <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                    Połącz proces z automatyzacją
-                  </h2>
-                  <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                    Dopiero uporządkowany proces warto automatyzować. Wtedy{" "}
-                    <Link
-                      href="/automatyzacja-crm"
-                      className="text-accent hover:underline"
-                    >
-                      automatyzacja CRM
-                    </Link>{" "}
-                    może sprawić, że system sam tworzy zadania, przypomina o
-                    follow-upie, pilnuje braków i zasila raporty.
-                  </p>
-                </div>
-              </article>
-              <TableOfContents containerSelector="article" />
-            </div>
-
-            {/* Prev / Next */}
-            <div className="max-w-3xl mx-auto mt-16">
-              <PrevNextArticle currentHref="/strefa-wiedzy/jak-uporzadkowac-proces-sprzedazy-w-crm" />
-            </div>
-
-            {/* CTA */}
-            <div className="max-w-3xl mx-auto mt-16 rounded-2xl bg-accent/10 p-8 lg:p-12 text-center">
-              <p className="text-lg font-medium text-gray-900 dark:text-white">
-                Chcesz uporządkować proces sprzedaży, zanim zaczniesz go
-                automatyzować?
-              </p>
-              <Link
-                href="/automatyzacja-crm"
-                className="btn-primary mt-6 inline-block"
-              >
-                Zobacz usługę Automatyzacja CRM
-              </Link>
-            </div>
+          {/* Prev / Next */}
+          <div className="max-w-3xl mx-auto mt-16">
+            <PrevNextArticle currentHref="/strefa-wiedzy/jak-uporzadkowac-proces-sprzedazy-w-crm" />
           </div>
-        </section>
+        </div>
       </main>
       <Footer />
 

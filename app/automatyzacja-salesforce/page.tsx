@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import LandingForm from "@/components/LandingForm";
+import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
   title:
@@ -57,8 +58,8 @@ export default function AutomatyzacjaSalesforce() {
       <main className="pt-16">
         <Breadcrumbs items={[{ label: "Automatyzacja Salesforce" }]} />
 
-        {/* Hero */}
-        <section className="relative overflow-hidden py-24 lg:py-32">
+        {/* Hero — kompaktowy */}
+        <section className="relative overflow-hidden pt-24 pb-12">
           <div className="blob blob-cyan -top-32 -right-24 w-[420px] h-[420px]" />
           <div className="container-wide relative">
             <div className="max-w-3xl">
@@ -78,51 +79,62 @@ export default function AutomatyzacjaSalesforce() {
                 Większość firm używa 30–40% możliwości platformy. Przewaga
                 zaczyna się tam, gdzie kończy się konfiguracja w GUI.
               </p>
-              <a href="#diagnoza" className="btn-primary px-8 py-3.5 text-base">
+              <a href="#sekcje" className="btn-primary px-8 py-3.5 text-base">
                 Sprawdźmy proces
               </a>
             </div>
           </div>
         </section>
 
-        {/* Oferta */}
-        <section className="py-20 lg:py-28 border-t border-gray-100 dark:border-gray-800">
-          <div className="container-wide">
-            <h2 className="display-xl text-gray-900 dark:text-white mb-12 max-w-2xl">
-              Co automatyzuję
-            </h2>
-            <div className="grid sm:grid-cols-2 gap-6 max-w-4xl">
-              {offer.map((item) => (
-                <div
-                  key={item.title}
-                  className="card-lift bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-8"
-                >
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
-                    {item.desc}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Form — diagnoza */}
-        <section
-          id="diagnoza"
-          className="scroll-mt-20 py-20 lg:py-24 bg-accent/10 border-t border-gray-100 dark:border-gray-800"
-        >
-          <div className="container-wide">
-            <LandingForm
-              formId="diagnosis_salesforce"
-              heading="Sprawdźmy Twój proces w Salesforce"
-              intro="Opisz krótko, jak dziś wygląda obsługa leadów i deali: jakie dane wchodzą, gdzie się gubią, co handlowcy klikają ręcznie. Dostaniesz informację, czy automatyzacja ma sens i co da największy efekt."
-              submitLabel="Chcę diagnozę procesu Salesforce"
-            />
-          </div>
-        </section>
+        {/* Treść w zakładkach — nic nie wycięte, podzielone */}
+        <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
+          <Tabs
+            ariaLabel="Sekcje oferty automatyzacji Salesforce"
+            tabs={[
+              {
+                label: "Co automatyzuję",
+                content: (
+                  <section className="py-10 lg:py-12">
+                    <h2 className="display-xl text-gray-900 dark:text-white mb-12 max-w-2xl">
+                      Co automatyzuję
+                    </h2>
+                    <div className="grid sm:grid-cols-2 gap-6 max-w-4xl">
+                      {offer.map((item) => (
+                        <div
+                          key={item.title}
+                          className="card-lift bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-8"
+                        >
+                          <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                            {item.title}
+                          </h3>
+                          <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
+                            {item.desc}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </section>
+                ),
+              },
+              {
+                label: "Diagnoza",
+                content: (
+                  <section
+                    id="diagnoza"
+                    className="scroll-mt-20 py-10 lg:py-12"
+                  >
+                    <LandingForm
+                      formId="diagnosis_salesforce"
+                      heading="Sprawdźmy Twój proces w Salesforce"
+                      intro="Opisz krótko, jak dziś wygląda obsługa leadów i deali: jakie dane wchodzą, gdzie się gubią, co handlowcy klikają ręcznie. Dostaniesz informację, czy automatyzacja ma sens i co da największy efekt."
+                      submitLabel="Chcę diagnozę procesu Salesforce"
+                    />
+                  </section>
+                ),
+              },
+            ]}
+          />
+        </div>
       </main>
 
       {/* Service Schema */}

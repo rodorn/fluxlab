@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import LandingForm from "@/components/LandingForm";
+import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
   title:
@@ -67,9 +68,9 @@ export default function ZapierMake() {
   return (
     <>
       <Header />
-      <main className="pt-16">
-        {/* Hero */}
-        <section className="relative overflow-hidden py-24 lg:py-32">
+      <main>
+        {/* Hero — kompaktowy */}
+        <section className="relative overflow-hidden pt-24 pb-12">
           <div className="blob blob-cyan -z-10 top-[-10%] right-[-5%]" />
           <div className="container-wide max-w-3xl mx-auto text-center">
             <p className="section-label mb-5">Usługa</p>
@@ -82,87 +83,102 @@ export default function ZapierMake() {
               czas.
             </p>
             <div className="mt-8">
-              <a href="#diagnoza" className="btn-primary">
+              <a href="#sekcje" className="btn-primary">
                 Dobierz narzędzie
               </a>
             </div>
           </div>
         </section>
 
-        {/* Kiedy co */}
-        <section className="py-20 lg:py-28 border-t border-gray-100 dark:border-gray-800">
-          <div className="container-wide max-w-4xl mx-auto">
-            <h2 className="display-md text-gray-900 dark:text-white mb-10">
-              Kiedy Zapier, kiedy Make
-            </h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              {compare.map((item) => (
-                <div
-                  key={item.name}
-                  className="card-lift rounded-2xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800/60 p-7"
-                >
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                    {item.name}
-                  </h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">
-                    {item.desc}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* FAQ */}
-        <section className="py-20 lg:py-28 border-t border-gray-100 dark:border-gray-800">
-          <div className="container-wide max-w-3xl mx-auto">
-            <h2 className="display-md text-gray-900 dark:text-white mb-10">
-              Częste pytania
-            </h2>
-            <div className="space-y-4">
-              {faq.map((item) => (
-                <details
-                  key={item.question}
-                  className="group card-lift bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl"
-                >
-                  <summary className="cursor-pointer p-6 flex items-center justify-between gap-4 text-gray-900 dark:text-white font-medium list-none">
-                    {item.question}
-                    <svg
-                      className="shrink-0 w-5 h-5 text-gray-400 transition-transform group-open:rotate-45"
-                      viewBox="0 0 20 20"
-                      fill="none"
-                    >
-                      <path
-                        d="M10 4v12M4 10h12"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                      />
-                    </svg>
-                  </summary>
-                  <div className="px-6 pb-6 text-sm text-gray-500 dark:text-gray-400">
-                    {item.answer}
+        {/* Treść w zakładkach — nic nie wycięte, podzielone */}
+        <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
+          <Tabs
+            ariaLabel="Sekcje porównania Zapier vs Make"
+            tabs={[
+              {
+                label: "Kiedy co",
+                content: (
+                  <div className="py-10 lg:py-12">
+                    <div className="max-w-4xl mx-auto">
+                      <h2 className="display-md text-gray-900 dark:text-white mb-10">
+                        Kiedy Zapier, kiedy Make
+                      </h2>
+                      <div className="grid md:grid-cols-3 gap-6">
+                        {compare.map((item) => (
+                          <div
+                            key={item.name}
+                            className="card-lift rounded-2xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800/60 p-7"
+                          >
+                            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                              {item.name}
+                            </h3>
+                            <p className="text-sm text-gray-600 dark:text-gray-400">
+                              {item.desc}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
                   </div>
-                </details>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Form — diagnoza */}
-        <section
-          id="diagnoza"
-          className="scroll-mt-20 py-20 lg:py-24 bg-accent/10 border-t border-gray-100 dark:border-gray-800"
-        >
-          <div className="container-wide">
-            <LandingForm
-              formId="diagnosis_zapier_make"
-              heading="Dobierz narzędzie do procesu"
-              intro="Opisz krótko, jaki proces chcesz zautomatyzować, jakie systemy łączymy i jaki masz wolumen. Dostaniesz informację, czy lepszy będzie Zapier, Make czy n8n."
-              submitLabel="Dobierz narzędzie"
-            />
-          </div>
-        </section>
+                ),
+              },
+              {
+                label: "FAQ",
+                content: (
+                  <div className="py-10 lg:py-12">
+                    <div className="max-w-3xl mx-auto">
+                      <h2 className="display-md text-gray-900 dark:text-white mb-10">
+                        Częste pytania
+                      </h2>
+                      <div className="space-y-4">
+                        {faq.map((item) => (
+                          <details
+                            key={item.question}
+                            className="group card-lift bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl"
+                          >
+                            <summary className="cursor-pointer p-6 flex items-center justify-between gap-4 text-gray-900 dark:text-white font-medium list-none">
+                              {item.question}
+                              <svg
+                                className="shrink-0 w-5 h-5 text-gray-400 transition-transform group-open:rotate-45"
+                                viewBox="0 0 20 20"
+                                fill="none"
+                              >
+                                <path
+                                  d="M10 4v12M4 10h12"
+                                  stroke="currentColor"
+                                  strokeWidth="1.5"
+                                  strokeLinecap="round"
+                                />
+                              </svg>
+                            </summary>
+                            <div className="px-6 pb-6 text-sm text-gray-500 dark:text-gray-400">
+                              {item.answer}
+                            </div>
+                          </details>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ),
+              },
+              {
+                label: "Diagnoza",
+                content: (
+                  <div id="diagnoza" className="scroll-mt-20 py-10 lg:py-12">
+                    <div className="container-wide">
+                      <LandingForm
+                        formId="diagnosis_zapier_make"
+                        heading="Dobierz narzędzie do procesu"
+                        intro="Opisz krótko, jaki proces chcesz zautomatyzować, jakie systemy łączymy i jaki masz wolumen. Dostaniesz informację, czy lepszy będzie Zapier, Make czy n8n."
+                        submitLabel="Dobierz narzędzie"
+                      />
+                    </div>
+                  </div>
+                ),
+              },
+            ]}
+          />
+        </div>
       </main>
 
       {/* Service Schema */}

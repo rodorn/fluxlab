@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TrackedCTA from "@/components/TrackedCTA";
+import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
   title: "Automatyczne przypisywanie leadów do handlowców | Routing CRM",
@@ -190,8 +191,8 @@ export default function AutomatycznePrzypisywanieLeadow() {
       <main className="pt-16">
         <Breadcrumbs items={[{ label: "Automatyczne przypisywanie leadów" }]} />
 
-        {/* Hero */}
-        <section className="py-16 lg:py-24 bg-gradient-to-b from-accent/10 to-transparent border-b border-gray-100 dark:border-gray-800">
+        {/* Hero — kompaktowy */}
+        <section className="pt-24 pb-12 bg-gradient-to-b from-accent/10 to-transparent border-b border-gray-100 dark:border-gray-800">
           <div className="container-wide">
             <div className="max-w-3xl mx-auto text-center">
               <span className="section-label">Lead routing CRM</span>
@@ -208,7 +209,7 @@ export default function AutomatycznePrzypisywanieLeadow() {
               </p>
               <div className="mt-8 flex justify-center">
                 <TrackedCTA
-                  href="/#kontakt"
+                  href="#sekcje"
                   location="article_routing_hero"
                   label="Sprawdź routing leadów"
                   eventName="cta_click_article_audit"
@@ -225,531 +226,587 @@ export default function AutomatycznePrzypisywanieLeadow() {
           </div>
         </section>
 
-        {/* Problem biznesowy */}
-        <section className="py-16 lg:py-24">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <span className="section-label">Problem biznesowy</span>
-              <h2 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
-                Większość firm traci leady, bo między formularzem a CRM-em jest
-                człowiek
-              </h2>
-              <div className="text-gray-600 dark:text-gray-400 leading-relaxed space-y-4 mb-8">
-                <p>
-                  Routing leadów to z pozoru drobnostka — &bdquo;ktoś musi
-                  zdecydować, kto bierze tego klienta&rdquo;. W rzeczywistości
-                  to jeden z najbardziej kosztownych wąskich gardeł w sprzedaży
-                  B2B. Każda minuta między momentem, w którym lead zostawił
-                  numer, a momentem, w którym handlowiec do niego dzwoni, działa
-                  na rzecz konkurencji.
-                </p>
-                <p>
-                  Większość firm próbuje rozwiązać to ręcznie: arkusz
-                  rozdzielnika, „pierwszy chętny bierze”, manager, który rano
-                  rozdaje leady. Wszystkie te metody mają jedną wspólną wadę —
-                  zależą od człowieka, który czasem śpi, czasem jest na
-                  spotkaniu, czasem na urlopie. Lead nie czeka.
-                </p>
-                <p>
-                  Jeśli handlowiec przepisuje dane, to nie sprzedaje. Tyle
-                  filozofii.
-                </p>
-              </div>
-              <ul className="space-y-3">
-                {problemPoints.map((point) => (
-                  <li
-                    key={point}
-                    className="flex items-start gap-3 bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-xl px-5 py-4"
-                  >
-                    <span className="mt-1.5 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-accent" />
-                    <span className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                      {point}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* Objawy w firmie */}
-        <section className="py-16 lg:py-24 bg-gray-50 dark:bg-gray-900/50 border-y border-gray-100 dark:border-gray-800">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <span className="section-label">Objawy w firmie</span>
-              <h2 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
-                Po czym poznać, że routing leadów jest zepsuty
-              </h2>
-              <p className="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-                Te zachowania wyglądają niewinnie. Każde z osobna jest do
-                zaakceptowania. Razem oznaczają, że proces przypisywania leadów
-                żyje w głowach ludzi, a nie w systemie.
-              </p>
-              <ul className="space-y-3">
-                {symptoms.map((s) => (
-                  <li
-                    key={s}
-                    className="flex items-start gap-3 bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-xl px-5 py-4"
-                  >
-                    <svg
-                      className="flex-shrink-0 mt-0.5 text-accent"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 20 20"
-                      fill="none"
-                    >
-                      <path
-                        d="M10 6v4m0 4h.01"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                      />
-                      <circle
-                        cx="10"
-                        cy="10"
-                        r="8"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                      />
-                    </svg>
-                    <span className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                      {s}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* Koszt problemu */}
-        <section className="py-16 lg:py-24">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <span className="section-label">Koszt problemu</span>
-              <h2 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
-                Policzmy konkretnie, ile kosztuje ręczne rozdzielanie leadów
-              </h2>
-              <div className="text-gray-600 dark:text-gray-400 leading-relaxed space-y-4 mb-8">
-                <p>
-                  Załóżmy firmę B2B z umiarkowanym wolumenem: 300 leadów
-                  miesięcznie, 4 handlowców, manager rozdziela ręcznie.
-                </p>
-              </div>
-              <div className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-6 lg:p-8 mb-6 space-y-3 font-mono text-sm">
-                <p className="text-gray-700 dark:text-gray-300">
-                  <span className="text-accent font-semibold">
-                    Czas managera:
-                  </span>{" "}
-                  300 leadów × 3 min/lead = 900 min = 15 h/mies
-                </p>
-                <p className="text-gray-700 dark:text-gray-300">
-                  <span className="text-accent font-semibold">
-                    Koszt managera:
-                  </span>{" "}
-                  15 h × 120 zł/h = <strong>1 800 zł/mies</strong>
-                </p>
-                <p className="text-gray-700 dark:text-gray-300">
-                  <span className="text-accent font-semibold">
-                    Czas reakcji:
-                  </span>{" "}
-                  średnio 4 h od wpadnięcia leada do pierwszego kontaktu
-                </p>
-                <p className="text-gray-700 dark:text-gray-300">
-                  <span className="text-accent font-semibold">Konwersja:</span>{" "}
-                  modelowo: spadek z 5 min do 4 h oznacza znacząco mniej
-                  realnych kontaktów (lead w międzyczasie rozmawia z
-                  konkurencją). Konkretną wartość referencyjną dobieram w
-                  diagnozie pod Twoją branżę.
-                </p>
-                <p className="text-gray-700 dark:text-gray-300">
-                  <span className="text-accent font-semibold">
-                    Zgubione leady:
-                  </span>{" "}
-                  przy 300 leadach miesięcznie i konserwatywnie 5% trafiających
-                  do czarnej dziury (urlopy, niepasujące reguły, „nie
-                  wiedziałem, że to mój”) = 15 leadów/mies × średnia wartość
-                  deala = realna strata w przychodzie
-                </p>
-              </div>
-              <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                Te liczby nie są spektakularne dla pojedynczego leada. Stają się
-                spektakularne, gdy pomnożysz przez 12 miesięcy i dodasz koszt
-                frustracji handlowców, którzy zamiast sprzedawać, walczą o leady
-                na Slacku.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Proces przed i po */}
-        <section className="py-16 lg:py-24 bg-gray-50 dark:bg-gray-900/50 border-y border-gray-100 dark:border-gray-800">
-          <div className="container-wide">
-            <div className="max-w-5xl mx-auto">
-              <div className="text-center mb-12">
-                <span className="section-label">Przed i po</span>
-                <h2 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">
-                  Jak wygląda proces ręczny vs zautomatyzowany
-                </h2>
-              </div>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-6 lg:p-8">
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-                    Proces ręczny (łańcuch nadziei)
-                  </h3>
-                  <ol className="space-y-3 list-decimal list-inside text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                    {beforeSteps.map((step) => (
-                      <li key={step}>{step}</li>
-                    ))}
-                  </ol>
-                </div>
-                <div className="bg-white dark:bg-gray-800/60 border border-accent/40 rounded-2xl p-6 lg:p-8 shadow-sm">
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-                    Proces zautomatyzowany
-                  </h3>
-                  <ol className="space-y-3 list-decimal list-inside text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                    {afterSteps.map((step) => (
-                      <li key={step}>{step}</li>
-                    ))}
-                  </ol>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Diagram */}
-        <section className="py-16 lg:py-24">
-          <div className="container-wide">
-            <div className="max-w-4xl mx-auto">
-              <div className="mb-10">
-                <span className="section-label">Diagram</span>
-                <h2 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                  Krok po kroku: routing leada od formularza do handlowca
-                </h2>
-                <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
-                  Każdy z tych kroków buduję osobno i mierzę osobno. Możesz
-                  wdrożyć tylko 3 pierwsze i już dostać efekt — reszta dochodzi
-                  iteracyjnie.
-                </p>
-              </div>
-              <ol className="relative space-y-3 lg:space-y-4">
-                {workflowSteps.map((s, i) => (
-                  <li key={s.n} className="relative">
-                    <div
-                      className={`flex gap-4 lg:gap-5 items-start bg-white dark:bg-gray-800/80 border rounded-2xl p-5 lg:p-6 ${
-                        s.accent
-                          ? "border-accent/40 shadow-sm"
-                          : "border-gray-100 dark:border-gray-700"
-                      }`}
-                    >
-                      <div
-                        className={`flex-shrink-0 w-10 h-10 lg:w-11 lg:h-11 rounded-full flex items-center justify-center font-bold text-sm tabular-nums ${
-                          s.accent
-                            ? "bg-accent text-white"
-                            : "bg-accent-light dark:bg-accent-dark-light text-accent"
-                        }`}
-                      >
-                        {s.n}
+        {/* Treść w zakładkach — nic nie wycięte, podzielone */}
+        <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
+          <Tabs
+            ariaLabel="Sekcje strony o routingu leadów"
+            tabs={[
+              {
+                label: "Problem",
+                content: (
+                  <div className="py-10 lg:py-12">
+                    {/* Problem biznesowy */}
+                    <section className="">
+                      <div className="">
+                        <div className="max-w-3xl mx-auto">
+                          <span className="section-label">
+                            Problem biznesowy
+                          </span>
+                          <h2 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+                            Większość firm traci leady, bo między formularzem a
+                            CRM-em jest człowiek
+                          </h2>
+                          <div className="text-gray-600 dark:text-gray-400 leading-relaxed space-y-4 mb-8">
+                            <p>
+                              Routing leadów to z pozoru drobnostka —
+                              &bdquo;ktoś musi zdecydować, kto bierze tego
+                              klienta&rdquo;. W rzeczywistości to jeden z
+                              najbardziej kosztownych wąskich gardeł w sprzedaży
+                              B2B. Każda minuta między momentem, w którym lead
+                              zostawił numer, a momentem, w którym handlowiec do
+                              niego dzwoni, działa na rzecz konkurencji.
+                            </p>
+                            <p>
+                              Większość firm próbuje rozwiązać to ręcznie:
+                              arkusz rozdzielnika, „pierwszy chętny bierze”,
+                              manager, który rano rozdaje leady. Wszystkie te
+                              metody mają jedną wspólną wadę — zależą od
+                              człowieka, który czasem śpi, czasem jest na
+                              spotkaniu, czasem na urlopie. Lead nie czeka.
+                            </p>
+                            <p>
+                              Jeśli handlowiec przepisuje dane, to nie
+                              sprzedaje. Tyle filozofii.
+                            </p>
+                          </div>
+                          <ul className="space-y-3">
+                            {problemPoints.map((point) => (
+                              <li
+                                key={point}
+                                className="flex items-start gap-3 bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-xl px-5 py-4"
+                              >
+                                <span className="mt-1.5 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-accent" />
+                                <span className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                                  {point}
+                                </span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
                       </div>
-                      <div className="flex-1 min-w-0">
-                        <h3 className="text-base lg:text-lg font-semibold text-gray-900 dark:text-white mb-1">
-                          {s.title}
-                        </h3>
-                        <p className="text-sm lg:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
-                          {s.desc}
-                        </p>
-                      </div>
-                    </div>
-                    {i < workflowSteps.length - 1 && (
-                      <div className="flex justify-center py-1.5">
-                        <svg
-                          className="text-gray-300 dark:text-gray-600"
-                          width="14"
-                          height="14"
-                          viewBox="0 0 14 14"
-                          fill="none"
-                          aria-hidden="true"
-                        >
-                          <path
-                            d="M7 2v8m0 0l-3-3m3 3l3-3"
-                            stroke="currentColor"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                        </svg>
-                      </div>
-                    )}
-                  </li>
-                ))}
-              </ol>
-            </div>
-          </div>
-        </section>
+                    </section>
 
-        {/* Co wdrożyć w 1. etapie */}
-        <section className="py-16 lg:py-24 bg-gray-50 dark:bg-gray-900/50 border-y border-gray-100 dark:border-gray-800">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <span className="section-label">Pierwszy etap</span>
-              <h2 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
-                Co wdrożyć najpierw, żeby już za tydzień zobaczyć efekt
-              </h2>
-              <div className="text-gray-600 dark:text-gray-400 leading-relaxed space-y-4 mb-6">
-                <p>
-                  Nie próbuj zbudować pełnego routingu z 12 regułami i
-                  eskalacjami w pierwszym tygodniu. Najszybszy efekt daje
-                  najprostszy scenariusz:{" "}
-                  <strong>
-                    jedno źródło leadów + jedna reguła + automatyczne tworzenie
-                    deala w CRM
-                  </strong>
-                  .
-                </p>
-                <p>Konkretnie:</p>
-              </div>
-              <ul className="space-y-3 mb-6">
-                <li className="flex items-start gap-3 bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-xl px-5 py-4">
-                  <span className="flex-shrink-0 mt-0.5 w-6 h-6 rounded-full bg-accent text-white flex items-center justify-center text-xs font-bold">
-                    1
-                  </span>
-                  <span className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                    <strong>Wybierz jedno źródło</strong> — najczęściej
-                    formularz z głównej strony albo formularz z reklam Google.
-                    Resztę odłóż.
-                  </span>
-                </li>
-                <li className="flex items-start gap-3 bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-xl px-5 py-4">
-                  <span className="flex-shrink-0 mt-0.5 w-6 h-6 rounded-full bg-accent text-white flex items-center justify-center text-xs font-bold">
-                    2
-                  </span>
-                  <span className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                    <strong>Wybierz jedną regułę</strong> — najprostsza to
-                    round-robin między 2–3 handlowcami. Region i produkt dodasz
-                    w drugim etapie.
-                  </span>
-                </li>
-                <li className="flex items-start gap-3 bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-xl px-5 py-4">
-                  <span className="flex-shrink-0 mt-0.5 w-6 h-6 rounded-full bg-accent text-white flex items-center justify-center text-xs font-bold">
-                    3
-                  </span>
-                  <span className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                    <strong>Automatyczny rekord w CRM</strong> — osoba + firma +
-                    deal z przypisanym właścicielem. Zadanie „kontakt w 5 minut”
-                    + powiadomienie na Slacku.
-                  </span>
-                </li>
-                <li className="flex items-start gap-3 bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-xl px-5 py-4">
-                  <span className="flex-shrink-0 mt-0.5 w-6 h-6 rounded-full bg-accent text-white flex items-center justify-center text-xs font-bold">
-                    4
-                  </span>
-                  <span className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                    <strong>Mierz przed/po</strong> — średni czas pierwszego
-                    kontaktu, liczba leadów, które trafiły do złego handlowca,
-                    czas managera spędzony na rozdzielaniu.
-                  </span>
-                </li>
-              </ul>
-              <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                Tyle. Pierwszy etap robię u klientów w 2–4 dni. Po dwóch
-                tygodniach pracy na żywych danych dokładamy kolejne źródła i
-                reguły — ale dopiero wtedy, gdy wiemy, co realnie działa.
-              </p>
-            </div>
-          </div>
-        </section>
+                    {/* Objawy w firmie */}
+                    <section className="mt-16 lg:mt-24 pt-16 lg:pt-24 border-t border-gray-100 dark:border-gray-800">
+                      <div className="">
+                        <div className="max-w-3xl mx-auto">
+                          <span className="section-label">Objawy w firmie</span>
+                          <h2 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+                            Po czym poznać, że routing leadów jest zepsuty
+                          </h2>
+                          <p className="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
+                            Te zachowania wyglądają niewinnie. Każde z osobna
+                            jest do zaakceptowania. Razem oznaczają, że proces
+                            przypisywania leadów żyje w głowach ludzi, a nie w
+                            systemie.
+                          </p>
+                          <ul className="space-y-3">
+                            {symptoms.map((s) => (
+                              <li
+                                key={s}
+                                className="flex items-start gap-3 bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-xl px-5 py-4"
+                              >
+                                <svg
+                                  className="flex-shrink-0 mt-0.5 text-accent"
+                                  width="20"
+                                  height="20"
+                                  viewBox="0 0 20 20"
+                                  fill="none"
+                                >
+                                  <path
+                                    d="M10 6v4m0 4h.01"
+                                    stroke="currentColor"
+                                    strokeWidth="2"
+                                    strokeLinecap="round"
+                                  />
+                                  <circle
+                                    cx="10"
+                                    cy="10"
+                                    r="8"
+                                    stroke="currentColor"
+                                    strokeWidth="2"
+                                  />
+                                </svg>
+                                <span className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                                  {s}
+                                </span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    </section>
 
-        {/* Typowe błędy */}
-        <section className="py-16 lg:py-24">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <span className="section-label">Antywzorce</span>
-              <h2 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
-                Typowe błędy przy automatycznym przypisywaniu leadów
-              </h2>
-              <p className="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-                Te błędy widzę u 80% firm, które próbowały zrobić routing
-                samodzielnie. Każdy z nich da się obejść — ale lepiej wiedzieć
-                wcześniej.
-              </p>
-              <div className="space-y-4">
-                {antipatterns.map((a) => (
-                  <div
-                    key={a.title}
-                    className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-6"
-                  >
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                      {a.title}
-                    </h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                      {a.desc}
-                    </p>
+                    {/* Koszt problemu */}
+                    <section className="mt-16 lg:mt-24 pt-16 lg:pt-24 border-t border-gray-100 dark:border-gray-800">
+                      <div className="">
+                        <div className="max-w-3xl mx-auto">
+                          <span className="section-label">Koszt problemu</span>
+                          <h2 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+                            Policzmy konkretnie, ile kosztuje ręczne
+                            rozdzielanie leadów
+                          </h2>
+                          <div className="text-gray-600 dark:text-gray-400 leading-relaxed space-y-4 mb-8">
+                            <p>
+                              Załóżmy firmę B2B z umiarkowanym wolumenem: 300
+                              leadów miesięcznie, 4 handlowców, manager
+                              rozdziela ręcznie.
+                            </p>
+                          </div>
+                          <div className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-6 lg:p-8 mb-6 space-y-3 font-mono text-sm">
+                            <p className="text-gray-700 dark:text-gray-300">
+                              <span className="text-accent font-semibold">
+                                Czas managera:
+                              </span>{" "}
+                              300 leadów × 3 min/lead = 900 min = 15 h/mies
+                            </p>
+                            <p className="text-gray-700 dark:text-gray-300">
+                              <span className="text-accent font-semibold">
+                                Koszt managera:
+                              </span>{" "}
+                              15 h × 120 zł/h = <strong>1 800 zł/mies</strong>
+                            </p>
+                            <p className="text-gray-700 dark:text-gray-300">
+                              <span className="text-accent font-semibold">
+                                Czas reakcji:
+                              </span>{" "}
+                              średnio 4 h od wpadnięcia leada do pierwszego
+                              kontaktu
+                            </p>
+                            <p className="text-gray-700 dark:text-gray-300">
+                              <span className="text-accent font-semibold">
+                                Konwersja:
+                              </span>{" "}
+                              modelowo: spadek z 5 min do 4 h oznacza znacząco
+                              mniej realnych kontaktów (lead w międzyczasie
+                              rozmawia z konkurencją). Konkretną wartość
+                              referencyjną dobieram w diagnozie pod Twoją
+                              branżę.
+                            </p>
+                            <p className="text-gray-700 dark:text-gray-300">
+                              <span className="text-accent font-semibold">
+                                Zgubione leady:
+                              </span>{" "}
+                              przy 300 leadach miesięcznie i konserwatywnie 5%
+                              trafiających do czarnej dziury (urlopy,
+                              niepasujące reguły, „nie wiedziałem, że to mój”) =
+                              15 leadów/mies × średnia wartość deala = realna
+                              strata w przychodzie
+                            </p>
+                          </div>
+                          <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                            Te liczby nie są spektakularne dla pojedynczego
+                            leada. Stają się spektakularne, gdy pomnożysz przez
+                            12 miesięcy i dodasz koszt frustracji handlowców,
+                            którzy zamiast sprzedawać, walczą o leady na Slacku.
+                          </p>
+                        </div>
+                      </div>
+                    </section>
                   </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
+                ),
+              },
+              {
+                label: "Proces",
+                content: (
+                  <div className="py-10 lg:py-12">
+                    {/* Proces przed i po */}
+                    <section className="">
+                      <div className="">
+                        <div className="max-w-5xl mx-auto">
+                          <div className="text-center mb-12">
+                            <span className="section-label">Przed i po</span>
+                            <h2 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">
+                              Jak wygląda proces ręczny vs zautomatyzowany
+                            </h2>
+                          </div>
+                          <div className="grid md:grid-cols-2 gap-6">
+                            <div className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-6 lg:p-8">
+                              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+                                Proces ręczny (łańcuch nadziei)
+                              </h3>
+                              <ol className="space-y-3 list-decimal list-inside text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                                {beforeSteps.map((step) => (
+                                  <li key={step}>{step}</li>
+                                ))}
+                              </ol>
+                            </div>
+                            <div className="bg-white dark:bg-gray-800/60 border border-accent/40 rounded-2xl p-6 lg:p-8 shadow-sm">
+                              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+                                Proces zautomatyzowany
+                              </h3>
+                              <ol className="space-y-3 list-decimal list-inside text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                                {afterSteps.map((step) => (
+                                  <li key={step}>{step}</li>
+                                ))}
+                              </ol>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
 
-        {/* Cennik */}
-        <section className="py-16 lg:py-24 bg-gray-50 dark:bg-gray-900/50 border-y border-gray-100 dark:border-gray-800">
-          <div className="container-wide">
-            <div className="max-w-4xl mx-auto">
-              <div className="text-center mb-10">
-                <span className="section-label">Cennik</span>
-                <h2 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                  Ile kosztuje wdrożenie routingu leadów
-                </h2>
-                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                  Stała cena za projekt po krótkim audycie. Widełki poniżej —
-                  konkretną wycenę dostajesz po 30-minutowej rozmowie.
-                </p>
-              </div>
-              <div className="grid md:grid-cols-2 gap-6 mb-8">
-                <div className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-6 lg:p-8">
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                    Routing podstawowy
-                  </h3>
-                  <p className="text-3xl font-bold text-accent mb-3">
-                    3 000–6 000 zł
-                  </p>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                    Jedno źródło leadów, 1–2 reguły (region lub round-robin),
-                    automatyczny rekord w CRM, powiadomienie i zadanie.
-                    Wdrożenie 2–4 dni.
-                  </p>
-                </div>
-                <div className="bg-white dark:bg-gray-800/60 border border-accent/40 rounded-2xl p-6 lg:p-8 shadow-sm">
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                    Routing zaawansowany
-                  </h3>
-                  <p className="text-3xl font-bold text-accent mb-3">
-                    8 000–18 000 zł
-                  </p>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                    Kilka źródeł, wzbogacanie danych, reguły wielowymiarowe
-                    (region + produkt + waga pipeline'u + dostępność),
-                    eskalacje, raport routingu. Wdrożenie 2–4 tygodnie.
-                  </p>
-                </div>
-              </div>
-              <div className="text-center">
-                <Link
-                  href="/automatyzacja-leadow-crm"
-                  className="btn-secondary"
-                >
-                  Zobacz pełną ofertę automatyzacji leadów
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
+                    {/* Diagram */}
+                    <section className="mt-16 lg:mt-24 pt-16 lg:pt-24 border-t border-gray-100 dark:border-gray-800">
+                      <div className="">
+                        <div className="max-w-4xl mx-auto">
+                          <div className="mb-10">
+                            <span className="section-label">Diagram</span>
+                            <h2 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                              Krok po kroku: routing leada od formularza do
+                              handlowca
+                            </h2>
+                            <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
+                              Każdy z tych kroków buduję osobno i mierzę osobno.
+                              Możesz wdrożyć tylko 3 pierwsze i już dostać efekt
+                              — reszta dochodzi iteracyjnie.
+                            </p>
+                          </div>
+                          <ol className="relative space-y-3 lg:space-y-4">
+                            {workflowSteps.map((s, i) => (
+                              <li key={s.n} className="relative">
+                                <div
+                                  className={`flex gap-4 lg:gap-5 items-start bg-white dark:bg-gray-800/80 border rounded-2xl p-5 lg:p-6 ${
+                                    s.accent
+                                      ? "border-accent/40 shadow-sm"
+                                      : "border-gray-100 dark:border-gray-700"
+                                  }`}
+                                >
+                                  <div
+                                    className={`flex-shrink-0 w-10 h-10 lg:w-11 lg:h-11 rounded-full flex items-center justify-center font-bold text-sm tabular-nums ${
+                                      s.accent
+                                        ? "bg-accent text-white"
+                                        : "bg-accent-light dark:bg-accent-dark-light text-accent"
+                                    }`}
+                                  >
+                                    {s.n}
+                                  </div>
+                                  <div className="flex-1 min-w-0">
+                                    <h3 className="text-base lg:text-lg font-semibold text-gray-900 dark:text-white mb-1">
+                                      {s.title}
+                                    </h3>
+                                    <p className="text-sm lg:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
+                                      {s.desc}
+                                    </p>
+                                  </div>
+                                </div>
+                                {i < workflowSteps.length - 1 && (
+                                  <div className="flex justify-center py-1.5">
+                                    <svg
+                                      className="text-gray-300 dark:text-gray-600"
+                                      width="14"
+                                      height="14"
+                                      viewBox="0 0 14 14"
+                                      fill="none"
+                                      aria-hidden="true"
+                                    >
+                                      <path
+                                        d="M7 2v8m0 0l-3-3m3 3l3-3"
+                                        stroke="currentColor"
+                                        strokeWidth="1.5"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                      />
+                                    </svg>
+                                  </div>
+                                )}
+                              </li>
+                            ))}
+                          </ol>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                ),
+              },
+              {
+                label: "Wdrożenie",
+                content: (
+                  <div className="py-10 lg:py-12">
+                    {/* Co wdrożyć w 1. etapie */}
+                    <section className="">
+                      <div className="">
+                        <div className="max-w-3xl mx-auto">
+                          <span className="section-label">Pierwszy etap</span>
+                          <h2 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+                            Co wdrożyć najpierw, żeby już za tydzień zobaczyć
+                            efekt
+                          </h2>
+                          <div className="text-gray-600 dark:text-gray-400 leading-relaxed space-y-4 mb-6">
+                            <p>
+                              Nie próbuj zbudować pełnego routingu z 12 regułami
+                              i eskalacjami w pierwszym tygodniu. Najszybszy
+                              efekt daje najprostszy scenariusz:{" "}
+                              <strong>
+                                jedno źródło leadów + jedna reguła +
+                                automatyczne tworzenie deala w CRM
+                              </strong>
+                              .
+                            </p>
+                            <p>Konkretnie:</p>
+                          </div>
+                          <ul className="space-y-3 mb-6">
+                            <li className="flex items-start gap-3 bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-xl px-5 py-4">
+                              <span className="flex-shrink-0 mt-0.5 w-6 h-6 rounded-full bg-accent text-white flex items-center justify-center text-xs font-bold">
+                                1
+                              </span>
+                              <span className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                                <strong>Wybierz jedno źródło</strong> —
+                                najczęściej formularz z głównej strony albo
+                                formularz z reklam Google. Resztę odłóż.
+                              </span>
+                            </li>
+                            <li className="flex items-start gap-3 bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-xl px-5 py-4">
+                              <span className="flex-shrink-0 mt-0.5 w-6 h-6 rounded-full bg-accent text-white flex items-center justify-center text-xs font-bold">
+                                2
+                              </span>
+                              <span className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                                <strong>Wybierz jedną regułę</strong> —
+                                najprostsza to round-robin między 2–3
+                                handlowcami. Region i produkt dodasz w drugim
+                                etapie.
+                              </span>
+                            </li>
+                            <li className="flex items-start gap-3 bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-xl px-5 py-4">
+                              <span className="flex-shrink-0 mt-0.5 w-6 h-6 rounded-full bg-accent text-white flex items-center justify-center text-xs font-bold">
+                                3
+                              </span>
+                              <span className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                                <strong>Automatyczny rekord w CRM</strong> —
+                                osoba + firma + deal z przypisanym właścicielem.
+                                Zadanie „kontakt w 5 minut” + powiadomienie na
+                                Slacku.
+                              </span>
+                            </li>
+                            <li className="flex items-start gap-3 bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-xl px-5 py-4">
+                              <span className="flex-shrink-0 mt-0.5 w-6 h-6 rounded-full bg-accent text-white flex items-center justify-center text-xs font-bold">
+                                4
+                              </span>
+                              <span className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                                <strong>Mierz przed/po</strong> — średni czas
+                                pierwszego kontaktu, liczba leadów, które
+                                trafiły do złego handlowca, czas managera
+                                spędzony na rozdzielaniu.
+                              </span>
+                            </li>
+                          </ul>
+                          <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                            Tyle. Pierwszy etap robię u klientów w 2–4 dni. Po
+                            dwóch tygodniach pracy na żywych danych dokładamy
+                            kolejne źródła i reguły — ale dopiero wtedy, gdy
+                            wiemy, co realnie działa.
+                          </p>
+                        </div>
+                      </div>
+                    </section>
 
-        {/* FAQ */}
-        <section className="py-16 lg:py-24">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-12 text-center">
-                Najczęstsze pytania o routing leadów
-              </h2>
-              <div className="space-y-4">
-                {faq.map((item) => (
-                  <details
-                    key={item.question}
-                    className="group bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl overflow-hidden"
-                  >
-                    <summary className="cursor-pointer px-6 py-5 flex items-center justify-between gap-4 list-none">
-                      <span className="font-semibold text-gray-900 dark:text-white">
-                        {item.question}
-                      </span>
-                      <svg
-                        className="flex-shrink-0 transition-transform group-open:rotate-180"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 20 20"
-                        fill="none"
-                      >
-                        <path
-                          d="M5 7l5 5 5-5"
-                          stroke="currentColor"
-                          strokeWidth="1.5"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </summary>
-                    <div className="px-6 pb-5 text-gray-600 dark:text-gray-400 leading-relaxed">
-                      {item.answer}
-                    </div>
-                  </details>
-                ))}
-              </div>
-              <div className="mt-10 text-sm text-gray-600 dark:text-gray-400 leading-relaxed bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-6">
-                <p className="mb-2">Powiązane materiały:</p>
-                <ul className="space-y-1.5">
-                  <li>
-                    <Link
-                      href="/czas-reakcji-na-leada"
-                      className="text-accent hover:underline"
-                    >
-                      Jak skrócić czas reakcji na leada do kilku minut
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/automatyzacja-pipedrive"
-                      className="text-accent hover:underline"
-                    >
-                      Automatyzacja Pipedrive
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/automatyzacja-crm"
-                      className="text-accent hover:underline"
-                    >
-                      Automatyzacja CRM — przegląd
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/kalkulator-leadow"
-                      className="text-accent hover:underline"
-                    >
-                      Kalkulator kosztu zgubionych leadów
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
+                    {/* Typowe błędy */}
+                    <section className="mt-16 lg:mt-24 pt-16 lg:pt-24 border-t border-gray-100 dark:border-gray-800">
+                      <div className="">
+                        <div className="max-w-3xl mx-auto">
+                          <span className="section-label">Antywzorce</span>
+                          <h2 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+                            Typowe błędy przy automatycznym przypisywaniu leadów
+                          </h2>
+                          <p className="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
+                            Te błędy widzę u 80% firm, które próbowały zrobić
+                            routing samodzielnie. Każdy z nich da się obejść —
+                            ale lepiej wiedzieć wcześniej.
+                          </p>
+                          <div className="space-y-4">
+                            {antipatterns.map((a) => (
+                              <div
+                                key={a.title}
+                                className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-6"
+                              >
+                                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                                  {a.title}
+                                </h3>
+                                <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                                  {a.desc}
+                                </p>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                ),
+              },
+              {
+                label: "Cennik i FAQ",
+                content: (
+                  <div className="py-10 lg:py-12">
+                    {/* Cennik */}
+                    <section className="">
+                      <div className="">
+                        <div className="max-w-4xl mx-auto">
+                          <div className="text-center mb-10">
+                            <span className="section-label">Cennik</span>
+                            <h2 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                              Ile kosztuje wdrożenie routingu leadów
+                            </h2>
+                            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                              Stała cena za projekt po krótkim audycie. Widełki
+                              poniżej — konkretną wycenę dostajesz po
+                              30-minutowej rozmowie.
+                            </p>
+                          </div>
+                          <div className="grid md:grid-cols-2 gap-6 mb-8">
+                            <div className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-6 lg:p-8">
+                              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                                Routing podstawowy
+                              </h3>
+                              <p className="text-3xl font-bold text-accent mb-3">
+                                3 000–6 000 zł
+                              </p>
+                              <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                                Jedno źródło leadów, 1–2 reguły (region lub
+                                round-robin), automatyczny rekord w CRM,
+                                powiadomienie i zadanie. Wdrożenie 2–4 dni.
+                              </p>
+                            </div>
+                            <div className="bg-white dark:bg-gray-800/60 border border-accent/40 rounded-2xl p-6 lg:p-8 shadow-sm">
+                              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                                Routing zaawansowany
+                              </h3>
+                              <p className="text-3xl font-bold text-accent mb-3">
+                                8 000–18 000 zł
+                              </p>
+                              <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                                Kilka źródeł, wzbogacanie danych, reguły
+                                wielowymiarowe (region + produkt + waga
+                                pipeline'u + dostępność), eskalacje, raport
+                                routingu. Wdrożenie 2–4 tygodnie.
+                              </p>
+                            </div>
+                          </div>
+                          <div className="text-center">
+                            <Link
+                              href="/automatyzacja-leadow-crm"
+                              className="btn-secondary"
+                            >
+                              Zobacz pełną ofertę automatyzacji leadów
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
 
-        {/* Final CTA */}
-        <section className="py-16 lg:py-24 bg-accent/10 border-t border-gray-100 dark:border-gray-800">
-          <div className="container-wide">
-            <div className="max-w-2xl mx-auto text-center">
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                Chcesz, żeby leady same trafiały do właściwego handlowca?
-              </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-                30-minutowa diagnoza, wstępna mapa pierwszego kroku i szacowany
-                ROI. Bez zobowiązań. Po rozmowie wiesz, czy w twoim przypadku to
-                ma sens — i ile by kosztowało.
-              </p>
-              <TrackedCTA
-                href="/#kontakt"
-                location="article_routing_final"
-                label="Sprawdź routing leadów"
-                eventName="cta_click_article_audit"
-                className="btn-primary px-8 py-3.5 text-base"
-              >
-                Sprawdź routing leadów
-              </TrackedCTA>
-            </div>
-          </div>
-        </section>
+                    {/* FAQ */}
+                    <section className="mt-16 lg:mt-24 pt-16 lg:pt-24 border-t border-gray-100 dark:border-gray-800">
+                      <div className="">
+                        <div className="max-w-3xl mx-auto">
+                          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-12 text-center">
+                            Najczęstsze pytania o routing leadów
+                          </h2>
+                          <div className="space-y-4">
+                            {faq.map((item) => (
+                              <details
+                                key={item.question}
+                                className="group bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl overflow-hidden"
+                              >
+                                <summary className="cursor-pointer px-6 py-5 flex items-center justify-between gap-4 list-none">
+                                  <span className="font-semibold text-gray-900 dark:text-white">
+                                    {item.question}
+                                  </span>
+                                  <svg
+                                    className="flex-shrink-0 transition-transform group-open:rotate-180"
+                                    width="20"
+                                    height="20"
+                                    viewBox="0 0 20 20"
+                                    fill="none"
+                                  >
+                                    <path
+                                      d="M5 7l5 5 5-5"
+                                      stroke="currentColor"
+                                      strokeWidth="1.5"
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                    />
+                                  </svg>
+                                </summary>
+                                <div className="px-6 pb-5 text-gray-600 dark:text-gray-400 leading-relaxed">
+                                  {item.answer}
+                                </div>
+                              </details>
+                            ))}
+                          </div>
+                          <div className="mt-10 text-sm text-gray-600 dark:text-gray-400 leading-relaxed bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-6">
+                            <p className="mb-2">Powiązane materiały:</p>
+                            <ul className="space-y-1.5">
+                              <li>
+                                <Link
+                                  href="/czas-reakcji-na-leada"
+                                  className="text-accent hover:underline"
+                                >
+                                  Jak skrócić czas reakcji na leada do kilku
+                                  minut
+                                </Link>
+                              </li>
+                              <li>
+                                <Link
+                                  href="/automatyzacja-pipedrive"
+                                  className="text-accent hover:underline"
+                                >
+                                  Automatyzacja Pipedrive
+                                </Link>
+                              </li>
+                              <li>
+                                <Link
+                                  href="/automatyzacja-crm"
+                                  className="text-accent hover:underline"
+                                >
+                                  Automatyzacja CRM — przegląd
+                                </Link>
+                              </li>
+                              <li>
+                                <Link
+                                  href="/kalkulator-leadow"
+                                  className="text-accent hover:underline"
+                                >
+                                  Kalkulator kosztu zgubionych leadów
+                                </Link>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+
+                    {/* Final CTA */}
+                    <section className="mt-16 lg:mt-24 pt-16 lg:pt-24 border-t border-gray-100 dark:border-gray-800">
+                      <div className="">
+                        <div className="max-w-2xl mx-auto text-center">
+                          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                            Chcesz, żeby leady same trafiały do właściwego
+                            handlowca?
+                          </h2>
+                          <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
+                            30-minutowa diagnoza, wstępna mapa pierwszego kroku
+                            i szacowany ROI. Bez zobowiązań. Po rozmowie wiesz,
+                            czy w twoim przypadku to ma sens — i ile by
+                            kosztowało.
+                          </p>
+                          <TrackedCTA
+                            href="/#kontakt"
+                            location="article_routing_final"
+                            label="Sprawdź routing leadów"
+                            eventName="cta_click_article_audit"
+                            className="btn-primary px-8 py-3.5 text-base"
+                          >
+                            Sprawdź routing leadów
+                          </TrackedCTA>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                ),
+              },
+            ]}
+          />
+        </div>
       </main>
       <Footer />
 

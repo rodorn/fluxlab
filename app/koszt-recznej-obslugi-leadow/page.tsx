@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TrackedCTA from "@/components/TrackedCTA";
+import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
   title: "Koszt ręcznej obsługi leadów — kalkulator i przykład | Fluxlab",
@@ -258,8 +259,8 @@ export default function KosztRecznejObslugiLeadow() {
       <main className="pt-16">
         <Breadcrumbs items={[{ label: "Koszt ręcznej obsługi leadów" }]} />
 
-        {/* Hero */}
-        <section className="py-16 lg:py-24 bg-gradient-to-b from-accent/10 to-transparent border-b border-gray-100 dark:border-gray-800">
+        {/* Hero — kompaktowy */}
+        <section className="pt-24 pb-12 bg-gradient-to-b from-accent/10 to-transparent border-b border-gray-100 dark:border-gray-800">
           <div className="container-wide">
             <div className="max-w-3xl mx-auto text-center">
               <span className="section-label">Koszt obsługi leadów</span>
@@ -290,511 +291,561 @@ export default function KosztRecznejObslugiLeadow() {
           </div>
         </section>
 
-        {/* Problem biznesowy */}
-        <section className="py-16 lg:py-24">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <div className="mb-10">
-                <span className="section-label">Problem</span>
-                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 leading-tight">
-                  „Da się przeżyć” to najdroższe zdanie w sprzedaży B2B
-                </h2>
-              </div>
-              <div className="text-gray-600 dark:text-gray-400 leading-relaxed space-y-4 text-lg">
-                <p>
-                  Ręczna obsługa leadów rzadko wygląda jak problem. Wygląda jak
-                  rutyna. Ktoś dostaje maila, ktoś przepisuje do CRM-a, ktoś
-                  pamięta o follow-upie, ktoś składa raport w piątek. Nic się
-                  nie psuje na tyle widocznie, żeby ktoś krzyknął „stop”.
-                </p>
-                <p>
-                  I właśnie dlatego ten koszt jest największy. Bo kosztuje
-                  każdego dnia, w małych kwotach, w wielu miejscach naraz —
-                  zamiast jednego dużego rachunku, który by zwrócił uwagę
-                  zarządu.
-                </p>
-                <p className="font-medium text-gray-900 dark:text-white">
-                  Pierwsze pytanie nie brzmi: „jakiego narzędzia użyć?”.
-                  Pierwsze pytanie brzmi: „ile faktycznie nas kosztuje, że
-                  robimy to ręcznie?”.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Objawy */}
-        <section className="py-16 lg:py-24 bg-gray-50 dark:bg-gray-900/50 border-y border-gray-100 dark:border-gray-800">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <div className="mb-10">
-                <span className="section-label">Objawy</span>
-                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4">
-                  Po czym poznasz, że firma płaci ten rachunek
-                </h2>
-                <p className="text-gray-600 dark:text-gray-400 mt-4 leading-relaxed">
-                  Sześć konkretnych zachowań, które prawie zawsze oznaczają, że
-                  koszt obsługi leadów jest wyższy niż się wydaje.
-                </p>
-              </div>
-              <ul className="space-y-3">
-                {symptoms.map((s) => (
-                  <li
-                    key={s}
-                    className="flex items-start gap-3 bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-xl px-5 py-4"
-                  >
-                    <svg
-                      className="flex-shrink-0 mt-0.5 text-accent"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 20 20"
-                      fill="none"
-                    >
-                      <circle
-                        cx="10"
-                        cy="10"
-                        r="8"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                      />
-                      <path
-                        d="M10 6v4M10 13v.5"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                      />
-                    </svg>
-                    <span className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                      {s}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* Pełny rachunek */}
-        <section className="py-16 lg:py-24">
-          <div className="container-wide">
-            <div className="max-w-4xl mx-auto">
-              <div className="mb-12">
-                <span className="section-label">Pełny rachunek</span>
-                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4">
-                  Pięć komponentów kosztu, które trzeba policzyć
-                </h2>
-                <p className="text-gray-600 dark:text-gray-400 mt-4 leading-relaxed">
-                  Większość firm liczy tylko pierwszy. Stąd wniosek „da się
-                  przeżyć” i stąd dziura w wyniku, której nikt nie umie wskazać.
-                </p>
-              </div>
-              <div className="space-y-5">
-                {costComponents.map((c, i) => (
-                  <div
-                    key={c.title}
-                    className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-6"
-                  >
-                    <div className="flex items-start gap-4 mb-3">
-                      <span className="shrink-0 w-9 h-9 flex items-center justify-center rounded-xl bg-accent/10 text-accent text-sm font-bold">
-                        {i + 1}
-                      </span>
-                      <div className="flex-1 min-w-0">
-                        <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                          {c.title}
-                        </h3>
-                        <p className="text-xs font-mono text-accent bg-accent/10 inline-block px-2 py-1 rounded mb-3">
-                          {c.formula}
-                        </p>
-                        <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-3">
-                          {c.description}
-                        </p>
-                        <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed border-l-2 border-accent/40 pl-4">
-                          <span className="font-semibold">Przykład:</span>{" "}
-                          {c.example}
-                        </p>
+        {/* Treść w zakładkach — nic nie wycięte, podzielone */}
+        <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
+          <Tabs
+            ariaLabel="Sekcje strony o koszcie ręcznej obsługi leadów"
+            tabs={[
+              {
+                label: "Problem",
+                content: (
+                  <div className="py-10 lg:py-12">
+                    {/* Problem biznesowy */}
+                    <section className="">
+                      <div className="">
+                        <div className="max-w-3xl mx-auto">
+                          <div className="mb-10">
+                            <span className="section-label">Problem</span>
+                            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 leading-tight">
+                              „Da się przeżyć” to najdroższe zdanie w sprzedaży
+                              B2B
+                            </h2>
+                          </div>
+                          <div className="text-gray-600 dark:text-gray-400 leading-relaxed space-y-4 text-lg">
+                            <p>
+                              Ręczna obsługa leadów rzadko wygląda jak problem.
+                              Wygląda jak rutyna. Ktoś dostaje maila, ktoś
+                              przepisuje do CRM-a, ktoś pamięta o follow-upie,
+                              ktoś składa raport w piątek. Nic się nie psuje na
+                              tyle widocznie, żeby ktoś krzyknął „stop”.
+                            </p>
+                            <p>
+                              I właśnie dlatego ten koszt jest największy. Bo
+                              kosztuje każdego dnia, w małych kwotach, w wielu
+                              miejscach naraz — zamiast jednego dużego rachunku,
+                              który by zwrócił uwagę zarządu.
+                            </p>
+                            <p className="font-medium text-gray-900 dark:text-white">
+                              Pierwsze pytanie nie brzmi: „jakiego narzędzia
+                              użyć?”. Pierwsze pytanie brzmi: „ile faktycznie
+                              nas kosztuje, że robimy to ręcznie?”.
+                            </p>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <div className="mt-10 bg-accent-light dark:bg-accent-dark-light border border-accent/30 rounded-2xl p-6">
-                <p className="text-gray-800 dark:text-gray-200 leading-relaxed">
-                  300 leadów miesięcznie × 5 minut × 60 zł/h = 1 500 zł
-                  miesięcznie samego przepisywania.
-                </p>
-                <p className="text-gray-800 dark:text-gray-200 leading-relaxed mt-3">
-                  A to nie liczy: błędów, opóźnień, zgubionych leadów, braku
-                  follow-upów, raportów robionych ręcznie i decyzji finansowych
-                  podejmowanych na bazie złych danych.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+                    </section>
 
-        {/* 3 przykłady firm */}
-        <section className="py-16 lg:py-24 bg-gray-50 dark:bg-gray-900/50 border-y border-gray-100 dark:border-gray-800">
-          <div className="container-wide">
-            <div className="max-w-5xl mx-auto">
-              <div className="mb-12 text-center">
-                <span className="section-label">Trzy skale</span>
-                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4">
-                  Mała, średnia, duża firma — konkretne liczby
-                </h2>
-                <p className="text-gray-600 dark:text-gray-400 mt-4 max-w-2xl mx-auto leading-relaxed">
-                  Założenia: stawka 60 zł/h dla operacji, 80 zł/h dla
-                  raportowania, wartość klienta 5 000 zł, 5 minut na ręczną
-                  obsługę leada.
-                </p>
-              </div>
-              <div className="grid lg:grid-cols-3 gap-6">
-                {examples.map((e) => (
-                  <div
-                    key={e.size}
-                    className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-6 flex flex-col"
-                  >
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
-                      {e.size}
-                    </h3>
-                    <p className="text-sm text-accent font-medium mb-5">
-                      {e.leads}
-                    </p>
-                    <ul className="space-y-2 mb-5 flex-1">
-                      {e.breakdown.map((b) => (
-                        <li
-                          key={b.label}
-                          className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed"
-                        >
-                          <span className="block text-gray-500 dark:text-gray-500 text-xs mb-0.5">
-                            {b.label}
+                    {/* Objawy */}
+                    <section className="mt-16 lg:mt-24 pt-16 lg:pt-24 border-t border-gray-100 dark:border-gray-800">
+                      <div className="">
+                        <div className="max-w-3xl mx-auto">
+                          <div className="mb-10">
+                            <span className="section-label">Objawy</span>
+                            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4">
+                              Po czym poznasz, że firma płaci ten rachunek
+                            </h2>
+                            <p className="text-gray-600 dark:text-gray-400 mt-4 leading-relaxed">
+                              Sześć konkretnych zachowań, które prawie zawsze
+                              oznaczają, że koszt obsługi leadów jest wyższy niż
+                              się wydaje.
+                            </p>
+                          </div>
+                          <ul className="space-y-3">
+                            {symptoms.map((s) => (
+                              <li
+                                key={s}
+                                className="flex items-start gap-3 bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-xl px-5 py-4"
+                              >
+                                <svg
+                                  className="flex-shrink-0 mt-0.5 text-accent"
+                                  width="20"
+                                  height="20"
+                                  viewBox="0 0 20 20"
+                                  fill="none"
+                                >
+                                  <circle
+                                    cx="10"
+                                    cy="10"
+                                    r="8"
+                                    stroke="currentColor"
+                                    strokeWidth="1.5"
+                                  />
+                                  <path
+                                    d="M10 6v4M10 13v.5"
+                                    stroke="currentColor"
+                                    strokeWidth="1.5"
+                                    strokeLinecap="round"
+                                  />
+                                </svg>
+                                <span className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                                  {s}
+                                </span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                ),
+              },
+              {
+                label: "Rachunek",
+                content: (
+                  <div className="py-10 lg:py-12">
+                    {/* Pełny rachunek */}
+                    <section className="">
+                      <div className="">
+                        <div className="max-w-4xl mx-auto">
+                          <div className="mb-12">
+                            <span className="section-label">
+                              Pełny rachunek
+                            </span>
+                            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4">
+                              Pięć komponentów kosztu, które trzeba policzyć
+                            </h2>
+                            <p className="text-gray-600 dark:text-gray-400 mt-4 leading-relaxed">
+                              Większość firm liczy tylko pierwszy. Stąd wniosek
+                              „da się przeżyć” i stąd dziura w wyniku, której
+                              nikt nie umie wskazać.
+                            </p>
+                          </div>
+                          <div className="space-y-5">
+                            {costComponents.map((c, i) => (
+                              <div
+                                key={c.title}
+                                className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-6"
+                              >
+                                <div className="flex items-start gap-4 mb-3">
+                                  <span className="shrink-0 w-9 h-9 flex items-center justify-center rounded-xl bg-accent/10 text-accent text-sm font-bold">
+                                    {i + 1}
+                                  </span>
+                                  <div className="flex-1 min-w-0">
+                                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                                      {c.title}
+                                    </h3>
+                                    <p className="text-xs font-mono text-accent bg-accent/10 inline-block px-2 py-1 rounded mb-3">
+                                      {c.formula}
+                                    </p>
+                                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-3">
+                                      {c.description}
+                                    </p>
+                                    <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed border-l-2 border-accent/40 pl-4">
+                                      <span className="font-semibold">
+                                        Przykład:
+                                      </span>{" "}
+                                      {c.example}
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                          <div className="mt-10 bg-accent-light dark:bg-accent-dark-light border border-accent/30 rounded-2xl p-6">
+                            <p className="text-gray-800 dark:text-gray-200 leading-relaxed">
+                              300 leadów miesięcznie × 5 minut × 60 zł/h = 1 500
+                              zł miesięcznie samego przepisywania.
+                            </p>
+                            <p className="text-gray-800 dark:text-gray-200 leading-relaxed mt-3">
+                              A to nie liczy: błędów, opóźnień, zgubionych
+                              leadów, braku follow-upów, raportów robionych
+                              ręcznie i decyzji finansowych podejmowanych na
+                              bazie złych danych.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+
+                    {/* 3 przykłady firm */}
+                    <section className="mt-16 lg:mt-24 pt-16 lg:pt-24 border-t border-gray-100 dark:border-gray-800">
+                      <div className="">
+                        <div className="max-w-5xl mx-auto">
+                          <div className="mb-12 text-center">
+                            <span className="section-label">Trzy skale</span>
+                            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4">
+                              Mała, średnia, duża firma — konkretne liczby
+                            </h2>
+                            <p className="text-gray-600 dark:text-gray-400 mt-4 max-w-2xl mx-auto leading-relaxed">
+                              Założenia: stawka 60 zł/h dla operacji, 80 zł/h
+                              dla raportowania, wartość klienta 5 000 zł, 5
+                              minut na ręczną obsługę leada.
+                            </p>
+                          </div>
+                          <div className="grid lg:grid-cols-3 gap-6">
+                            {examples.map((e) => (
+                              <div
+                                key={e.size}
+                                className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-6 flex flex-col"
+                              >
+                                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
+                                  {e.size}
+                                </h3>
+                                <p className="text-sm text-accent font-medium mb-5">
+                                  {e.leads}
+                                </p>
+                                <ul className="space-y-2 mb-5 flex-1">
+                                  {e.breakdown.map((b) => (
+                                    <li
+                                      key={b.label}
+                                      className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed"
+                                    >
+                                      <span className="block text-gray-500 dark:text-gray-500 text-xs mb-0.5">
+                                        {b.label}
+                                      </span>
+                                      <span className="font-mono text-gray-800 dark:text-gray-200">
+                                        {b.value}
+                                      </span>
+                                    </li>
+                                  ))}
+                                </ul>
+                                <p className="text-base font-bold text-gray-900 dark:text-white border-t border-gray-100 dark:border-gray-700 pt-4 mb-3">
+                                  {e.total}
+                                </p>
+                                <p className="text-xs text-gray-500 dark:text-gray-500 leading-relaxed">
+                                  {e.note}
+                                </p>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                ),
+              },
+              {
+                label: "Wdrożenie",
+                content: (
+                  <div className="py-10 lg:py-12">
+                    {/* Co da się zautomatyzować w 1. etapie */}
+                    <section className="">
+                      <div className="">
+                        <div className="max-w-3xl mx-auto">
+                          <div className="mb-10">
+                            <span className="section-label">Pierwszy etap</span>
+                            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4">
+                              Co da się zautomatyzować jako pierwsze,
+                              najmniejszym kosztem
+                            </h2>
+                            <p className="text-gray-600 dark:text-gray-400 mt-4 leading-relaxed">
+                              Nie cały proces. Najmniejszy kawałek, który
+                              eliminuje największy komponent kosztu z rachunku
+                              powyżej. U większości firm B2B to są te trzy
+                              rzeczy:
+                            </p>
+                          </div>
+                          <div className="space-y-4">
+                            {firstStage.map((s, i) => (
+                              <div
+                                key={s.title}
+                                className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-6 flex items-start gap-5"
+                              >
+                                <span className="shrink-0 w-10 h-10 flex items-center justify-center rounded-xl bg-accent/10 text-accent text-sm font-bold">
+                                  {i + 1}
+                                </span>
+                                <div className="flex-1 min-w-0">
+                                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                                    {s.title}
+                                  </h3>
+                                  <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                                    {s.desc}
+                                  </p>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                          <p className="mt-8 text-gray-600 dark:text-gray-400 leading-relaxed">
+                            Pełny przepływ od formularza do raportu opisałem w
+                            sekcji o{" "}
+                            <Link
+                              href="/automatyzacja-leadow-crm"
+                              className="text-accent hover:underline"
+                            >
+                              automatyzacji leadów i CRM
+                            </Link>
+                            . Konkretną wycenę dla Pipedrive — w{" "}
+                            <Link
+                              href="/automatyzacja-pipedrive"
+                              className="text-accent hover:underline"
+                            >
+                              automatyzacji Pipedrive
+                            </Link>
+                            .
+                          </p>
+                        </div>
+                      </div>
+                    </section>
+
+                    {/* Diagram – stepper procesu */}
+                    <section className="mt-16 lg:mt-24 pt-16 lg:pt-24 border-t border-gray-100 dark:border-gray-800">
+                      <div className="">
+                        <div className="max-w-4xl mx-auto">
+                          <div className="mb-10">
+                            <span className="section-label">Diagram</span>
+                            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4">
+                              Jak wygląda proces, który eliminuje ten koszt
+                            </h2>
+                            <p className="text-gray-600 dark:text-gray-400 mt-4 leading-relaxed">
+                              Sześć kroków zamiast łańcucha nadziei. Każdy
+                              mierzalny osobno.
+                            </p>
+                          </div>
+                          <ol className="relative space-y-3 lg:space-y-4">
+                            {flowSteps.map((s, i) => (
+                              <li key={s.n} className="relative">
+                                <div
+                                  className={`flex gap-4 lg:gap-5 items-start bg-white dark:bg-gray-800/80 border rounded-2xl p-5 lg:p-6 ${
+                                    s.accent
+                                      ? "border-accent/40 shadow-sm"
+                                      : "border-gray-100 dark:border-gray-700"
+                                  }`}
+                                >
+                                  <div
+                                    className={`flex-shrink-0 w-10 h-10 lg:w-11 lg:h-11 rounded-full flex items-center justify-center font-bold text-sm tabular-nums ${
+                                      s.accent
+                                        ? "bg-accent text-white"
+                                        : "bg-accent-light dark:bg-accent-dark-light text-accent"
+                                    }`}
+                                  >
+                                    {s.n}
+                                  </div>
+                                  <div className="flex-1 min-w-0">
+                                    <h3 className="text-base lg:text-lg font-semibold text-gray-900 dark:text-white mb-1">
+                                      {s.title}
+                                    </h3>
+                                    <p className="text-sm lg:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
+                                      {s.desc}
+                                    </p>
+                                  </div>
+                                </div>
+                                {i < flowSteps.length - 1 && (
+                                  <div className="flex justify-center py-1.5">
+                                    <svg
+                                      className="text-gray-300 dark:text-gray-600"
+                                      width="14"
+                                      height="14"
+                                      viewBox="0 0 14 14"
+                                      fill="none"
+                                      aria-hidden="true"
+                                    >
+                                      <path
+                                        d="M7 2v8m0 0l-3-3m3 3l3-3"
+                                        stroke="currentColor"
+                                        strokeWidth="1.5"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                      />
+                                    </svg>
+                                  </div>
+                                )}
+                              </li>
+                            ))}
+                          </ol>
+                        </div>
+                      </div>
+                    </section>
+
+                    {/* Typowe błędy w mierzeniu kosztu */}
+                    <section className="mt-16 lg:mt-24 pt-16 lg:pt-24 border-t border-gray-100 dark:border-gray-800">
+                      <div className="">
+                        <div className="max-w-3xl mx-auto">
+                          <div className="mb-10">
+                            <span className="section-label">Typowe błędy</span>
+                            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4">
+                              Pięć błędów, przez które koszt wychodzi za niski
+                            </h2>
+                            <p className="text-gray-600 dark:text-gray-400 mt-4 leading-relaxed">
+                              Każdy z nich osobno potrafi przekłamać rachunek o
+                              kilkadziesiąt procent. Razem — sprawiają, że
+                              zarząd patrzy na inny problem niż ten, który firma
+                              faktycznie ma.
+                            </p>
+                          </div>
+                          <div className="space-y-4">
+                            {measurementMistakes.map((m, i) => (
+                              <div
+                                key={m.title}
+                                className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-6"
+                              >
+                                <div className="flex items-start gap-4">
+                                  <span className="shrink-0 w-9 h-9 flex items-center justify-center rounded-xl bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm font-bold">
+                                    {i + 1}
+                                  </span>
+                                  <div className="flex-1 min-w-0">
+                                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                                      {m.title}
+                                    </h3>
+                                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                                      {m.desc}
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                ),
+              },
+              {
+                label: "FAQ i kontakt",
+                content: (
+                  <div className="py-10 lg:py-12">
+                    {/* CTA-blok: kalkulator + diagnoza */}
+                    <section className="">
+                      <div className="">
+                        <div className="max-w-3xl mx-auto text-center">
+                          <span className="section-label">
+                            Policz swój koszt
                           </span>
-                          <span className="font-mono text-gray-800 dark:text-gray-200">
-                            {b.value}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-                    <p className="text-base font-bold text-gray-900 dark:text-white border-t border-gray-100 dark:border-gray-700 pt-4 mb-3">
-                      {e.total}
-                    </p>
-                    <p className="text-xs text-gray-500 dark:text-gray-500 leading-relaxed">
-                      {e.note}
-                    </p>
+                          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-4">
+                            Wpisz swoje liczby i zobacz wynik w 2 minuty
+                          </h2>
+                          <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
+                            Kalkulator policzy wszystkie pięć komponentów: czas,
+                            zgubione leady, błędy, raportowanie. Wynik dostajesz
+                            w zł na miesiąc i rok — z rozbiciem na pozycje,
+                            żebyś wiedział, co naprawić w pierwszej kolejności.
+                          </p>
+                          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                            <TrackedCTA
+                              href="/kalkulator-leadow"
+                              location="article_koszt_cta_block"
+                              label="kalkulator"
+                              eventName="cta_click_calculator"
+                              className="btn-primary px-8 py-3.5 text-base"
+                            >
+                              Otwórz kalkulator
+                            </TrackedCTA>
+                            <TrackedCTA
+                              href="/#kontakt"
+                              location="article_koszt_cta_block"
+                              label="diagnoza"
+                              eventName="cta_click_article_audit"
+                              className="btn-secondary px-8 py-3.5 text-base"
+                            >
+                              Zamów bezpłatną diagnozę
+                            </TrackedCTA>
+                          </div>
+                          <p className="mt-6 text-sm text-gray-500 dark:text-gray-500">
+                            Kalkulator: bez logowania · Diagnoza: odpowiedź w 24
+                            h, bez zobowiązań
+                          </p>
+                        </div>
+                      </div>
+                    </section>
+
+                    {/* FAQ */}
+                    <section className="mt-16 lg:mt-24 pt-16 lg:pt-24 border-t border-gray-100 dark:border-gray-800">
+                      <div className="">
+                        <div className="max-w-3xl mx-auto">
+                          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-12 text-center">
+                            Najczęstsze pytania
+                          </h2>
+                          <div className="space-y-4">
+                            {faq.map((item) => (
+                              <details
+                                key={item.question}
+                                className="group bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl overflow-hidden"
+                              >
+                                <summary className="cursor-pointer px-6 py-5 flex items-center justify-between gap-4 list-none">
+                                  <span className="font-semibold text-gray-900 dark:text-white">
+                                    {item.question}
+                                  </span>
+                                  <svg
+                                    className="flex-shrink-0 transition-transform group-open:rotate-180"
+                                    width="20"
+                                    height="20"
+                                    viewBox="0 0 20 20"
+                                    fill="none"
+                                  >
+                                    <path
+                                      d="M5 7l5 5 5-5"
+                                      stroke="currentColor"
+                                      strokeWidth="1.5"
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                    />
+                                  </svg>
+                                </summary>
+                                <div className="px-6 pb-5 text-gray-600 dark:text-gray-400 leading-relaxed">
+                                  {item.answer}
+                                </div>
+                              </details>
+                            ))}
+                          </div>
+                          <div className="mt-10 text-gray-600 dark:text-gray-400 leading-relaxed text-sm">
+                            Powiązane:{" "}
+                            <Link
+                              href="/strefa-wiedzy/jak-policzyc-roi-z-automatyzacji"
+                              className="text-accent hover:underline"
+                            >
+                              Jak policzyć ROI z automatyzacji
+                            </Link>
+                            {" · "}
+                            <Link
+                              href="/strefa-wiedzy/automatyzacja-vs-zatrudnienie"
+                              className="text-accent hover:underline"
+                            >
+                              Automatyzacja vs zatrudnienie
+                            </Link>
+                            {" · "}
+                            <Link
+                              href="/automatyzacja-leadow-crm"
+                              className="text-accent hover:underline"
+                            >
+                              Automatyzacja leadów i CRM
+                            </Link>
+                            {" · "}
+                            <Link
+                              href="/automatyzacja-pipedrive"
+                              className="text-accent hover:underline"
+                            >
+                              Automatyzacja Pipedrive
+                            </Link>
+                            .
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+
+                    {/* Final CTA */}
+                    <section className="mt-16 lg:mt-24 pt-16 lg:pt-24 border-t border-gray-100 dark:border-gray-800">
+                      <div className="">
+                        <div className="max-w-2xl mx-auto text-center">
+                          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                            Najpierw policz, potem decyduj
+                          </h2>
+                          <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
+                            Bez liczby na stole każda dyskusja o automatyzacji
+                            kończy się na „kiedyś się tym zajmiemy”. Z liczbą —
+                            kończy się na konkretnym pierwszym etapie.
+                          </p>
+                          <TrackedCTA
+                            href="/kalkulator-leadow"
+                            location="article_koszt_final"
+                            label="kalkulator"
+                            eventName="cta_click_calculator"
+                            className="btn-primary px-8 py-3.5 text-base"
+                          >
+                            Policz koszt mojego procesu
+                          </TrackedCTA>
+                          <p className="mt-4 text-sm text-gray-500 dark:text-gray-500">
+                            Bez logowania · wynik w 2 minuty · z rozbiciem na
+                            pozycje
+                          </p>
+                        </div>
+                      </div>
+                    </section>
                   </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Co da się zautomatyzować w 1. etapie */}
-        <section className="py-16 lg:py-24">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <div className="mb-10">
-                <span className="section-label">Pierwszy etap</span>
-                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4">
-                  Co da się zautomatyzować jako pierwsze, najmniejszym kosztem
-                </h2>
-                <p className="text-gray-600 dark:text-gray-400 mt-4 leading-relaxed">
-                  Nie cały proces. Najmniejszy kawałek, który eliminuje
-                  największy komponent kosztu z rachunku powyżej. U większości
-                  firm B2B to są te trzy rzeczy:
-                </p>
-              </div>
-              <div className="space-y-4">
-                {firstStage.map((s, i) => (
-                  <div
-                    key={s.title}
-                    className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-6 flex items-start gap-5"
-                  >
-                    <span className="shrink-0 w-10 h-10 flex items-center justify-center rounded-xl bg-accent/10 text-accent text-sm font-bold">
-                      {i + 1}
-                    </span>
-                    <div className="flex-1 min-w-0">
-                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                        {s.title}
-                      </h3>
-                      <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                        {s.desc}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <p className="mt-8 text-gray-600 dark:text-gray-400 leading-relaxed">
-                Pełny przepływ od formularza do raportu opisałem w sekcji o{" "}
-                <Link
-                  href="/automatyzacja-leadow-crm"
-                  className="text-accent hover:underline"
-                >
-                  automatyzacji leadów i CRM
-                </Link>
-                . Konkretną wycenę dla Pipedrive — w{" "}
-                <Link
-                  href="/automatyzacja-pipedrive"
-                  className="text-accent hover:underline"
-                >
-                  automatyzacji Pipedrive
-                </Link>
-                .
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Diagram – stepper procesu */}
-        <section className="py-12 lg:py-16 bg-gray-50 dark:bg-gray-900/50 border-y border-gray-100 dark:border-gray-800">
-          <div className="container-wide">
-            <div className="max-w-4xl mx-auto">
-              <div className="mb-10">
-                <span className="section-label">Diagram</span>
-                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4">
-                  Jak wygląda proces, który eliminuje ten koszt
-                </h2>
-                <p className="text-gray-600 dark:text-gray-400 mt-4 leading-relaxed">
-                  Sześć kroków zamiast łańcucha nadziei. Każdy mierzalny osobno.
-                </p>
-              </div>
-              <ol className="relative space-y-3 lg:space-y-4">
-                {flowSteps.map((s, i) => (
-                  <li key={s.n} className="relative">
-                    <div
-                      className={`flex gap-4 lg:gap-5 items-start bg-white dark:bg-gray-800/80 border rounded-2xl p-5 lg:p-6 ${
-                        s.accent
-                          ? "border-accent/40 shadow-sm"
-                          : "border-gray-100 dark:border-gray-700"
-                      }`}
-                    >
-                      <div
-                        className={`flex-shrink-0 w-10 h-10 lg:w-11 lg:h-11 rounded-full flex items-center justify-center font-bold text-sm tabular-nums ${
-                          s.accent
-                            ? "bg-accent text-white"
-                            : "bg-accent-light dark:bg-accent-dark-light text-accent"
-                        }`}
-                      >
-                        {s.n}
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <h3 className="text-base lg:text-lg font-semibold text-gray-900 dark:text-white mb-1">
-                          {s.title}
-                        </h3>
-                        <p className="text-sm lg:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
-                          {s.desc}
-                        </p>
-                      </div>
-                    </div>
-                    {i < flowSteps.length - 1 && (
-                      <div className="flex justify-center py-1.5">
-                        <svg
-                          className="text-gray-300 dark:text-gray-600"
-                          width="14"
-                          height="14"
-                          viewBox="0 0 14 14"
-                          fill="none"
-                          aria-hidden="true"
-                        >
-                          <path
-                            d="M7 2v8m0 0l-3-3m3 3l3-3"
-                            stroke="currentColor"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                        </svg>
-                      </div>
-                    )}
-                  </li>
-                ))}
-              </ol>
-            </div>
-          </div>
-        </section>
-
-        {/* Typowe błędy w mierzeniu kosztu */}
-        <section className="py-16 lg:py-24">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <div className="mb-10">
-                <span className="section-label">Typowe błędy</span>
-                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4">
-                  Pięć błędów, przez które koszt wychodzi za niski
-                </h2>
-                <p className="text-gray-600 dark:text-gray-400 mt-4 leading-relaxed">
-                  Każdy z nich osobno potrafi przekłamać rachunek o
-                  kilkadziesiąt procent. Razem — sprawiają, że zarząd patrzy na
-                  inny problem niż ten, który firma faktycznie ma.
-                </p>
-              </div>
-              <div className="space-y-4">
-                {measurementMistakes.map((m, i) => (
-                  <div
-                    key={m.title}
-                    className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-6"
-                  >
-                    <div className="flex items-start gap-4">
-                      <span className="shrink-0 w-9 h-9 flex items-center justify-center rounded-xl bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm font-bold">
-                        {i + 1}
-                      </span>
-                      <div className="flex-1 min-w-0">
-                        <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                          {m.title}
-                        </h3>
-                        <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                          {m.desc}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA-blok: kalkulator + diagnoza */}
-        <section className="py-16 lg:py-24 bg-gradient-to-b from-accent/10 to-transparent border-y border-gray-100 dark:border-gray-800">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto text-center">
-              <span className="section-label">Policz swój koszt</span>
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-4">
-                Wpisz swoje liczby i zobacz wynik w 2 minuty
-              </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-                Kalkulator policzy wszystkie pięć komponentów: czas, zgubione
-                leady, błędy, raportowanie. Wynik dostajesz w zł na miesiąc i
-                rok — z rozbiciem na pozycje, żebyś wiedział, co naprawić w
-                pierwszej kolejności.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <TrackedCTA
-                  href="/kalkulator-leadow"
-                  location="article_koszt_cta_block"
-                  label="kalkulator"
-                  eventName="cta_click_calculator"
-                  className="btn-primary px-8 py-3.5 text-base"
-                >
-                  Otwórz kalkulator
-                </TrackedCTA>
-                <TrackedCTA
-                  href="/#kontakt"
-                  location="article_koszt_cta_block"
-                  label="diagnoza"
-                  eventName="cta_click_article_audit"
-                  className="btn-secondary px-8 py-3.5 text-base"
-                >
-                  Zamów bezpłatną diagnozę
-                </TrackedCTA>
-              </div>
-              <p className="mt-6 text-sm text-gray-500 dark:text-gray-500">
-                Kalkulator: bez logowania · Diagnoza: odpowiedź w 24 h, bez
-                zobowiązań
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* FAQ */}
-        <section className="py-16 lg:py-24">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-12 text-center">
-                Najczęstsze pytania
-              </h2>
-              <div className="space-y-4">
-                {faq.map((item) => (
-                  <details
-                    key={item.question}
-                    className="group bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl overflow-hidden"
-                  >
-                    <summary className="cursor-pointer px-6 py-5 flex items-center justify-between gap-4 list-none">
-                      <span className="font-semibold text-gray-900 dark:text-white">
-                        {item.question}
-                      </span>
-                      <svg
-                        className="flex-shrink-0 transition-transform group-open:rotate-180"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 20 20"
-                        fill="none"
-                      >
-                        <path
-                          d="M5 7l5 5 5-5"
-                          stroke="currentColor"
-                          strokeWidth="1.5"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </summary>
-                    <div className="px-6 pb-5 text-gray-600 dark:text-gray-400 leading-relaxed">
-                      {item.answer}
-                    </div>
-                  </details>
-                ))}
-              </div>
-              <div className="mt-10 text-gray-600 dark:text-gray-400 leading-relaxed text-sm">
-                Powiązane:{" "}
-                <Link
-                  href="/strefa-wiedzy/jak-policzyc-roi-z-automatyzacji"
-                  className="text-accent hover:underline"
-                >
-                  Jak policzyć ROI z automatyzacji
-                </Link>
-                {" · "}
-                <Link
-                  href="/strefa-wiedzy/automatyzacja-vs-zatrudnienie"
-                  className="text-accent hover:underline"
-                >
-                  Automatyzacja vs zatrudnienie
-                </Link>
-                {" · "}
-                <Link
-                  href="/automatyzacja-leadow-crm"
-                  className="text-accent hover:underline"
-                >
-                  Automatyzacja leadów i CRM
-                </Link>
-                {" · "}
-                <Link
-                  href="/automatyzacja-pipedrive"
-                  className="text-accent hover:underline"
-                >
-                  Automatyzacja Pipedrive
-                </Link>
-                .
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Final CTA */}
-        <section className="py-16 lg:py-24 bg-accent/10 border-t border-gray-100 dark:border-gray-800">
-          <div className="container-wide">
-            <div className="max-w-2xl mx-auto text-center">
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                Najpierw policz, potem decyduj
-              </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-                Bez liczby na stole każda dyskusja o automatyzacji kończy się na
-                „kiedyś się tym zajmiemy”. Z liczbą — kończy się na konkretnym
-                pierwszym etapie.
-              </p>
-              <TrackedCTA
-                href="/kalkulator-leadow"
-                location="article_koszt_final"
-                label="kalkulator"
-                eventName="cta_click_calculator"
-                className="btn-primary px-8 py-3.5 text-base"
-              >
-                Policz koszt mojego procesu
-              </TrackedCTA>
-              <p className="mt-4 text-sm text-gray-500 dark:text-gray-500">
-                Bez logowania · wynik w 2 minuty · z rozbiciem na pozycje
-              </p>
-            </div>
-          </div>
-        </section>
+                ),
+              },
+            ]}
+          />
+        </div>
       </main>
       <Footer />
 

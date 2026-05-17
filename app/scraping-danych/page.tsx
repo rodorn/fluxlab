@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import LandingForm from "@/components/LandingForm";
 import TrackedCTA from "@/components/TrackedCTA";
-import RevealOnScroll from "@/components/RevealOnScroll";
+import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
   title: "Scraping i ekstrakcja danych — web, PDF, maile, dokumenty | Fluxlab",
@@ -63,10 +64,12 @@ export default function ScrapingDanychPage() {
     <>
       <Header />
       <main>
-        {/* Hero */}
+        <Breadcrumbs items={[{ label: "Scraping danych" }]} />
+
+        {/* Hero — kompaktowy */}
         <section
           aria-labelledby="hero-heading"
-          className="relative pt-32 pb-24 overflow-hidden"
+          className="relative pt-24 pb-12 overflow-hidden"
         >
           <div
             aria-hidden="true"
@@ -92,7 +95,7 @@ export default function ScrapingDanychPage() {
                 pipeline trafia do Twojego CRM albo arkusza. Bez kopiowania.
               </p>
               <TrackedCTA
-                href="#diagnoza"
+                href="#sekcje"
                 location="hero_scraping"
                 label="diagnoza"
                 eventName="cta_click_hero_scraping_audit"
@@ -104,128 +107,139 @@ export default function ScrapingDanychPage() {
           </div>
         </section>
 
-        {/* Typy źródeł */}
-        <section
-          id="zrodla"
-          aria-labelledby="zrodla-heading"
-          className="py-24 border-t border-gray-100 dark:border-gray-800"
-        >
-          <div className="container-wide">
-            <h2
-              id="zrodla-heading"
-              className="display-lg text-gray-900 dark:text-white mb-12 max-w-2xl"
-            >
-              4 typy źródeł, jeden pipeline
-            </h2>
-            <div className="grid sm:grid-cols-2 gap-6">
-              {sourceTypes.map((src, idx) => (
-                <RevealOnScroll
-                  key={src.title}
-                  delay={((idx % 4) + 1) as 1 | 2 | 3 | 4}
-                >
-                  <article className="glass-card card-lift rounded-2xl p-7 h-full">
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                      {src.title}
-                    </h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                      {src.examples}
-                    </p>
-                  </article>
-                </RevealOnScroll>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Etyka */}
-        <section
-          id="etyka"
-          aria-labelledby="etyka-heading"
-          className="py-24 border-t border-gray-100 dark:border-gray-800 bg-gray-50/60 dark:bg-gray-900/40"
-        >
-          <div className="container-wide">
-            <div className="max-w-3xl">
-              <p className="section-label mb-3">Etyka i prawo</p>
-              <h2
-                id="etyka-heading"
-                className="display-lg text-gray-900 dark:text-white mb-6"
-              >
-                Scraping to narzędzie, nie wytrych.
-              </h2>
-              <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
-                Robię scraping publicznych stron zgodnie z TOS i robots.txt oraz
-                ekstrakcję z Twoich danych. Nie obchodzę zabezpieczeń, nie
-                ruszam chronionych zasobów ani danych osobowych bez podstawy
-                prawnej. Gdy widzę ryzyko — mówię wprost.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* FAQ */}
-        <section
-          id="faq"
-          aria-labelledby="faq-heading"
-          className="py-24 border-t border-gray-100 dark:border-gray-800"
-        >
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <h2
-                id="faq-heading"
-                className="display-lg text-gray-900 dark:text-white mb-8"
-              >
-                Częste pytania
-              </h2>
-              <div className="space-y-4">
-                {faq.map((item) => (
-                  <details
-                    key={item.question}
-                    className="group bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl"
+        {/* Treść w zakładkach — nic nie wycięte, podzielone */}
+        <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
+          <Tabs
+            ariaLabel="Sekcje oferty scrapingu danych"
+            tabs={[
+              {
+                label: "Typy źródeł",
+                content: (
+                  <section
+                    id="zrodla"
+                    aria-labelledby="zrodla-heading"
+                    className="py-10 lg:py-12"
                   >
-                    <summary className="flex items-center justify-between cursor-pointer p-6 text-gray-900 dark:text-white font-medium">
-                      {item.question}
-                      <svg
-                        aria-hidden="true"
-                        className="shrink-0 ml-4 w-5 h-5 text-gray-400 transition-transform group-open:rotate-45"
-                        viewBox="0 0 20 20"
-                        fill="none"
-                      >
-                        <path
-                          d="M10 4v12M4 10h12"
-                          stroke="currentColor"
-                          strokeWidth="1.5"
-                          strokeLinecap="round"
-                        />
-                      </svg>
-                    </summary>
-                    <div className="px-6 pb-6 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                      {item.answer}
+                    <h2
+                      id="zrodla-heading"
+                      className="display-lg text-gray-900 dark:text-white mb-12 max-w-2xl"
+                    >
+                      4 typy źródeł, jeden pipeline
+                    </h2>
+                    <div className="grid sm:grid-cols-2 gap-6">
+                      {sourceTypes.map((src) => (
+                        <div key={src.title}>
+                          <article className="glass-card card-lift rounded-2xl p-7 h-full">
+                            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                              {src.title}
+                            </h3>
+                            <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                              {src.examples}
+                            </p>
+                          </article>
+                        </div>
+                      ))}
                     </div>
-                  </details>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Form — diagnoza */}
-        <section
-          id="diagnoza"
-          aria-labelledby="diagnoza-heading"
-          className="scroll-mt-20 py-24 bg-accent/10 border-t border-gray-100 dark:border-gray-800"
-        >
-          <div className="container-wide">
-            <h2 id="diagnoza-heading" className="sr-only">
-              Bezpłatna diagnoza scrapingu
-            </h2>
-            <LandingForm
-              formId="diagnosis_scraping"
-              heading="Bezpłatna diagnoza scrapingu"
-              intro="Opisz krótko, jakich danych potrzebujesz i z jakich źródeł. Wrócę w 24h z informacją, czy widzę dopasowanie i czy źródło jest dostępne legalnie."
-              submitLabel="Zamów diagnozę"
-            />
-          </div>
-        </section>
+                  </section>
+                ),
+              },
+              {
+                label: "Etyka i prawo",
+                content: (
+                  <section
+                    id="etyka"
+                    aria-labelledby="etyka-heading"
+                    className="py-10 lg:py-12"
+                  >
+                    <div className="max-w-3xl">
+                      <p className="section-label mb-3">Etyka i prawo</p>
+                      <h2
+                        id="etyka-heading"
+                        className="display-lg text-gray-900 dark:text-white mb-6"
+                      >
+                        Scraping to narzędzie, nie wytrych.
+                      </h2>
+                      <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
+                        Robię scraping publicznych stron zgodnie z TOS i
+                        robots.txt oraz ekstrakcję z Twoich danych. Nie obchodzę
+                        zabezpieczeń, nie ruszam chronionych zasobów ani danych
+                        osobowych bez podstawy prawnej. Gdy widzę ryzyko — mówię
+                        wprost.
+                      </p>
+                    </div>
+                  </section>
+                ),
+              },
+              {
+                label: "FAQ",
+                content: (
+                  <section
+                    id="faq"
+                    aria-labelledby="faq-heading"
+                    className="py-10 lg:py-12"
+                  >
+                    <div className="max-w-3xl mx-auto">
+                      <h2
+                        id="faq-heading"
+                        className="display-lg text-gray-900 dark:text-white mb-8"
+                      >
+                        Częste pytania
+                      </h2>
+                      <div className="space-y-4">
+                        {faq.map((item) => (
+                          <details
+                            key={item.question}
+                            className="group bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl"
+                          >
+                            <summary className="flex items-center justify-between cursor-pointer p-6 text-gray-900 dark:text-white font-medium">
+                              {item.question}
+                              <svg
+                                aria-hidden="true"
+                                className="shrink-0 ml-4 w-5 h-5 text-gray-400 transition-transform group-open:rotate-45"
+                                viewBox="0 0 20 20"
+                                fill="none"
+                              >
+                                <path
+                                  d="M10 4v12M4 10h12"
+                                  stroke="currentColor"
+                                  strokeWidth="1.5"
+                                  strokeLinecap="round"
+                                />
+                              </svg>
+                            </summary>
+                            <div className="px-6 pb-6 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                              {item.answer}
+                            </div>
+                          </details>
+                        ))}
+                      </div>
+                    </div>
+                  </section>
+                ),
+              },
+              {
+                label: "Diagnoza",
+                content: (
+                  <section
+                    id="diagnoza"
+                    aria-labelledby="diagnoza-heading"
+                    className="scroll-mt-20 py-10 lg:py-12"
+                  >
+                    <h2 id="diagnoza-heading" className="sr-only">
+                      Bezpłatna diagnoza scrapingu
+                    </h2>
+                    <LandingForm
+                      formId="diagnosis_scraping"
+                      heading="Bezpłatna diagnoza scrapingu"
+                      intro="Opisz krótko, jakich danych potrzebujesz i z jakich źródeł. Wrócę w 24h z informacją, czy widzę dopasowanie i czy źródło jest dostępne legalnie."
+                      submitLabel="Zamów diagnozę"
+                    />
+                  </section>
+                ),
+              },
+            ]}
+          />
+        </div>
       </main>
 
       {/* Service Schema */}

@@ -3,6 +3,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
   title: "Jak pracuję — transparentny proces wdrożenia automatyzacji | Fluxlab",
@@ -169,11 +170,11 @@ export default function JakPracuje() {
   return (
     <>
       <Header />
-      <main className="pt-16">
+      <main>
         <Breadcrumbs items={[{ label: "Jak pracuję" }]} />
 
-        {/* Hero */}
-        <section className="py-16 lg:py-24 bg-gray-50 dark:bg-gray-900/50 border-b border-gray-100 dark:border-gray-800">
+        {/* Hero — kompaktowy */}
+        <section className="pt-24 pb-12 bg-gray-50 dark:bg-gray-900/50 border-b border-gray-100 dark:border-gray-800">
           <div className="container-wide">
             <div className="max-w-3xl mx-auto text-center">
               <span className="section-label">Proces współpracy</span>
@@ -189,168 +190,181 @@ export default function JakPracuje() {
           </div>
         </section>
 
-        {/* Steps */}
-        <section className="py-16 lg:py-24">
-          <div className="container-wide">
-            <div className="max-w-4xl mx-auto space-y-10">
-              {steps.map((step) => (
-                <div
-                  key={step.number}
-                  className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-8 lg:p-10"
-                >
-                  <div className="flex flex-col lg:flex-row lg:items-start gap-6">
-                    <div className="flex-shrink-0">
-                      <span className="text-4xl lg:text-5xl font-bold text-accent">
-                        {step.number}
-                      </span>
+        {/* Treść w zakładkach — nic nie wycięte, podzielone */}
+        <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
+          <Tabs
+            ariaLabel="Sekcje strony Jak pracuję"
+            tabs={[
+              {
+                label: "Proces krok po kroku",
+                content: (
+                  <div className="py-10 lg:py-12">
+                    <div className="max-w-4xl mx-auto space-y-10">
+                      {steps.map((step) => (
+                        <div
+                          key={step.number}
+                          className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-8 lg:p-10"
+                        >
+                          <div className="flex flex-col lg:flex-row lg:items-start gap-6">
+                            <div className="flex-shrink-0">
+                              <span className="text-4xl lg:text-5xl font-bold text-accent">
+                                {step.number}
+                              </span>
+                            </div>
+                            <div className="flex-1">
+                              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-2">
+                                {step.title}
+                              </h2>
+                              <p className="text-sm text-accent font-medium mb-4">
+                                {step.duration}
+                              </p>
+                              <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                                {step.description}
+                              </p>
+                              <div>
+                                <p className="text-sm font-semibold text-gray-900 dark:text-white mb-3">
+                                  Co dostajesz:
+                                </p>
+                                <ul className="space-y-2">
+                                  {step.deliverables.map((d) => (
+                                    <li
+                                      key={d}
+                                      className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400"
+                                    >
+                                      <svg
+                                        className="flex-shrink-0 mt-0.5"
+                                        width="16"
+                                        height="16"
+                                        viewBox="0 0 16 16"
+                                        fill="none"
+                                      >
+                                        <path
+                                          d="M3 8l3 3 7-7"
+                                          stroke="currentColor"
+                                          strokeWidth="2"
+                                          strokeLinecap="round"
+                                          strokeLinejoin="round"
+                                          className="text-accent"
+                                        />
+                                      </svg>
+                                      <span>{d}</span>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
                     </div>
-                    <div className="flex-1">
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-2">
-                        {step.title}
-                      </h2>
-                      <p className="text-sm text-accent font-medium mb-4">
-                        {step.duration}
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                        {step.description}
-                      </p>
-                      <div>
-                        <p className="text-sm font-semibold text-gray-900 dark:text-white mb-3">
-                          Co dostajesz:
+                  </div>
+                ),
+              },
+              {
+                label: "Model rozliczeń",
+                content: (
+                  <div className="py-10 lg:py-12">
+                    <div className="max-w-4xl mx-auto">
+                      <div className="text-center mb-12">
+                        <span className="section-label">Model rozliczeń</span>
+                        <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-4">
+                          Jak wygląda cena
+                        </h2>
+                        <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                          Konkretne zasady zamiast marketingowych haseł. Podaję
+                          widełki po konsultacji, stałą cenę po audycie, a
+                          transze płacisz dopiero po odbiorze etapów.
                         </p>
-                        <ul className="space-y-2">
-                          {step.deliverables.map((d) => (
-                            <li
-                              key={d}
-                              className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400"
-                            >
-                              <svg
-                                className="flex-shrink-0 mt-0.5"
-                                width="16"
-                                height="16"
-                                viewBox="0 0 16 16"
-                                fill="none"
-                              >
-                                <path
-                                  d="M3 8l3 3 7-7"
-                                  stroke="currentColor"
-                                  strokeWidth="2"
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  className="text-accent"
-                                />
-                              </svg>
-                              <span>{d}</span>
-                            </li>
-                          ))}
-                        </ul>
+                      </div>
+                      <div className="grid md:grid-cols-2 gap-6">
+                        {pricingPrinciples.map((p) => (
+                          <div
+                            key={p.title}
+                            className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-6"
+                          >
+                            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                              {p.title}
+                            </h3>
+                            <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                              {p.description}
+                            </p>
+                          </div>
+                        ))}
                       </div>
                     </div>
                   </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Pricing principles */}
-        <section className="py-16 lg:py-24 bg-gray-50 dark:bg-gray-900/50 border-y border-gray-100 dark:border-gray-800">
-          <div className="container-wide">
-            <div className="max-w-4xl mx-auto">
-              <div className="text-center mb-12">
-                <span className="section-label">Model rozliczeń</span>
-                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-4">
-                  Jak wygląda cena
-                </h2>
-                <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                  Konkretne zasady zamiast marketingowych haseł. Podaję widełki
-                  po konsultacji, stałą cenę po audycie, a transze płacisz
-                  dopiero po odbiorze etapów.
-                </p>
-              </div>
-              <div className="grid md:grid-cols-2 gap-6">
-                {pricingPrinciples.map((p) => (
-                  <div
-                    key={p.title}
-                    className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-6"
-                  >
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                      {p.title}
-                    </h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                      {p.description}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* FAQ */}
-        <section className="py-16 lg:py-24">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4 text-center">
-                Najczęstsze pytania
-              </h2>
-              <p className="text-gray-600 dark:text-gray-400 mb-12 text-center">
-                Konkretne odpowiedzi na to, o co klienci pytają najczęściej
-                przed podpisaniem umowy.
-              </p>
-              <div className="space-y-4">
-                {faq.map((item) => (
-                  <details
-                    key={item.question}
-                    className="group bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl overflow-hidden"
-                  >
-                    <summary className="cursor-pointer px-6 py-5 flex items-center justify-between gap-4 list-none">
-                      <span className="font-semibold text-gray-900 dark:text-white">
-                        {item.question}
-                      </span>
-                      <svg
-                        className="flex-shrink-0 transition-transform group-open:rotate-180"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 20 20"
-                        fill="none"
-                      >
-                        <path
-                          d="M5 7l5 5 5-5"
-                          stroke="currentColor"
-                          strokeWidth="1.5"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </summary>
-                    <div className="px-6 pb-5 text-gray-600 dark:text-gray-400 leading-relaxed">
-                      {item.answer}
+                ),
+              },
+              {
+                label: "FAQ",
+                content: (
+                  <div className="py-10 lg:py-12">
+                    <div className="max-w-3xl mx-auto">
+                      <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4 text-center">
+                        Najczęstsze pytania
+                      </h2>
+                      <p className="text-gray-600 dark:text-gray-400 mb-12 text-center">
+                        Konkretne odpowiedzi na to, o co klienci pytają
+                        najczęściej przed podpisaniem umowy.
+                      </p>
+                      <div className="space-y-4">
+                        {faq.map((item) => (
+                          <details
+                            key={item.question}
+                            className="group bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl overflow-hidden"
+                          >
+                            <summary className="cursor-pointer px-6 py-5 flex items-center justify-between gap-4 list-none">
+                              <span className="font-semibold text-gray-900 dark:text-white">
+                                {item.question}
+                              </span>
+                              <svg
+                                className="flex-shrink-0 transition-transform group-open:rotate-180"
+                                width="20"
+                                height="20"
+                                viewBox="0 0 20 20"
+                                fill="none"
+                              >
+                                <path
+                                  d="M5 7l5 5 5-5"
+                                  stroke="currentColor"
+                                  strokeWidth="1.5"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                />
+                              </svg>
+                            </summary>
+                            <div className="px-6 pb-5 text-gray-600 dark:text-gray-400 leading-relaxed">
+                              {item.answer}
+                            </div>
+                          </details>
+                        ))}
+                      </div>
                     </div>
-                  </details>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA */}
-        <section className="py-16 lg:py-24 bg-gray-50 dark:bg-gray-900/50 border-t border-gray-100 dark:border-gray-800">
-          <div className="container-wide">
-            <div className="max-w-2xl mx-auto text-center">
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                Zamów diagnozę procesu
-              </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-                30 minut, bez zobowiązań. Jeśli widzę, że automatyzacja nie ma
-                sensu — powiem to wprost na pierwszej rozmowie.
-              </p>
-              <Link href="/#kontakt" className="btn-primary">
-                Zamów diagnozę
-              </Link>
-            </div>
-          </div>
-        </section>
+                  </div>
+                ),
+              },
+              {
+                label: "Kontakt",
+                content: (
+                  <div className="py-10 lg:py-12">
+                    <div className="max-w-2xl mx-auto text-center">
+                      <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                        Zamów diagnozę procesu
+                      </h2>
+                      <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
+                        30 minut, bez zobowiązań. Jeśli widzę, że automatyzacja
+                        nie ma sensu — powiem to wprost na pierwszej rozmowie.
+                      </p>
+                      <Link href="/#kontakt" className="btn-primary">
+                        Zamów diagnozę
+                      </Link>
+                    </div>
+                  </div>
+                ),
+              },
+            ]}
+          />
+        </div>
       </main>
       <Footer />
 

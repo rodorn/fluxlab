@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import LandingForm from "@/components/LandingForm";
+import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
   title: "Integracje API i łączenie systemów w firmie | Fluxlab",
@@ -57,93 +58,113 @@ export default function IntegracjeApi() {
   return (
     <>
       <Header />
-      <main className="pt-16">
+      <main>
         <Breadcrumbs items={[{ label: "Integracje API" }]} />
 
-        {/* Hero */}
-        <section className="relative overflow-hidden py-24 lg:py-32">
+        {/* Hero — kompaktowy */}
+        <section className="relative overflow-hidden pt-24 pb-12">
           <div className="blob blob-cyan absolute -top-32 -right-20 h-96 w-96" />
           <div className="container-wide max-w-3xl mx-auto text-center">
             <p className="section-label mb-5">Usługa</p>
             <h1 className="display-lg text-gray-900 dark:text-white mb-6">
               Integracje API
             </h1>
-            <p className="text-lg text-gray-600 dark:text-gray-300">
+            <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
               Łączę systemy ze sprzedaży, operacji i raportowania tak, żeby dane
               trafiały tam, gdzie trzeba — bez ręcznego przepisywania.
             </p>
-          </div>
-        </section>
-
-        {/* Co łączę */}
-        <section className="py-20 lg:py-24 border-t border-gray-100 dark:border-gray-800">
-          <div className="container-wide max-w-3xl mx-auto">
-            <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-8">
-              Co łączę
-            </h2>
-            <ul className="grid gap-4">
-              {useCases.map((item, i) => (
-                <li
-                  key={i}
-                  className="card-lift rounded-2xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800/60 p-6 text-gray-700 dark:text-gray-300"
-                >
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
-
-        {/* FAQ */}
-        <section className="py-20 lg:py-24 border-t border-gray-100 dark:border-gray-800">
-          <div className="container-wide max-w-3xl mx-auto">
-            <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-8">
-              Najczęstsze pytania
-            </h2>
-            <div className="space-y-4">
-              {faq.map((item, i) => (
-                <details
-                  key={i}
-                  className="group bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl overflow-hidden"
-                >
-                  <summary className="cursor-pointer px-6 py-5 flex items-center justify-between gap-4 text-gray-900 dark:text-white font-medium list-none">
-                    {item.question}
-                    <svg
-                      className="shrink-0 w-5 h-5 text-gray-400 transition-transform group-open:rotate-45"
-                      viewBox="0 0 20 20"
-                      fill="none"
-                    >
-                      <path
-                        d="M10 4v12M4 10h12"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                      />
-                    </svg>
-                  </summary>
-                  <div className="px-6 pb-5 text-sm text-gray-500 dark:text-gray-400">
-                    {item.answer}
-                  </div>
-                </details>
-              ))}
+            <div>
+              <a href="#sekcje" className="btn-primary">
+                Chcę diagnozę integracji
+              </a>
             </div>
           </div>
         </section>
 
-        {/* Form — diagnoza */}
-        <section
-          id="diagnoza"
-          className="scroll-mt-20 py-20 bg-accent/10 border-t border-gray-100 dark:border-gray-800"
-        >
-          <div className="container-wide">
-            <LandingForm
-              formId="diagnosis_api"
-              heading="Sprawdźmy Twój stack integracji"
-              intro="Opisz krótko, jakie systemy chcesz połączyć i gdzie dziś pojawia się ręczne przepisywanie danych. W odpowiedzi dostaniesz wstępną propozycję architektury i informację, od czego zacząć."
-              submitLabel="Chcę diagnozę integracji"
-            />
-          </div>
-        </section>
+        {/* Treść w zakładkach — nic nie wycięte, podzielone */}
+        <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
+          <Tabs
+            ariaLabel="Sekcje usługi integracji API"
+            tabs={[
+              {
+                label: "Co łączę",
+                content: (
+                  <div className="py-10 lg:py-12">
+                    <div className="max-w-3xl mx-auto">
+                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-8">
+                        Co łączę
+                      </h2>
+                      <ul className="grid gap-4">
+                        {useCases.map((item, i) => (
+                          <li
+                            key={i}
+                            className="card-lift rounded-2xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800/60 p-6 text-gray-700 dark:text-gray-300"
+                          >
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                ),
+              },
+              {
+                label: "FAQ",
+                content: (
+                  <div className="py-10 lg:py-12">
+                    <div className="max-w-3xl mx-auto">
+                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-8">
+                        Najczęstsze pytania
+                      </h2>
+                      <div className="space-y-4">
+                        {faq.map((item, i) => (
+                          <details
+                            key={i}
+                            className="group bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl overflow-hidden"
+                          >
+                            <summary className="cursor-pointer px-6 py-5 flex items-center justify-between gap-4 text-gray-900 dark:text-white font-medium list-none">
+                              {item.question}
+                              <svg
+                                className="shrink-0 w-5 h-5 text-gray-400 transition-transform group-open:rotate-45"
+                                viewBox="0 0 20 20"
+                                fill="none"
+                              >
+                                <path
+                                  d="M10 4v12M4 10h12"
+                                  stroke="currentColor"
+                                  strokeWidth="1.5"
+                                  strokeLinecap="round"
+                                />
+                              </svg>
+                            </summary>
+                            <div className="px-6 pb-5 text-sm text-gray-500 dark:text-gray-400">
+                              {item.answer}
+                            </div>
+                          </details>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ),
+              },
+              {
+                label: "Diagnoza",
+                content: (
+                  <div id="diagnoza" className="scroll-mt-20 py-10 lg:py-12">
+                    <div className="container-wide">
+                      <LandingForm
+                        formId="diagnosis_api"
+                        heading="Sprawdźmy Twój stack integracji"
+                        intro="Opisz krótko, jakie systemy chcesz połączyć i gdzie dziś pojawia się ręczne przepisywanie danych. W odpowiedzi dostaniesz wstępną propozycję architektury i informację, od czego zacząć."
+                        submitLabel="Chcę diagnozę integracji"
+                      />
+                    </div>
+                  </div>
+                ),
+              },
+            ]}
+          />
+        </div>
       </main>
 
       {/* Service Schema */}

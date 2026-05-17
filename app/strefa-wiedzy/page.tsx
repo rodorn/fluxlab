@@ -6,11 +6,13 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { categories } from "@/lib/categories";
 
 export const metadata: Metadata = {
-  title: "Strefa wiedzy — automatyzacja procesów, CRM, API, raportowanie, AI | Fluxlab",
+  title:
+    "Strefa wiedzy — automatyzacja procesów, CRM, API, raportowanie, AI | Fluxlab",
   description:
     "Praktyczne artykuły o automatyzacji procesów biznesowych, CRM, integracjach API, raportowaniu i AI. Bez marketingowej mgły — konkrety dla firm B2B.",
   openGraph: {
-    title: "Strefa wiedzy — automatyzacja procesów, CRM, API, raportowanie, AI | Fluxlab",
+    title:
+      "Strefa wiedzy — automatyzacja procesów, CRM, API, raportowanie, AI | Fluxlab",
     description:
       "Praktyczne artykuły o automatyzacji procesów biznesowych, CRM, integracjach API, raportowaniu i AI.",
     locale: "pl_PL",
@@ -35,8 +37,8 @@ export default function StrefaWiedzy() {
       <Header />
       <main className="pt-16">
         <Breadcrumbs items={[{ label: "Strefa wiedzy" }]} />
-        {/* Hero */}
-        <section className="py-16 lg:py-24 bg-gray-50 dark:bg-gray-900/50 border-b border-gray-100 dark:border-gray-800">
+        {/* Hero — kompaktowy */}
+        <section className="pt-24 pb-12 bg-gray-50 dark:bg-gray-900/50 border-b border-gray-100 dark:border-gray-800">
           <div className="container-wide">
             <div className="max-w-3xl mx-auto text-center">
               <p className="section-label mb-4">Wiedza</p>
@@ -53,7 +55,7 @@ export default function StrefaWiedzy() {
         </section>
 
         {/* Categories */}
-        <section className="py-16 lg:py-24">
+        <section className="py-10 lg:py-12">
           <div className="container-wide">
             <div className="max-w-4xl mx-auto space-y-16">
               {categories.map((category) => (
@@ -87,7 +89,7 @@ export default function StrefaWiedzy() {
         </section>
 
         {/* CTA */}
-        <section className="py-16 lg:py-24 border-t border-gray-100 dark:border-gray-800">
+        <section className="py-10 lg:py-12 border-t border-gray-100 dark:border-gray-800">
           <div className="container-wide">
             <div className="max-w-2xl mx-auto text-center bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-10">
               <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
