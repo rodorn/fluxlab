@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Header from "@/components/Header";
-import PillarVisual from "@/components/PillarVisual";
+import TileVideo from "@/components/TileVideo";
 
 const PILLARS = [
   {
@@ -72,17 +72,9 @@ export default function Home() {
                 ["col-enter-1", "col-enter-2", "col-enter-3"][idx]
               }`}
             >
-              {/* Animowane tło — zapętlone wideo (Sora), obraz jako poster */}
-              <video
-                src={p.video}
-                poster={p.img}
-                autoPlay
-                loop
-                muted
-                playsInline
-                preload="metadata"
-                className="absolute inset-0 w-full h-full object-cover opacity-60 saturate-[0.9] transition-all duration-700 ease-out group-hover:opacity-100 group-hover:saturate-150 group-hover:scale-105"
-              />
+              {/* Animowane tło — zapętlone wideo (Sora): płynna pętla
+                  ping-pong, 10× wolniej, pełna prędkość na hover */}
+              <TileVideo src={p.video} poster={p.img} />
               {/* Przyciemnienie dla czytelności */}
               <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/55 to-gray-950/10 transition-all duration-500 group-hover:from-gray-950/90 group-hover:via-gray-950/35" />
               {/* Akcentowa poświata od dołu — kolor filaru, na hover */}
@@ -90,11 +82,6 @@ export default function Home() {
                 aria-hidden="true"
                 className={`absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t ${p.glow} to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100`}
               />
-
-              {/* Animowany motyw — żywy SVG, mocniej na hover */}
-              <div className="absolute inset-x-0 top-8 lg:top-10 flex justify-center opacity-80 transition-all duration-500 group-hover:opacity-100 group-hover:-translate-y-1">
-                <PillarVisual variant={p.variant} />
-              </div>
 
               {/* Treść — unosi się na hover */}
               <div className="relative p-7 lg:p-9 transition-transform duration-500 ease-out group-hover:-translate-y-2">
