@@ -7,21 +7,21 @@ const PILLARS = [
     img: "/abstract/web.webp",
     num: "01",
     title: "Strony WWW",
-    desc: "Nowa strona albo poprawki w obecnej.",
+    desc: "Nowa strona albo poprawki w obecnej — szybko, mobilnie, z naciskiem na konwersję.",
   },
   {
     href: "/automatyzacja-leadow-crm",
     img: "/abstract/automation.webp",
     num: "02",
     title: "Automatyzacja",
-    desc: "Leady, CRM i raporty bez ręcznej pracy.",
+    desc: "Narzędzia no-code automatyzują proste elementy pracy niskim kosztem. API łączy większość narzędzi i pozwala na zaawansowane reguły interakcji między nimi. AI przetwarza kod, tekst, obraz i dźwięk — ogromne możliwości przyspieszania pracy.",
   },
   {
     href: "/scraping-danych",
     img: "/abstract/data.webp",
     num: "03",
     title: "Dane",
-    desc: "Scraping i ekstrakcja z dowolnych źródeł.",
+    desc: "Wyszukiwanie, pozyskiwanie, analiza i raportowanie danych.",
   },
 ];
 
@@ -71,7 +71,7 @@ export default function Home() {
               <h2 className="mt-1.5 text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tight">
                 {p.title}
               </h2>
-              <p className="mt-2.5 text-sm lg:text-base text-white/60 max-w-[16rem]">
+              <p className="mt-2.5 text-sm lg:text-base text-white/65 leading-relaxed max-w-sm">
                 {p.desc}
               </p>
               <span className="mt-5 inline-flex items-center gap-2 text-accent font-semibold transition-all duration-300 group-hover:gap-3.5">
