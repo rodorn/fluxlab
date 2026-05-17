@@ -77,11 +77,12 @@ const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
 const results = [];
 for (const route of ROUTES) {
   try {
-    await page.goto(BASE + route, {
+    const sep = route.includes("?") ? "&" : "?";
+    await page.goto(`${BASE}${route}${sep}cb=${Date.now()}`, {
       waitUntil: "networkidle",
       timeout: 30000,
     });
-    await page.waitForTimeout(400);
+    await page.waitForTimeout(600);
     const h = await page.evaluate(() => document.documentElement.scrollHeight);
     results.push({ route, h });
   } catch (e) {
