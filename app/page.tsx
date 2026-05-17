@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import Header from "@/components/Header";
 import PillarVisual from "@/components/PillarVisual";
 
@@ -7,6 +6,7 @@ const PILLARS = [
   {
     href: "/strony-www",
     img: "/abstract/web.webp",
+    video: "/abstract/web.mp4",
     variant: "web" as const,
     num: "01",
     title: "Strony WWW",
@@ -21,6 +21,7 @@ const PILLARS = [
   {
     href: "/automatyzacja-leadow-crm",
     img: "/abstract/automation.webp",
+    video: "/abstract/automation.mp4",
     variant: "automation" as const,
     num: "02",
     title: "Automatyzacja",
@@ -35,6 +36,7 @@ const PILLARS = [
   {
     href: "/scraping-danych",
     img: "/abstract/data.webp",
+    video: "/abstract/data.mp4",
     variant: "data" as const,
     num: "03",
     title: "Dane",
@@ -70,14 +72,16 @@ export default function Home() {
                 ["col-enter-1", "col-enter-2", "col-enter-3"][idx]
               }`}
             >
-              {/* Abstrakcyjne tło — ken-burns (zoom + pan) na hover */}
-              <Image
-                src={p.img}
-                alt=""
-                fill
-                priority
-                sizes="(max-width: 1024px) 100vw, 33vw"
-                className="ken-burns-img object-cover opacity-55 saturate-[0.85] group-hover:opacity-100 group-hover:saturate-150"
+              {/* Animowane tło — zapętlone wideo (Sora), obraz jako poster */}
+              <video
+                src={p.video}
+                poster={p.img}
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="metadata"
+                className="absolute inset-0 w-full h-full object-cover opacity-60 saturate-[0.9] transition-all duration-700 ease-out group-hover:opacity-100 group-hover:saturate-150 group-hover:scale-105"
               />
               {/* Przyciemnienie dla czytelności */}
               <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/55 to-gray-950/10 transition-all duration-500 group-hover:from-gray-950/90 group-hover:via-gray-950/35" />
