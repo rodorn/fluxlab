@@ -7,21 +7,21 @@ const PILLARS = [
     img: "/abstract/web.webp",
     num: "01",
     title: "Strony WWW",
-    desc: "Tworzę nowe strony i poprawiam istniejące. Szybko, mobilnie, z naciskiem na konwersję. Treści i grafikę wspiera AI.",
+    desc: "Zbuduję Ci nową stronę internetową albo poprawię tę, którą już masz. Ma dobrze wyglądać na telefonie i zamieniać odwiedzających w klientów.",
   },
   {
     href: "/automatyzacja-leadow-crm",
     img: "/abstract/automation.webp",
     num: "02",
     title: "Automatyzacja",
-    desc: "No-code tanio automatyzuje proste, powtarzalne zadania. API łączy większość narzędzi w zaawansowane reguły. AI przetwarza kod, tekst, obraz i dźwięk.",
+    desc: "Przejmę nudne, powtarzalne czynności — przepisywanie danych, wysyłanie maili, pilnowanie terminów. Komputer robi je sam, Ty zyskujesz czas.",
   },
   {
     href: "/scraping-danych",
     img: "/abstract/data.webp",
     num: "03",
     title: "Dane",
-    desc: "Wyszukiwanie i pozyskiwanie danych z dowolnych źródeł. Analiza i porządkowanie tego, co rozproszone. Raportowanie bez ręcznej pracy.",
+    desc: "Zbiorę informacje rozproszone po stronach, mailach i plikach. Uporządkuję je i zamienię w czytelne zestawienia — bez ręcznego klikania.",
   },
 ];
 

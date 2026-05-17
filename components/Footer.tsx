@@ -1,198 +1,42 @@
 import Link from "next/link";
 
-const serviceLinks = [
-  { href: "/automatyzacja-leadow-crm", label: "Automatyzacja leadów i CRM" },
-  { href: "/automatyzacja-crm", label: "Automatyzacja CRM", indent: true },
-  { href: "/automatyzacja-pipedrive", label: "Pipedrive", indent: true },
-  { href: "/automatyzacja-salesforce", label: "Salesforce", indent: true },
-  {
-    href: "/automatyzacja-leadow",
-    label: "Automatyzacja leadów",
-    indent: true,
-  },
-  { href: "/automatyzacja-raportowania", label: "Automatyzacja raportowania" },
-  { href: "/integracje-api", label: "Integracje API" },
-  {
-    href: "/automatyzacja-procesow-biznesowych",
-    label: "Automatyzacja procesów",
-  },
-  { href: "/automatyzacja-ai", label: "Automatyzacja z AI" },
-  { href: "/n8n", label: "n8n" },
-  { href: "/zapier-make", label: "Zapier vs Make" },
+const links = [
+  { href: "/strony-www", label: "Strony WWW" },
+  { href: "/automatyzacja-leadow-crm", label: "Automatyzacja" },
+  { href: "/scraping-danych", label: "Dane" },
+  { href: "/jak-pracuje", label: "Jak pracuję" },
+  { href: "/strefa-wiedzy", label: "Strefa wiedzy" },
+  { href: "/narzedzia", label: "Narzędzia" },
+  { href: "/pilotaz", label: "Program case study" },
+  { href: "/kontakt", label: "Kontakt" },
 ];
 
 export default function Footer() {
   return (
-    <footer className="border-t border-gray-100 dark:border-gray-800 py-10">
+    <footer className="border-t border-gray-100 dark:border-gray-800 py-8">
       <div className="container-wide">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+        <div className="flex flex-wrap items-start justify-between gap-x-10 gap-y-5">
           <div>
             <span className="text-sm font-bold tracking-tight text-gray-900 dark:text-white">
               flux<span className="text-accent">lab</span>
             </span>
-            <p className="mt-2 text-xs text-gray-400 dark:text-gray-500 max-w-xs">
-              Automatyzacja leadów, CRM i raportowania dla firm B2B
+            <p className="mt-1 text-xs text-gray-400 dark:text-gray-500">
+              Strony, automatyzacja, dane dla firm B2B
             </p>
           </div>
-          <div>
-            <p className="text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-3">
-              Usługi
-            </p>
-            <ul className="space-y-2">
-              {serviceLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className={`hover:text-accent transition-colors ${
-                      "indent" in link && link.indent
-                        ? "text-xs text-gray-500 dark:text-gray-500 pl-3"
-                        : "text-sm text-gray-600 dark:text-gray-400"
-                    }`}
-                  >
-                    {"indent" in link && link.indent
-                      ? `└ ${link.label}`
-                      : link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <p className="text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-3">
-              Narzędzia
-            </p>
-            <ul className="space-y-2">
-              <li>
-                <Link
-                  href="/narzedzia"
-                  className="text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
-                >
-                  Wszystkie narzędzia
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/kalkulator-leadow"
-                  className="text-sm text-accent font-medium hover:underline transition-colors"
-                >
-                  Kalkulator kosztu leadów
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/audyt-crm"
-                  className="text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
-                >
-                  Audyt CRM (10 pytań)
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/zatrudnic-czy-zautomatyzowac"
-                  className="text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
-                >
-                  Zatrudnić czy zautomatyzować?
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/kalkulator-kosztow"
-                  className="text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
-                >
-                  Kalkulator kosztów auta
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/kalkulator-podatkowy"
-                  className="text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
-                >
-                  Kalkulator podatkowy
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/dobor-samochodu"
-                  className="text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
-                >
-                  Dobór samochodu
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <p className="text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-3">
-              Firma
-            </p>
-            <ul className="space-y-2">
-              <li>
-                <a
-                  href="/#o-nas"
-                  className="text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
-                >
-                  O Fluxlabie
-                </a>
-              </li>
-              <li>
-                <Link
-                  href="/jak-pracuje"
-                  className="text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
-                >
-                  Jak pracuję
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/pilotaz"
-                  className="text-sm text-accent font-medium hover:underline transition-colors"
-                >
-                  Program case study (–50%)
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/case-study"
-                  className="text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
-                >
-                  Case study
-                </Link>
-              </li>
-              <li>
-                <a
-                  href="/#cennik"
-                  className="text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
-                >
-                  Cennik
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/#kontakt"
-                  className="text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
-                >
-                  Kontakt
-                </a>
-              </li>
-              <li>
-                <Link
-                  href="/polityka-prywatnosci"
-                  className="text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
-                >
-                  Polityka prywatności
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/regulamin"
-                  className="text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
-                >
-                  Regulamin
-                </Link>
-              </li>
-            </ul>
-          </div>
+          <nav className="flex flex-wrap gap-x-5 gap-y-2">
+            {links.map((l) => (
+              <Link
+                key={l.href}
+                href={l.href}
+                className="text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
+              >
+                {l.label}
+              </Link>
+            ))}
+          </nav>
         </div>
-        <div className="border-t border-gray-100 dark:border-gray-800 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="border-t border-gray-100 dark:border-gray-800 mt-6 pt-5 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-xs text-gray-400 dark:text-gray-500">
             © {new Date().getFullYear()} Fluxlab. Wszelkie prawa zastrzeżone.
           </p>
