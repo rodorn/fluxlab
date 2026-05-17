@@ -39,7 +39,7 @@ const PILLARS = [
     num: "03",
     title: "Dane",
     desc: "Zbieranie danych ze stron internetowych, maili i innych plików wymaga czasu. Sprawię, że dane będą przejrzyste i czytelne, a gotowe raporty oszczędzą Ci godziny pracy.",
-    cta: "Sprawdź, jak oszczędzić godziny pracy",
+    cta: "Sprawdź, jak zyskać pełnię informacji",
     // Akcent: zieleń
     ring: "group-hover:ring-emerald-400/80 focus-visible:ring-emerald-400",
     glow: "from-emerald-500/35",

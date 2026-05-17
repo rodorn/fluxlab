@@ -157,7 +157,7 @@ export async function POST(req: Request) {
         Authorization: `Bearer ${OPENAI_API_KEY}`,
       },
       body: JSON.stringify({
-        model: "gpt-5.4-mini",
+        model: "gpt-5.5",
         temperature: 0.4,
         max_output_tokens: 4000,
         instructions: `Jesteś ekspertem automatyzacji procesów B2B w Fluxlab. Analizujesz opisany przez klienta proces i proponujesz konkretną, realistyczną automatyzację.
