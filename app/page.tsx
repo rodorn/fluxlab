@@ -100,12 +100,9 @@ export default function Home() {
         <Link href="/pilotaz" className="hover:text-white/70 transition-colors">
           Program case study
         </Link>
-        <a
-          href="mailto:iwanekpawel55@gmail.com"
-          className="hover:text-white/70 transition-colors"
-        >
-          iwanekpawel55@gmail.com
-        </a>
+        <Link href="/kontakt" className="hover:text-white/70 transition-colors">
+          Kontakt
+        </Link>
       </footer>
     </main>
   );

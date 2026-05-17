@@ -124,12 +124,12 @@ export default function CTA() {
       setLoading(false);
       setErrorMsg(
         payload?.error ??
-          "Coś poszło nie tak. Spróbuj ponownie lub napisz bezpośrednio na iwanekpawel55@gmail.com.",
+          "Coś poszło nie tak. Spróbuj ponownie lub napisz bezpośrednio na kontakt@fluxlab.pl.",
       );
     } catch {
       setLoading(false);
       setErrorMsg(
-        "Problem z połączeniem. Spróbuj ponownie lub napisz na iwanekpawel55@gmail.com.",
+        "Problem z połączeniem. Spróbuj ponownie lub napisz na kontakt@fluxlab.pl.",
       );
     }
   }

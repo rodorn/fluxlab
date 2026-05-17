@@ -106,7 +106,7 @@ export default function LiveDiagnosis() {
       gaEvent("ai_diagnosis_result", { pillar: data.pillar });
     } catch {
       setErrorMsg(
-        "Problem z połączeniem. Spróbuj ponownie lub napisz na iwanekpawel55@gmail.com.",
+        "Problem z połączeniem. Spróbuj ponownie lub napisz na kontakt@fluxlab.pl.",
       );
     } finally {
       setLoading(false);

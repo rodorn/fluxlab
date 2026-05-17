@@ -110,10 +110,10 @@ export default function Dziekuje() {
               <p className="mt-8 text-xs text-gray-400 dark:text-gray-500 text-center">
                 Brak maila ode mnie po 24h? Sprawdź spam albo napisz wprost na{" "}
                 <a
-                  href="mailto:iwanekpawel55@gmail.com"
+                  href="mailto:kontakt@fluxlab.pl"
                   className="text-accent hover:underline"
                 >
-                  iwanekpawel55@gmail.com
+                  kontakt@fluxlab.pl
                 </a>
                 .
               </p>

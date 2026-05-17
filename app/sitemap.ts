@@ -16,6 +16,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.95,
     },
     {
+      url: `${baseUrl}/kontakt`,
+      changeFrequency: "yearly" as const,
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/automatyzacja-procesow-biznesowych`,
       changeFrequency: "monthly" as const,
       priority: 0.9,
