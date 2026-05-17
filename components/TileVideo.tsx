@@ -3,29 +3,33 @@
 import { useEffect, useRef } from "react";
 
 /**
- * TileVideo — tło wideo kafelka. Domyślnie zatrzymane (widać poster).
- * Po najechaniu myszką na kartę wideo gra w pętli; po zjechaniu — pauza.
+ * TileVideo — tło wideo kafelka, osobne dla trybu jasnego i ciemnego.
+ * Renderuje dwa <video>; CSS (dark:) pokazuje właściwe. Domyślnie
+ * zatrzymane (widać poster/pierwszą klatkę); po najechaniu na kartę grają.
  */
 export default function TileVideo({
-  src,
+  srcDark,
+  srcLight,
   poster,
 }: {
-  src: string;
+  srcDark: string;
+  srcLight: string;
   poster: string;
 }) {
-  const ref = useRef<HTMLVideoElement | null>(null);
+  const wrapRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const v = ref.current;
-    if (!v) return;
-    const card = v.closest("a");
+    const wrap = wrapRef.current;
+    if (!wrap) return;
+    const card = wrap.closest("a");
     if (!card) return;
+    const videos = Array.from(wrap.querySelectorAll("video"));
 
     const enter = () => {
-      void v.play().catch(() => {});
+      videos.forEach((v) => void v.play().catch(() => {}));
     };
     const leave = () => {
-      v.pause();
+      videos.forEach((v) => v.pause());
     };
 
     card.addEventListener("pointerenter", enter);
@@ -36,17 +40,32 @@ export default function TileVideo({
     };
   }, []);
 
+  const cls =
+    "absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-out";
+
   return (
-    <video
-      ref={ref}
-      poster={poster}
-      muted
-      loop
-      playsInline
-      preload="metadata"
-      className="absolute inset-0 w-full h-full object-cover opacity-60 saturate-[0.9] transition-all duration-700 ease-out group-hover:opacity-100 group-hover:saturate-150"
-    >
-      <source src={src} type="video/mp4" />
-    </video>
+    <div ref={wrapRef} aria-hidden="true">
+      {/* Tryb ciemny */}
+      <video
+        poster={poster}
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        className={`${cls} hidden dark:block opacity-60 saturate-[0.9] group-hover:opacity-100 group-hover:saturate-150`}
+      >
+        <source src={srcDark} type="video/mp4" />
+      </video>
+      {/* Tryb jasny */}
+      <video
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        className={`${cls} block dark:hidden opacity-90 group-hover:opacity-100`}
+      >
+        <source src={srcLight} type="video/mp4" />
+      </video>
+    </div>
   );
 }

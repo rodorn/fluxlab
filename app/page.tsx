@@ -7,6 +7,7 @@ const PILLARS = [
     href: "/strony-www",
     img: "/abstract/web.webp",
     video: "/abstract/web.mp4",
+    videoLight: "/abstract/web-light.mp4",
     variant: "web" as const,
     num: "01",
     title: "Strony WWW",
@@ -22,6 +23,7 @@ const PILLARS = [
     href: "/automatyzacja-leadow-crm",
     img: "/abstract/automation.webp",
     video: "/abstract/automation.mp4",
+    videoLight: "/abstract/automation-light.mp4",
     variant: "automation" as const,
     num: "02",
     title: "Automatyzacja",
@@ -37,6 +39,7 @@ const PILLARS = [
     href: "/scraping-danych",
     img: "/abstract/data.webp",
     video: "/abstract/data.mp4",
+    videoLight: "/abstract/data-light.mp4",
     variant: "data" as const,
     num: "03",
     title: "Dane",
@@ -74,7 +77,11 @@ export default function Home() {
             >
               {/* Animowane tło — zapętlone wideo (Sora): płynna pętla
                   ping-pong, 10× wolniej, pełna prędkość na hover */}
-              <TileVideo src={p.video} poster={p.img} />
+              <TileVideo
+                srcDark={p.video}
+                srcLight={p.videoLight}
+                poster={p.img}
+              />
               {/* Przyciemnienie dla czytelności */}
               <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/55 to-gray-950/10 transition-all duration-500 group-hover:from-gray-950/90 group-hover:via-gray-950/35" />
               {/* Akcentowa poświata od dołu — kolor filaru, na hover */}
