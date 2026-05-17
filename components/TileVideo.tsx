@@ -21,17 +21,25 @@ export default function TileVideo({
   useEffect(() => {
     const wrap = wrapRef.current;
     if (!wrap) return;
-    const card = wrap.closest("a");
-    if (!card) return;
+    if (typeof window === "undefined") return;
     const videos = Array.from(wrap.querySelectorAll("video"));
 
+    // Brak myszki (mobile/touch) — wideo gra ciągle, bo nie ma hovera
+    const canHover = window.matchMedia("(hover: hover)").matches;
+    if (!canHover) {
+      videos.forEach((v) => void v.play().catch(() => {}));
+      return;
+    }
+
+    // Desktop — wideo gra po najechaniu na kartę
+    const card = wrap.closest("a");
+    if (!card) return;
     const enter = () => {
       videos.forEach((v) => void v.play().catch(() => {}));
     };
     const leave = () => {
       videos.forEach((v) => v.pause());
     };
-
     card.addEventListener("pointerenter", enter);
     card.addEventListener("pointerleave", leave);
     return () => {
