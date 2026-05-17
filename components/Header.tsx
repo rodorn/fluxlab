@@ -25,26 +25,30 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-shadow duration-300 bg-white/80 dark:bg-gray-950/80 backdrop-blur-xl border-b border-gray-100 dark:border-gray-800 ${
-        scrolled ? "shadow-sm shadow-gray-200/50 dark:shadow-black/30" : ""
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-white/85 dark:bg-gray-950/85 backdrop-blur-xl border-b border-gray-200/70 dark:border-gray-800/70 shadow-sm shadow-gray-900/5"
+          : "bg-white/60 dark:bg-gray-950/55 backdrop-blur-md border-b border-transparent"
       }`}
     >
-      <div className="container-wide flex items-center justify-between h-16">
+      {/* Pełna szerokość — bez container-wide */}
+      <div className="flex items-center justify-between h-16 px-5 lg:px-8">
         {/* Logo */}
         <Link
           href="/"
-          className="text-xl font-bold tracking-tight text-gray-900 dark:text-white shrink-0"
+          className="flex items-center gap-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white shrink-0"
         >
+          <span className="inline-block w-2.5 h-2.5 rounded-full bg-gradient-to-br from-accent to-violet-500" />
           flux<span className="text-accent">lab</span>
         </Link>
 
-        {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-7">
+        {/* Desktop nav — linki z animowanym podkreśleniem */}
+        <nav className="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
           {NAV.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-accent dark:hover:text-accent transition-colors"
+              className="relative text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors after:absolute after:-bottom-1.5 after:left-0 after:h-0.5 after:w-0 after:rounded-full after:bg-accent after:transition-all after:duration-300 hover:after:w-full"
             >
               {item.label}
             </Link>
@@ -52,14 +56,14 @@ export default function Header() {
         </nav>
 
         {/* Right */}
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden md:flex items-center gap-3 shrink-0">
           <ThemeToggle />
           <Link href="/kontakt" className="btn-primary text-sm">
             Bezpłatna diagnoza
           </Link>
         </div>
 
-        {/* Mobile: toggle + hamburger */}
+        {/* Mobile */}
         <div className="md:hidden flex items-center gap-1">
           <ThemeToggle />
           <button
@@ -92,7 +96,7 @@ export default function Header() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden border-t border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-950 px-6 py-4">
+        <div className="md:hidden border-t border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-950 px-5 py-4">
           <nav className="flex flex-col gap-1">
             {NAV.map((item) => (
               <Link

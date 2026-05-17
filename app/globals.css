@@ -496,6 +496,16 @@
     }
   }
 
+  /* Ken-burns — powolny zoom + pan obrazu na hover */
+  @keyframes ken-burns {
+    from {
+      transform: scale(1.04) translate(0, 0);
+    }
+    to {
+      transform: scale(1.2) translate(-3%, -3%);
+    }
+  }
+
   .animate-drift {
     animation: drift 18s ease-in-out infinite;
   }
