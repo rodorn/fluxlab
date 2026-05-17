@@ -50,7 +50,7 @@ export default function Home() {
       <Header />
       <main className="relative flex flex-col bg-white text-gray-900 dark:bg-gray-950 dark:text-white min-h-screen lg:h-screen overflow-hidden pt-16">
         {/* Hasło */}
-        <div className="relative z-20 px-6 lg:px-10 pt-7 pb-6 lg:pb-8">
+        <div className="relative z-20 px-6 lg:px-10 pt-7 pb-6 lg:pb-8 col-enter-1">
           <h1 className="text-2xl lg:text-3xl font-semibold tracking-tight text-gray-900 dark:text-white/90">
             Z czym mogę pomóc?
           </h1>
@@ -58,20 +58,22 @@ export default function Home() {
 
         {/* 3 kolumny wyboru — zaokrąglone karty z odstępem */}
         <div className="relative z-10 flex-1 grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-5 px-4 lg:px-5 pb-4 lg:pb-5">
-          {PILLARS.map((p) => (
+          {PILLARS.map((p, idx) => (
             <Link
               key={p.href}
               href={p.href}
-              className={`group relative flex flex-col justify-end overflow-hidden rounded-2xl min-h-[34vh] lg:min-h-0 ring-1 ring-gray-200 dark:ring-white/10 transition-all duration-300 focus:outline-none ${p.ring} group-hover:ring-2`}
+              className={`group relative flex flex-col justify-end overflow-hidden rounded-2xl min-h-[34vh] lg:min-h-0 ring-1 ring-gray-200 dark:ring-white/10 transition-all duration-300 focus:outline-none ${p.ring} hover:ring-2 ${
+                ["col-enter-1", "col-enter-2", "col-enter-3"][idx]
+              }`}
             >
-              {/* Abstrakcyjne tło — zoom + ken-burns na hover */}
+              {/* Abstrakcyjne tło — ken-burns (zoom + pan) na hover */}
               <Image
                 src={p.img}
                 alt=""
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 33vw"
-                className="object-cover opacity-50 saturate-[0.85] transition-all duration-700 ease-out group-hover:opacity-100 group-hover:saturate-125 group-hover:[animation:ken-burns_9s_ease-out_forwards]"
+                className="ken-burns-img object-cover opacity-55 saturate-[0.85] group-hover:opacity-100 group-hover:saturate-150"
               />
               {/* Przyciemnienie dla czytelności */}
               <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/55 to-gray-950/10 transition-all duration-500 group-hover:from-gray-950/90 group-hover:via-gray-950/35" />
