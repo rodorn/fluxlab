@@ -44,7 +44,7 @@ export default function AutomatyzacjaRaportowaniaArticle() {
           ]}
         />
         {/* Kompaktowy nagłówek */}
-        <section className="pt-24 pb-10">
+        <section className="pt-16 pb-6">
           <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
             <span className="section-label">Strefa wiedzy</span>
             <h1 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">
@@ -75,7 +75,7 @@ export default function AutomatyzacjaRaportowaniaArticle() {
               {
                 label: "Co to oznacza",
                 content: (
-                  <div className="py-10 lg:py-12 max-w-3xl mx-auto">
+                  <div className="py-6 lg:py-8 max-w-3xl mx-auto">
                     <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                       Co tak naprawdę oznacza automatyzacja raportowania
                     </h2>
@@ -134,7 +134,7 @@ export default function AutomatyzacjaRaportowaniaArticle() {
               {
                 label: "Od czego zacząć",
                 content: (
-                  <div className="py-10 lg:py-12 max-w-3xl mx-auto">
+                  <div className="py-6 lg:py-8 max-w-3xl mx-auto">
                     <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                       Od czego zacząć automatyzację raportowania
                     </h2>
@@ -205,7 +205,7 @@ export default function AutomatyzacjaRaportowaniaArticle() {
               {
                 label: "Dobry proces",
                 content: (
-                  <div className="py-10 lg:py-12 max-w-3xl mx-auto">
+                  <div className="py-6 lg:py-8 max-w-3xl mx-auto">
                     <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                       Jak wygląda dobrze zaprojektowany proces raportowania
                     </h2>
@@ -298,7 +298,7 @@ export default function AutomatyzacjaRaportowaniaArticle() {
               {
                 label: "Błędy i przykłady",
                 content: (
-                  <div className="py-10 lg:py-12 max-w-3xl mx-auto">
+                  <div className="py-6 lg:py-8 max-w-3xl mx-auto">
                     <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                       Najczęstsze błędy przy automatyzacji raportowania
                     </h2>
@@ -427,7 +427,7 @@ export default function AutomatyzacjaRaportowaniaArticle() {
               {
                 label: "Wdrożenie krok po kroku",
                 content: (
-                  <div className="py-10 lg:py-12 max-w-3xl mx-auto">
+                  <div className="py-6 lg:py-8 max-w-3xl mx-auto">
                     <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                       Jak wdrażać raportowanie krok po kroku
                     </h2>
@@ -541,7 +541,7 @@ export default function AutomatyzacjaRaportowaniaArticle() {
               {
                 label: "FAQ",
                 content: (
-                  <div className="py-10 lg:py-12 max-w-3xl mx-auto">
+                  <div className="py-6 lg:py-8 max-w-3xl mx-auto">
                     <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                       FAQ
                     </h2>

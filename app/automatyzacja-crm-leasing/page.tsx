@@ -205,7 +205,7 @@ export default function AutomatyzacjaCrmLeasing() {
         />
 
         {/* Hero — kompaktowy */}
-        <section className="pt-24 pb-12 bg-gradient-to-b from-accent/10 to-transparent border-b border-gray-100 dark:border-gray-800">
+        <section className="pt-16 pb-6 bg-gradient-to-b from-accent/10 to-transparent border-b border-gray-100 dark:border-gray-800">
           <div className="container-wide">
             <div className="max-w-3xl mx-auto text-center">
               <p className="section-label mb-4">Branża: leasing i finanse</p>
@@ -242,7 +242,7 @@ export default function AutomatyzacjaCrmLeasing() {
               {
                 label: "Specyfika branży",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <span className="section-label">Specyfika branży</span>
                       <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-6">
@@ -283,7 +283,7 @@ export default function AutomatyzacjaCrmLeasing() {
               {
                 label: "Problem biznesowy",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <span className="section-label">Problem biznesowy</span>
                       <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-6">
@@ -327,7 +327,7 @@ export default function AutomatyzacjaCrmLeasing() {
               {
                 label: "Objawy",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <span className="section-label">Objawy</span>
                       <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-6">
@@ -366,7 +366,7 @@ export default function AutomatyzacjaCrmLeasing() {
               {
                 label: "Koszt problemu",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <span className="section-label">Koszt problemu</span>
                       <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-6">
@@ -437,7 +437,7 @@ export default function AutomatyzacjaCrmLeasing() {
               {
                 label: "Przed wdrożeniem",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <span className="section-label">Przed wdrożeniem</span>
                       <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-8">
@@ -465,7 +465,7 @@ export default function AutomatyzacjaCrmLeasing() {
               {
                 label: "Po wdrożeniu",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <span className="section-label">Po wdrożeniu</span>
                       <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-8">
@@ -493,7 +493,7 @@ export default function AutomatyzacjaCrmLeasing() {
               {
                 label: "Diagram",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto mb-10">
                       <span className="section-label">Diagram</span>
                       <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-4">
@@ -563,7 +563,7 @@ export default function AutomatyzacjaCrmLeasing() {
               {
                 label: "Pierwszy etap",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <span className="section-label">Pierwszy etap</span>
                       <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-6">
@@ -598,7 +598,7 @@ export default function AutomatyzacjaCrmLeasing() {
               {
                 label: "Antywzorce",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <span className="section-label">Antywzorce</span>
                       <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-6">
@@ -638,7 +638,7 @@ export default function AutomatyzacjaCrmLeasing() {
               {
                 label: "Cennik",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <span className="section-label">Cennik</span>
                       <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-4">
@@ -689,7 +689,7 @@ export default function AutomatyzacjaCrmLeasing() {
               {
                 label: "FAQ",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-12 text-center">
                         Najczęstsze pytania
@@ -733,7 +733,7 @@ export default function AutomatyzacjaCrmLeasing() {
               {
                 label: "Powiązane",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
                         Powiązane
@@ -833,7 +833,7 @@ export default function AutomatyzacjaCrmLeasing() {
               {
                 label: "Audyt",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-2xl mx-auto text-center">
                       <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
                         Audyt procesu leadów dla biura brokerskiego

@@ -111,7 +111,7 @@ export default function CaseStudy() {
         <Breadcrumbs items={[{ label: "Case study" }]} />
 
         {/* Hero — kompaktowy */}
-        <section className="pt-24 pb-12">
+        <section className="pt-16 pb-6">
           <div className="container-wide">
             <div className="max-w-3xl">
               <p className="section-label mb-3">Case study</p>
@@ -145,7 +145,7 @@ export default function CaseStudy() {
               {
                 label: "Przykłady wdrożeń",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-4xl space-y-6">
                       {examples.map((ex) => {
                         const meta = KIND_META[ex.kind];
@@ -250,7 +250,7 @@ export default function CaseStudy() {
               {
                 label: "Jak liczę efekt",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-5">
                         Jak liczę efekt wdrożenia
@@ -315,7 +315,7 @@ export default function CaseStudy() {
               {
                 label: "Kontakt",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-2xl mx-auto text-center">
                       <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
                         Chcesz, żeby Twoje wdrożenie trafiło tutaj?

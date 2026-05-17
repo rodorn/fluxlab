@@ -1126,7 +1126,7 @@ function ResultCard({
 
       {/* Header */}
       <div
-        className={`px-6 pt-6 pb-4 ${isBest ? "bg-accent/5 dark:bg-accent/10" : "bg-gray-50 dark:bg-gray-800/50"}`}
+        className={`px-5 pt-5 pb-3 ${isBest ? "bg-accent/5 dark:bg-accent/10" : "bg-gray-50 dark:bg-gray-800/50"}`}
       >
         <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-0.5">
           {result.label}
@@ -1145,12 +1145,12 @@ function ResultCard({
       </div>
 
       {/* Donut chart */}
-      <div className="px-6 py-4 border-t border-b border-gray-100 dark:border-gray-800">
+      <div className="px-5 py-3 border-t border-b border-gray-100 dark:border-gray-800">
         <DonutChart slices={chartSlices} viewMode={viewMode} />
       </div>
 
       {/* Rows */}
-      <div className="px-6 py-4 space-y-2">
+      <div className="px-5 py-3 space-y-2">
         {rows.map((r) => (
           <div
             key={r.label}
@@ -1517,13 +1517,13 @@ export default function TaxCalculator() {
 
   return (
     <div className="max-w-[120rem] mx-auto">
-      <div className="grid min-[1800px]:grid-cols-[1fr_1fr] gap-10">
+      <div className="grid min-[1800px]:grid-cols-[1fr_1fr] gap-6">
         {/* ══════ LEFT COLUMN (inputs) ══════ */}
-        <div className="max-w-6xl space-y-10">
+        <div className="max-w-6xl space-y-6">
           {/* ── INPUTS ── */}
-          <div className="grid lg:grid-cols-2 gap-8">
+          <div className="grid lg:grid-cols-2 gap-5">
             {/* ────── LEFT: Przychody i koszty ────── */}
-            <div className="space-y-6 rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900/50 p-6">
+            <div className="space-y-4 rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900/50 p-5">
               <h2 className="flex items-center gap-2 text-lg font-bold text-gray-900 dark:text-white">
                 <svg
                   className="w-5 h-5 text-accent"
@@ -2036,7 +2036,7 @@ export default function TaxCalculator() {
             </div>
 
             {/* ────── RIGHT: ZUS, VAT ────── */}
-            <div className="space-y-6 rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900/50 p-6">
+            <div className="space-y-4 rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900/50 p-5">
               <h2 className="flex items-center gap-2 text-lg font-bold text-gray-900 dark:text-white">
                 <svg
                   className="w-5 h-5 text-accent"
@@ -2285,7 +2285,7 @@ export default function TaxCalculator() {
         {/* /max-w-6xl (left column inputs) */}
 
         {/* ══════ RIGHT COLUMN (results) ══════ */}
-        <div className="space-y-10 min-[1800px]:self-start min-[1800px]:sticky min-[1800px]:top-20">
+        <div className="space-y-6 min-[1800px]:self-start min-[1800px]:sticky min-[1800px]:top-20">
           {/* ── VIEW TOGGLE + RESULTS HEADER ── */}
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <h2 className="text-xl font-bold text-gray-900 dark:text-white">
@@ -2310,7 +2310,7 @@ export default function TaxCalculator() {
           </div>
 
           {/* ── COMPARISON BAR ── */}
-          <div className="rounded-2xl border border-gray-200 dark:border-gray-700 p-6 bg-white dark:bg-gray-900/50">
+          <div className="rounded-2xl border border-gray-200 dark:border-gray-700 p-5 bg-white dark:bg-gray-900/50">
             <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-4">
               Do dyspozycji {viewMode === "monthly" ? "miesięcznie" : "rocznie"}
             </h3>
@@ -2351,7 +2351,7 @@ export default function TaxCalculator() {
           </div>
 
           {/* ── RESULTS ── */}
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-4">
             {(
               [results.skala, results.linear, results.ryczalt] as TaxResult[]
             ).map((r) => (
@@ -2373,20 +2373,20 @@ export default function TaxCalculator() {
 
           {/* ── INFO TABLE ── */}
           <div className="rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900/50 overflow-hidden text-sm text-gray-600 dark:text-gray-400">
-            <div className="relative h-32 sm:h-40">
+            <div className="relative h-24 sm:h-28">
               <Image
                 src="/photos/tax-calculation/urzad-skarbowy-plate.jpg"
                 alt="Urząd Skarbowy"
                 fill
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/70 flex items-end p-6">
+              <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/70 flex items-end p-5">
                 <h3 className="flex items-center gap-2 font-semibold text-white text-lg">
                   Stawki i założenia ({YEAR})
                 </h3>
               </div>
             </div>
-            <div className="p-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-2 text-xs">
+            <div className="p-5 grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-2 text-xs">
               <div>
                 <strong>Kwota wolna:</strong> {pln(TAX_FREE)}
               </div>

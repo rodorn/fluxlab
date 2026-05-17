@@ -76,7 +76,7 @@ export default function MakeVsN8nArticle() {
         />
 
         {/* Kompaktowy nagłówek */}
-        <section className="pt-24 pb-10">
+        <section className="pt-16 pb-6">
           <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
             <span className="section-label">Strefa wiedzy</span>
             <h1 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">
@@ -100,7 +100,7 @@ export default function MakeVsN8nArticle() {
               {
                 label: "Charakterystyka i pricing",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                         Make i n8n — krótka charakterystyka
@@ -198,7 +198,7 @@ export default function MakeVsN8nArticle() {
               {
                 label: "Nauka i elastyczność",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                         Krzywa nauki i UX
@@ -307,7 +307,7 @@ export default function MakeVsN8nArticle() {
               {
                 label: "Skalowanie i decyzja",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                         Skalowanie — co się dzieje przy wzroście
@@ -481,7 +481,7 @@ export default function MakeVsN8nArticle() {
               {
                 label: "FAQ",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                         FAQ
@@ -521,7 +521,7 @@ export default function MakeVsN8nArticle() {
               {
                 label: "Kontakt",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
                       <PrevNextArticle currentHref="/strefa-wiedzy/make-vs-n8n" />
 

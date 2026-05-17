@@ -45,7 +45,7 @@ export default function AutomatyzacjaProcesowArticle() {
         />
 
         {/* Nagłówek artykułu — kompaktowy */}
-        <section className="pt-24 pb-10">
+        <section className="pt-16 pb-6">
           <div className="max-w-3xl mx-auto px-6 lg:px-8">
             <span className="section-label">Strefa wiedzy</span>
             <h1 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">
@@ -75,7 +75,7 @@ export default function AutomatyzacjaProcesowArticle() {
               {
                 label: "Czym jest",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                         Czym naprawdę jest automatyzacja procesów biznesowych
@@ -166,7 +166,7 @@ export default function AutomatyzacjaProcesowArticle() {
               {
                 label: "Gdzie daje efekt",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                         Gdzie automatyzacja daje największy efekt
@@ -270,7 +270,15 @@ export default function AutomatyzacjaProcesowArticle() {
                         <li>przypomnienia o braku reakcji,</li>
                         <li>raportowanie liczby i typów zgłoszeń.</li>
                       </ul>
-
+                    </div>
+                  </div>
+                ),
+              },
+              {
+                label: "Jak to działa",
+                content: (
+                  <div className="py-6 lg:py-8">
+                    <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                         Jak wygląda automatyzacja w praktyce
                       </h2>
@@ -301,9 +309,9 @@ export default function AutomatyzacjaProcesowArticle() {
                 ),
               },
               {
-                label: "Błędy i case'y",
+                label: "Najczęstsze błędy",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                         Najczęstsze błędy przy wdrażaniu automatyzacji
@@ -388,7 +396,15 @@ export default function AutomatyzacjaProcesowArticle() {
                           Zamów diagnozę procesu
                         </Link>
                       </div>
-
+                    </div>
+                  </div>
+                ),
+              },
+              {
+                label: "Case'y",
+                content: (
+                  <div className="py-6 lg:py-8">
+                    <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                         Mini-case 1: Obsługa leadów w firmie B2B
                       </h2>
@@ -444,7 +460,7 @@ export default function AutomatyzacjaProcesowArticle() {
               {
                 label: "Od czego zacząć",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                         Od czego zacząć automatyzację procesów biznesowych
@@ -564,7 +580,7 @@ export default function AutomatyzacjaProcesowArticle() {
               {
                 label: "FAQ i podsumowanie",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                         Najczęściej zadawane pytania

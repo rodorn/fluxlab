@@ -81,7 +81,7 @@ export default function ZapierMakeN8nPorownanieArticle() {
         />
 
         {/* Kompaktowy nagłówek */}
-        <section className="pt-24 pb-10">
+        <section className="pt-16 pb-6">
           <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
             <span className="section-label">Strefa wiedzy</span>
             <h1 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">
@@ -105,7 +105,7 @@ export default function ZapierMakeN8nPorownanieArticle() {
               {
                 label: "Filozofie i pricing",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                         Krótko: trzy narzędzia, trzy filozofie
@@ -214,7 +214,7 @@ export default function ZapierMakeN8nPorownanieArticle() {
               {
                 label: "Integracje i nauka",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                         Integracje — kto pokrywa co
@@ -321,7 +321,7 @@ export default function ZapierMakeN8nPorownanieArticle() {
               {
                 label: "Skalowanie i compliance",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                         Skalowalność — co się dzieje przy wzroście wolumenu
@@ -406,7 +406,7 @@ export default function ZapierMakeN8nPorownanieArticle() {
               {
                 label: "Decyzja i podsumowanie",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                         Decyzja w 4 krokach — który wybrać
@@ -567,7 +567,7 @@ export default function ZapierMakeN8nPorownanieArticle() {
               {
                 label: "FAQ",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                         FAQ
@@ -607,7 +607,7 @@ export default function ZapierMakeN8nPorownanieArticle() {
               {
                 label: "Kontakt",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
                       <PrevNextArticle currentHref="/strefa-wiedzy/zapier-make-n8n-porownanie" />
 

@@ -393,7 +393,7 @@ export default function ZapierVsMakeArticle() {
                 ),
               },
               {
-                label: "Wybór i FAQ",
+                label: "Który wybrać",
                 content: (
                   <div className="max-w-3xl mx-auto px-6 lg:px-8 py-6 lg:py-8">
                     {/* Sekcja 8 */}
@@ -489,7 +489,13 @@ export default function ZapierVsMakeArticle() {
                       które przesądzą wybór szybciej niż jakakolwiek lista
                       funkcji.
                     </p>
-
+                  </div>
+                ),
+              },
+              {
+                label: "FAQ",
+                content: (
+                  <div className="max-w-3xl mx-auto px-6 lg:px-8 py-6 lg:py-8">
                     {/* FAQ */}
                     <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                       FAQ

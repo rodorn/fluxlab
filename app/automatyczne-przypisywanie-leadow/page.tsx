@@ -192,7 +192,7 @@ export default function AutomatycznePrzypisywanieLeadow() {
         <Breadcrumbs items={[{ label: "Automatyczne przypisywanie leadów" }]} />
 
         {/* Hero — kompaktowy */}
-        <section className="pt-24 pb-12 bg-gradient-to-b from-accent/10 to-transparent border-b border-gray-100 dark:border-gray-800">
+        <section className="pt-16 pb-6 bg-gradient-to-b from-accent/10 to-transparent border-b border-gray-100 dark:border-gray-800">
           <div className="container-wide">
             <div className="max-w-3xl mx-auto text-center">
               <span className="section-label">Lead routing CRM</span>
@@ -234,7 +234,7 @@ export default function AutomatycznePrzypisywanieLeadow() {
               {
                 label: "Problem",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     {/* Problem biznesowy */}
                     <section className="">
                       <div className="">
@@ -287,7 +287,7 @@ export default function AutomatycznePrzypisywanieLeadow() {
                     </section>
 
                     {/* Objawy w firmie */}
-                    <section className="mt-16 lg:mt-24 pt-16 lg:pt-24 border-t border-gray-100 dark:border-gray-800">
+                    <section className="mt-10 lg:mt-12 pt-10 lg:pt-12 border-t border-gray-100 dark:border-gray-800">
                       <div className="">
                         <div className="max-w-3xl mx-auto">
                           <span className="section-label">Objawy w firmie</span>
@@ -336,9 +336,15 @@ export default function AutomatycznePrzypisywanieLeadow() {
                         </div>
                       </div>
                     </section>
-
+                  </div>
+                ),
+              },
+              {
+                label: "Koszt",
+                content: (
+                  <div className="py-6 lg:py-8">
                     {/* Koszt problemu */}
-                    <section className="mt-16 lg:mt-24 pt-16 lg:pt-24 border-t border-gray-100 dark:border-gray-800">
+                    <section className="">
                       <div className="">
                         <div className="max-w-3xl mx-auto">
                           <span className="section-label">Koszt problemu</span>
@@ -409,7 +415,7 @@ export default function AutomatycznePrzypisywanieLeadow() {
               {
                 label: "Proces",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     {/* Proces przed i po */}
                     <section className="">
                       <div className="">
@@ -447,7 +453,7 @@ export default function AutomatycznePrzypisywanieLeadow() {
                     </section>
 
                     {/* Diagram */}
-                    <section className="mt-16 lg:mt-24 pt-16 lg:pt-24 border-t border-gray-100 dark:border-gray-800">
+                    <section className="mt-10 lg:mt-12 pt-10 lg:pt-12 border-t border-gray-100 dark:border-gray-800">
                       <div className="">
                         <div className="max-w-4xl mx-auto">
                           <div className="mb-10">
@@ -522,7 +528,7 @@ export default function AutomatycznePrzypisywanieLeadow() {
               {
                 label: "Wdrożenie",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     {/* Co wdrożyć w 1. etapie */}
                     <section className="">
                       <div className="">
@@ -601,7 +607,7 @@ export default function AutomatycznePrzypisywanieLeadow() {
                     </section>
 
                     {/* Typowe błędy */}
-                    <section className="mt-16 lg:mt-24 pt-16 lg:pt-24 border-t border-gray-100 dark:border-gray-800">
+                    <section className="mt-10 lg:mt-12 pt-10 lg:pt-12 border-t border-gray-100 dark:border-gray-800">
                       <div className="">
                         <div className="max-w-3xl mx-auto">
                           <span className="section-label">Antywzorce</span>
@@ -635,9 +641,9 @@ export default function AutomatycznePrzypisywanieLeadow() {
                 ),
               },
               {
-                label: "Cennik i FAQ",
+                label: "Cennik",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     {/* Cennik */}
                     <section className="">
                       <div className="">
@@ -693,9 +699,15 @@ export default function AutomatycznePrzypisywanieLeadow() {
                         </div>
                       </div>
                     </section>
-
+                  </div>
+                ),
+              },
+              {
+                label: "FAQ",
+                content: (
+                  <div className="py-6 lg:py-8">
                     {/* FAQ */}
-                    <section className="mt-16 lg:mt-24 pt-16 lg:pt-24 border-t border-gray-100 dark:border-gray-800">
+                    <section className="">
                       <div className="">
                         <div className="max-w-3xl mx-auto">
                           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-12 text-center">
@@ -776,7 +788,7 @@ export default function AutomatycznePrzypisywanieLeadow() {
                     </section>
 
                     {/* Final CTA */}
-                    <section className="mt-16 lg:mt-24 pt-16 lg:pt-24 border-t border-gray-100 dark:border-gray-800">
+                    <section className="mt-10 lg:mt-12 pt-10 lg:pt-12 border-t border-gray-100 dark:border-gray-800">
                       <div className="">
                         <div className="max-w-2xl mx-auto text-center">
                           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">

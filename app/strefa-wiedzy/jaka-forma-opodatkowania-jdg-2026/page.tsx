@@ -73,7 +73,7 @@ export default function JakaFormaOpodatkowaniaJdgArticle() {
           ]}
         />
         {/* Kompaktowy nagłówek */}
-        <section className="pt-24 pb-10">
+        <section className="pt-16 pb-6">
           <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
             <span className="section-label">Strefa wiedzy</span>
             <h1 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">
@@ -98,7 +98,7 @@ export default function JakaFormaOpodatkowaniaJdgArticle() {
               {
                 label: "Trzy formy",
                 content: (
-                  <div className="py-10 lg:py-12 max-w-3xl mx-auto">
+                  <div className="py-6 lg:py-8 max-w-3xl mx-auto">
                     <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                       Trzy formy opodatkowania JDG — krótkie podsumowanie
                     </h2>
@@ -156,7 +156,7 @@ export default function JakaFormaOpodatkowaniaJdgArticle() {
               {
                 label: "Skala podatkowa",
                 content: (
-                  <div className="py-10 lg:py-12 max-w-3xl mx-auto">
+                  <div className="py-6 lg:py-8 max-w-3xl mx-auto">
                     <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                       Skala podatkowa — kiedy ma sens
                     </h2>
@@ -207,7 +207,7 @@ export default function JakaFormaOpodatkowaniaJdgArticle() {
               {
                 label: "Podatek liniowy",
                 content: (
-                  <div className="py-10 lg:py-12 max-w-3xl mx-auto">
+                  <div className="py-6 lg:py-8 max-w-3xl mx-auto">
                     <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                       Podatek liniowy — kiedy ma sens
                     </h2>
@@ -259,7 +259,7 @@ export default function JakaFormaOpodatkowaniaJdgArticle() {
               {
                 label: "Ryczałt",
                 content: (
-                  <div className="py-10 lg:py-12 max-w-3xl mx-auto">
+                  <div className="py-6 lg:py-8 max-w-3xl mx-auto">
                     <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                       Ryczałt ewidencjonowany — kiedy ma sens
                     </h2>
@@ -315,7 +315,7 @@ export default function JakaFormaOpodatkowaniaJdgArticle() {
               {
                 label: "Składka zdrowotna",
                 content: (
-                  <div className="py-10 lg:py-12 max-w-3xl mx-auto">
+                  <div className="py-6 lg:py-8 max-w-3xl mx-auto">
                     <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                       Składka zdrowotna — klucz do porównania
                     </h2>
@@ -388,7 +388,7 @@ export default function JakaFormaOpodatkowaniaJdgArticle() {
               {
                 label: "Jak wybrać formę",
                 content: (
-                  <div className="py-10 lg:py-12 max-w-3xl mx-auto">
+                  <div className="py-6 lg:py-8 max-w-3xl mx-auto">
                     <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                       Jak wybrać formę — praktyczny schemat
                     </h2>
@@ -447,7 +447,7 @@ export default function JakaFormaOpodatkowaniaJdgArticle() {
               {
                 label: "Pułapki i podsumowanie",
                 content: (
-                  <div className="py-10 lg:py-12 max-w-3xl mx-auto">
+                  <div className="py-6 lg:py-8 max-w-3xl mx-auto">
                     <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                       Najczęstsze pułapki przy wyborze formy
                     </h2>
@@ -519,7 +519,7 @@ export default function JakaFormaOpodatkowaniaJdgArticle() {
               {
                 label: "FAQ",
                 content: (
-                  <div className="py-10 lg:py-12 max-w-3xl mx-auto">
+                  <div className="py-6 lg:py-8 max-w-3xl mx-auto">
                     <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                       FAQ
                     </h2>

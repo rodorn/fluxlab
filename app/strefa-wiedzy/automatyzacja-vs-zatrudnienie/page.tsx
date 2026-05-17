@@ -85,7 +85,7 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
         />
 
         {/* Nagłówek artykułu — kompaktowy */}
-        <section className="pt-24 pb-10">
+        <section className="pt-16 pb-6">
           <div className="max-w-3xl mx-auto px-6 lg:px-8">
             <span className="section-label">Strefa wiedzy</span>
             <h1 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">
@@ -109,7 +109,7 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
               {
                 label: "Nie albo–albo",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                         Dlaczego to nie jest wybór „albo–albo”
@@ -148,9 +148,9 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
                 ),
               },
               {
-                label: "Realne koszty",
+                label: "Koszt zatrudnienia",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                         Realny koszt zatrudnienia w 2026
@@ -219,7 +219,15 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
                         </Link>{" "}
                         — to ten sam rachunek, tylko z drugiej strony.
                       </p>
-
+                    </div>
+                  </div>
+                ),
+              },
+              {
+                label: "Koszt automatyzacji",
+                content: (
+                  <div className="py-6 lg:py-8">
+                    <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                         Realny koszt automatyzacji — setup i utrzymanie
                       </h2>
@@ -295,9 +303,9 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
                 ),
               },
               {
-                label: "Co umie, framework",
+                label: "Co umie",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                         Co automatyzacja umie, a czego nie
@@ -369,7 +377,15 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
                         </Link>
                         .
                       </p>
-
+                    </div>
+                  </div>
+                ),
+              },
+              {
+                label: "Framework decyzji",
+                content: (
+                  <div className="py-6 lg:py-8">
+                    <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                         Framework decyzji — 4 pytania, które rozstrzygają
                       </h2>
@@ -430,9 +446,9 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
                 ),
               },
               {
-                label: "Hybryda i ryzyka",
+                label: "Hybryda",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                         Hybryda — scenariusz, który wygrywa najczęściej
@@ -502,7 +518,15 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
                         </Link>
                         .
                       </p>
-
+                    </div>
+                  </div>
+                ),
+              },
+              {
+                label: "Ryzyka",
+                content: (
+                  <div className="py-6 lg:py-8">
+                    <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                         Ryzyka zatrudnienia, o których się zapomina
                       </h2>
@@ -626,7 +650,7 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
               {
                 label: "Kiedy zatrudnić, błędy",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                         Kiedy zatrudnienie jest właściwą odpowiedzią
@@ -764,7 +788,7 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
               {
                 label: "FAQ",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                         FAQ

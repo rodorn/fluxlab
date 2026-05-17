@@ -196,7 +196,7 @@ export default function AutomatyzacjaDlaEcommerce() {
         <Breadcrumbs items={[{ label: "Automatyzacja dla e-commerce" }]} />
 
         {/* Hero — kompaktowy */}
-        <section className="relative pt-24 pb-12 overflow-hidden">
+        <section className="relative pt-16 pb-6 overflow-hidden">
           <div className="absolute inset-0 -z-10">
             <div className="absolute inset-0 bg-sky-50 dark:hidden" />
             <img
@@ -262,7 +262,7 @@ export default function AutomatyzacjaDlaEcommerce() {
               {
                 label: "Co automatyzujemy",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
                         Co automatyzujemy w e-commerce
@@ -300,7 +300,7 @@ export default function AutomatyzacjaDlaEcommerce() {
               {
                 label: "Konkretne problemy",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
                         Konkretne problemy, które rozwiązujemy
@@ -334,7 +334,7 @@ export default function AutomatyzacjaDlaEcommerce() {
               {
                 label: "Narzędzia",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
                         Narzędzia, z którymi pracujemy w e-commerce
@@ -396,7 +396,7 @@ export default function AutomatyzacjaDlaEcommerce() {
               {
                 label: "Dla kogo",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
                         Dla kogo
@@ -425,7 +425,7 @@ export default function AutomatyzacjaDlaEcommerce() {
               {
                 label: "FAQ",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-8">
                         Najczęściej zadawane pytania
@@ -464,7 +464,7 @@ export default function AutomatyzacjaDlaEcommerce() {
               {
                 label: "Diagnoza",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="container-wide">
                       <div className="max-w-2xl mx-auto text-center bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-10">
                         <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
@@ -491,7 +491,7 @@ export default function AutomatyzacjaDlaEcommerce() {
               {
                 label: "Powiązane",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <div className="grid md:grid-cols-2 gap-12">
                         <div>

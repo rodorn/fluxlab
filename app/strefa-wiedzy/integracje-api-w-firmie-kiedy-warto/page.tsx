@@ -44,7 +44,7 @@ export default function IntegracjeApiArticle() {
         />
 
         {/* Nagłówek artykułu — kompaktowy */}
-        <section className="pt-24 pb-10">
+        <section className="pt-16 pb-6">
           <div className="max-w-3xl mx-auto px-6 lg:px-8">
             <span className="section-label">Strefa wiedzy</span>
             <h1 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">
@@ -68,9 +68,9 @@ export default function IntegracjeApiArticle() {
             ariaLabel="Rozdziały artykułu"
             tabs={[
               {
-                label: "Czym są, kiedy warto",
+                label: "Czym są integracje",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                         Czym są integracje API
@@ -153,11 +153,19 @@ export default function IntegracjeApiArticle() {
                       <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
                         4. Gdy firma potrzebuje stabilniejszej architektury
                       </h3>
-                      <p className="text-gray-600 dark:text-gray-400 mb-8">
+                      <p className="text-gray-600 dark:text-gray-400">
                         Na początku wiele da się ogarnąć arkuszem. Ale z czasem
                         to przestaje być skalowalne.
                       </p>
-
+                    </div>
+                  </div>
+                ),
+              },
+              {
+                label: "Kiedy API to przesada",
+                content: (
+                  <div className="py-6 lg:py-8">
+                    <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                         Kiedy API nie jest najlepszym wyborem
                       </h2>
@@ -202,7 +210,7 @@ export default function IntegracjeApiArticle() {
               {
                 label: "Scenariusze i dobra integracja",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                         Najczęstsze scenariusze integracji API
@@ -293,7 +301,7 @@ export default function IntegracjeApiArticle() {
               {
                 label: "Błędy i case'y",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                         Najczęstsze błędy przy integracjach API
@@ -358,7 +366,7 @@ export default function IntegracjeApiArticle() {
               {
                 label: "Ocena, API vs AI",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                         Jak ocenić, czy API ma sens w Twojej firmie
@@ -426,7 +434,7 @@ export default function IntegracjeApiArticle() {
               {
                 label: "FAQ i podsumowanie",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                         Najczęściej zadawane pytania

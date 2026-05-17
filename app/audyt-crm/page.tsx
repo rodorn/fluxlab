@@ -74,7 +74,7 @@ export default function AudytCRMPage() {
         />
 
         {/* Hero — kompaktowy */}
-        <section className="pt-24 pb-12">
+        <section className="pt-16 pb-6">
           <div className="container-wide text-center max-w-3xl mx-auto">
             <p className="section-label mb-4">Narzędzie</p>
             <h1 className="text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -95,7 +95,7 @@ export default function AudytCRMPage() {
               {
                 label: "Audyt",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <AudytCRM />
                   </div>
                 ),
@@ -103,7 +103,7 @@ export default function AudytCRMPage() {
               {
                 label: "Jak interpretuję wynik",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                         Jak interpretuję wynik
@@ -158,7 +158,7 @@ export default function AudytCRMPage() {
               {
                 label: "Dla kogo",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                         Dla kogo jest ten audyt
@@ -230,7 +230,7 @@ export default function AudytCRMPage() {
               {
                 label: "FAQ",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-8">
                         Najczęstsze pytania
@@ -269,7 +269,7 @@ export default function AudytCRMPage() {
               {
                 label: "Powiązane treści",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-8">
                         Powiązane treści
@@ -334,7 +334,7 @@ export default function AudytCRMPage() {
               {
                 label: "Kontakt",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-2xl mx-auto text-center">
                       <div className="bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-10">
                         <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">

@@ -153,6 +153,67 @@ const faq = [
   },
 ];
 
+type Step = (typeof steps)[number];
+
+function renderStep(step: Step) {
+  return (
+    <div
+      key={step.number}
+      className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-6 lg:p-8"
+    >
+      <div className="flex flex-col lg:flex-row lg:items-start gap-6">
+        <div className="flex-shrink-0">
+          <span className="text-4xl lg:text-5xl font-bold text-accent">
+            {step.number}
+          </span>
+        </div>
+        <div className="flex-1">
+          <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-1">
+            {step.title}
+          </h2>
+          <p className="text-sm text-accent font-medium mb-3">
+            {step.duration}
+          </p>
+          <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
+            {step.description}
+          </p>
+          <div>
+            <p className="text-sm font-semibold text-gray-900 dark:text-white mb-2">
+              Co dostajesz:
+            </p>
+            <ul className="space-y-1.5">
+              {step.deliverables.map((d) => (
+                <li
+                  key={d}
+                  className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400"
+                >
+                  <svg
+                    className="flex-shrink-0 mt-0.5"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                  >
+                    <path
+                      d="M3 8l3 3 7-7"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="text-accent"
+                    />
+                  </svg>
+                  <span>{d}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function JakPracuje() {
   const faqSchema = {
     "@context": "https://schema.org",
@@ -174,11 +235,11 @@ export default function JakPracuje() {
         <Breadcrumbs items={[{ label: "Jak pracuję" }]} />
 
         {/* Hero — kompaktowy */}
-        <section className="pt-24 pb-12 bg-gray-50 dark:bg-gray-900/50 border-b border-gray-100 dark:border-gray-800">
+        <section className="pt-16 pb-6 bg-gray-50 dark:bg-gray-900/50 border-b border-gray-100 dark:border-gray-800">
           <div className="container-wide">
             <div className="max-w-3xl mx-auto text-center">
               <span className="section-label">Proces współpracy</span>
-              <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mt-4 mb-6 leading-tight">
+              <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mt-3 mb-4 leading-tight">
                 Jak pracuję
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -196,66 +257,21 @@ export default function JakPracuje() {
             ariaLabel="Sekcje strony Jak pracuję"
             tabs={[
               {
-                label: "Proces krok po kroku",
+                label: "Proces: diagnoza i audyt",
                 content: (
-                  <div className="py-10 lg:py-12">
-                    <div className="max-w-4xl mx-auto space-y-10">
-                      {steps.map((step) => (
-                        <div
-                          key={step.number}
-                          className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-8 lg:p-10"
-                        >
-                          <div className="flex flex-col lg:flex-row lg:items-start gap-6">
-                            <div className="flex-shrink-0">
-                              <span className="text-4xl lg:text-5xl font-bold text-accent">
-                                {step.number}
-                              </span>
-                            </div>
-                            <div className="flex-1">
-                              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-2">
-                                {step.title}
-                              </h2>
-                              <p className="text-sm text-accent font-medium mb-4">
-                                {step.duration}
-                              </p>
-                              <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                                {step.description}
-                              </p>
-                              <div>
-                                <p className="text-sm font-semibold text-gray-900 dark:text-white mb-3">
-                                  Co dostajesz:
-                                </p>
-                                <ul className="space-y-2">
-                                  {step.deliverables.map((d) => (
-                                    <li
-                                      key={d}
-                                      className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400"
-                                    >
-                                      <svg
-                                        className="flex-shrink-0 mt-0.5"
-                                        width="16"
-                                        height="16"
-                                        viewBox="0 0 16 16"
-                                        fill="none"
-                                      >
-                                        <path
-                                          d="M3 8l3 3 7-7"
-                                          stroke="currentColor"
-                                          strokeWidth="2"
-                                          strokeLinecap="round"
-                                          strokeLinejoin="round"
-                                          className="text-accent"
-                                        />
-                                      </svg>
-                                      <span>{d}</span>
-                                    </li>
-                                  ))}
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      ))}
+                  <div className="py-6 lg:py-8">
+                    <div className="max-w-4xl mx-auto space-y-6">
+                      {steps.slice(0, 2).map(renderStep)}
+                    </div>
+                  </div>
+                ),
+              },
+              {
+                label: "Proces: wdrożenie i wsparcie",
+                content: (
+                  <div className="py-6 lg:py-8">
+                    <div className="max-w-4xl mx-auto space-y-6">
+                      {steps.slice(2).map(renderStep)}
                     </div>
                   </div>
                 ),
@@ -263,11 +279,11 @@ export default function JakPracuje() {
               {
                 label: "Model rozliczeń",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-4xl mx-auto">
-                      <div className="text-center mb-12">
+                      <div className="text-center mb-8">
                         <span className="section-label">Model rozliczeń</span>
-                        <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-4">
+                        <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-3 mb-3">
                           Jak wygląda cena
                         </h2>
                         <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
@@ -298,12 +314,12 @@ export default function JakPracuje() {
               {
                 label: "FAQ",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4 text-center">
                         Najczęstsze pytania
                       </h2>
-                      <p className="text-gray-600 dark:text-gray-400 mb-12 text-center">
+                      <p className="text-gray-600 dark:text-gray-400 mb-8 text-center">
                         Konkretne odpowiedzi na to, o co klienci pytają
                         najczęściej przed podpisaniem umowy.
                       </p>
@@ -346,7 +362,7 @@ export default function JakPracuje() {
               {
                 label: "Kontakt",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-2xl mx-auto text-center">
                       <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
                         Zamów diagnozę procesu

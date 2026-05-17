@@ -55,7 +55,7 @@ export default function HubspotVsPipedriveArticle() {
         />
 
         {/* Nagłówek artykułu — kompaktowy */}
-        <section className="pt-24 pb-10">
+        <section className="pt-16 pb-6">
           <div className="container-wide max-w-3xl mx-auto">
             <span className="section-label">Strefa wiedzy</span>
             <h1 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">
@@ -79,7 +79,7 @@ export default function HubspotVsPipedriveArticle() {
               {
                 label: "Podejścia i cennik",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                         Dwa różne podejścia
@@ -160,7 +160,7 @@ export default function HubspotVsPipedriveArticle() {
               {
                 label: "Funkcje i marketing",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                         Funkcje sprzedażowe
@@ -214,7 +214,7 @@ export default function HubspotVsPipedriveArticle() {
               {
                 label: "Lock-in i automatyzacja",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                         Lock-in i ścieżka skalowania
@@ -279,7 +279,7 @@ export default function HubspotVsPipedriveArticle() {
               {
                 label: "Dla kogo, scenariusze",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                         Dla kogo HubSpot, dla kogo Pipedrive
@@ -398,9 +398,9 @@ export default function HubspotVsPipedriveArticle() {
                 ),
               },
               {
-                label: "Wdrożenie i FAQ",
+                label: "Wdrożenie",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                         Jak wygląda wdrożenie tydzień po tygodniu
@@ -454,7 +454,15 @@ export default function HubspotVsPipedriveArticle() {
                         brakujących pól i reguł. Po tym etapie firma ma
                         działający CRM, a nie tylko kupione licencje.
                       </p>
-
+                    </div>
+                  </div>
+                ),
+              },
+              {
+                label: "FAQ",
+                content: (
+                  <div className="py-6 lg:py-8">
+                    <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                         FAQ
                       </h2>

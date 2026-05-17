@@ -42,7 +42,7 @@ export default function RoiAutomatyzacjiArticle() {
           ]}
         />
         {/* Kompaktowy nagłówek */}
-        <section className="pt-24 pb-10">
+        <section className="pt-16 pb-6">
           <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
             <span className="section-label">Strefa wiedzy</span>
             <h1 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">
@@ -70,7 +70,7 @@ export default function RoiAutomatyzacjiArticle() {
               {
                 label: "Czym jest ROI",
                 content: (
-                  <div className="py-10 lg:py-12 max-w-3xl mx-auto">
+                  <div className="py-6 lg:py-8 max-w-3xl mx-auto">
                     <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                       Czym właściwie jest ROI z automatyzacji
                     </h2>
@@ -132,7 +132,7 @@ export default function RoiAutomatyzacjiArticle() {
               {
                 label: "Koszty i korzyści",
                 content: (
-                  <div className="py-10 lg:py-12 max-w-3xl mx-auto">
+                  <div className="py-6 lg:py-8 max-w-3xl mx-auto">
                     <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                       Co liczyć po stronie kosztów
                     </h2>
@@ -217,7 +217,7 @@ export default function RoiAutomatyzacjiArticle() {
               {
                 label: "Model liczenia",
                 content: (
-                  <div className="py-10 lg:py-12 max-w-3xl mx-auto">
+                  <div className="py-6 lg:py-8 max-w-3xl mx-auto">
                     <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                       Najprostszy model liczenia ROI
                     </h2>
@@ -287,7 +287,7 @@ export default function RoiAutomatyzacjiArticle() {
               {
                 label: "Przykłady i mini-case'y",
                 content: (
-                  <div className="py-10 lg:py-12 max-w-3xl mx-auto">
+                  <div className="py-6 lg:py-8 max-w-3xl mx-auto">
                     <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                       Przykład 1: ROI z automatyzacji leadów
                     </h2>
@@ -386,7 +386,7 @@ export default function RoiAutomatyzacjiArticle() {
               {
                 label: "Jak nie zepsuć",
                 content: (
-                  <div className="py-10 lg:py-12 max-w-3xl mx-auto">
+                  <div className="py-6 lg:py-8 max-w-3xl mx-auto">
                     <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                       Jak nie zepsuć liczenia ROI
                     </h2>
@@ -477,7 +477,7 @@ export default function RoiAutomatyzacjiArticle() {
               {
                 label: "FAQ",
                 content: (
-                  <div className="py-10 lg:py-12 max-w-3xl mx-auto">
+                  <div className="py-6 lg:py-8 max-w-3xl mx-auto">
                     <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                       FAQ
                     </h2>

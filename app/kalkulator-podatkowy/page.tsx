@@ -72,19 +72,19 @@ export default function KalkulatorPodatkowyPage() {
         <Breadcrumbs items={[{ label: "Kalkulator podatkowy" }]} />
 
         {/* Hero — kompaktowy */}
-        <section className="pt-24 pb-12">
+        <section className="pt-16 pb-6">
           <div className="container-wide max-w-5xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-10 items-center">
+            <div className="grid lg:grid-cols-2 gap-8 items-center">
               <div className="text-center lg:text-left">
-                <p className="section-label mb-4">Narzędzie</p>
+                <p className="section-label mb-3">Narzędzie</p>
                 <h1 className="text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 dark:text-white">
                   Kalkulator JDG 2026
                 </h1>
-                <p className="mt-4 text-lg text-gray-600 dark:text-gray-400">
+                <p className="mt-3 text-lg text-gray-600 dark:text-gray-400">
                   Porównaj ryczałt, podatek liniowy i skalę podatkową.
                   Uwzględnij ZUS, zdrowotną, VAT, koszty prywatne i samochód.
                 </p>
-                <ul className="mt-6 space-y-2.5">
+                <ul className="mt-4 space-y-2">
                   {[
                     "VAT: czynny, zwolniony lub marża",
                     "Pełny ZUS, mały ZUS i ulgi dla nowych firm",
@@ -159,7 +159,7 @@ export default function KalkulatorPodatkowyPage() {
               {
                 label: "Kalkulator",
                 content: (
-                  <div className="py-8 lg:py-10">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-6xl min-[1800px]:max-w-none mx-auto">
                       <TaxCalculator />
                     </div>
@@ -169,8 +169,8 @@ export default function KalkulatorPodatkowyPage() {
               {
                 label: "Jak działa",
                 content: (
-                  <div className="py-10 lg:py-12">
-                    <div className="max-w-3xl space-y-12">
+                  <div className="py-6 lg:py-8">
+                    <div className="max-w-3xl space-y-8">
                       <div>
                         <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                           Jak działa kalkulator
@@ -226,8 +226,8 @@ export default function KalkulatorPodatkowyPage() {
               {
                 label: "Dla kogo",
                 content: (
-                  <div className="py-10 lg:py-12">
-                    <div className="max-w-3xl space-y-12">
+                  <div className="py-6 lg:py-8">
+                    <div className="max-w-3xl space-y-8">
                       <div>
                         <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                           Dla kogo jest ten kalkulator
@@ -355,8 +355,8 @@ export default function KalkulatorPodatkowyPage() {
               {
                 label: "Częste błędy",
                 content: (
-                  <div className="py-10 lg:py-12">
-                    <div className="max-w-3xl space-y-12">
+                  <div className="py-6 lg:py-8">
+                    <div className="max-w-3xl space-y-8">
                       <div>
                         <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                           Kiedy ryczałt przegrywa z liniowym
@@ -446,41 +446,47 @@ export default function KalkulatorPodatkowyPage() {
               {
                 label: "FAQ",
                 content: (
-                  <div className="py-10 lg:py-12">
-                    <div className="max-w-3xl space-y-12">
-                      <div>
-                        <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-8">
-                          Najczęstsze pytania
-                        </h2>
-                        <div className="space-y-4">
-                          {faqs.map((faq) => (
-                            <details
-                              key={faq.question}
-                              className="group rounded-2xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800/60"
-                            >
-                              <summary className="flex items-center justify-between cursor-pointer p-6 text-gray-900 dark:text-white font-medium list-none">
-                                {faq.question}
-                                <svg
-                                  className="shrink-0 ml-4 w-5 h-5 text-gray-400 transition-transform group-open:rotate-45"
-                                  viewBox="0 0 20 20"
-                                  fill="none"
-                                >
-                                  <path
-                                    d="M10 4v12M4 10h12"
-                                    stroke="currentColor"
-                                    strokeWidth="1.5"
-                                    strokeLinecap="round"
-                                  />
-                                </svg>
-                              </summary>
-                              <div className="px-6 pb-6 text-sm text-gray-600 dark:text-gray-400">
-                                {faq.answer}
-                              </div>
-                            </details>
-                          ))}
-                        </div>
+                  <div className="py-6 lg:py-8">
+                    <div className="max-w-3xl">
+                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                        Najczęstsze pytania
+                      </h2>
+                      <div className="space-y-3">
+                        {faqs.map((faq) => (
+                          <details
+                            key={faq.question}
+                            className="group rounded-2xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800/60"
+                          >
+                            <summary className="flex items-center justify-between cursor-pointer p-6 text-gray-900 dark:text-white font-medium list-none">
+                              {faq.question}
+                              <svg
+                                className="shrink-0 ml-4 w-5 h-5 text-gray-400 transition-transform group-open:rotate-45"
+                                viewBox="0 0 20 20"
+                                fill="none"
+                              >
+                                <path
+                                  d="M10 4v12M4 10h12"
+                                  stroke="currentColor"
+                                  strokeWidth="1.5"
+                                  strokeLinecap="round"
+                                />
+                              </svg>
+                            </summary>
+                            <div className="px-6 pb-6 text-sm text-gray-600 dark:text-gray-400">
+                              {faq.answer}
+                            </div>
+                          </details>
+                        ))}
                       </div>
-
+                    </div>
+                  </div>
+                ),
+              },
+              {
+                label: "Źródła i artykuły",
+                content: (
+                  <div className="py-6 lg:py-8">
+                    <div className="max-w-3xl space-y-8">
                       <div className="rounded-2xl border border-gray-100 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/40 p-6 space-y-4 text-sm text-gray-600 dark:text-gray-400">
                         <h3 className="text-base font-semibold text-gray-900 dark:text-white">
                           Źródła i aktualność
@@ -544,10 +550,10 @@ export default function KalkulatorPodatkowyPage() {
                       </div>
 
                       <div>
-                        <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-8">
+                        <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-5">
                           Powiązane artykuły
                         </h2>
-                        <div className="grid md:grid-cols-2 gap-4">
+                        <div className="grid md:grid-cols-2 gap-3">
                           {[
                             {
                               href: "/strefa-wiedzy/jaka-forma-opodatkowania-jdg-2026",
@@ -590,9 +596,9 @@ export default function KalkulatorPodatkowyPage() {
                             <Link
                               key={article.href}
                               href={article.href}
-                              className="block p-6 rounded-2xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800/60 hover:border-accent/30 dark:hover:border-accent/50 transition-colors group"
+                              className="block p-4 rounded-xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800/60 hover:border-accent/30 dark:hover:border-accent/50 transition-colors group"
                             >
-                              <h3 className="text-base font-semibold text-gray-900 dark:text-white group-hover:text-accent transition-colors mb-2">
+                              <h3 className="text-base font-semibold text-gray-900 dark:text-white group-hover:text-accent transition-colors mb-1">
                                 {article.title}
                               </h3>
                               <p className="text-sm text-gray-500 dark:text-gray-400">
@@ -603,12 +609,12 @@ export default function KalkulatorPodatkowyPage() {
                         </div>
                       </div>
 
-                      <div className="bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-10 text-center">
-                        <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
+                      <div className="bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-8 text-center">
+                        <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-3">
                           Potrzebujesz automatyzacji rozliczeń lub procesów w
                           firmie?
                         </h2>
-                        <p className="text-gray-500 dark:text-gray-400 mb-8">
+                        <p className="text-gray-500 dark:text-gray-400 mb-6">
                           Jeśli prowadzisz firmę i chcesz usprawnić procesy,
                           raportowanie lub integracje, porozmawiajmy.
                         </p>

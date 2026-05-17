@@ -222,7 +222,7 @@ export default function AutomatyzacjaFollowUp() {
         <Breadcrumbs items={[{ label: "Automatyzacja follow-upów w CRM" }]} />
 
         {/* Hero — kompaktowy */}
-        <section className="pt-24 pb-12 bg-gradient-to-b from-accent/10 to-transparent border-b border-gray-100 dark:border-gray-800">
+        <section className="pt-16 pb-6 bg-gradient-to-b from-accent/10 to-transparent border-b border-gray-100 dark:border-gray-800">
           <div className="container-wide">
             <div className="max-w-3xl mx-auto text-center">
               <span className="section-label">Follow-up w CRM</span>
@@ -263,7 +263,7 @@ export default function AutomatyzacjaFollowUp() {
               {
                 label: "Problem",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     {/* Problem */}
                     <section className="">
                       <div className="">
@@ -328,7 +328,7 @@ export default function AutomatyzacjaFollowUp() {
                     </section>
 
                     {/* Objawy */}
-                    <section className="mt-16 lg:mt-24 pt-16 lg:pt-24 border-t border-gray-100 dark:border-gray-800">
+                    <section className="mt-10 lg:mt-12 pt-10 lg:pt-12 border-t border-gray-100 dark:border-gray-800">
                       <div className="">
                         <div className="max-w-3xl mx-auto">
                           <div className="text-center mb-12">
@@ -373,9 +373,15 @@ export default function AutomatyzacjaFollowUp() {
                         </div>
                       </div>
                     </section>
-
+                  </div>
+                ),
+              },
+              {
+                label: "Koszt",
+                content: (
+                  <div className="py-6 lg:py-8">
                     {/* Koszt */}
-                    <section className="mt-16 lg:mt-24 pt-16 lg:pt-24 border-t border-gray-100 dark:border-gray-800">
+                    <section className="">
                       <div className="">
                         <div className="max-w-3xl mx-auto">
                           <div className="text-center mb-12">
@@ -428,7 +434,7 @@ export default function AutomatyzacjaFollowUp() {
               {
                 label: "Proces",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     {/* Proces przed */}
                     <section className="">
                       <div className="">
@@ -459,7 +465,7 @@ export default function AutomatyzacjaFollowUp() {
                     </section>
 
                     {/* Proces po */}
-                    <section className="mt-16 lg:mt-24 pt-16 lg:pt-24 border-t border-gray-100 dark:border-gray-800">
+                    <section className="mt-10 lg:mt-12 pt-10 lg:pt-12 border-t border-gray-100 dark:border-gray-800">
                       <div className="">
                         <div className="max-w-3xl mx-auto">
                           <div className="text-center mb-12">
@@ -488,7 +494,7 @@ export default function AutomatyzacjaFollowUp() {
                     </section>
 
                     {/* Diagram */}
-                    <section className="mt-16 lg:mt-24 pt-16 lg:pt-24 border-t border-gray-100 dark:border-gray-800">
+                    <section className="mt-10 lg:mt-12 pt-10 lg:pt-12 border-t border-gray-100 dark:border-gray-800">
                       <div className="">
                         <div className="max-w-2xl mb-10">
                           <p className="section-label mb-3">Diagram</p>
@@ -561,7 +567,7 @@ export default function AutomatyzacjaFollowUp() {
               {
                 label: "Wdrożenie",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     {/* Pierwszy etap */}
                     <section className="">
                       <div className="">
@@ -615,7 +621,7 @@ export default function AutomatyzacjaFollowUp() {
                     </section>
 
                     {/* Błędy */}
-                    <section className="mt-16 lg:mt-24 pt-16 lg:pt-24 border-t border-gray-100 dark:border-gray-800">
+                    <section className="mt-10 lg:mt-12 pt-10 lg:pt-12 border-t border-gray-100 dark:border-gray-800">
                       <div className="">
                         <div className="max-w-3xl mx-auto">
                           <div className="text-center mb-12">
@@ -664,9 +670,9 @@ export default function AutomatyzacjaFollowUp() {
                 ),
               },
               {
-                label: "Cennik i FAQ",
+                label: "Cennik",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     {/* Cennik */}
                     <section className="">
                       <div className="">
@@ -728,9 +734,15 @@ export default function AutomatyzacjaFollowUp() {
                         </div>
                       </div>
                     </section>
-
+                  </div>
+                ),
+              },
+              {
+                label: "FAQ",
+                content: (
+                  <div className="py-6 lg:py-8">
                     {/* FAQ */}
-                    <section className="mt-16 lg:mt-24 pt-16 lg:pt-24 border-t border-gray-100 dark:border-gray-800">
+                    <section className="">
                       <div className="">
                         <div className="max-w-3xl mx-auto">
                           <div className="text-center mb-12">
@@ -776,7 +788,7 @@ export default function AutomatyzacjaFollowUp() {
                     </section>
 
                     {/* Powiązane */}
-                    <section className="mt-16 lg:mt-24 pt-16 lg:pt-24 border-t border-gray-100 dark:border-gray-800">
+                    <section className="mt-10 lg:mt-12 pt-10 lg:pt-12 border-t border-gray-100 dark:border-gray-800">
                       <div className="">
                         <div className="max-w-3xl mx-auto">
                           <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
@@ -844,7 +856,7 @@ export default function AutomatyzacjaFollowUp() {
                     </section>
 
                     {/* Final CTA */}
-                    <section className="mt-16 lg:mt-24 pt-16 lg:pt-24 border-t border-gray-100 dark:border-gray-800">
+                    <section className="mt-10 lg:mt-12 pt-10 lg:pt-12 border-t border-gray-100 dark:border-gray-800">
                       <div className="">
                         <div className="max-w-2xl mx-auto text-center">
                           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">

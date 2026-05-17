@@ -55,7 +55,7 @@ export default function SalesforceDlaMalejFirmyArticle() {
         />
 
         {/* Kompaktowy nagłówek */}
-        <section className="pt-24 pb-10">
+        <section className="pt-16 pb-6">
           <div className="container-wide max-w-3xl mx-auto text-center">
             <span className="section-label">Strefa wiedzy</span>
             <h1 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">
@@ -78,7 +78,7 @@ export default function SalesforceDlaMalejFirmyArticle() {
               {
                 label: "Co kupujesz i koszty",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto px-6 lg:px-8 space-y-16">
                       {/* Section 1 */}
                       <div>
@@ -190,7 +190,7 @@ export default function SalesforceDlaMalejFirmyArticle() {
               {
                 label: "Kiedy warto, kiedy nie",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto px-6 lg:px-8 space-y-16">
                       {/* Section 4 */}
                       <div>
@@ -333,7 +333,7 @@ export default function SalesforceDlaMalejFirmyArticle() {
               {
                 label: "Decyzja i pułapki",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto px-6 lg:px-8 space-y-16">
                       {/* Section 7 */}
                       <div>
@@ -509,7 +509,7 @@ export default function SalesforceDlaMalejFirmyArticle() {
               {
                 label: "FAQ",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                         FAQ
@@ -606,7 +606,7 @@ export default function SalesforceDlaMalejFirmyArticle() {
               {
                 label: "Kontakt",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
                       <PrevNextArticle currentHref="/strefa-wiedzy/salesforce-dla-malej-firmy" />
 

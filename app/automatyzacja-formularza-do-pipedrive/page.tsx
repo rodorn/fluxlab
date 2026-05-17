@@ -253,7 +253,7 @@ export default function AutomatyzacjaFormularzaDoPipedrive() {
               {
                 label: "Problem",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     {/* Problem biznesowy */}
                     <section className="">
                       <div className="">
@@ -303,7 +303,7 @@ export default function AutomatyzacjaFormularzaDoPipedrive() {
                     </section>
 
                     {/* Objawy */}
-                    <section className="mt-16 lg:mt-24 pt-16 lg:pt-24 border-t border-gray-100 dark:border-gray-800">
+                    <section className="mt-10 lg:mt-12 pt-10 lg:pt-12 border-t border-gray-100 dark:border-gray-800">
                       <div className="">
                         <div className="max-w-3xl mx-auto">
                           <span className="section-label">Objawy</span>
@@ -350,9 +350,15 @@ export default function AutomatyzacjaFormularzaDoPipedrive() {
                         </div>
                       </div>
                     </section>
-
+                  </div>
+                ),
+              },
+              {
+                label: "Koszt",
+                content: (
+                  <div className="py-6 lg:py-8">
                     {/* Koszt problemu */}
-                    <section className="mt-16 lg:mt-24 pt-16 lg:pt-24 border-t border-gray-100 dark:border-gray-800">
+                    <section className="">
                       <div className="">
                         <div className="max-w-3xl mx-auto">
                           <span className="section-label">Koszt</span>
@@ -436,7 +442,7 @@ export default function AutomatyzacjaFormularzaDoPipedrive() {
               {
                 label: "Proces",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     {/* Proces przed */}
                     <section className="">
                       <div className="">
@@ -476,7 +482,7 @@ export default function AutomatyzacjaFormularzaDoPipedrive() {
                     </section>
 
                     {/* Proces po + diagram */}
-                    <section className="mt-16 lg:mt-24 pt-16 lg:pt-24 border-t border-gray-100 dark:border-gray-800">
+                    <section className="mt-10 lg:mt-12 pt-10 lg:pt-12 border-t border-gray-100 dark:border-gray-800">
                       <div className="">
                         <div className="max-w-2xl mb-10">
                           <span className="section-label">Proces po</span>
@@ -549,7 +555,7 @@ export default function AutomatyzacjaFormularzaDoPipedrive() {
               {
                 label: "Wdrożenie",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     {/* Co wdrożyć w 1. etapie */}
                     <section className="">
                       <div className="">
@@ -604,7 +610,7 @@ export default function AutomatyzacjaFormularzaDoPipedrive() {
                     </section>
 
                     {/* Typowe błędy */}
-                    <section className="mt-16 lg:mt-24 pt-16 lg:pt-24 border-t border-gray-100 dark:border-gray-800">
+                    <section className="mt-10 lg:mt-12 pt-10 lg:pt-12 border-t border-gray-100 dark:border-gray-800">
                       <div className="">
                         <div className="max-w-3xl mx-auto">
                           <span className="section-label">Antywzorce</span>
@@ -633,9 +639,9 @@ export default function AutomatyzacjaFormularzaDoPipedrive() {
                 ),
               },
               {
-                label: "Cennik i FAQ",
+                label: "Cennik",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     {/* Cennik */}
                     <section className="">
                       <div className="">
@@ -756,9 +762,15 @@ export default function AutomatyzacjaFormularzaDoPipedrive() {
                         </div>
                       </div>
                     </section>
-
+                  </div>
+                ),
+              },
+              {
+                label: "FAQ",
+                content: (
+                  <div className="py-6 lg:py-8">
                     {/* FAQ */}
-                    <section className="mt-16 lg:mt-24 pt-16 lg:pt-24 border-t border-gray-100 dark:border-gray-800">
+                    <section className="">
                       <div className="">
                         <div className="max-w-3xl mx-auto">
                           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-12 text-center">
@@ -801,7 +813,7 @@ export default function AutomatyzacjaFormularzaDoPipedrive() {
                     </section>
 
                     {/* Final CTA */}
-                    <section className="mt-16 lg:mt-24 pt-16 lg:pt-24 border-t border-gray-100 dark:border-gray-800">
+                    <section className="mt-10 lg:mt-12 pt-10 lg:pt-12 border-t border-gray-100 dark:border-gray-800">
                       <div className="">
                         <div className="max-w-2xl mx-auto text-center">
                           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">

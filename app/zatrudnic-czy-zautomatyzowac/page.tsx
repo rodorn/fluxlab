@@ -72,13 +72,13 @@ export default function ZatrudnicCzyZautomatyzowacPage() {
         />
 
         {/* Hero — kompaktowy */}
-        <section className="pt-24 pb-12">
+        <section className="pt-16 pb-6">
           <div className="container-wide text-center max-w-3xl mx-auto">
-            <p className="section-label mb-4">Narzędzie</p>
+            <p className="section-label mb-3">Narzędzie</p>
             <h1 className="text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 dark:text-white">
               Zatrudnić osobę czy zautomatyzować proces?
             </h1>
-            <p className="mt-4 text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-8">
+            <p className="mt-3 text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-5">
               Porównaj koszt miesięcznej ręcznej pracy z kosztem wdrożenia
               automatyzacji. 4 inputy, 1 wynik — bez rejestracji.
             </p>
@@ -96,7 +96,7 @@ export default function ZatrudnicCzyZautomatyzowacPage() {
               {
                 label: "Kalkulator",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <Kalkulator />
                   </div>
                 ),
@@ -104,7 +104,7 @@ export default function ZatrudnicCzyZautomatyzowacPage() {
               {
                 label: "Jak liczę decyzję",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                         Jak liczę decyzję
@@ -172,7 +172,7 @@ export default function ZatrudnicCzyZautomatyzowacPage() {
               {
                 label: "Kiedy zatrudnić",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                         Kiedy zatrudnienie ma więcej sensu niż automatyzacja
@@ -219,7 +219,7 @@ export default function ZatrudnicCzyZautomatyzowacPage() {
               {
                 label: "Kiedy automatyzować",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                         Kiedy automatyzacja jasno wygrywa
@@ -289,7 +289,7 @@ export default function ZatrudnicCzyZautomatyzowacPage() {
               {
                 label: "FAQ",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-8">
                         Najczęstsze pytania
@@ -328,7 +328,7 @@ export default function ZatrudnicCzyZautomatyzowacPage() {
               {
                 label: "Powiązane treści",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-8">
                         Powiązane treści

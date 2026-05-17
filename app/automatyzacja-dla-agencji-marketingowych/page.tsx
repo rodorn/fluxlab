@@ -201,7 +201,7 @@ export default function AutomatyzacjaDlaAgencjiMarketingowych() {
         />
 
         {/* Hero — kompaktowy */}
-        <section className="relative pt-24 pb-12 overflow-hidden">
+        <section className="relative pt-16 pb-6 overflow-hidden">
           <div className="absolute inset-0 -z-10">
             <div className="absolute inset-0 bg-sky-50 dark:hidden" />
             <img
@@ -262,7 +262,7 @@ export default function AutomatyzacjaDlaAgencjiMarketingowych() {
               {
                 label: "Co automatyzujemy",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
                         Co automatyzujemy w agencji marketingowej
@@ -299,7 +299,7 @@ export default function AutomatyzacjaDlaAgencjiMarketingowych() {
               {
                 label: "Problemy",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
                         Konkretne problemy, które rozwiązujemy
@@ -333,7 +333,7 @@ export default function AutomatyzacjaDlaAgencjiMarketingowych() {
               {
                 label: "Narzędzia",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
                         Narzędzia, z którymi pracujemy w agencjach
@@ -394,7 +394,7 @@ export default function AutomatyzacjaDlaAgencjiMarketingowych() {
               {
                 label: "Dla kogo i FAQ",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
                         Dla kogo
@@ -461,7 +461,7 @@ export default function AutomatyzacjaDlaAgencjiMarketingowych() {
               {
                 label: "Kontakt",
                 content: (
-                  <div className="py-10 lg:py-12">
+                  <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <div className="max-w-2xl mx-auto text-center bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-10 mb-16">
                         <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
