@@ -210,7 +210,7 @@ export default function AutomatyzacjaFormularzaDoPipedrive() {
         />
 
         {/* Hero — kompaktowy */}
-        <section className="pt-24 pb-12 bg-gradient-to-b from-accent/10 to-transparent border-b border-gray-100 dark:border-gray-800">
+        <section className="pt-16 pb-6 bg-gradient-to-b from-accent/10 to-transparent border-b border-gray-100 dark:border-gray-800">
           <div className="container-wide">
             <div className="max-w-3xl mx-auto text-center">
               <span className="section-label">Integracja Pipedrive</span>

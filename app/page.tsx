@@ -22,7 +22,7 @@ const PILLARS = [
     img: "/abstract/data.webp",
     num: "03",
     title: "Dane",
-    desc: "Zbiorę informacje rozproszone po stronach, mailach i plikach. Uporządkuję je i zamienię w czytelne zestawienia — bez ręcznego klikania.",
+    desc: "Zbieram dane ze stron internetowych, maili i plików — także przez scraping. Porządkuję je, analizuję i przygotowuję z nich gotowe raporty.",
   },
 ];
 
