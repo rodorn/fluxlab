@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import Image from "next/image";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -31,22 +29,10 @@ export const metadata: Metadata = {
   },
 };
 
-const useCases = [
-  {
-    title: "Zbieranie leadów z wielu źródeł",
-    description:
-      "Formularze, reklamy, mail, landing page i inne źródła trafiają do jednego procesu, zamiast żyć w kilku osobnych miejscach.",
-  },
-  {
-    title: "Routing leadów do właściwej osoby",
-    description:
-      "Lead może trafić do konkretnego handlowca według regionu, branży, typu zapytania, wartości lub innych zasad ustalonych w firmie.",
-  },
-  {
-    title: "Automatyczne reakcje i follow-up",
-    description:
-      "Po wpłynięciu leada system może uruchomić potwierdzenie, zadanie, przypomnienie albo kolejny etap komunikacji.",
-  },
+const offer = [
+  "Zbieram leady z wielu źródeł — formularzy, reklam, maila, landing page — do jednego procesu.",
+  "Każdy lead trafia do właściwej osoby według regionu, branży, typu zapytania lub wartości.",
+  "Po wpłynięciu leada uruchamiam potwierdzenie, zadanie i follow-up — bez opóźnień.",
 ];
 
 const faq = [
@@ -60,33 +46,9 @@ const faq = [
     answer: "Tak, routing może być oparty o dowolne warunki biznesowe.",
   },
   {
-    question: "Czy da się zautomatyzować pierwszy kontakt?",
+    question: "Ile to kosztuje?",
     answer:
-      "Tak, ale trzeba to zrobić rozsądnie, żeby nie wyglądało sztucznie i nie psuło jakości obsługi.",
-  },
-];
-
-const relatedServices = [
-  { href: "/automatyzacja-crm", label: "Automatyzacja CRM" },
-  { href: "/automatyzacja-ai", label: "Automatyzacja AI" },
-];
-
-const relatedArticles = [
-  {
-    href: "/automatyczne-przypisywanie-leadow",
-    label: "Automatyczne przypisywanie leadów do handlowców",
-  },
-  {
-    href: "/czas-reakcji-na-leada",
-    label: "Jak skrócić czas reakcji na leada",
-  },
-  {
-    href: "/automatyzacja-formularza-do-pipedrive",
-    label: "Integracja formularza z Pipedrive",
-  },
-  {
-    href: "/automatyzacja-follow-up",
-    label: "Automatyzacja follow-upów w CRM",
+      "Proste wdrożenia można zrobić szybko. Zaawansowane procesy ze scoringiem i wieloma wyjątkami wyceniam indywidualnie.",
   },
 ];
 
@@ -98,165 +60,78 @@ export default function AutomatyzacjaLeadow() {
         <Breadcrumbs items={[{ label: "Automatyzacja leadów" }]} />
 
         {/* Hero */}
-        <section className="relative py-16 lg:py-24 overflow-hidden">
-          <div className="absolute inset-0 -z-10">
-            <div className="absolute inset-0 bg-sky-50 dark:hidden" />
-            <img
-              src="/photos/Flow.avif"
-              alt=""
-              aria-hidden="true"
-              className="absolute inset-0 w-full h-full object-cover opacity-[0.08] dark:hidden"
-              style={{ filter: "invert(1)" }}
-            />
-            <img
-              src="/photos/Flow.avif"
-              alt=""
-              aria-hidden="true"
-              className="w-full h-full object-cover hidden dark:block"
-            />
-            <div className="absolute inset-0 hidden dark:block bg-gray-950/90" />
-            <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-white to-transparent dark:hidden" />
-            <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white to-transparent dark:hidden" />
-            <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-gray-950 to-transparent hidden dark:block" />
-            <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-gray-950 to-transparent hidden dark:block" />
+        <section className="relative overflow-hidden py-24 lg:py-32">
+          <div className="blob blob-cyan -z-10 -top-32 -right-24 h-96 w-96" />
+          <div className="container-wide max-w-3xl">
+            <p className="section-label mb-5">Usługa</p>
+            <h1 className="display-lg text-gray-900 dark:text-white">
+              Automatyzacja leadów
+            </h1>
+            <p className="mt-6 text-lg text-gray-600 dark:text-gray-300">
+              Leady tracą wartość, gdy czekają na ręczne ogarnięcie. Pomagam
+              szybciej reagować i kierować zapytania do właściwych osób bez
+              chaosu i opóźnień.
+            </p>
+            <a href="#diagnoza" className="btn-primary mt-8 inline-flex">
+              Chcę diagnozę procesu leadów
+            </a>
           </div>
-          <div className="container-wide max-w-5xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-10 items-center">
-              <div className="text-center lg:text-left">
-                <p className="section-label mb-4">Usługa</p>
-                <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
-                  Automatyzacja leadów
-                </h1>
-                <p className="text-lg text-gray-600 dark:text-gray-300">
-                  Leady tracą wartość, kiedy wpadają do firmy i czekają na
-                  ręczne ogarnięcie. Automatyzacja leadów pozwala szybciej
-                  reagować, porządkować zapytania i kierować je do właściwych
-                  osób bez chaosu i opóźnień.
-                </p>
-              </div>
-              <div className="relative mx-auto lg:mx-0 w-full max-w-md">
-                <div className="rounded-2xl overflow-hidden shadow-xl shadow-gray-200/50 dark:shadow-black/30 border border-gray-100 dark:border-gray-800">
-                  <Image
-                    src="/photos/data.jpg"
-                    alt="Automatyzacja leadów"
-                    width={480}
-                    height={320}
-                    className="w-full h-auto object-cover"
-                    priority
-                  />
+        </section>
+
+        {/* Co oferuję */}
+        <section className="border-t border-gray-100 py-24 dark:border-gray-800 lg:py-32">
+          <div className="container-wide max-w-3xl">
+            <h2 className="display-xl mb-12 text-gray-900 dark:text-white">
+              Co oferuję
+            </h2>
+            <div className="space-y-6">
+              {offer.map((item, i) => (
+                <div
+                  key={i}
+                  className="card-lift flex items-start gap-5 rounded-2xl border border-gray-100 bg-white p-6 dark:border-gray-700 dark:bg-gray-800/60"
+                >
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-accent/10 text-sm font-bold text-accent">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <p className="text-gray-700 dark:text-gray-300">{item}</p>
                 </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Co obejmuje */}
-        <section className="py-16 lg:py-24">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                Co obejmuje automatyzacja leadów
-              </h2>
-              <p className="text-gray-500 dark:text-gray-400 mb-10">
-                Automatyzujemy cały przepływ od momentu pojawienia się
-                zapytania: pobranie danych, zapis w CRM, kwalifikację, routing,
-                powiadomienie odpowiedniej osoby, a w razie potrzeby także
-                follow-up i dalsze etapy procesu.
-              </p>
-
-              <div className="grid gap-5">
-                {useCases.map((uc, i) => (
-                  <div
-                    key={i}
-                    className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-8"
-                  >
-                    <div className="flex items-start gap-5">
-                      <span className="shrink-0 w-10 h-10 flex items-center justify-center rounded-xl bg-accent/10 text-accent text-sm font-bold">
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
-                      <div className="flex-1 min-w-0">
-                        <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
-                          {uc.title}
-                        </h3>
-                        <p className="text-sm text-gray-600 dark:text-gray-400">
-                          {uc.description}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Dla kogo */}
-        <section className="py-16 lg:py-24 bg-gray-50 dark:bg-gray-900/50 border-y border-gray-100 dark:border-gray-800">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                Dla kogo
-              </h2>
-              <p className="text-gray-500 dark:text-gray-400">
-                Dla firm, które pozyskują leady z kilku kanałów, mają problem z
-                czasem reakcji, gubią zapytania albo nie panują nad ich jakością
-                i przypisaniem.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Ile to kosztuje */}
-        <section className="py-16 lg:py-24">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                Ile to kosztuje
-              </h2>
-              <p className="text-gray-500 dark:text-gray-400">
-                Cena zależy od liczby źródeł leadów, CRM, reguł kwalifikacji i
-                poziomu złożoności procesu. Proste wdrożenia można zrobić
-                szybko. Zaawansowane procesy z scoringiem, AI lub wieloma
-                wyjątkami wymagają większego zakresu prac.
-              </p>
+              ))}
             </div>
           </div>
         </section>
 
         {/* FAQ */}
-        <section className="py-16 lg:py-24 bg-gray-50 dark:bg-gray-900/50 border-y border-gray-100 dark:border-gray-800">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-8">
-                FAQ
-              </h2>
-              <div className="space-y-4">
-                {faq.map((item, i) => (
-                  <details
-                    key={i}
-                    className="group bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl"
-                  >
-                    <summary className="flex items-center justify-between gap-4 cursor-pointer p-6 text-sm font-semibold text-gray-900 dark:text-white select-none [&::-webkit-details-marker]:hidden list-none">
-                      {item.question}
-                      <svg
-                        className="shrink-0 w-5 h-5 text-gray-400 transition-transform group-open:rotate-45"
-                        viewBox="0 0 20 20"
-                        fill="none"
-                      >
-                        <path
-                          d="M10 4v12M4 10h12"
-                          stroke="currentColor"
-                          strokeWidth="1.5"
-                          strokeLinecap="round"
-                        />
-                      </svg>
-                    </summary>
-                    <div className="px-6 pb-6 text-sm text-gray-500 dark:text-gray-400">
-                      {item.answer}
-                    </div>
-                  </details>
-                ))}
-              </div>
+        <section className="border-t border-gray-100 py-24 dark:border-gray-800 lg:py-32">
+          <div className="container-wide max-w-3xl">
+            <h2 className="display-xl mb-12 text-gray-900 dark:text-white">
+              Pytania
+            </h2>
+            <div className="space-y-4">
+              {faq.map((item, i) => (
+                <details
+                  key={i}
+                  className="group rounded-2xl border border-gray-100 bg-white dark:border-gray-700 dark:bg-gray-800/60"
+                >
+                  <summary className="flex cursor-pointer select-none list-none items-center justify-between gap-4 p-6 font-medium text-gray-900 dark:text-white [&::-webkit-details-marker]:hidden">
+                    {item.question}
+                    <svg
+                      className="h-5 w-5 shrink-0 text-gray-400 transition-transform group-open:rotate-45"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                    >
+                      <path
+                        d="M10 4v12M4 10h12"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                      />
+                    </svg>
+                  </summary>
+                  <div className="px-6 pb-6 text-sm text-gray-500 dark:text-gray-400">
+                    {item.answer}
+                  </div>
+                </details>
+              ))}
             </div>
           </div>
         </section>
@@ -264,7 +139,7 @@ export default function AutomatyzacjaLeadow() {
         {/* Form — diagnoza */}
         <section
           id="diagnoza"
-          className="scroll-mt-20 py-16 lg:py-20 bg-accent/10"
+          className="scroll-mt-20 border-t border-gray-100 bg-accent/10 py-24 dark:border-gray-800 lg:py-28"
         >
           <div className="container-wide">
             <LandingForm
@@ -273,50 +148,6 @@ export default function AutomatyzacjaLeadow() {
               intro="Opisz krótko, skąd wpadają zapytania, kto je odbiera i co dziś robicie ręcznie. W odpowiedzi dostaniesz informację, gdzie najprawdopodobniej giną leady i jaki pierwszy krok da największy efekt."
               submitLabel="Chcę diagnozę procesu leadów"
             />
-          </div>
-        </section>
-
-        {/* Related */}
-        <section className="py-16 lg:py-24 border-t border-gray-100 dark:border-gray-800">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <div className="grid md:grid-cols-2 gap-12">
-                <div>
-                  <h3 className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-4">
-                    Powiązane usługi
-                  </h3>
-                  <ul className="space-y-2">
-                    {relatedServices.map((s) => (
-                      <li key={s.href}>
-                        <Link
-                          href={s.href}
-                          className="text-sm text-accent hover:underline"
-                        >
-                          {s.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-4">
-                    Powiązane artykuły
-                  </h3>
-                  <ul className="space-y-2">
-                    {relatedArticles.map((a) => (
-                      <li key={a.href}>
-                        <Link
-                          href={a.href}
-                          className="text-sm text-accent hover:underline"
-                        >
-                          {a.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
           </div>
         </section>
       </main>

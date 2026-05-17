@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import Image from "next/image";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -31,22 +29,10 @@ export const metadata: Metadata = {
   },
 };
 
-const useCases = [
-  {
-    title: "Automatyczne tworzenie i kwalifikacja leadów",
-    description:
-      "Nowe zapytania z formularzy, kampanii, maili i innych źródeł automatycznie trafiają do CRM. System może przypisać źródło leada, ocenić priorytet i skierować go do odpowiedniej osoby.",
-  },
-  {
-    title: "Automatyczne zadania i follow-upy",
-    description:
-      "Po zmianie statusu lub braku odpowiedzi CRM sam tworzy kolejne zadanie, przypomina o kontakcie i pilnuje, żeby lead nie zniknął z procesu.",
-  },
-  {
-    title: "Porządkowanie pipeline i danych",
-    description:
-      "Automatyzacja CRM może aktualizować pola, pilnować kompletności danych, wykrywać duplikaty i synchronizować informacje z innymi systemami.",
-  },
+const offer = [
+  "Nowe leady z formularzy, maili i kampanii automatycznie trafiają do CRM, z przypisanym źródłem i priorytetem.",
+  "Zadania i follow-upy tworzą się same — żaden lead nie znika z procesu.",
+  "Pipeline pozostaje uporządkowany: aktualne pola, brak duplikatów, dane spójne z innymi systemami.",
 ];
 
 const faq = [
@@ -58,28 +44,12 @@ const faq = [
   {
     question: "Z jakimi CRM pracujecie?",
     answer:
-      "Wdrażam automatyzacje w popularnych systemach CRM i łączymy je z innymi narzędziami używanymi w firmie.",
+      "Wdrażam automatyzacje w popularnych systemach CRM i łączę je z innymi narzędziami używanymi w firmie.",
   },
   {
-    question: "Czy można zautomatyzować follow-up bez utraty kontroli?",
+    question: "Ile to kosztuje?",
     answer:
-      "Tak, pod warunkiem że proces jest dobrze zaprojektowany, a wyjątki są obsługiwane świadomie.",
-  },
-];
-
-const relatedServices = [
-  { label: "Automatyzacja Pipedrive", href: "/automatyzacja-pipedrive" },
-  { label: "Automatyzacja leadów", href: "/automatyzacja-leadow" },
-];
-
-const relatedArticles = [
-  {
-    label: "Automatyzacja CRM — od czego zacząć",
-    href: "/strefa-wiedzy/automatyzacja-crm-od-czego-zaczac",
-  },
-  {
-    label: "Jak uporządkować proces sprzedaży w CRM",
-    href: "/strefa-wiedzy/jak-uporzadkowac-proces-sprzedazy-w-crm",
+      "Proste automatyzacje mają niski próg wejścia. Zaawansowane wdrożenia ze scoringiem i integracjami API wyceniam indywidualnie.",
   },
 ];
 
@@ -91,161 +61,92 @@ export default function AutomatyzacjaCRM() {
         <Breadcrumbs items={[{ label: "Automatyzacja CRM" }]} />
 
         {/* Hero */}
-        <section className="relative py-16 lg:py-24 overflow-hidden">
-          <div className="absolute inset-0 -z-10">
-            <div className="absolute inset-0 bg-sky-50 dark:hidden" />
-            <img
-              src="/photos/Flow.avif"
-              alt=""
-              aria-hidden="true"
-              className="absolute inset-0 w-full h-full object-cover opacity-[0.08] dark:hidden"
-              style={{ filter: "invert(1)" }}
-            />
-            <img
-              src="/photos/Flow.avif"
-              alt=""
-              aria-hidden="true"
-              className="w-full h-full object-cover hidden dark:block"
-            />
-            <div className="absolute inset-0 hidden dark:block bg-gray-950/90" />
-            <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-white to-transparent dark:hidden" />
-            <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white to-transparent dark:hidden" />
-            <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-gray-950 to-transparent hidden dark:block" />
-            <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-gray-950 to-transparent hidden dark:block" />
-          </div>
-          <div className="container-wide max-w-5xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-10 items-center">
-              <div className="text-center lg:text-left">
-                <p className="section-label mb-4">Usługa</p>
-                <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
-                  Automatyzacja CRM
-                </h1>
-                <p className="text-lg text-gray-600 dark:text-gray-300">
-                  Automatyzacja CRM pozwala uporządkować sprzedaż, przyspieszyć
-                  reakcję na leady i ograniczyć chaos w pipeline. Projektuję
-                  procesy, dzięki którym CRM nie jest tylko bazą kontaktów, ale
-                  realnym narzędziem pracy handlowców i operacji.
-                </p>
-              </div>
-              <div className="relative mx-auto lg:mx-0 w-full max-w-md">
-                <div className="rounded-2xl overflow-hidden shadow-xl shadow-gray-200/50 dark:shadow-black/30 border border-gray-100 dark:border-gray-800">
-                  <Image
-                    src="/photos/crm.jpeg"
-                    alt="Automatyzacja CRM"
-                    width={480}
-                    height={320}
-                    className="w-full h-auto object-cover"
-                    priority
-                  />
-                </div>
-              </div>
-            </div>
+        <section className="relative overflow-hidden py-24 lg:py-32">
+          <div className="blob blob-accent -z-10 -top-32 -right-24 h-96 w-96" />
+          <div className="container-wide max-w-3xl">
+            <p className="section-label mb-5">Usługa</p>
+            <h1 className="display-lg text-gray-900 dark:text-white">
+              Automatyzacja CRM
+            </h1>
+            <p className="mt-6 text-lg text-gray-600 dark:text-gray-300">
+              Uporządkuj sprzedaż i przyspiesz reakcję na leady. Sprawiam, że
+              CRM nie jest tylko bazą kontaktów, ale realnym narzędziem pracy.
+            </p>
+            <a href="#diagnoza" className="btn-primary mt-8 inline-flex">
+              Chcę diagnozę procesu CRM
+            </a>
           </div>
         </section>
 
-        {/* Co daje automatyzacja CRM */}
-        <section className="py-16 lg:py-24">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                Co daje automatyzacja CRM
-              </h2>
-              <p className="text-gray-500 dark:text-gray-400 mb-10">
-                Dobrze wdrożony CRM powinien automatycznie porządkować dane,
-                przypisywać leady, pilnować kolejnych kroków i dostarczać
-                zespołowi aktualnych informacji. Jeśli handlowcy ręcznie tworzą
-                zadania, przenoszą statusy, dopisują notatki i gubią follow-upy,
-                to znaczy, że CRM pracuje za słabo.
-              </p>
-
-              <div className="space-y-6">
-                {useCases.map((useCase) => (
-                  <div
-                    key={useCase.title}
-                    className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-8"
+        {/* Co oferuję */}
+        <section className="border-t border-gray-100 py-24 dark:border-gray-800 lg:py-32">
+          <div className="container-wide max-w-3xl">
+            <h2 className="display-xl mb-12 text-gray-900 dark:text-white">
+              Co oferuję
+            </h2>
+            <ul className="space-y-6">
+              {offer.map((item) => (
+                <li
+                  key={item}
+                  className="card-lift flex items-start gap-4 rounded-2xl border border-gray-100 bg-white p-6 dark:border-gray-700 dark:bg-gray-800/60"
+                >
+                  <svg
+                    className="mt-0.5 shrink-0 text-accent"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    aria-hidden="true"
                   >
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                      {useCase.title}
-                    </h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">
-                      {useCase.description}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Dla kogo */}
-        <section className="py-16 lg:py-24 border-t border-gray-100 dark:border-gray-800">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                Dla kogo
-              </h2>
-              <p className="text-gray-500 dark:text-gray-400">
-                Dla firm, które mają zespół sprzedaży, korzystają z CRM i chcą
-                przyspieszyć pracę handlowców bez dokładania kolejnej ręcznej
-                roboty. Szczególnie dla organizacji, które rosną i zaczynają
-                tracić kontrolę nad leadami, statusami i jakością danych.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Ile to kosztuje */}
-        <section className="py-16 lg:py-24 border-t border-gray-100 dark:border-gray-800">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                Ile to kosztuje
-              </h2>
-              <p className="text-gray-500 dark:text-gray-400">
-                Proste automatyzacje CRM, takie jak routing leadów, zadania czy
-                synchronizacja pól, mają zwykle niski próg wejścia. Bardziej
-                zaawansowane wdrożenia, obejmujące wiele źródeł danych, scoring,
-                integracje API i logikę sprzedażową, wymagają indywidualnej
-                wyceny.
-              </p>
-            </div>
+                    <path
+                      d="M4 10.5l3.5 3.5L16 5.5"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                  <span className="text-gray-700 dark:text-gray-300">
+                    {item}
+                  </span>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
 
         {/* FAQ */}
-        <section className="py-16 lg:py-24 border-t border-gray-100 dark:border-gray-800">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-8">
-                Najczęściej zadawane pytania
-              </h2>
-              <div className="space-y-4">
-                {faq.map((item) => (
-                  <details
-                    key={item.question}
-                    className="group bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl"
-                  >
-                    <summary className="flex items-center justify-between cursor-pointer p-6 text-gray-900 dark:text-white font-medium">
-                      {item.question}
-                      <svg
-                        className="shrink-0 ml-4 w-5 h-5 text-gray-400 transition-transform group-open:rotate-45"
-                        viewBox="0 0 20 20"
-                        fill="none"
-                      >
-                        <path
-                          d="M10 4v12M4 10h12"
-                          stroke="currentColor"
-                          strokeWidth="1.5"
-                          strokeLinecap="round"
-                        />
-                      </svg>
-                    </summary>
-                    <div className="px-6 pb-6 text-sm text-gray-500 dark:text-gray-400">
-                      {item.answer}
-                    </div>
-                  </details>
-                ))}
-              </div>
+        <section className="border-t border-gray-100 py-24 dark:border-gray-800 lg:py-32">
+          <div className="container-wide max-w-3xl">
+            <h2 className="display-xl mb-12 text-gray-900 dark:text-white">
+              Pytania
+            </h2>
+            <div className="space-y-4">
+              {faq.map((item) => (
+                <details
+                  key={item.question}
+                  className="group rounded-2xl border border-gray-100 bg-white dark:border-gray-700 dark:bg-gray-800/60"
+                >
+                  <summary className="flex cursor-pointer items-center justify-between gap-4 p-6 font-medium text-gray-900 dark:text-white [&::-webkit-details-marker]:hidden">
+                    {item.question}
+                    <svg
+                      className="ml-4 h-5 w-5 shrink-0 text-gray-400 transition-transform group-open:rotate-45"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                    >
+                      <path
+                        d="M10 4v12M4 10h12"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                      />
+                    </svg>
+                  </summary>
+                  <div className="px-6 pb-6 text-sm text-gray-500 dark:text-gray-400">
+                    {item.answer}
+                  </div>
+                </details>
+              ))}
             </div>
           </div>
         </section>
@@ -253,89 +154,15 @@ export default function AutomatyzacjaCRM() {
         {/* Form — diagnoza */}
         <section
           id="diagnoza"
-          className="scroll-mt-20 py-16 lg:py-20 bg-accent/10 border-t border-gray-100 dark:border-gray-800"
+          className="scroll-mt-20 border-t border-gray-100 bg-accent/10 py-24 dark:border-gray-800 lg:py-28"
         >
           <div className="container-wide">
             <LandingForm
               formId="diagnosis_crm"
               heading="Sprawdźmy Twój proces sprzedaży"
-              intro="Opisz krótko, jak dziś wygląda obsługa leadów i deali w Twoim CRM: skąd wpadają, kto je obsługuje, gdzie pojawia się ręczna praca. W odpowiedzi dostaniesz informację, czy automatyzacja ma sens i jaki pierwszy krok da największy efekt."
+              intro="Opisz krótko, jak dziś wygląda obsługa leadów i deali w Twoim CRM. W odpowiedzi dostaniesz informację, czy automatyzacja ma sens i jaki pierwszy krok da największy efekt."
               submitLabel="Chcę diagnozę procesu CRM"
             />
-          </div>
-        </section>
-
-        {/* Related */}
-        <section className="py-16 lg:py-24 border-t border-gray-100 dark:border-gray-800">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <div className="grid md:grid-cols-2 gap-12">
-                <div>
-                  <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-                    Powiązane usługi
-                  </h2>
-                  <ul className="space-y-3">
-                    {relatedServices.map((item) => (
-                      <li key={item.href}>
-                        <Link
-                          href={item.href}
-                          className="flex items-center gap-2.5 text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
-                        >
-                          <svg
-                            className="shrink-0 text-accent"
-                            width="14"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            fill="none"
-                          >
-                            <path
-                              d="M2.5 7l3 3 6-6"
-                              stroke="currentColor"
-                              strokeWidth="1.5"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
-                          {item.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-                    Powiązane artykuły
-                  </h2>
-                  <ul className="space-y-3">
-                    {relatedArticles.map((item) => (
-                      <li key={item.href}>
-                        <Link
-                          href={item.href}
-                          className="flex items-center gap-2.5 text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
-                        >
-                          <svg
-                            className="shrink-0 text-accent"
-                            width="14"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            fill="none"
-                          >
-                            <path
-                              d="M2.5 7l3 3 6-6"
-                              stroke="currentColor"
-                              strokeWidth="1.5"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
-                          {item.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
           </div>
         </section>
       </main>

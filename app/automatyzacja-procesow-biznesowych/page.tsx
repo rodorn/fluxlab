@@ -1,10 +1,7 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import Image from "next/image";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Breadcrumbs from "@/components/Breadcrumbs";
 import LandingForm from "@/components/LandingForm";
 
 export const metadata: Metadata = {
@@ -31,264 +28,111 @@ export const metadata: Metadata = {
   },
 };
 
-const useCases = [
-  {
-    title: "Automatyzacja obiegu danych",
-    description:
-      "Dane z formularzy, maili, CRM, arkuszy i innych narzędzi trafiają automatycznie tam, gdzie powinny. Bez kopiowania, bez dubli i bez opóźnień.",
-  },
-  {
-    title: "Automatyzacja zadań i powiadomień",
-    description:
-      "Gdy pojawia się nowy klient, zapytanie lub status sprawy, system automatycznie przypisuje zadanie, wysyła powiadomienie i uruchamia kolejny etap procesu.",
-  },
-  {
-    title: "Automatyzacja raportowania i kontroli procesu",
-    description:
-      "Zamiast ręcznie zbierać dane z kilku miejsc, firma otrzymuje gotowe raporty i wgląd w to, gdzie proces się blokuje i co trzeba poprawić.",
-  },
+const offer = [
+  "Obieg danych — z formularzy, maili, CRM i arkuszy trafiają tam, gdzie powinny. Bez kopiowania i dubli.",
+  "Zadania i powiadomienia — nowy klient lub sprawa automatycznie uruchamia kolejny etap procesu.",
+  "Raportowanie — gotowe raporty zamiast ręcznego zbierania danych z kilku miejsc.",
 ];
 
 const faqs = [
   {
-    question: "Czy automatyzacja procesów biznesowych ma sens w małej firmie?",
+    question: "Czy automatyzacja ma sens w małej firmie?",
     answer:
-      "Tak, bo nawet mały zespół szybko traci czas na ręczne przepisywanie danych, pilnowanie statusów i powtarzalne działania.",
+      "Tak. Nawet mały zespół szybko traci czas na ręczne przepisywanie danych i pilnowanie statusów.",
   },
   {
     question: "Od czego zacząć automatyzację?",
     answer:
-      "Najlepiej od procesu, który jest częsty, powtarzalny i generuje błędy albo opóźnienia.",
+      "Od procesu, który jest częsty, powtarzalny i generuje błędy albo opóźnienia.",
   },
   {
     question: "Czy trzeba wymieniać obecne narzędzia?",
     answer:
-      "Nie. Najczęściej automatyzujemy to, co już działa w firmie, i łączymy istniejące systemy.",
+      "Nie. Najczęściej automatyzuję to, co już działa, i łączę istniejące systemy.",
   },
 ];
-
-const relatedServices = [
-  { href: "/automatyzacja-crm", label: "Automatyzacja CRM" },
-  { href: "/automatyzacja-raportowania", label: "Automatyzacja raportowania" },
-];
-
-const relatedArticles = [
-  {
-    href: "/strefa-wiedzy/co-to-jest-automatyzacja-procesow-biznesowych",
-    label: "Co to jest automatyzacja procesów biznesowych?",
-  },
-  {
-    href: "/strefa-wiedzy/jak-policzyc-roi-z-automatyzacji",
-    label: "Jak policzyć ROI z automatyzacji?",
-  },
-];
-
-function CheckIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      className={className || "shrink-0 mt-0.5 text-accent"}
-      width="14"
-      height="14"
-      viewBox="0 0 14 14"
-      fill="none"
-    >
-      <path
-        d="M2.5 7l3 3 6-6"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
 
 export default function AutomatyzacjaProcesowBiznesowych() {
   return (
     <>
       <Header />
       <main className="pt-16">
-        <Breadcrumbs items={[{ label: "Automatyzacja procesów" }]} />
         {/* Hero */}
-        <section className="relative py-16 lg:py-24 overflow-hidden">
-          <div className="absolute inset-0 -z-10">
-            <div className="absolute inset-0 bg-sky-50 dark:hidden" />
-            <img
-              src="/photos/Flow.avif"
-              alt=""
-              aria-hidden="true"
-              className="absolute inset-0 w-full h-full object-cover opacity-[0.08] dark:hidden"
-              style={{ filter: "invert(1)" }}
-            />
-            <img
-              src="/photos/Flow.avif"
-              alt=""
-              aria-hidden="true"
-              className="w-full h-full object-cover hidden dark:block"
-            />
-            <div className="absolute inset-0 hidden dark:block bg-gray-950/90" />
-            <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-white to-transparent dark:hidden" />
-            <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white to-transparent dark:hidden" />
-            <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-gray-950 to-transparent hidden dark:block" />
-            <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-gray-950 to-transparent hidden dark:block" />
+        <section className="relative overflow-hidden py-24 lg:py-32">
+          <div className="blob blob-accent -z-10 top-[-10%] left-[-5%]" />
+          <div className="container-wide max-w-3xl mx-auto text-center">
+            <p className="section-label mb-5">Usługa</p>
+            <h1 className="display-lg text-gray-900 dark:text-white mb-6">
+              Automatyzacja procesów biznesowych
+            </h1>
+            <p className="text-lg lg:text-xl text-gray-600 dark:text-gray-300">
+              Eliminuję ręczną, powtarzalną pracę i zastępuję ją sprawnymi
+              procesami. Mniej błędów, szybsza realizacja zadań, uporządkowany
+              obieg danych.
+            </p>
+            <div className="mt-8">
+              <a href="#diagnoza" className="btn-primary">
+                Sprawdź, co zautomatyzować
+              </a>
+            </div>
           </div>
-          <div className="container-wide max-w-5xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-10 items-center">
-              <div className="text-center lg:text-left">
-                <p className="section-label mb-4">Usługa</p>
-                <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
-                  Automatyzacja procesów biznesowych
-                </h1>
-                <p className="text-lg text-gray-600 dark:text-gray-300">
-                  Pomagam firmom eliminować ręczną, powtarzalną pracę i
-                  zastępować ją sprawnymi procesami opartymi o automatyzację.
-                  Projektuję rozwiązania, które porządkują obieg danych,
-                  skracają czas realizacji zadań i zmniejszają liczbę błędów
-                  operacyjnych.
-                </p>
-              </div>
-              <div className="relative mx-auto lg:mx-0 w-full max-w-md">
-                <div className="rounded-2xl overflow-hidden shadow-xl shadow-gray-200/50 dark:shadow-black/30 border border-gray-100 dark:border-gray-800">
-                  <Image
-                    src="/photos/plan.jpg"
-                    alt="Automatyzacja procesów biznesowych"
-                    width={480}
-                    height={320}
-                    className="w-full h-auto object-cover"
-                    priority
+        </section>
+
+        {/* Co oferuję */}
+        <section className="py-20 lg:py-28 border-t border-gray-100 dark:border-gray-800">
+          <div className="container-wide max-w-3xl mx-auto">
+            <h2 className="display-md text-gray-900 dark:text-white mb-10">
+              Co oferuję
+            </h2>
+            <ul className="space-y-5">
+              {offer.map((item) => (
+                <li
+                  key={item}
+                  className="flex items-start gap-4 text-lg text-gray-700 dark:text-gray-300"
+                >
+                  <span
+                    className="shrink-0 mt-1 w-2.5 h-2.5 rounded-full bg-accent"
+                    aria-hidden="true"
                   />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Na czym polega */}
-        <section className="py-16 lg:py-24">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                Na czym polega automatyzacja procesów biznesowych
-              </h2>
-              <div className="space-y-4 text-gray-600 dark:text-gray-400">
-                <p>
-                  Automatyzacja procesów biznesowych polega na tym, że działania
-                  wykonywane dotąd ręcznie zaczynają odbywać się szybciej, w
-                  ustalonej kolejności i bez ciągłego angażowania pracowników.
-                  Dotyczy to między innymi przepisywania danych, przekazywania
-                  zadań między działami, aktualizowania CRM, raportowania,
-                  obsługi leadów czy komunikacji między systemami.
-                </p>
-                <p>
-                  Zamiast opierać firmę na pamięci ludzi i ręcznym pilnowaniu
-                  kolejnych kroków, budujemy procesy, które działają
-                  przewidywalnie i skalowalnie.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Use cases */}
-        <section className="py-16 lg:py-24 border-t border-gray-100 dark:border-gray-800">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <div className="grid gap-6">
-                {useCases.map((useCase) => (
-                  <div
-                    key={useCase.title}
-                    className="rounded-2xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800/60 p-8"
-                  >
-                    <div className="flex items-start gap-4">
-                      <span className="shrink-0 w-10 h-10 flex items-center justify-center rounded-xl bg-accent/10 text-accent">
-                        <CheckIcon />
-                      </span>
-                      <div>
-                        <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                          {useCase.title}
-                        </h3>
-                        <p className="text-sm text-gray-600 dark:text-gray-400">
-                          {useCase.description}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Dla kogo */}
-        <section className="py-16 lg:py-24 bg-gray-50 dark:bg-gray-900/50 border-y border-gray-100 dark:border-gray-800">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                Dla kogo
-              </h2>
-              <p className="text-gray-600 dark:text-gray-400">
-                Ta usługa jest dla firm, które mają coraz więcej pracy
-                operacyjnej, korzystają z kilku narzędzi jednocześnie i czują,
-                że ludzie marnują czas na rzeczy, które da się uporządkować.
-                Szczególnie dobrze sprawdza się w firmach B2B, sprzedaży,
-                obsłudze klienta, operacjach i back office.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Ile to kosztuje */}
-        <section className="py-16 lg:py-24">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                Ile to kosztuje
-              </h2>
-              <p className="text-gray-600 dark:text-gray-400">
-                Koszt zależy od liczby systemów, złożoności procesu i tego, czy
-                wystarczy no-code, czy potrzebna jest również integracja API lub
-                logika szyta pod firmę. Proste wdrożenia zaczynają się od kilku
-                tysięcy złotych. Bardziej rozbudowane projekty wyceniam po
-                analizie procesu i zakresu integracji.
-              </p>
-            </div>
+                  {item}
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
 
         {/* FAQ */}
-        <section className="py-16 lg:py-24 border-t border-gray-100 dark:border-gray-800">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-8">
-                Najczęstsze pytania
-              </h2>
-              <div className="space-y-4">
-                {faqs.map((faq) => (
-                  <details
-                    key={faq.question}
-                    className="group rounded-2xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800/60"
-                  >
-                    <summary className="flex items-center justify-between cursor-pointer p-6 text-gray-900 dark:text-white font-medium list-none">
-                      {faq.question}
-                      <svg
-                        className="shrink-0 ml-4 w-5 h-5 text-gray-400 transition-transform group-open:rotate-45"
-                        viewBox="0 0 20 20"
-                        fill="none"
-                      >
-                        <path
-                          d="M10 4v12M4 10h12"
-                          stroke="currentColor"
-                          strokeWidth="1.5"
-                          strokeLinecap="round"
-                        />
-                      </svg>
-                    </summary>
-                    <div className="px-6 pb-6 text-sm text-gray-600 dark:text-gray-400">
-                      {faq.answer}
-                    </div>
-                  </details>
-                ))}
-              </div>
+        <section className="py-20 lg:py-28 border-t border-gray-100 dark:border-gray-800">
+          <div className="container-wide max-w-3xl mx-auto">
+            <h2 className="display-md text-gray-900 dark:text-white mb-10">
+              Częste pytania
+            </h2>
+            <div className="space-y-4">
+              {faqs.map((faq) => (
+                <details
+                  key={faq.question}
+                  className="group card-lift rounded-2xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800/60"
+                >
+                  <summary className="flex items-center justify-between cursor-pointer p-6 text-gray-900 dark:text-white font-medium list-none">
+                    {faq.question}
+                    <svg
+                      className="shrink-0 ml-4 w-5 h-5 text-gray-400 transition-transform group-open:rotate-45"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                    >
+                      <path
+                        d="M10 4v12M4 10h12"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                      />
+                    </svg>
+                  </summary>
+                  <div className="px-6 pb-6 text-sm text-gray-600 dark:text-gray-400">
+                    {faq.answer}
+                  </div>
+                </details>
+              ))}
             </div>
           </div>
         </section>
@@ -296,61 +140,15 @@ export default function AutomatyzacjaProcesowBiznesowych() {
         {/* Form — diagnoza */}
         <section
           id="diagnoza"
-          className="scroll-mt-20 py-16 lg:py-20 bg-accent/10"
+          className="scroll-mt-20 py-20 lg:py-24 bg-accent/10 border-t border-gray-100 dark:border-gray-800"
         >
           <div className="container-wide">
             <LandingForm
               formId="diagnosis_procesy"
               heading="Sprawdźmy, który proces warto zautomatyzować"
-              intro="Opisz krótko, jakie procesy najbardziej kosztują Cię czas: ręczne raporty, przepisywanie danych, follow-upy, obieg dokumentów. W odpowiedzi dostaniesz informację, który z nich da największy efekt po automatyzacji i jaki byłby pierwszy krok."
+              intro="Opisz krótko, co najbardziej kosztuje Cię czas: ręczne raporty, przepisywanie danych, follow-upy, obieg dokumentów. Dostaniesz informację, który proces da największy efekt."
               submitLabel="Sprawdźmy, który proces zautomatyzować"
             />
-          </div>
-        </section>
-
-        {/* Related links */}
-        <section className="py-16 lg:py-24 border-t border-gray-100 dark:border-gray-800">
-          <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <div className="grid md:grid-cols-2 gap-12">
-                <div>
-                  <h3 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-4">
-                    Powiązane usługi
-                  </h3>
-                  <ul className="space-y-3">
-                    {relatedServices.map((item) => (
-                      <li key={item.href}>
-                        <Link
-                          href={item.href}
-                          className="flex items-center gap-2.5 text-sm text-gray-700 dark:text-gray-300 hover:text-accent dark:hover:text-accent transition-colors"
-                        >
-                          <CheckIcon />
-                          {item.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-4">
-                    Artykuły
-                  </h3>
-                  <ul className="space-y-3">
-                    {relatedArticles.map((item) => (
-                      <li key={item.href}>
-                        <Link
-                          href={item.href}
-                          className="flex items-center gap-2.5 text-sm text-gray-700 dark:text-gray-300 hover:text-accent dark:hover:text-accent transition-colors"
-                        >
-                          <CheckIcon />
-                          {item.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
           </div>
         </section>
       </main>
