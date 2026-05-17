@@ -1,11 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
 import Header from "@/components/Header";
+import PillarVisual from "@/components/PillarVisual";
 
 const PILLARS = [
   {
     href: "/strony-www",
     img: "/abstract/web.webp",
+    variant: "web" as const,
     num: "01",
     title: "Strony WWW",
     desc: "Stworzę nową stronę internetową dopasowaną do potrzeb firmy. Posiadasz już swoją stronę? Ulepszę witrynę tak, aby korzystanie z niej było bardziej intuicyjne dla klientów!",
@@ -19,6 +21,7 @@ const PILLARS = [
   {
     href: "/automatyzacja-leadow-crm",
     img: "/abstract/automation.webp",
+    variant: "automation" as const,
     num: "02",
     title: "Automatyzacja",
     desc: "Czy masz wrażenie, że to, co robisz jest powtarzalne? Przepisujesz te same dane? Wysyłanie tych samych maili, sprawdzanie kalendarza, przydzielanie zadań zespołowi?",
@@ -32,10 +35,11 @@ const PILLARS = [
   {
     href: "/scraping-danych",
     img: "/abstract/data.webp",
+    variant: "data" as const,
     num: "03",
     title: "Dane",
     desc: "Zbieranie danych ze stron internetowych, maili i innych plików wymaga czasu. Sprawię, że dane będą przejrzyste i czytelne, a gotowe raporty oszczędzą Ci godziny pracy.",
-    cta: "Sprawdź, jak",
+    cta: "Sprawdź, jak oszczędzić godziny pracy",
     // Akcent: zieleń
     ring: "group-hover:ring-emerald-400/80 focus-visible:ring-emerald-400",
     glow: "from-emerald-500/35",
@@ -83,6 +87,11 @@ export default function Home() {
                 className={`absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t ${p.glow} to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100`}
               />
 
+              {/* Animowany motyw — żywy SVG, mocniej na hover */}
+              <div className="absolute inset-x-0 top-8 lg:top-10 flex justify-center opacity-80 transition-all duration-500 group-hover:opacity-100 group-hover:-translate-y-1">
+                <PillarVisual variant={p.variant} />
+              </div>
+
               {/* Treść — unosi się na hover */}
               <div className="relative p-7 lg:p-9 transition-transform duration-500 ease-out group-hover:-translate-y-2">
                 <span
@@ -90,7 +99,7 @@ export default function Home() {
                 >
                   {p.num}
                 </span>
-                <h2 className="mt-1.5 text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tight">
+                <h2 className="mt-1.5 text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tight text-white">
                   {p.title}
                 </h2>
                 <p className="mt-2.5 text-sm lg:text-base text-white/65 leading-relaxed max-w-sm">
