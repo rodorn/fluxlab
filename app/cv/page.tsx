@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import RevealOnScroll from "@/components/RevealOnScroll";
 import CountUp from "@/components/CountUp";
@@ -237,10 +238,17 @@ export default function CVPage() {
         />
         <div className="container-wide relative py-16 lg:py-20">
           <div className="grid lg:grid-cols-[auto,1fr] gap-8 lg:gap-12 items-start">
-            {/* Monogram */}
+            {/* Zdjęcie */}
             <div className="flex-shrink-0">
-              <div className="w-24 h-24 lg:w-28 lg:h-28 rounded-2xl bg-gradient-to-br from-accent to-violet-500 flex items-center justify-center text-white text-3xl lg:text-4xl font-bold tracking-tight shadow-lg shadow-accent/30">
-                PI
+              <div className="relative w-32 lg:w-44 aspect-[4/5] rounded-2xl overflow-hidden ring-1 ring-gray-200 dark:ring-white/10 shadow-xl shadow-accent/15">
+                <Image
+                  src="/pawel.webp"
+                  alt="Paweł Iwanek"
+                  fill
+                  sizes="(min-width: 1024px) 176px, 128px"
+                  priority
+                  className="object-cover"
+                />
               </div>
             </div>
 
