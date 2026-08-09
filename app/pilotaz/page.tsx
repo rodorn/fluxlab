@@ -151,7 +151,7 @@ export default function Pilotaz() {
   return (
     <>
       <Header />
-      <main className="pt-16">
+      <main className="pt-16 prose-justify">
         <Breadcrumbs items={[{ label: "Program case study" }]} />
 
         {/* Hero — kompaktowy */}

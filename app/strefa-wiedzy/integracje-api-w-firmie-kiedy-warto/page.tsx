@@ -35,7 +35,7 @@ export default function IntegracjeApiArticle() {
   return (
     <>
       <Header />
-      <main className="pt-16">
+      <main className="pt-16 prose-justify">
         <Breadcrumbs
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },

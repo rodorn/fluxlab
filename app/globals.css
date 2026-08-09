@@ -104,6 +104,26 @@
     @apply text-accent text-xs font-semibold uppercase tracking-widest;
   }
 
+  /* Justowanie tekstu ciągłego (artykuły, strony tekstowe).
+     Dzielenie wyrazów włączone zawsze — html ma lang="pl", więc
+     przeglądarka dzieli poprawnie. Justowanie dopiero od md:
+     w wąskiej kolumnie na telefonie robi zbyt duże odstępy. */
+  .prose-justify p {
+    hyphens: auto;
+  }
+
+  @media (min-width: 768px) {
+    .prose-justify p {
+      text-align: justify;
+      text-justify: inter-word;
+    }
+
+    /* Krótkie teksty w kartach/linkach zostają do lewej */
+    .prose-justify a p {
+      text-align: left;
+    }
+  }
+
   /* Bold display typography — tighter tracking, fluid scale.
      leading celowo > 1 + padding-bottom: bez tego bg-clip-text ucina
      descendery (y/j/g/p) przy ciasnym leading. */
