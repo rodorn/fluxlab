@@ -23,6 +23,15 @@ const CONTACT_PREF_LABELS: Record<string, string> = {
   meet: "Google Meet",
 };
 
+// Domena fluxlab.pl musi byc najpierw zweryfikowana w panelu Resend.
+// Do tego czasu dzialaja domyslne adresy testowe, ktore Resend przyjmuje,
+// ale ktore pozwalaja wysylac wylacznie na adres wlasciciela konta.
+// Po weryfikacji ustawic w Vercel: RESEND_FROM_FORMULARZ, RESEND_FROM_PAWEL.
+const FROM_FORMULARZ =
+  process.env.RESEND_FROM_FORMULARZ ?? "Formularz Fluxlab <onboarding@resend.dev>";
+const FROM_PAWEL =
+  process.env.RESEND_FROM_PAWEL ?? "Paweł, Fluxlab <onboarding@resend.dev>";
+
 export async function POST(req: Request) {
   let body: Record<string, unknown>;
   try {
@@ -93,7 +102,7 @@ export async function POST(req: Request) {
   const subjectCompany = company ? ` (${company})` : "";
 
   const { error } = await resend.emails.send({
-    from: "Formularz Fluxlab <onboarding@resend.dev>",
+    from: FROM_FORMULARZ,
     to: "iwanekpawel55@gmail.com",
     replyTo: email,
     subject: `Nowa diagnoza: ${problemTypeLabel}${subjectCompany}`,
@@ -111,21 +120,27 @@ export async function POST(req: Request) {
   // Auto-potwierdzenie do klienta — fire-and-forget, błędy nie blokują sukcesu.
   resend.emails
     .send({
-      from: "Paweł — Fluxlab <onboarding@resend.dev>",
+      from: FROM_PAWEL,
       to: email,
-      subject: "Dostałem zgłoszenie — Fluxlab",
+      subject: "Dostałem zgłoszenie, Fluxlab",
       text: `Cześć,
 
-dzięki za opis procesu. Przejrzę zgłoszenie i wrócę z informacją, czy widzę potencjał na automatyzację oraz jaki byłby sensowny pierwszy krok — zwykle w ciągu 24h.
+dzięki za opis procesu. Przejrzę zgłoszenie i wrócę z informacją, czy widzę potencjał na automatyzację oraz jaki byłby sensowny pierwszy krok, zwykle w ciągu 24h.
 
-Jeśli widzę dopasowanie, zaproponuję termin krótkiej rozmowy. Jeśli proces wygląda na zbyt mały albo nieopłacalny do automatyzacji na tym etapie, napiszę to wprost — bez owijania w bawełnę.
+Jeśli widzę dopasowanie, odpiszę z konkretną propozycją zakresu i wyceną. Jeśli proces wygląda na zbyt mały albo nieopłacalny do automatyzacji na tym etapie, napiszę to wprost, bez owijania w bawełnę.
+
+Pracuję i ustalam wszystko mailowo, więc możesz po prostu odpisać na tę wiadomość.
 
 Paweł
-Fluxlab — Automatyzacja leadów, CRM i raportowania dla firm B2B
+Fluxlab, automatyzacja leadów, CRM i raportowania dla firm B2B
 fluxlab.pl
 `,
     })
-    .catch((e) => console.error("[contact] auto-reply failed:", e));
+    .catch((e) =>
+      console.error(
+        "[contact] auto-reply NIE zostal wyslany do", email, "-", e,
+      ),
+    );
 
   return NextResponse.json({ ok: true });
 }
