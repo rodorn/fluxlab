@@ -223,6 +223,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "crm-dla-jednoosobowej-firmy",
     "salesforce-dla-malej-firmy",
     "automatyzacja-vs-zatrudnienie",
+    "panel-do-sesji-ai",
   ];
 
   const articlePages = articles.map((slug) => ({
