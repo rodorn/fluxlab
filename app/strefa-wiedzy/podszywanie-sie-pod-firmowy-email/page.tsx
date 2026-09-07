@@ -74,7 +74,7 @@ export default function PodszywanieEmailArticle() {
         <h1 style={{ fontSize: "2rem", fontWeight: 700, margin: "1rem 0" }}>
           Czy ktoś może podszyć się pod Twój firmowy e-mail?
         </h1>
-        <p style={{ color: "#555", lineHeight: 1.7, fontSize: "1.05rem" }}>
+        <p style={{ color: "var(--article-muted)", lineHeight: 1.7, fontSize: "1.05rem" }}>
           To jeden z najczęstszych i najmniej widocznych problemów małych firm.
           Jeśli Twoja domena nie jest poprawnie skonfigurowana, dowolna osoba
           może wysłać wiadomość wyglądającą jak od Ciebie, a część Twoich
@@ -87,7 +87,7 @@ export default function PodszywanieEmailArticle() {
           style={{
             margin: "2rem 0",
             padding: "1.25rem 1.5rem",
-            background: "#f6f6f8",
+            background: "var(--article-box)", border: "1px solid var(--article-box-border)",
             borderRadius: 12,
             display: "flex",
             flexWrap: "wrap",
@@ -100,7 +100,7 @@ export default function PodszywanieEmailArticle() {
             <strong style={{ fontSize: "1.05rem" }}>
               Sprawdź swoją domenę teraz
             </strong>
-            <div style={{ color: "#555", fontSize: "0.9rem" }}>
+            <div style={{ color: "var(--article-muted)", fontSize: "0.9rem" }}>
               Darmowy audyt SPF, DKIM i DMARC. Bez rejestracji, wynik od razu.
             </div>
           </div>
@@ -118,7 +118,7 @@ export default function PodszywanieEmailArticle() {
         >
           Trzy rekordy, które decydują o wszystkim
         </h2>
-        <p style={{ color: "#444", lineHeight: 1.7 }}>
+        <p style={{ color: "var(--article-text)", lineHeight: 1.7 }}>
           Bezpieczeństwo poczty firmowej opiera się na trzech publicznych
           wpisach w DNS Twojej domeny. Każdy odpowiada za co innego, a razem
           decydują, czy ktoś może się pod Ciebie podszyć i czy Twoje maile
@@ -128,7 +128,7 @@ export default function PodszywanieEmailArticle() {
         <h3 style={{ fontWeight: 700, marginTop: "1.5rem" }}>
           SPF — kto ma prawo wysyłać w Twoim imieniu
         </h3>
-        <p style={{ color: "#444", lineHeight: 1.7 }}>
+        <p style={{ color: "var(--article-text)", lineHeight: 1.7 }}>
           SPF to lista serwerów uprawnionych do wysyłania poczty z Twojej
           domeny. Bez niego dowolny serwer na świecie może podać się za Twój, a
           odbiorca nie ma jak tego wykryć.
@@ -137,7 +137,7 @@ export default function PodszywanieEmailArticle() {
         <h3 style={{ fontWeight: 700, marginTop: "1.5rem" }}>
           DKIM — podpis, którego nie da się podrobić
         </h3>
-        <p style={{ color: "#444", lineHeight: 1.7 }}>
+        <p style={{ color: "var(--article-text)", lineHeight: 1.7 }}>
           DKIM to kryptograficzny podpis dokładany do każdej wiadomości.
           Odbiorca sprawdza, czy list naprawdę wyszedł od Ciebie i czy nie
           został po drodze zmieniony.
@@ -146,7 +146,7 @@ export default function PodszywanieEmailArticle() {
         <h3 style={{ fontWeight: 700, marginTop: "1.5rem" }}>
           DMARC — reguła, co zrobić z podejrzaną pocztą
         </h3>
-        <p style={{ color: "#444", lineHeight: 1.7 }}>
+        <p style={{ color: "var(--article-text)", lineHeight: 1.7 }}>
           DMARC spina SPF i DKIM i mówi serwerom odbiorców, co zrobić z
           wiadomością, która nie przechodzi weryfikacji: przepuścić, oznaczyć
           jako spam czy odrzucić. Od 2024 roku Gmail i Outlook wymagają tego
@@ -159,7 +159,7 @@ export default function PodszywanieEmailArticle() {
         >
           Dlaczego to realny problem, a nie teoria
         </h2>
-        <p style={{ color: "#444", lineHeight: 1.7 }}>
+        <p style={{ color: "var(--article-text)", lineHeight: 1.7 }}>
           Oszustwo na fałszywą fakturę zaczyna się zwykle od maila, który
           wygląda jak od zaufanego kontrahenta. Jeśli Twoja domena nie jest
           zabezpieczona, przestępca może wysłać do Twoich klientów wiadomość z
@@ -178,7 +178,7 @@ export default function PodszywanieEmailArticle() {
         >
           <strong style={{ fontSize: "1.1rem" }}>Nie zgaduj, sprawdź</strong>
           <p
-            style={{ color: "#555", lineHeight: 1.6, margin: "0.5rem 0 1rem" }}
+            style={{ color: "var(--article-muted)", lineHeight: 1.6, margin: "0.5rem 0 1rem" }}
           >
             Wpisz domenę firmy, a w kilka sekund pokażemy stan SPF, DKIM i DMARC
             oraz co konkretnie wymaga poprawy. Wszystko z publicznego DNS, bez
@@ -208,7 +208,7 @@ export default function PodszywanieEmailArticle() {
                 {item.question}
               </summary>
               <p
-                style={{ color: "#555", lineHeight: 1.7, marginTop: "0.5rem" }}
+                style={{ color: "var(--article-muted)", lineHeight: 1.7, marginTop: "0.5rem" }}
               >
                 {item.answer}
               </p>

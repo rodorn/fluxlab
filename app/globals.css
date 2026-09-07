@@ -2,6 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Kolory treści artykułów. Wpisane wprost w style artykułów nie reagowały
+   na tryb ciemny, przez co jasne tła zostawały białe. */
+:root {
+  --article-text: #444444;
+  --article-muted: #555555;
+  --article-box: #f6f6f8;
+  --article-box-border: transparent;
+  --article-link: #6366f1;
+}
+
+.dark,
+html.dark {
+  --article-text: #d1d5db;
+  --article-muted: #9ca3af;
+  --article-box: rgba(17, 24, 39, 0.6);
+  --article-box-border: #1f2937;
+  --article-link: #a5b4fc;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;

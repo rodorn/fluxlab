@@ -73,7 +73,7 @@ export default function PanelDoSesjiAiArticle() {
           Kilkanaście sesji AI naraz: jak nad tym zapanować
         </h1>
 
-        <p style={{ color: "#555", lineHeight: 1.7, fontSize: "1.05rem" }}>
+        <p style={{ color: "var(--article-muted)", lineHeight: 1.7, fontSize: "1.05rem" }}>
           Praca z asystentem AI zaczyna się od jednego okna terminala. Po
           miesiącu okien jest kilkanaście, każde z inną rozmową, i nagle nie
           wiadomo, która czeka na decyzję, która skończyła robotę, a która stoi
@@ -86,7 +86,7 @@ export default function PanelDoSesjiAiArticle() {
           style={{
             margin: "2rem 0",
             padding: "1.25rem 1.5rem",
-            background: "#f6f6f8",
+            background: "var(--article-box)", border: "1px solid var(--article-box-border)",
             borderRadius: 12,
             display: "flex",
             flexWrap: "wrap",
@@ -99,7 +99,7 @@ export default function PanelDoSesjiAiArticle() {
             <strong style={{ fontSize: "1.05rem" }}>
               Fluxdesk, kod otwarty
             </strong>
-            <div style={{ color: "#555", fontSize: "0.9rem" }}>
+            <div style={{ color: "var(--article-muted)", fontSize: "0.9rem" }}>
               Licencja MIT. Działa lokalnie, instalacja jednym poleceniem.
             </div>
           </div>
@@ -119,13 +119,13 @@ export default function PanelDoSesjiAiArticle() {
         >
           Punkt wyjścia: dwadzieścia dwa zapomniane procesy
         </h2>
-        <p style={{ color: "#444", lineHeight: 1.7 }}>
+        <p style={{ color: "var(--article-text)", lineHeight: 1.7 }}>
           Diagnoza zaczęła się od policzenia, ile rozmów faktycznie działa w
           tle. Wynik: dwadzieścia dwa procesy, łącznie ponad pięć gigabajtów
           pamięci, część uruchomiona trzy tygodnie wcześniej i dawno zapomniana.
           Żadne okno nie pokazywało, która z nich czeka na odpowiedź.
         </p>
-        <p style={{ color: "#444", lineHeight: 1.7 }}>
+        <p style={{ color: "var(--article-text)", lineHeight: 1.7 }}>
           To nie jest problem asystenta, tylko braku warstwy zarządzania. Ten
           sam wzorzec widać w firmach: pojedyncza automatyzacja działa świetnie,
           dopiero przy dziesiątej nikt nie wie, co jest włączone i czy nadal
@@ -141,7 +141,7 @@ export default function PanelDoSesjiAiArticle() {
         <h3 style={{ fontWeight: 700, marginTop: "1.5rem" }}>
           1. Stan każdej rozmowy, widoczny od razu
         </h3>
-        <p style={{ color: "#444", lineHeight: 1.7 }}>
+        <p style={{ color: "var(--article-text)", lineHeight: 1.7 }}>
           Lista wszystkich sesji z jednoznaczną informacją: pracuje, czeka na
           Twoją decyzję, czy jest gotowa. Do tego, co robi w tej chwili i od jak
           dawna. Bez tego przełączanie się między oknami jest zgadywanką.
@@ -150,7 +150,7 @@ export default function PanelDoSesjiAiArticle() {
         <h3 style={{ fontWeight: 700, marginTop: "1.5rem" }}>
           2. Pytania, które blokują pracę na godziny
         </h3>
-        <p style={{ color: "#444", lineHeight: 1.7 }}>
+        <p style={{ color: "var(--article-text)", lineHeight: 1.7 }}>
           Jedenaście sesji stało u nas na pytaniu, którego nikt nie zobaczył, bo
           było w oknie na innym pulpicie. Narzędzie odpowiada na nie samo, a gdy
           decyzja naprawdę wymaga człowieka, wysyła powiadomienie na telefon.
@@ -159,7 +159,7 @@ export default function PanelDoSesjiAiArticle() {
         <h3 style={{ fontWeight: 700, marginTop: "1.5rem" }}>
           3. Koszty i limity na wierzchu
         </h3>
-        <p style={{ color: "#444", lineHeight: 1.7 }}>
+        <p style={{ color: "var(--article-text)", lineHeight: 1.7 }}>
           Ile kosztowała każda rozmowa, ile zostało limitu i kiedy się skończy
           przy obecnym tempie. Przy okazji wyszedł błąd w liczeniu: asystent
           zapisuje tę samą odpowiedź kilka razy, więc naiwne sumowanie zawyżało
@@ -169,7 +169,7 @@ export default function PanelDoSesjiAiArticle() {
         <h3 style={{ fontWeight: 700, marginTop: "1.5rem" }}>
           4. Zadania i czas w tym samym miejscu
         </h3>
-        <p style={{ color: "#444", lineHeight: 1.7 }}>
+        <p style={{ color: "var(--article-text)", lineHeight: 1.7 }}>
           Rozmowa z asystentem zwykle wynika z konkretnego zadania i kończy się
           kolejnym. Trzymanie jednego i drugiego osobno oznacza ciągłe
           przepisywanie. Tutaj zadanie przeciąga się na godzinę w kalendarzu
@@ -181,19 +181,19 @@ export default function PanelDoSesjiAiArticle() {
         >
           Dlaczego kod jest otwarty
         </h2>
-        <p style={{ color: "#444", lineHeight: 1.7 }}>
+        <p style={{ color: "var(--article-text)", lineHeight: 1.7 }}>
           Z dwóch powodów. Narzędzie steruje całym komputerem i czyta historię
           rozmów, więc powinno dać się sprawdzić, co dokładnie robi. Drugi powód
           jest prostszy: opis usług przekonuje mniej niż działający program,
           którego można użyć bez pytania kogokolwiek o zgodę.
         </p>
-        <p style={{ color: "#444", lineHeight: 1.7 }}>
+        <p style={{ color: "var(--article-text)", lineHeight: 1.7 }}>
           Kod, instrukcja instalacji i opis architektury są dostępne publicznie:{" "}
           <a
             href="https://github.com/rodorn/fluxdesk"
             target="_blank"
             rel="noopener noreferrer"
-            style={{ color: "#6366f1", textDecoration: "underline" }}
+            style={{ color: "var(--article-link)", textDecoration: "underline" }}
           >
             github.com/rodorn/fluxdesk
           </a>
@@ -205,7 +205,7 @@ export default function PanelDoSesjiAiArticle() {
         >
           Co z tego wynika dla firm
         </h2>
-        <p style={{ color: "#444", lineHeight: 1.7 }}>
+        <p style={{ color: "var(--article-text)", lineHeight: 1.7 }}>
           Wniosek, który przenosi się jeden do jednego na automatyzację
           procesów: narzędzia same z siebie nie robią porządku. Dziesięć
           automatyzacji bez jednego miejsca, w którym widać ich stan, koszt i
@@ -218,7 +218,7 @@ export default function PanelDoSesjiAiArticle() {
           style={{
             margin: "2.5rem 0 1rem",
             padding: "1.25rem 1.5rem",
-            background: "#f6f6f8",
+            background: "var(--article-box)", border: "1px solid var(--article-box-border)",
             borderRadius: 12,
           }}
         >
@@ -227,7 +227,7 @@ export default function PanelDoSesjiAiArticle() {
           </strong>
           <div
             style={{
-              color: "#555",
+              color: "var(--article-muted)",
               fontSize: "0.95rem",
               margin: "0.5rem 0 1rem",
             }}
@@ -252,7 +252,7 @@ export default function PanelDoSesjiAiArticle() {
         {faqItems.map((item) => (
           <div key={item.question} style={{ marginTop: "1.5rem" }}>
             <h3 style={{ fontWeight: 700 }}>{item.question}</h3>
-            <p style={{ color: "#444", lineHeight: 1.7 }}>{item.answer}</p>
+            <p style={{ color: "var(--article-text)", lineHeight: 1.7 }}>{item.answer}</p>
           </div>
         ))}
 
