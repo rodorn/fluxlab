@@ -34,6 +34,13 @@ export const metadata: Metadata = {
 
 const businessTools = [
   {
+    title: "Audyt bezpieczeństwa poczty",
+    description:
+      "Wpisz domenę firmy i sprawdź w kilka sekund, czy ktoś może podszyć się pod Wasz adres i czy Wasze maile trafiają do klientów. Analiza SPF, DKIM i DMARC z publicznego DNS, bez rejestracji.",
+    href: "/audyt-poczty",
+    badge: "Nowość",
+  },
+  {
     title: "Kalkulator kosztu obsługi leadów",
     description:
       "Sprawdź, ile miesięcznie kosztuje ręczne przepisywanie leadów, zakładanie tematów w CRM i ręczne raporty. Realny koszt w zł, nie ogólniki.",
