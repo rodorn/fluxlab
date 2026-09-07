@@ -118,6 +118,12 @@ export const categories: Category[] = [
         description:
           "Pełne porównanie trzech największych narzędzi automatyzacji — ceny, ograniczenia, rekomendacje.",
       },
+      {
+        href: "/strefa-wiedzy/panel-do-sesji-ai",
+        title: "Kilkanaście sesji AI naraz: jak nad tym zapanować",
+        description:
+          "Stan rozmów, koszty i limity w jednym miejscu. Opis narzędzia z otwartym kodem.",
+      },
     ],
   },
   {
@@ -171,12 +177,6 @@ export const categories: Category[] = [
         title: "Kiedy AI ma sens, a kiedy nie",
         description:
           "Prosty framework decyzji: wolumen, powtarzalność, jakość danych.",
-      },
-      {
-        href: "/strefa-wiedzy/panel-do-sesji-ai",
-        title: "Kilkanaście sesji AI naraz: jak nad tym zapanować",
-        description:
-          "Stan rozmów, koszty i limity w jednym miejscu. Opis narzędzia z otwartym kodem.",
       },
     ],
   },

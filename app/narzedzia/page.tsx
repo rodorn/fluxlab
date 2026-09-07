@@ -59,6 +59,13 @@ const businessTools = [
       "Porównaj koszt miesięcznej ręcznej pracy z kosztem wdrożenia automatyzacji. 4 inputy, 1 jasna decyzja.",
     href: "/zatrudnic-czy-zautomatyzowac",
   },
+  {
+    title: "Fluxdesk — panel do sesji AI",
+    description:
+      "Kilkanaście rozmów z asystentem AI w jednym oknie: stan każdej sesji, koszty, limity i zadania. Narzędzie z otwartym kodem, do uruchomienia u siebie.",
+    href: "/strefa-wiedzy/panel-do-sesji-ai",
+    badge: "Open source",
+  },
 ];
 
 const otherTools = [
