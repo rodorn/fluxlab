@@ -45,6 +45,37 @@ const GH = "https://github.com/rodorn";
 
 const GROUPS: Group[] = [
   {
+    title: "Produkty i narzędzia",
+    blurb:
+      "Gotowe narzędzia, które rozwiązują konkretny, policzalny problem, z działającym kodem i przykładowym raportem.",
+    items: [
+      {
+        name: "Sprawdź auto przed zakupem",
+        desc: "Raport due-diligence dla kupującego: benchmark ceny wobec podobnych ofert, checklista typowych usterek modelu, wykrywanie red-flag (niespójny przebieg, cofnięty licznik) i gotowy skrypt negocjacji.",
+        stack: ["Python", "Otomoto", "PDF"],
+        repo: `${GH}/fluxlab-auto-due-diligence`,
+      },
+      {
+        name: "ImportRadar DE/NL → PL",
+        desc: "Radar opłacalności importu aut: pełny kalkulator kosztu sprowadzenia (akcyza, transport, opłaty) i ranking marży netto wobec cen sprzedaży w Polsce.",
+        stack: ["Python", "Kalkulator", "PDF"],
+        repo: `${GH}/fluxlab-import-radar`,
+      },
+      {
+        name: "Radar przetargów IT (Baza Konkurencyjności)",
+        desc: "Monitoring unijnie finansowanych zapytań ofertowych IT z filtrem po zakresie i wymogu referencji oraz codziennym digestem, bez przeoczonych terminów.",
+        stack: ["Python", "Scraping", "SQLite"],
+        repo: `${GH}/fluxlab-przetargi-radar`,
+      },
+      {
+        name: "Audyt zmarnowanego budżetu Google Ads",
+        desc: "Analiza raportu wyszukiwanych haseł: ile budżetu idzie na frazy bez konwersji, gotowa lista wykluczeń i nocny skrypt-strażnik utrzymujący konto.",
+        stack: ["Python", "Google Ads", "PDF"],
+        repo: `${GH}/fluxlab-ads-wasted-spend`,
+      },
+    ],
+  },
+  {
     title: "Integracje i API",
     blurb:
       "Łączenie systemów sprzedażowych i magazynowych: BaseLinker, Shopify, GoHighLevel, KSeF.",
