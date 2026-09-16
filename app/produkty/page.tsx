@@ -142,7 +142,7 @@ export default function ProduktyPage() {
                     </li>
                   ))}
                 </ul>
-                <div className="mt-5 flex items-center justify-between border-t border-gray-100 dark:border-gray-800 pt-4">
+                <div className="mt-auto flex items-center justify-between border-t border-gray-100 dark:border-gray-800 pt-4">
                   <span className="text-lg font-bold text-gray-900 dark:text-white">
                     {p.price}
                   </span>
