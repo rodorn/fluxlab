@@ -33,6 +33,7 @@ interface Repo {
   stack: string[];
   repo: string;
   live?: string;
+  landing?: string;
 }
 
 interface Group {
@@ -54,12 +55,14 @@ const GROUPS: Group[] = [
         desc: "Raport due-diligence dla kupującego: benchmark ceny wobec podobnych ofert, checklista typowych usterek modelu, wykrywanie red-flag (niespójny przebieg, cofnięty licznik) i gotowy skrypt negocjacji.",
         stack: ["Python", "Otomoto", "PDF"],
         repo: `${GH}/fluxlab-auto-due-diligence`,
+        landing: "/sprawdz-auto",
       },
       {
         name: "ImportRadar DE/NL → PL",
         desc: "Radar opłacalności importu aut: pełny kalkulator kosztu sprowadzenia (akcyza, transport, opłaty) i ranking marży netto wobec cen sprzedaży w Polsce.",
         stack: ["Python", "Kalkulator", "PDF"],
         repo: `${GH}/fluxlab-import-radar`,
+        landing: "/import-radar",
       },
       {
         name: "Radar przetargów IT (Baza Konkurencyjności)",
@@ -72,6 +75,7 @@ const GROUPS: Group[] = [
         desc: "Analiza raportu wyszukiwanych haseł: ile budżetu idzie na frazy bez konwersji, gotowa lista wykluczeń i nocny skrypt-strażnik utrzymujący konto.",
         stack: ["Python", "Google Ads", "PDF"],
         repo: `${GH}/fluxlab-ads-wasted-spend`,
+        landing: "/audyt-google-ads",
       },
     ],
   },
@@ -236,11 +240,23 @@ export default function RealizacjePage() {
                         ))}
                       </div>
                       <div className="mt-5 flex flex-wrap items-center gap-4">
+                        {item.landing && (
+                          <Link
+                            href={item.landing}
+                            className="text-sm font-semibold text-accent hover:underline"
+                          >
+                            Zamów / szczegóły →
+                          </Link>
+                        )}
                         <a
                           href={item.repo}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-sm font-semibold text-accent hover:underline"
+                          className={`text-sm font-semibold hover:underline ${
+                            item.landing
+                              ? "text-gray-900 dark:text-white"
+                              : "text-accent"
+                          }`}
                         >
                           Kod na GitHubie →
                         </a>

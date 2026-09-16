@@ -8,6 +8,7 @@ const NAV = [
   { href: "/strony-www", label: "Strony WWW" },
   { href: "/automatyzacja-leadow-crm", label: "Automatyzacja" },
   { href: "/scraping-danych", label: "Dane" },
+  { href: "/produkty", label: "Produkty" },
   { href: "/realizacje", label: "Realizacje" },
   { href: "/strefa-wiedzy", label: "Strefa wiedzy" },
   { href: "/narzedzia", label: "Narzędzia" },
