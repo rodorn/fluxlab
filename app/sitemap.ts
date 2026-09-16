@@ -121,6 +121,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.85,
     },
     {
+      url: `${baseUrl}/realizacje`,
+      changeFrequency: "weekly" as const,
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/koszt-recznej-obslugi-leadow`,
       changeFrequency: "monthly" as const,
       priority: 0.8,
