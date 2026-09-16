@@ -330,7 +330,7 @@ export default function CaseStudy() {
                           Zobacz warunki programu
                         </Link>
                         <TrackedCTA
-                          href="/#kontakt"
+                          href="/kontakt"
                           location="case_study_final"
                           label="diagnoza"
                           eventName="cta_click_case_study"

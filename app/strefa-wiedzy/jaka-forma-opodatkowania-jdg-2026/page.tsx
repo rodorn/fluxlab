@@ -561,7 +561,7 @@ export default function JakaFormaOpodatkowaniaJdgArticle() {
                         pomogę dobrać optymalną formę do Twojej sytuacji.
                       </p>
                       <Link
-                        href="/#kontakt"
+                        href="/kontakt"
                         className="btn-primary inline-block"
                       >
                         Zamów diagnozę procesu

@@ -473,7 +473,7 @@ export default function AutomatyzacjaDlaAgencjiMarketingowych() {
                           automatyzacja odda zespołowi 10–20 godzin tygodniowo.
                         </p>
                         <Link
-                          href="/#kontakt"
+                          href="/kontakt"
                           className="btn-primary px-8 py-3.5 text-base"
                         >
                           Zamów diagnozę

@@ -215,7 +215,7 @@ export default function AudytCRMPage() {
                           miesięcznie.
                         </p>
                         <TrackedCTA
-                          href="/#kontakt"
+                          href="/kontakt"
                           location="audit_crm_mid"
                           eventName="cta_click_audit_crm"
                           className="btn-primary px-8 py-3 text-base"
@@ -346,7 +346,7 @@ export default function AudytCRMPage() {
                           i orientacyjną wycenę.
                         </p>
                         <TrackedCTA
-                          href="/#kontakt"
+                          href="/kontakt"
                           location="audit_crm_final"
                           eventName="cta_click_audit_crm"
                           className="btn-primary px-8 py-3.5 text-base"

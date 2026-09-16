@@ -726,7 +726,7 @@ export default function AutomatyzacjaFormularzaDoPipedrive() {
                               Zobacz pełną ofertę: automatyzacja leadów do CRM
                             </TrackedCTA>
                             <TrackedCTA
-                              href="/#kontakt"
+                              href="/kontakt"
                               location="article_formularz_pipedrive_pricing_primary"
                               label="Chcę połączyć formularz z CRM"
                               eventName="cta_click_article_audit"
@@ -826,7 +826,7 @@ export default function AutomatyzacjaFormularzaDoPipedrive() {
                             PowerPoincie.
                           </p>
                           <TrackedCTA
-                            href="/#kontakt"
+                            href="/kontakt"
                             location="article_formularz_pipedrive_final"
                             label="Chcę połączyć formularz z CRM"
                             eventName="cta_click_article_audit"

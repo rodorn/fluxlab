@@ -482,7 +482,7 @@ export default function N8nVsZapierArticle() {
                           na 12 i 24 miesiące — bez sprzedażowej presji.
                         </p>
                         <Link
-                          href="/#kontakt"
+                          href="/kontakt"
                           className="btn-primary inline-block"
                         >
                           Zamów diagnozę procesu

@@ -722,7 +722,7 @@ export default function AutomatyzacjaFollowUp() {
                               Zobacz pełną ofertę
                             </TrackedCTA>
                             <TrackedCTA
-                              href="/#kontakt"
+                              href="/kontakt"
                               location="article_automatyzacja-follow-up_pricing"
                               label="diagnoza"
                               eventName="cta_click_article_audit"
@@ -869,7 +869,7 @@ export default function AutomatyzacjaFollowUp() {
                             sprzedażowej presji.
                           </p>
                           <TrackedCTA
-                            href="/#kontakt"
+                            href="/kontakt"
                             location="article_automatyzacja-follow-up_final"
                             label="zautomatyzuj follow-upy"
                             eventName="cta_click_article_audit"

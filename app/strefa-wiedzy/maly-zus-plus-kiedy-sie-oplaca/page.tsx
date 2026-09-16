@@ -535,7 +535,7 @@ export default function MalyZusPlusArticle() {
                           konsultację.
                         </p>
                         <Link
-                          href="/#kontakt"
+                          href="/kontakt"
                           className="btn-primary inline-block"
                         >
                           Zamów diagnozę procesu

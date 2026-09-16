@@ -727,7 +727,7 @@ export default function KosztRecznejObslugiLeadow() {
                               Otwórz kalkulator
                             </TrackedCTA>
                             <TrackedCTA
-                              href="/#kontakt"
+                              href="/kontakt"
                               location="article_koszt_cta_block"
                               label="diagnoza"
                               eventName="cta_click_article_audit"

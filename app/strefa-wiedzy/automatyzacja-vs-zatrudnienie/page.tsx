@@ -847,7 +847,7 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
                 30 minut, zero sprzedażowej presji, konkretne liczby dla Twoich
                 procesów.
               </p>
-              <Link href="/#kontakt" className="btn-primary inline-block">
+              <Link href="/kontakt" className="btn-primary inline-block">
                 Zamów diagnozę procesu
               </Link>
             </div>

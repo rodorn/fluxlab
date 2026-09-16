@@ -275,7 +275,7 @@ export default function RoiAutomatyzacjiArticle() {
                         Bezpłatna diagnoza, bez zobowiązań.
                       </p>
                       <Link
-                        href="/#kontakt"
+                        href="/kontakt"
                         className="btn-primary inline-block"
                       >
                         Zamów diagnozę procesu
@@ -608,7 +608,7 @@ export default function RoiAutomatyzacjiArticle() {
                         poniżej.
                       </p>
                       <Link
-                        href="/#kontakt"
+                        href="/kontakt"
                         className="btn-primary inline-block"
                       >
                         Zamów diagnozę procesu

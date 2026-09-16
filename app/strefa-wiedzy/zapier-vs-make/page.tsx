@@ -553,7 +553,7 @@ export default function ZapierVsMakeArticle() {
                 Audyt, dobór narzędzia i wdrożenie pierwszych scenariuszy w
                 ciągu 2 tygodni.
               </p>
-              <Link href="/#kontakt" className="btn-primary inline-block">
+              <Link href="/kontakt" className="btn-primary inline-block">
                 Zamów diagnozę procesu
               </Link>
             </div>

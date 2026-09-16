@@ -624,7 +624,7 @@ export default function Kalkulator() {
           i wolumen.
         </p>
         <TrackedCTA
-          href="/#kontakt"
+          href="/kontakt"
           location="calc_choice_result"
           eventName="cta_click_calc_choice"
           className="btn-primary px-8 py-3 text-base"

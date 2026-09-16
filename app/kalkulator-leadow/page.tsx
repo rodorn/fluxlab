@@ -222,7 +222,7 @@ export default function KalkulatorLeadowPage() {
                           ROI ma automatyzacja u Ciebie.
                         </p>
                         <TrackedCTA
-                          href="/#kontakt"
+                          href="/kontakt"
                           location="calc_leads_mid"
                           eventName="cta_click_calc_leads"
                           className="btn-primary px-8 py-3 text-base"
@@ -329,7 +329,7 @@ export default function KalkulatorLeadowPage() {
                           i orientacyjną wycenę.
                         </p>
                         <TrackedCTA
-                          href="/#kontakt"
+                          href="/kontakt"
                           location="calc_leads_final"
                           eventName="cta_click_calc_leads"
                           className="btn-primary px-8 py-3.5 text-base"

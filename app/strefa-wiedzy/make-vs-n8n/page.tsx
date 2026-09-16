@@ -536,7 +536,7 @@ export default function MakeVsN8nArticle() {
                           procesów.
                         </p>
                         <Link
-                          href="/#kontakt"
+                          href="/kontakt"
                           className="btn-primary inline-block"
                         >
                           Zamów diagnozę procesu

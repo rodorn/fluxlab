@@ -928,7 +928,7 @@ export default function N8nDlaCrm() {
                         n8n nie ma sensu.
                       </p>
                       <TrackedCTA
-                        href="/#kontakt"
+                        href="/kontakt"
                         location="article_n8n-dla-crm_final"
                         label="Sprawdź, czy n8n ma sens u mnie"
                         eventName="cta_click_article_audit"

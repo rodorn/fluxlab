@@ -845,7 +845,7 @@ export default function AutomatyzacjaCrmLeasing() {
                         dopasowania, powiem to wprost.
                       </p>
                       <TrackedCTA
-                        href="/#kontakt"
+                        href="/kontakt"
                         location="article_automatyzacja-crm-leasing_final"
                         label="Chcę audyt procesu leadów"
                         eventName="cta_click_article_audit"

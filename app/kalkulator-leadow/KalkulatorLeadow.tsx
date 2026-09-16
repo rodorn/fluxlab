@@ -363,7 +363,7 @@ export default function KalkulatorLeadow() {
           który pierwszy etap warto zautomatyzować, żeby ten koszt spadł.
         </p>
         <TrackedCTA
-          href="/#kontakt"
+          href="/kontakt"
           location="calc_leads_result"
           eventName="cta_click_calc_leads"
           className="btn-primary px-8 py-3 text-base"

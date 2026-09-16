@@ -991,7 +991,7 @@ export default function MakeVsN8nCrm() {
                         waszej firmy — wolumen, zespół, integracje, compliance.
                       </p>
                       <TrackedCTA
-                        href="/#kontakt"
+                        href="/kontakt"
                         location="article_make-vs-n8n-crm_final"
                         label="Dobierz narzędzie do procesu"
                         eventName="cta_click_article_audit"

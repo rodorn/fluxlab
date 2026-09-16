@@ -622,7 +622,7 @@ export default function ZapierMakeN8nPorownanieArticle() {
                           zespole.
                         </p>
                         <Link
-                          href="/#kontakt"
+                          href="/kontakt"
                           className="btn-primary inline-block"
                         >
                           Zamów diagnozę procesu

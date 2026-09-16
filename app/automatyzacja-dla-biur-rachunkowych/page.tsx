@@ -480,7 +480,7 @@ export default function AutomatyzacjaDlaBiurRachunkowych() {
                           zespołowi kilkanaście godzin tygodniowo.
                         </p>
                         <Link
-                          href="/#kontakt"
+                          href="/kontakt"
                           className="btn-primary px-8 py-3.5 text-base"
                         >
                           Zamów diagnozę

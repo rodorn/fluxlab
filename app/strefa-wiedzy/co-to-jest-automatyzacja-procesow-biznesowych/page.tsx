@@ -390,7 +390,7 @@ export default function AutomatyzacjaProcesowArticle() {
                           Bezpłatna diagnoza, bez zobowiązań.
                         </p>
                         <Link
-                          href="/#kontakt"
+                          href="/kontakt"
                           className="btn-primary inline-block"
                         >
                           Zamów diagnozę procesu
@@ -766,7 +766,7 @@ export default function AutomatyzacjaProcesowArticle() {
               <p className="text-gray-600 dark:text-gray-400 mb-4">
                 Zobacz usługę i porównaj z artykułami poniżej.
               </p>
-              <Link href="/#kontakt" className="btn-primary inline-block">
+              <Link href="/kontakt" className="btn-primary inline-block">
                 Zamów diagnozę procesu
               </Link>
             </div>

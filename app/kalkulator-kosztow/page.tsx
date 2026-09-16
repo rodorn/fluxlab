@@ -510,7 +510,7 @@ export default function KalkulatorKosztowPage() {
                           systemem księgowym zjadają Ci czas, porozmawiajmy.
                         </p>
                         <Link
-                          href="/#kontakt"
+                          href="/kontakt"
                           className="btn-primary px-8 py-3.5 text-base"
                         >
                           Zamów diagnozę procesu

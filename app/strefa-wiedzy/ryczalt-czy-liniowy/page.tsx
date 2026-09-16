@@ -530,7 +530,7 @@ export default function RyczaltCzyLiniowyArticle() {
                           formę opodatkowania.
                         </p>
                         <Link
-                          href="/#kontakt"
+                          href="/kontakt"
                           className="btn-primary inline-block"
                         >
                           Zamów diagnozę procesu

@@ -69,7 +69,7 @@ export default function NotFound() {
               <Link href="/" className="btn-primary">
                 ← Wróć na stronę główną
               </Link>
-              <Link href="/#kontakt" className="btn-secondary">
+              <Link href="/kontakt" className="btn-secondary">
                 Zamów bezpłatną diagnozę
               </Link>
             </div>

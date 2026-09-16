@@ -802,7 +802,7 @@ export default function AutomatycznePrzypisywanieLeadow() {
                             kosztowało.
                           </p>
                           <TrackedCTA
-                            href="/#kontakt"
+                            href="/kontakt"
                             location="article_routing_final"
                             label="Sprawdź routing leadów"
                             eventName="cta_click_article_audit"

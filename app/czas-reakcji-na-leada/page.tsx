@@ -808,7 +808,7 @@ export default function CzasReakcjiNaLeada() {
                             kosztowało.
                           </p>
                           <TrackedCTA
-                            href="/#kontakt"
+                            href="/kontakt"
                             location="article_speed_final"
                             label="Chcę szybszą obsługę leadów"
                             eventName="cta_click_article_audit"

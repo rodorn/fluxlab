@@ -288,7 +288,7 @@ export default function IntegracjeApiArticle() {
                           Bezpłatna diagnoza, bez zobowiązań.
                         </p>
                         <Link
-                          href="/#kontakt"
+                          href="/kontakt"
                           className="btn-primary inline-block"
                         >
                           Zamów diagnozę procesu
@@ -594,7 +594,7 @@ export default function IntegracjeApiArticle() {
               <p className="text-gray-600 dark:text-gray-400 mb-4">
                 Zobacz usługę integracji i porównaj z artykułami poniżej.
               </p>
-              <Link href="/#kontakt" className="btn-primary inline-block">
+              <Link href="/kontakt" className="btn-primary inline-block">
                 Zamów diagnozę procesu
               </Link>
             </div>

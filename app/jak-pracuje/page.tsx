@@ -371,7 +371,7 @@ export default function JakPracuje() {
                         30 minut, bez zobowiązań. Jeśli widzę, że automatyzacja
                         nie ma sensu — powiem to wprost na pierwszej rozmowie.
                       </p>
-                      <Link href="/#kontakt" className="btn-primary">
+                      <Link href="/kontakt" className="btn-primary">
                         Zamów diagnozę
                       </Link>
                     </div>

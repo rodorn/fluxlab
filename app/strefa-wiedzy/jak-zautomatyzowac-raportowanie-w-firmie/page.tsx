@@ -286,7 +286,7 @@ export default function AutomatyzacjaRaportowaniaArticle() {
                         Bezpłatna diagnoza, bez zobowiązań.
                       </p>
                       <Link
-                        href="/#kontakt"
+                        href="/kontakt"
                         className="btn-primary inline-block"
                       >
                         Zamów diagnozę procesu
@@ -695,7 +695,7 @@ export default function AutomatyzacjaRaportowaniaArticle() {
                         artykułami poniżej.
                       </p>
                       <Link
-                        href="/#kontakt"
+                        href="/kontakt"
                         className="btn-primary inline-block"
                       >
                         Zamów diagnozę procesu

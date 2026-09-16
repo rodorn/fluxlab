@@ -705,7 +705,7 @@ export default function CrmJakoSystemPracy() {
                           Zobacz pełną ofertę
                         </TrackedCTA>
                         <TrackedCTA
-                          href="/#kontakt"
+                          href="/kontakt"
                           location="article_crm-jako-system-pracy_pricing"
                           label="wycena"
                           eventName="cta_click_article_audit"
@@ -845,7 +845,7 @@ export default function CrmJakoSystemPracy() {
                         Bez sprzedażowej presji.
                       </p>
                       <TrackedCTA
-                        href="/#kontakt"
+                        href="/kontakt"
                         location="article_crm-jako-system-pracy_final"
                         label="uporządkuj crm"
                         eventName="cta_click_article_audit"

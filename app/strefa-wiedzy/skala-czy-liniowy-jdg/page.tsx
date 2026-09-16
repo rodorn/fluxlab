@@ -604,7 +604,7 @@ export default function SkalaCzyLiniowyJdgArticle() {
                           formę opodatkowania dla Twojej JDG.
                         </p>
                         <Link
-                          href="/#kontakt"
+                          href="/kontakt"
                           className="btn-primary inline-block"
                         >
                           Zamów diagnozę procesu

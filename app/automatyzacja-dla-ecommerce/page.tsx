@@ -475,7 +475,7 @@ export default function AutomatyzacjaDlaEcommerce() {
                           gdzie automatyzacja zwróci się w 2–3 miesiące.
                         </p>
                         <Link
-                          href="/#kontakt"
+                          href="/kontakt"
                           className="btn-primary px-8 py-3.5 text-base"
                         >
                           Zamów diagnozę

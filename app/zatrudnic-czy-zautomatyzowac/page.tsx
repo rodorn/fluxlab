@@ -274,7 +274,7 @@ export default function ZatrudnicCzyZautomatyzowacPage() {
                           — pod Twoje konkretne narzędzia.
                         </p>
                         <TrackedCTA
-                          href="/#kontakt"
+                          href="/kontakt"
                           location="calc_choice_mid"
                           eventName="cta_click_calc_choice"
                           className="btn-primary px-8 py-3 text-base"
@@ -398,7 +398,7 @@ export default function ZatrudnicCzyZautomatyzowacPage() {
                             kroków — albo rekomendację, że nie warto.
                           </p>
                           <TrackedCTA
-                            href="/#kontakt"
+                            href="/kontakt"
                             location="calc_choice_final"
                             eventName="cta_click_calc_choice"
                             className="btn-primary px-8 py-3.5 text-base"

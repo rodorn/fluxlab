@@ -700,7 +700,7 @@ export default function RaportowanieZPipedrive() {
                           Zobacz pełną ofertę: automatyzacja leadów do CRM
                         </TrackedCTA>
                         <TrackedCTA
-                          href="/#kontakt"
+                          href="/kontakt"
                           location="article_raportowanie_pipedrive_pricing_primary"
                           label="Chcę raporty bez ręcznej pracy"
                           eventName="cta_click_article_audit"
@@ -796,7 +796,7 @@ export default function RaportowanieZPipedrive() {
                         w PowerPoincie.
                       </p>
                       <TrackedCTA
-                        href="/#kontakt"
+                        href="/kontakt"
                         location="article_raportowanie_pipedrive_final"
                         label="Chcę raporty bez ręcznej pracy"
                         eventName="cta_click_article_audit"

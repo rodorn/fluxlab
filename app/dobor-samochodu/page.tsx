@@ -479,7 +479,7 @@ export default function DoborSamochoduPage() {
                           i procesu.
                         </p>
                         <Link
-                          href="/#kontakt"
+                          href="/kontakt"
                           className="btn-primary px-8 py-3.5 text-base"
                         >
                           Zamów diagnozę procesu

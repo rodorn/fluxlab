@@ -462,7 +462,7 @@ export default function Pilotaz() {
                         Aplikuj, nawet jeśli nie masz pewności czy się
                         kwalifikujesz — w 48 h dostaniesz szczerą odpowiedź.
                       </p>
-                      <Link href="/#kontakt" className="btn-primary">
+                      <Link href="/kontakt" className="btn-primary">
                         Aplikuj do programu case study
                       </Link>
                     </div>

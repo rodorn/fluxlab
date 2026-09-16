@@ -107,7 +107,7 @@ export default function StrefaWiedzy() {
                 Bezpłatna diagnoza, bez zobowiązań.
               </p>
               <Link
-                href="/#kontakt"
+                href="/kontakt"
                 className="btn-primary px-8 py-3.5 text-base"
               >
                 Zamów diagnozę procesu
