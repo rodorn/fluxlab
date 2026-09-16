@@ -53,15 +53,15 @@ const PRODUCTS: Product[] = [
   },
   {
     name: "ImportRadar DE→PL",
-    tagline: "Opłacalność sprowadzenia auta z Niemiec",
-    desc: "Pełny kalkulator kosztu importu (akcyza, transport, opłaty) i marża netto wobec cen w Polsce. Sprawdzę konkretne auto albo znajdę modele mieszczące się w Twoim budżecie.",
-    price: "od 100 zł",
+    tagline: "Które auta z Niemiec realnie się opłaca",
+    desc: "Skanuję żywe oferty z DE i NL i wskazuję konkretne egzemplarze, które zarabiają po odjęciu wszystkich kosztów sprowadzenia, oraz modele z kosztownymi wadami, których lepiej unikać. To sygnał zakupowy dla handlarzy i kupujących na zamówienie, nie kolejny darmowy kalkulator akcyzy.",
+    price: "od 149 zł",
     href: "/import-radar",
-    cta: "Sprawdź opłacalność importu",
+    cta: "Znajdź opłacalne auto",
     bullets: [
-      "analiza 1 auta 100-200 zł",
-      "znajdź auto pod budżet 200-300 zł",
-      "pełny rozkład kosztów i marży netto",
+      "ranking marży netto na realnych ofertach, nie sama tabelka kosztów",
+      "wskazuję niedowartościowane egzemplarze warte sprowadzenia",
+      "ostrzegam przed modelami z drogimi usterkami",
     ],
   },
   {

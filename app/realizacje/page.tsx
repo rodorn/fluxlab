@@ -59,7 +59,7 @@ const GROUPS: Group[] = [
       },
       {
         name: "ImportRadar DE/NL → PL",
-        desc: "Radar opłacalności importu aut: pełny kalkulator kosztu sprowadzenia (akcyza, transport, opłaty) i ranking marży netto wobec cen sprzedaży w Polsce.",
+        desc: "Radar okazji importowych: skanuje żywe oferty z DE/NL i pokazuje, które konkretne auta realnie zarabiają po odjęciu wszystkich kosztów sprowadzenia, plus modele z kosztownymi usterkami do unikania.",
         stack: ["Python", "Kalkulator", "PDF"],
         repo: `${GH}/fluxlab-import-radar`,
         landing: "/import-radar",

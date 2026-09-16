@@ -7,12 +7,12 @@ import LandingForm from "@/components/LandingForm";
 export const metadata: Metadata = {
   title: "ImportRadar, opłacalność sprowadzenia auta z Niemiec | Fluxlab",
   description:
-    "Sprawdź, czy import auta z Niemiec do Polski się opłaca. Pełny kalkulator kosztów (akcyza, transport, opłaty) i marża netto wobec cen w Polsce. Analiza 1 auta 100-200 zł, znajdź auto pod budżet 200-300 zł.",
+    "Które auta z Niemiec realnie się opłaca sprowadzić. Skanuję żywe oferty i podaję marżę netto po wszystkich kosztach oraz modele z drogimi usterkami do unikania. Analiza konkretnego auta lub szukanie okazji pod budżet.",
   alternates: { canonical: "/import-radar" },
   openGraph: {
     title: "ImportRadar, opłacalność sprowadzenia auta z Niemiec | Fluxlab",
     description:
-      "Sprawdź, czy import auta z Niemiec do Polski się opłaca. Kalkulator kosztów i marża netto wobec cen w Polsce. Analiza od 100 zł.",
+      "Które auta z Niemiec realnie się opłaca sprowadzić. Marża netto po wszystkich kosztach na żywych ofertach plus modele do unikania.",
     locale: "pl_PL",
     type: "website",
     images: [
