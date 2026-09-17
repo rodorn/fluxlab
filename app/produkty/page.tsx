@@ -83,10 +83,9 @@ export default function ProduktyPage() {
   return (
     <>
       <Header />
-      <main className="pt-16">
-        <section className="container-wide py-14 md:py-20">
-          <Breadcrumbs items={[{ label: "Produkty" }]} />
-
+      <main>
+        <Breadcrumbs items={[{ label: "Produkty" }]} />
+        <section className="container-wide pb-14 md:pb-20 pt-6">
           <div className="max-w-3xl">
             <p className="text-sm font-semibold text-accent uppercase tracking-wider mb-3">
               Produkty
