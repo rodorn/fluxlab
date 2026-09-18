@@ -1,19 +1,20 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TrackedCTA from "@/components/TrackedCTA";
+import ProductGrid from "@/components/ProductGrid";
+import { PRODUCTS } from "@/lib/products";
 
 export const metadata: Metadata = {
   title: "Produkty i narzędzia Fluxlab, gotowe raporty i audyty | Fluxlab",
   description:
-    "Gotowe narzędzia Fluxlab, które rozwiązują jeden policzalny problem: sprawdzenie auta przed zakupem, opłacalność importu DE→PL i audyt zmarnowanego budżetu Google Ads. Stała cena, konkretny efekt.",
+    "Gotowe usługi Fluxlab w trzech obszarach: strony WWW, automatyzacja i dane. Konkretny zakres, stała cena, wynik odsyłany mailem.",
   alternates: { canonical: "/produkty" },
   openGraph: {
     title: "Produkty i narzędzia Fluxlab, gotowe raporty i audyty | Fluxlab",
     description:
-      "Gotowe narzędzia Fluxlab: sprawdzenie auta przed zakupem, opłacalność importu DE→PL i audyt zmarnowanego budżetu Google Ads. Stała cena, konkretny efekt.",
+      "Gotowe usługi Fluxlab w trzech obszarach: strony WWW, automatyzacja i dane. Konkretny zakres, stała cena, wynik mailem.",
     locale: "pl_PL",
     type: "website",
     images: [
@@ -26,58 +27,6 @@ export const metadata: Metadata = {
     ],
   },
 };
-
-interface Product {
-  name: string;
-  tagline: string;
-  desc: string;
-  price: string;
-  href: string;
-  cta: string;
-  bullets: string[];
-}
-
-const PRODUCTS: Product[] = [
-  {
-    name: "Sprawdź auto przed zakupem",
-    tagline: "Raport due-diligence dla kupującego",
-    desc: "Wklejasz link do oferty z Otomoto lub OLX, a dostajesz benchmark ceny wobec podobnych aut, listę typowych usterek modelu, wykryte red-flagi i gotowy skrypt negocjacji.",
-    price: "od 5 zł",
-    href: "/sprawdz-auto",
-    cta: "Zamów sprawdzenie auta",
-    bullets: [
-      "price-check 5 zł, pełny raport 15 zł",
-      "benchmark ceny i wykrywanie cofniętego licznika",
-      "argumenty do negocjacji ceny",
-    ],
-  },
-  {
-    name: "ImportRadar DE→PL",
-    tagline: "Które auta z Niemiec realnie się opłaca",
-    desc: "Skanuję żywe oferty z DE i NL i wskazuję konkretne egzemplarze, które zarabiają po odjęciu wszystkich kosztów sprowadzenia, oraz modele z kosztownymi wadami, których lepiej unikać. To sygnał zakupowy dla handlarzy i kupujących na zamówienie, nie kolejny darmowy kalkulator akcyzy.",
-    price: "od 15 zł",
-    href: "/import-radar",
-    cta: "Znajdź opłacalne auto",
-    bullets: [
-      "ranking marży netto na realnych ofertach, nie sama tabelka kosztów",
-      "wskazuję niedowartościowane egzemplarze warte sprowadzenia",
-      "ostrzegam przed modelami z drogimi usterkami",
-    ],
-  },
-  {
-    name: "Audyt zmarnowanego budżetu Google Ads",
-    tagline: "Odzyskaj pieniądze przepalane na frazy bez konwersji",
-    desc: "Analiza raportu wyszukiwanych haseł: ile budżetu idzie na kliknięcia bez efektu, gotowa lista wykluczeń i plan naprawy konta. Mini-audyt z gwarancją zwrotu.",
-    price: "69 zł",
-    href: "/audyt-google-ads",
-    cta: "Zamów mini-audyt",
-    bullets: [
-      "mini-audyt 69 zł",
-      "zwrot, jeśli znajdę mniej niż 500 zł/mc do odzyskania",
-      "gotowa lista wykluczających słów kluczowych",
-    ],
-  },
-];
 
 export default function ProduktyPage() {
   return (
@@ -94,66 +43,17 @@ export default function ProduktyPage() {
               Gotowe narzędzia, które rozwiązują jeden policzalny problem
             </h1>
             <p className="mt-5 text-lg text-gray-600 dark:text-gray-300">
-              Zamiast długiego wdrożenia dostajesz konkretny raport za stałą
-              cenę. Każdy produkt ma jasny zakres, przykładowy efekt i formularz
-              zamówienia. Zgłoszenie realizuję i odsyłam wynik mailem.
+              Zamiast długiego wdrożenia dostajesz konkretny efekt za stałą
+              cenę. Większość raportów powstaje automatycznie, dlatego kosztują
+              tyle, co obiad, a nie tyle, co konsulting. Zgłoszenie realizuję i
+              odsyłam wynik mailem.
             </p>
           </div>
 
-          <div className="mt-14 grid gap-6 md:grid-cols-3">
-            {PRODUCTS.map((p) => (
-              <div
-                key={p.href}
-                className="flex flex-col rounded-2xl border border-gray-200/80 dark:border-gray-800/80 bg-white/60 dark:bg-gray-900/40 p-6 transition-colors hover:border-accent/50"
-              >
-                <p className="text-xs font-semibold uppercase tracking-wider text-accent">
-                  {p.tagline}
-                </p>
-                <h2 className="mt-2 text-xl font-bold text-gray-900 dark:text-white">
-                  {p.name}
-                </h2>
-                <p className="mt-3 text-sm text-gray-600 dark:text-gray-400">
-                  {p.desc}
-                </p>
-                <ul className="mt-4 space-y-2">
-                  {p.bullets.map((b) => (
-                    <li
-                      key={b}
-                      className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300"
-                    >
-                      <svg
-                        className="mt-0.5 flex-shrink-0 text-accent"
-                        width="14"
-                        height="14"
-                        viewBox="0 0 14 14"
-                        fill="none"
-                        aria-hidden="true"
-                      >
-                        <path
-                          d="M2.5 7l3 3 6-6"
-                          stroke="currentColor"
-                          strokeWidth="1.6"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                      <span className="leading-snug">{b}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-auto flex items-center justify-between border-t border-gray-100 dark:border-gray-800 pt-4">
-                  <span className="text-lg font-bold text-gray-900 dark:text-white">
-                    {p.price}
-                  </span>
-                </div>
-                <Link
-                  href={p.href}
-                  className="btn-primary mt-4 w-full justify-center text-center text-sm"
-                >
-                  {p.cta}
-                </Link>
-              </div>
-            ))}
+          <div className="mt-14 space-y-16">
+            <ProductGrid category="www" showHeading />
+            <ProductGrid category="automatyzacja" showHeading />
+            <ProductGrid category="dane" showHeading />
           </div>
 
           <div className="mt-16 rounded-2xl border border-gray-200/80 dark:border-gray-800/80 bg-gray-50/60 dark:bg-gray-900/40 p-8 text-center">

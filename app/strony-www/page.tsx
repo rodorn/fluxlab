@@ -6,6 +6,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import LandingForm from "@/components/LandingForm";
 import TrackedCTA from "@/components/TrackedCTA";
 import Tabs from "@/components/Tabs";
+import ProductGrid from "@/components/ProductGrid";
 
 export const metadata: Metadata = {
   title: "Tworzenie stron WWW i poprawki w obecnych — Fluxlab",
@@ -109,6 +110,10 @@ export default function StronyWww() {
         </section>
 
         {/* Treść w zakładkach — nic nie wycięte, podzielone */}
+        <section className="container-wide pb-16">
+          <ProductGrid category="www" showHeading />
+        </section>
+
         <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
           <Tabs
             ariaLabel="Sekcje oferty stron WWW"

@@ -5,6 +5,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import TrackedCTA from "@/components/TrackedCTA";
 import LandingForm from "@/components/LandingForm";
 import Tabs from "@/components/Tabs";
+import ProductGrid from "@/components/ProductGrid";
 
 export const metadata: Metadata = {
   title: "Automatyzacja leadów i CRM dla firm B2B | Fluxlab",
@@ -151,6 +152,10 @@ export default function AutomatyzacjaLeadowCRM() {
         </section>
 
         {/* Treść w zakładkach — nic nie wycięte, podzielone */}
+        <section className="container-wide pb-16">
+          <ProductGrid category="automatyzacja" showHeading />
+        </section>
+
         <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
           <Tabs
             ariaLabel="Sekcje oferty automatyzacji leadów i CRM"
