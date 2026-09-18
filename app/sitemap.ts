@@ -136,6 +136,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/sprawdz-kontrahenta`,
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/import-radar`,
       changeFrequency: "monthly" as const,
       priority: 0.9,

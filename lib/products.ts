@@ -194,7 +194,7 @@ export const PRODUCTS: Product[] = [
     tagline: "Zanim wyślesz zaliczkę",
     desc: "Werdykt o konkretnej firmie złożony automatem z publicznych źródeł: Biała Lista VAT, KRS, rejestr zadłużonych, wiek domeny i listy ostrzeżeń. Pojedynczy check zajmuje 30 sekund, ale dopiero złożenie tego razem mówi, czy to firma widmo.",
     price: "od 9 zł",
-    href: "/kontakt",
+    href: "/sprawdz-kontrahenta",
     cta: "Sprawdź firmę",
     bullets: [
       "werdykt zielony, żółty albo czerwony z uzasadnieniem",
