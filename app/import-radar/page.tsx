@@ -44,7 +44,8 @@ const steps = [
 const pricing = [
   {
     name: "Analiza 1 auta",
-    price: "100-200 zł",
+    price: "10-20 zł",
+    cta: "Zamów analizę auta",
     desc: "Masz na oku konkretne ogłoszenie z Niemiec i chcesz wiedzieć, czy warto.",
     features: [
       "pełny rozkład kosztów sprowadzenia",
@@ -56,7 +57,8 @@ const pricing = [
   },
   {
     name: "Znajdź pod budżet",
-    price: "200-300 zł",
+    price: "20-30 zł",
+    cta: "Zamów wyszukiwanie",
     desc: "Podajesz budżet i typ auta, a ja szukam modeli z realną marżą po sprowadzeniu.",
     features: [
       "wszystko z analizy 1 auta",
@@ -119,7 +121,7 @@ export default function ImportRadarPage() {
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <a href="#zamow" className="btn-primary inline-flex">
-                Zamów analizę od 100 zł
+                Zamów analizę od 10 zł
               </a>
               <a
                 href="#cennik"
@@ -279,7 +281,7 @@ export default function ImportRadarPage() {
                         : "inline-flex items-center rounded-lg border border-gray-200 px-4 py-3 font-semibold text-gray-900 transition-colors hover:border-accent dark:border-gray-700 dark:text-white"
                     }`}
                   >
-                    Zamów {tier.name.toLowerCase()}
+                    {tier.cta}
                   </a>
                 </div>
               ))}
@@ -329,7 +331,7 @@ export default function ImportRadarPage() {
               heading="Zamów analizę opłacalności importu"
               intro="Wklej link do niemieckiej oferty w polu opisu albo podaj budżet i typ auta, jeśli chcesz pakiet znajdź pod budżet. Odsyłam pełny rozkład kosztów i werdykt o marży, zwykle w ciągu 24h."
               submitLabel="Wyślij auto do analizy"
-              microCopy="Odpowiedź w 24h. Płatność ustalamy mailowo po potwierdzeniu zakresu (analiza 1 auta 100-200 zł, znajdź pod budżet 200-300 zł)."
+              microCopy="Odpowiedź w 24h. Płatność ustalamy mailowo po potwierdzeniu zakresu (analiza 1 auta 10-20 zł, znajdź pod budżet 20-30 zł)."
             />
           </section>
         </div>
@@ -344,7 +346,7 @@ export default function ImportRadarPage() {
             "@type": "Service",
             name: "ImportRadar, opłacalność importu aut DE→PL",
             description:
-              "Analiza opłacalności sprowadzenia auta z Niemiec do Polski: pełny kalkulator kosztów, akcyza i marża netto wobec cen w Polsce. Analiza 1 auta 100-200 zł, znajdź pod budżet 200-300 zł.",
+              "Analiza opłacalności sprowadzenia auta z Niemiec do Polski: pełny kalkulator kosztów, akcyza i marża netto wobec cen w Polsce. Analiza 1 auta 10-20 zł, znajdź pod budżet 20-30 zł.",
             provider: { "@id": "https://fluxlab.pl/#organization" },
             areaServed: { "@type": "Country", name: "Polska" },
             serviceType: "Analiza opłacalności importu samochodu",
@@ -353,13 +355,13 @@ export default function ImportRadarPage() {
               {
                 "@type": "Offer",
                 name: "Analiza 1 auta",
-                price: "100",
+                price: "10",
                 priceCurrency: "PLN",
               },
               {
                 "@type": "Offer",
                 name: "Znajdź pod budżet",
-                price: "200",
+                price: "20",
                 priceCurrency: "PLN",
               },
             ],

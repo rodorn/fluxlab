@@ -5,15 +5,15 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import LandingForm from "@/components/LandingForm";
 
 export const metadata: Metadata = {
-  title: "Sprawdź auto przed zakupem, raport due-diligence od 49 zł | Fluxlab",
+  title: "Sprawdź auto przed zakupem, raport due-diligence od 5 zł | Fluxlab",
   description:
-    "Wklej link do oferty z Otomoto lub OLX i sprawdź, czy cena jest uczciwa. Benchmark ceny, wykrywanie cofniętego licznika, checklista usterek modelu i skrypt negocjacji. Price-check 49 zł, pełny raport 149 zł.",
+    "Wklej link do oferty z Otomoto lub OLX i sprawdź, czy cena jest uczciwa. Benchmark ceny, wykrywanie cofniętego licznika, checklista usterek modelu i skrypt negocjacji. Price-check 5 zł, pełny raport 15 zł.",
   alternates: { canonical: "/sprawdz-auto" },
   openGraph: {
     title:
-      "Sprawdź auto przed zakupem, raport due-diligence od 49 zł | Fluxlab",
+      "Sprawdź auto przed zakupem, raport due-diligence od 5 zł | Fluxlab",
     description:
-      "Wklej link do oferty z Otomoto lub OLX i sprawdź, czy cena jest uczciwa. Benchmark ceny, red-flagi i skrypt negocjacji. Price-check 49 zł, pełny raport 149 zł.",
+      "Wklej link do oferty z Otomoto lub OLX i sprawdź, czy cena jest uczciwa. Benchmark ceny, red-flagi i skrypt negocjacji. Price-check 5 zł, pełny raport 15 zł.",
     locale: "pl_PL",
     type: "website",
     images: [
@@ -45,7 +45,7 @@ const steps = [
 const pricing = [
   {
     name: "Price-check",
-    price: "49 zł",
+    price: "5 zł",
     desc: "Szybka odpowiedź na jedno pytanie: czy cena tego auta jest uczciwa.",
     features: [
       "benchmark ceny wobec podobnych ofert",
@@ -57,7 +57,7 @@ const pricing = [
   },
   {
     name: "Pełny raport",
-    price: "149 zł",
+    price: "15 zł",
     desc: "Kompletny due-diligence auta przed oglądaniem i negocjacją.",
     features: [
       "wszystko z price-check",
@@ -121,7 +121,7 @@ export default function SprawdzAutoPage() {
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <a href="#zamow" className="btn-primary inline-flex">
-                Sprawdź auto od 49 zł
+                Sprawdź auto od 5 zł
               </a>
               <a
                 href="#cennik"
@@ -343,7 +343,7 @@ export default function SprawdzAutoPage() {
             <LandingForm
               formId="order_sprawdz_auto"
               heading="Zamów sprawdzenie auta"
-              intro="Wklej link do oferty z Otomoto lub OLX w polu opisu i napisz, czy chcesz price-check (49 zł) czy pełny raport (149 zł). Odsyłam gotowy raport na maila, zwykle w ciągu 24h."
+              intro="Wklej link do oferty z Otomoto lub OLX w polu opisu i napisz, czy chcesz price-check (5 zł) czy pełny raport (15 zł). Odsyłam gotowy raport na maila, zwykle w ciągu 24h."
               submitLabel="Wyślij ofertę do sprawdzenia"
               microCopy="Odpowiedź w 24h. Płatność ustalamy mailowo po potwierdzeniu, że mam komplet danych z oferty."
             />
@@ -360,7 +360,7 @@ export default function SprawdzAutoPage() {
             "@type": "Service",
             name: "Sprawdź auto przed zakupem",
             description:
-              "Raport due-diligence oferty samochodu: benchmark ceny, wykrywanie red-flag, checklista usterek modelu i skrypt negocjacji. Price-check 49 zł, pełny raport 149 zł.",
+              "Raport due-diligence oferty samochodu: benchmark ceny, wykrywanie red-flag, checklista usterek modelu i skrypt negocjacji. Price-check 5 zł, pełny raport 15 zł.",
             provider: { "@id": "https://fluxlab.pl/#organization" },
             areaServed: { "@type": "Country", name: "Polska" },
             serviceType: "Analiza oferty samochodu przed zakupem",
@@ -369,13 +369,13 @@ export default function SprawdzAutoPage() {
               {
                 "@type": "Offer",
                 name: "Price-check",
-                price: "49",
+                price: "5",
                 priceCurrency: "PLN",
               },
               {
                 "@type": "Offer",
                 name: "Pełny raport",
-                price: "149",
+                price: "15",
                 priceCurrency: "PLN",
               },
             ],
