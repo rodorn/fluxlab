@@ -33,7 +33,7 @@ export const PRODUCTS: Product[] = [
     tagline: "Zhakowany WordPress albo WooCommerce",
     desc: "Porównuję pliki Twojej strony z oryginałami prosto z repozytorium WordPressa, więc listę obcych i podmienionych plików mam w minuty, a nie po godzinach ręcznego szukania. Do tego skan bazy pod wstrzyknięcia i podstawionych administratorów.",
     price: "diagnoza 49 zł",
-    href: "/kontakt",
+    href: "/strona-po-wlamaniu",
     cta: "Zgłoś włamanie",
     bullets: [
       "raport, którędy weszli, a nie samo posprzątanie",
@@ -62,7 +62,7 @@ export const PRODUCTS: Product[] = [
     tagline: "Automatyczny przegląd techniczny",
     desc: "Automat przechodzi po stronie, mierzy czas ładowania, znajduje błędy konsoli, martwe linki, brakujące opisy obrazków i elementy blokujące renderowanie. Wynik to lista poprawek uszeregowana po realnym wpływie.",
     price: "19 zł",
-    href: "/kontakt",
+    href: "/audyt-strony",
     cta: "Zamów audyt strony",
     bullets: [
       "priorytety według wpływu, nie lista 200 uwag",
@@ -92,7 +92,7 @@ export const PRODUCTS: Product[] = [
     tagline: "Stanęła integracja albo scenariusz",
     desc: "Naprawa cudzych, już wdrożonych automatyzacji: n8n, Make, Zapier, BaseLinker, WooCommerce, Allegro, webhooki i skrypty po poprzednim wykonawcy. Czytam logi wykonań, znajduję wygasłe poświadczenia i ciche awarie, czyli scenariusze zielone, ale puste.",
     price: "diagnoza 49 zł",
-    href: "/kontakt",
+    href: "/pogotowie-automatyzacji",
     cta: "Zgłoś awarię",
     bullets: [
       "odpowiedź do 2 godzin w godzinach pracy",
@@ -135,7 +135,7 @@ export const PRODUCTS: Product[] = [
     tagline: "Sprawdź, co Twój asystent AI mówi klientom",
     desc: "Zadaję Twojemu botowi 150 realnych pytań klienta i zderzam każdą odpowiedź z prawdą sklepu: cennikiem, regulaminem i zasadami zwrotów. Wyłapuję halucynacje i obietnice, którymi firma jest związana.",
     price: "69 zł",
-    href: "/kontakt",
+    href: "/audyt-chatbota",
     cta: "Zamów audyt bota",
     bullets: [
       "lista odpowiedzi sprzecznych z regulaminem",
@@ -222,7 +222,7 @@ export const PRODUCTS: Product[] = [
     tagline: "Które bestsellery realnie tracą pieniądze",
     desc: "Przysyłasz eksport sprzedaży i ceny zakupu, a dostajesz prawdziwy zysk na sztuce po prowizjach, zwrotach i dopłatach do wysyłki. Panel sprzedażowy pokazuje obrót, a nie to, co zostaje na czysto.",
     price: "49 zł",
-    href: "/kontakt",
+    href: "/audyt-marz",
     cta: "Zamów audyt marż",
     bullets: [
       "lista produktów sprzedawanych pod kreską",
@@ -236,7 +236,7 @@ export const PRODUCTS: Product[] = [
     tagline: "Tankowania zestawione z trasą",
     desc: "Eksport z kart paliwowych zestawiony z przebiegami i trasą. Sam portal karty pokazuje listę transakcji, ale dopiero zestawienie z trasą wyłapuje tankowanie do kanistra, obce auto albo klon karty.",
     price: "od 99 zł",
-    href: "/kontakt",
+    href: "/kontrola-paliwa",
     cta: "Zamów kontrolę floty",
     bullets: [
       "lista transakcji do wyjaśnienia z kwotą straty",
