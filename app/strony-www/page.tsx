@@ -9,12 +9,12 @@ import Tabs from "@/components/Tabs";
 import ProductGrid from "@/components/ProductGrid";
 
 export const metadata: Metadata = {
-  title: "Tworzenie stron WWW i poprawki w obecnych — Fluxlab",
+  title: "Tworzenie stron WWW i poprawki w obecnych | Fluxlab",
   description:
     "Nowa strona albo poprawki w obecnej. Szybko, mobilnie, z AI w treści, obrazach i kodzie. Hosting w cenie wdrożenia. Pierwsza wersja w 2-3 tygodnie.",
   alternates: { canonical: "/strony-www" },
   openGraph: {
-    title: "Tworzenie stron WWW i poprawki w obecnych — Fluxlab",
+    title: "Tworzenie stron WWW i poprawki w obecnych | Fluxlab",
     description: "Nowa strona albo poprawki w obecnej. Szybko, mobilnie, z AI.",
     locale: "pl_PL",
     type: "website",
@@ -24,26 +24,28 @@ export const metadata: Metadata = {
 const offer = [
   "Nowa strona od zera albo poprawki w istniejącej.",
   "Next.js + Tailwind, mobile-first, Web Vitals 90+.",
-  "Treści i grafiki z AI — żebyś nie pisał ich miesiącami.",
+  "Treści i grafiki z AI, żebyś nie pisał ich miesiącami.",
   "Hosting i deployment w cenie wdrożenia.",
 ];
 
 const pricing = [
   {
-    title: "Diagnoza",
-    price: "0 zł",
-    description: "Rozmowa: czy warto, co i jak. Bez wciskania.",
+    title: "Poprawki i nowe podstrony",
+    price: "od 99 zł",
+    description:
+      "Zmiana w istniejącej stronie albo dołożenie podstrony. Wycena po opisie zmiany.",
   },
   {
-    title: "Landing page",
-    price: "od 2 500 zł",
-    description: "Jedna strona pod cel, z formularzem i deploymentem.",
+    title: "Landing z formularzem i płatnością",
+    price: "od 299 zł",
+    description:
+      "Jedna strona pod cel, z formularzem, płatnością i wdrożeniem na serwer.",
     accent: true,
   },
   {
     title: "Strona firmowa",
-    price: "od 4 500 zł",
-    description: "5+ podstron, blog, CMS do samodzielnej edycji.",
+    price: "od 450 zł",
+    description: "Kilka podstron, blog, CMS do samodzielnej edycji treści.",
   },
 ];
 
@@ -51,17 +53,17 @@ const faq = [
   {
     question: "Ile czasu zajmuje wdrożenie?",
     answer:
-      "Landing page: 2-3 tygodnie. Strona firmowa z 5+ podstronami: 3-5 tygodni. Czas zależy głównie od tego, jak szybko dostaję treści i decyzje po Twojej stronie.",
+      "Poprawka albo nowa podstrona: zwykle ten sam lub następny dzień. Landing z formularzem i płatnością: 3-5 dni roboczych. Strona firmowa z kilkoma podstronami: 2-3 tygodnie. Czas zależy głównie od tego, jak szybko dostaję treści i decyzje po Twojej stronie.",
   },
   {
     question: "Czy mogę modyfikować treści samodzielnie?",
     answer:
-      "Tak. Dla strony firmowej podpinam prosty CMS (Sanity albo Notion) — edytujesz teksty jak dokument. Dla landing page-a treści edytujesz przez interfejs GitHuba.",
+      "Tak. Dla strony firmowej podpinam prosty CMS (Sanity albo Notion), w którym edytujesz teksty jak dokument. Dla landing page-a treści edytujesz przez interfejs GitHuba.",
   },
   {
     question: "Hosting i domena?",
     answer:
-      "Hosting w cenie wdrożenia — Vercel ma darmowy plan wystarczający dla większości stron. Domenę kupujesz na siebie (50-150 zł/rok), pomagam z konfiguracją.",
+      "Hosting w cenie wdrożenia, bo Vercel ma darmowy plan wystarczający dla większości stron. Domenę kupujesz na siebie (50-150 zł/rok), pomagam z konfiguracją.",
   },
 ];
 
@@ -90,7 +92,7 @@ export default function StronyWww() {
                 id="hero-heading"
                 className="display-xl text-gray-900 dark:text-white mb-6 animate-fade-up-2"
               >
-                Strona, która działa — szybko, mobilnie, z AI.
+                Strona, która działa: szybko, mobilnie, z AI.
               </h1>
               <p className="text-lg lg:text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed animate-fade-up-3">
                 Nowa strona od zera albo poprawki w istniejącej. Pierwsza wersja

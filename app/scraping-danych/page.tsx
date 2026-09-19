@@ -112,6 +112,61 @@ export default function ScrapingDanychPage() {
         <section className="container-wide pb-16">
           <ProductGrid category="dane" showHeading />
         </section>
+        <section className="container-wide pb-16" aria-labelledby="cennik-heading">
+          <h2
+            id="cennik-heading"
+            className="text-2xl font-bold text-gray-900 dark:text-white"
+          >
+            Ile to kosztuje
+          </h2>
+          <p className="mt-3 max-w-2xl text-gray-600 dark:text-gray-300">
+            Płacisz za dane, nie za godziny. Zbieranie robi automat, więc mały
+            zbiór kosztuje tyle, co obiad, a nie tyle, co dzień pracy
+            programisty.
+          </p>
+          <div className="mt-6 grid gap-5 md:grid-cols-3">
+            {[
+              {
+                title: "Jednorazowy zbiór",
+                price: "od 49 zł",
+                desc: "Jedno źródło, ustalone kolumny, wynik w pliku XLSX lub CSV. Cena rośnie z liczbą rekordów i trudnością źródła.",
+              },
+              {
+                title: "Odświeżanie cykliczne",
+                price: "od 99 zł miesięcznie",
+                desc: "Ten sam zbiór zbierany automatycznie w ustalonym rytmie, z oznaczeniem, co się zmieniło od poprzedniego razu.",
+                accent: true,
+              },
+              {
+                title: "Źródło trudne",
+                price: "wycena po sprawdzeniu",
+                desc: "Logowanie, limity zapytań, treść doładowywana skryptem. Zanim wycenię, sprawdzam, czy da się to zebrać legalnie i stabilnie.",
+              },
+            ].map((c) => (
+              <div
+                key={c.title}
+                className={`rounded-2xl border p-6 ${
+                  c.accent
+                    ? "border-accent/50 bg-accent/5"
+                    : "border-gray-200/80 dark:border-gray-800/80 bg-white/60 dark:bg-gray-900/40"
+                }`}
+              >
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white">
+                  {c.title}
+                </h3>
+                <p className="mt-1 text-2xl font-bold text-accent">{c.price}</p>
+                <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                  {c.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-5 max-w-2xl text-sm text-gray-500 dark:text-gray-400">
+            Przed zleceniem zbieram za darmo próbkę kilkunastu rekordów w
+            docelowym układzie kolumn, żebyś ocenił jakość, zanim cokolwiek
+            zapłacisz.
+          </p>
+        </section>
 
         <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
           <Tabs
