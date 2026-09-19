@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import LandingForm from "@/components/LandingForm";
+import RelatedProducts from "@/components/RelatedProducts";
 
 export const metadata: Metadata = {
   title: "ImportRadar, opłacalność sprowadzenia auta z Niemiec | Fluxlab",
@@ -325,6 +326,8 @@ export default function ImportRadarPage() {
           </section>
 
           {/* Formularz zamówienia */}
+          <RelatedProducts slug="import-radar" />
+
           <section id="zamow" className="scroll-mt-20">
             <LandingForm
               formId="order_import_radar"

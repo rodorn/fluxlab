@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import LandingForm from "@/components/LandingForm";
+import RelatedProducts from "@/components/RelatedProducts";
 
 export const metadata: Metadata = {
   title: "Sprawdź auto przed zakupem, raport due-diligence od 5 zł | Fluxlab",
@@ -10,8 +11,7 @@ export const metadata: Metadata = {
     "Wklej link do oferty z Otomoto lub OLX i sprawdź, czy cena jest uczciwa. Benchmark ceny, wykrywanie cofniętego licznika, checklista usterek modelu i skrypt negocjacji. Price-check 5 zł, pełny raport 15 zł.",
   alternates: { canonical: "/sprawdz-auto" },
   openGraph: {
-    title:
-      "Sprawdź auto przed zakupem, raport due-diligence od 5 zł | Fluxlab",
+    title: "Sprawdź auto przed zakupem, raport due-diligence od 5 zł | Fluxlab",
     description:
       "Wklej link do oferty z Otomoto lub OLX i sprawdź, czy cena jest uczciwa. Benchmark ceny, red-flagi i skrypt negocjacji. Price-check 5 zł, pełny raport 15 zł.",
     locale: "pl_PL",
@@ -339,6 +339,8 @@ export default function SprawdzAutoPage() {
           </section>
 
           {/* Formularz zamówienia */}
+          <RelatedProducts slug="sprawdz-auto" />
+
           <section id="zamow" className="scroll-mt-20">
             <LandingForm
               formId="order_sprawdz_auto"

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import RelatedProducts from "@/components/RelatedProducts";
 
 type Problem = { tytul: string; opis: string; waga: number };
 type Wynik = {
@@ -286,6 +287,9 @@ DKIM:  ${wynik.dkim ? "wykryto" : "nie wykryto"}`}
           </details>
         </div>
       )}
+      <div className="container-wide">
+        <RelatedProducts slug="audyt-poczty" />
+      </div>
     </main>
   );
 }

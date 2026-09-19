@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import LandingForm from "@/components/LandingForm";
+import RelatedProducts from "@/components/RelatedProducts";
 
 export const metadata: Metadata = {
   title: "Audyt zmarnowanego budżetu Google Ads, 69 zł z gwarancją | Fluxlab",
@@ -10,8 +11,7 @@ export const metadata: Metadata = {
     "Sprawdzę, ile budżetu Google Ads przepalasz na frazy bez konwersji. Mini-audyt raportu wyszukiwanych haseł, gotowa lista wykluczeń i plan naprawy konta. 69 zł z gwarancją zwrotu, jeśli znajdę mniej niż 500 zł miesięcznie do odzyskania.",
   alternates: { canonical: "/audyt-google-ads" },
   openGraph: {
-    title:
-      "Audyt zmarnowanego budżetu Google Ads, 69 zł z gwarancją | Fluxlab",
+    title: "Audyt zmarnowanego budżetu Google Ads, 69 zł z gwarancją | Fluxlab",
     description:
       "Sprawdzę, ile budżetu Google Ads przepalasz na frazy bez konwersji. Gotowa lista wykluczeń i plan naprawy. 69 zł z gwarancją zwrotu.",
     locale: "pl_PL",
@@ -305,6 +305,8 @@ export default function AudytGoogleAdsPage() {
           </section>
 
           {/* Formularz zamówienia */}
+          <RelatedProducts slug="audyt-google-ads" />
+
           <section id="zamow" className="scroll-mt-20">
             <LandingForm
               formId="order_audyt_google_ads"
