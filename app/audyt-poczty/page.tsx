@@ -205,10 +205,12 @@ export default function AudytPoczty() {
                     fontSize: "0.9rem",
                   }}
                 >
-                  Ekspresowa naprawa (SPF, DKIM, DMARC w trybie, który realnie
-                  blokuje podszywanie) to 299 zł. Zostaw adres, a wyślę pełny
-                  raport dla <strong>{wynik.domena}</strong> i szczegóły
-                  naprawy. Bez zobowiązań.
+                  Pełny raport z audytu (co dokładnie jest źle i gotowe rekordy
+                  do wklejenia) to 19 zł. Ekspresowa naprawa, czyli ustawienie
+                  SPF, DKIM i DMARC w trybie, który realnie blokuje podszywanie,
+                  to 299 zł. Zostaw adres, a wyślę raport dla{" "}
+                  <strong>{wynik.domena}</strong> i wycenę naprawy. Bez
+                  zobowiązań.
                 </p>
                 {leadStan === "ok" ? (
                   <p style={{ color: "#16a34a", fontWeight: 600, margin: 0 }}>

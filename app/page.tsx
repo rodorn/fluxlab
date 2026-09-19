@@ -117,6 +117,12 @@ export default function Home() {
         {/* Dolny pasek */}
         <footer className="relative z-20 flex flex-wrap items-center justify-center gap-x-6 gap-y-1.5 px-6 py-3.5 text-xs text-gray-500 dark:text-white/40 border-t border-gray-200 dark:border-white/10">
           <Link
+            href="/produkty"
+            className="hover:text-gray-900 dark:hover:text-white/70 transition-colors"
+          >
+            Produkty
+          </Link>
+          <Link
             href="/jak-pracuje"
             className="hover:text-gray-900 dark:hover:text-white/70 transition-colors"
           >

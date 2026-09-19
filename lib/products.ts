@@ -120,13 +120,14 @@ export const PRODUCTS: Product[] = [
     name: "Audyt poczty firmowej",
     tagline: "SPF, DKIM i DMARC w jednym raporcie",
     desc: "Automat sprawdza, czy Twoja domena jest poprawnie zabezpieczona i czy ktoś może podszyć się pod Twój adres. To najczęstszy powód, dla którego firmowe maile lądują w spamie.",
-    price: "19 zł",
+    price: "od 19 zł",
     href: "/audyt-poczty",
     cta: "Sprawdź swoją pocztę",
     bullets: [
       "czy ktoś może wysyłać maile jako Ty",
       "dlaczego Twoje wiadomości trafiają do spamu",
       "gotowe rekordy do wklejenia w panelu DNS",
+      "raport 19 zł, ekspresowa naprawa 299 zł",
     ],
   },
   {
