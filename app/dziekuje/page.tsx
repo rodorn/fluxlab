@@ -48,9 +48,10 @@ export default function Dziekuje() {
 
               <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
                 Odezwę się z odpowiedzią w ciągu 24h. Jeśli widzę potencjał na
-                automatyzację, zaproponuję termin krótkiej rozmowy. Jeśli nie,
-                napiszę wprost, dlaczego nie warto tego automatyzować na tym
-                etapie.
+                automatyzację, odpiszę z konkretnym zakresem i wyceną. Jeśli
+                nie, napiszę wprost, dlaczego nie warto tego automatyzować na
+                tym etapie. Wszystko ustalam mailowo, więc nie musisz nigdzie
+                dzwonić ani rezerwować terminu.
               </p>
 
               <div className="bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-xl p-5 mb-8">
@@ -110,10 +111,10 @@ export default function Dziekuje() {
               <p className="mt-8 text-xs text-gray-400 dark:text-gray-500 text-center">
                 Brak maila ode mnie po 24h? Sprawdź spam albo napisz wprost na{" "}
                 <a
-                  href="mailto:kontakt@fluxlab.pl"
+                  href="mailto:pawel@fluxlab.pl"
                   className="text-accent hover:underline"
                 >
-                  kontakt@fluxlab.pl
+                  pawel@fluxlab.pl
                 </a>
                 .
               </p>

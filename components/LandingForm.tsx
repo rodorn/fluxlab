@@ -140,12 +140,12 @@ export default function LandingForm({
       setLoading(false);
       setErrorMsg(
         payload?.error ??
-          "Coś poszło nie tak. Spróbuj ponownie lub napisz bezpośrednio na kontakt@fluxlab.pl.",
+          "Coś poszło nie tak. Spróbuj ponownie lub napisz bezpośrednio na pawel@fluxlab.pl.",
       );
     } catch {
       setLoading(false);
       setErrorMsg(
-        "Problem z połączeniem. Spróbuj ponownie lub napisz na kontakt@fluxlab.pl.",
+        "Problem z połączeniem. Spróbuj ponownie lub napisz na pawel@fluxlab.pl.",
       );
     }
   }

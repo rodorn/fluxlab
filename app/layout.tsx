@@ -149,7 +149,7 @@ export default function RootLayout({
                   contactPoint: {
                     "@type": "ContactPoint",
                     contactType: "sales",
-                    email: "kontakt@fluxlab.pl",
+                    email: "pawel@fluxlab.pl",
                     availableLanguage: ["pl", "en"],
                     areaServed: "PL",
                   },

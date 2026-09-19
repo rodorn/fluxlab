@@ -126,7 +126,7 @@ export default function LiveDiagnosis() {
       gaEvent("ai_diagnosis_result", { pillar: data.pillar });
     } catch {
       setErrorMsg(
-        "Problem z połączeniem. Spróbuj ponownie lub napisz na kontakt@fluxlab.pl.",
+        "Problem z połączeniem. Spróbuj ponownie lub napisz na pawel@fluxlab.pl.",
       );
     } finally {
       setLoading(false);

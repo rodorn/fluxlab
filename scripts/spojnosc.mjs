@@ -98,7 +98,7 @@ for (const f of pages) {
   // artykuly wchodza do sitemap petla po tablicy articles, nie literalem
   if (route.startsWith("/strefa-wiedzy/")) continue;
   // strony celowo poza indeksem
-  if (["/cv", "/dziekuje"].includes(route)) continue;
+  if (["/cv", "/dziekuje", "/panel"].includes(route)) continue;
   if (!sitemap.includes(route)) add("sitemap", `${route}: brak w sitemap`);
 }
 
