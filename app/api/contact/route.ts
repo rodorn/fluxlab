@@ -28,7 +28,8 @@ const CONTACT_PREF_LABELS: Record<string, string> = {
 // ale ktore pozwalaja wysylac wylacznie na adres wlasciciela konta.
 // Po weryfikacji ustawic w Vercel: RESEND_FROM_FORMULARZ, RESEND_FROM_PAWEL.
 const FROM_FORMULARZ =
-  process.env.RESEND_FROM_FORMULARZ ?? "Formularz Fluxlab <onboarding@resend.dev>";
+  process.env.RESEND_FROM_FORMULARZ ??
+  "Formularz Fluxlab <onboarding@resend.dev>";
 const FROM_PAWEL =
   process.env.RESEND_FROM_PAWEL ?? "Paweł, Fluxlab <onboarding@resend.dev>";
 
@@ -117,9 +118,12 @@ export async function POST(req: Request) {
     );
   }
 
-  // Auto-potwierdzenie do klienta — fire-and-forget, błędy nie blokują sukcesu.
-  resend.emails
-    .send({
+  // Auto-potwierdzenie do klienta. Nie blokuje sukcesu zgloszenia, ale gdy sie
+  // nie uda (np. nadawca z piaskownicy Resend moze pisac tylko do wlasciciela
+  // konta), leci alert do Pawla, zeby odpisal recznie. Bez tego lead wyglada
+  // dla klienta jak wrzucony w prozne.
+  try {
+    const { error: replyError } = await resend.emails.send({
       from: FROM_PAWEL,
       to: email,
       subject: "Dostałem zgłoszenie, Fluxlab",
@@ -135,12 +139,40 @@ Paweł
 Fluxlab, automatyzacja leadów, CRM i raportowania dla firm B2B
 fluxlab.pl
 `,
-    })
-    .catch((e) =>
-      console.error(
-        "[contact] auto-reply NIE zostal wyslany do", email, "-", e,
-      ),
-    );
+    });
+
+    if (replyError) {
+      throw replyError;
+    }
+  } catch (e) {
+    console.error("[contact] auto-reply NIE zostal wyslany do", email, "-", e);
+
+    // Alert do siebie. Ten adres zawsze dziala, bo jest wlascicielem konta.
+    await resend.emails
+      .send({
+        from: FROM_FORMULARZ,
+        to: "iwanekpawel55@gmail.com",
+        replyTo: email,
+        subject: `ODPISZ RĘCZNIE: klient nie dostał potwierdzenia (${email})`,
+        text: `Zgłoszenie z formularza dotarło, ale automatyczne potwierdzenie do klienta NIE zostało wysłane.
+
+Klient: ${email}
+Temat zgłoszenia: ${problemTypeLabel}${subjectCompany}
+
+Z jego perspektywy wysłał formularz i nie dostał żadnej odpowiedzi, więc odpisz mu ręcznie, najlepiej od razu. Wystarczy odpowiedzieć na tego maila, bo adres zwrotny jest ustawiony na klienta.
+
+Przyczyna techniczna: ${e instanceof Error ? e.message : String(e)}
+
+Trwałe rozwiązanie: zweryfikować domenę fluxlab.pl w Resend i ustawić RESEND_FROM_FORMULARZ oraz RESEND_FROM_PAWEL w zmiennych środowiskowych, żeby maile wychodziły z adresu w tej domenie zamiast z piaskownicy.
+`,
+      })
+      .catch((alertError) =>
+        console.error(
+          "[contact] alert o nieudanym potwierdzeniu tez padl:",
+          alertError,
+        ),
+      );
+  }
 
   return NextResponse.json({ ok: true });
 }
