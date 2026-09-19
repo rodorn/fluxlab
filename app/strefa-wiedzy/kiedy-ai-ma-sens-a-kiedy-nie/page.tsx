@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Automatyzacja leadów, CRM i raportowania dla firm B2B",
+        alt: "Fluxlab, Automatyzacja leadów, CRM i raportowania dla firm B2B",
       },
     ],
   },
@@ -59,7 +59,7 @@ export default function KiedyAiMaSensPage() {
           </div>
         </section>
 
-        {/* Treść w zakładkach — nic nie wycięte, podzielone wg rozdziałów */}
+        {/* Treść w zakładkach, nic nie wycięte, podzielone wg rozdziałów */}
         <div className="container-wide pb-20">
           <Tabs
             ariaLabel="Rozdziały artykułu o tym, kiedy AI ma sens"
@@ -145,7 +145,7 @@ export default function KiedyAiMaSensPage() {
                     <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
                       Jeżeli proces jest słaby, AI go nie naprawi. Najpierw
                       trzeba ustalić logikę działania, odpowiedzialność i
-                      przepływ danych — to zadanie dla{" "}
+                      przepływ danych, to zadanie dla{" "}
                       <Link
                         href="/automatyzacja-procesow-biznesowych"
                         className="text-accent hover:underline"

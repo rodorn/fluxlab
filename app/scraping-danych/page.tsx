@@ -9,13 +9,13 @@ import Tabs from "@/components/Tabs";
 import ProductGrid from "@/components/ProductGrid";
 
 export const metadata: Metadata = {
-  title: "Scraping i ekstrakcja danych — web, PDF, maile, dokumenty | Fluxlab",
+  title: "Scraping i ekstrakcja danych, web, PDF, maile, dokumenty | Fluxlab",
   description:
     "Wyciągam strukturalne dane ze stron, PDF-ów, maili i dokumentów. AI rozpoznaje pola, walidacja w czasie rzeczywistym, pipeline do CRM lub arkusza. Bez ręcznego kopiowania.",
   alternates: { canonical: "/scraping-danych" },
   openGraph: {
     title:
-      "Scraping i ekstrakcja danych — web, PDF, maile, dokumenty | Fluxlab",
+      "Scraping i ekstrakcja danych, web, PDF, maile, dokumenty | Fluxlab",
     description:
       "Wyciągam strukturalne dane ze stron, PDF-ów, maili. AI rozpoznaje pola.",
     locale: "pl_PL",
@@ -30,7 +30,7 @@ const sourceTypes = [
   },
   {
     title: "PDF i dokumenty",
-    examples: "Faktury, umowy, raporty — OCR + AI klasyfikacja pól.",
+    examples: "Faktury, umowy, raporty, OCR + AI klasyfikacja pól.",
   },
   {
     title: "Maile",
@@ -38,7 +38,7 @@ const sourceTypes = [
   },
   {
     title: "Dokumenty Office",
-    examples: "Excel, Word — chaos arkuszy do jednego czystego schematu.",
+    examples: "Excel, Word, chaos arkuszy do jednego czystego schematu.",
   },
 ];
 
@@ -46,7 +46,7 @@ const faq = [
   {
     question: "Czy scraping jest legalny?",
     answer:
-      "Publiczne strony zgodnie z TOS i robots.txt — tak. Chronione, logged-in albo paid content — nie. Każdy przypadek oceniam indywidualnie i mówię wprost, gdy widzę ryzyko.",
+      "Publiczne strony zgodnie z TOS i robots.txt, tak. Chronione, logged-in albo paid content, nie. Każdy przypadek oceniam indywidualnie i mówię wprost, gdy widzę ryzyko.",
   },
   {
     question: "Co jeśli strona zmieni layout?",
@@ -67,7 +67,7 @@ export default function ScrapingDanychPage() {
       <main>
         <Breadcrumbs items={[{ label: "Scraping danych" }]} />
 
-        {/* Hero — kompaktowy */}
+        {/* Hero, kompaktowy */}
         <section
           aria-labelledby="hero-heading"
           className="relative pt-24 pb-12 overflow-hidden"
@@ -108,7 +108,7 @@ export default function ScrapingDanychPage() {
           </div>
         </section>
 
-        {/* Treść w zakładkach — nic nie wycięte, podzielone */}
+        {/* Treść w zakładkach, nic nie wycięte, podzielone */}
         <section className="container-wide pb-16">
           <ProductGrid category="dane" showHeading />
         </section>
@@ -223,7 +223,7 @@ export default function ScrapingDanychPage() {
                         Robię scraping publicznych stron zgodnie z TOS i
                         robots.txt oraz ekstrakcję z Twoich danych. Nie obchodzę
                         zabezpieczeń, nie ruszam chronionych zasobów ani danych
-                        osobowych bez podstawy prawnej. Gdy widzę ryzyko — mówię
+                        osobowych bez podstawy prawnej. Gdy widzę ryzyko, mówię
                         wprost.
                       </p>
                     </div>

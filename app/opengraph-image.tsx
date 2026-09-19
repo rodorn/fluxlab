@@ -3,7 +3,7 @@ import { ImageResponse } from "next/og";
 export const runtime = "edge";
 
 export const alt =
-  "Fluxlab — Automatyzacja procesow biznesowych i CRM dla firm B2B";
+  "Fluxlab, Automatyzacja procesow biznesowych i CRM dla firm B2B";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

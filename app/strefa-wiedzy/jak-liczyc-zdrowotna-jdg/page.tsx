@@ -23,7 +23,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Automatyzacja leadów, CRM i raportowania dla firm B2B",
+        alt: "Fluxlab, Automatyzacja leadów, CRM i raportowania dla firm B2B",
       },
     ],
   },
@@ -54,14 +54,14 @@ export default function SkladkaZdrowotnaJDGArticle() {
               Składka zdrowotna to jeden z najczęściej pomijanych elementów przy
               porównywaniu form opodatkowania. A potrafi zmienić wynik o kilka
               tysięcy złotych rocznie. W 2026 roku zasady są inne dla skali,
-              liniowego i ryczałtu — różnią się stawką, podstawą wymiaru i
+              liniowego i ryczałtu, różnią się stawką, podstawą wymiaru i
               możliwością odliczenia. Ten artykuł tłumaczy, jak to działa na
               konkretnych liczbach.
             </p>
           </div>
         </section>
 
-        {/* Treść w zakładkach — nic nie wycięte, podzielone wg rozdziałów */}
+        {/* Treść w zakładkach, nic nie wycięte, podzielone wg rozdziałów */}
         <div className="container-wide pb-20">
           <Tabs
             ariaLabel="Rozdziały artykułu o składce zdrowotnej w JDG"
@@ -76,7 +76,7 @@ export default function SkladkaZdrowotnaJDGArticle() {
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
                       Na skali podatkowej składka zdrowotna wynosi 9% dochodu.
                       To najwyższa stawka procentowa spośród wszystkich trzech
-                      form opodatkowania. I co ważne — nie można jej odliczyć od
+                      form opodatkowania. I co ważne, nie można jej odliczyć od
                       podatku ani od dochodu.
                     </p>
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
@@ -86,7 +86,7 @@ export default function SkladkaZdrowotnaJDGArticle() {
                       miesiąca.
                     </p>
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Istnieje jednak składka minimalna — nie może być niższa
+                      Istnieje jednak składka minimalna, nie może być niższa
                       niż 9% od 75% minimalnego wynagrodzenia. W 2026 roku
                       minimalne wynagrodzenie wynosi 4 826 zł brutto, co daje
                       minimalną podstawę wymiaru 3 619,50 zł i minimalną składkę
@@ -107,7 +107,7 @@ export default function SkladkaZdrowotnaJDGArticle() {
                     </ul>
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
                       W praktyce oznacza to, że przy dochodzie 10 000 zł
-                      miesięcznie składka zdrowotna na skali wynosi 900 zł — i
+                      miesięcznie składka zdrowotna na skali wynosi 900 zł, i
                       całość jest kosztem, którego nie odzyskasz.
                     </p>
                   </div>
@@ -123,7 +123,7 @@ export default function SkladkaZdrowotnaJDGArticle() {
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
                       Na podatku liniowym składka zdrowotna wynosi 4,9% dochodu.
                       To niemal połowa stawki obowiązującej na skali. Ale to nie
-                      jedyna różnica — na liniowym część składki zdrowotnej
+                      jedyna różnica, na liniowym część składki zdrowotnej
                       można odliczyć od dochodu.
                     </p>
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
@@ -155,7 +155,7 @@ export default function SkladkaZdrowotnaJDGArticle() {
                       więc znacząca.
                     </p>
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Minimalna składka działa tak samo jak na skali — nie może
+                      Minimalna składka działa tak samo jak na skali, nie może
                       być niższa niż 9% od 75% minimalnego wynagrodzenia (tak,
                       minimalna stawka to 9%, nie 4,9%).
                     </p>
@@ -171,7 +171,7 @@ export default function SkladkaZdrowotnaJDGArticle() {
                     </h2>
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
                       Na ryczałcie składka zdrowotna działa zupełnie inaczej.
-                      Nie zależy od dochodu, ale od przychodu — a dokładniej od
+                      Nie zależy od dochodu, ale od przychodu, a dokładniej od
                       progu przychodu, w którym się mieścisz. Stawka to 9% od
                       zryczałtowanej podstawy wymiaru.
                     </p>
@@ -180,17 +180,17 @@ export default function SkladkaZdrowotnaJDGArticle() {
                     </h3>
                     <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
                       <li>
-                        Przychód do 60 000 zł rocznie — podstawa: 60%
+                        Przychód do 60 000 zł rocznie, podstawa: 60%
                         przeciętnego wynagrodzenia = 5 593,20 zł → składka ok.
                         503,39 zł/mies.
                       </li>
                       <li>
-                        Przychód od 60 001 zł do 300 000 zł — podstawa: 100%
+                        Przychód od 60 001 zł do 300 000 zł, podstawa: 100%
                         przeciętnego wynagrodzenia = 9 322 zł → składka ok.
                         838,98 zł/mies.
                       </li>
                       <li>
-                        Przychód powyżej 300 000 zł — podstawa: 180%
+                        Przychód powyżej 300 000 zł, podstawa: 180%
                         przeciętnego wynagrodzenia = 16 779,60 zł → składka ok.
                         1 510,16 zł/mies.
                       </li>
@@ -382,7 +382,7 @@ export default function SkladkaZdrowotnaJDGArticle() {
                       Składka zdrowotna w 2026 roku różni się znacząco w
                       zależności od formy opodatkowania. Na skali to 9% dochodu
                       bez odliczenia. Na liniowym 4,9% z możliwością odliczenia
-                      od dochodu do 12 900 zł rocznie. Na ryczałcie — stała
+                      od dochodu do 12 900 zł rocznie. Na ryczałcie, stała
                       kwota zależna od progu przychodu.
                     </p>
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
@@ -394,7 +394,7 @@ export default function SkladkaZdrowotnaJDGArticle() {
                     </p>
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
                       Najlepszą metodą jest sprawdzenie konkretnych kwot dla
-                      swojego poziomu przychodów i kosztów — z uwzględnieniem
+                      swojego poziomu przychodów i kosztów, z uwzględnieniem
                       składki zdrowotnej, ZUS i podatku dochodowego łącznie.
                     </p>
                   </div>
@@ -427,7 +427,7 @@ export default function SkladkaZdrowotnaJDGArticle() {
                         </summary>
                         <p className="px-6 pb-6 text-gray-600 dark:text-gray-400">
                           Na podatku liniowym można odliczyć składkę zdrowotną
-                          od dochodu — do limitu 12 900 zł rocznie. Na skali
+                          od dochodu, do limitu 12 900 zł rocznie. Na skali
                           podatkowej i ryczałcie składka zdrowotna nie podlega
                           odliczeniu.
                         </p>
@@ -544,7 +544,7 @@ export default function SkladkaZdrowotnaJDGArticle() {
                               href="/strefa-wiedzy/ryczalt-czy-liniowy"
                               className="text-accent hover:underline"
                             >
-                              Ryczałt czy liniowy — co wybrać
+                              Ryczałt czy liniowy, co wybrać
                             </Link>
                           </li>
                           <li>
@@ -560,7 +560,7 @@ export default function SkladkaZdrowotnaJDGArticle() {
                               href="/strefa-wiedzy/maly-zus-plus-kiedy-sie-oplaca"
                               className="text-accent hover:underline"
                             >
-                              Mały ZUS Plus — kiedy się opłaca
+                              Mały ZUS Plus, kiedy się opłaca
                             </Link>
                           </li>
                         </ul>
@@ -608,7 +608,7 @@ export default function SkladkaZdrowotnaJDGArticle() {
                 name: "Czy składkę zdrowotną można odliczyć od podatku?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Na podatku liniowym można odliczyć składkę zdrowotną od dochodu — do limitu 12 900 zł rocznie. Na skali podatkowej i ryczałcie składka zdrowotna nie podlega odliczeniu.",
+                  text: "Na podatku liniowym można odliczyć składkę zdrowotną od dochodu, do limitu 12 900 zł rocznie. Na skali podatkowej i ryczałcie składka zdrowotna nie podlega odliczeniu.",
                 },
               },
               {

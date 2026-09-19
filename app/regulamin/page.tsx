@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Automatyzacja leadów, CRM i raportowania dla firm B2B",
+        alt: "Fluxlab, Automatyzacja leadów, CRM i raportowania dla firm B2B",
       },
     ],
   },
@@ -35,7 +35,7 @@ export default function Regulamin() {
     <>
       <Header />
       <main>
-        {/* Hero — kompaktowy */}
+        {/* Hero, kompaktowy */}
         <section className="pt-24 pb-12">
           <div className="container-wide">
             <Breadcrumbs
@@ -54,7 +54,7 @@ export default function Regulamin() {
           </div>
         </section>
 
-        {/* Treść prawna w zakładkach — nic nie wycięte, podzielone wg sekcji */}
+        {/* Treść prawna w zakładkach, nic nie wycięte, podzielone wg sekcji */}
         <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
           <Tabs
             ariaLabel="Sekcje regulaminu"
@@ -157,9 +157,9 @@ export default function Regulamin() {
                           4. Własność intelektualna
                         </h2>
                         <p>
-                          Wszelkie treści zamieszczone w Serwisie — w tym
+                          Wszelkie treści zamieszczone w Serwisie, w tym
                           teksty, grafiki, układ strony, logotypy i kod źródłowy
-                          — stanowią własność intelektualną Usługodawcy i są
+                         , stanowią własność intelektualną Usługodawcy i są
                           chronione przepisami prawa autorskiego oraz prawa
                           własności przemysłowej.
                         </p>

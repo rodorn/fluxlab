@@ -74,7 +74,7 @@ export default function StronyWww() {
       <main>
         <Breadcrumbs items={[{ label: "Strony WWW" }]} />
 
-        {/* Hero — kompaktowy */}
+        {/* Hero, kompaktowy */}
         <section
           aria-labelledby="hero-heading"
           className="relative pt-24 pb-12 overflow-hidden"
@@ -111,7 +111,7 @@ export default function StronyWww() {
           </div>
         </section>
 
-        {/* Treść w zakładkach — nic nie wycięte, podzielone */}
+        {/* Treść w zakładkach, nic nie wycięte, podzielone */}
         <section className="container-wide pb-16">
           <ProductGrid category="www" showHeading />
         </section>

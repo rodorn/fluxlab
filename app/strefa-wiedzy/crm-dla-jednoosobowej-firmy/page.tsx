@@ -7,11 +7,11 @@ import Tabs from "@/components/Tabs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 
 export const metadata: Metadata = {
-  title: "CRM dla jednoosobowej firmy — co wybrać | Fluxlab",
+  title: "CRM dla jednoosobowej firmy, co wybrać | Fluxlab",
   description:
     "Praktyczne porównanie CRM dla solo consultantów i jednoosobowych firm: Pipedrive, HubSpot Free, Folk, Attio, Notion, Monday CRM i Google Sheets. Co wybrać i czego unikać w 2026.",
   openGraph: {
-    title: "CRM dla jednoosobowej firmy — co wybrać | Fluxlab",
+    title: "CRM dla jednoosobowej firmy, co wybrać | Fluxlab",
     description:
       "Praktyczne porównanie CRM dla solo consultantów i jednoosobowych firm: Pipedrive, HubSpot Free, Folk, Attio, Notion, Monday CRM i Google Sheets. Co wybrać i czego unikać w 2026.",
     locale: "pl_PL",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Automatyzacja leadów, CRM i raportowania dla firm B2B",
+        alt: "Fluxlab, Automatyzacja leadów, CRM i raportowania dla firm B2B",
       },
     ],
   },
@@ -50,16 +50,16 @@ export default function CrmDlaJednoosobowejFirmyArticle() {
         <Breadcrumbs
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
-            { label: "CRM dla jednoosobowej firmy — co wybrać" },
+            { label: "CRM dla jednoosobowej firmy, co wybrać" },
           ]}
         />
 
-        {/* Nagłówek artykułu — kompaktowy */}
+        {/* Nagłówek artykułu, kompaktowy */}
         <section className="pt-24 pb-10">
           <div className="container-wide max-w-3xl mx-auto">
             <span className="section-label">Strefa wiedzy</span>
             <h1 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">
-              CRM dla jednoosobowej firmy — co wybrać
+              CRM dla jednoosobowej firmy, co wybrać
             </h1>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
               Solo consultant nie ma czasu na konfigurowanie systemu, który
@@ -70,7 +70,7 @@ export default function CrmDlaJednoosobowejFirmyArticle() {
           </div>
         </section>
 
-        {/* Treść w zakładkach — nic nie wycięte, podzielone wg rozdziałów */}
+        {/* Treść w zakładkach, nic nie wycięte, podzielone wg rozdziałów */}
         <div className="container-wide pb-8">
           <Tabs
             ariaLabel="Rozdziały artykułu"
@@ -116,7 +116,7 @@ export default function CrmDlaJednoosobowejFirmyArticle() {
                   <div className="py-10 lg:py-12">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        Pipedrive — solidny środek
+                        Pipedrive, solidny środek
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
                         Pipedrive Essential to ok. 14 USD miesięcznie za jednego
@@ -136,18 +136,18 @@ export default function CrmDlaJednoosobowejFirmyArticle() {
                         >
                           automatyzacją Pipedrive
                         </Link>{" "}
-                        — choćby prostą: lead z formularza, follow-up po
+                       , choćby prostą: lead z formularza, follow-up po
                         spotkaniu, przypomnienie o utkniętym dealu.
                       </p>
 
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        HubSpot Free — darmowy, ale z gwiazdką
+                        HubSpot Free, darmowy, ale z gwiazdką
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
                         Darmowy CRM HubSpota dla jednej osoby często wystarcza:
                         kontakty, deale, zadania, integracja Gmail/Outlook,
                         podstawowe szablony e-mail. Limit aktywnych funkcji w
-                        darmowej wersji jest jednak realny — przy próbie
+                        darmowej wersji jest jednak realny, przy próbie
                         poważniejszej automatyzacji szybko trafisz na płatne
                         huby.
                       </p>
@@ -155,7 +155,7 @@ export default function CrmDlaJednoosobowejFirmyArticle() {
                         Dla solo consultanta, który nie planuje skalowania
                         zespołu, HubSpot Free bywa najtańszą opcją na lata.
                         Trzeba mieć tylko świadomość, że ekosystem prowadzi do
-                        wyższych planów — pisałem o tym przy okazji porównania{" "}
+                        wyższych planów, pisałem o tym przy okazji porównania{" "}
                         <Link
                           href="/strefa-wiedzy/hubspot-vs-pipedrive"
                           className="text-accent hover:underline"
@@ -174,12 +174,12 @@ export default function CrmDlaJednoosobowejFirmyArticle() {
                   <div className="py-10 lg:py-12">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        Folk i Attio — nowa generacja CRM
+                        Folk i Attio, nowa generacja CRM
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
                         Folk i Attio to młodsze CRM-y zaprojektowane pod
                         relacje, a nie tylko pipeline. Folk dobrze sprawdza się
-                        dla konsultantów, agencji i freelancerów — wciąga
+                        dla konsultantów, agencji i freelancerów, wciąga
                         kontakty z Gmaila/LinkedIn, pokazuje historię relacji,
                         ma proste pipy. Attio idzie w stronę elastycznej bazy
                         danych à la Airtable z funkcjami CRM, świetne dla VC,
@@ -194,7 +194,7 @@ export default function CrmDlaJednoosobowejFirmyArticle() {
                       </p>
 
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        Monday CRM — gdy lubisz boardy
+                        Monday CRM, gdy lubisz boardy
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
                         Monday CRM nadbudowuje się na uniwersalnej platformie
@@ -206,7 +206,7 @@ export default function CrmDlaJednoosobowejFirmyArticle() {
                       <p className="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
                         Cena Monday CRM zaczyna się od ok. 12–15 USD / seat /
                         mies. przy płatności rocznej, ale typowo wymaga minimum
-                        3 seatów — dla solo to często dyskwalifikacja.
+                        3 seatów, dla solo to często dyskwalifikacja.
                       </p>
 
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
@@ -236,7 +236,7 @@ export default function CrmDlaJednoosobowejFirmyArticle() {
                   <div className="py-10 lg:py-12">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        Google Sheets + automaty — opcja minimalistyczna
+                        Google Sheets + automaty, opcja minimalistyczna
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
                         Najtańsza i często niedoceniana opcja: arkusz Google z
@@ -257,7 +257,7 @@ export default function CrmDlaJednoosobowejFirmyArticle() {
                         Czego unikać
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                        Solo consultant nie potrzebuje Salesforce — ani Starter,
+                        Solo consultant nie potrzebuje Salesforce, ani Starter,
                         ani Professional. Cały sens tej platformy to zarządzanie
                         procesami w zespole, modelowanie danych i głębokie
                         uprawnienia. Dla jednej osoby to bardzo drogi i ciężki
@@ -289,26 +289,26 @@ export default function CrmDlaJednoosobowejFirmyArticle() {
                         <li className="flex items-start gap-2">
                           {checkIcon}
                           Sprzedaż projektowa B2B z kilkudziesięcioma rozmowami
-                          — Pipedrive lub Folk.
+                         , Pipedrive lub Folk.
                         </li>
                         <li className="flex items-start gap-2">
                           {checkIcon}
-                          Inbound i content jako główne źródło — HubSpot Free na
+                          Inbound i content jako główne źródło, HubSpot Free na
                           start.
                         </li>
                         <li className="flex items-start gap-2">
                           {checkIcon}
-                          Praca relacyjna, mało aktywnych deali na raz — Notion
+                          Praca relacyjna, mało aktywnych deali na raz, Notion
                           albo Folk.
                         </li>
                         <li className="flex items-start gap-2">
                           {checkIcon}
-                          Bardzo prosty proces, mocna dyscyplina — Sheets +
+                          Bardzo prosty proces, mocna dyscyplina, Sheets +
                           Make/n8n.
                         </li>
                         <li className="flex items-start gap-2">
                           {checkIcon}
-                          Już używasz Monday do projektów — Monday CRM.
+                          Już używasz Monday do projektów, Monday CRM.
                         </li>
                       </ul>
                       <p className="mt-6 text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -336,9 +336,9 @@ export default function CrmDlaJednoosobowejFirmyArticle() {
                           href="/strefa-wiedzy/automatyzacja-crm-od-czego-zaczac"
                           className="text-accent hover:underline"
                         >
-                          automatyzacja CRM — od czego zacząć
+                          automatyzacja CRM, od czego zacząć
                         </Link>{" "}
-                        — działają niezależnie od wybranego narzędzia.
+                       , działają niezależnie od wybranego narzędzia.
                       </p>
                     </div>
                   </div>
@@ -360,13 +360,13 @@ export default function CrmDlaJednoosobowejFirmyArticle() {
                       <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-400">
                         <li className="flex items-start gap-2">
                           {checkIcon}
-                          Zapis leada z formularza od razu do CRM lub arkusza —
+                          Zapis leada z formularza od razu do CRM lub arkusza,
                           bez przepisywania z maila.
                         </li>
                         <li className="flex items-start gap-2">
                           {checkIcon}
                           Przypomnienie o follow-upie po 3 i 10 dniach braku
-                          odpowiedzi — mailem albo w kalendarzu.
+                          odpowiedzi, mailem albo w kalendarzu.
                         </li>
                         <li className="flex items-start gap-2">
                           {checkIcon}
@@ -397,7 +397,7 @@ export default function CrmDlaJednoosobowejFirmyArticle() {
                       </p>
                       <p className="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
                         Jeśli któryś z tych objawów występuje, to nie CRM jest
-                        za słaby — najczęściej brakuje automatyzacji i prostego
+                        za słaby, najczęściej brakuje automatyzacji i prostego
                         porządku w polach. Dopiero po próbie uporządkowania
                         warto zmieniać narzędzie. W tym momencie dobrym
                         następnym krokiem jest pełen{" "}
@@ -421,41 +421,41 @@ export default function CrmDlaJednoosobowejFirmyArticle() {
                       <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-400">
                         <li className="flex items-start gap-2">
                           {checkIcon}
-                          HubSpot Free — 0 USD rocznie, z limitami funkcji i
+                          HubSpot Free, 0 USD rocznie, z limitami funkcji i
                           brandingiem.
                         </li>
                         <li className="flex items-start gap-2">
                           {checkIcon}
-                          Google Sheets + Make/n8n — ok. 0–120 USD rocznie
+                          Google Sheets + Make/n8n, ok. 0–120 USD rocznie
                           (darmowe tiery automatyzacji zwykle wystarczają).
                         </li>
                         <li className="flex items-start gap-2">
                           {checkIcon}
-                          Notion — ok. 0–96 USD rocznie (Notion Free często
+                          Notion, ok. 0–96 USD rocznie (Notion Free często
                           wystarcza).
                         </li>
                         <li className="flex items-start gap-2">
                           {checkIcon}
-                          Pipedrive Essential — ok. 168 USD rocznie.
+                          Pipedrive Essential, ok. 168 USD rocznie.
                         </li>
                         <li className="flex items-start gap-2">
                           {checkIcon}
-                          Folk — ok. 240–360 USD rocznie.
+                          Folk, ok. 240–360 USD rocznie.
                         </li>
                         <li className="flex items-start gap-2">
                           {checkIcon}
-                          Attio — ok. 240–360 USD rocznie w planach startowych.
+                          Attio, ok. 240–360 USD rocznie w planach startowych.
                         </li>
                         <li className="flex items-start gap-2">
                           {checkIcon}
-                          Pipedrive Advanced — ok. 348 USD rocznie (sensowne,
+                          Pipedrive Advanced, ok. 348 USD rocznie (sensowne,
                           jeśli chcesz workflow natywny).
                         </li>
                       </ul>
                       <p className="mt-6 text-gray-600 dark:text-gray-400 leading-relaxed">
                         Dla porównania: Salesforce Starter dla jednego
                         użytkownika to ok. 300 USD rocznie, ale praktycznie
-                        nigdy nie zatrzymuje się na tym poziomie — realny koszt
+                        nigdy nie zatrzymuje się na tym poziomie, realny koszt
                         przy sensownym wykorzystaniu platformy to co najmniej
                         kilkukrotnie więcej, razem z czasem konfiguracji. Dla
                         solo to zwykle wyrzucone pieniądze.
@@ -469,7 +469,7 @@ export default function CrmDlaJednoosobowejFirmyArticle() {
                         >
                           pierwsza warstwa automatyzacji
                         </Link>{" "}
-                        — ona waży znacznie więcej niż to, czy płacisz 14 czy 29
+                       , ona waży znacznie więcej niż to, czy płacisz 14 czy 29
                         USD miesięcznie za licencję.
                       </p>
                     </div>
@@ -500,7 +500,7 @@ export default function CrmDlaJednoosobowejFirmyArticle() {
                             Czy darmowy HubSpot wystarczy na lata?
                           </h3>
                           <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                            Dla solo bez ambicji marketing automation — często
+                            Dla solo bez ambicji marketing automation, często
                             tak. Granica pojawia się wtedy, gdy zaczynasz
                             potrzebować workflow, scoringu i raportów spoza
                             prostych dashboardów.
@@ -603,7 +603,7 @@ export default function CrmDlaJednoosobowejFirmyArticle() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Article",
-            headline: "CRM dla jednoosobowej firmy — co wybrać",
+            headline: "CRM dla jednoosobowej firmy, co wybrać",
             description:
               "Praktyczne porównanie CRM dla solo consultantów i jednoosobowych firm: Pipedrive, HubSpot Free, Folk, Attio, Notion, Monday CRM i Google Sheets. Co wybrać i czego unikać w 2026.",
             datePublished: "2026-04-19",
@@ -642,7 +642,7 @@ export default function CrmDlaJednoosobowejFirmyArticle() {
                 name: "Czy darmowy HubSpot wystarczy na lata?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Dla solo bez ambicji marketing automation — często tak. Granica pojawia się wtedy, gdy zaczynasz potrzebować workflow, scoringu i raportów spoza prostych dashboardów.",
+                  text: "Dla solo bez ambicji marketing automation, często tak. Granica pojawia się wtedy, gdy zaczynasz potrzebować workflow, scoringu i raportów spoza prostych dashboardów.",
                 },
               },
               {

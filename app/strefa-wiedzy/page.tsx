@@ -8,12 +8,12 @@ import { categories } from "@/lib/categories";
 
 export const metadata: Metadata = {
   title:
-    "Strefa wiedzy — automatyzacja procesów, CRM, API, raportowanie, AI | Fluxlab",
+    "Strefa wiedzy, automatyzacja procesów, CRM, API, raportowanie, AI | Fluxlab",
   description:
-    "Praktyczne artykuły o automatyzacji procesów biznesowych, CRM, integracjach API, raportowaniu i AI. Bez marketingowej mgły — konkrety dla firm B2B.",
+    "Praktyczne artykuły o automatyzacji procesów biznesowych, CRM, integracjach API, raportowaniu i AI. Bez marketingowej mgły, konkrety dla firm B2B.",
   openGraph: {
     title:
-      "Strefa wiedzy — automatyzacja procesów, CRM, API, raportowanie, AI | Fluxlab",
+      "Strefa wiedzy, automatyzacja procesów, CRM, API, raportowanie, AI | Fluxlab",
     description:
       "Praktyczne artykuły o automatyzacji procesów biznesowych, CRM, integracjach API, raportowaniu i AI.",
     locale: "pl_PL",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Automatyzacja leadów, CRM i raportowania dla firm B2B",
+        alt: "Fluxlab, Automatyzacja leadów, CRM i raportowania dla firm B2B",
       },
     ],
   },
@@ -38,7 +38,7 @@ export default function StrefaWiedzy() {
       <Header />
       <main className="pt-16 prose-justify">
         <Breadcrumbs items={[{ label: "Strefa wiedzy" }]} />
-        {/* Hero — kompaktowy */}
+        {/* Hero, kompaktowy */}
         <section className="pt-16 pb-6 bg-gray-50 dark:bg-gray-900/50 border-b border-gray-100 dark:border-gray-800">
           <div className="container-wide">
             <div className="max-w-3xl mx-auto text-center">
@@ -48,14 +48,14 @@ export default function StrefaWiedzy() {
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-400">
                 Praktyczne artykuły o automatyzacji procesów, CRM, integracjach
-                API, raportowaniu i AI. Bez marketingowej mgły — konkrety dla
+                API, raportowaniu i AI. Bez marketingowej mgły, konkrety dla
                 firm B2B.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Kategorie w zakładkach — nic nie wycięte, podzielone */}
+        {/* Kategorie w zakładkach, nic nie wycięte, podzielone */}
         <div className="container-wide py-6 lg:py-8">
           <Tabs
             ariaLabel="Kategorie strefy wiedzy"

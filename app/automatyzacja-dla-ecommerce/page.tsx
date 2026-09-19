@@ -9,12 +9,12 @@ import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
   title:
-    "Automatyzacja dla e-commerce — Shopify, WooCommerce, BaseLinker, Allegro | Fluxlab",
+    "Automatyzacja dla e-commerce, Shopify, WooCommerce, BaseLinker, Allegro | Fluxlab",
   description:
     "Automatyzacja sklepu internetowego: synchronizacja stanów magazynowych, fakturowanie, etykiety InPost/DPD, e-mail marketing i obsługa zwrotów. Łączymy Shopify, WooCommerce, PrestaShop, BaseLinker i Allegro w jeden działający proces.",
   openGraph: {
     title:
-      "Automatyzacja dla e-commerce — Shopify, WooCommerce, BaseLinker, Allegro | Fluxlab",
+      "Automatyzacja dla e-commerce, Shopify, WooCommerce, BaseLinker, Allegro | Fluxlab",
     description:
       "Automatyzacja sklepu internetowego: synchronizacja stanów magazynowych, fakturowanie, etykiety InPost/DPD, e-mail marketing i obsługa zwrotów. Łączymy Shopify, WooCommerce, PrestaShop, BaseLinker i Allegro w jeden działający proces.",
     locale: "pl_PL",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Automatyzacja procesów dla e-commerce",
+        alt: "Fluxlab, Automatyzacja procesów dla e-commerce",
       },
     ],
   },
@@ -37,7 +37,7 @@ const useCases = [
   {
     title: "Synchronizacja stanów magazynowych między kanałami",
     description:
-      "Sprzedajesz na własnym sklepie (Shopify, WooCommerce, PrestaShop) i jednocześnie na Allegro, OLX czy Amazon. Automatyzacja pilnuje, żeby stan magazynowy w każdym kanale był aktualny — sprzedaż w jednym miejscu zmniejsza dostępność we wszystkich pozostałych w czasie liczonym w sekundach. Koniec z over-sellem i ręcznym pilnowaniem arkusza.",
+      "Sprzedajesz na własnym sklepie (Shopify, WooCommerce, PrestaShop) i jednocześnie na Allegro, OLX czy Amazon. Automatyzacja pilnuje, żeby stan magazynowy w każdym kanale był aktualny, sprzedaż w jednym miejscu zmniejsza dostępność we wszystkich pozostałych w czasie liczonym w sekundach. Koniec z over-sellem i ręcznym pilnowaniem arkusza.",
   },
   {
     title: "Automatyczne fakturowanie zamówień",
@@ -63,9 +63,9 @@ const useCases = [
 
 const painPoints = [
   {
-    pain: "Sprzedajesz ten sam towar na sklepie i na Allegro — i co chwilę masz over-sell",
+    pain: "Sprzedajesz ten sam towar na sklepie i na Allegro, i co chwilę masz over-sell",
     solution:
-      "Wpinamy BaseLinker albo bezpośrednią integrację (Shopify/WooCommerce ↔ Allegro API), która trzyma stany w jednym źródle prawdy. Każda sprzedaż automatycznie zmniejsza stan we wszystkich kanałach. Jeśli BaseLinker już masz, ale nie wykorzystujesz jego automatyzacji do końca — porządkujemy to bez wymiany narzędzia.",
+      "Wpinamy BaseLinker albo bezpośrednią integrację (Shopify/WooCommerce ↔ Allegro API), która trzyma stany w jednym źródle prawdy. Każda sprzedaż automatycznie zmniejsza stan we wszystkich kanałach. Jeśli BaseLinker już masz, ale nie wykorzystujesz jego automatyzacji do końca, porządkujemy to bez wymiany narzędzia.",
   },
   {
     pain: "Każde zamówienie to ręczne wystawienie faktury w Fakturowni i przeklejanie danych",
@@ -108,7 +108,7 @@ const tools = [
   {
     name: "Zapier i Make",
     description:
-      "Sprawdzają się w mniejszych sklepach i przy szybkich integracjach point-to-point. Make daje większą kontrolę nad logiką, Zapier wygrywa szerokością integracji. Dobieramy narzędzie do skali — nie odwrotnie.",
+      "Sprawdzają się w mniejszych sklepach i przy szybkich integracjach point-to-point. Make daje większą kontrolę nad logiką, Zapier wygrywa szerokością integracji. Dobieramy narzędzie do skali, nie odwrotnie.",
   },
   {
     name: "Pipedrive i HubSpot",
@@ -139,7 +139,7 @@ const faq = [
     question:
       "Czy automatyzacja porzuconych koszyków naprawdę przynosi przychód?",
     answer:
-      "Tak, jeśli sklep ma sensowny ruch i odpowiednią marżę. Standardowo dobrze działa sekwencja 3 maili (po 1h, 24h, 72h) z dynamiczną treścią pokazującą produkty z koszyka. Konwersja zależy od kategorii — w fashion bywa 8–15%, w produktach impulsowych mniej.",
+      "Tak, jeśli sklep ma sensowny ruch i odpowiednią marżę. Standardowo dobrze działa sekwencja 3 maili (po 1h, 24h, 72h) z dynamiczną treścią pokazującą produkty z koszyka. Konwersja zależy od kategorii, w fashion bywa 8–15%, w produktach impulsowych mniej.",
   },
   {
     question:
@@ -157,7 +157,7 @@ const faq = [
     question:
       "Sprzedaję głównie na Allegro. Czy to ma sens, jeśli nie mam własnego sklepu?",
     answer:
-      "Ma. Allegro ma własne API i sporo da się zautomatyzować nawet bez sklepu — fakturowanie, etykiety, komunikację z klientem, obsługę dyskusji i reklamacji, raportowanie marży. Pełny stack jest mniejszy niż przy sklepie wielokanałowym, ale potencjał oszczędności na osobie operacyjnej jest taki sam.",
+      "Ma. Allegro ma własne API i sporo da się zautomatyzować nawet bez sklepu, fakturowanie, etykiety, komunikację z klientem, obsługę dyskusji i reklamacji, raportowanie marży. Pełny stack jest mniejszy niż przy sklepie wielokanałowym, ale potencjał oszczędności na osobie operacyjnej jest taki sam.",
   },
 ];
 
@@ -169,7 +169,7 @@ const relatedServices = [
   { label: "Integracje API", href: "/integracje-api" },
   { label: "Automatyzacja CRM", href: "/automatyzacja-crm" },
   { label: "Automatyzacja raportowania", href: "/automatyzacja-raportowania" },
-  { label: "n8n — wdrożenia", href: "/n8n" },
+  { label: "n8n, wdrożenia", href: "/n8n" },
   { label: "Zapier i Make", href: "/zapier-make" },
 ];
 
@@ -179,7 +179,7 @@ const relatedArticles = [
     href: "/strefa-wiedzy/co-to-jest-automatyzacja-procesow-biznesowych",
   },
   {
-    label: "Integracje API w firmie — kiedy warto",
+    label: "Integracje API w firmie, kiedy warto",
     href: "/strefa-wiedzy/integracje-api-w-firmie-kiedy-warto",
   },
   {
@@ -195,7 +195,7 @@ export default function AutomatyzacjaDlaEcommerce() {
       <main>
         <Breadcrumbs items={[{ label: "Automatyzacja dla e-commerce" }]} />
 
-        {/* Hero — kompaktowy */}
+        {/* Hero, kompaktowy */}
         <section className="relative pt-16 pb-6 overflow-hidden">
           <div className="absolute inset-0 -z-10">
             <div className="absolute inset-0 bg-sky-50 dark:hidden" />
@@ -229,7 +229,7 @@ export default function AutomatyzacjaDlaEcommerce() {
                   Sklep internetowy ma kilkadziesiąt punktów, w których ludzie
                   ręcznie przepisują dane między systemami. Magazyn, faktury,
                   etykiety, mail marketing, Allegro, BaseLinker. Każdy z tych
-                  punktów da się spiąć tak, żeby działał sam — a Ty miał czas na
+                  punktów da się spiąć tak, żeby działał sam, a Ty miał czas na
                   sprzedaż, nie na klepanie.
                 </p>
                 <div>
@@ -254,7 +254,7 @@ export default function AutomatyzacjaDlaEcommerce() {
           </div>
         </section>
 
-        {/* Treść w zakładkach — nic nie wycięte, podzielone */}
+        {/* Treść w zakładkach, nic nie wycięte, podzielone */}
         <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
           <Tabs
             ariaLabel="Sekcje strony automatyzacji dla e-commerce"
@@ -274,7 +274,7 @@ export default function AutomatyzacjaDlaEcommerce() {
                         księgowość. Im większa skala, tym większy koszt każdego
                         ręcznego punktu styku. Automatyzacja e-commerce polega
                         na tym, żeby te systemy spiąć tak, by zamówienie
-                        przeszło całą drogę bez udziału człowieka — chyba że
+                        przeszło całą drogę bez udziału człowieka, chyba że
                         człowiek jest naprawdę potrzebny.
                       </p>
 
@@ -307,7 +307,7 @@ export default function AutomatyzacjaDlaEcommerce() {
                       </h2>
                       <p className="text-gray-500 dark:text-gray-400 mb-10">
                         Poniżej najczęstsze sytuacje, z którymi zgłaszają się
-                        sklepy internetowe — i to, jak podchodzimy do nich od
+                        sklepy internetowe, i to, jak podchodzimy do nich od
                         strony technicznej. Każda z tych rzeczy jest do
                         zrobienia w kilka dni lub tygodni, nie miesięcy.
                       </p>
@@ -408,7 +408,7 @@ export default function AutomatyzacjaDlaEcommerce() {
                         systemami. Szczególnie dla firm sprzedających
                         wielokanałowo (sklep + Allegro + ewentualnie Amazon czy
                         eBay), gdzie chaos rośnie szybciej niż przychody.
-                        Pracujemy zarówno z e-commerce B2C, jak i B2B — w tym
+                        Pracujemy zarówno z e-commerce B2C, jak i B2B, w tym
                         drugim przypadku często łączymy automatyzację sklepu z{" "}
                         <Link
                           href="/automatyzacja-leadow"

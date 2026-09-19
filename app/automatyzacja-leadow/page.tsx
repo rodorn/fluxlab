@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Automatyzacja leadów, CRM i raportowania dla firm B2B",
+        alt: "Fluxlab, Automatyzacja leadów, CRM i raportowania dla firm B2B",
       },
     ],
   },
@@ -31,9 +31,9 @@ export const metadata: Metadata = {
 };
 
 const offer = [
-  "Zbieram leady z wielu źródeł — formularzy, reklam, maila, landing page — do jednego procesu.",
+  "Zbieram leady z wielu źródeł, formularzy, reklam, maila, landing page, do jednego procesu.",
   "Każdy lead trafia do właściwej osoby według regionu, branży, typu zapytania lub wartości.",
-  "Po wpłynięciu leada uruchamiam potwierdzenie, zadanie i follow-up — bez opóźnień.",
+  "Po wpłynięciu leada uruchamiam potwierdzenie, zadanie i follow-up, bez opóźnień.",
 ];
 
 const faq = [
@@ -60,7 +60,7 @@ export default function AutomatyzacjaLeadow() {
       <main className="pt-16">
         <Breadcrumbs items={[{ label: "Automatyzacja leadów" }]} />
 
-        {/* Hero — kompaktowy */}
+        {/* Hero, kompaktowy */}
         <section className="relative overflow-hidden pt-24 pb-12">
           <div className="blob blob-cyan -z-10 -top-32 -right-24 h-96 w-96" />
           <div className="container-wide max-w-3xl">
@@ -79,7 +79,7 @@ export default function AutomatyzacjaLeadow() {
           </div>
         </section>
 
-        {/* Treść w zakładkach — nic nie wycięte, podzielone */}
+        {/* Treść w zakładkach, nic nie wycięte, podzielone */}
         <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
           <Tabs
             ariaLabel="Sekcje oferty automatyzacji leadów"

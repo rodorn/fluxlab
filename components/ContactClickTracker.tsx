@@ -5,7 +5,7 @@ import { event as gaEvent } from "@/lib/gtag";
 
 /**
  * Globalny tracker kliknięć w `mailto:` i `tel:` linki.
- * Dołącza jeden capture listener na dokument — bez zmieniania
+ * Dołącza jeden capture listener na dokument, bez zmieniania
  * istniejących <a> w komponentach.
  */
 export default function ContactClickTracker() {

@@ -65,7 +65,7 @@ export default function Home() {
           </h1>
         </div>
 
-        {/* 3 kolumny wyboru — zaokrąglone karty z odstępem */}
+        {/* 3 kolumny wyboru, zaokrąglone karty z odstępem */}
         <div className="relative z-10 flex-1 grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-5 px-4 lg:px-5 pb-4 lg:pb-5">
           {PILLARS.map((p, idx) => (
             <Link
@@ -75,7 +75,7 @@ export default function Home() {
                 ["col-enter-1", "col-enter-2", "col-enter-3"][idx]
               }`}
             >
-              {/* Animowane tło — zapętlone wideo (Sora): płynna pętla
+              {/* Animowane tło, zapętlone wideo (Sora): płynna pętla
                   ping-pong, 10× wolniej, pełna prędkość na hover */}
               <TileVideo
                 srcDark={p.video}
@@ -84,13 +84,13 @@ export default function Home() {
               />
               {/* Przyciemnienie dla czytelności */}
               <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/55 to-gray-950/10 transition-all duration-500 group-hover:from-gray-950/90 group-hover:via-gray-950/35" />
-              {/* Akcentowa poświata od dołu — kolor filaru, na hover */}
+              {/* Akcentowa poświata od dołu, kolor filaru, na hover */}
               <div
                 aria-hidden="true"
                 className={`absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t ${p.glow} to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100`}
               />
 
-              {/* Treść — unosi się na hover */}
+              {/* Treść, unosi się na hover */}
               <div className="relative p-7 lg:p-9 transition-transform duration-500 ease-out group-hover:-translate-y-2">
                 <span
                   className={`text-sm font-mono text-white/40 transition-colors duration-300 ${p.numColor}`}

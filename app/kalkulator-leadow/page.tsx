@@ -10,7 +10,7 @@ import Tabs from "@/components/Tabs";
 export const metadata: Metadata = {
   title: "Kalkulator kosztu ręcznej obsługi leadów | Fluxlab",
   description:
-    "Sprawdź, ile miesięcznie kosztuje ręczne przepisywanie leadów, zakładanie tematów w CRM i ręczne raporty. Realny koszt w zł — zwykle wyższy niż się wydaje.",
+    "Sprawdź, ile miesięcznie kosztuje ręczne przepisywanie leadów, zakładanie tematów w CRM i ręczne raporty. Realny koszt w zł, zwykle wyższy niż się wydaje.",
   openGraph: {
     title: "Kalkulator kosztu ręcznej obsługi leadów | Fluxlab",
     description:
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Automatyzacja leadów, CRM i raportowania dla firm B2B",
+        alt: "Fluxlab, Automatyzacja leadów, CRM i raportowania dla firm B2B",
       },
     ],
   },
@@ -35,7 +35,7 @@ const faqs = [
   {
     question: "Skąd biorę liczbę leadów miesięcznie?",
     answer:
-      "Najprościej: posprawdź statystyki formularza na stronie, skrzynkę z zapytaniami, panel reklam i CRM. Policz wszystko, co wpada do firmy jako potencjalne zapytanie sprzedażowe — niezależnie czy ktoś to później kwalifikuje, czy nie. Jeśli leady wpadają do kilku miejsc (formularz, mail, telefon, LinkedIn), zsumuj. Lepiej oszacować z lekkim zapasem niż w dół — celem jest realny obraz wolumenu, a nie raport do zarządu.",
+      "Najprościej: posprawdź statystyki formularza na stronie, skrzynkę z zapytaniami, panel reklam i CRM. Policz wszystko, co wpada do firmy jako potencjalne zapytanie sprzedażowe, niezależnie czy ktoś to później kwalifikuje, czy nie. Jeśli leady wpadają do kilku miejsc (formularz, mail, telefon, LinkedIn), zsumuj. Lepiej oszacować z lekkim zapasem niż w dół, celem jest realny obraz wolumenu, a nie raport do zarządu.",
   },
   {
     question: "Co się składa na „czas ręcznej obsługi jednego leada”?",
@@ -45,17 +45,17 @@ const faqs = [
   {
     question: "Skąd założenie, że 30% opóźnionych leadów jest utraconych?",
     answer:
-      "To model uproszczony. W sprzedaży inbound czas reakcji silnie wpływa na konwersję — lead obsłużony w kilka minut ma znacząco większą szansę zostać klientem niż ten odebrany po godzinie. 30% to konserwatywny środek przedziału, oparty na obserwacjach z moich projektów; w niektórych branżach (leasing, finanse) realny ubytek jest większy, w innych mniejszy. Kalkulator pokazuje skalę problemu, nie precyzyjną prognozę — w diagnozie dopasowuję parametr do Twojej branży i danych.",
+      "To model uproszczony. W sprzedaży inbound czas reakcji silnie wpływa na konwersję, lead obsłużony w kilka minut ma znacząco większą szansę zostać klientem niż ten odebrany po godzinie. 30% to konserwatywny środek przedziału, oparty na obserwacjach z moich projektów; w niektórych branżach (leasing, finanse) realny ubytek jest większy, w innych mniejszy. Kalkulator pokazuje skalę problemu, nie precyzyjną prognozę, w diagnozie dopasowuję parametr do Twojej branży i danych.",
   },
   {
     question: "Czy automatyzacja na pewno usunie ten koszt?",
     answer:
-      "Nie usunie do zera, ale zwykle redukuje go o 60–90%. Automatyzacja zabiera ręczne przepisywanie, klikanie i pilnowanie follow-upów — czyli to, co kosztuje tu najwięcej. Nadal musi zostać moment na rozmowę handlowca z klientem, kwalifikację i decyzję — to jest praca, którą warto wykonywać świadomie. Realna oszczędność to nie tylko pieniądze, ale szybsza reakcja na leada, mniej zgubionych zapytań i czystsze dane do raportów.",
+      "Nie usunie do zera, ale zwykle redukuje go o 60–90%. Automatyzacja zabiera ręczne przepisywanie, klikanie i pilnowanie follow-upów, czyli to, co kosztuje tu najwięcej. Nadal musi zostać moment na rozmowę handlowca z klientem, kwalifikację i decyzję, to jest praca, którą warto wykonywać świadomie. Realna oszczędność to nie tylko pieniądze, ale szybsza reakcja na leada, mniej zgubionych zapytań i czystsze dane do raportów.",
   },
   {
     question: "Czy kalkulator uwzględnia koszt narzędzi i wdrożenia?",
     answer:
-      "Nie — pokazuje wyłącznie miesięczny i roczny koszt status quo, czyli tego, co już dziś płacisz w czasie pracy i utraconej sprzedaży. To jest punkt odniesienia. Koszt wdrożenia automatyzacji (jednorazowy + ewentualne abonamenty narzędzi) zwykle zwraca się w 2–6 miesięcy przy realnym wolumenie leadów. Po diagnozie procesu dostajesz konkretną wycenę i orientacyjny ROI — tam już porównujesz oba światy.",
+      "Nie, pokazuje wyłącznie miesięczny i roczny koszt status quo, czyli tego, co już dziś płacisz w czasie pracy i utraconej sprzedaży. To jest punkt odniesienia. Koszt wdrożenia automatyzacji (jednorazowy + ewentualne abonamenty narzędzi) zwykle zwraca się w 2–6 miesięcy przy realnym wolumenie leadów. Po diagnozie procesu dostajesz konkretną wycenę i orientacyjny ROI, tam już porównujesz oba światy.",
   },
 ];
 
@@ -66,7 +66,7 @@ export default function KalkulatorLeadowPage() {
       <main>
         <Breadcrumbs items={[{ label: "Kalkulator kosztu leadów" }]} />
 
-        {/* Hero — kompaktowy */}
+        {/* Hero, kompaktowy */}
         <section className="pt-24 pb-12">
           <div className="container-wide text-center max-w-3xl mx-auto">
             <p className="section-label mb-4">Narzędzie</p>
@@ -76,7 +76,7 @@ export default function KalkulatorLeadowPage() {
             <p className="mt-4 text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               Sprawdź, ile miesięcznie kosztuje Cię ręczne przepisywanie danych,
               zakładanie tematów w CRM i pilnowanie follow-upów. Realny koszt w
-              zł — zwykle wyższy, niż się wydaje.
+              zł, zwykle wyższy, niż się wydaje.
             </p>
           </div>
         </section>
@@ -107,7 +107,7 @@ export default function KalkulatorLeadowPage() {
                           Realny koszt ręcznej obsługi leadów składa się z dwóch
                           pozycji: czasu pracy ludzi i utraconej sprzedaży.
                           Pierwsza pojawia się na liście płac, druga jest
-                          niewidoczna — i właśnie dlatego boli najbardziej.
+                          niewidoczna, i właśnie dlatego boli najbardziej.
                         </p>
                         <ul className="list-disc pl-5 space-y-2">
                           <li>
@@ -125,7 +125,7 @@ export default function KalkulatorLeadowPage() {
                               wartosc_klienta
                             </code>
                             . Zakładamy konserwatywnie, że 30% leadów z
-                            opóźnioną reakcją realnie nie konwertuje — i to jest
+                            opóźnioną reakcją realnie nie konwertuje, i to jest
                             Twoja utracona sprzedaż.
                           </li>
                           <li>
@@ -138,7 +138,7 @@ export default function KalkulatorLeadowPage() {
                           </li>
                         </ul>
                         <p>
-                          Model jest celowo uproszczony — w prawdziwej diagnozie
+                          Model jest celowo uproszczony, w prawdziwej diagnozie
                           uwzględniam też koszt błędów w danych, ręczne
                           raportowanie, czas reakcji na leada premium i utratę
                           pozycji negocjacyjnej przy spóźnionym kontakcie. Ale
@@ -172,7 +172,7 @@ export default function KalkulatorLeadowPage() {
                               <strong>
                                 Właściciele firm B2B z 30+ leadami miesięcznie
                               </strong>{" "}
-                              — zwłaszcza w leasingu, finansach, brokerstwie,
+                             , zwłaszcza w leasingu, finansach, brokerstwie,
                               dealerach aut, agencjach marketingowych i
                               konsultingu.
                             </li>
@@ -186,7 +186,7 @@ export default function KalkulatorLeadowPage() {
                                 Osoby decyzyjne rozważające wdrożenie
                                 automatyzacji
                               </strong>{" "}
-                              — kalkulator daje konkretną liczbę do
+                             , kalkulator daje konkretną liczbę do
                               przedstawienia zarządowi.
                             </li>
                             <li>
@@ -207,7 +207,7 @@ export default function KalkulatorLeadowPage() {
                             >
                               landing o automatyzacji leadów i CRM
                             </Link>{" "}
-                            — pokazuję tam, co konkretnie da się usunąć w 1.
+                           , pokazuję tam, co konkretnie da się usunąć w 1.
                             etapie.
                           </p>
                         </div>
@@ -288,19 +288,19 @@ export default function KalkulatorLeadowPage() {
                               href: "/strefa-wiedzy/automatyzacja-vs-zatrudnienie",
                               title: "Automatyzacja vs zatrudnienie",
                               description:
-                                "Kiedy warto zautomatyzować, a kiedy zatrudnić kolejną osobę — porównanie kosztów.",
+                                "Kiedy warto zautomatyzować, a kiedy zatrudnić kolejną osobę, porównanie kosztów.",
                             },
                             {
                               href: "/strefa-wiedzy/jak-policzyc-roi-z-automatyzacji",
                               title: "Jak policzyć ROI z automatyzacji",
                               description:
-                                "Metoda liczenia zwrotu z wdrożenia automatyzacji — bez magii, z liczbami.",
+                                "Metoda liczenia zwrotu z wdrożenia automatyzacji, bez magii, z liczbami.",
                             },
                             {
                               href: "/narzedzia",
                               title: "Wszystkie narzędzia",
                               description:
-                                "Pozostałe kalkulatory i narzędzia online — bez rejestracji, za darmo.",
+                                "Pozostałe kalkulatory i narzędzia online, bez rejestracji, za darmo.",
                             },
                           ].map((article) => (
                             <Link

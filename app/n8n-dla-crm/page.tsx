@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — n8n dla CRM",
+        alt: "Fluxlab, n8n dla CRM",
       },
     ],
   },
@@ -34,7 +34,7 @@ const symptoms = [
   "Handlowiec ręcznie kopiuje dane z formularza WWW do CRM, bo natywna integracja gubi UTM-y i custom fieldy",
   "Lead z reklamy idzie do skrzynki marketingu, marketing przekazuje go w piątek na zbiorczo, kontakt wychodzi w poniedziałek",
   "CRM nie umie po swojej stronie zrobić wzbogacania (NIP → GUS, domena → branża), więc baza jest brudna i niewyszukiwalna",
-  "Każda zmiana etapu deala wymaga osobnej akcji w innym systemie — księgowość, fakturowanie, slack, magazyn — i część osób tego nie robi",
+  "Każda zmiana etapu deala wymaga osobnej akcji w innym systemie, księgowość, fakturowanie, slack, magazyn, i część osób tego nie robi",
   "Raport tygodniowy klei się ręcznie z eksportów CSV w piątek po południu",
   "Wbudowane workflow w CRM mają limity (kroki, liczba uruchomień, brak warunków, brak HTTP request), na które trafiasz po 3 miesiącach",
 ];
@@ -42,7 +42,7 @@ const symptoms = [
 const beforeSteps = [
   "Lead wpada formularzem do skrzynki marketingu",
   "Ktoś raz dziennie przekleja dane do CRM",
-  "Brak wzbogacenia (firma, branża, scoring) — handlowiec dzwoni „w ciemno”",
+  "Brak wzbogacenia (firma, branża, scoring), handlowiec dzwoni „w ciemno”",
   "Po rozmowie ręcznie aktualizuje deal i dodaje aktywność",
   "Fakturowanie i księgowość dostają informację mailem na koniec tygodnia",
   "Raport sprzedaży klei się w Excelu z 3 eksportów",
@@ -113,7 +113,7 @@ const diagramSteps = [
   {
     n: "4",
     title: "Routing do handlowca",
-    desc: "Region, produkt, obciążenie pipeline'u — n8n wybiera odbiorcę po regule biznesowej.",
+    desc: "Region, produkt, obciążenie pipeline'u, n8n wybiera odbiorcę po regule biznesowej.",
     accent: false,
   },
   {
@@ -125,7 +125,7 @@ const diagramSteps = [
   {
     n: "6",
     title: "Sync ze światem zewnętrznym",
-    desc: "Po zmianie etapu deala — fakturowanie, księgowość, magazyn, slack: wszystko przez n8n.",
+    desc: "Po zmianie etapu deala, fakturowanie, księgowość, magazyn, slack: wszystko przez n8n.",
     accent: true,
   },
   {
@@ -141,22 +141,22 @@ const firstStage = [
   "Walidacja + wzbogacenie (GUS, biała lista VAT, scoring) i deduplikacja w CRM",
   "Tworzenie osoby + organizacji + deala w CRM z pełnymi custom fieldami",
   "Routing do handlowca + zadanie „kontakt w X minut” + powiadomienie",
-  "Prosty raport: liczba leadów, czas reakcji, źródło — wysyłany codziennie rano",
+  "Prosty raport: liczba leadów, czas reakcji, źródło, wysyłany codziennie rano",
 ];
 
 const mistakes = [
-  "Wdrażanie n8n „bo modne”, bez zmapowanego procesu — wtedy chaos zostaje, tylko szybszy",
-  "Self-hosting bez osoby od Linuksa — brak backupów, brak monitoringu, pierwszy reboot kończy zabawę",
-  "Brak dedupu w workflow — co tydzień ten sam lead leci do CRM 3 razy, baza zaczyna kłamać",
-  "Logika biznesowa schowana w 30 IF-ach w jednym workflow zamiast w sub-workflow — po 6 miesiącach nikt tego nie ogarnia",
-  "Brak loggingu i alertów — workflow pada cicho w nocy, nikt nie wie, że leady nie wpadają od dwóch dni",
+  "Wdrażanie n8n „bo modne”, bez zmapowanego procesu, wtedy chaos zostaje, tylko szybszy",
+  "Self-hosting bez osoby od Linuksa, brak backupów, brak monitoringu, pierwszy reboot kończy zabawę",
+  "Brak dedupu w workflow, co tydzień ten sam lead leci do CRM 3 razy, baza zaczyna kłamać",
+  "Logika biznesowa schowana w 30 IF-ach w jednym workflow zamiast w sub-workflow, po 6 miesiącach nikt tego nie ogarnia",
+  "Brak loggingu i alertów, workflow pada cicho w nocy, nikt nie wie, że leady nie wpadają od dwóch dni",
 ];
 
 const faq = [
   {
     question: "Czym n8n różni się od wbudowanych automatyzacji w CRM?",
     answer:
-      "Wbudowane automatyzacje (Pipedrive Workflows, HubSpot Workflows, Salesforce Flow) są dobre do prostej logiki w obrębie jednego CRM. n8n wchodzi tam, gdzie te kończą — gdy potrzebujesz HTTP request do dowolnego API, transformacji danych, code node z JavaScriptem, dwustronnej synchronizacji z systemem zewnętrznym albo logiki, której CRM nie umie wyrazić swoimi blokami. n8n nie zastępuje natywnych workflow, tylko stoi nad nimi.",
+      "Wbudowane automatyzacje (Pipedrive Workflows, HubSpot Workflows, Salesforce Flow) są dobre do prostej logiki w obrębie jednego CRM. n8n wchodzi tam, gdzie te kończą, gdy potrzebujesz HTTP request do dowolnego API, transformacji danych, code node z JavaScriptem, dwustronnej synchronizacji z systemem zewnętrznym albo logiki, której CRM nie umie wyrazić swoimi blokami. n8n nie zastępuje natywnych workflow, tylko stoi nad nimi.",
   },
   {
     question: "n8n self-hosted czy n8n.cloud do CRM?",
@@ -166,7 +166,7 @@ const faq = [
   {
     question: "Czy n8n pasuje do Pipedrive, HubSpota i Salesforce?",
     answer:
-      "Do wszystkich trzech. Pipedrive ma natywny moduł w n8n + dobre webhooki + proste API — najprostsza ścieżka. HubSpot ma natywny moduł, ale w darmowym planie część endpointów jest zablokowana. Salesforce wymaga Connected App i konta z dostępem do API (zwykle Enterprise lub wyżej), ale potem działa bez ograniczeń. Pierwsze pytanie nie brzmi „czy n8n umie się wpiąć”, tylko „co dokładnie chcesz z tym zrobić”.",
+      "Do wszystkich trzech. Pipedrive ma natywny moduł w n8n + dobre webhooki + proste API, najprostsza ścieżka. HubSpot ma natywny moduł, ale w darmowym planie część endpointów jest zablokowana. Salesforce wymaga Connected App i konta z dostępem do API (zwykle Enterprise lub wyżej), ale potem działa bez ograniczeń. Pierwsze pytanie nie brzmi „czy n8n umie się wpiąć”, tylko „co dokładnie chcesz z tym zrobić”.",
   },
   {
     question: "Ile kosztuje wdrożenie n8n dla CRM?",
@@ -176,12 +176,12 @@ const faq = [
   {
     question: "Co z RODO, gdy lead leci przez n8n?",
     answer:
-      "n8n self-hosted na waszym serwerze (Hetzner Niemcy, OVH Polska, własne kolokacja) trzyma dane na waszej infrastrukturze — żaden zewnętrzny dostawca poza tymi, do których jawnie wysyłacie zapytania (CRM, GUS, biała lista). n8n.cloud ma serwery w Niemczech (UE), DPA i SOC 2. Dla większości firm B2B to wystarczy. Dla branż regulowanych (finanse, zdrowie) zwykle rekomenduję self-hosted.",
+      "n8n self-hosted na waszym serwerze (Hetzner Niemcy, OVH Polska, własne kolokacja) trzyma dane na waszej infrastrukturze, żaden zewnętrzny dostawca poza tymi, do których jawnie wysyłacie zapytania (CRM, GUS, biała lista). n8n.cloud ma serwery w Niemczech (UE), DPA i SOC 2. Dla większości firm B2B to wystarczy. Dla branż regulowanych (finanse, zdrowie) zwykle rekomenduję self-hosted.",
   },
   {
     question: "Czy mogę utrzymać workflow sam po wdrożeniu?",
     answer:
-      "Tak, jeśli masz kogoś, kto rozumie podstawy programowania (zmienne, IF-y, JSON) — n8n nie wymaga umiejętności full-stack. Każde wdrożenie kończę dokumentacją workflow, instrukcją uruchomienia i 30 dniami darmowych poprawek. Po tym standardowo zostaję na retainerze (1–3 godz./mies.) na drobne zmiany, ale nie jest to obowiązkowe — projekt zostaje twój.",
+      "Tak, jeśli masz kogoś, kto rozumie podstawy programowania (zmienne, IF-y, JSON), n8n nie wymaga umiejętności full-stack. Każde wdrożenie kończę dokumentacją workflow, instrukcją uruchomienia i 30 dniami darmowych poprawek. Po tym standardowo zostaję na retainerze (1–3 godz./mies.) na drobne zmiany, ale nie jest to obowiązkowe, projekt zostaje twój.",
   },
 ];
 
@@ -205,7 +205,7 @@ export default function N8nDlaCrm() {
       <main>
         <Breadcrumbs items={[{ label: "n8n dla CRM" }]} />
 
-        {/* Hero — kompaktowy */}
+        {/* Hero, kompaktowy */}
         <section className="pt-24 pb-12 bg-gradient-to-b from-accent/10 to-transparent border-b border-gray-100 dark:border-gray-800">
           <div className="container-wide">
             <div className="max-w-3xl mx-auto text-center">
@@ -215,7 +215,7 @@ export default function N8nDlaCrm() {
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
                 Wbudowane automatyzacje w Pipedrive, HubSpocie czy Salesforce
-                kończą się tam, gdzie zaczynają się prawdziwe potrzeby — HTTP
+                kończą się tam, gdzie zaczynają się prawdziwe potrzeby, HTTP
                 request do dowolnego API, dwustronny sync z systemem
                 zewnętrznym, transformacja danych, własna logika. n8n wchodzi w
                 tę dziurę: jest silnikiem, który możesz odpalić u siebie i pchać
@@ -234,7 +234,7 @@ export default function N8nDlaCrm() {
           </div>
         </section>
 
-        {/* Treść w zakładkach — nic nie wycięte, podzielone */}
+        {/* Treść w zakładkach, nic nie wycięte, podzielone */}
         <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
           <Tabs
             ariaLabel="Sekcje artykułu o n8n dla CRM"
@@ -296,7 +296,7 @@ export default function N8nDlaCrm() {
                         Po czym poznasz, że CRM dojechał do swojego sufitu
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
-                        Nie chodzi o „zły CRM” — chodzi o to, że pojedynczy CRM
+                        Nie chodzi o „zły CRM”, chodzi o to, że pojedynczy CRM
                         nie umie obsłużyć całego procesu sprzedaży i obsługi
                         klienta. Konkretne zachowania, które pojawiają się u 9
                         na 10 firm B2B przed wdrożeniem n8n:
@@ -536,13 +536,13 @@ export default function N8nDlaCrm() {
                     <div className="max-w-3xl mx-auto">
                       <span className="section-label">Decyzja techniczna</span>
                       <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-6">
-                        Self-hosted czy n8n.cloud — co wybrać do CRM
+                        Self-hosted czy n8n.cloud, co wybrać do CRM
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
                         Krótka odpowiedź: zacznij od cloud, jeśli nie masz osoby
                         od infrastruktury. Migracja na self-hosted jest prosta,
                         gdy już wiesz, jakie workflow naprawdę u was działają.
-                        Dłuższa odpowiedź — kryteria po kolei:
+                        Dłuższa odpowiedź, kryteria po kolei:
                       </p>
                       <div className="grid md:grid-cols-2 gap-6">
                         <div className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-6">
@@ -586,7 +586,7 @@ export default function N8nDlaCrm() {
                       </div>
                       <p className="text-gray-600 dark:text-gray-400 leading-relaxed mt-6">
                         Realne koszty: n8n.cloud Pro ok. 60 EUR/mies. za 10 tys.
-                        wykonań. Self-hosted — Hetzner CX22 za ok. 25 zł/mies.
+                        wykonań. Self-hosted, Hetzner CX22 za ok. 25 zł/mies.
                         plus koszt utrzymania (200–500 zł/mies., jeśli
                         outsourcujecie). Pełne porównanie z innymi narzędziami
                         zostawiłem w{" "}
@@ -840,7 +840,7 @@ export default function N8nDlaCrm() {
                                 href="/n8n"
                                 className="text-accent hover:underline"
                               >
-                                n8n — wdrożenia
+                                n8n, wdrożenia
                               </Link>
                             </li>
                             <li>
@@ -887,7 +887,7 @@ export default function N8nDlaCrm() {
                                 href="/strefa-wiedzy/make-vs-n8n"
                                 className="text-accent hover:underline"
                               >
-                                Make vs n8n — porównanie dla MŚP
+                                Make vs n8n, porównanie dla MŚP
                               </Link>
                             </li>
                             <li>
@@ -903,7 +903,7 @@ export default function N8nDlaCrm() {
                                 href="/make-vs-n8n-crm"
                                 className="text-accent hover:underline"
                               >
-                                Make vs n8n dla CRM — decyzja
+                                Make vs n8n dla CRM, decyzja
                               </Link>
                             </li>
                           </ul>
@@ -924,7 +924,7 @@ export default function N8nDlaCrm() {
                       <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
                         30 minut na rozmowę o procesie. Wyjdziesz z konkretną
                         listą miejsc, gdzie automatyzacja zwraca się w pierwszym
-                        miesiącu — albo z uczciwą informacją, że na tym etapie
+                        miesiącu, albo z uczciwą informacją, że na tym etapie
                         n8n nie ma sensu.
                       </p>
                       <TrackedCTA

@@ -41,7 +41,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
   }
 
-  // Honeypot — dla botów udajemy sukces.
+  // Honeypot, dla botów udajemy sukces.
   if (typeof body.website === "string" && body.website.trim().length > 0) {
     return NextResponse.json({ ok: true });
   }

@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Automatyzacja leadów, CRM i raportowania dla firm B2B",
+        alt: "Fluxlab, Automatyzacja leadów, CRM i raportowania dla firm B2B",
       },
     ],
   },
@@ -41,7 +41,7 @@ const problemPoints = [
 
 const symptoms = [
   "Pipeline wygląda dobrze, ale zamknięć jest mniej niż obietnic.",
-  "Handlowcy mówią „pisałem do niego, czekam” — ale ostatni mail był 11 dni temu.",
+  "Handlowcy mówią „pisałem do niego, czekam”, ale ostatni mail był 11 dni temu.",
   "W „kontakt z klientem” siedzą deale z zerową aktywnością od miesięcy.",
   "Manager musi ręcznie sprawdzać, kto się komu odezwał i kiedy.",
   "Po urlopie albo zwolnieniu handlowca część leadów po prostu znika.",
@@ -51,16 +51,16 @@ const symptoms = [
 const beforeSteps = [
   "Handlowiec wraca do biurka, otwiera CRM, scrolluje swoje deale.",
   "Próbuje sobie przypomnieć, gdzie skończyła się ostatnia rozmowa.",
-  "Wysyła ad-hoc maila „odświeżającego” — bez kontekstu z poprzedniej rozmowy.",
+  "Wysyła ad-hoc maila „odświeżającego”, bez kontekstu z poprzedniej rozmowy.",
   "Notuje sobie w głowie albo w kartce „zadzwonić w czwartek”.",
-  "W czwartek jest pożar w innym deale — przesuwa kontakt na następny tydzień.",
+  "W czwartek jest pożar w innym deale, przesuwa kontakt na następny tydzień.",
   "Po dwóch tygodniach lead jest „zimny”, a handlowiec ma poczucie winy zamiast procesu.",
 ];
 
 const afterSteps = [
   "Lead wpada w sekwencję dopasowaną do etapu deala i wartości kontraktu.",
-  "CRM tworzy zadania kontaktowe automatycznie — z terminem, kanałem i kontekstem.",
-  "Handlowiec dostaje rano listę „dziś do zrobienia” — bez przeglądania pipeline'u.",
+  "CRM tworzy zadania kontaktowe automatycznie, z terminem, kanałem i kontekstem.",
+  "Handlowiec dostaje rano listę „dziś do zrobienia”, bez przeglądania pipeline'u.",
   "Brak reakcji ze strony klienta uruchamia kolejne przypomnienie po określonym czasie.",
   "Po wyznaczonej liczbie prób bez odpowiedzi system eskaluje albo zamyka deal jako „brak kontaktu”.",
   "Manager widzi w raporcie: ile follow-upów wykonano, na które klient odpowiedział, ile się odbiło.",
@@ -82,19 +82,19 @@ const workflowSteps = [
   {
     n: "3",
     title: "Drugi kontakt",
-    desc: "Po 5 dniach: telefon albo wiadomość z innym kanałem (LinkedIn, SMS) — żeby nie dzwonić tym samym kanałem.",
+    desc: "Po 5 dniach: telefon albo wiadomość z innym kanałem (LinkedIn, SMS), żeby nie dzwonić tym samym kanałem.",
     accent: true,
   },
   {
     n: "4",
     title: "Trzeci kontakt z konkretem",
-    desc: "Po 10 dniach: wiadomość z nowym argumentem — case study, oferta czasowa, pytanie o decyzję.",
+    desc: "Po 10 dniach: wiadomość z nowym argumentem, case study, oferta czasowa, pytanie o decyzję.",
     accent: false,
   },
   {
     n: "5",
     title: "Reakcja klienta wstrzymuje sekwencję",
-    desc: "Każda odpowiedź (mail, telefon, kliknięcie) automatycznie pauzuje sekwencję — handlowiec przejmuje kontrolę.",
+    desc: "Każda odpowiedź (mail, telefon, kliknięcie) automatycznie pauzuje sekwencję, handlowiec przejmuje kontrolę.",
     accent: false,
   },
   {
@@ -112,7 +112,7 @@ const workflowSteps = [
 ];
 
 const firstStage = [
-  "Mapowanie typów deali — które wymagają sekwencji, a które krótkiej eskalacji.",
+  "Mapowanie typów deali, które wymagają sekwencji, a które krótkiej eskalacji.",
   "Definicja 1–2 sekwencji: po wysłanej ofercie i po pierwszym kontakcie bez odpowiedzi.",
   "Konfiguracja zadań w CRM ze sztywnymi terminami i szablonami wiadomości.",
   "Mechanizm pauzy sekwencji po odpowiedzi klienta (na podstawie maila, kliknięcia lub aktywności).",
@@ -120,11 +120,11 @@ const firstStage = [
 ];
 
 const mistakes = [
-  "Sekwencje, które wysyłają mail nawet wtedy, gdy klient już odpowiedział — wyglądają jak spam.",
-  "Identyczna sekwencja dla deala za 5 tys. zł i deala za 200 tys. zł — większy klient zasługuje na ręczną pracę handlowca.",
-  "Brak limitu prób — system pisze do klienta po raz piąty zamiast oddać deal jako „nieaktywny”.",
-  "Treści wysyłane przez automat z nazwiskiem handlowca, ale bez kontekstu — klient wyczuwa, że to bot.",
-  "Brak monitoringu skuteczności — sekwencje działają, ale nikt nie sprawdza, czy w ogóle konwertują.",
+  "Sekwencje, które wysyłają mail nawet wtedy, gdy klient już odpowiedział, wyglądają jak spam.",
+  "Identyczna sekwencja dla deala za 5 tys. zł i deala za 200 tys. zł, większy klient zasługuje na ręczną pracę handlowca.",
+  "Brak limitu prób, system pisze do klienta po raz piąty zamiast oddać deal jako „nieaktywny”.",
+  "Treści wysyłane przez automat z nazwiskiem handlowca, ale bez kontekstu, klient wyczuwa, że to bot.",
+  "Brak monitoringu skuteczności, sekwencje działają, ale nikt nie sprawdza, czy w ogóle konwertują.",
 ];
 
 const pricing = [
@@ -138,7 +138,7 @@ const pricing = [
     name: "Pierwsza sekwencja",
     price: "od 1 800 zł",
     description:
-      "Jedna sekwencja follow-upów dla wybranego etapu deala — zadania, szablony, pauza po odpowiedzi.",
+      "Jedna sekwencja follow-upów dla wybranego etapu deala, zadania, szablony, pauza po odpowiedzi.",
     highlighted: true,
   },
   {
@@ -163,7 +163,7 @@ const faq = [
   {
     question: "Jakie CRM-y obsługujesz przy automatyzacji follow-upów?",
     answer:
-      "Najczęściej Pipedrive, HubSpot i Salesforce. Dla bardziej złożonych przypadków łączę CRM z n8n, Make albo własnym kodem przez API. Jeśli firma ma własne narzędzie albo Excel — też da się to zautomatyzować, tylko trzeba dobrać warstwę pośrednią.",
+      "Najczęściej Pipedrive, HubSpot i Salesforce. Dla bardziej złożonych przypadków łączę CRM z n8n, Make albo własnym kodem przez API. Jeśli firma ma własne narzędzie albo Excel, też da się to zautomatyzować, tylko trzeba dobrać warstwę pośrednią.",
   },
   {
     question: "Czy sekwencje działają też dla telefonów, nie tylko maili?",
@@ -173,12 +173,12 @@ const faq = [
   {
     question: "Co jeśli mam już skonfigurowane sekwencje, ale działają słabo?",
     answer:
-      "Wtedy zaczynamy od audytu: które sekwencje konwertują, które wysyłają się do klientów już zamkniętych, gdzie szablony są suche. Często wystarczy posprzątać 30% i dopasować logikę — bez przepisywania wszystkiego od zera.",
+      "Wtedy zaczynamy od audytu: które sekwencje konwertują, które wysyłają się do klientów już zamkniętych, gdzie szablony są suche. Często wystarczy posprzątać 30% i dopasować logikę, bez przepisywania wszystkiego od zera.",
   },
   {
     question: "Ile trwa wdrożenie pierwszej sekwencji?",
     answer:
-      "Pierwsza działająca sekwencja w CRM zwykle 5–10 dni roboczych — od mapowania procesu do testów na realnych dealach. Pełny system z eskalacjami i raportowaniem to zwykle 3–5 tygodni.",
+      "Pierwsza działająca sekwencja w CRM zwykle 5–10 dni roboczych, od mapowania procesu do testów na realnych dealach. Pełny system z eskalacjami i raportowaniem to zwykle 3–5 tygodni.",
   },
 ];
 
@@ -221,7 +221,7 @@ export default function AutomatyzacjaFollowUp() {
       <main className="pt-16">
         <Breadcrumbs items={[{ label: "Automatyzacja follow-upów w CRM" }]} />
 
-        {/* Hero — kompaktowy */}
+        {/* Hero, kompaktowy */}
         <section className="pt-16 pb-6 bg-gradient-to-b from-accent/10 to-transparent border-b border-gray-100 dark:border-gray-800">
           <div className="container-wide">
             <div className="max-w-3xl mx-auto text-center">
@@ -255,7 +255,7 @@ export default function AutomatyzacjaFollowUp() {
           </div>
         </section>
 
-        {/* Treść w zakładkach — nic nie wycięte, podzielone */}
+        {/* Treść w zakładkach, nic nie wycięte, podzielone */}
         <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
           <Tabs
             ariaLabel="Sekcje strony o automatyzacji follow-upów"
@@ -277,7 +277,7 @@ export default function AutomatyzacjaFollowUp() {
                           </div>
                           <div className="text-gray-600 dark:text-gray-400 leading-relaxed space-y-4 mb-10">
                             <p>
-                              W większości firm B2B follow-up to nie proces — to
+                              W większości firm B2B follow-up to nie proces, to
                               dobra intencja. Handlowiec wraca z rozmowy, myśli
                               „odezwę się za tydzień”, zapisuje to gdzieś, a
                               potem dzieją się trzy inne rzeczy i odzywa się za
@@ -338,7 +338,7 @@ export default function AutomatyzacjaFollowUp() {
                             </h2>
                             <p className="text-gray-600 dark:text-gray-400 mt-4 leading-relaxed">
                               Te zachowania zwykle pojawiają się razem. Jeśli
-                              widzisz u siebie 3 z 6 — masz problem, którego
+                              widzisz u siebie 3 z 6, masz problem, którego
                               raport sprzedaży Ci nie pokaże, bo dane już są
                               skażone.
                             </p>
@@ -398,14 +398,14 @@ export default function AutomatyzacjaFollowUp() {
                               średnio 30 aktywnych deali w pipeline&rsquo;ie.
                               Średnia wartość kontraktu B2B to 15 000 zł,
                               średnia konwersja po pełnej sekwencji follow-upów
-                              — 22%. Bez sekwencji konwersja spada do 9%, bo
+                             , 22%. Bez sekwencji konwersja spada do 9%, bo
                               połowa deali nie dostaje drugiego kontaktu.
                             </p>
                             <p>
                               Liczby na stole: 4 handlowców × 30 deali × 15 000
                               zł = 1,8 mln zł aktywnego pipeline&rsquo;u.
                               Różnica między 22% a 9% konwersji to 234 000 zł
-                              niepodjętej sprzedaży kwartalnie. Rocznie — niemal
+                              niepodjętej sprzedaży kwartalnie. Rocznie, niemal
                               milion złotych, który handlowcy mieli w zasięgu,
                               ale nie zdążyli się odezwać.
                             </p>
@@ -415,7 +415,7 @@ export default function AutomatyzacjaFollowUp() {
                               pisałeś”, frustrację zespołu, leady wracające do
                               firmy konkurenta po 6 miesiącach bo
                               „zapomnieliście o mnie”. To są pieniądze, które
-                              już wydałeś na pozyskanie tych leadów — i
+                              już wydałeś na pozyskanie tych leadów, i
                               puszczasz je dalej, bo nie ma rytmu kontaktu.
                             </p>
                             <p>
@@ -442,7 +442,7 @@ export default function AutomatyzacjaFollowUp() {
                           <div className="text-center mb-12">
                             <span className="section-label">Proces przed</span>
                             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4">
-                              Jak follow-up wygląda dziś — łańcuch nadziei
+                              Jak follow-up wygląda dziś, łańcuch nadziei
                             </h2>
                           </div>
                           <ol className="space-y-3">
@@ -612,8 +612,8 @@ export default function AutomatyzacjaFollowUp() {
                           </ul>
                           <p className="mt-8 text-gray-600 dark:text-gray-400 leading-relaxed">
                             Dwie sekwencje, jeden raport, jasna logika pauzy.
-                            Reszta — eskalacje, scoring, integracja z Slackiem,
-                            wielokanałowość — może poczekać do drugiego etapu,
+                            Reszta, eskalacje, scoring, integracja z Slackiem,
+                            wielokanałowość, może poczekać do drugiego etapu,
                             kiedy wiadomo już, że podstawa działa.
                           </p>
                         </div>
@@ -632,7 +632,7 @@ export default function AutomatyzacjaFollowUp() {
                             <p className="text-gray-600 dark:text-gray-400 mt-4 leading-relaxed">
                               Automatyzowanie bałaganu to tylko szybsze
                               produkowanie bałaganu. Jeśli widzisz któryś z tych
-                              wzorców u siebie — najpierw posprzątaj logikę,
+                              wzorców u siebie, najpierw posprzątaj logikę,
                               potem skaluj.
                             </p>
                           </div>

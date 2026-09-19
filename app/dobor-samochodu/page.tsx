@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Automatyzacja leadów, CRM i raportowania dla firm B2B",
+        alt: "Fluxlab, Automatyzacja leadów, CRM i raportowania dla firm B2B",
       },
     ],
   },
@@ -34,38 +34,38 @@ const faqs = [
   {
     question: "Skąd wiadomo, że rekomendacja jest trafna?",
     answer:
-      "Konfigurator nie „zgaduje” — działa na zestawie reguł. Każde Twoje pytanie zawęża zbiór segmentów (A/B/C/D/E, SUV-y, kombi, vany), typów nadwozia i przedziałów mocy tak, aby pozostały tylko opcje spełniające wszystkie warunki: budżet, liczbę osób, roczny przebieg, typ tras, wymagania ładunkowe. Na końcu dostajesz nie jeden „idealny” model, tylko profil auta (np. „segment C, kombi, 130–160 KM, diesel lub hybryda”), który pasuje do Twojej sytuacji. To świadoma decyzja — zawsze lepiej mieć 5–10 kandydatów do sprawdzenia niż jeden model wybrany pod wpływem reklamy.",
+      "Konfigurator nie „zgaduje”, działa na zestawie reguł. Każde Twoje pytanie zawęża zbiór segmentów (A/B/C/D/E, SUV-y, kombi, vany), typów nadwozia i przedziałów mocy tak, aby pozostały tylko opcje spełniające wszystkie warunki: budżet, liczbę osób, roczny przebieg, typ tras, wymagania ładunkowe. Na końcu dostajesz nie jeden „idealny” model, tylko profil auta (np. „segment C, kombi, 130–160 KM, diesel lub hybryda”), który pasuje do Twojej sytuacji. To świadoma decyzja, zawsze lepiej mieć 5–10 kandydatów do sprawdzenia niż jeden model wybrany pod wpływem reklamy.",
   },
   {
     question: "Czy rekomendacja uwzględnia koszty serwisu i eksploatacji?",
     answer:
-      "Konfigurator podpowiada segment i typ napędu z uwzględnieniem ogólnych różnic w kosztach utrzymania — wie, że SUV jest droższy w oponach, diesel droższy w serwisie, a premium droższe w częściach. Nie liczy jednak konkretnej kwoty. Po dobraniu profilu przejdź do kalkulatora kosztów samochodu i wprowadź dane dla 2–3 modeli z rekomendowanego segmentu. Dopiero wtedy zobaczysz rzeczywisty roczny TCO (Total Cost of Ownership) i będziesz mógł wybrać konkretny model na podstawie liczb, a nie wrażeń.",
+      "Konfigurator podpowiada segment i typ napędu z uwzględnieniem ogólnych różnic w kosztach utrzymania, wie, że SUV jest droższy w oponach, diesel droższy w serwisie, a premium droższe w częściach. Nie liczy jednak konkretnej kwoty. Po dobraniu profilu przejdź do kalkulatora kosztów samochodu i wprowadź dane dla 2–3 modeli z rekomendowanego segmentu. Dopiero wtedy zobaczysz rzeczywisty roczny TCO (Total Cost of Ownership) i będziesz mógł wybrać konkretny model na podstawie liczb, a nie wrażeń.",
   },
   {
-    question: "Elektryk, hybryda czy spalinowy — jak wybrać napęd?",
+    question: "Elektryk, hybryda czy spalinowy, jak wybrać napęd?",
     answer:
-      "Zasada upraszczająca: do 10 tys. km rocznie, głównie w mieście, z możliwością ładowania w domu — elektryk opłaca się najszybciej. 10–20 tys. km, miks miasto/trasa, bez własnego gniazdka — hybryda (pełna, nie mild) daje najlepszy kompromis. Powyżej 25 tys. km, głównie autostrady i szybkie trasy — diesel nadal wygrywa zasięgiem i zużyciem. Benzyna to dobry wybór, gdy nie jeździsz dużo, ale robisz nieregularne długie trasy — bezpiecznie, tanio w zakupie, niskie ryzyko drogich awarii. Konfigurator pytał o Twój profil jazdy właśnie po to, żeby zaproponować odpowiedni napęd.",
+      "Zasada upraszczająca: do 10 tys. km rocznie, głównie w mieście, z możliwością ładowania w domu, elektryk opłaca się najszybciej. 10–20 tys. km, miks miasto/trasa, bez własnego gniazdka, hybryda (pełna, nie mild) daje najlepszy kompromis. Powyżej 25 tys. km, głównie autostrady i szybkie trasy, diesel nadal wygrywa zasięgiem i zużyciem. Benzyna to dobry wybór, gdy nie jeździsz dużo, ale robisz nieregularne długie trasy, bezpiecznie, tanio w zakupie, niskie ryzyko drogich awarii. Konfigurator pytał o Twój profil jazdy właśnie po to, żeby zaproponować odpowiedni napęd.",
   },
   {
     question: "Czy mogę zmienić preferencje i uruchomić kreator ponownie?",
     answer:
-      "Tak. Kreator jest bezstanowy — każde uruchomienie zaczynasz od zera i możesz wypróbować kilka scenariuszy. W praktyce warto to zrobić: najpierw wpisz realistyczne odpowiedzi dla codziennej sytuacji, potem spróbuj „optymistycznej” (większy budżet, więcej miejsca) i „minimalnej” (mniej osób, mniejszy budżet). Zobaczysz, jak zmienia się rekomendowany segment. Często okazuje się, że różnica między potrzebami realnymi a wymarzonymi to jeden segment wyżej — co przekłada się na 20–40% wyższe koszty bez realnej korzyści.",
+      "Tak. Kreator jest bezstanowy, każde uruchomienie zaczynasz od zera i możesz wypróbować kilka scenariuszy. W praktyce warto to zrobić: najpierw wpisz realistyczne odpowiedzi dla codziennej sytuacji, potem spróbuj „optymistycznej” (większy budżet, więcej miejsca) i „minimalnej” (mniej osób, mniejszy budżet). Zobaczysz, jak zmienia się rekomendowany segment. Często okazuje się, że różnica między potrzebami realnymi a wymarzonymi to jeden segment wyżej, co przekłada się na 20–40% wyższe koszty bez realnej korzyści.",
   },
   {
     question: "Dlaczego sugerujecie te segmenty, a nie konkretne modele?",
     answer:
-      "Świadomie. Konkretne modele zmieniają się co roku — generacje, silniki, warianty wyposażenia, roczniki, problemy typowe dla konkretnej partii. Lista „najlepszych 5 modeli” staje się nieaktualna po 6 miesiącach. Segment i profil napędu to trwała informacja: wiesz, że szukasz kombi segmentu C z hybrydą 130–160 KM, i dopiero wtedy przeglądasz aktualny rynek — Toyota Corolla TS, Kia Ceed SW, Skoda Octavia Combi e‑TEC, Ford Focus Mild Hybrid. Wybór konkretnego egzemplarza wymaga sprawdzenia rocznika, przebiegu i stanu, czego żaden konfigurator nie zrobi za Ciebie.",
+      "Świadomie. Konkretne modele zmieniają się co roku, generacje, silniki, warianty wyposażenia, roczniki, problemy typowe dla konkretnej partii. Lista „najlepszych 5 modeli” staje się nieaktualna po 6 miesiącach. Segment i profil napędu to trwała informacja: wiesz, że szukasz kombi segmentu C z hybrydą 130–160 KM, i dopiero wtedy przeglądasz aktualny rynek, Toyota Corolla TS, Kia Ceed SW, Skoda Octavia Combi e‑TEC, Ford Focus Mild Hybrid. Wybór konkretnego egzemplarza wymaga sprawdzenia rocznika, przebiegu i stanu, czego żaden konfigurator nie zrobi za Ciebie.",
   },
   {
     question: "Co jeśli żaden wynik mi nie pasuje?",
     answer:
-      "To oznacza, że Twoje wymagania są wewnętrznie sprzeczne — np. budżet segmentu B, a potrzeby segmentu D, albo niski koszt eksploatacji przy dużym SUV-ie na autostrady. Kreator pokazuje wtedy profil najbliższy Twoim odpowiedziom, ale warto wrócić do pytań i przemyśleć, który parametr realnie jest sztywny, a który tylko „chciałoby się”. Najczęstsze kompromisy: mniejszy segment przy tej samej funkcjonalności, starszy rocznik zamiast niższej klasy, diesel zamiast elektryka przy dużych przebiegach bez dostępu do ładowarki. Jeśli kompromis nie jest możliwy — prawdopodobnie trzeba zwiększyć budżet.",
+      "To oznacza, że Twoje wymagania są wewnętrznie sprzeczne, np. budżet segmentu B, a potrzeby segmentu D, albo niski koszt eksploatacji przy dużym SUV-ie na autostrady. Kreator pokazuje wtedy profil najbliższy Twoim odpowiedziom, ale warto wrócić do pytań i przemyśleć, który parametr realnie jest sztywny, a który tylko „chciałoby się”. Najczęstsze kompromisy: mniejszy segment przy tej samej funkcjonalności, starszy rocznik zamiast niższej klasy, diesel zamiast elektryka przy dużych przebiegach bez dostępu do ładowarki. Jeśli kompromis nie jest możliwy, prawdopodobnie trzeba zwiększyć budżet.",
   },
   {
     question:
       "Czy konfigurator nadaje się do wyboru auta służbowego dla firmy?",
     answer:
-      "Tak, ale z jednym zastrzeżeniem. Dla auta służbowego oprócz kryteriów osobistych liczą się regulacje podatkowe (limit 150 tys. zł amortyzacji, 225 tys. zł dla elektryków), reprezentacja wobec klientów i polityka flotowa. Kreator pomoże zawęzić segment i napęd. Konkretny model wybierzesz biorąc pod uwagę dostępność w leasingu, oferty serwisowe, gwarancje flotowe. Przy flotach 3+ aut rozmowa z dealerem często daje lepsze warunki niż indywidualny zakup — ale dopiero po określeniu, czego szukasz. W tym pomaga dobór segmentu.",
+      "Tak, ale z jednym zastrzeżeniem. Dla auta służbowego oprócz kryteriów osobistych liczą się regulacje podatkowe (limit 150 tys. zł amortyzacji, 225 tys. zł dla elektryków), reprezentacja wobec klientów i polityka flotowa. Kreator pomoże zawęzić segment i napęd. Konkretny model wybierzesz biorąc pod uwagę dostępność w leasingu, oferty serwisowe, gwarancje flotowe. Przy flotach 3+ aut rozmowa z dealerem często daje lepsze warunki niż indywidualny zakup, ale dopiero po określeniu, czego szukasz. W tym pomaga dobór segmentu.",
   },
 ];
 
@@ -76,7 +76,7 @@ export default function DoborSamochoduPage() {
       <main>
         <Breadcrumbs items={[{ label: "Dobór samochodu" }]} />
 
-        {/* Hero — kompaktowy */}
+        {/* Hero, kompaktowy */}
         <section className="pt-24 pb-12">
           <div className="container-wide text-center max-w-3xl mx-auto">
             <p className="section-label mb-4">Narzędzie</p>
@@ -117,7 +117,7 @@ export default function DoborSamochoduPage() {
                           decyzyjnym. Na podstawie Twoich odpowiedzi odsiewa
                           segmenty i napędy, które nie spełniają podanych
                           kryteriów, a następnie pokazuje profil pojazdu
-                          pasujący do Twojego stylu życia — nie pojedynczy
+                          pasujący do Twojego stylu życia, nie pojedynczy
                           model, lecz zestaw parametrów, w których realnie
                           opłaca się szukać.
                         </p>
@@ -155,7 +155,7 @@ export default function DoborSamochoduPage() {
                           modeli (DEKRA, TÜV, J.D. Power) i kosztach utrzymania
                           z serwisów takich jak Spritmonitor, Carfax czy
                           Otomoto. Nie korzystamy z algorytmu „czarnej skrzynki”
-                          — każdą rekomendację można wyjaśnić konkretną
+                         , każdą rekomendację można wyjaśnić konkretną
                           odpowiedzią z Twojego formularza.
                         </p>
                       </div>
@@ -182,7 +182,7 @@ export default function DoborSamochoduPage() {
                         <ul className="list-disc pl-5 space-y-2">
                           <li>
                             <strong>Wymieniasz auto po kilku latach.</strong>{" "}
-                            Poprzednie auto było „OK”, ale zmieniło się życie —
+                            Poprzednie auto było „OK”, ale zmieniło się życie,
                             nowe dziecko, dłuższa trasa do pracy, firma zamiast
                             etatu. Kreator pomoże sprawdzić, czy nadal segment C
                             wystarczy, czy warto wejść wyżej.
@@ -200,7 +200,7 @@ export default function DoborSamochoduPage() {
                             </strong>{" "}
                             Jeśli zastanawiasz się nad Toyotą vs Skodą vs Kią,
                             ale nie wiesz, czy w ogóle szukasz w dobrym
-                            segmencie — zacznij od kreatora, potem przejdź do
+                            segmencie, zacznij od kreatora, potem przejdź do
                             konkretów.
                           </li>
                           <li>
@@ -245,7 +245,7 @@ export default function DoborSamochoduPage() {
                             zakup emocjonalny, nie racjonalny. W tym samym
                             budżecie segmentu premium dostępny jest często
                             większy segment marki „zwykłej”, który lepiej spełni
-                            funkcję transportową. Marka to kwestia tożsamości —
+                            funkcję transportową. Marka to kwestia tożsamości,
                             decyzja świadoma, tak, ale warto wiedzieć, że to
                             właśnie za nią płacisz.
                           </p>
@@ -264,7 +264,7 @@ export default function DoborSamochoduPage() {
                             SUV-em po mieście przez 4 lata „na wszelki wypadek”
                             to 8–15 tys. zł rocznie zmarnowane na paliwo, opony
                             i ubezpieczenie. Lepiej dobrać auto do dzisiejszej
-                            sytuacji, a gdy coś się zmieni — sprzedać i
+                            sytuacji, a gdy coś się zmieni, sprzedać i
                             wymienić.
                           </p>
                           <p>
@@ -276,14 +276,14 @@ export default function DoborSamochoduPage() {
                             uprzejmy handlowiec. Decyzja po takiej jeździe jest
                             skrzywiona. Wróć do niej po tygodniu i sprawdź
                             ponownie parametry, a nie wrażenia. Albo jeszcze
-                            lepiej — wypożycz ten sam model na weekend z
+                            lepiej, wypożycz ten sam model na weekend z
                             carsharingu albo z firmy rent‑a‑car.
                           </p>
                           <p>
                             <strong>
                               Porównywanie aut w różnych wersjach wyposażenia.
                             </strong>{" "}
-                            „Ten ma skórę, a tamten nie — więc ten jest lepszy”.
+                            „Ten ma skórę, a tamten nie, więc ten jest lepszy”.
                             Bez wyrównania wersji porównujesz jabłka z
                             gruszkami. Zrób listę funkcji, które naprawdę chcesz
                             mieć, i porównuj auta w wersjach, które je
@@ -325,7 +325,7 @@ export default function DoborSamochoduPage() {
                             <strong>3. Zawęź do 3–5 finalistów.</strong> Na
                             podstawie niezawodności (ranking TÜV / DEKRA dla
                             konkretnych roczników), dostępnych części, opinii
-                            właścicieli (fora, facebookowe grupy modelowe — tam
+                            właścicieli (fora, facebookowe grupy modelowe, tam
                             poznasz prawdziwe problemy).
                           </p>
                           <p>
@@ -338,18 +338,18 @@ export default function DoborSamochoduPage() {
                               kalkulatora kosztów
                             </Link>
                             . Różnica roczna między podobnymi modelami potrafi
-                            wynosić 3–8 tys. zł — w 5‑letnim horyzoncie to 15–40
+                            wynosić 3–8 tys. zł, w 5‑letnim horyzoncie to 15–40
                             tys. zł.
                           </p>
                           <p>
                             <strong>5. Sprawdź finalistów mechanicznie.</strong>{" "}
-                            Przed zakupem każdego używanego auta — niezależny
+                            Przed zakupem każdego używanego auta, niezależny
                             mechanik, nie salon i nie sprzedawca. Koszt 200–400
                             zł, oszczędność potencjalnie kilka tysięcy.
                           </p>
                           <p>
                             <strong>
-                              6. Dla firmy — dodaj aspekt podatkowy.
+                              6. Dla firmy, dodaj aspekt podatkowy.
                             </strong>{" "}
                             Forma rozliczenia (ewidencja 100%, mieszana 75%/50%)
                             wpływa na realny koszt po podatkach.{" "}
@@ -432,7 +432,7 @@ export default function DoborSamochoduPage() {
                               href: "/kalkulator-kosztow",
                               title: "Kalkulator kosztów samochodu",
                               description:
-                                "Policz roczny koszt utrzymania konkretnego modelu — paliwo, serwis, amortyzacja.",
+                                "Policz roczny koszt utrzymania konkretnego modelu, paliwo, serwis, amortyzacja.",
                             },
                             {
                               href: "/kalkulator-podatkowy",
@@ -450,7 +450,7 @@ export default function DoborSamochoduPage() {
                               href: "/strefa-wiedzy/kiedy-ai-ma-sens-a-kiedy-nie",
                               title: "Kiedy AI ma sens, a kiedy nie",
                               description:
-                                "Framework decyzji — ten sam sposób myślenia, którego warto użyć przy wyborze auta.",
+                                "Framework decyzji, ten sam sposób myślenia, którego warto użyć przy wyborze auta.",
                             },
                           ].map((article) => (
                             <Link
@@ -531,7 +531,7 @@ export default function DoborSamochoduPage() {
             },
             inLanguage: "pl-PL",
             description:
-              "Interaktywny kreator doboru samochodu — rekomenduje segment, nadwozie i napęd na podstawie potrzeb użytkownika.",
+              "Interaktywny kreator doboru samochodu, rekomenduje segment, nadwozie i napęd na podstawie potrzeb użytkownika.",
           }),
         }}
       />

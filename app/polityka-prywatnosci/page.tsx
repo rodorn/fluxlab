@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Automatyzacja leadów, CRM i raportowania dla firm B2B",
+        alt: "Fluxlab, Automatyzacja leadów, CRM i raportowania dla firm B2B",
       },
     ],
   },
@@ -35,7 +35,7 @@ export default function PolitykaPrywatnosci() {
     <>
       <Header />
       <main>
-        {/* Hero — kompaktowy */}
+        {/* Hero, kompaktowy */}
         <section className="pt-24 pb-12">
           <div className="container-wide">
             <Breadcrumbs
@@ -54,7 +54,7 @@ export default function PolitykaPrywatnosci() {
           </div>
         </section>
 
-        {/* Treść prawna w zakładkach — nic nie wycięte, podzielone wg sekcji */}
+        {/* Treść prawna w zakładkach, nic nie wycięte, podzielone wg sekcji */}
         <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
           <Tabs
             ariaLabel="Sekcje polityki prywatności"
@@ -112,7 +112,7 @@ export default function PolitykaPrywatnosci() {
                           <li>
                             <strong>Dane techniczne</strong> – adres IP, typ
                             przeglądarki, system operacyjny, dostawca internetu
-                            — przetwarzane automatycznie przez serwer w ramach
+                           , przetwarzane automatycznie przez serwer w ramach
                             logów systemowych.
                           </li>
                         </ul>
@@ -127,19 +127,19 @@ export default function PolitykaPrywatnosci() {
                         <ul className="list-disc pl-6 mt-2 space-y-1">
                           <li>
                             Odpowiedź na zapytanie przesłane przez formularz
-                            kontaktowy — na podstawie art. 6 ust. 1 lit. b) RODO
+                            kontaktowy, na podstawie art. 6 ust. 1 lit. b) RODO
                             (działania na żądanie osoby, której dane dotyczą,
                             przed zawarciem umowy) oraz lit. f) (prawnie
                             uzasadniony interes administratora).
                           </li>
                           <li>
                             Analiza ruchu na stronie w celu poprawy jakości
-                            usług — na podstawie art. 6 ust. 1 lit. f) RODO
+                            usług, na podstawie art. 6 ust. 1 lit. f) RODO
                             (prawnie uzasadniony interes administratora).
                           </li>
                           <li>
                             Zapewnienie prawidłowego działania i bezpieczeństwa
-                            Serwisu — na podstawie art. 6 ust. 1 lit. f) RODO.
+                            Serwisu, na podstawie art. 6 ust. 1 lit. f) RODO.
                           </li>
                         </ul>
                       </section>
@@ -237,7 +237,7 @@ export default function PolitykaPrywatnosci() {
                             administratora.
                           </li>
                           <li>
-                            Prawo do wniesienia skargi do organu nadzorczego —
+                            Prawo do wniesienia skargi do organu nadzorczego,
                             Prezesa Urzędu Ochrony Danych Osobowych (ul. Stawki
                             2, 00-193 Warszawa).
                           </li>

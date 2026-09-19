@@ -904,7 +904,7 @@ function ResultCard({
   // Helper: kwota w aktualnym viewMode
   const v = (ann: number) => pln(Math.round(ann / d));
 
-  // Przychód netto (do tooltipów — obliczenia PIT bazują na netto)
+  // Przychód netto (do tooltipów, obliczenia PIT bazują na netto)
   const revNetto = r.annualRevenue - (showVat ? r.vatPassThrough : 0);
 
   // Debug: komponenty kosztów (z calculate())
@@ -993,7 +993,7 @@ function ResultCard({
             label: "Koszty odliczone (PIT)",
             value: -r.deductibleCosts,
             negative: true as const,
-            tip: `DEBUG PIT (netto): firmowe ${pln(bizNet)}/rok + prywatne ${pln(privNet)}/rok + samochód ${pln(carGross)}/rok × ${carPitPctStr}% = ${pln(r.carCostsDeducted)}/rok. Suma: ${pln(r.deductibleCosts)}/rok (${v(r.deductibleCosts)}${sfx}). Uwaga: to kwota odliczana od PIT (netto). Cashflow (brutto) = koszty firmowe ${v(bizCostsAnn)}${sfx} — widoczne w "Do dyspozycji".`,
+            tip: `DEBUG PIT (netto): firmowe ${pln(bizNet)}/rok + prywatne ${pln(privNet)}/rok + samochód ${pln(carGross)}/rok × ${carPitPctStr}% = ${pln(r.carCostsDeducted)}/rok. Suma: ${pln(r.deductibleCosts)}/rok (${v(r.deductibleCosts)}${sfx}). Uwaga: to kwota odliczana od PIT (netto). Cashflow (brutto) = koszty firmowe ${v(bizCostsAnn)}${sfx}, widoczne w "Do dyspozycji".`,
           },
           ...(r.carCostsDeducted > 0
             ? [
@@ -1087,7 +1087,7 @@ function ResultCard({
             label: "Wpłata IKZE",
             value: -r.ikzeContribution,
             negative: true as const,
-            tip: `Wpłata na IKZE: ${v(r.ikzeContribution)}${sfx}. Odliczona od dochodu — zmniejsza podatek, ale środki trafiają na konto emerytalne.`,
+            tip: `Wpłata na IKZE: ${v(r.ikzeContribution)}${sfx}. Odliczona od dochodu, zmniejsza podatek, ale środki trafiają na konto emerytalne.`,
           },
         ]
       : []),
@@ -2137,7 +2137,7 @@ export default function TaxCalculator() {
                   <span>Limit: {pln(Math.round(IKZE_LIMIT_JDG))}/rok</span>
                 </div>
                 <p className="text-xs text-gray-400">
-                  Wpłaty na IKZE odliczasz od dochodu — obniżają podatek
+                  Wpłaty na IKZE odliczasz od dochodu, obniżają podatek
                   dochodowy. Rocznie: {pln(ikzeMonthly * 12)}.
                 </p>
               </div>

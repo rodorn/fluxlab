@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Automatyczne przypisywanie leadów do handlowców",
+        alt: "Fluxlab, Automatyczne przypisywanie leadów do handlowców",
       },
     ],
   },
@@ -40,12 +40,12 @@ const problemPoints = [
 ];
 
 const symptoms = [
-  "„Czy ktoś już dzwonił do tego klienta?” — pada na każdym standupie.",
+  "„Czy ktoś już dzwonił do tego klienta?”, pada na każdym standupie.",
   "Manager spędza 30–60 minut dziennie na rozdzielaniu leadów ręcznie.",
   "Klient dostaje pierwszy kontakt po 4–24 godzinach zamiast po 5 minutach.",
   "Najlepszy handlowiec dostaje wszystkie najgorętsze leady, reszta się nudzi.",
   "Tabela „kto co bierze” żyje w arkuszu Google, do którego pół zespołu nie ma dostępu.",
-  "Po urlopie handlowca trzeba ręcznie przepiąć jego deale — często nie wiadomo, na czym stanęło.",
+  "Po urlopie handlowca trzeba ręcznie przepiąć jego deale, często nie wiadomo, na czym stanęło.",
 ];
 
 const beforeSteps = [
@@ -61,10 +61,10 @@ const beforeSteps = [
 const afterSteps = [
   "Lead trafia z formularza / reklamy / maila do warstwy automatyzacji.",
   "System sprawdza dane: region (kod pocztowy, województwo), źródło, produkt, wartość.",
-  "Reguły routingu wybierają właściwego handlowca — round-robin, waga pipeline'u, dostępność, specjalizacja.",
+  "Reguły routingu wybierają właściwego handlowca, round-robin, waga pipeline'u, dostępność, specjalizacja.",
   "Lead trafia do CRM jako osoba + firma + deal z przypisanym właścicielem i etapem.",
   "CRM tworzy zadanie „kontakt w 5 minut” i wysyła notyfikację (Slack, push, e-mail).",
-  "Brak reakcji w X minut — lead wraca do puli lub eskaluje do drugiej osoby.",
+  "Brak reakcji w X minut, lead wraca do puli lub eskaluje do drugiej osoby.",
   "Manager widzi w raporcie: kto dostał, kto odpowiedział, ile czasu zajęło.",
 ];
 
@@ -72,7 +72,7 @@ const workflowSteps = [
   {
     n: "1",
     title: "Wejście leada",
-    desc: "Formularz www, kampania reklamowa, e-mail, integracja z marketplace — wszystko trafia do jednego procesu.",
+    desc: "Formularz www, kampania reklamowa, e-mail, integracja z marketplace, wszystko trafia do jednego procesu.",
     accent: false,
   },
   {
@@ -90,7 +90,7 @@ const workflowSteps = [
   {
     n: "4",
     title: "Tworzenie rekordu w CRM",
-    desc: "Osoba + firma + deal w odpowiednim pipeline z przypisanym właścicielem. Etap, źródło, kampania, UTM-y — wszystko uzupełnione.",
+    desc: "Osoba + firma + deal w odpowiednim pipeline z przypisanym właścicielem. Etap, źródło, kampania, UTM-y, wszystko uzupełnione.",
     accent: false,
   },
   {
@@ -102,7 +102,7 @@ const workflowSteps = [
   {
     n: "6",
     title: "Eskalacja przy braku reakcji",
-    desc: "Brak akcji w zdefiniowanym czasie — lead trafia do drugiej osoby albo wraca do wspólnej puli. Lead nie ginie.",
+    desc: "Brak akcji w zdefiniowanym czasie, lead trafia do drugiej osoby albo wraca do wspólnej puli. Lead nie ginie.",
     accent: true,
   },
   {
@@ -116,7 +116,7 @@ const workflowSteps = [
 const antipatterns = [
   {
     title: "Round-robin bez wagi pipeline'u",
-    desc: "Najprostsze rozwiązanie — każdy po kolei. Problem: handlowiec z 80 otwartymi dealami dostaje tyle samo co ten z 5. Efekt: kolejka na pierwszy kontakt rośnie u jednych, drudzy się nudzą.",
+    desc: "Najprostsze rozwiązanie, każdy po kolei. Problem: handlowiec z 80 otwartymi dealami dostaje tyle samo co ten z 5. Efekt: kolejka na pierwszy kontakt rośnie u jednych, drudzy się nudzą.",
   },
   {
     title: "Routing po regionie bez dostępności",
@@ -124,15 +124,15 @@ const antipatterns = [
   },
   {
     title: "Reguły w głowie managera, nie w systemie",
-    desc: "Manager ręcznie nadzoruje rozdział „bo zna swoich ludzi”. Działa, dopóki manager jest w pracy. Gdy odejdzie albo zachoruje — system się rozsypuje.",
+    desc: "Manager ręcznie nadzoruje rozdział „bo zna swoich ludzi”. Działa, dopóki manager jest w pracy. Gdy odejdzie albo zachoruje, system się rozsypuje.",
   },
   {
     title: "Brak fallbacku przy nietypowym leadzie",
-    desc: "Lead spoza zdefiniowanych regionów / produktów wpada w pustkę. Nikt go nie dostaje, bo żadna reguła nie pasuje. Zawsze potrzebny jest scenariusz „nie pasuje nigdzie — idzie do X”.",
+    desc: "Lead spoza zdefiniowanych regionów / produktów wpada w pustkę. Nikt go nie dostaje, bo żadna reguła nie pasuje. Zawsze potrzebny jest scenariusz „nie pasuje nigdzie, idzie do X”.",
   },
   {
     title: "Routing bez SLA na reakcję",
-    desc: "Handlowiec dostaje leada, ale nie ma deadline'u. Bez SLA i eskalacji szybkie przypisanie nie daje szybkiej reakcji — co jest sednem problemu.",
+    desc: "Handlowiec dostaje leada, ale nie ma deadline'u. Bez SLA i eskalacji szybkie przypisanie nie daje szybkiej reakcji, co jest sednem problemu.",
   },
 ];
 
@@ -140,34 +140,34 @@ const faq = [
   {
     question: "Po jakich kryteriach najlepiej rozdzielać leady?",
     answer:
-      "Klasyka: region (kod pocztowy / województwo), produkt lub linia biznesowa, źródło (organic vs reklama vs partner), wartość deala, język klienta. Do tego waga pipeline'u (kto ma mniej otwartych deali) i dostępność (urlop, status kalendarza). Najlepsze reguły to kombinacja 2–3 z tych kryteriów — nie jeden wymiar, ale też nie 12, bo wtedy nikt nie ogarnie, dlaczego lead trafił akurat tam.",
+      "Klasyka: region (kod pocztowy / województwo), produkt lub linia biznesowa, źródło (organic vs reklama vs partner), wartość deala, język klienta. Do tego waga pipeline'u (kto ma mniej otwartych deali) i dostępność (urlop, status kalendarza). Najlepsze reguły to kombinacja 2–3 z tych kryteriów, nie jeden wymiar, ale też nie 12, bo wtedy nikt nie ogarnie, dlaczego lead trafił akurat tam.",
   },
   {
     question:
       "Czy round-robin wystarczy, czy potrzebne są bardziej złożone reguły?",
     answer:
-      "Czysty round-robin działa tylko w bardzo równym zespole, gdzie każdy obsługuje to samo. W praktyce zawsze są specjalizacje (regiony, produkty, języki) i różne obciążenia pipeline'u. Lepsze rozwiązanie: round-robin w obrębie podgrupy (np. „handlowcy regionu Mazowsze”) z wagą pipeline'u — kto ma mniej, dostaje następnego.",
+      "Czysty round-robin działa tylko w bardzo równym zespole, gdzie każdy obsługuje to samo. W praktyce zawsze są specjalizacje (regiony, produkty, języki) i różne obciążenia pipeline'u. Lepsze rozwiązanie: round-robin w obrębie podgrupy (np. „handlowcy regionu Mazowsze”) z wagą pipeline'u, kto ma mniej, dostaje następnego.",
   },
   {
     question: "Jak obsłużyć urlopy i nieobecności bez ręcznego przepinania?",
     answer:
-      "Dwa sposoby. Pierwszy: integracja z kalendarzem firmowym — jeśli handlowiec ma w Google Calendar event „urlop”, system pomija go w routingu. Drugi: status w CRM („out of office”) ustawiany ręcznie albo przez Slack-bota. Plus zawsze fallback: lead, który nie znalazł właściciela, idzie do managera lub wspólnej puli.",
+      "Dwa sposoby. Pierwszy: integracja z kalendarzem firmowym, jeśli handlowiec ma w Google Calendar event „urlop”, system pomija go w routingu. Drugi: status w CRM („out of office”) ustawiany ręcznie albo przez Slack-bota. Plus zawsze fallback: lead, który nie znalazł właściciela, idzie do managera lub wspólnej puli.",
   },
   {
     question:
       "Czy automatyczny routing działa w Pipedrive, HubSpot, Salesforce?",
     answer:
-      "Tak. Wszystkie te CRM-y mają natywne mechanizmy przypisywania (Pipedrive — automation, HubSpot — Workflows + assignment rotation, Salesforce — Lead Assignment Rules). W bardziej złożonych przypadkach (kilka systemów, custom logika, wzbogacanie danych) lepiej dodać warstwę pośrednią — n8n, Make albo Zapier — która konsumuje leada przed CRM-em i decyduje, gdzie go wstawić.",
+      "Tak. Wszystkie te CRM-y mają natywne mechanizmy przypisywania (Pipedrive, automation, HubSpot, Workflows + assignment rotation, Salesforce, Lead Assignment Rules). W bardziej złożonych przypadkach (kilka systemów, custom logika, wzbogacanie danych) lepiej dodać warstwę pośrednią, n8n, Make albo Zapier, która konsumuje leada przed CRM-em i decyduje, gdzie go wstawić.",
   },
   {
     question: "Co zrobić z leadami, które nie pasują do żadnej reguły?",
     answer:
-      "Zawsze potrzebny jest scenariusz „catch-all”. Najczęściej: trafiają do managera sprzedaży lub do wspólnej puli, z której pierwsza dostępna osoba je odbiera. Dodatkowo warto raportować, ile leadów wpada w catch-all — jeśli to więcej niż 5–10%, znaczy że reguły są niekompletne i trzeba je rozszerzyć.",
+      "Zawsze potrzebny jest scenariusz „catch-all”. Najczęściej: trafiają do managera sprzedaży lub do wspólnej puli, z której pierwsza dostępna osoba je odbiera. Dodatkowo warto raportować, ile leadów wpada w catch-all, jeśli to więcej niż 5–10%, znaczy że reguły są niekompletne i trzeba je rozszerzyć.",
   },
   {
     question: "Ile trwa wdrożenie automatycznego routingu?",
     answer:
-      "Pierwsza działająca wersja — 2–5 dni roboczych, jeśli reguły są jasne i CRM jest standardowy. Bardziej złożone scenariusze (kilka źródeł, wzbogacanie danych, integracja z kalendarzami, eskalacje wielopoziomowe) to 1–3 tygodnie. Warto zacząć od najprostszej wersji i dopiero po 2–3 tygodniach pracy na żywych danych dokładać kolejne reguły.",
+      "Pierwsza działająca wersja, 2–5 dni roboczych, jeśli reguły są jasne i CRM jest standardowy. Bardziej złożone scenariusze (kilka źródeł, wzbogacanie danych, integracja z kalendarzami, eskalacje wielopoziomowe) to 1–3 tygodnie. Warto zacząć od najprostszej wersji i dopiero po 2–3 tygodniach pracy na żywych danych dokładać kolejne reguły.",
   },
 ];
 
@@ -191,7 +191,7 @@ export default function AutomatycznePrzypisywanieLeadow() {
       <main className="pt-16">
         <Breadcrumbs items={[{ label: "Automatyczne przypisywanie leadów" }]} />
 
-        {/* Hero — kompaktowy */}
+        {/* Hero, kompaktowy */}
         <section className="pt-16 pb-6 bg-gradient-to-b from-accent/10 to-transparent border-b border-gray-100 dark:border-gray-800">
           <div className="container-wide">
             <div className="max-w-3xl mx-auto text-center">
@@ -204,7 +204,7 @@ export default function AutomatycznePrzypisywanieLeadow() {
                 Lead wpada o 22:13. O 8:30 manager otwiera arkusz, decyduje
                 ręcznie, kto go obsłuży, i pisze maila. Handlowiec odbiera
                 wiadomość po obiedzie. Klient w międzyczasie wysłał zapytanie do
-                konkurencji. Tak gubi się leady — nie z powodu złego CRM-a,
+                konkurencji. Tak gubi się leady, nie z powodu złego CRM-a,
                 tylko z powodu człowieka udającego integrację.
               </p>
               <div className="mt-8 flex justify-center">
@@ -226,7 +226,7 @@ export default function AutomatycznePrzypisywanieLeadow() {
           </div>
         </section>
 
-        {/* Treść w zakładkach — nic nie wycięte, podzielone */}
+        {/* Treść w zakładkach, nic nie wycięte, podzielone */}
         <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
           <Tabs
             ariaLabel="Sekcje strony o routingu leadów"
@@ -248,7 +248,7 @@ export default function AutomatycznePrzypisywanieLeadow() {
                           </h2>
                           <div className="text-gray-600 dark:text-gray-400 leading-relaxed space-y-4 mb-8">
                             <p>
-                              Routing leadów to z pozoru drobnostka —
+                              Routing leadów to z pozoru drobnostka,
                               &bdquo;ktoś musi zdecydować, kto bierze tego
                               klienta&rdquo;. W rzeczywistości to jeden z
                               najbardziej kosztownych wąskich gardeł w sprzedaży
@@ -260,7 +260,7 @@ export default function AutomatycznePrzypisywanieLeadow() {
                               Większość firm próbuje rozwiązać to ręcznie:
                               arkusz rozdzielnika, „pierwszy chętny bierze”,
                               manager, który rano rozdaje leady. Wszystkie te
-                              metody mają jedną wspólną wadę — zależą od
+                              metody mają jedną wspólną wadę, zależą od
                               człowieka, który czasem śpi, czasem jest na
                               spotkaniu, czasem na urlopie. Lead nie czeka.
                             </p>
@@ -465,7 +465,7 @@ export default function AutomatycznePrzypisywanieLeadow() {
                             <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
                               Każdy z tych kroków buduję osobno i mierzę osobno.
                               Możesz wdrożyć tylko 3 pierwsze i już dostać efekt
-                              — reszta dochodzi iteracyjnie.
+                             , reszta dochodzi iteracyjnie.
                             </p>
                           </div>
                           <ol className="relative space-y-3 lg:space-y-4">
@@ -557,7 +557,7 @@ export default function AutomatycznePrzypisywanieLeadow() {
                                 1
                               </span>
                               <span className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                                <strong>Wybierz jedno źródło</strong> —
+                                <strong>Wybierz jedno źródło</strong>,
                                 najczęściej formularz z głównej strony albo
                                 formularz z reklam Google. Resztę odłóż.
                               </span>
@@ -567,7 +567,7 @@ export default function AutomatycznePrzypisywanieLeadow() {
                                 2
                               </span>
                               <span className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                                <strong>Wybierz jedną regułę</strong> —
+                                <strong>Wybierz jedną regułę</strong>,
                                 najprostsza to round-robin między 2–3
                                 handlowcami. Region i produkt dodasz w drugim
                                 etapie.
@@ -578,7 +578,7 @@ export default function AutomatycznePrzypisywanieLeadow() {
                                 3
                               </span>
                               <span className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                                <strong>Automatyczny rekord w CRM</strong> —
+                                <strong>Automatyczny rekord w CRM</strong>,
                                 osoba + firma + deal z przypisanym właścicielem.
                                 Zadanie „kontakt w 5 minut” + powiadomienie na
                                 Slacku.
@@ -589,7 +589,7 @@ export default function AutomatycznePrzypisywanieLeadow() {
                                 4
                               </span>
                               <span className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                                <strong>Mierz przed/po</strong> — średni czas
+                                <strong>Mierz przed/po</strong>, średni czas
                                 pierwszego kontaktu, liczba leadów, które
                                 trafiły do złego handlowca, czas managera
                                 spędzony na rozdzielaniu.
@@ -599,7 +599,7 @@ export default function AutomatycznePrzypisywanieLeadow() {
                           <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                             Tyle. Pierwszy etap robię u klientów w 2–4 dni. Po
                             dwóch tygodniach pracy na żywych danych dokładamy
-                            kolejne źródła i reguły — ale dopiero wtedy, gdy
+                            kolejne źródła i reguły, ale dopiero wtedy, gdy
                             wiemy, co realnie działa.
                           </p>
                         </div>
@@ -616,7 +616,7 @@ export default function AutomatycznePrzypisywanieLeadow() {
                           </h2>
                           <p className="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
                             Te błędy widzę u 80% firm, które próbowały zrobić
-                            routing samodzielnie. Każdy z nich da się obejść —
+                            routing samodzielnie. Każdy z nich da się obejść,
                             ale lepiej wiedzieć wcześniej.
                           </p>
                           <div className="space-y-4">
@@ -655,7 +655,7 @@ export default function AutomatycznePrzypisywanieLeadow() {
                             </h2>
                             <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                               Stała cena za projekt po krótkim audycie. Widełki
-                              poniżej — konkretną wycenę dostajesz po
+                              poniżej, konkretną wycenę dostajesz po
                               30-minutowej rozmowie.
                             </p>
                           </div>
@@ -770,7 +770,7 @@ export default function AutomatycznePrzypisywanieLeadow() {
                                   href="/automatyzacja-crm"
                                   className="text-accent hover:underline"
                                 >
-                                  Automatyzacja CRM — przegląd
+                                  Automatyzacja CRM, przegląd
                                 </Link>
                               </li>
                               <li>
@@ -798,7 +798,7 @@ export default function AutomatycznePrzypisywanieLeadow() {
                           <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
                             30-minutowa diagnoza, wstępna mapa pierwszego kroku
                             i szacowany ROI. Bez zobowiązań. Po rozmowie wiesz,
-                            czy w twoim przypadku to ma sens — i ile by
+                            czy w twoim przypadku to ma sens, i ile by
                             kosztowało.
                           </p>
                           <TrackedCTA

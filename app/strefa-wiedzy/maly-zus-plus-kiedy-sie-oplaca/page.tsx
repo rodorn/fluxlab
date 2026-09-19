@@ -7,11 +7,11 @@ import PrevNextArticle from "@/components/PrevNextArticle";
 import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
-  title: "Mały ZUS Plus w 2026 — kiedy się opłaca, warunki, limity | Fluxlab",
+  title: "Mały ZUS Plus w 2026, kiedy się opłaca, warunki, limity | Fluxlab",
   description:
     "Mały ZUS Plus w 2026: kto może skorzystać, jakie są warunki, limity przychodowe i ile realnie oszczędzasz. Porównanie z pełnym ZUS i ulgą na start.",
   openGraph: {
-    title: "Mały ZUS Plus w 2026 — kiedy się opłaca, warunki, limity | Fluxlab",
+    title: "Mały ZUS Plus w 2026, kiedy się opłaca, warunki, limity | Fluxlab",
     description:
       "Mały ZUS Plus w 2026: kto może skorzystać, jakie są warunki, limity przychodowe i ile realnie oszczędzasz. Porównanie z pełnym ZUS i ulgą na start.",
     locale: "pl_PL",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Automatyzacja leadów, CRM i raportowania dla firm B2B",
+        alt: "Fluxlab, Automatyzacja leadów, CRM i raportowania dla firm B2B",
       },
     ],
   },
@@ -38,7 +38,7 @@ export default function MalyZusPlusArticle() {
         <Breadcrumbs
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
-            { label: "Mały ZUS Plus — kiedy się opłaca" },
+            { label: "Mały ZUS Plus, kiedy się opłaca" },
           ]}
         />
 
@@ -47,7 +47,7 @@ export default function MalyZusPlusArticle() {
           <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
             <span className="section-label">Strefa wiedzy</span>
             <h1 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">
-              Mały ZUS Plus — kiedy się opłaca w 2026
+              Mały ZUS Plus, kiedy się opłaca w 2026
             </h1>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
               Mały ZUS Plus to preferencyjne składki społeczne dla
@@ -81,7 +81,7 @@ export default function MalyZusPlusArticle() {
                       </p>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Dotyczy to składek: emerytalnej, rentowej, chorobowej i
-                        wypadkowej. Nie dotyczy składki zdrowotnej — ta jest
+                        wypadkowej. Nie dotyczy składki zdrowotnej, ta jest
                         liczona niezależnie, według zasad właściwych dla danej
                         formy opodatkowania.
                       </p>
@@ -136,7 +136,7 @@ export default function MalyZusPlusArticle() {
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Limit przychodowy 120 000 zł dotyczy przychodu, nie
                         dochodu. Jeśli masz wysokie koszty i niski dochód, ale
-                        przychód przekracza 120 tys. — nie skorzystasz.
+                        przychód przekracza 120 tys., nie skorzystasz.
                       </p>
                     </div>
                   </div>
@@ -160,7 +160,7 @@ export default function MalyZusPlusArticle() {
                         Na małym ZUS Plus podstawa jest wyliczana z dochodu z
                         poprzedniego roku. Formuła jest następująca: dochód
                         roczny dzielony przez liczbę dni prowadzenia
-                        działalności, pomnożony przez 30 — ale nie mniej niż 30%
+                        działalności, pomnożony przez 30, ale nie mniej niż 30%
                         minimalnego wynagrodzenia.
                       </p>
                       <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
@@ -169,7 +169,7 @@ export default function MalyZusPlusArticle() {
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Roczny dochód: 60 000 zł. Przy 365 dniach działalności
                         podstawa wymiaru: (60 000 / 365) × 30 = ok. 4 932 zł.
-                        Ale jest ograniczenie — podstawa nie może przekroczyć
+                        Ale jest ograniczenie, podstawa nie może przekroczyć
                         60% przeciętnego wynagrodzenia (5 593,20 zł) i nie może
                         być niższa niż 30% minimalnego wynagrodzenia (1 447,80
                         zł).
@@ -191,7 +191,7 @@ export default function MalyZusPlusArticle() {
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Przy niższym dochodzie oszczędności są większe. Przy
                         dochodzie 3 000 zł/mies. podstawa spada do ok. 2 959 zł,
-                        a składki do ok. 937 zł — oszczędność rośnie do ok. 836
+                        a składki do ok. 937 zł, oszczędność rośnie do ok. 836
                         zł miesięcznie (ponad 10 000 zł rocznie).
                       </p>
 
@@ -308,25 +308,25 @@ export default function MalyZusPlusArticle() {
                       <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
                         <li>
                           Gdy Twój dochód jest na tyle wysoki, że podstawa z
-                          małego ZUS Plus i tak zbliża się do pełnego ZUS —
+                          małego ZUS Plus i tak zbliża się do pełnego ZUS,
                           oszczędność jest minimalna
                         </li>
                         <li>
-                          Gdy zbliżasz się do wieku emerytalnego — niższe
+                          Gdy zbliżasz się do wieku emerytalnego, niższe
                           składki oznaczają niższą emeryturę, a czas na
                           &bdquo;nadrobienie&rdquo; jest krótki
                         </li>
                         <li>
                           Gdy zależy Ci na wyższym zasiłku chorobowym lub
-                          macierzyńskim — ich wysokość zależy od podstawy
+                          macierzyńskim, ich wysokość zależy od podstawy
                           wymiaru składek
                         </li>
                         <li>
-                          Gdy planujesz kredyt hipoteczny — banki patrzą na
+                          Gdy planujesz kredyt hipoteczny, banki patrzą na
                           deklarowaną podstawę wymiaru jako miernik dochodów
                         </li>
                         <li>
-                          Gdy przychód zbliża się do 120 000 zł — możesz stracić
+                          Gdy przychód zbliża się do 120 000 zł, możesz stracić
                           prawo do ulgi w kolejnym roku
                         </li>
                       </ul>
@@ -355,12 +355,12 @@ export default function MalyZusPlusArticle() {
                       </p>
                       <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
                         <li>
-                          Do 31 stycznia danego roku — jeśli kontynuujesz
+                          Do 31 stycznia danego roku, jeśli kontynuujesz
                           działalność i chcesz skorzystać z małego ZUS Plus od
                           początku roku
                         </li>
                         <li>
-                          W ciągu 7 dni od dnia spełnienia warunków — jeśli
+                          W ciągu 7 dni od dnia spełnienia warunków, jeśli
                           warunki spełniłeś w trakcie roku (np. po zakończeniu
                           preferencyjnego ZUS)
                         </li>
@@ -391,7 +391,7 @@ export default function MalyZusPlusArticle() {
                       </p>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Decyzja o skorzystaniu z małego ZUS Plus powinna być
-                        częścią szerszej kalkulacji — uwzględniającej formę
+                        częścią szerszej kalkulacji, uwzględniającej formę
                         opodatkowania, składkę zdrowotną i cele długoterminowe.
                         Nie jest to automatycznie najlepsza opcja dla każdego.
                       </p>
@@ -570,7 +570,7 @@ export default function MalyZusPlusArticle() {
                                 href="/strefa-wiedzy/vat-w-jdg-kiedy-warto"
                                 className="text-accent hover:underline"
                               >
-                                VAT w JDG — kiedy warto być vatowcem
+                                VAT w JDG, kiedy warto być vatowcem
                               </Link>
                             </li>
                           </ul>

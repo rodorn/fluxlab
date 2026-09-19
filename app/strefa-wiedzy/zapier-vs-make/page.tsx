@@ -7,11 +7,11 @@ import PrevNextArticle from "@/components/PrevNextArticle";
 import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
-  title: "Zapier vs Make — co wybrać do automatyzacji w 2026 | Fluxlab",
+  title: "Zapier vs Make, co wybrać do automatyzacji w 2026 | Fluxlab",
   description:
     "Praktyczne porównanie Zapier i Make w 2026: pricing, integracje, logika, krzywa nauki i koszt na dużą skalę. Konkretne kryteria wyboru dla firm B2B.",
   openGraph: {
-    title: "Zapier vs Make — co wybrać do automatyzacji w 2026 | Fluxlab",
+    title: "Zapier vs Make, co wybrać do automatyzacji w 2026 | Fluxlab",
     description:
       "Praktyczne porównanie Zapier i Make w 2026: pricing, integracje, logika, krzywa nauki i koszt na dużą skalę. Konkretne kryteria wyboru dla firm B2B.",
     locale: "pl_PL",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Automatyzacja leadów, CRM i raportowania dla firm B2B",
+        alt: "Fluxlab, Automatyzacja leadów, CRM i raportowania dla firm B2B",
       },
     ],
   },
@@ -38,19 +38,19 @@ export default function ZapierVsMakeArticle() {
         "Tak, w większości scenariuszy. Make rozlicza pojedyncze operacje (kroki w scenariuszu), a Zapier całe taski. Przy automatyzacjach złożonych z wielu kroków koszt jednej operacji w Make może być nawet kilkukrotnie niższy. Przy 50–100 tys. operacji miesięcznie różnica miesięczna potrafi sięgać kilkuset złotych na korzyść Make.",
     },
     {
-      question: "Który jest łatwiejszy do nauki — Zapier czy Make?",
+      question: "Który jest łatwiejszy do nauki, Zapier czy Make?",
       answer:
         "Zapier. Interfejs jest liniowy, krok po kroku, i działa intuicyjnie nawet dla osoby bez doświadczenia technicznego. Make wymaga zrozumienia diagramu scenariusza, modułów, routerów i agregatorów. To 2–3 razy dłuższa krzywa nauki, ale za to dużo większe możliwości.",
     },
     {
       question: "Czy mogę przenieść automatyzacje z Zapiera do Make?",
       answer:
-        "Nie ma automatycznego importu — trzeba odbudować scenariusze ręcznie. Dla 5–10 prostych Zapów to kwestia jednego dnia pracy. Dla większego ekosystemu warto rozważyć migrację stopniową, np. tylko nowe automatyzacje budować w Make, a stare zostawić w Zapierze, dopóki działają.",
+        "Nie ma automatycznego importu, trzeba odbudować scenariusze ręcznie. Dla 5–10 prostych Zapów to kwestia jednego dnia pracy. Dla większego ekosystemu warto rozważyć migrację stopniową, np. tylko nowe automatyzacje budować w Make, a stare zostawić w Zapierze, dopóki działają.",
     },
     {
       question: "Czy Zapier obsługuje webhook i własne API?",
       answer:
-        "Tak. Zapier ma moduł Webhooks (płatny, od planu Professional) i moduł Code do JavaScript/Python. Make ma to samo w standardzie — webhook to natywny moduł, a HTTP/API i wykonanie kodu są dostępne nawet w niższych planach.",
+        "Tak. Zapier ma moduł Webhooks (płatny, od planu Professional) i moduł Code do JavaScript/Python. Make ma to samo w standardzie, webhook to natywny moduł, a HTTP/API i wykonanie kodu są dostępne nawet w niższych planach.",
     },
     {
       question: "Czy Make jest stabilny dla procesów krytycznych?",
@@ -60,7 +60,7 @@ export default function ZapierVsMakeArticle() {
     {
       question: "Co z RODO i przetwarzaniem danych w UE?",
       answer:
-        "Make ma siedzibę w Czechach (część grupy Celonis) i serwery w UE — to często argument w rozmowach z działem prawnym polskich firm. Zapier ma siedzibę w USA i serwery globalne. Oba narzędzia podpisują DPA, ale dla danych wrażliwych Make jest często prostszym wyborem compliance.",
+        "Make ma siedzibę w Czechach (część grupy Celonis) i serwery w UE, to często argument w rozmowach z działem prawnym polskich firm. Zapier ma siedzibę w USA i serwery globalne. Oba narzędzia podpisują DPA, ale dla danych wrażliwych Make jest często prostszym wyborem compliance.",
     },
   ];
 
@@ -74,25 +74,25 @@ export default function ZapierVsMakeArticle() {
             { label: "Zapier vs Make" },
           ]}
         />
-        {/* Hero — kompaktowy */}
+        {/* Hero, kompaktowy */}
         <section className="bg-gray-50 dark:bg-gray-900/50 pt-16 pb-6">
           <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
             <span className="section-label">Strefa wiedzy</span>
             <h1 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">
-              Zapier vs Make — co wybrać do automatyzacji w 2026
+              Zapier vs Make, co wybrać do automatyzacji w 2026
             </h1>
             <p className="mt-4 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
               Zapier i Make to dwa najpopularniejsze narzędzia no-code do
               automatyzacji procesów. Oba łączą setki aplikacji, oba mają
               graficzny builder i oba można uruchomić w godzinę. Ale różnią się
               w trzech kluczowych miejscach: pricingu, logice scenariuszy i
-              krzywej nauki. Ten artykuł pokazuje, kiedy wybrać który — bez
+              krzywej nauki. Ten artykuł pokazuje, kiedy wybrać który, bez
               marketingowych ogólników.
             </p>
           </div>
         </section>
 
-        {/* Treść w zakładkach — nic nie wycięte, podzielone */}
+        {/* Treść w zakładkach, nic nie wycięte, podzielone */}
         <div id="sekcje" className="scroll-mt-20 container-wide pb-12">
           <Tabs
             ariaLabel="Rozdziały artykułu Zapier vs Make"
@@ -103,10 +103,10 @@ export default function ZapierVsMakeArticle() {
                   <div className="max-w-3xl mx-auto px-6 lg:px-8 py-6 lg:py-8">
                     {/* Sekcja 1 */}
                     <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                      Zapier — jak działa i dla kogo
+                      Zapier, jak działa i dla kogo
                     </h2>
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Zapier to weteran rynku automatyzacji — działa od 2012
+                      Zapier to weteran rynku automatyzacji, działa od 2012
                       roku i ma dziś ponad 6 000 integracji. Jego siła to
                       prostota: interfejs prowadzi krok po kroku, a przeciętny
                       użytkownik zbuduje pierwszego Zapa (czyli automatyzację) w
@@ -115,7 +115,7 @@ export default function ZapierVsMakeArticle() {
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
                       Każdy Zap składa się z triggera (zdarzenie startowe) i
                       jednego lub więcej action (akcji). Zapier rozlicza tzw.
-                      taski — każda akcja, która coś zmieni w docelowej
+                      taski, każda akcja, która coś zmieni w docelowej
                       aplikacji, to jeden task.
                     </p>
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
@@ -123,18 +123,18 @@ export default function ZapierVsMakeArticle() {
                     </p>
                     <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
                       <li>
-                        Free — 100 tasków/mies., tylko Zapy 1-stepowe (jedna
+                        Free, 100 tasków/mies., tylko Zapy 1-stepowe (jedna
                         akcja)
                       </li>
                       <li>
-                        Professional — od ok. 19,99 USD/mies., wieloetapowe
+                        Professional, od ok. 19,99 USD/mies., wieloetapowe
                         Zapy, filtry, formatery, webhooki
                       </li>
                       <li>
-                        Team — od ok. 69 USD/mies., współdzielone foldery, role
+                        Team, od ok. 69 USD/mies., współdzielone foldery, role
                       </li>
                       <li>
-                        Company / Enterprise — wyceniane indywidualnie, SSO,
+                        Company / Enterprise, wyceniane indywidualnie, SSO,
                         SLA, audyty
                       </li>
                     </ul>
@@ -147,18 +147,18 @@ export default function ZapierVsMakeArticle() {
 
                     {/* Sekcja 2 */}
                     <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                      Make — jak działa i dla kogo
+                      Make, jak działa i dla kogo
                     </h2>
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
                       Make (dawniej Integromat) to platforma o znacznie
                       bogatszej logice. Zamiast liniowego flow ma wizualny
-                      diagram, w którym moduły można łączyć w dowolny sposób — z
+                      diagram, w którym moduły można łączyć w dowolny sposób, z
                       routerami, iteratorami, agregatorami i pętlami. Pozwala to
                       budować scenariusze, które w Zapierze byłyby niemożliwe
                       albo wymagałyby kilku oddzielnych Zapów.
                     </p>
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Make rozlicza operacje — czyli pojedyncze wywołania
+                      Make rozlicza operacje, czyli pojedyncze wywołania
                       modułów. To inna jednostka niż task w Zapierze i zwykle
                       dużo tańsza w przeliczeniu na to samo zadanie biznesowe.
                     </p>
@@ -167,22 +167,22 @@ export default function ZapierVsMakeArticle() {
                     </p>
                     <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
                       <li>
-                        Free — 1 000 operacji/mies., 2 aktywne scenariusze
+                        Free, 1 000 operacji/mies., 2 aktywne scenariusze
                       </li>
                       <li>
-                        Core — od ok. 9 USD/mies. za 10 000 operacji, pełna
+                        Core, od ok. 9 USD/mies. za 10 000 operacji, pełna
                         obsługa modułów
                       </li>
                       <li>
-                        Pro — od ok. 16 USD/mies., custom variables, priority
+                        Pro, od ok. 16 USD/mies., custom variables, priority
                         execution
                       </li>
                       <li>
-                        Teams — od ok. 29 USD/mies., role, audit log, więcej
+                        Teams, od ok. 29 USD/mies., role, audit log, więcej
                         operacji
                       </li>
                       <li>
-                        Enterprise — wycena indywidualna, SSO, dedykowany
+                        Enterprise, wycena indywidualna, SSO, dedykowany
                         support
                       </li>
                     </ul>
@@ -208,14 +208,14 @@ export default function ZapierVsMakeArticle() {
                   <div className="max-w-3xl mx-auto px-6 lg:px-8 py-6 lg:py-8">
                     {/* Sekcja 3 */}
                     <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                      Pricing w praktyce — gdzie się rozjeżdża
+                      Pricing w praktyce, gdzie się rozjeżdża
                     </h2>
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
                       Najbardziej myląca rzecz w porównaniu Zapiera i Make to
                       jednostka rozliczeniowa. „Task" w Zapierze i „operacja" w
                       Make to nie to samo. Przykład realnego scenariusza:
                       przyjmujesz lead z formularza, walidujesz dane, sprawdzasz
-                      czy istnieje w CRM, jeśli nie — tworzysz, jeśli tak —
+                      czy istnieje w CRM, jeśli nie, tworzysz, jeśli tak,
                       aktualizujesz, wysyłasz powiadomienie na Slacka i notatkę
                       do Asany.
                     </p>
@@ -256,7 +256,7 @@ export default function ZapierVsMakeArticle() {
                       Integracje i pokrycie aplikacji
                     </h2>
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Zapier ma więcej integracji w liczbach bezwzględnych — ok.
+                      Zapier ma więcej integracji w liczbach bezwzględnych, ok.
                       6 000 vs ok. 1 800 w Make. Ale ta różnica ma znaczenie
                       głównie dla niszowych aplikacji. Wszystkie popularne
                       SaaS-y (HubSpot, Pipedrive, Salesforce, Slack, Notion,
@@ -267,13 +267,13 @@ export default function ZapierVsMakeArticle() {
                       Różnica jest jednak w głębokości integracji. Make często
                       udostępnia więcej akcji per aplikacja (np. dla HubSpot
                       Make ma osobne moduły dla custom objects, properties,
-                      associations — Zapier obsługuje to jako generyczne API
+                      associations, Zapier obsługuje to jako generyczne API
                       calls). Z drugiej strony, dla nowych SaaS-ów Zapier zwykle
                       pojawia się jako pierwszy.
                     </p>
                     <p className="text-gray-600 dark:text-gray-400 mb-10">
-                      Jeśli używasz nietypowego SaaS-u — sprawdź najpierw, czy
-                      ma natywną integrację w obu narzędziach. Jeśli nie ma —
+                      Jeśli używasz nietypowego SaaS-u, sprawdź najpierw, czy
+                      ma natywną integrację w obu narzędziach. Jeśli nie ma,
                       pozostaje{" "}
                       <Link
                         href="/integracje-api"
@@ -294,7 +294,7 @@ export default function ZapierVsMakeArticle() {
                       osobą, która buduje automatyzacje raz na kwartał i nie ma
                       technicznego backgroundu, Zapier będzie znacznie mniej
                       frustrujący. Make wymaga zrozumienia diagramu, kierunku
-                      przepływu danych, agregatorów i routerów — to
+                      przepływu danych, agregatorów i routerów, to
                       konceptualnie bliżej programowania wizualnego niż
                       „następny krok, dalej".
                     </p>
@@ -330,20 +330,20 @@ export default function ZapierVsMakeArticle() {
                       wymagają drogich planów, albo obejść:
                     </p>
                     <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
-                      <li>Iteratory — przejście po każdym elemencie listy</li>
+                      <li>Iteratory, przejście po każdym elemencie listy</li>
                       <li>
-                        Agregatory — zebranie wielu rekordów w jeden output
+                        Agregatory, zebranie wielu rekordów w jeden output
                       </li>
                       <li>
-                        Routery z warunkami — wiele ścieżek równoległych z różną
+                        Routery z warunkami, wiele ścieżek równoległych z różną
                         logiką
                       </li>
                       <li>
-                        Error handlers per moduł — fallback gdy coś się nie uda,
+                        Error handlers per moduł, fallback gdy coś się nie uda,
                         ponowienie z opóźnieniem, alternatywna ścieżka
                       </li>
                       <li>
-                        Custom JavaScript w module „Tools" — bez płatnego
+                        Custom JavaScript w module „Tools", bez płatnego
                         dodatku
                       </li>
                     </ul>
@@ -351,8 +351,8 @@ export default function ZapierVsMakeArticle() {
                       W Zapierze podobne rzeczy są możliwe, ale często wymagają
                       planu Professional lub wyższego, a niektóre (np. iteratory
                       nad listami) są niewygodne i wymagają obejścia przez Code
-                      step. Dla automatyzacji prostych — to nie problem. Dla
-                      automatyzacji złożonych — to argument za Make.
+                      step. Dla automatyzacji prostych, to nie problem. Dla
+                      automatyzacji złożonych, to argument za Make.
                     </p>
 
                     {/* Sekcja 7 */}
@@ -363,7 +363,7 @@ export default function ZapierVsMakeArticle() {
                       To temat, który wraca w każdej rozmowie z większą firmą.
                       Make jest częścią grupy Celonis (siedziba w Niemczech,
                       część operacji w Czechach), serwery działają w UE. To
-                      upraszcza rozmowę z działem prawnym — dane nie wychodzą
+                      upraszcza rozmowę z działem prawnym, dane nie wychodzą
                       poza EOG.
                     </p>
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
@@ -375,8 +375,8 @@ export default function ZapierVsMakeArticle() {
                     </p>
                     <p className="text-gray-600 dark:text-gray-400">
                       Jeśli dane są wyjątkowo wrażliwe albo branża wymaga pełnej
-                      kontroli nad infrastrukturą, warto rozważyć trzecią opcję
-                      —{" "}
+                      kontroli nad infrastrukturą, warto rozważyć trzecią
+                      opcję,{" "}
                       <Link href="/n8n" className="text-accent hover:underline">
                         n8n self-hosted
                       </Link>
@@ -398,7 +398,7 @@ export default function ZapierVsMakeArticle() {
                   <div className="max-w-3xl mx-auto px-6 lg:px-8 py-6 lg:py-8">
                     {/* Sekcja 8 */}
                     <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                      Kiedy wybrać Zapier, a kiedy Make — checklist
+                      Kiedy wybrać Zapier, a kiedy Make, checklist
                     </h2>
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
                       Wybierz Zapier, gdy:
@@ -454,7 +454,7 @@ export default function ZapierVsMakeArticle() {
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Pomogę dobrać i wdrożyć platformę dopasowaną do skali i
-                        logiki Twoich procesów — bez przepłacania za
+                        logiki Twoich procesów, bez przepłacania za
                         niepotrzebne funkcje.
                       </p>
                       <Link
@@ -465,7 +465,7 @@ export default function ZapierVsMakeArticle() {
                       </Link>
                     </div>
 
-                    {/* Sekcja 9 — Podsumowanie */}
+                    {/* Sekcja 9, Podsumowanie */}
                     <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                       Podsumowanie
                     </h2>
@@ -473,9 +473,9 @@ export default function ZapierVsMakeArticle() {
                       Zapier i Make rozwiązują ten sam problem na dwa sposoby.
                       Zapier optymalizuje na łatwość, Make na elastyczność i
                       koszt. Dla firmy startującej z automatyzacją, mającej do
-                      kilkudziesięciu prostych zadań — Zapier jest szybszy. Dla
+                      kilkudziesięciu prostych zadań, Zapier jest szybszy. Dla
                       firmy, która ma już doświadczenie i chce skalować bez
-                      eksplozji kosztów — Make wygrywa praktycznie zawsze.
+                      eksplozji kosztów, Make wygrywa praktycznie zawsze.
                     </p>
                     <p className="text-gray-600 dark:text-gray-400 mb-10">
                       Zanim wybierzesz, policz{" "}
@@ -574,7 +574,7 @@ export default function ZapierVsMakeArticle() {
                       href="/strefa-wiedzy/n8n-vs-zapier"
                       className="text-accent hover:underline"
                     >
-                      n8n vs Zapier — kiedy warto iść w self-hosting
+                      n8n vs Zapier, kiedy warto iść w self-hosting
                     </Link>
                   </li>
                   <li>
@@ -582,7 +582,7 @@ export default function ZapierVsMakeArticle() {
                       href="/strefa-wiedzy/make-vs-n8n"
                       className="text-accent hover:underline"
                     >
-                      Make vs n8n — porównanie dla firm MŚP
+                      Make vs n8n, porównanie dla firm MŚP
                     </Link>
                   </li>
                   <li>
@@ -590,7 +590,7 @@ export default function ZapierVsMakeArticle() {
                       href="/strefa-wiedzy/zapier-make-n8n-porownanie"
                       className="text-accent hover:underline"
                     >
-                      Zapier vs Make vs n8n — wielkie porównanie 2026
+                      Zapier vs Make vs n8n, wielkie porównanie 2026
                     </Link>
                   </li>
                   <li>
@@ -613,7 +613,7 @@ export default function ZapierVsMakeArticle() {
                       href="/zapier-make"
                       className="text-accent hover:underline"
                     >
-                      Zapier i Make — wdrożenia
+                      Zapier i Make, wdrożenia
                     </Link>
                   </li>
                   <li>
@@ -647,7 +647,7 @@ export default function ZapierVsMakeArticle() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Article",
-            headline: "Zapier vs Make — co wybrać do automatyzacji w 2026",
+            headline: "Zapier vs Make, co wybrać do automatyzacji w 2026",
             description:
               "Praktyczne porównanie Zapier i Make w 2026: pricing, integracje, logika, krzywa nauki i koszt na dużą skalę. Konkretne kryteria wyboru dla firm B2B.",
             datePublished: "2026-04-19",

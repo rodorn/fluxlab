@@ -1,7 +1,7 @@
 import TrackedCTA from "@/components/TrackedCTA";
 
 const youGet = [
-  "wstępna ocena — czy automatyzacja w ogóle ma sens",
+  "wstępna ocena, czy automatyzacja w ogóle ma sens",
   "wskazanie 1–3 obszarów z największym potencjałem",
   "szacunkowy rząd kosztu ręcznej pracy",
   "rekomendowany pierwszy krok",
@@ -22,7 +22,7 @@ export default function Diagnosis() {
       aria-labelledby="diagnoza-heading"
       className="scroll-mt-16 relative py-20 lg:py-28 bg-gray-950 text-white overflow-hidden noise-overlay"
     >
-      {/* Decorative blobs — visible on dark background */}
+      {/* Decorative blobs, visible on dark background */}
       <div
         aria-hidden="true"
         className="blob-strong blob-accent -z-0 top-[10%] right-[-10%] w-[600px] h-[600px] opacity-30"
@@ -48,7 +48,7 @@ export default function Diagnosis() {
               daje wstępny kierunek.
             </p>
             <p className="text-sm text-gray-400 leading-relaxed mb-8">
-              Jeśli idziemy dalej — robię płatny{" "}
+              Jeśli idziemy dalej, robię płatny{" "}
               <strong className="text-white">audyt procesu</strong> z mapą AS-IS
               → TO-BE, priorytetami, narzędziami, harmonogramem i ROI. Koszt
               audytu odliczam od wdrożenia, jeśli kontynuujemy.

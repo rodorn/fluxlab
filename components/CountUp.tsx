@@ -10,7 +10,7 @@ type Props = {
 
 /**
  * Animuje liczbę od 0 do wartości docelowej, gdy element wejdzie w viewport.
- * Parsuje prefix / liczbę / suffix — jeśli nie ma czystej liczby na początku,
+ * Parsuje prefix / liczbę / suffix, jeśli nie ma czystej liczby na początku,
  * renderuje wartość statycznie (np. "AI w treści").
  */
 export default function CountUp({ value, className }: Props) {

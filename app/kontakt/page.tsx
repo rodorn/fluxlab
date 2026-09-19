@@ -5,12 +5,12 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import CTA from "@/components/CTA";
 
 export const metadata: Metadata = {
-  title: "Kontakt — Fluxlab",
+  title: "Kontakt | Fluxlab",
   description:
-    "Napisz, z czym potrzebujesz pomocy — strony WWW, automatyzacja, dane. Bezpłatna diagnoza, odpowiedź w 24h.",
+    "Napisz, z czym potrzebujesz pomocy, strony WWW, automatyzacja, dane. Bezpłatna diagnoza, odpowiedź w 24h.",
   alternates: { canonical: "/kontakt" },
   openGraph: {
-    title: "Kontakt — Fluxlab",
+    title: "Kontakt | Fluxlab",
     description:
       "Napisz, z czym potrzebujesz pomocy. Bezpłatna diagnoza, odpowiedź w 24h.",
     locale: "pl_PL",

@@ -8,7 +8,7 @@ type Options = {
 };
 
 /**
- * Parallax — element przesuwa się wolniej niż scroll, daje wrażenie głębi.
+ * Parallax, element przesuwa się wolniej niż scroll, daje wrażenie głębi.
  * Ustawia transform translateY na podstawie pozycji scrolla.
  */
 export default function useParallax<T extends HTMLElement>({

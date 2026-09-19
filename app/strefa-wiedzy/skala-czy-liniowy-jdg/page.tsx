@@ -23,7 +23,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Automatyzacja leadów, CRM i raportowania dla firm B2B",
+        alt: "Fluxlab, Automatyzacja leadów, CRM i raportowania dla firm B2B",
       },
     ],
   },
@@ -63,7 +63,7 @@ export default function SkalaCzyLiniowyJdgArticle() {
         <Breadcrumbs
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
-            { label: "Skala czy liniowy — JDG" },
+            { label: "Skala czy liniowy, JDG" },
           ]}
         />
 
@@ -72,13 +72,13 @@ export default function SkalaCzyLiniowyJdgArticle() {
           <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
             <span className="section-label">Strefa wiedzy</span>
             <h1 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">
-              Skala czy liniowy — porównanie dla JDG w 2026
+              Skala czy liniowy, porównanie dla JDG w 2026
             </h1>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
               Skala podatkowa i podatek liniowy to dwie formy opodatkowania
               oparte na dochodzie. Obie pozwalają odliczać koszty, ale różnią
               się stawkami, kwotą wolną i zasadami składki zdrowotnej. Próg,
-              przy którym liniowy zaczyna wygrywać ze skalą, nie jest stały —
+              przy którym liniowy zaczyna wygrywać ze skalą, nie jest stały,
               zależy od składek i kosztów. Ten artykuł pomaga go znaleźć.
             </p>
           </div>
@@ -94,7 +94,7 @@ export default function SkalaCzyLiniowyJdgArticle() {
                   <div className="py-10 lg:py-12">
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        Skala podatkowa w 2026 — zasady
+                        Skala podatkowa w 2026, zasady
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Skala podatkowa to domyślna forma opodatkowania w
@@ -104,7 +104,7 @@ export default function SkalaCzyLiniowyJdgArticle() {
                       </p>
                       <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
                         <li>
-                          Kwota wolna od podatku: 30 000 zł — od pierwszych 30
+                          Kwota wolna od podatku: 30 000 zł, od pierwszych 30
                           000 zł dochodu nie płacisz podatku dochodowego
                         </li>
                         <li>
@@ -125,21 +125,21 @@ export default function SkalaCzyLiniowyJdgArticle() {
                         Kwota wolna 30 000 zł to istotna przewaga. Oznacza, że
                         pierwsze 30 000 zł dochodu jest efektywnie
                         nieopodatkowane. Przy dochodzie 120 000 zł efektywna
-                        stawka podatkowa wynosi ok. 8,8% — znacznie mniej niż
+                        stawka podatkowa wynosi ok. 8,8%, znacznie mniej niż
                         nominalne 12%.
                       </p>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Wadą jest wysoka i nieodliczalna składka zdrowotna — 9%
+                        Wadą jest wysoka i nieodliczalna składka zdrowotna, 9%
                         dochodu. Przy dochodzie 150 000 zł to 13 500 zł rocznie,
                         które nie pomniejszają podatku.
                       </p>
 
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 mt-12">
-                        Podatek liniowy w 2026 — zasady
+                        Podatek liniowy w 2026, zasady
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Podatek liniowy to stała stawka niezależna od wysokości
-                        dochodu. Nie ma progów, nie ma kwoty wolnej — za to jest
+                        dochodu. Nie ma progów, nie ma kwoty wolnej, za to jest
                         prostota i przewidywalność.
                       </p>
                       <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
@@ -355,7 +355,7 @@ export default function SkalaCzyLiniowyJdgArticle() {
                           Porównaj na swoich danych
                         </h2>
                         <p className="text-gray-600 dark:text-gray-400 mb-4">
-                          Wpisz swój dochód — kalkulator pokaże, czy skala czy
+                          Wpisz swój dochód, kalkulator pokaże, czy skala czy
                           liniowy jest korzystniejszy w Twojej sytuacji.
                         </p>
                         <Link
@@ -367,7 +367,7 @@ export default function SkalaCzyLiniowyJdgArticle() {
                       </div>
 
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 mt-12">
-                        Składka zdrowotna — dlaczego zmienia wynik
+                        Składka zdrowotna, dlaczego zmienia wynik
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Składka zdrowotna to element, który najczęściej zmienia
@@ -392,7 +392,7 @@ export default function SkalaCzyLiniowyJdgArticle() {
                         Na liniowym: 4,9%, częściowo odliczalna
                       </h3>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Na liniowym składka zdrowotna wynosi 4,9% dochodu —
+                        Na liniowym składka zdrowotna wynosi 4,9% dochodu,
                         niemal o połowę mniej. Dodatkowo można ją odliczyć od
                         podstawy opodatkowania do limitu 12 900 zł rocznie. To
                         podwójna korzyść: niższa składka i częściowy zwrot w
@@ -447,7 +447,7 @@ export default function SkalaCzyLiniowyJdgArticle() {
                       </p>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Jak to działa: łączny dochód obojga małżonków dzieli się
-                        na pół, a podatek liczy się od połowy — i mnoży przez
+                        na pół, a podatek liczy się od połowy, i mnoży przez
                         dwa. Efekt: jeśli jeden małżonek zarabia dużo (np.
                         powyżej progu 32%), a drugi mało lub wcale, wspólne
                         rozliczenie pozwala uniknąć wyższego progu.
@@ -511,7 +511,7 @@ export default function SkalaCzyLiniowyJdgArticle() {
                           Niższa składka zdrowotna (4,9% vs 9%) daje Ci realną
                           oszczędność
                         </li>
-                        <li>Cenisz przewidywalność — stałe 19% bez progów</li>
+                        <li>Cenisz przewidywalność, stałe 19% bez progów</li>
                         <li>Nie korzystasz z ulg dostępnych tylko na skali</li>
                       </ul>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
@@ -538,7 +538,7 @@ export default function SkalaCzyLiniowyJdgArticle() {
                       </p>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Najważniejsza rada: nie porównuj samych stawek
-                        podatkowych. Licz łączne obciążenie — podatek plus
+                        podatkowych. Licz łączne obciążenie, podatek plus
                         składka zdrowotna. I policz na swoich liczbach, bo
                         ogólne zasady dają tylko kierunek, nie precyzyjną
                         odpowiedź.
@@ -600,7 +600,7 @@ export default function SkalaCzyLiniowyJdgArticle() {
                           Potrzebujesz pomocy w wyborze formy?
                         </h2>
                         <p className="text-gray-600 dark:text-gray-400 mb-4">
-                          Napisz do mnie — pomogę policzyć i wybrać optymalną
+                          Napisz do mnie, pomogę policzyć i wybrać optymalną
                           formę opodatkowania dla Twojej JDG.
                         </p>
                         <Link
@@ -631,7 +631,7 @@ export default function SkalaCzyLiniowyJdgArticle() {
                                 href="/strefa-wiedzy/ryczalt-czy-liniowy"
                                 className="text-accent hover:underline"
                               >
-                                Ryczałt czy liniowy — co się bardziej opłaca w
+                                Ryczałt czy liniowy, co się bardziej opłaca w
                                 2026
                               </Link>
                             </li>

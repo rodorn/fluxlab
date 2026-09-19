@@ -27,7 +27,7 @@ const capabilities: Capability[] = [
     ),
     title: "AI w kodzie",
     description:
-      "Generowanie i refaktoring kodu z Claude / Copilot. Skracam czas budowy integracji, workflow i prototypów. Mam kontrolę nad jakością — AI nie idzie samopas.",
+      "Generowanie i refaktoring kodu z Claude / Copilot. Skracam czas budowy integracji, workflow i prototypów. Mam kontrolę nad jakością, AI nie idzie samopas.",
     example: "Workflow n8n / Make z 12 kroków zbudowany w 2h zamiast 2 dni.",
   },
   {
@@ -53,7 +53,7 @@ const capabilities: Capability[] = [
     description:
       "Klasyfikacja maili, generowanie follow-upów, podsumowania rozmów, ekstrakcja danych z luźnego tekstu. Modele typu Claude/GPT podłączone przez API do CRM albo workflow.",
     example:
-      "Lead pisze „mam interes” — AI klasyfikuje branżę, intencję i pilność, przypisuje handlowca.",
+      "Lead pisze „mam interes”, AI klasyfikuje branżę, intencję i pilność, przypisuje handlowca.",
   },
   {
     icon: (
@@ -75,7 +75,7 @@ const capabilities: Capability[] = [
     ),
     title: "AI w dźwięku",
     description:
-      "Whisper do transkrypcji rozmów handlowych i spotkań. Notatki, podsumowania, ekstrakcja decyzji — automatycznie do CRM albo dokumentu.",
+      "Whisper do transkrypcji rozmów handlowych i spotkań. Notatki, podsumowania, ekstrakcja decyzji, automatycznie do CRM albo dokumentu.",
     example:
       "Rozmowa 45 min → 2-zdaniowe podsumowanie i 3 akcje do CRM w 5 min.",
   },
@@ -162,7 +162,7 @@ export default function AICapabilities() {
         </div>
 
         <p className="text-sm text-gray-500 dark:text-gray-500 mt-12 max-w-2xl mx-auto text-center">
-          Pracuję z AI tam, gdzie ma sens. Nie sprzedaję AI — sprzedaję
+          Pracuję z AI tam, gdzie ma sens. Nie sprzedaję AI, sprzedaję
           mierzalne efekty. Jeśli proces jest prosty, prosty workflow wystarczy
           bez AI.
         </p>

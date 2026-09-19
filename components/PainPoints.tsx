@@ -33,7 +33,7 @@ export default function PainPoints() {
             Gdzie najczęściej uciekają leady i czas?
           </h2>
           <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
-            Cztery sytuacje, które kosztują firmy B2B najwięcej — i które zwykle
+            Cztery sytuacje, które kosztują firmy B2B najwięcej, i które zwykle
             nie wyglądają jak katastrofa, dopóki ktoś ich nie policzy.
           </p>
         </RevealOnScroll>

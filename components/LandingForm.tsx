@@ -197,7 +197,7 @@ export default function LandingForm({
           </ul>
           <p className="text-xs text-gray-500 dark:text-gray-500 leading-relaxed pt-3 border-t border-gray-100 dark:border-gray-700">
             Pełna dokumentacja techniczna i mapa AS-IS → TO-BE to zakres
-            płatnego audytu — diagnoza daje wstępny kierunek, nie pełny projekt.
+            płatnego audytu, diagnoza daje wstępny kierunek, nie pełny projekt.
           </p>
         </div>
       </div>

@@ -54,7 +54,7 @@ const cards = [
     label: "Metoda liczenia ROI",
     title: "Jak liczę zwrot z automatyzacji",
     description:
-      "Porównuję czas ręcznej pracy, liczbę powtórzeń, koszt pracy, liczbę błędów i wartość opóźnionych lub zgubionych leadów. Bez wymyślnych modeli — proste mnożenie i konkretne liczby.",
+      "Porównuję czas ręcznej pracy, liczbę powtórzeń, koszt pracy, liczbę błędów i wartość opóźnionych lub zgubionych leadów. Bez wymyślnych modeli, proste mnożenie i konkretne liczby.",
     href: "/kalkulator-leadow",
     cta: "Policz koszt swojego procesu",
     icon: (
@@ -97,7 +97,7 @@ export default function Proof() {
           </h2>
           <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
             Trzy sposoby, żeby sprawdzić, czy moje podejście pasuje do Twojej
-            firmy — bez żadnej rozmowy sprzedażowej.
+            firmy, bez żadnej rozmowy sprzedażowej.
           </p>
         </RevealOnScroll>
 

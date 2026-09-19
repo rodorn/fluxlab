@@ -3,9 +3,9 @@ import CountUp from "@/components/CountUp";
 import RevealOnScroll from "@/components/RevealOnScroll";
 
 const points = [
-  "Główny segment: firmy B2B z dużą liczbą leadów — leasing, finansowanie, brokerzy, dealerzy, usługi profesjonalne",
+  "Główny segment: firmy B2B z dużą liczbą leadów, leasing, finansowanie, brokerzy, dealerzy, usługi profesjonalne",
   "Buduję na narzędziach, które Twój zespół może samodzielnie utrzymać po zakończeniu projektu",
-  "Nie wdrażam zbędnych technologii — wybieram to, co faktycznie rozwiązuje problem",
+  "Nie wdrażam zbędnych technologii, wybieram to, co faktycznie rozwiązuje problem",
   "Stała cena za zakres, tygodniowy kontakt, pełna transparentność kosztów",
 ];
 
@@ -103,7 +103,7 @@ export default function About() {
               <p className="text-gray-500 dark:text-gray-400 text-lg leading-relaxed mb-6">
                 Fluxlab to specjalistyczne studio automatyzacji prowadzone przez
                 Pawła Iwanka. W większości projektów pracujesz bezpośrednio ze
-                mną — bez account managerów i korporacyjnej warstwy pośredniej.
+                mną, bez account managerów i korporacyjnej warstwy pośredniej.
               </p>
             </RevealOnScroll>
             <RevealOnScroll delay={2}>
@@ -115,8 +115,8 @@ export default function About() {
             </RevealOnScroll>
             <RevealOnScroll delay={2}>
               <p className="text-gray-500 dark:text-gray-400 text-lg leading-relaxed mb-10">
-                Automatyzacja procesów B2B — leady, CRM, raportowanie,
-                integracje API — to jedyna rzecz, którą tu robię. Nie jest to
+                Automatyzacja procesów B2B, leady, CRM, raportowanie,
+                integracje API, to jedyna rzecz, którą tu robię. Nie jest to
                 agencja z piętnastoma usługami w ofercie. Wąsko, ale dobrze.
               </p>
             </RevealOnScroll>

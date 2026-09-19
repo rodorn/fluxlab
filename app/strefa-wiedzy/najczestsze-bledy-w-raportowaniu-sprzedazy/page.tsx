@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Automatyzacja leadów, CRM i raportowania dla firm B2B",
+        alt: "Fluxlab, Automatyzacja leadów, CRM i raportowania dla firm B2B",
       },
     ],
   },
@@ -146,7 +146,7 @@ export default function BledyRaportowanieArticle() {
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
                         Najpierw ustal definicje. Potem uporządkuj CRM i źródła
-                        danych — pomaga w tym{" "}
+                        danych, pomaga w tym{" "}
                         <Link
                           href="/automatyzacja-crm"
                           className="text-accent hover:underline"

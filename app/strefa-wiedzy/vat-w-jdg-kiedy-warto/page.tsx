@@ -7,11 +7,11 @@ import PrevNextArticle from "@/components/PrevNextArticle";
 import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
-  title: "VAT w JDG — kiedy warto być vatowcem w 2026? | Fluxlab",
+  title: "VAT w JDG, kiedy warto być vatowcem w 2026? | Fluxlab",
   description:
     "Kiedy warto zarejestrować się jako czynny VAT w JDG? Zwolnienie podmiotowe, próg 200 000 zł, wpływ na cashflow, koszty i współpracę z firmami.",
   openGraph: {
-    title: "VAT w JDG — kiedy warto być vatowcem w 2026? | Fluxlab",
+    title: "VAT w JDG, kiedy warto być vatowcem w 2026? | Fluxlab",
     description:
       "Kiedy warto zarejestrować się jako czynny VAT w JDG? Zwolnienie podmiotowe, próg 200 000 zł, wpływ na cashflow, koszty i współpracę z firmami.",
     locale: "pl_PL",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Automatyzacja leadów, CRM i raportowania dla firm B2B",
+        alt: "Fluxlab, Automatyzacja leadów, CRM i raportowania dla firm B2B",
       },
     ],
   },
@@ -38,7 +38,7 @@ export default function VatWJdgArticle() {
         <Breadcrumbs
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
-            { label: "VAT w JDG — kiedy warto" },
+            { label: "VAT w JDG, kiedy warto" },
           ]}
         />
 
@@ -47,10 +47,10 @@ export default function VatWJdgArticle() {
           <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
             <span className="section-label">Strefa wiedzy</span>
             <h1 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">
-              VAT w JDG — kiedy warto być vatowcem
+              VAT w JDG, kiedy warto być vatowcem
             </h1>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-              VAT to nie tylko dodatkowy podatek — to też narzędzie, które
+              VAT to nie tylko dodatkowy podatek, to też narzędzie, które
               pozwala odliczać podatek naliczony od zakupów. Dla jednych firm
               rejestracja jako czynny VAT to obowiązek, dla innych świadomy
               wybór. Kluczowe pytanie brzmi: czy Twoi klienci są firmami (B2B)
@@ -70,7 +70,7 @@ export default function VatWJdgArticle() {
                   <div className="py-10 lg:py-12">
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        Zwolnienie podmiotowe — co to znaczy
+                        Zwolnienie podmiotowe, co to znaczy
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Jeśli Twój roczny obrót (sprzedaż) nie przekracza 200
@@ -90,7 +90,7 @@ export default function VatWJdgArticle() {
                         liczby pozostałych dni.
                       </p>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Zwolnienie podmiotowe to opcja domyślna — nie trzeba
+                        Zwolnienie podmiotowe to opcja domyślna, nie trzeba
                         składać żadnego wniosku. Dopiero rejestracja jako czynny
                         VAT wymaga złożenia formularza VAT-R.
                       </p>
@@ -105,12 +105,12 @@ export default function VatWJdgArticle() {
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         W niektórych sytuacjach rejestracja jako czynny VAT jest
-                        obowiązkowa — niezależnie od wysokości obrotu:
+                        obowiązkowa, niezależnie od wysokości obrotu:
                       </p>
                       <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
                         <li>
                           Przekroczenie progu 200 000 zł obrotu w roku
-                          kalendarzowym — obowiązek rejestracji od momentu
+                          kalendarzowym, obowiązek rejestracji od momentu
                           przekroczenia
                         </li>
                         <li>
@@ -161,7 +161,7 @@ export default function VatWJdgArticle() {
                       </h3>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Jeśli Twoi klienci to firmy (B2B), VAT na fakturze nie
-                        jest dla nich kosztem — odliczają go. Dla klienta B2B
+                        jest dla nich kosztem, odliczają go. Dla klienta B2B
                         liczy się kwota netto. Brak VAT na Twojej fakturze nie
                         daje im żadnej korzyści, a Tobie odbiera możliwość
                         odliczania VAT od własnych zakupów.
@@ -216,7 +216,7 @@ export default function VatWJdgArticle() {
                         cena brutto (końcowa). Jeśli jesteś vatowcem, Twoja
                         usługa za 1 000 zł netto kosztuje klienta 1 230 zł
                         brutto. Jeśli nie jesteś vatowcem, kosztuje 1 000 zł.
-                        Przy tej samej cenie netto klient płaci mniej — albo Ty
+                        Przy tej samej cenie netto klient płaci mniej, albo Ty
                         musisz obniżyć cenę netto, żeby być konkurencyjny.
                       </p>
 
@@ -225,7 +225,7 @@ export default function VatWJdgArticle() {
                       </h3>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Jeśli Twoje koszty to głównie wynagrodzenia, składki ZUS
-                        lub usługi zwolnione z VAT — nie masz dużo VAT do
+                        lub usługi zwolnione z VAT, nie masz dużo VAT do
                         odliczenia. W takiej sytuacji bycie vatowcem generuje
                         tylko dodatkową administrację bez realnych korzyści.
                       </p>
@@ -268,7 +268,7 @@ export default function VatWJdgArticle() {
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Jednym z najczęściej pomijanych aspektów VAT jest wpływ
                         na przepływy pieniężne. Jako czynny vatowiec pobierasz
-                        VAT od klientów, ale ten VAT nie jest Twoim przychodem —
+                        VAT od klientów, ale ten VAT nie jest Twoim przychodem,
                         musisz go odprowadzić do urzędu skarbowego.
                       </p>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
@@ -283,23 +283,23 @@ export default function VatWJdgArticle() {
                       </h3>
                       <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
                         <li>
-                          Rozliczenie miesięczne — VAT należny minus naliczony
+                          Rozliczenie miesięczne, VAT należny minus naliczony
                           płacisz do 25. dnia następnego miesiąca
                         </li>
                         <li>
-                          Rozliczenie kwartalne — możliwe dla małych podatników
+                          Rozliczenie kwartalne, możliwe dla małych podatników
                           (obrót do 2 mln EUR), VAT płacisz do 25. dnia miesiąca
                           po kwartale
                         </li>
                         <li>
-                          JPK_V7 — część ewidencyjna składana zawsze
+                          JPK_V7, część ewidencyjna składana zawsze
                           miesięcznie, nawet przy kwartalnym rozliczeniu
                         </li>
                       </ul>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Problem pojawia się, gdy klient płaci z opóźnieniem. Ty
                         wystawiłeś fakturę, VAT należny powstał, musisz go
-                        odprowadzić — a pieniędzy jeszcze nie masz. To klasyczny
+                        odprowadzić, a pieniędzy jeszcze nie masz. To klasyczny
                         problem cashflow w firmach z długimi terminami
                         płatności.
                       </p>
@@ -319,14 +319,14 @@ export default function VatWJdgArticle() {
                         każdą formą:
                       </p>
                       <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
-                        <li>Ryczałt + czynny VAT — tak, to możliwe i częste</li>
+                        <li>Ryczałt + czynny VAT, tak, to możliwe i częste</li>
                         <li>
-                          Podatek liniowy + czynny VAT — standardowa kombinacja
+                          Podatek liniowy + czynny VAT, standardowa kombinacja
                           dla B2B
                         </li>
-                        <li>Skala podatkowa + czynny VAT — również możliwe</li>
+                        <li>Skala podatkowa + czynny VAT, również możliwe</li>
                         <li>
-                          Każda forma PIT + zwolnienie z VAT — tak samo
+                          Każda forma PIT + zwolnienie z VAT, tak samo
                           dozwolone
                         </li>
                       </ul>
@@ -394,7 +394,7 @@ export default function VatWJdgArticle() {
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Przykład: kupujesz samochód za 100 000 zł netto + 23 000
                         zł VAT. Przy użytku mieszanym odliczasz 11 500 zł VAT.
-                        Przy wyłącznym użytku firmowym — 23 000 zł. Różnica jest
+                        Przy wyłącznym użytku firmowym, 23 000 zł. Różnica jest
                         znacząca, ale wymogi dokumentacyjne przy 100% odliczeniu
                         są rygorystyczne.
                       </p>
@@ -417,12 +417,12 @@ export default function VatWJdgArticle() {
                         kto jest Twoim klientem i ile wydajesz na koszty z VAT.
                       </p>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Jeśli pracujesz B2B i masz koszty z VAT — rejestracja
+                        Jeśli pracujesz B2B i masz koszty z VAT, rejestracja
                         jako czynny vatowiec prawie zawsze się opłaca. Odliczasz
                         VAT od zakupów, a klienci i tak patrzą na kwotę netto.
                       </p>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Jeśli pracujesz B2C i masz niskie koszty — zwolnienie
+                        Jeśli pracujesz B2C i masz niskie koszty, zwolnienie
                         podmiotowe jest prostsze, tańsze administracyjnie i daje
                         Ci przewagę cenową (niższa cena brutto dla klienta
                         końcowego).
@@ -493,7 +493,7 @@ export default function VatWJdgArticle() {
                             Tak. Forma opodatkowania PIT (ryczałt, liniowy,
                             skala) i status VAT to dwie osobne decyzje.
                             Ryczałtowiec może być czynnym vatowcem i odliczać
-                            VAT od zakupów — mimo że nie odlicza kosztów od
+                            VAT od zakupów, mimo że nie odlicza kosztów od
                             przychodu w PIT.
                           </p>
                         </details>
@@ -542,7 +542,7 @@ export default function VatWJdgArticle() {
                             </span>
                           </summary>
                           <p className="px-6 pb-6 text-gray-600 dark:text-gray-400">
-                            JPK_V7 składa się co miesiąc — nawet jeśli
+                            JPK_V7 składa się co miesiąc, nawet jeśli
                             rozliczasz VAT kwartalnie. Część ewidencyjna
                             (rejestry sprzedaży i zakupów) jest zawsze
                             miesięczna. Część deklaracyjna może być kwartalna
@@ -598,7 +598,7 @@ export default function VatWJdgArticle() {
                                 href="/strefa-wiedzy/ryczalt-czy-liniowy"
                                 className="text-accent hover:underline"
                               >
-                                Ryczałt czy liniowy — co wybrać
+                                Ryczałt czy liniowy, co wybrać
                               </Link>
                             </li>
                             <li>
@@ -614,7 +614,7 @@ export default function VatWJdgArticle() {
                                 href="/strefa-wiedzy/maly-zus-plus-kiedy-sie-oplaca"
                                 className="text-accent hover:underline"
                               >
-                                Mały ZUS Plus — kiedy się opłaca
+                                Mały ZUS Plus, kiedy się opłaca
                               </Link>
                             </li>
                           </ul>
@@ -682,7 +682,7 @@ export default function VatWJdgArticle() {
                 name: "Jak często trzeba składać JPK_V7?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "JPK_V7 składa się co miesiąc — nawet jeśli rozliczasz VAT kwartalnie. Część ewidencyjna jest zawsze miesięczna. Część deklaracyjna może być kwartalna dla małych podatników.",
+                  text: "JPK_V7 składa się co miesiąc, nawet jeśli rozliczasz VAT kwartalnie. Część ewidencyjna jest zawsze miesięczna. Część deklaracyjna może być kwartalna dla małych podatników.",
                 },
               },
             ],

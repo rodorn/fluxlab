@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — bezpieczeństwo poczty firmowej",
+        alt: "Fluxlab, bezpieczeństwo poczty firmowej",
       },
     ],
   },
@@ -126,7 +126,7 @@ export default function PodszywanieEmailArticle() {
         </p>
 
         <h3 style={{ fontWeight: 700, marginTop: "1.5rem" }}>
-          SPF — kto ma prawo wysyłać w Twoim imieniu
+          SPF, kto ma prawo wysyłać w Twoim imieniu
         </h3>
         <p style={{ color: "var(--article-text)", lineHeight: 1.7 }}>
           SPF to lista serwerów uprawnionych do wysyłania poczty z Twojej
@@ -135,7 +135,7 @@ export default function PodszywanieEmailArticle() {
         </p>
 
         <h3 style={{ fontWeight: 700, marginTop: "1.5rem" }}>
-          DKIM — podpis, którego nie da się podrobić
+          DKIM, podpis, którego nie da się podrobić
         </h3>
         <p style={{ color: "var(--article-text)", lineHeight: 1.7 }}>
           DKIM to kryptograficzny podpis dokładany do każdej wiadomości.
@@ -144,7 +144,7 @@ export default function PodszywanieEmailArticle() {
         </p>
 
         <h3 style={{ fontWeight: 700, marginTop: "1.5rem" }}>
-          DMARC — reguła, co zrobić z podejrzaną pocztą
+          DMARC, reguła, co zrobić z podejrzaną pocztą
         </h3>
         <p style={{ color: "var(--article-text)", lineHeight: 1.7 }}>
           DMARC spina SPF i DKIM i mówi serwerom odbiorców, co zrobić z

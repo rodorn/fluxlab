@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Automatyzacja leadów, CRM i raportowania dla firm B2B",
+        alt: "Fluxlab, Automatyzacja leadów, CRM i raportowania dla firm B2B",
       },
     ],
   },
@@ -31,9 +31,9 @@ export const metadata: Metadata = {
 };
 
 const useCases = [
-  "CRM z formularzami i źródłami leadów — nowe dane trafiają do CRM bez opóźnień.",
-  "Systemy operacyjne i finansowe — statusy, klienci i zamówienia synchronizowane między sobą.",
-  "Raportowanie i bazy danych — jeden uporządkowany przepływ danych do raportów i analiz.",
+  "CRM z formularzami i źródłami leadów, nowe dane trafiają do CRM bez opóźnień.",
+  "Systemy operacyjne i finansowe, statusy, klienci i zamówienia synchronizowane między sobą.",
+  "Raportowanie i bazy danych, jeden uporządkowany przepływ danych do raportów i analiz.",
 ];
 
 const faq = [
@@ -61,7 +61,7 @@ export default function IntegracjeApi() {
       <main>
         <Breadcrumbs items={[{ label: "Integracje API" }]} />
 
-        {/* Hero — kompaktowy */}
+        {/* Hero, kompaktowy */}
         <section className="relative overflow-hidden pt-24 pb-12">
           <div className="blob blob-cyan absolute -top-32 -right-20 h-96 w-96" />
           <div className="container-wide max-w-3xl mx-auto text-center">
@@ -71,7 +71,7 @@ export default function IntegracjeApi() {
             </h1>
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
               Łączę systemy ze sprzedaży, operacji i raportowania tak, żeby dane
-              trafiały tam, gdzie trzeba — bez ręcznego przepisywania.
+              trafiały tam, gdzie trzeba, bez ręcznego przepisywania.
             </p>
             <div>
               <a href="#sekcje" className="btn-primary">
@@ -81,7 +81,7 @@ export default function IntegracjeApi() {
           </div>
         </section>
 
-        {/* Treść w zakładkach — nic nie wycięte, podzielone */}
+        {/* Treść w zakładkach, nic nie wycięte, podzielone */}
         <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
           <Tabs
             ariaLabel="Sekcje usługi integracji API"

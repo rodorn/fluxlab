@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Jak skrócić czas reakcji na leada do kilku minut | Fluxlab",
     description:
-      "Speed-to-lead w B2B. Konkretne wzorce automatyzacji, które skracają czas reakcji z godzin do minut — bez dokładania pracy handlowcom.",
+      "Speed-to-lead w B2B. Konkretne wzorce automatyzacji, które skracają czas reakcji z godzin do minut, bez dokładania pracy handlowcom.",
     locale: "pl_PL",
     type: "article",
     images: [
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Jak skrócić czas reakcji na leada",
+        alt: "Fluxlab, Jak skrócić czas reakcji na leada",
       },
     ],
   },
@@ -35,7 +35,7 @@ const problemPoints = [
   "Powiadomienia o nowych leadach lecą na maila i giną wśród newsletterów.",
   "Handlowiec dowiaduje się o leadzie przez Slacka od managera, a nie z CRM-a.",
   "Pierwszy kontakt to wciąż „odpiszę na maila”, a nie telefon.",
-  "Brak SLA na reakcję — nikt nie wie, ile to powinno trwać.",
+  "Brak SLA na reakcję, nikt nie wie, ile to powinno trwać.",
   "Speed-to-lead nie jest mierzony, więc nikt nie wie, czy się poprawia.",
 ];
 
@@ -44,19 +44,19 @@ const symptoms = [
   "Handlowcy mówią „ja oddzwonię, jak będę miał chwilę”.",
   "W weekend i po 17:00 leady leżą bez reakcji do następnego dnia roboczego.",
   "Klienci często sami dzwonią drugi raz, bo „nikt nie odpisał”.",
-  "Nikt nie wie, ile leadów dziś wpadło — dane są w skrzynce, w arkuszu, w CRM.",
-  "Konwersja z leada na rozmowę spada z miesiąca na miesiąc — nie wiadomo dlaczego.",
+  "Nikt nie wie, ile leadów dziś wpadło, dane są w skrzynce, w arkuszu, w CRM.",
+  "Konwersja z leada na rozmowę spada z miesiąca na miesiąc, nie wiadomo dlaczego.",
 ];
 
 const beforeSteps = [
   "Lead wypełnia formularz na stronie.",
   "Mail z formularza ląduje w skrzynce sprzedaż@.",
-  "Skrzynkę sprawdza ktoś rano — albo dopiero po obiedzie.",
+  "Skrzynkę sprawdza ktoś rano, albo dopiero po obiedzie.",
   "Osoba ze skrzynki przekleja dane do CRM (jeśli ma czas).",
   "Manager albo asystent decyduje, kto bierze leada.",
   "Handlowiec dostaje informację mailem, Slackiem albo na zawołanie.",
   "Handlowiec dzwoni, gdy skończy aktualną rozmowę. Albo zapomina.",
-  "Klient w międzyczasie wysłał formularze do dwóch konkurentów. Pierwszy oddzwonił — wygrał.",
+  "Klient w międzyczasie wysłał formularze do dwóch konkurentów. Pierwszy oddzwonił, wygrał.",
 ];
 
 const afterSteps = [
@@ -66,7 +66,7 @@ const afterSteps = [
   "Handlowiec dostaje push na telefon + powiadomienie na Slacku z linkiem do deala.",
   "Klient automatycznie dostaje SMS / mail „dzwonimy do 5 minut, w międzyczasie sprawdź X”.",
   "CRM tworzy zadanie z deadline'em (np. 5 min) i SLA-licznikiem.",
-  "Brak reakcji w SLA — eskalacja do drugiej osoby albo do managera.",
+  "Brak reakcji w SLA, eskalacja do drugiej osoby albo do managera.",
   "Raport: średni czas pierwszego kontaktu, % leadów obsłużonych w SLA, per handlowiec.",
 ];
 
@@ -74,7 +74,7 @@ const workflowSteps = [
   {
     n: "1",
     title: "Lead wpada",
-    desc: "Formularz, reklama, e-mail, czat — wszystkie źródła trafiają do jednej warstwy automatyzacji w sekundę.",
+    desc: "Formularz, reklama, e-mail, czat, wszystkie źródła trafiają do jednej warstwy automatyzacji w sekundę.",
     accent: false,
   },
   {
@@ -92,7 +92,7 @@ const workflowSteps = [
   {
     n: "4",
     title: "Routing do handlowca",
-    desc: "Reguły: region, produkt, waga pipeline'u, dostępność. Lead trafia do właściwej osoby — nie do wspólnej puli.",
+    desc: "Reguły: region, produkt, waga pipeline'u, dostępność. Lead trafia do właściwej osoby, nie do wspólnej puli.",
     accent: false,
   },
   {
@@ -104,7 +104,7 @@ const workflowSteps = [
   {
     n: "6",
     title: "Eskalacja przy braku reakcji",
-    desc: "Brak akcji w 5 minut — lead trafia do drugiej osoby. Po kolejnych 5 minutach — do managera. Lead nie zostaje sam.",
+    desc: "Brak akcji w 5 minut, lead trafia do drugiej osoby. Po kolejnych 5 minutach, do managera. Lead nie zostaje sam.",
     accent: false,
   },
   {
@@ -118,15 +118,15 @@ const workflowSteps = [
 const antipatterns = [
   {
     title: "Wysłanie powiadomienia na maila",
-    desc: "Mail to najgorszy kanał notyfikacji o nowym leadzie. Ginie wśród newsletterów, fakturek i thread'ów. Push, SMS, Slack lub Teams działają w 5 minut. E-mail — w 5 godzin.",
+    desc: "Mail to najgorszy kanał notyfikacji o nowym leadzie. Ginie wśród newsletterów, fakturek i thread'ów. Push, SMS, Slack lub Teams działają w 5 minut. E-mail, w 5 godzin.",
   },
   {
     title: "Brak SLA na reakcję",
-    desc: "Bez deadline'u handlowiec oddzwoni „jak będzie miał chwilę”. SLA (5/15/30 minut) musi być zdefiniowane, mierzone i widoczne — najlepiej w postaci licznika tykającego przy deal'u.",
+    desc: "Bez deadline'u handlowiec oddzwoni „jak będzie miał chwilę”. SLA (5/15/30 minut) musi być zdefiniowane, mierzone i widoczne, najlepiej w postaci licznika tykającego przy deal'u.",
   },
   {
     title: "Speed-to-lead bez routingu",
-    desc: "Wszystko leci jednocześnie do całego zespołu. Pierwszy chętny bierze. W praktyce nikt nie czuje się odpowiedzialny — bo „pewnie ktoś inny już tam dzwoni”.",
+    desc: "Wszystko leci jednocześnie do całego zespołu. Pierwszy chętny bierze. W praktyce nikt nie czuje się odpowiedzialny, bo „pewnie ktoś inny już tam dzwoni”.",
   },
   {
     title: "Auto-odpowiedź zamiast kontaktu",
@@ -134,7 +134,7 @@ const antipatterns = [
   },
   {
     title: "Brak fallbacku po godzinach",
-    desc: "Lead wpada o 21:00 — nikt nie pracuje. Bez fallbacku (kolejka na rano + komunikat „odzwoniamy do 9:30”) speed-to-lead poza godzinami pracy zawsze będzie zły.",
+    desc: "Lead wpada o 21:00, nikt nie pracuje. Bez fallbacku (kolejka na rano + komunikat „odzwoniamy do 9:30”) speed-to-lead poza godzinami pracy zawsze będzie zły.",
   },
 ];
 
@@ -142,32 +142,32 @@ const faq = [
   {
     question: "Jaki czas reakcji na leada jest realistyczny w B2B?",
     answer:
-      "5 minut to standard w branżach z wysoką konkurencją (leasing, nieruchomości, usługi finansowe). 15–30 minut to przyzwoity wynik dla większości firm B2B w godzinach pracy. Powyżej godziny szansa na dodzwonienie się i jakościową rozmowę spada bardzo mocno — różne badania B2B konsekwentnie pokazują wykładniczy spadek po pierwszych minutach. Konkretną wartość referencyjną dobieramy w diagnozie pod Twoją branżę i typ leada.",
+      "5 minut to standard w branżach z wysoką konkurencją (leasing, nieruchomości, usługi finansowe). 15–30 minut to przyzwoity wynik dla większości firm B2B w godzinach pracy. Powyżej godziny szansa na dodzwonienie się i jakościową rozmowę spada bardzo mocno, różne badania B2B konsekwentnie pokazują wykładniczy spadek po pierwszych minutach. Konkretną wartość referencyjną dobieramy w diagnozie pod Twoją branżę i typ leada.",
   },
   {
     question: "Czy auto-odpowiedź zastępuje kontakt handlowca?",
     answer:
-      "Nie. Auto-odpowiedź („odezwiemy się do 5 minut”) działa jako most między momentem zgłoszenia a realnym kontaktem. Pokazuje, że firma żyje, i daje klientowi powód, żeby nie wysyłać tego samego do trzech konkurentów. Ale rozmowa z handlowcem to wciąż obowiązek — i właśnie tę rozmowę chcemy uruchomić w 5 minut, nie odsunąć w czasie.",
+      "Nie. Auto-odpowiedź („odezwiemy się do 5 minut”) działa jako most między momentem zgłoszenia a realnym kontaktem. Pokazuje, że firma żyje, i daje klientowi powód, żeby nie wysyłać tego samego do trzech konkurentów. Ale rozmowa z handlowcem to wciąż obowiązek, i właśnie tę rozmowę chcemy uruchomić w 5 minut, nie odsunąć w czasie.",
   },
   {
     question: "Co zrobić z leadami wpadającymi po godzinach pracy?",
     answer:
-      "Trzy mechanizmy razem: (1) auto-odpowiedź z konkretnym czasem oddzwonienia („dzwonimy jutro do 9:30”), (2) automatyczne dodanie zadania na początek następnego dnia z priorytetem, (3) powiadomienie do handlowca jeszcze w godzinach pracy, jeśli ma chętność. W branżach kosztownych (np. leasing) warto też mieć dyżur weekendowy z podwyższoną stawką — koszt zwraca się przy jednym wygranym dealu.",
+      "Trzy mechanizmy razem: (1) auto-odpowiedź z konkretnym czasem oddzwonienia („dzwonimy jutro do 9:30”), (2) automatyczne dodanie zadania na początek następnego dnia z priorytetem, (3) powiadomienie do handlowca jeszcze w godzinach pracy, jeśli ma chętność. W branżach kosztownych (np. leasing) warto też mieć dyżur weekendowy z podwyższoną stawką, koszt zwraca się przy jednym wygranym dealu.",
   },
   {
     question: "Czy szybsza reakcja realnie przekłada się na sprzedaż?",
     answer:
-      "Tak — i to jest jeden z najlepiej zbadanych wskaźników w sprzedaży B2B. Skrócenie reakcji z godziny do kilku minut wyraźnie zwiększa szansę na realną rozmowę: klient w trakcie zapytania jest „gorący”, po godzinie ma już inne sprawy, a po dniu zwykle rozmawia z konkurencją. Skala tej różnicy zależy od branży i wartości leada — w diagnozie weryfikuję, jaki przedział jest realistyczny dla Twojego procesu.",
+      "Tak, i to jest jeden z najlepiej zbadanych wskaźników w sprzedaży B2B. Skrócenie reakcji z godziny do kilku minut wyraźnie zwiększa szansę na realną rozmowę: klient w trakcie zapytania jest „gorący”, po godzinie ma już inne sprawy, a po dniu zwykle rozmawia z konkurencją. Skala tej różnicy zależy od branży i wartości leada, w diagnozie weryfikuję, jaki przedział jest realistyczny dla Twojego procesu.",
   },
   {
     question: "Jak mierzyć speed-to-lead w praktyce?",
     answer:
-      "Trzy wskaźniki minimum: (1) średni czas od wpadnięcia leada do pierwszego wychodzącego kontaktu (call / SMS), (2) % leadów obsłużonych w zdefiniowanym SLA (np. 5 min w godzinach pracy), (3) rozkład czasu reakcji w ciągu doby — często okazuje się, że problem jest tylko w określonych godzinach. Bez tych wskaźników optymalizacja procesu opiera się na intuicji.",
+      "Trzy wskaźniki minimum: (1) średni czas od wpadnięcia leada do pierwszego wychodzącego kontaktu (call / SMS), (2) % leadów obsłużonych w zdefiniowanym SLA (np. 5 min w godzinach pracy), (3) rozkład czasu reakcji w ciągu doby, często okazuje się, że problem jest tylko w określonych godzinach. Bez tych wskaźników optymalizacja procesu opiera się na intuicji.",
   },
   {
     question: "Czy AI / czatbot to dobre rozwiązanie speed-to-lead?",
     answer:
-      "Czatbot ma sens jako warstwa kwalifikacji (zbieranie podstawowych danych, odsiewanie spamu, wstępne pytania) — ale nie jako zastępstwo handlowca. W B2B, zwłaszcza przy większych dealach, klient i tak chce rozmawiać z człowiekiem. AI/czatbot powinien skracać drogę do tej rozmowy, nie ją zastępować.",
+      "Czatbot ma sens jako warstwa kwalifikacji (zbieranie podstawowych danych, odsiewanie spamu, wstępne pytania), ale nie jako zastępstwo handlowca. W B2B, zwłaszcza przy większych dealach, klient i tak chce rozmawiać z człowiekiem. AI/czatbot powinien skracać drogę do tej rozmowy, nie ją zastępować.",
   },
 ];
 
@@ -191,7 +191,7 @@ export default function CzasReakcjiNaLeada() {
       <main className="pt-16">
         <Breadcrumbs items={[{ label: "Czas reakcji na leada" }]} />
 
-        {/* Hero — kompaktowy */}
+        {/* Hero, kompaktowy */}
         <section className="pt-16 pb-6 bg-gradient-to-b from-accent/10 to-transparent border-b border-gray-100 dark:border-gray-800">
           <div className="container-wide">
             <div className="max-w-3xl mx-auto text-center">
@@ -227,7 +227,7 @@ export default function CzasReakcjiNaLeada() {
           </div>
         </section>
 
-        {/* Treść w zakładkach — nic nie wycięte, podzielone */}
+        {/* Treść w zakładkach, nic nie wycięte, podzielone */}
         <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
           <Tabs
             ariaLabel="Sekcje strony o czasie reakcji na leada"
@@ -244,13 +244,13 @@ export default function CzasReakcjiNaLeada() {
                             Problem biznesowy
                           </span>
                           <h2 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
-                            Speed-to-lead to nie luksus — to przewaga, której
+                            Speed-to-lead to nie luksus, to przewaga, której
                             nie widać w tabelce
                           </h2>
                           <div className="text-gray-600 dark:text-gray-400 leading-relaxed space-y-4 mb-8">
                             <p>
                               W większości firm B2B czas reakcji na leada jest
-                              mierzony w godzinach. W najlepszych — w minutach.
+                              mierzony w godzinach. W najlepszych, w minutach.
                               Różnica między tymi dwoma światami to nie jakość
                               handlowców i nie wysokość budżetu marketingowego.
                               To architektura tego, co dzieje się w pierwszych
@@ -268,7 +268,7 @@ export default function CzasReakcjiNaLeada() {
                               handlowcy pracowali szybciej. Polega na tym, żeby
                               informacja o nowym leadzie trafiała do właściwej
                               osoby, na właściwym kanale, z właściwym
-                              deadline'em — automatycznie.
+                              deadline'em, automatycznie.
                             </p>
                           </div>
                           <ul className="space-y-3">
@@ -298,7 +298,7 @@ export default function CzasReakcjiNaLeada() {
                           </h2>
                           <p className="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
                             Te zachowania są w 90% firm B2B i wszyscy je
-                            akceptują jako normalność. To nie jest normalność —
+                            akceptują jako normalność. To nie jest normalność,
                             to zaakceptowana strata.
                           </p>
                           <ul className="space-y-3">
@@ -350,14 +350,14 @@ export default function CzasReakcjiNaLeada() {
                         <div className="max-w-3xl mx-auto">
                           <span className="section-label">Koszt problemu</span>
                           <h2 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
-                            Ile kosztuje wolna reakcja — w liczbach
+                            Ile kosztuje wolna reakcja, w liczbach
                           </h2>
                           <div className="text-gray-600 dark:text-gray-400 leading-relaxed space-y-4 mb-8">
                             <p>
                               Załóżmy realistyczny scenariusz: firma B2B z 200
                               leadami miesięcznie, średnia wartość deala 8 000
                               zł, konwersja z leada na klienta przy reakcji 5
-                              min — 12%, przy reakcji 4 h — 4%.
+                              min, 12%, przy reakcji 4 h, 4%.
                             </p>
                           </div>
                           <div className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-6 lg:p-8 mb-6 space-y-3 font-mono text-sm">
@@ -385,7 +385,7 @@ export default function CzasReakcjiNaLeada() {
                               <span className="text-accent font-semibold">
                                 Różnica:
                               </span>{" "}
-                              <strong>1 536 000 zł rocznie</strong> — wyłącznie
+                              <strong>1 536 000 zł rocznie</strong>, wyłącznie
                               z powodu czasu reakcji
                             </p>
                             <p className="text-gray-700 dark:text-gray-300 pt-3 border-t border-gray-100 dark:border-gray-700">
@@ -404,12 +404,12 @@ export default function CzasReakcjiNaLeada() {
                             </p>
                           </div>
                           <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                            Liczby zależą od branży i wartości deala — w
+                            Liczby zależą od branży i wartości deala, w
                             leasingu czy ubezpieczeniach skala bywa większa, w
                             niskomarżowym e-commerce mniejsza. Ale kierunek jest
                             zawsze ten sam:{" "}
                             <strong>
-                              różnica między 5 min a 4 h to nie kosmetyka — to
+                              różnica między 5 min a 4 h to nie kosmetyka, to
                               zwykle kilkadziesiąt procent rocznego przychodu z
                               leadów.
                             </strong>
@@ -473,7 +473,7 @@ export default function CzasReakcjiNaLeada() {
                             <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
                               Każdy z tych kroków wykonuje się w pierwszych 30
                               sekundach od wpadnięcia leada. Handlowiec ma
-                              realnie 5 minut na rozmowę — system robi resztę.
+                              realnie 5 minut na rozmowę, system robi resztę.
                             </p>
                           </div>
                           <ol className="relative space-y-3 lg:space-y-4">
@@ -561,7 +561,7 @@ export default function CzasReakcjiNaLeada() {
                                 1
                               </span>
                               <span className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                                <strong>Push + Slack zamiast maila</strong> — od
+                                <strong>Push + Slack zamiast maila</strong>, od
                                 razu przenieś notyfikacje o leadach z poczty na
                                 kanał, który handlowcy mają na ekranie. Sam ten
                                 ruch potrafi obniżyć czas reakcji o 50%.
@@ -575,7 +575,7 @@ export default function CzasReakcjiNaLeada() {
                                 <strong>
                                   Auto-odpowiedź dla klienta w 30 sekund
                                 </strong>{" "}
-                                — SMS lub mail „dzwonimy do 5 minut”. Klient
+                               , SMS lub mail „dzwonimy do 5 minut”. Klient
                                 wie, że jest obsłużony, i nie wysyła zapytania
                                 do konkurencji.
                               </span>
@@ -585,7 +585,7 @@ export default function CzasReakcjiNaLeada() {
                                 3
                               </span>
                               <span className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                                <strong>SLA 5 minut z licznikiem</strong> —
+                                <strong>SLA 5 minut z licznikiem</strong>,
                                 zadanie w CRM z deadline'em i widocznym
                                 licznikiem. Bez deadline'u nie ma speed-to-lead.
                               </span>
@@ -595,7 +595,7 @@ export default function CzasReakcjiNaLeada() {
                                 4
                               </span>
                               <span className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                                <strong>Pomiar od dnia 1.</strong> — średni czas
+                                <strong>Pomiar od dnia 1.</strong>, średni czas
                                 pierwszego kontaktu, % leadów w SLA, podział wg
                                 godzin. Bez pomiaru nie wiesz, co działa.
                               </span>
@@ -621,7 +621,7 @@ export default function CzasReakcjiNaLeada() {
                           </h2>
                           <p className="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
                             Te błędy widzę u firm, które już &bdquo;mają
-                            speed-to-lead&rdquo; — ale dane mówią co innego.
+                            speed-to-lead&rdquo;, ale dane mówią co innego.
                             Każdy z nich da się obejść, jeśli wiesz, że
                             istnieje.
                           </p>
@@ -661,7 +661,7 @@ export default function CzasReakcjiNaLeada() {
                             </h2>
                             <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                               Stała cena za projekt po krótkim audycie. Widełki
-                              poniżej — konkretną wycenę dostajesz po
+                              poniżej, konkretną wycenę dostajesz po
                               30-minutowej rozmowie.
                             </p>
                           </div>
@@ -776,7 +776,7 @@ export default function CzasReakcjiNaLeada() {
                                   href="/automatyzacja-crm"
                                   className="text-accent hover:underline"
                                 >
-                                  Automatyzacja CRM — przegląd
+                                  Automatyzacja CRM, przegląd
                                 </Link>
                               </li>
                               <li>
@@ -804,7 +804,7 @@ export default function CzasReakcjiNaLeada() {
                           <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
                             30-minutowa diagnoza, wstępna mapa pierwszego kroku
                             i szacowany ROI. Bez zobowiązań. Po rozmowie wiesz,
-                            czy w twoim przypadku to ma sens — i ile by
+                            czy w twoim przypadku to ma sens, i ile by
                             kosztowało.
                           </p>
                           <TrackedCTA

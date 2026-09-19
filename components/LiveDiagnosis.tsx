@@ -32,11 +32,25 @@ const PILLAR_LABELS: Record<DiagnosisResult["pillar"], string> = {
   mixed: "Kilka obszarów",
 };
 
+// label trafia na pigulke, text do pola. Wczesniej etykiete wycinal split po
+// myslniku, wiec skrocenie zalezalo od znaku interpunkcyjnego w zdaniu.
 const EXAMPLES = [
-  "Ręcznie przepisuję faktury z maili do programu księgowego — kilkadziesiąt miesięcznie.",
-  "Leady giną w mailach, nikt nie wie kto się którym zajął ani co dalej.",
-  "Raport sprzedaży składam ręcznie w piątki z kilku Exceli i CRM-u.",
-  "Codziennie sprawdzam ceny konkurencji na ich stronach i wpisuję do arkusza.",
+  {
+    label: "Przepisywanie faktur",
+    text: "Ręcznie przepisuję faktury z maili do programu księgowego, kilkadziesiąt miesięcznie.",
+  },
+  {
+    label: "Leady giną w mailach",
+    text: "Leady giną w mailach, nikt nie wie kto się którym zajął ani co dalej.",
+  },
+  {
+    label: "Raport składany ręcznie",
+    text: "Raport sprzedaży składam ręcznie w piątki z kilku Exceli i CRM-u.",
+  },
+  {
+    label: "Ceny konkurencji",
+    text: "Codziennie sprawdzam ceny konkurencji na ich stronach i wpisuję do arkusza.",
+  },
 ];
 
 const LOADING_PHASES = [
@@ -86,7 +100,7 @@ export default function LiveDiagnosis() {
       });
 
       if (res.status === 429) {
-        setErrorMsg("Za dużo zapytań — odczekaj chwilę i spróbuj ponownie.");
+        setErrorMsg("Za dużo zapytań, odczekaj chwilę i spróbuj ponownie.");
         return;
       }
 
@@ -134,7 +148,7 @@ export default function LiveDiagnosis() {
         <div className="max-w-2xl mx-auto text-center mb-10">
           <p className="section-label mb-3">Generator AI</p>
           <h2 id="generator-heading" className="display-lg mb-4">
-            Zobacz swoją automatyzację — teraz
+            Zobacz swoją automatyzację, teraz
           </h2>
           <p className="text-gray-500 dark:text-gray-400 text-lg">
             Opisz proces, który zjada Ci czas. Działający na żywo model AI w
@@ -172,13 +186,13 @@ export default function LiveDiagnosis() {
               <div className="flex flex-wrap gap-2">
                 {EXAMPLES.map((ex) => (
                   <button
-                    key={ex}
+                    key={ex.label}
                     type="button"
                     disabled={loading}
-                    onClick={() => setInput(ex)}
+                    onClick={() => setInput(ex.text)}
                     className="px-3 py-1.5 rounded-full text-xs font-medium border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 text-gray-600 dark:text-gray-300 hover:border-accent/50 hover:text-accent transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/40 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {ex.split("—")[0].trim()}
+                    {ex.label}
                   </button>
                 ))}
               </div>
@@ -306,7 +320,7 @@ export default function LiveDiagnosis() {
                   </div>
                 </div>
 
-                {/* Promocja — program case study */}
+                {/* Promocja, program case study */}
                 <a
                   href="/pilotaz"
                   className="mt-4 block rounded-xl border border-accent/30 bg-gradient-to-br from-accent/10 via-violet-500/10 to-accent/10 p-5 transition-colors hover:border-accent/50"
@@ -317,11 +331,11 @@ export default function LiveDiagnosis() {
                     </span>
                     <div>
                       <p className="text-sm font-semibold text-gray-900 dark:text-white">
-                        Program case study — zostały 3 miejsca
+                        Program case study, zostały 3 miejsca
                       </p>
                       <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">
                         Zgadzasz się, żebym opisał efekt wdrożenia jako
-                        publiczne case study — płacisz{" "}
+                        publiczne case study, płacisz{" "}
                         <strong>połowę ceny</strong>. Wycena powyżej spada wtedy
                         o 50%.
                       </p>

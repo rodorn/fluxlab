@@ -7,11 +7,11 @@ import TrackedCTA from "@/components/TrackedCTA";
 import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
-  title: "Koszt ręcznej obsługi leadów — kalkulator i przykład | Fluxlab",
+  title: "Koszt ręcznej obsługi leadów, kalkulator i przykład | Fluxlab",
   description:
     "Ile naprawdę kosztuje ręczna obsługa leadów w firmie B2B? Pełny rachunek: czas pracy, zgubione leady, błędy, raporty, utracona widoczność. Z przykładami i kalkulatorem.",
   openGraph: {
-    title: "Koszt ręcznej obsługi leadów — kalkulator i przykład | Fluxlab",
+    title: "Koszt ręcznej obsługi leadów, kalkulator i przykład | Fluxlab",
     description:
       "Pełny rachunek kosztu ręcznej obsługi leadów w B2B: czas, zgubione zapytania, błędy, raporty. Trzy przykłady firm i kalkulator do policzenia własnego.",
     locale: "pl_PL",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Automatyzacja leadów, CRM i raportowania dla firm B2B",
+        alt: "Fluxlab, Automatyzacja leadów, CRM i raportowania dla firm B2B",
       },
     ],
   },
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 
 const symptoms = [
   "Lead z formularza wpada do skrzynki, ktoś go zauważa po godzinie albo następnego dnia.",
-  "Handlowiec ręcznie przepisuje dane do CRM-a — imię, mail, telefon, źródło.",
+  "Handlowiec ręcznie przepisuje dane do CRM-a, imię, mail, telefon, źródło.",
   "Co tydzień ktoś składa raport sprzedaży z arkusza, maila i pamięci.",
   "Follow-up zależy od tego, czy ktoś się zorientuje, że minęły 3 dni od kontaktu.",
   "Te same dane krążą między formularzem, mailem, arkuszem i CRM-em.",
@@ -76,7 +76,7 @@ const costComponents = [
     title: "Koszt utraconej widoczności",
     formula: "decyzje_oparte_na_złych_danych × wpływ_na_wynik",
     description:
-      "Najtrudniejszy do policzenia, najbardziej dotkliwy. Jeśli nie wiesz, które źródło leadów konwertuje, ile czasu zajmuje pierwszy kontakt i gdzie pipeline się zacina — wydajesz pieniądze na reklamę, której nie powinieneś, i nie skalujesz tego, co działa.",
+      "Najtrudniejszy do policzenia, najbardziej dotkliwy. Jeśli nie wiesz, które źródło leadów konwertuje, ile czasu zajmuje pierwszy kontakt i gdzie pipeline się zacina, wydajesz pieniądze na reklamę, której nie powinieneś, i nie skalujesz tego, co działa.",
     example:
       "Budżet reklamowy 10 000 zł / mies, z czego 30% idzie do źródła z najgorszą konwersją, bo nikt tego nie mierzy = 3 000 zł / mies marnotrawstwa.",
   },
@@ -93,7 +93,7 @@ const examples = [
       { label: "Raport ręczny (2 h / mies)", value: "120 zł" },
     ],
     total: "~950 zł / mies · ~11 400 zł / rok",
-    note: "Niby mało. Ale mała firma najczęściej żyje z każdej domkniętej sprzedaży — utrata 2 leadów miesięcznie zmienia rachunek całego roku.",
+    note: "Niby mało. Ale mała firma najczęściej żyje z każdej domkniętej sprzedaży, utrata 2 leadów miesięcznie zmienia rachunek całego roku.",
   },
   {
     size: "Średnia firma B2B",
@@ -125,7 +125,7 @@ const examples = [
       { label: "Marnotrawstwo budżetu reklamowego", value: "~8 000 zł" },
     ],
     total: "~55 600 zł / mies · ~667 200 zł / rok",
-    note: "Przy tej skali ręczna obsługa to nie jest koszt jednego procesu — to jest koszt budowania firmy, w której nikt nie wie, co się dzieje na lejku.",
+    note: "Przy tej skali ręczna obsługa to nie jest koszt jednego procesu, to jest koszt budowania firmy, w której nikt nie wie, co się dzieje na lejku.",
   },
 ];
 
@@ -190,7 +190,7 @@ const measurementMistakes = [
   },
   {
     title: "Ignorowanie zgubionych leadów",
-    desc: "Bo „nie wiemy, ile by ich konwertowało”. Wiemy. Konwersja z leadów obsłużonych w 5 minut vs 24 h jest opisana w setkach badań — różnica jest realna i mierzalna.",
+    desc: "Bo „nie wiemy, ile by ich konwertowało”. Wiemy. Konwersja z leadów obsłużonych w 5 minut vs 24 h jest opisana w setkach badań, różnica jest realna i mierzalna.",
   },
   {
     title: "Wrzucanie raportowania do „pracy menadżera”",
@@ -198,7 +198,7 @@ const measurementMistakes = [
   },
   {
     title: "Liczenie kosztu obecnego, bez kosztu skalowania",
-    desc: "Dziś 300 leadów. Za rok 600. Ręczna obsługa skaluje się liniowo — 600 leadów to dwa razy więcej godzin albo druga osoba do CRM-a. Automatyzacja skaluje się prawie zerowo.",
+    desc: "Dziś 300 leadów. Za rok 600. Ręczna obsługa skaluje się liniowo, 600 leadów to dwa razy więcej godzin albo druga osoba do CRM-a. Automatyzacja skaluje się prawie zerowo.",
   },
   {
     title: "Pomijanie kosztu utraconej widoczności",
@@ -215,27 +215,27 @@ const faq = [
   {
     question: "Skąd różnica między 5 zł kosztu czasu a 50 zł realnego kosztu?",
     answer:
-      "Bo czas to tylko jeden komponent. Drugi to leady, które nie konwertują, bo czekały za długo. Trzeci to błędy, które zniknęły z CRM-a albo trafiły do złego handlowca. Czwarty to raporty, które ktoś musi co tydzień składać. Piąty — najgorszy — to decyzje finansowe podejmowane na danych, którym nie można ufać.",
+      "Bo czas to tylko jeden komponent. Drugi to leady, które nie konwertują, bo czekały za długo. Trzeci to błędy, które zniknęły z CRM-a albo trafiły do złego handlowca. Czwarty to raporty, które ktoś musi co tydzień składać. Piąty, najgorszy, to decyzje finansowe podejmowane na danych, którym nie można ufać.",
   },
   {
     question: "Czy automatyzacja faktycznie zwraca się w kilka miesięcy?",
     answer:
-      "Przy 300+ leadach miesięcznie i wartości klienta od ok. 2 000 zł — tak, zwykle 2–4 miesiące. Przy mniejszej skali zwrot jest wolniejszy, ale i tak realny, bo największy koszt to zgubione leady, nie czas pracy. Pełny rachunek opisałem w artykule /strefa-wiedzy/jak-policzyc-roi-z-automatyzacji.",
+      "Przy 300+ leadach miesięcznie i wartości klienta od ok. 2 000 zł, tak, zwykle 2–4 miesiące. Przy mniejszej skali zwrot jest wolniejszy, ale i tak realny, bo największy koszt to zgubione leady, nie czas pracy. Pełny rachunek opisałem w artykule /strefa-wiedzy/jak-policzyc-roi-z-automatyzacji.",
   },
   {
     question: "Co jeśli moja firma ma niski wolumen leadów?",
     answer:
-      "Wtedy koszt czasu jest mały, ale koszt zgubionych leadów względnie duży — bo każdy lead waży więcej. Mała firma B2B z 30 leadami miesięcznie i klientem za 5 000 zł wciąż traci 8–12 tys. rocznie na ręcznej obsłudze. Najlepiej zrobić bezpłatną diagnozę i policzyć konkretny przypadek — formularz jest na /#kontakt.",
+      "Wtedy koszt czasu jest mały, ale koszt zgubionych leadów względnie duży, bo każdy lead waży więcej. Mała firma B2B z 30 leadami miesięcznie i klientem za 5 000 zł wciąż traci 8–12 tys. rocznie na ręcznej obsłudze. Najlepiej zrobić bezpłatną diagnozę i policzyć konkretny przypadek, formularz jest na /#kontakt.",
   },
   {
     question: "Czy muszę mieć CRM, żeby liczyć ten koszt?",
     answer:
-      "Nie. Jeśli leady wpadają do skrzynki, arkusza albo formularza — koszt i tak istnieje, tylko jest jeszcze trudniej zmierzony. Brak CRM-a oznacza zwykle wyższy koszt utraconej widoczności (nikt nie wie, co dzieje się z leadem po pierwszym kontakcie).",
+      "Nie. Jeśli leady wpadają do skrzynki, arkusza albo formularza, koszt i tak istnieje, tylko jest jeszcze trudniej zmierzony. Brak CRM-a oznacza zwykle wyższy koszt utraconej widoczności (nikt nie wie, co dzieje się z leadem po pierwszym kontakcie).",
   },
   {
     question: "Czym różni się ten rachunek od „policzcie ROI z automatyzacji”?",
     answer:
-      "ROI z automatyzacji liczy zwrot z inwestycji w narzędzie. Koszt ręcznej obsługi to baza pod ten rachunek — bez niej nie wiesz, co właściwie miałbyś odzyskać. Najpierw poznajesz koszt obecnego stanu, potem oceniasz, czy automatyzacja jest tego warta. Patrz też: /strefa-wiedzy/automatyzacja-vs-zatrudnienie.",
+      "ROI z automatyzacji liczy zwrot z inwestycji w narzędzie. Koszt ręcznej obsługi to baza pod ten rachunek, bez niej nie wiesz, co właściwie miałbyś odzyskać. Najpierw poznajesz koszt obecnego stanu, potem oceniasz, czy automatyzacja jest tego warta. Patrz też: /strefa-wiedzy/automatyzacja-vs-zatrudnienie.",
   },
 ];
 
@@ -259,7 +259,7 @@ export default function KosztRecznejObslugiLeadow() {
       <main className="pt-16">
         <Breadcrumbs items={[{ label: "Koszt ręcznej obsługi leadów" }]} />
 
-        {/* Hero — kompaktowy */}
+        {/* Hero, kompaktowy */}
         <section className="pt-16 pb-6 bg-gradient-to-b from-accent/10 to-transparent border-b border-gray-100 dark:border-gray-800">
           <div className="container-wide">
             <div className="max-w-3xl mx-auto text-center">
@@ -291,7 +291,7 @@ export default function KosztRecznejObslugiLeadow() {
           </div>
         </section>
 
-        {/* Treść w zakładkach — nic nie wycięte, podzielone */}
+        {/* Treść w zakładkach, nic nie wycięte, podzielone */}
         <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
           <Tabs
             ariaLabel="Sekcje strony o koszcie ręcznej obsługi leadów"
@@ -322,7 +322,7 @@ export default function KosztRecznejObslugiLeadow() {
                             <p>
                               I właśnie dlatego ten koszt jest największy. Bo
                               kosztuje każdego dnia, w małych kwotach, w wielu
-                              miejscach naraz — zamiast jednego dużego rachunku,
+                              miejscach naraz, zamiast jednego dużego rachunku,
                               który by zwrócił uwagę zarządu.
                             </p>
                             <p className="font-medium text-gray-900 dark:text-white">
@@ -464,7 +464,7 @@ export default function KosztRecznejObslugiLeadow() {
                           <div className="mb-12 text-center">
                             <span className="section-label">Trzy skale</span>
                             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4">
-                              Mała, średnia, duża firma — konkretne liczby
+                              Mała, średnia, duża firma, konkretne liczby
                             </h2>
                             <p className="text-gray-600 dark:text-gray-400 mt-4 max-w-2xl mx-auto leading-relaxed">
                               Założenia: stawka 60 zł/h dla operacji, 80 zł/h
@@ -564,7 +564,7 @@ export default function KosztRecznejObslugiLeadow() {
                             >
                               automatyzacji leadów i CRM
                             </Link>
-                            . Konkretną wycenę dla Pipedrive — w{" "}
+                            . Konkretną wycenę dla Pipedrive, w{" "}
                             <Link
                               href="/automatyzacja-pipedrive"
                               className="text-accent hover:underline"
@@ -663,7 +663,7 @@ export default function KosztRecznejObslugiLeadow() {
                             </h2>
                             <p className="text-gray-600 dark:text-gray-400 mt-4 leading-relaxed">
                               Każdy z nich osobno potrafi przekłamać rachunek o
-                              kilkadziesiąt procent. Razem — sprawiają, że
+                              kilkadziesiąt procent. Razem, sprawiają, że
                               zarząd patrzy na inny problem niż ten, który firma
                               faktycznie ma.
                             </p>
@@ -713,7 +713,7 @@ export default function KosztRecznejObslugiLeadow() {
                           <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
                             Kalkulator policzy wszystkie pięć komponentów: czas,
                             zgubione leady, błędy, raportowanie. Wynik dostajesz
-                            w zł na miesiąc i rok — z rozbiciem na pozycje,
+                            w zł na miesiąc i rok, z rozbiciem na pozycje,
                             żebyś wiedział, co naprawić w pierwszej kolejności.
                           </p>
                           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -827,7 +827,7 @@ export default function KosztRecznejObslugiLeadow() {
                           </h2>
                           <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
                             Bez liczby na stole każda dyskusja o automatyzacji
-                            kończy się na „kiedyś się tym zajmiemy”. Z liczbą —
+                            kończy się na „kiedyś się tym zajmiemy”. Z liczbą,
                             kończy się na konkretnym pierwszym etapie.
                           </p>
                           <TrackedCTA

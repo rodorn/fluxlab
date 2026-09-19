@@ -9,7 +9,7 @@ export default function PilotBanner() {
     >
       <div className="container-wide">
         <div className="relative overflow-hidden rounded-2xl border border-accent/30 dark:border-accent/30 glow-accent bg-gradient-to-br from-accent/[0.07] via-violet-500/10 to-cyan-500/[0.07] dark:from-accent/15 dark:via-violet-500/15 dark:to-cyan-500/10 p-6 lg:p-8">
-          {/* Animowane bloby — temperatura banera */}
+          {/* Animowane bloby, temperatura banera */}
           <div className="blob blob-accent w-72 h-72 -top-28 -left-24 animate-drift" />
           <div className="blob blob-violet w-64 h-64 -bottom-28 right-1/4 animate-drift-slow" />
           <div className="blob blob-cyan w-60 h-60 -top-24 -right-20 animate-drift-slow" />
@@ -39,7 +39,7 @@ export default function PilotBanner() {
                 id="pilot-banner-heading"
                 className="text-xl lg:text-2xl font-bold text-gray-900 dark:text-white tracking-tight"
               >
-                3 miejsca na publiczne case study —{" "}
+                3 miejsca na publiczne case study,{" "}
                 <span className="text-gradient-flow">50% ceny wdrożenia</span>
               </h2>
               <p className="mt-1.5 text-sm lg:text-base text-gray-600 dark:text-gray-400 max-w-2xl">

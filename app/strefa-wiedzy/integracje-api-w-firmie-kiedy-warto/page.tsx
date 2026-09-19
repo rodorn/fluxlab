@@ -7,12 +7,12 @@ import Tabs from "@/components/Tabs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 
 export const metadata: Metadata = {
-  title: "Integracje API w firmie — kiedy warto, a kiedy to przesada | Fluxlab",
+  title: "Integracje API w firmie, kiedy warto, a kiedy to przesada | Fluxlab",
   description:
     "Kiedy integracje API mają sens w firmie, jakie problemy rozwiązują i kiedy lepiej wybrać prostsze podejście. Przykłady, błędy i praktyczne scenariusze.",
   openGraph: {
     title:
-      "Integracje API w firmie — kiedy warto, a kiedy to przesada | Fluxlab",
+      "Integracje API w firmie, kiedy warto, a kiedy to przesada | Fluxlab",
     description:
       "Kiedy integracje API mają sens w firmie, jakie problemy rozwiązują i kiedy lepiej wybrać prostsze podejście. Przykłady, błędy i praktyczne scenariusze.",
     locale: "pl_PL",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Automatyzacja leadów, CRM i raportowania dla firm B2B",
+        alt: "Fluxlab, Automatyzacja leadów, CRM i raportowania dla firm B2B",
       },
     ],
   },
@@ -39,16 +39,16 @@ export default function IntegracjeApiArticle() {
         <Breadcrumbs
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
-            { label: "Integracje API w firmie — kiedy warto?" },
+            { label: "Integracje API w firmie, kiedy warto?" },
           ]}
         />
 
-        {/* Nagłówek artykułu — kompaktowy */}
+        {/* Nagłówek artykułu, kompaktowy */}
         <section className="pt-16 pb-6">
           <div className="max-w-3xl mx-auto px-6 lg:px-8">
             <span className="section-label">Strefa wiedzy</span>
             <h1 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">
-              Integracje API w firmie — kiedy warto?
+              Integracje API w firmie, kiedy warto?
             </h1>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
               Integracje API brzmią technicznie, ale ich sens jest bardzo
@@ -62,7 +62,7 @@ export default function IntegracjeApiArticle() {
           </div>
         </section>
 
-        {/* Treść w zakładkach — nic nie wycięte, podzielone wg rozdziałów */}
+        {/* Treść w zakładkach, nic nie wycięte, podzielone wg rozdziałów */}
         <div className="container-wide pb-8">
           <Tabs
             ariaLabel="Rozdziały artykułu"
@@ -184,7 +184,7 @@ export default function IntegracjeApiArticle() {
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Jeżeli firma nie wie: które dane są ważne, kto jest
                         właścicielem procesu, które pole ma być źródłem prawdy,
-                        jak wygląda poprawny przepływ — to integracja API
+                        jak wygląda poprawny przepływ, to integracja API
                         przeniesie chaos między systemami szybciej. Więcej o
                         porządkowaniu procesów w{" "}
                         <Link
@@ -321,7 +321,7 @@ export default function IntegracjeApiArticle() {
                       </h3>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Jeżeli integracja nie sprawdza, czy dane są kompletne,
-                        poprawne i nieduplikowane, to nie rozwiązuje problemu —
+                        poprawne i nieduplikowane, to nie rozwiązuje problemu,
                         tylko szybciej rozprowadza błędy.
                       </p>
 
@@ -391,7 +391,7 @@ export default function IntegracjeApiArticle() {
                       </ol>
 
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        API, automatyzacja i AI — co jest czym
+                        API, automatyzacja i AI, co jest czym
                       </h2>
                       <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
                         <li>
@@ -424,7 +424,7 @@ export default function IntegracjeApiArticle() {
                           href="/strefa-wiedzy/automatyzacja-crm-od-czego-zaczac"
                           className="text-accent hover:underline"
                         >
-                          Automatyzacja CRM — od czego zacząć
+                          Automatyzacja CRM, od czego zacząć
                         </Link>
                       </p>
                     </div>
@@ -688,7 +688,7 @@ export default function IntegracjeApiArticle() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Article",
-            headline: "Integracje API w firmie — kiedy warto?",
+            headline: "Integracje API w firmie, kiedy warto?",
             description:
               "Kiedy integracje API mają sens w firmie, jakie problemy rozwiązują i kiedy lepiej wybrać prostsze podejście. Przykłady, błędy i praktyczne scenariusze.",
             datePublished: "2026-03-30",

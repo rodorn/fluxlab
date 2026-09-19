@@ -23,7 +23,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Automatyzacja leadów, CRM i raportowania dla firm B2B",
+        alt: "Fluxlab, Automatyzacja leadów, CRM i raportowania dla firm B2B",
       },
     ],
   },
@@ -44,7 +44,7 @@ export default function AutomatyzacjaProcesowArticle() {
           ]}
         />
 
-        {/* Nagłówek artykułu — kompaktowy */}
+        {/* Nagłówek artykułu, kompaktowy */}
         <section className="pt-16 pb-6">
           <div className="max-w-3xl mx-auto px-6 lg:px-8">
             <span className="section-label">Strefa wiedzy</span>
@@ -67,7 +67,7 @@ export default function AutomatyzacjaProcesowArticle() {
           </div>
         </section>
 
-        {/* Treść w zakładkach — nic nie wycięte, podzielone wg rozdziałów */}
+        {/* Treść w zakładkach, nic nie wycięte, podzielone wg rozdziałów */}
         <div className="container-wide pb-8">
           <Tabs
             ariaLabel="Rozdziały artykułu"
@@ -207,7 +207,7 @@ export default function AutomatyzacjaProcesowArticle() {
                           href="/strefa-wiedzy/automatyzacja-crm-od-czego-zaczac"
                           className="text-accent hover:underline"
                         >
-                          Automatyzacja CRM — od czego zacząć
+                          Automatyzacja CRM, od czego zacząć
                         </Link>
                         .
                       </p>
@@ -343,7 +343,7 @@ export default function AutomatyzacjaProcesowArticle() {
                         Firmy za często pytają &bdquo;czy lepszy będzie Make,
                         Zapier, n8n albo własne API?&rdquo;, zanim odpowiedzą
                         sobie na pytanie, co w ogóle chcą osiągnąć. Dobór
-                        narzędzia zależy od procesu — czasem wystarczy prosta
+                        narzędzia zależy od procesu, czasem wystarczy prosta
                         automatyzacja, a czasem potrzebne są pełne{" "}
                         <Link
                           href="/integracje-api"
@@ -555,7 +555,7 @@ export default function AutomatyzacjaProcesowArticle() {
                           href="/strefa-wiedzy/integracje-api-w-firmie-kiedy-warto"
                           className="text-accent hover:underline"
                         >
-                          Integracje API w firmie — kiedy warto
+                          Integracje API w firmie, kiedy warto
                         </Link>
                         {" | "}
                         <Link
@@ -569,7 +569,7 @@ export default function AutomatyzacjaProcesowArticle() {
                           href="/strefa-wiedzy/automatyzacja-crm-od-czego-zaczac"
                           className="text-accent hover:underline"
                         >
-                          Automatyzacja CRM — od czego zacząć
+                          Automatyzacja CRM, od czego zacząć
                         </Link>
                         .
                       </p>
@@ -795,7 +795,7 @@ export default function AutomatyzacjaProcesowArticle() {
                       href="/strefa-wiedzy/integracje-api-w-firmie-kiedy-warto"
                       className="text-accent hover:underline"
                     >
-                      Integracje API w firmie — kiedy warto
+                      Integracje API w firmie, kiedy warto
                     </Link>
                   </li>
                   <li>

@@ -7,11 +7,11 @@ import PrevNextArticle from "@/components/PrevNextArticle";
 import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
-  title: "Pipedrive vs Salesforce — porównanie CRM dla MŚP 2026 | Fluxlab",
+  title: "Pipedrive vs Salesforce, porównanie CRM dla MŚP 2026 | Fluxlab",
   description:
     "Pipedrive vs Salesforce w 2026 roku: ceny, funkcje, czas wdrożenia i realne dopasowanie do małej i średniej firmy B2B. Konkretne porównanie bez marketingowego lukru.",
   openGraph: {
-    title: "Pipedrive vs Salesforce — porównanie CRM dla MŚP 2026 | Fluxlab",
+    title: "Pipedrive vs Salesforce, porównanie CRM dla MŚP 2026 | Fluxlab",
     description:
       "Pipedrive vs Salesforce w 2026 roku: ceny, funkcje, czas wdrożenia i realne dopasowanie do małej i średniej firmy B2B. Konkretne porównanie bez marketingowego lukru.",
     locale: "pl_PL",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Automatyzacja leadów, CRM i raportowania dla firm B2B",
+        alt: "Fluxlab, Automatyzacja leadów, CRM i raportowania dla firm B2B",
       },
     ],
   },
@@ -50,7 +50,7 @@ export default function PipedriveVsSalesforceArticle() {
         <Breadcrumbs
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
-            { label: "Pipedrive vs Salesforce — porównanie CRM dla MŚP 2026" },
+            { label: "Pipedrive vs Salesforce, porównanie CRM dla MŚP 2026" },
           ]}
         />
 
@@ -59,7 +59,7 @@ export default function PipedriveVsSalesforceArticle() {
           <div className="container-wide max-w-3xl mx-auto text-center">
             <span className="section-label">Strefa wiedzy</span>
             <h1 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">
-              Pipedrive vs Salesforce — porównanie CRM dla MŚP 2026
+              Pipedrive vs Salesforce, porównanie CRM dla MŚP 2026
             </h1>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
               Pipedrive i Salesforce są często stawiane obok siebie w
@@ -83,7 +83,7 @@ export default function PipedriveVsSalesforceArticle() {
                       {/* Section 1 */}
                       <div>
                         <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                          Filozofia produktu — co właściwie kupujesz
+                          Filozofia produktu, co właściwie kupujesz
                         </h2>
                         <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
                           Pipedrive jest pipeline-centric. Cały interfejs
@@ -111,55 +111,55 @@ export default function PipedriveVsSalesforceArticle() {
                       {/* Section 2 */}
                       <div>
                         <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                          Cennik 2026 — realny koszt licencji
+                          Cennik 2026, realny koszt licencji
                         </h2>
                         <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
                           Ceny obu produktów są podawane per użytkownik,
                           miesięcznie, przy płatności rocznej. Roczne
-                          zobowiązanie to standard — miesięczny billing zwykle
+                          zobowiązanie to standard, miesięczny billing zwykle
                           podnosi koszt o 15–25 procent.
                         </p>
                         <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed font-medium">
-                          Pipedrive — orientacyjnie 2026:
+                          Pipedrive, orientacyjnie 2026:
                         </p>
                         <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-400">
                           <li className="flex items-start gap-2">
                             <Check />
-                            Essential — około 14 USD / user / mies.
+                            Essential, około 14 USD / user / mies.
                           </li>
                           <li className="flex items-start gap-2">
                             <Check />
-                            Advanced — około 29 USD / user / mies.
+                            Advanced, około 29 USD / user / mies.
                           </li>
                           <li className="flex items-start gap-2">
                             <Check />
-                            Professional — około 49 USD / user / mies.
+                            Professional, około 49 USD / user / mies.
                           </li>
                           <li className="flex items-start gap-2">
                             <Check />
-                            Power i Enterprise — wyżej, dla większych zespołów.
+                            Power i Enterprise, wyżej, dla większych zespołów.
                           </li>
                         </ul>
                         <p className="mt-6 text-gray-600 dark:text-gray-400 mb-4 leading-relaxed font-medium">
-                          Salesforce Sales Cloud — orientacyjnie 2026:
+                          Salesforce Sales Cloud, orientacyjnie 2026:
                         </p>
                         <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-400">
                           <li className="flex items-start gap-2">
                             <Check />
-                            Starter Suite — od 25 USD / user / mies.
+                            Starter Suite, od 25 USD / user / mies.
                           </li>
                           <li className="flex items-start gap-2">
                             <Check />
-                            Pro Suite / Professional — od ok. 80 USD / user /
+                            Pro Suite / Professional, od ok. 80 USD / user /
                             mies.
                           </li>
                           <li className="flex items-start gap-2">
                             <Check />
-                            Enterprise — od ok. 165 USD / user / mies.
+                            Enterprise, od ok. 165 USD / user / mies.
                           </li>
                           <li className="flex items-start gap-2">
                             <Check />
-                            Unlimited / Einstein — wyżej, z AI i dodatkami.
+                            Unlimited / Einstein, wyżej, z AI i dodatkami.
                           </li>
                         </ul>
                         <p className="mt-6 text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -182,7 +182,7 @@ export default function PipedriveVsSalesforceArticle() {
                       {/* Section 3 */}
                       <div>
                         <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                          Funkcje sprzedażowe — gdzie każdy jest mocny
+                          Funkcje sprzedażowe, gdzie każdy jest mocny
                         </h2>
                         <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
                           Pipedrive świetnie obsługuje klasyczny B2B sales:
@@ -196,7 +196,7 @@ export default function PipedriveVsSalesforceArticle() {
                           Salesforce daje znacznie więcej, ale wymaga
                           konfiguracji. Custom obiekty, page layouts, record
                           types, profile, permission sets, Flow Builder, Apex
-                          jeśli trzeba. Można zbudować dowolny proces — od
+                          jeśli trzeba. Można zbudować dowolny proces, od
                           sprzedaży B2B przez serwis i onboarding po projekty
                           wdrożeniowe. Cena: ktoś musi to utrzymać.
                         </p>
@@ -216,7 +216,7 @@ export default function PipedriveVsSalesforceArticle() {
                       {/* Section 4 */}
                       <div>
                         <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                          Marketing i obsługa — różnica skali
+                          Marketing i obsługa, różnica skali
                         </h2>
                         <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
                           Pipedrive nie jest narzędziem marketingowym. Ma proste
@@ -253,7 +253,7 @@ export default function PipedriveVsSalesforceArticle() {
                         </p>
                         <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                           Niezależnie od wyboru, sam zakup licencji niczego nie
-                          zmienia — efekt daje dopiero{" "}
+                          zmienia, efekt daje dopiero{" "}
                           <Link
                             href="/automatyzacja-crm"
                             className="text-accent hover:underline"
@@ -280,12 +280,12 @@ export default function PipedriveVsSalesforceArticle() {
                           >
                             dedykowana automatyzacja Pipedrive
                           </Link>{" "}
-                          — np. automatyczne tworzenie deali z formularza,
+                         , np. automatyczne tworzenie deali z formularza,
                           follow-up po spotkaniu czy pilnowanie braków w danych.
                         </p>
                         <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                          Salesforce ma AppExchange — największy ekosystem w
-                          branży — i bardzo dojrzałe API. Daje to ogromne
+                          Salesforce ma AppExchange, największy ekosystem w
+                          branży, i bardzo dojrzałe API. Daje to ogromne
                           możliwości, ale też większą odpowiedzialność za
                           architekturę. Praktyczne pokrycie tematu znajdziesz w
                           artykule o{" "}
@@ -382,7 +382,7 @@ export default function PipedriveVsSalesforceArticle() {
                           custom objects, łączyć je relacjami master-detail albo
                           lookup, nakładać page layouts zależne od record type,
                           konfigurować profile, permission sets i sharing rules.
-                          W efekcie odwzorujesz niemal każdy model biznesowy —
+                          W efekcie odwzorujesz niemal każdy model biznesowy,
                           np. sprzedaż flotową, gdzie deal wiąże się z wieloma
                           samochodami, każdy samochód z własnym cyklem
                           serwisowym, a klient ma kilkunastu użytkowników
@@ -422,7 +422,7 @@ export default function PipedriveVsSalesforceArticle() {
                           Tu zaczyna się zgrzyt. Pipedrive utrzyma pipeline, ale
                           raportowanie per region/produkt/handlowiec wymaga
                           workarounds. Salesforce Enterprise albo Pipedrive
-                          Power z solidnie zaprojektowanymi polami i raportami —
+                          Power z solidnie zaprojektowanymi polami i raportami,
                           obie opcje realnie na stole. Decyduje obecność
                           admina/partnera i to, czy firma potrzebuje też Service
                           Cloud.
@@ -493,7 +493,7 @@ export default function PipedriveVsSalesforceArticle() {
                             Salesforce?
                           </h3>
                           <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                            Da się — i często to ma sens. Najpierw uporządkuj
+                            Da się, i często to ma sens. Najpierw uporządkuj
                             proces i dane w Pipedrive, a do Salesforce migruj
                             wtedy, gdy rzeczywiście brakuje Ci możliwości
                             platformy, a nie samej marki.
@@ -506,7 +506,7 @@ export default function PipedriveVsSalesforceArticle() {
                           <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                             Pipedrive nie zastąpi pełnego MA. Dla większości MŚP
                             wystarcza integracja z dedykowanym narzędziem (np.
-                            Brevo, ActiveCampaign, MailerLite) — szczegóły w
+                            Brevo, ActiveCampaign, MailerLite), szczegóły w
                             materiale o{" "}
                             <Link
                               href="/strefa-wiedzy/jak-polaczyc-crm-z-innymi-systemami"
@@ -535,13 +535,13 @@ export default function PipedriveVsSalesforceArticle() {
                           <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                             Od procesu, nie od narzędzia. Najpierw etapy,
                             kryteria przejścia i dane obowiązkowe, a dopiero
-                            potem konfiguracja — szczegółowo opisałem to w
+                            potem konfiguracja, szczegółowo opisałem to w
                             artykule{" "}
                             <Link
                               href="/strefa-wiedzy/automatyzacja-crm-od-czego-zaczac"
                               className="text-accent hover:underline"
                             >
-                              automatyzacja CRM — od czego zacząć
+                              automatyzacja CRM, od czego zacząć
                             </Link>
                             .
                           </p>
@@ -588,7 +588,7 @@ export default function PipedriveVsSalesforceArticle() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Article",
-            headline: "Pipedrive vs Salesforce — porównanie CRM dla MŚP 2026",
+            headline: "Pipedrive vs Salesforce, porównanie CRM dla MŚP 2026",
             description:
               "Pipedrive vs Salesforce w 2026 roku: ceny, funkcje, czas wdrożenia i realne dopasowanie do małej i średniej firmy B2B. Konkretne porównanie bez marketingowego lukru.",
             datePublished: "2026-04-19",
@@ -643,7 +643,7 @@ export default function PipedriveVsSalesforceArticle() {
                 name: "Czy da się zacząć od Pipedrive i przejść na Salesforce?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Da się — i często to ma sens. Najpierw uporządkuj proces i dane w Pipedrive, a do Salesforce migruj wtedy, gdy rzeczywiście brakuje Ci możliwości platformy.",
+                  text: "Da się, i często to ma sens. Najpierw uporządkuj proces i dane w Pipedrive, a do Salesforce migruj wtedy, gdy rzeczywiście brakuje Ci możliwości platformy.",
                 },
               },
               {

@@ -760,7 +760,7 @@ export default function CarCostCalculator() {
 
         setTimeout(() => scrollToRef(compareRef), 100);
       } else {
-        // Single car — fill form as new (unsaved) car
+        // Single car, fill form as new (unsaved) car
         const r = await fetchOneCar(parts[0]);
         if (!r) {
           setParseError("Wystąpił błąd");
@@ -857,7 +857,7 @@ export default function CarCostCalculator() {
         </div>
         <p className="text-sm text-gray-500 dark:text-gray-400">
           {activeCarId != null
-            ? "Edytujesz zapisany pojazd — zmiany aktualizują się na żywo"
+            ? "Edytujesz zapisany pojazd, zmiany aktualizują się na żywo"
             : "Podstawowe informacje o samochodzie"}
         </p>
       </div>
@@ -1416,7 +1416,7 @@ export default function CarCostCalculator() {
                     {displayLabel && (
                       <span className="text-accent">{displayLabel}</span>
                     )}
-                    {displayLabel ? " — " : ""}Podsumowanie kosztów (
+                    {displayLabel ? ", " : ""}Podsumowanie kosztów (
                     {data.yearsOwned}{" "}
                     {data.yearsOwned === 1
                       ? "rok"

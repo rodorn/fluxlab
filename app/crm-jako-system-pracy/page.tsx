@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Automatyzacja leadów, CRM i raportowania dla firm B2B",
+        alt: "Fluxlab, Automatyzacja leadów, CRM i raportowania dla firm B2B",
       },
     ],
   },
@@ -35,7 +35,7 @@ const problemPoints = [
   "Handlowcy wpisują dane „jakoś”, każdy w innym formacie i z innymi polami.",
   "Etapy w pipeline'ie nie odpowiadają realnemu stanowi sprzedaży.",
   "Statusy aktualizowane są raz w tygodniu, na piątkowym callu, kiedy manager pyta.",
-  "Nikt nie wie, co znaczy „w trakcie negocjacji” — bo każdy rozumie to inaczej.",
+  "Nikt nie wie, co znaczy „w trakcie negocjacji”, bo każdy rozumie to inaczej.",
   "Raporty z CRM-u są dyplomatycznie ignorowane, bo dane są niewiarygodne.",
 ];
 
@@ -43,26 +43,26 @@ const symptoms = [
   "Manager prosi o status pipeline'u i dostaje arkusz z notatnikiem zamiast raportu z CRM-u.",
   "Połowa deali ma „aktualizację” starszą niż 14 dni, a mimo to są w aktywnych etapach.",
   "Custom fieldy w CRM mają po 3–4 tysiące pustych wartości i kilka „testowych”.",
-  "Handlowiec mówi „wiem, gdzie jest ten klient” — ale w CRM nie ma o tym ani słowa.",
+  "Handlowiec mówi „wiem, gdzie jest ten klient”, ale w CRM nie ma o tym ani słowa.",
   "Gdy ktoś idzie na urlop, jego deale stoją, bo nikt nie umie odczytać kontekstu z CRM-u.",
-  "Sprzedaż prowadzi własną tabelę w Excelu — bo CRM-owi nie ufa.",
+  "Sprzedaż prowadzi własną tabelę w Excelu, bo CRM-owi nie ufa.",
 ];
 
 const beforeSteps = [
   "Handlowiec wraca z rozmowy, robi notatkę w głowie albo w telefonie.",
   "Wieczorem albo „jak będzie czas” wpisuje skrót do CRM-u.",
-  "Status zmienia, gdy mu się przypomni — albo przed coniedzielnym raportem.",
+  "Status zmienia, gdy mu się przypomni, albo przed coniedzielnym raportem.",
   "Pole „następny krok” wypełnia ogólnikiem typu „kontakt z klientem”.",
-  "Manager w piątek pyta „co z tym dealem” — handlowiec sprawdza maila, nie CRM.",
+  "Manager w piątek pyta „co z tym dealem”, handlowiec sprawdza maila, nie CRM.",
   "Raport z CRM-u jest robiony ręcznie w Excelu, bo dane w systemie są niespójne.",
 ];
 
 const afterSteps = [
   "CRM ma sztywną strukturę: pola wymagane, słowniki zamiast wolnego tekstu, jasna definicja każdego etapu.",
-  "Po każdej rozmowie handlowiec uzupełnia 3 pola w 30 sekund — system nie pozwala iść dalej bez nich.",
+  "Po każdej rozmowie handlowiec uzupełnia 3 pola w 30 sekund, system nie pozwala iść dalej bez nich.",
   "Etap deala zmienia się tylko po spełnieniu warunku (np. „oferta wysłana” = załącznik w deal'u).",
   "System pilnuje terminów: brak aktywności 7 dni → automatyczne przypomnienie, 14 dni → eskalacja.",
-  "Dashboard managera czyta dane z CRM-u w czasie rzeczywistym — bez Excela.",
+  "Dashboard managera czyta dane z CRM-u w czasie rzeczywistym, bez Excela.",
   "Onboarding nowego handlowca to 1 dzień, bo proces jest opisany w narzędziu, nie w głowie poprzednika.",
 ];
 
@@ -70,7 +70,7 @@ const workflowSteps = [
   {
     n: "1",
     title: "Audyt obecnego CRM",
-    desc: "Mapuję, jak handlowcy realnie używają systemu — które pola wypełniają, które ignorują, gdzie powstają niespójności.",
+    desc: "Mapuję, jak handlowcy realnie używają systemu, które pola wypełniają, które ignorują, gdzie powstają niespójności.",
     accent: false,
   },
   {
@@ -112,7 +112,7 @@ const workflowSteps = [
 ];
 
 const firstStage = [
-  "Audyt 5–10 najważniejszych pól w deal'u — które są używane, które martwe, które niespójne.",
+  "Audyt 5–10 najważniejszych pól w deal'u, które są używane, które martwe, które niespójne.",
   "Definicja 4–6 etapów sprzedaży z jednoznacznym kryterium przejścia (np. „etap N wymaga pola X”).",
   "Słowniki zamiast wolnego tekstu w polach „branża”, „źródło leada”, „typ kontraktu”.",
   "Jedna reguła walidacji: nie da się zamknąć deala bez powodu wygranej/przegranej.",
@@ -120,11 +120,11 @@ const firstStage = [
 ];
 
 const mistakes = [
-  "Dodawanie kolejnych custom fieldów „bo manager poprosił” — bez usuwania martwych. CRM puchnie i przestaje być czytelny.",
+  "Dodawanie kolejnych custom fieldów „bo manager poprosił”, bez usuwania martwych. CRM puchnie i przestaje być czytelny.",
   "Etapy pipeline'u kopiowane z metodologii sprzedażowej zamiast dopasowane do faktycznego procesu firmy.",
-  "Sztywne reguły walidacji bez konsultacji z handlowcami — wszyscy znajdą obejście, system traci wiarygodność.",
+  "Sztywne reguły walidacji bez konsultacji z handlowcami, wszyscy znajdą obejście, system traci wiarygodność.",
   "Manager prosi o aktualizację „na piątkowy raport” zamiast wymagać uzupełnienia po każdej rozmowie. Dane są dopasowywane pod raport, nie pod prawdę.",
-  "Wprowadzanie automatyzacji na bałaganie — tworzenie zadań w CRM, w którym deale nie mają nawet poprawnych etapów. Automatyzowanie bałaganu to tylko szybsze produkowanie bałaganu.",
+  "Wprowadzanie automatyzacji na bałaganie, tworzenie zadań w CRM, w którym deale nie mają nawet poprawnych etapów. Automatyzowanie bałaganu to tylko szybsze produkowanie bałaganu.",
 ];
 
 const pricing = [
@@ -153,11 +153,11 @@ const faq = [
   {
     question: "Mam już CRM od 3 lat. Czy nie taniej zacząć od zera?",
     answer:
-      "Prawie nigdy. W obecnym CRM-ie jest historia, którą warto zachować — kontakty, deale, korespondencja. Posprzątanie istniejącego systemu to zwykle 2–3 tygodnie. Migracja do nowego CRM-u to 6–12 tygodni i prawie zawsze powstaje ten sam bałagan, tylko w nowym narzędziu. Najpierw porządek, potem ewentualna zmiana platformy.",
+      "Prawie nigdy. W obecnym CRM-ie jest historia, którą warto zachować, kontakty, deale, korespondencja. Posprzątanie istniejącego systemu to zwykle 2–3 tygodnie. Migracja do nowego CRM-u to 6–12 tygodni i prawie zawsze powstaje ten sam bałagan, tylko w nowym narzędziu. Najpierw porządek, potem ewentualna zmiana platformy.",
   },
   {
     question:
-      "Handlowcy będą się buntować przeciw nowym regułom — co z tym zrobić?",
+      "Handlowcy będą się buntować przeciw nowym regułom, co z tym zrobić?",
     answer:
       "Tak, będą. Dlatego nie wprowadzam reguł zza biurka, tylko po rozmowie z zespołem. Handlowcy zwykle wiedzą, które pola są bezsensowne i które reguły im pomagają, a które przeszkadzają. Po pierwszych 4 tygodniach dostosowujemy system na podstawie realnego użycia, nie założeń.",
   },
@@ -165,15 +165,15 @@ const faq = [
     question:
       "Czy to działa dla każdego CRM-u (Pipedrive, HubSpot, Salesforce)?",
     answer:
-      "Tak. Mechanika jest ta sama: definicja etapów, pola wymagane, walidacja, automatyczne zadania, raporty. Różni się sposób konfiguracji w narzędziu. Dla bardzo nietypowych procesów łączę CRM z warstwą pośrednią (n8n, Make) — wtedy logika jest poza CRM-em, ale wynik ten sam.",
+      "Tak. Mechanika jest ta sama: definicja etapów, pola wymagane, walidacja, automatyczne zadania, raporty. Różni się sposób konfiguracji w narzędziu. Dla bardzo nietypowych procesów łączę CRM z warstwą pośrednią (n8n, Make), wtedy logika jest poza CRM-em, ale wynik ten sam.",
   },
   {
     question: "Po jakim czasie widać efekty?",
     answer:
-      "Pierwsze efekty (czytelność pipeline'u, krótsze planowanie tygodnia, raporty z CRM-u zamiast Excela) — w 2–4 tygodnie. Wzrost konwersji i krótszy cykl sprzedaży — 2–3 miesiące, bo zespół musi się przyzwyczaić do dyscypliny. Pełna stabilizacja — kwartał.",
+      "Pierwsze efekty (czytelność pipeline'u, krótsze planowanie tygodnia, raporty z CRM-u zamiast Excela), w 2–4 tygodnie. Wzrost konwersji i krótszy cykl sprzedaży, 2–3 miesiące, bo zespół musi się przyzwyczaić do dyscypliny. Pełna stabilizacja, kwartał.",
   },
   {
-    question: "Co jeśli mamy zespół 2 osób — czy to nie przerost formy?",
+    question: "Co jeśli mamy zespół 2 osób, czy to nie przerost formy?",
     answer:
       "Dla 2 osób nie potrzebujesz pełnego systemu z eskalacjami i raportami operacyjnymi. Wystarczy minimum: 4 etapy, 5 pól wymaganych, jedna reguła „brak aktywności 7 dni = przypomnienie”. To jest 1–2 dni pracy, nie wdrożenie. Większa skala uzasadnia większy system.",
   },
@@ -223,7 +223,7 @@ export default function CrmJakoSystemPracy() {
       <main>
         <Breadcrumbs items={[{ label: "CRM jako system pracy" }]} />
 
-        {/* Hero — kompaktowy */}
+        {/* Hero, kompaktowy */}
         <section className="pt-24 pb-12 bg-gradient-to-b from-accent/10 to-transparent border-b border-gray-100 dark:border-gray-800">
           <div className="container-wide">
             <div className="max-w-3xl mx-auto text-center">
@@ -233,7 +233,7 @@ export default function CrmJakoSystemPracy() {
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
                 CRM nie powinien być miejscem, gdzie handlowiec dokumentuje
-                chaos. Powinien być systemem, który ten chaos ogranicza —
+                chaos. Powinien być systemem, który ten chaos ogranicza,
                 wymusza dyscyplinę procesu, pilnuje terminów, podpowiada kolejny
                 krok. Tu opisuję, jak doprowadzić istniejący CRM do stanu, w
                 którym zespół mu ufa, a manager przestaje sklejać raporty w
@@ -257,7 +257,7 @@ export default function CrmJakoSystemPracy() {
           </div>
         </section>
 
-        {/* Treść w zakładkach — nic nie wycięte, podzielone */}
+        {/* Treść w zakładkach, nic nie wycięte, podzielone */}
         <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
           <Tabs
             ariaLabel="Sekcje artykułu o CRM jako systemie pracy"
@@ -389,7 +389,7 @@ export default function CrmJakoSystemPracy() {
                       <div className="text-gray-600 dark:text-gray-400 leading-relaxed space-y-4">
                         <p>
                           Zespół 5 handlowców, każdy spędza średnio 45 minut
-                          dziennie na „administracji w CRM” — szukaniu
+                          dziennie na „administracji w CRM”, szukaniu
                           kontekstu, ręcznym uzupełnianiu pól, klikaniu między
                           ekranami. To 3,75 godziny dziennie zespołu, czyli ok.
                           75 godzin miesięcznie. Przy stawce 80 zł/h kosztu
@@ -401,7 +401,7 @@ export default function CrmJakoSystemPracy() {
                           sklejanie raportu z CRM-u i Excela, weryfikację,
                           pytanie „a co z tym klientem” i prostowanie statusów.
                           To kolejne 2 000 zł miesięcznie kosztu menedżerskiego
-                          — znacznie wartościowszego czasu, który mógłby pójść
+                         , znacznie wartościowszego czasu, który mógłby pójść
                           na rozmowy z zespołem albo z klientami.
                         </p>
                         <p>
@@ -416,7 +416,7 @@ export default function CrmJakoSystemPracy() {
                           Wdrożenie porządku w CRM dla zespołu tej skali to
                           zwykle 4–8 tys. zł setupu i 4 tygodnie kalibracji.
                           Wraca w 2–3 miesiące z samego odzyskanego czasu
-                          zespołu — bez liczenia odzyskanych deali.
+                          zespołu, bez liczenia odzyskanych deali.
                         </p>
                       </div>
                     </div>
@@ -431,7 +431,7 @@ export default function CrmJakoSystemPracy() {
                       <div className="text-center mb-12">
                         <span className="section-label">Proces przed</span>
                         <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4">
-                          Jak handlowiec używa CRM-u dziś — łańcuch nadziei
+                          Jak handlowiec używa CRM-u dziś, łańcuch nadziei
                         </h2>
                       </div>
                       <ol className="space-y-3">
@@ -496,7 +496,7 @@ export default function CrmJakoSystemPracy() {
                         <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
                           To jest sekwencja, którą prowadzę u większości
                           klientów. Każdy etap można zatrzymać i mierzyć efekt
-                          po kolei — bez wdrażania wszystkiego naraz.
+                          po kolei, bez wdrażania wszystkiego naraz.
                         </p>
                       </div>
                       <ol className="relative max-w-4xl space-y-3 lg:space-y-4">
@@ -601,7 +601,7 @@ export default function CrmJakoSystemPracy() {
                         Dopiero potem dochodzą automatyczne sekwencje,
                         integracje z marketingiem, scoring leadów i raporty
                         zaawansowane. Najczęstszy błąd to próba zrobienia
-                        wszystkiego naraz — handlowcy nie nadążają z adopcją i
+                        wszystkiego naraz, handlowcy nie nadążają z adopcją i
                         wracają do Excela.
                       </p>
                     </div>

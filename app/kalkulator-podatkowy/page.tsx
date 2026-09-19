@@ -22,7 +22,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Automatyzacja leadów, CRM i raportowania dla firm B2B",
+        alt: "Fluxlab, Automatyzacja leadów, CRM i raportowania dla firm B2B",
       },
     ],
   },
@@ -40,7 +40,7 @@ const faqs = [
   {
     question: "Jak liczy się składkę zdrowotną na ryczałcie w 2026?",
     answer:
-      "Na ryczałcie składka zdrowotna wynosi 9% od podstawy zależnej od rocznego przychodu: do 60 000 zł — 60% przeciętnego wynagrodzenia, do 300 000 zł — 100%, powyżej — 180%. W 2026 r. przeciętne wynagrodzenie wynosi 9 322 zł.",
+      "Na ryczałcie składka zdrowotna wynosi 9% od podstawy zależnej od rocznego przychodu: do 60 000 zł, 60% przeciętnego wynagrodzenia, do 300 000 zł, 100%, powyżej, 180%. W 2026 r. przeciętne wynagrodzenie wynosi 9 322 zł.",
   },
   {
     question: "Czy na ryczałcie mogę odliczać koszty?",
@@ -71,7 +71,7 @@ export default function KalkulatorPodatkowyPage() {
       <main>
         <Breadcrumbs items={[{ label: "Kalkulator podatkowy" }]} />
 
-        {/* Hero — kompaktowy */}
+        {/* Hero, kompaktowy */}
         <section className="pt-16 pb-6">
           <div className="container-wide max-w-5xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-8 items-center">
@@ -91,7 +91,7 @@ export default function KalkulatorPodatkowyPage() {
                     "Koszty prywatne i samochód firmowy/mieszany",
                     "Wyniki miesięcznie i rocznie",
                     "Aktualne stawki i progi 2026",
-                    "Mały ZUS Plus — automatyczne wyliczenie",
+                    "Mały ZUS Plus, automatyczne wyliczenie",
                   ].map((item) => (
                     <li
                       key={item}
@@ -177,9 +177,9 @@ export default function KalkulatorPodatkowyPage() {
                         </h2>
                         <div className="space-y-4 text-gray-600 dark:text-gray-400">
                           <p>
-                            Kalkulator pobiera Twoje dane wejściowe — przychód,
+                            Kalkulator pobiera Twoje dane wejściowe, przychód,
                             koszty, formę ZUS, stawkę ryczałtu, status VAT i
-                            opcje samochodu — a następnie oblicza dla każdej z
+                            opcje samochodu, a następnie oblicza dla każdej z
                             trzech form opodatkowania: składki społeczne,
                             składkę zdrowotną, podatek dochodowy, ewentualny VAT
                             i kwotę netto do dyspozycji.
@@ -207,14 +207,14 @@ export default function KalkulatorPodatkowyPage() {
                           </p>
                           <p>
                             <strong>Kwota do dyspozycji</strong> to
-                            najważniejsza liczba — pokazuje, ile realnie zostaje
+                            najważniejsza liczba, pokazuje, ile realnie zostaje
                             po opłaceniu wszystkich danin. Najwyższa kwota do
                             dyspozycji oznacza najkorzystniejszą formę dla
                             podanych parametrów.
                           </p>
                           <p>
                             Pamiętaj: wynik zmienia się w zależności od danych
-                            wejściowych. Warto sprawdzić kilka scenariuszy — np.
+                            wejściowych. Warto sprawdzić kilka scenariuszy, np.
                             wyższy przychód, inne koszty albo zmianę formy ZUS.
                           </p>
                         </div>
@@ -280,7 +280,7 @@ export default function KalkulatorPodatkowyPage() {
                             </li>
                             <li>
                               <strong>Składki ZUS:</strong> pełny ZUS, mały ZUS,
-                              ulga na start, mały ZUS Plus — z dokładnym
+                              ulga na start, mały ZUS Plus, z dokładnym
                               wyliczeniem składek społecznych i Funduszu Pracy.
                             </li>
                             <li>
@@ -394,7 +394,7 @@ export default function KalkulatorPodatkowyPage() {
                               href="/strefa-wiedzy/ryczalt-czy-liniowy"
                               className="text-accent hover:underline"
                             >
-                              Ryczałt czy liniowy — co się bardziej opłaca w
+                              Ryczałt czy liniowy, co się bardziej opłaca w
                               2026
                             </Link>
                             .
@@ -530,19 +530,19 @@ export default function KalkulatorPodatkowyPage() {
                           </p>
                           <ul className="space-y-1 text-xs">
                             <li>
-                              <strong>03.2026</strong> — aktualizacja stawek ZUS
+                              <strong>03.2026</strong>, aktualizacja stawek ZUS
                               i progów zdrowotnej na rok 2026
                             </li>
                             <li>
-                              <strong>03.2026</strong> — dodanie małego ZUS Plus
+                              <strong>03.2026</strong>, dodanie małego ZUS Plus
                               i rozbudowa sekcji eksperckiej
                             </li>
                             <li>
-                              <strong>02.2026</strong> — dodanie obsługi
+                              <strong>02.2026</strong>, dodanie obsługi
                               samochodu firmowego i mieszanego
                             </li>
                             <li>
-                              <strong>01.2026</strong> — pierwsze wydanie
+                              <strong>01.2026</strong>, pierwsze wydanie
                               kalkulatora z podstawowymi formami opodatkowania
                             </li>
                           </ul>
@@ -559,18 +559,18 @@ export default function KalkulatorPodatkowyPage() {
                               href: "/strefa-wiedzy/jaka-forma-opodatkowania-jdg-2026",
                               title: "Jaka forma opodatkowania JDG w 2026?",
                               description:
-                                "Porównanie skali, liniowego i ryczałtu — kryteria wyboru, progi, pułapki.",
+                                "Porównanie skali, liniowego i ryczałtu, kryteria wyboru, progi, pułapki.",
                             },
                             {
                               href: "/strefa-wiedzy/ryczalt-czy-liniowy",
                               title:
-                                "Ryczałt czy liniowy — co się bardziej opłaca",
+                                "Ryczałt czy liniowy, co się bardziej opłaca",
                               description:
                                 "Kiedy ryczałt wygrywa, kiedy przegrywa i jak to policzyć.",
                             },
                             {
                               href: "/strefa-wiedzy/skala-czy-liniowy-jdg",
-                              title: "Skala czy liniowy — porównanie dla JDG",
+                              title: "Skala czy liniowy, porównanie dla JDG",
                               description:
                                 "Kwota wolna, progi, zdrowotna i realne scenariusze.",
                             },
@@ -582,13 +582,13 @@ export default function KalkulatorPodatkowyPage() {
                             },
                             {
                               href: "/strefa-wiedzy/maly-zus-plus-kiedy-sie-oplaca",
-                              title: "Mały ZUS Plus — kiedy się opłaca",
+                              title: "Mały ZUS Plus, kiedy się opłaca",
                               description:
                                 "Warunki, limity, oszczędności i kiedy lepiej z niego nie korzystać.",
                             },
                             {
                               href: "/strefa-wiedzy/vat-w-jdg-kiedy-warto",
-                              title: "VAT w JDG — kiedy warto być vatowcem",
+                              title: "VAT w JDG, kiedy warto być vatowcem",
                               description:
                                 "Zwolnienie podmiotowe, próg 200 000 zł i wpływ na cashflow.",
                             },

@@ -4,7 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Dziękuję — zgłoszenie odebrane | Fluxlab",
+  title: "Dziękuję, zgłoszenie odebrane | Fluxlab",
   description:
     "Twoje zgłoszenie do diagnozy procesu trafiło do mnie. Odpowiedź w ciągu 24h.",
   robots: {

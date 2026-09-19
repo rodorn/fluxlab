@@ -33,7 +33,7 @@ export default function Header() {
           : "bg-white/60 dark:bg-gray-950/55 backdrop-blur-md border-b border-transparent"
       }`}
     >
-      {/* Pełna szerokość — bez container-wide */}
+      {/* Pełna szerokość, bez container-wide */}
       <div className="flex items-center justify-between h-16 px-5 lg:px-8">
         {/* Logo */}
         <Link
@@ -44,7 +44,7 @@ export default function Header() {
           flux<span className="text-accent">lab</span>
         </Link>
 
-        {/* Desktop nav — linki z animowanym podkreśleniem */}
+        {/* Desktop nav, linki z animowanym podkreśleniem */}
         <nav className="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
           {NAV.map((item) => (
             <Link

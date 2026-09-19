@@ -6,11 +6,11 @@ import LandingForm from "@/components/LandingForm";
 import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
-  title: "n8n — automatyzacja workflow z pełną kontrolą | Fluxlab",
+  title: "n8n, automatyzacja workflow z pełną kontrolą | Fluxlab",
   description:
     "Wdrażam automatyzacje na platformie n8n: self-hosted lub cloud, integracje API, webhooki, własne nody. Alternatywa dla Zapier i Make z pełną kontrolą nad infrastrukturą.",
   openGraph: {
-    title: "n8n — automatyzacja workflow z pełną kontrolą | Fluxlab",
+    title: "n8n, automatyzacja workflow z pełną kontrolą | Fluxlab",
     description:
       "Wdrażam automatyzacje na platformie n8n: self-hosted lub cloud, integracje API, webhooki, własne nody. Alternatywa dla Zapier i Make z pełną kontrolą nad infrastrukturą.",
     locale: "pl_PL",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Automatyzacja leadów, CRM i raportowania dla firm B2B",
+        alt: "Fluxlab, Automatyzacja leadów, CRM i raportowania dla firm B2B",
       },
     ],
   },
@@ -31,9 +31,9 @@ export const metadata: Metadata = {
 
 const offer = [
   "Integracja CRM, ERP, baz danych i dowolnego API w jeden workflow.",
-  "Webhooki — reakcja na zdarzenia w czasie rzeczywistym, bez pollingu.",
+  "Webhooki, reakcja na zdarzenia w czasie rzeczywistym, bez pollingu.",
   "Własna logika w nodach JavaScript i Python tam, gdzie no-code nie wystarcza.",
-  "Self-hosted lub cloud — Twoje dane, Twoja infrastruktura.",
+  "Self-hosted lub cloud, Twoje dane, Twoja infrastruktura.",
 ];
 
 const faq = [
@@ -50,7 +50,7 @@ const faq = [
   {
     question: "Czy mogę przenieść automatyzacje z Zapier/Make?",
     answer:
-      "Tak. Większość scenariuszy da się odtworzyć w n8n — migracja to dobra okazja, by je uprościć.",
+      "Tak. Większość scenariuszy da się odtworzyć w n8n, migracja to dobra okazja, by je uprościć.",
   },
 ];
 
@@ -59,7 +59,7 @@ export default function N8nPage() {
     <>
       <Header />
       <main>
-        {/* Hero — kompaktowy */}
+        {/* Hero, kompaktowy */}
         <section className="relative overflow-hidden pt-24 pb-12">
           <div className="blob blob-violet -z-10 top-[-10%] left-[-5%]" />
           <div className="container-wide max-w-3xl mx-auto text-center">
@@ -69,7 +69,7 @@ export default function N8nPage() {
             </h1>
             <p className="text-lg lg:text-xl text-gray-600 dark:text-gray-300">
               Workflow, które łączą systemy, API i logikę biznesową w jednym
-              miejscu. Self-hosted lub cloud — z pełną kontrolą nad danymi.
+              miejscu. Self-hosted lub cloud, z pełną kontrolą nad danymi.
             </p>
             <div className="mt-8">
               <a href="#sekcje" className="btn-primary">
@@ -79,7 +79,7 @@ export default function N8nPage() {
           </div>
         </section>
 
-        {/* Treść w zakładkach — nic nie wycięte, podzielone */}
+        {/* Treść w zakładkach, nic nie wycięte, podzielone */}
         <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
           <Tabs
             ariaLabel="Sekcje usługi automatyzacji z n8n"

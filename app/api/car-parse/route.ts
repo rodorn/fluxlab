@@ -134,13 +134,13 @@ const tools = [
   },
 ];
 
-// Reduced tool for Otomoto — LLM only fills fields not scraped from the listing
+// Reduced tool for Otomoto, LLM only fills fields not scraped from the listing
 const toolsOtomoto = [
   {
     type: "function",
     name: "fill_car_data",
     description:
-      "Wypełnij brakujące dane samochodu na podstawie opisu. Cena, rok i przebieg są już znane — NIE podawaj ich.",
+      "Wypełnij brakujące dane samochodu na podstawie opisu. Cena, rok i przebieg są już znane, NIE podawaj ich.",
     parameters: {
       type: "object",
       properties: {
@@ -217,7 +217,7 @@ export async function POST(req: Request) {
         );
       }
 
-      // Build context string for LLM — title + extras from listing
+      // Build context string for LLM, title + extras from listing
       const parts = [scrapedData.title];
       if (scrapedData.year) parts.push(`${scrapedData.year} rok`);
       if (scrapedData.fuelType) parts.push(scrapedData.fuelType);

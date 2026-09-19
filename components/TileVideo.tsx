@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 
 /**
- * TileVideo — tło wideo kafelka, osobne dla trybu jasnego i ciemnego.
+ * TileVideo, tło wideo kafelka, osobne dla trybu jasnego i ciemnego.
  * Renderuje dwa <video>; CSS (dark:) pokazuje właściwe. Domyślnie
  * zatrzymane (widać poster/pierwszą klatkę); po najechaniu na kartę grają.
  */
@@ -24,14 +24,14 @@ export default function TileVideo({
     if (typeof window === "undefined") return;
     const videos = Array.from(wrap.querySelectorAll("video"));
 
-    // Brak myszki (mobile/touch) — wideo gra ciągle, bo nie ma hovera
+    // Brak myszki (mobile/touch), wideo gra ciągle, bo nie ma hovera
     const canHover = window.matchMedia("(hover: hover)").matches;
     if (!canHover) {
       videos.forEach((v) => void v.play().catch(() => {}));
       return;
     }
 
-    // Desktop — wideo gra po najechaniu na kartę
+    // Desktop, wideo gra po najechaniu na kartę
     const card = wrap.closest("a");
     if (!card) return;
     const enter = () => {

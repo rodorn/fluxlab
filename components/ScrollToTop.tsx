@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 /**
- * Przycisk powrotu na górę — pojawia się po przewinięciu strony.
+ * Przycisk powrotu na górę, pojawia się po przewinięciu strony.
  */
 export default function ScrollToTop() {
   const [visible, setVisible] = useState(false);

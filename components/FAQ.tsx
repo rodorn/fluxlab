@@ -12,32 +12,32 @@ const faqs = [
   {
     question: "Ile kosztuje automatyzacja?",
     answer:
-      "Diagnoza jest bezpłatna i kończy się wstępną rekomendacją. Audyt procesu jest płatny — to konkretna dokumentacja: mapa AS-IS → TO-BE, priorytety, narzędzia, harmonogram, wycena i ROI. Koszt audytu odliczam od wdrożenia, jeśli kontynuujemy współpracę. Projekty wdrożeniowe zaczynają się od kilku tysięcy złotych, stała cena za zakres — bez ukrytych kosztów.",
+      "Diagnoza jest bezpłatna i kończy się wstępną rekomendacją. Audyt procesu jest płatny, to konkretna dokumentacja: mapa AS-IS → TO-BE, priorytety, narzędzia, harmonogram, wycena i ROI. Koszt audytu odliczam od wdrożenia, jeśli kontynuujemy współpracę. Projekty wdrożeniowe zaczynają się od kilku tysięcy złotych, stała cena za zakres, bez ukrytych kosztów.",
   },
   {
     question: "Dlaczego nie rozliczasz godzinowo?",
     answer:
-      "Bo nie powinieneś płacić za mój czas — powinieneś płacić za wynik. Rozliczenie godzinowe premiuje wolniejszą pracę i generuje niepewność budżetową po Twojej stronie. Stała cena za zakres oznacza, że wiesz dokładnie, co dostajesz i ile to kosztuje, zanim projekt ruszy.",
+      "Bo nie powinieneś płacić za mój czas, powinieneś płacić za wynik. Rozliczenie godzinowe premiuje wolniejszą pracę i generuje niepewność budżetową po Twojej stronie. Stała cena za zakres oznacza, że wiesz dokładnie, co dostajesz i ile to kosztuje, zanim projekt ruszy.",
   },
   {
     question: "Z jakich narzędzi korzystasz?",
     answer:
-      "Dobieram stack do problemu i budżetu — nie jestem przywiązany do jednego narzędzia. Pracuję z Pythonem (API, automatyzacje, web scraping), n8n, Make i Zapierem, REST API i webhookami, bazami danych (m.in. Supabase), CRM-ami (Pipedrive, HubSpot, Salesforce i innymi) oraz OpenAI API. W projektach wymagających większej kontroli i elastyczności preferuję rozwiązania oparte o kod.",
+      "Dobieram stack do problemu i budżetu, nie jestem przywiązany do jednego narzędzia. Pracuję z Pythonem (API, automatyzacje, web scraping), n8n, Make i Zapierem, REST API i webhookami, bazami danych (m.in. Supabase), CRM-ami (Pipedrive, HubSpot, Salesforce i innymi) oraz OpenAI API. W projektach wymagających większej kontroli i elastyczności preferuję rozwiązania oparte o kod.",
   },
   {
-    question: "Co po wdrożeniu — zostanę z tym sam?",
+    question: "Co po wdrożeniu, zostanę z tym sam?",
     answer:
-      "Nie. Po wdrożeniu zapewniam monitoring działania automatyzacji, poprawki oraz dalszy rozwój. Współpraca może przyjąć formę miesięcznego abonamentu albo rozliczenia za konkretny zakres zmian — zależnie od tego, czego potrzebujesz. Przekazuję też dokumentację i krótkie szkolenie, żebyś rozumiał, co działa i dlaczego.",
+      "Nie. Po wdrożeniu zapewniam monitoring działania automatyzacji, poprawki oraz dalszy rozwój. Współpraca może przyjąć formę miesięcznego abonamentu albo rozliczenia za konkretny zakres zmian, zależnie od tego, czego potrzebujesz. Przekazuję też dokumentację i krótkie szkolenie, żebyś rozumiał, co działa i dlaczego.",
   },
   {
     question: "Pracujesz tylko z polskimi firmami?",
     answer:
-      "Nie — współpracuję z firmami z Polski oraz z klientami anglojęzycznymi. Wszystkie projekty realizuję zdalnie, więc lokalizacja nie ma znaczenia.",
+      "Nie, współpracuję z firmami z Polski oraz z klientami anglojęzycznymi. Wszystkie projekty realizuję zdalnie, więc lokalizacja nie ma znaczenia.",
   },
   {
     question: "Jak długo trwa wdrożenie?",
     answer:
-      "Pierwsze wdrożenie zajmuje zazwyczaj 2–4 dni od zatwierdzenia zakresu. Prostsze automatyzacje mogą być gotowe szybciej — najkrótszy projekt zrobiłem w ciągu kilku godzin. Czas zależy od liczby integrowanych systemów i złożoności logiki procesu.",
+      "Pierwsze wdrożenie zajmuje zazwyczaj 2–4 dni od zatwierdzenia zakresu. Prostsze automatyzacje mogą być gotowe szybciej, najkrótszy projekt zrobiłem w ciągu kilku godzin. Czas zależy od liczby integrowanych systemów i złożoności logiki procesu.",
   },
 ];
 

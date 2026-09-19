@@ -76,11 +76,11 @@ interface Recommendation {
 }
 
 const TEAM_INSIGHT: Record<TeamSize, string> = {
-  "1": "Jedna osoba obsługująca proces to single point of failure — choroba, urlop albo zmiana pracy zatrzymuje cały przepływ. Automatyzacja działa tu też jako ubezpieczenie ciągłości, nie tylko oszczędność czasu.",
+  "1": "Jedna osoba obsługująca proces to single point of failure, choroba, urlop albo zmiana pracy zatrzymuje cały przepływ. Automatyzacja działa tu też jako ubezpieczenie ciągłości, nie tylko oszczędność czasu.",
   "2-3":
     "Przy 2–3 osobach zaczyna kosztować koordynacja: każdy ma trochę inny sposób, dane wpisywane są niespójnie, a follow-up zależy od tego, kto akurat zauważył maila. Automat usuwa rozjazd między osobami.",
   zespol:
-    "Zespół oznacza, że automatyzacja skaluje się od razu na wszystkich — co jest największą dźwignią ROI. Każda godzina zaoszczędzona w procesie mnoży się przez liczbę osób.",
+    "Zespół oznacza, że automatyzacja skaluje się od razu na wszystkich, co jest największą dźwignią ROI. Każda godzina zaoszczędzona w procesie mnoży się przez liczbę osób.",
 };
 
 function recommend(d: Inputs): Recommendation {
@@ -95,8 +95,8 @@ function recommend(d: Inputs): Recommendation {
   if (!d.repetitive) {
     return {
       kind: "manual",
-      headline: "Automatyzacja ma niski sens — proces jest niestabilny.",
-      detail: `Jeśli wymagania ciągle się zmieniają, automatyzacja będzie wymagała ciągłego dopisywania wyjątków. To koszt nie tylko wdrożeniowy, ale też operacyjny — częściej niż częściowo zautomatyzowany proces lepiej trzymać jako ludzki, ale dobrze opisany (checklisty, szablony, SOP-y). Zautomatyzuj dopiero, gdy proces sam się ustabilizuje. ${teamInsight}`,
+      headline: "Automatyzacja ma niski sens, proces jest niestabilny.",
+      detail: `Jeśli wymagania ciągle się zmieniają, automatyzacja będzie wymagała ciągłego dopisywania wyjątków. To koszt nie tylko wdrożeniowy, ale też operacyjny, częściej niż częściowo zautomatyzowany proces lepiej trzymać jako ludzki, ale dobrze opisany (checklisty, szablony, SOP-y). Zautomatyzuj dopiero, gdy proces sam się ustabilizuje. ${teamInsight}`,
     };
   }
 
@@ -104,24 +104,24 @@ function recommend(d: Inputs): Recommendation {
   if (isLowFrequency && d.czasH < 5) {
     return {
       kind: "manual",
-      headline: "Ręczna obsługa OK — skala nie uzasadnia wdrożenia.",
+      headline: "Ręczna obsługa OK, skala nie uzasadnia wdrożenia.",
       detail: `Mniej niż 5 godzin miesięcznie i okazjonalna częstotliwość to za mała baza, żeby ROI z automatyzacji wyszło sensownie. Lepiej skupić się na procesach o większej skali. ${teamInsight}`,
     };
   }
 
-  // 3) Wysoka częstotliwość — wariant zależnie od zespołu
+  // 3) Wysoka częstotliwość, wariant zależnie od zespołu
   if (isHighFrequency) {
     if (d.team === "zespol") {
       return {
         kind: "automate",
-        headline: "Zdecydowanie automatyzuj — skala robi największą różnicę.",
+        headline: "Zdecydowanie automatyzuj, skala robi największą różnicę.",
         detail: `Codziennie/kilka razy w tygodniu × cały zespół = klasyczny case z największą dźwignią ROI. Wdrożenie typowo zwraca się w 1–3 miesiące, a oszczędność rośnie liniowo z liczbą osób. ${teamInsight}`,
       };
     }
     if (d.team === "1") {
       return {
         kind: "automate",
-        headline: "Automatyzuj — i zabezpiecz proces przed człowiekiem.",
+        headline: "Automatyzuj, i zabezpiecz proces przed człowiekiem.",
         detail: `Wysoka częstotliwość + jedna osoba to nie tylko marnowanie czasu, ale też ryzyko operacyjne. Automatyzacja oddaje proces systemowi, który nie zapomina, nie idzie na urlop i nie myli się przy 50. powtórzeniu z rzędu. ${teamInsight}`,
       };
     }
@@ -132,19 +132,19 @@ function recommend(d: Inputs): Recommendation {
     };
   }
 
-  // 4) Średnia częstotliwość — zespół pcha w stronę automatyzacji
+  // 4) Średnia częstotliwość, zespół pcha w stronę automatyzacji
   if (isMidFrequency) {
     if (d.team === "zespol") {
       return {
         kind: "automate",
-        headline: "Automatyzacja ma sens — wygrywa skala, nie częstotliwość.",
+        headline: "Automatyzacja ma sens, wygrywa skala, nie częstotliwość.",
         detail: `Częstotliwość średnia, ale zespół oznacza, że jedno wdrożenie skaluje się na wielu. Suma godzin × osób zwykle robi z tego zwrot w 3–6 miesięcy. ${teamInsight}`,
       };
     }
     return {
       kind: "consider",
-      headline: "Warto policzyć dokładniej — wynik zależy od konkretu.",
-      detail: `Przy raz/kilka razy w miesiącu kluczowe są: liczba systemów do zintegrowania, koszt błędu i rozkład pracy między osoby. Zwrot często jest, ale nie zawsze szybko — to typowy przypadek na 30-minutową diagnozę. ${teamInsight}`,
+      headline: "Warto policzyć dokładniej, wynik zależy od konkretu.",
+      detail: `Przy raz/kilka razy w miesiącu kluczowe są: liczba systemów do zintegrowania, koszt błędu i rozkład pracy między osoby. Zwrot często jest, ale nie zawsze szybko, to typowy przypadek na 30-minutową diagnozę. ${teamInsight}`,
     };
   }
 
@@ -153,8 +153,8 @@ function recommend(d: Inputs): Recommendation {
     if (d.team === "zespol" && d.czasH >= 20) {
       return {
         kind: "consider",
-        headline: "Granicznie sensowne — tylko jeśli proces jest krytyczny.",
-        detail: `Okazjonalnie, ale przy zespole i 20+ godzinach miesięcznie zsumowanych — automatyzacja może mieć sens, jeśli proces jest powtarzalny w treści (a tylko nieregularny w czasie). Inaczej koszt utrzymania kodu, którego nikt nie używa, zje oszczędność. ${teamInsight}`,
+        headline: "Granicznie sensowne, tylko jeśli proces jest krytyczny.",
+        detail: `Okazjonalnie, ale przy zespole i 20+ godzinach miesięcznie zsumowanych, automatyzacja może mieć sens, jeśli proces jest powtarzalny w treści (a tylko nieregularny w czasie). Inaczej koszt utrzymania kodu, którego nikt nie używa, zje oszczędność. ${teamInsight}`,
       };
     }
     return {
@@ -167,7 +167,7 @@ function recommend(d: Inputs): Recommendation {
   return {
     kind: "consider",
     headline: "Warto policzyć dokładniej.",
-    detail: `Twoje parametry są w środku przedziału — automatyzacja może mieć sens, ale wynik zależy od konkretu. To dobry moment na bezpłatną diagnozę. ${teamInsight}`,
+    detail: `Twoje parametry są w środku przedziału, automatyzacja może mieć sens, ale wynik zależy od konkretu. To dobry moment na bezpłatną diagnozę. ${teamInsight}`,
   };
 }
 
@@ -415,7 +415,7 @@ export default function Kalkulator() {
           </h2>
           <p className="text-sm text-gray-500 dark:text-gray-400">
             Wynik liczy się na bieżąco. Domyślne wartości to typowy proces
-            obsługi 100 leadów miesięcznie — podmień na własne.
+            obsługi 100 leadów miesięcznie, podmień na własne.
           </p>
         </div>
 
@@ -559,7 +559,7 @@ export default function Kalkulator() {
                 </strong>{" "}
                 ~{fmtPLN(result.fullTimeMonthly)} zł/mies. ({data.kosztH} zł/h ×{" "}
                 {FULL_TIME_HOURS} h). To <em>tylko</em> stawka brutto razy
-                godziny — pełen koszt zatrudnienia (ZUS, urlopy, sprzęt,
+                godziny, pełen koszt zatrudnienia (ZUS, urlopy, sprzęt,
                 rekrutacja, onboarding) jest wyższy o 30–50%.
               </p>
             </div>
@@ -595,10 +595,10 @@ export default function Kalkulator() {
                         1,
                         Math.round(4750 / Math.max(1, result.monthlyManual)),
                       )
-                    : "—"}{" "}
+                    : "brak danych"}{" "}
                   miesięcy
                 </strong>
-                . To bardzo zgrubny szacunek — w diagnozie liczę konkretnie pod
+                . To bardzo zgrubny szacunek, w diagnozie liczę konkretnie pod
                 Twój proces.
               </p>
             </div>
@@ -613,14 +613,14 @@ export default function Kalkulator() {
         </p>
       </div>
 
-      {/* ── CTA — primary ── */}
+      {/* ── CTA, primary ── */}
       <div className="rounded-2xl border border-accent/20 bg-accent/5 dark:bg-accent/10 p-8 text-center">
         <h3 className="text-xl lg:text-2xl font-bold text-gray-900 dark:text-white mb-3">
           Chcesz konkretnie sprawdzić, ile zaoszczędzisz?
         </h3>
         <p className="text-sm text-gray-600 dark:text-gray-400 mb-6 max-w-xl mx-auto">
           W diagnozie 30-minutowej liczę pełny koszt obecnego procesu, koszt
-          wdrożenia automatyzacji i punkt zwrotu — pod Twoje konkretne narzędzia
+          wdrożenia automatyzacji i punkt zwrotu, pod Twoje konkretne narzędzia
           i wolumen.
         </p>
         <TrackedCTA
@@ -633,7 +633,7 @@ export default function Kalkulator() {
         </TrackedCTA>
       </div>
 
-      {/* ── CTA — secondary ── */}
+      {/* ── CTA, secondary ── */}
       <div className="text-center">
         <p className="text-sm text-gray-500 dark:text-gray-400">
           Jeśli problemem są leady, użyj precyzyjniejszego kalkulatora →{" "}

@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Automatyzacja leadów, CRM i raportowania dla firm B2B",
+        alt: "Fluxlab, Automatyzacja leadów, CRM i raportowania dla firm B2B",
       },
     ],
   },
@@ -52,12 +52,12 @@ export default function JakUporzadkowacProcesSprzedazyArticle() {
               Większość problemów z CRM nie wynika z narzędzia, tylko z tego, że
               sam proces sprzedaży nie został opisany i uporządkowany. Jeśli
               etapy są niejasne, statusy uznaniowe, a dane niekompletne, to CRM
-              nie pomoże — tylko pokaże bałagan w ładniejszej formie.
+              nie pomoże, tylko pokaże bałagan w ładniejszej formie.
             </p>
           </div>
         </section>
 
-        {/* Treść w zakładkach — nic nie wycięte, podzielone wg rozdziałów */}
+        {/* Treść w zakładkach, nic nie wycięte, podzielone wg rozdziałów */}
         <div className="container-wide pb-20">
           <Tabs
             ariaLabel="Rozdziały artykułu o porządkowaniu procesu sprzedaży w CRM"

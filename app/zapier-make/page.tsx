@@ -7,12 +7,12 @@ import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
   title:
-    "Zapier vs Make (Integromat) — porównanie i wdrożenie automatyzacji | Fluxlab",
+    "Zapier vs Make (Integromat), porównanie i wdrożenie automatyzacji | Fluxlab",
   description:
     "Zapier czy Make? Porównujemy platformy automatyzacji, pomagamy wybrać najlepsze narzędzie i wdrażam workflow dopasowane do potrzeb Twojej firmy.",
   openGraph: {
     title:
-      "Zapier vs Make (Integromat) — porównanie i wdrożenie automatyzacji | Fluxlab",
+      "Zapier vs Make (Integromat), porównanie i wdrożenie automatyzacji | Fluxlab",
     description:
       "Zapier czy Make? Porównujemy platformy automatyzacji, pomagamy wybrać najlepsze narzędzie i wdrażam workflow dopasowane do potrzeb Twojej firmy.",
     locale: "pl_PL",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Automatyzacja leadów, CRM i raportowania dla firm B2B",
+        alt: "Fluxlab, Automatyzacja leadów, CRM i raportowania dla firm B2B",
       },
     ],
   },
@@ -55,7 +55,7 @@ const faq = [
   {
     question: "Czy mogę przenieść automatyzacje między platformami?",
     answer:
-      "Tak, choć nie ma automatycznej migracji — logikę odtwarza się w nowym narzędziu. Pomagam w takich migracjach.",
+      "Tak, choć nie ma automatycznej migracji, logikę odtwarza się w nowym narzędziu. Pomagam w takich migracjach.",
   },
   {
     question: "Ile kosztuje Zapier vs Make?",
@@ -69,7 +69,7 @@ export default function ZapierMake() {
     <>
       <Header />
       <main>
-        {/* Hero — kompaktowy */}
+        {/* Hero, kompaktowy */}
         <section className="relative overflow-hidden pt-24 pb-12">
           <div className="blob blob-cyan -z-10 top-[-10%] right-[-5%]" />
           <div className="container-wide max-w-3xl mx-auto text-center">
@@ -90,7 +90,7 @@ export default function ZapierMake() {
           </div>
         </section>
 
-        {/* Treść w zakładkach — nic nie wycięte, podzielone */}
+        {/* Treść w zakładkach, nic nie wycięte, podzielone */}
         <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
           <Tabs
             ariaLabel="Sekcje porównania Zapier vs Make"
@@ -188,7 +188,7 @@ export default function ZapierMake() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Service",
-            name: "Zapier vs Make — wdrożenie automatyzacji",
+            name: "Zapier vs Make, wdrożenie automatyzacji",
             description:
               "Zapier czy Make? Porównujemy platformy automatyzacji, pomagamy wybrać najlepsze narzędzie i wdrażam workflow dopasowane do potrzeb Twojej firmy.",
             provider: { "@id": "https://fluxlab.pl/#organization" },

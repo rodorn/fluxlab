@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Integracja formularza z Pipedrive",
+        alt: "Fluxlab, Integracja formularza z Pipedrive",
       },
     ],
   },
@@ -32,9 +32,9 @@ export const metadata: Metadata = {
 
 const symptoms = [
   "Lead z formularza wpada na maila firmowego, a potem ktoś ręcznie przepisuje go do CRM-a (jeśli pamięta).",
-  "W Pipedrive są duplikaty tej samej osoby z trzech różnych kampanii — bo każdy handlowiec wpisuje na własny sposób.",
-  "Pierwszy kontakt z leadem zajmuje 4 godziny zamiast 5 minut — bo wiadomość czeka w skrzynce na ogarniętą osobę.",
-  "Marketing chwali się 200 leadami w miesiącu, sprzedaż widzi w CRM 130 — i nikt nie wie, gdzie zgubiło się 70.",
+  "W Pipedrive są duplikaty tej samej osoby z trzech różnych kampanii, bo każdy handlowiec wpisuje na własny sposób.",
+  "Pierwszy kontakt z leadem zajmuje 4 godziny zamiast 5 minut, bo wiadomość czeka w skrzynce na ogarniętą osobę.",
+  "Marketing chwali się 200 leadami w miesiącu, sprzedaż widzi w CRM 130, i nikt nie wie, gdzie zgubiło się 70.",
   "Handlowcy żonglują kartką, e-mailem i Pipedrive'em, bo każde źródło zapytań trafia gdzie indziej.",
   "Raporty „skąd przyszedł lead” robi się ręcznie, bo źródło i tak nie zapisuje się automatycznie w deal'u.",
 ];
@@ -43,10 +43,10 @@ const beforeSteps = [
   "Klient wypełnia formularz na stronie.",
   "Formularz wysyła maila na info@firma.pl.",
   "Mail leży w skrzynce, ktoś go w końcu otwiera.",
-  "Ta osoba przepisuje dane do Pipedrive — imię, firmę, telefon, źródło (jeśli pamięta).",
-  "Zakłada osobę, organizację, deal — albo zapomina o jednym z tych trzech.",
+  "Ta osoba przepisuje dane do Pipedrive, imię, firmę, telefon, źródło (jeśli pamięta).",
+  "Zakłada osobę, organizację, deal, albo zapomina o jednym z tych trzech.",
   "Wysyła wiadomość na Slacku do handlowca z regionu klienta.",
-  "Handlowiec widzi Slacka po lunchu i dzwoni — 4 godziny po zgłoszeniu.",
+  "Handlowiec widzi Slacka po lunchu i dzwoni, 4 godziny po zgłoszeniu.",
   "Lead w międzyczasie napisał do konkurencji, która zadzwoniła w 8 minut.",
 ];
 
@@ -54,7 +54,7 @@ const afterSteps = [
   {
     n: "1",
     title: "Formularz wysyła payload do API",
-    desc: "Zamiast maila — natychmiastowy webhook z czystym JSON-em (imię, firma, telefon, NIP, źródło, kampania, UTM-y).",
+    desc: "Zamiast maila, natychmiastowy webhook z czystym JSON-em (imię, firma, telefon, NIP, źródło, kampania, UTM-y).",
     accent: false,
   },
   {
@@ -66,37 +66,37 @@ const afterSteps = [
   {
     n: "3",
     title: "Pipedrive: osoba + organizacja + deal",
-    desc: "Jeden request do API tworzy trzy obiekty z poprawnymi powiązaniami. Custom fields (źródło, kampania, UTM, stanowisko) lecą od razu — nie trzeba ich uzupełniać ręcznie.",
+    desc: "Jeden request do API tworzy trzy obiekty z poprawnymi powiązaniami. Custom fields (źródło, kampania, UTM, stanowisko) lecą od razu, nie trzeba ich uzupełniać ręcznie.",
     accent: true,
   },
   {
     n: "4",
     title: "Deduplikacja",
-    desc: "Jeśli osoba o tym e-mailu lub firma o tym NIP już istnieją — system łączy nowy deal z istniejącym kontaktem zamiast plodzić duplikaty.",
+    desc: "Jeśli osoba o tym e-mailu lub firma o tym NIP już istnieją, system łączy nowy deal z istniejącym kontaktem zamiast plodzić duplikaty.",
     accent: false,
   },
   {
     n: "5",
     title: "Routing do handlowca",
-    desc: "Reguły: region, produkt, źródło, obciążenie pipeline'u. Handlowiec dostaje przypisany deal automatycznie — bez Slacka „kto bierze tego leada”.",
+    desc: "Reguły: region, produkt, źródło, obciążenie pipeline'u. Handlowiec dostaje przypisany deal automatycznie, bez Slacka „kto bierze tego leada”.",
     accent: false,
   },
   {
     n: "6",
     title: "Zadanie + powiadomienie",
-    desc: "Pipedrive tworzy aktywność „kontakt w 5 minut”. Handlowiec dostaje notyfikację — push, Slack, mail. SLA reakcji jest mierzalne.",
+    desc: "Pipedrive tworzy aktywność „kontakt w 5 minut”. Handlowiec dostaje notyfikację, push, Slack, mail. SLA reakcji jest mierzalne.",
     accent: false,
   },
   {
     n: "7",
     title: "Follow-up i eskalacja",
-    desc: "Brak kontaktu w ustalonym czasie uruchamia przypomnienie, a po kolejnym przekroczeniu — eskalację do innego handlowca lub managera. Lead nie ginie w pipeline.",
+    desc: "Brak kontaktu w ustalonym czasie uruchamia przypomnienie, a po kolejnym przekroczeniu, eskalację do innego handlowca lub managera. Lead nie ginie w pipeline.",
     accent: false,
   },
   {
     n: "8",
     title: "Raport źródeł i konwersji",
-    desc: "Każdy deal ma źródło, kampanię i UTM-y zapisane w polach. Raport „skąd przyszedł zamknięty deal” robi się sam — bez klejenia w Excelu.",
+    desc: "Każdy deal ma źródło, kampanię i UTM-y zapisane w polach. Raport „skąd przyszedł zamknięty deal” robi się sam, bez klejenia w Excelu.",
     accent: true,
   },
 ];
@@ -111,7 +111,7 @@ const firstStage = [
 const mistakes = [
   {
     title: "Zapier jako jedyna warstwa logiki",
-    desc: "Zapier jest świetny do prostych przepływów. Ale gdy w grze jest deduplikacja, walidacja po NIP, routing według reguł i eskalacja — kosztuje więcej niż dedykowane API i staje się czarną skrzynką, której nikt nie chce dotykać.",
+    desc: "Zapier jest świetny do prostych przepływów. Ale gdy w grze jest deduplikacja, walidacja po NIP, routing według reguł i eskalacja, kosztuje więcej niż dedykowane API i staje się czarną skrzynką, której nikt nie chce dotykać.",
   },
   {
     title: "Mailowanie zamiast webhooka",
@@ -119,7 +119,7 @@ const mistakes = [
   },
   {
     title: "Tworzenie tylko deala bez osoby i organizacji",
-    desc: "Deal bez powiązanej osoby i firmy to ślepy zaułek w raportach. Pipedrive nie zaprojektowano tak, żeby działać na samych dealach — i widać to przy każdej próbie zrobienia z tego raportu.",
+    desc: "Deal bez powiązanej osoby i firmy to ślepy zaułek w raportach. Pipedrive nie zaprojektowano tak, żeby działać na samych dealach, i widać to przy każdej próbie zrobienia z tego raportu.",
   },
   {
     title: "Ręczne uzupełnianie źródła",
@@ -135,33 +135,33 @@ const faq = [
   {
     question: "Czy potrzebuję Zapiera albo Make do tej integracji?",
     answer:
-      "Nie — Pipedrive ma pełne REST API i webhooki, więc formularz może rozmawiać z CRM-em bezpośrednio. Zapier/Make ma sens, gdy klejesz wiele systemów i nie chcesz pisać kodu, ale przy samym formularzu to dodatkowy koszt miesięczny i kolejna warstwa, która może się zepsuć. W większości projektów stawiam dedykowany endpoint w n8n albo lekki backend i to wystarcza.",
+      "Nie, Pipedrive ma pełne REST API i webhooki, więc formularz może rozmawiać z CRM-em bezpośrednio. Zapier/Make ma sens, gdy klejesz wiele systemów i nie chcesz pisać kodu, ale przy samym formularzu to dodatkowy koszt miesięczny i kolejna warstwa, która może się zepsuć. W większości projektów stawiam dedykowany endpoint w n8n albo lekki backend i to wystarcza.",
   },
   {
     question: "Co z RODO i zgodami?",
     answer:
-      "Zgody marketingowe i komunikacyjne lecą do Pipedrive jako custom fields (data zgody, treść, IP, źródło). Dzięki temu masz pełen audyt, kiedy i na co klient się zgodził. Sam formularz powinien zapisywać też kopię checkboxów do osobnego loga — to nie jest praca na 5 minut, ale robi się raz i działa.",
+      "Zgody marketingowe i komunikacyjne lecą do Pipedrive jako custom fields (data zgody, treść, IP, źródło). Dzięki temu masz pełen audyt, kiedy i na co klient się zgodził. Sam formularz powinien zapisywać też kopię checkboxów do osobnego loga, to nie jest praca na 5 minut, ale robi się raz i działa.",
   },
   {
     question:
       "Czy formularz HubSpot, WPForms, Webflow albo własny w Next.js się nada?",
     answer:
-      "Każdy formularz, który potrafi wysłać dane HTTP-em, się nada. Idealnie własny endpoint po stronie strony (np. Next.js API route lub serverless), który robi walidację, a potem woła Pipedrive API. Wtyczki typu „prześlij do Pipedrive jednym klikiem” zwykle nie radzą sobie z deduplikacją, custom fields i routing'iem — robią najprostszy POST i tyle.",
+      "Każdy formularz, który potrafi wysłać dane HTTP-em, się nada. Idealnie własny endpoint po stronie strony (np. Next.js API route lub serverless), który robi walidację, a potem woła Pipedrive API. Wtyczki typu „prześlij do Pipedrive jednym klikiem” zwykle nie radzą sobie z deduplikacją, custom fields i routing'iem, robią najprostszy POST i tyle.",
   },
   {
     question: "Jak długo trwa wdrożenie?",
     answer:
-      "Najmniejszy działający kawałek (formularz → osoba + organizacja + deal + zadanie) zwykle 2–4 dni roboczych. Pełna integracja z deduplikacją, routingiem, eskalacją i raportowaniem źródeł — 1–2 tygodnie zależnie od liczby źródeł leadów i stopnia bałaganu w obecnym Pipedrive.",
+      "Najmniejszy działający kawałek (formularz → osoba + organizacja + deal + zadanie) zwykle 2–4 dni roboczych. Pełna integracja z deduplikacją, routingiem, eskalacją i raportowaniem źródeł, 1–2 tygodnie zależnie od liczby źródeł leadów i stopnia bałaganu w obecnym Pipedrive.",
   },
   {
     question: "Co jeśli Pipedrive API zwróci błąd?",
     answer:
-      "Lead trafia do kolejki retry i jest ponawiany kilka razy z narastającym opóźnieniem. Jeśli wszystkie próby się nie powiodą — alert do Slacka lub maila, a payload trafia do storage'a, żebyś mógł go ręcznie wgrać po naprawie. Żaden lead nie ginie w eter.",
+      "Lead trafia do kolejki retry i jest ponawiany kilka razy z narastającym opóźnieniem. Jeśli wszystkie próby się nie powiodą, alert do Slacka lub maila, a payload trafia do storage'a, żebyś mógł go ręcznie wgrać po naprawie. Żaden lead nie ginie w eter.",
   },
   {
     question: "Ile to kosztuje?",
     answer:
-      "Najmniejszy zakres (jeden formularz, podstawowa logika, walidacja, custom fields) — od 3 do 6 tys. zł. Pełna integracja z routingiem, deduplikacją, eskalacją i raportami źródeł — 8–15 tys. zł zależnie od liczby źródeł leadów. Dokładną wycenę podaję po krótkim audycie.",
+      "Najmniejszy zakres (jeden formularz, podstawowa logika, walidacja, custom fields), od 3 do 6 tys. zł. Pełna integracja z routingiem, deduplikacją, eskalacją i raportami źródeł, 8–15 tys. zł zależnie od liczby źródeł leadów. Dokładną wycenę podaję po krótkim audycie.",
   },
 ];
 
@@ -209,7 +209,7 @@ export default function AutomatyzacjaFormularzaDoPipedrive() {
           ]}
         />
 
-        {/* Hero — kompaktowy */}
+        {/* Hero, kompaktowy */}
         <section className="pt-16 pb-6 bg-gradient-to-b from-accent/10 to-transparent border-b border-gray-100 dark:border-gray-800">
           <div className="container-wide">
             <div className="max-w-3xl mx-auto text-center">
@@ -224,7 +224,7 @@ export default function AutomatyzacjaFormularzaDoPipedrive() {
                 integrację API.
               </p>
               <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                Pokażę ci, jak ten kawałek wygląda, gdy zadziała sam — od
+                Pokażę ci, jak ten kawałek wygląda, gdy zadziała sam, od
                 kliknięcia „Wyślij” po zadanie u handlowca z mierzalnym SLA.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
@@ -245,7 +245,7 @@ export default function AutomatyzacjaFormularzaDoPipedrive() {
           </div>
         </section>
 
-        {/* Treść w zakładkach — nic nie wycięte, podzielone */}
+        {/* Treść w zakładkach, nic nie wycięte, podzielone */}
         <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
           <Tabs
             ariaLabel="Sekcje strony o integracji formularza z Pipedrive"
@@ -265,7 +265,7 @@ export default function AutomatyzacjaFormularzaDoPipedrive() {
                           <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
                             Formularz na stronie to często pierwszy realny punkt
                             kontaktu klienta z firmą. To moment, w którym klient
-                            sam zgłasza chęć kupna — i równocześnie najczęściej
+                            sam zgłasza chęć kupna, i równocześnie najczęściej
                             zepsuty kawałek procesu B2B. Bo zamiast trafić do
                             CRM, lead zwykle trafia na maila, którego nikt nie
                             traktuje priorytetowo.
@@ -281,9 +281,9 @@ export default function AutomatyzacjaFormularzaDoPipedrive() {
                           <ul className="space-y-3">
                             {[
                               "Marketing płaci za leady, sprzedaż widzi tylko część z nich w pipeline.",
-                              "Każdy handlowiec wpisuje dane w swój sposób — raporty są nie do złożenia.",
+                              "Każdy handlowiec wpisuje dane w swój sposób, raporty są nie do złożenia.",
                               "Reakcja na leada zajmuje godziny zamiast minut, konwersja spada o kilkadziesiąt procent.",
-                              "Nikt nie wie, ile leadów wpadło w danym tygodniu — bo nikt nie liczy maili.",
+                              "Nikt nie wie, ile leadów wpadło w danym tygodniu, bo nikt nie liczy maili.",
                               "Handlowiec spędza 30–60 minut dziennie na klikaniu w CRM zamiast dzwonić.",
                               "Przy próbie zrobienia raportu „skąd przyszedł zamknięty klient” okazuje się, że źródło jest puste w 40% dealów.",
                             ].map((item) => (
@@ -380,7 +380,7 @@ export default function AutomatyzacjaFormularzaDoPipedrive() {
                               samego przepisywania danych do CRM.
                             </p>
                             <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                              18 000 zł rocznie. Przy 1 000 leadów miesięcznie —
+                              18 000 zł rocznie. Przy 1 000 leadów miesięcznie,
                               60 000 zł. I to tylko za czynność „kopiuj-wklej”.
                             </p>
                           </div>
@@ -393,8 +393,8 @@ export default function AutomatyzacjaFormularzaDoPipedrive() {
                               <span className="text-gray-700 dark:text-gray-300 leading-relaxed">
                                 <strong>Zgubione leady.</strong> Realistycznie
                                 5–15% maili nie trafia do CRM. Przy 300 leadach
-                                miesięcznie i średniej wartości deala 5 000 zł —
-                                gubisz 75 000 — 225 000 zł wartości pipeline'u
+                                miesięcznie i średniej wartości deala 5 000 zł,
+                                gubisz 75 000, 225 000 zł wartości pipeline'u
                                 rocznie.
                               </span>
                             </li>
@@ -414,14 +414,14 @@ export default function AutomatyzacjaFormularzaDoPipedrive() {
                               <span className="text-gray-700 dark:text-gray-300 leading-relaxed">
                                 <strong>Błędy w danych.</strong> Literówka w
                                 numerze telefonu, niepoprawny e-mail, źle
-                                wpisana firma — i już nie masz jak skontaktować
+                                wpisana firma, i już nie masz jak skontaktować
                                 się z gotowym do kupna klientem.
                               </span>
                             </li>
                             <li className="flex items-start gap-3 bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-xl px-5 py-4">
                               <span className="flex-shrink-0 w-1.5 h-1.5 mt-2.5 rounded-full bg-accent" />
                               <span className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                                <strong>Rozjazd marketing — sprzedaż.</strong>{" "}
+                                <strong>Rozjazd marketing, sprzedaż.</strong>{" "}
                                 Bez spójnego przepływu danych marketing nie wie,
                                 które kampanie zamykają deale, a sprzedaż nie
                                 ufa danym z marketingu. Optymalizacja budżetu
@@ -491,7 +491,7 @@ export default function AutomatyzacjaFormularzaDoPipedrive() {
                           </h2>
                           <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
                             Każdy krok można zbudować osobno i zmierzyć efekt po
-                            kolei. Najczęściej zaczynamy od kroków 1–3 i 6 — bo
+                            kolei. Najczęściej zaczynamy od kroków 1–3 i 6, bo
                             to one dają największy zwrot na początku.
                           </p>
                         </div>
@@ -566,7 +566,7 @@ export default function AutomatyzacjaFormularzaDoPipedrive() {
                           </h2>
                           <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
                             Nie wszystko naraz. Najpierw najmniejszy działający
-                            kawałek, który eliminuje 80% bólu — czyli ręczne
+                            kawałek, który eliminuje 80% bólu, czyli ręczne
                             przepisywanie i zgubione leady. Reszta (eskalacja,
                             raportowanie, deduplikacja zaawansowana) idzie w
                             drugim etapie, gdy widać, że pierwszy działa.
@@ -602,7 +602,7 @@ export default function AutomatyzacjaFormularzaDoPipedrive() {
                             Zwykle 2–4 dni roboczych. Po wdrożeniu mierzymy
                             efekt przez 2–3 tygodnie i decydujemy, co dalej.
                             Automatyzowanie bałaganu to tylko szybsze
-                            produkowanie bałaganu — dlatego zaczynamy od jednego
+                            produkowanie bałaganu, dlatego zaczynamy od jednego
                             procesu, a nie od wszystkiego naraz.
                           </p>
                         </div>
@@ -653,7 +653,7 @@ export default function AutomatyzacjaFormularzaDoPipedrive() {
                           <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-8">
                             Stała cena za projekt, transze powiązane z
                             kamieniami milowymi. Widełki potwierdzam po krótkim
-                            audycie — bez niespodzianek. Dla porównania: realny
+                            audycie, bez niespodzianek. Dla porównania: realny
                             koszt ręcznego przepisywania to często powyżej 18
                             tys. zł rocznie.
                           </p>
@@ -675,7 +675,7 @@ export default function AutomatyzacjaFormularzaDoPipedrive() {
                               <tbody className="text-sm text-gray-700 dark:text-gray-300 divide-y divide-gray-100 dark:divide-gray-700">
                                 <tr>
                                   <td className="px-6 py-5 font-semibold text-gray-900 dark:text-white align-top">
-                                    Etap 1 — minimalny
+                                    Etap 1, minimalny
                                   </td>
                                   <td className="px-6 py-5 align-top">
                                     Webhook formularz → Pipedrive (osoba +
@@ -683,12 +683,12 @@ export default function AutomatyzacjaFormularzaDoPipedrive() {
                                     kontaktu, źródło i UTM-y w custom fields.
                                   </td>
                                   <td className="px-6 py-5 align-top whitespace-nowrap font-semibold text-accent">
-                                    3 — 6 tys. zł
+                                    3, 6 tys. zł
                                   </td>
                                 </tr>
                                 <tr>
                                   <td className="px-6 py-5 font-semibold text-gray-900 dark:text-white align-top">
-                                    Etap 2 — pełny
+                                    Etap 2, pełny
                                   </td>
                                   <td className="px-6 py-5 align-top">
                                     Wszystko z etapu 1 + deduplikacja po
@@ -696,7 +696,7 @@ export default function AutomatyzacjaFormularzaDoPipedrive() {
                                     alerty błędów, raportowanie źródeł.
                                   </td>
                                   <td className="px-6 py-5 align-top whitespace-nowrap font-semibold text-accent">
-                                    8 — 15 tys. zł
+                                    8, 15 tys. zł
                                   </td>
                                 </tr>
                                 <tr>
@@ -709,7 +709,7 @@ export default function AutomatyzacjaFormularzaDoPipedrive() {
                                     mapowanie kampanii.
                                   </td>
                                   <td className="px-6 py-5 align-top whitespace-nowrap font-semibold text-accent">
-                                    15 — 25 tys. zł
+                                    15, 25 tys. zł
                                   </td>
                                 </tr>
                               </tbody>

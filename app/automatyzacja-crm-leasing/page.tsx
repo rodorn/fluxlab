@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Automatyzacja CRM dla firm leasingowych i finansowych",
+        alt: "Fluxlab, Automatyzacja CRM dla firm leasingowych i finansowych",
       },
     ],
   },
@@ -32,17 +32,17 @@ export const metadata: Metadata = {
 
 const symptoms = [
   "Lead z porównywarki / formularza krąży po skrzynkach 24–48 h, zanim trafi do brokera",
-  "Brak jednego CRM dla całego biura — handlowcy trzymają deale w Excelu i własnych folderach",
-  "BIK/KRD/CEIDG sprawdzane ręcznie po telefonie — 15 minut na każdy lead, nawet ten słaby",
+  "Brak jednego CRM dla całego biura, handlowcy trzymają deale w Excelu i własnych folderach",
+  "BIK/KRD/CEIDG sprawdzane ręcznie po telefonie, 15 minut na każdy lead, nawet ten słaby",
   "Wnioski do leasingodawcy klejone w Wordzie z 5 systemów, każdy partner finansowy ma inny szablon",
   "Status decyzji finansowej spada do brokera mailem, ktoś musi to ręcznie wpisać do CRM i zadzwonić do klienta",
-  "Prowizje liczone w Excelu na koniec miesiąca — pomyłki, spóźnienia, frustracja zespołu",
+  "Prowizje liczone w Excelu na koniec miesiąca, pomyłki, spóźnienia, frustracja zespołu",
 ];
 
 const beforeSteps = [
   "Lead z porównywarki / strony / reklamy ląduje w wspólnej skrzynce",
   "Asystent ręcznie przekleja dane do CRM (jeśli istnieje) lub Excela",
-  "Broker dzwoni do klienta na ślepo — bez BIK, bez wstępnej oceny zdolności",
+  "Broker dzwoni do klienta na ślepo, bez BIK, bez wstępnej oceny zdolności",
   "Po rozmowie ręcznie zbiera dokumenty (KRS, CEIDG, sprawozdania) e-mailem",
   "Klepie wniosek do leasingodawcy w jego szablonie",
   "Status decyzji wpada mailem, broker przepisuje do CRM i dzwoni do klienta",
@@ -57,7 +57,7 @@ const afterSteps = [
   "Broker dzwoni do leada ze score'm i kompletem podstawowych danych",
   "Wniosek do leasingodawcy generowany z CRM w 1 kliknięciu (właściwy szablon partnera)",
   "Status decyzji synchronizowany dwustronnie, klient dostaje powiadomienie SMS",
-  "Prowizje liczą się same, raporty KNF i wewnętrzne — automatycznie",
+  "Prowizje liczą się same, raporty KNF i wewnętrzne, automatycznie",
 ];
 
 const industrySpecifics = [
@@ -67,7 +67,7 @@ const industrySpecifics = [
   },
   {
     title: "Regulacje (RODO + sektor finansowy)",
-    desc: "Dane osobowe i finansowe wymagają DPIA, rejestru zgód, terminów retencji. KNF kontroluje brokerów ubezpieczeniowych i pośredników kredytu hipotecznego. Wdrożenie automatyzacji bez zmapowanych zgód i bez audytu retencji to ryzyko regulacyjne — dlatego pierwszy etap wdrażam z prawnikiem klienta po stronie compliance.",
+    desc: "Dane osobowe i finansowe wymagają DPIA, rejestru zgód, terminów retencji. KNF kontroluje brokerów ubezpieczeniowych i pośredników kredytu hipotecznego. Wdrożenie automatyzacji bez zmapowanych zgód i bez audytu retencji to ryzyko regulacyjne, dlatego pierwszy etap wdrażam z prawnikiem klienta po stronie compliance.",
   },
   {
     title: "Wolumen leadów i zmienność jakości",
@@ -75,12 +75,12 @@ const industrySpecifics = [
   },
   {
     title: "Struktura prowizji wieloskładnikowa",
-    desc: "Prowizja od leasingodawcy + bonus od wolumenu + override managera + zwroty po wcześniejszej spłacie + claw-back po 3 miesiącach. Liczenie tego ręcznie w Excelu to godziny w miesiącu i regularne błędy. Automatyzacja prowizji jest zwykle drugim etapem po routingu leadów — i często samodzielnie spłaca cały projekt.",
+    desc: "Prowizja od leasingodawcy + bonus od wolumenu + override managera + zwroty po wcześniejszej spłacie + claw-back po 3 miesiącach. Liczenie tego ręcznie w Excelu to godziny w miesiącu i regularne błędy. Automatyzacja prowizji jest zwykle drugim etapem po routingu leadów, i często samodzielnie spłaca cały projekt.",
   },
   {
     title:
       "Integracje z systemami zewnętrznymi (BIK, KRD, CEIDG, leasingodawcy)",
-    desc: "BIK i KRD mają API dla podmiotów uprawnionych. CEIDG/KRS — publiczne API. Każdy leasingodawca (PKO Leasing, Millennium Leasing, Idea Getin Leasing, EFL, mLeasing, BNP Paribas, BZ WBK) ma własne API lub portal partnerski. Spięcie tego wszystkiego przez warstwę pośrednią (n8n self-hosted, własny backend) eliminuje 80% ręcznej pracy backoffice.",
+    desc: "BIK i KRD mają API dla podmiotów uprawnionych. CEIDG/KRS, publiczne API. Każdy leasingodawca (PKO Leasing, Millennium Leasing, Idea Getin Leasing, EFL, mLeasing, BNP Paribas, BZ WBK) ma własne API lub portal partnerski. Spięcie tego wszystkiego przez warstwę pośrednią (n8n self-hosted, własny backend) eliminuje 80% ręcznej pracy backoffice.",
   },
 ];
 
@@ -93,35 +93,35 @@ const firstStage = [
 ];
 
 const mistakes = [
-  "Wdrażanie BIK/KRD bez zmapowanych zgód RODO — szybka droga do problemu z UODO",
-  "Routing tylko po regionie, bez uwzględnienia jakości źródła — najlepsi brokerzy toną w słabych leadach",
-  "Liczenie prowizji „prawie automatycznie”, ale z ręcznym kontrolnym Excelem na końcu — wtedy liczone jest dwa razy",
-  "Sync z leasingodawcą tylko jednostronny (CRM → partner) — status decyzji dalej spada mailem, dalej trzeba przepisywać",
-  "Brak retencji danych — leady sprzed 3 lat dalej leżą w bazie, RODO mówi co innego",
+  "Wdrażanie BIK/KRD bez zmapowanych zgód RODO, szybka droga do problemu z UODO",
+  "Routing tylko po regionie, bez uwzględnienia jakości źródła, najlepsi brokerzy toną w słabych leadach",
+  "Liczenie prowizji „prawie automatycznie”, ale z ręcznym kontrolnym Excelem na końcu, wtedy liczone jest dwa razy",
+  "Sync z leasingodawcą tylko jednostronny (CRM → partner), status decyzji dalej spada mailem, dalej trzeba przepisywać",
+  "Brak retencji danych, leady sprzed 3 lat dalej leżą w bazie, RODO mówi co innego",
 ];
 
 const faq = [
   {
     question: "Czy automatyzacja BIK/KRD jest legalna?",
     answer:
-      "Tak, jeśli macie zgody klienta i jesteście podmiotem uprawnionym (BIK wymaga umowy z BIK SA, KRD też wymaga umowy). Automatyzacja sprowadza się do tego, że CRM po otrzymaniu zgody klienta odpyta API BIK/KRD przez waszą warstwę integracyjną, zapisze odpowiedź w deal'u i nada scoring. Cała kontrola pozostaje po waszej stronie — automatyzacja nie obchodzi prawa, tylko klikanie. Wdrożenie zawsze konsultuję z prawnikiem klienta i z waszym IOD-em (jeśli go macie).",
+      "Tak, jeśli macie zgody klienta i jesteście podmiotem uprawnionym (BIK wymaga umowy z BIK SA, KRD też wymaga umowy). Automatyzacja sprowadza się do tego, że CRM po otrzymaniu zgody klienta odpyta API BIK/KRD przez waszą warstwę integracyjną, zapisze odpowiedź w deal'u i nada scoring. Cała kontrola pozostaje po waszej stronie, automatyzacja nie obchodzi prawa, tylko klikanie. Wdrożenie zawsze konsultuję z prawnikiem klienta i z waszym IOD-em (jeśli go macie).",
   },
   {
     question:
       "Pracujemy na własnym CRM-ie zbudowanym 5 lat temu. Da się to spiąć?",
     answer:
-      "Tak, jeśli ma jakikolwiek interfejs zewnętrzny (API, eksport CSV, baza, do której można się podpiąć). W praktyce 9 na 10 firm leasingowych pracuje na mieszance Pipedrive/HubSpot + Excel + własny system do wniosków. Najczęściej budujemy warstwę pośrednią (n8n self-hosted), która spina wszystkie te systemy bez konieczności wymiany czegokolwiek. Po roku zwykle decydujecie, czy zostać przy obecnym CRM-ie, czy migrować — automatyzacja nie wymusza tej decyzji teraz.",
+      "Tak, jeśli ma jakikolwiek interfejs zewnętrzny (API, eksport CSV, baza, do której można się podpiąć). W praktyce 9 na 10 firm leasingowych pracuje na mieszance Pipedrive/HubSpot + Excel + własny system do wniosków. Najczęściej budujemy warstwę pośrednią (n8n self-hosted), która spina wszystkie te systemy bez konieczności wymiany czegokolwiek. Po roku zwykle decydujecie, czy zostać przy obecnym CRM-ie, czy migrować, automatyzacja nie wymusza tej decyzji teraz.",
   },
   {
     question:
       "Mamy umowy z 8 leasingodawcami. Czy musimy integrować się ze wszystkimi?",
     answer:
-      "Nie. Pierwszy etap to integracja z 1–2 najczęściej używanymi (zwykle 60–80% wolumenu). Reszta dochodzi etapami, w miarę potrzeb. Czasem leasingodawca nie ma API publicznego — wtedy automatyzujemy obieg dokumentów do portalu partnerskiego (RPA / automatyczny upload), co i tak oszczędza 80% ręcznej pracy.",
+      "Nie. Pierwszy etap to integracja z 1–2 najczęściej używanymi (zwykle 60–80% wolumenu). Reszta dochodzi etapami, w miarę potrzeb. Czasem leasingodawca nie ma API publicznego, wtedy automatyzujemy obieg dokumentów do portalu partnerskiego (RPA / automatyczny upload), co i tak oszczędza 80% ręcznej pracy.",
   },
   {
     question: "Co z RODO i tajemnicą bankową?",
     answer:
-      "Dla branży leasingowej standardowo wdrażam automatyzację na n8n self-hosted na waszym serwerze (Polska / EOG). Dane klientów nie wychodzą poza waszą infrastrukturę poza tymi, do których jawnie wysyłacie zapytania (BIK, KRD, leasingodawca). Konfigurujemy retencję, rejestr zgód i logi dostępu. To wymaganie twarde — przed startem audytujemy obecny stan ze strony compliance.",
+      "Dla branży leasingowej standardowo wdrażam automatyzację na n8n self-hosted na waszym serwerze (Polska / EOG). Dane klientów nie wychodzą poza waszą infrastrukturę poza tymi, do których jawnie wysyłacie zapytania (BIK, KRD, leasingodawca). Konfigurujemy retencję, rejestr zgód i logi dostępu. To wymaganie twarde, przed startem audytujemy obecny stan ze strony compliance.",
   },
   {
     question: "Ile kosztuje wdrożenie i ile trwa?",
@@ -131,7 +131,7 @@ const faq = [
   {
     question: "Czy automatyzacja prowizji ma sens przy 3 brokerach?",
     answer:
-      "Przy 3 brokerach i prostej strukturze prowizji (jedna stawka per produkt) — Excel wystarczy. Automatyzacja zaczyna mieć sens przy 5+ brokerach lub wieloskładnikowej strukturze prowizji (override, bonusy wolumenowe, claw-backi). Najpilniejszy zwykle jest routing leadów i sync z leasingodawcami — prowizje są zwykle drugim etapem po 3–6 miesiącach.",
+      "Przy 3 brokerach i prostej strukturze prowizji (jedna stawka per produkt), Excel wystarczy. Automatyzacja zaczyna mieć sens przy 5+ brokerach lub wieloskładnikowej strukturze prowizji (override, bonusy wolumenowe, claw-backi). Najpilniejszy zwykle jest routing leadów i sync z leasingodawcami, prowizje są zwykle drugim etapem po 3–6 miesiącach.",
   },
 ];
 
@@ -145,7 +145,7 @@ const diagramSteps = [
   {
     n: "2",
     title: "Wzbogacenie po NIP/REGON",
-    desc: "GUS, CEIDG, KRS — branża, forma prawna, dane kontaktowe firmy. Odcina słabe leady przed dotarciem do brokera.",
+    desc: "GUS, CEIDG, KRS, branża, forma prawna, dane kontaktowe firmy. Odcina słabe leady przed dotarciem do brokera.",
     accent: false,
   },
   {
@@ -163,19 +163,19 @@ const diagramSteps = [
   {
     n: "5",
     title: "Generowanie wniosku do leasingodawcy",
-    desc: "Z CRM jednym klikiem — w szablonie konkretnego partnera (PKO Leasing / EFL / mLeasing / inne).",
+    desc: "Z CRM jednym klikiem, w szablonie konkretnego partnera (PKO Leasing / EFL / mLeasing / inne).",
     accent: true,
   },
   {
     n: "6",
     title: "Sync statusu decyzji (dwustronny)",
-    desc: "Status z leasingodawcy spływa automatycznie do CRM. Klient dostaje powiadomienie SMS, broker — Slack/mail.",
+    desc: "Status z leasingodawcy spływa automatycznie do CRM. Klient dostaje powiadomienie SMS, broker, Slack/mail.",
     accent: true,
   },
   {
     n: "7",
     title: "Naliczenie prowizji + raport",
-    desc: "Po wypłacie środków prowizja liczy się sama (override managera, bonusy wolumenowe). Raport KNF — automatycznie.",
+    desc: "Po wypłacie środków prowizja liczy się sama (override managera, bonusy wolumenowe). Raport KNF, automatycznie.",
     accent: true,
   },
 ];
@@ -204,7 +204,7 @@ export default function AutomatyzacjaCrmLeasing() {
           ]}
         />
 
-        {/* Hero — kompaktowy */}
+        {/* Hero, kompaktowy */}
         <section className="pt-16 pb-6 bg-gradient-to-b from-accent/10 to-transparent border-b border-gray-100 dark:border-gray-800">
           <div className="container-wide">
             <div className="max-w-3xl mx-auto text-center">
@@ -218,7 +218,7 @@ export default function AutomatyzacjaCrmLeasing() {
                 brzmi: „dlaczego lead z porównywarki krąży 36 godzin, zanim
                 broker do niego oddzwoni?”. Automatyzujemy obsługę leada od
                 wpadnięcia do CRM przez BIK/KRD, wniosek do leasingodawcy, sync
-                statusu decyzji, aż po prowizję — w architekturze, która spełnia
+                statusu decyzji, aż po prowizję, w architekturze, która spełnia
                 RODO i wymogi sektora finansowego.
               </p>
               <TrackedCTA
@@ -234,7 +234,7 @@ export default function AutomatyzacjaCrmLeasing() {
           </div>
         </section>
 
-        {/* Treść w zakładkach — nic nie wycięte, podzielone */}
+        {/* Treść w zakładkach, nic nie wycięte, podzielone */}
         <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
           <Tabs
             ariaLabel="Sekcje strony automatyzacji CRM dla leasingu"
@@ -296,7 +296,7 @@ export default function AutomatyzacjaCrmLeasing() {
                         liczone w Excelu z opóźnieniem i błędami. Ekosystem
                         partnerów (leasingodawcy, ubezpieczyciele) wymusza pracę
                         w 6 portalach, każdy ze swoim interfejsem. Generyczny
-                        CRM (Pipedrive, HubSpot) tylko częściowo łata problem —
+                        CRM (Pipedrive, HubSpot) tylko częściowo łata problem,
                         bo nie umie się wpiąć w BIK, w portale leasingowe ani w
                         naliczanie prowizji wieloskładnikowej.
                       </p>
@@ -773,7 +773,7 @@ export default function AutomatyzacjaCrmLeasing() {
                                 href="/n8n"
                                 className="text-accent hover:underline"
                               >
-                                n8n — wdrożenia
+                                n8n, wdrożenia
                               </Link>
                             </li>
                             <li>
@@ -841,7 +841,7 @@ export default function AutomatyzacjaCrmLeasing() {
                       <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
                         30 minut rozmowy o procesie. Wyjdziesz z mapą procesu,
                         wskazaniem 3 najpilniejszych miejsc do automatyzacji i
-                        widełkami cenowymi. Bez zobowiązań — jeśli nie zobaczę
+                        widełkami cenowymi. Bez zobowiązań, jeśli nie zobaczę
                         dopasowania, powiem to wprost.
                       </p>
                       <TrackedCTA

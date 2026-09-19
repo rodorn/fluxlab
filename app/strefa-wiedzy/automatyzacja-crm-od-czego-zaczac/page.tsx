@@ -7,11 +7,11 @@ import Tabs from "@/components/Tabs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 
 export const metadata: Metadata = {
-  title: "Automatyzacja CRM — od czego zacząć | Fluxlab",
+  title: "Automatyzacja CRM, od czego zacząć | Fluxlab",
   description:
     "Jak zacząć automatyzację CRM w firmie: audyt procesu, leady, zadania, statusy, walidacja danych i pierwsze wdrożenia o największym zwrocie.",
   openGraph: {
-    title: "Automatyzacja CRM — od czego zacząć | Fluxlab",
+    title: "Automatyzacja CRM, od czego zacząć | Fluxlab",
     description:
       "Jak zacząć automatyzację CRM w firmie: audyt procesu, leady, zadania, statusy, walidacja danych i pierwsze wdrożenia o największym zwrocie.",
     locale: "pl_PL",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Automatyzacja leadów, CRM i raportowania dla firm B2B",
+        alt: "Fluxlab, Automatyzacja leadów, CRM i raportowania dla firm B2B",
       },
     ],
   },
@@ -50,16 +50,16 @@ export default function AutomatyzacjaCrmOdCzegoZaczacArticle() {
         <Breadcrumbs
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
-            { label: "Automatyzacja CRM — od czego zacząć" },
+            { label: "Automatyzacja CRM, od czego zacząć" },
           ]}
         />
 
-        {/* Nagłówek artykułu — kompaktowy */}
+        {/* Nagłówek artykułu, kompaktowy */}
         <section className="pt-24 pb-10">
           <div className="container-wide max-w-3xl mx-auto">
             <span className="section-label">Strefa wiedzy</span>
             <h1 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">
-              Automatyzacja CRM — od czego zacząć
+              Automatyzacja CRM, od czego zacząć
             </h1>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
               Firmy często wdrażają CRM, a dopiero później odkrywają, że zespół
@@ -70,7 +70,7 @@ export default function AutomatyzacjaCrmOdCzegoZaczacArticle() {
           </div>
         </section>
 
-        {/* Treść w zakładkach — nic nie wycięte, podzielone wg rozdziałów */}
+        {/* Treść w zakładkach, nic nie wycięte, podzielone wg rozdziałów */}
         <div className="container-wide pb-8">
           <Tabs
             ariaLabel="Rozdziały artykułu"
@@ -257,7 +257,7 @@ export default function AutomatyzacjaCrmOdCzegoZaczacArticle() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Article",
-            headline: "Automatyzacja CRM — od czego zacząć",
+            headline: "Automatyzacja CRM, od czego zacząć",
             description:
               "Jak zacząć automatyzację CRM w firmie: audyt procesu, leady, zadania, statusy, walidacja danych i pierwsze wdrożenia o największym zwrocie.",
             datePublished: "2026-03-30",

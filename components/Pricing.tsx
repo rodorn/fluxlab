@@ -20,9 +20,9 @@ const tracks = [
   {
     label: "Krok 2",
     title: "Audyt procesu",
-    price: "płatny — odliczany od wdrożenia",
+    price: "płatny, odliczany od wdrożenia",
     description:
-      "Konkretna dokumentacja, na podstawie której można realnie wdrożyć proces — ze mną albo samodzielnie. Koszt audytu odliczam od wdrożenia, jeśli kontynuujemy.",
+      "Konkretna dokumentacja, na podstawie której można realnie wdrożyć proces, ze mną albo samodzielnie. Koszt audytu odliczam od wdrożenia, jeśli kontynuujemy.",
     bullets: [
       "mapa AS-IS → TO-BE",
       "priorytety automatyzacji wg ROI",
@@ -66,7 +66,7 @@ export default function Pricing() {
             Wybierz punkt startowy
           </h2>
           <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
-            Trzy ścieżki — od bezpłatnej diagnozy po pełne wdrożenie. Każdy
+            Trzy ścieżki, od bezpłatnej diagnozy po pełne wdrożenie. Każdy
             projekt wyceniam po diagnozie, bo koszt zależy od liczby źródeł
             leadów, CRM i jakości danych.
           </p>

@@ -7,11 +7,11 @@ import PrevNextArticle from "@/components/PrevNextArticle";
 import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
-  title: "Make vs n8n — porównanie dla firm MŚP | Fluxlab",
+  title: "Make vs n8n, porównanie dla firm MŚP | Fluxlab",
   description:
     "Make i n8n w boju: koszt, elastyczność, krzywa nauki i lokalizacja danych. Praktyczne porównanie dla małych i średnich firm w 2026 roku.",
   openGraph: {
-    title: "Make vs n8n — porównanie dla firm MŚP | Fluxlab",
+    title: "Make vs n8n, porównanie dla firm MŚP | Fluxlab",
     description:
       "Make i n8n w boju: koszt, elastyczność, krzywa nauki i lokalizacja danych. Praktyczne porównanie dla małych i średnich firm w 2026 roku.",
     locale: "pl_PL",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Automatyzacja leadów, CRM i raportowania dla firm B2B",
+        alt: "Fluxlab, Automatyzacja leadów, CRM i raportowania dla firm B2B",
       },
     ],
   },
@@ -40,27 +40,27 @@ export default function MakeVsN8nArticle() {
     {
       question: "Czy n8n self-hosted jest tańszy od Make?",
       answer:
-        "W długim okresie tak — szczególnie powyżej 50 000 operacji miesięcznie. Make w tej skali to często 100–300 USD/mies. n8n self-hosted na VPS Hetznera za ok. 25 zł/mies. obsłuży podobny wolumen. Trzeba doliczyć koszt utrzymania (200–500 zł/mies. u zewnętrznego wykonawcy lub czas własnego IT).",
+        "W długim okresie tak, szczególnie powyżej 50 000 operacji miesięcznie. Make w tej skali to często 100–300 USD/mies. n8n self-hosted na VPS Hetznera za ok. 25 zł/mies. obsłuży podobny wolumen. Trzeba doliczyć koszt utrzymania (200–500 zł/mies. u zewnętrznego wykonawcy lub czas własnego IT).",
     },
     {
       question: "Które narzędzie ma więcej integracji?",
       answer:
-        "Make — ok. 1 800 natywnych integracji vs 500+ w n8n. Ale n8n ma natywny moduł HTTP Request i moduł Code (JavaScript), który pozwala zintegrować się z dowolnym API w 30 minut. Dla popularnych SaaS-ów oba narzędzia mają porównywalną głębokość integracji.",
+        "Make, ok. 1 800 natywnych integracji vs 500+ w n8n. Ale n8n ma natywny moduł HTTP Request i moduł Code (JavaScript), który pozwala zintegrować się z dowolnym API w 30 minut. Dla popularnych SaaS-ów oba narzędzia mają porównywalną głębokość integracji.",
     },
     {
       question: "Czy Make jest łatwiejszy w nauce niż n8n?",
       answer:
-        "Trochę. Oba mają wizualny diagram i podobną filozofię działania. Make ma bardziej dopieszczony interfejs, lepszą dokumentację po polsku i większą społeczność tutoriali. n8n jest bliżej programowania — moduł Code, expressions z syntaksem JavaScript, więcej opcji per moduł. Dla osoby technicznej różnica jest niewielka, dla nietechnicznej Make zwykle wygrywa.",
+        "Trochę. Oba mają wizualny diagram i podobną filozofię działania. Make ma bardziej dopieszczony interfejs, lepszą dokumentację po polsku i większą społeczność tutoriali. n8n jest bliżej programowania, moduł Code, expressions z syntaksem JavaScript, więcej opcji per moduł. Dla osoby technicznej różnica jest niewielka, dla nietechnicznej Make zwykle wygrywa.",
     },
     {
       question: "Czy n8n jest stabilniejszy od Make?",
       answer:
-        "Make ma SLA i dedykowany support — jako SaaS musi działać. n8n self-hosted jest tak stabilne, jak Twój serwer i Twoje aktualizacje. Jeśli ktoś dba o backup, monitoring i regularne update, n8n potrafi działać latami bez problemów. Bez tego — bywa różnie. n8n.cloud daje zbliżony poziom stabilności do Make.",
+        "Make ma SLA i dedykowany support, jako SaaS musi działać. n8n self-hosted jest tak stabilne, jak Twój serwer i Twoje aktualizacje. Jeśli ktoś dba o backup, monitoring i regularne update, n8n potrafi działać latami bez problemów. Bez tego, bywa różnie. n8n.cloud daje zbliżony poziom stabilności do Make.",
     },
     {
       question: "Co z RODO i lokalizacją danych?",
       answer:
-        "Make ma serwery w UE (Czechy, Niemcy) — to często wystarcza dla większości polskich firm. n8n self-hosted na serwerze w Polsce daje pełną kontrolę i jest najczystszą opcją compliance. n8n.cloud ma serwery w UE (Niemcy). Dla branż regulowanych (finanse, zdrowie, sektor publiczny) n8n self-hosted jest najczęściej rekomendowane.",
+        "Make ma serwery w UE (Czechy, Niemcy), to często wystarcza dla większości polskich firm. n8n self-hosted na serwerze w Polsce daje pełną kontrolę i jest najczystszą opcją compliance. n8n.cloud ma serwery w UE (Niemcy). Dla branż regulowanych (finanse, zdrowie, sektor publiczny) n8n self-hosted jest najczęściej rekomendowane.",
     },
   ];
 
@@ -80,10 +80,10 @@ export default function MakeVsN8nArticle() {
           <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
             <span className="section-label">Strefa wiedzy</span>
             <h1 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">
-              Make vs n8n — porównanie dla firm MŚP
+              Make vs n8n, porównanie dla firm MŚP
             </h1>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-              Make i n8n należą do tej samej kategorii — wizualne platformy
+              Make i n8n należą do tej samej kategorii, wizualne platformy
               automatyzacji z mocną logiką. Oba mają diagram, oba obsługują
               warunki, pętle i agregaty, oba radzą sobie z setkami integracji.
               Ale różni je model dostarczania, koszt skalowania i to, co dzieje
@@ -103,11 +103,11 @@ export default function MakeVsN8nArticle() {
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        Make i n8n — krótka charakterystyka
+                        Make i n8n, krótka charakterystyka
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Make (dawniej Integromat) to czeski SaaS, część grupy
-                        Celonis. Działa wyłącznie w chmurze — nie ma wersji
+                        Celonis. Działa wyłącznie w chmurze, nie ma wersji
                         self-hosted. Płacisz miesięcznie za pakiet operacji.
                         Interfejs to klasyczny diagram, w którym moduły łączysz
                         liniami i konfigurujesz mapowanie danych.
@@ -118,33 +118,33 @@ export default function MakeVsN8nArticle() {
                         licencja Sustainable Use), n8n.cloud (płatny SaaS,
                         serwery w UE) oraz Enterprise Edition (SSO, RBAC, audit
                         log, version control). Interfejs jest podobny do Make,
-                        ale z większym naciskiem na elementy techniczne — code
+                        ale z większym naciskiem na elementy techniczne, code
                         nodes, expressions w stylu JavaScript, możliwość pisania
                         własnych modułów.
                       </p>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Najważniejsza różnica filozofii: Make jest pełnym
-                        SaaS-em bez opcji on-prem. n8n daje wybór — chmura lub
+                        SaaS-em bez opcji on-prem. n8n daje wybór, chmura lub
                         własny serwer.
                       </p>
 
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 mt-12">
-                        Pricing dla MŚP — realne scenariusze
+                        Pricing dla MŚP, realne scenariusze
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Plany Make w 2026 (orientacyjnie):
                       </p>
                       <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
                         <li>
-                          Free — 1 000 operacji/mies., 2 aktywne scenariusze
+                          Free, 1 000 operacji/mies., 2 aktywne scenariusze
                         </li>
-                        <li>Core — od ok. 9 USD/mies. za 10 000 operacji</li>
-                        <li>Pro — od ok. 16 USD/mies., custom variables</li>
+                        <li>Core, od ok. 9 USD/mies. za 10 000 operacji</li>
+                        <li>Pro, od ok. 16 USD/mies., custom variables</li>
                         <li>
-                          Teams — od ok. 29 USD/mies., role i większe pakiety
+                          Teams, od ok. 29 USD/mies., role i większe pakiety
                         </li>
                         <li>
-                          Enterprise — wycena indywidualna, SSO, dedykowany
+                          Enterprise, wycena indywidualna, SSO, dedykowany
                           support
                         </li>
                       </ul>
@@ -153,19 +153,19 @@ export default function MakeVsN8nArticle() {
                       </p>
                       <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
                         <li>
-                          Starter — od ok. 24 EUR/mies., 2 500 wykonań
+                          Starter, od ok. 24 EUR/mies., 2 500 wykonań
                           scenariuszy, 5 aktywnych workflow
                         </li>
-                        <li>Pro — od ok. 60 EUR/mies., 10 000 wykonań</li>
+                        <li>Pro, od ok. 60 EUR/mies., 10 000 wykonań</li>
                         <li>
-                          Enterprise — wycena indywidualna, queue mode, SSO,
+                          Enterprise, wycena indywidualna, queue mode, SSO,
                           dedykowane środowisko
                         </li>
                       </ul>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        n8n self-hosted to praktycznie tylko koszt serwera —
+                        n8n self-hosted to praktycznie tylko koszt serwera,
                         Hetzner CX22 to ok. 25 zł/mies., DigitalOcean Droplet 12
-                        USD/mies. Plus koszt utrzymania (jeśli outsourcujesz —
+                        USD/mies. Plus koszt utrzymania (jeśli outsourcujesz,
                         typowo 200–500 zł/mies.).
                       </p>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
@@ -217,7 +217,7 @@ export default function MakeVsN8nArticle() {
                         które bardziej kojarzą się z dokumentacją API niż z UI
                         dla biznesu. Code node pozwala napisać dowolny
                         JavaScript, który działa na danych ze scenariusza. Dla
-                        osoby technicznej to atut, dla nietechnicznej —
+                        osoby technicznej to atut, dla nietechnicznej,
                         dodatkowy próg.
                       </p>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
@@ -225,7 +225,7 @@ export default function MakeVsN8nArticle() {
                         (np. head of operations, marketing manager), Make jest
                         znacznie bezpieczniejszym wyborem. Jeśli to ma być rola
                         półtechniczna albo masz w firmie kogoś, kto zna
-                        JavaScript chociaż na poziomie podstawowym — n8n da
+                        JavaScript chociaż na poziomie podstawowym, n8n da
                         znacznie więcej swobody.
                       </p>
 
@@ -239,23 +239,23 @@ export default function MakeVsN8nArticle() {
                       </p>
                       <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
                         <li>
-                          Code node w n8n — pełny JavaScript / Python na danych
+                          Code node w n8n, pełny JavaScript / Python na danych
                           przepływu. W Make masz „Tools / Set variable" i kilka
                           modułów do transformacji, ale głębsza logika wymaga
                           obejść.
                         </li>
                         <li>
-                          Custom nodes w n8n — możesz napisać własny moduł w
+                          Custom nodes w n8n, możesz napisać własny moduł w
                           TypeScripcie i zainstalować go we własnej instancji. W
                           Make nie ma takiej opcji.
                         </li>
                         <li>
-                          Wersjonowanie i CI/CD w n8n Enterprise — workflow
+                          Wersjonowanie i CI/CD w n8n Enterprise, workflow
                           można wersjonować w gicie, deployować z pipeline. Make
                           ma wbudowany version control, ale słabszy do CI/CD.
                         </li>
                         <li>
-                          Sub-workflows w n8n — możesz wywołać jeden workflow z
+                          Sub-workflows w n8n, możesz wywołać jeden workflow z
                           drugiego jak funkcję. Make ma „Make a call to another
                           scenario", ale jest bardziej ograniczone.
                         </li>
@@ -297,7 +297,7 @@ export default function MakeVsN8nArticle() {
                         >
                           integracje API
                         </Link>{" "}
-                        — często dane wrażliwe można przesyłać tylko między
+                       , często dane wrażliwe można przesyłać tylko między
                         systemami w jednej sieci.
                       </p>
                     </div>
@@ -310,43 +310,43 @@ export default function MakeVsN8nArticle() {
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        Skalowanie — co się dzieje przy wzroście
+                        Skalowanie, co się dzieje przy wzroście
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Make skaluje się płynnie — wybierasz większy plan, masz
+                        Make skaluje się płynnie, wybierasz większy plan, masz
                         więcej operacji. Limit górny dla planu Teams to ok. 800
-                        000 operacji/mies. Powyżej — Enterprise z wyceną
+                        000 operacji/mies. Powyżej, Enterprise z wyceną
                         indywidualną. Wadą jest liniowy wzrost kosztu z
                         wolumenem.
                       </p>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         n8n self-hosted skaluje się z mocą serwera. Mały VPS
                         obsłuży kilka tysięcy wykonań dziennie. Większy serwer
-                        (4 vCPU, 8 GB RAM) — kilkanaście tysięcy. Powyżej —
+                        (4 vCPU, 8 GB RAM), kilkanaście tysięcy. Powyżej,
                         queue mode (Redis + workers), praktycznie bez górnego
                         limitu. Koszt rośnie z infrastrukturą, nie operacjami.
                       </p>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Praktyczny próg dla MŚP: powyżej 30 000 wykonań
                         miesięcznie n8n self-hosted zaczyna być znacząco tańszy
-                        od Make. Powyżej 100 000 wykonań — różnica to często
+                        od Make. Powyżej 100 000 wykonań, różnica to często
                         rząd wielkości.
                       </p>
 
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 mt-12">
-                        Kto za co odpowiada — model utrzymania
+                        Kto za co odpowiada, model utrzymania
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Make to klasyczny SaaS — odpowiedzialność za
+                        Make to klasyczny SaaS, odpowiedzialność za
                         infrastrukturę leży po stronie producenta. Twoja rola to
                         budować scenariusze, monitorować ich działanie i
                         pilnować, żeby nie skończył się pakiet operacji.
                       </p>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        n8n.cloud — analogicznie do Make, infra po stronie n8n.
+                        n8n.cloud, analogicznie do Make, infra po stronie n8n.
                       </p>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        n8n self-hosted — Ty (lub Twój wykonawca) odpowiadasz
+                        n8n self-hosted, Ty (lub Twój wykonawca) odpowiadasz
                         za:
                       </p>
                       <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
@@ -361,12 +361,12 @@ export default function MakeVsN8nArticle() {
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         To zwykle 1–3 godziny miesięcznie po dobrym wdrożeniu.
                         Ale wymaga osoby, która rozumie Linuxa i Dockera. Bez
-                        tego self-hosting nie ma sensu — albo wybieraj
+                        tego self-hosting nie ma sensu, albo wybieraj
                         n8n.cloud, albo Make.
                       </p>
 
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 mt-12">
-                        Kiedy wybrać Make, a kiedy n8n — checklist dla MŚP
+                        Kiedy wybrać Make, a kiedy n8n, checklist dla MŚP
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Wybierz Make, gdy:
@@ -379,7 +379,7 @@ export default function MakeVsN8nArticle() {
                         </li>
                         <li>Wolumen miesięczny do 30 000 operacji</li>
                         <li>
-                          Cenicie sobie czas startu — chcecie ruszyć w tym
+                          Cenicie sobie czas startu, chcecie ruszyć w tym
                           tygodniu
                         </li>
                         <li>
@@ -412,7 +412,7 @@ export default function MakeVsN8nArticle() {
                         </li>
                       </ul>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Hybryda również ma sens — Make dla zespołu marketingu i
+                        Hybryda również ma sens, Make dla zespołu marketingu i
                         HR, n8n dla backoffice i operacji. Wiele firm MŚP tak
                         właśnie działa.
                       </p>
@@ -425,7 +425,7 @@ export default function MakeVsN8nArticle() {
                         </h2>
                         <p className="text-gray-600 dark:text-gray-400 mb-4">
                           Audyt procesów, porównanie kosztów i wdrożenie
-                          pierwszych scenariuszy w Make lub n8n — bez
+                          pierwszych scenariuszy w Make lub n8n, bez
                           przepłacania za niepotrzebne plany.
                         </p>
                         <Link
@@ -450,7 +450,7 @@ export default function MakeVsN8nArticle() {
                       </p>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Dla większości firm MŚP Make jest pierwszym, naturalnym
-                        wyborem — szybciej startujesz, mniej rzeczy może pójść
+                        wyborem, szybciej startujesz, mniej rzeczy może pójść
                         nie tak. n8n staje się sensowny, gdy wolumen rośnie,
                         pojawiają się wymagania techniczne lub compliance, albo
                         gdy macie w firmie kogoś, kto naprawdę chce mieć
@@ -471,7 +471,7 @@ export default function MakeVsN8nArticle() {
                         >
                           Zapier vs Make vs n8n
                         </Link>{" "}
-                        — pełen obraz pomaga uniknąć decyzji „bo tak wybrał
+                       , pełen obraz pomaga uniknąć decyzji „bo tak wybrał
                         kolega".
                       </p>
                     </div>
@@ -531,7 +531,7 @@ export default function MakeVsN8nArticle() {
                           Make czy n8n? Pomogę dobrać i wdrożyć.
                         </h2>
                         <p className="text-gray-600 dark:text-gray-400 mb-4">
-                          Bez sprzedażowej presji — krótka rozmowa, w której
+                          Bez sprzedażowej presji, krótka rozmowa, w której
                           zobaczymy, co naprawdę pasuje do Twojej skali i
                           procesów.
                         </p>
@@ -555,7 +555,7 @@ export default function MakeVsN8nArticle() {
                                 href="/strefa-wiedzy/zapier-vs-make"
                                 className="text-accent hover:underline"
                               >
-                                Zapier vs Make — co wybrać do automatyzacji w
+                                Zapier vs Make, co wybrać do automatyzacji w
                                 2026
                               </Link>
                             </li>
@@ -564,7 +564,7 @@ export default function MakeVsN8nArticle() {
                                 href="/strefa-wiedzy/n8n-vs-zapier"
                                 className="text-accent hover:underline"
                               >
-                                n8n vs Zapier — kiedy warto iść w self-hosting
+                                n8n vs Zapier, kiedy warto iść w self-hosting
                               </Link>
                             </li>
                             <li>
@@ -572,7 +572,7 @@ export default function MakeVsN8nArticle() {
                                 href="/strefa-wiedzy/zapier-make-n8n-porownanie"
                                 className="text-accent hover:underline"
                               >
-                                Zapier vs Make vs n8n — wielkie porównanie 2026
+                                Zapier vs Make vs n8n, wielkie porównanie 2026
                               </Link>
                             </li>
                             <li>
@@ -603,7 +603,7 @@ export default function MakeVsN8nArticle() {
                                 href="/n8n"
                                 className="text-accent hover:underline"
                               >
-                                n8n — wdrożenia
+                                n8n, wdrożenia
                               </Link>
                             </li>
                             <li>
@@ -634,7 +634,7 @@ export default function MakeVsN8nArticle() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Article",
-            headline: "Make vs n8n — porównanie dla firm MŚP",
+            headline: "Make vs n8n, porównanie dla firm MŚP",
             description:
               "Make i n8n w boju: koszt, elastyczność, krzywa nauki i lokalizacja danych. Praktyczne porównanie dla małych i średnich firm w 2026 roku.",
             datePublished: "2026-04-19",

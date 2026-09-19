@@ -7,11 +7,11 @@ import PrevNextArticle from "@/components/PrevNextArticle";
 import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
-  title: "Salesforce dla małej firmy — czy warto | Fluxlab",
+  title: "Salesforce dla małej firmy, czy warto | Fluxlab",
   description:
     "Czy Salesforce ma sens w małej firmie? Realne koszty, czas wdrożenia, alternatywy (Pipedrive, HubSpot) i scenariusze, w których Salesforce naprawdę się zwraca w 2026.",
   openGraph: {
-    title: "Salesforce dla małej firmy — czy warto | Fluxlab",
+    title: "Salesforce dla małej firmy, czy warto | Fluxlab",
     description:
       "Czy Salesforce ma sens w małej firmie? Realne koszty, czas wdrożenia, alternatywy (Pipedrive, HubSpot) i scenariusze, w których Salesforce naprawdę się zwraca w 2026.",
     locale: "pl_PL",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Automatyzacja leadów, CRM i raportowania dla firm B2B",
+        alt: "Fluxlab, Automatyzacja leadów, CRM i raportowania dla firm B2B",
       },
     ],
   },
@@ -50,7 +50,7 @@ export default function SalesforceDlaMalejFirmyArticle() {
         <Breadcrumbs
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
-            { label: "Salesforce dla małej firmy — czy warto" },
+            { label: "Salesforce dla małej firmy, czy warto" },
           ]}
         />
 
@@ -59,13 +59,13 @@ export default function SalesforceDlaMalejFirmyArticle() {
           <div className="container-wide max-w-3xl mx-auto text-center">
             <span className="section-label">Strefa wiedzy</span>
             <h1 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">
-              Salesforce dla małej firmy — czy warto
+              Salesforce dla małej firmy, czy warto
             </h1>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
               Salesforce kojarzy się z poważnym CRM dla korporacji. W
               rzeczywistości ma też plany skierowane do mniejszych firm, ale
               „mniejsze" nie znaczy „lekkie". Odpowiedź na pytanie, czy warto,
-              zależy od tego, jak wygląda proces, dane i ambicje firmy — nie od
+              zależy od tego, jak wygląda proces, dane i ambicje firmy, nie od
               marki na wizytówce.
             </p>
           </div>
@@ -114,30 +114,30 @@ export default function SalesforceDlaMalejFirmyArticle() {
                         <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-400">
                           <li className="flex items-start gap-2">
                             <Check />
-                            Starter Suite — od 25 USD / user / mies.
+                            Starter Suite, od 25 USD / user / mies.
                           </li>
                           <li className="flex items-start gap-2">
                             <Check />
-                            Pro Suite / Professional — od ok. 80 USD / user /
+                            Pro Suite / Professional, od ok. 80 USD / user /
                             mies.
                           </li>
                           <li className="flex items-start gap-2">
                             <Check />
-                            Enterprise — od ok. 165 USD / user / mies.
+                            Enterprise, od ok. 165 USD / user / mies.
                           </li>
                           <li className="flex items-start gap-2">
                             <Check />
-                            Wdrożenie partnera — typowo kilkadziesiąt tysięcy
+                            Wdrożenie partnera, typowo kilkadziesiąt tysięcy
                             USD na poważne uruchomienie Enterprise.
                           </li>
                           <li className="flex items-start gap-2">
                             <Check />
-                            Pakiety AppExchange — często
+                            Pakiety AppExchange, często
                             kilkanaście–kilkadziesiąt USD / user / mies. każdy.
                           </li>
                           <li className="flex items-start gap-2">
                             <Check />
-                            Utrzymanie — admin Salesforce wewnętrzny lub
+                            Utrzymanie, admin Salesforce wewnętrzny lub
                             partner.
                           </li>
                         </ul>
@@ -305,23 +305,23 @@ export default function SalesforceDlaMalejFirmyArticle() {
                         <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-400">
                           <li className="flex items-start gap-2">
                             <Check />
-                            HubSpot Sales Hub Professional — kiedy potrzebujesz
+                            HubSpot Sales Hub Professional, kiedy potrzebujesz
                             głębszej automatyzacji i marketing automation w
                             jednym systemie,
                           </li>
                           <li className="flex items-start gap-2">
                             <Check />
-                            Pipedrive Power/Enterprise — kiedy zależy Ci na
+                            Pipedrive Power/Enterprise, kiedy zależy Ci na
                             czystym pipeline z kontrolą uprawnień,
                           </li>
                           <li className="flex items-start gap-2">
                             <Check />
-                            Zoho CRM Enterprise — gdy zależy Ci na elastyczności
+                            Zoho CRM Enterprise, gdy zależy Ci na elastyczności
                             i niskim koszcie,
                           </li>
                           <li className="flex items-start gap-2">
                             <Check />
-                            Microsoft Dynamics 365 Sales — gdy stack firmy mocno
+                            Microsoft Dynamics 365 Sales, gdy stack firmy mocno
                             siedzi w ekosystemie Microsoft.
                           </li>
                         </ul>
@@ -373,7 +373,7 @@ export default function SalesforceDlaMalejFirmyArticle() {
                         </ul>
                         <p className="mt-6 text-gray-600 dark:text-gray-400 leading-relaxed">
                           Zanim w ogóle wejdziesz w temat narzędzia, warto
-                          uporządkować proces — pomoże w tym{" "}
+                          uporządkować proces, pomoże w tym{" "}
                           <Link
                             href="/strefa-wiedzy/jak-uporzadkowac-proces-sprzedazy-w-crm"
                             className="text-accent hover:underline"
@@ -424,7 +424,7 @@ export default function SalesforceDlaMalejFirmyArticle() {
                         <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-400">
                           <li className="flex items-start gap-2">
                             <Check />
-                            Brak ownera systemu po stronie klienta — partner
+                            Brak ownera systemu po stronie klienta, partner
                             konfiguruje, nikt z firmy nie rozumie, jak platforma
                             działa.
                           </li>
@@ -446,7 +446,7 @@ export default function SalesforceDlaMalejFirmyArticle() {
                           </li>
                           <li className="flex items-start gap-2">
                             <Check />
-                            Wybór Enterprise „na wyrost" — firma przez lata
+                            Wybór Enterprise „na wyrost", firma przez lata
                             płaci za funkcje, z których realnie korzysta w
                             10–15%.
                           </li>
@@ -461,7 +461,7 @@ export default function SalesforceDlaMalejFirmyArticle() {
                           >
                             łączeniu CRM z innymi systemami
                           </Link>{" "}
-                          — pokazuje, jak myśleć o jednym źródle prawdy, zanim
+                         , pokazuje, jak myśleć o jednym źródle prawdy, zanim
                           zaczniesz kupować licencje.
                         </p>
                       </div>
@@ -546,7 +546,7 @@ export default function SalesforceDlaMalejFirmyArticle() {
                             Czy mogę wdrożyć Salesforce sam, bez partnera?
                           </h3>
                           <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                            Starter — tak. Pro / Enterprise — niemal nigdy. Bez
+                            Starter, tak. Pro / Enterprise, niemal nigdy. Bez
                             admina lub partnera szybko rośnie dług techniczny i
                             zaczyna brakować osoby, która wie, dlaczego coś
                             działa akurat tak.
@@ -569,7 +569,7 @@ export default function SalesforceDlaMalejFirmyArticle() {
                             HubSpot?
                           </h3>
                           <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                            Da się — kontakty, deale, podstawowa historia.
+                            Da się, kontakty, deale, podstawowa historia.
                             Trudniej odtworzyć custom obiekty, Flow i raporty.
                             Plan migracji warto rozpisać równolegle do
                             uzasadnienia, dlaczego zmieniacie system.
@@ -594,7 +594,7 @@ export default function SalesforceDlaMalejFirmyArticle() {
                           <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                             Kupić Enterprise „na wzrost", skonfigurować w
                             pośpiechu, nie wyznaczyć admina, dorzucić kilka
-                            pakietów z AppExchange — i po roku odkryć, że firma
+                            pakietów z AppExchange, i po roku odkryć, że firma
                             używa 10% funkcji za 100% ceny.
                           </p>
                         </div>
@@ -640,7 +640,7 @@ export default function SalesforceDlaMalejFirmyArticle() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Article",
-            headline: "Salesforce dla małej firmy — czy warto",
+            headline: "Salesforce dla małej firmy, czy warto",
             description:
               "Czy Salesforce ma sens w małej firmie? Realne koszty, czas wdrożenia, alternatywy (Pipedrive, HubSpot) i scenariusze, w których Salesforce naprawdę się zwraca w 2026.",
             datePublished: "2026-04-19",
@@ -687,7 +687,7 @@ export default function SalesforceDlaMalejFirmyArticle() {
                 name: "Czy mogę wdrożyć Salesforce sam, bez partnera?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Starter — tak. Pro lub Enterprise — niemal nigdy. Bez admina lub partnera szybko rośnie dług techniczny i brakuje osoby, która wie, dlaczego coś działa akurat tak.",
+                  text: "Starter, tak. Pro lub Enterprise, niemal nigdy. Bez admina lub partnera szybko rośnie dług techniczny i brakuje osoby, która wie, dlaczego coś działa akurat tak.",
                 },
               },
               {
@@ -703,7 +703,7 @@ export default function SalesforceDlaMalejFirmyArticle() {
                 name: "Czy da się zmigrować z Salesforce do Pipedrive lub HubSpot?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Da się — kontakty, deale, podstawowa historia. Trudniej odtworzyć custom obiekty, Flow i raporty. Plan migracji warto rozpisać równolegle do uzasadnienia, dlaczego zmieniacie system.",
+                  text: "Da się, kontakty, deale, podstawowa historia. Trudniej odtworzyć custom obiekty, Flow i raporty. Plan migracji warto rozpisać równolegle do uzasadnienia, dlaczego zmieniacie system.",
                 },
               },
               {
@@ -719,7 +719,7 @@ export default function SalesforceDlaMalejFirmyArticle() {
                 name: "Jaki jest najgorszy scenariusz wdrożenia Salesforce w małej firmie?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Kupić Enterprise na wzrost, skonfigurować w pośpiechu, nie wyznaczyć admina, dorzucić kilka pakietów z AppExchange — i po roku odkryć, że firma używa 10% funkcji za 100% ceny.",
+                  text: "Kupić Enterprise na wzrost, skonfigurować w pośpiechu, nie wyznaczyć admina, dorzucić kilka pakietów z AppExchange, i po roku odkryć, że firma używa 10% funkcji za 100% ceny.",
                 },
               },
             ],

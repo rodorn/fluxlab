@@ -1417,7 +1417,7 @@ export default function CarConfigurator() {
         }
       }
 
-      // 1b. Fix directInjection based on engine name — LLM often gets this wrong
+      // 1b. Fix directInjection based on engine name, LLM often gets this wrong
       const DI_TRUE_PATTERN = /FSI|FSE|TSI|TFSI|GDI|T-GDI|D-4|Skyactiv-G/i;
       const DI_FALSE_PATTERN = /MPI|1\.8\s*Hybrid|1\.5\s*Hybrid/i;
       for (const car of allCars) {
@@ -1498,7 +1498,7 @@ export default function CarConfigurator() {
         car.variants = [...bestByKey.values()];
       }
 
-      // 3. Define age categories on frontend — ignore LLM assignment
+      // 3. Define age categories on frontend, ignore LLM assignment
       const AGE_BUCKETS: { label: string; from: number; to: number }[] = [
         { label: "Nowe", from: 0, to: 1 },
         { label: "Do 3 lat", from: 0, to: 3 },
@@ -1889,7 +1889,7 @@ export default function CarConfigurator() {
           </p>
           <p className="text-xs text-gray-500">
             Dla segmentu {segment},{" "}
-            {BODY_STYLES.find((b) => b.id === answers.bodyStyle)?.title ?? "—"},{" "}
+            {BODY_STYLES.find((b) => b.id === answers.bodyStyle)?.title ?? "dowolne"},{" "}
             {answers.maxSpeed} km/h
           </p>
         </div>
@@ -1981,7 +1981,7 @@ export default function CarConfigurator() {
           <SummaryRow
             label="Typ"
             value={
-              BODY_STYLES.find((b) => b.id === answers.bodyStyle)?.title ?? "—"
+              BODY_STYLES.find((b) => b.id === answers.bodyStyle)?.title ?? "dowolne"
             }
           />
           <SummaryRow
@@ -2024,10 +2024,10 @@ export default function CarConfigurator() {
               text: `Dobieram warianty paliwowe (benzyna, diesel, LPG)...`,
             },
             { t: 22, text: "Weryfikuję ceny na polskim rynku..." },
-            { t: 30, text: "Prawie gotowe — finalizuję rekomendacje..." },
+            { t: 30, text: "Prawie gotowe, finalizuję rekomendacje..." },
             {
               t: 45,
-              text: "To trwa dłużej niż zwykle — proszę o cierpliwość...",
+              text: "To trwa dłużej niż zwykle, proszę o cierpliwość...",
             },
           ];
           const current =
@@ -2117,7 +2117,7 @@ export default function CarConfigurator() {
                 <p className="text-sm text-gray-600 dark:text-gray-400">
                   {BODY_STYLES.find((b) => b.id === answers.bodyStyle)?.title ??
                     "Samochód"}{" "}
-                  — kliknij kategorię wiekową, żeby zobaczyć propozycje.
+                 , kliknij kategorię wiekową, żeby zobaczyć propozycje.
                 </p>
               </div>
             </div>

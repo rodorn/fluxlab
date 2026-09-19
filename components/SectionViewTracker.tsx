@@ -8,7 +8,7 @@ interface Props {
   target: string;
   /** Nazwa eventu do wysłania (np. "pricing_view"). */
   eventName: string;
-  /** Próg widoczności (0–1) — domyślnie 0.4 = 40% sekcji widoczne. */
+  /** Próg widoczności (0–1), domyślnie 0.4 = 40% sekcji widoczne. */
   threshold?: number;
 }
 

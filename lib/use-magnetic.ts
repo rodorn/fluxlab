@@ -10,7 +10,7 @@ type Options = {
 };
 
 /**
- * Magnetic pointer effect — element delikatnie podąża za kursorem
+ * Magnetic pointer effect, element delikatnie podąża za kursorem
  * przy hover. Wymaga `.magnetic` klasy + CSS var `--magnet-x/y` w globals.
  */
 export default function useMagnetic<T extends HTMLElement>({

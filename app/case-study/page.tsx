@@ -7,14 +7,14 @@ import TrackedCTA from "@/components/TrackedCTA";
 import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
-  title: "Case study — przykłady wdrożeń automatyzacji | Fluxlab",
+  title: "Case study, przykłady wdrożeń automatyzacji | Fluxlab",
   description:
     "Konkretne przykłady wdrożeń automatyzacji obsługi leadów, CRM i raportowania w firmach B2B. Przed/po, mierzalne efekty, czego unikać.",
   alternates: {
     canonical: "/case-study",
   },
   openGraph: {
-    title: "Case study — przykłady wdrożeń automatyzacji | Fluxlab",
+    title: "Case study, przykłady wdrożeń automatyzacji | Fluxlab",
     description:
       "Konkretne przykłady wdrożeń automatyzacji obsługi leadów, CRM i raportowania w firmach B2B.",
     locale: "pl_PL",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Case study",
+        alt: "Fluxlab, Case study",
       },
     ],
   },
@@ -80,7 +80,7 @@ const examples: Example[] = [
       { value: "+18%", label: "konwersji lead → spotkanie" },
     ],
     limits:
-      "Synteza kilku podobnych wdrożeń, nie pojedynczy projekt. Liczby zaokrąglone w górę do najbliższej znaczącej wartości — realny zakres mieścił się w 10–15 min ręcznej pracy i 12–22% wzrostu konwersji w zależności od źródła leadów.",
+      "Synteza kilku podobnych wdrożeń, nie pojedynczy projekt. Liczby zaokrąglone w górę do najbliższej znaczącej wartości, realny zakres mieścił się w 10–15 min ręcznej pracy i 12–22% wzrostu konwersji w zależności od źródła leadów.",
   },
   {
     slug: "raport-pipedrive-bez-excela",
@@ -99,7 +99,7 @@ const examples: Example[] = [
       { value: "stała pora", label: "publikacji raportu" },
     ],
     limits:
-      "Synteza dwóch wdrożeń. Dane wejściowe i strukturę raportu zanonimizowano. Czas oszczędności (4h/tydz.) odnosi się do osoby kompletującej raport — nie do ogólnego ROI dla firmy.",
+      "Synteza dwóch wdrożeń. Dane wejściowe i strukturę raportu zanonimizowano. Czas oszczędności (4h/tydz.) odnosi się do osoby kompletującej raport, nie do ogólnego ROI dla firmy.",
   },
 ];
 
@@ -110,7 +110,7 @@ export default function CaseStudy() {
       <main>
         <Breadcrumbs items={[{ label: "Case study" }]} />
 
-        {/* Hero — kompaktowy */}
+        {/* Hero, kompaktowy */}
         <section className="pt-16 pb-6">
           <div className="container-wide">
             <div className="max-w-3xl">
@@ -120,7 +120,7 @@ export default function CaseStudy() {
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
                 Poniżej dwa przykłady typowych procesów, które wdrażam u
-                klientów. To <strong>syntezy realnych projektów</strong> —
+                klientów. To <strong>syntezy realnych projektów</strong>,
                 detale techniczne i metodologia są autentyczne, ale nazwy firm i
                 konkretne dane zostały zanonimizowane do czasu, aż klienci dadzą
                 zgodę na publikację z imienia. Pełne case studies pojawią się
@@ -131,13 +131,13 @@ export default function CaseStudy() {
                 >
                   programu case study
                 </Link>{" "}
-                — 3 firmy, 50% ceny w zamian za publikację efektu.
+               , 3 firmy, 50% ceny w zamian za publikację efektu.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Treść w zakładkach — nic nie wycięte, podzielone */}
+        {/* Treść w zakładkach, nic nie wycięte, podzielone */}
         <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
           <Tabs
             ariaLabel="Sekcje strony Case study"
@@ -257,7 +257,7 @@ export default function CaseStudy() {
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
                         Bez wymyślnych modeli. Porównuję cztery rzeczy przed i
-                        po wdrożeniu — to wystarczy, żeby zobaczyć, czy
+                        po wdrożeniu, to wystarczy, żeby zobaczyć, czy
                         automatyzacja się zwróciła.
                       </p>
                       <ol className="space-y-4">
@@ -299,7 +299,7 @@ export default function CaseStudy() {
                       </ol>
                       <p className="mt-8 text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
                         Możesz policzyć szacunek dla swojego procesu
-                        samodzielnie — udostępniam{" "}
+                        samodzielnie, udostępniam{" "}
                         <Link
                           href="/kalkulator-leadow"
                           className="text-accent hover:underline font-medium"

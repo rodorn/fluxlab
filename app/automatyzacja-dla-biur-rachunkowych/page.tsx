@@ -9,12 +9,12 @@ import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
   title:
-    "Automatyzacja dla biur rachunkowych — KSeF, OCR faktur, Optima, Symfonia, SaldeoSmart | Fluxlab",
+    "Automatyzacja dla biur rachunkowych, KSeF, OCR faktur, Optima, Symfonia, SaldeoSmart | Fluxlab",
   description:
     "Automatyzacja biura rachunkowego: OCR faktur do Comarch Optima, Symfonii i Enova, integracje z SaldeoSmart i KSeF, przypomnienia do klientów o brakujących dokumentach, automatyczne raporty miesięczne. Mniej ręcznego klepania, więcej czasu na klienta.",
   openGraph: {
     title:
-      "Automatyzacja dla biur rachunkowych — KSeF, OCR faktur, Optima, Symfonia, SaldeoSmart | Fluxlab",
+      "Automatyzacja dla biur rachunkowych, KSeF, OCR faktur, Optima, Symfonia, SaldeoSmart | Fluxlab",
     description:
       "Automatyzacja biura rachunkowego: OCR faktur do Comarch Optima, Symfonii i Enova, integracje z SaldeoSmart i KSeF, przypomnienia do klientów o brakujących dokumentach, automatyczne raporty miesięczne. Mniej ręcznego klepania, więcej czasu na klienta.",
     locale: "pl_PL",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Automatyzacja procesów dla biur rachunkowych",
+        alt: "Fluxlab, Automatyzacja procesów dla biur rachunkowych",
       },
     ],
   },
@@ -47,7 +47,7 @@ const useCases = [
   {
     title: "Integracja z KSeF (Krajowy System e-Faktur)",
     description:
-      "Pobieramy faktury z KSeF dla każdego klienta biura, weryfikujemy z dokumentami papierowymi, wprowadzamy do systemu księgowego. Po wejściu obowiązkowego KSeF (etapowo od 2026) ma to przejść z opcji w obowiązek techniczny — przygotowujemy biuro tak, żeby skala dokumentów nie zabiła zespołu.",
+      "Pobieramy faktury z KSeF dla każdego klienta biura, weryfikujemy z dokumentami papierowymi, wprowadzamy do systemu księgowego. Po wejściu obowiązkowego KSeF (etapowo od 2026) ma to przejść z opcji w obowiązek techniczny, przygotowujemy biuro tak, żeby skala dokumentów nie zabiła zespołu.",
   },
   {
     title: "Automatyczne raporty miesięczne dla klientów",
@@ -65,7 +65,7 @@ const painPoints = [
   {
     pain: "Księgowi spędzają połowę dnia na ręcznym wprowadzaniu faktur",
     solution:
-      "Wpinamy OCR (SaldeoSmart jest najpopularniejszy w Polsce, ale działamy też na własnych pipeline'ach z modelami AI dla mniej standardowych dokumentów). Rozpoznane faktury trafiają do Optimy/Symfonii/Enova jako dokumenty do akceptacji. Księgowy zatwierdza, ewentualnie poprawia jeden numer — zamiast przepisywać 30 pól z każdej faktury.",
+      "Wpinamy OCR (SaldeoSmart jest najpopularniejszy w Polsce, ale działamy też na własnych pipeline'ach z modelami AI dla mniej standardowych dokumentów). Rozpoznane faktury trafiają do Optimy/Symfonii/Enova jako dokumenty do akceptacji. Księgowy zatwierdza, ewentualnie poprawia jeden numer, zamiast przepisywać 30 pól z każdej faktury.",
   },
   {
     pain: "Klienci notorycznie spóźniają się z dokumentami, a przypominanie zajmuje godziny",
@@ -98,7 +98,7 @@ const tools = [
   {
     name: "SaldeoSmart",
     description:
-      "Standard OCR faktur w polskich biurach rachunkowych. Spinamy SaldeoSmart z systemem księgowym i z mailami klientów (faktury wpływają z różnych skrzynek, automatycznie trafiają do SaldeoSmart). Robimy też logikę uzupełniającą — gdy SaldeoSmart nie poradzi sobie z dokumentem, eskalacja do księgowego, a nie cisza.",
+      "Standard OCR faktur w polskich biurach rachunkowych. Spinamy SaldeoSmart z systemem księgowym i z mailami klientów (faktury wpływają z różnych skrzynek, automatycznie trafiają do SaldeoSmart). Robimy też logikę uzupełniającą, gdy SaldeoSmart nie poradzi sobie z dokumentem, eskalacja do księgowego, a nie cisza.",
   },
   {
     name: "KSeF",
@@ -118,7 +118,7 @@ const tools = [
   {
     name: "Pipedrive lub HubSpot",
     description:
-      "Dla części handlowej biura (pozyskiwanie nowych klientów). Spinamy CRM z onboardingiem, podpisem umowy, fakturowaniem retainera księgowego i — jeśli biuro tego potrzebuje — z bazą klientów w systemie księgowym.",
+      "Dla części handlowej biura (pozyskiwanie nowych klientów). Spinamy CRM z onboardingiem, podpisem umowy, fakturowaniem retainera księgowego i, jeśli biuro tego potrzebuje, z bazą klientów w systemie księgowym.",
   },
 ];
 
@@ -127,13 +127,13 @@ const faq = [
     question:
       "Pracujemy w Comarch Optima. Czy automatyzacja wymaga zmiany systemu?",
     answer:
-      "Nie. Optima ma API, z którym pracujemy bezpośrednio (Comarch ERP API). Wprowadzamy dokumenty z OCR, pobieramy faktury z KSeF, eksportujemy raporty — wszystko bez zmiany systemu księgowego. Tak samo działamy z Symfonią, Enovą i InsERT.",
+      "Nie. Optima ma API, z którym pracujemy bezpośrednio (Comarch ERP API). Wprowadzamy dokumenty z OCR, pobieramy faktury z KSeF, eksportujemy raporty, wszystko bez zmiany systemu księgowego. Tak samo działamy z Symfonią, Enovą i InsERT.",
   },
   {
     question:
       "Mamy SaldeoSmart, ale tylko częściowo wykorzystany. Da się to lepiej spiąć?",
     answer:
-      "Tak. Najczęściej spotykany przypadek: SaldeoSmart rozpoznaje faktury, ale ktoś i tak ręcznie eksportuje plik i wgrywa do Optimy. Łączymy te dwa kroki tak, żeby rozpoznana faktura trafiała do systemu księgowego sama (jako dokument do akceptacji albo zatwierdzona od razu — zależnie od reguł). Ten jeden klik na fakturę pomnożony przez 1000 dokumentów miesięcznie to konkretne godziny.",
+      "Tak. Najczęściej spotykany przypadek: SaldeoSmart rozpoznaje faktury, ale ktoś i tak ręcznie eksportuje plik i wgrywa do Optimy. Łączymy te dwa kroki tak, żeby rozpoznana faktura trafiała do systemu księgowego sama (jako dokument do akceptacji albo zatwierdzona od razu, zależnie od reguł). Ten jeden klik na fakturę pomnożony przez 1000 dokumentów miesięcznie to konkretne godziny.",
   },
   {
     question: "Jak wygląda automatyzacja KSeF w 2026?",
@@ -143,7 +143,7 @@ const faq = [
   {
     question: "Co z tajemnicą zawodową i RODO?",
     answer:
-      "Dla biur rachunkowych standardowo konfigurujemy automatyzację w architekturze, gdzie dane klientów nie wychodzą poza Polskę / EOG, a najczęściej w ogóle nie wychodzą poza serwer biura (n8n self-hosted na Waszej infrastrukturze). Wszystkie integracje z KSeF, GUS, białą listą działają na oficjalnych API. RODO i tajemnica zawodowa to wymóg twardy — nie obchodzimy go.",
+      "Dla biur rachunkowych standardowo konfigurujemy automatyzację w architekturze, gdzie dane klientów nie wychodzą poza Polskę / EOG, a najczęściej w ogóle nie wychodzą poza serwer biura (n8n self-hosted na Waszej infrastrukturze). Wszystkie integracje z KSeF, GUS, białą listą działają na oficjalnych API. RODO i tajemnica zawodowa to wymóg twardy, nie obchodzimy go.",
   },
   {
     question: "Ile kosztuje wdrożenie automatyzacji w biurze rachunkowym?",
@@ -159,7 +159,7 @@ const faq = [
     question:
       "Klienci wysyłają faktury w 5 różny sposób (mail, Drive, paczka, portal). Da się to ujednolicić?",
     answer:
-      "Tak. Konfigurujemy jedno wejście (np. portal klienta lub dedykowany adres e-mail per klient), do którego automatycznie spływają dokumenty z różnych źródeł. Z punktu widzenia księgowego — wszystko ląduje w jednym miejscu, w odpowiednim folderze klienta, z metadanymi (data, kategoria). Z punktu widzenia klienta — może dalej przesyłać tak, jak przesyłał, ale nic już nie ginie.",
+      "Tak. Konfigurujemy jedno wejście (np. portal klienta lub dedykowany adres e-mail per klient), do którego automatycznie spływają dokumenty z różnych źródeł. Z punktu widzenia księgowego, wszystko ląduje w jednym miejscu, w odpowiednim folderze klienta, z metadanymi (data, kategoria). Z punktu widzenia klienta, może dalej przesyłać tak, jak przesyłał, ale nic już nie ginie.",
   },
 ];
 
@@ -172,7 +172,7 @@ const relatedServices = [
   { label: "Automatyzacja raportowania", href: "/automatyzacja-raportowania" },
   { label: "Automatyzacja CRM", href: "/automatyzacja-crm" },
   { label: "Automatyzacja leadów", href: "/automatyzacja-leadow" },
-  { label: "n8n — wdrożenia", href: "/n8n" },
+  { label: "n8n, wdrożenia", href: "/n8n" },
   { label: "Zapier i Make", href: "/zapier-make" },
 ];
 
@@ -182,7 +182,7 @@ const relatedArticles = [
     href: "/strefa-wiedzy/co-to-jest-automatyzacja-procesow-biznesowych",
   },
   {
-    label: "Integracje API w firmie — kiedy warto",
+    label: "Integracje API w firmie, kiedy warto",
     href: "/strefa-wiedzy/integracje-api-w-firmie-kiedy-warto",
   },
   {
@@ -204,7 +204,7 @@ export default function AutomatyzacjaDlaBiurRachunkowych() {
           items={[{ label: "Automatyzacja dla biur rachunkowych" }]}
         />
 
-        {/* Hero — kompaktowy */}
+        {/* Hero, kompaktowy */}
         <section className="relative pt-16 pb-6 overflow-hidden">
           <div className="absolute inset-0 -z-10">
             <div className="absolute inset-0 bg-sky-50 dark:hidden" />
@@ -237,7 +237,7 @@ export default function AutomatyzacjaDlaBiurRachunkowych() {
                 <p className="text-lg text-gray-600 dark:text-gray-300">
                   KSeF od 2026, rosnąca liczba dokumentów, klienci spóźnieni z
                   dostarczeniem faktur, ręczne wprowadzanie do Optimy czy
-                  Symfonii — to są realne bóle, które kosztują biuro etat lub
+                  Symfonii, to są realne bóle, które kosztują biuro etat lub
                   dwa rocznie. Automatyzujemy OCR, KSeF, przypomnienia, raporty
                   i onboarding tak, żeby zespół miał czas na doradztwo, a nie na
                   przepisywanie.
@@ -259,7 +259,7 @@ export default function AutomatyzacjaDlaBiurRachunkowych() {
           </div>
         </section>
 
-        {/* Treść w zakładkach — nic nie wycięte, podzielone */}
+        {/* Treść w zakładkach, nic nie wycięte, podzielone */}
         <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
           <Tabs
             ariaLabel="Sekcje oferty dla biur rachunkowych"
@@ -278,7 +278,7 @@ export default function AutomatyzacjaDlaBiurRachunkowych() {
                         godzina ręcznego wprowadzania faktury, każdy telefon o
                         brakujący wyciąg, każda sklejana ręcznie deklaracja to
                         koszt, który rośnie liniowo z portfelem klientów.
-                        Automatyzacja przerywa tę zależność — biuro może
+                        Automatyzacja przerywa tę zależność, biuro może
                         obsługiwać dwa razy więcej klientów bez podwajania
                         zespołu.
                       </p>
@@ -313,7 +313,7 @@ export default function AutomatyzacjaDlaBiurRachunkowych() {
                       <p className="text-gray-500 dark:text-gray-400 mb-10">
                         Poniżej najczęstsze sytuacje, które słyszymy od
                         właścicieli i kierowników biur rachunkowych. Każdy z
-                        tych problemów ma konkretne rozwiązanie technologiczne —
+                        tych problemów ma konkretne rozwiązanie technologiczne,
                         zwykle dające się wdrożyć w tygodniach, nie miesiącach.
                       </p>
 
@@ -347,7 +347,7 @@ export default function AutomatyzacjaDlaBiurRachunkowych() {
                       <p className="text-gray-500 dark:text-gray-400 mb-10">
                         Polskie biura rachunkowe pracują głównie na czterech
                         systemach księgowych i kilku narzędziach pomocniczych.
-                        Nasza rola polega na spięciu tego, co już macie — z OCR,
+                        Nasza rola polega na spięciu tego, co już macie, z OCR,
                         KSeF, portalem klienta i automatyką komunikacji.
                       </p>
 

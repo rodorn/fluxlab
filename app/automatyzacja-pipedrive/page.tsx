@@ -20,7 +20,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Automatyzacja leadów, CRM i raportowania dla firm B2B",
+        alt: "Fluxlab, Automatyzacja leadów, CRM i raportowania dla firm B2B",
       },
     ],
   },
@@ -40,7 +40,7 @@ const offer = [
   },
   {
     title: "Logika biznesowa i webhooki",
-    desc: "Zmiana etapów, follow-upy i procesy backendowe odpalają się same — w czasie rzeczywistym, nie w kolejnym cronie.",
+    desc: "Zmiana etapów, follow-upy i procesy backendowe odpalają się same, w czasie rzeczywistym, nie w kolejnym cronie.",
   },
   {
     title: "Raporty i czysta baza",
@@ -55,7 +55,7 @@ export default function AutomatyzacjaPipedrive() {
       <main className="pt-16">
         <Breadcrumbs items={[{ label: "Automatyzacja Pipedrive" }]} />
 
-        {/* Hero — kompaktowy */}
+        {/* Hero, kompaktowy */}
         <section className="relative overflow-hidden pt-24 pb-12">
           <div className="blob blob-accent -top-32 -right-24 w-[420px] h-[420px]" />
           <div className="container-wide relative">
@@ -75,7 +75,7 @@ export default function AutomatyzacjaPipedrive() {
           </div>
         </section>
 
-        {/* Treść w zakładkach — nic nie wycięte, podzielone */}
+        {/* Treść w zakładkach, nic nie wycięte, podzielone */}
         <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
           <Tabs
             ariaLabel="Sekcje oferty automatyzacji Pipedrive"

@@ -6,12 +6,12 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
-  title: "Jak pracuję — transparentny proces wdrożenia automatyzacji | Fluxlab",
+  title: "Jak pracuję, transparentny proces wdrożenia automatyzacji | Fluxlab",
   description:
     "Krok po kroku jak wygląda współpraca: bezpłatna konsultacja, audyt, wdrożenie i wsparcie. Stała cena projektowa, konkretne deliverables, realistyczne terminy.",
   openGraph: {
     title:
-      "Jak pracuję — transparentny proces wdrożenia automatyzacji | Fluxlab",
+      "Jak pracuję, transparentny proces wdrożenia automatyzacji | Fluxlab",
     description:
       "Krok po kroku jak wygląda współpraca: bezpłatna konsultacja, audyt, wdrożenie i wsparcie. Stała cena projektowa, bez ukrytych kosztów.",
     locale: "pl_PL",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Automatyzacja leadów, CRM i raportowania dla firm B2B",
+        alt: "Fluxlab, Automatyzacja leadów, CRM i raportowania dla firm B2B",
       },
     ],
   },
@@ -36,12 +36,12 @@ const steps = [
     title: "Bezpłatna diagnoza (30 min)",
     duration: "30 minut · online",
     description:
-      "Rozmawiamy o tym, co chcesz usprawnić. Opisujesz problem, ja dopytuję o szczegóły i mówię wprost, czy widzę sens automatyzacji, czy raczej trzeba najpierw uporządkować proces. Jeśli to nie mój obszar — powiem i skieruję gdzie indziej.",
+      "Rozmawiamy o tym, co chcesz usprawnić. Opisujesz problem, ja dopytuję o szczegóły i mówię wprost, czy widzę sens automatyzacji, czy raczej trzeba najpierw uporządkować proces. Jeśli to nie mój obszar, powiem i skieruję gdzie indziej.",
     deliverables: [
       "Wstępna ocena, czy automatyzacja ma sens",
       "Wskazanie realnego efektu (ile godzin, jakie dane, jaki proces)",
       "Szacunkowe widełki czasowe i kosztowe",
-      "Brak zobowiązań — nie kontynuujemy, jeśli nie widzę wartości",
+      "Brak zobowiązań, nie kontynuujemy, jeśli nie widzę wartości",
     ],
   },
   {
@@ -63,7 +63,7 @@ const steps = [
     title: "Wdrożenie",
     duration: "2–8 tygodni zależnie od zakresu",
     description:
-      "Pracuję w krótkich iteracjach. Co tydzień dostajesz mierzalny postęp i możliwość zatrzymania projektu, jeśli coś nie działa jak trzeba. Płatność rozbijam na transze powiązane z kamieniami milowymi — nie płacisz z góry za coś, czego jeszcze nie widziałeś.",
+      "Pracuję w krótkich iteracjach. Co tydzień dostajesz mierzalny postęp i możliwość zatrzymania projektu, jeśli coś nie działa jak trzeba. Płatność rozbijam na transze powiązane z kamieniami milowymi, nie płacisz z góry za coś, czego jeszcze nie widziałeś.",
     deliverables: [
       "Tygodniowy status w formie konkretów (co zrobione, co dalej)",
       "Środowisko testowe przed wdrożeniem na produkcję",
@@ -77,7 +77,7 @@ const steps = [
     title: "Wsparcie po wdrożeniu",
     duration: "Bezpłatnie przez 30 dni, potem opcjonalnie",
     description:
-      "Przez pierwszy miesiąc od wdrożenia poprawiam bez dodatkowej opłaty wszystko, co wynika z błędów po mojej stronie lub niedoprecyzowanych wymagań. Potem mogę zostać jako stały serwis (retainer) albo przekazać pełną dokumentację twojemu zespołowi — zależnie od tego, co preferujesz.",
+      "Przez pierwszy miesiąc od wdrożenia poprawiam bez dodatkowej opłaty wszystko, co wynika z błędów po mojej stronie lub niedoprecyzowanych wymagań. Potem mogę zostać jako stały serwis (retainer) albo przekazać pełną dokumentację twojemu zespołowi, zależnie od tego, co preferujesz.",
     deliverables: [
       "30 dni darmowych poprawek (bugi, uzupełnienia wymagań)",
       "Runbook w razie awarii (co sprawdzić, kogo powiadomić)",
@@ -91,7 +91,7 @@ const pricingPrinciples = [
   {
     title: "Stała cena za projekt",
     description:
-      "Nie rozliczam się per godzinę. Po audycie dostajesz konkretną kwotę za cały projekt. Jeśli zajmie mi dłużej — to mój problem, nie twój.",
+      "Nie rozliczam się per godzinę. Po audycie dostajesz konkretną kwotę za cały projekt. Jeśli zajmie mi dłużej, to mój problem, nie twój.",
   },
   {
     title: "Audyt odliczany od wdrożenia",
@@ -114,27 +114,27 @@ const faq = [
   {
     question: "Ile kosztuje konkretna automatyzacja?",
     answer:
-      "Nie podaję cennika z sufitu, bo tak samo nazwany projekt może mieć dwa różne koszty w zależności od danych i integracji. Po 30-minutowej konsultacji znasz widełki. Po audycie — konkretną, stałą cenę.",
+      "Nie podaję cennika z sufitu, bo tak samo nazwany projekt może mieć dwa różne koszty w zależności od danych i integracji. Po 30-minutowej konsultacji znasz widełki. Po audycie, konkretną, stałą cenę.",
   },
   {
     question: "Pracujesz sam czy w zespole?",
     answer:
-      "Pracuję sam. To oznacza dwie rzeczy: nie przepłacasz za warstwy pośrednie (project managerów, account managerów), ale też — terminy zależą od jednej osoby. Jeśli projekt wymaga więcej rąk, mówię o tym od razu i albo polecam kogoś, albo podpinam konkretnych podwykonawców za zgodą.",
+      "Pracuję sam. To oznacza dwie rzeczy: nie przepłacasz za warstwy pośrednie (project managerów, account managerów), ale też, terminy zależą od jednej osoby. Jeśli projekt wymaga więcej rąk, mówię o tym od razu i albo polecam kogoś, albo podpinam konkretnych podwykonawców za zgodą.",
   },
   {
     question: "Co jeśli automatyzacja przestanie działać po kilku miesiącach?",
     answer:
-      "Po wdrożeniu dostajesz dokumentację i runbook: co sprawdzić w pierwszej kolejności, kogo powiadomić, jak przywrócić działanie. Jeśli awaria wynika z mojego błędu — poprawiam bezpłatnie niezależnie od tego, ile czasu minęło. Jeśli z zewnętrznej zmiany (np. API dostawcy) — podaję widełki i termin naprawy.",
+      "Po wdrożeniu dostajesz dokumentację i runbook: co sprawdzić w pierwszej kolejności, kogo powiadomić, jak przywrócić działanie. Jeśli awaria wynika z mojego błędu, poprawiam bezpłatnie niezależnie od tego, ile czasu minęło. Jeśli z zewnętrznej zmiany (np. API dostawcy), podaję widełki i termin naprawy.",
   },
   {
     question: "Kto to potem utrzymuje?",
     answer:
-      "Masz trzy opcje: (1) utrzymanie przejmuje twój zespół — dostaje dokumentację i szkolenie; (2) zostaję na retainerze ze stałą miesięczną opłatą i zdefiniowanym SLA; (3) rozwiązanie hybrydowe — zespół obsługuje codzienność, ja jestem do eskalacji.",
+      "Masz trzy opcje: (1) utrzymanie przejmuje twój zespół, dostaje dokumentację i szkolenie; (2) zostaję na retainerze ze stałą miesięczną opłatą i zdefiniowanym SLA; (3) rozwiązanie hybrydowe, zespół obsługuje codzienność, ja jestem do eskalacji.",
   },
   {
     question: "Ile trwa najkrótszy projekt?",
     answer:
-      "Najprostsza integracja (np. formularz → CRM + notyfikacja) zajmuje ok. 2–4 dni roboczych od podpisania do uruchomienia. Wdrożenia CRM zwykle 3–6 tygodni, większe przepływy z integracjami API — do 8 tygodni.",
+      "Najprostsza integracja (np. formularz → CRM + notyfikacja) zajmuje ok. 2–4 dni roboczych od podpisania do uruchomienia. Wdrożenia CRM zwykle 3–6 tygodni, większe przepływy z integracjami API, do 8 tygodni.",
   },
   {
     question: "Czy zobaczę postęp w trakcie wdrożenia?",
@@ -144,12 +144,12 @@ const faq = [
   {
     question: "Czy podpisujemy umowę i NDA?",
     answer:
-      "Tak. Każdy projekt ma prostą umowę z zakresem, ceną, harmonogramem, warunkami odbioru i warunkami rozwiązania współpracy. NDA podpisuję standardowo, jeśli potrzebujesz — mam własny wzór albo pracujemy na twoim.",
+      "Tak. Każdy projekt ma prostą umowę z zakresem, ceną, harmonogramem, warunkami odbioru i warunkami rozwiązania współpracy. NDA podpisuję standardowo, jeśli potrzebujesz, mam własny wzór albo pracujemy na twoim.",
   },
   {
     question: "Co jeśli po audycie uznam, że mi się nie opłaca?",
     answer:
-      "Dostajesz dokument audytowy i nie kontynuujemy. Koszt audytu nie jest zwracany, ale cały materiał zostaje u ciebie — możesz na jego podstawie wdrożyć się samodzielnie albo zlecić komuś innemu.",
+      "Dostajesz dokument audytowy i nie kontynuujemy. Koszt audytu nie jest zwracany, ale cały materiał zostaje u ciebie, możesz na jego podstawie wdrożyć się samodzielnie albo zlecić komuś innemu.",
   },
 ];
 
@@ -234,7 +234,7 @@ export default function JakPracuje() {
       <main>
         <Breadcrumbs items={[{ label: "Jak pracuję" }]} />
 
-        {/* Hero — kompaktowy */}
+        {/* Hero, kompaktowy */}
         <section className="pt-16 pb-6 bg-gray-50 dark:bg-gray-900/50 border-b border-gray-100 dark:border-gray-800">
           <div className="container-wide">
             <div className="max-w-3xl mx-auto text-center">
@@ -245,13 +245,13 @@ export default function JakPracuje() {
               <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
                 Solo consultant, stała cena projektowa, tygodniowy postęp w
                 konkretach. Poniżej masz pełny proces od pierwszej rozmowy do
-                wsparcia po wdrożeniu — bez marketingu, bez ukrytych kosztów.
+                wsparcia po wdrożeniu, bez marketingu, bez ukrytych kosztów.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Treść w zakładkach — nic nie wycięte, podzielone */}
+        {/* Treść w zakładkach, nic nie wycięte, podzielone */}
         <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
           <Tabs
             ariaLabel="Sekcje strony Jak pracuję"
@@ -369,7 +369,7 @@ export default function JakPracuje() {
                       </h2>
                       <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
                         30 minut, bez zobowiązań. Jeśli widzę, że automatyzacja
-                        nie ma sensu — powiem to wprost na pierwszej rozmowie.
+                        nie ma sensu, powiem to wprost na pierwszej rozmowie.
                       </p>
                       <Link href="/kontakt" className="btn-primary">
                         Zamów diagnozę

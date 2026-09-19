@@ -16,13 +16,13 @@ export const categories: Category[] = [
     name: "Procesy",
     slug: "procesy",
     description:
-      "Artykuły o automatyzacji procesów biznesowych — czym jest, jak liczyć ROI i od czego zacząć.",
+      "Artykuły o automatyzacji procesów biznesowych, czym jest, jak liczyć ROI i od czego zacząć.",
     articles: [
       {
         href: "/strefa-wiedzy/co-to-jest-automatyzacja-procesow-biznesowych",
         title: "Co to jest automatyzacja procesów biznesowych?",
         description:
-          "Praktyczny przewodnik — czym jest, gdzie daje efekt i od czego zacząć.",
+          "Praktyczny przewodnik, czym jest, gdzie daje efekt i od czego zacząć.",
       },
       {
         href: "/strefa-wiedzy/jak-policzyc-roi-z-automatyzacji",
@@ -32,7 +32,7 @@ export const categories: Category[] = [
       },
       {
         href: "/strefa-wiedzy/automatyzacja-vs-zatrudnienie",
-        title: "Automatyzacja vs zatrudnienie — co się bardziej opłaca",
+        title: "Automatyzacja vs zatrudnienie, co się bardziej opłaca",
         description:
           "Realne koszty, ryzyka, framework decyzji i praktyczne scenariusze dla firm B2B.",
       },
@@ -42,11 +42,11 @@ export const categories: Category[] = [
     name: "CRM",
     slug: "crm",
     description:
-      "Wszystko o automatyzacji CRM — wdrożenie, porządkowanie procesu sprzedaży i integracja z innymi systemami.",
+      "Wszystko o automatyzacji CRM, wdrożenie, porządkowanie procesu sprzedaży i integracja z innymi systemami.",
     articles: [
       {
         href: "/strefa-wiedzy/automatyzacja-crm-od-czego-zaczac",
-        title: "Automatyzacja CRM — od czego zacząć",
+        title: "Automatyzacja CRM, od czego zacząć",
         description:
           "Audyt procesu, leady, zadania, statusy i pierwsze wdrożenia.",
       },
@@ -64,13 +64,13 @@ export const categories: Category[] = [
       },
       {
         href: "/strefa-wiedzy/pipedrive-vs-salesforce",
-        title: "Pipedrive vs Salesforce — które CRM wybrać",
+        title: "Pipedrive vs Salesforce, które CRM wybrać",
         description:
           "Porównanie cen, funkcji i modelu danych. Dla kogo Pipedrive, a dla kogo Salesforce.",
       },
       {
         href: "/strefa-wiedzy/hubspot-vs-pipedrive",
-        title: "HubSpot vs Pipedrive — co wybrać",
+        title: "HubSpot vs Pipedrive, co wybrać",
         description:
           "Freemium HubSpot kontra prostota Pipedrive. Pricing, skalowanie, realne koszty.",
       },
@@ -78,11 +78,11 @@ export const categories: Category[] = [
         href: "/strefa-wiedzy/crm-dla-jednoosobowej-firmy",
         title: "CRM dla jednoosobowej firmy",
         description:
-          "Czy solo-firma potrzebuje CRM. Pipedrive, HubSpot Free, Folk — co wybrać i kiedy.",
+          "Czy solo-firma potrzebuje CRM. Pipedrive, HubSpot Free, Folk, co wybrać i kiedy.",
       },
       {
         href: "/strefa-wiedzy/salesforce-dla-malej-firmy",
-        title: "Salesforce dla małej firmy — czy ma sens",
+        title: "Salesforce dla małej firmy, czy ma sens",
         description:
           "Starter Suite, Enterprise, koszty wdrożenia i typowe pułapki w MŚP.",
       },
@@ -92,31 +92,31 @@ export const categories: Category[] = [
     name: "Narzędzia",
     slug: "narzedzia",
     description:
-      "Porównania narzędzi automatyzacji — Zapier, Make, n8n. Kiedy co wybrać w praktyce MŚP.",
+      "Porównania narzędzi automatyzacji, Zapier, Make, n8n. Kiedy co wybrać w praktyce MŚP.",
     articles: [
       {
         href: "/strefa-wiedzy/zapier-vs-make",
-        title: "Zapier vs Make — co wybrać w 2026",
+        title: "Zapier vs Make, co wybrać w 2026",
         description:
           "Porównanie prostoty, elastyczności i kosztów. Praktyczne scenariusze MŚP.",
       },
       {
         href: "/strefa-wiedzy/n8n-vs-zapier",
-        title: "n8n vs Zapier — kiedy warto iść w self-hosting",
+        title: "n8n vs Zapier, kiedy warto iść w self-hosting",
         description:
           "Open-source kontra SaaS. Koszt, kontrola danych, wymagania techniczne.",
       },
       {
         href: "/strefa-wiedzy/make-vs-n8n",
-        title: "Make vs n8n — porównanie dla MŚP",
+        title: "Make vs n8n, porównanie dla MŚP",
         description:
           "Koszt, elastyczność, krzywa nauki i lokalizacja danych w UE.",
       },
       {
         href: "/strefa-wiedzy/zapier-make-n8n-porownanie",
-        title: "Zapier vs Make vs n8n — wielkie porównanie 2026",
+        title: "Zapier vs Make vs n8n, wielkie porównanie 2026",
         description:
-          "Pełne porównanie trzech największych narzędzi automatyzacji — ceny, ograniczenia, rekomendacje.",
+          "Pełne porównanie trzech największych narzędzi automatyzacji, ceny, ograniczenia, rekomendacje.",
       },
       {
         href: "/strefa-wiedzy/panel-do-sesji-ai",
@@ -130,11 +130,11 @@ export const categories: Category[] = [
     name: "Integracje",
     slug: "integracje",
     description:
-      "Integracje API w firmie — kiedy warto, jakie problemy rozwiązują i jak je wdrożyć.",
+      "Integracje API w firmie, kiedy warto, jakie problemy rozwiązują i jak je wdrożyć.",
     articles: [
       {
         href: "/strefa-wiedzy/integracje-api-w-firmie-kiedy-warto",
-        title: "Integracje API w firmie — kiedy warto?",
+        title: "Integracje API w firmie, kiedy warto?",
         description:
           "Kiedy API ma sens, jakie problemy rozwiązuje i kiedy lepiej nie komplikować.",
       },
@@ -164,7 +164,7 @@ export const categories: Category[] = [
     name: "AI",
     slug: "ai",
     description:
-      "Praktyczne zastosowania AI w firmie — klasyfikacja, streszczenia, wsparcie obsługi i framework decyzji.",
+      "Praktyczne zastosowania AI w firmie, klasyfikacja, streszczenia, wsparcie obsługi i framework decyzji.",
     articles: [
       {
         href: "/strefa-wiedzy/ai-w-automatyzacji-firm",
@@ -184,23 +184,23 @@ export const categories: Category[] = [
     name: "JDG i podatki",
     slug: "jdg-i-podatki",
     description:
-      "Formy opodatkowania JDG, składka zdrowotna, mały ZUS Plus i VAT — porównania i kalkulacje na 2026 rok.",
+      "Formy opodatkowania JDG, składka zdrowotna, mały ZUS Plus i VAT, porównania i kalkulacje na 2026 rok.",
     articles: [
       {
         href: "/strefa-wiedzy/jaka-forma-opodatkowania-jdg-2026",
         title: "Jaka forma opodatkowania JDG w 2026?",
         description:
-          "Porównanie skali, liniowego i ryczałtu — kryteria wyboru, progi, pułapki.",
+          "Porównanie skali, liniowego i ryczałtu, kryteria wyboru, progi, pułapki.",
       },
       {
         href: "/strefa-wiedzy/ryczalt-czy-liniowy",
-        title: "Ryczałt czy liniowy — co się bardziej opłaca",
+        title: "Ryczałt czy liniowy, co się bardziej opłaca",
         description:
           "Kiedy ryczałt wygrywa, kiedy przegrywa i jak to policzyć.",
       },
       {
         href: "/strefa-wiedzy/skala-czy-liniowy-jdg",
-        title: "Skala czy liniowy — porównanie dla JDG",
+        title: "Skala czy liniowy, porównanie dla JDG",
         description: "Kwota wolna, progi, zdrowotna i realne scenariusze.",
       },
       {
@@ -210,13 +210,13 @@ export const categories: Category[] = [
       },
       {
         href: "/strefa-wiedzy/maly-zus-plus-kiedy-sie-oplaca",
-        title: "Mały ZUS Plus — kiedy się opłaca",
+        title: "Mały ZUS Plus, kiedy się opłaca",
         description:
           "Warunki, limity, oszczędności i kiedy lepiej z niego nie korzystać.",
       },
       {
         href: "/strefa-wiedzy/vat-w-jdg-kiedy-warto",
-        title: "VAT w JDG — kiedy warto być vatowcem",
+        title: "VAT w JDG, kiedy warto być vatowcem",
         description:
           "Zwolnienie podmiotowe, próg 200 000 zł i wpływ na cashflow.",
       },

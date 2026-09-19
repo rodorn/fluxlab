@@ -22,7 +22,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Automatyzacja leadów, CRM i raportowania dla firm B2B",
+        alt: "Fluxlab, Automatyzacja leadów, CRM i raportowania dla firm B2B",
       },
     ],
   },
@@ -35,12 +35,12 @@ const faqs = [
   {
     question: "Skąd biorę „czas procesu w godzinach miesięcznie”?",
     answer:
-      "Jeśli proces wykonuje jedna osoba, pomnóż liczbę powtórzeń × średni czas jednego powtórzenia. Na przykład: 100 leadów × 5 minut = 500 minut = ~8,3 godziny. Jeśli proces wykonuje kilka osób, zsumuj. Jeśli nie wiesz dokładnie, oszacuj „dni pracy w miesiącu poświęcone na ten proces” × 8 i traktuj to jako górne ograniczenie. Lepiej oszacować z lekkim zapasem niż w dół — celem jest realny obraz, a nie raport do księgowości.",
+      "Jeśli proces wykonuje jedna osoba, pomnóż liczbę powtórzeń × średni czas jednego powtórzenia. Na przykład: 100 leadów × 5 minut = 500 minut = ~8,3 godziny. Jeśli proces wykonuje kilka osób, zsumuj. Jeśli nie wiesz dokładnie, oszacuj „dni pracy w miesiącu poświęcone na ten proces” × 8 i traktuj to jako górne ograniczenie. Lepiej oszacować z lekkim zapasem niż w dół, celem jest realny obraz, a nie raport do księgowości.",
   },
   {
     question: "Dlaczego etat orientacyjny to tylko stawka × 168h?",
     answer:
-      "Bo to jest minimum, czyli sama praca. Pełen koszt zatrudnienia jest wyższy o 30–50% przez ZUS pracodawcy, urlop płatny, sprzęt, oprogramowanie, czas rekrutacji i onboardingu. Nie liczę tego w kalkulatorze, bo wynik miałby zbyt dużą wariancję — zatrudnienie B2B vs UoP, junior vs senior, własne biuro vs home office. Pokazuję orientacyjną dolną granicę, żeby porównanie z automatyzacją było uczciwe „w dół”. Jak wyjdzie, że automatyzacja jest tańsza nawet od minimalnego kosztu pracy — to znaczy, że na pewno jest tańsza po pełnym koszcie.",
+      "Bo to jest minimum, czyli sama praca. Pełen koszt zatrudnienia jest wyższy o 30–50% przez ZUS pracodawcy, urlop płatny, sprzęt, oprogramowanie, czas rekrutacji i onboardingu. Nie liczę tego w kalkulatorze, bo wynik miałby zbyt dużą wariancję, zatrudnienie B2B vs UoP, junior vs senior, własne biuro vs home office. Pokazuję orientacyjną dolną granicę, żeby porównanie z automatyzacją było uczciwe „w dół”. Jak wyjdzie, że automatyzacja jest tańsza nawet od minimalnego kosztu pracy, to znaczy, że na pewno jest tańsza po pełnym koszcie.",
   },
   {
     question: "Skąd przedział 1500–8000 zł za automatyzację?",
@@ -50,7 +50,7 @@ const faqs = [
   {
     question: "Co znaczy, że proces musi być „powtarzalny i stabilny”?",
     answer:
-      "Powtarzalny: ten sam scenariusz wykonujesz wielokrotnie — kroki są przewidywalne, kolejność stała, wyjątki rzadkie. Stabilny: zasady się nie zmieniają co tydzień. Klasyczne dobre kandydaty: obsługa formularza www → CRM, faktury cykliczne, raport tygodniowy, follow-up. Słabe kandydaty: procesy, gdzie co rusz dochodzi nowy wyjątek (negocjacje z klientem, kwalifikacja niestandardowych zapytań, decyzje wymagające osądu). Te ostatnie warto opisać w SOP-ach, ale nie automatyzować — bo automat trzeba by ciągle przepisywać.",
+      "Powtarzalny: ten sam scenariusz wykonujesz wielokrotnie, kroki są przewidywalne, kolejność stała, wyjątki rzadkie. Stabilny: zasady się nie zmieniają co tydzień. Klasyczne dobre kandydaty: obsługa formularza www → CRM, faktury cykliczne, raport tygodniowy, follow-up. Słabe kandydaty: procesy, gdzie co rusz dochodzi nowy wyjątek (negocjacje z klientem, kwalifikacja niestandardowych zapytań, decyzje wymagające osądu). Te ostatnie warto opisać w SOP-ach, ale nie automatyzować, bo automat trzeba by ciągle przepisywać.",
   },
   {
     question: "Czy kalkulator zastępuje konkretną wycenę?",
@@ -71,7 +71,7 @@ export default function ZatrudnicCzyZautomatyzowacPage() {
           ]}
         />
 
-        {/* Hero — kompaktowy */}
+        {/* Hero, kompaktowy */}
         <section className="pt-16 pb-6">
           <div className="container-wide text-center max-w-3xl mx-auto">
             <p className="section-label mb-3">Narzędzie</p>
@@ -80,7 +80,7 @@ export default function ZatrudnicCzyZautomatyzowacPage() {
             </h1>
             <p className="mt-3 text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-5">
               Porównaj koszt miesięcznej ręcznej pracy z kosztem wdrożenia
-              automatyzacji. 4 inputy, 1 wynik — bez rejestracji.
+              automatyzacji. 4 inputy, 1 wynik, bez rejestracji.
             </p>
             <Link href="#sekcje" className="btn-primary">
               Otwórz kalkulator
@@ -88,7 +88,7 @@ export default function ZatrudnicCzyZautomatyzowacPage() {
           </div>
         </section>
 
-        {/* Treść w zakładkach — nic nie wycięte, podzielone */}
+        {/* Treść w zakładkach, nic nie wycięte, podzielone */}
         <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
           <Tabs
             ariaLabel="Sekcje narzędzia decyzyjnego"
@@ -130,7 +130,7 @@ export default function ZatrudnicCzyZautomatyzowacPage() {
                             <code className="text-xs bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded">
                               koszt_h × 168
                             </code>{" "}
-                            miesięcznie. To stawka × pełny etat (168 h/mies.) —
+                            miesięcznie. To stawka × pełny etat (168 h/mies.),
                             minimum bez ZUS-u, urlopu, sprzętu i kosztów
                             rekrutacji. Realny pełen koszt zatrudnienia jest
                             wyższy o 30–50%.
@@ -145,11 +145,11 @@ export default function ZatrudnicCzyZautomatyzowacPage() {
                           <li>
                             <strong>Sygnał decyzyjny</strong>: jeśli proces jest
                             powtarzalny i występuje codziennie / kilka razy w
-                            tygodniu — mocna rekomendacja automatyzacji. Jeśli
-                            nie jest powtarzalny — ręcznie (automatyzacja
+                            tygodniu, mocna rekomendacja automatyzacji. Jeśli
+                            nie jest powtarzalny, ręcznie (automatyzacja
                             niestabilnego procesu = ciągłe dopisywanie
                             wyjątków). Jeśli skala jest mała (poniżej 5 h/mies.
-                            i okazjonalnie) — ręcznie. W pozostałych przypadkach
+                            i okazjonalnie), ręcznie. W pozostałych przypadkach
                             warto policzyć dokładniej w diagnozie.
                           </li>
                         </ul>
@@ -160,7 +160,7 @@ export default function ZatrudnicCzyZautomatyzowacPage() {
                           </code>
                           . Przy realistycznej średniej wdrożenia ~4 750 zł i
                           koszcie ręcznej pracy 2 400 zł/mies. zwrot jest w ~2
-                          miesiące. To bardzo zgrubny szacunek — w diagnozie
+                          miesiące. To bardzo zgrubny szacunek, w diagnozie
                           liczę pod konkretny proces, z konkretnym zestawem
                           narzędzi.
                         </p>
@@ -181,7 +181,7 @@ export default function ZatrudnicCzyZautomatyzowacPage() {
                         <p>
                           Automatyzacja nie jest odpowiedzią na wszystko. Są
                           sytuacje, w których dodatkowa osoba jest lepszym
-                          wyborem — i to nawet z punktu widzenia czystej
+                          wyborem, i to nawet z punktu widzenia czystej
                           matematyki, nie tylko „bo lubię ludzi”.
                         </p>
                         <ul className="list-disc pl-5 space-y-2">
@@ -250,7 +250,7 @@ export default function ZatrudnicCzyZautomatyzowacPage() {
                               systemami.
                             </strong>{" "}
                             Jeśli handlowiec kopiuje dane z formularza do CRM,
-                            do arkusza, do Slacka — to jest dokładnie ten typ
+                            do arkusza, do Slacka, to jest dokładnie ten typ
                             pracy, który jest tańszy automatycznie i
                             dokładniejszy.
                           </li>
@@ -271,7 +271,7 @@ export default function ZatrudnicCzyZautomatyzowacPage() {
                         <p className="text-gray-500 dark:text-gray-400 mb-6">
                           W diagnozie 30-minutowej liczę pełny koszt obecnego
                           procesu, koszt wdrożenia automatyzacji i punkt zwrotu
-                          — pod Twoje konkretne narzędzia.
+                         , pod Twoje konkretne narzędzia.
                         </p>
                         <TrackedCTA
                           href="/kontakt"
@@ -338,7 +338,7 @@ export default function ZatrudnicCzyZautomatyzowacPage() {
                           {
                             href: "/strefa-wiedzy/automatyzacja-vs-zatrudnienie",
                             title:
-                              "Automatyzacja vs zatrudnienie — pełny artykuł",
+                              "Automatyzacja vs zatrudnienie, pełny artykuł",
                             description:
                               "Porównanie kosztów, ryzyk i scenariuszy z konkretnymi liczbami.",
                           },
@@ -350,7 +350,7 @@ export default function ZatrudnicCzyZautomatyzowacPage() {
                           },
                           {
                             href: "/audyt-crm",
-                            title: "Audyt CRM — checklist online",
+                            title: "Audyt CRM, checklist online",
                             description:
                               "10 pytań tak/nie. Sprawdź, czy pipeline jest gotowy do automatyzacji.",
                           },
@@ -364,13 +364,13 @@ export default function ZatrudnicCzyZautomatyzowacPage() {
                             href: "/strefa-wiedzy/jak-policzyc-roi-z-automatyzacji",
                             title: "Jak policzyć ROI z automatyzacji",
                             description:
-                              "Metoda liczenia zwrotu z wdrożenia — bez magii, z liczbami.",
+                              "Metoda liczenia zwrotu z wdrożenia, bez magii, z liczbami.",
                           },
                           {
                             href: "/narzedzia",
                             title: "Wszystkie narzędzia",
                             description:
-                              "Pozostałe kalkulatory i narzędzia online — bez rejestracji, za darmo.",
+                              "Pozostałe kalkulatory i narzędzia online, bez rejestracji, za darmo.",
                           },
                         ].map((article) => (
                           <Link
@@ -395,7 +395,7 @@ export default function ZatrudnicCzyZautomatyzowacPage() {
                           <p className="text-gray-500 dark:text-gray-400 mb-8">
                             W diagnozie dostaniesz pełen koszt obecnego procesu,
                             koszt wdrożenia, punkt zwrotu i konkretną listę
-                            kroków — albo rekomendację, że nie warto.
+                            kroków, albo rekomendację, że nie warto.
                           </p>
                           <TrackedCTA
                             href="/kontakt"

@@ -6,11 +6,11 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
-  title: "3 miejsca na publiczne case study — 50% ceny wdrożenia | Fluxlab",
+  title: "3 miejsca na publiczne case study, 50% ceny wdrożenia | Fluxlab",
   description:
-    "3 firmy B2B otrzymają wdrożenie automatyzacji za 50% standardowej ceny w zamian za zgodę na publiczne case study. Publikujemy tylko to, co zaakceptujesz — bez danych wrażliwych.",
+    "3 firmy B2B otrzymają wdrożenie automatyzacji za 50% standardowej ceny w zamian za zgodę na publiczne case study. Publikujemy tylko to, co zaakceptujesz, bez danych wrażliwych.",
   openGraph: {
-    title: "3 miejsca na publiczne case study — 50% ceny wdrożenia | Fluxlab",
+    title: "3 miejsca na publiczne case study, 50% ceny wdrożenia | Fluxlab",
     description:
       "3 firmy B2B otrzymają wdrożenie automatyzacji za 50% standardowej ceny w zamian za zgodę na publiczne case study.",
     locale: "pl_PL",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Automatyzacja leadów, CRM i raportowania dla firm B2B",
+        alt: "Fluxlab, Automatyzacja leadów, CRM i raportowania dla firm B2B",
       },
     ],
   },
@@ -33,12 +33,12 @@ const whatYouGet = [
   {
     title: "50% ceny projektu",
     description:
-      "Pełny zakres audytu i wdrożenia za połowę standardowej ceny. Widełki potwierdzam po konsultacji, stałą cenę po audycie — bez niespodzianek.",
+      "Pełny zakres audytu i wdrożenia za połowę standardowej ceny. Widełki potwierdzam po konsultacji, stałą cenę po audycie, bez niespodzianek.",
   },
   {
     title: "Priorytet i zaangażowanie",
     description:
-      "Te projekty mają dla mnie najwyższy priorytet — bo ich powodzenie buduje publiczną bibliotekę case studies, na której opieram dalszą sprzedaż. Dostajesz szybszą reakcję, więcej uwagi, pełne zaangażowanie.",
+      "Te projekty mają dla mnie najwyższy priorytet, bo ich powodzenie buduje publiczną bibliotekę case studies, na której opieram dalszą sprzedaż. Dostajesz szybszą reakcję, więcej uwagi, pełne zaangażowanie.",
   },
   {
     title: "Rozszerzone wsparcie po wdrożeniu",
@@ -48,7 +48,7 @@ const whatYouGet = [
   {
     title: "Stała cena projektowa",
     description:
-      "Tak jak w standardowych projektach — płacisz za efekt, nie za godziny. Transze powiązane z kamieniami milowymi.",
+      "Tak jak w standardowych projektach, płacisz za efekt, nie za godziny. Transze powiązane z kamieniami milowymi.",
   },
 ];
 
@@ -71,7 +71,7 @@ const whatYouGive = [
   {
     title: "Feedback w trakcie wdrożenia",
     description:
-      "Regularna informacja zwrotna co tydzień — nie tylko „działa / nie działa”, ale co można poprawić. Pomaga mi ulepszać proces dla kolejnych klientów.",
+      "Regularna informacja zwrotna co tydzień, nie tylko „działa / nie działa”, ale co można poprawić. Pomaga mi ulepszać proces dla kolejnych klientów.",
   },
 ];
 
@@ -84,10 +84,10 @@ const criteria = [
 ];
 
 const notSuitable = [
-  "Firmy, które „może kiedyś coś zautomatyzują” — bez konkretnego problemu na stole",
+  "Firmy, które „może kiedyś coś zautomatyzują”, bez konkretnego problemu na stole",
   "Brak osoby decyzyjnej po stronie firmy do prowadzenia wdrożenia",
   "Oczekiwanie, że AI magicznie naprawi źle zaprojektowany proces",
-  "Proces nieuporządkowany na poziomie biznesowym — najpierw proces, potem automatyzacja, nie odwrotnie",
+  "Proces nieuporządkowany na poziomie biznesowym, najpierw proces, potem automatyzacja, nie odwrotnie",
   "Pojedyncze, niepowtarzalne zadanie zamiast cyklicznego procesu",
 ];
 
@@ -100,27 +100,27 @@ const faq = [
   {
     question: "Ile trwa wdrożenie w programie case study?",
     answer:
-      "Tyle samo co zwykłe — zależnie od zakresu od 2 do 8 tygodni. Program case study nie oznacza „na szybko”, oznacza obniżoną cenę w zamian za publikację rezultatu.",
+      "Tyle samo co zwykłe, zależnie od zakresu od 2 do 8 tygodni. Program case study nie oznacza „na szybko”, oznacza obniżoną cenę w zamian za publikację rezultatu.",
   },
   {
     question: "Czy muszę ujawnić nazwę firmy w case study?",
     answer:
-      "Preferuję, żeby tak — imienne case studies są znacznie bardziej wiarygodne. Jeśli to niemożliwe (np. ze względu na zastrzeżenia prawne lub konkurencyjne), możemy opisać branżę i skalę bez nazwy. Ustalamy to przed startem.",
+      "Preferuję, żeby tak, imienne case studies są znacznie bardziej wiarygodne. Jeśli to niemożliwe (np. ze względu na zastrzeżenia prawne lub konkurencyjne), możemy opisać branżę i skalę bez nazwy. Ustalamy to przed startem.",
   },
   {
     question: "Kiedy muszę dać testimonial?",
     answer:
-      "W ciągu 30 dni od zakończenia wdrożenia i odbioru wszystkich kamieni milowych. Daję ci projekt case study do akceptacji — nic nie publikuję bez twojej zgody.",
+      "W ciągu 30 dni od zakończenia wdrożenia i odbioru wszystkich kamieni milowych. Daję ci projekt case study do akceptacji, nic nie publikuję bez twojej zgody.",
   },
   {
     question: "Czy 50% ceny oznacza niższą jakość pracy?",
     answer:
-      "Nie. Rabat nie wynika z tego, że jestem na początku drogi — wynika z tego, że publiczne case study jest dla mnie cenniejsze niż pełna marża na pojedynczym projekcie. Jakość techniczna, dokumentacja, testy i wsparcie są takie same jak w pełnopłatnych wdrożeniach. Często wyższe, bo pilnuję, żeby efekt nadawał się do publikacji.",
+      "Nie. Rabat nie wynika z tego, że jestem na początku drogi, wynika z tego, że publiczne case study jest dla mnie cenniejsze niż pełna marża na pojedynczym projekcie. Jakość techniczna, dokumentacja, testy i wsparcie są takie same jak w pełnopłatnych wdrożeniach. Często wyższe, bo pilnuję, żeby efekt nadawał się do publikacji.",
   },
   {
     question: "Co jeśli projekt się nie uda?",
     answer:
-      "Jeśli nie dojdziemy do uzgodnionych kamieni milowych z mojej winy — nie płacisz za niedostarczony etap, a także nie wymagam case study. Ryzyko leży po mojej stronie.",
+      "Jeśli nie dojdziemy do uzgodnionych kamieni milowych z mojej winy, nie płacisz za niedostarczony etap, a także nie wymagam case study. Ryzyko leży po mojej stronie.",
   },
   {
     question: "Dlaczego tylko 3 miejsca?",
@@ -130,7 +130,7 @@ const faq = [
   {
     question: "Jak wygląda aplikacja?",
     answer:
-      "Wypełniasz formularz na dole strony lub piszesz wprost. W ciągu 48 h dostajesz odpowiedź: albo umawiamy konsultację, albo — jeśli nie widzę dopasowania — dostajesz szczere wyjaśnienie dlaczego.",
+      "Wypełniasz formularz na dole strony lub piszesz wprost. W ciągu 48 h dostajesz odpowiedź: albo umawiamy konsultację, albo, jeśli nie widzę dopasowania, dostajesz szczere wyjaśnienie dlaczego.",
   },
 ];
 
@@ -154,7 +154,7 @@ export default function Pilotaz() {
       <main className="pt-16 prose-justify">
         <Breadcrumbs items={[{ label: "Program case study" }]} />
 
-        {/* Hero — kompaktowy */}
+        {/* Hero, kompaktowy */}
         <section className="pt-24 pb-12 bg-gradient-to-b from-accent/10 to-transparent border-b border-gray-100 dark:border-gray-800">
           <div className="container-wide">
             <div className="max-w-3xl mx-auto text-center">
@@ -172,12 +172,12 @@ export default function Pilotaz() {
                 3 firmy B2B otrzymają wdrożenie automatyzacji za 50%
                 standardowej ceny w zamian za zgodę na przygotowanie case study
                 i krótkiej referencji po zakończeniu projektu. Publikujemy tylko
-                to, co wcześniej zaakceptujesz — bez danych wrażliwych, bez
+                to, co wcześniej zaakceptujesz, bez danych wrażliwych, bez
                 tajemnic handlowych, bez wrzucania Twojej firmy pod autobus.
               </p>
               <p className="mt-6 text-sm text-gray-500 dark:text-gray-500 leading-relaxed max-w-2xl mx-auto">
                 To nie jest oferta dla &bdquo;pierwszych klientów&rdquo;. Rabat
-                wynika z tego, że chcę opublikować mocny dowód działania — a nie
+                wynika z tego, że chcę opublikować mocny dowód działania, a nie
                 z braku doświadczenia. Akceptacja treści jest po Twojej stronie.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
@@ -192,7 +192,7 @@ export default function Pilotaz() {
           </div>
         </section>
 
-        {/* Treść w zakładkach — nic nie wycięte, podzielone */}
+        {/* Treść w zakładkach, nic nie wycięte, podzielone */}
         <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
           <Tabs
             ariaLabel="Sekcje programu case study"
@@ -274,7 +274,7 @@ export default function Pilotaz() {
                           Dla kogo
                         </h2>
                         <p className="text-gray-600 dark:text-gray-400 mt-4">
-                          Program jest celowo wąski — chcę mieć pewność, że
+                          Program jest celowo wąski, chcę mieć pewność, że
                           projekty zakończą się sukcesem nadającym się do
                           publikacji. Dopasowanie weryfikuję na bezpłatnej
                           konsultacji.
@@ -322,7 +322,7 @@ export default function Pilotaz() {
                           Dla kogo NIE
                         </h2>
                         <p className="text-gray-600 dark:text-gray-400 mt-4 leading-relaxed">
-                          Najpierw proces, potem automatyzacja. Nie odwrotnie —
+                          Najpierw proces, potem automatyzacja. Nie odwrotnie,
                           bo wtedy powstaje szybki chaos zamiast wolnego chaosu.
                         </p>
                       </div>
@@ -373,7 +373,7 @@ export default function Pilotaz() {
                           {
                             n: "1",
                             title: "Zgłoszenie",
-                            desc: "Wysyłasz krótki opis problemu przez formularz lub e-mail. Nie musisz znać rozwiązania — wystarczy opisać ból.",
+                            desc: "Wysyłasz krótki opis problemu przez formularz lub e-mail. Nie musisz znać rozwiązania, wystarczy opisać ból.",
                           },
                           {
                             n: "2",
@@ -460,7 +460,7 @@ export default function Pilotaz() {
                       </h2>
                       <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
                         Aplikuj, nawet jeśli nie masz pewności czy się
-                        kwalifikujesz — w 48 h dostaniesz szczerą odpowiedź.
+                        kwalifikujesz, w 48 h dostaniesz szczerą odpowiedź.
                       </p>
                       <Link href="/kontakt" className="btn-primary">
                         Aplikuj do programu case study

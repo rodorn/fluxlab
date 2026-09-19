@@ -205,7 +205,7 @@ export default function Services() {
           </h2>
           <p className="text-gray-700 dark:text-gray-300 text-lg">
             Skupiam się na procesach, które kosztują Cię najwięcej czasu. Nie
-            sprzedaję narzędzi — dostarczam gotowe rozwiązania.
+            sprzedaję narzędzi, dostarczam gotowe rozwiązania.
           </p>
         </RevealOnScroll>
 
@@ -221,7 +221,7 @@ export default function Services() {
                   href={service.href}
                   className={`card-lift relative block overflow-hidden bg-white/90 backdrop-blur-sm dark:bg-white/10 rounded-2xl p-8 border border-white dark:border-white/10 hover:bg-white dark:hover:bg-white/15 ${style.hoverBorder} shadow-sm group transition-colors duration-300`}
                 >
-                  {/* Kolorystyczny blob — rozjaśnia się na hover */}
+                  {/* Kolorystyczny blob, rozjaśnia się na hover */}
                   <div
                     className={`blob ${style.blob} w-44 h-44 -top-16 -right-16 opacity-0 group-hover:opacity-60 dark:group-hover:opacity-40 transition-opacity duration-500`}
                   />

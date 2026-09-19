@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const category = getCategoryBySlug(slug);
   if (!category) return {};
 
-  const title = `${category.name} — Strefa wiedzy | Fluxlab`;
+  const title = `${category.name}, Strefa wiedzy | Fluxlab`;
   const description = category.description;
 
   return {

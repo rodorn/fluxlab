@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Automatyzacja leadów, CRM i raportowania dla firm B2B",
+        alt: "Fluxlab, Automatyzacja leadów, CRM i raportowania dla firm B2B",
       },
     ],
   },
@@ -31,9 +31,9 @@ export const metadata: Metadata = {
 };
 
 const useCases = [
-  "Klasyfikacja i priorytetyzacja zapytań — rozpoznanie tematu, typu klienta i pilności sprawy.",
-  "Streszczenia i porządkowanie informacji — kluczowe punkty z długich maili, notatek i zgłoszeń.",
-  "Wsparcie obsługi i sprzedaży — szkice odpowiedzi, sugestie kolejnych kroków, analiza historii.",
+  "Klasyfikacja i priorytetyzacja zapytań, rozpoznanie tematu, typu klienta i pilności sprawy.",
+  "Streszczenia i porządkowanie informacji, kluczowe punkty z długich maili, notatek i zgłoszeń.",
+  "Wsparcie obsługi i sprzedaży, szkice odpowiedzi, sugestie kolejnych kroków, analiza historii.",
 ];
 
 const faqs = [
@@ -61,7 +61,7 @@ export default function AutomatyzacjaAI() {
       <main>
         <Breadcrumbs items={[{ label: "Automatyzacja AI" }]} />
 
-        {/* Hero — kompaktowy */}
+        {/* Hero, kompaktowy */}
         <section className="relative overflow-hidden pt-24 pb-12">
           <div className="blob blob-violet absolute -top-32 -right-20 h-96 w-96" />
           <div className="container-wide max-w-3xl mx-auto text-center">
@@ -82,7 +82,7 @@ export default function AutomatyzacjaAI() {
           </div>
         </section>
 
-        {/* Treść w zakładkach — nic nie wycięte, podzielone */}
+        {/* Treść w zakładkach, nic nie wycięte, podzielone */}
         <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
           <Tabs
             ariaLabel="Sekcje usługi automatyzacji AI"

@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Automatyzacja leadów, CRM i raportowania dla firm B2B",
+        alt: "Fluxlab, Automatyzacja leadów, CRM i raportowania dla firm B2B",
       },
     ],
   },
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 
 const offer = [
   "Nowe leady z formularzy, maili i kampanii automatycznie trafiają do CRM, z przypisanym źródłem i priorytetem.",
-  "Zadania i follow-upy tworzą się same — żaden lead nie znika z procesu.",
+  "Zadania i follow-upy tworzą się same, żaden lead nie znika z procesu.",
   "Pipeline pozostaje uporządkowany: aktualne pola, brak duplikatów, dane spójne z innymi systemami.",
 ];
 
@@ -61,7 +61,7 @@ export default function AutomatyzacjaCRM() {
       <main className="pt-16">
         <Breadcrumbs items={[{ label: "Automatyzacja CRM" }]} />
 
-        {/* Hero — kompaktowy */}
+        {/* Hero, kompaktowy */}
         <section className="relative overflow-hidden pt-24 pb-12">
           <div className="blob blob-accent -z-10 -top-32 -right-24 h-96 w-96" />
           <div className="container-wide max-w-3xl">
@@ -79,7 +79,7 @@ export default function AutomatyzacjaCRM() {
           </div>
         </section>
 
-        {/* Treść w zakładkach — nic nie wycięte, podzielone */}
+        {/* Treść w zakładkach, nic nie wycięte, podzielone */}
         <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
           <Tabs
             ariaLabel="Sekcje oferty automatyzacji CRM"

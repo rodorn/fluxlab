@@ -44,7 +44,7 @@ export default function NotFound() {
             </h1>
             <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-10 max-w-xl">
               Adres nie istnieje albo został przeniesiony. Trochę ironiczne dla
-              kogoś, kto zawodowo pilnuje, żeby nic nie ginęło — ale zdarza się.
+              kogoś, kto zawodowo pilnuje, żeby nic nie ginęło, ale zdarza się.
               Wróć na stronę główną albo wybierz, czego szukasz.
             </p>
 

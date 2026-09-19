@@ -128,7 +128,7 @@ const signals: Signal[] = [
     ),
   },
   {
-    title: "Potrzebujesz danych z zewnątrz — cen, kontaktów, ofert",
+    title: "Potrzebujesz danych z zewnątrz, cen, kontaktów, ofert",
     description:
       "Klikasz, kopiujesz, wklejasz do Excela. Albo płacisz za narzędzie, które robi nie to. Filar: scraping danych.",
     href: "/scraping-danych",

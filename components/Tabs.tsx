@@ -5,7 +5,7 @@ import { useRef, useState, type ReactNode } from "react";
 export type TabItem = {
   /** Krótka etykieta zakładki. */
   label: string;
-  /** Pełna treść zakładki — przekazywana z server componentu. */
+  /** Pełna treść zakładki, przekazywana z server componentu. */
   content: ReactNode;
 };
 
@@ -16,7 +16,7 @@ type Props = {
 };
 
 /**
- * Tabs — dzieli długą stronę na zakładki. Treść NIE jest usuwana —
+ * Tabs, dzieli długą stronę na zakładki. Treść NIE jest usuwana,
  * cała jest w DOM, widoczna jest jedna zakładka naraz (≤2000px).
  * Jeden URL, pełne SEO. Dostępny: role tab/tablist/tabpanel + klawiatura.
  */
@@ -54,7 +54,7 @@ export default function Tabs({ tabs, ariaLabel = "Sekcje strony" }: Props) {
 
   return (
     <div ref={wrapRef}>
-      {/* Pasek zakładek — sticky pod headerem */}
+      {/* Pasek zakładek, sticky pod headerem */}
       <div className="sticky top-16 z-30 -mx-6 lg:-mx-8 px-6 lg:px-8 py-3 bg-white/85 dark:bg-gray-950/85 backdrop-blur-md border-b border-gray-100 dark:border-gray-800">
         <div
           role="tablist"
@@ -86,7 +86,7 @@ export default function Tabs({ tabs, ariaLabel = "Sekcje strony" }: Props) {
         </div>
       </div>
 
-      {/* Panele — wszystkie w DOM, ukryte poza aktywnym (treść zachowana) */}
+      {/* Panele, wszystkie w DOM, ukryte poza aktywnym (treść zachowana) */}
       {tabs.map((t, i) => (
         <div
           key={t.label}

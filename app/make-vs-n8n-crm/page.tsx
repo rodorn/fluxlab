@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Make czy n8n do automatyzacji CRM",
+        alt: "Fluxlab, Make czy n8n do automatyzacji CRM",
       },
     ],
   },
@@ -36,12 +36,12 @@ const symptoms = [
   "Status w CRM rozjeżdża się ze statusem w fakturowaniu i księgowości",
   "Raport tygodniowy klejony ręcznie z 3 eksportów CSV w piątek po południu",
   "Custom fieldy giną w drodze przez natywne integracje (np. UTM-y nie wpadają)",
-  "Brak dwustronnego sync CRM ↔ system wewnętrzny — handlowcy klikają w dwóch miejscach",
+  "Brak dwustronnego sync CRM ↔ system wewnętrzny, handlowcy klikają w dwóch miejscach",
 ];
 
 const beforeSteps = [
-  "Lead w skrzynce marketingu — przekazywany ręcznie do CRM",
-  "Brak wzbogacenia (NIP, GUS, scoring) — handlowiec dzwoni „w ciemno”",
+  "Lead w skrzynce marketingu, przekazywany ręcznie do CRM",
+  "Brak wzbogacenia (NIP, GUS, scoring), handlowiec dzwoni „w ciemno”",
   "Po rozmowie ręczna aktualizacja deala i custom fieldów",
   "Status zmienia się tylko w jednym systemie naraz",
   "Raport sprzedaży klei manager w Excelu z eksportów",
@@ -67,9 +67,9 @@ const crmProblems = [
   {
     n: "2",
     title: "Dwustronny sync CRM ↔ system wewnętrzny (ERP/baza)",
-    make: "Make: ma natywne moduły do najpopularniejszych systemów, dla custom backendu — HTTP Request. Działa, ale przy większej liczbie pól mapowanie staje się rozwlekłe. Sync co minutę = duża liczba operacji w pakiecie.",
-    n8n: "n8n: code node + sub-workflow dają zwarty sync nawet przy 50+ polach. Self-hosted nie ma limitów wykonań — sync co 30 sekund kosztuje tyle samo co co godzinę. To miejsce, gdzie n8n wyraźnie wygrywa.",
-    winner: "n8n — szczególnie przy częstym sync lub własnym backendzie.",
+    make: "Make: ma natywne moduły do najpopularniejszych systemów, dla custom backendu, HTTP Request. Działa, ale przy większej liczbie pól mapowanie staje się rozwlekłe. Sync co minutę = duża liczba operacji w pakiecie.",
+    n8n: "n8n: code node + sub-workflow dają zwarty sync nawet przy 50+ polach. Self-hosted nie ma limitów wykonań, sync co 30 sekund kosztuje tyle samo co co godzinę. To miejsce, gdzie n8n wyraźnie wygrywa.",
+    winner: "n8n, szczególnie przy częstym sync lub własnym backendzie.",
   },
   {
     n: "3",
@@ -83,7 +83,7 @@ const crmProblems = [
     n: "4",
     title: "Follow-up i ratowanie martwych dealów",
     make: "Make: scheduler → filtr deali bez aktywności X dni → akcja (mail, task, Slack). Łatwy do zbudowania, dobrze widoczny w UI, świetny dla osoby nietechnicznej.",
-    n8n: "n8n: ten sam scenariusz, ale z możliwością dodania logiki w code node (np. skoring „prawdopodobieństwa odzyskania” na podstawie historii). Dla nietechnicznej osoby — odrobinę trudniejszy próg.",
+    n8n: "n8n: ten sam scenariusz, ale z możliwością dodania logiki w code node (np. skoring „prawdopodobieństwa odzyskania” na podstawie historii). Dla nietechnicznej osoby, odrobinę trudniejszy próg.",
     winner: "Make przy prostych regułach, n8n przy skoringu i logice ML.",
   },
   {
@@ -99,22 +99,22 @@ const comparison = [
   {
     dim: "Cena (10 tys. wykonań / mies.)",
     make: "Make Pro ok. 16 USD + dopłata za przekroczone operacje (typowo 30–50 USD/mies.)",
-    n8n: "n8n.cloud Pro ok. 60 EUR/mies. Self-hosted — koszt VPS od 25 zł/mies.",
+    n8n: "n8n.cloud Pro ok. 60 EUR/mies. Self-hosted, koszt VPS od 25 zł/mies.",
   },
   {
     dim: "Hosting",
-    make: "Tylko SaaS (serwery w UE — Czechy, Niemcy)",
+    make: "Tylko SaaS (serwery w UE, Czechy, Niemcy)",
     n8n: "Cloud (UE, Niemcy) lub self-hosted gdziekolwiek",
   },
   {
     dim: "Krzywa nauki",
     make: "Łatwiejszy próg wejścia, lepsza dokumentacja po polsku, więcej tutoriali",
-    n8n: "Bliżej programisty — expressions w JS, code node, więcej opcji per moduł",
+    n8n: "Bliżej programisty, expressions w JS, code node, więcej opcji per moduł",
   },
   {
     dim: "Integracje CRM",
-    make: "Pipedrive, HubSpot, Salesforce, Zoho — wszystkie natywnie, głębokie",
-    n8n: "Pipedrive, HubSpot, Salesforce — natywnie. Plus moduł HTTP do dowolnego API w 30 min",
+    make: "Pipedrive, HubSpot, Salesforce, Zoho, wszystkie natywnie, głębokie",
+    n8n: "Pipedrive, HubSpot, Salesforce, natywnie. Plus moduł HTTP do dowolnego API w 30 min",
   },
   {
     dim: "Debugging",
@@ -123,7 +123,7 @@ const comparison = [
   },
   {
     dim: "Customizacja / własna logika",
-    make: "Tools, set variable, kilka modułów transformacji — głębsza logika wymaga obejść",
+    make: "Tools, set variable, kilka modułów transformacji, głębsza logika wymaga obejść",
     n8n: "Code node (JS/Python), custom nodes, sub-workflow, wersjonowanie w gicie",
   },
 ];
@@ -182,44 +182,44 @@ const firstStage = [
 ];
 
 const mistakes = [
-  "Wybór narzędzia przed mapowaniem procesu — wtedy automatyzujemy bałagan",
-  "Make wybrany dla zespołu technicznego, który chce code node — frustracja po 2 miesiącach",
-  "n8n self-hosted bez osoby od Linuksa — pierwszy reboot kończy zabawę",
-  "Brak dedupu w pierwszym workflow — baza zaczyna kłamać po tygodniu",
+  "Wybór narzędzia przed mapowaniem procesu, wtedy automatyzujemy bałagan",
+  "Make wybrany dla zespołu technicznego, który chce code node, frustracja po 2 miesiącach",
+  "n8n self-hosted bez osoby od Linuksa, pierwszy reboot kończy zabawę",
+  "Brak dedupu w pierwszym workflow, baza zaczyna kłamać po tygodniu",
   "Logika biznesowa w 30 IF-ach w jednym scenariuszu zamiast w sub-workflow",
 ];
 
 const faq = [
   {
-    question: "Make czy n8n — które jest lepsze do automatyzacji CRM?",
+    question: "Make czy n8n, które jest lepsze do automatyzacji CRM?",
     answer:
-      "Nie ma uniwersalnej odpowiedzi. Make jest lepszy, gdy scenariusze ma budować osoba z biznesu (head of sales, marketing manager), wolumen jest do 30 tys. operacji miesięcznie i nie potrzebujecie self-hostingu. n8n jest lepszy, gdy macie osobę techniczną, wolumen rośnie, integrujecie się z własnymi systemami wewnętrznymi albo branża wymaga trzymania danych u siebie. W praktyce 60% klientów B2B trafia w obszar, gdzie oba narzędzia są równoważne — wtedy decyduje, kogo macie w zespole do utrzymania.",
+      "Nie ma uniwersalnej odpowiedzi. Make jest lepszy, gdy scenariusze ma budować osoba z biznesu (head of sales, marketing manager), wolumen jest do 30 tys. operacji miesięcznie i nie potrzebujecie self-hostingu. n8n jest lepszy, gdy macie osobę techniczną, wolumen rośnie, integrujecie się z własnymi systemami wewnętrznymi albo branża wymaga trzymania danych u siebie. W praktyce 60% klientów B2B trafia w obszar, gdzie oba narzędzia są równoważne, wtedy decyduje, kogo macie w zespole do utrzymania.",
   },
   {
-    question: "Czy mogę użyć obu — Make do prostych rzeczy, n8n do reszty?",
+    question: "Czy mogę użyć obu, Make do prostych rzeczy, n8n do reszty?",
     answer:
-      "Tak i to częsta architektura. Make obsługuje scenariusze marketingowe i HR (proste, niskim wolumenem, budowane przez nietechniczne osoby). n8n obsługuje sync z systemami wewnętrznymi, raporty zarządcze i procesy operacyjne (większy wolumen, code node, własne API). Oba spinają się przez webhook, jeśli trzeba. Wadą jest dwa narzędzia do utrzymania, zaletą — narzędzie dopasowane do roli.",
+      "Tak i to częsta architektura. Make obsługuje scenariusze marketingowe i HR (proste, niskim wolumenem, budowane przez nietechniczne osoby). n8n obsługuje sync z systemami wewnętrznymi, raporty zarządcze i procesy operacyjne (większy wolumen, code node, własne API). Oba spinają się przez webhook, jeśli trzeba. Wadą jest dwa narzędzia do utrzymania, zaletą, narzędzie dopasowane do roli.",
   },
   {
     question:
       "Czy n8n self-hosted jest opłacalny przy CRM-owym wolumenie 5–10 tys. wykonań?",
     answer:
-      "Próg opłacalności self-hostingu to ok. 30 tys. wykonań miesięcznie i/lub wymóg trzymania danych u siebie. Poniżej tego — n8n.cloud lub Make wychodzą podobnie. Self-hosted ma drugi koszt: utrzymanie. Bez osoby technicznej w firmie lub na retainerze (200–500 zł/mies.) self-hosting nie ma sensu — wtedy wybierajcie cloud.",
+      "Próg opłacalności self-hostingu to ok. 30 tys. wykonań miesięcznie i/lub wymóg trzymania danych u siebie. Poniżej tego, n8n.cloud lub Make wychodzą podobnie. Self-hosted ma drugi koszt: utrzymanie. Bez osoby technicznej w firmie lub na retainerze (200–500 zł/mies.) self-hosting nie ma sensu, wtedy wybierajcie cloud.",
   },
   {
     question: "Które narzędzie ma więcej integracji CRM?",
     answer:
-      "Make — ok. 1 800 natywnych integracji vs 500+ w n8n. Ale dla popularnych CRM-ów (Pipedrive, HubSpot, Salesforce, Zoho) głębokość integracji jest porównywalna. n8n ma natywny moduł HTTP Request i Code node, więc zintegrowanie się z dowolnym CRM-em (włącznie z polskim Livespace czy SugarCRM) zajmuje 30 minut.",
+      "Make, ok. 1 800 natywnych integracji vs 500+ w n8n. Ale dla popularnych CRM-ów (Pipedrive, HubSpot, Salesforce, Zoho) głębokość integracji jest porównywalna. n8n ma natywny moduł HTTP Request i Code node, więc zintegrowanie się z dowolnym CRM-em (włącznie z polskim Livespace czy SugarCRM) zajmuje 30 minut.",
   },
   {
     question: "Jak długo trwa wdrożenie automatyzacji CRM w Make vs n8n?",
     answer:
-      "Pierwszy etap (routing leadów + wzbogacenie + raport) — w obu narzędziach 2–3 tygodnie. Make startuje szybciej (pierwszy scenariusz w godzinach), ale przy bardziej złożonej logice n8n nadrabia w drugim tygodniu. Pełna warstwa nad CRM — 4–8 tygodni, niezależnie od narzędzia. Czas wdrożenia zależy od zakresu, nie wyboru Make/n8n.",
+      "Pierwszy etap (routing leadów + wzbogacenie + raport), w obu narzędziach 2–3 tygodnie. Make startuje szybciej (pierwszy scenariusz w godzinach), ale przy bardziej złożonej logice n8n nadrabia w drugim tygodniu. Pełna warstwa nad CRM, 4–8 tygodni, niezależnie od narzędzia. Czas wdrożenia zależy od zakresu, nie wyboru Make/n8n.",
   },
   {
     question: "Co z RODO przy automatyzacji CRM?",
     answer:
-      "Make: serwery w UE (Czechy, Niemcy), DPA, SOC 2. Dla większości firm B2B w Polsce wystarcza. n8n.cloud: serwery w UE (Niemcy), DPA, SOC 2 Type II. n8n self-hosted na waszym serwerze (Polska, Niemcy, własna infra) — pełna kontrola, dane nigdy nie wychodzą poza waszą infrastrukturę. Dla branż regulowanych (finanse, zdrowie, sektor publiczny) standardowo rekomenduję self-hosted.",
+      "Make: serwery w UE (Czechy, Niemcy), DPA, SOC 2. Dla większości firm B2B w Polsce wystarcza. n8n.cloud: serwery w UE (Niemcy), DPA, SOC 2 Type II. n8n self-hosted na waszym serwerze (Polska, Niemcy, własna infra), pełna kontrola, dane nigdy nie wychodzą poza waszą infrastrukturę. Dla branż regulowanych (finanse, zdrowie, sektor publiczny) standardowo rekomenduję self-hosted.",
   },
 ];
 
@@ -243,7 +243,7 @@ export default function MakeVsN8nCrm() {
       <main>
         <Breadcrumbs items={[{ label: "Make czy n8n do CRM" }]} />
 
-        {/* Hero — kompaktowy */}
+        {/* Hero, kompaktowy */}
         <section className="pt-24 pb-12 bg-gradient-to-b from-accent/10 to-transparent border-b border-gray-100 dark:border-gray-800">
           <div className="container-wide">
             <div className="max-w-3xl mx-auto text-center">
@@ -254,7 +254,7 @@ export default function MakeVsN8nCrm() {
               <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
                 Make jest jak ładny IDE dla automatyzacji bez kodu. n8n jest jak
                 silnik, który możesz odpalić u siebie i pchać do końca. W roli
-                warstwy automatyzacji nad CRM oba działają — ale wygrywają w
+                warstwy automatyzacji nad CRM oba działają, ale wygrywają w
                 innych scenariuszach. Konkretne porównanie na 5 typowych
                 problemach CRM, tabela na 6 wymiarach i decyzja końcowa.
               </p>
@@ -271,7 +271,7 @@ export default function MakeVsN8nCrm() {
           </div>
         </section>
 
-        {/* Treść w zakładkach — nic nie wycięte, podzielone */}
+        {/* Treść w zakładkach, nic nie wycięte, podzielone */}
         <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
           <Tabs
             ariaLabel="Sekcje artykułu Make vs n8n dla CRM"
@@ -409,7 +409,7 @@ export default function MakeVsN8nCrm() {
                         </div>
                       </div>
                       <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                        Wdrożenie pierwszego etapu (Make lub n8n) — 4–8 tys. zł
+                        Wdrożenie pierwszego etapu (Make lub n8n), 4–8 tys. zł
                         netto, 2–3 tygodnie. ROI w pierwszym miesiącu, jeśli
                         zespół ma 2+ handlowców i 200+ leadów miesięcznie.
                       </p>
@@ -424,7 +424,7 @@ export default function MakeVsN8nCrm() {
                     <div className="max-w-3xl mx-auto">
                       <span className="section-label">Przed wdrożeniem</span>
                       <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-8">
-                        Proces ręczny — niezależnie od CRM-a
+                        Proces ręczny, niezależnie od CRM-a
                       </h2>
                       <ol className="space-y-3">
                         {beforeSteps.map((step, i) => (
@@ -480,7 +480,7 @@ export default function MakeVsN8nCrm() {
                     <div className="max-w-3xl mx-auto mb-10">
                       <span className="section-label">Diagram</span>
                       <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-4">
-                        Identyczny scenariusz w Make i w n8n — krok po kroku
+                        Identyczny scenariusz w Make i w n8n, krok po kroku
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                         Architektura jest praktycznie taka sama. Różnice są w
@@ -551,7 +551,7 @@ export default function MakeVsN8nCrm() {
                         Jak każde narzędzie rozwiązuje 5 typowych problemów CRM
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
-                        Zamiast porównania abstrakcyjnego — konkretne CRM-owe
+                        Zamiast porównania abstrakcyjnego, konkretne CRM-owe
                         scenariusze i jak Make oraz n8n radzą sobie w każdym z
                         nich.
                       </p>
@@ -604,7 +604,7 @@ export default function MakeVsN8nCrm() {
                     <div className="max-w-4xl mx-auto">
                       <span className="section-label">Tabela</span>
                       <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-6">
-                        Make vs n8n — 6 wymiarów decyzji
+                        Make vs n8n, 6 wymiarów decyzji
                       </h2>
                       <div className="overflow-x-auto rounded-2xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800/60">
                         <table className="w-full text-left">
@@ -657,7 +657,7 @@ export default function MakeVsN8nCrm() {
                             Wybierz Make, gdy:
                           </h3>
                           <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-3">
-                            Scenariusze ma budować osoba z biznesu — head of
+                            Scenariusze ma budować osoba z biznesu, head of
                             sales, marketing manager, ops lead. Make jest jak
                             ładny IDE: ma czytelny diagram, świetne UI mapowania
                             pól, lepsze tutoriale po polsku. Pierwszy działający
@@ -667,7 +667,7 @@ export default function MakeVsN8nCrm() {
                           </p>
                           <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
                             To również wybór dla zespołów marketingu i HR w
-                            większej organizacji — nawet jeśli backoffice działa
+                            większej organizacji, nawet jeśli backoffice działa
                             na n8n.
                           </p>
                         </div>
@@ -681,7 +681,7 @@ export default function MakeVsN8nCrm() {
                             integrujecie się z własnymi systemami wewnętrznymi
                             (ERP, własna baza Postgres, backend) lub branża
                             wymaga trzymania danych u siebie. n8n jest jak
-                            silnik — daje code node, sub-workflow, wersjonowanie
+                            silnik, daje code node, sub-workflow, wersjonowanie
                             w gicie, własne moduły, self-hosting.
                           </p>
                           <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -697,10 +697,10 @@ export default function MakeVsN8nCrm() {
                           href="/strefa-wiedzy/make-vs-n8n"
                           className="text-accent hover:underline"
                         >
-                          Make vs n8n — porównanie dla MŚP
+                          Make vs n8n, porównanie dla MŚP
                         </Link>
                         . Tu skupiłem się na CRM-owym kącie. Pełniejszy obraz
-                        całego ekosystemu — w{" "}
+                        całego ekosystemu, w{" "}
                         <Link
                           href="/strefa-wiedzy/zapier-make-n8n-porownanie"
                           className="text-accent hover:underline"
@@ -793,7 +793,7 @@ export default function MakeVsN8nCrm() {
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
                         Stała cena projektowa, kamienie milowe, płatność po
-                        odbiorze etapu. Cena nie zależy od wyboru Make vs n8n —
+                        odbiorze etapu. Cena nie zależy od wyboru Make vs n8n,
                         zależy od zakresu. Wycenę dostajesz po godzinnej
                         rozmowie.
                       </p>
@@ -896,7 +896,7 @@ export default function MakeVsN8nCrm() {
                                 href="/strefa-wiedzy/make-vs-n8n"
                                 className="text-accent hover:underline"
                               >
-                                Make vs n8n — porównanie dla MŚP (ogólne)
+                                Make vs n8n, porównanie dla MŚP (ogólne)
                               </Link>
                             </li>
                             <li>
@@ -912,7 +912,7 @@ export default function MakeVsN8nCrm() {
                                 href="/strefa-wiedzy/zapier-make-n8n-porownanie"
                                 className="text-accent hover:underline"
                               >
-                                Zapier vs Make vs n8n — wielkie porównanie
+                                Zapier vs Make vs n8n, wielkie porównanie
                               </Link>
                             </li>
                           </ul>
@@ -967,7 +967,7 @@ export default function MakeVsN8nCrm() {
                                 href="/n8n"
                                 className="text-accent hover:underline"
                               >
-                                n8n — wdrożenia
+                                n8n, wdrożenia
                               </Link>
                             </li>
                           </ul>
@@ -988,7 +988,7 @@ export default function MakeVsN8nCrm() {
                       <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
                         30 minut rozmowy o procesie sprzedaży. Wyjdziesz z
                         rekomendacją Make vs n8n popartą konkretnymi wymiarami z
-                        waszej firmy — wolumen, zespół, integracje, compliance.
+                        waszej firmy, wolumen, zespół, integracje, compliance.
                       </p>
                       <TrackedCTA
                         href="/kontakt"

@@ -3,12 +3,12 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 
 /**
- * InteractiveWorkflow — żywy diagram automatyzacji.
+ * InteractiveWorkflow, żywy diagram automatyzacji.
  *
  * Jedna kulka (lead) płynie po obrysie kart: Lead → Walidacja → CRM →
  * Handlowiec → wpada do kafelka Raport. Kafelek świeci, gdy kulka W NIM
- * jest. Kulka zmienia kolor wraz z kartą. Pod diagramem — opis kroku.
- * Raport gromadzi kulki — po 5 "wysyła się" jako mail i resetuje.
+ * jest. Kulka zmienia kolor wraz z kartą. Pod diagramem, opis kroku.
+ * Raport gromadzi kulki, po 5 "wysyła się" jako mail i resetuje.
  */
 
 type CardDef = {
@@ -173,7 +173,7 @@ const CARDS: CardDef[] = [
   {
     id: "crm",
     title: "CRM",
-    caption: "Powstaje osoba, firma i deal — bez ręcznego przepisywania.",
+    caption: "Powstaje osoba, firma i deal, bez ręcznego przepisywania.",
     color: "#6366f1",
     icon: ICON_DB,
   },
@@ -300,7 +300,7 @@ export default function InteractiveWorkflow() {
         if (phaseRef.current === "fly") {
           distRef.current += speed * dt;
           if (distRef.current >= total) {
-            // kulka dotarła do Raportu — przejście w fazę "land"
+            // kulka dotarła do Raportu, przejście w fazę "land"
             distRef.current = total;
             const p = path!.getPointAtLength(total);
             landFromRef.current = { x: p.x, y: p.y };
@@ -311,7 +311,7 @@ export default function InteractiveWorkflow() {
           landTRef.current += dt / LANDING_MS;
           if (landTRef.current >= 1) {
             landTRef.current = 1;
-            // kulka wpadła na swój slot — licznik rośnie
+            // kulka wpadła na swój slot, licznik rośnie
             if (!sendingRef.current && fillRef.current < MAX_FILL) {
               fillRef.current += 1;
             }
@@ -426,10 +426,10 @@ export default function InteractiveWorkflow() {
           </filter>
         </defs>
 
-        {/* Ścieżka — referencyjna geometria */}
+        {/* Ścieżka, referencyjna geometria */}
         <path ref={pathRef} d={FLOW_PATH} fill="none" stroke="none" />
 
-        {/* Ścieżka — dim trace */}
+        {/* Ścieżka, dim trace */}
         <path
           d={FLOW_PATH}
           fill="none"
@@ -439,7 +439,7 @@ export default function InteractiveWorkflow() {
           strokeLinecap="round"
           strokeLinejoin="round"
         />
-        {/* Ścieżka — gradient overlay */}
+        {/* Ścieżka, gradient overlay */}
         <path
           d={FLOW_PATH}
           fill="none"
@@ -573,7 +573,7 @@ export default function InteractiveWorkflow() {
           );
         })}
 
-        {/* Kulka — zmienia kolor wraz z kartą, bez obwoluty */}
+        {/* Kulka, zmienia kolor wraz z kartą, bez obwoluty */}
         {scene.ballVisible && (
           <circle
             cx={scene.ballX}
@@ -585,7 +585,7 @@ export default function InteractiveWorkflow() {
           />
         )}
 
-        {/* Wysyłka raportu — koperta wylatuje w górę */}
+        {/* Wysyłka raportu, koperta wylatuje w górę */}
         {scene.sending && (
           <g style={{ animation: `iw-send ${SEND_MS}ms ease-out forwards` }}>
             <g transform={`translate(${reportCx - 16}, ${CARD_Y - 6})`}>
@@ -617,7 +617,7 @@ export default function InteractiveWorkflow() {
         >
           {scene.sending ? (
             <span className="font-semibold text-emerald-600 dark:text-emerald-400">
-              Raport zebrał 5 leadów — wysłany na maila ✓
+              Raport zebrał 5 leadów, wysłany na maila ✓
             </span>
           ) : (
             <>

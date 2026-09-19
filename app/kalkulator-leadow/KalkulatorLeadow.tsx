@@ -186,12 +186,12 @@ export default function KalkulatorLeadow() {
   const submittedRef = useRef(false);
   const userTouchedRef = useRef(false);
 
-  // calculator_viewed na entry — spójne z innymi kalkulatorami
+  // calculator_viewed na entry, spójne z innymi kalkulatorami
   useEffect(() => {
     gaEvent("calculator_viewed", { calculator: "leads_cost" });
   }, []);
 
-  // calculator_submit raz na sesję — po pierwszej zmianie inputu (debounce 800ms)
+  // calculator_submit raz na sesję, po pierwszej zmianie inputu (debounce 800ms)
   useEffect(() => {
     if (!userTouchedRef.current || submittedRef.current) return;
     const t = setTimeout(() => {
@@ -250,7 +250,7 @@ export default function KalkulatorLeadow() {
           </h2>
           <p className="text-sm text-gray-500 dark:text-gray-400">
             Wynik liczy się na bieżąco. Domyślne wartości to typowy mały zespół
-            B2B — podmień na własne, żeby zobaczyć realny koszt u siebie.
+            B2B, podmień na własne, żeby zobaczyć realny koszt u siebie.
           </p>
         </div>
 
@@ -315,7 +315,7 @@ export default function KalkulatorLeadow() {
             </strong>{" "}
             w samym czasie pracy. Jeśli przez opóźnienia tracisz nawet{" "}
             <strong className="text-accent">{data.opoznione}%</strong>{" "}
-            potencjalnych klientów, realny koszt może być znacznie wyższy —
+            potencjalnych klientów, realny koszt może być znacznie wyższy,
             szacunkowo{" "}
             <strong className="text-accent">
               {fmtPLN(result.kosztRoczny)} zł rocznie
@@ -348,7 +348,7 @@ export default function KalkulatorLeadow() {
         <p className="text-xs text-gray-400 dark:text-gray-500 leading-relaxed">
           Uproszczenie modelu: zakładamy, że 30% leadów z opóźnioną reakcją
           efektywnie konwertuje gorzej i są to leady realnie utracone. Wynik to
-          szacunek, nie audyt księgowy — ale w praktyce wystarczy, żeby zobaczyć
+          szacunek, nie audyt księgowy, ale w praktyce wystarczy, żeby zobaczyć
           skalę problemu.
         </p>
       </div>

@@ -9,12 +9,12 @@ import AudytCRM from "./AudytCRM";
 
 export const metadata: Metadata = {
   title:
-    "Audyt CRM — checklist online | Sprawdź, czy Twój pipeline jest gotowy do automatyzacji",
+    "Audyt CRM, checklist online | Sprawdź, czy Twój pipeline jest gotowy do automatyzacji",
   description:
     "10 pytań tak/nie. Wynik X/10 + obszar z największym potencjałem automatyzacji. Bez rejestracji.",
   openGraph: {
     title:
-      "Audyt CRM — checklist online | Sprawdź, czy Twój pipeline jest gotowy do automatyzacji",
+      "Audyt CRM, checklist online | Sprawdź, czy Twój pipeline jest gotowy do automatyzacji",
     description:
       "10 pytań tak/nie. Wynik X/10 + obszar z największym potencjałem automatyzacji. Bez rejestracji.",
     locale: "pl_PL",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Automatyzacja leadów, CRM i raportowania dla firm B2B",
+        alt: "Fluxlab, Automatyzacja leadów, CRM i raportowania dla firm B2B",
       },
     ],
   },
@@ -37,27 +37,27 @@ const faqs = [
   {
     question: "Co dokładnie liczy ten audyt?",
     answer:
-      "Mierzy 10 fundamentów dojrzałości pipeline'u: atrybucję źródeł, routing leadów, kryteria etapów, automatyzację zadań, follow-up, raportowanie end-to-end, ręczne przepisywanie danych, jakość danych, deduplikację i integracje wejściowe. Każdy obszar to jedno pytanie tak/nie. Wynik to liczba pozytywnych odpowiedzi z 10. Pytania o ręczne przepisywanie i duplikaty są odwrócone — tam „tak” oznacza problem, bo świadczy o tym, że proces nie jest jeszcze poukładany. Audyt nie zastąpi pełnej diagnozy procesu, ale w 3 minuty pokazuje, gdzie pipeline ma najsłabsze punkty.",
+      "Mierzy 10 fundamentów dojrzałości pipeline'u: atrybucję źródeł, routing leadów, kryteria etapów, automatyzację zadań, follow-up, raportowanie end-to-end, ręczne przepisywanie danych, jakość danych, deduplikację i integracje wejściowe. Każdy obszar to jedno pytanie tak/nie. Wynik to liczba pozytywnych odpowiedzi z 10. Pytania o ręczne przepisywanie i duplikaty są odwrócone, tam „tak” oznacza problem, bo świadczy o tym, że proces nie jest jeszcze poukładany. Audyt nie zastąpi pełnej diagnozy procesu, ale w 3 minuty pokazuje, gdzie pipeline ma najsłabsze punkty.",
   },
   {
     question: "Co znaczy odpowiedź „nie wiem” i dlaczego liczy się jak „nie”?",
     answer:
-      "Jeśli nie masz pewności, że coś działa, to znaczy, że nie działa świadomie. Na przykład: jeśli nie wiesz, czy każdy lead ma źródło, to znaczy, że nikt tego nie pilnuje — czyli efektywnie atrybucji nie masz. „Nie wiem” w audycie traktuję jak czerwoną flagę, bo brak widoczności jest sam w sobie problemem operacyjnym. To nie jest karanie za niewiedzę — to wskazanie obszaru, gdzie warto najpierw zrobić podstawową diagnostykę.",
+      "Jeśli nie masz pewności, że coś działa, to znaczy, że nie działa świadomie. Na przykład: jeśli nie wiesz, czy każdy lead ma źródło, to znaczy, że nikt tego nie pilnuje, czyli efektywnie atrybucji nie masz. „Nie wiem” w audycie traktuję jak czerwoną flagę, bo brak widoczności jest sam w sobie problemem operacyjnym. To nie jest karanie za niewiedzę, to wskazanie obszaru, gdzie warto najpierw zrobić podstawową diagnostykę.",
   },
   {
     question: "Jak interpretuję wynik X/10?",
     answer:
-      "8–10 to zdrowy pipeline gotowy do skalowania — automatyzacja na tym etapie wyciska z procesu jeszcze 20–30%. 5–7 to solidny fundament z lukami — najpierw warto załatać największą lukę (audyt ją wskazuje), potem dokładać kolejne automatyzacje. 0–4 to sygnał, że problem nie jest w CRM-ie, tylko w procesie — automatyzacja bałaganu daje zautomatyzowany bałagan, więc trzeba zacząć od ułożenia podstaw: właściciel leada, kryteria etapów, źródło. Wynik to punkt startowy dyskusji, nie ocena końcowa.",
+      "8–10 to zdrowy pipeline gotowy do skalowania, automatyzacja na tym etapie wyciska z procesu jeszcze 20–30%. 5–7 to solidny fundament z lukami, najpierw warto załatać największą lukę (audyt ją wskazuje), potem dokładać kolejne automatyzacje. 0–4 to sygnał, że problem nie jest w CRM-ie, tylko w procesie, automatyzacja bałaganu daje zautomatyzowany bałagan, więc trzeba zacząć od ułożenia podstaw: właściciel leada, kryteria etapów, źródło. Wynik to punkt startowy dyskusji, nie ocena końcowa.",
   },
   {
     question: "Dlaczego pytania o duplikaty i przepisywanie są odwrócone?",
     answer:
-      "Bo tam „tak” oznacza problem, a „nie” oznacza zdrowy stan. Jeśli handlowcy ręcznie przepisują dane z formularzy do CRM — to jest bardzo konkretny sygnał, że brakuje integracji wejściowej. Jeśli w CRM masz duplikaty firm i kontaktów — to pokazuje, że proces deduplikacji nie istnieje albo nie działa. Przy 10 pytaniach z różnymi kierunkami chodzi o to, żebyś nie mógł oszukać wyniku przez „klikanie tak na wszystko” — audyt patrzy na realne objawy zdrowego pipeline'u, nie na deklaracje.",
+      "Bo tam „tak” oznacza problem, a „nie” oznacza zdrowy stan. Jeśli handlowcy ręcznie przepisują dane z formularzy do CRM, to jest bardzo konkretny sygnał, że brakuje integracji wejściowej. Jeśli w CRM masz duplikaty firm i kontaktów, to pokazuje, że proces deduplikacji nie istnieje albo nie działa. Przy 10 pytaniach z różnymi kierunkami chodzi o to, żebyś nie mógł oszukać wyniku przez „klikanie tak na wszystko”, audyt patrzy na realne objawy zdrowego pipeline'u, nie na deklaracje.",
   },
   {
     question: "Czy ten audyt zastępuje konsultację?",
     answer:
-      "Nie. Daje punkt startowy: pokazuje wynik i obszar z największym potencjałem, ale konkretna mapa automatyzacji wymaga rozmowy o specyfice firmy, narzędziach (Pipedrive, HubSpot, Salesforce, Bitrix, własne), wolumenie leadów i tym, co już próbowaliście. W diagnozie 30-minutowej zwykle udaje się ustalić: które 2–3 automatyzacje dadzą największy efekt w pierwszych 4 tygodniach, ile to kosztuje wdrożeniowo i miesięcznie, i czy w ogóle warto teraz, czy najpierw uporządkować proces ręcznie. Audyt online to filtr — diagnoza to konkretny plan.",
+      "Nie. Daje punkt startowy: pokazuje wynik i obszar z największym potencjałem, ale konkretna mapa automatyzacji wymaga rozmowy o specyfice firmy, narzędziach (Pipedrive, HubSpot, Salesforce, Bitrix, własne), wolumenie leadów i tym, co już próbowaliście. W diagnozie 30-minutowej zwykle udaje się ustalić: które 2–3 automatyzacje dadzą największy efekt w pierwszych 4 tygodniach, ile to kosztuje wdrożeniowo i miesięcznie, i czy w ogóle warto teraz, czy najpierw uporządkować proces ręcznie. Audyt online to filtr, diagnoza to konkretny plan.",
   },
 ];
 
@@ -73,7 +73,7 @@ export default function AudytCRMPage() {
           ]}
         />
 
-        {/* Hero — kompaktowy */}
+        {/* Hero, kompaktowy */}
         <section className="pt-16 pb-6">
           <div className="container-wide text-center max-w-3xl mx-auto">
             <p className="section-label mb-4">Narzędzie</p>
@@ -82,12 +82,12 @@ export default function AudytCRMPage() {
             </h1>
             <p className="mt-4 text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               10 pytań tak/nie. Wynik X/10 + obszar z największym potencjałem
-              automatyzacji. Bez rejestracji, bez maila — w 3 minuty.
+              automatyzacji. Bez rejestracji, bez maila, w 3 minuty.
             </p>
           </div>
         </section>
 
-        {/* Treść w zakładkach — nic nie wycięte, podzielone */}
+        {/* Treść w zakładkach, nic nie wycięte, podzielone */}
         <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
           <Tabs
             ariaLabel="Sekcje narzędzia audytu CRM"
@@ -111,7 +111,7 @@ export default function AudytCRMPage() {
                       <div className="space-y-4 text-gray-600 dark:text-gray-400 leading-relaxed">
                         <p>
                           Audyt mierzy 10 fundamentów zdrowego pipeline'u. Każdy
-                          ma jedno pytanie tak/nie z trzecią opcją „nie wiem” —
+                          ma jedno pytanie tak/nie z trzecią opcją „nie wiem”,
                           która liczy się jak „nie”, bo brak widoczności jest
                           sam w sobie problemem operacyjnym. Pytania 7 (ręczne
                           przepisywanie) i 9 (duplikaty) są odwrócone: tam „tak”
@@ -119,14 +119,14 @@ export default function AudytCRMPage() {
                         </p>
                         <ul className="list-disc pl-5 space-y-2">
                           <li>
-                            <strong>8–10 — zdrowy pipeline.</strong> Większość
+                            <strong>8–10, zdrowy pipeline.</strong> Większość
                             filarów na miejscu. Automatyzacja działa jak
                             dokładanie sił do działającej maszyny: szybsza
                             reakcja, mniej ręcznej pracy, lepsze raporty. Dobry
                             moment, żeby zająć się obszarami granicznymi.
                           </li>
                           <li>
-                            <strong>5–7 — solidny fundament z lukami.</strong>{" "}
+                            <strong>5–7, solidny fundament z lukami.</strong>{" "}
                             Pipeline działa, ale ma 3–5 brakujących filarów.
                             Najpierw warto załatać największą lukę (audyt ją
                             wskazuje), potem wracać do automatyzacji ogólnej.
@@ -134,7 +134,7 @@ export default function AudytCRMPage() {
                             bałagan.
                           </li>
                           <li>
-                            <strong>0–4 — pipeline blokuje sprzedaż.</strong> To
+                            <strong>0–4, pipeline blokuje sprzedaż.</strong> To
                             nie problem CRM-a, to problem procesu. Zanim
                             zautomatyzujesz cokolwiek, trzeba ustalić podstawy:
                             kto jest właścicielem leada, jakie są kryteria
@@ -143,7 +143,7 @@ export default function AudytCRMPage() {
                         </ul>
                         <p>
                           Po wyniku audyt wskazuje <strong>jeden obszar</strong>{" "}
-                          z największym potencjałem — pierwszy negatywny w
+                          z największym potencjałem, pierwszy negatywny w
                           kolejności ważności (definicja „kto jest właścicielem
                           leada” jest ważniejsza niż „czy raport pokazuje
                           source-to-revenue”). Do tego obszaru dostajesz 2–3
@@ -166,7 +166,7 @@ export default function AudytCRMPage() {
                       <div className="space-y-4 text-gray-600 dark:text-gray-400 leading-relaxed">
                         <p>
                           Audyt przyda się każdemu, kto rozważa automatyzację,
-                          ale nie ma pewności, czy proces jest do niej gotowy —
+                          ale nie ma pewności, czy proces jest do niej gotowy,
                           albo czy najpierw nie trzeba uporządkować podstaw.
                           Najczęściej korzystają z niego:
                         </p>
@@ -181,7 +181,7 @@ export default function AudytCRMPage() {
                           </li>
                           <li>
                             <strong>Szefowie sprzedaży</strong>, którzy mają
-                            wrażenie, że pipeline „żyje własnym życiem” — leady
+                            wrażenie, że pipeline „żyje własnym życiem”, leady
                             wpadają, część się zamyka, ale nikt nie wie,
                             dlaczego konkretnie ta i nie inna.
                           </li>
@@ -190,7 +190,7 @@ export default function AudytCRMPage() {
                               Osoby decyzyjne przed wyborem dostawcy
                               automatyzacji
                             </strong>{" "}
-                            — zanim zaczniesz rozmawiać z agencją albo
+                           , zanim zaczniesz rozmawiać z agencją albo
                             freelancerem, warto wiedzieć, w którym obszarze masz
                             największą lukę.
                           </li>
@@ -298,7 +298,7 @@ export default function AudytCRMPage() {
                             href: "/strefa-wiedzy/jak-policzyc-roi-z-automatyzacji",
                             title: "Jak policzyć ROI z automatyzacji",
                             description:
-                              "Metoda liczenia zwrotu z wdrożenia automatyzacji — bez magii, z liczbami.",
+                              "Metoda liczenia zwrotu z wdrożenia automatyzacji, bez magii, z liczbami.",
                           },
                           {
                             href: "/strefa-wiedzy/automatyzacja-vs-zatrudnienie",
@@ -310,7 +310,7 @@ export default function AudytCRMPage() {
                             href: "/narzedzia",
                             title: "Wszystkie narzędzia",
                             description:
-                              "Pozostałe kalkulatory i narzędzia online — bez rejestracji, za darmo.",
+                              "Pozostałe kalkulatory i narzędzia online, bez rejestracji, za darmo.",
                           },
                         ].map((article) => (
                           <Link
@@ -338,7 +338,7 @@ export default function AudytCRMPage() {
                     <div className="max-w-2xl mx-auto text-center">
                       <div className="bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-10">
                         <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                          Masz wynik — chcesz konkretny plan?
+                          Masz wynik, chcesz konkretny plan?
                         </h2>
                         <p className="text-gray-500 dark:text-gray-400 mb-8">
                           W diagnozie dostaniesz mapę obecnego procesu, listę
@@ -389,7 +389,7 @@ export default function AudytCRMPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebApplication",
-            name: "Audyt CRM — checklist online",
+            name: "Audyt CRM, checklist online",
             url: "https://fluxlab.pl/audyt-crm",
             applicationCategory: "BusinessApplication",
             operatingSystem: "Web",

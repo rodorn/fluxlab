@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Automatyzacja leadów, CRM i raportowania dla firm B2B",
+        alt: "Fluxlab, Automatyzacja leadów, CRM i raportowania dla firm B2B",
       },
     ],
   },
@@ -57,7 +57,7 @@ export default function CrmIntegracjaArticle() {
           </div>
         </section>
 
-        {/* Treść w zakładkach — nic nie wycięte, podzielone wg rozdziałów */}
+        {/* Treść w zakładkach, nic nie wycięte, podzielone wg rozdziałów */}
         <div className="container-wide pb-20">
           <Tabs
             ariaLabel="Rozdziały artykułu o łączeniu CRM z innymi systemami"
@@ -198,7 +198,7 @@ export default function CrmIntegracjaArticle() {
                       Trzeci błąd to automatyzowanie bałaganu. Jeśli pipeline i
                       statusy w CRM są nieuporządkowane, integracja tylko ten
                       bałagan rozprowadzi. Dlatego warto najpierw uporządkować
-                      sam proces — pomaga w tym dobrze wdrożona{" "}
+                      sam proces, pomaga w tym dobrze wdrożona{" "}
                       <Link
                         href="/automatyzacja-crm"
                         className="text-accent hover:underline"

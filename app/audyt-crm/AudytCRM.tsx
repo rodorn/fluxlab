@@ -29,7 +29,7 @@ interface Question {
    * Domyślnie TAK = pozytyw.
    */
   inverted?: boolean;
-  /** Krótki opis obszaru — używany w narracji wyniku. */
+  /** Krótki opis obszaru, używany w narracji wyniku. */
   areaLabel: string;
 }
 
@@ -104,46 +104,46 @@ const RECOMMENDATIONS: Record<Area, string[]> = {
   atrybucja: [
     "Dodaj pole „źródło leada” jako obowiązkowe na każdym deal'u.",
     "Skonfiguruj UTM-y w formularzach, żeby źródło wpadało automatycznie.",
-    "W raporcie konwersji rozbij wynik per kanał — zobaczysz, co skaluje się tanio.",
+    "W raporcie konwersji rozbij wynik per kanał, zobaczysz, co skaluje się tanio.",
   ],
   routing: [
     "Ustaw regułę przypisania właściciela natychmiast po utworzeniu leada (round-robin albo per region/produkt).",
-    "Dodaj fallback — jeśli reguła nie zadziała, lead trafia do menedżera, nie wisi w próżni.",
+    "Dodaj fallback, jeśli reguła nie zadziała, lead trafia do menedżera, nie wisi w próżni.",
     "Powiadomienie handlowca o nowym leadzie w 60 sekund od pojawienia się w CRM.",
   ],
   kwalifikacja: [
-    "Spisz kryteria wejścia/wyjścia z każdego etapu w 1 zdaniu — bez tego pipeline jest fikcją.",
+    "Spisz kryteria wejścia/wyjścia z każdego etapu w 1 zdaniu, bez tego pipeline jest fikcją.",
     "Wprowadź checklisty kwalifikacji (BANT, MEDDIC albo własną) widoczne na karcie deal'a.",
     "Etap „kwalifikowany” powinien wymagać konkretnych pól, nie deklaracji handlowca.",
   ],
   automatyzacja_zadan: [
     "Zautomatyzuj zadanie „pierwszy kontakt 15 min po dodaniu leada”.",
-    "Po przejściu na etap kolejny — automatyczne zadanie z domyślnym terminem.",
-    "Dla deali bez aktywności 7+ dni — auto-przypomnienie do właściciela.",
+    "Po przejściu na etap kolejny, automatyczne zadanie z domyślnym terminem.",
+    "Dla deali bez aktywności 7+ dni, auto-przypomnienie do właściciela.",
   ],
   follow_up: [
     "Skonfiguruj drabinkę przypomnień: 1, 3, 7, 14 dni po ostatnim kontakcie.",
-    "Dla deali w „rozmowach” bez aktywności 14 dni — eskalacja do menedżera.",
-    "Sekwencje mailowe dla zimnych leadów — minimum 3 punkty styku, automatycznie.",
+    "Dla deali w „rozmowach” bez aktywności 14 dni, eskalacja do menedżera.",
+    "Sekwencje mailowe dla zimnych leadów, minimum 3 punkty styku, automatycznie.",
   ],
   raportowanie: [
-    "Zbuduj raport źródło → konwersja → MRR/wartość kontraktu — to podstawa decyzji marketingowych.",
-    "Dashboard z czasem reakcji per handlowiec — to jeden z najsilniejszych predyktorów konwersji.",
-    "Raport pipeline velocity — ile dni lead spędza w każdym etapie.",
+    "Zbuduj raport źródło → konwersja → MRR/wartość kontraktu, to podstawa decyzji marketingowych.",
+    "Dashboard z czasem reakcji per handlowiec, to jeden z najsilniejszych predyktorów konwersji.",
+    "Raport pipeline velocity, ile dni lead spędza w każdym etapie.",
   ],
   przepisywanie: [
-    "Zacznij od formularza www — to zwykle największe źródło ręcznego przepisywania.",
+    "Zacznij od formularza www, to zwykle największe źródło ręcznego przepisywania.",
     "Make/Zapier/n8n: webhook formularza → tworzenie kontaktu/firmy/deala w CRM jednym kliknięciem.",
-    "Dla maili z zapytaniami — parser (regex albo LLM) wyciągający dane do CRM.",
+    "Dla maili z zapytaniami, parser (regex albo LLM) wyciągający dane do CRM.",
   ],
   jakosc_danych: [
     "Zdefiniuj minimalne wymagane pola dla każdego etapu i włącz walidację w CRM.",
-    "Co tydzień raport „braki danych” — które deale mają puste pola krytyczne.",
+    "Co tydzień raport „braki danych”, które deale mają puste pola krytyczne.",
     "Onboarding handlowca: konkretny standard wypełniania CRM, nie „rób jak chcesz”.",
   ],
   deduplikacja: [
     "Włącz wbudowaną deduplikację po e-mailu i numerze NIP/VAT (jeśli dostępna).",
-    "Zrób jednorazowe sprzątanie — eksport, dedup w arkuszu, import z merge.",
+    "Zrób jednorazowe sprzątanie, eksport, dedup w arkuszu, import z merge.",
     "Reguła: nowy lead ze znanego maila/NIP-u łączy się z istniejącym kontaktem, nie tworzy duplikatu.",
   ],
   integracje: [
@@ -204,17 +204,17 @@ function scoreAnswers(answers: Record<number, Answer>): ScoreResult {
     category = "zdrowy";
     categoryHeadline = "Zdrowy pipeline, gotowy do skalowania";
     categoryNarrative =
-      "Twój CRM ma większość kluczowych filarów na miejscu. Automatyzacja na tym etapie to dokładanie sił do działającej maszyny — szybka reakcja, mniej ręcznej pracy, lepsze raporty. Dobry moment, żeby zająć się obszarami granicznymi i wycisnąć z procesu jeszcze 20–30%.";
+      "Twój CRM ma większość kluczowych filarów na miejscu. Automatyzacja na tym etapie to dokładanie sił do działającej maszyny, szybka reakcja, mniej ręcznej pracy, lepsze raporty. Dobry moment, żeby zająć się obszarami granicznymi i wycisnąć z procesu jeszcze 20–30%.";
   } else if (score >= 5) {
     category = "solidny";
     categoryHeadline = "Solidny fundament, kilka brakujących filarów";
     categoryNarrative =
-      "Pipeline działa, ale ma luki, które blokują skalowanie. Najpierw warto załatać najważniejszy obszar (poniżej), potem wracać do automatyzacji ogólnej. Próba zautomatyzowania bałaganu daje zautomatyzowany bałagan — i to jeszcze szybszy.";
+      "Pipeline działa, ale ma luki, które blokują skalowanie. Najpierw warto załatać najważniejszy obszar (poniżej), potem wracać do automatyzacji ogólnej. Próba zautomatyzowania bałaganu daje zautomatyzowany bałagan, i to jeszcze szybszy.";
   } else {
     category = "blokuje";
     categoryHeadline = "Pipeline blokuje sprzedaż";
     categoryNarrative =
-      "To nie jest problem CRM-a — to problem procesu. Zanim zautomatyzujesz cokolwiek, trzeba ustalić podstawy: kto jest właścicielem leada, jakie są kryteria etapów, skąd lead przychodzi. Automatyzacja bez tego daje tylko więcej zamieszania, nie więcej sprzedaży. Dobra wiadomość: jak już to ułożysz, kolejne etapy idą dużo szybciej.";
+      "To nie jest problem CRM-a, to problem procesu. Zanim zautomatyzujesz cokolwiek, trzeba ustalić podstawy: kto jest właścicielem leada, jakie są kryteria etapów, skąd lead przychodzi. Automatyzacja bez tego daje tylko więcej zamieszania, nie więcej sprzedaży. Dobra wiadomość: jak już to ułożysz, kolejne etapy idą dużo szybciej.";
   }
 
   return {
@@ -362,7 +362,7 @@ export default function AudytCRM() {
         <p className="text-sm text-gray-500 dark:text-gray-400">
           Każde pytanie ma trzy odpowiedzi: <strong>tak</strong>,{" "}
           <strong>nie</strong> albo <strong>nie wiem</strong>. „Nie wiem" liczy
-          się jak „nie" — bo jeśli nie masz pewności, że coś działa, to znaczy,
+          się jak „nie", bo jeśli nie masz pewności, że coś działa, to znaczy,
           że nie działa świadomie.
         </p>
       </div>

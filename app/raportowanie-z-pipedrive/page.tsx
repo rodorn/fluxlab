@@ -9,11 +9,11 @@ import Tabs from "@/components/Tabs";
 export const metadata: Metadata = {
   title: "Automatyczne raportowanie z Pipedrive | Bez ręcznego Excela",
   description:
-    "Jak zrobić automatyczne raporty sprzedaży z Pipedrive bez klejenia Excela co poniedziałek. Pipeline, źródła leadów, czas reakcji, prognozy — codziennie aktualne, bez ręcznej pracy.",
+    "Jak zrobić automatyczne raporty sprzedaży z Pipedrive bez klejenia Excela co poniedziałek. Pipeline, źródła leadów, czas reakcji, prognozy, codziennie aktualne, bez ręcznej pracy.",
   openGraph: {
     title: "Automatyczne raportowanie z Pipedrive | Bez ręcznego Excela",
     description:
-      "Jak zrobić automatyczne raporty sprzedaży z Pipedrive bez klejenia Excela co poniedziałek. Pipeline, źródła leadów, czas reakcji, prognozy — codziennie aktualne, bez ręcznej pracy.",
+      "Jak zrobić automatyczne raporty sprzedaży z Pipedrive bez klejenia Excela co poniedziałek. Pipeline, źródła leadów, czas reakcji, prognozy, codziennie aktualne, bez ręcznej pracy.",
     locale: "pl_PL",
     type: "article",
     images: [
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Automatyczne raportowanie z Pipedrive",
+        alt: "Fluxlab, Automatyczne raportowanie z Pipedrive",
       },
     ],
   },
@@ -32,11 +32,11 @@ export const metadata: Metadata = {
 
 const symptoms = [
   "W każdy poniedziałek ktoś otwiera Pipedrive, eksportuje deale do CSV i kleji to z arkuszem marketingu.",
-  "Raport sprzedaży dla zarządu jest co tydzień inny — bo każdy liczy „pipeline” swoją metodą.",
+  "Raport sprzedaży dla zarządu jest co tydzień inny, bo każdy liczy „pipeline” swoją metodą.",
   "Liczby z Pipedrive nie zgadzają się z liczbami z faktur ani z liczbami z marketingu.",
   "Handlowcy aktualizują etap deala raz w miesiącu, dzień przed spotkaniem z managerem.",
   "Raport „skąd przychodzą zamknięte deale” robi się ręcznie, bo źródło jest puste w połowie rekordów.",
-  "Manager wchodzi rano do Pipedrive, klika 12 filtrów i robi screenshota — to jest dashboard.",
+  "Manager wchodzi rano do Pipedrive, klika 12 filtrów i robi screenshota, to jest dashboard.",
 ];
 
 const beforeSteps = [
@@ -44,8 +44,8 @@ const beforeSteps = [
   "Ktoś otwiera Pipedrive i eksportuje deale do CSV.",
   "Otwiera arkusz Google Sheets z poprzedniego tygodnia, kasuje stare dane, wkleja nowe.",
   "Robi VLOOKUP-y, żeby dokleić źródło leada (które trzyma się w innym pliku).",
-  "Zauważa, że 30% dealów ma puste źródło — wpisuje „inne” i idzie dalej.",
-  "Liczy konwersję, średni czas zamknięcia, sumy po etapach — ręcznie, formułami.",
+  "Zauważa, że 30% dealów ma puste źródło, wpisuje „inne” i idzie dalej.",
+  "Liczy konwersję, średni czas zamknięcia, sumy po etapach, ręcznie, formułami.",
   "Robi 3 wykresy w Excelu, robi screenshota, wkleja do PowerPointa.",
   "Wysyła PDF do zarządu o 23:30 w niedzielę.",
   "Pierwsza rzecz, jaką usłyszy w poniedziałek: „a możesz mi to też pokazać po regionie?”.",
@@ -61,7 +61,7 @@ const afterSteps = [
   {
     n: "2",
     title: "Synchronizacja do hurtowni / arkusza / BI",
-    desc: "Cykliczny pull z Pipedrive do warstwy danych — Google Sheets, Postgres, BigQuery, Looker Studio, Metabase. Co 15 minut, co godzinę albo na żywo, zależnie od potrzeby.",
+    desc: "Cykliczny pull z Pipedrive do warstwy danych, Google Sheets, Postgres, BigQuery, Looker Studio, Metabase. Co 15 minut, co godzinę albo na żywo, zależnie od potrzeby.",
     accent: false,
   },
   {
@@ -79,19 +79,19 @@ const afterSteps = [
   {
     n: "5",
     title: "Raporty tematyczne, nie monolityczne",
-    desc: "Pipeline, źródła leadów, czas reakcji, konwersja po etapach, performance handlowców, prognoza zamknięć — każdy raport osobno, każdy aktualny i klikalny.",
+    desc: "Pipeline, źródła leadów, czas reakcji, konwersja po etapach, performance handlowców, prognoza zamknięć, każdy raport osobno, każdy aktualny i klikalny.",
     accent: false,
   },
   {
     n: "6",
     title: "Codzienna dystrybucja",
-    desc: "Każdy odbiorca dostaje to, czego potrzebuje, kiedy potrzebuje — manager mailem co rano, handlowiec dashboardem, zarząd raportem tygodniowym. Nikt nie czeka na piątek.",
+    desc: "Każdy odbiorca dostaje to, czego potrzebuje, kiedy potrzebuje, manager mailem co rano, handlowiec dashboardem, zarząd raportem tygodniowym. Nikt nie czeka na piątek.",
     accent: false,
   },
   {
     n: "7",
     title: "Alerty i anomalie",
-    desc: "Spadek liczby leadów, wydłużony czas zamknięcia, duża wartość deala stojąca w jednym etapie powyżej X dni — wszystko z automatycznym alertem do osoby odpowiedzialnej.",
+    desc: "Spadek liczby leadów, wydłużony czas zamknięcia, duża wartość deala stojąca w jednym etapie powyżej X dni, wszystko z automatycznym alertem do osoby odpowiedzialnej.",
     accent: true,
   },
 ];
@@ -110,19 +110,19 @@ const mistakes = [
   },
   {
     title: "Eksport CSV jako proces",
-    desc: "Jeśli twój „proces raportowania” opiera się na ręcznym eksporcie CSV — to nie jest proces, to ceremoniał. Jedna osoba na urlopie i raportu nie ma. Pipedrive ma API od kilkunastu lat, czas z niego skorzystać.",
+    desc: "Jeśli twój „proces raportowania” opiera się na ręcznym eksporcie CSV, to nie jest proces, to ceremoniał. Jedna osoba na urlopie i raportu nie ma. Pipedrive ma API od kilkunastu lat, czas z niego skorzystać.",
   },
   {
     title: "Zbyt skomplikowany dashboard",
-    desc: "Dashboard z 40 wskaźnikami nikt nie ogląda po dwóch tygodniach. Lepiej trzy dashboardy po 5 wskaźników każdy — pipeline, źródła, prognoza — niż jedno gigantyczne BI, które wymaga 20 minut na zrozumienie.",
+    desc: "Dashboard z 40 wskaźnikami nikt nie ogląda po dwóch tygodniach. Lepiej trzy dashboardy po 5 wskaźników każdy, pipeline, źródła, prognoza, niż jedno gigantyczne BI, które wymaga 20 minut na zrozumienie.",
   },
   {
     title: "Pipedrive jako źródło danych finansowych",
-    desc: "Wartość deala w Pipedrive to nie to samo co przychód. Nie miksuj statusów sprzedażowych z fakturami — łącz dane z księgowością i traktuj Pipedrive jako źródło lejka, nie kasy.",
+    desc: "Wartość deala w Pipedrive to nie to samo co przychód. Nie miksuj statusów sprzedażowych z fakturami, łącz dane z księgowością i traktuj Pipedrive jako źródło lejka, nie kasy.",
   },
   {
     title: "Brak mapowania pól",
-    desc: "Custom fields w Pipedrive zwykle puchną z biegiem czasu — 50 pól, z których 30 jest zawsze puste, a 5 nikt nie pamięta po co. Przed automatyzacją raportowania trzeba zrobić porządek, jakie pola są wymagane i jakie liczą się do raportów.",
+    desc: "Custom fields w Pipedrive zwykle puchną z biegiem czasu, 50 pól, z których 30 jest zawsze puste, a 5 nikt nie pamięta po co. Przed automatyzacją raportowania trzeba zrobić porządek, jakie pola są wymagane i jakie liczą się do raportów.",
   },
 ];
 
@@ -130,32 +130,32 @@ const faq = [
   {
     question: "Czy potrzebuję BI typu Power BI, Looker albo Metabase?",
     answer:
-      "Nie zawsze. Dla małych firm wystarczy Google Sheets z automatycznym zasilaniem z Pipedrive — czytelnie, zero kosztu licencji, zero progu wejścia. Większe firmy z wieloma źródłami danych zwykle skorzystają z Looker Studio (darmowy) albo Metabase (open source). Power BI wybieram, gdy reszta firmy już w nim siedzi.",
+      "Nie zawsze. Dla małych firm wystarczy Google Sheets z automatycznym zasilaniem z Pipedrive, czytelnie, zero kosztu licencji, zero progu wejścia. Większe firmy z wieloma źródłami danych zwykle skorzystają z Looker Studio (darmowy) albo Metabase (open source). Power BI wybieram, gdy reszta firmy już w nim siedzi.",
   },
   {
     question: "Jak często aktualizować dane?",
     answer:
-      "Zależy od typu raportu. Dashboard pipeline'u — co 15 minut do godziny. Raport prognozy zamknięć — raz dziennie wystarczy. Alerty o stojących dealach — natychmiast, przez webhook. Synchronizacja co 5 minut „bo można” to przerost formy nad treścią i zwykle generuje zbędne rate-limity API.",
+      "Zależy od typu raportu. Dashboard pipeline'u, co 15 minut do godziny. Raport prognozy zamknięć, raz dziennie wystarczy. Alerty o stojących dealach, natychmiast, przez webhook. Synchronizacja co 5 minut „bo można” to przerost formy nad treścią i zwykle generuje zbędne rate-limity API.",
   },
   {
     question: "Czy raporty będą działać, gdy zmienimy strukturę Pipedrive?",
     answer:
-      "Tak, jeśli integracja jest zrobiona porządnie — z mapowaniem pól w jednym miejscu, walidacją struktury i alertem przy zmianach schematu. Zmiana nazwy etapu, dodanie custom fielda, zmiana waluty — wszystko powinno być przewidziane. Słabo zbudowana integracja sypie się przy pierwszej zmianie i nikt nie wie czemu.",
+      "Tak, jeśli integracja jest zrobiona porządnie, z mapowaniem pól w jednym miejscu, walidacją struktury i alertem przy zmianach schematu. Zmiana nazwy etapu, dodanie custom fielda, zmiana waluty, wszystko powinno być przewidziane. Słabo zbudowana integracja sypie się przy pierwszej zmianie i nikt nie wie czemu.",
   },
   {
     question: "Co z danymi historycznymi?",
     answer:
-      "Pipedrive trzyma pełną historię zmian deali, ale wyciągnięcie jej przez API wymaga osobnej obsługi (tzw. flow). Jeśli zależy ci na śledzeniu, jak deal poruszał się przez etapy, to zapisujemy stan dzienny w hurtowni — od momentu wdrożenia masz pełną historię. Wcześniejszą historię można odtworzyć z Pipedrive deal flow API.",
+      "Pipedrive trzyma pełną historię zmian deali, ale wyciągnięcie jej przez API wymaga osobnej obsługi (tzw. flow). Jeśli zależy ci na śledzeniu, jak deal poruszał się przez etapy, to zapisujemy stan dzienny w hurtowni, od momentu wdrożenia masz pełną historię. Wcześniejszą historię można odtworzyć z Pipedrive deal flow API.",
   },
   {
     question: "Ile to trwa?",
     answer:
-      "Najmniejszy działający kawałek (codzienny pull, jeden dashboard pipeline'u, alert o stojących dealach) — 3–5 dni roboczych. Pełne raportowanie z marketingiem, prognozą i alertami anomalii — 2–4 tygodnie zależnie od liczby źródeł danych i stopnia uporządkowania custom fields.",
+      "Najmniejszy działający kawałek (codzienny pull, jeden dashboard pipeline'u, alert o stojących dealach), 3–5 dni roboczych. Pełne raportowanie z marketingiem, prognozą i alertami anomalii, 2–4 tygodnie zależnie od liczby źródeł danych i stopnia uporządkowania custom fields.",
   },
   {
     question: "Ile to kosztuje?",
     answer:
-      "Etap 1 (jeden raport pipeline'u + alerty) — od 4 do 7 tys. zł. Pełne raportowanie z wieloma źródłami i prognozą — 10–20 tys. zł zależnie od stopnia bałaganu w Pipedrive i liczby integracji. Dokładną wycenę podaję po krótkim audycie.",
+      "Etap 1 (jeden raport pipeline'u + alerty), od 4 do 7 tys. zł. Pełne raportowanie z wieloma źródłami i prognozą, 10–20 tys. zł zależnie od stopnia bałaganu w Pipedrive i liczby integracji. Dokładną wycenę podaję po krótkim audycie.",
   },
 ];
 
@@ -203,7 +203,7 @@ export default function RaportowanieZPipedrive() {
           ]}
         />
 
-        {/* Hero — kompaktowy */}
+        {/* Hero, kompaktowy */}
         <section className="pt-24 pb-12 bg-gradient-to-b from-accent/10 to-transparent border-b border-gray-100 dark:border-gray-800">
           <div className="container-wide">
             <div className="max-w-3xl mx-auto text-center">
@@ -239,7 +239,7 @@ export default function RaportowanieZPipedrive() {
           </div>
         </section>
 
-        {/* Treść w zakładkach — nic nie wycięte, podzielone */}
+        {/* Treść w zakładkach, nic nie wycięte, podzielone */}
         <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
           <Tabs
             ariaLabel="Sekcje artykułu o raportowaniu z Pipedrive"
@@ -259,7 +259,7 @@ export default function RaportowanieZPipedrive() {
                         zadań, ale jego wbudowane raporty są albo zbyt proste
                         (statyczne dashboardy), albo zbyt sztywne (filtry
                         zamiast prawdziwego BI). Dlatego większość firm i tak
-                        kończy w Excelu — i tam zaczynają się problemy.
+                        kończy w Excelu, i tam zaczynają się problemy.
                       </p>
                       <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
                         Ręczne raportowanie nie jest tylko stratą czasu. Jest
@@ -274,7 +274,7 @@ export default function RaportowanieZPipedrive() {
                           "Ten sam wskaźnik różni się między raportami, bo każdy liczy go inaczej.",
                           "Zarząd dostaje raport raz w tygodniu, kiedy decyzja jest już spóźniona o 5 dni.",
                           "Manager nie ma jak sprawdzić w środę, ile dealów stoi w danym etapie powyżej tygodnia.",
-                          "Marketing pokazuje 200 leadów, sprzedaż widzi 130 — i nikt nie wie, gdzie zniknęło 70.",
+                          "Marketing pokazuje 200 leadów, sprzedaż widzi 130, i nikt nie wie, gdzie zniknęło 70.",
                           "Prognozy zamknięć opierają się na intuicji handlowca, bo dane są niespójne.",
                           "Każdy nowy raport oznacza dodatkowe 2 godziny pracy ręcznej w piątek.",
                         ].map((item) => (
@@ -363,10 +363,10 @@ export default function RaportowanieZPipedrive() {
                             <span className="text-accent">30 000 zł / rok</span>
                           </strong>{" "}
                           samego klejenia danych. Plus ad-hoc'i („a możesz mi to
-                          po regionie?”) — kolejne 8–12 tys. zł rocznie.
+                          po regionie?”), kolejne 8–12 tys. zł rocznie.
                         </p>
                         <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                          W większych firmach — łatwo 60–80 tys. zł rocznie
+                          W większych firmach, łatwo 60–80 tys. zł rocznie
                           samego ręcznego raportowania. I to bez liczenia kosztu
                           spóźnionych decyzji.
                         </p>
@@ -417,7 +417,7 @@ export default function RaportowanieZPipedrive() {
                       <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                         Automatyzowanie bałaganu to tylko szybsze produkowanie
                         bałaganu. Dlatego automatyzację raportowania trzeba
-                        zacząć od porządku w samych danych — nie od pięknego
+                        zacząć od porządku w samych danych, nie od pięknego
                         dashboardu.
                       </p>
                     </div>
@@ -456,7 +456,7 @@ export default function RaportowanieZPipedrive() {
                         W tym przepływie raport jest zawsze spóźniony, zawsze
                         trochę inny i zawsze zależny od jednej osoby. Pierwsze
                         pytanie po pokazaniu raportu zwykle wywraca cały arkusz
-                        — bo „pokaż mi to jeszcze po regionie” oznacza kolejną
+                       , bo „pokaż mi to jeszcze po regionie” oznacza kolejną
                         godzinę pracy.
                       </p>
                     </div>
@@ -546,7 +546,7 @@ export default function RaportowanieZPipedrive() {
                         Co wdrożyć najpierw
                       </h2>
                       <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-                        Najmniejszy kawałek, który eliminuje 80% bólu — czyli
+                        Najmniejszy kawałek, który eliminuje 80% bólu, czyli
                         ręczny eksport CSV i klejenie pipeline'u. Reszta
                         (marketing, księgowość, prognozy) idzie w drugim etapie,
                         gdy widać, że pierwszy działa.
@@ -648,7 +648,7 @@ export default function RaportowanieZPipedrive() {
                           <tbody className="text-sm text-gray-700 dark:text-gray-300 divide-y divide-gray-100 dark:divide-gray-700">
                             <tr>
                               <td className="px-6 py-5 font-semibold text-gray-900 dark:text-white align-top">
-                                Etap 1 — minimalny
+                                Etap 1, minimalny
                               </td>
                               <td className="px-6 py-5 align-top">
                                 Codzienny pull deali z Pipedrive, jeden
@@ -656,12 +656,12 @@ export default function RaportowanieZPipedrive() {
                                 pól, alert o stojących dealach.
                               </td>
                               <td className="px-6 py-5 align-top whitespace-nowrap font-semibold text-accent">
-                                4 — 7 tys. zł
+                                4, 7 tys. zł
                               </td>
                             </tr>
                             <tr>
                               <td className="px-6 py-5 font-semibold text-gray-900 dark:text-white align-top">
-                                Etap 2 — pełny
+                                Etap 2, pełny
                               </td>
                               <td className="px-6 py-5 align-top">
                                 Wszystko z etapu 1 + raporty źródeł leadów, czas
@@ -669,7 +669,7 @@ export default function RaportowanieZPipedrive() {
                                 zamknięć, alerty anomalii.
                               </td>
                               <td className="px-6 py-5 align-top whitespace-nowrap font-semibold text-accent">
-                                10 — 18 tys. zł
+                                10, 18 tys. zł
                               </td>
                             </tr>
                             <tr>
@@ -683,7 +683,7 @@ export default function RaportowanieZPipedrive() {
                                 Looker / Metabase / Power BI.
                               </td>
                               <td className="px-6 py-5 align-top whitespace-nowrap font-semibold text-accent">
-                                18 — 30 tys. zł
+                                18, 30 tys. zł
                               </td>
                             </tr>
                           </tbody>

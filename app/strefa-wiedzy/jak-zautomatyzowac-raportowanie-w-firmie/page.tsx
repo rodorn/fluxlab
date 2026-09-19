@@ -23,7 +23,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Automatyzacja leadów, CRM i raportowania dla firm B2B",
+        alt: "Fluxlab, Automatyzacja leadów, CRM i raportowania dla firm B2B",
       },
     ],
   },
@@ -67,7 +67,7 @@ export default function AutomatyzacjaRaportowaniaArticle() {
           </div>
         </section>
 
-        {/* Treść w zakładkach — nic nie wycięte, podzielone wg rozdziałów */}
+        {/* Treść w zakładkach, nic nie wycięte, podzielone wg rozdziałów */}
         <div className="container-wide pb-20">
           <Tabs
             ariaLabel="Rozdziały artykułu o automatyzacji raportowania"
@@ -195,7 +195,7 @@ export default function AutomatyzacjaRaportowaniaArticle() {
                         href="/strefa-wiedzy/integracje-api-w-firmie-kiedy-warto"
                         className="text-accent hover:underline"
                       >
-                        Integracje API w firmie — kiedy warto
+                        Integracje API w firmie, kiedy warto
                       </Link>
                       .
                     </p>
@@ -492,7 +492,7 @@ export default function AutomatyzacjaRaportowaniaArticle() {
                           href="/strefa-wiedzy/automatyzacja-crm-od-czego-zaczac"
                           className="text-accent hover:underline"
                         >
-                          Automatyzacja CRM — od czego zacząć
+                          Automatyzacja CRM, od czego zacząć
                         </Link>
                       </li>
                       <li>
@@ -500,7 +500,7 @@ export default function AutomatyzacjaRaportowaniaArticle() {
                           href="/strefa-wiedzy/integracje-api-w-firmie-kiedy-warto"
                           className="text-accent hover:underline"
                         >
-                          Integracje API w firmie — kiedy warto
+                          Integracje API w firmie, kiedy warto
                         </Link>
                       </li>
                       <li>
@@ -729,7 +729,7 @@ export default function AutomatyzacjaRaportowaniaArticle() {
                               href="/strefa-wiedzy/integracje-api-w-firmie-kiedy-warto"
                               className="text-accent hover:underline"
                             >
-                              Integracje API w firmie — kiedy warto
+                              Integracje API w firmie, kiedy warto
                             </Link>
                           </li>
                         </ul>

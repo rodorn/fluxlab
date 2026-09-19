@@ -7,11 +7,11 @@ import PrevNextArticle from "@/components/PrevNextArticle";
 import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
-  title: "n8n vs Zapier — kiedy warto iść w self-hosting | Fluxlab",
+  title: "n8n vs Zapier, kiedy warto iść w self-hosting | Fluxlab",
   description:
     "Porównanie n8n i Zapier w 2026: pricing, krzywa nauki, kontrola danych, skalowalność i kiedy self-hosting realnie się opłaca. Praktyczne kryteria wyboru.",
   openGraph: {
-    title: "n8n vs Zapier — kiedy warto iść w self-hosting | Fluxlab",
+    title: "n8n vs Zapier, kiedy warto iść w self-hosting | Fluxlab",
     description:
       "Porównanie n8n i Zapier w 2026: pricing, krzywa nauki, kontrola danych, skalowalność i kiedy self-hosting realnie się opłaca. Praktyczne kryteria wyboru.",
     locale: "pl_PL",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Automatyzacja leadów, CRM i raportowania dla firm B2B",
+        alt: "Fluxlab, Automatyzacja leadów, CRM i raportowania dla firm B2B",
       },
     ],
   },
@@ -35,7 +35,7 @@ export default function N8nVsZapierArticle() {
     {
       question: "Czy n8n jest naprawdę darmowy?",
       answer:
-        "Wersja Community Edition n8n jest open-source na licencji Sustainable Use License — możesz ją uruchomić bezpłatnie na własnym serwerze i używać wewnętrznie. Płatne są: chmura n8n.cloud (od ok. 24 EUR/mies.) oraz Enterprise Edition (SSO, RBAC, log audytowy, version control). Komercyjne odsprzedawanie n8n jako usługi wymaga osobnej licencji.",
+        "Wersja Community Edition n8n jest open-source na licencji Sustainable Use License, możesz ją uruchomić bezpłatnie na własnym serwerze i używać wewnętrznie. Płatne są: chmura n8n.cloud (od ok. 24 EUR/mies.) oraz Enterprise Edition (SSO, RBAC, log audytowy, version control). Komercyjne odsprzedawanie n8n jako usługi wymaga osobnej licencji.",
     },
     {
       question: "Ile kosztuje utrzymanie n8n self-hosted?",
@@ -45,7 +45,7 @@ export default function N8nVsZapierArticle() {
     {
       question: "Czy n8n nadaje się dla osoby bez wiedzy technicznej?",
       answer:
-        "Tylko warunkowo. Sam interfejs jest podobny do Make i da się w nim budować scenariusze bez kodu. Ale instalacja, aktualizacje, backupy i obsługa błędów wymagają kogoś, kto rozumie Linuxa, Dockera i podstawy serwerów. Bez tego nawet zwykły restart bywa problemem. Alternatywą jest plan n8n Cloud — wtedy zero administracji.",
+        "Tylko warunkowo. Sam interfejs jest podobny do Make i da się w nim budować scenariusze bez kodu. Ale instalacja, aktualizacje, backupy i obsługa błędów wymagają kogoś, kto rozumie Linuxa, Dockera i podstawy serwerów. Bez tego nawet zwykły restart bywa problemem. Alternatywą jest plan n8n Cloud, wtedy zero administracji.",
     },
     {
       question: "Kiedy n8n ma sens dla małej firmy?",
@@ -55,12 +55,12 @@ export default function N8nVsZapierArticle() {
     {
       question: "Czy n8n ma tyle integracji co Zapier?",
       answer:
-        "Nie. n8n ma ok. 500+ natywnych integracji vs ok. 6 000 w Zapierze. Ale n8n ma natywny moduł HTTP Request i moduł Code (JavaScript/Python) — w praktyce możesz zintegrować się z dowolnym API. Dla popularnych SaaS-ów (HubSpot, Slack, Notion, Pipedrive, Google, Microsoft) integracje są dostępne i działają dobrze.",
+        "Nie. n8n ma ok. 500+ natywnych integracji vs ok. 6 000 w Zapierze. Ale n8n ma natywny moduł HTTP Request i moduł Code (JavaScript/Python), w praktyce możesz zintegrować się z dowolnym API. Dla popularnych SaaS-ów (HubSpot, Slack, Notion, Pipedrive, Google, Microsoft) integracje są dostępne i działają dobrze.",
     },
     {
       question: "Czy łatwo migrować z Zapiera do n8n?",
       answer:
-        "Nie ma automatycznego importera. Migracja oznacza odbudowę scenariuszy w n8n — w praktyce to 30–60% szybciej niż pierwotna budowa, bo logika jest już znana. Dla 10–20 Zapów to typowo 3–5 dni pracy. Warto migrować etapami, zaczynając od najdroższych Zapów (najwięcej tasków).",
+        "Nie ma automatycznego importera. Migracja oznacza odbudowę scenariuszy w n8n, w praktyce to 30–60% szybciej niż pierwotna budowa, bo logika jest już znana. Dla 10–20 Zapów to typowo 3–5 dni pracy. Warto migrować etapami, zaczynając od najdroższych Zapów (najwięcej tasków).",
     },
   ];
 
@@ -80,13 +80,13 @@ export default function N8nVsZapierArticle() {
           <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
             <span className="section-label">Strefa wiedzy</span>
             <h1 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">
-              n8n vs Zapier — kiedy warto iść w self-hosting
+              n8n vs Zapier, kiedy warto iść w self-hosting
             </h1>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
               n8n i Zapier rozwiązują ten sam problem zupełnie różnymi metodami.
-              Zapier to wynajem mieszkania — szybko, wygodnie, ale płacisz co
+              Zapier to wynajem mieszkania, szybko, wygodnie, ale płacisz co
               miesiąc i nie masz kluczy do piwnicy. n8n to dom na własnej
-              działce — więcej pracy, ale pełna kontrola i tańsze w długim
+              działce, więcej pracy, ale pełna kontrola i tańsze w długim
               okresie. Ten artykuł pokazuje, kiedy ten dom rzeczywiście się
               opłaca.
             </p>
@@ -106,7 +106,7 @@ export default function N8nVsZapierArticle() {
                         Krótko: czym różni się n8n od Zapiera
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Zapier to klasyczne SaaS — rejestrujesz konto, łączysz
+                        Zapier to klasyczne SaaS, rejestrujesz konto, łączysz
                         aplikacje, płacisz miesięcznie. Wszystko działa w
                         chmurze Zapiera, w USA. Nie masz dostępu do kodu, nie
                         kontrolujesz serwera, nie wiesz dokładnie, którędy płyną
@@ -117,22 +117,22 @@ export default function N8nVsZapierArticle() {
                         własnym serwerze (Docker, Kubernetes, VPS) i mieć pełną
                         kontrolę: dane nie wychodzą poza Twoją infrastrukturę,
                         nie ma limitu wykonań ani per-task billingu, możesz
-                        modyfikować źródła. Możesz też wybrać n8n.cloud — wtedy
+                        modyfikować źródła. Możesz też wybrać n8n.cloud, wtedy
                         nie martwisz się o serwer, ale tracisz część zalet
                         self-hostingu.
                       </p>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Pod względem interfejsu n8n jest bliżej Make niż Zapiera
-                        — wizualny diagram, moduły, możliwość rozgałęzień i
+                       , wizualny diagram, moduły, możliwość rozgałęzień i
                         pętli. To nie jest „klikam dalej" jak w Zapierze.
                       </p>
 
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 mt-12">
-                        Pricing — gdzie jest realna oszczędność
+                        Pricing, gdzie jest realna oszczędność
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Zapier rozlicza taski. Plan Professional za 19,99
-                        USD/mies. daje 750 tasków. Plan Team za 69 USD/mies. — 2
+                        USD/mies. daje 750 tasków. Plan Team za 69 USD/mies., 2
                         000 tasków. Każdy task ponad limit kosztuje dodatkowo.
                         Przy 50 000 tasków miesięcznie to już ok. 600–800
                         USD/mies.
@@ -146,14 +146,14 @@ export default function N8nVsZapierArticle() {
                         <li>
                           n8n Community self-hosted na VPS Hetznera (ok. 25
                           zł/mies. za serwer + ewentualnie 200–500 zł
-                          utrzymania) — praktycznie nielimitowana liczba wykonań
+                          utrzymania), praktycznie nielimitowana liczba wykonań
                         </li>
                         <li>
-                          n8n.cloud Starter (od ok. 24 EUR/mies.) — 2 500
+                          n8n.cloud Starter (od ok. 24 EUR/mies.), 2 500
                           wykonań scenariuszy (nie tasków, tylko całych runów)
                         </li>
                         <li>
-                          n8n.cloud Pro (od ok. 60 EUR/mies.) — 10 000 wykonań,
+                          n8n.cloud Pro (od ok. 60 EUR/mies.), 10 000 wykonań,
                           więcej userów
                         </li>
                       </ul>
@@ -200,23 +200,23 @@ export default function N8nVsZapierArticle() {
                       </p>
                       <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
                         <li>
-                          Linux + Docker (lub Docker Compose) — podstawowa
+                          Linux + Docker (lub Docker Compose), podstawowa
                           znajomość
                         </li>
                         <li>
-                          Reverse proxy (nginx, Caddy, Traefik) z SSL — webhooki
+                          Reverse proxy (nginx, Caddy, Traefik) z SSL, webhooki
                           muszą być dostępne z internetu
                         </li>
                         <li>
-                          Backup bazy danych (Postgres lub SQLite) — minimum
+                          Backup bazy danych (Postgres lub SQLite), minimum
                           codzienny snapshot
                         </li>
                         <li>
-                          Monitoring uptime — webhook do siebie samego co kilka
+                          Monitoring uptime, webhook do siebie samego co kilka
                           minut, alert gdy nie wraca
                         </li>
                         <li>
-                          Aktualizacje — n8n wypuszcza nową wersję co 1–2
+                          Aktualizacje, n8n wypuszcza nową wersję co 1–2
                           tygodnie, breaking changes raz na kilka miesięcy
                         </li>
                       </ul>
@@ -232,7 +232,7 @@ export default function N8nVsZapierArticle() {
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         To największa zaleta n8n self-hosted. Dane nigdy nie
-                        opuszczają Twojej infrastruktury — n8n je tylko przesuwa
+                        opuszczają Twojej infrastruktury, n8n je tylko przesuwa
                         między systemami, do których ma dostęp. W Zapierze każdy
                         rekord, który przechodzi przez automatyzację, jest
                         przetwarzany na serwerach Zapiera w USA.
@@ -247,7 +247,7 @@ export default function N8nVsZapierArticle() {
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Dodatkowo n8n może działać w sieci wewnętrznej i mieć
                         dostęp do systemów, które nie są wystawione na zewnątrz
-                        — on-prem CRM, baza księgowa, ERP w intranecie. Zapier z
+                       , on-prem CRM, baza księgowa, ERP w intranecie. Zapier z
                         natury rzeczy musi mieć publiczny endpoint, żeby
                         cokolwiek zrobić.
                       </p>
@@ -256,7 +256,7 @@ export default function N8nVsZapierArticle() {
                         Integracje i elastyczność
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Zapier ma więcej integracji w liczbach bezwzględnych —
+                        Zapier ma więcej integracji w liczbach bezwzględnych,
                         ok. 6 000 vs 500+ w n8n. Dla popularnych SaaS-ów to nie
                         ma znaczenia: HubSpot, Pipedrive, Salesforce, Slack,
                         Notion, Asana, Airtable, Google Workspace, Microsoft 365
@@ -273,7 +273,7 @@ export default function N8nVsZapierArticle() {
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Dodatkowo n8n pozwala pisać własne nodes (rozszerzenia w
                         TypeScripcie). Jeśli masz wewnętrzny system, do którego
-                        chcesz mieć ładny moduł — możesz go napisać raz i używać
+                        chcesz mieć ładny moduł, możesz go napisać raz i używać
                         we wszystkich workflow.
                       </p>
                     </div>
@@ -286,20 +286,20 @@ export default function N8nVsZapierArticle() {
                   <div className="py-10 lg:py-12">
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        Skalowalność — co się dzieje, gdy wolumen rośnie
+                        Skalowalność, co się dzieje, gdy wolumen rośnie
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Zapier skaluje się liniowo z kosztem. Każdy task to
-                        pieniądz. Przy małym wolumenie nieistotne, przy dużym —
+                        pieniądz. Przy małym wolumenie nieistotne, przy dużym,
                         bardzo bolesne. Plan Company kosztuje od ok. 599
                         USD/mies., a i tak ma limity tasków.
                       </p>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         n8n self-hosted skaluje się z mocą serwera. Mały VPS za
                         25 zł/mies. spokojnie udźwignie kilka tysięcy wykonań
-                        dziennie. Większy serwer za 200 zł — kilkanaście
+                        dziennie. Większy serwer za 200 zł, kilkanaście
                         tysięcy. Jeśli potrzebujesz więcej, n8n ma queue mode
-                        (Redis + workers) — możesz horyzontalnie skalować
+                        (Redis + workers), możesz horyzontalnie skalować
                         workery i obsługiwać setki tysięcy wykonań dziennie.
                         Koszt rośnie z infrastrukturą, nie z ilością operacji.
                       </p>
@@ -322,15 +322,15 @@ export default function N8nVsZapierArticle() {
                           jesteście gotowi tego opłacać na zewnątrz
                         </li>
                         <li>
-                          Wolumen jest mały (poniżej 1 000 tasków/mies.) —
+                          Wolumen jest mały (poniżej 1 000 tasków/mies.),
                           Zapier Free albo plan Starter wystarczy
                         </li>
                         <li>
                           Macie 5–10 prostych automatyzacji typu „przepisz dane
-                          z A do B" — overhead n8n nie ma sensu
+                          z A do B", overhead n8n nie ma sensu
                         </li>
                         <li>
-                          Cenicie sobie czas startu — chcecie mieć działającą
+                          Cenicie sobie czas startu, chcecie mieć działającą
                           automatyzację za godzinę, nie za tydzień
                         </li>
                         <li>
@@ -345,7 +345,7 @@ export default function N8nVsZapierArticle() {
                       </p>
 
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 mt-12">
-                        Hybrydowe podejście — najczęstszy układ
+                        Hybrydowe podejście, najczęstszy układ
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         W praktyce większość średnich firm jedzie hybrydowo.
@@ -359,11 +359,11 @@ export default function N8nVsZapierArticle() {
                       </p>
                       <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
                         <li>
-                          Zapier — kalendarz x Slack, formularze HR x Airtable,
+                          Zapier, kalendarz x Slack, formularze HR x Airtable,
                           newsletter x CRM
                         </li>
                         <li>
-                          n8n — pipeline leadów, synchronizacja CRM x ERP,
+                          n8n, pipeline leadów, synchronizacja CRM x ERP,
                           raportowanie sprzedażowe, integracja z systemem
                           księgowym
                         </li>
@@ -385,7 +385,7 @@ export default function N8nVsZapierArticle() {
                         >
                           Make vs n8n
                         </Link>{" "}
-                        — często to Make, a nie Zapier, bywa drugą nogą hybrydy.
+                       , często to Make, a nie Zapier, bywa drugą nogą hybrydy.
                       </p>
 
                       {/* Mid CTA */}
@@ -396,7 +396,7 @@ export default function N8nVsZapierArticle() {
                         </h2>
                         <p className="text-gray-600 dark:text-gray-400 mb-4">
                           Mogę wdrożyć n8n na Twoim serwerze albo zarządzać nim
-                          za Ciebie — pełna kontrola, zero administracji po
+                          za Ciebie, pełna kontrola, zero administracji po
                           Twojej stronie.
                         </p>
                         <Link href="/n8n" className="btn-primary inline-block">
@@ -479,7 +479,7 @@ export default function N8nVsZapierArticle() {
                         </h2>
                         <p className="text-gray-600 dark:text-gray-400 mb-4">
                           Audyt Twoich procesów i konkretne porównanie kosztów
-                          na 12 i 24 miesiące — bez sprzedażowej presji.
+                          na 12 i 24 miesiące, bez sprzedażowej presji.
                         </p>
                         <Link
                           href="/kontakt"
@@ -501,7 +501,7 @@ export default function N8nVsZapierArticle() {
                                 href="/strefa-wiedzy/zapier-vs-make"
                                 className="text-accent hover:underline"
                               >
-                                Zapier vs Make — co wybrać do automatyzacji w
+                                Zapier vs Make, co wybrać do automatyzacji w
                                 2026
                               </Link>
                             </li>
@@ -510,7 +510,7 @@ export default function N8nVsZapierArticle() {
                                 href="/strefa-wiedzy/make-vs-n8n"
                                 className="text-accent hover:underline"
                               >
-                                Make vs n8n — porównanie dla firm MŚP
+                                Make vs n8n, porównanie dla firm MŚP
                               </Link>
                             </li>
                             <li>
@@ -518,7 +518,7 @@ export default function N8nVsZapierArticle() {
                                 href="/strefa-wiedzy/zapier-make-n8n-porownanie"
                                 className="text-accent hover:underline"
                               >
-                                Zapier vs Make vs n8n — wielkie porównanie 2026
+                                Zapier vs Make vs n8n, wielkie porównanie 2026
                               </Link>
                             </li>
                             <li>
@@ -541,7 +541,7 @@ export default function N8nVsZapierArticle() {
                                 href="/n8n"
                                 className="text-accent hover:underline"
                               >
-                                n8n — wdrożenia i utrzymanie
+                                n8n, wdrożenia i utrzymanie
                               </Link>
                             </li>
                             <li>
@@ -580,7 +580,7 @@ export default function N8nVsZapierArticle() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Article",
-            headline: "n8n vs Zapier — kiedy warto iść w self-hosting",
+            headline: "n8n vs Zapier, kiedy warto iść w self-hosting",
             description:
               "Porównanie n8n i Zapier w 2026: pricing, krzywa nauki, kontrola danych, skalowalność i kiedy self-hosting realnie się opłaca. Praktyczne kryteria wyboru.",
             datePublished: "2026-04-19",

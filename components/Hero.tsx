@@ -12,7 +12,7 @@ export default function Hero() {
 
   return (
     <section className="relative pt-24 pb-12 lg:pt-32 lg:pb-16 overflow-hidden bg-mesh noise-overlay">
-      {/* Decorative gradient blobs — parallax layer */}
+      {/* Decorative gradient blobs, parallax layer */}
       <div
         ref={blobLayer}
         aria-hidden="true"
@@ -50,7 +50,7 @@ export default function Hero() {
           </p>
         </div>
 
-        {/* Interactive workflow — działający pipeline */}
+        {/* Interactive workflow, działający pipeline */}
         <div className="animate-fade-up-4 relative mb-12 lg:mb-16">
           <div
             aria-hidden="true"
@@ -90,7 +90,7 @@ export default function Hero() {
           </p>
         </div>
 
-        {/* Stats — reagują na hover/focus PathChooser */}
+        {/* Stats, reagują na hover/focus PathChooser */}
         <div className="animate-fade-up-4 border-t border-gray-200/60 dark:border-gray-800/60 pt-10">
           <p
             className="text-xs uppercase tracking-widest text-gray-400 dark:text-gray-500 text-center mb-6"

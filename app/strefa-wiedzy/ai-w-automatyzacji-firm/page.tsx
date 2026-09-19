@@ -7,11 +7,11 @@ import Tabs from "@/components/Tabs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 
 export const metadata: Metadata = {
-  title: "AI w automatyzacji firm — praktyczne zastosowania | Fluxlab",
+  title: "AI w automatyzacji firm, praktyczne zastosowania | Fluxlab",
   description:
     "Jak wykorzystać AI w automatyzacji firm: klasyfikacja zapytań, streszczenia, analiza treści, wsparcie obsługi i sprzedaży. Bez marketingowej mgły.",
   openGraph: {
-    title: "AI w automatyzacji firm — praktyczne zastosowania | Fluxlab",
+    title: "AI w automatyzacji firm, praktyczne zastosowania | Fluxlab",
     description:
       "Jak wykorzystać AI w automatyzacji firm: klasyfikacja zapytań, streszczenia, analiza treści, wsparcie obsługi i sprzedaży. Bez marketingowej mgły.",
     locale: "pl_PL",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Automatyzacja leadów, CRM i raportowania dla firm B2B",
+        alt: "Fluxlab, Automatyzacja leadów, CRM i raportowania dla firm B2B",
       },
     ],
   },
@@ -42,7 +42,7 @@ export default function AiWAutomatyzacjiFirmPage() {
           ]}
         />
 
-        {/* Nagłówek artykułu — kompaktowy */}
+        {/* Nagłówek artykułu, kompaktowy */}
         <section className="pt-24 pb-10">
           <div className="container-wide max-w-3xl mx-auto">
             <span className="section-label">Strefa wiedzy</span>
@@ -58,7 +58,7 @@ export default function AiWAutomatyzacjiFirmPage() {
           </div>
         </section>
 
-        {/* Treść w zakładkach — nic nie wycięte, podzielone wg rozdziałów */}
+        {/* Treść w zakładkach, nic nie wycięte, podzielone wg rozdziałów */}
         <div className="container-wide pb-8">
           <Tabs
             ariaLabel="Rozdziały artykułu"

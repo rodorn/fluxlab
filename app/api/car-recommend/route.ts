@@ -162,7 +162,7 @@ export async function POST(req: Request) {
     `Orientacyjny budżet: ${body.budget.toLocaleString("pl-PL")} PLN (podaj REALNE ceny, nie dopasowuj do budżetu!)`,
     `Typ samochodu: ${bodyStyleLabel}`,
     `Forma nadwozia: ${shapesLabel}`,
-    `SEGMENT: ${segmentLabel} — WIĘKSZOŚĆ modeli (min. 3 z 5 w każdej kategorii) musi być z segmentu ${body.segment}. Resztę możesz uzupełnić z: ${allowedSegments.join(", ")}. NIGDY niższe.`,
+    `SEGMENT: ${segmentLabel}, WIĘKSZOŚĆ modeli (min. 3 z 5 w każdej kategorii) musi być z segmentu ${body.segment}. Resztę możesz uzupełnić z: ${allowedSegments.join(", ")}. NIGDY niższe.`,
     `Minimalna moc silnika: ${body.hp || 150} KM`,
     `Pasażerowie: ${body.passengers} os.`,
     body.additionalInfo ? `Dodatkowe wymagania: ${body.additionalInfo}` : "",
@@ -181,7 +181,7 @@ export async function POST(req: Request) {
         max_output_tokens: body.extended ? 32000 : 16000,
         instructions: `Ekspert motoryzacyjny, rynek polski. Data: ${new Date().toISOString().split("T")[0]}.
 
-NAJWAŻNIEJSZE — SEGMENT: minimum ${body.segment}, dopuszczalne też wyższe (${allowedSegments.join(", ")}), NIGDY niższe. Zacznij od NAJNIŻSZEGO dopuszczalnego segmentu, w którym istnieją modele spełniające wymaganą moc. NIE przeskakuj do wyższych segmentów jeśli w niższych są pasujące modele (np. segment B z 250+ KM: Toyota Yaris GR; segment C: Golf GTI/R, Civic Type R, i30 N, Megane RS). W każdej kategorii wiekowej najpierw szukaj modeli z najniższego pasującego segmentu, dopiero potem uzupełniaj wyższymi.
+NAJWAŻNIEJSZE, SEGMENT: minimum ${body.segment}, dopuszczalne też wyższe (${allowedSegments.join(", ")}), NIGDY niższe. Zacznij od NAJNIŻSZEGO dopuszczalnego segmentu, w którym istnieją modele spełniające wymaganą moc. NIE przeskakuj do wyższych segmentów jeśli w niższych są pasujące modele (np. segment B z 250+ KM: Toyota Yaris GR; segment C: Golf GTI/R, Civic Type R, i30 N, Megane RS). W każdej kategorii wiekowej najpierw szukaj modeli z najniższego pasującego segmentu, dopiero potem uzupełniaj wyższymi.
 
 Dzisiejszy rok: ${new Date().getFullYear()}. Zaproponuj samochody w 6 kategoriach wiekowych:
 - Nowe (yearFrom >= ${new Date().getFullYear() - 1})
@@ -191,7 +191,7 @@ Dzisiejszy rok: ${new Date().getFullYear()}. Zaproponuj samochody w 6 kategoriac
 - 12-18 lat (yearFrom ${new Date().getFullYear() - 18}–${new Date().getFullYear() - 12})
 - Powyżej 18 lat (yearFrom < ${new Date().getFullYear() - 18}, czyli PRZED ${new Date().getFullYear() - 18} rokiem)
 WAŻNE: Auto z yearFrom=2008 w roku ${new Date().getFullYear()} ma ${new Date().getFullYear() - 2008} lat → kategoria ${new Date().getFullYear() - 2008 <= 18 ? "12-18 lat" : "Powyżej 18 lat"}. Licz poprawnie!
-Podaj do ${body.extended ? 8 : 5} modeli na kategorię. Jeśli w danej kategorii nie istnieją modele spełniające kryteria (typ, segment, moc) — zwróć pustą tablicę cars: []. NIGDY nie wstawiaj modelu do kategorii, w której się nie mieści wiekiem. Lepiej zwrócić 0-1 modeli niż kłamać.
+Podaj do ${body.extended ? 8 : 5} modeli na kategorię. Jeśli w danej kategorii nie istnieją modele spełniające kryteria (typ, segment, moc), zwróć pustą tablicę cars: []. NIGDY nie wstawiaj modelu do kategorii, w której się nie mieści wiekiem. Lepiej zwrócić 0-1 modeli niż kłamać.
 
 TYP SAMOCHODU: użytkownik wybrał "${bodyStyleLabel}". Rekomenduj WYŁĄCZNIE samochody tego typu.
 ${body.bodyStyle === "sedan" ? "OSOBOWY = wszystkie formy nadwozia osobowego: sedan, hatchback, kombi, liftback, coupe, cabrio. Np. VW Golf, Toyota Corolla, BMW 3, Mazda 3, Audi A3, Toyota Yaris GR (hot hatch B-segment!). NIE ograniczaj się do klasycznych sedanów." : ""}${body.bodyStyle === "van" ? "VAN = samochody dostawczo-osobowe i vany (np. VW Transporter, Mercedes Vito, Renault Trafic, Ford Transit Custom, Toyota Proace, Opel Vivaro, VW Caddy, Citroën Berlingo). NIE zwracaj sedanów, SUV-ów ani crossoverów." : ""}${body.bodyStyle === "suv" ? "SUV = duże SUV-y (np. Toyota Land Cruiser, BMW X5, Hyundai Santa Fe, Kia Sorento). NIE zwracaj sedanów, vanów ani crossoverów." : ""}${body.bodyStyle === "crossover" ? "CROSSOVER = kompaktowe crossovery/SUV-y (np. Toyota RAV4, Mazda CX-5, VW Tiguan, Hyundai Tucson). NIE zwracaj sedanów, vanów ani dużych SUV-ów." : ""}${body.bodyStyle === "terenowy" ? "TERENOWY = samochody terenowe (np. Jeep Wrangler, Toyota Land Cruiser, Suzuki Jimny, Land Rover Defender). NIE zwracaj sedanów, crossoverów ani vanów." : ""}${body.bodyStyle === "sportowy" ? "SPORTOWY = samochody sportowe (np. Mazda MX-5, Toyota GR86, BMW M2, Porsche Cayman). NIE zwracaj sedanów, vanów ani SUV-ów." : ""}
@@ -214,12 +214,12 @@ WTRYSK – directInjection dotyczy TYLKO silników benzynowych (dla diesli zawsz
   Przykłady TRUE (modele): Lexus GS300/GS350/GS450h (2005+), Lexus IS250/IS350 (2005+), Lexus LS460 (2006+), Toyota Crown/Mark X (2004+), VW Golf GTI/R, Audi A4/A6 TFSI, BMW 320i/328i/330i (E90+), Mazda 3/6/CX-5 Skyactiv-G.
 - directInjection: false = TYLKO wtrysk pośredni (port injection), BEZ jakichkolwiek wtryskiwaczy bezpośrednich. Pełne LPG bez spalania benzyny.
   Przykłady FALSE (kody): Toyota 2GR-FE (port only), 1ZZ-FE, 2ZR-FE, 2ZR-FXE (hybryda 1.8), 1MZ-FE, VW MPI (1.6 MPI), Hyundai/Kia MPI, Honda K20A/R20A.
-  Przykłady FALSE (modele): Toyota 1.8 Hybrid (Corolla, Prius, C-HR — silnik 2ZR-FXE = port injection!), Toyota 1.5 Hybrid (Yaris, Yaris Cross — silnik M15A-FXE = port injection!), Toyota Camry V6 (2GR-FE, do 2017), Honda Jazz Hybrid, Honda Accord 2.0/2.4, Hyundai i30 1.6 MPI, VW Polo 1.6 MPI.
+  Przykłady FALSE (modele): Toyota 1.8 Hybrid (Corolla, Prius, C-HR, silnik 2ZR-FXE = port injection!), Toyota 1.5 Hybrid (Yaris, Yaris Cross, silnik M15A-FXE = port injection!), Toyota Camry V6 (2GR-FE, do 2017), Honda Jazz Hybrid, Honda Accord 2.0/2.4, Hyundai i30 1.6 MPI, VW Polo 1.6 MPI.
   Przykłady TRUE (hybrydy z DI): Toyota Corolla/RAV4/Camry 2.0/2.5 Hybrid (Dynamic Force M20A/A25A = direct injection), Lexus ES/NX/RX hybrid (2.5 DI).
 WAŻNE: Jeśli w nazwie silnika jest FSI/GDI/D-4/D-4S/TSI/TFSI → directInjection: true. W kodach Toyota/Lexus: "FE" = port injection (false), "FSE" = direct injection (true). Lexus GS300 ma 3GR-FSE = TRUE. W razie wątpliwości ustaw true (bezpieczniej zawyżyć koszt LPG).
 LATA PRODUKCJI: yearFrom i yearTo to PEŁNY zakres produkcji danej generacji, NIE pojedynczy rok. Np. BMW X6 E71: yearFrom=2008, yearTo=2014. BMW X4 F26: yearFrom=2014, yearTo=2018. NIGDY nie podawaj tego samego roku w obu polach.
-OPISY (pros): 3-4 zdania opisujące CHARAKTER i TOŻSAMOŚĆ modelu — co go wyróżnia, jak się prowadzi, jakie emocje budzi, z czego jest znany. NIE powtarzaj danych technicznych (spalanie, moc — to już jest w interfejsie). Przykład: "Kultowy SUV coupe, który zapoczątkował cały segment. Agresywna sylwetka przyciąga spojrzenia. Zaskakująco zwinny jak na swoje rozmiary. Prestiż marki BMW w wydaniu off-roadowym."
-WADY (cons): 2-3 konkretne, praktyczne uwagi — na co uważać przy zakupie tego modelu (typowe usterki, koszty eksploatacji, znane problemy generacji).
+OPISY (pros): 3-4 zdania opisujące CHARAKTER i TOŻSAMOŚĆ modelu, co go wyróżnia, jak się prowadzi, jakie emocje budzi, z czego jest znany. NIE powtarzaj danych technicznych (spalanie, moc, to już jest w interfejsie). Przykład: "Kultowy SUV coupe, który zapoczątkował cały segment. Agresywna sylwetka przyciąga spojrzenia. Zaskakująco zwinny jak na swoje rozmiary. Prestiż marki BMW w wydaniu off-roadowym."
+WADY (cons): 2-3 konkretne, praktyczne uwagi, na co uważać przy zakupie tego modelu (typowe usterki, koszty eksploatacji, znane problemy generacji).
 UNIKALNE MODELE: w każdej kategorii wiekowej podaj 5 RÓŻNYCH modeli. NIE powtarzaj tego samego modelu w sąsiednich kategoriach (np. jeśli BMW X6 E71 jest w 12-18 lat, NIE dawaj go też w Powyżej 18 lat).
 FORMAT: konkretne silniki ("2.0 TDI 150KM"), konkretne generacje ("F30", "B8"). Popularne w Polsce.
 

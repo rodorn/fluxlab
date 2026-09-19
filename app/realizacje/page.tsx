@@ -6,12 +6,12 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import TrackedCTA from "@/components/TrackedCTA";
 
 export const metadata: Metadata = {
-  title: "Realizacje — otwarty kod i działające narzędzia | Fluxlab",
+  title: "Realizacje, otwarty kod i działające narzędzia | Fluxlab",
   description:
     "Publiczne repozytoria i działające prototypy Fluxlab: integracje API, automatyzacje, scraping, audyty i wideo AI. Zamiast obietnic, kod i live demo do obejrzenia.",
   alternates: { canonical: "/realizacje" },
   openGraph: {
-    title: "Realizacje — otwarty kod i działające narzędzia | Fluxlab",
+    title: "Realizacje, otwarty kod i działające narzędzia | Fluxlab",
     description:
       "Publiczne repozytoria i działające prototypy Fluxlab: integracje API, automatyzacje, scraping, audyty i wideo AI.",
     locale: "pl_PL",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Realizacje",
+        alt: "Fluxlab, Realizacje",
       },
     ],
   },
@@ -98,7 +98,7 @@ const GROUPS: Group[] = [
       "Łączenie systemów sprzedażowych i magazynowych: BaseLinker, Shopify, GoHighLevel, KSeF.",
     items: [
       {
-        name: "BaseLinker — klient API i eksport zamówień",
+        name: "BaseLinker, klient API i eksport zamówień",
         desc: "Podwykonawstwo integracji BaseLinker w Pythonie: pobieranie i eksport zamówień, mapowanie danych, testy i CI.",
         stack: ["Python", "BaseLinker API", "CI"],
         repo: `${GH}/fluxlab-baselinker-integracje`,
@@ -110,14 +110,14 @@ const GROUPS: Group[] = [
         repo: `${GH}/fluxlab-baselinker-shopify-sync`,
       },
       {
-        name: "GoHighLevel — webhook leadów i integracje",
+        name: "GoHighLevel, webhook leadów i integracje",
         desc: "Odbiór leadów z GoHighLevel przez webhook i przekazywanie do zewnętrznych systemów oraz arkuszy.",
         stack: ["Python", "Webhooki", "REST"],
         repo: `${GH}/fluxlab-ghl-integration`,
       },
       {
         name: "Integracja KSeF 2.0",
-        desc: "Obsługa Krajowego Systemu e-Faktur (API v2, format FA(3)) — wysyłka i pobieranie faktur.",
+        desc: "Obsługa Krajowego Systemu e-Faktur (API v2, format FA(3)), wysyłka i pobieranie faktur.",
         stack: ["Python", "KSeF API v2", "FA(3)"],
         repo: `${GH}/fluxlab-ksef-integracja`,
       },
@@ -129,7 +129,7 @@ const GROUPS: Group[] = [
       "Scraping, scoring i przepływy, które zamieniają rozproszone dane w gotowe do działania sygnały.",
     items: [
       {
-        name: "Deal-alerts — silnik płatnego feedu",
+        name: "Deal-alerts, silnik płatnego feedu",
         desc: "Scraper + scoring okazji + model subskrypcji: wykrywanie i dystrybucja alertów o okazjach.",
         stack: ["Python", "Scraping", "Scoring"],
         repo: `${GH}/fluxlab-deal-alerts-bot`,
@@ -142,12 +142,12 @@ const GROUPS: Group[] = [
       },
       {
         name: "Listings API (FastAPI)",
-        desc: "Znormalizowane dane ogłoszeń jako API — gotowe pod publikację na RapidAPI Hub.",
+        desc: "Znormalizowane dane ogłoszeń jako API, gotowe pod publikację na RapidAPI Hub.",
         stack: ["Python", "FastAPI", "REST"],
         repo: `${GH}/fluxlab-listings-api`,
       },
       {
-        name: "Workflow n8n — pozyskiwanie i ocena leadów",
+        name: "Workflow n8n, pozyskiwanie i ocena leadów",
         desc: "Gotowy przepływ n8n łączący scraping, ocenę leadów i powiadomienia.",
         stack: ["n8n", "Python", "API"],
         repo: `${GH}/fluxlab-n8n-lead-workflow`,
@@ -203,14 +203,14 @@ const GROUPS: Group[] = [
       "Generowanie treści wideo z lektorem AI oraz interaktywne prototypy produktowe.",
     items: [
       {
-        name: "Faceless AI video — pełny potok",
+        name: "Faceless AI video, pełny potok",
         desc: "Scenariusz → lektor AI (ElevenLabs, polski głos) → napisy → montaż FFmpeg → gotowy pionowy klip 9:16, z opcją tła wideo.",
         stack: ["Python", "ElevenLabs", "FFmpeg"],
         repo: `${GH}/fluxlab-faceless-ai-video`,
       },
       {
-        name: "PMGMOTO+ — prototyp aplikacji mobilnej",
-        desc: "Premium prototyp PWA (cyfrowy garaż / prywatne biuro motoryzacyjne) — 5 ekranów, do obejrzenia na żywo.",
+        name: "PMGMOTO+, prototyp aplikacji mobilnej",
+        desc: "Premium prototyp PWA (cyfrowy garaż / prywatne biuro motoryzacyjne), 5 ekranów, do obejrzenia na żywo.",
         stack: ["PWA", "UI/UX", "Prototyp"],
         repo: `${GH}/fluxlab-pmgmoto-plus`,
         live: "https://rodorn.github.io/fluxlab-pmgmoto-plus/",
@@ -250,7 +250,7 @@ export default function RealizacjePage() {
               Realizacje
             </p>
             <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white">
-              Zamiast obietnic — otwarty kod i działające narzędzia
+              Zamiast obietnic, otwarty kod i działające narzędzia
             </h1>
             <p className="mt-5 text-lg text-gray-600 dark:text-gray-300">
               Poniżej publiczne repozytoria i prototypy Fluxlab. Każdy projekt

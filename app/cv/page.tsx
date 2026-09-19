@@ -5,7 +5,7 @@ import RevealOnScroll from "@/components/RevealOnScroll";
 import CountUp from "@/components/CountUp";
 
 export const metadata: Metadata = {
-  title: "Paweł Iwanek — Software Engineer / Automation Engineer",
+  title: "Paweł Iwanek, Software Engineer / Automation Engineer",
   description:
     "Interaktywne CV. Software Engineer z kilkuletnim doświadczeniem w Pythonie, automatyzacji procesów i przetwarzaniu danych.",
   robots: { index: false, follow: false },
@@ -21,7 +21,7 @@ const STATS = [
 
 const EXPERIENCE = [
   {
-    period: "04.2025 — obecnie",
+    period: "04.2025, obecnie",
     company: "Stermedia",
     role: "Software Engineer / Automation Engineer (Python)",
     points: [
@@ -33,7 +33,7 @@ const EXPERIENCE = [
     ],
   },
   {
-    period: "02.2022 — 04.2025",
+    period: "02.2022, 04.2025",
     company: "Carmore",
     role: "Software Engineer / Automation Engineer (Python)",
     points: [
@@ -45,7 +45,7 @@ const EXPERIENCE = [
     ],
   },
   {
-    period: "07.2020 — 02.2022",
+    period: "07.2020, 02.2022",
     company: "Carberry",
     role: "Automation / Software Engineer",
     points: [
@@ -313,7 +313,7 @@ export default function CVPage() {
         </div>
       </section>
 
-      {/* Doświadczenie — timeline */}
+      {/* Doświadczenie, timeline */}
       <section className="container-wide py-16 lg:py-20">
         <RevealOnScroll>
           <SectionTitle>Doświadczenie</SectionTitle>
@@ -430,7 +430,7 @@ export default function CVPage() {
         </div>
       </section>
 
-      {/* Dół — 2 kolumny */}
+      {/* Dół, 2 kolumny */}
       <section className="bg-gray-50 dark:bg-gray-900/40 border-t border-gray-100 dark:border-gray-800">
         <div className="container-wide py-16 lg:py-20 grid lg:grid-cols-2 gap-x-14 gap-y-12">
           {/* Lewa: wykształcenie + języki + szkolenia */}
@@ -439,7 +439,7 @@ export default function CVPage() {
               <div>
                 <SectionTitle>Wykształcenie</SectionTitle>
                 <p className="text-xs font-mono uppercase tracking-widest text-accent mb-1">
-                  10.2019 — 04.2023
+                  10.2019, 04.2023
                 </p>
                 <h3 className="text-lg font-bold text-gray-900 dark:text-white">
                   Szkoła Główna Handlowa
@@ -540,7 +540,7 @@ export default function CVPage() {
         </div>
       </section>
 
-      {/* Stopka — klauzula RODO */}
+      {/* Stopka, klauzula RODO */}
       <footer className="container-wide py-8">
         <p className="text-[11px] leading-relaxed text-gray-400 dark:text-gray-600 max-w-3xl">
           Wyrażam zgodę na przetwarzanie moich danych osobowych dla potrzeb

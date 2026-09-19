@@ -50,7 +50,7 @@ export default function Process() {
         </RevealOnScroll>
 
         <div className="relative grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-          {/* Ciągła linia progresji — desktop, biegnie przez wszystkie kółka */}
+          {/* Ciągła linia progresji, desktop, biegnie przez wszystkie kółka */}
           <div
             aria-hidden="true"
             className="hidden lg:block absolute top-7 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-accent/10 via-accent/40 to-accent/10"
@@ -62,7 +62,7 @@ export default function Process() {
               delay={Math.min(index + 1, 4) as 1 | 2 | 3 | 4}
               className="relative"
             >
-              {/* Pionowa linia łącząca — mobile / tablet */}
+              {/* Pionowa linia łącząca, mobile / tablet */}
               {index < steps.length - 1 && (
                 <div
                   aria-hidden="true"

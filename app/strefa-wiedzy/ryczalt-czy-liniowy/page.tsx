@@ -23,7 +23,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Automatyzacja leadów, CRM i raportowania dla firm B2B",
+        alt: "Fluxlab, Automatyzacja leadów, CRM i raportowania dla firm B2B",
       },
     ],
   },
@@ -52,7 +52,7 @@ export default function RyczaltCzyLiniowyArticle() {
     {
       question: "Czy freelancer IT powinien wybrać ryczałt?",
       answer:
-        "Przy stawce ryczałtu 12% i niskich kosztach (typowe dla freelancera IT pracującego zdalnie) ryczałt zazwyczaj wygrywa. Ale jeśli masz duże koszty — drogi sprzęt, coworking, podróże — warto przeliczyć też liniowy.",
+        "Przy stawce ryczałtu 12% i niskich kosztach (typowe dla freelancera IT pracującego zdalnie) ryczałt zazwyczaj wygrywa. Ale jeśli masz duże koszty, drogi sprzęt, coworking, podróże, warto przeliczyć też liniowy.",
     },
   ];
 
@@ -72,13 +72,13 @@ export default function RyczaltCzyLiniowyArticle() {
           <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
             <span className="section-label">Strefa wiedzy</span>
             <h1 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">
-              Ryczałt czy liniowy — co się bardziej opłaca w 2026
+              Ryczałt czy liniowy, co się bardziej opłaca w 2026
             </h1>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
               Ryczałt i podatek liniowy to dwie najpopularniejsze formy
               opodatkowania wśród przedsiębiorców na B2B. Obie brzmią prosto:
               ryczałt od przychodu, liniowy 19% od dochodu. Ale diabeł tkwi w
-              szczegółach — składka zdrowotna, koszty, VAT i stawka ryczałtu
+              szczegółach, składka zdrowotna, koszty, VAT i stawka ryczałtu
               mogą zmienić wynik o kilka tysięcy złotych rocznie.
             </p>
           </div>
@@ -94,11 +94,11 @@ export default function RyczaltCzyLiniowyArticle() {
                   <div className="py-10 lg:py-12">
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        Ryczałt — jak działa
+                        Ryczałt, jak działa
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Ryczałt ewidencjonowany to podatek od przychodu. Nie
-                        odliczasz kosztów uzyskania przychodu — płacisz procent
+                        odliczasz kosztów uzyskania przychodu, płacisz procent
                         od tego, co wpłynęło na konto (pomniejszone o VAT, jeśli
                         jesteś VATowcem).
                       </p>
@@ -118,7 +118,7 @@ export default function RyczaltCzyLiniowyArticle() {
                           Brak możliwości odliczenia kosztów uzyskania przychodu
                         </li>
                         <li>
-                          Składka zdrowotna zryczałtowana — trzy progi zależne
+                          Składka zdrowotna zryczałtowana, trzy progi zależne
                           od rocznego przychodu (ok. 420, 700 lub 940 zł
                           miesięcznie w 2026)
                         </li>
@@ -134,12 +134,12 @@ export default function RyczaltCzyLiniowyArticle() {
                       </p>
 
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 mt-12">
-                        Liniowy — jak działa
+                        Liniowy, jak działa
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Podatek liniowy to stała stawka 19% od dochodu, czyli od
                         przychodu pomniejszonego o koszty uzyskania przychodu.
-                        Nie ma progów, nie ma kwoty wolnej — ale możesz odliczać
+                        Nie ma progów, nie ma kwoty wolnej, ale możesz odliczać
                         wszystkie uzasadnione koszty działalności.
                       </p>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
@@ -186,11 +186,11 @@ export default function RyczaltCzyLiniowyArticle() {
                       </p>
                       <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
                         <li>
-                          Twoje koszty uzyskania przychodu są niskie — poniżej
+                          Twoje koszty uzyskania przychodu są niskie, poniżej
                           20–30% przychodu
                         </li>
                         <li>
-                          Twoja stawka ryczałtu jest niska — 12% lub mniej
+                          Twoja stawka ryczałtu jest niska, 12% lub mniej
                         </li>
                         <li>
                           Nie planujesz dużych zakupów (sprzęt, samochód, remont
@@ -202,7 +202,7 @@ export default function RyczaltCzyLiniowyArticle() {
                           zryczałtowana na ryczałcie
                         </li>
                         <li>
-                          Cenisz prostotę — ryczałt wymaga prostszej ewidencji
+                          Cenisz prostotę, ryczałt wymaga prostszej ewidencji
                         </li>
                       </ul>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
@@ -340,7 +340,7 @@ export default function RyczaltCzyLiniowyArticle() {
                       </ul>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Wniosek: próg, przy którym liniowy zaczyna wygrywać z
-                        ryczałtem, zależy od trzech zmiennych — stawki ryczałtu,
+                        ryczałtem, zależy od trzech zmiennych, stawki ryczałtu,
                         poziomu kosztów i składki zdrowotnej. Nie da się podać
                         jednej uniwersalnej liczby.
                       </p>
@@ -351,7 +351,7 @@ export default function RyczaltCzyLiniowyArticle() {
                           Sprawdź na swoich liczbach
                         </h2>
                         <p className="text-gray-600 dark:text-gray-400 mb-4">
-                          Wpisz swój przychód, koszty i stawkę ryczałtu —
+                          Wpisz swój przychód, koszty i stawkę ryczałtu,
                           kalkulator pokaże, która forma jest tańsza.
                         </p>
                         <Link
@@ -363,7 +363,7 @@ export default function RyczaltCzyLiniowyArticle() {
                       </div>
 
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 mt-12">
-                        Składka zdrowotna — decydujący czynnik
+                        Składka zdrowotna, decydujący czynnik
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Składka zdrowotna w 2026 roku to często ten element,
@@ -434,7 +434,7 @@ export default function RyczaltCzyLiniowyArticle() {
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Samochód w leasingu to jeden z najczęstszych kosztów w
                         JDG. Na ryczałcie nie odliczysz rat leasingu, paliwa ani
-                        eksploatacji. Na liniowym — tak. Jeśli samochód kosztuje
+                        eksploatacji. Na liniowym, tak. Jeśli samochód kosztuje
                         Cię 3 000 zł miesięcznie, to 36 000 zł rocznie
                         nieodliczonych kosztów.
                       </p>
@@ -460,9 +460,9 @@ export default function RyczaltCzyLiniowyArticle() {
                       </p>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Klucz do dobrej decyzji: nie patrzeć na samą stawkę
-                        podatkową, ale na łączne obciążenie — podatek plus
+                        podatkową, ale na łączne obciążenie, podatek plus
                         składka zdrowotna, z uwzględnieniem kosztów. A najlepiej
-                        — policzyć na konkretnych liczbach w kalkulatorze.
+                       , policzyć na konkretnych liczbach w kalkulatorze.
                       </p>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Pamiętaj: zmiana formy jest możliwa raz w roku, do 20
@@ -526,7 +526,7 @@ export default function RyczaltCzyLiniowyArticle() {
                           Nie wiesz, która forma jest lepsza dla Ciebie?
                         </h2>
                         <p className="text-gray-600 dark:text-gray-400 mb-4">
-                          Napisz do mnie — pomogę policzyć i wybrać optymalną
+                          Napisz do mnie, pomogę policzyć i wybrać optymalną
                           formę opodatkowania.
                         </p>
                         <Link
@@ -557,7 +557,7 @@ export default function RyczaltCzyLiniowyArticle() {
                                 href="/strefa-wiedzy/skala-czy-liniowy-jdg"
                                 className="text-accent hover:underline"
                               >
-                                Skala czy liniowy — porównanie dla JDG w 2026
+                                Skala czy liniowy, porównanie dla JDG w 2026
                               </Link>
                             </li>
                             <li>

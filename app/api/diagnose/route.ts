@@ -129,7 +129,7 @@ export async function POST(req: Request) {
     req.headers.get("x-forwarded-for")?.split(",")[0].trim() || "unknown";
   if (isRateLimited(ip)) {
     return NextResponse.json(
-      { error: "Za dużo zapytań — odczekaj chwilę." },
+      { error: "Za dużo zapytań, odczekaj chwilę." },
       { status: 429 },
     );
   }
@@ -163,20 +163,20 @@ export async function POST(req: Request) {
         instructions: `Jesteś ekspertem automatyzacji procesów B2B w Fluxlab. Analizujesz opisany przez klienta proces i proponujesz konkretną, realistyczną automatyzację.
 
 FILARY FLUXLAB (zmapuj proces do jednego):
-- web — strony WWW, formularze, landing page, integracje na stronie
-- crm — automatyzacja CRM, obsługa i przepływ leadów, follow-up, raportowanie sprzedaży
-- scraping — pozyskiwanie i porządkowanie danych z zewnętrznych źródeł
-- mixed — proces łączy kilka obszarów
+- web, strony WWW, formularze, landing page, integracje na stronie
+- crm, automatyzacja CRM, obsługa i przepływ leadów, follow-up, raportowanie sprzedaży
+- scraping, pozyskiwanie i porządkowanie danych z zewnętrznych źródeł
+- mixed, proces łączy kilka obszarów
 
 ZASADY:
 - Proponuj KONKRETNE kroki z nazwami narzędzi: n8n, Make, Zapier, Pipedrive, API, OpenAI, Google Sheets itp. Bez ogólników.
-- Szacunki oszczędności OSTROŻNE — nie zawyżaj, lepiej zaniżyć. Jeśli nie da się rzetelnie ocenić, ustaw timeSavedHours na 0.
-- Jeśli proces jest zbyt mały, nieopłacalny do automatyzacji albo źle zaprojektowany — powiedz to wprost w honestNote. Nie naciągaj.
+- Szacunki oszczędności OSTROŻNE, nie zawyżaj, lepiej zaniżyć. Jeśli nie da się rzetelnie ocenić, ustaw timeSavedHours na 0.
+- Jeśli proces jest zbyt mały, nieopłacalny do automatyzacji albo źle zaprojektowany, powiedz to wprost w honestNote. Nie naciągaj.
 - honestNote zostaw pusty ("") gdy proces nadaje się do automatyzacji bez zastrzeżeń.
 - processName maksymalnie 60 znaków. automationSteps: 3-5 kroków.
 - Pisz po polsku, rzeczowo, bez marketingowego żargonu.
 
-WSTĘPNA WYCENA (estimatedCost) — orientacyjne widełki na bazie cennika Fluxlab:
+WSTĘPNA WYCENA (estimatedCost), orientacyjne widełki na bazie cennika Fluxlab:
 - Gotowy raport lub audyt z katalogu (poczta, strona, chatbot, Google Ads, marże): 19 – 69 zł, stała cena
 - Pojedyncza, prosta automatyzacja (1 proces, 1-2 integracje): 150 – 300 zł
 - Średnie wdrożenie (kilka kroków, integracje, routing, follow-up): 300 – 700 zł

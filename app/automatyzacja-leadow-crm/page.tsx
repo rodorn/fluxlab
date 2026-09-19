@@ -22,7 +22,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Automatyzacja leadów, CRM i raportowania dla firm B2B",
+        alt: "Fluxlab, Automatyzacja leadów, CRM i raportowania dla firm B2B",
       },
     ],
   },
@@ -123,7 +123,7 @@ export default function AutomatyzacjaLeadowCRM() {
       <main className="pt-16">
         <Breadcrumbs items={[{ label: "Automatyzacja leadów i CRM" }]} />
 
-        {/* Hero — kompaktowy */}
+        {/* Hero, kompaktowy */}
         <section className="relative overflow-hidden pt-24 pb-12">
           <div className="blob blob-accent w-[40rem] h-[40rem] -top-40 -right-40 animate-drift-slow" />
           <div className="container-wide relative">
@@ -151,7 +151,7 @@ export default function AutomatyzacjaLeadowCRM() {
           </div>
         </section>
 
-        {/* Treść w zakładkach — nic nie wycięte, podzielone */}
+        {/* Treść w zakładkach, nic nie wycięte, podzielone */}
         <section className="container-wide pb-16">
           <ProductGrid category="automatyzacja" showHeading />
         </section>

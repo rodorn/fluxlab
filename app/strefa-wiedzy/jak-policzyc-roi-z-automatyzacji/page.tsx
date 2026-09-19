@@ -9,11 +9,11 @@ import Tabs from "@/components/Tabs";
 export const metadata: Metadata = {
   title: "Jak policzyć ROI z automatyzacji? Prosty model dla firm | Fluxlab",
   description:
-    "Zobacz, jak policzyć ROI z automatyzacji procesów biznesowych. Oszczędność czasu, koszt pracy, błędy, opóźnienia i wpływ na sprzedaż — bez marketingowej mgły.",
+    "Zobacz, jak policzyć ROI z automatyzacji procesów biznesowych. Oszczędność czasu, koszt pracy, błędy, opóźnienia i wpływ na sprzedaż, bez marketingowej mgły.",
   openGraph: {
     title: "Jak policzyć ROI z automatyzacji? Prosty model dla firm | Fluxlab",
     description:
-      "Zobacz, jak policzyć ROI z automatyzacji procesów biznesowych. Oszczędność czasu, koszt pracy, błędy, opóźnienia i wpływ na sprzedaż — bez marketingowej mgły.",
+      "Zobacz, jak policzyć ROI z automatyzacji procesów biznesowych. Oszczędność czasu, koszt pracy, błędy, opóźnienia i wpływ na sprzedaż, bez marketingowej mgły.",
     locale: "pl_PL",
     type: "article",
     images: [
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Automatyzacja leadów, CRM i raportowania dla firm B2B",
+        alt: "Fluxlab, Automatyzacja leadów, CRM i raportowania dla firm B2B",
       },
     ],
   },
@@ -56,13 +56,13 @@ export default function RoiAutomatyzacjiArticle() {
             </p>
             <p className="mt-4 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
               Problem w tym, że ROI z automatyzacji bardzo często da się
-              policzyć znacznie prościej, niż się wydaje — pod warunkiem, że nie
+              policzyć znacznie prościej, niż się wydaje, pod warunkiem, że nie
               próbujesz budować idealnego modelu na start.
             </p>
           </div>
         </section>
 
-        {/* Treść w zakładkach — nic nie wycięte, podzielone wg rozdziałów */}
+        {/* Treść w zakładkach, nic nie wycięte, podzielone wg rozdziałów */}
         <div className="container-wide pb-20">
           <Tabs
             ariaLabel="Rozdziały artykułu o liczeniu ROI z automatyzacji"
@@ -445,7 +445,7 @@ export default function RoiAutomatyzacjiArticle() {
                         href="/strefa-wiedzy/integracje-api-w-firmie-kiedy-warto"
                         className="text-accent hover:underline"
                       >
-                        Integracje API w firmie — kiedy warto
+                        Integracje API w firmie, kiedy warto
                       </Link>{" "}
                       oraz{" "}
                       <Link
@@ -634,7 +634,7 @@ export default function RoiAutomatyzacjiArticle() {
                               href="/strefa-wiedzy/integracje-api-w-firmie-kiedy-warto"
                               className="text-accent hover:underline"
                             >
-                              Integracje API w firmie — kiedy warto
+                              Integracje API w firmie, kiedy warto
                             </Link>
                           </li>
                           <li>
@@ -710,7 +710,7 @@ export default function RoiAutomatyzacjiArticle() {
             "@type": "Article",
             headline: "Jak policzyć ROI z automatyzacji",
             description:
-              "Zobacz, jak policzyć ROI z automatyzacji procesów biznesowych. Oszczędność czasu, koszt pracy, błędy, opóźnienia i wpływ na sprzedaż — bez marketingowej mgły.",
+              "Zobacz, jak policzyć ROI z automatyzacji procesów biznesowych. Oszczędność czasu, koszt pracy, błędy, opóźnienia i wpływ na sprzedaż, bez marketingowej mgły.",
             datePublished: "2026-03-30",
             author: {
               "@type": "Organization",

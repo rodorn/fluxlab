@@ -5,7 +5,7 @@ const steps = [
   {
     n: "1",
     title: "Lead wpada",
-    desc: "Formularz, reklama, e-mail albo landing page — wszystkie źródła trafiają do jednego procesu.",
+    desc: "Formularz, reklama, e-mail albo landing page, wszystkie źródła trafiają do jednego procesu.",
     accent: false,
   },
   {
@@ -17,19 +17,19 @@ const steps = [
   {
     n: "3",
     title: "CRM: osoba + firma + deal",
-    desc: "Lead automatycznie trafia do CRM jako osoba, firma i deal — z odpowiednim etapem i polami.",
+    desc: "Lead automatycznie trafia do CRM jako osoba, firma i deal, z odpowiednim etapem i polami.",
     accent: true,
   },
   {
     n: "4",
     title: "Routing do handlowca",
-    desc: "Reguły: region, produkt, źródło, obciążenie pipeline'u — handlowiec dostaje przypisany lead.",
+    desc: "Reguły: region, produkt, źródło, obciążenie pipeline'u, handlowiec dostaje przypisany lead.",
     accent: false,
   },
   {
     n: "5",
     title: "Zadanie + powiadomienie",
-    desc: "CRM tworzy zadanie „kontakt w 5 minut”. Handlowiec dostaje notyfikację — Slack, e-mail, push.",
+    desc: "CRM tworzy zadanie „kontakt w 5 minut”. Handlowiec dostaje notyfikację, Slack, e-mail, push.",
     accent: false,
   },
   {
@@ -64,7 +64,7 @@ export default function ExampleWorkflow() {
           </h2>
           <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
             Pierwszy etap, który wdrażam u większości klientów. Każdy krok można
-            zbudować osobno — i mierzyć efekt po kolei.
+            zbudować osobno, i mierzyć efekt po kolei.
           </p>
         </RevealOnScroll>
 

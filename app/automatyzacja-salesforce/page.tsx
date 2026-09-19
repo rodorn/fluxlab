@@ -23,7 +23,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Automatyzacja leadów, CRM i raportowania dla firm B2B",
+        alt: "Fluxlab, Automatyzacja leadów, CRM i raportowania dla firm B2B",
       },
     ],
   },
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 const offer = [
   {
     title: "Automatyzacja procesu sprzedaży",
-    desc: "Leady, przypisania, Opportunity i follow-upy odpalają się same — z kontrolą wymaganych danych na każdym etapie.",
+    desc: "Leady, przypisania, Opportunity i follow-upy odpalają się same, z kontrolą wymaganych danych na każdym etapie.",
   },
   {
     title: "Integracje przez Salesforce API",
@@ -43,7 +43,7 @@ const offer = [
   },
   {
     title: "Logika w Apex i Flow",
-    desc: "Walidacje, wyliczenia, triggery i Platform Events — CRM zaczyna pilnować procesów za zespół.",
+    desc: "Walidacje, wyliczenia, triggery i Platform Events, CRM zaczyna pilnować procesów za zespół.",
   },
   {
     title: "Raporty i hurtownia danych",
@@ -58,7 +58,7 @@ export default function AutomatyzacjaSalesforce() {
       <main className="pt-16">
         <Breadcrumbs items={[{ label: "Automatyzacja Salesforce" }]} />
 
-        {/* Hero — kompaktowy */}
+        {/* Hero, kompaktowy */}
         <section className="relative overflow-hidden pt-24 pb-12">
           <div className="blob blob-cyan -top-32 -right-24 w-[420px] h-[420px]" />
           <div className="container-wide relative">
@@ -86,7 +86,7 @@ export default function AutomatyzacjaSalesforce() {
           </div>
         </section>
 
-        {/* Treść w zakładkach — nic nie wycięte, podzielone */}
+        {/* Treść w zakładkach, nic nie wycięte, podzielone */}
         <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
           <Tabs
             ariaLabel="Sekcje oferty automatyzacji Salesforce"
