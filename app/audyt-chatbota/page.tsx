@@ -6,6 +6,22 @@ export const metadata: Metadata = {
   description:
     "Zadaję Twojemu botowi 150 realnych pytań klienta i zderzam każdą odpowiedź z cennikiem, regulaminem i zasadami zwrotów. Wyłapuję halucynacje i obietnice, którymi firma jest związana. 69 zł.",
   alternates: { canonical: "/audyt-chatbota" },
+  openGraph: {
+    title:
+      "Audyt chatbota, sprawdź co Twój asystent AI mówi klientom | Fluxlab",
+    description:
+      "150 realnych pytań klienta zderzonych z cennikiem i regulaminem. Wyłapuję halucynacje i obietnice, którymi firma jest związana. 69 zł.",
+    locale: "pl_PL",
+    type: "website",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Fluxlab, audyt chatbota",
+      },
+    ],
+  },
 };
 
 export default function Page() {

@@ -6,6 +6,21 @@ export const metadata: Metadata = {
   description:
     "Automat przechodzi po Twojej stronie, mierzy czas ładowania na telefonie, znajduje błędy konsoli, martwe linki i braki SEO. Lista poprawek uszeregowana po realnym wpływie, nie 200 uwag bez priorytetów. 19 zł.",
   alternates: { canonical: "/audyt-strony" },
+  openGraph: {
+    title: "Audyt szybkości i błędów strony, 19 zł | Fluxlab",
+    description:
+      "Szybkość na telefonie, błędy konsoli, martwe linki i braki SEO, z listą poprawek uszeregowaną po realnym wpływie. 19 zł.",
+    locale: "pl_PL",
+    type: "website",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Fluxlab, audyt szybkości i błędów strony",
+      },
+    ],
+  },
 };
 
 export default function Page() {

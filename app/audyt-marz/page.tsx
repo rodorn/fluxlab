@@ -6,6 +6,22 @@ export const metadata: Metadata = {
   description:
     "Panel pokazuje obrót, a nie to, co zostaje. Liczę zysk netto na sztuce po prowizjach, zwrotach i dopłatach do wysyłki, wskazuję bestsellery sprzedawane pod kreską i martwy stok. 49 zł.",
   alternates: { canonical: "/audyt-marz" },
+  openGraph: {
+    title:
+      "Audyt marż sklepu, realny zysk na każdym produkcie, 49 zł | Fluxlab",
+    description:
+      "Zysk netto na sztuce po prowizjach, zwrotach i dopłatach do wysyłki. Bestsellery sprzedawane pod kreską i martwy stok. 49 zł.",
+    locale: "pl_PL",
+    type: "website",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Fluxlab, audyt marż sklepu",
+      },
+    ],
+  },
 };
 
 export default function Page() {

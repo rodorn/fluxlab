@@ -6,6 +6,21 @@ export const metadata: Metadata = {
   description:
     "Stanęła integracja i nie schodzą zamówienia albo nie wystawiają się faktury. Czytam logi wykonań, znajduję wygasłe poświadczenia i ciche awarie. Diagnoza 49 zł, naprawa od 490 zł, opieka 299 zł miesięcznie.",
   alternates: { canonical: "/pogotowie-automatyzacji" },
+  openGraph: {
+    title: "Pogotowie automatyzacji, naprawa n8n, Make i integracji | Fluxlab",
+    description:
+      "Stanęła integracja i nie schodzą zamówienia. Czytam logi wykonań, znajduję wygasłe poświadczenia i ciche awarie. Diagnoza 49 zł, naprawa od 490 zł.",
+    locale: "pl_PL",
+    type: "website",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Fluxlab, pogotowie automatyzacji",
+      },
+    ],
+  },
 };
 
 export default function Page() {

@@ -17,6 +17,14 @@ export const metadata: Metadata = {
       "Werdykt o firmie z wykazu VAT, KRS i danych domeny. Sprawdzam też, czy konto do przelewu należy do tej firmy.",
     locale: "pl_PL",
     type: "website",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Fluxlab, sprawdzony kontrahent",
+      },
+    ],
   },
 };
 

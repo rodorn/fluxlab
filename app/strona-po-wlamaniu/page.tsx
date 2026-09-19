@@ -6,6 +6,21 @@ export const metadata: Metadata = {
   description:
     "Strona przekierowuje na obce serwisy albo Google ją oznaczył. Porównuję pliki z oryginałami z repozytorium WordPressa, usuwam backdoory i mówię, którędy weszli. Diagnoza 49 zł, czyszczenie od 299 zł.",
   alternates: { canonical: "/strona-po-wlamaniu" },
+  openGraph: {
+    title: "Zhakowana strona WordPress, czyszczenie i raport | Fluxlab",
+    description:
+      "Porównuję pliki z oryginałami z repozytorium WordPressa, usuwam backdoory i mówię, którędy weszli. Diagnoza 49 zł, czyszczenie od 299 zł.",
+    locale: "pl_PL",
+    type: "website",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Fluxlab, ratunek po włamaniu na stronę",
+      },
+    ],
+  },
 };
 
 export default function Page() {

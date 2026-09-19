@@ -6,6 +6,21 @@ export const metadata: Metadata = {
   description:
     "Portal karty paliwowej pokazuje listę transakcji, ale nie zestawia ich z trasą. Dopiero to wyłapuje tankowanie do kanistra, obce auto i klon karty. Darmowy skan trzech pojazdów, audyt od 99 zł.",
   alternates: { canonical: "/kontrola-paliwa" },
+  openGraph: {
+    title: "Kontrola paliwa we flocie, audyt tankowań, od 99 zł | Fluxlab",
+    description:
+      "Tankowania zestawione z trasą i przebiegiem wyłapują kanister, obce auto i klon karty. Darmowy skan trzech pojazdów, audyt od 99 zł.",
+    locale: "pl_PL",
+    type: "website",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Fluxlab, kontrola paliwa we flocie",
+      },
+    ],
+  },
 };
 
 export default function Page() {
