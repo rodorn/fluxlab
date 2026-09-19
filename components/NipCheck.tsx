@@ -49,12 +49,19 @@ export default function NipCheck() {
   );
   const [wynik, setWynik] = useState<Wynik | null>(null);
   const [blad, setBlad] = useState("");
+  const [email, setEmail] = useState("");
+  const [leadStan, setLeadStan] = useState<"idle" | "wysylam" | "ok" | "blad">(
+    "idle",
+  );
+  const [leadBlad, setLeadBlad] = useState("");
 
   async function sprawdz(e: React.FormEvent) {
     e.preventDefault();
     setStan("ladowanie");
     setBlad("");
     setWynik(null);
+    setLeadStan("idle");
+    setLeadBlad("");
     try {
       const res = await fetch("/api/sprawdz-nip", {
         method: "POST",
@@ -72,6 +79,48 @@ export default function NipCheck() {
     } catch {
       setBlad("Brak połączenia. Spróbuj ponownie za chwilę.");
       setStan("blad");
+    }
+  }
+
+  async function zamowRaport(e: React.FormEvent) {
+    e.preventDefault();
+    if (!wynik) return;
+    setLeadStan("wysylam");
+    setLeadBlad("");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email,
+          company: wynik.name || `NIP ${wynik.nip}`,
+          problemType: "Weryfikacja kontrahenta",
+          problemScale: `Werdykt wstepny: ${wynik.verdict}`,
+          message: [
+            `Sprawdzany NIP: ${wynik.nip}`,
+            wynik.name ? `Nazwa z rejestru: ${wynik.name}` : "",
+            `Status VAT: ${wynik.statusVat || "brak danych"}`,
+            `Rachunki w wykazie: ${wynik.accountsCount ?? 0}`,
+            wynik.warnings?.length
+              ? `Ostrzezenia: ${wynik.warnings.join(" | ")}`
+              : "Brak ostrzezen w szybkim sprawdzeniu",
+            "Zgloszenie z darmowego sprawdzenia NIP na stronie.",
+          ]
+            .filter(Boolean)
+            .join("\n"),
+          contactPref: "email",
+        }),
+      });
+      if (!res.ok) {
+        const d = await res.json().catch(() => null);
+        setLeadBlad(d?.error || "Nie udalo sie wyslac zgloszenia.");
+        setLeadStan("blad");
+        return;
+      }
+      setLeadStan("ok");
+    } catch {
+      setLeadBlad("Brak polaczenia. Sprobuj ponownie.");
+      setLeadStan("blad");
     }
   }
 
@@ -179,14 +228,55 @@ export default function NipCheck() {
 
           <div className="mt-5 border-t border-gray-200/70 dark:border-gray-700/70 pt-4">
             <p className="text-sm text-gray-700 dark:text-gray-300">
-              To jest szybki sprawdzian z jednego rejestru. Pełny raport dokłada
-              odpis KRS (likwidacja, zaległości, wykreślenie), wiek domeny oraz
-              najważniejsze: sprawdzenie, czy numer konta, na który masz
-              zapłacić, rzeczywiście należy do tej firmy.
+              {wynik.verdict === "ZIELONY"
+                ? "To szybki sprawdzian z jednego rejestru. Pełny raport dokłada odpis KRS (likwidacja, zaległości, wykreślenie), wiek domeny oraz najważniejsze: sprawdzenie, czy numer konta, na który masz zapłacić, rzeczywiście należy do tej firmy."
+                : "Zanim cokolwiek przelejesz, warto sprawdzić resztę. Pełny raport dokłada odpis KRS (likwidacja, zaległości, wykreślenie), wiek domeny oraz sprawdzenie, czy numer konta, na który masz zapłacić, rzeczywiście należy do tej firmy."}
             </p>
-            <a href="#zamow" className="btn-primary mt-4 inline-flex text-sm">
-              Zamów pełny raport
-            </a>
+
+            {leadStan === "ok" ? (
+              <p className="mt-4 text-sm font-semibold text-emerald-700 dark:text-emerald-400">
+                Mam zgłoszenie. Odpiszę na {email} z pełnym raportem, zwykle
+                tego samego dnia.
+              </p>
+            ) : (
+              <form onSubmit={zamowRaport} className="mt-4">
+                <label
+                  htmlFor="nipcheck-email"
+                  className="block text-sm font-medium text-gray-900 dark:text-white"
+                >
+                  Podaj maila, odeślę pełny raport dla tego numeru
+                </label>
+                <div className="mt-2 flex flex-col gap-3 sm:flex-row">
+                  <input
+                    id="nipcheck-email"
+                    type="email"
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="twoj@email.pl"
+                    className="flex-1 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-950 px-4 py-3 text-sm text-gray-900 dark:text-white outline-none focus:border-accent"
+                  />
+                  <button
+                    type="submit"
+                    disabled={leadStan === "wysylam"}
+                    className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
+                  >
+                    {leadStan === "wysylam"
+                      ? "Wysyłam..."
+                      : "Zamów pełny raport"}
+                  </button>
+                </div>
+                {leadStan === "blad" && (
+                  <p className="mt-2 text-sm text-red-600 dark:text-red-400">
+                    {leadBlad}
+                  </p>
+                )}
+                <p className="mt-2 text-xs text-gray-500 dark:text-gray-400">
+                  Przesyłam tylko sprawdzany numer i wynik. Bez zapisu na
+                  newsletter.
+                </p>
+              </form>
+            )}
           </div>
         </div>
       )}
