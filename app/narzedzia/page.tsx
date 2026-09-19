@@ -8,12 +8,12 @@ import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
   title:
-    "Narzędzia — kalkulatory ROI, audyty CRM i decyzje biznesowe | Fluxlab",
+    "Narzędzia: kalkulatory ROI, audyty CRM i decyzje biznesowe | Fluxlab",
   description:
     "Bezpłatne narzędzia online dla firm B2B: kalkulator kosztu ręcznej obsługi leadów, audyt CRM, decyzja zatrudnić/zautomatyzować, kalkulator podatkowy JDG. Bez rejestracji.",
   openGraph: {
     title:
-      "Narzędzia — kalkulatory ROI, audyty CRM i decyzje biznesowe | Fluxlab",
+      "Narzędzia: kalkulatory ROI, audyty CRM i decyzje biznesowe | Fluxlab",
     description:
       "Bezpłatne narzędzia online dla firm B2B: kalkulator kosztu ręcznej obsługi leadów, audyt CRM, decyzja zatrudnić/zautomatyzować, kalkulator podatkowy JDG.",
     locale: "pl_PL",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab — Automatyzacja leadów, CRM i raportowania dla firm B2B",
+        alt: "Fluxlab, automatyzacja leadów, CRM i raportowania dla firm B2B",
       },
     ],
   },
@@ -34,11 +34,17 @@ export const metadata: Metadata = {
 
 const businessTools = [
   {
+    title: "Sprawdzenie NIP i kontrahenta",
+    description:
+      "Wpisz NIP i sprawdź w wykazie Ministerstwa Finansów, czy firma istnieje, czy jest czynnym podatnikiem VAT, od kiedy działa i ile rachunków zgłosiła. Bez rejestracji i bez limitu prób.",
+    href: "/sprawdzenie-nip",
+    badge: "Nowość",
+  },
+  {
     title: "Audyt bezpieczeństwa poczty",
     description:
       "Wpisz domenę firmy i sprawdź w kilka sekund, czy ktoś może podszyć się pod Wasz adres i czy Wasze maile trafiają do klientów. Analiza SPF, DKIM i DMARC z publicznego DNS, bez rejestracji.",
     href: "/audyt-poczty",
-    badge: "Nowość",
   },
   {
     title: "Kalkulator kosztu obsługi leadów",
@@ -48,7 +54,7 @@ const businessTools = [
     badge: "Najpopularniejsze",
   },
   {
-    title: "Audyt CRM — checklist online",
+    title: "Audyt CRM, checklist online",
     description:
       "10 pytań tak/nie. Wynik X/10 + obszar z największym potencjałem automatyzacji. Bez rejestracji, w 3 minuty.",
     href: "/audyt-crm",
@@ -60,7 +66,7 @@ const businessTools = [
     href: "/zatrudnic-czy-zautomatyzowac",
   },
   {
-    title: "Fluxdesk — panel do sesji AI",
+    title: "Fluxdesk, panel do sesji AI",
     description:
       "Kilkanaście rozmów z asystentem AI w jednym oknie: stan każdej sesji, koszty, limity i zadania. Narzędzie z otwartym kodem, do uruchomienia u siebie.",
     href: "/strefa-wiedzy/panel-do-sesji-ai",
@@ -215,7 +221,7 @@ export default function Narzedzia() {
                         </h2>
                         <p className="mt-2 text-gray-600 dark:text-gray-400 max-w-2xl">
                           Kalkulatory niezwiązane bezpośrednio z automatyzacją
-                          B2B — ale przydatne, jeśli prowadzisz JDG albo szukasz
+                          B2B, ale przydatne, jeśli prowadzisz JDG albo szukasz
                           auta.
                         </p>
                       </div>
