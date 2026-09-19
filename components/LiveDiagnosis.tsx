@@ -61,6 +61,12 @@ const LOADING_PHASES = [
 ];
 
 export default function LiveDiagnosis() {
+  const [email, setEmail] = useState("");
+  const [leadStan, setLeadStan] = useState<"idle" | "wysylam" | "ok" | "blad">(
+    "idle",
+  );
+  const [leadBlad, setLeadBlad] = useState("");
+
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [phase, setPhase] = useState(0);
@@ -124,6 +130,52 @@ export default function LiveDiagnosis() {
       );
     } finally {
       setLoading(false);
+    }
+  }
+
+  // Lead przechwytywany tam, gdzie zainteresowanie jest najwieksze: pod gotowa
+  // analiza, a nie na dole strony. Kontekst leci razem z adresem, zeby
+  // odpowiedziec konkretnie zamiast pytac od zera.
+  async function zamowDiagnoze(e: React.FormEvent) {
+    e.preventDefault();
+    if (!result) return;
+    setLeadStan("wysylam");
+    setLeadBlad("");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email,
+          company: result.processName,
+          problemType: PILLAR_LABELS[result.pillar],
+          problemScale: result.timeSavedHours
+            ? `Szacunek z narzedzia: ${result.timeSavedHours} h miesiecznie`
+            : "Szacunek z narzedzia: brak",
+          message: [
+            `Opis od klienta: ${input}`,
+            `Proces nazwany przez narzedzie: ${result.processName}`,
+            `Diagnoza: ${result.diagnosis}`,
+            `Kroki: ${result.automationSteps
+              .map((k) => k.title)
+              .join("; ")}`,
+            `Wstepna wycena: ${result.estimatedCost}`,
+            result.honestNote ? `Zastrzezenie: ${result.honestNote}` : "",
+          ]
+            .filter(Boolean)
+            .join("\n"),
+        }),
+      });
+      if (!res.ok) {
+        const d = await res.json().catch(() => null);
+        setLeadBlad(d?.error || "Nie udało się wysłać zgłoszenia.");
+        setLeadStan("blad");
+        return;
+      }
+      setLeadStan("ok");
+    } catch {
+      setLeadBlad("Brak połączenia. Spróbuj ponownie za chwilę.");
+      setLeadStan("blad");
     }
   }
 
@@ -367,16 +419,51 @@ export default function LiveDiagnosis() {
                   </div>
                 )}
 
-                <a
-                  href="#kontakt"
-                  className="btn-primary w-full mt-6 py-3.5 text-base text-center"
-                >
-                  Zamów pełną, bezpłatną diagnozę
-                </a>
+                {leadStan === "ok" ? (
+                  <p className="mt-6 rounded-xl border border-emerald-500/50 bg-emerald-50 dark:bg-emerald-950/30 p-4 text-sm font-semibold text-emerald-700 dark:text-emerald-400">
+                    Mam zgłoszenie razem z tą analizą. Odpiszę na {email},
+                    zwykle tego samego dnia.
+                  </p>
+                ) : (
+                  <form onSubmit={zamowDiagnoze} className="mt-6">
+                    <label
+                      htmlFor="diagnoza-email"
+                      className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                    >
+                      Podaj maila, odeślę pełną diagnozę tego procesu
+                    </label>
+                    <div className="mt-2 flex flex-col gap-3 sm:flex-row">
+                      <input
+                        id="diagnoza-email"
+                        type="email"
+                        required
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="twoj@email.pl"
+                        className="flex-1 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-950 px-4 py-3 text-sm text-gray-900 dark:text-white outline-none focus:border-accent"
+                      />
+                      <button
+                        type="submit"
+                        disabled={leadStan === "wysylam"}
+                        className="btn-primary justify-center px-6 py-3.5 text-base disabled:opacity-50"
+                      >
+                        {leadStan === "wysylam"
+                          ? "Wysyłam..."
+                          : "Zamów bezpłatną diagnozę"}
+                      </button>
+                    </div>
+                    {leadStan === "blad" && (
+                      <p className="mt-2 text-sm text-red-600 dark:text-red-400">
+                        {leadBlad}
+                      </p>
+                    )}
+                  </form>
+                )}
 
                 <p className="mt-4 text-center text-xs text-gray-400 dark:text-gray-500">
-                  To wstępna, automatyczna analiza. Pełna diagnoza procesu jest
-                  bezpłatna i robię ją osobiście.
+                  To wstępna, automatyczna analiza. Wysyłam ją razem z Twoim
+                  zgłoszeniem, więc nie musisz opisywać wszystkiego od nowa.
+                  Pełną diagnozę procesu robię osobiście i jest bezpłatna.
                 </p>
               </div>
             </div>
