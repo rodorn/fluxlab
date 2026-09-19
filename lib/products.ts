@@ -191,6 +191,20 @@ export const PRODUCTS: Product[] = [
   },
   {
     category: "www",
+    name: "Naprawa ostrzeżenia o stronie",
+    tagline: "Przeglądarka straszy Twoich klientów",
+    desc: "Gdy certyfikat wygasł albo należy do hostingu, a nie do Twojej domeny, przeglądarka pokazuje pełnoekranowe ostrzeżenie i większość odwiedzających zawraca. Sprawdzam, co dokładnie jest nie tak, i naprawiam warstwę szyfrowania razem z przekierowaniami.",
+    price: "od 390 zł",
+    href: "/naprawa-https",
+    cta: "Sprawdź swoją stronę",
+    bullets: [
+      "diagnoza przyczyny, nie ogólnik o certyfikacie",
+      "naprawa zwykle w jeden dzień roboczy",
+      "pilnowanie ważności certyfikatu od 39 zł/mc",
+    ],
+  },
+  {
+    category: "www",
     name: "Rejestr cen w sklepie",
     tagline: "Obniżka bez wymaganej informacji to ryzyko kary",
     desc: "Sprawdzam każdą przecenioną pozycję w sklepie i wskazuję te, przy których brakuje obowiązkowej informacji o najniższej cenie z 30 dni przed obniżką. Skan robię z zewnątrz, bez dostępu do panelu. Osobno prowadzę codzienny zapis cen, czyli dowód, którego dziś nikt nie zbiera.",
