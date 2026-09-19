@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import LandingForm from "@/components/LandingForm";
 import TrackedCTA from "@/components/TrackedCTA";
+import NipCheck from "@/components/NipCheck";
 
 export const metadata: Metadata = {
   title: "Sprawdź kontrahenta przed przelewem, raport ryzyka od 9 zł | Fluxlab",
@@ -126,6 +127,10 @@ export default function SprawdzKontrahentaPage() {
                 Odpowiedź zwykle tego samego dnia
               </span>
             </div>
+          </div>
+
+          <div className="mt-12">
+            <NipCheck />
           </div>
 
           <div className="mt-14 grid gap-6 md:grid-cols-2">
