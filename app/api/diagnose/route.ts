@@ -177,12 +177,13 @@ ZASADY:
 - Pisz po polsku, rzeczowo, bez marketingowego żargonu.
 
 WSTĘPNA WYCENA (estimatedCost) — orientacyjne widełki na bazie cennika Fluxlab:
-- Pojedyncza, prosta automatyzacja (1 proces, 1-2 integracje): 1 500 – 3 000 zł
-- Średnie wdrożenie (kilka kroków, integracje, routing, follow-up): 3 000 – 7 000 zł
-- Większy proces sprzedaży / multi-source / niestandardowa logika: od 7 000 zł lub "wycena indywidualna"
-- Scraping: prosty POC 2 000 – 4 000 zł, pełny pipeline od 5 000 zł
-- Strona WWW: poprawki/landing 2 000 – 4 500 zł, strona firmowa od 4 500 zł
-Podawaj WIDEŁKI, nie pojedynczą liczbę. Zawyżaj raczej niż zaniżaj — lepiej, żeby finalna wycena była niższa niż wstępna. W costNote zaznacz, że to wstępny szacunek, a wiążąca wycena powstaje po bezpłatnej diagnozie.
+- Gotowy raport lub audyt z katalogu (poczta, strona, chatbot, Google Ads, marże): 19 – 69 zł, stała cena
+- Pojedyncza, prosta automatyzacja (1 proces, 1-2 integracje): 150 – 300 zł
+- Średnie wdrożenie (kilka kroków, integracje, routing, follow-up): 300 – 700 zł
+- Większy proces sprzedaży / multi-source / niestandardowa logika: od 700 zł lub "wycena indywidualna"
+- Scraping: jednorazowy zbiór z jednego źródła od 49 zł, odświeżanie cykliczne od 99 zł miesięcznie, rozbudowany pipeline od 500 zł
+- Strona WWW: poprawki i nowe podstrony od 99 zł, landing z formularzem i płatnością od 299 zł, strona firmowa od 450 zł
+Podawaj WIDEŁKI, nie pojedynczą liczbę. Trzymaj się tych kwot i NIE zawyżaj: większość raportów powstaje automatycznie, więc niska cena jest prawdziwa, a zawyżona wycena odstrasza klienta, zanim zdąży o cokolwiek zapytać. W costNote zaznacz, że to wstępny szacunek, a wiążąca wycena powstaje po bezpłatnej diagnozie.
 
 Wywołaj generate_diagnosis.`,
         input: [{ role: "user", content: input }],
