@@ -1,4 +1,5 @@
 import { Resend } from "resend";
+import nodemailer from "nodemailer";
 import { NextResponse } from "next/server";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -30,8 +31,44 @@ const CONTACT_PREF_LABELS: Record<string, string> = {
 const FROM_FORMULARZ =
   process.env.RESEND_FROM_FORMULARZ ??
   "Formularz Fluxlab <onboarding@resend.dev>";
+// Sciezka awaryjna. Piaskownica Resend wysyla wylacznie do wlasciciela konta,
+// wiec potwierdzenie do prawdziwego klienta nie dociera (zweryfikowane na
+// produkcji 19.09.2026: zgloszenie z obcego adresu dostalo alert ODPISZ
+// RECZNIE zamiast potwierdzenia). Gdy ustawione sa dane SMTP, potwierdzenie
+// idzie nimi i problem znika bez czekania na weryfikacje domeny.
+const SMTP_HOST = process.env.SMTP_HOST;
+const SMTP_USER = process.env.SMTP_USER;
+const SMTP_PASS = process.env.SMTP_PASS;
+const SMTP_FROM = process.env.SMTP_FROM ?? SMTP_USER;
+
+async function wyslijPrzezSmtp(to: string, subject: string, text: string) {
+  if (!SMTP_HOST || !SMTP_USER || !SMTP_PASS) {
+    throw new Error("Brak konfiguracji SMTP");
+  }
+  const transport = nodemailer.createTransport({
+    host: SMTP_HOST,
+    port: Number(process.env.SMTP_PORT ?? 465),
+    secure: true,
+    auth: { user: SMTP_USER, pass: SMTP_PASS },
+  });
+  await transport.sendMail({ from: SMTP_FROM, to, subject, text });
+}
+
 const FROM_PAWEL =
   process.env.RESEND_FROM_PAWEL ?? "Paweł, Fluxlab <onboarding@resend.dev>";
+
+const POTWIERDZENIE_TEXT = `Cześć,
+
+dzięki za opis procesu. Przejrzę zgłoszenie i wrócę z informacją, czy widzę potencjał na automatyzację oraz jaki byłby sensowny pierwszy krok, zwykle w ciągu 24h.
+
+Jeśli widzę dopasowanie, odpiszę z konkretną propozycją zakresu i wyceną. Jeśli proces wygląda na zbyt mały albo nieopłacalny do automatyzacji na tym etapie, napiszę to wprost, bez owijania w bawełnę.
+
+Pracuję i ustalam wszystko mailowo, więc możesz po prostu odpisać na tę wiadomość.
+
+Paweł
+Fluxlab, automatyzacja leadów, CRM i raportowania dla firm B2B
+fluxlab.pl
+`;
 
 export async function POST(req: Request) {
   let body: Record<string, unknown>;
@@ -127,25 +164,28 @@ export async function POST(req: Request) {
       from: FROM_PAWEL,
       to: email,
       subject: "Dostałem zgłoszenie, Fluxlab",
-      text: `Cześć,
-
-dzięki za opis procesu. Przejrzę zgłoszenie i wrócę z informacją, czy widzę potencjał na automatyzację oraz jaki byłby sensowny pierwszy krok, zwykle w ciągu 24h.
-
-Jeśli widzę dopasowanie, odpiszę z konkretną propozycją zakresu i wyceną. Jeśli proces wygląda na zbyt mały albo nieopłacalny do automatyzacji na tym etapie, napiszę to wprost, bez owijania w bawełnę.
-
-Pracuję i ustalam wszystko mailowo, więc możesz po prostu odpisać na tę wiadomość.
-
-Paweł
-Fluxlab, automatyzacja leadów, CRM i raportowania dla firm B2B
-fluxlab.pl
-`,
+      text: POTWIERDZENIE_TEXT,
     });
 
     if (replyError) {
       throw replyError;
     }
   } catch (e) {
-    console.error("[contact] auto-reply NIE zostal wyslany do", email, "-", e);
+    console.error("[contact] auto-reply przez Resend nie przeszedl do", email, "-", e);
+
+    // Druga proba: wlasny serwer pocztowy. Jesli sie uda, klient dostaje
+    // potwierdzenie i alert jest niepotrzebny.
+    try {
+      await wyslijPrzezSmtp(
+        email,
+        "Dostałem zgłoszenie, Fluxlab",
+        POTWIERDZENIE_TEXT,
+      );
+      return NextResponse.json({ ok: true });
+    } catch (e2) {
+      console.error("[contact] auto-reply przez SMTP tez nie przeszedl -", e2);
+    }
+
 
     // Alert do siebie. Ten adres zawsze dziala, bo jest wlascicielem konta.
     await resend.emails
