@@ -66,6 +66,7 @@ for (const f of pages) {
   const body = read(f);
   if (body.startsWith('"use client"')) continue; // metadata siedzi w layout albo rodzicu
   if (f === "app/page.tsx") continue; // strona glowna dziedziczy metadata z layoutu
+  if (f === "app/panel/page.tsx") continue; // chroniony haslem, poza indeksem
   if (/export async function generateMetadata/.test(body)) continue; // trasy dynamiczne
   if (!/export const metadata/.test(body)) add("metadata", `${f}: brak metadata`);
   else {
