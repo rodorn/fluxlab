@@ -190,6 +190,20 @@ export const PRODUCTS: Product[] = [
     featured: true,
   },
   {
+    category: "www",
+    name: "Rejestr cen w sklepie",
+    tagline: "Obniżka bez wymaganej informacji to ryzyko kary",
+    desc: "Sprawdzam każdą przecenioną pozycję w sklepie i wskazuję te, przy których brakuje obowiązkowej informacji o najniższej cenie z 30 dni przed obniżką. Skan robię z zewnątrz, bez dostępu do panelu. Osobno prowadzę codzienny zapis cen, czyli dowód, którego dziś nikt nie zbiera.",
+    price: "od 49 zł",
+    href: "/rejestr-cen",
+    cta: "Sprawdź swój sklep",
+    bullets: [
+      "lista przecen bez wymaganej informacji, z linkami",
+      "raport PDF do przekazania obsłudze sklepu",
+      "codzienny zapis cen jako materiał dowodowy",
+    ],
+  },
+  {
     category: "dane",
     name: "Sprawdzony kontrahent",
     tagline: "Zanim wyślesz zaliczkę",

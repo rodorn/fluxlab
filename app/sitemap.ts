@@ -141,6 +141,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/rejestr-cen`,
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/sprawdzenie-nip`,
       changeFrequency: "weekly" as const,
       priority: 0.9,
