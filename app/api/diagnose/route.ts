@@ -158,7 +158,8 @@ export async function POST(req: Request) {
       },
       body: JSON.stringify({
         model: "gpt-5.5",
-        temperature: 0.4,
+        // gpt-5.5 odrzuca temperature w /v1/responses (invalid_request_error),
+        // co kladlo cale narzedzie diagnozy bledem 400.
         max_output_tokens: 4000,
         instructions: `Jesteś ekspertem automatyzacji procesów B2B w Fluxlab. Analizujesz opisany przez klienta proces i proponujesz konkretną, realistyczną automatyzację.
 
