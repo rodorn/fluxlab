@@ -197,7 +197,7 @@ Wywołaj generate_diagnosis.`,
       console.error("OpenAI error:", err);
       // Komunikat dostawcy trafia do odpowiedzi tylko z naglowkiem diagnostycznym,
       // zeby dalo sie ustalic przyczyne bez dostepu do logow Vercela.
-      const wantsDetail = request.headers.get("x-diagnoza-debug") === "1";
+      const wantsDetail = req.headers.get("x-diagnoza-debug") === "1";
       return NextResponse.json(
         {
           error: `OpenAI error: ${response.status}`,
