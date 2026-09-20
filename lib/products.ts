@@ -88,6 +88,20 @@ export const PRODUCTS: Product[] = [
   // ---------- AUTOMATYZACJA ----------
   {
     category: "automatyzacja",
+    name: "Tańsze automatyzacje",
+    tagline: "Rachunek rośnie, a scenariusze te same",
+    desc: "Popularne narzędzia liczą nie uruchomienia, tylko pojedyncze kroki, więc rachunek rośnie szybciej niż praca, którą wykonują. Przenoszę te same scenariusze na serwer, który należy do Ciebie, i pilnuję, żeby działał. Efekt ten sam, koszt stały.",
+    price: "od 1500 zł",
+    href: "/tansze-automatyzacje",
+    cta: "Policz swoją oszczędność",
+    bullets: [
+      "kalkulator oszczędności od ręki na stronie",
+      "te same scenariusze, Twój serwer",
+      "utrzymanie od 200 zł/mc",
+    ],
+  },
+  {
+    category: "automatyzacja",
     name: "Pogotowie automatyzacji",
     tagline: "Stanęła integracja albo scenariusz",
     desc: "Naprawa cudzych, już wdrożonych automatyzacji: n8n, Make, Zapier, BaseLinker, WooCommerce, Allegro, webhooki i skrypty po poprzednim wykonawcy. Czytam logi wykonań, znajduję wygasłe poświadczenia i ciche awarie, czyli scenariusze zielone, ale puste.",
