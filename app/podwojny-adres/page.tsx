@@ -5,7 +5,7 @@ import AdresCheck from "@/components/AdresCheck";
 export const metadata: Metadata = {
   title: "Czy Google widzi Twoją stronę podwójnie, sprawdź za darmo | Fluxlab",
   description:
-    "Adres z www i bez www to dla wyszukiwarki dwie różne strony. Jeśli obie zwracają tę samą treść, siła linków dzieli się na pół. Sprawdź cztery wersje swojego adresu za darmo. Naprawa od 400 zł.",
+    "Adres z www i bez www to dla wyszukiwarki dwie różne strony. Jeśli obie zwracają tę samą treść, siła linków dzieli się na pół. Sprawdź cztery wersje swojego adresu za darmo. Naprawa od 190 zł.",
   alternates: { canonical: "/podwojny-adres" },
   openGraph: {
     title: "Czy Google widzi Twoją stronę podwójnie, sprawdź za darmo | Fluxlab",
@@ -66,7 +66,7 @@ export default function Page() {
         },
         {
           name: "Naprawa jednej domeny",
-          price: "od 400 zł",
+          price: "od 190 zł",
           desc: "Diagnoza z gotową regułą.",
           features: [
             "wybór wersji głównej wraz z uzasadnieniem",
@@ -111,7 +111,7 @@ export default function Page() {
       submitLabel="Zamów naprawę"
       microCopy="Do sprawdzenia nie potrzebuję żadnych dostępów. Dostęp do serwera jest potrzebny dopiero przy samym wdrożeniu, a regułę mogę też przekazać Waszemu informatykowi."
       serviceName="Ujednolicenie adresu strony firmowej"
-      serviceDesc="Wskazanie wersji kanonicznej adresu, przygotowanie i wdrożenie przekierowania oraz znacznika wersji głównej, wraz z kontrolnym sprawdzeniem po wdrożeniu. Od 400 zł."
+      serviceDesc="Wskazanie wersji kanonicznej adresu, przygotowanie i wdrożenie przekierowania oraz znacznika wersji głównej, wraz z kontrolnym sprawdzeniem po wdrożeniu. Od 190 zł."
       serviceType="Konfiguracja przekierowań i adresu kanonicznego strony"
     />
   );

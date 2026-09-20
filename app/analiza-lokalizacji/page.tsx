@@ -4,13 +4,13 @@ import LokalizacjaCheck from "@/components/LokalizacjaCheck";
 
 export const metadata: Metadata = {
   title:
-    "Analiza lokalizacji pod lokal, ilu masz konkurentów, od 349 zł | Fluxlab",
+    "Analiza lokalizacji pod lokal, ilu masz konkurentów, od 190 zł | Fluxlab",
   description:
-    "Zanim podpiszesz najem, sprawdź nasycenie rynku: konkurenci w promieniu 1, 3 i 5 km, liczba mieszkańców na jeden punkt i porównanie z sąsiednimi gminami. Darmowe sprawdzenie od ręki, pełny raport od 349 zł.",
+    "Zanim podpiszesz najem, sprawdź nasycenie rynku: konkurenci w promieniu 1, 3 i 5 km, liczba mieszkańców na jeden punkt i porównanie z sąsiednimi gminami. Darmowe sprawdzenie od ręki, pełny raport od 190 zł.",
   alternates: { canonical: "/analiza-lokalizacji" },
   openGraph: {
     title:
-      "Analiza lokalizacji pod lokal, ilu masz konkurentów, od 349 zł | Fluxlab",
+      "Analiza lokalizacji pod lokal, ilu masz konkurentów, od 190 zł | Fluxlab",
     description:
       "Nasycenie rynku w okolicy lokalu: konkurenci w zasięgu dojazdu, mieszkańcy na punkt, porównanie z sąsiednimi gminami.",
     locale: "pl_PL",
@@ -68,7 +68,7 @@ export default function Page() {
         },
         {
           name: "Raport lokalizacji",
-          price: "od 349 zł",
+          price: "od 190 zł",
           desc: "Jedno miejsce, pełna analiza i wniosek.",
           features: [
             "zasięg dojazdu zamiast okręgu",
@@ -113,7 +113,7 @@ export default function Page() {
       submitLabel="Zamów raport"
       microCopy="Korzystam wyłącznie z publicznych źródeł danych. Nie potrzebuję żadnych dokumentów ani dostępów."
       serviceName="Analiza potencjału lokalizacji pod punkt usługowy"
-      serviceDesc="Ocena nasycenia rynku w zasięgu dojazdu: liczba konkurentów, liczba mieszkańców na punkt, porównanie z sąsiednimi gminami i trend demograficzny, z jednoznacznym wnioskiem. Od 349 zł."
+      serviceDesc="Ocena nasycenia rynku w zasięgu dojazdu: liczba konkurentów, liczba mieszkańców na punkt, porównanie z sąsiednimi gminami i trend demograficzny, z jednoznacznym wnioskiem. Od 190 zł."
       serviceType="Analiza rynku lokalnego pod działalność usługową"
     />
   );

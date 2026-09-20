@@ -5,7 +5,7 @@ import MapaCheck from "@/components/MapaCheck";
 export const metadata: Metadata = {
   title: "Czy Google ma listę Twoich podstron, sprawdź za darmo | Fluxlab",
   description:
-    "Mapa strony to lista adresów, którą wyszukiwarka pobiera jednym zapytaniem. Sprawdź za darmo, czy Twoja strona ją ma, czy jest wskazana w robots.txt i czy adresy z niej działają. Naprawa od 450 zł.",
+    "Mapa strony to lista adresów, którą wyszukiwarka pobiera jednym zapytaniem. Sprawdź za darmo, czy Twoja strona ją ma, czy jest wskazana w robots.txt i czy adresy z niej działają. Naprawa od 240 zł.",
   alternates: { canonical: "/mapa-strony" },
   openGraph: {
     title: "Czy Google ma listę Twoich podstron, sprawdź za darmo | Fluxlab",
@@ -66,7 +66,7 @@ export default function Page() {
         },
         {
           name: "Pełny przegląd i naprawa",
-          price: "od 450 zł",
+          price: "od 240 zł",
           desc: "Cała lista, nie próbka.",
           features: [
             "sprawdzenie wszystkich adresów z mapy",
@@ -111,7 +111,7 @@ export default function Page() {
       submitLabel="Zamów przegląd"
       microCopy="Do sprawdzenia nie potrzebuję żadnych dostępów, bo mapa strony i robots.txt są publiczne. Dostęp jest potrzebny dopiero przy generowaniu nowej mapy."
       serviceName="Przegląd mapy strony i naprawa martwych adresów"
-      serviceDesc="Sprawdzenie wszystkich adresów z mapy strony, wygenerowanie poprawnej mapy pod system klienta, wskazanie jej w robots.txt oraz rozstrzygnięcie przekierowań dla adresów, które przestały działać. Od 450 zł."
+      serviceDesc="Sprawdzenie wszystkich adresów z mapy strony, wygenerowanie poprawnej mapy pod system klienta, wskazanie jej w robots.txt oraz rozstrzygnięcie przekierowań dla adresów, które przestały działać. Od 240 zł."
       serviceType="Przegląd indeksowania i mapy strony"
     />
   );

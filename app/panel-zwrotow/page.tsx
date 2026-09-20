@@ -3,12 +3,12 @@ import ProductLanding from "@/components/ProductLanding";
 import ZwrotyCheck from "@/components/ZwrotyCheck";
 
 export const metadata: Metadata = {
-  title: "Panel zwrotów dla sklepu, koniec obsługi mailem, od 900 zł | Fluxlab",
+  title: "Panel zwrotów dla sklepu, koniec obsługi mailem, od 490 zł | Fluxlab",
   description:
-    "Sprawdź za darmo, czego kupujący nie znajdzie o zwrotach w Twoim sklepie, i policz, ile kosztuje ręczna obsługa. Audyt przyczyn zwrotów od 900 zł, samoobsługowy panel od 3500 zł.",
+    "Sprawdź za darmo, czego kupujący nie znajdzie o zwrotach w Twoim sklepie, i policz, ile kosztuje ręczna obsługa. Audyt przyczyn zwrotów od 490 zł, samoobsługowy panel od 3500 zł.",
   alternates: { canonical: "/panel-zwrotow" },
   openGraph: {
-    title: "Panel zwrotów dla sklepu, koniec obsługi mailem, od 900 zł | Fluxlab",
+    title: "Panel zwrotów dla sklepu, koniec obsługi mailem, od 490 zł | Fluxlab",
     description:
       "Samoobsługowe zwroty: numer zamówienia, etykieta zwrotna, status i raport przyczyn. Zamiast kolejki maili.",
     locale: "pl_PL",
@@ -66,7 +66,7 @@ export default function Page() {
         },
         {
           name: "Audyt zwrotów",
-          price: "od 900 zł",
+          price: "od 490 zł",
           desc: "Z eksportu zamówień, bez wdrożenia.",
           features: [
             "przyczyny zwrotów na produkt",
@@ -112,7 +112,7 @@ export default function Page() {
       submitLabel="Zamów audyt"
       microCopy="Do wyceny nie potrzebuję dostępów, wystarczy opis procesu."
       serviceName="Audyt i wdrożenie samoobsługowego procesu zwrotów"
-      serviceDesc="Analiza przyczyn zwrotów oraz wdrożenie panelu, w którym kupujący zgłasza zwrot, otrzymuje etykietę i śledzi status, wraz z raportowaniem przyczyn. Od 900 zł."
+      serviceDesc="Analiza przyczyn zwrotów oraz wdrożenie panelu, w którym kupujący zgłasza zwrot, otrzymuje etykietę i śledzi status, wraz z raportowaniem przyczyn. Od 490 zł."
       serviceType="Automatyzacja obsługi zwrotów w sklepie internetowym"
     />
   );

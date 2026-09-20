@@ -3,13 +3,13 @@ import ProductLanding from "@/components/ProductLanding";
 import DoplataCheck from "@/components/DoplataCheck";
 
 export const metadata: Metadata = {
-  title: "Audyt faktur kurierskich, dopłata paliwowa i korekty, od 600 zł | Fluxlab",
+  title: "Audyt faktur kurierskich, dopłata paliwowa i korekty, od 290 zł | Fluxlab",
   description:
-    "Dopłata paliwowa sięga prawie połowy ceny bazowej, zmienia się co dwa tygodnie i zależy od progu wagowego. Sprawdź jedną pozycję od ręki, a potem całą fakturę. Od 600 zł albo prowizja od odzyskanej kwoty.",
+    "Dopłata paliwowa sięga prawie połowy ceny bazowej, zmienia się co dwa tygodnie i zależy od progu wagowego. Sprawdź jedną pozycję od ręki, a potem całą fakturę. Od 290 zł albo prowizja od odzyskanej kwoty.",
   alternates: { canonical: "/audyt-kurierski" },
   openGraph: {
     title:
-      "Audyt faktur kurierskich, dopłata paliwowa i korekty, od 600 zł | Fluxlab",
+      "Audyt faktur kurierskich, dopłata paliwowa i korekty, od 290 zł | Fluxlab",
     description:
       "Weryfikacja faktur kurierskich linia po linii: stawka paliwowa dla właściwego progu, korekty wagowe, usługi naliczone podwójnie.",
     locale: "pl_PL",
@@ -67,7 +67,7 @@ export default function Page() {
         },
         {
           name: "Audyt roczny",
-          price: "od 600 zł",
+          price: "od 290 zł",
           desc: "Dwanaście miesięcy faktur, wszystkie linie.",
           features: [
             "każda pozycja wobec stawki z jej okresu",
@@ -112,7 +112,7 @@ export default function Page() {
       submitLabel="Zamów sprawdzenie"
       microCopy="Dane z faktur przetwarzam wyłącznie na potrzeby audytu i kasuję po przekazaniu wyniku."
       serviceName="Audyt faktur kurierskich"
-      serviceDesc="Weryfikacja faktur przewoźnika linia po linii: dopłata paliwowa wobec stawki z właściwego okresu i progu wagowego, korekty wagowe, usługi naliczone podwójnie, wraz z gotową treścią reklamacji. Od 600 zł."
+      serviceDesc="Weryfikacja faktur przewoźnika linia po linii: dopłata paliwowa wobec stawki z właściwego okresu i progu wagowego, korekty wagowe, usługi naliczone podwójnie, wraz z gotową treścią reklamacji. Od 290 zł."
       serviceType="Audyt kosztów przesyłek kurierskich"
     />
   );

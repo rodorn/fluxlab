@@ -2,7 +2,15 @@ import { Resend } from "resend";
 import nodemailer from "nodemailer";
 import { NextResponse } from "next/server";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Klient tworzony dopiero przy pierwszym zgloszeniu, a nie przy wczytaniu
+// modulu. Inaczej `next build` bez ustawionego klucza wywala sie na etapie
+// zbierania danych o trasie i wyglada jak zepsuta galaz, choc na produkcji
+// klucz jest ustawiony i wszystko dziala.
+let klientResend: Resend | null = null;
+function resendKlient(): Resend {
+  if (!klientResend) klientResend = new Resend(process.env.RESEND_API_KEY);
+  return klientResend;
+}
 
 const EMAIL_RX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const MAX_COMPANY = 200;
@@ -139,7 +147,7 @@ export async function POST(req: Request) {
 
   const subjectCompany = company ? ` (${company})` : "";
 
-  const { error } = await resend.emails.send({
+  const { error } = await resendKlient().emails.send({
     from: FROM_FORMULARZ,
     to: "iwanekpawel55@gmail.com",
     replyTo: email,
@@ -160,7 +168,7 @@ export async function POST(req: Request) {
   // konta), leci alert do Pawla, zeby odpisal recznie. Bez tego lead wyglada
   // dla klienta jak wrzucony w prozne.
   try {
-    const { error: replyError } = await resend.emails.send({
+    const { error: replyError } = await resendKlient().emails.send({
       from: FROM_PAWEL,
       to: email,
       subject: "Dostałem zgłoszenie, Fluxlab",
@@ -188,7 +196,7 @@ export async function POST(req: Request) {
 
 
     // Alert do siebie. Ten adres zawsze dziala, bo jest wlascicielem konta.
-    await resend.emails
+    await resendKlient().emails
       .send({
         from: FROM_FORMULARZ,
         to: "iwanekpawel55@gmail.com",

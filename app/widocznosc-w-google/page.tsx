@@ -3,12 +3,12 @@ import ProductLanding from "@/components/ProductLanding";
 import WidocznoscCheck from "@/components/WidocznoscCheck";
 
 export const metadata: Metadata = {
-  title: "Strona nie pokazuje się w Google, sprawdź blokadę, od 390 zł | Fluxlab",
+  title: "Strona nie pokazuje się w Google, sprawdź blokadę, od 190 zł | Fluxlab",
   description:
-    "Jedno polecenie zostawione po wersji roboczej potrafi wyłączyć całą stronę z wyników wyszukiwania. Sprawdź za darmo trzy miejsca, w których taka blokada siedzi. Naprawa od 390 zł.",
+    "Jedno polecenie zostawione po wersji roboczej potrafi wyłączyć całą stronę z wyników wyszukiwania. Sprawdź za darmo trzy miejsca, w których taka blokada siedzi. Naprawa od 190 zł.",
   alternates: { canonical: "/widocznosc-w-google" },
   openGraph: {
-    title: "Strona nie pokazuje się w Google, sprawdź blokadę, od 390 zł | Fluxlab",
+    title: "Strona nie pokazuje się w Google, sprawdź blokadę, od 190 zł | Fluxlab",
     description:
       "Znacznik noindex, nagłówek serwera albo plik robots potrafią wyłączyć stronę z wyszukiwarki. Sprawdzenie za darmo.",
     locale: "pl_PL",
@@ -66,7 +66,7 @@ export default function Page() {
         },
         {
           name: "Naprawa",
-          price: "od 390 zł",
+          price: "od 190 zł",
           desc: "Zdjęcie blokady i zgłoszenie strony.",
           features: [
             "usunięcie wpisu w systemie strony",
@@ -111,7 +111,7 @@ export default function Page() {
       submitLabel="Zamów naprawę"
       microCopy="Do sprawdzenia nie potrzebuję żadnych dostępów. Dostępy są potrzebne dopiero do samej naprawy."
       serviceName="Usunięcie blokady indeksowania strony"
-      serviceDesc="Wykrycie i usunięcie poleceń blokujących indeksowanie strony w wyszukiwarce, w kodzie strony, nagłówkach serwera i pliku robots, wraz ze zgłoszeniem do ponownego odwiedzenia. Od 390 zł."
+      serviceDesc="Wykrycie i usunięcie poleceń blokujących indeksowanie strony w wyszukiwarce, w kodzie strony, nagłówkach serwera i pliku robots, wraz ze zgłoszeniem do ponownego odwiedzenia. Od 190 zł."
       serviceType="Naprawa widoczności strony w wyszukiwarce"
     />
   );

@@ -78,8 +78,11 @@ export default function Regulamin() {
                           >
                             fluxlab.pl
                           </Link>{" "}
-                          (dalej: „Serwis"), prowadzonego przez Fluxlab z
-                          siedzibą w Polsce (dalej: „Usługodawca").
+                          (dalej: „Serwis"), prowadzonego przez Pawła Iwanka,
+                          przedsiębiorcę wpisanego do Centralnej Ewidencji i
+                          Informacji o Działalności Gospodarczej, posługującego
+                          się numerem NIP 7123336008 oraz REGON 366862577
+                          (dalej: „Usługodawca").
                         </p>
                         <p className="mt-2">
                           Korzystanie z Serwisu oznacza akceptację niniejszego

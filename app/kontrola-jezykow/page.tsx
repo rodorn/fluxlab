@@ -4,13 +4,13 @@ import JezykCheck from "@/components/JezykCheck";
 
 export const metadata: Metadata = {
   title:
-    "Niedokończone tłumaczenie strony i brak hreflang, audyt od 149 zł | Fluxlab",
+    "Niedokończone tłumaczenie strony i brak hreflang, audyt od 99 zł | Fluxlab",
   description:
-    "Wersja angielska Waszej strony ma polskie przyciski i akapity, a wyszukiwarka nie wie, że wersje językowe istnieją. Sprawdzam fragment po fragmencie i oddaję listę miejsc do podmiany. Od 149 zł.",
+    "Wersja angielska Waszej strony ma polskie przyciski i akapity, a wyszukiwarka nie wie, że wersje językowe istnieją. Sprawdzam fragment po fragmencie i oddaję listę miejsc do podmiany. Od 99 zł.",
   alternates: { canonical: "/kontrola-jezykow" },
   openGraph: {
     title:
-      "Niedokończone tłumaczenie strony i brak hreflang, audyt od 149 zł | Fluxlab",
+      "Niedokończone tłumaczenie strony i brak hreflang, audyt od 99 zł | Fluxlab",
     description:
       "Polskie fragmenty w wersji obcojęzycznej i brakujące znaczniki hreflang. Lista miejsc do podmiany, gotowa dla programisty.",
     locale: "pl_PL",
@@ -68,7 +68,7 @@ export default function Page() {
         },
         {
           name: "Pełny audyt",
-          price: "od 149 zł",
+          price: "od 99 zł",
           desc: "Cały serwis, wszystkie wersje językowe.",
           features: [
             "każdy polski fragment z adresem i cytatem",
@@ -113,7 +113,7 @@ export default function Page() {
       submitLabel="Zamów audyt"
       microCopy="Analizuję wyłącznie publicznie dostępne strony. Nie potrzebuję żadnych dostępów."
       serviceName="Audyt wersji językowych strony internetowej"
-      serviceDesc="Wykrycie nieprzetłumaczonych fragmentów w obcojęzycznych wersjach serwisu oraz błędów w znacznikach hreflang, z listą miejsc do podmiany. Od 149 zł."
+      serviceDesc="Wykrycie nieprzetłumaczonych fragmentów w obcojęzycznych wersjach serwisu oraz błędów w znacznikach hreflang, z listą miejsc do podmiany. Od 99 zł."
       serviceType="Audyt jakości wersji językowych serwisu"
     />
   );

@@ -77,6 +77,16 @@ export default function RootLayout({
                   "@id": "https://fluxlab.pl/#organization",
                   name: "Fluxlab",
                   alternateName: "Fluxlab, automatyzacja B2B",
+                  legalName: "Paweł Iwanek",
+                  // Numery czytane automatycznie po stronie kupującego, który
+                  // weryfikuje kontrahenta przed zapłatą.
+                  taxID: "7123336008",
+                  vatID: "PL7123336008",
+                  identifier: {
+                    "@type": "PropertyValue",
+                    propertyID: "REGON",
+                    value: "366862577",
+                  },
                   url: "https://fluxlab.pl",
                   logo: "https://fluxlab.pl/opengraph-image",
                   image: "https://fluxlab.pl/opengraph-image",

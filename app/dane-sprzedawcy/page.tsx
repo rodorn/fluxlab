@@ -5,7 +5,7 @@ import SprzedawcaCheck from "@/components/SprzedawcaCheck";
 export const metadata: Metadata = {
   title: "Czy klient ustali ze strony, komu płaci, sprawdź za darmo | Fluxlab",
   description:
-    "Księgowość kupującego sprawdza sprzedawcę w wykazie podatników VAT przed przelewem. Sprawdź za darmo, czy Twoja strona podaje NIP i czy dane zgadzają się z wykazem. Uzupełnienie od 600 zł.",
+    "Księgowość kupującego sprawdza sprzedawcę w wykazie podatników VAT przed przelewem. Sprawdź za darmo, czy Twoja strona podaje NIP i czy dane zgadzają się z wykazem. Uzupełnienie od 290 zł.",
   alternates: { canonical: "/dane-sprzedawcy" },
   openGraph: {
     title: "Czy klient ustali ze strony, komu płaci, sprawdź za darmo | Fluxlab",
@@ -66,7 +66,7 @@ export default function Page() {
         },
         {
           name: "Uzupełnienie danych",
-          price: "od 600 zł",
+          price: "od 290 zł",
           desc: "Jedna firma, wszystkie jej domeny.",
           features: [
             "przegląd wszystkich Waszych adresów",
@@ -111,7 +111,7 @@ export default function Page() {
       submitLabel="Zamów uzupełnienie"
       microCopy="Do sprawdzenia nie potrzebuję żadnych dostępów, bo pracuję na tym, co i tak widzi każdy odwiedzający. Dostęp jest potrzebny dopiero przy wklejeniu poprawki."
       serviceName="Uzupełnienie danych rejestrowych na stronie firmowej"
-      serviceDesc="Przegląd wszystkich domen firmy pod kątem danych identyfikujących sprzedawcę, zestawienie ich z wykazem podatników VAT oraz przygotowanie gotowej stopki i znaczników do wdrożenia. Od 600 zł."
+      serviceDesc="Przegląd wszystkich domen firmy pod kątem danych identyfikujących sprzedawcę, zestawienie ich z wykazem podatników VAT oraz przygotowanie gotowej stopki i znaczników do wdrożenia. Od 290 zł."
       serviceType="Uzupełnienie i weryfikacja danych rejestrowych na stronie"
     />
   );

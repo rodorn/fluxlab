@@ -5,7 +5,7 @@ import DomenaCheck from "@/components/DomenaCheck";
 export const metadata: Metadata = {
   title: "Kto jest właścicielem Twojej domeny, sprawdź za darmo | Fluxlab",
   description:
-    "W rejestrze domen wpisany jest jeden podmiot i to on decyduje o adresie, stronie i poczcie firmowej. Sprawdź za darmo, czy to Twoja firma, i kiedy wygasa rejestracja. Przeniesienie od 890 zł.",
+    "W rejestrze domen wpisany jest jeden podmiot i to on decyduje o adresie, stronie i poczcie firmowej. Sprawdź za darmo, czy to Twoja firma, i kiedy wygasa rejestracja. Przeniesienie od 490 zł.",
   alternates: { canonical: "/wlasnosc-domeny" },
   openGraph: {
     title: "Kto jest właścicielem Twojej domeny, sprawdź za darmo | Fluxlab",
@@ -66,7 +66,7 @@ export default function Page() {
         },
         {
           name: "Przeniesienie domeny",
-          price: "od 890 zł",
+          price: "od 490 zł",
           desc: "Jedna domena, cała procedura.",
           features: [
             "pismo o wydanie kodu przeniesienia",
@@ -111,7 +111,7 @@ export default function Page() {
       submitLabel="Zamów przeniesienie"
       microCopy="Do sprawdzenia nie potrzebuję niczego poza adresem. Dokumenty są potrzebne dopiero przy samej zmianie abonenta."
       serviceName="Przeniesienie domeny na właściwego właściciela"
-      serviceDesc="Ustalenie abonenta domeny w rejestrze oraz przeprowadzenie zmiany abonenta i transferu do konta klienta, wraz z zabezpieczeniem odnawiania. Od 890 zł."
+      serviceDesc="Ustalenie abonenta domeny w rejestrze oraz przeprowadzenie zmiany abonenta i transferu do konta klienta, wraz z zabezpieczeniem odnawiania. Od 490 zł."
       serviceType="Obsługa zmiany abonenta i transferu domeny"
     />
   );

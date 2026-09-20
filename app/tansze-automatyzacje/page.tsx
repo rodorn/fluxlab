@@ -4,13 +4,13 @@ import KalkulatorAutomatyzacji from "@/components/KalkulatorAutomatyzacji";
 
 export const metadata: Metadata = {
   title:
-    "Tańsze automatyzacje, migracja z rozliczania za kroki, od 1500 zł | Fluxlab",
+    "Tańsze automatyzacje, migracja z rozliczania za kroki, od 790 zł | Fluxlab",
   description:
     "Zapier i Make liczą każdy krok osobno, więc pięciokrokowy scenariusz uruchomiony tysiąc razy to pięć tysięcy zadań. Policz oszczędność na stronie i przenieś te same scenariusze na własny serwer.",
   alternates: { canonical: "/tansze-automatyzacje" },
   openGraph: {
     title:
-      "Tańsze automatyzacje, migracja z rozliczania za kroki, od 1500 zł | Fluxlab",
+      "Tańsze automatyzacje, migracja z rozliczania za kroki, od 790 zł | Fluxlab",
     description:
       "Kalkulator oszczędności i przeniesienie scenariuszy na własny serwer. Ten sam efekt, koszt stały zamiast rosnącego.",
     locale: "pl_PL",
@@ -68,7 +68,7 @@ export default function Page() {
         },
         {
           name: "Przeniesienie",
-          price: "od 1500 zł",
+          price: "od 790 zł",
           desc: "Scenariusze na Twoim serwerze.",
           features: [
             "postawienie i zabezpieczenie serwera",
@@ -113,7 +113,7 @@ export default function Page() {
       submitLabel="Zamów wycenę"
       microCopy="Do wyceny nie potrzebuję dostępów, wystarczy opis scenariuszy."
       serviceName="Migracja automatyzacji na własny serwer"
-      serviceDesc="Przeniesienie istniejących scenariuszy z usług rozliczanych za każdy krok na własną instancję n8n, wraz z utrzymaniem serwera. Od 1500 zł."
+      serviceDesc="Przeniesienie istniejących scenariuszy z usług rozliczanych za każdy krok na własną instancję n8n, wraz z utrzymaniem serwera. Od 790 zł."
       serviceType="Migracja i utrzymanie systemu automatyzacji"
     />
   );

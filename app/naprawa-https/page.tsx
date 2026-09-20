@@ -4,13 +4,13 @@ import HttpsCheck from "@/components/HttpsCheck";
 
 export const metadata: Metadata = {
   title:
-    "Przeglądarka ostrzega przed Twoją stroną, naprawa HTTPS od 390 zł | Fluxlab",
+    "Przeglądarka ostrzega przed Twoją stroną, naprawa HTTPS od 190 zł | Fluxlab",
   description:
     "Wygasły certyfikat albo certyfikat hostingu zamiast Twojego oznacza pełnoekranowe ostrzeżenie dla każdego odwiedzającego. Diagnozuję przyczynę i naprawiam szyfrowanie razem z przekierowaniami, zwykle w jeden dzień roboczy.",
   alternates: { canonical: "/naprawa-https" },
   openGraph: {
     title:
-      "Przeglądarka ostrzega przed Twoją stroną, naprawa HTTPS od 390 zł | Fluxlab",
+      "Przeglądarka ostrzega przed Twoją stroną, naprawa HTTPS od 190 zł | Fluxlab",
     description:
       "Diagnoza i naprawa warstwy szyfrowania: wygasły certyfikat, certyfikat hostingu, pętla przekierowań, mieszana treść.",
     locale: "pl_PL",
@@ -68,7 +68,7 @@ export default function Page() {
         },
         {
           name: "Naprawa",
-          price: "od 390 zł",
+          price: "od 190 zł",
           desc: "Certyfikat, przekierowania, warianty adresu.",
           features: [
             "poprawny certyfikat na Twoją domenę",
@@ -117,7 +117,7 @@ export default function Page() {
       submitLabel="Poproś o diagnozę"
       microCopy="Diagnoza opiera się wyłącznie na publicznie dostępnych danych Twojego serwera. Nie loguję się nigdzie i niczego nie testuję obciążeniowo."
       serviceName="Diagnoza i naprawa warstwy HTTPS strony firmowej"
-      serviceDesc="Ustalenie przyczyny ostrzeżenia przeglądarki i naprawa: certyfikat wystawiony na właściwą domenę, przekierowania, warianty adresu, zasoby ładowane bez szyfrowania. Od 390 zł."
+      serviceDesc="Ustalenie przyczyny ostrzeżenia przeglądarki i naprawa: certyfikat wystawiony na właściwą domenę, przekierowania, warianty adresu, zasoby ładowane bez szyfrowania. Od 190 zł."
       serviceType="Naprawa konfiguracji szyfrowania strony internetowej"
     />
   );

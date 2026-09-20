@@ -23,6 +23,9 @@ export default function Footer() {
             <p className="mt-1 text-xs text-gray-400 dark:text-gray-500">
               Strony, automatyzacja, dane dla firm B2B
             </p>
+            <p className="mt-1 text-xs text-gray-400 dark:text-gray-500">
+              Paweł Iwanek, NIP 7123336008, REGON 366862577
+            </p>
           </div>
           <nav className="flex flex-wrap gap-x-5 gap-y-2">
             {links.map((l) => (
