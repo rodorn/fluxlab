@@ -166,6 +166,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/podwojny-adres`,
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/wlasnosc-domeny`,
       changeFrequency: "monthly" as const,
       priority: 0.9,

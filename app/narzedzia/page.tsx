@@ -95,6 +95,20 @@ const IKONY: Record<string, React.ReactElement> = {
       <path d="M7 7h8M7 11h8M7 15h5" />
     </>
   ),
+  klucz: (
+    <>
+      <circle cx="7.5" cy="7.5" r="4" />
+      <path d="M10.4 10.4 18 18M15 15l2-2M12.8 12.8l2-2" />
+    </>
+  ),
+  rozwidlenie: (
+    <>
+      <path d="M11 19v-5" />
+      <path d="M11 14 5 8.5V4M11 14l6-5.5V4" />
+      <circle cx="5" cy="3" r="1.6" />
+      <circle cx="17" cy="3" r="1.6" />
+    </>
+  ),
 };
 
 const businessTools = [
@@ -104,7 +118,6 @@ const businessTools = [
       "Wpisz adres strony, a pokażę, co widzi ktoś, kto trafia do Ciebie z wyszukiwarki. Wygasły certyfikat albo certyfikat firmy hostingowej oznacza pełnoekranowe ostrzeżenie, po którym większość odwiedzających zawraca.",
     href: "/naprawa-https",
     ikona: "tarcza",
-    badge: "Nowość",
   },
   {
     title: "Przeceny bez wymaganej informacji o cenie",
@@ -140,6 +153,21 @@ const businessTools = [
       "Przepisz trzy liczby z faktury, a policzę, czy dopłata paliwowa zgadza się ze stawką dla Twojego progu wagowego i ile ta sama pomyłka kosztuje przy kilkuset paczkach miesięcznie.",
     href: "/audyt-kurierski",
     ikona: "paczka",
+  },
+  {
+    title: "Czy Google widzi Twoją stronę podwójnie",
+    description:
+      "Wpisz adres firmy, a sprawdzę cztery wersje tego adresu, z www i bez, i pokażę, czy któraś przekierowuje na drugą. Dwie działające wersje z tą samą treścią to dla wyszukiwarki dwie osobne strony.",
+    href: "/podwojny-adres",
+    ikona: "rozwidlenie",
+    badge: "Nowość",
+  },
+  {
+    title: "Kto jest właścicielem Twojej domeny",
+    description:
+      "Wpisz domenę, a odczytam z publicznego rejestru, kto figuruje jako abonent i kiedy wygasa rejestracja. Bywa, że właścicielem adresu firmy jest ten, kto kiedyś robił stronę.",
+    href: "/wlasnosc-domeny",
+    ikona: "klucz",
   },
   {
     title: "Sprawdzenie NIP i kontrahenta",

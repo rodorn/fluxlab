@@ -239,6 +239,21 @@ export const PRODUCTS: Product[] = [
   },
   {
     category: "www",
+    name: "Strona pod dwoma adresami naraz",
+    tagline: "Wyszukiwarka liczy to jako dwie różne strony",
+    desc: "Adres z www i bez www zwracają tę samą treść, żaden nie przekierowuje na drugi. Siła linków prowadzących do firmy dzieli się wtedy na dwa adresy zamiast sumować na jednym, a wyszukiwarka sama wybiera, którą wersję pokazać, często nie tę z wizytówki i faktur. W przeglądarce nie widać tego wcale.",
+    price: "od 400 zł",
+    href: "/podwojny-adres",
+    cta: "Sprawdź swój adres",
+    narzedzie: true,
+    bullets: [
+      "sprawdzenie czterech wersji adresu za darmo",
+      "reguła przekierowania pod Twój serwer",
+      "kontrolne sprawdzenie po wdrożeniu",
+    ],
+  },
+  {
+    category: "www",
     name: "Domena zapisana na obcą firmę",
     tagline: "Właścicielem adresu bywa ten, kto robił stronę",
     desc: "W rejestrze wpisany jest jeden podmiot i to on decyduje o domenie, a więc o stronie i całej poczcie firmowej. Jeśli jest nim dawny wykonawca, przy konflikcie firma traci wszystko naraz. Sprawdzam, kto figuruje w rejestrze, i prowadzę przeniesienie na właściwą spółkę.",
