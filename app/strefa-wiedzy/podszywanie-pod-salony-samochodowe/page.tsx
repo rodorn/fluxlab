@@ -242,6 +242,32 @@ export default function Page() {
           </dl>
         </section>
 
+        {/* Artykul: pozwala wyszukiwarce rozpoznac to jako material z data
+            i autorem, a nie zwykla podstrone. Dwa nasze badania go nie mialy,
+            mimo ze dziewietnascie starszych tekstow tak. */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Article",
+              headline: "Pod 84 procent salonów samochodowych można się podszyć mailowo",
+              description: "Badanie zabezpieczeń poczty na 386 domenach dealerskich. Komplet SPF, DKIM i DMARC w trybie, który cokolwiek blokuje, ma tylko szesnaście procent.",
+              datePublished: "2026-09-20",
+              author: {
+                "@type": "Organization",
+                name: "Fluxlab",
+                url: "https://fluxlab.pl",
+              },
+              publisher: {
+                "@type": "Organization",
+                name: "Fluxlab",
+                url: "https://fluxlab.pl",
+              },
+            }),
+          }}
+        />
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

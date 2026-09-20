@@ -290,6 +290,32 @@ export default function Page() {
           </dl>
         </section>
 
+        {/* Artykul: pozwala wyszukiwarce rozpoznac to jako material z data
+            i autorem, a nie zwykla podstrone. Dwa nasze badania go nie mialy,
+            mimo ze dziewietnascie starszych tekstow tak. */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Article",
+              headline: "Sprawdziliśmy 386 stron dealerów samochodowych",
+              description: "Ile stron nie pozwala ustalić sprzedawcy, ile nie ma mapy strony, ile domen jest zapisanych na obce firmy i ile stron odpowiada pod dwoma adresami naraz. Pomiar na 386 domenach, z metodą i zastrzeżeniami.",
+              datePublished: "2026-09-20",
+              author: {
+                "@type": "Organization",
+                name: "Fluxlab",
+                url: "https://fluxlab.pl",
+              },
+              publisher: {
+                "@type": "Organization",
+                name: "Fluxlab",
+                url: "https://fluxlab.pl",
+              },
+            }),
+          }}
+        />
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
