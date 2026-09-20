@@ -239,6 +239,21 @@ export const PRODUCTS: Product[] = [
   },
   {
     category: "www",
+    name: "Podstrony niewidoczne dla wyszukiwarki",
+    tagline: "Robot dostaje listę albo zgaduje",
+    desc: "Mapa strony to lista adresów, którą wyszukiwarka pobiera jednym zapytaniem. Bez niej podstrony podlinkowane głęboko bywają odkrywane miesiącami. Z nią, ale wypełnioną adresami usuniętych ofert, robot zużywa limit odwiedzin na błędy. Sprawdzam jedno i drugie.",
+    price: "od 450 zł",
+    href: "/mapa-strony",
+    cta: "Sprawdź swoją mapę strony",
+    narzedzie: true,
+    bullets: [
+      "sprawdzenie mapy i robots.txt za darmo",
+      "przegląd wszystkich adresów, nie próbki",
+      "pilnowanie od 99 zł/mc",
+    ],
+  },
+  {
+    category: "www",
     name: "Strona pod dwoma adresami naraz",
     tagline: "Wyszukiwarka liczy to jako dwie różne strony",
     desc: "Adres z www i bez www zwracają tę samą treść, żaden nie przekierowuje na drugi. Siła linków prowadzących do firmy dzieli się wtedy na dwa adresy zamiast sumować na jednym, a wyszukiwarka sama wybiera, którą wersję pokazać, często nie tę z wizytówki i faktur. W przeglądarce nie widać tego wcale.",

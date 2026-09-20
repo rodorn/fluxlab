@@ -95,6 +95,12 @@ const IKONY: Record<string, React.ReactElement> = {
       <path d="M7 7h8M7 11h8M7 15h5" />
     </>
   ),
+  mapa: (
+    <>
+      <path d="M3 5.5 8 3.5l6 2 5-2v13l-5 2-6-2-5 2v-13Z" />
+      <path d="M8 3.5v13M14 5.5v13" />
+    </>
+  ),
   klucz: (
     <>
       <circle cx="7.5" cy="7.5" r="4" />
@@ -155,12 +161,19 @@ const businessTools = [
     ikona: "paczka",
   },
   {
+    title: "Czy Google ma listę Twoich podstron",
+    description:
+      "Wpisz adres firmy, a sprawdzę, czy macie mapę strony, czy jest wskazana w robots.txt i czy adresy z niej faktycznie działają. Martwy adres na tej liście zużywa limit odwiedzin robota.",
+    href: "/mapa-strony",
+    ikona: "mapa",
+    badge: "Nowość",
+  },
+  {
     title: "Czy Google widzi Twoją stronę podwójnie",
     description:
       "Wpisz adres firmy, a sprawdzę cztery wersje tego adresu, z www i bez, i pokażę, czy któraś przekierowuje na drugą. Dwie działające wersje z tą samą treścią to dla wyszukiwarki dwie osobne strony.",
     href: "/podwojny-adres",
     ikona: "rozwidlenie",
-    badge: "Nowość",
   },
   {
     title: "Kto jest właścicielem Twojej domeny",
