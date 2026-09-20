@@ -4,31 +4,15 @@ import TileVideo from "@/components/TileVideo";
 
 const PILLARS = [
   {
-    href: "/strony-www",
-    img: "/abstract/web.webp",
-    video: "/abstract/web.mp4",
-    videoLight: "/abstract/web-light.mp4",
-    variant: "web" as const,
-    num: "01",
-    title: "Strony WWW",
-    desc: "Stworzę nową stronę internetową dopasowaną do potrzeb firmy. Posiadasz już swoją stronę? Ulepszę witrynę tak, aby korzystanie z niej było bardziej intuicyjne dla klientów!",
-    cta: "Sprawdź, jak usprawnimy Twoją stronę",
-    // Akcent: fiolet
-    ring: "group-hover:ring-violet-400/80 focus-visible:ring-violet-400",
-    glow: "from-violet-500/35",
-    numColor: "group-hover:text-violet-300",
-    btn: "text-violet-300 group-hover:bg-violet-500 group-hover:text-white",
-  },
-  {
     href: "/automatyzacja-leadow-crm",
     img: "/abstract/automation.webp",
     video: "/abstract/automation.mp4",
     videoLight: "/abstract/automation-light.mp4",
     variant: "automation" as const,
-    num: "02",
-    title: "Automatyzacja",
-    desc: "Czy masz wrażenie, że to, co robisz jest powtarzalne? Przepisujesz te same dane? Wysyłanie tych samych maili, sprawdzanie kalendarza, przydzielanie zadań zespołowi?",
-    cta: "Sprawdź, jak zyskać więcej czasu",
+    num: "01",
+    title: "Automatyzacja procesów",
+    desc: "Leady nie trafiają automatycznie do CRM, handlowiec zapomina o follow-upie, a raport składa się ręcznie przez pół dnia. Buduję przepływ, który robi to sam i nie gubi zgłoszeń.",
+    cta: "Znajdź proces do automatyzacji",
     // Akcent: indigo
     ring: "group-hover:ring-accent/80 focus-visible:ring-accent",
     glow: "from-accent/35",
@@ -41,15 +25,31 @@ const PILLARS = [
     video: "/abstract/data.mp4",
     videoLight: "/abstract/data-light.mp4",
     variant: "data" as const,
-    num: "03",
-    title: "Dane",
-    desc: "Zbieranie danych ze stron internetowych, maili i innych plików wymaga czasu. Sprawię, że dane będą przejrzyste i czytelne, a gotowe raporty oszczędzą Ci godziny pracy.",
-    cta: "Sprawdź, jak zyskać pełnię informacji",
+    num: "02",
+    title: "Integracje i dane",
+    desc: "Dane leżą w kilku systemach i w Excelach, a ERP nie rozmawia z CRM. Spinam je przez API, porządkuję i zamieniam w raport, który przychodzi sam.",
+    cta: "Zobacz, jak spiąć systemy",
     // Akcent: zieleń
     ring: "group-hover:ring-emerald-400/80 focus-visible:ring-emerald-400",
     glow: "from-emerald-500/35",
     numColor: "group-hover:text-emerald-300",
     btn: "text-emerald-300 group-hover:bg-emerald-500 group-hover:text-white",
+  },
+  {
+    href: "/strony-www",
+    img: "/abstract/web.webp",
+    video: "/abstract/web.mp4",
+    videoLight: "/abstract/web-light.mp4",
+    variant: "web" as const,
+    num: "03",
+    title: "Systemy i strony",
+    desc: "Aplikacje webowe, panele i formularze, które są częścią procesu, a nie osobnym bytem. Strona firmowa też, ale jako element całości, nie jako produkt sam w sobie.",
+    cta: "Zobacz, co buduję",
+    // Akcent: fiolet
+    ring: "group-hover:ring-violet-400/80 focus-visible:ring-violet-400",
+    glow: "from-violet-500/35",
+    numColor: "group-hover:text-violet-300",
+    btn: "text-violet-300 group-hover:bg-violet-500 group-hover:text-white",
   },
 ];
 
@@ -61,8 +61,15 @@ export default function Home() {
         {/* Hasło */}
         <div className="relative z-20 px-6 lg:px-10 pt-7 pb-6 lg:pb-8 col-enter-1">
           <h1 className="text-2xl lg:text-3xl font-semibold tracking-tight text-gray-900 dark:text-white/90">
-            Z czym mogę pomóc?
+            Automatyzuję procesy sprzedaży i operacji w firmach B2B
           </h1>
+          <p className="mt-2 max-w-3xl text-sm lg:text-base text-gray-600 dark:text-white/60">
+            Łączę CRM, formularze, maile, API i raportowanie tak, żeby ludzie
+            przestali ręcznie przepisywać dane i pilnować procesów.
+          </p>
+          <p className="mt-1.5 text-xs text-gray-500 dark:text-white/40">
+            Pipedrive · HubSpot · Make · n8n · API · Python
+          </p>
           {/* Darmowe narzedzia to najnizszy prog wejscia, jaki mamy, a strona
               glowna milczala o nich az do stopki, czyli na telefonie po
               przewinieciu trzech pelnoekranowych kafli. Liczbe trzymamy zgodna
