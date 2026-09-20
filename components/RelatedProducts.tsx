@@ -5,13 +5,34 @@ export default function RelatedProducts({ slug }: { slug: string }) {
   const current = PRODUCTS.find((x) => x.href === `/${slug}`);
   if (!current) return null;
 
-  const sameCategory = PRODUCTS.filter(
+  // Poprzednio brane byly zawsze trzy pierwsze pozycje listy, przez co
+  // pietnascie z dwudziestu osmiu produktow nie bylo linkowanych znikad, a trzy
+  // zbieraly wiekszosc odnosnikow. Teraz pierwsze miejsce zajmuje produkt z tej
+  // samej kategorii, wybierany rotacyjnie, a dwa kolejne pochodza z obrotu po
+  // calej liscie. Kazdy produkt jest dzieki temu linkowany co najmniej dwa razy.
+  const pozycja = PRODUCTS.findIndex((x) => x.href === current.href);
+  const related: typeof PRODUCTS = [];
+
+  const tejSamejKategorii = PRODUCTS.filter(
     (x) => x.category === current.category && x.href !== current.href,
   );
-  const others = PRODUCTS.filter(
-    (x) => x.category !== current.category && x.href !== current.href,
-  );
-  const related = [...sameCategory, ...others].slice(0, 3);
+  if (tejSamejKategorii.length > 0) {
+    const wKategorii = PRODUCTS.filter(
+      (x) => x.category === current.category,
+    ).findIndex((x) => x.href === current.href);
+    related.push(tejSamejKategorii[wKategorii % tejSamejKategorii.length]);
+  }
+
+  for (let i = 1; related.length < 3 && i <= PRODUCTS.length; i++) {
+    const kandydat = PRODUCTS[(pozycja + i) % PRODUCTS.length];
+    if (
+      kandydat.href !== current.href &&
+      !related.some((r) => r.href === kandydat.href)
+    ) {
+      related.push(kandydat);
+    }
+  }
+
   if (related.length === 0) return null;
 
   return (
