@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ProductLanding from "@/components/ProductLanding";
+import HttpsCheck from "@/components/HttpsCheck";
 
 export const metadata: Metadata = {
   title:
@@ -29,6 +30,7 @@ export default function Page() {
   return (
     <ProductLanding
       slug="naprawa-https"
+      tool={<HttpsCheck />}
       breadcrumb="Naprawa HTTPS"
       eyebrow="Ostrzeżenie przeglądarki"
       h1="Twoja strona działa, tylko nikt jej nie widzi"

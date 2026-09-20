@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -15,6 +16,9 @@ export interface Tier {
 
 export interface ProductLandingProps {
   slug: string;
+  /** Darmowe narzedzie renderowane tuz pod naglowkiem, przed opisem zakresu.
+      Odwiedzajacy dostaje dzialajacy wynik, zanim zacznie czytac oferte. */
+  tool?: ReactNode;
   breadcrumb: string;
   eyebrow: string;
   h1: string;
@@ -67,6 +71,8 @@ export default function ProductLanding(p: ProductLandingProps) {
               )}
             </div>
           </div>
+
+          {p.tool && <div className="mt-12">{p.tool}</div>}
 
           <div className="mt-14 grid gap-6 md:grid-cols-2">
             {p.checks.map((c) => (
