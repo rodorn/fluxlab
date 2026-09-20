@@ -58,7 +58,7 @@ export default function ProductLanding(p: ProductLandingProps) {
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <TrackedCTA
-                href="#zamow"
+                href={p.tool ? "#narzedzie" : "#zamow"}
                 location={`${p.formId}_hero`}
                 className="btn-primary"
               >
@@ -72,7 +72,11 @@ export default function ProductLanding(p: ProductLandingProps) {
             </div>
           </div>
 
-          {p.tool && <div className="mt-12">{p.tool}</div>}
+          {p.tool && (
+            <div id="narzedzie" className="mt-12 scroll-mt-24">
+              {p.tool}
+            </div>
+          )}
 
           <div className="mt-14 grid gap-6 md:grid-cols-2">
             {p.checks.map((c) => (
