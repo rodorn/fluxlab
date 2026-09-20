@@ -63,9 +63,10 @@ export default function Home() {
           <h1 className="text-2xl lg:text-3xl font-semibold tracking-tight text-gray-900 dark:text-white/90">
             Z czym mogę pomóc?
           </h1>
-          {/* Osiem dzialajacych narzedzi to najnizszy prog wejscia, jaki mamy,
-              a strona glowna milczala o nich az do stopki, czyli na telefonie
-              po przewinieciu trzech pelnoekranowych kafli. */}
+          {/* Darmowe narzedzia to najnizszy prog wejscia, jaki mamy, a strona
+              glowna milczala o nich az do stopki, czyli na telefonie po
+              przewinieciu trzech pelnoekranowych kafli. Liczbe trzymamy zgodna
+              z lista na /narzedzia. */}
           <Link
             href="/narzedzia"
             className="group mt-3 inline-flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-gray-600 dark:text-white/60 hover:text-accent dark:hover:text-accent transition-colors"
@@ -75,7 +76,7 @@ export default function Home() {
               Za darmo
             </span>
             <span>
-              Sprawdź swoją firmę ośmioma narzędziami, bez rejestracji{" "}
+              Sprawdź swoją firmę dwunastoma narzędziami, bez rejestracji{" "}
               <span
                 aria-hidden="true"
                 className="inline-block transition-transform group-hover:translate-x-0.5"
@@ -84,6 +85,27 @@ export default function Home() {
               </span>
             </span>
           </Link>
+
+          {/* Wlasne badania to jedyna tresc, ktorej nikt inny nie ma, a lezaly
+              trzy klikniecia od strony glownej. Link stad daje im tez sciezke
+              dla robota wyszukiwarki. */}
+          <p className="mt-2 text-sm text-gray-600 dark:text-white/60">
+            Nasze badania:{" "}
+            <Link
+              href="/strefa-wiedzy/co-jest-nie-tak-ze-stronami-dealerow"
+              className="text-accent hover:underline"
+            >
+              sprawdziliśmy 386 stron dealerów
+            </Link>
+            {" "}oraz{" "}
+            <Link
+              href="/strefa-wiedzy/podszywanie-pod-salony-samochodowe"
+              className="text-accent hover:underline"
+            >
+              pod 84 procent z nich można się podszyć mailowo
+            </Link>
+            .
+          </p>
         </div>
 
         {/* 3 kolumny wyboru, zaokrąglone karty z odstępem */}
