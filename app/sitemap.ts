@@ -141,6 +141,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/kontrola-jezykow`,
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/naprawa-https`,
       changeFrequency: "monthly" as const,
       priority: 0.9,

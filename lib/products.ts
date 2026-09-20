@@ -191,6 +191,20 @@ export const PRODUCTS: Product[] = [
   },
   {
     category: "www",
+    name: "Kontrola wersji językowej",
+    tagline: "Angielska strona, na której zostały polskie napisy",
+    desc: "Wersja obcojęzyczna prawie zawsze zostaje niedokończona: przyciski i całe akapity zostają po polsku, a wyszukiwarka nie dostaje znaczników, po których rozpoznaje wersje językowe. Sprawdzam to fragment po fragmencie i oddaję listę miejsc do podmiany.",
+    price: "od 149 zł",
+    href: "/kontrola-jezykow",
+    cta: "Sprawdź swoją wersję obcojęzyczną",
+    bullets: [
+      "lista polskich fragmentów z cytatem i adresem",
+      "brakujące znaczniki wersji językowych",
+      "monitoring nowych podstron od 99 zł/mc",
+    ],
+  },
+  {
+    category: "www",
     name: "Naprawa ostrzeżenia o stronie",
     tagline: "Przeglądarka straszy Twoich klientów",
     desc: "Gdy certyfikat wygasł albo należy do hostingu, a nie do Twojej domeny, przeglądarka pokazuje pełnoekranowe ostrzeżenie i większość odwiedzających zawraca. Sprawdzam, co dokładnie jest nie tak, i naprawiam warstwę szyfrowania razem z przekierowaniami.",
