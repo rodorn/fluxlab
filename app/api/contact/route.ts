@@ -24,13 +24,13 @@ const CONTACT_PREF_LABELS: Record<string, string> = {
   meet: "Google Meet",
 };
 
-// Domena fluxlab.pl musi byc najpierw zweryfikowana w panelu Resend.
-// Do tego czasu dzialaja domyslne adresy testowe, ktore Resend przyjmuje,
-// ale ktore pozwalaja wysylac wylacznie na adres wlasciciela konta.
-// Po weryfikacji ustawic w Vercel: RESEND_FROM_FORMULARZ, RESEND_FROM_PAWEL.
+// Domena fluxlab.pl jest w Resend zweryfikowana (status verified, sending
+// enabled), wiec wysylka idzie z wlasnego adresu i dociera do KAZDEGO
+// odbiorcy. Wczesniejszy domyslny nadawca z piaskownicy pozwalal pisac
+// wylacznie do wlasciciela konta, przez co realny klient nie dostawal
+// potwierdzenia. Zmienne srodowiskowe nadal nadpisuja te wartosci.
 const FROM_FORMULARZ =
-  process.env.RESEND_FROM_FORMULARZ ??
-  "Formularz Fluxlab <onboarding@resend.dev>";
+  process.env.RESEND_FROM_FORMULARZ ?? "Formularz Fluxlab <formularz@fluxlab.pl>";
 // Sciezka awaryjna. Piaskownica Resend wysyla wylacznie do wlasciciela konta,
 // wiec potwierdzenie do prawdziwego klienta nie dociera (zweryfikowane na
 // produkcji 19.09.2026: zgloszenie z obcego adresu dostalo alert ODPISZ
@@ -55,7 +55,7 @@ async function wyslijPrzezSmtp(to: string, subject: string, text: string) {
 }
 
 const FROM_PAWEL =
-  process.env.RESEND_FROM_PAWEL ?? "Paweł, Fluxlab <onboarding@resend.dev>";
+  process.env.RESEND_FROM_PAWEL ?? "Paweł, Fluxlab <pawel@fluxlab.pl>";
 
 const POTWIERDZENIE_TEXT = `Cześć,
 
