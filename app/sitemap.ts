@@ -166,6 +166,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/dane-sprzedawcy`,
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/mapa-strony`,
       changeFrequency: "monthly" as const,
       priority: 0.9,

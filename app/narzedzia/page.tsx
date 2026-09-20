@@ -95,6 +95,13 @@ const IKONY: Record<string, React.ReactElement> = {
       <path d="M7 7h8M7 11h8M7 15h5" />
     </>
   ),
+  pieczec: (
+    <>
+      <circle cx="11" cy="11" r="7.5" />
+      <circle cx="11" cy="11" r="4" />
+      <path d="M11 1.5v3M11 17.5v3M1.5 11h3M17.5 11h3" />
+    </>
+  ),
   mapa: (
     <>
       <path d="M3 5.5 8 3.5l6 2 5-2v13l-5 2-6-2-5 2v-13Z" />
@@ -161,12 +168,19 @@ const businessTools = [
     ikona: "paczka",
   },
   {
+    title: "Czy klient ustali, komu płaci",
+    description:
+      "Wpisz adres firmy, a wyciągnę ze strony, kontaktu i regulaminu numer NIP oraz numer konta i sprawdzę je w wykazie podatników VAT, dokładnie tak jak zrobi to księgowość Twojego klienta przed przelewem.",
+    href: "/dane-sprzedawcy",
+    ikona: "pieczec",
+    badge: "Nowość",
+  },
+  {
     title: "Czy Google ma listę Twoich podstron",
     description:
       "Wpisz adres firmy, a sprawdzę, czy macie mapę strony, czy jest wskazana w robots.txt i czy adresy z niej faktycznie działają. Martwy adres na tej liście zużywa limit odwiedzin robota.",
     href: "/mapa-strony",
     ikona: "mapa",
-    badge: "Nowość",
   },
   {
     title: "Czy Google widzi Twoją stronę podwójnie",

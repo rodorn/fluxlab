@@ -239,6 +239,21 @@ export const PRODUCTS: Product[] = [
   },
   {
     category: "www",
+    name: "Klient nie wie, komu płaci",
+    tagline: "Księgowość kupującego sprawdza to przed przelewem",
+    desc: "Zanim firma zapłaci, ustala sprzedawcę w wykazie podatników VAT, a przy większych kwotach także to, czy numer konta należy do tego samego podmiotu. Strona bez NIP-u sprawia, że ten test nie ma z czego wyjść. Zdarza się też, że w stopce stoi NIP zupełnie innej spółki.",
+    price: "od 600 zł",
+    href: "/dane-sprzedawcy",
+    cta: "Sprawdź swoją stronę",
+    narzedzie: true,
+    bullets: [
+      "sprawdzenie w wykazie podatników za darmo",
+      "gotowa stopka i znacznik do wklejenia",
+      "pilnowanie wykazu od 120 zł/mc",
+    ],
+  },
+  {
+    category: "www",
     name: "Podstrony niewidoczne dla wyszukiwarki",
     tagline: "Robot dostaje listę albo zgaduje",
     desc: "Mapa strony to lista adresów, którą wyszukiwarka pobiera jednym zapytaniem. Bez niej podstrony podlinkowane głęboko bywają odkrywane miesiącami. Z nią, ale wypełnioną adresami usuniętych ofert, robot zużywa limit odwiedzin na błędy. Sprawdzam jedno i drugie.",
