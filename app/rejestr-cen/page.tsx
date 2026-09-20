@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ProductLanding from "@/components/ProductLanding";
+import CenyCheck from "@/components/CenyCheck";
 
 export const metadata: Metadata = {
   title:
@@ -29,6 +30,7 @@ export default function Page() {
   return (
     <ProductLanding
       slug="rejestr-cen"
+      tool={<CenyCheck />}
       breadcrumb="Rejestr cen"
       eyebrow="Obowiązek informowania o cenie"
       h1="Przecena bez informacji o cenie z 30 dni to ryzyko, którego nie widać z panelu"
