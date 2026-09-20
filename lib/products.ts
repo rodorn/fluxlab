@@ -239,6 +239,21 @@ export const PRODUCTS: Product[] = [
   },
   {
     category: "www",
+    name: "Domena zapisana na obcą firmę",
+    tagline: "Właścicielem adresu bywa ten, kto robił stronę",
+    desc: "W rejestrze wpisany jest jeden podmiot i to on decyduje o domenie, a więc o stronie i całej poczcie firmowej. Jeśli jest nim dawny wykonawca, przy konflikcie firma traci wszystko naraz. Sprawdzam, kto figuruje w rejestrze, i prowadzę przeniesienie na właściwą spółkę.",
+    price: "od 890 zł",
+    href: "/wlasnosc-domeny",
+    cta: "Sprawdź swoją domenę",
+    narzedzie: true,
+    bullets: [
+      "sprawdzenie abonenta i terminu za darmo",
+      "przeniesienie domeny na Twoją firmę",
+      "pilnowanie terminu od 49 zł/mc",
+    ],
+  },
+  {
+    category: "www",
     name: "Strona niewidoczna w wyszukiwarce",
     tagline: "Kod strony każe Google jej nie pokazywać",
     desc: "Jedno polecenie zostawione po wersji roboczej potrafi wyłączyć całą witrynę z wyników wyszukiwania. Właściciel tego nie widzi, bo wchodzi z zakładki, a firma znika z internetu dla każdego, kto jej szuka. Sprawdzam trzy miejsca, w których taka blokada siedzi, i zdejmuję ją.",
