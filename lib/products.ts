@@ -233,6 +233,20 @@ export const PRODUCTS: Product[] = [
   },
   {
     category: "dane",
+    name: "Analiza lokalizacji pod punkt",
+    tagline: "Zanim podpiszesz najem na pięć lat",
+    desc: "Ilu naprawdę masz konkurentów w zasięgu dojazdu, ilu mieszkańców przypada na jeden taki punkt i jak to wypada na tle sąsiednich gmin. Mapy pokazują pinezki, ale nie mówią, czy rynek jest już obsadzony. Wniosek jest jednoznaczny: otwierać, negocjować czynsz albo odpuścić.",
+    price: "od 349 zł",
+    href: "/analiza-lokalizacji",
+    cta: "Sprawdź okolicę",
+    bullets: [
+      "konkurenci w promieniu 1, 3 i 5 km",
+      "nasycenie na 10 tysięcy mieszkańców",
+      "porównanie z sąsiednimi gminami",
+    ],
+  },
+  {
+    category: "dane",
     name: "Sprawdzony kontrahent",
     tagline: "Zanim wyślesz zaliczkę",
     desc: "Werdykt o konkretnej firmie złożony automatem z publicznych źródeł: Biała Lista VAT, KRS, rejestr zadłużonych, wiek domeny i listy ostrzeżeń. Pojedynczy check zajmuje 30 sekund, ale dopiero złożenie tego razem mówi, czy to firma widmo.",
