@@ -239,6 +239,21 @@ export const PRODUCTS: Product[] = [
   },
   {
     category: "www",
+    name: "Strona niewidoczna w wyszukiwarce",
+    tagline: "Kod strony każe Google jej nie pokazywać",
+    desc: "Jedno polecenie zostawione po wersji roboczej potrafi wyłączyć całą witrynę z wyników wyszukiwania. Właściciel tego nie widzi, bo wchodzi z zakładki, a firma znika z internetu dla każdego, kto jej szuka. Sprawdzam trzy miejsca, w których taka blokada siedzi, i zdejmuję ją.",
+    price: "od 390 zł",
+    href: "/widocznosc-w-google",
+    cta: "Sprawdź swoją widoczność",
+    narzedzie: true,
+    bullets: [
+      "sprawdzenie od ręki, za darmo",
+      "wskazanie dokładnego miejsca blokady",
+      "monitoring, żeby nie wróciła, od 39 zł/mc",
+    ],
+  },
+  {
+    category: "www",
     name: "Naprawa ostrzeżenia o stronie",
     tagline: "Przeglądarka straszy Twoich klientów",
     desc: "Gdy certyfikat wygasł albo należy do hostingu, a nie do Twojej domeny, przeglądarka pokazuje pełnoekranowe ostrzeżenie i większość odwiedzających zawraca. Sprawdzam, co dokładnie jest nie tak, i naprawiam warstwę szyfrowania razem z przekierowaniami.",
