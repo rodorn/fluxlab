@@ -384,34 +384,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  const articles = [
-    "co-to-jest-automatyzacja-procesow-biznesowych",
-    "jak-policzyc-roi-z-automatyzacji",
-    "automatyzacja-crm-od-czego-zaczac",
-    "jak-uporzadkowac-proces-sprzedazy-w-crm",
-    "jak-polaczyc-crm-z-innymi-systemami",
-    "integracje-api-w-firmie-kiedy-warto",
-    "jak-zautomatyzowac-raportowanie-w-firmie",
-    "najczestsze-bledy-w-raportowaniu-sprzedazy",
-    "ai-w-automatyzacji-firm",
-    "kiedy-ai-ma-sens-a-kiedy-nie",
-    "jaka-forma-opodatkowania-jdg-2026",
-    "ryczalt-czy-liniowy",
-    "skala-czy-liniowy-jdg",
-    "jak-liczyc-zdrowotna-jdg",
-    "maly-zus-plus-kiedy-sie-oplaca",
-    "vat-w-jdg-kiedy-warto",
-    "zapier-vs-make",
-    "n8n-vs-zapier",
-    "make-vs-n8n",
-    "zapier-make-n8n-porownanie",
-    "pipedrive-vs-salesforce",
-    "hubspot-vs-pipedrive",
-    "crm-dla-jednoosobowej-firmy",
-    "salesforce-dla-malej-firmy",
-    "automatyzacja-vs-zatrudnienie",
-    "panel-do-sesji-ai",
-  ];
+  // Lista artykulow bierze sie z historii gita, ktora obejmuje wszystkie pliki
+  // stron, a nie z recznego spisu. Reczny spis zgubil juz dwa artykuly, bo
+  // dopisanie do niego bylo osobnym krokiem, o ktorym latwo zapomniec.
+  const articles = Object.keys(DATY)
+    .filter((s) => s.startsWith("/strefa-wiedzy/"))
+    .map((s) => s.slice("/strefa-wiedzy/".length))
+    .sort();
+
 
   const articlePages = articles.map((slug) => ({
     url: `${baseUrl}/strefa-wiedzy/${slug}`,
