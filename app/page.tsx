@@ -53,11 +53,56 @@ const PILLARS = [
   },
 ];
 
+const PROBLEMY = [
+  {
+    href: "/automatyzacja-formularza-do-pipedrive",
+    zdanie: "Zgłoszenia z formularza przepisujemy do CRM ręcznie",
+    skutek:
+      "Przy kilkunastu leadach dziennie to godzina pracy i regularnie gubiona jedna sprawa.",
+    cta: "Zobacz, jak to spiąć",
+  },
+  {
+    href: "/czas-reakcji-na-leada",
+    zdanie: "Handlowiec oddzwania po dwóch dniach albo wcale",
+    skutek:
+      "Klient w tym czasie zdążył dostać ofertę od kogoś, kto odezwał się w kwadrans.",
+    cta: "Policz, ile to kosztuje",
+  },
+  {
+    href: "/automatyzacja-follow-up",
+    zdanie: "Follow-upy giną, bo nikt ich nie pilnuje",
+    skutek:
+      "Deale stoją tygodniami w tym samym etapie i nikt nie wie, na kogo czekają.",
+    cta: "Zobacz przepływ",
+  },
+  {
+    href: "/automatyzacja-raportowania",
+    zdanie: "Raport sprzedaży składam ręcznie przez pół dnia",
+    skutek:
+      "Co miesiąc ta sama robota: eksport, sklejanie w Excelu, przeliczanie, wysyłka.",
+    cta: "Zobacz, co da się zautomatyzować",
+  },
+  {
+    href: "/integracje-api",
+    zdanie: "ERP nie rozmawia z CRM, dane żyją w kilku Excelach",
+    skutek:
+      "Każdy dział ma swoją wersję prawdy, a uzgodnienie jej zajmuje więcej niż sama praca.",
+    cta: "Zobacz, jak łączę systemy",
+  },
+  {
+    href: "/automatyczne-przypisywanie-leadow",
+    zdanie: "Leady wpadają bez właściciela i leżą",
+    skutek:
+      "Nikt nie czuje się za nie odpowiedzialny, więc odzywa się do nich ktoś przypadkiem.",
+    cta: "Zobacz zasady przydziału",
+  },
+];
+
 export default function Home() {
   return (
     <>
       <Header />
-      <main className="relative flex flex-col bg-white text-gray-900 dark:bg-gray-950 dark:text-white min-h-screen lg:h-screen overflow-hidden pt-16">
+      <main className="relative flex flex-col bg-white text-gray-900 dark:bg-gray-950 dark:text-white min-h-screen pt-16">
         {/* Hasło */}
         <div className="relative z-20 px-6 lg:px-10 pt-7 pb-6 lg:pb-8 col-enter-1">
           <h1 className="text-2xl lg:text-3xl font-semibold tracking-tight text-gray-900 dark:text-white/90">
@@ -121,7 +166,7 @@ export default function Home() {
             <Link
               key={p.href}
               href={p.href}
-              className={`group relative flex flex-col justify-end overflow-hidden rounded-2xl min-h-[34vh] lg:min-h-0 ring-1 ring-gray-200 dark:ring-white/10 transition-all duration-300 focus:outline-none ${p.ring} hover:ring-2 ${
+              className={`group relative flex flex-col justify-end overflow-hidden rounded-2xl min-h-[34vh] lg:min-h-[56vh] ring-1 ring-gray-200 dark:ring-white/10 transition-all duration-300 focus:outline-none ${p.ring} hover:ring-2 ${
                 ["col-enter-1", "col-enter-2", "col-enter-3"][idx]
               }`}
             >
@@ -163,6 +208,48 @@ export default function Home() {
             </Link>
           ))}
         </div>
+
+
+        {/* Klient nie szuka "automatyzacji", tylko konca konkretnej
+            uciazliwosci. Te szesc zdan to jego slowa, a nie moje nazwy
+            kategorii, i kazde prowadzi do strony, ktora opisuje wlasnie ten
+            jeden przypadek. */}
+        <section className="relative z-20 px-6 lg:px-10 py-12 lg:py-16 border-t border-gray-200 dark:border-white/10">
+          <h2 className="text-xl lg:text-2xl font-semibold tracking-tight text-gray-900 dark:text-white/90">
+            Najczęściej rozwiązuję
+          </h2>
+          <p className="mt-2 max-w-3xl text-sm text-gray-600 dark:text-white/60">
+            Jeśli któreś z tych zdań brzmi jak Twoja firma, kliknij. Pod każdym
+            opisałem, na czym dokładnie polega problem, ile kosztuje i co
+            zostaje po wdrożeniu.
+          </p>
+          <ul className="mt-7 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {PROBLEMY.map((p) => (
+              <li key={p.href}>
+                <Link
+                  href={p.href}
+                  className="group flex h-full flex-col rounded-xl border border-gray-200 dark:border-white/10 bg-white/60 dark:bg-white/[0.03] p-5 transition-colors hover:border-accent/70 dark:hover:border-accent/70"
+                >
+                  <span className="text-[15px] font-semibold leading-snug text-gray-900 dark:text-white/90">
+                    {p.zdanie}
+                  </span>
+                  <span className="mt-2 text-sm text-gray-600 dark:text-white/55">
+                    {p.skutek}
+                  </span>
+                  <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-accent">
+                    {p.cta}
+                    <span
+                      aria-hidden="true"
+                      className="inline-block transition-transform group-hover:translate-x-0.5"
+                    >
+                      →
+                    </span>
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
 
         {/* Dolny pasek */}
         <footer className="relative z-20 flex flex-wrap items-center justify-center gap-x-6 gap-y-1.5 px-6 py-3.5 text-xs text-gray-500 dark:text-white/40 border-t border-gray-200 dark:border-white/10">
