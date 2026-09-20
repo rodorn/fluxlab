@@ -10,6 +10,8 @@ export interface Product {
   bullets: string[];
   category: ProductCategory;
   featured?: boolean;
+  /** Produkt ma darmowe narzedzie dzialajace wprost na swojej stronie. */
+  narzedzie?: boolean;
 }
 
 export const CATEGORY_LABEL: Record<ProductCategory, string> = {
@@ -93,6 +95,7 @@ export const PRODUCTS: Product[] = [
     desc: "Popularne narzędzia liczą nie uruchomienia, tylko pojedyncze kroki, więc rachunek rośnie szybciej niż praca, którą wykonują. Przenoszę te same scenariusze na serwer, który należy do Ciebie, i pilnuję, żeby działał. Efekt ten sam, koszt stały.",
     price: "od 1500 zł",
     href: "/tansze-automatyzacje",
+    narzedzie: true,
     cta: "Policz swoją oszczędność",
     bullets: [
       "kalkulator oszczędności od ręki na stronie",
@@ -136,6 +139,7 @@ export const PRODUCTS: Product[] = [
     desc: "Automat sprawdza, czy Twoja domena jest poprawnie zabezpieczona i czy ktoś może podszyć się pod Twój adres. To najczęstszy powód, dla którego firmowe maile lądują w spamie.",
     price: "od 19 zł",
     href: "/audyt-poczty",
+    narzedzie: true,
     cta: "Sprawdź swoją pocztę",
     bullets: [
       "czy ktoś może wysyłać maile jako Ty",
@@ -210,6 +214,7 @@ export const PRODUCTS: Product[] = [
     desc: "Wersja obcojęzyczna prawie zawsze zostaje niedokończona: przyciski i całe akapity zostają po polsku, a wyszukiwarka nie dostaje znaczników, po których rozpoznaje wersje językowe. Sprawdzam to fragment po fragmencie i oddaję listę miejsc do podmiany.",
     price: "od 149 zł",
     href: "/kontrola-jezykow",
+    narzedzie: true,
     cta: "Sprawdź swoją wersję obcojęzyczną",
     bullets: [
       "lista polskich fragmentów z cytatem i adresem",
@@ -224,6 +229,7 @@ export const PRODUCTS: Product[] = [
     desc: "Gdy certyfikat wygasł albo należy do hostingu, a nie do Twojej domeny, przeglądarka pokazuje pełnoekranowe ostrzeżenie i większość odwiedzających zawraca. Sprawdzam, co dokładnie jest nie tak, i naprawiam warstwę szyfrowania razem z przekierowaniami.",
     price: "od 390 zł",
     href: "/naprawa-https",
+    narzedzie: true,
     cta: "Sprawdź swoją stronę",
     bullets: [
       "diagnoza przyczyny, nie ogólnik o certyfikacie",
@@ -238,6 +244,7 @@ export const PRODUCTS: Product[] = [
     desc: "Sprawdzam każdą przecenioną pozycję w sklepie i wskazuję te, przy których brakuje obowiązkowej informacji o najniższej cenie z 30 dni przed obniżką. Skan robię z zewnątrz, bez dostępu do panelu. Osobno prowadzę codzienny zapis cen, czyli dowód, którego dziś nikt nie zbiera.",
     price: "od 49 zł",
     href: "/rejestr-cen",
+    narzedzie: true,
     cta: "Sprawdź swój sklep",
     bullets: [
       "lista przecen bez wymaganej informacji, z linkami",
@@ -252,6 +259,7 @@ export const PRODUCTS: Product[] = [
     desc: "Stawka dopłaty paliwowej zmienia się co dwa tygodnie i zależy od progu wagowego, a korekty wagowe przewoźnik dolicza po swojemu. Przechodzę przez wszystkie linie faktur, wyłapuję pozycje policzone niezgodnie z umową i oddaję gotową treść reklamacji.",
     price: "od 600 zł",
     href: "/audyt-kurierski",
+    narzedzie: true,
     cta: "Sprawdź pozycję z faktury",
     bullets: [
       "sprawdzenie jednej pozycji od ręki na stronie",
@@ -266,6 +274,7 @@ export const PRODUCTS: Product[] = [
     desc: "Ilu naprawdę masz konkurentów w zasięgu dojazdu, ilu mieszkańców przypada na jeden taki punkt i jak to wypada na tle sąsiednich gmin. Mapy pokazują pinezki, ale nie mówią, czy rynek jest już obsadzony. Wniosek jest jednoznaczny: otwierać, negocjować czynsz albo odpuścić.",
     price: "od 349 zł",
     href: "/analiza-lokalizacji",
+    narzedzie: true,
     cta: "Sprawdź okolicę",
     bullets: [
       "konkurenci w promieniu 1, 3 i 5 km",
@@ -280,6 +289,7 @@ export const PRODUCTS: Product[] = [
     desc: "Werdykt o konkretnej firmie złożony automatem z publicznych źródeł: Biała Lista VAT, KRS, rejestr zadłużonych, wiek domeny i listy ostrzeżeń. Pojedynczy check zajmuje 30 sekund, ale dopiero złożenie tego razem mówi, czy to firma widmo.",
     price: "od 9 zł",
     href: "/sprawdz-kontrahenta",
+    narzedzie: true,
     cta: "Sprawdź firmę",
     bullets: [
       "werdykt zielony, żółty albo czerwony z uzasadnieniem",

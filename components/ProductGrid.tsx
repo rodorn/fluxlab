@@ -22,6 +22,20 @@ function Card({ p }: { p: Product }) {
       <h3 className="mt-2 text-xl font-bold text-gray-900 dark:text-white">
         {p.name}
       </h3>
+      {p.narzedzie && (
+        <p className="mt-2 inline-flex w-fit items-center gap-1.5 rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-semibold text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-400">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+            <path
+              d="M2 6.2l2.6 2.6L10 3.4"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+          Sprawdzisz sam za darmo, bez rejestracji
+        </p>
+      )}
       <p className="mt-3 text-sm text-gray-600 dark:text-gray-400">{p.desc}</p>
       <ul className="mt-4 space-y-2">
         {p.bullets.map((b) => (
@@ -49,10 +63,15 @@ function Card({ p }: { p: Product }) {
           </li>
         ))}
       </ul>
-      <div className="mt-auto flex items-center justify-between border-t border-gray-100 dark:border-gray-800 pt-4">
-        <span className="text-lg font-bold text-gray-900 dark:text-white">
+      <div className="mt-auto flex items-baseline justify-between gap-3 border-t border-gray-100 dark:border-gray-800 pt-4">
+        <span className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
           {p.price}
         </span>
+        {p.narzedzie && (
+          <span className="text-xs text-gray-500 dark:text-gray-400">
+            sprawdzenie 0 zł
+          </span>
+        )}
       </div>
       <Link
         href={p.href}
