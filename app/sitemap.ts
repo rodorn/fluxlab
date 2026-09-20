@@ -166,6 +166,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/strefa-wiedzy/co-jest-nie-tak-ze-stronami-dealerow`,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/dane-sprzedawcy`,
       changeFrequency: "monthly" as const,
       priority: 0.9,

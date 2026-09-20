@@ -19,6 +19,12 @@ export const categories: Category[] = [
       "Artykuły o automatyzacji procesów biznesowych, czym jest, jak liczyć ROI i od czego zacząć.",
     articles: [
       {
+        href: "/strefa-wiedzy/co-jest-nie-tak-ze-stronami-dealerow",
+        title: "Sprawdziliśmy 386 stron dealerów samochodowych",
+        description:
+          "Ile stron nie pozwala ustalić sprzedawcy, ile nie ma mapy strony i czyje naprawdę są te domeny. Pomiar z metodą i zastrzeżeniami.",
+      },
+      {
         href: "/strefa-wiedzy/co-to-jest-automatyzacja-procesow-biznesowych",
         title: "Co to jest automatyzacja procesów biznesowych?",
         description:
