@@ -77,9 +77,9 @@ export default function Page() {
           udało się rozstrzygnąć.
         </p>
 
-        <div className="prose prose-gray dark:prose-invert mt-10 max-w-none">
-          <h2>Czterech na pięciu nie da się zidentyfikować przed przelewem</h2>
-          <p>
+        <div className="mt-10">
+          <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">Czterech na pięciu nie da się zidentyfikować przed przelewem</h2>
+          <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
             Zanim firma zapłaci innej firmie, jej księgowość ustala, kto jest
             sprzedawcą, i sprawdza go w wykazie podatników VAT. Przy kwotach
             powyżej piętnastu tysięcy złotych zapłata na rachunek spoza wykazu
@@ -113,23 +113,23 @@ export default function Page() {
           zrodlo="Pomiar Fluxlab, wrzesień 2026. Dane rejestrowe z publicznego wykazu podatników VAT Ministerstwa Finansów."
         />
 
-        <div className="prose prose-gray dark:prose-invert max-w-none">
-          <p>
+        <div>
+          <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
             Najciekawszy jest środkowy słupek. Czterdzieści stron podaje numer,
             owszem, tylko że należy on do importera marki, a nie do spółki, która
             wystawi fakturę. Klient, który sprawdzi ten numer, zobaczy zupełnie
             inną firmę niż ta, z którą rozmawia. To gorsze niż brak numeru, bo
             wygląda na komplet danych.
           </p>
-          <p>
-            <Link href="/dane-sprzedawcy">
+          <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
+            <Link href="/dane-sprzedawcy" className="text-accent hover:underline">
               Sprawdź swoją stronę tym samym narzędziem
             </Link>
             , którym zrobiliśmy ten pomiar.
           </p>
 
-          <h2>Dwie trzecie stron nie daje wyszukiwarce listy podstron</h2>
-          <p>
+          <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">Dwie trzecie stron nie daje wyszukiwarce listy podstron</h2>
+          <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
             Mapa strony to plik z listą adresów, który wyszukiwarka pobiera jednym
             zapytaniem, zamiast odkrywać podstrony klikaniem w linki. Przy stronie
             wizytówce nie ma to znaczenia. Przy katalogu z setkami ofert decyduje
@@ -157,8 +157,8 @@ export default function Page() {
           zrodlo="Pomiar Fluxlab, wrzesień 2026. Sprawdzana była próbka adresów z każdej mapy, a nie całe serwisy, żeby nie obciążać cudzych serwerów."
         />
 
-        <div className="prose prose-gray dark:prose-invert max-w-none">
-          <p>
+        <div>
+          <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
             Te dwa przypadki ze środka są warte osobnego zdania. Mapa strony jest,
             wyszukiwarka ją pobiera, tylko że wszystkie wypisane w niej adresy
             zwracają błąd. W jednym z nich powód okazał się prozaiczny: plik
@@ -166,35 +166,35 @@ export default function Page() {
             Nikt tego nie zauważył, bo w przeglądarce właściciela wszystko
             wygląda normalnie.
           </p>
-          <p>
-            <Link href="/mapa-strony">Sprawdź mapę swojej strony</Link>.
+          <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
+            <Link href="/mapa-strony" className="text-accent hover:underline">Sprawdź mapę swojej strony</Link>.
           </p>
 
-          <h2>Dziesięć firm nie jest właścicielem własnego adresu</h2>
-          <p>
+          <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">Dziesięć firm nie jest właścicielem własnego adresu</h2>
+          <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
             W rejestrze domen wpisany jest jeden podmiot, zwany abonentem, i to on
             decyduje o domenie. A skoro o domenie, to również o stronie i o całej
             poczcie w tej domenie. Przeszliśmy przez rejestr i w dziesięciu
             przypadkach abonentem okazała się firma informatyczna albo agencja
             reklamowa, czyli najczęściej ten, kto kiedyś robił stronę.
           </p>
-          <p>
+          <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
             Nie nazywamy tego oszustwem i nie sugerujemy złej woli. Bywa, że jest
             to układ świadomy, oparty na umowie. Znacznie częściej jest to
             pozostałość po wdrożeniu sprzed lat, o której nikt nie pamięta,
             dopóki nie trzeba czegoś zmienić albo dopóki nie zbliża się termin
             odnowienia, a przypomnienia z rejestru idą na adres abonenta.
           </p>
-          <p>
-            <Link href="/wlasnosc-domeny">
+          <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
+            <Link href="/wlasnosc-domeny" className="text-accent hover:underline">
               Sprawdź, kto jest abonentem Twojej domeny
             </Link>
             . Dane pochodzą z jawnego rejestru, więc każdy może to potwierdzić
             samodzielnie.
           </p>
 
-          <h2>Co się nie potwierdziło</h2>
-          <p>
+          <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">Co się nie potwierdziło</h2>
+          <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
             Zaczynaliśmy z hipotezą, że na stronach znajdziemy numery rachunków
             spoza wykazu podatników, co byłoby najpoważniejszym z możliwych
             ustaleń, bo uderza wprost w kupującego. Rachunek podaje jednak tylko
@@ -202,7 +202,7 @@ export default function Page() {
             numerów figurowało w wykazie przy właściwej firmie. Hipoteza upadła i
             tak ją zapisujemy.
           </p>
-          <p>
+          <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
             Druga porzucona hipoteza dotyczyła blokowania robotów wyszukiwarek.
             Osiem domen odmawiało dostępu naszemu narzędziu, co wyglądało na
             celowy filtr. Powtórka pomiaru pokazała, że odmowa dotyczy każdego
@@ -211,30 +211,30 @@ export default function Page() {
             nie znalazło się w statystykach.
           </p>
 
-          <h2>Czego nie sprawdziliśmy</h2>
-          <ul>
-            <li>
+          <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">Czego nie sprawdziliśmy</h2>
+          <ul className="mb-4 ml-5 list-disc space-y-2 text-gray-600 dark:text-gray-400">
+            <li className="leading-relaxed">
               Nie uruchamialiśmy przeglądarki, więc strony budujące treść po
               stronie klienta mogły zostać zaliczone do braków niesłusznie.
             </li>
-            <li>
+            <li className="leading-relaxed">
               Nie czytaliśmy regulaminów w plikach PDF ani danych wklejonych jako
               obrazek. Jeśli numer NIP jest tylko tam, nasze narzędzie go nie
               zobaczy, ale nie zobaczą go też narzędzia po stronie kupującego.
             </li>
-            <li>
+            <li className="leading-relaxed">
               Nie sprawdzaliśmy, które wersje adresów są faktycznie zaindeksowane
               w wyszukiwarce. Do tego potrzebny jest dostęp, którego nie mamy i o
               który nie prosiliśmy.
             </li>
-            <li>
+            <li className="leading-relaxed">
               Osiemdziesiąt trzy domeny z listy nie odpowiedziały w ogóle, więc
               nie liczymy ich ani na plus, ani na minus.
             </li>
           </ul>
 
-          <h2>Wniosek</h2>
-          <p>
+          <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">Wniosek</h2>
+          <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
             Żaden z tych czterech problemów nie jest efektowny i żaden nie wywala
             strony. Wszystkie łączy natomiast jedna cecha: są niewidoczne z fotela
             właściciela. W przeglądarce, w której strona działa, poczta chodzi, a
