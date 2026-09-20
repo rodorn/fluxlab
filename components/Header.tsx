@@ -5,9 +5,9 @@ import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
 
 const NAV = [
-  { href: "/strony-www", label: "Strony WWW" },
   { href: "/automatyzacja-leadow-crm", label: "Automatyzacja" },
-  { href: "/scraping-danych", label: "Dane" },
+  { href: "/scraping-danych", label: "Integracje i dane" },
+  { href: "/strony-www", label: "Systemy i strony" },
   { href: "/produkty", label: "Produkty" },
   { href: "/realizacje", label: "Realizacje" },
   { href: "/strefa-wiedzy", label: "Strefa wiedzy" },
