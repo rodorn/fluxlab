@@ -63,6 +63,27 @@ export default function Home() {
           <h1 className="text-2xl lg:text-3xl font-semibold tracking-tight text-gray-900 dark:text-white/90">
             Z czym mogę pomóc?
           </h1>
+          {/* Osiem dzialajacych narzedzi to najnizszy prog wejscia, jaki mamy,
+              a strona glowna milczala o nich az do stopki, czyli na telefonie
+              po przewinieciu trzech pelnoekranowych kafli. */}
+          <Link
+            href="/narzedzia"
+            className="group mt-3 inline-flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-gray-600 dark:text-white/60 hover:text-accent dark:hover:text-accent transition-colors"
+          >
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-semibold text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-400">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+              Za darmo
+            </span>
+            <span>
+              Sprawdź swoją firmę ośmioma narzędziami, bez rejestracji{" "}
+              <span
+                aria-hidden="true"
+                className="inline-block transition-transform group-hover:translate-x-0.5"
+              >
+                →
+              </span>
+            </span>
+          </Link>
         </div>
 
         {/* 3 kolumny wyboru, zaokrąglone karty z odstępem */}
