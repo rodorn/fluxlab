@@ -139,6 +139,12 @@ export const categories: Category[] = [
       "Integracje API w firmie, kiedy warto, jakie problemy rozwiązują i jak je wdrożyć.",
     articles: [
       {
+        href: "/strefa-wiedzy/podszywanie-pod-salony-samochodowe",
+        title: "Pod 84 procent salonów można się podszyć mailowo",
+        description:
+          "Badanie zabezpieczeń poczty na 386 domenach dealerskich. Komplet ochrony ma tylko szesnaście procent.",
+      },
+      {
         href: "/strefa-wiedzy/maile-trafiaja-do-spamu",
         title: "Dlaczego firmowe maile trafiają do spamu",
         description:
