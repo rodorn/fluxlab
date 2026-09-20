@@ -95,6 +95,13 @@ const IKONY: Record<string, React.ReactElement> = {
       <path d="M7 7h8M7 11h8M7 15h5" />
     </>
   ),
+  mlotek: (
+    <>
+      <path d="M3.5 18.5 11 11" />
+      <path d="M9.5 6.5 14 2l5 5-4.5 4.5-5-5Z" />
+      <path d="M2.5 19.5 4 18l1.5 1.5L4 21l-1.5-1.5Z" />
+    </>
+  ),
   pieczec: (
     <>
       <circle cx="11" cy="11" r="7.5" />
@@ -168,12 +175,19 @@ const businessTools = [
     ikona: "paczka",
   },
   {
+    title: "Czy Twój dłużnik znika z rejestru",
+    description:
+      "Wpisz nazwę spółki albo numer KRS, a sprawdzę w Monitorze Sądowym, czy sąd nie wszczął postępowania o jej rozwiązanie bez likwidacji. Od obwieszczenia biegną trzy miesiące na sprzeciw, potem podmiot znika razem z Twoją należnością.",
+    href: "/czujka-rejestrowa",
+    ikona: "mlotek",
+    badge: "Nowość",
+  },
+  {
     title: "Czy klient ustali, komu płaci",
     description:
       "Wpisz adres firmy, a wyciągnę ze strony, kontaktu i regulaminu numer NIP oraz numer konta i sprawdzę je w wykazie podatników VAT, dokładnie tak jak zrobi to księgowość Twojego klienta przed przelewem.",
     href: "/dane-sprzedawcy",
     ikona: "pieczec",
-    badge: "Nowość",
   },
   {
     title: "Czy Google ma listę Twoich podstron",

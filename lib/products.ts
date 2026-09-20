@@ -374,6 +374,21 @@ export const PRODUCTS: Product[] = [
   },
   {
     category: "dane",
+    name: "Dłużnik znika z rejestru",
+    tagline: "Trzy miesiące od obwieszczenia i po spółce",
+    desc: "Sąd wszczyna z urzędu postępowanie o rozwiązanie spółki bez likwidacji, publikuje obwieszczenie w Monitorze Sądowym i daje trzy miesiące na sprzeciw. Potem podmiot znika z rejestru razem z Twoją należnością. Zawiadomienia nikt nie wysyła, więc pilnuję tego za Ciebie.",
+    price: "od 99 zł/mc",
+    href: "/czujka-rejestrowa",
+    cta: "Sprawdź kontrahenta",
+    narzedzie: true,
+    bullets: [
+      "sprawdzenie jednego podmiotu za darmo",
+      "skan wsteczny całego portfela od 290 zł",
+      "alert w dniu obwieszczenia",
+    ],
+  },
+  {
+    category: "dane",
     name: "Sprawdzony kontrahent",
     tagline: "Zanim wyślesz zaliczkę",
     desc: "Werdykt o konkretnej firmie złożony automatem z publicznych źródeł: Biała Lista VAT, KRS, rejestr zadłużonych, wiek domeny i listy ostrzeżeń. Pojedynczy check zajmuje 30 sekund, ale dopiero złożenie tego razem mówi, czy to firma widmo.",
