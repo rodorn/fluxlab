@@ -1,4 +1,16 @@
 import type { MetadataRoute } from "next";
+import datyStron from "@/lib/daty-stron.json";
+
+// Data ostatniej zmiany pochodzi z historii gita danej strony, a nie z momentu
+// budowania, zeby wyszukiwarka odrozniala strony faktycznie zmienione od calej
+// reszty. Odswieza to `node scripts/daty-stron.mjs`.
+const DATY = datyStron as Record<string, string>;
+
+function zData<T extends { url: string }>(wpis: T) {
+  const sciezka = wpis.url.replace("https://fluxlab.pl", "") || "/";
+  const data = DATY[sciezka];
+  return data ? { ...wpis, lastModified: new Date(data) } : wpis;
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://fluxlab.pl";
@@ -377,5 +389,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticPages, ...articlePages];
+  return ([...staticPages, ...articlePages]).map(zData);
 }
