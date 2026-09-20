@@ -32,12 +32,78 @@ export const metadata: Metadata = {
   },
 };
 
+// Ikona ma odrozniac narzedzia, a nie tylko ozdabiac karte. Przy szesciu
+// identycznych ikonach oko nie ma sie czego zlapac i trzeba czytac wszystko.
+const IKONY: Record<string, React.ReactElement> = {
+  tarcza: (
+    <>
+      <path d="M11 2.5 4 5.5v5c0 4.2 2.9 7.4 7 8.5 4.1-1.1 7-4.3 7-8.5v-5L11 2.5Z" />
+      <path d="M8.5 11.5 10.5 13.5 14 9.5" />
+    </>
+  ),
+  metka: (
+    <>
+      <path d="M3 10.5V4.5A1.5 1.5 0 0 1 4.5 3h6l8 8-7.5 7.5L3 10.5Z" />
+      <circle cx="7.5" cy="7.5" r="1.3" />
+    </>
+  ),
+  jezyk: (
+    <>
+      <circle cx="11" cy="11" r="8" />
+      <path d="M3 11h16M11 3c2.2 2.4 3.3 5.1 3.3 8s-1.1 5.6-3.3 8c-2.2-2.4-3.3-5.1-3.3-8S8.8 5.4 11 3Z" />
+    </>
+  ),
+  pinezka: (
+    <>
+      <path d="M11 19.5S4.5 13.8 4.5 9a6.5 6.5 0 1 1 13 0c0 4.8-6.5 10.5-6.5 10.5Z" />
+      <circle cx="11" cy="9" r="2.3" />
+    </>
+  ),
+  moneta: (
+    <>
+      <circle cx="11" cy="11" r="8" />
+      <path d="M11 6.5v9M13.5 8.5c-.6-.8-1.5-1.2-2.5-1.2-1.5 0-2.6.8-2.6 2s1 1.7 2.6 2.1c1.6.4 2.6.9 2.6 2.1 0 1.2-1.1 2-2.6 2-1 0-1.9-.4-2.5-1.2" />
+    </>
+  ),
+  paczka: (
+    <>
+      <path d="M3 7.5 11 3.5l8 4v7l-8 4-8-4v-7Z" />
+      <path d="M3 7.5 11 11.5l8-4M11 11.5v7" />
+    </>
+  ),
+  lupa: (
+    <>
+      <circle cx="9.5" cy="9.5" r="6" />
+      <path d="M14 14l4.5 4.5" />
+    </>
+  ),
+  koperta: (
+    <>
+      <rect x="2.5" y="4.5" width="17" height="13" rx="2" />
+      <path d="M2.5 6.5 11 12l8.5-5.5" />
+    </>
+  ),
+  kalkulator: (
+    <>
+      <rect x="4" y="2.5" width="14" height="17" rx="2" />
+      <path d="M7.5 6.5h7M7.5 10.5h.01M11 10.5h.01M14.5 10.5h.01M7.5 14h.01M11 14h.01M14.5 14h.01" />
+    </>
+  ),
+  lista: (
+    <>
+      <rect x="3" y="3" width="16" height="16" rx="2.5" />
+      <path d="M7 7h8M7 11h8M7 15h5" />
+    </>
+  ),
+};
+
 const businessTools = [
   {
     title: "Czy przeglądarka straszy Twoją stroną",
     description:
       "Wpisz adres strony, a pokażę, co widzi ktoś, kto trafia do Ciebie z wyszukiwarki. Wygasły certyfikat albo certyfikat firmy hostingowej oznacza pełnoekranowe ostrzeżenie, po którym większość odwiedzających zawraca.",
     href: "/naprawa-https",
+    ikona: "tarcza",
     badge: "Nowość",
   },
   {
@@ -45,53 +111,56 @@ const businessTools = [
     description:
       "Podaj adres sklepu, a sprawdzę Twoje aktualne przeceny i pokażę te, przy których brakuje obowiązkowej informacji o najniższej cenie z trzydziestu dni. Każda pozycja z linkiem do sprawdzenia.",
     href: "/rejestr-cen",
-    badge: "Nowość",
+    ikona: "metka",
   },
   {
     title: "Polskie teksty w wersji angielskiej",
     description:
       "Wpisz adres firmy, a znajdę Waszą wersję obcojęzyczną i policzę fragmenty, które zostały po polsku, oraz sprawdzę, czy wyszukiwarka w ogóle wie, że macie wersje językowe.",
     href: "/kontrola-jezykow",
-    badge: "Nowość",
+    ikona: "jezyk",
   },
   {
     title: "Ilu masz konkurentów w okolicy",
     description:
       "Podaj miejscowość i wybierz branżę, a policzę punkty w promieniu jednego, trzech i pięciu kilometrów oraz to, ilu mieszkańców przypada na jeden taki punkt. Przydaje się przed podpisaniem najmu.",
     href: "/analiza-lokalizacji",
-    badge: "Nowość",
+    ikona: "pinezka",
   },
   {
     title: "Ile przepłacasz za automatyzacje",
     description:
       "Podaj liczbę uruchomień i kroków w scenariuszu, a pokażę, ile zadań jest naprawdę rozliczanych, ile to kosztuje i po ilu miesiącach zwróciłoby się przeniesienie na własny serwer.",
     href: "/tansze-automatyzacje",
-    badge: "Nowość",
+    ikona: "moneta",
   },
   {
     title: "Sprawdzenie pozycji z faktury kurierskiej",
     description:
       "Przepisz trzy liczby z faktury, a policzę, czy dopłata paliwowa zgadza się ze stawką dla Twojego progu wagowego i ile ta sama pomyłka kosztuje przy kilkuset paczkach miesięcznie.",
     href: "/audyt-kurierski",
-    badge: "Nowość",
+    ikona: "paczka",
   },
   {
     title: "Sprawdzenie NIP i kontrahenta",
     description:
       "Wpisz NIP i sprawdź w wykazie Ministerstwa Finansów, czy firma istnieje, czy jest czynnym podatnikiem VAT, od kiedy działa i ile rachunków zgłosiła. Bez rejestracji i bez limitu prób.",
     href: "/sprawdzenie-nip",
+    ikona: "lupa",
   },
   {
     title: "Audyt bezpieczeństwa poczty",
     description:
       "Wpisz domenę firmy i sprawdź w kilka sekund, czy ktoś może podszyć się pod Wasz adres i czy Wasze maile trafiają do klientów. Analiza SPF, DKIM i DMARC z publicznego DNS, bez rejestracji.",
     href: "/audyt-poczty",
+    ikona: "koperta",
   },
   {
     title: "Kalkulator kosztu obsługi leadów",
     description:
       "Sprawdź, ile miesięcznie kosztuje ręczne przepisywanie leadów, zakładanie tematów w CRM i ręczne raporty. Realny koszt w zł, nie ogólniki.",
     href: "/kalkulator-leadow",
+    ikona: "kalkulator",
     badge: "Najpopularniejsze",
   },
   {
@@ -99,12 +168,14 @@ const businessTools = [
     description:
       "10 pytań tak/nie. Wynik X/10 + obszar z największym potencjałem automatyzacji. Bez rejestracji, w 3 minuty.",
     href: "/audyt-crm",
+    ikona: "lista",
   },
   {
     title: "Zatrudnić czy zautomatyzować?",
     description:
       "Porównaj koszt miesięcznej ręcznej pracy z kosztem wdrożenia automatyzacji. 4 inputy, 1 jasna decyzja.",
     href: "/zatrudnic-czy-zautomatyzowac",
+    ikona: "kalkulator",
   },
   {
     title: "Fluxdesk, panel do sesji AI",
@@ -177,11 +248,12 @@ export default function Narzedzia() {
                       <div className="mb-8">
                         <p className="section-label mb-2">Dla firm B2B</p>
                         <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
-                          Kalkulatory ROI i decyzji o automatyzacji
+                          Sprawdź swoją firmę, zanim zapłacisz komukolwiek
                         </h2>
                         <p className="mt-2 text-gray-600 dark:text-gray-400 max-w-2xl">
-                          Konkretne liczby zamiast ogólników. Każde narzędzie
-                          kończy się rekomendacją pierwszego kroku.
+                          Każde narzędzie pracuje na Twoich danych i kończy
+                          konkretną liczbą albo werdyktem, nie ogólnikiem. Bez
+                          rejestracji i bez zostawiania adresu.
                         </p>
                       </div>
                       <div className="grid md:grid-cols-3 gap-6">
@@ -208,14 +280,9 @@ export default function Narzedzia() {
                                 strokeLinecap="round"
                                 strokeLinejoin="round"
                               >
-                                <rect
-                                  x="3"
-                                  y="3"
-                                  width="16"
-                                  height="16"
-                                  rx="2.5"
-                                />
-                                <path d="M7 7h8M7 11h8M7 15h5" />
+                                {IKONY[
+                                  (tool as { ikona?: string }).ikona ?? "lista"
+                                ] ?? IKONY.lista}
                               </svg>
                             </div>
                             <h3 className="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-accent transition-colors mb-2">
