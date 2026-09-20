@@ -178,6 +178,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/strefa-wiedzy/bledy-w-rejestrze-obiektow-hotelarskich`,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/strefa-wiedzy/podszywanie-pod-salony-samochodowe`,
       changeFrequency: "monthly" as const,
       priority: 0.8,

@@ -171,6 +171,12 @@ export const categories: Category[] = [
       "Jak zautomatyzować raportowanie i unikać najczęstszych błędów w raportowaniu sprzedaży.",
     articles: [
       {
+        href: "/strefa-wiedzy/bledy-w-rejestrze-obiektow-hotelarskich",
+        title: "Rządowy rejestr hoteli gubi Kraków i Warszawę",
+        description:
+          "Dwa błędy w publicznym rejestrze: pięćset wpisów bez województwa i znikające rekordy przy poprawnym liczniku.",
+      },
+      {
         href: "/strefa-wiedzy/jak-zautomatyzowac-raportowanie-w-firmie",
         title: "Jak zautomatyzować raportowanie w firmie",
         description:
