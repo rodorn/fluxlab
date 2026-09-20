@@ -119,6 +119,20 @@ export const PRODUCTS: Product[] = [
     ],
   },
   {
+    category: "dane",
+    name: "Integracja CRM z ERP",
+    tagline: "Koniec z przepisywaniem w obie strony",
+    desc: "Handlowcy pracują w CRM, księgowość i magazyn w ERP, a między nimi stoi człowiek przepisujący dane. Spinam oba systemy: kontrahenci, dokumenty sprzedaży, stany i ceny, z kolejką ponowień i powiadomieniem, gdy coś nie przejdzie.",
+    price: "od 2 900 zł",
+    href: "/integracja-crm-z-erp",
+    cta: "Opisz swoje dwa systemy",
+    bullets: [
+      "rozpoznanie i lista niedopasowanych kontrahentów za darmo",
+      "jeden kierunek 2 900 zł, w obie strony 5 900 zł",
+      "kod i dostępy zostają u Ciebie, bez abonamentu za dostęp",
+    ],
+  },
+  {
     category: "automatyzacja",
     name: "Wdrożenie n8n",
     tagline: "Ile to kosztuje, rozbite na pozycje",
