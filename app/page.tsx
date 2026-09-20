@@ -123,10 +123,10 @@ export default function Home() {
             Produkty
           </Link>
           <Link
-            href="/sprawdzenie-nip"
+            href="/narzedzia"
             className="font-semibold text-accent hover:underline transition-colors"
           >
-            Sprawdź NIP za darmo
+            Darmowe narzędzia
           </Link>
           <Link
             href="/jak-pracuje"

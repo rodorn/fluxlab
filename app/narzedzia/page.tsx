@@ -34,11 +34,52 @@ export const metadata: Metadata = {
 
 const businessTools = [
   {
+    title: "Czy przeglądarka straszy Twoją stroną",
+    description:
+      "Wpisz adres strony, a pokażę, co widzi ktoś, kto trafia do Ciebie z wyszukiwarki. Wygasły certyfikat albo certyfikat firmy hostingowej oznacza pełnoekranowe ostrzeżenie, po którym większość odwiedzających zawraca.",
+    href: "/naprawa-https",
+    badge: "Nowość",
+  },
+  {
+    title: "Przeceny bez wymaganej informacji o cenie",
+    description:
+      "Podaj adres sklepu, a sprawdzę Twoje aktualne przeceny i pokażę te, przy których brakuje obowiązkowej informacji o najniższej cenie z trzydziestu dni. Każda pozycja z linkiem do sprawdzenia.",
+    href: "/rejestr-cen",
+    badge: "Nowość",
+  },
+  {
+    title: "Polskie teksty w wersji angielskiej",
+    description:
+      "Wpisz adres firmy, a znajdę Waszą wersję obcojęzyczną i policzę fragmenty, które zostały po polsku, oraz sprawdzę, czy wyszukiwarka w ogóle wie, że macie wersje językowe.",
+    href: "/kontrola-jezykow",
+    badge: "Nowość",
+  },
+  {
+    title: "Ilu masz konkurentów w okolicy",
+    description:
+      "Podaj miejscowość i wybierz branżę, a policzę punkty w promieniu jednego, trzech i pięciu kilometrów oraz to, ilu mieszkańców przypada na jeden taki punkt. Przydaje się przed podpisaniem najmu.",
+    href: "/analiza-lokalizacji",
+    badge: "Nowość",
+  },
+  {
+    title: "Ile przepłacasz za automatyzacje",
+    description:
+      "Podaj liczbę uruchomień i kroków w scenariuszu, a pokażę, ile zadań jest naprawdę rozliczanych, ile to kosztuje i po ilu miesiącach zwróciłoby się przeniesienie na własny serwer.",
+    href: "/tansze-automatyzacje",
+    badge: "Nowość",
+  },
+  {
+    title: "Sprawdzenie pozycji z faktury kurierskiej",
+    description:
+      "Przepisz trzy liczby z faktury, a policzę, czy dopłata paliwowa zgadza się ze stawką dla Twojego progu wagowego i ile ta sama pomyłka kosztuje przy kilkuset paczkach miesięcznie.",
+    href: "/audyt-kurierski",
+    badge: "Nowość",
+  },
+  {
     title: "Sprawdzenie NIP i kontrahenta",
     description:
       "Wpisz NIP i sprawdź w wykazie Ministerstwa Finansów, czy firma istnieje, czy jest czynnym podatnikiem VAT, od kiedy działa i ile rachunków zgłosiła. Bez rejestracji i bez limitu prób.",
     href: "/sprawdzenie-nip",
-    badge: "Nowość",
   },
   {
     title: "Audyt bezpieczeństwa poczty",
