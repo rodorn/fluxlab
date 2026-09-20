@@ -120,6 +120,21 @@ export const PRODUCTS: Product[] = [
   },
   {
     category: "automatyzacja",
+    name: "Wdrożenie n8n",
+    tagline: "Ile to kosztuje, rozbite na pozycje",
+    desc: "Licencja, serwer, praca i opieka jako cztery osobne liczby zamiast jednej ceny z zapytania ofertowego. Stawiam n8n na Twoim serwerze, buduję przepływy i przekazuję wszystko razem z dostępami, więc nic nie zostaje zamknięte u mnie.",
+    price: "od 790 zł",
+    href: "/wdrozenie-n8n-cena",
+    narzedzie: true,
+    cta: "Zobacz rozbicie kosztu",
+    bullets: [
+      "licencja n8n na własnym serwerze: 0 zł",
+      "komplet startowy z trzema przepływami: 2 400 zł",
+      "opieka 190 zł/mc, rezygnacja z miesiąca na miesiąc",
+    ],
+  },
+  {
+    category: "automatyzacja",
     name: "Pogotowie automatyzacji",
     tagline: "Stanęła integracja albo scenariusz",
     desc: "Naprawa cudzych, już wdrożonych automatyzacji: n8n, Make, Zapier, BaseLinker, WooCommerce, Allegro, webhooki i skrypty po poprzednim wykonawcy. Czytam logi wykonań, znajduję wygasłe poświadczenia i ciche awarie, czyli scenariusze zielone, ale puste.",
