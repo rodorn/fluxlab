@@ -247,6 +247,20 @@ export const PRODUCTS: Product[] = [
   },
   {
     category: "dane",
+    name: "Audyt faktur kurierskich",
+    tagline: "Dopłata paliwowa to prawie połowa ceny bazowej",
+    desc: "Stawka dopłaty paliwowej zmienia się co dwa tygodnie i zależy od progu wagowego, a korekty wagowe przewoźnik dolicza po swojemu. Przechodzę przez wszystkie linie faktur, wyłapuję pozycje policzone niezgodnie z umową i oddaję gotową treść reklamacji.",
+    price: "od 600 zł",
+    href: "/audyt-kurierski",
+    cta: "Sprawdź pozycję z faktury",
+    bullets: [
+      "sprawdzenie jednej pozycji od ręki na stronie",
+      "pełny audyt albo prowizja od odzyskanej kwoty",
+      "gotowa treść reklamacji do przewoźnika",
+    ],
+  },
+  {
+    category: "dane",
     name: "Analiza lokalizacji pod punkt",
     tagline: "Zanim podpiszesz najem na pięć lat",
     desc: "Ilu naprawdę masz konkurentów w zasięgu dojazdu, ilu mieszkańców przypada na jeden taki punkt i jak to wypada na tle sąsiednich gmin. Mapy pokazują pinezki, ale nie mówią, czy rynek jest już obsadzony. Wniosek jest jednoznaczny: otwierać, negocjować czynsz albo odpuścić.",
