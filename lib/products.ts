@@ -90,6 +90,21 @@ export const PRODUCTS: Product[] = [
   // ---------- AUTOMATYZACJA ----------
   {
     category: "automatyzacja",
+    name: "Panel zwrotów i reklamacji",
+    tagline: "Każdy zwrot przechodzi dziś przez czyjeś ręce",
+    desc: "Kupujący wpisuje numer zamówienia, wybiera pozycje i powód, dostaje etykietę zwrotną i widzi status, a Ty raz w miesiącu dostajesz zestawienie, które produkty wracają najczęściej i ile Cię to kosztuje. Zamiast kolejki maili z pytaniem, co i gdzie odesłać.",
+    price: "od 900 zł",
+    href: "/panel-zwrotow",
+    cta: "Sprawdź swoje zasady zwrotów",
+    narzedzie: true,
+    bullets: [
+      "sprawdzenie zasad zwrotów od ręki, za darmo",
+      "audyt przyczyn zwrotów od 900 zł",
+      "panel samoobsługowy od 3500 zł",
+    ],
+  },
+  {
+    category: "automatyzacja",
     name: "Tańsze automatyzacje",
     tagline: "Rachunek rośnie, a scenariusze te same",
     desc: "Popularne narzędzia liczą nie uruchomienia, tylko pojedyncze kroki, więc rachunek rośnie szybciej niż praca, którą wykonują. Przenoszę te same scenariusze na serwer, który należy do Ciebie, i pilnuję, żeby działał. Efekt ten sam, koszt stały.",
