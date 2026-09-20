@@ -139,6 +139,18 @@ export const categories: Category[] = [
       "Integracje API w firmie, kiedy warto, jakie problemy rozwiązują i jak je wdrożyć.",
     articles: [
       {
+        href: "/strefa-wiedzy/maile-trafiaja-do-spamu",
+        title: "Dlaczego firmowe maile trafiają do spamu",
+        description:
+          "Najczęstsze przyczyny lądowania ofert i faktur w spamie oraz konkretne kroki naprawy.",
+      },
+      {
+        href: "/strefa-wiedzy/podszywanie-sie-pod-firmowy-email",
+        title: "Podszywanie się pod firmowy adres",
+        description:
+          "Jak ktoś obcy wysyła wiadomości z Twojej domeny i co ustawić, żeby przestał.",
+      },
+      {
         href: "/strefa-wiedzy/integracje-api-w-firmie-kiedy-warto",
         title: "Integracje API w firmie, kiedy warto?",
         description:

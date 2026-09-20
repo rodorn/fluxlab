@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Tabs from "@/components/Tabs";
+import OkladkaArtykulu from "@/components/OkladkaArtykulu";
 import { categories } from "@/lib/categories";
 
 export const metadata: Metadata = {
@@ -78,14 +79,20 @@ export default function StrefaWiedzy() {
                         <Link
                           key={article.href}
                           href={article.href}
-                          className="block p-4 rounded-xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800/60 hover:border-accent/30 dark:hover:border-accent/50 transition-colors group"
+                          className="block overflow-hidden rounded-xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800/60 hover:border-accent/30 dark:hover:border-accent/50 transition-colors group"
                         >
+                          <OkladkaArtykulu
+                            tytul={article.title}
+                            kategoria={category.name}
+                          />
+                          <div className="p-4">
                           <h3 className="text-base font-semibold text-gray-900 dark:text-white group-hover:text-accent transition-colors mb-1">
                             {article.title}
                           </h3>
                           <p className="text-sm text-gray-500 dark:text-gray-400">
                             {article.description}
                           </p>
+                          </div>
                         </Link>
                       ))}
                     </div>
