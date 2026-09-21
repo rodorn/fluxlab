@@ -1,11 +1,20 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 /**
- * TileVideo, tło wideo kafelka, osobne dla trybu jasnego i ciemnego.
- * Renderuje dwa <video>; CSS (dark:) pokazuje właściwe. Domyślnie
- * zatrzymane (widać poster/pierwszą klatkę); po najechaniu na kartę grają.
+ * Tło kafelka na stronie głównej: nieruchomy obraz, a pod myszką wideo.
+ *
+ * Wcześniej ta sama strona ciągnęła 21 MB, bo w dokumencie stały dwa
+ * elementy wideo naraz, ciemny i jasny, przeglądarka pobierała oba, także
+ * ten ukryty przez CSS, a na telefonie odtwarzała wszystkie sześć plików
+ * automatycznie, skoro nie ma tam najechania myszką. Trzy kafelki razy dwa
+ * warianty to był cały katalog.
+ *
+ * Teraz jest tak: adres pliku trafia do elementu dopiero w chwili, gdy wideo
+ * ma faktycznie zagrać, i tylko dla tego wariantu kolorystycznego, który
+ * widać. Bez myszki nie pobieramy nic i zostaje sam obraz, który waży
+ * kilkanaście kilobajtów.
  */
 export default function TileVideo({
   srcDark,
@@ -16,64 +25,67 @@ export default function TileVideo({
   srcLight: string;
   poster: string;
 }) {
-  const wrapRef = useRef<HTMLDivElement | null>(null);
+  const ref = useRef<HTMLVideoElement | null>(null);
+  const [gra, setGra] = useState(false);
 
   useEffect(() => {
-    const wrap = wrapRef.current;
-    if (!wrap) return;
-    if (typeof window === "undefined") return;
-    const videos = Array.from(wrap.querySelectorAll("video"));
+    const video = ref.current;
+    if (!video || typeof window === "undefined") return;
 
-    // Brak myszki (mobile/touch), wideo gra ciągle, bo nie ma hovera
-    const canHover = window.matchMedia("(hover: hover)").matches;
-    if (!canHover) {
-      videos.forEach((v) => void v.play().catch(() => {}));
-      return;
-    }
+    // Dotyk bez myszki: wideo nie ma jak zagrać na najechanie, a puszczanie go
+    // z automatu kosztowałoby megabajty na łączu komórkowym. Zostaje obraz.
+    if (!window.matchMedia("(hover: hover)").matches) return;
 
-    // Desktop, wideo gra po najechaniu na kartę
-    const card = wrap.closest("a");
-    if (!card) return;
-    const enter = () => {
-      videos.forEach((v) => void v.play().catch(() => {}));
+    // Osoby, które w systemie poprosiły o ograniczenie animacji, dostają
+    // nieruchomy obraz. To ustawienie istnieje między innymi dla ludzi,
+    // którym ruch na ekranie szkodzi.
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const karta = video.closest("a");
+    if (!karta) return;
+
+    const ciemny = () =>
+      document.documentElement.classList.contains("dark") ||
+      window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+    const wejscie = () => {
+      // Pobranie zaczyna się tutaj, nie przy wczytaniu strony.
+      if (!video.getAttribute("src")) {
+        video.setAttribute("src", ciemny() ? srcDark : srcLight);
+        video.load();
+      }
+      void video
+        .play()
+        .then(() => setGra(true))
+        .catch(() => {});
     };
-    const leave = () => {
-      videos.forEach((v) => v.pause());
+    const wyjscie = () => {
+      video.pause();
+      setGra(false);
     };
-    card.addEventListener("pointerenter", enter);
-    card.addEventListener("pointerleave", leave);
+
+    karta.addEventListener("pointerenter", wejscie);
+    karta.addEventListener("pointerleave", wyjscie);
     return () => {
-      card.removeEventListener("pointerenter", enter);
-      card.removeEventListener("pointerleave", leave);
+      karta.removeEventListener("pointerenter", wejscie);
+      karta.removeEventListener("pointerleave", wyjscie);
     };
-  }, []);
-
-  const cls =
-    "absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-out";
+  }, [srcDark, srcLight]);
 
   return (
-    <div ref={wrapRef} aria-hidden="true">
-      {/* Tryb ciemny */}
-      <video
-        poster={poster}
-        muted
-        loop
-        playsInline
-        preload="metadata"
-        className={`${cls} hidden dark:block opacity-60 saturate-[0.9] group-hover:opacity-100 group-hover:saturate-150`}
-      >
-        <source src={srcDark} type="video/mp4" />
-      </video>
-      {/* Tryb jasny */}
-      <video
-        muted
-        loop
-        playsInline
-        preload="metadata"
-        className={`${cls} block dark:hidden opacity-90 group-hover:opacity-100`}
-      >
-        <source src={srcLight} type="video/mp4" />
-      </video>
-    </div>
+    <video
+      ref={ref}
+      poster={poster}
+      muted
+      loop
+      playsInline
+      preload="none"
+      aria-hidden="true"
+      className={`absolute inset-0 h-full w-full object-cover transition-all duration-700 ease-out ${
+        gra
+          ? "opacity-100 saturate-150"
+          : "opacity-90 saturate-[0.9] dark:opacity-60"
+      }`}
+    />
   );
 }

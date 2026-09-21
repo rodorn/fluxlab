@@ -23,3 +23,7 @@ yarn-error.log*
 
 # claude code local state (worktrees, memory)
 .claude/
+
+# Skrypty raportowe sesji, nie naleza do strony
+skrypty-raport/
+AUDYT_*.md

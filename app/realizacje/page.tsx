@@ -255,8 +255,8 @@ export default function RealizacjePage() {
             <p className="mt-5 text-lg text-gray-600 dark:text-gray-300">
               Poniżej publiczne repozytoria i prototypy Fluxlab. Każdy projekt
               możesz otworzyć na GitHubie i ocenić jakość kodu, zanim cokolwiek
-              zlecisz. To ten sam warsztat, którym dowożę wdrożenia dla
-              klientów.
+              zlecisz. To są rzeczy zbudowane przeze mnie, nie opisy cudzych
+              wdrożeń ani referencje, których nie mam.
             </p>
           </div>
 

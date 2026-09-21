@@ -408,7 +408,7 @@ export default function AutomatyzacjaDlaEcommerce() {
                         systemami. Szczególnie dla firm sprzedających
                         wielokanałowo (sklep + Allegro + ewentualnie Amazon czy
                         eBay), gdzie chaos rośnie szybciej niż przychody.
-                        Pracujemy zarówno z e-commerce B2C, jak i B2B, w tym
+                        Pracuję zarówno z e-commerce B2C, jak i B2B, w tym
                         drugim przypadku często łączymy automatyzację sklepu z{" "}
                         <Link
                           href="/automatyzacja-leadow"

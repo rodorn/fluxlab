@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Header from "@/components/Header";
 import TileVideo from "@/components/TileVideo";
+import WybierzBranze from "@/components/WybierzBranze";
+import { LICZBA_NARZEDZI } from "@/lib/narzedzia";
 
 const PILLARS = [
   {
@@ -149,7 +151,7 @@ export default function Home() {
               Za darmo
             </span>
             <span>
-              Sprawdź swoją firmę dziewiętnastoma narzędziami, bez rejestracji{" "}
+              Sprawdź swoją firmę {LICZBA_NARZEDZI} narzędziami, bez rejestracji{" "}
               <span
                 aria-hidden="true"
                 className="inline-block transition-transform group-hover:translate-x-0.5"
@@ -281,6 +283,8 @@ export default function Home() {
             ))}
           </ul>
         </section>
+
+        <WybierzBranze />
 
         {/* Dolny pasek */}
         <footer className="relative z-20 flex flex-wrap items-center justify-center gap-x-6 gap-y-1.5 px-6 py-3.5 text-xs text-gray-500 dark:text-white/40 border-t border-gray-200 dark:border-white/10">

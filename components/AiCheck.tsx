@@ -47,6 +47,13 @@ const ZNAK: Record<Punkt["stan"], { s: string; k: string }> = {
   zle: { s: "×", k: "text-red-600 dark:text-red-400" },
 };
 
+
+const PRZYKLADY = [
+  { domena: "fluxlab.pl", etykieta: "strona bez zarzutu" },
+  { domena: "rp.pl", etykieta: "duży serwis z brakami" },
+  { domena: "wyborcza.pl", etykieta: "wydawca, który blokuje" },
+];
+
 export default function AiCheck() {
   const [domena, setDomena] = useState("");
   const [stan, setStan] = useState<"idle" | "ladowanie" | "gotowe" | "blad">("idle");
@@ -59,6 +66,12 @@ export default function AiCheck() {
 
   async function sprawdz(e: React.FormEvent) {
     e.preventDefault();
+    await uruchom(domena);
+  }
+
+  async function uruchom(cel: string) {
+    if (!cel.trim()) return;
+    setDomena(cel);
     setStan("ladowanie");
     setBlad("");
     setWynik(null);
@@ -68,7 +81,7 @@ export default function AiCheck() {
       const res = await fetch("/api/sprawdz-ai", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ domena }),
+        body: JSON.stringify({ domena: cel }),
       });
       const data = await res.json();
       if (!res.ok) {
@@ -132,7 +145,24 @@ export default function AiCheck() {
         Bez rejestracji.
       </p>
 
-      <form onSubmit={sprawdz} className="mt-5 flex flex-col gap-3 sm:flex-row">
+      <div className="mt-4 flex flex-wrap items-center gap-2">
+        <span className="text-xs text-gray-500 dark:text-gray-400">
+          Nie masz pod ręką swojej domeny? Zobacz na przykładzie:
+        </span>
+        {PRZYKLADY.map((p) => (
+          <button
+            key={p.domena}
+            type="button"
+            onClick={() => uruchom(p.domena)}
+            disabled={stan === "ladowanie"}
+            className="rounded-full border border-gray-300 px-3 py-1 text-xs font-medium text-gray-700 transition-colors hover:border-accent hover:text-accent disabled:opacity-50 dark:border-gray-700 dark:text-gray-300"
+          >
+            {p.etykieta}
+          </button>
+        ))}
+      </div>
+
+      <form onSubmit={sprawdz} className="mt-4 flex flex-col gap-3 sm:flex-row">
         <input
           type="text"
           inputMode="url"

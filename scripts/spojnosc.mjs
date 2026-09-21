@@ -28,7 +28,18 @@ for (const c of catalog) {
     add("brak-strony", `${c.name} wskazuje na ${c.href}, a strony nie ma`);
     continue;
   }
-  const body = read(page);
+  // Strona moze byc cienkim opakowaniem na komponent kliencki, bo "use client"
+  // wyklucza eksport metadanych. Wtedy ceny szukamy takze w sasiednich plikach
+  // tego katalogu, inaczej rozdzielenie strony wyglada jak znikniecie ceny.
+  let body = read(page);
+  const katalog = path.join(ROOT, `app${c.href}`);
+  if (fs.existsSync(katalog)) {
+    for (const f of fs.readdirSync(katalog)) {
+      if (f !== "page.tsx" && /\.tsx?$/.test(f)) {
+        body += fs.readFileSync(path.join(katalog, f), "utf8");
+      }
+    }
+  }
   const nums = c.price.match(/\d+/g) || [];
   if (nums.length && !nums.every((n) => body.includes(n))) {
     add(

@@ -93,7 +93,7 @@ const tools = [
   {
     name: "Comarch Optima, Symfonia, Enova, InsERT",
     description:
-      "Cztery najpopularniejsze systemy księgowe w Polsce. Każdy ma własne API lub integracje (Optima przez Comarch ERP API, Symfonia przez Symfonia API, Enova przez SDK). Pracujemy na wszystkich, tworząc warstwę pośrednią, która przyjmuje dane z OCR, KSeF i innych źródeł i wprowadza je we właściwym formacie.",
+      "Cztery najpopularniejsze systemy księgowe w Polsce. Każdy ma własne API lub integracje (Optima przez Comarch ERP API, Symfonia przez Symfonia API, Enova przez SDK). Pracuję na wszystkich, tworząc warstwę pośrednią, która przyjmuje dane z OCR, KSeF i innych źródeł i wprowadza je we właściwym formacie.",
   },
   {
     name: "SaldeoSmart",
@@ -410,7 +410,7 @@ export default function AutomatyzacjaDlaBiurRachunkowych() {
                         klientów wzwyż, w których ręczne wprowadzanie faktur,
                         gonienie klientów za dokumentami i klepanie raportów
                         miesięcznych zaczyna pochłaniać większość czasu zespołu.
-                        Pracujemy zarówno z biurami pełnoksięgowymi, jak i z
+                        Pracuję zarówno z biurami pełnoksięgowymi, jak i z
                         biurami obsługującymi głównie JDG/KPiR/ryczałt.
                         Szczególnie często wdrażam{" "}
                         <Link

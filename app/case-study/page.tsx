@@ -7,16 +7,16 @@ import TrackedCTA from "@/components/TrackedCTA";
 import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
-  title: "Case study, przykłady wdrożeń automatyzacji | Fluxlab",
+  title: "Modelowe przepływy automatyzacji, z policzonym czasem | Fluxlab",
   description:
-    "Konkretne przykłady wdrożeń automatyzacji obsługi leadów, CRM i raportowania w firmach B2B. Przed/po, mierzalne efekty, czego unikać.",
+    "Jak wygląda przepływ obsługi leadów i raportowania przed automatyzacją i po niej, z wyliczeniem oszczędzonego czasu. To modele, nie opisy cudzych wdrożeń.",
   alternates: {
     canonical: "/case-study",
   },
   openGraph: {
     title: "Case study, przykłady wdrożeń automatyzacji | Fluxlab",
     description:
-      "Konkretne przykłady wdrożeń automatyzacji obsługi leadów, CRM i raportowania w firmach B2B.",
+      "Modelowe przepływy obsługi leadów i raportowania, z jawnym wyliczeniem czasu. Bez udawania cudzych wdrożeń.",
     locale: "pl_PL",
     type: "website",
     images: [
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab, Case study",
+        alt: "Fluxlab, modelowe przepływy automatyzacji",
       },
     ],
   },
@@ -49,15 +49,15 @@ const KIND_META: Record<
   { label: string; tone: "synteza" | "anonim" | "pelne" }
 > = {
   synteza: {
-    label: "Synteza projektów",
+    label: "Model, nie wdrożenie",
     tone: "synteza",
   },
   anonim: {
-    label: "Anonimowe wdrożenie",
+    label: "Model, dane anonimowe",
     tone: "anonim",
   },
   pelne: {
-    label: "Pełne case study",
+    label: "Opis pełny",
     tone: "pelne",
   },
 };
@@ -75,12 +75,12 @@ const examples: Example[] = [
     after:
       "Formularz/Meta Ads → walidacja → utworzenie kontaktu, firmy i deala w Pipedrive → routing wg regionu → zadanie z deadline → eskalacja przy braku reakcji w 30 min → dane do raportu.",
     metrics: [
-      { value: "z 12 min do 0", label: "ręcznej pracy na lead" },
+      { value: "12 min", label: "ręcznej pracy na lead, do zdjęcia" },
       { value: "< 5 min", label: "średni czas reakcji" },
-      { value: "+18%", label: "konwersji lead → spotkanie" },
+      { value: "< 5 min", label: "zamiast 1 do 2 godzin do kontaktu" },
     ],
     limits:
-      "Synteza kilku podobnych wdrożeń, nie pojedynczy projekt. Liczby zaokrąglone w górę do najbliższej znaczącej wartości, realny zakres mieścił się w 10–15 min ręcznej pracy i 12–22% wzrostu konwersji w zależności od źródła leadów.",
+      "To jest model przepływu, a nie opis wdrożenia u klienta, bo takich wdrożeń jeszcze nie mam. Czas 12 minut na lead to suma czynności wypisanych wyżej, policzona z zegarkiem na własnym procesie, a nie pomiar u kogoś. Czasu reakcji poniżej pięciu minut nie obiecuję jako wyniku, to jest po prostu to, co daje się ustawić, gdy zadanie zakłada się automatycznie zamiast ręcznie.",
   },
   {
     slug: "raport-pipedrive-bez-excela",
@@ -94,12 +94,12 @@ const examples: Example[] = [
     after:
       "Skrypt zbiera dane z Pipedrive API, Google Ads API i arkusza prowizji raz na dobę, normalizuje do jednego schematu, generuje raport jako PDF + post w Slacku w poniedziałek 8:00. Anomalia (np. brak danych w API) → alert na e-mail.",
     metrics: [
-      { value: "z 4h do 0", label: "tygodniowo na raport" },
+      { value: "4 h", label: "tygodniowo na raport, do zdjęcia" },
       { value: "1", label: "źródło prawdy zamiast 4" },
       { value: "stała pora", label: "publikacji raportu" },
     ],
     limits:
-      "Synteza dwóch wdrożeń. Dane wejściowe i strukturę raportu zanonimizowano. Czas oszczędności (4h/tydz.) odnosi się do osoby kompletującej raport, nie do ogólnego ROI dla firmy.",
+      "Model, nie wdrożenie u klienta. Cztery godziny tygodniowo to czas osoby sklejającej raport ręcznie, policzony z listy czynności powyżej. Nie jest to zwrot z inwestycji dla firmy ani liczba zmierzona u kogokolwiek.",
   },
 ];
 

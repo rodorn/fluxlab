@@ -403,7 +403,7 @@ export default function AutomatyzacjaDlaAgencjiMarketingowych() {
                         Dla agencji marketingowych z portfelem przynajmniej
                         kilkunastu aktywnych klientów, gdzie ręczne
                         raportowanie, onboarding i fakturowanie zaczyna pożerać
-                        tygodnie pracy zespołu. Pracujemy z agencjami
+                        tygodnie pracy zespołu. Pracuję z agencjami
                         performance (Google Ads, Meta Ads, kampanie B2B),
                         agencjami SEO, social media oraz pełnoserwisowymi 360°.
                         Szczególnie często wdrażam automatyzację procesów
