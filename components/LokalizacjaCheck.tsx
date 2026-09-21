@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Przyklady from "@/components/Przyklady";
 import { zglosZdarzenie } from "@/lib/zdarzenie";
 
 interface Punkt {
@@ -40,7 +41,29 @@ const BRANZE = [
   ["dentysta", "Dentysta"],
 ];
 
-const MOTYW: Record<string, { ramka: string; tlo: string; tekst: string; etykieta: string }> = {
+// Gotowe pary miejsce i branza. Formularz ma dwa pola, wiec sam start
+// wymagal od odwiedzajacego wymyslenia adresu i wybrania branzy, zanim
+// zobaczyl, co z tego wychodzi. Te przyciski odwracaja kolejnosc: najpierw
+// wynik, potem decyzja, czy sprawdzic wlasna okolice. Miejsca sa celowo
+// rozne wielkoscia, zeby bylo widac, ze wskaznik zalezy od gminy.
+const PRZYKLADY = [
+  {
+    miejsce: "Grodzisk Mazowiecki",
+    branza: "apteka",
+    etykieta: "Apteka, Grodzisk Mazowiecki",
+  },
+  {
+    miejsce: "Zakopane",
+    branza: "restauracja",
+    etykieta: "Restauracja, Zakopane",
+  },
+  { miejsce: "Wrocław", branza: "fryzjer", etykieta: "Fryzjer, Wrocław" },
+];
+
+const MOTYW: Record<
+  string,
+  { ramka: string; tlo: string; tekst: string; etykieta: string }
+> = {
   ZIELONY: {
     ramka: "border-emerald-500/60",
     tlo: "bg-emerald-50 dark:bg-emerald-950/30",
@@ -94,15 +117,28 @@ function Pierscienie({ w1, w3, w5 }: { w1: number; w3: number; w5: number }) {
 export default function LokalizacjaCheck() {
   const [miejsce, setMiejsce] = useState("");
   const [branza, setBranza] = useState("apteka");
-  const [stan, setStan] = useState<"idle" | "ladowanie" | "gotowe" | "blad">("idle");
+  const [stan, setStan] = useState<"idle" | "ladowanie" | "gotowe" | "blad">(
+    "idle",
+  );
   const [wynik, setWynik] = useState<Wynik | null>(null);
   const [blad, setBlad] = useState("");
   const [email, setEmail] = useState("");
-  const [leadStan, setLeadStan] = useState<"idle" | "wysylam" | "ok" | "blad">("idle");
+  const [leadStan, setLeadStan] = useState<"idle" | "wysylam" | "ok" | "blad">(
+    "idle",
+  );
   const [leadBlad, setLeadBlad] = useState("");
 
   async function sprawdz(e: React.FormEvent) {
     e.preventDefault();
+    await uruchom(miejsce, branza);
+  }
+
+  // Jedno wejscie dla formularza i dla przyciskow z przykladami, zeby wynik
+  // powstawal tak samo niezaleznie od tego, skad przyszly miejsce i branza.
+  async function uruchom(celMiejsce: string, celBranza: string) {
+    if (!celMiejsce.trim()) return;
+    setMiejsce(celMiejsce);
+    setBranza(celBranza);
     zglosZdarzenie("uruchomiono_skan");
     setStan("ladowanie");
     setBlad("");
@@ -112,7 +148,7 @@ export default function LokalizacjaCheck() {
       const res = await fetch("/api/sprawdz-lokalizacje", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ miejsce, branza }),
+        body: JSON.stringify({ miejsce: celMiejsce, branza: celBranza }),
       });
       const data = await res.json();
       if (!res.ok) {
@@ -178,10 +214,23 @@ export default function LokalizacjaCheck() {
         Sprawdź, ilu masz konkurentów w okolicy
       </h2>
       <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-        Podaj miejscowość albo adres i wybierz branżę. Policzę punkty w promieniu
-        pięciu kilometrów, zestawię je z liczbą mieszkańców gminy i powiem, ilu
-        ludzi przypada na jeden taki punkt. Bez rejestracji.
+        Podaj miejscowość albo adres i wybierz branżę. Policzę punkty w
+        promieniu pięciu kilometrów, zestawię je z liczbą mieszkańców gminy i
+        powiem, ilu ludzi przypada na jeden taki punkt. Bez rejestracji.
       </p>
+
+      <Przyklady
+        pozycje={PRZYKLADY.map((p) => ({
+          wartosc: `${p.miejsce}|${p.branza}`,
+          etykieta: p.etykieta,
+        }))}
+        onWybor={(w) => {
+          const [m, b] = w.split("|");
+          void uruchom(m, b);
+        }}
+        zablokowane={stan === "ladowanie"}
+        wstep="Nie masz jeszcze konkretnego adresu? Zobacz na gotowym przykładzie:"
+      />
 
       <form onSubmit={sprawdz} className="mt-5 space-y-3">
         <div className="flex flex-col gap-3 sm:flex-row">
@@ -230,13 +279,17 @@ export default function LokalizacjaCheck() {
           <p className="text-lg font-bold text-gray-900 dark:text-white">
             {wynik.naglowek}
           </p>
-          <p className="mt-2 text-sm text-gray-700 dark:text-gray-300">{wynik.opis}</p>
+          <p className="mt-2 text-sm text-gray-700 dark:text-gray-300">
+            {wynik.opis}
+          </p>
         </div>
       )}
 
       {wynik && wynik.status === "OK" && m && (
         <div className={`mt-6 rounded-xl border ${m.ramka} ${m.tlo} p-5`}>
-          <p className={`text-xs font-bold uppercase tracking-wider ${m.tekst}`}>
+          <p
+            className={`text-xs font-bold uppercase tracking-wider ${m.tekst}`}
+          >
             {m.etykieta}
           </p>
           <p className="mt-1 text-lg font-bold text-gray-900 dark:text-white">
@@ -246,12 +299,17 @@ export default function LokalizacjaCheck() {
             {wynik.branza}, {wynik.miejsce}
           </p>
 
-          <Pierscienie w1={wynik.w1 ?? 0} w3={wynik.w3 ?? 0} w5={wynik.w5 ?? 0} />
+          <Pierscienie
+            w1={wynik.w1 ?? 0}
+            w3={wynik.w3 ?? 0}
+            w5={wynik.w5 ?? 0}
+          />
 
           <div className="mt-5 grid gap-4 sm:grid-cols-2">
             <div className="rounded-lg bg-white/70 dark:bg-gray-950/50 p-4">
               <p className="text-3xl font-bold text-gray-900 dark:text-white tabular-nums">
-                {wynik.mieszkancowNaPunkt?.toLocaleString("pl-PL") ?? "brak danych"}
+                {wynik.mieszkancowNaPunkt?.toLocaleString("pl-PL") ??
+                  "brak danych"}
               </p>
               <p className="mt-1 text-xs text-gray-600 dark:text-gray-400">
                 mieszkańców na jeden taki punkt
@@ -259,7 +317,9 @@ export default function LokalizacjaCheck() {
             </div>
             <div className="rounded-lg bg-white/70 dark:bg-gray-950/50 p-4">
               <p className="text-3xl font-bold text-gray-900 dark:text-white tabular-nums">
-                {wynik.ludnosc ? wynik.ludnosc.liczba.toLocaleString("pl-PL") : "brak"}
+                {wynik.ludnosc
+                  ? wynik.ludnosc.liczba.toLocaleString("pl-PL")
+                  : "brak"}
               </p>
               <p className="mt-1 text-xs text-gray-600 dark:text-gray-400">
                 {wynik.ludnosc
@@ -286,7 +346,9 @@ export default function LokalizacjaCheck() {
                     key={`${p.nazwa}-${i}`}
                     className="flex justify-between gap-3 rounded bg-white/70 dark:bg-gray-950/50 px-3 py-1.5 text-sm"
                   >
-                    <span className="text-gray-800 dark:text-gray-200">{p.nazwa}</span>
+                    <span className="text-gray-800 dark:text-gray-200">
+                      {p.nazwa}
+                    </span>
                     <span className="tabular-nums text-gray-500 dark:text-gray-400">
                       {p.odleglosc} km
                     </span>
@@ -332,11 +394,15 @@ export default function LokalizacjaCheck() {
                     disabled={leadStan === "wysylam"}
                     className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
                   >
-                    {leadStan === "wysylam" ? "Wysyłam..." : "Wyślij zgłoszenie"}
+                    {leadStan === "wysylam"
+                      ? "Wysyłam..."
+                      : "Wyślij zgłoszenie"}
                   </button>
                 </div>
                 {leadStan === "blad" && (
-                  <p className="mt-2 text-sm text-red-600 dark:text-red-400">{leadBlad}</p>
+                  <p className="mt-2 text-sm text-red-600 dark:text-red-400">
+                    {leadBlad}
+                  </p>
                 )}
               </form>
             )}
@@ -346,8 +412,8 @@ export default function LokalizacjaCheck() {
 
       <p className="mt-4 text-xs text-gray-500 dark:text-gray-400">
         Dane o punktach pochodzą z otwartej bazy map, a liczba mieszkańców z
-        publicznego rejestru statystycznego. Baza map bywa niekompletna na wsiach,
-        więc wynik traktuj jako przekrój, nie spis powszechny.
+        publicznego rejestru statystycznego. Baza map bywa niekompletna na
+        wsiach, więc wynik traktuj jako przekrój, nie spis powszechny.
       </p>
     </div>
   );
