@@ -104,3 +104,6 @@ Mail wysłany na `iwanekpawel55@gmail.com` o 18:55, z raportem ruchu (z zastrze�
 Dwie rzeczy warte odnotowania. Po pierwsze, środkowy scenariusz audytu CRM dawał najpierw 2/10, czyli tę samą kategorię co „bez CRM" — poprawiłem odpowiedzi tak, żeby trafiał w środkowy próg, bo inaczej dwa z trzech przycisków pokazywałyby ten sam werdykt. Po drugie, `AUDYT_TECHNICZNY.md` jest w `.gitignore`, więc odhaczenie pozycji 21 zostaje wyłącznie lokalnie.
 === 2026-09-21 18:50:54 koniec, kod 0
 === 2026-09-21 19:43:30 start
+=== 2026-09-21 19:55 koniec cyklu: /narzedzia kompletne, podzielone na filary, wybor po sytuacji
+Commit 8f6d63a. Build i spojnosc czyste. IndexNow: Yandex i Naver 200, wspolny punkt 403.
+Mail wyslany 19:50 na iwanekpawel55@gmail.com z dwoma zrzutami i raportem ruchu.
