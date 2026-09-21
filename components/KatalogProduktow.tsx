@@ -28,8 +28,11 @@ import {
 } from "@/lib/products";
 import { zglosZdarzenie } from "@/lib/zdarzenie";
 
+// Na telefonie kazdy przycisk lapal wlasny wiersz i pasek rosl na siedem
+// linii, czyli caly katalog uciekal pod krawedz ekranu. Mniejszy odstep i
+// czcionka mieszcza po dwa w wierszu.
 const PRZYCISK =
-  "rounded-full border px-4 py-2 text-sm font-semibold transition-colors";
+  "rounded-full border px-2.5 py-1.5 text-xs sm:px-4 sm:py-2 sm:text-sm font-semibold transition-colors";
 const NIEAKTYWNY =
   "border-gray-200/80 dark:border-gray-800/80 bg-white/60 dark:bg-gray-900/40 text-gray-700 dark:text-gray-300 hover:border-accent/50";
 const AKTYWNY = "border-accent bg-accent text-white";
@@ -51,8 +54,9 @@ export default function KatalogProduktow() {
   function wybierzFilar(f: ProductCategory | null) {
     zglos();
     setFilar(f);
-    // Grupa, ktorej w nowym filarze nie ma, zostawialaby pusta liste.
-    if (f && grupa && !PRODUCTS.some((p) => p.category === f && p.grupa === grupa)) {
+    // Grupa nalezy do jednego filaru i jej przyciski znikaja razem z nim,
+    // wiec zostawiona w pamieci filtrowalaby liste bez widocznej przyczyny.
+    if (!f || (grupa && !PRODUCTS.some((p) => p.category === f && p.grupa === grupa))) {
       setGrupa(null);
     }
   }
@@ -108,7 +112,7 @@ export default function KatalogProduktow() {
           Czego szukasz?
         </p>
 
-        <div className="mt-4 flex flex-wrap gap-2">
+        <div className="mt-4 flex flex-wrap gap-1.5 sm:gap-2">
           <button
             type="button"
             onClick={() => wybierzFilar(null)}
@@ -130,8 +134,12 @@ export default function KatalogProduktow() {
           ))}
         </div>
 
-        <div className="mt-3 flex flex-wrap gap-2">
-          {grupyWFilarze.map((g) => (
+        {/* Drugi poziom pokazujemy dopiero po wybraniu obszaru. Kazda grupa
+            nalezy do jednego filaru, wiec przed wyborem obszaru byl to ten
+            sam podzial powiedziany dwa razy, a na telefonie jedenascie
+            przyciskow spychalo katalog pod krawedz ekranu. */}
+        <div className="mt-3 flex flex-wrap gap-1.5 sm:gap-2">
+          {filar && grupyWFilarze.map((g) => (
             <button
               key={g}
               type="button"
