@@ -247,3 +247,16 @@ Commity `b7e4660`, `58f2c17`, `1025030`, `6a7da3d` na `main`. IndexNow: Yandex i
 Do kolejnych cykli: dwa produkty bez ceny, martwe komponenty (2.3), liczba mnoga na czterech stronach branżowych (2.4), nieklikalny adres GitHuba (2.5), kontrast w stopce, H1 na `/kontakt`, za długie `title` i `description`.
 === 2026-09-21 22:50:58 koniec, kod 0
 === 2026-09-21 23:43:06 start
+=== 2026-09-21 23:51 koniec cyklu: integracje i raportowanie podaja cene, kalkulator zakresu wyceny
+Commit 3a0ae88. Build i spojnosc czyste. Nowe pliki: lib/wycena.ts, components/ZakresWyceny.tsx.
+Odhaczone w AUDYT_TRESCI.md: 3.5 (dwa produkty bez zadnej liczby). Cennik nie ma juz pozycji bez kwoty.
+Nowa regula 1d w scripts/spojnosc.mjs: pozycja katalogu bez odczytywalnej kwoty nie przechodzi.
+Ceny: /integracje-api od 1 500 zl, /automatyzacja-raportowania od 790 zl. Stawki z tego samego
+rzedu co jawne stawki na /wdrozenie-n8n-cena (przeplyw od 790 zl, opieka 190 zl/mc).
+Zdarzenie policzono_zakres, raz na sesje. Produkcja potwierdzona, /produkty: 11/14/5/3 = 33,
+pasmo "wycena po diagnozie" zniknelo. IndexNow: Yandex i Naver 200, wspolny punkt 403.
+Po drodze wlasny blad: toLocaleString dawalo inna spacje na serwerze i w przegladarce, przez co
+ta sama kwota wygladala inaczej po pierwszym kliknieciu. Grupowanie tysiecy robi teraz wlasny kod.
+Mail wyslany 23:51 z dwoma zrzutami z produkcji i raportem ruchu.
+Do kolejnych cykli: 2.3 martwe komponenty, 2.4 liczba mnoga na stronach branzowych, 2.5 adres
+GitHuba jako tekst, KSeF w czasie przyszlym, kontrast w stopce, H1 na /kontakt, dlugie title.
