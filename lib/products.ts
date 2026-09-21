@@ -1,5 +1,19 @@
 export type ProductCategory = "www" | "automatyzacja" | "dane";
 
+/**
+ * Drugi poziom porządku. Trzy filary to za mało, żeby połapać się w
+ * trzydziestu kilku pozycjach: w jednym worku lądowało wdrożenie n8n obok
+ * sprawdzenia auta przed zakupem. Grupa mówi, czym dana pozycja jest:
+ * wdrożeniem, naprawą czegoś istniejącego, czy jednorazowym raportem.
+ */
+export type ProductGroup =
+  | "wdrozenia"
+  | "naprawy"
+  | "integracje"
+  | "raporty"
+  | "budowa"
+  | "diagnostyka";
+
 export interface Product {
   name: string;
   tagline: string;
@@ -9,15 +23,34 @@ export interface Product {
   cta: string;
   bullets: string[];
   category: ProductCategory;
+  grupa: ProductGroup;
   featured?: boolean;
   /** Produkt ma darmowe narzedzie dzialajace wprost na swojej stronie. */
   narzedzie?: boolean;
 }
 
 export const CATEGORY_LABEL: Record<ProductCategory, string> = {
-  www: "Strony WWW",
-  automatyzacja: "Automatyzacja",
-  dane: "Dane",
+  automatyzacja: "Automatyzacja procesów",
+  dane: "Integracje i dane",
+  www: "Systemy i strony",
+};
+
+export const GROUP_LABEL: Record<ProductGroup, string> = {
+  wdrozenia: "Wdrożenia",
+  naprawy: "Naprawy i audyty",
+  integracje: "Integracje systemów",
+  raporty: "Raporty na zamówienie",
+  budowa: "Budowa i rozwój",
+  diagnostyka: "Diagnostyka strony",
+};
+
+export const GROUP_INTRO: Record<ProductGroup, string> = {
+  wdrozenia: "Proces, który dziś ktoś klika ręcznie, zaczyna dziać się sam.",
+  naprawy: "Coś już działa, ale działa źle albo przestało. Znajduję przyczynę i naprawiam.",
+  integracje: "Dwa systemy, które nie rozmawiają ze sobą, zaczynają wymieniać dane.",
+  raporty: "Publiczne i Wasze własne dane zamienione w jedną decyzję, jednorazowo.",
+  budowa: "Strona albo panel, który jest częścią procesu, a nie osobnym bytem.",
+  diagnostyka: "Konkretna usterka strony, znaleziona i opisana, zwykle w jeden dzień.",
 };
 
 export const CATEGORY_INTRO: Record<ProductCategory, string> = {
@@ -36,6 +69,7 @@ export const PRODUCTS: Product[] = [
     desc: "Porównuję pliki Twojej strony z oryginałami prosto z repozytorium WordPressa, więc listę obcych i podmienionych plików mam w minuty, a nie po godzinach ręcznego szukania. Do tego skan bazy pod wstrzyknięcia i podstawionych administratorów.",
     price: "diagnoza 49 zł",
     href: "/strona-po-wlamaniu",
+    grupa: "budowa",
     cta: "Zgłoś włamanie",
     bullets: [
       "raport, którędy weszli, a nie samo posprzątanie",
@@ -51,6 +85,7 @@ export const PRODUCTS: Product[] = [
     desc: "Drobne zmiany na działającej stronie robione tak, żeby przeżyły aktualizację motywu: style globalne zamiast lokalnych nadpisań i punkty graniczne motywu zamiast sztywnych pikseli.",
     price: "od 99 zł",
     href: "/strony-www",
+    grupa: "budowa",
     cta: "Zamów poprawki",
     bullets: [
       "nowa podstrona w obecnym stylu strony",
@@ -65,6 +100,7 @@ export const PRODUCTS: Product[] = [
     desc: "Automat przechodzi po stronie, mierzy czas ładowania, znajduje błędy konsoli, martwe linki, brakujące opisy obrazków i elementy blokujące renderowanie. Wynik to lista poprawek uszeregowana po realnym wpływie.",
     price: "19 zł",
     href: "/audyt-strony",
+    grupa: "diagnostyka",
     cta: "Zamów audyt strony",
     bullets: [
       "priorytety według wpływu, nie lista 200 uwag",
@@ -79,6 +115,7 @@ export const PRODUCTS: Product[] = [
     desc: "Jedna strona sprzedażowa z formularzem i bramką płatniczą, gotowa pod BLIK i przelewy. Zgłoszenie zapisuje się zanim klient przejdzie do płatności, więc nie tracisz danych osób, które zrezygnują w trakcie.",
     price: "od 299 zł",
     href: "/landing-z-platnoscia",
+    grupa: "budowa",
     cta: "Zamów landing",
     bullets: [
       "jeden szablon podpięty pod wiele domen",
@@ -95,6 +132,7 @@ export const PRODUCTS: Product[] = [
     desc: "Kupujący wpisuje numer zamówienia, wybiera pozycje i powód, dostaje etykietę zwrotną i widzi status, a Ty raz w miesiącu dostajesz zestawienie, które produkty wracają najczęściej i ile Cię to kosztuje. Zamiast kolejki maili z pytaniem, co i gdzie odesłać.",
     price: "od 490 zł",
     href: "/panel-zwrotow",
+    grupa: "wdrozenia",
     cta: "Sprawdź swoje zasady zwrotów",
     narzedzie: true,
     bullets: [
@@ -110,6 +148,7 @@ export const PRODUCTS: Product[] = [
     desc: "Popularne narzędzia liczą nie uruchomienia, tylko pojedyncze kroki, więc rachunek rośnie szybciej niż praca, którą wykonują. Przenoszę te same scenariusze na serwer, który należy do Ciebie, i pilnuję, żeby działał. Efekt ten sam, koszt stały.",
     price: "od 790 zł",
     href: "/tansze-automatyzacje",
+    grupa: "wdrozenia",
     narzedzie: true,
     cta: "Policz swoją oszczędność",
     bullets: [
@@ -125,6 +164,7 @@ export const PRODUCTS: Product[] = [
     desc: "Klient coraz częściej pyta asystenta o firmę do konkretnego zadania zamiast wpisywać frazę w wyszukiwarkę. Sprawdzam siedem warunków, od których zależy, czy Twoja strona może w takiej odpowiedzi wystąpić: dostęp dla robotów, treść bez skryptów, dane uporządkowane, metadane, mapa strony i llms.txt.",
     price: "sprawdzenie za darmo",
     href: "/widocznosc-w-ai",
+    grupa: "diagnostyka",
     narzedzie: true,
     cta: "Sprawdź swoją stronę",
     bullets: [
@@ -140,6 +180,7 @@ export const PRODUCTS: Product[] = [
     desc: "Skrzynka do doręczeń elektronicznych jest obowiązkowa, ale nikt nie każe obsługiwać jej ręcznie w osobnym panelu. Spinam ją z Waszym systemem, razem z pobieraniem dowodów doręczenia, bez których cała rzecz nie ma wartości dowodowej.",
     price: "od 3 900 zł",
     href: "/e-doreczenia-integracja",
+    grupa: "integracje",
     cta: "Opisz, czego używacie",
     bullets: [
       "otwarty klient tego API napisany przeze mnie, do obejrzenia przed decyzją",
@@ -154,6 +195,7 @@ export const PRODUCTS: Product[] = [
     desc: "Handlowcy pracują w CRM, księgowość i magazyn w ERP, a między nimi stoi człowiek przepisujący dane. Spinam oba systemy: kontrahenci, dokumenty sprzedaży, stany i ceny, z kolejką ponowień i powiadomieniem, gdy coś nie przejdzie.",
     price: "od 2 900 zł",
     href: "/integracja-crm-z-erp",
+    grupa: "integracje",
     cta: "Opisz swoje dwa systemy",
     bullets: [
       "rozpoznanie i lista niedopasowanych kontrahentów za darmo",
@@ -168,6 +210,7 @@ export const PRODUCTS: Product[] = [
     desc: "Licencja, serwer, praca i opieka jako cztery osobne liczby zamiast jednej ceny z zapytania ofertowego. Stawiam n8n na Twoim serwerze, buduję przepływy i przekazuję wszystko razem z dostępami, więc nic nie zostaje zamknięte u mnie.",
     price: "od 790 zł",
     href: "/wdrozenie-n8n-cena",
+    grupa: "wdrozenia",
     narzedzie: true,
     cta: "Zobacz rozbicie kosztu",
     bullets: [
@@ -183,6 +226,7 @@ export const PRODUCTS: Product[] = [
     desc: "Naprawa cudzych, już wdrożonych automatyzacji: n8n, Make, Zapier, BaseLinker, WooCommerce, Allegro, webhooki i skrypty po poprzednim wykonawcy. Czytam logi wykonań, znajduję wygasłe poświadczenia i ciche awarie, czyli scenariusze zielone, ale puste.",
     price: "diagnoza 49 zł",
     href: "/pogotowie-automatyzacji",
+    grupa: "naprawy",
     cta: "Zgłoś awarię",
     bullets: [
       "odpowiedź do 2 godzin w godzinach pracy",
@@ -198,6 +242,7 @@ export const PRODUCTS: Product[] = [
     desc: "Analiza raportu wyszukiwanych haseł: ile budżetu idzie na kliknięcia bez efektu, gotowa lista wykluczeń i plan naprawy konta.",
     price: "69 zł",
     href: "/audyt-google-ads",
+    grupa: "naprawy",
     cta: "Zamów mini-audyt",
     bullets: [
       "zwrot, jeśli znajdę mniej niż 500 zł/mc do odzyskania",
@@ -212,6 +257,7 @@ export const PRODUCTS: Product[] = [
     desc: "Automat sprawdza, czy Twoja domena jest poprawnie zabezpieczona i czy ktoś może podszyć się pod Twój adres. To najczęstszy powód, dla którego firmowe maile lądują w spamie.",
     price: "od 19 zł",
     href: "/audyt-poczty",
+    grupa: "naprawy",
     narzedzie: true,
     cta: "Sprawdź swoją pocztę",
     bullets: [
@@ -228,6 +274,7 @@ export const PRODUCTS: Product[] = [
     desc: "Zadaję Twojemu botowi 150 realnych pytań klienta i zderzam każdą odpowiedź z prawdą sklepu: cennikiem, regulaminem i zasadami zwrotów. Wyłapuję halucynacje i obietnice, którymi firma jest związana.",
     price: "69 zł",
     href: "/audyt-chatbota",
+    grupa: "naprawy",
     cta: "Zamów audyt bota",
     bullets: [
       "lista odpowiedzi sprzecznych z regulaminem",
@@ -242,6 +289,7 @@ export const PRODUCTS: Product[] = [
     desc: "Łączę sklep, CRM, ERP i hurtownie tak, żeby dane przechodziły same: synchronizacja przyrostowa, obsługa limitów API i logi, które pokazują cichy błąd zanim zepsuje dane.",
     price: "wycena po diagnozie",
     href: "/integracje-api",
+    grupa: "wdrozenia",
     cta: "Opisz integrację",
     bullets: [
       "synchronizacja różnicowa zamiast pełnych przebiegów",
@@ -256,6 +304,7 @@ export const PRODUCTS: Product[] = [
     desc: "Raport, który składa się sam i ląduje na mailu o ustalonej godzinie, zamiast zjadać komuś pół dnia w miesiącu.",
     price: "wycena po diagnozie",
     href: "/automatyzacja-raportowania",
+    grupa: "wdrozenia",
     cta: "Zamów automatyzację",
     bullets: [
       "dane z wielu źródeł w jednym zestawieniu",
@@ -272,6 +321,7 @@ export const PRODUCTS: Product[] = [
     desc: "Wklejasz link do oferty z Otomoto lub OLX, a dostajesz benchmark ceny wobec podobnych aut, listę typowych usterek modelu, wykryte red-flagi i gotowy skrypt negocjacji.",
     price: "od 5 zł",
     href: "/sprawdz-auto",
+    grupa: "raporty",
     cta: "Zamów sprawdzenie auta",
     bullets: [
       "price-check 5 zł, pełny raport 15 zł",
@@ -287,6 +337,7 @@ export const PRODUCTS: Product[] = [
     desc: "Wersja obcojęzyczna prawie zawsze zostaje niedokończona: przyciski i całe akapity zostają po polsku, a wyszukiwarka nie dostaje znaczników, po których rozpoznaje wersje językowe. Sprawdzam to fragment po fragmencie i oddaję listę miejsc do podmiany.",
     price: "od 99 zł",
     href: "/kontrola-jezykow",
+    grupa: "diagnostyka",
     narzedzie: true,
     cta: "Sprawdź swoją wersję obcojęzyczną",
     bullets: [
@@ -302,6 +353,7 @@ export const PRODUCTS: Product[] = [
     desc: "Zanim firma zapłaci, ustala sprzedawcę w wykazie podatników VAT, a przy większych kwotach także to, czy numer konta należy do tego samego podmiotu. Strona bez NIP-u sprawia, że ten test nie ma z czego wyjść. Zdarza się też, że w stopce stoi NIP zupełnie innej spółki.",
     price: "od 290 zł",
     href: "/dane-sprzedawcy",
+    grupa: "diagnostyka",
     cta: "Sprawdź swoją stronę",
     narzedzie: true,
     bullets: [
@@ -317,6 +369,7 @@ export const PRODUCTS: Product[] = [
     desc: "Mapa strony to lista adresów, którą wyszukiwarka pobiera jednym zapytaniem. Bez niej podstrony podlinkowane głęboko bywają odkrywane miesiącami. Z nią, ale wypełnioną adresami usuniętych ofert, robot zużywa limit odwiedzin na błędy. Sprawdzam jedno i drugie.",
     price: "od 240 zł",
     href: "/mapa-strony",
+    grupa: "diagnostyka",
     cta: "Sprawdź swoją mapę strony",
     narzedzie: true,
     bullets: [
@@ -332,6 +385,7 @@ export const PRODUCTS: Product[] = [
     desc: "Adres z www i bez www zwracają tę samą treść, żaden nie przekierowuje na drugi. Siła linków prowadzących do firmy dzieli się wtedy na dwa adresy zamiast sumować na jednym, a wyszukiwarka sama wybiera, którą wersję pokazać, często nie tę z wizytówki i faktur. W przeglądarce nie widać tego wcale.",
     price: "od 190 zł",
     href: "/podwojny-adres",
+    grupa: "diagnostyka",
     cta: "Sprawdź swój adres",
     narzedzie: true,
     bullets: [
@@ -347,6 +401,7 @@ export const PRODUCTS: Product[] = [
     desc: "W rejestrze wpisany jest jeden podmiot i to on decyduje o domenie, a więc o stronie i całej poczcie firmowej. Jeśli jest nim dawny wykonawca, przy konflikcie firma traci wszystko naraz. Sprawdzam, kto figuruje w rejestrze, i prowadzę przeniesienie na właściwą spółkę.",
     price: "od 490 zł",
     href: "/wlasnosc-domeny",
+    grupa: "diagnostyka",
     cta: "Sprawdź swoją domenę",
     narzedzie: true,
     bullets: [
@@ -362,6 +417,7 @@ export const PRODUCTS: Product[] = [
     desc: "Jedno polecenie zostawione po wersji roboczej potrafi wyłączyć całą witrynę z wyników wyszukiwania. Właściciel tego nie widzi, bo wchodzi z zakładki, a firma znika z internetu dla każdego, kto jej szuka. Sprawdzam trzy miejsca, w których taka blokada siedzi, i zdejmuję ją.",
     price: "od 190 zł",
     href: "/widocznosc-w-google",
+    grupa: "diagnostyka",
     cta: "Sprawdź swoją widoczność",
     narzedzie: true,
     bullets: [
@@ -377,6 +433,7 @@ export const PRODUCTS: Product[] = [
     desc: "Gdy certyfikat wygasł albo należy do hostingu, a nie do Twojej domeny, przeglądarka pokazuje pełnoekranowe ostrzeżenie i większość odwiedzających zawraca. Sprawdzam, co dokładnie jest nie tak, i naprawiam warstwę szyfrowania razem z przekierowaniami.",
     price: "od 190 zł",
     href: "/naprawa-https",
+    grupa: "diagnostyka",
     narzedzie: true,
     cta: "Sprawdź swoją stronę",
     bullets: [
@@ -392,6 +449,7 @@ export const PRODUCTS: Product[] = [
     desc: "Sprawdzam każdą przecenioną pozycję w sklepie i wskazuję te, przy których brakuje obowiązkowej informacji o najniższej cenie z 30 dni przed obniżką. Skan robię z zewnątrz, bez dostępu do panelu. Osobno prowadzę codzienny zapis cen, czyli dowód, którego dziś nikt nie zbiera.",
     price: "od 49 zł",
     href: "/rejestr-cen",
+    grupa: "diagnostyka",
     narzedzie: true,
     cta: "Sprawdź swój sklep",
     bullets: [
@@ -407,6 +465,7 @@ export const PRODUCTS: Product[] = [
     desc: "Stawka dopłaty paliwowej zmienia się co dwa tygodnie i zależy od progu wagowego, a korekty wagowe przewoźnik dolicza po swojemu. Przechodzę przez wszystkie linie faktur, wyłapuję pozycje policzone niezgodnie z umową i oddaję gotową treść reklamacji.",
     price: "od 290 zł",
     href: "/audyt-kurierski",
+    grupa: "raporty",
     narzedzie: true,
     cta: "Sprawdź pozycję z faktury",
     bullets: [
@@ -422,6 +481,7 @@ export const PRODUCTS: Product[] = [
     desc: "Ilu naprawdę masz konkurentów w zasięgu dojazdu, ilu mieszkańców przypada na jeden taki punkt i jak to wypada na tle sąsiednich gmin. Mapy pokazują pinezki, ale nie mówią, czy rynek jest już obsadzony. Wniosek jest jednoznaczny: otwierać, negocjować czynsz albo odpuścić.",
     price: "od 190 zł",
     href: "/analiza-lokalizacji",
+    grupa: "raporty",
     narzedzie: true,
     cta: "Sprawdź okolicę",
     bullets: [
@@ -437,6 +497,7 @@ export const PRODUCTS: Product[] = [
     desc: "Sąd wszczyna z urzędu postępowanie o rozwiązanie spółki bez likwidacji, publikuje obwieszczenie w Monitorze Sądowym i daje trzy miesiące na sprzeciw. Potem podmiot znika z rejestru razem z Twoją należnością. Zawiadomienia nikt nie wysyła, więc pilnuję tego za Ciebie.",
     price: "od 99 zł/mc",
     href: "/czujka-rejestrowa",
+    grupa: "raporty",
     cta: "Sprawdź kontrahenta",
     narzedzie: true,
     bullets: [
@@ -452,6 +513,7 @@ export const PRODUCTS: Product[] = [
     desc: "Werdykt o konkretnej firmie złożony automatem z publicznych źródeł: Biała Lista VAT, KRS, rejestr zadłużonych, wiek domeny i listy ostrzeżeń. Pojedynczy check zajmuje 30 sekund, ale dopiero złożenie tego razem mówi, czy to firma widmo.",
     price: "od 9 zł",
     href: "/sprawdz-kontrahenta",
+    grupa: "raporty",
     narzedzie: true,
     cta: "Sprawdź firmę",
     bullets: [
@@ -467,6 +529,7 @@ export const PRODUCTS: Product[] = [
     desc: "Skanuję żywe oferty z DE i NL i wskazuję konkretne egzemplarze, które zarabiają po odjęciu wszystkich kosztów sprowadzenia, oraz modele z kosztownymi wadami, których lepiej unikać.",
     price: "od 10 zł",
     href: "/import-radar",
+    grupa: "raporty",
     cta: "Znajdź opłacalne auto",
     bullets: [
       "ranking marży netto na realnych ofertach",
@@ -481,6 +544,7 @@ export const PRODUCTS: Product[] = [
     desc: "Przysyłasz eksport sprzedaży i ceny zakupu, a dostajesz prawdziwy zysk na sztuce po prowizjach, zwrotach i dopłatach do wysyłki. Panel sprzedażowy pokazuje obrót, a nie to, co zostaje na czysto.",
     price: "49 zł",
     href: "/audyt-marz",
+    grupa: "raporty",
     cta: "Zamów audyt marż",
     bullets: [
       "lista produktów sprzedawanych pod kreską",
@@ -495,6 +559,7 @@ export const PRODUCTS: Product[] = [
     desc: "Eksport z kart paliwowych zestawiony z przebiegami i trasą. Sam portal karty pokazuje listę transakcji, ale dopiero zestawienie z trasą wyłapuje tankowanie do kanistra, obce auto albo klon karty.",
     price: "od 99 zł",
     href: "/kontrola-paliwa",
+    grupa: "raporty",
     cta: "Zamów kontrolę floty",
     bullets: [
       "lista transakcji do wyjaśnienia z kwotą straty",
@@ -509,6 +574,7 @@ export const PRODUCTS: Product[] = [
     desc: "Zbieram dane z serwisów, które nie mają eksportu ani API: oferty, ceny, katalogi, listy firm. Dostajesz gotowy arkusz albo zasilaną cyklicznie bazę, bez duplikatów.",
     price: "od 49 zł",
     href: "/scraping-danych",
+    grupa: "integracje",
     cta: "Opisz, czego szukasz",
     bullets: [
       "deduplikacja i walidacja zamiast surowego zrzutu",

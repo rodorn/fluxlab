@@ -2,9 +2,12 @@ import Link from "next/link";
 import {
   CATEGORY_INTRO,
   CATEGORY_LABEL,
+  GROUP_INTRO,
+  GROUP_LABEL,
   productsByCategory,
   type Product,
   type ProductCategory,
+  type ProductGroup,
 } from "@/lib/products";
 
 function Card({ p }: { p: Product }) {
@@ -95,6 +98,20 @@ export default function ProductGrid({
   const items = productsByCategory(category);
   const Heading = headingLevel;
 
+  // Kolejnosc grup jest stala i celowa: najpierw to, co buduje, potem to,
+  // co naprawia, na koncu jednorazowe raporty.
+  const KOLEJNOSC: ProductGroup[] = [
+    "wdrozenia",
+    "integracje",
+    "budowa",
+    "naprawy",
+    "diagnostyka",
+    "raporty",
+  ];
+  const grupy = KOLEJNOSC.map(
+    (g) => [g, items.filter((p) => p.grupa === g)] as const,
+  ).filter(([, pozycje]) => pozycje.length > 0);
+
   return (
     <div>
       {showHeading && (
@@ -107,11 +124,24 @@ export default function ProductGrid({
           </p>
         </div>
       )}
-      <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {items.map((p) => (
-          <Card key={p.name} p={p} />
-        ))}
-      </div>
+      {/* Wewnatrz filaru dzielimy jeszcze na grupy. Trzydziesci kilka kafli
+          jednym ciagiem to sciana, w ktorej wdrozenie n8n stoi obok
+          sprawdzenia auta i nie widac, ze to zupelnie inny rodzaj pracy. */}
+      {grupy.map(([grupa, pozycje]) => (
+        <section key={grupa} className="mt-10">
+          <h3 className="text-lg font-bold text-gray-900 dark:text-white">
+            {GROUP_LABEL[grupa]}
+          </h3>
+          <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+            {GROUP_INTRO[grupa]}
+          </p>
+          <div className="mt-5 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {pozycje.map((p) => (
+              <Card key={p.name} p={p} />
+            ))}
+          </div>
+        </section>
+      ))}
     </div>
   );
 }

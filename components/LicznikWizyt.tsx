@@ -20,11 +20,33 @@ function idSesji(): string {
   }
 }
 
+/**
+ * Czy to przeglądarka sterowana skryptem, a nie człowiek.
+ *
+ * Zrzuty ekranu i sprawdzenia wdrożeń robię przeglądarką bez okna, która
+ * wykonuje JavaScript tak samo jak zwykła, więc jej wejścia lądowały w
+ * liczniku i podbijały statystyki. W raporcie wyszło z tego 61 odsłon i 38
+ * osób, choć realnych odwiedzin była garstka. Licznik, który liczy tego, kto
+ * go sprawdza, jest gorszy niż brak licznika, bo na jego podstawie
+ * podejmuje się decyzje.
+ */
+function sterowanaSkryptem(): boolean {
+  try {
+    if (navigator.webdriver) return true;
+    return /HeadlessChrome|Puppeteer|Playwright|bot|crawler|spider/i.test(
+      navigator.userAgent,
+    );
+  } catch {
+    return false;
+  }
+}
+
 function Zliczanie() {
   const sciezka = usePathname();
   const parametry = useSearchParams();
 
   useEffect(() => {
+    if (sterowanaSkryptem()) return;
     let zrodlo = "";
     try {
       zrodlo = document.referrer ? new URL(document.referrer).hostname : "";

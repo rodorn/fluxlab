@@ -5,6 +5,20 @@
 // platnej wersji.
 export function zglosZdarzenie(zdarzenie: string, sciezka?: string): void {
   if (typeof window === "undefined") return;
+  // Przeglądarka sterowana skryptem, czyli moje własne sprawdzenia, nie jest
+  // odwiedzającym. Patrz komentarz w LicznikWizyt.
+  try {
+    if (
+      navigator.webdriver ||
+      /HeadlessChrome|Puppeteer|Playwright|bot|crawler|spider/i.test(
+        navigator.userAgent,
+      )
+    ) {
+      return;
+    }
+  } catch {
+    /* brak navigatora: liczymy normalnie */
+  }
   let sesja = "";
   try {
     const k = "fl_sesja";
