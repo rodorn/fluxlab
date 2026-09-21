@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { zglosZdarzenie } from "@/lib/zdarzenie";
+import Przyklady from "@/components/Przyklady";
 
 interface Produkt {
   nazwa: string;
@@ -15,7 +16,9 @@ interface Produkt {
 
 interface Wynik {
   domena: string;
-  status: "OK" | "BRAK_API" | "BRAK_PROMOCJI";
+  status: "OK" | "BRAK_API" | "BRAK_PROMOCJI" | "BRAK_ODPOWIEDZI";
+  metoda?: string;
+  probka?: boolean;
   werdykt?: "ZIELONY" | "ZOLTY" | "CZERWONY";
   zbadane?: number;
   niezgodne?: number;
@@ -26,10 +29,20 @@ interface Wynik {
 }
 
 const ETAPY = [
-  "Pobieram listę produktów, które są teraz przecenione",
+  "Sprawdzam, skąd ten sklep da się odczytać",
+  "Zbieram produkty, które są teraz przecenione",
   "Otwieram kolejno karty tych produktów",
   "Szukam komunikatu o najniższej cenie z 30 dni",
   "Odsiewam pozorną zgodność, czyli 30 dni na zwrot",
+];
+
+// Sklepy dobrane pomiarem: kazdy z nich odpowiada na sprawdzenie i wraca
+// z wynikiem, zeby pierwsze klikniecie nie konczylo sie komunikatem o braku
+// danych. Werdykt liczony jest na zywo, nie jest tu zapisany.
+const PRZYKLADY = [
+  { wartosc: "wittchen.com" },
+  { wartosc: "morele.net" },
+  { wartosc: "sklep-presto.pl" },
 ];
 
 const MOTYW: Record<string, { ramka: string; tlo: string; tekst: string; etykieta: string }> = {
@@ -96,8 +109,10 @@ export default function CenyCheck() {
     if (timer.current) clearInterval(timer.current);
   }, []);
 
-  async function sprawdz(e: React.FormEvent) {
-    e.preventDefault();
+  async function sprawdz(e: React.FormEvent | null, adres?: string) {
+    e?.preventDefault();
+    const cel = (adres ?? domena).trim();
+    if (!cel) return;
     zglosZdarzenie("uruchomiono_skan");
     setStan("ladowanie");
     setBlad("");
@@ -113,7 +128,7 @@ export default function CenyCheck() {
       const res = await fetch("/api/sprawdz-ceny", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ domena }),
+        body: JSON.stringify({ domena: cel }),
       });
       const data = await res.json();
       if (timer.current) clearInterval(timer.current);
@@ -206,6 +221,16 @@ export default function CenyCheck() {
         </button>
       </form>
 
+      <Przyklady
+        pozycje={PRZYKLADY}
+        zablokowane={stan === "ladowanie"}
+        wstep="Nie chcesz zaczynać od własnego sklepu? Sprawdź gotowy:"
+        onWybor={(w) => {
+          setDomena(w);
+          void sprawdz(null, w);
+        }}
+      />
+
       {stan === "ladowanie" && (
         <ol className="mt-5 space-y-2">
           {ETAPY.map((tekst, i) => (
@@ -258,6 +283,14 @@ export default function CenyCheck() {
             {wynik.naglowek}
           </p>
           <p className="mt-2 text-sm text-gray-700 dark:text-gray-300">{wynik.opis}</p>
+          {wynik.metoda && (
+            <p className="mt-2 text-xs text-gray-500 dark:text-gray-400">
+              Podstawa wyniku: {wynik.metoda}.
+              {wynik.probka
+                ? " Ten sklep nie wystawia gotowej listy przecen, więc wynik opisuje sprawdzoną próbkę kart, a nie cały asortyment."
+                : ""}
+            </p>
+          )}
 
           <Pasek procent={wynik.procent ?? 0} />
 
@@ -278,13 +311,13 @@ export default function CenyCheck() {
                     <tr key={p.url} className="text-gray-800 dark:text-gray-200">
                       <td className="py-2 pr-3">{p.nazwa}</td>
                       <td className="py-2 pr-3 text-right tabular-nums line-through text-gray-500">
-                        {p.regularna.toFixed(2)}
+                        {p.regularna > 0 ? p.regularna.toFixed(2) : "\u2014"}
                       </td>
                       <td className="py-2 pr-3 text-right tabular-nums font-semibold">
-                        {p.promocyjna.toFixed(2)}
+                        {p.promocyjna > 0 ? p.promocyjna.toFixed(2) : "\u2014"}
                       </td>
                       <td className="py-2 pr-3 text-right tabular-nums text-red-600 dark:text-red-400">
-                        -{p.obnizka}%
+                        {p.obnizka > 0 ? `-${p.obnizka}%` : "\u2014"}
                       </td>
                       <td className="py-2">
                         <a

@@ -1,0 +1,45 @@
+=== 2026-09-21 16:10:52 start
+Cykl zamknięty. Raport poszedł mailem o 16:30.
+
+**Jedna zmiana, dowieziona:** każde sprawne narzędzie da się teraz uruchomić jednym kliknięciem, bez wpisywania czegokolwiek.
+
+| Co | Efekt |
+| --- | --- |
+| Rząd gotowych przykładów nad formularzem | 12 sprawdzeń na 13 stronach, wspólny komponent `components/Przyklady.tsx` |
+| Weryfikacja | każde z 13 kliknięte w Chromium na lokalnym buildzie produkcyjnym, wszystkie zwróciły wynik |
+| Pomiar uruchomień | było 3 narzędzia z 15, jest 15 z 15 |
+| Fałszywy werdykt widoczności | strona zapory 403 z `NOINDEX` była brana za stronę firmy, teraz narzędzie mówi wprost, że serwer go nie wpuścił |
+
+Dwa commity na `main` (`8599523`, `14784ca`), build i `scripts/spojnosc.mjs` czyste, wdrożenie potwierdzone na produkcji (`/panel-zwrotow`, `/audyt-poczty`, `/wlasnosc-domeny`).
+
+Do rozstrzygnięcia w kolejnych cyklach, dopisane do `AUDYT_TECHNICZNY.md` jako pozycje 16 do 21:
+- `/rejestr-cen` obsługuje wyłącznie WooCommerce, 7 na 7 sprawdzonych polskich sklepów zwróciło brak danych;
+- `/analiza-lokalizacji` nie działa, serwer Overpass odrzuca zapytania kodem 406, także spoza aplikacji;
+- trzy kalkulatory, w tym `/kalkulator-leadow` oznaczony jako najpopularniejszy, nadal nie zgłaszają uruchomienia;
+- wspólny punkt IndexNow odrzuca zgłoszenia kodem 403, mimo że plik klucza na fluxlab.pl zwraca 200. Yandex i Naver przyjęły 112 adresów.
+
+Uwaga poboczna: w systemie wisi siedem starych procesów `npm exec next start` z wcześniejszych cykli. Mogę je zamknąć, jeśli potwierdzisz, że nie są Ci do niczego potrzebne.
+=== 2026-09-21 16:27:31 koniec, kod 0
+=== 2026-09-21 16:43:04 start
+Cykl zamknięty. Raport poszedł mailem o 17:15.
+
+**Jedna zmiana, dowieziona:** `/analiza-lokalizacji`, narzędzie, które w poprzednim cyklu zostało opisane jako niedziałające, znowu zwraca wynik, i to policzony na właściwej gminie.
+
+| Co | Efekt |
+| --- | --- |
+| Przyczyna awarii | darmowy serwer OpenStreetMap odmawiał mniej więcej co drugiemu zapytaniu, narzędzie pytało go raz, adresem GET |
+| Naprawa | POST, do pięciu prób na trzech instancjach w budżecie 45 s, zapytanie skrócone do `nwr` |
+| Zysk na czasie | Zakopane 4,0 s zamiast 6,7 s, te same 183 punkty |
+| Element interaktywny | trzy gotowe przykłady nad formularzem, jedno kliknięcie zamiast wpisywania miejscowości i wybierania branży |
+| Weryfikacja | kliknięcie w przeglądarce na lokalnym buildzie produkcyjnym, po wdrożeniu jedno zapytanie na produkcji |
+
+**Trzy błędne wyniki znalezione przy okazji, wszystkie naprawione:**
+- rejestr statystyczny dopasowuje część nazwy, więc dla „Wrocław" narzędzie brało ludność Kątów Wrocławskich, czyli dzieliło 254 fryzjerów przez 31 tys. zamiast 672 tys. mieszkańców, i wystawiało odwrotny werdykt o nasyceniu rynku;
+- brak ludności wchodził do dzielenia jako jedynka, więc uwaga o miejscowości turystycznej pojawiała się zawsze;
+- geokoder podaje dla Zakopanego i Wrocławia nazwę w polu, którego narzędzie nie czytało, więc obie wracały bez wskaźnika.
+
+Commit `edc31a9` na `main`, build i `scripts/spojnosc.mjs` czyste. Adresy zgłoszone: Yandex i Naver przyjęły 112 adresów, wspólny punkt IndexNow nadal odrzuca kodem 403. Pozycje 19, 22, 23 i 24 w `AUDYT_TECHNICZNY.md` odhaczone.
+
+Do kolejnych cykli zostaje: `/rejestr-cen` obsługujący wyłącznie WooCommerce, trzy kalkulatory niezgłaszające uruchomienia, oraz 403 z IndexNow.
+=== 2026-09-21 17:12:59 koniec, kod 0
+=== 2026-09-21 17:43:02 start

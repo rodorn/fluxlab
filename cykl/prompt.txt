@@ -1,0 +1,24 @@
+Cykl godzinny: rozwój strony fluxlab.pl. Repo: ~/Projekty/fluxlab-site (Next.js, Vercel).
+
+PRIORYTETY, w tej kolejności:
+1. SPÓJNOŚĆ. Strona ma wyglądać jak jedna firma z jedną specjalnością, nie jak katalog przypadkowych pomysłów. Trzy filary: Automatyzacja procesów, Integracje i dane, Systemy i strony. Każda pozycja ma mieć w lib/products.ts pole `grupa` (wdrozenia, naprawy, integracje, raporty, budowa, diagnostyka). Nazwy w menu, na kaflach i w katalogu muszą się zgadzać.
+2. PROFESJONALNY WYGLĄD. Ma być fajnie, ale poważnie. Bez przechwałek, bez liczb bez pokrycia, bez obietnic wyników.
+3. ELEMENT INTERAKTYWNY co cykl. Coś do kliknięcia, co daje wynik bez wpisywania i bez rejestracji. Pomiar pokazał, że ludzie otwierają strony narzędzi i nie naciskają przycisków.
+4. Jedna konkretna zmiana na cykl, dowieziona do końca, nie pięć zaczętych.
+
+ZASADY TWARDE:
+- Nigdy nie pisz, że mamy klientów, referencje, wdrożenia u klientów ani wyników u klientów. Paweł ma zero klientów. Dowody kompetencji to własne badania, działające narzędzia i otwarty kod.
+- Bez długich myślników w treściach. Zamiast nich przecinki.
+- Nie bombarduj produkcji: seria zapytań włącza zabezpieczenie Vercela i kładzie stronę. Testy i zrzuty rób na localhost, na produkcję najwyżej kilka zapytań z odstępami.
+- Zawsze przed commitem: `RESEND_API_KEY=re_placeholder_build npx next build` oraz `node scripts/spojnosc.mjs`. Potem commit, `git pull --rebase origin main`, `git push origin main`.
+- Po wdrożeniu zgłoś adresy: `node scripts/indexnow.mjs`.
+
+RAPORTY AUDYTOWE, z których bierz kolejne zadania: AUDYT_TECHNICZNY.md, AUDYT_TRESCI.md, AUDYT_SEO.md w katalogu strony. Odhaczaj zrobione.
+
+NA KONIEC KAŻDEGO CYKLU wyślij mail na iwanekpawel55@gmail.com:
+- skrypty w ~/Projekty/fluxlab-site/skrypty-raport: report_mail.py (buduje HTML z report_data.json) i send_fluxlab.py (wysyła przez Zoho)
+- dołącz raport ruchu: `python3 ~/Projekty/fluxlab-ruch/raport_ruchu.py`
+- dołącz zrzut ekranu zmiany: shot.py z tego samego katalogu
+- temat w formacie: "FluxLab strona HH:MM, <co zrobione>"
+- PRZECZYTAJ treść maila przed wysłaniem, sprawdź ortografię. Raport ma wyglądać jak od firmy.
+- W raporcie ruchu zaznacz, że dane sprzed 21.09.2026 godz. 16:00 są zafałszowane, bo licznik liczył wtedy własne sprawdzenia przeglądarką bez okna.
