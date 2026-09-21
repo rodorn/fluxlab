@@ -222,7 +222,11 @@ for (const f of pages) {
   if (/\[/.test(route)) continue; // trasy dynamiczne
   // artykuly wchodza do sitemap petla po tablicy articles, nie literalem
   if (route.startsWith("/strefa-wiedzy/")) continue;
-  // strony celowo poza indeksem
+  // Strony celowo poza indeksem. Zamiast trzymac reczna liste, czytamy
+  // deklaracje ze zrodla: jesli strona sama mowi wyszukiwarce, ze nie chce
+  // byc indeksowana, to jej brak w mapie jest zgodny z zamiarem.
+  const zrodlo = read(f);
+  if (/robots:\s*\{[^}]*index:\s*false/.test(zrodlo)) continue;
   if (["/cv", "/dziekuje", "/panel"].includes(route)) continue;
   if (!sitemap.includes(route)) add("sitemap", `${route}: brak w sitemap`);
 }
