@@ -19,6 +19,12 @@ export const categories: Category[] = [
       "Artykuły o automatyzacji procesów biznesowych, czym jest, jak liczyć ROI i od czego zacząć.",
     articles: [
       {
+        href: "/strefa-wiedzy/czy-ai-widzi-strony-dealerow",
+        title: "Czy asystenci AI widzą strony dealerów samochodowych",
+        description:
+          "Blokuje je 0,8 procent stron, ale ponad połowa w ogóle nie mówi maszynie, czym jest firma. Badanie na tych samych 386 domenach.",
+      },
+      {
         href: "/strefa-wiedzy/co-jest-nie-tak-ze-stronami-dealerow",
         title: "Sprawdziliśmy 386 stron dealerów samochodowych",
         description:
