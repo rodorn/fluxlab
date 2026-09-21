@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import Przyklady from "@/components/Przyklady";
+import { zglosZdarzenie } from "@/lib/zdarzenie";
 
 interface Wynik {
   status: string;
@@ -57,6 +59,15 @@ export default function NipCheck() {
 
   async function sprawdz(e: React.FormEvent) {
     e.preventDefault();
+    await uruchom(nip);
+  }
+
+  // Jedno wejscie dla formularza i dla przyciskow z przykladami, zeby
+  // wynik powstawal tak samo niezaleznie od tego, skad przyszedl adres.
+  async function uruchom(cel: string) {
+    if (!cel.trim()) return;
+    setNip(cel);
+    zglosZdarzenie("uruchomiono_skan");
     setStan("ladowanie");
     setBlad("");
     setWynik(null);
@@ -66,7 +77,7 @@ export default function NipCheck() {
       const res = await fetch("/api/sprawdz-nip", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ nip }),
+        body: JSON.stringify({ nip: cel }),
       });
       const data = await res.json();
       if (!res.ok) {
@@ -135,7 +146,15 @@ export default function NipCheck() {
         Wpisz NIP, a od razu sprawdzę go w wykazie podatników VAT Ministerstwa
         Finansów. Bez zakładania konta i bez czekania.
       </p>
-
+      <Przyklady
+        pozycje={[
+          { wartosc: "5252674798", etykieta: "NIP Allegro" },
+          { wartosc: "7342867148", etykieta: "NIP CD Projekt" },
+        ]}
+        onWybor={uruchom}
+        zablokowane={stan === "ladowanie"}
+        wstep="Nie masz pod ręką numeru? Zobacz na gotowym przykładzie:"
+      />
       <form onSubmit={sprawdz} className="mt-5 flex flex-col gap-3 sm:flex-row">
         <input
           value={nip}

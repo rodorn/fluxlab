@@ -170,6 +170,6 @@ export async function POST(request: Request) {
         ? "To jest termin, po którym domena przestaje działać razem ze stroną i całą pocztą firmową. Sprawdź, czy ktokolwiek pilnuje tego odnowienia i czy przypomnienia trafiają na adres, który ktoś czyta."
         : wyglada
           ? "Nazwa abonenta wygląda na firmę informatyczną albo agencję, a nie na firmę korzystającą z tej domeny. Jeśli to Twoja domena, a nazwa nie jest Twoja, warto ustalić, czy tak miało być. Bywa, że to świadome rozwiązanie z umową, ale częściej to pozostałość po wykonawcy strony."
-          : "Abonentem wygląda na być firma korzystająca z domeny, czyli tak jak być powinno.",
+          : "Abonentem wygląda na firmę korzystającą z domeny, czyli tak jak być powinno.",
   });
 }

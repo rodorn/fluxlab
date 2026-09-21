@@ -84,6 +84,22 @@ export async function POST(request: Request) {
     });
   }
 
+  // Strona oddana z kodem bledu to najczesciej zapora przed automatami, a nie
+  // prawdziwa strona glowna. Takie zapory potrafia same nosic znacznik
+  // noindex, wiec bez tego warunku narzedzie oskarza firme o blokade, ktorej
+  // na jej stronie nie ma.
+  if (strona.status >= 400) {
+    return NextResponse.json({
+      status: "BRAK_DOSTEPU",
+      domena,
+      naglowek: "Serwer nie wpuścił mnie na stronę",
+      opis:
+        "Serwer odpowiedział kodem " +
+        strona.status +
+        ", czyli odmową, i zamiast strony głównej oddał stronę zapory przed automatami. Nie wyciągam z niej żadnych wniosków, bo nie jest tym, co widzi wyszukiwarka. Wyszukiwarki zwykle mają na takich zaporach wyjątek. Jeśli chcesz mieć pewność, napisz, a sprawdzę to ręcznie.",
+    });
+  }
+
   const blokady: Blokada[] = [];
 
   // 1. meta robots w kodzie strony

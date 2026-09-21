@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Przyklady from "@/components/Przyklady";
+import { zglosZdarzenie } from "@/lib/zdarzenie";
 
 interface Podmiot {
   name: string;
@@ -85,6 +87,15 @@ export default function SprzedawcaCheck() {
 
   async function sprawdz(e: React.FormEvent) {
     e.preventDefault();
+    await uruchom(domena);
+  }
+
+  // Jedno wejscie dla formularza i dla przyciskow z przykladami, zeby
+  // wynik powstawal tak samo niezaleznie od tego, skad przyszedl adres.
+  async function uruchom(cel: string) {
+    if (!cel.trim()) return;
+    setDomena(cel);
+    zglosZdarzenie("uruchomiono_skan");
     setStan("ladowanie");
     setBlad("");
     setWynik(null);
@@ -93,7 +104,7 @@ export default function SprzedawcaCheck() {
       const res = await fetch("/api/sprawdz-sprzedawce", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ domena }),
+        body: JSON.stringify({ domena: cel }),
       });
       const data = await res.json();
       if (!res.ok) {
@@ -162,7 +173,15 @@ export default function SprzedawcaCheck() {
         i regulamin, wyciągam te dane i sprawdzam je w wykazie tak samo, jak
         zrobi to Twój klient.
       </p>
-
+      <Przyklady
+        pozycje={[
+          { wartosc: "fluxlab.pl" },
+          { wartosc: "x-kom.pl" },
+          { wartosc: "empik.com" },
+        ]}
+        onWybor={uruchom}
+        zablokowane={stan === "ladowanie"}
+      />
       <form onSubmit={sprawdz} className="mt-5 flex flex-col gap-3 sm:flex-row">
         <input
           type="text"

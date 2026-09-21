@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import Przyklady from "@/components/Przyklady";
+import { zglosZdarzenie } from "@/lib/zdarzenie";
 
 interface Blokada {
   gdzie: string;
@@ -9,7 +11,7 @@ interface Blokada {
 }
 
 interface Wynik {
-  status: "OK" | "BRAK_STRONY";
+  status: "OK" | "BRAK_STRONY" | "BRAK_DOSTEPU";
   domena: string;
   werdykt?: "ZIELONY" | "CZERWONY";
   naglowek: string;
@@ -30,6 +32,15 @@ export default function WidocznoscCheck() {
 
   async function sprawdz(e: React.FormEvent) {
     e.preventDefault();
+    await uruchom(domena);
+  }
+
+  // Jedno wejscie dla formularza i dla przyciskow z przykladami, zeby
+  // wynik powstawal tak samo niezaleznie od tego, skad przyszedl adres.
+  async function uruchom(cel: string) {
+    if (!cel.trim()) return;
+    setDomena(cel);
+    zglosZdarzenie("uruchomiono_skan");
     setStan("ladowanie");
     setBlad("");
     setWynik(null);
@@ -38,7 +49,7 @@ export default function WidocznoscCheck() {
       const res = await fetch("/api/sprawdz-widocznosc", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ domena }),
+        body: JSON.stringify({ domena: cel }),
       });
       const data = await res.json();
       if (!res.ok) {
@@ -101,7 +112,15 @@ export default function WidocznoscCheck() {
         bo właściciel wchodzi na swoją stronę z zakładki. Sprawdzam trzy miejsca,
         w których taka blokada może siedzieć.
       </p>
-
+      <Przyklady
+        pozycje={[
+          { wartosc: "fluxlab.pl" },
+          { wartosc: "inpost.pl" },
+          { wartosc: "x-kom.pl" },
+        ]}
+        onWybor={uruchom}
+        zablokowane={stan === "ladowanie"}
+      />
       <form onSubmit={sprawdz} className="mt-5 flex flex-col gap-3 sm:flex-row">
         <input
           type="text"
@@ -125,7 +144,9 @@ export default function WidocznoscCheck() {
         <p className="mt-3 text-sm text-red-600 dark:text-red-400">{blad}</p>
       )}
 
-      {wynik && wynik.status === "BRAK_STRONY" && (
+      {wynik &&
+        (wynik.status === "BRAK_STRONY" ||
+          wynik.status === "BRAK_DOSTEPU") && (
         <div className="mt-6 rounded-xl border border-amber-500/60 bg-amber-50 dark:bg-amber-950/30 p-5">
           <p className="text-lg font-bold text-gray-900 dark:text-white">
             {wynik.naglowek}

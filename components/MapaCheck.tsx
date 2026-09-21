@@ -2,6 +2,7 @@
 
 import { zglosZdarzenie } from "@/lib/zdarzenie";
 import { useEffect, useRef, useState } from "react";
+import Przyklady from "@/components/Przyklady";
 
 interface Zepsuty {
   adres: string;
@@ -82,8 +83,16 @@ export default function MapaCheck() {
 
   async function sprawdz(e: React.FormEvent) {
     e.preventDefault();
-    setStan("ladowanie");
+    await uruchom(domena);
+  }
+
+  // Jedno wejscie dla formularza i dla przyciskow z przykladami, zeby
+  // wynik powstawal tak samo niezaleznie od tego, skad przyszedl adres.
+  async function uruchom(cel: string) {
+    if (!cel.trim()) return;
+    setDomena(cel);
     zglosZdarzenie("uruchomiono_skan");
+    setStan("ladowanie");
     setBlad("");
     setWynik(null);
     setLeadStan("idle");
@@ -91,7 +100,7 @@ export default function MapaCheck() {
       const res = await fetch("/api/sprawdz-mape", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ domena }),
+        body: JSON.stringify({ domena: cel }),
       });
       const data = await res.json();
       if (!res.ok) {
@@ -161,7 +170,15 @@ export default function MapaCheck() {
         faktycznie działają. Biorę próbkę, a nie cały serwis, żeby nie obciążać
         Waszego serwera.
       </p>
-
+      <Przyklady
+        pozycje={[
+          { wartosc: "fluxlab.pl" },
+          { wartosc: "inpost.pl" },
+          { wartosc: "morele.net" },
+        ]}
+        onWybor={uruchom}
+        zablokowane={stan === "ladowanie"}
+      />
       <form onSubmit={sprawdz} className="mt-5 flex flex-col gap-3 sm:flex-row">
         <input
           type="text"

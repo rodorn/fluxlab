@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import Przyklady from "@/components/Przyklady";
+import { zglosZdarzenie } from "@/lib/zdarzenie";
 
 interface Wymog {
   klucz: string;
@@ -54,6 +56,15 @@ export default function ZwrotyCheck() {
 
   async function sprawdz(e: React.FormEvent) {
     e.preventDefault();
+    await uruchom(domena);
+  }
+
+  // Jedno wejscie dla formularza i dla przyciskow z przykladami, zeby
+  // wynik powstawal tak samo niezaleznie od tego, skad przyszedl adres.
+  async function uruchom(cel: string) {
+    if (!cel.trim()) return;
+    setDomena(cel);
+    zglosZdarzenie("uruchomiono_skan");
     setStan("ladowanie");
     setBlad("");
     setWynik(null);
@@ -62,7 +73,7 @@ export default function ZwrotyCheck() {
       const res = await fetch("/api/sprawdz-zwroty", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ domena }),
+        body: JSON.stringify({ domena: cel }),
       });
       const data = await res.json();
       if (!res.ok) {
@@ -134,7 +145,15 @@ export default function ZwrotyCheck() {
         Każdy taki brak kończy się mailem z pytaniem, na które ktoś musi
         odpowiedzieć ręcznie.
       </p>
-
+      <Przyklady
+        pozycje={[
+          { wartosc: "x-kom.pl" },
+          { wartosc: "morele.net" },
+          { wartosc: "empik.com" },
+        ]}
+        onWybor={uruchom}
+        zablokowane={stan === "ladowanie"}
+      />
       <form onSubmit={sprawdz} className="mt-5 flex flex-col gap-3 sm:flex-row">
         <input
           type="text"

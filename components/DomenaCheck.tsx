@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { zglosZdarzenie } from "@/lib/zdarzenie";
+import Przyklady from "@/components/Przyklady";
 
 interface Wynik {
   status: string;
@@ -49,8 +50,16 @@ export default function DomenaCheck() {
 
   async function sprawdz(e: React.FormEvent) {
     e.preventDefault();
-    setStan("ladowanie");
+    await uruchom(domena);
+  }
+
+  // Jedno wejscie dla formularza i dla przyciskow z przykladami, zeby
+  // wynik powstawal tak samo niezaleznie od tego, skad przyszedl adres.
+  async function uruchom(cel: string) {
+    if (!cel.trim()) return;
+    setDomena(cel);
     zglosZdarzenie("uruchomiono_skan");
+    setStan("ladowanie");
     setBlad("");
     setWynik(null);
     setLeadStan("idle");
@@ -58,7 +67,7 @@ export default function DomenaCheck() {
       const res = await fetch("/api/sprawdz-domene", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ domena }),
+        body: JSON.stringify({ domena: cel }),
       });
       const data = await res.json();
       if (!res.ok) {
@@ -122,7 +131,15 @@ export default function DomenaCheck() {
         robiła stronę, a nie sama firma. Sprawdzam to w publicznym rejestrze,
         razem z datą wygaśnięcia.
       </p>
-
+      <Przyklady
+        pozycje={[
+          { wartosc: "fluxlab.pl" },
+          { wartosc: "allegro.pl" },
+          { wartosc: "x-kom.pl" },
+        ]}
+        onWybor={uruchom}
+        zablokowane={stan === "ladowanie"}
+      />
       <form onSubmit={sprawdz} className="mt-5 flex flex-col gap-3 sm:flex-row">
         <input
           type="text"

@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Przyklady from "@/components/Przyklady";
+import { zglosZdarzenie } from "@/lib/zdarzenie";
 
 interface Ogloszenie {
   data: string;
@@ -81,6 +83,15 @@ export default function SpolkaCheck() {
 
   async function sprawdz(e: React.FormEvent) {
     e.preventDefault();
+    await uruchom(zapytanie);
+  }
+
+  // Jedno wejscie dla formularza i dla przyciskow z przykladami, zeby
+  // wynik powstawal tak samo niezaleznie od tego, skad przyszedl adres.
+  async function uruchom(cel: string) {
+    if (!cel.trim()) return;
+    setZapytanie(cel);
+    zglosZdarzenie("uruchomiono_skan");
     setStan("ladowanie");
     setBlad("");
     setWynik(null);
@@ -89,7 +100,7 @@ export default function SpolkaCheck() {
       const res = await fetch("/api/sprawdz-spolke", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ zapytanie }),
+        body: JSON.stringify({ zapytanie: cel }),
       });
       const data = await res.json();
       if (!res.ok) {
@@ -152,7 +163,15 @@ export default function SpolkaCheck() {
         trzy miesiące na sprzeciw, a potem podmiot znika z rejestru razem z
         Twoją należnością. Zawiadomienia nikt nie wysyła.
       </p>
-
+      <Przyklady
+        pozycje={[
+          { wartosc: "CD PROJEKT" },
+          { wartosc: "ALLEGRO" },
+        ]}
+        onWybor={uruchom}
+        zablokowane={stan === "ladowanie"}
+        wstep="Nie masz pod ręką nazwy? Zobacz na gotowym przykładzie:"
+      />
       <form onSubmit={sprawdz} className="mt-5 flex flex-col gap-3 sm:flex-row">
         <input
           type="text"

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { zglosZdarzenie } from "@/lib/zdarzenie";
+import Przyklady from "@/components/Przyklady";
 
 interface Punkt {
   tytul: string;
@@ -49,9 +50,9 @@ const ZNAK: Record<Punkt["stan"], { s: string; k: string }> = {
 
 
 const PRZYKLADY = [
-  { domena: "fluxlab.pl", etykieta: "strona bez zarzutu" },
-  { domena: "rp.pl", etykieta: "duży serwis z brakami" },
-  { domena: "wyborcza.pl", etykieta: "wydawca, który blokuje" },
+  { wartosc: "fluxlab.pl" },
+  { wartosc: "rp.pl" },
+  { wartosc: "wyborcza.pl" },
 ];
 
 export default function AiCheck() {
@@ -145,22 +146,11 @@ export default function AiCheck() {
         Bez rejestracji.
       </p>
 
-      <div className="mt-4 flex flex-wrap items-center gap-2">
-        <span className="text-xs text-gray-500 dark:text-gray-400">
-          Nie masz pod ręką swojej domeny? Zobacz na przykładzie:
-        </span>
-        {PRZYKLADY.map((p) => (
-          <button
-            key={p.domena}
-            type="button"
-            onClick={() => uruchom(p.domena)}
-            disabled={stan === "ladowanie"}
-            className="rounded-full border border-gray-300 px-3 py-1 text-xs font-medium text-gray-700 transition-colors hover:border-accent hover:text-accent disabled:opacity-50 dark:border-gray-700 dark:text-gray-300"
-          >
-            {p.etykieta}
-          </button>
-        ))}
-      </div>
+      <Przyklady
+        pozycje={PRZYKLADY}
+        onWybor={uruchom}
+        zablokowane={stan === "ladowanie"}
+      />
 
       <form onSubmit={sprawdz} className="mt-4 flex flex-col gap-3 sm:flex-row">
         <input

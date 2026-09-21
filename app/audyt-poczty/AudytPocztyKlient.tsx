@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import RelatedProducts from "@/components/RelatedProducts";
+import Przyklady from "@/components/Przyklady";
+import { zglosZdarzenie } from "@/lib/zdarzenie";
 
 type Problem = { tytul: string; opis: string; waga: number };
 type Wynik = {
@@ -56,6 +58,15 @@ export default function AudytPocztyKlient() {
 
   async function sprawdz(e: React.FormEvent) {
     e.preventDefault();
+    await uruchom(domena);
+  }
+
+  // Jedno wejscie dla formularza i dla przyciskow z przykladami, zeby
+  // wynik powstawal tak samo niezaleznie od tego, skad przyszedl adres.
+  async function uruchom(cel: string) {
+    if (!cel.trim()) return;
+    setDomena(cel);
+    zglosZdarzenie("uruchomiono_skan");
     setBlad(null);
     setWynik(null);
     setLaduje(true);
@@ -63,7 +74,7 @@ export default function AudytPocztyKlient() {
       const r = await fetch("/api/audyt", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ domena }),
+        body: JSON.stringify({ domena: cel }),
       });
       const d = await r.json();
       if (!r.ok) setBlad(d.error || "Coś poszło nie tak.");
@@ -100,6 +111,17 @@ export default function AudytPocztyKlient() {
         Waszym imieniu. Sprawdzamy tylko jawne dane DNS, nie logujemy się
         nigdzie i nie wysyłamy żadnych wiadomości.
       </p>
+
+      <Przyklady
+        pozycje={[
+          { wartosc: "fluxlab.pl" },
+          { wartosc: "allegro.pl" },
+          { wartosc: "x-kom.pl" },
+        ]}
+        onWybor={uruchom}
+        zablokowane={laduje}
+        wstep="Nie masz pod ręką swojej domeny? Zobacz na gotowym przykładzie:"
+      />
 
       <form
         onSubmit={sprawdz}
