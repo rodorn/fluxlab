@@ -77,6 +77,55 @@ function toIndeks(xml: string): boolean {
   return /<sitemapindex/i.test(xml);
 }
 
+
+// Adresy, ktore nie moga zadzialac u nikogo poza autorem strony. Trafily tu z
+// prawdziwego przypadku: mapa witryny firmy uslugowej miala 78 adresow
+// zaczynajacych sie od localhost z numerem portu, bo plik wygenerowano na
+// komputerze programisty i wgrano bez podmiany adresu. Narzedzie mowilo
+// wtedy tylko tyle, ze adresy nie dzialaja, wiec wlasciciel nie mial jak
+// zgadnac, ze to poprawka na kilka minut w generatorze mapy.
+function obcyHost(url: string, domena: string): string | null {
+  let u: URL;
+  try {
+    u = new URL(url);
+  } catch {
+    return "adres nie jest poprawnym adresem internetowym";
+  }
+  const h = u.hostname.toLowerCase();
+  if (h === "localhost" || h === "127.0.0.1" || h === "::1") {
+    return "adres wskazuje na komputer autora strony (localhost)";
+  }
+  if (/^(10\.|192\.168\.|172\.(1[6-9]|2\d|3[01])\.)/.test(h)) {
+    return "adres wskazuje na komputer w sieci lokalnej";
+  }
+  if (/\.(test|local|localhost|invalid|example)$/.test(h)) {
+    return "adres wskazuje na domenę testową";
+  }
+  const swoj = h.replace(/^www\./, "");
+  const cel = domena.replace(/^www\./, "");
+  if (swoj !== cel && !swoj.endsWith("." + cel)) {
+    return `adres prowadzi do innej domeny (${h})`;
+  }
+  return null;
+}
+
+function przyczynyObce(
+  adresy: string[],
+  domena: string,
+): { ile: number; powod: string; przyklad: string } | null {
+  const zliczone = new Map<string, { ile: number; przyklad: string }>();
+  for (const a of adresy) {
+    const p = obcyHost(a, domena);
+    if (!p) continue;
+    const w = zliczone.get(p) ?? { ile: 0, przyklad: a };
+    w.ile += 1;
+    zliczone.set(p, w);
+  }
+  if (!zliczone.size) return null;
+  const [powod, w] = [...zliczone.entries()].sort((a, b) => b[1].ile - a[1].ile)[0];
+  return { ile: w.ile, powod, przyklad: w.przyklad };
+}
+
 export async function POST(request: Request) {
   let domena = "";
   try {
@@ -186,6 +235,10 @@ export async function POST(request: Request) {
     .map((u, i) => ({ adres: u, kod: kody[i] }))
     .filter((x) => x.kod === null || x.kod >= 400);
 
+  // Jesli adresy w mapie prowadza poza serwis, przyczyna jest jedna i da sie
+  // ja nazwac, zamiast wypisywac liste martwych adresow.
+  const obce = przyczynyObce(unikalne, domena);
+
   const udzial = zepsute.length / probka.length;
   const werdykt = blokada
     ? "CZERWONY"
@@ -197,7 +250,9 @@ export async function POST(request: Request) {
 
   const naglowek = blokada
     ? "Strona prosi wyszukiwarki, żeby jej nie odwiedzały"
-    : zepsute.length
+    : obce && obce.ile >= unikalne.length / 2
+      ? `Adresy w mapie prowadzą poza Twoją stronę, ${obce.ile} z ${unikalne.length}`
+      : zepsute.length
       ? `${zepsute.length} z ${probka.length} sprawdzonych adresów nie działa`
       : wskazanaNieDziala
         ? "robots.txt wskazuje mapę pod adresem, który nie odpowiada"
@@ -222,7 +277,13 @@ export async function POST(request: Request) {
           ? "Mapa strony jest, jest wskazana w robots.txt i sprawdzone adresy odpowiadają poprawnie. Tego punktu nie musisz ruszać."
           : "Mapa strony istnieje, ale plik robots.txt o niej nie wspomina. Wyszukiwarka zwykle i tak sprawdzi standardową lokalizację, więc to nie jest awaria, natomiast wskazanie mapy wprost jest darmowe i usuwa zgadywanie.";
 
-  const komentarz = bazowy + (zepsute.length ? oRobots : "");
+  // Wyjasnienie przyczyny idzie przed reszta komentarza, bo gdy adresy
+  // prowadza donikad z tego powodu, cala reszta uwag jest wtorna.
+  const oObcych = obce
+    ? `W mapie strony ${obce.ile} z ${unikalne.length} adresów ma tę samą wadę: ${obce.powod}. Przykład: ${obce.przyklad}. Tak wygląda plik wygenerowany w środowisku roboczym i wgrany na serwer bez podmiany adresu bazowego. Dla wyszukiwarki te wpisy nie istnieją, bo taki adres działa wyłącznie na komputerze, na którym powstał. To poprawka na kilka minut w ustawieniach generatora mapy, a nie przebudowa serwisu. `
+    : "";
+
+  const komentarz = oObcych + bazowy + (zepsute.length ? oRobots : "");
 
   return NextResponse.json({
     status: "OK",
@@ -238,5 +299,6 @@ export async function POST(request: Request) {
     wSitemap: unikalne.length,
     sprawdzone: probka.length,
     zepsute,
+    obceAdresy: obce,
   });
 }
