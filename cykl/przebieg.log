@@ -189,3 +189,26 @@ Obie nowe reguly spojnosci sprawdzone celowym zepsuciem: przywrocenie kwoty 900 
 
 Po drodze wyszedl blad wlasnego pomyslu: pierwsza wersja licznikow na przyciskach zdejmowala filtr ceny, zeby nie pokazac zera, przez co przy wcisnietym przedziale obszar bez pozycji chwalil sie pelnym stanem (11 zamiast 0). Teraz liczniki nie zdejmuja niczego, a obszar z zerem jest wyszarzony i nie do nacisniecia.
 === 2026-09-21 21:53:00 koniec, kod 0
+Cykl zamknięty.
+
+## Co zrobione
+
+Jedna zmiana, dowieziona do końca: **katalog na `/produkty` da się zawęzić po cenie, a każda kwota widoczna w katalogu ma pokrycie na stronie, do której prowadzi** (pozycje 3.2 i 3.6 z `AUDYT_TRESCI.md`).
+
+| Co | Efekt |
+| --- | --- |
+| Element interaktywny | Trzeci pasek, „Ile kosztuje wejście?”: do 50 zł (11), 51 do 300 zł (14), 301 do 1000 zł (4), powyżej 1000 zł (2), wycena po diagnozie (2). Razem 33, czyli cały katalog. Jedno naciśnięcie, wynik od razu, bez wpisywania i rejestracji |
+| Jedno źródło ceny | `cenaWejscia` w `lib/products.ts:609` czyta kwotę z ceny pisanej po ludzku („od 3 900 zł”, „diagnoza 49 zł”). Nie ma drugiego pola z liczbą, więc nie ma czego rozjechać |
+| Spójność (3.2) | Bullet panelu zwrotów mówił 900 zł przy stronie mówiącej 490 zł. Teraz 490 zł |
+| SEO (3.6) | `ProductLanding` buduje `Offer` z tej samej funkcji: „od” daje `minPrice`, abonament `UnitPriceSpecification` z okresem miesięcznym, prowizja „25 procent” nie dostaje ceny wcale. Dotąd szły jako ceny stałe w złotych, na 24 stronach |
+| Zabezpieczenie | `scripts/spojnosc.mjs` sprawdza kwoty także z bulletów (tam siedział rozjazd) oraz sam format zapisu ceny |
+| Pomiar | Pierwsze użycie filtra ceny zgłasza `zawezono_cene`, raz na sesję, osobno od `zawezono_katalog` |
+
+**Weryfikacja:** pięć przedziałów przeklikanych na lokalnym buildzie produkcyjnym, liczba kafelków za każdym razem równa liczbie na przycisku; kombinacje filtrów nie dają pustej listy; zdarzenie potwierdzone na podsłuchanym ruchu; 390 px bez przewijania w bok. Obie nowe reguły spójności sprawdzone celowym zepsuciem (przywrócone 900 zł i cena „490-900 zł” zatrzymały kontrolę). Produkcja po wdrożeniu: 4 z 33 pozycji po wybraniu 301 do 1000 zł, `minPrice` 490 i 3500 na `/panel-zwrotow`.
+
+Po drodze poprawiłem własny błąd: pierwsza wersja liczników zdejmowała filtr ceny, żeby nie pokazać zera, przez co obszar bez pozycji chwalił się pełnym stanem (11 zamiast 0). Teraz liczniki nic nie zdejmują, a obszar z zerem jest wyszarzony i nieklikalny.
+
+Commity `9ec9fe0`, `f72fe9a`, `dfeba60`, `48d98d4` na `main`. IndexNow: Yandex i Naver przyjęły 112 adresów, wspólny punkt nadal 403. Mail wysłany 21:52 na iwanekpawel55@gmail.com z dwoma zrzutami i raportem ruchu (z zastrzeżeniem o danych sprzed 21.09 godz. 16:00). Serwer testowy wygaszony.
+
+Do kolejnych cykli: dwa produkty bez ceny (`/integracje-api`, `/automatyzacja-raportowania`), kontrast w stopce, brakujący H1 na `/kontakt`, za długie `title` i `description`, 403 z IndexNow.
+=== 2026-09-21 21:52:54 koniec, kod 0

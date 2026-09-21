@@ -19,6 +19,11 @@ export function zglosZdarzenie(zdarzenie: string, sciezka?: string): void {
   } catch {
     /* brak navigatora: liczymy normalnie */
   }
+  try {
+    if (localStorage.getItem("fl_nie_licz") === "1") return;
+  } catch {
+    /* zablokowana pamięć: liczymy normalnie */
+  }
   let sesja = "";
   try {
     const k = "fl_sesja";

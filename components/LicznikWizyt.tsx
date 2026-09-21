@@ -41,12 +41,40 @@ function sterowanaSkryptem(): boolean {
   }
 }
 
+/** Rodzina przeglądarki, na potrzeby rozdzielenia ruchu. Nie zapisujemy
+ *  pełnego nagłówka, bo do tego celu nie jest potrzebny. */
+function rodzinaPrzegladarki(): string {
+  const u = navigator.userAgent;
+  if (/Firefox\//.test(u)) return "Firefox";
+  if (/Edg\//.test(u)) return "Edge";
+  if (/OPR\//.test(u)) return "Opera";
+  if (/Chrome\//.test(u)) return "Chrome";
+  if (/Safari\//.test(u)) return "Safari";
+  return "inna";
+}
+
+function rodzinaSystemu(): string {
+  const u = navigator.userAgent;
+  if (/Android/.test(u)) return "Android";
+  if (/iPhone|iPad|iPod/.test(u)) return "iOS";
+  if (/Windows/.test(u)) return "Windows";
+  if (/Mac OS X/.test(u)) return "macOS";
+  if (/Linux/.test(u)) return "Linux";
+  return "inny";
+}
+
 function Zliczanie() {
   const sciezka = usePathname();
   const parametry = useSearchParams();
 
   useEffect(() => {
     if (sterowanaSkryptem()) return;
+    // Wyłączenie ustawione na /nie-licz-mnie, dla osób pracujących nad stroną.
+    try {
+      if (localStorage.getItem("fl_nie_licz") === "1") return;
+    } catch {
+      /* zablokowana pamięć: liczymy normalnie */
+    }
     let zrodlo = "";
     try {
       zrodlo = document.referrer ? new URL(document.referrer).hostname : "";
@@ -61,6 +89,8 @@ function Zliczanie() {
       sesja: idSesji(),
       telefon: window.matchMedia("(max-width: 640px)").matches,
       zdarzenie: "odslona",
+      przegladarka: rodzinaPrzegladarki(),
+      system: rodzinaSystemu(),
     };
     fetch("/api/wizyta", {
       method: "POST",

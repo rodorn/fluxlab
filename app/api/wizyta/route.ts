@@ -27,6 +27,11 @@ export async function POST(request: Request) {
     sesja: String(dane.sesja ?? "").slice(0, 40),
     telefon: Boolean(dane.telefon),
     zdarzenie: String(dane.zdarzenie ?? "odslona").slice(0, 40),
+    // Rodzina przeglądarki i systemu, nie cały nagłówek. Bez tego nie da się
+    // odróżnić wejścia właściciela strony od wejścia obcej osoby, bo oboje
+    // korzystają z tego samego systemu.
+    przegladarka: String(dane.przegladarka ?? "").slice(0, 30),
+    system: String(dane.system ?? "").slice(0, 30),
   };
 
   try {
