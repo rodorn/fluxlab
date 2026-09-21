@@ -56,6 +56,14 @@ export default function Footer() {
             >
               Regulamin
             </Link>
+            <a
+              href="https://zleca.pl/wykonawca/fluxlab-strony-internetowe-i-automatyzacja-1790016801"
+              target="_blank"
+              rel="noopener"
+              className="text-xs text-gray-400 dark:text-gray-500 hover:text-accent transition-colors"
+            >
+              Nasza wizytówka w Zleca.pl
+            </a>
           </div>
         </div>
       </div>

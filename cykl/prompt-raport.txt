@@ -1,0 +1,44 @@
+Raport zbiorczy z rozwoju strony fluxlab.pl. Wychodzi co cztery godziny i jest
+jedynym mailem, jaki Paweł dostaje z tego wątku, więc ma być długi, dokładny i
+samowystarczalny: po jego przeczytaniu Paweł ma wiedzieć wszystko, co się
+wydarzyło, bez zaglądania do kodu.
+
+ŹRÓDŁA, przeczytaj wszystkie:
+1. ~/Projekty/fluxlab-site/cykl/dziennik.md, wpisy od ostatniej linii
+   "<!-- WYSLANO -->" do końca. To są cykle do zaraportowania.
+2. `cd ~/Projekty/fluxlab-site && git log --oneline --since="5 hours ago"`
+3. `python3 ~/Projekty/fluxlab-ruch/raport_ruchu.py`
+4. Raporty audytowe AUDYT_TECHNICZNY.md, AUDYT_TRESCI.md, AUDYT_SEO.md, żeby
+   wiedzieć, ile z listy zostało i co jest następne w kolejce.
+
+CZEGO OCZEKUJĘ W MAILU, w tej kolejności:
+- Sekcja na każdą zmianę z osobna, nie zbiorcza lista. Dla każdej: co było źle,
+  co konkretnie zrobiłem, jaki jest dowód, że działa, i co to daje
+  odwiedzającemu albo wyszukiwarce. Pisz pełnymi zdaniami, nie hasłami.
+- Sekcja o tym, czego NIE udało się zrobić i dlaczego. Ta sekcja jest
+  obowiązkowa. Jeśli wszystko poszło, napisz to wprost.
+- Ruch: pełny wynik z raportu ruchu, razem z podziałem na przeglądarki i
+  zastrzeżeniem o danych sprzed 21.09.2026 godz. 16:00. Jeśli liczba
+  uruchomień narzędzi wzrosła albo spadła, powiedz o ile i od kiedy.
+- Stan listy audytowej: ile pozycji zamkniętych, ile zostało, co bierzemy dalej
+  i dlaczego akurat to.
+- Jedno zdanie wniosku na koniec. Bez podsumowań typu "podsumowując".
+- Zrzut ekranu najważniejszej zmiany wizualnej, jako załącznik cid. Jeśli w tym
+  okresie nie było zmiany wizualnej, nie dołączaj nic i nie tłumacz się.
+
+JAK WYSŁAĆ:
+- skrypty w ~/Projekty/fluxlab-site/skrypty-raport: report_mail.py buduje HTML
+  z report_data.json, send_fluxlab.py wysyła przez Zoho.
+- odbiorca: iwanekpawel55@gmail.com
+- temat: "FluxLab strona, GG:MM, <najważniejsza zmiana w kilku słowach>"
+
+ZASADY:
+- Bez długich myślników, zamiast nich przecinki.
+- PRZECZYTAJ treść przed wysłaniem. Sprawdź ortografię i odmianę. Ten mail ma
+  wyglądać jak raport od firmy, bo taki jest jego cel.
+- Nie pisz o klientach, referencjach ani wynikach u klientów, bo ich nie ma.
+- Po udanej wysyłce dopisz na końcu dziennika linię "<!-- WYSLANO -->" wraz z
+  datą i godziną, żeby następny raport wiedział, od którego miejsca czytać.
+- Jeżeli od ostatniego raportu nie przybył ani jeden wpis w dzienniku, nie
+  wysyłaj pustego maila. Zamiast tego dopisz do dziennika notatkę, że cztery
+  godziny minęły bez zmian, i zakończ.

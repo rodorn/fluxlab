@@ -1,0 +1,13 @@
+# Dziennik rozwoju strony
+
+Każdy cykl godzinny dopisuje tu jeden wpis. Raport zbiorczy czyta wpisy od
+ostatniego znacznika wysyłki i wysyła z nich jeden mail co cztery godziny.
+
+<!-- WYSLANO 2026-09-22 00:00 -->
+
+## 2026-09-22 00:58
+**Co zrobione:** Sześć własnych tekstów badawczych przestało kończyć się ślepo: każdy dostał na końcu blok, w którym jedno kliknięcie w gotowy przykład uruchamia to samo sprawdzenie, którym zrobiono pomiar, pokazuje surowy werdykt wprost w artykule i dopiero potem proponuje pełne narzędzie oraz kontakt. Powód z audytu treści 5.4: żaden z tych tekstów nie prowadził do kontaktu, a ścieżka artykuł, narzędzie, wynik kończyła się pustym formularzem.
+**Pliki:** `components/SprawdzPoBadaniu.tsx` (nowy), `app/strefa-wiedzy/maile-trafiaja-do-spamu/page.tsx`, `app/strefa-wiedzy/podszywanie-pod-salony-samochodowe/page.tsx`, `app/strefa-wiedzy/co-jest-nie-tak-ze-stronami-dealerow/page.tsx`, `app/strefa-wiedzy/czy-ai-widzi-strony-dealerow/page.tsx`, `app/strefa-wiedzy/bledy-w-rejestrze-obiektow-hotelarskich/page.tsx`, `app/strefa-wiedzy/konwersje-pokazuja-zero/page.tsx`, `AUDYT_TRESCI.md`.
+**Dowód:** przed: 0 z 6 tekstów miało w treści odnośnik do `/kontakt` i 0 dawało wynik bez przechodzenia na inną stronę. Po: 6 z 6 ma odnośnik do `/kontakt` w treści, 5 z 6 uruchamia sprawdzenie na miejscu. Przeklikane w przeglądarce na lokalnym buildzie produkcyjnym: audyt poczty `fluxlab.pl` zwrócił „100 na 100 punktów" (zielony), monitor sądowy `CD PROJEKT` „6 ogłoszeń, żadne nie dotyczy rozwiązania" (zielony), dane sprzedawcy `fluxlab.pl` „NIP jest, numeru konta brak" (żółty, 1,7 s, widoczny stan ładowania), widoczność w AI „strona jest dostępna dla robotów AI". Przy 390 px dokument ma 390 px, bez przewijania w bok. Build i `scripts/spojnosc.mjs` czyste przed commitem. Produkcja sprawdzona dwoma zapytaniami: blok i odnośnik do kontaktu są w źródle. IndexNow: Yandex i Naver przyjęły 6 adresów, wspólny punkt nadal 403.
+**Commit:** `ffb4ab5`.
+**Zostało otwarte:** `konwersje-pokazuja-zero` jako jedyny nie ma sprawdzenia dającego wynik jednym kliknięciem, bo dla błędów pomiaru konwersji takiego nie mam, blok mówi to wprost. Nie zmierzyłem jeszcze, ilu czytelników klika w te przykłady: zdarzenie `uruchomiono_skan` idzie do licznika, ale bez rozróżnienia artykuł kontra strona narzędzia, warto dodać osobną nazwę. Z audytów nadal czekają: 2.3 martwe komponenty (16 nieimportowanych, dwa z wymyślonymi liczbami), 2.4 liczba mnoga na czterech stronach branżowych, 2.5 adres GitHuba jako tekst, kontrast w stopce, brak H1 na `/kontakt`, za długie `title` i `description`, kanibalizacja ośmiu stron o Zapier, Make i n8n.

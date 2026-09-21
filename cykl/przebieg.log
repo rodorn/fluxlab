@@ -260,3 +260,19 @@ ta sama kwota wygladala inaczej po pierwszym kliknieciu. Grupowanie tysiecy robi
 Mail wyslany 23:51 z dwoma zrzutami z produkcji i raportem ruchu.
 Do kolejnych cykli: 2.3 martwe komponenty, 2.4 liczba mnoga na stronach branzowych, 2.5 adres
 GitHuba jako tekst, KSeF w czasie przyszlym, kontrast w stopce, H1 na /kontakt, dlugie title.
+To spóźniony watcher sprzed wdrożenia; zdążył złapać już nową wersję (`1` trafienie o 23:51:58), czyli potwierdza to, co sprawdziłem wcześniej. Nic do zrobienia: cykl jest zamknięty, procesów testowych nie ma, repozytorium czyste na `c735613`.
+=== 2026-09-21 23:52:02 koniec, kod 0
+=== 2026-09-22 00:43:06 start
+Cykl zamknięty.
+
+**Co dowiezione:** nowy komponent `components/SprawdzPoBadaniu.tsx` na końcu sześciu własnych tekstów badawczych. Jedno kliknięcie w gotowy przykład uruchamia dokładnie to sprawdzenie, którym zrobiono pomiar opisany w artykule, wynik pokazuje się w tekście, a pod nim stoi pełne narzędzie i odnośnik do `/kontakt`.
+
+| Pomiar | Przed | Po |
+| --- | --- | --- |
+| Teksty badawcze z odnośnikiem do kontaktu w treści | 0 z 6 | 6 z 6 |
+| Teksty dające wynik bez przechodzenia na inną stronę | 0 z 6 | 5 z 6 |
+
+Sprawdzenia przeklikane w przeglądarce na lokalnym buildzie produkcyjnym: audyt poczty (`fluxlab.pl`, 100/100, zielony), monitor sądowy (`CD PROJEKT`, zielony), dane sprzedawcy (`fluxlab.pl`, żółty, 1,7 s), widoczność w AI (zielony). Przy 390 px brak przewijania w bok. Build i `scripts/spojnosc.mjs` czyste, commit `ffb4ab5` na `main`, produkcja potwierdzona dwoma zapytaniami, IndexNow przyjęty przez Yandex i Naver (wspólny punkt nadal 403).
+
+Szósty tekst, `konwersje-pokazuja-zero`, mówi wprost, że dla błędów pomiaru konwersji sprawdzenia na jedno kliknięcie nie mam, bo rozstrzygnięcie wymaga zajrzenia w ustawienia konkretnej strony. W audycie treści odhaczone 5.4. Wpis w `cykl/dziennik.md` dopisany, maila nie wysyłałem.
+=== 2026-09-22 00:48:42 koniec, kod 0
