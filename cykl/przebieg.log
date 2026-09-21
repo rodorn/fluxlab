@@ -137,3 +137,55 @@ Commity 8881dc1, 1f7f5e2, 8c4bf3e. Build i spojnosc czyste. IndexNow: Yandex i N
 Mail wyslany 21:00 na iwanekpawel55@gmail.com z trzema zrzutami i raportem ruchu.
 Do kolejnych cykli: rozjazd ceny panelu zwrotow (900 kontra 490), dwa produkty bez ceny,
 blad w danych strukturalnych cen (ProductLanding), kontrast w stopce, H1 na /kontakt, 403 z IndexNow.
+## Co zrobione
+
+Jedna zmiana, dowieziona do końca: **katalog na `/produkty` da się teraz zawęzić filtrem, zamiast przewijać trzydzieści trzy kafelki** (pozycja 3.1 z `AUDYT_TRESCI.md`).
+
+| Co | Efekt |
+| --- | --- |
+| Problem | 33 pozycje w trzech siatkach, podział na filary i grupy działał tylko jako nagłówek, nie dało się nim niczego odsiać |
+| Element interaktywny | `components/KatalogProduktow.tsx`: pasek przycisków z licznikami, jedno naciśnięcie daje wynik typu „10 z 33 pozycji” plus zdanie o tej grupie. Bez wpisywania i bez rejestracji |
+| Spójność nazw | Filary w kolejności z menu: Automatyzacja procesów (9), Integracje i dane (11), Systemy i strony (13). Drugi poziom to pole `grupa` z `lib/products.ts` |
+| Drugi poziom | Pojawia się dopiero po wybraniu obszaru. Każda grupa należy do jednego filaru, więc wcześniej byłby to ten sam podział powiedziany dwa razy, a na telefonie 11 przycisków spychało katalog pod krawędź ekranu |
+| SEO | Stan początkowy pokazuje komplet, więc wszystkie 33 pozycje zostają w źródle strony |
+| Pomiar | Pierwsze użycie filtra zgłasza `zawezono_katalog`, raz na sesję |
+| Zabezpieczenie | `scripts/spojnosc.mjs` reguła 1c: każda pozycja ma grupę z zamkniętej listy, każda grupa ma pozycje i miejsce w `GROUP_ORDER` |
+
+Przy okazji kafelek produktu wyszedł do `components/ProductCard.tsx`, wspólnego dla katalogu i trzech stron filarowych, żeby nie utrzymywać dwóch kopii tego samego układu.
+
+**Weryfikacja:** wszystkie przyciski przeklikane na lokalnym buildzie produkcyjnym, każdy zawęził listę do liczby, którą podaje. Przypadki brzegowe: grupa bez darmowych sprawdzeń znika po włączeniu przełącznika zamiast pokazać pustkę, powrót do „Wszystko” kasuje wybraną grupę. Zdarzenie potwierdzone na podsłuchanym ruchu (dwa naciśnięcia, jedno zgłoszenie). Na 390 px bez przewijania w bok, pasek ma 5 pozycji zamiast 11. Build i `spojnosc.mjs` czyste przed każdym pushem, commity `8881dc1`, `1f7f5e2`, `8c4bf3e` na `main`, produkcja potwierdzona zapytaniami z odstępami.
+
+Reguła spójności sprawdzona celowym zepsuciem: po usunięciu grupy z jednej pozycji i wpisu z `GROUP_ORDER` kontrola przerwała pracę i wskazała oba braki.
+
+Adresy zgłoszone: Yandex i Naver przyjęły 112, wspólny punkt IndexNow nadal 403. Mail poszedł na `iwanekpawel55@gmail.com` z trzema zrzutami i raportem ruchu (z zastrzeżeniem o danych sprzed 21.09 godz. 16:00). Serwer testowy na 3311 wygaszony.
+
+Dwie rzeczy warte odnotowania. Pierwszy zrzut z produkcji pokazał starą wersję, bo `gap-1.5` jako znacznik wdrożenia występuje też w innych komponentach; pewnym testem okazało się liczenie przycisków `aria-pressed`. Druga: `AUDYT_TRESCI.md` jest w `.gitignore`, więc odhaczenie pozycji 3.1 zostaje lokalnie.
+
+Do kolejnych cykli: rozjazd ceny panelu zwrotów (900 kontra 490 zł), dwa produkty bez ceny, błąd w danych strukturalnych cen w `ProductLanding`, kontrast w stopce, brakujący H1 na `/kontakt`, 403 z IndexNow.
+=== 2026-09-21 20:52:38 koniec, kod 0
+=== 2026-09-21 21:43:26 start
+=== 2026-09-21 21:52 koniec cyklu: /produkty da sie zawezic po cenie, kwoty zgodne ze stronami
+Commity 9ec9fe0, f72fe9a, dfeba60. Build i spojnosc czyste. IndexNow: Yandex i Naver 200 (112 adresow), wspolny punkt 403.
+Mail wyslany 21:52 na iwanekpawel55@gmail.com z dwoma zrzutami i raportem ruchu.
+Odhaczone w AUDYT_TRESCI.md: 3.2 (rozjazd ceny panelu zwrotow) i 3.6 (dane strukturalne cen).
+Do kolejnych cykli: dwa produkty bez ceny (/integracje-api, /automatyzacja-raportowania),
+kontrast w stopce, H1 na /kontakt, za dlugie title i description, 403 z IndexNow.
+## Co zrobione
+
+Jedna zmiana, dowieziona do końca: **katalog na `/produkty` da się zawęzić po cenie, a każda kwota widoczna w katalogu ma pokrycie na stronie, do której prowadzi** (pozycje 3.2 i 3.6 z `AUDYT_TRESCI.md`).
+
+| Co | Efekt |
+| --- | --- |
+| Problem | Cena była w katalogu tylko napisem. Nie dało się po niej filtrować, jedna kwota rozjeżdżała się ze stroną (900 kontra 490 zł), a do wyszukiwarek szła jako cena stała, nawet gdy była widełkami albo abonamentem |
+| Element interaktywny | Trzeci pasek nad katalogiem, „Ile kosztuje wejście?”: do 50 zł (11), 51 do 300 zł (14), 301 do 1000 zł (4), powyżej 1000 zł (2), wycena po diagnozie (2). Jedno naciśnięcie, wynik od razu, bez wpisywania i bez rejestracji |
+| Jedno źródło | `cenaWejscia` w `lib/products.ts` czyta kwotę z ceny pisanej po ludzku. Nie ma drugiego pola z liczbą, więc nie ma czego rozjechać |
+| Spójność | Bullet panelu zwrotów mówi 490 zł, tyle samo co strona. Reguła 1 w `scripts/spojnosc.mjs` sprawdza teraz kwoty z bulletów i sam format zapisu ceny |
+| SEO | `ProductLanding` buduje `Offer` z tej samej funkcji: „od” daje `minPrice`, abonament `UnitPriceSpecification` z okresem miesięcznym, prowizja procentowa nie dostaje ceny wcale |
+| Pomiar | Pierwsze użycie filtra ceny zgłasza `zawezono_cene`, raz na sesję, osobno od `zawezono_katalog` |
+
+**Weryfikacja:** wszystkie piec przedzialow przeklikane na lokalnym buildzie produkcyjnym, liczba kafelkow za kazdym razem rowna liczbie na przycisku. Polaczenia filtrow: obszar plus przedzial, przedzial plus darmowe sprawdzenia, zmiana obszaru przy wybranym przedziale; zadne nie daje pustej listy. Zdarzenie `zawezono_cene` potwierdzone na podsluchanym ruchu (dwa nacisniecia, jedno zgloszenie; do testu trzeba schowac `navigator.webdriver`, bo licznik celowo pomija przegladarke sterowana skryptem). Na 390 px bez przewijania w bok. Produkcja sprawdzona po wdrozeniu: 4 z 33 pozycji po wybraniu 301 do 1000 zl, znaczniki na /panel-zwrotow podaja minPrice 490 i 3500.
+
+Obie nowe reguly spojnosci sprawdzone celowym zepsuciem: przywrocenie kwoty 900 zl w bullecie i cena w formacie "490-900 zl" zatrzymaly kontrole z nazwa strony i kwota.
+
+Po drodze wyszedl blad wlasnego pomyslu: pierwsza wersja licznikow na przyciskach zdejmowala filtr ceny, zeby nie pokazac zera, przez co przy wcisnietym przedziale obszar bez pozycji chwalil sie pelnym stanem (11 zamiast 0). Teraz liczniki nie zdejmuja niczego, a obszar z zerem jest wyszarzony i nie do nacisniecia.
+=== 2026-09-21 21:53:00 koniec, kod 0
