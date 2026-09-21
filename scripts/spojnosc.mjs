@@ -184,6 +184,54 @@ for (const f of sourceFiles) {
   }
 }
 
+// --- 2b. deklaracje klientow i wynikow, ktorych nie ma ---
+// Fluxlab nie ma ani jednego wdrozenia u firmy. Kazde zdanie mowiace o
+// klientach, referencjach albo o tym, ile razy cos zrobiono, jest wiec
+// nieprawda, a jednoczesnie podwaza te czesc strony, ktora jest prawdziwa:
+// otwarty kod i dzialajace narzedzia. Audyt tresci znalazl takie zdania w
+// czterech miejscach, wpisywane w roznych momentach i roznymi slowami, wiec
+// pilnuje ich teraz kontrola, a nie pamiec.
+const DEKLARACJE = [
+  // Slowo "klient" samo w sobie jest w porzadku: na wiekszosci stron chodzi o
+  // klientow firmy, ktora czyta. Falszem jest dopiero zdanie, w ktorym to ja
+  // cos robie u swoich klientow, albo w ktorym oni cos o mnie mowia.
+  [
+    /\b(wdraza|wdraża|robi|pracuj|ustawia|konfiguruj|spina|buduj|uruchamia|mierz|widzia)\w*\s+(to\s+|je\s+)?u\s+klient/i,
+    "praca u klientow, ktorych nie ma",
+  ],
+  [
+    /\b(sciezka|ścieżka|doswiadczenie|doświadczenie|praktyka|wdrozeni|wdrożeni|wdrozen|wdrożeń|projekty|projektow|projektów)\w*\s+u\s+klient/i,
+    "doswiadczenie u klientow, ktorego nie ma",
+  ],
+  [/\b(moi|nasi)\s+klienci\b/i, "wlasni klienci"],
+  [/\bzaufa(li|lo|ło)\s+(nam|mi)\b/i, "zaufanie klientow"],
+  [/\bzadowolon(i|ych)\s+klient/i, "zadowoleni klienci"],
+  [/\b(opinie|referencje)\s+(moich|naszych)\s+klient/i, "opinie i referencje klientow"],
+  [
+    /\b(wdrozeni|wdrożeni|wdrozen|wdrożeń|projektow|projektów)\s+dla\s+klient/i,
+    "wdrozenia dla klientow",
+  ],
+  [/\bklienci\s+(mowia|mówią|chwal)/i, "cytaty od klientow"],
+  [
+    /\b(ponad|juz|już|blisko)\s+\d+\s*\+?\s*(wdroz|wdroż|zrealizowan|realizacj)/i,
+    "liczba wdrozen bez pokrycia",
+  ],
+  [
+    /\b\d+\s*\+\s*(wdrozen|wdrożeń|projektow|projektów|realizacji)\b/i,
+    "liczba wdrozen bez pokrycia",
+  ],
+  [/\b\d+\s+lat\s+(doswiadczenia|doświadczenia)/i, "lata doswiadczenia bez pokrycia"],
+];
+for (const f of sourceFiles) {
+  const clean = stripComments(read(f));
+  for (const [wzor, opis] of DEKLARACJE) {
+    const trafienie = clean.match(wzor);
+    if (trafienie) {
+      add("klienci", `${f}: ${opis}, fragment "${trafienie[0].trim()}"`);
+    }
+  }
+}
+
 // --- 3. metadata na kazdej stronie ---
 const pages = sourceFiles.filter((f) => /^app\/.*\/page\.tsx$/.test(f) || f === "app/page.tsx");
 for (const f of pages) {
