@@ -7,7 +7,7 @@ const tracks = [
     title: "Diagnoza procesu",
     price: "0 zł",
     description:
-      "Bezpłatny pierwszy filtr. Sprawdzamy, czy automatyzacja ma u Ciebie sens i jaki kierunek dałby największy efekt.",
+      "Bezpłatny pierwszy filtr. Sprawdzam, czy automatyzacja ma u Ciebie sens i jaki kierunek dałby największy efekt.",
     bullets: [
       "wstępna ocena potencjału",
       "1–3 obszary z największym wpływem",

@@ -110,18 +110,18 @@ const faq = [
     question:
       "Pracujemy na własnym CRM-ie zbudowanym 5 lat temu. Da się to spiąć?",
     answer:
-      "Tak, jeśli ma jakikolwiek interfejs zewnętrzny (API, eksport CSV, baza, do której można się podpiąć). W praktyce 9 na 10 firm leasingowych pracuje na mieszance Pipedrive/HubSpot + Excel + własny system do wniosków. Najczęściej budujemy warstwę pośrednią (n8n self-hosted), która spina wszystkie te systemy bez konieczności wymiany czegokolwiek. Po roku zwykle decydujecie, czy zostać przy obecnym CRM-ie, czy migrować, automatyzacja nie wymusza tej decyzji teraz.",
+      "Tak, jeśli ma jakikolwiek interfejs zewnętrzny (API, eksport CSV, baza, do której można się podpiąć). W praktyce firmy leasingowe pracują zwykle na mieszance Pipedrive/HubSpot + Excel + własny system do wniosków. Najczęściej buduję warstwę pośrednią (n8n self-hosted), która spina wszystkie te systemy bez konieczności wymiany czegokolwiek. Po roku zwykle decydujecie, czy zostać przy obecnym CRM-ie, czy migrować, automatyzacja nie wymusza tej decyzji teraz.",
   },
   {
     question:
       "Mamy umowy z 8 leasingodawcami. Czy musimy integrować się ze wszystkimi?",
     answer:
-      "Nie. Pierwszy etap to integracja z 1–2 najczęściej używanymi (zwykle 60–80% wolumenu). Reszta dochodzi etapami, w miarę potrzeb. Czasem leasingodawca nie ma API publicznego, wtedy automatyzujemy obieg dokumentów do portalu partnerskiego (RPA / automatyczny upload), co i tak oszczędza 80% ręcznej pracy.",
+      "Nie. Pierwszy etap to integracja z 1–2 najczęściej używanymi (zwykle 60–80% wolumenu). Reszta dochodzi etapami, w miarę potrzeb. Czasem leasingodawca nie ma API publicznego, wtedy automatyzuję obieg dokumentów do portalu partnerskiego (RPA / automatyczny upload), co i tak zdejmuje większość ręcznej pracy.",
   },
   {
     question: "Co z RODO i tajemnicą bankową?",
     answer:
-      "Dla branży leasingowej standardowo wdrażam automatyzację na n8n self-hosted na waszym serwerze (Polska / EOG). Dane klientów nie wychodzą poza waszą infrastrukturę poza tymi, do których jawnie wysyłacie zapytania (BIK, KRD, leasingodawca). Konfigurujemy retencję, rejestr zgód i logi dostępu. To wymaganie twarde, przed startem audytujemy obecny stan ze strony compliance.",
+      "Dla branży leasingowej standardowo wdrażam automatyzację na n8n self-hosted na waszym serwerze (Polska / EOG). Dane klientów nie wychodzą poza waszą infrastrukturę poza tymi, do których jawnie wysyłacie zapytania (BIK, KRD, leasingodawca). Konfiguruję retencję, rejestr zgód i logi dostępu. To wymaganie twarde, przed startem audytuję obecny stan ze strony compliance.",
   },
   {
     question: "Ile kosztuje wdrożenie i ile trwa?",
@@ -216,7 +216,7 @@ export default function AutomatyzacjaCrmLeasing() {
               <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
                 Pierwsze pytanie nie brzmi: „jaki CRM kupić?”. Pierwsze pytanie
                 brzmi: „dlaczego lead z porównywarki krąży 36 godzin, zanim
-                broker do niego oddzwoni?”. Automatyzujemy obsługę leada od
+                broker do niego oddzwoni?”. Automatyzuję obsługę leada od
                 wpadnięcia do CRM przez BIK/KRD, wniosek do leasingodawcy, sync
                 statusu decyzji, aż po prowizję, w architekturze, która spełnia
                 RODO i wymogi sektora finansowego.

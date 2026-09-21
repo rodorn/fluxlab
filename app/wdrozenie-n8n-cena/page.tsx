@@ -54,7 +54,7 @@ export default function WdrozenieN8nCena() {
         },
         {
           title: "Czego w tej cenie nie ma",
-          desc: "Płatnych kont po stronie narzędzi, które spinamy, czyli CRM, bramek SMS, dostawców wzbogacania danych. Jeśli przepływ korzysta z modelu językowego, rozliczasz go u dostawcy modelu. Podaję to osobno przed startem, żeby rachunek nie wyszedł po fakcie.",
+          desc: "Płatnych kont po stronie narzędzi, które spinam, czyli CRM, bramek SMS, dostawców wzbogacania danych. Jeśli przepływ korzysta z modelu językowego, rozliczasz go u dostawcy modelu. Podaję to osobno przed startem, żeby rachunek nie wyszedł po fakcie.",
         },
         {
           title: "Kiedy to się nie opłaca",

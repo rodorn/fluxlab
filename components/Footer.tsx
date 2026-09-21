@@ -62,7 +62,7 @@ export default function Footer() {
               rel="noopener"
               className="text-xs text-gray-400 dark:text-gray-500 hover:text-accent transition-colors"
             >
-              Nasza wizytówka w Zleca.pl
+              Moja wizytówka w Zleca.pl
             </a>
           </div>
         </div>

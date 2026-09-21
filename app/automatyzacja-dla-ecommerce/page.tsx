@@ -11,12 +11,12 @@ export const metadata: Metadata = {
   title:
     "Automatyzacja dla e-commerce, Shopify, WooCommerce, BaseLinker, Allegro | Fluxlab",
   description:
-    "Automatyzacja sklepu internetowego: synchronizacja stanów magazynowych, fakturowanie, etykiety InPost/DPD, e-mail marketing i obsługa zwrotów. Łączymy Shopify, WooCommerce, PrestaShop, BaseLinker i Allegro w jeden działający proces.",
+    "Automatyzacja sklepu internetowego: synchronizacja stanów magazynowych, fakturowanie, etykiety InPost/DPD, e-mail marketing i obsługa zwrotów. Łączę Shopify, WooCommerce, PrestaShop, BaseLinker i Allegro w jeden działający proces.",
   openGraph: {
     title:
       "Automatyzacja dla e-commerce, Shopify, WooCommerce, BaseLinker, Allegro | Fluxlab",
     description:
-      "Automatyzacja sklepu internetowego: synchronizacja stanów magazynowych, fakturowanie, etykiety InPost/DPD, e-mail marketing i obsługa zwrotów. Łączymy Shopify, WooCommerce, PrestaShop, BaseLinker i Allegro w jeden działający proces.",
+      "Automatyzacja sklepu internetowego: synchronizacja stanów magazynowych, fakturowanie, etykiety InPost/DPD, e-mail marketing i obsługa zwrotów. Łączę Shopify, WooCommerce, PrestaShop, BaseLinker i Allegro w jeden działający proces.",
     locale: "pl_PL",
     type: "article",
     images: [
@@ -65,17 +65,17 @@ const painPoints = [
   {
     pain: "Sprzedajesz ten sam towar na sklepie i na Allegro, i co chwilę masz over-sell",
     solution:
-      "Wpinamy BaseLinker albo bezpośrednią integrację (Shopify/WooCommerce ↔ Allegro API), która trzyma stany w jednym źródle prawdy. Każda sprzedaż automatycznie zmniejsza stan we wszystkich kanałach. Jeśli BaseLinker już masz, ale nie wykorzystujesz jego automatyzacji do końca, porządkujemy to bez wymiany narzędzia.",
+      "Wpinam BaseLinker albo bezpośrednią integrację (Shopify/WooCommerce ↔ Allegro API), która trzyma stany w jednym źródle prawdy. Każda sprzedaż automatycznie zmniejsza stan we wszystkich kanałach. Jeśli BaseLinker już masz, ale nie wykorzystujesz jego automatyzacji do końca, porządkuję to bez wymiany narzędzia.",
   },
   {
     pain: "Każde zamówienie to ręczne wystawienie faktury w Fakturowni i przeklejanie danych",
     solution:
-      "Łączymy sklep (Shopify/WooCommerce/PrestaShop) bezpośrednio z systemem fakturowym przez API. Faktura powstaje automatycznie w momencie opłacenia, dane firmowe są weryfikowane w GUS, klient dostaje PDF mailem, a księgowa ma wszystko w jednym miejscu. Działa też dla zamówień z Allegro.",
+      "Łączę sklep (Shopify/WooCommerce/PrestaShop) bezpośrednio z systemem fakturowym przez API. Faktura powstaje automatycznie w momencie opłacenia, dane firmowe są weryfikowane w GUS, klient dostaje PDF mailem, a księgowa ma wszystko w jednym miejscu. Działa też dla zamówień z Allegro.",
   },
   {
     pain: "Magazyn traci czas na ręczne generowanie etykiet u kuriera",
     solution:
-      "Automatyzujemy generowanie etykiet w InPost, DPD, Poczcie Polskiej, GLS, DHL czy Orlen Paczce. Etykieta powstaje automatycznie po opłaceniu lub po ręcznej akceptacji zamówienia (zależnie od procesu). Numer listu trafia do klienta i do CRM.",
+      "Automatyzuję generowanie etykiet w InPost, DPD, Poczcie Polskiej, GLS, DHL czy Orlen Paczce. Etykieta powstaje automatycznie po opłaceniu lub po ręcznej akceptacji zamówienia (zależnie od procesu). Numer listu trafia do klienta i do CRM.",
   },
   {
     pain: "Lead z formularza Allegro lub maila ginie i nikt do niego nie oddzwania",
@@ -85,7 +85,7 @@ const painPoints = [
   {
     pain: "Nie wiesz, ile naprawdę zarabiasz na poszczególnych kanałach i produktach",
     solution:
-      "Budujemy automatyczne raportowanie (Looker Studio, Google Sheets, dedykowany dashboard), które łączy dane sprzedażowe, koszty reklam (Meta Ads, Google Ads), koszty wysyłki i marżę produktową. Zamiast eksportować CSV-ki raz w miesiącu, masz aktualny obraz biznesu codziennie.",
+      "Buduję automatyczne raportowanie (Looker Studio, Google Sheets, dedykowany dashboard), które łączy dane sprzedażowe, koszty reklam (Meta Ads, Google Ads), koszty wysyłki i marżę produktową. Zamiast eksportować CSV-ki raz w miesiącu, masz aktualny obraz biznesu codziennie.",
   },
 ];
 
@@ -93,12 +93,12 @@ const tools = [
   {
     name: "BaseLinker",
     description:
-      "Centrum operacji dla sprzedaży wielokanałowej (Allegro, Amazon, eBay, sklep własny). Doskonale radzi sobie z magazynem, etykietami i statusami zamówień. Automatyzujemy konfigurację akcji, integracje zewnętrzne i przypadki, których nie pokrywają natywne reguły.",
+      "Centrum operacji dla sprzedaży wielokanałowej (Allegro, Amazon, eBay, sklep własny). Doskonale radzi sobie z magazynem, etykietami i statusami zamówień. Automatyzuję konfigurację akcji, integracje zewnętrzne i przypadki, których nie pokrywają natywne reguły.",
   },
   {
     name: "Shopify / WooCommerce / PrestaShop",
     description:
-      "Integrujemy każdą z popularnych platform sklepowych przez API z fakturowaniem, kurierami, CRM, e-mail marketingiem i hurtowniami. Dla sklepów na własnym hostingu (WooCommerce, PrestaShop) możemy też wprowadzać automatyzacje wewnątrz samego sklepu.",
+      "Integruję każdą z popularnych platform sklepowych przez API z fakturowaniem, kurierami, CRM, e-mail marketingiem i hurtowniami. Dla sklepów na własnym hostingu (WooCommerce, PrestaShop) mogę też wprowadzać automatyzacje wewnątrz samego sklepu.",
   },
   {
     name: "n8n",
@@ -108,12 +108,12 @@ const tools = [
   {
     name: "Zapier i Make",
     description:
-      "Sprawdzają się w mniejszych sklepach i przy szybkich integracjach point-to-point. Make daje większą kontrolę nad logiką, Zapier wygrywa szerokością integracji. Dobieramy narzędzie do skali, nie odwrotnie.",
+      "Sprawdzają się w mniejszych sklepach i przy szybkich integracjach point-to-point. Make daje większą kontrolę nad logiką, Zapier wygrywa szerokością integracji. Dobieram narzędzie do skali, nie odwrotnie.",
   },
   {
     name: "Pipedrive i HubSpot",
     description:
-      "Dla e-commerce B2B i sklepów z ofertą hurtową. Automatyzujemy lead pipeline, oferty, follow-upy i przejście klienta z kanału B2C do B2B.",
+      "Dla e-commerce B2B i sklepów z ofertą hurtową. Automatyzuję lead pipeline, oferty, follow-upy i przejście klienta z kanału B2C do B2B.",
   },
 ];
 
@@ -122,18 +122,18 @@ const faq = [
     question:
       "Mam sklep na Shopify i sprzedaję też na Allegro. Czy automatyzacja stanów wymaga BaseLinkera?",
     answer:
-      "Niekoniecznie. BaseLinker jest najpopularniejszym wyborem i upraszcza wiele rzeczy, ale dla mniejszej liczby SKU lub specyficznych wymagań robimy też integracje bezpośrednio przez API Allegro i Shopify (np. w n8n). Decyzja zależy od skali, liczby kanałów i tego, jakie inne procesy chcesz spiąć.",
+      "Niekoniecznie. BaseLinker jest najpopularniejszym wyborem i upraszcza wiele rzeczy, ale dla mniejszej liczby SKU lub specyficznych wymagań robię też integracje bezpośrednio przez API Allegro i Shopify (np. w n8n). Decyzja zależy od skali, liczby kanałów i tego, jakie inne procesy chcesz spiąć.",
   },
   {
     question:
       "Czy automatyzacja fakturowania zadziała z Fakturownią, iFirmą i InFaktem?",
     answer:
-      "Tak. Wszystkie trzy mają API, z którym pracujemy. Konfigurujemy automatyczne tworzenie faktur, weryfikację NIP w GUS, oznaczanie statusu opłacenia i wysyłkę PDF do klienta. W zestawie zwykle robimy też synchronizację z systemem księgowym lub eksport dla księgowej.",
+      "Tak. Wszystkie trzy mają API, z którym pracuję. Konfiguruję automatyczne tworzenie faktur, weryfikację NIP w GUS, oznaczanie statusu opłacenia i wysyłkę PDF do klienta. W zestawie zwykle robię też synchronizację z systemem księgowym lub eksport dla księgowej.",
   },
   {
     question: "Ile kosztuje automatyzacja typowego sklepu internetowego?",
     answer:
-      "Pojedynczy use case (np. tylko fakturowanie albo tylko etykiety) to kilka dni pracy i koszt liczony w niskich tysiącach. Pełne wpięcie sklepu w 5–6 systemów (fakturowanie, kurierzy, CRM, e-mail marketing, raportowanie) to zwykle 2–6 tygodni wdrożenia. Dokładną wycenę dajemy po krótkiej rozmowie i przejrzeniu obecnego procesu.",
+      "Pojedynczy use case (np. tylko fakturowanie albo tylko etykiety) to kilka dni pracy i koszt liczony w niskich tysiącach. Pełne wpięcie sklepu w 5–6 systemów (fakturowanie, kurierzy, CRM, e-mail marketing, raportowanie) to zwykle 2–6 tygodni wdrożenia. Dokładną wycenę daję po krótkiej rozmowie i przejrzeniu obecnego procesu.",
   },
   {
     question:
@@ -145,13 +145,13 @@ const faq = [
     question:
       "Co z RODO, jeśli klienci trafiają do CRM i e-mail marketingu automatycznie?",
     answer:
-      "Automatyzacja respektuje zgody marketingowe pobrane na etapie zakupu lub w formularzu. Do CRM trafiają wszyscy klienci (podstawa: realizacja umowy), do e-mail marketingu tylko ci, którzy wyrazili zgodę. Wprowadzamy też oznaczanie źródła zgody i datę, co przydaje się przy ewentualnej kontroli.",
+      "Automatyzacja respektuje zgody marketingowe pobrane na etapie zakupu lub w formularzu. Do CRM trafiają wszyscy klienci (podstawa: realizacja umowy), do e-mail marketingu tylko ci, którzy wyrazili zgodę. Wprowadzam też oznaczanie źródła zgody i datę, co przydaje się przy ewentualnej kontroli.",
   },
   {
     question:
       "Czy automatyzację da się wdrożyć bez przerywania działania sklepu?",
     answer:
-      "Tak, większość rzeczy uruchamiamy w trybie testowym (sandbox lub na fragmencie ruchu), a potem przełączamy. Sklep działa cały czas. Większe zmiany w procesie zamówień planujemy poza godzinami szczytu, najczęściej rano w dni robocze.",
+      "Tak, większość rzeczy uruchamiam w trybie testowym (sandbox lub na fragmencie ruchu), a potem przełączam. Sklep działa cały czas. Większe zmiany w procesie zamówień planuję poza godzinami szczytu, najczęściej rano w dni robocze.",
   },
   {
     question:
@@ -260,12 +260,12 @@ export default function AutomatyzacjaDlaEcommerce() {
             ariaLabel="Sekcje strony automatyzacji dla e-commerce"
             tabs={[
               {
-                label: "Co automatyzujemy",
+                label: "Co automatyzuję",
                 content: (
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                        Co automatyzujemy w e-commerce
+                        Co automatyzuję w e-commerce
                       </h2>
                       <p className="text-gray-500 dark:text-gray-400 mb-10">
                         Sklep internetowy to kilkanaście systemów, które muszą
@@ -303,12 +303,12 @@ export default function AutomatyzacjaDlaEcommerce() {
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                        Konkretne problemy, które rozwiązujemy
+                        Konkretne problemy, które rozwiązuję
                       </h2>
                       <p className="text-gray-500 dark:text-gray-400 mb-10">
-                        Poniżej najczęstsze sytuacje, z którymi zgłaszają się
-                        sklepy internetowe, i to, jak podchodzimy do nich od
-                        strony technicznej. Każda z tych rzeczy jest do
+                        Poniżej typowe sytuacje z codziennej pracy sklepu
+                        internetowego i to, jak podchodzę do nich od strony
+                        technicznej. Każda z tych rzeczy jest do
                         zrobienia w kilka dni lub tygodni, nie miesięcy.
                       </p>
 
@@ -337,14 +337,14 @@ export default function AutomatyzacjaDlaEcommerce() {
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                        Narzędzia, z którymi pracujemy w e-commerce
+                        Narzędzia, z którymi pracuję w e-commerce
                       </h2>
                       <p className="text-gray-500 dark:text-gray-400 mb-10">
-                        Nie sprzedaję konkretnego narzędzia. Dobieramy je do
+                        Nie sprzedaję konkretnego narzędzia. Dobieram je do
                         skali sklepu, liczby kanałów i tego, co już działa.
                         Najczęściej spotykany stack dla polskiego e-commerce
-                        wygląda jednak podobnie i poniżej opisujemy te
-                        narzędzia, w których robimy najwięcej wdrożeń.
+                        wygląda jednak podobnie i poniżej opisuję
+                        narzędzia, na których takie automatyzacje buduję.
                       </p>
 
                       <div className="space-y-6">
@@ -378,7 +378,7 @@ export default function AutomatyzacjaDlaEcommerce() {
                         >
                           Zapier lub Make
                         </Link>
-                        , opisaliśmy to w sekcji usług. Dla bardziej
+                        , opisałem to w sekcji usług. Dla bardziej
                         rozbudowanych integracji bezpośrednio z API platform
                         sklepowych zajrzyj do{" "}
                         <Link
@@ -409,7 +409,7 @@ export default function AutomatyzacjaDlaEcommerce() {
                         wielokanałowo (sklep + Allegro + ewentualnie Amazon czy
                         eBay), gdzie chaos rośnie szybciej niż przychody.
                         Pracuję zarówno z e-commerce B2C, jak i B2B, w tym
-                        drugim przypadku często łączymy automatyzację sklepu z{" "}
+                        drugim przypadku często łączę automatyzację sklepu z{" "}
                         <Link
                           href="/automatyzacja-leadow"
                           className="text-accent hover:underline"
@@ -471,7 +471,7 @@ export default function AutomatyzacjaDlaEcommerce() {
                           Twój sklep rośnie, a operacja zaczyna gasić pożary?
                         </h2>
                         <p className="text-gray-500 dark:text-gray-400 mb-8">
-                          Opisz stack i procesy. Wskażemy konkretne miejsca,
+                          Opisz stack i procesy. Wskażę konkretne miejsca,
                           gdzie automatyzacja zwróci się w 2–3 miesiące.
                         </p>
                         <Link
@@ -577,7 +577,7 @@ export default function AutomatyzacjaDlaEcommerce() {
             "@type": "Service",
             name: "Automatyzacja dla e-commerce",
             description:
-              "Automatyzacja sklepu internetowego: synchronizacja stanów magazynowych, fakturowanie, etykiety InPost/DPD, e-mail marketing i obsługa zwrotów. Łączymy Shopify, WooCommerce, PrestaShop, BaseLinker i Allegro w jeden działający proces.",
+              "Automatyzacja sklepu internetowego: synchronizacja stanów magazynowych, fakturowanie, etykiety InPost/DPD, e-mail marketing i obsługa zwrotów. Łączę Shopify, WooCommerce, PrestaShop, BaseLinker i Allegro w jeden działający proces.",
             provider: { "@id": "https://fluxlab.pl/#organization" },
             areaServed: { "@type": "Country", name: "PL" },
             serviceType: "Automatyzacja procesów biznesowych dla e-commerce",

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Przyklady from "@/components/Przyklady";
 import { zglosZdarzenie } from "@/lib/zdarzenie";
 
 interface Wynik {
@@ -42,6 +43,15 @@ const MOTYW: Record<string, { ramka: string; tlo: string; tekst: string; etykiet
   },
 };
 
+// Dwie pozycje do jednego klikniecia, obie policzone ze stawek z tabeli
+// przewoznika, ktora siedzi w /api/sprawdz-doplate. Pierwsza jest zgodna,
+// druga ma stawke z wyzszego progu wagowego, czyli najczestszy blad na
+// fakturach kurierskich. Wartosc to trzy liczby formularza po kolei.
+const PRZYKLADY = [
+  { wartosc: "25|30|12.75", etykieta: "Paczka 25 kg, dopłata 12,75 zł" },
+  { wartosc: "18|24|10.20", etykieta: "Paczka 18 kg, dopłata 10,20 zł" },
+];
+
 export default function DoplataCheck() {
   const [waga, setWaga] = useState("15");
   const [baza, setBaza] = useState("20");
@@ -53,8 +63,7 @@ export default function DoplataCheck() {
   const [leadStan, setLeadStan] = useState<"idle" | "wysylam" | "ok" | "blad">("idle");
   const [leadBlad, setLeadBlad] = useState("");
 
-  async function sprawdz(e: React.FormEvent) {
-    e.preventDefault();
+  async function uruchom(w: string, b: string, n: string) {
     zglosZdarzenie("uruchomiono_skan");
     setStan("ladowanie");
     setBlad("");
@@ -65,9 +74,9 @@ export default function DoplataCheck() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          waga: Number(waga.replace(",", ".")),
-          baza: Number(baza.replace(",", ".")),
-          naliczona: Number(naliczona.replace(",", ".")),
+          waga: Number(w.replace(",", ".")),
+          baza: Number(b.replace(",", ".")),
+          naliczona: Number(n.replace(",", ".")),
         }),
       });
       const data = await res.json();
@@ -82,6 +91,21 @@ export default function DoplataCheck() {
       setBlad("Brak połączenia. Spróbuj ponownie za chwilę.");
       setStan("blad");
     }
+  }
+
+  function sprawdz(e: React.FormEvent) {
+    e.preventDefault();
+    uruchom(waga, baza, naliczona);
+  }
+
+  // Przycisk z przykladem wypelnia formularz i od razu liczy, zeby wynik byl
+  // widoczny bez przepisywania czegokolwiek z faktury.
+  function pokazPrzyklad(wartosc: string) {
+    const [w, b, n] = wartosc.split("|");
+    setWaga(w);
+    setBaza(b);
+    setNaliczona(n);
+    uruchom(w, b, n);
   }
 
   async function zamow(e: React.FormEvent) {
@@ -138,6 +162,13 @@ export default function DoplataCheck() {
         próg jest niewidoczna gołym okiem, a przy kilkuset paczkach robi się z
         tego realna kwota. Przepisz trzy liczby z faktury.
       </p>
+
+      <Przyklady
+        pozycje={PRZYKLADY}
+        onWybor={pokazPrzyklad}
+        zablokowane={stan === "ladowanie"}
+        wstep="Nie masz faktury pod ręką? Policz na gotowej pozycji:"
+      />
 
       <form onSubmit={sprawdz} className="mt-5 space-y-3">
         <div className="grid gap-3 sm:grid-cols-3">
