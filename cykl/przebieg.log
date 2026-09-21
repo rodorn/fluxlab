@@ -64,3 +64,20 @@ Dwa commity na `main` (`88fba32`, `d59f673`), build i `scripts/spojnosc.mjs` czy
 Do kolejnych cykli zostaje: trzy kalkulatory niezgłaszające uruchomienia, 403 z IndexNow, oraz sklepy doczytujące ceny skryptem w przeglądarce, dla których narzędzie mówi wprost, że nie potrafi ich odczytać.
 === 2026-09-21 17:52:23 koniec, kod 0
 === 2026-09-21 18:43:16 start
+Cykl zamknięty. Raport poszedł mailem o 18:55.
+
+**Jedna zmiana, dowieziona:** trzy kalkulatory, jedyne narzędzia w serwisie bez pomiaru uruchomień, zgłaszają je teraz do licznika, a przy okazji dają wynik po jednym kliknięciu.
+
+| Co | Efekt |
+| --- | --- |
+| Definicja uruchomienia | pierwsza zmiana danych w sesji, liczona raz; w audycie CRM komplet dziesięciu odpowiedzi |
+| Element interaktywny | rząd trzech gotowych układów danych nad polami, wspólny komponent `components/Scenariusze.tsx` |
+| Dobór układów | różnią się odpowiedzią, nie tylko liczbami: w `/zatrudnic-czy-zautomatyzowac` trzy różne werdykty, w `/audyt-crm` 0, 5 i 10 punktów na 10 |
+| Weryfikacja | kliknięcia w przeglądarce na lokalnym buildzie produkcyjnym; zdarzenie uruchomienia potwierdzone na podsłuchanym ruchu sieciowym, trzy razy, pod właściwymi adresami |
+| Po wdrożeniu | trzy zapytania na produkcję z odstępami, wszystkie trzy strony zwracają nowe przyciski |
+
+Największa różnica jest w `/audyt-crm`: dotąd trzeba było odpowiedzieć na dziesięć pytań, zanim pojawiło się cokolwiek.
+
+Commit `48f3360` na `main`, build i `scripts/spojnosc.mjs` czyste. Pozycja 21 w `AUDYT_TECHNICZNY.md` odhaczona, czyli lista „znalezione przy okazji” jest domknięta. Adresy zgłoszone: Yandex i Naver przyjęły 112, wspólny punkt IndexNow nadal odrzuca kodem 403.
+
+Do kolejnych cykli zostaje: 403 z IndexNow, sklepy doczytujące ceny skryptem w przeglądarce, oraz lżejsze pozycje z audytu technicznego, czyli kontrast w stopce, brakujący H1 na `/kontakt`, za długie `title` i `description`, martwe komponenty.
