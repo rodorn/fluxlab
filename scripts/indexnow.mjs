@@ -42,22 +42,39 @@ const urlList = podane.length
   ? podane.map((p) => (p.startsWith("http") ? p : `${BAZA}${p}`))
   : await adresyZMapy();
 
-const odp = await fetch("https://api.indexnow.org/IndexNow", {
-  method: "POST",
-  headers: { "Content-Type": "application/json; charset=utf-8" },
-  body: JSON.stringify({
-    host: HOST,
-    key: k,
-    keyLocation: `${BAZA}/${k}.txt`,
-    urlList,
-  }),
+// Wspolny punkt api.indexnow.org odrzuca domeny, ktorych Bing jeszcze nie zna
+// (403 UserForbiddedToAccessSite), a Yandex te same adresy przyjmuje. Dlatego
+// pytamy kazdy punkt osobno i wypisujemy wynik kazdego, zamiast uznawac
+// odmowe jednego za porazke calosci.
+const PUNKTY = [
+  ["IndexNow (wspolny)", "https://api.indexnow.org/IndexNow"],
+  ["Yandex", "https://yandex.com/indexnow"],
+  ["Naver", "https://searchadvisor.naver.com/indexnow"],
+];
+
+const ciało = JSON.stringify({
+  host: HOST,
+  key: k,
+  keyLocation: `${BAZA}/${k}.txt`,
+  urlList,
 });
 
-// 200 znaczy przyjete, 202 przyjete ale klucz jeszcze niesprawdzony. Oba sa
-// sukcesem, wiec rozrozniamy je tylko w komunikacie.
-const tresc = await odp.text();
-console.log(
-  `IndexNow: ${odp.status} ${odp.statusText}, zgloszono ${urlList.length} adresow` +
-    (tresc ? `, odpowiedz: ${tresc.slice(0, 200)}` : ""),
-);
-process.exit(odp.status === 200 || odp.status === 202 ? 0 : 1);
+let udane = 0;
+for (const [nazwa, punkt] of PUNKTY) {
+  try {
+    const odp = await fetch(punkt, {
+      method: "POST",
+      headers: { "Content-Type": "application/json; charset=utf-8" },
+      body: ciało,
+    });
+    const tresc = (await odp.text()).slice(0, 160);
+    const ok = odp.status === 200 || odp.status === 202;
+    if (ok) udane++;
+    console.log(`${nazwa}: ${odp.status}${ok ? " przyjete" : " ODRZUCONE"}${tresc ? `, ${tresc}` : ""}`);
+  } catch (e) {
+    console.log(`${nazwa}: blad polaczenia, ${e.message}`);
+  }
+}
+
+console.log(`Zgloszono ${urlList.length} adresow, punktow, ktore przyjely: ${udane} z ${PUNKTY.length}`);
+process.exit(udane > 0 ? 0 : 1);
