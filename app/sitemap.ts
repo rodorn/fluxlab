@@ -188,6 +188,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/dane-z-badan`,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/analiza-lokalizacji`,
       changeFrequency: "monthly" as const,
       priority: 0.9,

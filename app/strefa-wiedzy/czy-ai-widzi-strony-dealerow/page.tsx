@@ -280,6 +280,15 @@ export default function Page() {
             końcu, bo statystycznie ich nie ma.
           </p>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
+            Zestawienia, na których stoi to badanie, są{" "}
+            <Link href="/dane-z-badan" className="text-accent hover:underline">
+              do pobrania w formacie CSV
+            </Link>
+            , bez rejestracji i do zacytowania z podaniem źródła. Bez nazw
+            domen, bo lista firm z ich słabymi punktami to nie jest materiał do
+            publikacji.
+          </p>
+          <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
             Te same cztery punkty sprawdza nasze{" "}
             <Link href="/widocznosc-w-ai" className="text-accent hover:underline">
               darmowe narzędzie

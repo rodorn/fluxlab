@@ -1,0 +1,7 @@
+element,liczba_stron_bez,udzial_procent,podstawa
+dane uporzadkowane (JSON-LD),137,53.7,255
+opis w metadanych,147,57.6,255
+plik robots.txt,77,30.2,255
+plik llms.txt,202,79.2,255
+tresc >=600 znakow bez skryptow,41,16.1,255
+zakaz dla robotow AI w robots.txt,2,0.8,255

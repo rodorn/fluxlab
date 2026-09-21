@@ -1,0 +1,9 @@
+kategoria,liczba_domen,udzial_procent
+oddaly strone glowna,255,66.1
+nie oddaly: brak_dns,53,13.7
+nie oddaly: timeout,37,9.6
+nie oddaly: zly_certyfikat,18,4.7
+nie oddaly: http_403,14,3.6
+nie oddaly: inny_blad,7,1.8
+nie oddaly: http_404,1,0.3
+nie oddaly: http_500,1,0.3
