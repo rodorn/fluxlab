@@ -19,6 +19,12 @@ export const categories: Category[] = [
       "Artykuły o automatyzacji procesów biznesowych, czym jest, jak liczyć ROI i od czego zacząć.",
     articles: [
       {
+        href: "/strefa-wiedzy/konwersje-pokazuja-zero",
+        title: "Licznik konwersji pokazuje zero, a zgłoszenia przychodzą",
+        description:
+          "Cztery przyczyny, przez które analityka nie widzi zgłoszeń docierających na skrzynkę, i kwadrans na rozstrzygnięcie, która to.",
+      },
+      {
         href: "/strefa-wiedzy/czy-ai-widzi-strony-dealerow",
         title: "Czy asystenci AI widzą strony dealerów samochodowych",
         description:
