@@ -98,6 +98,27 @@ const PROBLEMY = [
   },
 ];
 
+// Trzy liczby z wlasnych pomiarow na tej samej probce 386 domen. Nie mamy
+// referencji od klientow, wiec dowodem jest to, co sami policzylismy i co
+// kazdy moze powtorzyc.
+const BADANIA = [
+  {
+    href: "/strefa-wiedzy/podszywanie-pod-salony-samochodowe",
+    liczba: "84%",
+    opis: "salonów samochodowych, pod które da się podszyć mailowo",
+  },
+  {
+    href: "/strefa-wiedzy/czy-ai-widzi-strony-dealerow",
+    liczba: "54%",
+    opis: "stron nie mówi asystentom AI, czym w ogóle jest firma",
+  },
+  {
+    href: "/strefa-wiedzy/co-jest-nie-tak-ze-stronami-dealerow",
+    liczba: "386",
+    opis: "sprawdzonych stron dealerów, z metodą i zastrzeżeniami",
+  },
+];
+
 export default function Home() {
   return (
     <>
@@ -139,25 +160,35 @@ export default function Home() {
           </Link>
 
           {/* Wlasne badania to jedyna tresc, ktorej nikt inny nie ma, a lezaly
-              trzy klikniecia od strony glownej. Link stad daje im tez sciezke
-              dla robota wyszukiwarki. */}
-          <p className="mt-2 text-sm text-gray-600 dark:text-white/60">
-            Nasze badania:{" "}
-            <Link
-              href="/strefa-wiedzy/co-jest-nie-tak-ze-stronami-dealerow"
-              className="text-accent hover:underline"
-            >
-              sprawdziliśmy 386 stron dealerów
-            </Link>
-            {" "}oraz{" "}
-            <Link
-              href="/strefa-wiedzy/podszywanie-pod-salony-samochodowe"
-              className="text-accent hover:underline"
-            >
-              pod 84 procent z nich można się podszyć mailowo
-            </Link>
-            .
-          </p>
+              trzy klikniecia od strony glownej. Liczby zamiast samych tytulow,
+              bo firma bez klientow nie ma sie czym wykazac poza tym, co sama
+              zmierzyla, a zmierzone liczby kazdy moze sprawdzic. Trzecie
+              badanie nie mialo stad zadnego linku. */}
+          <div className="mt-4 grid max-w-3xl gap-3 sm:grid-cols-3">
+            {BADANIA.map((b) => (
+              <Link
+                key={b.href}
+                href={b.href}
+                className="group rounded-xl border border-gray-200 dark:border-white/10 bg-white/60 dark:bg-white/[0.03] p-4 transition-colors hover:border-accent/70 dark:hover:border-accent/70"
+              >
+                <span className="block text-xl font-bold tabular-nums text-gray-900 dark:text-white">
+                  {b.liczba}
+                </span>
+                <span className="mt-1 block text-xs leading-snug text-gray-600 dark:text-white/60">
+                  {b.opis}
+                </span>
+                <span className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-accent">
+                  Nasze badanie
+                  <span
+                    aria-hidden="true"
+                    className="inline-block transition-transform group-hover:translate-x-0.5"
+                  >
+                    →
+                  </span>
+                </span>
+              </Link>
+            ))}
+          </div>
         </div>
 
         {/* 3 kolumny wyboru, zaokrąglone karty z odstępem */}
