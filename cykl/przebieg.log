@@ -212,3 +212,13 @@ Commity `9ec9fe0`, `f72fe9a`, `dfeba60`, `48d98d4` na `main`. IndexNow: Yandex i
 
 Do kolejnych cykli: dwa produkty bez ceny (`/integracje-api`, `/automatyzacja-raportowania`), kontrast w stopce, brakujący H1 na `/kontakt`, za długie `title` i `description`, 403 z IndexNow.
 === 2026-09-21 21:52:54 koniec, kod 0
+=== 2026-09-21 22:43:06 start
+=== 2026-09-21 22:52 koniec cyklu: /case-study liczy czas na stronie zamiast cytowac wyniki, ktorych nie ma
+Commity b7e4660, 58f2c17, 1025030. Build i spojnosc czyste.
+Odhaczone w AUDYT_TRESCI.md: 2.1, 2.2 oraz deklaracje klientow w /n8n-dla-crm i /automatyczne-przypisywanie-leadow.
+Nowa regula 2b w scripts/spojnosc.mjs: praca u klientow, wlasni klienci, opinie, liczby wdrozen, lata doswiadczenia.
+Do kolejnych cykli: dwa produkty bez ceny (/integracje-api, /automatyzacja-raportowania), 2.3 martwe komponenty,
+2.4 liczba mnoga na czterech stronach branzowych, 2.5 niekilkalny adres GitHuba, kontrast w stopce,
+H1 na /kontakt, za dlugie title i description, 403 z IndexNow.
+Produkcja potwierdzona: 18 h 20 min / 1 h 40 min / 16 h 40 min przy 100 leadach z jedna odklikana czynnoscia.
+IndexNow: Yandex i Naver 200 (112 adresow), wspolny punkt 403. Mail wyslany 22:52 z dwoma zrzutami i raportem ruchu.
