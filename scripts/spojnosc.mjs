@@ -20,8 +20,22 @@ for (const b of blocks) {
   const href = b.match(/href:\s*"([^"]+)"/)?.[1];
   const price = b.match(/price:\s*"([^"]+)"/)?.[1];
   const name = b.match(/name:\s*"([^"]+)"/)?.[1];
-  if (href && price && name) catalog.push({ href, price, name });
+  const bullets = [...(b.match(/bullets:\s*\[([^\]]*)\]/s)?.[1] ?? "").matchAll(/"([^"]*)"/g)].map(
+    (m) => m[1],
+  );
+  if (href && price && name) catalog.push({ href, price, name, bullets });
 }
+
+// Tysiace w tresciach pisze sie ze spacja ("3 900 zl"), w kodzie bywa bez niej.
+// Bez tego kroku kwota z katalogu nigdy nie zgodzilaby sie ze strona.
+const scisnij = (s) => s.replace(/(\d)[\s\u00a0\u202f](?=\d)/g, "$1");
+// Kwoty, czyli liczby stojace przed "zl". Sama liczba nie wystarczy: w
+// bulletach sa tez ilosci ("kilkanascie rekordow") i wersje protokolow.
+const kwoty = (text) => [...scisnij(text).matchAll(/(\d+)\s*zł/g)].map((m) => m[1]);
+// Zapisy ceny, ktore rozumie `cenaWejscia` z lib/products.ts. Nowy format
+// wpadlby po cichu do zlego przedzialu na filtrze /produkty.
+const ZNANA_CENA =
+  /^(od\s)?\d[\d\s]*\szł(\/mc)?$|^diagnoza\s\d+\szł$|^sprawdzenie za darmo$|^wycena po diagnozie$/;
 for (const c of catalog) {
   const page = `app${c.href}/page.tsx`;
   if (!exists(page)) {
@@ -40,12 +54,22 @@ for (const c of catalog) {
       }
     }
   }
-  const nums = c.price.match(/\d+/g) || [];
-  if (nums.length && !nums.every((n) => body.includes(n))) {
-    add(
-      "cena",
-      `${c.href}: katalog mowi "${c.price}" (${c.name}), a strona tej kwoty nie podaje`,
-    );
+  if (!ZNANA_CENA.test(c.price)) {
+    add("cena", `${c.href}: cena "${c.price}" jest w formacie, ktorego nie czyta cenaWejscia`);
+  }
+  // Kazda kwota widoczna w katalogu, tak z pola ceny jak i z bulletow, musi
+  // padac na stronie docelowej. Rozjazd 900 kontra 490 zl na panelu zwrotow
+  // siedzial wlasnie w bullecie, poza zasiegiem starszej wersji tej reguly.
+  const scisniete = scisnij(body);
+  for (const zrodlo of [c.price, ...c.bullets]) {
+    for (const kwota of kwoty(zrodlo)) {
+      if (!scisniete.includes(kwota)) {
+        add(
+          "cena",
+          `${c.href}: katalog mowi "${zrodlo}" (${c.name}), a strona kwoty ${kwota} zl nie podaje`,
+        );
+      }
+    }
   }
 }
 

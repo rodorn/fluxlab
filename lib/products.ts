@@ -154,7 +154,7 @@ export const PRODUCTS: Product[] = [
     narzedzie: true,
     bullets: [
       "sprawdzenie zasad zwrotów od ręki, za darmo",
-      "audyt przyczyn zwrotów od 900 zł",
+      "audyt przyczyn zwrotów od 490 zł",
       "panel samoobsługowy od 3500 zł",
     ],
   },
@@ -603,4 +603,64 @@ export const PRODUCTS: Product[] = [
 
 export function productsByCategory(category: ProductCategory): Product[] {
   return PRODUCTS.filter((p) => p.category === category);
+}
+
+/**
+ * Trzeci poziom porzadku w katalogu: ile to kosztuje na wejsciu.
+ *
+ * Ceny w katalogu sa pisane po ludzku ("od 99 zl", "diagnoza 49 zl",
+ * "od 3 900 zl", "wycena po diagnozie"), bo tak czyta je odwiedzajacy.
+ * Do filtrowania i do znacznikow schema.org potrzebna jest ta sama kwota
+ * jako liczba, wiec wyciagamy ja w jednym miejscu, zamiast trzymac obok
+ * napisu drugie pole, ktore z czasem rozjedzie sie z pierwszym.
+ */
+export type PriceBand = "do50" | "do300" | "do1000" | "od1000" | "wycena";
+
+export const PRICE_BAND_LABEL: Record<PriceBand, string> = {
+  do50: "Do 50 zł",
+  do300: "51 do 300 zł",
+  do1000: "301 do 1000 zł",
+  od1000: "Powyżej 1000 zł",
+  wycena: "Wycena po diagnozie",
+};
+
+export const PRICE_BAND_ORDER: PriceBand[] = [
+  "do50",
+  "do300",
+  "do1000",
+  "od1000",
+  "wycena",
+];
+
+export const PRICE_BAND_INTRO: Record<PriceBand, string> = {
+  do50: "Jednorazowe sprawdzenia i raporty, które kupuje się bez zastanowienia.",
+  do300: "Pojedyncza usterka strony albo jeden audyt, zamknięty zwykle w kilka dni.",
+  do1000: "Wdrożenie jednego procesu albo panelu, liczone od podanej kwoty w górę.",
+  od1000: "Integracje dwóch systemów, gdzie zakres ustala się przed startem.",
+  wycena: "Praca, której zakresu nie da się podać z góry. Kwota pada po diagnozie.",
+};
+
+/**
+ * Kwota wejscia z ceny zapisanej slownie. Zwraca null, gdy cena zalezy od
+ * diagnozy i zadnej liczby po prostu nie ma. "za darmo" to zero, a nie brak
+ * ceny: darmowe sprawdzenie ma kwote, tylko rowna zeru.
+ *
+ * Rozpoznawane zapisy pilnuje `scripts/spojnosc.mjs`, zeby nowa cena w
+ * nieznanym formacie nie wpadla po cichu do zlego przedzialu.
+ */
+export function cenaWejscia(price: string): number | null {
+  if (/darmo|bezpłatn/i.test(price)) return 0;
+  // Tysiace sa pisane ze spacja ("3 900 zl"), wiec najpierw ja usuwamy,
+  // inaczej z ceny wyszlaby trojka.
+  const liczba = price.replace(/(\d)[\s  ](?=\d)/g, "$1").match(/\d+/);
+  return liczba ? Number(liczba[0]) : null;
+}
+
+export function pasmoCeny(price: string): PriceBand {
+  const kwota = cenaWejscia(price);
+  if (kwota === null) return "wycena";
+  if (kwota <= 50) return "do50";
+  if (kwota <= 300) return "do300";
+  if (kwota <= 1000) return "do1000";
+  return "od1000";
 }
