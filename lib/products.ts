@@ -78,7 +78,7 @@ export const PRODUCTS: Product[] = [
     tagline: "Szybkie wdrożenie pod jedną kampanię",
     desc: "Jedna strona sprzedażowa z formularzem i bramką płatniczą, gotowa pod BLIK i przelewy. Zgłoszenie zapisuje się zanim klient przejdzie do płatności, więc nie tracisz danych osób, które zrezygnują w trakcie.",
     price: "od 299 zł",
-    href: "/strony-www",
+    href: "/landing-z-platnoscia",
     cta: "Zamów landing",
     bullets: [
       "jeden szablon podpięty pod wiele domen",
