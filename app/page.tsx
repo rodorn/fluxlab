@@ -149,7 +149,7 @@ export default function Home() {
               Za darmo
             </span>
             <span>
-              Sprawdź swoją firmę osiemnastoma narzędziami, bez rejestracji{" "}
+              Sprawdź swoją firmę dziewiętnastoma narzędziami, bez rejestracji{" "}
               <span
                 aria-hidden="true"
                 className="inline-block transition-transform group-hover:translate-x-0.5"

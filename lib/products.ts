@@ -135,6 +135,20 @@ export const PRODUCTS: Product[] = [
   },
   {
     category: "dane",
+    name: "Integracja z e-Doręczeniami",
+    tagline: "Pisma w systemie, który już macie",
+    desc: "Skrzynka do doręczeń elektronicznych jest obowiązkowa, ale nikt nie każe obsługiwać jej ręcznie w osobnym panelu. Spinam ją z Waszym systemem, razem z pobieraniem dowodów doręczenia, bez których cała rzecz nie ma wartości dowodowej.",
+    price: "od 3 900 zł",
+    href: "/e-doreczenia-integracja",
+    cta: "Opisz, czego używacie",
+    bullets: [
+      "otwarty klient tego API napisany przeze mnie, do obejrzenia przed decyzją",
+      "odbiór pism 3 900 zł, z wysyłką 7 900 zł",
+      "kod i dostępy zostają u Was",
+    ],
+  },
+  {
+    category: "dane",
     name: "Integracja CRM z ERP",
     tagline: "Koniec z przepisywaniem w obie strony",
     desc: "Handlowcy pracują w CRM, księgowość i magazyn w ERP, a między nimi stoi człowiek przepisujący dane. Spinam oba systemy: kontrahenci, dokumenty sprzedaży, stany i ceny, z kolejką ponowień i powiadomieniem, gdy coś nie przejdzie.",
