@@ -3,6 +3,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import SprawdzPoBadaniu from "@/components/SprawdzPoBadaniu";
 
 export const metadata: Metadata = {
   title: "Dlaczego firmowe maile trafiają do spamu i jak to naprawić | Fluxlab",
@@ -73,7 +74,13 @@ export default function MaileSpamArticle() {
         <h1 style={{ fontSize: "2rem", fontWeight: 700, margin: "1rem 0" }}>
           Dlaczego firmowe maile trafiają do spamu i jak to naprawić
         </h1>
-        <p style={{ color: "var(--article-muted)", lineHeight: 1.7, fontSize: "1.05rem" }}>
+        <p
+          style={{
+            color: "var(--article-muted)",
+            lineHeight: 1.7,
+            fontSize: "1.05rem",
+          }}
+        >
           Wysyłasz ofertę albo fakturę, system pokazuje, że wiadomość poszła, a
           klient jej nie dostaje albo znajduje ją w spamie. To jeden z
           najbardziej frustrujących problemów, bo z Twojej strony wszystko
@@ -85,7 +92,8 @@ export default function MaileSpamArticle() {
           style={{
             margin: "2rem 0",
             padding: "1.25rem 1.5rem",
-            background: "var(--article-box)", border: "1px solid var(--article-box-border)",
+            background: "var(--article-box)",
+            border: "1px solid var(--article-box-border)",
             borderRadius: 12,
             display: "flex",
             flexWrap: "wrap",
@@ -155,30 +163,21 @@ export default function MaileSpamArticle() {
           SPF, DKIM i DMARC.
         </p>
 
-        <div
-          style={{
-            margin: "2.5rem 0",
-            padding: "1.5rem",
-            border: "1px solid #e5e5e5",
-            borderRadius: 12,
+        <SprawdzPoBadaniu
+          naglowek="Zobacz to sprawdzenie na żywo"
+          opis="Odpytuję serwery nazw wybranej domeny o rekordy SPF, DKIM i DMARC i pokazuję, czego w nich brakuje. Nic nie wpisujesz, nic nie zakładasz."
+          endpoint="/api/audyt"
+          pozycje={[
+            { wartosc: "fluxlab.pl" },
+            { wartosc: "allegro.pl" },
+            { wartosc: "x-kom.pl" },
+          ]}
+          narzedzie={{
+            href: "/audyt-poczty",
+            etykieta: "Sprawdź swoją domenę",
           }}
-        >
-          <strong style={{ fontSize: "1.1rem" }}>Zacznij od diagnozy</strong>
-          <p
-            style={{ color: "var(--article-muted)", lineHeight: 1.6, margin: "0.5rem 0 1rem" }}
-          >
-            Zanim zmienisz cokolwiek, sprawdź stan faktyczny. Audyt pokaże,
-            których rekordów brakuje i co konkretnie poprawić, żeby maile znów
-            docierały.
-          </p>
-          <Link
-            href="/audyt-poczty"
-            className="btn-primary"
-            style={{ padding: "0.7rem 1.5rem" }}
-          >
-            Sprawdź swoją domenę
-          </Link>
-        </div>
+          kontakt="Chcesz, żeby te rekordy ktoś ustawił za Ciebie?"
+        />
 
         <h2
           style={{ fontSize: "1.4rem", fontWeight: 700, marginTop: "2.5rem" }}
@@ -195,7 +194,11 @@ export default function MaileSpamArticle() {
                 {item.question}
               </summary>
               <p
-                style={{ color: "var(--article-muted)", lineHeight: 1.7, marginTop: "0.5rem" }}
+                style={{
+                  color: "var(--article-muted)",
+                  lineHeight: 1.7,
+                  marginTop: "0.5rem",
+                }}
               >
                 {item.answer}
               </p>
@@ -203,7 +206,13 @@ export default function MaileSpamArticle() {
           ))}
         </div>
 
-        <p style={{ color: "var(--article-muted)", marginTop: "2rem", fontSize: "0.95rem" }}>
+        <p
+          style={{
+            color: "var(--article-muted)",
+            marginTop: "2rem",
+            fontSize: "0.95rem",
+          }}
+        >
           Zobacz też:{" "}
           <Link
             href="/strefa-wiedzy/podszywanie-sie-pod-firmowy-email"

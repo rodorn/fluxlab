@@ -3,6 +3,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import SprawdzPoBadaniu from "@/components/SprawdzPoBadaniu";
 
 export const metadata: Metadata = {
   title: "Licznik konwersji pokazuje zero, a zgłoszenia przychodzą | Fluxlab",
@@ -113,9 +114,8 @@ export default function Page() {
             Typowy układ jest taki, że konwersję ustawia agencja w systemie
             reklamowym, a potem ktoś inny dokłada ją w analityce, przy czym
             analityka też przekazuje dane do reklam. Jedno zgłoszenie zamienia
-            się w dwie konwersje. Rozpoznaje się to w minutę: wystarczy
-            porównać liczbę konwersji z liczbą wiadomości w skrzynce za ten sam
-            dzień.
+            się w dwie konwersje. Rozpoznaje się to w minutę: wystarczy porównać
+            liczbę konwersji z liczbą wiadomości w skrzynce za ten sam dzień.
           </p>
 
           <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
@@ -157,22 +157,39 @@ export default function Page() {
             formularz i odpadła przy płatności, jest najbliższa zakupowi ze
             wszystkich, które tego dnia weszły, a przy zapisie po płatności
             znika bez śladu. Opisaliśmy to szerzej przy{" "}
-            <Link href="/landing-z-platnoscia" className="text-accent hover:underline">
+            <Link
+              href="/landing-z-platnoscia"
+              className="text-accent hover:underline"
+            >
               stronach sprzedażowych z płatnością
             </Link>
             .
           </p>
         </div>
 
+        <SprawdzPoBadaniu
+          naglowek="Nie masz pewności, która z czterech przyczyn zachodzi u Ciebie?"
+          opis="Na tę akurat rzecz nie mam sprawdzenia, które da wynik jednym kliknięciem: rozstrzygnięcie wymaga zajrzenia do ustawień pomiaru na konkretnej stronie. Napisz, co pokazuje licznik, a co przychodzi na skrzynkę."
+          narzedzie={{
+            href: "/landing-z-platnoscia",
+            etykieta: "Zobacz, jak zapisujemy zgłoszenie przed płatnością",
+          }}
+          kontakt="Wolisz, żeby ktoś przeszedł te cztery punkty za Ciebie?"
+        />
+
         <section className="mt-12">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Pytania</h2>
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+            Pytania
+          </h2>
           <dl className="mt-5 space-y-5">
             {faqItems.map((f) => (
               <div key={f.question}>
                 <dt className="font-semibold text-gray-900 dark:text-white">
                   {f.question}
                 </dt>
-                <dd className="mt-1 text-gray-600 dark:text-gray-300">{f.answer}</dd>
+                <dd className="mt-1 text-gray-600 dark:text-gray-300">
+                  {f.answer}
+                </dd>
               </div>
             ))}
           </dl>
@@ -184,12 +201,21 @@ export default function Page() {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Article",
-              headline: "Licznik konwersji pokazuje zero, a zgłoszenia przychodzą",
+              headline:
+                "Licznik konwersji pokazuje zero, a zgłoszenia przychodzą",
               description:
                 "Cztery przyczyny, przez które analityka nie widzi zgłoszeń docierających na skrzynkę, i sposób na rozstrzygnięcie, która z nich zachodzi.",
               datePublished: "2026-09-21",
-              author: { "@type": "Organization", name: "Fluxlab", url: "https://fluxlab.pl" },
-              publisher: { "@type": "Organization", name: "Fluxlab", url: "https://fluxlab.pl" },
+              author: {
+                "@type": "Organization",
+                name: "Fluxlab",
+                url: "https://fluxlab.pl",
+              },
+              publisher: {
+                "@type": "Organization",
+                name: "Fluxlab",
+                url: "https://fluxlab.pl",
+              },
             }),
           }}
         />

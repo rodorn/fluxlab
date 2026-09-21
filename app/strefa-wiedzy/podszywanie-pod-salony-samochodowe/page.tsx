@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import WykresSlupkowy from "@/components/WykresSlupkowy";
+import SprawdzPoBadaniu from "@/components/SprawdzPoBadaniu";
 
 export const metadata: Metadata = {
   title: "Pod 84 procent salonów można się podszyć mailowo. Badanie | Fluxlab",
@@ -13,7 +14,8 @@ export const metadata: Metadata = {
     canonical: "/strefa-wiedzy/podszywanie-pod-salony-samochodowe",
   },
   openGraph: {
-    title: "Pod 84 procent salonów można się podszyć mailowo. Badanie | Fluxlab",
+    title:
+      "Pod 84 procent salonów można się podszyć mailowo. Badanie | Fluxlab",
     description:
       "386 domen dealerskich, publiczne rekordy DNS. Tylko 16 procent ma komplet zabezpieczeń poczty, który faktycznie blokuje podszywanie.",
     locale: "pl_PL",
@@ -114,7 +116,11 @@ export default function Page() {
               opis: "21 procent. Rekord jest, ale w trybie, który niczego nie blokuje.",
               wyroznij: true,
             },
-            { etykieta: "Brak SPF", wartosc: 18, opis: "6 procent. Tu akurat jest nieźle." },
+            {
+              etykieta: "Brak SPF",
+              wartosc: 18,
+              opis: "6 procent. Tu akurat jest nieźle.",
+            },
           ]}
           zrodlo="Pomiar Fluxlab, wrzesień 2026. Publiczne rekordy DNS, bez wysyłania wiadomości i bez logowania."
         />
@@ -124,17 +130,19 @@ export default function Page() {
             Komplet ma szesnaście procent
           </h2>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-            Policzyliśmy, ile domen ma jednocześnie SPF, podpis DKIM oraz DMARC w
-            trybie, który faktycznie coś robi, czyli kwarantannę albo odrzucanie.
-            Wyszło 51 domen na 317, czyli szesnaście procent. Pozostałe
-            osiemdziesiąt cztery procent jest podatne w takim czy innym stopniu.
+            Policzyliśmy, ile domen ma jednocześnie SPF, podpis DKIM oraz DMARC
+            w trybie, który faktycznie coś robi, czyli kwarantannę albo
+            odrzucanie. Wyszło 51 domen na 317, czyli szesnaście procent.
+            Pozostałe osiemdziesiąt cztery procent jest podatne w takim czy
+            innym stopniu.
           </p>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
             Najciekawsza jest ta środkowa grupa: sześćdziesiąt osiem domen ma
             DMARC ustawiony na samą obserwację. Ktoś to kiedyś wdrożył, zapewne
-            świadomie, jako pierwszy krok przed zaostrzeniem polityki. Drugi krok
-            nie nastąpił. Z perspektywy właściciela wygląda to jak zrobione
-            zadanie, a z perspektywy odbiorcy podszytej wiadomości nie zmienia nic.
+            świadomie, jako pierwszy krok przed zaostrzeniem polityki. Drugi
+            krok nie nastąpił. Z perspektywy właściciela wygląda to jak zrobione
+            zadanie, a z perspektywy odbiorcy podszytej wiadomości nie zmienia
+            nic.
           </p>
 
           <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
@@ -161,9 +169,10 @@ export default function Page() {
         <div>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
             Dwukrotna różnica między najlepszą a najsłabszą marką przy tej samej
-            wielkości próbki sugeruje, że decyduje nie budżet pojedynczego salonu,
-            tylko to, czy importer albo dostawca strony narzucił jakiś standard.
-            Tego jednak nie zmierzyliśmy i nie będziemy udawać, że wiemy.
+            wielkości próbki sugeruje, że decyduje nie budżet pojedynczego
+            salonu, tylko to, czy importer albo dostawca strony narzucił jakiś
+            standard. Tego jednak nie zmierzyliśmy i nie będziemy udawać, że
+            wiemy.
           </p>
 
           <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
@@ -180,7 +189,8 @@ export default function Page() {
             Drugi skutek jest cichszy i dotyka firmy codziennie: filtry Gmaila i
             Outlooka od 2024 roku traktują brak tych rekordów jako sygnał
             ostrzegawczy. Własne oferty i faktury zaczynają lądować w spamie u
-            klientów, a nikt tego nie zgłasza, bo klient po prostu nie odpowiada.
+            klientów, a nikt tego nie zgłasza, bo klient po prostu nie
+            odpowiada.
           </p>
 
           <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
@@ -192,51 +202,61 @@ export default function Page() {
               wyłącznie na tym, co domena sama ogłasza w publicznych rekordach.
             </li>
             <li className="leading-relaxed">
-              DKIM sprawdzamy przez najczęstsze nazwy selektorów. Domena może mieć
-              podpis pod nazwą, której nie odgadliśmy, więc odsetek braków DKIM
-              jest zawyżony o nieznaną wielkość.
+              DKIM sprawdzamy przez najczęstsze nazwy selektorów. Domena może
+              mieć podpis pod nazwą, której nie odgadliśmy, więc odsetek braków
+              DKIM jest zawyżony o nieznaną wielkość.
             </li>
             <li className="leading-relaxed">
-              Nie badaliśmy, czy firmy faktycznie padły ofiarą podszycia. Mierzymy
-              podatność, a nie skutek.
+              Nie badaliśmy, czy firmy faktycznie padły ofiarą podszycia.
+              Mierzymy podatność, a nie skutek.
             </li>
             <li className="leading-relaxed">
-              Brak odpowiedzi serwera DNS przy pojedynczym zapytaniu to nie to samo
-              co brak rekordu. Każdy przypadek braku sprawdzaliśmy powtórnie.
+              Brak odpowiedzi serwera DNS przy pojedynczym zapytaniu to nie to
+              samo co brak rekordu. Każdy przypadek braku sprawdzaliśmy
+              powtórnie.
             </li>
           </ul>
         </div>
 
-        <div className="mt-10 rounded-2xl border border-gray-200/80 dark:border-gray-800/80 bg-white/70 dark:bg-gray-900/50 p-6">
-          <p className="text-base font-bold text-gray-900 dark:text-white">
-            Sprawdź swoją domenę tym samym narzędziem
-          </p>
-          <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-            Wpisujesz domenę, dostajesz stan SPF, DKIM i DMARC razem z oceną, co
-            konkretnie trzeba poprawić. Od ręki, bez rejestracji.
-          </p>
-          <div className="mt-4 flex flex-wrap gap-3">
-            <Link href="/audyt-poczty" className="btn-primary px-5 py-2.5 text-sm">
-              Sprawdź pocztę swojej firmy
-            </Link>
-            <Link
-              href="/strefa-wiedzy/co-jest-nie-tak-ze-stronami-dealerow"
-              className="text-sm text-accent hover:underline self-center"
-            >
-              Zobacz też badanie stron tych samych firm
-            </Link>
-          </div>
-        </div>
+        <SprawdzPoBadaniu
+          naglowek="Uruchom to sprawdzenie na dowolnej domenie"
+          opis="To ten sam odczyt rekordów SPF, DKIM i DMARC, którym zmierzyliśmy 386 domen. Kliknij przykład, żeby zobaczyć, co zwraca."
+          endpoint="/api/audyt"
+          pozycje={[
+            { wartosc: "fluxlab.pl" },
+            { wartosc: "allegro.pl" },
+            { wartosc: "x-kom.pl" },
+          ]}
+          narzedzie={{
+            href: "/audyt-poczty",
+            etykieta: "Sprawdź pocztę swojej firmy",
+          }}
+          kontakt="Chcesz, żeby brakujące rekordy ktoś ustawił?"
+        />
+
+        <p className="mt-4 text-sm text-gray-600 dark:text-gray-400">
+          <Link
+            href="/strefa-wiedzy/co-jest-nie-tak-ze-stronami-dealerow"
+            className="text-accent hover:underline"
+          >
+            Zobacz też badanie stron tych samych firm
+          </Link>
+          .
+        </p>
 
         <section className="mt-12">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Pytania</h2>
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+            Pytania
+          </h2>
           <dl className="mt-5 space-y-5">
             {faqItems.map((f) => (
               <div key={f.question}>
                 <dt className="font-semibold text-gray-900 dark:text-white">
                   {f.question}
                 </dt>
-                <dd className="mt-1 text-gray-600 dark:text-gray-300">{f.answer}</dd>
+                <dd className="mt-1 text-gray-600 dark:text-gray-300">
+                  {f.answer}
+                </dd>
               </div>
             ))}
           </dl>
@@ -251,8 +271,10 @@ export default function Page() {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Article",
-              headline: "Pod 84 procent salonów samochodowych można się podszyć mailowo",
-              description: "Badanie zabezpieczeń poczty na 386 domenach dealerskich. Komplet SPF, DKIM i DMARC w trybie, który cokolwiek blokuje, ma tylko szesnaście procent.",
+              headline:
+                "Pod 84 procent salonów samochodowych można się podszyć mailowo",
+              description:
+                "Badanie zabezpieczeń poczty na 386 domenach dealerskich. Komplet SPF, DKIM i DMARC w trybie, który cokolwiek blokuje, ma tylko szesnaście procent.",
               datePublished: "2026-09-20",
               author: {
                 "@type": "Organization",

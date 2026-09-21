@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import WykresSlupkowy from "@/components/WykresSlupkowy";
+import SprawdzPoBadaniu from "@/components/SprawdzPoBadaniu";
 
 export const metadata: Metadata = {
   title: "Czy asystenci AI widzą strony dealerów? Badanie 386 domen | Fluxlab",
@@ -13,7 +14,8 @@ export const metadata: Metadata = {
     canonical: "/strefa-wiedzy/czy-ai-widzi-strony-dealerow",
   },
   openGraph: {
-    title: "Czy asystenci AI widzą strony dealerów? Badanie 386 domen | Fluxlab",
+    title:
+      "Czy asystenci AI widzą strony dealerów? Badanie 386 domen | Fluxlab",
     description:
       "Nie blokady są problemem. Problemem jest to, że u ponad połowy nie ma czego zacytować.",
     locale: "pl_PL",
@@ -46,7 +48,8 @@ const faqItems = [
       "Nie zawsze. Wydawca, który żyje ze sprzedaży własnych treści, ma dobry powód, żeby nie oddawać ich za darmo do trenowania modeli, i duże redakcje faktycznie je blokują. Dealer samochodowy zwykle takiego powodu nie ma: jego treść to opis usług i oferta, a blokada odcina go od kanału, w którym ktoś właśnie pyta o serwis albo o auto.",
   },
   {
-    question: "Czy to znaczy, że strona bez danych uporządkowanych nie pojawi się w odpowiedzi asystenta?",
+    question:
+      "Czy to znaczy, że strona bez danych uporządkowanych nie pojawi się w odpowiedzi asystenta?",
     answer:
       "Nie, to nie jest warunek konieczny. Znaczy tyle, że maszyna musi wywnioskować z układu strony, czym jest firma i co oferuje, zamiast odczytać to wprost. Przy wnioskowaniu myli się częściej, a najczęściej myli się o zakres usług i o lokalizację, czyli dokładnie o to, co rozstrzyga, czy ktoś dostanie polecenie.",
   },
@@ -74,9 +77,9 @@ export default function Page() {
         </h1>
         <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
           O widoczności w odpowiedziach asystentów mówi się dziś głównie w
-          kategoriach blokowania robotów. Wzięliśmy 386 domen polskich dealerów i
-          serwisów i sprawdziliśmy to wprost. Okazało się, że blokady prawie nie
-          istnieją, a prawdziwy problem leży zupełnie gdzie indziej i jest
+          kategoriach blokowania robotów. Wzięliśmy 386 domen polskich dealerów
+          i serwisów i sprawdziliśmy to wprost. Okazało się, że blokady prawie
+          nie istnieją, a prawdziwy problem leży zupełnie gdzie indziej i jest
           znacznie bardziej banalny.
         </p>
 
@@ -88,8 +91,8 @@ export default function Page() {
             Dla każdej domeny pobraliśmy stronę główną, plik robots.txt i plik
             llms.txt. Z tego policzyliśmy cztery rzeczy: czy któryś z siedmiu
             robotów zbierających treść dla asystentów ma zakaz wejścia, ile
-            tekstu zostaje na stronie po odrzuceniu skryptów, czy w dokumencie są
-            dane uporządkowane opisujące firmę i czy wypełniony jest opis w
+            tekstu zostaje na stronie po odrzuceniu skryptów, czy w dokumencie
+            są dane uporządkowane opisujące firmę i czy wypełniony jest opis w
             metadanych.
           </p>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -135,17 +138,21 @@ export default function Page() {
               wartosc: 14,
               opis: "Serwer odrzucił zapytanie kodem 403, zwykle ochrona przed ruchem automatycznym.",
             },
-            { etykieta: "Pozostałe błędy", wartosc: 9, opis: "Błędy serwera i przypadki jednostkowe." },
+            {
+              etykieta: "Pozostałe błędy",
+              wartosc: 9,
+              opis: "Błędy serwera i przypadki jednostkowe.",
+            },
           ]}
           zrodlo="Pomiar Fluxlab, wrzesień 2026. Trzy zapytania na domenę, bez logowania i bez obchodzenia zabezpieczeń."
         />
 
         <div>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-            Wśród 255 domen, które stronę oddały, kolejnych 56 zrobiło to dopiero
-            po pominięciu weryfikacji certyfikatu, a 34 wyłącznie bez szyfrowania.
-            Przeglądarka pokazuje w takich przypadkach ostrzeżenie na pełnym
-            ekranie, zanim odwiedzający zobaczy cokolwiek z oferty.
+            Wśród 255 domen, które stronę oddały, kolejnych 56 zrobiło to
+            dopiero po pominięciu weryfikacji certyfikatu, a 34 wyłącznie bez
+            szyfrowania. Przeglądarka pokazuje w takich przypadkach ostrzeżenie
+            na pełnym ekranie, zanim odwiedzający zobaczy cokolwiek z oferty.
           </p>
 
           <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
@@ -153,11 +160,11 @@ export default function Page() {
           </h2>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
             Spodziewaliśmy się, że to będzie główny wynik badania. Nie jest.
-            Spośród 255 działających stron zakaz wejścia dla robotów zbierających
-            treść dla asystentów ma <strong>dwie</strong>, czyli 0,8 procent. Obie
-            blokują wszystkie siedem naraz, co wygląda na regułę ogólną napisaną
-            przeciwko robotom kopiującym treść, a nie na świadomą decyzję akurat o
-            asystentach.
+            Spośród 255 działających stron zakaz wejścia dla robotów
+            zbierających treść dla asystentów ma <strong>dwie</strong>, czyli
+            0,8 procent. Obie blokują wszystkie siedem naraz, co wygląda na
+            regułę ogólną napisaną przeciwko robotom kopiującym treść, a nie na
+            świadomą decyzję akurat o asystentach.
           </p>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
             Dla porównania: wśród dużych polskich wydawców blokady są normą.
@@ -220,13 +227,13 @@ export default function Page() {
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
             Mediana ilości tekstu w dokumencie to 3 331 znaków, czyli mniej
             więcej jedna strona maszynopisu. Sto cztery strony na 255 mają
-            poniżej dwóch tysięcy znaków. To jest materiał, z którego asystent ma
-            zbudować zdanie o tym, czym firma się zajmuje i komu ją polecić.
+            poniżej dwóch tysięcy znaków. To jest materiał, z którego asystent
+            ma zbudować zdanie o tym, czym firma się zajmuje i komu ją polecić.
           </p>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
             Komplet czterech warunków, czyli brak blokady, treść w dokumencie,
-            dane uporządkowane i wypełniony opis, spełnia 63 strony na 255, czyli
-            niecałe 25 procent.
+            dane uporządkowane i wypełniony opis, spełnia 63 strony na 255,
+            czyli niecałe 25 procent.
           </p>
 
           <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
@@ -240,16 +247,16 @@ export default function Page() {
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
             Po zajrzeniu do środka obraz się wyjaśnia. Część plików jest pisana
             ręcznie i wygląda na przemyślaną, z opisem marek i zakresu usług.
-            Cztery zaczynają się od stopki „wygenerowany przez\" i nazwy popularnej
-            wtyczki optymalizacyjnej. Innymi słowy: to nie jest fala świadomych
-            decyzji, tylko w dużej części efekt uboczny aktualizacji wtyczki,
-            która zaczęła generować ten plik sama.
+            Cztery zaczynają się od stopki „wygenerowany przez\" i nazwy
+            popularnej wtyczki optymalizacyjnej. Innymi słowy: to nie jest fala
+            świadomych decyzji, tylko w dużej części efekt uboczny aktualizacji
+            wtyczki, która zaczęła generować ten plik sama.
           </p>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
             Wniosek jest dla nas dwuznaczny. Z jednej strony to dowód, że
             narzędzia same popychają rynek w tę stronę. Z drugiej, plik
-            wygenerowany automatycznie zawiera to samo, co i tak jest na stronie,
-            więc firmie, która nie ma czego powiedzieć, nie pomoże.
+            wygenerowany automatycznie zawiera to samo, co i tak jest na
+            stronie, więc firmie, która nie ma czego powiedzieć, nie pomoże.
           </p>
 
           <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
@@ -258,15 +265,16 @@ export default function Page() {
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
             Nie sprawdzaliśmy, czy którykolwiek asystent faktycznie poleca te
             firmy, bo takiego pomiaru nie da się zrobić uczciwie. Odpowiedzi
-            różnią się między użytkownikami i zmieniają w czasie, więc pojedyncze
-            zapytanie niczego nie dowodzi. Zmierzyliśmy warunki wstępne, na które
-            właściciel strony ma wpływ, a nie wynik, na który nie ma go nikt.
+            różnią się między użytkownikami i zmieniają w czasie, więc
+            pojedyncze zapytanie niczego nie dowodzi. Zmierzyliśmy warunki
+            wstępne, na które właściciel strony ma wpływ, a nie wynik, na który
+            nie ma go nikt.
           </p>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-            Nie sprawdzaliśmy też podstron. Strona główna to najlepszy pojedynczy
-            wskaźnik i jednocześnie najmniejsze obciążenie cudzego serwera, ale
-            serwis może mieć dobrze opisane podstrony ofertowe przy ubogiej
-            stronie głównej.
+            Nie sprawdzaliśmy też podstron. Strona główna to najlepszy
+            pojedynczy wskaźnik i jednocześnie najmniejsze obciążenie cudzego
+            serwera, ale serwis może mieć dobrze opisane podstrony ofertowe przy
+            ubogiej stronie głównej.
           </p>
 
           <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
@@ -276,8 +284,8 @@ export default function Page() {
             Kolejność działań wynika wprost z liczb. Najpierw sprawdzić, czy
             strona ma treść w samym dokumencie, bo bez tego reszta nie ma
             znaczenia. Potem dopisać dane uporządkowane i opis w metadanych, co
-            jest robotą na godziny, nie na tygodnie. Blokady robotów sprawdzić na
-            końcu, bo statystycznie ich nie ma.
+            jest robotą na godziny, nie na tygodnie. Blokady robotów sprawdzić
+            na końcu, bo statystycznie ich nie ma.
           </p>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
             Zestawienia, na których stoi to badanie, są{" "}
@@ -290,7 +298,10 @@ export default function Page() {
           </p>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
             Te same cztery punkty sprawdza nasze{" "}
-            <Link href="/widocznosc-w-ai" className="text-accent hover:underline">
+            <Link
+              href="/widocznosc-w-ai"
+              className="text-accent hover:underline"
+            >
               darmowe narzędzie
             </Link>
             , na dowolnej domenie, bez rejestracji. Jeśli interesuje Cię, co
@@ -312,15 +323,35 @@ export default function Page() {
           </p>
         </div>
 
+        <SprawdzPoBadaniu
+          naglowek="Sprawdź to na żywo, jednym kliknięciem"
+          opis="Pobieram wybraną domenę tak, jak robi to asystent AI, i patrzę na te same cztery punkty co w badaniu: treść w dokumencie, dane uporządkowane, opis w metadanych i blokady robotów."
+          endpoint="/api/sprawdz-ai"
+          pozycje={[
+            { wartosc: "fluxlab.pl" },
+            { wartosc: "rp.pl" },
+            { wartosc: "wyborcza.pl" },
+          ]}
+          narzedzie={{
+            href: "/widocznosc-w-ai",
+            etykieta: "Sprawdź swoją domenę",
+          }}
+          kontakt="Chcesz, żeby ktoś poprawił to, co wyszło na czerwono?"
+        />
+
         <section className="mt-12">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Pytania</h2>
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+            Pytania
+          </h2>
           <dl className="mt-5 space-y-5">
             {faqItems.map((f) => (
               <div key={f.question}>
                 <dt className="font-semibold text-gray-900 dark:text-white">
                   {f.question}
                 </dt>
-                <dd className="mt-1 text-gray-600 dark:text-gray-300">{f.answer}</dd>
+                <dd className="mt-1 text-gray-600 dark:text-gray-300">
+                  {f.answer}
+                </dd>
               </div>
             ))}
           </dl>

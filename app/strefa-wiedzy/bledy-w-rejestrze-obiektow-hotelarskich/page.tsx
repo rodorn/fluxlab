@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import WykresSlupkowy from "@/components/WykresSlupkowy";
+import SprawdzPoBadaniu from "@/components/SprawdzPoBadaniu";
 
 export const metadata: Metadata = {
   title: "Rejestr hoteli gubi Kraków i Warszawę. Nasz pomiar | Fluxlab",
@@ -69,10 +70,10 @@ export default function Page() {
         </h1>
         <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
           Centralny Wykaz Obiektów Hotelarskich to jedyne miejsce, w którym
-          państwo potwierdza, że dany obiekt może nazywać się hotelem. Pobraliśmy
-          go w całości i policzyliśmy, co zawiera. Same wpisy są w porządku,
-          natomiast sposób, w jaki rejestr wydaje dane na zewnątrz, ma dwa błędy,
-          z których każdy przekłamuje wynik o kilkanaście procent.
+          państwo potwierdza, że dany obiekt może nazywać się hotelem.
+          Pobraliśmy go w całości i policzyliśmy, co zawiera. Same wpisy są w
+          porządku, natomiast sposób, w jaki rejestr wydaje dane na zewnątrz, ma
+          dwa błędy, z których każdy przekłamuje wynik o kilkanaście procent.
         </p>
 
         <div className="mt-10">
@@ -104,8 +105,8 @@ export default function Page() {
         <div>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
             To są miasta na prawach powiatu, więc najpewniej gdzieś w drodze
-            gubi się rozróżnienie między powiatem a województwem i zostaje po nim
-            techniczna jedynka. Skutek jest natomiast bardzo praktyczny: kto
+            gubi się rozróżnienie między powiatem a województwem i zostaje po
+            nim techniczna jedynka. Skutek jest natomiast bardzo praktyczny: kto
             filtruje rejestr po województwie, przy tych pięciu miastach dostanie
             pustkę. Małopolska bez Krakowa to 377 obiektów zamiast 584, czyli
             ponad jedna trzecia rynku znika z zestawienia.
@@ -137,9 +138,21 @@ export default function Page() {
           tytul="Ile obiektów przepadło w kolejnych pobraniach"
           podtytul="Za każdym razem przychodzi 3374 wiersze, a rejestr deklaruje 3374 rekordy. Różnica to duplikaty."
           slupki={[
-            { etykieta: "strona po 200, z odstępem", wartosc: 158, wyroznij: true },
-            { etykieta: "strona po 200, bez odstępu", wartosc: 188, wyroznij: true },
-            { etykieta: "strona po 500, z odstępem", wartosc: 707, wyroznij: true },
+            {
+              etykieta: "strona po 200, z odstępem",
+              wartosc: 158,
+              wyroznij: true,
+            },
+            {
+              etykieta: "strona po 200, bez odstępu",
+              wartosc: 188,
+              wyroznij: true,
+            },
+            {
+              etykieta: "strona po 500, z odstępem",
+              wartosc: 707,
+              wyroznij: true,
+            },
             { etykieta: "pobranie bez straty", wartosc: 0 },
           ]}
           jednostka=" utraconych"
@@ -158,8 +171,8 @@ export default function Page() {
             Najgorsze jest to, że nic tego nie sygnalizuje. Licznik pokazuje
             poprawną liczbę, pobranie kończy się bez błędu, plik ma właściwą
             liczbę wierszy. Dopiero policzenie unikalnych identyfikatorów
-            pokazuje, że brakuje co dwudziestego albo co piątego obiektu, zależnie
-            od tego, jak duże strony pobierano.
+            pokazuje, że brakuje co dwudziestego albo co piątego obiektu,
+            zależnie od tego, jak duże strony pobierano.
           </p>
 
           <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
@@ -177,12 +190,12 @@ export default function Page() {
             </li>
             <li className="leading-relaxed">
               Nie filtruj po polu województwa bez wcześniejszego poprawienia
-              piątki miast na prawach powiatu, bo inaczej wypadną z zestawienia w
-              całości.
+              piątki miast na prawach powiatu, bo inaczej wypadną z zestawienia
+              w całości.
             </li>
             <li className="leading-relaxed">
-              Przycinaj białe znaki w nazwach województw, bo jeden wpis ma spację
-              na końcu.
+              Przycinaj białe znaki w nazwach województw, bo jeden wpis ma
+              spację na końcu.
             </li>
           </ul>
 
@@ -192,12 +205,13 @@ export default function Page() {
           <ul className="mb-4 ml-5 list-disc space-y-2 text-gray-600 dark:text-gray-400">
             <li className="leading-relaxed">
               Nie wiemy, czy błąd stronicowania występuje zawsze, czy zależy od
-              obciążenia serwera. Zaobserwowaliśmy go w każdym z czterech pobrań,
-              ale za każdym razem z inną skalą.
+              obciążenia serwera. Zaobserwowaliśmy go w każdym z czterech
+              pobrań, ale za każdym razem z inną skalą.
             </li>
             <li className="leading-relaxed">
-              Nie sprawdzaliśmy pozostałych rejestrów turystycznych pod tym samym
-              kątem, poza stwierdzeniem, że dwa z nich są praktycznie puste.
+              Nie sprawdzaliśmy pozostałych rejestrów turystycznych pod tym
+              samym kątem, poza stwierdzeniem, że dwa z nich są praktycznie
+              puste.
             </li>
             <li className="leading-relaxed">
               Nie zgłosiliśmy tego jeszcze nigdzie. Opisujemy to publicznie,
@@ -229,22 +243,43 @@ export default function Page() {
               </Link>
             </li>
             <li>
-              <Link href="/ile-spolek-znika-z-krs" className="text-accent hover:underline">
+              <Link
+                href="/ile-spolek-znika-z-krs"
+                className="text-accent hover:underline"
+              >
                 Ile spółek dziennie trafia do wykreślenia z KRS
               </Link>
             </li>
           </ul>
         </div>
 
+        <SprawdzPoBadaniu
+          naglowek="Zobacz, co publiczny rejestr mówi o konkretnej spółce"
+          opis="Przeszukuję obwieszczenia Monitora Sądowego i Gospodarczego od 2013 roku i sprawdzam jedną rzecz: czy wobec podmiotu toczy się postępowanie o rozwiązanie bez likwidacji. To ten sam rodzaj danych, co rejestr z tego badania, tylko inny rejestr."
+          endpoint="/api/sprawdz-spolke"
+          pole="zapytanie"
+          pozycje={[{ wartosc: "CD PROJEKT" }, { wartosc: "ALLEGRO" }]}
+          wstep="Nie masz pod ręką nazwy? Uruchom na gotowym przykładzie:"
+          narzedzie={{
+            href: "/ile-spolek-znika-z-krs",
+            etykieta: "Sprawdź swojego kontrahenta",
+          }}
+          kontakt="Chcesz mieć takie sprawdzenie na całej swojej bazie kontrahentów?"
+        />
+
         <section className="mt-12">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Pytania</h2>
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+            Pytania
+          </h2>
           <dl className="mt-5 space-y-5">
             {faqItems.map((f) => (
               <div key={f.question}>
                 <dt className="font-semibold text-gray-900 dark:text-white">
                   {f.question}
                 </dt>
-                <dd className="mt-1 text-gray-600 dark:text-gray-300">{f.answer}</dd>
+                <dd className="mt-1 text-gray-600 dark:text-gray-300">
+                  {f.answer}
+                </dd>
               </div>
             ))}
           </dl>

@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import WykresSlupkowy from "@/components/WykresSlupkowy";
+import SprawdzPoBadaniu from "@/components/SprawdzPoBadaniu";
 
 export const metadata: Metadata = {
   title: "Sprawdziliśmy 386 stron dealerów samochodowych. Wyniki | Fluxlab",
@@ -68,17 +69,19 @@ export default function Page() {
           Sprawdziliśmy 386 stron dealerów samochodowych
         </h1>
         <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
-          Nie pytaliśmy nikogo o zdanie i nie wysyłaliśmy ankiet. Wzięliśmy listę
-          firmowych stron polskich dealerów i serwisów, a potem sprawdziliśmy
-          cztery rzeczy, które da się zmierzyć obiektywnie: czy klient ustali ze
-          strony, komu płaci, czy wyszukiwarka dostaje listę podstron, kto
-          formalnie jest właścicielem domeny i czy strona nie odpowiada pod dwoma
-          adresami naraz. Poniżej liczby, metoda i uczciwa lista tego, czego nie
-          udało się rozstrzygnąć.
+          Nie pytaliśmy nikogo o zdanie i nie wysyłaliśmy ankiet. Wzięliśmy
+          listę firmowych stron polskich dealerów i serwisów, a potem
+          sprawdziliśmy cztery rzeczy, które da się zmierzyć obiektywnie: czy
+          klient ustali ze strony, komu płaci, czy wyszukiwarka dostaje listę
+          podstron, kto formalnie jest właścicielem domeny i czy strona nie
+          odpowiada pod dwoma adresami naraz. Poniżej liczby, metoda i uczciwa
+          lista tego, czego nie udało się rozstrzygnąć.
         </p>
 
         <div className="mt-10">
-          <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">Czterech na pięciu nie da się zidentyfikować przed przelewem</h2>
+          <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
+            Czterech na pięciu nie da się zidentyfikować przed przelewem
+          </h2>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
             Zanim firma zapłaci innej firmie, jej księgowość ustala, kto jest
             sprzedawcą, i sprawdza go w wykazie podatników VAT. Przy kwotach
@@ -116,24 +119,30 @@ export default function Page() {
         <div>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
             Najciekawszy jest środkowy słupek. Czterdzieści stron podaje numer,
-            owszem, tylko że należy on do importera marki, a nie do spółki, która
-            wystawi fakturę. Klient, który sprawdzi ten numer, zobaczy zupełnie
-            inną firmę niż ta, z którą rozmawia. To gorsze niż brak numeru, bo
-            wygląda na komplet danych.
+            owszem, tylko że należy on do importera marki, a nie do spółki,
+            która wystawi fakturę. Klient, który sprawdzi ten numer, zobaczy
+            zupełnie inną firmę niż ta, z którą rozmawia. To gorsze niż brak
+            numeru, bo wygląda na komplet danych.
           </p>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-            <Link href="/dane-sprzedawcy" className="text-accent hover:underline">
+            <Link
+              href="/dane-sprzedawcy"
+              className="text-accent hover:underline"
+            >
               Sprawdź swoją stronę tym samym narzędziem
             </Link>
             , którym zrobiliśmy ten pomiar.
           </p>
 
-          <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">Dwie trzecie stron nie daje wyszukiwarce listy podstron</h2>
+          <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
+            Dwie trzecie stron nie daje wyszukiwarce listy podstron
+          </h2>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-            Mapa strony to plik z listą adresów, który wyszukiwarka pobiera jednym
-            zapytaniem, zamiast odkrywać podstrony klikaniem w linki. Przy stronie
-            wizytówce nie ma to znaczenia. Przy katalogu z setkami ofert decyduje
-            o tym, ile z nich w ogóle trafi do wyników wyszukiwania.
+            Mapa strony to plik z listą adresów, który wyszukiwarka pobiera
+            jednym zapytaniem, zamiast odkrywać podstrony klikaniem w linki.
+            Przy stronie wizytówce nie ma to znaczenia. Przy katalogu z setkami
+            ofert decyduje o tym, ile z nich w ogóle trafi do wyników
+            wyszukiwania.
           </p>
         </div>
 
@@ -159,48 +168,59 @@ export default function Page() {
 
         <div>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-            Te dwa przypadki ze środka są warte osobnego zdania. Mapa strony jest,
-            wyszukiwarka ją pobiera, tylko że wszystkie wypisane w niej adresy
-            zwracają błąd. W jednym z nich powód okazał się prozaiczny: plik
-            wskazuje adresy w wersji bez www, a ta wersja przestała działać.
-            Nikt tego nie zauważył, bo w przeglądarce właściciela wszystko
-            wygląda normalnie.
+            Te dwa przypadki ze środka są warte osobnego zdania. Mapa strony
+            jest, wyszukiwarka ją pobiera, tylko że wszystkie wypisane w niej
+            adresy zwracają błąd. W jednym z nich powód okazał się prozaiczny:
+            plik wskazuje adresy w wersji bez www, a ta wersja przestała
+            działać. Nikt tego nie zauważył, bo w przeglądarce właściciela
+            wszystko wygląda normalnie.
           </p>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-            <Link href="/mapa-strony" className="text-accent hover:underline">Sprawdź mapę swojej strony</Link>.
+            <Link href="/mapa-strony" className="text-accent hover:underline">
+              Sprawdź mapę swojej strony
+            </Link>
+            .
           </p>
 
-          <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">Dziesięć firm nie jest właścicielem własnego adresu</h2>
+          <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
+            Dziesięć firm nie jest właścicielem własnego adresu
+          </h2>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-            W rejestrze domen wpisany jest jeden podmiot, zwany abonentem, i to on
-            decyduje o domenie. A skoro o domenie, to również o stronie i o całej
-            poczcie w tej domenie. Przeszliśmy przez rejestr i w dziesięciu
-            przypadkach abonentem okazała się firma informatyczna albo agencja
-            reklamowa, czyli najczęściej ten, kto kiedyś robił stronę.
+            W rejestrze domen wpisany jest jeden podmiot, zwany abonentem, i to
+            on decyduje o domenie. A skoro o domenie, to również o stronie i o
+            całej poczcie w tej domenie. Przeszliśmy przez rejestr i w
+            dziesięciu przypadkach abonentem okazała się firma informatyczna
+            albo agencja reklamowa, czyli najczęściej ten, kto kiedyś robił
+            stronę.
           </p>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-            Nie nazywamy tego oszustwem i nie sugerujemy złej woli. Bywa, że jest
-            to układ świadomy, oparty na umowie. Znacznie częściej jest to
+            Nie nazywamy tego oszustwem i nie sugerujemy złej woli. Bywa, że
+            jest to układ świadomy, oparty na umowie. Znacznie częściej jest to
             pozostałość po wdrożeniu sprzed lat, o której nikt nie pamięta,
             dopóki nie trzeba czegoś zmienić albo dopóki nie zbliża się termin
             odnowienia, a przypomnienia z rejestru idą na adres abonenta.
           </p>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-            <Link href="/wlasnosc-domeny" className="text-accent hover:underline">
+            <Link
+              href="/wlasnosc-domeny"
+              className="text-accent hover:underline"
+            >
               Sprawdź, kto jest abonentem Twojej domeny
             </Link>
             . Dane pochodzą z jawnego rejestru, więc każdy może to potwierdzić
             samodzielnie.
           </p>
 
-          <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">Co się nie potwierdziło</h2>
+          <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
+            Co się nie potwierdziło
+          </h2>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
             Zaczynaliśmy z hipotezą, że na stronach znajdziemy numery rachunków
             spoza wykazu podatników, co byłoby najpoważniejszym z możliwych
             ustaleń, bo uderza wprost w kupującego. Rachunek podaje jednak tylko
             dwanaście stron na trzysta trzy, a wszystkie trzynaście znalezionych
-            numerów figurowało w wykazie przy właściwej firmie. Hipoteza upadła i
-            tak ją zapisujemy.
+            numerów figurowało w wykazie przy właściwej firmie. Hipoteza upadła
+            i tak ją zapisujemy.
           </p>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
             Druga porzucona hipoteza dotyczyła blokowania robotów wyszukiwarek.
@@ -211,21 +231,24 @@ export default function Page() {
             nie znalazło się w statystykach.
           </p>
 
-          <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">Czego nie sprawdziliśmy</h2>
+          <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
+            Czego nie sprawdziliśmy
+          </h2>
           <ul className="mb-4 ml-5 list-disc space-y-2 text-gray-600 dark:text-gray-400">
             <li className="leading-relaxed">
               Nie uruchamialiśmy przeglądarki, więc strony budujące treść po
               stronie klienta mogły zostać zaliczone do braków niesłusznie.
             </li>
             <li className="leading-relaxed">
-              Nie czytaliśmy regulaminów w plikach PDF ani danych wklejonych jako
-              obrazek. Jeśli numer NIP jest tylko tam, nasze narzędzie go nie
-              zobaczy, ale nie zobaczą go też narzędzia po stronie kupującego.
+              Nie czytaliśmy regulaminów w plikach PDF ani danych wklejonych
+              jako obrazek. Jeśli numer NIP jest tylko tam, nasze narzędzie go
+              nie zobaczy, ale nie zobaczą go też narzędzia po stronie
+              kupującego.
             </li>
             <li className="leading-relaxed">
-              Nie sprawdzaliśmy, które wersje adresów są faktycznie zaindeksowane
-              w wyszukiwarce. Do tego potrzebny jest dostęp, którego nie mamy i o
-              który nie prosiliśmy.
+              Nie sprawdzaliśmy, które wersje adresów są faktycznie
+              zaindeksowane w wyszukiwarce. Do tego potrzebny jest dostęp,
+              którego nie mamy i o który nie prosiliśmy.
             </li>
             <li className="leading-relaxed">
               Osiemdziesiąt trzy domeny z listy nie odpowiedziały w ogóle, więc
@@ -233,16 +256,18 @@ export default function Page() {
             </li>
           </ul>
 
-          <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">Wniosek</h2>
+          <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
+            Wniosek
+          </h2>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-            Żaden z tych czterech problemów nie jest efektowny i żaden nie wywala
-            strony. Wszystkie łączy natomiast jedna cecha: są niewidoczne z fotela
-            właściciela. W przeglądarce, w której strona działa, poczta chodzi, a
-            domena się odnawia, nie widać ani tego, kto formalnie ma do niej
-            prawo, ani tego, czego nie widzi wyszukiwarka, ani tego, czego nie
-            znajdzie księgowość klienta przed przelewem. Dlatego każde z tych
-            czterech sprawdzeń zrobiliśmy darmowym narzędziem, które daje surowy
-            wynik od ręki.
+            Żaden z tych czterech problemów nie jest efektowny i żaden nie
+            wywala strony. Wszystkie łączy natomiast jedna cecha: są niewidoczne
+            z fotela właściciela. W przeglądarce, w której strona działa, poczta
+            chodzi, a domena się odnawia, nie widać ani tego, kto formalnie ma
+            do niej prawo, ani tego, czego nie widzi wyszukiwarka, ani tego,
+            czego nie znajdzie księgowość klienta przed przelewem. Dlatego każde
+            z tych czterech sprawdzeń zrobiliśmy darmowym narzędziem, które daje
+            surowy wynik od ręki.
           </p>
         </div>
 
@@ -258,10 +283,7 @@ export default function Page() {
               ["/podwojny-adres", "Czy Google widzi Twoją stronę podwójnie"],
             ].map(([href, tytul]) => (
               <li key={href}>
-                <Link
-                  href={href}
-                  className="text-accent hover:underline"
-                >
+                <Link href={href} className="text-accent hover:underline">
                   {tytul}
                 </Link>
               </li>
@@ -271,6 +293,22 @@ export default function Page() {
             Każde działa od ręki, bez rejestracji i bez zostawiania adresu.
           </p>
         </div>
+
+        <SprawdzPoBadaniu
+          naglowek="Zobacz pierwsze z tych sprawdzeń bez wychodzenia stąd"
+          opis="Otwieram stronę główną, kontakt i regulamin wybranej domeny, szukam numeru NIP i numeru konta, a znaleziony NIP zestawiam z wykazem podatników VAT. Tak samo, jak przy 386 domenach z tego badania."
+          endpoint="/api/sprawdz-sprzedawce"
+          pozycje={[
+            { wartosc: "fluxlab.pl" },
+            { wartosc: "x-kom.pl" },
+            { wartosc: "empik.com" },
+          ]}
+          narzedzie={{
+            href: "/dane-sprzedawcy",
+            etykieta: "Sprawdź swoją stronę",
+          }}
+          kontakt="Chcesz, żeby ktoś uzupełnił te dane na Twojej stronie?"
+        />
 
         <section className="mt-12">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
@@ -300,7 +338,8 @@ export default function Page() {
               "@context": "https://schema.org",
               "@type": "Article",
               headline: "Sprawdziliśmy 386 stron dealerów samochodowych",
-              description: "Ile stron nie pozwala ustalić sprzedawcy, ile nie ma mapy strony, ile domen jest zapisanych na obce firmy i ile stron odpowiada pod dwoma adresami naraz. Pomiar na 386 domenach, z metodą i zastrzeżeniami.",
+              description:
+                "Ile stron nie pozwala ustalić sprzedawcy, ile nie ma mapy strony, ile domen jest zapisanych na obce firmy i ile stron odpowiada pod dwoma adresami naraz. Pomiar na 386 domenach, z metodą i zastrzeżeniami.",
               datePublished: "2026-09-20",
               author: {
                 "@type": "Organization",
