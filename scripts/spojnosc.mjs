@@ -73,6 +73,19 @@ for (const c of catalog) {
   }
 }
 
+// --- 1d. kazda pozycja katalogu podaje kwote ---
+// Audyt tresci: przy trzydziestu jeden pozycjach z podana cena te bez zadnej
+// liczby wygladaly jak ukrywanie kosztu. Cena nie musi byc jedna liczba,
+// widelki i "od" sa w porzadku, ale rzad wielkosci ma byc widoczny przed
+// napisaniem wiadomosci. Pozycja, ktorej ceny nie da sie odczytac jako
+// kwoty, nie wchodzi do katalogu.
+for (const c of catalog) {
+  if (/darmo|bezpłatn/i.test(c.price)) continue;
+  if (!/\d/.test(scisnij(c.price))) {
+    add("cena", `${c.href}: cena "${c.price}" (${c.name}) nie podaje zadnej kwoty`);
+  }
+}
+
 // --- 1b. lista narzedzi zgadza sie z katalogiem ---
 // Kazdy produkt oznaczony jako majacy darmowe sprawdzenie musi byc do
 // znalezienia z /narzedzia: albo wlasnym kafelkiem, albo przez wskazanie,

@@ -5,15 +5,17 @@ import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import LandingForm from "@/components/LandingForm";
 import Tabs from "@/components/Tabs";
+import ZakresWyceny from "@/components/ZakresWyceny";
+import { WYCENA_INTEGRACJE } from "@/lib/wycena";
 
 export const metadata: Metadata = {
   title: "Integracje API i łączenie systemów w firmie | Fluxlab",
   description:
-    "Tworzymy integracje API między CRM, ERP, formularzami, bazami danych i narzędziami operacyjnymi. Łączymy systemy tak, żeby dane przepływały automatycznie.",
+    "Spinam CRM, ERP, sklep i hurtownie tak, żeby dane przechodziły same. Spięcie dwóch systemów zaczyna się od 1 500 zł, a zakres wyliczysz na stronie bez wysyłania zapytania.",
   openGraph: {
     title: "Integracje API i łączenie systemów w firmie | Fluxlab",
     description:
-      "Tworzymy integracje API między CRM, ERP, formularzami, bazami danych i narzędziami operacyjnymi. Łączymy systemy tak, żeby dane przepływały automatycznie.",
+      "Spinam CRM, ERP, sklep i hurtownie tak, żeby dane przechodziły same. Spięcie dwóch systemów zaczyna się od 1 500 zł, a zakres wyliczysz na stronie bez wysyłania zapytania.",
     locale: "pl_PL",
     type: "article",
     images: [
@@ -38,6 +40,11 @@ const useCases = [
 
 const faq = [
   {
+    question: "Ile kosztuje integracja?",
+    answer:
+      "Spięcie dwóch systemów w jedną stronę to 1 500 do 2 900 zł. Każdy kolejny system dokłada 690 do 1 400 zł, praca w obie strony 590 do 1 200 zł, a system bez otwartego API 890 do 1 900 zł. Kalkulator na tej stronie składa z tego zakres dla Twojego przypadku. Wiążąca kwota pada po bezpłatnej diagnozie.",
+  },
+  {
     question: "Czym różni się integracja API od zwykłej automatyzacji?",
     answer:
       "Integracja API skupia się na bezpośredniej wymianie danych między systemami, w bardziej stabilny i elastyczny sposób.",
@@ -45,7 +52,7 @@ const faq = [
   {
     question: "Czy da się połączyć systemy bez otwartego API?",
     answer:
-      "Czasem tak, ale zależy to od konkretnego narzędzia i dostępnych metod obejścia.",
+      "Zwykle tak, tylko inną drogą: przez eksport pliku, skrzynkę pocztową albo pobieranie ze strony. Działa to wolniej i wymaga czujnika na zmianę formatu, bo taka zmiana nie zgłasza się sama. W wycenie to osobna pozycja, 890 do 1 900 zł.",
   },
   {
     question: "Czy integracje API są tylko dla dużych firm?",
@@ -71,11 +78,13 @@ export default function IntegracjeApi() {
             </h1>
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
               Łączę systemy ze sprzedaży, operacji i raportowania tak, żeby dane
-              trafiały tam, gdzie trzeba, bez ręcznego przepisywania.
+              trafiały tam, gdzie trzeba, bez ręcznego przepisywania. Spięcie
+              dwóch systemów w jedną stronę zaczyna się od 1 500 zł, a co
+              podnosi tę kwotę, rozpisuję niżej co do pozycji.
             </p>
             <div>
               <a href="#sekcje" className="btn-primary">
-                Chcę diagnozę integracji
+                Policz zakres wyceny
               </a>
             </div>
           </div>
@@ -86,6 +95,25 @@ export default function IntegracjeApi() {
           <Tabs
             ariaLabel="Sekcje usługi integracji API"
             tabs={[
+              {
+                label: "Ile to kosztuje",
+                content: (
+                  <div className="py-10 lg:py-12">
+                    <div className="max-w-3xl mx-auto">
+                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-3">
+                        Ile to kosztuje
+                      </h2>
+                      <p className="text-gray-600 dark:text-gray-300 mb-8">
+                        Integracja nie ma jednej ceny, bo spięcie dwóch systemów
+                        przez otwarte API i spięcie czterech, z których jeden
+                        oddaje dane plikiem, to inna robota. Zaznacz, co u
+                        Ciebie występuje, a zobaczysz rząd wielkości od razu.
+                      </p>
+                      <ZakresWyceny wycena={WYCENA_INTEGRACJE} />
+                    </div>
+                  </div>
+                ),
+              },
               {
                 label: "Co łączę",
                 content: (
@@ -176,7 +204,7 @@ export default function IntegracjeApi() {
             "@type": "Service",
             name: "Integracje API",
             description:
-              "Tworzymy integracje API między CRM, ERP, formularzami, bazami danych i narzędziami operacyjnymi. Łączymy systemy tak, żeby dane przepływały automatycznie.",
+              "Spinam CRM, ERP, sklep i hurtownie tak, żeby dane przechodziły same. Spięcie dwóch systemów zaczyna się od 1 500 zł, a zakres wyliczysz na stronie bez wysyłania zapytania.",
             provider: { "@id": "https://fluxlab.pl/#organization" },
             areaServed: { "@type": "Country", name: "Polska" },
             serviceType: "Automatyzacja procesów biznesowych",

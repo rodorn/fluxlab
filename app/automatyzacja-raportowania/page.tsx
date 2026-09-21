@@ -5,15 +5,17 @@ import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import LandingForm from "@/components/LandingForm";
 import Tabs from "@/components/Tabs";
+import ZakresWyceny from "@/components/ZakresWyceny";
+import { WYCENA_RAPORTOWANIE } from "@/lib/wycena";
 
 export const metadata: Metadata = {
   title: "Automatyzacja raportowania i danych w firmie | Fluxlab",
   description:
-    "Automatyzujemy raportowanie sprzedaży, marketingu i operacji. Łączymy dane z wielu źródeł i eliminujemy ręczne przygotowywanie raportów.",
+    "Składam raporty sprzedaży, marketingu i operacji tak, żeby powstawały same i przychodziły o stałej porze. Jedno źródło od 790 zł, zakres dla swojego przypadku wyliczysz na stronie.",
   openGraph: {
     title: "Automatyzacja raportowania i danych w firmie | Fluxlab",
     description:
-      "Automatyzujemy raportowanie sprzedaży, marketingu i operacji. Łączymy dane z wielu źródeł i eliminujemy ręczne przygotowywanie raportów.",
+      "Składam raporty sprzedaży, marketingu i operacji tak, żeby powstawały same i przychodziły o stałej porze. Jedno źródło od 790 zł, zakres dla swojego przypadku wyliczysz na stronie.",
     locale: "pl_PL",
     type: "article",
     images: [
@@ -38,13 +40,18 @@ const useCases = [
 
 const faqs = [
   {
+    question: "Ile kosztuje automatyzacja raportu?",
+    answer:
+      "Raport z jednego źródła, wysyłany o stałej porze, to 790 do 1 500 zł. Każde kolejne źródło dokłada 390 do 700 zł, uzgodnienie rozjeżdżających się liczb 490 do 1 200 zł, a panel w przeglądarce zamiast maila 900 do 1 800 zł. Kalkulator na tej stronie składa z tego zakres dla Twojego przypadku.",
+  },
+  {
     question: "Czy można połączyć dane z kilku źródeł?",
     answer: "Tak, to jedna z głównych korzyści automatyzacji raportowania.",
   },
   {
     question: "Co jeśli dane są dziś niespójne?",
     answer:
-      "To częsty problem. Najpierw porządkujemy logikę i źródła danych, potem automatyzujemy raport.",
+      "To częsty problem i zwykle najdłuższa część pracy. Najpierw ustalam, która definicja obowiązuje i po czym dopasować rekordy między źródłami, dopiero potem automatyzuję raport. W wycenie to osobna pozycja, 490 do 1 200 zł.",
   },
   {
     question: "Czy to ma sens przy małym zespole?",
@@ -68,10 +75,17 @@ export default function AutomatyzacjaRaportowania() {
             <h1 className="display-lg text-gray-900 dark:text-white mb-6">
               Automatyzacja raportowania
             </h1>
-            <p className="text-lg text-gray-600 dark:text-gray-300">
+            <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
               Dane z różnych źródeł zbierają się same, a zespół pracuje na
               aktualnych, spójnych liczbach. Bez przeklejania, bez błędów.
+              Raport z jednego źródła, wysyłany o stałej porze, zaczyna się od
+              790 zł, a co podnosi tę kwotę, rozpisuję niżej co do pozycji.
             </p>
+            <div>
+              <a href="#sekcje" className="btn-primary">
+                Policz zakres wyceny
+              </a>
+            </div>
           </div>
         </section>
 
@@ -80,6 +94,25 @@ export default function AutomatyzacjaRaportowania() {
           <Tabs
             ariaLabel="Sekcje oferty automatyzacji raportowania"
             tabs={[
+              {
+                label: "Ile to kosztuje",
+                content: (
+                  <section className="py-10 lg:py-12">
+                    <div className="max-w-3xl mx-auto">
+                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-3">
+                        Ile to kosztuje
+                      </h2>
+                      <p className="text-gray-600 dark:text-gray-300 mb-8">
+                        Raport raportowi nierówny: jedno źródło i wysyłka na
+                        maila to inna praca niż cztery źródła, które dziś
+                        pokazują różne liczby. Zaznacz, co u Ciebie występuje, a
+                        zobaczysz rząd wielkości od razu.
+                      </p>
+                      <ZakresWyceny wycena={WYCENA_RAPORTOWANIE} />
+                    </div>
+                  </section>
+                ),
+              },
               {
                 label: "Co automatyzuję",
                 content: (
@@ -171,7 +204,7 @@ export default function AutomatyzacjaRaportowania() {
             "@type": "Service",
             name: "Automatyzacja raportowania",
             description:
-              "Automatyzujemy raportowanie sprzedaży, marketingu i operacji. Łączymy dane z wielu źródeł i eliminujemy ręczne przygotowywanie raportów.",
+              "Składam raporty sprzedaży, marketingu i operacji tak, żeby powstawały same i przychodziły o stałej porze. Jedno źródło od 790 zł, zakres dla swojego przypadku wyliczysz na stronie.",
             provider: { "@id": "https://fluxlab.pl/#organization" },
             areaServed: { "@type": "Country", name: "Polska" },
             serviceType: "Automatyzacja procesów biznesowych",

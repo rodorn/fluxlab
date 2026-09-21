@@ -304,14 +304,14 @@ export const PRODUCTS: Product[] = [
     name: "Integracje API",
     tagline: "Spięcie systemów, które nie chcą rozmawiać",
     desc: "Łączę sklep, CRM, ERP i hurtownie tak, żeby dane przechodziły same: synchronizacja przyrostowa, obsługa limitów API i logi, które pokazują cichy błąd zanim zepsuje dane.",
-    price: "wycena po diagnozie",
+    price: "od 1 500 zł",
     href: "/integracje-api",
     grupa: "wdrozenia",
     cta: "Opisz integrację",
     bullets: [
       "synchronizacja różnicowa zamiast pełnych przebiegów",
       "odporność na limity i chwilowe awarie API",
-      "bezpłatna diagnoza przed wyceną",
+      "zakres wyceny do wyklikania na stronie, bez zapytania ofertowego",
     ],
   },
   {
@@ -319,7 +319,7 @@ export const PRODUCTS: Product[] = [
     name: "Automatyzacja raportowania",
     tagline: "Koniec z ręcznym sklejaniem Excela",
     desc: "Raport, który składa się sam i ląduje na mailu o ustalonej godzinie, zamiast zjadać komuś pół dnia w miesiącu.",
-    price: "wycena po diagnozie",
+    price: "od 790 zł",
     href: "/automatyzacja-raportowania",
     grupa: "wdrozenia",
     cta: "Zamów automatyzację",
@@ -327,6 +327,7 @@ export const PRODUCTS: Product[] = [
       "dane z wielu źródeł w jednym zestawieniu",
       "wysyłka cykliczna bez udziału człowieka",
       "alert, gdy liczby wyglądają podejrzanie",
+      "zakres wyceny do wyklikania na stronie, bez zapytania ofertowego",
     ],
   },
 

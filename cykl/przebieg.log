@@ -222,3 +222,28 @@ Do kolejnych cykli: dwa produkty bez ceny (/integracje-api, /automatyzacja-rapor
 H1 na /kontakt, za dlugie title i description, 403 z IndexNow.
 Produkcja potwierdzona: 18 h 20 min / 1 h 40 min / 16 h 40 min przy 100 leadach z jedna odklikana czynnoscia.
 IndexNow: Yandex i Naver 200 (112 adresow), wspolny punkt 403. Mail wyslany 22:52 z dwoma zrzutami i raportem ruchu.
+Cykl zamknięty.
+
+## Co zrobione
+
+Jedna zmiana dowieziona do końca: **`/case-study` przestało cytować wyniki, których nie ma, i liczy czas na oczach odwiedzającego** (pozycje 2.1 i 2.2 z `AUDYT_TRESCI.md`).
+
+| Co | Efekt |
+| --- | --- |
+| Problem | Strona podawała gotowe liczby („+18% konwersji", „z 12 min do 0") i nazywała je syntezami wdrożeń u klientów. Klientów nie ma, więc liczba brała się znikąd, a zastrzeżenie pod spodem tego nie zmieniało |
+| Element interaktywny | `app/case-study/PorownanieProcesu.tsx`: wybór procesu (lead albo tygodniowy raport), wybór skali miesięcznej i odklikiwanie czynności, których firma u siebie nie robi. 12 przycisków `aria-pressed`, wynik od razu, bez wpisywania i bez rejestracji |
+| Jedno źródło liczby | Żadna suma nie jest wpisana z ręki. Wszystkie powstają z czynności widocznych na stronie, z minutami przy każdej |
+| Uczciwość | Hero mówi wprost, że wdrożeń u firm nie ma. Podpis pod wynikiem podaje, skąd wzięte minuty, i że to nie pomiar u kogokolwiek |
+| Inne strony | `/n8n-dla-crm` (dwa zdania) i `/automatyczne-przypisywanie-leadow` przestały deklarować pracę u klientów. `/case-study` nie jest już sierotą, prowadzi do niej link z `/realizacje` |
+| Zabezpieczenie | Reguła 2b w `scripts/spojnosc.mjs`: praca u klientów, własni klienci, opinie, liczby wdrożeń, lata doświadczenia. Taka fraza nie przejdzie już do publikacji |
+| Pomiar | Pierwsze kliknięcie zgłasza `porownano_proces`, raz na sesję |
+
+**Weryfikacja:** wszystkie przyciski przeklikane na lokalnym buildzie produkcyjnym, sumy zgodne z arytmetyką kroków (lead 12 min × 50 = 10 h; raport 240 min × 8 = 32 h). Zdarzenie potwierdzone na podsłuchanym ruchu (trzy kliknięcia, jedno zgłoszenie). Na 390 px bez przewijania w bok. Reguła spójności sprawdzona celowym zepsuciem: cztery wpisane na próbę przechwałki zostały wskazane z cytatem. Build i `spojnosc.mjs` czyste przed każdym commitem. Produkcja po wdrożeniu: 18 h 20 min / 1 h 40 min / 16 h 40 min przy 100 leadach z jedną odklikaną czynnością.
+
+Po drodze dwie własne pomyłki poprawione: odklikanie wszystkich czynności dawało ujemną „oszczędność" (teraz strona pisze, że nie ma czego zdejmować), a przycisk skali mówił „4 raportów" zamiast „4 raporty".
+
+Commity `b7e4660`, `58f2c17`, `1025030`, `6a7da3d` na `main`. IndexNow: Yandex i Naver przyjęły 112 adresów, wspólny punkt nadal 403. Mail wysłany 22:52 na iwanekpawel55@gmail.com z dwoma zrzutami z produkcji i raportem ruchu (z zastrzeżeniem o danych sprzed 21.09 godz. 16:00). Serwer testowy na 3311 wygaszony; osobno działają dwa serwery `next-server` sprzed godziny, nie ruszałem ich bez Twojej zgody.
+
+Do kolejnych cykli: dwa produkty bez ceny, martwe komponenty (2.3), liczba mnoga na czterech stronach branżowych (2.4), nieklikalny adres GitHuba (2.5), kontrast w stopce, H1 na `/kontakt`, za długie `title` i `description`.
+=== 2026-09-21 22:50:58 koniec, kod 0
+=== 2026-09-21 23:43:06 start
