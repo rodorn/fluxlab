@@ -119,6 +119,21 @@ export const PRODUCTS: Product[] = [
     ],
   },
   {
+    category: "www",
+    name: "Widoczność w AI",
+    tagline: "Czy asystent w ogóle widzi Twoją stronę",
+    desc: "Klient coraz częściej pyta asystenta o firmę do konkretnego zadania zamiast wpisywać frazę w wyszukiwarkę. Sprawdzam siedem warunków, od których zależy, czy Twoja strona może w takiej odpowiedzi wystąpić: dostęp dla robotów, treść bez skryptów, dane uporządkowane, metadane, mapa strony i llms.txt.",
+    price: "sprawdzenie za darmo",
+    href: "/widocznosc-w-ai",
+    narzedzie: true,
+    cta: "Sprawdź swoją stronę",
+    bullets: [
+      "wynik od ręki, bez rejestracji",
+      "naprawa warunków wstępnych 890 zł",
+      "bez obietnic miejsca w odpowiedzi asystenta",
+    ],
+  },
+  {
     category: "dane",
     name: "Integracja CRM z ERP",
     tagline: "Koniec z przepisywaniem w obie strony",

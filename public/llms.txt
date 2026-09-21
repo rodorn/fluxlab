@@ -1,0 +1,35 @@
+# FluxLab
+
+> Jednoosobowa firma Pawła Iwanka z Grodziska Mazowieckiego. Automatyzuję
+> procesy sprzedaży i operacji w firmach B2B: łączę CRM, formularze, pocztę,
+> interfejsy programistyczne i raportowanie tak, żeby ludzie przestali ręcznie
+> przepisywać dane. Narzędzia, z których korzystam najczęściej: Pipedrive,
+> HubSpot, Make, n8n, Python. Ustalenia prowadzę mailowo.
+
+## Co robię
+
+- [Automatyzacja leadów i CRM](https://fluxlab.pl/automatyzacja-leadow-crm): zgłoszenie z formularza trafia do CRM samo, z właścicielem i pierwszym zadaniem.
+- [Integracje i dane](https://fluxlab.pl/scraping-danych): spinanie systemów przez interfejsy programistyczne, porządkowanie danych, raporty, które przychodzą same.
+- [Integracja CRM z systemem magazynowo-księgowym](https://fluxlab.pl/integracja-crm-z-erp): kontrahenci, dokumenty sprzedaży, stany i ceny, z kolejką ponowień.
+- [Wdrożenie n8n i jego koszt](https://fluxlab.pl/wdrozenie-n8n-cena): licencja, serwer, praca i opieka rozbite na osobne liczby.
+- [Systemy i strony](https://fluxlab.pl/strony-www): aplikacje webowe, panele i formularze będące częścią procesu.
+
+## Darmowe narzędzia, bez rejestracji
+
+- [Widoczność strony dla asystentów AI](https://fluxlab.pl/widocznosc-w-ai)
+- [Kto jest właścicielem domeny](https://fluxlab.pl/wlasnosc-domeny)
+- [Sprawdzenie poczty firmowej](https://fluxlab.pl/audyt-poczty)
+- [Czy strona ma poprawną mapę](https://fluxlab.pl/widocznosc-w-google)
+- [Koszt ręcznej obsługi leadów](https://fluxlab.pl/koszt-recznej-obslugi-leadow)
+- [Pełna lista](https://fluxlab.pl/narzedzia)
+
+## Własne badania
+
+- [Co jest nie tak ze stronami dealerów samochodowych](https://fluxlab.pl/strefa-wiedzy/co-jest-nie-tak-ze-stronami-dealerow): 386 sprawdzonych stron.
+- [Podszywanie się pod salony samochodowe](https://fluxlab.pl/strefa-wiedzy/podszywanie-pod-salony-samochodowe): pod 84 procent z nich można się podszyć mailowo.
+- [Błędy w rejestrze obiektów hotelarskich](https://fluxlab.pl/strefa-wiedzy/bledy-w-rejestrze-obiektow-hotelarskich)
+
+## Kontakt
+
+- [Formularz](https://fluxlab.pl/kontakt), adres pawel@fluxlab.pl
+- NIP 7123336008

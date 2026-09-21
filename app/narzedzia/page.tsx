@@ -161,6 +161,13 @@ const businessTools = [
     ikona: "pinezka",
   },
   {
+    title: "Czy asystent AI widzi Twoją stronę",
+    description:
+      "Wpisz domenę, a sprawdzę siedem rzeczy, od których zależy, czy roboty zbierające treść dla ChatuGPT, Claude'a i Perplexity mogą ją w ogóle przeczytać: dostęp w robots.txt, treść widoczną bez uruchamiania skryptów, dane uporządkowane, metadane, mapę strony i plik llms.txt.",
+    href: "/widocznosc-w-ai",
+    ikona: "lupa",
+  },
+  {
     title: "Ile przepłacasz za automatyzacje",
     description:
       "Podaj liczbę uruchomień i kroków w scenariuszu, a pokażę, ile zadań jest naprawdę rozliczanych, ile to kosztuje i po ilu miesiącach zwróciłoby się przeniesienie na własny serwer.",
