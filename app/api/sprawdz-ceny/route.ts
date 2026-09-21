@@ -176,7 +176,7 @@ function ocenKarte(html: string, url: string, nazwa: string, regularna: number, 
 
 /** Adresy sitemap z robots.txt, a gdy ich tam nie ma, dwa domyslne. */
 async function adresySitemap(baza: string): Promise<string[]> {
-  const robots = await pobierz(`${baza}/robots.txt`, 8000);
+  const robots = await pobierz(`${baza}/robots.txt`, 6000);
   const z = robots
     ? [...robots.matchAll(/^\s*sitemap:\s*(\S+)/gim)].map((m) => m[1].trim())
     : [];
@@ -207,7 +207,7 @@ async function przezSitemape(baza: string, koniec: number): Promise<Karta[] | nu
     const adres = kolejka.shift();
     if (!adres) break;
     odwiedzone += 1;
-    const xml = await pobierz(adres, 10000);
+    const xml = await pobierz(adres, 8000);
     if (!xml) continue;
     const adresy = adresyZXml(xml);
 
@@ -236,7 +236,7 @@ async function przezSitemape(baza: string, koniec: number): Promise<Karta[] | nu
     const zebrane = await Promise.all(
       probka.map(async (url) => {
         if (Date.now() > koniec) return null;
-        const html = await pobierz(url, 10000);
+        const html = await pobierz(url, 9000);
         if (!html) return null;
         const produkt = produktyZeStrukturalnych(html)[0];
         if (!produkt) return null;
@@ -258,7 +258,7 @@ async function przezSitemape(baza: string, koniec: number): Promise<Karta[] | nu
 
 /** Shopify wystawia caly katalog z cena porownawcza, bez zadnego klucza. */
 async function przezShopify(baza: string): Promise<Karta[] | null> {
-  const surowe = await pobierz(`${baza}/products.json?limit=250`, 12000);
+  const surowe = await pobierz(`${baza}/products.json?limit=250`, 7000);
   if (!surowe) return null;
   let pozycje: Array<Record<string, unknown>>;
   try {
@@ -299,7 +299,7 @@ async function przezShopify(baza: string): Promise<Karta[] | null> {
 async function przezWoo(baza: string): Promise<Karta[] | null> {
   const surowe = await pobierz(
     `${baza}/wp-json/wc/store/v1/products?on_sale=true&per_page=${MAX_PRODUKTOW}`,
-    15000,
+    7000,
   );
   if (surowe === null) return null;
 
@@ -339,14 +339,27 @@ async function ustalBaze(domena: string): Promise<string | null> {
     ? [`https://${domena}`, `https://${domena.slice(4)}`]
     : [`https://${domena}`, `https://www.${domena}`];
   for (const baza of warianty) {
-    const html = await pobierz(`${baza}/`, 10000);
-    if (html !== null) return baza;
+    // HEAD, a nie GET. Strona glowna sklepu wazy nawet ponad megabajt, a tu
+    // chodzi wylacznie o to, ktory wariant adresu w ogole odpowiada.
+    try {
+      const r = await fetch(`${baza}/`, {
+        method: "HEAD",
+        headers: UA,
+        redirect: "follow",
+        signal: AbortSignal.timeout(6000),
+      });
+      if (r.ok) return baza;
+    } catch {
+      // Czesc serwerow nie obsluguje HEAD, wiec sprawdzamy jeszcze raz zwyklym
+      // zapytaniem, zanim uznamy adres za martwy.
+    }
+    if (await pobierz(`${baza}/`, 6000)) return baza;
   }
   return null;
 }
 
 export async function POST(request: Request) {
-  const koniec = Date.now() + 45000;
+  const koniec = Date.now() + 50000;
   let domena = "";
   try {
     const body = await request.json();
@@ -380,7 +393,7 @@ export async function POST(request: Request) {
     karty = await przezShopify(baza);
     metoda = "listy przecen z Shopify";
   }
-  if (karty === null && Date.now() < koniec) {
+  if (karty === null && koniec - Date.now() > 8000) {
     karty = await przezSitemape(baza, koniec);
     metoda = "próbki kart produktów z mapy strony";
   }
