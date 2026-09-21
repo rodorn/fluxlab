@@ -97,6 +97,47 @@ for (const h of kafelki) {
   }
 }
 
+// --- 1c. kazda pozycja katalogu ma grupe, kazda grupa ma pozycje ---
+// Filtr na /produkty i naglowki na stronach filarow biora sie wylacznie z
+// pola `grupa`. Pozycja bez grupy wypadlaby z katalogu po cichu, a grupa bez
+// pozycji zostawilaby przycisk, ktory niczego nie pokazuje.
+const grupyTypu = [
+  ...products
+    .slice(products.indexOf("export type ProductGroup"), products.indexOf("export interface Product"))
+    .matchAll(/\|\s*"([a-z]+)"/g),
+].map((m) => m[1]);
+const grupyUzyte = new Set();
+for (const b of blocks) {
+  const href = b.match(/href:\s*"([^"]+)"/)?.[1];
+  const grupa = b.match(/grupa:\s*"([a-z]+)"/)?.[1];
+  if (!href) continue;
+  if (!grupa) {
+    add("grupa", `${href}: pozycja katalogu bez pola grupa`);
+    continue;
+  }
+  if (!grupyTypu.includes(grupa)) {
+    add("grupa", `${href}: grupa "${grupa}" spoza typu ProductGroup`);
+    continue;
+  }
+  grupyUzyte.add(grupa);
+}
+for (const g of grupyTypu) {
+  if (!grupyUzyte.has(g)) {
+    add("grupa", `grupa "${g}" nie ma ani jednej pozycji, a ma przycisk w katalogu`);
+  }
+}
+// Kolejnosc filarow i grup trzymana w jednym miejscu, zeby katalog i strony
+// filarow nie rozjechaly sie po dodaniu grupy.
+const blokKolejnosci = products.slice(
+  products.indexOf("export const GROUP_ORDER"),
+  products.indexOf("export const GROUP_ORDER") + products.slice(products.indexOf("export const GROUP_ORDER")).indexOf("];"),
+);
+for (const g of grupyTypu) {
+  if (!blokKolejnosci.includes(`"${g}"`)) {
+    add("grupa", `grupa "${g}" nie wystepuje w GROUP_ORDER`);
+  }
+}
+
 // --- 2. dlugie myslniki w widocznej tresci ---
 const walk = (dir, out = []) => {
   for (const e of fs.readdirSync(path.join(ROOT, dir), { withFileTypes: true })) {

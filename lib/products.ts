@@ -44,6 +44,23 @@ export const GROUP_LABEL: Record<ProductGroup, string> = {
   diagnostyka: "Diagnostyka strony",
 };
 
+/**
+ * Stala i celowa kolejnosc grup w kazdym filarze: najpierw to, co buduje,
+ * potem to, co naprawia, na koncu jednorazowe raporty. Trzymana w jednym
+ * miejscu, bo ten sam porzadek obowiazuje na /produkty i na stronach filarow.
+ */
+export const GROUP_ORDER: ProductGroup[] = [
+  "wdrozenia",
+  "integracje",
+  "budowa",
+  "naprawy",
+  "diagnostyka",
+  "raporty",
+];
+
+/** Kolejnosc filarow, ta sama co w menu i na /narzedzia. */
+export const CATEGORY_ORDER: ProductCategory[] = ["automatyzacja", "dane", "www"];
+
 export const GROUP_INTRO: Record<ProductGroup, string> = {
   wdrozenia: "Proces, który dziś ktoś klika ręcznie, zaczyna dziać się sam.",
   naprawy: "Coś już działa, ale działa źle albo przestało. Znajduję przyczynę i naprawiam.",

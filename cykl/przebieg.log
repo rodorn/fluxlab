@@ -107,3 +107,28 @@ Dwie rzeczy warte odnotowania. Po pierwsze, środkowy scenariusz audytu CRM dawa
 === 2026-09-21 19:55 koniec cyklu: /narzedzia kompletne, podzielone na filary, wybor po sytuacji
 Commit 8f6d63a. Build i spojnosc czyste. IndexNow: Yandex i Naver 200, wspolny punkt 403.
 Mail wyslany 19:50 na iwanekpawel55@gmail.com z dwoma zrzutami i raportem ruchu.
+Cykl zamknięty.
+
+## Co zrobione
+
+Jedna zmiana, dowieziona do końca: **`/narzedzia` pokazuje komplet darmowych sprawdzeń, podzielony na trzy filary firmy, a nad listą stoi wybór narzędzia po sytuacji** (pozycja 3.4 z `AUDYT_TRESCI.md`).
+
+| Co | Efekt |
+| --- | --- |
+| Problem | Dwa działające narzędzia (`/widocznosc-w-google`, `/panel-zwrotow`) nie były widoczne z jedynej strony zbierającej narzędzia, a lista była jednym ciągiem osiemnastu kafelków bez porządku |
+| Kompletność | Oba dostały kafelki. Artykuł o Fluxdesku wypadł z listy, bo to tekst w strefie wiedzy, nie sprawdzenie działające na stronie |
+| Spójność nazw | Trzy działy: Automatyzacja procesów (6), Integracje i dane (4), Systemy i strony (9). Nazwy brane wprost z `lib/products.ts`, filar narzędzia liczony z kategorii produktu pod tym samym adresem |
+| Element interaktywny | `components/WyborNarzedzia.tsx`: osiem przycisków z konkretną sytuacją, jedno naciśnięcie daje 1 do 3 narzędzi z uzasadnieniem. Bez wpisywania i bez rejestracji, zgłasza zdarzenie `wybor_narzedzia` do licznika |
+| Zabezpieczenie | `scripts/spojnosc.mjs` dostał trzy reguły: produkt z `narzedzie: true` musi być widoczny z `/narzedzia`, kafelek musi wskazywać na istniejącą stronę, każde narzędzie musi wystąpić w wyborze po sytuacji |
+
+Dwa produkty, `/sprawdz-kontrahenta` i `/wdrozenie-n8n-cena`, uruchamiają dokładnie ten sam komponent co pozycje już na liście (`NipCheck`, `KalkulatorAutomatyzacji`). Zamiast dublować kafelki, wpisałem je do `NARZEDZIE_WSPOLNE` z komentarzem dlaczego.
+
+**Weryfikacja:** wszystkie osiem sytuacji przeklikane w przeglądarce na lokalnym buildzie produkcyjnym, każda zwróciła właściwy zestaw; zdarzenie potwierdzone na podsłuchanym ruchu sieciowym; nowa reguła spójności sprawdzona przez celowe zepsucie wpisu (zatrzymała build listą braków); układ na 390 px bez przewijania w bok. Build i `spojnosc.mjs` czyste, commity `8f6d63a` i `4be9ced` na `main`, produkcja zwraca komplet.
+
+Liczba na stronie głównej zgadza się sama z listy: obiecuje dziewiętnaście, tyle jest.
+
+Adresy zgłoszone: Yandex i Naver przyjęły 112, wspólny punkt IndexNow nadal 403. Mail poszedł o 19:50 z raportem ruchu (z zastrzeżeniem o danych sprzed 21.09 godz. 16:00) i dwoma zrzutami. Serwer testowy na 3311 wygaszony.
+
+Do kolejnych cykli z audytów: rozjazd ceny panelu zwrotów (katalog 900 zł, strona 490 zł), kontrast w stopce, brakujący H1 na `/kontakt`, za długie `title` i `description`, 403 z IndexNow.
+=== 2026-09-21 19:51:15 koniec, kod 0
+=== 2026-09-21 20:43:06 start

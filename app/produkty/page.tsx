@@ -3,18 +3,18 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TrackedCTA from "@/components/TrackedCTA";
-import ProductGrid from "@/components/ProductGrid";
+import KatalogProduktow from "@/components/KatalogProduktow";
 import { PRODUCTS } from "@/lib/products";
 
 export const metadata: Metadata = {
   title: "Produkty i narzędzia Fluxlab, gotowe raporty i audyty | Fluxlab",
   description:
-    "Gotowe usługi Fluxlab w trzech obszarach: strony WWW, automatyzacja i dane. Konkretny zakres, stała cena, wynik odsyłany mailem.",
+    "Katalog Fluxlab w trzech filarach: automatyzacja procesów, integracje i dane, systemy i strony. Filtr zawęża listę jednym naciśnięciem.",
   alternates: { canonical: "/produkty" },
   openGraph: {
     title: "Produkty i narzędzia Fluxlab, gotowe raporty i audyty | Fluxlab",
     description:
-      "Gotowe usługi Fluxlab w trzech obszarach: strony WWW, automatyzacja i dane. Konkretny zakres, stała cena, wynik mailem.",
+      "Katalog Fluxlab w trzech filarach: automatyzacja procesów, integracje i dane, systemy i strony. Filtr zawęża listę jednym naciśnięciem.",
     locale: "pl_PL",
     type: "website",
     images: [
@@ -50,10 +50,8 @@ export default function ProduktyPage() {
             </p>
           </div>
 
-          <div className="mt-14 space-y-16">
-            <ProductGrid category="www" showHeading />
-            <ProductGrid category="automatyzacja" showHeading />
-            <ProductGrid category="dane" showHeading />
+          <div className="mt-12">
+            <KatalogProduktow />
           </div>
 
           <div className="mt-16 rounded-2xl border border-gray-200/80 dark:border-gray-800/80 bg-gray-50/60 dark:bg-gray-900/40 p-8 text-center">
