@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { zglosZdarzenie } from "@/lib/zdarzenie";
 
 interface Punkt {
   nazwa: string;
@@ -102,6 +103,7 @@ export default function LokalizacjaCheck() {
 
   async function sprawdz(e: React.FormEvent) {
     e.preventDefault();
+    zglosZdarzenie("uruchomiono_skan");
     setStan("ladowanie");
     setBlad("");
     setWynik(null);

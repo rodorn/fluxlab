@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { zglosZdarzenie } from "@/lib/zdarzenie";
 
 interface Wynik {
   status: "OK";
@@ -54,6 +55,7 @@ export default function DoplataCheck() {
 
   async function sprawdz(e: React.FormEvent) {
     e.preventDefault();
+    zglosZdarzenie("uruchomiono_skan");
     setStan("ladowanie");
     setBlad("");
     setWynik(null);

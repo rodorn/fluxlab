@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { zglosZdarzenie } from "@/lib/zdarzenie";
 
 interface Produkt {
   nazwa: string;
@@ -97,6 +98,7 @@ export default function CenyCheck() {
 
   async function sprawdz(e: React.FormEvent) {
     e.preventDefault();
+    zglosZdarzenie("uruchomiono_skan");
     setStan("ladowanie");
     setBlad("");
     setWynik(null);
