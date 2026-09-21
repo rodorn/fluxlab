@@ -2,6 +2,8 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { event as gaEvent } from "@/lib/gtag";
+import { zglosZdarzenie } from "@/lib/zdarzenie";
+import Scenariusze, { type Scenariusz } from "@/components/Scenariusze";
 import TrackedCTA from "@/components/TrackedCTA";
 
 /* ──────────────── types & data ──────────────── */
@@ -95,6 +97,65 @@ const QUESTIONS: Question[] = [
     text: "Czy dane z reklam / formularzy trafiają do CRM automatycznie?",
     area: "integracje",
     areaLabel: "integracje wejściowe",
+  },
+];
+
+/*
+ * Trzy komplety odpowiedzi do podstawienia jednym klikniecem.
+ *
+ * Dziesiec pytan to dziesiec klikniec, zanim pokaze sie cokolwiek. Pomiar
+ * mowi, ze do konca dochodzi malo kto, wiec tu jedno nacisniecie wypelnia
+ * caly kwestionariusz i od razu pokazuje wynik. Sa to trzy typowe ukladki, a
+ * nie stan czyjejkolwiek firmy, a punktacja liczy sie z nich na zywo.
+ */
+const SCENARIUSZE: Scenariusz<Record<number, Answer>>[] = [
+  {
+    etykieta: "Bez CRM, wszystko w mailu",
+    opis: "Leady w skrzynce i arkuszu, nikt nie ma przypisanego zapytania.",
+    dane: {
+      1: "nie",
+      2: "nie",
+      3: "nie",
+      4: "nie",
+      5: "nie",
+      6: "nie",
+      7: "tak",
+      8: "nie",
+      9: "tak",
+      10: "nie",
+    },
+  },
+  {
+    etykieta: "CRM jest, ale ręczny",
+    opis: "Etapy i raport poukładane, wpisy i przypomnienia z palca.",
+    dane: {
+      1: "tak",
+      2: "tak",
+      3: "tak",
+      4: "nie",
+      5: "nie",
+      6: "tak",
+      7: "tak",
+      8: "tak",
+      9: "tak",
+      10: "nie",
+    },
+  },
+  {
+    etykieta: "Pipeline poukładany",
+    opis: "Etapy, właściciele i przypomnienia działają same.",
+    dane: {
+      1: "tak",
+      2: "tak",
+      3: "tak",
+      4: "tak",
+      5: "tak",
+      6: "tak",
+      7: "nie",
+      8: "tak",
+      9: "nie",
+      10: "tak",
+    },
   },
 ];
 
@@ -289,6 +350,7 @@ function AnswerButton({
 
 export default function AudytCRM() {
   const [answers, setAnswers] = useState<Record<number, Answer>>({});
+  const [wybrany, setWybrany] = useState<string | null>(null);
   const submittedRef = useRef(false);
   const resultRef = useRef<HTMLDivElement>(null);
 
@@ -310,6 +372,8 @@ export default function AudytCRM() {
       score: result.score,
       weakest_area: result.weakestArea ?? "brak",
     });
+    // Uruchomieniem jest tu komplet odpowiedzi, wlasnych albo podstawionych.
+    zglosZdarzenie("uruchomiono_skan");
     // Auto-scroll do wyniku
     setTimeout(() => {
       const el = resultRef.current;
@@ -320,11 +384,18 @@ export default function AudytCRM() {
   }, [isComplete, result.score, result.weakestArea]);
 
   const setAnswer = (id: number, value: Answer) => {
+    setWybrany(null);
     setAnswers((prev) => ({ ...prev, [id]: value }));
+  };
+
+  const wybierzScenariusz = (dane: Record<number, Answer>, etykieta: string) => {
+    setWybrany(etykieta);
+    setAnswers({ ...dane });
   };
 
   const reset = () => {
     setAnswers({});
+    setWybrany(null);
     submittedRef.current = false;
   };
 
@@ -366,6 +437,13 @@ export default function AudytCRM() {
           że nie działa świadomie.
         </p>
       </div>
+
+      <Scenariusze
+        pozycje={SCENARIUSZE}
+        wybrany={wybrany}
+        onWybor={wybierzScenariusz}
+        wstep="Nie chcesz odpowiadać na dziesięć pytań? Zobacz gotowy przypadek:"
+      />
 
       <ProgressBar done={answeredCount} total={QUESTIONS.length} />
 

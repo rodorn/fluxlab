@@ -2,6 +2,8 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { event as gaEvent } from "@/lib/gtag";
+import { zglosZdarzenie } from "@/lib/zdarzenie";
+import Scenariusze, { type Scenariusz } from "@/components/Scenariusze";
 import TrackedCTA from "@/components/TrackedCTA";
 
 /* ──────────────── types & defaults ──────────────── */
@@ -38,6 +40,48 @@ const FREQUENCY_LABELS: Record<Frequency, string> = {
   kilka_w_mies: "kilka razy w miesiącu",
   okazjonalnie: "okazjonalnie",
 };
+
+/*
+ * Trzy procesy do podstawienia jednym klikniecem. Dobrane tak, zeby kazdy
+ * wychodzil na inna odpowiedz, bo to jest tutaj cala tresc narzedzia: nie
+ * kazdy proces oplaca sie automatyzowac. Sa to typowe ukladki, nie dane
+ * czyjejkolwiek firmy, a werdykt liczy sie z nich na zywo.
+ */
+const SCENARIUSZE: Scenariusz<Inputs>[] = [
+  {
+    etykieta: "Codzienne przepisywanie",
+    opis: "Zamówienia z maila do systemu, cały zespół, codziennie.",
+    dane: {
+      czasH: 60,
+      kosztH: 60,
+      frequency: "codziennie",
+      repetitive: true,
+      team: "zespol",
+    },
+  },
+  {
+    etykieta: "Raport na koniec miesiąca",
+    opis: "Jedna osoba, kilka razy w miesiącu, stały układ danych.",
+    dane: {
+      czasH: 8,
+      kosztH: 80,
+      frequency: "kilka_w_mies",
+      repetitive: true,
+      team: "1",
+    },
+  },
+  {
+    etykieta: "Nietypowe zamówienia",
+    opis: "Często, ale za każdym razem trochę inaczej.",
+    dane: {
+      czasH: 25,
+      kosztH: 70,
+      frequency: "kilka_w_tyg",
+      repetitive: false,
+      team: "2-3",
+    },
+  },
+];
 
 /* Etat orientacyjny: 168h/mies (zgodnie z briefem). */
 const FULL_TIME_HOURS = 168;
@@ -362,8 +406,26 @@ function MetricCard({
 
 export default function Kalkulator() {
   const [data, setData] = useState<Inputs>(DEFAULTS);
+  const [wybrany, setWybrany] = useState<string | null>(null);
   const submittedRef = useRef(false);
   const userTouchedRef = useRef(false);
+
+  // Uruchomieniem kalkulatora jest pierwsza zmiana danych w sesji, wlasna albo
+  // przez podstawienie gotowego procesu. Liczy sie raz, bo werdykt przelicza
+  // sie przy kazdym nacisnieciu klawisza.
+  const zglosUruchomienie = useRef((d: Inputs) => {
+    if (submittedRef.current) return;
+    submittedRef.current = true;
+    gaEvent("calculator_submit", {
+      calculator: "hire_vs_automate",
+      czas_h: d.czasH,
+      koszt_h: d.kosztH,
+      frequency: d.frequency,
+      repetitive: d.repetitive,
+      team: d.team,
+    });
+    zglosZdarzenie("uruchomiono_skan");
+  }).current;
 
   useEffect(() => {
     gaEvent("calculator_viewed", { calculator: "hire_vs_automate" });
@@ -372,24 +434,21 @@ export default function Kalkulator() {
   // calculator_submit raz po pierwszej zmianie inputu
   useEffect(() => {
     if (!userTouchedRef.current || submittedRef.current) return;
-    const t = setTimeout(() => {
-      if (submittedRef.current) return;
-      submittedRef.current = true;
-      gaEvent("calculator_submit", {
-        calculator: "hire_vs_automate",
-        czas_h: data.czasH,
-        koszt_h: data.kosztH,
-        frequency: data.frequency,
-        repetitive: data.repetitive,
-        team: data.team,
-      });
-    }, 800);
+    const t = setTimeout(() => zglosUruchomienie(data), 800);
     return () => clearTimeout(t);
-  }, [data]);
+  }, [data, zglosUruchomienie]);
 
   const set = <K extends keyof Inputs>(key: K, val: Inputs[K]) => {
     userTouchedRef.current = true;
+    setWybrany(null);
     setData((prev) => ({ ...prev, [key]: val }));
+  };
+
+  const wybierzScenariusz = (dane: Inputs, etykieta: string) => {
+    userTouchedRef.current = true;
+    setWybrany(etykieta);
+    setData(dane);
+    zglosUruchomienie(dane);
   };
 
   const result = useMemo(() => {
@@ -418,6 +477,13 @@ export default function Kalkulator() {
             obsługi 100 leadów miesięcznie, podmień na własne.
           </p>
         </div>
+
+        <Scenariusze
+          pozycje={SCENARIUSZE}
+          wybrany={wybrany}
+          onWybor={wybierzScenariusz}
+          wstep="Nie wiesz, od czego zacząć? Podstaw gotowy proces:"
+        />
 
         <div className="grid sm:grid-cols-2 gap-6">
           <NumberField

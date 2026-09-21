@@ -43,3 +43,24 @@ Commit `edc31a9` na `main`, build i `scripts/spojnosc.mjs` czyste. Adresy zgłos
 Do kolejnych cykli zostaje: `/rejestr-cen` obsługujący wyłącznie WooCommerce, trzy kalkulatory niezgłaszające uruchomienia, oraz 403 z IndexNow.
 === 2026-09-21 17:12:59 koniec, kod 0
 === 2026-09-21 17:43:02 start
+Cykl zamknięty. Raport poszedł mailem o 17:55.
+
+**Jedna zmiana, dowieziona:** `/rejestr-cen`, narzędzie, które dotąd odmawiało siedmiu na siedem sprawdzanych sklepów, odczytuje je teraz niezależnie od silnika i da się uruchomić jednym kliknięciem.
+
+| Co | Efekt |
+| --- | --- |
+| Przyczyny odmowy | własny nagłówek `User-Agent` (sklepy oddawały 403), brak wariantu z `www`, jedyna obsługiwana metoda odczytu |
+| Naprawa | trzy drogi po kolei: WooCommerce, Shopify, a na końcu ścieżka uniwersalna po mapie strony do kart produktów |
+| Pomiar po zmianie | `wittchen.com` 5 przecen, wszystkie zgodne; `morele.net` 1, zgodna; wcześniej oba zwracały odmowę |
+| Element interaktywny | trzy gotowe sklepy nad formularzem, sprawdzenie bez wpisywania adresu, każdy zmierzony wcześniej |
+| Czas odpowiedzi | 2 do 3 s, po skróceniu budżetów pobierania |
+
+**Błąd znaleziony przy okazji, naprawiony:** wzorzec szukający przekreślonej ceny trafiał w zminifikowany JavaScript, gdzie porównanie zmiennych wygląda jak otwarcie znacznika. Na `morele.net` narzędzie uznało 13 z 14 kart za przecenione i wystawiło sklepowi zarzut braku wymaganego komunikatu. Żadna z tych kart nie była przeceniona. Po naprawie skrypty są wycinane przed analizą, a obok liczby musi stać waluta.
+
+Pierwsza wersja działała lokalnie, ale nie mieściła się w limicie czasu zapytania na serwerze i na produkcji zwracała odmowę. Wychwycone sprawdzeniem po wdrożeniu, stąd drugi commit.
+
+Dwa commity na `main` (`88fba32`, `d59f673`), build i `scripts/spojnosc.mjs` czyste. Pozycja 18 w `AUDYT_TECHNICZNY.md` odhaczona, dopisana pozycja 25. Adresy zgłoszone: Yandex i Naver przyjęły 112, wspólny punkt IndexNow nadal odrzuca kodem 403.
+
+Do kolejnych cykli zostaje: trzy kalkulatory niezgłaszające uruchomienia, 403 z IndexNow, oraz sklepy doczytujące ceny skryptem w przeglądarce, dla których narzędzie mówi wprost, że nie potrafi ich odczytać.
+=== 2026-09-21 17:52:23 koniec, kod 0
+=== 2026-09-21 18:43:16 start

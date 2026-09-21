@@ -2,7 +2,9 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { event as gaEvent } from "@/lib/gtag";
+import { zglosZdarzenie } from "@/lib/zdarzenie";
 import TrackedCTA from "@/components/TrackedCTA";
+import Scenariusze, { type Scenariusz } from "@/components/Scenariusze";
 
 /* ──────────────── types & defaults ──────────────── */
 
@@ -23,6 +25,51 @@ const DEFAULTS: Inputs = {
   wartoscKlienta: 5000,
   konwersja: 5,
 };
+
+/*
+ * Trzy ukladki danych do podstawienia jednym klikniecem. Roznia sie tym, co
+ * w tym rachunku wazy najwiecej: liczba leadow, wartosc klienta i czas na
+ * obsluge jednego zapytania. Sa to typowe rzedy wielkosci dla tych trzech
+ * rodzajow firm, a nie dane czyjejkolwiek firmy.
+ */
+const SCENARIUSZE: Scenariusz<Inputs>[] = [
+  {
+    etykieta: "Agencja B2B",
+    opis: "Mało zapytań, długa obsługa, wysoka wartość klienta.",
+    dane: {
+      leadyMies: 40,
+      czasMin: 8,
+      kosztH: 70,
+      opoznione: 25,
+      wartoscKlienta: 12000,
+      konwersja: 8,
+    },
+  },
+  {
+    etykieta: "Sklep internetowy",
+    opis: "Dużo krótkich zapytań, niski koszyk, częste opóźnienia.",
+    dane: {
+      leadyMies: 400,
+      czasMin: 3,
+      kosztH: 45,
+      opoznione: 45,
+      wartoscKlienta: 400,
+      konwersja: 12,
+    },
+  },
+  {
+    etykieta: "Firma usługowa",
+    opis: "Średnia skala, jeden handlowiec na wszystkie zapytania.",
+    dane: {
+      leadyMies: 120,
+      czasMin: 6,
+      kosztH: 60,
+      opoznione: 35,
+      wartoscKlienta: 3500,
+      konwersja: 6,
+    },
+  },
+];
 
 /* Procent opóźnionych leadów efektywnie traconych (zakładamy 30%) */
 const LOST_RATIO = 0.3;
@@ -183,8 +230,28 @@ function MetricCard({
 
 export default function KalkulatorLeadow() {
   const [data, setData] = useState<Inputs>(DEFAULTS);
+  const [wybrany, setWybrany] = useState<string | null>(null);
   const submittedRef = useRef(false);
   const userTouchedRef = useRef(false);
+
+  // Uruchomieniem kalkulatora jest pierwsza zmiana danych w sesji, wlasna
+  // albo przez podstawienie gotowego ukladu. Liczy sie raz, bo wynik zmienia
+  // sie przy kazdym nacisnieciu klawisza i kazde z nich byloby osobnym
+  // zdarzeniem.
+  const zglosUruchomienie = useRef((d: Inputs) => {
+    if (submittedRef.current) return;
+    submittedRef.current = true;
+    gaEvent("calculator_submit", {
+      calculator: "leads_cost",
+      leady_mies: d.leadyMies,
+      czas_min: d.czasMin,
+      koszt_h: d.kosztH,
+      opoznione_pct: d.opoznione,
+      wartosc_klienta: d.wartoscKlienta,
+      konwersja_pct: d.konwersja,
+    });
+    zglosZdarzenie("uruchomiono_skan");
+  }).current;
 
   // calculator_viewed na entry, spójne z innymi kalkulatorami
   useEffect(() => {
@@ -194,25 +261,21 @@ export default function KalkulatorLeadow() {
   // calculator_submit raz na sesję, po pierwszej zmianie inputu (debounce 800ms)
   useEffect(() => {
     if (!userTouchedRef.current || submittedRef.current) return;
-    const t = setTimeout(() => {
-      if (submittedRef.current) return;
-      submittedRef.current = true;
-      gaEvent("calculator_submit", {
-        calculator: "leads_cost",
-        leady_mies: data.leadyMies,
-        czas_min: data.czasMin,
-        koszt_h: data.kosztH,
-        opoznione_pct: data.opoznione,
-        wartosc_klienta: data.wartoscKlienta,
-        konwersja_pct: data.konwersja,
-      });
-    }, 800);
+    const t = setTimeout(() => zglosUruchomienie(data), 800);
     return () => clearTimeout(t);
-  }, [data]);
+  }, [data, zglosUruchomienie]);
 
   const set = <K extends keyof Inputs>(key: K, val: Inputs[K]) => {
     userTouchedRef.current = true;
+    setWybrany(null);
     setData((prev) => ({ ...prev, [key]: val }));
+  };
+
+  const wybierzScenariusz = (dane: Inputs, etykieta: string) => {
+    userTouchedRef.current = true;
+    setWybrany(etykieta);
+    setData(dane);
+    zglosUruchomienie(dane);
   };
 
   const result = useMemo(() => {
@@ -253,6 +316,13 @@ export default function KalkulatorLeadow() {
             B2B, podmień na własne, żeby zobaczyć realny koszt u siebie.
           </p>
         </div>
+
+        <Scenariusze
+          pozycje={SCENARIUSZE}
+          wybrany={wybrany}
+          onWybor={wybierzScenariusz}
+          wstep="Nie masz teraz swoich liczb pod ręką? Podstaw gotowe:"
+        />
 
         <div className="grid sm:grid-cols-2 gap-6">
           <NumberField
