@@ -132,3 +132,8 @@ Adresy zgłoszone: Yandex i Naver przyjęły 112, wspólny punkt IndexNow nadal 
 Do kolejnych cykli z audytów: rozjazd ceny panelu zwrotów (katalog 900 zł, strona 490 zł), kontrast w stopce, brakujący H1 na `/kontakt`, za długie `title` i `description`, 403 z IndexNow.
 === 2026-09-21 19:51:15 koniec, kod 0
 === 2026-09-21 20:43:06 start
+=== 2026-09-21 21:00 koniec cyklu: /produkty da sie zawezic filtrem po filarze i grupie
+Commity 8881dc1, 1f7f5e2, 8c4bf3e. Build i spojnosc czyste. IndexNow: Yandex i Naver 200, wspolny punkt 403.
+Mail wyslany 21:00 na iwanekpawel55@gmail.com z trzema zrzutami i raportem ruchu.
+Do kolejnych cykli: rozjazd ceny panelu zwrotow (900 kontra 490), dwa produkty bez ceny,
+blad w danych strukturalnych cen (ProductLanding), kontrast w stopce, H1 na /kontakt, 403 z IndexNow.
