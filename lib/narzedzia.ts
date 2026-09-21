@@ -20,6 +20,14 @@ export type Narzedzie = {
 
 export const businessTools: Narzedzie[] = [
   {
+    title: "Pełny audyt techniczny strony",
+    description:
+      "Jedno wpisanie adresu zamiast siedmiu osobnych sprawdzeń. Mierzę szybkość na komputerze i osobno na telefonie, ważę każdy plik, czytam certyfikat, sprawdzam widoczność w wyszukiwarce, dostęp dla asystentów AI i zabezpieczenia poczty. Na końcu dostajesz kolejność poprawek i cenę naprawy przy każdej pozycji.",
+    href: "/audyt-strony",
+    ikona: "lupa",
+    badge: "Nowość",
+  },
+  {
     title: "Czy przeglądarka straszy Twoją stroną",
     description:
       "Wpisz adres strony, a pokażę, co widzi ktoś, kto trafia do Ciebie z wyszukiwarki. Wygasły certyfikat albo certyfikat firmy hostingowej oznacza pełnoekranowe ostrzeżenie, po którym większość odwiedzających zawraca.",

@@ -31,6 +31,19 @@ type Sytuacja = {
 
 const SYTUACJE: Sytuacja[] = [
   {
+    klucz: "nie_wiem",
+    etykieta: "Nie wiem, co jest nie tak",
+    odpowiedz:
+      "Najczęstsza sytuacja i najlepszy moment na jedno pełne badanie zamiast zgadywania, które sprawdzenie odpalić. Wychodzi z niego lista tego, co faktycznie wymaga uwagi, w kolejności.",
+    wskazania: [
+      {
+        href: "/audyt-strony",
+        powod:
+          "Jedno wpisanie adresu obejmuje szybkość na komputerze i na telefonie, certyfikat, widoczność w wyszukiwarce, dostęp dla asystentów AI i zabezpieczenia poczty naraz.",
+      },
+    ],
+  },
+  {
     klucz: "wyszukiwarka",
     etykieta: "Nie znajdują nas w wyszukiwarce",
     odpowiedz:

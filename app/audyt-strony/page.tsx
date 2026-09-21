@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
+
+import AudytCheck from "@/components/AudytCheck";
 import ProductLanding from "@/components/ProductLanding";
 
 export const metadata: Metadata = {
-  title: "Audyt szybkości i błędów strony, 19 zł | Fluxlab",
+  title: "Darmowy audyt techniczny strony, raport w minutę | Fluxlab",
   description:
-    "Automat przechodzi po Twojej stronie, mierzy czas ładowania na telefonie, znajduje błędy konsoli, martwe linki i braki SEO. Lista poprawek uszeregowana po realnym wpływie, nie 200 uwag bez priorytetów. 19 zł.",
+    "Wpisz adres, a zmierzę szybkość na komputerze i na telefonie, sprawdzę certyfikat, widoczność w wyszukiwarce, dostęp dla asystentów AI i zabezpieczenia poczty. Raport z listą poprawek w kolejności i z ceną naprawy. Bez rejestracji i bez podawania e-maila.",
   alternates: { canonical: "/audyt-strony" },
   openGraph: {
-    title: "Audyt szybkości i błędów strony, 19 zł | Fluxlab",
+    title: "Darmowy audyt techniczny strony | Fluxlab",
     description:
-      "Szybkość na telefonie, błędy konsoli, martwe linki i braki SEO, z listą poprawek uszeregowaną po realnym wpływie. 19 zł.",
+      "Szybkość na telefonie, certyfikat, widoczność w wyszukiwarce i u asystentów AI. Raport z kolejnością poprawek i wyceną naprawy, za darmo i bez rejestracji.",
     locale: "pl_PL",
     type: "website",
     images: [
@@ -17,7 +19,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab, audyt szybkości i błędów strony",
+        alt: "Fluxlab, darmowy audyt techniczny strony",
       },
     ],
   },
@@ -27,80 +29,99 @@ export default function Page() {
   return (
     <ProductLanding
       slug="audyt-strony"
+      tool={<AudytCheck />}
       breadcrumb="Audyt strony"
-      eyebrow="Audyt techniczny"
-      h1="Sprawdź, co spowalnia i psuje Twoją stronę"
-      lead="Darmowe narzędzia wypluwają setkę uwag bez znaczenia i zostawiają Cię z pytaniem, od czego zacząć. Ja przechodzę po stronie automatem i oddaję listę poprawek ustawioną według tego, co realnie wpływa na szybkość i na to, jak widzi Cię Google."
-      ctaLabel="Zamów audyt za 19 zł"
-      ctaNote="Raport tego samego dnia"
+      eyebrow="Darmowy audyt techniczny"
+      h1="Zobacz, co jest nie tak z Twoją stroną, zanim zapłacisz komukolwiek"
+      lead="Wpisz adres i poczekaj kilkadziesiąt sekund. Zmierzę szybkość na komputerze i osobno na telefonie, zważę każdy plik, sprawdzę certyfikat, widoczność w wyszukiwarce, dostęp dla asystentów AI oraz zabezpieczenia poczty. Dostaniesz raport z listą poprawek ułożoną w kolejności i z ceną za naprawę. Za darmo, bez rejestracji, bez podawania adresu e-mail."
+      ctaLabel="Porozmawiajmy o naprawie"
+      ctaNote="Diagnoza nic nie kosztuje"
       checks={[
         {
-          title: "Szybkość tam, gdzie boli",
-          desc: "Pomiar na warunkach telefonu, bo tam traci się klientów. Wskazuję konkretne pliki i obrazy, które blokują wyświetlenie treści.",
+          title: "Osobny pomiar dla telefonu",
+          desc: "Pobieram stronę drugi raz z nagłówkami telefonu i sprawdzam, czy układ ma się czym przestawić, czy obrazy mają wersje na mniejszy ekran i ile to wszystko waży na łączu komórkowym.",
         },
         {
-          title: "Błędy, których nie widzisz",
-          desc: "Błędy konsoli, nieładujące się zasoby, mieszana zawartość i martwe odnośniki, czyli rzeczy działające u Ciebie w przeglądarce, a psujące się u innych.",
+          title: "Liczby, nie wrażenia",
+          desc: "Ważę każdy plik z osobna zamiast wierzyć deklaracjom serwera i podaję, ilu plików nie udało się zważyć. Przy każdym ustaleniu widzisz, co dokładnie zmierzyłem.",
         },
         {
-          title: "Braki widoczne dla Google",
-          desc: "Brakujące tytuły i opisy, duplikaty, nagłówki w złej kolejności, brak opisów obrazków, nieprawidłowe adresy kanoniczne.",
+          title: "Kolejność zamiast listy uwag",
+          desc: "Darmowe skanery oddają setkę uwag bez znaczenia. Tu dostajesz kilka kroków w kolejności wykonania, z wyjaśnieniem, dlaczego akurat ten jest pierwszy.",
         },
         {
-          title: "Priorytety, nie lista życzeń",
-          desc: "Każda pozycja ma szacowany wpływ i pracochłonność, żeby dało się zacząć od trzech rzeczy, które dają najwięcej.",
+          title: "Cena naprawy od razu w raporcie",
+          desc: "Przy każdym problemie stoi koszt jego usunięcia, a na końcu cena za komplet. Widzisz też, które rzeczy zrobisz sam bez programisty, więc nie płacisz za to nikomu.",
         },
       ]}
       pricing={[
         {
-          name: "Audyt strony",
-          price: "19 zł",
-          desc: "Jedna strona lub sklep do dwustu podstron.",
+          name: "Audyt",
+          price: "0 zł",
+          desc: "Pełny raport, od ręki, bez zakładania konta.",
           features: [
-            "szybkość na telefonie i desktopie",
-            "błędy techniczne i martwe linki",
-            "braki SEO na stronach kluczowych",
-            "lista poprawek według wpływu",
+            "pomiar na komputerze i na telefonie",
+            "certyfikat, wyszukiwarka, asystenci AI, poczta",
+            "kolejność poprawek z uzasadnieniem",
+            "wycena naprawy i lista potrzebnych dostępów",
           ],
           featured: true,
         },
         {
-          name: "Audyt z wdrożeniem",
-          price: "od 149 zł",
-          desc: "Nie masz kogo poprosić o naprawę.",
+          name: "Naprawa warstwy krytycznej",
+          price: "od 150 zł",
+          desc: "Tylko to, co blokuje. Reszta czeka.",
           features: [
-            "wszystko z audytu",
-            "wdrożenie poprawek technicznych",
+            "rzeczy oznaczone w raporcie jako krytyczne",
             "ponowny pomiar po zmianach",
-            "krótkie podsumowanie, co się poprawiło",
+            "krótkie podsumowanie, co się zmieniło",
+          ],
+        },
+        {
+          name: "Naprawa kompletu",
+          price: "wg raportu",
+          desc: "Wszystkie ustalenia z audytu w jednym podejściu, taniej niż każde osobno.",
+          features: [
+            "wszystkie poprawki z raportu",
+            "rabat rosnący z liczbą pozycji",
+            "ponowny audyt na dowód",
+            "wycena wiążąca przez 30 dni",
           ],
         },
       ]}
       faq={[
         {
-          q: "Czym to się różni od darmowego PageSpeed?",
-          a: "PageSpeed ocenia pojedynczy adres i podaje uwagi bez kontekstu Twojej strony. Ja przechodzę po wielu podstronach, łączę wyniki z błędami technicznymi i brakami SEO, a potem układam to w kolejność działania.",
+          q: "Czemu to jest za darmo?",
+          a: "Bo diagnoza zajmuje maszynie kilkadziesiąt sekund, a naprawa zajmuje mnie. Wolę, żeby ktoś przyszedł do mnie z gotową listą i sam zdecydował, czy chce ją zlecić, niż żeby płacił mi za dowiedzenie się, co jest nie tak. Jeżeli okaże się, że strona jest w porządku, raport tak powie i nie będę szukał problemów na siłę.",
         },
         {
-          q: "Czy potrzebujesz dostępu do mojej strony?",
-          a: "Nie do audytu. Wystarczy publiczny adres. Dostęp jest potrzebny dopiero, gdy zamawiasz wdrożenie poprawek.",
+          q: "Czym to się różni od PageSpeed Insights?",
+          a: "PageSpeed uruchamia przeglądarkę i mierzy czas rysowania, czego ja nie robię i wprost o tym piszę w raporcie. Za to sprawdzam rzeczy, których PageSpeed nie rusza: certyfikat i jego zgodność z domeną, duplikat wersji z www i bez www, dostęp dla robotów asystentów AI, zabezpieczenia poczty oraz to, czy strona nie prosi wyszukiwarki, żeby ją pominęła. Na końcu podaję cenę naprawy, a nie samą ocenę.",
         },
         {
-          q: "Czy audyt czymś obciąży serwer?",
-          a: "Nie. Przechodzę po stronie spokojnie, z opóźnieniami między żądaniami, tak jak zwykły użytkownik, a nie jak masowy skaner.",
+          q: "Czy muszę podać e-mail?",
+          a: "Nie. Raport pokazuje się na ekranie od razu i jest kompletny. Adres podajesz tylko wtedy, gdy chcesz dostać ten sam dokument na skrzynkę, żeby przesłać go dalej informatykowi albo agencji.",
         },
         {
-          q: "Co dostaję fizycznie?",
-          a: "Raport PDF z listą poprawek, pomiarami i zrzutami. Jeśli chcesz, dorzucam wersję w arkuszu do odhaczania.",
+          q: "Czy audyt obciąży mój serwer?",
+          a: "Nie w stopniu, który dałoby się zauważyć. Pobieram stronę główną dwa razy i najwyżej trzydzieści plików, które i tak pobiera każdy odwiedzający. Przedstawiam się w nagłówku jako FluxlabAudyt, więc zobaczycie mnie w logach.",
+        },
+        {
+          q: "Czy potrzebujesz dostępów do czegokolwiek?",
+          a: "Do audytu nie, wystarczy publiczny adres. Dostępy są potrzebne dopiero przy naprawie i raport wypisuje dokładnie które. Nigdy nie potrzebuję Waszych haseł, tylko konta nadanego mnie, które cofniecie jednym kliknięciem po zakończeniu pracy.",
+        },
+        {
+          q: "Skąd mam wiedzieć, że wycena nie jest naciągana?",
+          a: "Bo przy każdym pojedynczym problemie stoi jego cena i widzicie, z czego składa się suma. Cena za komplet jest niższa niż suma pozycji, bo dostępy, wdrożenie i testy robi się raz. Część rzeczy raport oznacza jako możliwe do zrobienia samodzielnie i wtedy wprost mówi, żeby za nie nie płacić.",
         },
       ]}
-      formId="order_audyt_strony"
-      formHeading="Zamów audyt strony"
-      formIntro="Podaj adres strony i napisz, co Cię najbardziej uwiera: wolne ładowanie, spadki w Google, błędy na telefonie. Jeśli masz konkretne podstrony do sprawdzenia, wypisz je."
-      submitLabel="Zamów audyt"
-      microCopy="Raport zwykle tego samego dnia. Płatność ustalamy mailowo po potwierdzeniu zakresu."
-      serviceName="Audyt szybkości i błędów strony"
-      serviceDesc="Automatyczny audyt techniczny strony: szybkość na telefonie, błędy konsoli, martwe linki i braki SEO, z listą poprawek według realnego wpływu. 19 zł."
+      formId="audyt_strony_naprawa"
+      formHeading="Raport pokazał coś, czego nie chcesz ruszać sam"
+      formIntro="Wklej adres strony i napisz, która pozycja z raportu Cię niepokoi. Odpiszę, ile to zajmie i czy da się to zrobić taniej, niż wyszło w wycenie."
+      submitLabel="Napisz w sprawie naprawy"
+      microCopy="Odpisuję zwykle tego samego dnia. Ustalenia prowadzę mailowo."
+      serviceName="Darmowy audyt techniczny strony internetowej"
+      serviceDesc="Bezpłatne badanie strony: szybkość na komputerze i na telefonie, waga plików, certyfikat, widoczność w wyszukiwarce, dostęp dla asystentów AI i zabezpieczenia poczty, z listą poprawek w kolejności i wyceną naprawy."
       serviceType="Audyt techniczny strony internetowej"
     />
   );

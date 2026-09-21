@@ -277,3 +277,24 @@ Sprawdzenia przeklikane w przeglądarce na lokalnym buildzie produkcyjnym: audyt
 Szósty tekst, `konwersje-pokazuja-zero`, mówi wprost, że dla błędów pomiaru konwersji sprawdzenia na jedno kliknięcie nie mam, bo rozstrzygnięcie wymaga zajrzenia w ustawienia konkretnej strony. W audycie treści odhaczone 5.4. Wpis w `cykl/dziennik.md` dopisany, maila nie wysyłałem.
 === 2026-09-22 00:48:42 koniec, kod 0
 === 2026-09-22 01:43:06 start
+Cykl zamknięty i wdrożony.
+
+**Zrobione:** audyt treści 2.4 — cztery strony branżowe (biura rachunkowe, e-commerce, agencje marketingowe, leasing) mówiły „my", jakby stała za nimi agencja. Cała reszta serwisu mówi w pierwszej osobie liczby pojedynczej.
+
+| Metryka | Przed | Po |
+| --- | --- | --- |
+| Formy „my" na czterech stronach | 103 | 0 poza pytaniami FAQ |
+| Liczby bez źródła na tych stronach | 3 | 0 |
+| Zdania sugerujące klientów | 3 | 0 |
+| Sprawdzenia bez przycisku z przykładem | 1 z 14 | 0 z 14 |
+
+Liczbę mnogą zostawiłem celowo w pytaniach FAQ, bo tam mówi czytelnik o swojej firmie („Pracujemy w Comarch Optima", „Mamy 30 klientów"). Wycięte liczby: onboarding „z 2 dni do 30 minut", „9 na 10 firm leasingowych", „oszczędza 80% ręcznej pracy". Zdanie „Pracuję na wszystkich" o czterech systemach księgowych zamienione na opis tego, co robi warstwa pośrednia, bo doświadczenia na Optimie, Symfonii, Enovie i InsERT nie ma. Poza tymi stronami poprawione `components/Pricing.tsx`, `components/Footer.tsx` („Nasza wizytówka w Zleca.pl", dodana wczoraj) i jedno zdanie na `/wdrozenie-n8n-cena`.
+
+**Element interaktywny:** `components/DoplataCheck.tsx:142` — audyt kurierski był ostatnim z czternastu sprawdzeń bez przycisku z gotowym przykładem. Teraz dwie pozycje faktury liczą się jednym kliknięciem: 25 kg / 30 zł / 12,75 zł daje zielone „Dopłata policzona prawidłowo", 18 kg / 24 zł / 10,20 zł daje czerwone „Naliczono o 1.39 zł za dużo" ze wskazaniem pomylonego progu wagowego. Obie sprawdzone przez API na lokalnym buildzie produkcyjnym.
+
+Build i `scripts/spojnosc.mjs` czyste, commity `bbe1a3c` i `ed205ed` na `origin/main`, produkcja potwierdzona dwoma zapytaniami, IndexNow przyjęty przez Yandex i Naver (wspólny punkt nadal 403, jak w poprzednich cyklach).
+
+Dwie rzeczy warte uwagi:
+- Nie ma kontroli pilnującej głosu na przyszłość. Reguła w `spojnosc.mjs` wymaga wcześniej odsiania kilkunastu miejsc, gdzie „my" znaczy „ja i klient razem" („jakie systemy łączymy", „dobieramy w diagnozie"). To osobny cykl, wpisane w dziennik.
+- W katalogu pojawiły się dwa nieśledzone pliki, `lib/audyt-ocena.ts` i `lib/audyt-pomiar.ts`, których nie tworzyłem i które nie istniały na starcie cyklu. Nie ruszałem ich.
+=== 2026-09-22 01:48:21 koniec, kod 0
