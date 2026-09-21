@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { zglosZdarzenie } from "@/lib/zdarzenie";
 
 interface Wynik {
   status: string;
@@ -49,6 +50,7 @@ export default function DomenaCheck() {
   async function sprawdz(e: React.FormEvent) {
     e.preventDefault();
     setStan("ladowanie");
+    zglosZdarzenie("uruchomiono_skan");
     setBlad("");
     setWynik(null);
     setLeadStan("idle");

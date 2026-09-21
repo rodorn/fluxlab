@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { zglosZdarzenie } from "@/lib/zdarzenie";
 
 interface Wynik {
   status: "OK";
@@ -36,6 +37,7 @@ export default function KalkulatorAutomatyzacji() {
   async function policz(e: React.FormEvent) {
     e.preventDefault();
     setStan("ladowanie");
+    zglosZdarzenie("uruchomiono_kalkulator");
     setBlad("");
     setWynik(null);
     setLeadStan("idle");

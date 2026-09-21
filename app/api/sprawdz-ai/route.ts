@@ -216,6 +216,42 @@ function szkicLlms(
   return linie.join("\n");
 }
 
+
+// Szkic danych uporzadkowanych. Brak tego elementu jest w naszym pomiarze
+// najczestszy (54 procent stron), a jednoczesnie najtanszy do naprawienia,
+// bo to kilkanascie linii w dokumencie. Tak jak przy llms.txt, nie zgadujemy
+// nic o firmie: bierzemy tylko to, co strona juz o sobie mowi, a reszte
+// zostawiamy jako wyrazny do uzupelnienia.
+function szkicDanych(
+  domena: string,
+  tytul: string | null,
+  opis: string | null,
+  html: string,
+): string {
+  const nazwa = (tytul || domena).split(/[|\u2013-]/)[0].trim() || domena;
+  const mail = html.match(/mailto:([\w.+-]+@[\w.-]+\.\w{2,})/i)?.[1];
+  const telefon = html.match(/tel:([+0-9\s()-]{9,20})/i)?.[1]?.replace(/\s+/g, " ").trim();
+
+  const dane: Record<string, unknown> = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: nazwa,
+    url: `https://${domena}`,
+    description: opis ?? "[Jedno zdanie o tym, czym zajmuje się firma i dla kogo.]",
+  };
+  const kontakt: Record<string, string> = { "@type": "ContactPoint", contactType: "customer service" };
+  if (mail) kontakt.email = mail;
+  if (telefon) kontakt.telephone = telefon;
+  if (mail || telefon) dane.contactPoint = kontakt;
+  else dane.contactPoint = { ...kontakt, email: "[adres e-mail]" };
+
+  return (
+    '<script type="application/ld+json">\n' +
+    JSON.stringify(dane, null, 2) +
+    "\n</script>"
+  );
+}
+
 export async function POST(request: Request) {
   let domena = "";
   try {
@@ -360,5 +396,8 @@ export async function POST(request: Request) {
     szkicLlms: maLlms
       ? null
       : szkicLlms(domena, tytulStrony(html), opisStrony(html), waznePodstrony(html, baza)),
+    szkicDanych: typy.length
+      ? null
+      : szkicDanych(domena, tytulStrony(html), opisStrony(html), html),
   });
 }

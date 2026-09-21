@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { zglosZdarzenie } from "@/lib/zdarzenie";
 
 interface Punkt {
   tytul: string;
@@ -16,6 +17,7 @@ interface Wynik {
   komentarz?: string;
   punkty?: Punkt[];
   szkicLlms?: string | null;
+  szkicDanych?: string | null;
 }
 
 const MOTYW: Record<string, { ramka: string; tlo: string; tekst: string; etykieta: string }> = {
@@ -53,7 +55,7 @@ export default function AiCheck() {
   const [email, setEmail] = useState("");
   const [leadStan, setLeadStan] = useState<"idle" | "wysylam" | "ok" | "blad">("idle");
   const [leadBlad, setLeadBlad] = useState("");
-  const [skopiowane, setSkopiowane] = useState(false);
+  const [skopiowane, setSkopiowane] = useState<string | null>(null);
 
   async function sprawdz(e: React.FormEvent) {
     e.preventDefault();
@@ -61,6 +63,7 @@ export default function AiCheck() {
     setBlad("");
     setWynik(null);
     setLeadStan("idle");
+    zglosZdarzenie("uruchomiono_skan");
     try {
       const res = await fetch("/api/sprawdz-ai", {
         method: "POST",
@@ -74,8 +77,9 @@ export default function AiCheck() {
         return;
       }
       setWynik(data);
-      setSkopiowane(false);
+      setSkopiowane(null);
       setStan("gotowe");
+      zglosZdarzenie(`wynik_${String(data?.werdykt ?? "brak").toLowerCase()}`);
     } catch {
       setBlad("Brak połączenia. Spróbuj ponownie za chwilę.");
       setStan("blad");
@@ -196,39 +200,61 @@ export default function AiCheck() {
             {wynik.komentarz}
           </p>
 
-          {/* Gotowy szkic zamiast samego werdyktu. Osoba, ktora nie chce
-              zostawiac adresu, i tak wychodzi stad z czyms dzialajacym, a
-              plik jest zbudowany wylacznie z tego, co strona juz o sobie
-              mowi, wiec nic tu nie jest zmyslone. */}
-          {wynik.szkicLlms && (
-            <div className="mt-5 border-t border-gray-200/70 dark:border-gray-700/70 pt-4">
-              <p className="text-sm font-semibold text-gray-900 dark:text-white">
-                Gotowy szkic pliku llms.txt dla {wynik.domena}
-              </p>
-              <p className="mt-1 text-sm text-gray-700 dark:text-gray-300">
-                Zbudowany z tego, co Twoja strona już o sobie mówi. Uzupełnij
-                miejsca w nawiasach kwadratowych, zapisz jako llms.txt i wrzuć
-                do katalogu głównego serwisu, obok robots.txt. Nic więcej.
-              </p>
-              <pre className="mt-3 max-h-72 overflow-auto rounded-lg bg-gray-950/90 p-4 text-xs leading-relaxed text-gray-100">
-                {wynik.szkicLlms}
-              </pre>
-              <button
-                type="button"
-                onClick={async () => {
-                  try {
-                    await navigator.clipboard.writeText(wynik.szkicLlms || "");
-                    setSkopiowane(true);
-                  } catch {
-                    setSkopiowane(false);
-                  }
-                }}
-                className="mt-3 rounded-lg border border-gray-300 px-4 py-2 text-sm font-semibold text-gray-900 transition-colors hover:border-accent dark:border-gray-700 dark:text-white"
-              >
-                {skopiowane ? "Skopiowane" : "Skopiuj do schowka"}
-              </button>
-            </div>
-          )}
+          {/* Gotowe fragmenty zamiast samego werdyktu. Osoba, ktora nie chce
+              zostawiac adresu, i tak wychodzi stad z czyms dzialajacym, a oba
+              pliki sa zbudowane wylacznie z tego, co strona juz o sobie mowi,
+              wiec nic tu nie jest zmyslone. */}
+          {[
+            wynik.szkicDanych && {
+              klucz: "dane",
+              tytul: `Gotowe dane uporządkowane dla ${wynik.domena}`,
+              opis:
+                "Wklej to w sekcję head swojej strony głównej. Od tego momentu maszyna odczytuje nazwę firmy i opis wprost, zamiast wnioskować z układu strony.",
+              tresc: wynik.szkicDanych,
+            },
+            wynik.szkicLlms && {
+              klucz: "llms",
+              tytul: `Gotowy szkic pliku llms.txt dla ${wynik.domena}`,
+              opis:
+                "Uzupełnij miejsca w nawiasach kwadratowych, zapisz jako llms.txt i wrzuć do katalogu głównego serwisu, obok robots.txt. Nic więcej.",
+              tresc: wynik.szkicLlms,
+            },
+          ]
+            .filter(Boolean)
+            .map((b) => {
+              const blok = b as { klucz: string; tytul: string; opis: string; tresc: string };
+              return (
+                <div
+                  key={blok.klucz}
+                  className="mt-5 border-t border-gray-200/70 dark:border-gray-700/70 pt-4"
+                >
+                  <p className="text-sm font-semibold text-gray-900 dark:text-white">
+                    {blok.tytul}
+                  </p>
+                  <p className="mt-1 text-sm text-gray-700 dark:text-gray-300">
+                    {blok.opis}
+                  </p>
+                  <pre className="mt-3 max-h-72 overflow-auto rounded-lg bg-gray-950/90 p-4 text-xs leading-relaxed text-gray-100">
+                    {blok.tresc}
+                  </pre>
+                  <button
+                    type="button"
+                    onClick={async () => {
+                      try {
+                        await navigator.clipboard.writeText(blok.tresc);
+                        setSkopiowane(blok.klucz);
+                        zglosZdarzenie(`skopiowano_${blok.klucz}`);
+                      } catch {
+                        setSkopiowane(null);
+                      }
+                    }}
+                    className="mt-3 rounded-lg border border-gray-300 px-4 py-2 text-sm font-semibold text-gray-900 transition-colors hover:border-accent dark:border-gray-700 dark:text-white"
+                  >
+                    {skopiowane === blok.klucz ? "Skopiowane" : "Skopiuj do schowka"}
+                  </button>
+                </div>
+              );
+            })}
 
           <div className="mt-5 border-t border-gray-200/70 dark:border-gray-700/70 pt-4">
             {leadStan === "ok" ? (

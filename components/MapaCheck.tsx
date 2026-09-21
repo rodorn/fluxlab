@@ -1,5 +1,6 @@
 "use client";
 
+import { zglosZdarzenie } from "@/lib/zdarzenie";
 import { useEffect, useRef, useState } from "react";
 
 interface Zepsuty {
@@ -82,6 +83,7 @@ export default function MapaCheck() {
   async function sprawdz(e: React.FormEvent) {
     e.preventDefault();
     setStan("ladowanie");
+    zglosZdarzenie("uruchomiono_skan");
     setBlad("");
     setWynik(null);
     setLeadStan("idle");
