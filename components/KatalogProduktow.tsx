@@ -28,9 +28,10 @@ import {
 } from "@/lib/products";
 import { zglosZdarzenie } from "@/lib/zdarzenie";
 
-// Na telefonie kazdy przycisk lapal wlasny wiersz i pasek rosl na siedem
-// linii, czyli caly katalog uciekal pod krawedz ekranu. Mniejszy odstep i
-// czcionka mieszcza po dwa w wierszu.
+// Na telefonie etykiety sa za dlugie, zeby zmiescic dwa przyciski w
+// wierszu, wiec pasek rosnie w dol. Mniejsza czcionka i odstep skracaja go
+// o okolo jedna trzecia, reszte zalatwia drugi poziom chowany do czasu
+// wybrania obszaru.
 const PRZYCISK =
   "rounded-full border px-2.5 py-1.5 text-xs sm:px-4 sm:py-2 sm:text-sm font-semibold transition-colors";
 const NIEAKTYWNY =
