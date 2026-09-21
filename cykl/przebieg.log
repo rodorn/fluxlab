@@ -81,3 +81,26 @@ Największa różnica jest w `/audyt-crm`: dotąd trzeba było odpowiedzieć na 
 Commit `48f3360` na `main`, build i `scripts/spojnosc.mjs` czyste. Pozycja 21 w `AUDYT_TECHNICZNY.md` odhaczona, czyli lista „znalezione przy okazji” jest domknięta. Adresy zgłoszone: Yandex i Naver przyjęły 112, wspólny punkt IndexNow nadal odrzuca kodem 403.
 
 Do kolejnych cykli zostaje: 403 z IndexNow, sklepy doczytujące ceny skryptem w przeglądarce, oraz lżejsze pozycje z audytu technicznego, czyli kontrast w stopce, brakujący H1 na `/kontakt`, za długie `title` i `description`, martwe komponenty.
+Cykl zamknięty. Serwer testowy na porcie 3311 wygaszony, dwa pozostałe procesy `next-server` w systemie są cudze i zostały nietknięte.
+
+## Co zrobione
+
+Jedna zmiana, dowieziona do końca: **trzy kalkulatory, ostatnie narzędzia w serwisie bez pomiaru uruchomień, zgłaszają je teraz do licznika i dają wynik po jednym kliknięciu** (pozycja 21 z `AUDYT_TECHNICZNY.md`).
+
+| Co | Efekt |
+| --- | --- |
+| Problem | `/kalkulator-leadow`, `/audyt-crm`, `/zatrudnic-czy-zautomatyzowac` nie wysyłały zdarzenia `uruchomiono_skan`, bo przeliczają się na bieżąco i nie mają momentu „naciśnięto przycisk" |
+| Definicja uruchomienia | pierwsza zmiana danych w sesji, liczona raz; w audycie CRM komplet dziesięciu odpowiedzi |
+| Element interaktywny | rząd trzech gotowych układów danych nad polami, wspólny `components/Scenariusze.tsx` |
+| Dobór układów | różnią się werdyktem, nie tylko liczbami: `/zatrudnic-czy-zautomatyzowac` daje trzy różne odpowiedzi łącznie z „nie automatyzuj", `/audyt-crm` 0, 5 i 10 punktów na 10 |
+| Największy zysk | `/audyt-crm` wymagał dziesięciu kliknięć, zanim pokazał cokolwiek; teraz jedno |
+
+Weryfikacja: kliknięcia w przeglądarce na lokalnym buildzie produkcyjnym we wszystkich trzech narzędziach, zdarzenie uruchomienia potwierdzone na podsłuchanym ruchu sieciowym (trzy zdarzenia, właściwe adresy), po wdrożeniu trzy zapytania na produkcję z odstępami. Build i `scripts/spojnosc.mjs` czyste, commity `48f3360` i `76cfb99` na `main`.
+
+Adresy zgłoszone: Yandex i Naver przyjęły 112, wspólny punkt IndexNow nadal odrzuca kodem 403.
+
+Mail wysłany na `iwanekpawel55@gmail.com` o 18:55, z raportem ruchu (z zastrzeżeniem o danych sprzed 21.09 godz. 16:00) i dwoma zrzutami ekranu.
+
+Dwie rzeczy warte odnotowania. Po pierwsze, środkowy scenariusz audytu CRM dawał najpierw 2/10, czyli tę samą kategorię co „bez CRM" — poprawiłem odpowiedzi tak, żeby trafiał w środkowy próg, bo inaczej dwa z trzech przycisków pokazywałyby ten sam werdykt. Po drugie, `AUDYT_TECHNICZNY.md` jest w `.gitignore`, więc odhaczenie pozycji 21 zostaje wyłącznie lokalnie.
+=== 2026-09-21 18:50:54 koniec, kod 0
+=== 2026-09-21 19:43:30 start

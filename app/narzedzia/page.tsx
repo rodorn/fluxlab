@@ -1,6 +1,15 @@
 import type { Metadata } from "next";
 
-import { businessTools, otherTools } from "@/lib/narzedzia";
+import {
+  businessTools,
+  otherTools,
+  narzedziaFilaru,
+  FILARY_NARZEDZI,
+  FILAR_INTRO_NARZEDZI,
+  type Narzedzie,
+} from "@/lib/narzedzia";
+import { CATEGORY_LABEL } from "@/lib/products";
+import WyborNarzedzia from "@/components/WyborNarzedzia";
 import Link from "next/link";
 import Image from "next/image";
 import Header from "@/components/Header";
@@ -123,6 +132,19 @@ const IKONY: Record<string, React.ReactElement> = {
       <path d="M10.4 10.4 18 18M15 15l2-2M12.8 12.8l2-2" />
     </>
   ),
+  oko: (
+    <>
+      <path d="M2.5 11S6 4.5 11 4.5 19.5 11 19.5 11 16 17.5 11 17.5 2.5 11 2.5 11Z" />
+      <circle cx="11" cy="11" r="2.6" />
+      <path d="M4 4l14 14" />
+    </>
+  ),
+  zwrot: (
+    <>
+      <path d="M4 11a7 7 0 1 1 2.6 5.4" />
+      <path d="M4 6.5V11h4.5" />
+    </>
+  ),
   rozwidlenie: (
     <>
       <path d="M11 19v-5" />
@@ -136,6 +158,63 @@ const IKONY: Record<string, React.ReactElement> = {
 
 
 
+
+/** Kafelek narzedzia. Wyjety z petli, bo lista jest teraz podzielona na trzy
+ *  filary i ten sam markup renderuje sie w trzech miejscach. */
+function KafelekNarzedzia({ tool }: { tool: Narzedzie }) {
+  return (
+    <Link
+      href={tool.href}
+      className="group relative flex flex-col rounded-2xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800/60 p-6 hover:border-accent/40 dark:hover:border-accent/50 transition-colors"
+    >
+      {tool.badge && (
+        <span className="absolute top-3 right-3 inline-flex items-center gap-1 bg-accent text-white text-xs font-semibold px-2.5 py-1 rounded-full">
+          <span className="w-1.5 h-1.5 rounded-full bg-white" />
+          {tool.badge}
+        </span>
+      )}
+      <div className="w-10 h-10 rounded-xl bg-accent-light dark:bg-accent-dark-light text-accent flex items-center justify-center mb-4">
+        <svg
+          width="22"
+          height="22"
+          viewBox="0 0 22 22"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.6"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          {IKONY[tool.ikona ?? "lista"] ?? IKONY.lista}
+        </svg>
+      </div>
+      <h4 className="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-accent transition-colors mb-2">
+        {tool.title}
+      </h4>
+      <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed flex-1 mb-5">
+        {tool.description}
+      </p>
+      <span className="text-sm font-medium text-accent inline-flex items-center gap-1.5">
+        Otwórz narzędzie
+        <svg
+          width="14"
+          height="14"
+          viewBox="0 0 14 14"
+          fill="none"
+          className="transition-transform group-hover:translate-x-0.5"
+          aria-hidden="true"
+        >
+          <path
+            d="M3 7h8m0 0L7.5 3.5M11 7l-3.5 3.5"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </span>
+    </Link>
+  );
+}
 
 export default function Narzedzia() {
   return (
@@ -183,63 +262,26 @@ export default function Narzedzia() {
                           rejestracji i bez zostawiania adresu.
                         </p>
                       </div>
-                      <div className="grid md:grid-cols-3 gap-6">
-                        {businessTools.map((tool) => (
-                          <Link
-                            key={tool.href}
-                            href={tool.href}
-                            className="group relative flex flex-col rounded-2xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800/60 p-6 hover:border-accent/40 dark:hover:border-accent/50 transition-colors"
-                          >
-                            {tool.badge && (
-                              <span className="absolute top-3 right-3 inline-flex items-center gap-1 bg-accent text-white text-xs font-semibold px-2.5 py-1 rounded-full">
-                                <span className="w-1.5 h-1.5 rounded-full bg-white" />
-                                {tool.badge}
-                              </span>
-                            )}
-                            <div className="w-10 h-10 rounded-xl bg-accent-light dark:bg-accent-dark-light text-accent flex items-center justify-center mb-4">
-                              <svg
-                                width="22"
-                                height="22"
-                                viewBox="0 0 22 22"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="1.6"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                              >
-                                {IKONY[
-                                  (tool as { ikona?: string }).ikona ?? "lista"
-                                ] ?? IKONY.lista}
-                              </svg>
-                            </div>
-                            <h3 className="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-accent transition-colors mb-2">
-                              {tool.title}
+                      <WyborNarzedzia />
+                      {FILARY_NARZEDZI.map((filar) => {
+                        const wFilarze = narzedziaFilaru(filar);
+                        if (!wFilarze.length) return null;
+                        return (
+                          <section key={filar} className="mt-12 first:mt-10">
+                            <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+                              {CATEGORY_LABEL[filar]}
                             </h3>
-                            <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed flex-1 mb-5">
-                              {tool.description}
+                            <p className="mt-1 mb-6 text-sm text-gray-600 dark:text-gray-400 max-w-2xl">
+                              {FILAR_INTRO_NARZEDZI[filar]}
                             </p>
-                            <span className="text-sm font-medium text-accent inline-flex items-center gap-1.5">
-                              Otwórz narzędzie
-                              <svg
-                                width="14"
-                                height="14"
-                                viewBox="0 0 14 14"
-                                fill="none"
-                                className="transition-transform group-hover:translate-x-0.5"
-                                aria-hidden="true"
-                              >
-                                <path
-                                  d="M3 7h8m0 0L7.5 3.5M11 7l-3.5 3.5"
-                                  stroke="currentColor"
-                                  strokeWidth="1.5"
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                />
-                              </svg>
-                            </span>
-                          </Link>
-                        ))}
-                      </div>
+                            <div className="grid md:grid-cols-3 gap-6">
+                              {wFilarze.map((tool) => (
+                                <KafelekNarzedzia key={tool.href} tool={tool} />
+                              ))}
+                            </div>
+                          </section>
+                        );
+                      })}
                     </div>
                   </div>
                 ),

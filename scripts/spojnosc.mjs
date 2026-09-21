@@ -49,6 +49,54 @@ for (const c of catalog) {
   }
 }
 
+// --- 1b. lista narzedzi zgadza sie z katalogiem ---
+// Kazdy produkt oznaczony jako majacy darmowe sprawdzenie musi byc do
+// znalezienia z /narzedzia: albo wlasnym kafelkiem, albo przez wskazanie,
+// ze uruchamia to samo narzedzie co inna pozycja.
+const narzedzia = read("lib/narzedzia.ts");
+const sekcjaB2B = narzedzia.slice(
+  narzedzia.indexOf("export const businessTools"),
+  narzedzia.indexOf("export const otherTools"),
+);
+const kafelki = [...sekcjaB2B.matchAll(/href: "([^"]+)"/g)].map((m) => m[1]);
+const wspolne = [
+  ...narzedzia
+    .slice(narzedzia.indexOf("export const NARZEDZIE_WSPOLNE"))
+    .matchAll(/"([^"]+)":\s*"([^"]+)"/g),
+].map((m) => [m[1], m[2]]);
+const wspolneOd = new Map(wspolne);
+
+for (const b of blocks) {
+  const href = b.match(/href:\s*"([^"]+)"/)?.[1];
+  if (!href || !/narzedzie:\s*true/.test(b)) continue;
+  if (kafelki.includes(href)) continue;
+  const zamiast = wspolneOd.get(href);
+  if (!zamiast) {
+    add(
+      "narzedzia",
+      `${href}: produkt ma narzedzie: true, a nie ma go na /narzedzia ani w NARZEDZIE_WSPOLNE`,
+    );
+  } else if (!kafelki.includes(zamiast)) {
+    add(
+      "narzedzia",
+      `${href}: wskazuje na ${zamiast}, a tej pozycji nie ma na /narzedzia`,
+    );
+  }
+}
+for (const h of kafelki) {
+  if (!exists(`app${h}/page.tsx`)) {
+    add("narzedzia", `${h}: kafelek na /narzedzia wskazuje na nieistniejaca strone`);
+  }
+}
+// Kazde narzedzie musi dac sie wskazac w wyborze po sytuacji, inaczej
+// przyciski na gorze listy pomijaja czesc oferty.
+const wybor = read("components/WyborNarzedzia.tsx");
+for (const h of kafelki) {
+  if (!wybor.includes(`href: "${h}"`)) {
+    add("narzedzia", `${h}: zadna sytuacja w WyborNarzedzia.tsx nie wskazuje tego narzedzia`);
+  }
+}
+
 // --- 2. dlugie myslniki w widocznej tresci ---
 const walk = (dir, out = []) => {
   for (const e of fs.readdirSync(path.join(ROOT, dir), { withFileTypes: true })) {

@@ -1,6 +1,8 @@
 /** Lista darmowych narzędzi. Jedno źródło dla strony z narzędziami i dla
  *  licznika na stronie głównej, bo liczba wpisana ręcznie rozjechała się
  *  z rzeczywistością już trzy razy. */
+import { PRODUCTS, type ProductCategory } from "./products";
+
 export type Narzedzie = {
   /** Wyróżnik na kafelku, na przykład Nowość. */
   badge?: string;
@@ -117,6 +119,20 @@ export const businessTools: Narzedzie[] = [
     ikona: "koperta",
   },
   {
+    title: "Czy Twoja strona nie wypisała się z Google",
+    description:
+      "Wpisz adres firmy, a sprawdzę trzy miejsca, w których zostaje blokada indeksowania po wersji roboczej: nagłówek odpowiedzi, znacznik w kodzie strony i plik robots.txt. Właściciel tego nie widzi, bo wchodzi z zakładki.",
+    href: "/widocznosc-w-google",
+    ikona: "oko",
+  },
+  {
+    title: "Czego kupujący nie znajdzie o zwrotach",
+    description:
+      "Podaj adres sklepu, a sprawdzę sześć rzeczy, których kupujący szuka przed zakupem: termin na odstąpienie, wzór formularza, kto płaci za odesłanie, jak i kiedy wracają pieniądze oraz czy zwrot da się zgłosić online.",
+    href: "/panel-zwrotow",
+    ikona: "zwrot",
+  },
+  {
     title: "Kalkulator kosztu obsługi leadów",
     description:
       "Sprawdź, ile miesięcznie kosztuje ręczne przepisywanie leadów, zakładanie tematów w CRM i ręczne raporty. Realny koszt w zł, nie ogólniki.",
@@ -137,13 +153,6 @@ export const businessTools: Narzedzie[] = [
       "Porównaj koszt miesięcznej ręcznej pracy z kosztem wdrożenia automatyzacji. 4 inputy, 1 jasna decyzja.",
     href: "/zatrudnic-czy-zautomatyzowac",
     ikona: "kalkulator",
-  },
-  {
-    title: "Fluxdesk, panel do sesji AI",
-    description:
-      "Kilkanaście rozmów z asystentem AI w jednym oknie: stan każdej sesji, koszty, limity i zadania. Narzędzie z otwartym kodem, do uruchomienia u siebie.",
-    href: "/strefa-wiedzy/panel-do-sesji-ai",
-    badge: "Open source",
   },
 ];
 
@@ -173,3 +182,54 @@ export const otherTools: Narzedzie[] = [
 
 /** Ile narzędzi obiecujemy na stronie głównej. */
 export const LICZBA_NARZEDZI = businessTools.length;
+
+/**
+ * Filar dla narzędzi, które nie mają swojej pozycji w katalogu produktów.
+ * Reszta bierze filar wprost z `PRODUCTS`, żeby kafelek narzędzia i kafelek
+ * produktu pod tym samym adresem nie trafiały do dwóch różnych działów.
+ */
+const FILAR_SPOZA_KATALOGU: Record<string, ProductCategory> = {
+  "/audyt-crm": "automatyzacja",
+  "/kalkulator-leadow": "automatyzacja",
+  "/sprawdzenie-nip": "dane",
+  "/zatrudnic-czy-zautomatyzowac": "automatyzacja",
+};
+
+export function filarNarzedzia(href: string): ProductCategory {
+  const produkt = PRODUCTS.find((p) => p.href === href);
+  return produkt?.category ?? FILAR_SPOZA_KATALOGU[href] ?? "automatyzacja";
+}
+
+/**
+ * Wprowadzenie do działu na liście narzędzi. Nazwy działów biorę z katalogu
+ * produktów, żeby menu, kafelki i katalog mówiły to samo, ale zdanie pod
+ * nazwą opisuje darmowe sprawdzenia, a nie płatne usługi.
+ */
+export const FILAR_INTRO_NARZEDZI: Record<ProductCategory, string> = {
+  automatyzacja:
+    "Ile kosztuje ręczna robota, co zjada rachunek za automatyzacje i gdzie proces urywa się po drodze.",
+  dane: "Publiczne rejestry i Wasze własne liczby: kontrahent, dłużnik, faktura od kuriera, konkurencja w okolicy.",
+  www: "Co o Waszej stronie wie wyszukiwarka, asystent AI i kupujący, który właśnie na nią trafił.",
+};
+
+/** Kolejność działów na liście narzędzi, ta sama co w menu i w katalogu. */
+export const FILARY_NARZEDZI: ProductCategory[] = [
+  "automatyzacja",
+  "dane",
+  "www",
+];
+
+export function narzedziaFilaru(filar: ProductCategory): Narzedzie[] {
+  return businessTools.filter((n) => filarNarzedzia(n.href) === filar);
+}
+
+/**
+ * Produkty, które mają na swojej stronie darmowe sprawdzenie, ale nie dostają
+ * własnego kafelka, bo uruchamiają dokładnie to samo narzędzie co pozycja
+ * wskazana obok. Dwa kafelki z tym samym sprawdzeniem wyglądałyby jak dwa
+ * różne narzędzia.
+ */
+export const NARZEDZIE_WSPOLNE: Record<string, string> = {
+  "/sprawdz-kontrahenta": "/sprawdzenie-nip",
+  "/wdrozenie-n8n-cena": "/tansze-automatyzacje",
+};
