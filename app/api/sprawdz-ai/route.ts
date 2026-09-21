@@ -124,6 +124,98 @@ function typyDanych(html: string): string[] {
   return [...typy];
 }
 
+
+// Tytul i opis w dokumencie sa zapisane z encjami, wiec bez odkodowania
+// szkic zawieralby "Car&amp;More" zamiast nazwy firmy.
+const ENCJE: Record<string, string> = {
+  amp: "&",
+  lt: "<",
+  gt: ">",
+  quot: '"',
+  apos: "'",
+  nbsp: " ",
+};
+
+function bezEncji(t: string): string {
+  return t
+    .replace(/&(amp|lt|gt|quot|apos|nbsp);/g, (_, n) => ENCJE[n])
+    .replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(Number(n)))
+    .replace(/&#x([0-9a-f]+);/gi, (_, n) => String.fromCodePoint(parseInt(n, 16)));
+}
+
+function tytulStrony(html: string): string | null {
+  const m = html.match(/<title[^>]*>([\s\S]{3,200}?)<\/title>/i);
+  return m ? bezEncji(m[1].replace(/\s+/g, " ").trim()) : null;
+}
+
+function opisStrony(html: string): string | null {
+  const m = html.match(
+    /<meta[^>]+name=["']description["'][^>]+content=["']([^"']{20,300})/i,
+  );
+  return m ? bezEncji(m[1].replace(/\s+/g, " ").trim()) : null;
+}
+
+// Najwazniejsze podstrony wybieramy po tekscie odnosnika, bo sciezka bywa
+// nic nie mowiaca. Bierzemy tylko adresy w tej samej domenie i odrzucamy
+// kotwice, pliki i strony sluzbowe, ktore w takim spisie nikomu nie pomoga.
+const POMIJANE = /polityk|regulamin|cookie|rodo|logow|koszyk|rejestr|#|\.(pdf|jpg|png|webp|zip|docx?)$/i;
+
+function waznePodstrony(html: string, baza: string): { tekst: string; url: string }[] {
+  const wynik: { tekst: string; url: string }[] = [];
+  const widziane = new Set<string>();
+  for (const m of html.matchAll(
+    /<a[^>]+href=["']([^"'#]+)["'][^>]*>([\s\S]{2,80}?)<\/a>/gi,
+  )) {
+    const surowy = m[1];
+    const tekst = bezEncji(m[2].replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim());
+    if (!tekst || tekst.length < 3 || POMIJANE.test(surowy) || POMIJANE.test(tekst)) {
+      continue;
+    }
+    let url: string;
+    try {
+      url = new URL(surowy, baza).toString();
+    } catch {
+      continue;
+    }
+    if (!url.startsWith(baza)) continue;
+    if (url.replace(/\/$/, "") === baza.replace(/\/$/, "")) continue;
+    if (widziane.has(url)) continue;
+    widziane.add(url);
+    wynik.push({ tekst, url });
+    if (wynik.length >= 8) break;
+  }
+  return wynik;
+}
+
+// Szkic pliku llms.txt zbudowany z tego, co strona juz o sobie mowi. Nie
+// zgadujemy niczego o firmie: tytul, opis i nazwy podstron pochodza wprost
+// z dokumentu, a miejsca wymagajace decyzji czlowieka zostawiamy wprost
+// zaznaczone, zeby nikt nie wkleil na produkcje zdania, ktorego nie napisal.
+function szkicLlms(
+  domena: string,
+  tytul: string | null,
+  opis: string | null,
+  podstrony: { tekst: string; url: string }[],
+): string {
+  const nazwa = (tytul || domena).split(/[|\u2013-]/)[0].trim() || domena;
+  const linie = [`# ${nazwa}`, ""];
+  linie.push(
+    opis
+      ? `> ${opis}`
+      : `> [Tu wpisz jedno zdanie o tym, czym zajmuje się firma i dla kogo. Na stronie nie było opisu w metadanych, więc nie mam czego zacytować.]`,
+  );
+  linie.push("");
+  if (podstrony.length) {
+    linie.push("## Najważniejsze strony", "");
+    for (const p of podstrony) linie.push(`- [${p.tekst}](${p.url})`);
+    linie.push("");
+  }
+  linie.push("## Kontakt", "");
+  linie.push(`- https://${domena}`);
+  linie.push("- [Tu wpisz adres e-mail albo odnośnik do formularza kontaktu.]");
+  return linie.join("\n");
+}
+
 export async function POST(request: Request) {
   let domena = "";
   try {
@@ -262,5 +354,11 @@ export async function POST(request: Request) {
     zablokowane: blokady,
     maLlms,
     maSitemap,
+    // Szkic dajemy tylko tam, gdzie pliku nie ma. Podsuwanie gotowca komus,
+    // kto juz ma swoj, byloby sugerowaniem, ze jego jest gorszy, czego nie
+    // sprawdzamy.
+    szkicLlms: maLlms
+      ? null
+      : szkicLlms(domena, tytulStrony(html), opisStrony(html), waznePodstrony(html, baza)),
   });
 }

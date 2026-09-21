@@ -15,6 +15,7 @@ interface Wynik {
   naglowek: string;
   komentarz?: string;
   punkty?: Punkt[];
+  szkicLlms?: string | null;
 }
 
 const MOTYW: Record<string, { ramka: string; tlo: string; tekst: string; etykieta: string }> = {
@@ -52,6 +53,7 @@ export default function AiCheck() {
   const [email, setEmail] = useState("");
   const [leadStan, setLeadStan] = useState<"idle" | "wysylam" | "ok" | "blad">("idle");
   const [leadBlad, setLeadBlad] = useState("");
+  const [skopiowane, setSkopiowane] = useState(false);
 
   async function sprawdz(e: React.FormEvent) {
     e.preventDefault();
@@ -72,6 +74,7 @@ export default function AiCheck() {
         return;
       }
       setWynik(data);
+      setSkopiowane(false);
       setStan("gotowe");
     } catch {
       setBlad("Brak połączenia. Spróbuj ponownie za chwilę.");
@@ -192,6 +195,40 @@ export default function AiCheck() {
           <p className="mt-4 rounded-lg bg-white/70 dark:bg-gray-950/50 p-3 text-sm text-gray-800 dark:text-gray-200">
             {wynik.komentarz}
           </p>
+
+          {/* Gotowy szkic zamiast samego werdyktu. Osoba, ktora nie chce
+              zostawiac adresu, i tak wychodzi stad z czyms dzialajacym, a
+              plik jest zbudowany wylacznie z tego, co strona juz o sobie
+              mowi, wiec nic tu nie jest zmyslone. */}
+          {wynik.szkicLlms && (
+            <div className="mt-5 border-t border-gray-200/70 dark:border-gray-700/70 pt-4">
+              <p className="text-sm font-semibold text-gray-900 dark:text-white">
+                Gotowy szkic pliku llms.txt dla {wynik.domena}
+              </p>
+              <p className="mt-1 text-sm text-gray-700 dark:text-gray-300">
+                Zbudowany z tego, co Twoja strona już o sobie mówi. Uzupełnij
+                miejsca w nawiasach kwadratowych, zapisz jako llms.txt i wrzuć
+                do katalogu głównego serwisu, obok robots.txt. Nic więcej.
+              </p>
+              <pre className="mt-3 max-h-72 overflow-auto rounded-lg bg-gray-950/90 p-4 text-xs leading-relaxed text-gray-100">
+                {wynik.szkicLlms}
+              </pre>
+              <button
+                type="button"
+                onClick={async () => {
+                  try {
+                    await navigator.clipboard.writeText(wynik.szkicLlms || "");
+                    setSkopiowane(true);
+                  } catch {
+                    setSkopiowane(false);
+                  }
+                }}
+                className="mt-3 rounded-lg border border-gray-300 px-4 py-2 text-sm font-semibold text-gray-900 transition-colors hover:border-accent dark:border-gray-700 dark:text-white"
+              >
+                {skopiowane ? "Skopiowane" : "Skopiuj do schowka"}
+              </button>
+            </div>
+          )}
 
           <div className="mt-5 border-t border-gray-200/70 dark:border-gray-700/70 pt-4">
             {leadStan === "ok" ? (
