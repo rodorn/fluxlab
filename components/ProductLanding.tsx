@@ -5,6 +5,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import LandingForm from "@/components/LandingForm";
 import TrackedCTA from "@/components/TrackedCTA";
 import RelatedProducts from "@/components/RelatedProducts";
+import { cenaWejscia } from "@/lib/products";
 
 export interface Tier {
   name: string;
@@ -36,6 +37,43 @@ export interface ProductLandingProps {
   serviceName: string;
   serviceDesc: string;
   serviceType: string;
+}
+
+/**
+ * Poziom cennika zamieniony na `Offer` w schema.org.
+ *
+ * Wczesniej bylo tu `t.price.replace(/\D/g, "")`, czyli sklejenie wszystkich
+ * cyfr z napisu i podanie ich jako ceny stalej. To zglaszalo "od 490 zl" jako
+ * cene 490 zl, abonament "99 zl/mc" jako jednorazowe 99 zl, udzial "25
+ * procent" jako 25 zl, a dla poziomu opisanego samymi slowami dalo by pusty
+ * napis w polu `price`, czyli znacznik nie do odczytania.
+ */
+function oferta(t: Tier) {
+  const kwota = cenaWejscia(t.price);
+  const podstawa = { "@type": "Offer", name: t.name };
+  // Poziom bez kwoty w zlotowkach, na przyklad udzial procentowy: lepiej nie
+  // podac ceny wcale, niz podac zmyslona.
+  if (kwota === null || !/zł/.test(t.price)) return podstawa;
+
+  const widelki = /\bod\b/.test(t.price);
+  const miesiecznie = /\/\s?mc|miesi/.test(t.price);
+  return {
+    ...podstawa,
+    priceSpecification: {
+      "@type": miesiecznie ? "UnitPriceSpecification" : "PriceSpecification",
+      [widelki ? "minPrice" : "price"]: kwota,
+      priceCurrency: "PLN",
+      ...(miesiecznie
+        ? {
+            referenceQuantity: {
+              "@type": "QuantitativeValue",
+              value: 1,
+              unitCode: "MON",
+            },
+          }
+        : {}),
+    },
+  };
 }
 
 export default function ProductLanding(p: ProductLandingProps) {
@@ -206,12 +244,7 @@ export default function ProductLanding(p: ProductLandingProps) {
             areaServed: { "@type": "Country", name: "Polska" },
             serviceType: p.serviceType,
             url: `https://fluxlab.pl/${p.slug}`,
-            offers: p.pricing.map((t) => ({
-              "@type": "Offer",
-              name: t.name,
-              price: t.price.replace(/\D/g, ""),
-              priceCurrency: "PLN",
-            })),
+            offers: p.pricing.map(oferta),
           }),
         }}
       />
