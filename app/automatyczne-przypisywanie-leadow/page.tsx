@@ -597,10 +597,10 @@ export default function AutomatycznePrzypisywanieLeadow() {
                             </li>
                           </ul>
                           <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                            Tyle. Pierwszy etap robię u klientów w 2–4 dni. Po
-                            dwóch tygodniach pracy na żywych danych dokładamy
+                            Tyle. Pierwszy etap zajmuje 2 do 4 dni roboczych. Po
+                            dwóch tygodniach pracy na żywych danych dokładam
                             kolejne źródła i reguły, ale dopiero wtedy, gdy
-                            wiemy, co realnie działa.
+                            widać, co realnie działa.
                           </p>
                         </div>
                       </div>

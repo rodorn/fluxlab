@@ -161,7 +161,7 @@ const faq = [
   {
     question: "n8n self-hosted czy n8n.cloud do CRM?",
     answer:
-      "Cloud, jeśli wolumen jest mały (poniżej 5–10 tys. wykonań miesięcznie), nie macie osoby od infrastruktury i nie macie wymagań compliance, które wymuszają trzymanie danych u was. Self-hosted, gdy wolumen rośnie powyżej 30 tys. wykonań (tam koszt cloud zaczyna boleć), gdy macie własne API/bazy, do których chcecie się podpiąć po sieci wewnętrznej, albo gdy dane wrażliwe nie mogą wyjść poza infrastrukturę firmy. Najczęstsza ścieżka u klientów: start na cloud, migracja na self-hosted po 6–12 miesiącach, gdy wiadomo, czy projekt się przyjął.",
+      "Cloud, jeśli wolumen jest mały (poniżej 5–10 tys. wykonań miesięcznie), nie macie osoby od infrastruktury i nie macie wymagań compliance, które wymuszają trzymanie danych u was. Self-hosted, gdy wolumen rośnie powyżej 30 tys. wykonań (tam koszt cloud zaczyna boleć), gdy macie własne API/bazy, do których chcecie się podpiąć po sieci wewnętrznej, albo gdy dane wrażliwe nie mogą wyjść poza infrastrukturę firmy. Rozsądna ścieżka: start na cloud, migracja na self-hosted po kilkunastu miesiącach, gdy już wiadomo, czy projekt się przyjął.",
   },
   {
     question: "Czy n8n pasuje do Pipedrive, HubSpota i Salesforce?",
@@ -659,7 +659,7 @@ export default function N8nDlaCrm() {
                     <div className="max-w-3xl mx-auto">
                       <span className="section-label">Pierwszy etap</span>
                       <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-6">
-                        Co wdrażam u klienta w pierwszych 2–3 tygodniach
+                        Co wdrażam w pierwszych 2 do 3 tygodniach
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
                         Nie zaczynam od pełnej warstwy automatyzacji. Zaczynam

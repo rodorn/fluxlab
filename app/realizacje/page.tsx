@@ -258,6 +258,17 @@ export default function RealizacjePage() {
               zlecisz. To są rzeczy zbudowane przeze mnie, nie opisy cudzych
               wdrożeń ani referencje, których nie mam.
             </p>
+            <p className="mt-4 text-gray-600 dark:text-gray-300">
+              Osobno rozpisuję{" "}
+              <Link
+                href="/case-study"
+                className="text-accent hover:underline font-medium"
+              >
+                modelowe przepływy z policzonym czasem
+              </Link>
+              , czyli ile minut zajmuje obsługa leada i tygodniowy raport przed
+              automatyzacją i po niej, czynność po czynności.
+            </p>
           </div>
 
           <div className="mt-14 space-y-16">
