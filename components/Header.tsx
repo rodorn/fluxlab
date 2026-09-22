@@ -3,11 +3,10 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
+import { FILARY } from "@/lib/filary";
 
 const NAV = [
-  { href: "/automatyzacja-leadow-crm", label: "Automatyzacja" },
-  { href: "/scraping-danych", label: "Integracje i dane" },
-  { href: "/strony-www", label: "Systemy i strony" },
+  ...FILARY.map((f) => ({ href: f.href, label: f.nazwa })),
   { href: "/produkty", label: "Produkty" },
   { href: "/realizacje", label: "Realizacje" },
   { href: "/strefa-wiedzy", label: "Strefa wiedzy" },

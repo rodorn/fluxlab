@@ -2,29 +2,18 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { FILARY } from "@/lib/filary";
 
 export const metadata: Metadata = {
   title: "Strona nie znaleziona | Fluxlab",
   robots: { index: false, follow: true },
 };
 
-const links = [
-  {
-    title: "Strony WWW",
-    desc: "Nowa strona albo poprawki w obecnej",
-    href: "/strony-www",
-  },
-  {
-    title: "Automatyzacja CRM i leadów",
-    desc: "Lead → CRM → handlowiec → raport",
-    href: "/automatyzacja-leadow-crm",
-  },
-  {
-    title: "Scraping danych",
-    desc: "Web, PDF, maile, dokumenty",
-    href: "/scraping-danych",
-  },
-];
+const links = FILARY.map((f) => ({
+  title: f.nazwa,
+  desc: f.opis,
+  href: f.href,
+}));
 
 export default function NotFound() {
   return (

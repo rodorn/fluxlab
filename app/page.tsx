@@ -4,6 +4,7 @@ import TileVideo from "@/components/TileVideo";
 import WybierzBranze from "@/components/WybierzBranze";
 import RachunekWJednymKlikniecu from "@/components/RachunekWJednymKlikniecu";
 import { LICZBA_NARZEDZI } from "@/lib/narzedzia";
+import { nazwaFilaru } from "@/lib/filary";
 
 const PILLARS = [
   {
@@ -13,7 +14,6 @@ const PILLARS = [
     videoLight: "/abstract/automation-light.mp4",
     variant: "automation" as const,
     num: "01",
-    title: "Automatyzacja procesów",
     desc: "Leady nie trafiają automatycznie do CRM, handlowiec zapomina o follow-upie, a raport składa się ręcznie przez pół dnia. Buduję przepływ, który robi to sam i nie gubi zgłoszeń.",
     cta: "Znajdź proces do automatyzacji",
     // Akcent: indigo
@@ -29,7 +29,6 @@ const PILLARS = [
     videoLight: "/abstract/data-light.mp4",
     variant: "data" as const,
     num: "02",
-    title: "Integracje i dane",
     desc: "Dane leżą w kilku systemach i w Excelach, a ERP nie rozmawia z CRM. Spinam je przez API, porządkuję i zamieniam w raport, który przychodzi sam.",
     cta: "Zobacz, jak spiąć systemy",
     // Akcent: zieleń
@@ -45,7 +44,6 @@ const PILLARS = [
     videoLight: "/abstract/web-light.mp4",
     variant: "web" as const,
     num: "03",
-    title: "Systemy i strony",
     desc: "Aplikacje webowe, panele i formularze, które są częścią procesu, a nie osobnym bytem. Strona firmowa też, ale jako element całości, nie jako produkt sam w sobie.",
     cta: "Zobacz, co buduję",
     // Akcent: fiolet
@@ -227,7 +225,7 @@ export default function Home() {
                   {p.num}
                 </span>
                 <h2 className="mt-1.5 text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tight text-white">
-                  {p.title}
+                  {nazwaFilaru(p.href)}
                 </h2>
                 <p className="mt-2.5 text-sm lg:text-base text-white/65 leading-relaxed max-w-sm">
                   {p.desc}

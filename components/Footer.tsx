@@ -1,9 +1,9 @@
 import Link from "next/link";
 
+import { FILARY } from "@/lib/filary";
+
 const links = [
-  { href: "/strony-www", label: "Strony WWW" },
-  { href: "/automatyzacja-leadow-crm", label: "Automatyzacja" },
-  { href: "/scraping-danych", label: "Dane" },
+  ...FILARY.map((f) => ({ href: f.href, label: f.nazwa })),
   { href: "/jak-pracuje", label: "Jak pracuję" },
   { href: "/strefa-wiedzy", label: "Strefa wiedzy" },
   { href: "/narzedzia", label: "Narzędzia" },

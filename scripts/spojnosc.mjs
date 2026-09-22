@@ -198,6 +198,55 @@ for (const plik of ["lib/spiecie-danych.ts", "lib/stan-strony.ts"]) {
   }
 }
 
+// --- 1f. filary nazywaja sie wszedzie tak samo ---
+// Ten sam adres potrafil nazywac sie na cztery sposoby naraz: /strony-www bylo
+// w menu "Systemy i strony", w stopce "Strony WWW" i na 404 znowu "Strony
+// WWW", a /scraping-danych kolejno "Integracje i dane", "Dane" i "Scraping
+// danych". Wchodzacy dostawal trzy rozne firmy zamiast jednej. Nazwa
+// kanoniczna stoi od teraz wylacznie w lib/filary.ts, a cztery powierzchnie
+// nawigacyjne, po ktorych wchodzacy sklada sobie obraz oferty, maja ja stamtad
+// brac, a nie przepisywac. Listy linkow powiazanych wewnatrz artykulow celowo
+// nie sa tu sprawdzane: tam adres filaru wystepuje jako jedna z uslug obok
+// innych i opisowa nazwa jest na miejscu.
+const filaryTresc = exists("lib/filary.ts") ? read("lib/filary.ts") : "";
+const FILARY_HREFY = [...filaryTresc.matchAll(/href:\s*"([^"]+)"/g)].map((m) => m[1]);
+if (FILARY_HREFY.length !== 3) {
+  add("filar", `lib/filary.ts: oczekiwane 3 filary, jest ${FILARY_HREFY.length}`);
+}
+for (const href of FILARY_HREFY) {
+  if (!exists(`app${href}/page.tsx`)) {
+    add("filar", `lib/filary.ts: filar ${href} nie ma strony`);
+  }
+}
+const POWIERZCHNIE_NAWIGACJI = [
+  "components/Header.tsx",
+  "components/Footer.tsx",
+  "app/page.tsx",
+  "app/not-found.tsx",
+];
+for (const plik of POWIERZCHNIE_NAWIGACJI) {
+  if (!exists(plik)) continue;
+  const tresc = read(plik);
+  if (!tresc.includes("@/lib/filary")) {
+    add("filar", `${plik}: nazywa filary, nie biorac ich z lib/filary.ts`);
+    continue;
+  }
+  for (const href of FILARY_HREFY) {
+    let od = tresc.indexOf(`"${href}"`);
+    while (od !== -1) {
+      const okno = tresc.slice(Math.max(0, od - 160), od + 160);
+      const etykieta = okno.match(/(?:label|title|nazwa):\s*"([^"]+)"/);
+      if (etykieta) {
+        add(
+          "filar",
+          `${plik}: filar ${href} dostaje nazwe "${etykieta[1]}" na miejscu, zamiast z lib/filary.ts`,
+        );
+      }
+      od = tresc.indexOf(`"${href}"`, od + 1);
+    }
+  }
+}
+
 // --- 2. dlugie myslniki w widocznej tresci ---
 const walk = (dir, out = []) => {
   for (const e of fs.readdirSync(path.join(ROOT, dir), { withFileTypes: true })) {
