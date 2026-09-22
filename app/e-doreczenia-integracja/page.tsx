@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ProductLanding from "@/components/ProductLanding";
+import EDoreczeniaCheck from "@/components/EDoreczeniaCheck";
 
 export const metadata: Metadata = {
   title: "Integracja z e-Doręczeniami: spięcie skrzynki z Twoim systemem | Fluxlab",
@@ -27,12 +28,13 @@ export default function EDoreczeniaIntegracja() {
   return (
     <ProductLanding
       slug="e-doreczenia-integracja"
+      tool={<EDoreczeniaCheck />}
       breadcrumb="Integracja z e-Doręczeniami"
       eyebrow="e-Doręczenia"
       h1="Integracja z e-Doręczeniami"
       lead="Skrzynka do doręczeń elektronicznych jest obowiązkowa, ale nikt nie każe obsługiwać jej ręcznie w osobnym panelu. Spinam ją z systemem, którego już używacie, żeby pisma i dowody doręczenia trafiały tam, gdzie pracujecie."
-      ctaLabel="Opisz, czego używacie"
-      ctaNote="Odpisuję zwykle tego samego dnia"
+      ctaLabel="Sprawdź swój termin"
+      ctaNote="Dwa kliknięcia, bez wpisywania czegokolwiek"
       checks={[
         {
           title: "Napisałem klienta tego API i oddałem go za darmo",

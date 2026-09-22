@@ -199,6 +199,7 @@ export const PRODUCTS: Product[] = [
     price: "od 3 900 zł",
     href: "/e-doreczenia-integracja",
     grupa: "integracje",
+    narzedzie: true,
     cta: "Opisz, czego używacie",
     bullets: [
       "otwarty klient tego API napisany przeze mnie, do obejrzenia przed decyzją",

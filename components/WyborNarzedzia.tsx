@@ -202,6 +202,24 @@ const SYTUACJE: Sytuacja[] = [
       },
     ],
   },
+  {
+    klucz: "termin-z-przepisow",
+    etykieta: "Goni nas termin z przepisów",
+    odpowiedz:
+      "Dwa obowiązki, które mają twardą datę i sankcję, a sprawdza się je w kilkanaście sekund, bez wpisywania czegokolwiek.",
+    wskazania: [
+      {
+        href: "/e-doreczenia-integracja",
+        powod:
+          "Terminy na adres do doręczeń elektronicznych wchodzą etapami i zależą od tego, gdzie i kiedy podmiot został zarejestrowany.",
+      },
+      {
+        href: "/rejestr-cen",
+        powod:
+          "Przecena bez informacji o najniższej cenie z trzydziestu dni jest naruszeniem, a sprawdzenie pokazuje konkretne karty produktów.",
+      },
+    ],
+  },
 ];
 
 const TYTULY = new Map(businessTools.map((n) => [n.href, n.title]));

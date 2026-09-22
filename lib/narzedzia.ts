@@ -20,6 +20,14 @@ export type Narzedzie = {
 
 export const businessTools: Narzedzie[] = [
   {
+    title: "Od kiedy musicie mieć adres do e-Doręczeń",
+    description:
+      "Naciśnij, jak jest zarejestrowany Wasz podmiot, a policzę datę z ustawy i dni, które zostały. Terminy wchodzą etapami, inaczej dla firmy z CEIDG, inaczej dla spółki z KRS, inaczej dla zawodów zaufania publicznego. Bez wpisywania czegokolwiek.",
+    href: "/e-doreczenia-integracja",
+    ikona: "pieczec",
+    badge: "Nowość",
+  },
+  {
     title: "Pełny audyt techniczny strony",
     description:
       "Jedno wpisanie adresu zamiast siedmiu osobnych sprawdzeń. Mierzę szybkość na komputerze i osobno na telefonie, ważę każdy plik, czytam certyfikat, sprawdzam widoczność w wyszukiwarce, dostęp dla asystentów AI i zabezpieczenia poczty. Na końcu dostajesz kolejność poprawek i cenę naprawy przy każdej pozycji.",
