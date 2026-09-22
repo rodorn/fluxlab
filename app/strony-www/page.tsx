@@ -7,6 +7,7 @@ import LandingForm from "@/components/LandingForm";
 import TrackedCTA from "@/components/TrackedCTA";
 import Tabs from "@/components/Tabs";
 import ProductGrid from "@/components/ProductGrid";
+import CoZeStrona from "@/components/CoZeStrona";
 
 export const metadata: Metadata = {
   title: "Tworzenie stron WWW i poprawki w obecnych | Fluxlab",
@@ -98,7 +99,7 @@ export default function StronyWww() {
                 Nowa strona od zera albo poprawki w istniejącej. Pierwsza wersja
                 w 2-3 tygodnie.
               </p>
-              <div className="animate-fade-up-4">
+              <div className="animate-fade-up-4 flex flex-wrap items-center gap-5">
                 <TrackedCTA
                   href="#sekcje"
                   location="strony_www_hero"
@@ -106,9 +107,19 @@ export default function StronyWww() {
                 >
                   Zamów bezpłatną diagnozę
                 </TrackedCTA>
+                <a
+                  href="#poprawiac-czy-budowac"
+                  className="text-base font-semibold text-accent hover:underline"
+                >
+                  Sprawdź, poprawiać czy budować od nowa
+                </a>
               </div>
             </div>
           </div>
+        </section>
+
+        <section className="container-wide pb-16">
+          <CoZeStrona biezacaStrona="/strony-www" />
         </section>
 
         {/* Treść w zakładkach, nic nie wycięte, podzielone */}

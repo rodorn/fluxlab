@@ -178,6 +178,26 @@ for (const g of grupyTypu) {
   }
 }
 
+// --- 1e. sprawdzenia filarow wskazuja na istniejace pozycje katalogu ---
+// Sprawdzenia na filarach ("czy da sie to spiac", "poprawiac czy budowac")
+// wypisuja w werdykcie nazwe i cene pozycji z katalogu, wyszukana po adresie.
+// Literowka w adresie albo usuniety produkt nie wywalaja builda, tylko po
+// cichu kasuja z wyniku cale zdanie o tym, co to kosztuje.
+const adresyKatalogu = new Set(catalog.map((c) => c.href));
+for (const plik of ["lib/spiecie-danych.ts", "lib/stan-strony.ts"]) {
+  if (!exists(plik)) continue;
+  const tresc = read(plik);
+  const wskazania = new Set([
+    ...[...tresc.matchAll(/produkt\??:\s*"([^"]+)"/g)].map((m) => m[1]),
+    ...[...tresc.matchAll(/^\s*"(\/[a-z0-9-]+)",$/gm)].map((m) => m[1]),
+  ]);
+  for (const href of wskazania) {
+    if (!adresyKatalogu.has(href)) {
+      add("filar", `${plik}: wskazuje na ${href}, czego nie ma w katalogu`);
+    }
+  }
+}
+
 // --- 2. dlugie myslniki w widocznej tresci ---
 const walk = (dir, out = []) => {
   for (const e of fs.readdirSync(path.join(ROOT, dir), { withFileTypes: true })) {
