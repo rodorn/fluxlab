@@ -47,7 +47,7 @@ const useCases = [
   {
     title: "Integracja z KSeF (Krajowy System e-Faktur)",
     description:
-      "Pobieram faktury z KSeF dla każdego klienta biura, weryfikuję z dokumentami papierowymi, wprowadzam do systemu księgowego. Po wejściu obowiązkowego KSeF (etapowo od 2026) ma to przejść z opcji w obowiązek techniczny, przygotowuję biuro tak, żeby skala dokumentów nie zabiła zespołu.",
+      "Pobieram faktury z KSeF dla każdego klienta biura, weryfikuję z dokumentami papierowymi, wprowadzam do systemu księgowego. Obowiązek wszedł etapami w 2026, a 1 stycznia 2027 kończą się wszystkie przepisy przejściowe naraz, więc przygotowuję biuro tak, żeby skala dokumentów nie zabiła zespołu.",
   },
   {
     title: "Automatyczne raporty miesięczne dla klientów",
@@ -73,9 +73,9 @@ const painPoints = [
       "Automatyzacja sprawdza w systemie księgowym, czego brakuje od klienta na dany miesiąc, i wysyła kolejno: przypomnienie miłe (5. dnia), przypomnienie konkretne (10. dnia), eskalację do opiekuna (15. dnia). Każdy klient widzi w portalu, czego od niego potrzebujecie. Zespół rachunkowy nie musi być telefonistami.",
   },
   {
-    pain: "KSeF wchodzi w 2026 i nikt w biurze nie wie, jak to ma wyglądać operacyjnie",
+    pain: "KSeF już obowiązuje, a w biurze nikt nie ustalił, jak to ma wyglądać operacyjnie",
     solution:
-      "Konfiguruję pobieranie faktur z KSeF dla wszystkich klientów biura (po pełnomocnictwach), parowanie z dokumentami papierowymi, wprowadzanie do Comarch Optima/Symfonii/Enova/InsERT i obsługę faktur wystawianych przez klientów. Przygotowanie wcześniej oznacza, że pierwszy miesiąc pełnego KSeF nie zabija zespołu.",
+      "Konfiguruję pobieranie faktur z KSeF dla wszystkich klientów biura (po pełnomocnictwach), parowanie z dokumentami papierowymi, wprowadzanie do Comarch Optima/Symfonii/Enova/InsERT i obsługę faktur wystawianych przez klientów. Ustawienie tego przed 1 stycznia 2027, kiedy znikają wyjątki przejściowe, oznacza, że pierwszy miesiąc pełnego KSeF nie zabija zespołu.",
   },
   {
     pain: "Klienci dzwonią co dzień z pytaniem „kiedy raport za zeszły miesiąc?”",
@@ -138,7 +138,7 @@ const faq = [
   {
     question: "Jak wygląda automatyzacja KSeF w 2026?",
     answer:
-      "Obowiązkowy KSeF dla największych firm wchodzi etapowo od lutego 2026. Dla biura oznacza to konieczność pobierania faktur sprzedażowych klientów z KSeF (jeśli klient sam wystawia) oraz pobierania faktur kosztowych. Konfiguruję pobieranie po pełnomocnictwach, weryfikację dokumentów i wprowadzanie do systemu księgowego. Najlepiej zacząć przed wejściem obowiązku, żeby pierwszy miesiąc nie był pożarem.",
+      "Obowiązek wystawiania faktur w KSeF objął największe firmy 1 lutego 2026, a pozostałych podatników 1 kwietnia 2026. Do 31 grudnia 2026 działają jeszcze wyjątki przejściowe, między innymi limit 10 tys. zł brutto miesięcznie. Dla biura oznacza to konieczność pobierania faktur sprzedażowych klientów z KSeF (jeśli klient sam wystawia) oraz pobierania faktur kosztowych. Konfiguruję pobieranie po pełnomocnictwach, weryfikację dokumentów i wprowadzanie do systemu księgowego. Najlepiej zamknąć temat przed 1 stycznia 2027, kiedy wyjątki znikają i zaczynają obowiązywać sankcje.",
   },
   {
     question: "Co z tajemnicą zawodową i RODO?",
@@ -235,12 +235,12 @@ export default function AutomatyzacjaDlaBiurRachunkowych() {
                   Automatyzacja dla biur rachunkowych
                 </h1>
                 <p className="text-lg text-gray-600 dark:text-gray-300">
-                  KSeF od 2026, rosnąca liczba dokumentów, klienci spóźnieni z
-                  dostarczeniem faktur, ręczne wprowadzanie do Optimy czy
-                  Symfonii, to są realne bóle, które kosztują biuro etat lub
-                  dwa rocznie. Automatyzuję OCR, KSeF, przypomnienia, raporty
-                  i onboarding tak, żeby zespół miał czas na doradztwo, a nie na
-                  przepisywanie.
+                  KSeF już obowiązuje, rosnąca liczba dokumentów, klienci
+                  spóźnieni z dostarczeniem faktur, ręczne wprowadzanie do
+                  Optimy czy Symfonii, to są realne bóle, które kosztują biuro
+                  etat lub dwa rocznie. Automatyzuję OCR, KSeF, przypomnienia,
+                  raporty i onboarding tak, żeby zespół miał czas na doradztwo,
+                  a nie na przepisywanie.
                 </p>
               </div>
               <div className="relative mx-auto lg:mx-0 w-full max-w-md">
@@ -383,15 +383,22 @@ export default function AutomatyzacjaDlaBiurRachunkowych() {
                         >
                           Zapier i Make
                         </Link>
-                        . Integracje z systemami księgowymi i KSeF opisuję w
-                        sekcji{" "}
+                        . Integracje z systemami księgowymi opisuję w sekcji{" "}
                         <Link
                           href="/integracje-api"
                           className="text-accent hover:underline"
                         >
                           integracji API
                         </Link>
-                        .
+                        , a samą{" "}
+                        <Link
+                          href="/ksef-integracja"
+                          className="text-accent hover:underline"
+                        >
+                          integrację z KSeF
+                        </Link>{" "}
+                        razem z darmowym sprawdzeniem, co obowiązuje już dziś,
+                        na osobnej stronie.
                       </p>
                     </div>
                   </div>
@@ -471,8 +478,7 @@ export default function AutomatyzacjaDlaBiurRachunkowych() {
                     <div className="max-w-3xl mx-auto">
                       <div className="max-w-2xl mx-auto text-center bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-10 mb-16">
                         <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                          KSeF blisko, a zespół już dziś nie wyrabia z
-                          papierami?
+                          KSeF już obowiązuje, a zespół nie wyrabia z papierami?
                         </h2>
                         <p className="text-gray-500 dark:text-gray-400 mb-8">
                           Opisz, jak dziś wygląda obieg dokumentów w biurze.

@@ -20,6 +20,14 @@ export type Narzedzie = {
 
 export const businessTools: Narzedzie[] = [
   {
+    title: "Co z KSeF obowiązuje Was już dziś",
+    description:
+      "Naciśnij swoją grupę podatnika, a rozpiszę, od kiedy musicie wystawiać faktury w KSeF, który wyjątek jeszcze Was chroni i ile dni mu zostało do 1 stycznia 2027, kiedy kończą się wszystkie przepisy przejściowe naraz. Bez wpisywania czegokolwiek.",
+    href: "/ksef-integracja",
+    ikona: "faktura",
+    badge: "Nowość",
+  },
+  {
     title: "Od kiedy musicie mieć adres do e-Doręczeń",
     description:
       "Naciśnij, jak jest zarejestrowany Wasz podmiot, a policzę datę z ustawy i dni, które zostały. Terminy wchodzą etapami, inaczej dla firmy z CEIDG, inaczej dla spółki z KRS, inaczej dla zawodów zaufania publicznego. Bez wpisywania czegokolwiek.",
@@ -33,7 +41,6 @@ export const businessTools: Narzedzie[] = [
       "Jedno wpisanie adresu zamiast siedmiu osobnych sprawdzeń. Mierzę szybkość na komputerze i osobno na telefonie, ważę każdy plik, czytam certyfikat, sprawdzam widoczność w wyszukiwarce, dostęp dla asystentów AI i zabezpieczenia poczty. Na końcu dostajesz kolejność poprawek i cenę naprawy przy każdej pozycji.",
     href: "/audyt-strony",
     ikona: "lupa",
-    badge: "Nowość",
   },
   {
     title: "Czy przeglądarka straszy Twoją stroną",
@@ -90,7 +97,6 @@ export const businessTools: Narzedzie[] = [
       "Wpisz nazwę spółki albo numer KRS, a sprawdzę w Monitorze Sądowym, czy sąd nie wszczął postępowania o jej rozwiązanie bez likwidacji. Od obwieszczenia biegną trzy miesiące na sprzeciw, potem podmiot znika razem z Twoją należnością.",
     href: "/czujka-rejestrowa",
     ikona: "mlotek",
-    badge: "Nowość",
   },
   {
     title: "Czy klient ustali, komu płaci",

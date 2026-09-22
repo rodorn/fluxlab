@@ -18,8 +18,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
-  title:
-    "Narzędzia: kalkulatory ROI, audyty CRM i decyzje biznesowe | Fluxlab",
+  title: "Narzędzia: kalkulatory ROI, audyty CRM i decyzje biznesowe | Fluxlab",
   description:
     "Bezpłatne narzędzia online dla firm B2B: kalkulator kosztu ręcznej obsługi leadów, audyt CRM, decyzja zatrudnić/zautomatyzować, kalkulator podatkowy JDG. Bez rejestracji.",
   openGraph: {
@@ -120,6 +119,13 @@ const IKONY: Record<string, React.ReactElement> = {
       <path d="M11 1.5v3M11 17.5v3M1.5 11h3M17.5 11h3" />
     </>
   ),
+  faktura: (
+    <>
+      <path d="M5 2.5h7.5l4.5 4.5v12.5H5Z" />
+      <path d="M12.5 2.5V7H17" />
+      <path d="M8 11h6M8 14.5h4" />
+    </>
+  ),
   mapa: (
     <>
       <path d="M3 5.5 8 3.5l6 2 5-2v13l-5 2-6-2-5 2v-13Z" />
@@ -154,10 +160,6 @@ const IKONY: Record<string, React.ReactElement> = {
     </>
   ),
 };
-
-
-
-
 
 /** Kafelek narzedzia. Wyjety z petli, bo lista jest teraz podzielona na trzy
  *  filary i ten sam markup renderuje sie w trzech miejscach. */
@@ -310,16 +312,16 @@ export default function Narzedzia() {
                             className="group block rounded-2xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800/60 overflow-hidden hover:border-accent/30 dark:hover:border-accent/50 transition-colors"
                           >
                             {tool.image && (
-                            <div className="aspect-[16/10] overflow-hidden bg-gray-100 dark:bg-gray-800">
-                              <Image
-                                src={tool.image}
-                                alt={tool.title}
-                                width={400}
-                                height={250}
-                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                                unoptimized
-                              />
-                            </div>
+                              <div className="aspect-[16/10] overflow-hidden bg-gray-100 dark:bg-gray-800">
+                                <Image
+                                  src={tool.image}
+                                  alt={tool.title}
+                                  width={400}
+                                  height={250}
+                                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                  unoptimized
+                                />
+                              </div>
                             )}
                             <div className="p-6">
                               <h3 className="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-accent transition-colors mb-2">

@@ -59,15 +59,23 @@ export const GROUP_ORDER: ProductGroup[] = [
 ];
 
 /** Kolejnosc filarow, ta sama co w menu i na /narzedzia. */
-export const CATEGORY_ORDER: ProductCategory[] = ["automatyzacja", "dane", "www"];
+export const CATEGORY_ORDER: ProductCategory[] = [
+  "automatyzacja",
+  "dane",
+  "www",
+];
 
 export const GROUP_INTRO: Record<ProductGroup, string> = {
   wdrozenia: "Proces, który dziś ktoś klika ręcznie, zaczyna dziać się sam.",
-  naprawy: "Coś już działa, ale działa źle albo przestało. Znajduję przyczynę i naprawiam.",
-  integracje: "Dwa systemy, które nie rozmawiają ze sobą, zaczynają wymieniać dane.",
-  raporty: "Publiczne i Wasze własne dane zamienione w jedną decyzję, jednorazowo.",
+  naprawy:
+    "Coś już działa, ale działa źle albo przestało. Znajduję przyczynę i naprawiam.",
+  integracje:
+    "Dwa systemy, które nie rozmawiają ze sobą, zaczynają wymieniać dane.",
+  raporty:
+    "Publiczne i Wasze własne dane zamienione w jedną decyzję, jednorazowo.",
   budowa: "Strona albo panel, który jest częścią procesu, a nie osobnym bytem.",
-  diagnostyka: "Konkretna usterka strony, znaleziona i opisana, zwykle w jeden dzień.",
+  diagnostyka:
+    "Konkretna usterka strony, znaleziona i opisana, zwykle w jeden dzień.",
 };
 
 export const CATEGORY_INTRO: Record<ProductCategory, string> = {
@@ -204,6 +212,22 @@ export const PRODUCTS: Product[] = [
     bullets: [
       "otwarty klient tego API napisany przeze mnie, do obejrzenia przed decyzją",
       "odbiór pism 3 900 zł, z wysyłką 7 900 zł",
+      "kod i dostępy zostają u Was",
+    ],
+  },
+  {
+    category: "dane",
+    name: "Integracja z KSeF",
+    tagline: "Faktury wychodzą tam, gdzie powstają",
+    desc: "Krajowy System e-Faktur jest obowiązkowy, ale nikt nie każe przeklejać do niego faktur ręcznie z osobnej aplikacji. Spinam z nim Wasz system: wysyłka w schemacie FA(3), zapis numeru KSeF i UPO przy dokumencie, pobieranie faktur kosztowych.",
+    price: "od 4 900 zł",
+    href: "/ksef-integracja",
+    grupa: "integracje",
+    narzedzie: true,
+    cta: "Opisz, w czym fakturujecie",
+    bullets: [
+      "otwarty klient tego API z trybem demo, do uruchomienia przed decyzją",
+      "odbiór faktur kosztowych 4 900 zł, z wystawianiem 9 900 zł",
       "kod i dostępy zostają u Was",
     ],
   },
@@ -637,10 +661,13 @@ export const PRICE_BAND_ORDER: PriceBand[] = [
 
 export const PRICE_BAND_INTRO: Record<PriceBand, string> = {
   do50: "Jednorazowe sprawdzenia i raporty, które kupuje się bez zastanowienia.",
-  do300: "Pojedyncza usterka strony albo jeden audyt, zamknięty zwykle w kilka dni.",
-  do1000: "Wdrożenie jednego procesu albo panelu, liczone od podanej kwoty w górę.",
+  do300:
+    "Pojedyncza usterka strony albo jeden audyt, zamknięty zwykle w kilka dni.",
+  do1000:
+    "Wdrożenie jednego procesu albo panelu, liczone od podanej kwoty w górę.",
   od1000: "Integracje dwóch systemów, gdzie zakres ustala się przed startem.",
-  wycena: "Praca, której zakresu nie da się podać z góry. Kwota pada po diagnozie.",
+  wycena:
+    "Praca, której zakresu nie da się podać z góry. Kwota pada po diagnozie.",
 };
 
 /**

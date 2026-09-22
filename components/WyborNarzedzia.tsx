@@ -206,8 +206,13 @@ const SYTUACJE: Sytuacja[] = [
     klucz: "termin-z-przepisow",
     etykieta: "Goni nas termin z przepisów",
     odpowiedz:
-      "Dwa obowiązki, które mają twardą datę i sankcję, a sprawdza się je w kilkanaście sekund, bez wpisywania czegokolwiek.",
+      "Trzy obowiązki, które mają twardą datę i sankcję, a sprawdza się je w kilkanaście sekund, bez wpisywania czegokolwiek.",
     wskazania: [
+      {
+        href: "/ksef-integracja",
+        powod:
+          "Wystawianie faktur w KSeF obowiązuje etapami od lutego 2026, a 1 stycznia 2027 kończą się naraz wszystkie przepisy przejściowe i zaczynają sankcje.",
+      },
       {
         href: "/e-doreczenia-integracja",
         powod:

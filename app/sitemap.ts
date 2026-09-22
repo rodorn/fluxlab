@@ -188,6 +188,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/ksef-integracja`,
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/analiza-lokalizacji`,
       changeFrequency: "monthly" as const,
       priority: 0.9,
@@ -407,12 +412,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     .map((s) => s.slice("/strefa-wiedzy/".length))
     .sort();
 
-
   const articlePages = articles.map((slug) => ({
     url: `${baseUrl}/strefa-wiedzy/${slug}`,
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));
 
-  return ([...staticPages, ...articlePages]).map(zData);
+  return [...staticPages, ...articlePages].map(zData);
 }
