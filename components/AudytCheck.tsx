@@ -35,7 +35,11 @@ type Ustalenie = {
 };
 
 type Wynik = {
-  id: string;
+  /** Raport w postaci, w jakiej policzył go serwer, razem z jego podpisem.
+   *  Odsyłamy oba przy prośbie o wysyłkę, żeby serwer nie musiał niczego
+   *  pamiętać między jednym a drugim zapytaniem. */
+  dokument: string;
+  podpis: string | null;
   domena: string;
   zbadano: string;
   osiagalna: boolean;
@@ -304,7 +308,12 @@ export default function AudytCheck() {
       const res = await fetch("/api/audyt-www/wyslij", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ id: wynik.id, email, zgoda }),
+        body: JSON.stringify({
+          dokument: wynik.dokument,
+          podpis: wynik.podpis,
+          email,
+          zgoda,
+        }),
       });
       const dane = await res.json().catch(() => null);
       if (!res.ok) {

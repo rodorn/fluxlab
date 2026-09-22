@@ -3,7 +3,7 @@ import { after, NextResponse } from "next/server";
 import { czystaDomena, zmierz } from "@/lib/audyt-pomiar";
 import { ocenStrone, potrzebneDostepy, punktacja, wycenNaprawe } from "@/lib/audyt-ocena";
 import { materialDo, napiszRaport } from "@/lib/audyt-raport";
-import { zapamietaj } from "@/lib/audyt-cache";
+import { podpisz } from "@/lib/audyt-podpis";
 import type { DaneRaportu } from "@/lib/audyt-mail";
 import { wyslijKopie } from "@/lib/audyt-wyslij";
 
@@ -83,10 +83,11 @@ export async function POST(request: Request) {
     dostepy,
     opis,
   };
-  // Raport zostaje po stronie serwera pod losowym identyfikatorem. Gdy
-  // klient poprosi o wysyłkę, wyjmiemy dokładnie ten dokument, a nie ten,
-  // który przeglądarka odeśle jako swój.
-  const id = zapamietaj(pelne);
+  // Raport wraca do przeglądarki razem z podpisem. Przy prośbie o wysyłkę
+  // przyjdzie z powrotem i sprawdzimy, że to dokładnie ten dokument, który
+  // policzyliśmy, a nie jego przerobiona wersja.
+  const dokument = JSON.stringify(pelne);
+  const podpis = podpisz(dokument);
 
   // Kopia leci po KAŻDYM audycie, także anonimowym, i leci po odpowiedzi,
   // żeby nie kazać człowiekowi czekać na serwer pocztowy.
@@ -97,7 +98,8 @@ export async function POST(request: Request) {
   });
 
   return NextResponse.json({
-    id,
+    podpis,
+    dokument,
     domena,
     osiagalna: pomiar.osiagalna,
     punkty,

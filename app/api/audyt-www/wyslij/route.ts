@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 
-import { odczytaj } from "@/lib/audyt-cache";
+import type { DaneRaportu } from "@/lib/audyt-mail";
+import { podpisZgodny } from "@/lib/audyt-podpis";
 import { wyslijDoKlienta, wyslijKopie, zapiszZgode } from "@/lib/audyt-wyslij";
 
 export const runtime = "nodejs";
@@ -10,12 +11,14 @@ export const maxDuration = 30;
 const EMAIL_RX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export async function POST(request: Request) {
-  let id = "";
+  let dokument = "";
+  let podpis = "";
   let email = "";
   let zgoda = false;
   try {
     const body = await request.json();
-    id = typeof body?.id === "string" ? body.id : "";
+    dokument = typeof body?.dokument === "string" ? body.dokument : "";
+    podpis = typeof body?.podpis === "string" ? body.podpis : "";
     email = typeof body?.email === "string" ? body.email.trim().toLowerCase().slice(0, 320) : "";
     zgoda = body?.zgoda === true;
   } catch {
@@ -34,15 +37,21 @@ export async function POST(request: Request) {
     );
   }
 
-  const dane = odczytaj(id);
-  if (!dane) {
+  // Bez ważnego podpisu nie wysyłamy nic. Treść przyszła z przeglądarki,
+  // więc dopóki nie zgadza się z tym, co sami policzyliśmy, jest cudzym
+  // tekstem, a nie naszym raportem.
+  if (!dokument || !podpis || !podpisZgodny(dokument, podpis)) {
     return NextResponse.json(
-      {
-        error:
-          "Ten raport wygasł po stronie serwera. Uruchom sprawdzenie jeszcze raz, potrwa chwilę.",
-      },
-      { status: 410 },
+      { error: "Nie mogę potwierdzić tego raportu. Uruchom sprawdzenie jeszcze raz." },
+      { status: 400 },
     );
+  }
+
+  let dane: DaneRaportu;
+  try {
+    dane = JSON.parse(dokument) as DaneRaportu;
+  } catch {
+    return NextResponse.json({ error: "Uszkodzony raport." }, { status: 400 });
   }
 
   // Kolejność jest istotna: najpierw dowód zgody, potem wiadomość.
