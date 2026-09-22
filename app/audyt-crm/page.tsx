@@ -287,7 +287,7 @@ export default function AudytCRMPage() {
                               "Policz w zł, ile miesięcznie kosztuje Cię ręczne przepisywanie i pilnowanie follow-upów.",
                           },
                           {
-                            href: "/zatrudnic-czy-zautomatyzowac",
+                            href: "/strefa-wiedzy/automatyzacja-vs-zatrudnienie#kalkulator",
                             title: "Zatrudnić czy zautomatyzować?",
                             description:
                               "Kalkulator decyzji: kiedy lepiej dołożyć osobę, a kiedy proces.",

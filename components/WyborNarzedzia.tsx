@@ -137,7 +137,7 @@ const SYTUACJE: Sytuacja[] = [
           "Zapier i Make liczą każdy krok osobno. Kalkulator pokazuje, po ilu miesiącach własny serwer wychodzi taniej.",
       },
       {
-        href: "/zatrudnic-czy-zautomatyzowac",
+        href: "/strefa-wiedzy/automatyzacja-vs-zatrudnienie#kalkulator",
         powod:
           "Cztery pola i jedna odpowiedź, łącznie z tą, że przy Waszej skali automatyzacja się nie opłaca.",
       },

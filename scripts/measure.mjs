@@ -42,7 +42,6 @@ const ROUTES = [
   "/raportowanie-z-pipedrive",
   "/regulamin",
   "/strefa-wiedzy",
-  "/zatrudnic-czy-zautomatyzowac",
   "/strefa-wiedzy/ai-w-automatyzacji-firm",
   "/strefa-wiedzy/automatyzacja-crm-od-czego-zaczac",
   "/strefa-wiedzy/automatyzacja-vs-zatrudnienie",

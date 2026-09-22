@@ -216,7 +216,13 @@ for (const motyw of ["light", "dark"]) {
     // wylacznie to, co widac od razu, a wyniki wszystkich pietnastu sprawdzen
     // mierzylo sie co cykl doklejanym skryptem od nowa.
     for (const sekwencja of KLIKI[sciezka] ?? []) {
-      await karta.reload({ waitUntil: "networkidle", timeout: 45000 });
+      // Wchodzimy pod czysty adres, a nie przez reload: zakladki dopisuja
+      // kotwice przez replaceState, wiec reload otwieralby zakladke z
+      // poprzedniej sekwencji zamiast stanu poczatkowego.
+      await karta.goto(BAZA + sciezka, {
+        waitUntil: "networkidle",
+        timeout: 45000,
+      });
       await karta.evaluate((m) => {
         document.documentElement.classList.toggle("dark", m === "dark");
       }, motyw);

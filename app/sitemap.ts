@@ -378,11 +378,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/zatrudnic-czy-zautomatyzowac`,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
       url: `${baseUrl}/automatyzacja-dla-ecommerce`,
       changeFrequency: "monthly" as const,
       priority: 0.85,

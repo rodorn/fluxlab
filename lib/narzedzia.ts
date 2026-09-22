@@ -172,7 +172,7 @@ export const businessTools: Narzedzie[] = [
     title: "Zatrudnić czy zautomatyzować?",
     description:
       "Porównaj koszt miesięcznej ręcznej pracy z kosztem wdrożenia automatyzacji. 4 inputy, 1 jasna decyzja.",
-    href: "/zatrudnic-czy-zautomatyzowac",
+    href: "/strefa-wiedzy/automatyzacja-vs-zatrudnienie#kalkulator",
     ikona: "kalkulator",
   },
 ];
@@ -213,7 +213,7 @@ const FILAR_SPOZA_KATALOGU: Record<string, ProductCategory> = {
   "/audyt-crm": "automatyzacja",
   "/koszt-recznej-obslugi-leadow": "automatyzacja",
   "/sprawdzenie-nip": "dane",
-  "/zatrudnic-czy-zautomatyzowac": "automatyzacja",
+  "/strefa-wiedzy/automatyzacja-vs-zatrudnienie#kalkulator": "automatyzacja",
 };
 
 export function filarNarzedzia(href: string): ProductCategory {

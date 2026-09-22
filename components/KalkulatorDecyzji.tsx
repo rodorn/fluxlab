@@ -404,7 +404,7 @@ function MetricCard({
 
 /* ──────────────── main component ──────────────── */
 
-export default function Kalkulator() {
+export default function KalkulatorDecyzji() {
   const [data, setData] = useState<Inputs>(DEFAULTS);
   const [wybrany, setWybrany] = useState<string | null>(null);
   const submittedRef = useRef(false);

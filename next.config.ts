@@ -29,6 +29,14 @@ const nextConfig: NextConfig = {
         destination: "/koszt-recznej-obslugi-leadow",
         statusCode: 301,
       },
+      // Kalkulator decyzji i artykul o automatyzacji kontra zatrudnienie
+      // celowaly w to samo zapytanie. Kalkulator jest teraz pierwsza zakladka
+      // artykulu, wiec zostaje jeden adres z narzedziem i pelna analiza.
+      {
+        source: "/zatrudnic-czy-zautomatyzowac",
+        destination: "/strefa-wiedzy/automatyzacja-vs-zatrudnienie",
+        statusCode: 301,
+      },
     ];
   },
 };

@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Tabs from "@/components/Tabs";
 import PrevNextArticle from "@/components/PrevNextArticle";
+import KalkulatorDecyzji from "@/components/KalkulatorDecyzji";
 
 export const metadata: Metadata = {
   title: "Automatyzacja czy zatrudnienie w MŚP | Fluxlab",
@@ -46,7 +47,7 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
     {
       question: "Ile kosztuje średnia automatyzacja procesu w MŚP?",
       answer:
-        "Jednorazowe wdrożenie pojedynczego procesu to zwykle 3–15 tys. zł w zależności od złożoności. Miesięczne utrzymanie narzędzi (Make, Zapier, n8n.cloud) dla typowej firmy z kilkunastoma scenariuszami to 200–600 zł/mies. Hosting n8n self-hosted to dodatkowe 50–150 zł/mies. ROI zwykle zwraca się w 1–4 miesiące, jeśli proces ma realny wolumen.",
+        "Jednorazowe wdrożenie pojedynczego procesu to u mnie 1 500 do 8 000 zł, zależnie od liczby integracji i liczby wyjątków. Miesięczne utrzymanie narzędzi, Make, Zapier albo n8n.cloud, dla firmy z kilkunastoma scenariuszami to 200 do 600 zł. Hosting n8n na własnym serwerze to dodatkowe 50 do 150 zł miesięcznie. Zwrot zależy od wolumenu procesu i tego właśnie liczy kalkulator na górze tej strony.",
     },
     {
       question: "Kiedy zatrudnienie ma sens, a automatyzacja nie?",
@@ -68,6 +69,26 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
       question: "Czy warto zatrudnić osobę do obsługi automatyzacji?",
       answer:
         "Dla firm z 50+ automatyzacjami i krytyczną zależnością od nich, tak, ale raczej jako 50% stanowiska lub część roli operations manager. Dla mniejszej skali taniej wychodzi umowa z zewnętrznym partnerem. Pełny etat automation specialist ma sens dopiero przy budżecie narzędzi 3–5 tys. zł/mies. i zespole 20+ osób.",
+    },
+    {
+      question: "Skąd wziąć „czas procesu w godzinach miesięcznie” do kalkulatora?",
+      answer:
+        "Jeśli proces wykonuje jedna osoba, pomnóż liczbę powtórzeń przez średni czas jednego powtórzenia. Na przykład 100 leadów razy 5 minut to 500 minut, czyli około 8,3 godziny. Jeśli wykonuje go kilka osób, zsumuj. Jeśli nie wiesz dokładnie, oszacuj dni pracy w miesiącu poświęcone na ten proces razy 8 i potraktuj to jako górne ograniczenie. Lepiej oszacować z lekkim zapasem niż w dół, celem jest realny obraz, a nie raport do księgowości.",
+    },
+    {
+      question: "Dlaczego etat w kalkulatorze to tylko stawka razy 168 godzin?",
+      answer:
+        "Bo to jest minimum, czyli sama praca. Pełen koszt zatrudnienia jest wyższy o 30 do 50 procent przez ZUS pracodawcy, urlop płatny, sprzęt, oprogramowanie, czas rekrutacji i wdrożenia. Kalkulator tego nie dolicza, bo wynik miałby zbyt dużą wariancję, B2B kontra umowa o pracę, junior kontra senior, biuro kontra praca zdalna. Pokazuję orientacyjną dolną granicę, żeby porównanie z automatyzacją było uczciwe w dół. Jeśli automatyzacja wychodzi taniej nawet od minimalnego kosztu pracy, to po pełnym koszcie wychodzi taniej tym bardziej.",
+    },
+    {
+      question: "Co znaczy, że proces musi być powtarzalny i stabilny?",
+      answer:
+        "Powtarzalny to taki, w którym ten sam scenariusz wykonujesz wielokrotnie, kroki są przewidywalne, kolejność stała, a wyjątki rzadkie. Stabilny to taki, którego zasady nie zmieniają się co tydzień. Dobrzy kandydaci: obsługa formularza z witryny do CRM, faktury cykliczne, raport tygodniowy, follow-up. Słabi kandydaci: procesy, w których co chwilę dochodzi nowy wyjątek, czyli negocjacje, kwalifikacja niestandardowych zapytań, decyzje wymagające osądu. Te ostatnie warto opisać w procedurze, ale nie automatyzować, bo automat trzeba by ciągle przepisywać.",
+    },
+    {
+      question: "Czy kalkulator zastępuje wycenę?",
+      answer:
+        "Nie. Daje skalę decyzji, czyli odpowiedź na pytanie, czy w ogóle warto rozmawiać o automatyzacji tego procesu, czy raczej zostać przy ręcznej obsłudze albo zatrudnić kolejną osobę. Wycena wymaga rozmowy o specyfice procesu: jakie systemy są w grze, ile jest wyjątków, czy jest API, czy trzeba parsować maile, ile osób korzysta z efektu.",
     },
   ];
 
@@ -94,8 +115,15 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
               firmy prędzej czy później staje przed wyborem: zatrudnić kolejną
               osobę czy zautomatyzować proces. Ten artykuł pokazuje, jak
               odpowiedzieć na to pytanie bez emocji, z realnymi liczbami,
-              ryzykami i frameworkiem decyzji.
+              ryzykami i frameworkiem decyzji. Zaczyna się od kalkulatora,
+              który po czterech ustawieniach pokazuje, czy w Waszym przypadku
+              taniej wychodzi ręczna praca, etat, czy wdrożenie.
             </p>
+            <div className="mt-6">
+              <Link href="#kalkulator" className="btn-primary">
+                Otwórz kalkulator
+              </Link>
+            </div>
           </div>
         </section>
 
@@ -105,7 +133,84 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
             ariaLabel="Rozdziały artykułu"
             tabs={[
               {
+                label: "Kalkulator",
+                kotwica: "kalkulator",
+                content: (
+                  <div className="py-6 lg:py-8">
+                    <KalkulatorDecyzji />
+                  </div>
+                ),
+              },
+              {
+                label: "Jak liczę decyzję",
+                kotwica: "jak-licze",
+                content: (
+                  <div className="py-6 lg:py-8">
+                    <div className="max-w-3xl mx-auto">
+                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                        Jak liczę decyzję w kalkulatorze
+                      </h2>
+                      <div className="space-y-4 text-gray-600 dark:text-gray-400 leading-relaxed">
+                        <p>
+                          Kalkulator porównuje trzy scenariusze: ręczną obsługę,
+                          czyli stan obecny, zatrudnienie kolejnej osoby,
+                          orientacyjnie, oraz wdrożenie automatyzacji w zakresie
+                          rynkowym. Logika decyzyjna patrzy na dwa wymiary:
+                          powtarzalność i częstotliwość.
+                        </p>
+                        <ul className="list-disc pl-5 space-y-2">
+                          <li>
+                            <strong>Koszt ręcznej pracy</strong> ={" "}
+                            <code className="text-xs bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded">
+                              czas_h × koszt_h
+                            </code>{" "}
+                            miesięcznie. Roczna wartość to ×12.
+                          </li>
+                          <li>
+                            <strong>Etat orientacyjny</strong> ={" "}
+                            <code className="text-xs bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded">
+                              koszt_h × 168
+                            </code>{" "}
+                            miesięcznie. To stawka razy pełny etat, 168 godzin
+                            miesięcznie, czyli minimum bez ZUS-u, urlopu,
+                            sprzętu i kosztów rekrutacji. Realny pełen koszt
+                            zatrudnienia jest wyższy o 30 do 50 procent, co
+                            rozpisuję w zakładce o koszcie zatrudnienia.
+                          </li>
+                          <li>
+                            <strong>Automatyzacja orientacyjnie</strong>: 1 500
+                            do 8 000 zł jednorazowo i 0 do 200 zł miesięcznie
+                            utrzymania. Konkretna kwota zależy od liczby
+                            integracji, logiki warunkowej i tego, czy trzeba
+                            parsować dane wejściowe, maile albo pliki PDF.
+                          </li>
+                          <li>
+                            <strong>Sygnał decyzyjny</strong>: jeśli proces jest
+                            powtarzalny i występuje codziennie albo kilka razy w
+                            tygodniu, kalkulator rekomenduje automatyzację.
+                            Jeśli proces nie jest powtarzalny, mówi wprost, żeby
+                            zostawić go ręcznie, bo automatyzacja niestabilnego
+                            procesu to ciągłe dopisywanie wyjątków. Przy małej
+                            skali, poniżej 5 godzin miesięcznie i okazjonalnie,
+                            też odradza wdrożenie.
+                          </li>
+                        </ul>
+                        <p>
+                          Punkt zwrotu liczę zgrubnie jako{" "}
+                          <code className="text-xs bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded">
+                            koszt_wdrożenia / oszczędność_miesięczna
+                          </code>
+                          . To bardzo zgrubny szacunek, oparty na widełkach
+                          rynkowych, a nie na wycenie konkretnego procesu.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                ),
+              },
+              {
                 label: "Nie albo–albo",
+                kotwica: "nie-albo-albo",
                 content: (
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
@@ -147,6 +252,7 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
               },
               {
                 label: "Koszt zatrudnienia",
+                kotwica: "koszt-zatrudnienia",
                 content: (
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
@@ -223,6 +329,7 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
               },
               {
                 label: "Koszt automatyzacji",
+                kotwica: "koszt-automatyzacji",
                 content: (
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
@@ -238,20 +345,22 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
                       </p>
                       <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
                         <li>
-                          Prosty proces (synchronizacja dwóch systemów, wysyłka
-                          powiadomień): 2–5 tys. zł
+                          Prosty proces, synchronizacja dwóch systemów albo
+                          wysyłka powiadomień: 1 500 do 3 000 zł
                         </li>
                         <li>
-                          Średnio złożony (CRM + email marketing + raport): 5–12
-                          tys. zł
+                          Średnio złożony, CRM plus mailing plus raport, z
+                          logiką warunkową: 3 000 do 5 000 zł
                         </li>
                         <li>
-                          Złożony (logika warunkowa, wielopoziomowe routingi,
-                          integracja z API): 10–25 tys. zł
+                          Złożony, wiele wyjątków, parsowanie maili albo
+                          plików, integracja z systemem bez gotowego API: 5 000
+                          do 8 000 zł
                         </li>
                         <li>
-                          Bardzo złożony (AI klasyfikacja, scoring, customowe
-                          moduły): 20–60 tys. zł
+                          Powyżej 8 000 zł zwykle nie jest to już jeden proces,
+                          tylko wdrożenie wieloprocesowe, które warto rozbić na
+                          etapy i wycenić osobno
                         </li>
                       </ul>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
@@ -290,11 +399,14 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
                         </li>
                       </ul>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Podsumowując: pełny ekosystem automatyzacji dla MŚP
-                        (10–20 scenariuszy, Make lub n8n, zewnętrzne wsparcie)
-                        to zwykle 20–50 tys. zł setupu w roku pierwszym i 15–30
-                        tys. zł miesięcznych kosztów rocznych. To ułamek kosztu
-                        jednego etatu.
+                        Podsumowując: firma, która w pierwszym roku wdraża
+                        kilkanaście scenariuszy, mieści się zwykle w kilkunastu
+                        do kilkudziesięciu tysięcy złotych jednorazowo, przy
+                        kosztach bieżących rzędu kilkuset złotych do półtora
+                        tysiąca miesięcznie razem z utrzymaniem. Przy jednym
+                        etacie za 95 do 110 tys. zł rocznie to jest inny rząd
+                        wielkości, ale tylko wtedy, gdy procesy faktycznie mają
+                        wolumen, co sprawdza kalkulator na górze strony.
                       </p>
                     </div>
                   </div>
@@ -302,6 +414,7 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
               },
               {
                 label: "Co umie",
+                kotwica: "co-umie",
                 content: (
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
@@ -381,6 +494,7 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
               },
               {
                 label: "Framework decyzji",
+                kotwica: "framework",
                 content: (
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
@@ -445,6 +559,7 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
               },
               {
                 label: "Hybryda",
+                kotwica: "hybryda",
                 content: (
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
@@ -522,6 +637,7 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
               },
               {
                 label: "Ryzyka",
+                kotwica: "ryzyka",
                 content: (
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
@@ -647,6 +763,7 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
               },
               {
                 label: "Kiedy zatrudnić, błędy",
+                kotwica: "kiedy-zatrudnic",
                 content: (
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
@@ -785,6 +902,7 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
               },
               {
                 label: "FAQ",
+                kotwica: "faq",
                 content: (
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
@@ -962,6 +1080,29 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
               name: "Fluxlab",
               url: "https://fluxlab.pl",
             },
+          }),
+        }}
+      />
+
+      {/* WebApplication Schema, kalkulator jest pierwsza zakladka artykulu */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            name: "Kalkulator: zatrudnić czy zautomatyzować?",
+            url: "https://fluxlab.pl/strefa-wiedzy/automatyzacja-vs-zatrudnienie#kalkulator",
+            applicationCategory: "BusinessApplication",
+            operatingSystem: "Web",
+            offers: {
+              "@type": "Offer",
+              price: "0",
+              priceCurrency: "PLN",
+            },
+            inLanguage: "pl-PL",
+            description:
+              "Kalkulator decyzji: porównanie kosztu ręcznej pracy z kosztem automatyzacji procesu B2B.",
           }),
         }}
       />

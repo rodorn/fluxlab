@@ -120,8 +120,11 @@ for (const b of blocks) {
     );
   }
 }
+// Kafelek moze wskazywac konkretna zakladke strony, np. kalkulator wbudowany
+// w artykul, wiec przed sprawdzeniem pliku odcinam kotwice.
 for (const h of kafelki) {
-  if (!exists(`app${h}/page.tsx`)) {
+  const sciezka = h.split("#")[0];
+  if (!exists(`app${sciezka}/page.tsx`)) {
     add("narzedzia", `${h}: kafelek na /narzedzia wskazuje na nieistniejaca strone`);
   }
 }
