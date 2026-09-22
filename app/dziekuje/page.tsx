@@ -108,7 +108,7 @@ export default function Dziekuje() {
                 </Link>
               </div>
 
-              <p className="mt-8 text-xs text-gray-400 dark:text-gray-500 text-center">
+              <p className="mt-8 text-xs text-gray-600 dark:text-gray-400 text-center">
                 Brak maila ode mnie po 24h? Sprawdź spam albo napisz wprost na{" "}
                 <a
                   href="mailto:pawel@fluxlab.pl"

@@ -20,10 +20,10 @@ export default function Footer() {
             <span className="text-sm font-bold tracking-tight text-gray-900 dark:text-white">
               flux<span className="text-accent">lab</span>
             </span>
-            <p className="mt-1 text-xs text-gray-400 dark:text-gray-500">
+            <p className="mt-1 text-xs text-gray-600 dark:text-gray-400">
               Strony, automatyzacja, dane dla firm B2B
             </p>
-            <p className="mt-1 text-xs text-gray-400 dark:text-gray-500">
+            <p className="mt-1 text-xs text-gray-600 dark:text-gray-400">
               Paweł Iwanek, NIP 7123336008, REGON 366862577
             </p>
           </div>
@@ -40,19 +40,19 @@ export default function Footer() {
           </nav>
         </div>
         <div className="border-t border-gray-100 dark:border-gray-800 mt-6 pt-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-xs text-gray-400 dark:text-gray-500">
+          <p className="text-xs text-gray-600 dark:text-gray-400">
             © {new Date().getFullYear()} Fluxlab. Wszelkie prawa zastrzeżone.
           </p>
           <div className="flex gap-4">
             <Link
               href="/polityka-prywatnosci"
-              className="text-xs text-gray-400 dark:text-gray-500 hover:text-accent transition-colors"
+              className="text-xs text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
             >
               Polityka prywatności
             </Link>
             <Link
               href="/regulamin"
-              className="text-xs text-gray-400 dark:text-gray-500 hover:text-accent transition-colors"
+              className="text-xs text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
             >
               Regulamin
             </Link>
@@ -60,7 +60,7 @@ export default function Footer() {
               href="https://zleca.pl/wykonawca/fluxlab-strony-internetowe-i-automatyzacja-1790016801"
               target="_blank"
               rel="noopener"
-              className="text-xs text-gray-400 dark:text-gray-500 hover:text-accent transition-colors"
+              className="text-xs text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
             >
               Moja wizytówka w Zleca.pl
             </a>

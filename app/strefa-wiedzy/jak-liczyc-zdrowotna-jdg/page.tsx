@@ -411,7 +411,7 @@ export default function SkladkaZdrowotnaJDGArticle() {
                       <details className="group rounded-2xl border border-gray-200 dark:border-gray-700">
                         <summary className="flex cursor-pointer items-center justify-between p-6 text-gray-900 dark:text-white font-medium">
                           Czy składkę zdrowotną można odliczyć od podatku?
-                          <span className="ml-4 shrink-0 text-gray-400 transition-transform group-open:rotate-45">
+                          <span className="ml-4 shrink-0 text-gray-600 dark:text-gray-400 transition-transform group-open:rotate-45">
                             <svg
                               width="20"
                               height="20"
@@ -436,7 +436,7 @@ export default function SkladkaZdrowotnaJDGArticle() {
                       <details className="group rounded-2xl border border-gray-200 dark:border-gray-700">
                         <summary className="flex cursor-pointer items-center justify-between p-6 text-gray-900 dark:text-white font-medium">
                           Jaka jest minimalna składka zdrowotna?
-                          <span className="ml-4 shrink-0 text-gray-400 transition-transform group-open:rotate-45">
+                          <span className="ml-4 shrink-0 text-gray-600 dark:text-gray-400 transition-transform group-open:rotate-45">
                             <svg
                               width="20"
                               height="20"
@@ -461,7 +461,7 @@ export default function SkladkaZdrowotnaJDGArticle() {
                       <details className="group rounded-2xl border border-gray-200 dark:border-gray-700">
                         <summary className="flex cursor-pointer items-center justify-between p-6 text-gray-900 dark:text-white font-medium">
                           Czy na ryczałcie zdrowotna zależy od dochodu?
-                          <span className="ml-4 shrink-0 text-gray-400 transition-transform group-open:rotate-45">
+                          <span className="ml-4 shrink-0 text-gray-600 dark:text-gray-400 transition-transform group-open:rotate-45">
                             <svg
                               width="20"
                               height="20"
@@ -486,7 +486,7 @@ export default function SkladkaZdrowotnaJDGArticle() {
                       <details className="group rounded-2xl border border-gray-200 dark:border-gray-700">
                         <summary className="flex cursor-pointer items-center justify-between p-6 text-gray-900 dark:text-white font-medium">
                           Dlaczego zdrowotna na liniowym jest niższa?
-                          <span className="ml-4 shrink-0 text-gray-400 transition-transform group-open:rotate-45">
+                          <span className="ml-4 shrink-0 text-gray-600 dark:text-gray-400 transition-transform group-open:rotate-45">
                             <svg
                               width="20"
                               height="20"

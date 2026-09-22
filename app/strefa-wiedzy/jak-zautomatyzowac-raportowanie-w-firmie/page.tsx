@@ -550,7 +550,7 @@ export default function AutomatyzacjaRaportowaniaArticle() {
                         <summary className="flex cursor-pointer items-center justify-between p-6 text-gray-900 dark:text-white font-medium">
                           Czy automatyzacja raportowania oznacza od razu BI i
                           rozbudowane dashboardy?
-                          <span className="ml-4 shrink-0 text-gray-400 transition-transform group-open:rotate-45">
+                          <span className="ml-4 shrink-0 text-gray-600 dark:text-gray-400 transition-transform group-open:rotate-45">
                             <svg
                               width="20"
                               height="20"
@@ -573,7 +573,7 @@ export default function AutomatyzacjaRaportowaniaArticle() {
                       <details className="group rounded-2xl border border-gray-200 dark:border-gray-700">
                         <summary className="flex cursor-pointer items-center justify-between p-6 text-gray-900 dark:text-white font-medium">
                           Co jest ważniejsze: wygląd raportu czy logika danych?
-                          <span className="ml-4 shrink-0 text-gray-400 transition-transform group-open:rotate-45">
+                          <span className="ml-4 shrink-0 text-gray-600 dark:text-gray-400 transition-transform group-open:rotate-45">
                             <svg
                               width="20"
                               height="20"
@@ -596,7 +596,7 @@ export default function AutomatyzacjaRaportowaniaArticle() {
                       <details className="group rounded-2xl border border-gray-200 dark:border-gray-700">
                         <summary className="flex cursor-pointer items-center justify-between p-6 text-gray-900 dark:text-white font-medium">
                           Jakie raporty warto automatyzować jako pierwsze?
-                          <span className="ml-4 shrink-0 text-gray-400 transition-transform group-open:rotate-45">
+                          <span className="ml-4 shrink-0 text-gray-600 dark:text-gray-400 transition-transform group-open:rotate-45">
                             <svg
                               width="20"
                               height="20"
@@ -619,7 +619,7 @@ export default function AutomatyzacjaRaportowaniaArticle() {
                       <details className="group rounded-2xl border border-gray-200 dark:border-gray-700">
                         <summary className="flex cursor-pointer items-center justify-between p-6 text-gray-900 dark:text-white font-medium">
                           Co jeśli dane w firmie są dziś niespójne?
-                          <span className="ml-4 shrink-0 text-gray-400 transition-transform group-open:rotate-45">
+                          <span className="ml-4 shrink-0 text-gray-600 dark:text-gray-400 transition-transform group-open:rotate-45">
                             <svg
                               width="20"
                               height="20"
@@ -643,7 +643,7 @@ export default function AutomatyzacjaRaportowaniaArticle() {
                         <summary className="flex cursor-pointer items-center justify-between p-6 text-gray-900 dark:text-white font-medium">
                           Czy mała firma też potrzebuje automatyzacji
                           raportowania?
-                          <span className="ml-4 shrink-0 text-gray-400 transition-transform group-open:rotate-45">
+                          <span className="ml-4 shrink-0 text-gray-600 dark:text-gray-400 transition-transform group-open:rotate-45">
                             <svg
                               width="20"
                               height="20"
@@ -666,7 +666,7 @@ export default function AutomatyzacjaRaportowaniaArticle() {
                       <details className="group rounded-2xl border border-gray-200 dark:border-gray-700">
                         <summary className="flex cursor-pointer items-center justify-between p-6 text-gray-900 dark:text-white font-medium">
                           Czy raportowanie można połączyć z CRM i marketingiem?
-                          <span className="ml-4 shrink-0 text-gray-400 transition-transform group-open:rotate-45">
+                          <span className="ml-4 shrink-0 text-gray-600 dark:text-gray-400 transition-transform group-open:rotate-45">
                             <svg
                               width="20"
                               height="20"

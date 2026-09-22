@@ -182,13 +182,13 @@ export default function SprawdzAutoPage() {
                     Audi A4 2.0 TDI, 2017, 178 000 km
                   </p>
                 </div>
-                <span className="rounded-full bg-amber-500/10 px-3 py-1 text-sm font-semibold text-amber-600 dark:text-amber-400">
+                <span className="rounded-full bg-amber-500/10 px-3 py-1 text-sm font-semibold text-amber-700 dark:text-amber-400">
                   Cena zawyżona o ok. 8 500 zł
                 </span>
               </div>
               <dl className="mt-4 grid gap-4 sm:grid-cols-3">
                 <div>
-                  <dt className="text-xs uppercase tracking-wider text-gray-400">
+                  <dt className="text-xs uppercase tracking-wider text-gray-600 dark:text-gray-400">
                     Cena w ofercie
                   </dt>
                   <dd className="text-lg font-bold text-gray-900 dark:text-white">
@@ -196,7 +196,7 @@ export default function SprawdzAutoPage() {
                   </dd>
                 </div>
                 <div>
-                  <dt className="text-xs uppercase tracking-wider text-gray-400">
+                  <dt className="text-xs uppercase tracking-wider text-gray-600 dark:text-gray-400">
                     Mediana rynku
                   </dt>
                   <dd className="text-lg font-bold text-gray-900 dark:text-white">
@@ -204,7 +204,7 @@ export default function SprawdzAutoPage() {
                   </dd>
                 </div>
                 <div>
-                  <dt className="text-xs uppercase tracking-wider text-gray-400">
+                  <dt className="text-xs uppercase tracking-wider text-gray-600 dark:text-gray-400">
                     Realny cel negocjacji
                   </dt>
                   <dd className="text-lg font-bold text-accent">65 000 zł</dd>
@@ -212,7 +212,7 @@ export default function SprawdzAutoPage() {
               </dl>
               <div className="mt-5 space-y-2 border-t border-gray-100 pt-4 dark:border-gray-700">
                 <p className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300">
-                  <span className="mt-0.5 text-red-500">!</span>
+                  <span className="mt-0.5 text-red-600">!</span>
                   Red-flag: przebieg niższy niż w poprzednim ogłoszeniu tego VIN
                   sprzed 6 miesięcy.
                 </p>
@@ -248,7 +248,7 @@ export default function SprawdzAutoPage() {
                   }`}
                 >
                   {tier.featured && (
-                    <span className="mb-3 inline-block w-fit rounded-full bg-accent px-3 py-1 text-xs font-semibold text-white">
+                    <span className="mb-3 inline-block w-fit rounded-full bg-accent-solid px-3 py-1 text-xs font-semibold text-white">
                       Najczęściej wybierany
                     </span>
                   )}
@@ -317,7 +317,7 @@ export default function SprawdzAutoPage() {
                     <summary className="flex cursor-pointer select-none list-none items-center justify-between gap-4 p-6 font-medium text-gray-900 dark:text-white [&::-webkit-details-marker]:hidden">
                       {item.question}
                       <svg
-                        className="h-5 w-5 shrink-0 text-gray-400 transition-transform group-open:rotate-45"
+                        className="h-5 w-5 shrink-0 text-gray-600 dark:text-gray-400 transition-transform group-open:rotate-45"
                         viewBox="0 0 20 20"
                         fill="none"
                       >

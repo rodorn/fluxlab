@@ -442,7 +442,7 @@ export default function AutomatyzacjaDlaBiurRachunkowych() {
                             <summary className="flex items-center justify-between cursor-pointer p-6 text-gray-900 dark:text-white font-medium">
                               {item.question}
                               <svg
-                                className="shrink-0 ml-4 w-5 h-5 text-gray-400 transition-transform group-open:rotate-45"
+                                className="shrink-0 ml-4 w-5 h-5 text-gray-600 dark:text-gray-400 transition-transform group-open:rotate-45"
                                 viewBox="0 0 20 20"
                                 fill="none"
                               >
@@ -485,7 +485,7 @@ export default function AutomatyzacjaDlaBiurRachunkowych() {
                         >
                           Zamów diagnozę
                         </Link>
-                        <p className="mt-4 text-xs text-gray-400 dark:text-gray-500">
+                        <p className="mt-4 text-xs text-gray-600 dark:text-gray-400">
                           Bezpłatna diagnoza · Odpowiedź w 24h
                         </p>
                       </div>

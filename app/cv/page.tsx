@@ -220,7 +220,7 @@ export default function CVPage() {
           >
             flux<span className="text-accent">lab</span>
           </Link>
-          <span className="text-xs uppercase tracking-[0.2em] text-gray-400 dark:text-gray-500">
+          <span className="text-xs uppercase tracking-[0.2em] text-gray-600 dark:text-gray-400">
             Curriculum Vitae
           </span>
         </div>
@@ -488,7 +488,7 @@ export default function CVPage() {
                       <span className="font-semibold text-gray-900 dark:text-white">
                         {t.name}
                       </span>
-                      <span className="font-mono text-xs text-gray-400 dark:text-gray-500">
+                      <span className="font-mono text-xs text-gray-600 dark:text-gray-400">
                         {t.date}
                       </span>
                     </li>
@@ -542,7 +542,7 @@ export default function CVPage() {
 
       {/* Stopka, klauzula RODO */}
       <footer className="container-wide py-8">
-        <p className="text-[11px] leading-relaxed text-gray-400 dark:text-gray-600 max-w-3xl">
+        <p className="text-[11px] leading-relaxed text-gray-600 dark:text-gray-600 max-w-3xl">
           Wyrażam zgodę na przetwarzanie moich danych osobowych dla potrzeb
           niezbędnych do realizacji procesu rekrutacji zgodnie z Rozporządzeniem
           Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016

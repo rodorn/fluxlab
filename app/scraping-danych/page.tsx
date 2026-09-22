@@ -255,7 +255,7 @@ export default function ScrapingDanychPage() {
                               {item.question}
                               <svg
                                 aria-hidden="true"
-                                className="shrink-0 ml-4 w-5 h-5 text-gray-400 transition-transform group-open:rotate-45"
+                                className="shrink-0 ml-4 w-5 h-5 text-gray-600 dark:text-gray-400 transition-transform group-open:rotate-45"
                                 viewBox="0 0 20 20"
                                 fill="none"
                               >

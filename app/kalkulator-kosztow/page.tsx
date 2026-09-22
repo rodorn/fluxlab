@@ -401,7 +401,7 @@ export default function KalkulatorKosztowPage() {
                         <h2 className="text-xl lg:text-2xl font-bold text-gray-900 dark:text-white mb-3">
                           Nie wiesz, które auto wybrać?
                         </h2>
-                        <p className="text-gray-500 dark:text-gray-400 mb-6">
+                        <p className="text-gray-600 dark:text-gray-400 mb-6">
                           Zanim policzysz koszty, warto zawęzić listę modeli do
                           takich, które realnie pasują do Twoich potrzeb.
                         </p>
@@ -434,7 +434,7 @@ export default function KalkulatorKosztowPage() {
                               <summary className="flex items-center justify-between cursor-pointer p-6 text-gray-900 dark:text-white font-medium list-none">
                                 {faq.question}
                                 <svg
-                                  className="shrink-0 ml-4 w-5 h-5 text-gray-400 transition-transform group-open:rotate-45"
+                                  className="shrink-0 ml-4 w-5 h-5 text-gray-600 dark:text-gray-400 transition-transform group-open:rotate-45"
                                   viewBox="0 0 20 20"
                                   fill="none"
                                 >

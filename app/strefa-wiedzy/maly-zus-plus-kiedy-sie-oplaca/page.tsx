@@ -416,7 +416,7 @@ export default function MalyZusPlusArticle() {
                         <details className="group rounded-2xl border border-gray-200 dark:border-gray-700">
                           <summary className="flex cursor-pointer items-center justify-between p-6 text-gray-900 dark:text-white font-medium">
                             Czy mały ZUS Plus obniża składkę zdrowotną?
-                            <span className="ml-4 shrink-0 text-gray-400 transition-transform group-open:rotate-45">
+                            <span className="ml-4 shrink-0 text-gray-600 dark:text-gray-400 transition-transform group-open:rotate-45">
                               <svg
                                 width="20"
                                 height="20"
@@ -442,7 +442,7 @@ export default function MalyZusPlusArticle() {
                         <details className="group rounded-2xl border border-gray-200 dark:border-gray-700">
                           <summary className="flex cursor-pointer items-center justify-between p-6 text-gray-900 dark:text-white font-medium">
                             Jak długo można korzystać z małego ZUS Plus?
-                            <span className="ml-4 shrink-0 text-gray-400 transition-transform group-open:rotate-45">
+                            <span className="ml-4 shrink-0 text-gray-600 dark:text-gray-400 transition-transform group-open:rotate-45">
                               <svg
                                 width="20"
                                 height="20"
@@ -467,7 +467,7 @@ export default function MalyZusPlusArticle() {
                         <details className="group rounded-2xl border border-gray-200 dark:border-gray-700">
                           <summary className="flex cursor-pointer items-center justify-between p-6 text-gray-900 dark:text-white font-medium">
                             Czy mały ZUS Plus wpływa na emeryturę?
-                            <span className="ml-4 shrink-0 text-gray-400 transition-transform group-open:rotate-45">
+                            <span className="ml-4 shrink-0 text-gray-600 dark:text-gray-400 transition-transform group-open:rotate-45">
                               <svg
                                 width="20"
                                 height="20"
@@ -492,7 +492,7 @@ export default function MalyZusPlusArticle() {
                         <details className="group rounded-2xl border border-gray-200 dark:border-gray-700">
                           <summary className="flex cursor-pointer items-center justify-between p-6 text-gray-900 dark:text-white font-medium">
                             Czy mogę łączyć mały ZUS Plus z ryczałtem?
-                            <span className="ml-4 shrink-0 text-gray-400 transition-transform group-open:rotate-45">
+                            <span className="ml-4 shrink-0 text-gray-600 dark:text-gray-400 transition-transform group-open:rotate-45">
                               <svg
                                 width="20"
                                 height="20"

@@ -502,7 +502,7 @@ export default function KosztRecznejObslugiLeadow() {
                                 <p className="text-base font-bold text-gray-900 dark:text-white border-t border-gray-100 dark:border-gray-700 pt-4 mb-3">
                                   {e.total}
                                 </p>
-                                <p className="text-xs text-gray-500 dark:text-gray-500 leading-relaxed">
+                                <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
                                   {e.note}
                                 </p>
                               </div>
@@ -604,7 +604,7 @@ export default function KosztRecznejObslugiLeadow() {
                                   <div
                                     className={`flex-shrink-0 w-10 h-10 lg:w-11 lg:h-11 rounded-full flex items-center justify-center font-bold text-sm tabular-nums ${
                                       s.accent
-                                        ? "bg-accent text-white"
+                                        ? "bg-accent-solid text-white"
                                         : "bg-accent-light dark:bg-accent-dark-light text-accent"
                                     }`}
                                   >
@@ -622,7 +622,7 @@ export default function KosztRecznejObslugiLeadow() {
                                 {i < flowSteps.length - 1 && (
                                   <div className="flex justify-center py-1.5">
                                     <svg
-                                      className="text-gray-300 dark:text-gray-600"
+                                      className="text-gray-500 dark:text-gray-400"
                                       width="14"
                                       height="14"
                                       viewBox="0 0 14 14"

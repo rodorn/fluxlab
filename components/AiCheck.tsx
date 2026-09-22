@@ -43,8 +43,8 @@ const MOTYW: Record<string, { ramka: string; tlo: string; tekst: string; etykiet
 };
 
 const ZNAK: Record<Punkt["stan"], { s: string; k: string }> = {
-  ok: { s: "✓", k: "text-emerald-600 dark:text-emerald-400" },
-  uwaga: { s: "!", k: "text-amber-600 dark:text-amber-400" },
+  ok: { s: "✓", k: "text-emerald-700 dark:text-emerald-400" },
+  uwaga: { s: "!", k: "text-amber-700 dark:text-amber-400" },
   zle: { s: "×", k: "text-red-600 dark:text-red-400" },
 };
 

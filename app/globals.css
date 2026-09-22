@@ -9,7 +9,18 @@
   --article-muted: #555555;
   --article-box: #f6f6f8;
   --article-box-border: transparent;
-  --article-link: #6366f1;
+  --article-link: #4f46e5;
+
+  /* Akcent w zapisie skladowych, bo Tailwind dokleja do niego przezroczystosc
+     (`bg-accent/10`). Jasny motyw: indygo 600, 6,29:1 na bieli. */
+  --accent: 79 70 229;
+  --accent-hover: 67 56 202;
+  --accent-solid: 79 70 229;
+
+  /* Werdykt narzedzia. Czerwien i zielen ustawione tak, zeby obie mialy
+     na swoim tle co najmniej 4,5:1: #16a34a na bieli daje tylko 3,30:1. */
+  --stan-zle: #b91c1c;
+  --stan-dobrze: #15803d;
 }
 
 .dark,
@@ -19,6 +30,15 @@ html.dark {
   --article-box: rgba(17, 24, 39, 0.6);
   --article-box-border: #1f2937;
   --article-link: #a5b4fc;
+
+  /* Ciemny motyw: indygo 400, 6,75:1 na tle strony i 4,92:1 na najjasniejszej
+     karcie. `--accent-solid` zostaje ciemny, bo lezy pod bialym napisem. */
+  --accent: 129 140 248;
+  --accent-hover: 165 180 252;
+  --accent-solid: 79 70 229;
+
+  --stan-zle: #f87171;
+  --stan-dobrze: #4ade80;
 }
 
 @layer base {
@@ -84,14 +104,14 @@ html.dark {
 
   .btn-primary {
     @apply relative inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl text-white font-semibold text-sm tracking-tight transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2;
-    background-image: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    background-image: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
     box-shadow:
       0 4px 12px -2px rgba(99, 102, 241, 0.35),
       inset 0 1px 0 0 rgba(255, 255, 255, 0.15);
   }
 
   .btn-primary:hover {
-    background-image: linear-gradient(135deg, #5558e3 0%, #7c3aed 100%);
+    background-image: linear-gradient(135deg, #4338ca 0%, #6d28d9 100%);
     box-shadow:
       0 12px 24px -6px rgba(99, 102, 241, 0.5),
       inset 0 1px 0 0 rgba(255, 255, 255, 0.2);
@@ -171,14 +191,16 @@ html.dark {
   }
 
   /* Animated gradient text — flow indigo → violet → cyan → indigo */
+  /* Tu gradient jest samym napisem, nie tlem pod nim, wiec przystanki musza
+     odcinac sie od tla strony. Cyjan #06b6d4 dawal na bieli 2,43:1. */
   .text-gradient-flow {
     background: linear-gradient(
       90deg,
-      #6366f1 0%,
-      #8b5cf6 25%,
-      #06b6d4 50%,
-      #8b5cf6 75%,
-      #6366f1 100%
+      #4f46e5 0%,
+      #7c3aed 25%,
+      #0e7490 50%,
+      #7c3aed 75%,
+      #4f46e5 100%
     );
     background-size: 200% 100%;
     -webkit-background-clip: text;
@@ -186,6 +208,17 @@ html.dark {
     -webkit-text-fill-color: transparent;
     color: transparent;
     animation: gradient-flow 8s ease-in-out infinite;
+  }
+
+  .dark .text-gradient-flow {
+    background-image: linear-gradient(
+      90deg,
+      #a5b4fc 0%,
+      #c4b5fd 25%,
+      #67e8f9 50%,
+      #c4b5fd 75%,
+      #a5b4fc 100%
+    );
   }
 
   /* Mesh gradient — wielowarstwowy animowany background */

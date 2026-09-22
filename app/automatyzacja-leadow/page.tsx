@@ -128,7 +128,7 @@ export default function AutomatyzacjaLeadow() {
                             <summary className="flex cursor-pointer select-none list-none items-center justify-between gap-4 p-6 font-medium text-gray-900 dark:text-white [&::-webkit-details-marker]:hidden">
                               {item.question}
                               <svg
-                                className="h-5 w-5 shrink-0 text-gray-400 transition-transform group-open:rotate-45"
+                                className="h-5 w-5 shrink-0 text-gray-600 dark:text-gray-400 transition-transform group-open:rotate-45"
                                 viewBox="0 0 20 20"
                                 fill="none"
                               >

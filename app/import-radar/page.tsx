@@ -183,7 +183,7 @@ export default function ImportRadarPage() {
                     BMW 320d, 2019, 2.0 diesel, 95 000 km
                   </p>
                 </div>
-                <span className="rounded-full bg-emerald-500/10 px-3 py-1 text-sm font-semibold text-emerald-600 dark:text-emerald-400">
+                <span className="rounded-full bg-emerald-500/10 px-3 py-1 text-sm font-semibold text-emerald-700 dark:text-emerald-400">
                   Marża netto ok. 9 100 zł
                 </span>
               </div>
@@ -235,7 +235,7 @@ export default function ImportRadarPage() {
                   }`}
                 >
                   {tier.featured && (
-                    <span className="mb-3 inline-block w-fit rounded-full bg-accent px-3 py-1 text-xs font-semibold text-white">
+                    <span className="mb-3 inline-block w-fit rounded-full bg-accent-solid px-3 py-1 text-xs font-semibold text-white">
                       Najczęściej wybierany
                     </span>
                   )}
@@ -304,7 +304,7 @@ export default function ImportRadarPage() {
                     <summary className="flex cursor-pointer select-none list-none items-center justify-between gap-4 p-6 font-medium text-gray-900 dark:text-white [&::-webkit-details-marker]:hidden">
                       {item.question}
                       <svg
-                        className="h-5 w-5 shrink-0 text-gray-400 transition-transform group-open:rotate-45"
+                        className="h-5 w-5 shrink-0 text-gray-600 dark:text-gray-400 transition-transform group-open:rotate-45"
                         viewBox="0 0 20 20"
                         fill="none"
                       >

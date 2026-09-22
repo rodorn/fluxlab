@@ -58,7 +58,7 @@ export default function NotFound() {
                   <p className="font-semibold text-gray-900 dark:text-white group-hover:text-accent transition-colors mb-1">
                     {l.title}
                   </p>
-                  <p className="text-xs text-gray-500 dark:text-gray-400 leading-snug">
+                  <p className="text-xs text-gray-600 dark:text-gray-400 leading-snug">
                     {l.desc}
                   </p>
                 </Link>

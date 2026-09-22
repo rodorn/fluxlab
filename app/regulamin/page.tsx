@@ -48,7 +48,7 @@ export default function Regulamin() {
             <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900 dark:text-white mt-8 mb-4">
               Regulamin
             </h1>
-            <p className="text-sm text-gray-400 dark:text-gray-500">
+            <p className="text-sm text-gray-600 dark:text-gray-400">
               Ostatnia aktualizacja: 4 kwietnia 2026
             </p>
           </div>

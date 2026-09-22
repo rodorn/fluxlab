@@ -115,7 +115,7 @@ export default function CaseStudy() {
                             key={it.title}
                             className="flex gap-4 bg-gray-50 dark:bg-gray-900/50 border border-gray-100 dark:border-gray-700 rounded-xl p-5"
                           >
-                            <span className="flex-shrink-0 w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center font-bold text-sm">
+                            <span className="flex-shrink-0 w-8 h-8 rounded-full bg-accent-solid text-white flex items-center justify-center font-bold text-sm">
                               {i + 1}
                             </span>
                             <div>

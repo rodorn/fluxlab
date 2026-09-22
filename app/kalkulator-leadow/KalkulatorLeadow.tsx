@@ -124,13 +124,13 @@ function NumberField({
           className="w-full px-4 py-2.5 pr-16 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent tabular-nums"
         />
         {unit && (
-          <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-xs text-gray-400">
+          <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-xs text-gray-600 dark:text-gray-400">
             {unit}
           </span>
         )}
       </div>
       {hint && (
-        <p className="text-xs text-gray-400 dark:text-gray-500">{hint}</p>
+        <p className="text-xs text-gray-600 dark:text-gray-400">{hint}</p>
       )}
     </div>
   );
@@ -180,7 +180,7 @@ function PercentSlider({
         />
       </div>
       {hint && (
-        <p className="text-xs text-gray-400 dark:text-gray-500">{hint}</p>
+        <p className="text-xs text-gray-600 dark:text-gray-400">{hint}</p>
       )}
     </div>
   );
@@ -207,7 +207,7 @@ function MetricCard({
           : "border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800/60"
       }`}
     >
-      <p className="text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
+      <p className="text-[11px] uppercase tracking-wider text-gray-600 dark:text-gray-400 mb-2">
         {label}
       </p>
       <p
@@ -220,7 +220,7 @@ function MetricCard({
         {value}
       </p>
       {hint && (
-        <p className="mt-2 text-xs text-gray-400 dark:text-gray-500">{hint}</p>
+        <p className="mt-2 text-xs text-gray-600 dark:text-gray-400">{hint}</p>
       )}
     </div>
   );
@@ -415,7 +415,7 @@ export default function KalkulatorLeadow() {
           />
         </div>
 
-        <p className="text-xs text-gray-400 dark:text-gray-500 leading-relaxed">
+        <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
           Uproszczenie modelu: zakładamy, że 30% leadów z opóźnioną reakcją
           efektywnie konwertuje gorzej i są to leady realnie utracone. Wynik to
           szacunek, nie audyt księgowy, ale w praktyce wystarczy, żeby zobaczyć

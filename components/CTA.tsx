@@ -205,7 +205,7 @@ export default function CTA() {
                   className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5"
                 >
                   Firma{" "}
-                  <span className="text-gray-400 font-normal text-xs">
+                  <span className="text-gray-600 dark:text-gray-400 font-normal text-xs">
                     (opcjonalnie)
                   </span>
                 </label>
@@ -288,7 +288,7 @@ export default function CTA() {
                 className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5"
               >
                 Opisz problem w 2–3 zdaniach{" "}
-                <span className="text-gray-400 font-normal text-xs">
+                <span className="text-gray-600 dark:text-gray-400 font-normal text-xs">
                   (opcjonalnie)
                 </span>
               </label>
@@ -307,7 +307,7 @@ export default function CTA() {
                 className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
               >
                 Preferowany kontakt{" "}
-                <span className="text-gray-400 font-normal text-xs">
+                <span className="text-gray-600 dark:text-gray-400 font-normal text-xs">
                   (opcjonalnie)
                 </span>
               </p>
@@ -320,7 +320,7 @@ export default function CTA() {
                     aria-pressed={contactPref === opt.value}
                     className={`px-4 py-2 rounded-lg text-sm font-medium border transition-colors ${
                       contactPref === opt.value
-                        ? "bg-accent text-white border-accent"
+                        ? "bg-accent-solid text-white border-accent"
                         : "bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-accent/50"
                     }`}
                   >
@@ -342,13 +342,13 @@ export default function CTA() {
               <p
                 role="alert"
                 aria-live="polite"
-                className="text-center text-sm text-red-500"
+                className="text-center text-sm text-red-600"
               >
                 {errorMsg}
               </p>
             )}
 
-            <p className="text-center text-xs text-gray-400 dark:text-gray-500">
+            <p className="text-center text-xs text-gray-600 dark:text-gray-400">
               Odpowiedź w 24h. Bez spamu, bez newslettera, bez &bdquo;szybkiej
               rozmowy&rdquo; wciskanej na siłę.
             </p>

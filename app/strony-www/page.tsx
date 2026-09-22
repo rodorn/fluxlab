@@ -207,7 +207,7 @@ export default function StronyWww() {
                           <summary className="flex items-center justify-between gap-4 cursor-pointer p-6 text-sm font-semibold text-gray-900 dark:text-white select-none [&::-webkit-details-marker]:hidden list-none">
                             {item.question}
                             <svg
-                              className="shrink-0 w-5 h-5 text-gray-400 transition-transform group-open:rotate-45"
+                              className="shrink-0 w-5 h-5 text-gray-600 dark:text-gray-400 transition-transform group-open:rotate-45"
                               viewBox="0 0 20 20"
                               fill="none"
                               aria-hidden="true"

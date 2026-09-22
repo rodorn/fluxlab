@@ -88,7 +88,7 @@ export default function Pricing() {
                   className={`text-xs font-semibold uppercase tracking-widest ${
                     t.accent
                       ? "text-accent"
-                      : "text-gray-400 dark:text-gray-500"
+                      : "text-gray-600 dark:text-gray-400"
                   }`}
                 >
                   {t.label}

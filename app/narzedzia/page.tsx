@@ -168,7 +168,7 @@ function KafelekNarzedzia({ tool }: { tool: Narzedzie }) {
       className="group relative flex flex-col rounded-2xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800/60 p-6 hover:border-accent/40 dark:hover:border-accent/50 transition-colors"
     >
       {tool.badge && (
-        <span className="absolute top-3 right-3 inline-flex items-center gap-1 bg-accent text-white text-xs font-semibold px-2.5 py-1 rounded-full">
+        <span className="absolute top-3 right-3 inline-flex items-center gap-1 bg-accent-solid text-white text-xs font-semibold px-2.5 py-1 rounded-full">
           <span className="w-1.5 h-1.5 rounded-full bg-white" />
           {tool.badge}
         </span>

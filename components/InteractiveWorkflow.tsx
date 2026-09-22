@@ -616,7 +616,7 @@ export default function InteractiveWorkflow() {
           aria-live="polite"
         >
           {scene.sending ? (
-            <span className="font-semibold text-emerald-600 dark:text-emerald-400">
+            <span className="font-semibold text-emerald-700 dark:text-emerald-400">
               Raport zebrał 5 leadów, wysłany na maila ✓
             </span>
           ) : (

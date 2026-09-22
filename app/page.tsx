@@ -19,7 +19,7 @@ const PILLARS = [
     ring: "group-hover:ring-accent/80 focus-visible:ring-accent",
     glow: "from-accent/35",
     numColor: "group-hover:text-accent",
-    btn: "text-accent group-hover:bg-accent group-hover:text-white",
+    btn: "text-accent group-hover:bg-accent-solid group-hover:text-white",
   },
   {
     href: "/scraping-danych",
@@ -135,7 +135,7 @@ export default function Home() {
             Łączę CRM, formularze, maile, API i raportowanie tak, żeby ludzie
             przestali ręcznie przepisywać dane i pilnować procesów.
           </p>
-          <p className="mt-1.5 text-xs text-gray-500 dark:text-white/40">
+          <p className="mt-1.5 text-xs text-gray-500 dark:text-white/60">
             Pipedrive · HubSpot · Make · n8n · API · Python
           </p>
           {/* Darmowe narzedzia to najnizszy prog wejscia, jaki mamy, a strona
@@ -287,7 +287,7 @@ export default function Home() {
         <WybierzBranze />
 
         {/* Dolny pasek */}
-        <footer className="relative z-20 flex flex-wrap items-center justify-center gap-x-6 gap-y-1.5 px-6 py-3.5 text-xs text-gray-500 dark:text-white/40 border-t border-gray-200 dark:border-white/10">
+        <footer className="relative z-20 flex flex-wrap items-center justify-center gap-x-6 gap-y-1.5 px-6 py-3.5 text-xs text-gray-500 dark:text-white/60 border-t border-gray-200 dark:border-white/10">
           <Link
             href="/produkty"
             className="hover:text-gray-900 dark:hover:text-white/70 transition-colors"

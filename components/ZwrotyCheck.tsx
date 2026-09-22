@@ -214,7 +214,7 @@ export default function ZwrotyCheck() {
                 <p className="flex items-start gap-2 text-sm font-semibold text-gray-900 dark:text-white">
                   <span
                     aria-hidden="true"
-                    className={w.jest ? "text-emerald-600" : "text-red-600"}
+                    className={w.jest ? "text-emerald-700" : "text-red-600"}
                   >
                     {w.jest ? "✓" : "✕"}
                   </span>

@@ -200,7 +200,7 @@ export default function JezykCheck() {
             <li
               key={tekst}
               className={`flex items-center gap-3 text-sm transition-opacity duration-300 ${
-                i <= etap ? "text-gray-900 dark:text-white" : "text-gray-400 dark:text-gray-600"
+                i <= etap ? "text-gray-900 dark:text-white" : "text-gray-600 dark:text-gray-600"
               }`}
             >
               <span

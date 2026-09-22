@@ -406,13 +406,13 @@ export default function AudytCRM() {
     zdrowy: {
       ring: "border-emerald-500/40",
       bg: "bg-emerald-500/5 dark:bg-emerald-500/10",
-      text: "text-emerald-600 dark:text-emerald-400",
+      text: "text-emerald-700 dark:text-emerald-400",
       chip: "bg-emerald-500/10 text-emerald-700 dark:text-emerald-300",
     },
     solidny: {
       ring: "border-amber-500/40",
       bg: "bg-amber-500/5 dark:bg-amber-500/10",
-      text: "text-amber-600 dark:text-amber-400",
+      text: "text-amber-700 dark:text-amber-400",
       chip: "bg-amber-500/10 text-amber-700 dark:text-amber-300",
     },
     blokuje: {

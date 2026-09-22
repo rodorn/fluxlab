@@ -568,7 +568,7 @@ function Slider({
         </span>
         <span className="text-sm font-semibold text-accent tabular-nums">
           {value}
-          {unit && <span className="text-gray-400 font-normal"> {unit}</span>}
+          {unit && <span className="text-gray-600 dark:text-gray-400 font-normal"> {unit}</span>}
         </span>
       </div>
       <div className="relative group">
@@ -593,13 +593,13 @@ function Slider({
         />
       </div>
       {labels && (
-        <div className="flex justify-between text-[11px] text-gray-400 dark:text-gray-500">
+        <div className="flex justify-between text-[11px] text-gray-600 dark:text-gray-400">
           <span>{labels.left}</span>
           <span>{labels.right}</span>
         </div>
       )}
       {hint && (
-        <p className="text-xs text-gray-400 dark:text-gray-500">{hint}</p>
+        <p className="text-xs text-gray-600 dark:text-gray-400">{hint}</p>
       )}
     </div>
   );
@@ -644,7 +644,7 @@ function LogSlider({
         </span>
         <span className="text-sm font-semibold text-accent tabular-nums">
           {fmt(value)}
-          {unit && <span className="text-gray-400 font-normal"> {unit}</span>}
+          {unit && <span className="text-gray-600 dark:text-gray-400 font-normal"> {unit}</span>}
         </span>
       </div>
       <div className="relative group">
@@ -730,7 +730,7 @@ function CardSelector<T extends string>({
                 {opt.pros.map((p) => (
                   <div
                     key={p}
-                    className="flex gap-1.5 text-emerald-600 dark:text-emerald-400"
+                    className="flex gap-1.5 text-emerald-700 dark:text-emerald-400"
                   >
                     <span className="shrink-0">+</span>
                     <span>{p}</span>
@@ -739,7 +739,7 @@ function CardSelector<T extends string>({
                 {opt.cons.map((c) => (
                   <div
                     key={c}
-                    className="flex gap-1.5 text-red-500 dark:text-red-400"
+                    className="flex gap-1.5 text-red-600 dark:text-red-400"
                   >
                     <span className="shrink-0">−</span>
                     <span>{c}</span>
@@ -747,7 +747,7 @@ function CardSelector<T extends string>({
                 ))}
               </div>
               {opt.note && (
-                <div className="mt-3 pt-3 border-t border-gray-100 dark:border-gray-700 text-xs text-amber-600 dark:text-amber-400">
+                <div className="mt-3 pt-3 border-t border-gray-100 dark:border-gray-700 text-xs text-amber-700 dark:text-amber-400">
                   {opt.note}
                 </div>
               )}
@@ -1796,7 +1796,7 @@ export default function CarConfigurator() {
       {/* Segment result */}
       <div className="rounded-2xl border border-gray-200 dark:border-gray-700 p-6 space-y-4">
         <div className="text-center">
-          <p className="text-xs uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-1">
+          <p className="text-xs uppercase tracking-widest text-gray-600 dark:text-gray-400 mb-1">
             {answers.bodyShapes.includes("coupe-2") ||
             answers.bodyShapes.includes("roadster-2")
               ? "Sugerowana ilość miejsca"
@@ -1881,7 +1881,7 @@ export default function CarConfigurator() {
         />
 
         <div className="rounded-2xl border border-gray-200 dark:border-gray-700 p-6 text-center space-y-1">
-          <p className="text-xs uppercase tracking-widest text-gray-400 dark:text-gray-500">
+          <p className="text-xs uppercase tracking-widest text-gray-600 dark:text-gray-400">
             Sugerowana moc
           </p>
           <p className="text-3xl font-bold text-accent tabular-nums">
@@ -1945,7 +1945,7 @@ export default function CarConfigurator() {
       <div className="space-y-2">
         <label className="text-sm font-medium text-gray-700 dark:text-gray-300">
           Dodatkowe wymagania{" "}
-          <span className="text-gray-400 font-normal">(opcjonalnie)</span>
+          <span className="text-gray-600 dark:text-gray-400 font-normal">(opcjonalnie)</span>
         </label>
         <textarea
           value={answers.additionalInfo}
@@ -1965,7 +1965,7 @@ export default function CarConfigurator() {
         />
         <span className="text-sm text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white transition-colors">
           Rozszerzone wyszukiwanie{" "}
-          <span className="text-gray-400 font-normal">
+          <span className="text-gray-600 dark:text-gray-400 font-normal">
             (więcej modeli, dłuższe oczekiwanie)
           </span>
         </span>
@@ -2066,7 +2066,7 @@ export default function CarConfigurator() {
               <p className="text-sm text-gray-500 dark:text-gray-400 text-center transition-opacity">
                 {current.text}
               </p>
-              <p className="text-xs text-gray-400 dark:text-gray-600 tabular-nums">
+              <p className="text-xs text-gray-600 dark:text-gray-600 tabular-nums">
                 {loadingElapsed}s
               </p>
             </div>
@@ -2092,7 +2092,7 @@ export default function CarConfigurator() {
             Nie znaleziono modeli spełniających kryteria w budżecie{" "}
             {fmt(answers.budget)} PLN.
           </p>
-          <p className="text-xs text-amber-600 dark:text-amber-500">
+          <p className="text-xs text-amber-700 dark:text-amber-500">
             Spróbuj zwiększyć budżet, obniżyć wymaganą moc lub wybrać niższy
             segment.
           </p>
@@ -2121,7 +2121,7 @@ export default function CarConfigurator() {
                 </p>
               </div>
             </div>
-            <p className="text-xs text-gray-400 pt-1">
+            <p className="text-xs text-gray-600 dark:text-gray-400 pt-1">
               Szacunkowe koszty przy{" "}
               {fmt(
                 (answers.kmCity + answers.kmHighway) *
@@ -2153,8 +2153,8 @@ export default function CarConfigurator() {
                 onClick={() => setExpandedCategory(-1)}
                 className={`px-4 py-2 rounded-xl text-sm font-medium border-2 transition-all ${
                   expandedCategory === -1
-                    ? "border-emerald-500 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400"
-                    : "border-emerald-200 dark:border-emerald-800 text-emerald-600 dark:text-emerald-400 hover:border-emerald-300 dark:hover:border-emerald-700"
+                    ? "border-emerald-500 bg-emerald-500/10 text-emerald-700 dark:text-emerald-400"
+                    : "border-emerald-200 dark:border-emerald-800 text-emerald-700 dark:text-emerald-400 hover:border-emerald-300 dark:hover:border-emerald-700"
                 }`}
               >
                 Podsumowanie
@@ -2242,7 +2242,7 @@ export default function CarConfigurator() {
                     <h3 className="text-sm font-semibold text-emerald-700 dark:text-emerald-400 mb-1">
                       Najtańszy model z każdej kategorii wiekowej
                     </h3>
-                    <p className="text-xs text-emerald-600 dark:text-emerald-500">
+                    <p className="text-xs text-emerald-700 dark:text-emerald-500">
                       Porównanie najtańszych wariantów (wg kosztu/km) przy{" "}
                       {fmt(
                         (answers.kmCity + answers.kmHighway) *
@@ -2302,18 +2302,18 @@ export default function CarConfigurator() {
                         <div className="flex items-start justify-between gap-2 mb-3">
                           <div>
                             <div className="flex items-center gap-2">
-                              <span className="text-xs font-semibold uppercase tracking-wider text-gray-400 dark:text-gray-500">
+                              <span className="text-xs font-semibold uppercase tracking-wider text-gray-600 dark:text-gray-400">
                                 {cat.ageLabel}
                               </span>
                               {isGlobalBest && (
-                                <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 bg-emerald-100 dark:bg-emerald-900/40 px-2 py-0.5 rounded-full">
+                                <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-400 bg-emerald-100 dark:bg-emerald-900/40 px-2 py-0.5 rounded-full">
                                   Najlepszy wybór
                                 </span>
                               )}
                             </div>
                             <h4 className="font-bold text-gray-900 dark:text-white mt-1">
                               {car.make} {car.model}{" "}
-                              <span className="text-gray-400 font-normal text-sm">
+                              <span className="text-gray-600 dark:text-gray-400 font-normal text-sm">
                                 {car.generation}
                               </span>
                             </h4>
@@ -2338,25 +2338,25 @@ export default function CarConfigurator() {
                             {/* Key metrics */}
                             <div className="grid grid-cols-2 gap-2">
                               <div className="p-2.5 rounded-xl bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800">
-                                <span className="text-[10px] uppercase tracking-wider text-gray-400 block">
+                                <span className="text-[10px] uppercase tracking-wider text-gray-600 dark:text-gray-400 block">
                                   Koszt/km
                                 </span>
                                 <span
-                                  className={`text-lg font-bold tabular-nums ${isGlobalBest ? "text-emerald-600 dark:text-emerald-400" : "text-accent"}`}
+                                  className={`text-lg font-bold tabular-nums ${isGlobalBest ? "text-emerald-700 dark:text-emerald-400" : "text-accent"}`}
                                 >
                                   {cost.costPerKm.toFixed(2)}{" "}
-                                  <span className="text-xs font-normal text-gray-400">
+                                  <span className="text-xs font-normal text-gray-600 dark:text-gray-400">
                                     PLN
                                   </span>
                                 </span>
                               </div>
                               <div className="p-2.5 rounded-xl bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800">
-                                <span className="text-[10px] uppercase tracking-wider text-gray-400 block">
+                                <span className="text-[10px] uppercase tracking-wider text-gray-600 dark:text-gray-400 block">
                                   Miesięcznie
                                 </span>
                                 <span className="text-lg font-bold tabular-nums text-gray-900 dark:text-white">
                                   {fmt(Math.round(cost.monthly))}{" "}
-                                  <span className="text-xs font-normal text-gray-400">
+                                  <span className="text-xs font-normal text-gray-600 dark:text-gray-400">
                                     PLN
                                   </span>
                                 </span>
@@ -2380,7 +2380,7 @@ export default function CarConfigurator() {
                                   </div>
                                   <span className="text-gray-900 dark:text-white font-medium tabular-nums">
                                     {fmt(Math.round(seg.value))} PLN
-                                    <span className="text-gray-400 ml-1">
+                                    <span className="text-gray-600 dark:text-gray-400 ml-1">
                                       (
                                       {Math.round(
                                         (seg.value / cost.totalCost) * 100,
@@ -2437,7 +2437,7 @@ export default function CarConfigurator() {
                       <div>
                         <h4 className="font-bold text-gray-900 dark:text-white">
                           {car.make} {car.model}{" "}
-                          <span className="text-gray-400 font-normal text-sm">
+                          <span className="text-gray-600 dark:text-gray-400 font-normal text-sm">
                             {car.generation}
                           </span>
                         </h4>
@@ -2723,7 +2723,7 @@ export default function CarConfigurator() {
                   ? "text-accent"
                   : i < step
                     ? "text-gray-600 dark:text-gray-400"
-                    : "text-gray-400 dark:text-gray-600"
+                    : "text-gray-600 dark:text-gray-600"
               }`}
             >
               {title}
@@ -2786,7 +2786,7 @@ export default function CarConfigurator() {
 function SummaryRow({ label, value }: { label: string; value: string }) {
   return (
     <div className="flex flex-col gap-0.5 p-3 rounded-xl bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800">
-      <span className="text-[11px] uppercase tracking-wider text-gray-400 dark:text-gray-500">
+      <span className="text-[11px] uppercase tracking-wider text-gray-600 dark:text-gray-400">
         {label}
       </span>
       <span className="font-medium text-gray-900 dark:text-white">{value}</span>

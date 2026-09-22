@@ -20,7 +20,7 @@ const PRZYCISK =
   "rounded-full border px-3 py-1.5 text-xs sm:px-4 sm:py-2 sm:text-sm font-semibold transition-colors";
 const NIEAKTYWNY =
   "border-gray-200/80 dark:border-gray-800/80 bg-white/60 dark:bg-gray-900/40 text-gray-700 dark:text-gray-300 hover:border-accent/50";
-const AKTYWNY = "border-accent bg-accent text-white";
+const AKTYWNY = "border-accent bg-accent-solid text-white";
 
 function widelki(p: PozycjaWyceny): string {
   return p.min === p.max ? zl(p.min) : `${zl(p.min)} do ${zl(p.max)}`;
@@ -139,7 +139,7 @@ export default function ZakresWyceny({ wycena }: { wycena: Wycena }) {
                     <span
                       className={`mt-0.5 flex-shrink-0 w-4 h-4 rounded border flex items-center justify-center text-[10px] font-bold ${
                         wl
-                          ? "border-accent bg-accent text-white"
+                          ? "border-accent bg-accent-solid text-white"
                           : "border-gray-300 dark:border-gray-600 text-transparent"
                       }`}
                       aria-hidden="true"
@@ -159,7 +159,7 @@ export default function ZakresWyceny({ wycena }: { wycena: Wycena }) {
                       className={`text-sm font-semibold tabular-nums whitespace-nowrap ${
                         wl
                           ? "text-gray-900 dark:text-white"
-                          : "text-gray-400 dark:text-gray-500"
+                          : "text-gray-600 dark:text-gray-400"
                       }`}
                     >
                       {widelki(d)}

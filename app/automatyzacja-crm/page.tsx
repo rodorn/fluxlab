@@ -141,7 +141,7 @@ export default function AutomatyzacjaCRM() {
                             <summary className="flex cursor-pointer items-center justify-between gap-4 p-6 font-medium text-gray-900 dark:text-white [&::-webkit-details-marker]:hidden">
                               {item.question}
                               <svg
-                                className="ml-4 h-5 w-5 shrink-0 text-gray-400 transition-transform group-open:rotate-45"
+                                className="ml-4 h-5 w-5 shrink-0 text-gray-600 dark:text-gray-400 transition-transform group-open:rotate-45"
                                 viewBox="0 0 20 20"
                                 fill="none"
                               >

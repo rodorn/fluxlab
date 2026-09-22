@@ -509,7 +509,7 @@ export default function AutomatyzacjaFormularzaDoPipedrive() {
                                 <div
                                   className={`flex-shrink-0 w-10 h-10 lg:w-11 lg:h-11 rounded-full flex items-center justify-center font-bold text-sm tabular-nums ${
                                     s.accent
-                                      ? "bg-accent text-white"
+                                      ? "bg-accent-solid text-white"
                                       : "bg-accent-light dark:bg-accent-dark-light text-accent"
                                   }`}
                                 >
@@ -527,7 +527,7 @@ export default function AutomatyzacjaFormularzaDoPipedrive() {
                               {i < afterSteps.length - 1 && (
                                 <div className="flex justify-center py-1.5">
                                   <svg
-                                    className="text-gray-300 dark:text-gray-600"
+                                    className="text-gray-500 dark:text-gray-400"
                                     width="14"
                                     height="14"
                                     viewBox="0 0 14 14"

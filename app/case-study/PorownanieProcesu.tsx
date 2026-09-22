@@ -108,7 +108,7 @@ const PRZYCISK =
   "rounded-full border px-3 py-1.5 text-xs sm:px-4 sm:py-2 sm:text-sm font-semibold transition-colors";
 const NIEAKTYWNY =
   "border-gray-200/80 dark:border-gray-800/80 bg-white/60 dark:bg-gray-900/40 text-gray-700 dark:text-gray-300 hover:border-accent/50";
-const AKTYWNY = "border-accent bg-accent text-white";
+const AKTYWNY = "border-accent bg-accent-solid text-white";
 
 /** 95 minut to "1 h 35 min", 60 to "1 h". Godziny czyta sie latwiej niz minuty. */
 function czas(minuty: number): string {
@@ -212,7 +212,7 @@ export default function PorownanieProcesu() {
 
       <div className="grid md:grid-cols-2 gap-4">
         <div className="bg-gray-50 dark:bg-gray-900/50 border border-gray-100 dark:border-gray-700 rounded-xl p-5">
-          <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-1">
+          <p className="text-xs font-semibold uppercase tracking-widest text-gray-600 dark:text-gray-400 mb-1">
             Dziś, ręcznie
           </p>
           <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
@@ -235,7 +235,7 @@ export default function PorownanieProcesu() {
                   <span
                     className={`mt-0.5 flex-shrink-0 w-4 h-4 rounded border flex items-center justify-center text-[10px] font-bold ${
                       wliczony(k)
-                        ? "border-accent bg-accent text-white"
+                        ? "border-accent bg-accent-solid text-white"
                         : "border-gray-300 dark:border-gray-600 text-transparent"
                     }`}
                     aria-hidden="true"
@@ -246,7 +246,7 @@ export default function PorownanieProcesu() {
                     className={`text-sm leading-snug grow ${
                       wliczony(k)
                         ? "text-gray-700 dark:text-gray-300"
-                        : "text-gray-400 dark:text-gray-600 line-through"
+                        : "text-gray-600 dark:text-gray-600 line-through"
                     }`}
                   >
                     {k.co}
@@ -255,7 +255,7 @@ export default function PorownanieProcesu() {
                     className={`text-sm font-semibold tabular-nums whitespace-nowrap ${
                       wliczony(k)
                         ? "text-gray-900 dark:text-white"
-                        : "text-gray-400 dark:text-gray-600"
+                        : "text-gray-600 dark:text-gray-600"
                     }`}
                   >
                     {k.minuty} min
@@ -354,7 +354,7 @@ export default function PorownanieProcesu() {
             </p>
           </div>
         </div>
-        <p className="mt-4 pt-4 border-t border-gray-100 dark:border-gray-700 text-xs text-gray-500 dark:text-gray-500 leading-relaxed">
+        <p className="mt-4 pt-4 border-t border-gray-100 dark:border-gray-700 text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
           Skąd te minuty: {proces.skad} To model przepływu, nie opis wdrożenia u
           firmy, bo takich wdrożeń jeszcze nie mam. Wynik mówi, ile czasu zajmują
           wypisane wyżej czynności, a nie ile zarobi na tym Wasza firma.

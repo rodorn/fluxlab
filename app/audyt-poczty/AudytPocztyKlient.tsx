@@ -104,7 +104,7 @@ export default function AudytPocztyKlient() {
       >
         Sprawdź, czy ktoś może podszyć się pod Waszą firmową pocztę
       </h1>
-      <p style={{ color: "#555", lineHeight: 1.6, marginBottom: "2rem" }}>
+      <p className="text-gray-600 dark:text-gray-300" style={{ lineHeight: 1.6, marginBottom: "2rem" }}>
         Wpisz domenę firmy. W kilka sekund sprawdzimy publiczne rekordy SPF,
         DKIM i DMARC i pokażemy, czy Wasze maile z ofertami i fakturami
         docierają do klientów oraz czy ktoś obcy może wysyłać wiadomości w
@@ -148,7 +148,7 @@ export default function AudytPocztyKlient() {
         </button>
       </form>
 
-      {blad && <p style={{ color: "#dc2626" }}>{blad}</p>}
+      {blad && <p style={{ color: "var(--stan-zle)" }}>{blad}</p>}
 
       {wynik && (
         <div
@@ -172,13 +172,13 @@ export default function AudytPocztyKlient() {
             </span>
           </div>
           <p
-            style={{ color: "#666", fontSize: "0.9rem", marginBottom: "1rem" }}
+            style={{ color: "var(--article-muted)", fontSize: "0.9rem", marginBottom: "1rem" }}
           >
             Dostawca poczty: {wynik.dostawca}
           </p>
 
           {wynik.problemy.length === 0 ? (
-            <p style={{ color: "#16a34a" }}>
+            <p style={{ color: "var(--stan-dobrze)" }}>
               Konfiguracja jest poprawna. Nie ma nic do poprawy.
             </p>
           ) : (
@@ -204,7 +204,7 @@ export default function AudytPocztyKlient() {
                     }}
                   >
                     <strong>{p.tytul}</strong>
-                    <div style={{ color: "#555", fontSize: "0.9rem" }}>
+                    <div style={{ color: "var(--article-muted)", fontSize: "0.9rem" }}>
                       {p.opis}
                     </div>
                   </li>
@@ -214,7 +214,7 @@ export default function AudytPocztyKlient() {
                 style={{
                   marginTop: "1.5rem",
                   padding: "1rem",
-                  background: "#f6f6f8",
+                  background: "var(--article-box)",
                   borderRadius: 8,
                 }}
               >
@@ -224,7 +224,7 @@ export default function AudytPocztyKlient() {
                 <p
                   style={{
                     margin: "0 0 1rem",
-                    color: "#555",
+                    color: "var(--article-muted)",
                     fontSize: "0.9rem",
                   }}
                 >
@@ -236,7 +236,7 @@ export default function AudytPocztyKlient() {
                   zobowiązań.
                 </p>
                 {leadStan === "ok" ? (
-                  <p style={{ color: "#16a34a", fontWeight: 600, margin: 0 }}>
+                  <p style={{ color: "var(--stan-dobrze)", fontWeight: 600, margin: 0 }}>
                     Dziękuję. Raport dla {wynik.domena} przygotuję i odpiszę na{" "}
                     {leadEmail}.
                   </p>
@@ -271,7 +271,7 @@ export default function AudytPocztyKlient() {
                     {leadStan === "blad" && (
                       <span
                         style={{
-                          color: "#dc2626",
+                          color: "var(--stan-zle)",
                           flexBasis: "100%",
                           fontSize: "0.85rem",
                         }}
@@ -287,7 +287,7 @@ export default function AudytPocztyKlient() {
 
           <details style={{ marginTop: "1.25rem" }}>
             <summary
-              style={{ cursor: "pointer", color: "#666", fontSize: "0.85rem" }}
+              style={{ cursor: "pointer", color: "var(--article-muted)", fontSize: "0.85rem" }}
             >
               Pokaż surowe rekordy DNS
             </summary>
@@ -295,7 +295,7 @@ export default function AudytPocztyKlient() {
               style={{
                 fontSize: "0.75rem",
                 overflowX: "auto",
-                background: "#fafafa",
+                background: "var(--article-box)",
                 padding: "0.75rem",
                 borderRadius: 6,
                 marginTop: "0.5rem",

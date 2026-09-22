@@ -139,7 +139,7 @@ export default function ZapierMake() {
                             <summary className="cursor-pointer p-6 flex items-center justify-between gap-4 text-gray-900 dark:text-white font-medium list-none">
                               {item.question}
                               <svg
-                                className="shrink-0 w-5 h-5 text-gray-400 transition-transform group-open:rotate-45"
+                                className="shrink-0 w-5 h-5 text-gray-600 dark:text-gray-400 transition-transform group-open:rotate-45"
                                 viewBox="0 0 20 20"
                                 fill="none"
                               >

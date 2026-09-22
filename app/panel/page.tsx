@@ -74,7 +74,7 @@ export default async function PanelPage({
                       <p className="mt-1 font-mono text-sm text-accent break-all">
                         {link.url}
                       </p>
-                      <p className="mt-2 text-xs text-gray-500 dark:text-gray-400 leading-snug">
+                      <p className="mt-2 text-xs text-gray-600 dark:text-gray-400 leading-snug">
                         {link.hint}
                       </p>
                     </a>

@@ -78,7 +78,7 @@ export default function Hero() {
           >
             Pokaż mi sygnały, że warto →
           </TrackedCTA>
-          <p className="text-xs text-gray-400 dark:text-gray-600 mt-4">
+          <p className="text-xs text-gray-600 dark:text-gray-600 mt-4">
             Albo od razu:{" "}
             <a
               href="#kontakt"
@@ -93,7 +93,7 @@ export default function Hero() {
         {/* Stats, reagują na hover/focus PathChooser */}
         <div className="animate-fade-up-4 border-t border-gray-200/60 dark:border-gray-800/60 pt-10">
           <p
-            className="text-xs uppercase tracking-widest text-gray-400 dark:text-gray-500 text-center mb-6"
+            className="text-xs uppercase tracking-widest text-gray-600 dark:text-gray-400 text-center mb-6"
             aria-live="polite"
           >
             {activePath === "web" && "Strony WWW · liczby"}

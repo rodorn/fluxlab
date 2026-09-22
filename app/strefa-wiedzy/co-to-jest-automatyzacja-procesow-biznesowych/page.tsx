@@ -591,7 +591,7 @@ export default function AutomatyzacjaProcesowArticle() {
                             Czy automatyzacja procesów biznesowych oznacza
                             zwolnienia?
                             <svg
-                              className="h-5 w-5 shrink-0 text-gray-400 transition-transform duration-200 group-open:rotate-45"
+                              className="h-5 w-5 shrink-0 text-gray-600 dark:text-gray-400 transition-transform duration-200 group-open:rotate-45"
                               fill="none"
                               viewBox="0 0 24 24"
                               stroke="currentColor"
@@ -615,7 +615,7 @@ export default function AutomatyzacjaProcesowArticle() {
                           <summary className="flex cursor-pointer items-center justify-between p-6 text-gray-900 dark:text-white font-medium">
                             Czy trzeba od razu wdrażać duży system?
                             <svg
-                              className="h-5 w-5 shrink-0 text-gray-400 transition-transform duration-200 group-open:rotate-45"
+                              className="h-5 w-5 shrink-0 text-gray-600 dark:text-gray-400 transition-transform duration-200 group-open:rotate-45"
                               fill="none"
                               viewBox="0 0 24 24"
                               stroke="currentColor"
@@ -638,7 +638,7 @@ export default function AutomatyzacjaProcesowArticle() {
                           <summary className="flex cursor-pointer items-center justify-between p-6 text-gray-900 dark:text-white font-medium">
                             Co najczęściej automatyzuje się jako pierwsze?
                             <svg
-                              className="h-5 w-5 shrink-0 text-gray-400 transition-transform duration-200 group-open:rotate-45"
+                              className="h-5 w-5 shrink-0 text-gray-600 dark:text-gray-400 transition-transform duration-200 group-open:rotate-45"
                               fill="none"
                               viewBox="0 0 24 24"
                               stroke="currentColor"
@@ -662,7 +662,7 @@ export default function AutomatyzacjaProcesowArticle() {
                             Czy automatyzacja działa tylko w firmach
                             technologicznych?
                             <svg
-                              className="h-5 w-5 shrink-0 text-gray-400 transition-transform duration-200 group-open:rotate-45"
+                              className="h-5 w-5 shrink-0 text-gray-600 dark:text-gray-400 transition-transform duration-200 group-open:rotate-45"
                               fill="none"
                               viewBox="0 0 24 24"
                               stroke="currentColor"
@@ -685,7 +685,7 @@ export default function AutomatyzacjaProcesowArticle() {
                           <summary className="flex cursor-pointer items-center justify-between p-6 text-gray-900 dark:text-white font-medium">
                             Jak szybko widać efekty?
                             <svg
-                              className="h-5 w-5 shrink-0 text-gray-400 transition-transform duration-200 group-open:rotate-45"
+                              className="h-5 w-5 shrink-0 text-gray-600 dark:text-gray-400 transition-transform duration-200 group-open:rotate-45"
                               fill="none"
                               viewBox="0 0 24 24"
                               stroke="currentColor"
@@ -709,7 +709,7 @@ export default function AutomatyzacjaProcesowArticle() {
                           <summary className="flex cursor-pointer items-center justify-between p-6 text-gray-900 dark:text-white font-medium">
                             Czy każda firma potrzebuje AI do automatyzacji?
                             <svg
-                              className="h-5 w-5 shrink-0 text-gray-400 transition-transform duration-200 group-open:rotate-45"
+                              className="h-5 w-5 shrink-0 text-gray-600 dark:text-gray-400 transition-transform duration-200 group-open:rotate-45"
                               fill="none"
                               viewBox="0 0 24 24"
                               stroke="currentColor"

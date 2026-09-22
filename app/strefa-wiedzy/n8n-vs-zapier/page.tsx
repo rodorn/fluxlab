@@ -441,7 +441,7 @@ export default function N8nVsZapierArticle() {
                           >
                             <summary className="flex cursor-pointer items-center justify-between p-6 text-gray-900 dark:text-white font-medium">
                               {item.question}
-                              <span className="ml-4 shrink-0 text-gray-400 transition-transform group-open:rotate-45">
+                              <span className="ml-4 shrink-0 text-gray-600 dark:text-gray-400 transition-transform group-open:rotate-45">
                                 <svg
                                   width="20"
                                   height="20"

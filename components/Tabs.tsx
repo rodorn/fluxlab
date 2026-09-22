@@ -76,7 +76,7 @@ export default function Tabs({ tabs, ariaLabel = "Sekcje strony" }: Props) {
               onKeyDown={(e) => onKeyDown(e, i)}
               className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
                 active === i
-                  ? "bg-accent text-white shadow-sm shadow-accent/30"
+                  ? "bg-accent-solid text-white shadow-sm shadow-accent/30"
                   : "text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
               }`}
             >

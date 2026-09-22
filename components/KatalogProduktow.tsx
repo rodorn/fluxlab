@@ -41,7 +41,7 @@ const PRZYCISK =
   "rounded-full border px-2.5 py-1.5 text-xs sm:px-4 sm:py-2 sm:text-sm font-semibold transition-colors";
 const NIEAKTYWNY =
   "border-gray-200/80 dark:border-gray-800/80 bg-white/60 dark:bg-gray-900/40 text-gray-700 dark:text-gray-300 hover:border-accent/50";
-const AKTYWNY = "border-accent bg-accent text-white";
+const AKTYWNY = "border-accent bg-accent-solid text-white";
 
 type Wybor = {
   filar: ProductCategory | null;

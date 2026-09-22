@@ -251,13 +251,13 @@ function NumberField({
           className="w-full px-4 py-2.5 pr-20 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent tabular-nums"
         />
         {unit && (
-          <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-xs text-gray-400">
+          <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-xs text-gray-600 dark:text-gray-400">
             {unit}
           </span>
         )}
       </div>
       {hint && (
-        <p className="text-xs text-gray-400 dark:text-gray-500">{hint}</p>
+        <p className="text-xs text-gray-600 dark:text-gray-400">{hint}</p>
       )}
     </div>
   );
@@ -383,7 +383,7 @@ function MetricCard({
           : "border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800/60"
       }`}
     >
-      <p className="text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
+      <p className="text-[11px] uppercase tracking-wider text-gray-600 dark:text-gray-400 mb-2">
         {label}
       </p>
       <p
@@ -396,7 +396,7 @@ function MetricCard({
         {value}
       </p>
       {hint && (
-        <p className="mt-2 text-xs text-gray-400 dark:text-gray-500">{hint}</p>
+        <p className="mt-2 text-xs text-gray-600 dark:text-gray-400">{hint}</p>
       )}
     </div>
   );
@@ -557,7 +557,7 @@ export default function Kalkulator() {
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             <span className="inline-flex items-center gap-1.5 rounded-full bg-white dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 px-3 py-1 text-xs text-gray-700 dark:text-gray-300">
-              <span className="text-gray-400 dark:text-gray-500">
+              <span className="text-gray-600 dark:text-gray-400">
                 Częstotliwość:
               </span>{" "}
               <strong className="text-gray-900 dark:text-white">
@@ -565,13 +565,13 @@ export default function Kalkulator() {
               </strong>
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-full bg-white dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 px-3 py-1 text-xs text-gray-700 dark:text-gray-300">
-              <span className="text-gray-400 dark:text-gray-500">Obsługa:</span>{" "}
+              <span className="text-gray-600 dark:text-gray-400">Obsługa:</span>{" "}
               <strong className="text-gray-900 dark:text-white">
                 {TEAM_LABELS[data.team]}
               </strong>
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-full bg-white dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 px-3 py-1 text-xs text-gray-700 dark:text-gray-300">
-              <span className="text-gray-400 dark:text-gray-500">Proces:</span>{" "}
+              <span className="text-gray-600 dark:text-gray-400">Proces:</span>{" "}
               <strong className="text-gray-900 dark:text-white">
                 {data.repetitive ? "powtarzalny" : "niestabilny"}
               </strong>
@@ -671,7 +671,7 @@ export default function Kalkulator() {
           </div>
         </div>
 
-        <p className="text-xs text-gray-400 dark:text-gray-500 leading-relaxed">
+        <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
           Uproszczenie: kalkulator nie liczy pełnego kosztu zatrudnienia (ZUS,
           urlopy, narzędzia, czas rekrutacji) ani pełnego TCO automatyzacji
           (utrzymanie, modyfikacje, koszt błędu). Wynik to szacunek skali

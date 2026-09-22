@@ -110,7 +110,7 @@ export default function StrefaWiedzy() {
               <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-3">
                 Chcesz porozmawiać o automatyzacji w Twojej firmie?
               </h2>
-              <p className="text-gray-500 dark:text-gray-400 mb-6">
+              <p className="text-gray-600 dark:text-gray-400 mb-6">
                 Bezpłatna diagnoza, bez zobowiązań.
               </p>
               <Link

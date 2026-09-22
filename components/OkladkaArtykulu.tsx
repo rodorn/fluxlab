@@ -91,7 +91,7 @@ export default function OkladkaArtykulu({ tytul, kategoria, wysoka }: Props) {
       </svg>
 
       {kategoria && (
-        <span className="absolute left-3 top-3 rounded-md bg-black/25 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wider text-white backdrop-blur-sm">
+        <span className="absolute left-3 top-3 rounded-md bg-black/60 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wider text-white backdrop-blur-sm">
           {kategoria}
         </span>
       )}

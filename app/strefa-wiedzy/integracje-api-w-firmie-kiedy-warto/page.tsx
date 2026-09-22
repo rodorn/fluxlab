@@ -444,7 +444,7 @@ export default function IntegracjeApiArticle() {
                           <summary className="flex cursor-pointer items-center justify-between p-6 text-gray-900 dark:text-white font-medium">
                             Czy integracje API są tylko dla dużych firm?
                             <svg
-                              className="h-5 w-5 shrink-0 text-gray-400 transition-transform duration-200 group-open:rotate-45"
+                              className="h-5 w-5 shrink-0 text-gray-600 dark:text-gray-400 transition-transform duration-200 group-open:rotate-45"
                               fill="none"
                               viewBox="0 0 24 24"
                               stroke="currentColor"
@@ -468,7 +468,7 @@ export default function IntegracjeApiArticle() {
                             Czy API zawsze jest lepsze od prostych
                             automatyzacji?
                             <svg
-                              className="h-5 w-5 shrink-0 text-gray-400 transition-transform duration-200 group-open:rotate-45"
+                              className="h-5 w-5 shrink-0 text-gray-600 dark:text-gray-400 transition-transform duration-200 group-open:rotate-45"
                               fill="none"
                               viewBox="0 0 24 24"
                               stroke="currentColor"
@@ -492,7 +492,7 @@ export default function IntegracjeApiArticle() {
                             Czy można połączyć CRM z innymi systemami bez
                             pełnego developmentu?
                             <svg
-                              className="h-5 w-5 shrink-0 text-gray-400 transition-transform duration-200 group-open:rotate-45"
+                              className="h-5 w-5 shrink-0 text-gray-600 dark:text-gray-400 transition-transform duration-200 group-open:rotate-45"
                               fill="none"
                               viewBox="0 0 24 24"
                               stroke="currentColor"
@@ -515,7 +515,7 @@ export default function IntegracjeApiArticle() {
                           <summary className="flex cursor-pointer items-center justify-between p-6 text-gray-900 dark:text-white font-medium">
                             Co jest ważniejsze: narzędzie czy logika procesu?
                             <svg
-                              className="h-5 w-5 shrink-0 text-gray-400 transition-transform duration-200 group-open:rotate-45"
+                              className="h-5 w-5 shrink-0 text-gray-600 dark:text-gray-400 transition-transform duration-200 group-open:rotate-45"
                               fill="none"
                               viewBox="0 0 24 24"
                               stroke="currentColor"
@@ -539,7 +539,7 @@ export default function IntegracjeApiArticle() {
                             Jaki pierwszy scenariusz integracji zwykle daje
                             najlepszy efekt?
                             <svg
-                              className="h-5 w-5 shrink-0 text-gray-400 transition-transform duration-200 group-open:rotate-45"
+                              className="h-5 w-5 shrink-0 text-gray-600 dark:text-gray-400 transition-transform duration-200 group-open:rotate-45"
                               fill="none"
                               viewBox="0 0 24 24"
                               stroke="currentColor"

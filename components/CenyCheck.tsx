@@ -239,7 +239,7 @@ export default function CenyCheck() {
               className={`flex items-center gap-3 text-sm transition-opacity duration-300 ${
                 i <= etap
                   ? "text-gray-900 dark:text-white"
-                  : "text-gray-400 dark:text-gray-600"
+                  : "text-gray-600 dark:text-gray-600"
               }`}
             >
               <span
@@ -255,7 +255,7 @@ export default function CenyCheck() {
               {tekst}
             </li>
           ))}
-          <li className="pt-1 text-xs text-gray-400 dark:text-gray-600">
+          <li className="pt-1 text-xs text-gray-600 dark:text-gray-600">
             Otwieram karty jedna po drugiej, więc to trwa kilkanaście sekund.
           </li>
         </ol>

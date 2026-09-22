@@ -195,7 +195,7 @@ export default function LandingForm({
               </li>
             ))}
           </ul>
-          <p className="text-xs text-gray-500 dark:text-gray-500 leading-relaxed pt-3 border-t border-gray-100 dark:border-gray-700">
+          <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed pt-3 border-t border-gray-100 dark:border-gray-700">
             Pełna dokumentacja techniczna i mapa AS-IS → TO-BE to zakres
             płatnego audytu, diagnoza daje wstępny kierunek, nie pełny projekt.
           </p>
@@ -251,7 +251,7 @@ export default function LandingForm({
               className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5"
             >
               Firma{" "}
-              <span className="text-gray-400 font-normal text-xs">
+              <span className="text-gray-600 dark:text-gray-400 font-normal text-xs">
                 (opcjonalnie)
               </span>
             </label>
@@ -334,7 +334,7 @@ export default function LandingForm({
             className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5"
           >
             Opisz problem w 2–3 zdaniach{" "}
-            <span className="text-gray-400 font-normal text-xs">
+            <span className="text-gray-600 dark:text-gray-400 font-normal text-xs">
               (opcjonalnie)
             </span>
           </label>
@@ -350,7 +350,7 @@ export default function LandingForm({
         <div>
           <p className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
             Preferowany kontakt{" "}
-            <span className="text-gray-400 font-normal text-xs">
+            <span className="text-gray-600 dark:text-gray-400 font-normal text-xs">
               (opcjonalnie)
             </span>
           </p>
@@ -362,7 +362,7 @@ export default function LandingForm({
                 onClick={() => setContactPref(opt.value)}
                 className={`px-4 py-2 rounded-lg text-sm font-medium border transition-colors ${
                   contactPref === opt.value
-                    ? "bg-accent text-white border-accent"
+                    ? "bg-accent-solid text-white border-accent"
                     : "bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-accent/50"
                 }`}
               >
@@ -381,10 +381,10 @@ export default function LandingForm({
         </button>
 
         {errorMsg && (
-          <p className="text-center text-sm text-red-500">{errorMsg}</p>
+          <p className="text-center text-sm text-red-600">{errorMsg}</p>
         )}
 
-        <p className="text-center text-xs text-gray-400 dark:text-gray-500">
+        <p className="text-center text-xs text-gray-600 dark:text-gray-400">
           {microCopy}
         </p>
       </form>

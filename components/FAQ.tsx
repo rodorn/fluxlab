@@ -84,8 +84,8 @@ function FAQItem({
             aria-hidden="true"
             className={`flex-shrink-0 w-7 h-7 flex items-center justify-center rounded-full border transition-all duration-300 ${
               open
-                ? "rotate-45 border-accent bg-accent text-white"
-                : "border-gray-200 dark:border-gray-700 text-gray-400 dark:text-gray-500 group-hover:border-accent group-hover:text-accent"
+                ? "rotate-45 border-accent bg-accent-solid text-white"
+                : "border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 group-hover:border-accent group-hover:text-accent"
             }`}
           >
             <svg width="11" height="11" viewBox="0 0 10 10" fill="none">

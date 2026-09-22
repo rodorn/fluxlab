@@ -449,7 +449,7 @@ export default function VatWJdgArticle() {
                         <details className="group rounded-2xl border border-gray-200 dark:border-gray-700">
                           <summary className="flex cursor-pointer items-center justify-between p-6 text-gray-900 dark:text-white font-medium">
                             Czy mogę zrezygnować z VAT po rejestracji?
-                            <span className="ml-4 shrink-0 text-gray-400 transition-transform group-open:rotate-45">
+                            <span className="ml-4 shrink-0 text-gray-600 dark:text-gray-400 transition-transform group-open:rotate-45">
                               <svg
                                 width="20"
                                 height="20"
@@ -475,7 +475,7 @@ export default function VatWJdgArticle() {
                         <details className="group rounded-2xl border border-gray-200 dark:border-gray-700">
                           <summary className="flex cursor-pointer items-center justify-between p-6 text-gray-900 dark:text-white font-medium">
                             Czy ryczałtowiec może być vatowcem?
-                            <span className="ml-4 shrink-0 text-gray-400 transition-transform group-open:rotate-45">
+                            <span className="ml-4 shrink-0 text-gray-600 dark:text-gray-400 transition-transform group-open:rotate-45">
                               <svg
                                 width="20"
                                 height="20"
@@ -501,7 +501,7 @@ export default function VatWJdgArticle() {
                         <details className="group rounded-2xl border border-gray-200 dark:border-gray-700">
                           <summary className="flex cursor-pointer items-center justify-between p-6 text-gray-900 dark:text-white font-medium">
                             Czy klienci indywidualni wolą firmy bez VAT?
-                            <span className="ml-4 shrink-0 text-gray-400 transition-transform group-open:rotate-45">
+                            <span className="ml-4 shrink-0 text-gray-600 dark:text-gray-400 transition-transform group-open:rotate-45">
                               <svg
                                 width="20"
                                 height="20"
@@ -527,7 +527,7 @@ export default function VatWJdgArticle() {
                         <details className="group rounded-2xl border border-gray-200 dark:border-gray-700">
                           <summary className="flex cursor-pointer items-center justify-between p-6 text-gray-900 dark:text-white font-medium">
                             Jak często trzeba składać JPK_V7?
-                            <span className="ml-4 shrink-0 text-gray-400 transition-transform group-open:rotate-45">
+                            <span className="ml-4 shrink-0 text-gray-600 dark:text-gray-400 transition-transform group-open:rotate-45">
                               <svg
                                 width="20"
                                 height="20"

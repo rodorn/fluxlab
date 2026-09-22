@@ -240,7 +240,7 @@ function EditableValue({
           className="w-20 text-right text-sm font-semibold text-accent tabular-nums bg-accent/10 border border-accent/30 rounded-md px-1.5 py-0.5 focus:outline-none focus:ring-2 focus:ring-accent/50"
         />
         {unit && (
-          <span className="text-gray-400 text-sm font-normal">{unit}</span>
+          <span className="text-gray-600 dark:text-gray-400 text-sm font-normal">{unit}</span>
         )}
       </span>
     );
@@ -257,7 +257,7 @@ function EditableValue({
       title="Kliknij, aby wpisać wartość"
     >
       {value.toLocaleString("pl-PL")}
-      {unit && <span className="text-gray-400 font-normal"> {unit}</span>}
+      {unit && <span className="text-gray-600 dark:text-gray-400 font-normal"> {unit}</span>}
     </button>
   );
 }
@@ -321,7 +321,7 @@ function Slider({
         />
       </div>
       {hint && (
-        <p className="text-xs text-gray-400 dark:text-gray-500">{hint}</p>
+        <p className="text-xs text-gray-600 dark:text-gray-400">{hint}</p>
       )}
     </div>
   );
@@ -388,7 +388,7 @@ function LogSlider({
         />
       </div>
       {hint && (
-        <p className="text-xs text-gray-400 dark:text-gray-500">{hint}</p>
+        <p className="text-xs text-gray-600 dark:text-gray-400">{hint}</p>
       )}
     </div>
   );
@@ -493,7 +493,7 @@ function ResultRow({
 }) {
   return (
     <div className="relative group flex flex-col gap-0.5 p-3 rounded-xl bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800">
-      <span className="text-[11px] uppercase tracking-wider text-gray-400 dark:text-gray-500 flex items-center gap-1">
+      <span className="text-[11px] uppercase tracking-wider text-gray-600 dark:text-gray-400 flex items-center gap-1">
         {label}
         {tooltip && (
           <svg
@@ -835,9 +835,9 @@ export default function CarCostCalculator() {
             )}
           </button>
         </div>
-        {parseError && <p className="text-sm text-red-500">{parseError}</p>}
+        {parseError && <p className="text-sm text-red-600">{parseError}</p>}
         {parsedLabel && (
-          <p className="text-sm text-emerald-600 dark:text-emerald-400">
+          <p className="text-sm text-emerald-700 dark:text-emerald-400">
             {parsedLabel}
           </p>
         )}
@@ -966,7 +966,7 @@ export default function CarCostCalculator() {
 
         {showAdvanced && (
           <div className="px-6 pb-6 space-y-6 border-t border-gray-100 dark:border-gray-800 pt-4">
-            <p className="text-xs text-gray-400 dark:text-gray-500">
+            <p className="text-xs text-gray-600 dark:text-gray-400">
               Najedź na ikonę, żeby zobaczyć opis. Te wartości są ustawiane
               automatycznie przez AI.
             </p>
@@ -1127,7 +1127,7 @@ export default function CarCostCalculator() {
                 setSavedCars([]);
                 setActiveCarId(null);
               }}
-              className="text-xs text-gray-400 hover:text-red-500 transition-colors"
+              className="text-xs text-gray-600 dark:text-gray-400 hover:text-red-600 transition-colors"
             >
               Wyczyść wszystkie
             </button>
@@ -1167,7 +1167,7 @@ export default function CarCostCalculator() {
                   <button
                     type="button"
                     onClick={() => removeSavedCar(car.id)}
-                    className="p-1 text-gray-300 dark:text-gray-600 hover:text-red-500 transition-colors"
+                    className="p-1 text-gray-500 dark:text-gray-400 hover:text-red-600 transition-colors"
                   >
                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                       <path
@@ -1188,7 +1188,7 @@ export default function CarCostCalculator() {
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-gray-200 dark:border-gray-700">
-                  <th className="text-left py-3 pr-4 text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider w-40">
+                  <th className="text-left py-3 pr-4 text-xs font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wider w-40">
                     Parametr
                   </th>
                   {compareResults.map((car, i) => (
@@ -1308,7 +1308,7 @@ export default function CarCostCalculator() {
                               row.bold
                                 ? "font-semibold text-accent"
                                 : isBest
-                                  ? "font-medium text-emerald-600 dark:text-emerald-400"
+                                  ? "font-medium text-emerald-700 dark:text-emerald-400"
                                   : "text-gray-900 dark:text-white"
                             }`}
                           >

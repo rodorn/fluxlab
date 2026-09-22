@@ -227,12 +227,12 @@ export default function LiveDiagnosis() {
               placeholder="Np. leady z formularza przepisujemy ręcznie do Excela, potem handlowiec dzwoni i robi notatki w zeszycie."
               className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-sm text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/40 focus:border-accent transition-colors resize-none disabled:opacity-50 disabled:cursor-not-allowed"
             />
-            <div className="mt-1.5 text-right text-xs text-gray-400 dark:text-gray-500">
+            <div className="mt-1.5 text-right text-xs text-gray-600 dark:text-gray-400">
               {input.length} / {MAX_LEN}
             </div>
 
             <div className="mt-3">
-              <p className="text-xs font-medium text-gray-400 dark:text-gray-500 mb-2">
+              <p className="text-xs font-medium text-gray-600 dark:text-gray-400 mb-2">
                 Albo zacznij od przykładu:
               </p>
               <div className="flex flex-wrap gap-2">
@@ -263,7 +263,7 @@ export default function LiveDiagnosis() {
               <p
                 role="alert"
                 aria-live="polite"
-                className="mt-4 text-center text-sm text-red-500"
+                className="mt-4 text-center text-sm text-red-600"
               >
                 {errorMsg}
               </p>
@@ -320,7 +320,7 @@ export default function LiveDiagnosis() {
                         key={i}
                         className="flex gap-3.5 rounded-xl border border-gray-100 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 p-4"
                       >
-                        <span className="flex-shrink-0 w-7 h-7 rounded-full bg-accent text-white text-sm font-semibold flex items-center justify-center">
+                        <span className="flex-shrink-0 w-7 h-7 rounded-full bg-accent-solid text-white text-sm font-semibold flex items-center justify-center">
                           {i + 1}
                         </span>
                         <div>
@@ -339,7 +339,7 @@ export default function LiveDiagnosis() {
                 <div className="mt-6 grid sm:grid-cols-2 gap-4">
                   {/* Oszczędność czasu */}
                   <div className="rounded-xl border border-gray-100 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 p-5">
-                    <p className="text-xs font-semibold uppercase tracking-wide text-gray-400 dark:text-gray-500 mb-1.5">
+                    <p className="text-xs font-semibold uppercase tracking-wide text-gray-600 dark:text-gray-400 mb-1.5">
                       Szacowana oszczędność
                     </p>
                     {result.timeSavedHours > 0 ? (
@@ -360,7 +360,7 @@ export default function LiveDiagnosis() {
 
                   {/* Wstępna wycena */}
                   <div className="rounded-xl border border-gray-100 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 p-5">
-                    <p className="text-xs font-semibold uppercase tracking-wide text-gray-400 dark:text-gray-500 mb-1.5">
+                    <p className="text-xs font-semibold uppercase tracking-wide text-gray-600 dark:text-gray-400 mb-1.5">
                       Wstępna wycena wdrożenia
                     </p>
                     <p className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -378,7 +378,7 @@ export default function LiveDiagnosis() {
                   className="mt-4 block rounded-xl border border-accent/30 bg-gradient-to-br from-accent/10 via-violet-500/10 to-accent/10 p-5 transition-colors hover:border-accent/50"
                 >
                   <div className="flex items-start gap-3">
-                    <span className="flex-shrink-0 inline-flex items-center justify-center px-2.5 py-1 rounded-lg bg-accent text-white text-sm font-bold">
+                    <span className="flex-shrink-0 inline-flex items-center justify-center px-2.5 py-1 rounded-lg bg-accent-solid text-white text-sm font-bold">
                       −50%
                     </span>
                     <div>
@@ -460,7 +460,7 @@ export default function LiveDiagnosis() {
                   </form>
                 )}
 
-                <p className="mt-4 text-center text-xs text-gray-400 dark:text-gray-500">
+                <p className="mt-4 text-center text-xs text-gray-600 dark:text-gray-400">
                   To wstępna, automatyczna analiza. Wysyłam ją razem z Twoim
                   zgłoszeniem, więc nie musisz opisywać wszystkiego od nowa.
                   Pełną diagnozę procesu robię osobiście i jest bezpłatna.

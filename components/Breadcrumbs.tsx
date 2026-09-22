@@ -40,12 +40,12 @@ export default function Breadcrumbs({ items }: { items: BreadcrumbItem[] }) {
                 {index > 0 && (
                   <>
                     {showEllipsis && (
-                      <span className="text-gray-300 dark:text-gray-600 sm:hidden">
+                      <span className="text-gray-500 dark:text-gray-400 sm:hidden">
                         …
                       </span>
                     )}
                     <span
-                      className={`text-gray-300 dark:text-gray-600 ${showEllipsis ? "hidden sm:inline" : ""}`}
+                      className={`text-gray-500 dark:text-gray-400 ${showEllipsis ? "hidden sm:inline" : ""}`}
                     >
                       /
                     </span>

@@ -481,7 +481,7 @@ export default function AutomatycznePrzypisywanieLeadow() {
                                   <div
                                     className={`flex-shrink-0 w-10 h-10 lg:w-11 lg:h-11 rounded-full flex items-center justify-center font-bold text-sm tabular-nums ${
                                       s.accent
-                                        ? "bg-accent text-white"
+                                        ? "bg-accent-solid text-white"
                                         : "bg-accent-light dark:bg-accent-dark-light text-accent"
                                     }`}
                                   >
@@ -499,7 +499,7 @@ export default function AutomatycznePrzypisywanieLeadow() {
                                 {i < workflowSteps.length - 1 && (
                                   <div className="flex justify-center py-1.5">
                                     <svg
-                                      className="text-gray-300 dark:text-gray-600"
+                                      className="text-gray-500 dark:text-gray-400"
                                       width="14"
                                       height="14"
                                       viewBox="0 0 14 14"
@@ -553,7 +553,7 @@ export default function AutomatycznePrzypisywanieLeadow() {
                           </div>
                           <ul className="space-y-3 mb-6">
                             <li className="flex items-start gap-3 bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-xl px-5 py-4">
-                              <span className="flex-shrink-0 mt-0.5 w-6 h-6 rounded-full bg-accent text-white flex items-center justify-center text-xs font-bold">
+                              <span className="flex-shrink-0 mt-0.5 w-6 h-6 rounded-full bg-accent-solid text-white flex items-center justify-center text-xs font-bold">
                                 1
                               </span>
                               <span className="text-gray-700 dark:text-gray-300 leading-relaxed">
@@ -563,7 +563,7 @@ export default function AutomatycznePrzypisywanieLeadow() {
                               </span>
                             </li>
                             <li className="flex items-start gap-3 bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-xl px-5 py-4">
-                              <span className="flex-shrink-0 mt-0.5 w-6 h-6 rounded-full bg-accent text-white flex items-center justify-center text-xs font-bold">
+                              <span className="flex-shrink-0 mt-0.5 w-6 h-6 rounded-full bg-accent-solid text-white flex items-center justify-center text-xs font-bold">
                                 2
                               </span>
                               <span className="text-gray-700 dark:text-gray-300 leading-relaxed">
@@ -574,7 +574,7 @@ export default function AutomatycznePrzypisywanieLeadow() {
                               </span>
                             </li>
                             <li className="flex items-start gap-3 bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-xl px-5 py-4">
-                              <span className="flex-shrink-0 mt-0.5 w-6 h-6 rounded-full bg-accent text-white flex items-center justify-center text-xs font-bold">
+                              <span className="flex-shrink-0 mt-0.5 w-6 h-6 rounded-full bg-accent-solid text-white flex items-center justify-center text-xs font-bold">
                                 3
                               </span>
                               <span className="text-gray-700 dark:text-gray-300 leading-relaxed">
@@ -585,7 +585,7 @@ export default function AutomatycznePrzypisywanieLeadow() {
                               </span>
                             </li>
                             <li className="flex items-start gap-3 bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-xl px-5 py-4">
-                              <span className="flex-shrink-0 mt-0.5 w-6 h-6 rounded-full bg-accent text-white flex items-center justify-center text-xs font-bold">
+                              <span className="flex-shrink-0 mt-0.5 w-6 h-6 rounded-full bg-accent-solid text-white flex items-center justify-center text-xs font-bold">
                                 4
                               </span>
                               <span className="text-gray-700 dark:text-gray-300 leading-relaxed">

@@ -101,7 +101,7 @@ export default function WybierzBranze() {
               }}
               className={`rounded-full border px-4 py-2 text-sm font-medium transition-colors ${
                 aktywna
-                  ? "border-accent bg-accent text-white"
+                  ? "border-accent bg-accent-solid text-white"
                   : "border-gray-300 text-gray-700 hover:border-accent hover:text-accent dark:border-gray-700 dark:text-gray-300"
               }`}
             >

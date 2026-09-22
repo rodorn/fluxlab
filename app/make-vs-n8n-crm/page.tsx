@@ -460,7 +460,7 @@ export default function MakeVsN8nCrm() {
                             key={step}
                             className="flex items-start gap-4 bg-white dark:bg-gray-800/60 border border-accent/20 rounded-xl p-5"
                           >
-                            <span className="flex-shrink-0 w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center text-sm font-semibold">
+                            <span className="flex-shrink-0 w-8 h-8 rounded-full bg-accent-solid text-white flex items-center justify-center text-sm font-semibold">
                               {i + 1}
                             </span>
                             <span className="text-gray-700 dark:text-gray-300 leading-relaxed">
@@ -500,7 +500,7 @@ export default function MakeVsN8nCrm() {
                             <div
                               className={`flex-shrink-0 w-10 h-10 lg:w-11 lg:h-11 rounded-full flex items-center justify-center font-bold text-sm tabular-nums ${
                                 s.accent
-                                  ? "bg-accent text-white"
+                                  ? "bg-accent-solid text-white"
                                   : "bg-accent-light dark:bg-accent-dark-light text-accent"
                               }`}
                             >
@@ -518,7 +518,7 @@ export default function MakeVsN8nCrm() {
                           {i < arr.length - 1 && (
                             <div className="flex justify-center py-1.5">
                               <svg
-                                className="text-gray-300 dark:text-gray-600"
+                                className="text-gray-500 dark:text-gray-400"
                                 width="14"
                                 height="14"
                                 viewBox="0 0 14 14"
@@ -562,7 +562,7 @@ export default function MakeVsN8nCrm() {
                             className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-6"
                           >
                             <div className="flex items-start gap-4 mb-4">
-                              <span className="flex-shrink-0 w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center font-bold text-sm">
+                              <span className="flex-shrink-0 w-10 h-10 rounded-full bg-accent-solid text-white flex items-center justify-center font-bold text-sm">
                                 {p.n}
                               </span>
                               <h3 className="text-lg font-semibold text-gray-900 dark:text-white pt-1.5">
@@ -729,7 +729,7 @@ export default function MakeVsN8nCrm() {
                             key={s}
                             className="flex items-start gap-3 bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-xl px-5 py-4"
                           >
-                            <span className="flex-shrink-0 w-7 h-7 rounded-full bg-accent text-white flex items-center justify-center text-xs font-bold">
+                            <span className="flex-shrink-0 w-7 h-7 rounded-full bg-accent-solid text-white flex items-center justify-center text-xs font-bold">
                               {i + 1}
                             </span>
                             <span className="text-gray-700 dark:text-gray-300 leading-relaxed">

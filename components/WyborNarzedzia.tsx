@@ -238,7 +238,7 @@ export default function WyborNarzedzia() {
               onClick={() => wybierz(s.klucz)}
               className={
                 aktywna
-                  ? "rounded-full border border-accent bg-accent px-3.5 py-1.5 text-xs font-medium text-white transition-colors"
+                  ? "rounded-full border border-accent bg-accent-solid px-3.5 py-1.5 text-xs font-medium text-white transition-colors"
                   : "rounded-full border border-gray-300 px-3.5 py-1.5 text-xs font-medium text-gray-700 transition-colors hover:border-accent hover:text-accent dark:border-gray-600 dark:text-gray-300"
               }
             >

@@ -158,7 +158,7 @@ export default function Pilotaz() {
         <section className="pt-24 pb-12 bg-gradient-to-b from-accent/10 to-transparent border-b border-gray-100 dark:border-gray-800">
           <div className="container-wide">
             <div className="max-w-3xl mx-auto text-center">
-              <div className="inline-flex items-center gap-2 bg-accent/15 text-accent text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
+              <div className="inline-flex items-center gap-2 bg-accent/15 text-accent-hover text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
                 <span className="w-1.5 h-1.5 bg-accent rounded-full animate-pulse" />
                 Zostały 3 miejsca
               </div>
@@ -175,7 +175,7 @@ export default function Pilotaz() {
                 to, co wcześniej zaakceptujesz, bez danych wrażliwych, bez
                 tajemnic handlowych, bez wrzucania Twojej firmy pod autobus.
               </p>
-              <p className="mt-6 text-sm text-gray-500 dark:text-gray-500 leading-relaxed max-w-2xl mx-auto">
+              <p className="mt-6 text-sm text-gray-600 dark:text-gray-400 leading-relaxed max-w-2xl mx-auto">
                 To nie jest oferta dla &bdquo;pierwszych klientów&rdquo;. Rabat
                 wynika z tego, że chcę opublikować mocny dowód działania, a nie
                 z braku doświadczenia. Akceptacja treści jest po Twojej stronie.
@@ -333,7 +333,7 @@ export default function Pilotaz() {
                             className="flex items-start gap-3 bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-xl px-5 py-4"
                           >
                             <svg
-                              className="flex-shrink-0 mt-0.5 text-gray-400"
+                              className="flex-shrink-0 mt-0.5 text-gray-600 dark:text-gray-400"
                               width="20"
                               height="20"
                               viewBox="0 0 20 20"

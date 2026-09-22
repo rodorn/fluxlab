@@ -126,7 +126,7 @@ const MOTYW_WAGI: Record<Waga, { kropka: string; ramka: string; tekst: string; n
   wazne: {
     kropka: "bg-amber-500",
     ramka: "border-l-amber-500",
-    tekst: "text-amber-600 dark:text-amber-400",
+    tekst: "text-amber-700 dark:text-amber-400",
     nazwa: "Ważne",
   },
   drobne: {
@@ -151,8 +151,8 @@ function slownie(p: number): string {
 }
 
 function kolorOceny(p: number): string {
-  if (p >= 75) return "text-emerald-600 dark:text-emerald-400";
-  if (p >= 45) return "text-amber-600 dark:text-amber-400";
+  if (p >= 75) return "text-emerald-700 dark:text-emerald-400";
+  if (p >= 45) return "text-amber-700 dark:text-amber-400";
   return "text-red-600 dark:text-red-400";
 }
 
@@ -392,7 +392,7 @@ export default function AudytCheck() {
               <li
                 key={tekst}
                 className={`flex items-center gap-3 text-sm transition-opacity duration-300 ${
-                  i <= etap ? "text-gray-900 dark:text-white" : "text-gray-400 dark:text-gray-600"
+                  i <= etap ? "text-gray-900 dark:text-white" : "text-gray-600 dark:text-gray-600"
                 }`}
               >
                 <span
@@ -459,7 +459,7 @@ export default function AudytCheck() {
                   ) : null,
                 )}
                 {!wynik.ustalenia.length && (
-                  <span className="rounded-full border border-emerald-500/50 px-3 py-1 text-xs font-semibold text-emerald-600 dark:text-emerald-400">
+                  <span className="rounded-full border border-emerald-500/50 px-3 py-1 text-xs font-semibold text-emerald-700 dark:text-emerald-400">
                     Nie znalazłem nic do poprawy
                   </span>
                 )}
@@ -491,7 +491,7 @@ export default function AudytCheck() {
                     onClick={() => setFiltr(w)}
                     className={`rounded-full border px-3 py-1 text-xs font-semibold transition-colors ${
                       filtr === w
-                        ? "border-accent bg-accent text-white"
+                        ? "border-accent bg-accent-solid text-white"
                         : "border-gray-300 text-gray-600 hover:border-accent dark:border-gray-700 dark:text-gray-400"
                     }`}
                   >
@@ -540,7 +540,7 @@ export default function AudytCheck() {
                             </p>
                             <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs">
                               {u.samodzielnie && (
-                                <span className="font-medium text-emerald-600 dark:text-emerald-400">
+                                <span className="font-medium text-emerald-700 dark:text-emerald-400">
                                   Zrobisz to sam, bez programisty
                                 </span>
                               )}
@@ -567,7 +567,7 @@ export default function AudytCheck() {
               <ol className="space-y-3">
                 {wynik.opis.kolejnosc.map((k, i) => (
                   <li key={k.krok} className="flex gap-3">
-                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent text-xs font-bold text-white">
+                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent-solid text-xs font-bold text-white">
                       {i + 1}
                     </span>
                     <div>
@@ -588,7 +588,7 @@ export default function AudytCheck() {
               <ul className="mt-2 space-y-1.5">
                 {wynik.opis.mocneStrony.map((x) => (
                   <li key={x} className="flex gap-2 text-sm text-gray-700 dark:text-gray-300">
-                    <span aria-hidden="true" className="text-emerald-600">✓</span>
+                    <span aria-hidden="true" className="text-emerald-700">✓</span>
                     {x}
                   </li>
                 ))}
@@ -744,7 +744,7 @@ export default function AudytCheck() {
           <div className="rounded-2xl border border-gray-200 bg-gray-50/60 p-6 dark:border-gray-800 dark:bg-gray-900/40">
             {mailStan === "ok" ? (
               <div>
-                <p className="text-base font-bold text-emerald-600 dark:text-emerald-400">
+                <p className="text-base font-bold text-emerald-700 dark:text-emerald-400">
                   Raport poszedł na {email}
                 </p>
                 <p className="mt-1.5 text-sm text-gray-600 dark:text-gray-400">

@@ -486,7 +486,7 @@ export default function RoiAutomatyzacjiArticle() {
                         <summary className="flex cursor-pointer items-center justify-between p-6 text-gray-900 dark:text-white font-medium">
                           Czy ROI z automatyzacji da się policzyć bez idealnych
                           danych?
-                          <span className="ml-4 shrink-0 text-gray-400 transition-transform group-open:rotate-45">
+                          <span className="ml-4 shrink-0 text-gray-600 dark:text-gray-400 transition-transform group-open:rotate-45">
                             <svg
                               width="20"
                               height="20"
@@ -509,7 +509,7 @@ export default function RoiAutomatyzacjiArticle() {
                       <details className="group rounded-2xl border border-gray-200 dark:border-gray-700">
                         <summary className="flex cursor-pointer items-center justify-between p-6 text-gray-900 dark:text-white font-medium">
                           Czy trzeba liczyć tylko twarde oszczędności?
-                          <span className="ml-4 shrink-0 text-gray-400 transition-transform group-open:rotate-45">
+                          <span className="ml-4 shrink-0 text-gray-600 dark:text-gray-400 transition-transform group-open:rotate-45">
                             <svg
                               width="20"
                               height="20"
@@ -532,7 +532,7 @@ export default function RoiAutomatyzacjiArticle() {
                       <details className="group rounded-2xl border border-gray-200 dark:border-gray-700">
                         <summary className="flex cursor-pointer items-center justify-between p-6 text-gray-900 dark:text-white font-medium">
                           Co jeśli proces nie daje dużej oszczędności czasu?
-                          <span className="ml-4 shrink-0 text-gray-400 transition-transform group-open:rotate-45">
+                          <span className="ml-4 shrink-0 text-gray-600 dark:text-gray-400 transition-transform group-open:rotate-45">
                             <svg
                               width="20"
                               height="20"
@@ -555,7 +555,7 @@ export default function RoiAutomatyzacjiArticle() {
                       <details className="group rounded-2xl border border-gray-200 dark:border-gray-700">
                         <summary className="flex cursor-pointer items-center justify-between p-6 text-gray-900 dark:text-white font-medium">
                           Jaki proces najłatwiej policzyć?
-                          <span className="ml-4 shrink-0 text-gray-400 transition-transform group-open:rotate-45">
+                          <span className="ml-4 shrink-0 text-gray-600 dark:text-gray-400 transition-transform group-open:rotate-45">
                             <svg
                               width="20"
                               height="20"
@@ -577,7 +577,7 @@ export default function RoiAutomatyzacjiArticle() {
                       <details className="group rounded-2xl border border-gray-200 dark:border-gray-700">
                         <summary className="flex cursor-pointer items-center justify-between p-6 text-gray-900 dark:text-white font-medium">
                           Czy małe wdrożenia też mają sens ekonomiczny?
-                          <span className="ml-4 shrink-0 text-gray-400 transition-transform group-open:rotate-45">
+                          <span className="ml-4 shrink-0 text-gray-600 dark:text-gray-400 transition-transform group-open:rotate-45">
                             <svg
                               width="20"
                               height="20"
