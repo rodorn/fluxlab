@@ -2,6 +2,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import TileVideo from "@/components/TileVideo";
 import WybierzBranze from "@/components/WybierzBranze";
+import RachunekWJednymKlikniecu from "@/components/RachunekWJednymKlikniecu";
 import { LICZBA_NARZEDZI } from "@/lib/narzedzia";
 
 const PILLARS = [
@@ -242,6 +243,11 @@ export default function Home() {
           ))}
         </div>
 
+
+        {/* Strona glowna to 20 z 50 odslon na dobe, a uruchomien narzedzi
+            bylo zero. Kazdy wynik lezal za przejsciem na inna strone. Ten
+            blok daje kwote na miejscu, po jednym kliknieciu. */}
+        <RachunekWJednymKlikniecu />
 
         {/* Klient nie szuka "automatyzacji", tylko konca konkretnej
             uciazliwosci. Te szesc zdan to jego slowa, a nie moje nazwy
