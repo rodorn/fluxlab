@@ -150,7 +150,7 @@ const SYTUACJE: Sytuacja[] = [
       "Najpierw policzmy, ile to kosztuje, a potem sprawdźmy, gdzie w procesie jest największa dziura.",
     wskazania: [
       {
-        href: "/kalkulator-leadow",
+        href: "/koszt-recznej-obslugi-leadow",
         powod:
           "Przepisywanie leadów, zakładanie tematów w CRM i ręczne raporty, przeliczone na koszt miesięczny w złotych.",
       },

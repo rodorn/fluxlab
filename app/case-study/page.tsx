@@ -133,7 +133,7 @@ export default function CaseStudy() {
                         Pierwsze dwie rzeczy policzycie sami w zakładce
                         „Porównanie procesu”. Koszt zgubionych leadów dokłada{" "}
                         <Link
-                          href="/kalkulator-leadow"
+                          href="/koszt-recznej-obslugi-leadow"
                           className="text-accent hover:underline font-medium"
                         >
                           kalkulator kosztu ręcznej obsługi leadów

@@ -21,6 +21,14 @@ const nextConfig: NextConfig = {
         destination: "/automatyzacja-leadow-crm",
         statusCode: 301,
       },
+      // Kalkulator kosztu leadow i artykul o koszcie recznej obslugi celowaly
+      // w to samo zapytanie. Kalkulator jest teraz pierwsza zakladka artykulu,
+      // wiec zostaje jeden adres z narzedziem i pelnym rachunkiem.
+      {
+        source: "/kalkulator-leadow",
+        destination: "/koszt-recznej-obslugi-leadow",
+        statusCode: 301,
+      },
     ];
   },
 };

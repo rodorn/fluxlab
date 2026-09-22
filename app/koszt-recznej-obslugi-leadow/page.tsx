@@ -5,11 +5,12 @@ import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TrackedCTA from "@/components/TrackedCTA";
 import Tabs from "@/components/Tabs";
+import KalkulatorLeadow from "@/components/KalkulatorLeadow";
 
 export const metadata: Metadata = {
-  title: "Koszt ręcznej obsługi leadów, kalkulator | Fluxlab",
+  title: "Kalkulator kosztu ręcznej obsługi leadów | Fluxlab",
   description:
-    "Ile naprawdę kosztuje ręczna obsługa leadów: czas pracy, zgubione leady, błędy, raporty i utracona widoczność. Z przykładami i kalkulatorem.",
+    "Policz, ile miesięcznie kosztuje ręczne przepisywanie leadów, zgubione zapytania i ręczne raporty. Wynik w zł, bez logowania, z pełnym rachunkiem.",
   openGraph: {
     title: "Koszt ręcznej obsługi leadów, kalkulator | Fluxlab",
     description:
@@ -210,7 +211,7 @@ const faq = [
   {
     question: "Ile naprawdę kosztuje ręczna obsługa jednego leada?",
     answer:
-      "W większości firm B2B realny koszt to 30–80 zł na lead, jeśli policzy się wszystko: czas pracy, opóźnienia, błędy, raporty i utraconą widoczność. Sam czas przepisywania to zwykle 10–20% tej kwoty. Najprościej policzyć własny przypadek w kalkulatorze: /kalkulator-leadow.",
+      "W większości firm B2B realny koszt to 30–80 zł na lead, jeśli policzy się wszystko: czas pracy, opóźnienia, błędy, raporty i utraconą widoczność. Sam czas przepisywania to zwykle 10–20% tej kwoty. Najprościej policzyć własny przypadek w kalkulatorze na górze tej strony.",
   },
   {
     question: "Skąd różnica między 5 zł kosztu czasu a 50 zł realnego kosztu?",
@@ -236,6 +237,26 @@ const faq = [
     question: "Czym różni się ten rachunek od „policzcie ROI z automatyzacji”?",
     answer:
       "ROI z automatyzacji liczy zwrot z inwestycji w narzędzie. Koszt ręcznej obsługi to baza pod ten rachunek, bez niej nie wiesz, co właściwie miałbyś odzyskać. Najpierw poznajesz koszt obecnego stanu, potem oceniasz, czy automatyzacja jest tego warta. Patrz też: /strefa-wiedzy/automatyzacja-vs-zatrudnienie.",
+  },
+  {
+    question: "Skąd wziąć liczbę leadów miesięcznie do kalkulatora?",
+    answer:
+      "Najprościej: statystyki formularza na stronie, skrzynka z zapytaniami, panel reklam i CRM. Policz wszystko, co wpada do firmy jako potencjalne zapytanie sprzedażowe, niezależnie czy ktoś to później kwalifikuje, czy nie. Jeśli leady wpadają do kilku miejsc (formularz, mail, telefon, LinkedIn), zsumuj. Lepiej oszacować z lekkim zapasem niż w dół, celem jest realny obraz wolumenu, a nie raport do zarządu.",
+  },
+  {
+    question: "Co się składa na „czas ręcznej obsługi jednego leada”?",
+    answer:
+      "Wszystko, co dzieje się od momentu, gdy lead wpadnie do firmy, do momentu, gdy ma swojego handlowca, deal w CRM i pierwszy kontakt: odczytanie maila lub formularza, sprawdzenie czy to nie spam, przepisanie danych do CRM, założenie firmy, osoby i deala, przypisanie handlowca, ustawienie zadania kontaktu i czasem powiadomienie zespołu. Łącznie 3 do 10 minut zależnie od tego, jak bardzo proces jest poklejony taśmą klejącą.",
+  },
+  {
+    question: "Skąd w kalkulatorze założenie, że 30% opóźnionych leadów jest utraconych?",
+    answer:
+      "To model uproszczony. W sprzedaży inbound czas reakcji silnie wpływa na konwersję, lead obsłużony w kilka minut ma większą szansę zostać klientem niż ten odebrany po godzinie. 30% to konserwatywny środek przedziału opisywanego w badaniach nad czasem reakcji; w niektórych branżach realny ubytek jest większy, w innych mniejszy. Kalkulator pokazuje skalę problemu, nie precyzyjną prognozę, a parametr możesz zmienić suwakiem na własny.",
+  },
+  {
+    question: "Czy kalkulator uwzględnia koszt narzędzi i wdrożenia?",
+    answer:
+      "Nie, pokazuje wyłącznie miesięczny i roczny koszt status quo, czyli tego, co już dziś płacisz w czasie pracy i utraconej sprzedaży. To jest punkt odniesienia, do którego dopiero przykłada się koszt wdrożenia i abonamentów narzędzi. Jak zestawić obie strony, opisuję w artykule /strefa-wiedzy/jak-policzyc-roi-z-automatyzacji.",
   },
 ];
 
@@ -268,14 +289,14 @@ export default function KosztRecznejObslugiLeadow() {
                 Ile kosztuje ręczna obsługa leadów w firmie B2B?
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-                Pełny rachunek: czas pracy, zgubione leady, błędy, raporty
-                ręczne i koszt decyzji podejmowanych na złych danych. Z trzema
-                przykładami firm i kalkulatorem do policzenia własnego
-                przypadku.
+                Kalkulator liczy koszt Twojego procesu w zł na miesiąc i na
+                rok, bez logowania. Pod nim pełny rachunek: czas pracy,
+                zgubione leady, błędy, raporty ręczne i koszt decyzji
+                podejmowanych na złych danych, z trzema przykładami firm.
               </p>
               <div className="mt-8 flex justify-center">
                 <TrackedCTA
-                  href="/kalkulator-leadow"
+                  href="#kalkulator"
                   location="article_koszt_hero"
                   label="kalkulator"
                   eventName="cta_click_calculator"
@@ -297,7 +318,75 @@ export default function KosztRecznejObslugiLeadow() {
             ariaLabel="Sekcje strony o koszcie ręcznej obsługi leadów"
             tabs={[
               {
+                label: "Kalkulator",
+                kotwica: "kalkulator",
+                content: (
+                  <div className="py-6 lg:py-8">
+                    <KalkulatorLeadow />
+
+                    {/* Metoda liczenia, przeniesiona z osobnej strony kalkulatora */}
+                    <section className="mt-10 lg:mt-12 pt-10 lg:pt-12 border-t border-gray-100 dark:border-gray-800">
+                      <div className="max-w-3xl mx-auto">
+                        <span className="section-label">Metoda</span>
+                        <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mt-4 mb-6">
+                          Jak kalkulator liczy koszt
+                        </h2>
+                        <div className="space-y-4 text-gray-600 dark:text-gray-400 leading-relaxed">
+                          <p>
+                            Kalkulator liczy dwie pozycje: czas pracy ludzi i
+                            utraconą sprzedaż. Pierwsza jest widoczna na liście
+                            płac, druga nie pojawia się nigdzie, i dlatego
+                            zwykle wypada z rachunku.
+                          </p>
+                          <ul className="list-disc pl-5 space-y-2">
+                            <li>
+                              <strong>Koszt ręcznej pracy / mies.</strong> ={" "}
+                              <code className="text-xs bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded">
+                                leady_mies × (czas_min / 60) × koszt_h
+                              </code>
+                              . Czyste minuty × stawka godzinowa osoby
+                              obsługującej.
+                            </li>
+                            <li>
+                              <strong>Koszt zgubionych leadów / mies.</strong> ={" "}
+                              <code className="text-xs bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded">
+                                leady_mies × opoznione% × konwersja% × 0,3 ×
+                                wartosc_klienta
+                              </code>
+                              . Konserwatywne założenie: 30% leadów z opóźnioną
+                              reakcją realnie nie konwertuje.
+                            </li>
+                            <li>
+                              <strong>Koszt roczny</strong> ={" "}
+                              <code className="text-xs bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded">
+                                (koszt_pracy + koszt_zgubionych) × 12
+                              </code>
+                              . Liczba, którą warto zestawić z kosztem
+                              wdrożenia automatyzacji.
+                            </li>
+                          </ul>
+                          <p>
+                            Model jest celowo uproszczony. Pełny rachunek ma
+                            jeszcze trzy pozycje: błędy w danych, ręczne
+                            raportowanie i decyzje podejmowane na złych
+                            danych. Rozpisuję je w zakładce{" "}
+                            <a
+                              href="#rachunek"
+                              className="text-accent hover:underline"
+                            >
+                              Rachunek
+                            </a>
+                            , razem z trzema przykładami firm.
+                          </p>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                ),
+              },
+              {
                 label: "Problem",
+                kotwica: "problem",
                 content: (
                   <div className="py-6 lg:py-8">
                     {/* Problem biznesowy */}
@@ -391,6 +480,7 @@ export default function KosztRecznejObslugiLeadow() {
               },
               {
                 label: "Rachunek",
+                kotwica: "rachunek",
                 content: (
                   <div className="py-6 lg:py-8">
                     {/* Pełny rachunek */}
@@ -516,6 +606,7 @@ export default function KosztRecznejObslugiLeadow() {
               },
               {
                 label: "Wdrożenie",
+                kotwica: "wdrozenie",
                 content: (
                   <div className="py-6 lg:py-8">
                     {/* Co da się zautomatyzować w 1. etapie */}
@@ -650,6 +741,7 @@ export default function KosztRecznejObslugiLeadow() {
               },
               {
                 label: "Błędy w liczeniu",
+                kotwica: "bledy",
                 content: (
                   <div className="py-6 lg:py-8">
                     {/* Typowe błędy w mierzeniu kosztu */}
@@ -698,6 +790,7 @@ export default function KosztRecznejObslugiLeadow() {
               },
               {
                 label: "FAQ i kontakt",
+                kotwica: "faq",
                 content: (
                   <div className="py-6 lg:py-8">
                     {/* CTA-blok: kalkulator + diagnoza */}
@@ -718,13 +811,13 @@ export default function KosztRecznejObslugiLeadow() {
                           </p>
                           <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <TrackedCTA
-                              href="/kalkulator-leadow"
+                              href="#kalkulator"
                               location="article_koszt_cta_block"
                               label="kalkulator"
                               eventName="cta_click_calculator"
                               className="btn-primary px-8 py-3.5 text-base"
                             >
-                              Otwórz kalkulator
+                              Przejdź do kalkulatora
                             </TrackedCTA>
                             <TrackedCTA
                               href="/kontakt"
@@ -831,7 +924,7 @@ export default function KosztRecznejObslugiLeadow() {
                             kończy się na konkretnym pierwszym etapie.
                           </p>
                           <TrackedCTA
-                            href="/kalkulator-leadow"
+                            href="#kalkulator"
                             location="article_koszt_final"
                             label="kalkulator"
                             eventName="cta_click_calculator"
@@ -858,6 +951,29 @@ export default function KosztRecznejObslugiLeadow() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
+      {/* WebApplication, kalkulator mieszka teraz pod tym adresem */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            name: "Kalkulator kosztu ręcznej obsługi leadów",
+            url: "https://fluxlab.pl/koszt-recznej-obslugi-leadow",
+            applicationCategory: "BusinessApplication",
+            operatingSystem: "Web",
+            offers: {
+              "@type": "Offer",
+              price: "0",
+              priceCurrency: "PLN",
+            },
+            inLanguage: "pl-PL",
+            description:
+              "Kalkulator miesięcznego i rocznego kosztu ręcznej obsługi leadów: czas pracy + zgubione zapytania.",
+          }),
+        }}
       />
     </>
   );

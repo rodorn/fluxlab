@@ -281,7 +281,7 @@ export default function AudytCRMPage() {
                               "Co konkretnie da się zautomatyzować w 1. etapie i jak wygląda gotowy proces.",
                           },
                           {
-                            href: "/kalkulator-leadow",
+                            href: "/koszt-recznej-obslugi-leadow",
                             title: "Kalkulator kosztu ręcznej obsługi leadów",
                             description:
                               "Policz w zł, ile miesięcznie kosztuje Cię ręczne przepisywanie i pilnowanie follow-upów.",

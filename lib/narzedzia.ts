@@ -158,9 +158,8 @@ export const businessTools: Narzedzie[] = [
     title: "Kalkulator kosztu obsługi leadów",
     description:
       "Sprawdź, ile miesięcznie kosztuje ręczne przepisywanie leadów, zakładanie tematów w CRM i ręczne raporty. Realny koszt w zł, nie ogólniki.",
-    href: "/kalkulator-leadow",
+    href: "/koszt-recznej-obslugi-leadow",
     ikona: "kalkulator",
-    badge: "Najpopularniejsze",
   },
   {
     title: "Audyt CRM, checklist online",
@@ -212,7 +211,7 @@ export const LICZBA_NARZEDZI = businessTools.length;
  */
 const FILAR_SPOZA_KATALOGU: Record<string, ProductCategory> = {
   "/audyt-crm": "automatyzacja",
-  "/kalkulator-leadow": "automatyzacja",
+  "/koszt-recznej-obslugi-leadow": "automatyzacja",
   "/sprawdzenie-nip": "dane",
   "/zatrudnic-czy-zautomatyzowac": "automatyzacja",
 };

@@ -32,7 +32,6 @@ const ROUTES = [
   "/dziekuje",
   "/jak-pracuje",
   "/kalkulator-kosztow",
-  "/kalkulator-leadow",
   "/kalkulator-podatkowy",
   "/koszt-recznej-obslugi-leadow",
   "/make-vs-n8n-crm",

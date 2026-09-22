@@ -93,11 +93,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/kalkulator-leadow`,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
       url: `${baseUrl}/dobor-samochodu`,
       changeFrequency: "monthly" as const,
       priority: 0.6,
@@ -330,7 +325,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${baseUrl}/koszt-recznej-obslugi-leadow`,
       changeFrequency: "monthly" as const,
-      priority: 0.8,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/automatyzacja-formularza-do-pipedrive`,

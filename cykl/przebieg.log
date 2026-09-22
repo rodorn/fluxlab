@@ -367,3 +367,30 @@ Sprawdzone: 16 z 16 kombinacji daje poprawny wynik, 12 adresów docelowych zwrac
 Dwie rzeczy warte uwagi na przyszłość. Zamiast dokładać piąty komponent typu „wybierz X" scaliłem dane do `lib/branze.ts`, bo drugi bliźniaczy widget byłby dokładnie tą niespójnością, którą priorytet 1 ma eliminować. I druga: zdarzenia kliknięć lecą do własnego licznika od kilku dni, a przez trzy cykle nikt nie zajrzał do odczytu. To jedyna liczba mówiąca, czy budowanie kolejnych narzędzi ma sens, więc wpisałem ją jako pierwszą rzecz następnego cyklu.
 === 2026-09-22 07:53:53 koniec, kod 0
 === 2026-09-22 08:43:30 start
+Cykl domknięty.
+
+**Odczyt licznika, o który dziennik prosił trzy cykle z rzędu.** W bazie kolektora leży 77 wierszy z prawie dwóch dób: 75 odsłon, 50 sesji, z czego 46 jednostrzałowych, i **2 zdarzenia interakcji**, obie o 02:10 w nocy. Zanim uznałem to za brak zainteresowania, wykluczyłem awarię pomiaru: `zglosZdarzenie` jest wołane w 28 plikach, a zdarzenie `audyt_uruchomiony` faktycznie doleciało do bazy. To realny brak ruchu, nie zepsuty licznik.
+
+**Wobec tego nie dokładałem kolejnego narzędzia do klikania** — świadomie odstąpiłem od priorytetu 3, bo pomiar mówi wprost, że nie ma komu go nacisnąć. Zamiast tego zamknąłem punkty 6 i 7 audytu technicznego, czyli metadane ucinane przez wyszukiwarkę.
+
+| | przed | po |
+|---|---|---|
+| `title` > 60 znaków | 60 (najdłuższy 94) | 0 (najdłuższy 60) |
+| `description` > 160 znaków | 70 (najdłuższy 255) | 0 (najdłuższy 159) |
+| unikalnych `title` / `description` | — | 111 / 111 na 111 stron |
+
+Weryfikacja nie na kodzie, tylko na wyrenderowanym HTML wszystkich 111 adresów z lokalnego buildu: 111 z 111 odpowiada, zero przekroczeń, zero duplikatów. Skracanie objęło też kopie w `openGraph` tam, gdzie były identyczne (48 przypadków), żeby nie zrobić rozjazdu; własne treści `openGraph` zostały nietknięte. Przy okazji zniknęły trzy długie myślniki i trzy tytuły z obcym sufiksem zamiast `| Fluxlab`.
+
+Kontrola długości i duplikatów jest dopięta na stałe do `scripts/spojnosc.mjs:248` i sprawdzona w obie strony: przed poprawkami zgłaszała 70 rozjazdów, po zerowała się. Build i spójność czyste, produkcja zweryfikowana dwoma zapytaniami, IndexNow przyjęty przez Yandex i Naver (wspólny punkt nadal 403, jak w poprzednich cyklach).
+
+Commity `2e03723` i `dbf0a8a`.
+
+Dwie rzeczy warte Twojej decyzji, obie zapisane w dzienniku:
+
+- **Kierunek na następny cykl.** Piętnaście darmowych sprawdzeń stoi na stronie, na którą wchodzi około trzydziestu obcych sesji dziennie, prawie wyłącznie na jedną podstronę i bez przejścia dalej. Kolejne narzędzie nie da żadnego odczytu, dopóki ktokolwiek tych stron nie znajdzie.
+- **Skracając opisy wyciąłem z kilku stron ceny** — z `/pogotowie-automatyzacji` opiekę 299 zł miesięcznie, z `/sprawdz-auto` rozbicie na 5 i 15 zł. Na samych stronach ceny są, ale w wynikach wyszukiwania ich teraz nie widać. Mogę je wrócić kosztem innego fragmentu, jeśli uznasz, że cena w wyniku wyszukiwania jest ważniejsza.
+=== 2026-09-22 08:50:52 koniec, kod 0
+=== 2026-09-22 09:43:05 start
+Failed to authenticate. API Error: Application Control Violation
+=== 2026-09-22 09:43:07 koniec, kod 0
+=== 2026-09-22 10:43:15 start

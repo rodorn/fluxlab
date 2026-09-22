@@ -781,7 +781,7 @@ export default function CzasReakcjiNaLeada() {
                               </li>
                               <li>
                                 <Link
-                                  href="/kalkulator-leadow"
+                                  href="/koszt-recznej-obslugi-leadow"
                                   className="text-accent hover:underline"
                                 >
                                   Kalkulator kosztu zgubionych leadów

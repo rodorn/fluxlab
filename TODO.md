@@ -30,7 +30,7 @@ Zanim zaczniesz nowe zadania, miej w głowie czym dysponujesz. Plan zakłada **d
   - `/integracje-api`, `/automatyzacja-salesforce`, `/automatyzacja-ai`
   - `/n8n`, `/zapier-make`, `/automatyzacja-procesow-biznesowych`
 - **10 SEO artykułów P3** — patrz `app/sitemap.ts`
-- **4 narzędzia**: `/kalkulator-leadow`, `/audyt-crm`, `/zatrudnic-czy-zautomatyzowac`, `/kalkulator-kosztow`
+- **4 narzędzia**: `/koszt-recznej-obslugi-leadow` (kalkulator kosztu leadów), `/audyt-crm`, `/zatrudnic-czy-zautomatyzowac`, `/kalkulator-kosztow`
 - **3 strony nawigacyjne**: `/case-study`, `/pilotaz`, `/jak-pracuje`
 - **Strefa wiedzy**: 24 artykuły w `/strefa-wiedzy/*`
 - **Backend**: `app/api/contact/route.ts` → Resend → `iwanekpawel55@gmail.com` + auto-reply
@@ -256,7 +256,7 @@ https://fluxlab.pl/automatyzacja-raportowania
 https://fluxlab.pl/automatyzacja-crm-leasing
 https://fluxlab.pl/case-study
 https://fluxlab.pl/audyt-crm
-https://fluxlab.pl/kalkulator-leadow
+https://fluxlab.pl/koszt-recznej-obslugi-leadow
 https://fluxlab.pl/zatrudnic-czy-zautomatyzowac
 ```
 

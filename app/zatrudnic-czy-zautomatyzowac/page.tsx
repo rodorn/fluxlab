@@ -343,7 +343,7 @@ export default function ZatrudnicCzyZautomatyzowacPage() {
                               "Porównanie kosztów, ryzyk i scenariuszy z konkretnymi liczbami.",
                           },
                           {
-                            href: "/kalkulator-leadow",
+                            href: "/koszt-recznej-obslugi-leadow",
                             title: "Kalkulator kosztu obsługi leadów",
                             description:
                               "Precyzyjniejszy kalkulator dedykowany ręcznej obsłudze leadów (czas + utracona sprzedaż).",

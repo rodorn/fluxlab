@@ -1,12 +1,14 @@
 "use client";
 
-import { useRef, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 
 export type TabItem = {
   /** Krótka etykieta zakładki. */
   label: string;
   /** Pełna treść zakładki, przekazywana z server componentu. */
   content: ReactNode;
+  /** Kotwica, po której da się otworzyć zakładkę linkiem `#kotwica`. */
+  kotwica?: string;
 };
 
 type Props = {
@@ -25,8 +27,35 @@ export default function Tabs({ tabs, ariaLabel = "Sekcje strony" }: Props) {
   const wrapRef = useRef<HTMLDivElement | null>(null);
   const btnRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
+  // Linki `#kotwica` z tej samej strony mają otwierać zakładkę, a nie
+  // przewijać do ukrytego panelu. Hash czytamy przy wejściu i przy każdej
+  // jego zmianie, bo kliknięcie w kotwicę nie przeładowuje strony.
+  const kotwice = tabs.map((t) => t.kotwica ?? "").join("|");
+  useEffect(() => {
+    const lista = kotwice.split("|");
+    function zHasha() {
+      const hash = window.location.hash.slice(1);
+      if (!hash) return;
+      const i = lista.indexOf(hash);
+      if (i === -1) return;
+      setActive(i);
+      if (wrapRef.current) {
+        const top =
+          wrapRef.current.getBoundingClientRect().top + window.scrollY - 80;
+        window.scrollTo({ top, behavior: "auto" });
+      }
+    }
+    zHasha();
+    window.addEventListener("hashchange", zHasha);
+    return () => window.removeEventListener("hashchange", zHasha);
+  }, [kotwice]);
+
   function select(i: number) {
     setActive(i);
+    const kotwica = tabs[i].kotwica;
+    if (kotwica) {
+      window.history.replaceState(null, "", `#${kotwica}`);
+    }
     // Przewiń na górę bloku zakładek przy zmianie
     if (wrapRef.current) {
       const top =

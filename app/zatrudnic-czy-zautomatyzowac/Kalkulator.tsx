@@ -704,7 +704,7 @@ export default function Kalkulator() {
         <p className="text-sm text-gray-500 dark:text-gray-400">
           Jeśli problemem są leady, użyj precyzyjniejszego kalkulatora →{" "}
           <a
-            href="/kalkulator-leadow"
+            href="/koszt-recznej-obslugi-leadow"
             className="text-accent hover:underline font-medium"
           >
             Kalkulator kosztu obsługi leadów

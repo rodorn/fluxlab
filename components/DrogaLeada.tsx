@@ -333,7 +333,7 @@ export default function DrogaLeada() {
               </Link>
             )}
             <Link
-              href="/kalkulator-leadow"
+              href="/koszt-recznej-obslugi-leadow"
               className="text-gray-600 hover:text-accent dark:text-gray-400 dark:hover:text-accent"
             >
               Policz, ile kosztuje Was ręczna obsługa →

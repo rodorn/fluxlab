@@ -20,7 +20,7 @@
 - [Kto jest właścicielem domeny](https://fluxlab.pl/wlasnosc-domeny)
 - [Sprawdzenie poczty firmowej](https://fluxlab.pl/audyt-poczty)
 - [Czy strona ma poprawną mapę](https://fluxlab.pl/widocznosc-w-google)
-- [Koszt ręcznej obsługi leadów](https://fluxlab.pl/koszt-recznej-obslugi-leadow)
+- [Kalkulator kosztu ręcznej obsługi leadów](https://fluxlab.pl/koszt-recznej-obslugi-leadow)
 - [Pełna lista](https://fluxlab.pl/narzedzia)
 
 ## Własne badania
