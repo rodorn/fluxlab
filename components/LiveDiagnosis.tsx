@@ -156,9 +156,7 @@ export default function LiveDiagnosis() {
             `Opis od klienta: ${input}`,
             `Proces nazwany przez narzedzie: ${result.processName}`,
             `Diagnoza: ${result.diagnosis}`,
-            `Kroki: ${result.automationSteps
-              .map((k) => k.title)
-              .join("; ")}`,
+            `Kroki: ${result.automationSteps.map((k) => k.title).join("; ")}`,
             `Wstepna wycena: ${result.estimatedCost}`,
             result.honestNote ? `Zastrzezenie: ${result.honestNote}` : "",
           ]
@@ -199,9 +197,11 @@ export default function LiveDiagnosis() {
       <div className="container-wide relative">
         <div className="max-w-2xl mx-auto text-center mb-10">
           <p className="section-label mb-3">Generator AI</p>
-          <h2 id="generator-heading" className="display-lg mb-4">
+          {/* H1, bo ten blok otwiera `/kontakt` i jest jedynym miejscem, gdzie
+              komponent sie pojawia. Strona nie miala zadnego H1. */}
+          <h1 id="generator-heading" className="display-lg mb-4">
             Zobacz swoją automatyzację, teraz
-          </h2>
+          </h1>
           <p className="text-gray-500 dark:text-gray-400 text-lg">
             Opisz proces, który zjada Ci czas. Działający na żywo model AI w
             kilka sekund nazwie go, rozpisze na konkretne kroki i ostrożnie
