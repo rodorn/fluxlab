@@ -7,6 +7,7 @@ import LandingForm from "@/components/LandingForm";
 import TrackedCTA from "@/components/TrackedCTA";
 import Tabs from "@/components/Tabs";
 import ProductGrid from "@/components/ProductGrid";
+import CzyDaSieSpiac from "@/components/CzyDaSieSpiac";
 
 export const metadata: Metadata = {
   title: "Scraping danych: web, PDF, maile, dokumenty | Fluxlab",
@@ -95,17 +96,32 @@ export default function ScrapingDanychPage() {
                 Strony WWW, PDF-y, maile, dokumenty. AI rozpoznaje pola,
                 pipeline trafia do Twojego CRM albo arkusza. Bez kopiowania.
               </p>
-              <TrackedCTA
-                href="#sekcje"
-                location="hero_scraping"
-                label="diagnoza"
-                eventName="cta_click_hero_scraping_audit"
-                className="btn-primary animate-fade-up-4 text-base px-8 py-4"
-              >
-                Zamów bezpłatną diagnozę
-              </TrackedCTA>
+              <div className="animate-fade-up-4 flex flex-wrap items-center gap-4">
+                <TrackedCTA
+                  href="#sekcje"
+                  location="hero_scraping"
+                  label="diagnoza"
+                  eventName="cta_click_hero_scraping_audit"
+                  className="btn-primary text-base px-8 py-4"
+                >
+                  Zamów bezpłatną diagnozę
+                </TrackedCTA>
+                {/* Odnosnik do sprawdzenia stoi obok glownego przycisku, bo
+                    pomiar pokazal, ze narzedzia schowane nizej nikt nie
+                    naciska. */}
+                <a
+                  href="#czy-da-sie-spiac"
+                  className="text-base font-semibold text-accent hover:underline"
+                >
+                  Sprawdź, czy da się to spiąć
+                </a>
+              </div>
             </div>
           </div>
+        </section>
+
+        <section className="container-wide pb-16">
+          <CzyDaSieSpiac biezacaStrona="/scraping-danych" />
         </section>
 
         {/* Treść w zakładkach, nic nie wycięte, podzielone */}
