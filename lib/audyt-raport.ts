@@ -126,13 +126,13 @@ export function materialDlaModelu(
   p: Pomiar,
   ustalenia: Ustalenie[],
   wycena: Wycena,
-  punkty: number,
+  punkty: number | null,
 ): string {
   const zmierzone = p.zasoby.filter((z) => z.bajty !== null);
   return JSON.stringify(
     {
       domena: p.domena,
-      punktacja: punkty,
+      punktacja: punkty ?? "nie wystawiono, strona nie zostala zbadana",
       pomiar_komputer: {
         czas_pierwszego_bajtu_ms: p.ttfbMs,
         pelny_czas_dokumentu_ms: p.pelnyMs,
@@ -197,7 +197,7 @@ export async function napiszRaport(
   p: Pomiar,
   ustalenia: Ustalenie[],
   wycena: Wycena,
-  punkty: number,
+  punkty: number | null,
   klucz: string,
 ): Promise<RaportAI | null> {
   try {

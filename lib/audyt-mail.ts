@@ -14,7 +14,7 @@ import type { Pomiar } from "./audyt-pomiar";
 
 export type DaneRaportu = {
   domena: string;
-  punkty: number;
+  punkty: number | null;
   zbadano: string;
   pomiar: Pomiar;
   ustalenia: (Ustalenie & { material?: { tytul: string; href: string } | null })[];
@@ -88,7 +88,8 @@ export function zlozRaportHtml(d: DaneRaportu, dlaWlasciciela: boolean): string 
     timeZone: "Europe/Warsaw",
   });
 
-  const kolorPunktow = d.punkty >= 75 ? "#059669" : d.punkty >= 45 ? "#d97706" : "#dc2626";
+  const kolorPunktow =
+    d.punkty === null ? "#6b7280" : d.punkty >= 75 ? "#059669" : d.punkty >= 45 ? "#d97706" : "#dc2626";
 
   const grupy = new Map<string, typeof d.ustalenia>();
   for (const u of d.ustalenia) {
@@ -237,7 +238,14 @@ export function zlozRaportHtml(d: DaneRaportu, dlaWlasciciela: boolean): string 
   <div style="padding:26px 28px">
     ${blokWlasciciela}
 
-    <div style="display:block;border:1px solid #e5e7eb;border-radius:10px;padding:18px;margin-bottom:22px">
+    ${
+      d.punkty === null
+        ? `<div style="display:block;border:1px solid #e5e7eb;border-radius:10px;padding:18px;margin-bottom:22px">
+      <div style="font-size:13px;color:#6b7280">Ocena ogólna</div>
+      <div style="font-size:20px;font-weight:700;color:#6b7280;line-height:1.3">Nie wystawiam oceny</div>
+      <div style="font-size:14px;color:#374151;margin-top:4px">Nie zobaczyłem tej strony, więc liczba byłaby oceną czegoś innego niż Wasz serwis. Szczegóły niżej.</div>
+    </div>`
+        : `<div style="display:block;border:1px solid #e5e7eb;border-radius:10px;padding:18px;margin-bottom:22px">
       <div style="font-size:13px;color:#6b7280">Ocena ogólna</div>
       <div style="font-size:38px;font-weight:800;color:${kolorPunktow};line-height:1.1">${d.punkty}<span style="font-size:18px;color:#9ca3af">/100</span></div>
       <div style="font-size:14px;color:#374151;margin-top:2px">Stan ${slownie(d.punkty)}. Znalezionych spraw do poprawy: ${d.ustalenia.length}${
@@ -245,7 +253,8 @@ export function zlozRaportHtml(d: DaneRaportu, dlaWlasciciela: boolean): string 
           ? `, w tym ${d.ustalenia.filter((u) => u.waga === "krytyczne").length} krytycznych`
           : ""
       }.</div>
-    </div>
+    </div>`
+    }
 
     ${
       d.opis
@@ -306,7 +315,11 @@ export function zlozRaportTekst(d: DaneRaportu): string {
   const l: string[] = [];
   l.push(`AUDYT TECHNICZNY: ${d.domena}`);
   l.push(`Wykonano: ${new Date(d.zbadano).toLocaleString("pl-PL", { timeZone: "Europe/Warsaw" })}`);
-  l.push(`Ocena: ${d.punkty}/100, stan ${slownie(d.punkty)}`);
+  l.push(
+    d.punkty === null
+      ? "Ocena: nie wystawiam, bo nie zobaczyłem tej strony."
+      : `Ocena: ${d.punkty}/100, stan ${slownie(d.punkty)}`,
+  );
   l.push("");
   if (d.opis) {
     l.push(d.opis.werdykt);

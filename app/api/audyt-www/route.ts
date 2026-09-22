@@ -89,19 +89,30 @@ export async function POST(request: Request) {
   const dokument = JSON.stringify(pelne);
   const podpis = podpisz(dokument);
 
-  // Kopia leci po KAŻDYM audycie, także anonimowym, i leci po odpowiedzi,
-  // żeby nie kazać człowiekowi czekać na serwer pocztowy.
-  after(async () => {
-    await wyslijKopie(pelne, {
-      zrodlo: request.headers.get("referer") ?? undefined,
+  // Kopia leci po każdym audycie realnej strony, także anonimowym, i leci po
+  // odpowiedzi, żeby nie kazać człowiekowi czekać na serwer pocztowy.
+  //
+  // Wyjątkiem jest adres, który w ogóle nie odpowiedział. Taki raport nie ma
+  // treści poza jednym zdaniem, a bierze się prawie zawsze z literówki albo
+  // z czyjegoś sprawdzenia, czy narzędzie żyje. Trzy takie wiadomości w
+  // skrzynce w ciągu minuty zamieniają powiadomienie w szum, po którym
+  // przestaje się czytać także te prawdziwe. Gdy ktoś zostawi kontakt,
+  // kopia idzie mimo wszystko, bo wtedy to już jest zgłoszenie od człowieka.
+  if (pomiar.osiagalna) {
+    after(async () => {
+      await wyslijKopie(pelne, {
+        zrodlo: request.headers.get("referer") ?? undefined,
+      });
     });
-  });
+  }
 
   return NextResponse.json({
     podpis,
     dokument,
     domena,
     osiagalna: pomiar.osiagalna,
+    zablokowany: pomiar.zablokowany,
+    powodBlokady: pomiar.powodBlokady,
     punkty,
     pomiar: {
       ttfbMs: pomiar.ttfbMs,

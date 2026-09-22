@@ -43,7 +43,9 @@ type Wynik = {
   domena: string;
   zbadano: string;
   osiagalna: boolean;
-  punkty: number;
+  zablokowany: boolean;
+  powodBlokady: string | null;
+  punkty: number | null;
   pomiar: {
     ttfbMs: number | null;
     pelnyMs: number | null;
@@ -416,14 +418,29 @@ export default function AudytCheck() {
         <div className="mt-8 space-y-8">
           {/* Nagłówek wyniku */}
           <div className="flex flex-col items-center gap-6 rounded-2xl border border-gray-200 bg-gray-50/60 p-6 dark:border-gray-800 dark:bg-gray-900/40 sm:flex-row sm:items-start">
-            <Ocena punkty={wynik.punkty} />
+            {wynik.punkty !== null && <Ocena punkty={wynik.punkty} />}
             <div className="min-w-0 flex-1 text-center sm:text-left">
               <p className="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">
                 {wynik.domena}
               </p>
-              <p className={`mt-1 text-xl font-bold ${kolorOceny(wynik.punkty)}`}>
-                Stan {slownie(wynik.punkty)}
+              <p
+                className={`mt-1 text-xl font-bold ${
+                  wynik.punkty === null
+                    ? "text-gray-600 dark:text-gray-300"
+                    : kolorOceny(wynik.punkty)
+                }`}
+              >
+                {wynik.punkty === null
+                  ? "Nie wystawiam oceny tej stronie"
+                  : `Stan ${slownie(wynik.punkty)}`}
               </p>
+              {wynik.punkty === null && (
+                <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                  {wynik.zablokowany
+                    ? `Serwer nie wpuścił mojego pomiaru: ${wynik.powodBlokady}. Ocena wystawiona ekranowi ochrony nie mówiłaby nic o Waszej stronie, więc jej nie wystawiam.`
+                    : "Ten adres nie odpowiedział, więc nie mam czego oceniać."}
+                </p>
+              )}
               {wynik.opis && (
                 <p className="mt-2 text-sm font-medium text-gray-900 dark:text-white">
                   {wynik.opis.werdykt}

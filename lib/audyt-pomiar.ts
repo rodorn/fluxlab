@@ -58,6 +58,9 @@ export type Pomiar = {
   domena: string;
   bazowyAdres: string | null;
   osiagalna: boolean;
+  /** Serwer odpowiedział, ale nie treścią strony, tylko ekranem ochrony. */
+  zablokowany: boolean;
+  powodBlokady: string | null;
   /** Czas do pierwszego bajtu dokumentu, w milisekundach. */
   ttfbMs: number | null;
   /** Pełny czas pobrania dokumentu. */
@@ -101,6 +104,8 @@ function pusty(domena: string): Pomiar {
     domena,
     bazowyAdres: null,
     osiagalna: false,
+    zablokowany: false,
+    powodBlokady: null,
     ttfbMs: null,
     pelnyMs: null,
     statusHtml: null,
@@ -432,7 +437,82 @@ async function zmierzMobile(
   };
 }
 
+/**
+ * Rozpoznanie ekranu ochrony przed robotami.
+ *
+ * To nie jest ozdobnik, tylko warunek tego, żeby raport mówił prawdę.
+ * Przy pierwszym uruchomieniu na dużych serwisach wyszło 2/100 z adnotacją
+ * "brak znacznika viewport" i "prawie nie ma treści". Obie nieprawdziwe:
+ * serwer oddał 403 z jednozdaniową stroną ochrony, a pomiar wziął ją za
+ * stronę firmy i wypisał na jej podstawie błędy krytyczne. Raport, który
+ * zmyśla wady, jest gorszy niż brak raportu, więc od tej pory taki przypadek
+ * nazywamy po imieniu i nie orzekamy o niczym, czego nie widzieliśmy.
+ */
+function wykryjBlokade(status: number, html: string): string | null {
+  if (status === 403) return "serwer odrzucił połączenie (403)";
+  if (status === 429) return "serwer uznał pomiar za zbyt częsty (429)";
+  if (status >= 400) return `serwer odpowiedział błędem ${status}`;
+  const p = html.slice(0, 4000).toLowerCase();
+  if (p.includes("access denied") || p.includes("attention required"))
+    return "strona ochrony zamiast treści";
+  if (p.includes("cf-browser-verification") || p.includes("just a moment"))
+    return "weryfikacja przeglądarki Cloudflare";
+  if (p.includes("datadome") || p.includes("please enable js and disable any ad blocker"))
+    return "system ochrony przed robotami";
+  if (p.includes("captcha") && html.length < 8000) return "captcha zamiast treści";
+  return null;
+}
+
 const ROBOTY_AI = ["GPTBot", "ClaudeBot", "anthropic-ai", "PerplexityBot", "CCBot", "Google-Extended"];
+
+/**
+ * Parser robots.txt.
+ *
+ * Pierwsza wersja szukała w całym pliku wzorca "User-agent: *" a dalej
+ * gdziekolwiek "Disallow: /". Na prawdziwym pliku dużego sklepu dało to
+ * oskarżenie, że witryna zamyka się przed wyszukiwarkami, podczas gdy ta
+ * reguła należała do bloku innego robota, kilkadziesiąt linii niżej.
+ * Wyrażenie regularne nie widzi, gdzie kończy się jeden blok i zaczyna
+ * następny, więc trzeba przejść plik linia po linii.
+ */
+function czytajRobots(tekst: string): { agenci: string[]; disallow: string[] }[] {
+  const bloki: { agenci: string[]; disallow: string[] }[] = [];
+  let biezacy: { agenci: string[]; disallow: string[] } | null = null;
+  let poprzedniaToAgent = false;
+
+  for (const surowa of tekst.split(/\r?\n/)) {
+    const linia = surowa.split("#")[0].trim();
+    if (!linia) continue;
+    const [kluczSurowy, ...reszta] = linia.split(":");
+    const klucz = kluczSurowy.trim().toLowerCase();
+    const wartosc = reszta.join(":").trim();
+
+    if (klucz === "user-agent") {
+      // Kilka linii User-agent pod rząd opisuje jeden wspólny zestaw reguł.
+      if (!biezacy || !poprzedniaToAgent) {
+        biezacy = { agenci: [], disallow: [] };
+        bloki.push(biezacy);
+      }
+      biezacy.agenci.push(wartosc.toLowerCase());
+      poprzedniaToAgent = true;
+      continue;
+    }
+    poprzedniaToAgent = false;
+    if (klucz === "disallow" && biezacy) biezacy.disallow.push(wartosc);
+  }
+  return bloki;
+}
+
+/** Czy podany robot ma zamkniętą całą witrynę we własnym bloku reguł. */
+function zamknietyDla(
+  bloki: { agenci: string[]; disallow: string[] }[],
+  agent: string,
+): boolean {
+  const szukany = agent.toLowerCase();
+  const blok = bloki.find((b) => b.agenci.includes(szukany));
+  if (!blok) return false;
+  return blok.disallow.some((d) => d === "/");
+}
 
 export async function zmierz(domenaWejscie: string): Promise<Pomiar> {
   const domena = czystaDomena(domenaWejscie);
@@ -458,8 +538,33 @@ export async function zmierz(domenaWejscie: string): Promise<Pomiar> {
 
   wynik.osiagalna = true;
   wynik.bazowyAdres = baza;
+  wynik.statusHtml = dok.odp.status;
+
+  // Gdy to nie jest strona klienta, tylko bramka ochronna, kończymy tutaj.
+  // Certyfikat i wpisy poczty zostają, bo te zmierzyliśmy z DNS i z uścisku
+  // dłoni, niezależnie od tego, co serwer zrobił z zapytaniem HTTP.
+  const blokada = wykryjBlokade(dok.odp.status, dok.tekst);
+  if (blokada) {
+    wynik.zablokowany = true;
+    wynik.powodBlokady = blokada;
+    return wynik;
+  }
+
+  // Czas pierwszej odpowiedzi bierzemy z lepszego z dwóch pomiarów, i tylko
+  // wtedy, gdy pierwszy wypadł źle. Serwery usypiane między wejściami, a tak
+  // działa dziś większość tanich hostingów i platform bezserwerowych, oddają
+  // pierwszą odpowiedź po sekundzie, a każdą następną po kilkudziesięciu
+  // milisekundach. Bez tego powtórzenia wystawialibyśmy rachunek na kilkaset
+  // złotych za wolny serwer komuś, kto ma po prostu usypianą instancję.
   wynik.ttfbMs = dok.ttfb;
   wynik.pelnyMs = dok.pelny;
+  if (dok.ttfb > 700) {
+    const kontrola = await pobierz(baza, CZAS_STRONY_MS);
+    if (kontrola && kontrola.ttfb < dok.ttfb) {
+      wynik.ttfbMs = kontrola.ttfb;
+      wynik.pelnyMs = kontrola.pelny;
+    }
+  }
   wynik.statusHtml = dok.odp.status;
   wynik.htmlBajty = Buffer.byteLength(dok.tekst, "utf8");
   wynik.kompresjaHtml = dok.odp.headers.get("content-encoding");
@@ -506,14 +611,13 @@ export async function zmierz(domenaWejscie: string): Promise<Pomiar> {
   ]);
 
   if (robotsTxt && robotsTxt.odp.ok) {
-    const t = robotsTxt.tekst.slice(0, 20_000);
+    const t = robotsTxt.tekst.slice(0, 60_000);
+    const bloki = czytajRobots(t);
     wynik.robots = {
       jest: true,
-      blokujeWszystko: /user-agent:\s*\*[\s\S]*?disallow:\s*\/\s*($|\n)/i.test(t),
-      blokujeAi: ROBOTY_AI.filter((r) =>
-        new RegExp(`user-agent:\\s*${r}[\\s\\S]{0,200}?disallow:\\s*/`, "i").test(t),
-      ),
-      mapaWskazana: /sitemap:/i.test(t),
+      blokujeWszystko: zamknietyDla(bloki, "*"),
+      blokujeAi: ROBOTY_AI.filter((r) => zamknietyDla(bloki, r)),
+      mapaWskazana: /^\s*sitemap:/im.test(t),
     };
   }
   wynik.llms = Boolean(llmsTxt?.odp.ok);

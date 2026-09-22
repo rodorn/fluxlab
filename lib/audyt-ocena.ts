@@ -46,6 +46,51 @@ export function ocenStrone(p: Pomiar): Ustalenie[] {
   const u: Ustalenie[] = [];
   const dodaj = (x: Ustalenie) => u.push(x);
 
+  if (p.zablokowany) {
+    dodaj({
+      klucz: "zablokowany",
+      obszar: "dostepnosc",
+      waga: "drobne",
+      tytul: "Serwer nie wpuścił mojego pomiaru",
+      fakt: `Zamiast strony dostałem ${p.powodBlokady}.`,
+      skutek:
+        "To zwykle znaczy, że stronę osłania system chroniący przed robotami, i sam w sobie nie jest wadą. Nie mogę jednak na tej podstawie powiedzieć nic o szybkości, treści ani o widoczności, bo nie zobaczyłem Waszej strony, tylko ekran ochrony. Żeby zbadać ją porządnie, potrzebowałbym zgody na przepuszczenie pomiaru albo dostępu od środka. Poniżej zostaje tylko to, co dało się ustalić z DNS i z certyfikatu.",
+      koszt: 0,
+      samodzielnie: false,
+    });
+    // Certyfikat i poczta pochodzą spoza HTTP, więc te ustalenia są nadal
+    // prawdziwe i warto je zostawić. Reszta odpada razem z brakiem treści.
+    if (p.cert && p.cert.dniDoKonca < 0) {
+      dodaj({
+        klucz: "cert_wygasl",
+        obszar: "dostepnosc",
+        waga: "krytyczne",
+        tytul: "Certyfikat wygasł",
+        fakt: `Ważność skończyła się ${p.cert.waznyDo}, czyli ${Math.abs(p.cert.dniDoKonca)} dni temu.`,
+        skutek:
+          "Przeglądarka pokazuje pełnoekranowe ostrzeżenie przed wejściem na stronę. Większość odwiedzających zawraca w tym miejscu.",
+        koszt: 150,
+        samodzielnie: false,
+        dostep: "panel hostingu albo dostęp do serwera",
+      });
+    }
+    if (p.poczta.mx && !p.poczta.spf) {
+      dodaj({
+        klucz: "brak_spf",
+        obszar: "poczta",
+        waga: "wazne",
+        tytul: "Poczta z tej domeny nie ma wpisu SPF",
+        fakt: "W DNS nie ma rekordu zaczynającego się od v=spf1.",
+        skutek:
+          "Wiadomości z Waszego adresu łatwiej lądują w spamie, a ktoś obcy może podszyć się pod tę domenę.",
+        koszt: 120,
+        samodzielnie: false,
+        dostep: "dostęp do DNS domeny",
+      });
+    }
+    return u;
+  }
+
   if (!p.osiagalna) {
     dodaj({
       klucz: "brak_strony",
@@ -642,7 +687,18 @@ export function wycenNaprawe(ustalenia: Ustalenie[]): Wycena {
 }
 
 /** Punktacja 0-100. Służy do jednego zdania werdyktu, nie do chwalenia się. */
-export function punktacja(ustalenia: Ustalenie[]): number {
+/**
+ * Punktacja 0-100. Służy do jednego zdania werdyktu, nie do chwalenia się.
+ *
+ * Zwraca null, gdy nie zobaczyliśmy strony. Ocena wystawiona ekranowi
+ * ochrony albo martwemu adresowi byłaby oceną czegoś innego niż strona
+ * klienta, a liczba na ekranie wygląda wiarygodnie niezależnie od tego, czy
+ * ma pokrycie.
+ */
+export function punktacja(ustalenia: Ustalenie[]): number | null {
+  if (ustalenia.some((x) => x.klucz === "zablokowany" || x.klucz === "brak_strony")) {
+    return null;
+  }
   const kara = ustalenia.reduce(
     (s, x) => s + (x.waga === "krytyczne" ? 22 : x.waga === "wazne" ? 9 : 3),
     0,
