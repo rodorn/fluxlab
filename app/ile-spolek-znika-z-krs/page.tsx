@@ -11,7 +11,7 @@ export const revalidate = 3600;
 export const metadata: Metadata = {
   title: "Ile spółek dziennie znika z KRS bez likwidacji | Fluxlab",
   description:
-    "Licznik liczony codziennie z Monitora Sądowego i Gospodarczego: ile podmiotów sąd skierował do rozwiązania bez przeprowadzania likwidacji. Dane z ostatnich dni roboczych.",
+    "Licznik liczony codziennie z Monitora Sądowego i Gospodarczego: ile podmiotów sąd skierował do rozwiązania bez likwidacji. Z ostatnich dni roboczych.",
   alternates: { canonical: "/ile-spolek-znika-z-krs" },
   openGraph: {
     title: "Ile spółek dziennie znika z KRS bez likwidacji | Fluxlab",

@@ -9,11 +9,11 @@ import Tabs from "@/components/Tabs";
 export const metadata: Metadata = {
   title: "Automatyzacja AI w procesach firmowych | Fluxlab",
   description:
-    "Wdrażam automatyzację AI w firmie: klasyfikacja danych, streszczenia, analiza treści, wsparcie obsługi i inteligentne workflow połączone z CRM i innymi systemami.",
+    "Wdrażam automatyzację AI: klasyfikacja danych, streszczenia, analiza treści, wsparcie obsługi i przepływy połączone z CRM i innymi systemami.",
   openGraph: {
     title: "Automatyzacja AI w procesach firmowych | Fluxlab",
     description:
-      "Wdrażam automatyzację AI w firmie: klasyfikacja danych, streszczenia, analiza treści, wsparcie obsługi i inteligentne workflow połączone z CRM i innymi systemami.",
+      "Wdrażam automatyzację AI: klasyfikacja danych, streszczenia, analiza treści, wsparcie obsługi i przepływy połączone z CRM i innymi systemami.",
     locale: "pl_PL",
     type: "article",
     images: [
@@ -177,7 +177,7 @@ export default function AutomatyzacjaAI() {
             "@type": "Service",
             name: "Automatyzacja AI",
             description:
-              "Wdrażam automatyzację AI w firmie: klasyfikacja danych, streszczenia, analiza treści, wsparcie obsługi i inteligentne workflow połączone z CRM i innymi systemami.",
+              "Wdrażam automatyzację AI: klasyfikacja danych, streszczenia, analiza treści, wsparcie obsługi i przepływy połączone z CRM i innymi systemami.",
             provider: { "@id": "https://fluxlab.pl/#organization" },
             areaServed: { "@type": "Country", name: "Polska" },
             serviceType: "Automatyzacja procesów biznesowych",

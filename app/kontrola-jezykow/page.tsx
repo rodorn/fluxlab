@@ -3,14 +3,12 @@ import ProductLanding from "@/components/ProductLanding";
 import JezykCheck from "@/components/JezykCheck";
 
 export const metadata: Metadata = {
-  title:
-    "Niedokończone tłumaczenie strony i brak hreflang, audyt od 99 zł | Fluxlab",
+  title: "Audyt tłumaczeń strony i hreflang, od 99 zł | Fluxlab",
   description:
-    "Wersja angielska Waszej strony ma polskie przyciski i akapity, a wyszukiwarka nie wie, że wersje językowe istnieją. Sprawdzam fragment po fragmencie i oddaję listę miejsc do podmiany. Od 99 zł.",
+    "Wersja angielska ma polskie przyciski, a wyszukiwarka nie wie, że wersje językowe istnieją. Sprawdzam fragment po fragmencie. Od 99 zł.",
   alternates: { canonical: "/kontrola-jezykow" },
   openGraph: {
-    title:
-      "Niedokończone tłumaczenie strony i brak hreflang, audyt od 99 zł | Fluxlab",
+    title: "Audyt tłumaczeń strony i hreflang, od 99 zł | Fluxlab",
     description:
       "Polskie fragmenty w wersji obcojęzycznej i brakujące znaczniki hreflang. Lista miejsc do podmiany, gotowa dla programisty.",
     locale: "pl_PL",

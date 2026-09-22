@@ -3,12 +3,12 @@ import ProductLanding from "@/components/ProductLanding";
 import EDoreczeniaCheck from "@/components/EDoreczeniaCheck";
 
 export const metadata: Metadata = {
-  title: "Integracja z e-Doręczeniami: spięcie skrzynki z Twoim systemem | Fluxlab",
+  title: "Integracja z e-Doręczeniami dla firm | Fluxlab",
   description:
-    "Od 1 października adres do doręczeń elektronicznych obejmuje kolejne podmioty. Spinam skrzynkę z systemem, który już macie, żeby pisma nie wymagały logowania się do osobnego panelu. Napisałem otwarty klient tego API.",
+    "Adres do doręczeń elektronicznych obejmuje kolejne podmioty. Spinam skrzynkę z systemem, który już macie, żeby pisma nie wymagały osobnego panelu.",
   alternates: { canonical: "/e-doreczenia-integracja" },
   openGraph: {
-    title: "Integracja z e-Doręczeniami: spięcie skrzynki z Twoim systemem | Fluxlab",
+    title: "Integracja z e-Doręczeniami dla firm | Fluxlab",
     description:
       "Pisma wpadają do systemu, który już macie, razem z dowodami doręczenia. Bez osobnego panelu i bez przepisywania.",
     locale: "pl_PL",

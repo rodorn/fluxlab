@@ -11,11 +11,11 @@ import { WYCENA_INTEGRACJE } from "@/lib/wycena";
 export const metadata: Metadata = {
   title: "Integracje API i łączenie systemów w firmie | Fluxlab",
   description:
-    "Spinam CRM, ERP, sklep i hurtownie tak, żeby dane przechodziły same. Spięcie dwóch systemów zaczyna się od 1 500 zł, a zakres wyliczysz na stronie bez wysyłania zapytania.",
+    "Spinam CRM, ERP, sklep i hurtownie tak, żeby dane przechodziły same. Spięcie dwóch systemów od 1 500 zł, zakres wyliczysz na stronie.",
   openGraph: {
     title: "Integracje API i łączenie systemów w firmie | Fluxlab",
     description:
-      "Spinam CRM, ERP, sklep i hurtownie tak, żeby dane przechodziły same. Spięcie dwóch systemów zaczyna się od 1 500 zł, a zakres wyliczysz na stronie bez wysyłania zapytania.",
+      "Spinam CRM, ERP, sklep i hurtownie tak, żeby dane przechodziły same. Spięcie dwóch systemów od 1 500 zł, zakres wyliczysz na stronie.",
     locale: "pl_PL",
     type: "article",
     images: [
@@ -204,7 +204,7 @@ export default function IntegracjeApi() {
             "@type": "Service",
             name: "Integracje API",
             description:
-              "Spinam CRM, ERP, sklep i hurtownie tak, żeby dane przechodziły same. Spięcie dwóch systemów zaczyna się od 1 500 zł, a zakres wyliczysz na stronie bez wysyłania zapytania.",
+              "Spinam CRM, ERP, sklep i hurtownie tak, żeby dane przechodziły same. Spięcie dwóch systemów od 1 500 zł, zakres wyliczysz na stronie.",
             provider: { "@id": "https://fluxlab.pl/#organization" },
             areaServed: { "@type": "Country", name: "Polska" },
             serviceType: "Automatyzacja procesów biznesowych",

@@ -6,12 +6,12 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import SprawdzPoBadaniu from "@/components/SprawdzPoBadaniu";
 
 export const metadata: Metadata = {
-  title: "Licznik konwersji pokazuje zero, a zgłoszenia przychodzą | Fluxlab",
+  title: "Licznik konwersji pokazuje zero, a zgłoszenia są | Fluxlab",
   description:
-    "Cztery przyczyny, przez które analityka nie widzi zgłoszeń, które faktycznie docierają: formularz bez przeładowania strony, konwersja z kliknięcia, podwójne zliczanie i własny ruch. Jak rozstrzygnąć, która to.",
+    "Cztery przyczyny, przez które analityka nie widzi zgłoszeń, które faktycznie docierają, i sposób na rozstrzygnięcie, która z nich zachodzi u Was.",
   alternates: { canonical: "/strefa-wiedzy/konwersje-pokazuja-zero" },
   openGraph: {
-    title: "Licznik konwersji pokazuje zero, a zgłoszenia przychodzą | Fluxlab",
+    title: "Licznik konwersji pokazuje zero, a zgłoszenia są | Fluxlab",
     description:
       "Najczęściej to nie brak zainteresowania, tylko błąd pomiaru. Cztery przyczyny i sposób na rozstrzygnięcie, która to.",
     locale: "pl_PL",

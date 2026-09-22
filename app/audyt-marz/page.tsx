@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import ProductLanding from "@/components/ProductLanding";
 
 export const metadata: Metadata = {
-  title: "Audyt marż sklepu, realny zysk na każdym produkcie, 49 zł | Fluxlab",
+  title: "Audyt marż sklepu, zysk na produkcie, 49 zł | Fluxlab",
   description:
-    "Panel pokazuje obrót, a nie to, co zostaje. Liczę zysk netto na sztuce po prowizjach, zwrotach i dopłatach do wysyłki, wskazuję bestsellery sprzedawane pod kreską i martwy stok. 49 zł.",
+    "Panel pokazuje obrót, a nie to, co zostaje. Liczę zysk netto na sztuce po prowizjach, zwrotach i dopłatach do wysyłki, wskazuję martwy stok. 49 zł.",
   alternates: { canonical: "/audyt-marz" },
   openGraph: {
     title:

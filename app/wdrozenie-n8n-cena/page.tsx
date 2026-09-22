@@ -5,7 +5,7 @@ import KalkulatorAutomatyzacji from "@/components/KalkulatorAutomatyzacji";
 export const metadata: Metadata = {
   title: "Wdrożenie n8n, cena: z czego składa się koszt | Fluxlab",
   description:
-    "Ile realnie kosztuje wdrożenie n8n: licencja (0 zł przy self-hosted), serwer, praca nad przepływami i opieka. Widełki za jeden przepływ i za komplet, plus kalkulator porównujący koszt z Zapierem.",
+    "Ile realnie kosztuje wdrożenie n8n: licencja, serwer, praca nad przepływami i opieka. Widełki za jeden przepływ i za komplet, plus kalkulator.",
   alternates: { canonical: "/wdrozenie-n8n-cena" },
   openGraph: {
     title: "Wdrożenie n8n, cena: z czego składa się koszt | Fluxlab",

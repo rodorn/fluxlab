@@ -3,12 +3,12 @@ import ProductLanding from "@/components/ProductLanding";
 import DomenaCheck from "@/components/DomenaCheck";
 
 export const metadata: Metadata = {
-  title: "Kto jest właścicielem Twojej domeny, sprawdź za darmo | Fluxlab",
+  title: "Kto jest właścicielem domeny, sprawdź za darmo | Fluxlab",
   description:
-    "W rejestrze domen wpisany jest jeden podmiot i to on decyduje o adresie, stronie i poczcie firmowej. Sprawdź za darmo, czy to Twoja firma, i kiedy wygasa rejestracja. Przeniesienie od 490 zł.",
+    "W rejestrze wpisany jest jeden podmiot i to on decyduje o adresie, stronie i poczcie. Sprawdź za darmo, czy to Twoja firma i kiedy wygasa rejestracja.",
   alternates: { canonical: "/wlasnosc-domeny" },
   openGraph: {
-    title: "Kto jest właścicielem Twojej domeny, sprawdź za darmo | Fluxlab",
+    title: "Kto jest właścicielem domeny, sprawdź za darmo | Fluxlab",
     description:
       "Abonent domeny decyduje o stronie i poczcie firmowej. Sprawdzenie w publicznym rejestrze, od ręki i bez rejestracji.",
     locale: "pl_PL",

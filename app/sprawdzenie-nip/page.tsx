@@ -8,7 +8,7 @@ import NipCheck from "@/components/NipCheck";
 export const metadata: Metadata = {
   title: "Sprawdzenie NIP za darmo, wykaz VAT i status firmy | Fluxlab",
   description:
-    "Wpisz NIP i sprawdź za darmo, czy firma istnieje w wykazie Ministerstwa Finansów, czy jest czynnym podatnikiem VAT i ile rachunków ma zgłoszonych. Bez rejestracji, dane prosto z rejestru.",
+    "Wpisz NIP i sprawdź za darmo, czy firma jest w wykazie Ministerstwa Finansów, czy jest czynnym podatnikiem VAT i ile ma zgłoszonych rachunków.",
   alternates: { canonical: "/sprawdzenie-nip" },
   openGraph: {
     title: "Sprawdzenie NIP za darmo, wykaz VAT i status firmy | Fluxlab",

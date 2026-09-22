@@ -298,3 +298,72 @@ Dwie rzeczy warte uwagi:
 - Nie ma kontroli pilnującej głosu na przyszłość. Reguła w `spojnosc.mjs` wymaga wcześniej odsiania kilkunastu miejsc, gdzie „my" znaczy „ja i klient razem" („jakie systemy łączymy", „dobieramy w diagnozie"). To osobny cykl, wpisane w dziennik.
 - W katalogu pojawiły się dwa nieśledzone pliki, `lib/audyt-ocena.ts` i `lib/audyt-pomiar.ts`, których nie tworzyłem i które nie istniały na starcie cyklu. Nie ruszałem ich.
 === 2026-09-22 01:48:21 koniec, kod 0
+=== 2026-09-22 02:43:06 start
+API Error: 529 Overloaded. This is a server-side issue, usually temporary — try again in a moment. If it persists, check https://status.claude.com.
+=== 2026-09-22 02:56:00 koniec, kod 0
+=== 2026-09-22 03:43:04 start
+=== 2026-09-22 04:43:25 start
+Cykl domknięty.
+
+**Co dowiezione:** `/e-doreczenia-integracja` otwiera się teraz darmowym sprawdzeniem terminu ustawowego. Siedem rodzajów podmiotu do naciśnięcia, wynik liczony w przeglądarce, zero wpisywania i zero rejestracji. Druga decyzja, o skali pism, przy kilku pismach rocznie mówi wprost, żeby nie automatyzować.
+
+| Element | Stan |
+| --- | --- |
+| Build + `spojnosc.mjs` | czyste przed każdym commitem |
+| Siedem rodzajów podmiotu | przeklikane, wszystkie dają poprawną datę i liczbę dni |
+| Kontrast bloku wyniku | 4,7:1 jasny, 6,29:1 ciemny, próg 4,5 |
+| 390 px | `scrollWidth` 390, bez przewijania w bok |
+| Produkcja | potwierdzona po wdrożeniu, trzy zapytania |
+| IndexNow | Yandex i Naver przyjęły 112 adresów, wspólny punkt 403 |
+
+Commity: `ed7a2e8` (narzędzie), `23964a5` (dziennik).
+
+Dwie rzeczy warte uwagi na przyszłość:
+
+Daty wymagały weryfikacji, bo urzędowy harmonogram i komunikat resortu się rozjeżdżają. Strona `gov.pl/web/e-doreczenia/harmonogram` podaje dla przedsiębiorców z CEIDG sprzed 2025 termin 1 lipca 2025, a faktycznie obowiązuje 1 października 2026, co potwierdza Biznes.gov.pl i osobny komunikat resortu. Wpisałem 1 października 2026, czyli za 9 dni, i podlinkowałem oba źródła pod wynikiem.
+
+Sprawdzenie odpowiada na „od kiedy", nie na „czy już mamy". To drugie wymaga Bazy Adresów Elektronicznych, a dostęp do niej jest za uwierzytelnieniem certyfikatem. Zostawiłem to w dzienniku jako pierwszą rzecz do rozpoznania w następnym cyklu, bo spięłoby się wprost ze `/sprawdzenie-nip`.
+=== 2026-09-22 04:49:20 koniec, kod 0
+=== 2026-09-22 05:43:05 start
+=== 2026-09-22 06:43:05 start
+Cykl zamknięty.
+
+**Co dowiozłem:** pakiet KSeF, czyli największą lukę z audytu treści (6.1) i pozycję 7 rankingu SEO. Na `/ksef-integracja` stoi strona produktowa, a jej elementem interaktywnym jest darmowe sprawdzenie gotowości: pierwsze kliknięcie to grupa podatnika, drugie to sposób, w jaki dziś powstają faktury. Zero wpisywania, zero rejestracji.
+
+**Dlaczego to ta zmiana:** w repozytorium leżał publiczny, działający klient KSeF API v2, a w całym serwisie nie było ani jednej strony na ten temat. Jedyne wzmianki, na stronie dla biur rachunkowych, mówiły o KSeF w czasie przyszłym, choć obowiązek działa od 1 lutego i 1 kwietnia 2026. Poprawiłem siedem takich zdań.
+
+**Weryfikacja, skrótowo:**
+
+| Co | Wynik |
+|---|---|
+| Terminy | potwierdzone u źródła (podatki.gov.pl), oba adresy podlinkowane, kod 200 |
+| Przeklikane stany | 50 (25 kombinacji × 2 motywy), 0 rozjazdów treści |
+| Daty w wyniku | 233 dni temu, 174 dni temu, 101 dni do 1 stycznia 2027, zgadzają się co do dnia |
+| Kontrast | 0 zgłoszeń, najniżej 4,83 (jasny) i 4,92 (ciemny) przy progu 4,5 |
+| Telefon 390 px | dokument 390 px, bez przewijania w bok |
+| Linki przychodzące | 6 od pierwszego dnia, mapa 110 → 111 adresów, wszystkie 200 |
+| IndexNow | Yandex i Naver przyjęły 111 adresów, wspólny punkt nadal 403 |
+
+Narzędzie potrafi też odmówić: przy programie księgowym z wbudowanym KSeF mówi, że nie ma czego wdrażać, a przy Excelu odsyła do darmowej Aplikacji Podatnika zamiast sprzedawać integrację.
+
+**Dwie rzeczy warte Twojej decyzji.** Repozytorium KSeF nie ma pliku LICENSE, w odróżnieniu od klienta e-Doręczeń, więc nie deklaruję na stronie żadnej licencji, choć kod jest publiczny; dorzucenie MIT zajęłoby minutę i wzmocniłoby ten argument. Druga: `daty-stron.mjs` chciał oznaczyć 74 strony jako zmienione dziś, bo nocny commit kontrastu dotknął 92 plików. Cofnąłem to i wpisałem tylko datę nowej strony, bo taki sygnał do wyszukiwarki nie miałby pokrycia. Do rozstrzygnięcia, czy skrypt ma pomijać zmiany kosmetyczne.
+
+Commity: `090ba90`, `22b39d3`, dziennik `0aaca58`.
+=== 2026-09-22 06:53:59 koniec, kod 0
+=== 2026-09-22 07:43:13 start
+Cykl domknięty i wdrożony.
+
+**Co zrobiłem:** cztery landingi branżowe miały zero linków przychodzących. Przyczyna nie była brakiem komponentu, tylko błędem w istniejącym: wybór branży na stronie głównej trzymał swój jedyny odnośnik wewnątrz panelu wyniku, więc ten odnośnik powstawał dopiero po kliknięciu i dla robotów nie istniał. Poprawiłem to i przeniosłem ten sam komponent, w wariancie karty, na filar `/automatyzacja-procesow-biznesowych`, dokładając drugie kliknięcie o tym, gdzie żyją dane.
+
+| Miara | Przed | Po |
+| --- | --- | --- |
+| Linki przychodzące do 4 stron branżowych | 0, 0, 0, 0 | 2, 2, 2, 2 |
+| Strony z jednym linkiem | 9 | 5 |
+| Strony osierocone (poza `/`) | 6 | 2 |
+| Kontrast, stany po kliknięciu | nie mierzone przez skrypt | 48 stanów, 0 zgłoszeń |
+
+Sprawdzone: 16 z 16 kombinacji daje poprawny wynik, 12 adresów docelowych zwraca 200, 390 px bez przewijania w bok, build i `spojnosc.mjs` czyste, produkcja potwierdzona dwoma zapytaniami, IndexNow przyjęty przez Yandex i Naver.
+
+Dwie rzeczy warte uwagi na przyszłość. Zamiast dokładać piąty komponent typu „wybierz X" scaliłem dane do `lib/branze.ts`, bo drugi bliźniaczy widget byłby dokładnie tą niespójnością, którą priorytet 1 ma eliminować. I druga: zdarzenia kliknięć lecą do własnego licznika od kilku dni, a przez trzy cykle nikt nie zajrzał do odczytu. To jedyna liczba mówiąca, czy budowanie kolejnych narzędzi ma sens, więc wpisałem ją jako pierwszą rzecz następnego cyklu.
+=== 2026-09-22 07:53:53 koniec, kod 0
+=== 2026-09-22 08:43:30 start

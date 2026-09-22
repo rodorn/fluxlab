@@ -7,9 +7,9 @@ import TrackedCTA from "@/components/TrackedCTA";
 import NipCheck from "@/components/NipCheck";
 
 export const metadata: Metadata = {
-  title: "Sprawdź kontrahenta przed przelewem, raport ryzyka od 9 zł | Fluxlab",
+  title: "Sprawdź kontrahenta przed przelewem, od 9 zł | Fluxlab",
   description:
-    "Zanim wyślesz zaliczkę, sprawdź firmę. Werdykt złożony z wykazu VAT, KRS i danych domeny, w tym kluczowy test: czy numer konta figuruje w wykazie tej firmy. Szybki check 9 zł, pełny raport 29 zł.",
+    "Zanim wyślesz zaliczkę, sprawdź firmę. Werdykt z wykazu VAT, KRS i danych domeny, w tym test, czy numer konta figuruje w wykazie. Od 9 zł.",
   alternates: { canonical: "/sprawdz-kontrahenta" },
   openGraph: {
     title:

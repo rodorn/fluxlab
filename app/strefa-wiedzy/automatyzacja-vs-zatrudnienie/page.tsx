@@ -7,13 +7,11 @@ import Tabs from "@/components/Tabs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 
 export const metadata: Metadata = {
-  title:
-    "Automatyzacja vs zatrudnienie, co się bardziej opłaca w MŚP | Fluxlab",
+  title: "Automatyzacja czy zatrudnienie w MŚP | Fluxlab",
   description:
     "Kiedy zatrudnić kolejną osobę, a kiedy zautomatyzować proces. Realne koszty, ryzyka, framework decyzji i praktyczne scenariusze dla firm B2B w 2026.",
   openGraph: {
-    title:
-      "Automatyzacja vs zatrudnienie, co się bardziej opłaca w MŚP | Fluxlab",
+    title: "Automatyzacja czy zatrudnienie w MŚP | Fluxlab",
     description:
       "Kiedy zatrudnić kolejną osobę, a kiedy zautomatyzować proces. Realne koszty, ryzyka, framework decyzji i praktyczne scenariusze dla firm B2B w 2026.",
     locale: "pl_PL",

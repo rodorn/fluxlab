@@ -18,9 +18,9 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
-  title: "Narzędzia: kalkulatory ROI, audyty CRM i decyzje biznesowe | Fluxlab",
+  title: "Narzędzia: kalkulatory, audyty i decyzje | Fluxlab",
   description:
-    "Bezpłatne narzędzia online dla firm B2B: kalkulator kosztu ręcznej obsługi leadów, audyt CRM, decyzja zatrudnić/zautomatyzować, kalkulator podatkowy JDG. Bez rejestracji.",
+    "Bezpłatne narzędzia dla firm: kalkulator kosztu ręcznej obsługi leadów, audyt CRM, decyzja zatrudnić czy zautomatyzować, kalkulator JDG. Bez rejestracji.",
   openGraph: {
     title:
       "Narzędzia: kalkulatory ROI, audyty CRM i decyzje biznesowe | Fluxlab",

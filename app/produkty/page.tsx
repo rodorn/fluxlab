@@ -7,12 +7,12 @@ import KatalogProduktow from "@/components/KatalogProduktow";
 import { PRODUCTS } from "@/lib/products";
 
 export const metadata: Metadata = {
-  title: "Produkty i narzędzia Fluxlab, gotowe raporty i audyty | Fluxlab",
+  title: "Produkty i narzędzia: raporty, audyty, wdrożenia | Fluxlab",
   description:
     "Katalog Fluxlab w trzech filarach: automatyzacja procesów, integracje i dane, systemy i strony. Filtr zawęża listę jednym naciśnięciem.",
   alternates: { canonical: "/produkty" },
   openGraph: {
-    title: "Produkty i narzędzia Fluxlab, gotowe raporty i audyty | Fluxlab",
+    title: "Produkty i narzędzia: raporty, audyty, wdrożenia | Fluxlab",
     description:
       "Katalog Fluxlab w trzech filarach: automatyzacja procesów, integracje i dane, systemy i strony. Filtr zawęża listę jednym naciśnięciem.",
     locale: "pl_PL",

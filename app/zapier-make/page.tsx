@@ -6,13 +6,11 @@ import LandingForm from "@/components/LandingForm";
 import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
-  title:
-    "Zapier vs Make (Integromat), porównanie i wdrożenie automatyzacji | Fluxlab",
+  title: "Zapier vs Make, porównanie i wdrożenie | Fluxlab",
   description:
     "Zapier czy Make? Porównujemy platformy automatyzacji, pomagamy wybrać najlepsze narzędzie i wdrażam workflow dopasowane do potrzeb Twojej firmy.",
   openGraph: {
-    title:
-      "Zapier vs Make (Integromat), porównanie i wdrożenie automatyzacji | Fluxlab",
+    title: "Zapier vs Make, porównanie i wdrożenie | Fluxlab",
     description:
       "Zapier czy Make? Porównujemy platformy automatyzacji, pomagamy wybrać najlepsze narzędzie i wdrażam workflow dopasowane do potrzeb Twojej firmy.",
     locale: "pl_PL",

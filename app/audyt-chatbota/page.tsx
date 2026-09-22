@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import ProductLanding from "@/components/ProductLanding";
 
 export const metadata: Metadata = {
-  title: "Audyt chatbota, sprawdź co Twój asystent AI mówi klientom | Fluxlab",
+  title: "Audyt chatbota, co asystent AI mówi klientom | Fluxlab",
   description:
-    "Zadaję Twojemu botowi 150 realnych pytań klienta i zderzam każdą odpowiedź z cennikiem, regulaminem i zasadami zwrotów. Wyłapuję halucynacje i obietnice, którymi firma jest związana. 69 zł.",
+    "Zadaję Twojemu botowi 150 realnych pytań klienta i zderzam odpowiedzi z cennikiem, regulaminem i zasadami zwrotów. Wyłapuję halucynacje. 69 zł.",
   alternates: { canonical: "/audyt-chatbota" },
   openGraph: {
     title:

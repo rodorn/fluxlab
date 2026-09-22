@@ -7,11 +7,11 @@ import TrackedCTA from "@/components/TrackedCTA";
 import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
-  title: "Automatyczne przypisywanie leadów do handlowców | Routing CRM",
+  title: "Automatyczne przypisywanie leadów w CRM | Fluxlab",
   description:
-    "Automatyczne przypisywanie leadów do handlowców według regionu, źródła, produktu lub obciążenia pipeline'u. Lead routing CRM, który eliminuje ręczne przekazywanie zapytań i skraca czas reakcji.",
+    "Przypisywanie leadów do handlowców według regionu, źródła, produktu lub obciążenia pipeline'u. Koniec z ręcznym przekazywaniem zapytań.",
   openGraph: {
-    title: "Automatyczne przypisywanie leadów do handlowców | Routing CRM",
+    title: "Automatyczne przypisywanie leadów w CRM | Fluxlab",
     description:
       "Lead routing CRM, który automatycznie przypisuje zapytania według regionu, źródła lub produktu. Bez arkuszy, bez ręcznego przekazywania, bez gubienia leadów.",
     locale: "pl_PL",

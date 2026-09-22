@@ -7,11 +7,11 @@ import TrackedCTA from "@/components/TrackedCTA";
 import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
-  title: "Koszt ręcznej obsługi leadów, kalkulator i przykład | Fluxlab",
+  title: "Koszt ręcznej obsługi leadów, kalkulator | Fluxlab",
   description:
-    "Ile naprawdę kosztuje ręczna obsługa leadów w firmie B2B? Pełny rachunek: czas pracy, zgubione leady, błędy, raporty, utracona widoczność. Z przykładami i kalkulatorem.",
+    "Ile naprawdę kosztuje ręczna obsługa leadów: czas pracy, zgubione leady, błędy, raporty i utracona widoczność. Z przykładami i kalkulatorem.",
   openGraph: {
-    title: "Koszt ręcznej obsługi leadów, kalkulator i przykład | Fluxlab",
+    title: "Koszt ręcznej obsługi leadów, kalkulator | Fluxlab",
     description:
       "Pełny rachunek kosztu ręcznej obsługi leadów w B2B: czas, zgubione zapytania, błędy, raporty. Trzy przykłady firm i kalkulator do policzenia własnego.",
     locale: "pl_PL",

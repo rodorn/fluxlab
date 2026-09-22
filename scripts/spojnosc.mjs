@@ -246,6 +246,10 @@ for (const f of sourceFiles) {
 }
 
 // --- 3. metadata na kazdej stronie ---
+const TYTUL_MAX = 60;
+const OPIS_MAX = 160;
+// Duplikat tytulu znaczy, ze dwie strony walcza w wyszukiwarce o to samo.
+const znaneTytuly = new Map();
 const pages = sourceFiles.filter((f) => /^app\/.*\/page\.tsx$/.test(f) || f === "app/page.tsx");
 for (const f of pages) {
   const body = read(f);
@@ -255,8 +259,19 @@ for (const f of pages) {
   if (/export async function generateMetadata/.test(body)) continue; // trasy dynamiczne
   if (!/export const metadata/.test(body)) add("metadata", `${f}: brak metadata`);
   else {
-    if (!/title:/.test(body)) add("metadata", `${f}: brak title`);
-    if (!/description:/.test(body)) add("metadata", `${f}: brak description`);
+    const tytul = body.slice(body.indexOf("export const metadata")).match(/\btitle:\s*"((?:[^"\\]|\\.)*)"/)?.[1];
+    const opis = body.slice(body.indexOf("export const metadata")).match(/\bdescription:\s*"((?:[^"\\]|\\.)*)"/)?.[1];
+    if (!tytul) add("metadata", `${f}: brak title`);
+    // Wyszukiwarka ucina tytul okolo 60 znakow, a opis okolo 160, zwykle w
+    // polowie zdania. Kontrola stoi tutaj, bo raz poprawione dlugosci wracaja
+    // przy kazdej nowej stronie pisanej z glowy.
+    else if (tytul.length > TYTUL_MAX)
+      add("metadata", `${f}: title ma ${tytul.length} znakow, limit ${TYTUL_MAX}`);
+    if (!opis) add("metadata", `${f}: brak description`);
+    else if (opis.length > OPIS_MAX)
+      add("metadata", `${f}: description ma ${opis.length} znakow, limit ${OPIS_MAX}`);
+    if (tytul && !znaneTytuly.has(tytul)) znaneTytuly.set(tytul, f);
+    else if (tytul) add("metadata", `${f}: title powtarza sie z ${znaneTytuly.get(tytul)}`);
     if (!/alternates:\s*\{[\s\S]{0,120}canonical/.test(body))
       add("metadata", `${f}: brak canonical`);
   }

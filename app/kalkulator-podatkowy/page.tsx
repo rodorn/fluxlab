@@ -10,7 +10,7 @@ import Tabs from "@/components/Tabs";
 export const metadata: Metadata = {
   title: "Kalkulator JDG 2026: ryczałt, liniowy, skala i ZUS | Fluxlab",
   description:
-    "Porównaj ryczałt, podatek liniowy i skalę podatkową dla JDG w 2026. Uwzględnia ZUS, składkę zdrowotną, VAT, koszty prywatne i samochód. Oblicz, która forma opodatkowania jest najkorzystniejsza.",
+    "Porównaj ryczałt, podatek liniowy i skalę dla JDG w 2026. Uwzględnia ZUS, składkę zdrowotną, VAT, koszty prywatne i samochód. Bez rejestracji.",
   openGraph: {
     title: "Kalkulator JDG 2026: ryczałt, liniowy, skala i ZUS | Fluxlab",
     description:

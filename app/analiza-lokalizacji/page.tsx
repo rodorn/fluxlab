@@ -3,14 +3,12 @@ import ProductLanding from "@/components/ProductLanding";
 import LokalizacjaCheck from "@/components/LokalizacjaCheck";
 
 export const metadata: Metadata = {
-  title:
-    "Analiza lokalizacji pod lokal, ilu masz konkurentów, od 190 zł | Fluxlab",
+  title: "Analiza lokalizacji pod lokal, od 190 zł | Fluxlab",
   description:
-    "Zanim podpiszesz najem, sprawdź nasycenie rynku: konkurenci w promieniu 1, 3 i 5 km, liczba mieszkańców na jeden punkt i porównanie z sąsiednimi gminami. Darmowe sprawdzenie od ręki, pełny raport od 190 zł.",
+    "Zanim podpiszesz najem, sprawdź nasycenie rynku: konkurenci w promieniu 1, 3 i 5 km i liczba mieszkańców na punkt. Darmowe sprawdzenie, raport od 190 zł.",
   alternates: { canonical: "/analiza-lokalizacji" },
   openGraph: {
-    title:
-      "Analiza lokalizacji pod lokal, ilu masz konkurentów, od 190 zł | Fluxlab",
+    title: "Analiza lokalizacji pod lokal, od 190 zł | Fluxlab",
     description:
       "Nasycenie rynku w okolicy lokalu: konkurenci w zasięgu dojazdu, mieszkańcy na punkt, porównanie z sąsiednimi gminami.",
     locale: "pl_PL",

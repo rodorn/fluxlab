@@ -8,15 +8,13 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
-  title:
-    "Automatyzacja dla e-commerce, Shopify, WooCommerce, BaseLinker, Allegro | Fluxlab",
+  title: "Automatyzacja dla e-commerce, Shopify i Allegro | Fluxlab",
   description:
-    "Automatyzacja sklepu internetowego: synchronizacja stanów magazynowych, fakturowanie, etykiety InPost/DPD, e-mail marketing i obsługa zwrotów. Łączę Shopify, WooCommerce, PrestaShop, BaseLinker i Allegro w jeden działający proces.",
+    "Synchronizacja stanów, fakturowanie, etykiety InPost i DPD, obsługa zwrotów. Łączę Shopify, WooCommerce, PrestaShop, BaseLinker i Allegro w jeden proces.",
   openGraph: {
-    title:
-      "Automatyzacja dla e-commerce, Shopify, WooCommerce, BaseLinker, Allegro | Fluxlab",
+    title: "Automatyzacja dla e-commerce, Shopify i Allegro | Fluxlab",
     description:
-      "Automatyzacja sklepu internetowego: synchronizacja stanów magazynowych, fakturowanie, etykiety InPost/DPD, e-mail marketing i obsługa zwrotów. Łączę Shopify, WooCommerce, PrestaShop, BaseLinker i Allegro w jeden działający proces.",
+      "Synchronizacja stanów, fakturowanie, etykiety InPost i DPD, obsługa zwrotów. Łączę Shopify, WooCommerce, PrestaShop, BaseLinker i Allegro w jeden proces.",
     locale: "pl_PL",
     type: "article",
     images: [
@@ -577,7 +575,7 @@ export default function AutomatyzacjaDlaEcommerce() {
             "@type": "Service",
             name: "Automatyzacja dla e-commerce",
             description:
-              "Automatyzacja sklepu internetowego: synchronizacja stanów magazynowych, fakturowanie, etykiety InPost/DPD, e-mail marketing i obsługa zwrotów. Łączę Shopify, WooCommerce, PrestaShop, BaseLinker i Allegro w jeden działający proces.",
+              "Synchronizacja stanów, fakturowanie, etykiety InPost i DPD, obsługa zwrotów. Łączę Shopify, WooCommerce, PrestaShop, BaseLinker i Allegro w jeden proces.",
             provider: { "@id": "https://fluxlab.pl/#organization" },
             areaServed: { "@type": "Country", name: "PL" },
             serviceType: "Automatyzacja procesów biznesowych dla e-commerce",

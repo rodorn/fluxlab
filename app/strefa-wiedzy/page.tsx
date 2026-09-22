@@ -8,13 +8,11 @@ import OkladkaArtykulu from "@/components/OkladkaArtykulu";
 import { categories } from "@/lib/categories";
 
 export const metadata: Metadata = {
-  title:
-    "Strefa wiedzy, automatyzacja procesów, CRM, API, raportowanie, AI | Fluxlab",
+  title: "Strefa wiedzy: automatyzacja, CRM, API, raporty | Fluxlab",
   description:
     "Praktyczne artykuły o automatyzacji procesów biznesowych, CRM, integracjach API, raportowaniu i AI. Bez marketingowej mgły, konkrety dla firm B2B.",
   openGraph: {
-    title:
-      "Strefa wiedzy, automatyzacja procesów, CRM, API, raportowanie, AI | Fluxlab",
+    title: "Strefa wiedzy: automatyzacja, CRM, API, raporty | Fluxlab",
     description:
       "Praktyczne artykuły o automatyzacji procesów biznesowych, CRM, integracjach API, raportowaniu i AI.",
     locale: "pl_PL",

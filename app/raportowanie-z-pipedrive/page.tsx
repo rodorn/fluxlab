@@ -9,11 +9,11 @@ import Tabs from "@/components/Tabs";
 export const metadata: Metadata = {
   title: "Automatyczne raportowanie z Pipedrive | Bez ręcznego Excela",
   description:
-    "Jak zrobić automatyczne raporty sprzedaży z Pipedrive bez klejenia Excela co poniedziałek. Pipeline, źródła leadów, czas reakcji, prognozy, codziennie aktualne, bez ręcznej pracy.",
+    "Jak zrobić automatyczne raporty sprzedaży z Pipedrive bez klejenia Excela co poniedziałek. Pipeline, źródła leadów, czas reakcji, prognozy.",
   openGraph: {
     title: "Automatyczne raportowanie z Pipedrive | Bez ręcznego Excela",
     description:
-      "Jak zrobić automatyczne raporty sprzedaży z Pipedrive bez klejenia Excela co poniedziałek. Pipeline, źródła leadów, czas reakcji, prognozy, codziennie aktualne, bez ręcznej pracy.",
+      "Jak zrobić automatyczne raporty sprzedaży z Pipedrive bez klejenia Excela co poniedziałek. Pipeline, źródła leadów, czas reakcji, prognozy.",
     locale: "pl_PL",
     type: "article",
     images: [

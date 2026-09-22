@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import ProductLanding from "@/components/ProductLanding";
 
 export const metadata: Metadata = {
-  title: "Kontrola paliwa we flocie, audyt tankowań, od 99 zł | Fluxlab",
+  title: "Kontrola paliwa we flocie, od 99 zł | Fluxlab",
   description:
-    "Portal karty paliwowej pokazuje listę transakcji, ale nie zestawia ich z trasą. Dopiero to wyłapuje tankowanie do kanistra, obce auto i klon karty. Darmowy skan trzech pojazdów, audyt od 99 zł.",
+    "Portal karty paliwowej pokazuje transakcje, ale nie zestawia ich z trasą. Dopiero to wyłapuje tankowanie do kanistra i klon karty. Audyt od 99 zł.",
   alternates: { canonical: "/kontrola-paliwa" },
   openGraph: {
-    title: "Kontrola paliwa we flocie, audyt tankowań, od 99 zł | Fluxlab",
+    title: "Kontrola paliwa we flocie, od 99 zł | Fluxlab",
     description:
       "Tankowania zestawione z trasą i przebiegiem wyłapują kanister, obce auto i klon karty. Darmowy skan trzech pojazdów, audyt od 99 zł.",
     locale: "pl_PL",

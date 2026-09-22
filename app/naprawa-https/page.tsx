@@ -3,14 +3,12 @@ import ProductLanding from "@/components/ProductLanding";
 import HttpsCheck from "@/components/HttpsCheck";
 
 export const metadata: Metadata = {
-  title:
-    "Przeglądarka ostrzega przed Twoją stroną, naprawa HTTPS od 190 zł | Fluxlab",
+  title: "Naprawa HTTPS, koniec ostrzeżeń przeglądarki | Fluxlab",
   description:
-    "Wygasły certyfikat albo certyfikat hostingu zamiast Twojego oznacza pełnoekranowe ostrzeżenie dla każdego odwiedzającego. Diagnozuję przyczynę i naprawiam szyfrowanie razem z przekierowaniami, zwykle w jeden dzień roboczy.",
+    "Wygasły certyfikat oznacza pełnoekranowe ostrzeżenie dla każdego odwiedzającego. Diagnozuję przyczynę i naprawiam szyfrowanie razem z przekierowaniami.",
   alternates: { canonical: "/naprawa-https" },
   openGraph: {
-    title:
-      "Przeglądarka ostrzega przed Twoją stroną, naprawa HTTPS od 190 zł | Fluxlab",
+    title: "Naprawa HTTPS, koniec ostrzeżeń przeglądarki | Fluxlab",
     description:
       "Diagnoza i naprawa warstwy szyfrowania: wygasły certyfikat, certyfikat hostingu, pętla przekierowań, mieszana treść.",
     locale: "pl_PL",

@@ -3,12 +3,12 @@ import ProductLanding from "@/components/ProductLanding";
 import KsefCheck from "@/components/KsefCheck";
 
 export const metadata: Metadata = {
-  title: "Integracja z KSeF: spięcie Waszego systemu z e-fakturami | Fluxlab",
+  title: "Integracja z KSeF dla firm | Fluxlab",
   description:
-    "Wystawianie faktur w KSeF obowiązuje od 1 kwietnia 2026, a 1 stycznia 2027 kończą się wszystkie przepisy przejściowe. Spinam Wasz system z API v2: wysyłka w FA(3), zapis numeru KSeF i UPO, odbiór faktur kosztowych. Klient tego API mam otwarty.",
+    "Faktury w KSeF obowiązują od 1 kwietnia 2026. Spinam Wasz system z API v2: wysyłka w FA(3), zapis numeru KSeF i UPO, odbiór faktur. Kod otwarty.",
   alternates: { canonical: "/ksef-integracja" },
   openGraph: {
-    title: "Integracja z KSeF: spięcie Waszego systemu z e-fakturami | Fluxlab",
+    title: "Integracja z KSeF dla firm | Fluxlab",
     description:
       "Faktury wychodzą z systemu, w którym już pracujecie, a numer KSeF i UPO zapisują się przy dokumencie. Bez przeklejania przez osobną aplikację.",
     locale: "pl_PL",

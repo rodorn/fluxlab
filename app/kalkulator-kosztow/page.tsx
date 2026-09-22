@@ -7,13 +7,11 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
-  title:
-    "Kalkulator kosztów samochodu – Ile naprawdę kosztuje Twoje auto? | Fluxlab",
+  title: "Kalkulator kosztów samochodu | Fluxlab",
   description:
     "Oblicz pełny roczny koszt posiadania samochodu: paliwo, olej, opony, serwis, ubezpieczenie i utrata wartości. Poznaj realny koszt na kilometr.",
   openGraph: {
-    title:
-      "Kalkulator kosztów samochodu – Ile naprawdę kosztuje Twoje auto? | Fluxlab",
+    title: "Kalkulator kosztów samochodu | Fluxlab",
     description:
       "Oblicz pełny roczny koszt posiadania samochodu: paliwo, serwis, opony, ubezpieczenie, spadek wartości.",
     locale: "pl_PL",

@@ -3,12 +3,12 @@ import ProductLanding from "@/components/ProductLanding";
 import SprzedawcaCheck from "@/components/SprzedawcaCheck";
 
 export const metadata: Metadata = {
-  title: "Czy klient ustali ze strony, komu płaci, sprawdź za darmo | Fluxlab",
+  title: "Czy klient ustali, komu płaci, sprawdź za darmo | Fluxlab",
   description:
-    "Księgowość kupującego sprawdza sprzedawcę w wykazie podatników VAT przed przelewem. Sprawdź za darmo, czy Twoja strona podaje NIP i czy dane zgadzają się z wykazem. Uzupełnienie od 290 zł.",
+    "Księgowość kupującego sprawdza sprzedawcę w wykazie VAT przed przelewem. Sprawdź za darmo, czy strona podaje NIP i czy dane się zgadzają.",
   alternates: { canonical: "/dane-sprzedawcy" },
   openGraph: {
-    title: "Czy klient ustali ze strony, komu płaci, sprawdź za darmo | Fluxlab",
+    title: "Czy klient ustali, komu płaci, sprawdź za darmo | Fluxlab",
     description:
       "Wyciągam NIP i numer konta ze strony, kontaktu i regulaminu, po czym sprawdzam je w wykazie podatników VAT. Od ręki, bez rejestracji.",
     locale: "pl_PL",

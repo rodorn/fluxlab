@@ -7,9 +7,9 @@ import WykresSlupkowy from "@/components/WykresSlupkowy";
 import SprawdzPoBadaniu from "@/components/SprawdzPoBadaniu";
 
 export const metadata: Metadata = {
-  title: "Czy asystenci AI widzą strony dealerów? Badanie 386 domen | Fluxlab",
+  title: "Czy asystenci AI widzą strony dealerów | Fluxlab",
   description:
-    "Sprawdziliśmy 386 domen dealerskich pod kątem tego, czy roboty zbierające treść dla asystentów AI mają co przeczytać. Blokuje je 0,8 procent, ale połowa stron w ogóle nie mówi maszynie, czym jest firma. Pełna metoda i liczby.",
+    "Sprawdziliśmy 386 domen dealerskich: czy roboty zbierające treść dla asystentów AI mają co przeczytać. Blokuje je 0,8 procent. Pełna metoda i liczby.",
   alternates: {
     canonical: "/strefa-wiedzy/czy-ai-widzi-strony-dealerow",
   },

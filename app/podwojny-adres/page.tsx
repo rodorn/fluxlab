@@ -3,12 +3,12 @@ import ProductLanding from "@/components/ProductLanding";
 import AdresCheck from "@/components/AdresCheck";
 
 export const metadata: Metadata = {
-  title: "Czy Google widzi Twoją stronę podwójnie, sprawdź za darmo | Fluxlab",
+  title: "Czy Google widzi stronę podwójnie, za darmo | Fluxlab",
   description:
-    "Adres z www i bez www to dla wyszukiwarki dwie różne strony. Jeśli obie zwracają tę samą treść, siła linków dzieli się na pół. Sprawdź cztery wersje swojego adresu za darmo. Naprawa od 190 zł.",
+    "Adres z www i bez www to dla wyszukiwarki dwie strony. Jeśli obie dają tę samą treść, siła linków dzieli się na pół. Sprawdź za darmo cztery wersje.",
   alternates: { canonical: "/podwojny-adres" },
   openGraph: {
-    title: "Czy Google widzi Twoją stronę podwójnie, sprawdź za darmo | Fluxlab",
+    title: "Czy Google widzi stronę podwójnie, za darmo | Fluxlab",
     description:
       "Sprawdzenie czterech wersji adresu firmy, od ręki i bez rejestracji. Pokazuję, czy wyszukiwarka liczy Twoją stronę raz, czy dwa razy.",
     locale: "pl_PL",

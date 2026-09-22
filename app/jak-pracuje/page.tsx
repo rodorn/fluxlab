@@ -6,7 +6,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
-  title: "Jak pracuję, transparentny proces wdrożenia automatyzacji | Fluxlab",
+  title: "Jak pracuję, proces wdrożenia krok po kroku | Fluxlab",
   description:
     "Krok po kroku jak wygląda współpraca: bezpłatna konsultacja, audyt, wdrożenie i wsparcie. Stała cena projektowa, konkretne deliverables, realistyczne terminy.",
   openGraph: {

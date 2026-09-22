@@ -6,7 +6,7 @@ import ProductLanding from "@/components/ProductLanding";
 export const metadata: Metadata = {
   title: "Darmowy audyt techniczny strony, raport w minutę | Fluxlab",
   description:
-    "Wpisz adres, a zmierzę szybkość na komputerze i na telefonie, sprawdzę certyfikat, widoczność w wyszukiwarce, dostęp dla asystentów AI i zabezpieczenia poczty. Raport z listą poprawek w kolejności i z ceną naprawy. Bez rejestracji i bez podawania e-maila.",
+    "Wpisz adres, a zmierzę szybkość, certyfikat, widoczność w wyszukiwarce, dostęp dla asystentów AI i zabezpieczenia poczty. Bez rejestracji i bez e-maila.",
   alternates: { canonical: "/audyt-strony" },
   openGraph: {
     title: "Darmowy audyt techniczny strony | Fluxlab",

@@ -9,7 +9,7 @@ import SprawdzPoBadaniu from "@/components/SprawdzPoBadaniu";
 export const metadata: Metadata = {
   title: "Rejestr hoteli gubi Kraków i Warszawę. Nasz pomiar | Fluxlab",
   description:
-    "W Centralnym Wykazie Obiektów Hotelarskich 504 wpisy mają województwo zapisane jako liczba 1, a przy pobieraniu znika nawet co piąty obiekt mimo poprawnego licznika. Pełna metoda i liczby.",
+    "W Centralnym Wykazie Obiektów Hotelarskich 504 wpisy mają województwo zapisane jako liczba 1, a przy pobieraniu znika co piąty obiekt. Metoda i liczby.",
   alternates: {
     canonical: "/strefa-wiedzy/bledy-w-rejestrze-obiektow-hotelarskich",
   },

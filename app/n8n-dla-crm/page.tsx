@@ -9,11 +9,11 @@ import Tabs from "@/components/Tabs";
 export const metadata: Metadata = {
   title: "n8n dla CRM | Automatyzacja leadów, zadań i raportów",
   description:
-    "Jak n8n staje się warstwą automatyzacji nad Pipedrive, HubSpotem czy Salesforce: routing leadów, sync z systemami zewnętrznymi, raporty, follow-upy. Self-hosted vs cloud i co wdrożyć w pierwszym etapie.",
+    "Jak n8n staje się warstwą automatyzacji nad Pipedrive, HubSpotem i Salesforce: routing leadów, sync, raporty, follow-upy. Self-hosted czy cloud.",
   openGraph: {
     title: "n8n dla CRM | Automatyzacja leadów, zadań i raportów",
     description:
-      "Jak n8n staje się warstwą automatyzacji nad Pipedrive, HubSpotem czy Salesforce: routing leadów, sync z systemami zewnętrznymi, raporty, follow-upy. Self-hosted vs cloud i co wdrożyć w pierwszym etapie.",
+      "Jak n8n staje się warstwą automatyzacji nad Pipedrive, HubSpotem i Salesforce: routing leadów, sync, raporty, follow-upy. Self-hosted czy cloud.",
     locale: "pl_PL",
     type: "article",
     images: [

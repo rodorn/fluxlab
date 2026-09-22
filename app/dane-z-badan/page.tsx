@@ -7,7 +7,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 export const metadata: Metadata = {
   title: "Dane z naszych badań do pobrania | Fluxlab",
   description:
-    "Surowe zestawienia z badania 386 domen dealerskich w formacie CSV, do pobrania bez rejestracji i do cytowania z podaniem źródła. Metoda, zakres i zastrzeżenia opisane wprost.",
+    "Surowe zestawienia z badania 386 domen dealerskich w formacie CSV, do pobrania bez rejestracji i do cytowania z podaniem źródła. Metoda opisana wprost.",
   alternates: { canonical: "/dane-z-badan" },
   openGraph: {
     title: "Dane z naszych badań do pobrania | Fluxlab",

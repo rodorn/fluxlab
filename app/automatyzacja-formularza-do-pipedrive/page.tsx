@@ -9,11 +9,11 @@ import Tabs from "@/components/Tabs";
 export const metadata: Metadata = {
   title: "Integracja formularza z Pipedrive | Automatyczne leady w CRM",
   description:
-    "Jak połączyć formularz na stronie z Pipedrive bez ręcznego przepisywania leadów. Automatyczne tworzenie osoby, firmy i deala, routing do handlowca, zadanie kontaktu w 5 minut.",
+    "Jak połączyć formularz na stronie z Pipedrive bez przepisywania leadów. Tworzenie osoby, firmy i deala, routing do handlowca, zadanie kontaktu.",
   openGraph: {
     title: "Integracja formularza z Pipedrive | Automatyczne leady w CRM",
     description:
-      "Jak połączyć formularz na stronie z Pipedrive bez ręcznego przepisywania leadów. Automatyczne tworzenie osoby, firmy i deala, routing do handlowca, zadanie kontaktu w 5 minut.",
+      "Jak połączyć formularz na stronie z Pipedrive bez przepisywania leadów. Tworzenie osoby, firmy i deala, routing do handlowca, zadanie kontaktu.",
     locale: "pl_PL",
     type: "article",
     images: [

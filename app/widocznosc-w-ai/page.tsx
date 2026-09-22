@@ -3,12 +3,12 @@ import ProductLanding from "@/components/ProductLanding";
 import AiCheck from "@/components/AiCheck";
 
 export const metadata: Metadata = {
-  title: "Czy asystent AI widzi Twoją stronę? Darmowe sprawdzenie | Fluxlab",
+  title: "Czy asystent AI widzi Twoją stronę, za darmo | Fluxlab",
   description:
-    "Sprawdzam siedem rzeczy, od których zależy, czy ChatGPT, Claude czy Perplexity mogą w ogóle przeczytać Twoją stronę: dostęp dla robotów, treść bez skryptów, dane uporządkowane, mapa strony i llms.txt. Bez rejestracji.",
+    "Sprawdzam siedem rzeczy, od których zależy, czy ChatGPT, Claude i Perplexity mogą przeczytać Twoją stronę: dostęp, treść, dane, mapa strony, llms.txt.",
   alternates: { canonical: "/widocznosc-w-ai" },
   openGraph: {
-    title: "Czy asystent AI widzi Twoją stronę? Darmowe sprawdzenie | Fluxlab",
+    title: "Czy asystent AI widzi Twoją stronę, za darmo | Fluxlab",
     description:
       "Klient pyta asystenta zamiast wpisywać frazę. Sprawdź, czy Twoja strona może w takiej odpowiedzi wystąpić.",
     locale: "pl_PL",

@@ -7,7 +7,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 export const metadata: Metadata = {
   title: "Kilkanaście sesji AI naraz: jak nad tym zapanować | Fluxlab",
   description:
-    "Praca z asystentem AI w kilkunastu oknach terminala kończy się chaosem. Opis narzędzia, które zbiera je w jedno miejsce: stan każdej rozmowy, koszty, limity. Kod otwarty.",
+    "Praca z asystentem AI w kilkunastu oknach terminala kończy się chaosem. Narzędzie, które zbiera je w jedno miejsce: stan rozmowy, koszty, limity.",
   openGraph: {
     title: "Kilkanaście sesji AI naraz: jak nad tym zapanować | Fluxlab",
     description:

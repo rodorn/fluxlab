@@ -11,11 +11,11 @@ import { WYCENA_RAPORTOWANIE } from "@/lib/wycena";
 export const metadata: Metadata = {
   title: "Automatyzacja raportowania i danych w firmie | Fluxlab",
   description:
-    "Składam raporty sprzedaży, marketingu i operacji tak, żeby powstawały same i przychodziły o stałej porze. Jedno źródło od 790 zł, zakres dla swojego przypadku wyliczysz na stronie.",
+    "Składam raporty sprzedaży, marketingu i operacji tak, żeby powstawały same i przychodziły o stałej porze. Jedno źródło od 790 zł.",
   openGraph: {
     title: "Automatyzacja raportowania i danych w firmie | Fluxlab",
     description:
-      "Składam raporty sprzedaży, marketingu i operacji tak, żeby powstawały same i przychodziły o stałej porze. Jedno źródło od 790 zł, zakres dla swojego przypadku wyliczysz na stronie.",
+      "Składam raporty sprzedaży, marketingu i operacji tak, żeby powstawały same i przychodziły o stałej porze. Jedno źródło od 790 zł.",
     locale: "pl_PL",
     type: "article",
     images: [
@@ -204,7 +204,7 @@ export default function AutomatyzacjaRaportowania() {
             "@type": "Service",
             name: "Automatyzacja raportowania",
             description:
-              "Składam raporty sprzedaży, marketingu i operacji tak, żeby powstawały same i przychodziły o stałej porze. Jedno źródło od 790 zł, zakres dla swojego przypadku wyliczysz na stronie.",
+              "Składam raporty sprzedaży, marketingu i operacji tak, żeby powstawały same i przychodziły o stałej porze. Jedno źródło od 790 zł.",
             provider: { "@id": "https://fluxlab.pl/#organization" },
             areaServed: { "@type": "Country", name: "Polska" },
             serviceType: "Automatyzacja procesów biznesowych",

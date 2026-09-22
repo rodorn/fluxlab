@@ -7,15 +7,13 @@ import LandingForm from "@/components/LandingForm";
 import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
-  title:
-    "Automatyzacja Salesforce – zaawansowane integracje i custom development | Fluxlab",
+  title: "Automatyzacja Salesforce, integracje i rozbudowa | Fluxlab",
   description:
-    "Projektuję i wdrażam zaawansowane automatyzacje Salesforce: integracje przez API, logika w Apex i Flow, webhooki, hurtownie danych i eliminacja ręcznej pracy zespołu sprzedaży.",
+    "Projektuję i wdrażam automatyzacje Salesforce: integracje przez API, logika w Apex i Flow, webhooki, hurtownie danych i koniec ręcznej pracy.",
   openGraph: {
-    title:
-      "Automatyzacja Salesforce – zaawansowane integracje i custom development | Fluxlab",
+    title: "Automatyzacja Salesforce, integracje i rozbudowa | Fluxlab",
     description:
-      "Projektuję i wdrażam zaawansowane automatyzacje Salesforce: integracje przez API, logika w Apex i Flow, webhooki, hurtownie danych i eliminacja ręcznej pracy zespołu sprzedaży.",
+      "Projektuję i wdrażam automatyzacje Salesforce: integracje przez API, logika w Apex i Flow, webhooki, hurtownie danych i koniec ręcznej pracy.",
     locale: "pl_PL",
     type: "article",
     images: [
@@ -146,7 +144,7 @@ export default function AutomatyzacjaSalesforce() {
             "@type": "Service",
             name: "Automatyzacja Salesforce",
             description:
-              "Projektuję i wdrażam zaawansowane automatyzacje Salesforce: integracje przez API, logika w Apex i Flow, webhooki, hurtownie danych i eliminacja ręcznej pracy zespołu sprzedaży.",
+              "Projektuję i wdrażam automatyzacje Salesforce: integracje przez API, logika w Apex i Flow, webhooki, hurtownie danych i koniec ręcznej pracy.",
             provider: { "@id": "https://fluxlab.pl/#organization" },
             areaServed: { "@type": "Country", name: "Polska" },
             serviceType: "Automatyzacja procesów biznesowych",

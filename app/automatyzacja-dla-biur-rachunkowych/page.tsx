@@ -8,15 +8,13 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
-  title:
-    "Automatyzacja dla biur rachunkowych, KSeF, OCR faktur, Optima, Symfonia, SaldeoSmart | Fluxlab",
+  title: "Automatyzacja dla biur rachunkowych, KSeF i OCR | Fluxlab",
   description:
-    "Automatyzacja biura rachunkowego: OCR faktur do Comarch Optima, Symfonii i Enova, integracje z SaldeoSmart i KSeF, przypomnienia do klientów o brakujących dokumentach, automatyczne raporty miesięczne. Mniej ręcznego klepania, więcej czasu na klienta.",
+    "OCR faktur do Optimy, Symfonii i Enovy, integracje z SaldeoSmart i KSeF, przypomnienia o brakujących dokumentach i raporty, które robią się same.",
   openGraph: {
-    title:
-      "Automatyzacja dla biur rachunkowych, KSeF, OCR faktur, Optima, Symfonia, SaldeoSmart | Fluxlab",
+    title: "Automatyzacja dla biur rachunkowych, KSeF i OCR | Fluxlab",
     description:
-      "Automatyzacja biura rachunkowego: OCR faktur do Comarch Optima, Symfonii i Enova, integracje z SaldeoSmart i KSeF, przypomnienia do klientów o brakujących dokumentach, automatyczne raporty miesięczne. Mniej ręcznego klepania, więcej czasu na klienta.",
+      "OCR faktur do Optimy, Symfonii i Enovy, integracje z SaldeoSmart i KSeF, przypomnienia o brakujących dokumentach i raporty, które robią się same.",
     locale: "pl_PL",
     type: "article",
     images: [
@@ -580,7 +578,7 @@ export default function AutomatyzacjaDlaBiurRachunkowych() {
             "@type": "Service",
             name: "Automatyzacja dla biur rachunkowych",
             description:
-              "Automatyzacja biura rachunkowego: OCR faktur do Comarch Optima, Symfonii i Enova, integracje z SaldeoSmart i KSeF, przypomnienia do klientów o brakujących dokumentach, automatyczne raporty miesięczne. Mniej ręcznego klepania, więcej czasu na klienta.",
+              "OCR faktur do Optimy, Symfonii i Enovy, integracje z SaldeoSmart i KSeF, przypomnienia o brakujących dokumentach i raporty, które robią się same.",
             provider: { "@id": "https://fluxlab.pl/#organization" },
             areaServed: { "@type": "Country", name: "PL" },
             serviceType:

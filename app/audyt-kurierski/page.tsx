@@ -3,9 +3,9 @@ import ProductLanding from "@/components/ProductLanding";
 import DoplataCheck from "@/components/DoplataCheck";
 
 export const metadata: Metadata = {
-  title: "Audyt faktur kurierskich, dopłata paliwowa i korekty, od 290 zł | Fluxlab",
+  title: "Audyt faktur kurierskich i dopłat, od 290 zł | Fluxlab",
   description:
-    "Dopłata paliwowa sięga prawie połowy ceny bazowej, zmienia się co dwa tygodnie i zależy od progu wagowego. Sprawdź jedną pozycję od ręki, a potem całą fakturę. Od 290 zł albo prowizja od odzyskanej kwoty.",
+    "Dopłata paliwowa sięga prawie połowy ceny bazowej i zmienia się co dwa tygodnie. Sprawdź jedną pozycję od ręki, a potem całą fakturę. Od 290 zł.",
   alternates: { canonical: "/audyt-kurierski" },
   openGraph: {
     title:

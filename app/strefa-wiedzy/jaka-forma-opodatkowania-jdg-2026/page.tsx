@@ -7,13 +7,11 @@ import PrevNextArticle from "@/components/PrevNextArticle";
 import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
-  title:
-    "Jaka forma opodatkowania JDG w 2026? Porównanie skali, liniowego i ryczałtu | Fluxlab",
+  title: "Jaka forma opodatkowania JDG w 2026 | Fluxlab",
   description:
     "Którą formę opodatkowania wybrać w 2026: skalę podatkową, podatek liniowy czy ryczałt? Kryteria wyboru, progi, składka zdrowotna i pułapki.",
   openGraph: {
-    title:
-      "Jaka forma opodatkowania JDG w 2026? Porównanie skali, liniowego i ryczałtu | Fluxlab",
+    title: "Jaka forma opodatkowania JDG w 2026 | Fluxlab",
     description:
       "Którą formę opodatkowania wybrać w 2026: skalę podatkową, podatek liniowy czy ryczałt? Kryteria wyboru, progi, składka zdrowotna i pułapki.",
     locale: "pl_PL",

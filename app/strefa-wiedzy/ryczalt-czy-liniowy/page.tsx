@@ -7,13 +7,11 @@ import PrevNextArticle from "@/components/PrevNextArticle";
 import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
-  title:
-    "Ryczałt czy liniowy w 2026? Które opodatkowanie się bardziej opłaca | Fluxlab",
+  title: "Ryczałt czy liniowy w 2026, co się opłaca | Fluxlab",
   description:
     "Porównanie ryczałtu i podatku liniowego dla JDG w 2026. Kiedy ryczałt wygrywa, kiedy przegrywa i jak to policzyć na konkretnych liczbach.",
   openGraph: {
-    title:
-      "Ryczałt czy liniowy w 2026? Które opodatkowanie się bardziej opłaca | Fluxlab",
+    title: "Ryczałt czy liniowy w 2026, co się opłaca | Fluxlab",
     description:
       "Porównanie ryczałtu i podatku liniowego dla JDG w 2026. Kiedy ryczałt wygrywa, kiedy przegrywa i jak to policzyć na konkretnych liczbach.",
     locale: "pl_PL",

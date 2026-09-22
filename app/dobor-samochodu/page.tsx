@@ -7,11 +7,11 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
-  title: "Dobór samochodu – Znajdź idealny samochód dla siebie | Fluxlab",
+  title: "Dobór samochodu, znajdź auto dla siebie | Fluxlab",
   description:
     "Interaktywny kreator doboru samochodu. Dopasuj segment, nadwozie, napęd i moc do realnych potrzeb – bez marketingowej ściemy.",
   openGraph: {
-    title: "Dobór samochodu – Znajdź idealny samochód dla siebie | Fluxlab",
+    title: "Dobór samochodu, znajdź auto dla siebie | Fluxlab",
     description:
       "Interaktywne narzędzie do doboru samochodu. Dopasuj segment, nadwozie i moc do swoich potrzeb.",
     locale: "pl_PL",

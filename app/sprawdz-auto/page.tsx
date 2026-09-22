@@ -6,12 +6,12 @@ import LandingForm from "@/components/LandingForm";
 import RelatedProducts from "@/components/RelatedProducts";
 
 export const metadata: Metadata = {
-  title: "Sprawdź auto przed zakupem, raport due-diligence od 5 zł | Fluxlab",
+  title: "Sprawdź auto przed zakupem, raport od 5 zł | Fluxlab",
   description:
-    "Wklej link do oferty z Otomoto lub OLX i sprawdź, czy cena jest uczciwa. Benchmark ceny, wykrywanie cofniętego licznika, checklista usterek modelu i skrypt negocjacji. Price-check 5 zł, pełny raport 15 zł.",
+    "Wklej link do oferty z Otomoto lub OLX i sprawdź, czy cena jest uczciwa. Benchmark, wykrywanie cofniętego licznika, checklista usterek. Od 5 zł.",
   alternates: { canonical: "/sprawdz-auto" },
   openGraph: {
-    title: "Sprawdź auto przed zakupem, raport due-diligence od 5 zł | Fluxlab",
+    title: "Sprawdź auto przed zakupem, raport od 5 zł | Fluxlab",
     description:
       "Wklej link do oferty z Otomoto lub OLX i sprawdź, czy cena jest uczciwa. Benchmark ceny, red-flagi i skrypt negocjacji. Price-check 5 zł, pełny raport 15 zł.",
     locale: "pl_PL",

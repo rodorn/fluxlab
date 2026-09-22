@@ -7,15 +7,13 @@ import PrevNextArticle from "@/components/PrevNextArticle";
 import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
-  title:
-    "Jak zautomatyzować raportowanie w firmie i przestać składać liczby ręcznie | Fluxlab",
+  title: "Jak zautomatyzować raportowanie w firmie | Fluxlab",
   description:
-    "Jak krok po kroku zautomatyzować raportowanie sprzedaży, marketingu i operacji. Spójne dane, mniej błędów, krótszy czas przygotowania raportów i szybsze decyzje.",
+    "Jak krok po kroku zautomatyzować raportowanie sprzedaży, marketingu i operacji. Spójne dane, mniej błędów i krótszy czas przygotowania raportów.",
   openGraph: {
-    title:
-      "Jak zautomatyzować raportowanie w firmie i przestać składać liczby ręcznie | Fluxlab",
+    title: "Jak zautomatyzować raportowanie w firmie | Fluxlab",
     description:
-      "Jak krok po kroku zautomatyzować raportowanie sprzedaży, marketingu i operacji. Spójne dane, mniej błędów, krótszy czas przygotowania raportów i szybsze decyzje.",
+      "Jak krok po kroku zautomatyzować raportowanie sprzedaży, marketingu i operacji. Spójne dane, mniej błędów i krótszy czas przygotowania raportów.",
     locale: "pl_PL",
     type: "article",
     images: [
@@ -797,7 +795,7 @@ export default function AutomatyzacjaRaportowaniaArticle() {
             "@type": "Article",
             headline: "Jak zautomatyzować raportowanie w firmie",
             description:
-              "Jak krok po kroku zautomatyzować raportowanie sprzedaży, marketingu i operacji. Spójne dane, mniej błędów, krótszy czas przygotowania raportów i szybsze decyzje.",
+              "Jak krok po kroku zautomatyzować raportowanie sprzedaży, marketingu i operacji. Spójne dane, mniej błędów i krótszy czas przygotowania raportów.",
             datePublished: "2026-03-30",
             author: {
               "@type": "Organization",

@@ -3,12 +3,12 @@ import ProductLanding from "@/components/ProductLanding";
 import ZwrotyCheck from "@/components/ZwrotyCheck";
 
 export const metadata: Metadata = {
-  title: "Panel zwrotów dla sklepu, koniec obsługi mailem, od 490 zł | Fluxlab",
+  title: "Panel zwrotów dla sklepu, od 490 zł | Fluxlab",
   description:
-    "Sprawdź za darmo, czego kupujący nie znajdzie o zwrotach w Twoim sklepie, i policz, ile kosztuje ręczna obsługa. Audyt przyczyn zwrotów od 490 zł, samoobsługowy panel od 3500 zł.",
+    "Sprawdź za darmo, czego kupujący nie znajdzie o zwrotach w Twoim sklepie, i policz koszt ręcznej obsługi. Audyt od 490 zł, panel od 3500 zł.",
   alternates: { canonical: "/panel-zwrotow" },
   openGraph: {
-    title: "Panel zwrotów dla sklepu, koniec obsługi mailem, od 490 zł | Fluxlab",
+    title: "Panel zwrotów dla sklepu, od 490 zł | Fluxlab",
     description:
       "Samoobsługowe zwroty: numer zamówienia, etykieta zwrotna, status i raport przyczyn. Zamiast kolejki maili.",
     locale: "pl_PL",

@@ -1,0 +1,20 @@
+=== 2026-09-22 03:03:20 start raportu
+API Error: 529 Overloaded. This is a server-side issue, usually temporary — try again in a moment. If it persists, check https://status.claude.com.
+=== 2026-09-22 03:09:00 koniec, kod 0
+=== 2026-09-22 07:03:30 start raportu
+Czekam na wynik ponawiania (zadanie w tle powiadomi mnie po zakończeniu).
+
+Stan na teraz:
+
+| Krok | Stan |
+|---|---|
+| Dziennik od ostatniego `<!-- WYSLANO -->` | 4 wpisy odczytane (04:05, 04:58, 05:58, 06:53) |
+| `git log --since="5 hours ago"` | 13 commitów |
+| Raport ruchu | odczytany |
+| Trzy pliki audytowe | odczytane, policzone |
+| Weryfikacja na produkcji | 301 z obu starych adresów działa, `/ksef-integracja` i `/e-doreczenia-integracja` 200, `<h1>` na `/kontakt` obecny, mapa strony 111 adresów |
+| Zrzut ekranu | zrobiony na żywej stronie, z klikniętym wynikiem sprawdzenia KSeF |
+| Treść maila | zbudowana i przeczytana, 3 poprawki odmiany naniesione |
+| Wysyłka | odrzucona przez Zoho (limit), ponawianie w tle |
+| `<!-- WYSLANO -->` w dzienniku | **nie dopisane**, dopiszę dopiero po potwierdzonej wysyłce |
+=== 2026-09-22 07:06:32 koniec, kod 0

@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import ProductLanding from "@/components/ProductLanding";
 
 export const metadata: Metadata = {
-  title: "Pogotowie automatyzacji, naprawa n8n, Make i integracji | Fluxlab",
+  title: "Pogotowie automatyzacji, naprawa n8n i Make | Fluxlab",
   description:
-    "Stanęła integracja i nie schodzą zamówienia albo nie wystawiają się faktury. Czytam logi wykonań, znajduję wygasłe poświadczenia i ciche awarie. Diagnoza 49 zł, naprawa od 490 zł, opieka 299 zł miesięcznie.",
+    "Stanęła integracja i nie schodzą zamówienia. Czytam logi wykonań, znajduję wygasłe poświadczenia i ciche awarie. Diagnoza 49 zł, naprawa od 490 zł.",
   alternates: { canonical: "/pogotowie-automatyzacji" },
   openGraph: {
-    title: "Pogotowie automatyzacji, naprawa n8n, Make i integracji | Fluxlab",
+    title: "Pogotowie automatyzacji, naprawa n8n i Make | Fluxlab",
     description:
       "Stanęła integracja i nie schodzą zamówienia. Czytam logi wykonań, znajduję wygasłe poświadczenia i ciche awarie. Diagnoza 49 zł, naprawa od 490 zł.",
     locale: "pl_PL",

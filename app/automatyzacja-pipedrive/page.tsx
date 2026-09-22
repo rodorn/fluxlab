@@ -8,11 +8,11 @@ import Tabs from "@/components/Tabs";
 export const metadata: Metadata = {
   title: "Automatyzacja Pipedrive – jak wycisnąć 100% z CRM | Fluxlab",
   description:
-    "Tworzę zaawansowane automatyzacje w oparciu o Pipedrive API, webhooki i integracje systemowe. Obsługa leadów, synchronizacja danych, raporty i eliminacja ręcznej pracy handlowców.",
+    "Automatyzacje oparte o Pipedrive API, webhooki i integracje systemowe. Obsługa leadów, synchronizacja danych, raporty i koniec ręcznej pracy.",
   openGraph: {
     title: "Automatyzacja Pipedrive – jak wycisnąć 100% z CRM | Fluxlab",
     description:
-      "Tworzę zaawansowane automatyzacje w oparciu o Pipedrive API, webhooki i integracje systemowe. Obsługa leadów, synchronizacja danych, raporty i eliminacja ręcznej pracy handlowców.",
+      "Automatyzacje oparte o Pipedrive API, webhooki i integracje systemowe. Obsługa leadów, synchronizacja danych, raporty i koniec ręcznej pracy.",
     locale: "pl_PL",
     type: "article",
     images: [
@@ -135,7 +135,7 @@ export default function AutomatyzacjaPipedrive() {
             "@type": "Service",
             name: "Automatyzacja Pipedrive",
             description:
-              "Tworzę zaawansowane automatyzacje w oparciu o Pipedrive API, webhooki i integracje systemowe. Obsługa leadów, synchronizacja danych, raporty i eliminacja ręcznej pracy handlowców.",
+              "Automatyzacje oparte o Pipedrive API, webhooki i integracje systemowe. Obsługa leadów, synchronizacja danych, raporty i koniec ręcznej pracy.",
             provider: { "@id": "https://fluxlab.pl/#organization" },
             areaServed: { "@type": "Country", name: "Polska" },
             serviceType: "Automatyzacja procesów biznesowych",

@@ -8,7 +8,7 @@ import TrackedCTA from "@/components/TrackedCTA";
 export const metadata: Metadata = {
   title: "Realizacje, otwarty kod i działające narzędzia | Fluxlab",
   description:
-    "Publiczne repozytoria i działające prototypy Fluxlab: integracje API, automatyzacje, scraping, audyty i wideo AI. Zamiast obietnic, kod i live demo do obejrzenia.",
+    "Publiczne repozytoria i działające prototypy Fluxlab: integracje API, automatyzacje, scraping, audyty i wideo AI. Zamiast obietnic, kod i demo.",
   alternates: { canonical: "/realizacje" },
   openGraph: {
     title: "Realizacje, otwarty kod i działające narzędzia | Fluxlab",

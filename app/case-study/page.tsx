@@ -10,7 +10,7 @@ import PorownanieProcesu from "./PorownanieProcesu";
 export const metadata: Metadata = {
   title: "Modelowe przepływy automatyzacji | Fluxlab",
   description:
-    "Obsługa leadów i tygodniowy raport, czynność po czynności, z minutami przy każdej. Policz na stronie, ile czasu zajmują u Was. To modele, nie opisy cudzych wdrożeń.",
+    "Obsługa leadów i tygodniowy raport, czynność po czynności, z minutami przy każdej. Policz, ile zajmują u Was. To modele, nie opisy cudzych wdrożeń.",
   alternates: {
     canonical: "/case-study",
   },

@@ -7,9 +7,9 @@ import WykresSlupkowy from "@/components/WykresSlupkowy";
 import SprawdzPoBadaniu from "@/components/SprawdzPoBadaniu";
 
 export const metadata: Metadata = {
-  title: "Pod 84 procent salonów można się podszyć mailowo. Badanie | Fluxlab",
+  title: "Pod 84 procent salonów można się podszyć | Fluxlab",
   description:
-    "Sprawdziliśmy zabezpieczenia poczty 386 domen dealerskich. Tylko 16 procent ma komplet SPF, DKIM i DMARC w trybie, który cokolwiek blokuje. Pełna metoda, liczby i zastrzeżenia.",
+    "Sprawdziliśmy zabezpieczenia poczty 386 domen dealerskich. Komplet SPF, DKIM i DMARC w trybie, który cokolwiek blokuje, ma 16 procent. Metoda i liczby.",
   alternates: {
     canonical: "/strefa-wiedzy/podszywanie-pod-salony-samochodowe",
   },

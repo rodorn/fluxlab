@@ -10,7 +10,7 @@ export const revalidate = 1800;
 export const metadata: Metadata = {
   title: "Ceny energii na jutro, godzina po godzinie | Fluxlab",
   description:
-    "Rynkowa cena energii na kolejną dobę: najtańsze i najdroższe cztery godziny, okna z ceną ujemną i średnia doby. Liczone wprost z danych operatora systemu, odświeżane co pół godziny.",
+    "Rynkowa cena energii na kolejną dobę: najtańsze i najdroższe cztery godziny, okna z ceną ujemną i średnia doby. Wprost z danych operatora.",
   alternates: { canonical: "/ceny-energii-jutro" },
   openGraph: {
     title: "Ceny energii na jutro, godzina po godzinie | Fluxlab",

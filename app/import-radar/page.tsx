@@ -6,12 +6,12 @@ import LandingForm from "@/components/LandingForm";
 import RelatedProducts from "@/components/RelatedProducts";
 
 export const metadata: Metadata = {
-  title: "ImportRadar, opłacalność sprowadzenia auta z Niemiec | Fluxlab",
+  title: "ImportRadar, opłacalność importu auta z Niemiec | Fluxlab",
   description:
-    "Które auta z Niemiec realnie się opłaca sprowadzić. Skanuję żywe oferty i podaję marżę netto po wszystkich kosztach oraz modele z drogimi usterkami do unikania. Analiza konkretnego auta lub szukanie okazji pod budżet.",
+    "Które auta z Niemiec realnie opłaca się sprowadzić. Skanuję żywe oferty i podaję marżę netto po wszystkich kosztach oraz modele z drogimi usterkami.",
   alternates: { canonical: "/import-radar" },
   openGraph: {
-    title: "ImportRadar, opłacalność sprowadzenia auta z Niemiec | Fluxlab",
+    title: "ImportRadar, opłacalność importu auta z Niemiec | Fluxlab",
     description:
       "Które auta z Niemiec realnie się opłaca sprowadzić. Marża netto po wszystkich kosztach na żywych ofertach plus modele do unikania.",
     locale: "pl_PL",

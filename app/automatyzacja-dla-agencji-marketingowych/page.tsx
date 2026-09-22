@@ -8,15 +8,13 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
-  title:
-    "Automatyzacja dla agencji marketingowych, raporty, onboarding, retainery | Fluxlab",
+  title: "Automatyzacja dla agencji marketingowych | Fluxlab",
   description:
-    "Automatyzacja agencji marketingowej: raporty z Google Ads, Meta Ads i GA4, onboarding klienta, śledzenie godzin, fakturowanie retainerów i porządek w 15 projektach naraz. Spinam HubSpot, Pipedrive, ClickUp, Asanę i Slacka.",
+    "Raporty z Google Ads, Meta Ads i GA4, onboarding klienta, śledzenie godzin i fakturowanie retainerów. Spinam HubSpot, Pipedrive, ClickUp, Asanę i Slacka.",
   openGraph: {
-    title:
-      "Automatyzacja dla agencji marketingowych, raporty, onboarding, retainery | Fluxlab",
+    title: "Automatyzacja dla agencji marketingowych | Fluxlab",
     description:
-      "Automatyzacja agencji marketingowej: raporty z Google Ads, Meta Ads i GA4, onboarding klienta, śledzenie godzin, fakturowanie retainerów i porządek w 15 projektach naraz. Spinam HubSpot, Pipedrive, ClickUp, Asanę i Slacka.",
+      "Raporty z Google Ads, Meta Ads i GA4, onboarding klienta, śledzenie godzin i fakturowanie retainerów. Spinam HubSpot, Pipedrive, ClickUp, Asanę i Slacka.",
     locale: "pl_PL",
     type: "article",
     images: [
@@ -566,7 +564,7 @@ export default function AutomatyzacjaDlaAgencjiMarketingowych() {
             "@type": "Service",
             name: "Automatyzacja dla agencji marketingowych",
             description:
-              "Automatyzacja agencji marketingowej: raporty z Google Ads, Meta Ads i GA4, onboarding klienta, śledzenie godzin, fakturowanie retainerów i porządek w 15 projektach naraz. Spinam HubSpot, Pipedrive, ClickUp, Asanę i Slacka.",
+              "Raporty z Google Ads, Meta Ads i GA4, onboarding klienta, śledzenie godzin i fakturowanie retainerów. Spinam HubSpot, Pipedrive, ClickUp, Asanę i Slacka.",
             provider: { "@id": "https://fluxlab.pl/#organization" },
             areaServed: { "@type": "Country", name: "PL" },
             serviceType:

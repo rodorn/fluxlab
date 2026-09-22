@@ -8,11 +8,11 @@ import Tabs from "@/components/Tabs";
 import Kalkulator from "./Kalkulator";
 
 export const metadata: Metadata = {
-  title: "Zatrudnić osobę czy zautomatyzować proces? | Kalkulator decyzji",
+  title: "Zatrudnić osobę czy zautomatyzować proces | Fluxlab",
   description:
     "Porównaj koszt miesięcznej ręcznej pracy z kosztem wdrożenia automatyzacji. 4 inputy, 1 wynik.",
   openGraph: {
-    title: "Zatrudnić osobę czy zautomatyzować proces? | Kalkulator decyzji",
+    title: "Zatrudnić osobę czy zautomatyzować proces | Fluxlab",
     description:
       "Porównaj koszt miesięcznej ręcznej pracy z kosztem wdrożenia automatyzacji. 4 inputy, 1 wynik.",
     locale: "pl_PL",

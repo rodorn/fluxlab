@@ -3,12 +3,12 @@ import type { Metadata } from "next";
 import AudytPocztyKlient from "./AudytPocztyKlient";
 
 export const metadata: Metadata = {
-  title: "Audyt poczty firmowej: czy da się podszyć pod Twój adres | Fluxlab",
+  title: "Audyt poczty firmowej, ochrona przed podszyciem | Fluxlab",
   description:
-    "Sprawdzam SPF, DKIM i DMARC Twojej domeny i mówię, czy ktoś obcy może wysłać wiadomość wyglądającą na wysłaną przez Was. Wynik od ręki, bez rejestracji, na podstawie publicznych rekordów DNS.",
+    "Sprawdzam SPF, DKIM i DMARC Twojej domeny i mówię, czy ktoś obcy może wysłać wiadomość wyglądającą na Waszą. Wynik od ręki, bez rejestracji.",
   alternates: { canonical: "/audyt-poczty" },
   openGraph: {
-    title: "Audyt poczty firmowej: czy da się podszyć pod Twój adres | Fluxlab",
+    title: "Audyt poczty firmowej, ochrona przed podszyciem | Fluxlab",
     description:
       "SPF, DKIM i DMARC sprawdzone w kilka sekund. Pod 84 procent zbadanych przez nas firm dało się podszyć mailowo.",
     locale: "pl_PL",

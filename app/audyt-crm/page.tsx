@@ -8,13 +8,11 @@ import Tabs from "@/components/Tabs";
 import AudytCRM from "./AudytCRM";
 
 export const metadata: Metadata = {
-  title:
-    "Audyt CRM, checklist online | Sprawdź, czy Twój pipeline jest gotowy do automatyzacji",
+  title: "Audyt CRM, darmowa checklista online | Fluxlab",
   description:
     "10 pytań tak/nie. Wynik X/10 + obszar z największym potencjałem automatyzacji. Bez rejestracji.",
   openGraph: {
-    title:
-      "Audyt CRM, checklist online | Sprawdź, czy Twój pipeline jest gotowy do automatyzacji",
+    title: "Audyt CRM, darmowa checklista online | Fluxlab",
     description:
       "10 pytań tak/nie. Wynik X/10 + obszar z największym potencjałem automatyzacji. Bez rejestracji.",
     locale: "pl_PL",

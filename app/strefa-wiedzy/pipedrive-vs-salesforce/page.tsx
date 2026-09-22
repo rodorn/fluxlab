@@ -7,13 +7,13 @@ import PrevNextArticle from "@/components/PrevNextArticle";
 import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
-  title: "Pipedrive vs Salesforce, porównanie CRM dla MŚP 2026 | Fluxlab",
+  title: "Pipedrive vs Salesforce, CRM dla MŚP w 2026 | Fluxlab",
   description:
-    "Pipedrive vs Salesforce w 2026 roku: ceny, funkcje, czas wdrożenia i realne dopasowanie do małej i średniej firmy B2B. Konkretne porównanie bez marketingowego lukru.",
+    "Pipedrive vs Salesforce w 2026: ceny, funkcje, czas wdrożenia i dopasowanie do małej i średniej firmy B2B. Porównanie bez marketingowego lukru.",
   openGraph: {
-    title: "Pipedrive vs Salesforce, porównanie CRM dla MŚP 2026 | Fluxlab",
+    title: "Pipedrive vs Salesforce, CRM dla MŚP w 2026 | Fluxlab",
     description:
-      "Pipedrive vs Salesforce w 2026 roku: ceny, funkcje, czas wdrożenia i realne dopasowanie do małej i średniej firmy B2B. Konkretne porównanie bez marketingowego lukru.",
+      "Pipedrive vs Salesforce w 2026: ceny, funkcje, czas wdrożenia i dopasowanie do małej i średniej firmy B2B. Porównanie bez marketingowego lukru.",
     locale: "pl_PL",
     type: "article",
     images: [
@@ -590,7 +590,7 @@ export default function PipedriveVsSalesforceArticle() {
             "@type": "Article",
             headline: "Pipedrive vs Salesforce, porównanie CRM dla MŚP 2026",
             description:
-              "Pipedrive vs Salesforce w 2026 roku: ceny, funkcje, czas wdrożenia i realne dopasowanie do małej i średniej firmy B2B. Konkretne porównanie bez marketingowego lukru.",
+              "Pipedrive vs Salesforce w 2026: ceny, funkcje, czas wdrożenia i dopasowanie do małej i średniej firmy B2B. Porównanie bez marketingowego lukru.",
             datePublished: "2026-04-19",
             author: {
               "@type": "Organization",

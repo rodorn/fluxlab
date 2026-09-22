@@ -7,15 +7,13 @@ import PrevNextArticle from "@/components/PrevNextArticle";
 import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
-  title:
-    "Jak liczyć składkę zdrowotną w JDG w 2026? Skala, liniowy, ryczałt | Fluxlab",
+  title: "Jak liczyć składkę zdrowotną w JDG w 2026 | Fluxlab",
   description:
-    "Zasady obliczania składki zdrowotnej w JDG w 2026 roku. Różnice między skalą, liniowym i ryczałtem. Progi, podstawy wymiaru i wpływ na opłacalność formy opodatkowania.",
+    "Zasady obliczania składki zdrowotnej w JDG w 2026. Różnice między skalą, liniowym i ryczałtem, progi, podstawy wymiaru i wpływ na opłacalność.",
   openGraph: {
-    title:
-      "Jak liczyć składkę zdrowotną w JDG w 2026? Skala, liniowy, ryczałt | Fluxlab",
+    title: "Jak liczyć składkę zdrowotną w JDG w 2026 | Fluxlab",
     description:
-      "Zasady obliczania składki zdrowotnej w JDG w 2026 roku. Różnice między skalą, liniowym i ryczałtem. Progi, podstawy wymiaru i wpływ na opłacalność formy opodatkowania.",
+      "Zasady obliczania składki zdrowotnej w JDG w 2026. Różnice między skalą, liniowym i ryczałtem, progi, podstawy wymiaru i wpływ na opłacalność.",
     locale: "pl_PL",
     type: "article",
     images: [

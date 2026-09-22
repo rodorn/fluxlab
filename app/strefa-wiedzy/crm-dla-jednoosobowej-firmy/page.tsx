@@ -9,11 +9,11 @@ import PrevNextArticle from "@/components/PrevNextArticle";
 export const metadata: Metadata = {
   title: "CRM dla jednoosobowej firmy, co wybrać | Fluxlab",
   description:
-    "Praktyczne porównanie CRM dla solo consultantów i jednoosobowych firm: Pipedrive, HubSpot Free, Folk, Attio, Notion, Monday CRM i Google Sheets. Co wybrać i czego unikać w 2026.",
+    "Porównanie CRM dla jednoosobowych firm: Pipedrive, HubSpot Free, Folk, Attio, Notion, Monday CRM i Arkusze Google. Co wybrać, a czego unikać.",
   openGraph: {
     title: "CRM dla jednoosobowej firmy, co wybrać | Fluxlab",
     description:
-      "Praktyczne porównanie CRM dla solo consultantów i jednoosobowych firm: Pipedrive, HubSpot Free, Folk, Attio, Notion, Monday CRM i Google Sheets. Co wybrać i czego unikać w 2026.",
+      "Porównanie CRM dla jednoosobowych firm: Pipedrive, HubSpot Free, Folk, Attio, Notion, Monday CRM i Arkusze Google. Co wybrać, a czego unikać.",
     locale: "pl_PL",
     type: "article",
     images: [
@@ -605,7 +605,7 @@ export default function CrmDlaJednoosobowejFirmyArticle() {
             "@type": "Article",
             headline: "CRM dla jednoosobowej firmy, co wybrać",
             description:
-              "Praktyczne porównanie CRM dla solo consultantów i jednoosobowych firm: Pipedrive, HubSpot Free, Folk, Attio, Notion, Monday CRM i Google Sheets. Co wybrać i czego unikać w 2026.",
+              "Porównanie CRM dla jednoosobowych firm: Pipedrive, HubSpot Free, Folk, Attio, Notion, Monday CRM i Arkusze Google. Co wybrać, a czego unikać.",
             datePublished: "2026-04-19",
             author: {
               "@type": "Organization",

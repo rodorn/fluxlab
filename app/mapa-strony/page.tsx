@@ -3,12 +3,12 @@ import ProductLanding from "@/components/ProductLanding";
 import MapaCheck from "@/components/MapaCheck";
 
 export const metadata: Metadata = {
-  title: "Czy Google ma listę Twoich podstron, sprawdź za darmo | Fluxlab",
+  title: "Czy Google ma listę podstron, sprawdź za darmo | Fluxlab",
   description:
-    "Mapa strony to lista adresów, którą wyszukiwarka pobiera jednym zapytaniem. Sprawdź za darmo, czy Twoja strona ją ma, czy jest wskazana w robots.txt i czy adresy z niej działają. Naprawa od 240 zł.",
+    "Mapa strony to lista adresów, którą wyszukiwarka pobiera jednym zapytaniem. Sprawdź za darmo, czy Twoja ją ma i czy adresy działają. Naprawa od 240 zł.",
   alternates: { canonical: "/mapa-strony" },
   openGraph: {
-    title: "Czy Google ma listę Twoich podstron, sprawdź za darmo | Fluxlab",
+    title: "Czy Google ma listę podstron, sprawdź za darmo | Fluxlab",
     description:
       "Sprawdzenie mapy strony, pliku robots.txt i adresów, które z tej mapy nie działają. Od ręki, bez rejestracji.",
     locale: "pl_PL",

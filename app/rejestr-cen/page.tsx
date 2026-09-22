@@ -3,14 +3,12 @@ import ProductLanding from "@/components/ProductLanding";
 import CenyCheck from "@/components/CenyCheck";
 
 export const metadata: Metadata = {
-  title:
-    "Najniższa cena z 30 dni, skan sklepu i rejestr cen, od 49 zł | Fluxlab",
+  title: "Najniższa cena z 30 dni i rejestr cen, od 49 zł | Fluxlab",
   description:
-    "Przy każdej obniżce sklep ma obowiązek podać najniższą cenę z 30 dni przed promocją. Sprawdzam każdą przecenioną pozycję z zewnątrz, bez dostępu do panelu, i pokazuję te bez wymaganej informacji. Od 49 zł.",
+    "Przy każdej obniżce sklep ma podać najniższą cenę z 30 dni. Sprawdzam każdą przecenioną pozycję z zewnątrz i pokazuję te bez tej informacji. Od 49 zł.",
   alternates: { canonical: "/rejestr-cen" },
   openGraph: {
-    title:
-      "Najniższa cena z 30 dni, skan sklepu i rejestr cen, od 49 zł | Fluxlab",
+    title: "Najniższa cena z 30 dni i rejestr cen, od 49 zł | Fluxlab",
     description:
       "Skan wszystkich przecen w sklepie i lista tych bez wymaganej informacji o najniższej cenie z 30 dni. Bez dostępu do panelu.",
     locale: "pl_PL",

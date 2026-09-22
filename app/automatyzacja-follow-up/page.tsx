@@ -9,11 +9,11 @@ import Tabs from "@/components/Tabs";
 export const metadata: Metadata = {
   title: "Automatyzacja follow-upów w CRM | Fluxlab",
   description:
-    "Automatyczne follow-upy w CRM: przypomnienia sprzedażowe, sekwencje po etapach deala i eskalacje, które pilnują leadów zamiast handlowca. Bez utraty kontroli nad sprzedażą.",
+    "Follow-upy w CRM: przypomnienia sprzedażowe, sekwencje po etapach deala i eskalacje, które pilnują leadów zamiast handlowca.",
   openGraph: {
     title: "Automatyzacja follow-upów w CRM | Fluxlab",
     description:
-      "Automatyczne follow-upy w CRM: przypomnienia sprzedażowe, sekwencje po etapach deala i eskalacje, które pilnują leadów zamiast handlowca. Bez utraty kontroli nad sprzedażą.",
+      "Follow-upy w CRM: przypomnienia sprzedażowe, sekwencje po etapach deala i eskalacje, które pilnują leadów zamiast handlowca.",
     locale: "pl_PL",
     type: "website",
     images: [

@@ -7,7 +7,7 @@ import Tabs from "@/components/Tabs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 
 export const metadata: Metadata = {
-  title: "Integracje API w firmie, kiedy warto, a kiedy to przesada | Fluxlab",
+  title: "Integracje API w firmie, kiedy warto | Fluxlab",
   description:
     "Kiedy integracje API mają sens w firmie, jakie problemy rozwiązują i kiedy lepiej wybrać prostsze podejście. Przykłady, błędy i praktyczne scenariusze.",
   openGraph: {

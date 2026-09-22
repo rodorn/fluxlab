@@ -9,11 +9,11 @@ import Tabs from "@/components/Tabs";
 export const metadata: Metadata = {
   title: "Make czy n8n do automatyzacji CRM? | Fluxlab",
   description:
-    "Make vs n8n w roli warstwy automatyzacji nad CRM. 5 typowych problemów CRM, jak rozwiązuje je każde z narzędzi, tabela porównawcza i kiedy wybrać Make, a kiedy n8n.",
+    "Make vs n8n w roli warstwy automatyzacji nad CRM. Pięć typowych problemów, jak rozwiązuje je każde z narzędzi, i kiedy wybrać które.",
   openGraph: {
     title: "Make czy n8n do automatyzacji CRM? | Fluxlab",
     description:
-      "Make vs n8n w roli warstwy automatyzacji nad CRM. 5 typowych problemów CRM, jak rozwiązuje je każde z narzędzi, tabela porównawcza i kiedy wybrać Make, a kiedy n8n.",
+      "Make vs n8n w roli warstwy automatyzacji nad CRM. Pięć typowych problemów, jak rozwiązuje je każde z narzędzi, i kiedy wybrać które.",
     locale: "pl_PL",
     type: "article",
     images: [

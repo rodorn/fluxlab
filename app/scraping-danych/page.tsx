@@ -9,9 +9,9 @@ import Tabs from "@/components/Tabs";
 import ProductGrid from "@/components/ProductGrid";
 
 export const metadata: Metadata = {
-  title: "Scraping i ekstrakcja danych, web, PDF, maile, dokumenty | Fluxlab",
+  title: "Scraping danych: web, PDF, maile, dokumenty | Fluxlab",
   description:
-    "Wyciągam strukturalne dane ze stron, PDF-ów, maili i dokumentów. AI rozpoznaje pola, walidacja w czasie rzeczywistym, pipeline do CRM lub arkusza. Bez ręcznego kopiowania.",
+    "Wyciągam strukturalne dane ze stron, PDF-ów, maili i dokumentów. Rozpoznawanie pól, walidacja i przesył do CRM lub arkusza. Bez kopiowania ręcznie.",
   alternates: { canonical: "/scraping-danych" },
   openGraph: {
     title:

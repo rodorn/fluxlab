@@ -8,11 +8,11 @@ import Tabs from "@/components/Tabs";
 export const metadata: Metadata = {
   title: "n8n, automatyzacja workflow z pełną kontrolą | Fluxlab",
   description:
-    "Wdrażam automatyzacje na platformie n8n: self-hosted lub cloud, integracje API, webhooki, własne nody. Alternatywa dla Zapier i Make z pełną kontrolą nad infrastrukturą.",
+    "Wdrażam automatyzacje na n8n: self-hosted albo cloud, integracje API, webhooki, własne nody. Alternatywa dla Zapiera i Make z kontrolą nad serwerem.",
   openGraph: {
     title: "n8n, automatyzacja workflow z pełną kontrolą | Fluxlab",
     description:
-      "Wdrażam automatyzacje na platformie n8n: self-hosted lub cloud, integracje API, webhooki, własne nody. Alternatywa dla Zapier i Make z pełną kontrolą nad infrastrukturą.",
+      "Wdrażam automatyzacje na n8n: self-hosted albo cloud, integracje API, webhooki, własne nody. Alternatywa dla Zapiera i Make z kontrolą nad serwerem.",
     locale: "pl_PL",
     type: "article",
     images: [
@@ -178,7 +178,7 @@ export default function N8nPage() {
             "@type": "Service",
             name: "Automatyzacja z n8n",
             description:
-              "Wdrażam automatyzacje na platformie n8n: self-hosted lub cloud, integracje API, webhooki, własne nody. Alternatywa dla Zapier i Make z pełną kontrolą nad infrastrukturą.",
+              "Wdrażam automatyzacje na n8n: self-hosted albo cloud, integracje API, webhooki, własne nody. Alternatywa dla Zapiera i Make z kontrolą nad serwerem.",
             provider: { "@id": "https://fluxlab.pl/#organization" },
             areaServed: { "@type": "Country", name: "Polska" },
             serviceType: "Automatyzacja procesów biznesowych",

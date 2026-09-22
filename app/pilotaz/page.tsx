@@ -6,11 +6,11 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
-  title: "3 miejsca na publiczne case study, 50% ceny wdrożenia | Fluxlab",
+  title: "3 miejsca na publiczne case study, 50% ceny | Fluxlab",
   description:
-    "3 firmy B2B otrzymają wdrożenie automatyzacji za 50% standardowej ceny w zamian za zgodę na publiczne case study. Publikujemy tylko to, co zaakceptujesz, bez danych wrażliwych.",
+    "3 firmy B2B otrzymają wdrożenie automatyzacji za 50 procent ceny w zamian za zgodę na publiczne case study. Publikujemy tylko to, co zaakceptujesz.",
   openGraph: {
-    title: "3 miejsca na publiczne case study, 50% ceny wdrożenia | Fluxlab",
+    title: "3 miejsca na publiczne case study, 50% ceny | Fluxlab",
     description:
       "3 firmy B2B otrzymają wdrożenie automatyzacji za 50% standardowej ceny w zamian za zgodę na publiczne case study.",
     locale: "pl_PL",

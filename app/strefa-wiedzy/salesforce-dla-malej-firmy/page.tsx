@@ -9,11 +9,11 @@ import Tabs from "@/components/Tabs";
 export const metadata: Metadata = {
   title: "Salesforce dla małej firmy, czy warto | Fluxlab",
   description:
-    "Czy Salesforce ma sens w małej firmie? Realne koszty, czas wdrożenia, alternatywy (Pipedrive, HubSpot) i scenariusze, w których Salesforce naprawdę się zwraca w 2026.",
+    "Czy Salesforce ma sens w małej firmie. Realne koszty, czas wdrożenia, alternatywy jak Pipedrive i HubSpot oraz scenariusze, w których się zwraca.",
   openGraph: {
     title: "Salesforce dla małej firmy, czy warto | Fluxlab",
     description:
-      "Czy Salesforce ma sens w małej firmie? Realne koszty, czas wdrożenia, alternatywy (Pipedrive, HubSpot) i scenariusze, w których Salesforce naprawdę się zwraca w 2026.",
+      "Czy Salesforce ma sens w małej firmie. Realne koszty, czas wdrożenia, alternatywy jak Pipedrive i HubSpot oraz scenariusze, w których się zwraca.",
     locale: "pl_PL",
     type: "article",
     images: [
@@ -642,7 +642,7 @@ export default function SalesforceDlaMalejFirmyArticle() {
             "@type": "Article",
             headline: "Salesforce dla małej firmy, czy warto",
             description:
-              "Czy Salesforce ma sens w małej firmie? Realne koszty, czas wdrożenia, alternatywy (Pipedrive, HubSpot) i scenariusze, w których Salesforce naprawdę się zwraca w 2026.",
+              "Czy Salesforce ma sens w małej firmie. Realne koszty, czas wdrożenia, alternatywy jak Pipedrive i HubSpot oraz scenariusze, w których się zwraca.",
             datePublished: "2026-04-19",
             author: {
               "@type": "Organization",

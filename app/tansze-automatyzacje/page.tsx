@@ -3,14 +3,12 @@ import ProductLanding from "@/components/ProductLanding";
 import KalkulatorAutomatyzacji from "@/components/KalkulatorAutomatyzacji";
 
 export const metadata: Metadata = {
-  title:
-    "Tańsze automatyzacje, migracja z rozliczania za kroki, od 790 zł | Fluxlab",
+  title: "Tańsze automatyzacje, koniec opłat za kroki | Fluxlab",
   description:
-    "Zapier i Make liczą każdy krok osobno, więc pięciokrokowy scenariusz uruchomiony tysiąc razy to pięć tysięcy zadań. Policz oszczędność na stronie i przenieś te same scenariusze na własny serwer.",
+    "Zapier i Make liczą każdy krok osobno, więc pięć kroków razy tysiąc uruchomień to pięć tysięcy zadań. Policz oszczędność i przenieś to na swój serwer.",
   alternates: { canonical: "/tansze-automatyzacje" },
   openGraph: {
-    title:
-      "Tańsze automatyzacje, migracja z rozliczania za kroki, od 790 zł | Fluxlab",
+    title: "Tańsze automatyzacje, koniec opłat za kroki | Fluxlab",
     description:
       "Kalkulator oszczędności i przeniesienie scenariuszy na własny serwer. Ten sam efekt, koszt stały zamiast rosnącego.",
     locale: "pl_PL",

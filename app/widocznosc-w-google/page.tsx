@@ -3,12 +3,12 @@ import ProductLanding from "@/components/ProductLanding";
 import WidocznoscCheck from "@/components/WidocznoscCheck";
 
 export const metadata: Metadata = {
-  title: "Strona nie pokazuje się w Google, sprawdź blokadę, od 190 zł | Fluxlab",
+  title: "Strona nie pokazuje się w Google, od 190 zł | Fluxlab",
   description:
-    "Jedno polecenie zostawione po wersji roboczej potrafi wyłączyć całą stronę z wyników wyszukiwania. Sprawdź za darmo trzy miejsca, w których taka blokada siedzi. Naprawa od 190 zł.",
+    "Jedno polecenie zostawione po wersji roboczej potrafi wyłączyć całą stronę z wyników. Sprawdź za darmo trzy miejsca, w których siedzi taka blokada.",
   alternates: { canonical: "/widocznosc-w-google" },
   openGraph: {
-    title: "Strona nie pokazuje się w Google, sprawdź blokadę, od 190 zł | Fluxlab",
+    title: "Strona nie pokazuje się w Google, od 190 zł | Fluxlab",
     description:
       "Znacznik noindex, nagłówek serwera albo plik robots potrafią wyłączyć stronę z wyszukiwarki. Sprawdzenie za darmo.",
     locale: "pl_PL",

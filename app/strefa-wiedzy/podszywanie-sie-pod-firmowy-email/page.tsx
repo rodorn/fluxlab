@@ -5,13 +5,11 @@ import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
-  title:
-    "Czy ktoś może podszyć się pod firmowy e-mail? (SPF, DKIM, DMARC) | Fluxlab",
+  title: "Czy ktoś może podszyć się pod firmowy e-mail | Fluxlab",
   description:
-    "Jak sprawdzić, czy ktoś może wysłać maila w imieniu Twojej firmy i czy Twoje wiadomości docierają do klientów. SPF, DKIM i DMARC wytłumaczone prosto, plus darmowy audyt domeny.",
+    "Jak sprawdzić, czy ktoś może wysłać maila w imieniu Twojej firmy i czy Wasze wiadomości docierają. SPF, DKIM i DMARC prosto, plus darmowy audyt.",
   openGraph: {
-    title:
-      "Czy ktoś może podszyć się pod firmowy e-mail? (SPF, DKIM, DMARC) | Fluxlab",
+    title: "Czy ktoś może podszyć się pod firmowy e-mail | Fluxlab",
     description:
       "Jak sprawdzić, czy ktoś może wysłać maila w imieniu Twojej firmy i czy Twoje wiadomości docierają do klientów. Darmowy audyt domeny w kilka sekund.",
     locale: "pl_PL",

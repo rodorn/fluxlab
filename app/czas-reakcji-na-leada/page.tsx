@@ -9,7 +9,7 @@ import Tabs from "@/components/Tabs";
 export const metadata: Metadata = {
   title: "Jak skrócić czas reakcji na leada do kilku minut | Fluxlab",
   description:
-    "Speed-to-lead w B2B. Jak skrócić czas reakcji na leada z godzin do minut bez dokładania pracy handlowcom. Konkretne wzorce automatyzacji, koszty, błędy do uniknięcia.",
+    "Jak skrócić czas reakcji na leada z godzin do minut bez dokładania pracy handlowcom. Konkretne wzorce automatyzacji, koszty i błędy do uniknięcia.",
   openGraph: {
     title: "Jak skrócić czas reakcji na leada do kilku minut | Fluxlab",
     description:

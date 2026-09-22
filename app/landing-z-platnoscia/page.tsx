@@ -4,7 +4,7 @@ import ProductLanding from "@/components/ProductLanding";
 export const metadata: Metadata = {
   title: "Landing z formularzem i płatnością, od 299 zł | Fluxlab",
   description:
-    "Jedna strona sprzedażowa z formularzem i bramką płatniczą pod BLIK i przelewy. Zgłoszenie zapisuje się przed przejściem do płatności, a potwierdzenie przychodzi webhookiem, nie powrotem na stronę.",
+    "Jedna strona sprzedażowa z formularzem i bramką pod BLIK i przelewy. Zgłoszenie zapisuje się przed płatnością, a potwierdzenie przychodzi webhookiem.",
   alternates: { canonical: "/landing-z-platnoscia" },
   openGraph: {
     title: "Landing z formularzem i płatnością, od 299 zł | Fluxlab",

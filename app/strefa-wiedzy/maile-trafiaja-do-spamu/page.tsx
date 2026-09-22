@@ -6,7 +6,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import SprawdzPoBadaniu from "@/components/SprawdzPoBadaniu";
 
 export const metadata: Metadata = {
-  title: "Dlaczego firmowe maile trafiają do spamu i jak to naprawić | Fluxlab",
+  title: "Dlaczego firmowe maile trafiają do spamu | Fluxlab",
   description:
     "Twoje oferty i faktury lądują w spamie klientów? Najczęstsze przyczyny (SPF, DKIM, DMARC, reputacja) i konkretne kroki naprawy. Plus darmowy audyt domeny.",
   openGraph: {

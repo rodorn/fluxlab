@@ -7,14 +7,14 @@ import WykresSlupkowy from "@/components/WykresSlupkowy";
 import SprawdzPoBadaniu from "@/components/SprawdzPoBadaniu";
 
 export const metadata: Metadata = {
-  title: "Sprawdziliśmy 386 stron dealerów samochodowych. Wyniki | Fluxlab",
+  title: "Sprawdziliśmy 386 stron dealerów, wyniki | Fluxlab",
   description:
-    "Ile stron dealerskich nie pozwala ustalić sprzedawcy, ile nie ma mapy strony, ile domen jest zapisanych na obce firmy i ile stron odpowiada pod dwoma adresami naraz. Pomiar na 386 domenach, z metodą i zastrzeżeniami.",
+    "Ile stron dealerskich nie pozwala ustalić sprzedawcy, ile nie ma mapy strony i ile domen jest na obce firmy. Pomiar na 386 domenach, z metodą.",
   alternates: {
     canonical: "/strefa-wiedzy/co-jest-nie-tak-ze-stronami-dealerow",
   },
   openGraph: {
-    title: "Sprawdziliśmy 386 stron dealerów samochodowych. Wyniki | Fluxlab",
+    title: "Sprawdziliśmy 386 stron dealerów, wyniki | Fluxlab",
     description:
       "Pomiar na 386 domenach: dane rejestrowe, mapy strony, właściciele domen i podwójne adresy. Z metodą, liczbami i tym, czego nie udało się sprawdzić.",
     locale: "pl_PL",

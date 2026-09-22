@@ -5,7 +5,7 @@ import SpolkaCheck from "@/components/SpolkaCheck";
 export const metadata: Metadata = {
   title: "Twój dłużnik może zniknąć z KRS w trzy miesiące | Fluxlab",
   description:
-    "Sąd wszczyna z urzędu postępowanie o rozwiązanie spółki bez likwidacji i daje trzy miesiące na sprzeciw. Sprawdź za darmo, czy Twój kontrahent jest na takiej liście. Monitoring listy kontrahentów od 99 zł miesięcznie.",
+    "Sąd wszczyna z urzędu postępowanie o rozwiązanie spółki i daje trzy miesiące na sprzeciw. Sprawdź za darmo, czy jest na niej kontrahent. Monitoring od 99 zł.",
   alternates: { canonical: "/czujka-rejestrowa" },
   openGraph: {
     title: "Twój dłużnik może zniknąć z KRS w trzy miesiące | Fluxlab",
