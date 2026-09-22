@@ -26,7 +26,17 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["var(--font-geist-sans)", "system-ui", "sans-serif"],
-        mono: ["var(--font-geist-mono)", "monospace"],
+        // Krój systemowy zamiast wczytywanego: font-mono stoi przy 22 drobnych
+        // etykietach, a wczytywany plik kosztowal 23 KB wymuszonego pobrania
+        // na kazdej stronie serwisu, takze tam, gdzie zadnej z nich nie ma.
+        mono: [
+          "ui-monospace",
+          "SFMono-Regular",
+          "Menlo",
+          "Consolas",
+          "Liberation Mono",
+          "monospace",
+        ],
       },
     },
   },
