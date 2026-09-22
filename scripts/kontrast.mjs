@@ -22,7 +22,7 @@ const DOMYSLNE = [
   "/kontakt",
   "/audyt-strony",
   "/strefa-wiedzy",
-  "/automatyzacja-crm",
+  "/automatyzacja-leadow-crm",
   "/realizacje",
   "/jak-pracuje",
   "/cennik",

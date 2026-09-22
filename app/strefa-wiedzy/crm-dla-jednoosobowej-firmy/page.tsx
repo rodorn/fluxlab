@@ -315,14 +315,14 @@ export default function CrmDlaJednoosobowejFirmyArticle() {
                         Niezależnie od wyboru, prawdziwa różnica zaczyna się
                         dopiero, gdy do CRM dołożysz proste{" "}
                         <Link
-                          href="/automatyzacja-leadow"
+                          href="/automatyzacja-leadow-crm"
                           className="text-accent hover:underline"
                         >
                           automatyzacje leadów
                         </Link>{" "}
                         i przemyślaną{" "}
                         <Link
-                          href="/automatyzacja-crm"
+                          href="/automatyzacja-leadow-crm"
                           className="text-accent hover:underline"
                         >
                           automatyzację CRM
@@ -585,7 +585,7 @@ export default function CrmDlaJednoosobowejFirmyArticle() {
                 Chcesz dobrać CRM i automaty pod swoją jednoosobową firmę?
               </p>
               <Link
-                href="/automatyzacja-crm"
+                href="/automatyzacja-leadow-crm"
                 className="btn-primary mt-6 inline-block"
               >
                 Zobacz usługę Automatyzacja CRM

@@ -253,7 +253,7 @@ export default function AutomatyzacjaRaportowaniaArticle() {
                       wartość pipeline&apos;u, aktywności handlowców. Żeby te
                       dane były rzetelne, potrzebujesz uporządkowanej{" "}
                       <Link
-                        href="/automatyzacja-crm"
+                        href="/automatyzacja-leadow-crm"
                         className="text-accent hover:underline"
                       >
                         automatyzacji CRM
@@ -765,7 +765,7 @@ export default function AutomatyzacjaRaportowaniaArticle() {
                           </li>
                           <li>
                             <Link
-                              href="/automatyzacja-crm"
+                              href="/automatyzacja-leadow-crm"
                               className="text-accent hover:underline"
                             >
                               Automatyzacja CRM

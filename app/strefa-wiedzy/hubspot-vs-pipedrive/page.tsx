@@ -324,14 +324,14 @@ export default function HubspotVsPipedriveArticle() {
                       <p className="mt-6 text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
                         Niezależnie od wyboru, dopiero{" "}
                         <Link
-                          href="/automatyzacja-crm"
+                          href="/automatyzacja-leadow-crm"
                           className="text-accent hover:underline"
                         >
                           automatyzacja CRM
                         </Link>{" "}
                         i sensownie ułożona{" "}
                         <Link
-                          href="/automatyzacja-leadow"
+                          href="/automatyzacja-leadow-crm"
                           className="text-accent hover:underline"
                         >
                           automatyzacja leadów
@@ -438,7 +438,7 @@ export default function HubspotVsPipedriveArticle() {
                         komunikatorami. Tutaj zwykle największy zwrot daje
                         przemyślana{" "}
                         <Link
-                          href="/automatyzacja-crm"
+                          href="/automatyzacja-leadow-crm"
                           className="text-accent hover:underline"
                         >
                           automatyzacja CRM
@@ -574,7 +574,7 @@ export default function HubspotVsPipedriveArticle() {
                 firmy?
               </p>
               <Link
-                href="/automatyzacja-crm"
+                href="/automatyzacja-leadow-crm"
                 className="btn-primary mt-6 inline-block"
               >
                 Zobacz usługę Automatyzacja CRM

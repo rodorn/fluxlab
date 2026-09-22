@@ -6,6 +6,7 @@ import TrackedCTA from "@/components/TrackedCTA";
 import LandingForm from "@/components/LandingForm";
 import Tabs from "@/components/Tabs";
 import ProductGrid from "@/components/ProductGrid";
+import DrogaLeada from "@/components/DrogaLeada";
 
 export const metadata: Metadata = {
   title: "Automatyzacja leadów i CRM dla firm B2B | Fluxlab",
@@ -78,6 +79,21 @@ const faq = [
     question: "Co jeśli moje dane to bałagan?",
     answer:
       "Najpierw porządkujemy minimum: pola, statusy, źródła i reguły etapów. Automatyzowanie bałaganu to szybszy bałagan.",
+  },
+  {
+    question: "Czy można ustawić różne reguły przypisywania zapytań?",
+    answer:
+      "Tak. Routing opiera się na warunkach, które i tak macie w firmie: region, branża, typ zapytania, wartość albo zwykła kolejka.",
+  },
+  {
+    question: "Z jakimi systemami CRM to działa?",
+    answer:
+      "Najwięcej pracuję na Pipedrive. Poza tym liczy się nie nazwa systemu, tylko to, czy ma API pozwalające zakładać rekordy i zadania, a mają je wszystkie popularne CRM-y.",
+  },
+  {
+    question: "Ile to kosztuje?",
+    answer:
+      "Naprawa jednego etapu zaczyna się od 1 500 zł, cała ścieżka z raportem od 2 500 zł. Integracje przez API wyceniam osobno, bo zakres jest za każdym razem inny. Diagnoza przed wyceną jest bezpłatna.",
   },
 ];
 
@@ -152,6 +168,13 @@ export default function AutomatyzacjaLeadowCRM() {
         </section>
 
         {/* Treść w zakładkach, nic nie wycięte, podzielone */}
+        {/* Wybor etapu stoi przed katalogiem, bo to jedyna rzecz na tej
+            stronie, ktora daje odpowiedz od razu i nie wymaga wpisywania
+            czegokolwiek. Katalog produktow czeka nizej. */}
+        <section className="container-wide pb-16">
+          <DrogaLeada />
+        </section>
+
         <section className="container-wide pb-16">
           <ProductGrid category="automatyzacja" showHeading />
         </section>

@@ -608,7 +608,7 @@ export default function MakeVsN8nArticle() {
                             </li>
                             <li>
                               <Link
-                                href="/automatyzacja-crm"
+                                href="/automatyzacja-leadow-crm"
                                 className="text-accent hover:underline"
                               >
                                 Automatyzacja CRM

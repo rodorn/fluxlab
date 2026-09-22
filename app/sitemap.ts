@@ -38,11 +38,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/automatyzacja-crm`,
-      changeFrequency: "monthly" as const,
-      priority: 0.9,
-    },
-    {
       url: `${baseUrl}/automatyzacja-raportowania`,
       changeFrequency: "monthly" as const,
       priority: 0.9,
@@ -54,11 +49,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/automatyzacja-ai`,
-      changeFrequency: "monthly" as const,
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/automatyzacja-leadow`,
       changeFrequency: "monthly" as const,
       priority: 0.9,
     },

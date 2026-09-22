@@ -164,9 +164,9 @@ const relatedServices = [
     label: "Automatyzacja procesów biznesowych",
     href: "/automatyzacja-procesow-biznesowych",
   },
-  { label: "Automatyzacja CRM", href: "/automatyzacja-crm" },
+  { label: "Automatyzacja CRM", href: "/automatyzacja-leadow-crm" },
   { label: "Automatyzacja raportowania", href: "/automatyzacja-raportowania" },
-  { label: "Automatyzacja leadów", href: "/automatyzacja-leadow" },
+  { label: "Automatyzacja leadów", href: "/automatyzacja-leadow-crm" },
   { label: "Integracje API", href: "/integracje-api" },
   { label: "n8n, wdrożenia", href: "/n8n" },
   { label: "Zapier i Make", href: "/zapier-make" },
@@ -408,7 +408,7 @@ export default function AutomatyzacjaDlaAgencjiMarketingowych() {
                         Szczególnie często wdrażam automatyzację procesów
                         ofertowania (więcej w sekcji{" "}
                         <Link
-                          href="/automatyzacja-leadow"
+                          href="/automatyzacja-leadow-crm"
                           className="text-accent hover:underline"
                         >
                           automatyzacja leadów

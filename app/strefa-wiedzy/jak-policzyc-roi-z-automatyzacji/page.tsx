@@ -294,7 +294,7 @@ export default function RoiAutomatyzacjiArticle() {
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
                       Weźmy konkretny przykład z obszaru{" "}
                       <Link
-                        href="/automatyzacja-leadow"
+                        href="/automatyzacja-leadow-crm"
                         className="text-accent hover:underline"
                       >
                         automatyzacji leadów
@@ -678,7 +678,7 @@ export default function RoiAutomatyzacjiArticle() {
                           </li>
                           <li>
                             <Link
-                              href="/automatyzacja-crm"
+                              href="/automatyzacja-leadow-crm"
                               className="text-accent hover:underline"
                             >
                               Automatyzacja CRM

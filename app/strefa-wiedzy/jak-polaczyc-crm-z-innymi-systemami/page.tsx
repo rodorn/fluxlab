@@ -200,7 +200,7 @@ export default function CrmIntegracjaArticle() {
                       bałagan rozprowadzi. Dlatego warto najpierw uporządkować
                       sam proces, pomaga w tym dobrze wdrożona{" "}
                       <Link
-                        href="/automatyzacja-crm"
+                        href="/automatyzacja-leadow-crm"
                         className="text-accent hover:underline"
                       >
                         automatyzacja CRM
@@ -230,7 +230,7 @@ export default function CrmIntegracjaArticle() {
                       </p>
                       <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
                         <Link
-                          href="/automatyzacja-crm"
+                          href="/automatyzacja-leadow-crm"
                           className="btn-primary inline-block"
                         >
                           Automatyzacja CRM

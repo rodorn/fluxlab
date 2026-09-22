@@ -167,7 +167,7 @@ const relatedServices = [
     href: "/automatyzacja-procesow-biznesowych",
   },
   { label: "Integracje API", href: "/integracje-api" },
-  { label: "Automatyzacja CRM", href: "/automatyzacja-crm" },
+  { label: "Automatyzacja CRM", href: "/automatyzacja-leadow-crm" },
   { label: "Automatyzacja raportowania", href: "/automatyzacja-raportowania" },
   { label: "n8n, wdrożenia", href: "/n8n" },
   { label: "Zapier i Make", href: "/zapier-make" },
@@ -411,7 +411,7 @@ export default function AutomatyzacjaDlaEcommerce() {
                         Pracuję zarówno z e-commerce B2C, jak i B2B, w tym
                         drugim przypadku często łączę automatyzację sklepu z{" "}
                         <Link
-                          href="/automatyzacja-leadow"
+                          href="/automatyzacja-leadow-crm"
                           className="text-accent hover:underline"
                         >
                           automatyzacją leadów

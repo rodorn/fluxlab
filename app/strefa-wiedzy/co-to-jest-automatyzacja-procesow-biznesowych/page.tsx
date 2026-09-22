@@ -182,7 +182,7 @@ export default function AutomatyzacjaProcesowArticle() {
                         osoby, ustawić kolejny krok, pilnować follow-upu i
                         raportować wynik. Właśnie dlatego{" "}
                         <Link
-                          href="/automatyzacja-leadow"
+                          href="/automatyzacja-leadow-crm"
                           className="text-accent hover:underline"
                         >
                           automatyzacja leadów
@@ -839,7 +839,7 @@ export default function AutomatyzacjaProcesowArticle() {
                   </li>
                   <li>
                     <Link
-                      href="/automatyzacja-crm"
+                      href="/automatyzacja-leadow-crm"
                       className="text-accent hover:underline"
                     >
                       Automatyzacja CRM

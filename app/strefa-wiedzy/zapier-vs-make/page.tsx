@@ -192,7 +192,7 @@ export default function ZapierVsMakeArticle() {
                       przetworzenia danych przed zapisem. Świetnie sprawdza się
                       w{" "}
                       <Link
-                        href="/automatyzacja-crm"
+                        href="/automatyzacja-leadow-crm"
                         className="text-accent hover:underline"
                       >
                         automatyzacji CRM

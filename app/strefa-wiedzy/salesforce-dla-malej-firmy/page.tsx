@@ -394,14 +394,14 @@ export default function SalesforceDlaMalejFirmyArticle() {
                           A jeśli decyzja zapadnie i wybierasz Salesforce,
                           prawdziwy sens nadaje mu dopiero{" "}
                           <Link
-                            href="/automatyzacja-crm"
+                            href="/automatyzacja-leadow-crm"
                             className="text-accent hover:underline"
                           >
                             sensowna automatyzacja CRM
                           </Link>{" "}
                           spięta z resztą systemów firmy oraz dobrze ułożona{" "}
                           <Link
-                            href="/automatyzacja-leadow"
+                            href="/automatyzacja-leadow-crm"
                             className="text-accent hover:underline"
                           >
                             automatyzacja leadów

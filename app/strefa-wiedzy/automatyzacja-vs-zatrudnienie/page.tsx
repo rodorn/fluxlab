@@ -912,7 +912,7 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
                   </li>
                   <li>
                     <Link
-                      href="/automatyzacja-leadow"
+                      href="/automatyzacja-leadow-crm"
                       className="text-accent hover:underline"
                     >
                       Automatyzacja leadów

@@ -255,7 +255,7 @@ export default function PipedriveVsSalesforceArticle() {
                           Niezależnie od wyboru, sam zakup licencji niczego nie
                           zmienia, efekt daje dopiero{" "}
                           <Link
-                            href="/automatyzacja-crm"
+                            href="/automatyzacja-leadow-crm"
                             className="text-accent hover:underline"
                           >
                             automatyzacja CRM
@@ -565,7 +565,7 @@ export default function PipedriveVsSalesforceArticle() {
                           firmy?
                         </p>
                         <Link
-                          href="/automatyzacja-crm"
+                          href="/automatyzacja-leadow-crm"
                           className="btn-primary mt-6 inline-block"
                         >
                           Zobacz usługę Automatyzacja CRM

@@ -170,8 +170,8 @@ const relatedServices = [
   },
   { label: "Integracje API", href: "/integracje-api" },
   { label: "Automatyzacja raportowania", href: "/automatyzacja-raportowania" },
-  { label: "Automatyzacja CRM", href: "/automatyzacja-crm" },
-  { label: "Automatyzacja leadów", href: "/automatyzacja-leadow" },
+  { label: "Automatyzacja CRM", href: "/automatyzacja-leadow-crm" },
+  { label: "Automatyzacja leadów", href: "/automatyzacja-leadow-crm" },
   { label: "n8n, wdrożenia", href: "/n8n" },
   { label: "Zapier i Make", href: "/zapier-make" },
 ];

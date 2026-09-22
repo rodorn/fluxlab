@@ -224,7 +224,7 @@ export default function IntegracjeApiArticle() {
                         oznaczane źródłem, przypisywane do handlowca i wyzwala
                         zadanie follow-up. To klasyczny scenariusz{" "}
                         <Link
-                          href="/automatyzacja-crm"
+                          href="/automatyzacja-leadow-crm"
                           className="text-accent hover:underline"
                         >
                           automatyzacji CRM
@@ -667,7 +667,7 @@ export default function IntegracjeApiArticle() {
                   </li>
                   <li>
                     <Link
-                      href="/automatyzacja-crm"
+                      href="/automatyzacja-leadow-crm"
                       className="text-accent hover:underline"
                     >
                       Automatyzacja CRM

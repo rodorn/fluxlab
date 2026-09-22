@@ -114,7 +114,7 @@ export default function AutomatyzacjaCrmOdCzegoZaczacArticle() {
                         To właśnie tam zwykle leży najszybszy zwrot. Szczególnie
                         w obszarze{" "}
                         <Link
-                          href="/automatyzacja-leadow"
+                          href="/automatyzacja-leadow-crm"
                           className="text-accent hover:underline"
                         >
                           automatyzacji leadów
@@ -207,7 +207,7 @@ export default function AutomatyzacjaCrmOdCzegoZaczacArticle() {
                       <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
                         Dobrze zrobiona{" "}
                         <Link
-                          href="/automatyzacja-crm"
+                          href="/automatyzacja-leadow-crm"
                           className="text-accent hover:underline"
                         >
                           automatyzacja CRM
@@ -239,7 +239,7 @@ export default function AutomatyzacjaCrmOdCzegoZaczacArticle() {
                 Masz CRM, ale zespół dalej klika za dużo ręcznie?
               </p>
               <Link
-                href="/automatyzacja-crm"
+                href="/automatyzacja-leadow-crm"
                 className="btn-primary mt-6 inline-block"
               >
                 Zobacz usługę Automatyzacja CRM

@@ -148,7 +148,7 @@ export default function BledyRaportowanieArticle() {
                         Najpierw ustal definicje. Potem uporządkuj CRM i źródła
                         danych, pomaga w tym{" "}
                         <Link
-                          href="/automatyzacja-crm"
+                          href="/automatyzacja-leadow-crm"
                           className="text-accent hover:underline"
                         >
                           automatyzacja CRM

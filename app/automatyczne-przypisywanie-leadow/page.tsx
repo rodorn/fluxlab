@@ -767,7 +767,7 @@ export default function AutomatycznePrzypisywanieLeadow() {
                               </li>
                               <li>
                                 <Link
-                                  href="/automatyzacja-crm"
+                                  href="/automatyzacja-leadow-crm"
                                   className="text-accent hover:underline"
                                 >
                                   Automatyzacja CRM, przegląd
