@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import LandingForm from "@/components/LandingForm";
 import Tabs from "@/components/Tabs";
+import WybierzBranze from "@/components/WybierzBranze";
 
 export const metadata: Metadata = {
   title: "Automatyzacja procesów biznesowych dla firm | Fluxlab",
@@ -72,12 +73,25 @@ export default function AutomatyzacjaProcesowBiznesowych() {
               obieg danych.
             </p>
             <div className="mt-8">
-              <a href="#sekcje" className="btn-primary">
-                Sprawdź, co zautomatyzować
+              <a href="#branza" className="btn-primary">
+                Sprawdź, co zjada czas w Waszej branży
               </a>
             </div>
           </div>
         </section>
+
+        {/* Wybor branzy. Stoi nad zakladkami, a nie w nich. Tabs trzyma
+            wszystkie panele w DOM, wiec odnosniki bylyby w zrodle tak czy
+            inaczej, ale lezalyby w kontenerze z atrybutem hidden, czyli w
+            miejscu, ktorego nikt nie widzi bez trafienia w zakladke. To jest
+            jedyna rzecz na tej stronie dajaca odpowiedz bez wypelniania
+            formularza, wiec ma byc widoczna od razu. */}
+        <div
+          id="branza"
+          className="scroll-mt-20 container-wide max-w-4xl mx-auto pb-14"
+        >
+          <WybierzBranze wariant="filar" />
+        </div>
 
         {/* Treść w zakładkach, nic nie wycięte, podzielone */}
         <div id="sekcje" className="scroll-mt-20 container-wide pb-20">

@@ -29,11 +29,20 @@ const DOMYSLNE = [
 ];
 const cele = STRONY.length ? STRONY : DOMYSLNE;
 
+// Sekwencje klikniec do wykonania przed pomiarem, osobno dla kazdej sciezki:
+//   KONTRAST_KLIKI='{"/sciezka": [["sel1"], ["sel1","sel2"]]}'
+// Kazda sekwencja mierzona jest na swiezo zaladowanej stronie, w obu motywach.
+const KLIKI = JSON.parse(process.env.KONTRAST_KLIKI ?? "{}");
+let stanow = 0;
+
 const ZBIERZ = () => {
   const rozbij = (s) => {
     const m = s.match(/rgba?\(([^)]+)\)/);
     if (!m) return null;
-    const cz = m[1].split(/[,\s/]+/).filter(Boolean).map(Number);
+    const cz = m[1]
+      .split(/[,\s/]+/)
+      .filter(Boolean)
+      .map(Number);
     return { r: cz[0], g: cz[1], b: cz[2], a: cz.length > 3 ? cz[3] : 1 };
   };
   const zloz = (wierzch, spod) => ({
@@ -50,11 +59,13 @@ const ZBIERZ = () => {
     return 0.2126 * k[0] + 0.7152 * k[1] + 0.0722 * k[2];
   };
   const stosunek = (a, b) => {
-    const x = jasnosc(a), y = jasnosc(b);
+    const x = jasnosc(a),
+      y = jasnosc(b);
     return (Math.max(x, y) + 0.05) / (Math.min(x, y) + 0.05);
   };
   const hex = ({ r, g, b }) =>
-    "#" + [r, g, b].map((v) => Math.round(v).toString(16).padStart(2, "0")).join("");
+    "#" +
+    [r, g, b].map((v) => Math.round(v).toString(16).padStart(2, "0")).join("");
 
   // Tlo pod elementem: pierwszy przodek z niezerowa alfa, zlozony z tym,
   // co jest jeszcze nizej. Gradient traktujemy osobno, bo nie ma jednego koloru.
@@ -64,7 +75,11 @@ const ZBIERZ = () => {
     let gradient = null;
     while (w && w !== document.documentElement.parentNode) {
       const s = getComputedStyle(w);
-      if (!gradient && s.backgroundImage && s.backgroundImage.includes("gradient")) {
+      if (
+        !gradient &&
+        s.backgroundImage &&
+        s.backgroundImage.includes("gradient")
+      ) {
         gradient = s.backgroundImage;
       }
       const t = rozbij(s.backgroundColor);
@@ -88,13 +103,22 @@ const ZBIERZ = () => {
       .trim();
     if (!tekst) continue;
     const s = getComputedStyle(el);
-    if (s.display === "none" || s.visibility === "hidden" || Number(s.opacity) === 0) continue;
+    if (
+      s.display === "none" ||
+      s.visibility === "hidden" ||
+      Number(s.opacity) === 0
+    )
+      continue;
     const p = el.getBoundingClientRect();
     if (p.width < 1 || p.height < 1) continue;
     let ukryty = false;
     for (let w = el; w; w = w.parentElement) {
       const ws = getComputedStyle(w);
-      if (ws.display === "none" || ws.visibility === "hidden" || Number(ws.opacity) === 0) {
+      if (
+        ws.display === "none" ||
+        ws.visibility === "hidden" ||
+        Number(ws.opacity) === 0
+      ) {
         ukryty = true;
         break;
       }
@@ -106,7 +130,9 @@ const ZBIERZ = () => {
     // wiec trafiaja do osobnego worka zamiast podbijac liczbe bledow.
     let naMediach = false;
     for (let w = el; w && w !== document.body; w = w.parentElement) {
-      for (const m of w.querySelectorAll(":scope > video, :scope > img, :scope > picture")) {
+      for (const m of w.querySelectorAll(
+        ":scope > video, :scope > img, :scope > picture",
+      )) {
         const ms = getComputedStyle(m);
         if (ms.position === "absolute" || ms.position === "fixed") {
           const mp = m.getBoundingClientRect();
@@ -137,7 +163,10 @@ const ZBIERZ = () => {
     let podloze = podlozeRaw;
     for (const t of podloza) {
       const r = stosunek(przod, t);
-      if (r < najgorszy) { najgorszy = r; podloze = t; }
+      if (r < najgorszy) {
+        najgorszy = r;
+        podloze = t;
+      }
     }
 
     const px = parseFloat(s.fontSize);
@@ -170,7 +199,10 @@ for (const motyw of ["light", "dark"]) {
   });
   const karta = await kontekst.newPage();
   for (const sciezka of cele) {
-    await karta.goto(BAZA + sciezka, { waitUntil: "networkidle", timeout: 45000 });
+    await karta.goto(BAZA + sciezka, {
+      waitUntil: "networkidle",
+      timeout: 45000,
+    });
     // Motyw trzyma klasa na <html>, wiec ustawiamy go wprost, nie licząc
     // na to, ze skrypt startowy zdazy zareagowac na preferencje systemu.
     await karta.evaluate((m) => {
@@ -179,6 +211,26 @@ for (const motyw of ["light", "dark"]) {
     await karta.waitForTimeout(250);
     const bledy = await karta.evaluate(ZBIERZ);
     for (const b of bledy) raport.push({ motyw, sciezka, ...b });
+
+    // Stany, ktore powstaja dopiero po nacisnieciu. Bez tego skrypt mierzyl
+    // wylacznie to, co widac od razu, a wyniki wszystkich pietnastu sprawdzen
+    // mierzylo sie co cykl doklejanym skryptem od nowa.
+    for (const sekwencja of KLIKI[sciezka] ?? []) {
+      await karta.reload({ waitUntil: "networkidle", timeout: 45000 });
+      await karta.evaluate((m) => {
+        document.documentElement.classList.toggle("dark", m === "dark");
+      }, motyw);
+      for (const selektor of sekwencja) {
+        await karta.click(selektor, { timeout: 10000 });
+      }
+      // Przejscia kolorow trwaja, a kolor zmierzony w polowie animacji nie
+      // jest kolorem, ktory ktokolwiek widzi.
+      await karta.waitForTimeout(600);
+      const poKliknieciu = await karta.evaluate(ZBIERZ);
+      const opis = `${sciezka} [${sekwencja.join(" > ")}]`;
+      for (const b of poKliknieciu) raport.push({ motyw, sciezka: opis, ...b });
+      stanow += 1;
+    }
   }
   await kontekst.close();
 }
@@ -187,7 +239,8 @@ await przegladarka.close();
 const mierzalne = raport.filter((r) => !r.naMediach);
 const naMediach = raport.filter((r) => r.naMediach);
 console.log(
-  `Zbadano ${cele.length} stron w dwoch motywach. Zgloszen: ${mierzalne.length}` +
+  `Zbadano ${cele.length} stron w dwoch motywach, w tym ${stanow} stanow po` +
+    ` kliknieciu. Zgloszen: ${mierzalne.length}` +
     ` (plus ${naMediach.length} napisow na wideo lub zdjeciu, tlo niemierzalne)\n`,
 );
 for (const motyw of ["light", "dark"]) {
@@ -207,7 +260,9 @@ for (const motyw of ["light", "dark"]) {
   console.log("");
 }
 if (naMediach.length) {
-  console.log(`== napisy na wideo lub zdjeciu: ${naMediach.length}, tla nie da sie policzyc ==`);
+  console.log(
+    `== napisy na wideo lub zdjeciu: ${naMediach.length}, tla nie da sie policzyc ==`,
+  );
   for (const r of naMediach.slice(0, 8)) {
     console.log(`  <${r.tag}> "${r.tekst}" na ${r.sciezka} (${r.motyw})`);
   }
