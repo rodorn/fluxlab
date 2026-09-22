@@ -18,3 +18,17 @@ ostatniego znacznika wysyłki i wysyła z nich jeden mail co cztery godziny.
 **Dowód:** przed: 103 formy „my" w treści czterech stron (36 + 33 + 29 + 5). Po: zero poza pytaniami FAQ, gdzie mówi czytelnik o swojej firmie („Pracujemy w Comarch Optima", „Mamy 30 klientów", „Czy musimy integrować się ze wszystkimi?"), tam liczba mnoga została celowo. Wypadły trzy liczby bez źródła: „Onboarding skraca się z 2 dni do 30 minut", „9 na 10 firm leasingowych pracuje na mieszance", „oszczędza 80% ręcznej pracy". Wypadły trzy zdania sugerujące klientów, których nie ma: „sytuacje, które słyszę od właścicieli i kierowników biur", „narzędzia, w których robię najwięcej wdrożeń", „każdy z tych bólów spotykam w niemal każdej rozmowie". Zdanie o czterech systemach księgowych („Pracuję na wszystkich") zamienione na opis tego, co robi warstwa pośrednia, bo doświadczenia na Optimie, Symfonii, Enovie i InsERT nie ma. Poza czterema stronami: `components/Pricing.tsx` („Sprawdzamy" w opisie darmowego filtra), `components/Footer.tsx` („Nasza wizytówka w Zleca.pl", dodana wczoraj) i jedno zdanie na `/wdrozenie-n8n-cena`. Audyt kurierski: obie gotowe pozycje sprawdzone przez API na lokalnym buildzie produkcyjnym, 25 kg za 30 zł z dopłatą 12,75 zł daje zielone „Dopłata policzona prawidłowo", 18 kg za 24 zł z dopłatą 10,20 zł daje czerwone „Naliczono o 1.39 zł za dużo" z wyjaśnieniem, że to stawka z przedziału powyżej 20 kg. Build i `scripts/spojnosc.mjs` czyste przed commitem. Produkcja sprawdzona dwoma zapytaniami: przyciski z przykładami i nowy głos są w źródle. IndexNow: Yandex i Naver przyjęły 112 adresów, wspólny punkt nadal 403.
 **Commit:** `bbe1a3c`.
 **Zostało otwarte:** Nie ma kontroli, która pilnowałaby głosu na przyszłość. Reguła w `scripts/spojnosc.mjs` wymaga odsiania miejsc, gdzie „my" znaczy „ja i klient razem" („jakie systemy łączymy", „dobieramy w diagnozie", „pracujemy na twoim wzorze"), a takich jest kilkanaście, więc to osobny cykl. `app/strefa-wiedzy/podszywanie-pod-salony-samochodowe/page.tsx` opisuje metodę badania w liczbie mnogiej („sprawdziliśmy", „odgadliśmy"), wewnętrznie spójnie, ale niezgodnie z resztą serwisu. Z audytów nadal czekają: 2.3 martwe komponenty (16 nieimportowanych, dwa z wymyślonymi liczbami), 2.5 adres GitHuba jako tekst, kontrast w stopce, brak H1 na `/kontakt`, za długie `title` i `description`, kanibalizacja ośmiu stron o Zapier, Make i n8n.
+
+## 2026-09-22, darmowy audyt techniczny z pomiarem wersji mobilnej
+
+Zbudowane: `/audyt-strony` jako darmowe narzędzie zbiorcze zamiast płatnego
+produktu za 19 zł. Pomiar komputer + osobno telefon, wycena naprawy
+deterministyczna, raport pisany przez gpt-5.5 wyłącznie z podanych liczb.
+Zgody marketingowe do kolektora na VPS, kopia każdego raportu na skrzynkę.
+
+Kalibracja na siedmiu prawdziwych serwisach wyłapała trzy fałszywe alarmy:
+strony ochrony 403 brane za treść klienta, regex robots.txt przeskakujący
+między blokami agentów, TTFB usypianych instancji. Wszystkie naprawione przed
+udostępnieniem.
+
+<!-- WYSLANO -->
