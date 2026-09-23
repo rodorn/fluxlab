@@ -3,12 +3,29 @@ import { NextResponse } from "next/server";
 export const runtime = "nodejs";
 export const maxDuration = 30;
 
-// Cennik pobrany ze strony producenta 20.09.2026. Trzymamy trzy punkty, ktore
-// realnie odczytalismy, i mowimy wprost, ze miedzy nimi szacujemy.
+// Cennik planu Professional rozliczanego miesiecznie, pobrany ze strony
+// producenta 23.09.2026. To najtanszy plan dla danej liczby zadan, a dostawca
+// sprzedaje progi, wiec placi sie za najmniejszy prog, ktory miesci zuzycie.
 const PROGI_ZAPIER: Array<{ zadania: number; usd: number }> = [
-  { zadania: 2000, usd: 103.5 },
+  { zadania: 100, usd: 0 },
+  { zadania: 750, usd: 29.99 },
+  { zadania: 1500, usd: 58.5 },
+  { zadania: 2000, usd: 73.5 },
+  { zadania: 5000, usd: 133.5 },
+  { zadania: 10000, usd: 193.5 },
+  { zadania: 20000, usd: 283.5 },
   { zadania: 50000, usd: 433.5 },
+  { zadania: 100000, usd: 733.5 },
   { zadania: 200000, usd: 1149 },
+  { zadania: 300000, usd: 1599 },
+  { zadania: 400000, usd: 1899 },
+  { zadania: 500000, usd: 2199 },
+  { zadania: 750000, usd: 2999 },
+  { zadania: 1000000, usd: 3299 },
+  { zadania: 1250000, usd: 3899 },
+  { zadania: 1500000, usd: 4499 },
+  { zadania: 1750000, usd: 4799 },
+  { zadania: 2000000, usd: 5099 },
 ];
 
 // Serwer pod n8n. Dolna granica to najtanszy sensowny VPS, gorna to maszyna,
@@ -22,23 +39,11 @@ const N8N_USD_MAX = 38;
 // i w tej samej ramce pokazywalo zwrot w siedem miesiecy.
 const MAKS_MIESIECY_ZWROTU = 18;
 
-function kosztZapier(zadania: number): { usd: number; szacowany: boolean } {
-  if (zadania <= PROGI_ZAPIER[0].zadania) {
-    return { usd: PROGI_ZAPIER[0].usd, szacowany: false };
-  }
-  for (let i = 0; i < PROGI_ZAPIER.length - 1; i++) {
-    const a = PROGI_ZAPIER[i];
-    const b = PROGI_ZAPIER[i + 1];
-    if (zadania <= b.zadania) {
-      const udzial = (zadania - a.zadania) / (b.zadania - a.zadania);
-      return { usd: a.usd + udzial * (b.usd - a.usd), szacowany: true };
-    }
-  }
+function kosztZapier(zadania: number): { usd: number; prog: number | null } {
+  const prog = PROGI_ZAPIER.find((p) => zadania <= p.zadania);
+  if (prog) return { usd: prog.usd, prog: prog.zadania };
   const ostatni = PROGI_ZAPIER[PROGI_ZAPIER.length - 1];
-  return {
-    usd: (ostatni.usd / ostatni.zadania) * zadania,
-    szacowany: true,
-  };
+  return { usd: (ostatni.usd / ostatni.zadania) * zadania, prog: null };
 }
 
 async function kursUsd(): Promise<{ kurs: number; data: string } | null> {
@@ -107,20 +112,19 @@ export async function POST(request: Request) {
     : `Około ${oszczednoscRok.toLocaleString("pl-PL")} zł rocznie mniej za to samo`;
 
   const opis = !oplacalne
-    ? `Przy takiej skali rachunek jest jeszcze na tyle niski, że przeniesienie zwróciłoby się dopiero po ${
+    ? oszczednoscMies === 0
+      ? "Dziś płacisz mniej, niż kosztowałby sam serwer pod własną automatyzację, więc przeniesienie nic by nie zaoszczędziło. Wróć do tego, gdy wolumen urośnie."
+      : `Przy takiej skali rachunek jest jeszcze na tyle niski, że przeniesienie zwróciłoby się dopiero po ${
         zwrotMiesiecy ?? "wielu"
       } miesiącach. Wróć do tego, gdy wolumen urośnie. Wolę to powiedzieć teraz, niż wziąć pieniądze za coś, co Ci się nie zwróci.`
     : `Twoje automatyzacje zużywają około ${zadania.toLocaleString("pl-PL")} zadań miesięcznie, bo każdy krok liczy się osobno. To jest ta różnica, której najczęściej się nie zauważa: pięciokrokowy scenariusz uruchomiony tysiąc razy to pięć tysięcy zadań, a nie tysiąc.`;
 
-  // Najnizszy punkt, ktory realnie odczytalismy z cennika, to plan zespolowy.
-  // Kto miesci sie w planie darmowym albo najtanszym, zaplaci mniej niz tu
-  // wychodzi, wiec mowimy to zamiast zawyzac oszczednosc.
   const zastrzezenie =
-    zadania < PROGI_ZAPIER[0].zadania
-      ? "Liczę od najniższego planu zespołowego z publicznego cennika. Jeśli mieścisz się w planie darmowym albo najtańszym, Twój rachunek jest niższy, a oszczędność odpowiednio mniejsza niż tu widać."
-      : zapier.szacowany
-        ? "Kwota po stronie obecnego dostawcy to szacunek między progami z publicznego cennika, bo producent podaje ceny tylko dla wybranych pułapów."
-        : null;
+    zapier.prog === null
+      ? "Powyżej najwyższego progu z publicznego cennika dostawca wycenia indywidualnie, więc kwotę po jego stronie szacuję proporcjonalnie do ostatniego progu."
+      : zapier.usd === 0
+        ? "Mieścisz się w darmowym planie dostawcy, do 100 zadań miesięcznie."
+        : `Liczę od najtańszego planu z publicznego cennika, progu do ${zapier.prog.toLocaleString("pl-PL")} zadań przy płatności miesięcznej. Przy płatności rocznej rachunek jest niższy, a przy planie zespołowym wyższy.`;
 
   return NextResponse.json({
     status: "OK",
@@ -132,7 +136,7 @@ export async function POST(request: Request) {
     kroki,
     zadania,
     zapierPln,
-    zapierSzacowany: zapier.szacowany,
+    zapierSzacowany: zapier.prog === null,
     n8nMinPln,
     n8nMaxPln,
     oszczednoscMies,
