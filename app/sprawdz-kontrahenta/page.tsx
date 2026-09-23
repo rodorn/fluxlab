@@ -5,6 +5,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import LandingForm from "@/components/LandingForm";
 import TrackedCTA from "@/components/TrackedCTA";
 import NipCheck from "@/components/NipCheck";
+import NazwaNarzedzia from "@/components/NazwaNarzedzia";
 
 export const metadata: Metadata = {
   title: "Sprawdź kontrahenta przed przelewem, od 9 zł | Fluxlab",
@@ -130,6 +131,7 @@ export default function SprawdzKontrahentaPage() {
           </div>
 
           <div className="mt-12">
+            <NazwaNarzedzia href="/sprawdz-kontrahenta" />
             <NipCheck />
           </div>
 

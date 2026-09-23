@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import TaxCalculator from "./TaxCalculator";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Tabs from "@/components/Tabs";
+import NazwaNarzedzia from "@/components/NazwaNarzedzia";
 
 export const metadata: Metadata = {
   title: "Kalkulator JDG 2026: ryczałt, liniowy, skala i ZUS | Fluxlab",
@@ -161,6 +162,7 @@ export default function KalkulatorPodatkowyPage() {
                 content: (
                   <div className="py-6 lg:py-8">
                     <div className="max-w-6xl min-[1800px]:max-w-none mx-auto">
+                      <NazwaNarzedzia href="/kalkulator-podatkowy" />
                       <TaxCalculator />
                     </div>
                   </div>

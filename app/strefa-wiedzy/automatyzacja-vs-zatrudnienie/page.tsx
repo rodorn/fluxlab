@@ -6,6 +6,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import Tabs from "@/components/Tabs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 import KalkulatorDecyzji from "@/components/KalkulatorDecyzji";
+import NazwaNarzedzia from "@/components/NazwaNarzedzia";
 
 export const metadata: Metadata = {
   title: "Automatyzacja czy zatrudnienie w MŚP | Fluxlab",
@@ -137,6 +138,7 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
                 kotwica: "kalkulator",
                 content: (
                   <div className="py-6 lg:py-8">
+                    <NazwaNarzedzia href="/strefa-wiedzy/automatyzacja-vs-zatrudnienie" />
                     <KalkulatorDecyzji />
                   </div>
                 ),

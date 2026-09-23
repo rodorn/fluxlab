@@ -17,7 +17,7 @@ type Wynik = {
   problemy: Problem[];
 };
 
-export default function AudytPocztyKlient() {
+export default function AudytPocztyKlient({ nazwa }: { nazwa: React.ReactNode }) {
   const [domena, setDomena] = useState("");
   const [laduje, setLaduje] = useState(false);
   const [blad, setBlad] = useState<string | null>(null);
@@ -112,6 +112,7 @@ export default function AudytPocztyKlient() {
         nigdzie i nie wysyłamy żadnych wiadomości.
       </p>
 
+      {nazwa}
       <Przyklady
         pozycje={[
           { wartosc: "fluxlab.pl" },

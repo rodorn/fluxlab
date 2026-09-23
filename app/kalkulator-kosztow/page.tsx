@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import CarCostCalculator from "./CarCostCalculator";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Tabs from "@/components/Tabs";
+import NazwaNarzedzia from "@/components/NazwaNarzedzia";
 
 export const metadata: Metadata = {
   title: "Kalkulator kosztów samochodu | Fluxlab",
@@ -103,6 +104,7 @@ export default function KalkulatorKosztowPage() {
                 label: "Kalkulator",
                 content: (
                   <div className="py-8 lg:py-10">
+                    <NazwaNarzedzia href="/kalkulator-kosztow" />
                     <CarCostCalculator />
                   </div>
                 ),

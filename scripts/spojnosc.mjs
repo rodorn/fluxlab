@@ -247,6 +247,24 @@ for (const plik of POWIERZCHNIE_NAWIGACJI) {
   }
 }
 
+// --- 1g. strona narzedzia pokazuje nazwe z kafelka ---
+// Naglowek strony narzedzia jest haczykiem ("Twoja strona dziala, tylko nikt
+// jej nie widzi"), wiec 15 z 25 kafelkow prowadzilo na strone, na ktorej nazwa
+// kliknietego narzedzia nie padala ani razu. Etykieta NazwaNarzedzia bierze
+// nazwe z lib/narzedzia.ts; ProductLanding wstawia ja sam nad `tool`.
+const wszystkieKafelki = [
+  ...narzedzia.slice(narzedzia.indexOf("export const businessTools"), narzedzia.indexOf("export const LICZBA_NARZEDZI")).matchAll(/href: "([^"]+)"/g),
+].map((m) => m[1].split("#")[0]);
+for (const h of [...wszystkieKafelki, ...wspolneOd.keys()]) {
+  const plik = `app${h}/page.tsx`;
+  if (!exists(plik)) continue;
+  const src = read(plik);
+  const przezLanding = src.includes("<ProductLanding") && /\btool=\{/.test(src) && src.includes(`slug="${h.slice(1)}"`);
+  if (!przezLanding && !src.includes(`<NazwaNarzedzia href="${h}"`)) {
+    add("narzedzia", `${plik}: brak etykiety <NazwaNarzedzia href="${h}" />, nazwa z kafelka nie pada na stronie`);
+  }
+}
+
 // --- 2. dlugie myslniki w widocznej tresci ---
 const walk = (dir, out = []) => {
   for (const e of fs.readdirSync(path.join(ROOT, dir), { withFileTypes: true })) {

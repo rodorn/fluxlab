@@ -6,6 +6,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import TrackedCTA from "@/components/TrackedCTA";
 import Tabs from "@/components/Tabs";
 import KalkulatorLeadow from "@/components/KalkulatorLeadow";
+import NazwaNarzedzia from "@/components/NazwaNarzedzia";
 
 export const metadata: Metadata = {
   title: "Kalkulator kosztu ręcznej obsługi leadów | Fluxlab",
@@ -322,6 +323,7 @@ export default function KosztRecznejObslugiLeadow() {
                 kotwica: "kalkulator",
                 content: (
                   <div className="py-6 lg:py-8">
+                    <NazwaNarzedzia href="/koszt-recznej-obslugi-leadow" />
                     <KalkulatorLeadow />
 
                     {/* Metoda liczenia, przeniesiona z osobnej strony kalkulatora */}

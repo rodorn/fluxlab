@@ -5,6 +5,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import LandingForm from "@/components/LandingForm";
 import TrackedCTA from "@/components/TrackedCTA";
 import RelatedProducts from "@/components/RelatedProducts";
+import NazwaNarzedzia from "@/components/NazwaNarzedzia";
 import { cenaWejscia } from "@/lib/products";
 
 export interface Tier {
@@ -112,6 +113,7 @@ export default function ProductLanding(p: ProductLandingProps) {
 
           {p.tool && (
             <div id="narzedzie" className="mt-12 scroll-mt-24">
+              <NazwaNarzedzia href={`/${p.slug}`} />
               {p.tool}
             </div>
           )}

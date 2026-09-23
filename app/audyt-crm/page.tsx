@@ -6,6 +6,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import TrackedCTA from "@/components/TrackedCTA";
 import Tabs from "@/components/Tabs";
 import AudytCRM from "./AudytCRM";
+import NazwaNarzedzia from "@/components/NazwaNarzedzia";
 
 export const metadata: Metadata = {
   title: "Audyt CRM, darmowa checklista online | Fluxlab",
@@ -94,6 +95,7 @@ export default function AudytCRMPage() {
                 label: "Audyt",
                 content: (
                   <div className="py-6 lg:py-8">
+                    <NazwaNarzedzia href="/audyt-crm" />
                     <AudytCRM />
                   </div>
                 ),

@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import CarConfigurator from "./CarConfigurator";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Tabs from "@/components/Tabs";
+import NazwaNarzedzia from "@/components/NazwaNarzedzia";
 
 export const metadata: Metadata = {
   title: "Dobór samochodu, znajdź auto dla siebie | Fluxlab",
@@ -99,6 +100,7 @@ export default function DoborSamochoduPage() {
                 label: "Kreator",
                 content: (
                   <div className="py-8 lg:py-10">
+                    <NazwaNarzedzia href="/dobor-samochodu" />
                     <CarConfigurator />
                   </div>
                 ),

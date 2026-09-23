@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import NipCheck from "@/components/NipCheck";
+import NazwaNarzedzia from "@/components/NazwaNarzedzia";
 
 export const metadata: Metadata = {
   title: "Sprawdzenie NIP za darmo, wykaz VAT i status firmy | Fluxlab",
@@ -100,6 +101,7 @@ export default function SprawdzenieNipPage() {
           </div>
 
           <div className="mt-10">
+            <NazwaNarzedzia href="/sprawdzenie-nip" />
             <NipCheck />
           </div>
 

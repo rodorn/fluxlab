@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import AudytPocztyKlient from "./AudytPocztyKlient";
+import NazwaNarzedzia from "@/components/NazwaNarzedzia";
 
 export const metadata: Metadata = {
   title: "Audyt poczty firmowej, ochrona przed podszyciem | Fluxlab",
@@ -25,5 +26,5 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <AudytPocztyKlient />;
+  return <AudytPocztyKlient nazwa={<NazwaNarzedzia href="/audyt-poczty" />} />;
 }
