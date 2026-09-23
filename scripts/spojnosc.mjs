@@ -327,6 +327,7 @@ const DEKLARACJE = [
   // Obietnica wyniku z gory, zanim ktokolwiek zobaczyl proces. Stala w CTA
   // czterech stron branzowych.
   [/\bzwr[oó]ci\s+si[eę]\s+w\s+(\d|pierwsz)/i, "obietnica czasu zwrotu"],
+  [/\bwraca\s+w\s+\d/i, "obietnica czasu zwrotu"],
   [/\bodda\s+(zespo[lł]owi|ci|firmie)\s+[\d\wąćęłńóśźż–-]*\s*godzin/i, "obietnica odzyskanych godzin"],
 ];
 for (const f of sourceFiles) {

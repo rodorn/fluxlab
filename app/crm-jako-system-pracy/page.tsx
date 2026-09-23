@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TrackedCTA from "@/components/TrackedCTA";
 import Tabs from "@/components/Tabs";
+import KosztAdministracjiCrm from "@/components/KosztAdministracjiCrm";
 
 export const metadata: Metadata = {
   title: "CRM jako system pracy, nie baza kontaktów | Fluxlab",
@@ -170,7 +171,7 @@ const faq = [
   {
     question: "Po jakim czasie widać efekty?",
     answer:
-      "Pierwsze efekty (czytelność pipeline'u, krótsze planowanie tygodnia, raporty z CRM-u zamiast Excela), w 2–4 tygodnie. Wzrost konwersji i krótszy cykl sprzedaży, 2–3 miesiące, bo zespół musi się przyzwyczaić do dyscypliny. Pełna stabilizacja, kwartał.",
+      "Pierwsze efekty (czytelność pipeline'u, krótsze planowanie tygodnia, raporty z CRM-u zamiast Excela), w 2–4 tygodnie. Czy rośnie konwersja i skraca się cykl sprzedaży, da się ocenić dopiero po kilku miesiącach, bo zespół musi się przyzwyczaić do dyscypliny, a nie da się tego obiecać z góry.",
   },
   {
     question: "Co jeśli mamy zespół 2 osób, czy to nie przerost formy?",
@@ -388,35 +389,27 @@ export default function CrmJakoSystemPracy() {
                       </div>
                       <div className="text-gray-600 dark:text-gray-400 leading-relaxed space-y-4">
                         <p>
-                          Zespół 5 handlowców, każdy spędza średnio 45 minut
-                          dziennie na „administracji w CRM”, szukaniu
-                          kontekstu, ręcznym uzupełnianiu pól, klikaniu między
-                          ekranami. To 3,75 godziny dziennie zespołu, czyli ok.
-                          75 godzin miesięcznie. Przy stawce 80 zł/h kosztu
-                          pracodawcy to 6 000 zł miesięcznie spalone na
-                          nawigację po notatniku.
+                          Handlowcy spędzają część dnia na „administracji w
+                          CRM”: szukaniu kontekstu, ręcznym uzupełnianiu pól,
+                          klikaniu między ekranami. Manager sprzedaży skleja
+                          raport z CRM-u i Excela, dopytuje „a co z tym
+                          klientem” i prostuje statusy. Ile to kosztuje,
+                          zależy od zespołu, więc zamiast jednej liczby jest
+                          tu rachunek z jawnymi założeniami.
+                        </p>
+                        <KosztAdministracjiCrm />
+                        <p>
+                          Plus efekty pośrednie, których rachunek nie
+                          obejmuje: deale, do których nikt się nie odezwał, bo
+                          „status był aktualny”. Dłuższe wdrażanie nowego
+                          handlowca, bo proces jest w głowach, nie w systemie.
+                          Decyzje o produktach i targetach podejmowane na
+                          podstawie raportów, którym sam manager nie ufa.
                         </p>
                         <p>
-                          Manager sprzedaży poświęca 4–6 godzin tygodniowo na
-                          sklejanie raportu z CRM-u i Excela, weryfikację,
-                          pytanie „a co z tym klientem” i prostowanie statusów.
-                          To kolejne 2 000 zł miesięcznie kosztu menedżerskiego
-                         , znacznie wartościowszego czasu, który mógłby pójść
-                          na rozmowy z zespołem albo z klientami.
-                        </p>
-                        <p>
-                          Plus efekty pośrednie: utracone deale, do których nikt
-                          się nie odezwał, bo „status był aktualny”. Onboarding
-                          nowego handlowca trwa 2x dłużej, bo proces jest w
-                          głowach, nie w systemie. Decyzje o produktach i
-                          targetach podejmowane są na podstawie raportów, którym
-                          sam manager nie ufa.
-                        </p>
-                        <p>
-                          Wdrożenie porządku w CRM dla zespołu tej skali to
-                          zwykle 4–8 tys. zł setupu i 4 tygodnie kalibracji.
-                          Wraca w 2–3 miesiące z samego odzyskanego czasu
-                          zespołu, bez liczenia odzyskanych deali.
+                          Ile z tego czasu da się odzyskać, widać dopiero po
+                          przejrzeniu Waszego procesu. Wtedy policzymy razem,
+                          czy porządek w CRM się opłaca.
                         </p>
                       </div>
                     </div>
