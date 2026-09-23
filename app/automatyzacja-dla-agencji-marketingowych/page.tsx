@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Tabs from "@/components/Tabs";
+import CzasRaportowAgencji from "@/components/CzasRaportowAgencji";
 
 export const metadata: Metadata = {
   title: "Automatyzacja dla agencji marketingowych | Fluxlab",
@@ -35,7 +36,7 @@ const useCases = [
   {
     title: "Automatyczne raporty z Google Ads, Meta Ads i GA4",
     description:
-      "Co tydzień lub co miesiąc raport dla każdego klienta tworzy się sam, z aktualnymi danymi z Google Ads, Meta Ads, GA4, Search Console, TikTok Ads. Może trafić jako PDF mailem, jako dashboard w Looker Studio, albo jako post w dedykowanym kanale Slack klienta. Account managerowie odzyskują kilka godzin tygodniowo na realną pracę z klientem.",
+      "Co tydzień lub co miesiąc raport dla każdego klienta tworzy się sam, z aktualnymi danymi z Google Ads, Meta Ads, GA4, Search Console, TikTok Ads. Może trafić jako PDF mailem, jako dashboard w Looker Studio, albo jako post w dedykowanym kanale Slack klienta. Account manager nie składa raportu ręcznie, tylko czyta gotowy i dopisuje komentarz.",
   },
   {
     title: "Onboarding nowego klienta",
@@ -229,8 +230,8 @@ export default function AutomatyzacjaDlaAgencjiMarketingowych() {
                   Automatyzacja dla agencji marketingowych
                 </h1>
                 <p className="text-lg text-gray-600 dark:text-gray-300">
-                  Agencja marketingowa traci kilkanaście godzin tygodniowo na
-                  raporty, onboarding i pilnowanie 15 projektów naraz. Spinam
+                  Raporty, onboarding i pilnowanie kilkunastu projektów naraz
+                  zabierają w agencji czas kompetentnym ludziom. Spinam
                   HubSpot, Pipedrive, ClickUp, Asanę, Slacka, Google Ads, Meta
                   Ads i GA4 tak, żeby zespół zajmował się klientem, a nie
                   klepaniem slajdów.
@@ -269,11 +270,13 @@ export default function AutomatyzacjaDlaAgencjiMarketingowych() {
                         Agencja to setki powtarzalnych mikro-procesów: nowy
                         klient, nowy projekt, nowy raport, nowa faktura, nowa
                         kampania, nowy kontrakt. Każdy z nich ręcznie zajmuje
-                        10–60 minut komuś kompetentnemu. Pomnożone przez liczbę
-                        klientów i tygodni daje to etat lub dwa rocznie.
-                        Automatyzacja przenosi te mikro-procesy na maszynę,
-                        zostawiając ludziom strategię i pracę z klientem.
+                        czas komuś kompetentnemu, a ile, zależy od liczby
+                        klientów. Automatyzacja przenosi te mikro-procesy na
+                        maszynę, zostawiając ludziom strategię i pracę z
+                        klientem.
                       </p>
+
+                      <CzasRaportowAgencji />
 
                       <div className="space-y-6">
                         {useCases.map((useCase) => (
