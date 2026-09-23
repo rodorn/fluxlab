@@ -4,6 +4,7 @@ import { FILARY } from "@/lib/filary";
 
 const links = [
   ...FILARY.map((f) => ({ href: f.href, label: f.nazwa })),
+  { href: "/produkty", label: "Produkty" },
   { href: "/jak-pracuje", label: "Jak pracuję" },
   { href: "/strefa-wiedzy", label: "Strefa wiedzy" },
   { href: "/narzedzia", label: "Narzędzia" },

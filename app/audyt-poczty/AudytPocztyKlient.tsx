@@ -96,7 +96,7 @@ export default function AudytPocztyKlient({ nazwa }: { nazwa: React.ReactNode })
   return (
     <main
       className="container-wide"
-      style={{ maxWidth: 720, margin: "0 auto", padding: "4rem 1.5rem" }}
+      style={{ maxWidth: 720, margin: "0 auto", padding: "7rem 1.5rem 4rem" }}
     >
       <span className="section-label">Bezpieczeństwo poczty</span>
       <h1
@@ -134,6 +134,7 @@ export default function AudytPocztyKlient({ nazwa }: { nazwa: React.ReactNode })
           placeholder="np. twojafirma.pl"
           style={{
             flex: 1,
+            minWidth: 0,
             padding: "0.75rem 1rem",
             border: "1px solid #ccc",
             borderRadius: 8,

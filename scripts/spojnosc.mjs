@@ -287,6 +287,20 @@ for (const f of sourceFiles) {
   }
 }
 
+// --- 1h. kazda strona ma ten sam naglowek i te sama stopke ---
+// Strona glowna miala wlasny pasek zamiast components/Footer.tsx, bez
+// regulaminu, polityki prywatnosci i danych firmy, a /audyt-poczty nie miala
+// ani menu, ani stopki. Wchodzacy z Google na te dwa adresy nie widzial, kto
+// stoi za strona. /cv jest osobnym dokumentem, nie czescia oferty.
+const BEZ_RAMY = new Set(["app/cv/page.tsx"]);
+for (const plik of walk("app").filter((f) => f.endsWith("/page.tsx") && !BEZ_RAMY.has(f))) {
+  const src = read(plik);
+  if (src.includes("<ProductLanding")) continue;
+  if (!src.includes("<Header")) add("rama", `${plik}: brak <Header />`);
+  if (!src.includes("<Footer")) add("rama", `${plik}: brak <Footer />`);
+  if (src.includes("<footer")) add("rama", `${plik}: wlasna stopka zamiast components/Footer.tsx`);
+}
+
 // --- 2b. deklaracje klientow i wynikow, ktorych nie ma ---
 // Fluxlab nie ma ani jednego wdrozenia u firmy. Kazde zdanie mowiace o
 // klientach, referencjach albo o tym, ile razy cos zrobiono, jest wiec

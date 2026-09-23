@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 
 import AudytPocztyKlient from "./AudytPocztyKlient";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 import NazwaNarzedzia from "@/components/NazwaNarzedzia";
 
 export const metadata: Metadata = {
@@ -26,5 +28,11 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <AudytPocztyKlient nazwa={<NazwaNarzedzia href="/audyt-poczty" />} />;
+  return (
+    <>
+      <Header />
+      <AudytPocztyKlient nazwa={<NazwaNarzedzia href="/audyt-poczty" />} />
+      <Footer />
+    </>
+  );
 }

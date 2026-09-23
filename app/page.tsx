@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import TileVideo from "@/components/TileVideo";
 import WybierzBranze from "@/components/WybierzBranze";
@@ -290,46 +291,8 @@ export default function Home() {
 
         <WybierzBranze />
 
-        {/* Dolny pasek */}
-        <footer className="relative z-20 flex flex-wrap items-center justify-center gap-x-6 gap-y-1.5 px-6 py-3.5 text-xs text-gray-500 dark:text-white/60 border-t border-gray-200 dark:border-white/10">
-          <Link
-            href="/produkty"
-            className="hover:text-gray-900 dark:hover:text-white/70 transition-colors"
-          >
-            Produkty
-          </Link>
-          <Link
-            href="/narzedzia"
-            className="font-semibold text-accent hover:underline transition-colors"
-          >
-            Darmowe narzędzia
-          </Link>
-          <Link
-            href="/jak-pracuje"
-            className="hover:text-gray-900 dark:hover:text-white/70 transition-colors"
-          >
-            Jak pracuję
-          </Link>
-          <Link
-            href="/strefa-wiedzy"
-            className="hover:text-gray-900 dark:hover:text-white/70 transition-colors"
-          >
-            Strefa wiedzy
-          </Link>
-          <Link
-            href="/pilotaz"
-            className="hover:text-gray-900 dark:hover:text-white/70 transition-colors"
-          >
-            Program case study
-          </Link>
-          <Link
-            href="/kontakt"
-            className="hover:text-gray-900 dark:hover:text-white/70 transition-colors"
-          >
-            Kontakt
-          </Link>
-        </footer>
       </main>
+      <Footer />
     </>
   );
 }
