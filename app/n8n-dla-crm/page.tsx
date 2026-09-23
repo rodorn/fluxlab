@@ -923,8 +923,8 @@ export default function N8nDlaCrm() {
                       </h2>
                       <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
                         30 minut na rozmowę o procesie. Wyjdziesz z konkretną
-                        listą miejsc, gdzie automatyzacja zwraca się w pierwszym
-                        miesiącu, albo z uczciwą informacją, że na tym etapie
+                        listą miejsc, gdzie automatyzacja ma sens, i rachunkiem,
+                        ile kosztuje dziś ręczna praca, albo z uczciwą informacją, że na tym etapie
                         n8n nie ma sensu.
                       </p>
                       <TrackedCTA

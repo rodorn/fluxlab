@@ -426,9 +426,10 @@ export default function AutomatyzacjaCrmLeasing() {
                         </div>
                       </div>
                       <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                        Pierwszy etap automatyzacji (8–15 tys. zł netto) zwraca
-                        się w pierwszym miesiącu po uruchomieniu, jeśli biuro ma
-                        4+ brokerów i 500+ leadów miesięcznie.
+                        Pierwszy etap automatyzacji kosztuje 8–15 tys. zł netto.
+                        Czy i kiedy się spłaci, zależy od liczby brokerów i
+                        leadów, dlatego liczę to na Waszych danych przed
+                        wyceną, zamiast obiecywać z góry.
                       </p>
                     </div>
                   </div>

@@ -222,7 +222,7 @@ const faq = [
   {
     question: "Czy automatyzacja faktycznie zwraca się w kilka miesięcy?",
     answer:
-      "Przy 300+ leadach miesięcznie i wartości klienta od ok. 2 000 zł, tak, zwykle 2–4 miesiące. Przy mniejszej skali zwrot jest wolniejszy, ale i tak realny, bo największy koszt to zgubione leady, nie czas pracy. Pełny rachunek opisałem w artykule /strefa-wiedzy/jak-policzyc-roi-z-automatyzacji.",
+      "Tego nie da się obiecać z góry, bo zależy od liczby leadów, wartości klienta i ceny wdrożenia. Kalkulator na tej stronie pokazuje, ile kosztuje dziś ręczna obsługa, a czas zwrotu to cena wdrożenia podzielona przez tę kwotę. Przy małej skali zwrot bywa wolny, bo największy koszt to zgubione leady, nie czas pracy. Pełny rachunek opisałem w artykule /strefa-wiedzy/jak-policzyc-roi-z-automatyzacji.",
   },
   {
     question: "Co jeśli moja firma ma niski wolumen leadów?",

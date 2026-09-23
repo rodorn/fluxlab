@@ -83,6 +83,13 @@ const SCENARIUSZE: Scenariusz<Inputs>[] = [
   },
 ];
 
+function miesiace(n: number): string {
+  if (n === 1) return "1 miesiąc";
+  const d = n % 10;
+  const s = n % 100;
+  return d >= 2 && d <= 4 && (s < 12 || s > 14) ? `${n} miesiące` : `${n} miesięcy`;
+}
+
 /* Etat orientacyjny: 168h/mies (zgodnie z briefem). */
 const FULL_TIME_HOURS = 168;
 
@@ -159,7 +166,7 @@ function recommend(d: Inputs): Recommendation {
       return {
         kind: "automate",
         headline: "Zdecydowanie automatyzuj, skala robi największą różnicę.",
-        detail: `Codziennie/kilka razy w tygodniu × cały zespół = klasyczny case z największą dźwignią ROI. Wdrożenie typowo zwraca się w 1–3 miesiące, a oszczędność rośnie liniowo z liczbą osób. ${teamInsight}`,
+        detail: `Codziennie/kilka razy w tygodniu × cały zespół = klasyczny case z największą dźwignią ROI. Oszczędność rośnie liniowo z liczbą osób, a po ilu miesiącach wdrożenie się spłaci przy Twoich liczbach, pokazuje punkt zwrotu niżej. ${teamInsight}`,
       };
     }
     if (d.team === "1") {
@@ -172,7 +179,7 @@ function recommend(d: Inputs): Recommendation {
     return {
       kind: "automate",
       headline: "Mocna rekomendacja: zautomatyzuj.",
-      detail: `Powtarzalny proces o wysokiej częstotliwości to klasyczny case dla automatyzacji. Wdrożenie zwykle zwraca się w 1–4 miesiące, a oszczędność czasu jest stała każdego miesiąca, nie tylko raz. ${teamInsight}`,
+      detail: `Powtarzalny proces o wysokiej częstotliwości to klasyczny case dla automatyzacji. Oszczędność czasu jest stała każdego miesiąca, nie tylko raz, a po ilu miesiącach wdrożenie się spłaci przy Twoich liczbach, pokazuje punkt zwrotu niżej. ${teamInsight}`,
     };
   }
 
@@ -182,7 +189,7 @@ function recommend(d: Inputs): Recommendation {
       return {
         kind: "automate",
         headline: "Automatyzacja ma sens, wygrywa skala, nie częstotliwość.",
-        detail: `Częstotliwość średnia, ale zespół oznacza, że jedno wdrożenie skaluje się na wielu. Suma godzin × osób zwykle robi z tego zwrot w 3–6 miesięcy. ${teamInsight}`,
+        detail: `Częstotliwość średnia, ale zespół oznacza, że jedno wdrożenie skaluje się na wielu. Liczy się suma godzin wszystkich osób, a po ilu miesiącach wdrożenie się spłaci, pokazuje punkt zwrotu niżej. ${teamInsight}`,
       };
     }
     return {
@@ -657,12 +664,13 @@ export default function KalkulatorDecyzji() {
                 <strong className="text-accent">
                   ~
                   {result.monthlyManual > 0
-                    ? Math.max(
-                        1,
-                        Math.round(4750 / Math.max(1, result.monthlyManual)),
+                    ? miesiace(
+                        Math.max(
+                          1,
+                          Math.round(4750 / Math.max(1, result.monthlyManual)),
+                        ),
                       )
-                    : "brak danych"}{" "}
-                  miesięcy
+                    : "brak danych"}
                 </strong>
                 . To bardzo zgrubny szacunek, w diagnozie liczę konkretnie pod
                 Twój proces.
