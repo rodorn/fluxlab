@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { zglosZdarzenie } from "@/lib/zdarzenie";
+import Scenariusze, { type Scenariusz } from "@/components/Scenariusze";
 
 interface Wynik {
   status: "OK";
@@ -24,6 +25,26 @@ interface Wynik {
   kursData: string;
 }
 
+type Dane = { uruchomienia: number; kroki: number };
+
+const SCENARIUSZE: Scenariusz<Dane>[] = [
+  {
+    etykieta: "Formularz do CRM",
+    opis: "400 zgłoszeń miesięcznie, 3 kroki: formularz, osoba w CRM, powiadomienie.",
+    dane: { uruchomienia: 400, kroki: 3 },
+  },
+  {
+    etykieta: "Leady z kilku źródeł",
+    opis: "3 000 leadów miesięcznie, 6 kroków: źródło, sprawdzenie, CRM, przypisanie, mail, raport.",
+    dane: { uruchomienia: 3000, kroki: 6 },
+  },
+  {
+    etykieta: "Zamówienia ze sklepu",
+    opis: "15 000 zamówień miesięcznie, 8 kroków: sklep, magazyn, faktura, kurier i statusy.",
+    dane: { uruchomienia: 15000, kroki: 8 },
+  },
+];
+
 export default function KalkulatorAutomatyzacji() {
   const [uruchomienia, setUruchomienia] = useState("2000");
   const [kroki, setKroki] = useState("5");
@@ -33,9 +54,16 @@ export default function KalkulatorAutomatyzacji() {
   const [email, setEmail] = useState("");
   const [leadStan, setLeadStan] = useState<"idle" | "wysylam" | "ok" | "blad">("idle");
   const [leadBlad, setLeadBlad] = useState("");
+  const [wybrany, setWybrany] = useState<string | null>(null);
 
-  async function policz(e: React.FormEvent) {
-    e.preventDefault();
+  function wybierzScenariusz(dane: Dane, etykieta: string) {
+    setWybrany(etykieta);
+    setUruchomienia(String(dane.uruchomienia));
+    setKroki(String(dane.kroki));
+    policz(dane);
+  }
+
+  async function policz(dane: Dane) {
     setStan("ladowanie");
     zglosZdarzenie("uruchomiono_kalkulator");
     setBlad("");
@@ -45,10 +73,7 @@ export default function KalkulatorAutomatyzacji() {
       const res = await fetch("/api/kalkulator-automatyzacji", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          uruchomienia: Number(uruchomienia),
-          kroki: Number(kroki),
-        }),
+        body: JSON.stringify(dane),
       });
       const data = await res.json();
       if (!res.ok) {
@@ -120,7 +145,22 @@ export default function KalkulatorAutomatyzacji() {
         naprawdę i ile zostałoby przy własnym serwerze.
       </p>
 
-      <form onSubmit={policz} className="mt-5 space-y-3">
+      <div className="mt-5">
+        <Scenariusze
+          pozycje={SCENARIUSZE}
+          wybrany={wybrany}
+          onWybor={wybierzScenariusz}
+          wstep="Nie znasz swoich liczb? Policz na gotowym układzie:"
+        />
+      </div>
+
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          policz({ uruchomienia: Number(uruchomienia), kroki: Number(kroki) });
+        }}
+        className="mt-5 space-y-3"
+      >
         <div className="grid gap-3 sm:grid-cols-2">
           <label className="block">
             <span className="block text-sm font-medium text-gray-900 dark:text-white">
@@ -132,7 +172,10 @@ export default function KalkulatorAutomatyzacji() {
               max={5000000}
               required
               value={uruchomienia}
-              onChange={(e) => setUruchomienia(e.target.value)}
+              onChange={(e) => {
+                setWybrany(null);
+                setUruchomienia(e.target.value);
+              }}
               className="mt-1 w-full rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-950 px-4 py-3 text-sm text-gray-900 dark:text-white outline-none focus:border-accent"
             />
           </label>
@@ -146,7 +189,10 @@ export default function KalkulatorAutomatyzacji() {
               max={100}
               required
               value={kroki}
-              onChange={(e) => setKroki(e.target.value)}
+              onChange={(e) => {
+                setWybrany(null);
+                setKroki(e.target.value);
+              }}
               className="mt-1 w-full rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-950 px-4 py-3 text-sm text-gray-900 dark:text-white outline-none focus:border-accent"
             />
           </label>
