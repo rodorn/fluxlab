@@ -34,6 +34,7 @@ Adres do e-Doręczeń, szczegóły na https://fluxlab.pl/e-doreczenia-integracja
 - Spółka w KRS zarejestrowana przed 2025: od 1 kwietnia 2025.
 - Adwokaci, radcowie, doradcy podatkowi, notariusze i podmioty publiczne: od 1 stycznia 2025.
 - Sądy, prokuratura, komornicy: od 1 października 2029.
+- Pismo od urzędu nieodebrane w ciągu 14 dni uznaje się za doręczone po upływie tego terminu (art. 41 ust. 1 pkt 3 ustawy o doręczeniach elektronicznych). Od tego dnia biegną terminy, nawet jeśli nikt go nie otworzył.
 
 ## Darmowe narzędzia, bez rejestracji
 

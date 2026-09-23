@@ -104,6 +104,10 @@ export default function EDoreczeniaIntegracja() {
           a: PODMIOTY.map((p) => p.opis).join(" "),
         },
         {
+          q: "Co się dzieje, gdy nie odbierzemy pisma z urzędu w e-Doręczeniach?",
+          a: "Pismo od urzędu, którego nie odbierzecie w ciągu 14 dni, uznaje się za doręczone po upływie tego terminu, tak jak list, po który nikt nie poszedł na pocztę. Mówi o tym art. 41 ust. 1 pkt 3 ustawy o doręczeniach elektronicznych. Od tego dnia biegną terminy na odpowiedź, odwołanie albo zapłatę, nawet jeśli nikt pisma nie otworzył. Dlatego samo założenie skrzynki nie wystarczy. Ktoś musi do niej zaglądać albo dostawać powiadomienia na zwykły adres e-mail.",
+        },
+        {
           q: "Czy musimy mieć adres do doręczeń, żeby zacząć?",
           a: "Do samej integracji tak, bo to Wasza skrzynka jest jej punktem zaczepienia. Wniosek o adres składa podmiot i jest to procedura urzędowa, a nie techniczna. Rozpoznanie możemy zrobić wcześniej, na podstawie tego, z jakiego systemu korzystacie.",
         },
