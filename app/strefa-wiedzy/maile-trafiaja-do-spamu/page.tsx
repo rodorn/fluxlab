@@ -165,7 +165,7 @@ export default function MaileSpamArticle() {
 
         <SprawdzPoBadaniu
           naglowek="Zobacz to sprawdzenie na żywo"
-          opis="Odpytuję serwery nazw wybranej domeny o rekordy SPF, DKIM i DMARC i pokazujemy, czego w nich brakuje. Nic nie wpisujesz, nic nie zakładasz."
+          opis="Odpytujemy serwery nazw wybranej domeny o rekordy SPF, DKIM i DMARC i pokazujemy, czego w nich brakuje. Nic nie wpisujesz, nic nie zakładasz."
           endpoint="/api/audyt"
           pozycje={[
             { wartosc: "fluxlab.pl" },

@@ -36,6 +36,12 @@ Adres do e-Doręczeń, szczegóły na https://fluxlab.pl/e-doreczenia-integracja
 - Sądy, prokuratura, komornicy: od 1 października 2029.
 - Pismo od urzędu nieodebrane w ciągu 14 dni uznaje się za doręczone po upływie tego terminu (art. 41 ust. 1 pkt 3 ustawy o doręczeniach elektronicznych). Od tego dnia biegną terminy, nawet jeśli nikt go nie otworzył.
 
+Maile w spamie i podszywanie pod domenę, szczegóły i sprawdzenie na https://fluxlab.pl/audyt-poczty:
+- Od lutego 2024 Gmail i Yahoo wymagają od każdego nadawcy SPF albo DKIM, a od wysyłających ponad 5000 wiadomości dziennie SPF, DKIM i DMARC (co najmniej p=none). Microsoft wymaga tego samego od dużych nadawców do Outlook.com od 5 maja 2025.
+- Dwa rekordy SPF na jednej domenie unieważniają oba (RFC 7208). Wpisy trzeba połączyć w jeden rekord i zmieścić się w limicie 10 zapytań DNS.
+- DMARC na start: rekord TXT _dmarc.domena z v=DMARC1; p=none; rua=mailto:adres, po kilku tygodniach raportów p=quarantine, potem p=reject.
+- Bez DMARC w trybie quarantine albo reject obcy nadawca może wysłać wiadomość z adresem firmy w polu Od. W naszym badaniu 317 domen salonów samochodowych komplet, który blokuje podszywanie, miało 16 procent.
+
 ## Darmowe narzędzia, bez rejestracji
 
 - [Co z KSeF obowiązuje Twoją firmę](https://fluxlab.pl/ksef-integracja): dwa kliknięcia, termin i dni do końca wyjątku.

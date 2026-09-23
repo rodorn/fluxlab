@@ -17,7 +17,13 @@ type Wynik = {
   problemy: Problem[];
 };
 
-export default function AudytPocztyKlient({ nazwa }: { nazwa: React.ReactNode }) {
+export default function AudytPocztyKlient({
+  nazwa,
+  children,
+}: {
+  nazwa: React.ReactNode;
+  children: React.ReactNode;
+}) {
   const [domena, setDomena] = useState("");
   const [laduje, setLaduje] = useState(false);
   const [blad, setBlad] = useState<string | null>(null);
@@ -221,7 +227,7 @@ export default function AudytPocztyKlient({ nazwa }: { nazwa: React.ReactNode })
                 }}
               >
                 <p style={{ margin: "0 0 0.75rem", fontWeight: 600 }}>
-                  Chcesz, żebym to uporządkował?
+                  Chcecie, żebyśmy to uporządkowali?
                 </p>
                 <p
                   style={{
@@ -239,7 +245,7 @@ export default function AudytPocztyKlient({ nazwa }: { nazwa: React.ReactNode })
                 </p>
                 {leadStan === "ok" ? (
                   <p style={{ color: "var(--stan-dobrze)", fontWeight: 600, margin: 0 }}>
-                    Dziękuję. Raport dla {wynik.domena} przygotujemy i odpiszemy na{" "}
+                    Dziękujemy. Raport dla {wynik.domena} przygotujemy i odpiszemy na{" "}
                     {leadEmail}.
                   </p>
                 ) : (
@@ -311,6 +317,7 @@ DKIM:  ${wynik.dkim ? "wykryto" : "nie wykryto"}`}
           </details>
         </div>
       )}
+      {children}
       <div className="container-wide">
         <RelatedProducts slug="audyt-poczty" />
       </div>

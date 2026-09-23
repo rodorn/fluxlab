@@ -35,7 +35,7 @@ const czytelnik = [
   },
   {
     q: "Czy podmiot figuruje w wykazie",
-    a: "Odpytuję wykaz podatników VAT prowadzony przez Ministerstwo Finansów. Brak wpisu przy firmie, która wystawia fakturę z VAT, jest sygnałem, którego nie wolno zignorować.",
+    a: "Odpytujemy wykaz podatników VAT prowadzony przez Ministerstwo Finansów. Brak wpisu przy firmie, która wystawia fakturę z VAT, jest sygnałem, którego nie wolno zignorować.",
   },
   {
     q: "Czy jest czynnym podatnikiem",

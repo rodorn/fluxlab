@@ -42,7 +42,7 @@ export default function Page() {
         },
         {
           title: "Kto naprawdę kryje się za tym NIP-em",
-          desc: "Odpytuję wykaz podatników i pokazujemy nazwę, adres, status VAT oraz liczbę zgłoszonych rachunków. Zdarza się, że na stronie dealera stoi NIP importera, czyli zupełnie innej spółki.",
+          desc: "Odpytujemy wykaz podatników i pokazujemy nazwę, adres, status VAT oraz liczbę zgłoszonych rachunków. Zdarza się, że na stronie dealera stoi NIP importera, czyli zupełnie innej spółki.",
         },
         {
           title: "Czy numer konta pasuje do NIP-u",
