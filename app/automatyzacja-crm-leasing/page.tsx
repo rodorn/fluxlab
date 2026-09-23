@@ -573,8 +573,8 @@ export default function AutomatyzacjaCrmLeasing() {
                       <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
                         Nie zaczynam od pełnej automatyzacji wszystkich 8
                         leasingodawców + prowizji + raportów KNF. Zaczynam od
-                        pętli, która zwróci się w pierwszym miesiącu i pokaże
-                        zarządowi liczbę odzyskanych godzin tygodniowo.
+                        jednej pętli, której czas da się zmierzyć przed i po
+                        wdrożeniu, żeby zarząd widział liczby, a nie obietnice.
                       </p>
                       <ul className="space-y-3">
                         {firstStage.map((s, i) => (

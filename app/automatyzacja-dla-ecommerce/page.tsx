@@ -469,8 +469,9 @@ export default function AutomatyzacjaDlaEcommerce() {
                           Twój sklep rośnie, a operacja zaczyna gasić pożary?
                         </h2>
                         <p className="text-gray-500 dark:text-gray-400 mb-8">
-                          Opisz stack i procesy. Wskażę konkretne miejsca,
-                          gdzie automatyzacja zwróci się w 2–3 miesiące.
+                          Opisz stack i procesy. Wskażę miejsca, gdzie te same
+                          dane przepisuje się ręcznie, i policzymy, czy
+                          automatyzacja się tam opłaca.
                         </p>
                         <Link
                           href="/kontakt"

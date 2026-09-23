@@ -480,8 +480,8 @@ export default function AutomatyzacjaDlaBiurRachunkowych() {
                         </h2>
                         <p className="text-gray-500 dark:text-gray-400 mb-8">
                           Opisz, jak dziś wygląda obieg dokumentów w biurze.
-                          Wskażę konkretne miejsca, gdzie automatyzacja odda
-                          zespołowi kilkanaście godzin tygodniowo.
+                          Wskażę miejsca, gdzie dokumenty przechodzą przez ręce
+                          bez potrzeby, i policzymy razem, ile czasu to zabiera.
                         </p>
                         <Link
                           href="/kontakt"

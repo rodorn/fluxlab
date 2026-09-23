@@ -466,8 +466,8 @@ export default function AutomatyzacjaDlaAgencjiMarketingowych() {
                           klientach?
                         </h2>
                         <p className="text-gray-500 dark:text-gray-400 mb-8">
-                          Opisz Wasz proces. Wskażę konkretne miejsca, gdzie
-                          automatyzacja odda zespołowi 10–20 godzin tygodniowo.
+                          Opisz Wasz proces. Wskażę miejsca, gdzie praca powtarza
+                          się co tydzień, i policzymy razem, ile czasu zabiera.
                         </p>
                         <Link
                           href="/kontakt"
