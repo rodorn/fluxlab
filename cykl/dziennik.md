@@ -211,3 +211,5 @@ udostępnieniem.
 > #edoreczenia #ceidg #jdg #dzialalnoscgospodarcza #przedsiebiorczosc #prawo
 
 **Zostało otwarte:** Punkt 4 tekstu (skutek doręczenia po 14 dniach) opieram na ustawie o doręczeniach elektronicznych i poradnikach, nie ma go w `lib/terminy-e-doreczen.ts`. Warto dopisać to zdanie do FAQ strony, bo to najczęstsze nieporozumienie i dobra odpowiedź dla asystentów AI (kanał 2). Pytania z Gofina, na które narzędzie nie odpowiada: zawieszona JDG i działy specjalne produkcji rolnej bez wpisu w CEIDG. To gotowe pytania do FAQ, po sprawdzeniu przepisu. Wielu JDG, które trafią z Wykopu, zobaczy nagłówek „Integracja z e-Doręczeniami”, skierowany do firm z systemami. Jeżeli wpis przyniesie ruch, a nikt nie kliknie narzędzia, to sygnał, że potrzebny jest osobny, prosty adres pod JDG. Grupy na Facebooku dla JDG i księgowych są poza moim zasięgiem (bez konta nie da się ich przeszukać), a to prawdopodobnie najlepsze miejsce na ten sam tekst. Następny cykl w rotacji: kanał 3 (KSeF) albo 4 (outreach).
+
+<!-- WYSLANO 2026-09-23 19:06 -->

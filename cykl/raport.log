@@ -110,3 +110,28 @@ Raport poszedł o 15:06 z pawel@fluxlab.pl na iwanekpawel55@gmail.com (Zoho zwr�
 - **Cykl z 14:43 nie zapisał wpisu w dzienniku.** Zrobił zmianę z 14:45 i wdrożył ją, ale w logu przebiegu nie ma linii o zakończeniu. Sprawdziłem tę zmianę sam na produkcji i kontrolą spójności (wynik: brak rozjazdów). Nie wiem natomiast, czy nowe werdykty kalkulatora wyświetlają się poprawnie w przeglądarce, i w mailu jest to napisane wprost. Ta zmiana stoi w dzienniku przed nowym znacznikiem, więc następny raport jej nie pokaże, ale ten już ją opisał.
 - **Proces `shot.py` (PID 1576461) wisi już 47 godzin.** Nie ruszałem go, czekam na Twoją zgodę.
 === 2026-09-23 15:06:53 koniec, kod 0
+=== 2026-09-23 19:03:08 start raportu
+Raport wysłałem o 19:06 z pawel@fluxlab.pl na iwanekpawel55@gmail.com. Zoho przyjęło wiadomość bez błędu, a na końcu `cykl/dziennik.md` jest dopisany znacznik `<!-- WYSLANO 2026-09-23 19:06 -->`.
+
+**Temat:** „FluxLab strona, 19:06, cykl przestawiony na zdobywanie ruchu, wpis na Wykop czeka na Ciebie”
+
+**Zawartość:**
+- **Zmiany, każda w osobnej sekcji:**
+  1. Rachunek czasu raportów na `/automatyzacja-dla-agencji-marketingowych` (`2589e7c`).
+  2. Jedna stopka na całej stronie (`2900573`).
+  3. Cykl godzinny przestawiony z poprawiania strony na zdobywanie ruchu (`d5b303a`).
+  4. Terminy KSeF i e-Doręczeń podane wprost w HTML i w `llms.txt` (`ed0b670`).
+  5. Linki z repozytoriów GitHuba na strony tematów i gotowy wpis na Wykop do opublikowania przez Ciebie. Tekst jest rozbity na akapity, żeby łatwo go skopiować.
+- **Załącznik:** zrzut rachunku dla agencji z produkcji, osadzony w treści jako `cid:zrzut-agencja`.
+- **Pozostałe sekcje:** czego nie udało się zrobić, ruch z zastrzeżeniem o danych sprzed 21.09 godz. 16:00, stan list audytowych (techniczny 24 z 29, treści 22 zamknięte, SEO bez zmian) i jednozdaniowy wniosek.
+
+**Co sprawdziłem sam, bo dziennik tego nie zawierał:**
+- **Zmiana `2589e7c` nie miała wpisu w dzienniku.** Cykl z 15:43 najpewniej przerwał limit czasu. Kliknąłem wszystkie trzy układy rachunku na produkcji, przy szerokości komputera (1440 px) i telefonu (390 px). Wyniki 840 zł, 3 897 zł i 5 196 zł zgadzają się z ręcznym przeliczeniem, a nic nie wystaje poza ekran. Moje kliknięcia nie trafiły do licznika, bo zablokowałem przy teście zapytania do `/api/wizyta`. Kontrastu tego bloku nie mierzyłem i mail mówi o tym wprost.
+- **Uruchomienia narzędzi:** w ostatniej dobie 0, tak samo jak w czterech poprzednich raportach. Ostatnie uruchomienie w bazie było 22.09 o 02:10, czyli około 41 godzin temu.
+
+**Otwarte sprawy:**
+- Proces `shot.py` (PID 1576461) dalej wisi i nic nie robi, nie zamykałem go bez Twojej zgody. Serwer `next-server` na porcie 4317 sam się już zakończył.
+- Nie zrobiłem commita po dopisaniu znacznika do dziennika, więc na razie jest on tylko lokalnie.
+
+Połączenia Google Calendar i Google Drive w claude.ai czekają na autoryzację. Dopóki ich nie połączysz w ustawieniach konektorów na claude.ai, są niedostępne. Do tego raportu nie były potrzebne.
+=== 2026-09-23 19:06:53 koniec, kod 0

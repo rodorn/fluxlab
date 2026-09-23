@@ -257,6 +257,19 @@ export default function AudytCheck() {
   const timer = useRef<ReturnType<typeof setInterval> | null>(null);
   useEffect(() => () => { if (timer.current) clearInterval(timer.current); }, []);
 
+  // Adres podany na stronie głównej uruchamia badanie od razu po wejściu.
+  // Czytamy go z adresu przeglądarki, a nie hakiem useSearchParams, bo ten
+  // wymusiłby renderowanie tej strony na żądanie przy każdym wejściu.
+  const wystartowano = useRef(false);
+  useEffect(() => {
+    if (wystartowano.current) return;
+    const z = new URLSearchParams(window.location.search).get("domena");
+    if (!z) return;
+    wystartowano.current = true;
+    void uruchom(z);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   async function sprawdz(e: React.FormEvent) {
     e.preventDefault();
     await uruchom(domena);

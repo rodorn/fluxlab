@@ -2,6 +2,7 @@ import Link from "next/link";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import TileVideo from "@/components/TileVideo";
+import PoleAudytu from "@/components/PoleAudytu";
 import WybierzBranze from "@/components/WybierzBranze";
 import RachunekWJednymKlikniecu from "@/components/RachunekWJednymKlikniecu";
 import { LICZBA_NARZEDZI } from "@/lib/narzedzia";
@@ -102,7 +103,10 @@ const PROBLEMY = [
 
 // Trzy liczby z wlasnych pomiarow na tej samej probce 386 domen. Nie mamy
 // referencji od klientow, wiec dowodem jest to, co sami policzylismy i co
-// kazdy moze powtorzyc.
+// kazdy moze powtorzyc. Stoja na dole strony, a nie tuz pod haslem, bo jako
+// pierwsza tresc odpowiadaly na pytanie, ktorego nikt nie zadal: osoba z
+// biura rachunkowego dowiadywala sie najpierw, ile salonow samochodowych da
+// sie podszyc mailowo. Jako dowod kompetencji dzialaja, jako powitanie nie.
 const BADANIA = [
   {
     href: "/strefa-wiedzy/podszywanie-pod-salony-samochodowe",
@@ -161,36 +165,10 @@ export default function Home() {
             </span>
           </Link>
 
-          {/* Wlasne badania to jedyna tresc, ktorej nikt inny nie ma, a lezaly
-              trzy klikniecia od strony glownej. Liczby zamiast samych tytulow,
-              bo firma bez klientow nie ma sie czym wykazac poza tym, co sama
-              zmierzyla, a zmierzone liczby kazdy moze sprawdzic. Trzecie
-              badanie nie mialo stad zadnego linku. */}
-          <div className="mt-4 grid max-w-3xl gap-3 sm:grid-cols-3">
-            {BADANIA.map((b) => (
-              <Link
-                key={b.href}
-                href={b.href}
-                className="group rounded-xl border border-gray-200 dark:border-white/10 bg-white/60 dark:bg-white/[0.03] p-4 transition-colors hover:border-accent/70 dark:hover:border-accent/70"
-              >
-                <span className="block text-xl font-bold tabular-nums text-gray-900 dark:text-white">
-                  {b.liczba}
-                </span>
-                <span className="mt-1 block text-xs leading-snug text-gray-600 dark:text-white/60">
-                  {b.opis}
-                </span>
-                <span className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-accent">
-                  Nasze badanie
-                  <span
-                    aria-hidden="true"
-                    className="inline-block transition-transform group-hover:translate-x-0.5"
-                  >
-                    →
-                  </span>
-                </span>
-              </Link>
-            ))}
-          </div>
+          {/* Jedyna rzecz, ktora dotyczy kazdego, kto tu trafil: jego wlasna
+              strona. Wynik jest na ekranie, zanim ktokolwiek poprosi go o
+              adres e-mail. */}
+          <PoleAudytu />
         </div>
 
         {/* 3 kolumny wyboru, zaokrąglone karty z odstępem */}
@@ -290,6 +268,50 @@ export default function Home() {
         </section>
 
         <WybierzBranze />
+
+        {/* Dowod kompetencji dla firmy bez ani jednego klienta. Liczby z
+            wlasnego pomiaru, z podana probka i metoda, zeby kazdy mogl je
+            powtorzyc i sprawdzic. Na dole, a nie pod haslem: to jest odpowiedz
+            na pytanie "skad mam wiedziec, ze on sie na tym zna", a takie
+            pytanie pada po przeczytaniu oferty, nie przed. */}
+        <section className="relative z-20 border-t border-gray-200 px-6 py-12 dark:border-white/10 lg:px-10 lg:py-16">
+          <h2 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white/90 lg:text-2xl">
+            Skąd mam wiedzieć, że się na tym znam
+          </h2>
+          <p className="mt-2 max-w-3xl text-sm text-gray-600 dark:text-white/60">
+            Nie mam jeszcze klientów, więc nie pokażę Wam cudzych logotypów ani
+            opinii. Zamiast tego pokazuję, co sam zmierzyłem. Wziąłem 386 stron
+            dealerów samochodowych, bo to branża, w której łatwo o porównywalną
+            próbkę, i sprawdziłem je tymi samymi narzędziami, które stoją na tej
+            stronie. Przy każdym badaniu jest metoda i zastrzeżenia, więc można
+            je powtórzyć i sprawdzić, czy się mylę.
+          </p>
+          <div className="mt-6 grid max-w-3xl gap-3 sm:grid-cols-3">
+            {BADANIA.map((b) => (
+              <Link
+                key={b.href}
+                href={b.href}
+                className="group rounded-xl border border-gray-200 bg-white/60 p-4 transition-colors hover:border-accent/70 dark:border-white/10 dark:bg-white/[0.03] dark:hover:border-accent/70"
+              >
+                <span className="block text-xl font-bold tabular-nums text-gray-900 dark:text-white">
+                  {b.liczba}
+                </span>
+                <span className="mt-1 block text-sm text-gray-600 dark:text-white/60">
+                  {b.opis}
+                </span>
+                <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-accent">
+                  Nasze badanie
+                  <span
+                    aria-hidden="true"
+                    className="inline-block transition-transform group-hover:translate-x-0.5"
+                  >
+                    →
+                  </span>
+                </span>
+              </Link>
+            ))}
+          </div>
+        </section>
 
       </main>
       <Footer />
