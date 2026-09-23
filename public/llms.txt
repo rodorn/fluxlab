@@ -14,13 +14,42 @@
 - [Wdrożenie n8n i jego koszt](https://fluxlab.pl/wdrozenie-n8n-cena): licencja, serwer, praca i opieka rozbite na osobne liczby.
 - [Systemy i strony](https://fluxlab.pl/strony-www): aplikacje webowe, panele i formularze będące częścią procesu.
 
+## Terminy, o które ludzie pytają najczęściej
+
+Obowiązkowy KSeF, stan prawny z 23.09.2026, szczegóły i źródła na https://fluxlab.pl/ksef-integracja:
+- Sprzedaż powyżej 200 mln zł brutto w 2024: faktury wyłącznie w KSeF od 1 lutego 2026.
+- Pozostali podatnicy VAT, czynni i zwolnieni: od 1 kwietnia 2026.
+- Sprzedaż na fakturach do 10 tys. zł brutto miesięcznie: poza KSeF do 31 grudnia 2026, obowiązek od 1 stycznia 2027. Limit liczy się osobno w każdym miesiącu.
+- Faktury z kas rejestrujących: poza KSeF do 31 grudnia 2026.
+- Odbiór faktur w KSeF: wszyscy od 1 lutego 2026.
+- Od 1 stycznia 2027 kończą się przepisy przejściowe, zaczynają się kary, a numer KSeF trzeba podawać przy płatności.
+- Poza KSeF zostają faktury dla osób prywatnych, procedury OSS i IOSS oraz podmioty zagraniczne bez stałego miejsca działalności w Polsce.
+
+Adres do e-Doręczeń, szczegóły na https://fluxlab.pl/e-doreczenia-integracja:
+- Firma w CEIDG wpisana przed 2025: od 1 października 2026, chyba że po 30 czerwca 2025 składała wniosek o zmianę wpisu, wtedy wcześniej.
+- Firma w CEIDG albo spółka w KRS zarejestrowana od 2025: od dnia wpisu.
+- Spółka w KRS zarejestrowana przed 2025: od 1 kwietnia 2025.
+- Adwokaci, radcowie, doradcy podatkowi, notariusze i podmioty publiczne: od 1 stycznia 2025.
+- Sądy, prokuratura, komornicy: od 1 października 2029.
+
 ## Darmowe narzędzia, bez rejestracji
 
+- [Co z KSeF obowiązuje Twoją firmę](https://fluxlab.pl/ksef-integracja): dwa kliknięcia, termin i dni do końca wyjątku.
+- [Od kiedy adres do e-Doręczeń](https://fluxlab.pl/e-doreczenia-integracja): dwa kliknięcia, data z ustawy.
+- [Pełny audyt techniczny strony](https://fluxlab.pl/audyt-strony): szybkość, certyfikat, widoczność w Google i w AI, poczta.
+- [Dlaczego maile trafiają do spamu](https://fluxlab.pl/audyt-poczty): SPF, DKIM i DMARC domeny.
+- [Czy przeglądarka ostrzega przed stroną](https://fluxlab.pl/naprawa-https): certyfikat i przekierowania.
 - [Widoczność strony dla asystentów AI](https://fluxlab.pl/widocznosc-w-ai)
+- [Czy strona nie wypisała się z Google](https://fluxlab.pl/widocznosc-w-google)
+- [Czy Google ma mapę strony](https://fluxlab.pl/mapa-strony)
+- [Czy Google widzi stronę pod dwoma adresami](https://fluxlab.pl/podwojny-adres)
 - [Kto jest właścicielem domeny](https://fluxlab.pl/wlasnosc-domeny)
-- [Sprawdzenie poczty firmowej](https://fluxlab.pl/audyt-poczty)
-- [Czy strona ma poprawną mapę](https://fluxlab.pl/widocznosc-w-google)
+- [Sprawdzenie NIP w wykazie VAT](https://fluxlab.pl/sprawdzenie-nip)
+- [Czy dłużnik znika z KRS](https://fluxlab.pl/czujka-rejestrowa)
+- [Informacja o najniższej cenie przy przecenach, Omnibus](https://fluxlab.pl/rejestr-cen)
+- [Ile przepłacasz za Zapiera i Make](https://fluxlab.pl/tansze-automatyzacje)
 - [Kalkulator kosztu ręcznej obsługi leadów](https://fluxlab.pl/koszt-recznej-obslugi-leadow)
+- [Kalkulator podatkowy JDG](https://fluxlab.pl/kalkulator-podatkowy)
 - [Pełna lista](https://fluxlab.pl/narzedzia)
 
 ## Własne badania

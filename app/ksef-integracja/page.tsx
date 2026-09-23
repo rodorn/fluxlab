@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ProductLanding from "@/components/ProductLanding";
 import KsefCheck from "@/components/KsefCheck";
+import { PODATNICY } from "@/lib/terminy-ksef";
 
 export const metadata: Metadata = {
   title: "Integracja z KSeF dla firm | Fluxlab",
@@ -98,6 +99,10 @@ export default function KsefIntegracja() {
         },
       ]}
       faq={[
+        {
+          q: "Od kiedy KSeF jest obowiązkowy?",
+          a: `${PODATNICY.map((p) => p.opis).join(" ")} Odbierać faktury w KSeF muszą wszyscy od 1 lutego 2026. Do 31 grudnia 2026 nie ma kar za błędy, a od 1 stycznia 2027 numer KSeF trzeba podawać przy płatności.`,
+        },
         {
           q: "Mamy program księgowy, który obsługuje KSeF. Po co nam integracja?",
           a: "Najprawdopodobniej po nic i tak powiem, jeśli tak wyjdzie z rozpoznania. Integracja przydaje się wtedy, gdy faktury powstają poza programem księgowym, na przykład w sklepie, w systemie zamówień albo w CRM, i ktoś je dziś przenosi ręcznie. Drugi przypadek to faktury kosztowe, których program księgowy często nie pobiera sam.",

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ProductLanding from "@/components/ProductLanding";
 import EDoreczeniaCheck from "@/components/EDoreczeniaCheck";
+import { PODMIOTY } from "@/lib/terminy-e-doreczen";
 
 export const metadata: Metadata = {
   title: "Integracja z e-Doręczeniami dla firm | Fluxlab",
@@ -98,6 +99,10 @@ export default function EDoreczeniaIntegracja() {
         },
       ]}
       faq={[
+        {
+          q: "Od kiedy firma musi mieć adres do e-Doręczeń?",
+          a: PODMIOTY.map((p) => p.opis).join(" "),
+        },
         {
           q: "Czy muszę mieć adres do doręczeń, żeby zacząć?",
           a: "Do samej integracji tak, bo to Wasza skrzynka jest jej punktem zaczepienia. Wniosek o adres składa podmiot i jest to procedura urzędowa, a nie techniczna. Rozpoznanie mogę zrobić wcześniej, na podstawie tego, z jakiego systemu korzystacie.",
