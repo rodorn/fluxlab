@@ -135,3 +135,30 @@ Raport wysłałem o 19:06 z pawel@fluxlab.pl na iwanekpawel55@gmail.com. Zoho pr
 
 Połączenia Google Calendar i Google Drive w claude.ai czekają na autoryzację. Dopóki ich nie połączysz w ustawieniach konektorów na claude.ai, są niedostępne. Do tego raportu nie były potrzebne.
 === 2026-09-23 19:06:53 koniec, kod 0
+=== 2026-09-23 23:03:28 start raportu
+Raport wyszedł o 23:07 z pawel@fluxlab.pl i jest w skrzynce odbiorczej Gmaila. Rozmiar wiadomości to 685 KB, więc zrzut ekranu doszedł razem z nią. Na końcu `cykl/dziennik.md` dopisałem znacznik `<!-- WYSLANO 2026-09-23 23:07 -->`.
+
+**Temat:** „FluxLab strona, 23:07, pole audytu na stronie głównej i lista KSeF na 2027”
+
+**Zmiany opisane w mailu, każda w osobnej sekcji:**
+1. Pod hasłem na stronie głównej jest teraz pole audytu (`6c30444`). Tego dotyczy załączony zrzut z produkcji.
+2. Audyt strony odczytuje znaczniki viewport i opisu niezależnie od kolejności atrybutów (`b02361f`).
+3. Treść strony przeszła na liczbę mnogą (`8701611`).
+4. Na `/ksef-integracja` jest lista kontrolna KSeF na 1 stycznia 2027 (`9b6e3eb`), razem z gotowym postem na LinkedIn dla Ciebie.
+5. W najczęstszych pytaniach o e-Doręczenia jest nowe pytanie o piśmie nieodebranym przez 14 dni (`a9f3eba`).
+6. Poszły cztery maile z wynikiem audytu do biur rachunkowych.
+
+**Rzeczy, które sprawdziłem sam, bo dziennik ich nie opisał:**
+- **Dwa cykle bez wpisu:** cykle z 19:43 i 21:43 nie zapisały dziennika. Cztery zmiany bez wpisu (1, 2, 3 i 5) sprawdziłem na produkcji i osobnym testem.
+- **Liczba pojedyncza wciąż na stronie:** zostało sześć miejsc, których kontrola spójności nie wyłapuje. Jedno jest widoczne na pierwszym ekranie strony głównej: „Spinamy je przez API, porządkuję i zamieniam w raport”. Są też błędy na `/automatyzacja-dla-ecommerce`, `/automatyzacja-dla-biur-rachunkowych`, `/crm-jako-system-pracy` i `/pogotowie-automatyzacji`. Do tego na stronie głównej jest błąd odmiany „co sam zmierzyliśmy”. Niczego nie poprawiałem, tylko opisałem to w mailu i wskazałem jako następny krok.
+- **Menu na zrzucie:** przy szerokości 1100 px menu w nagłówku nachodzi na przełącznik motywu.
+
+**Ruch:** od 19:06 nikt nie wszedł na stronę. W ostatniej dobie była 1 odsłona z ChatGPT, na Safari z iOS. Narzędzi nikt nie uruchomił od 22.09, godz. 02:10, czyli od około 45 godzin. Zastrzeżenie o danych sprzed 21.09, godz. 16:00, jest w mailu.
+
+**Audyty:** techniczny ma 24 z 29 pozycji zamkniętych, treści 22 zamknięte, SEO 3 z 10. Żaden plik audytu się nie zmienił.
+
+**Otwarte sprawy:**
+- Wiszący proces `shot.py` (PID 1576461) nadal działa i czeka na Twoją zgodę na zamknięcie.
+- Znacznik w dzienniku jest tylko lokalnie, bez commita.
+- Google Calendar i Google Drive czekają na autoryzację w ustawieniach konektorów na claude.ai. Do tego raportu nie były potrzebne.
+=== 2026-09-23 23:07:49 koniec, kod 0

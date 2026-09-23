@@ -71,7 +71,7 @@ const PUNKTY: Punkt[] = [
     pytanie:
       "Czy widzicie, która faktura została odrzucona albo jeszcze nie wysłana?",
     zmiana:
-      "Do 31 grudnia 2026 nie ma kar za błędy w KSeF. Od 1 stycznia 2027 za fakturę wystawioną poza KSeF, choć powinna przez niego przejść, naczelnik urzędu skarbowego może nałożyć karę do 100% kwoty VAT z tej faktury albo do 18,7% kwoty należności, gdy faktura jest bez VAT.",
+      "Kary z art. 106ni ustawy o VAT, czyli do 100% kwoty VAT z faktury wystawionej poza KSeF albo do 18,7% kwoty należności przy fakturze bez VAT, miały zacząć obowiązywać 1 stycznia 2027. Ministerstwo Finansów zapowiedziało 16 września 2026, że przesunie je na 1 stycznia 2028, i rozpoczęło prace nad ustawą. To na dziś zapowiedź, a nie uchwalone prawo, więc nie planujcie w oparciu o pewność, że kary nie przyjdą wcześniej. Sam obowiązek wystawiania faktur w KSeF nie jest zawieszony ani o jeden dzień.",
     zrobic:
       "Program albo integracja muszą pokazywać stan każdej faktury: przyjęta z numerem KSeF, odrzucona albo czekająca na wysłanie po trybie offline. Faktura odrzucona po cichu wygląda w systemie tak samo jak wystawiona.",
   },
@@ -123,9 +123,10 @@ export default function ListaKsef2027() {
         Lista na 1 stycznia 2027: co musicie mieć domknięte
       </h2>
       <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-        Tego dnia kończą się naraz wszystkie przepisy przejściowe KSeF i
-        zaczynają się kary. Sześć pytań, przy każdym zaznaczcie, czy macie to
-        załatwione. Na końcu dostaniecie listę tego, co zostało, gotową do
+        Tego dnia kończą się naraz wszystkie przepisy przejściowe KSeF.
+        Same kary mają zostać przesunięte na 2028 rok, ale obowiązki z tej
+        listy zaczynają obowiązywać w styczniu 2027 niezależnie od nich.
+        Sześć pytań, przy każdym zaznaczcie, czy macie to załatwione. Na końcu dostaniecie listę tego, co zostało, gotową do
         wysłania księgowej albo osobie od systemu.
       </p>
 
