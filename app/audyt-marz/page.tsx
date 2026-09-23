@@ -4,7 +4,7 @@ import ProductLanding from "@/components/ProductLanding";
 export const metadata: Metadata = {
   title: "Audyt marż sklepu, zysk na produkcie, 49 zł | Fluxlab",
   description:
-    "Panel pokazuje obrót, a nie to, co zostaje. Liczę zysk netto na sztuce po prowizjach, zwrotach i dopłatach do wysyłki, wskazuję martwy stok. 49 zł.",
+    "Panel pokazuje obrót, a nie to, co zostaje. Liczymy zysk netto na sztuce po prowizjach, zwrotach i dopłatach do wysyłki, wskazuję martwy stok. 49 zł.",
   alternates: { canonical: "/audyt-marz" },
   openGraph: {
     title:
@@ -31,7 +31,7 @@ export default function Page() {
       breadcrumb="Audyt marż"
       eyebrow="Rentowność asortymentu"
       h1="Sprzedajesz dużo, a nie wiadomo, gdzie te pieniądze"
-      lead="Allegro i BaseLinker pokazują obrót i marżę brutto. Nie pokazują, co zostaje po prowizji, zwrocie i dopłacie do darmowej wysyłki. Bierzesz swój eksport sprzedaży i ceny zakupu, a ja liczę realny zysk na każdej sztuce."
+      lead="Allegro i BaseLinker pokazują obrót i marżę brutto. Nie pokazują, co zostaje po prowizji, zwrocie i dopłacie do darmowej wysyłki. Bierzesz swój eksport sprzedaży i ceny zakupu, a ja liczymy realny zysk na każdej sztuce."
       ctaLabel="Zamów audyt marż"
       ctaNote="Raport w 48 godzin"
       checks={[
@@ -79,7 +79,7 @@ export default function Page() {
       ]}
       faq={[
         {
-          q: "Czego potrzebujesz ode mnie?",
+          q: "Czego potrzebujecie od nas?",
           a: "Eksportu sprzedaży za wybrany okres, najlepiej trzy miesiące, oraz listy cen zakupu w pliku CSV albo Excel. Im dokładniejsze koszty zakupu, tym dokładniejszy wynik.",
         },
         {
@@ -87,8 +87,8 @@ export default function Page() {
           a: "Allegro, BaseLinker, WooCommerce, Shopify, Shoper, IdoSell i zwykły plik z magazynu. Jeśli masz coś innego, przyślij próbkę, zwykle da się to przerobić.",
         },
         {
-          q: "Co z danymi moich klientów?",
-          a: "Nie potrzebuję ich. Wystarczą dane o produktach i transakcjach. Jeśli w eksporcie są dane osobowe, usuwam je przy wczytywaniu i kasuję pliki po dostarczeniu raportu.",
+          q: "Co z danymi naszych klientów?",
+          a: "Nie potrzebujemy ich. Wystarczą dane o produktach i transakcjach. Jeśli w eksporcie są dane osobowe, usuwamy je przy wczytywaniu i kasujemy pliki po dostarczeniu raportu.",
         },
         {
           q: "A jeśli okaże się, że wszystko jest w porządku?",
@@ -97,9 +97,9 @@ export default function Page() {
       ]}
       formId="order_audyt_marz"
       formHeading="Zamów audyt marż"
-      formIntro="Napisz, z jakiego systemu masz eksport sprzedaży, za jaki okres i ile mniej więcej masz produktów. Pliki podeślesz mailem po mojej odpowiedzi, nie wrzucaj ich tutaj."
+      formIntro="Napisz, z jakiego systemu masz eksport sprzedaży, za jaki okres i ile mniej więcej masz produktów. Pliki podeślesz mailem po naszej odpowiedzi, nie wrzucaj ich tutaj."
       submitLabel="Zamów audyt marż"
-      microCopy="Raport w 48 godzin. Dane sprzedażowe przetwarzam tylko na potrzeby raportu i kasuję po dostarczeniu."
+      microCopy="Raport w 48 godzin. Dane sprzedażowe przetwarzam tylko na potrzeby raportu i kasujemy po dostarczeniu."
       serviceName="Audyt marż sklepu internetowego"
       serviceDesc="Wyliczenie realnego zysku netto na produkt po prowizjach, zwrotach i kosztach wysyłki, lista pozycji sprzedawanych pod kreską i martwy stok. 49 zł."
       serviceType="Analiza rentowności asortymentu"

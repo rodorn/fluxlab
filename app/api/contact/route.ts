@@ -67,11 +67,11 @@ const FROM_PAWEL =
 
 const POTWIERDZENIE_TEXT = `Cześć,
 
-dzięki za opis procesu. Przejrzę zgłoszenie i wrócę z informacją, czy widzę potencjał na automatyzację oraz jaki byłby sensowny pierwszy krok, zwykle w ciągu 24h.
+dzięki za opis procesu. Przejrzę zgłoszenie i wrócimy z informacją, czy widzimy potencjał na automatyzację oraz jaki byłby sensowny pierwszy krok, zwykle w ciągu 24h.
 
-Jeśli widzę dopasowanie, odpiszę z konkretną propozycją zakresu i wyceną. Jeśli proces wygląda na zbyt mały albo nieopłacalny do automatyzacji na tym etapie, napiszę to wprost, bez owijania w bawełnę.
+Jeśli widzimy dopasowanie, odpiszemy z konkretną propozycją zakresu i wyceną. Jeśli proces wygląda na zbyt mały albo nieopłacalny do automatyzacji na tym etapie, napiszemy to wprost, bez owijania w bawełnę.
 
-Pracuję i ustalam wszystko mailowo, więc możesz po prostu odpisać na tę wiadomość.
+Pracujemy i ustalamy wszystko mailowo, więc możesz po prostu odpisać na tę wiadomość.
 
 Paweł
 Fluxlab, automatyzacja leadów, CRM i raportowania dla firm B2B
@@ -171,7 +171,7 @@ export async function POST(req: Request) {
     const { error: replyError } = await resendKlient().emails.send({
       from: FROM_PAWEL,
       to: email,
-      subject: "Dostałem zgłoszenie, Fluxlab",
+      subject: "Dostaliśmy zgłoszenie, Fluxlab",
       text: POTWIERDZENIE_TEXT,
     });
 
@@ -186,7 +186,7 @@ export async function POST(req: Request) {
     try {
       await wyslijPrzezSmtp(
         email,
-        "Dostałem zgłoszenie, Fluxlab",
+        "Dostaliśmy zgłoszenie, Fluxlab",
         POTWIERDZENIE_TEXT,
       );
       return NextResponse.json({ ok: true });

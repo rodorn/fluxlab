@@ -51,6 +51,13 @@ cokolwiek daje, a po kilku cyklach to jedyna podstawa, żeby przesunąć wysiłe
 tam, gdzie działa.
 
 ZASADY TWARDE, bez zmian:
+- LICZBA MNOGA. Fluxlab występuje jako firma, nie jako jedna osoba.
+  Piszemy "automatyzujemy", "sprawdzamy", "nasze", nigdy "automatyzuję",
+  "sprawdzam", "moje". W pytaniach FAQ klient zwraca się do nas per "Wy":
+  "Czego potrzebujecie", nie "Czego potrzebujesz". Wyjątki, których nie
+  ruszamy: dane rejestrowe w stopce i w danych strukturalnych (Paweł Iwanek,
+  NIP, REGON), strona /cv, przełącznik /nie-licz-mnie, który dotyczy jednej
+  przeglądarki, oraz cytaty cudzych wypowiedzi, bo te padają tak, jak padły.
 - Nigdy nie pisz, że mamy klientów, referencje ani wyniki u klientów. Paweł ma
   zero klientów. Dowody kompetencji to własne badania, działające narzędzia i
   otwarty kod.

@@ -47,9 +47,9 @@ export default function CaseStudy() {
                 Ile czasu zjada proces przed automatyzacją i po niej
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-                Nie mam jeszcze wdrożeń u firm, więc nie znajdziecie tu cudzych
+                Nie mamy jeszcze wdrożeń u firm, więc nie znajdziecie tu cudzych
                 wyników ani referencji. Zamiast tego dwa procesy, które
-                automatyzuję najczęściej, rozpisane na czynności, z minutami
+                automatyzujemy najczęściej, rozpisane na czynności, z minutami
                 przy każdej z nich. Możecie odkliknąć to, czego u siebie nie
                 robicie, i zobaczyć własną sumę. Opis wdrożenia z nazwą firmy
                 pojawi się tutaj dopiero wtedy, gdy takie wdrożenie powstanie i
@@ -80,12 +80,12 @@ export default function CaseStudy() {
                 ),
               },
               {
-                label: "Jak liczę efekt",
+                label: "Jak liczymy efekt",
                 content: (
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-5">
-                        Jak liczę efekt wdrożenia
+                        Jak liczymy efekt wdrożenia
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
                         Bez wymyślnych modeli. Porównuję cztery rzeczy przed i
@@ -154,7 +154,7 @@ export default function CaseStudy() {
                       </h2>
                       <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
                         Trzy pierwsze firmy dostają wdrożenie za połowę ceny w
-                        zamian za zgodę na publiczny opis efektu. Publikuję
+                        zamian za zgodę na publiczny opis efektu. Publikujemy
                         tylko to, co zaakceptujecie.
                       </p>
                       <div className="flex flex-col sm:flex-row gap-4 justify-center">

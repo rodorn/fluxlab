@@ -38,7 +38,7 @@ export default function Page() {
       checks={[
         {
           title: "Czy trwa postępowanie o rozwiązanie",
-          desc: "Szukam obwieszczeń o rozwiązaniu bez likwidacji i pokazuję datę publikacji razem z dniem, w którym mija termin na sprzeciw.",
+          desc: "Szukamy obwieszczeń o rozwiązaniu bez likwidacji i pokazujemy datę publikacji razem z dniem, w którym mija termin na sprzeciw.",
         },
         {
           title: "Cała historia ogłoszeń od 2013 roku",
@@ -94,22 +94,22 @@ export default function Page() {
         },
         {
           q: "Czy to znaczy, że spółka na pewno zostanie wykreślona?",
-          a: "Nie. Obwieszczenie oznacza wszczęcie postępowania, a nie jego wynik. Nie wiem, jaki odsetek kończy się faktycznym wykreśleniem, i nie będę tego zgadywał. Wiem natomiast, że termin na reakcję biegnie od dnia publikacji i że po nim możliwości są znacznie mniejsze.",
+          a: "Nie. Obwieszczenie oznacza wszczęcie postępowania, a nie jego wynik. Nie wiemy, jaki odsetek kończy się faktycznym wykreśleniem, i nie będziemy tego zgadywał. Wiemy natomiast, że termin na reakcję biegnie od dnia publikacji i że po nim możliwości są znacznie mniejsze.",
         },
         {
           q: "Dlaczego dopasowanie idzie po nazwie, a nie po NIP?",
-          a: "Bo w ogłoszeniach numer NIP pojawia się w około dwóch procentach przypadków, a numer KRS w dwóch trzecich. Sprawdziłem to na próbce. Dopasowanie po NIP wyglądałoby precyzyjnie, a przepuszczałoby prawie wszystko.",
+          a: "Bo w ogłoszeniach numer NIP pojawia się w około dwóch procentach przypadków, a numer KRS w dwóch trzecich. Sprawdziliśmy to na próbce. Dopasowanie po NIP wyglądałoby precyzyjnie, a przepuszczałoby prawie wszystko.",
         },
         {
           q: "Czy monitorujecie też upadłości?",
-          a: "Nie i mówię to wprost, żeby nie było nieporozumienia. Od 2021 roku postanowienia o upadłości trafiają do Krajowego Rejestru Zadłużonych, a nie do Monitora, więc na tych danych nie da się zbudować monitoringu upadłości.",
+          a: "Nie i mówimy to wprost, żeby nie było nieporozumienia. Od 2021 roku postanowienia o upadłości trafiają do Krajowego Rejestru Zadłużonych, a nie do Monitora, więc na tych danych nie da się zbudować monitoringu upadłości.",
         },
       ]}
       formId="order_czujka_rejestrowa"
       formHeading="Zamów sprawdzenie listy kontrahentów"
-      formIntro="Napisz, ilu macie kontrahentów i w jakiej formie trzymacie listę. Odeślę zakres, cenę i przykładowy raport."
+      formIntro="Napisz, ilu macie kontrahentów i w jakiej formie trzymacie listę. Odeślemy zakres, cenę i przykładowy raport."
       submitLabel="Zamów sprawdzenie"
-      microCopy="Do sprawdzenia potrzebuję wyłącznie listy nazw albo numerów KRS. Żadnych danych osobowych, faktur ani dostępów do Waszych systemów."
+      microCopy="Do sprawdzenia potrzebujemy wyłącznie listy nazw albo numerów KRS. Żadnych danych osobowych, faktur ani dostępów do Waszych systemów."
       serviceName="Monitoring Monitora Sądowego i Gospodarczego dla listy kontrahentów"
       serviceDesc="Codzienne porównywanie listy kontrahentów klienta z nowymi wydaniami Monitora Sądowego i Gospodarczego, ze szczególnym uwzględnieniem postępowań o rozwiązanie podmiotu bez likwidacji, wraz z alertem w dniu obwieszczenia. Od 99 zł miesięcznie."
       serviceType="Monitoring rejestrów publicznych"

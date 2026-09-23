@@ -134,7 +134,7 @@ export default function EDoreczeniaCheck() {
   const [wynik, setWynik] = useState<Wynik | null>(null);
   const [skala, setSkala] = useState<Skala | null>(null);
   const [email, setEmail] = useState("");
-  const [leadStan, setLeadStan] = useState<"idle" | "wysylam" | "ok" | "blad">("idle");
+  const [leadStan, setLeadStan] = useState<"idle" | "wysylamy" | "ok" | "blad">("idle");
   const [leadBlad, setLeadBlad] = useState("");
 
   function wybierz(p: Podmiot) {
@@ -147,7 +147,7 @@ export default function EDoreczeniaCheck() {
   async function zamow(e: React.FormEvent) {
     e.preventDefault();
     if (!wynik) return;
-    setLeadStan("wysylam");
+    setLeadStan("wysylamy");
     setLeadBlad("");
     try {
       const res = await fetch("/api/contact", {
@@ -192,7 +192,7 @@ export default function EDoreczeniaCheck() {
       </h2>
       <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
         Terminy wchodzą etapami i zależą wyłącznie od tego, gdzie i kiedy podmiot
-        został zarejestrowany. Naciśnijcie swój przypadek, a policzę datę z ustawy
+        został zarejestrowany. Naciśnijcie swój przypadek, a policzymy datę z ustawy
         i dni, które zostały. Nic nie trzeba wpisywać.
       </p>
 
@@ -268,9 +268,9 @@ export default function EDoreczeniaCheck() {
           <div className="mt-5 border-t border-gray-200/70 dark:border-gray-700/70 pt-4">
             <p className="text-sm text-gray-700 dark:text-gray-300">
               Samego adresu nie założę za Was, bo wniosek składa właściciel
-              skrzynki. Mogę natomiast spiąć ją z systemem, którego używacie, razem
+              skrzynki. Możemy natomiast spiąć ją z systemem, którego używacie, razem
               z pobieraniem dowodów doręczenia. Klient tego API, którego do tego
-              używam, leży otwarcie na{" "}
+              używamy, leży otwarcie na{" "}
               <a
                 href="https://github.com/rodorn/edoreczenia-klient"
                 target="_blank"
@@ -284,7 +284,7 @@ export default function EDoreczeniaCheck() {
 
             {leadStan === "ok" ? (
               <p className="mt-4 text-sm font-semibold text-emerald-700 dark:text-emerald-400">
-                Mam zgłoszenie razem z tym wynikiem. Odpiszę na {email}, zwykle tego
+                Mamy zgłoszenie razem z tym wynikiem. Odpiszemy na {email}, zwykle tego
                 samego dnia.
               </p>
             ) : (
@@ -293,7 +293,7 @@ export default function EDoreczeniaCheck() {
                   htmlFor="edoreczenia-email"
                   className="block text-sm font-medium text-gray-900 dark:text-white"
                 >
-                  Podaj maila, odpiszę, co w Waszym przypadku trzeba spiąć i za ile
+                  Podaj maila, odpiszemy, co w Waszym przypadku trzeba spiąć i za ile
                 </label>
                 <div className="mt-2 flex flex-col gap-3 sm:flex-row">
                   <input
@@ -307,10 +307,10 @@ export default function EDoreczeniaCheck() {
                   />
                   <button
                     type="submit"
-                    disabled={leadStan === "wysylam"}
+                    disabled={leadStan === "wysylamy"}
                     className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
                   >
-                    {leadStan === "wysylam" ? "Wysyłam..." : "Wyślij zgłoszenie"}
+                    {leadStan === "wysylamy" ? "Wysyłamy..." : "Wyślij zgłoszenie"}
                   </button>
                 </div>
                 {leadStan === "blad" && (

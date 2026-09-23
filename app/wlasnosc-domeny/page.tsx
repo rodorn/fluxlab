@@ -46,7 +46,7 @@ export default function Page() {
         },
         {
           title: "Przeniesienie na właściwą firmę",
-          desc: "Wniosek o zmianę abonenta, dokumenty rejestrowe, transfer do konta, do którego masz dostęp. Prowadzę sprawę i pilnuję terminów.",
+          desc: "Wniosek o zmianę abonenta, dokumenty rejestrowe, transfer do konta, do którego masz dostęp. Prowadzimy sprawę i pilnujemy terminów.",
         },
         {
           title: "Zabezpieczenie na przyszłość",
@@ -89,7 +89,7 @@ export default function Page() {
       ]}
       faq={[
         {
-          q: "Skąd bierzesz te dane?",
+          q: "Skąd bierzecie te dane?",
           a: "Z publicznego rejestru domen, tego samego, do którego każdy ma dostęp. Nie wymaga to logowania ani niczyjej zgody, bo są to dane jawne.",
         },
         {
@@ -98,18 +98,18 @@ export default function Page() {
         },
         {
           q: "Wykonawca nie chce oddać domeny, co wtedy?",
-          a: "Zaczynamy od pisma i procedury, bo w większości przypadków to wystarcza, a sprawa bierze się z zaniedbania, nie ze złej woli. Jeśli jednak ktoś odmawia, pozostaje droga przed sądem polubownym do spraw domen i wtedy mówię wprost, że to koszt rzędu kilku tysięcy i miesiące, a moja rola się kończy.",
+          a: "Zaczynamy od pisma i procedury, bo w większości przypadków to wystarcza, a sprawa bierze się z zaniedbania, nie ze złej woli. Jeśli jednak ktoś odmawia, pozostaje droga przed sądem polubownym do spraw domen i wtedy mówimy wprost, że to koszt rzędu kilku tysięcy i miesiące, a nasza rola się kończy.",
         },
         {
           q: "Czy przeniesienie wyłączy stronę albo pocztę?",
-          a: "Prawidłowo przeprowadzone nie. Zmienia się właściciel i miejsce, w którym opłacasz domenę, a ustawienia kierujące ruch zostają nietknięte. Przenoszę je najpierw, zanim cokolwiek się przełączy.",
+          a: "Prawidłowo przeprowadzone nie. Zmienia się właściciel i miejsce, w którym opłacasz domenę, a ustawienia kierujące ruch zostają nietknięte. Przenosimy je najpierw, zanim cokolwiek się przełączy.",
         },
       ]}
       formId="order_wlasnosc_domeny"
       formHeading="Zamów przeniesienie domeny"
-      formIntro="Napisz, o którą domenę chodzi i czy masz kontakt z firmą, która ją zarejestrowała. Odeślę plan działania i wycenę."
+      formIntro="Napisz, o którą domenę chodzi i czy masz kontakt z firmą, która ją zarejestrowała. Odeślemy plan działania i wycenę."
       submitLabel="Zamów przeniesienie"
-      microCopy="Do sprawdzenia nie potrzebuję niczego poza adresem. Dokumenty są potrzebne dopiero przy samej zmianie abonenta."
+      microCopy="Do sprawdzenia nie potrzebujemy niczego poza adresem. Dokumenty są potrzebne dopiero przy samej zmianie abonenta."
       serviceName="Przeniesienie domeny na właściwego właściciela"
       serviceDesc="Ustalenie abonenta domeny w rejestrze oraz przeprowadzenie zmiany abonenta i transferu do konta klienta, wraz z zabezpieczeniem odnawiania. Od 490 zł."
       serviceType="Obsługa zmiany abonenta i transferu domeny"

@@ -48,7 +48,7 @@ export default function PoleAudytu() {
         </button>
       </form>
       <p className="mt-2 text-xs text-gray-500 dark:text-white/50">
-        Zmierzę szybkość na komputerze i na telefonie, certyfikat, widoczność w
+        Zmierzymy szybkość na komputerze i na telefonie, certyfikat, widoczność w
         wyszukiwarce i u asystentów AI oraz zabezpieczenia poczty. Raport na
         ekranie w kilkadziesiąt sekund, bez rejestracji i bez podawania adresu
         e-mail.

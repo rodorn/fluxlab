@@ -66,7 +66,7 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         error:
-          "Rejestr Ministerstwa Finansów nie odpowiedział. Spróbuj za chwilę albo zamów pełny raport, wtedy sprawdzę to ręcznie.",
+          "Rejestr Ministerstwa Finansów nie odpowiedział. Spróbuj za chwilę albo zamów pełny raport, wtedy sprawdzimy to ręcznie.",
       },
       { status: 502 },
     );

@@ -53,7 +53,7 @@ export default function ZapierMakeN8nPorownanieArticle() {
         "Tylko n8n. Zapier i Make to wyłącznie SaaS, nie ma wersji on-prem. n8n Community Edition i Enterprise Edition można instalować w pełni wewnętrznie, w sieci klienta, bez dostępu do internetu (jeśli nie ma webhooków przychodzących). To często decyduje w branżach regulowanych.",
     },
     {
-      question: "Czy mogę zacząć od Zapiera i przejść na Make/n8n później?",
+      question: "Czy możemy zacząć od Zapiera i przejść na Make/n8n później?",
       answer:
         "Tak, to częsta ścieżka. Wiele firm zaczyna od Zapiera (najszybszy start), a po roku-dwóch, gdy procesy się ustabilizują i wolumen urośnie, migruje wybrane scenariusze do Make lub n8n. Nie ma automatycznego importera, ale doświadczenie z Zapiera bardzo przyspiesza budowę w nowym narzędziu.",
     },
@@ -268,7 +268,7 @@ export default function ZapierMakeN8nPorownanieArticle() {
                         Zapier, pierwsza automatyzacja w 10–15 minut, bez
                         dokumentacji, bez konfiguracji. Wybierasz trigger,
                         akcję, mapujesz pola, koniec. To absolutny zwycięzca w
-                        kategorii „chcę mieć działające coś na wczoraj".
+                        kategorii „chcemy mieć działające coś na wczoraj".
                       </p>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Make, pierwszy scenariusz w 30–45 minut. Trzeba
@@ -511,7 +511,7 @@ export default function ZapierMakeN8nPorownanieArticle() {
                           Chcesz dobrać narzędzie pod swoje realne procesy?
                         </h2>
                         <p className="text-gray-600 dark:text-gray-400 mb-4">
-                          Zrobię audyt Twoich procesów, policzę 12-miesięczny
+                          Zrobimy audyt Twoich procesów, policzymy 12-miesięczny
                           koszt każdego z trzech narzędzi i pomogę zbudować
                           pierwsze scenariusze. Bez sprzedażowej presji.
                         </p>

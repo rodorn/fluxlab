@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Czy klient ustali, komu płaci, sprawdź za darmo | Fluxlab",
     description:
-      "Wyciągam NIP i numer konta ze strony, kontaktu i regulaminu, po czym sprawdzam je w wykazie podatników VAT. Od ręki, bez rejestracji.",
+      "Wyciągamy NIP i numer konta ze strony, kontaktu i regulaminu, po czym sprawdzamy je w wykazie podatników VAT. Od ręki, bez rejestracji.",
     locale: "pl_PL",
     type: "website",
     images: [
@@ -38,11 +38,11 @@ export default function Page() {
       checks={[
         {
           title: "Czy NIP jest gdziekolwiek na stronie",
-          desc: "Sprawdzam stronę główną, kontakt, regulamin i politykę prywatności, bo dane rejestrowe najczęściej leżą właśnie tam, a nie na widoku.",
+          desc: "Sprawdzamy stronę główną, kontakt, regulamin i politykę prywatności, bo dane rejestrowe najczęściej leżą właśnie tam, a nie na widoku.",
         },
         {
           title: "Kto naprawdę kryje się za tym NIP-em",
-          desc: "Odpytuję wykaz podatników i pokazuję nazwę, adres, status VAT oraz liczbę zgłoszonych rachunków. Zdarza się, że na stronie dealera stoi NIP importera, czyli zupełnie innej spółki.",
+          desc: "Odpytuję wykaz podatników i pokazujemy nazwę, adres, status VAT oraz liczbę zgłoszonych rachunków. Zdarza się, że na stronie dealera stoi NIP importera, czyli zupełnie innej spółki.",
         },
         {
           title: "Czy numer konta pasuje do NIP-u",
@@ -90,26 +90,26 @@ export default function Page() {
       faq={[
         {
           q: "Czy brak NIP-u na stronie jest niezgodny z prawem?",
-          a: "Przepisy o świadczeniu usług drogą elektroniczną wymagają podania danych identyfikujących usługodawcę, natomiast nie będę tego sprzedawał jako straszaka karą, bo nie sprawdzałem, czy i jak bywa to egzekwowane. Powód, dla którego warto to poprawić, jest praktyczny: to jest tarcie przy płatności, a nie ryzyko mandatu.",
+          a: "Przepisy o świadczeniu usług drogą elektroniczną wymagają podania danych identyfikujących usługodawcę, natomiast nie będziemy tego sprzedawał jako straszaka karą, bo nie sprawdzałem, czy i jak bywa to egzekwowane. Powód, dla którego warto to poprawić, jest praktyczny: to jest tarcie przy płatności, a nie ryzyko mandatu.",
         },
         {
           q: "Wykaz pokazuje status inny niż Czynny, co to znaczy?",
           a: "Niekoniecznie coś złego. Taki status zwracają także duże, działające firmy, na przykład przez sposób rozliczania w grupie. Dlatego nie nazywam tego z góry problemem, tylko sygnałem do wyjaśnienia. Istotne jest to, że Twój klient zobaczy dokładnie to samo i bez wyjaśnienia wyciągnie własne wnioski.",
         },
         {
-          q: "Sprawdzasz tylko sześć podstron, a moje dane są gdzie indziej.",
+          q: "Sprawdzacie tylko sześć podstron, a nasze dane są gdzie indziej.",
           a: "Wtedy narzędzie ich nie znajdzie i tak to zapisze. Nie czyta też regulaminów w plikach PDF ani danych wklejonych jako obrazek. Jeżeli u Was jest właśnie tak, to samo w sobie jest wnioskiem, bo narzędzia po stronie kupującego czytają stronę podobnie jak ja.",
         },
         {
-          q: "Skąd bierzesz dane rejestrowe?",
+          q: "Skąd bierzecie dane rejestrowe?",
           a: "Z publicznego wykazu podatników VAT prowadzonego przez Ministerstwo Finansów, przez jego oficjalny interfejs. Bez logowania, bez opłat i bez żadnych danych osobowych po drodze.",
         },
       ]}
       formId="order_dane_sprzedawcy"
       formHeading="Zamów uzupełnienie danych"
-      formIntro="Napisz, ile macie domen i na czym stoi strona, a odeślę przegląd wszystkich adresów razem z gotowym fragmentem do wklejenia."
+      formIntro="Napisz, ile macie domen i na czym stoi strona, a odeślemy przegląd wszystkich adresów razem z gotowym fragmentem do wklejenia."
       submitLabel="Zamów uzupełnienie"
-      microCopy="Do sprawdzenia nie potrzebuję żadnych dostępów, bo pracuję na tym, co i tak widzi każdy odwiedzający. Dostęp jest potrzebny dopiero przy wklejeniu poprawki."
+      microCopy="Do sprawdzenia nie potrzebujemy żadnych dostępów, bo pracujemy na tym, co i tak widzi każdy odwiedzający. Dostęp jest potrzebny dopiero przy wklejeniu poprawki."
       serviceName="Uzupełnienie danych rejestrowych na stronie firmowej"
       serviceDesc="Przegląd wszystkich domen firmy pod kątem danych identyfikujących sprzedawcę, zestawienie ich z wykazem podatników VAT oraz przygotowanie gotowej stopki i znaczników do wdrożenia. Od 290 zł."
       serviceType="Uzupełnienie i weryfikacja danych rejestrowych na stronie"

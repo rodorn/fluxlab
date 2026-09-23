@@ -49,20 +49,20 @@ const EXAMPLES = [
   },
   {
     label: "Ceny konkurencji",
-    text: "Codziennie sprawdzam ceny konkurencji na ich stronach i wpisuję do arkusza.",
+    text: "Codziennie sprawdzamy ceny konkurencji na ich stronach i wpisuję do arkusza.",
   },
 ];
 
 const LOADING_PHASES = [
-  "Analizuję proces...",
+  "Analizujemy proces...",
   "Mapuję go na automatyzację...",
-  "Liczę szacowaną oszczędność...",
+  "Liczymy szacowaną oszczędność...",
   "Składam rekomendację...",
 ];
 
 export default function LiveDiagnosis() {
   const [email, setEmail] = useState("");
-  const [leadStan, setLeadStan] = useState<"idle" | "wysylam" | "ok" | "blad">(
+  const [leadStan, setLeadStan] = useState<"idle" | "wysylamy" | "ok" | "blad">(
     "idle",
   );
   const [leadBlad, setLeadBlad] = useState("");
@@ -139,7 +139,7 @@ export default function LiveDiagnosis() {
   async function zamowDiagnoze(e: React.FormEvent) {
     e.preventDefault();
     if (!result) return;
-    setLeadStan("wysylam");
+    setLeadStan("wysylamy");
     setLeadBlad("");
     try {
       const res = await fetch("/api/contact", {
@@ -256,7 +256,7 @@ export default function LiveDiagnosis() {
               disabled={tooShort || loading}
               className="btn-primary w-full mt-5 py-3.5 text-base disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {loading ? "Analizuję..." : "Pokaż mi automatyzację"}
+              {loading ? "Analizujemy..." : "Pokaż mi automatyzację"}
             </button>
 
             {errorMsg && (
@@ -421,7 +421,7 @@ export default function LiveDiagnosis() {
 
                 {leadStan === "ok" ? (
                   <p className="mt-6 rounded-xl border border-emerald-500/50 bg-emerald-50 dark:bg-emerald-950/30 p-4 text-sm font-semibold text-emerald-700 dark:text-emerald-400">
-                    Mam zgłoszenie razem z tą analizą. Odpiszę na {email},
+                    Mamy zgłoszenie razem z tą analizą. Odpiszemy na {email},
                     zwykle tego samego dnia.
                   </p>
                 ) : (
@@ -430,7 +430,7 @@ export default function LiveDiagnosis() {
                       htmlFor="diagnoza-email"
                       className="block text-sm font-medium text-gray-700 dark:text-gray-300"
                     >
-                      Podaj maila, odeślę pełną diagnozę tego procesu
+                      Podaj maila, odeślemy pełną diagnozę tego procesu
                     </label>
                     <div className="mt-2 flex flex-col gap-3 sm:flex-row">
                       <input
@@ -444,11 +444,11 @@ export default function LiveDiagnosis() {
                       />
                       <button
                         type="submit"
-                        disabled={leadStan === "wysylam"}
+                        disabled={leadStan === "wysylamy"}
                         className="btn-primary justify-center px-6 py-3.5 text-base disabled:opacity-50"
                       >
-                        {leadStan === "wysylam"
-                          ? "Wysyłam..."
+                        {leadStan === "wysylamy"
+                          ? "Wysyłamy..."
                           : "Zamów bezpłatną diagnozę"}
                       </button>
                     </div>
@@ -461,9 +461,9 @@ export default function LiveDiagnosis() {
                 )}
 
                 <p className="mt-4 text-center text-xs text-gray-600 dark:text-gray-400">
-                  To wstępna, automatyczna analiza. Wysyłam ją razem z Twoim
+                  To wstępna, automatyczna analiza. Wysyłamy ją razem z Twoim
                   zgłoszeniem, więc nie musisz opisywać wszystkiego od nowa.
-                  Pełną diagnozę procesu robię osobiście i jest bezpłatna.
+                  Pełną diagnozę procesu robimy osobiście i jest bezpłatna.
                 </p>
               </div>
             </div>

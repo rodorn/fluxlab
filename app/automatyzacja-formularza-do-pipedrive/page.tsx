@@ -133,9 +133,9 @@ const mistakes = [
 
 const faq = [
   {
-    question: "Czy potrzebuję Zapiera albo Make do tej integracji?",
+    question: "Czy potrzebujemy Zapiera albo Make do tej integracji?",
     answer:
-      "Nie, Pipedrive ma pełne REST API i webhooki, więc formularz może rozmawiać z CRM-em bezpośrednio. Zapier/Make ma sens, gdy klejesz wiele systemów i nie chcesz pisać kodu, ale przy samym formularzu to dodatkowy koszt miesięczny i kolejna warstwa, która może się zepsuć. W większości projektów stawiam dedykowany endpoint w n8n albo lekki backend i to wystarcza.",
+      "Nie, Pipedrive ma pełne REST API i webhooki, więc formularz może rozmawiać z CRM-em bezpośrednio. Zapier/Make ma sens, gdy klejesz wiele systemów i nie chcesz pisać kodu, ale przy samym formularzu to dodatkowy koszt miesięczny i kolejna warstwa, która może się zepsuć. W większości projektów stawiamy dedykowany endpoint w n8n albo lekki backend i to wystarcza.",
   },
   {
     question: "Co z RODO i zgodami?",
@@ -161,7 +161,7 @@ const faq = [
   {
     question: "Ile to kosztuje?",
     answer:
-      "Najmniejszy zakres (jeden formularz, podstawowa logika, walidacja, custom fields), od 3 do 6 tys. zł. Pełna integracja z routingiem, deduplikacją, eskalacją i raportami źródeł, 8–15 tys. zł zależnie od liczby źródeł leadów. Dokładną wycenę podaję po krótkim audycie.",
+      "Najmniejszy zakres (jeden formularz, podstawowa logika, walidacja, custom fields), od 3 do 6 tys. zł. Pełna integracja z routingiem, deduplikacją, eskalacją i raportami źródeł, 8–15 tys. zł zależnie od liczby źródeł leadów. Dokładną wycenę podajemy po krótkim audycie.",
   },
 ];
 
@@ -224,18 +224,18 @@ export default function AutomatyzacjaFormularzaDoPipedrive() {
                 integrację API.
               </p>
               <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                Pokażę ci, jak ten kawałek wygląda, gdy zadziała sam, od
+                Pokażemy ci, jak ten kawałek wygląda, gdy zadziała sam, od
                 kliknięcia „Wyślij” po zadanie u handlowca z mierzalnym SLA.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
                 <TrackedCTA
                   href="#sekcje"
                   location="article_formularz_pipedrive_hero"
-                  label="Chcę połączyć formularz z CRM"
+                  label="Chcemy połączyć formularz z CRM"
                   eventName="cta_click_article_audit"
                   className="btn-primary text-base px-7 py-3"
                 >
-                  Chcę połączyć formularz z CRM
+                  Chcemy połączyć formularz z CRM
                 </TrackedCTA>
                 <Link href="/automatyzacja-pipedrive" className="btn-secondary">
                   Zobacz pełną ofertę Pipedrive
@@ -728,11 +728,11 @@ export default function AutomatyzacjaFormularzaDoPipedrive() {
                             <TrackedCTA
                               href="/kontakt"
                               location="article_formularz_pipedrive_pricing_primary"
-                              label="Chcę połączyć formularz z CRM"
+                              label="Chcemy połączyć formularz z CRM"
                               eventName="cta_click_article_audit"
                               className="btn-primary"
                             >
-                              Chcę połączyć formularz z CRM
+                              Chcemy połączyć formularz z CRM
                             </TrackedCTA>
                           </div>
                           <p className="mt-6 text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
@@ -828,11 +828,11 @@ export default function AutomatyzacjaFormularzaDoPipedrive() {
                           <TrackedCTA
                             href="/kontakt"
                             location="article_formularz_pipedrive_final"
-                            label="Chcę połączyć formularz z CRM"
+                            label="Chcemy połączyć formularz z CRM"
                             eventName="cta_click_article_audit"
                             className="btn-primary text-base px-7 py-3"
                           >
-                            Chcę połączyć formularz z CRM
+                            Chcemy połączyć formularz z CRM
                           </TrackedCTA>
                         </div>
                       </div>

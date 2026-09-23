@@ -81,9 +81,9 @@ export async function POST(request: Request) {
     return NextResponse.json({
       status: "INNA_KONCOWKA",
       domena,
-      naglowek: "Na razie sprawdzam tylko domeny polskie",
+      naglowek: "Na razie sprawdzamy tylko domeny polskie",
       opis:
-        "Rejestr, z którego korzystam, obejmuje domeny z końcówką pl. Dla innych końcówek sprawdzę to ręcznie, jeśli napiszesz.",
+        "Rejestr, z którego korzystam, obejmuje domeny z końcówką pl. Dla innych końcówek sprawdzimy to ręcznie, jeśli napiszesz.",
     });
   }
 
@@ -98,7 +98,7 @@ export async function POST(request: Request) {
       status: "BRAK_ODPOWIEDZI",
       domena,
       naglowek: "Rejestr nie odpowiedział",
-      opis: "Spróbuj za chwilę. Jeśli to się powtórzy, sprawdzę ręcznie.",
+      opis: "Spróbuj za chwilę. Jeśli to się powtórzy, sprawdzimy ręcznie.",
     });
   }
 
@@ -117,7 +117,7 @@ export async function POST(request: Request) {
     return NextResponse.json({
       status: "BRAK_DOMENY",
       domena,
-      naglowek: "Nie znalazłem takiej domeny w rejestrze",
+      naglowek: "Nie znaleźliśmy takiej domeny w rejestrze",
       opis:
         "Sprawdź pisownię. Jeśli adres jest poprawny, może to być subdomena, a wtedy liczy się właściciel domeny nadrzędnej.",
     });

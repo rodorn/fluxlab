@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Dziękuję, zgłoszenie odebrane | Fluxlab",
   description:
-    "Twoje zgłoszenie do diagnozy procesu trafiło do mnie. Odpowiedź w ciągu 24h.",
+    "Twoje zgłoszenie do diagnozy procesu trafiło do nas. Odpowiedź w ciągu 24h.",
   robots: {
     index: false,
     follow: false,
@@ -43,14 +43,14 @@ export default function Dziekuje() {
               </div>
 
               <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                Mam Twoje zgłoszenie
+                Mamy Twoje zgłoszenie
               </h1>
 
               <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
-                Odezwę się z odpowiedzią w ciągu 24h. Jeśli widzę potencjał na
-                automatyzację, odpiszę z konkretnym zakresem i wyceną. Jeśli
-                nie, napiszę wprost, dlaczego nie warto tego automatyzować na
-                tym etapie. Wszystko ustalam mailowo, więc nie musisz nigdzie
+                Odezwę się z odpowiedzią w ciągu 24h. Jeśli widzimy potencjał na
+                automatyzację, odpiszemy z konkretnym zakresem i wyceną. Jeśli
+                nie, napiszemy wprost, dlaczego nie warto tego automatyzować na
+                tym etapie. Wszystko ustalamy mailowo, więc nie musisz nigdzie
                 dzwonić ani rezerwować terminu.
               </p>
 
@@ -68,7 +68,7 @@ export default function Dziekuje() {
 
               <div className="space-y-3">
                 <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">
-                  Zanim odpiszę, zobacz:
+                  Zanim odpiszemy, zobacz:
                 </p>
 
                 <Link
@@ -109,7 +109,7 @@ export default function Dziekuje() {
               </div>
 
               <p className="mt-8 text-xs text-gray-600 dark:text-gray-400 text-center">
-                Brak maila ode mnie po 24h? Sprawdź spam albo napisz wprost na{" "}
+                Brak maila od nas po 24h? Sprawdź spam albo napisz wprost na{" "}
                 <a
                   href="mailto:pawel@fluxlab.pl"
                   className="text-accent hover:underline"

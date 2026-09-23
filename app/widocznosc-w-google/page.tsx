@@ -90,10 +90,10 @@ export default function Page() {
       faq={[
         {
           q: "Czy to znaczy, że na pewno wypadłem z wyników?",
-          a: "Sprawdzam, co Twoja strona mówi wyszukiwarce dzisiaj. Jeśli blokada pojawiła się niedawno, część podstron może być jeszcze w wynikach, ale zniknie przy kolejnym odwiedzeniu. Im dłużej to trwa, tym dłużej potem trwa powrót.",
+          a: "Sprawdzamy, co Twoja strona mówi wyszukiwarce dzisiaj. Jeśli blokada pojawiła się niedawno, część podstron może być jeszcze w wynikach, ale zniknie przy kolejnym odwiedzeniu. Im dłużej to trwa, tym dłużej potem trwa powrót.",
         },
         {
-          q: "Sam widzę swoją stronę w Google, więc chyba wszystko gra?",
+          q: "Sam widzimy swoją stronę w Google, więc chyba wszystko gra?",
           a: "Niekoniecznie. Wpisanie własnej nazwy firmy to co innego niż wyszukiwanie usługi, której ktoś szuka. Poza tym wyniki bywają zapamiętane w przeglądarce. Sprawdzenie wyżej patrzy na kod, a nie na to, co widzisz.",
         },
         {
@@ -101,15 +101,15 @@ export default function Page() {
           a: "Nie. To jest zmiana jednego ustawienia albo jednej linii, w zależności od tego, gdzie siedzi blokada. Wygląd i treść zostają nietknięte.",
         },
         {
-          q: "Co jeśli nic nie znajdziesz, a mimo to nie widać mnie w wynikach?",
-          a: "Wtedy nie płacisz, bo nie ma czego naprawiać w tym zakresie. Przyczyna leży gdzie indziej i powiem Ci wprost, od czego zacząć szukać, zamiast sprzedawać Ci usługę, która nie pomoże.",
+          q: "Co jeśli nic nie znajdziecie, a mimo to nie widać mnie w wynikach?",
+          a: "Wtedy nie płacisz, bo nie ma czego naprawiać w tym zakresie. Przyczyna leży gdzie indziej i powiemy Ci wprost, od czego zacząć szukać, zamiast sprzedawać Ci usługę, która nie pomoże.",
         },
       ]}
       formId="order_widocznosc"
       formHeading="Zamów naprawę widoczności"
-      formIntro="Podaj adres strony i napisz, na czym jest zbudowana, jeśli wiesz. Odeślę dokładnie, co i gdzie trzeba zmienić, oraz wycenę."
+      formIntro="Podaj adres strony i napisz, na czym jest zbudowana, jeśli wiesz. Odeślemy dokładnie, co i gdzie trzeba zmienić, oraz wycenę."
       submitLabel="Zamów naprawę"
-      microCopy="Do sprawdzenia nie potrzebuję żadnych dostępów. Dostępy są potrzebne dopiero do samej naprawy."
+      microCopy="Do sprawdzenia nie potrzebujemy żadnych dostępów. Dostępy są potrzebne dopiero do samej naprawy."
       serviceName="Usunięcie blokady indeksowania strony"
       serviceDesc="Wykrycie i usunięcie poleceń blokujących indeksowanie strony w wyszukiwarce, w kodzie strony, nagłówkach serwera i pliku robots, wraz ze zgłoszeniem do ponownego odwiedzenia. Od 190 zł."
       serviceType="Naprawa widoczności strony w wyszukiwarce"

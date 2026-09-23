@@ -90,27 +90,27 @@ export default function Page() {
       ]}
       faq={[
         {
-          q: "Czego potrzebujesz, żeby zrobić audyt?",
+          q: "Czego potrzebujecie, żeby zrobić audyt?",
           a: "Eksportu zamówień i zwrotów z dowolnego okresu, najlepiej pół roku. Im więcej danych, tym pewniejsze wnioski o tym, które produkty wracają systematycznie, a które przypadkiem.",
         },
         {
-          q: "Czy panel zadziała z moim sklepem?",
-          a: "Najpewniej tak, bo wchodzi na poziomie systemu zamówień, a nie samego sklepu. Napisz, na czym sprzedajesz i czy używasz systemu do obsługi zamówień, powiem wprost, czy to prosty przypadek, czy nie.",
+          q: "Czy panel zadziała z naszym sklepem?",
+          a: "Najpewniej tak, bo wchodzi na poziomie systemu zamówień, a nie samego sklepu. Napisz, na czym sprzedajesz i czy używasz systemu do obsługi zamówień, powiemy wprost, czy to prosty przypadek, czy nie.",
         },
         {
           q: "Czy to jest porada prawna o regulaminie?",
-          a: "Nie. Sprawdzam, czy informacja jest podana i łatwa do znalezienia. Ocena samej treści regulaminu należy do prawnika i tak też to opisuję w raporcie.",
+          a: "Nie. Sprawdzamy, czy informacja jest podana i łatwa do znalezienia. Ocena samej treści regulaminu należy do prawnika i tak też to opisuję w raporcie.",
         },
         {
           q: "Co z danymi kupujących?",
-          a: "Do audytu wystarczą dane o zamówieniach i produktach. Jeśli w eksporcie są dane osobowe, usuwam je przy wczytywaniu, a pliki kasuję po dostarczeniu raportu. Przy wdrożeniu podpisujemy umowę powierzenia.",
+          a: "Do audytu wystarczą dane o zamówieniach i produktach. Jeśli w eksporcie są dane osobowe, usuwamy je przy wczytywaniu, a pliki kasujemy po dostarczeniu raportu. Przy wdrożeniu podpisujemy umowę powierzenia.",
         },
       ]}
       formId="order_panel_zwrotow"
       formHeading="Zamów audyt zwrotów"
-      formIntro="Napisz, na czym sprzedajesz, ile mniej więcej masz zamówień miesięcznie i jak dziś wygląda zgłoszenie zwrotu. Odeślę wycenę i uczciwą opinię, czy panel Ci się opłaci."
+      formIntro="Napisz, na czym sprzedajesz, ile mniej więcej masz zamówień miesięcznie i jak dziś wygląda zgłoszenie zwrotu. Odeślemy wycenę i uczciwą opinię, czy panel Ci się opłaci."
       submitLabel="Zamów audyt"
-      microCopy="Do wyceny nie potrzebuję dostępów, wystarczy opis procesu."
+      microCopy="Do wyceny nie potrzebujemy dostępów, wystarczy opis procesu."
       serviceName="Audyt i wdrożenie samoobsługowego procesu zwrotów"
       serviceDesc="Analiza przyczyn zwrotów oraz wdrożenie panelu, w którym kupujący zgłasza zwrot, otrzymuje etykietę i śledzi status, wraz z raportowaniem przyczyn. Od 490 zł."
       serviceType="Automatyzacja obsługi zwrotów w sklepie internetowym"

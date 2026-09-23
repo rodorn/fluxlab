@@ -54,17 +54,17 @@ const faq = [
   {
     question: "Ile czasu zajmuje wdrożenie?",
     answer:
-      "Poprawka albo nowa podstrona: zwykle ten sam lub następny dzień. Landing z formularzem i płatnością: 3-5 dni roboczych. Strona firmowa z kilkoma podstronami: 2-3 tygodnie. Czas zależy głównie od tego, jak szybko dostaję treści i decyzje po Twojej stronie.",
+      "Poprawka albo nowa podstrona: zwykle ten sam lub następny dzień. Landing z formularzem i płatnością: 3-5 dni roboczych. Strona firmowa z kilkoma podstronami: 2-3 tygodnie. Czas zależy głównie od tego, jak szybko dostajemy treści i decyzje po Twojej stronie.",
   },
   {
-    question: "Czy mogę modyfikować treści samodzielnie?",
+    question: "Czy możemy modyfikować treści samodzielnie?",
     answer:
       "Tak. Dla strony firmowej podpinam prosty CMS (Sanity albo Notion), w którym edytujesz teksty jak dokument. Dla landing page-a treści edytujesz przez interfejs GitHuba.",
   },
   {
     question: "Hosting i domena?",
     answer:
-      "Hosting w cenie wdrożenia, bo Vercel ma darmowy plan wystarczający dla większości stron. Domenę kupujesz na siebie (50-150 zł/rok), pomagam z konfiguracją.",
+      "Hosting w cenie wdrożenia, bo Vercel ma darmowy plan wystarczający dla większości stron. Domenę kupujesz na siebie (50-150 zł/rok), pomagamy z konfiguracją.",
   },
 ];
 
@@ -132,10 +132,10 @@ export default function StronyWww() {
             ariaLabel="Sekcje oferty stron WWW"
             tabs={[
               {
-                label: "Co oferuję",
+                label: "Co oferujemy",
                 content: (
                   <div className="py-10 lg:py-12">
-                    <p className="section-label mb-3">Co oferuję</p>
+                    <p className="section-label mb-3">Co oferujemy</p>
                     <h2 className="display-lg text-gray-900 dark:text-white mb-8">
                       Krótko i konkretnie
                     </h2>
@@ -248,7 +248,7 @@ export default function StronyWww() {
                     <LandingForm
                       formId="diagnosis_web"
                       heading="Bezpłatna diagnoza strony WWW"
-                      intro="Krótko opisz, jakiej strony potrzebujesz albo co Cię uwiera w obecnej. Wrócę w ciągu 24h z kolejnym krokiem."
+                      intro="Krótko opisz, jakiej strony potrzebujesz albo co Cię uwiera w obecnej. Wrócimy w ciągu 24h z kolejnym krokiem."
                       submitLabel="Zamów diagnozę"
                     />
                   </div>

@@ -11,11 +11,11 @@ import CzasRaportowAgencji from "@/components/CzasRaportowAgencji";
 export const metadata: Metadata = {
   title: "Automatyzacja dla agencji marketingowych | Fluxlab",
   description:
-    "Raporty z Google Ads, Meta Ads i GA4, onboarding klienta, śledzenie godzin i fakturowanie retainerów. Spinam HubSpot, Pipedrive, ClickUp, Asanę i Slacka.",
+    "Raporty z Google Ads, Meta Ads i GA4, onboarding klienta, śledzenie godzin i fakturowanie retainerów. Spinamy HubSpot, Pipedrive, ClickUp, Asanę i Slacka.",
   openGraph: {
     title: "Automatyzacja dla agencji marketingowych | Fluxlab",
     description:
-      "Raporty z Google Ads, Meta Ads i GA4, onboarding klienta, śledzenie godzin i fakturowanie retainerów. Spinam HubSpot, Pipedrive, ClickUp, Asanę i Slacka.",
+      "Raporty z Google Ads, Meta Ads i GA4, onboarding klienta, śledzenie godzin i fakturowanie retainerów. Spinamy HubSpot, Pipedrive, ClickUp, Asanę i Slacka.",
     locale: "pl_PL",
     type: "article",
     images: [
@@ -64,7 +64,7 @@ const painPoints = [
   {
     pain: "Każdy poniedziałek to ręczne klepanie 12 raportów dla klientów",
     solution:
-      "Buduję szablon raportu (Looker Studio, Google Slides z podpiętym arkuszem albo PDF generowany z n8n) i automatyzuję pobieranie danych z Google Ads, Meta Ads, GA4 oraz Search Console. Raport powstaje sam w nocy z niedzieli na poniedziałek. Account manager dodaje komentarz strategiczny zamiast spędzać 4 godziny w Slidesach.",
+      "Budujemy szablon raportu (Looker Studio, Google Slides z podpiętym arkuszem albo PDF generowany z n8n) i automatyzujemy pobieranie danych z Google Ads, Meta Ads, GA4 oraz Search Console. Raport powstaje sam w nocy z niedzieli na poniedziałek. Account manager dodaje komentarz strategiczny zamiast spędzać 4 godziny w Slidesach.",
   },
   {
     pain: "Nowy klient, i znowu pół dnia tworzenia kont, kanałów, folderów",
@@ -74,7 +74,7 @@ const painPoints = [
   {
     pain: "15 klientów, 15 kanałów Slacka, 15 boardów, i nikt nie ogarnia, gdzie co stoi",
     solution:
-      "Spinam ClickUp/Asanę z dashboardem, który dla każdego account managera pokazuje status wszystkich jego klientów: deadline'y w tym tygodniu, blokery, zadania klienta wymagające reakcji, status kampanii. Dodatkowo automatyczne podsumowania do Slacka zamiast ręcznego sprawdzania 15 boardów.",
+      "Spinamy ClickUp/Asanę z dashboardem, który dla każdego account managera pokazuje status wszystkich jego klientów: deadline'y w tym tygodniu, blokery, zadania klienta wymagające reakcji, status kampanii. Dodatkowo automatyczne podsumowania do Slacka zamiast ręcznego sprawdzania 15 boardów.",
   },
   {
     pain: "Klienci nie widzą, że robicie robotę, pojawiają się dopiero gdy coś się sypie",
@@ -84,7 +84,7 @@ const painPoints = [
   {
     pain: "Czas i koszt na klienta jest niepoliczalny, wszystkie projekty wyglądają na rentowne, a wynik mówi co innego",
     solution:
-      "Łączę time tracking, koszt zespołu (godzinowy), wynagrodzenie umowne klienta (retainer + project fees) w jeden raport rentowności. Co miesiąc widzicie, na którym kliencie zarabiacie, a który zżera marżę. Decyzje biznesowe zaczynają być podejmowane na danych, nie na intuicji właściciela.",
+      "Łączymy time tracking, koszt zespołu (godzinowy), wynagrodzenie umowne klienta (retainer + project fees) w jeden raport rentowności. Co miesiąc widzicie, na którym kliencie zarabiacie, a który zżera marżę. Decyzje biznesowe zaczynają być podejmowane na danych, nie na intuicji właściciela.",
   },
 ];
 
@@ -97,7 +97,7 @@ const tools = [
   {
     name: "ClickUp i Asana",
     description:
-      "Centra zarządzania projektami klienckimi. ClickUp daje większą elastyczność i lepiej skaluje się przy 20+ klientach. Asana jest prostsza i szybciej wdrażalna. Automatyzuję templaty projektów, statusy, raportowanie i komunikację z klientem.",
+      "Centra zarządzania projektami klienckimi. ClickUp daje większą elastyczność i lepiej skaluje się przy 20+ klientach. Asana jest prostsza i szybciej wdrażalna. Automatyzujemy templaty projektów, statusy, raportowanie i komunikację z klientem.",
   },
   {
     name: "n8n",
@@ -112,7 +112,7 @@ const tools = [
   {
     name: "Looker Studio",
     description:
-      "Standard raportowania klienckiego w marketingu. Spinam Looker z Google Ads, Meta Ads (przez konektor), GA4, Search Console, CallTracking, CRM. Klient dostaje link do live dashboardu, agencja unika ręcznego klepania prezentacji.",
+      "Standard raportowania klienckiego w marketingu. Spinamy Looker z Google Ads, Meta Ads (przez konektor), GA4, Search Console, CallTracking, CRM. Klient dostaje link do live dashboardu, agencja unika ręcznego klepania prezentacji.",
   },
 ];
 
@@ -121,23 +121,23 @@ const faq = [
     question:
       "Pracujemy w HubSpot. Czy automatyzacja onboardingu wymaga zmiany CRM?",
     answer:
-      "Nie. HubSpot ma rozbudowane workflow własne, które dla części automatyzacji wystarczają. Dla rzeczy, których HubSpot nie umie (np. tworzenie kanału Slack, struktur folderów Drive z odpowiednimi uprawnieniami, projektów w ClickUp), dokładam n8n lub Zapiera jako warstwę spinającą. CRM zostaje ten, który macie.",
+      "Nie. HubSpot ma rozbudowane workflow własne, które dla części automatyzacji wystarczają. Dla rzeczy, których HubSpot nie umie (np. tworzenie kanału Slack, struktur folderów Drive z odpowiednimi uprawnieniami, projektów w ClickUp), dokładamy n8n lub Zapiera jako warstwę spinającą. CRM zostaje ten, który macie.",
   },
   {
     question:
       "Mamy 30 klientów na retainerach. Czy raporty da się zautomatyzować dla wszystkich naraz?",
     answer:
-      "Tak. Standardowo buduję jeden szablon raportu (Looker Studio lub generowany PDF) i parametryzuję go po kliencie. Co tydzień system iteruje po liście klientów, podstawia ich dane z Google Ads/Meta Ads/GA4 i wysyła każdemu osobny raport. Dodanie 31. klienta to wpis w arkuszu, nie nowy projekt.",
+      "Tak. Standardowo budujemy jeden szablon raportu (Looker Studio lub generowany PDF) i parametryzuję go po kliencie. Co tydzień system iteruje po liście klientów, podstawia ich dane z Google Ads/Meta Ads/GA4 i wysyła każdemu osobny raport. Dodanie 31. klienta to wpis w arkuszu, nie nowy projekt.",
   },
   {
     question: "Ile to kosztuje przy agencji do 20 osób?",
     answer:
-      "Pojedynczy use case (np. tylko automatyczne raporty albo tylko onboarding) to 1–2 tygodnie pracy. Pełne wdrożenie (lead pipeline + onboarding + raporty + fakturowanie + dashboard rentowności) to zwykle 1–3 miesiące, rozbite na etapy. Koszt zależy głównie od liczby integracji i niestandardowej logiki, orientacyjną wycenę daję po godzinnej rozmowie.",
+      "Pojedynczy use case (np. tylko automatyczne raporty albo tylko onboarding) to 1–2 tygodnie pracy. Pełne wdrożenie (lead pipeline + onboarding + raporty + fakturowanie + dashboard rentowności) to zwykle 1–3 miesiące, rozbite na etapy. Koszt zależy głównie od liczby integracji i niestandardowej logiki, orientacyjną wycenę dajemy po godzinnej rozmowie.",
   },
   {
     question: "Co z bezpieczeństwem dostępów do kont reklamowych klientów?",
     answer:
-      "Automatyzacja działa na kontach, do których agencja ma już dostęp (zwykle przez Google Ads Manager, Meta Business Manager). Nie pobieram ani nie przechowuję haseł. Wszystkie integracje korzystają z OAuth, a refresh tokeny trzymam w bezpiecznym miejscu (n8n self-hosted lub vault). Dostęp jest revokowalny w każdej chwili przez klienta.",
+      "Automatyzacja działa na kontach, do których agencja ma już dostęp (zwykle przez Google Ads Manager, Meta Business Manager). Nie pobieramy ani nie przechowujemy haseł. Wszystkie integracje korzystają z OAuth, a refresh tokeny trzymamy w bezpiecznym miejscu (n8n self-hosted lub vault). Dostęp jest revokowalny w każdej chwili przez klienta.",
   },
   {
     question:
@@ -149,12 +149,12 @@ const faq = [
     question:
       "Co z agencjami, które łączą performance marketing z social media managementem?",
     answer:
-      "To wręcz idealny przypadek. Im więcej różnych typów usług w jednym kontrakcie, tym większy chaos w project managemencie i tym większy zysk z automatyzacji. Spinam zarówno performance (raporty z platform reklamowych), jak i SMM (statusy postów, harmonogramy publikacji, raporty zasięgów) w jeden widok dla account managera i klienta.",
+      "To wręcz idealny przypadek. Im więcej różnych typów usług w jednym kontrakcie, tym większy chaos w project managemencie i tym większy zysk z automatyzacji. Spinamy zarówno performance (raporty z platform reklamowych), jak i SMM (statusy postów, harmonogramy publikacji, raporty zasięgów) w jeden widok dla account managera i klienta.",
   },
   {
     question: "Czy ma sens, jeśli mamy tylko 5 klientów?",
     answer:
-      "Częściowo. Przy 5 klientach pełna automatyzacja onboardingu i raportowania może być przerostem formy nad treścią, godzinowy zysk będzie mały. Ale lead pipeline, fakturowanie i prosty dashboard rentowności mają sens nawet przy małej skali, bo zwykle to tu agencje tracą najwięcej pieniędzy na nieefektywności. Po krótkiej rozmowie powiem uczciwie, co warto, a co odpuścić do większej skali.",
+      "Częściowo. Przy 5 klientach pełna automatyzacja onboardingu i raportowania może być przerostem formy nad treścią, godzinowy zysk będzie mały. Ale lead pipeline, fakturowanie i prosty dashboard rentowności mają sens nawet przy małej skali, bo zwykle to tu agencje tracą najwięcej pieniędzy na nieefektywności. Po krótkiej rozmowie powiemy uczciwie, co warto, a co odpuścić do większej skali.",
   },
 ];
 
@@ -231,7 +231,7 @@ export default function AutomatyzacjaDlaAgencjiMarketingowych() {
                 </h1>
                 <p className="text-lg text-gray-600 dark:text-gray-300">
                   Raporty, onboarding i pilnowanie kilkunastu projektów naraz
-                  zabierają w agencji czas kompetentnym ludziom. Spinam
+                  zabierają w agencji czas kompetentnym ludziom. Spinamy
                   HubSpot, Pipedrive, ClickUp, Asanę, Slacka, Google Ads, Meta
                   Ads i GA4 tak, żeby zespół zajmował się klientem, a nie
                   klepaniem slajdów.
@@ -259,12 +259,12 @@ export default function AutomatyzacjaDlaAgencjiMarketingowych() {
             ariaLabel="Sekcje oferty dla agencji marketingowych"
             tabs={[
               {
-                label: "Co automatyzuję",
+                label: "Co automatyzujemy",
                 content: (
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                        Co automatyzuję w agencji marketingowej
+                        Co automatyzujemy w agencji marketingowej
                       </h2>
                       <p className="text-gray-500 dark:text-gray-400 mb-10">
                         Agencja to setki powtarzalnych mikro-procesów: nowy
@@ -336,12 +336,12 @@ export default function AutomatyzacjaDlaAgencjiMarketingowych() {
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                        Narzędzia, z którymi pracuję w agencjach
+                        Narzędzia, z którymi pracujemy w agencjach
                       </h2>
                       <p className="text-gray-500 dark:text-gray-400 mb-10">
                         Większość agencji używa podobnego stacku: CRM, project
                         management, time tracking, raportowanie, komunikacja,
-                        platformy reklamowe. Moja rola polega na spięciu tego,
+                        platformy reklamowe. Nasza rola polega na spięciu tego,
                         co już macie, nie na sprzedaży nowego oprogramowania.
                       </p>
 
@@ -377,7 +377,7 @@ export default function AutomatyzacjaDlaAgencjiMarketingowych() {
                         >
                           Zapier i Make
                         </Link>
-                        . Część integracji robię bezpośrednio na API platform
+                        . Część integracji robimy bezpośrednio na API platform
                         reklamowych, opisuję to na stronie{" "}
                         <Link
                           href="/integracje-api"
@@ -403,10 +403,10 @@ export default function AutomatyzacjaDlaAgencjiMarketingowych() {
                         Dla agencji marketingowych z portfelem przynajmniej
                         kilkunastu aktywnych klientów, gdzie ręczne
                         raportowanie, onboarding i fakturowanie zaczyna pożerać
-                        tygodnie pracy zespołu. Pracuję z agencjami
+                        tygodnie pracy zespołu. Pracujemy z agencjami
                         performance (Google Ads, Meta Ads, kampanie B2B),
                         agencjami SEO, social media oraz pełnoserwisowymi 360°.
-                        Szczególnie często wdrażam automatyzację procesów
+                        Szczególnie często wdrażamy automatyzację procesów
                         ofertowania (więcej w sekcji{" "}
                         <Link
                           href="/automatyzacja-leadow-crm"
@@ -567,7 +567,7 @@ export default function AutomatyzacjaDlaAgencjiMarketingowych() {
             "@type": "Service",
             name: "Automatyzacja dla agencji marketingowych",
             description:
-              "Raporty z Google Ads, Meta Ads i GA4, onboarding klienta, śledzenie godzin i fakturowanie retainerów. Spinam HubSpot, Pipedrive, ClickUp, Asanę i Slacka.",
+              "Raporty z Google Ads, Meta Ads i GA4, onboarding klienta, śledzenie godzin i fakturowanie retainerów. Spinamy HubSpot, Pipedrive, ClickUp, Asanę i Slacka.",
             provider: { "@id": "https://fluxlab.pl/#organization" },
             areaServed: { "@type": "Country", name: "PL" },
             serviceType:

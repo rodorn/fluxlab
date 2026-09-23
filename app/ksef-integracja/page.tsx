@@ -6,7 +6,7 @@ import { PODATNICY } from "@/lib/terminy-ksef";
 export const metadata: Metadata = {
   title: "Integracja z KSeF dla firm | Fluxlab",
   description:
-    "Faktury w KSeF obowiązują od 1 kwietnia 2026. Spinam Wasz system z API v2: wysyłka w FA(3), zapis numeru KSeF i UPO, odbiór faktur. Kod otwarty.",
+    "Faktury w KSeF obowiązują od 1 kwietnia 2026. Spinamy Wasz system z API v2: wysyłka w FA(3), zapis numeru KSeF i UPO, odbiór faktur. Kod otwarty.",
   alternates: { canonical: "/ksef-integracja" },
   openGraph: {
     title: "Integracja z KSeF dla firm | Fluxlab",
@@ -33,12 +33,12 @@ export default function KsefIntegracja() {
       breadcrumb="Integracja z KSeF"
       eyebrow="KSeF"
       h1="Integracja z KSeF"
-      lead="Krajowy System e-Faktur jest obowiązkowy, ale nikt nie każe przeklejać do niego faktur ręcznie z osobnej aplikacji. Spinam z nim system, którego już używacie, żeby faktura wychodziła tam, gdzie powstaje, a numer KSeF i UPO zapisywały się przy dokumencie."
+      lead="Krajowy System e-Faktur jest obowiązkowy, ale nikt nie każe przeklejać do niego faktur ręcznie z osobnej aplikacji. Spinamy z nim system, którego już używacie, żeby faktura wychodziła tam, gdzie powstaje, a numer KSeF i UPO zapisywały się przy dokumencie."
       ctaLabel="Sprawdź, co Was obowiązuje"
       ctaNote="Dwa kliknięcia, bez wpisywania czegokolwiek"
       checks={[
         {
-          title: "Napisałem klienta tego API i oddałem go za darmo",
+          title: "Napisaliśmy klienta tego API i oddałem go za darmo",
           desc: "Kod leży publicznie pod adresem github.com/rodorn/fluxlab-ksef-integracja: klient API v2 z uwierzytelnianiem tokenem, obsługą sesji, wysyłką faktury i pobraniem UPO, budowanie XML w schemacie FA(3) z walidacją struktury i numeru NIP, oraz gotowy przykład importu faktur kosztowych do pliku CSV. Repozytorium działa w trybie demo, bez konta w KSeF, więc można je uruchomić u siebie w kilka minut i ocenić przed rozmową z kimkolwiek.",
         },
         {
@@ -47,7 +47,7 @@ export default function KsefIntegracja() {
         },
         {
           title: "Faktura odrzucona wygląda jak wystawiona",
-          desc: "Sesja potrafi nie odpowiedzieć, a dokument zostać odrzucony na poziomie schematu. Jeżeli nie ma kolejki z ponowieniami i miejsca, w którym widać stan każdej faktury, odrzucenie przechodzi po cichu i wychodzi dopiero przy zamknięciu miesiąca. Buduję to jako kolejkę ze stanami, a nie jako jedno wywołanie po zapisaniu dokumentu.",
+          desc: "Sesja potrafi nie odpowiedzieć, a dokument zostać odrzucony na poziomie schematu. Jeżeli nie ma kolejki z ponowieniami i miejsca, w którym widać stan każdej faktury, odrzucenie przechodzi po cichu i wychodzi dopiero przy zamknięciu miesiąca. Budujemy to jako kolejkę ze stanami, a nie jako jedno wywołanie po zapisaniu dokumentu.",
         },
         {
           title: "Druga strona, czyli faktury kosztowe",
@@ -68,7 +68,7 @@ export default function KsefIntegracja() {
           price: "0 zł",
           desc: "Zanim cokolwiek zlecicie.",
           features: [
-            "Sprawdzam, czy Wasz system da się z tym spiąć i czym",
+            "Sprawdzamy, czy Wasz system da się z tym spiąć i czym",
             "Informacja, czy wystarczy Wam gotowy program zamiast wdrożenia",
             "Gotowy klient API do uruchomienia u siebie, publicznie",
           ],
@@ -105,19 +105,19 @@ export default function KsefIntegracja() {
         },
         {
           q: "Mamy program księgowy, który obsługuje KSeF. Po co nam integracja?",
-          a: "Najprawdopodobniej po nic i tak powiem, jeśli tak wyjdzie z rozpoznania. Integracja przydaje się wtedy, gdy faktury powstają poza programem księgowym, na przykład w sklepie, w systemie zamówień albo w CRM, i ktoś je dziś przenosi ręcznie. Drugi przypadek to faktury kosztowe, których program księgowy często nie pobiera sam.",
+          a: "Najprawdopodobniej po nic i tak powiemy, jeśli tak wyjdzie z rozpoznania. Integracja przydaje się wtedy, gdy faktury powstają poza programem księgowym, na przykład w sklepie, w systemie zamówień albo w CRM, i ktoś je dziś przenosi ręcznie. Drugi przypadek to faktury kosztowe, których program księgowy często nie pobiera sam.",
         },
         {
           q: "Czy to znaczy, że musimy zmienić program do faktur?",
           a: "Nie. Sens integracji polega właśnie na tym, żeby zostawić Wam narzędzie, w którym umiecie pracować, i dołożyć pod spodem warstwę rozmawiającą z KSeF. Zmiana programu jest osobną decyzją i jeżeli i tak ją rozważacie, lepiej najpierw ją podjąć, a dopiero potem spinać cokolwiek.",
         },
         {
-          q: "Skąd mam wiedzieć, że umiecie to zrobić?",
+          q: "Skąd mamy wiedzieć, że umiecie to zrobić?",
           a: "Z kodu, pod adresem github.com/rodorn/fluxlab-ksef-integracja. Jest tam klient API v2, budowanie faktury w schemacie FA(3), testy uruchamiane automatycznie przy każdej zmianie i tryb demo, który działa bez konta w KSeF. Możecie go uruchomić sami albo dać do oceny swojemu programiście, zanim cokolwiek zlecicie. To więcej niż referencja, bo referencji nie da się sprawdzić linijka po linijce.",
         },
         {
           q: "Gdzie trzymane są nasze dane i token do KSeF?",
-          a: "U Was. Integrację stawiam na Waszym serwerze, a klient czyta konfigurację wyłącznie ze zmiennych środowiskowych, więc w kodzie nie ma żadnych sekretów. Jeżeli wolicie rozwiązanie chmurowe, powiem wprost, co przez czyją infrastrukturę przechodzi, zanim cokolwiek uruchomimy.",
+          a: "U Was. Integrację stawiamy na Waszym serwerze, a klient czyta konfigurację wyłącznie ze zmiennych środowiskowych, więc w kodzie nie ma żadnych sekretów. Jeżeli wolicie rozwiązanie chmurowe, powiemy wprost, co przez czyją infrastrukturę przechodzi, zanim cokolwiek uruchomimy.",
         },
         {
           q: "Zdążymy przed 1 stycznia 2027?",
@@ -126,9 +126,9 @@ export default function KsefIntegracja() {
       ]}
       formId="ksef"
       formHeading="Napiszcie, w czym dziś wystawiacie faktury"
-      formIntro="Wystarczy nazwa programu księgowego albo systemu sprzedażowego i jedno zdanie o tym, ile faktur miesięcznie z niego wychodzi. Odpiszę, czy integracja ma sens, czy wystarczy Wam gotowy program."
+      formIntro="Wystarczy nazwa programu księgowego albo systemu sprzedażowego i jedno zdanie o tym, ile faktur miesięcznie z niego wychodzi. Odpiszemy, czy integracja ma sens, czy wystarczy Wam gotowy program."
       submitLabel="Wyślij opis"
-      microCopy="Ustalenia prowadzę mailowo. Telefon, jeśli tak Wam wygodniej."
+      microCopy="Ustalenia prowadzimy mailowo. Telefon, jeśli tak Wam wygodniej."
       serviceName="Integracja z KSeF"
       serviceDesc="Spięcie systemu sprzedażowego, ERP albo programu księgowego z Krajowym Systemem e-Faktur: wysyłka faktur w schemacie FA(3) przez API v2, zapis numeru KSeF i UPO, pobieranie faktur kosztowych."
       serviceType="Integracja systemów informatycznych"

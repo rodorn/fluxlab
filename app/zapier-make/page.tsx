@@ -8,11 +8,11 @@ import Tabs from "@/components/Tabs";
 export const metadata: Metadata = {
   title: "Zapier vs Make, porównanie i wdrożenie | Fluxlab",
   description:
-    "Zapier czy Make? Porównujemy platformy automatyzacji, pomagamy wybrać najlepsze narzędzie i wdrażam workflow dopasowane do potrzeb Twojej firmy.",
+    "Zapier czy Make? Porównujemy platformy automatyzacji, pomagamy wybrać najlepsze narzędzie i wdrażamy workflow dopasowane do potrzeb Twojej firmy.",
   openGraph: {
     title: "Zapier vs Make, porównanie i wdrożenie | Fluxlab",
     description:
-      "Zapier czy Make? Porównujemy platformy automatyzacji, pomagamy wybrać najlepsze narzędzie i wdrażam workflow dopasowane do potrzeb Twojej firmy.",
+      "Zapier czy Make? Porównujemy platformy automatyzacji, pomagamy wybrać najlepsze narzędzie i wdrażamy workflow dopasowane do potrzeb Twojej firmy.",
     locale: "pl_PL",
     type: "article",
     images: [
@@ -51,14 +51,14 @@ const faq = [
       "Zapier jest prostszy i ma więcej integracji. Make daje większą kontrolę nad logiką i bywa tańszy przy skali. Wybór zależy od procesu.",
   },
   {
-    question: "Czy mogę przenieść automatyzacje między platformami?",
+    question: "Czy możemy przenieść automatyzacje między platformami?",
     answer:
-      "Tak, choć nie ma automatycznej migracji, logikę odtwarza się w nowym narzędziu. Pomagam w takich migracjach.",
+      "Tak, choć nie ma automatycznej migracji, logikę odtwarza się w nowym narzędziu. Pomagamy w takich migracjach.",
   },
   {
     question: "Ile kosztuje Zapier vs Make?",
     answer:
-      "Zapier rozlicza zadania, Make operacje. Przy dużej skali Make bywa wyraźnie tańszy. Pomagam dobrać plan, żeby nie przepłacać.",
+      "Zapier rozlicza zadania, Make operacje. Przy dużej skali Make bywa wyraźnie tańszy. Pomagamy dobrać plan, żeby nie przepłacać.",
   },
 ];
 
@@ -76,7 +76,7 @@ export default function ZapierMake() {
               Zapier vs Make
             </h1>
             <p className="text-lg lg:text-xl text-gray-600 dark:text-gray-300">
-              Dwie najpopularniejsze platformy automatyzacji no-code. Pomagam
+              Dwie najpopularniejsze platformy automatyzacji no-code. Pomagamy
               wybrać właściwe narzędzie i wdrożyć workflow, które oszczędzają
               czas.
             </p>
@@ -188,7 +188,7 @@ export default function ZapierMake() {
             "@type": "Service",
             name: "Zapier vs Make, wdrożenie automatyzacji",
             description:
-              "Zapier czy Make? Porównujemy platformy automatyzacji, pomagamy wybrać najlepsze narzędzie i wdrażam workflow dopasowane do potrzeb Twojej firmy.",
+              "Zapier czy Make? Porównujemy platformy automatyzacji, pomagamy wybrać najlepsze narzędzie i wdrażamy workflow dopasowane do potrzeb Twojej firmy.",
             provider: { "@id": "https://fluxlab.pl/#organization" },
             areaServed: { "@type": "Country", name: "Polska" },
             serviceType: "Automatyzacja procesów biznesowych",

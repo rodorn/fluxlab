@@ -226,7 +226,7 @@ export async function POST(request: Request) {
   if (!geo) {
     return NextResponse.json({
       status: "BRAK_MIEJSCA",
-      naglowek: "Nie znalazłem takiego miejsca w Polsce",
+      naglowek: "Nie znaleźliśmy takiego miejsca w Polsce",
       opis: "Spróbuj samą nazwą miejscowości albo dopisz gminę, na przykład Grodzisk Mazowiecki, mazowieckie.",
     });
   }
@@ -267,7 +267,7 @@ export async function POST(request: Request) {
     return NextResponse.json({
       status: "BRAK_DANYCH",
       naglowek: "Żaden serwer z danymi map nie odpowiedział",
-      opis: "Punkty pochodzą z OpenStreetMap, a udostępniają je darmowe serwery, które bywają przeciążone. Odpytałem trzy po kolei i żaden nie oddał danych. Spróbuj za kilka minut, a jeśli to się powtórzy, napisz do mnie, policzę ręcznie.",
+      opis: "Punkty pochodzą z OpenStreetMap, a udostępniają je darmowe serwery, które bywają przeciążone. Odpytałem trzy po kolei i żaden nie oddał danych. Spróbuj za kilka minut, a jeśli to się powtórzy, napisz do nas, policzymy ręcznie.",
     });
   }
 

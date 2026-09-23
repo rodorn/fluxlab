@@ -11,11 +11,11 @@ import DrogaLeada from "@/components/DrogaLeada";
 export const metadata: Metadata = {
   title: "Automatyzacja leadów i CRM dla firm B2B | Fluxlab",
   description:
-    "Automatyzuję obsługę leadów, CRM, follow-upy i raportowanie dla firm B2B. Leady trafiają do CRM, dostają handlowca, zadanie i raport bez ręcznej pracy.",
+    "Automatyzujemy obsługę leadów, CRM, follow-upy i raportowanie dla firm B2B. Leady trafiają do CRM, dostają handlowca, zadanie i raport bez ręcznej pracy.",
   openGraph: {
     title: "Automatyzacja leadów i CRM dla firm B2B | Fluxlab",
     description:
-      "Automatyzuję obsługę leadów, CRM, follow-upy i raportowanie dla firm B2B. Leady trafiają do CRM, dostają handlowca, zadanie i raport bez ręcznej pracy.",
+      "Automatyzujemy obsługę leadów, CRM, follow-upy i raportowanie dla firm B2B. Leady trafiają do CRM, dostają handlowca, zadanie i raport bez ręcznej pracy.",
     locale: "pl_PL",
     type: "website",
     images: [
@@ -48,7 +48,7 @@ const steps = [
   {
     title: "Wdrożenie",
     description:
-      "Buduję automatyzację, testuję na realnych danych, dopracowuję przypadki brzegowe.",
+      "Budujemy automatyzację, testujemy na realnych danych, dopracowujemy przypadki brzegowe.",
   },
   {
     title: "Dokumentacja",
@@ -66,7 +66,7 @@ const pricing = [
 
 const faq = [
   {
-    question: "Czy muszę mieć już CRM?",
+    question: "Czy musimy mieć już CRM?",
     answer:
       "Nie. Możemy zacząć od arkuszy lub maili. Jeśli CRM jest potrzebny, dobiorę najprostsze rozwiązanie do skali firmy.",
   },
@@ -76,7 +76,7 @@ const faq = [
       "Nie. Usuwa przepisywanie danych i pilnowanie follow-upów. Handlowiec ma sprzedawać, nie klikać.",
   },
   {
-    question: "Co jeśli moje dane to bałagan?",
+    question: "Co jeśli nasze dane to bałagan?",
     answer:
       "Najpierw porządkujemy minimum: pola, statusy, źródła i reguły etapów. Automatyzowanie bałaganu to szybszy bałagan.",
   },
@@ -88,12 +88,12 @@ const faq = [
   {
     question: "Z jakimi systemami CRM to działa?",
     answer:
-      "Najwięcej pracuję na Pipedrive. Poza tym liczy się nie nazwa systemu, tylko to, czy ma API pozwalające zakładać rekordy i zadania, a mają je wszystkie popularne CRM-y.",
+      "Najwięcej pracujemy na Pipedrive. Poza tym liczy się nie nazwa systemu, tylko to, czy ma API pozwalające zakładać rekordy i zadania, a mają je wszystkie popularne CRM-y.",
   },
   {
     question: "Ile to kosztuje?",
     answer:
-      "Naprawa jednego etapu zaczyna się od 1 500 zł, cała ścieżka z raportem od 2 500 zł. Integracje przez API wyceniam osobno, bo zakres jest za każdym razem inny. Diagnoza przed wyceną jest bezpłatna.",
+      "Naprawa jednego etapu zaczyna się od 1 500 zł, cała ścieżka z raportem od 2 500 zł. Integracje przez API wyceniamy osobno, bo zakres jest za każdym razem inny. Diagnoza przed wyceną jest bezpłatna.",
   },
 ];
 
@@ -330,7 +330,7 @@ export default function AutomatyzacjaLeadowCRM() {
                       formId="diagnosis_lp_leadow"
                       heading="Sprawdźmy, gdzie tracisz leady"
                       intro="Opisz krótko, skąd wpadają leady i co robicie ręcznie. Dostaniesz informację, czy automatyzacja ma sens i jaki pierwszy krok da największy efekt."
-                      submitLabel="Chcę mapę pierwszej automatyzacji"
+                      submitLabel="Chcemy mapę pierwszej automatyzacji"
                     />
                   </section>
                 ),

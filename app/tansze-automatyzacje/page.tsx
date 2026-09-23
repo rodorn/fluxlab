@@ -45,12 +45,12 @@ export default function Page() {
           desc: "Na własnym serwerze płacisz za maszynę, a nie za liczbę wykonanych kroków. Podwojenie liczby zamówień nie podwaja rachunku za automatyzację.",
         },
         {
-          title: "Powiem wprost, gdy się nie opłaca",
-          desc: "Kalkulator wyżej potrafi odpowiedzieć, że przy Twojej skali migracja się nie zwróci. Wolę to powiedzieć od razu niż wziąć pieniądze za coś, co nie ma sensu.",
+          title: "Powiemy wprost, gdy się nie opłaca",
+          desc: "Kalkulator wyżej potrafi odpowiedzieć, że przy Twojej skali migracja się nie zwróci. Wolimy to powiedzieć od razu niż wziąć pieniądze za coś, co nie ma sensu.",
         },
         {
           title: "Utrzymanie, a nie porzucenie",
-          desc: "Własny serwer wymaga aktualizacji i kopii zapasowych. To realne dwie do czterech godzin miesięcznie, które biorę na siebie, bo inaczej oszczędność zamienia się w problem.",
+          desc: "Własny serwer wymaga aktualizacji i kopii zapasowych. To realne dwie do czterech godzin miesięcznie, które bierzemy na siebie, bo inaczej oszczędność zamienia się w problem.",
         },
       ]}
       pricing={[
@@ -90,7 +90,7 @@ export default function Page() {
       faq={[
         {
           q: "Czy stracę coś na jakości?",
-          a: "Nie, bo to to samo narzędzie w wersji, którą uruchamiasz u siebie. Różnica jest w rozliczeniu, nie w możliwościach. Wyjątkiem są gotowe integracje z bardzo niszowymi usługami, które czasem trzeba dopisać ręcznie, i mówię o tym przed migracją, a nie po.",
+          a: "Nie, bo to to samo narzędzie w wersji, którą uruchamiasz u siebie. Różnica jest w rozliczeniu, nie w możliwościach. Wyjątkiem są gotowe integracje z bardzo niszowymi usługami, które czasem trzeba dopisać ręcznie, i mówimy o tym przed migracją, a nie po.",
         },
         {
           q: "Co, jeśli serwer padnie?",
@@ -107,9 +107,9 @@ export default function Page() {
       ]}
       formId="order_tansze_automatyzacje"
       formHeading="Zamów przeniesienie automatyzacji"
-      formIntro="Napisz, z czego dziś korzystasz, ile mniej więcej macie scenariuszy i co robią najważniejsze z nich. Odeślę wycenę i uczciwą opinię, czy migracja ma u Was sens."
+      formIntro="Napisz, z czego dziś korzystasz, ile mniej więcej macie scenariuszy i co robią najważniejsze z nich. Odeślemy wycenę i uczciwą opinię, czy migracja ma u Was sens."
       submitLabel="Zamów wycenę"
-      microCopy="Do wyceny nie potrzebuję dostępów, wystarczy opis scenariuszy."
+      microCopy="Do wyceny nie potrzebujemy dostępów, wystarczy opis scenariuszy."
       serviceName="Migracja automatyzacji na własny serwer"
       serviceDesc="Przeniesienie istniejących scenariuszy z usług rozliczanych za każdy krok na własną instancję n8n, wraz z utrzymaniem serwera. Od 790 zł."
       serviceType="Migracja i utrzymanie systemu automatyzacji"

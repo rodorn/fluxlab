@@ -81,11 +81,11 @@ export default function AutomatyzacjaPipedrive() {
             ariaLabel="Sekcje oferty automatyzacji Pipedrive"
             tabs={[
               {
-                label: "Co automatyzuję",
+                label: "Co automatyzujemy",
                 content: (
                   <section className="py-10 lg:py-12">
                     <h2 className="display-xl text-gray-900 dark:text-white mb-12 max-w-2xl">
-                      Co automatyzuję
+                      Co automatyzujemy
                     </h2>
                     <div className="grid sm:grid-cols-2 gap-6 max-w-4xl">
                       {offer.map((item) => (
@@ -116,7 +116,7 @@ export default function AutomatyzacjaPipedrive() {
                       formId="diagnosis_pipedrive"
                       heading="Sprawdźmy Twój proces w Pipedrive"
                       intro="Opisz krótko, jak dziś wygląda obsługa leadów i deali: skąd wpadają, kto je obsługuje, gdzie pojawia się ręczna praca. Dostaniesz informację, czy automatyzacja ma sens i co da największy efekt."
-                      submitLabel="Chcę diagnozę procesu Pipedrive"
+                      submitLabel="Chcemy diagnozę procesu Pipedrive"
                     />
                   </section>
                 ),

@@ -52,7 +52,7 @@ export default function NipCheck() {
   const [wynik, setWynik] = useState<Wynik | null>(null);
   const [blad, setBlad] = useState("");
   const [email, setEmail] = useState("");
-  const [leadStan, setLeadStan] = useState<"idle" | "wysylam" | "ok" | "blad">(
+  const [leadStan, setLeadStan] = useState<"idle" | "wysylamy" | "ok" | "blad">(
     "idle",
   );
   const [leadBlad, setLeadBlad] = useState("");
@@ -96,7 +96,7 @@ export default function NipCheck() {
   async function zamowRaport(e: React.FormEvent) {
     e.preventDefault();
     if (!wynik) return;
-    setLeadStan("wysylam");
+    setLeadStan("wysylamy");
     setLeadBlad("");
     try {
       const res = await fetch("/api/contact", {
@@ -143,7 +143,7 @@ export default function NipCheck() {
         Sprawdź firmę teraz, za darmo
       </h2>
       <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-        Wpisz NIP, a od razu sprawdzę go w wykazie podatników VAT Ministerstwa
+        Wpisz NIP, a od razu sprawdzimy go w wykazie podatników VAT Ministerstwa
         Finansów. Bez zakładania konta i bez czekania.
       </p>
       <Przyklady
@@ -169,7 +169,7 @@ export default function NipCheck() {
           disabled={stan === "ladowanie" || nip.replace(/\D/g, "").length < 10}
           className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
         >
-          {stan === "ladowanie" ? "Sprawdzam..." : "Sprawdź NIP"}
+          {stan === "ladowanie" ? "Sprawdzamy..." : "Sprawdź NIP"}
         </button>
       </form>
 
@@ -254,7 +254,7 @@ export default function NipCheck() {
 
             {leadStan === "ok" ? (
               <p className="mt-4 text-sm font-semibold text-emerald-700 dark:text-emerald-400">
-                Mam zgłoszenie. Odpiszę na {email} z pełnym raportem, zwykle
+                Mamy zgłoszenie. Odpiszemy na {email} z pełnym raportem, zwykle
                 tego samego dnia.
               </p>
             ) : (
@@ -263,7 +263,7 @@ export default function NipCheck() {
                   htmlFor="nipcheck-email"
                   className="block text-sm font-medium text-gray-900 dark:text-white"
                 >
-                  Podaj maila, odeślę pełny raport dla tego numeru
+                  Podaj maila, odeślemy pełny raport dla tego numeru
                 </label>
                 <div className="mt-2 flex flex-col gap-3 sm:flex-row">
                   <input
@@ -277,11 +277,11 @@ export default function NipCheck() {
                   />
                   <button
                     type="submit"
-                    disabled={leadStan === "wysylam"}
+                    disabled={leadStan === "wysylamy"}
                     className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
                   >
-                    {leadStan === "wysylam"
-                      ? "Wysyłam..."
+                    {leadStan === "wysylamy"
+                      ? "Wysyłamy..."
                       : "Zamów pełny raport"}
                   </button>
                 </div>

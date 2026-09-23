@@ -161,9 +161,9 @@ const faq = [
       "Wręcz odwrotnie. Dziś tracą kontrolę, bo polegają na pamięci. Po wdrożeniu mają codzienną listę „do zrobienia”, jasny status każdego deala i możliwość zatrzymania sekwencji jednym kliknięciem. To system pomaga handlowcowi, a nie nim zarządza.",
   },
   {
-    question: "Jakie CRM-y obsługujesz przy automatyzacji follow-upów?",
+    question: "Jakie CRM-y obsługujecie przy automatyzacji follow-upów?",
     answer:
-      "Najczęściej Pipedrive, HubSpot i Salesforce. Dla bardziej złożonych przypadków łączę CRM z n8n, Make albo własnym kodem przez API. Jeśli firma ma własne narzędzie albo Excel, też da się to zautomatyzować, tylko trzeba dobrać warstwę pośrednią.",
+      "Najczęściej Pipedrive, HubSpot i Salesforce. Dla bardziej złożonych przypadków łączymy CRM z n8n, Make albo własnym kodem przez API. Jeśli firma ma własne narzędzie albo Excel, też da się to zautomatyzować, tylko trzeba dobrać warstwę pośrednią.",
   },
   {
     question: "Czy sekwencje działają też dla telefonów, nie tylko maili?",
@@ -171,7 +171,7 @@ const faq = [
       "Tak. Sekwencja może tworzyć zadania telefoniczne w CRM, wysyłać SMS-y, generować przypomnienia w Slacku. Najlepiej działa miks: mail w pierwszym kroku, telefon w drugim, wiadomość na LinkedIn w trzecim. Klient nie czuje, że to ten sam kanał walący po raz trzeci.",
   },
   {
-    question: "Co jeśli mam już skonfigurowane sekwencje, ale działają słabo?",
+    question: "Co jeśli mamy już skonfigurowane sekwencje, ale działają słabo?",
     answer:
       "Wtedy zaczynamy od audytu: które sekwencje konwertują, które wysyłają się do klientów już zamkniętych, gdzie szablony są suche. Często wystarczy posprzątać 30% i dopasować logikę, bez przepisywania wszystkiego od zera.",
   },
@@ -414,7 +414,7 @@ export default function AutomatyzacjaFollowUp() {
                               cotygodniowe „dlaczego do tego klienta nie
                               pisałeś”, frustrację zespołu, leady wracające do
                               firmy konkurenta po 6 miesiącach bo
-                              „zapomnieliście o mnie”. To są pieniądze, które
+                              „zapomnieliście o nas”. To są pieniądze, które
                               już wydałeś na pozyskanie tych leadów, i
                               puszczasz je dalej, bo nie ma rytmu kontaktu.
                             </p>
@@ -503,7 +503,7 @@ export default function AutomatyzacjaFollowUp() {
                             ofercie
                           </h2>
                           <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
-                            Tak wygląda sekwencja, którą buduję u większości
+                            Tak wygląda sekwencja, którą budujemy u większości
                             klientów jako pierwszy etap. Każdy krok można
                             uruchomić osobno i mierzyć konwersję po kolei.
                           </p>
@@ -728,7 +728,7 @@ export default function AutomatyzacjaFollowUp() {
                               eventName="cta_click_article_audit"
                               className="btn-primary px-8 py-3.5 text-base"
                             >
-                              Sprawdź koszt mojego procesu
+                              Sprawdź koszt naszego procesu
                             </TrackedCTA>
                           </div>
                         </div>

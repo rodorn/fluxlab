@@ -11,11 +11,11 @@ import { WYCENA_INTEGRACJE } from "@/lib/wycena";
 export const metadata: Metadata = {
   title: "Integracje API i łączenie systemów w firmie | Fluxlab",
   description:
-    "Spinam CRM, ERP, sklep i hurtownie tak, żeby dane przechodziły same. Spięcie dwóch systemów od 1 500 zł, zakres wyliczysz na stronie.",
+    "Spinamy CRM, ERP, sklep i hurtownie tak, żeby dane przechodziły same. Spięcie dwóch systemów od 1 500 zł, zakres wyliczysz na stronie.",
   openGraph: {
     title: "Integracje API i łączenie systemów w firmie | Fluxlab",
     description:
-      "Spinam CRM, ERP, sklep i hurtownie tak, żeby dane przechodziły same. Spięcie dwóch systemów od 1 500 zł, zakres wyliczysz na stronie.",
+      "Spinamy CRM, ERP, sklep i hurtownie tak, żeby dane przechodziły same. Spięcie dwóch systemów od 1 500 zł, zakres wyliczysz na stronie.",
     locale: "pl_PL",
     type: "article",
     images: [
@@ -77,7 +77,7 @@ export default function IntegracjeApi() {
               Integracje API
             </h1>
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
-              Łączę systemy ze sprzedaży, operacji i raportowania tak, żeby dane
+              Łączymy systemy ze sprzedaży, operacji i raportowania tak, żeby dane
               trafiały tam, gdzie trzeba, bez ręcznego przepisywania. Spięcie
               dwóch systemów w jedną stronę zaczyna się od 1 500 zł, a co
               podnosi tę kwotę, rozpisuję niżej co do pozycji.
@@ -115,12 +115,12 @@ export default function IntegracjeApi() {
                 ),
               },
               {
-                label: "Co łączę",
+                label: "Co łączymy",
                 content: (
                   <div className="py-10 lg:py-12">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-8">
-                        Co łączę
+                        Co łączymy
                       </h2>
                       <ul className="grid gap-4">
                         {useCases.map((item, i) => (
@@ -184,7 +184,7 @@ export default function IntegracjeApi() {
                         formId="diagnosis_api"
                         heading="Sprawdźmy Twój stack integracji"
                         intro="Opisz krótko, jakie systemy chcesz połączyć i gdzie dziś pojawia się ręczne przepisywanie danych. W odpowiedzi dostaniesz wstępną propozycję architektury i informację, od czego zacząć."
-                        submitLabel="Chcę diagnozę integracji"
+                        submitLabel="Chcemy diagnozę integracji"
                       />
                     </div>
                   </div>
@@ -204,7 +204,7 @@ export default function IntegracjeApi() {
             "@type": "Service",
             name: "Integracje API",
             description:
-              "Spinam CRM, ERP, sklep i hurtownie tak, żeby dane przechodziły same. Spięcie dwóch systemów od 1 500 zł, zakres wyliczysz na stronie.",
+              "Spinamy CRM, ERP, sklep i hurtownie tak, żeby dane przechodziły same. Spięcie dwóch systemów od 1 500 zł, zakres wyliczysz na stronie.",
             provider: { "@id": "https://fluxlab.pl/#organization" },
             areaServed: { "@type": "Country", name: "Polska" },
             serviceType: "Automatyzacja procesów biznesowych",

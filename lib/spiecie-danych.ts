@@ -86,7 +86,7 @@ export const ZRODLA: Zrodlo[] = [
     opis: "Katalog, cennik, lista ofert.",
     jak: "Dane zbiera się ze strony, w ustalonym rytmie, w docelowym układzie kolumn.",
     ryzyko:
-      "Zmiana układu strony psuje zbieranie, więc potrzebny jest alarm na nagły spadek liczby rekordów. Osobno sprawdzam, czy regulamin i robots.txt na to pozwalają, bo do treści chronionych logowaniem nie wchodzę.",
+      "Zmiana układu strony psuje zbieranie, więc potrzebny jest alarm na nagły spadek liczby rekordów. Osobno sprawdzamy, czy regulamin i robots.txt na to pozwalają, bo do treści chronionych logowaniem nie wchodzimy.",
     przygotowac:
       "Adres strony i kilka przykładowych pozycji, które mają wylądować w wyniku.",
     trudnosc: 2,
@@ -120,9 +120,9 @@ export const ZRODLA: Zrodlo[] = [
     klucz: "zamkniety",
     nazwa: "Program bez API i bez eksportu",
     opis: "Stary system, do którego wchodzi się tylko przez jego własne okno.",
-    jak: "Zanim cokolwiek powstanie, sprawdzam, czy da się dojść do bazy pod spodem albo wymusić eksport do pliku. To jest jedyna droga, którą warto tu iść.",
+    jak: "Zanim cokolwiek powstanie, sprawdzamy, czy da się dojść do bazy pod spodem albo wymusić eksport do pliku. To jest jedyna droga, którą warto tu iść.",
     ryzyko:
-      "Jeśli żadna z tych dróg nie działa, zostaje klikanie w oknach programu przez automat. To się psuje przy każdej aktualizacji i tego nie buduję, bo koszt utrzymania zjada cały zysk.",
+      "Jeśli żadna z tych dróg nie działa, zostaje klikanie w oknach programu przez automat. To się psuje przy każdej aktualizacji i tego nie budujemy, bo koszt utrzymania zjada cały zysk.",
     przygotowac:
       "Nazwa i wersja programu oraz kontakt do kogoś, kto wie, na czym trzyma dane.",
     trudnosc: 3,

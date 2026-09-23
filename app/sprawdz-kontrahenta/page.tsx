@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title:
       "Sprawdź kontrahenta przed przelewem, raport ryzyka od 9 zł | Fluxlab",
     description:
-      "Werdykt o firmie z wykazu VAT, KRS i danych domeny. Sprawdzam też, czy konto do przelewu należy do tej firmy.",
+      "Werdykt o firmie z wykazu VAT, KRS i danych domeny. Sprawdzamy też, czy konto do przelewu należy do tej firmy.",
     locale: "pl_PL",
     type: "website",
     images: [
@@ -79,7 +79,7 @@ const pricing = [
 const faq = [
   {
     q: "Czym to się różni od darmowego sprawdzenia na Białej Liście?",
-    a: "Biała Lista odpowiada na jedno pytanie i nic nie mówi o reszcie. Ja składam wykaz VAT, odpis KRS i dane domeny w jeden werdykt, a przy każdej fladze piszę, co ona realnie oznacza dla Twoich pieniędzy. Sam sprawdzisz to w kilku miejscach, tu masz odpowiedź w jednym.",
+    a: "Biała Lista odpowiada na jedno pytanie i nic nie mówi o reszcie. Ja składam wykaz VAT, odpis KRS i dane domeny w jeden werdykt, a przy każdej fladze piszemy, co ona realnie oznacza dla Twoich pieniędzy. Sam sprawdzisz to w kilku miejscach, tu masz odpowiedź w jednym.",
   },
   {
     q: "Dlaczego numer konta jest taki ważny?",
@@ -241,7 +241,7 @@ export default function SprawdzKontrahentaPage() {
             <LandingForm
               formId="order_sprawdz_kontrahenta"
               heading="Zamów sprawdzenie kontrahenta"
-              intro="W polu opisu podaj NIP firmy, a jeśli masz, także numer konta do przelewu i adres jej strony. Napisz, czy chcesz szybki check (9 zł) czy pełny raport (29 zł). Odsyłam PDF na maila."
+              intro="W polu opisu podaj NIP firmy, a jeśli masz, także numer konta do przelewu i adres jej strony. Napisz, czy chcesz szybki check (9 zł) czy pełny raport (29 zł). Odsyłamy PDF na maila."
               submitLabel="Wyślij firmę do sprawdzenia"
               microCopy="Odpowiedź zwykle tego samego dnia. Płatność ustalamy mailowo. Raport to analiza danych publicznych, nie porada prawna."
             />

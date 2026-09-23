@@ -45,8 +45,8 @@ export default function ProduktyPage() {
             <p className="mt-5 text-lg text-gray-600 dark:text-gray-300">
               Zamiast długiego wdrożenia dostajesz konkretny efekt za stałą
               cenę. Większość raportów powstaje automatycznie, dlatego kosztują
-              tyle, co obiad, a nie tyle, co konsulting. Zgłoszenie realizuję i
-              odsyłam wynik mailem.
+              tyle, co obiad, a nie tyle, co konsulting. Zgłoszenie realizujemy i
+              odsyłamy wynik mailem.
             </p>
           </div>
 
@@ -60,7 +60,7 @@ export default function ProduktyPage() {
             </h2>
             <p className="mt-3 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               Produkty to gotowce ze stałą ceną. Jeśli masz szerszy proces do
-              zautomatyzowania, zacznę od bezpłatnej diagnozy i darmowego dowodu
+              zautomatyzowania, zaczniemy od bezpłatnej diagnozy i darmowego dowodu
               na wąskim wycinku.
             </p>
             <div className="mt-6">

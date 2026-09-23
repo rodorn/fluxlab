@@ -116,7 +116,7 @@ export async function POST(request: Request) {
       ? "Dziś płacisz mniej, niż kosztowałby sam serwer pod własną automatyzację, więc przeniesienie nic by nie zaoszczędziło. Wróć do tego, gdy wolumen urośnie."
       : `Przy takiej skali rachunek jest jeszcze na tyle niski, że przeniesienie zwróciłoby się dopiero po ${
         zwrotMiesiecy ?? "wielu"
-      } miesiącach. Wróć do tego, gdy wolumen urośnie. Wolę to powiedzieć teraz, niż wziąć pieniądze za coś, co Ci się nie zwróci.`
+      } miesiącach. Wróć do tego, gdy wolumen urośnie. Wolimy to powiedzieć teraz, niż wziąć pieniądze za coś, co Ci się nie zwróci.`
     : `Twoje automatyzacje zużywają około ${zadania.toLocaleString("pl-PL")} zadań miesięcznie, bo każdy krok liczy się osobno. To jest ta różnica, której najczęściej się nie zauważa: pięciokrokowy scenariusz uruchomiony tysiąc razy to pięć tysięcy zadań, a nie tysiąc.`;
 
   const zastrzezenie =
@@ -124,7 +124,7 @@ export async function POST(request: Request) {
       ? "Powyżej najwyższego progu z publicznego cennika dostawca wycenia indywidualnie, więc kwotę po jego stronie szacuję proporcjonalnie do ostatniego progu."
       : zapier.usd === 0
         ? "Mieścisz się w darmowym planie dostawcy, do 100 zadań miesięcznie."
-        : `Liczę od najtańszego planu z publicznego cennika, progu do ${zapier.prog.toLocaleString("pl-PL")} zadań przy płatności miesięcznej. Przy płatności rocznej rachunek jest niższy, a przy planie zespołowym wyższy.`;
+        : `Liczymy od najtańszego planu z publicznego cennika, progu do ${zapier.prog.toLocaleString("pl-PL")} zadań przy płatności miesięcznej. Przy płatności rocznej rachunek jest niższy, a przy planie zespołowym wyższy.`;
 
   return NextResponse.json({
     status: "OK",

@@ -4,7 +4,7 @@ import ProductLanding from "@/components/ProductLanding";
 export const metadata: Metadata = {
   title: "Integracja CRM z ERP bez rozjazdu danych | Fluxlab",
   description:
-    "Spinam CRM z systemem magazynowo-księgowym: kontrahenci, oferty, zamówienia, faktury i stany. Opisuję cztery decyzje, które o tym przesądzają.",
+    "Spinamy CRM z systemem magazynowo-księgowym: kontrahenci, oferty, zamówienia, faktury i stany. Opisuję cztery decyzje, które o tym przesądzają.",
   alternates: { canonical: "/integracja-crm-z-erp" },
   openGraph: {
     title: "Integracja CRM z ERP bez rozjazdu danych | Fluxlab",
@@ -30,9 +30,9 @@ export default function IntegracjaCrmZErp() {
       breadcrumb="Integracja CRM z ERP"
       eyebrow="Integracje"
       h1="Integracja CRM z ERP"
-      lead="Handlowcy pracują w CRM, księgowość i magazyn w systemie ERP, a między nimi stoi człowiek, który przepisuje dane w obie strony. Spinam te dwa światy tak, żeby dane szły same, a rozjazd był widoczny od razu, nie na koniec miesiąca."
+      lead="Handlowcy pracują w CRM, księgowość i magazyn w systemie ERP, a między nimi stoi człowiek, który przepisuje dane w obie strony. Spinamy te dwa światy tak, żeby dane szły same, a rozjazd był widoczny od razu, nie na koniec miesiąca."
       ctaLabel="Opisz swoje dwa systemy"
-      ctaNote="Odpisuję zwykle tego samego dnia"
+      ctaNote="Odpisujemy zwykle tego samego dnia"
       checks={[
         {
           title: "Pierwsza decyzja: gdzie jest źródło prawdy",
@@ -40,7 +40,7 @@ export default function IntegracjaCrmZErp() {
         },
         {
           title: "Druga decyzja: po czym poznajemy, że to ten sam kontrahent",
-          desc: "Dopasowanie po nazwie nie działa, bo w CRM stoi nazwa handlowa, a w ERP pełna nazwa rejestrowa ze spółką i skrótami. Klucz buduję na numerze identyfikacji podatkowej, a jeśli go nie ma, na parze adres i numer klienta. Przed uruchomieniem robię zestawienie tego, co się nie dopasowało, bo to zwykle kilka procent bazy i lepiej rozstrzygnąć je ręcznie raz niż produkować duplikaty w nieskończoność.",
+          desc: "Dopasowanie po nazwie nie działa, bo w CRM stoi nazwa handlowa, a w ERP pełna nazwa rejestrowa ze spółką i skrótami. Klucz budujemy na numerze identyfikacji podatkowej, a jeśli go nie ma, na parze adres i numer klienta. Przed uruchomieniem robimy zestawienie tego, co się nie dopasowało, bo to zwykle kilka procent bazy i lepiej rozstrzygnąć je ręcznie raz niż produkować duplikaty w nieskończoność.",
         },
         {
           title: "Trzecia decyzja: w którym momencie dokument idzie do ERP",
@@ -55,8 +55,8 @@ export default function IntegracjaCrmZErp() {
           desc: "Handlowiec potrzebuje w CRM aktualnej ceny i informacji o dostępności, żeby nie obiecywać rzeczy, których nie ma. To synchronizacja odwrotna, z ERP do CRM, i zwykle wystarczy jej odświeżanie cykliczne zamiast reakcji na każde zdarzenie, bo stan sprzed kwadransa jest wystarczająco dobry, a obciążenie systemu dużo mniejsze.",
         },
         {
-          title: "Czego nie zrobię",
-          desc: "Nie wejdę w integrację, w której obie strony mają swobodnie edytować te same pola i nikt nie chce rozstrzygnąć, kto ma rację. To nie jest problem techniczny, tylko decyzja organizacyjna, i bez niej każde rozwiązanie będzie generować rozjazdy. Powiem to na początku, a nie po wdrożeniu.",
+          title: "Czego nie zrobimy",
+          desc: "Nie wejdę w integrację, w której obie strony mają swobodnie edytować te same pola i nikt nie chce rozstrzygnąć, kto ma rację. To nie jest problem techniczny, tylko decyzja organizacyjna, i bez niej każde rozwiązanie będzie generować rozjazdy. Powiemy to na początku, a nie po wdrożeniu.",
         },
       ]}
       pricing={[
@@ -65,7 +65,7 @@ export default function IntegracjaCrmZErp() {
           price: "0 zł",
           desc: "Zanim cokolwiek zlecisz.",
           features: [
-            "Sprawdzam, czy Twój ERP wystawia interfejs programistyczny, czy trzeba przez pliki",
+            "Sprawdzamy, czy Twój ERP wystawia interfejs programistyczny, czy trzeba przez pliki",
             "Zestawienie kontrahentów, którzy nie dopasują się automatycznie",
             "Informacja, czy integracja ma sens, czy taniej wyjdzie zmiana procesu",
           ],
@@ -97,8 +97,8 @@ export default function IntegracjaCrmZErp() {
       ]}
       faq={[
         {
-          q: "Z jakimi systemami to robisz?",
-          a: "Od strony CRM najczęściej Pipedrive i HubSpot, bo oba mają porządny interfejs programistyczny i zdarzenia. Od strony ERP liczy się nie nazwa, tylko to, czy system udostępnia interfejs, czy tylko import i eksport plików. Przy plikach integracja też jest możliwa, tylko działa cyklicznie zamiast natychmiast, i mówię o tym wprost przed wyceną.",
+          q: "Z jakimi systemami to robicie?",
+          a: "Od strony CRM najczęściej Pipedrive i HubSpot, bo oba mają porządny interfejs programistyczny i zdarzenia. Od strony ERP liczy się nie nazwa, tylko to, czy system udostępnia interfejs, czy tylko import i eksport plików. Przy plikach integracja też jest możliwa, tylko działa cyklicznie zamiast natychmiast, i mówimy o tym wprost przed wyceną.",
         },
         {
           q: "Co, jeśli nasz ERP nie ma żadnego interfejsu?",
@@ -106,22 +106,22 @@ export default function IntegracjaCrmZErp() {
         },
         {
           q: "Ile to trwa?",
-          a: "Wariant jednokierunkowy to zwykle od dwóch do trzech tygodni, licząc od momentu, w którym mam dostępy testowe do obu systemów. Największą część tego czasu zajmuje nie kod, tylko uzgodnienie, co ma się dziać z kontrahentami, którzy nie dopasowali się automatycznie.",
+          a: "Wariant jednokierunkowy to zwykle od dwóch do trzech tygodni, licząc od momentu, w którym mamy dostępy testowe do obu systemów. Największą część tego czasu zajmuje nie kod, tylko uzgodnienie, co ma się dziać z kontrahentami, którzy nie dopasowali się automatycznie.",
         },
         {
           q: "Czy dane wychodzą poza naszą firmę?",
-          a: "Nie muszą. Integrację można postawić na Waszym serwerze, wtedy dane idą wyłącznie między Waszym CRM a Waszym ERP. Jeśli wolicie rozwiązanie chmurowe, powiem, co dokładnie przechodzi przez czyją infrastrukturę, zanim cokolwiek uruchomimy.",
+          a: "Nie muszą. Integrację można postawić na Waszym serwerze, wtedy dane idą wyłącznie między Waszym CRM a Waszym ERP. Jeśli wolicie rozwiązanie chmurowe, powiemy, co dokładnie przechodzi przez czyją infrastrukturę, zanim cokolwiek uruchomimy.",
         },
         {
           q: "Co zostaje po zakończeniu?",
-          a: "Kod, dostępy i dokumentacja, po Waszej stronie. Nie ma tu żadnego mojego panelu, bez którego integracja przestaje działać, i nie ma abonamentu, który trzeba płacić, żeby dane dalej się synchronizowały. Opieka jest dobrowolna i dotyczy reagowania na zmiany po stronie dostawców, nie dostępu do własnego rozwiązania.",
+          a: "Kod, dostępy i dokumentacja, po Waszej stronie. Nie ma tu żadnego naszego panelu, bez którego integracja przestaje działać, i nie ma abonamentu, który trzeba płacić, żeby dane dalej się synchronizowały. Opieka jest dobrowolna i dotyczy reagowania na zmiany po stronie dostawców, nie dostępu do własnego rozwiązania.",
         },
       ]}
       formId="integracja_erp"
       formHeading="Napisz, co masz po obu stronach"
-      formIntro="Wystarczy nazwa CRM, nazwa systemu ERP i jedno zdanie o tym, co dziś ktoś przepisuje ręcznie. Odpiszę, czy da się to spiąć, w którą stronę zacząć i jakie są widełki."
+      formIntro="Wystarczy nazwa CRM, nazwa systemu ERP i jedno zdanie o tym, co dziś ktoś przepisuje ręcznie. Odpiszemy, czy da się to spiąć, w którą stronę zacząć i jakie są widełki."
       submitLabel="Wyślij opis"
-      microCopy="Bez rozmowy telefonicznej, jeśli nie chcesz. Ustalenia prowadzę mailowo."
+      microCopy="Bez rozmowy telefonicznej, jeśli nie chcesz. Ustalenia prowadzimy mailowo."
       serviceName="Integracja CRM z ERP"
       serviceDesc="Spięcie systemu CRM z systemem magazynowo-księgowym: kontrahenci, dokumenty sprzedaży, stany magazynowe i ceny, z obsługą błędów i ponowień."
       serviceType="Integracja systemów informatycznych"

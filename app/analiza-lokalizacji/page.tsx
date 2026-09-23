@@ -32,13 +32,13 @@ export default function Page() {
       breadcrumb="Analiza lokalizacji"
       eyebrow="Decyzja o lokalu"
       h1="Umowa najmu na pięć lat, a rynek sprawdzony na oko"
-      lead="Mapy pokazują pinezki i na tym koniec. Nie mówią, ilu mieszkańców przypada na jeden taki punkt, ani czy obok jest gmina, gdzie tych punktów jest o połowę mniej. Sprawdzam to liczbami, zanim podpiszesz coś, z czego trudno wyjść."
+      lead="Mapy pokazują pinezki i na tym koniec. Nie mówią, ilu mieszkańców przypada na jeden taki punkt, ani czy obok jest gmina, gdzie tych punktów jest o połowę mniej. Sprawdzamy to liczbami, zanim podpiszesz coś, z czego trudno wyjść."
       ctaLabel="Zamów pełny raport"
       ctaNote="Raport w 24 godziny"
       checks={[
         {
           title: "Konkurenci w zasięgu dojazdu, nie w linii prostej",
-          desc: "Klient nie porusza się po okręgu, tylko drogami. W pełnym raporcie liczę zasięg dziesięciu minut jazdy, bo to on decyduje, gdzie ktoś naprawdę pojedzie.",
+          desc: "Klient nie porusza się po okręgu, tylko drogami. W pełnym raporcie liczymy zasięg dziesięciu minut jazdy, bo to on decyduje, gdzie ktoś naprawdę pojedzie.",
         },
         {
           title: "Nasycenie, a nie sama liczba",
@@ -89,16 +89,16 @@ export default function Page() {
       ]}
       faq={[
         {
-          q: "Skąd bierzesz dane?",
+          q: "Skąd bierzecie dane?",
           a: "Z otwartej bazy map, w której są punkty usługowe, oraz z publicznego rejestru statystycznego, skąd pochodzi liczba mieszkańców. Oba źródła są jawne, więc każdy wynik da się sprawdzić.",
         },
         {
           q: "Czy baza map obejmuje wszystkie firmy?",
-          a: "Nie i mówię to wprost. W miastach pokrycie jest bardzo dobre, na wsiach bywa niepełne. Dlatego traktuję to jako przekrój rynku, a nie spis powszechny, i tak samo opisuję w raporcie.",
+          a: "Nie i mówimy to wprost. W miastach pokrycie jest bardzo dobre, na wsiach bywa niepełne. Dlatego traktuję to jako przekrój rynku, a nie spis powszechny, i tak samo opisuję w raporcie.",
         },
         {
           q: "Czy wskaźnik na mieszkańca zawsze ma sens?",
-          a: "Nie w miejscowościach turystycznych, gdzie klientami są przyjezdni. Darmowe sprawdzenie samo Cię o tym uprzedzi, jeśli wykryje taki układ, a w pełnym raporcie liczę wtedy inaczej.",
+          a: "Nie w miejscowościach turystycznych, gdzie klientami są przyjezdni. Darmowe sprawdzenie samo Cię o tym uprzedzi, jeśli wykryje taki układ, a w pełnym raporcie liczymy wtedy inaczej.",
         },
         {
           q: "Czy to zastąpi rozmowę z pośrednikiem?",
@@ -107,9 +107,9 @@ export default function Page() {
       ]}
       formId="order_analiza_lokalizacji"
       formHeading="Zamów raport dla swojej lokalizacji"
-      formIntro="Napisz, gdzie jest lokal, jaka to branża i jaki czynsz wchodzi w grę. Odeślę raport w 24 godziny."
+      formIntro="Napisz, gdzie jest lokal, jaka to branża i jaki czynsz wchodzi w grę. Odeślemy raport w 24 godziny."
       submitLabel="Zamów raport"
-      microCopy="Korzystam wyłącznie z publicznych źródeł danych. Nie potrzebuję żadnych dokumentów ani dostępów."
+      microCopy="Korzystam wyłącznie z publicznych źródeł danych. Nie potrzebujemy żadnych dokumentów ani dostępów."
       serviceName="Analiza potencjału lokalizacji pod punkt usługowy"
       serviceDesc="Ocena nasycenia rynku w zasięgu dojazdu: liczba konkurentów, liczba mieszkańców na punkt, porównanie z sąsiednimi gminami i trend demograficzny, z jednoznacznym wnioskiem. Od 190 zł."
       serviceType="Analiza rynku lokalnego pod działalność usługową"

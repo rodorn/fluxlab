@@ -182,7 +182,7 @@ export async function POST(request: Request) {
     klasa = blad === "ENOTFOUND" ? "BRAK_DOMENY" : "BRAK_443";
     naglowek =
       blad === "ENOTFOUND"
-        ? "Nie znalazłem takiej domeny"
+        ? "Nie znaleźliśmy takiej domeny"
         : "Serwer nie obsługuje połączenia szyfrowanego";
     opis =
       blad === "ENOTFOUND"

@@ -6,7 +6,7 @@ import ProductLanding from "@/components/ProductLanding";
 export const metadata: Metadata = {
   title: "Darmowy audyt techniczny strony, raport w minutę | Fluxlab",
   description:
-    "Wpisz adres, a zmierzę szybkość, certyfikat, widoczność w wyszukiwarce, dostęp dla asystentów AI i zabezpieczenia poczty. Bez rejestracji i bez e-maila.",
+    "Wpisz adres, a zmierzymy szybkość, certyfikat, widoczność w wyszukiwarce, dostęp dla asystentów AI i zabezpieczenia poczty. Bez rejestracji i bez e-maila.",
   alternates: { canonical: "/audyt-strony" },
   openGraph: {
     title: "Darmowy audyt techniczny strony | Fluxlab",
@@ -33,17 +33,17 @@ export default function Page() {
       breadcrumb="Audyt strony"
       eyebrow="Darmowy audyt techniczny"
       h1="Zobacz, co jest nie tak z Twoją stroną, zanim zapłacisz komukolwiek"
-      lead="Wpisz adres i poczekaj kilkadziesiąt sekund. Zmierzę szybkość na komputerze i osobno na telefonie, zważę każdy plik, sprawdzę certyfikat, widoczność w wyszukiwarce, dostęp dla asystentów AI oraz zabezpieczenia poczty. Dostaniesz raport z listą poprawek ułożoną w kolejności i z ceną za naprawę. Za darmo, bez rejestracji, bez podawania adresu e-mail."
+      lead="Wpisz adres i poczekaj kilkadziesiąt sekund. Zmierzymy szybkość na komputerze i osobno na telefonie, zważę każdy plik, sprawdzimy certyfikat, widoczność w wyszukiwarce, dostęp dla asystentów AI oraz zabezpieczenia poczty. Dostaniesz raport z listą poprawek ułożoną w kolejności i z ceną za naprawę. Za darmo, bez rejestracji, bez podawania adresu e-mail."
       ctaLabel="Porozmawiajmy o naprawie"
       ctaNote="Diagnoza nic nie kosztuje"
       checks={[
         {
           title: "Osobny pomiar dla telefonu",
-          desc: "Pobieram stronę drugi raz z nagłówkami telefonu i sprawdzam, czy układ ma się czym przestawić, czy obrazy mają wersje na mniejszy ekran i ile to wszystko waży na łączu komórkowym.",
+          desc: "Pobieramy stronę drugi raz z nagłówkami telefonu i sprawdzamy, czy układ ma się czym przestawić, czy obrazy mają wersje na mniejszy ekran i ile to wszystko waży na łączu komórkowym.",
         },
         {
           title: "Liczby, nie wrażenia",
-          desc: "Ważę każdy plik z osobna zamiast wierzyć deklaracjom serwera i podaję, ilu plików nie udało się zważyć. Przy każdym ustaleniu widzisz, co dokładnie zmierzyłem.",
+          desc: "Ważę każdy plik z osobna zamiast wierzyć deklaracjom serwera i podajemy, ilu plików nie udało się zważyć. Przy każdym ustaleniu widzisz, co dokładnie zmierzyliśmy.",
         },
         {
           title: "Kolejność zamiast listy uwag",
@@ -92,34 +92,34 @@ export default function Page() {
       faq={[
         {
           q: "Czemu to jest za darmo?",
-          a: "Bo diagnoza zajmuje maszynie kilkadziesiąt sekund, a naprawa zajmuje mnie. Wolę, żeby ktoś przyszedł do mnie z gotową listą i sam zdecydował, czy chce ją zlecić, niż żeby płacił mi za dowiedzenie się, co jest nie tak. Jeżeli okaże się, że strona jest w porządku, raport tak powie i nie będę szukał problemów na siłę.",
+          a: "Bo diagnoza zajmuje maszynie kilkadziesiąt sekund, a naprawa zajmuje nas. Wolimy, żeby ktoś przyszedł do nas z gotową listą i sam zdecydował, czy chce ją zlecić, niż żeby płacił nam za dowiedzenie się, co jest nie tak. Jeżeli okaże się, że strona jest w porządku, raport tak powie i nie będziemy szukał problemów na siłę.",
         },
         {
           q: "Czym to się różni od PageSpeed Insights?",
-          a: "PageSpeed uruchamia przeglądarkę i mierzy czas rysowania, czego ja nie robię i wprost o tym piszę w raporcie. Za to sprawdzam rzeczy, których PageSpeed nie rusza: certyfikat i jego zgodność z domeną, duplikat wersji z www i bez www, dostęp dla robotów asystentów AI, zabezpieczenia poczty oraz to, czy strona nie prosi wyszukiwarki, żeby ją pominęła. Na końcu podaję cenę naprawy, a nie samą ocenę.",
+          a: "PageSpeed uruchamia przeglądarkę i mierzy czas rysowania, czego ja nie robimy i wprost o tym piszemy w raporcie. Za to sprawdzamy rzeczy, których PageSpeed nie rusza: certyfikat i jego zgodność z domeną, duplikat wersji z www i bez www, dostęp dla robotów asystentów AI, zabezpieczenia poczty oraz to, czy strona nie prosi wyszukiwarki, żeby ją pominęła. Na końcu podajemy cenę naprawy, a nie samą ocenę.",
         },
         {
-          q: "Czy muszę podać e-mail?",
+          q: "Czy musimy podać e-mail?",
           a: "Nie. Raport pokazuje się na ekranie od razu i jest kompletny. Adres podajesz tylko wtedy, gdy chcesz dostać ten sam dokument na skrzynkę, żeby przesłać go dalej informatykowi albo agencji.",
         },
         {
-          q: "Czy audyt obciąży mój serwer?",
-          a: "Nie w stopniu, który dałoby się zauważyć. Pobieram stronę główną dwa razy i najwyżej trzydzieści plików, które i tak pobiera każdy odwiedzający. Przedstawiam się w nagłówku jako FluxlabAudyt, więc zobaczycie mnie w logach.",
+          q: "Czy audyt obciąży nasz serwer?",
+          a: "Nie w stopniu, który dałoby się zauważyć. Pobieramy stronę główną dwa razy i najwyżej trzydzieści plików, które i tak pobiera każdy odwiedzający. Przedstawiam się w nagłówku jako FluxlabAudyt, więc zobaczycie mnie w logach.",
         },
         {
-          q: "Czy potrzebujesz dostępów do czegokolwiek?",
-          a: "Do audytu nie, wystarczy publiczny adres. Dostępy są potrzebne dopiero przy naprawie i raport wypisuje dokładnie które. Nigdy nie potrzebuję Waszych haseł, tylko konta nadanego mnie, które cofniecie jednym kliknięciem po zakończeniu pracy.",
+          q: "Czy potrzebujecie dostępów do czegokolwiek?",
+          a: "Do audytu nie, wystarczy publiczny adres. Dostępy są potrzebne dopiero przy naprawie i raport wypisuje dokładnie które. Nigdy nie potrzebujemy Waszych haseł, tylko konta nadanego mnie, które cofniecie jednym kliknięciem po zakończeniu pracy.",
         },
         {
-          q: "Skąd mam wiedzieć, że wycena nie jest naciągana?",
+          q: "Skąd mamy wiedzieć, że wycena nie jest naciągana?",
           a: "Bo przy każdym pojedynczym problemie stoi jego cena i widzicie, z czego składa się suma. Cena za komplet jest niższa niż suma pozycji, bo dostępy, wdrożenie i testy robi się raz. Część rzeczy raport oznacza jako możliwe do zrobienia samodzielnie i wtedy wprost mówi, żeby za nie nie płacić.",
         },
       ]}
       formId="audyt_strony_naprawa"
       formHeading="Raport pokazał coś, czego nie chcesz ruszać sam"
-      formIntro="Wklej adres strony i napisz, która pozycja z raportu Cię niepokoi. Odpiszę, ile to zajmie i czy da się to zrobić taniej, niż wyszło w wycenie."
+      formIntro="Wklej adres strony i napisz, która pozycja z raportu Cię niepokoi. Odpiszemy, ile to zajmie i czy da się to zrobić taniej, niż wyszło w wycenie."
       submitLabel="Napisz w sprawie naprawy"
-      microCopy="Odpisuję zwykle tego samego dnia. Ustalenia prowadzę mailowo."
+      microCopy="Odpisujemy zwykle tego samego dnia. Ustalenia prowadzimy mailowo."
       serviceName="Darmowy audyt techniczny strony internetowej"
       serviceDesc="Bezpłatne badanie strony: szybkość na komputerze i na telefonie, waga plików, certyfikat, widoczność w wyszukiwarce, dostęp dla asystentów AI i zabezpieczenia poczty, z listą poprawek w kolejności i wyceną naprawy."
       serviceType="Audyt techniczny strony internetowej"

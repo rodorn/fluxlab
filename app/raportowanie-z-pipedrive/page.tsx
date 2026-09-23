@@ -128,9 +128,9 @@ const mistakes = [
 
 const faq = [
   {
-    question: "Czy potrzebuję BI typu Power BI, Looker albo Metabase?",
+    question: "Czy potrzebujemy BI typu Power BI, Looker albo Metabase?",
     answer:
-      "Nie zawsze. Dla małych firm wystarczy Google Sheets z automatycznym zasilaniem z Pipedrive, czytelnie, zero kosztu licencji, zero progu wejścia. Większe firmy z wieloma źródłami danych zwykle skorzystają z Looker Studio (darmowy) albo Metabase (open source). Power BI wybieram, gdy reszta firmy już w nim siedzi.",
+      "Nie zawsze. Dla małych firm wystarczy Google Sheets z automatycznym zasilaniem z Pipedrive, czytelnie, zero kosztu licencji, zero progu wejścia. Większe firmy z wieloma źródłami danych zwykle skorzystają z Looker Studio (darmowy) albo Metabase (open source). Power BI wybieramy, gdy reszta firmy już w nim siedzi.",
   },
   {
     question: "Jak często aktualizować dane?",
@@ -155,7 +155,7 @@ const faq = [
   {
     question: "Ile to kosztuje?",
     answer:
-      "Etap 1 (jeden raport pipeline'u + alerty), od 4 do 7 tys. zł. Pełne raportowanie z wieloma źródłami i prognozą, 10–20 tys. zł zależnie od stopnia bałaganu w Pipedrive i liczby integracji. Dokładną wycenę podaję po krótkim audycie.",
+      "Etap 1 (jeden raport pipeline'u + alerty), od 4 do 7 tys. zł. Pełne raportowanie z wieloma źródłami i prognozą, 10–20 tys. zł zależnie od stopnia bałaganu w Pipedrive i liczby integracji. Dokładną wycenę podajemy po krótkim audycie.",
   },
 ];
 
@@ -218,18 +218,18 @@ export default function RaportowanieZPipedrive() {
                 proces, tylko ceremoniał.
               </p>
               <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                Pokażę ci, co trzeba zrobić, żeby zarząd dostawał raport
+                Pokażemy ci, co trzeba zrobić, żeby zarząd dostawał raport
                 codziennie rano, a nikt nie musiał klejić niczego w arkuszu.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
                 <TrackedCTA
                   href="#sekcje"
                   location="article_raportowanie_pipedrive_hero"
-                  label="Chcę raporty bez ręcznej pracy"
+                  label="Chcemy raporty bez ręcznej pracy"
                   eventName="cta_click_article_audit"
                   className="btn-primary text-base px-7 py-3"
                 >
-                  Chcę raporty bez ręcznej pracy
+                  Chcemy raporty bez ręcznej pracy
                 </TrackedCTA>
                 <Link href="/automatyzacja-pipedrive" className="btn-secondary">
                   Zobacz pełną ofertę Pipedrive
@@ -702,11 +702,11 @@ export default function RaportowanieZPipedrive() {
                         <TrackedCTA
                           href="/kontakt"
                           location="article_raportowanie_pipedrive_pricing_primary"
-                          label="Chcę raporty bez ręcznej pracy"
+                          label="Chcemy raporty bez ręcznej pracy"
                           eventName="cta_click_article_audit"
                           className="btn-primary"
                         >
-                          Chcę raporty bez ręcznej pracy
+                          Chcemy raporty bez ręcznej pracy
                         </TrackedCTA>
                       </div>
                       <p className="mt-6 text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
@@ -798,11 +798,11 @@ export default function RaportowanieZPipedrive() {
                       <TrackedCTA
                         href="/kontakt"
                         location="article_raportowanie_pipedrive_final"
-                        label="Chcę raporty bez ręcznej pracy"
+                        label="Chcemy raporty bez ręcznej pracy"
                         eventName="cta_click_article_audit"
                         className="btn-primary text-base px-7 py-3"
                       >
-                        Chcę raporty bez ręcznej pracy
+                        Chcemy raporty bez ręcznej pracy
                       </TrackedCTA>
                     </div>
                   </div>

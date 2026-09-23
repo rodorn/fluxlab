@@ -535,7 +535,7 @@ export default function PipedriveVsSalesforceArticle() {
                           <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                             Od procesu, nie od narzędzia. Najpierw etapy,
                             kryteria przejścia i dane obowiązkowe, a dopiero
-                            potem konfiguracja, szczegółowo opisałem to w
+                            potem konfiguracja, szczegółowo opisaliśmy to w
                             artykule{" "}
                             <Link
                               href="/strefa-wiedzy/automatyzacja-crm-od-czego-zaczac"

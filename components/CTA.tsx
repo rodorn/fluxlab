@@ -151,7 +151,7 @@ export default function CTA() {
           </h2>
           <p className="text-gray-500 dark:text-gray-400 text-lg mb-12">
             Wyślij krótki opis problemu. W odpowiedzi dostaniesz informację, czy
-            widzę potencjał na automatyzację, co można poprawić jako pierwsze i
+            widzimy potencjał na automatyzację, co można poprawić jako pierwsze i
             jaki byłby sensowny kolejny krok.
           </p>
 
@@ -335,7 +335,7 @@ export default function CTA() {
               disabled={loading}
               className="btn-primary w-full py-3.5 text-base disabled:opacity-60"
             >
-              {loading ? "Wysyłanie..." : "Chcę diagnozę procesu"}
+              {loading ? "Wysyłanie..." : "Chcemy diagnozę procesu"}
             </button>
 
             {errorMsg && (

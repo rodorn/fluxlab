@@ -672,7 +672,7 @@ export default function KalkulatorDecyzji() {
                       )
                     : "brak danych"}
                 </strong>
-                . To bardzo zgrubny szacunek, w diagnozie liczę konkretnie pod
+                . To bardzo zgrubny szacunek, w diagnozie liczymy konkretnie pod
                 Twój proces.
               </p>
             </div>
@@ -693,7 +693,7 @@ export default function KalkulatorDecyzji() {
           Chcesz konkretnie sprawdzić, ile zaoszczędzisz?
         </h3>
         <p className="text-sm text-gray-600 dark:text-gray-400 mb-6 max-w-xl mx-auto">
-          W diagnozie 30-minutowej liczę pełny koszt obecnego procesu, koszt
+          W diagnozie 30-minutowej liczymy pełny koszt obecnego procesu, koszt
           wdrożenia automatyzacji i punkt zwrotu, pod Twoje konkretne narzędzia
           i wolumen.
         </p>

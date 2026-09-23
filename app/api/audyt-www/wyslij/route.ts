@@ -32,7 +32,7 @@ export async function POST(request: Request) {
   // adresu w pole nie jest zgodą na cokolwiek.
   if (!zgoda) {
     return NextResponse.json(
-      { error: "Bez zaznaczenia zgody nie mogę wysłać raportu ani zapisać adresu." },
+      { error: "Bez zaznaczenia zgody nie możemy wysłać raportu ani zapisać adresu." },
       { status: 400 },
     );
   }
@@ -42,7 +42,7 @@ export async function POST(request: Request) {
   // tekstem, a nie naszym raportem.
   if (!dokument || !podpis || !podpisZgodny(dokument, podpis)) {
     return NextResponse.json(
-      { error: "Nie mogę potwierdzić tego raportu. Uruchom sprawdzenie jeszcze raz." },
+      { error: "Nie możemy potwierdzić tego raportu. Uruchom sprawdzenie jeszcze raz." },
       { status: 400 },
     );
   }

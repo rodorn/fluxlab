@@ -38,15 +38,15 @@ export default function Page() {
       checks={[
         {
           title: "Czy mapa strony w ogóle istnieje",
-          desc: "Szukam jej tam, gdzie wskazuje plik robots.txt, a gdy nie wskazuje nigdzie, sprawdzam standardowe lokalizacje.",
+          desc: "Szukamy jej tam, gdzie wskazuje plik robots.txt, a gdy nie wskazuje nigdzie, sprawdzamy standardowe lokalizacje.",
         },
         {
           title: "Czy adresy z mapy działają",
-          desc: "Biorę próbkę adresów rozłożoną po całej liście i sprawdzam każdy osobno. Adres, który zwraca błąd, zużywa limit odwiedzin robota i psuje zaufanie do całej listy.",
+          desc: "Bierzemy próbkę adresów rozłożoną po całej liście i sprawdzamy każdy osobno. Adres, który zwraca błąd, zużywa limit odwiedzin robota i psuje zaufanie do całej listy.",
         },
         {
           title: "Czy robots.txt nie blokuje serwisu",
-          desc: "Ustawienie z wersji roboczej potrafi pojechać na produkcję i poprosić wyszukiwarki, żeby nie odwiedzały strony w ogóle. Sprawdzam to dokładnym porównaniem reguły, nie wyszukiwaniem fragmentu tekstu, bo inaczej każda normalna reguła wygląda jak blokada.",
+          desc: "Ustawienie z wersji roboczej potrafi pojechać na produkcję i poprosić wyszukiwarki, żeby nie odwiedzały strony w ogóle. Sprawdzamy to dokładnym porównaniem reguły, nie wyszukiwaniem fragmentu tekstu, bo inaczej każda normalna reguła wygląda jak blokada.",
         },
         {
           title: "Co zrobić z martwymi adresami",
@@ -93,23 +93,23 @@ export default function Page() {
           a: "Nie. Robot potrafi odkryć strony sam, chodzi o czas i o kompletność. Przy serwisie na kilkanaście podstron różnica bywa żadna. Przy katalogu ofert, bloga albo sklepie z setkami adresów zaczyna decydować o tym, ile z nich w ogóle trafi do wyników.",
         },
         {
-          q: "Dlaczego sprawdzasz tylko kilkanaście adresów?",
-          a: "Bo to cudzy serwer, a do werdyktu wystarczy próbka. Wysyłanie kilkuset zapytań pod obcą stronę bez pytania byłoby obciążaniem czyjejś infrastruktury. Pełny przegląd robię dopiero na zlecenie właściciela.",
+          q: "Dlaczego sprawdzacie tylko kilkanaście adresów?",
+          a: "Bo to cudzy serwer, a do werdyktu wystarczy próbka. Wysyłanie kilkuset zapytań pod obcą stronę bez pytania byłoby obciążaniem czyjejś infrastruktury. Pełny przegląd robimy dopiero na zlecenie właściciela.",
         },
         {
-          q: "Mam mapę i wszystko działa, co dalej?",
-          a: "Wtedy tak napiszę i na tym koniec. Ten punkt nie jest jedynym, który decyduje o widoczności, ale jest jednym z nielicznych, które można rozstrzygnąć jednoznacznie, bez spekulacji.",
+          q: "Mamy mapę i wszystko działa, co dalej?",
+          a: "Wtedy tak napiszemy i na tym koniec. Ten punkt nie jest jedynym, który decyduje o widoczności, ale jest jednym z nielicznych, które można rozstrzygnąć jednoznacznie, bez spekulacji.",
         },
         {
           q: "Skąd wiadomo, że adres nie działa, a nie że serwer akurat kaszlnął?",
-          a: "Rozróżniam kod błędu od braku odpowiedzi i pokazuję jedno i drugie osobno. Przy pełnym przeglądzie każdy podejrzany adres sprawdzam powtórnie, bo pojedynczy nieudany strzał to za mało, żeby komuś powiedzieć, że ma zepsutą stronę.",
+          a: "Rozróżniam kod błędu od braku odpowiedzi i pokazujemy jedno i drugie osobno. Przy pełnym przeglądzie każdy podejrzany adres sprawdzamy powtórnie, bo pojedynczy nieudany strzał to za mało, żeby komuś powiedzieć, że ma zepsutą stronę.",
         },
       ]}
       formId="order_mapa_strony"
       formHeading="Zamów pełny przegląd"
-      formIntro="Napisz, na czym stoi strona, a odeślę przegląd wszystkich adresów z mapy i propozycję, co zrobić z tymi, które nie działają."
+      formIntro="Napisz, na czym stoi strona, a odeślemy przegląd wszystkich adresów z mapy i propozycję, co zrobić z tymi, które nie działają."
       submitLabel="Zamów przegląd"
-      microCopy="Do sprawdzenia nie potrzebuję żadnych dostępów, bo mapa strony i robots.txt są publiczne. Dostęp jest potrzebny dopiero przy generowaniu nowej mapy."
+      microCopy="Do sprawdzenia nie potrzebujemy żadnych dostępów, bo mapa strony i robots.txt są publiczne. Dostęp jest potrzebny dopiero przy generowaniu nowej mapy."
       serviceName="Przegląd mapy strony i naprawa martwych adresów"
       serviceDesc="Sprawdzenie wszystkich adresów z mapy strony, wygenerowanie poprawnej mapy pod system klienta, wskazanie jej w robots.txt oraz rozstrzygnięcie przekierowań dla adresów, które przestały działać. Od 240 zł."
       serviceType="Przegląd indeksowania i mapy strony"

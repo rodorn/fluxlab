@@ -39,12 +39,12 @@ const faqItems = [
       "Nie, o ile świadomie wybieramy je jako miarę zainteresowania, a nie zgłoszeń. Problem zaczyna się wtedy, gdy ta sama liczba trafia do systemu reklamowego jako konwersja i decyduje o budżecie. Wtedy płacisz za kliknięcia w przycisk, a nie za zgłoszenia, i nigdy się o tym nie dowiesz.",
   },
   {
-    question: "Skąd mam wiedzieć, czy konwersja liczy się dwa razy?",
+    question: "Skąd mamy wiedzieć, czy konwersja liczy się dwa razy?",
     answer:
       "Porównaj liczbę zgłoszeń w swojej skrzynce z liczbą konwersji w panelu za ten sam dzień. Jeżeli wyszło dokładnie dwa razy więcej niż maili, prawie na pewno to samo zdarzenie jest zliczane osobno przez analitykę i osobno przez system reklamowy, a oba wysyłają dane do jednego miejsca.",
   },
   {
-    question: "Czy moje własne wejścia mają aż takie znaczenie?",
+    question: "Czy nasze własne wejścia mają aż takie znaczenie?",
     answer:
       "Przy dużym ruchu nie. Przy stronie, którą odwiedza kilkadziesiąt osób dziennie, kilka własnych testów i sprawdzeń potrafi przesunąć wynik o kilkanaście procent, a po wdrożeniu zmian sprawdza się je zwykle kilkanaście razy w ciągu jednego dnia.",
   },
@@ -169,7 +169,7 @@ export default function Page() {
 
         <SprawdzPoBadaniu
           naglowek="Nie masz pewności, która z czterech przyczyn zachodzi u Ciebie?"
-          opis="Na tę akurat rzecz nie mam sprawdzenia, które da wynik jednym kliknięciem: rozstrzygnięcie wymaga zajrzenia do ustawień pomiaru na konkretnej stronie. Napisz, co pokazuje licznik, a co przychodzi na skrzynkę."
+          opis="Na tę akurat rzecz nie mamy sprawdzenia, które da wynik jednym kliknięciem: rozstrzygnięcie wymaga zajrzenia do ustawień pomiaru na konkretnej stronie. Napisz, co pokazuje licznik, a co przychodzi na skrzynkę."
           narzedzie={{
             href: "/landing-z-platnoscia",
             etykieta: "Zobacz, jak zapisujemy zgłoszenie przed płatnością",

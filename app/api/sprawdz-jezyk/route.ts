@@ -124,9 +124,9 @@ export async function POST(request: Request) {
     return NextResponse.json({
       domena,
       status: "BRAK_STRONY",
-      naglowek: "Nie mogę otworzyć tej strony",
+      naglowek: "Nie możemy otworzyć tej strony",
       opis:
-        "Strona nie odpowiedziała albo odrzuciła połączenie. Sprawdź pisownię adresu. Jeśli jest poprawny, sprawdzę ją ręcznie i odeślę wynik.",
+        "Strona nie odpowiedziała albo odrzuciła połączenie. Sprawdź pisownię adresu. Jeśli jest poprawny, sprawdzimy ją ręcznie i odeślemy wynik.",
     });
   }
 
@@ -153,9 +153,9 @@ export async function POST(request: Request) {
     return NextResponse.json({
       domena,
       status: "BRAK_WERSJI",
-      naglowek: "Nie znalazłem obcojęzycznej wersji tej strony",
+      naglowek: "Nie znaleźliśmy obcojęzycznej wersji tej strony",
       opis:
-        "Nie widzę ani odnośników do wersji językowych, ani znaczników, po których wyszukiwarka je rozpoznaje. Jeśli wersja obcojęzyczna istnieje pod innym adresem, podaj go wprost, a sprawdzę właśnie ją.",
+        "Nie widzimy ani odnośników do wersji językowych, ani znaczników, po których wyszukiwarka je rozpoznaje. Jeśli wersja obcojęzyczna istnieje pod innym adresem, podaj go wprost, a sprawdzimy właśnie ją.",
     });
   }
 
@@ -198,8 +198,8 @@ export async function POST(request: Request) {
     return NextResponse.json({
       domena,
       status: "BRAK_STRONY",
-      naglowek: "Znalazłem wersje językowe, ale żadna się nie otworzyła",
-      opis: "Adresy wersji obcojęzycznych nie odpowiedziały. Sprawdzę je ręcznie.",
+      naglowek: "Znaleźliśmy wersje językowe, ale żadna się nie otworzyła",
+      opis: "Adresy wersji obcojęzycznych nie odpowiedziały. Sprawdzimy je ręcznie.",
     });
   }
 

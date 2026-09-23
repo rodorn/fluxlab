@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 const czytelnik = [
   {
     q: "Czy numer jest poprawny",
-    a: "Zanim cokolwiek odpytam, liczę sumę kontrolną numeru. Literówka w NIP z faktury wychodzi od razu, bez czekania na odpowiedź rejestru.",
+    a: "Zanim cokolwiek odpytam, liczymy sumę kontrolną numeru. Literówka w NIP z faktury wychodzi od razu, bez czekania na odpowiedź rejestru.",
   },
   {
     q: "Czy podmiot figuruje w wykazie",
@@ -62,7 +62,7 @@ const faq = [
   },
   {
     q: "Czy sprawdzicie, czy konto do przelewu należy do tej firmy?",
-    a: "To jest osobny test i najważniejszy z całej weryfikacji, bo podmieniony numer rachunku w mailu jest najczęstszym sposobem przejęcia płatności. Robię go w płatnym raporcie, bo wymaga porównania Twojego numeru z listą rachunków zgłoszonych przez podmiot.",
+    a: "To jest osobny test i najważniejszy z całej weryfikacji, bo podmieniony numer rachunku w mailu jest najczęstszym sposobem przejęcia płatności. Robimy go w płatnym raporcie, bo wymaga porównania Twojego numeru z listą rachunków zgłoszonych przez podmiot.",
   },
   {
     q: "Czy to zastępuje sprawdzenie w KRS?",
@@ -94,7 +94,7 @@ export default function SprawdzenieNipPage() {
               Sprawdzenie NIP w wykazie Ministerstwa Finansów
             </h1>
             <p className="mt-5 text-lg text-gray-600 dark:text-gray-300">
-              Wpisz numer, a odpytam wykaz podatników VAT i pokażę, czy firma
+              Wpisz numer, a odpytam wykaz podatników VAT i pokażemy, czy firma
               tam jest, czy jest czynnym podatnikiem, od kiedy działa i ile
               rachunków bankowych zgłosiła. Bez rejestracji i bez limitu prób.
             </p>
@@ -107,7 +107,7 @@ export default function SprawdzenieNipPage() {
 
           <div className="mt-16 max-w-3xl">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
-              Co dokładnie sprawdzam
+              Co dokładnie sprawdzamy
             </h2>
             <dl className="mt-6 space-y-5">
               {czytelnik.map((c) => (

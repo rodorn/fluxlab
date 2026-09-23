@@ -354,7 +354,7 @@ export default function KalkulatorLeadow() {
           Chcesz sprawdzić, które kroki da się usunąć?
         </h3>
         <p className="text-sm text-gray-600 dark:text-gray-400 mb-6 max-w-xl mx-auto">
-          W diagnozie pokazuję, gdzie w Twoim procesie tracisz czas i leady oraz
+          W diagnozie pokazujemy, gdzie w Twoim procesie tracisz czas i leady oraz
           który pierwszy etap warto zautomatyzować, żeby ten koszt spadł.
         </p>
         <TrackedCTA

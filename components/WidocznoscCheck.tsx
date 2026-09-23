@@ -27,7 +27,7 @@ export default function WidocznoscCheck() {
   const [wynik, setWynik] = useState<Wynik | null>(null);
   const [blad, setBlad] = useState("");
   const [email, setEmail] = useState("");
-  const [leadStan, setLeadStan] = useState<"idle" | "wysylam" | "ok" | "blad">("idle");
+  const [leadStan, setLeadStan] = useState<"idle" | "wysylamy" | "ok" | "blad">("idle");
   const [leadBlad, setLeadBlad] = useState("");
 
   async function sprawdz(e: React.FormEvent) {
@@ -68,7 +68,7 @@ export default function WidocznoscCheck() {
   async function zamow(e: React.FormEvent) {
     e.preventDefault();
     if (!wynik) return;
-    setLeadStan("wysylam");
+    setLeadStan("wysylamy");
     setLeadBlad("");
     try {
       const res = await fetch("/api/contact", {
@@ -109,7 +109,7 @@ export default function WidocznoscCheck() {
       <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
         Zdarza się, że strona ma w kodzie polecenie, żeby wyszukiwarka jej nie
         pokazywała. Zwykle zostaje po wersji roboczej i nikt tego nie zauważa,
-        bo właściciel wchodzi na swoją stronę z zakładki. Sprawdzam trzy miejsca,
+        bo właściciel wchodzi na swoją stronę z zakładki. Sprawdzamy trzy miejsca,
         w których taka blokada może siedzieć.
       </p>
       <Przyklady
@@ -136,7 +136,7 @@ export default function WidocznoscCheck() {
           disabled={stan === "ladowanie"}
           className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
         >
-          {stan === "ladowanie" ? "Sprawdzam..." : "Sprawdź widoczność"}
+          {stan === "ladowanie" ? "Sprawdzamy..." : "Sprawdź widoczność"}
         </button>
       </form>
 
@@ -215,13 +215,13 @@ export default function WidocznoscCheck() {
           <div className="mt-5 border-t border-gray-200/70 dark:border-gray-700/70 pt-4">
             <p className="text-sm text-gray-700 dark:text-gray-300">
               {zly
-                ? "Zdjęcie takiej blokady to zwykle kilkanaście minut pracy w systemie, na którym stoi strona, plus zgłoszenie do ponownego odwiedzenia przez wyszukiwarkę. Zostaw adres, odeślę dokładnie, co i gdzie trzeba zmienić."
-                : "Nic tu nie naprawię i nie będę tego udawał. Jeśli mimo to nie widać Was w wynikach, przyczyna leży gdzie indziej, a wtedy warto zacząć od sprawdzenia, czy wyszukiwarka w ogóle ma dostęp do strony."}
+                ? "Zdjęcie takiej blokady to zwykle kilkanaście minut pracy w systemie, na którym stoi strona, plus zgłoszenie do ponownego odwiedzenia przez wyszukiwarkę. Zostaw adres, odeślemy dokładnie, co i gdzie trzeba zmienić."
+                : "Nic tu nie naprawimy i nie będziemy tego udawał. Jeśli mimo to nie widać Was w wynikach, przyczyna leży gdzie indziej, a wtedy warto zacząć od sprawdzenia, czy wyszukiwarka w ogóle ma dostęp do strony."}
             </p>
 
             {leadStan === "ok" ? (
               <p className="mt-4 text-sm font-semibold text-emerald-700 dark:text-emerald-400">
-                Mam zgłoszenie razem z wynikiem. Odpiszę na {email}, zwykle tego
+                Mamy zgłoszenie razem z wynikiem. Odpiszemy na {email}, zwykle tego
                 samego dnia.
               </p>
             ) : (
@@ -231,7 +231,7 @@ export default function WidocznoscCheck() {
                   className="block text-sm font-medium text-gray-900 dark:text-white"
                 >
                   {zly
-                    ? "Podaj maila, odeślę instrukcję naprawy"
+                    ? "Podaj maila, odeślemy instrukcję naprawy"
                     : "Podaj maila, jeśli chcesz, żebym poszukał innej przyczyny"}
                 </label>
                 <div className="mt-2 flex flex-col gap-3 sm:flex-row">
@@ -246,10 +246,10 @@ export default function WidocznoscCheck() {
                   />
                   <button
                     type="submit"
-                    disabled={leadStan === "wysylam"}
+                    disabled={leadStan === "wysylamy"}
                     className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
                   >
-                    {leadStan === "wysylam" ? "Wysyłam..." : "Wyślij zgłoszenie"}
+                    {leadStan === "wysylamy" ? "Wysyłamy..." : "Wyślij zgłoszenie"}
                   </button>
                 </div>
                 {leadStan === "blad" && (
@@ -262,8 +262,8 @@ export default function WidocznoscCheck() {
       )}
 
       <p className="mt-4 text-xs text-gray-500 dark:text-gray-400">
-        Sprawdzam wyłącznie to, co Twój serwer pokazuje publicznie każdemu
-        odwiedzającemu. Nie loguję się nigdzie i nie potrzebuję żadnych dostępów.
+        Sprawdzamy wyłącznie to, co Twój serwer pokazuje publicznie każdemu
+        odwiedzającemu. Nie logujemy się nigdzie i nie potrzebujemy żadnych dostępów.
       </p>
     </div>
   );

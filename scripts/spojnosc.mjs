@@ -436,6 +436,38 @@ if (LIVE) {
   console.log(`Sprawdzono ${uniq.length} adresow na produkcji.`);
 }
 
+// Pierwsza osoba liczby pojedynczej. Fluxlab wystepuje jako firma, wiec
+// "sprawdzam" i "moje" nie moga wrocic do tresci. Kontrola jest tu dlatego,
+// ze przy 150 plikach nikt tego nie wypatrzy okiem, a jeden cykl pisany w
+// starej konwencji rozjezdza cala strone. Wyjatki: dane rejestrowe, CV,
+// przelacznik licznika dotyczacy jednej przegladarki i cytaty cudzych slow.
+{
+  const POJEDYNCZA = /\b(automatyzuję|sprawdzam|spinam|mierzę|buduję|tworzę|oferuję|konfiguruję|wysyłam|odpisuję|potrzebuję|pilnuję|zmierzę|sprawdzę|pokażę|odeślę|wyślę|znajdę|jestem|moje|mojego|moją|mój)\b/i;
+  const POMIN = ["app/cv/", "app/nie-licz-mnie/", "components/WylaczLicznik.tsx"];
+  const CYTAT = /„[^”]*”/g;
+  const katalogi = ["app", "components", "lib"];
+  const stos = [...katalogi];
+  while (stos.length) {
+    const biezacy = stos.pop();
+    const pelna = path.join(ROOT, biezacy);
+    if (!fs.existsSync(pelna)) continue;
+    for (const wpis of fs.readdirSync(pelna, { withFileTypes: true })) {
+      const wzgledna = path.join(biezacy, wpis.name);
+      if (wpis.isDirectory()) { stos.push(wzgledna); continue; }
+      if (!/\.(tsx|ts)$/.test(wpis.name)) continue;
+      if (POMIN.some((x) => wzgledna.replace(/\\/g, "/").includes(x))) continue;
+      const linie = read(wzgledna).split("\n");
+      linie.forEach((l, i) => {
+        const t = l.trim();
+        if (t.startsWith("//") || t.startsWith("*") || t.startsWith("/*")) return;
+        const bezCytatow = l.replace(CYTAT, "");
+        const m = bezCytatow.match(POJEDYNCZA);
+        if (m) add("liczba pojedyncza", `${wzgledna}:${i + 1}: "${m[1]}"`);
+      });
+    }
+  }
+}
+
 const byKind = {};
 for (const p of problems) (byKind[p.kind] ||= []).push(p.msg);
 

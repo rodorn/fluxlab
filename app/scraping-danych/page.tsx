@@ -12,13 +12,13 @@ import CzyDaSieSpiac from "@/components/CzyDaSieSpiac";
 export const metadata: Metadata = {
   title: "Scraping danych: web, PDF, maile, dokumenty | Fluxlab",
   description:
-    "Wyciągam strukturalne dane ze stron, PDF-ów, maili i dokumentów. Rozpoznawanie pól, walidacja i przesył do CRM lub arkusza. Bez kopiowania ręcznie.",
+    "Wyciągamy strukturalne dane ze stron, PDF-ów, maili i dokumentów. Rozpoznawanie pól, walidacja i przesył do CRM lub arkusza. Bez kopiowania ręcznie.",
   alternates: { canonical: "/scraping-danych" },
   openGraph: {
     title:
       "Scraping i ekstrakcja danych, web, PDF, maile, dokumenty | Fluxlab",
     description:
-      "Wyciągam strukturalne dane ze stron, PDF-ów, maili. AI rozpoznaje pola.",
+      "Wyciągamy strukturalne dane ze stron, PDF-ów, maili. AI rozpoznaje pola.",
     locale: "pl_PL",
     type: "website",
   },
@@ -47,17 +47,17 @@ const faq = [
   {
     question: "Czy scraping jest legalny?",
     answer:
-      "Publiczne strony zgodnie z TOS i robots.txt, tak. Chronione, logged-in albo paid content, nie. Każdy przypadek oceniam indywidualnie i mówię wprost, gdy widzę ryzyko.",
+      "Publiczne strony zgodnie z TOS i robots.txt, tak. Chronione, logged-in albo paid content, nie. Każdy przypadek oceniamy indywidualnie i mówimy wprost, gdy widzimy ryzyko.",
   },
   {
     question: "Co jeśli strona zmieni layout?",
     answer:
-      "Każdy produkcyjny scraper ma monitoring i alerty na anomalia. Aktualizację selektorów robię w ramach wsparcia, zwykle 1–2 dni od zgłoszenia.",
+      "Każdy produkcyjny scraper ma monitoring i alerty na anomalia. Aktualizację selektorów robimy w ramach wsparcia, zwykle 1–2 dni od zgłoszenia.",
   },
   {
     question: "Czy dane są bezpieczne?",
     answer:
-      "Tak. Pipeline szyfrowany, dane w Twojej infrastrukturze. Mam dostęp tylko na czas wdrożenia, później wszystko jest po Twojej stronie. NDA standardowo.",
+      "Tak. Pipeline szyfrowany, dane w Twojej infrastrukturze. Mamy dostęp tylko na czas wdrożenia, później wszystko jest po Twojej stronie. NDA standardowo.",
   },
 ];
 
@@ -90,7 +90,7 @@ export default function ScrapingDanychPage() {
                 id="hero-heading"
                 className="display-xl animate-fade-up-2 mb-6 text-gray-900 dark:text-white"
               >
-                Wyciągam dane z miejsc, w których normalnie giną.
+                Wyciągamy dane z miejsc, w których normalnie giną.
               </h1>
               <p className="animate-fade-up-3 text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-10 max-w-2xl">
                 Strony WWW, PDF-y, maile, dokumenty. AI rozpoznaje pola,
@@ -156,7 +156,7 @@ export default function ScrapingDanychPage() {
               {
                 title: "Źródło trudne",
                 price: "wycena po sprawdzeniu",
-                desc: "Logowanie, limity zapytań, treść doładowywana skryptem. Zanim wycenię, sprawdzam, czy da się to zebrać legalnie i stabilnie.",
+                desc: "Logowanie, limity zapytań, treść doładowywana skryptem. Zanim wycenimy, sprawdzamy, czy da się to zebrać legalnie i stabilnie.",
               },
             ].map((c) => (
               <div
@@ -178,7 +178,7 @@ export default function ScrapingDanychPage() {
             ))}
           </div>
           <p className="mt-5 max-w-2xl text-sm text-gray-500 dark:text-gray-400">
-            Przed zleceniem zbieram za darmo próbkę kilkunastu rekordów w
+            Przed zleceniem zbieramy za darmo próbkę kilkunastu rekordów w
             docelowym układzie kolumn, żebyś ocenił jakość, zanim cokolwiek
             zapłacisz.
           </p>
@@ -236,10 +236,10 @@ export default function ScrapingDanychPage() {
                         Scraping to narzędzie, nie wytrych.
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
-                        Robię scraping publicznych stron zgodnie z TOS i
-                        robots.txt oraz ekstrakcję z Twoich danych. Nie obchodzę
+                        Robimy scraping publicznych stron zgodnie z TOS i
+                        robots.txt oraz ekstrakcję z Twoich danych. Nie obchodzimy
                         zabezpieczeń, nie ruszam chronionych zasobów ani danych
-                        osobowych bez podstawy prawnej. Gdy widzę ryzyko, mówię
+                        osobowych bez podstawy prawnej. Gdy widzimy ryzyko, mówimy
                         wprost.
                       </p>
                     </div>
@@ -307,7 +307,7 @@ export default function ScrapingDanychPage() {
                     <LandingForm
                       formId="diagnosis_scraping"
                       heading="Bezpłatna diagnoza scrapingu"
-                      intro="Opisz krótko, jakich danych potrzebujesz i z jakich źródeł. Wrócę w 24h z informacją, czy widzę dopasowanie i czy źródło jest dostępne legalnie."
+                      intro="Opisz krótko, jakich danych potrzebujesz i z jakich źródeł. Wrócimy w 24h z informacją, czy widzimy dopasowanie i czy źródło jest dostępne legalnie."
                       submitLabel="Zamów diagnozę"
                     />
                   </section>
@@ -327,7 +327,7 @@ export default function ScrapingDanychPage() {
             "@type": "Service",
             name: "Scraping i ekstrakcja danych",
             description:
-              "Wyciągam strukturalne dane ze stron, PDF-ów, maili i dokumentów. AI rozpoznaje pola, walidacja w czasie rzeczywistym, pipeline do CRM lub arkusza.",
+              "Wyciągamy strukturalne dane ze stron, PDF-ów, maili i dokumentów. AI rozpoznaje pola, walidacja w czasie rzeczywistym, pipeline do CRM lub arkusza.",
             provider: { "@id": "https://fluxlab.pl/#organization" },
             areaServed: { "@type": "Country", name: "Polska" },
             serviceType: "Scraping i ekstrakcja danych",

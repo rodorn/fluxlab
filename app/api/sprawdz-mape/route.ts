@@ -150,7 +150,7 @@ export async function POST(request: Request) {
       return NextResponse.json({
         status: "BRAK_STRONY",
         domena,
-        naglowek: "Nie mogę połączyć się z tą stroną",
+        naglowek: "Nie możemy połączyć się z tą stroną",
         komentarz:
           "Ani wersja z www, ani bez www nie odpowiedziała. Sprawdź pisownię albo spróbuj za chwilę.",
       });
@@ -213,7 +213,7 @@ export async function POST(request: Request) {
       status: "OK",
       domena,
       werdykt: "CZERWONY",
-      naglowek: "Nie znalazłem mapy strony",
+      naglowek: "Nie znaleźliśmy mapy strony",
       maRobots: Boolean(robots),
       wskazanaWRobots: wskazane.length > 0,
       blokadaIndeksowania: blokada,
@@ -264,15 +264,15 @@ export async function POST(request: Request) {
   // faktycznie lezy, dopisujemy takze wtedy, gdy glownym problemem sa martwe
   // adresy. To zwykle jedna i ta sama przyczyna: zla wersja adresu.
   const oRobots = wskazanaNieDziala
-    ? ` Osobno: plik robots.txt wskazuje mapę pod adresem ${wskazane[0]}, a ten adres nie odpowiada. Mapę znalazłem dopiero obok, pod ${uzyte[uzyte.length - 1]}. To zwykle ta sama przyczyna: wpis zrobiony dla wersji adresu z www albo bez www, która potem przestała działać.`
+    ? ` Osobno: plik robots.txt wskazuje mapę pod adresem ${wskazane[0]}, a ten adres nie odpowiada. Mapę znaleźliśmy dopiero obok, pod ${uzyte[uzyte.length - 1]}. To zwykle ta sama przyczyna: wpis zrobiony dla wersji adresu z www albo bez www, która potem przestała działać.`
     : "";
 
   const bazowy = blokada
     ? "W pliku robots.txt stoi prośba o nieodwiedzanie całego serwisu. Mapa strony przy takim ustawieniu niczego nie zmienia, bo robot i tak nie wejdzie. To najczęściej pozostałość po wersji roboczej strony, która pojechała na produkcję razem z tym ustawieniem."
     : zepsute.length
-      ? "Adresy z mapy strony są dla wyszukiwarki obietnicą: tu są moje podstrony. Jeśli część z nich nie odpowiada, robot zużywa na nie swój limit odwiedzin i traci zaufanie do całej listy, a klient, który trafi na taki adres z wyników wyszukiwania, widzi komunikat o błędzie zamiast oferty."
+      ? "Adresy z mapy strony są dla wyszukiwarki obietnicą: tu są nasze podstrony. Jeśli część z nich nie odpowiada, robot zużywa na nie swój limit odwiedzin i traci zaufanie do całej listy, a klient, który trafi na taki adres z wyników wyszukiwania, widzi komunikat o błędzie zamiast oferty."
       : wskazanaNieDziala
-        ? `Plik robots.txt wskazuje mapę strony pod adresem ${wskazane[0]}, a ten adres nie odpowiada. Sama mapa istnieje i znalazłem ją pod ${uzyte[uzyte.length - 1]}, czyli obok. Dla wyszukiwarki to jednak ślepy zaułek: dostaje jeden konkretny adres i pod nim nic nie ma.`
+        ? `Plik robots.txt wskazuje mapę strony pod adresem ${wskazane[0]}, a ten adres nie odpowiada. Sama mapa istnieje i znaleźliśmy ją pod ${uzyte[uzyte.length - 1]}, czyli obok. Dla wyszukiwarki to jednak ślepy zaułek: dostaje jeden konkretny adres i pod nim nic nie ma.`
         : wskazane.length
           ? "Mapa strony jest, jest wskazana w robots.txt i sprawdzone adresy odpowiadają poprawnie. Tego punktu nie musisz ruszać."
           : "Mapa strony istnieje, ale plik robots.txt o niej nie wspomina. Wyszukiwarka zwykle i tak sprawdzi standardową lokalizację, więc to nie jest awaria, natomiast wskazanie mapy wprost jest darmowe i usuwa zgadywanie.";

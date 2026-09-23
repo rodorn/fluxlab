@@ -156,7 +156,7 @@ export async function POST(request: Request) {
       return NextResponse.json({
         status: "BRAK_STRONY",
         domena,
-        naglowek: "Nie mogę połączyć się z tą stroną",
+        naglowek: "Nie możemy połączyć się z tą stroną",
         komentarz:
           "Ani wersja z www, ani bez www nie odpowiedziała. Sprawdź pisownię albo spróbuj za chwilę.",
       });
@@ -200,13 +200,13 @@ export async function POST(request: Request) {
   } else if (!nipy.length) {
     werdykt = "CZERWONY";
     naglowek = "Na stronie nie ma NIP-u";
-    komentarz = `Przejrzałem ${sprawdzone.length} podstron, w tym kontakt i regulamin, i nie znalazłem numeru NIP. Dla klienta firmowego oznacza to, że nie ustali ze strony, z kim zawiera umowę i komu przelewa pieniądze. Przy zakupach powyżej piętnastu tysięcy złotych jego księgowość ma obowiązek sprawdzić sprzedawcę w wykazie podatników, a bez NIP-u nie ma czego wpisać.`;
+    komentarz = `Przejrzałem ${sprawdzone.length} podstron, w tym kontakt i regulamin, i nie znaleźliśmy numeru NIP. Dla klienta firmowego oznacza to, że nie ustali ze strony, z kim zawiera umowę i komu przelewa pieniądze. Przy zakupach powyżej piętnastu tysięcy złotych jego księgowość ma obowiązek sprawdzić sprzedawcę w wykazie podatników, a bez NIP-u nie ma czego wpisać.`;
   } else if (wyrejestrowany || bezRachunkow) {
     werdykt = "CZERWONY";
     naglowek = "Dane rejestrowe wymagają wyjaśnienia";
     komentarz = `NIP ze strony należy do podmiotu ${glowny?.name}, ale w wykazie podatników ma status ${glowny?.statusVat ?? "nieznany"}${
       glowny?.rachunkow === 0 ? " i nie ma zgłoszonego żadnego rachunku" : ""
-    }. Uprzedzam od razu, że taki status nie zawsze oznacza problem, bo zwracają go także duże, działające firmy, na przykład z powodu rozliczania się w grupie. Natomiast Twój klient zobaczy dokładnie to samo co ja i bez wyjaśnienia potraktuje to jako sygnał ostrzegawczy.`;
+    }. Uprzedzamy od razu, że taki status nie zawsze oznacza problem, bo zwracają go także duże, działające firmy, na przykład z powodu rozliczania się w grupie. Natomiast Twój klient zobaczy dokładnie to samo co ja i bez wyjaśnienia potraktuje to jako sygnał ostrzegawczy.`;
   } else if (rachunki.length) {
     werdykt = "ZIELONY";
     naglowek = "Klient sprawdzi Cię w kilkanaście sekund";

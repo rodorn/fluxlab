@@ -6,7 +6,7 @@ import { PODMIOTY } from "@/lib/terminy-e-doreczen";
 export const metadata: Metadata = {
   title: "Integracja z e-Doręczeniami dla firm | Fluxlab",
   description:
-    "Adres do doręczeń elektronicznych obejmuje kolejne podmioty. Spinam skrzynkę z systemem, który już macie, żeby pisma nie wymagały osobnego panelu.",
+    "Adres do doręczeń elektronicznych obejmuje kolejne podmioty. Spinamy skrzynkę z systemem, który już macie, żeby pisma nie wymagały osobnego panelu.",
   alternates: { canonical: "/e-doreczenia-integracja" },
   openGraph: {
     title: "Integracja z e-Doręczeniami dla firm | Fluxlab",
@@ -33,12 +33,12 @@ export default function EDoreczeniaIntegracja() {
       breadcrumb="Integracja z e-Doręczeniami"
       eyebrow="e-Doręczenia"
       h1="Integracja z e-Doręczeniami"
-      lead="Skrzynka do doręczeń elektronicznych jest obowiązkowa, ale nikt nie każe obsługiwać jej ręcznie w osobnym panelu. Spinam ją z systemem, którego już używacie, żeby pisma i dowody doręczenia trafiały tam, gdzie pracujecie."
+      lead="Skrzynka do doręczeń elektronicznych jest obowiązkowa, ale nikt nie każe obsługiwać jej ręcznie w osobnym panelu. Spinamy ją z systemem, którego już używacie, żeby pisma i dowody doręczenia trafiały tam, gdzie pracujecie."
       ctaLabel="Sprawdź swój termin"
       ctaNote="Dwa kliknięcia, bez wpisywania czegokolwiek"
       checks={[
         {
-          title: "Napisałem klienta tego API i oddałem go za darmo",
+          title: "Napisaliśmy klienta tego API i oddałem go za darmo",
           desc: "Kod leży publicznie pod adresem github.com/rodorn/edoreczenia-klient, na licencji MIT, do obejrzenia przed rozmową z kimkolwiek. Powstał, bo w całym otwartym kodzie nie było ani jednego klienta tego interfejsu w żadnym języku, a termin goni miliony podmiotów. Możecie go użyć sami albo dać swojemu programiście, bez pytania mnie o zgodę.",
         },
         {
@@ -47,14 +47,14 @@ export default function EDoreczeniaIntegracja() {
         },
         {
           title: "Wysyłka z załącznikiem to trzy kroki, nie jeden",
-          desc: "Najpierw powstaje wersja robocza, potem dołącza się do niej załączniki osobnym wywołaniem, dopiero na końcu następuje wysłanie. Pominięcie środkowego kroku kończy się pismem bez załącznika, wysłanym i nieodwracalnym. Piszę to wprost, bo to jest dokładnie ten rodzaj błędu, który wychodzi po miesiącu.",
+          desc: "Najpierw powstaje wersja robocza, potem dołącza się do niej załączniki osobnym wywołaniem, dopiero na końcu następuje wysłanie. Pominięcie środkowego kroku kończy się pismem bez załącznika, wysłanym i nieodwracalnym. Piszemy to wprost, bo to jest dokładnie ten rodzaj błędu, który wychodzi po miesiącu.",
         },
         {
           title: "Gdzie mają trafiać pisma",
           desc: "Do systemu obiegu dokumentów, do CRM, na skrzynkę, do której już zaglądacie, albo do arkusza, jeśli tak dziś pracujecie. Nie narzucam narzędzia, bo sens integracji polega właśnie na tym, żeby nie dokładać kolejnego miejsca do sprawdzania.",
         },
         {
-          title: "Czego potrzebuję od Was",
+          title: "Czego potrzebujemy od Was",
           desc: "Dostępu do środowiska testowego usługi, o który występuje podmiot, oraz informacji, z jakiego systemu korzystacie po swojej stronie. Wniosku o dostęp nie złożę za Was, bo składa go właściciel skrzynki.",
         },
         {
@@ -68,7 +68,7 @@ export default function EDoreczeniaIntegracja() {
           price: "0 zł",
           desc: "Zanim cokolwiek zlecicie.",
           features: [
-            "Sprawdzam, czy Wasz system da się z tym spiąć i czym",
+            "Sprawdzamy, czy Wasz system da się z tym spiąć i czym",
             "Informacja, ile pism trzeba mieć, żeby to się zwróciło",
             "Gotowy klient API do obejrzenia, publicznie",
           ],
@@ -104,27 +104,27 @@ export default function EDoreczeniaIntegracja() {
           a: PODMIOTY.map((p) => p.opis).join(" "),
         },
         {
-          q: "Czy muszę mieć adres do doręczeń, żeby zacząć?",
-          a: "Do samej integracji tak, bo to Wasza skrzynka jest jej punktem zaczepienia. Wniosek o adres składa podmiot i jest to procedura urzędowa, a nie techniczna. Rozpoznanie mogę zrobić wcześniej, na podstawie tego, z jakiego systemu korzystacie.",
+          q: "Czy musimy mieć adres do doręczeń, żeby zacząć?",
+          a: "Do samej integracji tak, bo to Wasza skrzynka jest jej punktem zaczepienia. Wniosek o adres składa podmiot i jest to procedura urzędowa, a nie techniczna. Rozpoznanie możemy zrobić wcześniej, na podstawie tego, z jakiego systemu korzystacie.",
         },
         {
           q: "Po co komuś integracja, skoro jest panel dostawcy?",
           a: "Przy kilku pismach rocznie po nic. Sens pojawia się wtedy, gdy ktoś codziennie loguje się do osobnego panelu, przepisuje z niego dane albo pilnuje terminów liczonych od doręczenia. Wtedy integracja zdejmuje czynność, która i tak musi się dziać, tylko dziś dzieje się ręcznie.",
         },
         {
-          q: "Skąd mam wiedzieć, że umiecie to zrobić?",
+          q: "Skąd mamy wiedzieć, że umiecie to zrobić?",
           a: "Z kodu, pod adresem github.com/rodorn/edoreczenia-klient. Jest tam komplet metod z projektu technicznego interfejsu, testy i opis trzech pułapek, na których takie wdrożenia się wykładają. Możecie go ocenić sami albo dać do oceny swojemu programiście, zanim cokolwiek zlecicie. To więcej niż referencja, bo referencji nie da się sprawdzić linijka po linijce.",
         },
         {
           q: "Czy dane pism wychodzą poza naszą firmę?",
-          a: "Nie muszą. Integrację stawiam na Waszym serwerze i wtedy pisma idą wyłącznie między usługą a Waszym systemem. Jeśli wolicie rozwiązanie chmurowe, powiem wprost, co przez czyją infrastrukturę przechodzi, zanim cokolwiek uruchomimy.",
+          a: "Nie muszą. Integrację stawiamy na Waszym serwerze i wtedy pisma idą wyłącznie między usługą a Waszym systemem. Jeśli wolicie rozwiązanie chmurowe, powiemy wprost, co przez czyją infrastrukturę przechodzi, zanim cokolwiek uruchomimy.",
         },
       ]}
       formId="edoreczenia"
       formHeading="Napiszcie, z jakiego systemu korzystacie"
-      formIntro="Wystarczy nazwa systemu obiegu dokumentów albo CRM, i jedno zdanie o tym, ile pism miesięcznie się u Was pojawia. Odpiszę, czy integracja ma sens, czy panel wystarczy."
+      formIntro="Wystarczy nazwa systemu obiegu dokumentów albo CRM, i jedno zdanie o tym, ile pism miesięcznie się u Was pojawia. Odpiszemy, czy integracja ma sens, czy panel wystarczy."
       submitLabel="Wyślij opis"
-      microCopy="Ustalenia prowadzę mailowo. Telefon, jeśli tak Wam wygodniej."
+      microCopy="Ustalenia prowadzimy mailowo. Telefon, jeśli tak Wam wygodniej."
       serviceName="Integracja z e-Doręczeniami"
       serviceDesc="Spięcie skrzynki do doręczeń elektronicznych z systemem obiegu dokumentów, CRM albo inną aplikacją: odbiór pism, pobieranie dowodów doręczenia, wysyłka z załącznikami."
       serviceType="Integracja systemów informatycznych"

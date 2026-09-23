@@ -51,7 +51,7 @@ export default function ZwrotyCheck() {
   const [blad, setBlad] = useState("");
   const [zamowien, setZamowien] = useState("300");
   const [email, setEmail] = useState("");
-  const [leadStan, setLeadStan] = useState<"idle" | "wysylam" | "ok" | "blad">("idle");
+  const [leadStan, setLeadStan] = useState<"idle" | "wysylamy" | "ok" | "blad">("idle");
   const [leadBlad, setLeadBlad] = useState("");
 
   async function sprawdz(e: React.FormEvent) {
@@ -92,7 +92,7 @@ export default function ZwrotyCheck() {
   async function zamow(e: React.FormEvent) {
     e.preventDefault();
     if (!wynik) return;
-    setLeadStan("wysylam");
+    setLeadStan("wysylamy");
     setLeadBlad("");
     const braki = wynik.wymogi?.filter((w) => !w.jest).map((w) => w.etykieta) || [];
     try {
@@ -140,8 +140,8 @@ export default function ZwrotyCheck() {
         Sprawdź, czego kupujący nie znajdzie o zwrotach
       </h2>
       <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-        Podaj adres sklepu. Znajdę Twoje strony o zwrotach, reklamacjach i
-        regulamin, przeczytam je razem i pokażę, których informacji brakuje.
+        Podaj adres sklepu. Znajdziemy Twoje strony o zwrotach, reklamacjach i
+        regulamin, przeczytam je razem i pokażemy, których informacji brakuje.
         Każdy taki brak kończy się mailem z pytaniem, na które ktoś musi
         odpowiedzieć ręcznie.
       </p>
@@ -169,7 +169,7 @@ export default function ZwrotyCheck() {
           disabled={stan === "ladowanie"}
           className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
         >
-          {stan === "ladowanie" ? "Czytam..." : "Sprawdź sklep"}
+          {stan === "ladowanie" ? "Czytamy..." : "Sprawdź sklep"}
         </button>
       </form>
 
@@ -270,7 +270,7 @@ export default function ZwrotyCheck() {
 
             {leadStan === "ok" ? (
               <p className="mt-4 text-sm font-semibold text-emerald-700 dark:text-emerald-400">
-                Mam zgłoszenie razem z wynikiem. Odpiszę na {email}, zwykle tego
+                Mamy zgłoszenie razem z wynikiem. Odpiszemy na {email}, zwykle tego
                 samego dnia.
               </p>
             ) : (
@@ -279,7 +279,7 @@ export default function ZwrotyCheck() {
                   htmlFor="zwroty-email"
                   className="block text-sm font-medium text-gray-900 dark:text-white"
                 >
-                  Podaj maila, odeślę pełny raport i wycenę panelu
+                  Podaj maila, odeślemy pełny raport i wycenę panelu
                 </label>
                 <div className="mt-2 flex flex-col gap-3 sm:flex-row">
                   <input
@@ -293,10 +293,10 @@ export default function ZwrotyCheck() {
                   />
                   <button
                     type="submit"
-                    disabled={leadStan === "wysylam"}
+                    disabled={leadStan === "wysylamy"}
                     className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
                   >
-                    {leadStan === "wysylam" ? "Wysyłam..." : "Wyślij zgłoszenie"}
+                    {leadStan === "wysylamy" ? "Wysyłamy..." : "Wyślij zgłoszenie"}
                   </button>
                 </div>
                 {leadStan === "blad" && (
@@ -309,7 +309,7 @@ export default function ZwrotyCheck() {
       )}
 
       <p className="mt-4 text-xs text-gray-500 dark:text-gray-400">
-        Czytam wyłącznie publicznie dostępne strony Twojego sklepu. To sprawdzenie
+        Czytamy wyłącznie publicznie dostępne strony Twojego sklepu. To sprawdzenie
         techniczne, czy informacja jest podana i łatwa do znalezienia, a nie opinia
         prawna o treści regulaminu.
       </p>

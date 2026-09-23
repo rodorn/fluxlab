@@ -48,7 +48,7 @@ const faqs = [
       "Zasada upraszczająca: do 10 tys. km rocznie, głównie w mieście, z możliwością ładowania w domu, elektryk opłaca się najszybciej. 10–20 tys. km, miks miasto/trasa, bez własnego gniazdka, hybryda (pełna, nie mild) daje najlepszy kompromis. Powyżej 25 tys. km, głównie autostrady i szybkie trasy, diesel nadal wygrywa zasięgiem i zużyciem. Benzyna to dobry wybór, gdy nie jeździsz dużo, ale robisz nieregularne długie trasy, bezpiecznie, tanio w zakupie, niskie ryzyko drogich awarii. Konfigurator pytał o Twój profil jazdy właśnie po to, żeby zaproponować odpowiedni napęd.",
   },
   {
-    question: "Czy mogę zmienić preferencje i uruchomić kreator ponownie?",
+    question: "Czy możemy zmienić preferencje i uruchomić kreator ponownie?",
     answer:
       "Tak. Kreator jest bezstanowy, każde uruchomienie zaczynasz od zera i możesz wypróbować kilka scenariuszy. W praktyce warto to zrobić: najpierw wpisz realistyczne odpowiedzi dla codziennej sytuacji, potem spróbuj „optymistycznej” (większy budżet, więcej miejsca) i „minimalnej” (mniej osób, mniejszy budżet). Zobaczysz, jak zmienia się rekomendowany segment. Często okazuje się, że różnica między potrzebami realnymi a wymarzonymi to jeden segment wyżej, co przekłada się na 20–40% wyższe koszty bez realnej korzyści.",
   },
@@ -191,7 +191,7 @@ export default function DoborSamochoduPage() {
                           </li>
                           <li>
                             <strong>Firma kupująca flotę.</strong> Zamiast
-                            polegać na rekomendacji dealera („bo akurat mam to w
+                            polegać na rekomendacji dealera („bo akurat mamy to w
                             promocji”), wchodzisz do rozmowy z konkretnym
                             profilem auta dopasowanym do pracowników. To daje
                             przewagę negocjacyjną.
@@ -243,7 +243,7 @@ export default function DoborSamochoduPage() {
                             <strong>
                               Kierowanie się marką zamiast potrzebami.
                             </strong>{" "}
-                            „Kupuję Audi, bo zawsze chciałem Audi”. To jest
+                            „Kupuję Audi, bo zawsze chcieliśmy Audi”. To jest
                             zakup emocjonalny, nie racjonalny. W tym samym
                             budżecie segmentu premium dostępny jest często
                             większy segment marki „zwykłej”, który lepiej spełni

@@ -32,12 +32,12 @@ export const metadata: Metadata = {
 
 const faqItems = [
   {
-    question: "Dlaczego akurat moje maile trafiają do spamu, a innych nie?",
+    question: "Dlaczego akurat nasze maile trafiają do spamu, a innych nie?",
     answer:
       "Najczęściej przez brak lub błędną konfigurację SPF, DKIM i DMARC. Filtry Gmaila i Outlooka od 2024 roku traktują brak tych rekordów jako sygnał ostrzegawczy. Do tego dochodzi reputacja adresu IP i domeny oraz treść wiadomości. Konfiguracja DNS to jednak pierwsza i najłatwiejsza do naprawienia przyczyna.",
   },
   {
-    question: "Jak sprawdzić, czy problem jest po mojej stronie?",
+    question: "Jak sprawdzić, czy problem jest po naszej stronie?",
     answer:
       "Zacznij od audytu rekordów DNS domeny: SPF, DKIM, DMARC. Jeśli któregoś brakuje lub DMARC jest w trybie p=none, masz konkretną przyczynę do naprawy. Darmowy audyt pokaże to w kilka sekund, bez logowania.",
   },
@@ -165,7 +165,7 @@ export default function MaileSpamArticle() {
 
         <SprawdzPoBadaniu
           naglowek="Zobacz to sprawdzenie na żywo"
-          opis="Odpytuję serwery nazw wybranej domeny o rekordy SPF, DKIM i DMARC i pokazuję, czego w nich brakuje. Nic nie wpisujesz, nic nie zakładasz."
+          opis="Odpytuję serwery nazw wybranej domeny o rekordy SPF, DKIM i DMARC i pokazujemy, czego w nich brakuje. Nic nie wpisujesz, nic nie zakładasz."
           endpoint="/api/audyt"
           pozycje={[
             { wartosc: "fluxlab.pl" },

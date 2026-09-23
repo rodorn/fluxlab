@@ -41,7 +41,7 @@ export default function Page() {
         },
         {
           title: "Halucynacje o produktach",
-          desc: "Wymyślone parametry, dostępność towaru, którego nie ma, i terminy dostawy wzięte z powietrza. Każdą taką odpowiedź pokazuję z cytatem.",
+          desc: "Wymyślone parametry, dostępność towaru, którego nie ma, i terminy dostawy wzięte z powietrza. Każdą taką odpowiedź pokazujemy z cytatem.",
         },
         {
           title: "Sprzeczności z regulaminem",
@@ -79,19 +79,19 @@ export default function Page() {
       ]}
       faq={[
         {
-          q: "Czy będziesz łamał zabezpieczenia mojego bota?",
-          a: "Nie. W standardowym audycie zadaję wyłącznie normalne pytania klienta, czyli rozmowę, którą może odbyć każdy odwiedzający. Testy odporności na manipulację robię tylko wtedy, gdy wyraźnie o to poprosisz na piśmie.",
+          q: "Czy będziecie łamali zabezpieczenia naszego bota?",
+          a: "Nie. W standardowym audycie zadaję wyłącznie normalne pytania klienta, czyli rozmowę, którą może odbyć każdy odwiedzający. Testy odporności na manipulację robimy tylko wtedy, gdy wyraźnie o to poprosisz na piśmie.",
         },
         {
-          q: "Czego potrzebujesz, żeby zacząć?",
-          a: "Adresu strony z botem oraz aktualnego cennika i regulaminu, najlepiej jako link albo plik. Bez nich mogę ocenić spójność odpowiedzi, ale nie ich prawdziwość.",
+          q: "Czego potrzebujecie, żeby zacząć?",
+          a: "Adresu strony z botem oraz aktualnego cennika i regulaminu, najlepiej jako link albo plik. Bez nich możemy ocenić spójność odpowiedzi, ale nie ich prawdziwość.",
         },
         {
-          q: "Mam bota regułowego, nie AI. Ma to sens?",
-          a: "Mniejszy. Bot regułowy nie halucynuje, więc audyt sprowadza się do luk w scenariuszach. Napisz, co masz, i powiem wprost, czy warto.",
+          q: "Mamy bota regułowego, nie AI. Ma to sens?",
+          a: "Mniejszy. Bot regułowy nie halucynuje, więc audyt sprowadza się do luk w scenariuszach. Napisz, co masz, i powiemy wprost, czy warto.",
         },
         {
-          q: "Co dostaję na koniec?",
+          q: "Co dostajemy na koniec?",
           a: "Raport PDF z listą wpadek, każdą z cytatem i zrzutem, oraz plik z testami kontrolnymi do ponownego użycia.",
         },
       ]}

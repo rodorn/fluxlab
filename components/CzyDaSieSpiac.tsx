@@ -93,7 +93,7 @@ export default function CzyDaSieSpiac({ biezacaStrona }: Props) {
         Czy da się to spiąć
       </h2>
       <p className="mt-3 max-w-2xl text-gray-600 dark:text-gray-300">
-        Naciśnij, gdzie dziś leżą Wasze dane. Napiszę, jak się je stamtąd
+        Naciśnij, gdzie dziś leżą Wasze dane. Napiszemy, jak się je stamtąd
         wyciąga i co przy takim źródle psuje spięcie najczęściej. Drugie
         naciśnięcie, o tym dokąd mają trafiać, dokłada ocenę całości. Bez
         wpisywania czegokolwiek i bez podawania adresu.

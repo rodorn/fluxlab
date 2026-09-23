@@ -141,7 +141,7 @@ export const DANE: Dane[] = [
     nazwa: "W arkuszu i w mailach",
     warto: false,
     werdykt:
-      "Zanim cokolwiek tu automatyzować, dane muszą mieć stały kształt. Arkusz, w którym każdy wpisuje po swojemu, a reszta ustaleń żyje w mailach, nie ma czego podać automatowi na wejściu. Pierwszy krok jest bez mojego udziału: jedna tabela, ustalone kolumny, jedno miejsce na całą firmę. Dopiero na tym da się cokolwiek zbudować.",
+      "Zanim cokolwiek tu automatyzować, dane muszą mieć stały kształt. Arkusz, w którym każdy wpisuje po swojemu, a reszta ustaleń żyje w mailach, nie ma czego podać automatowi na wejściu. Pierwszy krok jest bez naszego udziału: jedna tabela, ustalone kolumny, jedno miejsce na całą firmę. Dopiero na tym da się cokolwiek zbudować.",
     koszt:
       "Koszt: zero, to porządek w danych, nie wdrożenie. Wrócić warto wtedy, kiedy tabela stoi.",
   },
@@ -150,7 +150,7 @@ export const DANE: Dane[] = [
     nazwa: "W programie, który nie ma API",
     warto: true,
     werdykt:
-      "Da się, ale drogą okrężną, przez to, co program potrafi wypuścić i przyjąć: eksport do pliku, import, czasem baza pod spodem. Działa i bywa stabilne, tyle że każda aktualizacja programu jest momentem, w którym trzeba to sprawdzić. Mówię o tym przed wyceną, nie po.",
+      "Da się, ale drogą okrężną, przez to, co program potrafi wypuścić i przyjąć: eksport do pliku, import, czasem baza pod spodem. Działa i bywa stabilne, tyle że każda aktualizacja programu jest momentem, w którym trzeba to sprawdzić. Mówimy o tym przed wyceną, nie po.",
     koszt:
       "Orientacyjnie od 1 500 zł, zależnie od tego, co program wypuszcza. Diagnoza przed wyceną: 0 zł.",
   },
@@ -167,8 +167,8 @@ export const DANE: Dane[] = [
     nazwa: "W kilku systemach, które się nie widzą",
     warto: true,
     werdykt:
-      "Tu pracą nie jest automatyzacja pojedynczej czynności, tylko ustalenie, który system ma rację, kiedy dwa podają inną wartość. Bez tej decyzji automat tylko szybciej rozniesie niezgodność. Zaczynam od jednego kierunku przepływu, nie od spinania wszystkiego ze wszystkim naraz.",
+      "Tu pracą nie jest automatyzacja pojedynczej czynności, tylko ustalenie, który system ma rację, kiedy dwa podają inną wartość. Bez tej decyzji automat tylko szybciej rozniesie niezgodność. Zaczynamy od jednego kierunku przepływu, nie od spinania wszystkiego ze wszystkim naraz.",
     koszt:
-      "Orientacyjnie od 2 500 zł za spięcie dwóch systemów. Kolejne kierunki wyceniam osobno.",
+      "Orientacyjnie od 2 500 zł za spięcie dwóch systemów. Kolejne kierunki wyceniamy osobno.",
   },
 ];

@@ -154,7 +154,7 @@ const SKALE: Skala[] = [
     werdykt:
       "Przy tym wolumenie naprawianie pojedynczego etapu zwykle przenosi wąskie gardło dalej, zamiast je usunąć. Sensowniej jest spiąć całą ścieżkę razem z raportem, który pokazuje, gdzie realnie odpadają zapytania.",
     koszt:
-      "Orientacyjnie od 2 500 zł za ścieżkę z raportem. Integracje przez API wyceniam osobno.",
+      "Orientacyjnie od 2 500 zł za ścieżkę z raportem. Integracje przez API wyceniamy osobno.",
   },
 ];
 
@@ -186,8 +186,8 @@ export default function DrogaLeada() {
         Na którym etapie gubią się Wasze zapytania?
       </h2>
       <p className="mt-3 max-w-2xl text-gray-600 dark:text-gray-400">
-        Naciśnij etap, a pokażę, co się tam psuje, jak to sprawdzić u siebie
-        jeszcze dzisiaj i co z tym robię. Drugie kliknięcie, o skali, decyduje,
+        Naciśnij etap, a pokażemy, co się tam psuje, jak to sprawdzić u siebie
+        jeszcze dzisiaj i co z tym robimy. Drugie kliknięcie, o skali, decyduje,
         czy w ogóle warto to automatyzować.
       </p>
 
@@ -247,7 +247,7 @@ export default function DrogaLeada() {
             </div>
             <div>
               <dt className="font-semibold text-gray-900 dark:text-white">
-                Sprawdź to sam, bez mojego udziału
+                Sprawdź to sam, bez naszego udziału
               </dt>
               <dd className="mt-1 text-gray-700 dark:text-gray-300">
                 {etap.sprawdz}
@@ -255,7 +255,7 @@ export default function DrogaLeada() {
             </div>
             <div>
               <dt className="font-semibold text-gray-900 dark:text-white">
-                Co z tym robię
+                Co z tym robimy
               </dt>
               <dd className="mt-1 text-gray-700 dark:text-gray-300">
                 {etap.robie}

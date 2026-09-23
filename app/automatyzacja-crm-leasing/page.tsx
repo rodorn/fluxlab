@@ -67,7 +67,7 @@ const industrySpecifics = [
   },
   {
     title: "Regulacje (RODO + sektor finansowy)",
-    desc: "Dane osobowe i finansowe wymagają DPIA, rejestru zgód, terminów retencji. KNF kontroluje brokerów ubezpieczeniowych i pośredników kredytu hipotecznego. Wdrożenie automatyzacji bez zmapowanych zgód i bez audytu retencji to ryzyko regulacyjne, dlatego pierwszy etap wdrażam z prawnikiem klienta po stronie compliance.",
+    desc: "Dane osobowe i finansowe wymagają DPIA, rejestru zgód, terminów retencji. KNF kontroluje brokerów ubezpieczeniowych i pośredników kredytu hipotecznego. Wdrożenie automatyzacji bez zmapowanych zgód i bez audytu retencji to ryzyko regulacyjne, dlatego pierwszy etap wdrażamy z prawnikiem klienta po stronie compliance.",
   },
   {
     title: "Wolumen leadów i zmienność jakości",
@@ -110,18 +110,18 @@ const faq = [
     question:
       "Pracujemy na własnym CRM-ie zbudowanym 5 lat temu. Da się to spiąć?",
     answer:
-      "Tak, jeśli ma jakikolwiek interfejs zewnętrzny (API, eksport CSV, baza, do której można się podpiąć). W praktyce firmy leasingowe pracują zwykle na mieszance Pipedrive/HubSpot + Excel + własny system do wniosków. Najczęściej buduję warstwę pośrednią (n8n self-hosted), która spina wszystkie te systemy bez konieczności wymiany czegokolwiek. Po roku zwykle decydujecie, czy zostać przy obecnym CRM-ie, czy migrować, automatyzacja nie wymusza tej decyzji teraz.",
+      "Tak, jeśli ma jakikolwiek interfejs zewnętrzny (API, eksport CSV, baza, do której można się podpiąć). W praktyce firmy leasingowe pracują zwykle na mieszance Pipedrive/HubSpot + Excel + własny system do wniosków. Najczęściej budujemy warstwę pośrednią (n8n self-hosted), która spina wszystkie te systemy bez konieczności wymiany czegokolwiek. Po roku zwykle decydujecie, czy zostać przy obecnym CRM-ie, czy migrować, automatyzacja nie wymusza tej decyzji teraz.",
   },
   {
     question:
       "Mamy umowy z 8 leasingodawcami. Czy musimy integrować się ze wszystkimi?",
     answer:
-      "Nie. Pierwszy etap to integracja z 1–2 najczęściej używanymi (zwykle 60–80% wolumenu). Reszta dochodzi etapami, w miarę potrzeb. Czasem leasingodawca nie ma API publicznego, wtedy automatyzuję obieg dokumentów do portalu partnerskiego (RPA / automatyczny upload), co i tak zdejmuje większość ręcznej pracy.",
+      "Nie. Pierwszy etap to integracja z 1–2 najczęściej używanymi (zwykle 60–80% wolumenu). Reszta dochodzi etapami, w miarę potrzeb. Czasem leasingodawca nie ma API publicznego, wtedy automatyzujemy obieg dokumentów do portalu partnerskiego (RPA / automatyczny upload), co i tak zdejmuje większość ręcznej pracy.",
   },
   {
     question: "Co z RODO i tajemnicą bankową?",
     answer:
-      "Dla branży leasingowej standardowo wdrażam automatyzację na n8n self-hosted na waszym serwerze (Polska / EOG). Dane klientów nie wychodzą poza waszą infrastrukturę poza tymi, do których jawnie wysyłacie zapytania (BIK, KRD, leasingodawca). Konfiguruję retencję, rejestr zgód i logi dostępu. To wymaganie twarde, przed startem audytuję obecny stan ze strony compliance.",
+      "Dla branży leasingowej standardowo wdrażamy automatyzację na n8n self-hosted na waszym serwerze (Polska / EOG). Dane klientów nie wychodzą poza waszą infrastrukturę poza tymi, do których jawnie wysyłacie zapytania (BIK, KRD, leasingodawca). Konfigurujemy retencję, rejestr zgód i logi dostępu. To wymaganie twarde, przed startem audytuję obecny stan ze strony compliance.",
   },
   {
     question: "Ile kosztuje wdrożenie i ile trwa?",
@@ -216,7 +216,7 @@ export default function AutomatyzacjaCrmLeasing() {
               <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
                 Pierwsze pytanie nie brzmi: „jaki CRM kupić?”. Pierwsze pytanie
                 brzmi: „dlaczego lead z porównywarki krąży 36 godzin, zanim
-                broker do niego oddzwoni?”. Automatyzuję obsługę leada od
+                broker do niego oddzwoni?”. Automatyzujemy obsługę leada od
                 wpadnięcia do CRM przez BIK/KRD, wniosek do leasingodawcy, sync
                 statusu decyzji, aż po prowizję, w architekturze, która spełnia
                 RODO i wymogi sektora finansowego.
@@ -224,11 +224,11 @@ export default function AutomatyzacjaCrmLeasing() {
               <TrackedCTA
                 href="#sekcje"
                 location="article_automatyzacja-crm-leasing_hero"
-                label="Chcę audyt procesu leadów"
+                label="Chcemy audyt procesu leadów"
                 eventName="cta_click_article_audit"
                 className="btn-primary"
               >
-                Chcę audyt procesu leadów
+                Chcemy audyt procesu leadów
               </TrackedCTA>
             </div>
           </div>
@@ -428,7 +428,7 @@ export default function AutomatyzacjaCrmLeasing() {
                       <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                         Pierwszy etap automatyzacji kosztuje 8–15 tys. zł netto.
                         Czy i kiedy się spłaci, zależy od liczby brokerów i
-                        leadów, dlatego liczę to na Waszych danych przed
+                        leadów, dlatego liczymy to na Waszych danych przed
                         wyceną, zamiast obiecywać z góry.
                       </p>
                     </div>
@@ -568,12 +568,12 @@ export default function AutomatyzacjaCrmLeasing() {
                     <div className="max-w-3xl mx-auto">
                       <span className="section-label">Pierwszy etap</span>
                       <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-6">
-                        Co wdrażam w biurze brokerskim w pierwszych 3–5
+                        Co wdrażamy w biurze brokerskim w pierwszych 3–5
                         tygodniach
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
-                        Nie zaczynam od pełnej automatyzacji wszystkich 8
-                        leasingodawców + prowizji + raportów KNF. Zaczynam od
+                        Nie zaczynamy od pełnej automatyzacji wszystkich 8
+                        leasingodawców + prowizji + raportów KNF. Zaczynamy od
                         jednej pętli, której czas da się zmierzyć przed i po
                         wdrożeniu, żeby zarząd widział liczby, a nie obietnice.
                       </p>
@@ -843,16 +843,16 @@ export default function AutomatyzacjaCrmLeasing() {
                         30 minut rozmowy o procesie. Wyjdziesz z mapą procesu,
                         wskazaniem 3 najpilniejszych miejsc do automatyzacji i
                         widełkami cenowymi. Bez zobowiązań, jeśli nie zobaczę
-                        dopasowania, powiem to wprost.
+                        dopasowania, powiemy to wprost.
                       </p>
                       <TrackedCTA
                         href="/kontakt"
                         location="article_automatyzacja-crm-leasing_final"
-                        label="Chcę audyt procesu leadów"
+                        label="Chcemy audyt procesu leadów"
                         eventName="cta_click_article_audit"
                         className="btn-primary"
                       >
-                        Chcę audyt procesu leadów
+                        Chcemy audyt procesu leadów
                       </TrackedCTA>
                     </div>
                   </div>

@@ -432,7 +432,7 @@ export default function AudytCRM() {
         </h2>
         <p className="text-sm text-gray-500 dark:text-gray-400">
           Każde pytanie ma trzy odpowiedzi: <strong>tak</strong>,{" "}
-          <strong>nie</strong> albo <strong>nie wiem</strong>. „Nie wiem" liczy
+          <strong>nie</strong> albo <strong>nie wiemy</strong>. „Nie wiemy" liczy
           się jak „nie", bo jeśli nie masz pewności, że coś działa, to znaczy,
           że nie działa świadomie.
         </p>
@@ -484,7 +484,7 @@ export default function AudytCRM() {
                   onClick={() => setAnswer(q.id, "nie_wiem")}
                   variant="nie_wiem"
                 >
-                  Nie wiem
+                  Nie wiemy
                 </AnswerButton>
               </div>
             </div>
@@ -581,7 +581,7 @@ export default function AudytCRM() {
               Chcesz konkretną mapę automatyzacji dla tego pipeline'u?
             </h3>
             <p className="text-sm text-gray-600 dark:text-gray-400 mb-6 max-w-xl mx-auto">
-              W diagnozie pokażę, które z {result.problemAreas.length || "tych"}{" "}
+              W diagnozie pokażemy, które z {result.problemAreas.length || "tych"}{" "}
               obszarów warto załatać w 1. etapie, jak to zautomatyzować i ile to
               realnie kosztuje.
             </p>
@@ -591,7 +591,7 @@ export default function AudytCRM() {
               eventName="cta_click_audit_crm"
               className="btn-primary px-8 py-3 text-base"
             >
-              Chcę mapę automatyzacji CRM
+              Chcemy mapę automatyzacji CRM
             </TrackedCTA>
           </div>
 

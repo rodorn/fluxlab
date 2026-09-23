@@ -356,7 +356,7 @@ export default function PorownanieProcesu() {
         </div>
         <p className="mt-4 pt-4 border-t border-gray-100 dark:border-gray-700 text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
           Skąd te minuty: {proces.skad} To model przepływu, nie opis wdrożenia u
-          firmy, bo takich wdrożeń jeszcze nie mam. Wynik mówi, ile czasu zajmują
+          firmy, bo takich wdrożeń jeszcze nie mamy. Wynik mówi, ile czasu zajmują
           wypisane wyżej czynności, a nie ile zarobi na tym Wasza firma.
         </p>
       </div>

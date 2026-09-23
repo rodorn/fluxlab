@@ -44,7 +44,7 @@ const faqs = [
       "Na ryczałcie składka zdrowotna wynosi 9% od podstawy zależnej od rocznego przychodu: do 60 000 zł, 60% przeciętnego wynagrodzenia, do 300 000 zł, 100%, powyżej, 180%. W 2026 r. przeciętne wynagrodzenie wynosi 9 322 zł.",
   },
   {
-    question: "Czy na ryczałcie mogę odliczać koszty?",
+    question: "Czy na ryczałcie możemy odliczać koszty?",
     answer:
       "Nie. Ryczałt ewidencjonowany nie pozwala odliczać kosztów uzyskania przychodu. Podatek jest naliczany od przychodu, nie od dochodu. Dlatego ryczałt opłaca się przede wszystkim wtedy, gdy koszty działalności są niskie.",
   },

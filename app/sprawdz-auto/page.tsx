@@ -33,12 +33,12 @@ const steps = [
     desc: "Podajesz adres ogłoszenia z Otomoto lub OLX w formularzu. Nie musisz przepisywać żadnych danych.",
   },
   {
-    title: "Analizuję ofertę i rynek",
+    title: "Analizujemy ofertę i rynek",
     desc: "Narzędzie zbiera dane z ogłoszenia, porównuje cenę do podobnych aut i sprawdza spójność przebiegu, roku i wyposażenia.",
   },
   {
     title: "Dostajesz raport na maila",
-    desc: "W ciągu 24h odsyłam gotowy raport PDF: czy cena jest uczciwa, na co uważać przy tym modelu i jak negocjować.",
+    desc: "W ciągu 24h odsyłamy gotowy raport PDF: czy cena jest uczciwa, na co uważać przy tym modelu i jak negocjować.",
   },
 ];
 
@@ -77,7 +77,7 @@ const faq = [
       "Nie. To analiza samej oferty i rynku: czy cena jest uczciwa, czy dane w ogłoszeniu są spójne i na co uważać przy tym modelu. To uzupełnienie oficjalnego raportu historii, a nie jego zamiennik.",
   },
   {
-    question: "Skąd bierzesz dane do porównania ceny?",
+    question: "Skąd bierzecie dane do porównania ceny?",
     answer:
       "Z aktualnych ogłoszeń podobnych aut na portalach sprzedażowych. Porównuję rocznik, przebieg, wersję i wyposażenie, żeby cena była odniesiona do realnie porównywalnych ofert.",
   },
@@ -114,7 +114,7 @@ export default function SprawdzAutoPage() {
               Nie przepłać za używane auto
             </h1>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-300">
-              Wklejasz link do oferty z Otomoto lub OLX, a ja sprawdzam, czy
+              Wklejasz link do oferty z Otomoto lub OLX, a ja sprawdzamy, czy
               cena jest uczciwa, czy dane się zgadzają i na co uważać przy tym
               modelu. Dostajesz raport i gotowe argumenty do negocjacji, zanim
               pojedziesz oglądać.
@@ -345,9 +345,9 @@ export default function SprawdzAutoPage() {
             <LandingForm
               formId="order_sprawdz_auto"
               heading="Zamów sprawdzenie auta"
-              intro="Wklej link do oferty z Otomoto lub OLX w polu opisu i napisz, czy chcesz price-check (5 zł) czy pełny raport (15 zł). Odsyłam gotowy raport na maila, zwykle w ciągu 24h."
+              intro="Wklej link do oferty z Otomoto lub OLX w polu opisu i napisz, czy chcesz price-check (5 zł) czy pełny raport (15 zł). Odsyłamy gotowy raport na maila, zwykle w ciągu 24h."
               submitLabel="Wyślij ofertę do sprawdzenia"
-              microCopy="Odpowiedź w 24h. Płatność ustalamy mailowo po potwierdzeniu, że mam komplet danych z oferty."
+              microCopy="Odpowiedź w 24h. Płatność ustalamy mailowo po potwierdzeniu, że mamy komplet danych z oferty."
             />
           </section>
         </div>

@@ -98,7 +98,7 @@ export async function POST(request: Request) {
     return NextResponse.json({
       status: "BRAK",
       zapytanie,
-      naglowek: "Nie znalazłem ogłoszeń dla tego podmiotu",
+      naglowek: "Nie znaleźliśmy ogłoszeń dla tego podmiotu",
       komentarz:
         "Monitor obejmuje ogłoszenia od 2013 roku. Brak wpisów nie znaczy, że spółka nie istnieje: znaczy tylko, że nie było o niej obwieszczenia. Przy szukaniu po nazwie warto wpisać samą nazwę, bez formy prawnej.",
     });
@@ -135,7 +135,7 @@ export async function POST(request: Request) {
       ? dniDoKonca !== null && dniDoKonca > 0
         ? `Trwa postępowanie o rozwiązanie, zostało ${dniDoKonca} dni`
         : "Było postępowanie o rozwiązanie, termin już minął"
-      : `Znalazłem ${wszystkie.length} ogłoszeń, żadne nie dotyczy rozwiązania`,
+      : `Znaleźliśmy ${wszystkie.length} ogłoszeń, żadne nie dotyczy rozwiązania`,
     komentarz: najnowszeRozwiazanie
       ? "Sąd wszczął z urzędu postępowanie o rozwiązanie podmiotu bez przeprowadzania likwidacji. Od dnia obwieszczenia biegnie trzymiesięczny termin na zgłoszenie okoliczności przemawiających przeciwko wykreśleniu. Po tym terminie podmiot znika z rejestru, a jego majątek przechodzi na Skarb Państwa. Jeśli ta spółka jest Ci winna pieniądze, to jest moment na reakcję, a nie po fakcie."
       : "W Monitorze nie ma obwieszczenia o rozwiązaniu tego podmiotu bez likwidacji. To jedno konkretne ryzyko, które właśnie wykluczyliśmy, a nie ocena kondycji firmy.",

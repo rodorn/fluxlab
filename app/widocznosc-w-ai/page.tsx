@@ -5,7 +5,7 @@ import AiCheck from "@/components/AiCheck";
 export const metadata: Metadata = {
   title: "Czy asystent AI widzi Twoją stronę, za darmo | Fluxlab",
   description:
-    "Sprawdzam siedem rzeczy, od których zależy, czy ChatGPT, Claude i Perplexity mogą przeczytać Twoją stronę: dostęp, treść, dane, mapa strony, llms.txt.",
+    "Sprawdzamy siedem rzeczy, od których zależy, czy ChatGPT, Claude i Perplexity mogą przeczytać Twoją stronę: dostęp, treść, dane, mapa strony, llms.txt.",
   alternates: { canonical: "/widocznosc-w-ai" },
   openGraph: {
     title: "Czy asystent AI widzi Twoją stronę, za darmo | Fluxlab",
@@ -31,7 +31,7 @@ export default function WidocznoscWAi() {
       breadcrumb="Widoczność w AI"
       eyebrow="Za darmo"
       h1="Czy asystent AI widzi Twoją stronę"
-      lead="Część klientów przestała wpisywać frazy w wyszukiwarkę i zaczęła pytać asystenta o firmę do konkretnego zadania. Odpowiedź powstaje z tego, co robot zdołał przeczytać. Sprawdzam siedem rzeczy, które decydują, czy Twoja strona w ogóle może się w niej pojawić."
+      lead="Część klientów przestała wpisywać frazy w wyszukiwarkę i zaczęła pytać asystenta o firmę do konkretnego zadania. Odpowiedź powstaje z tego, co robot zdołał przeczytać. Sprawdzamy siedem rzeczy, które decydują, czy Twoja strona w ogóle może się w niej pojawić."
       ctaLabel="Sprawdź swoją stronę"
       ctaNote="Wynik od ręki, bez rejestracji"
       tool={<AiCheck />}
@@ -108,7 +108,7 @@ export default function WidocznoscWAi() {
         },
         {
           q: "Czy da się sprawdzić, czy ChatGPT już mnie wymienia?",
-          a: "Nie tym narzędziem i nie w sposób, który dałoby się nazwać pomiarem. Odpowiedzi asystentów różnią się między użytkownikami i zmieniają w czasie, więc pojedyncze zapytanie niczego nie dowodzi. Dlatego sprawdzam warunki, na które macie wpływ, a nie wynik, na który nie ma go nikt.",
+          a: "Nie tym narzędziem i nie w sposób, który dałoby się nazwać pomiarem. Odpowiedzi asystentów różnią się między użytkownikami i zmieniają w czasie, więc pojedyncze zapytanie niczego nie dowodzi. Dlatego sprawdzamy warunki, na które macie wpływ, a nie wynik, na który nie ma go nikt.",
         },
         {
           q: "Czy to nie jest to samo co pozycjonowanie?",
@@ -117,9 +117,9 @@ export default function WidocznoscWAi() {
       ]}
       formId="widocznosc_ai"
       formHeading="Wynik wyszedł na czerwono i nie wiesz, od czego zacząć"
-      formIntro="Napisz adres strony i jedno zdanie o tym, kto ją dla Was prowadzi. Odeślę kolejność działań i informację, co da się zrobić samemu, a co wymaga kogoś z dostępem do kodu."
+      formIntro="Napisz adres strony i jedno zdanie o tym, kto ją dla Was prowadzi. Odeślemy kolejność działań i informację, co da się zrobić samemu, a co wymaga kogoś z dostępem do kodu."
       submitLabel="Poproś o kolejność działań"
-      microCopy="Odpisuję zwykle tego samego dnia. Ustalenia prowadzę mailowo."
+      microCopy="Odpisujemy zwykle tego samego dnia. Ustalenia prowadzimy mailowo."
       serviceName="Audyt widoczności strony dla asystentów AI"
       serviceDesc="Sprawdzenie, czy roboty zbierające treść na potrzeby asystentów AI mogą przeczytać stronę: dostęp w robots.txt, treść bez skryptów, dane uporządkowane, metadane, mapa strony i llms.txt."
       serviceType="Audyt techniczny strony internetowej"

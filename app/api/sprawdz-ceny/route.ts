@@ -382,7 +382,7 @@ export async function POST(request: Request) {
       status: "BRAK_ODPOWIEDZI",
       naglowek: "Ten adres nie odpowiedział",
       opis:
-        "Pod tym adresem nie dostałem strony sklepu. Sprawdź, czy nie ma literówki, i czy sklep na pewno działa pod tą domeną.",
+        "Pod tym adresem nie dostaliśmy strony sklepu. Sprawdź, czy nie ma literówki, i czy sklep na pewno działa pod tą domeną.",
     });
   }
 
@@ -402,9 +402,9 @@ export async function POST(request: Request) {
     return NextResponse.json({
       domena,
       status: "BRAK_API",
-      naglowek: "Nie mogę odczytać listy produktów z tego sklepu",
+      naglowek: "Nie możemy odczytać listy produktów z tego sklepu",
       opis:
-        "Ten sklep nie udostępnia listy przecen w żaden ze sposobów, które sprawdzam, i nie ma czytelnej mapy strony z kartami produktów. Najczęściej znaczy to, że ceny doczytuje skrypt już w przeglądarce. Napisz, na czym stoi sklep, sprawdzę go ręcznie i odeślę wynik.",
+        "Ten sklep nie udostępnia listy przecen w żaden ze sposobów, które sprawdzamy, i nie ma czytelnej mapy strony z kartami produktów. Najczęściej znaczy to, że ceny doczytuje skrypt już w przeglądarce. Napisz, na czym stoi sklep, sprawdzimy go ręcznie i odeślemy wynik.",
     });
   }
 
@@ -413,9 +413,9 @@ export async function POST(request: Request) {
       domena,
       status: "BRAK_PROMOCJI",
       metoda,
-      naglowek: "Nie widzę teraz żadnej aktywnej promocji",
+      naglowek: "Nie widzimy teraz żadnej aktywnej promocji",
       opis:
-        "Obowiązek podania najniższej ceny z 30 dni dotyczy momentu obniżki, więc bez aktywnych przecen nie ma czego sprawdzać. Wróć, gdy ruszy najbliższa promocja, albo napisz, a sprawdzę archiwalne.",
+        "Obowiązek podania najniższej ceny z 30 dni dotyczy momentu obniżki, więc bez aktywnych przecen nie ma czego sprawdzać. Wróć, gdy ruszy najbliższa promocja, albo napisz, a sprawdzimy archiwalne.",
     });
   }
 
@@ -439,8 +439,8 @@ export async function POST(request: Request) {
         : `${niezgodne.length} z ${karty.length} sprawdzonych przecen bez wymaganej informacji`,
     opis:
       niezgodne.length === 0
-        ? "Na sprawdzonych kartach znalazłem komunikat o najniższej cenie z 30 dni przed obniżką. To dobra wiadomość, choć nie mówi jeszcze, czy podana kwota jest prawdziwa."
-        : "Przy każdej obniżce sklep ma obowiązek podać najniższą cenę z 30 dni przed promocją. Poniżej pozycje, na których tej informacji nie znalazłem. Każda ma link, więc sprawdzisz to samodzielnie.",
+        ? "Na sprawdzonych kartach znaleźliśmy komunikat o najniższej cenie z 30 dni przed obniżką. To dobra wiadomość, choć nie mówi jeszcze, czy podana kwota jest prawdziwa."
+        : "Przy każdej obniżce sklep ma obowiązek podać najniższą cenę z 30 dni przed promocją. Poniżej pozycje, na których tej informacji nie znaleźliśmy. Każda ma link, więc sprawdzisz to samodzielnie.",
     produkty: karty.map((p) => ({
       nazwa: p.nazwa,
       url: p.url,

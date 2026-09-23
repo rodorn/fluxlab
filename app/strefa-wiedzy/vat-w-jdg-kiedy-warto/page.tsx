@@ -448,7 +448,7 @@ export default function VatWJdgArticle() {
                       <div className="space-y-4">
                         <details className="group rounded-2xl border border-gray-200 dark:border-gray-700">
                           <summary className="flex cursor-pointer items-center justify-between p-6 text-gray-900 dark:text-white font-medium">
-                            Czy mogę zrezygnować z VAT po rejestracji?
+                            Czy możemy zrezygnować z VAT po rejestracji?
                             <span className="ml-4 shrink-0 text-gray-600 dark:text-gray-400 transition-transform group-open:rotate-45">
                               <svg
                                 width="20"
@@ -655,7 +655,7 @@ export default function VatWJdgArticle() {
             mainEntity: [
               {
                 "@type": "Question",
-                name: "Czy mogę zrezygnować z VAT po rejestracji?",
+                name: "Czy możemy zrezygnować z VAT po rejestracji?",
                 acceptedAnswer: {
                   "@type": "Answer",
                   text: "Tak, ale nie wcześniej niż po upływie roku od rejestracji. Warunek: obrót w poprzednim roku nie przekroczył 200 000 zł i nie prowadzisz działalności, która wymaga bycia vatowcem.",

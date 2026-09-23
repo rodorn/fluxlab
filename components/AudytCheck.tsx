@@ -96,12 +96,12 @@ type Wynik = {
 };
 
 const ETAPY = [
-  "Łączę się ze stroną i mierzę czas odpowiedzi",
-  "Pobieram ją drugi raz, tym razem jako telefon",
-  "Czytam style i sprawdzam, czy układ przestawia się na wąskim ekranie",
+  "Łączymy się ze stroną i mierzymy czas odpowiedzi",
+  "Pobieramy ją drugi raz, tym razem jako telefon",
+  "Czytamy style i sprawdzamy, czy układ przestawia się na wąskim ekranie",
   "Ważę pliki, które musi pobrać odwiedzający",
-  "Sprawdzam certyfikat, robots.txt, mapę strony i dane dla wyszukiwarki",
-  "Sprawdzam, czy roboty asystentów AI mają tu wstęp",
+  "Sprawdzamy certyfikat, robots.txt, mapę strony i dane dla wyszukiwarki",
+  "Sprawdzamy, czy roboty asystentów AI mają tu wstęp",
   "Składam raport i układam naprawy w kolejności",
 ];
 
@@ -251,7 +251,7 @@ export default function AudytCheck() {
 
   const [email, setEmail] = useState("");
   const [zgoda, setZgoda] = useState(false);
-  const [mailStan, setMailStan] = useState<"idle" | "wysylam" | "ok" | "blad">("idle");
+  const [mailStan, setMailStan] = useState<"idle" | "wysylamy" | "ok" | "blad">("idle");
   const [mailBlad, setMailBlad] = useState("");
 
   const timer = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -317,7 +317,7 @@ export default function AudytCheck() {
   async function poproszOMaila(e: React.FormEvent) {
     e.preventDefault();
     if (!wynik) return;
-    setMailStan("wysylam");
+    setMailStan("wysylamy");
     setMailBlad("");
     try {
       const res = await fetch("/api/audyt-www/wyslij", {
@@ -365,8 +365,8 @@ export default function AudytCheck() {
         Darmowy audyt techniczny Twojej strony
       </h2>
       <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-        Wpisz adres, a w kilkadziesiąt sekund zmierzę szybkość na komputerze i
-        na telefonie, sprawdzę certyfikat, widoczność w wyszukiwarce, dostęp
+        Wpisz adres, a w kilkadziesiąt sekund zmierzymy szybkość na komputerze i
+        na telefonie, sprawdzimy certyfikat, widoczność w wyszukiwarce, dostęp
         dla asystentów AI oraz zabezpieczenia poczty. Dostaniesz gotowy raport
         z listą poprawek w kolejności i z ceną za naprawę. Bez rejestracji, bez
         podawania adresu e-mail i bez żadnych dostępów do Waszych systemów.
@@ -394,7 +394,7 @@ export default function AudytCheck() {
           disabled={stan === "ladowanie"}
           className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
         >
-          {stan === "ladowanie" ? "Badam stronę..." : "Zrób darmowy audyt"}
+          {stan === "ladowanie" ? "Badamy stronę..." : "Zrób darmowy audyt"}
         </button>
       </form>
 
@@ -444,14 +444,14 @@ export default function AudytCheck() {
                 }`}
               >
                 {wynik.punkty === null
-                  ? "Nie wystawiam oceny tej stronie"
+                  ? "Nie wystawiamy oceny tej stronie"
                   : `Stan ${slownie(wynik.punkty)}`}
               </p>
               {wynik.punkty === null && (
                 <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
                   {wynik.zablokowany
-                    ? `Serwer nie wpuścił mojego pomiaru: ${wynik.powodBlokady}. Ocena wystawiona ekranowi ochrony nie mówiłaby nic o Waszej stronie, więc jej nie wystawiam.`
-                    : "Ten adres nie odpowiedział, więc nie mam czego oceniać."}
+                    ? `Serwer nie wpuścił naszego pomiaru: ${wynik.powodBlokady}. Ocena wystawiona ekranowi ochrony nie mówiłaby nic o Waszej stronie, więc jej nie wystawiamy.`
+                    : "Ten adres nie odpowiedział, więc nie mamy czego oceniać."}
                 </p>
               )}
               {wynik.opis && (
@@ -473,7 +473,7 @@ export default function AudytCheck() {
                 )}
                 {!wynik.ustalenia.length && (
                   <span className="rounded-full border border-emerald-500/50 px-3 py-1 text-xs font-semibold text-emerald-700 dark:text-emerald-400">
-                    Nie znalazłem nic do poprawy
+                    Nie znaleźliśmy nic do poprawy
                   </span>
                 )}
               </div>
@@ -494,7 +494,7 @@ export default function AudytCheck() {
             <div>
               <div className="mb-4 flex flex-wrap items-center gap-2">
                 <h3 className="mr-2 text-lg font-bold text-gray-900 dark:text-white">
-                  Co znalazłem
+                  Co znaleźliśmy
                 </h3>
                 {(["wszystko", "krytyczne", "wazne", "drobne"] as const).map((w) => (
                   <button
@@ -731,11 +731,11 @@ export default function AudytCheck() {
           {wynik.dostepy.length > 0 && (
             <div className="rounded-xl border border-gray-200 p-5 dark:border-gray-800">
               <h3 className="text-base font-bold text-gray-900 dark:text-white">
-                Czego potrzebuję, żeby to naprawić
+                Czego potrzebujemy, żeby to naprawić
               </h3>
               <p className="mt-1.5 text-sm text-gray-600 dark:text-gray-400">
-                Nie potrzebuję haseł do niczego. Potrzebuję dostępu nadanego na
-                moje konto, który cofniecie jednym kliknięciem po zakończeniu
+                Nie potrzebujemy haseł do niczego. Potrzebujemy dostępu nadanego na
+                nasze konto, który cofniecie jednym kliknięciem po zakończeniu
                 pracy.
               </p>
               <ul className="mt-3 space-y-1.5">
@@ -762,7 +762,7 @@ export default function AudytCheck() {
                 </p>
                 <p className="mt-1.5 text-sm text-gray-600 dark:text-gray-400">
                   Jeżeli nie dotrze w ciągu kilku minut, zajrzyj do spamu. Zgodę
-                  możesz wycofać, odpisując na tę wiadomość jednym słowem, usuwam
+                  możesz wycofać, odpisując na tę wiadomość jednym słowem, usuwamy
                   adres tego samego dnia.
                 </p>
               </div>
@@ -772,7 +772,7 @@ export default function AudytCheck() {
                   Chcesz ten raport na maila?
                 </h3>
                 <p className="mt-1.5 text-sm text-gray-600 dark:text-gray-400">
-                  Wyślę dokładnie to, co widzisz wyżej, w formie, którą da się
+                  Wyślemy dokładnie to, co widzisz wyżej, w formie, którą da się
                   przesłać dalej informatykowi albo agencji. Raport jest już
                   gotowy, więc adres podajesz tylko wtedy, gdy faktycznie chcesz
                   go dostać.
@@ -790,10 +790,10 @@ export default function AudytCheck() {
                     />
                     <button
                       type="submit"
-                      disabled={mailStan === "wysylam" || !zgoda}
+                      disabled={mailStan === "wysylamy" || !zgoda}
                       className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
                     >
-                      {mailStan === "wysylam" ? "Wysyłam..." : "Wyślij raport"}
+                      {mailStan === "wysylamy" ? "Wysyłamy..." : "Wyślij raport"}
                     </button>
                   </div>
                   <label className="flex cursor-pointer items-start gap-2.5 text-sm text-gray-600 dark:text-gray-400">
@@ -804,8 +804,8 @@ export default function AudytCheck() {
                       className="mt-0.5 h-4 w-4 shrink-0 rounded border-gray-300 text-accent focus:ring-accent dark:border-gray-600"
                     />
                     <span>
-                      Zgadzam się na przesłanie raportu na podany adres i na
-                      kontakt w sprawie jego wyników. Zgodę mogę wycofać w każdej
+                      Zgadzamy się na przesłanie raportu na podany adres i na
+                      kontakt w sprawie jego wyników. Zgodę możemy wycofać w każdej
                       chwili, odpisując na wiadomość.
                     </span>
                   </label>
@@ -823,26 +823,26 @@ export default function AudytCheck() {
           </div>
 
           {/* Metodyka */}
-          <Skladane tytul="Jak to zmierzyłem i czego nie sprawdzałem" naZdarzenie={() => zglosZdarzenie("audyt_rozwin_metodyka")}>
+          <Skladane tytul="Jak to zmierzyliśmy i czego nie sprawdzałem" naZdarzenie={() => zglosZdarzenie("audyt_rozwin_metodyka")}>
             <div className="space-y-3 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
               <p>
                 Wszystkie liczby pochodzą z jednego badania wykonanego przed
                 chwilą. Stronę pobrałem dwa razy: raz z nagłówkami komputera, raz
-                z nagłówkami telefonu. Wagę plików liczę z tego, co faktycznie
-                przyszło, a nie z deklaracji serwera, i podaję, ilu plików nie
+                z nagłówkami telefonu. Wagę plików liczymy z tego, co faktycznie
+                przyszło, a nie z deklaracji serwera, i podajemy, ilu plików nie
                 udało się zważyć.
               </p>
               <p>
                 Czego tutaj nie ma, żeby nie było nieporozumień: nie uruchamiałem
-                przeglądarki, więc nie mierzę czasu rysowania strony, przesunięć
-                układu ani wyniku Lighthouse. Nie oceniam treści merytorycznie,
-                nie oceniam wyglądu i nie porównuję z konkurencją. Badam stronę
+                przeglądarki, więc nie mierzymy czasu rysowania strony, przesunięć
+                układu ani wyniku Lighthouse. Nie oceniamy treści merytorycznie,
+                nie oceniamy wyglądu i nie porównuję z konkurencją. Badamy stronę
                 główną, nie każdą podstronę. Pojedynczy pomiar czasu zależy od
                 chwili, więc wartości graniczne warto sprawdzić drugi raz.
               </p>
               <p>
-                Jeżeli któraś liczba budzi wątpliwość, napisz. Sprawdzę ją
-                jeszcze raz i wytłumaczę, skąd się wzięła.
+                Jeżeli któraś liczba budzi wątpliwość, napisz. Sprawdzimy ją
+                jeszcze raz i wytłumaczymy, skąd się wzięła.
               </p>
             </div>
           </Skladane>

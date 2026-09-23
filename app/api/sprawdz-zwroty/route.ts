@@ -149,8 +149,8 @@ export async function POST(request: Request) {
     return NextResponse.json({
       status: "BRAK_SKLEPU",
       domena,
-      naglowek: "Nie mogę otworzyć tego sklepu",
-      opis: "Sprawdź pisownię adresu. Jeśli jest poprawny, sprawdzę go ręcznie.",
+      naglowek: "Nie możemy otworzyć tego sklepu",
+      opis: "Sprawdź pisownię adresu. Jeśli jest poprawny, sprawdzimy go ręcznie.",
     });
   }
 
@@ -174,9 +174,9 @@ export async function POST(request: Request) {
     return NextResponse.json({
       status: "BRAK_STRON",
       domena,
-      naglowek: "Nie znalazłem strony o zwrotach ani regulaminu",
+      naglowek: "Nie znaleźliśmy strony o zwrotach ani regulaminu",
       opis:
-        "To samo w sobie jest problemem: kupujący szukający zasad zwrotu nie znajdzie ich przed zakupem, a część z niego zrezygnuje. Jeśli te informacje są pod nietypowym adresem, podaj go, sprawdzę dokładnie.",
+        "To samo w sobie jest problemem: kupujący szukający zasad zwrotu nie znajdzie ich przed zakupem, a część z niego zrezygnuje. Jeśli te informacje są pod nietypowym adresem, podaj go, sprawdzimy dokładnie.",
     });
   }
 

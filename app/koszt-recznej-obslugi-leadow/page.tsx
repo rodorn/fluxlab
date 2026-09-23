@@ -222,15 +222,15 @@ const faq = [
   {
     question: "Czy automatyzacja faktycznie zwraca się w kilka miesięcy?",
     answer:
-      "Tego nie da się obiecać z góry, bo zależy od liczby leadów, wartości klienta i ceny wdrożenia. Kalkulator na tej stronie pokazuje, ile kosztuje dziś ręczna obsługa, a czas zwrotu to cena wdrożenia podzielona przez tę kwotę. Przy małej skali zwrot bywa wolny, bo największy koszt to zgubione leady, nie czas pracy. Pełny rachunek opisałem w artykule /strefa-wiedzy/jak-policzyc-roi-z-automatyzacji.",
+      "Tego nie da się obiecać z góry, bo zależy od liczby leadów, wartości klienta i ceny wdrożenia. Kalkulator na tej stronie pokazuje, ile kosztuje dziś ręczna obsługa, a czas zwrotu to cena wdrożenia podzielona przez tę kwotę. Przy małej skali zwrot bywa wolny, bo największy koszt to zgubione leady, nie czas pracy. Pełny rachunek opisaliśmy w artykule /strefa-wiedzy/jak-policzyc-roi-z-automatyzacji.",
   },
   {
-    question: "Co jeśli moja firma ma niski wolumen leadów?",
+    question: "Co jeśli nasza firma ma niski wolumen leadów?",
     answer:
       "Wtedy koszt czasu jest mały, ale koszt zgubionych leadów względnie duży, bo każdy lead waży więcej. Mała firma B2B z 30 leadami miesięcznie i klientem za 5 000 zł wciąż traci 8–12 tys. rocznie na ręcznej obsłudze. Najlepiej zrobić bezpłatną diagnozę i policzyć konkretny przypadek, formularz jest na /#kontakt.",
   },
   {
-    question: "Czy muszę mieć CRM, żeby liczyć ten koszt?",
+    question: "Czy musimy mieć CRM, żeby liczyć ten koszt?",
     answer:
       "Nie. Jeśli leady wpadają do skrzynki, arkusza albo formularza, koszt i tak istnieje, tylko jest jeszcze trudniej zmierzony. Brak CRM-a oznacza zwykle wyższy koszt utraconej widoczności (nikt nie wie, co dzieje się z leadem po pierwszym kontakcie).",
   },
@@ -303,7 +303,7 @@ export default function KosztRecznejObslugiLeadow() {
                   eventName="cta_click_calculator"
                   className="btn-primary px-8 py-3.5 text-base"
                 >
-                  Policz koszt mojego procesu
+                  Policz koszt naszego procesu
                 </TrackedCTA>
               </div>
               <p className="mt-6 text-sm text-gray-500 dark:text-gray-500">
@@ -649,7 +649,7 @@ export default function KosztRecznejObslugiLeadow() {
                             ))}
                           </div>
                           <p className="mt-8 text-gray-600 dark:text-gray-400 leading-relaxed">
-                            Pełny przepływ od formularza do raportu opisałem w
+                            Pełny przepływ od formularza do raportu opisaliśmy w
                             sekcji o{" "}
                             <Link
                               href="/automatyzacja-leadow-crm"
@@ -932,7 +932,7 @@ export default function KosztRecznejObslugiLeadow() {
                             eventName="cta_click_calculator"
                             className="btn-primary px-8 py-3.5 text-base"
                           >
-                            Policz koszt mojego procesu
+                            Policz koszt naszego procesu
                           </TrackedCTA>
                           <p className="mt-4 text-sm text-gray-500 dark:text-gray-500">
                             Bez logowania · wynik w 2 minuty · z rozbiciem na

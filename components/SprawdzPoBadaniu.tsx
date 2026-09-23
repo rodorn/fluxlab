@@ -68,7 +68,7 @@ function ujednolic(dane: OdpowiedzWerdykt, cel: string): Wynik {
       naglowek: `${cel}: ${dane.punkty} na 100 punktów`,
       komentarz: problemy.length
         ? `Znalezione braki: ${problemy.map((p) => p.tytul).join(", ")}.`
-        : "Nie znalazłem żadnego z typowych braków w SPF, DKIM i DMARC.",
+        : "Nie znaleźliśmy żadnego z typowych braków w SPF, DKIM i DMARC.",
     };
   }
   return {
@@ -160,7 +160,7 @@ export default function SprawdzPoBadaniu({
 
       {stan === "ladowanie" && (
         <p className="mt-4 text-sm text-gray-600 dark:text-gray-400">
-          Sprawdzam {cel}, to trwa kilkanaście sekund.
+          Sprawdzamy {cel}, to trwa kilkanaście sekund.
         </p>
       )}
 

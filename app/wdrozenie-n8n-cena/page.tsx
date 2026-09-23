@@ -42,7 +42,7 @@ export default function WdrozenieN8nCena() {
         },
         {
           title: "Serwer: 30 do 90 zł miesięcznie",
-          desc: "Do większości wdrożeń wystarczy najmniejszy VPS z 2 GB pamięci. Powyżej kilkudziesięciu tysięcy uruchomień miesięcznie albo przy ciężkich przepływach z przetwarzaniem plików idzie się o jeden próg wyżej. To koszt hostingu, nie mój.",
+          desc: "Do większości wdrożeń wystarczy najmniejszy VPS z 2 GB pamięci. Powyżej kilkudziesięciu tysięcy uruchomień miesięcznie albo przy ciężkich przepływach z przetwarzaniem plików idzie się o jeden próg wyżej. To koszt hostingu, nie nasz.",
         },
         {
           title: "Praca: od 790 zł za pojedynczy przepływ",
@@ -54,7 +54,7 @@ export default function WdrozenieN8nCena() {
         },
         {
           title: "Czego w tej cenie nie ma",
-          desc: "Płatnych kont po stronie narzędzi, które spinam, czyli CRM, bramek SMS, dostawców wzbogacania danych. Jeśli przepływ korzysta z modelu językowego, rozliczasz go u dostawcy modelu. Podaję to osobno przed startem, żeby rachunek nie wyszedł po fakcie.",
+          desc: "Płatnych kont po stronie narzędzi, które spinamy, czyli CRM, bramek SMS, dostawców wzbogacania danych. Jeśli przepływ korzysta z modelu językowego, rozliczasz go u dostawcy modelu. Podajemy to osobno przed startem, żeby rachunek nie wyszedł po fakcie.",
         },
         {
           title: "Kiedy to się nie opłaca",
@@ -68,9 +68,9 @@ export default function WdrozenieN8nCena() {
           desc: "Jedna konkretna uciążliwość, zdjęta z głowy.",
           features: [
             "Jeden przepływ od zdarzenia do zapisu",
-            "Uruchomienie na Twoim koncie n8n albo moim serwerze testowym",
+            "Uruchomienie na Twoim koncie n8n albo naszym serwerze testowym",
             "Obsługa błędów i powiadomienie, gdy coś nie przejdzie",
-            "Przekazanie w formie działającego pliku, bez zamknięcia u mnie",
+            "Przekazanie w formie działającego pliku, bez zamknięcia u nas",
           ],
         },
         {
@@ -105,7 +105,7 @@ export default function WdrozenieN8nCena() {
         },
         {
           q: "Ile trwa wdrożenie?",
-          a: "Pojedynczy przepływ to zwykle dwa, trzy dni robocze od momentu, w którym mam dostępy. Komplet startowy z trzema przepływami: od jednego do dwóch tygodni. Najwięcej czasu zajmuje nie budowa, tylko ustalenie, co ma się dziać w sytuacjach nietypowych.",
+          a: "Pojedynczy przepływ to zwykle dwa, trzy dni robocze od momentu, w którym mamy dostępy. Komplet startowy z trzema przepływami: od jednego do dwóch tygodni. Najwięcej czasu zajmuje nie budowa, tylko ustalenie, co ma się dziać w sytuacjach nietypowych.",
         },
         {
           q: "Dlaczego nie podajesz jednej ceny?",
@@ -113,7 +113,7 @@ export default function WdrozenieN8nCena() {
         },
         {
           q: "Co, jeśli po wdrożeniu zechcę to przenieść gdzie indziej?",
-          a: "Przepływy n8n to pliki, które dostajesz razem z dostępem do serwera. Nie ma tu żadnego mojego panelu, do którego trzeba mieć konto. Możesz to prowadzić sam albo przekazać komuś innemu i nie potrzebujesz do tego mojej zgody.",
+          a: "Przepływy n8n to pliki, które dostajesz razem z dostępem do serwera. Nie ma tu żadnego naszego panelu, do którego trzeba mieć konto. Możesz to prowadzić sam albo przekazać komuś innemu i nie potrzebujesz do tego naszej zgody.",
         },
         {
           q: "Czym to się różni od Zapiera i Make?",
@@ -121,10 +121,10 @@ export default function WdrozenieN8nCena() {
         },
       ]}
       formId="wycena_n8n"
-      formHeading="Opisz proces, odeślę widełki"
-      formIntro="Napisz, co dziś dzieje się ręcznie: skąd wpadają dane, kto je przeklepuje i co ma się stać na końcu. Odeślę widełki i informację, czy da się to zrobić taniej niż w n8n, jeśli tak jest."
+      formHeading="Opisz proces, odeślemy widełki"
+      formIntro="Napisz, co dziś dzieje się ręcznie: skąd wpadają dane, kto je przeklepuje i co ma się stać na końcu. Odeślemy widełki i informację, czy da się to zrobić taniej niż w n8n, jeśli tak jest."
       submitLabel="Poproś o wycenę"
-      microCopy="Odpisuję zwykle tego samego dnia. Bez rozmowy telefonicznej, jeśli nie chcesz."
+      microCopy="Odpisujemy zwykle tego samego dnia. Bez rozmowy telefonicznej, jeśli nie chcesz."
       serviceName="Wdrożenie n8n"
       serviceDesc="Postawienie n8n na własnym serwerze i zbudowanie przepływów automatyzujących obsługę leadów, synchronizację danych i raportowanie."
       serviceType="Automatyzacja procesów biznesowych"

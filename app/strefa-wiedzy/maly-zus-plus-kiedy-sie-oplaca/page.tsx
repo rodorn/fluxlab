@@ -491,7 +491,7 @@ export default function MalyZusPlusArticle() {
 
                         <details className="group rounded-2xl border border-gray-200 dark:border-gray-700">
                           <summary className="flex cursor-pointer items-center justify-between p-6 text-gray-900 dark:text-white font-medium">
-                            Czy mogę łączyć mały ZUS Plus z ryczałtem?
+                            Czy możemy łączyć mały ZUS Plus z ryczałtem?
                             <span className="ml-4 shrink-0 text-gray-600 dark:text-gray-400 transition-transform group-open:rotate-45">
                               <svg
                                 width="20"
@@ -635,7 +635,7 @@ export default function MalyZusPlusArticle() {
               },
               {
                 "@type": "Question",
-                name: "Czy mogę łączyć mały ZUS Plus z ryczałtem?",
+                name: "Czy możemy łączyć mały ZUS Plus z ryczałtem?",
                 acceptedAnswer: {
                   "@type": "Answer",
                   text: "Tak. Mały ZUS Plus dotyczy składek społecznych i jest niezależny od formy opodatkowania. Możesz łączyć go z ryczałtem, podatkiem liniowym lub skalą podatkową.",

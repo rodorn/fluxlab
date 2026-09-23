@@ -395,7 +395,7 @@ export default function N8nVsZapierArticle() {
                           samemu?
                         </h2>
                         <p className="text-gray-600 dark:text-gray-400 mb-4">
-                          Mogę wdrożyć n8n na Twoim serwerze albo zarządzać nim
+                          Możemy wdrożyć n8n na Twoim serwerze albo zarządzać nim
                           za Ciebie, pełna kontrola, zero administracji po
                           Twojej stronie.
                         </p>

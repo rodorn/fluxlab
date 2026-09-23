@@ -51,7 +51,7 @@ const faqs = [
   {
     question: "Co jeśli dane są dziś niespójne?",
     answer:
-      "To częsty problem i zwykle najdłuższa część pracy. Najpierw ustalam, która definicja obowiązuje i po czym dopasować rekordy między źródłami, dopiero potem automatyzuję raport. W wycenie to osobna pozycja, 490 do 1 200 zł.",
+      "To częsty problem i zwykle najdłuższa część pracy. Najpierw ustalamy, która definicja obowiązuje i po czym dopasować rekordy między źródłami, dopiero potem automatyzujemy raport. W wycenie to osobna pozycja, 490 do 1 200 zł.",
   },
   {
     question: "Czy to ma sens przy małym zespole?",
@@ -114,12 +114,12 @@ export default function AutomatyzacjaRaportowania() {
                 ),
               },
               {
-                label: "Co automatyzuję",
+                label: "Co automatyzujemy",
                 content: (
                   <section className="py-10 lg:py-12">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-8">
-                        Co automatyzuję
+                        Co automatyzujemy
                       </h2>
                       <ul className="grid gap-4">
                         {useCases.map((item) => (
@@ -185,7 +185,7 @@ export default function AutomatyzacjaRaportowania() {
                       formId="diagnosis_raport"
                       heading="Sprawdźmy Twój proces raportowania"
                       intro="Opisz krótko, skąd pochodzą dane, kto składa raport i jak często. W odpowiedzi dostaniesz informację, czy raport da się zautomatyzować i co z tego wyniknie."
-                      submitLabel="Chcę diagnozę raportowania"
+                      submitLabel="Chcemy diagnozę raportowania"
                     />
                   </section>
                 ),

@@ -202,7 +202,7 @@ function szkicLlms(
   linie.push(
     opis
       ? `> ${opis}`
-      : `> [Tu wpisz jedno zdanie o tym, czym zajmuje się firma i dla kogo. Na stronie nie było opisu w metadanych, więc nie mam czego zacytować.]`,
+      : `> [Tu wpisz jedno zdanie o tym, czym zajmuje się firma i dla kogo. Na stronie nie było opisu w metadanych, więc nie mamy czego zacytować.]`,
   );
   linie.push("");
   if (podstrony.length) {
@@ -277,7 +277,7 @@ export async function POST(request: Request) {
     return NextResponse.json({
       status: "BRAK_STRONY",
       domena,
-      naglowek: "Nie mogę połączyć się z tą stroną",
+      naglowek: "Nie możemy połączyć się z tą stroną",
       komentarz:
         "Ani wersja z www, ani bez www nie odpowiedziała. Sprawdź pisownię albo spróbuj za chwilę.",
     });
@@ -344,7 +344,7 @@ export async function POST(request: Request) {
     stan: typy.length === 0 ? "uwaga" : "ok",
     opis: typy.length
       ? `Strona opisuje się typami: ${typy.slice(0, 6).join(", ")}. To jest forma, którą maszyna czyta bez zgadywania.`
-      : "Nie znalazłem żadnego opisu w formacie uporządkowanym. Człowiek wyczyta z tekstu, czym jest firma, maszyna musi to zgadnąć z układu strony, a przy zgadywaniu myli się o wiele częściej.",
+      : "Nie znaleźliśmy żadnego opisu w formacie uporządkowanym. Człowiek wyczyta z tekstu, czym jest firma, maszyna musi to zgadnąć z układu strony, a przy zgadywaniu myli się o wiele częściej.",
   });
 
   punkty.push({
@@ -361,7 +361,7 @@ export async function POST(request: Request) {
     stan: maSitemap ? "ok" : "uwaga",
     opis: maSitemap
       ? "Mapa strony odpowiada, więc robot dostaje listę podstron jednym zapytaniem."
-      : "Nie znalazłem mapy strony pod standardowym adresem. Bez niej robot musi odkrywać podstrony sam, przez linki.",
+      : "Nie znaleźliśmy mapy strony pod standardowym adresem. Bez niej robot musi odkrywać podstrony sam, przez linki.",
   });
 
   punkty.push({

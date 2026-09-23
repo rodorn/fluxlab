@@ -1636,7 +1636,7 @@ export default function CarConfigurator() {
                 />
               </button>
               <span className="text-sm text-gray-700 dark:text-gray-300">
-                Potrzebuję składanych tylnych siedzeń
+                Potrzebujemy składanych tylnych siedzeń
               </span>
             </div>
           </>
@@ -1741,7 +1741,7 @@ export default function CarConfigurator() {
       <div className="space-y-8">
         <div className="space-y-2">
           <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
-            Przebiegi podaję
+            Przebiegi podajemy
           </span>
           <div className="flex gap-1 p-1 rounded-xl bg-gray-100 dark:bg-gray-800 w-fit">
             {(["dzien", "tydzien", "miesiac", "rok"] as KmPeriod[]).map((p) => (
@@ -2013,11 +2013,11 @@ export default function CarConfigurator() {
       {loading &&
         (() => {
           const steps = [
-            { t: 0, text: "Wysyłam zapytanie do AI..." },
+            { t: 0, text: "Wysyłamy zapytanie do AI..." },
             { t: 3, text: "AI analizuje rynek wtórny..." },
             {
               t: 8,
-              text: `Szukam modeli w segmencie ${segment} i wyższych...`,
+              text: `Szukamy modeli w segmencie ${segment} i wyższych...`,
             },
             {
               t: 15,

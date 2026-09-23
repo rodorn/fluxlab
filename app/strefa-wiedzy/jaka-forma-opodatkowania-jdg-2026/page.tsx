@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 export default function JakaFormaOpodatkowaniaJdgArticle() {
   const faqItems = [
     {
-      question: "Czy mogę zmienić formę opodatkowania w trakcie roku?",
+      question: "Czy możemy zmienić formę opodatkowania w trakcie roku?",
       answer:
         "Nie. Formę opodatkowania można zmienić tylko od 1 stycznia kolejnego roku. Wniosek (lub aktualizację CEIDG) należy złożyć do 20 lutego roku, od którego ma obowiązywać nowa forma.",
     },
@@ -49,7 +49,7 @@ export default function JakaFormaOpodatkowaniaJdgArticle() {
         "Nie. Ryczałt nie pozwala odliczać kosztów uzyskania przychodu. Jeśli masz wysokie koszty (np. zakup sprzętu, leasing samochodu, materiały), to podatek od pełnego przychodu może być wyższy niż podatek od dochodu na liniowym lub skali.",
     },
     {
-      question: "Czy na liniowym mogę odliczyć składkę zdrowotną?",
+      question: "Czy na liniowym możemy odliczyć składkę zdrowotną?",
       answer:
         "Tak. Na podatku liniowym składka zdrowotna wynosi 4,9% dochodu i można ją odliczyć od podstawy opodatkowania do limitu 12 900 zł rocznie.",
     },

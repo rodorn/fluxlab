@@ -5,7 +5,7 @@ import { FILARY } from "@/lib/filary";
 const links = [
   ...FILARY.map((f) => ({ href: f.href, label: f.nazwa })),
   { href: "/produkty", label: "Produkty" },
-  { href: "/jak-pracuje", label: "Jak pracuję" },
+  { href: "/jak-pracuje", label: "Jak pracujemy" },
   { href: "/strefa-wiedzy", label: "Strefa wiedzy" },
   { href: "/narzedzia", label: "Narzędzia" },
   { href: "/pilotaz", label: "Program case study" },
@@ -63,7 +63,7 @@ export default function Footer() {
               rel="noopener"
               className="text-xs text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
             >
-              Moja wizytówka w Zleca.pl
+              Nasza wizytówka w Zleca.pl
             </a>
           </div>
         </div>

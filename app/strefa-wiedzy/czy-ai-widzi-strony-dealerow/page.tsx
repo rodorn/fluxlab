@@ -325,7 +325,7 @@ export default function Page() {
 
         <SprawdzPoBadaniu
           naglowek="Sprawdź to na żywo, jednym kliknięciem"
-          opis="Pobieram wybraną domenę tak, jak robi to asystent AI, i patrzę na te same cztery punkty co w badaniu: treść w dokumencie, dane uporządkowane, opis w metadanych i blokady robotów."
+          opis="Pobieramy wybraną domenę tak, jak robi to asystent AI, i patrzymy na te same cztery punkty co w badaniu: treść w dokumencie, dane uporządkowane, opis w metadanych i blokady robotów."
           endpoint="/api/sprawdz-ai"
           pozycje={[
             { wartosc: "fluxlab.pl" },

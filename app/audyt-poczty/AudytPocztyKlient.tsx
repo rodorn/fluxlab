@@ -146,7 +146,7 @@ export default function AudytPocztyKlient({ nazwa }: { nazwa: React.ReactNode })
           disabled={laduje || !domena.trim()}
           style={{ padding: "0.75rem 1.5rem" }}
         >
-          {laduje ? "Sprawdzam..." : "Sprawdź"}
+          {laduje ? "Sprawdzamy..." : "Sprawdź"}
         </button>
       </form>
 
@@ -233,13 +233,13 @@ export default function AudytPocztyKlient({ nazwa }: { nazwa: React.ReactNode })
                   Pełny raport z audytu (co dokładnie jest źle i gotowe rekordy
                   do wklejenia) to 19 zł. Ekspresowa naprawa, czyli ustawienie
                   SPF, DKIM i DMARC w trybie, który realnie blokuje podszywanie,
-                  to 299 zł. Zostaw adres, a wyślę raport dla{" "}
+                  to 299 zł. Zostaw adres, a wyślemy raport dla{" "}
                   <strong>{wynik.domena}</strong> i wycenę naprawy. Bez
                   zobowiązań.
                 </p>
                 {leadStan === "ok" ? (
                   <p style={{ color: "var(--stan-dobrze)", fontWeight: 600, margin: 0 }}>
-                    Dziękuję. Raport dla {wynik.domena} przygotuję i odpiszę na{" "}
+                    Dziękuję. Raport dla {wynik.domena} przygotujemy i odpiszemy na{" "}
                     {leadEmail}.
                   </p>
                 ) : (
@@ -267,7 +267,7 @@ export default function AudytPocztyKlient({ nazwa }: { nazwa: React.ReactNode })
                       style={{ padding: "0.6rem 1.25rem" }}
                     >
                       {leadStan === "laduje"
-                        ? "Wysyłam..."
+                        ? "Wysyłamy..."
                         : "Wyślij mi raport i wycenę"}
                     </button>
                     {leadStan === "blad" && (

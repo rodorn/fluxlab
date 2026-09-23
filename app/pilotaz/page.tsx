@@ -38,7 +38,7 @@ const whatYouGet = [
   {
     title: "Priorytet i zaangażowanie",
     description:
-      "Te projekty mają dla mnie najwyższy priorytet, bo ich powodzenie buduje publiczną bibliotekę case studies, na której opieram dalszą sprzedaż. Dostajesz szybszą reakcję, więcej uwagi, pełne zaangażowanie.",
+      "Te projekty mają dla nas najwyższy priorytet, bo ich powodzenie buduje publiczną bibliotekę case studies, na której opieram dalszą sprzedaż. Dostajesz szybszą reakcję, więcej uwagi, pełne zaangażowanie.",
   },
   {
     title: "Rozszerzone wsparcie po wdrożeniu",
@@ -93,7 +93,7 @@ const notSuitable = [
 
 const faq = [
   {
-    question: "Czy moja firma się nadaje?",
+    question: "Czy nasza firma się nadaje?",
     answer:
       "Najszybciej sprawdzimy to na bezpłatnej 30-minutowej konsultacji. Ogólnie: nadajesz się, jeśli masz konkretny, powtarzalny proces, który chcesz zautomatyzować, i jesteś w stanie pokazać mierzalny efekt po wdrożeniu.",
   },
@@ -103,34 +103,34 @@ const faq = [
       "Tyle samo co zwykłe, zależnie od zakresu od 2 do 8 tygodni. Program case study nie oznacza „na szybko”, oznacza obniżoną cenę w zamian za publikację rezultatu.",
   },
   {
-    question: "Czy muszę ujawnić nazwę firmy w case study?",
+    question: "Czy musimy ujawnić nazwę firmy w case study?",
     answer:
       "Preferuję, żeby tak, imienne case studies są znacznie bardziej wiarygodne. Jeśli to niemożliwe (np. ze względu na zastrzeżenia prawne lub konkurencyjne), możemy opisać branżę i skalę bez nazwy. Ustalamy to przed startem.",
   },
   {
-    question: "Kiedy muszę dać testimonial?",
+    question: "Kiedy musimy dać testimonial?",
     answer:
-      "W ciągu 30 dni od zakończenia wdrożenia i odbioru wszystkich kamieni milowych. Daję ci projekt case study do akceptacji, nic nie publikuję bez twojej zgody.",
+      "W ciągu 30 dni od zakończenia wdrożenia i odbioru wszystkich kamieni milowych. Dajemy ci projekt case study do akceptacji, nic nie publikujemy bez twojej zgody.",
   },
   {
     question: "Czy 50% ceny oznacza niższą jakość pracy?",
     answer:
-      "Nie. Rabat nie wynika z tego, że jestem na początku drogi, wynika z tego, że publiczne case study jest dla mnie cenniejsze niż pełna marża na pojedynczym projekcie. Jakość techniczna, dokumentacja, testy i wsparcie są takie same jak w pełnopłatnych wdrożeniach. Często wyższe, bo pilnuję, żeby efekt nadawał się do publikacji.",
+      "Nie. Rabat nie wynika z tego, że jesteśmy na początku drogi, wynika z tego, że publiczne case study jest dla nas cenniejsze niż pełna marża na pojedynczym projekcie. Jakość techniczna, dokumentacja, testy i wsparcie są takie same jak w pełnopłatnych wdrożeniach. Często wyższe, bo pilnujemy, żeby efekt nadawał się do publikacji.",
   },
   {
     question: "Co jeśli projekt się nie uda?",
     answer:
-      "Jeśli nie dojdziemy do uzgodnionych kamieni milowych z mojej winy, nie płacisz za niedostarczony etap, a także nie wymagam case study. Ryzyko leży po mojej stronie.",
+      "Jeśli nie dojdziemy do uzgodnionych kamieni milowych z naszej winy, nie płacisz za niedostarczony etap, a także nie wymagam case study. Ryzyko leży po naszej stronie.",
   },
   {
     question: "Dlaczego tylko 3 miejsca?",
     answer:
-      "Bo jako solo consultant mogę realnie poprowadzić maksymalnie 3 takie projekty równolegle bez spadku jakości. Po zrealizowaniu 3 case studies oferta kończy się i wracam do standardowych stawek.",
+      "Bo jako solo consultant możemy realnie poprowadzić maksymalnie 3 takie projekty równolegle bez spadku jakości. Po zrealizowaniu 3 case studies oferta kończy się i wracam do standardowych stawek.",
   },
   {
     question: "Jak wygląda aplikacja?",
     answer:
-      "Wypełniasz formularz na dole strony lub piszesz wprost. W ciągu 48 h dostajesz odpowiedź: albo umawiamy konsultację, albo, jeśli nie widzę dopasowania, dostajesz szczere wyjaśnienie dlaczego.",
+      "Wypełniasz formularz na dole strony lub piszesz wprost. W ciągu 48 h dostajesz odpowiedź: albo umawiamy konsultację, albo, jeśli nie widzimy dopasowania, dostajesz szczere wyjaśnienie dlaczego.",
   },
 ];
 
@@ -177,7 +177,7 @@ export default function Pilotaz() {
               </p>
               <p className="mt-6 text-sm text-gray-600 dark:text-gray-400 leading-relaxed max-w-2xl mx-auto">
                 To nie jest oferta dla &bdquo;pierwszych klientów&rdquo;. Rabat
-                wynika z tego, że chcę opublikować mocny dowód działania, a nie
+                wynika z tego, że chcemy opublikować mocny dowód działania, a nie
                 z braku doświadczenia. Akceptacja treści jest po Twojej stronie.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
@@ -185,7 +185,7 @@ export default function Pilotaz() {
                   Aplikuj do programu case study
                 </Link>
                 <Link href="/jak-pracuje" className="btn-secondary">
-                  Zobacz jak pracuję
+                  Zobacz jak pracujemy
                 </Link>
               </div>
             </div>
@@ -235,7 +235,7 @@ export default function Pilotaz() {
                   <div className="py-10 lg:py-12">
                     <div className="max-w-4xl mx-auto">
                       <div className="text-center mb-12">
-                        <span className="section-label">Moja strona umowy</span>
+                        <span className="section-label">Nasza strona umowy</span>
                         <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4">
                           Co dajesz w zamian
                         </h2>
@@ -274,7 +274,7 @@ export default function Pilotaz() {
                           Dla kogo
                         </h2>
                         <p className="text-gray-600 dark:text-gray-400 mt-4">
-                          Program jest celowo wąski, chcę mieć pewność, że
+                          Program jest celowo wąski, chcemy mieć pewność, że
                           projekty zakończą się sukcesem nadającym się do
                           publikacji. Dopasowanie weryfikuję na bezpłatnej
                           konsultacji.
@@ -378,12 +378,12 @@ export default function Pilotaz() {
                           {
                             n: "2",
                             title: "Konsultacja (48 h)",
-                            desc: "W ciągu 48 h odpowiadam: albo umawiamy bezpłatną 30-minutową konsultację, albo mówię wprost, że nie widzę dopasowania.",
+                            desc: "W ciągu 48 h odpowiadamy: albo umawiamy bezpłatną 30-minutową konsultację, albo mówimy wprost, że nie widzimy dopasowania.",
                           },
                           {
                             n: "3",
                             title: "Audyt i decyzja",
-                            desc: "Jeśli widzę dopasowanie, robię audyt (koszt obniżony), po którym dostajesz konkretną wycenę i harmonogram. Startujemy po akceptacji.",
+                            desc: "Jeśli widzimy dopasowanie, robimy audyt (koszt obniżony), po którym dostajesz konkretną wycenę i harmonogram. Startujemy po akceptacji.",
                           },
                         ].map((s) => (
                           <div

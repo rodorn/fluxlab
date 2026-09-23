@@ -179,9 +179,9 @@ const faq = [
       "n8n self-hosted na waszym serwerze (Hetzner Niemcy, OVH Polska, własne kolokacja) trzyma dane na waszej infrastrukturze, żaden zewnętrzny dostawca poza tymi, do których jawnie wysyłacie zapytania (CRM, GUS, biała lista). n8n.cloud ma serwery w Niemczech (UE), DPA i SOC 2. Dla większości firm B2B to wystarczy. Dla branż regulowanych (finanse, zdrowie) zwykle rekomenduję self-hosted.",
   },
   {
-    question: "Czy mogę utrzymać workflow sam po wdrożeniu?",
+    question: "Czy możemy utrzymać workflow sam po wdrożeniu?",
     answer:
-      "Tak, jeśli masz kogoś, kto rozumie podstawy programowania (zmienne, IF-y, JSON), n8n nie wymaga umiejętności full-stack. Każde wdrożenie kończę dokumentacją workflow, instrukcją uruchomienia i 30 dniami darmowych poprawek. Po tym standardowo zostaję na retainerze (1–3 godz./mies.) na drobne zmiany, ale nie jest to obowiązkowe, projekt zostaje twój.",
+      "Tak, jeśli masz kogoś, kto rozumie podstawy programowania (zmienne, IF-y, JSON), n8n nie wymaga umiejętności full-stack. Każde wdrożenie kończymy dokumentacją workflow, instrukcją uruchomienia i 30 dniami darmowych poprawek. Po tym standardowo zostajemy na retainerze (1–3 godz./mies.) na drobne zmiany, ale nie jest to obowiązkowe, projekt zostaje twój.",
   },
 ];
 
@@ -224,11 +224,11 @@ export default function N8nDlaCrm() {
               <TrackedCTA
                 href="#sekcje"
                 location="article_n8n-dla-crm_hero"
-                label="Sprawdź, czy n8n ma sens u mnie"
+                label="Sprawdź, czy n8n ma sens u nas"
                 eventName="cta_click_article_audit"
                 className="btn-primary"
               >
-                Sprawdź, czy n8n ma sens u mnie
+                Sprawdź, czy n8n ma sens u nas
               </TrackedCTA>
             </div>
           </div>
@@ -659,10 +659,10 @@ export default function N8nDlaCrm() {
                     <div className="max-w-3xl mx-auto">
                       <span className="section-label">Pierwszy etap</span>
                       <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-6">
-                        Co wdrażam w pierwszych 2 do 3 tygodniach
+                        Co wdrażamy w pierwszych 2 do 3 tygodniach
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
-                        Nie zaczynam od pełnej warstwy automatyzacji. Zaczynam
+                        Nie zaczynamy od pełnej warstwy automatyzacji. Zaczynamy
                         od pętli, którą da się zmierzyć w 2 tygodnie i pokazać
                         klientowi liczbę godzin oszczędności w miesiącu. Reszta
                         dochodzi etapami, gdy fundament działa.
@@ -930,11 +930,11 @@ export default function N8nDlaCrm() {
                       <TrackedCTA
                         href="/kontakt"
                         location="article_n8n-dla-crm_final"
-                        label="Sprawdź, czy n8n ma sens u mnie"
+                        label="Sprawdź, czy n8n ma sens u nas"
                         eventName="cta_click_article_audit"
                         className="btn-primary"
                       >
-                        Sprawdź, czy n8n ma sens u mnie
+                        Sprawdź, czy n8n ma sens u nas
                       </TrackedCTA>
                     </div>
                   </div>

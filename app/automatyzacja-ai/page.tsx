@@ -9,11 +9,11 @@ import Tabs from "@/components/Tabs";
 export const metadata: Metadata = {
   title: "Automatyzacja AI w procesach firmowych | Fluxlab",
   description:
-    "Wdrażam automatyzację AI: klasyfikacja danych, streszczenia, analiza treści, wsparcie obsługi i przepływy połączone z CRM i innymi systemami.",
+    "Wdrażamy automatyzację AI: klasyfikacja danych, streszczenia, analiza treści, wsparcie obsługi i przepływy połączone z CRM i innymi systemami.",
   openGraph: {
     title: "Automatyzacja AI w procesach firmowych | Fluxlab",
     description:
-      "Wdrażam automatyzację AI: klasyfikacja danych, streszczenia, analiza treści, wsparcie obsługi i przepływy połączone z CRM i innymi systemami.",
+      "Wdrażamy automatyzację AI: klasyfikacja danych, streszczenia, analiza treści, wsparcie obsługi i przepływy połączone z CRM i innymi systemami.",
     locale: "pl_PL",
     type: "article",
     images: [
@@ -45,10 +45,10 @@ const faqs = [
   {
     question: "Czy AI się myli?",
     answer:
-      "Tak, dlatego projektuję procesy z weryfikacją i fallbackiem na człowieka tam, gdzie to potrzebne.",
+      "Tak, dlatego projektujemy procesy z weryfikacją i fallbackiem na człowieka tam, gdzie to potrzebne.",
   },
   {
-    question: "Czy potrzebuję własnych danych do treningu?",
+    question: "Czy potrzebujemy własnych danych do treningu?",
     answer:
       "Nie zawsze. Wiele zastosowań działa na gotowych modelach z odpowiednim promptem i kontekstem.",
   },
@@ -70,7 +70,7 @@ export default function AutomatyzacjaAI() {
               Automatyzacja AI
             </h1>
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
-              Wdrażam AI tam, gdzie realnie skraca czas pracy: analiza treści,
+              Wdrażamy AI tam, gdzie realnie skraca czas pracy: analiza treści,
               klasyfikacja danych i generowanie odpowiedzi w istniejących
               procesach. Bez modnego hasła.
             </p>
@@ -177,7 +177,7 @@ export default function AutomatyzacjaAI() {
             "@type": "Service",
             name: "Automatyzacja AI",
             description:
-              "Wdrażam automatyzację AI: klasyfikacja danych, streszczenia, analiza treści, wsparcie obsługi i przepływy połączone z CRM i innymi systemami.",
+              "Wdrażamy automatyzację AI: klasyfikacja danych, streszczenia, analiza treści, wsparcie obsługi i przepływy połączone z CRM i innymi systemami.",
             provider: { "@id": "https://fluxlab.pl/#organization" },
             areaServed: { "@type": "Country", name: "Polska" },
             serviceType: "Automatyzacja procesów biznesowych",

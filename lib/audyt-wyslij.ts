@@ -17,8 +17,8 @@ const FROM =
 
 /** Treść zgody zapisywana razem z adresem. Zmiana tego tekstu to nowa wersja. */
 export const TRESC_ZGODY =
-  "Zgadzam się na przesłanie raportu z audytu na podany adres i na kontakt " +
-  "w sprawie jego wyników. Zgodę mogę wycofać w każdej chwili, odpisując na " +
+  "Zgadzamy się na przesłanie raportu z audytu na podany adres i na kontakt " +
+  "w sprawie jego wyników. Zgodę możemy wycofać w każdej chwili, odpisując na " +
   "wiadomość.";
 
 async function przezResend(

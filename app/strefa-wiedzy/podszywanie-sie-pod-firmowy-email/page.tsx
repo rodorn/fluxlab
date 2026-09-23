@@ -30,12 +30,12 @@ export const metadata: Metadata = {
 
 const faqItems = [
   {
-    question: "Skąd mam wiedzieć, czy ktoś może podszyć się pod moją domenę?",
+    question: "Skąd mamy wiedzieć, czy ktoś może podszyć się pod naszą domenę?",
     answer:
       "Zależy to od trzech rekordów DNS: SPF, DKIM i DMARC. Jeśli domena nie ma DMARC albo ma go w trybie p=none, praktycznie każdy może wysłać wiadomość wyglądającą jak od Ciebie. Najszybciej sprawdzisz to darmowym audytem: wpisujesz domenę i w kilka sekund masz wynik.",
   },
   {
-    question: "Dlaczego moje maile z ofertami trafiają do spamu?",
+    question: "Dlaczego nasze maile z ofertami trafiają do spamu?",
     answer:
       "Najczęstsza przyczyna to brak lub błędna konfiguracja SPF, DKIM i DMARC. Od 2024 roku Gmail i Outlook wymagają tych rekordów od firm wysyłających więcej wiadomości. Bez nich część poczty jest cicho odrzucana lub ląduje w spamie, a Ty tego nie widzisz, bo z Twojej strony mail wychodzi poprawnie.",
   },

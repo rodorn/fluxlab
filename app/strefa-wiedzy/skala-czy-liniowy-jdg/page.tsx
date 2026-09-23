@@ -38,7 +38,7 @@ export default function SkalaCzyLiniowyJdgArticle() {
         "Zwykle od ok. 100-120 tys. zł rocznego dochodu. Przy tym poziomie stawka efektywna na skali (z uwzględnieniem kwoty wolnej i progu 32%) zaczyna przekraczać 19% liniowego. Ale dokładny próg zależy od składki zdrowotnej i indywidualnej sytuacji.",
     },
     {
-      question: "Czy na skali mogę rozliczać się z małżonkiem?",
+      question: "Czy na skali możemy rozliczać się z małżonkiem?",
       answer:
         "Tak, to jedna z głównych przewag skali podatkowej. Wspólne rozliczenie pozwala podzielić dochód na dwoje, co obniża efektywną stawkę podatkową. Jest szczególnie korzystne, gdy jeden z małżonków zarabia znacznie więcej niż drugi.",
     },
@@ -48,7 +48,7 @@ export default function SkalaCzyLiniowyJdgArticle() {
         "Tak. Na liniowym wynosi 4,9% dochodu, a na skali 9% dochodu. Dodatkowo na liniowym można odliczyć składkę zdrowotną od podstawy opodatkowania do limitu 12 900 zł rocznie. Na skali nie ma żadnego odliczenia.",
     },
     {
-      question: "Czy mogę zmienić ze skali na liniowy w ciągu roku?",
+      question: "Czy możemy zmienić ze skali na liniowy w ciągu roku?",
       answer:
         "Nie. Zmiana formy opodatkowania jest możliwa tylko od 1 stycznia kolejnego roku. Oświadczenie lub aktualizację CEIDG trzeba złożyć do 20 lutego roku, od którego ma obowiązywać nowa forma.",
     },
@@ -598,7 +598,7 @@ export default function SkalaCzyLiniowyJdgArticle() {
                           Potrzebujesz pomocy w wyborze formy?
                         </h2>
                         <p className="text-gray-600 dark:text-gray-400 mb-4">
-                          Napisz do mnie, pomogę policzyć i wybrać optymalną
+                          Napisz do nas, pomogę policzyć i wybrać optymalną
                           formę opodatkowania dla Twojej JDG.
                         </p>
                         <Link

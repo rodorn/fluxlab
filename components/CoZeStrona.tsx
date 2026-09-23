@@ -91,7 +91,7 @@ export default function CoZeStrona({ biezacaStrona }: Props) {
         Poprawiać czy budować od nowa
       </h2>
       <p className="mt-3 max-w-2xl text-gray-600 dark:text-gray-300">
-        Naciśnij, co dziś stoi pod Waszym adresem. Napiszę, co w takim miejscu
+        Naciśnij, co dziś stoi pod Waszym adresem. Napiszemy, co w takim miejscu
         da się zmienić bez przebudowy i gdzie kończy się poprawianie. Drugie
         naciśnięcie, o tym co ma się zmienić, dokłada ocenę całości. Bez
         wpisywania czegokolwiek i bez podawania adresu.

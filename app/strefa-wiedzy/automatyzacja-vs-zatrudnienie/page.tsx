@@ -48,7 +48,7 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
     {
       question: "Ile kosztuje średnia automatyzacja procesu w MŚP?",
       answer:
-        "Jednorazowe wdrożenie pojedynczego procesu to u mnie 1 500 do 8 000 zł, zależnie od liczby integracji i liczby wyjątków. Miesięczne utrzymanie narzędzi, Make, Zapier albo n8n.cloud, dla firmy z kilkunastoma scenariuszami to 200 do 600 zł. Hosting n8n na własnym serwerze to dodatkowe 50 do 150 zł miesięcznie. Zwrot zależy od wolumenu procesu i tego właśnie liczy kalkulator na górze tej strony.",
+        "Jednorazowe wdrożenie pojedynczego procesu to u nas 1 500 do 8 000 zł, zależnie od liczby integracji i liczby wyjątków. Miesięczne utrzymanie narzędzi, Make, Zapier albo n8n.cloud, dla firmy z kilkunastoma scenariuszami to 200 do 600 zł. Hosting n8n na własnym serwerze to dodatkowe 50 do 150 zł miesięcznie. Zwrot zależy od wolumenu procesu i tego właśnie liczy kalkulator na górze tej strony.",
     },
     {
       question: "Kiedy zatrudnienie ma sens, a automatyzacja nie?",
@@ -79,7 +79,7 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
     {
       question: "Dlaczego etat w kalkulatorze to tylko stawka razy 168 godzin?",
       answer:
-        "Bo to jest minimum, czyli sama praca. Pełen koszt zatrudnienia jest wyższy o 30 do 50 procent przez ZUS pracodawcy, urlop płatny, sprzęt, oprogramowanie, czas rekrutacji i wdrożenia. Kalkulator tego nie dolicza, bo wynik miałby zbyt dużą wariancję, B2B kontra umowa o pracę, junior kontra senior, biuro kontra praca zdalna. Pokazuję orientacyjną dolną granicę, żeby porównanie z automatyzacją było uczciwe w dół. Jeśli automatyzacja wychodzi taniej nawet od minimalnego kosztu pracy, to po pełnym koszcie wychodzi taniej tym bardziej.",
+        "Bo to jest minimum, czyli sama praca. Pełen koszt zatrudnienia jest wyższy o 30 do 50 procent przez ZUS pracodawcy, urlop płatny, sprzęt, oprogramowanie, czas rekrutacji i wdrożenia. Kalkulator tego nie dolicza, bo wynik miałby zbyt dużą wariancję, B2B kontra umowa o pracę, junior kontra senior, biuro kontra praca zdalna. Pokazujemy orientacyjną dolną granicę, żeby porównanie z automatyzacją było uczciwe w dół. Jeśli automatyzacja wychodzi taniej nawet od minimalnego kosztu pracy, to po pełnym koszcie wychodzi taniej tym bardziej.",
     },
     {
       question: "Co znaczy, że proces musi być powtarzalny i stabilny?",
@@ -144,13 +144,13 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
                 ),
               },
               {
-                label: "Jak liczę decyzję",
+                label: "Jak liczymy decyzję",
                 kotwica: "jak-licze",
                 content: (
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        Jak liczę decyzję w kalkulatorze
+                        Jak liczymy decyzję w kalkulatorze
                       </h2>
                       <div className="space-y-4 text-gray-600 dark:text-gray-400 leading-relaxed">
                         <p>
@@ -198,7 +198,7 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
                           </li>
                         </ul>
                         <p>
-                          Punkt zwrotu liczę zgrubnie jako{" "}
+                          Punkt zwrotu liczymy zgrubnie jako{" "}
                           <code className="text-xs bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded">
                             koszt_wdrożenia / oszczędność_miesięczna
                           </code>
@@ -241,7 +241,7 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
                       </p>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Druga rzecz: decyzja „zatrudniam” jest trudna do
-                        cofnięcia, decyzja „automatyzuję”, znacznie łatwiejsza.
+                        cofnięcia, decyzja „automatyzujemy”, znacznie łatwiejsza.
                         Wyłączenie scenariusza to kilka kliknięć. Zwolnienie
                         pracownika to miesiące stresu, okres wypowiedzenia,
                         czasem postępowanie sądowe. Dlatego w razie wątpliwości
@@ -815,7 +815,7 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
                         Najczęstsze błędy decyzji
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Z moich obserwacji wdrożeń w MŚP, pięć powtarzalnych
+                        Z naszych obserwacji wdrożeń w MŚP, pięć powtarzalnych
                         pułapek:
                       </p>
                       <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
@@ -887,7 +887,7 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
                           href="/jak-pracuje"
                           className="text-accent hover:underline"
                         >
-                          moja metoda pracy
+                          nasza metoda pracy
                         </Link>{" "}
                         i{" "}
                         <Link

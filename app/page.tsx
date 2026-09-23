@@ -16,7 +16,7 @@ const PILLARS = [
     videoLight: "/abstract/automation-light.mp4",
     variant: "automation" as const,
     num: "01",
-    desc: "Leady nie trafiają automatycznie do CRM, handlowiec zapomina o follow-upie, a raport składa się ręcznie przez pół dnia. Buduję przepływ, który robi to sam i nie gubi zgłoszeń.",
+    desc: "Leady nie trafiają automatycznie do CRM, handlowiec zapomina o follow-upie, a raport składa się ręcznie przez pół dnia. Budujemy przepływ, który robi to sam i nie gubi zgłoszeń.",
     cta: "Znajdź proces do automatyzacji",
     // Akcent: indigo
     ring: "group-hover:ring-accent/80 focus-visible:ring-accent",
@@ -31,7 +31,7 @@ const PILLARS = [
     videoLight: "/abstract/data-light.mp4",
     variant: "data" as const,
     num: "02",
-    desc: "Dane leżą w kilku systemach i w Excelach, a ERP nie rozmawia z CRM. Spinam je przez API, porządkuję i zamieniam w raport, który przychodzi sam.",
+    desc: "Dane leżą w kilku systemach i w Excelach, a ERP nie rozmawia z CRM. Spinamy je przez API, porządkuję i zamieniam w raport, który przychodzi sam.",
     cta: "Zobacz, jak spiąć systemy",
     // Akcent: zieleń
     ring: "group-hover:ring-emerald-400/80 focus-visible:ring-emerald-400",
@@ -47,7 +47,7 @@ const PILLARS = [
     variant: "web" as const,
     num: "03",
     desc: "Aplikacje webowe, panele i formularze, które są częścią procesu, a nie osobnym bytem. Strona firmowa też, ale jako element całości, nie jako produkt sam w sobie.",
-    cta: "Zobacz, co buduję",
+    cta: "Zobacz, co budujemy",
     // Akcent: fiolet
     ring: "group-hover:ring-violet-400/80 focus-visible:ring-violet-400",
     glow: "from-violet-500/35",
@@ -90,7 +90,7 @@ const PROBLEMY = [
     zdanie: "ERP nie rozmawia z CRM, dane żyją w kilku Excelach",
     skutek:
       "Każdy dział ma swoją wersję prawdy, a uzgodnienie jej zajmuje więcej niż sama praca.",
-    cta: "Zobacz, jak łączę systemy",
+    cta: "Zobacz, jak łączymy systemy",
   },
   {
     href: "/automatyczne-przypisywanie-leadow",
@@ -133,10 +133,10 @@ export default function Home() {
         {/* Hasło */}
         <div className="relative z-20 px-6 lg:px-10 pt-7 pb-6 lg:pb-8 col-enter-1">
           <h1 className="text-2xl lg:text-3xl font-semibold tracking-tight text-gray-900 dark:text-white/90">
-            Automatyzuję procesy sprzedaży i operacji w firmach B2B
+            Automatyzujemy procesy sprzedaży i operacji w firmach B2B
           </h1>
           <p className="mt-2 max-w-3xl text-sm lg:text-base text-gray-600 dark:text-white/60">
-            Łączę CRM, formularze, maile, API i raportowanie tak, żeby ludzie
+            Łączymy CRM, formularze, maile, API i raportowanie tak, żeby ludzie
             przestali ręcznie przepisywać dane i pilnować procesów.
           </p>
           <p className="mt-1.5 text-xs text-gray-500 dark:text-white/60">
@@ -227,7 +227,7 @@ export default function Home() {
         <RachunekWJednymKlikniecu />
 
         {/* Klient nie szuka "automatyzacji", tylko konca konkretnej
-            uciazliwosci. Te szesc zdan to jego slowa, a nie moje nazwy
+            uciazliwosci. Te szesc zdan to jego slowa, a nie nasze nazwy
             kategorii, i kazde prowadzi do strony, ktora opisuje wlasnie ten
             jeden przypadek. */}
         <section className="relative z-20 px-6 lg:px-10 py-12 lg:py-16 border-t border-gray-200 dark:border-white/10">
@@ -236,7 +236,7 @@ export default function Home() {
           </h2>
           <p className="mt-2 max-w-3xl text-sm text-gray-600 dark:text-white/60">
             Jeśli któreś z tych zdań brzmi jak Twoja firma, kliknij. Pod każdym
-            opisałem, na czym dokładnie polega problem, ile kosztuje i co
+            opisaliśmy, na czym dokładnie polega problem, ile kosztuje i co
             zostaje po wdrożeniu.
           </p>
           <ul className="mt-7 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -272,17 +272,17 @@ export default function Home() {
         {/* Dowod kompetencji dla firmy bez ani jednego klienta. Liczby z
             wlasnego pomiaru, z podana probka i metoda, zeby kazdy mogl je
             powtorzyc i sprawdzic. Na dole, a nie pod haslem: to jest odpowiedz
-            na pytanie "skad mam wiedziec, ze on sie na tym zna", a takie
+            na pytanie "skad mamy wiedziec, ze on sie na tym zna", a takie
             pytanie pada po przeczytaniu oferty, nie przed. */}
         <section className="relative z-20 border-t border-gray-200 px-6 py-12 dark:border-white/10 lg:px-10 lg:py-16">
           <h2 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white/90 lg:text-2xl">
-            Skąd mam wiedzieć, że się na tym znam
+            Skąd mamy wiedzieć, że się na tym znamy
           </h2>
           <p className="mt-2 max-w-3xl text-sm text-gray-600 dark:text-white/60">
-            Nie mam jeszcze klientów, więc nie pokażę Wam cudzych logotypów ani
-            opinii. Zamiast tego pokazuję, co sam zmierzyłem. Wziąłem 386 stron
+            Nie mamy jeszcze klientów, więc nie pokażemy Wam cudzych logotypów ani
+            opinii. Zamiast tego pokazujemy, co sam zmierzyliśmy. Wzięliśmy 386 stron
             dealerów samochodowych, bo to branża, w której łatwo o porównywalną
-            próbkę, i sprawdziłem je tymi samymi narzędziami, które stoją na tej
+            próbkę, i sprawdziliśmy je tymi samymi narzędziami, które stoją na tej
             stronie. Przy każdym badaniu jest metoda i zastrzeżenia, więc można
             je powtórzyć i sprawdzić, czy się mylę.
           </p>

@@ -29,10 +29,10 @@ interface Wynik {
 }
 
 const ETAPY = [
-  "Sprawdzam, skąd ten sklep da się odczytać",
-  "Zbieram produkty, które są teraz przecenione",
+  "Sprawdzamy, skąd ten sklep da się odczytać",
+  "Zbieramy produkty, które są teraz przecenione",
   "Otwieram kolejno karty tych produktów",
-  "Szukam komunikatu o najniższej cenie z 30 dni",
+  "Szukamy komunikatu o najniższej cenie z 30 dni",
   "Odsiewam pozorną zgodność, czyli 30 dni na zwrot",
 ];
 
@@ -101,7 +101,7 @@ export default function CenyCheck() {
   const [wynik, setWynik] = useState<Wynik | null>(null);
   const [blad, setBlad] = useState("");
   const [email, setEmail] = useState("");
-  const [leadStan, setLeadStan] = useState<"idle" | "wysylam" | "ok" | "blad">("idle");
+  const [leadStan, setLeadStan] = useState<"idle" | "wysylamy" | "ok" | "blad">("idle");
   const [leadBlad, setLeadBlad] = useState("");
   const timer = useRef<ReturnType<typeof setInterval> | null>(null);
 
@@ -149,7 +149,7 @@ export default function CenyCheck() {
   async function zamow(e: React.FormEvent) {
     e.preventDefault();
     if (!wynik) return;
-    setLeadStan("wysylam");
+    setLeadStan("wysylamy");
     setLeadBlad("");
     const braki =
       wynik.produkty?.filter((p) => !p.zgodny).map((p) => `${p.nazwa}: ${p.url}`) || [];
@@ -197,7 +197,7 @@ export default function CenyCheck() {
       </h2>
       <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
         Wpisz adres sklepu. Pobiorę listę produktów, które są u Ciebie teraz
-        przecenione, otworzę ich karty i sprawdzę, czy jest przy nich wymagana
+        przecenione, otworzę ich karty i sprawdzimy, czy jest przy nich wymagana
         informacja o najniższej cenie z 30 dni. Bez rejestracji i bez żadnych
         dostępów do panelu.
       </p>
@@ -217,7 +217,7 @@ export default function CenyCheck() {
           disabled={stan === "ladowanie"}
           className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
         >
-          {stan === "ladowanie" ? "Sprawdzam..." : "Sprawdź sklep"}
+          {stan === "ladowanie" ? "Sprawdzamy..." : "Sprawdź sklep"}
         </button>
       </form>
 
@@ -339,13 +339,13 @@ export default function CenyCheck() {
           <div className="mt-5 border-t border-gray-200/70 dark:border-gray-700/70 pt-4">
             <p className="text-sm text-gray-700 dark:text-gray-300">
               {wynik.niezgodne === 0
-                ? "Sprawdziłem tylko obecność komunikatu, nie to, czy podana kwota jest prawdziwa. Tego nie da się ustalić z zewnątrz, bo nikt nie ma historii cen Twojego sklepu. Właśnie dlatego prowadzenie rejestru cen jest osobną usługą: od dnia uruchomienia zbiera dowód na przyszłość."
-                : "To sprawdzenie objęło tylko kilka pierwszych przecen. Pełny skan przechodzi przez wszystkie i kończy się raportem PDF, który można przekazać obsłudze sklepu. Zostaw adres, odeślę wynik razem z listą pozycji do poprawy."}
+                ? "Sprawdziliśmy tylko obecność komunikatu, nie to, czy podana kwota jest prawdziwa. Tego nie da się ustalić z zewnątrz, bo nikt nie ma historii cen Twojego sklepu. Właśnie dlatego prowadzenie rejestru cen jest osobną usługą: od dnia uruchomienia zbiera dowód na przyszłość."
+                : "To sprawdzenie objęło tylko kilka pierwszych przecen. Pełny skan przechodzi przez wszystkie i kończy się raportem PDF, który można przekazać obsłudze sklepu. Zostaw adres, odeślemy wynik razem z listą pozycji do poprawy."}
             </p>
 
             {leadStan === "ok" ? (
               <p className="mt-4 text-sm font-semibold text-emerald-700 dark:text-emerald-400">
-                Mam zgłoszenie razem z wynikiem tego skanu. Odpiszę na {email},
+                Mamy zgłoszenie razem z wynikiem tego skanu. Odpiszemy na {email},
                 zwykle tego samego dnia.
               </p>
             ) : (
@@ -356,7 +356,7 @@ export default function CenyCheck() {
                 >
                   {wynik.niezgodne === 0
                     ? "Podaj maila, jeśli chcesz rejestr cen na przyszłość"
-                    : "Podaj maila, odeślę pełny skan wszystkich przecen"}
+                    : "Podaj maila, odeślemy pełny skan wszystkich przecen"}
                 </label>
                 <div className="mt-2 flex flex-col gap-3 sm:flex-row">
                   <input
@@ -370,10 +370,10 @@ export default function CenyCheck() {
                   />
                   <button
                     type="submit"
-                    disabled={leadStan === "wysylam"}
+                    disabled={leadStan === "wysylamy"}
                     className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
                   >
-                    {leadStan === "wysylam" ? "Wysyłam..." : "Wyślij zgłoszenie"}
+                    {leadStan === "wysylamy" ? "Wysyłamy..." : "Wyślij zgłoszenie"}
                   </button>
                 </div>
                 {leadStan === "blad" && (
@@ -390,7 +390,7 @@ export default function CenyCheck() {
       )}
 
       <p className="mt-4 text-xs text-gray-500 dark:text-gray-400">
-        Sprawdzam wyłącznie publicznie dostępne strony Twojego sklepu i pobieram
+        Sprawdzamy wyłącznie publicznie dostępne strony Twojego sklepu i pobieramy
         kilka pierwszych przecen. To ocena techniczna obecności komunikatu, nie
         opinia prawna.
       </p>

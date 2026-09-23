@@ -5,7 +5,7 @@ import JezykCheck from "@/components/JezykCheck";
 export const metadata: Metadata = {
   title: "Audyt tłumaczeń strony i hreflang, od 99 zł | Fluxlab",
   description:
-    "Wersja angielska ma polskie przyciski, a wyszukiwarka nie wie, że wersje językowe istnieją. Sprawdzam fragment po fragmencie. Od 99 zł.",
+    "Wersja angielska ma polskie przyciski, a wyszukiwarka nie wie, że wersje językowe istnieją. Sprawdzamy fragment po fragmencie. Od 99 zł.",
   alternates: { canonical: "/kontrola-jezykow" },
   openGraph: {
     title: "Audyt tłumaczeń strony i hreflang, od 99 zł | Fluxlab",
@@ -42,7 +42,7 @@ export default function Page() {
         },
         {
           title: "Deklaracja języka kontra rzeczywistość",
-          desc: "Strona potrafi deklarować, że jest angielska, i jednocześnie mieć polskie napisy. Pokazuję tę sprzeczność wprost, bo to ona najbardziej szkodzi w wyszukiwarce.",
+          desc: "Strona potrafi deklarować, że jest angielska, i jednocześnie mieć polskie napisy. Pokazujemy tę sprzeczność wprost, bo to ona najbardziej szkodzi w wyszukiwarce.",
         },
         {
           title: "Znaczniki wersji językowych",
@@ -89,27 +89,27 @@ export default function Page() {
       ]}
       faq={[
         {
-          q: "Czego potrzebujesz, żeby to sprawdzić?",
-          a: "Tylko adresu strony. Wszystko, co analizuję, jest publicznie dostępne, więc nie potrzebuję dostępu do panelu ani do systemu zarządzania treścią.",
+          q: "Czego potrzebujecie, żeby to sprawdzić?",
+          a: "Tylko adresu strony. Wszystko, co analizujemy, jest publicznie dostępne, więc nie potrzebujemy dostępu do panelu ani do systemu zarządzania treścią.",
         },
         {
-          q: "Czy sprawdzasz też jakość samego tłumaczenia?",
-          a: "Nie i mówię to wprost. Wykrywam tekst, który w ogóle nie został przetłumaczony, oraz błędy w oznaczeniach dla wyszukiwarki. Ocena stylu przekładu to praca dla tłumacza, nie dla narzędzia.",
+          q: "Czy sprawdzacie też jakość samego tłumaczenia?",
+          a: "Nie i mówimy to wprost. Wykrywam tekst, który w ogóle nie został przetłumaczony, oraz błędy w oznaczeniach dla wyszukiwarki. Ocena stylu przekładu to praca dla tłumacza, nie dla narzędzia.",
         },
         {
-          q: "Mam stronę na WordPressie z wtyczką do tłumaczeń, czy to zadziała?",
-          a: "Tak, bo sprawdzam gotową stronę taką, jaką widzi odwiedzający, niezależnie od tego, co ją generuje. Wtyczki do tłumaczeń są zresztą najczęstszym źródłem takich braków, bo nowa podstrona domyślnie pokazuje treść oryginalną.",
+          q: "Mamy stronę na WordPressie z wtyczką do tłumaczeń, czy to zadziała?",
+          a: "Tak, bo sprawdzamy gotową stronę taką, jaką widzi odwiedzający, niezależnie od tego, co ją generuje. Wtyczki do tłumaczeń są zresztą najczęstszym źródłem takich braków, bo nowa podstrona domyślnie pokazuje treść oryginalną.",
         },
         {
-          q: "Co jeśli nic nie znajdziesz?",
+          q: "Co jeśli nic nie znajdziecie?",
           a: "Wtedy nie płacisz za audyt. Przy serwisach, które sprawdzałem, komplet bez zastrzeżeń zdarza się, ale rzadziej niż braki.",
         },
       ]}
       formId="order_kontrola_jezykow"
       formHeading="Zamów pełny audyt wersji językowych"
-      formIntro="Podaj adres strony i napisz, które wersje językowe Was interesują. Odeślę listę miejsc do poprawy, a jeśli nie znajdę ani jednego, nie płacisz."
+      formIntro="Podaj adres strony i napisz, które wersje językowe Was interesują. Odeślemy listę miejsc do poprawy, a jeśli nie znajdziemy ani jednego, nie płacisz."
       submitLabel="Zamów audyt"
-      microCopy="Analizuję wyłącznie publicznie dostępne strony. Nie potrzebuję żadnych dostępów."
+      microCopy="Analizujemy wyłącznie publicznie dostępne strony. Nie potrzebujemy żadnych dostępów."
       serviceName="Audyt wersji językowych strony internetowej"
       serviceDesc="Wykrycie nieprzetłumaczonych fragmentów w obcojęzycznych wersjach serwisu oraz błędów w znacznikach hreflang, z listą miejsc do podmiany. Od 99 zł."
       serviceType="Audyt jakości wersji językowych serwisu"

@@ -32,7 +32,7 @@ type Sytuacja = {
 const SYTUACJE: Sytuacja[] = [
   {
     klucz: "nie_wiem",
-    etykieta: "Nie wiem, co jest nie tak",
+    etykieta: "Nie wiemy, co jest nie tak",
     odpowiedz:
       "Najczęstsza sytuacja i najlepszy moment na jedno pełne badanie zamiast zgadywania, które sprawdzenie odpalić. Wychodzi z niego lista tego, co faktycznie wymaga uwagi, w kolejności.",
     wskazania: [
@@ -104,7 +104,7 @@ const SYTUACJE: Sytuacja[] = [
   },
   {
     klucz: "sklep",
-    etykieta: "Prowadzę sklep internetowy",
+    etykieta: "Prowadzimy sklep internetowy",
     odpowiedz:
       "Trzy miejsca, w których sklep traci pieniądze po cichu: przecena, zwrot i faktura od kuriera.",
     wskazania: [
@@ -163,7 +163,7 @@ const SYTUACJE: Sytuacja[] = [
   },
   {
     klucz: "kontrola-strony",
-    etykieta: "Nie wiem, kto panuje nad naszą stroną",
+    etykieta: "Nie wiemy, kto panuje nad naszą stroną",
     odpowiedz:
       "Dwie rzeczy, które zwykle zostają u wykonawcy, a powinny należeć do firmy.",
     wskazania: [

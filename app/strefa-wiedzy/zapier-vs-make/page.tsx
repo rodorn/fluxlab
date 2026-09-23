@@ -43,7 +43,7 @@ export default function ZapierVsMakeArticle() {
         "Zapier. Interfejs jest liniowy, krok po kroku, i działa intuicyjnie nawet dla osoby bez doświadczenia technicznego. Make wymaga zrozumienia diagramu scenariusza, modułów, routerów i agregatorów. To 2–3 razy dłuższa krzywa nauki, ale za to dużo większe możliwości.",
     },
     {
-      question: "Czy mogę przenieść automatyzacje z Zapiera do Make?",
+      question: "Czy możemy przenieść automatyzacje z Zapiera do Make?",
       answer:
         "Nie ma automatycznego importu, trzeba odbudować scenariusze ręcznie. Dla 5–10 prostych Zapów to kwestia jednego dnia pracy. Dla większego ekosystemu warto rozważyć migrację stopniową, np. tylko nowe automatyzacje budować w Make, a stare zostawić w Zapierze, dopóki działają.",
     },

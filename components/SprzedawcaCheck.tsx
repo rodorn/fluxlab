@@ -52,10 +52,10 @@ const MOTYW: Record<
 };
 
 const ETAPY = [
-  "Pobieram stronę główną",
+  "Pobieramy stronę główną",
   "Zaglądam do kontaktu i regulaminu",
-  "Szukam numeru NIP i numeru konta",
-  "Pytam wykaz podatników VAT",
+  "Szukamy numeru NIP i numeru konta",
+  "Pytamy wykaz podatników VAT",
 ];
 
 export default function SprzedawcaCheck() {
@@ -65,7 +65,7 @@ export default function SprzedawcaCheck() {
   const [blad, setBlad] = useState("");
   const [etap, setEtap] = useState(0);
   const [email, setEmail] = useState("");
-  const [leadStan, setLeadStan] = useState<"idle" | "wysylam" | "ok" | "blad">("idle");
+  const [leadStan, setLeadStan] = useState<"idle" | "wysylamy" | "ok" | "blad">("idle");
   const [leadBlad, setLeadBlad] = useState("");
   const timer = useRef<ReturnType<typeof setInterval> | null>(null);
 
@@ -123,7 +123,7 @@ export default function SprzedawcaCheck() {
   async function zamow(e: React.FormEvent) {
     e.preventDefault();
     if (!wynik) return;
-    setLeadStan("wysylam");
+    setLeadStan("wysylamy");
     setLeadBlad("");
     try {
       const res = await fetch("/api/contact", {
@@ -170,7 +170,7 @@ export default function SprzedawcaCheck() {
         Księgowość firmy, która ma Ci zapłacić, przed przelewem sprawdza
         sprzedawcę w wykazie podatników VAT. Potrzebuje do tego NIP-u, a przy
         większych kwotach także numeru konta. Zaglądam na stronę główną, kontakt
-        i regulamin, wyciągam te dane i sprawdzam je w wykazie tak samo, jak
+        i regulamin, wyciągamy te dane i sprawdzamy je w wykazie tak samo, jak
         zrobi to Twój klient.
       </p>
       <Przyklady
@@ -197,7 +197,7 @@ export default function SprzedawcaCheck() {
           disabled={stan === "ladowanie"}
           className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
         >
-          {stan === "ladowanie" ? "Sprawdzam..." : "Sprawdź dane sprzedawcy"}
+          {stan === "ladowanie" ? "Sprawdzamy..." : "Sprawdź dane sprzedawcy"}
         </button>
       </form>
 
@@ -341,13 +341,13 @@ export default function SprzedawcaCheck() {
           <div className="mt-5 border-t border-gray-200/70 dark:border-gray-700/70 pt-4">
             <p className="text-sm text-gray-700 dark:text-gray-300">
               {wynik.werdykt === "ZIELONY"
-                ? "Nie mam Ci tu nic do sprzedania. Jeśli macie więcej domen albo oddziałów, mogę sprawdzić wszystkie naraz i pilnować, czy coś się w wykazie nie zmieniło."
-                : "Naprawa jest tania: brakujące dane w stopce i w regulaminie plus znacznik, po którym wyszukiwarka i narzędzia zakupowe odczytają je automatycznie. Odsyłam gotowy fragment do wklejenia, nie samą diagnozę."}
+                ? "Nie mamy Ci tu nic do sprzedania. Jeśli macie więcej domen albo oddziałów, możemy sprawdzić wszystkie naraz i pilnować, czy coś się w wykazie nie zmieniło."
+                : "Naprawa jest tania: brakujące dane w stopce i w regulaminie plus znacznik, po którym wyszukiwarka i narzędzia zakupowe odczytają je automatycznie. Odsyłamy gotowy fragment do wklejenia, nie samą diagnozę."}
             </p>
 
             {leadStan === "ok" ? (
               <p className="mt-4 text-sm font-semibold text-emerald-700 dark:text-emerald-400">
-                Mam zgłoszenie razem z wynikiem. Odpiszę na {email}, zwykle tego
+                Mamy zgłoszenie razem z wynikiem. Odpiszemy na {email}, zwykle tego
                 samego dnia.
               </p>
             ) : (
@@ -356,7 +356,7 @@ export default function SprzedawcaCheck() {
                   htmlFor="sprzedawca-email"
                   className="block text-sm font-medium text-gray-900 dark:text-white"
                 >
-                  Podaj maila, odeślę gotowy fragment do wklejenia w stopkę
+                  Podaj maila, odeślemy gotowy fragment do wklejenia w stopkę
                 </label>
                 <div className="mt-2 flex flex-col gap-3 sm:flex-row">
                   <input
@@ -370,10 +370,10 @@ export default function SprzedawcaCheck() {
                   />
                   <button
                     type="submit"
-                    disabled={leadStan === "wysylam"}
+                    disabled={leadStan === "wysylamy"}
                     className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
                   >
-                    {leadStan === "wysylam" ? "Wysyłam..." : "Wyślij zgłoszenie"}
+                    {leadStan === "wysylamy" ? "Wysyłamy..." : "Wyślij zgłoszenie"}
                   </button>
                 </div>
                 {leadStan === "blad" && (

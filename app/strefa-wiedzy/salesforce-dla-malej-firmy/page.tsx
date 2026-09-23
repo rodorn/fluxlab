@@ -347,12 +347,12 @@ export default function SalesforceDlaMalejFirmyArticle() {
                         <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-400">
                           <li className="flex items-start gap-2">
                             <Check />
-                            Czy mam proces, który nie mieści się w klasycznym
+                            Czy mamy proces, który nie mieści się w klasycznym
                             pipeline?
                           </li>
                           <li className="flex items-start gap-2">
                             <Check />
-                            Czy potrzebuję obiektów, raportów albo uprawnień,
+                            Czy potrzebujemy obiektów, raportów albo uprawnień,
                             których nie da się odwzorować w Pipedrive/HubSpot?
                           </li>
                           <li className="flex items-start gap-2">
@@ -543,7 +543,7 @@ export default function SalesforceDlaMalejFirmyArticle() {
                         </div>
                         <div>
                           <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                            Czy mogę wdrożyć Salesforce sam, bez partnera?
+                            Czy możemy wdrożyć Salesforce sam, bez partnera?
                           </h3>
                           <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                             Starter, tak. Pro / Enterprise, niemal nigdy. Bez
@@ -684,7 +684,7 @@ export default function SalesforceDlaMalejFirmyArticle() {
               },
               {
                 "@type": "Question",
-                name: "Czy mogę wdrożyć Salesforce sam, bez partnera?",
+                name: "Czy możemy wdrożyć Salesforce sam, bez partnera?",
                 acceptedAnswer: {
                   "@type": "Answer",
                   text: "Starter, tak. Pro lub Enterprise, niemal nigdy. Bez admina lub partnera szybko rośnie dług techniczny i brakuje osoby, która wie, dlaczego coś działa akurat tak.",

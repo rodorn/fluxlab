@@ -61,7 +61,7 @@ export default function AiCheck() {
   const [wynik, setWynik] = useState<Wynik | null>(null);
   const [blad, setBlad] = useState("");
   const [email, setEmail] = useState("");
-  const [leadStan, setLeadStan] = useState<"idle" | "wysylam" | "ok" | "blad">("idle");
+  const [leadStan, setLeadStan] = useState<"idle" | "wysylamy" | "ok" | "blad">("idle");
   const [leadBlad, setLeadBlad] = useState("");
   const [skopiowane, setSkopiowane] = useState<string | null>(null);
 
@@ -103,7 +103,7 @@ export default function AiCheck() {
   async function zamow(e: React.FormEvent) {
     e.preventDefault();
     if (!wynik) return;
-    setLeadStan("wysylam");
+    setLeadStan("wysylamy");
     setLeadBlad("");
     try {
       const res = await fetch("/api/contact", {
@@ -141,7 +141,7 @@ export default function AiCheck() {
       </h2>
       <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
         Coraz częściej klient nie wpisuje frazy w wyszukiwarkę, tylko pyta
-        asystenta o firmę do konkretnego zadania. Sprawdzam siedem rzeczy, od
+        asystenta o firmę do konkretnego zadania. Sprawdzamy siedem rzeczy, od
         których zależy, czy Twoja strona może w takiej odpowiedzi wystąpić.
         Bez rejestracji.
       </p>
@@ -167,7 +167,7 @@ export default function AiCheck() {
           disabled={stan === "ladowanie"}
           className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
         >
-          {stan === "ladowanie" ? "Sprawdzam..." : "Sprawdź stronę"}
+          {stan === "ladowanie" ? "Sprawdzamy..." : "Sprawdź stronę"}
         </button>
       </form>
 
@@ -279,7 +279,7 @@ export default function AiCheck() {
           <div className="mt-5 border-t border-gray-200/70 dark:border-gray-700/70 pt-4">
             {leadStan === "ok" ? (
               <p className="text-sm font-semibold text-emerald-700 dark:text-emerald-400">
-                Mam zgłoszenie razem z wynikiem. Odpiszę na {email}, zwykle tego
+                Mamy zgłoszenie razem z wynikiem. Odpiszemy na {email}, zwykle tego
                 samego dnia.
               </p>
             ) : (
@@ -288,7 +288,7 @@ export default function AiCheck() {
                   htmlFor="ai-email"
                   className="block text-sm font-medium text-gray-900 dark:text-white"
                 >
-                  Podaj maila, odeślę co dokładnie zmienić i w jakiej kolejności
+                  Podaj maila, odeślemy co dokładnie zmienić i w jakiej kolejności
                 </label>
                 <div className="mt-2 flex flex-col gap-3 sm:flex-row">
                   <input
@@ -302,10 +302,10 @@ export default function AiCheck() {
                   />
                   <button
                     type="submit"
-                    disabled={leadStan === "wysylam"}
+                    disabled={leadStan === "wysylamy"}
                     className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
                   >
-                    {leadStan === "wysylam" ? "Wysyłam..." : "Wyślij zgłoszenie"}
+                    {leadStan === "wysylamy" ? "Wysyłamy..." : "Wyślij zgłoszenie"}
                   </button>
                 </div>
                 {leadStan === "blad" && (

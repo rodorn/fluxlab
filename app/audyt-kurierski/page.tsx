@@ -39,7 +39,7 @@ export default function Page() {
       checks={[
         {
           title: "Stawka z właściwego okresu",
-          desc: "Stawka obowiązuje przez dwa tygodnie, więc przesyłka z końca miesiąca rozlicza się inaczej niż ta z początku. Sprawdzam każdą linię wobec stawki z daty tej konkretnej przesyłki.",
+          desc: "Stawka obowiązuje przez dwa tygodnie, więc przesyłka z końca miesiąca rozlicza się inaczej niż ta z początku. Sprawdzamy każdą linię wobec stawki z daty tej konkretnej przesyłki.",
         },
         {
           title: "Właściwy próg wagowy",
@@ -62,7 +62,7 @@ export default function Page() {
           features: [
             "lista spornych pozycji z kwotami",
             "wyliczenie różnicy",
-            "jeśli nic nie znajdę, nic nie płacisz",
+            "jeśli nic nie znajdziemy, nic nie płacisz",
           ],
         },
         {
@@ -90,27 +90,27 @@ export default function Page() {
       ]}
       faq={[
         {
-          q: "Czego potrzebujesz, żeby sprawdzić moje faktury?",
+          q: "Czego potrzebujecie, żeby sprawdzić nasze faktury?",
           a: "Pliku faktury w formacie, w którym pobierasz ją od przewoźnika, najlepiej arkusza albo pliku CSV. Przydaje się też eksport przesyłek z Twojego systemu, bo pozwala skonfrontować wagi i wymiary.",
         },
         {
           q: "Czy sam składasz reklamacje?",
-          a: "Nie, bo stroną umowy z przewoźnikiem jesteś Ty. Dostajesz ode mnie wyliczenie i gotową treść, którą wysyłasz ze swojego konta. To też chroni Cię przed sytuacją, w której ktoś obcy występuje w Twoim imieniu.",
+          a: "Nie, bo stroną umowy z przewoźnikiem jesteś Ty. Dostajesz od nas wyliczenie i gotową treść, którą wysyłasz ze swojego konta. To też chroni Cię przed sytuacją, w której ktoś obcy występuje w Twoim imieniu.",
         },
         {
-          q: "A jeśli mój przewoźnik ma inny cennik niż ten na stronie?",
-          a: "Prawie na pewno ma, bo stawki bazowe są indywidualne. Dlatego liczę wobec Twojej umowy, a nie wobec cennika publicznego. Publiczne są tylko stawki dopłaty paliwowej i te są wspólne dla wszystkich klientów danego przewoźnika.",
+          q: "A jeśli nasz przewoźnik ma inny cennik niż ten na stronie?",
+          a: "Prawie na pewno ma, bo stawki bazowe są indywidualne. Dlatego liczymy wobec Twojej umowy, a nie wobec cennika publicznego. Publiczne są tylko stawki dopłaty paliwowej i te są wspólne dla wszystkich klientów danego przewoźnika.",
         },
         {
           q: "Ile zwykle udaje się znaleźć?",
-          a: "Nie podam Ci procentu, bo nie mam jeszcze własnych statystyk i nie zamierzam powoływać się na cudze. Dlatego pierwsza faktura jest sprawdzana za darmo: albo znajdę coś konkretnego, albo nie i wtedy nic nie płacisz.",
+          a: "Nie podamy Ci procentu, bo nie mamy jeszcze własnych statystyk i nie zamierzam powoływać się na cudze. Dlatego pierwsza faktura jest sprawdzana za darmo: albo znajdziemy coś konkretnego, albo nie i wtedy nic nie płacisz.",
         },
       ]}
       formId="order_audyt_kurierski"
       formHeading="Prześlij fakturę do sprawdzenia"
-      formIntro="Napisz, z którym przewoźnikiem współpracujesz i ile mniej więcej paczek nadajesz miesięcznie. Pierwszą fakturę sprawdzam za darmo, plik podeślesz mailem po mojej odpowiedzi."
+      formIntro="Napisz, z którym przewoźnikiem współpracujesz i ile mniej więcej paczek nadajesz miesięcznie. Pierwszą fakturę sprawdzamy za darmo, plik podeślesz mailem po naszej odpowiedzi."
       submitLabel="Zamów sprawdzenie"
-      microCopy="Dane z faktur przetwarzam wyłącznie na potrzeby audytu i kasuję po przekazaniu wyniku."
+      microCopy="Dane z faktur przetwarzam wyłącznie na potrzeby audytu i kasujemy po przekazaniu wyniku."
       serviceName="Audyt faktur kurierskich"
       serviceDesc="Weryfikacja faktur przewoźnika linia po linii: dopłata paliwowa wobec stawki z właściwego okresu i progu wagowego, korekty wagowe, usługi naliczone podwójnie, wraz z gotową treścią reklamacji. Od 290 zł."
       serviceType="Audyt kosztów przesyłek kurierskich"

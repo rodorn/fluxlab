@@ -296,7 +296,7 @@ export default function Page() {
 
         <SprawdzPoBadaniu
           naglowek="Zobacz pierwsze z tych sprawdzeń bez wychodzenia stąd"
-          opis="Otwieram stronę główną, kontakt i regulamin wybranej domeny, szukam numeru NIP i numeru konta, a znaleziony NIP zestawiam z wykazem podatników VAT. Tak samo, jak przy 386 domenach z tego badania."
+          opis="Otwieram stronę główną, kontakt i regulamin wybranej domeny, szukamy numeru NIP i numeru konta, a znaleziony NIP zestawiam z wykazem podatników VAT. Tak samo, jak przy 386 domenach z tego badania."
           endpoint="/api/sprawdz-sprzedawce"
           pozycje={[
             { wartosc: "fluxlab.pl" },

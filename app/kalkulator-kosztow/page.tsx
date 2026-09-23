@@ -58,7 +58,7 @@ const faqs = [
       "Diesel opłaca się, gdy robisz powyżej ok. 25–30 tys. km rocznie, głównie w trasie. Wyższa cena zakupu i droższy serwis (DPF, EGR, wtryskiwacze) zwracają się na paliwie tylko przy dużym przebiegu. Przy 10–15 tys. km rocznie w mieście benzyna wychodzi niemal zawsze taniej: tańsze auto na starcie, tańszy serwis, mniej awarii drogich komponentów. Warto też uwzględnić strefy czystego transportu, w kilku miastach diesle starsze niż Euro 5/6 już są objęte ograniczeniami, co wpływa na wartość przy sprzedaży. Wpisz do kalkulatora realne zużycie, przebieg roczny i ceny paliw, wynik często jest nieoczywisty.",
   },
   {
-    question: "Skąd biorę realne zużycie paliwa?",
+    question: "Skąd bierzemy realne zużycie paliwa?",
     answer:
       "Nie z katalogu producenta i nie z testu WLTP. Najbliższe prawdy są średnie z serwisów społecznościowych, Spritmonitor.de, autocentrum.pl lub nasza‑klasa typu fueleconomy.gov, gdzie kierowcy raportują faktyczne zużycie. Weź medianę dla tego samego modelu, silnika i skrzyni, co Twoje auto. Alternatywa: policz z własnych tankowań. Podziel liczbę zatankowanych litrów przez przejechane kilometry × 100. Zrób to na 3–5 pełnych tankowaniach, żeby zniwelować wahania. Różnica między danymi producenta a realnym zużyciem potrafi wynosić 15–25%, przy 15 tys. km rocznie to 200–400 zł w skali miesiąca.",
   },

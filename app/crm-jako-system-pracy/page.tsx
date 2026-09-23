@@ -44,7 +44,7 @@ const symptoms = [
   "Manager prosi o status pipeline'u i dostaje arkusz z notatnikiem zamiast raportu z CRM-u.",
   "Połowa deali ma „aktualizację” starszą niż 14 dni, a mimo to są w aktywnych etapach.",
   "Custom fieldy w CRM mają po 3–4 tysiące pustych wartości i kilka „testowych”.",
-  "Handlowiec mówi „wiem, gdzie jest ten klient”, ale w CRM nie ma o tym ani słowa.",
+  "Handlowiec mówi „wiemy, gdzie jest ten klient”, ale w CRM nie ma o tym ani słowa.",
   "Gdy ktoś idzie na urlop, jego deale stoją, bo nikt nie umie odczytać kontekstu z CRM-u.",
   "Sprzedaż prowadzi własną tabelę w Excelu, bo CRM-owi nie ufa.",
 ];
@@ -83,7 +83,7 @@ const workflowSteps = [
   {
     n: "3",
     title: "Czyszczenie pól i słowników",
-    desc: "Usuwam pola nieużywane, zamieniam wolny tekst na słowniki, definiuję pola wymagane na każdym etapie.",
+    desc: "Usuwamy pola nieużywane, zamieniam wolny tekst na słowniki, definiuję pola wymagane na każdym etapie.",
     accent: false,
   },
   {
@@ -152,7 +152,7 @@ const pricing = [
 
 const faq = [
   {
-    question: "Mam już CRM od 3 lat. Czy nie taniej zacząć od zera?",
+    question: "Mamy już CRM od 3 lat. Czy nie taniej zacząć od zera?",
     answer:
       "Prawie nigdy. W obecnym CRM-ie jest historia, którą warto zachować, kontakty, deale, korespondencja. Posprzątanie istniejącego systemu to zwykle 2–3 tygodnie. Migracja do nowego CRM-u to 6–12 tygodni i prawie zawsze powstaje ten sam bałagan, tylko w nowym narzędziu. Najpierw porządek, potem ewentualna zmiana platformy.",
   },
@@ -166,7 +166,7 @@ const faq = [
     question:
       "Czy to działa dla każdego CRM-u (Pipedrive, HubSpot, Salesforce)?",
     answer:
-      "Tak. Mechanika jest ta sama: definicja etapów, pola wymagane, walidacja, automatyczne zadania, raporty. Różni się sposób konfiguracji w narzędziu. Dla bardzo nietypowych procesów łączę CRM z warstwą pośrednią (n8n, Make), wtedy logika jest poza CRM-em, ale wynik ten sam.",
+      "Tak. Mechanika jest ta sama: definicja etapów, pola wymagane, walidacja, automatyczne zadania, raporty. Różni się sposób konfiguracji w narzędziu. Dla bardzo nietypowych procesów łączymy CRM z warstwą pośrednią (n8n, Make), wtedy logika jest poza CRM-em, ale wynik ten sam.",
   },
   {
     question: "Po jakim czasie widać efekty?",
@@ -487,7 +487,7 @@ export default function CrmJakoSystemPracy() {
                           Etapy wdrożenia porządku w CRM
                         </h2>
                         <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
-                          To jest sekwencja, którą prowadzę u większości
+                          To jest sekwencja, którą prowadzimy u większości
                           klientów. Każdy etap można zatrzymać i mierzyć efekt
                           po kolei, bez wdrażania wszystkiego naraz.
                         </p>
@@ -612,7 +612,7 @@ export default function CrmJakoSystemPracy() {
                           Najczęstsze błędy w porządkowaniu CRM-u
                         </h2>
                         <p className="text-gray-600 dark:text-gray-400 mt-4 leading-relaxed">
-                          Te wzorce widzę regularnie u firm, które próbowały
+                          Te wzorce widzimy regularnie u firm, które próbowały
                           „naprawić CRM” samodzielnie. Każdy z nich powoduje, że
                           wdrożenie się rozsypuje po 2–3 miesiącach.
                         </p>
@@ -704,7 +704,7 @@ export default function CrmJakoSystemPracy() {
                           eventName="cta_click_article_audit"
                           className="btn-primary px-8 py-3.5 text-base"
                         >
-                          Wyceń mój CRM
+                          Wyceń nasz CRM
                         </TrackedCTA>
                       </div>
                     </div>

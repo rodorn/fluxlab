@@ -91,7 +91,7 @@ export default function CrmDlaJednoosobowejFirmyArticle() {
                       <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-400">
                         <li className="flex items-start gap-2">
                           {checkIcon}
-                          do kogo dziś muszę się odezwać,
+                          do kogo dziś musimy się odezwać,
                         </li>
                         <li className="flex items-start gap-2">
                           {checkIcon}
@@ -393,7 +393,7 @@ export default function CrmDlaJednoosobowejFirmyArticle() {
                         momencie. Drugi: notatki o kliencie mieszkają w czterech
                         miejscach naraz (mail, kalendarz, Notion, głowa).
                         Trzeci: nie potrafisz szybko odpowiedzieć na pytanie
-                        „ilu mam otwartych leadów warto{`ś`}ci 50–100 tys. zł".
+                        „ilu mamy otwartych leadów warto{`ś`}ci 50–100 tys. zł".
                       </p>
                       <p className="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
                         Jeśli któryś z tych objawów występuje, to nie CRM jest

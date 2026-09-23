@@ -9,11 +9,11 @@ import Tabs from "@/components/Tabs";
 export const metadata: Metadata = {
   title: "Automatyzacja Salesforce, integracje i rozbudowa | Fluxlab",
   description:
-    "Projektuję i wdrażam automatyzacje Salesforce: integracje przez API, logika w Apex i Flow, webhooki, hurtownie danych i koniec ręcznej pracy.",
+    "Projektujemy i wdrażamy automatyzacje Salesforce: integracje przez API, logika w Apex i Flow, webhooki, hurtownie danych i koniec ręcznej pracy.",
   openGraph: {
     title: "Automatyzacja Salesforce, integracje i rozbudowa | Fluxlab",
     description:
-      "Projektuję i wdrażam automatyzacje Salesforce: integracje przez API, logika w Apex i Flow, webhooki, hurtownie danych i koniec ręcznej pracy.",
+      "Projektujemy i wdrażamy automatyzacje Salesforce: integracje przez API, logika w Apex i Flow, webhooki, hurtownie danych i koniec ręcznej pracy.",
     locale: "pl_PL",
     type: "article",
     images: [
@@ -90,11 +90,11 @@ export default function AutomatyzacjaSalesforce() {
             ariaLabel="Sekcje oferty automatyzacji Salesforce"
             tabs={[
               {
-                label: "Co automatyzuję",
+                label: "Co automatyzujemy",
                 content: (
                   <section className="py-10 lg:py-12">
                     <h2 className="display-xl text-gray-900 dark:text-white mb-12 max-w-2xl">
-                      Co automatyzuję
+                      Co automatyzujemy
                     </h2>
                     <div className="grid sm:grid-cols-2 gap-6 max-w-4xl">
                       {offer.map((item) => (
@@ -125,7 +125,7 @@ export default function AutomatyzacjaSalesforce() {
                       formId="diagnosis_salesforce"
                       heading="Sprawdźmy Twój proces w Salesforce"
                       intro="Opisz krótko, jak dziś wygląda obsługa leadów i deali: jakie dane wchodzą, gdzie się gubią, co handlowcy klikają ręcznie. Dostaniesz informację, czy automatyzacja ma sens i co da największy efekt."
-                      submitLabel="Chcę diagnozę procesu Salesforce"
+                      submitLabel="Chcemy diagnozę procesu Salesforce"
                     />
                   </section>
                 ),
@@ -144,7 +144,7 @@ export default function AutomatyzacjaSalesforce() {
             "@type": "Service",
             name: "Automatyzacja Salesforce",
             description:
-              "Projektuję i wdrażam automatyzacje Salesforce: integracje przez API, logika w Apex i Flow, webhooki, hurtownie danych i koniec ręcznej pracy.",
+              "Projektujemy i wdrażamy automatyzacje Salesforce: integracje przez API, logika w Apex i Flow, webhooki, hurtownie danych i koniec ręcznej pracy.",
             provider: { "@id": "https://fluxlab.pl/#organization" },
             areaServed: { "@type": "Country", name: "Polska" },
             serviceType: "Automatyzacja procesów biznesowych",

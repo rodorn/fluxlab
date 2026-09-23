@@ -463,7 +463,7 @@ export default function AutomatycznePrzypisywanieLeadow() {
                               handlowca
                             </h2>
                             <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
-                              Każdy z tych kroków buduję osobno i mierzę osobno.
+                              Każdy z tych kroków budujemy osobno i mierzymy osobno.
                               Możesz wdrożyć tylko 3 pierwsze i już dostać efekt
                              , reszta dochodzi iteracyjnie.
                             </p>
@@ -598,7 +598,7 @@ export default function AutomatycznePrzypisywanieLeadow() {
                           </ul>
                           <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                             Tyle. Pierwszy etap zajmuje 2 do 4 dni roboczych. Po
-                            dwóch tygodniach pracy na żywych danych dokładam
+                            dwóch tygodniach pracy na żywych danych dokładamy
                             kolejne źródła i reguły, ale dopiero wtedy, gdy
                             widać, co realnie działa.
                           </p>
@@ -615,7 +615,7 @@ export default function AutomatycznePrzypisywanieLeadow() {
                             Typowe błędy przy automatycznym przypisywaniu leadów
                           </h2>
                           <p className="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-                            Te błędy widzę u 80% firm, które próbowały zrobić
+                            Te błędy widzimy u 80% firm, które próbowały zrobić
                             routing samodzielnie. Każdy z nich da się obejść,
                             ale lepiej wiedzieć wcześniej.
                           </p>

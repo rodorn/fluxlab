@@ -144,7 +144,7 @@ export async function POST(request: Request) {
     werdykt = "NIEROZSTRZYGNIETE";
     naglowek = "Serwer blokuje to sprawdzenie";
     komentarz =
-      "Wszystkie cztery adresy odpowiedziały odmową dostępu, niezależnie od wersji. To zabezpieczenie hostingu przed ruchem z serwerowni, a nie błąd Twojej strony. Z zewnątrz nie da się wtedy ocenić przekierowań i nie będę zgadywał.";
+      "Wszystkie cztery adresy odpowiedziały odmową dostępu, niezależnie od wersji. To zabezpieczenie hostingu przed ruchem z serwerowni, a nie błąd Twojej strony. Z zewnątrz nie da się wtedy ocenić przekierowań i nie będziemy zgadywał.";
   } else if (obaDzialaja && tenSamRozmiar && canonicalNaSiebie) {
     werdykt = "CZERWONY";
     naglowek = "Każda wersja adresu ogłasza się główną";

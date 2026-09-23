@@ -78,9 +78,9 @@ export async function POST(request: Request) {
     return NextResponse.json({
       status: "BRAK_STRONY",
       domena,
-      naglowek: "Nie mogę otworzyć tej strony",
+      naglowek: "Nie możemy otworzyć tej strony",
       opis:
-        "Strona nie odpowiedziała. Jeśli adres jest poprawny, problem może leżeć w certyfikacie albo w samym serwerze, a wtedy wyszukiwarka też jej nie odwiedza. Sprawdzę to ręcznie, jeśli napiszesz.",
+        "Strona nie odpowiedziała. Jeśli adres jest poprawny, problem może leżeć w certyfikacie albo w samym serwerze, a wtedy wyszukiwarka też jej nie odwiedza. Sprawdzimy to ręcznie, jeśli napiszesz.",
     });
   }
 
@@ -96,7 +96,7 @@ export async function POST(request: Request) {
       opis:
         "Serwer odpowiedział kodem " +
         strona.status +
-        ", czyli odmową, i zamiast strony głównej oddał stronę zapory przed automatami. Nie wyciągam z niej żadnych wniosków, bo nie jest tym, co widzi wyszukiwarka. Wyszukiwarki zwykle mają na takich zaporach wyjątek. Jeśli chcesz mieć pewność, napisz, a sprawdzę to ręcznie.",
+        ", czyli odmową, i zamiast strony głównej oddał stronę zapory przed automatami. Nie wyciągamy z niej żadnych wniosków, bo nie jest tym, co widzi wyszukiwarka. Wyszukiwarki zwykle mają na takich zaporach wyjątek. Jeśli chcesz mieć pewność, napisz, a sprawdzimy to ręcznie.",
     });
   }
 
@@ -156,13 +156,13 @@ export async function POST(request: Request) {
       ? "Twoja strona każe wyszukiwarce się nie pokazywać"
       : "Nic nie blokuje wyszukiwarki",
     opis: zablokowana
-      ? "Znalazłem polecenie, przez które strona nie trafia do wyników wyszukiwania. Dopóki tam jest, nie znajdzie Cię nikt, kto nie zna adresu na pamięć, a reklama i wizytówki to jedyne źródło wejść."
-      : "Nie znalazłem żadnego polecenia blokującego indeksowanie. To nie gwarantuje wysokiej pozycji, ale znaczy, że przynajmniej nic nie stoi na przeszkodzie.",
+      ? "Znaleźliśmy polecenie, przez które strona nie trafia do wyników wyszukiwania. Dopóki tam jest, nie znajdzie Cię nikt, kto nie zna adresu na pamięć, a reklama i wizytówki to jedyne źródło wejść."
+      : "Nie znaleźliśmy żadnego polecenia blokującego indeksowanie. To nie gwarantuje wysokiej pozycji, ale znaczy, że przynajmniej nic nie stoi na przeszkodzie.",
     blokady,
     // Blokada w kodzie to fakt, ale wypadniecie z wynikow bywa opoznione
     // o tygodnie, wiec nie twierdzimy, ze strony juz tam nie ma.
     zastrzezenie: zablokowana
-      ? "Sprawdziłem, co strona mówi wyszukiwarce dzisiaj. Jeśli to polecenie pojawiło się niedawno, część podstron może być jeszcze w wynikach, ale zniknie przy kolejnym odwiedzeniu. Im dłużej to zostaje, tym trudniej wrócić."
+      ? "Sprawdziliśmy, co strona mówi wyszukiwarce dzisiaj. Jeśli to polecenie pojawiło się niedawno, część podstron może być jeszcze w wynikach, ale zniknie przy kolejnym odwiedzeniu. Im dłużej to zostaje, tym trudniej wrócić."
       : null,
     rozmiarStrony: Math.round(strona.tresc.length / 1024),
   });

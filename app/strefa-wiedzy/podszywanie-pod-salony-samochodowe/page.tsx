@@ -48,7 +48,7 @@ const faqItems = [
       "Bo 69 domen z listy nie ma wpisu kierującego pocztę, czyli nie obsługuje żadnej skrzynki. Liczenie ich jako niezabezpieczonych zawyżałoby wynik, a to nie byłby uczciwy obraz.",
   },
   {
-    question: "Mam DMARC, więc jestem bezpieczny?",
+    question: "Mamy DMARC, więc jesteśmy bezpieczny?",
     answer:
       "Niekoniecznie. Sam rekord nie wystarczy, liczy się jego tryb. Ustawienie p=none oznacza wyłącznie obserwację: właściciel domeny dostaje raporty, ale podszyta wiadomość i tak dociera do odbiorcy. W naszej próbce w takim trybie działa co piąta domena.",
   },

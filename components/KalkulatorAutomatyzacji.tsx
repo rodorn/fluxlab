@@ -52,7 +52,7 @@ export default function KalkulatorAutomatyzacji() {
   const [wynik, setWynik] = useState<Wynik | null>(null);
   const [blad, setBlad] = useState("");
   const [email, setEmail] = useState("");
-  const [leadStan, setLeadStan] = useState<"idle" | "wysylam" | "ok" | "blad">("idle");
+  const [leadStan, setLeadStan] = useState<"idle" | "wysylamy" | "ok" | "blad">("idle");
   const [leadBlad, setLeadBlad] = useState("");
   const [wybrany, setWybrany] = useState<string | null>(null);
 
@@ -92,7 +92,7 @@ export default function KalkulatorAutomatyzacji() {
   async function zamow(e: React.FormEvent) {
     e.preventDefault();
     if (!wynik) return;
-    setLeadStan("wysylam");
+    setLeadStan("wysylamy");
     setLeadBlad("");
     try {
       const res = await fetch("/api/contact", {
@@ -141,7 +141,7 @@ export default function KalkulatorAutomatyzacji() {
       <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
         Popularne narzędzia liczą nie uruchomienia, tylko pojedyncze kroki. Przez
         to pięciokrokowy scenariusz uruchomiony tysiąc razy zużywa pięć tysięcy
-        zadań, a nie tysiąc. Podaj dwie liczby, a pokażę, ile to kosztuje
+        zadań, a nie tysiąc. Podaj dwie liczby, a pokażemy, ile to kosztuje
         naprawdę i ile zostałoby przy własnym serwerze.
       </p>
 
@@ -202,7 +202,7 @@ export default function KalkulatorAutomatyzacji() {
           disabled={stan === "ladowanie"}
           className="btn-primary w-full justify-center px-6 py-3 text-sm disabled:opacity-50"
         >
-          {stan === "ladowanie" ? "Liczę..." : "Policz oszczędność"}
+          {stan === "ladowanie" ? "Liczymy..." : "Policz oszczędność"}
         </button>
       </form>
 
@@ -263,7 +263,7 @@ export default function KalkulatorAutomatyzacji() {
 
           {wynik.zwrotMiesiecy !== null && (
             <p className="mt-4 text-sm text-gray-800 dark:text-gray-200">
-              Przeniesienie wyceniam od{" "}
+              Przeniesienie wyceniamy od{" "}
               <strong>{wynik.migracjaOd.toLocaleString("pl-PL")} zł</strong>, więc
               przy tej skali zwróciłoby się po{" "}
               <strong>
@@ -284,12 +284,12 @@ export default function KalkulatorAutomatyzacji() {
             <p className="text-sm text-gray-700 dark:text-gray-300">
               {wynik.oplacalne
                 ? "Przeniesienie polega na odtworzeniu tych samych scenariuszy na serwerze, który należy do Ciebie, i na pilnowaniu, żeby działał. Efekt jest ten sam, a rachunek przestaje rosnąć razem z wolumenem."
-                : "Nie namawiam Cię na migrację przy tej skali. Jeśli chcesz, mogę za to sprawdzić, czy da się ograniczyć liczbę kroków w scenariuszach, bo to obniża rachunek od razu i nic nie kosztuje poza jednorazową robotą."}
+                : "Nie namawiam Cię na migrację przy tej skali. Jeśli chcesz, możemy za to sprawdzić, czy da się ograniczyć liczbę kroków w scenariuszach, bo to obniża rachunek od razu i nic nie kosztuje poza jednorazową robotą."}
             </p>
 
             {leadStan === "ok" ? (
               <p className="mt-4 text-sm font-semibold text-emerald-700 dark:text-emerald-400">
-                Mam zgłoszenie razem z tym wyliczeniem. Odpiszę na {email}, zwykle
+                Mamy zgłoszenie razem z tym wyliczeniem. Odpiszemy na {email}, zwykle
                 tego samego dnia.
               </p>
             ) : (
@@ -298,7 +298,7 @@ export default function KalkulatorAutomatyzacji() {
                   htmlFor="kalk-email"
                   className="block text-sm font-medium text-gray-900 dark:text-white"
                 >
-                  Podaj maila, odeślę wyliczenie i plan przeniesienia
+                  Podaj maila, odeślemy wyliczenie i plan przeniesienia
                 </label>
                 <div className="mt-2 flex flex-col gap-3 sm:flex-row">
                   <input
@@ -312,10 +312,10 @@ export default function KalkulatorAutomatyzacji() {
                   />
                   <button
                     type="submit"
-                    disabled={leadStan === "wysylam"}
+                    disabled={leadStan === "wysylamy"}
                     className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
                   >
-                    {leadStan === "wysylam" ? "Wysyłam..." : "Wyślij zgłoszenie"}
+                    {leadStan === "wysylamy" ? "Wysyłamy..." : "Wyślij zgłoszenie"}
                   </button>
                 </div>
                 {leadStan === "blad" && (

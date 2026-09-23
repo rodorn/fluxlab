@@ -55,10 +55,10 @@ const MOTYW: Record<
 };
 
 const ETAPY = [
-  "Pytam adres bez www",
-  "Pytam adres z www",
+  "Pytamy adres bez www",
+  "Pytamy adres z www",
   "Porównuję odpowiedzi",
-  "Szukam wskazania wersji głównej",
+  "Szukamy wskazania wersji głównej",
 ];
 
 function opisKodu(w: Wariant): string {
@@ -80,7 +80,7 @@ export default function AdresCheck() {
   const [blad, setBlad] = useState("");
   const [etap, setEtap] = useState(0);
   const [email, setEmail] = useState("");
-  const [leadStan, setLeadStan] = useState<"idle" | "wysylam" | "ok" | "blad">("idle");
+  const [leadStan, setLeadStan] = useState<"idle" | "wysylamy" | "ok" | "blad">("idle");
   const [leadBlad, setLeadBlad] = useState("");
   const timer = useRef<ReturnType<typeof setInterval> | null>(null);
 
@@ -140,7 +140,7 @@ export default function AdresCheck() {
   async function zamow(e: React.FormEvent) {
     e.preventDefault();
     if (!wynik) return;
-    setLeadStan("wysylam");
+    setLeadStan("wysylamy");
     setLeadBlad("");
     try {
       const res = await fetch("/api/contact", {
@@ -215,7 +215,7 @@ export default function AdresCheck() {
           disabled={stan === "ladowanie"}
           className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
         >
-          {stan === "ladowanie" ? "Sprawdzam..." : "Sprawdź adres"}
+          {stan === "ladowanie" ? "Sprawdzamy..." : "Sprawdź adres"}
         </button>
       </form>
 
@@ -321,15 +321,15 @@ export default function AdresCheck() {
           <div className="mt-5 border-t border-gray-200/70 dark:border-gray-700/70 pt-4">
             <p className="text-sm text-gray-700 dark:text-gray-300">
               {wynik.werdykt === "ZIELONY"
-                ? "Tutaj nie mam Ci nic do sprzedania. Ten jeden punkt masz ustawiony poprawnie."
+                ? "Tutaj nie mamy Ci nic do sprzedania. Ten jeden punkt masz ustawiony poprawnie."
                 : wynik.werdykt === "NIEROZSTRZYGNIETE"
-                  ? "Z zewnątrz tego nie rozstrzygnę, ale mając dostęp do konfiguracji serwera sprawdzę to od środka."
+                  ? "Z zewnątrz tego nie rozstrzygnę, ale mając dostęp do konfiguracji serwera sprawdzimy to od środka."
                   : "Naprawa to przekierowanie jednej wersji na drugą po stronie serwera plus wskazanie wersji głównej w kodzie strony. Sama reguła jest krótka, natomiast wybór wersji i kolejność wdrożenia mają znaczenie, bo źle ustawione przekierowanie potrafi zapętlić stronę."}
             </p>
 
             {leadStan === "ok" ? (
               <p className="mt-4 text-sm font-semibold text-emerald-700 dark:text-emerald-400">
-                Mam zgłoszenie razem z wynikiem. Odpiszę na {email}, zwykle tego
+                Mamy zgłoszenie razem z wynikiem. Odpiszemy na {email}, zwykle tego
                 samego dnia.
               </p>
             ) : (
@@ -338,7 +338,7 @@ export default function AdresCheck() {
                   htmlFor="adres-email"
                   className="block text-sm font-medium text-gray-900 dark:text-white"
                 >
-                  Podaj maila, odeślę gotową regułę pod Twój serwer
+                  Podaj maila, odeślemy gotową regułę pod Twój serwer
                 </label>
                 <div className="mt-2 flex flex-col gap-3 sm:flex-row">
                   <input
@@ -352,10 +352,10 @@ export default function AdresCheck() {
                   />
                   <button
                     type="submit"
-                    disabled={leadStan === "wysylam"}
+                    disabled={leadStan === "wysylamy"}
                     className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
                   >
-                    {leadStan === "wysylam" ? "Wysyłam..." : "Wyślij zgłoszenie"}
+                    {leadStan === "wysylamy" ? "Wysyłamy..." : "Wyślij zgłoszenie"}
                   </button>
                 </div>
                 {leadStan === "blad" && (

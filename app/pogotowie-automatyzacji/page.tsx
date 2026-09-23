@@ -4,12 +4,12 @@ import ProductLanding from "@/components/ProductLanding";
 export const metadata: Metadata = {
   title: "Pogotowie automatyzacji, naprawa n8n i Make | Fluxlab",
   description:
-    "Stanęła integracja i nie schodzą zamówienia. Czytam logi wykonań, znajduję wygasłe poświadczenia i ciche awarie. Diagnoza 49 zł, naprawa od 490 zł.",
+    "Stanęła integracja i nie schodzą zamówienia. Czytamy logi wykonań, znajduję wygasłe poświadczenia i ciche awarie. Diagnoza 49 zł, naprawa od 490 zł.",
   alternates: { canonical: "/pogotowie-automatyzacji" },
   openGraph: {
     title: "Pogotowie automatyzacji, naprawa n8n i Make | Fluxlab",
     description:
-      "Stanęła integracja i nie schodzą zamówienia. Czytam logi wykonań, znajduję wygasłe poświadczenia i ciche awarie. Diagnoza 49 zł, naprawa od 490 zł.",
+      "Stanęła integracja i nie schodzą zamówienia. Czytamy logi wykonań, znajduję wygasłe poświadczenia i ciche awarie. Diagnoza 49 zł, naprawa od 490 zł.",
     locale: "pl_PL",
     type: "website",
     images: [
@@ -30,7 +30,7 @@ export default function Page() {
       breadcrumb="Pogotowie automatyzacji"
       eyebrow="Awaria automatyzacji"
       h1="Stanęła integracja, a wykonawca zniknął"
-      lead="Scenariusz świeci na zielono, a zamówienia nie schodzą, faktury się nie wystawiają albo leady nie trafiają do CRM. Wchodzę w logi wykonań, znajduję wygasłe poświadczenia, zmienione API i ciche awarie, czyli przebiegi, które kończą się sukcesem, ale nic nie przenoszą."
+      lead="Scenariusz świeci na zielono, a zamówienia nie schodzą, faktury się nie wystawiają albo leady nie trafiają do CRM. Wchodzimy w logi wykonań, znajduję wygasłe poświadczenia, zmienione API i ciche awarie, czyli przebiegi, które kończą się sukcesem, ale nic nie przenoszą."
       ctaLabel="Zgłoś awarię"
       ctaNote="Odpowiedź do 2 godzin w godzinach pracy"
       checks={[
@@ -40,7 +40,7 @@ export default function Page() {
         },
         {
           title: "Wygasłe poświadczenia i tokeny",
-          desc: "Najczęstsza przyczyna nagłego zatrzymania. Odnawiam połączenia i ustawiam ostrzeganie, zanim wygasną następnym razem.",
+          desc: "Najczęstsza przyczyna nagłego zatrzymania. Odnawiam połączenia i ustawiamy ostrzeganie, zanim wygasną następnym razem.",
         },
         {
           title: "Przejęcie po poprzedniku",
@@ -89,12 +89,12 @@ export default function Page() {
       ]}
       faq={[
         {
-          q: "Z czym pracujesz?",
+          q: "Z czym pracujecie?",
           a: "n8n, Make, Zapier, integracje BaseLinker, WooCommerce, Allegro, Apilo, Pipedrive, webhooki i zwykłe skrypty po poprzednim wykonawcy. Jeśli ma API albo logi, da się to rozebrać.",
         },
         {
-          q: "Nie mam kontaktu do osoby, która to robiła.",
-          a: "To najczęstsza sytuacja i nie jest problemem. Potrzebuję dostępu do samego narzędzia, resztę odtwarzam z konfiguracji i logów.",
+          q: "Nie mamy kontaktu do osoby, która to robiła.",
+          a: "To najczęstsza sytuacja i nie jest problemem. Potrzebujemy dostępu do samego narzędzia, resztę odtwarzam z konfiguracji i logów.",
         },
         {
           q: "Jak przekazać dostępy bezpiecznie?",

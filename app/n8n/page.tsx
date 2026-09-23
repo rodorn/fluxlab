@@ -8,11 +8,11 @@ import Tabs from "@/components/Tabs";
 export const metadata: Metadata = {
   title: "n8n, automatyzacja workflow z pełną kontrolą | Fluxlab",
   description:
-    "Wdrażam automatyzacje na n8n: self-hosted albo cloud, integracje API, webhooki, własne nody. Alternatywa dla Zapiera i Make z kontrolą nad serwerem.",
+    "Wdrażamy automatyzacje na n8n: self-hosted albo cloud, integracje API, webhooki, własne nody. Alternatywa dla Zapiera i Make z kontrolą nad serwerem.",
   openGraph: {
     title: "n8n, automatyzacja workflow z pełną kontrolą | Fluxlab",
     description:
-      "Wdrażam automatyzacje na n8n: self-hosted albo cloud, integracje API, webhooki, własne nody. Alternatywa dla Zapiera i Make z kontrolą nad serwerem.",
+      "Wdrażamy automatyzacje na n8n: self-hosted albo cloud, integracje API, webhooki, własne nody. Alternatywa dla Zapiera i Make z kontrolą nad serwerem.",
     locale: "pl_PL",
     type: "article",
     images: [
@@ -48,7 +48,7 @@ const faq = [
       "Tak. Wersja self-hosted jest darmowa, a n8n Cloud pozwala zacząć bez własnej infrastruktury.",
   },
   {
-    question: "Czy mogę przenieść automatyzacje z Zapier/Make?",
+    question: "Czy możemy przenieść automatyzacje z Zapier/Make?",
     answer:
       "Tak. Większość scenariuszy da się odtworzyć w n8n, migracja to dobra okazja, by je uprościć.",
   },
@@ -85,12 +85,12 @@ export default function N8nPage() {
             ariaLabel="Sekcje usługi automatyzacji z n8n"
             tabs={[
               {
-                label: "Co oferuję",
+                label: "Co oferujemy",
                 content: (
                   <div className="py-10 lg:py-12">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="display-md text-gray-900 dark:text-white mb-10">
-                        Co oferuję
+                        Co oferujemy
                       </h2>
                       <ul className="space-y-5">
                         {offer.map((item) => (
@@ -158,7 +158,7 @@ export default function N8nPage() {
                         formId="diagnosis_n8n"
                         heading="Sprawdźmy Twój workflow w n8n"
                         intro="Opisz krótko, jakie procesy chcesz zautomatyzować: jakie systemy łączymy, jaki wolumen, self-hosted czy cloud. Dostaniesz wstępną propozycję architektury."
-                        submitLabel="Chcę diagnozę workflow n8n"
+                        submitLabel="Chcemy diagnozę workflow n8n"
                       />
                     </div>
                   </div>
@@ -178,7 +178,7 @@ export default function N8nPage() {
             "@type": "Service",
             name: "Automatyzacja z n8n",
             description:
-              "Wdrażam automatyzacje na n8n: self-hosted albo cloud, integracje API, webhooki, własne nody. Alternatywa dla Zapiera i Make z kontrolą nad serwerem.",
+              "Wdrażamy automatyzacje na n8n: self-hosted albo cloud, integracje API, webhooki, własne nody. Alternatywa dla Zapiera i Make z kontrolą nad serwerem.",
             provider: { "@id": "https://fluxlab.pl/#organization" },
             areaServed: { "@type": "Country", name: "Polska" },
             serviceType: "Automatyzacja procesów biznesowych",

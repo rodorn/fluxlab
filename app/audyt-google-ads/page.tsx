@@ -8,12 +8,12 @@ import RelatedProducts from "@/components/RelatedProducts";
 export const metadata: Metadata = {
   title: "Audyt zmarnowanego budżetu Google Ads, 69 zł | Fluxlab",
   description:
-    "Sprawdzę, ile budżetu Google Ads idzie na frazy bez konwersji. Lista wykluczeń i plan naprawy konta. 69 zł z gwarancją zwrotu, jeśli nie ma czego odzyskać.",
+    "Sprawdzimy, ile budżetu Google Ads idzie na frazy bez konwersji. Lista wykluczeń i plan naprawy konta. 69 zł z gwarancją zwrotu, jeśli nie ma czego odzyskać.",
   alternates: { canonical: "/audyt-google-ads" },
   openGraph: {
     title: "Audyt zmarnowanego budżetu Google Ads, 69 zł | Fluxlab",
     description:
-      "Sprawdzę, ile budżetu Google Ads przepalasz na frazy bez konwersji. Gotowa lista wykluczeń i plan naprawy. 69 zł z gwarancją zwrotu.",
+      "Sprawdzimy, ile budżetu Google Ads przepalasz na frazy bez konwersji. Gotowa lista wykluczeń i plan naprawy. 69 zł z gwarancją zwrotu.",
     locale: "pl_PL",
     type: "website",
     images: [
@@ -30,15 +30,15 @@ export const metadata: Metadata = {
 const steps = [
   {
     title: "Dajesz dostęp do konta",
-    desc: "Udostępniasz konto Google Ads w trybie do odczytu albo przesyłasz eksport raportu wyszukiwanych haseł. Nic nie zmieniam bez Twojej zgody.",
+    desc: "Udostępniasz konto Google Ads w trybie do odczytu albo przesyłasz eksport raportu wyszukiwanych haseł. Nic nie zmieniamy bez Twojej zgody.",
   },
   {
-    title: "Analizuję wydatki bez konwersji",
-    desc: "Przechodzę przez raport search terms i wyławiam frazy, które kosztują, ale nie sprzedają. Grupuję je i liczę realną kwotę do odzyskania.",
+    title: "Analizujemy wydatki bez konwersji",
+    desc: "Przechodzę przez raport search terms i wyławiam frazy, które kosztują, ale nie sprzedają. Grupuję je i liczymy realną kwotę do odzyskania.",
   },
   {
     title: "Dostajesz raport i listę wykluczeń",
-    desc: "W ciągu kilku dni odsyłam raport PDF: ile budżetu przepalasz miesięcznie, gotową listę wykluczających słów kluczowych i plan naprawy konta.",
+    desc: "W ciągu kilku dni odsyłamy raport PDF: ile budżetu przepalasz miesięcznie, gotową listę wykluczających słów kluczowych i plan naprawy konta.",
   },
 ];
 
@@ -46,12 +46,12 @@ const faq = [
   {
     question: "Jak działa gwarancja zwrotu?",
     answer:
-      "Jeśli w audycie znajdę mniej niż 500 zł miesięcznie realnie do odzyskania, zwracam całe 69 zł. Ryzyko jest po mojej stronie, płacisz tylko wtedy, gdy audyt faktycznie pokazuje pieniądze do zaoszczędzenia.",
+      "Jeśli w audycie znajdziemy mniej niż 500 zł miesięcznie realnie do odzyskania, zwracamy całe 69 zł. Ryzyko jest po naszej stronie, płacisz tylko wtedy, gdy audyt faktycznie pokazuje pieniądze do zaoszczędzenia.",
   },
   {
-    question: "Czy musicie mieć dostęp do mojego konta Google Ads?",
+    question: "Czy musicie mieć dostęp do naszego konta Google Ads?",
     answer:
-      "Wystarczy dostęp w trybie tylko do odczytu albo eksport raportu wyszukiwanych haseł z ostatnich 30-90 dni. Nie potrzebuję uprawnień do zmian, żeby zrobić audyt.",
+      "Wystarczy dostęp w trybie tylko do odczytu albo eksport raportu wyszukiwanych haseł z ostatnich 30-90 dni. Nie potrzebujemy uprawnień do zmian, żeby zrobić audyt.",
   },
   {
     question: "Czy sami wprowadzacie zmiany na koncie?",
@@ -87,8 +87,8 @@ export default function AudytGoogleAdsPage() {
             </h1>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-300">
               Duża część budżetu na Google Ads idzie na kliknięcia, które nigdy
-              nie sprzedają. Przeglądam raport wyszukiwanych haseł, liczę ile
-              realnie tracisz co miesiąc i daję gotową listę wykluczeń. Za 69
+              nie sprzedają. Przeglądam raport wyszukiwanych haseł, liczymy ile
+              realnie tracisz co miesiąc i dajemy gotową listę wykluczeń. Za 69
               zł, z gwarancją zwrotu.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -222,8 +222,8 @@ export default function AudytGoogleAdsPage() {
                   69 zł
                 </p>
                 <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-                  Jeśli znajdę mniej niż 500 zł miesięcznie realnie do
-                  odzyskania, zwracam całą kwotę. Płacisz tylko wtedy, gdy audyt
+                  Jeśli znajdziemy mniej niż 500 zł miesięcznie realnie do
+                  odzyskania, zwracamy całą kwotę. Płacisz tylko wtedy, gdy audyt
                   pokazuje pieniądze do zaoszczędzenia.
                 </p>
                 <ul className="mt-5 space-y-2">
@@ -311,7 +311,7 @@ export default function AudytGoogleAdsPage() {
             <LandingForm
               formId="order_audyt_google_ads"
               heading="Zamów mini-audyt Google Ads"
-              intro="Napisz w polu opisu, jaki masz miesięczny budżet i od kiedy działają kampanie. Po zgłoszeniu ustalimy dostęp do konta lub eksport raportu. Cena 69 zł z gwarancją zwrotu, jeśli znajdę mniej niż 500 zł miesięcznie do odzyskania."
+              intro="Napisz w polu opisu, jaki masz miesięczny budżet i od kiedy działają kampanie. Po zgłoszeniu ustalimy dostęp do konta lub eksport raportu. Cena 69 zł z gwarancją zwrotu, jeśli znajdziemy mniej niż 500 zł miesięcznie do odzyskania."
               submitLabel="Zamów mini-audyt za 69 zł"
               microCopy="Odpowiedź w 24h. Płatność ustalamy mailowo. Zwrot całej kwoty, jeśli audyt pokaże mniej niż 500 zł/mc do odzyskania."
             />

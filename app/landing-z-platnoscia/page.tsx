@@ -36,7 +36,7 @@ export default function LandingZPlatnoscia() {
       checks={[
         {
           title: "Zgłoszenie zapisuje się przed płatnością",
-          desc: "To jest najczęstszy i najdroższy błąd na takich stronach: dane trafiają do bazy dopiero po udanej płatności. Człowiek, który wypełnił formularz i odpadł przy BLIKu, znika bez śladu, a to jest osoba najbliższa zakupowi z wszystkich, które tego dnia weszły na stronę. U mnie zapis idzie wcześniej, więc masz do kogo wrócić.",
+          desc: "To jest najczęstszy i najdroższy błąd na takich stronach: dane trafiają do bazy dopiero po udanej płatności. Człowiek, który wypełnił formularz i odpadł przy BLIKu, znika bez śladu, a to jest osoba najbliższa zakupowi z wszystkich, które tego dnia weszły na stronę. U nas zapis idzie wcześniej, więc masz do kogo wrócić.",
         },
         {
           title: "Potwierdzenie płatności idzie webhookiem",
@@ -48,15 +48,15 @@ export default function LandingZPlatnoscia() {
         },
         {
           title: "Zgodność z obowiązkami przy sprzedaży online",
-          desc: "Przy sprzedaży konsumentowi trzeba zebrać zgodę na rozpoczęcie świadczenia przed upływem terminu odstąpienia, pokazać cenę całkowitą i udostępnić regulamin w sposób pozwalający go zapisać. To są elementy strony, nie dodatek prawny, i buduję je od razu, zamiast dokładać po fakcie.",
+          desc: "Przy sprzedaży konsumentowi trzeba zebrać zgodę na rozpoczęcie świadczenia przed upływem terminu odstąpienia, pokazać cenę całkowitą i udostępnić regulamin w sposób pozwalający go zapisać. To są elementy strony, nie dodatek prawny, i budujemy je od razu, zamiast dokładać po fakcie.",
         },
         {
           title: "Co dostajesz razem ze stroną",
-          desc: "Powiadomienie mailowe o każdym zgłoszeniu, potwierdzenie dla kupującego, panel z listą zgłoszeń i statusem płatności oraz dostęp do repozytorium. Żadnego mojego panelu, bez którego strona przestaje działać.",
+          desc: "Powiadomienie mailowe o każdym zgłoszeniu, potwierdzenie dla kupującego, panel z listą zgłoszeń i statusem płatności oraz dostęp do repozytorium. Żadnego naszego panelu, bez którego strona przestaje działać.",
         },
         {
           title: "Czego nie obejmuje cena",
-          desc: "Umowy z operatorem płatności, bo to Wasza rejestracja i Wasza weryfikacja tożsamości, oraz kosztu domeny i hostingu, jeśli nie macie własnych. Prowizja operatora jest po Waszej stronie i nie przechodzi przeze mnie. Mówię to przed startem, nie po pierwszej fakturze.",
+          desc: "Umowy z operatorem płatności, bo to Wasza rejestracja i Wasza weryfikacja tożsamości, oraz kosztu domeny i hostingu, jeśli nie macie własnych. Prowizja operatora jest po Waszej stronie i nie przechodzi przez nas. Mówimy to przed startem, nie po pierwszej fakturze.",
         },
       ]}
       pricing={[
@@ -99,26 +99,26 @@ export default function LandingZPlatnoscia() {
       faq={[
         {
           q: "Jakiej bramki płatniczej używasz?",
-          a: "Tej, którą wybierzecie i w której przejdziecie weryfikację, bo umowa jest zawierana na Waszą firmę. Technicznie różnice są niewielkie: liczy się to, czy operator wysyła potwierdzenie osobnym kanałem, a robią to wszyscy liczący się na polskim rynku. Jeśli nie macie jeszcze żadnej, powiem, czym się różnią prowizje i czas wypłaty, ale rejestrację przechodzicie sami.",
+          a: "Tej, którą wybierzecie i w której przejdziecie weryfikację, bo umowa jest zawierana na Waszą firmę. Technicznie różnice są niewielkie: liczy się to, czy operator wysyła potwierdzenie osobnym kanałem, a robią to wszyscy liczący się na polskim rynku. Jeśli nie macie jeszcze żadnej, powiemy, czym się różnią prowizje i czas wypłaty, ale rejestrację przechodzicie sami.",
         },
         {
           q: "Ile to trwa?",
-          a: "Wariant z płatnością to zwykle trzy do pięciu dni roboczych od chwili, gdy mam treść i działające dane dostępowe do bramki. Jeśli treść dopiero powstaje, to ona jest wąskim gardłem, a nie kod.",
+          a: "Wariant z płatnością to zwykle trzy do pięciu dni roboczych od chwili, gdy mamy treść i działające dane dostępowe do bramki. Jeśli treść dopiero powstaje, to ona jest wąskim gardłem, a nie kod.",
         },
         {
           q: "Czy strona będzie na WordPressie?",
-          a: "Nie, jeśli nie ma ku temu powodu. Jedna strona sprzedażowa nie potrzebuje systemu zarządzania treścią, a bez niego ładuje się szybciej, jest odporniejsza na włamania i nie wymaga comiesięcznych aktualizacji. Jeśli jednak macie już stronę na WordPressie i landing ma być jej częścią, zrobię go tam.",
+          a: "Nie, jeśli nie ma ku temu powodu. Jedna strona sprzedażowa nie potrzebuje systemu zarządzania treścią, a bez niego ładuje się szybciej, jest odporniejsza na włamania i nie wymaga comiesięcznych aktualizacji. Jeśli jednak macie już stronę na WordPressie i landing ma być jej częścią, zrobimy go tam.",
         },
         {
           q: "Co, jeśli kampania nie wypali?",
-          a: "Strona zostaje u Was razem z kodem i można ją wyłączyć albo przerobić pod inną ofertę. Nie ma tu abonamentu, który trzeba wypowiadać, ani przywiązania do mojego serwera.",
+          a: "Strona zostaje u Was razem z kodem i można ją wyłączyć albo przerobić pod inną ofertę. Nie ma tu abonamentu, który trzeba wypowiadać, ani przywiązania do naszego serwera.",
         },
       ]}
       formId="landing_platnosc"
       formHeading="Napisz, co sprzedajesz i komu"
-      formIntro="Wystarczy jedno zdanie o produkcie, cena i informacja, czy macie już bramkę płatniczą. Odpiszę, który wariant ma sens i ile zajmie."
+      formIntro="Wystarczy jedno zdanie o produkcie, cena i informacja, czy macie już bramkę płatniczą. Odpiszemy, który wariant ma sens i ile zajmie."
       submitLabel="Wyślij opis kampanii"
-      microCopy="Odpisuję zwykle tego samego dnia. Ustalenia prowadzę mailowo."
+      microCopy="Odpisujemy zwykle tego samego dnia. Ustalenia prowadzimy mailowo."
       serviceName="Landing z formularzem i płatnością"
       serviceDesc="Strona sprzedażowa pod jedną kampanię, z formularzem zapisującym zgłoszenie przed płatnością i bramką płatniczą potwierdzaną webhookiem."
       serviceType="Tworzenie stron internetowych"

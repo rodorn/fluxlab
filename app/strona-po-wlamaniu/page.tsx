@@ -4,12 +4,12 @@ import ProductLanding from "@/components/ProductLanding";
 export const metadata: Metadata = {
   title: "Zhakowana strona WordPress, czyszczenie i raport | Fluxlab",
   description:
-    "Strona przekierowuje na obce serwisy albo Google ją oznaczył. Porównuję pliki z oryginałami, usuwam backdoory i mówię, którędy weszli. Od 49 zł.",
+    "Strona przekierowuje na obce serwisy albo Google ją oznaczył. Porównuję pliki z oryginałami, usuwamy backdoory i mówimy, którędy weszli. Od 49 zł.",
   alternates: { canonical: "/strona-po-wlamaniu" },
   openGraph: {
     title: "Zhakowana strona WordPress, czyszczenie i raport | Fluxlab",
     description:
-      "Porównuję pliki z oryginałami z repozytorium WordPressa, usuwam backdoory i mówię, którędy weszli. Diagnoza 49 zł, czyszczenie od 299 zł.",
+      "Porównuję pliki z oryginałami z repozytorium WordPressa, usuwamy backdoory i mówimy, którędy weszli. Diagnoza 49 zł, czyszczenie od 299 zł.",
     locale: "pl_PL",
     type: "website",
     images: [
@@ -30,13 +30,13 @@ export default function Page() {
       breadcrumb="Strona po włamaniu"
       eyebrow="Ratunek po włamaniu"
       h1="Zhakowana strona, posprzątana do końca"
-      lead="Przywrócenie backupu zwykle przywraca też backdoora i po dwóch dniach jesteś w tym samym miejscu. Ja porównuję każdy plik Twojej strony z oryginałem prosto z repozytorium WordPressa, więc listę podmienionych i obcych plików mam w minuty, a nie po godzinach zgadywania."
+      lead="Przywrócenie backupu zwykle przywraca też backdoora i po dwóch dniach jesteś w tym samym miejscu. Ja porównuję każdy plik Twojej strony z oryginałem prosto z repozytorium WordPressa, więc listę podmienionych i obcych plików mamy w minuty, a nie po godzinach zgadywania."
       ctaLabel="Zgłoś włamanie"
-      ctaNote="Piszesz o każdej porze, odpisuję najszybciej jak się da"
+      ctaNote="Piszesz o każdej porze, odpisujemy najszybciej jak się da"
       checks={[
         {
           title: "Porównanie z oryginałem, nie zgadywanie",
-          desc: "Pobieram czyste wersje rdzenia, wtyczek i motywu w dokładnie tych numerach, których używasz, i liczę sumy kontrolne. Dostajesz listę plików obcych, podmienionych i brakujących.",
+          desc: "Pobieramy czyste wersje rdzenia, wtyczek i motywu w dokładnie tych numerach, których używasz, i liczymy sumy kontrolne. Dostajesz listę plików obcych, podmienionych i brakujących.",
         },
         {
           title: "Baza, nie tylko pliki",
@@ -79,19 +79,19 @@ export default function Page() {
       faq={[
         {
           q: "Nie wystarczy przywrócić kopię zapasową?",
-          a: "Zwykle nie. Kopia pochodzi najczęściej z okresu, gdy backdoor już tam był, więc przywracasz również jego. Dlatego zaczynam od ustalenia, które pliki są obce, a nie od cofania czasu.",
+          a: "Zwykle nie. Kopia pochodzi najczęściej z okresu, gdy backdoor już tam był, więc przywracasz również jego. Dlatego zaczynamy od ustalenia, które pliki są obce, a nie od cofania czasu.",
         },
         {
           q: "Hosting zawiesił mi konto, co teraz?",
-          a: "Napisz to w zgłoszeniu. Pracuję wtedy na kopii plików i bazy, które hosting zwykle udostępnia, i przygotowuję wykaz usuniętych zagrożeń, żeby konto odwiesili.",
+          a: "Napisz to w zgłoszeniu. Pracujemy wtedy na kopii plików i bazy, które hosting zwykle udostępnia, i przygotowujemy wykaz usuniętych zagrożeń, żeby konto odwiesili.",
         },
         {
           q: "Czy stracę treści albo zamówienia?",
-          a: "Nie ruszam treści ani zamówień. Przed jakąkolwiek zmianą robię kopię dowodową, żeby dało się wrócić do stanu wyjściowego.",
+          a: "Nie ruszam treści ani zamówień. Przed jakąkolwiek zmianą robimy kopię dowodową, żeby dało się wrócić do stanu wyjściowego.",
         },
         {
-          q: "Czy dajesz gwarancję, że to się nie powtórzy?",
-          a: "Nie i nikt uczciwy jej nie da. Mogę zagwarantować, że usunę to, co znajdę, pokażę drogę wejścia i ją zamknę. Jeśli infekcja wróci z tego samego powodu w ciągu 14 dni, poprawiam bez dopłaty.",
+          q: "Czy dajecie gwarancję, że to się nie powtórzy?",
+          a: "Nie i nikt uczciwy jej nie da. Możemy zagwarantować, że usunę to, co znajdziemy, pokażemy drogę wejścia i ją zamknę. Jeśli infekcja wróci z tego samego powodu w ciągu 14 dni, poprawiamy bez dopłaty.",
         },
       ]}
       formId="order_strona_po_wlamaniu"

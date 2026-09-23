@@ -185,14 +185,14 @@ export function zlozRaportHtml(d: DaneRaportu, dlaWlasciciela: boolean): string 
           ? `<div style="font-size:13px;color:#4b5563;margin-top:10px;padding-top:10px;border-top:1px solid #c7d2fe">Jeżeli budżet ma być mniejszy, sama warstwa krytyczna to <strong>${d.wycena.pilne} zł</strong>. Reszta może poczekać, te rzeczy nie mogą.</div>`
           : ""
       }
-      <div style="font-size:12px;color:#6b7280;margin-top:12px">Ceny brutto, bez VAT (zwolnienie podmiotowe). Wycena jest wiążąca przez 30 dni od daty raportu. Jeżeli po wejściu w kod okaże się, że problem jest innego rzędu niż widać z zewnątrz, mówię o tym przed rozpoczęciem pracy, a nie po.</div>
+      <div style="font-size:12px;color:#6b7280;margin-top:12px">Ceny brutto, bez VAT (zwolnienie podmiotowe). Wycena jest wiążąca przez 30 dni od daty raportu. Jeżeli po wejściu w kod okaże się, że problem jest innego rzędu niż widać z zewnątrz, mówimy o tym przed rozpoczęciem pracy, a nie po.</div>
     </div>`
     : `${naglowekSekcji("Wycena")}
-    <p style="font-size:14px;line-height:1.7;color:#374151">Nie znalazłem nic, za co warto byłoby wziąć pieniądze. Strona przeszła wszystkie sprawdzenia, które wykonuję z zewnątrz.</p>`;
+    <p style="font-size:14px;line-height:1.7;color:#374151">Nie znaleźliśmy nic, za co warto byłoby wziąć pieniądze. Strona przeszła wszystkie sprawdzenia, które wykonujemy z zewnątrz.</p>`;
 
   const blokDostepow = d.dostepy.length
-    ? `${naglowekSekcji("Czego potrzebuję, żeby to naprawić")}
-    <p style="font-size:14px;line-height:1.7;color:#374151;margin:0 0 10px">Nie potrzebuję haseł do niczego. Potrzebuję dostępu nadanego na moje konto, który możecie cofnąć jednym kliknięciem po zakończeniu pracy.</p>
+    ? `${naglowekSekcji("Czego potrzebujemy, żeby to naprawić")}
+    <p style="font-size:14px;line-height:1.7;color:#374151;margin:0 0 10px">Nie potrzebujemy haseł do niczego. Potrzebujemy dostępu nadanego na nasze konto, który możecie cofnąć jednym kliknięciem po zakończeniu pracy.</p>
     <ul style="margin:0;padding-left:20px;font-size:14px;color:#374151;line-height:1.9">
       ${d.dostepy.map((x) => `<li>${esc(x)}</li>`).join("")}
     </ul>
@@ -242,7 +242,7 @@ export function zlozRaportHtml(d: DaneRaportu, dlaWlasciciela: boolean): string 
       d.punkty === null
         ? `<div style="display:block;border:1px solid #e5e7eb;border-radius:10px;padding:18px;margin-bottom:22px">
       <div style="font-size:13px;color:#6b7280">Ocena ogólna</div>
-      <div style="font-size:20px;font-weight:700;color:#6b7280;line-height:1.3">Nie wystawiam oceny</div>
+      <div style="font-size:20px;font-weight:700;color:#6b7280;line-height:1.3">Nie wystawiamy oceny</div>
       <div style="font-size:14px;color:#374151;margin-top:4px">Nie zobaczyłem tej strony, więc liczba byłaby oceną czegoś innego niż Wasz serwis. Szczegóły niżej.</div>
     </div>`
         : `<div style="display:block;border:1px solid #e5e7eb;border-radius:10px;padding:18px;margin-bottom:22px">
@@ -281,15 +281,15 @@ export function zlozRaportHtml(d: DaneRaportu, dlaWlasciciela: boolean): string 
     ${blokWyceny}
     ${blokDostepow}
 
-    ${naglowekSekcji("Jak to zmierzyłem i czego nie sprawdzałem")}
+    ${naglowekSekcji("Jak to zmierzyliśmy i czego nie sprawdzałem")}
     <p style="font-size:13px;line-height:1.7;color:#4b5563;margin:0 0 10px">
-      Wszystkie liczby w tym raporcie pochodzą z jednego badania wykonanego ${esc(data)} z serwera w Europie. Stronę pobrałem dwa razy: raz z nagłówkami komputera, raz z nagłówkami telefonu. Wagę plików liczę z tego, co faktycznie przyszło, a nie z deklaracji serwera, i podaję, ilu plików nie udało się zważyć.
+      Wszystkie liczby w tym raporcie pochodzą z jednego badania wykonanego ${esc(data)} z serwera w Europie. Stronę pobrałem dwa razy: raz z nagłówkami komputera, raz z nagłówkami telefonu. Wagę plików liczymy z tego, co faktycznie przyszło, a nie z deklaracji serwera, i podajemy, ilu plików nie udało się zważyć.
     </p>
     <p style="font-size:13px;line-height:1.7;color:#4b5563;margin:0 0 10px">
       Czego tu nie ma, żeby nie było nieporozumień: nie uruchamiałem przeglądarki, więc nie mierzyłem czasu rysowania strony, przesunięć układu ani wyniku Lighthouse. Nie sprawdzałem treści pod kątem merytorycznym, nie oceniałem wyglądu i nie analizowałem konkurencji. Badałem stronę główną, nie każdą podstronę. Pojedynczy pomiar czasu zawsze zależy od chwili, więc wartości graniczne warto sprawdzić drugi raz.
     </p>
     <p style="font-size:13px;line-height:1.7;color:#4b5563;margin:0">
-      Raport jest bezpłatny i nie zobowiązuje do niczego. Jeżeli coś w nim budzi wątpliwość, napiszcie, sprawdzę to jeszcze raz i wytłumaczę, skąd wzięła się liczba.
+      Raport jest bezpłatny i nie zobowiązuje do niczego. Jeżeli coś w nim budzi wątpliwość, napiszcie, sprawdzimy to jeszcze raz i wytłumaczymy, skąd wzięła się liczba.
     </p>
 
     <div style="margin-top:28px;padding-top:18px;border-top:1px solid #e5e7eb">
@@ -303,7 +303,7 @@ export function zlozRaportHtml(d: DaneRaportu, dlaWlasciciela: boolean): string 
     ${
       dlaWlasciciela
         ? "Kopia wewnętrzna raportu wygenerowanego przez odwiedzającego."
-        : `Dostajesz tę wiadomość, bo poprosiłeś o przesłanie raportu z audytu ${esc(d.domena)} i zaznaczyłeś zgodę na kontakt. Żeby ją wycofać, odpisz jednym słowem, usuwam adres tego samego dnia.`
+        : `Dostajesz tę wiadomość, bo poprosiłeś o przesłanie raportu z audytu ${esc(d.domena)} i zaznaczyłeś zgodę na kontakt. Żeby ją wycofać, odpisz jednym słowem, usuwamy adres tego samego dnia.`
     }
   </div>
 </div>
@@ -317,7 +317,7 @@ export function zlozRaportTekst(d: DaneRaportu): string {
   l.push(`Wykonano: ${new Date(d.zbadano).toLocaleString("pl-PL", { timeZone: "Europe/Warsaw" })}`);
   l.push(
     d.punkty === null
-      ? "Ocena: nie wystawiam, bo nie zobaczyłem tej strony."
+      ? "Ocena: nie wystawiamy, bo nie zobaczyłem tej strony."
       : `Ocena: ${d.punkty}/100, stan ${slownie(d.punkty)}`,
   );
   l.push("");

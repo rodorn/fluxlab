@@ -89,7 +89,7 @@ export default function Page() {
       ]}
       faq={[
         {
-          q: "Czego potrzebujesz, żeby to policzyć?",
+          q: "Czego potrzebujecie, żeby to policzyć?",
           a: "Eksportu transakcji z portalu kart paliwowych, na przykład Orlen Flota, Shell, DKV, UTA albo Circle K, oraz przebiegów pojazdów lub danych z lokalizatora. Im więcej danych o trasie, tym dokładniejszy wynik.",
         },
         {
@@ -98,10 +98,10 @@ export default function Page() {
         },
         {
           q: "Co z danymi kierowców?",
-          a: "To dane osobowe, więc podpisujemy umowę powierzenia, przetwarzam je wyłącznie na potrzeby raportu i kasuję po dostarczeniu wyników.",
+          a: "To dane osobowe, więc podpisujemy umowę powierzenia, przetwarzam je wyłącznie na potrzeby raportu i kasujemy po dostarczeniu wyników.",
         },
         {
-          q: "Mam małą flotę, pięć aut. Ma to sens?",
+          q: "Mamy małą flotę, pięć aut. Ma to sens?",
           a: "Przy pięciu autach jedno nieuczciwe tankowanie tygodniowo to kilkanaście tysięcy złotych rocznie. Dlatego zaczynamy od darmowego skanu, żeby nie płacić za sprawdzenie, czy w ogóle jest problem.",
         },
       ]}

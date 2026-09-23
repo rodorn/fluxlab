@@ -8,7 +8,7 @@ import RelatedProducts from "@/components/RelatedProducts";
 export const metadata: Metadata = {
   title: "ImportRadar, opłacalność importu auta z Niemiec | Fluxlab",
   description:
-    "Które auta z Niemiec realnie opłaca się sprowadzić. Skanuję żywe oferty i podaję marżę netto po wszystkich kosztach oraz modele z drogimi usterkami.",
+    "Które auta z Niemiec realnie opłaca się sprowadzić. Skanuję żywe oferty i podajemy marżę netto po wszystkich kosztach oraz modele z drogimi usterkami.",
   alternates: { canonical: "/import-radar" },
   openGraph: {
     title: "ImportRadar, opłacalność importu auta z Niemiec | Fluxlab",
@@ -33,12 +33,12 @@ const steps = [
     desc: "Wklejasz link do niemieckiej oferty (np. mobile.de) albo mówisz, jaki masz budżet i jakiego auta szukasz.",
   },
   {
-    title: "Liczę pełny koszt sprowadzenia",
+    title: "Liczymy pełny koszt sprowadzenia",
     desc: "Akcyza, transport, tłumaczenia, opłaty rejestracyjne i ryzyko kursowe. Nic nie ginie w kalkulacji.",
   },
   {
     title: "Dostajesz werdykt o marży",
-    desc: "Porównuję koszt końcowy z cenami tego modelu w Polsce i mówię wprost, ile realnie zostaje na czysto albo że się nie opłaca.",
+    desc: "Porównuję koszt końcowy z cenami tego modelu w Polsce i mówimy wprost, ile realnie zostaje na czysto albo że się nie opłaca.",
   },
 ];
 
@@ -60,7 +60,7 @@ const pricing = [
     name: "Znajdź pod budżet",
     price: "20-30 zł",
     cta: "Zamów wyszukiwanie",
-    desc: "Podajesz budżet i typ auta, a ja szukam modeli z realną marżą po sprowadzeniu.",
+    desc: "Podajesz budżet i typ auta, a ja szukamy modeli z realną marżą po sprowadzeniu.",
     features: [
       "wszystko z analizy 1 auta",
       "przegląd rynku pod Twój budżet",
@@ -73,9 +73,9 @@ const pricing = [
 
 const faq = [
   {
-    question: "Czy liczysz akcyzę dokładnie?",
+    question: "Czy liczycie akcyzę dokładnie?",
     answer:
-      "Tak, akcyzę liczę według pojemności silnika i typu napędu (osobno dla spalinowych, hybryd i elektryków), a nie z grubsza. To ona najczęściej przesądza o opłacalności, więc traktuję ją poważnie.",
+      "Tak, akcyzę liczymy według pojemności silnika i typu napędu (osobno dla spalinowych, hybryd i elektryków), a nie z grubsza. To ona najczęściej przesądza o opłacalności, więc traktuję ją poważnie.",
   },
   {
     question: "Czy sprowadzasz auto za mnie?",
@@ -83,14 +83,14 @@ const faq = [
       "Nie. ImportRadar to analiza opłacalności, a nie usługa transportu. Dostajesz twarde liczby i decyzję, czy w ogóle wchodzić w dany samochód. Import realizujesz sam lub przez wybraną firmę.",
   },
   {
-    question: "Skąd bierzesz ceny sprzedaży w Polsce?",
+    question: "Skąd bierzecie ceny sprzedaży w Polsce?",
     answer:
       "Z aktualnych ogłoszeń tego samego modelu, rocznika i zbliżonego przebiegu na polskich portalach. Dzięki temu marża jest liczona wobec realnego rynku, a nie życzeniowej ceny.",
   },
   {
     question: "Co jeśli analiza pokaże, że się nie opłaca?",
     answer:
-      "To też jest wynik wart swojej ceny. Lepiej wydać 150 zł na analizę niż stracić kilka tysięcy na aucie, które w Polsce kupisz taniej. Przy pakiecie znajdź pod budżet od razu szukam alternatyw z marżą.",
+      "To też jest wynik wart swojej ceny. Lepiej wydać 150 zł na analizę niż stracić kilka tysięcy na aucie, które w Polsce kupisz taniej. Przy pakiecie znajdź pod budżet od razu szukamy alternatyw z marżą.",
   },
 ];
 
@@ -115,7 +115,7 @@ export default function ImportRadarPage() {
               Sprawdź, czy import z Niemiec naprawdę się opłaca
             </h1>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-300">
-              Cena w niemieckim ogłoszeniu to dopiero początek. Liczę pełny
+              Cena w niemieckim ogłoszeniu to dopiero początek. Liczymy pełny
               koszt sprowadzenia, akcyzę, transport i opłaty, a potem porównuję
               go z cenami tego auta w Polsce. Dostajesz jedną liczbę, która
               mówi, ile zostaje na czysto.
@@ -332,7 +332,7 @@ export default function ImportRadarPage() {
             <LandingForm
               formId="order_import_radar"
               heading="Zamów analizę opłacalności importu"
-              intro="Wklej link do niemieckiej oferty w polu opisu albo podaj budżet i typ auta, jeśli chcesz pakiet znajdź pod budżet. Odsyłam pełny rozkład kosztów i werdykt o marży, zwykle w ciągu 24h."
+              intro="Wklej link do niemieckiej oferty w polu opisu albo podaj budżet i typ auta, jeśli chcesz pakiet znajdź pod budżet. Odsyłamy pełny rozkład kosztów i werdykt o marży, zwykle w ciągu 24h."
               submitLabel="Wyślij auto do analizy"
               microCopy="Odpowiedź w 24h. Płatność ustalamy mailowo po potwierdzeniu zakresu (analiza 1 auta 10-20 zł, znajdź pod budżet 20-30 zł)."
             />

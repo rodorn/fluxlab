@@ -48,10 +48,10 @@ const MOTYW: Record<
 };
 
 const ETAPY = [
-  "Szukam podmiotu w Monitorze",
-  "Pobieram jego ogłoszenia od 2013 roku",
-  "Sprawdzam, czy któreś dotyczy rozwiązania",
-  "Liczę termin na sprzeciw",
+  "Szukamy podmiotu w Monitorze",
+  "Pobieramy jego ogłoszenia od 2013 roku",
+  "Sprawdzamy, czy któreś dotyczy rozwiązania",
+  "Liczymy termin na sprzeciw",
 ];
 
 export default function SpolkaCheck() {
@@ -61,7 +61,7 @@ export default function SpolkaCheck() {
   const [blad, setBlad] = useState("");
   const [etap, setEtap] = useState(0);
   const [email, setEmail] = useState("");
-  const [leadStan, setLeadStan] = useState<"idle" | "wysylam" | "ok" | "blad">("idle");
+  const [leadStan, setLeadStan] = useState<"idle" | "wysylamy" | "ok" | "blad">("idle");
   const [leadBlad, setLeadBlad] = useState("");
   const timer = useRef<ReturnType<typeof setInterval> | null>(null);
 
@@ -119,7 +119,7 @@ export default function SpolkaCheck() {
   async function zamow(e: React.FormEvent) {
     e.preventDefault();
     if (!wynik) return;
-    setLeadStan("wysylam");
+    setLeadStan("wysylamy");
     setLeadBlad("");
     try {
       const res = await fetch("/api/contact", {
@@ -186,7 +186,7 @@ export default function SpolkaCheck() {
           disabled={stan === "ladowanie"}
           className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
         >
-          {stan === "ladowanie" ? "Sprawdzam..." : "Sprawdź w Monitorze"}
+          {stan === "ladowanie" ? "Sprawdzamy..." : "Sprawdź w Monitorze"}
         </button>
       </form>
 
@@ -291,19 +291,19 @@ export default function SpolkaCheck() {
 
           <p className="mt-2 text-xs text-gray-500 dark:text-gray-400">
             Dane z Monitora Sądowego i Gospodarczego, wydania od 2013 roku.
-            Pokazuję do dwunastu najnowszych ogłoszeń.
+            Pokazujemy do dwunastu najnowszych ogłoszeń.
           </p>
 
           <div className="mt-5 border-t border-gray-200/70 dark:border-gray-700/70 pt-4">
             <p className="text-sm text-gray-700 dark:text-gray-300">
               {wynik.werdykt === "ZIELONY"
-                ? "Jeśli masz listę kontrahentów, mogę sprawdzać ją codziennie i odezwać się dopiero wtedy, gdy któryś trafi do wykreślenia."
-                : "Przy takim obwieszczeniu liczy się czas, bo termin biegnie od dnia publikacji. Mogę sprawdzić całą Twoją listę kontrahentów wstecz i pilnować jej codziennie."}
+                ? "Jeśli masz listę kontrahentów, możemy sprawdzać ją codziennie i odezwać się dopiero wtedy, gdy któryś trafi do wykreślenia."
+                : "Przy takim obwieszczeniu liczy się czas, bo termin biegnie od dnia publikacji. Możemy sprawdzić całą Twoją listę kontrahentów wstecz i pilnować jej codziennie."}
             </p>
 
             {leadStan === "ok" ? (
               <p className="mt-4 text-sm font-semibold text-emerald-700 dark:text-emerald-400">
-                Mam zgłoszenie razem z wynikiem. Odpiszę na {email}, zwykle tego
+                Mamy zgłoszenie razem z wynikiem. Odpiszemy na {email}, zwykle tego
                 samego dnia.
               </p>
             ) : (
@@ -312,7 +312,7 @@ export default function SpolkaCheck() {
                   htmlFor="spolka-email"
                   className="block text-sm font-medium text-gray-900 dark:text-white"
                 >
-                  Podaj maila, odeślę zasady sprawdzenia całej listy kontrahentów
+                  Podaj maila, odeślemy zasady sprawdzenia całej listy kontrahentów
                 </label>
                 <div className="mt-2 flex flex-col gap-3 sm:flex-row">
                   <input
@@ -326,10 +326,10 @@ export default function SpolkaCheck() {
                   />
                   <button
                     type="submit"
-                    disabled={leadStan === "wysylam"}
+                    disabled={leadStan === "wysylamy"}
                     className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
                   >
-                    {leadStan === "wysylam" ? "Wysyłam..." : "Wyślij zgłoszenie"}
+                    {leadStan === "wysylamy" ? "Wysyłamy..." : "Wyślij zgłoszenie"}
                   </button>
                 </div>
                 {leadStan === "blad" && (

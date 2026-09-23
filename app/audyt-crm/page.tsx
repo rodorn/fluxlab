@@ -39,9 +39,9 @@ const faqs = [
       "Mierzy 10 fundamentów dojrzałości pipeline'u: atrybucję źródeł, routing leadów, kryteria etapów, automatyzację zadań, follow-up, raportowanie end-to-end, ręczne przepisywanie danych, jakość danych, deduplikację i integracje wejściowe. Każdy obszar to jedno pytanie tak/nie. Wynik to liczba pozytywnych odpowiedzi z 10. Pytania o ręczne przepisywanie i duplikaty są odwrócone, tam „tak” oznacza problem, bo świadczy o tym, że proces nie jest jeszcze poukładany. Audyt nie zastąpi pełnej diagnozy procesu, ale w 3 minuty pokazuje, gdzie pipeline ma najsłabsze punkty.",
   },
   {
-    question: "Co znaczy odpowiedź „nie wiem” i dlaczego liczy się jak „nie”?",
+    question: "Co znaczy odpowiedź „nie wiemy” i dlaczego liczy się jak „nie”?",
     answer:
-      "Jeśli nie masz pewności, że coś działa, to znaczy, że nie działa świadomie. Na przykład: jeśli nie wiesz, czy każdy lead ma źródło, to znaczy, że nikt tego nie pilnuje, czyli efektywnie atrybucji nie masz. „Nie wiem” w audycie traktuję jak czerwoną flagę, bo brak widoczności jest sam w sobie problemem operacyjnym. To nie jest karanie za niewiedzę, to wskazanie obszaru, gdzie warto najpierw zrobić podstawową diagnostykę.",
+      "Jeśli nie masz pewności, że coś działa, to znaczy, że nie działa świadomie. Na przykład: jeśli nie wiesz, czy każdy lead ma źródło, to znaczy, że nikt tego nie pilnuje, czyli efektywnie atrybucji nie masz. „Nie wiemy” w audycie traktuję jak czerwoną flagę, bo brak widoczności jest sam w sobie problemem operacyjnym. To nie jest karanie za niewiedzę, to wskazanie obszaru, gdzie warto najpierw zrobić podstawową diagnostykę.",
   },
   {
     question: "Jak interpretuję wynik X/10?",
@@ -111,7 +111,7 @@ export default function AudytCRMPage() {
                       <div className="space-y-4 text-gray-600 dark:text-gray-400 leading-relaxed">
                         <p>
                           Audyt mierzy 10 fundamentów zdrowego pipeline'u. Każdy
-                          ma jedno pytanie tak/nie z trzecią opcją „nie wiem”,
+                          ma jedno pytanie tak/nie z trzecią opcją „nie wiemy”,
                           która liczy się jak „nie”, bo brak widoczności jest
                           sam w sobie problemem operacyjnym. Pytania 7 (ręczne
                           przepisywanie) i 9 (duplikaty) są odwrócone: tam „tak”
@@ -220,7 +220,7 @@ export default function AudytCRMPage() {
                           eventName="cta_click_audit_crm"
                           className="btn-primary px-8 py-3 text-base"
                         >
-                          Chcę mapę automatyzacji CRM
+                          Chcemy mapę automatyzacji CRM
                         </TrackedCTA>
                       </div>
                     </div>
@@ -351,7 +351,7 @@ export default function AudytCRMPage() {
                           eventName="cta_click_audit_crm"
                           className="btn-primary px-8 py-3.5 text-base"
                         >
-                          Chcę mapę automatyzacji CRM
+                          Chcemy mapę automatyzacji CRM
                         </TrackedCTA>
                       </div>
                     </div>

@@ -60,7 +60,7 @@ export default function DoplataCheck() {
   const [wynik, setWynik] = useState<Wynik | null>(null);
   const [blad, setBlad] = useState("");
   const [email, setEmail] = useState("");
-  const [leadStan, setLeadStan] = useState<"idle" | "wysylam" | "ok" | "blad">("idle");
+  const [leadStan, setLeadStan] = useState<"idle" | "wysylamy" | "ok" | "blad">("idle");
   const [leadBlad, setLeadBlad] = useState("");
 
   async function uruchom(w: string, b: string, n: string) {
@@ -111,7 +111,7 @@ export default function DoplataCheck() {
   async function zamow(e: React.FormEvent) {
     e.preventDefault();
     if (!wynik) return;
-    setLeadStan("wysylam");
+    setLeadStan("wysylamy");
     setLeadBlad("");
     try {
       const res = await fetch("/api/contact", {
@@ -217,7 +217,7 @@ export default function DoplataCheck() {
           disabled={stan === "ladowanie"}
           className="btn-primary w-full justify-center px-6 py-3 text-sm disabled:opacity-50"
         >
-          {stan === "ladowanie" ? "Liczę..." : "Sprawdź tę pozycję"}
+          {stan === "ladowanie" ? "Liczymy..." : "Sprawdź tę pozycję"}
         </button>
       </form>
 
@@ -277,7 +277,7 @@ export default function DoplataCheck() {
 
           <div className="mt-5">
             <p className="text-sm font-semibold text-gray-900 dark:text-white">
-              Stawki, według których liczę
+              Stawki, według których liczymy
             </p>
             <ul className="mt-2 space-y-1">
               {wynik.progi.map((p) => (
@@ -309,7 +309,7 @@ export default function DoplataCheck() {
 
             {leadStan === "ok" ? (
               <p className="mt-4 text-sm font-semibold text-emerald-700 dark:text-emerald-400">
-                Mam zgłoszenie razem z tym wyliczeniem. Odpiszę na {email}, zwykle
+                Mamy zgłoszenie razem z tym wyliczeniem. Odpiszemy na {email}, zwykle
                 tego samego dnia.
               </p>
             ) : (
@@ -318,7 +318,7 @@ export default function DoplataCheck() {
                   htmlFor="doplata-email"
                   className="block text-sm font-medium text-gray-900 dark:text-white"
                 >
-                  Podaj maila, sprawdzę tak całą Twoją fakturę za darmo
+                  Podaj maila, sprawdzimy tak całą Twoją fakturę za darmo
                 </label>
                 <div className="mt-2 flex flex-col gap-3 sm:flex-row">
                   <input
@@ -332,10 +332,10 @@ export default function DoplataCheck() {
                   />
                   <button
                     type="submit"
-                    disabled={leadStan === "wysylam"}
+                    disabled={leadStan === "wysylamy"}
                     className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
                   >
-                    {leadStan === "wysylam" ? "Wysyłam..." : "Wyślij zgłoszenie"}
+                    {leadStan === "wysylamy" ? "Wysyłamy..." : "Wyślij zgłoszenie"}
                   </button>
                 </div>
                 {leadStan === "blad" && (
@@ -348,7 +348,7 @@ export default function DoplataCheck() {
       )}
 
       <p className="mt-4 text-xs text-gray-500 dark:text-gray-400">
-        Liczę na stawkach jednego przewoźnika z konkretnego okresu. To wyliczenie
+        Liczymy na stawkach jednego przewoźnika z konkretnego okresu. To wyliczenie
         techniczne, a reklamację składa nadawca, bo tylko on jest stroną umowy.
       </p>
     </div>

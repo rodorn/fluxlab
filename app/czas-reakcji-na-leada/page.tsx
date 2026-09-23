@@ -34,7 +34,7 @@ const problemPoints = [
   "Lead wpada wieczorem, handlowiec widzi go rano. Klient w międzyczasie pisze do trzech firm.",
   "Powiadomienia o nowych leadach lecą na maila i giną wśród newsletterów.",
   "Handlowiec dowiaduje się o leadzie przez Slacka od managera, a nie z CRM-a.",
-  "Pierwszy kontakt to wciąż „odpiszę na maila”, a nie telefon.",
+  "Pierwszy kontakt to wciąż „odpiszemy na maila”, a nie telefon.",
   "Brak SLA na reakcję, nikt nie wie, ile to powinno trwać.",
   "Speed-to-lead nie jest mierzony, więc nikt nie wie, czy się poprawia.",
 ];
@@ -212,11 +212,11 @@ export default function CzasReakcjiNaLeada() {
                 <TrackedCTA
                   href="#sekcje"
                   location="article_speed_hero"
-                  label="Chcę szybszą obsługę leadów"
+                  label="Chcemy szybszą obsługę leadów"
                   eventName="cta_click_article_audit"
                   className="btn-primary px-8 py-3.5 text-base"
                 >
-                  Chcę szybszą obsługę leadów
+                  Chcemy szybszą obsługę leadów
                 </TrackedCTA>
               </div>
               <p className="mt-6 text-sm text-gray-500 dark:text-gray-500">
@@ -620,7 +620,7 @@ export default function CzasReakcjiNaLeada() {
                             Najczęstsze błędy przy skracaniu czasu reakcji
                           </h2>
                           <p className="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-                            Te błędy widzę u firm, które już &bdquo;mają
+                            Te błędy widzimy u firm, które już &bdquo;mają
                             speed-to-lead&rdquo;, ale dane mówią co innego.
                             Każdy z nich da się obejść, jeśli wiesz, że
                             istnieje.
@@ -810,11 +810,11 @@ export default function CzasReakcjiNaLeada() {
                           <TrackedCTA
                             href="/kontakt"
                             location="article_speed_final"
-                            label="Chcę szybszą obsługę leadów"
+                            label="Chcemy szybszą obsługę leadów"
                             eventName="cta_click_article_audit"
                             className="btn-primary px-8 py-3.5 text-base"
                           >
-                            Chcę szybszą obsługę leadów
+                            Chcemy szybszą obsługę leadów
                           </TrackedCTA>
                         </div>
                       </div>

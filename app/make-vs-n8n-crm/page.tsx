@@ -196,7 +196,7 @@ const faq = [
       "Nie ma uniwersalnej odpowiedzi. Make jest lepszy, gdy scenariusze ma budować osoba z biznesu (head of sales, marketing manager), wolumen jest do 30 tys. operacji miesięcznie i nie potrzebujecie self-hostingu. n8n jest lepszy, gdy macie osobę techniczną, wolumen rośnie, integrujecie się z własnymi systemami wewnętrznymi albo branża wymaga trzymania danych u siebie. W praktyce 60% klientów B2B trafia w obszar, gdzie oba narzędzia są równoważne, wtedy decyduje, kogo macie w zespole do utrzymania.",
   },
   {
-    question: "Czy mogę użyć obu, Make do prostych rzeczy, n8n do reszty?",
+    question: "Czy możemy użyć obu, Make do prostych rzeczy, n8n do reszty?",
     answer:
       "Tak i to częsta architektura. Make obsługuje scenariusze marketingowe i HR (proste, niskim wolumenem, budowane przez nietechniczne osoby). n8n obsługuje sync z systemami wewnętrznymi, raporty zarządcze i procesy operacyjne (większy wolumen, code node, własne API). Oba spinają się przez webhook, jeśli trzeba. Wadą jest dwa narzędzia do utrzymania, zaletą, narzędzie dopasowane do roli.",
   },

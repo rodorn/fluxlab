@@ -179,7 +179,7 @@ export default function HubspotVsPipedriveArticle() {
                         interfejs bywa cięższy.
                       </p>
                       <p className="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-                        Reguły dla samego pipeline opisałem w artykule o tym,
+                        Reguły dla samego pipeline opisaliśmy w artykule o tym,
                         jak{" "}
                         <Link
                           href="/strefa-wiedzy/jak-uporzadkowac-proces-sprzedazy-w-crm"
@@ -535,7 +535,7 @@ export default function HubspotVsPipedriveArticle() {
                         </div>
                         <div>
                           <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                            Co wybrać, jeśli nie mam jeszcze procesu sprzedaży?
+                            Co wybrać, jeśli nie mamy jeszcze procesu sprzedaży?
                           </h3>
                           <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                             Najpierw uporządkuj proces, potem wybieraj narzędzie
@@ -668,7 +668,7 @@ export default function HubspotVsPipedriveArticle() {
               },
               {
                 "@type": "Question",
-                name: "Co wybrać, jeśli nie mam jeszcze procesu sprzedaży?",
+                name: "Co wybrać, jeśli nie mamy jeszcze procesu sprzedaży?",
                 acceptedAnswer: {
                   "@type": "Answer",
                   text: "Najpierw uporządkuj proces, potem wybieraj narzędzie. Bez procesu każdy CRM stanie się tylko ładniejszą bazą kontaktów.",

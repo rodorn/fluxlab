@@ -111,7 +111,7 @@ export default function WybierzBranze({ wariant = "glowna" }: Props) {
         ))}
       </ul>
       <p className="mt-4 text-xs text-gray-500 dark:text-gray-400">
-        Systemy, z którymi to spinam: {b.systemy}
+        Systemy, z którymi to spinamy: {b.systemy}
       </p>
       <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
         <Link
@@ -157,13 +157,13 @@ export default function WybierzBranze({ wariant = "glowna" }: Props) {
         </div>
         <div>
           <dt className="font-semibold text-gray-900 dark:text-white">
-            Policz to sam, bez mojego udziału
+            Policz to sam, bez naszego udziału
           </dt>
           <dd className="mt-1 text-gray-700 dark:text-gray-300">{b.policz}</dd>
         </div>
         <div>
           <dt className="font-semibold text-gray-900 dark:text-white">
-            Co z tym robię
+            Co z tym robimy
           </dt>
           <dd className="mt-1 text-gray-700 dark:text-gray-300">{b.robie}</dd>
         </div>
@@ -271,8 +271,8 @@ export default function WybierzBranze({ wariant = "glowna" }: Props) {
         }`}
       >
         {filar
-          ? "Naciśnij branżę, a pokażę, która czynność pochłania w niej najwięcej powtarzalnej pracy, jak to policzyć u siebie jeszcze dzisiaj i co z tym robię. Drugie kliknięcie, o tym gdzie trzymacie dane, decyduje, czy w ogóle jest co automatyzować."
-          : "Kliknij, a pokażę, co w tej branży najczęściej zjada czas i co da się z tym zrobić. Bez formularza i bez podawania czegokolwiek."}
+          ? "Naciśnij branżę, a pokażemy, która czynność pochłania w niej najwięcej powtarzalnej pracy, jak to policzyć u siebie jeszcze dzisiaj i co z tym robimy. Drugie kliknięcie, o tym gdzie trzymacie dane, decyduje, czy w ogóle jest co automatyzować."
+          : "Kliknij, a pokażemy, co w tej branży najczęściej zjada czas i co da się z tym zrobić. Bez formularza i bez podawania czegokolwiek."}
       </p>
     </>
   );

@@ -122,7 +122,7 @@ export const STANY: Stan[] = [
     ograniczenie:
       "Domena zapisana na agencję jest realnym ryzykiem: przy sporze traci się adres razem z pozycją w wyszukiwarce i adresami mailowymi. To się odkręca, ale zaczyna się od odzyskania wpisu w rejestrze, nie od poprawek na stronie.",
     przygotowac:
-      "Umowa z firmą, która ją prowadzi, i adres strony. Reszty nie potrzebuję, wpis w rejestrze jest jawny.",
+      "Umowa z firmą, która ją prowadzi, i adres strony. Reszty nie potrzebujemy, wpis w rejestrze jest jawny.",
     zakres: 3,
     produkt: "/wlasnosc-domeny",
   },

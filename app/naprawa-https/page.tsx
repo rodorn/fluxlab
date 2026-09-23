@@ -5,7 +5,7 @@ import HttpsCheck from "@/components/HttpsCheck";
 export const metadata: Metadata = {
   title: "Naprawa HTTPS, koniec ostrzeżeń przeglądarki | Fluxlab",
   description:
-    "Wygasły certyfikat oznacza pełnoekranowe ostrzeżenie dla każdego odwiedzającego. Diagnozuję przyczynę i naprawiam szyfrowanie razem z przekierowaniami.",
+    "Wygasły certyfikat oznacza pełnoekranowe ostrzeżenie dla każdego odwiedzającego. Diagnozuję przyczynę i naprawiamy szyfrowanie razem z przekierowaniami.",
   alternates: { canonical: "/naprawa-https" },
   openGraph: {
     title: "Naprawa HTTPS, koniec ostrzeżeń przeglądarki | Fluxlab",
@@ -33,7 +33,7 @@ export default function Page() {
       eyebrow="Ostrzeżenie przeglądarki"
       h1="Twoja strona działa, tylko nikt jej nie widzi"
       lead="Wklej swój adres zaczynający się od https, nie z zakładki i nie z wyszukiwarki. Jeśli zobaczysz czerwony ekran z ostrzeżeniem, to samo widzi każdy, kto trafia do Ciebie z Google. Strona jest na serwerze i działa, ale odwiedzający musi kliknąć zgodę na ryzyko, czego prawie nikt nie robi."
-      ctaLabel="Sprawdź moją stronę"
+      ctaLabel="Sprawdź naszą stronę"
       ctaNote="Diagnoza tego samego dnia"
       checks={[
         {
@@ -57,7 +57,7 @@ export default function Page() {
         {
           name: "Diagnoza",
           price: "0 zł",
-          desc: "Piszesz adres, odsyłam konkretną przyczynę.",
+          desc: "Piszesz adres, odsyłamy konkretną przyczynę.",
           features: [
             "co dokładnie widzi odwiedzający",
             "na jaką nazwę wystawiony jest certyfikat",
@@ -89,11 +89,11 @@ export default function Page() {
       ]}
       faq={[
         {
-          q: "Czego potrzebujesz, żeby postawić diagnozę?",
+          q: "Czego potrzebujecie, żeby postawić diagnozę?",
           a: "Tylko adresu strony. Diagnoza opiera się na tym, co Twój serwer i tak pokazuje publicznie każdemu odwiedzającemu. Dostępy są potrzebne dopiero do samej naprawy.",
         },
         {
-          q: "Czy muszę zmieniać hosting?",
+          q: "Czy musimy zmieniać hosting?",
           a: "Prawie nigdy. W większości przypadków wystarczy poprawnie wystawić i wpiąć certyfikat na obecnym hostingu, a u popularnych dostawców to kwestia ustawień, nie przeprowadzki.",
         },
         {
@@ -101,19 +101,19 @@ export default function Page() {
           a: "Sam certyfikat tak i nie ukrywam tego. Płacisz za ustalenie, co konkretnie jest zepsute, poprawne wpięcie po stronie serwera oraz za przekierowania i odwołania w treści, bo to one najczęściej są prawdziwym problemem.",
         },
         {
-          q: "Skąd mam wiedzieć, że problem naprawdę istnieje?",
+          q: "Skąd mamy wiedzieć, że problem naprawdę istnieje?",
           a: "Sprawdzisz to sam w pięć sekund. Wklej swój adres z https do paska przeglądarki, koniecznie nie z zakładki, bo wejście z zakładki potrafi ominąć problem.",
         },
         {
           q: "Czy to jest audyt bezpieczeństwa strony?",
-          a: "Nie. Zajmuję się warstwą szyfrowania połączenia i mówię to wprost. Nie badam podatności aplikacji ani zawartości serwera.",
+          a: "Nie. Zajmujemy się warstwą szyfrowania połączenia i mówimy to wprost. Nie badamy podatności aplikacji ani zawartości serwera.",
         },
       ]}
       formId="order_naprawa_https"
       formHeading="Sprawdź swoją stronę"
-      formIntro="Podaj adres strony. Odeślę konkretną przyczynę ostrzeżenia, a jeśli wszystko jest w porządku, napiszę to wprost i na tym koniec."
+      formIntro="Podaj adres strony. Odeślemy konkretną przyczynę ostrzeżenia, a jeśli wszystko jest w porządku, napiszemy to wprost i na tym koniec."
       submitLabel="Poproś o diagnozę"
-      microCopy="Diagnoza opiera się wyłącznie na publicznie dostępnych danych Twojego serwera. Nie loguję się nigdzie i niczego nie testuję obciążeniowo."
+      microCopy="Diagnoza opiera się wyłącznie na publicznie dostępnych danych Twojego serwera. Nie logujemy się nigdzie i niczego nie testujemy obciążeniowo."
       serviceName="Diagnoza i naprawa warstwy HTTPS strony firmowej"
       serviceDesc="Ustalenie przyczyny ostrzeżenia przeglądarki i naprawa: certyfikat wystawiony na właściwą domenę, przekierowania, warianty adresu, zasoby ładowane bez szyfrowania. Od 190 zł."
       serviceType="Naprawa konfiguracji szyfrowania strony internetowej"

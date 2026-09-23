@@ -28,10 +28,10 @@ interface Wynik {
 }
 
 const ETAPY = [
-  "Otwieram stronę główną i szukam wersji językowych",
-  "Wchodzę na wersję obcojęzyczną",
+  "Otwieram stronę główną i szukamy wersji językowych",
+  "Wchodzimy na wersję obcojęzyczną",
   "Rozbijam stronę na pojedyncze fragmenty tekstu",
-  "Sprawdzam każdy fragment i liczę znaczniki dla wyszukiwarki",
+  "Sprawdzamy każdy fragment i liczymy znaczniki dla wyszukiwarki",
 ];
 
 const MOTYW: Record<string, { ramka: string; tlo: string; tekst: string; etykieta: string }> = {
@@ -62,7 +62,7 @@ export default function JezykCheck() {
   const [wynik, setWynik] = useState<Wynik | null>(null);
   const [blad, setBlad] = useState("");
   const [email, setEmail] = useState("");
-  const [leadStan, setLeadStan] = useState<"idle" | "wysylam" | "ok" | "blad">("idle");
+  const [leadStan, setLeadStan] = useState<"idle" | "wysylamy" | "ok" | "blad">("idle");
   const [leadBlad, setLeadBlad] = useState("");
   const timer = useRef<ReturnType<typeof setInterval> | null>(null);
 
@@ -116,7 +116,7 @@ export default function JezykCheck() {
   async function zamow(e: React.FormEvent) {
     e.preventDefault();
     if (!wynik) return;
-    setLeadStan("wysylam");
+    setLeadStan("wysylamy");
     setLeadBlad("");
     try {
       const res = await fetch("/api/contact", {
@@ -162,8 +162,8 @@ export default function JezykCheck() {
         Sprawdź swoją wersję obcojęzyczną
       </h2>
       <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-        Wpisz adres strony. Znajdę Waszą wersję angielską albo niemiecką, rozbiję
-        ją na pojedyncze fragmenty i pokażę te, które zostały po polsku, a także
+        Wpisz adres strony. Znajdziemy Waszą wersję angielską albo niemiecką, rozbiję
+        ją na pojedyncze fragmenty i pokażemy te, które zostały po polsku, a także
         czy wyszukiwarka w ogóle wie, że macie wersje językowe.
       </p>
       <Przyklady
@@ -190,7 +190,7 @@ export default function JezykCheck() {
           disabled={stan === "ladowanie"}
           className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
         >
-          {stan === "ladowanie" ? "Sprawdzam..." : "Sprawdź stronę"}
+          {stan === "ladowanie" ? "Sprawdzamy..." : "Sprawdź stronę"}
         </button>
       </form>
 
@@ -286,13 +286,13 @@ export default function JezykCheck() {
           <div className="mt-5 border-t border-gray-200/70 dark:border-gray-700/70 pt-4">
             <p className="text-sm text-gray-700 dark:text-gray-300">
               {wynik.werdykt === "ZIELONY"
-                ? "Na sprawdzonych stronach nie znalazłem polskich fragmentów ani braków w oznaczeniach. Pełny audyt idzie głębiej: obejmuje wszystkie podstrony, tytuły, opisy dla wyszukiwarki i opisy zdjęć."
+                ? "Na sprawdzonych stronach nie znaleźliśmy polskich fragmentów ani braków w oznaczeniach. Pełny audyt idzie głębiej: obejmuje wszystkie podstrony, tytuły, opisy dla wyszukiwarki i opisy zdjęć."
                 : "To sprawdzenie objęło tylko kilka stron. Pełny audyt przechodzi przez cały serwis i kończy się listą, w której każdy wpis ma adres, miejsce na stronie i tekst do podmiany, więc przekazujesz ją wprost programiście."}
             </p>
 
             {leadStan === "ok" ? (
               <p className="mt-4 text-sm font-semibold text-emerald-700 dark:text-emerald-400">
-                Mam zgłoszenie razem z wynikiem. Odpiszę na {email}, zwykle tego
+                Mamy zgłoszenie razem z wynikiem. Odpiszemy na {email}, zwykle tego
                 samego dnia.
               </p>
             ) : (
@@ -301,7 +301,7 @@ export default function JezykCheck() {
                   htmlFor="jezykcheck-email"
                   className="block text-sm font-medium text-gray-900 dark:text-white"
                 >
-                  Podaj maila, odeślę pełną listę miejsc do poprawy
+                  Podaj maila, odeślemy pełną listę miejsc do poprawy
                 </label>
                 <div className="mt-2 flex flex-col gap-3 sm:flex-row">
                   <input
@@ -315,10 +315,10 @@ export default function JezykCheck() {
                   />
                   <button
                     type="submit"
-                    disabled={leadStan === "wysylam"}
+                    disabled={leadStan === "wysylamy"}
                     className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
                   >
-                    {leadStan === "wysylam" ? "Wysyłam..." : "Wyślij zgłoszenie"}
+                    {leadStan === "wysylamy" ? "Wysyłamy..." : "Wyślij zgłoszenie"}
                   </button>
                 </div>
                 {leadStan === "blad" && (
@@ -335,8 +335,8 @@ export default function JezykCheck() {
       )}
 
       <p className="mt-4 text-xs text-gray-500 dark:text-gray-400">
-        Sprawdzam kilka pierwszych stron wersji obcojęzycznej, wyłącznie
-        publicznie dostępnych. Wersji polskiej nie liczę jako błędu.
+        Sprawdzamy kilka pierwszych stron wersji obcojęzycznej, wyłącznie
+        publicznie dostępnych. Wersji polskiej nie liczymy jako błędu.
       </p>
     </div>
   );

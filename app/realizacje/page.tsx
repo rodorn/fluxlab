@@ -255,8 +255,8 @@ export default function RealizacjePage() {
             <p className="mt-5 text-lg text-gray-600 dark:text-gray-300">
               Poniżej publiczne repozytoria i prototypy Fluxlab. Każdy projekt
               możesz otworzyć na GitHubie i ocenić jakość kodu, zanim cokolwiek
-              zlecisz. To są rzeczy zbudowane przeze mnie, nie opisy cudzych
-              wdrożeń ani referencje, których nie mam.
+              zlecisz. To są rzeczy zbudowane przez nas, nie opisy cudzych
+              wdrożeń ani referencje, których nie mamy.
             </p>
             <p className="mt-4 text-gray-600 dark:text-gray-300">
               Osobno rozpisuję{" "}
@@ -349,7 +349,7 @@ export default function RealizacjePage() {
               Masz proces, który da się zautomatyzować?
             </h2>
             <p className="mt-3 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              Zacznę od bezpłatnej diagnozy i darmowego dowodu na wąskim
+              Zaczniemy od bezpłatnej diagnozy i darmowego dowodu na wąskim
               wycinku, żebyś zobaczył efekt, zanim cokolwiek zlecisz.
             </p>
             <div className="mt-6">

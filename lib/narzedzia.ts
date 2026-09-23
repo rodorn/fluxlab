@@ -30,7 +30,7 @@ export const businessTools: Narzedzie[] = [
   {
     title: "Od kiedy musicie mieć adres do e-Doręczeń",
     description:
-      "Naciśnij, jak jest zarejestrowany Wasz podmiot, a policzę datę z ustawy i dni, które zostały. Terminy wchodzą etapami, inaczej dla firmy z CEIDG, inaczej dla spółki z KRS, inaczej dla zawodów zaufania publicznego. Bez wpisywania czegokolwiek.",
+      "Naciśnij, jak jest zarejestrowany Wasz podmiot, a policzymy datę z ustawy i dni, które zostały. Terminy wchodzą etapami, inaczej dla firmy z CEIDG, inaczej dla spółki z KRS, inaczej dla zawodów zaufania publicznego. Bez wpisywania czegokolwiek.",
     href: "/e-doreczenia-integracja",
     ikona: "pieczec",
     badge: "Nowość",
@@ -38,84 +38,84 @@ export const businessTools: Narzedzie[] = [
   {
     title: "Pełny audyt techniczny strony",
     description:
-      "Jedno wpisanie adresu zamiast siedmiu osobnych sprawdzeń. Mierzę szybkość na komputerze i osobno na telefonie, ważę każdy plik, czytam certyfikat, sprawdzam widoczność w wyszukiwarce, dostęp dla asystentów AI i zabezpieczenia poczty. Na końcu dostajesz kolejność poprawek i cenę naprawy przy każdej pozycji.",
+      "Jedno wpisanie adresu zamiast siedmiu osobnych sprawdzeń. Mierzymy szybkość na komputerze i osobno na telefonie, ważę każdy plik, czytamy certyfikat, sprawdzamy widoczność w wyszukiwarce, dostęp dla asystentów AI i zabezpieczenia poczty. Na końcu dostajesz kolejność poprawek i cenę naprawy przy każdej pozycji.",
     href: "/audyt-strony",
     ikona: "lupa",
   },
   {
     title: "Czy przeglądarka straszy Twoją stroną",
     description:
-      "Wpisz adres strony, a pokażę, co widzi ktoś, kto trafia do Ciebie z wyszukiwarki. Wygasły certyfikat albo certyfikat firmy hostingowej oznacza pełnoekranowe ostrzeżenie, po którym większość odwiedzających zawraca.",
+      "Wpisz adres strony, a pokażemy, co widzi ktoś, kto trafia do Ciebie z wyszukiwarki. Wygasły certyfikat albo certyfikat firmy hostingowej oznacza pełnoekranowe ostrzeżenie, po którym większość odwiedzających zawraca.",
     href: "/naprawa-https",
     ikona: "tarcza",
   },
   {
     title: "Przeceny bez wymaganej informacji o cenie",
     description:
-      "Podaj adres sklepu, a sprawdzę Twoje aktualne przeceny i pokażę te, przy których brakuje obowiązkowej informacji o najniższej cenie z trzydziestu dni. Każda pozycja z linkiem do sprawdzenia.",
+      "Podaj adres sklepu, a sprawdzimy Twoje aktualne przeceny i pokażemy te, przy których brakuje obowiązkowej informacji o najniższej cenie z trzydziestu dni. Każda pozycja z linkiem do sprawdzenia.",
     href: "/rejestr-cen",
     ikona: "metka",
   },
   {
     title: "Polskie teksty w wersji angielskiej",
     description:
-      "Wpisz adres firmy, a znajdę Waszą wersję obcojęzyczną i policzę fragmenty, które zostały po polsku, oraz sprawdzę, czy wyszukiwarka w ogóle wie, że macie wersje językowe.",
+      "Wpisz adres firmy, a znajdziemy Waszą wersję obcojęzyczną i policzymy fragmenty, które zostały po polsku, oraz sprawdzimy, czy wyszukiwarka w ogóle wie, że macie wersje językowe.",
     href: "/kontrola-jezykow",
     ikona: "jezyk",
   },
   {
     title: "Ilu masz konkurentów w okolicy",
     description:
-      "Podaj miejscowość i wybierz branżę, a policzę punkty w promieniu jednego, trzech i pięciu kilometrów oraz to, ilu mieszkańców przypada na jeden taki punkt. Przydaje się przed podpisaniem najmu.",
+      "Podaj miejscowość i wybierz branżę, a policzymy punkty w promieniu jednego, trzech i pięciu kilometrów oraz to, ilu mieszkańców przypada na jeden taki punkt. Przydaje się przed podpisaniem najmu.",
     href: "/analiza-lokalizacji",
     ikona: "pinezka",
   },
   {
     title: "Czy asystent AI widzi Twoją stronę",
     description:
-      "Wpisz domenę, a sprawdzę siedem rzeczy, od których zależy, czy roboty zbierające treść dla ChatuGPT, Claude'a i Perplexity mogą ją w ogóle przeczytać: dostęp w robots.txt, treść widoczną bez uruchamiania skryptów, dane uporządkowane, metadane, mapę strony i plik llms.txt.",
+      "Wpisz domenę, a sprawdzimy siedem rzeczy, od których zależy, czy roboty zbierające treść dla ChatuGPT, Claude'a i Perplexity mogą ją w ogóle przeczytać: dostęp w robots.txt, treść widoczną bez uruchamiania skryptów, dane uporządkowane, metadane, mapę strony i plik llms.txt.",
     href: "/widocznosc-w-ai",
     ikona: "lupa",
   },
   {
     title: "Ile przepłacasz za automatyzacje",
     description:
-      "Podaj liczbę uruchomień i kroków w scenariuszu, a pokażę, ile zadań jest naprawdę rozliczanych, ile to kosztuje i po ilu miesiącach zwróciłoby się przeniesienie na własny serwer.",
+      "Podaj liczbę uruchomień i kroków w scenariuszu, a pokażemy, ile zadań jest naprawdę rozliczanych, ile to kosztuje i po ilu miesiącach zwróciłoby się przeniesienie na własny serwer.",
     href: "/tansze-automatyzacje",
     ikona: "moneta",
   },
   {
     title: "Sprawdzenie pozycji z faktury kurierskiej",
     description:
-      "Przepisz trzy liczby z faktury, a policzę, czy dopłata paliwowa zgadza się ze stawką dla Twojego progu wagowego i ile ta sama pomyłka kosztuje przy kilkuset paczkach miesięcznie.",
+      "Przepisz trzy liczby z faktury, a policzymy, czy dopłata paliwowa zgadza się ze stawką dla Twojego progu wagowego i ile ta sama pomyłka kosztuje przy kilkuset paczkach miesięcznie.",
     href: "/audyt-kurierski",
     ikona: "paczka",
   },
   {
     title: "Czy Twój dłużnik znika z rejestru",
     description:
-      "Wpisz nazwę spółki albo numer KRS, a sprawdzę w Monitorze Sądowym, czy sąd nie wszczął postępowania o jej rozwiązanie bez likwidacji. Od obwieszczenia biegną trzy miesiące na sprzeciw, potem podmiot znika razem z Twoją należnością.",
+      "Wpisz nazwę spółki albo numer KRS, a sprawdzimy w Monitorze Sądowym, czy sąd nie wszczął postępowania o jej rozwiązanie bez likwidacji. Od obwieszczenia biegną trzy miesiące na sprzeciw, potem podmiot znika razem z Twoją należnością.",
     href: "/czujka-rejestrowa",
     ikona: "mlotek",
   },
   {
     title: "Czy klient ustali, komu płaci",
     description:
-      "Wpisz adres firmy, a wyciągnę ze strony, kontaktu i regulaminu numer NIP oraz numer konta i sprawdzę je w wykazie podatników VAT, dokładnie tak jak zrobi to księgowość Twojego klienta przed przelewem.",
+      "Wpisz adres firmy, a wyciągnę ze strony, kontaktu i regulaminu numer NIP oraz numer konta i sprawdzimy je w wykazie podatników VAT, dokładnie tak jak zrobi to księgowość Twojego klienta przed przelewem.",
     href: "/dane-sprzedawcy",
     ikona: "pieczec",
   },
   {
     title: "Czy Google ma listę Twoich podstron",
     description:
-      "Wpisz adres firmy, a sprawdzę, czy macie mapę strony, czy jest wskazana w robots.txt i czy adresy z niej faktycznie działają. Martwy adres na tej liście zużywa limit odwiedzin robota.",
+      "Wpisz adres firmy, a sprawdzimy, czy macie mapę strony, czy jest wskazana w robots.txt i czy adresy z niej faktycznie działają. Martwy adres na tej liście zużywa limit odwiedzin robota.",
     href: "/mapa-strony",
     ikona: "mapa",
   },
   {
     title: "Czy Google widzi Twoją stronę podwójnie",
     description:
-      "Wpisz adres firmy, a sprawdzę cztery wersje tego adresu, z www i bez, i pokażę, czy któraś przekierowuje na drugą. Dwie działające wersje z tą samą treścią to dla wyszukiwarki dwie osobne strony.",
+      "Wpisz adres firmy, a sprawdzimy cztery wersje tego adresu, z www i bez, i pokażemy, czy któraś przekierowuje na drugą. Dwie działające wersje z tą samą treścią to dla wyszukiwarki dwie osobne strony.",
     href: "/podwojny-adres",
     ikona: "rozwidlenie",
   },
@@ -143,14 +143,14 @@ export const businessTools: Narzedzie[] = [
   {
     title: "Czy Twoja strona nie wypisała się z Google",
     description:
-      "Wpisz adres firmy, a sprawdzę trzy miejsca, w których zostaje blokada indeksowania po wersji roboczej: nagłówek odpowiedzi, znacznik w kodzie strony i plik robots.txt. Właściciel tego nie widzi, bo wchodzi z zakładki.",
+      "Wpisz adres firmy, a sprawdzimy trzy miejsca, w których zostaje blokada indeksowania po wersji roboczej: nagłówek odpowiedzi, znacznik w kodzie strony i plik robots.txt. Właściciel tego nie widzi, bo wchodzi z zakładki.",
     href: "/widocznosc-w-google",
     ikona: "oko",
   },
   {
     title: "Czego kupujący nie znajdzie o zwrotach",
     description:
-      "Podaj adres sklepu, a sprawdzę sześć rzeczy, których kupujący szuka przed zakupem: termin na odstąpienie, wzór formularza, kto płaci za odesłanie, jak i kiedy wracają pieniądze oraz czy zwrot da się zgłosić online.",
+      "Podaj adres sklepu, a sprawdzimy sześć rzeczy, których kupujący szuka przed zakupem: termin na odstąpienie, wzór formularza, kto płaci za odesłanie, jak i kiedy wracają pieniądze oraz czy zwrot da się zgłosić online.",
     href: "/panel-zwrotow",
     ikona: "zwrot",
   },

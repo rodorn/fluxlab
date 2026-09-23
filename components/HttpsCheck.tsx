@@ -22,10 +22,10 @@ interface Wynik {
 }
 
 const ETAPY = [
-  "Sprawdzam, czy domena wskazuje na serwer",
+  "Sprawdzamy, czy domena wskazuje na serwer",
   "Nawiązuję połączenie szyfrowane",
-  "Czytam certyfikat i sprawdzam, na kogo jest wystawiony",
-  "Sprawdzam, dokąd prowadzi wejście bez szyfrowania",
+  "Czytamy certyfikat i sprawdzamy, na kogo jest wystawiony",
+  "Sprawdzamy, dokąd prowadzi wejście bez szyfrowania",
 ];
 
 const MOTYW: Record<
@@ -112,7 +112,7 @@ export default function HttpsCheck() {
   const [wynik, setWynik] = useState<Wynik | null>(null);
   const [blad, setBlad] = useState("");
   const [email, setEmail] = useState("");
-  const [leadStan, setLeadStan] = useState<"idle" | "wysylam" | "ok" | "blad">(
+  const [leadStan, setLeadStan] = useState<"idle" | "wysylamy" | "ok" | "blad">(
     "idle",
   );
   const [leadBlad, setLeadBlad] = useState("");
@@ -170,7 +170,7 @@ export default function HttpsCheck() {
   async function zamowNaprawe(e: React.FormEvent) {
     e.preventDefault();
     if (!wynik) return;
-    setLeadStan("wysylam");
+    setLeadStan("wysylamy");
     setLeadBlad("");
     try {
       const res = await fetch("/api/contact", {
@@ -222,9 +222,9 @@ export default function HttpsCheck() {
         Sprawdź, co widzi Twój klient
       </h2>
       <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-        Wpisz adres swojej strony. W kilka sekund powiem, czy przeglądarka
+        Wpisz adres swojej strony. W kilka sekund powiemy, czy przeglądarka
         ostrzega przed nią odwiedzających i dlaczego. Bez rejestracji i bez
-        żadnych dostępów, sprawdzam tylko to, co Twój serwer i tak pokazuje
+        żadnych dostępów, sprawdzamy tylko to, co Twój serwer i tak pokazuje
         publicznie.
       </p>
       <Przyklady
@@ -251,7 +251,7 @@ export default function HttpsCheck() {
           disabled={stan === "ladowanie"}
           className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
         >
-          {stan === "ladowanie" ? "Sprawdzam..." : "Sprawdź stronę"}
+          {stan === "ladowanie" ? "Sprawdzamy..." : "Sprawdź stronę"}
         </button>
       </form>
 
@@ -363,13 +363,13 @@ export default function HttpsCheck() {
           <div className="mt-5 border-t border-gray-200/70 dark:border-gray-700/70 pt-4">
             <p className="text-sm text-gray-700 dark:text-gray-300">
               {wynik.werdykt === "ZIELONY"
-                ? "Nie muszę Ci nic naprawiać i nie będę tego udawał. Jeśli chcesz, mogę pilnować terminu ważności, żeby nie zaskoczył Cię w najgorszym momencie."
-                : "To da się naprawić zwykle w jeden dzień roboczy i bez zmiany hostingu. Zostaw adres, odeślę konkretny plan naprawy razem z tym rozpoznaniem."}
+                ? "Nie musimy Ci nic naprawiać i nie będziemy tego udawał. Jeśli chcesz, możemy pilnować terminu ważności, żeby nie zaskoczył Cię w najgorszym momencie."
+                : "To da się naprawić zwykle w jeden dzień roboczy i bez zmiany hostingu. Zostaw adres, odeślemy konkretny plan naprawy razem z tym rozpoznaniem."}
             </p>
 
             {leadStan === "ok" ? (
               <p className="mt-4 text-sm font-semibold text-emerald-700 dark:text-emerald-400">
-                Mam zgłoszenie razem z wynikiem tego sprawdzenia. Odpiszę na{" "}
+                Mamy zgłoszenie razem z wynikiem tego sprawdzenia. Odpiszemy na{" "}
                 {email}, zwykle tego samego dnia.
               </p>
             ) : (
@@ -380,7 +380,7 @@ export default function HttpsCheck() {
                 >
                   {wynik.werdykt === "ZIELONY"
                     ? "Podaj maila, jeśli chcesz, żebym pilnował terminu"
-                    : "Podaj maila, odeślę plan naprawy"}
+                    : "Podaj maila, odeślemy plan naprawy"}
                 </label>
                 <div className="mt-2 flex flex-col gap-3 sm:flex-row">
                   <input
@@ -394,10 +394,10 @@ export default function HttpsCheck() {
                   />
                   <button
                     type="submit"
-                    disabled={leadStan === "wysylam"}
+                    disabled={leadStan === "wysylamy"}
                     className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
                   >
-                    {leadStan === "wysylam" ? "Wysyłam..." : "Wyślij zgłoszenie"}
+                    {leadStan === "wysylamy" ? "Wysyłamy..." : "Wyślij zgłoszenie"}
                   </button>
                 </div>
                 {leadStan === "blad" && (
@@ -416,8 +416,8 @@ export default function HttpsCheck() {
       )}
 
       <p className="mt-4 text-xs text-gray-500 dark:text-gray-400">
-        Sprawdzam wyłącznie warstwę szyfrowania na publicznie dostępnym adresie.
-        Nie loguję się nigdzie i nie wykonuję żadnych testów obciążeniowych.
+        Sprawdzamy wyłącznie warstwę szyfrowania na publicznie dostępnym adresie.
+        Nie logujemy się nigdzie i nie wykonujemy żadnych testów obciążeniowych.
       </p>
     </div>
   );
