@@ -366,6 +366,19 @@ function tekstBezSkryptow(html: string): number {
 }
 
 /**
+ * Treść znacznika meta o podanej nazwie. Kolejność atrybutów w HTML jest
+ * dowolna, a część generatorów stron pisze content przed name, więc szukamy
+ * całego znacznika i dopiero w nim obu atrybutów.
+ */
+function metaTresc(html: string, nazwa: string): string | null {
+  for (const [znacznik] of html.matchAll(/<meta\b[^>]*>/gi)) {
+    if (!new RegExp(`\\bname=["']${nazwa}["']`, "i").test(znacznik)) continue;
+    return znacznik.match(/\bcontent=["']([^"']*)["']/i)?.[1]?.trim() ?? null;
+  }
+  return null;
+}
+
+/**
  * Pomiar wersji mobilnej.
  *
  * Nie mamy przeglądarki, więc nie udajemy, że rysujemy stronę na telefonie.
@@ -383,9 +396,7 @@ async function zmierzMobile(
   const dok = await pobierz(baza, CZAS_STRONY_MS, "GET", UA_TELEFON);
   const html = dok?.tekst ?? htmlDesktop;
 
-  const viewport =
-    html.match(/<meta[^>]+name=["']viewport["'][^>]+content=["']([^"']*)["']/i)?.[1]?.trim() ??
-    null;
+  const viewport = metaTresc(html, "viewport");
 
   // Arkusze pobieramy jeszcze raz, ale tylko te, które już znamy z pomiaru
   // głównego, i najwyżej cztery. Reguły @media i sztywne szerokości mówią,
@@ -573,9 +584,7 @@ export async function zmierz(domenaWejscie: string): Promise<Pomiar> {
 
   const html = dok.tekst;
   wynik.tytul = html.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1]?.trim().slice(0, 300) ?? null;
-  wynik.opisMeta =
-    html.match(/<meta[^>]+name=["']description["'][^>]+content=["']([^"']*)["']/i)?.[1]?.trim() ??
-    null;
+  wynik.opisMeta = metaTresc(html, "description");
   wynik.h1 = [...html.matchAll(/<h1[^>]*>([\s\S]*?)<\/h1>/gi)]
     .map((m) => m[1].replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim())
     .filter(Boolean)
