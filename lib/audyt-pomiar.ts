@@ -274,7 +274,8 @@ function zasobyZHtml(html: string, baza: string): { adres: string; rodzaj: Zasob
     }
   };
   for (const m of html.matchAll(/<script[^>]+src=["']([^"']+)["']/gi)) dodaj(m[1], "skrypt");
-  for (const m of html.matchAll(/<link[^>]+rel=["']stylesheet["'][^>]*>/gi))
+  // rel bywa listą, np. „preload stylesheet” w Joomli z JCH Optimize.
+  for (const m of html.matchAll(/<link[^>]+rel=["'][^"']*\bstylesheet\b[^"']*["'][^>]*>/gi))
     dodaj(m[0].match(/href=["']([^"']+)["']/i)?.[1], "styl");
   for (const m of html.matchAll(/<img[^>]+src=["']([^"']+)["']/gi)) dodaj(m[1], "obraz");
   const widziane = new Set<string>();
@@ -379,6 +380,28 @@ function metaTresc(html: string, nazwa: string): string | null {
 }
 
 /**
+ * Styl bez bloków @media. Szerokość 970 px wewnątrz reguły dla ekranów od
+ * 992 px nie dotyczy telefonu, a tak ustawia kontener każdy Bootstrap.
+ */
+function bezBlokowMedia(css: string): string {
+  let wynik = "";
+  let i = 0;
+  for (const m of css.matchAll(/@media[^{]*\{/gi)) {
+    if (m.index < i) continue;
+    wynik += css.slice(i, m.index);
+    let glebokosc = 1;
+    let j = m.index + m[0].length;
+    while (j < css.length && glebokosc > 0) {
+      if (css[j] === "{") glebokosc++;
+      else if (css[j] === "}") glebokosc--;
+      j++;
+    }
+    i = j;
+  }
+  return wynik + css.slice(i);
+}
+
+/**
  * Pomiar wersji mobilnej.
  *
  * Nie mamy przeglądarki, więc nie udajemy, że rysujemy stronę na telefonie.
@@ -410,9 +433,15 @@ async function zmierzMobile(
     ...[...html.matchAll(/<style[^>]*>([\s\S]*?)<\/style>/gi)].map((m) => m[1]),
   ].join("\n");
 
-  const regulMedia = (css.match(/@media[^{]*\(\s*(max|min)-width/gi) ?? []).length;
+  // Arkusz podpięty z media="(min-width: …)" to też przestawienie układu,
+  // tyle że zapisane w HTML, a nie w samym arkuszu.
+  const regulMedia =
+    (css.match(/@media[^{]*\(\s*(max|min)-(device-)?width/gi) ?? []).length +
+    [...html.matchAll(/<link\b[^>]*>/gi)].filter((m) =>
+      /\bmedia=["'][^"']*\(\s*(max|min)-(device-)?width/i.test(m[0]),
+    ).length;
   const stalychSzerokosci = (
-    css.match(/(?:^|[;{\s])(?:min-)?width\s*:\s*(\d{3,})px/gi) ?? []
+    bezBlokowMedia(css).match(/(?:^|[;{\s])(?:min-)?width\s*:\s*(\d{3,})px/gi) ?? []
   ).filter((m) => Number(m.match(/(\d{3,})px/)?.[1] ?? 0) >= 600).length;
 
   const tagiObrazow = [...html.matchAll(/<img[^>]*>/gi)].map((m) => m[0]);
