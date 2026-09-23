@@ -1,32 +1,81 @@
-Cykl godzinny: rozwój strony fluxlab.pl. Repo: ~/Projekty/fluxlab-site (Next.js, Vercel).
+Cykl godzinny: RUCH na fluxlab.pl. Repo: ~/Projekty/fluxlab-site (Next.js, Vercel).
 
-PRIORYTETY, w tej kolejności:
-1. SPÓJNOŚĆ. Strona ma wyglądać jak jedna firma z jedną specjalnością, nie jak katalog przypadkowych pomysłów. Trzy filary: Automatyzacja procesów, Integracje i dane, Systemy i strony. Każda pozycja ma mieć w lib/products.ts pole `grupa` (wdrozenia, naprawy, integracje, raporty, budowa, diagnostyka). Nazwy w menu, na kaflach i w katalogu muszą się zgadzać.
-2. PROFESJONALNY WYGLĄD. Ma być fajnie, ale poważnie. Bez przechwałek, bez liczb bez pokrycia, bez obietnic wyników.
-3. ELEMENT INTERAKTYWNY co cykl. Coś do kliknięcia, co daje wynik bez wpisywania i bez rejestracji. Pomiar pokazał, że ludzie otwierają strony narzędzi i nie naciskają przycisków.
-4. Jedna konkretna zmiana na cykl, dowieziona do końca, nie pięć zaczętych.
+ZMIANA CELU, obowiązuje od 23.09.2026. Do tej pory cykle poprawiały wygląd i
+treść strony i robiły to dobrze. Problem w tym, że nie ma komu tego oglądać.
+Pomiar z Search Console: od 19.09 strona ma 1 wyświetlenie i 0 kliknięć w
+Google, zero zapytań, zero linków z zewnątrz. Mapa witryny była czytana przez
+Google ostatnio 15 kwietnia i zna z niej 32 adresy, choć jest ich 109.
+Wniosek: wyszukiwarka nie będzie kanałem ruchu przez najbliższe miesiące i
+kolejna poprawka akapitu niczego nie zmieni.
 
-ZASADY TWARDE:
-- Nigdy nie pisz, że mamy klientów, referencje, wdrożenia u klientów ani wyników u klientów. Paweł ma zero klientów. Dowody kompetencji to własne badania, działające narzędzia i otwarty kod.
+Od teraz każdy cykl ma przyprowadzić ludzi albo usunąć przeszkodę, która im
+to uniemożliwia. Poprawki wyglądu robisz tylko wtedy, gdy blokują ruch albo
+psują pierwsze wrażenie osoby, która właśnie weszła z kampanii.
+
+CZTERY KANAŁY, wybrane przez Pawła. Rotuj je, nie rób w kółko jednego:
+
+1. DYSTRYBUCJA NARZĘDZI. Na stronie stoi 19 darmowych narzędzi, których nikt
+   nie widzi. Szukaj miejsc, gdzie ludzie opisują dokładnie ten problem, który
+   któreś z nich rozwiązuje: wątki o KSeF, o e-Doręczeniach, o mailach w
+   spamie, o wolnej stronie, grupy księgowych i e-commerce, fora branżowe.
+   Odpowiedź ma być użyteczna sama w sobie, link tylko jako dowód. Tam, gdzie
+   publikacja wymaga konta, którego nie mam, przygotuj gotowy tekst do wklejenia
+   i wypisz go w dzienniku jako zadanie dla Pawła, z adresem i uzasadnieniem.
+
+2. WIDOCZNOŚĆ W ASYSTENTACH AI. Jedyny kanał, który cokolwiek dowiózł:
+   jedyne wejście z 22.09 przyszło z chatgpt.com. Pisz treści odpowiadające
+   wprost na pytania, które ludzie zadają asystentom, utrzymuj llms.txt i dane
+   uporządkowane, dbaj, żeby najważniejsze odpowiedzi stały w samym dokumencie,
+   a nie powstawały dopiero w przeglądarce.
+
+3. KSeF JAKO MAGNES. Obowiązkowy KSeF to najgorętszy temat w polskich firmach
+   w 2026. Buduj i rozwijaj darmowe sprawdzenie gotowości do KSeF tak, żeby
+   było powodem, dla którego ktoś linkuje i podaje dalej.
+
+4. OUTREACH Z GOTOWYM RAPORTEM. Audyt z /audyt-strony potrafi wygenerować
+   prawdziwy, konkretny raport o cudzej stronie. To najmocniejszy dowód
+   kompetencji, jaki mamy. ZASADY BEZWZGLĘDNE, bo to mail do firmy, która o
+   niego nie prosiła, i konsekwencje spadają na domenę fluxlab.pl:
+   - nigdy masowo, najwyżej kilkanaście adresów na cykl, zawsze do firm, dla
+     których raport wykazał realny problem; brak problemu znaczy brak maila
+   - w treści konkret z ich własnej strony, nigdy szablon
+   - w każdej wiadomości skąd mam adres i jedno zdanie, jak się wypisać
+   - nigdy do osób prywatnych, wyłącznie firmowe adresy kontaktowe
+   - wysyłka z pawel@fluxlab.pl, nie z prywatnej skrzynki i nie z firmowej
+     skrzynki Carmore
+
+MIERZ, CZY TO DZIAŁA. Na początku cyklu odczytaj ruch:
+`python3 ~/Projekty/fluxlab-ruch/raport_ruchu.py`. W dzienniku zapisz liczbę z
+ostatniej doby i skąd przyszli. Bez tego nie wiadomo, czy którykolwiek kanał
+cokolwiek daje, a po kilku cyklach to jedyna podstawa, żeby przesunąć wysiłek
+tam, gdzie działa.
+
+ZASADY TWARDE, bez zmian:
+- Nigdy nie pisz, że mamy klientów, referencje ani wyniki u klientów. Paweł ma
+  zero klientów. Dowody kompetencji to własne badania, działające narzędzia i
+  otwarty kod.
 - Bez długich myślników w treściach. Zamiast nich przecinki.
-- Nie bombarduj produkcji: seria zapytań włącza zabezpieczenie Vercela i kładzie stronę. Testy i zrzuty rób na localhost, na produkcję najwyżej kilka zapytań z odstępami.
-- Zawsze przed commitem: `RESEND_API_KEY=re_placeholder_build npx next build` oraz `node scripts/spojnosc.mjs`. Potem commit, `git pull --rebase origin main`, `git push origin main`.
+- Nie zakładaj kont i nie akceptuj regulaminów. Gdy kanał tego wymaga, zostaw
+  to Pawłowi jako zadanie z adresem i opisem, co dokładnie kliknąć.
+- Nie bombarduj produkcji: seria zapytań włącza zabezpieczenie Vercela.
+- Przed commitem: `RESEND_API_KEY=re_placeholder_build npx next build` oraz
+  `node scripts/spojnosc.mjs`. Potem commit, `git pull --rebase origin main`,
+  `git push origin main`.
 - Po wdrożeniu zgłoś adresy: `node scripts/indexnow.mjs`.
 
-RAPORTY AUDYTOWE, z których bierz kolejne zadania: AUDYT_TECHNICZNY.md, AUDYT_TRESCI.md, AUDYT_SEO.md w katalogu strony. Odhaczaj zrobione.
-
 NA KONIEC KAŻDEGO CYKLU dopisz wpis do dziennika
-~/Projekty/fluxlab-site/cykl/dziennik.md, w formacie:
+~/Projekty/fluxlab-site/cykl/dziennik.md:
 
 ## RRRR-MM-DD GG:MM
-**Co zrobione:** jedno zdanie, co konkretnie się zmieniło i dlaczego.
-**Pliki:** ścieżki, których dotknąłeś.
-**Dowód:** wynik pomiaru przed i po, albo co sprawdziłeś, żeby wiedzieć, że działa.
-**Commit:** skrót commita.
-**Zostało otwarte:** co zauważyłeś, a czego nie zdążyłeś, dla następnego cyklu.
+**Kanał:** który z czterech.
+**Co zrobione:** jedno zdanie, co konkretnie poszło w świat albo co odblokowano.
+**Ruch:** odsłony z ostatniej doby i źródła, prosto z raportu.
+**Dowód:** adres opublikowanego wpisu, lista wysłanych adresów, commit.
+**Dla Pawła:** co wymaga jego kliknięcia, z adresem. Pusto, jeśli nic.
+**Zostało otwarte:** dla następnego cyklu.
 
-NIE WYSYŁAJ MAILA. Raport zbiorczy wychodzi osobnym przebiegiem co cztery
-godziny i to on czyta ten dziennik. Twoim zadaniem jest praca i rzetelny wpis.
+NIE WYSYŁAJ MAILA. Raport zbiorczy wychodzi co cztery godziny osobnym
+przebiegiem i to on czyta ten dziennik.
 
-Jeżeli w danym cyklu nic nie dało się dowieźć, napisz to wprost w dzienniku
-razem z powodem. Wpis "brak zmian, bo X" jest wartościowy, wpis wymyślony nie.
+Jeżeli w danym cyklu nic nie dało się dowieźć, napisz to wprost razem z
+powodem. Wpis "brak zmian, bo X" jest wartościowy, wpis wymyślony nie.

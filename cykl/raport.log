@@ -18,3 +18,95 @@ Stan na teraz:
 | Wysyłka | odrzucona przez Zoho (limit), ponawianie w tle |
 | `<!-- WYSLANO -->` w dzienniku | **nie dopisane**, dopiszę dopiero po potwierdzonej wysyłce |
 === 2026-09-22 07:06:32 koniec, kod 0
+=== 2026-09-22 11:03:05 start raportu
+Raport wysłany i potwierdzony.
+
+| Krok | Stan |
+|---|---|
+| Dziennik od ostatniego `<!-- WYSLANO -->` | 7 wpisów (04:05, 04:58, 05:58, 06:53, 08:05, 09:02, 11:05) |
+| `git log --since="5 hours ago"` | 10 commitów |
+| Raport ruchu | odczytany, wklejony w całości z zastrzeżeniem o 21.09 godz. 16:00 |
+| Trzy pliki audytowe | odczytane, pozycje policzone |
+| Weryfikacja na produkcji | `/kalkulator-leadow` 301 na artykuł, `/koszt-recznej-obslugi-leadow`, `/ksef-integracja`, `/automatyzacja-dla-biur-rachunkowych` 200, cztery odnośniki branżowe w źródle filaru, nowy `<title>` KSeF |
+| Zrzut ekranu | zrobiony dziś o 11:04 na żywej stronie, oba kliknięcia wybrane, załączony jako `cid:ksef` |
+| Treść | przeczytana w wersji tekstowej, trzy poprawki naniesione (bezsensowne zdanie o „dwóch pełnych dobach powyżej tygodnia", nagłówek sekcji 6, powtórzenie) |
+| Wysyłka | 11:06:44, potwierdzona w folderze wysłanych Zoho |
+| Znacznik w dzienniku | dopisany: `<!-- WYSLANO 2026-09-22 11:06 -->` |
+
+Dwie rzeczy warte Twojej uwagi poza samym raportem:
+
+**Raport o 07:05 nigdy nie wyszedł.** Był w pełni napisany, ze zrobionym zrzutem ekranu, ale Zoho odrzucił wysyłkę z powodu limitu, a ponawianie puszczone w tle nie zadziałało. Sprawdziłem folder wysłanych: między 04:00 a 11:05 nie było tam żadnego raportu ze strony. Ponieważ znacznik wysłania dopisuje się dopiero po potwierdzeniu, mechanizm zadziałał poprawnie i nic nie przepadło, ale przez cztery godziny nie miałeś żadnej informacji. Ten mail obejmuje siedem cykli i opisuje to w pierwszej sekcji.
+
+**Wisi proces do ubicia.** `python3 shot.py https://fluxlab.pl/` (PID 1576461) działa od 19 godzin 27 minut, uruchomiony przez martwą sesję z 21 września. Nie ubiłem go, bo to nie mój proces. Daj znać, czy mam go zdjąć.
+=== 2026-09-22 11:07:05 koniec, kod 0
+=== 2026-09-22 15:03:30 start raportu
+Raport wysłany i potwierdzony.
+
+**Co poszło do skrzynki**
+
+Temat: `FluxLab strona, 15:05, rachunek kosztu wprost na stronie głównej`, odbiorca `iwanekpawel55@gmail.com`, msgid `<179008250050...@fluxlab.pl>`, kopia potwierdzona w folderze wysłanych Zoho o 15:08. Do dziennika dopisany znacznik `<!-- WYSLANO 2026-09-22 15:08 -->`, commit `af4de87`.
+
+**Zakres**: cztery cykle od ostatniego znacznika (11:06), commity `d66ce91`, `2d972a9`, `4327f4e`, `2af9346` + `2b25d08`. Uwaga: poprzedni znacznik miał format `<!-- WYSLANO 2026-09-22 11:06 -->`, a w pliku są też dwa starsze, w tym jeden bez daty; czytanie od dosłownego `<!-- WYSLANO -->` dałoby jedenaście cykli zamiast czterech.
+
+**Weryfikacja przed wysyłką**, na żywo na produkcji: oba przekierowania 301 działają, blok na stronie głównej i sprawdzenie spięcia są w źródle, strona główna ma jeden preload fontu i zero wystąpień Geist Mono. Zrzut do załącznika zrobiony dzisiaj z produkcji, po kliknięciu „Agencja B2B”, pokazuje 373 zł / 2880 zł / 39 040 zł, czyli dokładnie kwoty z dziennika.
+
+**Trzy rzeczy, które sam znalazłem przy pisaniu i które trafiły do sekcji o niepowodzeniach:**
+
+| Znalezione | Skutek |
+|---|---|
+| Raport ruchu liczy tylko zdarzenia z przedrostkiem `uruchomiono` | `audyt_uruchomiony` (1 w ostatniej dobie) nie jest liczony, stąd „0”. Nowe `spiecie_zrodlo_*` / `spiecie_cel_*` z ostatniego cyklu też nigdy nie ruszą licznika, wbrew temu, co zapisano w dzienniku |
+| `AUDYT_TECHNICZNY.md` poz. 14 nadal „do zrobienia” | Krój monospace zdjęty o 12:46 i potwierdzony na produkcji, tabela się rozjechała |
+| `toLocaleString("pl-PL")` nie grupuje liczb czterocyfrowych | W jednym rzędzie stoi „2880 zł” obok „39 040 zł” |
+
+Dodatkowo: wpis w dzienniku o bloku na stronie głównej ma w nagłówku 12:05, a commit powstał o 13:48. W raporcie odnotowane, w dzienniku nie poprawiałem.
+
+Proces `shot.py` (PID 1576461) wisi od ponad 23 godzin z martwej sesji z 21 września. Nie ubijałem, w mailu jest o to pytanie do Ciebie.
+=== 2026-09-22 15:09:35 koniec, kod 0
+=== 2026-09-22 19:03:30 start raportu
+You've hit your weekly limit · resets 9am (Europe/Warsaw)
+=== 2026-09-22 19:03:33 koniec, kod 0
+=== 2026-09-22 23:03:05 start raportu
+You've hit your weekly limit · resets 9am (Europe/Warsaw)
+=== 2026-09-22 23:03:07 koniec, kod 0
+=== 2026-09-23 09:13:47 start raportu
+=== 2026-09-23 11:03:18 start raportu
+Raport o 11:08 został wysłany i dotarł. Mail jest w skrzynce odbiorczej iwanekpawel55@gmail.com, waży 242 KB razem ze zrzutem ekranu. Na końcu `cykl/dziennik.md` dopisałem znacznik `<!-- WYSLANO 2026-09-23 11:08 -->`.
+
+**Co opisuje mail:**
+- **Trzy zmiany, każda we własnej sekcji:**
+  - Nad każdym darmowym narzędziem stoi teraz jego nazwa z kafelka (`ea14891`). Tej zmiany nie było w raporcie z 09:19, więc weszła do tego.
+  - W kalkulatorze podatkowym napisy mają już wystarczający kontrast (`ef3706c`).
+  - Kalkulator kosztu automatyzacji ma trzy gotowe układy, które dają wynik jednym kliknięciem (`b6f7c6f`).
+- **Zrzut ekranu:** zrobiłem go na produkcji, po kliknięciu układu „Leady z kilku źródeł”. Wyszło 7 992 zł rocznie, czyli tyle samo, co podaje dziennik.
+- **Ruch na stronie:** 36 odsłon i 15 osób w ciągu doby, ale 35 z tych odsłon przypada na wczoraj. Od 16:06 do 10:59 nie wszedł nikt. O 10:59 było pierwsze w historii licznika wejście z ChatGPT. Narzędzi nikt nie uruchomił, tak samo jak w dwóch poprzednich raportach. Sprawdziłem bazę bezpośrednio: w ostatniej dobie nie ma żadnego zdarzenia, więc zero nie jest błędem liczenia.
+- **Audyty:** techniczny ma 22 z 27 pozycji zamkniętych, treści 18 zamkniętych, SEO bez zmian.
+
+**Dwie rzeczy, które znalazłem przy przygotowaniu raportu:**
+- **Menu w nagłówku nachodzi na przełącznik motywu i przycisk „Bezpłatna diagnoza”** przy szerokości ekranu od 768 do około 1200 px. Zmierzyłem na produkcji: przy 1100 px nachodzi o 53 px, przy 800 px o 191 px. Nie poprawiałem tego, w mailu jest to pierwsza pozycja na następny cykl.
+- **Zalecenia z poprzedniego raportu nie zostały zrobione:** nazwy filarów w okruszkach nawigacyjnych i pierwszy link z innej strony do fluxlab.pl. Żaden z trzech cykli ich nie wziął i mail mówi to wprost.
+
+**Wymaga Twojej decyzji:** proces 1576461 (`shot.py`, zrzut ekranu z sesji z 21 września) wisi od 43 godzin i nic nie robi. Mogę go zakończyć, jeśli się zgodzisz.
+
+Znacznika w dzienniku nie commitowałem, bo znacznik z 09:19 też nie był w commicie.
+=== 2026-09-23 11:08:36 koniec, kod 0
+=== 2026-09-23 15:03:18 start raportu
+Raport poszedł o 15:06 z pawel@fluxlab.pl na iwanekpawel55@gmail.com (Zoho zwróciło msgid `<179016880026…@fluxlab.pl>`). Temat: „FluxLab strona, 15:06, koniec obietnic czasu zwrotu, rachunek CRM na klik”. Na końcu dziennika dopisałem `<!-- WYSLANO 2026-09-23 15:06 -->`.
+
+**Co jest w mailu:**
+- **Cztery osobne sekcje o zmianach:**
+  - 11:50: kalkulator kosztu automatyzacji liczy teraz od najtańszego progu cennika Zapiera.
+  - 12:50: cztery strony branżowe nie obiecują już wyniku z góry.
+  - 13:49: sekcja „Koszt problemu” na `/crm-jako-system-pracy` to teraz rachunek na jedno kliknięcie.
+  - 14:45: kalkulator decyzji i trzy strony nie podają już stałego czasu zwrotu.
+- **Zrzut w załączniku cid:** rachunek CRM po kliknięciu „5 handlowców”, zrobiony dziś na produkcji. Liczby się zgadzają: 75 h, 22 h, 7732 zł.
+- **Ruch:** od 11:08 nikt nie wszedł na stronę. W ostatniej dobie było 6 odsłon od 2 osób. Narzędzi nikt nie uruchomił od około 37 godzin, ostatnie uruchomienie było 22.09 o 02:10. Mail zawiera też podział na przeglądarki i zastrzeżenie o danych sprzed 21.09 godz. 16:00.
+- **Audyty:**
+  - techniczny: 23 z 28 pozycji zamkniętych,
+  - treści: 21 zamkniętych, o 3 więcej niż w poprzednim raporcie,
+  - SEO: bez zmian.
+- **Co dalej:** najpierw menu w nagłówku, potem okruszki nawigacyjne, a jako główną pracę pierwszy link z zewnątrz.
+
+**Na co warto zwrócić uwagę:**
+- **Cykl z 14:43 nie zapisał wpisu w dzienniku.** Zrobił zmianę z 14:45 i wdrożył ją, ale w logu przebiegu nie ma linii o zakończeniu. Sprawdziłem tę zmianę sam na produkcji i kontrolą spójności (wynik: brak rozjazdów). Nie wiem natomiast, czy nowe werdykty kalkulatora wyświetlają się poprawnie w przeglądarce, i w mailu jest to napisane wprost. Ta zmiana stoi w dzienniku przed nowym znacznikiem, więc następny raport jej nie pokaże, ale ten już ją opisał.
+- **Proces `shot.py` (PID 1576461) wisi już 47 godzin.** Nie ruszałem go, czekam na Twoją zgodę.
+=== 2026-09-23 15:06:53 koniec, kod 0

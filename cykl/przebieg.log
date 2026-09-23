@@ -394,3 +394,120 @@ Dwie rzeczy warte Twojej decyzji, obie zapisane w dzienniku:
 Failed to authenticate. API Error: Application Control Violation
 === 2026-09-22 09:43:07 koniec, kod 0
 === 2026-09-22 10:43:15 start
+Cykl zamknięty.
+
+**Co dowiozłem:** scalenie grupy kanibalizacji „Koszt ręcznej obsługi" z tabeli w `AUDYT_SEO.md`. Kalkulator kosztu leadów nie jest już osobnym adresem, tylko pierwszą zakładką artykułu `/koszt-recznej-obslugi-leadow`; `/kalkulator-leadow` przekierowany 301, osiem linków wewnętrznych przepisanych wprost na cel, więc bez łańcuchów.
+
+| | przed | po |
+|---|---|---|
+| adresy na to samo zapytanie | 2 | 1 |
+| linki wewnętrzne do artykułu | 0 (osierocony) | 8 |
+| wystąpienia `/kalkulator-leadow` w kodzie | 12 | 0 |
+| adresów w mapie strony | 111 | 110 |
+
+Element interaktywny: strona otwiera się domyślnie na kalkulatorze, więc narzędzie jest widoczne od razu, a nie za kolejnym kliknięciem. `Tabs` dostał kotwice, dzięki czemu link `#kalkulator` otwiera konkretną zakładkę. Sprawdzone przeglądarką bezgłową, nie samym kodem: domyślna zakładka „Kalkulator" z sześcioma polami, `#rachunek` otwiera „Rachunek", CTA wraca na kalkulator, kliknięcie gotowego układu danych zmienia wynik.
+
+Treść nie wyparowała: metoda liczenia i pytania ze starej strony przeniesione do artykułu, schema `WebApplication` pod nowym adresem. Przy okazji zdjąłem plakietkę „Najpopularniejsze" z katalogu narzędzi, bo pomiar z poprzedniego cyklu nie daje na nią pokrycia.
+
+Commit `e5eb4cc`, produkcja potwierdzona (301 działa), IndexNow: Yandex i Naver przyjęły, wspólny punkt nadal 403. Wpis w `cykl/dziennik.md` dopisany.
+=== 2026-09-22 10:48:22 koniec, kod 0
+=== 2026-09-22 11:43:05 start
+=== 2026-09-22 12:43:02 start
+=== 2026-09-22 13:43:07 start
+Cykl domknięty.
+
+## Co zrobiłem
+
+Wziąłem zadanie z pomiaru, nie z listy: raport ruchu mówi **20 z 50 odsłon na dobę trafia na stronę główną, a uruchomień narzędzi jest 0**. Strona główna nie miała ani jednego elementu dającego wynik, same odnośniki. Każda droga do liczby prowadziła przez przejście na inną stronę i dopiero tam naciśnięcie przycisku.
+
+Nowy blok „Ile kosztuje ręczna obsługa zapytań" na `/`: trzy rodzaje firmy do naciśnięcia, kwota miesięczna i roczna liczy się na miejscu, bez wpisywania i bez rejestracji. Pod kwotą wypisany komplet liczb, z których powstała, z zastrzeżeniem że to typowe rzędy wielkości, a nie dane czyjejkolwiek firmy. Pod tym odnośnik do pełnego kalkulatora.
+
+Przy okazji spójność: wzór i trzy układki danych wyszły z `components/KalkulatorLeadow.tsx` do `lib/koszt-leadow.ts`. Strona główna i `/koszt-recznej-obslugi-leadow` liczą teraz z jednego źródła, więc nie mogą podać dwóch różnych kwot za to samo.
+
+## Dowód
+
+| Sprawdzenie | Wynik |
+|---|---|
+| Rachunek ręcznie | 40·8/60·70 = 373 zł, 40·0,25·0,08·0,3·12 000 = 2 880 zł, zgadza się z ekranem |
+| Ta sama układka w dwóch miejscach | „Sklep internetowy": 900 / 2 592 / 41 904 zł na głównej i w pełnym kalkulatorze, identycznie |
+| `next build` | bez błędów |
+| `scripts/spojnosc.mjs` | brak rozjazdów |
+| `scripts/kontrast.mjs` | 0 zgłoszeń w jasnym, 0 w ciemnym (poprawiłem własne `white/45` z 4,47:1) |
+| Produkcja | 200, kliknięcie „Firma usługowa" na żywo: 720 / 2 646 / 40 392 zł |
+| `scripts/indexnow.mjs` | 109 adresów, przyjęły 2 z 3 punktów |
+
+Commity `4327f4e` i `98dee96`, wypchnięte.
+
+## Dwie rzeczy dla Ciebie
+
+**Pierwsze kliknięcie na produkcji nie trafiło.** Kliknąłem zaraz po `domcontentloaded` i nic się nie stało, bo hydracja jeszcze nie skończyła. Drugie podejście, z czterosekundowym odczekaniem, zadziałało. Skoro to jest teraz jedyne narzędzie na najczęściej otwieranej stronie, w następnym cyklu zmierzę, po ilu sekundach strona główna faktycznie staje się klikalna.
+
+**`AUDYT_TRESCI.md` jest w `.gitignore`**, więc odhaczenie, które dopisałem, siedzi tylko lokalnie i nie weszło do commita. To ten sam problem, który zgłosił poprzedni cykl, ale warto go wreszcie rozstrzygnąć: albo audyty wchodzą do repo, albo odhaczenia przepadną przy zmianie maszyny.
+
+Nadal wisi `python3 shot.py https://fluxlab.pl/` (PID 1576461) z martwej sesji z 21 września. Nie ubijam cudzego procesu bez Twojej zgody, powiedz słowo i go zdejmę.
+=== 2026-09-22 13:52:32 koniec, kod 0
+=== 2026-09-22 14:43:05 start
+Cykl zamknięty i wdrożony.
+
+**Co zrobiłem:** filar „Integracje i dane” (`/scraping-danych`) dostał sprawdzenie „Czy da się to spiąć”. Pierwsze kliknięcie (gdzie leżą dane, 7 źródeł) już daje wynik: jak się je wyciąga, co przy takim źródle psuje spięcie, co przygotować. Drugie (dokąd mają trafiać, 4 cele) dokłada werdykt liczony z najsłabszego ogniwa plus pozycję katalogu z ceną braną wprost z `lib/products.ts`. Powód był spójnościowy: z trzech filarów tylko „Automatyzacja procesów” miała cokolwiek do kliknięcia.
+
+**Pomiary:**
+
+| Co | Przed | Po |
+| --- | --- | --- |
+| Kombinacje źródło/cel poprawne | brak narzędzia | 28 z 28 |
+| Linki do `/automatyzacja-raportowania` z tej strony | 0 | 1 |
+| Linki do `/integracja-crm-z-erp` i `/ksef-integracja` | po 1 | po 2 |
+| Kontrast (2 motywy, 10 stanów po kliknięciu) | — | 0 zgłoszeń poniżej 4,5 |
+| Szerokość przy 390 px | — | 390 px, bez przewijania w bok |
+
+Przy okazji zamknięty punkt z poprzedniego cyklu: blok rachunku na stronie głównej reaguje na kliknięcie po 103 ms (mediana z trzech przebiegów), przy czterokrotnie spowolnionym procesorze po 368 ms, więc nieudane pierwsze kliknięcie na produkcji brało się z sieci i z trwającego wdrożenia, nie z kodu.
+
+Build i `scripts/spojnosc.mjs` czyste, commity `2af9346`, `2b25d08`, `2c7d9f3`, produkcja potwierdzona (jedno kliknięcie na żywo dało werdykt odmowny dla programu bez API), IndexNow przyjęty przez Yandex i Naver.
+
+**Do następnego cyklu:** trzeci filar `/strony-www` jest teraz jedynym bez elementu interaktywnego; `lib/daty-stron.json` przepisał się hurtowo (107 wpisów, prawdziwe daty z gita, ale mapa strony pokaże jednodniową zmianę całego serwisu); warto dopisać do `spojnosc.mjs` kontrolę, że każdy adres z `lib/spiecie-danych.ts` istnieje w katalogu.
+=== 2026-09-22 14:58:12 koniec, kod 0
+=== 2026-09-22 15:43:25 start
+Deploy poll is running in the background (checks every 45 s, up to ~22 min). Meanwhile, a summary of what's done and committed:
+
+**Zmiana:** trzeci filar, „Systemy i strony" pod `/strony-www`, dostał element interaktywny, przez co był jedynym filarem bez niczego do naciśnięcia.
+
+- `lib/stan-strony.ts` (255 linii) — sześć stanów wyjściowych („strona firmowa na zamówienie", „kreator", „WordPress sprzed lat", „sklep", „nie ma strony", „zarządza obca firma") i sześć rodzajów zmiany. Budowa 1:1 jak `lib/spiecie-danych.ts` z filaru danych.
+- `components/CoZeStrona.tsx` (251 linii) — pierwsze kliknięcie już daje wynik, drugie dokłada werdykt i pozycję z katalogu z ceną.
+- Werdykt liczony z trudniejszej strony, nie ze średniej, więc narzędzie potrafi powiedzieć „poprawka tego nie załatwi" i odesłać do darmowego audytu zamiast sprzedawać przebudowę.
+- `scripts/spojnosc.mjs` — nowa reguła 1e pilnuje, że każdy adres wskazywany przez sprawdzenia filarów istnieje w katalogu (to była otwarta pozycja z poprzedniego cyklu).
+
+**Sprawdzone na lokalnym buildzie produkcyjnym:** 12 przycisków w źródle HTML bez klikania, sześć kombinacji przeklikanych w przeglądarce, każda oddała spójny werdykt i właściwą pozycję z katalogu (`od 99 zł`, `0 zł`, `od 490 zł`, `od 299 zł`). Kontrast: 0 zgłoszeń na sześciu stanach po kliknięciu, w obu motywach. Przy 390 px dokument ma 390 px. Build i `spojnosc.mjs` czyste. Negatywny test reguły 1e: podmieniony adres wywala kontrolę z kodem 1.
+
+**Commit:** `b88c207`, wypchnięty na `main`.
+
+Czekam na wdrożenie Vercela, potem zgłoszę adres przez `indexnow.mjs` i dopiszę wpis do dziennika.
+=== 2026-09-22 15:49:29 koniec, kod 0
+=== 2026-09-22 16:43:20 start
+=== 2026-09-22 17:43:05 start
+You've hit your weekly limit · resets 9am (Europe/Warsaw)
+=== 2026-09-22 17:43:07 koniec, kod 0
+=== 2026-09-22 18:43:05 start
+You've hit your weekly limit · resets 9am (Europe/Warsaw)
+=== 2026-09-22 18:43:09 koniec, kod 0
+=== 2026-09-22 19:43:05 start
+You've hit your weekly limit · resets 9am (Europe/Warsaw)
+=== 2026-09-22 19:43:07 koniec, kod 0
+=== 2026-09-22 20:43:05 start
+You've hit your weekly limit · resets 9am (Europe/Warsaw)
+=== 2026-09-22 20:43:07 koniec, kod 0
+=== 2026-09-22 21:43:30 start
+You've hit your weekly limit · resets 9am (Europe/Warsaw)
+=== 2026-09-22 21:43:31 koniec, kod 0
+=== 2026-09-22 22:43:05 start
+You've hit your weekly limit · resets 9am (Europe/Warsaw)
+=== 2026-09-22 22:43:07 koniec, kod 0
+=== 2026-09-23 09:13:47 start
+=== 2026-09-23 09:43:00 start
+=== 2026-09-23 10:43:18 start
+=== 2026-09-23 11:43:30 start
+=== 2026-09-23 12:43:30 start
+=== 2026-09-23 13:43:03 start
+=== 2026-09-23 14:43:24 start
+=== 2026-09-23 15:43:06 start
+=== 2026-09-23 16:43:03 start
