@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ProductLanding from "@/components/ProductLanding";
 import KsefCheck from "@/components/KsefCheck";
+import ListaKsef2027 from "@/components/ListaKsef2027";
 import { PODATNICY } from "@/lib/terminy-ksef";
 
 export const metadata: Metadata = {
@@ -29,7 +30,12 @@ export default function KsefIntegracja() {
   return (
     <ProductLanding
       slug="ksef-integracja"
-      tool={<KsefCheck />}
+      tool={
+        <>
+          <KsefCheck />
+          <ListaKsef2027 />
+        </>
+      }
       breadcrumb="Integracja z KSeF"
       eyebrow="KSeF"
       h1="Integracja z KSeF"
@@ -38,7 +44,7 @@ export default function KsefIntegracja() {
       ctaNote="Dwa kliknięcia, bez wpisywania czegokolwiek"
       checks={[
         {
-          title: "Napisaliśmy klienta tego API i oddałem go za darmo",
+          title: "Napisaliśmy klienta tego API i oddaliśmy go za darmo",
           desc: "Kod leży publicznie pod adresem github.com/rodorn/fluxlab-ksef-integracja: klient API v2 z uwierzytelnianiem tokenem, obsługą sesji, wysyłką faktury i pobraniem UPO, budowanie XML w schemacie FA(3) z walidacją struktury i numeru NIP, oraz gotowy przykład importu faktur kosztowych do pliku CSV. Repozytorium działa w trybie demo, bez konta w KSeF, więc można je uruchomić u siebie w kilka minut i ocenić przed rozmową z kimkolwiek.",
         },
         {
@@ -102,6 +108,10 @@ export default function KsefIntegracja() {
         {
           q: "Od kiedy KSeF jest obowiązkowy?",
           a: `${PODATNICY.map((p) => p.opis).join(" ")} Odbierać faktury w KSeF muszą wszyscy od 1 lutego 2026. Do 31 grudnia 2026 nie ma kar za błędy, a od 1 stycznia 2027 numer KSeF trzeba podawać przy płatności.`,
+        },
+        {
+          q: "Co się zmienia w KSeF 1 stycznia 2027?",
+          a: "Kończą się naraz wszystkie przepisy przejściowe. Znika limit 10 tys. zł brutto miesięcznie na faktury poza KSeF, a faktury z kas rejestrujących, w tym paragony z NIP do 450 zł, też muszą przechodzić przez system. Zaczynają się kary: za fakturę wystawioną poza KSeF, choć powinna przez niego przejść, do 100% kwoty VAT z faktury albo do 18,7% kwoty należności przy fakturze bez VAT. Przelew za fakturę z KSeF między czynnymi podatnikami VAT ma zawierać jej numer KSeF albo identyfikator zbiorczy. Tokeny do logowania zostają, Ministerstwo Finansów zrezygnowało z ich wygaszenia, ale do faktur w trybie offline potrzebny jest certyfikat KSeF typu 2.",
         },
         {
           q: "Mamy program księgowy, który obsługuje KSeF. Po co nam integracja?",

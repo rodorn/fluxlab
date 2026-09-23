@@ -67,6 +67,6 @@ export const PODATNICY: Podatnik[] = [
     pozaObowiazkiem: true,
     opis: "Podmioty bez siedziby i bez stałego miejsca prowadzenia działalności w Polsce nie mają obowiązku wystawiania faktur w KSeF. Poza systemem są też sprzedaż w procedurach OSS i IOSS oraz faktury dla osób prywatnych.",
     uwaga:
-      "Jeżeli macie w Polsce stałe miejsce prowadzenia działalności, które uczestniczy w dostawie, obowiązek już Was dotyczy. To rozstrzyga stan faktyczny, nie sam brak siedziby, więc przy wątpliwości pytajcie księgowego, nie mnie.",
+      "Jeżeli macie w Polsce stałe miejsce prowadzenia działalności, które uczestniczy w dostawie, obowiązek już Was dotyczy. To rozstrzyga stan faktyczny, nie sam brak siedziby, więc przy wątpliwości pytajcie księgowego, nie nas.",
   },
 ];

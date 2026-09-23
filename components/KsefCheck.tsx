@@ -207,7 +207,7 @@ export default function KsefCheck() {
       <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
         Terminy weszły etapami i większość z nich już minęła, ale do końca 2026
         roku działa kilka wyjątków naraz. Naciśnijcie swój przypadek, a
-        rozpiszę, co obowiązuje, jaki wyjątek jeszcze Was chroni i ile dni mu
+        rozpiszemy, co obowiązuje, jaki wyjątek jeszcze Was chroni i ile dni mu
         zostało. Nic nie trzeba wpisywać.
       </p>
 

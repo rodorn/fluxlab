@@ -1,12 +1,12 @@
 # FluxLab
 
-> Jednoosobowa firma Pawła Iwanka z Grodziska Mazowieckiego. Automatyzuję
-> procesy sprzedaży i operacji w firmach B2B: łączę CRM, formularze, pocztę,
-> interfejsy programistyczne i raportowanie tak, żeby ludzie przestali ręcznie
-> przepisywać dane. Narzędzia, z których korzystam najczęściej: Pipedrive,
-> HubSpot, Make, n8n, Python. Ustalenia prowadzę mailowo.
+> Firma z Grodziska Mazowieckiego. Automatyzujemy procesy sprzedaży
+> i operacji w firmach B2B: łączymy CRM, formularze, pocztę, interfejsy
+> programistyczne i raportowanie tak, żeby ludzie przestali ręcznie
+> przepisywać dane. Narzędzia, z których korzystamy najczęściej: Pipedrive,
+> HubSpot, Make, n8n, Python. Ustalenia prowadzimy mailowo.
 
-## Co robię
+## Co robimy
 
 - [Automatyzacja leadów i CRM](https://fluxlab.pl/automatyzacja-leadow-crm): zgłoszenie z formularza trafia do CRM samo, z właścicielem i pierwszym zadaniem.
 - [Integracje i dane](https://fluxlab.pl/scraping-danych): spinanie systemów przez interfejsy programistyczne, porządkowanie danych, raporty, które przychodzą same.
@@ -22,7 +22,10 @@ Obowiązkowy KSeF, stan prawny z 23.09.2026, szczegóły i źródła na https://
 - Sprzedaż na fakturach do 10 tys. zł brutto miesięcznie: poza KSeF do 31 grudnia 2026, obowiązek od 1 stycznia 2027. Limit liczy się osobno w każdym miesiącu.
 - Faktury z kas rejestrujących: poza KSeF do 31 grudnia 2026.
 - Odbiór faktur w KSeF: wszyscy od 1 lutego 2026.
-- Od 1 stycznia 2027 kończą się przepisy przejściowe, zaczynają się kary, a numer KSeF trzeba podawać przy płatności.
+- Od 1 stycznia 2027 kończą się naraz wszystkie przepisy przejściowe. Znika limit 10 tys. zł, faktury z kas też idą przez KSeF, a za fakturę wystawioną poza KSeF, choć powinna przez niego przejść, grozi kara do 100% VAT z faktury albo do 18,7% kwoty należności przy fakturze bez VAT.
+- Od 1 stycznia 2027 przelew za fakturę z KSeF między czynnymi podatnikami VAT zawiera jej 35-znakowy numer KSeF albo identyfikator zbiorczy. Nie dotyczy karty, BLIK-a ani gotówki.
+- Tokeny KSeF zostają bezterminowo, Ministerstwo Finansów zrezygnowało z ich wygaszenia. Do faktur w trybie offline potrzebny jest certyfikat KSeF typu 2, ważny 2 lata.
+- Lista kontrolna sześciu rzeczy do domknięcia przed 1 stycznia 2027: https://fluxlab.pl/ksef-integracja#lista-2027
 - Poza KSeF zostają faktury dla osób prywatnych, procedury OSS i IOSS oraz podmioty zagraniczne bez stałego miejsca działalności w Polsce.
 
 Adres do e-Doręczeń, szczegóły na https://fluxlab.pl/e-doreczenia-integracja:
@@ -35,6 +38,7 @@ Adres do e-Doręczeń, szczegóły na https://fluxlab.pl/e-doreczenia-integracja
 ## Darmowe narzędzia, bez rejestracji
 
 - [Co z KSeF obowiązuje Twoją firmę](https://fluxlab.pl/ksef-integracja): dwa kliknięcia, termin i dni do końca wyjątku.
+- [Lista na 1 stycznia 2027 w KSeF](https://fluxlab.pl/ksef-integracja#lista-2027): sześć pytań, na końcu lista braków do wysłania księgowej.
 - [Od kiedy adres do e-Doręczeń](https://fluxlab.pl/e-doreczenia-integracja): dwa kliknięcia, data z ustawy.
 - [Pełny audyt techniczny strony](https://fluxlab.pl/audyt-strony): szybkość, certyfikat, widoczność w Google i w AI, poczta.
 - [Dlaczego maile trafiają do spamu](https://fluxlab.pl/audyt-poczty): SPF, DKIM i DMARC domeny.
