@@ -690,7 +690,7 @@ function RadioGroup<T extends string>({
                   {o.label}
                 </span>
                 {o.desc && (
-                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
+                  <p className="text-xs text-gray-600 dark:text-gray-400 mt-0.5">
                     {o.desc}
                   </p>
                 )}
@@ -729,7 +729,7 @@ function Toggle({
           {label}
         </span>
         {desc && (
-          <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
+          <p className="text-xs text-gray-600 dark:text-gray-400 mt-0.5">
             {desc}
           </p>
         )}
@@ -1139,7 +1139,7 @@ function ResultCard({
           </span>
           <span className="text-sm text-gray-600 dark:text-gray-400">{sfx}</span>
         </div>
-        <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+        <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
           Efektywna stawka: {pct(result.effectiveRate)}
         </p>
       </div>
@@ -1166,7 +1166,7 @@ function ResultCard({
               {r.label}
               {r.tip && (
                 <svg
-                  className="w-3.5 h-3.5 text-gray-500 dark:text-gray-400 flex-shrink-0"
+                  className="w-3.5 h-3.5 text-gray-600 dark:text-gray-400 flex-shrink-0"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -1657,7 +1657,7 @@ export default function TaxCalculator() {
                           className={`grid gap-3 ${vatMode !== "zwolniony" ? "grid-cols-[1fr_auto_1fr]" : "grid-cols-2"}`}
                         >
                           <div>
-                            <label className="block text-xs text-gray-500 mb-1">
+                            <label className="block text-xs text-gray-600 dark:text-gray-400 mb-1">
                               Kwota/mies.
                             </label>
                             <input
@@ -1686,7 +1686,7 @@ export default function TaxCalculator() {
                           </div>
                           {vatMode !== "zwolniony" && (
                             <div>
-                              <label className="block text-xs text-gray-500 mb-1">
+                              <label className="block text-xs text-gray-600 dark:text-gray-400 mb-1">
                                 VAT
                               </label>
                               <select
@@ -1707,7 +1707,7 @@ export default function TaxCalculator() {
                             </div>
                           )}
                           <div>
-                            <label className="block text-xs text-gray-500 mb-1">
+                            <label className="block text-xs text-gray-600 dark:text-gray-400 mb-1">
                               Stawka ryczałtu
                             </label>
                             <select
@@ -1746,7 +1746,7 @@ export default function TaxCalculator() {
                           <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
                             {selectedOpt.tooltip}
                             {src.isNajem && src.amount > 0 && (
-                              <span className="block mt-1 text-gray-500 dark:text-gray-400 font-medium">
+                              <span className="block mt-1 text-gray-600 dark:text-gray-400 font-medium">
                                 {src.amount * 12 <= NAJEM_THRESHOLD
                                   ? `Cały przychód ({pln(src.amount * 12)}/rok) objęty stawką ${NAJEM_RATE_LOW}%.`
                                   : `${pln(NAJEM_THRESHOLD)} × ${NAJEM_RATE_LOW}% + ${pln(src.amount * 12 - NAJEM_THRESHOLD)} × ${NAJEM_RATE_HIGH}%`}
@@ -1886,7 +1886,7 @@ export default function TaxCalculator() {
                             >
                               <div>
                                 <div className="flex items-center justify-between mb-1">
-                                  <label className="text-xs text-gray-500">
+                                  <label className="text-xs text-gray-600 dark:text-gray-400">
                                     Kwota/mies.
                                   </label>
                                   {vatMode !== "zwolniony" && (
@@ -1938,7 +1938,7 @@ export default function TaxCalculator() {
                               </div>
                               {vatMode !== "zwolniony" && (
                                 <div>
-                                  <label className="block text-xs text-gray-500 mb-1">
+                                  <label className="block text-xs text-gray-600 dark:text-gray-400 mb-1">
                                     VAT
                                   </label>
                                   <select
@@ -1965,7 +1965,7 @@ export default function TaxCalculator() {
                     </div>
                     {items.length > 1 && (
                       <div className="mt-2 px-1 flex justify-between items-baseline">
-                        <span className="text-xs text-gray-500">
+                        <span className="text-xs text-gray-600 dark:text-gray-400">
                           Razem netto:
                         </span>
                         <span className="text-sm font-semibold text-gray-700 dark:text-gray-300 tabular-nums">
@@ -1999,7 +1999,7 @@ export default function TaxCalculator() {
                 />
                 {vatMode !== "zwolniony" && (
                   <div>
-                    <label className="block text-xs text-gray-500 mb-1">
+                    <label className="block text-xs text-gray-600 dark:text-gray-400 mb-1">
                       Stawka VAT samochodu
                     </label>
                     <select
@@ -2193,28 +2193,28 @@ export default function TaxCalculator() {
                   </h3>
                 </div>
                 <div className="p-4 bg-gray-50 dark:bg-gray-800/50 grid grid-cols-2 gap-x-4 gap-y-1 text-sm">
-                  <span className="text-gray-500">Społeczne:</span>
+                  <span className="text-gray-600 dark:text-gray-400">Społeczne:</span>
                   <span className="tabular-nums font-medium text-right">
                     {pln(Math.round(zusM))}/mies.
                   </span>
-                  <span className="text-gray-500">Fundusz Pracy:</span>
+                  <span className="text-gray-600 dark:text-gray-400">Fundusz Pracy:</span>
                   <span className="tabular-nums font-medium text-right">
                     {pln(Math.round(fpM))}/mies.
                   </span>
-                  <span className="text-gray-500">Zdrowotna (skala):</span>
+                  <span className="text-gray-600 dark:text-gray-400">Zdrowotna (skala):</span>
                   <span className="tabular-nums font-medium text-right">
                     {pln(Math.round(results.skala.healthInsurance / 12))}/mies.
                   </span>
-                  <span className="text-gray-500">Zdrowotna (liniowy):</span>
+                  <span className="text-gray-600 dark:text-gray-400">Zdrowotna (liniowy):</span>
                   <span className="tabular-nums font-medium text-right">
                     {pln(Math.round(results.linear.healthInsurance / 12))}/mies.
                   </span>
-                  <span className="text-gray-500">Zdrowotna (ryczałt):</span>
+                  <span className="text-gray-600 dark:text-gray-400">Zdrowotna (ryczałt):</span>
                   <span className="tabular-nums font-medium text-right">
                     {pln(Math.round(results.ryczalt.healthInsurance / 12))}
                     /mies.
                   </span>
-                  <span className="text-gray-500 font-semibold border-t border-gray-200 dark:border-gray-700 pt-1">
+                  <span className="text-gray-600 dark:text-gray-400 font-semibold border-t border-gray-200 dark:border-gray-700 pt-1">
                     Razem ({best.label.toLowerCase()}):
                   </span>
                   <span className="tabular-nums font-bold text-right border-t border-gray-200 dark:border-gray-700 pt-1">
@@ -2231,11 +2231,11 @@ export default function TaxCalculator() {
                     Samochód – odliczenia
                   </h3>
                   <div className="grid grid-cols-2 gap-x-4 gap-y-1">
-                    <span className="text-gray-500">Koszt faktyczny:</span>
+                    <span className="text-gray-600 dark:text-gray-400">Koszt faktyczny:</span>
                     <span className="tabular-nums text-right">
                       {pln(carCosts)}/mies.
                     </span>
-                    <span className="text-gray-500">
+                    <span className="text-gray-600 dark:text-gray-400">
                       Odliczenie PIT (
                       {(carUsage === "mixed"
                         ? CAR_PIT_MIXED
@@ -2255,7 +2255,7 @@ export default function TaxCalculator() {
                     </span>
                     {vatMode !== "zwolniony" && (
                       <>
-                        <span className="text-gray-500">
+                        <span className="text-gray-600 dark:text-gray-400">
                           Odliczenie VAT (
                           {(carUsage === "mixed"
                             ? CAR_VAT_MIXED
@@ -2300,7 +2300,7 @@ export default function TaxCalculator() {
                   className={`px-4 py-2 rounded-md text-sm font-medium transition ${
                     viewMode === m
                       ? "bg-white dark:bg-gray-700 text-gray-900 dark:text-white shadow-sm"
-                      : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
+                      : "text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
                   }`}
                 >
                   {m === "monthly" ? "Miesięcznie" : "Rocznie"}
