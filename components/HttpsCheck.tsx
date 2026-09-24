@@ -53,13 +53,7 @@ const MOTYW: Record<
 };
 
 /** Pasek adresu przeglądarki, żeby wynik był widokiem, a nie opisem. */
-function PasekAdresu({
-  domena,
-  zly,
-}: {
-  domena: string;
-  zly: boolean;
-}) {
+function PasekAdresu({ domena, zly }: { domena: string; zly: boolean }) {
   return (
     <div className="rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-100 dark:bg-gray-800 p-3 shadow-sm">
       <div className="flex items-center gap-2 mb-2.5">
@@ -187,7 +181,9 @@ export default function HttpsCheck() {
             wynik.stronaNiedostepna
               ? "Strona jest nieosiągalna: http przekierowuje na własne zepsute https."
               : "",
-            wynik.hosting ? `Certyfikat współdzielony hostingu: ${wynik.hosting}` : "",
+            wynik.hosting
+              ? `Certyfikat współdzielony hostingu: ${wynik.hosting}`
+              : "",
             wynik.cert
               ? `Certyfikat wystawiony na: ${wynik.cert.wystawionyNa.join(", ")}`
               : "",
@@ -288,7 +284,9 @@ export default function HttpsCheck() {
 
       {wynik && m && (
         <div className={`mt-6 rounded-xl border ${m.ramka} ${m.tlo} p-5`}>
-          <p className={`text-xs font-bold uppercase tracking-wider ${m.tekst}`}>
+          <p
+            className={`text-xs font-bold uppercase tracking-wider ${m.tekst}`}
+          >
             {m.etykieta}
           </p>
           <p className="mt-1 text-lg font-bold text-gray-900 dark:text-white">
@@ -363,7 +361,7 @@ export default function HttpsCheck() {
           <div className="mt-5 border-t border-gray-200/70 dark:border-gray-700/70 pt-4">
             <p className="text-sm text-gray-700 dark:text-gray-300">
               {wynik.werdykt === "ZIELONY"
-                ? "Nie musimy Ci nic naprawiać i nie będziemy tego udawał. Jeśli chcesz, możemy pilnować terminu ważności, żeby nie zaskoczył Cię w najgorszym momencie."
+                ? "Nie musimy Ci nic naprawiać i nie będziemy tego udawać. Jeśli chcesz, możemy pilnować terminu ważności, żeby nie zaskoczył Cię w najgorszym momencie."
                 : "To da się naprawić zwykle w jeden dzień roboczy i bez zmiany hostingu. Zostaw adres, odeślemy konkretny plan naprawy razem z tym rozpoznaniem."}
             </p>
 
@@ -379,7 +377,7 @@ export default function HttpsCheck() {
                   className="block text-sm font-medium text-gray-900 dark:text-white"
                 >
                   {wynik.werdykt === "ZIELONY"
-                    ? "Podaj maila, jeśli chcesz, żebym pilnował terminu"
+                    ? "Podaj maila, jeśli chcesz, żebyśmy pilnowali terminu"
                     : "Podaj maila, odeślemy plan naprawy"}
                 </label>
                 <div className="mt-2 flex flex-col gap-3 sm:flex-row">
@@ -397,7 +395,9 @@ export default function HttpsCheck() {
                     disabled={leadStan === "wysylamy"}
                     className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
                   >
-                    {leadStan === "wysylamy" ? "Wysyłamy..." : "Wyślij zgłoszenie"}
+                    {leadStan === "wysylamy"
+                      ? "Wysyłamy..."
+                      : "Wyślij zgłoszenie"}
                   </button>
                 </div>
                 {leadStan === "blad" && (
@@ -416,8 +416,9 @@ export default function HttpsCheck() {
       )}
 
       <p className="mt-4 text-xs text-gray-500 dark:text-gray-400">
-        Sprawdzamy wyłącznie warstwę szyfrowania na publicznie dostępnym adresie.
-        Nie logujemy się nigdzie i nie wykonujemy żadnych testów obciążeniowych.
+        Sprawdzamy wyłącznie warstwę szyfrowania na publicznie dostępnym
+        adresie. Nie logujemy się nigdzie i nie wykonujemy żadnych testów
+        obciążeniowych.
       </p>
     </div>
   );

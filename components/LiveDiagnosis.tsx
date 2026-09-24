@@ -386,7 +386,7 @@ export default function LiveDiagnosis() {
                         Program case study, zostały 3 miejsca
                       </p>
                       <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                        Zgadzasz się, żebym opisał efekt wdrożenia jako
+                        Zgadzasz się, żebyśmy opisali efekt wdrożenia jako
                         publiczne case study, płacisz{" "}
                         <strong>połowę ceny</strong>. Wycena powyżej spada wtedy
                         o 50%.

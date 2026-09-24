@@ -56,7 +56,7 @@ const faq = [
   {
     question: "Czy sami wprowadzacie zmiany na koncie?",
     answer:
-      "Mini-audyt to diagnoza i gotowa lista wykluczeń, którą wdrażasz sam lub Twoja agencja. Jeśli chcesz, żebym wdrożył wykluczenia i ustawił nocny skrypt pilnujący konta, ustalamy to osobno po audycie.",
+      "Mini-audyt to diagnoza i gotowa lista wykluczeń, którą wdrażasz sam lub Twoja agencja. Jeśli chcesz, żebyśmy wdrożyli wykluczenia i ustawili nocny skrypt pilnujący konta, ustalamy to osobno po audycie.",
   },
   {
     question: "Dla jak dużych kont to ma sens?",
@@ -223,8 +223,8 @@ export default function AudytGoogleAdsPage() {
                 </p>
                 <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
                   Jeśli znajdziemy mniej niż 500 zł miesięcznie realnie do
-                  odzyskania, zwracamy całą kwotę. Płacisz tylko wtedy, gdy audyt
-                  pokazuje pieniądze do zaoszczędzenia.
+                  odzyskania, zwracamy całą kwotę. Płacisz tylko wtedy, gdy
+                  audyt pokazuje pieniądze do zaoszczędzenia.
                 </p>
                 <ul className="mt-5 space-y-2">
                   {[

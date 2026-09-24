@@ -23,11 +23,15 @@ interface Wynik {
 
 export default function WidocznoscCheck() {
   const [domena, setDomena] = useState("");
-  const [stan, setStan] = useState<"idle" | "ladowanie" | "gotowe" | "blad">("idle");
+  const [stan, setStan] = useState<"idle" | "ladowanie" | "gotowe" | "blad">(
+    "idle",
+  );
   const [wynik, setWynik] = useState<Wynik | null>(null);
   const [blad, setBlad] = useState("");
   const [email, setEmail] = useState("");
-  const [leadStan, setLeadStan] = useState<"idle" | "wysylamy" | "ok" | "blad">("idle");
+  const [leadStan, setLeadStan] = useState<"idle" | "wysylamy" | "ok" | "blad">(
+    "idle",
+  );
   const [leadBlad, setLeadBlad] = useState("");
 
   async function sprawdz(e: React.FormEvent) {
@@ -109,8 +113,8 @@ export default function WidocznoscCheck() {
       <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
         Zdarza się, że strona ma w kodzie polecenie, żeby wyszukiwarka jej nie
         pokazywała. Zwykle zostaje po wersji roboczej i nikt tego nie zauważa,
-        bo właściciel wchodzi na swoją stronę z zakładki. Sprawdzamy trzy miejsca,
-        w których taka blokada może siedzieć.
+        bo właściciel wchodzi na swoją stronę z zakładki. Sprawdzamy trzy
+        miejsca, w których taka blokada może siedzieć.
       </p>
       <Przyklady
         pozycje={[
@@ -145,15 +149,16 @@ export default function WidocznoscCheck() {
       )}
 
       {wynik &&
-        (wynik.status === "BRAK_STRONY" ||
-          wynik.status === "BRAK_DOSTEPU") && (
-        <div className="mt-6 rounded-xl border border-amber-500/60 bg-amber-50 dark:bg-amber-950/30 p-5">
-          <p className="text-lg font-bold text-gray-900 dark:text-white">
-            {wynik.naglowek}
-          </p>
-          <p className="mt-2 text-sm text-gray-700 dark:text-gray-300">{wynik.opis}</p>
-        </div>
-      )}
+        (wynik.status === "BRAK_STRONY" || wynik.status === "BRAK_DOSTEPU") && (
+          <div className="mt-6 rounded-xl border border-amber-500/60 bg-amber-50 dark:bg-amber-950/30 p-5">
+            <p className="text-lg font-bold text-gray-900 dark:text-white">
+              {wynik.naglowek}
+            </p>
+            <p className="mt-2 text-sm text-gray-700 dark:text-gray-300">
+              {wynik.opis}
+            </p>
+          </div>
+        )}
 
       {wynik && wynik.status === "OK" && (
         <div
@@ -175,7 +180,9 @@ export default function WidocznoscCheck() {
           <p className="mt-1 text-lg font-bold text-gray-900 dark:text-white">
             {wynik.naglowek}
           </p>
-          <p className="mt-2 text-sm text-gray-700 dark:text-gray-300">{wynik.opis}</p>
+          <p className="mt-2 text-sm text-gray-700 dark:text-gray-300">
+            {wynik.opis}
+          </p>
 
           {zly && (
             <div className="mt-4 rounded-lg border border-red-400/60 bg-white/70 dark:bg-gray-950/50 p-4">
@@ -202,7 +209,9 @@ export default function WidocznoscCheck() {
               <p className="mt-1 font-mono text-xs text-red-700 dark:text-red-400 break-all">
                 {b.tresc}
               </p>
-              <p className="mt-2 text-sm text-gray-700 dark:text-gray-300">{b.opis}</p>
+              <p className="mt-2 text-sm text-gray-700 dark:text-gray-300">
+                {b.opis}
+              </p>
             </div>
           ))}
 
@@ -216,13 +225,13 @@ export default function WidocznoscCheck() {
             <p className="text-sm text-gray-700 dark:text-gray-300">
               {zly
                 ? "Zdjęcie takiej blokady to zwykle kilkanaście minut pracy w systemie, na którym stoi strona, plus zgłoszenie do ponownego odwiedzenia przez wyszukiwarkę. Zostaw adres, odeślemy dokładnie, co i gdzie trzeba zmienić."
-                : "Nic tu nie naprawimy i nie będziemy tego udawał. Jeśli mimo to nie widać Was w wynikach, przyczyna leży gdzie indziej, a wtedy warto zacząć od sprawdzenia, czy wyszukiwarka w ogóle ma dostęp do strony."}
+                : "Nic tu nie naprawimy i nie będziemy tego udawać. Jeśli mimo to nie widać Was w wynikach, przyczyna leży gdzie indziej, a wtedy warto zacząć od sprawdzenia, czy wyszukiwarka w ogóle ma dostęp do strony."}
             </p>
 
             {leadStan === "ok" ? (
               <p className="mt-4 text-sm font-semibold text-emerald-700 dark:text-emerald-400">
-                Mamy zgłoszenie razem z wynikiem. Odpiszemy na {email}, zwykle tego
-                samego dnia.
+                Mamy zgłoszenie razem z wynikiem. Odpiszemy na {email}, zwykle
+                tego samego dnia.
               </p>
             ) : (
               <form onSubmit={zamow} className="mt-4">
@@ -232,7 +241,7 @@ export default function WidocznoscCheck() {
                 >
                   {zly
                     ? "Podaj maila, odeślemy instrukcję naprawy"
-                    : "Podaj maila, jeśli chcesz, żebym poszukał innej przyczyny"}
+                    : "Podaj maila, jeśli chcesz, żebyśmy poszukali innej przyczyny"}
                 </label>
                 <div className="mt-2 flex flex-col gap-3 sm:flex-row">
                   <input
@@ -249,11 +258,15 @@ export default function WidocznoscCheck() {
                     disabled={leadStan === "wysylamy"}
                     className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
                   >
-                    {leadStan === "wysylamy" ? "Wysyłamy..." : "Wyślij zgłoszenie"}
+                    {leadStan === "wysylamy"
+                      ? "Wysyłamy..."
+                      : "Wyślij zgłoszenie"}
                   </button>
                 </div>
                 {leadStan === "blad" && (
-                  <p className="mt-2 text-sm text-red-600 dark:text-red-400">{leadBlad}</p>
+                  <p className="mt-2 text-sm text-red-600 dark:text-red-400">
+                    {leadBlad}
+                  </p>
                 )}
               </form>
             )}
@@ -263,7 +276,8 @@ export default function WidocznoscCheck() {
 
       <p className="mt-4 text-xs text-gray-500 dark:text-gray-400">
         Sprawdzamy wyłącznie to, co Twój serwer pokazuje publicznie każdemu
-        odwiedzającemu. Nie logujemy się nigdzie i nie potrzebujemy żadnych dostępów.
+        odwiedzającemu. Nie logujemy się nigdzie i nie potrzebujemy żadnych
+        dostępów.
       </p>
     </div>
   );
