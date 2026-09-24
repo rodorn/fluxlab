@@ -15,6 +15,16 @@ const DO_WLASCICIELA = process.env.AUDYT_KOPIA_DO ?? "iwanekpawel55@gmail.com";
 const FROM =
   process.env.RESEND_FROM_FORMULARZ ?? "Fluxlab <formularz@fluxlab.pl>";
 
+/**
+ * Adres, na który wraca odpowiedź klienta.
+ *
+ * Nadawcą jest formularz@, bo to ten adres ma zweryfikowaną wysyłkę, ale
+ * nikt go nie czyta. Bez tego ustawienia naciśnięcie "Odpowiedz" w raporcie
+ * kieruje wiadomość w próżnię, a treść zgody obiecuje wprost, że wycofuje się
+ * ją odpisując na tę wiadomość.
+ */
+const ODPOWIEDZ_NA = process.env.AUDYT_REPLY_TO ?? "pawel@fluxlab.pl";
+
 /** Treść zgody zapisywana razem z adresem. Zmiana tego tekstu to nowa wersja. */
 export const TRESC_ZGODY =
   "Zgadzamy się na przesłanie raportu z audytu na podany adres i na kontakt " +
@@ -33,6 +43,7 @@ async function przezResend(
     const wynik = await new Resend(klucz).emails.send({
       from: FROM,
       to,
+      replyTo: ODPOWIEDZ_NA,
       subject: temat,
       html,
       text: tekst,
@@ -61,6 +72,7 @@ async function przezSmtp(
     await transport.sendMail({
       from: process.env.SMTP_FROM ?? SMTP_USER,
       to,
+      replyTo: ODPOWIEDZ_NA,
       subject: temat,
       html,
       text: tekst,
