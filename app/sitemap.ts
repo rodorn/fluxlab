@@ -188,6 +188,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/ksef-2027`,
+      changeFrequency: "weekly" as const,
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/analiza-lokalizacji`,
       changeFrequency: "monthly" as const,
       priority: 0.9,

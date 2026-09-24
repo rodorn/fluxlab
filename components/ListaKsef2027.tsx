@@ -77,11 +77,15 @@ const PUNKTY: Punkt[] = [
   },
 ];
 
-const ADRES = "https://fluxlab.pl/ksef-integracja#lista-2027";
+const ADRES = "https://fluxlab.pl/ksef-2027";
 
 type Odp = "tak" | "nie";
 
-export default function ListaKsef2027() {
+export default function ListaKsef2027({
+  formularz = "#zamow",
+}: {
+  formularz?: string;
+}) {
   const [odp, setOdp] = useState<Record<string, Odp>>({});
   const [skopiowano, setSkopiowano] = useState(false);
 
@@ -230,10 +234,10 @@ export default function ListaKsef2027() {
                   integracja oszczędza najwięcej ręcznej pracy. Jeżeli chcecie,
                   napiszcie przez{" "}
                   <a
-                    href="#zamow"
+                    href={formularz}
                     className="font-medium text-accent underline underline-offset-2"
                   >
-                    formularz niżej
+                    {formularz.startsWith("#") ? "formularz niżej" : "formularz"}
                   </a>
                   , w czym dziś wystawiacie faktury, a odpiszemy, co da się
                   spiąć.

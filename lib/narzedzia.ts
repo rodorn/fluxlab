@@ -28,6 +28,14 @@ export const businessTools: Narzedzie[] = [
     badge: "Nowość",
   },
   {
+    title: "Lista KSeF na 1 stycznia 2027",
+    description:
+      "Sześć pytań o to, co musicie mieć domknięte, zanim skończą się przepisy przejściowe KSeF: faktury poza systemem, kasa, numer KSeF w przelewie, faktury kosztowe, tryb offline i odrzucenia. Na końcu wykaz braków do wysłania księgowej, a biura rachunkowe dostają gotową wiadomość do klientów.",
+    href: "/ksef-2027",
+    ikona: "faktura",
+    badge: "Nowość",
+  },
+  {
     title: "Od kiedy musicie mieć adres do e-Doręczeń",
     description:
       "Naciśnij, jak jest zarejestrowany Wasz podmiot, a policzymy datę z ustawy i dni, które zostały. Terminy wchodzą etapami, inaczej dla firmy z CEIDG, inaczej dla spółki z KRS, inaczej dla zawodów zaufania publicznego. Bez wpisywania czegokolwiek.",
@@ -212,6 +220,7 @@ export const LICZBA_NARZEDZI = businessTools.length;
 const FILAR_SPOZA_KATALOGU: Record<string, ProductCategory> = {
   "/audyt-crm": "automatyzacja",
   "/koszt-recznej-obslugi-leadow": "automatyzacja",
+  "/ksef-2027": "dane",
   "/sprawdzenie-nip": "dane",
   "/strefa-wiedzy/automatyzacja-vs-zatrudnienie#kalkulator": "automatyzacja",
 };

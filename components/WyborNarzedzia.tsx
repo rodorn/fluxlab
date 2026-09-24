@@ -211,7 +211,12 @@ const SYTUACJE: Sytuacja[] = [
       {
         href: "/ksef-integracja",
         powod:
-          "Wystawianie faktur w KSeF obowiązuje etapami od lutego 2026, a 1 stycznia 2027 kończą się naraz wszystkie przepisy przejściowe i zaczynają sankcje.",
+          "Wystawianie faktur w KSeF obowiązuje etapami od lutego 2026. Sprawdzenie pokazuje, od kiedy dotyczy to Waszej grupy podatników.",
+      },
+      {
+        href: "/ksef-2027",
+        powod:
+          "1 stycznia 2027 kończą się naraz wszystkie przepisy przejściowe KSeF. Sześć pytań pokazuje, co jeszcze trzeba domknąć.",
       },
       {
         href: "/e-doreczenia-integracja",
