@@ -83,12 +83,17 @@ const SYTUACJE: Sytuacja[] = [
     klucz: "przelew",
     etykieta: "Mamy komuś zapłacić albo odzyskać pieniądze",
     odpowiedz:
-      "Trzy sprawdzenia w publicznych rejestrach, wszystkie przed przelewem, nie po nim.",
+      "Cztery sprawdzenia, wszystkie przed przelewem, nie po nim.",
     wskazania: [
       {
         href: "/sprawdzenie-nip",
         powod:
           "Wykaz podatników VAT mówi, czy firma istnieje, czy jest czynnym podatnikiem i ile rachunków zgłosiła.",
+      },
+      {
+        href: "/numer-ksef",
+        powod:
+          "Od 1 stycznia 2027 przelew za fakturę z KSeF zawiera jej numer. Suma kontrolna wyłapie literówkę, zanim wpłata utknie u kontrahenta.",
       },
       {
         href: "/czujka-rejestrowa",

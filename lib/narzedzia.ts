@@ -36,6 +36,14 @@ export const businessTools: Narzedzie[] = [
     badge: "Nowość",
   },
   {
+    title: "Sprawdzenie numeru KSeF",
+    description:
+      "Wklejcie numer KSeF albo całą listę tytułów przelewów, a sprawdzimy sumę kontrolną, NIP sprzedawcy i datę przyjęcia faktury. Od 1 stycznia 2027 numer trafia do przelewu, więc literówkę lepiej złapać przed bankiem. Liczymy w przeglądarce, nic nie wysyłamy.",
+    href: "/numer-ksef",
+    ikona: "faktura",
+    badge: "Nowość",
+  },
+  {
     title: "Od kiedy musicie mieć adres do e-Doręczeń",
     description:
       "Naciśnij, jak jest zarejestrowany Wasz podmiot, a policzymy datę z ustawy i dni, które zostały. Terminy wchodzą etapami, inaczej dla firmy z CEIDG, inaczej dla spółki z KRS, inaczej dla zawodów zaufania publicznego. Bez wpisywania czegokolwiek.",
@@ -221,6 +229,7 @@ const FILAR_SPOZA_KATALOGU: Record<string, ProductCategory> = {
   "/audyt-crm": "automatyzacja",
   "/koszt-recznej-obslugi-leadow": "automatyzacja",
   "/ksef-2027": "dane",
+  "/numer-ksef": "dane",
   "/sprawdzenie-nip": "dane",
   "/strefa-wiedzy/automatyzacja-vs-zatrudnienie#kalkulator": "automatyzacja",
 };

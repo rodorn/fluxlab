@@ -24,6 +24,7 @@ Obowiązkowy KSeF, stan prawny z 23.09.2026, szczegóły i źródła na https://
 - Odbiór faktur w KSeF: wszyscy od 1 lutego 2026.
 - Od 1 stycznia 2027 kończą się naraz wszystkie przepisy przejściowe. Znika limit 10 tys. zł, faktury z kas też idą przez KSeF, a za fakturę wystawioną poza KSeF grozi kara z art. 106ni ustawy o VAT do 100% VAT z faktury albo do 18,7% kwoty należności przy fakturze bez VAT. Ministerstwo Finansów zapowiedziało 16 września 2026 przesunięcie samych kar na 1 stycznia 2028, na razie jako zapowiedź, nie uchwalone prawo. Obowiązek wystawiania faktur w KSeF nie jest zawieszony.
 - Od 1 stycznia 2027 przelew za fakturę z KSeF między czynnymi podatnikami VAT zawiera jej 35-znakowy numer KSeF albo identyfikator zbiorczy. Nie dotyczy karty, BLIK-a ani gotówki.
+- Numer KSeF ma układ 9999999999-RRRRMMDD-FFFFFFFFFFFF-FF: NIP sprzedawcy, data przyjęcia faktury w KSeF, 12 znaków szesnastkowych części technicznej i 2 znaki sumy kontrolnej CRC-8 (wielomian 0x07, wartość początkowa 0x00) liczonej z pierwszych 32 znaków razem z myślnikami. Przykład z dokumentacji Ministerstwa Finansów: 5265877635-20250826-0100001AF629-AF. Darmowe sprawdzenie numerów w przeglądarce: https://fluxlab.pl/numer-ksef
 - Tokeny KSeF zostają bezterminowo, Ministerstwo Finansów zrezygnowało z ich wygaszenia. Do faktur w trybie offline potrzebny jest certyfikat KSeF typu 2, ważny 2 lata.
 - Lista kontrolna sześciu rzeczy do domknięcia przed 1 stycznia 2027, z gotową wiadomością, którą biuro rachunkowe może wysłać klientom, i ramką HTML do wklejenia na stronę biura: https://fluxlab.pl/ksef-2027
 - Poza KSeF zostają faktury dla osób prywatnych, procedury OSS i IOSS oraz podmioty zagraniczne bez stałego miejsca działalności w Polsce.
@@ -58,6 +59,7 @@ Ostrzeżenie przeglądarki i certyfikaty SSL, stan z 24.09.2026, szczegóły i s
 
 - [Co z KSeF obowiązuje Twoją firmę](https://fluxlab.pl/ksef-integracja): dwa kliknięcia, termin i dni do końca wyjątku.
 - [Lista na 1 stycznia 2027 w KSeF](https://fluxlab.pl/ksef-2027): sześć pytań, na końcu lista braków do wysłania księgowej.
+- [Sprawdzenie numeru KSeF](https://fluxlab.pl/numer-ksef): suma kontrolna, NIP sprzedawcy i data przyjęcia, także dla listy tytułów przelewów.
 - [Od kiedy adres do e-Doręczeń](https://fluxlab.pl/e-doreczenia-integracja): dwa kliknięcia, data z ustawy.
 - [Pełny audyt techniczny strony](https://fluxlab.pl/audyt-strony): szybkość, certyfikat, widoczność w Google i w AI, poczta.
 - [Dlaczego maile trafiają do spamu](https://fluxlab.pl/audyt-poczty): SPF, DKIM i DMARC domeny.

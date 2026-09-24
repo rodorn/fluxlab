@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 const czytelnik = [
   {
     q: "Czy numer jest poprawny",
-    a: "Zanim cokolwiek odpytam, liczymy sumę kontrolną numeru. Literówka w NIP z faktury wychodzi od razu, bez czekania na odpowiedź rejestru.",
+    a: "Zanim cokolwiek odpytamy, liczymy sumę kontrolną numeru. Literówka w NIP z faktury wychodzi od razu, bez czekania na odpowiedź rejestru.",
   },
   {
     q: "Czy podmiot figuruje w wykazie",
@@ -94,7 +94,7 @@ export default function SprawdzenieNipPage() {
               Sprawdzenie NIP w wykazie Ministerstwa Finansów
             </h1>
             <p className="mt-5 text-lg text-gray-600 dark:text-gray-300">
-              Wpisz numer, a odpytam wykaz podatników VAT i pokażemy, czy firma
+              Wpisz numer, a odpytamy wykaz podatników VAT i pokażemy, czy firma
               tam jest, czy jest czynnym podatnikiem, od kiedy działa i ile
               rachunków bankowych zgłosiła. Bez rejestracji i bez limitu prób.
             </p>

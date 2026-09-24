@@ -132,6 +132,14 @@ export default function Ksef2027Page() {
                 Integracja z KSeF i terminy dla Waszej grupy
               </Link>
             </p>
+            <p className="mt-2">
+              <Link
+                href="/numer-ksef"
+                className="font-semibold text-accent hover:underline"
+              >
+                Sprawdźcie numery KSeF z przelewów, czy nie mają literówki
+              </Link>
+            </p>
           </div>
         </section>
       </main>
