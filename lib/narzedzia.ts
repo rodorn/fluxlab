@@ -22,7 +22,7 @@ export const businessTools: Narzedzie[] = [
   {
     title: "Co z KSeF obowiązuje Was już dziś",
     description:
-      "Naciśnij swoją grupę podatnika, a rozpiszę, od kiedy musicie wystawiać faktury w KSeF, który wyjątek jeszcze Was chroni i ile dni mu zostało do 1 stycznia 2027, kiedy kończą się wszystkie przepisy przejściowe naraz. Bez wpisywania czegokolwiek.",
+      "Naciśnijcie swoją grupę podatnika, a rozpiszemy, od kiedy musicie wystawiać faktury w KSeF, który wyjątek jeszcze Was chroni i ile dni mu zostało do 1 stycznia 2027, kiedy kończą się wszystkie przepisy przejściowe naraz. Bez wpisywania czegokolwiek.",
     href: "/ksef-integracja",
     ikona: "faktura",
     badge: "Nowość",

@@ -35,6 +35,7 @@ Adres do e-Doręczeń, szczegóły na https://fluxlab.pl/e-doreczenia-integracja
 - Adwokaci, radcowie, doradcy podatkowi, notariusze i podmioty publiczne: od 1 stycznia 2025.
 - Sądy, prokuratura, komornicy: od 1 października 2029.
 - Pismo od urzędu nieodebrane w ciągu 14 dni uznaje się za doręczone po upływie tego terminu (art. 41 ust. 1 pkt 3 ustawy o doręczeniach elektronicznych). Od tego dnia biegną terminy, nawet jeśli nikt go nie otworzył.
+- Adres musi mieć każda firma wpisana do CEIDG albo KRS, także z zawieszoną działalnością. Założenie adresu jest bezpłatne. Ustawa nie przewiduje osobnej kary za brak adresu, urząd może wtedy wysłać pismo usługą hybrydową albo listem poleconym. Adres firmowy i prywatny to osobne skrzynki.
 
 Maile w spamie i podszywanie pod domenę, szczegóły i sprawdzenie na https://fluxlab.pl/audyt-poczty:
 - Od lutego 2024 Gmail i Yahoo wymagają od każdego nadawcy SPF albo DKIM, a od wysyłających ponad 5000 wiadomości dziennie SPF, DKIM i DMARC (co najmniej p=none). Microsoft wymaga tego samego od dużych nadawców do Outlook.com od 5 maja 2025.

@@ -38,8 +38,8 @@ export default function EDoreczeniaIntegracja() {
       ctaNote="Dwa kliknięcia, bez wpisywania czegokolwiek"
       checks={[
         {
-          title: "Napisaliśmy klienta tego API i oddałem go za darmo",
-          desc: "Kod leży publicznie pod adresem github.com/rodorn/edoreczenia-klient, na licencji MIT, do obejrzenia przed rozmową z kimkolwiek. Powstał, bo w całym otwartym kodzie nie było ani jednego klienta tego interfejsu w żadnym języku, a termin goni miliony podmiotów. Możecie go użyć sami albo dać swojemu programiście, bez pytania mnie o zgodę.",
+          title: "Napisaliśmy klienta tego API i oddaliśmy go za darmo",
+          desc: "Kod leży publicznie pod adresem github.com/rodorn/edoreczenia-klient, na licencji MIT, do obejrzenia przed rozmową z kimkolwiek. Powstał, bo w całym otwartym kodzie nie było ani jednego klienta tego interfejsu w żadnym języku, a termin goni miliony podmiotów. Możecie go użyć sami albo dać swojemu programiście, bez pytania nas o zgodę.",
         },
         {
           title: "Dowodem doręczenia jest dowód, nie wiadomość",
@@ -51,11 +51,11 @@ export default function EDoreczeniaIntegracja() {
         },
         {
           title: "Gdzie mają trafiać pisma",
-          desc: "Do systemu obiegu dokumentów, do CRM, na skrzynkę, do której już zaglądacie, albo do arkusza, jeśli tak dziś pracujecie. Nie narzucam narzędzia, bo sens integracji polega właśnie na tym, żeby nie dokładać kolejnego miejsca do sprawdzania.",
+          desc: "Do systemu obiegu dokumentów, do CRM, na skrzynkę, do której już zaglądacie, albo do arkusza, jeśli tak dziś pracujecie. Nie narzucamy narzędzia, bo sens integracji polega właśnie na tym, żeby nie dokładać kolejnego miejsca do sprawdzania.",
         },
         {
           title: "Czego potrzebujemy od Was",
-          desc: "Dostępu do środowiska testowego usługi, o który występuje podmiot, oraz informacji, z jakiego systemu korzystacie po swojej stronie. Wniosku o dostęp nie złożę za Was, bo składa go właściciel skrzynki.",
+          desc: "Dostępu do środowiska testowego usługi, o który występuje podmiot, oraz informacji, z jakiego systemu korzystacie po swojej stronie. Wniosku o dostęp nie złożymy za Was, bo składa go właściciel skrzynki.",
         },
         {
           title: "Kiedy to się nie opłaca",
@@ -106,6 +106,18 @@ export default function EDoreczeniaIntegracja() {
         {
           q: "Co się dzieje, gdy nie odbierzemy pisma z urzędu w e-Doręczeniach?",
           a: "Pismo od urzędu, którego nie odbierzecie w ciągu 14 dni, uznaje się za doręczone po upływie tego terminu, tak jak list, po który nikt nie poszedł na pocztę. Mówi o tym art. 41 ust. 1 pkt 3 ustawy o doręczeniach elektronicznych. Od tego dnia biegną terminy na odpowiedź, odwołanie albo zapłatę, nawet jeśli nikt pisma nie otworzył. Dlatego samo założenie skrzynki nie wystarczy. Ktoś musi do niej zaglądać albo dostawać powiadomienia na zwykły adres e-mail.",
+        },
+        {
+          q: "Czy zawieszona działalność też musi mieć adres do e-Doręczeń?",
+          a: "Tak. Obowiązek dotyczy każdej firmy wpisanej do CEIDG albo do rejestru przedsiębiorców w KRS, niezależnie od tego, czy działalność jest aktywna, czy zawieszona. Urząd może wysłać pismo także do firmy w zawieszeniu, a 14 dni na odbiór biegnie tak samo. Firmowego adresu nie musi zakładać ktoś, kto nie ma wpisu ani w CEIDG, ani w KRS, na przykład rolnik bez zarejestrowanej działalności.",
+        },
+        {
+          q: "Ile kosztuje adres do e-Doręczeń i co grozi za jego brak?",
+          a: "Założenie adresu i odbieranie pism są bezpłatne, wniosek składa się przez Biznes.gov.pl albo mObywatel.gov.pl. Ustawa nie przewiduje osobnej kary pieniężnej za brak adresu. Urząd, który nie znajdzie Waszego adresu, może wysłać pismo publiczną usługą hybrydową albo listem poleconym. Prawdziwe ryzyko jest gdzie indziej: pismo w skrzynce, do której nikt nie zagląda, po 14 dniach uznaje się za doręczone.",
+        },
+        {
+          q: "Czy adres firmy i prywatny adres do e-Doręczeń to ta sama skrzynka?",
+          a: "Nie. Dla osoby prywatnej, dla firmy i dla zawodu zaufania publicznego zakłada się osobne adresy, nawet jeśli wszystkie należą do jednej osoby prowadzącej jednoosobową działalność. Pisma do firmy można odbierać na mObywatel.gov.pl, na edoreczenia.gov.pl, w aplikacji mObywatel, na Koncie Przedsiębiorcy albo w systemie obiegu dokumentów, który jest zintegrowany z usługą.",
         },
         {
           q: "Czy musimy mieć adres do doręczeń, żeby zacząć?",
