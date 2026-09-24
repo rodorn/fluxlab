@@ -49,6 +49,11 @@ Roboty asystentów AI w robots.txt, stan z 24.09.2026, szczegóły i sprawdzenie
 - Google-Extended steruje tylko trenowaniem Gemini i odpowiedziami w innych produktach Google, nie wpływa na obecność w wyszukiwarce ani na AI Overviews. AI Overviews steruje Googlebot oraz nosnippet, data-nosnippet, max-snippet i noindex.
 - Reguła User-agent: * z Disallow: / albo gotowa lista blokująca wszystkie roboty AI wycina też roboty wyszukiwania, nie tylko te od trenowania.
 
+Ostrzeżenie przeglądarki i certyfikaty SSL, stan z 24.09.2026, szczegóły i sprawdzenie na https://fluxlab.pl/naprawa-https:
+- Maksymalna ważność publicznego certyfikatu TLS (CA/Browser Forum, uchwała SC-081): 200 dni od 15 marca 2026 (wcześniej 398), 100 dni od 15 marca 2027, 47 dni od 15 marca 2029. Let's Encrypt: 90 dni, 64 dni od 10 lutego 2027, 45 dni od 16 lutego 2028.
+- Kody błędów w Chrome i Edge: NET::ERR_CERT_DATE_INVALID to certyfikat po terminie albo zły zegar komputera, NET::ERR_CERT_COMMON_NAME_INVALID to certyfikat na inną nazwę (często hostingu albo tylko wersji z www), NET::ERR_CERT_AUTHORITY_INVALID to certyfikat samopodpisany albo brak certyfikatu pośredniego. W Firefoksie: SEC_ERROR_EXPIRED_CERTIFICATE, SSL_ERROR_BAD_CERT_DOMAIN, SEC_ERROR_UNKNOWN_ISSUER.
+- Przekreślona kłódka przy ważnym certyfikacie to zwykle mieszana treść: pliki ładowane adresem http. Przeglądarki blokują takie skrypty i ramki, a zdjęć bez wersji https nie pokazują.
+
 ## Darmowe narzędzia, bez rejestracji
 
 - [Co z KSeF obowiązuje Twoją firmę](https://fluxlab.pl/ksef-integracja): dwa kliknięcia, termin i dni do końca wyjątku.

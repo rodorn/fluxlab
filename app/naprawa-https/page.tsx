@@ -5,7 +5,7 @@ import HttpsCheck from "@/components/HttpsCheck";
 export const metadata: Metadata = {
   title: "Naprawa HTTPS, koniec ostrzeżeń przeglądarki | Fluxlab",
   description:
-    "Wygasły certyfikat oznacza pełnoekranowe ostrzeżenie dla każdego odwiedzającego. Diagnozuję przyczynę i naprawiamy szyfrowanie razem z przekierowaniami.",
+    "Wygasły certyfikat oznacza pełnoekranowe ostrzeżenie dla każdego odwiedzającego. Diagnozujemy przyczynę i naprawiamy szyfrowanie razem z przekierowaniami.",
   alternates: { canonical: "/naprawa-https" },
   openGraph: {
     title: "Naprawa HTTPS, koniec ostrzeżeń przeglądarki | Fluxlab",
@@ -88,6 +88,22 @@ export default function Page() {
         },
       ]}
       faq={[
+        {
+          q: "Co znaczy „Połączenie nie jest prywatne” i skąd wiadomo, co jest zepsute?",
+          a: "Przyczynę podaje kod błędu pod ostrzeżeniem. W Chrome i Edge NET::ERR_CERT_DATE_INVALID oznacza certyfikat po terminie albo źle ustawiony zegar komputera, NET::ERR_CERT_COMMON_NAME_INVALID certyfikat wystawiony na inną nazwę, najczęściej na firmę hostingową albo tylko na wersję adresu z www, a NET::ERR_CERT_AUTHORITY_INVALID certyfikat samopodpisany albo brak certyfikatu pośredniego na serwerze. W Firefoksie te same przypadki to SEC_ERROR_EXPIRED_CERTIFICATE, SSL_ERROR_BAD_CERT_DOMAIN i SEC_ERROR_UNKNOWN_ISSUER. Jeśli ostrzeżenie widać na jednym komputerze, a na telefonie w sieci komórkowej już nie, winny jest zwykle zegar albo program antywirusowy na tym komputerze, nie strona.",
+        },
+        {
+          q: "Jak długo jest ważny certyfikat SSL w 2026 roku?",
+          a: "Od 15 marca 2026 najwyżej 200 dni, wcześniej było to 398 dni. Tak ustaliło CA/Browser Forum w uchwale SC-081 i dłuższych certyfikatów urzędy certyfikacji już nie wystawiają. Od 15 marca 2027 limit spada do 100 dni, od 15 marca 2029 do 47 dni. Płatny certyfikat „na rok” to dziś abonament, w którym sam certyfikat trzeba w trakcie roku wymienić. Darmowy Let's Encrypt wystawia certyfikaty na 90 dni i zapowiada 64 dni od 10 lutego 2027 oraz 45 dni od 16 lutego 2028. Przy takich terminach ręczne odnawianie przestaje się sprawdzać, certyfikat musi odnawiać się sam.",
+        },
+        {
+          q: "Dlaczego kłódka jest przekreślona, choć certyfikat jest ważny?",
+          a: "Strona ładuje część plików starym adresem zaczynającym się od http, to tak zwana mieszana treść. Przeglądarki blokują skrypty i ramki ładowane bez szyfrowania, a zdjęcia próbują pobrać przez https i gdy się nie da, nie pokazują ich. Stąd znikające zdjęcia, niedziałające formularze i przekreślona kłódka. W WordPressie przyczyną są zwykle adresy http zapisane w treści wpisów i w ustawieniach, które po przejściu na https trzeba podmienić w bazie danych.",
+        },
+        {
+          q: "Czy strona bez HTTPS traci w Google?",
+          a: "Google od 2014 roku traktuje HTTPS jako sygnał w rankingu, choć słaby. Większy problem robi przeglądarka: Chrome od wersji 68 z lipca 2018 oznacza każdą stronę bez szyfrowania jako „Niezabezpieczona”, a formularz kontaktowy na takiej stronie wysyła dane otwartym tekstem.",
+        },
         {
           q: "Czego potrzebujecie, żeby postawić diagnozę?",
           a: "Tylko adresu strony. Diagnoza opiera się na tym, co Twój serwer i tak pokazuje publicznie każdemu odwiedzającemu. Dostępy są potrzebne dopiero do samej naprawy.",
