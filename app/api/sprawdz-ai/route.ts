@@ -10,16 +10,23 @@ const UA = {
 };
 
 // Roboty, ktore zbieraja tresc na potrzeby modeli jezykowych i odpowiedzi
-// generowanych w wyszukiwarkach. Google-Extended nie wplywa na zwykle wyniki
-// wyszukiwania, steruje wylacznie uzyciem tresci w odpowiedziach AI.
-const BOTY = [
-  { ua: "GPTBot", kto: "OpenAI, zbieranie treści do modeli" },
-  { ua: "OAI-SearchBot", kto: "OpenAI, wyszukiwanie w ChatGPT" },
-  { ua: "ChatGPT-User", kto: "OpenAI, odczyt strony na prośbę użytkownika" },
-  { ua: "ClaudeBot", kto: "Anthropic" },
-  { ua: "PerplexityBot", kto: "Perplexity" },
-  { ua: "Google-Extended", kto: "Google, użycie treści w odpowiedziach AI" },
-  { ua: "CCBot", kto: "Common Crawl, zasila wiele modeli" },
+// generowanych w wyszukiwarkach. Dzielimy je wedlug celu, bo blokada robota
+// trenujacego to swiadomy wybor, ktory nie usuwa strony z wyszukiwania
+// w asystencie, a blokada robota wyszukiwania albo czytajacego na prosbe
+// uzytkownika wlasnie to robi. Google-Extended nie wplywa na zwykle wyniki
+// wyszukiwania ani na AI Overviews, steruje uzyciem tresci przez Gemini.
+type Cel = "wyszukiwanie" | "prosba" | "trening";
+
+const BOTY: { ua: string; kto: string; cel: Cel }[] = [
+  { ua: "OAI-SearchBot", kto: "OpenAI, wyszukiwanie w ChatGPT", cel: "wyszukiwanie" },
+  { ua: "ChatGPT-User", kto: "OpenAI, odczyt strony na prośbę użytkownika", cel: "prosba" },
+  { ua: "GPTBot", kto: "OpenAI, zbieranie treści do trenowania modeli", cel: "trening" },
+  { ua: "Claude-SearchBot", kto: "Anthropic, wyszukiwanie w Claude", cel: "wyszukiwanie" },
+  { ua: "Claude-User", kto: "Anthropic, odczyt strony na prośbę użytkownika", cel: "prosba" },
+  { ua: "ClaudeBot", kto: "Anthropic, zbieranie treści do trenowania modeli", cel: "trening" },
+  { ua: "PerplexityBot", kto: "Perplexity, wyszukiwanie", cel: "wyszukiwanie" },
+  { ua: "Google-Extended", kto: "Google, użycie treści przez Gemini", cel: "trening" },
+  { ua: "CCBot", kto: "Common Crawl, zbiór danych do trenowania wielu modeli", cel: "trening" },
 ];
 
 function czystaDomena(raw: string): string {
@@ -59,7 +66,9 @@ async function kod(url: string): Promise<number | null> {
 // Zwraca liste zablokowanych botow. Reguly czytamy sekcjami, bo "Disallow: /"
 // w sekcji dla jednego robota nie mowi nic o pozostalych, a sekcja dla
 // wszystkich obowiazuje kazdego, ktory nie ma sekcji wlasnej.
-function zablokowane(robots: string): { bot: string; kto: string; przez: string }[] {
+function zablokowane(
+  robots: string,
+): { bot: string; kto: string; cel: Cel; przez: string }[] {
   const sekcje: { agenci: string[]; blokujeWszystko: boolean }[] = [];
   let biezaca: { agenci: string[]; blokujeWszystko: boolean } | null = null;
   let poprzedniaToAgent = false;
@@ -83,17 +92,17 @@ function zablokowane(robots: string): { bot: string; kto: string; przez: string 
     if (dis && dis[1].trim() === "/") biezaca.blokujeWszystko = true;
   }
 
-  const wynik: { bot: string; kto: string; przez: string }[] = [];
+  const wynik: { bot: string; kto: string; cel: Cel; przez: string }[] = [];
   for (const b of BOTY) {
     const wlasna = sekcje.find((s) => s.agenci.includes(b.ua.toLowerCase()));
     if (wlasna) {
       if (wlasna.blokujeWszystko)
-        wynik.push({ bot: b.ua, kto: b.kto, przez: "własna reguła" });
+        wynik.push({ bot: b.ua, kto: b.kto, cel: b.cel, przez: "własna reguła" });
       continue;
     }
     const ogolna = sekcje.find((s) => s.agenci.includes("*"));
     if (ogolna?.blokujeWszystko)
-      wynik.push({ bot: b.ua, kto: b.kto, przez: "reguła dla wszystkich" });
+      wynik.push({ bot: b.ua, kto: b.kto, cel: b.cel, przez: "reguła dla wszystkich" });
   }
   return wynik;
 }
@@ -290,6 +299,9 @@ export async function POST(request: Request) {
   ]);
 
   const blokady = robots ? zablokowane(robots) : [];
+  const odcinajace = blokady.filter((b) => b.cel !== "trening");
+  const treningowe = blokady.filter((b) => b.cel === "trening");
+  const sprawdzaneOdcinajace = BOTY.filter((b) => b.cel !== "trening").length;
   const tekst = tekstBezSkryptow(html);
   const znakow = tekst.length;
   const typy = typyDanych(html);
@@ -305,16 +317,16 @@ export async function POST(request: Request) {
 
   const trescPusta = znakow < 600;
   const werdykt =
-    blokady.length >= 3 || trescPusta
+    odcinajace.length > 0 || trescPusta
       ? "CZERWONY"
-      : blokady.length > 0 || !opis || typy.length === 0
+      : !opis || typy.length === 0
         ? "ZOLTY"
         : "ZIELONY";
 
   const naglowek = trescPusta
     ? "Bez uruchomienia skryptów Twoja strona jest prawie pusta"
-    : blokady.length
-      ? `${blokady.length} z ${BOTY.length} robotów AI ma zakaz wejścia`
+    : odcinajace.length
+      ? `${odcinajace.length} z ${sprawdzaneOdcinajace} robotów wyszukiwania AI ma zakaz wejścia`
       : typy.length === 0
         ? "Roboty wchodzą, ale strona nie mówi im, czym jest firma"
         : "Strona jest dostępna dla robotów AI";
@@ -323,12 +335,21 @@ export async function POST(request: Request) {
 
   punkty.push({
     tytul: "Dostęp dla robotów AI",
-    stan: blokady.length >= 3 ? "zle" : blokady.length ? "uwaga" : "ok",
-    opis: blokady.length
-      ? `Zakaz wejścia mają: ${blokady
-          .map((b) => `${b.bot} (${b.przez})`)
-          .join(", ")}. Blokada bywa świadomą decyzją o nieoddawaniu treści do trenowania modeli, ale częściej jest skutkiem ubocznym reguły napisanej przeciwko innym robotom. Warto wiedzieć, że się ją ma.`
-      : "Żaden z siedmiu sprawdzanych robotów nie jest zablokowany w robots.txt, więc treść może trafić do odpowiedzi generowanych przez asystentów.",
+    stan: odcinajace.length ? "zle" : "ok",
+    opis: [
+      odcinajace.length
+        ? `Zakaz wejścia mają roboty, od których zależy, czy strona pojawi się w odpowiedzi asystenta: ${odcinajace
+            .map((b) => `${b.bot} (${b.kto}, ${b.przez})`)
+            .join(", ")}. Przez tę blokadę strona znika z wyszukiwania w ChatGPT, Claude albo Perplexity. Najczęściej to skutek uboczny reguły dla wszystkich robotów albo gotowej listy „blokuj AI”, a nie świadoma decyzja.`
+        : `Żaden z ${sprawdzaneOdcinajace} robotów wyszukiwania i odczytu na prośbę użytkownika nie jest zablokowany w robots.txt, więc strona może trafić do odpowiedzi asystentów.`,
+      treningowe.length
+        ? `Zablokowane są też roboty zbierające treść do trenowania modeli: ${treningowe
+            .map((b) => b.bot)
+            .join(", ")}. To świadomy wybór, który nie usuwa strony z wyszukiwania w asystentach, więc nie liczymy go jako problemu.`
+        : "",
+    ]
+      .filter(Boolean)
+      .join(" "),
   });
 
   punkty.push({
@@ -374,8 +395,8 @@ export async function POST(request: Request) {
 
   const komentarz = trescPusta
     ? "Najpoważniejszy problem jest tu jeden: strona buduje się dopiero w przeglądarce. Dla odwiedzającego to niewidoczne, dla robota oznacza pustą kartkę. Zanim cokolwiek innego, warto sprawić, żeby najważniejsza treść była w samym dokumencie."
-    : blokady.length
-      ? "Zablokowane roboty to często pozostałość po regule wpisanej dawno temu przeciwko zupełnie innym robotom. Jeśli blokada jest świadoma, nie ma o czym mówić. Jeśli nie, warto ją zdjąć, bo dziś to jest kanał, którym ludzie pytają o firmy zamiast wpisywać frazy w wyszukiwarkę."
+    : odcinajace.length
+      ? "Zablokowane roboty wyszukiwania to często pozostałość po regule wpisanej dawno temu przeciwko zupełnie innym robotom. Da się to rozdzielić: zostawić zakaz dla GPTBot, ClaudeBot i CCBot, które zbierają treść do trenowania, a wpuścić OAI-SearchBot, Claude-SearchBot i PerplexityBot osobnymi grupami z „Allow: /”. Wtedy treść nie idzie do trenowania, a strona zostaje w odpowiedziach asystentów."
       : "Technicznie nic tu nie stoi na przeszkodzie. To, czy asystent poleci akurat Ciebie, zależy dalej od tego, czy na stronie stoją konkretne odpowiedzi na pytania klientów, a nie ogólne hasła o jakości i indywidualnym podejściu.";
 
   return NextResponse.json({

@@ -503,7 +503,18 @@ function wykryjBlokade(status: number, html: string): string | null {
   return null;
 }
 
-const ROBOTY_AI = ["GPTBot", "ClaudeBot", "anthropic-ai", "PerplexityBot", "CCBot", "Google-Extended"];
+// Tylko roboty, od ktorych zalezy obecnosc w odpowiedziach asystentow.
+// Blokada GPTBot, ClaudeBot, CCBot czy Google-Extended wylacza trenowanie
+// na tresci, ale strony z wyszukiwania w asystencie nie usuwa, wiec zgloszenie
+// jej jako problemu byloby w raporcie nieprawda.
+const ROBOTY_AI = [
+  "OAI-SearchBot",
+  "ChatGPT-User",
+  "Claude-SearchBot",
+  "Claude-User",
+  "PerplexityBot",
+  "Perplexity-User",
+];
 
 /**
  * Parser robots.txt.

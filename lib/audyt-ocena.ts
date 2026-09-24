@@ -590,10 +590,10 @@ export function ocenStrone(p: Pomiar): Ustalenie[] {
       klucz: "blokada_ai",
       obszar: "ai",
       waga: "wazne",
-      tytul: "Roboty asystentów AI mają wstęp wzbroniony",
+      tytul: "Roboty wyszukiwania w asystentach AI mają wstęp wzbroniony",
       fakt: `Zablokowane w robots.txt: ${p.robots.blokujeAi.join(", ")}.`,
       skutek:
-        "Jeżeli blokada jest świadoma, nie ma tematu. Jeżeli została wklejona z cudzego pliku, odcina kanał, w którym ktoś właśnie pyta asystenta o wykonawcę w Waszej branży.",
+        "To nie są roboty zbierające treść do trenowania, tylko te, od których zależy, czy strona pojawi się w odpowiedzi ChatGPT, Claude albo Perplexity. Jeżeli blokada została wklejona z cudzego pliku, odcina kanał, w którym ktoś właśnie pyta asystenta o wykonawcę w Waszej branży.",
       koszt: 50,
       samodzielnie: true,
       dostep: "dostęp do plików na serwerze",

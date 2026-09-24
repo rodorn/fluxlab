@@ -677,7 +677,7 @@ export default function AudytCheck() {
               <Wiersz nazwa="SPF" wartosc={p.poczta.spf ? "jest" : "brak"} />
               <Wiersz nazwa="DMARC" wartosc={p.poczta.dmarc ? `${p.poczta.dmarcPolityka ?? "jest"}` : "brak"} />
               <Wiersz nazwa="robots.txt" wartosc={p.robots.jest ? (p.robots.blokujeWszystko ? "blokuje wszystko" : "jest") : "brak"} />
-              <Wiersz nazwa="Roboty AI zablokowane" wartosc={p.robots.blokujeAi.length ? p.robots.blokujeAi.join(", ") : "nie"} />
+              <Wiersz nazwa="Roboty wyszukiwania AI zablokowane" wartosc={p.robots.blokujeAi.length ? p.robots.blokujeAi.join(", ") : "nie"} />
             </Skladane>
           </div>
 
