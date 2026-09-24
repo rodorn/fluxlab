@@ -88,14 +88,29 @@ export type Pomiar = {
   og: boolean;
   daneStrukturalne: string[];
   hreflang: string[];
-  obrazy: { wszystkie: number; bezAlt: number; bezWymiarow: number; bezLazy: number };
+  obrazy: {
+    wszystkie: number;
+    bezAlt: number;
+    bezWymiarow: number;
+    bezLazy: number;
+  };
   /** Ile znaków treści zostaje po usunięciu skryptów i stylów. */
   trescZnakow: number;
-  robots: { jest: boolean; blokujeWszystko: boolean; blokujeAi: string[]; mapaWskazana: boolean };
+  robots: {
+    jest: boolean;
+    blokujeWszystko: boolean;
+    blokujeAi: string[];
+    mapaWskazana: boolean;
+  };
   sitemap: { jest: boolean; adresow: number | null };
   llms: boolean;
   zasoby: Zasob[];
-  poczta: { spf: boolean; dmarc: boolean; dmarcPolityka: string | null; mx: boolean };
+  poczta: {
+    spf: boolean;
+    dmarc: boolean;
+    dmarcPolityka: string | null;
+    mx: boolean;
+  };
   mobile: Mobile;
 };
 
@@ -127,7 +142,12 @@ function pusty(domena: string): Pomiar {
     hreflang: [],
     obrazy: { wszystkie: 0, bezAlt: 0, bezWymiarow: 0, bezLazy: 0 },
     trescZnakow: 0,
-    robots: { jest: false, blokujeWszystko: false, blokujeAi: [], mapaWskazana: false },
+    robots: {
+      jest: false,
+      blokujeWszystko: false,
+      blokujeAi: [],
+      mapaWskazana: false,
+    },
     sitemap: { jest: false, adresow: null },
     llms: false,
     zasoby: [],
@@ -165,7 +185,12 @@ async function pobierz(
   limitMs = CZAS_ZASOBU_MS,
   metoda: "GET" | "HEAD" = "GET",
   ua?: string,
-): Promise<{ odp: Response; tekst: string; ttfb: number; pelny: number } | null> {
+): Promise<{
+  odp: Response;
+  tekst: string;
+  ttfb: number;
+  pelny: number;
+} | null> {
   const przerwij = new AbortController();
   const budzik = setTimeout(() => przerwij.abort(), limitMs);
   const start = Date.now();
@@ -201,7 +226,12 @@ function pobierzCert(domena: string): Promise<Pomiar["cert"]> {
       gotowe(null);
     }, 8000);
     const gniazdo = tls.connect(
-      { host: domena, port: 443, servername: domena, rejectUnauthorized: false },
+      {
+        host: domena,
+        port: 443,
+        servername: domena,
+        rejectUnauthorized: false,
+      },
       () => {
         const c = gniazdo.getPeerCertificate();
         clearTimeout(koniec);
@@ -262,7 +292,10 @@ async function poczta(domena: string): Promise<Pomiar["poczta"]> {
 }
 
 /** Wyciąga adresy zasobów z dokumentu i zamienia je na adresy bezwzględne. */
-function zasobyZHtml(html: string, baza: string): { adres: string; rodzaj: Zasob["rodzaj"] }[] {
+function zasobyZHtml(
+  html: string,
+  baza: string,
+): { adres: string; rodzaj: Zasob["rodzaj"] }[] {
   const lista: { adres: string; rodzaj: Zasob["rodzaj"] }[] = [];
   const dodaj = (sur: string | undefined, rodzaj: Zasob["rodzaj"]) => {
     if (!sur) return;
@@ -273,13 +306,19 @@ function zasobyZHtml(html: string, baza: string): { adres: string; rodzaj: Zasob
       /* adres, którego nie da się złożyć, pomijamy */
     }
   };
-  for (const m of html.matchAll(/<script[^>]+src=["']([^"']+)["']/gi)) dodaj(m[1], "skrypt");
+  for (const m of html.matchAll(/<script[^>]+src=["']([^"']+)["']/gi))
+    dodaj(m[1], "skrypt");
   // rel bywa listą, np. „preload stylesheet” w Joomli z JCH Optimize.
-  for (const m of html.matchAll(/<link[^>]+rel=["'][^"']*\bstylesheet\b[^"']*["'][^>]*>/gi))
+  for (const m of html.matchAll(
+    /<link[^>]+rel=["'][^"']*\bstylesheet\b[^"']*["'][^>]*>/gi,
+  ))
     dodaj(m[0].match(/href=["']([^"']+)["']/i)?.[1], "styl");
-  for (const m of html.matchAll(/<img[^>]+src=["']([^"']+)["']/gi)) dodaj(m[1], "obraz");
+  for (const m of html.matchAll(/<img[^>]+src=["']([^"']+)["']/gi))
+    dodaj(m[1], "obraz");
   const widziane = new Set<string>();
-  return lista.filter((z) => (widziane.has(z.adres) ? false : widziane.add(z.adres)));
+  return lista.filter((z) =>
+    widziane.has(z.adres) ? false : widziane.add(z.adres),
+  );
 }
 
 /**
@@ -426,7 +465,9 @@ async function zmierzMobile(
   // czy układ w ogóle ma się jak przestawić na wąskim ekranie.
   const arkusze = zasoby.filter((z) => z.rodzaj === "styl").slice(0, 4);
   const trescArkuszy = await Promise.all(
-    arkusze.map(async (a) => (await pobierz(a.adres, CZAS_ZASOBU_MS))?.tekst ?? ""),
+    arkusze.map(
+      async (a) => (await pobierz(a.adres, CZAS_ZASOBU_MS))?.tekst ?? "",
+    ),
   );
   const css = [
     ...trescArkuszy,
@@ -441,16 +482,22 @@ async function zmierzMobile(
       /\bmedia=["'][^"']*\(\s*(max|min)-(device-)?width/i.test(m[0]),
     ).length;
   const stalychSzerokosci = (
-    bezBlokowMedia(css).match(/(?:^|[;{\s])(?:min-)?width\s*:\s*(\d{3,})px/gi) ?? []
+    bezBlokowMedia(css).match(
+      /(?:^|[;{\s])(?:min-)?width\s*:\s*(\d{3,})px/gi,
+    ) ?? []
   ).filter((m) => Number(m.match(/(\d{3,})px/)?.[1] ?? 0) >= 600).length;
 
   const tagiObrazow = [...html.matchAll(/<img[^>]*>/gi)].map((m) => m[0]);
-  const obrazowBezSrcset = tagiObrazow.filter((t) => !/\ssrcset=/i.test(t)).length;
+  const obrazowBezSrcset = tagiObrazow.filter(
+    (t) => !/\ssrcset=/i.test(t),
+  ).length;
 
   const htmlBajty = Buffer.byteLength(html, "utf8");
   const wagaCalosci = htmlBajty + wagaZasobow;
   // 1,6 Mb/s to ostrożny szacunek dla przeciętnego zasięgu poza centrum miasta.
-  const sekundNa4G = wagaCalosci ? Number((wagaCalosci / (1_600_000 / 8)).toFixed(1)) : null;
+  const sekundNa4G = wagaCalosci
+    ? Number((wagaCalosci / (1_600_000 / 8)).toFixed(1))
+    : null;
 
   // Dokument uznajemy za osobny, gdy różnica długości jest wyraźna. Drobne
   // różnice biorą się ze znaczników losowych i nie znaczą nic.
@@ -462,9 +509,10 @@ async function zmierzMobile(
 
   return {
     viewport,
-    blokujePowiekszanie: /user-scalable\s*=\s*no|maximum-scale\s*=\s*1(\.0)?\b/i.test(
-      viewport ?? "",
-    ),
+    blokujePowiekszanie:
+      /user-scalable\s*=\s*no|maximum-scale\s*=\s*1(\.0)?\b/i.test(
+        viewport ?? "",
+      ),
     osobnaWersja,
     ttfbMs: dok?.ttfb ?? null,
     htmlBajty,
@@ -497,9 +545,13 @@ function wykryjBlokade(status: number, html: string): string | null {
     return "strona ochrony zamiast treści";
   if (p.includes("cf-browser-verification") || p.includes("just a moment"))
     return "weryfikacja przeglądarki Cloudflare";
-  if (p.includes("datadome") || p.includes("please enable js and disable any ad blocker"))
+  if (
+    p.includes("datadome") ||
+    p.includes("please enable js and disable any ad blocker")
+  )
     return "system ochrony przed robotami";
-  if (p.includes("captcha") && html.length < 8000) return "captcha zamiast treści";
+  if (p.includes("captcha") && html.length < 8000)
+    return "captcha zamiast treści";
   return null;
 }
 
@@ -526,7 +578,9 @@ const ROBOTY_AI = [
  * Wyrażenie regularne nie widzi, gdzie kończy się jeden blok i zaczyna
  * następny, więc trzeba przejść plik linia po linii.
  */
-function czytajRobots(tekst: string): { agenci: string[]; disallow: string[] }[] {
+function czytajRobots(
+  tekst: string,
+): { agenci: string[]; disallow: string[] }[] {
   const bloki: { agenci: string[]; disallow: string[] }[] = [];
   let biezacy: { agenci: string[]; disallow: string[] } | null = null;
   let poprzedniaToAgent = false;
@@ -581,7 +635,10 @@ export async function zmierz(domenaWejscie: string): Promise<Pomiar> {
     else baza = `https://${domena}`;
   }
 
-  const [cert, pocztaWynik] = await Promise.all([pobierzCert(domena), poczta(domena)]);
+  const [cert, pocztaWynik] = await Promise.all([
+    pobierzCert(domena),
+    poczta(domena),
+  ]);
   wynik.cert = cert;
   wynik.poczta = pocztaWynik;
 
@@ -623,20 +680,33 @@ export async function zmierz(domenaWejscie: string): Promise<Pomiar> {
   wynik.serwer = dok.odp.headers.get("server");
 
   const html = dok.tekst;
-  wynik.tytul = html.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1]?.trim().slice(0, 300) ?? null;
+  wynik.tytul =
+    html
+      .match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1]
+      ?.trim()
+      .slice(0, 300) ?? null;
   wynik.opisMeta = metaTresc(html, "description");
   wynik.h1 = [...html.matchAll(/<h1[^>]*>([\s\S]*?)<\/h1>/gi)]
-    .map((m) => m[1].replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim())
+    .map((m) =>
+      m[1]
+        .replace(/<[^>]+>/g, " ")
+        .replace(/\s+/g, " ")
+        .trim(),
+    )
     .filter(Boolean)
     .slice(0, 5);
   wynik.canonical =
-    html.match(/<link[^>]+rel=["']canonical["'][^>]+href=["']([^"']+)["']/i)?.[1] ?? null;
+    html.match(
+      /<link[^>]+rel=["']canonical["'][^>]+href=["']([^"']+)["']/i,
+    )?.[1] ?? null;
   wynik.jezyk = html.match(/<html[^>]+lang=["']([^"']+)["']/i)?.[1] ?? null;
-  wynik.noindex = /<meta[^>]+name=["']robots["'][^>]+content=["'][^"']*noindex/i.test(html);
+  wynik.noindex =
+    /<meta[^>]+name=["']robots["'][^>]+content=["'][^"']*noindex/i.test(html);
   wynik.og = /<meta[^>]+property=["']og:title["']/i.test(html);
-  wynik.daneStrukturalne = [
-    ...html.matchAll(/"@type"\s*:\s*"([^"]+)"/g),
-  ].map((m) => m[1]).filter((v, i, a) => a.indexOf(v) === i).slice(0, 12);
+  wynik.daneStrukturalne = [...html.matchAll(/"@type"\s*:\s*"([^"]+)"/g)]
+    .map((m) => m[1])
+    .filter((v, i, a) => a.indexOf(v) === i)
+    .slice(0, 12);
   wynik.hreflang = [...html.matchAll(/hreflang=["']([^"']+)["']/gi)]
     .map((m) => m[1])
     .filter((v, i, a) => a.indexOf(v) === i)
@@ -647,7 +717,9 @@ export async function zmierz(domenaWejscie: string): Promise<Pomiar> {
   wynik.obrazy = {
     wszystkie: tagiObrazow.length,
     bezAlt: tagiObrazow.filter((t) => !/\salt=/i.test(t)).length,
-    bezWymiarow: tagiObrazow.filter((t) => !/\swidth=/i.test(t) || !/\sheight=/i.test(t)).length,
+    bezWymiarow: tagiObrazow.filter(
+      (t) => !/\swidth=/i.test(t) || !/\sheight=/i.test(t),
+    ).length,
     bezLazy: tagiObrazow.filter((t) => !/loading=["']lazy["']/i.test(t)).length,
   };
 
@@ -655,7 +727,9 @@ export async function zmierz(domenaWejscie: string): Promise<Pomiar> {
     pobierz(`${baza}/robots.txt`),
     pobierz(`${baza}/llms.txt`),
     pobierz(`${baza}/sitemap.xml`),
-    pobierz(baza.includes("://www.") ? `https://${domena}` : `https://www.${domena}`),
+    pobierz(
+      baza.includes("://www.") ? `https://${domena}` : `https://www.${domena}`,
+    ),
     pobierz(`http://${domena}`),
   ]);
 
@@ -671,13 +745,21 @@ export async function zmierz(domenaWejscie: string): Promise<Pomiar> {
   }
   wynik.llms = Boolean(llmsTxt?.odp.ok);
   if (mapa && mapa.odp.ok) {
-    wynik.sitemap = { jest: true, adresow: (mapa.tekst.match(/<loc>/g) ?? []).length || null };
+    wynik.sitemap = {
+      jest: true,
+      adresow: (mapa.tekst.match(/<loc>/g) ?? []).length || null,
+    };
   }
-  // Obie wersje oddają treść wtedy, gdy druga nie przekierowała na pierwszą.
+  // Obie wersje oddają treść wtedy, gdy obie kończą na różnych hostach.
+  // Porównujemy z adresem końcowym dokumentu, a nie z `baza`, bo strona bez
+  // www przekierowana na www ma bazę bez www, choć treść oddaje tylko jedna.
   wynik.obieWersjeDzialaja = wersjaWww
-    ? wersjaWww.odp.ok && !wersjaWww.odp.url.startsWith(baza)
+    ? wersjaWww.odp.ok &&
+      new URL(wersjaWww.odp.url).host !== new URL(dok.odp.url).host
     : false;
-  wynik.httpPrzekierowuje = poHttp ? poHttp.odp.url.startsWith("https://") : null;
+  wynik.httpPrzekierowuje = poHttp
+    ? poHttp.odp.url.startsWith("https://")
+    : null;
 
   wynik.zasoby = await zmierzZasoby(zasobyZHtml(html, baza));
   const wagaZasobow = wynik.zasoby.reduce((s, z) => s + (z.bajty ?? 0), 0);
