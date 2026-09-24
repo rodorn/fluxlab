@@ -162,3 +162,64 @@ Raport wyszedł o 23:07 z pawel@fluxlab.pl i jest w skrzynce odbiorczej Gmaila. 
 - Znacznik w dzienniku jest tylko lokalnie, bez commita.
 - Google Calendar i Google Drive czekają na autoryzację w ustawieniach konektorów na claude.ai. Do tego raportu nie były potrzebne.
 === 2026-09-23 23:07:49 koniec, kod 0
+=== 2026-09-24 03:03:30 start raportu
+Raport wyszedł o 03:06 z pawel@fluxlab.pl. Sprawdziłem po Message-ID, że dotarł do skrzynki odbiorczej Gmaila. Na końcu `cykl/dziennik.md` dopisałem `<!-- WYSLANO 2026-09-24 03:06 -->`, bez commita, tak samo jak przy poprzednich raportach.
+
+**Temat:** „FluxLab strona, 03:06, e-Doręczenia: odpowiedzi dla JDG przed 1 października”
+
+**Zawartość:** w mailu jest pięć osobnych sekcji, po jednej na zmianę:
+1. Kary KSeF przesunięte w treści z 2027 na 2028. Ta zmiana nie ma własnego wpisu w dzienniku, więc opisałem ją na podstawie commita i sprawdziłem na produkcji.
+2. Sześć odpowiedzi o spamie i podszywaniu na `/audyt-poczty`.
+3. Naprawiony fałszywy alarm `brak_media` w audycie strony.
+4. PR #2 do `awesome-ksef`. O 03:05 był nadal otwarty i bez komentarzy.
+5. FAQ e-Doręczeń dla JDG.
+
+Dalej są kolejne sekcje:
+- **Czego nie udało się zrobić:** m.in. brak nocnej wysyłki do biur i zero odpowiedzi na cztery maile z 23.09.
+- **Ruch:** pełne dane z podziałem na przeglądarki i zastrzeżeniem o danych sprzed 21.09 16:00. Liczba uruchomień narzędzi się nie zmieniła i wynosi 0.
+- **Stan audytów:** 65 pozycji, z tego 40 zamkniętych, 4 częściowo i 21 otwartych. Jako następne wskazałem strony z jednym linkiem przychodzącym.
+- Wniosek na końcu.
+
+**Zrzut ekranu:** dołączony jako załącznik cid. Zrobiłem go na produkcji, pokazuje FAQ na `/e-doreczenia-integracja` z rozwiniętymi odpowiedziami o zawieszonej działalności i koszcie.
+
+**Do poprawienia:** w `AUDYT_TRESCI.md` punkt 2.3 (martwe komponenty) jest oznaczony jako otwarty, ale te pliki usunięto 22.09. W mailu liczę go jako zamknięty i to zaznaczam. Samej tabeli w pliku nie zmieniałem.
+=== 2026-09-24 03:06:57 koniec, kod 0
+=== 2026-09-24 07:03:28 start raportu
+Raport jest wysłany. Serwer Zoho przyjął wiadomość z pawel@fluxlab.pl do iwanekpawel55@gmail.com (msgid `<179022634483.3405067.2113260256646623446@fluxlab.pl>`), a na końcu `cykl/dziennik.md` dopisałem `<!-- WYSLANO 2026-09-24 07:05 -->`.
+
+- **Temat:** „FluxLab strona, 07:05, KSeF 2027: osobna strona z gotową wiadomością dla biur rachunkowych”.
+- **Zakres:** cztery cykle z dziennika (03:43, 04:43, 05:43, 06:43). Każdy ma osobną sekcję: co było źle, co zrobiono, dowód i co to daje.
+- **Sprawdzone przed wysyłką:**
+  - Obrazek podglądu `/ksef-2027` działa na produkcji: 200, `image/png`, 228 950 bajtów.
+  - PR #2 do `ksefuj/awesome-ksef` jest dalej otwarty, bez komentarzy i recenzji.
+- **Zrzut ekranu:** dołączyłem sekcję „Dla biur rachunkowych: wiadomość do klientów” z produkcyjnej strony `/ksef-2027` (`skrypty-raport/ksef-2027-dla-biur.png`). Obejrzałem go przed wysłaniem.
+- **Czego nie zrobiono:** nic nie zostało opublikowane na zewnątrz, bo trzy teksty czekają na Twoje konto. Podlinkowanie stron z jednym linkiem, zapowiedziane w poprzednim raporcie, nie ruszyło. Maili do biur nie było, bo cykle wypadły przed 9:00. Narzędzie na `/widocznosc-w-ai` zna mniej robotów AI, niż opisuje jego FAQ. Wspólny punkt IndexNow dalej odrzuca klucz (403).
+- **Ruch:** 18 odsłon i 2 osoby w ostatniej dobie, zero uruchomień narzędzi. To tyle samo co w raporcie z 03:06, więc nie było żadnego wzrostu ani spadku. Od cyklu 02:43 nie przyszło żadne nowe wejście.
+- **Lista audytowa:** 40 pozycji zamkniętych, 4 częściowo, 21 otwartych, bez zmian w tym okresie. Od 9:00 pierwsza jest wysyłka do biur rachunkowych, a z listy audytowej strony z jednym linkiem przychodzącym.
+
+Przeczytałem treść pod kątem ortografii i odmiany. Poprawiłem przy tym jedno niezręczne wyliczenie w sekcji o obrazku podglądu i usunąłem niepewne przypisanie „wyboru po sytuacji” do strony głównej. Długich myślników nie ma.
+
+Konektory Google Calendar i Google Drive w claude.ai czekają na autoryzację w ustawieniach konektorów. Do tego raportu nie były potrzebne.
+=== 2026-09-24 07:05:59 koniec, kod 0
+=== 2026-09-24 11:03:07 start raportu
+Raport wysłałem. Serwer Zoho przyjął wiadomość z pawel@fluxlab.pl do iwanekpawel55@gmail.com (msgid `<179024079388.79608.5196446219428332923@fluxlab.pl>`). Na końcu `cykl/dziennik.md` dopisałem `<!-- WYSLANO 2026-09-24 11:06 -->`.
+
+W folderze „Wysłane” w Zoho tego maila nie ma. Poprzedniego raportu z 07:05 też tam nie ma, więc maile wysyłane tym skryptem nigdy tam nie trafiają i to nie jest nowy błąd. Nie sprawdziłem, czy mail dotarł do Gmaila.
+
+- **Temat:** „FluxLab strona, 11:06, 5 raportów do biur rachunkowych i ramka KSeF do wklejenia na ich strony”.
+- **Zakres:** cztery cykle z dziennika i każdy ma w mailu osobną sekcję:
+  - 07:43: narzędzie na `/widocznosc-w-ai` i audyt strony nie dają już czerwonego wyniku ani zarzutu za samą blokadę robotów, które zbierają treści do trenowania AI.
+  - 08:43: pięć maili do biur rachunkowych. Cztery wolne strony zrobił WeNet, piąta ma wygasający certyfikat.
+  - 09:43: ramka HTML o KSeF do wklejenia na stronę biura.
+  - 10:43: jedna ostateczna lista trzech tekstów do publikacji.
+- **Sprawdzone przed wysyłką:**
+  - PR #2 do `ksefuj/awesome-ksef` jest dalej otwarty, bez komentarzy i recenzji.
+  - W skrzynce nie ma odpowiedzi ani odbić od 9 biur.
+  - Z bazy ruchu wynika, że ostatnie wejście było o 02:13. Była to jedna sesja, która w 26 sekund otworzyła 17 stron, więc to raczej automat niż człowiek. Spadek z 18 do 17 odsłon wziął się stąd, że z ostatniej doby wypadła wizyta z chatgpt.com z 23.09.
+- **Ruch:** 17 odsłon i 1 osoba w ostatniej dobie, wszystkie z Chrome na macOS. Narzędzi nikt nie uruchomił, tak jak w raporcie z 07:05. Jedyne uruchomienie narzędzia w całej bazie było 22.09 o 02:10. Zastrzeżenie o danych sprzed 21.09 godz. 16:00 jest w mailu.
+- **Lista audytowa:** 40 pozycji zamkniętych, 4 częściowo, 21 otwartych, w tym okresie bez zmian. Następne w kolejce są strony z jednym linkiem prowadzącym do nich z innych stron serwisu. W mailu napisałem wprost, że tę pozycję odkładamy już trzeci raz z rzędu.
+- **Zrzut ekranu:** sekcja z ramką KSeF zrobiona na produkcji o 11:04 (`skrypty-raport/ksef-2027-ramka.png`). Obejrzałem go przed wysłaniem, a przyklejony pasek menu ukryłem, żeby nie zasłaniał górnej krawędzi.
+- **Sprawdzenie treści:** przeczytałem całość i poprawiłem odmianę w kilku miejscach („Wszystkich pięć maili”, „ani jednej odpowiedzi, ani jednego wejścia”). Poprawiłem też jeden fakt: z czterech stron z 23.09 WeNet zrobił trzy, a nie wszystkie. Wyciąłem jedno zdanie, którego nie sprawdziłem, o linkach do `/ksef-2027`. Długich myślników w mailu nie ma.
+
+Konektory Google Calendar i Google Drive w claude.ai trzeba autoryzować w ustawieniach konektorów. Do tego raportu nie były potrzebne.
+=== 2026-09-24 11:07:04 koniec, kod 0

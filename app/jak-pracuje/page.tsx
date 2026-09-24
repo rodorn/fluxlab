@@ -117,9 +117,9 @@ const faq = [
       "Nie podajemy cennika z sufitu, bo tak samo nazwany projekt może mieć dwa różne koszty w zależności od danych i integracji. Po 30-minutowej konsultacji znasz widełki. Po audycie, konkretną, stałą cenę.",
   },
   {
-    question: "Pracujecie sam czy w zespole?",
+    question: "Pracujecie sami czy w zespole?",
     answer:
-      "Pracujemy sam. To oznacza dwie rzeczy: nie przepłacasz za warstwy pośrednie (project managerów, account managerów), ale też, terminy zależą od jednej osoby. Jeśli projekt wymaga więcej rąk, mówimy o tym od razu i albo polecamy kogoś, albo podpinam konkretnych podwykonawców za zgodą.",
+      "Pracujemy w wąskim składzie, bez warstw pośrednich. To oznacza dwie rzeczy: nie płacicie za project managerów ani account managerów, ale terminy zależą od małego zespołu, a nie od dużej firmy z zapasem ludzi. Jeśli projekt wymaga więcej rąk, mówimy o tym od razu i albo polecamy kogoś, albo podpinamy konkretnych podwykonawców za Waszą zgodą.",
   },
   {
     question: "Co jeśli automatyzacja przestanie działać po kilku miesiącach?",

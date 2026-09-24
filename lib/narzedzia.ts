@@ -86,9 +86,9 @@ export const businessTools: Narzedzie[] = [
     ikona: "lupa",
   },
   {
-    title: "Ile przepłacasz za automatyzacje",
+    title: "Ile naprawdę płacisz za Zapiera i Make",
     description:
-      "Podaj liczbę uruchomień i kroków w scenariuszu, a pokażemy, ile zadań jest naprawdę rozliczanych, ile to kosztuje i po ilu miesiącach zwróciłoby się przeniesienie na własny serwer.",
+      "Zapier i Make liczą nie uruchomienia, tylko pojedyncze kroki, więc rachunek rośnie szybciej, niż wynika z cennika. Podaj liczbę uruchomień i kroków, a pokażemy realny koszt i po ilu miesiącach zwróciłoby się przeniesienie na własny serwer.",
     href: "/tansze-automatyzacje",
     ikona: "moneta",
   },

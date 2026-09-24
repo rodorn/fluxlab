@@ -402,3 +402,5 @@ udostępnieniem.
 4) Bez działania: PR #2 do `ksefuj/awesome-ksef` czeka na maintainera.
 
 **Zostało otwarte:** Kanał 1 bez kont Pawła nie ma już gdzie publikować. Najlepsze miejsca na te same teksty to grupy na Facebooku dla JDG i księgowych, których bez konta nie da się nawet przeszukać. Jeśli Paweł ma tam konto i dopisze w dzienniku nazwy grup, następne cykle kanału 1 mogą przygotować teksty pod konkretne, świeże wątki. Po publikacji wejścia pokażą się w raporcie jako `wykop.pl` i `linkedin.com`. Następny cykl w rotacji: kanał 4 (biura z realnym problemem, z jednym zdaniem o ramce) albo 2.
+
+<!-- WYSLANO 2026-09-24 11:06 -->

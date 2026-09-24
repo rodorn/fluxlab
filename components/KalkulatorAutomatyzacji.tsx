@@ -136,7 +136,7 @@ export default function KalkulatorAutomatyzacji() {
   return (
     <div className="rounded-2xl border border-gray-200/80 dark:border-gray-800/80 bg-white/70 dark:bg-gray-900/50 p-6 md:p-8">
       <h2 className="text-xl font-bold text-gray-900 dark:text-white">
-        Policz, ile przepłacasz za automatyzacje
+        Policz, ile naprawdę płacisz za Zapiera i Make
       </h2>
       <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
         Popularne narzędzia liczą nie uruchomienia, tylko pojedyncze kroki. Przez
