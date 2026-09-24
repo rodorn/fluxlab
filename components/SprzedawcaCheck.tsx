@@ -53,7 +53,7 @@ const MOTYW: Record<
 
 const ETAPY = [
   "Pobieramy stronę główną",
-  "Zaglądam do kontaktu i regulaminu",
+  "Zaglądamy do kontaktu i regulaminu",
   "Szukamy numeru NIP i numeru konta",
   "Pytamy wykaz podatników VAT",
 ];
@@ -169,7 +169,7 @@ export default function SprzedawcaCheck() {
       <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
         Księgowość firmy, która ma Ci zapłacić, przed przelewem sprawdza
         sprzedawcę w wykazie podatników VAT. Potrzebuje do tego NIP-u, a przy
-        większych kwotach także numeru konta. Zaglądam na stronę główną, kontakt
+        większych kwotach także numeru konta. Zaglądamy na stronę główną, kontakt
         i regulamin, wyciągamy te dane i sprawdzamy je w wykazie tak samo, jak
         zrobi to Twój klient.
       </p>

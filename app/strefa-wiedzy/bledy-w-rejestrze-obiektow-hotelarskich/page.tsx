@@ -255,7 +255,7 @@ export default function Page() {
 
         <SprawdzPoBadaniu
           naglowek="Zobacz, co publiczny rejestr mówi o konkretnej spółce"
-          opis="Przeszukuję obwieszczenia Monitora Sądowego i Gospodarczego od 2013 roku i sprawdzamy jedną rzecz: czy wobec podmiotu toczy się postępowanie o rozwiązanie bez likwidacji. To ten sam rodzaj danych, co rejestr z tego badania, tylko inny rejestr."
+          opis="Przeszukujemy obwieszczenia Monitora Sądowego i Gospodarczego od 2013 roku i sprawdzamy jedną rzecz: czy wobec podmiotu toczy się postępowanie o rozwiązanie bez likwidacji. To ten sam rodzaj danych, co rejestr z tego badania, tylko inny rejestr."
           endpoint="/api/sprawdz-spolke"
           pole="zapytanie"
           pozycje={[{ wartosc: "CD PROJEKT" }, { wartosc: "ALLEGRO" }]}

@@ -257,7 +257,7 @@ const faq = [
   {
     question: "Czy kalkulator uwzględnia koszt narzędzi i wdrożenia?",
     answer:
-      "Nie, pokazuje wyłącznie miesięczny i roczny koszt status quo, czyli tego, co już dziś płacisz w czasie pracy i utraconej sprzedaży. To jest punkt odniesienia, do którego dopiero przykłada się koszt wdrożenia i abonamentów narzędzi. Jak zestawić obie strony, opisuję w artykule /strefa-wiedzy/jak-policzyc-roi-z-automatyzacji.",
+      "Nie, pokazuje wyłącznie miesięczny i roczny koszt status quo, czyli tego, co już dziś płacisz w czasie pracy i utraconej sprzedaży. To jest punkt odniesienia, do którego dopiero przykłada się koszt wdrożenia i abonamentów narzędzi. Jak zestawić obie strony, opisujemy w artykule /strefa-wiedzy/jak-policzyc-roi-z-automatyzacji.",
   },
 ];
 
@@ -371,7 +371,7 @@ export default function KosztRecznejObslugiLeadow() {
                             Model jest celowo uproszczony. Pełny rachunek ma
                             jeszcze trzy pozycje: błędy w danych, ręczne
                             raportowanie i decyzje podejmowane na złych
-                            danych. Rozpisuję je w zakładce{" "}
+                            danych. Rozpisujemy je w zakładce{" "}
                             <a
                               href="#rachunek"
                               className="text-accent hover:underline"

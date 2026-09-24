@@ -46,7 +46,7 @@ export default function Page() {
         },
         {
           title: "Codzienne pilnowanie Twojej listy",
-          desc: "Wgrywasz listę kontrahentów, a ja porównuję ją z każdym nowym wydaniem Monitora i odzywam się w dniu publikacji, nie miesiąc później.",
+          desc: "Wgrywasz listę kontrahentów, a ja porównujemy ją z każdym nowym wydaniem Monitora i odzywamy się w dniu publikacji, nie miesiąc później.",
         },
         {
           title: "Skan wsteczny całego portfela",

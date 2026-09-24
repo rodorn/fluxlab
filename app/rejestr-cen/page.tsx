@@ -41,8 +41,8 @@ export default function Page() {
           desc: "Bierzemy listę realnie przecenionych produktów wprost ze sklepu i sprawdzamy kartę po karcie. Ręcznie to jedno kliknięcie na jeden produkt, a sklep ma ich setki.",
         },
         {
-          title: "Wyłapuję pozorną zgodność",
-          desc: "Samo „30 dni” na stronie nic nie znaczy, bo najczęściej dotyczy zwrotu towaru. Liczy się wyłącznie komunikat o najniższej cenie sprzed obniżki i tylko taki uznaję.",
+          title: "Wyłapujemy pozorną zgodność",
+          desc: "Samo „30 dni” na stronie nic nie znaczy, bo najczęściej dotyczy zwrotu towaru. Liczy się wyłącznie komunikat o najniższej cenie sprzed obniżki i tylko taki uznajemy.",
         },
         {
           title: "Dowód, który sprawdzisz sam",
@@ -50,7 +50,7 @@ export default function Page() {
         },
         {
           title: "Rejestr cen, czyli materiał dowodowy",
-          desc: "Osobno zapisuję ceny Twojego sklepu codziennie. Po trzydziestu dniach masz niezależną historię, której wstecz nie da się odtworzyć, a która rozstrzyga spór o to, ile produkt kosztował naprawdę.",
+          desc: "Osobno zapisujemy ceny Twojego sklepu codziennie. Po trzydziestu dniach masz niezależną historię, której wstecz nie da się odtworzyć, a która rozstrzyga spór o to, ile produkt kosztował naprawdę.",
         },
       ]}
       pricing={[

@@ -4,7 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Dziękuję, zgłoszenie odebrane | Fluxlab",
+  title: "Dziękujemy, zgłoszenie odebrane | Fluxlab",
   description:
     "Twoje zgłoszenie do diagnozy procesu trafiło do nas. Odpowiedź w ciągu 24h.",
   robots: {
@@ -47,7 +47,7 @@ export default function Dziekuje() {
               </h1>
 
               <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
-                Odezwę się z odpowiedzią w ciągu 24h. Jeśli widzimy potencjał na
+                Odezwiemy się z odpowiedzią w ciągu 24h. Jeśli widzimy potencjał na
                 automatyzację, odpiszemy z konkretnym zakresem i wyceną. Jeśli
                 nie, napiszemy wprost, dlaczego nie warto tego automatyzować na
                 tym etapie. Wszystko ustalamy mailowo, więc nie musisz nigdzie

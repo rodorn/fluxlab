@@ -528,7 +528,7 @@ export default function MakeVsN8nArticle() {
                       {/* Final CTA */}
                       <div className="bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-8 text-center mt-12">
                         <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                          Make czy n8n? Pomogę dobrać i wdrożyć.
+                          Make czy n8n? Pomożemy dobrać i wdrożyć.
                         </h2>
                         <p className="text-gray-600 dark:text-gray-400 mb-4">
                           Bez sprzedażowej presji, krótka rozmowa, w której

@@ -4,12 +4,12 @@ import ProductLanding from "@/components/ProductLanding";
 export const metadata: Metadata = {
   title: "Pogotowie automatyzacji, naprawa n8n i Make | Fluxlab",
   description:
-    "Stanęła integracja i nie schodzą zamówienia. Czytamy logi wykonań, znajduję wygasłe poświadczenia i ciche awarie. Diagnoza 49 zł, naprawa od 490 zł.",
+    "Stanęła integracja i nie schodzą zamówienia. Czytamy logi wykonań, znajdujemy wygasłe poświadczenia i ciche awarie. Diagnoza 49 zł, naprawa od 490 zł.",
   alternates: { canonical: "/pogotowie-automatyzacji" },
   openGraph: {
     title: "Pogotowie automatyzacji, naprawa n8n i Make | Fluxlab",
     description:
-      "Stanęła integracja i nie schodzą zamówienia. Czytamy logi wykonań, znajduję wygasłe poświadczenia i ciche awarie. Diagnoza 49 zł, naprawa od 490 zł.",
+      "Stanęła integracja i nie schodzą zamówienia. Czytamy logi wykonań, znajdujemy wygasłe poświadczenia i ciche awarie. Diagnoza 49 zł, naprawa od 490 zł.",
     locale: "pl_PL",
     type: "website",
     images: [
@@ -30,7 +30,7 @@ export default function Page() {
       breadcrumb="Pogotowie automatyzacji"
       eyebrow="Awaria automatyzacji"
       h1="Stanęła integracja, a wykonawca zniknął"
-      lead="Scenariusz świeci na zielono, a zamówienia nie schodzą, faktury się nie wystawiają albo leady nie trafiają do CRM. Wchodzimy w logi wykonań, znajduję wygasłe poświadczenia, zmienione API i ciche awarie, czyli przebiegi, które kończą się sukcesem, ale nic nie przenoszą."
+      lead="Scenariusz świeci na zielono, a zamówienia nie schodzą, faktury się nie wystawiają albo leady nie trafiają do CRM. Wchodzimy w logi wykonań, znajdujemy wygasłe poświadczenia, zmienione API i ciche awarie, czyli przebiegi, które kończą się sukcesem, ale nic nie przenoszą."
       ctaLabel="Zgłoś awarię"
       ctaNote="Odpowiedź do 2 godzin w godzinach pracy"
       checks={[
@@ -40,11 +40,11 @@ export default function Page() {
         },
         {
           title: "Wygasłe poświadczenia i tokeny",
-          desc: "Najczęstsza przyczyna nagłego zatrzymania. Odnawiam połączenia i ustawiamy ostrzeganie, zanim wygasną następnym razem.",
+          desc: "Najczęstsza przyczyna nagłego zatrzymania. Odnawiamy połączenia i ustawiamy ostrzeganie, zanim wygasną następnym razem.",
         },
         {
           title: "Przejęcie po poprzedniku",
-          desc: "Porządkuję to, co zostało: co robi każdy scenariusz, gdzie są dostępy, co można wyłączyć. Dostajesz opis, który zrozumie też ktoś inny niż ja.",
+          desc: "Porządkujemy to, co zostało: co robi każdy scenariusz, gdzie są dostępy, co można wyłączyć. Dostajesz opis, który zrozumie też ktoś inny niż ja.",
         },
         {
           title: "Monitoring, żeby nie dowiadywać się od klienta",
@@ -94,14 +94,14 @@ export default function Page() {
         },
         {
           q: "Nie mamy kontaktu do osoby, która to robiła.",
-          a: "To najczęstsza sytuacja i nie jest problemem. Potrzebujemy dostępu do samego narzędzia, resztę odtwarzam z konfiguracji i logów.",
+          a: "To najczęstsza sytuacja i nie jest problemem. Potrzebujemy dostępu do samego narzędzia, resztę odtwarzamy z konfiguracji i logów.",
         },
         {
           q: "Jak przekazać dostępy bezpiecznie?",
           a: "Nie przysyłasz mi haseł. Zakładasz konto o ograniczonych uprawnieniach albo dzielisz się dostępem przez funkcję zapraszania w danym narzędziu, a po zakończeniu je odbierasz.",
         },
         {
-          q: "Czy diagnoza przepada, jeśli zlecę naprawę?",
+          q: "Czy diagnoza przepada, jeśli zlecimy naprawę?",
           a: "Nie. Kwota diagnozy odlicza się od naprawy, więc płacisz za nią tylko wtedy, gdy zdecydujesz się nic dalej nie robić.",
         },
       ]}

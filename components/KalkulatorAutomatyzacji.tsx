@@ -284,7 +284,7 @@ export default function KalkulatorAutomatyzacji() {
             <p className="text-sm text-gray-700 dark:text-gray-300">
               {wynik.oplacalne
                 ? "Przeniesienie polega na odtworzeniu tych samych scenariuszy na serwerze, który należy do Ciebie, i na pilnowaniu, żeby działał. Efekt jest ten sam, a rachunek przestaje rosnąć razem z wolumenem."
-                : "Nie namawiam Cię na migrację przy tej skali. Jeśli chcesz, możemy za to sprawdzić, czy da się ograniczyć liczbę kroków w scenariuszach, bo to obniża rachunek od razu i nic nie kosztuje poza jednorazową robotą."}
+                : "Nie namawiamy Cię na migrację przy tej skali. Jeśli chcesz, możemy za to sprawdzić, czy da się ograniczyć liczbę kroków w scenariuszach, bo to obniża rachunek od razu i nic nie kosztuje poza jednorazową robotą."}
             </p>
 
             {leadStan === "ok" ? (

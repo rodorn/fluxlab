@@ -121,7 +121,7 @@ export async function POST(request: Request) {
 
   const zastrzezenie =
     zapier.prog === null
-      ? "Powyżej najwyższego progu z publicznego cennika dostawca wycenia indywidualnie, więc kwotę po jego stronie szacuję proporcjonalnie do ostatniego progu."
+      ? "Powyżej najwyższego progu z publicznego cennika dostawca wycenia indywidualnie, więc kwotę po jego stronie szacujemy proporcjonalnie do ostatniego progu."
       : zapier.usd === 0
         ? "Mieścisz się w darmowym planie dostawcy, do 100 zadań miesięcznie."
         : `Liczymy od najtańszego planu z publicznego cennika, progu do ${zapier.prog.toLocaleString("pl-PL")} zadań przy płatności miesięcznej. Przy płatności rocznej rachunek jest niższy, a przy planie zespołowym wyższy.`;

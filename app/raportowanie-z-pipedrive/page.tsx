@@ -626,7 +626,7 @@ export default function RaportowanieZPipedrive() {
                       </h2>
                       <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-8">
                         Stała cena za projekt, transze powiązane z kamieniami
-                        milowymi. Widełki potwierdzam po krótkim audycie. Dla
+                        milowymi. Widełki potwierdzamy po krótkim audycie. Dla
                         porównania: realny koszt ręcznego raportowania to często
                         30–60 tys. zł rocznie samej pracy.
                       </p>

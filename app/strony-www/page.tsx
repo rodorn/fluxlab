@@ -59,7 +59,7 @@ const faq = [
   {
     question: "Czy możemy modyfikować treści samodzielnie?",
     answer:
-      "Tak. Dla strony firmowej podpinam prosty CMS (Sanity albo Notion), w którym edytujesz teksty jak dokument. Dla landing page-a treści edytujesz przez interfejs GitHuba.",
+      "Tak. Dla strony firmowej podpinamy prosty CMS (Sanity albo Notion), w którym edytujesz teksty jak dokument. Dla landing page-a treści edytujesz przez interfejs GitHuba.",
   },
   {
     question: "Hosting i domena?",

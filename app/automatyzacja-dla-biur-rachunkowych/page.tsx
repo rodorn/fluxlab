@@ -45,7 +45,7 @@ const useCases = [
   {
     title: "Integracja z KSeF (Krajowy System e-Faktur)",
     description:
-      "Pobieramy faktury z KSeF dla każdego klienta biura, weryfikuję z dokumentami papierowymi, wprowadzam do systemu księgowego. Obowiązek wszedł etapami w 2026, a 1 stycznia 2027 kończą się wszystkie przepisy przejściowe naraz, więc przygotowujemy biuro tak, żeby skala dokumentów nie zabiła zespołu.",
+      "Pobieramy faktury z KSeF dla każdego klienta biura, weryfikujemy z dokumentami papierowymi, wprowadzamy do systemu księgowego. Obowiązek wszedł etapami w 2026, a 1 stycznia 2027 kończą się wszystkie przepisy przejściowe naraz, więc przygotowujemy biuro tak, żeby skala dokumentów nie zabiła zespołu.",
   },
   {
     title: "Automatyczne raporty miesięczne dla klientów",
@@ -63,7 +63,7 @@ const painPoints = [
   {
     pain: "Księgowi spędzają połowę dnia na ręcznym wprowadzaniu faktur",
     solution:
-      "Wpinam OCR (SaldeoSmart jest najpopularniejszy w Polsce, ale działam też na własnych pipeline'ach z modelami AI dla mniej standardowych dokumentów). Rozpoznane faktury trafiają do Optimy/Symfonii/Enova jako dokumenty do akceptacji. Księgowy zatwierdza, ewentualnie poprawia jeden numer, zamiast przepisywać 30 pól z każdej faktury.",
+      "Wpinamy OCR (SaldeoSmart jest najpopularniejszy w Polsce, ale działamy też na własnych pipeline'ach z modelami AI dla mniej standardowych dokumentów). Rozpoznane faktury trafiają do Optimy/Symfonii/Enova jako dokumenty do akceptacji. Księgowy zatwierdza, ewentualnie poprawia jeden numer, zamiast przepisywać 30 pól z każdej faktury.",
   },
   {
     pain: "Klienci notorycznie spóźniają się z dokumentami, a przypominanie zajmuje godziny",
@@ -78,7 +78,7 @@ const painPoints = [
   {
     pain: "Klienci dzwonią co dzień z pytaniem „kiedy raport za zeszły miesiąc?”",
     solution:
-      "Standaryzuję raport miesięczny (PDF + ewentualny dashboard online) i automatyzujemy jego dystrybucję po zamknięciu okresu. Klient dostaje go o stałym dniu, w stałej formie, przez bezpieczny kanał. Telefonów ubywa, opiekunowie odzyskują czas na realne pytania.",
+      "Standaryzujemy raport miesięczny (PDF + ewentualny dashboard online) i automatyzujemy jego dystrybucję po zamknięciu okresu. Klient dostaje go o stałym dniu, w stałej formie, przez bezpieczny kanał. Telefonów ubywa, opiekunowie odzyskują czas na realne pytania.",
   },
   {
     pain: "Każdy nowy klient to dwa dni papierologii i pięć systemów do założenia",
@@ -151,7 +151,7 @@ const faq = [
   {
     question: "Mamy 30 klientów. Czy to ma sens przy takiej skali?",
     answer:
-      "Przy 30 klientach najszybciej zwracają się: automatyczne przypomnienia o dokumentach, OCR z bezpośrednim wprowadzaniem do systemu księgowego i raporty miesięczne. Pełna automatyzacja onboardingu zaczyna mieć sens raczej od ~50 klientów rocznie nowych. Po krótkiej rozmowie wskazuję uczciwie, co warto przy Waszej skali, a co lepiej zostawić do większego portfela.",
+      "Przy 30 klientach najszybciej zwracają się: automatyczne przypomnienia o dokumentach, OCR z bezpośrednim wprowadzaniem do systemu księgowego i raporty miesięczne. Pełna automatyzacja onboardingu zaczyna mieć sens raczej od ~50 klientów rocznie nowych. Po krótkiej rozmowie wskazujemy uczciwie, co warto przy Waszej skali, a co lepiej zostawić do większego portfela.",
   },
   {
     question:
@@ -306,11 +306,11 @@ export default function AutomatyzacjaDlaBiurRachunkowych() {
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                        Konkretne problemy, które rozwiązuję
+                        Konkretne problemy, które rozwiązujemy
                       </h2>
                       <p className="text-gray-500 dark:text-gray-400 mb-10">
                         Poniżej typowe sytuacje z codziennej pracy biura
-                        rachunkowego i to, jak podchodzę do nich od strony
+                        rachunkowego i to, jak podchodzimy do nich od strony
                         technicznej. Każda z nich ma konkretne rozwiązanie,
                         zwykle dające się zrobić w tygodniach, nie miesiącach.
                       </p>
@@ -381,7 +381,7 @@ export default function AutomatyzacjaDlaBiurRachunkowych() {
                         >
                           Zapier i Make
                         </Link>
-                        . Integracje z systemami księgowymi opisuję w sekcji{" "}
+                        . Integracje z systemami księgowymi opisujemy w sekcji{" "}
                         <Link
                           href="/integracje-api"
                           className="text-accent hover:underline"
@@ -480,7 +480,7 @@ export default function AutomatyzacjaDlaBiurRachunkowych() {
                         </h2>
                         <p className="text-gray-500 dark:text-gray-400 mb-8">
                           Opisz, jak dziś wygląda obieg dokumentów w biurze.
-                          Wskażę miejsca, gdzie dokumenty przechodzą przez ręce
+                          Wskażemy miejsca, gdzie dokumenty przechodzą przez ręce
                           bez potrzeby, i policzymy razem, ile czasu to zabiera.
                         </p>
                         <Link

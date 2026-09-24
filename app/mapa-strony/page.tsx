@@ -50,7 +50,7 @@ export default function Page() {
         },
         {
           title: "Co zrobić z martwymi adresami",
-          desc: "Przekierować na następcę czy usunąć z listy. To zależy od tego, czy pod danym adresem było coś, co ludzie linkowali, i to rozstrzygam osobno dla każdego przypadku.",
+          desc: "Przekierować na następcę czy usunąć z listy. To zależy od tego, czy pod danym adresem było coś, co ludzie linkowali, i to rozstrzygamy osobno dla każdego przypadku.",
         },
       ]}
       pricing={[
@@ -102,7 +102,7 @@ export default function Page() {
         },
         {
           q: "Skąd wiadomo, że adres nie działa, a nie że serwer akurat kaszlnął?",
-          a: "Rozróżniam kod błędu od braku odpowiedzi i pokazujemy jedno i drugie osobno. Przy pełnym przeglądzie każdy podejrzany adres sprawdzamy powtórnie, bo pojedynczy nieudany strzał to za mało, żeby komuś powiedzieć, że ma zepsutą stronę.",
+          a: "Rozróżniamy kod błędu od braku odpowiedzi i pokazujemy jedno i drugie osobno. Przy pełnym przeglądzie każdy podejrzany adres sprawdzamy powtórnie, bo pojedynczy nieudany strzał to za mało, żeby komuś powiedzieć, że ma zepsutą stronę.",
         },
       ]}
       formId="order_mapa_strony"

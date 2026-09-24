@@ -33,12 +33,12 @@ const whatYouGet = [
   {
     title: "50% ceny projektu",
     description:
-      "Pełny zakres audytu i wdrożenia za połowę standardowej ceny. Widełki potwierdzam po konsultacji, stałą cenę po audycie, bez niespodzianek.",
+      "Pełny zakres audytu i wdrożenia za połowę standardowej ceny. Widełki potwierdzamy po konsultacji, stałą cenę po audycie, bez niespodzianek.",
   },
   {
     title: "Priorytet i zaangażowanie",
     description:
-      "Te projekty mają dla nas najwyższy priorytet, bo ich powodzenie buduje publiczną bibliotekę case studies, na której opieram dalszą sprzedaż. Dostajesz szybszą reakcję, więcej uwagi, pełne zaangażowanie.",
+      "Te projekty mają dla nas najwyższy priorytet, bo ich powodzenie buduje publiczną bibliotekę case studies, na której opieramy dalszą sprzedaż. Dostajesz szybszą reakcję, więcej uwagi, pełne zaangażowanie.",
   },
   {
     title: "Rozszerzone wsparcie po wdrożeniu",
@@ -105,7 +105,7 @@ const faq = [
   {
     question: "Czy musimy ujawnić nazwę firmy w case study?",
     answer:
-      "Preferuję, żeby tak, imienne case studies są znacznie bardziej wiarygodne. Jeśli to niemożliwe (np. ze względu na zastrzeżenia prawne lub konkurencyjne), możemy opisać branżę i skalę bez nazwy. Ustalamy to przed startem.",
+      "Preferujemy, żeby tak, imienne case studies są znacznie bardziej wiarygodne. Jeśli to niemożliwe (np. ze względu na zastrzeżenia prawne lub konkurencyjne), możemy opisać branżę i skalę bez nazwy. Ustalamy to przed startem.",
   },
   {
     question: "Kiedy musimy dać testimonial?",
@@ -120,12 +120,12 @@ const faq = [
   {
     question: "Co jeśli projekt się nie uda?",
     answer:
-      "Jeśli nie dojdziemy do uzgodnionych kamieni milowych z naszej winy, nie płacisz za niedostarczony etap, a także nie wymagam case study. Ryzyko leży po naszej stronie.",
+      "Jeśli nie dojdziemy do uzgodnionych kamieni milowych z naszej winy, nie płacisz za niedostarczony etap, a także nie wymagamy case study. Ryzyko leży po naszej stronie.",
   },
   {
     question: "Dlaczego tylko 3 miejsca?",
     answer:
-      "Bo jako solo consultant możemy realnie poprowadzić maksymalnie 3 takie projekty równolegle bez spadku jakości. Po zrealizowaniu 3 case studies oferta kończy się i wracam do standardowych stawek.",
+      "Bo jako solo consultant możemy realnie poprowadzić maksymalnie 3 takie projekty równolegle bez spadku jakości. Po zrealizowaniu 3 case studies oferta kończy się i wracamy do standardowych stawek.",
   },
   {
     question: "Jak wygląda aplikacja?",
@@ -276,7 +276,7 @@ export default function Pilotaz() {
                         <p className="text-gray-600 dark:text-gray-400 mt-4">
                           Program jest celowo wąski, chcemy mieć pewność, że
                           projekty zakończą się sukcesem nadającym się do
-                          publikacji. Dopasowanie weryfikuję na bezpłatnej
+                          publikacji. Dopasowanie weryfikujemy na bezpłatnej
                           konsultacji.
                         </p>
                       </div>

@@ -38,7 +38,7 @@ export default function Page() {
       checks={[
         {
           title: "Fragment po fragmencie, nie strona po stronie",
-          desc: "Popularne narzędzia oceniają całą stronę jako jeden byt. Strona z czterystoma fragmentami, z których trzynaście jest po polsku, wygląda dla nich na bezbłędną. Ja rozbijam ją na pojedyncze kawałki tekstu.",
+          desc: "Popularne narzędzia oceniają całą stronę jako jeden byt. Strona z czterystoma fragmentami, z których trzynaście jest po polsku, wygląda dla nich na bezbłędną. Ja rozbijamy ją na pojedyncze kawałki tekstu.",
         },
         {
           title: "Deklaracja języka kontra rzeczywistość",
@@ -94,7 +94,7 @@ export default function Page() {
         },
         {
           q: "Czy sprawdzacie też jakość samego tłumaczenia?",
-          a: "Nie i mówimy to wprost. Wykrywam tekst, który w ogóle nie został przetłumaczony, oraz błędy w oznaczeniach dla wyszukiwarki. Ocena stylu przekładu to praca dla tłumacza, nie dla narzędzia.",
+          a: "Nie i mówimy to wprost. Wykrywamy tekst, który w ogóle nie został przetłumaczony, oraz błędy w oznaczeniach dla wyszukiwarki. Ocena stylu przekładu to praca dla tłumacza, nie dla narzędzia.",
         },
         {
           q: "Mamy stronę na WordPressie z wtyczką do tłumaczeń, czy to zadziała?",

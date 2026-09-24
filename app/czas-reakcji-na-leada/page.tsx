@@ -157,7 +157,7 @@ const faq = [
   {
     question: "Czy szybsza reakcja realnie przekłada się na sprzedaż?",
     answer:
-      "Tak, i to jest jeden z najlepiej zbadanych wskaźników w sprzedaży B2B. Skrócenie reakcji z godziny do kilku minut wyraźnie zwiększa szansę na realną rozmowę: klient w trakcie zapytania jest „gorący”, po godzinie ma już inne sprawy, a po dniu zwykle rozmawia z konkurencją. Skala tej różnicy zależy od branży i wartości leada, w diagnozie weryfikuję, jaki przedział jest realistyczny dla Twojego procesu.",
+      "Tak, i to jest jeden z najlepiej zbadanych wskaźników w sprzedaży B2B. Skrócenie reakcji z godziny do kilku minut wyraźnie zwiększa szansę na realną rozmowę: klient w trakcie zapytania jest „gorący”, po godzinie ma już inne sprawy, a po dniu zwykle rozmawia z konkurencją. Skala tej różnicy zależy od branży i wartości leada, w diagnozie weryfikujemy, jaki przedział jest realistyczny dla Twojego procesu.",
   },
   {
     question: "Jak mierzyć speed-to-lead w praktyce?",

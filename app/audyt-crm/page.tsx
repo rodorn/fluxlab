@@ -41,10 +41,10 @@ const faqs = [
   {
     question: "Co znaczy odpowiedź „nie wiemy” i dlaczego liczy się jak „nie”?",
     answer:
-      "Jeśli nie masz pewności, że coś działa, to znaczy, że nie działa świadomie. Na przykład: jeśli nie wiesz, czy każdy lead ma źródło, to znaczy, że nikt tego nie pilnuje, czyli efektywnie atrybucji nie masz. „Nie wiemy” w audycie traktuję jak czerwoną flagę, bo brak widoczności jest sam w sobie problemem operacyjnym. To nie jest karanie za niewiedzę, to wskazanie obszaru, gdzie warto najpierw zrobić podstawową diagnostykę.",
+      "Jeśli nie masz pewności, że coś działa, to znaczy, że nie działa świadomie. Na przykład: jeśli nie wiesz, czy każdy lead ma źródło, to znaczy, że nikt tego nie pilnuje, czyli efektywnie atrybucji nie masz. „Nie wiemy” w audycie traktujemy jak czerwoną flagę, bo brak widoczności jest sam w sobie problemem operacyjnym. To nie jest karanie za niewiedzę, to wskazanie obszaru, gdzie warto najpierw zrobić podstawową diagnostykę.",
   },
   {
-    question: "Jak interpretuję wynik X/10?",
+    question: "Jak interpretujemy wynik X/10?",
     answer:
       "8–10 to zdrowy pipeline gotowy do skalowania, automatyzacja na tym etapie wyciska z procesu jeszcze 20–30%. 5–7 to solidny fundament z lukami, najpierw warto załatać największą lukę (audyt ją wskazuje), potem dokładać kolejne automatyzacje. 0–4 to sygnał, że problem nie jest w CRM-ie, tylko w procesie, automatyzacja bałaganu daje zautomatyzowany bałagan, więc trzeba zacząć od ułożenia podstaw: właściciel leada, kryteria etapów, źródło. Wynik to punkt startowy dyskusji, nie ocena końcowa.",
   },
@@ -101,12 +101,12 @@ export default function AudytCRMPage() {
                 ),
               },
               {
-                label: "Jak interpretuję wynik",
+                label: "Jak interpretujemy wynik",
                 content: (
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        Jak interpretuję wynik
+                        Jak interpretujemy wynik
                       </h2>
                       <div className="space-y-4 text-gray-600 dark:text-gray-400 leading-relaxed">
                         <p>

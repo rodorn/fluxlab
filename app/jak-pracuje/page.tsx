@@ -36,7 +36,7 @@ const steps = [
     title: "Bezpłatna diagnoza (30 min)",
     duration: "30 minut · online",
     description:
-      "Rozmawiamy o tym, co chcesz usprawnić. Opisujesz problem, ja dopytuję o szczegóły i mówimy wprost, czy widzimy sens automatyzacji, czy raczej trzeba najpierw uporządkować proces. Jeśli to nie nasz obszar, powiemy i skieruję gdzie indziej.",
+      "Rozmawiamy o tym, co chcesz usprawnić. Opisujesz problem, ja dopytujemy o szczegóły i mówimy wprost, czy widzimy sens automatyzacji, czy raczej trzeba najpierw uporządkować proces. Jeśli to nie nasz obszar, powiemy i skierujemy gdzie indziej.",
     deliverables: [
       "Wstępna ocena, czy automatyzacja ma sens",
       "Wskazanie realnego efektu (ile godzin, jakie dane, jaki proces)",
@@ -63,7 +63,7 @@ const steps = [
     title: "Wdrożenie",
     duration: "2–8 tygodni zależnie od zakresu",
     description:
-      "Pracujemy w krótkich iteracjach. Co tydzień dostajesz mierzalny postęp i możliwość zatrzymania projektu, jeśli coś nie działa jak trzeba. Płatność rozbijam na transze powiązane z kamieniami milowymi, nie płacisz z góry za coś, czego jeszcze nie widziałeś.",
+      "Pracujemy w krótkich iteracjach. Co tydzień dostajesz mierzalny postęp i możliwość zatrzymania projektu, jeśli coś nie działa jak trzeba. Płatność rozbijamy na transze powiązane z kamieniami milowymi, nie płacisz z góry za coś, czego jeszcze nie widziałeś.",
     deliverables: [
       "Tygodniowy status w formie konkretów (co zrobione, co dalej)",
       "Środowisko testowe przed wdrożeniem na produkcję",
@@ -137,17 +137,17 @@ const faq = [
       "Najprostsza integracja (np. formularz → CRM + notyfikacja) zajmuje ok. 2–4 dni roboczych od podpisania do uruchomienia. Wdrożenia CRM zwykle 3–6 tygodni, większe przepływy z integracjami API, do 8 tygodni.",
   },
   {
-    question: "Czy zobaczę postęp w trakcie wdrożenia?",
+    question: "Czy zobaczymy postęp w trakcie wdrożenia?",
     answer:
       "Tak, co tydzień. Dostajesz krótkie podsumowanie (3–5 zdań): co skończyliśmy, co jest w trakcie, co blokuje. Większe etapy pokazujemy na demo na żywo, zanim idą na produkcję.",
   },
   {
     question: "Czy podpisujemy umowę i NDA?",
     answer:
-      "Tak. Każdy projekt ma prostą umowę z zakresem, ceną, harmonogramem, warunkami odbioru i warunkami rozwiązania współpracy. NDA podpisuję standardowo, jeśli potrzebujesz, mamy własny wzór albo pracujemy na twoim.",
+      "Tak. Każdy projekt ma prostą umowę z zakresem, ceną, harmonogramem, warunkami odbioru i warunkami rozwiązania współpracy. NDA podpisujemy standardowo, jeśli potrzebujesz, mamy własny wzór albo pracujemy na twoim.",
   },
   {
-    question: "Co jeśli po audycie uznam, że mi się nie opłaca?",
+    question: "Co jeśli po audycie uznamy, że mi się nie opłaca?",
     answer:
       "Dostajesz dokument audytowy i nie kontynuujemy. Koszt audytu nie jest zwracany, ale cały materiał zostaje u ciebie, możesz na jego podstawie wdrożyć się samodzielnie albo zlecić komuś innemu.",
   },

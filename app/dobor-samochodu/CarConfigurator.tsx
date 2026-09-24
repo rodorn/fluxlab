@@ -1708,7 +1708,7 @@ export default function CarConfigurator() {
           Segment i moc
         </h3>
         <p className="text-sm text-gray-600 dark:text-gray-400">
-          Odpowiedz na pytania, a dobiorę optymalny segment i moc. Możesz je
+          Odpowiedz na pytania, a dobierzemy optymalny segment i moc. Możesz je
           potem skorygować ręcznie.
         </p>
       </div>
@@ -2021,13 +2021,13 @@ export default function CarConfigurator() {
             },
             {
               t: 15,
-              text: `Dobieram warianty paliwowe (benzyna, diesel, LPG)...`,
+              text: `Dobieramy warianty paliwowe (benzyna, diesel, LPG)...`,
             },
-            { t: 22, text: "Weryfikuję ceny na polskim rynku..." },
-            { t: 30, text: "Prawie gotowe, finalizuję rekomendacje..." },
+            { t: 22, text: "Weryfikujemy ceny na polskim rynku..." },
+            { t: 30, text: "Prawie gotowe, finalizujemy rekomendacje..." },
             {
               t: 45,
-              text: "To trwa dłużej niż zwykle, proszę o cierpliwość...",
+              text: "To trwa dłużej niż zwykle, prosimy o cierpliwość...",
             },
           ];
           const current =

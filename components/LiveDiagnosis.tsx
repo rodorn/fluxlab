@@ -37,7 +37,7 @@ const PILLAR_LABELS: Record<DiagnosisResult["pillar"], string> = {
 const EXAMPLES = [
   {
     label: "Przepisywanie faktur",
-    text: "Ręcznie przepisuję faktury z maili do programu księgowego, kilkadziesiąt miesięcznie.",
+    text: "Ręcznie przepisujemy faktury z maili do programu księgowego, kilkadziesiąt miesięcznie.",
   },
   {
     label: "Leady giną w mailach",
@@ -45,19 +45,19 @@ const EXAMPLES = [
   },
   {
     label: "Raport składany ręcznie",
-    text: "Raport sprzedaży składam ręcznie w piątki z kilku Exceli i CRM-u.",
+    text: "Raport sprzedaży składamy ręcznie w piątki z kilku Exceli i CRM-u.",
   },
   {
     label: "Ceny konkurencji",
-    text: "Codziennie sprawdzamy ceny konkurencji na ich stronach i wpisuję do arkusza.",
+    text: "Codziennie sprawdzamy ceny konkurencji na ich stronach i wpisujemy do arkusza.",
   },
 ];
 
 const LOADING_PHASES = [
   "Analizujemy proces...",
-  "Mapuję go na automatyzację...",
+  "Mapujemy go na automatyzację...",
   "Liczymy szacowaną oszczędność...",
-  "Składam rekomendację...",
+  "Składamy rekomendację...",
 ];
 
 export default function LiveDiagnosis() {

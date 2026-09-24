@@ -83,7 +83,7 @@ export async function POST(request: Request) {
       domena,
       naglowek: "Na razie sprawdzamy tylko domeny polskie",
       opis:
-        "Rejestr, z którego korzystam, obejmuje domeny z końcówką pl. Dla innych końcówek sprawdzimy to ręcznie, jeśli napiszesz.",
+        "Rejestr, z którego korzystamy, obejmuje domeny z końcówką pl. Dla innych końcówek sprawdzimy to ręcznie, jeśli napiszesz.",
     });
   }
 

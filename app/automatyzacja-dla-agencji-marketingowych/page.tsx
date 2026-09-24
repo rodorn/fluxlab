@@ -127,7 +127,7 @@ const faq = [
     question:
       "Mamy 30 klientów na retainerach. Czy raporty da się zautomatyzować dla wszystkich naraz?",
     answer:
-      "Tak. Standardowo budujemy jeden szablon raportu (Looker Studio lub generowany PDF) i parametryzuję go po kliencie. Co tydzień system iteruje po liście klientów, podstawia ich dane z Google Ads/Meta Ads/GA4 i wysyła każdemu osobny raport. Dodanie 31. klienta to wpis w arkuszu, nie nowy projekt.",
+      "Tak. Standardowo budujemy jeden szablon raportu (Looker Studio lub generowany PDF) i parametryzujemy go po kliencie. Co tydzień system iteruje po liście klientów, podstawia ich dane z Google Ads/Meta Ads/GA4 i wysyła każdemu osobny raport. Dodanie 31. klienta to wpis w arkuszu, nie nowy projekt.",
   },
   {
     question: "Ile to kosztuje przy agencji do 20 osób?",
@@ -143,7 +143,7 @@ const faq = [
     question:
       "Mamy własną metodologię raportów, czy automatyzacja to ograniczy?",
     answer:
-      "Nie powinna. Cała koncepcja polega na tym, że Wy zostawiacie część strategiczną (komentarz, rekomendacje, wnioski), a automatyzacja pobiera za Was dane i generuje warstwę liczbowo-wykresową. Szablon dopasowuję do tego, jak raportujecie dziś, nie odwrotnie.",
+      "Nie powinna. Cała koncepcja polega na tym, że Wy zostawiacie część strategiczną (komentarz, rekomendacje, wnioski), a automatyzacja pobiera za Was dane i generuje warstwę liczbowo-wykresową. Szablon dopasowujemy do tego, jak raportujecie dziś, nie odwrotnie.",
   },
   {
     question:
@@ -303,7 +303,7 @@ export default function AutomatyzacjaDlaAgencjiMarketingowych() {
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                        Konkretne problemy, które rozwiązuję
+                        Konkretne problemy, które rozwiązujemy
                       </h2>
                       <p className="text-gray-500 dark:text-gray-400 mb-10">
                         Poniżej typowe sytuacje z agencji performance i agencji
@@ -378,7 +378,7 @@ export default function AutomatyzacjaDlaAgencjiMarketingowych() {
                           Zapier i Make
                         </Link>
                         . Część integracji robimy bezpośrednio na API platform
-                        reklamowych, opisuję to na stronie{" "}
+                        reklamowych, opisujemy to na stronie{" "}
                         <Link
                           href="/integracje-api"
                           className="text-accent hover:underline"
@@ -469,7 +469,7 @@ export default function AutomatyzacjaDlaAgencjiMarketingowych() {
                           klientach?
                         </h2>
                         <p className="text-gray-500 dark:text-gray-400 mb-8">
-                          Opisz Wasz proces. Wskażę miejsca, gdzie praca powtarza
+                          Opisz Wasz proces. Wskażemy miejsca, gdzie praca powtarza
                           się co tydzień, i policzymy razem, ile czasu zabiera.
                         </p>
                         <Link

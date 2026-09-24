@@ -11,11 +11,11 @@ import { WYCENA_RAPORTOWANIE } from "@/lib/wycena";
 export const metadata: Metadata = {
   title: "Automatyzacja raportowania i danych w firmie | Fluxlab",
   description:
-    "Składam raporty sprzedaży, marketingu i operacji tak, żeby powstawały same i przychodziły o stałej porze. Jedno źródło od 790 zł.",
+    "Składamy raporty sprzedaży, marketingu i operacji tak, żeby powstawały same i przychodziły o stałej porze. Jedno źródło od 790 zł.",
   openGraph: {
     title: "Automatyzacja raportowania i danych w firmie | Fluxlab",
     description:
-      "Składam raporty sprzedaży, marketingu i operacji tak, żeby powstawały same i przychodziły o stałej porze. Jedno źródło od 790 zł.",
+      "Składamy raporty sprzedaży, marketingu i operacji tak, żeby powstawały same i przychodziły o stałej porze. Jedno źródło od 790 zł.",
     locale: "pl_PL",
     type: "article",
     images: [
@@ -79,7 +79,7 @@ export default function AutomatyzacjaRaportowania() {
               Dane z różnych źródeł zbierają się same, a zespół pracuje na
               aktualnych, spójnych liczbach. Bez przeklejania, bez błędów.
               Raport z jednego źródła, wysyłany o stałej porze, zaczyna się od
-              790 zł, a co podnosi tę kwotę, rozpisuję niżej co do pozycji.
+              790 zł, a co podnosi tę kwotę, rozpisujemy niżej co do pozycji.
             </p>
             <div>
               <a href="#sekcje" className="btn-primary">
@@ -204,7 +204,7 @@ export default function AutomatyzacjaRaportowania() {
             "@type": "Service",
             name: "Automatyzacja raportowania",
             description:
-              "Składam raporty sprzedaży, marketingu i operacji tak, żeby powstawały same i przychodziły o stałej porze. Jedno źródło od 790 zł.",
+              "Składamy raporty sprzedaży, marketingu i operacji tak, żeby powstawały same i przychodziły o stałej porze. Jedno źródło od 790 zł.",
             provider: { "@id": "https://fluxlab.pl/#organization" },
             areaServed: { "@type": "Country", name: "Polska" },
             serviceType: "Automatyzacja procesów biznesowych",

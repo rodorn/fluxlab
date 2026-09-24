@@ -103,14 +103,14 @@ export default function Page() {
         },
         {
           q: "Ile zwykle udaje się znaleźć?",
-          a: "Nie podamy Ci procentu, bo nie mamy jeszcze własnych statystyk i nie zamierzam powoływać się na cudze. Dlatego pierwsza faktura jest sprawdzana za darmo: albo znajdziemy coś konkretnego, albo nie i wtedy nic nie płacisz.",
+          a: "Nie podamy Ci procentu, bo nie mamy jeszcze własnych statystyk i nie zamierzamy powoływać się na cudze. Dlatego pierwsza faktura jest sprawdzana za darmo: albo znajdziemy coś konkretnego, albo nie i wtedy nic nie płacisz.",
         },
       ]}
       formId="order_audyt_kurierski"
       formHeading="Prześlij fakturę do sprawdzenia"
       formIntro="Napisz, z którym przewoźnikiem współpracujesz i ile mniej więcej paczek nadajesz miesięcznie. Pierwszą fakturę sprawdzamy za darmo, plik podeślesz mailem po naszej odpowiedzi."
       submitLabel="Zamów sprawdzenie"
-      microCopy="Dane z faktur przetwarzam wyłącznie na potrzeby audytu i kasujemy po przekazaniu wyniku."
+      microCopy="Dane z faktur przetwarzamy wyłącznie na potrzeby audytu i kasujemy po przekazaniu wyniku."
       serviceName="Audyt faktur kurierskich"
       serviceDesc="Weryfikacja faktur przewoźnika linia po linii: dopłata paliwowa wobec stawki z właściwego okresu i progu wagowego, korekty wagowe, usługi naliczone podwójnie, wraz z gotową treścią reklamacji. Od 290 zł."
       serviceType="Audyt kosztów przesyłek kurierskich"

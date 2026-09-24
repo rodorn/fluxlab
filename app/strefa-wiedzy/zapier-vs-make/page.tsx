@@ -453,7 +453,7 @@ export default function ZapierVsMakeArticle() {
                         Nie wiesz, które narzędzie pasuje do Twoich procesów?
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Pomogę dobrać i wdrożyć platformę dopasowaną do skali i
+                        Pomożemy dobrać i wdrożyć platformę dopasowaną do skali i
                         logiki Twoich procesów, bez przepłacania za
                         niepotrzebne funkcje.
                       </p>

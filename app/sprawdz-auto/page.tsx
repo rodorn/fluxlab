@@ -82,14 +82,14 @@ const faq = [
       "Z aktualnych ogłoszeń podobnych aut na portalach sprzedażowych. Porównujemy rocznik, przebieg, wersję i wyposażenie, żeby cena była odniesiona do realnie porównywalnych ofert.",
   },
   {
-    question: "Jak szybko dostanę raport?",
+    question: "Jak szybko dostaniemy raport?",
     answer:
       "Zwykle w ciągu 24h od zgłoszenia i potwierdzenia płatności. Jeśli auto Cię goni, napisz w formularzu, że sprawa jest pilna.",
   },
   {
-    question: "Co jeśli oferta zniknie zanim zdążę zamówić?",
+    question: "Co jeśli oferta zniknie zanim zdążymy zamówić?",
     answer:
-      "Wystarczy, że wkleisz link. Jeśli ogłoszenie zostanie zdjęte, poproszę o zrzut ekranu lub dane z oferty i dokończę analizę na ich podstawie.",
+      "Wystarczy, że wkleisz link. Jeśli ogłoszenie zostanie zdjęte, poprosimy o zrzut ekranu lub dane z oferty i dokończymy analizę na ich podstawie.",
   },
 ];
 

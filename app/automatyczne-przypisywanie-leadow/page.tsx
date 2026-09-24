@@ -386,7 +386,7 @@ export default function AutomatycznePrzypisywanieLeadow() {
                               modelowo: spadek z 5 min do 4 h oznacza znacząco
                               mniej realnych kontaktów (lead w międzyczasie
                               rozmawia z konkurencją). Konkretną wartość
-                              referencyjną dobieram w diagnozie pod Twoją
+                              referencyjną dobieramy w diagnozie pod Twoją
                               branżę.
                             </p>
                             <p className="text-gray-700 dark:text-gray-300">

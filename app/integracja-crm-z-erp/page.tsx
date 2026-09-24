@@ -4,7 +4,7 @@ import ProductLanding from "@/components/ProductLanding";
 export const metadata: Metadata = {
   title: "Integracja CRM z ERP bez rozjazdu danych | Fluxlab",
   description:
-    "Spinamy CRM z systemem magazynowo-księgowym: kontrahenci, oferty, zamówienia, faktury i stany. Opisuję cztery decyzje, które o tym przesądzają.",
+    "Spinamy CRM z systemem magazynowo-księgowym: kontrahenci, oferty, zamówienia, faktury i stany. Opisujemy cztery decyzje, które o tym przesądzają.",
   alternates: { canonical: "/integracja-crm-z-erp" },
   openGraph: {
     title: "Integracja CRM z ERP bez rozjazdu danych | Fluxlab",
@@ -56,7 +56,7 @@ export default function IntegracjaCrmZErp() {
         },
         {
           title: "Czego nie zrobimy",
-          desc: "Nie wejdę w integrację, w której obie strony mają swobodnie edytować te same pola i nikt nie chce rozstrzygnąć, kto ma rację. To nie jest problem techniczny, tylko decyzja organizacyjna, i bez niej każde rozwiązanie będzie generować rozjazdy. Powiemy to na początku, a nie po wdrożeniu.",
+          desc: "Nie wejdziemy w integrację, w której obie strony mają swobodnie edytować te same pola i nikt nie chce rozstrzygnąć, kto ma rację. To nie jest problem techniczny, tylko decyzja organizacyjna, i bez niej każde rozwiązanie będzie generować rozjazdy. Powiemy to na początku, a nie po wdrożeniu.",
         },
       ]}
       pricing={[
@@ -102,7 +102,7 @@ export default function IntegracjaCrmZErp() {
         },
         {
           q: "Co, jeśli nasz ERP nie ma żadnego interfejsu?",
-          a: "Wtedy zostaje wymiana plikami w uzgodnionym formacie, podłożonych w miejsce, które ERP sam odczytuje, albo praca na jego bazie danych w trybie odczytu. Drugie rozwiązanie bywa jedyne, ale niesie ryzyko przy aktualizacjach systemu i traktuję je jako ostateczność, nie jako domyślny wybór.",
+          a: "Wtedy zostaje wymiana plikami w uzgodnionym formacie, podłożonych w miejsce, które ERP sam odczytuje, albo praca na jego bazie danych w trybie odczytu. Drugie rozwiązanie bywa jedyne, ale niesie ryzyko przy aktualizacjach systemu i traktujemy je jako ostateczność, nie jako domyślny wybór.",
         },
         {
           q: "Ile to trwa?",

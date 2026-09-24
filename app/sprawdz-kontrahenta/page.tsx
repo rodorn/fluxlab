@@ -79,7 +79,7 @@ const pricing = [
 const faq = [
   {
     q: "Czym to się różni od darmowego sprawdzenia na Białej Liście?",
-    a: "Biała Lista odpowiada na jedno pytanie i nic nie mówi o reszcie. Ja składam wykaz VAT, odpis KRS i dane domeny w jeden werdykt, a przy każdej fladze piszemy, co ona realnie oznacza dla Twoich pieniędzy. Sam sprawdzisz to w kilku miejscach, tu masz odpowiedź w jednym.",
+    a: "Biała Lista odpowiada na jedno pytanie i nic nie mówi o reszcie. Ja składamy wykaz VAT, odpis KRS i dane domeny w jeden werdykt, a przy każdej fladze piszemy, co ona realnie oznacza dla Twoich pieniędzy. Sam sprawdzisz to w kilku miejscach, tu masz odpowiedź w jednym.",
   },
   {
     q: "Dlaczego numer konta jest taki ważny?",
@@ -87,10 +87,10 @@ const faq = [
   },
   {
     q: "Czy zielony werdykt gwarantuje, że firma jest uczciwa?",
-    a: "Nie i tak to opisuję w raporcie. Brak sygnałów ostrzegawczych znaczy tyle, że w danych publicznych nie ma nic niepokojącego. To analiza ryzyka, nie gwarancja wypłacalności ani porada prawna.",
+    a: "Nie i tak to opisujemy w raporcie. Brak sygnałów ostrzegawczych znaczy tyle, że w danych publicznych nie ma nic niepokojącego. To analiza ryzyka, nie gwarancja wypłacalności ani porada prawna.",
   },
   {
-    q: "Jak szybko dostanę raport?",
+    q: "Jak szybko dostaniemy raport?",
     a: "Zwykle tego samego dnia, najpóźniej w ciągu 24 godzin. Jeśli sprawa jest pilna, bo masz zapłacić dziś, napisz to w zgłoszeniu.",
   },
 ];

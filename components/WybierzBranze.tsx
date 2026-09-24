@@ -119,7 +119,7 @@ export default function WybierzBranze({ wariant = "glowna" }: Props) {
           onClick={() => zglosZdarzenie(`branza_przejscie_${b.klucz}`)}
           className="group inline-flex items-center gap-1.5 font-semibold text-accent hover:underline"
         >
-          Zobacz, jak to rozwiązuję
+          Zobacz, jak to rozwiązujemy
           <span
             aria-hidden="true"
             className="inline-block transition-transform group-hover:translate-x-0.5"

@@ -68,7 +68,7 @@ export default function AutomatyzacjaProcesowBiznesowych() {
               Automatyzacja procesów biznesowych
             </h1>
             <p className="text-lg lg:text-xl text-gray-600 dark:text-gray-300">
-              Eliminuję ręczną, powtarzalną pracę i zastępuję ją sprawnymi
+              Eliminujemy ręczną, powtarzalną pracę i zastępujemy ją sprawnymi
               procesami. Mniej błędów, szybsza realizacja zadań, uporządkowany
               obieg danych.
             </p>

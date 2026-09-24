@@ -124,7 +124,7 @@ export default function N8nVsZapierArticle() {
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Pod względem interfejsu n8n jest bliżej Make niż Zapiera
                        , wizualny diagram, moduły, możliwość rozgałęzień i
-                        pętli. To nie jest „klikam dalej" jak w Zapierze.
+                        pętli. To nie jest „klikamy dalej" jak w Zapierze.
                       </p>
 
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 mt-12">

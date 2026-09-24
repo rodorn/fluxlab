@@ -4,13 +4,13 @@ import ProductLanding from "@/components/ProductLanding";
 export const metadata: Metadata = {
   title: "Audyt chatbota, co asystent AI mówi klientom | Fluxlab",
   description:
-    "Zadaję Twojemu botowi 150 realnych pytań klienta i zderzam odpowiedzi z cennikiem, regulaminem i zasadami zwrotów. Wyłapuję halucynacje. 69 zł.",
+    "Zadajemy Twojemu botowi 150 realnych pytań klienta i zderzamy odpowiedzi z cennikiem, regulaminem i zasadami zwrotów. Wyłapujemy halucynacje. 69 zł.",
   alternates: { canonical: "/audyt-chatbota" },
   openGraph: {
     title:
       "Audyt chatbota, sprawdź co Twój asystent AI mówi klientom | Fluxlab",
     description:
-      "150 realnych pytań klienta zderzonych z cennikiem i regulaminem. Wyłapuję halucynacje i obietnice, którymi firma jest związana. 69 zł.",
+      "150 realnych pytań klienta zderzonych z cennikiem i regulaminem. Wyłapujemy halucynacje i obietnice, którymi firma jest związana. 69 zł.",
     locale: "pl_PL",
     type: "website",
     images: [
@@ -31,7 +31,7 @@ export default function Page() {
       breadcrumb="Audyt chatbota"
       eyebrow="Jakość asystenta AI"
       h1="Sprawdź, co Twój bot naprawdę mówi klientom"
-      lead="Bot na stronie działa, więc wygląda, że jest dobrze. Problem w tym, że narzędzia sprawdzają, czy okienko się otwiera, a nie czy odpowiedzi są prawdziwe. Zadaję 150 realnych pytań klienta i każdą odpowiedź zderzam z tym, co faktycznie masz w cenniku i regulaminie."
+      lead="Bot na stronie działa, więc wygląda, że jest dobrze. Problem w tym, że narzędzia sprawdzają, czy okienko się otwiera, a nie czy odpowiedzi są prawdziwe. Zadajemy 150 realnych pytań klienta i każdą odpowiedź zderzamy z tym, co faktycznie masz w cenniku i regulaminie."
       ctaLabel="Zamów audyt bota"
       ctaNote="Raport w 48 godzin"
       checks={[
@@ -80,7 +80,7 @@ export default function Page() {
       faq={[
         {
           q: "Czy będziecie łamali zabezpieczenia naszego bota?",
-          a: "Nie. W standardowym audycie zadaję wyłącznie normalne pytania klienta, czyli rozmowę, którą może odbyć każdy odwiedzający. Testy odporności na manipulację robimy tylko wtedy, gdy wyraźnie o to poprosisz na piśmie.",
+          a: "Nie. W standardowym audycie zadajemy wyłącznie normalne pytania klienta, czyli rozmowę, którą może odbyć każdy odwiedzający. Testy odporności na manipulację robimy tylko wtedy, gdy wyraźnie o to poprosisz na piśmie.",
         },
         {
           q: "Czego potrzebujecie, żeby zacząć?",
@@ -99,7 +99,7 @@ export default function Page() {
       formHeading="Zamów audyt chatbota"
       formIntro="Podaj adres strony z botem, napisz na czym jest zbudowany, jeśli wiesz, i podlinkuj cennik oraz regulamin. Jeśli masz obszary, które szczególnie Cię niepokoją, wypisz je."
       submitLabel="Zamów audyt bota"
-      microCopy="Raport w 48 godzin. Zadaję wyłącznie zwykłe pytania klienta, bez prób obchodzenia zabezpieczeń."
+      microCopy="Raport w 48 godzin. Zadajemy wyłącznie zwykłe pytania klienta, bez prób obchodzenia zabezpieczeń."
       serviceName="Audyt jakości odpowiedzi chatbota"
       serviceDesc="Weryfikacja asystenta AI: 150 realnych pytań klienta zderzonych z cennikiem i regulaminem, wykrywanie halucynacji i kosztownych obietnic, zestaw testów regresyjnych. 69 zł."
       serviceType="Audyt jakości chatbota"

@@ -63,7 +63,7 @@ const painPoints = [
   {
     pain: "Sprzedajesz ten sam towar na sklepie i na Allegro, i co chwilę masz over-sell",
     solution:
-      "Wpinam BaseLinker albo bezpośrednią integrację (Shopify/WooCommerce ↔ Allegro API), która trzyma stany w jednym źródle prawdy. Każda sprzedaż automatycznie zmniejsza stan we wszystkich kanałach. Jeśli BaseLinker już masz, ale nie wykorzystujesz jego automatyzacji do końca, porządkuję to bez wymiany narzędzia.",
+      "Wpinamy BaseLinker albo bezpośrednią integrację (Shopify/WooCommerce ↔ Allegro API), która trzyma stany w jednym źródle prawdy. Każda sprzedaż automatycznie zmniejsza stan we wszystkich kanałach. Jeśli BaseLinker już masz, ale nie wykorzystujesz jego automatyzacji do końca, porządkujemy to bez wymiany narzędzia.",
   },
   {
     pain: "Każde zamówienie to ręczne wystawienie faktury w Fakturowni i przeklejanie danych",
@@ -106,7 +106,7 @@ const tools = [
   {
     name: "Zapier i Make",
     description:
-      "Sprawdzają się w mniejszych sklepach i przy szybkich integracjach point-to-point. Make daje większą kontrolę nad logiką, Zapier wygrywa szerokością integracji. Dobieram narzędzie do skali, nie odwrotnie.",
+      "Sprawdzają się w mniejszych sklepach i przy szybkich integracjach point-to-point. Make daje większą kontrolę nad logiką, Zapier wygrywa szerokością integracji. Dobieramy narzędzie do skali, nie odwrotnie.",
   },
   {
     name: "Pipedrive i HubSpot",
@@ -118,7 +118,7 @@ const tools = [
 const faq = [
   {
     question:
-      "Mamy sklep na Shopify i sprzedaję też na Allegro. Czy automatyzacja stanów wymaga BaseLinkera?",
+      "Mamy sklep na Shopify i sprzedajemy też na Allegro. Czy automatyzacja stanów wymaga BaseLinkera?",
     answer:
       "Niekoniecznie. BaseLinker jest najpopularniejszym wyborem i upraszcza wiele rzeczy, ale dla mniejszej liczby SKU lub specyficznych wymagań robimy też integracje bezpośrednio przez API Allegro i Shopify (np. w n8n). Decyzja zależy od skali, liczby kanałów i tego, jakie inne procesy chcesz spiąć.",
   },
@@ -143,7 +143,7 @@ const faq = [
     question:
       "Co z RODO, jeśli klienci trafiają do CRM i e-mail marketingu automatycznie?",
     answer:
-      "Automatyzacja respektuje zgody marketingowe pobrane na etapie zakupu lub w formularzu. Do CRM trafiają wszyscy klienci (podstawa: realizacja umowy), do e-mail marketingu tylko ci, którzy wyrazili zgodę. Wprowadzam też oznaczanie źródła zgody i datę, co przydaje się przy ewentualnej kontroli.",
+      "Automatyzacja respektuje zgody marketingowe pobrane na etapie zakupu lub w formularzu. Do CRM trafiają wszyscy klienci (podstawa: realizacja umowy), do e-mail marketingu tylko ci, którzy wyrazili zgodę. Wprowadzamy też oznaczanie źródła zgody i datę, co przydaje się przy ewentualnej kontroli.",
   },
   {
     question:
@@ -153,7 +153,7 @@ const faq = [
   },
   {
     question:
-      "Sprzedaję głównie na Allegro. Czy to ma sens, jeśli nie mamy własnego sklepu?",
+      "Sprzedajemy głównie na Allegro. Czy to ma sens, jeśli nie mamy własnego sklepu?",
     answer:
       "Ma. Allegro ma własne API i sporo da się zautomatyzować nawet bez sklepu, fakturowanie, etykiety, komunikację z klientem, obsługę dyskusji i reklamacji, raportowanie marży. Pełny stack jest mniejszy niż przy sklepie wielokanałowym, ale potencjał oszczędności na osobie operacyjnej jest taki sam.",
   },
@@ -301,11 +301,11 @@ export default function AutomatyzacjaDlaEcommerce() {
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                        Konkretne problemy, które rozwiązuję
+                        Konkretne problemy, które rozwiązujemy
                       </h2>
                       <p className="text-gray-500 dark:text-gray-400 mb-10">
                         Poniżej typowe sytuacje z codziennej pracy sklepu
-                        internetowego i to, jak podchodzę do nich od strony
+                        internetowego i to, jak podchodzimy do nich od strony
                         technicznej. Każda z tych rzeczy jest do
                         zrobienia w kilka dni lub tygodni, nie miesięcy.
                       </p>
@@ -338,10 +338,10 @@ export default function AutomatyzacjaDlaEcommerce() {
                         Narzędzia, z którymi pracujemy w e-commerce
                       </h2>
                       <p className="text-gray-500 dark:text-gray-400 mb-10">
-                        Nie sprzedaję konkretnego narzędzia. Dobieram je do
+                        Nie sprzedajemy konkretnego narzędzia. Dobieramy je do
                         skali sklepu, liczby kanałów i tego, co już działa.
                         Najczęściej spotykany stack dla polskiego e-commerce
-                        wygląda jednak podobnie i poniżej opisuję
+                        wygląda jednak podobnie i poniżej opisujemy
                         narzędzia, na których takie automatyzacje budujemy.
                       </p>
 
@@ -469,7 +469,7 @@ export default function AutomatyzacjaDlaEcommerce() {
                           Twój sklep rośnie, a operacja zaczyna gasić pożary?
                         </h2>
                         <p className="text-gray-500 dark:text-gray-400 mb-8">
-                          Opisz stack i procesy. Wskażę miejsca, gdzie te same
+                          Opisz stack i procesy. Wskażemy miejsca, gdzie te same
                           dane przepisuje się ręcznie, i policzymy, czy
                           automatyzacja się tam opłaca.
                         </p>

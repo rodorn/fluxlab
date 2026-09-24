@@ -8,7 +8,7 @@ LOG="$HOME/Projekty/fluxlab-site/cykl/przebieg.log"
 cd "$HOME/Projekty/fluxlab-site" || exit 1
 {
   echo "=== $(date '+%F %T') start"
-  timeout 3000 claude -p "$(cat "$HOME/Projekty/fluxlab-site/cykl/prompt.txt")" 2>&1 | tail -40
+  timeout 3000 claude --model sonnet -p "$(cat "$HOME/Projekty/fluxlab-site/cykl/prompt.txt")" 2>&1 | tail -40
   echo "=== $(date '+%F %T') koniec, kod $?"
 } >> "$LOG" 2>&1
 # Log nie moze rosnac bez konca.

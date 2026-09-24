@@ -54,7 +54,7 @@ export const businessTools: Narzedzie[] = [
   {
     title: "Pełny audyt techniczny strony",
     description:
-      "Jedno wpisanie adresu zamiast siedmiu osobnych sprawdzeń. Mierzymy szybkość na komputerze i osobno na telefonie, ważę każdy plik, czytamy certyfikat, sprawdzamy widoczność w wyszukiwarce, dostęp dla asystentów AI i zabezpieczenia poczty. Na końcu dostajesz kolejność poprawek i cenę naprawy przy każdej pozycji.",
+      "Jedno wpisanie adresu zamiast siedmiu osobnych sprawdzeń. Mierzymy szybkość na komputerze i osobno na telefonie, ważymy każdy plik, czytamy certyfikat, sprawdzamy widoczność w wyszukiwarce, dostęp dla asystentów AI i zabezpieczenia poczty. Na końcu dostajesz kolejność poprawek i cenę naprawy przy każdej pozycji.",
     href: "/audyt-strony",
     ikona: "lupa",
   },
@@ -117,7 +117,7 @@ export const businessTools: Narzedzie[] = [
   {
     title: "Czy klient ustali, komu płaci",
     description:
-      "Wpisz adres firmy, a wyciągnę ze strony, kontaktu i regulaminu numer NIP oraz numer konta i sprawdzimy je w wykazie podatników VAT, dokładnie tak jak zrobi to księgowość Twojego klienta przed przelewem.",
+      "Wpisz adres firmy, a wyciągniemy ze strony, kontaktu i regulaminu numer NIP oraz numer konta i sprawdzimy je w wykazie podatników VAT, dokładnie tak jak zrobi to księgowość Twojego klienta przed przelewem.",
     href: "/dane-sprzedawcy",
     ikona: "pieczec",
   },
@@ -138,7 +138,7 @@ export const businessTools: Narzedzie[] = [
   {
     title: "Kto jest właścicielem Twojej domeny",
     description:
-      "Wpisz domenę, a odczytam z publicznego rejestru, kto figuruje jako abonent i kiedy wygasa rejestracja. Bywa, że właścicielem adresu firmy jest ten, kto kiedyś robił stronę.",
+      "Wpisz domenę, a odczytamy z publicznego rejestru, kto figuruje jako abonent i kiedy wygasa rejestracja. Bywa, że właścicielem adresu firmy jest ten, kto kiedyś robił stronę.",
     href: "/wlasnosc-domeny",
     ikona: "klucz",
   },

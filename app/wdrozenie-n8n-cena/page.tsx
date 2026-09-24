@@ -31,7 +31,7 @@ export default function WdrozenieN8nCena() {
       breadcrumb="Wdrożenie n8n, cena"
       eyebrow="n8n"
       h1="Ile kosztuje wdrożenie n8n"
-      lead="Cztery pozycje: licencja, serwer, praca nad przepływami i opieka. Poniżej rozbijam każdą z nich na liczby, z widełkami, żeby dało się oszacować budżet bez wysyłania zapytania ofertowego."
+      lead="Cztery pozycje: licencja, serwer, praca nad przepływami i opieka. Poniżej rozbijamy każdą z nich na liczby, z widełkami, żeby dało się oszacować budżet bez wysyłania zapytania ofertowego."
       ctaLabel="Policz swój koszt"
       ctaNote="Kalkulator niżej, bez rejestracji"
       tool={<KalkulatorAutomatyzacji />}
@@ -112,7 +112,7 @@ export default function WdrozenieN8nCena() {
           a: "Bo różnica między przepływem na trzy kroki a przepływem, który wzbogaca dane, rozgałęzia się po warunkach i musi umieć ponowić nieudane wywołanie, to różnica kilkukrotna. Widełki są uczciwsze niż jedna liczba, którą i tak trzeba by potem korygować.",
         },
         {
-          q: "Co, jeśli po wdrożeniu zechcę to przenieść gdzie indziej?",
+          q: "Co, jeśli po wdrożeniu zechcemy to przenieść gdzie indziej?",
           a: "Przepływy n8n to pliki, które dostajesz razem z dostępem do serwera. Nie ma tu żadnego naszego panelu, do którego trzeba mieć konto. Możesz to prowadzić sam albo przekazać komuś innemu i nie potrzebujesz do tego naszej zgody.",
         },
         {

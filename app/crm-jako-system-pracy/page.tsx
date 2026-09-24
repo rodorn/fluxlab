@@ -71,7 +71,7 @@ const workflowSteps = [
   {
     n: "1",
     title: "Audyt obecnego CRM",
-    desc: "Mapuję, jak handlowcy realnie używają systemu, które pola wypełniają, które ignorują, gdzie powstają niespójności.",
+    desc: "Mapujemy, jak handlowcy realnie używają systemu, które pola wypełniają, które ignorują, gdzie powstają niespójności.",
     accent: false,
   },
   {
@@ -83,7 +83,7 @@ const workflowSteps = [
   {
     n: "3",
     title: "Czyszczenie pól i słowników",
-    desc: "Usuwamy pola nieużywane, zamieniam wolny tekst na słowniki, definiuję pola wymagane na każdym etapie.",
+    desc: "Usuwamy pola nieużywane, zamieniamy wolny tekst na słowniki, definiujemy pola wymagane na każdym etapie.",
     accent: false,
   },
   {
@@ -160,7 +160,7 @@ const faq = [
     question:
       "Handlowcy będą się buntować przeciw nowym regułom, co z tym zrobić?",
     answer:
-      "Tak, będą. Dlatego nie wprowadzam reguł zza biurka, tylko po rozmowie z zespołem. Handlowcy zwykle wiedzą, które pola są bezsensowne i które reguły im pomagają, a które przeszkadzają. Po pierwszych 4 tygodniach dostosowujemy system na podstawie realnego użycia, nie założeń.",
+      "Tak, będą. Dlatego nie wprowadzamy reguł zza biurka, tylko po rozmowie z zespołem. Handlowcy zwykle wiedzą, które pola są bezsensowne i które reguły im pomagają, a które przeszkadzają. Po pierwszych 4 tygodniach dostosowujemy system na podstawie realnego użycia, nie założeń.",
   },
   {
     question:
@@ -236,7 +236,7 @@ export default function CrmJakoSystemPracy() {
                 CRM nie powinien być miejscem, gdzie handlowiec dokumentuje
                 chaos. Powinien być systemem, który ten chaos ogranicza,
                 wymusza dyscyplinę procesu, pilnuje terminów, podpowiada kolejny
-                krok. Tu opisuję, jak doprowadzić istniejący CRM do stanu, w
+                krok. Tu opisujemy, jak doprowadzić istniejący CRM do stanu, w
                 którym zespół mu ufa, a manager przestaje sklejać raporty w
                 Excelu.
               </p>

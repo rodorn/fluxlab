@@ -176,7 +176,7 @@ const faq = [
   {
     question: "Co z RODO, gdy lead leci przez n8n?",
     answer:
-      "n8n self-hosted na waszym serwerze (Hetzner Niemcy, OVH Polska, własne kolokacja) trzyma dane na waszej infrastrukturze, żaden zewnętrzny dostawca poza tymi, do których jawnie wysyłacie zapytania (CRM, GUS, biała lista). n8n.cloud ma serwery w Niemczech (UE), DPA i SOC 2. Dla większości firm B2B to wystarczy. Dla branż regulowanych (finanse, zdrowie) zwykle rekomenduję self-hosted.",
+      "n8n self-hosted na waszym serwerze (Hetzner Niemcy, OVH Polska, własne kolokacja) trzyma dane na waszej infrastrukturze, żaden zewnętrzny dostawca poza tymi, do których jawnie wysyłacie zapytania (CRM, GUS, biała lista). n8n.cloud ma serwery w Niemczech (UE), DPA i SOC 2. Dla większości firm B2B to wystarczy. Dla branż regulowanych (finanse, zdrowie) zwykle rekomendujemy self-hosted.",
   },
   {
     question: "Czy możemy utrzymać workflow sam po wdrożeniu?",

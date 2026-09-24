@@ -99,10 +99,10 @@ const ETAPY = [
   "Łączymy się ze stroną i mierzymy czas odpowiedzi",
   "Pobieramy ją drugi raz, tym razem jako telefon",
   "Czytamy style i sprawdzamy, czy układ przestawia się na wąskim ekranie",
-  "Ważę pliki, które musi pobrać odwiedzający",
+  "Ważymy pliki, które musi pobrać odwiedzający",
   "Sprawdzamy certyfikat, robots.txt, mapę strony i dane dla wyszukiwarki",
   "Sprawdzamy, czy roboty asystentów AI mają tu wstęp",
-  "Składam raport i układam naprawy w kolejności",
+  "Składamy raport i układamy naprawy w kolejności",
 ];
 
 const NAZWA_OBSZARU: Record<string, string> = {
@@ -419,7 +419,7 @@ export default function AudytCheck() {
             ))}
           </ol>
           <p className="mt-4 text-xs text-gray-500 dark:text-gray-400">
-            Pełne badanie trwa zwykle od trzydziestu sekund do minuty, bo ważę
+            Pełne badanie trwa zwykle od trzydziestu sekund do minuty, bo ważymy
             każdy plik osobno, zamiast wierzyć deklaracjom serwera.
           </p>
         </>
@@ -722,7 +722,7 @@ export default function AudytCheck() {
                 onClick={() => zglosZdarzenie("audyt_klik_zlecam")}
                 className="btn-primary mt-5 inline-flex px-6 py-3 text-sm"
               >
-                Zlecam naprawę
+                Zlecamy naprawę
               </a>
             </div>
           )}
@@ -836,7 +836,7 @@ export default function AudytCheck() {
                 Czego tutaj nie ma, żeby nie było nieporozumień: nie uruchamiałem
                 przeglądarki, więc nie mierzymy czasu rysowania strony, przesunięć
                 układu ani wyniku Lighthouse. Nie oceniamy treści merytorycznie,
-                nie oceniamy wyglądu i nie porównuję z konkurencją. Badamy stronę
+                nie oceniamy wyglądu i nie porównujemy z konkurencją. Badamy stronę
                 główną, nie każdą podstronę. Pojedynczy pomiar czasu zależy od
                 chwili, więc wartości graniczne warto sprawdzić drugi raz.
               </p>

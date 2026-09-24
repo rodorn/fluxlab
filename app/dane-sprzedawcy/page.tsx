@@ -94,7 +94,7 @@ export default function Page() {
         },
         {
           q: "Wykaz pokazuje status inny niż Czynny, co to znaczy?",
-          a: "Niekoniecznie coś złego. Taki status zwracają także duże, działające firmy, na przykład przez sposób rozliczania w grupie. Dlatego nie nazywam tego z góry problemem, tylko sygnałem do wyjaśnienia. Istotne jest to, że Twój klient zobaczy dokładnie to samo i bez wyjaśnienia wyciągnie własne wnioski.",
+          a: "Niekoniecznie coś złego. Taki status zwracają także duże, działające firmy, na przykład przez sposób rozliczania w grupie. Dlatego nie nazywamy tego z góry problemem, tylko sygnałem do wyjaśnienia. Istotne jest to, że Twój klient zobaczy dokładnie to samo i bez wyjaśnienia wyciągnie własne wnioski.",
         },
         {
           q: "Sprawdzacie tylko sześć podstron, a nasze dane są gdzie indziej.",

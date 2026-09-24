@@ -291,7 +291,7 @@ export default function NipCheck() {
                   </p>
                 )}
                 <p className="mt-2 text-xs text-gray-500 dark:text-gray-400">
-                  Przesyłam tylko sprawdzany numer i wynik. Bez zapisu na
+                  Przesyłamy tylko sprawdzany numer i wynik. Bez zapisu na
                   newsletter.
                 </p>
               </form>

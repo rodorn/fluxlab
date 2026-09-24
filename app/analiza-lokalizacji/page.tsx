@@ -94,7 +94,7 @@ export default function Page() {
         },
         {
           q: "Czy baza map obejmuje wszystkie firmy?",
-          a: "Nie i mówimy to wprost. W miastach pokrycie jest bardzo dobre, na wsiach bywa niepełne. Dlatego traktuję to jako przekrój rynku, a nie spis powszechny, i tak samo opisuję w raporcie.",
+          a: "Nie i mówimy to wprost. W miastach pokrycie jest bardzo dobre, na wsiach bywa niepełne. Dlatego traktujemy to jako przekrój rynku, a nie spis powszechny, i tak samo opisujemy w raporcie.",
         },
         {
           q: "Czy wskaźnik na mieszkańca zawsze ma sens?",
@@ -109,7 +109,7 @@ export default function Page() {
       formHeading="Zamów raport dla swojej lokalizacji"
       formIntro="Napisz, gdzie jest lokal, jaka to branża i jaki czynsz wchodzi w grę. Odeślemy raport w 24 godziny."
       submitLabel="Zamów raport"
-      microCopy="Korzystam wyłącznie z publicznych źródeł danych. Nie potrzebujemy żadnych dokumentów ani dostępów."
+      microCopy="Korzystamy wyłącznie z publicznych źródeł danych. Nie potrzebujemy żadnych dokumentów ani dostępów."
       serviceName="Analiza potencjału lokalizacji pod punkt usługowy"
       serviceDesc="Ocena nasycenia rynku w zasięgu dojazdu: liczba konkurentów, liczba mieszkańców na punkt, porównanie z sąsiednimi gminami i trend demograficzny, z jednoznacznym wnioskiem. Od 190 zł."
       serviceType="Analiza rynku lokalnego pod działalność usługową"

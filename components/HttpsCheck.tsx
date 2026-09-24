@@ -23,7 +23,7 @@ interface Wynik {
 
 const ETAPY = [
   "Sprawdzamy, czy domena wskazuje na serwer",
-  "Nawiązuję połączenie szyfrowane",
+  "Nawiązujemy połączenie szyfrowane",
   "Czytamy certyfikat i sprawdzamy, na kogo jest wystawiony",
   "Sprawdzamy, dokąd prowadzi wejście bez szyfrowania",
 ];
@@ -406,7 +406,7 @@ export default function HttpsCheck() {
                   </p>
                 )}
                 <p className="mt-2 text-xs text-gray-500 dark:text-gray-400">
-                  Przesyłam tylko sprawdzany adres i wynik. Bez zapisu na
+                  Przesyłamy tylko sprawdzany adres i wynik. Bez zapisu na
                   newsletter.
                 </p>
               </form>

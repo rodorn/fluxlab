@@ -259,7 +259,7 @@ export default function RealizacjePage() {
               wdrożeń ani referencje, których nie mamy.
             </p>
             <p className="mt-4 text-gray-600 dark:text-gray-300">
-              Osobno rozpisuję{" "}
+              Osobno rozpisujemy{" "}
               <Link
                 href="/case-study"
                 className="text-accent hover:underline font-medium"

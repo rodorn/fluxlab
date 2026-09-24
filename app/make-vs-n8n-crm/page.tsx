@@ -219,7 +219,7 @@ const faq = [
   {
     question: "Co z RODO przy automatyzacji CRM?",
     answer:
-      "Make: serwery w UE (Czechy, Niemcy), DPA, SOC 2. Dla większości firm B2B w Polsce wystarcza. n8n.cloud: serwery w UE (Niemcy), DPA, SOC 2 Type II. n8n self-hosted na waszym serwerze (Polska, Niemcy, własna infra), pełna kontrola, dane nigdy nie wychodzą poza waszą infrastrukturę. Dla branż regulowanych (finanse, zdrowie, sektor publiczny) standardowo rekomenduję self-hosted.",
+      "Make: serwery w UE (Czechy, Niemcy), DPA, SOC 2. Dla większości firm B2B w Polsce wystarcza. n8n.cloud: serwery w UE (Niemcy), DPA, SOC 2 Type II. n8n self-hosted na waszym serwerze (Polska, Niemcy, własna infra), pełna kontrola, dane nigdy nie wychodzą poza waszą infrastrukturę. Dla branż regulowanych (finanse, zdrowie, sektor publiczny) standardowo rekomendujemy self-hosted.",
   },
 ];
 

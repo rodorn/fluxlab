@@ -177,7 +177,7 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
                             miesięcznie, czyli minimum bez ZUS-u, urlopu,
                             sprzętu i kosztów rekrutacji. Realny pełen koszt
                             zatrudnienia jest wyższy o 30 do 50 procent, co
-                            rozpisuję w zakładce o koszcie zatrudnienia.
+                            rozpisujemy w zakładce o koszcie zatrudnienia.
                           </li>
                           <li>
                             <strong>Automatyzacja orientacyjnie</strong>: 1 500
@@ -240,7 +240,7 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
                         zespół.
                       </p>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Druga rzecz: decyzja „zatrudniam” jest trudna do
+                        Druga rzecz: decyzja „zatrudniamy” jest trudna do
                         cofnięcia, decyzja „automatyzujemy”, znacznie łatwiejsza.
                         Wyłączenie scenariusza to kilka kliknięć. Zwolnienie
                         pracownika to miesiące stresu, okres wypowiedzenia,

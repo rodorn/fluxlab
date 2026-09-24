@@ -162,7 +162,7 @@ export const WYCENA_RAPORTOWANIE: Wycena = {
     min: 190,
     max: 190,
   },
-  skad: "Widełki liczymy z własnych stawek za pracę, tych samych, które stoją jawnie na stronie o koszcie wdrożenia n8n. To rząd wielkości do zaplanowania budżetu, nie oferta. Wiążąca kwota pada po bezpłatnej diagnozie, w której oglądam, jak wyglądają Wasze dane.",
+  skad: "Widełki liczymy z własnych stawek za pracę, tych samych, które stoją jawnie na stronie o koszcie wdrożenia n8n. To rząd wielkości do zaplanowania budżetu, nie oferta. Wiążąca kwota pada po bezpłatnej diagnozie, w której oglądamy, jak wyglądają Wasze dane.",
 };
 
 /**

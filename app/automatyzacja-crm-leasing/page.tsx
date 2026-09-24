@@ -104,7 +104,7 @@ const faq = [
   {
     question: "Czy automatyzacja BIK/KRD jest legalna?",
     answer:
-      "Tak, jeśli macie zgody klienta i jesteście podmiotem uprawnionym (BIK wymaga umowy z BIK SA, KRD też wymaga umowy). Automatyzacja sprowadza się do tego, że CRM po otrzymaniu zgody klienta odpyta API BIK/KRD przez waszą warstwę integracyjną, zapisze odpowiedź w deal'u i nada scoring. Cała kontrola pozostaje po waszej stronie, automatyzacja nie obchodzi prawa, tylko klikanie. Wdrożenie zawsze konsultuję z prawnikiem klienta i z waszym IOD-em (jeśli go macie).",
+      "Tak, jeśli macie zgody klienta i jesteście podmiotem uprawnionym (BIK wymaga umowy z BIK SA, KRD też wymaga umowy). Automatyzacja sprowadza się do tego, że CRM po otrzymaniu zgody klienta odpyta API BIK/KRD przez waszą warstwę integracyjną, zapisze odpowiedź w deal'u i nada scoring. Cała kontrola pozostaje po waszej stronie, automatyzacja nie obchodzi prawa, tylko klikanie. Wdrożenie zawsze konsultujemy z prawnikiem klienta i z waszym IOD-em (jeśli go macie).",
   },
   {
     question:
@@ -121,7 +121,7 @@ const faq = [
   {
     question: "Co z RODO i tajemnicą bankową?",
     answer:
-      "Dla branży leasingowej standardowo wdrażamy automatyzację na n8n self-hosted na waszym serwerze (Polska / EOG). Dane klientów nie wychodzą poza waszą infrastrukturę poza tymi, do których jawnie wysyłacie zapytania (BIK, KRD, leasingodawca). Konfigurujemy retencję, rejestr zgód i logi dostępu. To wymaganie twarde, przed startem audytuję obecny stan ze strony compliance.",
+      "Dla branży leasingowej standardowo wdrażamy automatyzację na n8n self-hosted na waszym serwerze (Polska / EOG). Dane klientów nie wychodzą poza waszą infrastrukturę poza tymi, do których jawnie wysyłacie zapytania (BIK, KRD, leasingodawca). Konfigurujemy retencję, rejestr zgód i logi dostępu. To wymaganie twarde, przed startem audytujemy obecny stan ze strony compliance.",
   },
   {
     question: "Ile kosztuje wdrożenie i ile trwa?",
@@ -842,7 +842,7 @@ export default function AutomatyzacjaCrmLeasing() {
                       <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
                         30 minut rozmowy o procesie. Wyjdziesz z mapą procesu,
                         wskazaniem 3 najpilniejszych miejsc do automatyzacji i
-                        widełkami cenowymi. Bez zobowiązań, jeśli nie zobaczę
+                        widełkami cenowymi. Bez zobowiązań, jeśli nie zobaczymy
                         dopasowania, powiemy to wprost.
                       </p>
                       <TrackedCTA

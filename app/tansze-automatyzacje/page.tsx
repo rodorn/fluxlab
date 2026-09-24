@@ -38,7 +38,7 @@ export default function Page() {
       checks={[
         {
           title: "Te same scenariusze, nie nowe",
-          desc: "Nie przebudowuję Wam procesów. Odtwarzam dokładnie to, co już działa, żeby po migracji nikt w firmie nie musiał uczyć się niczego od nowa.",
+          desc: "Nie przebudowujemy Wam procesów. Odtwarzamy dokładnie to, co już działa, żeby po migracji nikt w firmie nie musiał uczyć się niczego od nowa.",
         },
         {
           title: "Koszt przestaje rosnąć z wolumenem",
@@ -89,7 +89,7 @@ export default function Page() {
       ]}
       faq={[
         {
-          q: "Czy stracę coś na jakości?",
+          q: "Czy stracimy coś na jakości?",
           a: "Nie, bo to to samo narzędzie w wersji, którą uruchamiasz u siebie. Różnica jest w rozliczeniu, nie w możliwościach. Wyjątkiem są gotowe integracje z bardzo niszowymi usługami, które czasem trzeba dopisać ręcznie, i mówimy o tym przed migracją, a nie po.",
         },
         {

@@ -75,7 +75,7 @@ const faq = [
   {
     question: "Czy liczycie akcyzę dokładnie?",
     answer:
-      "Tak, akcyzę liczymy według pojemności silnika i typu napędu (osobno dla spalinowych, hybryd i elektryków), a nie z grubsza. To ona najczęściej przesądza o opłacalności, więc traktuję ją poważnie.",
+      "Tak, akcyzę liczymy według pojemności silnika i typu napędu (osobno dla spalinowych, hybryd i elektryków), a nie z grubsza. To ona najczęściej przesądza o opłacalności, więc traktujemy ją poważnie.",
   },
   {
     question: "Czy sprowadzasz auto za mnie?",
@@ -116,7 +116,7 @@ export default function ImportRadarPage() {
             </h1>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-300">
               Cena w niemieckim ogłoszeniu to dopiero początek. Liczymy pełny
-              koszt sprowadzenia, akcyzę, transport i opłaty, a potem porównuję
+              koszt sprowadzenia, akcyzę, transport i opłaty, a potem porównujemy
               go z cenami tego auta w Polsce. Dostajesz jedną liczbę, która
               mówi, ile zostaje na czysto.
             </p>

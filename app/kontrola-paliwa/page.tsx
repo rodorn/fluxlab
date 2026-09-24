@@ -44,7 +44,7 @@ export default function Page() {
         },
         {
           title: "Tankowanie w dniu bez przejazdu",
-          desc: "Karta pracuje, auto stoi. Zestawiam każdą transakcję z przebiegiem i trasą z danego dnia.",
+          desc: "Karta pracuje, auto stoi. Zestawiamy każdą transakcję z przebiegiem i trasą z danego dnia.",
         },
         {
           title: "Spalanie odstające od reszty floty",
@@ -94,11 +94,11 @@ export default function Page() {
         },
         {
           q: "Czy to jest dowód w sprawie przeciwko kierowcy?",
-          a: "Nie i tak to opisuję w raporcie. Raport wskazuje transakcje wymagające wyjaśnienia, a nie winnego. To materiał do rozmowy i do uszczelnienia procedur, nie opinia biegłego.",
+          a: "Nie i tak to opisujemy w raporcie. Raport wskazuje transakcje wymagające wyjaśnienia, a nie winnego. To materiał do rozmowy i do uszczelnienia procedur, nie opinia biegłego.",
         },
         {
           q: "Co z danymi kierowców?",
-          a: "To dane osobowe, więc podpisujemy umowę powierzenia, przetwarzam je wyłącznie na potrzeby raportu i kasujemy po dostarczeniu wyników.",
+          a: "To dane osobowe, więc podpisujemy umowę powierzenia, przetwarzamy je wyłącznie na potrzeby raportu i kasujemy po dostarczeniu wyników.",
         },
         {
           q: "Mamy małą flotę, pięć aut. Ma to sens?",

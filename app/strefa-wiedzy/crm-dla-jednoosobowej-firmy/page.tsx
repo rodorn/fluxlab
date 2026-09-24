@@ -261,7 +261,7 @@ export default function CrmDlaJednoosobowejFirmyArticle() {
                         ani Professional. Cały sens tej platformy to zarządzanie
                         procesami w zespole, modelowanie danych i głębokie
                         uprawnienia. Dla jednej osoby to bardzo drogi i ciężki
-                        overengineering. Szczegółowo omawiam to w osobnym
+                        overengineering. Szczegółowo omawiamy to w osobnym
                         artykule o tym, czy{" "}
                         <Link
                           href="/strefa-wiedzy/salesforce-dla-malej-firmy"

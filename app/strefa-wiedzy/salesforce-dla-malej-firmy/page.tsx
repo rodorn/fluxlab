@@ -416,7 +416,7 @@ export default function SalesforceDlaMalejFirmyArticle() {
                           Typowe pułapki wdrożeń Salesforce w MŚP
                         </h2>
                         <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                          Po stronie klientów najczęściej widuję kilka
+                          Po stronie klientów najczęściej widujemy kilka
                           powtarzalnych scenariuszy, w których Salesforce nie
                           zadziałał nie dlatego, że jest „zły", tylko dlatego,
                           że został wdrożony w oderwaniu od realiów firmy.
@@ -491,7 +491,7 @@ export default function SalesforceDlaMalejFirmyArticle() {
                           Kluczowe jest to, co zwykle pomijane: decyzja, których
                           danych historycznych nie migrujesz. Próba przepisania
                           wszystkiego 1:1 zwykle kończy się miesiącami
-                          przeciągania i frustracją zespołu. Szczegółowo omawiam
+                          przeciągania i frustracją zespołu. Szczegółowo omawiamy
                           tę dyscyplinę w artykule o{" "}
                           <Link
                             href="/strefa-wiedzy/automatyzacja-crm-od-czego-zaczac"

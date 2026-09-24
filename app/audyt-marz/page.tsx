@@ -4,7 +4,7 @@ import ProductLanding from "@/components/ProductLanding";
 export const metadata: Metadata = {
   title: "Audyt marż sklepu, zysk na produkcie, 49 zł | Fluxlab",
   description:
-    "Panel pokazuje obrót, a nie to, co zostaje. Liczymy zysk netto na sztuce po prowizjach, zwrotach i dopłatach do wysyłki, wskazuję martwy stok. 49 zł.",
+    "Panel pokazuje obrót, a nie to, co zostaje. Liczymy zysk netto na sztuce po prowizjach, zwrotach i dopłatach do wysyłki, wskazujemy martwy stok. 49 zł.",
   alternates: { canonical: "/audyt-marz" },
   openGraph: {
     title:
@@ -37,7 +37,7 @@ export default function Page() {
       checks={[
         {
           title: "Bestsellery, które dokładasz",
-          desc: "Najczęściej to właśnie hity sprzedaży są pod kreską, bo mają najniższą marżę i najwięcej zwrotów. Wskazuję je z kwotą straty na sztuce.",
+          desc: "Najczęściej to właśnie hity sprzedaży są pod kreską, bo mają najniższą marżę i najwięcej zwrotów. Wskazujemy je z kwotą straty na sztuce.",
         },
         {
           title: "Wszystkie koszty, nie tylko zakup",
@@ -99,7 +99,7 @@ export default function Page() {
       formHeading="Zamów audyt marż"
       formIntro="Napisz, z jakiego systemu masz eksport sprzedaży, za jaki okres i ile mniej więcej masz produktów. Pliki podeślesz mailem po naszej odpowiedzi, nie wrzucaj ich tutaj."
       submitLabel="Zamów audyt marż"
-      microCopy="Raport w 48 godzin. Dane sprzedażowe przetwarzam tylko na potrzeby raportu i kasujemy po dostarczeniu."
+      microCopy="Raport w 48 godzin. Dane sprzedażowe przetwarzamy tylko na potrzeby raportu i kasujemy po dostarczeniu."
       serviceName="Audyt marż sklepu internetowego"
       serviceDesc="Wyliczenie realnego zysku netto na produkt po prowizjach, zwrotach i kosztach wysyłki, lista pozycji sprzedawanych pod kreską i martwy stok. 49 zł."
       serviceType="Analiza rentowności asortymentu"

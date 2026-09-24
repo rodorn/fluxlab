@@ -99,7 +99,7 @@ export default function Page() {
         },
         {
           q: "Czy to jest porada prawna o regulaminie?",
-          a: "Nie. Sprawdzamy, czy informacja jest podana i łatwa do znalezienia. Ocena samej treści regulaminu należy do prawnika i tak też to opisuję w raporcie.",
+          a: "Nie. Sprawdzamy, czy informacja jest podana i łatwa do znalezienia. Ocena samej treści regulaminu należy do prawnika i tak też to opisujemy w raporcie.",
         },
         {
           q: "Co z danymi kupujących?",

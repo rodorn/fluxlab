@@ -31,9 +31,9 @@ interface Wynik {
 const ETAPY = [
   "Sprawdzamy, skąd ten sklep da się odczytać",
   "Zbieramy produkty, które są teraz przecenione",
-  "Otwieram kolejno karty tych produktów",
+  "Otwieramy kolejno karty tych produktów",
   "Szukamy komunikatu o najniższej cenie z 30 dni",
-  "Odsiewam pozorną zgodność, czyli 30 dni na zwrot",
+  "Odsiewamy pozorną zgodność, czyli 30 dni na zwrot",
 ];
 
 // Sklepy dobrane pomiarem: kazdy z nich odpowiada na sprawdzenie i wraca
@@ -196,8 +196,8 @@ export default function CenyCheck() {
         Sprawdź swoje przeceny za darmo
       </h2>
       <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-        Wpisz adres sklepu. Pobiorę listę produktów, które są u Ciebie teraz
-        przecenione, otworzę ich karty i sprawdzimy, czy jest przy nich wymagana
+        Wpisz adres sklepu. Pobierzemy listę produktów, które są u Ciebie teraz
+        przecenione, otworzymy ich karty i sprawdzimy, czy jest przy nich wymagana
         informacja o najniższej cenie z 30 dni. Bez rejestracji i bez żadnych
         dostępów do panelu.
       </p>
@@ -256,7 +256,7 @@ export default function CenyCheck() {
             </li>
           ))}
           <li className="pt-1 text-xs text-gray-600 dark:text-gray-600">
-            Otwieram karty jedna po drugiej, więc to trwa kilkanaście sekund.
+            Otwieramy karty jedna po drugiej, więc to trwa kilkanaście sekund.
           </li>
         </ol>
       )}
@@ -380,7 +380,7 @@ export default function CenyCheck() {
                   <p className="mt-2 text-sm text-red-600 dark:text-red-400">{leadBlad}</p>
                 )}
                 <p className="mt-2 text-xs text-gray-500 dark:text-gray-400">
-                  Przesyłam tylko adres sklepu i wynik skanu. Bez zapisu na
+                  Przesyłamy tylko adres sklepu i wynik skanu. Bez zapisu na
                   newsletter.
                 </p>
               </form>

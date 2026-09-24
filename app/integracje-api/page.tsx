@@ -80,7 +80,7 @@ export default function IntegracjeApi() {
               Łączymy systemy ze sprzedaży, operacji i raportowania tak, żeby dane
               trafiały tam, gdzie trzeba, bez ręcznego przepisywania. Spięcie
               dwóch systemów w jedną stronę zaczyna się od 1 500 zł, a co
-              podnosi tę kwotę, rozpisuję niżej co do pozycji.
+              podnosi tę kwotę, rozpisujemy niżej co do pozycji.
             </p>
             <div>
               <a href="#sekcje" className="btn-primary">

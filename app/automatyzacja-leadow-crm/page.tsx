@@ -68,7 +68,7 @@ const faq = [
   {
     question: "Czy musimy mieć już CRM?",
     answer:
-      "Nie. Możemy zacząć od arkuszy lub maili. Jeśli CRM jest potrzebny, dobiorę najprostsze rozwiązanie do skali firmy.",
+      "Nie. Możemy zacząć od arkuszy lub maili. Jeśli CRM jest potrzebny, dobierzemy najprostsze rozwiązanie do skali firmy.",
   },
   {
     question: "Czy automatyzacja zastąpi handlowca?",

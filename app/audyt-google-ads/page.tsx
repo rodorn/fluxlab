@@ -34,7 +34,7 @@ const steps = [
   },
   {
     title: "Analizujemy wydatki bez konwersji",
-    desc: "Przechodzę przez raport search terms i wyławiam frazy, które kosztują, ale nie sprzedają. Grupuję je i liczymy realną kwotę do odzyskania.",
+    desc: "Przechodzimy przez raport search terms i wyławiamy frazy, które kosztują, ale nie sprzedają. Grupujemy je i liczymy realną kwotę do odzyskania.",
   },
   {
     title: "Dostajesz raport i listę wykluczeń",
@@ -87,7 +87,7 @@ export default function AudytGoogleAdsPage() {
             </h1>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-300">
               Duża część budżetu na Google Ads idzie na kliknięcia, które nigdy
-              nie sprzedają. Przeglądam raport wyszukiwanych haseł, liczymy ile
+              nie sprzedają. Przeglądamy raport wyszukiwanych haseł, liczymy ile
               realnie tracisz co miesiąc i dajemy gotową listę wykluczeń. Za 69
               zł, z gwarancją zwrotu.
             </p>

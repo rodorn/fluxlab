@@ -556,7 +556,7 @@ export default function JakaFormaOpodatkowaniaJdgArticle() {
                       </h3>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Skorzystaj z kalkulatora lub skontaktuj się z nami,
-                        pomogę dobrać optymalną formę do Twojej sytuacji.
+                        pomożemy dobrać optymalną formę do Twojej sytuacji.
                       </p>
                       <Link
                         href="/kontakt"

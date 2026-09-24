@@ -243,7 +243,7 @@ export default function DoborSamochoduPage() {
                             <strong>
                               Kierowanie się marką zamiast potrzebami.
                             </strong>{" "}
-                            „Kupuję Audi, bo zawsze chcieliśmy Audi”. To jest
+                            „Kupujemy Audi, bo zawsze chcieliśmy Audi”. To jest
                             zakup emocjonalny, nie racjonalny. W tym samym
                             budżecie segmentu premium dostępny jest często
                             większy segment marki „zwykłej”, który lepiej spełni

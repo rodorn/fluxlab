@@ -652,7 +652,7 @@ export default function AutomatyzacjaFormularzaDoPipedrive() {
                           </h2>
                           <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-8">
                             Stała cena za projekt, transze powiązane z
-                            kamieniami milowymi. Widełki potwierdzam po krótkim
+                            kamieniami milowymi. Widełki potwierdzamy po krótkim
                             audycie, bez niespodzianek. Dla porównania: realny
                             koszt ręcznego przepisywania to często powyżej 18
                             tys. zł rocznie.

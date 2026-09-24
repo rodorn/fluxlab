@@ -139,7 +139,7 @@ export default function RachunekWJednymKlikniecu() {
               {pozycja.dane.czasMin} min na obsługę jednego, koszt godziny{" "}
               {pozycja.dane.kosztH} zł, {pozycja.dane.opoznione}% zapytań
               obsłużonych z opóźnieniem, konwersja {pozycja.dane.konwersja}%,
-              wartość klienta {zl(pozycja.dane.wartoscKlienta)}. Zakładam, że z
+              wartość klienta {zl(pozycja.dane.wartoscKlienta)}. Zakładamy, że z
               opóźnionych zapytań przepada 30%. To typowe rzędy wielkości dla
               tego rodzaju firm, a nie dane czyjejkolwiek firmy.
             </p>

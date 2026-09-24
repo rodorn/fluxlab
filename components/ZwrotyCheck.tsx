@@ -141,7 +141,7 @@ export default function ZwrotyCheck() {
       </h2>
       <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
         Podaj adres sklepu. Znajdziemy Twoje strony o zwrotach, reklamacjach i
-        regulamin, przeczytam je razem i pokażemy, których informacji brakuje.
+        regulamin, przeczytamy je razem i pokażemy, których informacji brakuje.
         Każdy taki brak kończy się mailem z pytaniem, na które ktoś musi
         odpowiedzieć ręcznie.
       </p>
@@ -175,7 +175,7 @@ export default function ZwrotyCheck() {
 
       {stan === "ladowanie" && (
         <p className="mt-4 text-sm text-gray-500 dark:text-gray-400">
-          Otwieram kolejno strony o zwrotach i regulamin, więc to trwa
+          Otwieramy kolejno strony o zwrotach i regulamin, więc to trwa
           kilkanaście sekund.
         </p>
       )}

@@ -33,7 +33,7 @@ export default function Page() {
       breadcrumb="Audyt strony"
       eyebrow="Darmowy audyt techniczny"
       h1="Zobacz, co jest nie tak z Twoją stroną, zanim zapłacisz komukolwiek"
-      lead="Wpisz adres i poczekaj kilkadziesiąt sekund. Zmierzymy szybkość na komputerze i osobno na telefonie, zważę każdy plik, sprawdzimy certyfikat, widoczność w wyszukiwarce, dostęp dla asystentów AI oraz zabezpieczenia poczty. Dostaniesz raport z listą poprawek ułożoną w kolejności i z ceną za naprawę. Za darmo, bez rejestracji, bez podawania adresu e-mail."
+      lead="Wpisz adres i poczekaj kilkadziesiąt sekund. Zmierzymy szybkość na komputerze i osobno na telefonie, zważymy każdy plik, sprawdzimy certyfikat, widoczność w wyszukiwarce, dostęp dla asystentów AI oraz zabezpieczenia poczty. Dostaniesz raport z listą poprawek ułożoną w kolejności i z ceną za naprawę. Za darmo, bez rejestracji, bez podawania adresu e-mail."
       ctaLabel="Porozmawiajmy o naprawie"
       ctaNote="Diagnoza nic nie kosztuje"
       checks={[
@@ -43,7 +43,7 @@ export default function Page() {
         },
         {
           title: "Liczby, nie wrażenia",
-          desc: "Ważę każdy plik z osobna zamiast wierzyć deklaracjom serwera i podajemy, ilu plików nie udało się zważyć. Przy każdym ustaleniu widzisz, co dokładnie zmierzyliśmy.",
+          desc: "Ważymy każdy plik z osobna zamiast wierzyć deklaracjom serwera i podajemy, ilu plików nie udało się zważyć. Przy każdym ustaleniu widzisz, co dokładnie zmierzyliśmy.",
         },
         {
           title: "Kolejność zamiast listy uwag",
@@ -104,7 +104,7 @@ export default function Page() {
         },
         {
           q: "Czy audyt obciąży nasz serwer?",
-          a: "Nie w stopniu, który dałoby się zauważyć. Pobieramy stronę główną dwa razy i najwyżej trzydzieści plików, które i tak pobiera każdy odwiedzający. Przedstawiam się w nagłówku jako FluxlabAudyt, więc zobaczycie mnie w logach.",
+          a: "Nie w stopniu, który dałoby się zauważyć. Pobieramy stronę główną dwa razy i najwyżej trzydzieści plików, które i tak pobiera każdy odwiedzający. Przedstawiamy się w nagłówku jako FluxlabAudyt, więc zobaczycie mnie w logach.",
         },
         {
           q: "Czy potrzebujecie dostępów do czegokolwiek?",

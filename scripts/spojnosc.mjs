@@ -442,7 +442,34 @@ if (LIVE) {
 // starej konwencji rozjezdza cala strone. Wyjatki: dane rejestrowe, CV,
 // przelacznik licznika dotyczacy jednej przegladarki i cytaty cudzych slow.
 {
-  const POJEDYNCZA = /\b(automatyzuję|sprawdzam|spinam|mierzę|buduję|tworzę|oferuję|konfiguruję|wysyłam|odpisuję|potrzebuję|pilnuję|zmierzę|sprawdzę|pokażę|odeślę|wyślę|znajdę|jestem|moje|mojego|moją|mój)\b/i;
+  // Nie lista slow, tylko koncowki. Poprzednia wersja wyliczala kilkanascie
+  // czasownikow i przepuscila 191 innych, w tym "porzadkuje" i "zamieniam" w
+  // jednym zdaniu na stronie glownej, co wytknal ktos z zewnatrz. Koncowka
+  // -uje i -am to w polszczyznie niemal zawsze pierwsza osoba liczby
+  // pojedynczej, wiec sprawdzamy je wprost, a rzeczowniki na -am trzymamy na
+  // krotkiej liscie wyjatkow.
+  const RZECZOWNIKI_AM = new Set([
+    "diagram", "program", "harmonogram", "spam", "team", "reklam", "gram",
+    "telegram", "instagram", "caterham", "sam", "tam", "mam",
+  ]);
+  const NIEREGULARNE = new Set([
+    "pomogę", "wskażę", "zobaczę", "podchodzę", "dobiorę", "dostanę", "stracę",
+    "przechodzę", "ważę", "mylę", "zdążę", "poproszę", "usunę", "zważę",
+    "zlecę", "zadaję", "uznaję", "zechcę", "wejdę", "rozbiję", "otworzę",
+    "zestawię", "pobiorę", "wyciągnę", "sprzedaję", "dokończę", "oddzwonię",
+    "znajdę", "wyślę", "odeślę", "pokażę", "zmierzę", "sprawdzę", "piszę",
+    "robię", "liczę", "widzę", "jestem", "zamknę", "moje", "mojego", "moją",
+    "mój",
+  ]);
+  const SLOWO = /[a-ząćęłńóśźż]{4,}/gi;
+  const pierwszaOsoba = (w) => {
+    const l = w.toLowerCase();
+    if (RZECZOWNIKI_AM.has(l)) return false;
+    if (NIEREGULARNE.has(l)) return true;
+    if (l.endsWith("uję")) return true;
+    if (l.endsWith("am")) return true;
+    return false;
+  };
   const POMIN = ["app/cv/", "app/nie-licz-mnie/", "components/WylaczLicznik.tsx"];
   const CYTAT = /„[^”]*”/g;
   const katalogi = ["app", "components", "lib"];
@@ -460,9 +487,13 @@ if (LIVE) {
       linie.forEach((l, i) => {
         const t = l.trim();
         if (t.startsWith("//") || t.startsWith("*") || t.startsWith("/*")) return;
-        const bezCytatow = l.replace(CYTAT, "");
-        const m = bezCytatow.match(POJEDYNCZA);
-        if (m) add("liczba pojedyncza", `${wzgledna}:${i + 1}: "${m[1]}"`);
+        // Identyfikatory zdarzen licznika (audyt_klik_zlecam) nie sa tekstem
+        // dla czytelnika, a ich zmiana zerwalaby ciaglosc danych w statystykach.
+        const bezCytatow = l.replace(CYTAT, "").replace(/[a-z]+_[a-z_]+/gi, " ");
+        const slowa = bezCytatow.match(SLOWO) ?? [];
+        const trafione = slowa.find(pierwszaOsoba);
+        if (trafione)
+          add("liczba pojedyncza", `${wzgledna}:${i + 1}: "${trafione}"`);
       });
     }
   }

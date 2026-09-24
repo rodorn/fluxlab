@@ -31,7 +31,7 @@ const PILLARS = [
     videoLight: "/abstract/data-light.mp4",
     variant: "data" as const,
     num: "02",
-    desc: "Dane leżą w kilku systemach i w Excelach, a ERP nie rozmawia z CRM. Spinamy je przez API, porządkuję i zamieniam w raport, który przychodzi sam.",
+    desc: "Dane leżą w kilku systemach i w Excelach, a ERP nie rozmawia z CRM. Spinamy je przez API, porządkujemy i zamieniamy w raport, który przychodzi sam.",
     cta: "Zobacz, jak spiąć systemy",
     // Akcent: zieleń
     ring: "group-hover:ring-emerald-400/80 focus-visible:ring-emerald-400",
@@ -80,7 +80,7 @@ const PROBLEMY = [
   },
   {
     href: "/automatyzacja-raportowania",
-    zdanie: "Raport sprzedaży składam ręcznie przez pół dnia",
+    zdanie: "Raport sprzedaży składamy ręcznie przez pół dnia",
     skutek:
       "Co miesiąc ta sama robota: eksport, sklejanie w Excelu, przeliczanie, wysyłka.",
     cta: "Zobacz, co da się zautomatyzować",
@@ -232,7 +232,7 @@ export default function Home() {
             jeden przypadek. */}
         <section className="relative z-20 px-6 lg:px-10 py-12 lg:py-16 border-t border-gray-200 dark:border-white/10">
           <h2 className="text-xl lg:text-2xl font-semibold tracking-tight text-gray-900 dark:text-white/90">
-            Najczęściej rozwiązuję
+            Najczęściej rozwiązujemy
           </h2>
           <p className="mt-2 max-w-3xl text-sm text-gray-600 dark:text-white/60">
             Jeśli któreś z tych zdań brzmi jak Twoja firma, kliknij. Pod każdym
@@ -284,7 +284,7 @@ export default function Home() {
             dealerów samochodowych, bo to branża, w której łatwo o porównywalną
             próbkę, i sprawdziliśmy je tymi samymi narzędziami, które stoją na tej
             stronie. Przy każdym badaniu jest metoda i zastrzeżenia, więc można
-            je powtórzyć i sprawdzić, czy się mylę.
+            je powtórzyć i sprawdzić, czy się mylimy.
           </p>
           <div className="mt-6 grid max-w-3xl gap-3 sm:grid-cols-3">
             {BADANIA.map((b) => (

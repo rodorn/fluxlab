@@ -30,7 +30,7 @@ export default function Page() {
       breadcrumb="Strona po włamaniu"
       eyebrow="Ratunek po włamaniu"
       h1="Zhakowana strona, posprzątana do końca"
-      lead="Przywrócenie backupu zwykle przywraca też backdoora i po dwóch dniach jesteś w tym samym miejscu. Ja porównuję każdy plik Twojej strony z oryginałem prosto z repozytorium WordPressa, więc listę podmienionych i obcych plików mamy w minuty, a nie po godzinach zgadywania."
+      lead="Przywrócenie backupu zwykle przywraca też backdoora i po dwóch dniach jesteś w tym samym miejscu. Ja porównujemy każdy plik Twojej strony z oryginałem prosto z repozytorium WordPressa, więc listę podmienionych i obcych plików mamy w minuty, a nie po godzinach zgadywania."
       ctaLabel="Zgłoś włamanie"
       ctaNote="Piszesz o każdej porze, odpisujemy najszybciej jak się da"
       checks={[
@@ -86,12 +86,12 @@ export default function Page() {
           a: "Napisz to w zgłoszeniu. Pracujemy wtedy na kopii plików i bazy, które hosting zwykle udostępnia, i przygotowujemy wykaz usuniętych zagrożeń, żeby konto odwiesili.",
         },
         {
-          q: "Czy stracę treści albo zamówienia?",
-          a: "Nie ruszam treści ani zamówień. Przed jakąkolwiek zmianą robimy kopię dowodową, żeby dało się wrócić do stanu wyjściowego.",
+          q: "Czy stracimy treści albo zamówienia?",
+          a: "Nie ruszamy treści ani zamówień. Przed jakąkolwiek zmianą robimy kopię dowodową, żeby dało się wrócić do stanu wyjściowego.",
         },
         {
           q: "Czy dajecie gwarancję, że to się nie powtórzy?",
-          a: "Nie i nikt uczciwy jej nie da. Możemy zagwarantować, że usunę to, co znajdziemy, pokażemy drogę wejścia i ją zamknę. Jeśli infekcja wróci z tego samego powodu w ciągu 14 dni, poprawiamy bez dopłaty.",
+          a: "Nie i nikt uczciwy jej nie da. Możemy zagwarantować, że usuniemy to, co znajdziemy, pokażemy drogę wejścia i ją zamkniemy. Jeśli infekcja wróci z tego samego powodu w ciągu 14 dni, poprawiamy bez dopłaty.",
         },
       ]}
       formId="order_strona_po_wlamaniu"

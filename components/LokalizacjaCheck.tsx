@@ -215,7 +215,7 @@ export default function LokalizacjaCheck() {
       </h2>
       <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
         Podaj miejscowość albo adres i wybierz branżę. Policzymy punkty w
-        promieniu pięciu kilometrów, zestawię je z liczbą mieszkańców gminy i
+        promieniu pięciu kilometrów, zestawimy je z liczbą mieszkańców gminy i
         powiemy, ilu ludzi przypada na jeden taki punkt. Bez rejestracji.
       </p>
 

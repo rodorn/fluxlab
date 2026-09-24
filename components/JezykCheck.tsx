@@ -28,9 +28,9 @@ interface Wynik {
 }
 
 const ETAPY = [
-  "Otwieram stronę główną i szukamy wersji językowych",
+  "Otwieramy stronę główną i szukamy wersji językowych",
   "Wchodzimy na wersję obcojęzyczną",
-  "Rozbijam stronę na pojedyncze fragmenty tekstu",
+  "Rozbijamy stronę na pojedyncze fragmenty tekstu",
   "Sprawdzamy każdy fragment i liczymy znaczniki dla wyszukiwarki",
 ];
 
@@ -162,7 +162,7 @@ export default function JezykCheck() {
         Sprawdź swoją wersję obcojęzyczną
       </h2>
       <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-        Wpisz adres strony. Znajdziemy Waszą wersję angielską albo niemiecką, rozbiję
+        Wpisz adres strony. Znajdziemy Waszą wersję angielską albo niemiecką, rozbijemy
         ją na pojedyncze fragmenty i pokażemy te, które zostały po polsku, a także
         czy wyszukiwarka w ogóle wie, że macie wersje językowe.
       </p>
@@ -325,7 +325,7 @@ export default function JezykCheck() {
                   <p className="mt-2 text-sm text-red-600 dark:text-red-400">{leadBlad}</p>
                 )}
                 <p className="mt-2 text-xs text-gray-500 dark:text-gray-400">
-                  Przesyłam tylko adres strony i wynik sprawdzenia. Bez zapisu na
+                  Przesyłamy tylko adres strony i wynik sprawdzenia. Bez zapisu na
                   newsletter.
                 </p>
               </form>

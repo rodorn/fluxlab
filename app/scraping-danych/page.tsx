@@ -238,7 +238,7 @@ export default function ScrapingDanychPage() {
                       <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
                         Robimy scraping publicznych stron zgodnie z TOS i
                         robots.txt oraz ekstrakcję z Twoich danych. Nie obchodzimy
-                        zabezpieczeń, nie ruszam chronionych zasobów ani danych
+                        zabezpieczeń, nie ruszamy chronionych zasobów ani danych
                         osobowych bez podstawy prawnej. Gdy widzimy ryzyko, mówimy
                         wprost.
                       </p>

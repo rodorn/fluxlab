@@ -524,7 +524,7 @@ export default function RyczaltCzyLiniowyArticle() {
                           Nie wiesz, która forma jest lepsza dla Ciebie?
                         </h2>
                         <p className="text-gray-600 dark:text-gray-400 mb-4">
-                          Napisz do nas, pomogę policzyć i wybrać optymalną
+                          Napisz do nas, pomożemy policzyć i wybrać optymalną
                           formę opodatkowania.
                         </p>
                         <Link

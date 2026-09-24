@@ -68,7 +68,7 @@ export const CATEGORY_ORDER: ProductCategory[] = [
 export const GROUP_INTRO: Record<ProductGroup, string> = {
   wdrozenia: "Proces, który dziś ktoś klika ręcznie, zaczyna dziać się sam.",
   naprawy:
-    "Coś już działa, ale działa źle albo przestało. Znajduję przyczynę i naprawiamy.",
+    "Coś już działa, ale działa źle albo przestało. Znajdujemy przyczynę i naprawiamy.",
   integracje:
     "Dwa systemy, które nie rozmawiają ze sobą, zaczynają wymieniać dane.",
   raporty:
@@ -266,7 +266,7 @@ export const PRODUCTS: Product[] = [
     category: "automatyzacja",
     name: "Pogotowie automatyzacji",
     tagline: "Stanęła integracja albo scenariusz",
-    desc: "Naprawa cudzych, już wdrożonych automatyzacji: n8n, Make, Zapier, BaseLinker, WooCommerce, Allegro, webhooki i skrypty po poprzednim wykonawcy. Czytamy logi wykonań, znajduję wygasłe poświadczenia i ciche awarie, czyli scenariusze zielone, ale puste.",
+    desc: "Naprawa cudzych, już wdrożonych automatyzacji: n8n, Make, Zapier, BaseLinker, WooCommerce, Allegro, webhooki i skrypty po poprzednim wykonawcy. Czytamy logi wykonań, znajdujemy wygasłe poświadczenia i ciche awarie, czyli scenariusze zielone, ale puste.",
     price: "diagnoza 49 zł",
     href: "/pogotowie-automatyzacji",
     grupa: "naprawy",
@@ -314,7 +314,7 @@ export const PRODUCTS: Product[] = [
     category: "automatyzacja",
     name: "Audyt chatbota",
     tagline: "Sprawdź, co Twój asystent AI mówi klientom",
-    desc: "Zadaję Twojemu botowi 150 realnych pytań klienta i zderzam każdą odpowiedź z prawdą sklepu: cennikiem, regulaminem i zasadami zwrotów. Wyłapuję halucynacje i obietnice, którymi firma jest związana.",
+    desc: "Zadajemy Twojemu botowi 150 realnych pytań klienta i zderzamy każdą odpowiedź z prawdą sklepu: cennikiem, regulaminem i zasadami zwrotów. Wyłapujemy halucynacje i obietnice, którymi firma jest związana.",
     price: "69 zł",
     href: "/audyt-chatbota",
     grupa: "naprawy",
@@ -458,7 +458,7 @@ export const PRODUCTS: Product[] = [
     category: "www",
     name: "Strona niewidoczna w wyszukiwarce",
     tagline: "Kod strony każe Google jej nie pokazywać",
-    desc: "Jedno polecenie zostawione po wersji roboczej potrafi wyłączyć całą witrynę z wyników wyszukiwania. Właściciel tego nie widzi, bo wchodzi z zakładki, a firma znika z internetu dla każdego, kto jej szuka. Sprawdzamy trzy miejsca, w których taka blokada siedzi, i zdejmuję ją.",
+    desc: "Jedno polecenie zostawione po wersji roboczej potrafi wyłączyć całą witrynę z wyników wyszukiwania. Właściciel tego nie widzi, bo wchodzi z zakładki, a firma znika z internetu dla każdego, kto jej szuka. Sprawdzamy trzy miejsca, w których taka blokada siedzi, i zdejmujemy ją.",
     price: "od 190 zł",
     href: "/widocznosc-w-google",
     grupa: "diagnostyka",
@@ -490,7 +490,7 @@ export const PRODUCTS: Product[] = [
     category: "www",
     name: "Rejestr cen w sklepie",
     tagline: "Obniżka bez wymaganej informacji to ryzyko kary",
-    desc: "Sprawdzamy każdą przecenioną pozycję w sklepie i wskazuję te, przy których brakuje obowiązkowej informacji o najniższej cenie z 30 dni przed obniżką. Skan robimy z zewnątrz, bez dostępu do panelu. Osobno prowadzimy codzienny zapis cen, czyli dowód, którego dziś nikt nie zbiera.",
+    desc: "Sprawdzamy każdą przecenioną pozycję w sklepie i wskazujemy te, przy których brakuje obowiązkowej informacji o najniższej cenie z 30 dni przed obniżką. Skan robimy z zewnątrz, bez dostępu do panelu. Osobno prowadzimy codzienny zapis cen, czyli dowód, którego dziś nikt nie zbiera.",
     price: "od 49 zł",
     href: "/rejestr-cen",
     grupa: "diagnostyka",
@@ -506,7 +506,7 @@ export const PRODUCTS: Product[] = [
     category: "dane",
     name: "Audyt faktur kurierskich",
     tagline: "Dopłata paliwowa to prawie połowa ceny bazowej",
-    desc: "Stawka dopłaty paliwowej zmienia się co dwa tygodnie i zależy od progu wagowego, a korekty wagowe przewoźnik dolicza po swojemu. Przechodzę przez wszystkie linie faktur, wyłapuję pozycje policzone niezgodnie z umową i oddajemy gotową treść reklamacji.",
+    desc: "Stawka dopłaty paliwowej zmienia się co dwa tygodnie i zależy od progu wagowego, a korekty wagowe przewoźnik dolicza po swojemu. Przechodzimy przez wszystkie linie faktur, wyłapujemy pozycje policzone niezgodnie z umową i oddajemy gotową treść reklamacji.",
     price: "od 290 zł",
     href: "/audyt-kurierski",
     grupa: "raporty",
