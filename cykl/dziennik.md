@@ -294,7 +294,7 @@ udostępnieniem.
 **Dowód:** Przeszukane: GitHub issues (e-Doręczenia, KSeF offline, KSeF 2027) bez żadnego wątku z pytaniem, które rozwiązują nasze narzędzia. Listy „awesome” dla Polski i dla e-Doręczeń nie istnieją albo są o czym innym (NLP, TTS, biblioteki cyfrowe), więc `edoreczenia-klient` nie ma gdzie trafić. Forum Gofin, dział „Inne”, ma cztery świeże pytania o e-Doręczenia bez rzetelnej odpowiedzi: https://forum.gofin.pl/1558238/e-doreczenia-zawieszona-dzialalnosc (zawieszona JDG, odpowiedź „jesteś przedsiębiorcą więc tak” bez źródła), https://forum.gofin.pl/1558234/idg-czy-musza-miec-zgloszone-e-doreczenia (zero odpowiedzi), https://forum.gofin.pl/1558235/e-doreczenia-czy-kazdy, https://forum.gofin.pl/1558882/ceidg-adres-e-doreczen. Regulamin forum Gofin zakazuje jednak „treści promujących określone firmy, strony internetowe”, a dodanie komentarza oznacza jego akceptację, więc link do fluxlab.pl byłby złamaniem regulaminu i odpadł. Reddit blokuje odczyt bez konta. Tag #edoreczenia na Wykopie ma ostatni wpis z lipca, tag #ksef ma wpis 87703745 z 23.09 10:59. Zmiana tylko w dzienniku, bez buildu i bez IndexNow. PR #2 do `ksefuj/awesome-ksef`: OPEN, 0 komentarzy, 0 recenzji.
 **Dla Pawła:** 1) NOWE, Wykop, komentarz pod https://wykop.pl/wpis/87703745/jezeli-prowadzicie-firme-i-wystawiacie-faktury-w-k (kliknij „Odpowiedz” pod wpisem, wklej, wyślij). Uzasadnienie: wpis jest świeży, ma plusy i czytają go właśnie małe firmy z Aplikacji Podatnika, a nasza lista odpowiada na to, co je czeka za trzy miesiące. Tekst:
 
-> @roszej: dorzucę do tematu, bo kto wystawia w Aplikacji Podatnika, często jeszcze korzysta z limitu 10 tys. zł. Od 1 stycznia 2027:
+> @roszej: warto dorzucić do tematu, bo kto wystawia w Aplikacji Podatnika, często jeszcze korzysta z limitu 10 tys. zł. Od 1 stycznia 2027:
 > 1. Znika limit 10 tys. zł brutto miesięcznie na faktury poza KSeF, każda faktura dla firmy idzie przez system.
 > 2. Faktury z kasy fiskalnej, w tym paragony z NIP do 450 zł, też.
 > 3. W przelewie za fakturę z KSeF między czynnymi VAT-owcami podajecie jej numer KSeF albo identyfikator zbiorczy. Karty, BLIK i gotówki to nie dotyczy.
@@ -350,3 +350,55 @@ udostępnieniem.
 **Dowód:** Commit `7cf6b7e`. Lokalny build i `spojnosc.mjs` czyste, w HTML sekcja jest od razu (nie dopiero w przeglądarce), 0 długich myślników. Playwright przy 1440 i 390 px: szerokość dokumentu równa oknu, schowek po kliknięciu ma 1024 znaki z `https://fluxlab.pl/ksef-2027`. Zrzut z telefonu pokazał, że reset stylów gubi punktory listy, więc ramka dostała `list-style:disc` w samym kodzie (tak samo zniknęłyby na stronie biura z podobnym resetem). Produkcja, sonda po 2 minutach: sekcja i `list-style:disc` są, `llms.txt` wspomina ramkę. IndexNow: 110 adresów, 2 z 3 punktów (Yandex, Naver), wspólny dalej 403. Kliknięcie „Skopiuj kod ramki” wysyła zdarzenie `uruchomiono_ramka_ksef_2027`, które raport policzy jako uruchomienie narzędzia. Skrzynka pawel@fluxlab.pl (IMAP, tylko odczyt): od 5 biur z 09:00 i 4 z 23.09 zero odpowiedzi i zero odbić, w skrzynce tylko raporty DMARC.
 **Dla Pawła:** Bez zmian, najpilniejsze na górze: 1) wpis na Wykop o e-Doręczeniach przed 1.10 (tekst we wpisie z 23.09 18:46 plus punkt o zawieszonej działalności z 24.09 02:43), https://wykop.pl/mikroblog, termin za 6 dni. 2) Komentarz na Wykop pod https://wykop.pl/wpis/87703745/jezeli-prowadzicie-firme-i-wystawiacie-faktury-w-k (tekst we wpisie z 24.09 04:43). 3) Post na LinkedIn z linkiem `https://fluxlab.pl/ksef-2027` (wpis 24.09 03:43). Można dopisać zdanie: „Biura rachunkowe mogą też wkleić gotową ramkę o zmianach na swoją stronę, kod jest pod listą.” 4) PR #2 do `ksefuj/awesome-ksef` czeka na maintainera.
 **Zostało otwarte:** Ramka jest gotowa, ale nikt o niej nie wie. Naturalni odbiorcy to biura rachunkowe z `ksiegowe_final.json`, tylko że reguła kanału 4 zabrania maila bez problemu na ich stronie. Przy następnych mailach z raportem do biur z realnym problemem można dodać jedno zdanie o ramce, bez osobnej kampanii. Treść ramki trzeba będzie zmienić, jeśli ustawa przesunie którąś z czterech zmian (dziś żadna z nich nie jest objęta zapowiedzią MF, ta dotyczy tylko kar). Nierozwiązane: `spojnosc.mjs` nie pilnuje `llms.txt`, wspólny punkt IndexNow odrzuca klucz, formy pojedyncze na `/podwojny-adres`. Następny cykl w rotacji: kanał 1 albo 4 (po 5 mailach z 09:00 kolejne biura najwcześniej po południu, z tymi samymi odstępami).
+
+## 2026-09-24 10:43
+**Kanał:** 1, dystrybucja narzędzi (bez publikacji, uporządkowana kolejka dla Pawła).
+**Co zrobione:** Nic nie poszło w świat. Nowych miejsc bez konta nie ma: na GitHubie wyszukiwanie issue i dyskusji o e-Doręczeniach i KSeF zwraca tylko martwe albo niezwiązane wątki (ksef4dev Discussions, ostatni wpis ze stycznia 2026, bez odpowiedzi), nasze repozytoria mają już tematy i adresy stron. Przeszkodą jest więc kolejka dla Pawła: od 16 godzin nic z niej nie wyszło, a teksty i poprawki do nich są rozrzucone po pięciu wpisach (23.09 18:46, 20:43, 23:43, 24.09 02:43, 03:43, 04:43). Niżej stoją trzy teksty w wersji ostatecznej, z naniesionymi poprawkami (liczba mnoga, kary w 2028, link na `/ksef-2027`, punkt o zawieszonej działalności, data zamiast „za X dni”, żeby tekst nie zestarzał się do wklejenia).
+**Ruch:** Ostatnia doba: 18 odsłon, 2 osoby (spadek o 37% wobec średniej 28,5). Źródło: chatgpt.com (1), reszta bez odsyłacza. Strony: `/`, `/kontakt`, `/dziekuje`, `/strefa-wiedzy/podszywanie-pod-salony-samochodowe`, `/strefa-wiedzy/czy-ai-widzi-strony-dealerow`, po 1. Chrome na macOS 17, Safari na iOS 1. Zero uruchomień narzędzi. Tydzień: 131 odsłon, 67 osób. Raport ten sam od 02:43, czyli od ośmiu godzin żadnego nowego wejścia.
+**Dowód:** Produkcja, po jednym zapytaniu: `/ksef-2027` 200, `/e-doreczenia-integracja` 200 z kotwicą `id="narzedzie"`. Wpis https://wykop.pl/wpis/87703745/jezeli-prowadzicie-firme-i-wystawiacie-faktury-w-k dalej jest online (autor roszej, 3 plusy, około 17 godzin). Commit tylko z tym wpisem, IndexNow pominięty, bo nie zmienił się żaden adres.
+**Dla Pawła:** Ta lista zastępuje wszystkie wcześniejsze. Teksty są ostateczne, wystarczy skopiować. Razem około 10 minut.
+
+1) NAJPILNIEJSZE, termin w czwartek 1.10. Wykop, nowy wpis na mikroblogu: https://wykop.pl/mikroblog (pole „Co słychać?” na górze, wklej, „Dodaj”). Najlepiej dziś albo jutro rano.
+> W czwartek, 1 października, mija termin e-Doręczeń dla JDG wpisanych do CEIDG przed 2025 rokiem. Kilka rzeczy, które ludzie mylą:
+>
+> 1. Dotyczy każdej JDG wpisanej do CEIDG do 31.12.2024. Kto zakładał firmę od 2025, podawał dane do adresu już we wniosku o wpis. Spółki z KRS miały termin 1 kwietnia 2025.
+> 2. Pułapka: jeżeli po 30 czerwca 2025 składaliście jakikolwiek wniosek o zmianę wpisu w CEIDG (PKD, adres, cokolwiek), dane do adresu trzeba było podać już przy tamtym wniosku, czyli termin minął wcześniej.
+> 3. Zawieszona działalność też musi mieć adres. Skrzynka firmowa to inna skrzynka niż prywatna w mObywatelu.
+> 4. Wniosek jest bezpłatny, składa się go przez Biznes.gov.pl. Po aktywacji skrzynki adres sam pojawia się w CEIDG, osobnej zmiany wpisu nie trzeba robić.
+> 5. Najważniejsze: pismo z urzędu wysłane na e-Doręczenia i nieodebrane przez 14 dni uznaje się za doręczone. Terminy na odwołanie czy zapłatę biegną tak samo jak przy awizo. Samo założenie skrzynki nie wystarczy, trzeba do niej zaglądać albo ustawić powiadomienia na maila.
+>
+> Zrobiliśmy w Fluxlab darmowe sprawdzenie: wybieracie rodzaj firmy, dostajecie dokładny termin, bez rejestracji i bez podawania danych: https://fluxlab.pl/e-doreczenia-integracja#narzedzie
+> Kto chce podpiąć skrzynkę do własnego systemu, napisaliśmy otwarty klient API w Pythonie: https://github.com/rodorn/edoreczenia-klient
+>
+> #edoreczenia #ceidg #jdg #dzialalnoscgospodarcza #przedsiebiorczosc #prawo
+
+2) Wykop, komentarz pod https://wykop.pl/wpis/87703745/jezeli-prowadzicie-firme-i-wystawiacie-faktury-w-k (pole odpowiedzi pod wpisem, wklej, wyślij). Wpis ma dobę, im później, tym mniej osób go zobaczy.
+> @roszej: warto dorzucić do tematu, bo kto wystawia w Aplikacji Podatnika, często jeszcze korzysta z limitu 10 tys. zł. Od 1 stycznia 2027:
+> 1. Znika limit 10 tys. zł brutto miesięcznie na faktury poza KSeF, każda faktura dla firmy idzie przez system.
+> 2. Faktury z kasy fiskalnej, w tym paragony z NIP do 450 zł, też.
+> 3. W przelewie za fakturę z KSeF między czynnymi VAT-owcami podajecie jej numer KSeF albo identyfikator zbiorczy. Karty, BLIK-a i gotówki to nie dotyczy.
+> 4. Faktura kosztowa jest doręczona w dniu nadania numeru w KSeF, nawet jeśli nikt jej nie pobrał, więc termin płatności leci.
+> 5. Tokeny zostają, ale do faktur w trybie offline potrzebny jest certyfikat KSeF typu 2.
+> 6. Kary do 100% VAT miały ruszyć w styczniu 2027, MF zapowiedziało przesunięcie na 2028, na razie to tylko zapowiedź.
+>
+> Zrobiliśmy z tego darmową listę do odhaczenia, bez rejestracji, jest też gotowy mail, który biuro rachunkowe może wysłać klientom: https://fluxlab.pl/ksef-2027 (to nasza strona, żeby było jasne).
+>
+> #ksef
+
+3) LinkedIn, post z własnego profilu: https://www.linkedin.com/feed/ (przycisk „Rozpocznij publikację”, wklej, „Opublikuj”). Link w treści ściągnie obrazek podglądu z `/ksef-2027` sam.
+> 1 stycznia 2027 kończą się naraz wszystkie przepisy przejściowe KSeF. Sześć rzeczy, które warto mieć domknięte w tym roku, kiedy pomyłka jeszcze nic nie kosztuje:
+>
+> 1. Znika limit 10 tys. zł na faktury poza KSeF. Każda faktura dla firmy idzie przez system.
+> 2. Faktury z kasy, także paragony z NIP do 450 zł, też muszą przez niego przechodzić.
+> 3. Przelew za fakturę między czynnymi podatnikami VAT ma zawierać 35-znakowy numer KSeF. Czy osoba robiąca przelewy go widzi?
+> 4. Faktura kosztowa jest doręczona w dniu nadania numeru w KSeF, nawet jeśli nikt jej nie pobrał.
+> 5. Do faktury w trybie offline potrzebny jest certyfikat KSeF typu 2. Tokeny zostają, MF zrezygnowało z ich wygaszenia.
+> 6. Kary za fakturę poza KSeF, do 100% VAT z faktury, MF zapowiedziało przesunąć na 2028. To na razie zapowiedź, a obowiązek wystawiania w KSeF od stycznia zostaje.
+>
+> Zrobiliśmy z tego darmową listę: zaznaczacie, co macie, i dostajecie braki gotowe do wysłania księgowej. Biura rachunkowe znajdą tam gotową wiadomość dla klientów i ramkę do wklejenia na swoją stronę. Bez rejestracji: https://fluxlab.pl/ksef-2027
+>
+> #KSeF #efaktura #księgowość #VAT
+
+4) Bez działania: PR #2 do `ksefuj/awesome-ksef` czeka na maintainera.
+
+**Zostało otwarte:** Kanał 1 bez kont Pawła nie ma już gdzie publikować. Najlepsze miejsca na te same teksty to grupy na Facebooku dla JDG i księgowych, których bez konta nie da się nawet przeszukać. Jeśli Paweł ma tam konto i dopisze w dzienniku nazwy grup, następne cykle kanału 1 mogą przygotować teksty pod konkretne, świeże wątki. Po publikacji wejścia pokażą się w raporcie jako `wykop.pl` i `linkedin.com`. Następny cykl w rotacji: kanał 4 (biura z realnym problemem, z jednym zdaniem o ramce) albo 2.
