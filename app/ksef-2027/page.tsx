@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import ListaKsef2027 from "@/components/ListaKsef2027";
 import WiadomoscKsefDlaKlientow from "@/components/WiadomoscKsefDlaKlientow";
+import RamkaKsefDoWstawienia from "@/components/RamkaKsefDoWstawienia";
 import NazwaNarzedzia from "@/components/NazwaNarzedzia";
 
 export const metadata: Metadata = {
@@ -88,6 +89,10 @@ export default function Ksef2027Page() {
 
           <div className="mt-14 max-w-4xl">
             <WiadomoscKsefDlaKlientow />
+          </div>
+
+          <div className="mt-14 max-w-4xl">
+            <RamkaKsefDoWstawienia />
           </div>
 
           <div className="mt-14 max-w-3xl">

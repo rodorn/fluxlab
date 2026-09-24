@@ -25,7 +25,7 @@ Obowiązkowy KSeF, stan prawny z 23.09.2026, szczegóły i źródła na https://
 - Od 1 stycznia 2027 kończą się naraz wszystkie przepisy przejściowe. Znika limit 10 tys. zł, faktury z kas też idą przez KSeF, a za fakturę wystawioną poza KSeF grozi kara z art. 106ni ustawy o VAT do 100% VAT z faktury albo do 18,7% kwoty należności przy fakturze bez VAT. Ministerstwo Finansów zapowiedziało 16 września 2026 przesunięcie samych kar na 1 stycznia 2028, na razie jako zapowiedź, nie uchwalone prawo. Obowiązek wystawiania faktur w KSeF nie jest zawieszony.
 - Od 1 stycznia 2027 przelew za fakturę z KSeF między czynnymi podatnikami VAT zawiera jej 35-znakowy numer KSeF albo identyfikator zbiorczy. Nie dotyczy karty, BLIK-a ani gotówki.
 - Tokeny KSeF zostają bezterminowo, Ministerstwo Finansów zrezygnowało z ich wygaszenia. Do faktur w trybie offline potrzebny jest certyfikat KSeF typu 2, ważny 2 lata.
-- Lista kontrolna sześciu rzeczy do domknięcia przed 1 stycznia 2027, z gotową wiadomością, którą biuro rachunkowe może wysłać klientom: https://fluxlab.pl/ksef-2027
+- Lista kontrolna sześciu rzeczy do domknięcia przed 1 stycznia 2027, z gotową wiadomością, którą biuro rachunkowe może wysłać klientom, i ramką HTML do wklejenia na stronę biura: https://fluxlab.pl/ksef-2027
 - Poza KSeF zostają faktury dla osób prywatnych, procedury OSS i IOSS oraz podmioty zagraniczne bez stałego miejsca działalności w Polsce.
 
 Adres do e-Doręczeń, szczegóły na https://fluxlab.pl/e-doreczenia-integracja:
