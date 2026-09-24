@@ -18,14 +18,10 @@ export const metadata: Metadata = {
       "Darmowa lista kontrolna na koniec przepisów przejściowych KSeF. Na końcu wykaz braków gotowy do wysłania księgowej, bez rejestracji.",
     locale: "pl_PL",
     type: "website",
-    images: [
-      {
-        url: "/opengraph-image",
-        width: 1200,
-        height: 630,
-        alt: "Fluxlab, lista kontrolna KSeF na 2027",
-      },
-    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/ksef-2027/opengraph-image"],
   },
 };
 
