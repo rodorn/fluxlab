@@ -570,7 +570,7 @@ export const PRODUCTS: Product[] = [
     category: "dane",
     name: "ImportRadar DE→PL",
     tagline: "Które auta z Niemiec realnie się opłaca",
-    desc: "Skanuję żywe oferty z DE i NL i wskazuję konkretne egzemplarze, które zarabiają po odjęciu wszystkich kosztów sprowadzenia, oraz modele z kosztownymi wadami, których lepiej unikać.",
+    desc: "Skanujemy żywe oferty z DE i NL i wskazujemy konkretne egzemplarze, które zarabiają po odjęciu wszystkich kosztów sprowadzenia, oraz modele z kosztownymi wadami, których lepiej unikać.",
     price: "od 10 zł",
     href: "/import-radar",
     grupa: "raporty",
