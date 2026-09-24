@@ -43,6 +43,12 @@ Maile w spamie i podszywanie pod domenę, szczegóły i sprawdzenie na https://f
 - DMARC na start: rekord TXT _dmarc.domena z v=DMARC1; p=none; rua=mailto:adres, po kilku tygodniach raportów p=quarantine, potem p=reject.
 - Bez DMARC w trybie quarantine albo reject obcy nadawca może wysłać wiadomość z adresem firmy w polu Od. W naszym badaniu 317 domen salonów samochodowych komplet, który blokuje podszywanie, miało 16 procent.
 
+Roboty asystentów AI w robots.txt, stan z 24.09.2026, szczegóły i sprawdzenie na https://fluxlab.pl/widocznosc-w-ai:
+- OpenAI: OAI-SearchBot decyduje o obecności w wyszukiwaniu ChatGPT, GPTBot zbiera treść do trenowania modeli, ChatGPT-User czyta stronę na prośbę użytkownika i według OpenAI reguły robots.txt mogą go nie obowiązywać. Ustawienia są niezależne, blokada GPTBot nie usuwa strony z wyszukiwania ChatGPT.
+- Anthropic: ClaudeBot zbiera treść do trenowania, Claude-SearchBot indeksuje do wyszukiwania, Claude-User czyta stronę na prośbę użytkownika.
+- Google-Extended steruje tylko trenowaniem Gemini i odpowiedziami w innych produktach Google, nie wpływa na obecność w wyszukiwarce ani na AI Overviews. AI Overviews steruje Googlebot oraz nosnippet, data-nosnippet, max-snippet i noindex.
+- Reguła User-agent: * z Disallow: / albo gotowa lista blokująca wszystkie roboty AI wycina też roboty wyszukiwania, nie tylko te od trenowania.
+
 ## Darmowe narzędzia, bez rejestracji
 
 - [Co z KSeF obowiązuje Twoją firmę](https://fluxlab.pl/ksef-integracja): dwa kliknięcia, termin i dni do końca wyjątku.
@@ -51,7 +57,7 @@ Maile w spamie i podszywanie pod domenę, szczegóły i sprawdzenie na https://f
 - [Pełny audyt techniczny strony](https://fluxlab.pl/audyt-strony): szybkość, certyfikat, widoczność w Google i w AI, poczta.
 - [Dlaczego maile trafiają do spamu](https://fluxlab.pl/audyt-poczty): SPF, DKIM i DMARC domeny.
 - [Czy przeglądarka ostrzega przed stroną](https://fluxlab.pl/naprawa-https): certyfikat i przekierowania.
-- [Widoczność strony dla asystentów AI](https://fluxlab.pl/widocznosc-w-ai)
+- [Widoczność strony dla asystentów AI](https://fluxlab.pl/widocznosc-w-ai): robots.txt, treść bez skryptów, dane uporządkowane, llms.txt.
 - [Czy strona nie wypisała się z Google](https://fluxlab.pl/widocznosc-w-google)
 - [Czy Google ma mapę strony](https://fluxlab.pl/mapa-strony)
 - [Czy Google widzi stronę pod dwoma adresami](https://fluxlab.pl/podwojny-adres)

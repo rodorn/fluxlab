@@ -38,7 +38,7 @@ const steps = [
   },
   {
     title: "Dostajesz werdykt o marży",
-    desc: "Porównuję koszt końcowy z cenami tego modelu w Polsce i mówimy wprost, ile realnie zostaje na czysto albo że się nie opłaca.",
+    desc: "Porównujemy koszt końcowy z cenami tego modelu w Polsce i mówimy wprost, ile realnie zostaje na czysto albo że się nie opłaca.",
   },
 ];
 

@@ -79,7 +79,7 @@ const faq = [
   {
     question: "Skąd bierzecie dane do porównania ceny?",
     answer:
-      "Z aktualnych ogłoszeń podobnych aut na portalach sprzedażowych. Porównuję rocznik, przebieg, wersję i wyposażenie, żeby cena była odniesiona do realnie porównywalnych ofert.",
+      "Z aktualnych ogłoszeń podobnych aut na portalach sprzedażowych. Porównujemy rocznik, przebieg, wersję i wyposażenie, żeby cena była odniesiona do realnie porównywalnych ofert.",
   },
   {
     question: "Jak szybko dostanę raport?",

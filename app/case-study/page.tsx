@@ -88,7 +88,7 @@ export default function CaseStudy() {
                         Jak liczymy efekt wdrożenia
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
-                        Bez wymyślnych modeli. Porównuję cztery rzeczy przed i
+                        Bez wymyślnych modeli. Porównujemy cztery rzeczy przed i
                         po wdrożeniu, to wystarczy, żeby zobaczyć, czy
                         automatyzacja się zwróciła.
                       </p>

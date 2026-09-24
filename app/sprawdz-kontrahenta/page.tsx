@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 const checks = [
   {
     title: "Czy konto należy do tej firmy",
-    desc: "Najważniejszy test. Porównuję numer, na który masz zapłacić, z rachunkami zgłoszonymi do wykazu VAT. Podmieniony numer konta w mailu to najczęstszy sposób przejęcia płatności.",
+    desc: "Najważniejszy test. Porównujemy numer, na który masz zapłacić, z rachunkami zgłoszonymi do wykazu VAT. Podmieniony numer konta w mailu to najczęstszy sposób przejęcia płatności.",
   },
   {
     title: "Status VAT i dane rejestrowe",

@@ -98,7 +98,7 @@ export default function Page() {
         },
         {
           q: "Czy certyfikat nie jest darmowy?",
-          a: "Sam certyfikat tak i nie ukrywam tego. Płacisz za ustalenie, co konkretnie jest zepsute, poprawne wpięcie po stronie serwera oraz za przekierowania i odwołania w treści, bo to one najczęściej są prawdziwym problemem.",
+          a: "Sam certyfikat tak i nie ukrywamy tego. Płacisz za ustalenie, co konkretnie jest zepsute, poprawne wpięcie po stronie serwera oraz za przekierowania i odwołania w treści, bo to one najczęściej są prawdziwym problemem.",
         },
         {
           q: "Skąd mamy wiedzieć, że problem naprawdę istnieje?",

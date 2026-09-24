@@ -50,7 +50,7 @@ export default function WidocznoscWAi() {
         },
         {
           title: "Zdanie, którym asystent Cię opisze",
-          desc: "Tytuł strony i opis w metadanych to najczęściej cytowany fragment całego serwisu. Jeśli stoi tam nazwa firmy i słowo „strona główna\", to jest dokładnie to, co usłyszy pytający. Jeśli stoi tam, co robicie i dla kogo, odpowiedź wygląda zupełnie inaczej.",
+          desc: 'Tytuł strony i opis w metadanych to najczęściej cytowany fragment całego serwisu. Jeśli stoi tam nazwa firmy i słowo „strona główna", to jest dokładnie to, co usłyszy pytający. Jeśli stoi tam, co robicie i dla kogo, odpowiedź wygląda zupełnie inaczej.',
         },
         {
           title: "llms.txt, czyli własnymi słowami",
@@ -98,6 +98,18 @@ export default function WidocznoscWAi() {
         },
       ]}
       faq={[
+        {
+          q: "Jak wpuścić ChatGPT na stronę, ale nie oddawać treści do trenowania modeli?",
+          a: "OpenAI ma trzy osobne roboty i każdy ustawia się w robots.txt niezależnie. OAI-SearchBot decyduje, czy strona może się pojawić w wynikach wyszukiwania w ChatGPT. GPTBot zbiera treść, która może trafić do trenowania modeli. ChatGPT-User czyta stronę, gdy użytkownik sam o nią poprosi, i według OpenAI reguły robots.txt mogą go nie obowiązywać. Żeby być w wyszukiwaniu ChatGPT bez oddawania treści do trenowania, w robots.txt wpisujecie dwie grupy: „User-agent: OAI-SearchBot” z „Allow: /” oraz „User-agent: GPTBot” z „Disallow: /”.",
+        },
+        {
+          q: "Czy zablokowanie GPTBot usuwa nas z ChatGPT?",
+          a: "Nie. GPTBot dotyczy tylko trenowania modeli, a za pojawianie się w wyszukiwaniu ChatGPT odpowiada OAI-SearchBot. Częsty błąd idzie w drugą stronę: reguła „User-agent: *” z „Disallow: /” albo gotowa lista blokująca „wszystkie roboty AI” zamyka też OAI-SearchBot, a wtedy strona z wyszukiwania w ChatGPT znika. Tak samo działa to u Anthropic: ClaudeBot zbiera treść do trenowania, Claude-SearchBot indeksuje do wyszukiwania, Claude-User czyta stronę na prośbę użytkownika.",
+        },
+        {
+          q: "Czy blokada Google-Extended wyłącza nas z AI Overviews w Google?",
+          a: "Nie. Google-Extended steruje tylko tym, czy treść może służyć do trenowania modeli Gemini i do odpowiedzi w innych produktach Google. Według dokumentacji Google nie wpływa na obecność w wyszukiwarce ani na pozycję. AI Overviews i tryb AI są częścią wyszukiwarki, więc steruje nimi zwykły Googlebot i znaczniki nosnippet, data-nosnippet, max-snippet oraz noindex. Blokada Google-Extended nie zaszkodzi więc widoczności w Google, ale też nie wyjmie strony z AI Overviews.",
+        },
         {
           q: "Czy blokowanie tych robotów jest błędem?",
           a: "Nie zawsze. Wydawca, który żyje ze swoich treści, ma dobry powód, żeby nie oddawać ich do trenowania modeli za darmo. Firma usługowa zwykle nie ma takiego powodu, a blokada odcina ją od kanału, w którym ktoś właśnie pyta o wykonawcę. Sprawdzenie pokazuje stan, a decyzja należy do Was.",

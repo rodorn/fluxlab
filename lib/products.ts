@@ -91,7 +91,7 @@ export const PRODUCTS: Product[] = [
     category: "www",
     name: "Ratunek po włamaniu na stronę",
     tagline: "Zhakowany WordPress albo WooCommerce",
-    desc: "Porównuję pliki Twojej strony z oryginałami prosto z repozytorium WordPressa, więc listę obcych i podmienionych plików mamy w minuty, a nie po godzinach ręcznego szukania. Do tego skan bazy pod wstrzyknięcia i podstawionych administratorów.",
+    desc: "Porównujemy pliki Twojej strony z oryginałami prosto z repozytorium WordPressa, więc listę obcych i podmienionych plików mamy w minuty, a nie po godzinach ręcznego szukania. Do tego skan bazy pod wstrzyknięcia i podstawionych administratorów.",
     price: "diagnoza 49 zł",
     href: "/strona-po-wlamaniu",
     grupa: "budowa",

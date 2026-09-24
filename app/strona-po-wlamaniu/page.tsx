@@ -4,12 +4,12 @@ import ProductLanding from "@/components/ProductLanding";
 export const metadata: Metadata = {
   title: "Zhakowana strona WordPress, czyszczenie i raport | Fluxlab",
   description:
-    "Strona przekierowuje na obce serwisy albo Google ją oznaczył. Porównuję pliki z oryginałami, usuwamy backdoory i mówimy, którędy weszli. Od 49 zł.",
+    "Strona przekierowuje na obce serwisy albo Google ją oznaczył. Porównujemy pliki z oryginałami, usuwamy backdoory i mówimy, którędy weszli. Od 49 zł.",
   alternates: { canonical: "/strona-po-wlamaniu" },
   openGraph: {
     title: "Zhakowana strona WordPress, czyszczenie i raport | Fluxlab",
     description:
-      "Porównuję pliki z oryginałami z repozytorium WordPressa, usuwamy backdoory i mówimy, którędy weszli. Diagnoza 49 zł, czyszczenie od 299 zł.",
+      "Porównujemy pliki z oryginałami z repozytorium WordPressa, usuwamy backdoory i mówimy, którędy weszli. Diagnoza 49 zł, czyszczenie od 299 zł.",
     locale: "pl_PL",
     type: "website",
     images: [

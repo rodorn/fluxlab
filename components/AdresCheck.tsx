@@ -57,7 +57,7 @@ const MOTYW: Record<
 const ETAPY = [
   "Pytamy adres bez www",
   "Pytamy adres z www",
-  "Porównuję odpowiedzi",
+  "Porównujemy odpowiedzi",
   "Szukamy wskazania wersji głównej",
 ];
 

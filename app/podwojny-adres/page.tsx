@@ -42,7 +42,7 @@ export default function Page() {
         },
         {
           title: "Czy treść jest ta sama",
-          desc: "Porównuję wielkość odpowiedzi. Identyczna treść pod dwoma adresami to sytuacja, w której wyszukiwarka musi wybierać za Ciebie.",
+          desc: "Porównujemy wielkość odpowiedzi. Identyczna treść pod dwoma adresami to sytuacja, w której wyszukiwarka musi wybierać za Ciebie.",
         },
         {
           title: "Czy wskazana jest wersja główna",
@@ -90,7 +90,7 @@ export default function Page() {
       faq={[
         {
           q: "Skąd wiadomo, że to naprawdę szkodzi?",
-          a: "Warunkiem jest identyczna treść pod dwoma adresami i to mierzymy wprost. Nie twierdzę natomiast, ile dokładnie pozycji przez to tracisz, bo tego z zewnątrz nikt uczciwie nie policzy. Rozstrzyga to dopiero Twoja Search Console, w której widać, ile podstron jest zaindeksowanych pod każdą wersją.",
+          a: "Warunkiem jest identyczna treść pod dwoma adresami i to mierzymy wprost. Nie twierdzimy natomiast, ile dokładnie pozycji przez to tracisz, bo tego z zewnątrz nikt uczciwie nie policzy. Rozstrzyga to dopiero Twoja Search Console, w której widać, ile podstron jest zaindeksowanych pod każdą wersją.",
         },
         {
           q: "Mamy znacznik kanoniczny, czy to wystarczy?",
@@ -102,7 +102,7 @@ export default function Page() {
         },
         {
           q: "Sprawdzenie nic nie wykryło, a mimo to mamy słabe pozycje.",
-          a: "To znaczy tylko tyle, że ten konkretny problem odpada, i tak to napiszemy. Widoczność ma wiele przyczyn, a ja wolimy wykluczyć jedną rzecz uczciwie, niż sprzedać Ci audyt na zapas.",
+          a: "To znaczy tylko tyle, że ten konkretny problem odpada, i tak to napiszemy. Widoczność ma wiele przyczyn, a my wolimy wykluczyć jedną rzecz uczciwie, niż sprzedać Ci audyt na zapas.",
         },
       ]}
       formId="order_podwojny_adres"
