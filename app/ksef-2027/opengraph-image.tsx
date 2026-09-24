@@ -14,7 +14,11 @@ const punkty = [
   "Faktura kosztowa doręczona w dniu nadania numeru",
 ];
 
-export default function OGImage() {
+export default async function OGImage() {
+  const interBold = await fetch(
+    new URL("../../public/fonts/Inter-Bold.ttf", import.meta.url),
+  ).then((res) => res.arrayBuffer());
+
   return new ImageResponse(
     <div
       style={{
@@ -37,6 +41,7 @@ export default function OGImage() {
           style={{
             fontSize: 68,
             fontWeight: 700,
+            fontFamily: "Inter",
             letterSpacing: "-2px",
             lineHeight: 1.1,
           }}
@@ -79,11 +84,21 @@ export default function OGImage() {
         <div style={{ fontSize: 24, color: "#c7d2fe" }}>
           Plus gotowa wiadomość dla biur rachunkowych do klientów
         </div>
-        <div style={{ fontSize: 26, color: "#ffffff", fontWeight: 700 }}>
+        <div
+          style={{
+            fontSize: 26,
+            color: "#ffffff",
+            fontWeight: 700,
+            fontFamily: "Inter",
+          }}
+        >
           fluxlab.pl/ksef-2027
         </div>
       </div>
     </div>,
-    { ...size },
+    {
+      ...size,
+      fonts: [{ name: "Inter", data: interBold, weight: 700, style: "normal" }],
+    },
   );
 }
