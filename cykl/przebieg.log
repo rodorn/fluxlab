@@ -566,3 +566,12 @@ Czekam na zakończenie sprawdzania propagacji deployu (uruchomione w tle, maks. 
 === 2026-09-25 07:29:59 start
 === 2026-09-25 11:32:58 start
 === 2026-09-25 14:04:59 start
+Cykl gotowy do zamknięcia po sondzie produkcyjnej. Podsumowanie:
+
+**Kanał:** 3, KSeF jako magnes.
+**Co zrobiono:** `/numer-ksef` przestało fałszywie twierdzić „to literówka” dla prawdziwych numerów KSeF sprzed startu API 2.0 (1.02.2026) — te numery liczą sumę kontrolną innym, nieudokumentowanym wzorem (potwierdzone w wątku CIRFMF/ksef-api#55), więc narzędzie myliło się w twarz użytkownikom z realnymi numerami. Dodałem też wyjaśniające FAQ na stronie. Werdykt poprawny/błędny nie został zmieniony, tylko komunikat.
+**Przy okazji:** naprawiłem niezacommitowany bałagan w `cykl/dziennik.md` — poprzedni cykl zostawił w working tree przypadkową reformatującą zmianę całej historii dziennika (usunięte spacje, zmieniona numeracja list, dodane blockquoty), zapewne efekt narzędzia formatującego. Przywróciłem stare wpisy do stanu z HEAD, zachowując tylko legalny nowy wpis.
+**Push:** commit `eb5c5ff` na `origin/main`, build i `spojnosc.mjs` czyste, IndexNow zgłoszone (2 z 3 punktów jak zwykle).
+**Czekam** teraz na jedną sondę produkcji za ~1 minutę, żeby potwierdzić wdrożenie.
+=== 2026-09-25 14:10:50 koniec, kod 0
+=== 2026-09-25 18:09:29 start
