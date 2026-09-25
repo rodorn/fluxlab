@@ -20,10 +20,38 @@ export const metadata: Metadata = {
     locale: "pl_PL",
     type: "website",
     images: [
-      { url: "/opengraph-image", width: 1200, height: 630, alt: "Fluxlab, licznik wykreśleń z KRS" },
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Fluxlab, licznik wykreśleń z KRS",
+      },
     ],
   },
 };
+
+const faq = [
+  {
+    q: "Co to jest rozwiązanie podmiotu bez przeprowadzenia postępowania likwidacyjnego?",
+    a: "To tryb, w którym sąd rejestrowy z urzędu wykreśla spółkę bez likwidacji, gdy ta latami nie składa sprawozdań finansowych i nie ma majątku ani przedstawiciela, z którym da się to wyjaśnić. Sąd ogłasza wszczęcie takiego postępowania w Monitorze Sądowym i Gospodarczym, zamiast wysyłać pisma bezpośrednio do wspólników czy wierzycieli.",
+  },
+  {
+    q: "Ile czasu jest na sprzeciw wobec wykreślenia?",
+    a: "Trzy miesiące od dnia ogłoszenia w Monitorze. W tym czasie każdy, kto ma w tym interes, w tym wierzyciel, może zgłosić sądowi okoliczności przemawiające przeciwko wykreśleniu, na przykład że podmiot jednak ma majątek. Po upływie terminu bez sprzeciwu podmiot znika z rejestru, a jego majątek, jeśli jakiś zostanie ujawniony później, przechodzi na Skarb Państwa.",
+  },
+  {
+    q: "Czy wierzyciel dostaje osobne zawiadomienie o wykreśleniu dłużnika?",
+    a: "Nie. Obwieszczenie w Monitorze Sądowym i Gospodarczym uznaje się z mocy prawa za wystarczające powiadomienie wszystkich zainteresowanych, więc nikt nie wysyła osobnego pisma do wierzycieli. Kto nie śledzi Monitora, dowiaduje się o wykreśleniu zwykle dopiero wtedy, gdy próbuje wyegzekwować dług.",
+  },
+  {
+    q: "Skąd pochodzą liczby w tym liczniku?",
+    a: "Wprost z wyszukiwarki Monitora Sądowego i Gospodarczego prowadzonej przez Ministerstwo Sprawiedliwości, licząc obwieszczenia z frazą „bez przeprowadzania postępowania likwidacyjnego”. Dane są jawne i publiczne. Licznik odświeża się co godzinę, a Monitor ukazuje się wyłącznie w dni robocze, więc weekendy i święta nie mają własnych słupków.",
+  },
+  {
+    q: "Jak sprawdzić, czy konkretna spółka jest w takim postępowaniu?",
+    a: "Wpisując jej nazwę albo numer KRS w naszym narzędziu Czujka rejestrowa, za darmo i bez rejestracji. Widać tam całą historię ogłoszeń od 2013 roku, nie tylko stan bieżący, oraz datę, do której można jeszcze zgłosić sprzeciw, jeśli postępowanie trwa.",
+  },
+];
 
 export default async function Page() {
   const d = await wykreslenia();
@@ -118,7 +146,43 @@ export default async function Page() {
             Sprawdź kontrahenta
           </Link>
         </div>
+
+        <div className="mt-16 max-w-3xl">
+          <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
+            Najczęstsze pytania
+          </h2>
+          <div className="mt-6 space-y-4">
+            {faq.map((item) => (
+              <details
+                key={item.q}
+                className="group rounded-2xl border border-gray-200/80 dark:border-gray-800/80 bg-white/60 dark:bg-gray-900/40"
+              >
+                <summary className="cursor-pointer p-5 text-sm font-semibold text-gray-900 dark:text-white select-none list-none [&::-webkit-details-marker]:hidden">
+                  {item.q}
+                </summary>
+                <div className="px-5 pb-5 text-sm text-gray-600 dark:text-gray-400">
+                  {item.a}
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
       </main>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faq.map((f) => ({
+              "@type": "Question",
+              name: f.q,
+              acceptedAnswer: { "@type": "Answer", text: f.a },
+            })),
+          }),
+        }}
+      />
       <Footer />
     </>
   );

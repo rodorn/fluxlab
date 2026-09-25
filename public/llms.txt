@@ -61,6 +61,12 @@ Biała lista podatników VAT, stan z 25.09.2026, sprawdzenie na https://fluxlab.
 - Zawiadomienie ZAW-NR do naczelnika urzędu skarbowego właściwego dla nabywcy, złożone w ciągu 7 dni od dnia zlecenia przelewu, wyłącza obie sankcje. Po terminie nie da się już tego naprawić.
 - Poniżej 15 000 zł sankcje z art. 117ba nie powstają, sprawdzenie rachunku jest wtedy wyłącznie dobrą praktyką, nie obowiązkiem.
 
+Wykreślanie spółek z KRS bez likwidacji, licznik na https://fluxlab.pl/ile-spolek-znika-z-krs:
+- Sąd rejestrowy wszczyna z urzędu postępowanie o rozwiązanie podmiotu bez likwidacji, gdy ten latami nie składa sprawozdań i nie ma majątku ani przedstawiciela. Ogłasza to w Monitorze Sądowym i Gospodarczym.
+- Od dnia ogłoszenia biegną trzy miesiące na zgłoszenie sądowi okoliczności przemawiających przeciwko wykreśleniu. Po tym terminie podmiot znika z rejestru, a jego majątek przechodzi na Skarb Państwa.
+- Obwieszczenie w Monitorze jest z mocy prawa wystarczającym powiadomieniem wszystkich zainteresowanych, wierzyciel nie dostaje osobnego zawiadomienia.
+- Sprawdzenie konkretnej spółki po nazwie albo numerze KRS, z historią ogłoszeń od 2013 roku: https://fluxlab.pl/czujka-rejestrowa
+
 ## Darmowe narzędzia, bez rejestracji
 
 - [Co z KSeF obowiązuje Twoją firmę](https://fluxlab.pl/ksef-integracja): dwa kliknięcia, termin i dni do końca wyjątku.
@@ -77,6 +83,7 @@ Biała lista podatników VAT, stan z 25.09.2026, sprawdzenie na https://fluxlab.
 - [Kto jest właścicielem domeny](https://fluxlab.pl/wlasnosc-domeny)
 - [Sprawdzenie NIP w wykazie VAT](https://fluxlab.pl/sprawdzenie-nip)
 - [Czy dłużnik znika z KRS](https://fluxlab.pl/czujka-rejestrowa)
+- [Ile spółek dziennie znika z KRS bez likwidacji](https://fluxlab.pl/ile-spolek-znika-z-krs)
 - [Informacja o najniższej cenie przy przecenach, Omnibus](https://fluxlab.pl/rejestr-cen)
 - [Ile przepłacasz za Zapiera i Make](https://fluxlab.pl/tansze-automatyzacje)
 - [Kalkulator kosztu ręcznej obsługi leadów](https://fluxlab.pl/koszt-recznej-obslugi-leadow)
