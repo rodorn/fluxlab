@@ -224,3 +224,15 @@ W folderze „Wysłane” w Zoho tego maila nie ma. Poprzedniego raportu z 07:05
 Konektory Google Calendar i Google Drive w claude.ai trzeba autoryzować w ustawieniach konektorów. Do tego raportu nie były potrzebne.
 === 2026-09-24 11:07:04 koniec, kod 0
 === 2026-09-25 00:06:18 start raportu
+Raport wysłany i dziennik oznaczony.
+
+**Podsumowanie:**
+- Mail „FluxLab strona, 00:06, pogrubiona czcionka na obrazkach OG i porządki w treści" wysłany z pawel@fluxlab.pl na iwanekpawel55@gmail.com (msgid `179028791675...@fluxlab.pl`), z załączonym zrzutem obrazka OG `/ksef-2027` jako dowodem najważniejszej zmiany wizualnej.
+- Objął 5 wpisów dziennika (11:43–23:09) plus dwie dodatkowe poprawki znalezione w git logu, których nie było w dzienniku (reply-to w mailach audytowych, ujednolicenie liczby mnogiej w 83 plikach).
+- Ruch: 42 odsłony/7 osób w dobie, wzrost 25% wobec średniej; uruchomienia narzędzi wzrosły z 0 do 2 w dobie — pierwszy taki wzrost od 20.09.
+- Lista audytowa bez zmian (40/65 zamkniętych), bo ten okres poszedł w całości w poprawki i dystrybucję poza listą.
+- Na końcu dziennika dopisany `<!-- WYSLANO 2026-09-25 00:11 -->`, bez commita, zgodnie z dotychczasową praktyką.
+=== 2026-09-25 00:12:17 koniec, kod 0
+=== 2026-09-25 13:03:59 start raportu
+Raport wysłany na iwanekpawel55@gmail.com, temat: „FluxLab strona, 12:15, FAQ i FAQPage na liczniku wykreśleń z KRS", ze zrzutem nowej sekcji FAQ jako załącznik cid. W dzienniku dopisany znacznik `<!-- WYSLANO 2026-09-25 13:06 -->`, więc kolejny cykl zacznie czytać od tego miejsca.
+=== 2026-09-25 13:06:34 koniec, kod 0

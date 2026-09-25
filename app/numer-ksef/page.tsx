@@ -12,8 +12,7 @@ export const metadata: Metadata = {
     "Wklejcie numer KSeF albo listę numerów z przelewów i sprawdźcie za darmo, czy nie ma literówki. Liczymy sumę kontrolną, NIP sprzedawcy i datę przyjęcia.",
   alternates: { canonical: "/numer-ksef" },
   openGraph: {
-    title:
-      "Sprawdzenie numeru KSeF za darmo, suma kontrolna | Fluxlab",
+    title: "Sprawdzenie numeru KSeF za darmo, suma kontrolna | Fluxlab",
     description:
       "Darmowe sprawdzenie numeru KSeF przed przelewem. Suma kontrolna, NIP sprzedawcy i data przyjęcia faktury, liczone w przeglądarce.",
     locale: "pl_PL",
@@ -64,6 +63,10 @@ const faq = [
   {
     q: "Czy poprawny numer oznacza, że faktura istnieje?",
     a: "Nie. Poprawna suma kontrolna mówi tylko, że w numerze nie ma literówki. Istnienie faktury potwierdza KSeF, na przykład w Aplikacji Podatnika KSeF albo w programie do fakturowania.",
+  },
+  {
+    q: "Numer jest z faktury sprzed 2026 roku i wychodzi błąd sumy kontrolnej, to na pewno literówka?",
+    a: "Niekoniecznie. Numery nadane w dobrowolnym KSeF przed startem API 2.0 (1 lutego 2026) czasem liczą sumę kontrolną innym wzorem, nigdzie oficjalnie nie opisanym przez Ministerstwo Finansów. CIRFMF potwierdził, że to zamierzona różnica algorytmów, nie błąd. Przy takich numerach sprawdzenie i tak wychwytuje literówki w NIP-ie sprzedawcy i w dacie, a przy samej sumie kontrolnej pewność daje tylko KSeF.",
   },
   {
     q: "Czy wysyłacie gdzieś wklejone numery?",

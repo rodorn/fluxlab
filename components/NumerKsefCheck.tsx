@@ -73,20 +73,6 @@ function sprawdzLinie(linia: string): Wynik[] {
       );
     }
 
-    const oczekiwana = crc8(`${nip}-${data}-${tech}`);
-    if (oczekiwana !== suma) {
-      poprawny = false;
-      uwagi.push(
-        `Suma kontrolna się nie zgadza: na końcu jest ${suma}, a dla tych znaków powinno być ${oczekiwana}. W numerze jest literówka.`,
-      );
-    }
-    if (!nipPoprawny(nip)) {
-      poprawny = false;
-      uwagi.push(
-        `Pierwsze 10 cyfr (${nip}) nie jest poprawnym NIP-em sprzedawcy.`,
-      );
-    }
-
     const r = Number(data.slice(0, 4));
     const m = Number(data.slice(4, 6));
     const d = Number(data.slice(6, 8));
@@ -95,6 +81,31 @@ function sprawdzLinie(linia: string): Wynik[] {
       dzien.getUTCFullYear() === r &&
       dzien.getUTCMonth() === m - 1 &&
       dzien.getUTCDate() === d;
+
+    const oczekiwana = crc8(`${nip}-${data}-${tech}`);
+    if (oczekiwana !== suma) {
+      poprawny = false;
+      // Numery z dobrowolnego KSeF sprzed startu API 2.0 licza sume
+      // kontrolna innym, nigdzie oficjalnie nie opublikowanym wzorem;
+      // CIRFMF potwierdzil, ze to zamierzona roznica algorytmow, a nie blad
+      // (https://github.com/CIRFMF/ksef-api/issues/55). Dlatego przy takich
+      // numerach nie twierdzimy, ze to na pewno literowka.
+      if (dataOk && dzien < new Date(Date.UTC(2026, 1, 1))) {
+        uwagi.push(
+          `Suma kontrolna się nie zgadza: na końcu jest ${suma}, a dla tych znaków powinno być ${oczekiwana}. Numer jest jednak sprzed startu API 2.0 (1 lutego 2026), a takie numery czasem liczą sumę kontrolną innym, nigdzie oficjalnie nie opisanym wzorem, więc to niekoniecznie literówka. Pewność da tylko sprawdzenie w KSeF.`,
+        );
+      } else {
+        uwagi.push(
+          `Suma kontrolna się nie zgadza: na końcu jest ${suma}, a dla tych znaków powinno być ${oczekiwana}. W numerze jest literówka.`,
+        );
+      }
+    }
+    if (!nipPoprawny(nip)) {
+      poprawny = false;
+      uwagi.push(
+        `Pierwsze 10 cyfr (${nip}) nie jest poprawnym NIP-em sprzedawcy.`,
+      );
+    }
     if (!dataOk) {
       poprawny = false;
       uwagi.push(`Cyfry ${data} nie tworzą prawdziwej daty.`);
