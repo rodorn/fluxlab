@@ -82,10 +82,19 @@ function Zliczanie() {
     } catch {
       zrodlo = "";
     }
+    // Wejscie z platnej reklamy Google przychodzi z tym samym odsylaczem co
+    // wejscie z wynikow zwyklych, wiec bez tego nie dalo sie ich rozroznic, a
+    // to jedyna rzecz, ktorej ma dowiesc proba kampanii. Google dokleja gclid
+    // do kazdego klikniecia w reklame, wiec jego obecnosc rozstrzyga sprawe
+    // nawet wtedy, gdy ktos zapomni otagowac adresu przez utm.
+    const zReklamy =
+      parametry.has("gclid") || parametry.get("utm_medium") === "cpc";
     const dane = {
       sciezka,
-      zrodlo: zrodlo || (parametry.get("utm_source") ?? ""),
-      kampania: parametry.get("utm_campaign") ?? "",
+      zrodlo: zReklamy
+        ? "google-ads"
+        : zrodlo || (parametry.get("utm_source") ?? ""),
+      kampania: parametry.get("utm_campaign") ?? (zReklamy ? "ads" : ""),
       sesja: idSesji(),
       telefon: window.matchMedia("(max-width: 640px)").matches,
       zdarzenie: "odslona",

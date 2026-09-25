@@ -575,3 +575,15 @@ Cykl gotowy do zamknięcia po sondzie produkcyjnej. Podsumowanie:
 **Czekam** teraz na jedną sondę produkcji za ~1 minutę, żeby potwierdzić wdrożenie.
 === 2026-09-25 14:10:50 koniec, kod 0
 === 2026-09-25 18:09:29 start
+Cykl zamknięty. Podsumowanie:
+
+**Kanał 4** — outreach z gotowym raportem. Przeskanowałem lokalnie (bez dotykania produkcji) 35 losowych domen biur rachunkowych, odsiałem 7 fałszywych alarmów o wolnym serwerze (efekt usypianych instancji hostingu, które własna logika audytu łapie tylko czasami — zanotowałem to jako otwarty problem narzędzia). Zostały 2 potwierdzone, prawdziwe przypadki z publicznym adresem e-mail:
+- `ksiegowosc-drojman.pl` — serwer odpowiadał 3,5–8,6 s w trzech niezależnych pomiarach
+- `hewig.com.pl` — certyfikat TLS niepasujący do domeny, HTTPS w ogóle się nie łączy
+
+Wysłałem po jednym mailu do każdej (pawel@fluxlab.pl, 18:20 i 18:21).
+
+**Ruch:** nadal to samo okno danych co poprzednie dwa wpisy (10 odsłon/3 osoby w dobie, źródło m.facebook.com) — licznik jeszcze nie doliczył nowego okresu.
+
+**Dla Pawła:** dwie domeny (`podatkilodz.pl`, `ksiegowosc-chocz.pl`) mają potwierdzony problem z prędkością, ale bez adresu e-mail — tylko telefon/formularz, więc zostawiłem bez akcji. Wpis do dziennika: `cykl/dziennik.md`, commit `6564289` na `origin/main`.
+=== 2026-09-25 18:25:12 koniec, kod 0

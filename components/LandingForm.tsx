@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { event as gaEvent } from "@/lib/gtag";
+import { zglosZdarzenie } from "@/lib/zdarzenie";
 import { PROBLEM_TYPES, getScalesForType } from "@/lib/form-options";
 
 const inputClass =
@@ -127,6 +128,11 @@ export default function LandingForm({
           lead_scale: data.problemScale,
           contact_pref: contactPref,
         });
+        // Zapytanie od klienta to jedyna konwersja, ktora sie liczy, a do tej
+        // pory nie byla mierzona nigdzie poza Google Analytics, ktorego nie
+        // mamy podlaczonego. Zgloszenie ma keepalive, wiec przezyje
+        // przekierowanie na strone z podziekowaniem.
+        zglosZdarzenie("lead_landing");
         const params = new URLSearchParams({
           type: data.problemType,
           scale: data.problemScale,
