@@ -72,6 +72,14 @@ const faq = [
     q: "Czy zapisujecie sprawdzane numery?",
     a: "Sprawdzenie nie wymaga podania żadnych Twoich danych. Adres mailowy zostawiasz tylko wtedy, gdy sam poprosisz o szerszy raport.",
   },
+  {
+    q: "Od jakiej kwoty trzeba sprawdzać rachunek w wykazie?",
+    a: "Od 15 000 zł brutto jednorazowej transakcji, niezależnie od tego, na ile przelewów jest podzielona. Przelew poniżej tej kwoty na rachunek spoza wykazu nie rodzi sankcji z art. 117ba Ordynacji podatkowej.",
+  },
+  {
+    q: "Zapłaciliśmy na rachunek spoza wykazu, co teraz?",
+    a: "Zawiadomienie ZAW-NR do naczelnika urzędu skarbowego właściwego dla nabywcy w ciągu 7 dni od dnia zlecenia przelewu wyłącza sankcje: koszt zostaje w kosztach podatkowych, a odpowiedzialność solidarna za VAT kontrahenta nie powstaje. Po terminie sankcji już nie da się wyłączyć.",
+  },
 ];
 
 export default function SprawdzenieNipPage() {

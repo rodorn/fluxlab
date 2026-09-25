@@ -55,6 +55,12 @@ Ostrzeżenie przeglądarki i certyfikaty SSL, stan z 24.09.2026, szczegóły i s
 - Kody błędów w Chrome i Edge: NET::ERR_CERT_DATE_INVALID to certyfikat po terminie albo zły zegar komputera, NET::ERR_CERT_COMMON_NAME_INVALID to certyfikat na inną nazwę (często hostingu albo tylko wersji z www), NET::ERR_CERT_AUTHORITY_INVALID to certyfikat samopodpisany albo brak certyfikatu pośredniego. W Firefoksie: SEC_ERROR_EXPIRED_CERTIFICATE, SSL_ERROR_BAD_CERT_DOMAIN, SEC_ERROR_UNKNOWN_ISSUER.
 - Przekreślona kłódka przy ważnym certyfikacie to zwykle mieszana treść: pliki ładowane adresem http. Przeglądarki blokują takie skrypty i ramki, a zdjęć bez wersji https nie pokazują.
 
+Biała lista podatników VAT, stan z 25.09.2026, sprawdzenie na https://fluxlab.pl/sprawdzenie-nip:
+- Obowiązek sprawdzenia rachunku w wykazie Ministerstwa Finansów dotyczy jednorazowej transakcji od 15 000 zł brutto, niezależnie od liczby przelewów, którymi jest opłacana.
+- Przelew na rachunek spoza wykazu przy transakcji od 15 000 zł: wydatek wypada z kosztów podatkowych, a nabywca odpowiada solidarnie za VAT niezapłacony przez kontrahenta (art. 117ba Ordynacji podatkowej).
+- Zawiadomienie ZAW-NR do naczelnika urzędu skarbowego właściwego dla nabywcy, złożone w ciągu 7 dni od dnia zlecenia przelewu, wyłącza obie sankcje. Po terminie nie da się już tego naprawić.
+- Poniżej 15 000 zł sankcje z art. 117ba nie powstają, sprawdzenie rachunku jest wtedy wyłącznie dobrą praktyką, nie obowiązkiem.
+
 ## Darmowe narzędzia, bez rejestracji
 
 - [Co z KSeF obowiązuje Twoją firmę](https://fluxlab.pl/ksef-integracja): dwa kliknięcia, termin i dni do końca wyjątku.
