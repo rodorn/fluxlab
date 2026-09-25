@@ -104,6 +104,10 @@ export default function EDoreczeniaIntegracja() {
           a: PODMIOTY.map((p) => p.opis).join(" "),
         },
         {
+          q: "Ile czeka się na aktywację adresu do e-Doręczeń po złożeniu wniosku?",
+          a: "Ustawa nie podaje sztywnego terminu. Wiadomość z potwierdzeniem utworzenia adresu przychodzi mailem dopiero po tym, jak minister właściwy do spraw informatyzacji otrzyma kompletny i poprawny wniosek, a w praktyce zajmuje to od kilku dni do kilku tygodni. Im bliżej terminu obowiązku, tym więcej wniosków trafia do rozpatrzenia naraz, więc czas oczekiwania może się wydłużać. Status swojego wniosku sprawdza się w Koncie Przedsiębiorcy, w sekcji „Moje sprawy”. Kto wpisał się do CEIDG przed 2025 rokiem i ma obowiązek od 1 października 2026, nie powinien czekać z wnioskiem do ostatnich dni.",
+        },
+        {
           q: "Co się dzieje, gdy nie odbierzemy pisma z urzędu w e-Doręczeniach?",
           a: "Pismo od urzędu, którego nie odbierzecie w ciągu 14 dni, uznaje się za doręczone po upływie tego terminu, tak jak list, po który nikt nie poszedł na pocztę. Mówi o tym art. 41 ust. 1 pkt 3 ustawy o doręczeniach elektronicznych. Od tego dnia biegną terminy na odpowiedź, odwołanie albo zapłatę, nawet jeśli nikt pisma nie otworzył. Dlatego samo założenie skrzynki nie wystarczy. Ktoś musi do niej zaglądać albo dostawać powiadomienia na zwykły adres e-mail.",
         },
