@@ -17,9 +17,13 @@
  * mnie o nic.
  */
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { zglosZdarzenie } from "@/lib/zdarzenie";
-import { KONIEC_PRZEJSCIOWYCH, PODATNICY, type Podatnik } from "@/lib/terminy-ksef";
+import {
+  KONIEC_PRZEJSCIOWYCH,
+  PODATNICY,
+  type Podatnik,
+} from "@/lib/terminy-ksef";
 
 type Sposob = {
   klucz: string;
@@ -146,12 +150,46 @@ export default function KsefCheck() {
     "idle",
   );
   const [leadBlad, setLeadBlad] = useState("");
+  const [linkSkopiowany, setLinkSkopiowany] = useState(false);
 
   function wybierz(p: Podatnik) {
     zglosZdarzenie("uruchomiono_skan");
     setWynik(policz(p));
     setSposob(null);
     setLeadStan("idle");
+  }
+
+  // Link do konkretnego wyniku ("podatnik" i "sposob" w adresie) czytamy z
+  // przeglądarki, nie hakiem useSearchParams, bo ten wymusiłby renderowanie
+  // strony na żądanie przy każdym wejściu, a większość wejść nie ma tych
+  // parametrów wcale.
+  const wystartowano = useRef(false);
+  useEffect(() => {
+    if (wystartowano.current) return;
+    wystartowano.current = true;
+    const parametry = new URLSearchParams(window.location.search);
+    const p = PODATNICY.find((x) => x.klucz === parametry.get("podatnik"));
+    if (!p) return;
+    wybierz(p);
+    const s = SPOSOBY.find((x) => x.klucz === parametry.get("sposob"));
+    if (s) setSposob(s);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  function kopiujLink() {
+    if (!wynik) return;
+    const adres = new URL(window.location.href);
+    adres.searchParams.set("podatnik", wynik.podatnik.klucz);
+    if (sposob) adres.searchParams.set("sposob", sposob.klucz);
+    else adres.searchParams.delete("sposob");
+    navigator.clipboard
+      .writeText(adres.toString())
+      .then(() => {
+        setLinkSkopiowany(true);
+        zglosZdarzenie("skopiowano_link_ksef");
+        setTimeout(() => setLinkSkopiowany(false), 2500);
+      })
+      .catch(() => setLinkSkopiowany(false));
   }
 
   async function zamow(e: React.FormEvent) {
@@ -251,6 +289,14 @@ export default function KsefCheck() {
             </p>
           )}
 
+          <button
+            type="button"
+            onClick={kopiujLink}
+            className="mt-3 rounded-lg border border-gray-300 px-3 py-1.5 text-xs font-semibold text-gray-700 transition-colors hover:border-accent hover:text-accent dark:border-gray-700 dark:text-gray-300"
+          >
+            {linkSkopiowany ? "Link skopiowany" : "Kopiuj link do tego wyniku"}
+          </button>
+
           {!wynik.podatnik.pozaObowiazkiem && (
             <div className="mt-4 grid gap-3 sm:grid-cols-2">
               <div className="rounded-lg bg-white/70 dark:bg-gray-950/50 px-3 py-2">
@@ -309,10 +355,10 @@ export default function KsefCheck() {
 
           <div className="mt-5 border-t border-gray-200/70 dark:border-gray-700/70 pt-4">
             <p className="text-sm text-gray-700 dark:text-gray-300">
-              Faktur za Was wystawiać nie będziemy, bo to robi Wasz system. Możemy
-              spiąć go z KSeF: wysyłkę w schemacie FA(3), zapis numeru KSeF i
-              UPO przy dokumencie oraz pobieranie faktur kosztowych. Klient tego
-              API, którego do tego używamy, leży otwarcie na{" "}
+              Faktur za Was wystawiać nie będziemy, bo to robi Wasz system.
+              Możemy spiąć go z KSeF: wysyłkę w schemacie FA(3), zapis numeru
+              KSeF i UPO przy dokumencie oraz pobieranie faktur kosztowych.
+              Klient tego API, którego do tego używamy, leży otwarcie na{" "}
               <a
                 href="https://github.com/rodorn/fluxlab-ksef-integracja"
                 target="_blank"
@@ -327,8 +373,8 @@ export default function KsefCheck() {
 
             {leadStan === "ok" ? (
               <p className="mt-4 text-sm font-semibold text-emerald-700 dark:text-emerald-400">
-                Mamy zgłoszenie razem z tym wynikiem. Odpiszemy na {email}, zwykle
-                tego samego dnia.
+                Mamy zgłoszenie razem z tym wynikiem. Odpiszemy na {email},
+                zwykle tego samego dnia.
               </p>
             ) : (
               <form onSubmit={zamow} className="mt-4">
@@ -336,8 +382,8 @@ export default function KsefCheck() {
                   htmlFor="ksef-email"
                   className="block text-sm font-medium text-gray-900 dark:text-white"
                 >
-                  Podaj maila, odpiszemy, co w Waszym przypadku trzeba spiąć i za
-                  ile
+                  Podaj maila, odpiszemy, co w Waszym przypadku trzeba spiąć i
+                  za ile
                 </label>
                 <div className="mt-2 flex flex-col gap-3 sm:flex-row">
                   <input

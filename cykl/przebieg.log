@@ -588,3 +588,7 @@ Wysłałem po jednym mailu do każdej (pawel@fluxlab.pl, 18:20 i 18:21).
 **Dla Pawła:** dwie domeny (`podatkilodz.pl`, `ksiegowosc-chocz.pl`) mają potwierdzony problem z prędkością, ale bez adresu e-mail — tylko telefon/formularz, więc zostawiłem bez akcji. Wpis do dziennika: `cykl/dziennik.md`, commit `6564289` na `origin/main`.
 === 2026-09-25 18:25:12 koniec, kod 0
 === 2026-09-25 22:12:29 start
+Cykl zamknięty. Podsumowanie: kanał 1 (dystrybucja narzędzi) — poprawiłem `homepage` trzech repozytoriów na GitHubie: `fluxlab` (wskazywał na stary podgląd `fluxlab-ten.vercel.app` zamiast `fluxlab.pl`), `fluxlab-auto-due-diligence` → `/sprawdz-auto`, `fluxlab-n8n-lead-workflow` → `/n8n`. Ruch dalej w zapaści (6 odsłon/dobę, spadek 84%), bez commitu kodu strony poza dziennikiem. Dla Pawła nadal czekają gotowe teksty z 24.09 (Wykop, LinkedIn, WeNet).
+=== 2026-09-25 22:16:22 koniec, kod 0
+=== 2026-09-26 00:13:59 start
+=== 2026-09-26 02:15:19 start
