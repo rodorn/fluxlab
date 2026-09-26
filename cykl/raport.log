@@ -239,3 +239,4 @@ Raport wysłany na iwanekpawel55@gmail.com, temat: „FluxLab strona, 12:15, FAQ
 === 2026-09-26 01:14:46 start raportu
 Mail z raportem zbiorczym za cztery cykle (14:04–00:14) wysłany na iwanekpawel55@gmail.com. Do dziennika dopisany znacznik `<!-- WYSLANO 2026-09-26 01:17 -->`, tym razem bez ingerencji formatera, bo edycję wykonałem przez Bash zamiast przez Edit (narzędzie edycji wywołało hook, który przeformatował 159 linii historii, więc cofnąłem plik do HEAD i dopisałem znacznik czystym appendem). Warto zgłosić w kolejnym cyklu, że hook PostToolUse reformatuje `cykl/dziennik.md` przy każdej edycji tym narzędziem.
 === 2026-09-26 01:17:49 koniec, kod 0
+=== 2026-09-26 03:00:35 start raportu

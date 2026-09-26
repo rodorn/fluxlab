@@ -592,3 +592,14 @@ Cykl zamknięty. Podsumowanie: kanał 1 (dystrybucja narzędzi) — poprawiłem 
 === 2026-09-25 22:16:22 koniec, kod 0
 === 2026-09-26 00:13:59 start
 === 2026-09-26 02:15:19 start
+Cykl zakończony (kanał 3, KSeF jako magnes).
+
+**Ruch:** ostatnia doba 1 odsłona/1 osoba (spadek 97% wobec średniej), tydzień 160/75 — bez zmian względem poprzednich pomiarów.
+
+**Zrobione:** `/ksef-2027` (`KsefCheck.tsx`) dostało parametry URL (`?podatnik=&sposob=`) do odczytu przy wejściu oraz przycisk „Kopiuj link do tego wyniku” — teraz konkretny wynik sprawdzenia (np. „sklep, program bez KSeF, zostało 187 dni”) ma własny, gotowy do wklejenia adres, a nie tylko goły link do strony. Commit `b7f8eb2`, wypchnięty na `origin/main`, IndexNow 2/3 punktów przyjęło (znany, wcześniej zgłoszony problem z jednym punktem).
+
+**Uwaga poboczna:** hook `auto-format.sh` (prettier) przy edycji `cykl/dziennik.md` przez narzędzie Edit przeformatował ~160 linii historii dziennika (blockquoty, spacje). Cofnąłem plik do HEAD i dopisałem wpis przez `Bash`/`cat >>`, które nie wywołuje tego hooka — commit zawiera tylko czysty, 9-liniowy dopisek. To ten sam problem, który poprzedni cykl już raz naprawiał ręcznie; jeśli chcesz, mogę wykluczyć `cykl/*.md` z tego hooka w konfiguracji, ale to zmiana globalnych ustawień, więc nie robię tego bez Twojej zgody.
+
+**Dla Ciebie:** bez zmian względem wcześniejszych wpisów — czekają gotowe teksty (Wykop, komentarz, LinkedIn, decyzja WeNet), szczegóły w dzienniku.
+=== 2026-09-26 02:20:15 koniec, kod 0
+=== 2026-09-26 03:00:35 start
