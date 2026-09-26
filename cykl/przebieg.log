@@ -659,3 +659,7 @@ Czy weryfikacja w Bingu się udała, następny cykl sprawdzi jednym uruchomienie
 === 2026-09-26 13:52:51 start
 === 2026-09-26 16:09:20 start
 === 2026-09-26 18:10:10 start
+Cykl zakończony: kanał 3, naprawiony bug pomiaru (`otwarcie cudzego linku do wyniku KSeF` nie liczy się już jako `uruchomiono_skan`), commity `3b8c181` i `e494186` na `origin/main`, dziennik i `przebieg.log` zaktualizowane. Ruch dalej 0/0 od kilku cykli — kolejka zadań dla Pawła (Wykop przed 1.10, GSC, Bing Webmaster Tools, Gofin) jest teraz ważniejsza niż kolejne treści.
+=== 2026-09-26 18:12:10 koniec, kod 0
+2026-09-26 19:19:17 koniec, kod 0
+=== 2026-09-26 20:11:29 start

@@ -253,3 +253,9 @@ Znacznik jest na miejscu (hook tylko przeformatował listę „5.” zamiast „
 
 Podsumowanie: raport za okres 07:06–11:05 wysłany na iwanekpawel55@gmail.com z tematem „FluxLab strona, 11:05, obraz podglądu z odliczaniem dla e-Doręczeń”, ze zrzutem nowego obrazu OG jako załącznik cid. Trzy zmiany opisane (obraz podglądu e-Doręczeń, FAQ o MPP na /numer-ksef, gotowy komentarz na Gofin), sekcja niepowodzeń, pełny raport ruchu (0 odsłon w dobie, więc bez podziału na przeglądarki) i stan audytów bez zmian od poprzedniego cyklu.
 === 2026-09-26 11:07:10 koniec, kod 0
+=== 2026-09-26 19:11:09 start raportu
+Raport wysłany na iwanekpawel55@gmail.com, temat: „FluxLab strona, 19:15, powód niewidoczności w Bing i nowy obraz podglądu KSeF”, ze zrzutem nowego obrazu OG /numer-ksef jako załącznik cid.
+Objął 3 wpisy dziennika (11:43, 16:15, 18:10) plus dwa commity bez własnego wpisu (9329586, 6261efe z cyklu 13:52): pięć sekcji zmian (diagnoza Bing/ChatGPT, jaśniejszy plakat "Systemy i strony", obraz OG /numer-ksef, kontrola llms.txt w spojnosc.mjs, naprawa liczenia uruchomień KSeF), sekcja niepowodzeń (pięć zadań czeka na Pawła), pełny raport ruchu (0 odsłon w dobie, bez rozbicia na przeglądarki z braku danych) i stan trzech list audytowych.
+Znacznik `<!-- WYSLANO 2026-09-26 19:19 -->` dopisany na końcu dziennika.
+Raport wysłany na iwanekpawel55@gmail.com, temat: „FluxLab strona, 19:15, powód niewidoczności w Bing i nowy obraz podglądu KSeF”. Objął 5 zmian (diagnoza dlaczego Bing/ChatGPT nie znają fluxlab.pl, jaśniejszy plakat kafelka „Systemy i strony”, nowy obraz OG dla /numer-ksef z załączonym zrzutem, kontrola linków llms.txt w spojnosc.mjs, naprawa liczenia uruchomień skanera KSeF), sekcję niepowodzeń z pięcioma zadaniami czekającymi na Twoje ręczne działanie, pełny raport ruchu (nadal 0 odsłon w dobie) oraz stan trzech list audytowych. Dziennik oznaczony znacznikiem `WYSLANO 2026-09-26 19:19`.
+=== 2026-09-26 19:19:23 koniec, kod 0
