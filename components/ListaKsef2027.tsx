@@ -77,7 +77,7 @@ const PUNKTY: Punkt[] = [
   },
 ];
 
-const ADRES = "https://fluxlab.pl/ksef-2027";
+const ADRES = "https://fluxlab.pl/ksef-2027?utm_source=lista-ksef-2027";
 
 type Odp = "tak" | "nie";
 
@@ -113,6 +113,7 @@ export default function ListaKsef2027({
     try {
       await navigator.clipboard.writeText(tekst);
       setSkopiowano(true);
+      zglosZdarzenie("skopiowano_liste_ksef_2027");
     } catch {
       setSkopiowano(false);
     }

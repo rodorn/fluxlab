@@ -182,6 +182,7 @@ export default function KsefCheck() {
     adres.searchParams.set("podatnik", wynik.podatnik.klucz);
     if (sposob) adres.searchParams.set("sposob", sposob.klucz);
     else adres.searchParams.delete("sposob");
+    adres.searchParams.set("utm_source", "link-wyniku-ksef");
     navigator.clipboard
       .writeText(adres.toString())
       .then(() => {
