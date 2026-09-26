@@ -9,7 +9,8 @@ export const metadata: Metadata = {
     "Adres do doręczeń elektronicznych obejmuje kolejne podmioty. Spinamy skrzynkę z systemem, który już macie, żeby pisma nie wymagały osobnego panelu.",
   alternates: { canonical: "/e-doreczenia-integracja" },
   openGraph: {
-    title: "Od kiedy Wasza firma musi mieć adres do e-Doręczeń? Sprawdzenie w jednym kliknięciu",
+    title:
+      "Od kiedy Wasza firma musi mieć adres do e-Doręczeń? Sprawdzenie w jednym kliknięciu",
     description:
       "Wybieracie formę działalności, a wynik pokazuje termin obowiązku, liczbę dni, jakie zostały, i co zrobić, zanim minie. Firmy z CEIDG wpisane przed 2025 mają czas do 1 października 2026. Bez rejestracji.",
     locale: "pl_PL",
@@ -134,6 +135,10 @@ export default function EDoreczeniaIntegracja() {
         {
           q: "Skąd mamy wiedzieć, że umiecie to zrobić?",
           a: "Z kodu, pod adresem github.com/rodorn/edoreczenia-klient. Jest tam komplet metod z projektu technicznego interfejsu, testy i opis trzech pułapek, na których takie wdrożenia się wykładają. Możecie go ocenić sami albo dać do oceny swojemu programiście, zanim cokolwiek zlecicie. To więcej niż referencja, bo referencji nie da się sprawdzić linijka po linijce.",
+        },
+        {
+          q: "Mamy skrzynkę w ePUAP albo w aplikacji mObywatel. Czy to jest to samo, co adres do e-Doręczeń?",
+          a: "Nie, to dwie osobne skrzynki. ePUAP to starsze rozwiązanie z 2008 roku, e-Doręczenia to nowszy system z własnym adresem, prawnie równoważny listowi poleconemu za potwierdzeniem odbioru. Aplikacja mObywatel łączy dostęp do obu, więc z jednego miejsca widać foldery obu skrzynek, ale to nie znaczy, że jedna zastępuje drugą. Konto w ePUAP nie zwalnia z obowiązku założenia adresu do e-Doręczeń, a dla większości urzędów to właśnie e-Doręczenia są dziś domyślnym sposobem korespondencji, nie ePUAP.",
         },
         {
           q: "Czy dane pism wychodzą poza naszą firmę?",
