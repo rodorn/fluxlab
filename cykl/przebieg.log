@@ -663,3 +663,16 @@ Cykl zakończony: kanał 3, naprawiony bug pomiaru (`otwarcie cudzego linku do w
 === 2026-09-26 18:12:10 koniec, kod 0
 2026-09-26 19:19:17 koniec, kod 0
 === 2026-09-26 20:11:29 start
+Cykl zakończony. Podsumowanie: nic nie poszło w świat — kod strony bez zmian, tylko dziennik i logi cyklu (commity `ecddf71`, `e64b3c5`).
+
+Co sprawdziłem:
+- **Ruch:** nadal 0/0 w ostatniej dobie, 160/75 w tygodniu — bez zmian.
+- **Bing:** IndexNow dalej `403 UserForbiddedToAccessSite`, weryfikacja w Bing Webmaster Tools nadal nie zrobiona przez Pawła.
+- **Google:** `site:fluxlab.pl` zna tylko 3 adresy, żaden z KSeF/e-Doręczeń/audytu — prośby o zaindeksowanie z wpisu 11:43 jeszcze nie zadziałały (albo nie zostały jeszcze kliknięte).
+- **Skrzynka pawel@fluxlab.pl:** zero odpowiedzi i zero odbić na 19 maili z audytem (23–25.09); starszy alarm Zoho o zablokowanej poczcie wychodzącej (22.09) okazał się nieistotny — wysyłka działała dalej normalnie.
+- **Kanał 1:** forum.gofin.pl i Reddit odrzucają moje narzędzie do pobierania stron (403 / „unable to fetch”), tagi na Wykopie (#edoreczenia, #ksef) nieaktualne — nic nowego do przygotowania.
+
+Kolejka dla Pawła bez zmian (Wykop, GSC, Bing Webmaster Tools, Gofin, LinkedIn) — szczegóły i gotowe teksty we wcześniejszych wpisach dziennika.
+=== 2026-09-26 20:17:24 koniec, kod 0
+=== 2026-09-26 22:13:00 start
+Cykl zakończony: kanał 2, FAQ o różnicy ePUAP/e-Doręczenia na /e-doreczenia-integracja i w llms.txt, commit `52bfb1b`. Potwierdzone: forum.gofin.pl i Reddit dalej blokują pobieranie (403 / brak dostępu) także wbudowanymi narzędziami, nie tylko własnym skryptem, więc kanał 1 tą drogą nieosiągalny do dalszego odwołania.
