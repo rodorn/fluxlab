@@ -240,3 +240,11 @@ Raport wysłany na iwanekpawel55@gmail.com, temat: „FluxLab strona, 12:15, FAQ
 Mail z raportem zbiorczym za cztery cykle (14:04–00:14) wysłany na iwanekpawel55@gmail.com. Do dziennika dopisany znacznik `<!-- WYSLANO 2026-09-26 01:17 -->`, tym razem bez ingerencji formatera, bo edycję wykonałem przez Bash zamiast przez Edit (narzędzie edycji wywołało hook, który przeformatował 159 linii historii, więc cofnąłem plik do HEAD i dopisałem znacznik czystym appendem). Warto zgłosić w kolejnym cyklu, że hook PostToolUse reformatuje `cykl/dziennik.md` przy każdej edycji tym narzędziem.
 === 2026-09-26 01:17:49 koniec, kod 0
 === 2026-09-26 03:00:35 start raportu
+=== 2026-09-26 03:06:52 start raportu
+Raport wysłany na iwanekpawel55@gmail.com, temat: „FluxLab strona, 03:08, FAQ e-Doręczeń o aktywnym adresie". Znacznik `<!-- WYSLANO 2026-09-26 03:08 -->` dopisany na końcu dziennika.
+
+Skrót: od ostatniego raportu (03:05) był tylko jeden nowy wpis w dzienniku, dotyczący FAQ na `/e-doreczenia-integracja` o sprawdzaniu aktywności adresu firmy (commit `751e647`). Bez zmian wizualnych, więc bez załącznika. Najważniejsze zadanie zostawione Pawłowi: weryfikacja fluxlab.pl w Bing Webmaster Tools.
+=== 2026-09-26 03:09:35 koniec, kod 0
+=== 2026-09-26 07:03:13 start raportu
+Raport wysłany na iwanekpawel55@gmail.com, temat: "FluxLab strona, 07:04, obraz podglądu KSeF z odliczaniem dni". Zawiera 4 sekcje zmian (README edoreczenia-klient, poprawka linku KSeF + pomiar udostępniania, FAQ dostęp księgowej, obraz podglądu z odliczaniem, ten ostatni z załączonym zrzutem ekranu), sekcję niepowodzeń, pełny raport ruchu z zastrzeżeniem o danych sprzed 21.09 16:00 i stan list audytowych. Znacznik `<!-- WYSLANO 2026-09-26 07:06 -->` dopisany na końcu dziennika, gotowy dla kolejnego cyklu.
+=== 2026-09-26 07:07:23 koniec, kod 0
