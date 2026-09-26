@@ -61,6 +61,10 @@ const faq = [
     a: "Od 1 stycznia 2027 tak, przy zapłacie za fakturę wystawioną w KSeF między czynnymi podatnikami VAT. Przy zapłacie za wiele faktur jednego kontrahenta wystarczy identyfikator zbiorczy wygenerowany w KSeF. Obowiązek nie dotyczy płatności kartą, BLIK-iem ani gotówką.",
   },
   {
+    q: "Czy numer KSeF w przelewie MPP obowiązuje już teraz?",
+    a: "Nie. W podzielonej płatności numer KSeF zamiast numeru faktury wpisuje się w komunikacie przelewu MPP przy płatnościach od 1 stycznia 2027, tak samo jak w zwykłym przelewie. W sieci krążą wcześniejsze daty, ale Ministerstwo Finansów na ksef.podatki.gov.pl podaje 1 stycznia 2027. Do końca 2026 w komunikacie MPP wpisuje się numer faktury nadany przez sprzedawcę. Numeru KSeF nie trzeba podawać przy fakturze wystawionej w trybie offline, która z powodu ogłoszonej awarii KSeF nie trafiła jeszcze do systemu.",
+  },
+  {
     q: "Czy poprawny numer oznacza, że faktura istnieje?",
     a: "Nie. Poprawna suma kontrolna mówi tylko, że w numerze nie ma literówki. Istnienie faktury potwierdza KSeF, na przykład w Aplikacji Podatnika KSeF albo w programie do fakturowania.",
   },
