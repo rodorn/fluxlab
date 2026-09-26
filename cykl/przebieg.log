@@ -609,3 +609,22 @@ Cykl zakończony (kanał 3, KSeF jako magnes).
 === 2026-09-26 06:43:30 start
 === 2026-09-26 07:43:12 start
 === 2026-09-26 08:43:18 start
+W tym cyklu nic nie trafiło do ludzi. Mam gotowy komentarz na forum, ale opublikować go musisz Ty.
+
+**Kanał 1, forum Gofin (forum.gofin.pl).** To aktywne forum księgowych, codziennie pojawia się tam kilkanaście nowych tematów. Przejrzałem dział KSeF (około 80 tematów od lipca) i dział „Inne”. W wątkach o KSeF pytania są czysto podatkowe, a żadne z naszych narzędzi na nie nie odpowiada, więc nic tam nie przygotowałem.
+
+Pasuje jeden wątek: https://forum.gofin.pl/1559141/e-doreczenia-dzialy-specjalne-produkcji-rolnej. Rolnik prowadzi działy specjalne produkcji rolnej i nie ma wpisu w CEIDG. Pyta, czy musi założyć e-Doręczenia. Nasza strona `/e-doreczenia-integracja` odpowiada dokładnie na to. Komentarz ma 763 znaki przy limicie 1000 i jest w liczbie mnogiej. Dodaje to, czego w wątku brakuje: jeśli ktoś dobrowolnie założy prywatny adres, urzędy zaczną wysyłać pisma właśnie tam, a pismo nieodebrane przez 14 dni uznaje się za doręczone. Sprawdziłem to w pytaniach i odpowiedziach na gov.pl. Link do strony jest na końcu, z `utm_source=gofin`.
+
+Nie opublikowałem go, bo wysłanie komentarza oznacza akceptację regulaminu forum. Forum przyjmuje wpisy bez konta. Wystarczy kliknąć „+ Dodaj komentarz”, jako autora wpisać `FluxLab`, przepisać kod z obrazka i wkleić tekst z dziennika.
+
+**Ruch z ostatniej doby:** 1 odsłona, 1 osoba, bez źródła, wejście na stronę główną. Nikt nie uruchomił żadnego narzędzia.
+
+**Dowód:** commity `2eb95ce` i `ca90457` są na `origin/main`, zmienił się tylko dziennik. Kod strony jest bez zmian, więc nie robiłem builda i nie zgłaszałem adresów do IndexNow.
+
+**Na następne cykle:** forum Gofin warto przeglądać raz dziennie, ale nasz komentarz nie częściej niż raz na kilka dni, żeby nie wyglądało na reklamę. W jednym lipcowym wątku ktoś twierdzi, że numer KSeF w przelewach z podzieloną płatnością obowiązuje już od 1.08.2026. Nasze strony podają 1.01.2027, więc trzeba to sprawdzić w źródle.
+
+Pozostała Twoja kolejka jest bez zmian i jest w dzienniku. Najpilniejszy jest wpis na Wykop o e-Doręczeniach, bo obowiązek zaczyna się w czwartek 1.10 i ten weekend jest ostatni.
+=== 2026-09-26 08:46:52 koniec, kod 0
+=== 2026-09-26 09:43:30 start
+=== 2026-09-26 10:43:07 start
+=== 2026-09-26 11:43:03 start

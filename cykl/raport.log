@@ -248,3 +248,8 @@ Skrót: od ostatniego raportu (03:05) był tylko jeden nowy wpis w dzienniku, do
 === 2026-09-26 07:03:13 start raportu
 Raport wysłany na iwanekpawel55@gmail.com, temat: "FluxLab strona, 07:04, obraz podglądu KSeF z odliczaniem dni". Zawiera 4 sekcje zmian (README edoreczenia-klient, poprawka linku KSeF + pomiar udostępniania, FAQ dostęp księgowej, obraz podglądu z odliczaniem, ten ostatni z załączonym zrzutem ekranu), sekcję niepowodzeń, pełny raport ruchu z zastrzeżeniem o danych sprzed 21.09 16:00 i stan list audytowych. Znacznik `<!-- WYSLANO 2026-09-26 07:06 -->` dopisany na końcu dziennika, gotowy dla kolejnego cyklu.
 === 2026-09-26 07:07:23 koniec, kod 0
+=== 2026-09-26 11:03:03 start raportu
+Znacznik jest na miejscu (hook tylko przeformatował listę „5.” zamiast „5)” w treści powyżej, sam znacznik WYSLANO został nietknięty). Raport wysłany, dziennik oznaczony.
+
+Podsumowanie: raport za okres 07:06–11:05 wysłany na iwanekpawel55@gmail.com z tematem „FluxLab strona, 11:05, obraz podglądu z odliczaniem dla e-Doręczeń”, ze zrzutem nowego obrazu OG jako załącznik cid. Trzy zmiany opisane (obraz podglądu e-Doręczeń, FAQ o MPP na /numer-ksef, gotowy komentarz na Gofin), sekcja niepowodzeń, pełny raport ruchu (0 odsłon w dobie, więc bez podziału na przeglądarki) i stan audytów bez zmian od poprzedniego cyklu.
+=== 2026-09-26 11:07:10 koniec, kod 0
