@@ -17,14 +17,6 @@ export const metadata: Metadata = {
       "Darmowe sprawdzenie numeru KSeF przed przelewem. Suma kontrolna, NIP sprzedawcy i data przyjęcia faktury, liczone w przeglądarce.",
     locale: "pl_PL",
     type: "website",
-    images: [
-      {
-        url: "/opengraph-image",
-        width: 1200,
-        height: 630,
-        alt: "Fluxlab, sprawdzenie numeru KSeF",
-      },
-    ],
   },
 };
 
