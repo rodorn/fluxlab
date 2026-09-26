@@ -9,19 +9,11 @@ export const metadata: Metadata = {
     "Adres do doręczeń elektronicznych obejmuje kolejne podmioty. Spinamy skrzynkę z systemem, który już macie, żeby pisma nie wymagały osobnego panelu.",
   alternates: { canonical: "/e-doreczenia-integracja" },
   openGraph: {
-    title: "Integracja z e-Doręczeniami dla firm | Fluxlab",
+    title: "Od kiedy Wasza firma musi mieć adres do e-Doręczeń? Sprawdzenie w jednym kliknięciu",
     description:
-      "Pisma wpadają do systemu, który już macie, razem z dowodami doręczenia. Bez osobnego panelu i bez przepisywania.",
+      "Wybieracie formę działalności, a wynik pokazuje termin obowiązku, liczbę dni, jakie zostały, i co zrobić, zanim minie. Firmy z CEIDG wpisane przed 2025 mają czas do 1 października 2026. Bez rejestracji.",
     locale: "pl_PL",
     type: "website",
-    images: [
-      {
-        url: "/opengraph-image",
-        width: 1200,
-        height: 630,
-        alt: "Fluxlab, integracja z e-Doręczeniami",
-      },
-    ],
   },
 };
 
