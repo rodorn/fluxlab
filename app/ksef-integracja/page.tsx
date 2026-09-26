@@ -10,19 +10,11 @@ export const metadata: Metadata = {
     "Faktury w KSeF obowiązują od 1 kwietnia 2026. Spinamy Wasz system z API v2: wysyłka w FA(3), zapis numeru KSeF i UPO, odbiór faktur. Kod otwarty.",
   alternates: { canonical: "/ksef-integracja" },
   openGraph: {
-    title: "Integracja z KSeF dla firm | Fluxlab",
+    title: "Od kiedy KSeF obowiązuje Waszą firmę? Sprawdzenie w dwóch kliknięciach",
     description:
-      "Faktury wychodzą z systemu, w którym już pracujecie, a numer KSeF i UPO zapisują się przy dokumencie. Bez przeklejania przez osobną aplikację.",
+      "Wybieracie rodzaj sprzedaży i sposób wystawiania faktur, a wynik pokazuje termin, liczbę dni do 1 stycznia 2027 i co zrobić przy Waszym programie. Bez rejestracji.",
     locale: "pl_PL",
     type: "website",
-    images: [
-      {
-        url: "/opengraph-image",
-        width: 1200,
-        height: 630,
-        alt: "Fluxlab, integracja z KSeF",
-      },
-    ],
   },
 };
 
