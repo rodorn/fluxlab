@@ -20,9 +20,9 @@ for (const b of blocks) {
   const href = b.match(/href:\s*"([^"]+)"/)?.[1];
   const price = b.match(/price:\s*"([^"]+)"/)?.[1];
   const name = b.match(/name:\s*"([^"]+)"/)?.[1];
-  const bullets = [...(b.match(/bullets:\s*\[([^\]]*)\]/s)?.[1] ?? "").matchAll(/"([^"]*)"/g)].map(
-    (m) => m[1],
-  );
+  const bullets = [
+    ...(b.match(/bullets:\s*\[([^\]]*)\]/s)?.[1] ?? "").matchAll(/"([^"]*)"/g),
+  ].map((m) => m[1]);
   if (href && price && name) catalog.push({ href, price, name, bullets });
 }
 
@@ -31,7 +31,8 @@ for (const b of blocks) {
 const scisnij = (s) => s.replace(/(\d)[\s\u00a0\u202f](?=\d)/g, "$1");
 // Kwoty, czyli liczby stojace przed "zl". Sama liczba nie wystarczy: w
 // bulletach sa tez ilosci ("kilkanascie rekordow") i wersje protokolow.
-const kwoty = (text) => [...scisnij(text).matchAll(/(\d+)\s*zł/g)].map((m) => m[1]);
+const kwoty = (text) =>
+  [...scisnij(text).matchAll(/(\d+)\s*zł/g)].map((m) => m[1]);
 // Zapisy ceny, ktore rozumie `cenaWejscia` z lib/products.ts. Nowy format
 // wpadlby po cichu do zlego przedzialu na filtrze /produkty.
 const ZNANA_CENA =
@@ -55,7 +56,10 @@ for (const c of catalog) {
     }
   }
   if (!ZNANA_CENA.test(c.price)) {
-    add("cena", `${c.href}: cena "${c.price}" jest w formacie, ktorego nie czyta cenaWejscia`);
+    add(
+      "cena",
+      `${c.href}: cena "${c.price}" jest w formacie, ktorego nie czyta cenaWejscia`,
+    );
   }
   // Kazda kwota widoczna w katalogu, tak z pola ceny jak i z bulletow, musi
   // padac na stronie docelowej. Rozjazd 900 kontra 490 zl na panelu zwrotow
@@ -82,7 +86,10 @@ for (const c of catalog) {
 for (const c of catalog) {
   if (/darmo|bezpłatn/i.test(c.price)) continue;
   if (!/\d/.test(scisnij(c.price))) {
-    add("cena", `${c.href}: cena "${c.price}" (${c.name}) nie podaje zadnej kwoty`);
+    add(
+      "cena",
+      `${c.href}: cena "${c.price}" (${c.name}) nie podaje zadnej kwoty`,
+    );
   }
 }
 
@@ -125,7 +132,10 @@ for (const b of blocks) {
 for (const h of kafelki) {
   const sciezka = h.split("#")[0];
   if (!exists(`app${sciezka}/page.tsx`)) {
-    add("narzedzia", `${h}: kafelek na /narzedzia wskazuje na nieistniejaca strone`);
+    add(
+      "narzedzia",
+      `${h}: kafelek na /narzedzia wskazuje na nieistniejaca strone`,
+    );
   }
 }
 // Kazde narzedzie musi dac sie wskazac w wyborze po sytuacji, inaczej
@@ -133,7 +143,10 @@ for (const h of kafelki) {
 const wybor = read("components/WyborNarzedzia.tsx");
 for (const h of kafelki) {
   if (!wybor.includes(`href: "${h}"`)) {
-    add("narzedzia", `${h}: zadna sytuacja w WyborNarzedzia.tsx nie wskazuje tego narzedzia`);
+    add(
+      "narzedzia",
+      `${h}: zadna sytuacja w WyborNarzedzia.tsx nie wskazuje tego narzedzia`,
+    );
   }
 }
 
@@ -143,7 +156,10 @@ for (const h of kafelki) {
 // pozycji zostawilaby przycisk, ktory niczego nie pokazuje.
 const grupyTypu = [
   ...products
-    .slice(products.indexOf("export type ProductGroup"), products.indexOf("export interface Product"))
+    .slice(
+      products.indexOf("export type ProductGroup"),
+      products.indexOf("export interface Product"),
+    )
     .matchAll(/\|\s*"([a-z]+)"/g),
 ].map((m) => m[1]);
 const grupyUzyte = new Set();
@@ -163,14 +179,18 @@ for (const b of blocks) {
 }
 for (const g of grupyTypu) {
   if (!grupyUzyte.has(g)) {
-    add("grupa", `grupa "${g}" nie ma ani jednej pozycji, a ma przycisk w katalogu`);
+    add(
+      "grupa",
+      `grupa "${g}" nie ma ani jednej pozycji, a ma przycisk w katalogu`,
+    );
   }
 }
 // Kolejnosc filarow i grup trzymana w jednym miejscu, zeby katalog i strony
 // filarow nie rozjechaly sie po dodaniu grupy.
 const blokKolejnosci = products.slice(
   products.indexOf("export const GROUP_ORDER"),
-  products.indexOf("export const GROUP_ORDER") + products.slice(products.indexOf("export const GROUP_ORDER")).indexOf("];"),
+  products.indexOf("export const GROUP_ORDER") +
+    products.slice(products.indexOf("export const GROUP_ORDER")).indexOf("];"),
 );
 for (const g of grupyTypu) {
   if (!blokKolejnosci.includes(`"${g}"`)) {
@@ -209,9 +229,14 @@ for (const plik of ["lib/spiecie-danych.ts", "lib/stan-strony.ts"]) {
 // nie sa tu sprawdzane: tam adres filaru wystepuje jako jedna z uslug obok
 // innych i opisowa nazwa jest na miejscu.
 const filaryTresc = exists("lib/filary.ts") ? read("lib/filary.ts") : "";
-const FILARY_HREFY = [...filaryTresc.matchAll(/href:\s*"([^"]+)"/g)].map((m) => m[1]);
+const FILARY_HREFY = [...filaryTresc.matchAll(/href:\s*"([^"]+)"/g)].map(
+  (m) => m[1],
+);
 if (FILARY_HREFY.length !== 3) {
-  add("filar", `lib/filary.ts: oczekiwane 3 filary, jest ${FILARY_HREFY.length}`);
+  add(
+    "filar",
+    `lib/filary.ts: oczekiwane 3 filary, jest ${FILARY_HREFY.length}`,
+  );
 }
 for (const href of FILARY_HREFY) {
   if (!exists(`app${href}/page.tsx`)) {
@@ -253,21 +278,34 @@ for (const plik of POWIERZCHNIE_NAWIGACJI) {
 // kliknietego narzedzia nie padala ani razu. Etykieta NazwaNarzedzia bierze
 // nazwe z lib/narzedzia.ts; ProductLanding wstawia ja sam nad `tool`.
 const wszystkieKafelki = [
-  ...narzedzia.slice(narzedzia.indexOf("export const businessTools"), narzedzia.indexOf("export const LICZBA_NARZEDZI")).matchAll(/href: "([^"]+)"/g),
+  ...narzedzia
+    .slice(
+      narzedzia.indexOf("export const businessTools"),
+      narzedzia.indexOf("export const LICZBA_NARZEDZI"),
+    )
+    .matchAll(/href: "([^"]+)"/g),
 ].map((m) => m[1].split("#")[0]);
 for (const h of [...wszystkieKafelki, ...wspolneOd.keys()]) {
   const plik = `app${h}/page.tsx`;
   if (!exists(plik)) continue;
   const src = read(plik);
-  const przezLanding = src.includes("<ProductLanding") && /\btool=\{/.test(src) && src.includes(`slug="${h.slice(1)}"`);
+  const przezLanding =
+    src.includes("<ProductLanding") &&
+    /\btool=\{/.test(src) &&
+    src.includes(`slug="${h.slice(1)}"`);
   if (!przezLanding && !src.includes(`<NazwaNarzedzia href="${h}"`)) {
-    add("narzedzia", `${plik}: brak etykiety <NazwaNarzedzia href="${h}" />, nazwa z kafelka nie pada na stronie`);
+    add(
+      "narzedzia",
+      `${plik}: brak etykiety <NazwaNarzedzia href="${h}" />, nazwa z kafelka nie pada na stronie`,
+    );
   }
 }
 
 // --- 2. dlugie myslniki w widocznej tresci ---
 const walk = (dir, out = []) => {
-  for (const e of fs.readdirSync(path.join(ROOT, dir), { withFileTypes: true })) {
+  for (const e of fs.readdirSync(path.join(ROOT, dir), {
+    withFileTypes: true,
+  })) {
     const rel = `${dir}/${e.name}`;
     if (e.isDirectory()) {
       if (e.name === "node_modules" || e.name === ".next") continue;
@@ -278,7 +316,10 @@ const walk = (dir, out = []) => {
 };
 const sourceFiles = [...walk("app"), ...walk("components"), ...walk("lib")];
 const stripComments = (s) =>
-  s.replace(/\{\/\*[\s\S]*?\*\/\}/g, "").replace(/\/\/[^\n]*/g, "").replace(/\/\*[\s\S]*?\*\//g, "");
+  s
+    .replace(/\{\/\*[\s\S]*?\*\/\}/g, "")
+    .replace(/\/\/[^\n]*/g, "")
+    .replace(/\/\*[\s\S]*?\*\//g, "");
 for (const f of sourceFiles) {
   const clean = stripComments(read(f));
   if (clean.includes("—")) {
@@ -293,12 +334,15 @@ for (const f of sourceFiles) {
 // ani menu, ani stopki. Wchodzacy z Google na te dwa adresy nie widzial, kto
 // stoi za strona. /cv jest osobnym dokumentem, nie czescia oferty.
 const BEZ_RAMY = new Set(["app/cv/page.tsx"]);
-for (const plik of walk("app").filter((f) => f.endsWith("/page.tsx") && !BEZ_RAMY.has(f))) {
+for (const plik of walk("app").filter(
+  (f) => f.endsWith("/page.tsx") && !BEZ_RAMY.has(f),
+)) {
   const src = read(plik);
   if (src.includes("<ProductLanding")) continue;
   if (!src.includes("<Header")) add("rama", `${plik}: brak <Header />`);
   if (!src.includes("<Footer")) add("rama", `${plik}: brak <Footer />`);
-  if (src.includes("<footer")) add("rama", `${plik}: wlasna stopka zamiast components/Footer.tsx`);
+  if (src.includes("<footer"))
+    add("rama", `${plik}: wlasna stopka zamiast components/Footer.tsx`);
 }
 
 // --- 2b. deklaracje klientow i wynikow, ktorych nie ma ---
@@ -323,7 +367,10 @@ const DEKLARACJE = [
   [/\b(moi|nasi)\s+klienci\b/i, "wlasni klienci"],
   [/\bzaufa(li|lo|ło)\s+(nam|mi)\b/i, "zaufanie klientow"],
   [/\bzadowolon(i|ych)\s+klient/i, "zadowoleni klienci"],
-  [/\b(opinie|referencje)\s+(moich|naszych)\s+klient/i, "opinie i referencje klientow"],
+  [
+    /\b(opinie|referencje)\s+(moich|naszych)\s+klient/i,
+    "opinie i referencje klientow",
+  ],
   [
     /\b(wdrozeni|wdrożeni|wdrozen|wdrożeń|projektow|projektów)\s+dla\s+klient/i,
     "wdrozenia dla klientow",
@@ -337,14 +384,20 @@ const DEKLARACJE = [
     /\b\d+\s*\+\s*(wdrozen|wdrożeń|projektow|projektów|realizacji)\b/i,
     "liczba wdrozen bez pokrycia",
   ],
-  [/\b\d+\s+lat\s+(doswiadczenia|doświadczenia)/i, "lata doswiadczenia bez pokrycia"],
+  [
+    /\b\d+\s+lat\s+(doswiadczenia|doświadczenia)/i,
+    "lata doswiadczenia bez pokrycia",
+  ],
   // Obietnica wyniku z gory, zanim ktokolwiek zobaczyl proces. Stala w CTA
   // czterech stron branzowych.
   [/\bzwr[oó]ci\s+si[eę]\s+w\s+(\d|pierwsz)/i, "obietnica czasu zwrotu"],
   [/\bwraca\s+w\s+\d/i, "obietnica czasu zwrotu"],
   [/\bzwraca\s+si[eę]\s+w\s+(\d|pierwsz)/i, "obietnica czasu zwrotu"],
   [/\bzwrot\s+w\s+\d/i, "obietnica czasu zwrotu"],
-  [/\bodda\s+(zespo[lł]owi|ci|firmie)\s+[\d\wąćęłńóśźż–-]*\s*godzin/i, "obietnica odzyskanych godzin"],
+  [
+    /\bodda\s+(zespo[lł]owi|ci|firmie)\s+[\d\wąćęłńóśźż–-]*\s*godzin/i,
+    "obietnica odzyskanych godzin",
+  ],
 ];
 for (const f of sourceFiles) {
   const clean = stripComments(read(f));
@@ -361,28 +414,42 @@ const TYTUL_MAX = 60;
 const OPIS_MAX = 160;
 // Duplikat tytulu znaczy, ze dwie strony walcza w wyszukiwarce o to samo.
 const znaneTytuly = new Map();
-const pages = sourceFiles.filter((f) => /^app\/.*\/page\.tsx$/.test(f) || f === "app/page.tsx");
+const pages = sourceFiles.filter(
+  (f) => /^app\/.*\/page\.tsx$/.test(f) || f === "app/page.tsx",
+);
 for (const f of pages) {
   const body = read(f);
   if (body.startsWith('"use client"')) continue; // metadata siedzi w layout albo rodzicu
   if (f === "app/page.tsx") continue; // strona glowna dziedziczy metadata z layoutu
   if (f === "app/panel/page.tsx") continue; // chroniony haslem, poza indeksem
   if (/export async function generateMetadata/.test(body)) continue; // trasy dynamiczne
-  if (!/export const metadata/.test(body)) add("metadata", `${f}: brak metadata`);
+  if (!/export const metadata/.test(body))
+    add("metadata", `${f}: brak metadata`);
   else {
-    const tytul = body.slice(body.indexOf("export const metadata")).match(/\btitle:\s*"((?:[^"\\]|\\.)*)"/)?.[1];
-    const opis = body.slice(body.indexOf("export const metadata")).match(/\bdescription:\s*"((?:[^"\\]|\\.)*)"/)?.[1];
+    const tytul = body
+      .slice(body.indexOf("export const metadata"))
+      .match(/\btitle:\s*"((?:[^"\\]|\\.)*)"/)?.[1];
+    const opis = body
+      .slice(body.indexOf("export const metadata"))
+      .match(/\bdescription:\s*"((?:[^"\\]|\\.)*)"/)?.[1];
     if (!tytul) add("metadata", `${f}: brak title`);
     // Wyszukiwarka ucina tytul okolo 60 znakow, a opis okolo 160, zwykle w
     // polowie zdania. Kontrola stoi tutaj, bo raz poprawione dlugosci wracaja
     // przy kazdej nowej stronie pisanej z glowy.
     else if (tytul.length > TYTUL_MAX)
-      add("metadata", `${f}: title ma ${tytul.length} znakow, limit ${TYTUL_MAX}`);
+      add(
+        "metadata",
+        `${f}: title ma ${tytul.length} znakow, limit ${TYTUL_MAX}`,
+      );
     if (!opis) add("metadata", `${f}: brak description`);
     else if (opis.length > OPIS_MAX)
-      add("metadata", `${f}: description ma ${opis.length} znakow, limit ${OPIS_MAX}`);
+      add(
+        "metadata",
+        `${f}: description ma ${opis.length} znakow, limit ${OPIS_MAX}`,
+      );
     if (tytul && !znaneTytuly.has(tytul)) znaneTytuly.set(tytul, f);
-    else if (tytul) add("metadata", `${f}: title powtarza sie z ${znaneTytuly.get(tytul)}`);
+    else if (tytul)
+      add("metadata", `${f}: title powtarza sie z ${znaneTytuly.get(tytul)}`);
     if (!/alternates:\s*\{[\s\S]{0,120}canonical/.test(body))
       add("metadata", `${f}: brak canonical`);
   }
@@ -390,7 +457,12 @@ for (const f of pages) {
 
 // --- 4. strony sieroty: brak linku wewnetrznego ---
 const allSource = sourceFiles.map((f) => read(f)).join("\n");
-const routeOf = (f) => "/" + f.replace(/^app\//, "").replace(/\/page\.tsx$/, "").replace(/^page\.tsx$/, "");
+const routeOf = (f) =>
+  "/" +
+  f
+    .replace(/^app\//, "")
+    .replace(/\/page\.tsx$/, "")
+    .replace(/^page\.tsx$/, "");
 for (const f of pages) {
   const route = routeOf(f);
   if (route === "/" || /\[/.test(route)) continue;
@@ -420,20 +492,38 @@ for (const f of pages) {
 
 // --- 6. kody HTTP na produkcji ---
 if (LIVE) {
-  const urls = [...sitemap.matchAll(/\$\{baseUrl\}(\/[a-z0-9\-/]*)/g)].map((m) => m[1]);
+  const urls = [...sitemap.matchAll(/\$\{baseUrl\}(\/[a-z0-9\-/]*)/g)].map(
+    (m) => m[1],
+  );
   const uniq = [...new Set(urls)];
   const results = await Promise.all(
     uniq.map(async (u) => {
       try {
-        const r = await fetch(`https://www.fluxlab.pl${u}`, { redirect: "follow" });
+        const r = await fetch(`https://www.fluxlab.pl${u}`, {
+          redirect: "follow",
+        });
         return { u, status: r.status };
       } catch {
         return { u, status: 0 };
       }
     }),
   );
-  for (const r of results) if (r.status !== 200) add("http", `${r.u}: kod ${r.status}`);
+  for (const r of results)
+    if (r.status !== 200) add("http", `${r.u}: kod ${r.status}`);
   console.log(`Sprawdzono ${uniq.length} adresow na produkcji.`);
+}
+
+// --- 7. llms.txt linkuje tylko do stron, ktore istnieja ---
+// Ten plik czytaja asystenci AI, nie ludzie klikajacy po menu, wiec zly link
+// nie ujawni sie jako "strona sierota" ani zepsuty przycisk, tylko jako cicha
+// zla odpowiedz udzielona gdzies poza nasza strona.
+const llms = read("public/llms.txt");
+const routySet = new Set(pages.map(routeOf));
+routySet.add("/");
+for (const m of llms.matchAll(/https:\/\/fluxlab\.pl(\/[a-z0-9-/]*)/g)) {
+  const route = m[1].replace(/\/$/, "") || "/";
+  if (!routySet.has(route))
+    add("llms.txt", `${route}: link w llms.txt, takiej strony nie ma`);
 }
 
 // Pierwsza osoba liczby pojedynczej. Fluxlab wystepuje jako firma, wiec
@@ -449,16 +539,63 @@ if (LIVE) {
   // pojedynczej, wiec sprawdzamy je wprost, a rzeczowniki na -am trzymamy na
   // krotkiej liscie wyjatkow.
   const RZECZOWNIKI_AM = new Set([
-    "diagram", "program", "harmonogram", "spam", "team", "reklam", "gram",
-    "telegram", "instagram", "caterham", "sam", "tam", "mam",
+    "diagram",
+    "program",
+    "harmonogram",
+    "spam",
+    "team",
+    "reklam",
+    "gram",
+    "telegram",
+    "instagram",
+    "caterham",
+    "sam",
+    "tam",
+    "mam",
   ]);
   const NIEREGULARNE = new Set([
-    "pomogę", "wskażę", "zobaczę", "podchodzę", "dobiorę", "dostanę", "stracę",
-    "przechodzę", "ważę", "mylę", "zdążę", "poproszę", "usunę", "zważę",
-    "zlecę", "zadaję", "uznaję", "zechcę", "wejdę", "rozbiję", "otworzę",
-    "zestawię", "pobiorę", "wyciągnę", "sprzedaję", "dokończę", "oddzwonię",
-    "znajdę", "wyślę", "odeślę", "pokażę", "zmierzę", "sprawdzę", "piszę",
-    "robię", "liczę", "widzę", "jestem", "zamknę", "moje", "mojego", "moją",
+    "pomogę",
+    "wskażę",
+    "zobaczę",
+    "podchodzę",
+    "dobiorę",
+    "dostanę",
+    "stracę",
+    "przechodzę",
+    "ważę",
+    "mylę",
+    "zdążę",
+    "poproszę",
+    "usunę",
+    "zważę",
+    "zlecę",
+    "zadaję",
+    "uznaję",
+    "zechcę",
+    "wejdę",
+    "rozbiję",
+    "otworzę",
+    "zestawię",
+    "pobiorę",
+    "wyciągnę",
+    "sprzedaję",
+    "dokończę",
+    "oddzwonię",
+    "znajdę",
+    "wyślę",
+    "odeślę",
+    "pokażę",
+    "zmierzę",
+    "sprawdzę",
+    "piszę",
+    "robię",
+    "liczę",
+    "widzę",
+    "jestem",
+    "zamknę",
+    "moje",
+    "mojego",
+    "moją",
     "mój",
   ]);
   const SLOWO = /[a-ząćęłńóśźż]{4,}/gi;
@@ -470,7 +607,11 @@ if (LIVE) {
     if (l.endsWith("am")) return true;
     return false;
   };
-  const POMIN = ["app/cv/", "app/nie-licz-mnie/", "components/WylaczLicznik.tsx"];
+  const POMIN = [
+    "app/cv/",
+    "app/nie-licz-mnie/",
+    "components/WylaczLicznik.tsx",
+  ];
   const CYTAT = /„[^”]*”/g;
   const katalogi = ["app", "components", "lib"];
   const stos = [...katalogi];
@@ -480,16 +621,22 @@ if (LIVE) {
     if (!fs.existsSync(pelna)) continue;
     for (const wpis of fs.readdirSync(pelna, { withFileTypes: true })) {
       const wzgledna = path.join(biezacy, wpis.name);
-      if (wpis.isDirectory()) { stos.push(wzgledna); continue; }
+      if (wpis.isDirectory()) {
+        stos.push(wzgledna);
+        continue;
+      }
       if (!/\.(tsx|ts)$/.test(wpis.name)) continue;
       if (POMIN.some((x) => wzgledna.replace(/\\/g, "/").includes(x))) continue;
       const linie = read(wzgledna).split("\n");
       linie.forEach((l, i) => {
         const t = l.trim();
-        if (t.startsWith("//") || t.startsWith("*") || t.startsWith("/*")) return;
+        if (t.startsWith("//") || t.startsWith("*") || t.startsWith("/*"))
+          return;
         // Identyfikatory zdarzen licznika (audyt_klik_zlecam) nie sa tekstem
         // dla czytelnika, a ich zmiana zerwalaby ciaglosc danych w statystykach.
-        const bezCytatow = l.replace(CYTAT, "").replace(/[a-z]+_[a-z_]+/gi, " ");
+        const bezCytatow = l
+          .replace(CYTAT, "")
+          .replace(/[a-z]+_[a-z_]+/gi, " ");
         const slowa = bezCytatow.match(SLOWO) ?? [];
         const trafione = slowa.find(pierwszaOsoba);
         if (trafione)
