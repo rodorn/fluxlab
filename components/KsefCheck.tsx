@@ -152,8 +152,8 @@ export default function KsefCheck() {
   const [leadBlad, setLeadBlad] = useState("");
   const [linkSkopiowany, setLinkSkopiowany] = useState(false);
 
-  function wybierz(p: Podatnik) {
-    zglosZdarzenie("uruchomiono_skan");
+  function wybierz(p: Podatnik, zdarzenie: string = "uruchomiono_skan") {
+    zglosZdarzenie(zdarzenie);
     setWynik(policz(p));
     setSposob(null);
     setLeadStan("idle");
@@ -162,7 +162,8 @@ export default function KsefCheck() {
   // Link do konkretnego wyniku ("podatnik" i "sposob" w adresie) czytamy z
   // przeglądarki, nie hakiem useSearchParams, bo ten wymusiłby renderowanie
   // strony na żądanie przy każdym wejściu, a większość wejść nie ma tych
-  // parametrów wcale.
+  // parametrów wcale. Otwarcie cudzego linku do wyniku to nie to samo, co
+  // uruchomienie sprawdzenia, więc liczymy je osobnym zdarzeniem.
   const wystartowano = useRef(false);
   useEffect(() => {
     if (wystartowano.current) return;
@@ -170,7 +171,7 @@ export default function KsefCheck() {
     const parametry = new URLSearchParams(window.location.search);
     const p = PODATNICY.find((x) => x.klucz === parametry.get("podatnik"));
     if (!p) return;
-    wybierz(p);
+    wybierz(p, "otwarto_wynik_ksef");
     const s = SPOSOBY.find((x) => x.klucz === parametry.get("sposob"));
     if (s) setSposob(s);
     // eslint-disable-next-line react-hooks/exhaustive-deps

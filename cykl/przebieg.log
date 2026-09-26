@@ -628,3 +628,34 @@ Pozostała Twoja kolejka jest bez zmian i jest w dzienniku. Najpilniejszy jest w
 === 2026-09-26 09:43:30 start
 === 2026-09-26 10:43:07 start
 === 2026-09-26 11:43:03 start
+W tym cyklu nic nie poszło w świat. Za to przyczynę, dla której kanał 2 (asystenci AI) nie ma czym ruszyć, znalazłem i potwierdziłem pomiarem.
+
+**Ruch:** ostatnia doba 0 odsłon, 0 osób, źródeł brak. Tydzień: 160 odsłon, 75 osób.
+
+**Co wyszło:**
+- **Bing nie zna fluxlab.pl.** Na zapytania `site:fluxlab.pl` i `"fluxlab.pl"` zwraca wyłącznie cudze strony. Wyszukiwanie w ChatGPT korzysta z indeksu Binga, więc ChatGPT nie ma dziś skąd podać naszego adresu.
+- **Bing odrzuca nasze zgłoszenia**, bo strona nie jest u niego zweryfikowana. Jego punkt IndexNow odpowiada 403 z prośbą o weryfikację („Please verify the site”).
+- **Po naszej stronie nie ma błędu.** Plik z kluczem odpowiada 200 także dla robota Binga, `robots.txt` wpuszcza wszystkich, mapa witryny ma 111 adresów, `www` przekierowuje na domenę główną, a strona jest oznaczona `index, follow`. Brakuje tylko weryfikacji w Bing Webmaster Tools, a do tego potrzebne jest Twoje konto.
+- **Druga przeszkoda, dotąd nie było jej w Twojej kolejce:** Google ostatni raz czytał mapę witryny 15 kwietnia. Wystarczy zgłosić ją ponownie w Search Console i poprosić o zindeksowanie pięciu stron.
+
+Kod strony się nie zmienił, więc nie było builda ani zgłoszenia do IndexNow. Wpis w `cykl/dziennik.md` jest w commicie `3bf8cef` na `origin/main`.
+
+**Dla Ciebie, w tej kolejności:**
+1. **Wykop o e-Doręczeniach, tylko w ten weekend.** Tekst jest we wpisie z 26.09, 10:43.
+2. **Google Search Console, około 3 minut:** https://search.google.com/search-console
+   - W „Mapach witryn” prześlij `sitemap.xml`.
+   - W polu „Sprawdź dowolny URL” wklejaj po kolei adresy i przy każdym kliknij „Poproś o zindeksowanie”:
+     - `/e-doreczenia-integracja`
+     - `/ksef-integracja`
+     - `/numer-ksef`
+     - `/audyt-strony`
+     - `/narzedzia`
+3. **Bing Webmaster Tools, około 3 minut:** https://www.bing.com/webmasters, kliknij „Import from Google Search Console”, a potem dodaj mapę witryny.
+4. **Komentarz na forum Gofin:** tekst jest we wpisie z 26.09, 08:43.
+5. **Bez terminu:** post na LinkedIn i decyzja o mailu do WeNet.
+
+Czy weryfikacja w Bingu się udała, następny cykl sprawdzi jednym uruchomieniem `node scripts/indexnow.mjs`. Jeśli ogólny punkt IndexNow, przez który zgłoszenia trafiają do Binga, odpowie 200 zamiast 403, weryfikacja przeszła.
+=== 2026-09-26 11:44:52 koniec, kod 0
+=== 2026-09-26 13:52:51 start
+=== 2026-09-26 16:09:20 start
+=== 2026-09-26 18:10:10 start
