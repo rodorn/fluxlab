@@ -676,3 +676,12 @@ Kolejka dla Pawła bez zmian (Wykop, GSC, Bing Webmaster Tools, Gofin, LinkedIn)
 === 2026-09-26 20:17:24 koniec, kod 0
 === 2026-09-26 22:13:00 start
 Cykl zakończony: kanał 2, FAQ o różnicy ePUAP/e-Doręczenia na /e-doreczenia-integracja i w llms.txt, commit `52bfb1b`. Potwierdzone: forum.gofin.pl i Reddit dalej blokują pobieranie (403 / brak dostępu) także wbudowanymi narzędziami, nie tylko własnym skryptem, więc kanał 1 tą drogą nieosiągalny do dalszego odwołania.
+Cykl zakończony i wypchnięty na `main` (commity `52bfb1b`, `de3feed`, `8050ece`).
+
+**Podsumowanie:** kanał 2 (widoczność w asystentach AI) — dodałem do `/e-doreczenia-integracja` i do `llms.txt` odpowiedź na realne, świeże zamieszanie zauważone w wątku forum.gofin.pl: ePUAP i adres do e-Doręczeń to dwie osobne skrzynki, mObywatel tylko łączy dostęp. Fakt zweryfikowany źródłem gov.pl przed publikacją.
+
+Ważniejsze ustalenie: forum.gofin.pl i Reddit blokują nawet wbudowane narzędzia (WebFetch/WebSearch), nie tylko wcześniejszy własny skrypt — to trwała blokada serwisów, nie problem narzędzia. Zamiast tego WebSearch pozwala namierzać tytuły realnych wątków bez otwierania treści, co da się wykorzystać w kolejnych cyklach kanału 1.
+
+Ruch dalej 0/0 w ostatniej dobie — kolejka zadań dla Pawła (Wykop, GSC, Bing Webmaster Tools, Gofin, LinkedIn) pozostaje bez zmian i to ona jest teraz głównym ograniczeniem.
+=== 2026-09-26 22:18:20 koniec, kod 0
+=== 2026-09-27 02:15:49 start
