@@ -526,6 +526,63 @@ for (const m of llms.matchAll(/https:\/\/fluxlab\.pl(\/[a-z0-9-/]*)/g)) {
     add("llms.txt", `${route}: link w llms.txt, takiej strony nie ma`);
 }
 
+// --- 8. Sankcje z art. 106ni: data przesuniecia spojna wszedzie, gdzie pada ---
+// Ten rozjazd juz raz sie zdarzyl (KsefCheck.tsx mial 2027, ListaKsef2027.tsx
+// i llms.txt mialy juz poprawione 2028) i nikt by go nie zauwazyl, bo obie
+// strony wygladaja osobno spojnie, dopiero porownanie ze soba to pokazuje.
+const MIESIACE = {
+  stycznia: "01",
+  lutego: "02",
+  marca: "03",
+  kwietnia: "04",
+  maja: "05",
+  czerwca: "06",
+  lipca: "07",
+  sierpnia: "08",
+  wrzesnia: "09",
+  pazdziernika: "10",
+  listopada: "11",
+  grudnia: "12",
+};
+const znormalizuj = (dzien, miesiac, rok) => {
+  const mm = /^\d+$/.test(miesiac)
+    ? miesiac.padStart(2, "0")
+    : MIESIACE[miesiac.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "")];
+  if (!mm) return null;
+  return `${rok}-${mm}-${dzien.padStart(2, "0")}`;
+};
+const SANKCJE_PLIKI = [
+  "lib/terminy-ksef.ts",
+  "components/KsefCheck.tsx",
+  "components/ListaKsef2027.tsx",
+  "public/llms.txt",
+];
+const sankcjeDaty = new Map();
+for (const plik of SANKCJE_PLIKI) {
+  if (!exists(plik)) continue;
+  const tresc = read(plik);
+  for (const m of tresc.matchAll(
+    /106ni[\s\S]{0,400}?przesun\S*[\s\S]{0,80}?(\d{1,2})[.\s](\d{1,2}|\w+)\.?\s?(\d{4})/g,
+  )) {
+    const data = znormalizuj(m[1], m[2], m[3]);
+    if (!data) continue;
+    const zbior = sankcjeDaty.get(data) ?? new Set();
+    zbior.add(plik);
+    sankcjeDaty.set(data, zbior);
+  }
+}
+if (sankcjeDaty.size > 1) {
+  const opis = [...sankcjeDaty.entries()]
+    .map(([data, pliki]) => `${data} w ${[...pliki].join(", ")}`)
+    .join(" vs ");
+  add("106ni", `data przesuniecia sankcji niespojna: ${opis}`);
+} else if (sankcjeDaty.size === 0) {
+  add(
+    "106ni",
+    "nie znaleziono zadnej daty przesuniecia sankcji przy wzmiance o 106ni",
+  );
+}
+
 // Pierwsza osoba liczby pojedynczej. Fluxlab wystepuje jako firma, wiec
 // "sprawdzam" i "moje" nie moga wrocic do tresci. Kontrola jest tu dlatego,
 // ze przy 150 plikach nikt tego nie wypatrzy okiem, a jeden cykl pisany w
