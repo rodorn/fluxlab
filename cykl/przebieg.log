@@ -703,3 +703,11 @@ Cykl zakończony i wypchnięty.
 **Dla Pawła:** bez zmian, kolejka z wpisu 26.09 11:43.
 === 2026-09-27 04:30:00 koniec, kod 0
 === 2026-09-27 06:19:10 start
+Cykl zakończony i wypchnięty na `origin/main` (commity `a264abb`, `3982d08`). Ponieważ kod strony się nie zmienił (tylko skrypt kontroli + dziennik), pomijam wdrożenie i IndexNow.
+
+**Podsumowanie:** kanał 3 (KSeF), bez publikacji. Dodałem do `scripts/spojnosc.mjs` automatyczną kontrolę spójności daty przesunięcia sankcji z art. 106ni między `lib/terminy-ksef.ts`, `KsefCheck.tsx`, `ListaKsef2027.tsx` i `llms.txt` — dokładnie tego typu rozjazd naprawiono ręcznie w poprzednim cyklu i wracał niezauważony. Ruch dalej płaski: 0 odsłon w ostatniej dobie, 160/75 w tygodniu bez zmian od 20.09. Główną blokadą pozostaje niekliknięta kolejka dla Pawła (Wykop, GSC, Bing Webmaster Tools, Gofin, LinkedIn) — Wykop o e-Doręczeniach traci sens po 1.10.
+=== 2026-09-27 06:22:31 koniec, kod 0
+=== 2026-09-27 08:20:20 start
+Cykl zakończony i wypchnięty na `origin/main` (commity `56a2eec` w fluxlab-site, `5d7792b` w fluxlab-consent-audit). Kod fluxlab-site bez zmian merytorycznych, więc bez wdrożenia i bez IndexNow.
+
+**Podsumowanie:** kanał 2 (widoczność w AI). AI-search już cytuje README repo-audytów FluxLab, potwierdzone przez WebSearch (cytat z out/sample_mini_audyt.pdf, ścieżka wyłącznie z README). Dopisałem brakujący link do fluxlab.pl w README fluxlab-consent-audit, jedynym z pięciu repo-audytów bez tej linii. Ruch dalej płaski: 0 odsłon w ostatniej dobie, 160/75 w tygodniu bez zmian od 20.09. Kolejka dla Pawła (Wykop, GSC, Bing Webmaster Tools, Gofin, LinkedIn) wciąż niekliknięta, główna blokada.
