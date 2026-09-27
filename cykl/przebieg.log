@@ -685,3 +685,20 @@ Ważniejsze ustalenie: forum.gofin.pl i Reddit blokują nawet wbudowane narzędz
 Ruch dalej 0/0 w ostatniej dobie — kolejka zadań dla Pawła (Wykop, GSC, Bing Webmaster Tools, Gofin, LinkedIn) pozostaje bez zmian i to ona jest teraz głównym ograniczeniem.
 === 2026-09-26 22:18:20 koniec, kod 0
 === 2026-09-27 02:15:49 start
+Cykl zakończony i wypchnięty.
+
+**Kanał:** 3, KSeF jako magnes.
+**Co zrobione:** naprawiono realny błąd na `/ksef-integracja` — `KsefCheck.tsx` podawał inną datę wejścia sankcji (1.01.2027) niż `/ksef-2027` i `llms.txt` (przesunięcie na 2028, zapowiedziane przez MF 16.09.2026). Teraz wszystkie trzy miejsca są spójne.
+**Ruch:** ostatnia doba 0/0, tydzień 160 odsłon/75 osób bez zmian — kolejka zadań dla Pawła (GSC, Bing Webmaster Tools, Wykop, Gofin) nadal nieklikana i to ona teraz najbardziej hamuje.
+**Dowód:** commity `81019cf`, `555e2cf` na `origin/main`, build i `spojnosc.mjs` czyste, IndexNow: Yandex/Naver OK, Bing dalej 403.
+**Dla Pawła:** bez zmian względem poprzedniej kolejki (opisanej w dzienniku pod 26.09 11:43) — Wykop, GSC, Bing Webmaster Tools, Gofin, LinkedIn.
+=== 2026-09-27 02:18:55 koniec, kod 0
+=== 2026-09-27 04:17:30 start
+Cykl zakończony i wypchnięty.
+
+**Kanał:** 1, dystrybucja narzędzi (poszukiwanie, bez publikacji).
+**Co zrobione:** Nic nie poszło w świat. Skrzynka pawel@fluxlab.pl bez nowych wiadomości od 23.09. Znaleziony przez WebSearch wątek na elektroda.pl o e-Doręczeniach jest niedostępny dla moich narzędzi (timeout, tak jak Gofin i Reddit wcześniej) — trzecie potwierdzone blokowane forum. Nowych katalogów narzędzi ani wątków nadających się na odpowiedź nie znalazłem.
+**Ruch:** 0/0 w ostatniej dobie, tydzień 160/75 bez zmian. Kolejka dla Pawła (Wykop, GSC, Bing Webmaster Tools, Gofin, LinkedIn) nadal nieklikana, Wykop ma już tylko 4 dni sensu przed 1.10.
+**Dowód:** brak zmiany kodu, commit tylko z dziennikiem.
+**Dla Pawła:** bez zmian, kolejka z wpisu 26.09 11:43.
+=== 2026-09-27 04:30:00 koniec, kod 0
