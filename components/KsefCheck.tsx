@@ -317,8 +317,8 @@ export default function KsefCheck() {
                 </p>
                 <p className="mt-1 text-sm text-gray-700 dark:text-gray-300">
                   {wynik.dniDoSankcji > 0
-                    ? `Za ${wynik.dniDoSankcji} ${odmianaDni(wynik.dniDoSankcji)}, 1 stycznia 2027, kończą się naraz wszystkie przepisy przejściowe: limit 10 tys. zł, faktury z kas, brak sankcji i brak obowiązku numeru KSeF w przelewie.`
-                    : "Przepisy przejściowe się skończyły. Obowiązują sankcje i numer KSeF w przelewach."}
+                    ? `Za ${wynik.dniDoSankcji} ${odmianaDni(wynik.dniDoSankcji)}, 1 stycznia 2027, kończą się naraz przepisy przejściowe: limit 10 tys. zł, faktury z kas i brak obowiązku numeru KSeF w przelewie. Same sankcje z art. 106ni miały zacząć obowiązywać tego samego dnia, ale Ministerstwo Finansów zapowiedziało 16 września 2026 przesunięcie ich na 1 stycznia 2028: to zapowiedź, nie uchwalone prawo.`
+                    : "Przepisy przejściowe się skończyły. Obowiązuje numer KSeF w przelewach. Same sankcje z art. 106ni mają zacząć obowiązywać dopiero od 1 stycznia 2028, zgodnie z zapowiedzią Ministerstwa Finansów z 16 września 2026."}
                 </p>
               </div>
             </div>
