@@ -721,3 +721,27 @@ Ruch bez zmian: 0 odsłon w ostatniej dobie, 160 odsłon/75 osób w tygodniu, p�
 === 2026-09-27 10:24:05 koniec, kod 0
 
 Cykl zakonczony, wypchniety commit w rodorn/fluxlab-ads-wasted-spend (ebb0c1a). Kod fluxlab-site bez zmian merytorycznych, wiec bez wdrozenia i bez IndexNow.
+Cykl zakończony.
+
+**Kanał:** 2 (widoczność w AI). Kod strony fluxlab.pl bez zmian, więc bez builda i bez IndexNow.
+
+**Co zrobiono:** Sprawdzono kolejkę dla Pawła (bez zmian: Bing 403, IMAP 0 nowych odpowiedzi, `site:fluxlab.pl` teraz 4 adresy zamiast 3, dalej brak 5 stron z listy do zindeksowania). Rozwinięto trop z poprzedniego cyklu, sprawdzono wszystkie 27 repo `rodorn/fluxlab-*` (nie tylko 5 sprawdzonych wcześniej) — `fluxlab-ads-wasted-spend` nie miał linku do fluxlab.pl w README, dopisano standardową linijkę i wypchnięto (`ebb0c1a`).
+
+**Ruch:** 0 odsłon/dobę, 160/75 w tygodniu — bez zmian od 20.09.
+
+**Dla Pawła:** bez zmian, kolejka z 26.09 (Wykop do 1.10, GSC, Bing Webmaster Tools, Gofin, LinkedIn) wciąż niekliknięta — to główny hamulec.
+
+Wpis w dzienniku i commit `8272d78` wypchnięte na `origin/main`.
+=== 2026-09-27 10:24:16 koniec, kod 0
+=== 2026-09-27 14:25:14 start
+=== 2026-09-27 14:34:00 koniec, kod 0
+
+**Kanał:** 3 (KSeF jako magnes). Kod strony zmieniony (tekst, bez nowej logiki), build i spojnosc.mjs czyste.
+
+**Co zrobiono:** Sprawdzono kolejkę dla Pawła (bez zmian: IMAP 7 wiadomości, brak odpowiedzi na kampanię). Wątki na Gofin dostępne przez curl (200), ale zarchiwizowane/zalogowane, więc kanał 1 dalej bez treści do przygotowania odpowiedzi. Dodano do magnesu KSeF (ListaKsef2027.tsx, KsefCheck.tsx, llms.txt) fakt z artykułu PIT.pl 24.09.2026: brak automatycznej kary do 2028 nie znaczy brak konsekwencji, bo JPK_V7 ma znaczniki faktur poza KSeF i urząd wzywa do wyjaśnienia.
+
+**Ruch:** Pierwsza niezerowa doba od kilku cykli: 1 odsłona/1 osoba z www.google.com. Tydzień 161/76 (+1 wobec poprzedniego odczytu).
+
+**Dla Pawła:** bez zmian, kolejka z 26.09 (Wykop dziś ostatni dzień sensu, GSC, Bing Webmaster Tools, Gofin, LinkedIn) wciąż niekliknięta.
+
+Commit `61f8bf7` wypchnięty na origin/main, wpis w dzienniku dopisany.
