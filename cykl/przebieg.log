@@ -745,3 +745,17 @@ Wpis w dzienniku i commit `8272d78` wypchnięte na `origin/main`.
 **Dla Pawła:** bez zmian, kolejka z 26.09 (Wykop dziś ostatni dzień sensu, GSC, Bing Webmaster Tools, Gofin, LinkedIn) wciąż niekliknięta.
 
 Commit `61f8bf7` wypchnięty na origin/main, wpis w dzienniku dopisany.
+Zgodne z poprzednimi cyklami: Yandex i Naver przyjęły, Bing dalej 403 (brak weryfikacji w Bing Webmaster Tools — punkt z kolejki dla Pawła).
+
+Cykl zakończony:
+
+**Kanał 3** (KSeF jako magnes). Dodałem do `ListaKsef2027.tsx`, `KsefCheck.tsx` i `llms.txt` fakt z artykułu PIT.pl (24.09.2026): brak automatycznej kary z art. 106ni do 2028 nie znaczy brak konsekwencji — nowy JPK_V7 ma znaczniki faktur poza KSeF, po których urząd wzywa do wyjaśnienia. Commit `61f8bf7` + `1cd14e5`, build i `spojnosc.mjs` czyste, wypchnięte na `origin/main`, IndexNow zgłoszony (Yandex/Naver OK, Bing dalej 403 bez weryfikacji w Bing Webmaster Tools).
+
+**Ruch:** pierwsza niezerowa doba od kilku cykli — 1 odsłona/1 osoba z www.google.com. Tydzień 161/76 (+1).
+
+**Kanał 1:** wątki na Gofinie technicznie dostępne przez `curl` (200), ale zarchiwizowane/schowane za logowaniem — dalej bez treści do przygotowania odpowiedzi automatem.
+
+**Główny hamulec bez zmian:** kolejka dla Pawła (Wykop — dziś ostatni dzień sensu, GSC, Bing Webmaster Tools, Gofin, LinkedIn) wciąż niekliknięta.
+=== 2026-09-27 14:30:24 koniec, kod 0
+=== 2026-09-27 18:13:40 start
+=== 2026-09-27 22:16:10 start
