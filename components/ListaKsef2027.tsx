@@ -71,7 +71,7 @@ const PUNKTY: Punkt[] = [
     pytanie:
       "Czy widzicie, która faktura została odrzucona albo jeszcze nie wysłana?",
     zmiana:
-      "Kary z art. 106ni ustawy o VAT, czyli do 100% kwoty VAT z faktury wystawionej poza KSeF albo do 18,7% kwoty należności przy fakturze bez VAT, miały zacząć obowiązywać 1 stycznia 2027. Ministerstwo Finansów zapowiedziało 16 września 2026, że przesunie je na 1 stycznia 2028, i rozpoczęło prace nad ustawą. To na dziś zapowiedź, a nie uchwalone prawo, więc nie planujcie w oparciu o pewność, że kary nie przyjdą wcześniej. Sam obowiązek wystawiania faktur w KSeF nie jest zawieszony ani o jeden dzień.",
+      "Kary z art. 106ni ustawy o VAT, czyli do 100% kwoty VAT z faktury wystawionej poza KSeF albo do 18,7% kwoty należności przy fakturze bez VAT, miały zacząć obowiązywać 1 stycznia 2027. Ministerstwo Finansów zapowiedziało 16 września 2026, że przesunie je na 1 stycznia 2028, i rozpoczęło prace nad ustawą. To na dziś zapowiedź, a nie uchwalone prawo, więc nie planujcie w oparciu o pewność, że kary nie przyjdą wcześniej. Sam obowiązek wystawiania faktur w KSeF nie jest zawieszony ani o jeden dzień, a brak automatycznej kary to nie brak konsekwencji: urząd widzi w JPK_V7 znaczniki faktur, które nie przeszły przez KSeF, i wzywa do wyjaśnienia, zanim w ogóle dojdzie do kary.",
     zrobic:
       "Program albo integracja muszą pokazywać stan każdej faktury: przyjęta z numerem KSeF, odrzucona albo czekająca na wysłanie po trybie offline. Faktura odrzucona po cichu wygląda w systemie tak samo jak wystawiona.",
   },
@@ -128,11 +128,12 @@ export default function ListaKsef2027({
         Lista na 1 stycznia 2027: co musicie mieć domknięte
       </h2>
       <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-        Tego dnia kończą się naraz wszystkie przepisy przejściowe KSeF.
-        Same kary mają zostać przesunięte na 2028 rok, ale obowiązki z tej
-        listy zaczynają obowiązywać w styczniu 2027 niezależnie od nich.
-        Sześć pytań, przy każdym zaznaczcie, czy macie to załatwione. Na końcu dostaniecie listę tego, co zostało, gotową do
-        wysłania księgowej albo osobie od systemu.
+        Tego dnia kończą się naraz wszystkie przepisy przejściowe KSeF. Same
+        kary mają zostać przesunięte na 2028 rok, ale obowiązki z tej listy
+        zaczynają obowiązywać w styczniu 2027 niezależnie od nich. Sześć pytań,
+        przy każdym zaznaczcie, czy macie to załatwione. Na końcu dostaniecie
+        listę tego, co zostało, gotową do wysłania księgowej albo osobie od
+        systemu.
       </p>
 
       <ol className="mt-6 space-y-4">
@@ -238,7 +239,9 @@ export default function ListaKsef2027({
                     href={formularz}
                     className="font-medium text-accent underline underline-offset-2"
                   >
-                    {formularz.startsWith("#") ? "formularz niżej" : "formularz"}
+                    {formularz.startsWith("#")
+                      ? "formularz niżej"
+                      : "formularz"}
                   </a>
                   , w czym dziś wystawiacie faktury, a odpiszemy, co da się
                   spiąć.
