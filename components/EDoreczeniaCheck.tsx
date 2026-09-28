@@ -109,7 +109,9 @@ function policz(podmiot: Podmiot): Wynik {
       naglowek:
         podmiot.dataOpis.startsWith("dzień")
           ? "Adres do doręczeń elektronicznych powinien istnieć od pierwszego dnia"
-          : `Termin minął ${podmiot.dataOpis}, czyli ${Math.abs(dni)} ${odmianaDni(Math.abs(dni))} temu`,
+          : dni === 0
+            ? `Obowiązek działa od dziś, ${podmiot.dataOpis}`
+            : `Termin minął ${podmiot.dataOpis}, czyli ${Math.abs(dni)} ${odmianaDni(Math.abs(dni))} temu`,
     };
   }
   if (dni <= 120) {
@@ -193,7 +195,7 @@ export default function EDoreczeniaCheck() {
       <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
         Terminy wchodzą etapami i zależą wyłącznie od tego, gdzie i kiedy podmiot
         został zarejestrowany. Naciśnijcie swój przypadek, a policzymy datę z ustawy
-        i dni, które zostały. Nic nie trzeba wpisywać.
+        i dni, które zostały albo minęły. Nic nie trzeba wpisywać.
       </p>
 
       <div className="mt-5 flex flex-wrap gap-2">

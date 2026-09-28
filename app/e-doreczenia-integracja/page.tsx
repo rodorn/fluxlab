@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title:
       "Od kiedy Wasza firma musi mieć adres do e-Doręczeń? Sprawdzenie w jednym kliknięciu",
     description:
-      "Wybieracie formę działalności, a wynik pokazuje termin obowiązku, liczbę dni, jakie zostały, i co zrobić, zanim minie. Firmy z CEIDG wpisane przed 2025 mają czas do 1 października 2026. Bez rejestracji.",
+      "Wybieracie formę działalności, a wynik pokazuje termin obowiązku, ile dni zostało albo minęło i co zrobić dalej. Firmy z CEIDG wpisane przed 2025 mają obowiązek od 1 października 2026. Bez rejestracji.",
     locale: "pl_PL",
     type: "website",
   },
@@ -98,7 +98,7 @@ export default function EDoreczeniaIntegracja() {
         },
         {
           q: "Ile czeka się na aktywację adresu do e-Doręczeń po złożeniu wniosku?",
-          a: "Ustawa nie podaje sztywnego terminu. Wiadomość z potwierdzeniem utworzenia adresu przychodzi mailem dopiero po tym, jak minister właściwy do spraw informatyzacji otrzyma kompletny i poprawny wniosek, a w praktyce zajmuje to od kilku dni do kilku tygodni. Im bliżej terminu obowiązku, tym więcej wniosków trafia do rozpatrzenia naraz, więc czas oczekiwania może się wydłużać. Status swojego wniosku sprawdza się w Koncie Przedsiębiorcy, w sekcji „Moje sprawy”. Kto wpisał się do CEIDG przed 2025 rokiem i ma obowiązek od 1 października 2026, nie powinien czekać z wnioskiem do ostatnich dni.",
+          a: "Ustawa nie podaje sztywnego terminu. Wiadomość z potwierdzeniem utworzenia adresu przychodzi mailem dopiero po tym, jak minister właściwy do spraw informatyzacji otrzyma kompletny i poprawny wniosek, a w praktyce zajmuje to od kilku dni do kilku tygodni. Im bliżej terminu obowiązku, tym więcej wniosków trafia do rozpatrzenia naraz, więc czas oczekiwania może się wydłużać. Status swojego wniosku sprawdza się w Koncie Przedsiębiorcy, w sekcji „Moje sprawy”. Firma wpisana do CEIDG przed 2025 rokiem ma obowiązek od 1 października 2026, więc jeśli wniosku jeszcze nie złożyła, powinna zrobić to od razu, bo czas oczekiwania liczy się od złożenia, nie od terminu.",
         },
         {
           q: "Jak sprawdzić, czy nasza firma ma już aktywny adres do e-Doręczeń?",

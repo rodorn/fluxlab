@@ -6,7 +6,7 @@ const CEIDG = PODMIOTY.find((p) => p.klucz === "ceidg-stare")!;
 export const runtime = "edge";
 
 export const alt =
-  "Sprawdzenie e-Doręczeń w jednym kliknięciu: od kiedy Wasza firma musi mieć adres do doręczeń elektronicznych i ile dni zostało do 1 października 2026";
+  "Sprawdzenie e-Doręczeń w jednym kliknięciu: od kiedy Wasza firma musi mieć adres do doręczeń elektronicznych i ile dni zostało do terminu albo minęło od niego";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -82,7 +82,7 @@ export default async function OGImage() {
         }}
       >
         <div style={{ display: "flex", fontSize: 24, color: "#c7d2fe" }}>
-          Termin i co zrobić, zanim minie
+          {dni > 0 ? "Termin i co zrobić, zanim minie" : "Termin i co zrobić, gdy już minął"}
         </div>
         <div
           style={{
