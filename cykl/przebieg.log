@@ -770,3 +770,12 @@ Cykl zakończony. Podsumowanie:
 **Otwarte na następny cykl:** kanał 4 (outreach) startuje jutro 9:00 z nowym tematem DMARC, wymaga nowej listy firm (nie tej z 23-25.09).
 === 2026-09-27 22:23:13 koniec, kod 0
 === 2026-09-28 02:18:50 start
+Cykl zakończony. Kod strony bez zmian, więc bez `indexnow.mjs` po wdrożeniu.
+
+Podsumowanie: nic nowego nie poszło w świat — kolejka dla Pawła (Wykop, GSC, Bing Webmaster Tools, Gofin) wciąż nieklikana. Sprawdziłem dział KSeF na Gofinie wyczerpująco (90 wątków) — same pytania o programy księgowe, nic do przygotowania. Zweryfikowałem, że treść o terminie e-Doręczeń na stronie i gotowy tekst na Wykop są nadal poprawne, ale termin (1.10) zostawia już tylko 2-3 dni sensu tego wpisu — to teraz najpilniejszy punkt dla Pawła. Ruch: 9 odsłon/4 osoby w ostatniej dobie, pierwszy zauważalnie wyższy odczyt od kilku cykli, głównie na `/strony-www`.
+=== 2026-09-28 02:22:39 koniec, kod 0
+=== 2026-09-28 06:21:40 start
+Cykl zakończony. Kod strony bez zmian, więc bez `indexnow.mjs` po wdrożeniu.
+
+Podsumowanie: nic nowego nie poszło w świat. Kolejka dla Pawła bez ruchu (Wykop, GSC, Bing Webmaster Tools, Gofin, LinkedIn/WeNet). Kanał 3: sprawdziłem nowe fakty o KSeF (FA(3), komunikat MF z 25.09 o utrudnieniach w Aplikacji Podatnika KSeF 2.0 — przejściowe, nie nadaje się do magnesu), potwierdziłem że darmowa Aplikacja Podatnika MF już jest polecana w KsefCheck.tsx dla firm bez systemu. Kanał 2: WebSearch po nowych cytowaniach AI nie zwrócił nic nowego poza znanymi repo GitHub. Ruch: 9 odsłon/4 osoby w ostatniej dobie, bez zmian względem poprzedniego odczytu. Otwarte na następny cykl: kanał 4 (outreach DMARC) startuje dziś od 9:00, w mail-audyt jest gotowa lista 98 kandydatów (kanc_kandydaci.json) do zweryfikowania skanem przed wysyłką.
+=== $(date '+%Y-%m-%d %H:%M:%S') koniec, kod 0

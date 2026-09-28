@@ -267,3 +267,14 @@ Raport wysłany na iwanekpawel55@gmail.com (temat: „FluxLab strona, 11:24, aut
 
 Skrót zawartości: dwie zamknięte zmiany bez kodu strony (kontrola spójności dat KSeF w `spojnosc.mjs`, dopisanie linków do fluxlab.pl w README dwóch ostatnich repozytoriów, komplet 27/27), sekcja niepowodzeń (elektroda.pl jako trzecie zablokowane forum, kolejka pięciu zadań dla Ciebie wciąż czeka), pełny ruch (0 odsłon/dobę, uruchomienia narzędzi na zerze od 26.09 ok. 02:15, bez podziału na przeglądarki bo brak wejść), oraz stan audytu (treść/SEO domknięte, technika 7 pozycji do zrobienia). Bez zrzutu ekranu, brak zmiany wizualnej w tym okresie.
 === 2026-09-27 11:26:35 koniec, kod 0
+=== 2026-09-28 03:34:40 start raportu
+Raport wysłany na iwanekpawel55@gmail.com, temat: „FluxLab strona, 03:36, KSeF: dopisany fakt o JPK_V7 i wezwaniu z US”. Podsumowanie zawartości:
+
+- **2 sekcje zmian**: dopisanie faktu o JPK_V7/wezwaniu US do magnesu KSeF (commit `61f8bf7`) oraz poprawa linków README w dwóch repozytoriach narzędzi pod kątem widoczności w asystentach AI (commity w `fluxlab-ads-wasted-spend` i `fluxlab-import-radar`).
+- **Sekcja niepowodzeń**: brak nowego miejsca dystrybucji w kanale 1, Bing IndexNow dalej 403, kolejka ręcznych zadań dla Pawła (Wykop, GSC, Bing Webmaster Tools, Gofin) wciąż nietknięta, kampania mailowa bez odpowiedzi.
+- **Ruch**: pełne dane z `raport_ruchu.py`, z zastrzeżeniem o danych sprzed 21.09 16:00, wzrost odsłon z 1 do 9 w ostatniej dobie, zero uruchomień narzędzi bez zmian.
+- **Stan audytów**: TECHNICZNY 24/29, SEO 1/7 (4 częściowe), TRESCI 22/23, z rekomendacją co dalej.
+- Bez załącznika, bo w tym okresie nie było zmiany wizualnej.
+
+Do dziennika dopisałem `<!-- WYSLANO 2026-09-28 03:36 -->` jako znacznik dla następnego raportu.
+=== 2026-09-28 03:38:15 koniec, kod 0
