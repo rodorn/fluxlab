@@ -759,3 +759,14 @@ Cykl zakończony:
 === 2026-09-27 14:30:24 koniec, kod 0
 === 2026-09-27 18:13:40 start
 === 2026-09-27 22:16:10 start
+Cykl zakończony. Podsumowanie:
+
+**Kanał 2** (widoczność w asystentach AI) — kod strony bez zmian, więc bez builda/IndexNow z tego repo, ale dwa commity w innych repo (`fluxlab-ads-wasted-spend`, `fluxlab-import-radar`), dodające w README linki do konkretnych podstron narzędzi (`/audyt-google-ads`, `/import-radar`) zamiast tylko do domeny — domykam trop z cyklu 22:13.
+
+**Ruch:** ostatnia doba 3 odsłony/3 osoby (spadek 88% wobec średniej), źródło głównie www.google.com. Tydzień: 157 odsłon/72 osoby.
+
+**Dla Pawła:** kolejka bez zmian (Wykop, GSC, Bing Webmaster Tools, Gofin, LinkedIn/WeNet) — patrz wpis 26.09 11:43 w dzienniku.
+
+**Otwarte na następny cykl:** kanał 4 (outreach) startuje jutro 9:00 z nowym tematem DMARC, wymaga nowej listy firm (nie tej z 23-25.09).
+=== 2026-09-27 22:23:13 koniec, kod 0
+=== 2026-09-28 02:18:50 start
