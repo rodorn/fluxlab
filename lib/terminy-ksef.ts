@@ -4,8 +4,8 @@
 /** Dzien, w ktorym koncza sie wszystkie przepisy przejsciowe naraz: limit
  *  10 tys. zl, faktury z kas rejestrujacych i brak obowiazku numeru KSeF w
  *  przelewach. Sankcje z art. 106ni mialy zaczac obowiazywac tego samego dnia,
- *  ale MF zapowiedzialo 16.09.2026 przesuniecie ich na 1.01.2028 (zapowiedz,
- *  nie uchwalone prawo), patrz ListaKsef2027.tsx. */
+ *  ale MF zapowiedzialo 16.09.2026 przesuniecie ich na 1.01.2028, projekt ustawy na RCL
+ *  od 23.09.2026 (projekt, nie uchwalone prawo), patrz ListaKsef2027.tsx. */
 export const KONIEC_PRZEJSCIOWYCH = "2027-01-01";
 
 export type Podatnik = {

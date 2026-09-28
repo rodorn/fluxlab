@@ -33,7 +33,7 @@ const faq = [
   },
   {
     q: "Czy kary za fakturę poza KSeF zaczną obowiązywać w 2027?",
-    a: "Kary z art. 106ni ustawy o VAT, do 100% kwoty VAT z faktury wystawionej poza KSeF albo do 18,7% kwoty należności przy fakturze bez VAT, miały ruszyć 1 stycznia 2027. 16 września 2026 Ministerstwo Finansów zapowiedziało przesunięcie ich na 1 stycznia 2028 i rozpoczęło prace nad ustawą. To zapowiedź, a nie uchwalone prawo. Sam obowiązek wystawiania faktur w KSeF nie jest zawieszony ani o jeden dzień.",
+    a: "Kary z art. 106ni ustawy o VAT, do 100% kwoty VAT z faktury wystawionej poza KSeF albo do 18,7% kwoty należności przy fakturze bez VAT, miały ruszyć 1 stycznia 2027. 16 września 2026 Ministerstwo Finansów zapowiedziało przesunięcie ich na 1 stycznia 2028, a 23 września 2026 opublikowało projekt tej ustawy na stronie Rządowego Centrum Legislacji. Zmiana ma wejść w życie przed końcem 2026 roku, ale to wciąż projekt, a nie uchwalone prawo. Według projektu w 2027 urząd skarbowy najpierw przypomina firmie o obowiązku, a gdy ta nie zareaguje, sprawdza jej rozliczenia. Sam obowiązek wystawiania faktur w KSeF nie jest zawieszony ani o jeden dzień.",
   },
   {
     q: "Czy numer KSeF trzeba podawać w każdym przelewie?",
