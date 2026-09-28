@@ -779,3 +779,8 @@ Cykl zakończony. Kod strony bez zmian, więc bez `indexnow.mjs` po wdrożeniu.
 
 Podsumowanie: nic nowego nie poszło w świat. Kolejka dla Pawła bez ruchu (Wykop, GSC, Bing Webmaster Tools, Gofin, LinkedIn/WeNet). Kanał 3: sprawdziłem nowe fakty o KSeF (FA(3), komunikat MF z 25.09 o utrudnieniach w Aplikacji Podatnika KSeF 2.0 — przejściowe, nie nadaje się do magnesu), potwierdziłem że darmowa Aplikacja Podatnika MF już jest polecana w KsefCheck.tsx dla firm bez systemu. Kanał 2: WebSearch po nowych cytowaniach AI nie zwrócił nic nowego poza znanymi repo GitHub. Ruch: 9 odsłon/4 osoby w ostatniej dobie, bez zmian względem poprzedniego odczytu. Otwarte na następny cykl: kanał 4 (outreach DMARC) startuje dziś od 9:00, w mail-audyt jest gotowa lista 98 kandydatów (kanc_kandydaci.json) do zweryfikowania skanem przed wysyłką.
 === $(date '+%Y-%m-%d %H:%M:%S') koniec, kod 0
+Cykl zakończony. Kod strony bez zmian, więc bez `indexnow.mjs`. Commit `9733c63` wypchnięty na `origin/main`.
+
+Skrót: kanały 2 i 3 sprawdzone wyczerpująco, bez świeżego tropu (KSeF — Aplikacja Podatnika MF już poleca się w narzędziu, nowy komunikat MF z 25.09 to zdarzenie przejściowe, nie fakt do magnesu; AI-cytowania bez zmian od poprzednich cykli). Ruch: 9 odsłon/4 osoby ostatnia doba, bez zmian względem poprzedniego odczytu. Kolejka dla Pawła (Wykop — pilne, 2-3 dni do terminu; GSC; Bing Webmaster Tools; Gofin; LinkedIn/WeNet) wciąż nietknięta. Następny cykl: kanał 4 od 9:00 z tematem DMARC, w `mail-audyt` czeka gotowa lista 98 kandydatów do weryfikacji skanem przed wysyłką.
+=== 2026-09-28 06:25:34 koniec, kod 0
+=== 2026-09-28 10:25:50 start
