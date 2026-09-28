@@ -412,8 +412,9 @@ function tekstBezSkryptow(html: string): number {
  */
 function metaTresc(html: string, nazwa: string): string | null {
   for (const [znacznik] of html.matchAll(/<meta\b[^>]*>/gi)) {
-    if (!new RegExp(`\\bname=["']${nazwa}["']`, "i").test(znacznik)) continue;
-    return znacznik.match(/\bcontent=["']([^"']*)["']/i)?.[1]?.trim() ?? null;
+    if (!new RegExp(`\\bname=(["']?)${nazwa}\\1(?=[\\s/>])`, "i").test(znacznik)) continue;
+    const m = znacznik.match(/\bcontent=(?:"([^"]*)"|'([^']*)'|([^\s"'>]+))/i);
+    return (m?.[1] ?? m?.[2] ?? m?.[3])?.trim() ?? null;
   }
   return null;
 }
