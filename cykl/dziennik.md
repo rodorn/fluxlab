@@ -899,4 +899,32 @@ udostępnieniem.
 > Tak to jest pomyślane, nie ma w tym nic nieprawidłowego. Uprawnienia w KSeF nadaje się konkretnej osobie, na PESEL albo NIP, i ta osoba potwierdza swoją tożsamość własnym środkiem, a mObywatel to tylko jeden ze sposobów logowania do profilu zaufanego. Kto nie chce używać prywatnego telefonu, ma drugie wejście do Aplikacji Podatnika: podpis kwalifikowany z PESEL, jak Misio w kom. 2, i taki podpis może kupić pracodawca. Do samego pobierania faktur do programu FK nikt nie musi logować się codziennie, jeśli program łączy się z KSeF tokenem albo certyfikatem KSeF. Jedna rzecz, o której się zapomina: uprawnienia nadane na PESEL obowiązują, dopóki ktoś ich nie odbierze, więc gdy pracownik odchodzi, trzeba je wycofać. Zebraliśmy to razem z innymi pytaniami przed 2027 tutaj: https://fluxlab.pl/ksef-2027?utm_source=gofin
 
 2) Reszta kolejki z wpisu 18:01 bez zmian: Useme, sprawdź wiadomości (wejście z 14:35 na `/audyt-strony`). **PILNE, termin 1.10:** Wykop o e-Doręczeniach, tekst we wpisie 26.09 10:43. Google Search Console, mapa i „Poproś o zindeksowanie”, lista we wpisie 26.09 11:43. Bing Webmaster Tools, import z GSC. LinkedIn i decyzja o mailu do WeNet.
+
 **Zostało otwarte:** Jutro od 9:00 kanał 4: wysłać 021 do 025 według planu z wpisu 21:43. Opis w metadanych `/ksef-2027` mówi o „sześciu pytaniach” listy kontrolnej, to dalej prawda, bo nowe pytanie trafiło do FAQ, a nie do listy. Gofin warto przeglądać raz dziennie, jedno zapytanie na listę tematów, najwyżej jeden nasz komentarz na kilka dni. W pytaniach o KSeF po stronie biur (uprawnienia, dostęp księgowej, odbieranie faktur) nasze strony mają teraz odpowiedzi, na które można wskazać.
+
+<!-- WYSLANO 2026-09-28 23:05 -->
+
+## 2026-09-28 23:43
+
+**Kanał:** 1, dystrybucja narzędzi (tekst dla Pawła, bez publikacji).
+**Co zrobione:** Najpilniejsze zadanie w kolejce Pawła, wpis na Wykop o e-Doręczeniach z 26.09 10:43, jest napisany pod termin i w czwartek 1.10 przestaje mieć sens, a ludzie, którzy nie zdążyli, dopiero wtedy zaczną pytać. Przygotowałem drugą wersję, ważną od 1.10, na pytanie „nie zdążyliśmy, co teraz”, zbudowaną wyłącznie z faktów, które stoją już w FAQ `/e-doreczenia-integracja` (sprawdzone w cyklu 19:43). Link prowadzi do narzędzia, które od 1.10 pokazuje stan „Obowiązek działa od dziś” (cykl 20:43). Sprawdziłem tag #edoreczenia na Wykopie: najnowszy wpis ma 2 miesiące, nikt nie pyta o termin, więc wpis musi być nowy, komentarz pod cudzym nic nie da. Nowych miejsc na GitHubie nie ma: poza `ksefuj/awesome-ksef` (nasz PR #2 czeka) nie istnieje żadna lista narzędzi KSeF ani e-Doręczeń, do której dałoby się zgłosić stronę. Przy okazji poprawiłem formatowanie poprzedniego wpisu, bo „Zostało otwarte” wpadło do listy zadań dla Pawła.
+**Ruch:** Ostatnia doba: **7 odsłon, 6 osób** (spadek 70% wobec średniej 23,0). Tydzień: 109 odsłon, 41 osób. 30 dni: 176 odsłon, 85 osób (licznik od 20.09 18:27). Najczęściej otwierane: `/e-doreczenia-integracja` (3), `/kontrola-paliwa` (1), `/` (1), `/audyt-strony` (1), `/automatyzacja-raportowania` (1). Źródła: www.google.com (2), useme.com (2). Jedno uruchomienie narzędzia (skan). Z telefonu 0 z 7.
+**Dowód:** Produkcja, jedno zapytanie: `https://fluxlab.pl/e-doreczenia-integracja?utm_source=wykop` zwraca 200, pytanie „Nie zdążyliśmy z adresem do e-Doręczeń przed 1 października. Co teraz?” jest w HTML. Kod strony bez zmian, więc bez builda i bez IndexNow. Commit tylko z dziennikiem.
+**Dla Pawła:** 1) Wykop o e-Doręczeniach, https://wykop.pl/mikroblog, pole na górze, wklej, „Dodaj”. **Do środy 30.09 wieczorem** wklej wersję z wpisu 26.09 10:43. **Od czwartku 1.10** wklej tę poniżej, najlepiej 1.10 albo 2.10 rano. Publikuj tylko jedną z nich. Uzasadnienie: tag #edoreczenia jest pusty od 2 miesięcy, a 1.10 obowiązek obejmuje wszystkie JDG z CEIDG sprzed 2025, więc to jedyny moment w roku, kiedy ten temat sam niesie zasięg.
+
+> Od 1 października JDG wpisane do CEIDG przed 2025 rokiem muszą mieć adres do e-Doręczeń. Kto nie zdążył, niech się nie przejmuje nagłówkami, tylko zrobi kilka rzeczy:
+>
+> 1. Złóżcie wniosek od razu, przez Biznes.gov.pl, jest bezpłatny. Obowiązek nie wygasa razem z terminem, a ustawa nie przewiduje kary pieniężnej za spóźnienie.
+> 2. Dopóki adresu Waszej firmy nie ma w bazie adresów elektronicznych, urząd doręcza na papierze, usługą hybrydową albo listem poleconym. Pilnujcie zwykłej skrzynki i awiz.
+> 3. Wniosek już jest i ma status „W trakcie weryfikacji”? Nie składajcie drugiego, czekajcie na maila.
+> 4. „Pozytywnie rozpatrzony” to jeszcze nie aktywny adres. Skrzynkę trzeba aktywować, dopiero wtedy adres trafia do bazy.
+> 5. Od aktywacji urzędy piszą na skrzynkę, a pismo nieodebrane przez 14 dni uznaje się za doręczone. Ustawcie powiadomienia na zwykły mail, zanim cokolwiek przyjdzie.
+> 6. Skrzynka firmowa to inna skrzynka niż prywatna w mObywatelu. Księgowej możecie dać własny dostęp w zakładce Użytkownicy, z rolą Obserwator.
+>
+> Zrobiliśmy w Fluxlab darmowe sprawdzenie, czy i od kiedy obowiązek dotyczy Waszej firmy, bez rejestracji i bez podawania danych: https://fluxlab.pl/e-doreczenia-integracja?utm_source=wykop#narzedzie
+>
+> #edoreczenia #ceidg #jdg #dzialalnoscgospodarcza #przedsiebiorczosc #prawo
+
+2) Reszta kolejki bez zmian: Gofin, komentarz w wątku o logowaniu do KSeF (tekst we wpisie 22:43, najlepiej jutro rano). Useme, sprawdź wiadomości (wejście z 28.09 14:35 na `/audyt-strony`). Google Search Console, mapa i „Poproś o zindeksowanie”, lista we wpisie 26.09 11:43. Bing Webmaster Tools, import z GSC. LinkedIn i decyzja o mailu do WeNet.
+
+**Zostało otwarte:** Jutro od 9:00 kanał 4: wysłać 021 do 025 według planu z wpisu 21:43. 1.10 rano sprawdzić na produkcji, czy narzędzie e-Doręczeń pokazuje „Obowiązek działa od dziś”; jeśli tak, wersja wpisu na Wykop z tego cyklu jest aktualna. Ruch z doby spadł do 7 odsłon, jedyne stałe źródła to Google (wejścia na e-Doręczenia) i Useme.

@@ -281,3 +281,11 @@ Do dziennika dopisałem `<!-- WYSLANO 2026-09-28 03:36 -->` jako znacznik dla na
 === 2026-09-28 18:01:11 start raportu
 Raport wysłany do iwanekpawel55@gmail.com, temat "FluxLab strona, 18:03, magnes o przycisku odstąpienia od umowy". Objął dwa wpisy z dziennika (10:25 i 14:34): nową, zgodną z zasadami metodę outreachu w kanale 4 (realne adresy zamiast zgadywania) oraz nowy magnes o dyrektywie 2023/2673 na `/panel-zwrotow` i w `llms.txt`, z załączonym zrzutem ekranu FAQ. Znacznik `<!-- WYSLANO 2026-09-28 18:03 -->` dopisany na końcu `cykl/dziennik.md`.
 === 2026-09-28 18:05:01 koniec, kod 0
+=== 2026-09-28 19:03:00 start raportu
+Znacznik jest teraz poprawnie umieszczony po pełnym wpisie. Nie commituję zmian, bo nie zostałem o to poproszony.
+
+Raport wysłany na iwanekpawel55@gmail.com. Podsumowanie: temat "FluxLab strona, 19:03, poprawka błędu audytu (fałszywy brak mapy strony)", objął dwa wpisy z dziennika (18:01 i 18:43): naprawę fałszywego alarmu "brak mapy strony" w `/audyt-strony` (kancelarie WordPress/Yoast) oraz aktualizację faktów o karach KSeF po publikacji projektu ustawy na RCL. Bez zmiany wizualnej w tym oknie, więc bez załącznika. Dziennik oznaczony `<!-- WYSLANO 2026-09-28 19:03 -->`.
+=== 2026-09-28 19:06:08 koniec, kod 0
+=== 2026-09-28 23:03:00 start raportu
+Mail z raportem wysłany na iwanekpawel55@gmail.com, temat: „FluxLab strona, 22:43, FAQ o logowaniu do KSeF prywatnym telefonem”. Raport objął 4 wpisy z dziennika (19:43–22:43): FAQ o niedotrzymaniu terminu e-Doręczeń, teksty odporne na przekroczenie 1.10 + liczba mnoga w katalogu narzędzi, pięć maili do kancelarii na jutro, oraz FAQ o logowaniu do KSeF prywatnym telefonem z gotowym komentarzem na Gofin. Bez zmiany wizualnej w tym oknie, więc bez zrzutu ekranu. Dziennik oznaczony `<!-- WYSLANO 2026-09-28 23:05 -->`.
+=== 2026-09-28 23:05:25 koniec, kod 0

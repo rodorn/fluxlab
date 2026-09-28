@@ -796,3 +796,29 @@ Po drodze sam nadpisałem `cp`-em dwa stare pliki z archiwum wysłanych maili (`
 === 2026-09-28 10:40:17 koniec, kod 0
 === 2026-09-28 14:28:55 start
 === 2026-09-28 18:01:11 start
+Cykl z 18:01 zakończony, dziennik uzupełniony (commity `07ac4ff` i poprawka hasha w dzienniku, wypchnięte na `origin/main`). W tym cyklu nie wysłałem żadnego maila ani wpisu.
+
+**Ruch z ostatniej doby:** 14 odsłon, 8 osób, najwięcej od kilku dni. Źródła to Google (3) i **useme.com (2)**. Sprawdziłem w bazie, kiedy przyszły wejścia z Useme: dziś o 14:35 ktoś wszedł na stronę główną, a minutę później na `/audyt-strony`. To wygląda na osobę, która kliknęła link z Twojej oferty albo profilu na Useme.
+
+**Co zrobione (kanał 4):**
+- **Naprawiony błąd w audycie strony.** Zanim wysłałem mail, sprawdziłem raport ręcznie. Wyszło, że `/audyt-strony` pisał stronom na WordPressie z wtyczką Yoast „Nie ma mapy strony”, chociaż mapa istnieje. Narzędzie sprawdzało tylko `/sitemap.xml` na adresie bez www i nie czytało adresu mapy z robots.txt. Poprawiłem to w `lib/audyt-pomiar.ts:747`. Na produkcji raport dla adwokat-laskowska.pl nie ma już tego ostrzeżenia. Taki błąd w mailu do obcej firmy podważyłby cały raport.
+- **Dwa maile gotowe na jutro po 9:00** (wieczorem kanał 4 nie wysyła):
+  - `kancelaria@wwbkarne.pl`, adres ze strony sprawakarna.com/kontakt,
+  - `kancelaria@adwokat-laskowska.pl`, z usuniętym zdaniem o braku mapy.
+- **Jedną kancelarię pominąłem.** kancelariaadwokacka-praga.pl podaje tylko prywatną skrzynkę na o2.pl, a zasady zabraniają pisać do osób prywatnych.
+
+**Kanał 1:** jedyny trafny wątek o przycisku odstąpienia od umowy jest na forum PrestaShop, które blokuje pobieranie (403), więc nie wiem, z kiedy jest i co w nim jest. Nic więcej nie znalazłem.
+
+Build i `node scripts/spojnosc.mjs` przeszły bez błędów. IndexNow przyjął 111 adresów w Yandex i Naver, Bing nadal odrzuca.
+
+**Do kliknięcia przez Ciebie:**
+1. Sprawdź wiadomości na Useme. Dzisiejsze wejście z 14:35 to najbardziej obiecujący ślad w raporcie.
+2. Wpis na Wykopie o e-Doręczeniach, tekst jest we wpisie z 26.09 10:43. Termin to 1.10, więc zostały 3 dni.
+3. Pozostałe zadania z kolejki bez zmian: Google Search Console, Bing Webmaster Tools, Gofin, LinkedIn.
+=== 2026-09-28 18:11:44 koniec, kod 0
+=== 2026-09-28 18:43:30 start
+=== 2026-09-28 19:43:13 start
+=== 2026-09-28 20:43:13 start
+=== 2026-09-28 21:43:23 start
+=== 2026-09-28 22:43:05 start
+=== 2026-09-28 23:43:12 start
