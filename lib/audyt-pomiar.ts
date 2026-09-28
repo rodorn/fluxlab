@@ -723,7 +723,7 @@ export async function zmierz(domenaWejscie: string): Promise<Pomiar> {
     bezLazy: tagiObrazow.filter((t) => !/loading=["']lazy["']/i.test(t)).length,
   };
 
-  const [robotsTxt, llmsTxt, mapa, wersjaWww, poHttp] = await Promise.all([
+  const [robotsTxt, llmsTxt, mapaDomyslna, wersjaWww, poHttp] = await Promise.all([
     pobierz(`${baza}/robots.txt`),
     pobierz(`${baza}/llms.txt`),
     pobierz(`${baza}/sitemap.xml`),
@@ -744,6 +744,15 @@ export async function zmierz(domenaWejscie: string): Promise<Pomiar> {
     };
   }
   wynik.llms = Boolean(llmsTxt?.odp.ok);
+  // Mapa nie musi leżeć pod /sitemap.xml (Yoast trzyma ją w sitemap_index.xml,
+  // często na innym hoście z www), więc sprawdzamy też adres z robots.txt.
+  const mapaZRobots = robotsTxt?.odp.ok
+    ? robotsTxt.tekst.match(/^\s*sitemap:\s*(https?:\/\/\S+)/im)?.[1]
+    : undefined;
+  const mapa =
+    !mapaDomyslna?.odp.ok && mapaZRobots
+      ? await pobierz(mapaZRobots)
+      : mapaDomyslna;
   if (mapa && mapa.odp.ok) {
     wynik.sitemap = {
       jest: true,
