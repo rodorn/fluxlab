@@ -784,3 +784,14 @@ Cykl zakończony. Kod strony bez zmian, więc bez `indexnow.mjs`. Commit `9733c6
 Skrót: kanały 2 i 3 sprawdzone wyczerpująco, bez świeżego tropu (KSeF — Aplikacja Podatnika MF już poleca się w narzędziu, nowy komunikat MF z 25.09 to zdarzenie przejściowe, nie fakt do magnesu; AI-cytowania bez zmian od poprzednich cykli). Ruch: 9 odsłon/4 osoby ostatnia doba, bez zmian względem poprzedniego odczytu. Kolejka dla Pawła (Wykop — pilne, 2-3 dni do terminu; GSC; Bing Webmaster Tools; Gofin; LinkedIn/WeNet) wciąż nietknięta. Następny cykl: kanał 4 od 9:00 z tematem DMARC, w `mail-audyt` czeka gotowa lista 98 kandydatów do weryfikacji skanem przed wysyłką.
 === 2026-09-28 06:25:34 koniec, kod 0
 === 2026-09-28 10:25:50 start
+Cykl zakończony, commit `bf64320` wypchnięty.
+
+**Kanał 4 (outreach)** — pierwszy raz od "zmiany celu" zrealizowany zgodnie z aktualnymi zasadami twardymi, nie ze starym szablonem. Po drodze ustaliłem, że stara kampania (`mail-audyt/kanc_kandydaci.json`, 18/98 wysłanych 7.09) pisała w liczbie pojedynczej i bez zdania o wypisaniu się, więc jej nie wznowiłem. Zamiast tego uruchomiłem realny `/api/audyt-www` (silnik `/audyt-strony`) na 8 kandydatach, znalazłem prawdziwe opublikowane adresy (guessowane z JSON-a w większości nie istnieją, port 25 do świeżej weryfikacji jest tu zablokowany) i wysłałem 2 maile zgodne ze wszystkimi zasadami: `sekretariat@kancelariawielinska.pl` i `jaroslaw@blaszkiewicz.eu`, każdy z konkretnym, zmierzonym problemem ich strony.
+
+Po drodze sam nadpisałem `cp`-em dwa stare pliki z archiwum wysłanych maili (`001.txt`, `002.txt`) — `001.txt` odtworzyłem wiernie z treści widocznej wcześniej w sesji, `002.txt` nie dało się odtworzyć uczciwie, więc zostawiłem tam jawną notatkę o utracie zamiast zgadywać. Sam fakt wysyłki z 7.09 jest nienaruszony w rejestrze.
+
+**Ruch:** 10 odsłon/5 osób ostatnia doba — pierwszy zauważalnie wyższy odczyt od kilku cykli, ale wciąż zero uruchomień narzędzi.
+
+**Dla Pawła:** bez nowych zadań, kolejka bez zmian (Wykop — ostatni dzień sensu przed 1.10, GSC, Bing Webmaster Tools, Gofin, LinkedIn/WeNet), szczegóły w dzienniku pod wpisem 26.09 11:43.
+=== 2026-09-28 10:40:17 koniec, kod 0
+=== 2026-09-28 14:28:55 start
