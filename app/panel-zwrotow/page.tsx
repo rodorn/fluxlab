@@ -102,6 +102,10 @@ export default function Page() {
           a: "Nie. Sprawdzamy, czy informacja jest podana i łatwa do znalezienia. Ocena samej treści regulaminu należy do prawnika i tak też to opisujemy w raporcie.",
         },
         {
+          q: "Czy to sprawdzenie mówi, czy mamy już obowiązkowy przycisk odstąpienia od umowy?",
+          a: "Dyrektywa UE 2023/2673 wymaga od sprzedawców internetowych widocznej, w pełni cyfrowej ścieżki odstąpienia od umowy, przepisy zaczęły się stosować 19 czerwca 2026. Polska ustawa wdrażająca (projekt UC82) wciąż nie jest uchwalona, ale obowiązek unijny obowiązuje niezależnie od tego. Sprawdzamy właśnie ten punkt, zgłoszenie zwrotu online, obok pozostałych informacji wymaganych przy odstąpieniu. To sprawdzenie techniczne, nie opinia prawna o zgodności z dyrektywą.",
+        },
+        {
           q: "Co z danymi kupujących?",
           a: "Do audytu wystarczą dane o zamówieniach i produktach. Jeśli w eksporcie są dane osobowe, usuwamy je przy wczytywaniu, a pliki kasujemy po dostarczeniu raportu. Przy wdrożeniu podpisujemy umowę powierzenia.",
         },

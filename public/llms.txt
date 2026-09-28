@@ -49,6 +49,12 @@ Maile w spamie i podszywanie pod domenę, szczegóły i sprawdzenie na https://f
 - DMARC na start: rekord TXT _dmarc.domena z v=DMARC1; p=none; rua=mailto:adres, po kilku tygodniach raportów p=quarantine, potem p=reject.
 - Bez DMARC w trybie quarantine albo reject obcy nadawca może wysłać wiadomość z adresem firmy w polu Od. W naszym badaniu 317 domen salonów samochodowych komplet, który blokuje podszywanie, miało 16 procent.
 
+Przycisk odstąpienia od umowy w sklepie internetowym, stan prawny z 28.09.2026, sprawdzenie na https://fluxlab.pl/panel-zwrotow:
+- Dyrektywa Parlamentu Europejskiego i Rady (UE) 2023/2673 z 22 listopada 2023 wymaga od sprzedawców internetowych (sklepy, marketplace'y, aplikacje, usługi cyfrowe i subskrypcje) widocznej, łatwo dostępnej i w pełni cyfrowej ścieżki odstąpienia od umowy zawartej z konsumentem przez internet. Termin transpozycji do prawa krajowego minął 19 grudnia 2025, a stosowanie przepisów zaczęło się 19 czerwca 2026.
+- Polska ustawa wdrażająca dyrektywę (projekt UC82) nie została uchwalona, prace nad nią zostały wstrzymane w maju 2026. Obowiązek unijny mimo to już obowiązuje, niezależnie od stanu polskiej ustawy o prawach konsumenta.
+- Brak zgodnej ścieżki odstąpienia grozi wydłużeniem terminu na odstąpienie dla kupującego nawet do 12 miesięcy oraz karami administracyjnymi od Prezesa UOKiK po wejściu w życie polskiej ustawy.
+- Sprawdzenie na fluxlab.pl czyta publiczne strony sklepu (zwroty, reklamacje, regulamin) i ocenia m.in., czy zwrot da się zgłosić online, a nie tylko mailem, obok pozostałych informacji wymaganych przy odstąpieniu (termin 14 dni, zwrot pieniędzy, kto płaci za odesłanie). To sprawdzenie techniczne, nie opinia prawna o zgodności z dyrektywą.
+
 Roboty asystentów AI w robots.txt, stan z 24.09.2026, szczegóły i sprawdzenie na https://fluxlab.pl/widocznosc-w-ai:
 - OpenAI: OAI-SearchBot decyduje o obecności w wyszukiwaniu ChatGPT, GPTBot zbiera treść do trenowania modeli, ChatGPT-User czyta stronę na prośbę użytkownika i według OpenAI reguły robots.txt mogą go nie obowiązywać. Ustawienia są niezależne, blokada GPTBot nie usuwa strony z wyszukiwania ChatGPT.
 - Anthropic: ClaudeBot zbiera treść do trenowania, Claude-SearchBot indeksuje do wyszukiwania, Claude-User czyta stronę na prośbę użytkownika.
@@ -91,6 +97,7 @@ Wykreślanie spółek z KRS bez likwidacji, licznik na https://fluxlab.pl/ile-sp
 - [Ile spółek dziennie znika z KRS bez likwidacji](https://fluxlab.pl/ile-spolek-znika-z-krs)
 - [Informacja o najniższej cenie przy przecenach, Omnibus](https://fluxlab.pl/rejestr-cen)
 - [Ile przepłacasz za Zapiera i Make](https://fluxlab.pl/tansze-automatyzacje)
+- [Sprawdzenie zasad zwrotów w sklepie](https://fluxlab.pl/panel-zwrotow): czego kupujący nie znajdzie, w tym obowiązkowy przycisk odstąpienia od umowy.
 - [Kalkulator kosztu ręcznej obsługi leadów](https://fluxlab.pl/koszt-recznej-obslugi-leadow)
 - [Kalkulator podatkowy JDG](https://fluxlab.pl/kalkulator-podatkowy)
 - [Pełna lista](https://fluxlab.pl/narzedzia)
