@@ -136,7 +136,7 @@ export const businessTools: Narzedzie[] = [
     ikona: "rozwidlenie",
   },
   {
-    title: "Kto jest właścicielem Twojej domeny",
+    title: "Kto jest właścicielem Waszej domeny",
     description:
       "Wpiszcie domenę, a odczytamy z publicznego rejestru, kto figuruje jako abonent i kiedy wygasa rejestracja. Bywa, że właścicielem adresu firmy jest ten, kto kiedyś robił stronę.",
     href: "/wlasnosc-domeny",

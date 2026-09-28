@@ -279,7 +279,7 @@ export default function Page() {
             {[
               ["/dane-sprzedawcy", "Czy klient ustali, komu płaci"],
               ["/mapa-strony", "Czy wyszukiwarka ma listę Twoich podstron"],
-              ["/wlasnosc-domeny", "Kto jest właścicielem Twojej domeny"],
+              ["/wlasnosc-domeny", "Kto jest właścicielem Waszej domeny"],
               ["/podwojny-adres", "Czy Google widzi Twoją stronę podwójnie"],
             ].map(([href, tytul]) => (
               <li key={href}>
