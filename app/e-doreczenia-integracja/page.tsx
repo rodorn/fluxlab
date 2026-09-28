@@ -121,6 +121,10 @@ export default function EDoreczeniaIntegracja() {
           a: "Założenie adresu i odbieranie pism są bezpłatne, wniosek składa się przez Biznes.gov.pl albo mObywatel.gov.pl. Ustawa nie przewiduje osobnej kary pieniężnej za brak adresu. Urząd, który nie znajdzie Waszego adresu, może wysłać pismo publiczną usługą hybrydową albo listem poleconym. Prawdziwe ryzyko jest gdzie indziej: pismo w skrzynce, do której nikt nie zagląda, po 14 dniach uznaje się za doręczone.",
         },
         {
+          q: "Nie zdążyliśmy z adresem do e-Doręczeń przed 1 października. Co teraz?",
+          a: "Złóżcie wniosek od razu, obowiązek nie wygasa razem z terminem, a ustawa nie przewiduje kary pieniężnej za spóźnienie. Dopóki adresu Waszej firmy nie ma w bazie adresów elektronicznych, urząd doręcza pisma na papierze, publiczną usługą hybrydową albo listem poleconym, więc pilnujcie zwykłej skrzynki pocztowej i awiz. Jeśli wniosek już złożyliście i ma status „W trakcie weryfikacji”, nie składajcie drugiego, tylko czekajcie na maila. Gdy przyjdzie, administrator musi jeszcze aktywować skrzynkę, bo dopiero wtedy adres trafia do bazy. Od tej chwili urzędy piszą na skrzynkę, a pismo nieodebrane w ciągu 14 dni uznaje się za doręczone, dlatego przed aktywacją ustawcie powiadomienia na zwykły adres e-mail.",
+        },
+        {
           q: "Czy adres firmy i prywatny adres do e-Doręczeń to ta sama skrzynka?",
           a: "Nie. Dla osoby prywatnej, dla firmy i dla zawodu zaufania publicznego zakłada się osobne adresy, nawet jeśli wszystkie należą do jednej osoby prowadzącej jednoosobową działalność. Pisma do firmy można odbierać na mObywatel.gov.pl, na edoreczenia.gov.pl, w aplikacji mObywatel, na Koncie Przedsiębiorcy albo w systemie obiegu dokumentów, który jest zintegrowany z usługą.",
         },

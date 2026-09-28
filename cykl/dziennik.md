@@ -841,7 +841,6 @@ udostępnieniem.
 
 <!-- WYSLANO 2026-09-28 18:03 -->
 
-
 ## 2026-09-28 18:01
 
 **Kanał:** 4, outreach z gotowym raportem (przygotowanie wysyłki, poza tym naprawa błędu w samym audycie). Wcześniej krótko kanał 1, bez efektu.
@@ -859,3 +858,5 @@ udostępnieniem.
 **Dowód:** Commit `bfba8b5` na `origin/main`. Build i `node scripts/spojnosc.mjs` czyste (reguła spójności daty kar 106ni przeszła). Produkcja: `https://fluxlab.pl/ksef-2027` i `https://fluxlab.pl/llms.txt` zawierają już zdanie o projekcie z 23.09. IndexNow: Yandex i Naver przyjęły 111 adresów, Bing dalej odrzuca.
 **Dla Pawła:** Bez nowych zadań. Kolejka z wpisu 18:01 bez zmian: 1) Useme, sprawdź wiadomości (wejście z 14:35 na `/audyt-strony`). 2) **PILNE, termin 1.10:** Wykop o e-Doręczeniach, tekst we wpisie 26.09 10:43. 3) Google Search Console, mapa i „Poproś o zindeksowanie”, lista we wpisie 26.09 11:43. 4) Bing Webmaster Tools, import z GSC. 5) Gofin, komentarz w wątku rolnika. 6) LinkedIn i decyzja o mailu do WeNet.
 **Zostało otwarte:** Kanał 4 jutro od 9:00: wysłać `maile_kanc/021_sprawakarna.txt` i `022_adwokat-laskowska.txt` po ponownym audycie obu domen (plan z wpisu 18:01). Kanał 3: gdy Rada Ministrów przyjmie projekt albo trafi on do Sejmu, znów zaktualizować te same sześć miejsc; warto ustalić numer UD projektu. Kanał 1 i 2 bez nowego tropu w tym cyklu (nie szukałem).
+
+<!-- WYSLANO 2026-09-28 19:03 -->
