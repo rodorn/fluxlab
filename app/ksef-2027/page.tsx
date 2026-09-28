@@ -44,6 +44,10 @@ const faq = [
     a: "Nie. Ministerstwo Finansów zrezygnowało z wygaszenia tokenów. Do wystawiania faktur w trybie offline potrzebny jest jednak certyfikat KSeF typu 2, bo bez niego nie da się wygenerować drugiego kodu QR na fakturze przekazanej klientowi poza systemem. Certyfikat generuje się w Aplikacji Podatnika KSeF i jest ważny 2 lata.",
   },
   {
+    q: "Czy pracownik musi logować się do KSeF swoim prywatnym mObywatelem?",
+    a: "Nie musi, choć tak jest najprościej. Uprawnienia w KSeF nadaje się konkretnej osobie, na jej PESEL albo NIP, i ta osoba potwierdza swoją tożsamość własnym środkiem. W Aplikacji Podatnika KSeF są dwa wejścia: profil zaufany, do którego wiele osób loguje się aplikacją mObywatel, oraz certyfikat kwalifikowany. Kto nie chce używać prywatnego telefonu, może logować się podpisem kwalifikowanym z numerem PESEL, kupionym przez firmę. Codzienne pobieranie faktur nie wymaga logowania żadnego pracownika, jeżeli program księgowy łączy się z KSeF tokenem albo certyfikatem KSeF. Uprawnienia nadane na PESEL zostają, dopóki ktoś ich nie odbierze, więc przy odejściu pracownika trzeba je wycofać.",
+  },
+  {
     q: "Od kiedy faktura kosztowa z KSeF jest uznana za otrzymaną?",
     a: "Od dnia nadania jej numeru w KSeF. Dostawca nie musi wysyłać jej mailem, więc termin płatności biegnie także wtedy, gdy nikt nie pobrał faktury z systemu.",
   },
