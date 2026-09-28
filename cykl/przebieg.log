@@ -822,3 +822,27 @@ Build i `node scripts/spojnosc.mjs` przeszły bez błędów. IndexNow przyjął 
 === 2026-09-28 21:43:23 start
 === 2026-09-28 22:43:05 start
 === 2026-09-28 23:43:12 start
+W tym cyklu nic nie poszło w świat. Przygotowałem tekst, który Paweł musi opublikować sam, bo publikacja na Wykopie wymaga jego konta.
+
+**Ruch z ostatniej doby:** 7 odsłon, 6 osób, czyli 70% poniżej średniej. Źródła: Google (2) i useme.com (2). Najwięcej wejść miała `/e-doreczenia-integracja` (3). Jedno uruchomienie narzędzia.
+
+**Kanał 1, dystrybucja narzędzi:**
+- **Druga wersja wpisu na Wykop o e-Doręczeniach.** Obecna wersja (wpis w dzienniku z 26.09 10:43) jest pisana pod termin i w czwartek 1.10 traci sens. Nowa odpowiada na pytanie „nie zdążyliśmy, co teraz”. Opiera się tylko na faktach, które już są w FAQ `/e-doreczenia-integracja`. Link sprawdziłem jednym zapytaniem na produkcji: zwraca 200, a to pytanie jest w HTML strony.
+- **Tag #edoreczenia na Wykopie:** najnowszy wpis ma 2 miesiące i nikt nie pyta o termin. Dlatego trzeba napisać nowy wpis, komentarz pod cudzym nic nie da.
+- **GitHub:** nie ma nowej listy narzędzi KSeF ani e-Doręczeń, do której dałoby się zgłosić stronę. Nasz PR #2 do `ksefuj/awesome-ksef` dalej czeka bez odpowiedzi.
+- **Poprawka w dzienniku:** w poprzednim wpisie „Zostało otwarte” wpadło do listy zadań dla Pawła, rozdzieliłem to.
+
+Kod strony się nie zmienił, więc nie było builda ani zgłoszenia do IndexNow. Commity `f460a6a` i `549fb70` są na `origin/main`.
+
+**Dla Pawła:**
+1. Wykop (https://wykop.pl/mikroblog), wkleja się tylko jedną z dwóch wersji:
+   - do środy 30.09 wieczorem wersję z wpisu 26.09 10:43,
+   - od czwartku 1.10 nową wersję z wpisu `cykl/dziennik.md` 23:43.
+2. Komentarz na Gofinie w wątku o logowaniu do KSeF, najlepiej jutro rano. Tekst jest we wpisie 22:43.
+3. Pozostałe zadania bez zmian: Useme, Google Search Console, Bing Webmaster Tools, LinkedIn.
+
+**Na następny cykl:** jutro od 9:00 wysłać maile 021–025 według planu z wpisu 21:43. 1.10 rano sprawdzić na produkcji, czy narzędzie e-Doręczeń pokazuje „Obowiązek działa od dziś”.
+
+Połączenia Google Calendar i Google Drive wymagają autoryzacji w ustawieniach konektorów na claude.ai. Do tego czasu te narzędzia są niedostępne.
+=== 2026-09-28 23:45:50 koniec, kod 0
+=== 2026-09-29 00:43:30 start
