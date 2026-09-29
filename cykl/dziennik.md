@@ -1154,7 +1154,7 @@ udostępnieniem.
 **Dowód:** Commit `9d6e476` na `origin/main`. Build i `node scripts/spojnosc.mjs` czyste. Produkcja: `https://fluxlab.pl/e-doreczenia-integracja` zawiera „komunikacie z 29.09.2026” (4 wystąpienia, strona i JSON-LD), a zdania o przerwie 29.09 18:00 już nie ma. `https://fluxlab.pl/llms.txt` ma zaktualizowany punkt. IndexNow: Yandex i Naver przyjęły, Bing dalej 403. Źródła: https://www.wnp.pl/rynki/mrit-czasowe-utrudnienia-w-uslugach-biznes-gov-pl-e-doreczenia-i-ceidg-komunikat,1103841.html (29.09, 15:15), https://forsal.pl/biznes/aktualnosci/artykuly/11321567,problemy-w-dzialaniu-e-doreczen-i-ceidg-jest-komunikat-rzadu.html (zalecenie o folderze SPAM).
 **Dla Pawła:** 1) **NOWE, jutro 30.09 rano, najlepiej przed 9:00:** Wykop, mikroblog, https://wykop.pl/mikroblog, „Dodaj wpis”, tagi `#edoreczenia #firma #jdg #ksiegowosc`. Tekst **zastępuje** wersję z 13:43, której już nie publikuj. Wersja z 28.09 23:43 zostaje na 1.10. Uzasadnienie: w dniu terminu przedsiębiorcy szukają, co robić, gdy portal nie działa, a odpowiedź z cytatem ministerstwa jest użyteczna bez klikania w link.
 
-> Dziś mija termin na adres do e-Doręczeń dla firm, a Biznes.gov.pl od wczoraj się sypie. MRiT wydało komunikat (29.09), streszczam, co z niego wynika:
+> Dziś mija termin na adres do e-Doręczeń dla firm, a Biznes.gov.pl od wczoraj się sypie. MRiT wydało komunikat (29.09), streszczamy, co z niego wynika:
 >
 > 1. Utrudnienia dotyczą zakładania i aktywacji adresu, części CEIDG, logowania i kodów weryfikacyjnych. To nie jest problem po Waszej stronie.
 > 2. Nie klikajcie „wyślij” kilka razy. Najpierw sprawdźcie w Koncie Przedsiębiorcy, „Moje sprawy”, czy wniosek już nie doszedł. Drugi wniosek tylko wydłuży weryfikację.
