@@ -846,3 +846,30 @@ Kod strony się nie zmienił, więc nie było builda ani zgłoszenia do IndexNow
 Połączenia Google Calendar i Google Drive wymagają autoryzacji w ustawieniach konektorów na claude.ai. Do tego czasu te narzędzia są niedostępne.
 === 2026-09-28 23:45:50 koniec, kod 0
 === 2026-09-29 00:43:30 start
+W tym cyklu nic nie poszło w świat i strona się nie zmieniła. Wpis w dzienniku mówi to wprost i jest wypchnięty (commit `a6685fa`).
+
+**Ruch z ostatniej doby:** 7 odsłon, 6 osób, 69% poniżej średniej. Źródła: Google (2) i useme.com (2). Najczęściej otwierana była `/e-doreczenia-integracja` (3). Jedno uruchomienie narzędzia.
+
+**Dlaczego nic nie dowiozłem:**
+- **Kanał 3 (KSeF):** projekt przesunięcia kar KSeF na 2028 od 23–24.09 nie ruszył dalej: Rada Ministrów go nie przyjęła, a numeru UD nadal nie udało się ustalić. Strona jest więc aktualna. Ramka do wklejenia dla biur rachunkowych już stoi, brakuje tylko ludzi, którzy o niej wiedzą.
+- **Kanał 1 (dystrybucja):** nie znalazłem świeżego wątku z pytaniem o e-Doręczenia ani o KSeF, są tylko artykuły portali i stare wątki. Gofin był przeglądany o 22:43.
+- **Kanał 4 (outreach):** w nocy maili nie wysyłam. Sprawdziłem za to pięć szkiców na rano (021–025). Każdy podaje źródło adresu, zdanie o wypisaniu i konkret z własnej strony adresata. Jest jedna wątpliwość: szkic 023 idzie na adres z nazwiskiem (`balaga@`). To jednak jedyny kontakt, jaki kancelaria podaje na swojej stronie, i jest w jej domenie, więc traktuję go jako adres firmowy.
+
+**Dla Pawła, bez zmian:**
+1. Rano komentarz na Gofinie o logowaniu do KSeF, tekst we wpisie 22:43.
+2. Wpis na Wykop o e-Doręczeniach: do środy wieczorem stara wersja, od 1.10 nowa.
+3. Useme, Google Search Console, Bing Webmaster Tools, LinkedIn.
+
+**Na następny cykl:** od 9:00 wysłać maile 021–025. Jeśli cykl wypadnie przed 9:00, lepiej przygotować kolejne szkice z 54 nietkniętych domen, niż trzeci raz szukać tych samych wątków.
+
+Połączenia Google Calendar i Google Drive wymagają autoryzacji w ustawieniach konektorów na claude.ai. Do tego czasu nie działają.
+
+Źródła:
+- [infakt.pl: Kary w KSeF od 2028 r.?](https://www.infakt.pl/blog/kary-w-ksef-od-2028-r-wazna-zmiana-dla-firm/)
+- [Bankier.pl: Kary za KSeF dopiero od 2028 roku?](https://www.bankier.pl/wiadomosc/Ulga-dla-przedsiebiorcow-Kary-za-KSeF-dopiero-od-2028-roku-9201689.html)
+- [wnp.pl: Rząd przedłuży odroczenie kar](https://www.wnp.pl/rynki/mf-chce-przedluzyc-odroczenie-kar-za-bledy-w-stosowaniu-ksef-do-konca-2027-r,1101694.html)
+- [pit.pl: KSeF bez kar do 2028 roku?](https://www.pit.pl/aktualnosci/ksef-bez-kar-do-2028-roku-jest-jeden-wazny-haczyk)
+- [Forum Gofin, dział KSeF](https://forum.gofin.pl/dzialy-forum/ksef)
+=== 2026-09-29 00:45:27 koniec, kod 0
+=== 2026-09-29 01:43:23 start
+=== 2026-09-29 02:43:09 start

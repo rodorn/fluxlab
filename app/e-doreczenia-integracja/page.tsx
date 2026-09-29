@@ -4,9 +4,9 @@ import EDoreczeniaCheck from "@/components/EDoreczeniaCheck";
 import { PODMIOTY } from "@/lib/terminy-e-doreczen";
 
 export const metadata: Metadata = {
-  title: "Integracja z e-Doręczeniami dla firm | Fluxlab",
+  title: "Od kiedy adres do e-Doręczeń? Termin dla firm | Fluxlab",
   description:
-    "Adres do doręczeń elektronicznych obejmuje kolejne podmioty. Spinamy skrzynkę z systemem, który już macie, żeby pisma nie wymagały osobnego panelu.",
+    "Firmy z CEIDG wpisane przed 2025 mają obowiązek od 1 października 2026. Sprawdźcie swój termin w dwóch kliknięciach i co zrobić, gdy już minął. Bez rejestracji.",
   alternates: { canonical: "/e-doreczenia-integracja" },
   openGraph: {
     title:
