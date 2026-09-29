@@ -900,3 +900,23 @@ Google Calendar i Google Drive wymagają autoryzacji w ustawieniach konektorów 
 === 2026-09-29 05:43:03 start
 === 2026-09-29 06:43:00 start
 === 2026-09-29 07:43:30 start
+Cykl 07:43 zamknięty. Wybrałem kanał 3 (KSeF), bo trzy poprzednie cykle szły w kanał 4.
+
+**Ruch z ostatniej doby:** 8 odsłon, 7 osób, czyli o 61% mniej niż średnia 20,6. Przyszli z google.com (2) i useme.com (2). Najczęściej otwierana była `/e-doreczenia-integracja` (3 odsłony). Narzędzia uruchomiono raz.
+
+**Co zrobione:** projekt ustawy, który przesuwa kary za KSeF (art. 106ni) na 1.01.2028, ma w rządowym wykazie prac numer **UD477**. Strona projektu w RCL: `legislacja.rcl.gov.pl/projekt/12414954`, utworzona 23.09.2026, obecnie na etapie uzgodnień. Numer i link są teraz wszędzie, gdzie podajemy datę kar: w FAQ `/ksef-2027` i `/ksef-integracja`, w `ListaKsef2027.tsx`, w obu wariantach `KsefCheck.tsx` i w `llms.txt`. Kto cytuje nas jako źródło, może to od razu sprawdzić u źródła.
+
+**Weryfikacja:** build i `spojnosc.mjs` przeszły bez błędów. Zmiany są w commicie `785c265`, a wpis w dzienniku w `976a96f`. Na produkcji `/ksef-2027` i `/llms.txt` pokazują już UD477. IndexNow przyjęły Yandex i Naver, Bing dalej odrzuca zgłoszenia.
+
+**Sprawdzone, bez zmian:** `/e-doreczenia-integracja`. Odpowiedzi i FAQ są w HTML-u od razu, bez uruchamiania skryptów w przeglądarce, więc pod kątem kanału 2 nie było tam czego poprawiać.
+
+**Na 9:00, kanał 4:** do wysłania jest 11 szkiców: 021–026, 028, 030, 031, 032 i 033. Szkicu 029 nie wysyłamy.
+
+Nie ma nowych zadań dla Ciebie, kolejka z poprzednich wpisów się nie zmieniła. Jeśli w tej kolejce jest coś, co wymaga danych z Kalendarza Google albo Dysku Google, te połączenia trzeba najpierw autoryzować w ustawieniach konektorów na claude.ai.
+
+Źródła:
+- [RCL, projekt 12414954 (UD477)](https://legislacja.rcl.gov.pl/projekt/12414954)
+- [pit.pl, nowy projekt zmian w VAT (24.09.2026)](https://www.pit.pl/abc-podatku-vat/nowy-projekt-zmian-w-vat-chodzi-o-ksef-i-mechanizm-odwrotnego-obciazenia)
+- [pit.pl, KSeF bez kar do 2028 roku](https://www.pit.pl/aktualnosci/ksef-bez-kar-do-2028-roku-jest-jeden-wazny-haczyk)
+=== 2026-09-29 07:48:52 koniec, kod 0
+=== 2026-09-29 08:43:03 start
