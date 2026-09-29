@@ -117,6 +117,10 @@ export default function EDoreczeniaIntegracja() {
           a: "Tak. Obowiązek dotyczy każdej firmy wpisanej do CEIDG albo do rejestru przedsiębiorców w KRS, niezależnie od tego, czy działalność jest aktywna, czy zawieszona. Urząd może wysłać pismo także do firmy w zawieszeniu, a 14 dni na odbiór biegnie tak samo. Firmowego adresu nie musi zakładać ktoś, kto nie ma wpisu ani w CEIDG, ani w KRS, na przykład rolnik bez zarejestrowanej działalności.",
         },
         {
+          q: "Prowadzimy spółkę cywilną. Kto musi mieć adres do e-Doręczeń?",
+          a: "Każdy wspólnik osobno, a sama spółka cywilna go nie dostanie. Ministerstwo Cyfryzacji odpowiada wprost, że spółka cywilna nie może mieć adresu do doręczeń elektronicznych, bo jest tylko umową między wspólnikami i nie ma własnej podmiotowości prawnej, więc urząd doręcza pisma każdemu wspólnikowi na jego adres. Termin liczy się dla każdego wspólnika według jego własnego wpisu: wspólnik wpisany do CEIDG przed 2025 rokiem ma obowiązek od 1 października 2026, wspólnik wpisany od 2025 roku od dnia wpisu, a wspólnik, który jest spółką z KRS, od terminu tej spółki. Dwóch wspólników z CEIDG to dwa wnioski i dwie skrzynki, do których ktoś musi zaglądać. Źródło: https://www.gov.pl/web/e-doreczenia/pytania-i-odpowiedzi",
+        },
+        {
           q: "Ile kosztuje adres do e-Doręczeń i co grozi za jego brak?",
           a: "Założenie adresu i odbieranie pism są bezpłatne, wniosek składa się przez Biznes.gov.pl albo mObywatel.gov.pl. Ustawa nie przewiduje osobnej kary pieniężnej za brak adresu. Urząd, który nie znajdzie Waszego adresu, może wysłać pismo publiczną usługą hybrydową albo listem poleconym. Prawdziwe ryzyko jest gdzie indziej: pismo w skrzynce, do której nikt nie zagląda, po 14 dniach uznaje się za doręczone.",
         },
