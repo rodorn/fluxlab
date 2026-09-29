@@ -52,6 +52,9 @@ export type Mobile = {
   /** Ile znaków stylów udało się faktycznie przeczytać. Przy zerze nie
    *  wolno orzekać o responsywności, bo brak dowodu to nie dowód braku. */
   cssZnakow: number;
+  /** Arkusze podpięte w dokumencie, których nie przeczytaliśmy: ponad limit
+   *  albo bez odpowiedzi. Przy niezerowej liczbie brak reguł @media nic nie znaczy. */
+  arkuszyNieprzeczytanych: number;
 };
 
 export type Pomiar = {
@@ -164,6 +167,7 @@ function pusty(domena: string): Pomiar {
       sekundNa4G: null,
       wagaCalosci: 0,
       cssZnakow: 0,
+      arkuszyNieprzeczytanych: 0,
     },
   };
 }
@@ -454,21 +458,24 @@ async function zmierzMobile(
   baza: string,
   htmlDesktop: string,
   wagaZasobow: number,
-  zasoby: Zasob[],
 ): Promise<Mobile> {
   const dok = await pobierz(baza, CZAS_STRONY_MS, "GET", UA_TELEFON);
   const html = dok?.tekst ?? htmlDesktop;
 
   const viewport = metaTresc(html, "viewport");
 
-  // Arkusze pobieramy jeszcze raz, ale tylko te, które już znamy z pomiaru
-  // głównego, i najwyżej cztery. Reguły @media i sztywne szerokości mówią,
-  // czy układ w ogóle ma się jak przestawić na wąskim ekranie.
-  const arkusze = zasoby.filter((z) => z.rodzaj === "styl").slice(0, 4);
+  // Arkusze bierzemy z dokumentu, a nie z listy zasobów pomiaru głównego, bo
+  // ta jest ucięta do MAX_ZASOBOW i na stronach z wieloma wtyczkami kończy
+  // się na skryptach, zanim dojdzie do stylów. Czytamy najwyżej cztery.
+  // Reguły @media i sztywne szerokości mówią, czy układ w ogóle ma się jak
+  // przestawić na wąskim ekranie.
+  const wszystkieArkusze = zasobyZHtml(html, baza).filter(
+    (z) => z.rodzaj === "styl",
+  );
   const trescArkuszy = await Promise.all(
-    arkusze.map(
-      async (a) => (await pobierz(a.adres, CZAS_ZASOBU_MS))?.tekst ?? "",
-    ),
+    wszystkieArkusze
+      .slice(0, 4)
+      .map(async (a) => (await pobierz(a.adres, CZAS_ZASOBU_MS))?.tekst ?? ""),
   );
   const css = [
     ...trescArkuszy,
@@ -523,6 +530,8 @@ async function zmierzMobile(
     sekundNa4G,
     wagaCalosci,
     cssZnakow: css.length,
+    arkuszyNieprzeczytanych:
+      wszystkieArkusze.length - trescArkuszy.filter(Boolean).length,
   };
 }
 
@@ -773,6 +782,6 @@ export async function zmierz(domenaWejscie: string): Promise<Pomiar> {
 
   wynik.zasoby = await zmierzZasoby(zasobyZHtml(html, baza));
   const wagaZasobow = wynik.zasoby.reduce((s, z) => s + (z.bajty ?? 0), 0);
-  wynik.mobile = await zmierzMobile(baza, html, wagaZasobow, wynik.zasoby);
+  wynik.mobile = await zmierzMobile(baza, html, wagaZasobow);
   return wynik;
 }

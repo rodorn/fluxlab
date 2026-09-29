@@ -291,8 +291,14 @@ export function ocenStrone(p: Pomiar): Ustalenie[] {
   }
   // Orzekamy tylko wtedy, gdy naprawdę przeczytaliśmy style. Arkusz za
   // logowaniem, na innej domenie albo wstrzykiwany skryptem daje zero reguł
-  // i wyglądałby identycznie jak strona bez responsywności.
-  if (m.viewport && m.regulMedia === 0 && m.cssZnakow > 500) {
+  // i wyglądałby identycznie jak strona bez responsywności. Tak samo arkusz,
+  // do którego nie doszliśmy.
+  if (
+    m.viewport &&
+    m.regulMedia === 0 &&
+    m.cssZnakow > 500 &&
+    m.arkuszyNieprzeczytanych === 0
+  ) {
     dodaj({
       klucz: "brak_media",
       obszar: "mobile",
