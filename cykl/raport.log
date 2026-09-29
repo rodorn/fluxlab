@@ -314,3 +314,21 @@ Zrzutu ekranu nie dołączyłem, bo w tym oknie nie było zmiany wizualnej. Tytu
 
 Dwie rzeczy do wiedzy. W raporcie napisałem, że liczba uruchomień narzędzi nie zmieniła się od 23:05, bo poprzedni raport podawał 1. W treści maila `\`` (backticki) zostają widoczne jako znaki, tak jak w poprzednich raportach z tego wątku.
 === 2026-09-29 03:04:56 koniec, kod 0
+=== 2026-09-29 07:03:30 start raportu
+Raport poszedł na iwanekpawel55@gmail.com o 07:05 z tematem „FluxLab strona, 07:03, nowy tytuł strony KSeF i poprawki wykrywania w audycie stron”. Skrypt wysyłający potwierdził wysyłkę (msgid `<179065832546.1386294.4714984813563904607@fluxlab.pl>`). Skrzynki odbiorczej nie sprawdzałem, więc nie wiem, czy mail dotarł. W dzienniku dopisałem `<!-- WYSLANO 2026-09-29 07:05 -->`.
+
+W raporcie są cztery wpisy z dziennika (03:43 do 06:43), pięć sekcji zmian, sekcja „Czego NIE udało się zrobić”, ruch, stan listy audytowej i jedno zdanie wniosku:
+- **Zmiana 1:** nowy tytuł i opis strony `/ksef-integracja`.
+- **Zmiana 2:** poprawka fałszywego alarmu o responsywności w audycie.
+- **Zmiana 3:** nowe ustalenie o starej analityce Universal Analytics. Znalazłem w nim własny błąd i wycofałem szkic 029.
+- **Zmiana 4:** poprawka komunikatu przy złym certyfikacie.
+- **Zmiana 5:** szkice maili 028 i 030 do 033, nic nie wysłane.
+
+Ruch podałem w całości z raportu ruchu, razem z podziałem na przeglądarki i zastrzeżeniem o danych sprzed 21.09 godz. 16:00. W tym oknie nie było zmiany wizualnej, więc nie dołączyłem zrzutu ekranu.
+
+- **Lista audytowa:** pliki `AUDYT_*.md` się nie zmieniły, więc stan jest ten sam: technicznie 24 z 29 zamkniętych, treści 22 z 23, SEO 1 z 7. Jako następną pozycję wskazałem linki przychodzące do stron z jednym linkiem. To moja propozycja, dziennik jej nie zawiera.
+- **Uruchomienia narzędzi:** ostatnia doba to 1, bez zmiany od poprzedniego raportu. Dziennik zapisał ten skan po raz pierwszy 28.09 o 18:01, wcześniej były zera.
+- **Poprawki przed wysyłką:** usunąłem dwa zdania, których dziennik nie potwierdzał (kto uruchomił skan i czy ktoś dostał błędny wynik z reguły UA).
+
+W repo zostały niezacommitowane zmiany w `cykl/dziennik.md` i `cykl/raport.log`. Nie commitowałem ich, bo nie było o to prośby.
+=== 2026-09-29 07:05:36 koniec, kod 0
