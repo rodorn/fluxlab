@@ -5,9 +5,9 @@ import ListaKsef2027 from "@/components/ListaKsef2027";
 import { PODATNICY } from "@/lib/terminy-ksef";
 
 export const metadata: Metadata = {
-  title: "Integracja z KSeF dla firm | Fluxlab",
+  title: "Od kiedy KSeF jest obowiązkowy? Terminy dla firm | Fluxlab",
   description:
-    "Faktury w KSeF obowiązują od 1 kwietnia 2026. Spinamy Wasz system z API v2: wysyłka w FA(3), zapis numeru KSeF i UPO, odbiór faktur. Kod otwarty.",
+    "Duże firmy od 1 lutego 2026, pozostałe od 1 kwietnia, sprzedaż do 10 tys. zł miesięcznie i kasy od 1 stycznia 2027. Sprawdźcie swój termin, bez rejestracji.",
   alternates: { canonical: "/ksef-integracja" },
   openGraph: {
     title: "Od kiedy KSeF obowiązuje Waszą firmę? Sprawdzenie w dwóch kliknięciach",
