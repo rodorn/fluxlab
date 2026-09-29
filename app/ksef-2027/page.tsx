@@ -3,6 +3,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import { kotwica } from "@/lib/kotwica";
 import ListaKsef2027 from "@/components/ListaKsef2027";
 import WiadomoscKsefDlaKlientow from "@/components/WiadomoscKsefDlaKlientow";
 import RamkaKsefDoWstawienia from "@/components/RamkaKsefDoWstawienia";
@@ -105,7 +106,7 @@ export default function Ksef2027Page() {
             </h2>
             <dl className="mt-6 space-y-5">
               {faq.map((f) => (
-                <div key={f.q}>
+                <div key={f.q} id={kotwica(f.q)} className="scroll-mt-20">
                   <dt className="font-semibold text-gray-900 dark:text-white">
                     {f.q}
                   </dt>
@@ -177,6 +178,7 @@ export default function Ksef2027Page() {
             mainEntity: faq.map((f) => ({
               "@type": "Question",
               name: f.q,
+              url: `https://fluxlab.pl/ksef-2027#${kotwica(f.q)}`,
               acceptedAnswer: { "@type": "Answer", text: f.a },
             })),
           }),

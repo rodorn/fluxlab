@@ -7,6 +7,8 @@ import TrackedCTA from "@/components/TrackedCTA";
 import RelatedProducts from "@/components/RelatedProducts";
 import NazwaNarzedzia from "@/components/NazwaNarzedzia";
 import { cenaWejscia } from "@/lib/products";
+import { kotwica } from "@/lib/kotwica";
+import FaqOtwieracz from "@/components/FaqOtwieracz";
 
 export interface Tier {
   name: string;
@@ -207,7 +209,8 @@ export default function ProductLanding(p: ProductLandingProps) {
               {p.faq.map((item) => (
                 <details
                   key={item.q}
-                  className="group rounded-2xl border border-gray-200/80 dark:border-gray-800/80 bg-white/60 dark:bg-gray-900/40"
+                  id={kotwica(item.q)}
+                  className="scroll-mt-20 group rounded-2xl border border-gray-200/80 dark:border-gray-800/80 bg-white/60 dark:bg-gray-900/40"
                 >
                   <summary className="cursor-pointer p-5 text-sm font-semibold text-gray-900 dark:text-white select-none list-none [&::-webkit-details-marker]:hidden">
                     {item.q}
@@ -218,6 +221,7 @@ export default function ProductLanding(p: ProductLandingProps) {
                 </details>
               ))}
             </div>
+            <FaqOtwieracz />
           </div>
 
           <RelatedProducts slug={p.slug} />
@@ -260,6 +264,7 @@ export default function ProductLanding(p: ProductLandingProps) {
             mainEntity: p.faq.map((f) => ({
               "@type": "Question",
               name: f.q,
+              url: `https://fluxlab.pl/${p.slug}#${kotwica(f.q)}`,
               acceptedAnswer: { "@type": "Answer", text: f.a },
             })),
           }),
