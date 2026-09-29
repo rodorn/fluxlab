@@ -8,6 +8,7 @@
  * gotowe liczby i ma je opisać, nie wymyślić.
  */
 
+import { odmien, orzeczenieMnogie } from "./odmiana";
 import type { Pomiar } from "./audyt-pomiar";
 
 export type Waga = "krytyczne" | "wazne" | "drobne";
@@ -252,7 +253,9 @@ export function ocenStrone(p: Pomiar): Ustalenie[] {
       klucz: "ciezkie_pliki",
       obszar: "szybkosc",
       waga: "wazne",
-      tytul: `${ciezkie.length === 1 ? "Jeden plik waży" : `${ciezkie.length} plików waży`} ponad pół megabajta`,
+      tytul: `${ciezkie.length} ${odmien(ciezkie.length, "plik", "pliki", "plików")} ${
+        orzeczenieMnogie(ciezkie.length) ? "ważą" : "waży"
+      } ponad pół megabajta`,
       fakt: ciezkie
         .slice(0, 4)
         .map(
@@ -275,7 +278,9 @@ export function ocenStrone(p: Pomiar): Ustalenie[] {
       klucz: "brak_cache",
       obszar: "szybkosc",
       waga: "drobne",
-      tytul: `${bezCache.length} plików pobiera się od nowa przy każdym wejściu`,
+      tytul: `${bezCache.length} ${odmien(bezCache.length, "plik", "pliki", "plików")} ${
+        orzeczenieMnogie(bezCache.length) ? "pobierają" : "pobiera"
+      } się od nowa przy każdym wejściu`,
       fakt: "Brak nagłówka cache-control albo ustawiony tak, że przeglądarka nie ma prawa nic zapamiętać.",
       skutek:
         "Odwiedzający, który wraca na stronę, czeka drugi raz na to samo. Przy plikach, które i tak się nie zmieniają, to czekanie bez powodu.",
@@ -361,7 +366,14 @@ export function ocenStrone(p: Pomiar): Ustalenie[] {
       klucz: "brak_srcset",
       obszar: "mobile",
       waga: "wazne",
-      tytul: `${m.obrazowBezSrcset} obrazów nie ma wersji na mniejszy ekran`,
+      tytul: `${m.obrazowBezSrcset} ${odmien(
+        m.obrazowBezSrcset,
+        "obraz",
+        "obrazy",
+        "obrazów",
+      )} nie ${
+        orzeczenieMnogie(m.obrazowBezSrcset) ? "mają" : "ma"
+      } wersji na mniejszy ekran`,
       fakt: "Brak atrybutu srcset, więc telefon pobiera ten sam plik co komputer.",
       skutek:
         "Na ekranie szerokości kilkuset pikseli ładuje się grafika przygotowana na monitor. To transfer, za który płaci klient ze swojego pakietu, i czekanie, którego nie widać w testach na biurku.",
@@ -390,7 +402,15 @@ export function ocenStrone(p: Pomiar): Ustalenie[] {
       obszar: "mobile",
       waga: m.sekundNa4G > 10 ? "krytyczne" : "wazne",
       tytul: `Na łączu komórkowym strona pobiera się około ${m.sekundNa4G} s`,
-      fakt: `${mb(m.wagaCalosci)} do pobrania, licząc dokument i ${p.zasoby.filter((z) => z.bajty !== null).length} zmierzonych plików, przy ostrożnie przyjętych 1,6 Mb/s.`,
+      fakt: (() => {
+        const zmierzone = p.zasoby.filter((z) => z.bajty !== null).length;
+        return `${mb(m.wagaCalosci)} do pobrania, licząc dokument i ${zmierzone} ${odmien(
+          zmierzone,
+          "zmierzony plik",
+          "zmierzone pliki",
+          "zmierzonych plików",
+        )}, przy ostrożnie przyjętych 1,6 Mb/s.`;
+      })(),
       skutek:
         "To czas samego transferu, bez rysowania i bez skryptów, więc w praktyce będzie dłuższy. Przy kilku sekundach czekania część odwiedzających wraca do wyników wyszukiwania.",
       koszt: 400,
@@ -494,7 +514,12 @@ export function ocenStrone(p: Pomiar): Ustalenie[] {
       obszar: "seo",
       waga: "drobne",
       tytul: "Tytuł nie zmieści się w wynikach",
-      fakt: `${p.tytul.length} znaków, a widać około ${TYTUL_MAX}: „${p.tytul.slice(0, 80)}…”`,
+      fakt: `${p.tytul.length} ${odmien(
+        p.tytul.length,
+        "znak",
+        "znaki",
+        "znaków",
+      )}, a widać około ${TYTUL_MAX}: „${p.tytul.slice(0, 80)}…”`,
       skutek:
         "Końcówka zostanie ucięta wielokropkiem. Jeżeli to tam jest najważniejsze słowo, nikt go nie zobaczy.",
       koszt: 60,
@@ -524,7 +549,12 @@ export function ocenStrone(p: Pomiar): Ustalenie[] {
         p.opisMeta.length > OPIS_MAX
           ? "Opis jest za długi"
           : "Opis jest bardzo krótki",
-      fakt: `${p.opisMeta.length} znaków, a sensowny zakres to mniej więcej ${OPIS_MIN} do ${OPIS_MAX}.`,
+      fakt: `${p.opisMeta.length} ${odmien(
+        p.opisMeta.length,
+        "znak",
+        "znaki",
+        "znaków",
+      )}, a sensowny zakres to mniej więcej ${OPIS_MIN} do ${OPIS_MAX}.`,
       skutek:
         p.opisMeta.length > OPIS_MAX
           ? "Nadmiar zostanie ucięty w wynikach."
@@ -552,7 +582,14 @@ export function ocenStrone(p: Pomiar): Ustalenie[] {
       klucz: "wiele_h1",
       obszar: "seo",
       waga: "drobne",
-      tytul: `Na stronie jest ${p.h1.length} głównych nagłówków`,
+      tytul: `Na stronie ${orzeczenieMnogie(p.h1.length) ? "są" : "jest"} ${
+        p.h1.length
+      } ${odmien(
+        p.h1.length,
+        "główny nagłówek",
+        "główne nagłówki",
+        "głównych nagłówków",
+      )}`,
       fakt: p.h1
         .slice(0, 3)
         .map((h) => `„${h.slice(0, 50)}”`)
@@ -597,7 +634,16 @@ export function ocenStrone(p: Pomiar): Ustalenie[] {
       obszar: "seo",
       waga: "drobne",
       tytul: "Mapa strony istnieje, ale nie jest wskazana w robots.txt",
-      fakt: `Mapa odpowiada${p.sitemap.adresow ? ` i zawiera ${p.sitemap.adresow} adresów` : ""}, natomiast robots.txt jej nie wymienia.`,
+      fakt: `Mapa odpowiada${
+        p.sitemap.adresow
+          ? ` i zawiera ${p.sitemap.adresow} ${odmien(
+              p.sitemap.adresow,
+              "adres",
+              "adresy",
+              "adresów",
+            )}`
+          : ""
+      }, natomiast robots.txt jej nie wymienia.`,
       skutek:
         "Jedna linia w robots.txt sprawia, że robot znajduje mapę od razu, bez zgadywania adresu.",
       koszt: 50,
@@ -641,7 +687,9 @@ export function ocenStrone(p: Pomiar): Ustalenie[] {
       obszar: "ai",
       waga: "krytyczne",
       tytul: "W dokumencie prawie nie ma treści",
-      fakt: `Po odjęciu skryptów i stylów zostaje ${p.trescZnakow} znaków.`,
+      fakt: `Po odjęciu skryptów i stylów ${
+        orzeczenieMnogie(p.trescZnakow) ? "zostają" : "zostaje"
+      } ${p.trescZnakow} ${odmien(p.trescZnakow, "znak", "znaki", "znaków")}.`,
       skutek:
         "Strona buduje się dopiero w przeglądarce. Człowiek tego nie zauważy, ale robot, który nie uruchamia skryptów, dostaje pustą kartkę. Dotyczy to części robotów zbierających treść dla asystentów AI.",
       koszt: 600,

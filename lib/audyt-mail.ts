@@ -8,6 +8,7 @@
  * nie dwa osobne, które po miesiącu rozjechałyby się treścią.
  */
 
+import { odmien } from "./odmiana";
 import type { Ustalenie, Wycena } from "./audyt-ocena";
 import type { RaportAI } from "./audyt-raport";
 import type { Pomiar } from "./audyt-pomiar";
@@ -17,7 +18,9 @@ export type DaneRaportu = {
   punkty: number | null;
   zbadano: string;
   pomiar: Pomiar;
-  ustalenia: (Ustalenie & { material?: { tytul: string; href: string } | null })[];
+  ustalenia: (Ustalenie & {
+    material?: { tytul: string; href: string } | null;
+  })[];
   wycena: Wycena;
   dostepy: string[];
   opis: RaportAI | null;
@@ -56,7 +59,9 @@ function esc(t: string): string {
 
 function waga(b: number | null): string {
   if (b === null) return "nie zmierzono";
-  return b >= 1_048_576 ? `${(b / 1_048_576).toFixed(1)} MB` : `${Math.round(b / 1024)} kB`;
+  return b >= 1_048_576
+    ? `${(b / 1_048_576).toFixed(1)} MB`
+    : `${Math.round(b / 1024)} kB`;
 }
 
 function wiersz(nazwa: string, wartosc: string): string {
@@ -79,7 +84,10 @@ function slownie(p: number): string {
   return "wymaga pilnej interwencji";
 }
 
-export function zlozRaportHtml(d: DaneRaportu, dlaWlasciciela: boolean): string {
+export function zlozRaportHtml(
+  d: DaneRaportu,
+  dlaWlasciciela: boolean,
+): string {
   const p = d.pomiar;
   const m = p.mobile;
   const data = new Date(d.zbadano).toLocaleString("pl-PL", {
@@ -89,7 +97,13 @@ export function zlozRaportHtml(d: DaneRaportu, dlaWlasciciela: boolean): string 
   });
 
   const kolorPunktow =
-    d.punkty === null ? "#6b7280" : d.punkty >= 75 ? "#059669" : d.punkty >= 45 ? "#d97706" : "#dc2626";
+    d.punkty === null
+      ? "#6b7280"
+      : d.punkty >= 75
+        ? "#059669"
+        : d.punkty >= 45
+          ? "#d97706"
+          : "#dc2626";
 
   const grupy = new Map<string, typeof d.ustalenia>();
   for (const u of d.ustalenia) {
@@ -110,7 +124,9 @@ export function zlozRaportHtml(d: DaneRaportu, dlaWlasciciela: boolean): string 
       }
       ${lista
         .map(
-          (u) => `<div style="border-left:3px solid ${KOLOR[u.waga]};background:#f9fafb;padding:12px 14px;margin-bottom:10px;border-radius:0 6px 6px 0">
+          (
+            u,
+          ) => `<div style="border-left:3px solid ${KOLOR[u.waga]};background:#f9fafb;padding:12px 14px;margin-bottom:10px;border-radius:0 6px 6px 0">
           <div style="font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:${KOLOR[u.waga]};font-weight:700;margin-bottom:3px">${ETYKIETA_WAGI[u.waga]}${u.koszt ? ` · naprawa ${u.koszt} zł` : ""}</div>
           <div style="font-size:15px;font-weight:700;color:#111827;margin-bottom:5px">${esc(u.tytul)}</div>
           <div style="font-size:13px;color:#374151;margin-bottom:5px"><strong>Zmierzono:</strong> ${esc(u.fakt)}</div>
@@ -141,7 +157,7 @@ export function zlozRaportHtml(d: DaneRaportu, dlaWlasciciela: boolean): string 
     ${wiersz("Szacowany czas pobrania na łączu komórkowym", m.sekundNa4G === null ? "nie zmierzono" : `około ${m.sekundNa4G} s przy 1,6 Mb/s`)}
     ${wiersz("Kompresja dokumentu", p.kompresjaHtml ? esc(p.kompresjaHtml) : "brak")}
     ${wiersz("Serwer", p.serwer ? esc(p.serwer) : "nie podaje")}
-    ${wiersz("Treść po odjęciu skryptów", `${p.trescZnakow} znaków`)}
+    ${wiersz("Treść po odjęciu skryptów", `${p.trescZnakow} ${odmien(p.trescZnakow, "znak", "znaki", "znaków")}`)}
   </table>`;
 
   const tabelaMobile = `
@@ -157,11 +173,11 @@ export function zlozRaportHtml(d: DaneRaportu, dlaWlasciciela: boolean): string 
   const tabelaSeo = `
   <table style="width:100%;border-collapse:collapse;margin:8px 0 0">
     ${wiersz("Tytuł strony", p.tytul ? `${esc(p.tytul.slice(0, 70))}${p.tytul.length > 70 ? "…" : ""} (${p.tytul.length} zn.)` : "brak")}
-    ${wiersz("Opis dla wyników wyszukiwania", p.opisMeta ? `${p.opisMeta.length} znaków` : "brak")}
+    ${wiersz("Opis dla wyników wyszukiwania", p.opisMeta ? `${p.opisMeta.length} ${odmien(p.opisMeta.length, "znak", "znaki", "znaków")}` : "brak")}
     ${wiersz("Nagłówki pierwszego poziomu", String(p.h1.length))}
     ${wiersz("Adres podstawowy (canonical)", p.canonical ? "jest" : "brak")}
     ${wiersz("Zakaz indeksowania", p.noindex ? "TAK, strona prosi o pominięcie" : "nie")}
-    ${wiersz("Mapa strony", p.sitemap.jest ? `jest${p.sitemap.adresow ? `, ${p.sitemap.adresow} adresów` : ""}` : "brak")}
+    ${wiersz("Mapa strony", p.sitemap.jest ? `jest${p.sitemap.adresow ? `, ${p.sitemap.adresow} ${odmien(p.sitemap.adresow, "adres", "adresy", "adresów")}` : ""}` : "brak")}
     ${wiersz("Dane uporządkowane", p.daneStrukturalne.length ? esc(p.daneStrukturalne.slice(0, 5).join(", ")) : "brak")}
     ${wiersz("Znaczniki Open Graph", p.og ? "są" : "brak")}
     ${wiersz("Obrazy bez opisu alt", `${p.obrazy.bezAlt} z ${p.obrazy.wszystkie}`)}
@@ -314,7 +330,9 @@ export function zlozRaportHtml(d: DaneRaportu, dlaWlasciciela: boolean): string 
 export function zlozRaportTekst(d: DaneRaportu): string {
   const l: string[] = [];
   l.push(`AUDYT TECHNICZNY: ${d.domena}`);
-  l.push(`Wykonano: ${new Date(d.zbadano).toLocaleString("pl-PL", { timeZone: "Europe/Warsaw" })}`);
+  l.push(
+    `Wykonano: ${new Date(d.zbadano).toLocaleString("pl-PL", { timeZone: "Europe/Warsaw" })}`,
+  );
   l.push(
     d.punkty === null
       ? "Ocena: nie wystawiamy, bo nie zobaczyliśmy tej strony."
@@ -332,20 +350,34 @@ export function zlozRaportTekst(d: DaneRaportu): string {
     l.push(`- [${ETYKIETA_WAGI[u.waga]}] ${u.tytul}`);
     l.push(`  Zmierzono: ${u.fakt}`);
     l.push(`  Skutek: ${u.skutek}`);
-    if (u.koszt) l.push(`  Naprawa: ${u.koszt} zł${u.samodzielnie ? " (da się samodzielnie)" : ""}`);
+    if (u.koszt)
+      l.push(
+        `  Naprawa: ${u.koszt} zł${u.samodzielnie ? " (da się samodzielnie)" : ""}`,
+      );
   }
   l.push("");
   if (d.wycena.pakiet) {
-    l.push(`WYCENA: ${d.wycena.pakiet} zł za komplet (osobno ${d.wycena.osobno} zł).`);
+    l.push(
+      `WYCENA: ${d.wycena.pakiet} zł za komplet (osobno ${d.wycena.osobno} zł).`,
+    );
     if (d.wycena.pilne) l.push(`Sama warstwa krytyczna: ${d.wycena.pilne} zł.`);
-    l.push(`Czas: około ${d.wycena.dniRobocze} dni roboczych od dostępów.`);
+    l.push(
+      `Czas: około ${d.wycena.dniRobocze} ${odmien(
+        d.wycena.dniRobocze,
+        "dzień roboczy",
+        "dni robocze",
+        "dni roboczych",
+      )} od dostępów.`,
+    );
   }
   if (d.dostepy.length) {
     l.push("");
     l.push("POTRZEBNE DOSTĘPY: " + d.dostepy.join("; "));
   }
   l.push("");
-  l.push("Pomiar wykonany bez uruchamiania przeglądarki, więc bez czasu rysowania i bez wyniku Lighthouse.");
+  l.push(
+    "Pomiar wykonany bez uruchamiania przeglądarki, więc bez czasu rysowania i bez wyniku Lighthouse.",
+  );
   l.push("fluxlab.pl · pawel@fluxlab.pl");
   return l.join("\n");
 }

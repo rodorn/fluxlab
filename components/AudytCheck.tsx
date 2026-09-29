@@ -1,5 +1,6 @@
 "use client";
 
+import { odmien } from "@/lib/odmiana";
 import { useEffect, useRef, useState } from "react";
 
 import Przyklady from "@/components/Przyklady";
@@ -61,10 +62,30 @@ type Wynik = {
     og: boolean;
     daneStrukturalne: string[];
     sitemap: { jest: boolean; adresow: number | null };
-    robots: { jest: boolean; blokujeWszystko: boolean; blokujeAi: string[]; mapaWskazana: boolean };
-    obrazy: { wszystkie: number; bezAlt: number; bezWymiarow: number; bezLazy: number };
-    cert: { wystawca: string; waznyDo: string; dniDoKonca: number; pasujeDoDomeny: boolean } | null;
-    poczta: { spf: boolean; dmarc: boolean; dmarcPolityka: string | null; mx: boolean };
+    robots: {
+      jest: boolean;
+      blokujeWszystko: boolean;
+      blokujeAi: string[];
+      mapaWskazana: boolean;
+    };
+    obrazy: {
+      wszystkie: number;
+      bezAlt: number;
+      bezWymiarow: number;
+      bezLazy: number;
+    };
+    cert: {
+      wystawca: string;
+      waznyDo: string;
+      dniDoKonca: number;
+      pasujeDoDomeny: boolean;
+    } | null;
+    poczta: {
+      spf: boolean;
+      dmarc: boolean;
+      dmarcPolityka: string | null;
+      mx: boolean;
+    };
     mobile: {
       viewport: string | null;
       blokujePowiekszanie: boolean;
@@ -84,7 +105,13 @@ type Wynik = {
     };
   };
   ustalenia: Ustalenie[];
-  wycena: { osobno: number; pakiet: number; rabat: number; pilne: number; dniRobocze: number };
+  wycena: {
+    osobno: number;
+    pakiet: number;
+    rabat: number;
+    pilne: number;
+    dniRobocze: number;
+  };
   dostepy: string[];
   opis: {
     werdykt: string;
@@ -114,9 +141,19 @@ const NAZWA_OBSZARU: Record<string, string> = {
   poczta: "Poczta firmowa",
 };
 
-const KOLEJNOSC_OBSZAROW = ["dostepnosc", "szybkosc", "mobile", "seo", "ai", "poczta"];
+const KOLEJNOSC_OBSZAROW = [
+  "dostepnosc",
+  "szybkosc",
+  "mobile",
+  "seo",
+  "ai",
+  "poczta",
+];
 
-const MOTYW_WAGI: Record<Waga, { kropka: string; ramka: string; tekst: string; nazwa: string }> = {
+const MOTYW_WAGI: Record<
+  Waga,
+  { kropka: string; ramka: string; tekst: string; nazwa: string }
+> = {
   krytyczne: {
     kropka: "bg-red-500",
     ramka: "border-l-red-500",
@@ -139,7 +176,9 @@ const MOTYW_WAGI: Record<Waga, { kropka: string; ramka: string; tekst: string; n
 
 function waga(b: number | null): string {
   if (b === null) return "nie zmierzono";
-  return b >= 1_048_576 ? `${(b / 1_048_576).toFixed(1)} MB` : `${Math.round(b / 1024)} kB`;
+  return b >= 1_048_576
+    ? `${(b / 1_048_576).toFixed(1)} MB`
+    : `${Math.round(b / 1024)} kB`;
 }
 
 function slownie(p: number): string {
@@ -177,7 +216,14 @@ function Ocena({ punkty }: { punkty: number }) {
   return (
     <div className="relative h-32 w-32 shrink-0">
       <svg viewBox="0 0 120 120" className="h-full w-full -rotate-90">
-        <circle cx="60" cy="60" r="52" fill="none" strokeWidth="10" className="stroke-gray-200 dark:stroke-gray-800" />
+        <circle
+          cx="60"
+          cy="60"
+          r="52"
+          fill="none"
+          strokeWidth="10"
+          className="stroke-gray-200 dark:stroke-gray-800"
+        />
         <circle
           cx="60"
           cy="60"
@@ -191,7 +237,9 @@ function Ocena({ punkty }: { punkty: number }) {
         />
       </svg>
       <div className="absolute inset-0 flex flex-col items-center justify-center">
-        <span className={`text-3xl font-extrabold ${kolorOceny(punkty)}`}>{narysowane}</span>
+        <span className={`text-3xl font-extrabold ${kolorOceny(punkty)}`}>
+          {narysowane}
+        </span>
         <span className="text-xs text-gray-500 dark:text-gray-400">na 100</span>
       </div>
     </div>
@@ -202,7 +250,9 @@ function Wiersz({ nazwa, wartosc }: { nazwa: string; wartosc: string }) {
   return (
     <div className="flex items-baseline justify-between gap-4 border-b border-gray-100 py-2 text-sm last:border-0 dark:border-gray-800">
       <span className="text-gray-600 dark:text-gray-400">{nazwa}</span>
-      <span className="text-right font-semibold text-gray-900 dark:text-white">{wartosc}</span>
+      <span className="text-right font-semibold text-gray-900 dark:text-white">
+        {wartosc}
+      </span>
     </div>
   );
 }
@@ -236,14 +286,20 @@ function Skladane({
           ▾
         </span>
       </button>
-      {otwarte && <div className="border-t border-gray-100 px-4 py-3 dark:border-gray-800">{children}</div>}
+      {otwarte && (
+        <div className="border-t border-gray-100 px-4 py-3 dark:border-gray-800">
+          {children}
+        </div>
+      )}
     </div>
   );
 }
 
 export default function AudytCheck() {
   const [domena, setDomena] = useState("");
-  const [stan, setStan] = useState<"idle" | "ladowanie" | "gotowe" | "blad">("idle");
+  const [stan, setStan] = useState<"idle" | "ladowanie" | "gotowe" | "blad">(
+    "idle",
+  );
   const [etap, setEtap] = useState(0);
   const [blad, setBlad] = useState("");
   const [wynik, setWynik] = useState<Wynik | null>(null);
@@ -251,11 +307,18 @@ export default function AudytCheck() {
 
   const [email, setEmail] = useState("");
   const [zgoda, setZgoda] = useState(false);
-  const [mailStan, setMailStan] = useState<"idle" | "wysylamy" | "ok" | "blad">("idle");
+  const [mailStan, setMailStan] = useState<"idle" | "wysylamy" | "ok" | "blad">(
+    "idle",
+  );
   const [mailBlad, setMailBlad] = useState("");
 
   const timer = useRef<ReturnType<typeof setInterval> | null>(null);
-  useEffect(() => () => { if (timer.current) clearInterval(timer.current); }, []);
+  useEffect(
+    () => () => {
+      if (timer.current) clearInterval(timer.current);
+    },
+    [],
+  );
 
   // Adres podany na stronie głównej uruchamia badanie od razu po wejściu.
   // Czytamy go z adresu przeglądarki, a nie hakiem useSearchParams, bo ten
@@ -306,7 +369,9 @@ export default function AudytCheck() {
       }
       setWynik(dane);
       setStan("gotowe");
-      zglosZdarzenie(`audyt_wynik_${dane.punkty >= 75 ? "dobry" : dane.punkty >= 45 ? "sredni" : "slaby"}`);
+      zglosZdarzenie(
+        `audyt_wynik_${dane.punkty >= 75 ? "dobry" : dane.punkty >= 45 ? "sredni" : "slaby"}`,
+      );
     } catch {
       if (timer.current) clearInterval(timer.current);
       setBlad("Brak połączenia. Spróbuj ponownie za chwilę.");
@@ -356,8 +421,12 @@ export default function AudytCheck() {
       }
     : { krytyczne: 0, wazne: 0, drobne: 0 };
 
-  const obszary = KOLEJNOSC_OBSZAROW.filter((o) => widoczne.some((u) => u.obszar === o));
-  const sekcjeOpisu = new Map(wynik?.opis?.sekcje.map((s) => [s.obszar, s]) ?? []);
+  const obszary = KOLEJNOSC_OBSZAROW.filter((o) =>
+    widoczne.some((u) => u.obszar === o),
+  );
+  const sekcjeOpisu = new Map(
+    wynik?.opis?.sekcje.map((s) => [s.obszar, s]) ?? [],
+  );
 
   return (
     <div className="rounded-2xl border border-gray-200/80 bg-white/70 p-6 dark:border-gray-800/80 dark:bg-gray-900/50 md:p-8">
@@ -367,8 +436,8 @@ export default function AudytCheck() {
       <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
         Wpisz adres, a w kilkadziesiąt sekund zmierzymy szybkość na komputerze i
         na telefonie, sprawdzimy certyfikat, widoczność w wyszukiwarce, dostęp
-        dla asystentów AI oraz zabezpieczenia poczty. Dostaniesz gotowy raport
-        z listą poprawek w kolejności i z ceną za naprawę. Bez rejestracji, bez
+        dla asystentów AI oraz zabezpieczenia poczty. Dostaniesz gotowy raport z
+        listą poprawek w kolejności i z ceną za naprawę. Bez rejestracji, bez
         podawania adresu e-mail i bez żadnych dostępów do Waszych systemów.
       </p>
 
@@ -405,13 +474,19 @@ export default function AudytCheck() {
               <li
                 key={tekst}
                 className={`flex items-center gap-3 text-sm transition-opacity duration-300 ${
-                  i <= etap ? "text-gray-900 dark:text-white" : "text-gray-600 dark:text-gray-600"
+                  i <= etap
+                    ? "text-gray-900 dark:text-white"
+                    : "text-gray-600 dark:text-gray-600"
                 }`}
               >
                 <span
                   aria-hidden="true"
                   className={`h-2 w-2 shrink-0 rounded-full ${
-                    i < etap ? "bg-emerald-500" : i === etap ? "animate-pulse bg-accent" : "bg-gray-300 dark:bg-gray-700"
+                    i < etap
+                      ? "bg-emerald-500"
+                      : i === etap
+                        ? "animate-pulse bg-accent"
+                        : "bg-gray-300 dark:bg-gray-700"
                   }`}
                 />
                 {tekst}
@@ -425,7 +500,9 @@ export default function AudytCheck() {
         </>
       )}
 
-      {stan === "blad" && <p className="mt-3 text-sm text-red-600 dark:text-red-400">{blad}</p>}
+      {stan === "blad" && (
+        <p className="mt-3 text-sm text-red-600 dark:text-red-400">{blad}</p>
+      )}
 
       {wynik && p && (
         <div className="mt-8 space-y-8">
@@ -466,7 +543,9 @@ export default function AudytCheck() {
                       key={w}
                       className="inline-flex items-center gap-1.5 rounded-full border border-gray-200 px-3 py-1 text-xs font-semibold text-gray-700 dark:border-gray-700 dark:text-gray-300"
                     >
-                      <span className={`h-1.5 w-1.5 rounded-full ${MOTYW_WAGI[w].kropka}`} />
+                      <span
+                        className={`h-1.5 w-1.5 rounded-full ${MOTYW_WAGI[w].kropka}`}
+                      />
                       {liczby[w]} {MOTYW_WAGI[w].nazwa.toLowerCase()}
                     </span>
                   ) : null,
@@ -482,7 +561,9 @@ export default function AudytCheck() {
 
           {wynik.opis && (
             <div className="rounded-xl border-l-4 border-accent bg-gray-50 p-5 dark:bg-gray-900/50">
-              <p className="text-sm font-semibold text-gray-900 dark:text-white">Streszczenie</p>
+              <p className="text-sm font-semibold text-gray-900 dark:text-white">
+                Streszczenie
+              </p>
               <p className="mt-2 text-sm leading-relaxed text-gray-700 dark:text-gray-300">
                 {wynik.opis.streszczenie}
               </p>
@@ -496,21 +577,25 @@ export default function AudytCheck() {
                 <h3 className="mr-2 text-lg font-bold text-gray-900 dark:text-white">
                   Co znaleźliśmy
                 </h3>
-                {(["wszystko", "krytyczne", "wazne", "drobne"] as const).map((w) => (
-                  <button
-                    key={w}
-                    type="button"
-                    aria-pressed={filtr === w}
-                    onClick={() => setFiltr(w)}
-                    className={`rounded-full border px-3 py-1 text-xs font-semibold transition-colors ${
-                      filtr === w
-                        ? "border-accent bg-accent-solid text-white"
-                        : "border-gray-300 text-gray-600 hover:border-accent dark:border-gray-700 dark:text-gray-400"
-                    }`}
-                  >
-                    {w === "wszystko" ? `Wszystko (${wynik.ustalenia.length})` : `${MOTYW_WAGI[w].nazwa} (${liczby[w]})`}
-                  </button>
-                ))}
+                {(["wszystko", "krytyczne", "wazne", "drobne"] as const).map(
+                  (w) => (
+                    <button
+                      key={w}
+                      type="button"
+                      aria-pressed={filtr === w}
+                      onClick={() => setFiltr(w)}
+                      className={`rounded-full border px-3 py-1 text-xs font-semibold transition-colors ${
+                        filtr === w
+                          ? "border-accent bg-accent-solid text-white"
+                          : "border-gray-300 text-gray-600 hover:border-accent dark:border-gray-700 dark:text-gray-400"
+                      }`}
+                    >
+                      {w === "wszystko"
+                        ? `Wszystko (${wynik.ustalenia.length})`
+                        : `${MOTYW_WAGI[w].nazwa} (${liczby[w]})`}
+                    </button>
+                  ),
+                )}
               </div>
 
               <div className="space-y-6">
@@ -534,7 +619,9 @@ export default function AudytCheck() {
                             className={`rounded-r-lg border-l-4 bg-gray-50 p-4 dark:bg-gray-900/50 ${MOTYW_WAGI[u.waga].ramka}`}
                           >
                             <div className="flex flex-wrap items-baseline justify-between gap-2">
-                              <span className={`text-xs font-bold uppercase tracking-wider ${MOTYW_WAGI[u.waga].tekst}`}>
+                              <span
+                                className={`text-xs font-bold uppercase tracking-wider ${MOTYW_WAGI[u.waga].tekst}`}
+                              >
                                 {MOTYW_WAGI[u.waga].nazwa}
                               </span>
                               {u.koszt > 0 && (
@@ -543,7 +630,9 @@ export default function AudytCheck() {
                                 </span>
                               )}
                             </div>
-                            <p className="mt-1 font-semibold text-gray-900 dark:text-white">{u.tytul}</p>
+                            <p className="mt-1 font-semibold text-gray-900 dark:text-white">
+                              {u.tytul}
+                            </p>
                             <p className="mt-1.5 text-sm text-gray-700 dark:text-gray-300">
                               <span className="font-semibold">Zmierzono: </span>
                               {u.fakt}
@@ -558,7 +647,10 @@ export default function AudytCheck() {
                                 </span>
                               )}
                               {u.material && (
-                                <a href={u.material.href} className="font-medium text-accent hover:underline">
+                                <a
+                                  href={u.material.href}
+                                  className="font-medium text-accent hover:underline"
+                                >
                                   Szerzej: {u.material.tytul}
                                 </a>
                               )}
@@ -576,7 +668,9 @@ export default function AudytCheck() {
           {/* Kolejność i mocne strony */}
           {wynik.opis && wynik.opis.kolejnosc.length > 0 && (
             <div>
-              <h3 className="mb-3 text-lg font-bold text-gray-900 dark:text-white">Od czego zacząć</h3>
+              <h3 className="mb-3 text-lg font-bold text-gray-900 dark:text-white">
+                Od czego zacząć
+              </h3>
               <ol className="space-y-3">
                 {wynik.opis.kolejnosc.map((k, i) => (
                   <li key={k.krok} className="flex gap-3">
@@ -584,8 +678,12 @@ export default function AudytCheck() {
                       {i + 1}
                     </span>
                     <div>
-                      <p className="text-sm font-semibold text-gray-900 dark:text-white">{k.krok}</p>
-                      <p className="mt-0.5 text-sm text-gray-600 dark:text-gray-400">{k.powod}</p>
+                      <p className="text-sm font-semibold text-gray-900 dark:text-white">
+                        {k.krok}
+                      </p>
+                      <p className="mt-0.5 text-sm text-gray-600 dark:text-gray-400">
+                        {k.powod}
+                      </p>
                     </div>
                   </li>
                 ))}
@@ -600,8 +698,13 @@ export default function AudytCheck() {
               </p>
               <ul className="mt-2 space-y-1.5">
                 {wynik.opis.mocneStrony.map((x) => (
-                  <li key={x} className="flex gap-2 text-sm text-gray-700 dark:text-gray-300">
-                    <span aria-hidden="true" className="text-emerald-700">✓</span>
+                  <li
+                    key={x}
+                    className="flex gap-2 text-sm text-gray-700 dark:text-gray-300"
+                  >
+                    <span aria-hidden="true" className="text-emerald-700">
+                      ✓
+                    </span>
                     {x}
                   </li>
                 ))}
@@ -611,73 +714,222 @@ export default function AudytCheck() {
 
           {/* Pomiary */}
           <div className="space-y-3">
-            <h3 className="text-lg font-bold text-gray-900 dark:text-white">Surowe pomiary</h3>
+            <h3 className="text-lg font-bold text-gray-900 dark:text-white">
+              Surowe pomiary
+            </h3>
             <p className="text-sm text-gray-600 dark:text-gray-400">
               Wszystko powyżej wynika z tych liczb. Zaglądaj tu, gdy chcesz
               sprawdzić, skąd wzięło się któreś ustalenie.
             </p>
-            <Skladane tytul="Szybkość" naZdarzenie={() => zglosZdarzenie("audyt_rozwin_szybkosc")}>
-              <Wiersz nazwa="Czas do pierwszego bajtu, komputer" wartosc={p.ttfbMs === null ? "nie zmierzono" : `${p.ttfbMs} ms`} />
-              <Wiersz nazwa="Pełne pobranie dokumentu" wartosc={p.pelnyMs === null ? "nie zmierzono" : `${p.pelnyMs} ms`} />
+            <Skladane
+              tytul="Szybkość"
+              naZdarzenie={() => zglosZdarzenie("audyt_rozwin_szybkosc")}
+            >
+              <Wiersz
+                nazwa="Czas do pierwszego bajtu, komputer"
+                wartosc={p.ttfbMs === null ? "nie zmierzono" : `${p.ttfbMs} ms`}
+              />
+              <Wiersz
+                nazwa="Pełne pobranie dokumentu"
+                wartosc={
+                  p.pelnyMs === null ? "nie zmierzono" : `${p.pelnyMs} ms`
+                }
+              />
               <Wiersz nazwa="Waga dokumentu" wartosc={waga(p.htmlBajty)} />
               <Wiersz nazwa="Kompresja" wartosc={p.kompresjaHtml ?? "brak"} />
               <Wiersz nazwa="Serwer" wartosc={p.serwer ?? "nie podaje"} />
-              <Wiersz nazwa="Plików zważonych" wartosc={`${p.zasoby.zwazone} z ${p.zasoby.znalezione}`} />
+              <Wiersz
+                nazwa="Plików zważonych"
+                wartosc={`${p.zasoby.zwazone} z ${p.zasoby.znalezione}`}
+              />
               {p.zasoby.najciezsze.length > 0 && (
                 <div className="mt-3">
-                  <p className="mb-1 text-xs font-semibold uppercase tracking-wider text-gray-500">Najcięższe pliki</p>
+                  <p className="mb-1 text-xs font-semibold uppercase tracking-wider text-gray-500">
+                    Najcięższe pliki
+                  </p>
                   {p.zasoby.najciezsze.map((z) => (
-                    <Wiersz key={z.nazwa} nazwa={`${z.nazwa} (${z.rodzaj})`} wartosc={waga(z.bajty)} />
+                    <Wiersz
+                      key={z.nazwa}
+                      nazwa={`${z.nazwa} (${z.rodzaj})`}
+                      wartosc={waga(z.bajty)}
+                    />
                   ))}
                 </div>
               )}
             </Skladane>
 
-            <Skladane tytul="Wersja na telefon" naZdarzenie={() => zglosZdarzenie("audyt_rozwin_mobile")}>
-              <Wiersz nazwa="Znacznik viewport" wartosc={p.mobile.viewport ?? "brak"} />
-              <Wiersz nazwa="Powiększanie dwoma palcami" wartosc={p.mobile.blokujePowiekszanie ? "zablokowane" : "dozwolone"} />
-              <Wiersz nazwa="Czas do pierwszego bajtu, telefon" wartosc={p.mobile.ttfbMs === null ? "nie zmierzono" : `${p.mobile.ttfbMs} ms`} />
+            <Skladane
+              tytul="Wersja na telefon"
+              naZdarzenie={() => zglosZdarzenie("audyt_rozwin_mobile")}
+            >
+              <Wiersz
+                nazwa="Znacznik viewport"
+                wartosc={p.mobile.viewport ?? "brak"}
+              />
+              <Wiersz
+                nazwa="Powiększanie dwoma palcami"
+                wartosc={
+                  p.mobile.blokujePowiekszanie ? "zablokowane" : "dozwolone"
+                }
+              />
+              <Wiersz
+                nazwa="Czas do pierwszego bajtu, telefon"
+                wartosc={
+                  p.mobile.ttfbMs === null
+                    ? "nie zmierzono"
+                    : `${p.mobile.ttfbMs} ms`
+                }
+              />
               <Wiersz
                 nazwa="Reguły przestawiające układ (@media)"
-                wartosc={p.mobile.cssZnakow > 500 ? String(p.mobile.regulMedia) : "nie udało się przeczytać stylów"}
+                wartosc={
+                  p.mobile.cssZnakow > 500
+                    ? String(p.mobile.regulMedia)
+                    : "nie udało się przeczytać stylów"
+                }
               />
               <Wiersz
                 nazwa="Sztywne szerokości w stylach"
-                wartosc={p.mobile.cssZnakow > 500 ? String(p.mobile.stalychSzerokosci) : "nie udało się przeczytać stylów"}
+                wartosc={
+                  p.mobile.cssZnakow > 500
+                    ? String(p.mobile.stalychSzerokosci)
+                    : "nie udało się przeczytać stylów"
+                }
               />
-              <Wiersz nazwa="Obrazy bez wersji na mniejszy ekran" wartosc={`${p.mobile.obrazowBezSrcset} z ${p.obrazy.wszystkie}`} />
-              <Wiersz nazwa="Waga całości do pobrania" wartosc={waga(p.mobile.wagaCalosci)} />
+              <Wiersz
+                nazwa="Obrazy bez wersji na mniejszy ekran"
+                wartosc={`${p.mobile.obrazowBezSrcset} z ${p.obrazy.wszystkie}`}
+              />
+              <Wiersz
+                nazwa="Waga całości do pobrania"
+                wartosc={waga(p.mobile.wagaCalosci)}
+              />
               <Wiersz
                 nazwa="Szacowany czas na łączu komórkowym"
-                wartosc={p.mobile.sekundNa4G === null ? "nie zmierzono" : `około ${p.mobile.sekundNa4G} s`}
+                wartosc={
+                  p.mobile.sekundNa4G === null
+                    ? "nie zmierzono"
+                    : `około ${p.mobile.sekundNa4G} s`
+                }
               />
-              <Wiersz nazwa="Osobny dokument dla telefonu" wartosc={p.mobile.osobnaWersja ? "tak" : "nie"} />
+              <Wiersz
+                nazwa="Osobny dokument dla telefonu"
+                wartosc={p.mobile.osobnaWersja ? "tak" : "nie"}
+              />
             </Skladane>
 
-            <Skladane tytul="Widoczność w wyszukiwarce" naZdarzenie={() => zglosZdarzenie("audyt_rozwin_seo")}>
-              <Wiersz nazwa="Tytuł" wartosc={p.tytul ? `${p.tytul.length} znaków` : "brak"} />
-              <Wiersz nazwa="Opis dla wyników" wartosc={p.opisMeta ? `${p.opisMeta.length} znaków` : "brak"} />
-              <Wiersz nazwa="Nagłówki pierwszego poziomu" wartosc={String(p.h1.length)} />
-              <Wiersz nazwa="Adres podstawowy (canonical)" wartosc={p.canonical ? "jest" : "brak"} />
-              <Wiersz nazwa="Zakaz indeksowania" wartosc={p.noindex ? "TAK" : "nie"} />
-              <Wiersz nazwa="Mapa strony" wartosc={p.sitemap.jest ? `jest${p.sitemap.adresow ? `, ${p.sitemap.adresow} adresów` : ""}` : "brak"} />
+            <Skladane
+              tytul="Widoczność w wyszukiwarce"
+              naZdarzenie={() => zglosZdarzenie("audyt_rozwin_seo")}
+            >
+              <Wiersz
+                nazwa="Tytuł"
+                wartosc={
+                  p.tytul
+                    ? `${p.tytul.length} ${odmien(p.tytul.length, "znak", "znaki", "znaków")}`
+                    : "brak"
+                }
+              />
+              <Wiersz
+                nazwa="Opis dla wyników"
+                wartosc={
+                  p.opisMeta
+                    ? `${p.opisMeta.length} ${odmien(p.opisMeta.length, "znak", "znaki", "znaków")}`
+                    : "brak"
+                }
+              />
+              <Wiersz
+                nazwa="Nagłówki pierwszego poziomu"
+                wartosc={String(p.h1.length)}
+              />
+              <Wiersz
+                nazwa="Adres podstawowy (canonical)"
+                wartosc={p.canonical ? "jest" : "brak"}
+              />
+              <Wiersz
+                nazwa="Zakaz indeksowania"
+                wartosc={p.noindex ? "TAK" : "nie"}
+              />
+              <Wiersz
+                nazwa="Mapa strony"
+                wartosc={
+                  p.sitemap.jest
+                    ? `jest${p.sitemap.adresow ? `, ${p.sitemap.adresow} ${odmien(p.sitemap.adresow, "adres", "adresy", "adresów")}` : ""}`
+                    : "brak"
+                }
+              />
               <Wiersz nazwa="Open Graph" wartosc={p.og ? "jest" : "brak"} />
-              <Wiersz nazwa="Dane uporządkowane" wartosc={p.daneStrukturalne.length ? p.daneStrukturalne.slice(0, 4).join(", ") : "brak"} />
-              <Wiersz nazwa="Obrazy bez opisu alt" wartosc={`${p.obrazy.bezAlt} z ${p.obrazy.wszystkie}`} />
-              <Wiersz nazwa="Treść po odjęciu skryptów" wartosc={`${p.trescZnakow} znaków`} />
+              <Wiersz
+                nazwa="Dane uporządkowane"
+                wartosc={
+                  p.daneStrukturalne.length
+                    ? p.daneStrukturalne.slice(0, 4).join(", ")
+                    : "brak"
+                }
+              />
+              <Wiersz
+                nazwa="Obrazy bez opisu alt"
+                wartosc={`${p.obrazy.bezAlt} z ${p.obrazy.wszystkie}`}
+              />
+              <Wiersz
+                nazwa="Treść po odjęciu skryptów"
+                wartosc={`${p.trescZnakow} ${odmien(p.trescZnakow, "znak", "znaki", "znaków")}`}
+              />
             </Skladane>
 
-            <Skladane tytul="Certyfikat i poczta" naZdarzenie={() => zglosZdarzenie("audyt_rozwin_cert")}>
+            <Skladane
+              tytul="Certyfikat i poczta"
+              naZdarzenie={() => zglosZdarzenie("audyt_rozwin_cert")}
+            >
               <Wiersz
                 nazwa="Certyfikat"
-                wartosc={p.cert ? `${p.cert.wystawca}, ${p.cert.dniDoKonca} dni do końca` : "nie odczytano"}
+                wartosc={
+                  p.cert
+                    ? `${p.cert.wystawca}, ${p.cert.dniDoKonca} dni do końca`
+                    : "nie odczytano"
+                }
               />
-              <Wiersz nazwa="Certyfikat pasuje do domeny" wartosc={p.cert ? (p.cert.pasujeDoDomeny ? "tak" : "NIE") : "nie odczytano"} />
-              <Wiersz nazwa="Serwery poczty" wartosc={p.poczta.mx ? "są" : "brak"} />
+              <Wiersz
+                nazwa="Certyfikat pasuje do domeny"
+                wartosc={
+                  p.cert
+                    ? p.cert.pasujeDoDomeny
+                      ? "tak"
+                      : "NIE"
+                    : "nie odczytano"
+                }
+              />
+              <Wiersz
+                nazwa="Serwery poczty"
+                wartosc={p.poczta.mx ? "są" : "brak"}
+              />
               <Wiersz nazwa="SPF" wartosc={p.poczta.spf ? "jest" : "brak"} />
-              <Wiersz nazwa="DMARC" wartosc={p.poczta.dmarc ? `${p.poczta.dmarcPolityka ?? "jest"}` : "brak"} />
-              <Wiersz nazwa="robots.txt" wartosc={p.robots.jest ? (p.robots.blokujeWszystko ? "blokuje wszystko" : "jest") : "brak"} />
-              <Wiersz nazwa="Roboty wyszukiwania AI zablokowane" wartosc={p.robots.blokujeAi.length ? p.robots.blokujeAi.join(", ") : "nie"} />
+              <Wiersz
+                nazwa="DMARC"
+                wartosc={
+                  p.poczta.dmarc
+                    ? `${p.poczta.dmarcPolityka ?? "jest"}`
+                    : "brak"
+                }
+              />
+              <Wiersz
+                nazwa="robots.txt"
+                wartosc={
+                  p.robots.jest
+                    ? p.robots.blokujeWszystko
+                      ? "blokuje wszystko"
+                      : "jest"
+                    : "brak"
+                }
+              />
+              <Wiersz
+                nazwa="Roboty wyszukiwania AI zablokowane"
+                wartosc={
+                  p.robots.blokujeAi.length
+                    ? p.robots.blokujeAi.join(", ")
+                    : "nie"
+                }
+              />
             </Skladane>
           </div>
 
@@ -706,15 +958,17 @@ export default function AudytCheck() {
               )}
               <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
                 Czas: około {wynik.wycena.dniRobocze}{" "}
-                {wynik.wycena.dniRobocze === 1 ? "dzień roboczy" : "dni roboczych"} od
-                otrzymania dostępów. Ceny bez VAT, zwolnienie podmiotowe. Wycena
-                jest wiążąca przez 30 dni.
+                {wynik.wycena.dniRobocze === 1
+                  ? "dzień roboczy"
+                  : "dni roboczych"}{" "}
+                od otrzymania dostępów. Ceny bez VAT, zwolnienie podmiotowe.
+                Wycena jest wiążąca przez 30 dni.
               </p>
               {wynik.wycena.pilne > 0 && (
                 <p className="mt-3 border-t border-accent/20 pt-3 text-sm text-gray-700 dark:text-gray-300">
                   Jeżeli budżet ma być mniejszy, sama warstwa krytyczna to{" "}
-                  <strong>{wynik.wycena.pilne} zł</strong>. Reszta może poczekać, te
-                  rzeczy nie mogą.
+                  <strong>{wynik.wycena.pilne} zł</strong>. Reszta może
+                  poczekać, te rzeczy nie mogą.
                 </p>
               )}
               <a
@@ -734,14 +988,19 @@ export default function AudytCheck() {
                 Czego potrzebujemy, żeby to naprawić
               </h3>
               <p className="mt-1.5 text-sm text-gray-600 dark:text-gray-400">
-                Nie potrzebujemy haseł do niczego. Potrzebujemy dostępu nadanego na
-                nasze konto, który cofniecie jednym kliknięciem po zakończeniu
-                pracy.
+                Nie potrzebujemy haseł do niczego. Potrzebujemy dostępu nadanego
+                na nasze konto, który cofniecie jednym kliknięciem po
+                zakończeniu pracy.
               </p>
               <ul className="mt-3 space-y-1.5">
                 {wynik.dostepy.map((d) => (
-                  <li key={d} className="flex gap-2 text-sm text-gray-700 dark:text-gray-300">
-                    <span aria-hidden="true" className="text-accent">•</span>
+                  <li
+                    key={d}
+                    className="flex gap-2 text-sm text-gray-700 dark:text-gray-300"
+                  >
+                    <span aria-hidden="true" className="text-accent">
+                      •
+                    </span>
                     {d}
                   </li>
                 ))}
@@ -762,8 +1021,8 @@ export default function AudytCheck() {
                 </p>
                 <p className="mt-1.5 text-sm text-gray-600 dark:text-gray-400">
                   Jeżeli nie dotrze w ciągu kilku minut, zajrzyj do spamu. Zgodę
-                  możesz wycofać, odpisując na tę wiadomość jednym słowem, usuwamy
-                  adres tego samego dnia.
+                  możesz wycofać, odpisując na tę wiadomość jednym słowem,
+                  usuwamy adres tego samego dnia.
                 </p>
               </div>
             ) : (
@@ -793,7 +1052,9 @@ export default function AudytCheck() {
                       disabled={mailStan === "wysylamy" || !zgoda}
                       className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
                     >
-                      {mailStan === "wysylamy" ? "Wysyłamy..." : "Wyślij raport"}
+                      {mailStan === "wysylamy"
+                        ? "Wysyłamy..."
+                        : "Wyślij raport"}
                     </button>
                   </div>
                   <label className="flex cursor-pointer items-start gap-2.5 text-sm text-gray-600 dark:text-gray-400">
@@ -805,12 +1066,14 @@ export default function AudytCheck() {
                     />
                     <span>
                       Zgadzamy się na przesłanie raportu na podany adres i na
-                      kontakt w sprawie jego wyników. Zgodę możemy wycofać w każdej
-                      chwili, odpisując na wiadomość.
+                      kontakt w sprawie jego wyników. Zgodę możemy wycofać w
+                      każdej chwili, odpisując na wiadomość.
                     </span>
                   </label>
                   {mailStan === "blad" && (
-                    <p className="text-sm text-red-600 dark:text-red-400">{mailBlad}</p>
+                    <p className="text-sm text-red-600 dark:text-red-400">
+                      {mailBlad}
+                    </p>
                   )}
                   <p className="text-xs text-gray-500 dark:text-gray-400">
                     Adres służy do wysłania tego raportu i ewentualnej rozmowy o
@@ -823,22 +1086,26 @@ export default function AudytCheck() {
           </div>
 
           {/* Metodyka */}
-          <Skladane tytul="Jak to zmierzyliśmy i czego nie sprawdzałem" naZdarzenie={() => zglosZdarzenie("audyt_rozwin_metodyka")}>
+          <Skladane
+            tytul="Jak to zmierzyliśmy i czego nie sprawdzałem"
+            naZdarzenie={() => zglosZdarzenie("audyt_rozwin_metodyka")}
+          >
             <div className="space-y-3 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
               <p>
                 Wszystkie liczby pochodzą z jednego badania wykonanego przed
-                chwilą. Stronę pobrałem dwa razy: raz z nagłówkami komputera, raz
-                z nagłówkami telefonu. Wagę plików liczymy z tego, co faktycznie
-                przyszło, a nie z deklaracji serwera, i podajemy, ilu plików nie
-                udało się zważyć.
+                chwilą. Stronę pobrałem dwa razy: raz z nagłówkami komputera,
+                raz z nagłówkami telefonu. Wagę plików liczymy z tego, co
+                faktycznie przyszło, a nie z deklaracji serwera, i podajemy, ilu
+                plików nie udało się zważyć.
               </p>
               <p>
-                Czego tutaj nie ma, żeby nie było nieporozumień: nie uruchamiałem
-                przeglądarki, więc nie mierzymy czasu rysowania strony, przesunięć
-                układu ani wyniku Lighthouse. Nie oceniamy treści merytorycznie,
-                nie oceniamy wyglądu i nie porównujemy z konkurencją. Badamy stronę
-                główną, nie każdą podstronę. Pojedynczy pomiar czasu zależy od
-                chwili, więc wartości graniczne warto sprawdzić drugi raz.
+                Czego tutaj nie ma, żeby nie było nieporozumień: nie
+                uruchamiałem przeglądarki, więc nie mierzymy czasu rysowania
+                strony, przesunięć układu ani wyniku Lighthouse. Nie oceniamy
+                treści merytorycznie, nie oceniamy wyglądu i nie porównujemy z
+                konkurencją. Badamy stronę główną, nie każdą podstronę.
+                Pojedynczy pomiar czasu zależy od chwili, więc wartości
+                graniczne warto sprawdzić drugi raz.
               </p>
               <p>
                 Jeżeli któraś liczba budzi wątpliwość, napisz. Sprawdzimy ją
