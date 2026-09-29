@@ -44,6 +44,10 @@ html.dark {
 @layer base {
   html {
     scroll-behavior: smooth;
+    /* Bez tego przeciagniecie w gore z samej gory strony uruchamia na
+       Androidzie pull-to-refresh: strona odjezdza w dol i odslania pusty
+       pas nad trescia. */
+    overscroll-behavior-y: contain;
   }
 
   body {

@@ -129,7 +129,7 @@ interface Recommendation {
 const TEAM_INSIGHT: Record<TeamSize, string> = {
   "1": "Jedna osoba obsługująca proces to single point of failure, choroba, urlop albo zmiana pracy zatrzymuje cały przepływ. Automatyzacja działa tu też jako ubezpieczenie ciągłości, nie tylko oszczędność czasu.",
   "2-3":
-    "Przy 2–3 osobach zaczyna kosztować koordynacja: każdy ma trochę inny sposób, dane wpisywane są niespójnie, a follow-up zależy od tego, kto akurat zauważył maila. Automat usuwa rozjazd między osobami.",
+    "Przy 2–3 osobach zaczyna kosztować koordynacja: każdy ma trochę inny sposób, dane wpisywane są niespójnie, a follow-up zależy od tego, kto akurat zauważył maila. Automatyzacja usuwa rozbieżności między osobami.",
   zespol:
     "Zespół oznacza, że automatyzacja skaluje się od razu na wszystkich, co jest największą dźwignią ROI. Każda godzina zaoszczędzona w procesie mnoży się przez liczbę osób.",
 };
@@ -155,7 +155,7 @@ function recommend(d: Inputs): Recommendation {
   if (isLowFrequency && d.czasH < 5) {
     return {
       kind: "manual",
-      headline: "Ręczna obsługa OK, skala nie uzasadnia wdrożenia.",
+      headline: "Ręczna obsługa wystarczy, skala nie uzasadnia wdrożenia.",
       detail: `Mniej niż 5 godzin miesięcznie i okazjonalna częstotliwość to za mała baza, żeby ROI z automatyzacji wyszło sensownie. Lepiej skupić się na procesach o większej skali. ${teamInsight}`,
     };
   }
@@ -166,20 +166,20 @@ function recommend(d: Inputs): Recommendation {
       return {
         kind: "automate",
         headline: "Zdecydowanie automatyzuj, skala robi największą różnicę.",
-        detail: `Codziennie/kilka razy w tygodniu × cały zespół = klasyczny case z największą dźwignią ROI. Oszczędność rośnie liniowo z liczbą osób, a po ilu miesiącach wdrożenie się spłaci przy Twoich liczbach, pokazuje punkt zwrotu niżej. ${teamInsight}`,
+        detail: `Codziennie/kilka razy w tygodniu × cały zespół = klasyczny przypadek z największą dźwignią ROI. Oszczędność rośnie liniowo z liczbą osób, a po ilu miesiącach wdrożenie się spłaci przy Twoich liczbach, pokazuje punkt zwrotu niżej. ${teamInsight}`,
       };
     }
     if (d.team === "1") {
       return {
         kind: "automate",
-        headline: "Automatyzuj, i zabezpiecz proces przed człowiekiem.",
+        headline: "Automatyzuj i zabezpiecz proces przed błędem człowieka.",
         detail: `Wysoka częstotliwość + jedna osoba to nie tylko marnowanie czasu, ale też ryzyko operacyjne. Automatyzacja oddaje proces systemowi, który nie zapomina, nie idzie na urlop i nie myli się przy 50. powtórzeniu z rzędu. ${teamInsight}`,
       };
     }
     return {
       kind: "automate",
       headline: "Mocna rekomendacja: zautomatyzuj.",
-      detail: `Powtarzalny proces o wysokiej częstotliwości to klasyczny case dla automatyzacji. Oszczędność czasu jest stała każdego miesiąca, nie tylko raz, a po ilu miesiącach wdrożenie się spłaci przy Twoich liczbach, pokazuje punkt zwrotu niżej. ${teamInsight}`,
+      detail: `Powtarzalny proces o wysokiej częstotliwości to klasyczny przypadek dla automatyzacji. Oszczędność czasu jest stała każdego miesiąca, nie tylko raz, a po ilu miesiącach wdrożenie się spłaci przy Twoich liczbach, pokazuje punkt zwrotu niżej. ${teamInsight}`,
     };
   }
 
@@ -205,7 +205,7 @@ function recommend(d: Inputs): Recommendation {
       return {
         kind: "consider",
         headline: "Granicznie sensowne, tylko jeśli proces jest krytyczny.",
-        detail: `Okazjonalnie, ale przy zespole i 20+ godzinach miesięcznie zsumowanych, automatyzacja może mieć sens, jeśli proces jest powtarzalny w treści (a tylko nieregularny w czasie). Inaczej koszt utrzymania kodu, którego nikt nie używa, zje oszczędność. ${teamInsight}`,
+        detail: `Okazjonalnie, ale przy zespole i 20+ godzinach miesięcznie zsumowanych, automatyzacja może mieć sens, jeśli proces jest powtarzalny w treści (a tylko nieregularny w czasie). Inaczej koszt utrzymania kodu, którego nikt nie używa, pochłonie oszczędność. ${teamInsight}`,
       };
     }
     return {

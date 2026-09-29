@@ -135,7 +135,7 @@ const SKALE: Skala[] = [
     nazwa: "Do 20 miesięcznie",
     warto: false,
     werdykt:
-      "Przy tej skali nie budowałbym pod to automatyzacji. Dwadzieścia zapytań miesięcznie da się obsłużyć ręcznie i uczciwiej jest powiedzieć, że wdrożenie zwróci się tu bardzo długo. Zrób powyższe sprawdzenie sam i popraw jedną rzecz, która wyjdzie najgorzej.",
+      "Przy tej skali nie budowalibyśmy pod to automatyzacji. Dwadzieścia zapytań miesięcznie da się obsłużyć ręcznie i uczciwiej jest powiedzieć, że wdrożenie zwróci się tu bardzo długo. Zrób powyższe sprawdzenie sam i popraw jedną rzecz, która wyjdzie najgorzej.",
     koszt: "Koszt: zero, to zmiana w sposobie pracy, nie we wdrożeniu.",
   },
   {

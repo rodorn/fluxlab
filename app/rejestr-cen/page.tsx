@@ -94,7 +94,7 @@ export default function Page() {
         },
         {
           q: "Na jakich sklepach to działa?",
-          a: "Najpewniej na WooCommerce, bo udostępnia listę przecenionych produktów wprost. Przy innych silnikach robimy to samo, tylko listę promocji budujemy z kategorii promocyjnych. Napisz, na czym stoisz, powiemy od razu, czy się da.",
+          a: "Najpewniej na WooCommerce, bo udostępnia listę przecenionych produktów wprost. Przy innych silnikach robimy to samo, tylko listę promocji budujemy z kategorii promocyjnych. Napisz, na jakim silniku działa sklep, powiemy od razu, czy się da.",
         },
         {
           q: "Czy sprawdzacie, czy podana cena minimalna jest prawdziwa?",
@@ -111,7 +111,7 @@ export default function Page() {
       ]}
       formId="order_rejestr_cen"
       formHeading="Sprawdź swój sklep"
-      formIntro="Podaj adres sklepu i napisz, na jakim silniku stoi. Odeślemy wynik skanu, a jeśli nie znajdziemy ani jednej niezgodności, nie płacisz."
+      formIntro="Podaj adres sklepu i napisz, na jakim silniku działa. Odeślemy wynik skanu, a jeśli nie znajdziemy ani jednej niezgodności, nie płacisz."
       submitLabel="Zamów skan sklepu"
       microCopy="Skan robimy wyłącznie na publicznie dostępnych stronach Twojego sklepu. Nie potrzebujemy żadnych dostępów."
       serviceName="Skan obowiązku informowania o najniższej cenie z 30 dni"

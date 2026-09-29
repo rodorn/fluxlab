@@ -248,7 +248,7 @@ export default function StronyWww() {
                     <LandingForm
                       formId="diagnosis_web"
                       heading="Bezpłatna diagnoza strony WWW"
-                      intro="Krótko opisz, jakiej strony potrzebujesz albo co Cię uwiera w obecnej. Wrócimy w ciągu 24h z kolejnym krokiem."
+                      intro="Krótko opisz, jakiej strony potrzebujesz albo co Ci przeszkadza w obecnej. Wrócimy w ciągu 24h z kolejnym krokiem."
                       submitLabel="Zamów diagnozę"
                     />
                   </div>

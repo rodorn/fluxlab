@@ -36,7 +36,7 @@ export default function LandingZPlatnoscia() {
       checks={[
         {
           title: "Zgłoszenie zapisuje się przed płatnością",
-          desc: "To jest najczęstszy i najdroższy błąd na takich stronach: dane trafiają do bazy dopiero po udanej płatności. Człowiek, który wypełnił formularz i odpadł przy BLIKu, znika bez śladu, a to jest osoba najbliższa zakupowi z wszystkich, które tego dnia weszły na stronę. U nas zapis idzie wcześniej, więc masz do kogo wrócić.",
+          desc: "To jest najczęstszy i najdroższy błąd na takich stronach: dane trafiają do bazy dopiero po udanej płatności. Człowiek, który wypełnił formularz i zrezygnował przy BLIK-u, znika bez śladu, a to jest osoba najbliższa zakupowi z wszystkich, które tego dnia weszły na stronę. U nas zapis idzie wcześniej, więc masz do kogo wrócić.",
         },
         {
           title: "Potwierdzenie płatności idzie webhookiem",
@@ -98,7 +98,7 @@ export default function LandingZPlatnoscia() {
       ]}
       faq={[
         {
-          q: "Jakiej bramki płatniczej używasz?",
+          q: "Jakiej bramki płatniczej używacie?",
           a: "Tej, którą wybierzecie i w której przejdziecie weryfikację, bo umowa jest zawierana na Waszą firmę. Technicznie różnice są niewielkie: liczy się to, czy operator wysyła potwierdzenie osobnym kanałem, a robią to wszyscy liczący się na polskim rynku. Jeśli nie macie jeszcze żadnej, powiemy, czym się różnią prowizje i czas wypłaty, ale rejestrację przechodzicie sami.",
         },
         {
@@ -110,7 +110,7 @@ export default function LandingZPlatnoscia() {
           a: "Nie, jeśli nie ma ku temu powodu. Jedna strona sprzedażowa nie potrzebuje systemu zarządzania treścią, a bez niego ładuje się szybciej, jest odporniejsza na włamania i nie wymaga comiesięcznych aktualizacji. Jeśli jednak macie już stronę na WordPressie i landing ma być jej częścią, zrobimy go tam.",
         },
         {
-          q: "Co, jeśli kampania nie wypali?",
+          q: "Co, jeśli kampania nie przyniesie efektów?",
           a: "Strona zostaje u Was razem z kodem i można ją wyłączyć albo przerobić pod inną ofertę. Nie ma tu abonamentu, który trzeba wypowiadać, ani przywiązania do naszego serwera.",
         },
       ]}

@@ -195,7 +195,7 @@ export default function CoZeStrona({ biezacaStrona }: Props) {
 
             {!zmiana ? (
               <p className="mt-5 text-sm text-gray-500 dark:text-gray-400">
-                Naciśnij jeszcze, co ma się zmienić, a dopiszę ocenę całości.
+                Naciśnij jeszcze, co ma się zmienić, a dopiszemy ocenę całości.
               </p>
             ) : (
               werdykt &&

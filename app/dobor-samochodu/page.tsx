@@ -274,7 +274,7 @@ export default function DoborSamochoduPage() {
                               Zakup emocjonalny po jazdzie próbnej.
                             </strong>{" "}
                             Salonowa jazda próbna to marketing. Nowiutka
-                            kierownica, świeży zapach, wypasiona wersja,
+                            kierownica, świeży zapach, bogato wyposażona wersja,
                             uprzejmy handlowiec. Decyzja po takiej jeździe jest
                             skrzywiona. Wróć do niej po tygodniu i sprawdź
                             ponownie parametry, a nie wrażenia. Albo jeszcze

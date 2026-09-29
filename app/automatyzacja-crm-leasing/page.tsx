@@ -34,18 +34,18 @@ const symptoms = [
   "Lead z porównywarki / formularza krąży po skrzynkach 24–48 h, zanim trafi do brokera",
   "Brak jednego CRM dla całego biura, handlowcy trzymają deale w Excelu i własnych folderach",
   "BIK/KRD/CEIDG sprawdzane ręcznie po telefonie, 15 minut na każdy lead, nawet ten słaby",
-  "Wnioski do leasingodawcy klejone w Wordzie z 5 systemów, każdy partner finansowy ma inny szablon",
-  "Status decyzji finansowej spada do brokera mailem, ktoś musi to ręcznie wpisać do CRM i zadzwonić do klienta",
+  "Wnioski do leasingodawcy składane ręcznie w Wordzie z 5 systemów, każdy partner finansowy ma inny szablon",
+  "Status decyzji finansowej przychodzi do brokera mailem, ktoś musi to ręcznie wpisać do CRM i zadzwonić do klienta",
   "Prowizje liczone w Excelu na koniec miesiąca, pomyłki, spóźnienia, frustracja zespołu",
 ];
 
 const beforeSteps = [
-  "Lead z porównywarki / strony / reklamy ląduje w wspólnej skrzynce",
+  "Lead z porównywarki / strony / reklamy trafia do wspólnej skrzynki",
   "Asystent ręcznie przekleja dane do CRM (jeśli istnieje) lub Excela",
   "Broker dzwoni do klienta na ślepo, bez BIK, bez wstępnej oceny zdolności",
   "Po rozmowie ręcznie zbiera dokumenty (KRS, CEIDG, sprawozdania) e-mailem",
-  "Klepie wniosek do leasingodawcy w jego szablonie",
-  "Status decyzji wpada mailem, broker przepisuje do CRM i dzwoni do klienta",
+  "Wypełnia wniosek do leasingodawcy w jego szablonie",
+  "Status decyzji przychodzi mailem, broker przepisuje do CRM i dzwoni do klienta",
   "Prowizje liczone ręcznie 5. dnia kolejnego miesiąca",
 ];
 
@@ -71,7 +71,7 @@ const industrySpecifics = [
   },
   {
     title: "Wolumen leadów i zmienność jakości",
-    desc: "Brokerzy współpracują z 5–15 porównywarkami i lead-genami, jakość leadów leci od 90% trafialności (porównywarki premium) do 5% (lead-geny szerokie). Bez scoringu i routingu po jakości najlepsi brokerzy są przeciążeni słabymi leadami, a mocne tracą reakcję, bo trafiają do najsłabszych.",
+    desc: "Brokerzy współpracują z 5–15 porównywarkami i lead-genami, jakość leadów waha się od 90% trafialności (porównywarki premium) do 5% (lead-geny szerokie). Bez scoringu i routingu po jakości najlepsi brokerzy są przeciążeni słabymi leadami, a mocne tracą reakcję, bo trafiają do najsłabszych.",
   },
   {
     title: "Struktura prowizji wieloskładnikowa",
@@ -96,7 +96,7 @@ const mistakes = [
   "Wdrażanie BIK/KRD bez zmapowanych zgód RODO, szybka droga do problemu z UODO",
   "Routing tylko po regionie, bez uwzględnienia jakości źródła, najlepsi brokerzy toną w słabych leadach",
   "Liczenie prowizji „prawie automatycznie”, ale z ręcznym kontrolnym Excelem na końcu, wtedy liczone jest dwa razy",
-  "Sync z leasingodawcą tylko jednostronny (CRM → partner), status decyzji dalej spada mailem, dalej trzeba przepisywać",
+  "Sync z leasingodawcą tylko jednostronny (CRM → partner), status decyzji dalej przychodzi mailem, dalej trzeba przepisywać",
   "Brak retencji danych, leady sprzed 3 lat dalej leżą w bazie, RODO mówi co innego",
 ];
 
@@ -303,7 +303,7 @@ export default function AutomatyzacjaCrmLeasing() {
                       <ul className="space-y-3">
                         {[
                           "Lead z porównywarki krąży 24–48 h, zanim broker oddzwoni",
-                          "Każda wycena i wniosek to 30–60 minut ręcznego klepania",
+                          "Każda wycena i wniosek to 30–60 minut ręcznego wypełniania",
                           "Status decyzji od leasingodawcy przepisywany ręcznie do CRM",
                           "Prowizje liczone w Excelu, błędy raz na 2–3 miesiące",
                           "Brak jednego widoku pipeline dla całego biura",
@@ -393,7 +393,7 @@ export default function AutomatyzacjaCrmLeasing() {
                         </div>
                         <div className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-6">
                           <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">
-                            Ręczne klepanie wniosków
+                            Ręczne wypełnianie wniosków
                           </p>
                           <p className="text-2xl font-bold text-gray-900 dark:text-white">
                             80 × 45 min = 60 h/mies.

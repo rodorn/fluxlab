@@ -130,7 +130,7 @@ export async function POST(request: Request) {
         ? "Podstawowe dane się zgadzają"
         : verdict === "ZOLTY"
           ? "Jest kilka rzeczy do wyjaśnienia"
-          : "Uważaj, coś tu nie gra",
+          : "Uważaj, te dane budzą wątpliwości",
     name: String(subject.name ?? ""),
     statusVat,
     regon: String(subject.regon ?? ""),

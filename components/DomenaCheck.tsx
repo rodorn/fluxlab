@@ -211,7 +211,7 @@ export default function DomenaCheck() {
             <p className="text-sm text-gray-700 dark:text-gray-300">
               {wynik.werdykt === "ZIELONY"
                 ? "Nie mamy Ci tu nic do sprzedania. Jeśli chcesz, możemy pilnować terminu i tego, czy abonent się nie zmienił, ale to wszystko."
-                : "Przeniesienie domeny na właściwą firmę to procedura papierowa: wniosek o zmianę abonenta, dokumenty rejestrowe i transfer do konta, do którego masz dostęp. Zajmuje się tym rejestrator, a ja prowadzimy sprawę i pilnujemy terminów."}
+                : "Przeniesienie domeny na właściwą firmę to procedura papierowa: wniosek o zmianę abonenta, dokumenty rejestrowe i transfer do konta, do którego masz dostęp. Zajmuje się tym rejestrator, a my prowadzimy sprawę i pilnujemy terminów."}
             </p>
 
             {leadStan === "ok" ? (

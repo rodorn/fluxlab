@@ -261,7 +261,7 @@ export default function Page() {
           </h2>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
             Żaden z tych czterech problemów nie jest efektowny i żaden nie
-            wywala strony. Wszystkie łączy natomiast jedna cecha: są niewidoczne
+            unieruchamia strony. Wszystkie łączy natomiast jedna cecha: są niewidoczne
             z fotela właściciela. W przeglądarce, w której strona działa, poczta
             chodzi, a domena się odnawia, nie widać ani tego, kto formalnie ma
             do niej prawo, ani tego, czego nie widzi wyszukiwarka, ani tego,

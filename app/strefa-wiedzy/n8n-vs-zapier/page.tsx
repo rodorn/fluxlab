@@ -50,7 +50,7 @@ export default function N8nVsZapierArticle() {
     {
       question: "Kiedy n8n ma sens dla małej firmy?",
       answer:
-        "Gdy spełniasz minimum dwa z trzech warunków: (1) macie w firmie kogoś, kto ogarnia Linuxa lub gotowy jesteś go opłacać, (2) wolumen automatyzacji rośnie i koszt Zapiera/Make zaczyna boleć (powyżej 100 USD/mies.), (3) macie wymagania dot. lokalizacji danych albo systemów wewnętrznych, których nie chcecie wystawiać na zewnątrz.",
+        "Gdy spełniasz minimum dwa z trzech warunków: (1) macie w firmie kogoś, kto zna Linuxa lub gotowy jesteś go opłacać, (2) wolumen automatyzacji rośnie i koszt Zapiera/Make staje się odczuwalny (powyżej 100 USD/mies.), (3) macie wymagania dot. lokalizacji danych albo systemów wewnętrznych, których nie chcecie wystawiać na zewnątrz.",
     },
     {
       question: "Czy n8n ma tyle integracji co Zapier?",

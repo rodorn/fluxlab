@@ -89,7 +89,7 @@ export default function AutomatyzacjaRaportowaniaArticle() {
                     <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
                       <li>dane są pobierane automatycznie,</li>
                       <li>są łączone według ustalonej logiki,</li>
-                      <li>raport aktualizuje się bez ręcznej składanki,</li>
+                      <li>raport aktualizuje się bez ręcznego składania,</li>
                       <li>
                         właściwe osoby dostają właściwe informacje na czas.
                       </li>
@@ -374,7 +374,7 @@ export default function AutomatyzacjaRaportowaniaArticle() {
                       Przykład 2: Raport operacyjny bez zaufania do danych
                     </h2>
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Zespół operacyjny: nikt nie pewny, które zgłoszenia
+                      Zespół operacyjny: nikt nie był pewny, które zgłoszenia są
                       naprawdę otwarte. Dopiero po uporządkowaniu definicji (co
                       jest sprawą otwartą, kiedy przechodzi dalej, kto zmienia
                       status) miało sens automatyzowanie raportu.
@@ -388,7 +388,7 @@ export default function AutomatyzacjaRaportowaniaArticle() {
                       Mini-case 1: sprzedaż + marketing + jedno źródło raportu
                     </h2>
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Firma chciała wiedzieć nie tylko ile leadów wpada, ale
+                      Firma chciała wiedzieć nie tylko ile leadów przychodzi, ale
                       które kanały naprawdę przynoszą wynik. Wcześniej raport z
                       kampanii i CRM żyły osobno.
                     </p>
@@ -449,7 +449,7 @@ export default function AutomatyzacjaRaportowaniaArticle() {
                       Krok 3: uporządkuj dane wejściowe
                     </h3>
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Jeżeli CRM lub źródła nieuporządkowane, popraw to
+                      Jeżeli CRM lub źródła są nieuporządkowane, popraw to
                       najpierw.
                     </p>
 

@@ -62,7 +62,7 @@ const useCases = [
 
 const painPoints = [
   {
-    pain: "Każdy poniedziałek to ręczne klepanie 12 raportów dla klientów",
+    pain: "Każdy poniedziałek to ręczne składanie 12 raportów dla klientów",
     solution:
       "Budujemy szablon raportu (Looker Studio, Google Slides z podpiętym arkuszem albo PDF generowany z n8n) i automatyzujemy pobieranie danych z Google Ads, Meta Ads, GA4 oraz Search Console. Raport powstaje sam w nocy z niedzieli na poniedziałek. Account manager dodaje komentarz strategiczny zamiast spędzać 4 godziny w Slidesach.",
   },
@@ -72,19 +72,19 @@ const painPoints = [
       "Pojedynczy formularz onboardingowy (lub status w CRM) uruchamia automatyzację, która tworzy: klienta w HubSpot/Pipedrive, folder w Google Drive z gotową strukturą, kanał Slack z odpowiednimi osobami, projekt w ClickUp/Asanie z szablonem zadań, dostępy do Google Ads/Meta Ads, wpis w bazie klientów, zaplanowany kickoff. Wszystko w 5 minut zamiast pół dnia.",
   },
   {
-    pain: "15 klientów, 15 kanałów Slacka, 15 boardów, i nikt nie ogarnia, gdzie co stoi",
+    pain: "15 klientów, 15 kanałów Slacka, 15 boardów i nikt nie ma pełnego obrazu, na jakim etapie co jest",
     solution:
       "Spinamy ClickUp/Asanę z dashboardem, który dla każdego account managera pokazuje status wszystkich jego klientów: deadline'y w tym tygodniu, blokery, zadania klienta wymagające reakcji, status kampanii. Dodatkowo automatyczne podsumowania do Slacka zamiast ręcznego sprawdzania 15 boardów.",
   },
   {
-    pain: "Klienci nie widzą, że robicie robotę, pojawiają się dopiero gdy coś się sypie",
+    pain: "Klienci nie widzą efektów Waszej pracy, odzywają się dopiero, gdy coś przestaje działać",
     solution:
       "Automatyczne weekly update do klienta ze statusem kampanii, zrealizowanymi zadaniami i planem na kolejny tydzień. Generowane z danych w project boardzie i platformach reklamowych. Klient czuje, że jest informowany, a Wy nie tracicie godziny tygodniowo na ręczne maile.",
   },
   {
     pain: "Czas i koszt na klienta jest niepoliczalny, wszystkie projekty wyglądają na rentowne, a wynik mówi co innego",
     solution:
-      "Łączymy time tracking, koszt zespołu (godzinowy), wynagrodzenie umowne klienta (retainer + project fees) w jeden raport rentowności. Co miesiąc widzicie, na którym kliencie zarabiacie, a który zżera marżę. Decyzje biznesowe zaczynają być podejmowane na danych, nie na intuicji właściciela.",
+      "Łączymy time tracking, koszt zespołu (godzinowy), wynagrodzenie umowne klienta (retainer + project fees) w jeden raport rentowności. Co miesiąc widzicie, na którym kliencie zarabiacie, a na którym marża znika. Decyzje biznesowe zaczynają być podejmowane na danych, nie na intuicji właściciela.",
   },
 ];
 
@@ -112,7 +112,7 @@ const tools = [
   {
     name: "Looker Studio",
     description:
-      "Standard raportowania klienckiego w marketingu. Spinamy Looker z Google Ads, Meta Ads (przez konektor), GA4, Search Console, CallTracking, CRM. Klient dostaje link do live dashboardu, agencja unika ręcznego klepania prezentacji.",
+      "Standard raportowania klienckiego w marketingu. Spinamy Looker z Google Ads, Meta Ads (przez konektor), GA4, Search Console, CallTracking, CRM. Klient dostaje link do live dashboardu, agencja unika ręcznego składania prezentacji.",
   },
 ];
 
@@ -234,7 +234,7 @@ export default function AutomatyzacjaDlaAgencjiMarketingowych() {
                   zabierają w agencji czas kompetentnym ludziom. Spinamy
                   HubSpot, Pipedrive, ClickUp, Asanę, Slacka, Google Ads, Meta
                   Ads i GA4 tak, żeby zespół zajmował się klientem, a nie
-                  klepaniem slajdów.
+                  składaniem slajdów.
                 </p>
               </div>
               <div className="relative mx-auto lg:mx-0 w-full max-w-md">
@@ -402,7 +402,7 @@ export default function AutomatyzacjaDlaAgencjiMarketingowych() {
                       <p className="text-gray-500 dark:text-gray-400 mb-12">
                         Dla agencji marketingowych z portfelem przynajmniej
                         kilkunastu aktywnych klientów, gdzie ręczne
-                        raportowanie, onboarding i fakturowanie zaczyna pożerać
+                        raportowanie, onboarding i fakturowanie zaczyna pochłaniać
                         tygodnie pracy zespołu. Pracujemy z agencjami
                         performance (Google Ads, Meta Ads, kampanie B2B),
                         agencjami SEO, social media oraz pełnoserwisowymi 360°.

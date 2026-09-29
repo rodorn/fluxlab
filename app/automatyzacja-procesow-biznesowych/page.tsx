@@ -74,7 +74,7 @@ export default function AutomatyzacjaProcesowBiznesowych() {
             </p>
             <div className="mt-8">
               <a href="#branza" className="btn-primary">
-                Sprawdź, co zjada czas w Waszej branży
+                Sprawdź, co pochłania czas w Waszej branży
               </a>
             </div>
           </div>

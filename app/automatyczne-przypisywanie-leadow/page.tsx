@@ -35,7 +35,7 @@ const problemPoints = [
   "Manager rano patrzy na arkusz i ręcznie rozdziela zapytania między handlowców.",
   "Handlowcy „polują” na te same leady albo żaden nie wie, że dany lead jest jego.",
   "Reguły podziału (region, branża, produkt) są w głowie szefa sprzedaży.",
-  "Gdy ktoś jest na urlopie, leady wpadają w czarną dziurę.",
+  "Gdy ktoś jest na urlopie, leady zostają bez opieki.",
   "Nie wiadomo, ile leadów dostał każdy handlowiec ani ile z nich realnie obsłużył.",
 ];
 
@@ -43,7 +43,7 @@ const symptoms = [
   "„Czy ktoś już dzwonił do tego klienta?”, pada na każdym standupie.",
   "Manager spędza 30–60 minut dziennie na rozdzielaniu leadów ręcznie.",
   "Klient dostaje pierwszy kontakt po 4–24 godzinach zamiast po 5 minutach.",
-  "Najlepszy handlowiec dostaje wszystkie najgorętsze leady, reszta się nudzi.",
+  "Najlepszy handlowiec dostaje wszystkie najgorętsze leady, reszta czeka bezczynnie.",
   "Tabela „kto co bierze” żyje w arkuszu Google, do którego pół zespołu nie ma dostępu.",
   "Po urlopie handlowca trzeba ręcznie przepiąć jego deale, często nie wiadomo, na czym stanęło.",
 ];
@@ -116,7 +116,7 @@ const workflowSteps = [
 const antipatterns = [
   {
     title: "Round-robin bez wagi pipeline'u",
-    desc: "Najprostsze rozwiązanie, każdy po kolei. Problem: handlowiec z 80 otwartymi dealami dostaje tyle samo co ten z 5. Efekt: kolejka na pierwszy kontakt rośnie u jednych, drudzy się nudzą.",
+    desc: "Najprostsze rozwiązanie, każdy po kolei. Problem: handlowiec z 80 otwartymi dealami dostaje tyle samo co ten z 5. Efekt: kolejka na pierwszy kontakt rośnie u jednych, drudzy czekają bezczynnie.",
   },
   {
     title: "Routing po regionie bez dostępności",
@@ -124,11 +124,11 @@ const antipatterns = [
   },
   {
     title: "Reguły w głowie managera, nie w systemie",
-    desc: "Manager ręcznie nadzoruje rozdział „bo zna swoich ludzi”. Działa, dopóki manager jest w pracy. Gdy odejdzie albo zachoruje, system się rozsypuje.",
+    desc: "Manager ręcznie nadzoruje rozdział „bo zna swoich ludzi”. Działa, dopóki manager jest w pracy. Gdy odejdzie albo zachoruje, proces przestaje działać.",
   },
   {
     title: "Brak fallbacku przy nietypowym leadzie",
-    desc: "Lead spoza zdefiniowanych regionów / produktów wpada w pustkę. Nikt go nie dostaje, bo żadna reguła nie pasuje. Zawsze potrzebny jest scenariusz „nie pasuje nigdzie, idzie do X”.",
+    desc: "Lead spoza zdefiniowanych regionów / produktów trafia donikąd. Nikt go nie dostaje, bo żadna reguła nie pasuje. Zawsze potrzebny jest scenariusz „nie pasuje nigdzie, idzie do X”.",
   },
   {
     title: "Routing bez SLA na reakcję",
@@ -140,7 +140,7 @@ const faq = [
   {
     question: "Po jakich kryteriach najlepiej rozdzielać leady?",
     answer:
-      "Klasyka: region (kod pocztowy / województwo), produkt lub linia biznesowa, źródło (organic vs reklama vs partner), wartość deala, język klienta. Do tego waga pipeline'u (kto ma mniej otwartych deali) i dostępność (urlop, status kalendarza). Najlepsze reguły to kombinacja 2–3 z tych kryteriów, nie jeden wymiar, ale też nie 12, bo wtedy nikt nie ogarnie, dlaczego lead trafił akurat tam.",
+      "Klasyka: region (kod pocztowy / województwo), produkt lub linia biznesowa, źródło (organic vs reklama vs partner), wartość deala, język klienta. Do tego waga pipeline'u (kto ma mniej otwartych deali) i dostępność (urlop, status kalendarza). Najlepsze reguły to kombinacja 2–3 z tych kryteriów, nie jeden wymiar, ale też nie 12, bo wtedy nikt nie zrozumie, dlaczego lead trafił akurat tam.",
   },
   {
     question:
@@ -376,7 +376,7 @@ export default function AutomatycznePrzypisywanieLeadow() {
                               <span className="text-accent font-semibold">
                                 Czas reakcji:
                               </span>{" "}
-                              średnio 4 h od wpadnięcia leada do pierwszego
+                              średnio 4 h od pojawienia się leada do pierwszego
                               kontaktu
                             </p>
                             <p className="text-gray-700 dark:text-gray-300">
@@ -798,7 +798,7 @@ export default function AutomatycznePrzypisywanieLeadow() {
                           <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
                             30-minutowa diagnoza, wstępna mapa pierwszego kroku
                             i szacowany ROI. Bez zobowiązań. Po rozmowie wiesz,
-                            czy w twoim przypadku to ma sens, i ile by
+                            czy w Twoim przypadku to ma sens, i ile by
                             kosztowało.
                           </p>
                           <TrackedCTA

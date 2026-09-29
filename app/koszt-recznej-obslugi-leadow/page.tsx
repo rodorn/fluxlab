@@ -46,7 +46,7 @@ const costComponents = [
     title: "Koszt czasu pracy",
     formula: "liczba_leadow × czas_min × stawka_h",
     description:
-      "Najprostszy do policzenia, ale prawie zawsze niedoszacowany. Liczy się nie tylko samo wpisanie do CRM, ale też przeskakiwanie między zakładkami, sprawdzanie czy klient już istnieje, ręczne przypisywanie handlowca i klejenie statusów.",
+      "Najprostszy do policzenia, ale prawie zawsze niedoszacowany. Liczy się nie tylko samo wpisanie do CRM, ale też przeskakiwanie między zakładkami, sprawdzanie czy klient już istnieje, ręczne przypisywanie handlowca i uzupełnianie statusów.",
     example:
       "300 leadów × 5 minut × 60 zł/h = 1 500 zł / miesiąc, czyli 18 000 zł / rok samego przepisywania.",
   },
@@ -70,7 +70,7 @@ const costComponents = [
     title: "Koszt raportowania ręcznego",
     formula: "godziny_analityka × częstotliwość × stawka_h",
     description:
-      "Ktoś co tydzień albo co miesiąc skleja raport z CRM-a, arkusza, kampanii reklamowych i pamięci. Im więcej źródeł, tym więcej godzin. A raport i tak jest gotowy z opóźnieniem i z błędami.",
+      "Ktoś co tydzień albo co miesiąc składa raport z CRM-a, arkusza, kampanii reklamowych i pamięci. Im więcej źródeł, tym więcej godzin. A raport i tak jest gotowy z opóźnieniem i z błędami.",
     example:
       "4 h tygodniowo × 4 tyg × 80 zł/h = 1 280 zł / mies za raport, który i tak nie wystarcza do podjęcia decyzji.",
   },
@@ -95,7 +95,7 @@ const examples = [
       { label: "Raport ręczny (2 h / mies)", value: "120 zł" },
     ],
     total: "~950 zł / mies · ~11 400 zł / rok",
-    note: "Niby mało. Ale mała firma najczęściej żyje z każdej domkniętej sprzedaży, utrata 2 leadów miesięcznie zmienia rachunek całego roku.",
+    note: "Pozornie niewiele. Ale mała firma najczęściej żyje z każdej domkniętej sprzedaży, utrata 2 leadów miesięcznie zmienia rachunek całego roku.",
   },
   {
     size: "Średnia firma B2B",
@@ -111,7 +111,7 @@ const examples = [
       { label: "Reklama wydana w złe źródło", value: "~2 000 zł" },
     ],
     total: "~12 880 zł / mies · ~154 560 zł / rok",
-    note: "Tu zwykle leży największa nieuświadomiona dziura. Zarząd patrzy na koszt handlowca, nie patrzy na koszt procesu obok handlowca.",
+    note: "Tu zwykle jest największa nieuświadomiona luka. Zarząd patrzy na koszt handlowca, nie patrzy na koszt procesu obok handlowca.",
   },
   {
     size: "Duża firma B2B",
@@ -134,15 +134,15 @@ const examples = [
 const firstStage = [
   {
     title: "Lead z formularza prosto do CRM",
-    desc: "Najmniejszy kawałek z największym efektem. Formularz → walidacja → osoba + firma + deal w CRM, ze źródłem i kampanią. Koniec z przepisywaniem.",
+    desc: "Najmniejszy element z największym efektem. Formularz → walidacja → osoba + firma + deal w CRM, ze źródłem i kampanią. Koniec z przepisywaniem.",
   },
   {
     title: "Routing do handlowca i zadanie „kontakt w 5 minut”",
-    desc: "Ten sam lead od razu trafia do właściwej osoby. CRM tworzy zadanie z deadlinem, handlowiec dostaje notyfikację. Przestaje liczyć się pamięć.",
+    desc: "Ten sam lead od razu trafia do właściwej osoby. CRM tworzy zadanie z deadlinem, handlowiec dostaje powiadomienie. Przestaje liczyć się pamięć.",
   },
   {
     title: "Prosty raport: źródło + czas reakcji + status",
-    desc: "Trzy liczby, które wystarczą do pierwszych decyzji: skąd przyszedł lead, ile czekał, co się z nim stało. Bez sklejania w piątek.",
+    desc: "Trzy liczby, które wystarczą do pierwszych decyzji: skąd przyszedł lead, ile czekał, co się z nim stało. Bez ręcznego składania w piątek.",
   },
 ];
 
@@ -180,7 +180,7 @@ const flowSteps = [
   {
     n: "6",
     title: "Raport: źródło, czas, status, wynik",
-    desc: "Trzy liczby pojawiają się same. Bez kogoś, kto klei to w piątek po południu.",
+    desc: "Trzy liczby pojawiają się same. Bez osoby, która składa to w piątek po południu.",
     accent: true,
   },
 ];
@@ -195,7 +195,7 @@ const measurementMistakes = [
     desc: "Bo „nie wiemy, ile by ich konwertowało”. Wiemy. Konwersja z leadów obsłużonych w 5 minut vs 24 h jest opisana w setkach badań, różnica jest realna i mierzalna.",
   },
   {
-    title: "Wrzucanie raportowania do „pracy menadżera”",
+    title: "Zaliczanie raportowania do „pracy menadżera”",
     desc: "Raporty robione ręcznie znikają z rachunku, bo „menadżer i tak ma za to płacone”. Tylko że ten menadżer mógłby w tym czasie zamykać sprzedaż albo prowadzić zespół.",
   },
   {
@@ -204,7 +204,7 @@ const measurementMistakes = [
   },
   {
     title: "Pomijanie kosztu utraconej widoczności",
-    desc: "Brak wiarygodnych danych = decyzje na bazie wrażeń. Reklama trafia do złego źródła, handlowcy są oceniani po niewłaściwych metrykach, pipeline jest wyceniany od czapy. To koszt, który się zwykle widzi dopiero, jak się go wyeliminuje.",
+    desc: "Brak wiarygodnych danych = decyzje na bazie wrażeń. Reklama trafia do złego źródła, handlowcy są oceniani po niewłaściwych metrykach, pipeline jest wyceniany na wyczucie. To koszt, który się zwykle widzi dopiero, jak się go wyeliminuje.",
   },
 ];
 
@@ -247,7 +247,7 @@ const faq = [
   {
     question: "Co się składa na „czas ręcznej obsługi jednego leada”?",
     answer:
-      "Wszystko, co dzieje się od momentu, gdy lead wpadnie do firmy, do momentu, gdy ma swojego handlowca, deal w CRM i pierwszy kontakt: odczytanie maila lub formularza, sprawdzenie czy to nie spam, przepisanie danych do CRM, założenie firmy, osoby i deala, przypisanie handlowca, ustawienie zadania kontaktu i czasem powiadomienie zespołu. Łącznie 3 do 10 minut zależnie od tego, jak bardzo proces jest poklejony taśmą klejącą.",
+      "Wszystko, co dzieje się od momentu, gdy lead wpadnie do firmy, do momentu, gdy ma swojego handlowca, deal w CRM i pierwszy kontakt: odczytanie maila lub formularza, sprawdzenie czy to nie spam, przepisanie danych do CRM, założenie firmy, osoby i deala, przypisanie handlowca, ustawienie zadania kontaktu i czasem powiadomienie zespołu. Łącznie 3 do 10 minut zależnie od tego, jak bardzo proces jest prowizoryczny.",
   },
   {
     question: "Skąd w kalkulatorze założenie, że 30% opóźnionych leadów jest utraconych?",
@@ -498,7 +498,7 @@ export default function KosztRecznejObslugiLeadow() {
                             </h2>
                             <p className="text-gray-600 dark:text-gray-400 mt-4 leading-relaxed">
                               Większość firm liczy tylko pierwszy. Stąd wniosek
-                              „da się przeżyć” i stąd dziura w wyniku, której
+                              „da się przeżyć” i stąd luka w wyniku, której
                               nikt nie umie wskazać.
                             </p>
                           </div>
@@ -622,7 +622,7 @@ export default function KosztRecznejObslugiLeadow() {
                               najmniejszym kosztem
                             </h2>
                             <p className="text-gray-600 dark:text-gray-400 mt-4 leading-relaxed">
-                              Nie cały proces. Najmniejszy kawałek, który
+                              Nie cały proces. Najmniejszy fragment, który
                               eliminuje największy komponent kosztu z rachunku
                               powyżej. U większości firm B2B to są te trzy
                               rzeczy:
@@ -757,7 +757,7 @@ export default function KosztRecznejObslugiLeadow() {
                             </h2>
                             <p className="text-gray-600 dark:text-gray-400 mt-4 leading-relaxed">
                               Każdy z nich osobno potrafi przekłamać rachunek o
-                              kilkadziesiąt procent. Razem, sprawiają, że
+                              kilkadziesiąt procent. Razem sprawiają, że
                               zarząd patrzy na inny problem niż ten, który firma
                               faktycznie ma.
                             </p>

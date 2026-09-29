@@ -206,11 +206,11 @@ export async function POST(request: Request) {
     naglowek = "Dane rejestrowe wymagają wyjaśnienia";
     komentarz = `NIP ze strony należy do podmiotu ${glowny?.name}, ale w wykazie podatników ma status ${glowny?.statusVat ?? "nieznany"}${
       glowny?.rachunkow === 0 ? " i nie ma zgłoszonego żadnego rachunku" : ""
-    }. Uprzedzamy od razu, że taki status nie zawsze oznacza problem, bo zwracają go także duże, działające firmy, na przykład z powodu rozliczania się w grupie. Natomiast Twój klient zobaczy dokładnie to samo co ja i bez wyjaśnienia potraktuje to jako sygnał ostrzegawczy.`;
+    }. Uprzedzamy od razu, że taki status nie zawsze oznacza problem, bo zwracają go także duże, działające firmy, na przykład z powodu rozliczania się w grupie. Natomiast Twój klient zobaczy dokładnie to samo co my i bez wyjaśnienia potraktuje to jako sygnał ostrzegawczy.`;
   } else if (rachunki.length) {
     werdykt = "ZIELONY";
     naglowek = "Klient sprawdzi Cię w kilkanaście sekund";
-    komentarz = `Na stronie jest NIP i numer konta, a NIP prowadzi w wykazie do firmy ${glowny?.name} ze statusem ${glowny?.statusVat}. To komplet potrzebny księgowości kupującego, żeby zrobić swoje sprawdzenie i puścić przelew bez pytań.`;
+    komentarz = `Na stronie jest NIP i numer konta, a NIP prowadzi w wykazie do firmy ${glowny?.name} ze statusem ${glowny?.statusVat}. To komplet potrzebny księgowości kupującego, żeby zrobić swoje sprawdzenie i zrealizować przelew bez pytań.`;
   } else {
     werdykt = "ZOLTY";
     naglowek = "NIP jest, numeru konta brak";

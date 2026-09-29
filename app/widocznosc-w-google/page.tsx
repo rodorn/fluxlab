@@ -59,7 +59,7 @@ export default function Page() {
           price: "0 zł",
           desc: "Od ręki, na tej stronie.",
           features: [
-            "trzy miejsca, w których siedzi blokada",
+            "trzy miejsca, w których może być blokada",
             "dokładna treść znalezionego wpisu",
             "ile treści zostaje niewidocznej",
           ],
@@ -93,12 +93,12 @@ export default function Page() {
           a: "Sprawdzamy, co Twoja strona mówi wyszukiwarce dzisiaj. Jeśli blokada pojawiła się niedawno, część podstron może być jeszcze w wynikach, ale zniknie przy kolejnym odwiedzeniu. Im dłużej to trwa, tym dłużej potem trwa powrót.",
         },
         {
-          q: "Sam widzimy swoją stronę w Google, więc chyba wszystko gra?",
+          q: "Sami widzimy swoją stronę w Google, więc chyba wszystko jest w porządku?",
           a: "Niekoniecznie. Wpisanie własnej nazwy firmy to co innego niż wyszukiwanie usługi, której ktoś szuka. Poza tym wyniki bywają zapamiętane w przeglądarce. Sprawdzenie wyżej patrzy na kod, a nie na to, co widzisz.",
         },
         {
           q: "Czy naprawa wymaga zmian w wyglądzie strony?",
-          a: "Nie. To jest zmiana jednego ustawienia albo jednej linii, w zależności od tego, gdzie siedzi blokada. Wygląd i treść zostają nietknięte.",
+          a: "Nie. To jest zmiana jednego ustawienia albo jednej linii, w zależności od tego, gdzie jest blokada. Wygląd i treść zostają nietknięte.",
         },
         {
           q: "Co jeśli nic nie znajdziecie, a mimo to nie widać mnie w wynikach?",

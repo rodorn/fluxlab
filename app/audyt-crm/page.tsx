@@ -176,7 +176,7 @@ export default function AudytCRMPage() {
                               Właściciele firm B2B z działającym CRM
                             </strong>{" "}
                             (Pipedrive, HubSpot, Salesforce, Bitrix), którzy
-                            podejrzewają, że nie wyciskają z niego tyle, ile
+                            podejrzewają, że nie wykorzystują go tak, jak
                             mogliby.
                           </li>
                           <li>
@@ -196,7 +196,7 @@ export default function AudytCRMPage() {
                           </li>
                           <li>
                             <strong>Solopreneurzy</strong>, którzy wiedzą, że
-                            tracą czas na klikanie w CRM, ale nie wiedzą, czy
+                            tracą czas na ręczną obsługę CRM, ale nie wiedzą, czy
                             problem jest w konfiguracji, w procesie, czy w tym,
                             że jeszcze za mało leadów, żeby się tym przejmować.
                           </li>

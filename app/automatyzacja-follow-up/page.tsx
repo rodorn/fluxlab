@@ -44,7 +44,7 @@ const symptoms = [
   "Handlowcy mówią „pisałem do niego, czekam”, ale ostatni mail był 11 dni temu.",
   "W „kontakt z klientem” siedzą deale z zerową aktywnością od miesięcy.",
   "Manager musi ręcznie sprawdzać, kto się komu odezwał i kiedy.",
-  "Po urlopie albo zwolnieniu handlowca część leadów po prostu znika.",
+  "Po urlopie albo zwolnieniu handlowca część leadów bezpowrotnie przepada.",
   "Sprzedawcy reagują tylko na klientów, którzy sami napiszą drugi raz.",
 ];
 
@@ -153,7 +153,7 @@ const faq = [
   {
     question: "Czy automatyczne follow-upy nie wyglądają jak spam?",
     answer:
-      "Wyglądają, jeśli ktoś po prostu wciska szablon w masówkę. Dobrze zaprojektowana sekwencja wstrzymuje się w momencie, gdy klient odpowie, używa kontekstu z poprzedniej rozmowy i ma maksymalnie 3–4 punkty kontaktu. To różnica między „przypomnieniem” a „nękaniem”.",
+      "Wyglądają, jeśli ktoś rozsyła ten sam szablon do wszystkich. Dobrze zaprojektowana sekwencja wstrzymuje się w momencie, gdy klient odpowie, używa kontekstu z poprzedniej rozmowy i ma maksymalnie 3–4 punkty kontaktu. To różnica między „przypomnieniem” a „nękaniem”.",
   },
   {
     question: "Czy handlowcy nie stracą kontroli nad swoimi dealami?",
@@ -334,7 +334,7 @@ export default function AutomatyzacjaFollowUp() {
                           <div className="text-center mb-12">
                             <span className="section-label">Objawy</span>
                             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4">
-                              Po czym poznać, że follow-up Ci się sypie
+                              Po czym poznać, że follow-up przestaje działać
                             </h2>
                             <p className="text-gray-600 dark:text-gray-400 mt-4 leading-relaxed">
                               Te zachowania zwykle pojawiają się razem. Jeśli

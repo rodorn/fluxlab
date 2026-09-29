@@ -46,7 +46,7 @@ export default function Page() {
         },
         {
           title: "Codzienne pilnowanie Twojej listy",
-          desc: "Wgrywasz listę kontrahentów, a ja porównujemy ją z każdym nowym wydaniem Monitora i odzywamy się w dniu publikacji, nie miesiąc później.",
+          desc: "Wgrywasz listę kontrahentów, a my porównujemy ją z każdym nowym wydaniem Monitora i odzywamy się w dniu publikacji, nie miesiąc później.",
         },
         {
           title: "Skan wsteczny całego portfela",
@@ -94,7 +94,7 @@ export default function Page() {
         },
         {
           q: "Czy to znaczy, że spółka na pewno zostanie wykreślona?",
-          a: "Nie. Obwieszczenie oznacza wszczęcie postępowania, a nie jego wynik. Nie wiemy, jaki odsetek kończy się faktycznym wykreśleniem, i nie będziemy tego zgadywał. Wiemy natomiast, że termin na reakcję biegnie od dnia publikacji i że po nim możliwości są znacznie mniejsze.",
+          a: "Nie. Obwieszczenie oznacza wszczęcie postępowania, a nie jego wynik. Nie wiemy, jaki odsetek kończy się faktycznym wykreśleniem, i nie będziemy tego zgadywać. Wiemy natomiast, że termin na reakcję biegnie od dnia publikacji i że po nim możliwości są znacznie mniejsze.",
         },
         {
           q: "Dlaczego dopasowanie idzie po nazwie, a nie po NIP?",

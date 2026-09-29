@@ -35,7 +35,7 @@ export default function RyczaltCzyLiniowyArticle() {
     {
       question: "Czy możemy mieć ryczałt i VAT jednocześnie?",
       answer:
-        "Tak. Ryczałt dotyczy podatku dochodowego, a VAT to osobny podatek. Możesz być na ryczałcie i jednocześnie być czynnym podatnikiem VAT. To częsta i sensowna konfiguracja, szczególnie gdy Twoi klienci są VATowcami.",
+        "Tak. Ryczałt dotyczy podatku dochodowego, a VAT to osobny podatek. Możesz być na ryczałcie i jednocześnie być czynnym podatnikiem VAT. To częsta i sensowna konfiguracja, szczególnie gdy Twoi klienci są czynnymi podatnikami VAT.",
     },
     {
       question: "Czy zmiana z ryczałtu na liniowy jest trudna?",

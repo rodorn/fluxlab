@@ -393,7 +393,7 @@ export default function MakeVsN8nArticle() {
                       <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
                         <li>
                           Macie osobę techniczną albo zewnętrznego partnera,
-                          który ogarnia infrastrukturę
+                          który zajmuje się infrastrukturą
                         </li>
                         <li>
                           Wolumen rośnie i koszty Make zaczynają boleć (powyżej

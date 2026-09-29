@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 };
 
 const symptoms = [
-  "W każdy poniedziałek ktoś otwiera Pipedrive, eksportuje deale do CSV i kleji to z arkuszem marketingu.",
+  "W każdy poniedziałek ktoś otwiera Pipedrive, eksportuje deale do CSV i zestawia to z arkuszem marketingu.",
   "Raport sprzedaży dla zarządu jest co tydzień inny, bo każdy liczy „pipeline” swoją metodą.",
   "Liczby z Pipedrive nie zgadzają się z liczbami z faktur ani z liczbami z marketingu.",
   "Handlowcy aktualizują etap deala raz w miesiącu, dzień przed spotkaniem z managerem.",
@@ -106,7 +106,7 @@ const firstStage = [
 const mistakes = [
   {
     title: "Raporty robione w samym Pipedrive",
-    desc: "Wbudowane raporty Pipedrive są okej do podglądu, ale słabe do prezentacji zarządowi i bezużyteczne do łączenia z marketingiem czy księgowością. Próba zrobienia tam wszystkiego prowadzi do tabelek, których nikt nie czyta.",
+    desc: "Wbudowane raporty Pipedrive wystarczają do podglądu, ale słabe do prezentacji zarządowi i bezużyteczne do łączenia z marketingiem czy księgowością. Próba zrobienia tam wszystkiego prowadzi do tabelek, których nikt nie czyta.",
   },
   {
     title: "Eksport CSV jako proces",
@@ -122,7 +122,7 @@ const mistakes = [
   },
   {
     title: "Brak mapowania pól",
-    desc: "Custom fields w Pipedrive zwykle puchną z biegiem czasu, 50 pól, z których 30 jest zawsze puste, a 5 nikt nie pamięta po co. Przed automatyzacją raportowania trzeba zrobić porządek, jakie pola są wymagane i jakie liczą się do raportów.",
+    desc: "Custom fields w Pipedrive zwykle rozrastają się z biegiem czasu, 50 pól, z których 30 jest zawsze puste, a 5 nikt nie pamięta po co. Przed automatyzacją raportowania trzeba zrobić porządek, jakie pola są wymagane i jakie liczą się do raportów.",
   },
 ];
 
@@ -130,7 +130,7 @@ const faq = [
   {
     question: "Czy potrzebujemy BI typu Power BI, Looker albo Metabase?",
     answer:
-      "Nie zawsze. Dla małych firm wystarczy Google Sheets z automatycznym zasilaniem z Pipedrive, czytelnie, zero kosztu licencji, zero progu wejścia. Większe firmy z wieloma źródłami danych zwykle skorzystają z Looker Studio (darmowy) albo Metabase (open source). Power BI wybieramy, gdy reszta firmy już w nim siedzi.",
+      "Nie zawsze. Dla małych firm wystarczy Google Sheets z automatycznym zasilaniem z Pipedrive, czytelnie, zero kosztu licencji, zero progu wejścia. Większe firmy z wieloma źródłami danych zwykle skorzystają z Looker Studio (darmowy) albo Metabase (open source). Power BI wybieramy, gdy reszta firmy już z niego korzysta.",
   },
   {
     question: "Jak często aktualizować dane?",
@@ -140,7 +140,7 @@ const faq = [
   {
     question: "Czy raporty będą działać, gdy zmienimy strukturę Pipedrive?",
     answer:
-      "Tak, jeśli integracja jest zrobiona porządnie, z mapowaniem pól w jednym miejscu, walidacją struktury i alertem przy zmianach schematu. Zmiana nazwy etapu, dodanie custom fielda, zmiana waluty, wszystko powinno być przewidziane. Słabo zbudowana integracja sypie się przy pierwszej zmianie i nikt nie wie czemu.",
+      "Tak, jeśli integracja jest zrobiona porządnie, z mapowaniem pól w jednym miejscu, walidacją struktury i alertem przy zmianach schematu. Zmiana nazwy etapu, dodanie custom fielda, zmiana waluty, wszystko powinno być przewidziane. Słabo zbudowana integracja przestaje działać przy pierwszej zmianie i nikt nie wie dlaczego.",
   },
   {
     question: "Co z danymi historycznymi?",

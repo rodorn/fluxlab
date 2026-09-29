@@ -67,9 +67,9 @@ const FROM_PAWEL =
 
 const POTWIERDZENIE_TEXT = `Cześć,
 
-dzięki za opis procesu. Przejrzę zgłoszenie i wrócimy z informacją, czy widzimy potencjał na automatyzację oraz jaki byłby sensowny pierwszy krok, zwykle w ciągu 24h.
+dzięki za opis procesu. Przejrzymy zgłoszenie i wrócimy z informacją, czy widzimy potencjał na automatyzację oraz jaki byłby sensowny pierwszy krok, zwykle w ciągu 24h.
 
-Jeśli widzimy dopasowanie, odpiszemy z konkretną propozycją zakresu i wyceną. Jeśli proces wygląda na zbyt mały albo nieopłacalny do automatyzacji na tym etapie, napiszemy to wprost, bez owijania w bawełnę.
+Jeśli widzimy dopasowanie, odpiszemy z konkretną propozycją zakresu i wyceną. Jeśli proces wygląda na zbyt mały albo nieopłacalny do automatyzacji na tym etapie, napiszemy to wprost, i uzasadnimy dlaczego.
 
 Pracujemy i ustalamy wszystko mailowo, więc możesz po prostu odpisać na tę wiadomość.
 

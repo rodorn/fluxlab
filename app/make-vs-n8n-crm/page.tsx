@@ -292,7 +292,7 @@ export default function MakeVsN8nCrm() {
                         konkretną pętlę do zautomatyzowania, wybór narzędzia ma
                         sens. Inaczej wybieramy w ciemno i po dwóch miesiącach
                         okazuje się, że Make nie umie tego, czego potrzebujemy,
-                        albo że n8n to overkill na dwa scenariusze. Konkretne
+                        albo że n8n to przerost formy przy dwóch scenariuszach. Konkretne
                         ślady w firmie B2B, że jest co automatyzować:
                       </p>
                       <ul className="space-y-3">
@@ -302,7 +302,7 @@ export default function MakeVsN8nCrm() {
                           "Status w CRM ≠ status w fakturowaniu / księgowości / magazynie",
                           "Raporty managerskie klejone ręcznie z eksportów",
                           "Zespół klika to samo w 3 systemach przy każdej zmianie deala",
-                          "Marketing nie wie, co stało się z lead'em po przekazaniu do sprzedaży",
+                          "Marketing nie wie, co stało się z leadem po przekazaniu do sprzedaży",
                         ].map((p) => (
                           <li
                             key={p}
@@ -659,7 +659,7 @@ export default function MakeVsN8nCrm() {
                           <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-3">
                             Scenariusze ma budować osoba z biznesu, head of
                             sales, marketing manager, ops lead. Make jest jak
-                            ładny IDE: ma czytelny diagram, świetne UI mapowania
+                            wygodne środowisko: ma czytelny diagram, świetne UI mapowania
                             pól, lepsze tutoriale po polsku. Pierwszy działający
                             scenariusz w godzinach, nie dniach. Wolumen do 30
                             tys. operacji miesięcznie, brak osoby technicznej w
@@ -699,7 +699,7 @@ export default function MakeVsN8nCrm() {
                         >
                           Make vs n8n, porównanie dla MŚP
                         </Link>
-                        . Tu skupiłem się na CRM-owym kącie. Pełniejszy obraz
+                        . Tu skupiliśmy się na zastosowaniach w CRM. Pełniejszy obraz
                         całego ekosystemu, w{" "}
                         <Link
                           href="/strefa-wiedzy/zapier-make-n8n-porownanie"

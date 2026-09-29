@@ -222,10 +222,10 @@ export function ocenStrone(p: Pomiar): Ustalenie[] {
       klucz: "brak_kompresji",
       obszar: "szybkosc",
       waga: "wazne",
-      tytul: "Dokument leci bez kompresji",
+      tytul: "Dokument jest wysyłany bez kompresji",
       fakt: `Odpowiedź nie ma nagłówka content-encoding, a sam dokument waży ${mb(p.htmlBajty ?? 0)}.`,
       skutek:
-        "Włączenie kompresji to zwykle jedna linia w konfiguracji serwera i zwykle tnie ten transfer kilkukrotnie. Rzadko która zmiana daje tyle za tak mało.",
+        "Włączenie kompresji to zwykle jedna linia w konfiguracji serwera i zwykle zmniejsza ten transfer kilkukrotnie. Rzadko która zmiana daje tyle za tak mało.",
       koszt: 100,
       samodzielnie: false,
       dostep: "konfiguracja serwera",
@@ -239,7 +239,7 @@ export function ocenStrone(p: Pomiar): Ustalenie[] {
       tytul: "Sam dokument jest ciężki",
       fakt: `${mb(p.htmlBajty ?? 0)} bez wliczania obrazów, skryptów i stylów.`,
       skutek:
-        "Zwykle znaczy to, że w dokumencie siedzi wklejona treść, która powinna być w osobnym pliku i mogłaby się zapisać w pamięci przeglądarki na kolejne wejścia.",
+        "Zwykle znaczy to, że w dokumencie jest wklejona treść, która powinna być w osobnym pliku i mogłaby się zapisać w pamięci przeglądarki na kolejne wejścia.",
       koszt: 200,
       samodzielnie: false,
       dostep: "dostęp do kodu strony",
@@ -349,7 +349,7 @@ export function ocenStrone(p: Pomiar): Ustalenie[] {
       klucz: "sztywne_szerokosci",
       obszar: "mobile",
       waga: "wazne",
-      tytul: "W stylach siedzą sztywne szerokości",
+      tytul: "W stylach są sztywne szerokości",
       fakt: `${m.stalychSzerokosci} reguł ustawia szerokość na stałą liczbę pikseli, 600 lub więcej.`,
       skutek:
         "Element szerszy niż ekran telefonu wypycha całą stronę i pojawia się przewijanie w bok. To najczęstsza przyczyna wrażenia, że strona na telefonie jest zepsuta.",
@@ -390,7 +390,7 @@ export function ocenStrone(p: Pomiar): Ustalenie[] {
       tytul: "Wszystkie obrazy ładują się od razu",
       fakt: `${p.obrazy.bezLazy} z ${p.obrazy.wszystkie} obrazów nie ma atrybutu loading="lazy".`,
       skutek:
-        "Telefon pobiera także grafiki z samego dołu strony, zanim ktokolwiek tam dojedzie. Jedno słowo w znaczniku odkłada je na później.",
+        "Telefon pobiera także grafiki z samego dołu strony, zanim ktokolwiek do nich dotrze. Jedno słowo w znaczniku odkłada je na później.",
       koszt: 100,
       samodzielnie: true,
       dostep: "dostęp do kodu strony",
@@ -535,7 +535,7 @@ export function ocenStrone(p: Pomiar): Ustalenie[] {
       tytul: "Brakuje opisu dla wyników wyszukiwania",
       fakt: "Nie ma znacznika meta description.",
       skutek:
-        "Wyszukiwarka skleja wtedy opis z przypadkowego fragmentu strony. To jedyne dwa zdania, którymi przekonuje się kogoś do kliknięcia, i warto je napisać samemu.",
+        "Wyszukiwarka składa wtedy opis z przypadkowego fragmentu strony. To jedyne dwa zdania, którymi przekonuje się kogoś do kliknięcia, i warto je napisać samemu.",
       koszt: 80,
       samodzielnie: true,
       dostep: "panel treści",
@@ -659,7 +659,7 @@ export function ocenStrone(p: Pomiar): Ustalenie[] {
       tytul: "Odnośnik do strony wygląda ubogo po wklejeniu",
       fakt: "Brak znaczników Open Graph.",
       skutek:
-        "Po wklejeniu adresu na komunikator albo do mediów społecznościowych nie pojawi się obrazek ani tytuł, tylko goły adres.",
+        "Po wklejeniu adresu na komunikator albo do mediów społecznościowych nie pojawi się obrazek ani tytuł, tylko sam adres.",
       koszt: 100,
       samodzielnie: false,
       dostep: "dostęp do kodu strony",

@@ -8,7 +8,7 @@ import SprawdzPoBadaniu from "@/components/SprawdzPoBadaniu";
 export const metadata: Metadata = {
   title: "Dlaczego firmowe maile trafiają do spamu | Fluxlab",
   description:
-    "Twoje oferty i faktury lądują w spamie klientów? Najczęstsze przyczyny (SPF, DKIM, DMARC, reputacja) i konkretne kroki naprawy. Plus darmowy audyt domeny.",
+    "Twoje oferty i faktury trafiają do spamu klientów? Najczęstsze przyczyny (SPF, DKIM, DMARC, reputacja) i konkretne kroki naprawy. Plus darmowy audyt domeny.",
   openGraph: {
     title:
       "Dlaczego firmowe maile trafiają do spamu i jak to naprawić | Fluxlab",
@@ -81,7 +81,7 @@ export default function MaileSpamArticle() {
             fontSize: "1.05rem",
           }}
         >
-          Wysyłasz ofertę albo fakturę, system pokazuje, że wiadomość poszła, a
+          Wysyłasz ofertę albo fakturę, system pokazuje, że wiadomość została wysłana, a
           klient jej nie dostaje albo znajduje ją w spamie. To jeden z
           najbardziej frustrujących problemów, bo z Twojej strony wszystko
           wygląda poprawnie. W większości przypadków przyczyna jest konkretna i

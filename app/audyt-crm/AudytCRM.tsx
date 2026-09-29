@@ -127,7 +127,7 @@ const SCENARIUSZE: Scenariusz<Record<number, Answer>>[] = [
   },
   {
     etykieta: "CRM jest, ale ręczny",
-    opis: "Etapy i raport poukładane, wpisy i przypomnienia z palca.",
+    opis: "Etapy i raport poukładane, wpisy i przypomnienia wprowadzane ręcznie.",
     dane: {
       1: "tak",
       2: "tak",
@@ -169,7 +169,7 @@ const RECOMMENDATIONS: Record<Area, string[]> = {
   ],
   routing: [
     "Ustaw regułę przypisania właściciela natychmiast po utworzeniu leada (round-robin albo per region/produkt).",
-    "Dodaj fallback, jeśli reguła nie zadziała, lead trafia do menedżera, nie wisi w próżni.",
+    "Dodaj fallback, jeśli reguła nie zadziała, lead trafia do menedżera, nie zostaje bez właściciela.",
     "Powiadomienie handlowca o nowym leadzie w 60 sekund od pojawienia się w CRM.",
   ],
   kwalifikacja: [
@@ -270,12 +270,12 @@ function scoreAnswers(answers: Record<number, Answer>): ScoreResult {
     category = "solidny";
     categoryHeadline = "Solidny fundament, kilka brakujących filarów";
     categoryNarrative =
-      "Pipeline działa, ale ma luki, które blokują skalowanie. Najpierw warto załatać najważniejszy obszar (poniżej), potem wracać do automatyzacji ogólnej. Próba zautomatyzowania bałaganu daje zautomatyzowany bałagan, i to jeszcze szybszy.";
+      "Pipeline działa, ale ma luki, które blokują skalowanie. Najpierw warto załatać najważniejszy obszar (poniżej), potem wracać do automatyzacji ogólnej. Próba zautomatyzowania chaosu daje zautomatyzowany chaos, i to jeszcze szybszy.";
   } else {
     category = "blokuje";
     categoryHeadline = "Pipeline blokuje sprzedaż";
     categoryNarrative =
-      "To nie jest problem CRM-a, to problem procesu. Zanim zautomatyzujesz cokolwiek, trzeba ustalić podstawy: kto jest właścicielem leada, jakie są kryteria etapów, skąd lead przychodzi. Automatyzacja bez tego daje tylko więcej zamieszania, nie więcej sprzedaży. Dobra wiadomość: jak już to ułożysz, kolejne etapy idą dużo szybciej.";
+      "To nie jest problem CRM-a, to problem procesu. Zanim zautomatyzujesz cokolwiek, trzeba ustalić podstawy: kto jest właścicielem leada, jakie są kryteria etapów, skąd lead przychodzi. Automatyzacja bez tego daje tylko więcej zamieszania, nie więcej sprzedaży. Dobra wiadomość: gdy to ułożysz, kolejne etapy idą dużo szybciej.";
   }
 
   return {

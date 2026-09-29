@@ -363,7 +363,7 @@ export default function LokalizacjaCheck() {
               To jest szybki przekrój jednej branży w jednym promieniu. Pełny
               raport liczy zasięg dojazdu zamiast okręgu, zestawia Twoją
               lokalizację z sąsiednimi gminami, dokłada trend liczby mieszkańców
-              i kończy się wnioskiem: otwierać, negocjować czynsz albo odpuścić.
+              i kończy się wnioskiem: otwierać, negocjować czynsz albo zrezygnować.
             </p>
 
             {leadStan === "ok" ? (

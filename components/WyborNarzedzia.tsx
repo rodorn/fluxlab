@@ -34,7 +34,7 @@ const SYTUACJE: Sytuacja[] = [
     klucz: "nie_wiem",
     etykieta: "Nie wiemy, co jest nie tak",
     odpowiedz:
-      "Najczęstsza sytuacja i najlepszy moment na jedno pełne badanie zamiast zgadywania, które sprawdzenie odpalić. Wychodzi z niego lista tego, co faktycznie wymaga uwagi, w kolejności.",
+      "Najczęstsza sytuacja i najlepszy moment na jedno pełne badanie zamiast zgadywania, które sprawdzenie uruchomić. Wychodzi z niego lista tego, co faktycznie wymaga uwagi, w kolejności.",
     wskazania: [
       {
         href: "/audyt-strony",
@@ -57,7 +57,7 @@ const SYTUACJE: Sytuacja[] = [
       {
         href: "/mapa-strony",
         powod:
-          "Bez działającej mapy strony robot sam musi znaleźć podstrony, a martwe adresy na liście zjadają jego limit.",
+          "Bez działającej mapy strony robot sam musi znaleźć podstrony, a martwe adresy na liście zużywają jego limit.",
       },
       {
         href: "/podwojny-adres",
@@ -150,9 +150,9 @@ const SYTUACJE: Sytuacja[] = [
   },
   {
     klucz: "reczna-praca",
-    etykieta: "Zespół przepisuje dane z ręki",
+    etykieta: "Zespół przepisuje dane ręcznie",
     odpowiedz:
-      "Najpierw policzmy, ile to kosztuje, a potem sprawdźmy, gdzie w procesie jest największa dziura.",
+      "Najpierw policzmy, ile to kosztuje, a potem sprawdźmy, gdzie w procesie jest największa luka.",
     wskazania: [
       {
         href: "/koszt-recznej-obslugi-leadow",
@@ -256,7 +256,7 @@ export default function WyborNarzedzia() {
         Od czego zacząć
       </h3>
       <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
-        Naciśnij to, co u Ciebie zgrzyta, a wskażemy narzędzia, od których to
+        Naciśnij to, co sprawia Ci kłopot, a wskażemy narzędzia, od których to
         widać. Bez wpisywania czegokolwiek.
       </p>
 

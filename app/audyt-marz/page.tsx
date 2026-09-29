@@ -31,7 +31,7 @@ export default function Page() {
       breadcrumb="Audyt marż"
       eyebrow="Rentowność asortymentu"
       h1="Sprzedajesz dużo, a nie wiadomo, gdzie te pieniądze"
-      lead="Allegro i BaseLinker pokazują obrót i marżę brutto. Nie pokazują, co zostaje po prowizji, zwrocie i dopłacie do darmowej wysyłki. Bierzesz swój eksport sprzedaży i ceny zakupu, a ja liczymy realny zysk na każdej sztuce."
+      lead="Allegro i BaseLinker pokazują obrót i marżę brutto. Nie pokazują, co zostaje po prowizji, zwrocie i dopłacie do darmowej wysyłki. Bierzesz swój eksport sprzedaży i ceny zakupu, a my liczymy realny zysk na każdej sztuce."
       ctaLabel="Zamów audyt marż"
       ctaNote="Raport w 48 godzin"
       checks={[
@@ -45,10 +45,10 @@ export default function Page() {
         },
         {
           title: "Martwy stok i zamrożony kapitał",
-          desc: "Ile pieniędzy stoi na półce w towarze, który nie schodzi, i co z tego warto wyprzedać, żeby odzyskać gotówkę.",
+          desc: "Ile pieniędzy stoi na półce w towarze, który się nie sprzedaje, i co z tego warto wyprzedać, żeby odzyskać gotówkę.",
         },
         {
-          title: "Co dokupić, a co odstawić",
+          title: "Co dokupić, a co wycofać",
           desc: "Lista priorytetów, uszeregowana po realnym zysku, a nie po liczbie sztuk.",
         },
       ]}
@@ -97,7 +97,7 @@ export default function Page() {
       ]}
       formId="order_audyt_marz"
       formHeading="Zamów audyt marż"
-      formIntro="Napisz, z jakiego systemu masz eksport sprzedaży, za jaki okres i ile mniej więcej masz produktów. Pliki podeślesz mailem po naszej odpowiedzi, nie wrzucaj ich tutaj."
+      formIntro="Napisz, z jakiego systemu masz eksport sprzedaży, za jaki okres i ile mniej więcej masz produktów. Pliki podeślesz mailem po naszej odpowiedzi, nie załączaj ich tutaj."
       submitLabel="Zamów audyt marż"
       microCopy="Raport w 48 godzin. Dane sprzedażowe przetwarzamy tylko na potrzeby raportu i kasujemy po dostarczeniu."
       serviceName="Audyt marż sklepu internetowego"

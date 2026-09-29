@@ -59,7 +59,7 @@ export default function ProduktyPage() {
               Potrzebujesz czegoś szytego pod Twój proces?
             </h2>
             <p className="mt-3 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              Produkty to gotowce ze stałą ceną. Jeśli masz szerszy proces do
+              Produkty to gotowe rozwiązania ze stałą ceną. Jeśli masz szerszy proces do
               zautomatyzowania, zaczniemy od bezpłatnej diagnozy i darmowego dowodu
               na wąskim wycinku.
             </p>

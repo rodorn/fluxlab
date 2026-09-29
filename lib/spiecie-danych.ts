@@ -98,9 +98,9 @@ export const ZRODLA: Zrodlo[] = [
     opis: "Faktury, umowy, protokoły, specyfikacje.",
     jak: "Dokument przechodzi przez rozpoznanie tekstu, a z niego wyciąga się pola, których szukasz.",
     ryzyko:
-      "Przy słabym skanie i nietypowym układzie rozpoznanie bywa niepewne, więc takie pozycje trafiają do ręcznego potwierdzenia zamiast wjeżdżać do systemu po cichu.",
+      "Przy słabym skanie i nietypowym układzie rozpoznanie bywa niepewne, więc takie pozycje trafiają do ręcznego potwierdzenia zamiast trafiać do systemu po cichu.",
     przygotowac:
-      "Dziesięć dokumentów z prawdziwego obiegu, razem z tymi brzydkimi, i lista pól do wyciągnięcia.",
+      "Dziesięć dokumentów z prawdziwego obiegu, razem z tymi gorszej jakości, i lista pól do wyciągnięcia.",
     trudnosc: 2,
     produkt: "/scraping-danych",
   },
@@ -122,7 +122,7 @@ export const ZRODLA: Zrodlo[] = [
     opis: "Stary system, do którego wchodzi się tylko przez jego własne okno.",
     jak: "Zanim cokolwiek powstanie, sprawdzamy, czy da się dojść do bazy pod spodem albo wymusić eksport do pliku. To jest jedyna droga, którą warto tu iść.",
     ryzyko:
-      "Jeśli żadna z tych dróg nie działa, zostaje klikanie w oknach programu przez automat. To się psuje przy każdej aktualizacji i tego nie budujemy, bo koszt utrzymania zjada cały zysk.",
+      "Jeśli żadna z tych dróg nie działa, zostaje klikanie w oknach programu przez automat. To się psuje przy każdej aktualizacji i tego nie budujemy, bo koszt utrzymania pochłania cały zysk.",
     przygotowac:
       "Nazwa i wersja programu oraz kontakt do kogoś, kto wie, na czym trzyma dane.",
     trudnosc: 3,
@@ -135,7 +135,7 @@ export const CELE: Cel[] = [
     klucz: "crm",
     nazwa: "CRM",
     opis: "Pipedrive, HubSpot, Salesforce.",
-    jak: "Rekord wjeżdża przez API, z kontrolą duplikatów po adresie lub numerze NIP.",
+    jak: "Rekord trafia przez API, z kontrolą duplikatów po adresie lub numerze NIP.",
     ryzyko:
       "Bez reguły łączenia duplikatów CRM zaleje się tymi samymi firmami w trzech pisowniach.",
     trudnosc: 1,
@@ -154,7 +154,7 @@ export const CELE: Cel[] = [
     klucz: "erp",
     nazwa: "ERP lub księgowość",
     opis: "System, w którym powstaje faktura i dokument magazynowy.",
-    jak: "Jeśli system ma API, dane wjeżdżają wprost. Jeśli nie, zostaje plik w formacie, który on umie zaimportować.",
+    jak: "Jeśli system ma API, dane trafiają wprost. Jeśli nie, zostaje plik w formacie, który on umie zaimportować.",
     ryzyko:
       "Część systemów księgowych przyjmuje tylko import ręczny, więc automat kończy się na przygotowaniu pliku, a ostatni krok robi człowiek. Lepiej wiedzieć to na starcie niż po wdrożeniu.",
     trudnosc: 2,

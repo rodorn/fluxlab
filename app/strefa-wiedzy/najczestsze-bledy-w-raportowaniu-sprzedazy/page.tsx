@@ -111,7 +111,7 @@ export default function BledyRaportowanieArticle() {
                     <div className="max-w-3xl mx-auto px-6 lg:px-8 space-y-12">
                       <div>
                         <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                          Błąd 3: focus na vanity metrics
+                          Błąd 3: skupienie na vanity metrics
                         </h2>
                         <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
                           Sama liczba leadów niewiele mówi, jeśli nie wiesz,

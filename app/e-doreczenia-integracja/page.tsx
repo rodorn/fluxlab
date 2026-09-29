@@ -32,11 +32,11 @@ export default function EDoreczeniaIntegracja() {
       checks={[
         {
           title: "Napisaliśmy klienta tego API i oddaliśmy go za darmo",
-          desc: "Kod leży publicznie pod adresem github.com/rodorn/edoreczenia-klient, na licencji MIT, do obejrzenia przed rozmową z kimkolwiek. Powstał, bo w całym otwartym kodzie nie było ani jednego klienta tego interfejsu w żadnym języku, a termin goni miliony podmiotów. Możecie go użyć sami albo dać swojemu programiście, bez pytania nas o zgodę.",
+          desc: "Kod leży publicznie pod adresem github.com/rodorn/edoreczenia-klient, na licencji MIT, do obejrzenia przed rozmową z kimkolwiek. Powstał, bo w całym otwartym kodzie nie było ani jednego klienta tego interfejsu w żadnym języku, a termin dotyczy milionów podmiotów. Możecie go użyć sami albo dać swojemu programiście, bez pytania nas o zgodę.",
         },
         {
           title: "Dowodem doręczenia jest dowód, nie wiadomość",
-          desc: "To najczęstszy błąd w takich wdrożeniach. Integracja pobiera listę pism i wygląda na gotową, tylko nie ma czym wykazać, że coś zostało doręczone. Dowody są osobnym zasobem i trzeba je pobierać i przechowywać osobno. Bez nich cała rzecz nie daje wartości dowodowej, czyli tego jedynego, po co się ją robi.",
+          desc: "To najczęstszy błąd w takich wdrożeniach. Integracja pobiera listę pism i wygląda na gotową, tylko nie ma czym wykazać, że coś zostało doręczone. Dowody są osobnym zasobem i trzeba je pobierać i przechowywać osobno. Bez nich cała integracja nie daje wartości dowodowej, czyli tego jedynego, po co się ją robi.",
         },
         {
           title: "Wysyłka z załącznikiem to trzy kroki, nie jeden",
@@ -150,7 +150,7 @@ export default function EDoreczeniaIntegracja() {
         },
         {
           q: "Skąd mamy wiedzieć, że umiecie to zrobić?",
-          a: "Z kodu, pod adresem github.com/rodorn/edoreczenia-klient. Jest tam komplet metod z projektu technicznego interfejsu, testy i opis trzech pułapek, na których takie wdrożenia się wykładają. Możecie go ocenić sami albo dać do oceny swojemu programiście, zanim cokolwiek zlecicie. To więcej niż referencja, bo referencji nie da się sprawdzić linijka po linijce.",
+          a: "Z kodu, pod adresem github.com/rodorn/edoreczenia-klient. Jest tam komplet metod z projektu technicznego interfejsu, testy i opis trzech pułapek, na których takie wdrożenia zwykle upadają. Możecie go ocenić sami albo dać do oceny swojemu programiście, zanim cokolwiek zlecicie. To więcej niż referencja, bo referencji nie da się sprawdzić linijka po linijce.",
         },
         {
           q: "Mamy skrzynkę w ePUAP albo w aplikacji mObywatel. Czy to jest to samo, co adres do e-Doręczeń?",

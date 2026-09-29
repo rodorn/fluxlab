@@ -94,7 +94,7 @@ export default function Page() {
           a: "Pliku faktury w formacie, w którym pobierasz ją od przewoźnika, najlepiej arkusza albo pliku CSV. Przydaje się też eksport przesyłek z Twojego systemu, bo pozwala skonfrontować wagi i wymiary.",
         },
         {
-          q: "Czy sam składasz reklamacje?",
+          q: "Czy składacie reklamacje za nas?",
           a: "Nie, bo stroną umowy z przewoźnikiem jesteś Ty. Dostajesz od nas wyliczenie i gotową treść, którą wysyłasz ze swojego konta. To też chroni Cię przed sytuacją, w której ktoś obcy występuje w Twoim imieniu.",
         },
         {

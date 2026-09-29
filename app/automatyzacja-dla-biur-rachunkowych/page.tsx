@@ -413,7 +413,7 @@ export default function AutomatyzacjaDlaBiurRachunkowych() {
                       <p className="text-gray-500 dark:text-gray-400 mb-12">
                         Dla biur rachunkowych z portfelem od kilkudziesięciu
                         klientów wzwyż, w których ręczne wprowadzanie faktur,
-                        gonienie klientów za dokumentami i klepanie raportów
+                        przypominanie klientom o dokumentach i ręczne składanie raportów
                         miesięcznych zaczyna pochłaniać większość czasu zespołu.
                         Pracujemy zarówno z biurami pełnoksięgowymi, jak i z
                         biurami obsługującymi głównie JDG/KPiR/ryczałt.

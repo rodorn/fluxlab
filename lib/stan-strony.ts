@@ -55,7 +55,7 @@ export const STANY: Stan[] = [
     coDaSie:
       "Treść, nowe podstrony, formularz, płatność, poprawki wyglądu. Przy własnym kodzie zmiana idzie tam, gdzie ma iść, i nic obok niej się nie rusza.",
     ograniczenie:
-      "Jeśli nikt nie aktualizował jej od lat, pierwszą robotą bywa postawienie projektu na nowo na swoim komputerze i sprawdzenie, czy w ogóle się buduje. To jest do zrobienia, tylko trzeba o tym wiedzieć przed wyceną.",
+      "Jeśli nikt nie aktualizował jej od lat, pierwszym krokiem bywa postawienie projektu na nowo na swoim komputerze i sprawdzenie, czy w ogóle się buduje. To jest do zrobienia, tylko trzeba o tym wiedzieć przed wyceną.",
     przygotowac:
       "Dostęp do repozytorium albo do serwera i nazwisko osoby, która robiła ją ostatnio.",
     zakres: 1,
@@ -152,10 +152,10 @@ export const ZMIANY: Zmiana[] = [
   {
     klucz: "zgloszenia",
     nazwa: "Zbierać zgłoszenia z formularza",
-    opis: "Dziś ludzie dzwonią albo piszą z ręki.",
+    opis: "Dziś ludzie dzwonią albo piszą maila.",
     jak: "Formularz z potwierdzeniem, wiadomość do Was i zapis zgłoszenia poza samą skrzynką, żeby żadne nie zginęło w mailach.",
     czegoNieZalatwi:
-      "Formularz nie zastąpi decyzji, kto i w jakim czasie na zgłoszenie odpowiada. Bez tego zgłoszenia tylko zmieniają miejsce leżenia.",
+      "Formularz nie zastąpi decyzji, kto i w jakim czasie na zgłoszenie odpowiada. Bez tego zgłoszenia tylko zmieniają miejsce oczekiwania.",
     zakres: 1,
     produkt: "/landing-z-platnoscia",
   },
@@ -183,7 +183,7 @@ export const ZMIANY: Zmiana[] = [
     klucz: "google",
     nazwa: "Ma być widoczna w wyszukiwarce",
     opis: "Po nazwie firmy strona nie wychodzi.",
-    jak: "Zaczyna się od sprawdzenia, czy strona w ogóle jest w indeksie i czy sama nie prosi robota, żeby jej nie brał. To pierwsza rzecz do wykluczenia i sprawdzenie jest darmowe.",
+    jak: "Zaczyna się od sprawdzenia, czy strona w ogóle jest w indeksie i czy sama nie prosi robota, żeby jej nie odwiedzał. To pierwsza rzecz do wykluczenia i sprawdzenie jest darmowe.",
     czegoNieZalatwi:
       "Techniczne poprawki wpuszczają stronę do indeksu, ale nie ustawiają jej wysoko na zapytania ogólne. To jest osobna, dłuższa praca nad treścią i linkami.",
     zakres: 2,
@@ -228,13 +228,13 @@ export function ocenStrone(stan: Stan, zmiana: Zmiana): WerdyktStrony {
       poziom,
       naglowek: "Poprawka tak, ale najpierw pomiar",
       zdanie:
-        "Tu odpowiedź zależy od tego, co jest pod spodem, a tego nie da się orzec z zewnątrz na oko. Darmowy audyt techniczny mówi, czy wystarczy poprawka, czy trafiliście na granicę tego, co ta strona umie. Zamawianie przebudowy przed tym pomiarem to kupowanie w ciemno.",
+        "Tu odpowiedź zależy od tego, co jest pod spodem, a tego nie da się orzec z zewnątrz bez pomiaru. Darmowy audyt techniczny mówi, czy wystarczy poprawka, czy trafiliście na granicę tego, co ta strona umie. Zamawianie przebudowy przed tym pomiarem to kupowanie w ciemno.",
       produkt: produktPo(href),
     };
   }
   return {
     poziom,
-    naglowek: "Poprawka tego nie załatwi",
+    naglowek: "Poprawka tego nie rozwiąże",
     zdanie:
       "Zanim ruszy jakakolwiek praca nad wyglądem czy treścią, trzeba mieć co poprawiać i mieć do tego dostęp. To jest pytanie na jedną rozmowę, nie na wdrożenie, i odpowiedź bywa taka, że taniej zacząć od jednej nowej strony niż odzyskiwać starą.",
     produkt: produktPo(href),

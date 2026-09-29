@@ -323,7 +323,7 @@ export default function AdresCheck() {
               {wynik.werdykt === "ZIELONY"
                 ? "Tutaj nie mamy Ci nic do sprzedania. Ten jeden punkt masz ustawiony poprawnie."
                 : wynik.werdykt === "NIEROZSTRZYGNIETE"
-                  ? "Z zewnątrz tego nie rozstrzygnę, ale mając dostęp do konfiguracji serwera sprawdzimy to od środka."
+                  ? "Z zewnątrz tego nie rozstrzygniemy, ale mając dostęp do konfiguracji serwera sprawdzimy to od środka."
                   : "Naprawa to przekierowanie jednej wersji na drugą po stronie serwera plus wskazanie wersji głównej w kodzie strony. Sama reguła jest krótka, natomiast wybór wersji i kolejność wdrożenia mają znaczenie, bo źle ustawione przekierowanie potrafi zapętlić stronę."}
             </p>
 

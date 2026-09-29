@@ -42,7 +42,7 @@ const faqItems = [
   {
     question: "Co z bezpieczeństwem danych?",
     answer:
-      "Wszystko działa lokalnie, na Twoim komputerze. Transkrypty, zadania i notatki nie opuszczają maszyny. Wyjątkiem są powiadomienia na telefon, domyślnie wyłączone, które wysyłają wyłącznie nazwę sesji. Klucze i tokeny leżą w zaszyfrowanym pliku.",
+      "Wszystko działa lokalnie, na Twoim komputerze. Transkrypty, zadania i notatki nie opuszczają maszyny. Wyjątkiem są powiadomienia na telefon, domyślnie wyłączone, które wysyłają wyłącznie nazwę sesji. Klucze i tokeny są trzymane w zaszyfrowanym pliku.",
   },
   {
     question: "Ile to kosztuje?",
@@ -76,7 +76,7 @@ export default function PanelDoSesjiAiArticle() {
         <p style={{ color: "var(--article-muted)", lineHeight: 1.7, fontSize: "1.05rem" }}>
           Praca z asystentem AI zaczyna się od jednego okna terminala. Po
           miesiącu okien jest kilkanaście, każde z inną rozmową, i nagle nie
-          wiadomo, która czeka na decyzję, która skończyła robotę, a która stoi
+          wiadomo, która czeka na decyzję, która skończyła pracę, a która stoi
           od tygodnia. Poniżej opis narzędzia, które zbudowaliśmy, żeby ten
           problem rozwiązać u siebie, oraz wnioski, które mogą się przydać także
           wtedy, gdy zbudujesz coś własnego.
@@ -161,7 +161,7 @@ export default function PanelDoSesjiAiArticle() {
         </h3>
         <p style={{ color: "var(--article-text)", lineHeight: 1.7 }}>
           Ile kosztowała każda rozmowa, ile zostało limitu i kiedy się skończy
-          przy obecnym tempie. Przy okazji wyszedł błąd w liczeniu: asystent
+          przy obecnym tempie. Przy okazji ujawnił się błąd w liczeniu: asystent
           zapisuje tę samą odpowiedź kilka razy, więc naiwne sumowanie zawyżało
           zużycie ponad dwukrotnie.
         </p>

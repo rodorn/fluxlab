@@ -302,7 +302,7 @@ export default function CTA() {
                 id="message"
                 name="message"
                 rows={4}
-                placeholder="Np. leady wpadają z formularza i maila, handlowcy ręcznie przepisują dane do CRM, a raport robimy w Google Sheets."
+                placeholder="Np. leady trafiają z formularza i maila, handlowcy ręcznie przepisują dane do CRM, a raport robimy w Google Sheets."
                 className={`${inputClass} resize-none`}
               />
             </div>

@@ -219,7 +219,7 @@ export async function POST(request: Request) {
     klasa = "WYGASA_WKROTCE";
     naglowek = `Certyfikat wygasa za ${cert?.dniDoKonca} dni`;
     opis =
-      "Dziś jest jeszcze w porządku, ale po tej dacie strona zacznie straszyć odwiedzających. Warto ustawić odnawianie zanim to nastąpi.";
+      "Dziś jest jeszcze w porządku, ale po tej dacie przeglądarka zacznie ostrzegać odwiedzających. Warto ustawić odnawianie zanim to nastąpi.";
   }
 
   const stronaNiedostepna = http.naHttps && klasa !== "OK" && klasa !== "WYGASA_WKROTCE";

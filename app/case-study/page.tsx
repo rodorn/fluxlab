@@ -44,13 +44,13 @@ export default function CaseStudy() {
             <div className="max-w-3xl">
               <p className="section-label mb-3">Modelowe przepływy</p>
               <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-5 leading-tight">
-                Ile czasu zjada proces przed automatyzacją i po niej
+                Ile czasu pochłania proces przed automatyzacją i po niej
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
                 Nie mamy jeszcze wdrożeń u firm, więc nie znajdziecie tu cudzych
                 wyników ani referencji. Zamiast tego dwa procesy, które
                 automatyzujemy najczęściej, rozpisane na czynności, z minutami
-                przy każdej z nich. Możecie odkliknąć to, czego u siebie nie
+                przy każdej z nich. Możecie odznaczyć to, czego u siebie nie
                 robicie, i zobaczyć własną sumę. Opis wdrożenia z nazwą firmy
                 pojawi się tutaj dopiero wtedy, gdy takie wdrożenie powstanie i
                 firma zgodzi się na publikację, na warunkach{" "}

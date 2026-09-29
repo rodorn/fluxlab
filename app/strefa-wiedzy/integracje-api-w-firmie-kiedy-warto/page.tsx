@@ -154,7 +154,7 @@ export default function IntegracjeApiArticle() {
                         4. Gdy firma potrzebuje stabilniejszej architektury
                       </h3>
                       <p className="text-gray-600 dark:text-gray-400">
-                        Na początku wiele da się ogarnąć arkuszem. Ale z czasem
+                        Na początku wiele da się obsłużyć arkuszem. Ale z czasem
                         to przestaje być skalowalne.
                       </p>
                     </div>
@@ -347,7 +347,7 @@ export default function IntegracjeApiArticle() {
                         Firma miała formularz, ale leady trafiały do maila, CRM
                         aktualizowany ręcznie. Po wdrożeniu: lead automatycznie
                         w CRM, źródło przypisane, system tworzył zadanie.
-                        Zniknęła ręczna robota + opóźnienia i błędy.
+                        Zniknęło ręczne przepisywanie, a z nim opóźnienia i błędy.
                       </p>
 
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">

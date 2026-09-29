@@ -82,8 +82,8 @@ const PROCESY: Proces[] = [
     recznie: [
       { co: "Wyeksportować szanse sprzedaży z CRM do pliku", minuty: 10 },
       { co: "Pobrać koszty z Google Ads i Meta Ads", minuty: 15 },
-      { co: "Skleić eksport z arkuszem prowizji", minuty: 45 },
-      { co: "Uzgodnić rozjazdy między źródłami", minuty: 60 },
+      { co: "Połączyć eksport z arkuszem prowizji", minuty: 45 },
+      { co: "Uzgodnić rozbieżności między źródłami", minuty: 60 },
       { co: "Sprawdzić, czy sumy zgadzają się z poprzednim tygodniem", minuty: 40 },
       { co: "Przełożyć liczby do prezentacji", minuty: 45 },
       { co: "Rozesłać i odpowiedzieć na pytania o liczby", minuty: 25 },
@@ -216,7 +216,7 @@ export default function PorownanieProcesu() {
             Dziś, ręcznie
           </p>
           <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
-            Odklikaj czynności, których u siebie nie robicie, a wynik przeliczy się
+            Odznacz czynności, których u siebie nie wykonujecie, a wynik przeliczy się
             od razu.
           </p>
           <ul className="space-y-2">
@@ -350,7 +350,7 @@ export default function PorownanieProcesu() {
             <p className="text-xs text-gray-500 dark:text-gray-400 mt-1 leading-snug">
               {bezSensu
                 ? "nie ma czego zdejmować, tak wąski proces taniej zostawić ręcznie"
-                : "różnica, czyli ile jest do zdjęcia"}
+                : "różnica, czyli ile czasu można odzyskać"}
             </p>
           </div>
         </div>

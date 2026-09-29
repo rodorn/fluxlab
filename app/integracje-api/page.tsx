@@ -106,7 +106,7 @@ export default function IntegracjeApi() {
                       <p className="text-gray-600 dark:text-gray-300 mb-8">
                         Integracja nie ma jednej ceny, bo spięcie dwóch systemów
                         przez otwarte API i spięcie czterech, z których jeden
-                        oddaje dane plikiem, to inna robota. Zaznacz, co u
+                        oddaje dane plikiem, to inny zakres pracy. Zaznacz, co u
                         Ciebie występuje, a zobaczysz rząd wielkości od razu.
                       </p>
                       <ZakresWyceny wycena={WYCENA_INTEGRACJE} />

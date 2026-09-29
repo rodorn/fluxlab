@@ -30,7 +30,7 @@ export default function Page() {
       breadcrumb="Strona po włamaniu"
       eyebrow="Ratunek po włamaniu"
       h1="Zhakowana strona, posprzątana do końca"
-      lead="Przywrócenie backupu zwykle przywraca też backdoora i po dwóch dniach jesteś w tym samym miejscu. Ja porównujemy każdy plik Twojej strony z oryginałem prosto z repozytorium WordPressa, więc listę podmienionych i obcych plików mamy w minuty, a nie po godzinach zgadywania."
+      lead="Przywrócenie backupu zwykle przywraca też backdoora i po dwóch dniach jesteś w tym samym miejscu. Porównujemy każdy plik Twojej strony z oryginałem prosto z repozytorium WordPressa, więc listę podmienionych i obcych plików mamy w minuty, a nie po godzinach zgadywania."
       ctaLabel="Zgłoś włamanie"
       ctaNote="Piszesz o każdej porze, odpisujemy najszybciej jak się da"
       checks={[

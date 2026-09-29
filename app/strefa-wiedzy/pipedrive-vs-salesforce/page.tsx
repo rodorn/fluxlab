@@ -419,7 +419,7 @@ export default function PipedriveVsSalesforceArticle() {
                           regiony, kilka linii produktowych.
                         </p>
                         <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                          Tu zaczyna się zgrzyt. Pipedrive utrzyma pipeline, ale
+                          Tu zaczyna się problem. Pipedrive utrzyma pipeline, ale
                           raportowanie per region/produkt/handlowiec wymaga
                           workarounds. Salesforce Enterprise albo Pipedrive
                           Power z solidnie zaprojektowanymi polami i raportami,
@@ -437,7 +437,7 @@ export default function PipedriveVsSalesforceArticle() {
                           custom objects, forecast w natywnym module, głębokie
                           integracje z billingiem przez API, raportowanie
                           zarządcze. Pipedrive poradzi sobie, ale będzie
-                          rozpychał się łokciami.
+                          pracował na granicy możliwości.
                         </p>
                       </div>
                     </div>

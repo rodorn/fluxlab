@@ -352,3 +352,25 @@ Trzy rzeczy, o których warto wiedzieć:
 
 Wiadomość ma 1997 słów i nie zawiera długich myślników. Przeczytałem ją przed wysyłką, poprawiłem „w wpisie” na „we wpisie”, usunąłem jedno zdanie o wdrożeniach u osób trzecich i przeredagowałem zdanie o sprawdzeniu 1 października.
 === 2026-09-29 11:05:33 koniec, kod 0
+=== 2026-09-29 15:03:00 start raportu
+Raport poszedł na iwanekpawel55@gmail.com z tematem „FluxLab strona, 15:10, poprawka błędnej informacji o mObywatelu i FAQ o przeciążonym Biznes.gov.pl". Serwer SMTP potwierdził wysyłkę. Nie sprawdzałem, czy mail dotarł do skrzynki. W dzienniku dopisałem `<!-- WYSLANO 2026-09-29 15:04 -->`.
+
+Temat mówi 15:10, a znacznik 15:04, bo godzinę do tematu wpisałem ręcznie i zawyżyłem. Następny raport i tak czyta od znacznika.
+
+Mail opisuje cztery zmiany osobnymi sekcjami. Przed wysyłką sprawdziłem na produkcji, że nowe FAQ są na stronach.
+1. **e-Doręczenia:** poprawka naszego błędu, bo FAQ podawało mObywatela jako drogę dla firm. Do tego nowe FAQ o przeciążonym Biznes.gov.pl (`06b2fc9`).
+2. **e-Doręczenia:** FAQ o fundacjach i stowarzyszeniach (`4ecff40`).
+3. **KSeF:** FAQ o awarii i trybie offline24 (`851db66`).
+4. **Kanał 4:** pięć maili do biur rachunkowych z wygasłym certyfikatem, po przesiewie 1033 domen.
+
+Dalej w mailu są sekcje o tym, czego się nie udało zrobić, o ruchu i o stanie audytów.
+- **Ruch:** 28 odsłon i 11 osób w dobie, uruchomienia narzędzi wzrosły z 1 do 2. Wyjaśniłem to godzinami z bazy: dwa skany na `/e-doreczenia-integracja` (13:22 i 14:07), a jeden z 28.09 wypadł z okna doby.
+- **Audyty:** stan bez zmian (techniczny 24 z 29, treści 22 z 23, SEO 1 z 7), bo pliki audytów nie były ruszane od 23.09. Jako następną pozycję wskazałem dopięcie linków do sześciu stron z jednym linkiem.
+- **Zastrzeżenie o danych sprzed 21.09 16:00** jest w mailu.
+
+**Bez zrzutu ekranu.** Uznałem, że w tym okresie nie było zmiany wizualnej, bo wszystkie zmiany to tekst FAQ, i nic nie dołączyłem. Jeśli wolisz, żeby FAQ liczyło się jako zmiana wizualna, jak w wcześniejszych cyklach (`e-doreczenia-faq-spolka.png`), przy następnym raporcie dołączę zrzut.
+
+Suma przeglądarek w raporcie ruchu to 27, a odsłon 28. Podałem liczby tak, jak zwraca skrypt.
+
+Pliki `cykl/przebieg.log` i `cykl/raport.log` mają zmiany sprzed tej sesji, a dopisany znacznik w `cykl/dziennik.md` nie jest jeszcze scommitowany. Niczego nie commitowałem.
+=== 2026-09-29 15:05:01 koniec, kod 0

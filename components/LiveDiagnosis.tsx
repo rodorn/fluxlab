@@ -203,7 +203,7 @@ export default function LiveDiagnosis() {
             Zobacz swoją automatyzację, teraz
           </h1>
           <p className="text-gray-500 dark:text-gray-400 text-lg">
-            Opisz proces, który zjada Ci czas. Działający na żywo model AI w
+            Opisz proces, który pochłania Twój czas. Działający na żywo model AI w
             kilka sekund nazwie go, rozpisze na konkretne kroki i ostrożnie
             oszacuje, ile godzin miesięcznie da się odzyskać.
           </p>

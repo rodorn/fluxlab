@@ -297,7 +297,7 @@ export function zlozRaportHtml(
     ${blokWyceny}
     ${blokDostepow}
 
-    ${naglowekSekcji("Jak to zmierzyliśmy i czego nie sprawdzałem")}
+    ${naglowekSekcji("Jak to zmierzyliśmy i czego nie sprawdzaliśmy")}
     <p style="font-size:13px;line-height:1.7;color:#4b5563;margin:0 0 10px">
       Wszystkie liczby w tym raporcie pochodzą z jednego badania wykonanego ${esc(data)} z serwera w Europie. Stronę pobrałem dwa razy: raz z nagłówkami komputera, raz z nagłówkami telefonu. Wagę plików liczymy z tego, co faktycznie przyszło, a nie z deklaracji serwera, i podajemy, ilu plików nie udało się zważyć.
     </p>

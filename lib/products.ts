@@ -337,14 +337,14 @@ export const PRODUCTS: Product[] = [
     bullets: [
       "synchronizacja różnicowa zamiast pełnych przebiegów",
       "odporność na limity i chwilowe awarie API",
-      "zakres wyceny do wyklikania na stronie, bez zapytania ofertowego",
+      "zakres wyceny do ustalenia na stronie, bez zapytania ofertowego",
     ],
   },
   {
     category: "automatyzacja",
     name: "Automatyzacja raportowania",
-    tagline: "Koniec z ręcznym sklejaniem Excela",
-    desc: "Raport, który składa się sam i ląduje na mailu o ustalonej godzinie, zamiast zjadać komuś pół dnia w miesiącu.",
+    tagline: "Koniec z ręcznym składaniem raportów",
+    desc: "Raport, który składa się sam i ląduje na mailu o ustalonej godzinie, zamiast zajmować komuś pół dnia w miesiącu.",
     price: "od 790 zł",
     href: "/automatyzacja-raportowania",
     grupa: "wdrozenia",
@@ -353,7 +353,7 @@ export const PRODUCTS: Product[] = [
       "dane z wielu źródeł w jednym zestawieniu",
       "wysyłka cykliczna bez udziału człowieka",
       "alert, gdy liczby wyglądają podejrzanie",
-      "zakres wyceny do wyklikania na stronie, bez zapytania ofertowego",
+      "zakres wyceny do ustalenia na stronie, bez zapytania ofertowego",
     ],
   },
 
@@ -362,7 +362,7 @@ export const PRODUCTS: Product[] = [
     category: "dane",
     name: "Sprawdź auto przed zakupem",
     tagline: "Raport due-diligence dla kupującego",
-    desc: "Wklejasz link do oferty z Otomoto lub OLX, a dostajesz benchmark ceny wobec podobnych aut, listę typowych usterek modelu, wykryte red-flagi i gotowy skrypt negocjacji.",
+    desc: "Wklejasz link do oferty z Otomoto lub OLX, a dostajesz benchmark ceny wobec podobnych aut, listę typowych usterek modelu, wykryte sygnały ostrzegawcze i gotowy skrypt negocjacji.",
     price: "od 5 zł",
     href: "/sprawdz-auto",
     grupa: "raporty",
@@ -458,7 +458,7 @@ export const PRODUCTS: Product[] = [
     category: "www",
     name: "Strona niewidoczna w wyszukiwarce",
     tagline: "Kod strony każe Google jej nie pokazywać",
-    desc: "Jedno polecenie zostawione po wersji roboczej potrafi wyłączyć całą witrynę z wyników wyszukiwania. Właściciel tego nie widzi, bo wchodzi z zakładki, a firma znika z internetu dla każdego, kto jej szuka. Sprawdzamy trzy miejsca, w których taka blokada siedzi, i zdejmujemy ją.",
+    desc: "Jedno polecenie zostawione po wersji roboczej potrafi wyłączyć całą witrynę z wyników wyszukiwania. Właściciel tego nie widzi, bo wchodzi z zakładki, a firma znika z internetu dla każdego, kto jej szuka. Sprawdzamy trzy miejsca, w których taka blokada bywa ukryta, i zdejmujemy ją.",
     price: "od 190 zł",
     href: "/widocznosc-w-google",
     grupa: "diagnostyka",
@@ -537,7 +537,7 @@ export const PRODUCTS: Product[] = [
   {
     category: "dane",
     name: "Dłużnik znika z rejestru",
-    tagline: "Trzy miesiące od obwieszczenia i po spółce",
+    tagline: "Trzy miesiące od obwieszczenia i spółki nie ma",
     desc: "Sąd wszczyna z urzędu postępowanie o rozwiązanie spółki bez likwidacji, publikuje obwieszczenie w Monitorze Sądowym i daje trzy miesiące na sprzeciw. Potem podmiot znika z rejestru razem z Twoją należnością. Zawiadomienia nikt nie wysyła, więc pilnujemy tego za Ciebie.",
     price: "od 99 zł/mc",
     href: "/czujka-rejestrowa",
@@ -554,7 +554,7 @@ export const PRODUCTS: Product[] = [
     category: "dane",
     name: "Sprawdzony kontrahent",
     tagline: "Zanim wyślesz zaliczkę",
-    desc: "Werdykt o konkretnej firmie złożony automatem z publicznych źródeł: Biała Lista VAT, KRS, rejestr zadłużonych, wiek domeny i listy ostrzeżeń. Pojedynczy check zajmuje 30 sekund, ale dopiero złożenie tego razem mówi, czy to firma widmo.",
+    desc: "Werdykt o konkretnej firmie złożony automatem z publicznych źródeł: Biała Lista VAT, KRS, rejestr zadłużonych, wiek domeny i listy ostrzeżeń. Pojedyncze sprawdzenie zajmuje 30 sekund, ale dopiero złożenie tego razem mówi, czy to firma widmo.",
     price: "od 9 zł",
     href: "/sprawdz-kontrahenta",
     grupa: "raporty",
@@ -563,13 +563,13 @@ export const PRODUCTS: Product[] = [
     bullets: [
       "werdykt zielony, żółty albo czerwony z uzasadnieniem",
       "ostrzeżenie, gdy konto jest spoza wykazu VAT",
-      "szybki check 9 zł, pełny raport 29 zł",
+      "szybkie sprawdzenie 9 zł, pełny raport 29 zł",
     ],
   },
   {
     category: "dane",
     name: "ImportRadar DE→PL",
-    tagline: "Które auta z Niemiec realnie się opłaca",
+    tagline: "Które auta z Niemiec realnie się opłacają",
     desc: "Skanujemy żywe oferty z DE i NL i wskazujemy konkretne egzemplarze, które zarabiają po odjęciu wszystkich kosztów sprowadzenia, oraz modele z kosztownymi wadami, których lepiej unikać.",
     price: "od 10 zł",
     href: "/import-radar",
@@ -667,7 +667,7 @@ export const PRICE_BAND_INTRO: Record<PriceBand, string> = {
     "Wdrożenie jednego procesu albo panelu, liczone od podanej kwoty w górę.",
   od1000: "Integracje dwóch systemów, gdzie zakres ustala się przed startem.",
   wycena:
-    "Praca, której zakresu nie da się podać z góry. Kwota pada po diagnozie.",
+    "Praca, której zakresu nie da się podać z góry. Kwotę podajemy po diagnozie.",
 };
 
 /**

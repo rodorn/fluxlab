@@ -56,7 +56,7 @@ const faqItems = [
   {
     question: "Skąd wiadomo, że roboty nie uruchamiają skryptów?",
     answer:
-      "Z dokumentacji dostawców i z zachowania widocznego po stronie serwera. Część z nich potrafi już renderować, ale nie jest to regułą ani gwarancją. Strona, której treść siedzi w samym dokumencie, działa u wszystkich; strona zależna od skryptów działa u części. Przy porównywalnym koszcie wybór jest oczywisty.",
+      "Z dokumentacji dostawców i z zachowania widocznego po stronie serwera. Część z nich potrafi już renderować, ale nie jest to regułą ani gwarancją. Strona, której treść jest w samym dokumencie, działa u wszystkich; strona zależna od skryptów działa u części. Przy porównywalnym koszcie wybór jest oczywisty.",
   },
 ];
 
@@ -131,7 +131,7 @@ export default function Page() {
             {
               etykieta: "Certyfikat nie do naprawienia",
               wartosc: 18,
-              opis: "Strona nie wstała nawet po pominięciu weryfikacji certyfikatu.",
+              opis: "Strona nie odpowiedziała nawet po pominięciu weryfikacji certyfikatu.",
             },
             {
               etykieta: "Odmowa dostępu",

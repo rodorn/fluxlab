@@ -46,7 +46,7 @@ export const categories: Category[] = [
         href: "/strefa-wiedzy/jak-policzyc-roi-z-automatyzacji",
         title: "Jak policzyć ROI z automatyzacji",
         description:
-          "Prosty model bez ściemy: czas, koszt pracy, błędy i skala procesu.",
+          "Prosty model bez marketingowej mgły: czas, koszt pracy, błędy i skala procesu.",
       },
       {
         href: "/strefa-wiedzy/automatyzacja-vs-zatrudnienie",
@@ -120,7 +120,7 @@ export const categories: Category[] = [
       },
       {
         href: "/strefa-wiedzy/n8n-vs-zapier",
-        title: "n8n vs Zapier, kiedy warto iść w self-hosting",
+        title: "n8n vs Zapier, kiedy warto przejść na self-hosting",
         description:
           "Open-source kontra SaaS. Koszt, kontrola danych, wymagania techniczne.",
       },

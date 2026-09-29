@@ -98,7 +98,7 @@ export default function Page() {
         },
         {
           q: "Od jakiej skali to się opłaca?",
-          a: "Policz to kalkulatorem wyżej na swoich liczbach. Z grubsza: im więcej kroków ma scenariusz i im częściej się uruchamia, tym szybciej migracja się zwraca. Przy kilkuset uruchomieniach miesięcznie zwykle nie warto.",
+          a: "Policz to kalkulatorem wyżej na swoich liczbach. W uproszczeniu: im więcej kroków ma scenariusz i im częściej się uruchamia, tym szybciej migracja się zwraca. Przy kilkuset uruchomieniach miesięcznie zwykle nie warto.",
         },
         {
           q: "Czy to jest legalne wobec obecnego dostawcy?",

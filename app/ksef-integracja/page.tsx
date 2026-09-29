@@ -38,7 +38,7 @@ export default function KsefIntegracja() {
       checks={[
         {
           title: "Napisaliśmy klienta tego API i oddaliśmy go za darmo",
-          desc: "Kod leży publicznie pod adresem github.com/rodorn/fluxlab-ksef-integracja: klient API v2 z uwierzytelnianiem tokenem, obsługą sesji, wysyłką faktury i pobraniem UPO, budowanie XML w schemacie FA(3) z walidacją struktury i numeru NIP, oraz gotowy przykład importu faktur kosztowych do pliku CSV. Repozytorium działa w trybie demo, bez konta w KSeF, więc można je uruchomić u siebie w kilka minut i ocenić przed rozmową z kimkolwiek.",
+          desc: "Kod jest dostępny publicznie pod adresem github.com/rodorn/fluxlab-ksef-integracja: klient API v2 z uwierzytelnianiem tokenem, obsługą sesji, wysyłką faktury i pobraniem UPO, budowanie XML w schemacie FA(3) z walidacją struktury i numeru NIP, oraz gotowy przykład importu faktur kosztowych do pliku CSV. Repozytorium działa w trybie demo, bez konta w KSeF, więc można je uruchomić u siebie w kilka minut i ocenić przed rozmową z kimkolwiek.",
         },
         {
           title: "Numer KSeF i UPO to nie są szczegóły techniczne",

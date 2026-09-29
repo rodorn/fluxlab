@@ -395,7 +395,7 @@ export default function ZapierMakeN8nPorownanieArticle() {
                         dobrym wdrożeniu, ale wymaga osoby technicznej.
                       </p>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Praktyka: jeśli nie macie osoby ogarniającej Linuxa i
+                        Praktyka: jeśli nie macie osoby znającej Linuxa i
                         Dockera, n8n self-hosted nie ma sensu, wybierajcie
                         n8n.cloud, Make albo Zapier.
                       </p>
@@ -424,7 +424,7 @@ export default function ZapierMakeN8nPorownanieArticle() {
                         </li>
                         <li>
                           Średni (1 000–30 000), Make lub n8n.cloud, Zapier
-                          zaczyna boleć
+                          robi się kosztowny
                         </li>
                         <li>Duży (30 000+), n8n self-hosted lub Make</li>
                       </ul>

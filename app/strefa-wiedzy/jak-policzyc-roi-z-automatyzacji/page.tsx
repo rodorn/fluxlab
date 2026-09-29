@@ -348,7 +348,7 @@ export default function RoiAutomatyzacjiArticle() {
                     </h2>
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
                       Firma usługowa z kilkuosobowym zespołem handlowym traci
-                      leady, bo nikt nie ogarnia ręcznie, które zapytania
+                      leady, bo nikt nie pilnuje ręcznie, które zapytania
                       zostały obsłużone. Część leadów ginie w skrzynce mailowej,
                       część trafia do CRM z opóźnieniem, a follow-upy są
                       nieregularne.
@@ -370,14 +370,14 @@ export default function RoiAutomatyzacjiArticle() {
                     </h2>
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
                       Zespół operacyjny co tydzień zbiera dane z trzech
-                      systemów, skleja je w Excelu i wysyła raport do zarządu.
+                      systemów, składa je w Excelu i wysyła raport do zarządu.
                       Proces trwa kilka godzin, a dane i tak bywają niespójne.
                       Zaufanie do raportów jest niskie, a decyzje opóźnione.
                     </p>
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
                       Po automatyzacji: dane są pobierane automatycznie, raport
                       generuje się sam, a zespół zajmuje się analizą zamiast
-                      klejeniem danych. Czas przygotowania spadł o 80%, a jakość
+                      składaniem danych. Czas przygotowania spadł o 80%, a jakość
                       danych wzrosła.
                     </p>
                   </div>

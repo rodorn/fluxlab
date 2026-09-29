@@ -42,7 +42,7 @@ const MOTYW: Record<
     ramka: "border-amber-500/60",
     tlo: "bg-amber-50 dark:bg-amber-950/30",
     tekst: "text-amber-700 dark:text-amber-400",
-    etykieta: "Termin goni",
+    etykieta: "Termin się zbliża",
   },
   CZERWONY: {
     ramka: "border-red-500/60",
@@ -179,7 +179,7 @@ export default function HttpsCheck() {
             `Sprawdzana domena: ${wynik.domena}`,
             `Rozpoznanie: ${wynik.naglowek}`,
             wynik.stronaNiedostepna
-              ? "Strona jest nieosiągalna: http przekierowuje na własne zepsute https."
+              ? "Strona jest nieosiągalna: http przekierowuje na własne niedziałające https."
               : "",
             wynik.hosting
               ? `Certyfikat współdzielony hostingu: ${wynik.hosting}`

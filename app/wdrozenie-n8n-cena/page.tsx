@@ -65,7 +65,7 @@ export default function WdrozenieN8nCena() {
         {
           name: "Pojedynczy przepływ",
           price: "790 zł",
-          desc: "Jedna konkretna uciążliwość, zdjęta z głowy.",
+          desc: "Jedna konkretna uciążliwość, rozwiązana na stałe.",
           features: [
             "Jeden przepływ od zdarzenia do zapisu",
             "Uruchomienie na Twoim koncie n8n albo naszym serwerze testowym",
@@ -122,7 +122,7 @@ export default function WdrozenieN8nCena() {
       ]}
       formId="wycena_n8n"
       formHeading="Opisz proces, odeślemy widełki"
-      formIntro="Napisz, co dziś dzieje się ręcznie: skąd wpadają dane, kto je przeklepuje i co ma się stać na końcu. Odeślemy widełki i informację, czy da się to zrobić taniej niż w n8n, jeśli tak jest."
+      formIntro="Napisz, co dziś dzieje się ręcznie: skąd trafiają dane, kto je przepisuje i co ma się stać na końcu. Odeślemy widełki i informację, czy da się to zrobić taniej niż w n8n, jeśli tak jest."
       submitLabel="Poproś o wycenę"
       microCopy="Odpisujemy zwykle tego samego dnia. Bez rozmowy telefonicznej, jeśli nie chcesz."
       serviceName="Wdrożenie n8n"

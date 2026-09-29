@@ -95,7 +95,7 @@ export default function WybierzBranze({ wariant = "glowna" }: Props) {
   const wynikGlowna = b && (
     <div className="mt-6 max-w-3xl rounded-2xl border border-gray-200 bg-white/60 p-6 dark:border-white/10 dark:bg-white/[0.03]">
       <p className="text-sm font-semibold text-gray-900 dark:text-white">
-        Co najczęściej zjada czas w tej branży
+        Co najczęściej pochłania czas w tej branży
       </p>
       <ul className="mt-3 space-y-2">
         {b.problemy.map((p) => (
@@ -151,7 +151,7 @@ export default function WybierzBranze({ wariant = "glowna" }: Props) {
       <dl className="mt-4 space-y-4 text-sm leading-relaxed">
         <div>
           <dt className="font-semibold text-gray-900 dark:text-white">
-            Co tu zjada czas
+            Co tu pochłania czas
           </dt>
           <dd className="mt-1 text-gray-700 dark:text-gray-300">{b.czas}</dd>
         </div>
@@ -261,7 +261,7 @@ export default function WybierzBranze({ wariant = "glowna" }: Props) {
             : "text-xl font-semibold tracking-tight text-gray-900 dark:text-white/90 lg:text-2xl"
         }
       >
-        {filar ? "Co zjada czas w Waszej branży?" : "Z jakiej branży jesteś?"}
+        {filar ? "Co pochłania czas w Waszej branży?" : "Z jakiej branży jesteś?"}
       </h2>
       <p
         className={`mt-2 max-w-3xl text-sm ${
@@ -272,7 +272,7 @@ export default function WybierzBranze({ wariant = "glowna" }: Props) {
       >
         {filar
           ? "Naciśnij branżę, a pokażemy, która czynność pochłania w niej najwięcej powtarzalnej pracy, jak to policzyć u siebie jeszcze dzisiaj i co z tym robimy. Drugie kliknięcie, o tym gdzie trzymacie dane, decyduje, czy w ogóle jest co automatyzować."
-          : "Kliknij, a pokażemy, co w tej branży najczęściej zjada czas i co da się z tym zrobić. Bez formularza i bez podawania czegokolwiek."}
+          : "Kliknij, a pokażemy, co w tej branży najczęściej pochłania czas i co da się z tym zrobić. Bez formularza i bez podawania czegokolwiek."}
       </p>
     </>
   );

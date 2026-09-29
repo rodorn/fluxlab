@@ -86,7 +86,7 @@ const workflows = [
   {
     n: "5",
     title: "Onboarding nowego klienta",
-    desc: "Wygrany deal → n8n zakłada konto klienta w aplikacji, wysyła umowę przez Autenti, tworzy folder w Drive, dodaje task dla obsługi, wystawia fakturę zaliczkową. Handlowiec wraca do sprzedawania zamiast klikania w 6 narzędziach.",
+    desc: "Wygrany deal → n8n zakłada konto klienta w aplikacji, wysyła umowę przez Autenti, tworzy folder w Drive, dodaje task dla obsługi, wystawia fakturę zaliczkową. Handlowiec wraca do sprzedawania zamiast obsługi 6 narzędzi.",
     accent: false,
   },
 ];
@@ -146,10 +146,10 @@ const firstStage = [
 
 const mistakes = [
   "Wdrażanie n8n „bo modne”, bez zmapowanego procesu, wtedy chaos zostaje, tylko szybszy",
-  "Self-hosting bez osoby od Linuksa, brak backupów, brak monitoringu, pierwszy reboot kończy zabawę",
+  "Self-hosting bez osoby od Linuksa, brak backupów, brak monitoringu, pierwszy restart serwera zatrzymuje wszystko",
   "Brak dedupu w workflow, co tydzień ten sam lead leci do CRM 3 razy, baza zaczyna kłamać",
-  "Logika biznesowa schowana w 30 IF-ach w jednym workflow zamiast w sub-workflow, po 6 miesiącach nikt tego nie ogarnia",
-  "Brak loggingu i alertów, workflow pada cicho w nocy, nikt nie wie, że leady nie wpadają od dwóch dni",
+  "Logika biznesowa schowana w 30 IF-ach w jednym workflow zamiast w sub-workflow, po 6 miesiącach nikt tego nie rozumie",
+  "Brak loggingu i alertów, workflow pada cicho w nocy, nikt nie wie, że leady nie trafiają do CRM-u od dwóch dni",
 ];
 
 const faq = [
@@ -357,7 +357,7 @@ export default function N8nDlaCrm() {
                             600 × 8 min = 80 h/mies.
                           </p>
                           <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
-                            Połowa etatu wyrzucona na klepanie
+                            Połowa etatu na ręczne przepisywanie
                           </p>
                         </div>
                         <div className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-6">

@@ -47,7 +47,7 @@ export type Wycena = {
 
 export const WYCENA_INTEGRACJE: Wycena = {
   id: "integracje",
-  pytanie: "Ile systemów ma się dogadać",
+  pytanie: "Ile systemów ma się połączyć",
   warianty: [2, 3, 4, 5],
   wliczone: 2,
   jednostka: { poj: "system", mn: "systemy", dop: "systemów" },
@@ -68,7 +68,7 @@ export const WYCENA_INTEGRACJE: Wycena = {
   dodatki: [
     {
       id: "dwustronnie",
-      co: "Dane mają chodzić w obie strony",
+      co: "Dane mają płynąć w obie strony",
       opis: "Zmiana po jednej stronie wraca na drugą. Dochodzi reguła rozstrzygania, który zapis wygrywa, gdy oba systemy zmienią to samo pole.",
       min: 590,
       max: 1200,
@@ -90,7 +90,7 @@ export const WYCENA_INTEGRACJE: Wycena = {
     {
       id: "historia",
       co: "Trzeba przenieść dane sprzed wdrożenia",
-      opis: "Jednorazowy przerzut historii z uzgodnieniem duplikatów, liczony osobno od bieżącej synchronizacji.",
+      opis: "Jednorazowe przeniesienie historii z uzgodnieniem duplikatów, liczony osobno od bieżącej synchronizacji.",
       min: 390,
       max: 900,
     },
@@ -98,11 +98,11 @@ export const WYCENA_INTEGRACJE: Wycena = {
   opieka: {
     id: "opieka",
     co: "Opieka po wdrożeniu, miesięcznie",
-    opis: "Alert, gdy przepływ się wywróci, i poprawka, gdy zewnętrzne API zmieni format. Nieobowiązkowa, rezygnacja z miesiąca na miesiąc.",
+    opis: "Alert, gdy przepływ przestanie działać, i poprawka, gdy zewnętrzne API zmieni format. Nieobowiązkowa, rezygnacja z miesiąca na miesiąc.",
     min: 190,
     max: 190,
   },
-  skad: "Widełki liczymy z własnych stawek za pracę, tych samych, które stoją jawnie na stronie o koszcie wdrożenia n8n. To rząd wielkości do zaplanowania budżetu, nie oferta. Wiążąca kwota pada po bezpłatnej diagnozie, w której sprawdzamy, co Twoje systemy naprawdę potrafią oddać.",
+  skad: "Widełki liczymy z własnych stawek za pracę, tych samych, które stoją jawnie na stronie o koszcie wdrożenia n8n. To rząd wielkości do zaplanowania budżetu, nie oferta. Wiążącą kwotę podajemy po bezpłatnej diagnozie, w której sprawdzamy, co Twoje systemy naprawdę potrafią oddać.",
 };
 
 export const WYCENA_RAPORTOWANIE: Wycena = {
@@ -150,7 +150,7 @@ export const WYCENA_RAPORTOWANIE: Wycena = {
     {
       id: "alert",
       co: "Alert, gdy liczby wyglądają podejrzanie",
-      opis: "Porównanie z poprzednim okresem i sygnał przy odchyleniu, żeby błąd w danych nie dojechał do zarządu jako wynik.",
+      opis: "Porównanie z poprzednim okresem i sygnał przy odchyleniu, żeby błąd w danych nie trafił do zarządu jako wynik.",
       min: 290,
       max: 600,
     },
@@ -162,7 +162,7 @@ export const WYCENA_RAPORTOWANIE: Wycena = {
     min: 190,
     max: 190,
   },
-  skad: "Widełki liczymy z własnych stawek za pracę, tych samych, które stoją jawnie na stronie o koszcie wdrożenia n8n. To rząd wielkości do zaplanowania budżetu, nie oferta. Wiążąca kwota pada po bezpłatnej diagnozie, w której oglądamy, jak wyglądają Wasze dane.",
+  skad: "Widełki liczymy z własnych stawek za pracę, tych samych, które stoją jawnie na stronie o koszcie wdrożenia n8n. To rząd wielkości do zaplanowania budżetu, nie oferta. Wiążącą kwotę podajemy po bezpłatnej diagnozie, w której oglądamy, jak wyglądają Wasze dane.",
 };
 
 /**

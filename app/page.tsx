@@ -82,7 +82,7 @@ const PROBLEMY = [
     href: "/automatyzacja-raportowania",
     zdanie: "Raport sprzedaży składamy ręcznie przez pół dnia",
     skutek:
-      "Co miesiąc ta sama robota: eksport, sklejanie w Excelu, przeliczanie, wysyłka.",
+      "Co miesiąc to samo: eksport, sklejanie w Excelu, przeliczanie, wysyłka.",
     cta: "Zobacz, co da się zautomatyzować",
   },
   {

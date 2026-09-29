@@ -83,7 +83,7 @@ const painPoints = [
   {
     pain: "Nie wiesz, ile naprawdę zarabiasz na poszczególnych kanałach i produktach",
     solution:
-      "Budujemy automatyczne raportowanie (Looker Studio, Google Sheets, dedykowany dashboard), które łączy dane sprzedażowe, koszty reklam (Meta Ads, Google Ads), koszty wysyłki i marżę produktową. Zamiast eksportować CSV-ki raz w miesiącu, masz aktualny obraz biznesu codziennie.",
+      "Budujemy automatyczne raportowanie (Looker Studio, Google Sheets, dedykowany dashboard), które łączy dane sprzedażowe, koszty reklam (Meta Ads, Google Ads), koszty wysyłki i marżę produktową. Zamiast eksportować pliki CSV raz w miesiącu, masz aktualny obraz biznesu codziennie.",
   },
 ];
 
@@ -228,7 +228,7 @@ export default function AutomatyzacjaDlaEcommerce() {
                   ręcznie przepisują dane między systemami. Magazyn, faktury,
                   etykiety, mail marketing, Allegro, BaseLinker. Każdy z tych
                   punktów da się spiąć tak, żeby działał sam, a Ty miał czas na
-                  sprzedaż, nie na klepanie.
+                  sprzedaż, nie na przepisywanie danych.
                 </p>
                 <div>
                   <a href="#sekcje" className="btn-primary">

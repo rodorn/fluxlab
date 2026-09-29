@@ -221,7 +221,7 @@ export default function JakaFormaOpodatkowaniaJdgArticle() {
                     <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
                       <li>
                         Twój dochód przekracza ok. 100–120 tys. zł rocznie,
-                        wtedy na skali wpadasz w stawkę 32%
+                        wtedy na skali wchodzisz w stawkę 32%
                       </li>
                       <li>
                         Masz wysokie koszty uzyskania przychodu (sprzęt,

@@ -116,7 +116,7 @@ export default function WidocznoscWAi() {
         },
         {
           q: "Skąd wiadomo, że roboty nie uruchamiają skryptów?",
-          a: "Z dokumentacji dostawców i z zachowania, które widać po stronie serwera. Część z nich potrafi już renderować, ale nie jest to regułą i nie jest to gwarantowane. Strona, której treść siedzi w samym dokumencie, działa u wszystkich, a strona zależna od skryptów działa u części. Przy równym koszcie wybór jest oczywisty.",
+          a: "Z dokumentacji dostawców i z zachowania, które widać po stronie serwera. Część z nich potrafi już renderować, ale nie jest to regułą i nie jest to gwarantowane. Strona, której treść jest w samym dokumencie, działa u wszystkich, a strona zależna od skryptów działa u części. Przy równym koszcie wybór jest oczywisty.",
         },
         {
           q: "Czy da się sprawdzić, czy ChatGPT już mnie wymienia?",

@@ -48,7 +48,7 @@ export default function Page() {
         },
         {
           title: "Monitoring, żeby nie dowiadywać się od klienta",
-          desc: "Alarm, gdy przelot się wywali albo gdy przez dobę nie przeszedł ani jeden rekord, choć powinien.",
+          desc: "Alarm, gdy przebieg zakończy się błędem albo gdy przez dobę nie przeszedł ani jeden rekord, choć powinien.",
         },
       ]}
       pricing={[

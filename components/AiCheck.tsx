@@ -236,7 +236,7 @@ export default function AiCheck() {
               klucz: "llms",
               tytul: `Gotowy szkic pliku llms.txt dla ${wynik.domena}`,
               opis:
-                "Uzupełnij miejsca w nawiasach kwadratowych, zapisz jako llms.txt i wrzuć do katalogu głównego serwisu, obok robots.txt. Nic więcej.",
+                "Uzupełnij miejsca w nawiasach kwadratowych, zapisz jako llms.txt i umieść w katalogu głównym serwisu, obok robots.txt. Nic więcej.",
               tresc: wynik.szkicLlms,
             },
           ]

@@ -64,7 +64,7 @@ export default function LandingForm({
   heading,
   intro,
   submitLabel,
-  microCopy = "Odpowiedź w 24h. Bez spamu, bez newslettera, bez „szybkiej rozmowy” wciskanej na siłę.",
+  microCopy = "Odpowiedź w 24h. Bez spamu, bez newslettera, bez „szybkiej rozmowy” narzucanej na siłę.",
 }: Props) {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
@@ -348,7 +348,7 @@ export default function LandingForm({
             id="message"
             name="message"
             rows={4}
-            placeholder="Np. leady wpadają z formularza i maila, handlowcy ręcznie przepisują dane do CRM, a raport robimy w Google Sheets."
+            placeholder="Np. leady przychodzą z formularza i maila, handlowcy ręcznie przepisują dane do CRM, a raport robimy w Google Sheets."
             className={`${inputClass} resize-none`}
           />
         </div>

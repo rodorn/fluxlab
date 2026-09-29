@@ -72,7 +72,7 @@ export default function Page() {
             "zasięg dojazdu zamiast okręgu",
             "porównanie z sąsiednimi gminami",
             "trend liczby mieszkańców",
-            "wniosek: otwierać, negocjować albo odpuścić",
+            "wniosek: otwierać, negocjować albo zrezygnować",
           ],
           featured: true,
         },

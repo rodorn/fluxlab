@@ -60,7 +60,7 @@ const pricing = [
     name: "Znajdź pod budżet",
     price: "20-30 zł",
     cta: "Zamów wyszukiwanie",
-    desc: "Podajesz budżet i typ auta, a ja szukamy modeli z realną marżą po sprowadzeniu.",
+    desc: "Podajesz budżet i typ auta, a my szukamy modeli z realną marżą po sprowadzeniu.",
     features: [
       "wszystko z analizy 1 auta",
       "przegląd rynku pod Twój budżet",
@@ -75,12 +75,12 @@ const faq = [
   {
     question: "Czy liczycie akcyzę dokładnie?",
     answer:
-      "Tak, akcyzę liczymy według pojemności silnika i typu napędu (osobno dla spalinowych, hybryd i elektryków), a nie z grubsza. To ona najczęściej przesądza o opłacalności, więc traktujemy ją poważnie.",
+      "Tak, akcyzę liczymy według pojemności silnika i typu napędu (osobno dla spalinowych, hybryd i elektryków), a nie szacunkowo. To ona najczęściej przesądza o opłacalności, więc traktujemy ją poważnie.",
   },
   {
     question: "Czy sprowadzasz auto za mnie?",
     answer:
-      "Nie. ImportRadar to analiza opłacalności, a nie usługa transportu. Dostajesz twarde liczby i decyzję, czy w ogóle wchodzić w dany samochód. Import realizujesz sam lub przez wybraną firmę.",
+      "Nie. ImportRadar to analiza opłacalności, a nie usługa transportu. Dostajesz twarde liczby i decyzję, czy w ogóle warto brać dany samochód. Import realizujesz sam lub przez wybraną firmę.",
   },
   {
     question: "Skąd bierzecie ceny sprzedaży w Polsce?",

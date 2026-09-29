@@ -69,7 +69,7 @@ export const BRANZE: Branza[] = [
     policz:
       "Policz, ile razy w zeszłym miesiącu ktoś wysłał do klienta przypomnienie o brakującym dokumencie. Pomnóż przez czas potrzebny na ustalenie, czego dokładnie brakuje.",
     robie:
-      "Dokumenty wpadają jednym kanałem i same trafiają do programu z rozpoznanymi danymi. Brakujące pozycje wylicza system i to on wysyła przypomnienie, zamiast księgowej.",
+      "Dokumenty przychodzą jednym kanałem i same trafiają do programu z rozpoznanymi danymi. Brakujące pozycje wylicza system i to on wysyła przypomnienie, zamiast księgowej.",
     narzedzie: {
       href: "/ksef-integracja",
       label: "Sprawdź za darmo gotowość na KSeF",
@@ -84,7 +84,7 @@ export const BRANZE: Branza[] = [
     problemy: [
       "Raport dla klienta składa się ręcznie z kilku paneli reklamowych",
       "Wdrożenie nowego klienta to za każdym razem ta sama lista czynności od zera",
-      "Nikt nie wie, ile godzin naprawdę zjada obsługa konkretnego abonamentu",
+      "Nikt nie wie, ile godzin naprawdę pochłania obsługa konkretnego abonamentu",
     ],
     systemy: "Google Ads, Meta Ads, GA4, Looker Studio",
     czas: "Raport dla każdego klienta składa się ręcznie z kilku paneli reklamowych i analityki. Przy piętnastu klientach to piętnaście razy ta sama czynność co miesiąc, w terminie, którego nie da się przesunąć, bo wynika z umowy.",
@@ -109,7 +109,7 @@ export const BRANZE: Branza[] = [
       "Handlowiec dowiaduje się o decyzji później niż klient",
     ],
     systemy: "Pipedrive, HubSpot, systemy finansujące",
-    czas: "Każde zapytanie wymaga sprawdzenia podmiotu w kilku rejestrach, zanim ktokolwiek zacznie liczyć ofertę. Sprawdzenie robi się ręcznie, w kilku zakładkach, a wynik ląduje w notatce, której nie widać ani w raporcie, ani w historii sprawy.",
+    czas: "Każde zapytanie wymaga sprawdzenia podmiotu w kilku rejestrach, zanim ktokolwiek zacznie liczyć ofertę. Sprawdzenie robi się ręcznie, w kilku zakładkach, a wynik trafia do notatki, której nie widać ani w raporcie, ani w historii sprawy.",
     policz:
       "Weź dziesięć ostatnich spraw i policz, ile minut minęło od zapytania do pierwszej wyliczonej oferty. Osobno sprawdź, w ilu z nich wynik weryfikacji jest zapisany w CRM, a w ilu tylko w czyjejś głowie.",
     robie:
@@ -143,16 +143,16 @@ export const DANE: Dane[] = [
     werdykt:
       "Zanim cokolwiek tu automatyzować, dane muszą mieć stały kształt. Arkusz, w którym każdy wpisuje po swojemu, a reszta ustaleń żyje w mailach, nie ma czego podać automatowi na wejściu. Pierwszy krok jest bez naszego udziału: jedna tabela, ustalone kolumny, jedno miejsce na całą firmę. Dopiero na tym da się cokolwiek zbudować.",
     koszt:
-      "Koszt: zero, to porządek w danych, nie wdrożenie. Wrócić warto wtedy, kiedy tabela stoi.",
+      "Koszt: zero, to porządek w danych, nie wdrożenie. Wrócić warto wtedy, kiedy tabela jest gotowa.",
   },
   {
     klucz: "bez-api",
     nazwa: "W programie, który nie ma API",
     warto: true,
     werdykt:
-      "Da się, ale drogą okrężną, przez to, co program potrafi wypuścić i przyjąć: eksport do pliku, import, czasem baza pod spodem. Działa i bywa stabilne, tyle że każda aktualizacja programu jest momentem, w którym trzeba to sprawdzić. Mówimy o tym przed wyceną, nie po.",
+      "Da się, ale drogą okrężną, przez to, co program potrafi wyeksportować i przyjąć: eksport do pliku, import, czasem baza pod spodem. Działa i bywa stabilne, tyle że każda aktualizacja programu jest momentem, w którym trzeba to sprawdzić. Mówimy o tym przed wyceną, nie po.",
     koszt:
-      "Orientacyjnie od 1 500 zł, zależnie od tego, co program wypuszcza. Diagnoza przed wyceną: 0 zł.",
+      "Orientacyjnie od 1 500 zł, zależnie od tego, co program eksportuje. Diagnoza przed wyceną: 0 zł.",
   },
   {
     klucz: "api",

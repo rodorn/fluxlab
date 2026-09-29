@@ -1017,7 +1017,7 @@ export default function AudytCheck() {
             {mailStan === "ok" ? (
               <div>
                 <p className="text-base font-bold text-emerald-700 dark:text-emerald-400">
-                  Raport poszedł na {email}
+                  Wysłaliśmy raport na {email}
                 </p>
                 <p className="mt-1.5 text-sm text-gray-600 dark:text-gray-400">
                   Jeżeli nie dotrze w ciągu kilku minut, zajrzyj do spamu. Zgodę
@@ -1087,20 +1087,20 @@ export default function AudytCheck() {
 
           {/* Metodyka */}
           <Skladane
-            tytul="Jak to zmierzyliśmy i czego nie sprawdzałem"
+            tytul="Jak to zmierzyliśmy i czego nie sprawdzaliśmy"
             naZdarzenie={() => zglosZdarzenie("audyt_rozwin_metodyka")}
           >
             <div className="space-y-3 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
               <p>
                 Wszystkie liczby pochodzą z jednego badania wykonanego przed
-                chwilą. Stronę pobrałem dwa razy: raz z nagłówkami komputera,
+                chwilą. Stronę pobraliśmy dwa razy: raz z nagłówkami komputera,
                 raz z nagłówkami telefonu. Wagę plików liczymy z tego, co
                 faktycznie przyszło, a nie z deklaracji serwera, i podajemy, ilu
                 plików nie udało się zważyć.
               </p>
               <p>
                 Czego tutaj nie ma, żeby nie było nieporozumień: nie
-                uruchamiałem przeglądarki, więc nie mierzymy czasu rysowania
+                uruchamialiśmy przeglądarki, więc nie mierzymy czasu rysowania
                 strony, przesunięć układu ani wyniku Lighthouse. Nie oceniamy
                 treści merytorycznie, nie oceniamy wyglądu i nie porównujemy z
                 konkurencją. Badamy stronę główną, nie każdą podstronę.

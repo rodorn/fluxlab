@@ -173,7 +173,7 @@ export default function Pilotaz() {
                 standardowej ceny w zamian za zgodę na przygotowanie case study
                 i krótkiej referencji po zakończeniu projektu. Publikujemy tylko
                 to, co wcześniej zaakceptujesz, bez danych wrażliwych, bez
-                tajemnic handlowych, bez wrzucania Twojej firmy pod autobus.
+                tajemnic handlowych, bez stawiania Twojej firmy w złym świetle.
               </p>
               <p className="mt-6 text-sm text-gray-600 dark:text-gray-400 leading-relaxed max-w-2xl mx-auto">
                 To nie jest oferta dla &bdquo;pierwszych klientów&rdquo;. Rabat

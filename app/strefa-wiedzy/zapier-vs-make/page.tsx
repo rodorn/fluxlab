@@ -292,7 +292,7 @@ export default function ZapierVsMakeArticle() {
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
                       Zapier wygrywa pod względem łatwości startu. Jeśli jesteś
                       osobą, która buduje automatyzacje raz na kwartał i nie ma
-                      technicznego backgroundu, Zapier będzie znacznie mniej
+                      technicznego zaplecza, Zapier będzie znacznie mniej
                       frustrujący. Make wymaga zrozumienia diagramu, kierunku
                       przepływu danych, agregatorów i routerów, to
                       konceptualnie bliżej programowania wizualnego niż
@@ -307,7 +307,7 @@ export default function ZapierVsMakeArticle() {
                       rekonstruować to z logów taska.
                     </p>
                     <p className="text-gray-600 dark:text-gray-400">
-                      Praktyczny dropoff: w Zapierze, gdy scenariusz urośnie do
+                      W praktyce: w Zapierze, gdy scenariusz urośnie do
                       10+ kroków z filtrami i ścieżkami warunkowymi (Paths),
                       staje się trudny do utrzymania. Make w tej samej sytuacji
                       jest czytelny, bo to wciąż jeden diagram, a nie

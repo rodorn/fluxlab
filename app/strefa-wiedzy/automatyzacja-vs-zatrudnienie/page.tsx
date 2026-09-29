@@ -530,7 +530,7 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
                         automatyzację. Praca front-office (sprzedaż, obsługa
                         VIP, doradztwo) to 30–50% rutyna, dobrze się
                         automatyzuje tylko back część, a front wymaga człowieka.
-                        Jeśli nie umiesz rozbić zadania na te dwa kubły,
+                        Jeśli nie umiesz rozbić zadania na te dwie kategorie,
                         potrzebujesz audytu procesu, nie rekrutacji.
                       </p>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
@@ -725,7 +725,7 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
                         <li>
                           <strong>Koszt błędu:</strong> źle skonfigurowana
                           automatyzacja, która wyśle 500 błędnych e-maili w
-                          nocy, potrafi namieszać bardziej niż pomyłka
+                          nocy, potrafi narobić więcej szkody niż pomyłka
                           człowieka, który kończy pracę o 17:00
                         </li>
                         <li>

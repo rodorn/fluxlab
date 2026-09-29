@@ -256,7 +256,7 @@ export default function ZwrotyCheck() {
               <strong>
                 {zwrotyMies} zwrotów i mniej więcej {kosztMies.toLocaleString("pl-PL")} zł
               </strong>{" "}
-              miesięcznie samej obsługi. To jest ta kwota, którą zabiera
+              miesięcznie samej obsługi. To jest ta kwota, którą oszczędza
               samoobsługowy panel, a nie sama poprawa regulaminu.
             </p>
           </div>
@@ -264,7 +264,7 @@ export default function ZwrotyCheck() {
           <div className="mt-5 border-t border-gray-200/70 dark:border-gray-700/70 pt-4">
             <p className="text-sm text-gray-700 dark:text-gray-300">
               {braki.length === 0
-                ? "Informacje są komplet, więc regulaminu nie ma po co poprawiać. Zostaje pytanie, czy zwroty obsługujecie ręcznie, bo to kosztuje niezależnie od tego, co jest napisane."
+                ? "Informacje są kompletne, więc regulaminu nie ma po co poprawiać. Zostaje pytanie, czy zwroty obsługujecie ręcznie, bo to kosztuje niezależnie od tego, co jest napisane."
                 : "Uzupełnienie tych braków to jedna rzecz, a druga to sam proces: dopóki zwrot zgłasza się mailem, każda sprawa przechodzi przez czyjeś ręce."}
             </p>
 

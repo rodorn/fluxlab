@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 
 const problemPoints = [
   "Lead wpada wieczorem, handlowiec widzi go rano. Klient w międzyczasie pisze do trzech firm.",
-  "Powiadomienia o nowych leadach lecą na maila i giną wśród newsletterów.",
+  "Powiadomienia o nowych leadach trafiają na maila i giną wśród newsletterów.",
   "Handlowiec dowiaduje się o leadzie przez Slacka od managera, a nie z CRM-a.",
   "Pierwszy kontakt to wciąż „odpiszemy na maila”, a nie telefon.",
   "Brak SLA na reakcję, nikt nie wie, ile to powinno trwać.",
@@ -52,7 +52,7 @@ const beforeSteps = [
   "Lead wypełnia formularz na stronie.",
   "Mail z formularza ląduje w skrzynce sprzedaż@.",
   "Skrzynkę sprawdza ktoś rano, albo dopiero po obiedzie.",
-  "Osoba ze skrzynki przekleja dane do CRM (jeśli ma czas).",
+  "Osoba ze skrzynki przenosi dane do CRM (jeśli ma czas).",
   "Manager albo asystent decyduje, kto bierze leada.",
   "Handlowiec dostaje informację mailem, Slackiem albo na zawołanie.",
   "Handlowiec dzwoni, gdy skończy aktualną rozmowę. Albo zapomina.",
@@ -60,7 +60,7 @@ const beforeSteps = [
 ];
 
 const afterSteps = [
-  "Lead wypełnia formularz, dane lecą do warstwy automatyzacji w sekundę.",
+  "Lead wypełnia formularz, dane trafiają do warstwy automatyzacji w sekundę.",
   "System waliduje, wzbogaca (region, branża, źródło) i decyduje o właścicielu.",
   "Lead trafia do CRM z przypisanym handlowcem i etapem.",
   "Handlowiec dostaje push na telefon + powiadomienie na Slacku z linkiem do deala.",
@@ -118,15 +118,15 @@ const workflowSteps = [
 const antipatterns = [
   {
     title: "Wysłanie powiadomienia na maila",
-    desc: "Mail to najgorszy kanał notyfikacji o nowym leadzie. Ginie wśród newsletterów, fakturek i thread'ów. Push, SMS, Slack lub Teams działają w 5 minut. E-mail, w 5 godzin.",
+    desc: "Mail to najgorszy kanał powiadamiania o nowym leadzie. Ginie wśród newsletterów, faktur i wątków. Push, SMS, Slack lub Teams działają w 5 minut. E-mail, w 5 godzin.",
   },
   {
     title: "Brak SLA na reakcję",
-    desc: "Bez deadline'u handlowiec oddzwoni „jak będzie miał chwilę”. SLA (5/15/30 minut) musi być zdefiniowane, mierzone i widoczne, najlepiej w postaci licznika tykającego przy deal'u.",
+    desc: "Bez deadline'u handlowiec oddzwoni „jak będzie miał chwilę”. SLA (5/15/30 minut) musi być zdefiniowane, mierzone i widoczne, najlepiej w postaci licznika widocznego przy dealu.",
   },
   {
     title: "Speed-to-lead bez routingu",
-    desc: "Wszystko leci jednocześnie do całego zespołu. Pierwszy chętny bierze. W praktyce nikt nie czuje się odpowiedzialny, bo „pewnie ktoś inny już tam dzwoni”.",
+    desc: "Wszystko trafia jednocześnie do całego zespołu. Leada bierze pierwszy chętny. W praktyce nikt nie czuje się odpowiedzialny, bo „pewnie ktoś inny już tam dzwoni”.",
   },
   {
     title: "Auto-odpowiedź zamiast kontaktu",
@@ -152,7 +152,7 @@ const faq = [
   {
     question: "Co zrobić z leadami wpadającymi po godzinach pracy?",
     answer:
-      "Trzy mechanizmy razem: (1) auto-odpowiedź z konkretnym czasem oddzwonienia („dzwonimy jutro do 9:30”), (2) automatyczne dodanie zadania na początek następnego dnia z priorytetem, (3) powiadomienie do handlowca jeszcze w godzinach pracy, jeśli ma chętność. W branżach kosztownych (np. leasing) warto też mieć dyżur weekendowy z podwyższoną stawką, koszt zwraca się przy jednym wygranym dealu.",
+      "Trzy mechanizmy razem: (1) auto-odpowiedź z konkretnym czasem oddzwonienia („dzwonimy jutro do 9:30”), (2) automatyczne dodanie zadania na początek następnego dnia z priorytetem, (3) powiadomienie do handlowca jeszcze w godzinach pracy, jeśli ma taką możliwość. W branżach kosztownych (np. leasing) warto też mieć dyżur weekendowy z podwyższoną stawką, koszt zwraca się przy jednym wygranym dealu.",
   },
   {
     question: "Czy szybsza reakcja realnie przekłada się na sprzedaż?",
@@ -259,7 +259,7 @@ export default function CzasReakcjiNaLeada() {
                             <p>
                               Większość firm nie traci leadów dlatego, że ma zły
                               CRM. Traci je dlatego, że między formularzem a
-                              CRM-em jest człowiek robiący za integrację API.
+                              CRM-em jest człowiek zastępujący integrację API.
                               Ten człowiek czasem śpi, czasem ma spotkanie,
                               czasem jest na chorobowym. Lead nie czeka.
                             </p>
@@ -562,7 +562,7 @@ export default function CzasReakcjiNaLeada() {
                               </span>
                               <span className="text-gray-700 dark:text-gray-300 leading-relaxed">
                                 <strong>Push + Slack zamiast maila</strong>, od
-                                razu przenieś notyfikacje o leadach z poczty na
+                                razu przenieś powiadomienia o leadach z poczty na
                                 kanał, który handlowcy mają na ekranie. Sam ten
                                 ruch potrafi obniżyć czas reakcji o 50%.
                               </span>
@@ -804,7 +804,7 @@ export default function CzasReakcjiNaLeada() {
                           <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
                             30-minutowa diagnoza, wstępna mapa pierwszego kroku
                             i szacowany ROI. Bez zobowiązań. Po rozmowie wiesz,
-                            czy w twoim przypadku to ma sens, i ile by
+                            czy w Twoim przypadku to ma sens, i ile by
                             kosztowało.
                           </p>
                           <TrackedCTA

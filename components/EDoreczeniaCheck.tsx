@@ -41,7 +41,7 @@ const SKALE: Skala[] = [
     etykieta: "Do 10 pism miesięcznie",
     werdykt: "PANEL",
     odpowiedz:
-      "Przy tej skali ręczna obsługa w panelu jeszcze się broni. Warto natomiast od początku pilnować pobierania dowodów doręczenia, bo to od nich liczą się terminy, a w panelu łatwo je przeoczyć.",
+      "Przy tej skali ręczna obsługa w panelu jeszcze wystarcza. Warto natomiast od początku pilnować pobierania dowodów doręczenia, bo to od nich liczą się terminy, a w panelu łatwo je przeoczyć.",
   },
   {
     klucz: "do-piecdziesieciu",
@@ -269,10 +269,10 @@ export default function EDoreczeniaCheck() {
 
           <div className="mt-5 border-t border-gray-200/70 dark:border-gray-700/70 pt-4">
             <p className="text-sm text-gray-700 dark:text-gray-300">
-              Samego adresu nie założę za Was, bo wniosek składa właściciel
+              Samego adresu nie założymy za Was, bo wniosek składa właściciel
               skrzynki. Możemy natomiast spiąć ją z systemem, którego używacie, razem
               z pobieraniem dowodów doręczenia. Klient tego API, którego do tego
-              używamy, leży otwarcie na{" "}
+              używamy, jest opublikowany na{" "}
               <a
                 href="https://github.com/rodorn/edoreczenia-klient"
                 target="_blank"

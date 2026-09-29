@@ -222,7 +222,7 @@ export async function POST(request: Request) {
       zepsute: [],
       komentarz: blokada
         ? "Nie ma mapy strony, a dodatkowo plik robots.txt prosi wyszukiwarki, żeby nie odwiedzały całego serwisu. To ustawienie zostaje czasem po pracach nad nową wersją strony i skutecznie wycina firmę z wyników wyszukiwania."
-        : "Mapa strony to lista wszystkich podstron, którą wyszukiwarka pobiera jednym zapytaniem. Bez niej robot musi sam poklikać po linkach, więc podstrony podlinkowane głęboko albo tylko z menu rozwijanego bywają odkrywane miesiącami, a bywa że wcale. Przy kilku stronach to nie problem, przy katalogu ofert albo bloga zaczyna kosztować realne wejścia.",
+        : "Mapa strony to lista wszystkich podstron, którą wyszukiwarka pobiera jednym zapytaniem. Bez niej robot musi sam przejść po odnośnikach, więc podstrony podlinkowane głęboko albo tylko z menu rozwijanego bywają odkrywane miesiącami, a bywa że wcale. Przy kilku stronach to nie problem, przy katalogu ofert albo bloga zaczyna kosztować realne wejścia.",
     });
   }
 
@@ -268,7 +268,7 @@ export async function POST(request: Request) {
     : "";
 
   const bazowy = blokada
-    ? "W pliku robots.txt stoi prośba o nieodwiedzanie całego serwisu. Mapa strony przy takim ustawieniu niczego nie zmienia, bo robot i tak nie wejdzie. To najczęściej pozostałość po wersji roboczej strony, która pojechała na produkcję razem z tym ustawieniem."
+    ? "W pliku robots.txt stoi prośba o nieodwiedzanie całego serwisu. Mapa strony przy takim ustawieniu niczego nie zmienia, bo robot i tak nie wejdzie. To najczęściej pozostałość po wersji roboczej strony, która trafiła na produkcję razem z tym ustawieniem."
     : zepsute.length
       ? "Adresy z mapy strony są dla wyszukiwarki obietnicą: tu są nasze podstrony. Jeśli część z nich nie odpowiada, robot zużywa na nie swój limit odwiedzin i traci zaufanie do całej listy, a klient, który trafi na taki adres z wyników wyszukiwania, widzi komunikat o błędzie zamiast oferty."
       : wskazanaNieDziala

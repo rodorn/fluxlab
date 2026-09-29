@@ -84,7 +84,7 @@ const faq = [
   {
     question: "Jak szybko dostaniemy raport?",
     answer:
-      "Zwykle w ciągu 24h od zgłoszenia i potwierdzenia płatności. Jeśli auto Cię goni, napisz w formularzu, że sprawa jest pilna.",
+      "Zwykle w ciągu 24h od zgłoszenia i potwierdzenia płatności. Jeśli termin Cię goni, napisz w formularzu, że sprawa jest pilna.",
   },
   {
     question: "Co jeśli oferta zniknie zanim zdążymy zamówić?",

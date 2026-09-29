@@ -99,7 +99,7 @@ export default function CrmDlaJednoosobowejFirmyArticle() {
                         </li>
                         <li className="flex items-start gap-2">
                           {checkIcon}
-                          gdzie utknęły leady, do których przestałem wracać.
+                          gdzie utknęły leady, do których przestaliśmy wracać.
                         </li>
                       </ul>
                       <p className="mt-6 text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -155,7 +155,7 @@ export default function CrmDlaJednoosobowejFirmyArticle() {
                         Dla solo consultanta, który nie planuje skalowania
                         zespołu, HubSpot Free bywa najtańszą opcją na lata.
                         Trzeba mieć tylko świadomość, że ekosystem prowadzi do
-                        wyższych planów, pisałem o tym przy okazji porównania{" "}
+                        wyższych planów, pisaliśmy o tym przy okazji porównania{" "}
                         <Link
                           href="/strefa-wiedzy/hubspot-vs-pipedrive"
                           className="text-accent hover:underline"
@@ -181,7 +181,7 @@ export default function CrmDlaJednoosobowejFirmyArticle() {
                         relacje, a nie tylko pipeline. Folk dobrze sprawdza się
                         dla konsultantów, agencji i freelancerów, wciąga
                         kontakty z Gmaila/LinkedIn, pokazuje historię relacji,
-                        ma proste pipy. Attio idzie w stronę elastycznej bazy
+                        ma proste pipeline'y. Attio idzie w stronę elastycznej bazy
                         danych à la Airtable z funkcjami CRM, świetne dla VC,
                         recruiterów i firm operacyjnych.
                       </p>
@@ -390,7 +390,7 @@ export default function CrmDlaJednoosobowejFirmyArticle() {
                         Praktyczne sygnały, że dotychczasowy CRM przestaje
                         wystarczać, są zwykle trzy. Pierwszy: tracisz rozmowy,
                         bo narzędzie nie przypomina o nich we właściwym
-                        momencie. Drugi: notatki o kliencie mieszkają w czterech
+                        momencie. Drugi: notatki o kliencie są rozrzucone po czterech
                         miejscach naraz (mail, kalendarz, Notion, głowa).
                         Trzeci: nie potrafisz szybko odpowiedzieć na pytanie
                         „ilu mamy otwartych leadów warto{`ś`}ci 50–100 tys. zł".

@@ -69,7 +69,7 @@ export default function CzasRaportowAgencji() {
   return (
     <div className="mb-10">
       <p className="text-sm text-gray-600 dark:text-gray-400">
-        Ile czasu idzie na same raporty? Wybierz agencję najbliższą Waszej.
+        Ile czasu pochłaniają same raporty? Wybierz agencję najbliższą Waszej.
         Rachunek policzy się od razu, bez wpisywania czegokolwiek.
       </p>
 

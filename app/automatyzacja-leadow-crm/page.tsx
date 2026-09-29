@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 };
 
 const offer = [
-  "Leady z formularzy, reklam i maili lądują w jednym CRM.",
+  "Leady z formularzy, reklam i maili trafiają do jednego CRM.",
   "Każdy lead dostaje handlowca, zadanie i follow-up automatycznie.",
   "Spójne dane: osoba, firma, deal, źródło, etap.",
   "Raport pokazuje czas reakcji, status i wąskie gardła.",
@@ -146,7 +146,7 @@ export default function AutomatyzacjaLeadowCRM() {
             <div className="max-w-3xl">
               <span className="section-label">Automatyzacja leadów i CRM</span>
               <h1 className="display-lg text-gray-900 dark:text-white mt-4">
-                Przestań tracić leady przez ręczną robotę.
+                Przestań tracić leady przez pracę ręczną.
               </h1>
               <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
                 Leady same trafiają do CRM, dostają handlowca, zadanie i raport.
@@ -329,7 +329,7 @@ export default function AutomatyzacjaLeadowCRM() {
                     <LandingForm
                       formId="diagnosis_lp_leadow"
                       heading="Sprawdźmy, gdzie tracisz leady"
-                      intro="Opisz krótko, skąd wpadają leady i co robicie ręcznie. Dostaniesz informację, czy automatyzacja ma sens i jaki pierwszy krok da największy efekt."
+                      intro="Opisz krótko, skąd przychodzą leady i co robicie ręcznie. Dostaniesz informację, czy automatyzacja ma sens i jaki pierwszy krok da największy efekt."
                       submitLabel="Chcemy mapę pierwszej automatyzacji"
                     />
                   </section>

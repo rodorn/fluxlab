@@ -8,7 +8,7 @@ import Tabs from "@/components/Tabs";
 export const metadata: Metadata = {
   title: "Jak pracujemy, proces wdrożenia krok po kroku | Fluxlab",
   description:
-    "Krok po kroku jak wygląda współpraca: bezpłatna konsultacja, audyt, wdrożenie i wsparcie. Stała cena projektowa, konkretne deliverables, realistyczne terminy.",
+    "Krok po kroku jak wygląda współpraca: bezpłatna konsultacja, audyt, wdrożenie i wsparcie. Stała cena projektowa, konkretne efekty, realistyczne terminy.",
   openGraph: {
     title:
       "Jak pracujemy, transparentny proces wdrożenia automatyzacji | Fluxlab",
@@ -36,7 +36,7 @@ const steps = [
     title: "Bezpłatna diagnoza (30 min)",
     duration: "30 minut · online",
     description:
-      "Rozmawiamy o tym, co chcesz usprawnić. Opisujesz problem, ja dopytujemy o szczegóły i mówimy wprost, czy widzimy sens automatyzacji, czy raczej trzeba najpierw uporządkować proces. Jeśli to nie nasz obszar, powiemy i skierujemy gdzie indziej.",
+      "Rozmawiamy o tym, co chcesz usprawnić. Opisujesz problem, dopytujemy o szczegóły i mówimy wprost, czy widzimy sens automatyzacji, czy raczej trzeba najpierw uporządkować proces. Jeśli to nie nasz obszar, powiemy i skierujemy gdzie indziej.",
     deliverables: [
       "Wstępna ocena, czy automatyzacja ma sens",
       "Wskazanie realnego efektu (ile godzin, jakie dane, jaki proces)",
@@ -49,7 +49,7 @@ const steps = [
     title: "Audyt procesu",
     duration: "3–7 dni roboczych",
     description:
-      "Jeśli po konsultacji chcemy jechać dalej, robimy właściwy audyt. Patrzymy na aktualny proces, dane, narzędzia i integracje. Efekt to dokument z konkretną rekomendacją: co, jak, w jakiej kolejności, ile trwa i ile kosztuje. Audyt jest płatny, ale jego koszt odliczamy od wdrożenia, jeśli zdecydujesz się kontynuować.",
+      "Jeśli po konsultacji chcemy iść dalej, robimy właściwy audyt. Patrzymy na aktualny proces, dane, narzędzia i integracje. Efekt to dokument z konkretną rekomendacją: co, jak, w jakiej kolejności, ile trwa i ile kosztuje. Audyt jest płatny, ale jego koszt odliczamy od wdrożenia, jeśli zdecydujesz się kontynuować.",
     deliverables: [
       "Mapa procesu AS-IS → TO-BE",
       "Lista automatyzacji posortowana wg ROI",
@@ -67,7 +67,7 @@ const steps = [
     deliverables: [
       "Tygodniowy status w formie konkretów (co zrobione, co dalej)",
       "Środowisko testowe przed wdrożeniem na produkcję",
-      "Dokumentacja każdej automatyzacji (co robi, kiedy się odpala, co zrobić gdy padnie)",
+      "Dokumentacja każdej automatyzacji (co robi, kiedy się odpala, co zrobić, gdy przestanie działać)",
       "Szkolenie zespołu (1–2 h)",
       "Transze płatności powiązane z kamieniami milowymi",
     ],
@@ -79,7 +79,7 @@ const steps = [
     description:
       "Przez pierwszy miesiąc od wdrożenia poprawiamy bez dodatkowej opłaty wszystko, co wynika z błędów po naszej stronie lub niedoprecyzowanych wymagań. Potem możemy zostać jako stały serwis (retainer) albo przekazać pełną dokumentację twojemu zespołowi, zależnie od tego, co preferujesz.",
     deliverables: [
-      "30 dni darmowych poprawek (bugi, uzupełnienia wymagań)",
+      "30 dni darmowych poprawek (błędy, uzupełnienia wymagań)",
       "Runbook w razie awarii (co sprawdzić, kogo powiadomić)",
       "Opcjonalny retainer (reakcja w 24 h w dni robocze)",
       "Opcjonalne przekazanie wiedzy zespołowi IT",
@@ -91,12 +91,12 @@ const pricingPrinciples = [
   {
     title: "Stała cena za projekt",
     description:
-      "Nie rozliczamy się per godzinę. Po audycie dostajesz konkretną kwotę za cały projekt. Jeśli zajmie mi dłużej, to nasz problem, nie twój.",
+      "Nie rozliczamy się per godzinę. Po audycie dostajesz konkretną kwotę za cały projekt. Jeśli zajmie nam dłużej, to nasz problem, nie Twój.",
   },
   {
     title: "Audyt odliczany od wdrożenia",
     description:
-      "Koszt audytu odejmujemy od ceny wdrożenia, jeśli kontynuujemy. Płacisz tylko wtedy, gdy audyt zostanie samodzielnym deliverable (np. zdecydujesz się wdrażać samodzielnie).",
+      "Koszt audytu odejmujemy od ceny wdrożenia, jeśli kontynuujemy. Płacisz tylko wtedy, gdy audyt pozostanie samodzielnym opracowaniem (np. zdecydujesz się wdrażać samodzielnie).",
   },
   {
     title: "Transze płatności",
@@ -129,7 +129,7 @@ const faq = [
   {
     question: "Kto to potem utrzymuje?",
     answer:
-      "Masz trzy opcje: (1) utrzymanie przejmuje twój zespół, dostaje dokumentację i szkolenie; (2) zostajemy na retainerze ze stałą miesięczną opłatą i zdefiniowanym SLA; (3) rozwiązanie hybrydowe, zespół obsługuje codzienność, ja jesteśmy do eskalacji.",
+      "Masz trzy opcje: (1) utrzymanie przejmuje twój zespół, dostaje dokumentację i szkolenie; (2) zostajemy na retainerze ze stałą miesięczną opłatą i zdefiniowanym SLA; (3) rozwiązanie hybrydowe, zespół obsługuje codzienność, my jesteśmy do eskalacji.",
   },
   {
     question: "Ile trwa najkrótszy projekt?",
@@ -243,7 +243,7 @@ export default function JakPracuje() {
                 Jak pracujemy
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-                Solo consultant, stała cena projektowa, tygodniowy postęp w
+                Wąski skład, stała cena projektowa, tygodniowy postęp w
                 konkretach. Poniżej masz pełny proces od pierwszej rozmowy do
                 wsparcia po wdrożeniu, bez marketingu, bez ukrytych kosztów.
               </p>

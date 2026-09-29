@@ -31,9 +31,9 @@ export const metadata: Metadata = {
 };
 
 const symptoms = [
-  "Lead z formularza wpada na maila firmowego, a potem ktoś ręcznie przepisuje go do CRM-a (jeśli pamięta).",
+  "Lead z formularza trafia na skrzynkę firmową, a potem ktoś ręcznie przepisuje go do CRM-a (jeśli pamięta).",
   "W Pipedrive są duplikaty tej samej osoby z trzech różnych kampanii, bo każdy handlowiec wpisuje na własny sposób.",
-  "Pierwszy kontakt z leadem zajmuje 4 godziny zamiast 5 minut, bo wiadomość czeka w skrzynce na ogarniętą osobę.",
+  "Pierwszy kontakt z leadem zajmuje 4 godziny zamiast 5 minut, bo wiadomość czeka w skrzynce na kogoś, kto ją zauważy.",
   "Marketing chwali się 200 leadami w miesiącu, sprzedaż widzi w CRM 130, i nikt nie wie, gdzie zgubiło się 70.",
   "Handlowcy żonglują kartką, e-mailem i Pipedrive'em, bo każde źródło zapytań trafia gdzie indziej.",
   "Raporty „skąd przyszedł lead” robi się ręcznie, bo źródło i tak nie zapisuje się automatycznie w deal'u.",
@@ -42,7 +42,7 @@ const symptoms = [
 const beforeSteps = [
   "Klient wypełnia formularz na stronie.",
   "Formularz wysyła maila na info@firma.pl.",
-  "Mail leży w skrzynce, ktoś go w końcu otwiera.",
+  "Mail czeka w skrzynce, aż ktoś go w końcu otworzy.",
   "Ta osoba przepisuje dane do Pipedrive, imię, firmę, telefon, źródło (jeśli pamięta).",
   "Zakłada osobę, organizację, deal, albo zapomina o jednym z tych trzech.",
   "Wysyła wiadomość na Slacku do handlowca z regionu klienta.",
@@ -72,7 +72,7 @@ const afterSteps = [
   {
     n: "4",
     title: "Deduplikacja",
-    desc: "Jeśli osoba o tym e-mailu lub firma o tym NIP już istnieją, system łączy nowy deal z istniejącym kontaktem zamiast plodzić duplikaty.",
+    desc: "Jeśli osoba o tym e-mailu lub firma o tym NIP już istnieją, system łączy nowy deal z istniejącym kontaktem zamiast mnożyć duplikaty.",
     accent: false,
   },
   {
@@ -115,7 +115,7 @@ const mistakes = [
   },
   {
     title: "Mailowanie zamiast webhooka",
-    desc: "Wysyłanie leada na info@firma.pl i parsowanie maili to relikt. Wystarczy jedna zmiana szablonu wiadomości i parser się sypie. Webhook = JSON = stabilność.",
+    desc: "Wysyłanie leada na info@firma.pl i parsowanie maili to relikt. Wystarczy jedna zmiana szablonu wiadomości i parser przestaje działać. Webhook = JSON = stabilność.",
   },
   {
     title: "Tworzenie tylko deala bez osoby i organizacji",
@@ -156,7 +156,7 @@ const faq = [
   {
     question: "Co jeśli Pipedrive API zwróci błąd?",
     answer:
-      "Lead trafia do kolejki retry i jest ponawiany kilka razy z narastającym opóźnieniem. Jeśli wszystkie próby się nie powiodą, alert do Slacka lub maila, a payload trafia do storage'a, żebyś mógł go ręcznie wgrać po naprawie. Żaden lead nie ginie w eter.",
+      "Lead trafia do kolejki retry i jest ponawiany kilka razy z narastającym opóźnieniem. Jeśli wszystkie próby się nie powiodą, alert do Slacka lub maila, a payload trafia do storage'a, żebyś mógł go ręcznie wgrać po naprawie. Żaden lead nie ginie po drodze.",
   },
   {
     question: "Ile to kosztuje?",
@@ -283,7 +283,7 @@ export default function AutomatyzacjaFormularzaDoPipedrive() {
                               "Marketing płaci za leady, sprzedaż widzi tylko część z nich w pipeline.",
                               "Każdy handlowiec wpisuje dane w swój sposób, raporty są nie do złożenia.",
                               "Reakcja na leada zajmuje godziny zamiast minut, konwersja spada o kilkadziesiąt procent.",
-                              "Nikt nie wie, ile leadów wpadło w danym tygodniu, bo nikt nie liczy maili.",
+                              "Nikt nie wie, ile leadów przyszło w danym tygodniu, bo nikt nie liczy maili.",
                               "Handlowiec spędza 30–60 minut dziennie na klikaniu w CRM zamiast dzwonić.",
                               "Przy próbie zrobienia raportu „skąd przyszedł zamknięty klient” okazuje się, że źródło jest puste w 40% dealów.",
                             ].map((item) => (
@@ -452,7 +452,7 @@ export default function AutomatyzacjaFormularzaDoPipedrive() {
                             Tak to wygląda dziś
                           </h2>
                           <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-                            Klasyczny łańcuch nadziei: każdy ogniwo to człowiek,
+                            Klasyczny łańcuch nadziei: każde ogniwo to człowiek,
                             który musi pamiętać, kliknąć, przepisać i przekazać
                             dalej. Wystarczy, że jedna osoba ma chory dzień albo
                             urlop, i lead leży:

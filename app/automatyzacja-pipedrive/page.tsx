@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 const offer = [
   {
     title: "Automatyczna obsługa leadów",
-    desc: "Lead trafia od razu do właściwego handlowca z deal'em, etapem i pierwszym zadaniem. Żaden lead nie ginie.",
+    desc: "Lead trafia od razu do właściwego handlowca z dealem, etapem i pierwszym zadaniem. Żaden lead nie ginie.",
   },
   {
     title: "Integracje przez API",
@@ -40,7 +40,7 @@ const offer = [
   },
   {
     title: "Logika biznesowa i webhooki",
-    desc: "Zmiana etapów, follow-upy i procesy backendowe odpalają się same, w czasie rzeczywistym, nie w kolejnym cronie.",
+    desc: "Zmiana etapów, follow-upy i procesy backendowe uruchamiają się same, w czasie rzeczywistym, nie w kolejnym cronie.",
   },
   {
     title: "Raporty i czysta baza",
@@ -62,7 +62,7 @@ export default function AutomatyzacjaPipedrive() {
             <div className="max-w-3xl">
               <p className="section-label mb-5">Pipedrive CRM</p>
               <h1 className="display-lg text-gray-900 dark:text-white mb-6">
-                Wyciśnij 100% z Pipedrive
+                Wykorzystaj Pipedrive w 100%
               </h1>
               <p className="text-lg text-gray-500 dark:text-gray-400 mb-10 max-w-xl">
                 Większość firm używa Pipedrive jak notatnika. Z dobrymi
@@ -115,7 +115,7 @@ export default function AutomatyzacjaPipedrive() {
                     <LandingForm
                       formId="diagnosis_pipedrive"
                       heading="Sprawdźmy Twój proces w Pipedrive"
-                      intro="Opisz krótko, jak dziś wygląda obsługa leadów i deali: skąd wpadają, kto je obsługuje, gdzie pojawia się ręczna praca. Dostaniesz informację, czy automatyzacja ma sens i co da największy efekt."
+                      intro="Opisz krótko, jak dziś wygląda obsługa leadów i deali: skąd przychodzą, kto je obsługuje, gdzie pojawia się ręczna praca. Dostaniesz informację, czy automatyzacja ma sens i co da największy efekt."
                       submitLabel="Chcemy diagnozę procesu Pipedrive"
                     />
                   </section>

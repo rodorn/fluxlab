@@ -404,7 +404,7 @@ export async function POST(request: Request) {
       status: "BRAK_API",
       naglowek: "Nie możemy odczytać listy produktów z tego sklepu",
       opis:
-        "Ten sklep nie udostępnia listy przecen w żaden ze sposobów, które sprawdzamy, i nie ma czytelnej mapy strony z kartami produktów. Najczęściej znaczy to, że ceny doczytuje skrypt już w przeglądarce. Napisz, na czym stoi sklep, sprawdzimy go ręcznie i odeślemy wynik.",
+        "Ten sklep nie udostępnia listy przecen w żaden ze sposobów, które sprawdzamy, i nie ma czytelnej mapy strony z kartami produktów. Najczęściej znaczy to, że ceny doczytuje skrypt już w przeglądarce. Napisz, na jakim oprogramowaniu działa sklep, sprawdzimy go ręcznie i odeślemy wynik.",
     });
   }
 

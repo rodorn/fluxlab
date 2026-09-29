@@ -159,7 +159,7 @@ const CARDS: CardDef[] = [
   {
     id: "lead",
     title: "Lead",
-    caption: "Lead wpada z formularza, reklamy albo maila.",
+    caption: "Lead przychodzi z formularza, reklamy albo maila.",
     color: "#f59e0b",
     icon: ICON_LEAD,
   },

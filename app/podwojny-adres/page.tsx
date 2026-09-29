@@ -106,7 +106,7 @@ export default function Page() {
         },
       ]}
       formId="order_podwojny_adres"
-      formIntro="Napisz, jaki masz serwer albo na czym stoi strona, a odeślemy gotową regułę i kolejność wdrożenia."
+      formIntro="Napisz, jaki masz serwer albo na jakim systemie działa strona, a odeślemy gotową regułę i kolejność wdrożenia."
       formHeading="Zamów naprawę adresu"
       submitLabel="Zamów naprawę"
       microCopy="Do sprawdzenia nie potrzebujemy żadnych dostępów. Dostęp do serwera jest potrzebny dopiero przy samym wdrożeniu, a regułę możemy też przekazać Waszemu informatykowi."

@@ -267,7 +267,7 @@ export async function POST(request: Request) {
     return NextResponse.json({
       status: "BRAK_DANYCH",
       naglowek: "Żaden serwer z danymi map nie odpowiedział",
-      opis: "Punkty pochodzą z OpenStreetMap, a udostępniają je darmowe serwery, które bywają przeciążone. Odpytałem trzy po kolei i żaden nie oddał danych. Spróbuj za kilka minut, a jeśli to się powtórzy, napisz do nas, policzymy ręcznie.",
+      opis: "Punkty pochodzą z OpenStreetMap, a udostępniają je darmowe serwery, które bywają przeciążone. Odpytaliśmy trzy po kolei i żaden nie oddał danych. Spróbuj za kilka minut, a jeśli to się powtórzy, napisz do nas, policzymy ręcznie.",
     });
   }
 

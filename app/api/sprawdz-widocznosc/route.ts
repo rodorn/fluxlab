@@ -92,7 +92,7 @@ export async function POST(request: Request) {
     return NextResponse.json({
       status: "BRAK_DOSTEPU",
       domena,
-      naglowek: "Serwer nie wpuścił mnie na stronę",
+      naglowek: "Serwer nie wpuścił nas na stronę",
       opis:
         "Serwer odpowiedział kodem " +
         strona.status +

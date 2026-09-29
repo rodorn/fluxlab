@@ -246,7 +246,7 @@ export function filarNarzedzia(href: string): ProductCategory {
  */
 export const FILAR_INTRO_NARZEDZI: Record<ProductCategory, string> = {
   automatyzacja:
-    "Ile kosztuje ręczna robota, co zjada rachunek za automatyzacje i gdzie proces urywa się po drodze.",
+    "Ile kosztuje ręczna praca, co podnosi rachunek za automatyzacje i gdzie proces urywa się po drodze.",
   dane: "Publiczne rejestry i Wasze własne liczby: kontrahent, dłużnik, faktura od kuriera, konkurencja w okolicy.",
   www: "Co o Waszej stronie wie wyszukiwarka, asystent AI i kupujący, który właśnie na nią trafił.",
 };

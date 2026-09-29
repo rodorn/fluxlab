@@ -46,7 +46,7 @@ export default function Page() {
         },
         {
           title: "Czy robots.txt nie blokuje serwisu",
-          desc: "Ustawienie z wersji roboczej potrafi pojechać na produkcję i poprosić wyszukiwarki, żeby nie odwiedzały strony w ogóle. Sprawdzamy to dokładnym porównaniem reguły, nie wyszukiwaniem fragmentu tekstu, bo inaczej każda normalna reguła wygląda jak blokada.",
+          desc: "Ustawienie z wersji roboczej potrafi trafić na produkcję i poprosić wyszukiwarki, żeby nie odwiedzały strony w ogóle. Sprawdzamy to dokładnym porównaniem reguły, nie wyszukiwaniem fragmentu tekstu, bo inaczej każda normalna reguła wygląda jak blokada.",
         },
         {
           title: "Co zrobić z martwymi adresami",
@@ -101,8 +101,8 @@ export default function Page() {
           a: "Wtedy tak napiszemy i na tym koniec. Ten punkt nie jest jedynym, który decyduje o widoczności, ale jest jednym z nielicznych, które można rozstrzygnąć jednoznacznie, bez spekulacji.",
         },
         {
-          q: "Skąd wiadomo, że adres nie działa, a nie że serwer akurat kaszlnął?",
-          a: "Rozróżniamy kod błędu od braku odpowiedzi i pokazujemy jedno i drugie osobno. Przy pełnym przeglądzie każdy podejrzany adres sprawdzamy powtórnie, bo pojedynczy nieudany strzał to za mało, żeby komuś powiedzieć, że ma zepsutą stronę.",
+          q: "Skąd wiadomo, że adres nie działa, a nie że serwer miał chwilową awarię?",
+          a: "Rozróżniamy kod błędu od braku odpowiedzi i pokazujemy jedno i drugie osobno. Przy pełnym przeglądzie każdy podejrzany adres sprawdzamy powtórnie, bo pojedyncza nieudana próba to za mało, żeby komuś powiedzieć, że ma zepsutą stronę.",
         },
       ]}
       formId="order_mapa_strony"

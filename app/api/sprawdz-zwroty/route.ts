@@ -50,7 +50,7 @@ const WYMOGI: Wymog[] = [
     etykieta: "Wzór formularza odstąpienia",
     wzorzec: /formularz\s+(zwrotu|odst[ąa]pieni)|wz[óo]r\s+odst[ąa]pieni/i,
     waga: "wazny",
-    brak: "Bez gotowego wzoru każdy zwrot zaczyna się od maila z pytaniem, co napisać. To jest ta praca, która zjada godziny obsługi.",
+    brak: "Bez gotowego wzoru każdy zwrot zaczyna się od maila z pytaniem, co napisać. To praca, która pochłania godziny obsługi.",
   },
   {
     klucz: "pieniadze",
@@ -64,14 +64,14 @@ const WYMOGI: Wymog[] = [
     etykieta: "Kto płaci za odesłanie",
     wzorzec: /koszt\w*\s+(odes[łl]ania|zwrotu|przesy[łl]ki\s+zwrotnej)|na\s+koszt\s+(kupuj|klient|sklep)/i,
     waga: "wazny",
-    brak: "To najczęstsze źródło sporu przy zwrocie. Niedopowiedziane, kończy się kłótnią i złą opinią.",
+    brak: "To najczęstsze źródło sporu przy zwrocie. Niedopowiedziane, kończy się sporem i złą opinią.",
   },
   {
     klucz: "online",
     etykieta: "Zgłoszenie zwrotu online",
     wzorzec: /zg[łl]o[śs]\s+zwrot|formularz\s+online|panel\s+zwrot|zg[łl]oszenie\s+zwrotu/i,
     waga: "wazny",
-    brak: "Zwrot zgłaszany mailem oznacza, że każdą sprawę ktoś przepisuje ręcznie. Przy kilkudziesięciu zwrotach miesięcznie to etat na pół gwizdka.",
+    brak: "Zwrot zgłaszany mailem oznacza, że każdą sprawę ktoś przepisuje ręcznie. Przy kilkudziesięciu zwrotach miesięcznie to już pół etatu.",
   },
 ];
 

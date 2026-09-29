@@ -165,7 +165,7 @@ export default function AiWAutomatyzacjiFirmPage() {
             <div className="max-w-3xl mx-auto">
               <div className="bg-accent/10 rounded-2xl p-8 lg:p-12 text-center">
                 <p className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-                  Chcesz wdrożyć AI tam, gdzie naprawdę zrobi robotę?
+                  Chcesz wdrożyć AI tam, gdzie naprawdę da efekt?
                 </p>
                 <Link href="/automatyzacja-ai" className="btn-primary">
                   Zobacz usługę Automatyzacja AI

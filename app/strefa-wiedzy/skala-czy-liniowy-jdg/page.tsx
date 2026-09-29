@@ -311,7 +311,7 @@ export default function SkalaCzyLiniowyJdgArticle() {
                           Łącznie 34 454 zł.
                         </li>
                         <li>
-                          Wynik: niemal remis. Skala minimalnie tańsza, ale
+                          Wynik: praktycznie bez różnicy. Skala minimalnie tańsza, ale
                           różnica jest symboliczna.
                         </li>
                       </ul>
@@ -383,7 +383,7 @@ export default function SkalaCzyLiniowyJdgArticle() {
                         jej odliczyć ani od podatku, ani od podstawy
                         opodatkowania. To czysty, dodatkowy koszt. Przy
                         dochodzie 120 000 zł to 10 800 zł rocznie, które po
-                        prostu znikają z konta.
+                        prostu nie obniżają podatku.
                       </p>
 
                       <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
@@ -513,7 +513,7 @@ export default function SkalaCzyLiniowyJdgArticle() {
                         <li>Nie korzystasz z ulg dostępnych tylko na skali</li>
                       </ul>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        W strefie 100–150 tys. zł dochodu wynik jest zbliżony i
+                        W przedziale 100–150 tys. zł dochodu wynik jest zbliżony i
                         zależy od indywidualnych czynników. Warto policzyć oba
                         warianty na swoich liczbach.
                       </p>

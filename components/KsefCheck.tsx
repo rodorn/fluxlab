@@ -41,7 +41,7 @@ const SPOSOBY: Sposob[] = [
     etykieta: "Program księgowy z wbudowanym KSeF",
     werdykt: "GOTOWE",
     odpowiedz:
-      "Wystawianie macie załatwione i nie ma czego wdrażać. Zostaje druga strona, o której łatwo zapomnieć: faktury kosztowe, które od 1 lutego 2026 wpadają do KSeF także do Was. Jeżeli ktoś pobiera je ręcznie i przepisuje do systemu, to jest jedyne miejsce, gdzie warto tu cokolwiek automatyzować.",
+      "Wystawianie macie rozwiązane i nie ma tu czego wdrażać. Zostaje druga strona, o której łatwo zapomnieć: faktury kosztowe, które od 1 lutego 2026 trafiają do KSeF także do Was. Jeżeli ktoś pobiera je ręcznie i przepisuje do systemu, to jest jedyne miejsce, gdzie warto tu cokolwiek automatyzować.",
   },
   {
     klucz: "program-bez-ksef",
@@ -360,7 +360,7 @@ export default function KsefCheck() {
               Faktur za Was wystawiać nie będziemy, bo to robi Wasz system.
               Możemy spiąć go z KSeF: wysyłkę w schemacie FA(3), zapis numeru
               KSeF i UPO przy dokumencie oraz pobieranie faktur kosztowych.
-              Klient tego API, którego do tego używamy, leży otwarcie na{" "}
+              Klient tego API, którego używamy, jest dostępny otwarcie na{" "}
               <a
                 href="https://github.com/rodorn/fluxlab-ksef-integracja"
                 target="_blank"

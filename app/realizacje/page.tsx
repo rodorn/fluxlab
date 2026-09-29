@@ -142,7 +142,7 @@ const GROUPS: Group[] = [
       },
       {
         name: "Listings API (FastAPI)",
-        desc: "Znormalizowane dane ogłoszeń jako API, gotowe pod publikację na RapidAPI Hub.",
+        desc: "Znormalizowane dane ogłoszeń jako API, gotowe do publikacji na RapidAPI Hub.",
         stack: ["Python", "FastAPI", "REST"],
         repo: `${GH}/fluxlab-listings-api`,
       },
@@ -173,13 +173,13 @@ const GROUPS: Group[] = [
       },
       {
         name: "Audyt martwych ofert (404 na 301)",
-        desc: "Crawler wykrywa karty ofert zwracające 404 zamiast 301, linki prowadzące w pustkę i błędy sitemap, generuje gotową mapę przekierowań (nginx/.htaccess) i dowód PDF.",
+        desc: "Crawler wykrywa karty ofert zwracające 404 zamiast 301, linki prowadzące donikąd i błędy sitemap, generuje gotową mapę przekierowań (nginx/.htaccess) i dowód PDF.",
         stack: ["Python", "SEO", "Redirects"],
         repo: `${GH}/fluxlab-dead-listings`,
       },
       {
         name: "Skaner Consent Mode v2 (zgody cookie)",
-        desc: "Wchodzi na stronę bez klikania bannera i wykrywa, czy tagi GA4, Google Ads i Meta Pixel odpalają się przed zgodą, ocenia konfigurację Consent Mode i daje dowód PDF.",
+        desc: "Wchodzi na stronę bez klikania bannera i wykrywa, czy tagi GA4, Google Ads i Meta Pixel uruchamiają się przed zgodą, ocenia konfigurację Consent Mode i daje dowód PDF.",
         stack: ["Python", "Playwright", "GTM"],
         repo: `${GH}/fluxlab-consent-audit`,
       },
@@ -210,20 +210,20 @@ const GROUPS: Group[] = [
       },
       {
         name: "PMGMOTO+, prototyp aplikacji mobilnej",
-        desc: "Premium prototyp PWA (cyfrowy garaż / prywatne biuro motoryzacyjne), 5 ekranów, do obejrzenia na żywo.",
+        desc: "Dopracowany prototyp PWA (cyfrowy garaż / prywatne biuro motoryzacyjne), 5 ekranów, do obejrzenia na żywo.",
         stack: ["PWA", "UI/UX", "Prototyp"],
         repo: `${GH}/fluxlab-pmgmoto-plus`,
         live: "https://rodorn.github.io/fluxlab-pmgmoto-plus/",
       },
       {
         name: "Lektor / dubbing PL do filmów klienta",
-        desc: "Bierze gotowy film klienta, robi transkrypcję, tłumaczy na polski i podkłada profesjonalny głos AI z duckingiem pod oryginał, oddaje gotowy plik MP4.",
+        desc: "Przyjmuje gotowy film klienta, tworzy transkrypcję, tłumaczy na polski i podkłada profesjonalny głos AI z duckingiem pod oryginał, oddaje gotowy plik MP4.",
         stack: ["Python", "ElevenLabs", "FFmpeg"],
         repo: `${GH}/fluxlab-dubbing-pl`,
       },
       {
         name: "Fabryka wideo-reklam produktowych",
-        desc: "Z karty produktu robi krótkie wideo-reklamy 9:16 w trzech wariantach A/B (hook, lektor, napisy, CTA) plus wyszukiwarka sklepów palących budżet na statykach (Meta Ad Library).",
+        desc: "Z karty produktu robi krótkie wideo-reklamy 9:16 w trzech wariantach A/B (hook, lektor, napisy, CTA) plus wyszukiwarka sklepów wydających budżet wyłącznie na statyczne kreacje (Meta Ad Library).",
         stack: ["Python", "FFmpeg", "Ads"],
         repo: `${GH}/fluxlab-video-reklamy`,
       },

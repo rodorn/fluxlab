@@ -56,7 +56,7 @@ export default function Page() {
         {
           name: "Audyt",
           price: "69 zł",
-          desc: "Chcesz wiedzieć, czy bot Cię nie topi.",
+          desc: "Chcesz wiedzieć, czy bot nie szkodzi firmie.",
           features: [
             "150 realnych pytań klienta",
             "klasyfikacja każdej odpowiedzi z cytatem",
@@ -92,7 +92,7 @@ export default function Page() {
         },
         {
           q: "Co dostajemy na koniec?",
-          a: "Raport PDF z listą wpadek, każdą z cytatem i zrzutem, oraz plik z testami kontrolnymi do ponownego użycia.",
+          a: "Raport PDF z listą błędów, każdy z cytatem i zrzutem, oraz plik z testami kontrolnymi do ponownego użycia.",
         },
       ]}
       formId="order_audyt_chatbota"

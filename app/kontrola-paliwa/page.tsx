@@ -4,12 +4,12 @@ import ProductLanding from "@/components/ProductLanding";
 export const metadata: Metadata = {
   title: "Kontrola paliwa we flocie, od 99 zł | Fluxlab",
   description:
-    "Portal karty paliwowej pokazuje transakcje, ale nie zestawia ich z trasą. Dopiero to wyłapuje tankowanie do kanistra i klon karty. Audyt od 99 zł.",
+    "Portal karty paliwowej pokazuje transakcje, ale nie zestawia ich z trasą. Dopiero to wykrywa tankowanie do kanistra i klon karty. Audyt od 99 zł.",
   alternates: { canonical: "/kontrola-paliwa" },
   openGraph: {
     title: "Kontrola paliwa we flocie, od 99 zł | Fluxlab",
     description:
-      "Tankowania zestawione z trasą i przebiegiem wyłapują kanister, obce auto i klon karty. Darmowy skan trzech pojazdów, audyt od 99 zł.",
+      "Tankowania zestawione z trasą i przebiegiem wykrywają kanister, obce auto i klon karty. Darmowy skan trzech pojazdów, audyt od 99 zł.",
     locale: "pl_PL",
     type: "website",
     images: [
@@ -55,7 +55,7 @@ export default function Page() {
         {
           name: "Skan wstępny",
           price: "0 zł",
-          desc: "Trzy pojazdy, jeden miesiąc, żeby sprawdzić czy jest problem.",
+          desc: "Trzy pojazdy, jeden miesiąc, żeby sprawdzić, czy jest problem.",
           features: [
             "podstawowe reguły kontrolne",
             "lista transakcji do wyjaśnienia",
@@ -68,7 +68,7 @@ export default function Page() {
           price: "od 99 zł",
           desc: "Trzy miesiące, cała flota, z kwotą straty.",
           features: [
-            "pełny zestaw reguł i mapki",
+            "pełny zestaw reguł i mapy",
             "kwota straty w złotych",
             "raport PDF gotowy do rozmowy",
             "reguły blokad na przyszłość",

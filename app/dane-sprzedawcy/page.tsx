@@ -42,7 +42,7 @@ export default function Page() {
         },
         {
           title: "Kto naprawdę kryje się za tym NIP-em",
-          desc: "Odpytujemy wykaz podatników i pokazujemy nazwę, adres, status VAT oraz liczbę zgłoszonych rachunków. Zdarza się, że na stronie dealera stoi NIP importera, czyli zupełnie innej spółki.",
+          desc: "Odpytujemy wykaz podatników i pokazujemy nazwę, adres, status VAT oraz liczbę zgłoszonych rachunków. Zdarza się, że na stronie dealera widnieje NIP importera, czyli zupełnie innej spółki.",
         },
         {
           title: "Czy numer konta pasuje do NIP-u",
@@ -61,7 +61,7 @@ export default function Page() {
           features: [
             "NIP i numer konta znalezione na stronie",
             "dane z wykazu podatników na dziś",
-            "werdykt, czy klient ma czego szukać",
+            "werdykt, czy klient znajdzie te dane",
           ],
         },
         {
@@ -90,7 +90,7 @@ export default function Page() {
       faq={[
         {
           q: "Czy brak NIP-u na stronie jest niezgodny z prawem?",
-          a: "Przepisy o świadczeniu usług drogą elektroniczną wymagają podania danych identyfikujących usługodawcę, natomiast nie będziemy tego sprzedawał jako straszaka karą, bo nie sprawdzałem, czy i jak bywa to egzekwowane. Powód, dla którego warto to poprawić, jest praktyczny: to jest tarcie przy płatności, a nie ryzyko mandatu.",
+          a: "Przepisy o świadczeniu usług drogą elektroniczną wymagają podania danych identyfikujących usługodawcę, natomiast nie będziemy tego sprzedawać jako straszenia karą, bo nie sprawdzaliśmy, czy i jak bywa to egzekwowane. Powód, dla którego warto to poprawić, jest praktyczny: to jest tarcie przy płatności, a nie ryzyko mandatu.",
         },
         {
           q: "Wykaz pokazuje status inny niż Czynny, co to znaczy?",
@@ -98,7 +98,7 @@ export default function Page() {
         },
         {
           q: "Sprawdzacie tylko sześć podstron, a nasze dane są gdzie indziej.",
-          a: "Wtedy narzędzie ich nie znajdzie i tak to zapisze. Nie czyta też regulaminów w plikach PDF ani danych wklejonych jako obrazek. Jeżeli u Was jest właśnie tak, to samo w sobie jest wnioskiem, bo narzędzia po stronie kupującego czytają stronę podobnie jak ja.",
+          a: "Wtedy narzędzie ich nie znajdzie i tak to zapisze. Nie czyta też regulaminów w plikach PDF ani danych wklejonych jako obrazek. Jeżeli u Was jest właśnie tak, to samo w sobie jest wnioskiem, bo narzędzia po stronie kupującego czytają stronę podobnie jak my.",
         },
         {
           q: "Skąd bierzecie dane rejestrowe?",
@@ -107,7 +107,7 @@ export default function Page() {
       ]}
       formId="order_dane_sprzedawcy"
       formHeading="Zamów uzupełnienie danych"
-      formIntro="Napisz, ile macie domen i na czym stoi strona, a odeślemy przegląd wszystkich adresów razem z gotowym fragmentem do wklejenia."
+      formIntro="Napisz, ile macie domen i na jakim systemie działa strona, a odeślemy przegląd wszystkich adresów razem z gotowym fragmentem do wklejenia."
       submitLabel="Zamów uzupełnienie"
       microCopy="Do sprawdzenia nie potrzebujemy żadnych dostępów, bo pracujemy na tym, co i tak widzi każdy odwiedzający. Dostęp jest potrzebny dopiero przy wklejeniu poprawki."
       serviceName="Uzupełnienie danych rejestrowych na stronie firmowej"

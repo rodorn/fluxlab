@@ -38,7 +38,7 @@ export default function Page() {
       checks={[
         {
           title: "Fragment po fragmencie, nie strona po stronie",
-          desc: "Popularne narzędzia oceniają całą stronę jako jeden byt. Strona z czterystoma fragmentami, z których trzynaście jest po polsku, wygląda dla nich na bezbłędną. Ja rozbijamy ją na pojedyncze kawałki tekstu.",
+          desc: "Popularne narzędzia oceniają całą stronę jako jeden byt. Strona z czterystoma fragmentami, z których trzynaście jest po polsku, wygląda dla nich na bezbłędną. Rozbijamy ją na pojedyncze fragmenty tekstu.",
         },
         {
           title: "Deklaracja języka kontra rzeczywistość",

@@ -166,7 +166,7 @@ export default function SalesforceDlaMalejFirmyArticle() {
                           Salesforce Enterprise to inna kategoria. Realne
                           wdrożenie z modelem danych, automatyzacjami,
                           integracjami, raportowaniem i szkoleniem zespołu trwa
-                          3–6 miesięcy. Krócej da się odpalić system, ale efekt
+                          3–6 miesięcy. Krócej da się uruchomić system, ale efekt
                           jest zwykle taki, że firma używa 1/10 możliwości i
                           płaci za 10/10.
                         </p>
@@ -535,7 +535,7 @@ export default function SalesforceDlaMalejFirmyArticle() {
                           <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                             Liczba sama w sobie niczego nie uzasadnia. Decyduje
                             złożoność procesu, modelu danych i potrzeba
-                            rozbudowanej automatyzacji. Spotkałem firmy
+                            rozbudowanej automatyzacji. Spotykamy firmy
                             200-osobowe, którym Pipedrive wystarcza, i
                             30-osobowe, które bez Salesforce nie ułożyłyby
                             pracy.

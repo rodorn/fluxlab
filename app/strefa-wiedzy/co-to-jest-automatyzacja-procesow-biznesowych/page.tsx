@@ -148,7 +148,7 @@ export default function AutomatyzacjaProcesowArticle() {
                         </li>
                         <li>
                           firma rośnie, ale procesy dalej działają tak, jak
-                          wtedy, gdy wszystko ogarniał właściciel w jednej
+                          wtedy, gdy wszystko prowadził właściciel w jednej
                           skrzynce mailowej.
                         </li>
                       </ul>
@@ -366,7 +366,7 @@ export default function AutomatyzacjaProcesowArticle() {
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Jeżeli po wdrożeniu nikt nie mierzy czasu, liczby
                         błędów, czasu reakcji albo wpływu na sprzedaż, to firma
-                        nie wie, czy automatyzacja faktycznie robi robotę.
+                        nie wie, czy automatyzacja faktycznie przynosi efekt.
                       </p>
                       <p className="text-gray-600 dark:text-gray-400 mb-8">
                         Jak to policzyć? Zobacz{" "}
@@ -470,14 +470,14 @@ export default function AutomatyzacjaProcesowArticle() {
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Nie wybieraj &bdquo;całej firmy&rdquo;. Wybierz jeden
                         proces, który dzieje się często, generuje koszt, ma
-                        powtarzalne reguły, boli ludzi operacyjnie.
+                        powtarzalne reguły, jest uciążliwy dla zespołu.
                       </p>
 
                       <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
                         2. Rozpisz obecny stan
                       </h3>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Zobacz: skąd wpadają dane, kto co robi, gdzie są
+                        Zobacz: skąd napływają dane, kto co robi, gdzie są
                         opóźnienia, gdzie pojawiają się błędy, ile to kosztuje w
                         czasie i pieniądzu.
                       </p>
@@ -488,7 +488,7 @@ export default function AutomatyzacjaProcesowArticle() {
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Czy chcesz skrócić czas reakcji? Ograniczyć błędy?
                         Przyspieszyć raportowanie? Bez tego łatwo zbudować coś,
-                        co działa technicznie, ale nie robi różnicy biznesowo.
+                        co działa technicznie, ale nic nie zmienia biznesowo.
                       </p>
 
                       <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">

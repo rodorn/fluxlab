@@ -89,7 +89,7 @@ export default function HubspotVsPipedriveArticle() {
                         dodawany jako brakująca część układanki, najpierw
                         treści i lejek, potem zarządzanie kontaktami. Dziś
                         HubSpot to pakiet hubów: Marketing, Sales, Service,
-                        Content, Operations i Commerce. Wszystko siedzi na
+                        Content, Operations i Commerce. Wszystko opiera się na
                         jednej bazie kontaktów.
                       </p>
                       <p className="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
@@ -151,7 +151,7 @@ export default function HubspotVsPipedriveArticle() {
                         HubSpot wygrywa cenowo na samym starcie i przegrywa, gdy
                         firma chce wykorzystać Marketing Hub czy Service Hub w
                         poważnej skali. Pipedrive ma bardziej liniowy koszt,
-                        dokładasz seaty, nie wpadasz w skoki kilku tysięcy USD.
+                        dokładasz stanowiska, bez skoków o kilka tysięcy USD.
                       </p>
                     </div>
                   </div>

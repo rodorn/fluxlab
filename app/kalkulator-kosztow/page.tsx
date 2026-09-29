@@ -507,7 +507,7 @@ export default function KalkulatorKosztowPage() {
                         </h2>
                         <p className="text-gray-500 dark:text-gray-400 mb-8">
                           Jeśli flota, raportowanie kosztów albo integracja z
-                          systemem księgowym zjadają Ci czas, porozmawiajmy.
+                          systemem księgowym pochłaniają Ci czas, porozmawiajmy.
                         </p>
                         <Link
                           href="/kontakt"

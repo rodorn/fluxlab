@@ -92,7 +92,7 @@ export default function Page() {
       faq={[
         {
           q: "Czemu to jest za darmo?",
-          a: "Bo diagnoza zajmuje maszynie kilkadziesiąt sekund, a naprawa zajmuje nas. Wolimy, żeby ktoś przyszedł do nas z gotową listą i sam zdecydował, czy chce ją zlecić, niż żeby płacił nam za dowiedzenie się, co jest nie tak. Jeżeli okaże się, że strona jest w porządku, raport tak powie i nie będziemy szukał problemów na siłę.",
+          a: "Bo diagnoza zajmuje maszynie kilkadziesiąt sekund, a naprawa zajmuje nas. Wolimy, żeby ktoś przyszedł do nas z gotową listą i sam zdecydował, czy chce ją zlecić, niż żeby płacił nam za dowiedzenie się, co jest nie tak. Jeżeli okaże się, że strona jest w porządku, raport tak powie i nie będziemy szukać problemów na siłę.",
         },
         {
           q: "Czym to się różni od PageSpeed Insights?",
