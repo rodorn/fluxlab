@@ -122,11 +122,15 @@ export default function EDoreczeniaIntegracja() {
         },
         {
           q: "Ile kosztuje adres do e-Doręczeń i co grozi za jego brak?",
-          a: "Założenie adresu i odbieranie pism są bezpłatne, wniosek składa się przez Biznes.gov.pl albo mObywatel.gov.pl. Ustawa nie przewiduje osobnej kary pieniężnej za brak adresu. Urząd, który nie znajdzie Waszego adresu, może wysłać pismo publiczną usługą hybrydową albo listem poleconym. Prawdziwe ryzyko jest gdzie indziej: pismo w skrzynce, do której nikt nie zagląda, po 14 dniach uznaje się za doręczone.",
+          a: "Założenie adresu i odbieranie pism są bezpłatne, firma z CEIDG albo z KRS składa wniosek przez Biznes.gov.pl. Ustawa nie przewiduje osobnej kary pieniężnej za brak adresu. Urząd, który nie znajdzie Waszego adresu, może wysłać pismo publiczną usługą hybrydową albo listem poleconym. Prawdziwe ryzyko jest gdzie indziej: pismo w skrzynce, do której nikt nie zagląda, po 14 dniach uznaje się za doręczone.",
         },
         {
           q: "Nie zdążyliśmy z adresem do e-Doręczeń przed 1 października. Co teraz?",
           a: "Złóżcie wniosek od razu, obowiązek nie wygasa razem z terminem, a ustawa nie przewiduje kary pieniężnej za spóźnienie. Dopóki adresu Waszej firmy nie ma w bazie adresów elektronicznych, urząd doręcza pisma na papierze, publiczną usługą hybrydową albo listem poleconym, więc pilnujcie zwykłej skrzynki pocztowej i awiz. Jeśli wniosek już złożyliście i ma status „W trakcie weryfikacji”, nie składajcie drugiego, tylko czekajcie na maila. Gdy przyjdzie, administrator musi jeszcze aktywować skrzynkę, bo dopiero wtedy adres trafia do bazy. Od tej chwili urzędy piszą na skrzynkę, a pismo nieodebrane w ciągu 14 dni uznaje się za doręczone, dlatego przed aktywacją ustawcie powiadomienia na zwykły adres e-mail.",
+        },
+        {
+          q: "Biznes.gov.pl nie działa albo się zawiesza, a termin mija. Co robimy?",
+          a: "Wniosek dla firmy z CEIDG albo z KRS składa się wyłącznie przez Biznes.gov.pl, więc mObywatel.gov.pl tu nie pomoże, bo służy do prywatnego adresu. Pod koniec września portal sam ostrzega o wysokim obciążeniu i niektóre funkcje działają wolniej albo chwilowo nie odpowiadają. Na gov.pl, na stronie „Planowane niedostępności e-Doręczeń”, są dwa okna przerw technicznych: 29.09.2026 w godzinach 18:00 do 19:30 oraz w nocy z 3 na 4.10.2026 od 20:00 do 7:00. Próbujcie poza tymi oknami i poza godzinami pracy biur, najlepiej wcześnie rano. Zanim wyślecie wniosek drugi raz, sprawdźcie w Koncie Przedsiębiorcy, w „Moich sprawach”, czy pierwszy nie doszedł, bo dwa wnioski tylko wydłużą weryfikację. Jeśli nie zdążycie do 30 września, nie grozi za to kara pieniężna. Złóżcie wniosek w pierwszych dniach października, a do czasu aktywacji adresu urzędy doręczają pisma na papierze. Źródło: https://www.gov.pl/web/e-doreczenia/niedostepnosc-uslugi-edoreczen",
         },
         {
           q: "Czy adres firmy i prywatny adres do e-Doręczeń to ta sama skrzynka?",
