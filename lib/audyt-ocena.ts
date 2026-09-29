@@ -411,6 +411,20 @@ export function ocenStrone(p: Pomiar): Ustalenie[] {
       dostep: "dostęp do kodu strony albo do panelu treści",
     });
   }
+  if (p.tylkoUniversalAnalytics) {
+    dodaj({
+      klucz: "stara_analityka",
+      obszar: "seo",
+      waga: "wazne",
+      tytul: "Statystyki odwiedzin nie zbierają się od 2023 roku",
+      fakt: `Strona wysyła dane tylko do ${p.tylkoUniversalAnalytics}, czyli do Universal Analytics, a w kodzie nie ma identyfikatora Google Analytics 4 ani kontenera Tag Managera.`,
+      skutek:
+        "Google przestał przyjmować dane do Universal Analytics 1 lipca 2023 roku. Od tamtej pory liczba odwiedzin i źródła wejść nie są nigdzie zapisywane, a skrypt Google i tak pobiera się przy każdym wejściu.",
+      koszt: 80,
+      samodzielnie: true,
+      dostep: "dostęp do kodu strony albo do panelu treści",
+    });
+  }
   if (p.robots.blokujeWszystko) {
     dodaj({
       klucz: "robots_blokuje",

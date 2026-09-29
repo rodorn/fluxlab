@@ -107,6 +107,8 @@ export type Pomiar = {
   };
   sitemap: { jest: boolean; adresow: number | null };
   llms: boolean;
+  /** Identyfikator Universal Analytics, gdy strona nie ma obok GA4 ani GTM. */
+  tylkoUniversalAnalytics: string | null;
   zasoby: Zasob[];
   poczta: {
     spf: boolean;
@@ -153,6 +155,7 @@ function pusty(domena: string): Pomiar {
     },
     sitemap: { jest: false, adresow: null },
     llms: false,
+    tylkoUniversalAnalytics: null,
     zasoby: [],
     poczta: { spf: false, dmarc: false, dmarcPolityka: null, mx: false },
     mobile: {
@@ -712,6 +715,11 @@ export async function zmierz(domenaWejscie: string): Promise<Pomiar> {
   wynik.jezyk = html.match(/<html[^>]+lang=["']([^"']+)["']/i)?.[1] ?? null;
   wynik.noindex =
     /<meta[^>]+name=["']robots["'][^>]+content=["'][^"']*noindex/i.test(html);
+  // Universal Analytics przestał przyjmować dane 1.07.2023. Kontener GTM może
+  // ładować GA4 bez śladu w HTML, więc przy nim nie wydajemy werdyktu.
+  const ua = html.match(/["'](UA-\d{4,10}-\d{1,4})["']/)?.[1] ?? null;
+  const nowsza = /["'](?:G|GT|GTM)-[A-Z0-9]{4,}["'?&]|[?&]id=(?:G|GT|GTM)-/.test(html);
+  wynik.tylkoUniversalAnalytics = ua && !nowsza ? ua : null;
   wynik.og = /<meta[^>]+property=["']og:title["']/i.test(html);
   wynik.daneStrukturalne = [...html.matchAll(/"@type"\s*:\s*"([^"]+)"/g)]
     .map((m) => m[1])
