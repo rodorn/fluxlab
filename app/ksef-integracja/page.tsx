@@ -10,7 +10,8 @@ export const metadata: Metadata = {
     "Duże firmy od 1 lutego 2026, pozostałe od 1 kwietnia, sprzedaż do 10 tys. zł miesięcznie i kasy od 1 stycznia 2027. Sprawdźcie swój termin, bez rejestracji.",
   alternates: { canonical: "/ksef-integracja" },
   openGraph: {
-    title: "Od kiedy KSeF obowiązuje Waszą firmę? Sprawdzenie w dwóch kliknięciach",
+    title:
+      "Od kiedy KSeF obowiązuje Waszą firmę? Sprawdzenie w dwóch kliknięciach",
     description:
       "Wybieracie rodzaj sprzedaży i sposób wystawiania faktur, a wynik pokazuje termin, liczbę dni do 1 stycznia 2027 i co zrobić przy Waszym programie. Bez rejestracji.",
     locale: "pl_PL",
@@ -104,6 +105,10 @@ export default function KsefIntegracja() {
         {
           q: "Co się zmienia w KSeF 1 stycznia 2027?",
           a: "Kończą się naraz wszystkie przepisy przejściowe. Znika limit 10 tys. zł brutto miesięcznie na faktury poza KSeF, a faktury z kas rejestrujących, w tym paragony z NIP do 450 zł, też muszą przechodzić przez system. Kary z art. 106ni ustawy o VAT, do 100% kwoty VAT z faktury wystawionej poza KSeF albo do 18,7% kwoty należności przy fakturze bez VAT, miały ruszyć tego samego dnia, ale 16 września 2026 Ministerstwo Finansów zapowiedziało przesunięcie ich na 1 stycznia 2028, a 23 września 2026 opublikowało projekt tej ustawy na stronie Rządowego Centrum Legislacji (numer w wykazie prac rządu UD477, legislacja.rcl.gov.pl/projekt/12414954). To projekt, a nie uchwalone prawo. Według projektu w 2027 urząd skarbowy najpierw przypomina firmie o obowiązku, a gdy ta nie zareaguje, sprawdza jej rozliczenia. Sam obowiązek wystawiania faktur w KSeF nie jest zawieszony ani o jeden dzień, więc terminy z tej listy zostają. Przelew za fakturę z KSeF między czynnymi podatnikami VAT ma zawierać jej numer KSeF albo identyfikator zbiorczy. Tokeny do logowania zostają, Ministerstwo Finansów zrezygnowało z ich wygaszenia, ale do faktur w trybie offline potrzebny jest certyfikat KSeF typu 2.",
+        },
+        {
+          q: "KSeF nie działa. Co robimy z fakturą, którą trzeba wystawić dziś?",
+          a: "Wystawiacie ją w trybie offline24. Może z niego skorzystać każdy podatnik, bez żadnego komunikatu Ministerstwa Finansów: fakturę w strukturze FA(3) tworzycie u siebie i przesyłacie do KSeF najpóźniej w następnym dniu roboczym. Jeżeli nabywca ma ją dostać, zanim trafi do systemu, faktura musi mieć dwa kody QR, pierwszy do weryfikacji faktury w KSeF i drugi potwierdzający wystawcę, a do tego drugiego potrzebny jest certyfikat KSeF typu 2. Warto go pobrać zawczasu, bo w czasie awarii też go nie dostaniecie. Termin wydłuża się do 7 dni roboczych od zakończenia awarii tylko wtedy, gdy Ministerstwo ogłosi awarię KSeF w BIP MF i w oprogramowaniu interfejsowym. Komunikat o utrudnieniach w Aplikacji Podatnika, taki jak ten z 25 września 2026, sam w sobie nie jest ogłoszeniem awarii. Przy awarii całkowitej, ogłaszanej w środkach społecznego przekazu, faktur wystawionych w jej trakcie w ogóle nie dosyła się do KSeF. Źródło: ksef.podatki.gov.pl, strony o trybie offline24 i trybie awaryjnym.",
         },
         {
           q: "Mamy program księgowy, który obsługuje KSeF. Po co nam integracja?",
