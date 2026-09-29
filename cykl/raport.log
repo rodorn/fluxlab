@@ -289,3 +289,28 @@ Raport wysłany na iwanekpawel55@gmail.com. Podsumowanie: temat "FluxLab strona,
 === 2026-09-28 23:03:00 start raportu
 Mail z raportem wysłany na iwanekpawel55@gmail.com, temat: „FluxLab strona, 22:43, FAQ o logowaniu do KSeF prywatnym telefonem”. Raport objął 4 wpisy z dziennika (19:43–22:43): FAQ o niedotrzymaniu terminu e-Doręczeń, teksty odporne na przekroczenie 1.10 + liczba mnoga w katalogu narzędzi, pięć maili do kancelarii na jutro, oraz FAQ o logowaniu do KSeF prywatnym telefonem z gotowym komentarzem na Gofin. Bez zmiany wizualnej w tym oknie, więc bez zrzutu ekranu. Dziennik oznaczony `<!-- WYSLANO 2026-09-28 23:05 -->`.
 === 2026-09-28 23:05:25 koniec, kod 0
+=== 2026-09-29 03:03:13 start raportu
+Raport poszedł na iwanekpawel55@gmail.com z tematem „FluxLab strona, 02:43, tytuł strony e-Doręczeń odpowiada na pytanie o termin”. SMTP potwierdził wysyłkę, ale skrzynki odbiorczej nie sprawdzałem. W dzienniku dopisałem `<!-- WYSLANO 2026-09-29 03:04 -->`.
+
+Mail obejmuje pięć wpisów z dziennika (28.09 23:43 do 29.09 02:43) i ma te sekcje:
+- **Cztery zmiany z osobna:**
+  1. Nowy tytuł i opis `/e-doreczenia-integracja`.
+  2. Naprawa fałszywego alarmu w audycie stron (viewport i description bez cudzysłowów).
+  3. Szkice maili 026 i 027, z czego 027 wysłany.
+  4. Wersja wpisu na Wykop ważna od 1.10.
+- **Czego nie udało się zrobić:**
+  - Cykl 00:43 nic nie dowiózł.
+  - Szkice 021 do 026 czekają do 9:00.
+  - Formularz do kancelarii MMW czeka na decyzję Pawła.
+  - Reguła `noindex` w `lib/audyt-pomiar.ts:704` ma to samo ograniczenie co naprawiony parser, ale jej nie poprawiłem.
+  - Tytuły `/ksef-integracja` i `/numer-ksef` nie zostały sprawdzone.
+  - Bing dalej odrzuca IndexNow.
+  - Kolejka zadań ręcznych bez zmian.
+- **Ruch:** 8 odsłon i 7 osób w ostatniej dobie, z podziałem na przeglądarki i zastrzeżeniem o danych sprzed 21.09 16:00. Uruchomienia narzędzi: 1, bez zmiany od poprzedniego raportu.
+- **Stan listy audytowej:** bez zmian, czyli techniczny 24 z 29, treści 22 z 23, SEO 1 z 7 zamknięta w pełni. Następny w kolejce jest przegląd tytułów `/ksef-integracja` i `/numer-ksef`.
+- **Wniosek:** jedno zdanie na końcu.
+
+Zrzutu ekranu nie dołączyłem, bo w tym oknie nie było zmiany wizualnej. Tytuł strony i naprawa parsera niczego na ekranie nie zmieniają.
+
+Dwie rzeczy do wiedzy. W raporcie napisałem, że liczba uruchomień narzędzi nie zmieniła się od 23:05, bo poprzedni raport podawał 1. W treści maila `\`` (backticki) zostają widoczne jako znaki, tak jak w poprzednich raportach z tego wątku.
+=== 2026-09-29 03:04:56 koniec, kod 0

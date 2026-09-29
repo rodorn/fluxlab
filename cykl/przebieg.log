@@ -873,3 +873,28 @@ Połączenia Google Calendar i Google Drive wymagają autoryzacji w ustawieniach
 === 2026-09-29 00:45:27 koniec, kod 0
 === 2026-09-29 01:43:23 start
 === 2026-09-29 02:43:09 start
+Cykl 02:43 zamknięty. Wybrałem kanał 2 (asystenci AI i wyniki wyszukiwania), bo w nocy kanały 1 i 4 nie mają czego dowieźć.
+
+**Ruch z ostatniej doby:** 8 odsłon, 7 osób. Źródła: Google (2) i Useme (2). Najczęściej otwierana była `/e-doreczenia-integracja` (3 odsłony).
+
+**Co zmieniłem:** tylko na `/e-doreczenia-integracja` Google sam przyprowadza ludzi, a jej tytuł i opis mówiły o usłudze integracji. Ludzie wchodzą tam jednak po to, żeby sprawdzić termin. Przed szczytem pytań 1.10 ustawiłem:
+- tytuł: „Od kiedy adres do e-Doręczeń? Termin dla firm | Fluxlab”,
+- opis: o obowiązku od 1.10.2026 i o tym, co zrobić, gdy termin już minął.
+
+Nagłówek i treść strony zostały bez zmian. `llms.txt` ma już odpowiedź na pytanie „nie zdążyliśmy, co teraz”, więc nic tam nie dopisywałem.
+
+**Weryfikacja:**
+- Build przeszedł. `spojnosc.mjs` odrzuciła pierwszą wersję tytułu (73 znaki przy limicie 60), więc go skróciłem i drugie sprawdzenie przeszło czysto.
+- Nowy tytuł jest już na produkcji.
+- IndexNow przyjęły Yandex i Naver, Bing dalej odrzuca.
+- Commity: `dd2b03c` (zmiana strony) i `69314b9` (dziennik).
+
+Wpis „poza cyklem” o wysłanym mailu 027 leżał niezacommitowany. Weszło razem ze zmianą strony w `dd2b03c`. Wysyłkę o 02:24 potwierdza `wyslane_kanc.json`.
+
+**Dla Ciebie:** jeśli wejdziesz do Google Search Console, zacznij od „Poproś o zindeksowanie” dla `https://fluxlab.pl/e-doreczenia-integracja`. Wtedy Google ma szansę pokazać nowy tytuł jeszcze przed 1.10. Reszta kolejki bez zmian.
+
+Google Calendar i Google Drive wymagają autoryzacji w ustawieniach konektorów na claude.ai. Do tego czasu nie działają.
+=== 2026-09-29 02:46:48 koniec, kod 0
+=== 2026-09-29 03:43:11 start
+=== 2026-09-29 04:43:03 start
+=== 2026-09-29 05:43:03 start
