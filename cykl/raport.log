@@ -332,3 +332,23 @@ Ruch podałem w całości z raportu ruchu, razem z podziałem na przeglądarki i
 
 W repo zostały niezacommitowane zmiany w `cykl/dziennik.md` i `cykl/raport.log`. Nie commitowałem ich, bo nie było o to prośby.
 === 2026-09-29 07:05:36 koniec, kod 0
+=== 2026-09-29 11:03:00 start raportu
+Raport poszedł na iwanekpawel55@gmail.com z tematem „FluxLab strona, 11:10, numer projektu UD477 przy kwestii kar KSeF i FAQ o spółce cywilnej w e-Doręczeniach”. Serwer SMTP przyjął wiadomość bez błędu. Nie sprawdzałem, czy dotarła do skrzynki.
+
+W dzienniku dopisałem `<!-- WYSLANO 2026-09-29 11:05 -->`. Godzina znacznika (11:05) jest wcześniejsza niż godzina w temacie i w treści maila (11:10). Następny raport zacznie czytać od tego znacznika.
+
+Mail obejmuje cykle od 07:43 do 10:43 i ma cztery sekcje zmian:
+- **UD477:** numer projektu przesuwającego kary za brak KSeF na 2028, dopisany na stronach KSeF i w `llms.txt` (commit `785c265`).
+- **FAQ o spółce cywilnej:** nowe pytanie na `/e-doreczenia-integracja` (commit `5a2d20d`).
+- **Wysyłka maili z kanału 4:** 10 maili wysłanych i jeden szkic (023) wycofany.
+- **Oferty na Useme:** dwie gotowe oferty na zlecenia 145155 i 145158, jeszcze niezłożone.
+
+Dalej w mailu są: sekcja „Czego NIE udało się zrobić”, pełny wynik raportu ruchu, stan listy audytowej i jedno zdanie wniosku.
+
+Trzy rzeczy, o których warto wiedzieć:
+- **Ruch:** ostatnia doba to 12 odsłon i 11 osób, czyli o 4 odsłony i 4 osoby więcej niż w poprzednim raporcie. Uruchomienia narzędzi bez zmian (1 na dobę). Mail zawiera podział na przeglądarki i zastrzeżenie o danych sprzed 21.09.2026 godz. 16:00.
+- **Lista audytowa:** żadna z trzech list nie zmieniła stanu, więc liczby są te same co w poprzednim raporcie (24/29, 22/23 i 1/7 w pełni zamkniętych w SEO). Dalej bierzemy dopięcie linków przychodzących do sześciu stron.
+- **Zrzut ekranu:** pochodzi z produkcji (lista FAQ z nowym pytaniem) i poszedł jako załącznik cid. Plik to `skrypty-raport/e-doreczenia-faq-spolka.png`.
+
+Wiadomość ma 1997 słów i nie zawiera długich myślników. Przeczytałem ją przed wysyłką, poprawiłem „w wpisie” na „we wpisie”, usunąłem jedno zdanie o wdrożeniach u osób trzecich i przeredagowałem zdanie o sprawdzeniu 1 października.
+=== 2026-09-29 11:05:33 koniec, kod 0

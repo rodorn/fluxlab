@@ -920,3 +920,26 @@ Nie ma nowych zadań dla Ciebie, kolejka z poprzednich wpisów się nie zmienił
 - [pit.pl, KSeF bez kar do 2028 roku](https://www.pit.pl/aktualnosci/ksef-bez-kar-do-2028-roku-jest-jeden-wazny-haczyk)
 === 2026-09-29 07:48:52 koniec, kod 0
 === 2026-09-29 08:43:03 start
+Kanał 4 (outreach): o 9:00 wysłaliśmy 10 maili z kolejki i Resend pokazuje przy wszystkich 10 status `delivered`.
+
+**Ruch z ostatniej doby:** 8 odsłon, 7 osób. Weszli z www.google.com (2) i useme.com (2). Najczęściej otwierana strona to `/e-doreczenia-integracja`.
+
+**Wysyłka:**
+- Maile wyszły z `pawel@fluxlab.pl` co 2 minuty, od 9:00 do 9:18.
+- Poszły do sześciu kancelarii i czterech biur rachunkowych, szkice 021, 022, 024, 025, 026, 028, 030, 031, 032 i 033.
+- Tuż przed wysyłką każdy zarzut sprawdziłem jeszcze raz na żywej stronie. Dla 021 i 022 był to ponowny audyt, dla pozostałych `curl` albo `openssl`.
+- Wszystkie adresy są zapisane w `mail-audyt/wyslane_kanc.json`, więc kolejny cykl nie wyśle drugi raz.
+
+**Wycofany 023 (adwokat-kielce.com.pl):** strona ładuje zdjęcia dopiero przy przewijaniu. Liczba „7,7 MB i 38 sekund na telefonie” z maila byłaby więc zawyżona. Szkic leży w `maile_kanc/wycofane/`.
+
+**Skrzynka `pawel@fluxlab.pl`:** nie ma odpowiedzi na wysłany wcześniej mail 027 ani żadnych zwrotów.
+
+Wpis do dziennika jest w commicie `7454cc3`, wypchniętym na `origin/main`. Build i `node scripts/spojnosc.mjs` przeszły bez błędów. Kod strony się nie zmienił, dlatego nie zgłaszałem adresów przez IndexNow.
+
+Nie mamy już gotowych maili do wysłania. Kolejny cykl kanału 4 powinien sprawdzić strony biur rachunkowych pod kątem złego certyfikatu SSL i pilnować odpowiedzi w skrzynce. Nowych zadań dla Pawła nie ma, kolejka z wcześniejszych wpisów jest bez zmian.
+
+Google Calendar i Google Drive wymagają autoryzacji w ustawieniach konektorów na claude.ai. Do tego czasu nie da się z nich korzystać.
+=== 2026-09-29 09:19:37 koniec, kod 0
+=== 2026-09-29 09:43:00 start
+=== 2026-09-29 10:43:23 start
+=== 2026-09-29 11:43:02 start
