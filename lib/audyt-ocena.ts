@@ -39,7 +39,9 @@ const OPIS_MAX = 160;
 const TRESC_MIN = 500;
 
 function mb(b: number): string {
-  return b >= 1_048_576 ? `${(b / 1_048_576).toFixed(1)} MB` : `${Math.round(b / 1024)} kB`;
+  return b >= 1_048_576
+    ? `${(b / 1_048_576).toFixed(1)} MB`
+    : `${Math.round(b / 1024)} kB`;
 }
 
 export function ocenStrone(p: Pomiar): Ustalenie[] {
@@ -92,6 +94,27 @@ export function ocenStrone(p: Pomiar): Ustalenie[] {
   }
 
   if (!p.osiagalna) {
+    // Przy złym certyfikacie pomiar przez https nie dostaje dokumentu, choć
+    // serwer odpowiada. Przyczyną jest wtedy certyfikat, nie brak strony.
+    if (p.cert && (!p.cert.pasujeDoDomeny || p.cert.dniDoKonca < 0)) {
+      dodaj({
+        klucz: p.cert.pasujeDoDomeny ? "cert_wygasl" : "cert_nie_pasuje",
+        obszar: "dostepnosc",
+        waga: "krytyczne",
+        tytul: p.cert.pasujeDoDomeny
+          ? "Certyfikat wygasł"
+          : "Certyfikat jest wystawiony na inną nazwę",
+        fakt: p.cert.pasujeDoDomeny
+          ? `Ważność skończyła się ${p.cert.waznyDo}, czyli ${Math.abs(p.cert.dniDoKonca)} dni temu. Przez https strona nie otwiera się bez ostrzeżenia, dlatego nie zmierzyliśmy reszty.`
+          : `Certyfikat nie obejmuje ${p.domena}. Wystawca: ${p.cert.wystawca}. Przez https strona nie otwiera się bez ostrzeżenia, dlatego nie zmierzyliśmy reszty.`,
+        skutek:
+          "Każdy, kto wpisze adres z https albo trafi na taki link, dostaje pełnoekranowe ostrzeżenie. Większość odwiedzających zawraca w tym miejscu.",
+        koszt: 150,
+        samodzielnie: false,
+        dostep: "panel hostingu",
+      });
+      return u;
+    }
     dodaj({
       klucz: "brak_strony",
       obszar: "dostepnosc",
@@ -232,7 +255,10 @@ export function ocenStrone(p: Pomiar): Ustalenie[] {
       tytul: `${ciezkie.length === 1 ? "Jeden plik waży" : `${ciezkie.length} plików waży`} ponad pół megabajta`,
       fakt: ciezkie
         .slice(0, 4)
-        .map((z) => `${z.adres.split("/").pop()?.slice(0, 40)} (${mb(z.bajty ?? 0)})`)
+        .map(
+          (z) =>
+            `${z.adres.split("/").pop()?.slice(0, 40)} (${mb(z.bajty ?? 0)})`,
+        )
         .join(", "),
       skutek:
         "Na telefonie w zasięgu komórkowym każdy taki plik to osobne kilka sekund czekania. Obrazy zwykle da się zmniejszyć kilkukrotnie bez widocznej różnicy.",
@@ -241,7 +267,9 @@ export function ocenStrone(p: Pomiar): Ustalenie[] {
       dostep: "dostęp do kodu strony albo do panelu treści",
     });
   }
-  const bezCache = zmierzone.filter((z) => !z.cache || /no-store|no-cache/.test(z.cache));
+  const bezCache = zmierzone.filter(
+    (z) => !z.cache || /no-store|no-cache/.test(z.cache),
+  );
   if (bezCache.length >= 3) {
     dodaj({
       klucz: "brak_cache",
@@ -325,7 +353,10 @@ export function ocenStrone(p: Pomiar): Ustalenie[] {
       dostep: "dostęp do kodu strony",
     });
   }
-  if (p.obrazy.wszystkie >= 3 && m.obrazowBezSrcset / Math.max(1, p.obrazy.wszystkie) > 0.7) {
+  if (
+    p.obrazy.wszystkie >= 3 &&
+    m.obrazowBezSrcset / Math.max(1, p.obrazy.wszystkie) > 0.7
+  ) {
     dodaj({
       klucz: "brak_srcset",
       obszar: "mobile",
@@ -367,7 +398,12 @@ export function ocenStrone(p: Pomiar): Ustalenie[] {
       dostep: "dostęp do kodu strony i do serwera",
     });
   }
-  if (m.ttfbMs !== null && p.ttfbMs !== null && m.ttfbMs > p.ttfbMs * 2 && m.ttfbMs > 1200) {
+  if (
+    m.ttfbMs !== null &&
+    p.ttfbMs !== null &&
+    m.ttfbMs > p.ttfbMs * 2 &&
+    m.ttfbMs > 1200
+  ) {
     dodaj({
       klucz: "mobile_wolniej",
       obszar: "mobile",
@@ -459,7 +495,8 @@ export function ocenStrone(p: Pomiar): Ustalenie[] {
       waga: "drobne",
       tytul: "Tytuł nie zmieści się w wynikach",
       fakt: `${p.tytul.length} znaków, a widać około ${TYTUL_MAX}: „${p.tytul.slice(0, 80)}…”`,
-      skutek: "Końcówka zostanie ucięta wielokropkiem. Jeżeli to tam jest najważniejsze słowo, nikt go nie zobaczy.",
+      skutek:
+        "Końcówka zostanie ucięta wielokropkiem. Jeżeli to tam jest najważniejsze słowo, nikt go nie zobaczy.",
       koszt: 60,
       samodzielnie: true,
       dostep: "panel treści",
@@ -483,7 +520,10 @@ export function ocenStrone(p: Pomiar): Ustalenie[] {
       klucz: "zly_opis",
       obszar: "seo",
       waga: "drobne",
-      tytul: p.opisMeta.length > OPIS_MAX ? "Opis jest za długi" : "Opis jest bardzo krótki",
+      tytul:
+        p.opisMeta.length > OPIS_MAX
+          ? "Opis jest za długi"
+          : "Opis jest bardzo krótki",
       fakt: `${p.opisMeta.length} znaków, a sensowny zakres to mniej więcej ${OPIS_MIN} do ${OPIS_MAX}.`,
       skutek:
         p.opisMeta.length > OPIS_MAX
@@ -513,7 +553,10 @@ export function ocenStrone(p: Pomiar): Ustalenie[] {
       obszar: "seo",
       waga: "drobne",
       tytul: `Na stronie jest ${p.h1.length} głównych nagłówków`,
-      fakt: p.h1.slice(0, 3).map((h) => `„${h.slice(0, 50)}”`).join(", "),
+      fakt: p.h1
+        .slice(0, 3)
+        .map((h) => `„${h.slice(0, 50)}”`)
+        .join(", "),
       skutek:
         "Kilka nagłówków pierwszego poziomu rozmywa informację o tym, co na tej stronie jest najważniejsze.",
       koszt: 60,
@@ -555,7 +598,8 @@ export function ocenStrone(p: Pomiar): Ustalenie[] {
       waga: "drobne",
       tytul: "Mapa strony istnieje, ale nie jest wskazana w robots.txt",
       fakt: `Mapa odpowiada${p.sitemap.adresow ? ` i zawiera ${p.sitemap.adresow} adresów` : ""}, natomiast robots.txt jej nie wymienia.`,
-      skutek: "Jedna linia w robots.txt sprawia, że robot znajduje mapę od razu, bez zgadywania adresu.",
+      skutek:
+        "Jedna linia w robots.txt sprawia, że robot znajduje mapę od razu, bez zgadywania adresu.",
       koszt: 50,
       samodzielnie: true,
       dostep: "dostęp do plików na serwerze",
@@ -665,7 +709,9 @@ export function ocenStrone(p: Pomiar): Ustalenie[] {
   }
 
   const kolejnosc: Record<Waga, number> = { krytyczne: 0, wazne: 1, drobne: 2 };
-  return u.sort((a, b) => kolejnosc[a.waga] - kolejnosc[b.waga] || b.koszt - a.koszt);
+  return u.sort(
+    (a, b) => kolejnosc[a.waga] - kolejnosc[b.waga] || b.koszt - a.koszt,
+  );
 }
 
 export type Wycena = {
@@ -689,9 +735,17 @@ export type Wycena = {
 export function wycenNaprawe(ustalenia: Ustalenie[]): Wycena {
   const platne = ustalenia.filter((x) => x.koszt > 0);
   const osobno = platne.reduce((s, x) => s + x.koszt, 0);
-  if (!osobno) return { osobno: 0, pakiet: 0, rabat: 0, pilne: 0, dniRobocze: 0 };
+  if (!osobno)
+    return { osobno: 0, pakiet: 0, rabat: 0, pilne: 0, dniRobocze: 0 };
 
-  const mnoznik = platne.length >= 8 ? 0.65 : platne.length >= 5 ? 0.75 : platne.length >= 3 ? 0.85 : 1;
+  const mnoznik =
+    platne.length >= 8
+      ? 0.65
+      : platne.length >= 5
+        ? 0.75
+        : platne.length >= 3
+          ? 0.85
+          : 1;
   const pakiet = Math.max(150, Math.round((osobno * mnoznik) / 10) * 10);
   const pilne = platne
     .filter((x) => x.waga === "krytyczne")
@@ -716,7 +770,11 @@ export function wycenNaprawe(ustalenia: Ustalenie[]): Wycena {
  * ma pokrycie.
  */
 export function punktacja(ustalenia: Ustalenie[]): number | null {
-  if (ustalenia.some((x) => x.klucz === "zablokowany" || x.klucz === "brak_strony")) {
+  if (
+    ustalenia.some(
+      (x) => x.klucz === "zablokowany" || x.klucz === "brak_strony",
+    )
+  ) {
     return null;
   }
   const kara = ustalenia.reduce(

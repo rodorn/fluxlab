@@ -419,7 +419,10 @@ function tekstBezSkryptow(html: string): number {
  */
 function metaTresc(html: string, nazwa: string): string | null {
   for (const [znacznik] of html.matchAll(/<meta\b[^>]*>/gi)) {
-    if (!new RegExp(`\\bname=(["']?)${nazwa}\\1(?=[\\s/>])`, "i").test(znacznik)) continue;
+    if (
+      !new RegExp(`\\bname=(["']?)${nazwa}\\1(?=[\\s/>])`, "i").test(znacznik)
+    )
+      continue;
     const m = znacznik.match(/\bcontent=(?:"([^"]*)"|'([^']*)'|([^\s"'>]+))/i);
     return (m?.[1] ?? m?.[2] ?? m?.[3])?.trim() ?? null;
   }
@@ -718,8 +721,30 @@ export async function zmierz(domenaWejscie: string): Promise<Pomiar> {
   // Universal Analytics przestał przyjmować dane 1.07.2023. Kontener GTM może
   // ładować GA4 bez śladu w HTML, więc przy nim nie wydajemy werdyktu.
   const ua = html.match(/["'](UA-\d{4,10}-\d{1,4})["']/)?.[1] ?? null;
-  const nowsza = /["'](?:G|GT|GTM)-[A-Z0-9]{4,}["'?&]|[?&]id=(?:G|GT|GTM)-/.test(html);
-  wynik.tylkoUniversalAnalytics = ua && !nowsza ? ua : null;
+  const nowsza =
+    /["'](?:G|GT|GTM)-[A-Z0-9]{4,}["'?&]|[?&]id=(?:G|GT|GTM)-/.test(html);
+  // gtag.js wczytany z identyfikatorem UA może mieć w Google "połączony tag"
+  // GA4 (tak działała automatyczna migracja z 2023), którego w HTML nie widać.
+  // Werdykt tylko wtedy, gdy każdy taki kontener przeczytaliśmy i nie ma w nim G-.
+  let polaczonyGa4 = false;
+  if (ua && !nowsza) {
+    const ladowane = [
+      ...new Set(
+        [...html.matchAll(/gtag\/js\?id=(UA-\d{4,10}-\d{1,4})/g)].map(
+          (m) => m[1],
+        ),
+      ),
+    ].slice(0, 3);
+    const kontenery = await Promise.all(
+      ladowane.map((id) =>
+        pobierz(`https://www.googletagmanager.com/gtag/js?id=${id}`),
+      ),
+    );
+    polaczonyGa4 = kontenery.some(
+      (k) => !k || !k.odp.ok || /["']G-[A-Z0-9]{6,}["']/.test(k.tekst),
+    );
+  }
+  wynik.tylkoUniversalAnalytics = ua && !nowsza && !polaczonyGa4 ? ua : null;
   wynik.og = /<meta[^>]+property=["']og:title["']/i.test(html);
   wynik.daneStrukturalne = [...html.matchAll(/"@type"\s*:\s*"([^"]+)"/g)]
     .map((m) => m[1])
@@ -741,15 +766,18 @@ export async function zmierz(domenaWejscie: string): Promise<Pomiar> {
     bezLazy: tagiObrazow.filter((t) => !/loading=["']lazy["']/i.test(t)).length,
   };
 
-  const [robotsTxt, llmsTxt, mapaDomyslna, wersjaWww, poHttp] = await Promise.all([
-    pobierz(`${baza}/robots.txt`),
-    pobierz(`${baza}/llms.txt`),
-    pobierz(`${baza}/sitemap.xml`),
-    pobierz(
-      baza.includes("://www.") ? `https://${domena}` : `https://www.${domena}`,
-    ),
-    pobierz(`http://${domena}`),
-  ]);
+  const [robotsTxt, llmsTxt, mapaDomyslna, wersjaWww, poHttp] =
+    await Promise.all([
+      pobierz(`${baza}/robots.txt`),
+      pobierz(`${baza}/llms.txt`),
+      pobierz(`${baza}/sitemap.xml`),
+      pobierz(
+        baza.includes("://www.")
+          ? `https://${domena}`
+          : `https://www.${domena}`,
+      ),
+      pobierz(`http://${domena}`),
+    ]);
 
   if (robotsTxt && robotsTxt.odp.ok) {
     const t = robotsTxt.tekst.slice(0, 60_000);
