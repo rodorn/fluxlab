@@ -243,7 +243,7 @@ export function zlozRaportHtml(d: DaneRaportu, dlaWlasciciela: boolean): string 
         ? `<div style="display:block;border:1px solid #e5e7eb;border-radius:10px;padding:18px;margin-bottom:22px">
       <div style="font-size:13px;color:#6b7280">Ocena ogólna</div>
       <div style="font-size:20px;font-weight:700;color:#6b7280;line-height:1.3">Nie wystawiamy oceny</div>
-      <div style="font-size:14px;color:#374151;margin-top:4px">Nie zobaczyłem tej strony, więc liczba byłaby oceną czegoś innego niż Wasz serwis. Szczegóły niżej.</div>
+      <div style="font-size:14px;color:#374151;margin-top:4px">Nie zobaczyliśmy tej strony, więc liczba byłaby oceną czegoś innego niż Wasz serwis. Szczegóły niżej.</div>
     </div>`
         : `<div style="display:block;border:1px solid #e5e7eb;border-radius:10px;padding:18px;margin-bottom:22px">
       <div style="font-size:13px;color:#6b7280">Ocena ogólna</div>
@@ -317,7 +317,7 @@ export function zlozRaportTekst(d: DaneRaportu): string {
   l.push(`Wykonano: ${new Date(d.zbadano).toLocaleString("pl-PL", { timeZone: "Europe/Warsaw" })}`);
   l.push(
     d.punkty === null
-      ? "Ocena: nie wystawiamy, bo nie zobaczyłem tej strony."
+      ? "Ocena: nie wystawiamy, bo nie zobaczyliśmy tej strony."
       : `Ocena: ${d.punkty}/100, stan ${slownie(d.punkty)}`,
   );
   l.push("");

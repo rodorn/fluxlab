@@ -56,7 +56,7 @@ export function ocenStrone(p: Pomiar): Ustalenie[] {
       tytul: "Serwer nie wpuścił naszego pomiaru",
       fakt: `Zamiast strony dostaliśmy ${p.powodBlokady}.`,
       skutek:
-        "To zwykle znaczy, że stronę osłania system chroniący przed robotami, i sam w sobie nie jest wadą. Nie możemy jednak na tej podstawie powiedzieć nic o szybkości, treści ani o widoczności, bo nie zobaczyłem Waszej strony, tylko ekran ochrony. Żeby zbadać ją porządnie, potrzebowałbym zgody na przepuszczenie pomiaru albo dostępu od środka. Poniżej zostaje tylko to, co dało się ustalić z DNS i z certyfikatu.",
+        "To zwykle znaczy, że stronę osłania system chroniący przed robotami, i sam w sobie nie jest wadą. Nie możemy jednak na tej podstawie powiedzieć nic o szybkości, treści ani o widoczności, bo nie zobaczyliśmy Waszej strony, tylko ekran ochrony. Żeby zbadać ją porządnie, potrzebowalibyśmy zgody na przepuszczenie pomiaru albo dostępu od środka. Poniżej zostaje tylko to, co dało się ustalić z DNS i z certyfikatu.",
       koszt: 0,
       samodzielnie: false,
     });
