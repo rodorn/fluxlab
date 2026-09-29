@@ -73,6 +73,10 @@ const faq = [
     q: "Gdzie znaleźć numer KSeF faktury?",
     a: "Nadaje go KSeF w chwili przyjęcia faktury. Widać go w Aplikacji Podatnika KSeF, w programie do fakturowania połączonym z KSeF i w pobranym z systemu pliku faktury. Na wizualizacji faktury przekazanej poza KSeF jest przy kodzie QR.",
   },
+  {
+    q: "Część faktur sprzedaży wystawiamy poza e-mikrofirmą, w Aplikacji Podatnika KSeF. Jak je przenieść do e-mikrofirmy?",
+    a: "Nie da się ich zaimportować. e-mikrofirma pobiera z KSeF tylko faktury zakupu, a na liście sprzedaży pokazuje wyłącznie faktury wystawione w niej samej. Fakturę sprzedaży wystawioną gdzie indziej, na przykład zaliczkową, wprowadza się ręcznie jako Nowy inny wpis sprzedaży, rodzaj wpisu Dowolny wpis sprzedaży. W oznaczeniu faktury zaznacza się NrKSeF i przepisuje numer KSeF, a datę księgowania ustawia na miesiąc powstania obowiązku podatkowego, przy zaliczce to miesiąc jej otrzymania. Przepisany ręcznie numer warto sprawdzić tutaj, zanim trafi do JPK. Przy fakturze końcowej pilnujcie, żeby VAT od zaliczki nie wszedł do ewidencji drugi raz. Źródło: podręcznik użytkownika e-mikrofirmy Ministerstwa Finansów, kwiecień 2026.",
+  },
 ];
 
 export default function NumerKsefPage() {
