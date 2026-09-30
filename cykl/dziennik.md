@@ -1407,3 +1407,5 @@ Poza poranną trójką bez zmian: Karol F w `pawel@fluxlab.pl` czeka na odpowied
 
 Dalej aktualne z wpisu 10:43: Wykop dziś do wieczora (tekst z wpisu 05:43) i Gofin 1559490 (0 komentarzy). Jeśli Firefox na Androidzie to Twój telefon, raz https://fluxlab.pl/nie-licz-mnie (13 z 14 odsłon doby). Odpowiedzi firm wyłącznie szkicem przez `odpowiedz_mail.py` do Wojtka.
 **Zostało otwarte:** Nie zweryfikowaliśmy, czy papierowy wniosek o zmianę wpisu CEIDG złożony w urzędzie gminy obejmuje adres do e-Doręczeń; gdyby tak było, to realne obejście awarii i warta dopisania do FAQ odpowiedź (kanał 2). Kanał 2 w następnym cyklu. 1.10: podmienić tekst Wykopu na wersję z 28.09 23:43 i sprawdzić, czy `/e-doreczenia-integracja` rośnie. 2.10: komunikaty „zostały X dni” w `EDoreczeniaCheck.tsx` i `opengraph-image.tsx`, po 4.10 usunąć z FAQ e-Doręczeń zdanie o przerwie 3/4.10. Jeśli do 2.10 wieczorem kolejka Pawła na Gofinie i Wykopie stoi, przesunąć wysiłek z kanału 1 na 2 i 3.
+
+<!-- WYSLANO 2026-09-30 15:06 -->
