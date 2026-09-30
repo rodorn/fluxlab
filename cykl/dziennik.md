@@ -1373,3 +1373,37 @@ Poza poranną trójką bez zmian: Karol F w `pawel@fluxlab.pl` czeka na odpowied
 **Dowód:** Resend id `01a0f226-5f79-71b8-b548-29e1555f73f2` do `kontakt@szkolka.sklep.pl`, stan `delivered`. Treść: `~/Projekty/mail-audyt/maile_kanc/045_szkolka-sklep.txt`, wpis w `wyslane_kanc.json` (43 pozycje). Przesiewy: `~/Projekty/mail-audyt/sklepy/sito_run2.txt`, `sito_run3.txt` i odpowiadające im `sito_*.json`. Kod strony bez zmian, więc bez builda i IndexNow; commit zawiera tylko dziennik.
 **Dla Pawła:** Nic nowego. Dalej aktualne z wpisu 10:43: 1) Wykop dziś do wieczora (tekst z wpisu 05:43), 2) Gofin 1559490 (tekst z 29.09 21:43, z dopiskiem z wpisu 12:43). Jeśli Firefox na Androidzie to Twój telefon, raz https://fluxlab.pl/nie-licz-mnie (17 z 20 odsłon doby). Gdy odpisze któryś ze sklepów albo kancelarii, odpowiedź wyłącznie szkicem przez `odpowiedz_mail.py` do Wojtka.
 **Zostało otwarte:** Trafność sita na małych sklepach spada (3 na 50, potem 1 na 75), bo większość stoi na Shoperze, IdoSell i dcsaas, gdzie certyfikaty i www ustawia platforma. Następny cykl kanału 4 niech szuka sklepów na własnym hostingu (WooCommerce, PrestaShop, wynik `mx` z `mail.<domena>` albo `home.pl`, `cyberfolks`, `nazwa.pl`), tam trafiają się błędy. Do 2.10 brak odpowiedzi na 6 maili z 30.09 (pliki 040 do 045) oznacza przesunięcie wysiłku z kanału 4 na 2 i 3. Kanał 1 w następnym cyklu. 1.10: podmienić tekst Wykopu na wersję z 28.09 23:43 i sprawdzić, czy `/e-doreczenia-integracja` rośnie. 2.10: komunikaty „zostały X dni” w `EDoreczeniaCheck.tsx` i `opengraph-image.tsx`, po 4.10 usunąć z FAQ e-Doręczeń zdanie o przerwie 3/4.10.
+
+## 2026-09-30 14:43
+
+**Kanał:** 1, dystrybucja narzędzi (rotacja: 1, 2, 3, 4, teraz znów 1).
+**Co zrobione:** Na Gofinie od 10:43 przybyło 25 wątków (1559513 do 1559537), dwa pasują do naszych stron i dla obu przygotowaliśmy komentarze do wklejenia. 1559520 („E doreczenia/Poczta Polska”, 11:51): przedsiębiorczyni pyta, czy przy awarii Biznes.gov.pl założy adres na stronie Poczty Polskiej, i dostała jednowyrazową odpowiedź „Tak”, która dla firmy z CEIDG jest błędna (według https://www.biznes.gov.pl/pl/portal/004495 wniosek składa się przez e-usługę Biznes.gov.pl albo we wniosku o wpis lub zmianę wpisu w CEIDG/KRS). 1559521 („KSEF a pośrednictwo ubezpieczeniowe”, 11:54): dwie odpowiedzi są częściowe, brakuje tego, że przy zwolnieniu z art. 43 ust. 1 fakturę wystawia się tylko na żądanie nabywcy (art. 106b ust. 2 i 3). Wątek 1559490 dalej ma 0 komentarzy. Pozostałe nowe wątki to kadry, ZUS i VAT bez związku z naszymi narzędziami.
+**Ruch:** Ostatnia doba: **14 odsłon, 2 osoby** (wzrost o 4% wobec średniej 13,4). Tydzień: 102 odsłony, 29 osób. 30 dni: 216 odsłon, 95 osób (licznik od 20.09 18:27). Najczęściej otwierane: `/automatyzacja-leadow-crm` (4), `/realizacje` (3), `/tansze-automatyzacje` (2), `/` (2), `/scraping-danych` (2). Źródła: brak, same wejścia bezpośrednie. Uruchomienia narzędzi: 0 (`zawezono_katalog` 1). Z telefonu 14 z 14, Firefox na Android 13. Obcego ruchu praktycznie nie ma, wejść z `utm_source=gofin` ani `wykop` nadal nie ma.
+**Dowód:** Teksty: `~/Projekty/fluxlab-kanal1/gofin_1559520.txt` (976 znaków) i `gofin_1559521.txt` (900 znaków), oba poniżej limitu 1000, bez długich myślników, kotwice sprawdzone funkcją `lib/kotwica.ts` i obecne na produkcji. Kod strony bez zmian, więc bez builda i IndexNow; commit zawiera tylko dziennik.
+**Dla Pawła:** Nowe, razem 5 minut, oba wątki są z dziś i tracą wartość z każdą godziną. Autor `Fluxlab`, „+ Dodaj komentarz” pod wątkiem (dodanie komentarza to akceptacja regulaminu forum, dlatego Twoje kliknięcie).
+
+1) https://forum.gofin.pl/1559520/e-doreczenia-poczta-polska, uzasadnienie: osoba dostała błędne „Tak” w ostatnim dniu terminu, prostujemy i dajemy zalecenia MRiT.
+
+> Uwaga, dla firmy odpowiedź brzmi raczej "nie". Na stronie Poczty Polskiej adresu do e-Doręczeń dla działalności z CEIDG się nie założy. Poczta jest tylko dostawcą skrzynki, a wniosek dla firmy z CEIDG albo KRS składa się wyłącznie przez Biznes.gov.pl (e-usługa albo wniosek o zmianę wpisu w CEIDG). mObywatel też nie pomoże, bo służy do prywatnego adresu.
+>
+> Co radzi MRiT w komunikacie z 29.09 o awarii:
+> 1. Nie klikać "wyślij" kilka razy. Najpierw sprawdzić w Koncie Przedsiębiorcy, "Moje sprawy", czy wniosek już nie doszedł.
+> 2. Kodu weryfikacyjnego szukać też w SPAMie.
+> 3. Przepisy nie przewidują kary za niezałożenie adresu w terminie, więc wniosek złożony w pierwszych dniach października to nie katastrofa. Do aktywacji urzędy wysyłają pisma papierowo.
+> 4. W nocy z 3 na 4.10 (20:00 do 7:00) jest przerwa techniczna.
+>
+> Zebraliśmy to z linkami do źródeł: https://fluxlab.pl/e-doreczenia-integracja?utm_source=gofin#biznes-gov-pl-nie-dziala-albo-sie-zawiesza-a-termin-mija-co
+
+2) https://forum.gofin.pl/1559521/ksef-a-posrednictwo-ubezpieczeniowe, uzasadnienie: pytający dostał dwie sprzeczne połówki odpowiedzi, a my składamy je w całość z podstawą prawną.
+
+> Uzupełnienie do przedmówców. Pośrednictwo ubezpieczeniowe jest zwolnione z VAT z art. 43 ust. 1 pkt 37, a przy tym zwolnieniu art. 106b ust. 2 w ogóle zwalnia z obowiązku wystawiania faktury. Fakturę trzeba wystawić dopiero wtedy, gdy nabywca o nią zażąda (art. 106b ust. 3).
+>
+> W praktyce:
+> 1. Prowizja rozliczana z towarzystwem bez faktury: KSeF Pana nie dotyczy.
+> 2. Wystawia Pan fakturę firmie, bo zażądała albo tak się umówiliście: od 1.04.2026 idzie przez KSeF, także u podatnika zwolnionego. Do 31.12.2026 można ją wystawić poza KSeF, jeśli faktury w danym miesiącu nie przekraczają łącznie 10 tys. zł brutto.
+> 3. Faktura dla osoby prywatnej: KSeF nieobowiązkowy.
+>
+> Od 1.01.2027 limit 10 tys. zł znika, więc jeśli faktury dla firm się zdarzają, warto do końca roku mieć dostęp do KSeF. Terminy zebraliśmy tu: https://fluxlab.pl/ksef-integracja?utm_source=gofin#co-sie-zmienia-w-ksef-1-stycznia-2027
+
+Dalej aktualne z wpisu 10:43: Wykop dziś do wieczora (tekst z wpisu 05:43) i Gofin 1559490 (0 komentarzy). Jeśli Firefox na Androidzie to Twój telefon, raz https://fluxlab.pl/nie-licz-mnie (13 z 14 odsłon doby). Odpowiedzi firm wyłącznie szkicem przez `odpowiedz_mail.py` do Wojtka.
+**Zostało otwarte:** Nie zweryfikowaliśmy, czy papierowy wniosek o zmianę wpisu CEIDG złożony w urzędzie gminy obejmuje adres do e-Doręczeń; gdyby tak było, to realne obejście awarii i warta dopisania do FAQ odpowiedź (kanał 2). Kanał 2 w następnym cyklu. 1.10: podmienić tekst Wykopu na wersję z 28.09 23:43 i sprawdzić, czy `/e-doreczenia-integracja` rośnie. 2.10: komunikaty „zostały X dni” w `EDoreczeniaCheck.tsx` i `opengraph-image.tsx`, po 4.10 usunąć z FAQ e-Doręczeń zdanie o przerwie 3/4.10. Jeśli do 2.10 wieczorem kolejka Pawła na Gofinie i Wykopie stoi, przesunąć wysiłek z kanału 1 na 2 i 3.
