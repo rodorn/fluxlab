@@ -1,6 +1,7 @@
 import { Resend } from "resend";
 import nodemailer from "nodemailer";
 import { NextResponse } from "next/server";
+import { ladunekZgloszenia, wyslijZgloszenie } from "@/lib/zgloszenie-kolektor";
 
 // Klient tworzony dopiero przy pierwszym zgloszeniu, a nie przy wczytaniu
 // modulu. Inaczej `next build` bez ustawionego klucza wywala sie na etapie
@@ -120,6 +121,21 @@ export async function POST(req: Request) {
     landing_page: str(body.landing_page, MAX_UTM),
     referrer: str(body.referrer, MAX_UTM),
   };
+
+  // Rekord w kolektorze powstaje w chwili zdarzenia, przed mailem. Awaria
+  // kolektora nie blokuje maila (blad tylko w konsoli), a awaria maila nie
+  // kasuje rekordu.
+  await wyslijZgloszenie(
+    ladunekZgloszenia({
+      email,
+      firma: company,
+      rodzaj_problemu: problemType,
+      skala: problemScale,
+      preferowany_kontakt: contactPref,
+      opis: message,
+      ...utm,
+    }),
+  );
 
   const problemTypeLabel = PROBLEM_TYPE_LABELS[problemType] ?? problemType;
   const problemScaleLabel = PROBLEM_SCALE_LABELS[problemScale] ?? problemScale;
