@@ -1560,3 +1560,12 @@ Dalej aktualne z wpisu 10:43: Wykop dziś do wieczora (tekst z wpisu 05:43) i Go
 **Zostało otwarte:** Kanał 4 potrzebuje nowej grupy firm (sklepy internetowe pod kotwice o fakturach B2C i kasie fiskalnej): zbudować listę, przesiać audytem, wysłać rano w godzinach pracy, najwyżej kilkanaście. Po 4.10 usunąć z FAQ e-Doręczeń zdanie o przerwie 3/4.10. Do odświeżenia: `novafinanse.pl` po 3.10, `damar.pl` i `biurodukat.pl` około 8.10, `amkancelariaksiegowa.pl` i `biuro100.pl` około 10.10. Kanały 2 i 3 mają malejący zwrot bez ruchu z treści.
 
 <!-- WYSLANO 2026-10-01 23:10 -->
+
+## 2026-10-01 23:43
+
+**Kanał:** 1, dystrybucja narzędzi (rotacja: 3, 4, teraz 1). Brak zmian, bo nie ma wątku, w którym odpowiedź byłaby użyteczna sama w sobie, a publikacja i tak wymaga konta Pawła.
+**Co zrobione:** Nic nie poszło w świat. Przejrzeliśmy nowe wątki na Gofinie (1559542 do 1559587): dotyczą urlopów, L4, ZUS, DRA i spisu z natury, żaden nie jest o KSeF, e-Doręczeniach, mailach w spamie ani wolnej stronie. Jedyny luźno powiązany, 1559564 „samofakturowanie usługi marketingowe”, to pytanie o rozliczenie zagranicznego dostawcy, na które nasza kotwica z `/ksef-integracja` odpowiada tylko częściowo, więc bez tekstu do wklejenia. Skrzynka `pawel@fluxlab.pl` (`sprawdz_poczte_fluxlab.py`): brak nowych wiadomości. Wątki 1559490 i 1559395 nadal bez wpisu Fluxlab (0 trafień w `curl`).
+**Ruch:** Ostatnia doba: **3 odsłony, 3 osoby** (spadek o 82% wobec średniej 17,0). Tydzień: 80 odsłon, 28 osób. 30 dni: 236 odsłon, 101 osób. Najczęściej otwierane: `/` (2), `/automatyzacja-dla-biur-rachunkowych` (1). Źródła: www.google.com (1). Uruchomienia narzędzi: 0. Z telefonu 1 z 3. Wejść z `utm_source=gofin` ani `wykop` nadal nie ma.
+**Dowód:** Kod strony bez zmian, więc bez builda i IndexNow; commit zawiera tylko dziennik.
+**Dla Pawła:** Bez zmian: 1) Wykop, https://wykop.pl/mikroblog, wersja z wpisu 28.09 23:43, jutro 2.10 ostatnia okazja rano, potem wyrzucić; 2) Gofin 1559490 (tekst z 29.09 21:43) i 1559395 (tekst z 30.09 01:43). Odpowiedzi firm wyłącznie szkicem przez `odpowiedz_mail.py` do Wojtka. Od 20.09 nic z kolejki kanału 1 nie zostało opublikowane.
+**Zostało otwarte:** Kanał 4 rano w godzinach pracy: zbudować listę sklepów internetowych, przesiać audytem, wysłać najwyżej kilkanaście. Po 4.10 usunąć z FAQ e-Doręczeń zdanie o przerwie 3/4.10. Do odświeżenia: `novafinanse.pl` po 3.10, `damar.pl` i `biurodukat.pl` około 8.10, `amkancelariaksiegowa.pl` i `biuro100.pl` około 10.10.
