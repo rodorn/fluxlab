@@ -1540,3 +1540,12 @@ Dalej aktualne z wpisu 10:43: Wykop dziś do wieczora (tekst z wpisu 05:43) i Go
 **Dowód:** Kod strony bez zmian, bez builda i IndexNow; commit zawiera tylko dziennik. Sprawdzenie Gofinu `curl`, 0 trafień „fluxlab” w obu wątkach.
 **Dla Pawła:** Bez zmian: 1) Wykop, https://wykop.pl/mikroblog, wersja z wpisu 28.09 23:43, ostatnia okazja jutro rano 2.10; 2) Gofin 1559490 i 1559395 (teksty z 29.09 21:43 i 30.09 01:43). Od 20.09 nic z kolejki nie zostało opublikowane, to jedyne, co może zmienić liczby.
 **Zostało otwarte:** Kanał 4 wymaga nowej grupy firm (sklepy internetowe pod FAQ o B2C i kasie). Po 4.10 usunąć z FAQ e-Doręczeń zdanie o przerwie 3/4.10. Kanały 2 i 3 mają malejący zwrot bez ruchu z treści.
+
+## 2026-10-01 21:43
+
+**Kanał:** 3, KSeF jako magnes (rotacja: 4, 2, teraz 3). Brak zmian, bo nie ma nowego faktu ani luki, które uzasadniałyby kolejną zmianę kodu.
+**Co zrobione:** Nic nie poszło w świat. Sprawdziliśmy stan prawny w sieci: kary KSeF dalej przesunięte na 1.01.2028 w projekcie z wykazu prac rządu (to, co już stoi w `llms.txt` i na `/ksef-integracja`), a e-Doręczenia dalej obowiązują od 1.10 bez nowych komunikatów ministerstwa poza tymi, które już mamy. Nic na stronie nie jest nieaktualne. Brak nowego narzędzia KSeF o realnej wartości: sprawdzenie gotowości, numer KSeF i FAQ pokrywają to, co ludzie pytają, a dalsze dokładanie treści nie ma ruchu, który by je zobaczył.
+**Ruch:** Ostatnia doba: **3 odsłony, 3 osoby** (spadek o 82% wobec średniej 17,0). Tydzień: 83 odsłony, 29 osób. 30 dni: 236 odsłon, 101 osób. Najczęściej otwierane: `/` (2), `/automatyzacja-dla-biur-rachunkowych` (1). Źródła: www.google.com (1). Uruchomienia narzędzi: 0. Z telefonu 1 z 3.
+**Dowód:** Kod strony bez zmian, bez builda i IndexNow; commit zawiera tylko dziennik. Źródła sprawdzenia: https://www.infakt.pl/blog/kary-w-ksef-od-2028-r-wazna-zmiana-dla-firm/ i https://www.prawo.pl/biznes/e-doreczenia-od-1-pazdziernika-ceidg-online-od-1-listopada,1553641.html
+**Dla Pawła:** Bez zmian: 1) Wykop, https://wykop.pl/mikroblog, wersja z wpisu 28.09 23:43, jutro 2.10 ostatnia okazja; 2) Gofin 1559490 i 1559395 (teksty z 29.09 21:43 i 30.09 01:43). Od 20.09 nic z kolejki nie zostało opublikowane, to jedyne, co może zmienić liczby.
+**Zostało otwarte:** Kanał 4 potrzebuje nowej grupy firm (sklepy internetowe pod FAQ o B2C), wysyłka rano w godzinach pracy. Po 4.10 usunąć z FAQ e-Doręczeń zdanie o przerwie 3/4.10. Kanały 2 i 3 mają malejący zwrot bez ruchu z treści.
