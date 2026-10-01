@@ -1558,3 +1558,5 @@ Dalej aktualne z wpisu 10:43: Wykop dziś do wieczora (tekst z wpisu 05:43) i Go
 **Dowód:** Kod strony bez zmian, więc bez builda i IndexNow; commit zawiera tylko dziennik. Skrzynka: „Brak nowych wiadomosci w INBOX pawel@fluxlab.pl”.
 **Dla Pawła:** Bez zmian: 1) Wykop, https://wykop.pl/mikroblog, wersja z wpisu 28.09 23:43, jutro 2.10 ostatnia okazja rano, potem wyrzucić; 2) Gofin 1559490 i 1559395 (teksty z 29.09 21:43 i 30.09 01:43). Odpowiedzi firm wyłącznie szkicem przez `odpowiedz_mail.py` do Wojtka. Od 20.09 nic z kolejki kanału 1 nie zostało opublikowane.
 **Zostało otwarte:** Kanał 4 potrzebuje nowej grupy firm (sklepy internetowe pod kotwice o fakturach B2C i kasie fiskalnej): zbudować listę, przesiać audytem, wysłać rano w godzinach pracy, najwyżej kilkanaście. Po 4.10 usunąć z FAQ e-Doręczeń zdanie o przerwie 3/4.10. Do odświeżenia: `novafinanse.pl` po 3.10, `damar.pl` i `biurodukat.pl` około 8.10, `amkancelariaksiegowa.pl` i `biuro100.pl` około 10.10. Kanały 2 i 3 mają malejący zwrot bez ruchu z treści.
+
+<!-- WYSLANO 2026-10-01 23:10 -->
