@@ -54,7 +54,7 @@ const faq = [
   },
   {
     q: "Mamy mniej niż 10 tys. zł faktur miesięcznie. Czy musimy coś robić?",
-    a: "Tak, ale do końca 2026 roku. Limit 10 tys. zł brutto miesięcznie pozwala wystawiać faktury poza KSeF tylko do 31 grudnia 2026. Przy kilku fakturach miesięcznie wystarczy darmowa Aplikacja Podatnika KSeF od Ministerstwa Finansów albo program do fakturowania z obsługą KSeF.",
+    a: "Tak, ale do końca 2026 roku. Limit 10 tys. zł brutto miesięcznie pozwala wystawiać faktury poza KSeF tylko do 31 grudnia 2026, i tylko do pierwszego przekroczenia. Faktura, którą przekraczacie limit w danym miesiącu, i każda następna muszą już przejść przez KSeF, także w kolejnych miesiącach poniżej 10 tys. zł. Jedno większe zlecenie jesienią wystarczy, żeby obowiązek zaczął się przed styczniem. Przy kilku fakturach miesięcznie wystarczy darmowa Aplikacja Podatnika KSeF od Ministerstwa Finansów albo program do fakturowania z obsługą KSeF.",
   },
 ];
 

@@ -41,7 +41,7 @@ export const PODATNICY: Podatnik[] = [
     dataOpis: "1 kwietnia 2026",
     opis: "Wszyscy pozostali podatnicy, czynni i zwolnieni, wystawiają faktury w KSeF od 1 kwietnia 2026. Obowiązek nie zależy od wielkości firmy ani od tego, czy fakturuje się raz w miesiącu, czy codziennie.",
     uwaga:
-      "Do 31 grudnia 2026 działa limit 10 tys. zł brutto miesięcznie na faktury poza KSeF. Po przekroczeniu limitu w danym miesiącu wyjątek przestaje działać, a nikt o tym nie przypomni.",
+      "Do 31 grudnia 2026 działa limit 10 tys. zł brutto miesięcznie na faktury poza KSeF. Po pierwszym przekroczeniu limitu wyjątek przestaje działać do końca 2026, nie tylko w tym miesiącu, a nikt o tym nie przypomni.",
   },
   {
     klucz: "najmniejsi",
@@ -50,7 +50,7 @@ export const PODATNICY: Podatnik[] = [
     dataOpis: "1 stycznia 2027",
     opis: "Jeżeli suma sprzedaży z podatkiem na fakturach w danym miesiącu nie przekracza 10 tys. zł, do 31 grudnia 2026 można wystawiać je poza KSeF, papierowo albo elektronicznie. Od 1 stycznia 2027 ten wyjątek znika i obowiązek obejmuje także Was.",
     uwaga:
-      "Limit liczy się osobno w każdym miesiącu i od kwoty brutto. Jeden większy miesiąc wyrzuca z wyjątku tylko ten miesiąc, ale to znaczy, że sposób wystawiania faktur musi być gotowy wcześniej, a nie dopiero w dniu przekroczenia.",
+      "Limit liczy się od kwoty brutto faktur dla firm, według daty wystawienia, w każdym miesiącu od nowa, ale przekroczenie działa na stałe. Faktura, którą przekraczacie 10 tys. zł, i każda następna idą już przez KSeF, także w kolejnych, mniejszych miesiącach. Program z KSeF musi więc być gotowy przed pierwszą większą fakturą, a nie po niej. Faktury dla osób prywatnych i paragony z NIP do 450 zł się do limitu nie wliczają.",
   },
   {
     klucz: "kasa",
