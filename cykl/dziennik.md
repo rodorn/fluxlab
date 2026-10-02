@@ -1594,3 +1594,16 @@ Dalej aktualne z wpisu 10:43: Wykop dziś do wieczora (tekst z wpisu 05:43) i Go
 Napisz w dzienniku albo powiedz, gdy to zrobisz; następny cykl od razu puści `node scripts/indexnow.mjs` i sprawdzi, czy Bing odpowiada 200.
 Uwaga techniczna: lokalna gałąź `fluxcrm-lead` w `~/Projekty/fluxlab-site` ma commit `7ffbd07` z tym samym zepsutym dziennikiem i plik `cykl/dziennik.md` zatrzymany na 30.09 07:43. Przy scalaniu tej gałęzi weź `cykl/dziennik.md` z `main`, inaczej skasuje dwa dni wpisów drugi raz. Gałęzi nie ruszaliśmy. Reszta kolejki bez zmian: Gofin 1559490 i 1559395 (teksty z 29.09 21:43 i 30.09 01:43), tekst na Wykop po terminie e-Doręczeń tylko na Twoje życzenie.
 **Zostało otwarte:** Po imporcie do Bing Webmaster Tools: `node scripts/indexnow.mjs` i sprawdzić wspólny punkt (oczekiwane 200 albo 202), a za kilka dni `site:fluxlab.pl` w DuckDuckGo, czy pojawiły się strony KSeF i e-Doręczeń. Do tego czasu nowe FAQ pod asystentów mają mały sens, bo ich indeks tych stron nie widzi. Kanał 4 wstrzymany do pierwszej odpowiedzi albo nowej, mocniejszej puli. Kanał 3 w następnym cyklu. Po 4.10 usunąć z FAQ e-Doręczeń zdanie o przerwie 3/4.10. Do odświeżenia: `novafinanse.pl` po 3.10, `damar.pl` i `biurodukat.pl` około 8.10, `amkancelariaksiegowa.pl` i `biuro100.pl` około 10.10.
+
+<!-- WYSLANO 2026-10-02 11:05 -->
+
+## 2026-10-02 11:43
+
+**Kanał:** 3, KSeF jako magnes. Brak zmian, bo nie ma nic nowego do dopisania ani nieaktualnego do poprawienia.
+**Co zrobione:** Nic nie poszło w świat. Sprawdziliśmy wyszukiwaniem wiadomości o KSeF z października 2026 (infor.pl, pit.pl, bankier.pl, ksef.podatki.gov.pl) i porównaliśmy z `/ksef-integracja` oraz `/ksef-2027`: tokeny zostają (nie wygasają z końcem 2026), kary z art. 106ni przesunięte na 1.01.2028 jako projekt UD477, przelew z numerem KSeF od 2027, wszystko jest już na obu stronach. Wyniki wyszukiwania były ogólne i nie wskazały nowego komunikatu MF, więc niczego nie zmienialiśmy na ich podstawie. Samo sprawdzenie gotowości (`components/KsefCheck.tsx`) jest kompletne; dalsza rozbudowa nie ma sensu, dopóki Bing nie zna tych stron (patrz wpis 10:43), bo nikt jej nie znajdzie.
+**Ruch:** Ostatnia doba: **7 odsłon, 7 osób** (spadek o 53% wobec średniej 14,9). Tydzień: 82 odsłony, 32 osoby. 30 dni: 242 odsłony, 107 osób (licznik od 20.09 18:27). Najczęściej otwierane: `/` (6), `/automatyzacja-dla-biur-rachunkowych` (1). Źródła: www.google.com (1). Uruchomienia narzędzi: 0. Z telefonu 1 z 7, Chrome na Linux 6.
+**Dowód:** Kod strony bez zmian, więc bez builda i IndexNow; commit zawiera tylko dziennik.
+**Dla Pawła:** To samo co we wpisie 10:43, najważniejsze: import strony do Bing Webmaster Tools przez „Import your sites from GSC” (https://www.bing.com/webmasters, około 5 minut). Dalej: Gofin 1559490 i 1559395, Wykop tylko na życzenie.
+**Zostało otwarte:** Po imporcie do Bing WMT: `node scripts/indexnow.mjs` i sprawdzić, czy wspólny punkt odpowiada 200 lub 202. Kanał 4 wstrzymany do pierwszej odpowiedzi albo nowej puli (sklepy internetowe). Kanał 1 w następnym cyklu. Po 4.10 usunąć z FAQ e-Doręczeń zdanie o przerwie 3/4.10.
+
+<!-- WYSLANO 2026-10-02 11:43 -->
