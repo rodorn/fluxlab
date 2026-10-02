@@ -1718,6 +1718,8 @@ Dalej aktualne z wpisu 10:43: Wykop dziś do wieczora (tekst z wpisu 05:43) i Go
 **Dla Pawła:** Bez zmian, w tej kolejności: (1) komentarz pod https://forum.gofin.pl/1559621/data-wystawienia-faktury-30092026-a-data-nadania-do-ksef, tekst we wpisie 19:43; (2) https://www.bing.com/webmasters, „Import your sites from GSC”, zaznaczyć `fluxlab.pl`, „Import” (około 5 minut, opis we wpisie 10:43).
 **Zostało otwarte:** Kanał 1 lub 4 w następnym cyklu: kanał 4 tylko w godzinach pracy i z nową pulą (sklepy internetowe), kanał 1 tylko z pełnym tekstem pod konkretny, istniejący wątek. Po 4.10 usunąć z FAQ e-Doręczeń zdanie o przerwie 3/4.10. UD477 sprawdzać co kilka dni. Do odświeżenia: `novafinanse.pl` po 3.10.
 
+<!-- WYSLANO 2026-10-02 23:25 -->
+
 ## 2026-10-02 23:30
 
 **Kanał:** 1, dystrybucja narzędzi (rotacja: po 3 z 22:07; kanał 4 odpada, bo jest po godzinach pracy firm).
@@ -1731,3 +1733,12 @@ Dalej aktualne z wpisu 10:43: Wykop dziś do wieczora (tekst z wpisu 05:43) i Go
 
 2. Bez zmian: komentarz pod https://forum.gofin.pl/1559621/data-wystawienia-faktury-30092026-a-data-nadania-do-ksef (tekst we wpisie 19:43) oraz https://www.bing.com/webmasters, „Import your sites from GSC", zaznaczyć `fluxlab.pl`, „Import" (około 5 minut).
 **Zostało otwarte:** Sprawdzić, czy komentarze w 1559621 i 1559625 się pojawiły i czy w raporcie ruchu jest `utm_source=gofin`. Kanał 2 w następnym cyklu; kanał 4 tylko w godzinach pracy i z nową pulą (sklepy internetowe). Po 4.10 usunąć z FAQ e-Doręczeń zdanie o przerwie 3/4.10. UD477 sprawdzać co kilka dni. Do odświeżenia: `novafinanse.pl` po 3.10.
+
+## 2026-10-02 23:45
+
+**Kanał:** 2, widoczność w asystentach AI (rotacja: po 1 z 23:30). Brak zmian, bo nie ma nic nowego do dopisania.
+**Co zrobione:** Nic nie poszło w świat. Sprawdziliśmy stan blokad: pod wątkami Gofin 1559621 i 1559625 nadal zero wystąpień „fluxlab", czyli oba komentarze czekają na Pawła. `llms.txt` (165 linii) pokrywa pytania o KSeF i e-Doręczenia, a ostatnio zmienialiśmy go o 21:00; kolejne dopisywanie bez nowego komunikatu MF byłoby wymyślone. Kanał 4 odpada, bo jest po godzinach pracy firm, a nowej puli (sklepy internetowe) nadal nie ma.
+**Ruch:** Ostatnia doba: **28 odsłon, 16 osób** (wzrost o 145% wobec średniej 11,4). Tydzień: 104 odsłony, 42 osoby. 30 dni: 264 odsłony, 117 osób (licznik od 20.09 18:27). Najczęściej otwierane: `/` (17), `/realizacje` (3), `/produkty` (2), `/automatyzacja-dla-biur-rachunkowych` (1), `/kalkulator-podatkowy` (1). Źródła: www.google.com (8), www.facebook.com (2), chatgpt.com (1). Uruchomienia narzędzi: 0. Z telefonu 3 z 28.
+**Dowód:** Kod strony bez zmian, więc bez builda i IndexNow; commit zawiera tylko dziennik.
+**Dla Pawła:** Bez zmian, w tej kolejności: (1) komentarz pod https://forum.gofin.pl/1559625/faktura-sprzedazy-wysylka-do-ksef-czy-jest-to-dozwolone, tekst we wpisie 23:30; (2) komentarz pod https://forum.gofin.pl/1559621/data-wystawienia-faktury-30092026-a-data-nadania-do-ksef, tekst we wpisie 19:43; (3) https://www.bing.com/webmasters, „Import your sites from GSC", zaznaczyć `fluxlab.pl`, „Import" (około 5 minut).
+**Zostało otwarte:** Kanał 3 w następnym cyklu, o ile pojawi się komunikat MF; w godzinach pracy kanał 4 z nową pulą (sklepy internetowe). Nowych tekstów do wklejenia nie przygotowywać, dopóki dwa istniejące czekają. Po 4.10 usunąć z FAQ e-Doręczeń zdanie o przerwie 3/4.10. UD477 sprawdzać co kilka dni. Do odświeżenia: `novafinanse.pl` po 3.10.
