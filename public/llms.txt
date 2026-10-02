@@ -14,6 +14,24 @@
 - [Wdrożenie n8n i jego koszt](https://fluxlab.pl/wdrozenie-n8n-cena): licencja, serwer, praca i opieka rozbite na osobne liczby.
 - [Systemy i strony](https://fluxlab.pl/strony-www): aplikacje webowe, panele i formularze będące częścią procesu.
 
+## Pytania i praktyczne odpowiedzi
+
+**Czy muszę wystawić fakturę w KSeF?** Zależy od typu Twojej firmy i roku obowiązku:
+- Sprzedaż powyżej 200 mln zł brutto w 2024: tak, od 1 lutego 2026.
+- Podatnik VAT czynny lub zwolniony: tak, od 1 kwietnia 2026.
+- Sprzedaż do 10 tys. zł brutto miesięcznie: nie do 31 grudnia 2026, od 1 stycznia 2027 tak.
+- Faktury dla osób prywatnych: nie (dobrowolnie).
+
+**Jaki jest numer KSeF i jak go sprawdzić?** 35-znakowy ciąg z NIP, datą i kodem: `9999999999-RRRRMMDD-FFFFFFFFFFFF-FF`. Sprawdzenie sumy kontrolnej i parametrów: https://fluxlab.pl/numer-ksef
+
+**Co zrobić, jeśli KSeF jest niedostępny?** Wystawiasz fakturę w trybie offline24 — bez połączenia z systemem — i przesyłasz do KSeF najpóźniej następnego dnia roboczego. Nie musisz jej wstrzymywać.
+
+**Czy muszę mieć adres do e-Doręczeń?** Tak, jeśli Twoja firma jest w CEIDG lub KRS. Termin zależy od daty rejestracji: przedsiębiorcy wpisani przed 2025 od 1 października 2026, nowe firmy od dnia wpisu. Założenie i korzystanie bezpłatne.
+
+**Czy maile trafiają nam do spamu?** Jeśli wysyłasz ponad 5000 wiadomości dziennie, wymaga to SPF, DKIM i DMARC na domenie. Do 5000 dziennie wystarczy SPF lub DKIM. Sprawdzenie: https://fluxlab.pl/audyt-poczty
+
+**Jak zautomatyzować moje procesy?** Zależy od systemów, które już masz: CRM (Pipedrive, HubSpot), formularze (Formspree, Zapier), poczta, magazyn (WooCommerce, Shopify), księgowość. Możliwe są integracje bez zmian w istniejącym oprogramowaniu. https://fluxlab.pl/automatyzacja-leadow-crm
+
 ## Terminy, o które ludzie pytają najczęściej
 
 Obowiązkowy KSeF, stan prawny z 23.09.2026, szczegóły i źródła na https://fluxlab.pl/ksef-integracja:
