@@ -5,6 +5,15 @@ ostatniego znacznika wysyłki i wysyła z nich jeden mail co cztery godziny.
 
 <!-- WYSLANO 2026-09-22 00:00 -->
 
+## 2026-10-02 10:00
+
+**Kanał:** 2 (widoczność w AI).
+**Co zrobione:** Dodano do `llms.txt` sekcję FAQ z sześcioma praktycznymi pytaniami (KSeF, e-Doręczenia, automyzacja, maile, adres) dla asystentów AI, zamiast samych technicznych haseł.
+**Ruch:** 16 odsłon, 10 osób (bez zmian; tekst, wymagająca ponownego indeksowania przez ChatGPT).
+**Dowód:** commit `7e5996d`, https://fluxlab.pl/llms.txt (sekcja "Pytania i praktyczne odpowiedzi", linie 18–28).
+**Dla Pawła:** Pusto.
+**Zostało otwarte:** Zmierz czy ChatGPT indeksuje nową wersję, alarm gdy wejścia z `chatgpt.com` wzrosną.
+
 ## 2026-09-22 00:58
 
 **Co zrobione:** Sześć własnych tekstów badawczych przestało kończyć się ślepo: każdy dostał na końcu blok, w którym jedno kliknięcie w gotowy przykład uruchamia to samo sprawdzenie, którym zrobiono pomiar, pokazuje surowy werdykt wprost w artykule i dopiero potem proponuje pełne narzędzie oraz kontakt. Powód z audytu treści 5.4: żaden z tych tekstów nie prowadził do kontaktu, a ścieżka artykuł, narzędzie, wynik kończyła się pustym formularzem.
