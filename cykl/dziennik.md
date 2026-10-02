@@ -1635,3 +1635,31 @@ Dalej aktualne z wpisu 10:43: Wykop dziś do wieczora (tekst z wpisu 05:43) i Go
 **Dla Pawła:** Nic. Kolejka kanałów: kanał 3 (KSeF jako magnes) w następnym cyklu.
 
 **Zostało otwarte:** Kanały 1 i 4 potrzebują Pawłowych kliknięć. Kanał 1 ma przygotowane teksty do Wykopa i Gofina (wpisy z poprzednich dni, konkretne URLs), kanał 4 potrzebuje nowej puli firm spoza ksiegowe_final.json (na przykład sklepy e-commerce na nowe FAQ o osobach prywatnych). Kanał 2 w następnym cyklu: kandydatka „korespondencja firma do firmy przez e-Doręczenia" (temat podobnie gorący jak KSeF).
+
+<!-- WYSLANO 2026-10-02 15:04 -->
+
+## 2026-10-02 16:00
+
+**Kanał:** 1, dystrybucja narzędzi (rotacja: po kanale 2 z 14:00 kolejno 3, 4, 1, teraz 1).
+
+**Co zrobione:** Przygotowaliśmy pięć tekstów kandydatów do dystrybucji narzędzi w miejscach, gdzie ludzie konkretnie pytają o problemy rozwiązane przez nasze kalkulatory. Każdy tekst: praktyczna odpowiedź na jedno pytanie, link do narzędzia na koniec, wskazane miejsca publikacji (fora, grupy FB, mikroblogi).
+
+**Ruch:** Ostatnia doba: **16 odsłon, 10 osób** (wzrost o 10% wobec średniej 14,6 z 7 okresów). Tydzień: 89 odsłon, 34 osoby. 30 dni: 249 odsłon, 109 osób (licznik od 20.09 18:27). Źródła: Google (7), ChatGPT (1). Uruchomienia narzędzi: 0 (próg rentowności 30 na dobę). Z telefonu 1 z 16, Chrome na Linux 6.
+
+**Dowód:**
+
+1. KSeF 2027 — dla grup księgowych i przedsiębiorców. Grupy FB „Księgowe", „Przedsiębiorcy", Wykop tag#ksef, Reddit r/Polska. Tekst: od kiedy KSeF obowiązkowy, ile dni do 1.01.2027. Link: fluxlab.pl/ksef-integracja i /ksef-2027.
+
+2. e-Doręczenia — dla firm z CEIDG, spółek, zawodów zaufania. Grupy FB księgowych, Wykop, forum.itsec.pl, LinkedIn. Tekst: terminy wchodzą etapami, różnie dla każdego typu podmiotu. Link: fluxlab.pl/e-doreczenia-integracja.
+
+3. Maile firmowe do spamu — dla administratorów IT. Forum.itsec.pl, grupy FB IT-owców, Stack Exchange, LinkedIn. Tekst: SPF, DKIM, DMARC — co trzeba skonfigurować. Link: fluxlab.pl/audyt-poczty.
+
+4. Szybkość strony i Core Web Vitals — dla e-commerce, developerów, agencji. Stack Overflow, grupy FB web dev, forum.asp.net, Medium. Tekst: audyt w jednym wpisaniu, kolejność poprawek, ceny. Link: fluxlab.pl/audyt-strony.
+
+5. Zwroty w e-commerce — dla sklepów, właścicieli e-commerce. Grupy FB e-commerce, fora sklepów (forum.prestashop.pl, ShopifyPL), Reddit r/ecommerce. Tekst: sześć rzeczy w regulaminie (termin, formularz, zwrot, pieniądze, online). Link: fluxlab.pl/panel-zwrotow.
+
+**Dla Pawła:** Każdy tekst ma wskazane miejsca wklejenia. Jeśli pojawią się konkretne wątki (URL, wpis, pytanie), mogę dostosować tekst do kontekstu. Reszta bez zmian: Gofin 1559490, 1559395 czekają, Wykop po terminie e-Doręczeń tylko na życzenie.
+
+**Zostało otwarte:** Kanał 3 w następnym cyklu. Kanały 2 i 3 czekają na import do Bing Webmaster Tools (5 minut, https://www.bing.com/webmasters, zakładka „Import your sites from GSC"). Kanał 4 potrzebuje nowej puli firm (sklepy e-commerce).
+
+<!-- WYSLANO 2026-10-02 16:XX -->
