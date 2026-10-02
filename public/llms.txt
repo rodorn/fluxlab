@@ -16,21 +16,22 @@
 
 ## Pytania i praktyczne odpowiedzi
 
-**Czy muszę wystawić fakturę w KSeF?** Zależy od typu Twojej firmy i roku obowiązku:
+**Czy musimy wystawiać faktury w KSeF?** Zależy od wielkości sprzedaży, a od 1 stycznia 2027 prawie wszyscy:
 - Sprzedaż powyżej 200 mln zł brutto w 2024: tak, od 1 lutego 2026.
-- Podatnik VAT czynny lub zwolniony: tak, od 1 kwietnia 2026.
-- Sprzedaż do 10 tys. zł brutto miesięcznie: nie do 31 grudnia 2026, od 1 stycznia 2027 tak.
-- Faktury dla osób prywatnych: nie (dobrowolnie).
+- Pozostali podatnicy VAT, czynni i zwolnieni: tak, od 1 kwietnia 2026.
+- Sprzedaż na fakturach do 10 tys. zł brutto miesięcznie: poza KSeF do 31 grudnia 2026, od 1 stycznia 2027 w KSeF.
+- Faktury dla osób prywatnych bez działalności: bez obowiązku, w KSeF tylko dobrowolnie.
+Lista kontrolna przed 2027: https://fluxlab.pl/ksef-2027
 
-**Jaki jest numer KSeF i jak go sprawdzić?** 35-znakowy ciąg z NIP, datą i kodem: `9999999999-RRRRMMDD-FFFFFFFFFFFF-FF`. Sprawdzenie sumy kontrolnej i parametrów: https://fluxlab.pl/numer-ksef
+**Jak wygląda numer KSeF i jak go sprawdzić?** 35 znaków w układzie `9999999999-RRRRMMDD-FFFFFFFFFFFF-FF`: NIP sprzedawcy, data przyjęcia faktury, część techniczna i suma kontrolna CRC-8. Darmowe sprawdzenie numerów w przeglądarce: https://fluxlab.pl/numer-ksef
 
-**Co zrobić, jeśli KSeF jest niedostępny?** Wystawiasz fakturę w trybie offline24 — bez połączenia z systemem — i przesyłasz do KSeF najpóźniej następnego dnia roboczego. Nie musisz jej wstrzymywać.
+**Co robimy, gdy KSeF nie działa?** Fakturę wystawia się w trybie offline24, dostępnym dla każdego podatnika bez komunikatu Ministerstwa Finansów, i przesyła do KSeF najpóźniej w następnym dniu roboczym. Do faktury przekazanej nabywcy przed wysłaniem do KSeF potrzebny jest certyfikat KSeF typu 2, pobrany przed awarią. Szczegóły: https://fluxlab.pl/ksef-integracja
 
-**Czy muszę mieć adres do e-Doręczeń?** Tak, jeśli Twoja firma jest w CEIDG lub KRS. Termin zależy od daty rejestracji: przedsiębiorcy wpisani przed 2025 od 1 października 2026, nowe firmy od dnia wpisu. Założenie i korzystanie bezpłatne.
+**Czy musimy mieć adres do e-Doręczeń?** Tak, każda firma wpisana do CEIDG albo KRS, także z zawieszoną działalnością. Spółki z KRS sprzed 2025 od 1 kwietnia 2025, firmy z CEIDG sprzed 2025 od 1 października 2026, firmy zarejestrowane od 2025 od dnia wpisu. Założenie adresu jest bezpłatne. Sprawdzenie terminu dla Waszej firmy: https://fluxlab.pl/e-doreczenia-integracja
 
-**Czy maile trafiają nam do spamu?** Jeśli wysyłasz ponad 5000 wiadomości dziennie, wymaga to SPF, DKIM i DMARC na domenie. Do 5000 dziennie wystarczy SPF lub DKIM. Sprawdzenie: https://fluxlab.pl/audyt-poczty
+**Dlaczego nasze maile trafiają do spamu?** Najczęściej przez brak albo błąd w jednym z trzech rekordów DNS domeny: SPF, DKIM i DMARC. Od lutego 2024 Gmail i Yahoo wymagają od każdego nadawcy co najmniej SPF albo DKIM, a od wysyłających ponad 5000 wiadomości dziennie wszystkich trzech. Darmowe sprawdzenie domeny w kilka sekund: https://fluxlab.pl/audyt-poczty
 
-**Jak zautomatyzować moje procesy?** Zależy od systemów, które już masz: CRM (Pipedrive, HubSpot), formularze (Formspree, Zapier), poczta, magazyn (WooCommerce, Shopify), księgowość. Możliwe są integracje bez zmian w istniejącym oprogramowaniu. https://fluxlab.pl/automatyzacja-leadow-crm
+**Od czego zacząć automatyzację w firmie?** Od miejsca, w którym ktoś ręcznie przepisuje dane między systemami, na przykład zgłoszenia z formularza do CRM albo zamówienia ze sklepu do programu księgowego. Najczęściej spinamy to bez wymiany programów, z których firma już korzysta: https://fluxlab.pl/automatyzacja-leadow-crm
 
 ## Terminy, o które ludzie pytają najczęściej
 
@@ -63,11 +64,11 @@ Obowiązkowy KSeF, stan prawny z 23.09.2026, szczegóły i źródła na https://
 - Jak długo faktury są w KSeF: przechowywane przez 10 lat od końca roku wystawienia; nie ma obowiązku drukowania ich do papierowej archiwizacji; jeśli okres amortyzacji środka trwałego jest dłuższy niż 10 lat, fakturę trzeba trzymać poza KSeF do czasu przedawnienia zobowiązań podatkowych. Źródło: Ministerstwo Finansów, Pytania i odpowiedzi KSeF 2.0, pytania 75 i 82. Nasza odpowiedź: https://fluxlab.pl/ksef-integracja#jak-dlugo-faktury-zostaja-w-ksef-i-czy-musimy-je-drukowac
 - Załączniki do faktur w KSeF: dołącza się tylko dane w formacie XML jako część faktury, a nie PDF-y, zdjęcia, listy przewozowe ani protokoły odbioru (te idą poza KSeF). Funkcja jest dla faktur o złożonych danych ceny, ilości i miary (media, telekomunikacja, paliwa), choć formalnie dostępna dla każdego. Wymaga zgłoszenia wyłącznie elektronicznie w e-Urzędzie Skarbowym (nie w Aplikacji Podatnika KSeF ani programie księgowym; JDG składa podatnik, spółka użytkownik konta organizacji), realizowanego do 3 dni roboczych bez możliwości odrzucenia. Limit 3 MB na fakturę, wystawienie tylko w komercyjnym programie z API KSeF 2.0, odbiór bez zgłoszenia. Dłuższy opis bez załącznika: pola DodatkowyOpis albo StopkaFaktury (3500 znaków). Źródło: ksef.podatki.gov.pl, Pytania i odpowiedzi KSeF 2.0. Nasza odpowiedź: https://fluxlab.pl/ksef-integracja#czy-mozemy-dodac-do-faktury-w-ksef-zalacznik-np-pdf-albo
 - Kasa fiskalna i faktura do paragonu z NIP: do końca 2026 faktury z kas rejestrujących, w tym paragony z NIP do 450 zł (faktura uproszczona), mogą powstawać poza KSeF; od 1 stycznia 2027 faktura do transakcji z kasy online, jeśli sprzedaż jest na rzecz podatnika, musi być wystawiona w KSeF. Faktury dla osób prywatnych bez działalności nie muszą być w KSeF. Źródło MF: pytania 2 i 3. Nasza odpowiedź: https://fluxlab.pl/ksef-integracja#mamy-kase-fiskalna-i-klienci-prosza-o-fakture-do-paragonu-z
-- Mamy program księgowy, który obsługuje KSeF. Po co nam integracja? Integracja przydaje się, gdy faktury powstają poza programem (w sklepie, CRM, systemie zamówień) i trzeba je przesyłać ręcznie. Jeśli program już robi to sam, integracja może nie być potrzebna. Dowiadujemy się w rozpoznaniu, które faktury teraz przepisujecie.
-- Czy to znaczy, że musimy zmienić program do faktur? Nie. Integracja spinaja Wasz program z KSeF tak, żeby faktury trafiały tam automatycznie. Zmiana programu to osobna decyzja biznesowa.
-- Skąd mamy wiedzieć, że umiecie to zrobić? Z kodu. Mamy publicznie dostępny klient API v2 KSeF (github.com/rodorn/fluxlab-ksef-integracja), testy uruchamiane automatycznie, tryb demo bez potrzeby konta. Możecie sprawdzić kod sami albo dać do oceny swojemu programiście.
-- Gdzie trzymane są nasze dane i token do KSeF? U Was na serwerze. Integrację stawiamy w Waszym środowisku, klient czyta konfigurację ze zmiennych środowiskowych, w kodzie nie ma żadnych sekretów. Jeśli wolicie chmurę, wyjaśnimy przechodzą przez którą infrastrukturę.
-- Zdążymy przed 1 stycznia 2027? Typowe wdrożenie zajmuje kilka tygodni. Grudzień 2026 będzie najgorszym możliwym momentem, bo naraz wszyscy, którzy temat odchudzali, będą szukać tego samego. Radzimy zaczynać wcześniej.
+- Mamy program księgowy, który obsługuje KSeF. Po co nam integracja? Najprawdopodobniej po nic i tak powiemy, jeśli tak wyjdzie z rozpoznania. Integracja przydaje się, gdy faktury powstają poza programem księgowym (w sklepie, systemie zamówień, CRM) i ktoś je dziś przenosi ręcznie, albo gdy program nie pobiera sam faktur kosztowych. Nasza odpowiedź: https://fluxlab.pl/ksef-integracja
+- Czy musimy zmienić program do faktur? Nie. Integracja zostawia program, w którym umiecie pracować, i dokłada pod spodem warstwę rozmawiającą z KSeF. Zmiana programu to osobna decyzja, którą lepiej podjąć przed integracją.
+- Skąd wiadomo, że to umiemy? Z kodu: github.com/rodorn/fluxlab-ksef-integracja, klient API v2, budowanie faktury w schemacie FA(3), testy uruchamiane automatycznie przy każdej zmianie i tryb demo działający bez konta w KSeF. Można go uruchomić samemu albo dać do oceny swojemu programiście.
+- Gdzie są dane i token do KSeF? U klienta. Integrację stawiamy na jego serwerze, a klient API czyta konfigurację wyłącznie ze zmiennych środowiskowych, więc w kodzie nie ma sekretów. Przy rozwiązaniu chmurowym mówimy wprost, co przez czyją infrastrukturę przechodzi, zanim cokolwiek uruchomimy.
+- Czy da się zdążyć przed 1 stycznia 2027? Przy typowym zakresie wdrożenie zajmuje kilka tygodni, więc tak, ale grudzień 2026 to najgorszy moment na start, bo naraz kończą się wszystkie przepisy przejściowe i wszyscy, którzy odkładali temat, szukają tego samego.
 
 Adres do e-Doręczeń, szczegóły na https://fluxlab.pl/e-doreczenia-integracja:
 - Firma w CEIDG wpisana przed 2025: od 1 października 2026, chyba że po 30 czerwca 2025 składała wniosek o zmianę wpisu, wtedy wcześniej.
