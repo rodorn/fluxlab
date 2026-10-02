@@ -898,7 +898,7 @@ udostępnieniem.
 
 > Tak to jest pomyślane, nie ma w tym nic nieprawidłowego. Uprawnienia w KSeF nadaje się konkretnej osobie, na PESEL albo NIP, i ta osoba potwierdza swoją tożsamość własnym środkiem, a mObywatel to tylko jeden ze sposobów logowania do profilu zaufanego. Kto nie chce używać prywatnego telefonu, ma drugie wejście do Aplikacji Podatnika: podpis kwalifikowany z PESEL, jak Misio w kom. 2, i taki podpis może kupić pracodawca. Do samego pobierania faktur do programu FK nikt nie musi logować się codziennie, jeśli program łączy się z KSeF tokenem albo certyfikatem KSeF. Jedna rzecz, o której się zapomina: uprawnienia nadane na PESEL obowiązują, dopóki ktoś ich nie odbierze, więc gdy pracownik odchodzi, trzeba je wycofać. Zebraliśmy to razem z innymi pytaniami przed 2027 tutaj: https://fluxlab.pl/ksef-2027?utm_source=gofin
 
-2) Reszta kolejki z wpisu 18:01 bez zmian: Useme, sprawdź wiadomości (wejście z 14:35 na `/audyt-strony`). **PILNE, termin 1.10:** Wykop o e-Doręczeniach, tekst we wpisie 26.09 10:43. Google Search Console, mapa i „Poproś o zindeksowanie”, lista we wpisie 26.09 11:43. Bing Webmaster Tools, import z GSC. LinkedIn i decyzja o mailu do WeNet.
+2. Reszta kolejki z wpisu 18:01 bez zmian: Useme, sprawdź wiadomości (wejście z 14:35 na `/audyt-strony`). **PILNE, termin 1.10:** Wykop o e-Doręczeniach, tekst we wpisie 26.09 10:43. Google Search Console, mapa i „Poproś o zindeksowanie”, lista we wpisie 26.09 11:43. Bing Webmaster Tools, import z GSC. LinkedIn i decyzja o mailu do WeNet.
 
 **Zostało otwarte:** Jutro od 9:00 kanał 4: wysłać 021 do 025 według planu z wpisu 21:43. Opis w metadanych `/ksef-2027` mówi o „sześciu pytaniach” listy kontrolnej, to dalej prawda, bo nowe pytanie trafiło do FAQ, a nie do listy. Gofin warto przeglądać raz dziennie, jedno zapytanie na listę tematów, najwyżej jeden nasz komentarz na kilka dni. W pytaniach o KSeF po stronie biur (uprawnienia, dostęp księgowej, odbieranie faktur) nasze strony mają teraz odpowiedzi, na które można wskazać.
 
@@ -925,7 +925,7 @@ udostępnieniem.
 >
 > #edoreczenia #ceidg #jdg #dzialalnoscgospodarcza #przedsiebiorczosc #prawo
 
-2) Reszta kolejki bez zmian: Gofin, komentarz w wątku o logowaniu do KSeF (tekst we wpisie 22:43, najlepiej jutro rano). Useme, sprawdź wiadomości (wejście z 28.09 14:35 na `/audyt-strony`). Google Search Console, mapa i „Poproś o zindeksowanie”, lista we wpisie 26.09 11:43. Bing Webmaster Tools, import z GSC. LinkedIn i decyzja o mailu do WeNet.
+2. Reszta kolejki bez zmian: Gofin, komentarz w wątku o logowaniu do KSeF (tekst we wpisie 22:43, najlepiej jutro rano). Useme, sprawdź wiadomości (wejście z 28.09 14:35 na `/audyt-strony`). Google Search Console, mapa i „Poproś o zindeksowanie”, lista we wpisie 26.09 11:43. Bing Webmaster Tools, import z GSC. LinkedIn i decyzja o mailu do WeNet.
 
 **Zostało otwarte:** Jutro od 9:00 kanał 4: wysłać 021 do 025 według planu z wpisu 21:43. 1.10 rano sprawdzić na produkcji, czy narzędzie e-Doręczeń pokazuje „Obowiązek działa od dziś”; jeśli tak, wersja wpisu na Wykop z tego cyklu jest aktualna. Ruch z doby spadł do 7 odsłon, jedyne stałe źródła to Google (wejścia na e-Doręczenia) i Useme.
 
@@ -948,10 +948,11 @@ udostępnieniem.
 
 > Dzień dobry, jesteśmy zespołem FluxLab i sprawdzamy publicznie dostępne dane techniczne stron internetowych. Strona kancelaria-adwokacka-mmw.pl jest w całości zamknięta dla wyszukiwarek: plik https://www.kancelaria-adwokacka-mmw.pl/robots.txt zawiera regułę „Disallow: /”, a strona główna i strona kontaktowa mają znacznik meta robots „noindex, nofollow”. Oba ustawienia mówią Google, żeby nie pokazywało strony w wynikach, więc osoba szukająca adwokata w Poznaniu jej nie znajdzie. Zwykle to pozostałość z czasu budowy strony, w Joomli wyłącza się ją w Konfiguracji globalnej, pole „Roboty”, i w pliku robots.txt. Mogą Państwo to sprawdzić sami pod adresem https://fluxlab.pl/audyt-strony. Piszemy, bo warto o tym wiedzieć, niezależnie od tego, kto to poprawi. Jeśli nie chcą Państwo dalszych wiadomości, wystarczy jedno słowo w odpowiedzi. Pozdrawiamy, Paweł Iwanek, FluxLab, fluxlab.pl
 
-2) Reszta kolejki z wpisu 00:43 bez zmian: Gofin, komentarz w wątku o logowaniu do KSeF (tekst we wpisie 28.09 22:43), rano. Wykop o e-Doręczeniach: do środy 30.09 wieczorem wersja z 26.09 10:43, od 1.10 wersja z 28.09 23:43. Useme, Google Search Console, Bing Webmaster Tools, LinkedIn.
-**Zostało otwarte:** Od 9:00 wysłać przez Resend z `pawel@fluxlab.pl` siedem szkiców, 021 do 027, z odstępami: 027 pierwszy (termin certyfikatu 3.10; przed wysyłką `openssl`, czy nie został już odnowiony, jeśli tak, nie wysyłać), 021 i 022 po ponownym audycie, pozostałe po jednym `curl`u. Adresy 023 i 026 są imienne, ale to jedyne adresy kontaktowe podane na stronach tych kancelarii i są w ich domenach. Z `kanc_kandydaci.json` zostało 18 domen nietkniętych (od `kurdej.pl` do `majewska-szrubarz.pl`). Skrypt lokalnego audytu trzeba odtworzyć w katalogu repo według wpisu 28.09 21:43 i nie commitować go. Reguła `noindex` w `lib/audyt-pomiar.ts:704` ma to samo ograniczenie co naprawiony parser (wymaga cudzysłowów), ale daje najwyżej przeoczenie, nie fałszywy alarm.
+2. Reszta kolejki z wpisu 00:43 bez zmian: Gofin, komentarz w wątku o logowaniu do KSeF (tekst we wpisie 28.09 22:43), rano. Wykop o e-Doręczeniach: do środy 30.09 wieczorem wersja z 26.09 10:43, od 1.10 wersja z 28.09 23:43. Useme, Google Search Console, Bing Webmaster Tools, LinkedIn.
+   **Zostało otwarte:** Od 9:00 wysłać przez Resend z `pawel@fluxlab.pl` siedem szkiców, 021 do 027, z odstępami: 027 pierwszy (termin certyfikatu 3.10; przed wysyłką `openssl`, czy nie został już odnowiony, jeśli tak, nie wysyłać), 021 i 022 po ponownym audycie, pozostałe po jednym `curl`u. Adresy 023 i 026 są imienne, ale to jedyne adresy kontaktowe podane na stronach tych kancelarii i są w ich domenach. Z `kanc_kandydaci.json` zostało 18 domen nietkniętych (od `kurdej.pl` do `majewska-szrubarz.pl`). Skrypt lokalnego audytu trzeba odtworzyć w katalogu repo według wpisu 28.09 21:43 i nie commitować go. Reguła `noindex` w `lib/audyt-pomiar.ts:704` ma to samo ograniczenie co naprawiony parser (wymaga cudzysłowów), ale daje najwyżej przeoczenie, nie fałszywy alarm.
 
 ## 2026-09-29 (poza cyklem, na prośbę Pawła)
+
 **Co zrobione:** Wysłano mail `027_adwokatadambiernat.txt` do `kancelaria@adwokatadambiernat.pl`, wstrzymany od 28.09 bo czekał na potwierdzenie stanu certyfikatu. Przed wysyłką zweryfikowano ponownie `openssl s_client`: certyfikat cyber_Folks nadal wygasa 3.10.2026 09:51 czasu polskiego, zostały 4 dni, treść zgodna z aktualnym stanem. Zero długich myślników, jeden link do własnego narzędzia audytu, zgodnie z zasadą kanału 4.
 **Dowód:** Wysłane i potwierdzone w folderze Wysłanych Zoho (temat: "adwokatadambiernat.pl: certyfikat SSL wygasa 3 października"). Odnotowane w `wyslane_kanc.json`, żeby kolejny cykl nie wysłał drugi raz.
 
@@ -1047,7 +1048,7 @@ udostępnieniem.
 > Pozdrawiamy,
 > Fluxlab
 
-2) **NOWE, dziś:** Useme, zlecenie 145158 (agencja Merigold), https://useme.com/pl/jobs/freelancer-do-automatyzacji-procesow-w-firmach,145158/, „Dodaj ofertę”, tekst poniżej. W polu stawki wpisz swoją stawkę godzinową. Uzasadnienie: to stała współpraca projektowa, a nie jednorazowe zlecenie, i dokładnie nasz profil. Agencja prosi o opis 2 do 3 automatyzacji, a dopuszcza wersję zanonimizowaną. Opisujemy wyłącznie nasze własne, działające rzeczy i piszemy to wprost. Jeśli chcesz dopisać doświadczenie z pracy etatowej, zrób to sam, tekst go celowo nie zawiera.
+2. **NOWE, dziś:** Useme, zlecenie 145158 (agencja Merigold), https://useme.com/pl/jobs/freelancer-do-automatyzacji-procesow-w-firmach,145158/, „Dodaj ofertę”, tekst poniżej. W polu stawki wpisz swoją stawkę godzinową. Uzasadnienie: to stała współpraca projektowa, a nie jednorazowe zlecenie, i dokładnie nasz profil. Agencja prosi o opis 2 do 3 automatyzacji, a dopuszcza wersję zanonimizowaną. Opisujemy wyłącznie nasze własne, działające rzeczy i piszemy to wprost. Jeśli chcesz dopisać doświadczenie z pracy etatowej, zrób to sam, tekst go celowo nie zawiera.
 
 > Dzień dobry,
 >
@@ -1064,8 +1065,8 @@ udostępnieniem.
 > Pozdrawiamy,
 > Fluxlab
 
-3) Reszta kolejki bez zmian: Google Search Console („Poproś o zindeksowanie” dla `/e-doreczenia-integracja` i `/ksef-integracja`), formularz do kancelaria-adwokacka-mmw.pl (tekst we wpisie 01:43), Gofin (tekst we wpisie 28.09 22:43), Wykop o e-Doręczeniach (do 30.09 wersja z 26.09 10:43, od 1.10 wersja z 28.09 23:43), Bing Webmaster Tools, LinkedIn, decyzja w sprawie WeNet.
-**Zostało otwarte:** Useme okazało się miejscem, gdzie problemy pasujące do naszych narzędzi pojawiają się codziennie, a nie raz na tydzień jak na forach. Kanał 1 może przeglądać `https://useme.com/pl/jobs/` raz na kilka godzin, jednym zapytaniem na stronę listy, i wybierać tylko zlecenia z ostatniej godziny, bo po 30 minutach jest już kilka ofert. Po ofertach Pawła mierzyć wejścia z `utm_source=useme` na `/audyt-poczty` i `/realizacje`. Kanał 4: odpowiedzi na 11 maili sprawdzać w `pawel@fluxlab.pl` skryptem `~/Projekty/freelancing/narzedzia/sprawdz_poczte_fluxlab.py`, a potem przesiać 449 domen biur z `ksiegowe_final.json` pod kątem certyfikatu.
+3. Reszta kolejki bez zmian: Google Search Console („Poproś o zindeksowanie” dla `/e-doreczenia-integracja` i `/ksef-integracja`), formularz do kancelaria-adwokacka-mmw.pl (tekst we wpisie 01:43), Gofin (tekst we wpisie 28.09 22:43), Wykop o e-Doręczeniach (do 30.09 wersja z 26.09 10:43, od 1.10 wersja z 28.09 23:43), Bing Webmaster Tools, LinkedIn, decyzja w sprawie WeNet.
+   **Zostało otwarte:** Useme okazało się miejscem, gdzie problemy pasujące do naszych narzędzi pojawiają się codziennie, a nie raz na tydzień jak na forach. Kanał 1 może przeglądać `https://useme.com/pl/jobs/` raz na kilka godzin, jednym zapytaniem na stronę listy, i wybierać tylko zlecenia z ostatniej godziny, bo po 30 minutach jest już kilka ofert. Po ofertach Pawła mierzyć wejścia z `utm_source=useme` na `/audyt-poczty` i `/realizacje`. Kanał 4: odpowiedzi na 11 maili sprawdzać w `pawel@fluxlab.pl` skryptem `~/Projekty/freelancing/narzedzia/sprawdz_poczte_fluxlab.py`, a potem przesiać 449 domen biur z `ksiegowe_final.json` pod kątem certyfikatu.
 
 ## 2026-09-29 10:43
 
@@ -1114,8 +1115,8 @@ udostępnieniem.
 >
 > Terminy dla CEIDG, KRS, spółek cywilnych i zawieszonych działalności zebraliśmy tu, z kalkulatorem terminu: https://fluxlab.pl/e-doreczenia-integracja?utm_source=wykop
 
-2) Reszta kolejki bez zmian: dwie oferty Useme z wpisu 09:43 (145155 DNS i 145158 Merigold, jeśli jeszcze otwarte), Google Search Console („Poproś o zindeksowanie” dla `/e-doreczenia-integracja` i `/ksef-integracja`), formularz do kancelaria-adwokacka-mmw.pl (tekst we wpisie 01:43), Gofin (tekst we wpisie 28.09 22:43), Wykop od 1.10 (wersja z 28.09 23:43), Bing Webmaster Tools, LinkedIn, decyzja w sprawie WeNet.
-**Zostało otwarte:** Ruch na `/e-doreczenia-integracja` rośnie przed terminem (8 z 26 odsłon), więc do 1.10 ta strona jest głównym magnesem. 2.10: komunikaty „zostały X dni” w `EDoreczeniaCheck.tsx` i `opengraph-image.tsx`, a w nowym FAQ zdanie o oknach przerw zamienić na ogólne (odsyłacz do strony niedostępności), bo po 4.10 się zdezaktualizuje. Mierzyć wejścia z `utm_source=wykop`. Kanał 4: odpowiedzi na 16 maili w `pawel@fluxlab.pl`, potem domeny z `cert_sieve_29-09.json`, gdzie http przekierowuje na https.
+2. Reszta kolejki bez zmian: dwie oferty Useme z wpisu 09:43 (145155 DNS i 145158 Merigold, jeśli jeszcze otwarte), Google Search Console („Poproś o zindeksowanie” dla `/e-doreczenia-integracja` i `/ksef-integracja`), formularz do kancelaria-adwokacka-mmw.pl (tekst we wpisie 01:43), Gofin (tekst we wpisie 28.09 22:43), Wykop od 1.10 (wersja z 28.09 23:43), Bing Webmaster Tools, LinkedIn, decyzja w sprawie WeNet.
+   **Zostało otwarte:** Ruch na `/e-doreczenia-integracja` rośnie przed terminem (8 z 26 odsłon), więc do 1.10 ta strona jest głównym magnesem. 2.10: komunikaty „zostały X dni” w `EDoreczeniaCheck.tsx` i `opengraph-image.tsx`, a w nowym FAQ zdanie o oknach przerw zamienić na ogólne (odsyłacz do strony niedostępności), bo po 4.10 się zdezaktualizuje. Mierzyć wejścia z `utm_source=wykop`. Kanał 4: odpowiedzi na 16 maili w `pawel@fluxlab.pl`, potem domeny z `cert_sieve_29-09.json`, gdzie http przekierowuje na https.
 
 ## 2026-09-29 14:43
 
@@ -1165,8 +1166,8 @@ udostępnieniem.
 >
 > Terminy dla CEIDG, KRS, spółek cywilnych, fundacji i zawieszonych działalności zebraliśmy tu, z kalkulatorem terminu: https://fluxlab.pl/e-doreczenia-integracja?utm_source=wykop
 
-2) Reszta kolejki bez zmian: dwie oferty Useme z wpisu 09:43 (145155 DNS i 145158 Merigold, jeśli jeszcze otwarte), Google Search Console („Poproś o zindeksowanie” dla `/e-doreczenia-integracja` i `/ksef-integracja`), formularz do kancelaria-adwokacka-mmw.pl (tekst we wpisie 01:43), Gofin (tekst we wpisie 28.09 22:43), Wykop od 1.10 (wersja z 28.09 23:43), Bing Webmaster Tools, LinkedIn, decyzja w sprawie WeNet. Jeśli sesja z Firefoxa na Androidzie to Twój telefon, włącz na nim `/nie-licz-mnie`.
-**Zostało otwarte:** Jutro, w dniu terminu, powtórzyć przegląd Gofinu, bo pytania o e-Doręczenia pojawiają się tam falami (ostatnie wątki 1558234 do 1559141). Mierzyć wejścia z `utm_source=wykop`. 2.10: komunikaty „zostały X dni” w `EDoreczeniaCheck.tsx` i `opengraph-image.tsx`, w FAQ zdanie o przerwie 3/4.10 usunąć po 4.10. Kanał 2 w następnym cyklu: w oficjalnym FAQ KSeF zostały tematy faktur scamowych i sprawdzania, czy kontrahent ma dostęp do KSeF.
+2. Reszta kolejki bez zmian: dwie oferty Useme z wpisu 09:43 (145155 DNS i 145158 Merigold, jeśli jeszcze otwarte), Google Search Console („Poproś o zindeksowanie” dla `/e-doreczenia-integracja` i `/ksef-integracja`), formularz do kancelaria-adwokacka-mmw.pl (tekst we wpisie 01:43), Gofin (tekst we wpisie 28.09 22:43), Wykop od 1.10 (wersja z 28.09 23:43), Bing Webmaster Tools, LinkedIn, decyzja w sprawie WeNet. Jeśli sesja z Firefoxa na Androidzie to Twój telefon, włącz na nim `/nie-licz-mnie`.
+   **Zostało otwarte:** Jutro, w dniu terminu, powtórzyć przegląd Gofinu, bo pytania o e-Doręczenia pojawiają się tam falami (ostatnie wątki 1558234 do 1559141). Mierzyć wejścia z `utm_source=wykop`. 2.10: komunikaty „zostały X dni” w `EDoreczeniaCheck.tsx` i `opengraph-image.tsx`, w FAQ zdanie o przerwie 3/4.10 usunąć po 4.10. Kanał 2 w następnym cyklu: w oficjalnym FAQ KSeF zostały tematy faktur scamowych i sprawdzania, czy kontrahent ma dostęp do KSeF.
 
 ## 2026-09-29 18:43
 
@@ -1176,6 +1177,7 @@ udostępnieniem.
 **Dowód:** Commit `fed9ea3` na `origin/main`. Build i `node scripts/spojnosc.mjs` czyste. Produkcja: `https://fluxlab.pl/ksef-integracja` zawiera „Kontrahent twierdzi” 5 razy (strona i JSON-LD), `https://fluxlab.pl/llms.txt` ma oba nowe punkty. IndexNow: Yandex i Naver przyjęły, Bing dalej 403. Źródło: https://ksef.podatki.gov.pl/pytania-i-odpowiedzi-ksef-20/ (pytania 11, 26, 29, 36 do 39 i 76). Skrzynki `pawel@fluxlab.pl` w tym cyklu nie sprawdzaliśmy.
 **Dla Pawła:** 1) Jeśli Firefox na Androidzie to Twój telefon, włącz na nim `/nie-licz-mnie`, bo 19 z 35 odsłon doby pochodzi z tej przeglądarki i bez tego nie odróżnimy, czy któryś kanał działa. 2) Jutro 30.09 przed 9:00 wpis na Wykopie, tekst z wpisu 17:43. 3) Reszta kolejki bez zmian: oferty Useme z wpisu 09:43 (145155, 145158, jeśli otwarte), Google Search Console („Poproś o zindeksowanie” dla `/e-doreczenia-integracja` i `/ksef-integracja`), formularz do kancelaria-adwokacka-mmw.pl (tekst we wpisie 01:43), Gofin (tekst we wpisie 28.09 22:43), Wykop od 1.10 (wersja z 28.09 23:43), Bing Webmaster Tools, LinkedIn, decyzja w sprawie WeNet.
 **Zostało otwarte:** Obie nowe odpowiedzi nadają się do kanału 1 jako odpowiedź w wątku księgowym („faktura od nieznanej firmy w KSeF”, „klient mówi, że nie dostał faktury”), z linkiem do `/ksef-integracja`. Kanał 3 w następnym cyklu. Kanał 4: sprawdzić odpowiedzi na 17 maili w `pawel@fluxlab.pl`. 2.10: komunikaty „zostały X dni” w `EDoreczeniaCheck.tsx` i `opengraph-image.tsx`, po 4.10 usunąć z FAQ e-Doręczeń zdanie o przerwie 3/4.10.
+
 <!-- WYSLANO 2026-09-29 19:05 -->
 
 ## 2026-09-29 19:43
@@ -1206,8 +1208,8 @@ udostępnieniem.
 
 > Dobry wieczór, faktury sprzedaży wystawionej poza e-mikrofirmą nie da się do niej zaimportować, aplikacja pobiera z KSeF tylko faktury zakupu. Zaliczkową trzeba wprowadzić ręcznie: Nowy inny wpis sprzedaży, rodzaj wpisu „Dowolny wpis sprzedaży”. W oznaczeniu faktury zaznaczyć NrKSeF i przepisać numer KSeF z Aplikacji Podatnika, datę księgowania ustawić na miesiąc otrzymania zaliczki, kwoty wpisać według stawek VAT. Tak opisuje to podręcznik e-mikrofirmy MF z kwietnia 2026 (rozdział 6.3). Przy fakturze końcowej trzeba pilnować, żeby VAT od zaliczki nie wszedł do ewidencji drugi raz. Numer KSeF przepisany ręcznie łatwo przekręcić, a błąd wyjdzie dopiero w JPK. Sumę kontrolną numeru można sprawdzić za darmo tutaj: https://fluxlab.pl/numer-ksef?utm_source=gofin#czesc-faktur-sprzedazy-wystawiamy-poza-e-mikrofirma-w
 
-2) Jutro 30.09 przed 9:00 wpis na Wykopie, tekst z wpisu 17:43. 3) Mail od Karola F w `pawel@fluxlab.pl` (wpis 20:43) czeka na Twoją odpowiedź. 4) Jeśli Firefox na Androidzie to Twój telefon, włącz na nim `/nie-licz-mnie`. 5) Reszta kolejki bez zmian: oferty Useme z wpisu 09:43 (145155, 145158, jeśli otwarte), Google Search Console („Poproś o zindeksowanie” dla `/e-doreczenia-integracja` i `/ksef-integracja`), formularz do kancelaria-adwokacka-mmw.pl (tekst we wpisie 01:43), Gofin (tekst we wpisie 28.09 22:43), Wykop od 1.10 (wersja z 28.09 23:43), Bing Webmaster Tools, LinkedIn, decyzja w sprawie WeNet.
-**Zostało otwarte:** Mierzyć wejścia z `utm_source=gofin` i `utm_source=wykop`. Jutro w dniu terminu e-Doręczeń powtórzyć przegląd Gofinu od tematu 1559493. Kanał 2 w następnym cyklu. 2.10: komunikaty „zostały X dni” w `EDoreczeniaCheck.tsx` i `opengraph-image.tsx`, po 4.10 usunąć z FAQ e-Doręczeń zdanie o przerwie 3/4.10.
+2. Jutro 30.09 przed 9:00 wpis na Wykopie, tekst z wpisu 17:43. 3) Mail od Karola F w `pawel@fluxlab.pl` (wpis 20:43) czeka na Twoją odpowiedź. 4) Jeśli Firefox na Androidzie to Twój telefon, włącz na nim `/nie-licz-mnie`. 5) Reszta kolejki bez zmian: oferty Useme z wpisu 09:43 (145155, 145158, jeśli otwarte), Google Search Console („Poproś o zindeksowanie” dla `/e-doreczenia-integracja` i `/ksef-integracja`), formularz do kancelaria-adwokacka-mmw.pl (tekst we wpisie 01:43), Gofin (tekst we wpisie 28.09 22:43), Wykop od 1.10 (wersja z 28.09 23:43), Bing Webmaster Tools, LinkedIn, decyzja w sprawie WeNet.
+   **Zostało otwarte:** Mierzyć wejścia z `utm_source=gofin` i `utm_source=wykop`. Jutro w dniu terminu e-Doręczeń powtórzyć przegląd Gofinu od tematu 1559493. Kanał 2 w następnym cyklu. 2.10: komunikaty „zostały X dni” w `EDoreczeniaCheck.tsx` i `opengraph-image.tsx`, po 4.10 usunąć z FAQ e-Doręczeń zdanie o przerwie 3/4.10.
 
 ## 2026-09-29 22:43
 
@@ -1248,8 +1250,8 @@ udostępnieniem.
 
 > Do pytania z tematu: uprawnienia, które biuro przekazało pracownikom, są przypisane do ich numerów PESEL, więc logowanie własnym mObywatelem jest dokładnie tym, jak KSeF ma działać. Przy logowaniu w polu „Identyfikator” wybiera się „NIP podmiotu” i wpisuje NIP klienta, a tożsamość potwierdza się już swoim środkiem. Prywatny telefon nie jest jednak jedyną drogą: pracownik może logować się podpisem kwalifikowanym albo raz, po zalogowaniu, złożyć w Aplikacji Podatnika wniosek o certyfikat KSeF (rozdział 5.7 podręcznika MF z 6.08.2026) i dalej logować się nim, bez telefonu. Certyfikat dostaje PESEL osoby, która się logowała, więc też jest osobisty i nie przekazuje się go koleżance. Jeśli zakład nie chce, żeby ludzie używali prywatnych profili, może im kupić podpis kwalifikowany. Opisaliśmy to krok po kroku tutaj: https://fluxlab.pl/ksef-integracja?utm_source=gofin#jak-ksiegowa-loguje-sie-do-ksef-klienta-i-czy-musi-uzywac
 
-2) Wciąż aktualny i pilniejszy, bo wątek bez odpowiedzi: komentarz w https://forum.gofin.pl/1559490/import-faktury-sprzedazy-do-e-mikrofirma, tekst we wpisie 29.09 21:43. 3) Dziś rano przed 9:00 wpis na Wykopie, tekst z wpisu 29.09 17:43 (z punktem 7 z wpisu 22:43). 4) Karol F w `pawel@fluxlab.pl` czeka na Twoją odpowiedź. 5) Jeśli Kancelaria Professional odpisze, odpowiedź wyłącznie szkicem przez `odpowiedz_mail.py` do Wojtka. 6) Reszta kolejki bez zmian, jak we wpisie 00:43.
-**Zostało otwarte:** Po 9:05 sprawdzić w Resend status maila do Kancelarii Professional (`01a0ef59-2c8d-7d9c-8378-8fb31180beb2`). Kanał 1 bez kont Pawła jest praktycznie wyczerpany: jedyne otwarte miejsce z pytaniami ludzi to Gofin, a tam komentuje tylko Paweł; kolejka jego zadań rośnie szybciej, niż jest odbierana, więc kolejne cykle kanału 1 powinny raczej odświeżać istniejące teksty niż dokładać nowe. Kanał 2 w następnym cyklu. 2.10: komunikaty „zostały X dni” w `EDoreczeniaCheck.tsx` i `opengraph-image.tsx`, po 4.10 usunąć z FAQ e-Doręczeń zdanie o przerwie 3/4.10.
+2. Wciąż aktualny i pilniejszy, bo wątek bez odpowiedzi: komentarz w https://forum.gofin.pl/1559490/import-faktury-sprzedazy-do-e-mikrofirma, tekst we wpisie 29.09 21:43. 3) Dziś rano przed 9:00 wpis na Wykopie, tekst z wpisu 29.09 17:43 (z punktem 7 z wpisu 22:43). 4) Karol F w `pawel@fluxlab.pl` czeka na Twoją odpowiedź. 5) Jeśli Kancelaria Professional odpisze, odpowiedź wyłącznie szkicem przez `odpowiedz_mail.py` do Wojtka. 6) Reszta kolejki bez zmian, jak we wpisie 00:43.
+   **Zostało otwarte:** Po 9:05 sprawdzić w Resend status maila do Kancelarii Professional (`01a0ef59-2c8d-7d9c-8378-8fb31180beb2`). Kanał 1 bez kont Pawła jest praktycznie wyczerpany: jedyne otwarte miejsce z pytaniami ludzi to Gofin, a tam komentuje tylko Paweł; kolejka jego zadań rośnie szybciej, niż jest odbierana, więc kolejne cykle kanału 1 powinny raczej odświeżać istniejące teksty niż dokładać nowe. Kanał 2 w następnym cyklu. 2.10: komunikaty „zostały X dni” w `EDoreczeniaCheck.tsx` i `opengraph-image.tsx`, po 4.10 usunąć z FAQ e-Doręczeń zdanie o przerwie 3/4.10.
 
 ## 2026-09-30 02:43
 
@@ -1288,7 +1290,7 @@ udostępnieniem.
 **Dowód:** Kod strony bez zmian, więc bez builda i IndexNow; commit zawiera tylko dziennik. Sprawdzenia: `https://forum.gofin.pl/1559490/import-faktury-sprzedazy-do-e-mikrofirma` (0 komentarzy o 05:50), `https://forum.gofin.pl/1559395/w-jaki-sposob-logujecie-sie-do-ksef` (6 komentarzy, ostatni 28.09 14:06), `https://fluxlab.pl/e-doreczenia-integracja` (200, trzy kotwice obecne).
 **Dla Pawła:** Trzy rzeczy na dziś rano, w tej kolejności, razem około 10 minut. Wszystko inne może poczekać.
 
-1) **Wykop, przed 9:00.** https://wykop.pl/mikroblog, „Dodaj wpis”, tagi `#edoreczenia #firma #jdg #ksiegowosc`. To **jedyna aktualna wersja** na dziś, zastępuje teksty z 29.09 13:43 i 17:43 (wersja z 28.09 23:43 zostaje na jutro, 1.10). Uzasadnienie: w ostatnim dniu przed obowiązkiem ludzie szukają, co zrobić, gdy portal nie działa, a wpis odpowiada na to bez klikania.
+1. **Wykop, przed 9:00.** https://wykop.pl/mikroblog, „Dodaj wpis”, tagi `#edoreczenia #firma #jdg #ksiegowosc`. To **jedyna aktualna wersja** na dziś, zastępuje teksty z 29.09 13:43 i 17:43 (wersja z 28.09 23:43 zostaje na jutro, 1.10). Uzasadnienie: w ostatnim dniu przed obowiązkiem ludzie szukają, co zrobić, gdy portal nie działa, a wpis odpowiada na to bez klikania.
 
 > Dziś ostatni dzień na adres do e-Doręczeń dla firm z CEIDG (obowiązek od jutra, 1.10), a Biznes.gov.pl od wczoraj się sypie. MRiT wydało komunikat (29.09), streszczamy, co z niego wynika:
 >
@@ -1302,8 +1304,8 @@ udostępnieniem.
 >
 > Co robić, gdy portal nie działa, i zakładanie adresu krok po kroku: https://fluxlab.pl/e-doreczenia-integracja?utm_source=wykop#biznes-gov-pl-nie-dziala-albo-sie-zawiesza-a-termin-mija-co
 
-2) **Gofin, wątek bez żadnej odpowiedzi od 29.09 19:31:** https://forum.gofin.pl/1559490/import-faktury-sprzedazy-do-e-mikrofirma, „+ Dodaj komentarz”, autor `Fluxlab`, tekst z wpisu 29.09 21:43 (821 znaków, mieści się w limicie 1000). Dodanie komentarza to akceptacja regulaminu forum, dlatego to Twoje kliknięcie.
-3) **Gofin:** https://forum.gofin.pl/1559395/w-jaki-sposob-logujecie-sie-do-ksef, tekst z wpisu 30.09 01:43.
+2. **Gofin, wątek bez żadnej odpowiedzi od 29.09 19:31:** https://forum.gofin.pl/1559490/import-faktury-sprzedazy-do-e-mikrofirma, „+ Dodaj komentarz”, autor `Fluxlab`, tekst z wpisu 29.09 21:43 (821 znaków, mieści się w limicie 1000). Dodanie komentarza to akceptacja regulaminu forum, dlatego to Twoje kliknięcie.
+3. **Gofin:** https://forum.gofin.pl/1559395/w-jaki-sposob-logujecie-sie-do-ksef, tekst z wpisu 30.09 01:43.
 
 Poza poranną trójką bez zmian: Karol F w `pawel@fluxlab.pl` czeka na odpowiedź; odpowiedzi firm z kanału 4 wyłącznie szkicem przez `odpowiedz_mail.py` do Wojtka; jeśli Firefox na Androidzie to Twój telefon, włącz `/nie-licz-mnie` (23 z 37 odsłon doby); reszta kolejki jak we wpisie 00:43.
 **Zostało otwarte:** Po 9:10 sprawdzić w Resend status obu zaplanowanych maili (`01a0ef59-2c8d-7d9c-8378-8fb31180beb2`, `01a0f035-af0b-74bc-9d5a-92d26bcf7d7e`). Po publikacji na Wykopie mierzyć `utm_source=wykop` w raporcie ruchu, to pierwszy test, czy kanał 1 w ogóle przyprowadza ludzi. Kanał 1 bez kont Pawła nie ma już gdzie publikować; dopóki kolejka Pawła nie ruszy, kolejne cykle tego kanału powinny ją skracać i odświeżać, a nie dokładać teksty. Kanał 2 w następnym cyklu (kandydatki: archiwizacja i usuwanie wiadomości w e-Doręczeniach, korespondencja firma do firmy). 1.10 rano: czy `/e-doreczenia-integracja` rośnie w dniu terminu. 2.10: komunikaty „zostały X dni” w `EDoreczeniaCheck.tsx` i `opengraph-image.tsx`, po 4.10 usunąć z FAQ e-Doręczeń zdanie o przerwie 3/4.10.
@@ -1316,6 +1318,7 @@ Poza poranną trójką bez zmian: Karol F w `pawel@fluxlab.pl` czeka na odpowied
 **Dowód:** Commit `4090c2e` na `origin/main`. Build i `node scripts/spojnosc.mjs` czyste, 0 długich myślników w HTML strony. Produkcja: `https://fluxlab.pl/e-doreczenia-integracja#jak-dlugo-pisma-zostaja-w-skrzynce-e-doreczen-i-jak-je` („Zamówione archiwa” 4 razy w HTML: strona i JSON-LD), `https://fluxlab.pl/llms.txt` ma nowy punkt z linkiem. IndexNow: 111 adresów, Yandex i Naver przyjęły, Bing dalej nie. Źródła: https://kirp.pl/e-doreczenia-pytania-i-odpowiedzi-w-oparciu-o-stanowisko-ministerstwa-cyfryzacji/ i https://www.gov.pl/web/e-doreczenia/Pojemnosc-skrzynki-do-e-doreczen-oraz-archiwizacja-korespondencji
 **Dla Pawła:** Nic nowego. Poranna trójka z wpisu 05:43 jest aktualna: 1) Wykop przed 9:00 (tekst we wpisie 05:43), 2) Gofin 1559490 (pilny, 0 komentarzy), 3) Gofin 1559395. Dalej: Karol F w `pawel@fluxlab.pl`, odpowiedzi firm wyłącznie szkicem przez `odpowiedz_mail.py` do Wojtka.
 **Zostało otwarte:** Po 9:10 sprawdzić w Resend status obu zaplanowanych maili (`01a0ef59-2c8d-7d9c-8378-8fb31180beb2`, `01a0f035-af0b-74bc-9d5a-92d26bcf7d7e`). Kanał 3 w następnym cyklu. Kandydatka na kanał 2 na później: korespondencja firma do firmy przez e-Doręczenia. 1.10 rano: czy `/e-doreczenia-integracja` rośnie w dniu terminu. 2.10: komunikaty „zostały X dni” w `EDoreczeniaCheck.tsx` i `opengraph-image.tsx`, po 4.10 usunąć z FAQ e-Doręczeń zdanie o przerwie 3/4.10. Worktree `/tmp/fl-main` (gałąź `main`) zostaje na kolejne cykle, gałąź `fluxcrm-lead` w głównym katalogu nietknięta.
+
 <!-- WYSLANO 2026-09-30 07:10 -->
 
 ## 2026-09-30 07:43
@@ -1382,11 +1385,12 @@ Poza poranną trójką bez zmian: Karol F w `pawel@fluxlab.pl` czeka na odpowied
 **Dowód:** Teksty: `~/Projekty/fluxlab-kanal1/gofin_1559520.txt` (976 znaków) i `gofin_1559521.txt` (900 znaków), oba poniżej limitu 1000, bez długich myślników, kotwice sprawdzone funkcją `lib/kotwica.ts` i obecne na produkcji. Kod strony bez zmian, więc bez builda i IndexNow; commit zawiera tylko dziennik.
 **Dla Pawła:** Nowe, razem 5 minut, oba wątki są z dziś i tracą wartość z każdą godziną. Autor `Fluxlab`, „+ Dodaj komentarz” pod wątkiem (dodanie komentarza to akceptacja regulaminu forum, dlatego Twoje kliknięcie).
 
-1) https://forum.gofin.pl/1559520/e-doreczenia-poczta-polska, uzasadnienie: osoba dostała błędne „Tak” w ostatnim dniu terminu, prostujemy i dajemy zalecenia MRiT.
+1. https://forum.gofin.pl/1559520/e-doreczenia-poczta-polska, uzasadnienie: osoba dostała błędne „Tak” w ostatnim dniu terminu, prostujemy i dajemy zalecenia MRiT.
 
 > Uwaga, dla firmy odpowiedź brzmi raczej "nie". Na stronie Poczty Polskiej adresu do e-Doręczeń dla działalności z CEIDG się nie założy. Poczta jest tylko dostawcą skrzynki, a wniosek dla firmy z CEIDG albo KRS składa się wyłącznie przez Biznes.gov.pl (e-usługa albo wniosek o zmianę wpisu w CEIDG). mObywatel też nie pomoże, bo służy do prywatnego adresu.
 >
 > Co radzi MRiT w komunikacie z 29.09 o awarii:
+>
 > 1. Nie klikać "wyślij" kilka razy. Najpierw sprawdzić w Koncie Przedsiębiorcy, "Moje sprawy", czy wniosek już nie doszedł.
 > 2. Kodu weryfikacyjnego szukać też w SPAMie.
 > 3. Przepisy nie przewidują kary za niezałożenie adresu w terminie, więc wniosek złożony w pierwszych dniach października to nie katastrofa. Do aktywacji urzędy wysyłają pisma papierowo.
@@ -1394,11 +1398,12 @@ Poza poranną trójką bez zmian: Karol F w `pawel@fluxlab.pl` czeka na odpowied
 >
 > Zebraliśmy to z linkami do źródeł: https://fluxlab.pl/e-doreczenia-integracja?utm_source=gofin#biznes-gov-pl-nie-dziala-albo-sie-zawiesza-a-termin-mija-co
 
-2) https://forum.gofin.pl/1559521/ksef-a-posrednictwo-ubezpieczeniowe, uzasadnienie: pytający dostał dwie sprzeczne połówki odpowiedzi, a my składamy je w całość z podstawą prawną.
+2. https://forum.gofin.pl/1559521/ksef-a-posrednictwo-ubezpieczeniowe, uzasadnienie: pytający dostał dwie sprzeczne połówki odpowiedzi, a my składamy je w całość z podstawą prawną.
 
 > Uzupełnienie do przedmówców. Pośrednictwo ubezpieczeniowe jest zwolnione z VAT z art. 43 ust. 1 pkt 37, a przy tym zwolnieniu art. 106b ust. 2 w ogóle zwalnia z obowiązku wystawiania faktury. Fakturę trzeba wystawić dopiero wtedy, gdy nabywca o nią zażąda (art. 106b ust. 3).
 >
 > W praktyce:
+>
 > 1. Prowizja rozliczana z towarzystwem bez faktury: KSeF Pana nie dotyczy.
 > 2. Wystawia Pan fakturę firmie, bo zażądała albo tak się umówiliście: od 1.04.2026 idzie przez KSeF, także u podatnika zwolnionego. Do 31.12.2026 można ją wystawić poza KSeF, jeśli faktury w danym miesiącu nie przekraczają łącznie 10 tys. zł brutto.
 > 3. Faktura dla osoby prywatnej: KSeF nieobowiązkowy.
@@ -1521,6 +1526,7 @@ Dalej aktualne z wpisu 10:43: Wykop dziś do wieczora (tekst z wpisu 05:43) i Go
 **Dowód:** Kod strony bez zmian, więc bez builda i IndexNow; commit zawiera tylko dziennik. Sprawdzone: `https://forum.gofin.pl/1559542/e-doreczenia-dla-spolki-z-oo--czy-taki-adres-spolka-ma`, `https://forum.gofin.pl/1559520/e-doreczeniapoczta-polska`, `https://forum.gofin.pl/1559512/limit-kasy-fiskalnej-zapytanie`.
 **Dla Pawła:** Bez zmian: Wykop (wersja z 28.09 23:43, ważna do 2.10, czyli ostatnia okazja jutro rano), Gofin 1559490 i 1559395. Nie sprawdziliśmy w tym cyklu, czy te dwa wątki dostały nowe komentarze. Odpowiedzi firm wyłącznie szkicem przez `odpowiedz_mail.py` do Wojtka.
 **Zostało otwarte:** 2.10: komunikaty „zostały X dni” w `EDoreczeniaCheck.tsx` i `opengraph-image.tsx` zmienić na stan po terminie, po 4.10 usunąć z FAQ e-Doręczeń zdanie o przerwie 3/4.10. Jeśli ktoś zweryfikuje w gov.pl, czy firma z CEIDG może założyć adres bez Biznes.gov.pl (pytanie z Gofinu 1559520), to kandydat na FAQ. Kanały 2 i 3 mają malejący zwrot, bez ruchu z treści; przesunięcie wysiłku zależy od tego, czy Paweł opublikuje kolejkę.
+
 <!-- WYSLANO 2026-10-01 19:04 -->
 
 ## 2026-10-01 19:43
@@ -1588,12 +1594,13 @@ Dalej aktualne z wpisu 10:43: Wykop dziś do wieczora (tekst z wpisu 05:43) i Go
 **Ruch:** Ostatnia doba: **7 odsłon, 7 osób** (spadek o 53% wobec średniej 14,9). Tydzień: 82 odsłony, 32 osoby. 30 dni: 242 odsłony, 107 osób (licznik od 20.09 18:27). Najczęściej otwierane: `/` (6), `/automatyzacja-dla-biur-rachunkowych` (1). Źródła: www.google.com (1). Uruchomienia narzędzi: 0. Z telefonu 1 z 7, Chrome na Linux 6. Wejść z `utm_source=gofin` ani `wykop` nadal nie ma.
 **Dowód:** Commit `146e297` (przywrócenie dziennika) i commit z tym wpisem na `origin/main`. Kod strony bez zmian, więc bez builda i IndexNow. Odpowiedź Binga: `POST https://www.bing.com/indexnow` → `403 {"errorCode":"UserForbiddedToAccessSite","message":"User is unauthorized to access the site. Please verify the site using the key and try again"}`. Stan indeksu: `https://html.duckduckgo.com/html/?q=site:fluxlab.pl`.
 **Dla Pawła:** Jedno zadanie, około 5 minut, ważniejsze niż reszta kolejki, bo odblokowuje kanał 2:
+
 1. Wejdź na https://www.bing.com/webmasters i zaloguj się kontem Google, tym samym, które ma dostęp do Search Console fluxlab.pl (logowanie to akceptacja regulaminu Microsoftu, dlatego to Twoje kliknięcie).
 2. Na ekranie „Add your site” wybierz lewą kartę **„Import your sites from GSC”**, kliknij **„Import”**, zezwól na dostęp, zaznacz `fluxlab.pl` i znów **„Import”**. Strona zostanie zweryfikowana od razu, bez plików i rekordów DNS, a Bing przejmie mapę `https://fluxlab.pl/sitemap.xml`.
 3. Opcjonalnie, w menu po lewej **„URL Submission”**: wklej `https://fluxlab.pl/ksef-integracja`, `https://fluxlab.pl/e-doreczenia-integracja`, `https://fluxlab.pl/ksef-2027`, `https://fluxlab.pl/narzedzia`, `https://fluxlab.pl/audyt-strony`, `https://fluxlab.pl/audyt-poczty` i **„Submit”**.
-Napisz w dzienniku albo powiedz, gdy to zrobisz; następny cykl od razu puści `node scripts/indexnow.mjs` i sprawdzi, czy Bing odpowiada 200.
-Uwaga techniczna: lokalna gałąź `fluxcrm-lead` w `~/Projekty/fluxlab-site` ma commit `7ffbd07` z tym samym zepsutym dziennikiem i plik `cykl/dziennik.md` zatrzymany na 30.09 07:43. Przy scalaniu tej gałęzi weź `cykl/dziennik.md` z `main`, inaczej skasuje dwa dni wpisów drugi raz. Gałęzi nie ruszaliśmy. Reszta kolejki bez zmian: Gofin 1559490 i 1559395 (teksty z 29.09 21:43 i 30.09 01:43), tekst na Wykop po terminie e-Doręczeń tylko na Twoje życzenie.
-**Zostało otwarte:** Po imporcie do Bing Webmaster Tools: `node scripts/indexnow.mjs` i sprawdzić wspólny punkt (oczekiwane 200 albo 202), a za kilka dni `site:fluxlab.pl` w DuckDuckGo, czy pojawiły się strony KSeF i e-Doręczeń. Do tego czasu nowe FAQ pod asystentów mają mały sens, bo ich indeks tych stron nie widzi. Kanał 4 wstrzymany do pierwszej odpowiedzi albo nowej, mocniejszej puli. Kanał 3 w następnym cyklu. Po 4.10 usunąć z FAQ e-Doręczeń zdanie o przerwie 3/4.10. Do odświeżenia: `novafinanse.pl` po 3.10, `damar.pl` i `biurodukat.pl` około 8.10, `amkancelariaksiegowa.pl` i `biuro100.pl` około 10.10.
+   Napisz w dzienniku albo powiedz, gdy to zrobisz; następny cykl od razu puści `node scripts/indexnow.mjs` i sprawdzi, czy Bing odpowiada 200.
+   Uwaga techniczna: lokalna gałąź `fluxcrm-lead` w `~/Projekty/fluxlab-site` ma commit `7ffbd07` z tym samym zepsutym dziennikiem i plik `cykl/dziennik.md` zatrzymany na 30.09 07:43. Przy scalaniu tej gałęzi weź `cykl/dziennik.md` z `main`, inaczej skasuje dwa dni wpisów drugi raz. Gałęzi nie ruszaliśmy. Reszta kolejki bez zmian: Gofin 1559490 i 1559395 (teksty z 29.09 21:43 i 30.09 01:43), tekst na Wykop po terminie e-Doręczeń tylko na Twoje życzenie.
+   **Zostało otwarte:** Po imporcie do Bing Webmaster Tools: `node scripts/indexnow.mjs` i sprawdzić wspólny punkt (oczekiwane 200 albo 202), a za kilka dni `site:fluxlab.pl` w DuckDuckGo, czy pojawiły się strony KSeF i e-Doręczeń. Do tego czasu nowe FAQ pod asystentów mają mały sens, bo ich indeks tych stron nie widzi. Kanał 4 wstrzymany do pierwszej odpowiedzi albo nowej, mocniejszej puli. Kanał 3 w następnym cyklu. Po 4.10 usunąć z FAQ e-Doręczeń zdanie o przerwie 3/4.10. Do odświeżenia: `novafinanse.pl` po 3.10, `damar.pl` i `biurodukat.pl` około 8.10, `amkancelariaksiegowa.pl` i `biuro100.pl` około 10.10.
 
 <!-- WYSLANO 2026-10-02 11:05 -->
 
@@ -1605,3 +1612,17 @@ Uwaga techniczna: lokalna gałąź `fluxcrm-lead` w `~/Projekty/fluxlab-site` ma
 **Dowód:** Kod strony bez zmian, więc bez builda i IndexNow; commit zawiera tylko dziennik.
 **Dla Pawła:** To samo co we wpisie 10:43, najważniejsze: import strony do Bing Webmaster Tools przez „Import your sites from GSC” (https://www.bing.com/webmasters, około 5 minut). Dalej: Gofin 1559490 i 1559395, Wykop tylko na życzenie.
 **Zostało otwarte:** Po imporcie do Bing WMT: `node scripts/indexnow.mjs` i sprawdzić, czy wspólny punkt odpowiada 200 lub 202. Kanał 4 wstrzymany do pierwszej odpowiedzi albo nowej puli (sklepy internetowe). Kanał 1 w następnym cyklu. Po 4.10 usunąć z FAQ e-Doręczeń zdanie o przerwie 3/4.10.
+
+## 2026-10-02 14:00
+
+**Kanał:** 2, widoczność w asystentach AI (rotacja: 2, 3, 4, 1, teraz znów 2).
+
+**Co zrobione:** Do `llms.txt` (dokument dla asystentów AI) dodaliśmy pięć praktycznych pytań o integrację KSeF, które pojawiają się u ChatGPT i Claude: program obsługuje KSeF po co integracja, czy musimy zmienić program, skąd wiadać że umiemy, gdzie dane i token, zdążymy przed 2027. To odpowiadały już były na stronie `/ksef-integracja`, teraz są także w llms.txt, gdzie asystenci mogą je znaleźć zamiast samej linku do naszej strony.
+
+**Ruch:** Ostatnia doba: **14 odsłon, 9 osób** (spadek o 6% wobec średniej 14.9 z 7 okresów). Tydzień: 89 odsłon, 34 osoby. 30 dni: 249 odsłon, 109 osób (licznik od 20.09). Głównie z Google (6), ChatGPT 1. Uruchomienia narzędzi: 0 (próg rentowności to 30 na dobę). Z telefonu 1 z 14.
+
+**Dowód:** Commit `31c31c2` na `origin/main`. Build i `node scripts/spojnosc.mjs` czyste. IndexNow: 111 adresów, Yandex i Naver przyjęły (200), wspólny punkt 403 (Bing bez dostępu — znane od tygodnia). Produkcja: `https://fluxlab.pl/llms.txt` ma pięć nowych linijek w sekcji KSeF, linie 47-52.
+
+**Dla Pawła:** Nic. Kolejka kanałów: kanał 3 (KSeF jako magnes) w następnym cyklu.
+
+**Zostało otwarte:** Kanały 1 i 4 potrzebują Pawłowych kliknięć. Kanał 1 ma przygotowane teksty do Wykopa i Gofina (wpisy z poprzednich dni, konkretne URLs), kanał 4 potrzebuje nowej puli firm spoza ksiegowe_final.json (na przykład sklepy e-commerce na nowe FAQ o osobach prywatnych). Kanał 2 w następnym cyklu: kandydatka „korespondencja firma do firmy przez e-Doręczenia" (temat podobnie gorący jak KSeF).
