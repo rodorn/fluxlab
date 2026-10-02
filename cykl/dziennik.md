@@ -1605,5 +1605,3 @@ Uwaga techniczna: lokalna gałąź `fluxcrm-lead` w `~/Projekty/fluxlab-site` ma
 **Dowód:** Kod strony bez zmian, więc bez builda i IndexNow; commit zawiera tylko dziennik.
 **Dla Pawła:** To samo co we wpisie 10:43, najważniejsze: import strony do Bing Webmaster Tools przez „Import your sites from GSC” (https://www.bing.com/webmasters, około 5 minut). Dalej: Gofin 1559490 i 1559395, Wykop tylko na życzenie.
 **Zostało otwarte:** Po imporcie do Bing WMT: `node scripts/indexnow.mjs` i sprawdzić, czy wspólny punkt odpowiada 200 lub 202. Kanał 4 wstrzymany do pierwszej odpowiedzi albo nowej puli (sklepy internetowe). Kanał 1 w następnym cyklu. Po 4.10 usunąć z FAQ e-Doręczeń zdanie o przerwie 3/4.10.
-
-<!-- WYSLANO 2026-10-02 11:43 -->
