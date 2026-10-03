@@ -147,7 +147,7 @@ const faq = [
       "Tak. Każdy projekt ma prostą umowę z zakresem, ceną, harmonogramem, warunkami odbioru i warunkami rozwiązania współpracy. NDA podpisujemy standardowo, jeśli potrzebujesz, mamy własny wzór albo pracujemy na twoim.",
   },
   {
-    question: "Co jeśli po audycie uznamy, że mi się nie opłaca?",
+    question: "Co jeśli po audycie uznamy, że nam się nie opłaca?",
     answer:
       "Dostajesz dokument audytowy i nie kontynuujemy. Koszt audytu nie jest zwracany, ale cały materiał zostaje u ciebie, możesz na jego podstawie wdrożyć się samodzielnie albo zlecić komuś innemu.",
   },

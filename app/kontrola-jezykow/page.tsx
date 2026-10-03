@@ -102,7 +102,7 @@ export default function Page() {
         },
         {
           q: "Co jeśli nic nie znajdziecie?",
-          a: "Wtedy nie płacisz za audyt. Przy serwisach, które sprawdzałem, komplet bez zastrzeżeń zdarza się, ale rzadziej niż braki.",
+          a: "Wtedy nie płacisz za audyt. Przy serwisach, które sprawdzaliśmy, komplet bez zastrzeżeń zdarza się, ale rzadziej niż braki.",
         },
       ]}
       formId="order_kontrola_jezykow"

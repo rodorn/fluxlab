@@ -46,7 +46,7 @@ export default function Page() {
         },
         {
           title: "Dowód, który sprawdzisz sam",
-          desc: "Każda niezgodna pozycja ma w raporcie cenę przed i po oraz link do własnej karty produktu. Nie musisz mi wierzyć na słowo.",
+          desc: "Każda niezgodna pozycja ma w raporcie cenę przed i po oraz link do własnej karty produktu. Nie musisz wierzyć nam na słowo.",
         },
         {
           title: "Rejestr cen, czyli materiał dowodowy",
@@ -89,6 +89,18 @@ export default function Page() {
       ]}
       faq={[
         {
+          q: "Od jakiej ceny liczy się najniższą cenę z 30 dni przed obniżką?",
+          a: "Od wszystkich cen, które obowiązywały w ciągu 30 dni przed dniem wprowadzenia obniżki, i podaje się najniższą z nich obok ceny obniżonej (art. 4 ust. 2 ustawy z 9 maja 2014 o informowaniu o cenach towarów i usług, obowiązuje od 1 stycznia 2023). Gdy produkt jest w ofercie krócej niż 30 dni, liczy się najniższą cenę od pierwszego dnia sprzedaży do dnia obniżki (art. 4 ust. 3). Przy towarach, które szybko się psują, wystarczy cena sprzed pierwszej obniżki (art. 4 ust. 4). Obowiązek dotyczy każdej informacji o obniżce: przekreślonej ceny, procentu, hasła promocyjnego.",
+        },
+        {
+          q: "Czy procent rabatu liczymy od ceny katalogowej, czy od najniższej z 30 dni?",
+          a: "Od najniższej z 30 dni. Trybunał Sprawiedliwości UE orzekł 26 września 2024 w sprawie C-330/23 (Aldi Süd), że obniżka ogłoszona procentem albo hasłem podkreślającym korzystną cenę ma być liczona od tej najniższej ceny, a nie od ceny sprzed dnia promocji. Przykład: produkt kosztował 80 zł przez tydzień, potem 100 zł, teraz 80 zł. Napis „-20%” jest wtedy mylący, bo wobec najniższej ceny z 30 dni obniżki nie ma wcale.",
+        },
+        {
+          q: "Jaka jest kara za brak informacji o najniższej cenie z 30 dni?",
+          a: "Do 20 000 zł, nakłada ją wojewódzki inspektor Inspekcji Handlowej (art. 6 ust. 1 ustawy o informowaniu o cenach). Gdy przedsiębiorca co najmniej trzy razy w ciągu 12 miesięcy od pierwszego stwierdzenia naruszenia nie wykona obowiązku, kara może wynieść do 40 000 zł (art. 6 ust. 2). Kara dotyczy sklepu, a nie dostawcy wtyczki, która liczyła cenę źle.",
+        },
+        {
           q: "Czego potrzebujecie od nas, żeby zrobić skan?",
           a: "Tylko adresu sklepu. Skan opiera się wyłącznie na danych, które sklep i tak pokazuje publicznie, więc nie potrzebujemy loginu, hasła ani wtyczki.",
         },
@@ -106,7 +118,7 @@ export default function Page() {
         },
         {
           q: "A jeśli nic nie znajdziecie?",
-          a: "Wtedy nie płacisz za skan. Przy sklepach, które sprawdzałem, komplet zgodnych przecen zdarza się, ale rzadziej niż braki.",
+          a: "Wtedy nie płacisz za skan. Przy sklepach, które sprawdzaliśmy, komplet zgodnych przecen zdarza się, ale rzadziej niż braki.",
         },
       ]}
       formId="order_rejestr_cen"

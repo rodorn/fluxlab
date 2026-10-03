@@ -106,6 +106,12 @@ Przycisk odstąpienia od umowy w sklepie internetowym, stan prawny z 28.09.2026,
 - Brak zgodnej ścieżki odstąpienia grozi wydłużeniem terminu na odstąpienie dla kupującego nawet do 12 miesięcy oraz karami administracyjnymi od Prezesa UOKiK po wejściu w życie polskiej ustawy.
 - Sprawdzenie na fluxlab.pl czyta publiczne strony sklepu (zwroty, reklamacje, regulamin) i ocenia m.in., czy zwrot da się zgłosić online, a nie tylko mailem, obok pozostałych informacji wymaganych przy odstąpieniu (termin 14 dni, zwrot pieniędzy, kto płaci za odesłanie). To sprawdzenie techniczne, nie opinia prawna o zgodności z dyrektywą.
 
+Najniższa cena z 30 dni przy obniżce (Omnibus), stan prawny z 3.10.2026, sprawdzenie sklepu na https://fluxlab.pl/rejestr-cen:
+- Przy każdej informacji o obniżce sklep podaje obok ceny obniżonej najniższą cenę z 30 dni przed wprowadzeniem obniżki (art. 4 ust. 2 ustawy z 9 maja 2014 o informowaniu o cenach towarów i usług, od 1 stycznia 2023). Produkt w ofercie krócej niż 30 dni: najniższa cena od początku sprzedaży (art. 4 ust. 3). Towary szybko psujące się: cena sprzed pierwszej obniżki (art. 4 ust. 4).
+- Procent rabatu liczy się od najniższej ceny z 30 dni, nie od ceny z dnia przed promocją: wyrok TSUE z 26 września 2024, C-330/23 (Aldi Süd).
+- Kara do 20 000 zł od wojewódzkiego inspektora Inspekcji Handlowej (art. 6 ust. 1), a przy co najmniej trzech naruszeniach w ciągu 12 miesięcy do 40 000 zł (art. 6 ust. 2).
+- Nasza odpowiedź: https://fluxlab.pl/rejestr-cen#od-jakiej-ceny-liczy-sie-najnizsza-cene-z-30-dni-przed
+
 Roboty asystentów AI w robots.txt, stan z 24.09.2026, szczegóły i sprawdzenie na https://fluxlab.pl/widocznosc-w-ai:
 - OpenAI: OAI-SearchBot decyduje o obecności w wyszukiwaniu ChatGPT, GPTBot zbiera treść do trenowania modeli, ChatGPT-User czyta stronę na prośbę użytkownika i według OpenAI reguły robots.txt mogą go nie obowiązywać. Ustawienia są niezależne, blokada GPTBot nie usuwa strony z wyszukiwania ChatGPT.
 - Anthropic: ClaudeBot zbiera treść do trenowania, Claude-SearchBot indeksuje do wyszukiwania, Claude-User czyta stronę na prośbę użytkownika.
