@@ -117,8 +117,8 @@ export default function RyczaltCzyLiniowyArticle() {
                         </li>
                         <li>
                           Składka zdrowotna zryczałtowana, trzy progi zależne
-                          od rocznego przychodu (ok. 420, 700 lub 940 zł
-                          miesięcznie w 2026)
+                          od rocznego przychodu (498,35 zł, 830,58 zł lub 1
+                          495,04 zł miesięcznie w 2026)
                         </li>
                         <li>
                           Możliwość odliczenia 50% zapłaconej składki zdrowotnej
@@ -148,12 +148,12 @@ export default function RyczaltCzyLiniowyArticle() {
                         <li>Pełne odliczenie kosztów uzyskania przychodu</li>
                         <li>Brak kwoty wolnej od podatku</li>
                         <li>
-                          Składka zdrowotna: 4,9% dochodu (minimum ok. 315 zł
-                          miesięcznie)
+                          Składka zdrowotna: 4,9% dochodu (minimum 432,54 zł
+                          miesięcznie od lutego 2026)
                         </li>
                         <li>
                           Odliczenie składki zdrowotnej od podstawy
-                          opodatkowania do limitu 12 900 zł rocznie
+                          opodatkowania do limitu 14 100 zł rocznie
                         </li>
                         <li>
                           Prowadzenie KPiR (Księga Przychodów i Rozchodów) lub
@@ -247,7 +247,7 @@ export default function RyczaltCzyLiniowyArticle() {
                         </li>
                         <li>
                           Chcesz odliczać składkę zdrowotną od podstawy
-                          opodatkowania (do 12 900 zł rocznie)
+                          opodatkowania (do 14 100 zł rocznie)
                         </li>
                       </ul>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
@@ -279,17 +279,17 @@ export default function RyczaltCzyLiniowyArticle() {
                       </p>
                       <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
                         <li>
-                          Ryczałt: podatek 12% x 180 000 = 21 600 zł. Składka
-                          zdrowotna zryczałtowana ok. 8 400 zł/rok (po
-                          odliczeniu 50%). Łącznie ok. 30 000 zł.
+                          Ryczałt: składka zdrowotna 830,58 zł x 12 = 9 967 zł,
+                          połowa (4 983 zł) pomniejsza przychód. Podatek 12% x
+                          (180 000 - 4 983) = 21 002 zł. Łącznie ok. 30 970 zł.
                         </li>
                         <li>
-                          Liniowy: dochód 162 000 zł. Podatek 19% x (162 000 -
-                          12 900 odliczenie zdrowotnej) = ok. 28 300 zł. Składka
-                          zdrowotna 4,9% x 162 000 = 7 938 zł. Łącznie ok. 36
-                          200 zł.
+                          Liniowy: dochód 162 000 zł. Składka zdrowotna 4,9% x
+                          162 000 = 7 938 zł, odliczana w całości (limit 14 100
+                          zł). Podatek 19% x (162 000 - 7 938) = ok. 29 272 zł.
+                          Łącznie ok. 37 210 zł.
                         </li>
-                        <li>Wynik: ryczałt oszczędza ok. 6 200 zł rocznie.</li>
+                        <li>Wynik: ryczałt oszczędza ok. 6 240 zł rocznie.</li>
                       </ul>
 
                       <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
@@ -301,16 +301,16 @@ export default function RyczaltCzyLiniowyArticle() {
                       </p>
                       <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
                         <li>
-                          Ryczałt: podatek 15% x 240 000 = 36 000 zł. Składka
-                          zdrowotna ok. 11 300 zł/rok (po odliczeniu 50%).
-                          Łącznie ok. 47 300 zł.
+                          Ryczałt: składka zdrowotna 830,58 zł x 12 = 9 967 zł,
+                          połowa pomniejsza przychód. Podatek 15% x (240 000 -
+                          4 983) = 35 252 zł. Łącznie ok. 45 220 zł.
                         </li>
                         <li>
-                          Liniowy: dochód 144 000 zł. Podatek 19% x (144 000 -
-                          12 900) = ok. 24 900 zł. Składka zdrowotna 4,9% x 144
-                          000 = 7 056 zł. Łącznie ok. 31 950 zł.
+                          Liniowy: dochód 144 000 zł. Składka zdrowotna 4,9% x 144
+                          000 = 7 056 zł. Podatek 19% x (144 000 - 7 056) = ok.
+                          26 019 zł. Łącznie ok. 33 075 zł.
                         </li>
-                        <li>Wynik: liniowy oszczędza ok. 15 350 zł rocznie.</li>
+                        <li>Wynik: liniowy oszczędza ok. 12 145 zł rocznie.</li>
                       </ul>
 
                       <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
@@ -322,17 +322,18 @@ export default function RyczaltCzyLiniowyArticle() {
                       </p>
                       <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
                         <li>
-                          Ryczałt: podatek 12% x 144 000 = 17 280 zł. Składka
-                          zdrowotna ok. 8 400 zł/rok. Łącznie ok. 25 680 zł.
+                          Ryczałt: składka zdrowotna 830,58 zł x 12 = 9 967 zł,
+                          połowa pomniejsza przychód. Podatek 12% x (144 000 -
+                          4 983) = 16 682 zł. Łącznie ok. 26 649 zł.
                         </li>
                         <li>
-                          Liniowy: dochód 102 000 zł. Podatek 19% x (102 000 -
-                          12 900) = ok. 16 929 zł. Składka zdrowotna 4,9% x 102
-                          000 = 4 998 zł. Łącznie ok. 21 927 zł.
+                          Liniowy: dochód 102 000 zł. Składka zdrowotna 4,9% x 102
+                          000 = 4 998 zł. Podatek 19% x (102 000 - 4 998) = ok.
+                          18 430 zł. Łącznie ok. 23 428 zł.
                         </li>
                         <li>
-                          Wynik: liniowy oszczędza ok. 3 750 zł rocznie. Ale
-                          przy kosztach poniżej 2 500 zł/mies. ryczałt zaczyna
+                          Wynik: liniowy oszczędza ok. 3 220 zł rocznie. Ale
+                          przy kosztach poniżej ok. 2 300 zł/mies. ryczałt zaczyna
                           wygrywać.
                         </li>
                       </ul>

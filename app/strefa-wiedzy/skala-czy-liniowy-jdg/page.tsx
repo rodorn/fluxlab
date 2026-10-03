@@ -45,7 +45,7 @@ export default function SkalaCzyLiniowyJdgArticle() {
     {
       question: "Czy składka zdrowotna na liniowym jest niższa?",
       answer:
-        "Tak. Na liniowym wynosi 4,9% dochodu, a na skali 9% dochodu. Dodatkowo na liniowym można odliczyć składkę zdrowotną od podstawy opodatkowania do limitu 12 900 zł rocznie. Na skali nie ma żadnego odliczenia.",
+        "Tak. Na liniowym wynosi 4,9% dochodu, a na skali 9% dochodu. Dodatkowo na liniowym można odliczyć składkę zdrowotną od podstawy opodatkowania do limitu 14 100 zł rocznie. Na skali nie ma żadnego odliczenia.",
     },
     {
       question: "Czy możemy zmienić ze skali na liniowy w ciągu roku?",
@@ -147,12 +147,12 @@ export default function SkalaCzyLiniowyJdgArticle() {
                           Koszty uzyskania przychodu: tak, pełne odliczenie
                         </li>
                         <li>
-                          Składka zdrowotna: 4,9% dochodu (minimum ok. 315 zł
-                          miesięcznie)
+                          Składka zdrowotna: 4,9% dochodu (minimum 432,54 zł
+                          miesięcznie od lutego 2026)
                         </li>
                         <li>
                           Odliczenie składki zdrowotnej: tak, od podstawy
-                          opodatkowania do limitu 12 900 zł rocznie
+                          opodatkowania do limitu 14 100 zł rocznie
                         </li>
                         <li>
                           Wspólne rozliczenie z małżonkiem: nie, niedostępne
@@ -167,7 +167,7 @@ export default function SkalaCzyLiniowyJdgArticle() {
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Przy dochodzie 200 000 zł: składka zdrowotna na skali to
                         18 000 zł (nieodliczalna), na liniowym to 9 800 zł
-                        (odliczalna do 12 900 zł). Różnica w samej składce:
+                        (odliczalna do 14 100 zł). Różnica w samej składce:
                         ponad 8 000 zł.
                       </p>
                     </div>
@@ -332,9 +332,9 @@ export default function SkalaCzyLiniowyJdgArticle() {
                         </li>
                         <li>
                           Liniowy: zdrowotna 9 800 zł, podatek 19% x (200 000 -
-                          12 900) = 35 549 zł. Łącznie 45 349 zł.
+                          9 800) = 36 138 zł. Łącznie 45 938 zł.
                         </li>
-                        <li>Wynik: liniowy oszczędza ok. 9 051 zł rocznie.</li>
+                        <li>Wynik: liniowy oszczędza ok. 8 462 zł rocznie.</li>
                       </ul>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Sprawdź swój scenariusz w{" "}
@@ -392,7 +392,7 @@ export default function SkalaCzyLiniowyJdgArticle() {
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Na liniowym składka zdrowotna wynosi 4,9% dochodu,
                         niemal o połowę mniej. Dodatkowo można ją odliczyć od
-                        podstawy opodatkowania do limitu 12 900 zł rocznie. To
+                        podstawy opodatkowania do limitu 14 100 zł rocznie. To
                         podwójna korzyść: niższa składka i częściowy zwrot w
                         postaci niższego podatku.
                       </p>
@@ -407,7 +407,7 @@ export default function SkalaCzyLiniowyJdgArticle() {
                         <li>Skala: zdrowotna = 16 200 zł (nieodliczalna)</li>
                         <li>
                           Liniowy: zdrowotna = 8 820 zł, z czego 8 820 zł
-                          odliczasz od podstawy (mieści się w limicie 12 900
+                          odliczasz od podstawy (mieści się w limicie 14 100
                           zł), co obniża podatek o ok. 1 676 zł
                         </li>
                         <li>

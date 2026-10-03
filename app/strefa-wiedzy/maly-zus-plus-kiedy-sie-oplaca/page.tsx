@@ -75,7 +75,7 @@ export default function MalyZusPlusArticle() {
                         Mały ZUS Plus to mechanizm, który pozwala
                         przedsiębiorcom opłacać składki społeczne od niższej
                         podstawy wymiaru. Zamiast standardowej podstawy (60%
-                        przeciętnego wynagrodzenia, czyli 5 593,20 zł w 2026),
+                        przeciętnego wynagrodzenia, czyli 5 652 zł w 2026),
                         podstawa jest wyliczana na podstawie dochodu z
                         poprzedniego roku kalendarzowego.
                       </p>
@@ -152,9 +152,9 @@ export default function MalyZusPlusArticle() {
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Przy pełnym ZUS podstawa wymiaru składek społecznych
-                        wynosi 60% przeciętnego wynagrodzenia, czyli 5 593,20 zł
+                        wynosi 60% przeciętnego wynagrodzenia, czyli 5 652 zł
                         w 2026 roku. Łączne składki społeczne (bez zdrowotnej)
-                        od tej podstawy to ok. 1 773 zł miesięcznie.
+                        od tej podstawy to ok. 1 788 zł miesięcznie.
                       </p>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Na małym ZUS Plus podstawa jest wyliczana z dochodu z
@@ -170,28 +170,28 @@ export default function MalyZusPlusArticle() {
                         Roczny dochód: 60 000 zł. Przy 365 dniach działalności
                         podstawa wymiaru: (60 000 / 365) × 30 = ok. 4 932 zł.
                         Ale jest ograniczenie, podstawa nie może przekroczyć
-                        60% przeciętnego wynagrodzenia (5 593,20 zł) i nie może
-                        być niższa niż 30% minimalnego wynagrodzenia (1 447,80
+                        60% przeciętnego wynagrodzenia (5 652 zł) i nie może
+                        być niższa niż 30% minimalnego wynagrodzenia (1 441,80
                         zł).
                       </p>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Przy dochodzie 5 000 zł/mies. podstawa wyniesie ok. 4
-                        932 zł. Składki społeczne od tej podstawy to ok. 1 563
+                        932 zł. Składki społeczne od tej podstawy to ok. 1 560
                         zł miesięcznie.
                       </p>
                       <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
                         <li>
-                          Pełny ZUS: ok. 1 773 zł/mies. składek społecznych
+                          Pełny ZUS: ok. 1 788 zł/mies. składek społecznych
                         </li>
                         <li>
-                          Mały ZUS Plus (dochód 5 000/mies.): ok. 1 563 zł/mies.
+                          Mały ZUS Plus (dochód 5 000/mies.): ok. 1 560 zł/mies.
                         </li>
-                        <li>Oszczędność: ok. 210 zł/mies. (2 520 zł/rok)</li>
+                        <li>Oszczędność: ok. 228 zł/mies. (2 736 zł/rok)</li>
                       </ul>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Przy niższym dochodzie oszczędności są większe. Przy
                         dochodzie 3 000 zł/mies. podstawa spada do ok. 2 959 zł,
-                        a składki do ok. 937 zł, oszczędność rośnie do ok. 836
+                        a składki do ok. 936 zł, oszczędność rośnie do ok. 852
                         zł miesięcznie (ponad 10 000 zł rocznie).
                       </p>
 
@@ -253,11 +253,11 @@ export default function MalyZusPlusArticle() {
                       </h3>
                       <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
                         <li>
-                          Podstawa: 30% minimalnego wynagrodzenia (1 447,80 zł w
+                          Podstawa: 30% minimalnego wynagrodzenia (1 441,80 zł w
                           2026)
                         </li>
                         <li>
-                          Składki społeczne ok. 459 zł/mies. (bez chorobowej)
+                          Składki społeczne ok. 421 zł/mies. (bez chorobowej)
                         </li>
                         <li>Dostępny przez 24 miesiące po uldze na start</li>
                         <li>Znacznie niższe składki niż pełny ZUS</li>
@@ -280,10 +280,10 @@ export default function MalyZusPlusArticle() {
                       </h3>
                       <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
                         <li>
-                          Podstawa: 60% przeciętnego wynagrodzenia (5 593,20 zł
+                          Podstawa: 60% przeciętnego wynagrodzenia (5 652 zł
                           w 2026)
                         </li>
-                        <li>Składki społeczne ok. 1 773 zł/mies.</li>
+                        <li>Składki społeczne ok. 1 788 zł/mies.</li>
                         <li>Obowiązuje gdy nie przysługują ulgi</li>
                         <li>
                           Najwyższe składki, ale też najwyższa podstawa

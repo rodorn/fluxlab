@@ -51,7 +51,7 @@ export default function JakaFormaOpodatkowaniaJdgArticle() {
     {
       question: "Czy na liniowym możemy odliczyć składkę zdrowotną?",
       answer:
-        "Tak. Na podatku liniowym składka zdrowotna wynosi 4,9% dochodu i można ją odliczyć od podstawy opodatkowania do limitu 12 900 zł rocznie.",
+        "Tak. Na podatku liniowym składka zdrowotna wynosi 4,9% dochodu i można ją odliczyć od podstawy opodatkowania do limitu 14 100 zł rocznie.",
     },
     {
       question: "Czy warto konsultować wybór z księgowym?",
@@ -228,7 +228,7 @@ export default function JakaFormaOpodatkowaniaJdgArticle() {
                         samochód, podwykonawcy)
                       </li>
                       <li>
-                        Składka zdrowotna 4,9% z odliczeniem do 12 900 zł jest
+                        Składka zdrowotna 4,9% z odliczeniem do 14 100 zł jest
                         dla Ciebie korzystniejsza niż 9% bez odliczenia na skali
                       </li>
                       <li>
@@ -339,7 +339,7 @@ export default function JakaFormaOpodatkowaniaJdgArticle() {
                     </h3>
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
                       4,9% dochodu. Można ją odliczyć od podstawy opodatkowania,
-                      ale tylko do limitu 12 900 zł rocznie. To sprawia, że
+                      ale tylko do limitu 14 100 zł rocznie. To sprawia, że
                       efektywna składka jest niższa, a łączne obciążenie
                       bardziej przewidywalne.
                     </p>
