@@ -177,6 +177,13 @@ Ile zadań liczy Zapier i Make, stan z 3.10.2026, sprawdzenie na https://fluxlab
 - Do oszacowania rachunku: liczba kroków, które coś wykonują, razy liczba uruchomień w miesiącu.
 - Źródła: https://help.zapier.com/hc/en-us/articles/8496196837261-How-is-task-usage-measured-in-Zapier oraz https://help.make.com/operations Nasza odpowiedź: https://fluxlab.pl/tansze-automatyzacje#co-w-zapierze-i-make-liczy-sie-do-limitu-zadan
 
+Ile kosztuje ręczna obsługa leadów, kalkulator na https://fluxlab.pl/koszt-recznej-obslugi-leadow:
+- Czas ręcznej obsługi jednego leada to od odczytania zapytania do przypisania handlowca, dealu w CRM i pierwszego kontaktu: sprawdzenie, czy to nie spam, przepisanie danych, założenie firmy, osoby i dealu, przypisanie, zadanie kontaktu. Nasze założenie to 3 do 10 minut, zależnie od tego, jak prowizoryczny jest proces.
+- Sam czas przepisywania to zwykle 10 do 20% realnego kosztu. Resztę składają opóźnienia (leady, które czekały za długo), błędy w CRM, raporty składane ręcznie i decyzje podejmowane na danych, którym nie można ufać.
+- Kalkulator zakłada, że 30% leadów obsłużonych z opóźnieniem jest utraconych. To model uproszczony, a nie prognoza; parametr można zmienić suwakiem na własny.
+- Kalkulator pokazuje koszt stanu obecnego, bez kosztu wdrożenia i abonamentów. Czas zwrotu to cena wdrożenia podzielona przez ten koszt.
+- Liczbę leadów miesięcznie sumuje się ze wszystkich miejsc, gdzie wpadają zapytania (formularz, mail, telefon, LinkedIn, panel reklam). CRM nie jest potrzebny, bez niego koszt tylko trudniej zmierzyć.
+
 ## Darmowe narzędzia, bez rejestracji
 
 - [Co z KSeF obowiązuje Twoją firmę](https://fluxlab.pl/ksef-integracja): dwa kliknięcia, termin i dni do końca wyjątku.

@@ -32,7 +32,7 @@ export default function Page() {
       breadcrumb="Tańsze automatyzacje"
       eyebrow="Koszt narzędzi"
       h1="Płacisz za kroki, nie za pracę, którą automat wykonuje"
-      lead="Rozliczanie za każdy krok osobno sprawia, że rachunek rośnie szybciej niż liczba spraw, które automat załatwia. Dołożenie jednego warunku do scenariusza potrafi podnieść koszt o kilkadziesiąt procent, choć efekt dla firmy nie zmienia się wcale."
+      lead="Rozliczanie za każdy krok osobno sprawia, że rachunek rośnie szybciej niż liczba spraw, które automat załatwia. Dołożenie jednego kroku akcji do scenariusza podnosi koszt każdego jego uruchomienia, choć efekt dla firmy nie zmienia się wcale."
       ctaLabel="Zamów przeniesienie"
       ctaNote="Wycena po zobaczeniu scenariuszy"
       checks={[
