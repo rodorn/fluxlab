@@ -104,6 +104,10 @@ export default function Page() {
           q: "Skąd wiadomo, że adres nie działa, a nie że serwer miał chwilową awarię?",
           a: "Rozróżniamy kod błędu od braku odpowiedzi i pokazujemy jedno i drugie osobno. Przy pełnym przeglądzie każdy podejrzany adres sprawdzamy powtórnie, bo pojedyncza nieudana próba to za mało, żeby komuś powiedzieć, że ma zepsutą stronę.",
         },
+        {
+          q: "Jak zgłosić mapę witryny do Google i które pola mapy Google czyta?",
+          a: "Są dwa sposoby i warto użyć obu: w Google Search Console w zakładce Mapy witryn wpisujecie adres mapy, a w pliku robots.txt dopisujecie linię Sitemap: z pełnym adresem mapy, po którą sięgają też inne wyszukiwarki. W samej mapie Google ignoruje pola priority i changefreq, a datę lastmod bierze pod uwagę tylko wtedy, gdy jest spójna z faktycznymi zmianami na stronach. Data zmieniana przy każdym wdrożeniu, bez zmiany treści, szkodzi bardziej, niż pomaga. Search Console pokazuje też, kiedy Google ostatnio odczytał mapę i ile adresów z niej zna; jeśli ta liczba jest dużo mniejsza niż liczba adresów w mapie, Google czyta ją rzadko albo część adresów odrzucił. Źródło: developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap.",
+        },
       ]}
       formId="order_mapa_strony"
       formHeading="Zamów pełny przegląd"

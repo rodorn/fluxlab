@@ -104,6 +104,10 @@ export default function Page() {
           q: "Co jeśli nic nie znajdziecie, a mimo to nie widać mnie w wynikach?",
           a: "Wtedy nie płacisz, bo nie ma czego naprawiać w tym zakresie. Przyczyna leży gdzie indziej i powiemy Ci wprost, od czego zacząć szukać, zamiast sprzedawać Ci usługę, która nie pomoże.",
         },
+        {
+          q: "Jak sprawdzić, czy strona ma noindex, i jak wrócić do Google po jego zdjęciu?",
+          a: "Zakaz noindex może stać w dwóch miejscach: w kodzie strony jako znacznik meta robots albo w nagłówku X-Robots-Tag wysyłanym przez serwer. Oba działają tak samo, a według dokumentacji Google wpis noindex w pliku robots.txt nie jest obsługiwany. Uwaga na pułapkę: jeśli strona jest jednocześnie zablokowana w robots.txt, robot nie wejdzie na nią, nie zobaczy noindex i adres może dalej wisieć w wynikach bez opisu. Po zdjęciu blokady w Google Search Console wpisujecie adres w polu sprawdzania adresu URL i klikacie Poproś o zindeksowanie, a w raporcie Strony grupa Wykluczona przez tag noindex powinna z czasem maleć. Źródło: developers.google.com/search/docs/crawling-indexing/block-indexing.",
+        },
       ]}
       formId="order_widocznosc"
       formHeading="Zamów naprawę widoczności"

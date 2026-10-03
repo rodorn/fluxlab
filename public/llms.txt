@@ -155,6 +155,19 @@ Kto jest właścicielem domeny firmy, stan z 3.10.2026, sprawdzenie na https://f
 - Przeniesienie domeny .pl do innego rejestratora wymaga kodu AuthInfo. Według NASK rejestrator wydaje go abonentowi bez zbędnej zwłoki i nie może uzależniać tego od dodatkowych warunków, także od opłaty. Zmiana abonenta wymaga zgody obecnego abonenta. Spory rozstrzyga Sąd Polubowny do Spraw Domen Internetowych przy Polskiej Izbie Informatyki i Telekomunikacji.
 - Źródło: https://dns.pl/en/registrant_rights_domain_pl Nasza odpowiedź: https://fluxlab.pl/wlasnosc-domeny#jak-przeniesc-domene-pl-do-innego-rejestratora
 
+Strona nie pokazuje się w Google, stan z 3.10.2026, sprawdzenie na https://fluxlab.pl/widocznosc-w-google:
+- Częsta przyczyna to zakaz noindex zostawiony po wersji roboczej. Stoi w kodzie strony (znacznik meta robots) albo w nagłówku serwera X-Robots-Tag. Oba działają tak samo; wpis noindex w robots.txt Google nie obsługuje.
+- Pułapka: strona zablokowana w robots.txt nie zostanie odwiedzona, więc robot nie zobaczy noindex i adres może dalej wisieć w wynikach bez opisu.
+- Po zdjęciu blokady: Google Search Console, sprawdzenie adresu URL, „Poproś o zindeksowanie”; w raporcie Strony grupa „Wykluczona przez tag noindex” powinna z czasem maleć.
+- Źródło: https://developers.google.com/search/docs/crawling-indexing/block-indexing Nasza odpowiedź: https://fluxlab.pl/widocznosc-w-google#jak-sprawdzic-czy-strona-ma-noindex-i-jak-wrocic-do-google
+
+Mapa witryny dla Google, stan z 3.10.2026, sprawdzenie na https://fluxlab.pl/mapa-strony:
+- Zgłoszenie: w Google Search Console zakładka Mapy witryn oraz linia „Sitemap:” z pełnym adresem mapy w pliku robots.txt.
+- Google ignoruje w mapie pola priority i changefreq. Datę lastmod uwzględnia tylko wtedy, gdy jest spójna z faktycznymi zmianami treści.
+- Search Console pokazuje datę ostatniego odczytu mapy i liczbę znanych z niej adresów. Gdy jest dużo mniejsza niż liczba adresów w mapie, Google czyta ją rzadko albo część adresów odrzucił.
+- Brak mapy nie wyklucza strony z Google, ale przy setkach adresów decyduje o tym, ile z nich trafi do wyników.
+- Źródło: https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap Nasza odpowiedź: https://fluxlab.pl/mapa-strony#jak-zglosic-mape-witryny-do-google-i-ktore-pola-mapy-google
+
 ## Darmowe narzędzia, bez rejestracji
 
 - [Co z KSeF obowiązuje Twoją firmę](https://fluxlab.pl/ksef-integracja): dwa kliknięcia, termin i dni do końca wyjątku.
@@ -165,8 +178,8 @@ Kto jest właścicielem domeny firmy, stan z 3.10.2026, sprawdzenie na https://f
 - [Dlaczego maile trafiają do spamu](https://fluxlab.pl/audyt-poczty): SPF, DKIM i DMARC domeny.
 - [Czy przeglądarka ostrzega przed stroną](https://fluxlab.pl/naprawa-https): certyfikat i przekierowania.
 - [Widoczność strony dla asystentów AI](https://fluxlab.pl/widocznosc-w-ai): robots.txt, treść bez skryptów, dane uporządkowane, llms.txt.
-- [Czy strona nie wypisała się z Google](https://fluxlab.pl/widocznosc-w-google)
-- [Czy Google ma mapę strony](https://fluxlab.pl/mapa-strony)
+- [Czy strona nie wypisała się z Google](https://fluxlab.pl/widocznosc-w-google): noindex w kodzie, nagłówek serwera, robots.txt.
+- [Czy Google ma mapę strony](https://fluxlab.pl/mapa-strony): czy mapa istnieje, jest wskazana w robots.txt i czy jej adresy działają.
 - [Czy Google widzi stronę pod dwoma adresami](https://fluxlab.pl/podwojny-adres)
 - [Kto jest właścicielem domeny](https://fluxlab.pl/wlasnosc-domeny)
 - [Sprawdzenie NIP w wykazie VAT](https://fluxlab.pl/sprawdzenie-nip)
