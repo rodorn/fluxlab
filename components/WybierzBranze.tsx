@@ -244,7 +244,7 @@ export default function WybierzBranze({ wariant = "glowna" }: Props) {
           href="/kontakt"
           className="text-gray-600 hover:text-accent dark:text-gray-400 dark:hover:text-accent"
         >
-          Opisz swój proces, odpowiem co da się z nim zrobić →
+          Opisz swój proces, odpowiemy, co da się z nim zrobić →
         </Link>
       </div>
     </div>
