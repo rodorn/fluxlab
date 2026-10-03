@@ -756,8 +756,8 @@ export default function KosztRecznejObslugiLeadow() {
                               Pięć błędów, przez które koszt wychodzi za niski
                             </h2>
                             <p className="text-gray-600 dark:text-gray-400 mt-4 leading-relaxed">
-                              Każdy z nich osobno potrafi przekłamać rachunek o
-                              kilkadziesiąt procent. Razem sprawiają, że
+                              Każdy z nich osobno potrafi mocno przekłamać
+                              rachunek. Razem sprawiają, że
                               zarząd patrzy na inny problem niż ten, który firma
                               faktycznie ma.
                             </p>

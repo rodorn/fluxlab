@@ -282,7 +282,7 @@ export default function AutomatyzacjaFormularzaDoPipedrive() {
                             {[
                               "Marketing płaci za leady, sprzedaż widzi tylko część z nich w pipeline.",
                               "Każdy handlowiec wpisuje dane w swój sposób, raporty są nie do złożenia.",
-                              "Reakcja na leada zajmuje godziny zamiast minut, konwersja spada o kilkadziesiąt procent.",
+                              "Reakcja na leada zajmuje godziny zamiast minut, konwersja leadów wyraźnie spada.",
                               "Nikt nie wie, ile leadów przyszło w danym tygodniu, bo nikt nie liczy maili.",
                               "Handlowiec spędza 30–60 minut dziennie na klikaniu w CRM zamiast dzwonić.",
                               "Przy próbie zrobienia raportu „skąd przyszedł zamknięty klient” okazuje się, że źródło jest puste w 40% dealów.",

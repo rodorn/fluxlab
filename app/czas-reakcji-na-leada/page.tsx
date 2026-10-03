@@ -410,8 +410,8 @@ export default function CzasReakcjiNaLeada() {
                             zawsze ten sam:{" "}
                             <strong>
                               różnica między 5 min a 4 h to nie kosmetyka, to
-                              zwykle kilkadziesiąt procent rocznego przychodu z
-                              leadów.
+                              wyraźna część rocznego przychodu z leadów, której
+                              nie odzyskuje się później.
                             </strong>
                           </p>
                         </div>
