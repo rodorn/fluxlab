@@ -1865,3 +1865,79 @@ Dalej aktualne z wpisu 10:43: Wykop dziś do wieczora (tekst z wpisu 05:43) i Go
 **Dowód:** Brak zmian w kodzie, brak commita poza dziennikiem.
 **Dla Pawła:** Bez zmian, w tej kolejności: (1) komentarz pod https://forum.gofin.pl/1559625/faktura-sprzedazy-wysylka-do-ksef-czy-jest-to-dozwolone, tekst we wpisie 2026-10-02 23:30; (2) komentarz pod https://forum.gofin.pl/1559621/data-wystawienia-faktury-30092026-a-data-nadania-do-ksef, tekst we wpisie 2026-10-02 19:43; (3) https://www.bing.com/webmasters, „Import your sites from GSC”, zaznaczyć `fluxlab.pl`, „Import” (około 5 minut).
 **Zostało otwarte:** Kanał 4 od poniedziałku 9:00 (sklepy internetowe, odświeżenie `novafinanse.pl`). Kanał 1 tylko przy nowym wątku. Kanał 3 przy nowym komunikacie MF. Po 4.10 usunąć z FAQ e-Doręczeń zdanie o przerwie 3/4.10. UD477 sprawdzać co kilka dni. Kalkulator podatkowy: styczeń 314,96 zł, niski priorytet. Push idzie przez `git push origin HEAD:main`.
+
+## 2026-10-03 14:52
+
+**Kanał:** brak dowiezionego (sprawdzone kanały 1, 3 i 4; kanał 2 wyczerpany w cyklu 11:46).
+**Co zrobione:** Nic nie poszło w świat. Kanał 1: forum Gofin zwraca 403 dla automatycznego odczytu, więc nowego wątku nie dało się sprawdzić, a dwa gotowe teksty nadal czekają na Pawła. Kanał 3: na ksef.podatki.gov.pl nie ma nowych komunikatów po 25.09. Kanał 4: sobota, mail do firm dopiero od poniedziałku 9:00.
+**Ruch:** Ostatnia doba: **23 odsłony, 11 osób** (wzrost o 77% wobec średniej 13,0). Tydzień: 114 odsłon, 46 osób. 30 dni: 274 odsłony, 121 osób (licznik od 20.09 18:27). Najczęściej otwierane: `/` (13), `/narzedzia` (2), `/tansze-automatyzacje` (2). Źródła: www.google.com (7), www.facebook.com (2). Uruchomienia narzędzi: 1 (kalkulator). Z telefonu 3 z 23.
+**Dowód:** Brak zmian w kodzie, brak commita poza dziennikiem.
+**Dla Pawła:** Bez zmian, w tej kolejności: (1) komentarz pod https://forum.gofin.pl/1559625/faktura-sprzedazy-wysylka-do-ksef-czy-jest-to-dozwolone, tekst we wpisie 2026-10-02 23:30; (2) komentarz pod https://forum.gofin.pl/1559621/data-wystawienia-faktury-30092026-a-data-nadania-do-ksef, tekst we wpisie 2026-10-02 19:43; (3) https://www.bing.com/webmasters, „Import your sites from GSC”, zaznaczyć `fluxlab.pl`, „Import” (około 5 minut).
+**Zostało otwarte:** Kanał 4 od poniedziałku 9:00 (sklepy internetowe, odświeżenie `novafinanse.pl`). Kanał 1 tylko przy nowym wątku (Gofin blokuje WebFetch, sprawdzać przez curl lub wyszukiwarkę). Kanał 3 przy nowym komunikacie MF. Po 4.10 usunąć z FAQ e-Doręczeń zdanie o przerwie 3/4.10. UD477 sprawdzać co kilka dni. Push idzie przez `git push origin HEAD:main`.
+
+<!-- WYSLANO 2026-10-03 15:04 -->
+
+## 2026-10-03 15:46
+
+**Kanał:** brak dowiezionego (sprawdzone kanały 1, 3 i 4; kanał 2 wyczerpany w cyklu 11:46).
+**Co zrobione:** Nic nie poszło w świat. Kanał 1: curl na forum Gofin dla numerów 1559626 i wyżej zwraca przekierowanie na 404, czyli nowszego wątku niż 1559625 nie ma, a dwa gotowe teksty nadal czekają na Pawła. Kanał 3: na ksef.podatki.gov.pl nie ma nowych komunikatów. Kanał 4: sobota, mail do firm dopiero od poniedziałku 9:00.
+**Ruch:** Ostatnia doba: **22 odsłony, 10 osób** (wzrost o 67% wobec średniej 13,1). Tydzień: 114 odsłon, 46 osób. 30 dni: 274 odsłony, 121 osób (licznik od 20.09 18:27). Najczęściej otwierane: `/` (12), `/narzedzia` (2), `/tansze-automatyzacje` (2). Źródła: www.google.com (7), www.facebook.com (2). Uruchomienia narzędzi: 1 (kalkulator). Z telefonu 2 z 22.
+**Dowód:** Brak zmian w kodzie, brak commita poza dziennikiem.
+**Dla Pawła:** Bez zmian, w tej kolejności: (1) komentarz pod https://forum.gofin.pl/1559625/faktura-sprzedazy-wysylka-do-ksef-czy-jest-to-dozwolone, tekst we wpisie 2026-10-02 23:30; (2) komentarz pod https://forum.gofin.pl/1559621/data-wystawienia-faktury-30092026-a-data-nadania-do-ksef, tekst we wpisie 2026-10-02 19:43; (3) https://www.bing.com/webmasters, „Import your sites from GSC”, zaznaczyć `fluxlab.pl`, „Import” (około 5 minut).
+**Zostało otwarte:** Kanał 4 od poniedziałku 9:00 (sklepy internetowe, odświeżenie `novafinanse.pl`). Kanał 1 tylko przy nowym wątku (numery powyżej 1559625 sprawdzać przez curl). Kanał 3 przy nowym komunikacie MF. Po 4.10 usunąć z FAQ e-Doręczeń zdanie o przerwie 3/4.10. UD477 sprawdzać co kilka dni. Push idzie przez `git push origin HEAD:main`.
+
+## 2026-10-03 16:46
+
+**Kanał:** brak dowiezionego (sprawdzone kanały 1, 3 i 4; kanał 2 wyczerpany w cyklu 11:46).
+**Co zrobione:** Nic nie poszło w świat. Kanał 1: curl na forum Gofin dla 1559626, 1559627 i 1559630 zwraca przekierowanie na 404, czyli nowszego wątku niż 1559625 nie ma, a dwa gotowe teksty nadal czekają na Pawła. Kanał 3: na ksef.podatki.gov.pl nie ma nowych komunikatów. Kanał 4: sobota, mail do firm dopiero od poniedziałku 9:00.
+**Ruch:** Ostatnia doba: **21 odsłon, 9 osób** (wzrost o 58% wobec średniej 13,3). Tydzień: 114 odsłon, 46 osób. 30 dni: 274 odsłony, 121 osób (licznik od 20.09 18:27). Najczęściej otwierane: `/` (11), `/narzedzia` (2), `/tansze-automatyzacje` (2). Źródła: www.google.com (7), www.facebook.com (2). Uruchomienia narzędzi: 1 (kalkulator). Z telefonu 1 z 21.
+**Dowód:** Brak zmian w kodzie, brak commita poza dziennikiem.
+**Dla Pawła:** Bez zmian, w tej kolejności: (1) komentarz pod https://forum.gofin.pl/1559625/faktura-sprzedazy-wysylka-do-ksef-czy-jest-to-dozwolone, tekst we wpisie 2026-10-02 23:30; (2) komentarz pod https://forum.gofin.pl/1559621/data-wystawienia-faktury-30092026-a-data-nadania-do-ksef, tekst we wpisie 2026-10-02 19:43; (3) https://www.bing.com/webmasters, „Import your sites from GSC”, zaznaczyć `fluxlab.pl`, „Import” (około 5 minut).
+**Zostało otwarte:** Kanał 4 od poniedziałku 9:00 (sklepy internetowe, odświeżenie `novafinanse.pl`). Kanał 1 tylko przy nowym wątku (numery powyżej 1559625 sprawdzać przez curl). Kanał 3 przy nowym komunikacie MF. Po 4.10 usunąć z FAQ e-Doręczeń zdanie o przerwie 3/4.10. UD477 sprawdzać co kilka dni. Push idzie przez `git push origin HEAD:main`.
+
+## 2026-10-03 17:46
+
+**Kanał:** brak dowiezionego (sprawdzone kanały 1, 3 i 4; kanał 2 wyczerpany w cyklu 11:46).
+**Co zrobione:** Nic nie poszło w świat. Kanał 1: curl na forum Gofin dla 1559626, 1559628 i 1559635 zwraca przekierowanie na 404, czyli nowszego wątku niż 1559625 nie ma, a dwa gotowe teksty nadal czekają na Pawła. Kanał 3: na ksef.podatki.gov.pl najnowsza data to nadal 25.09.2026. Kanał 4: sobota, mail do firm dopiero od poniedziałku 9:00.
+**Ruch:** Ostatnia doba: **21 odsłon, 9 osób** (wzrost o 58% wobec średniej 13,3). Tydzień: 114 odsłon, 46 osób. 30 dni: 274 odsłony, 121 osób (licznik od 20.09 18:27). Najczęściej otwierane: `/` (11), `/narzedzia` (2), `/tansze-automatyzacje` (2). Źródła: www.google.com (7), www.facebook.com (2). Uruchomienia narzędzi: 1 (kalkulator).
+**Dowód:** Brak zmian w kodzie, brak commita poza dziennikiem.
+**Dla Pawła:** Bez zmian, w tej kolejności: (1) komentarz pod https://forum.gofin.pl/1559625/faktura-sprzedazy-wysylka-do-ksef-czy-jest-to-dozwolone, tekst we wpisie 2026-10-02 23:30; (2) komentarz pod https://forum.gofin.pl/1559621/data-wystawienia-faktury-30092026-a-data-nadania-do-ksef, tekst we wpisie 2026-10-02 19:43; (3) https://www.bing.com/webmasters, „Import your sites from GSC”, zaznaczyć `fluxlab.pl`, „Import” (około 5 minut).
+**Zostało otwarte:** Kanał 4 od poniedziałku 9:00 (sklepy internetowe, odświeżenie `novafinanse.pl`). Kanał 1 tylko przy nowym wątku (numery powyżej 1559625 sprawdzać przez curl). Kanał 3 przy nowym komunikacie MF. Po 4.10 usunąć z FAQ e-Doręczeń zdanie o przerwie 3/4.10. UD477 sprawdzać co kilka dni. Push idzie przez `git push origin HEAD:main`.
+
+## 2026-10-03 18:46
+
+**Kanał:** brak dowiezionego (sprawdzone kanały 1, 3 i 4; kanał 2 wyczerpany w cyklu 11:46).
+**Co zrobione:** Nic nie poszło w świat. Kanał 1: curl na forum Gofin dla 1559626, 1559629 i 1559640 zwraca przekierowanie na 404, czyli nowszego wątku niż 1559625 nie ma, a dwa gotowe teksty nadal czekają na Pawła. Kanał 3: na ksef.podatki.gov.pl najnowsza data to nadal 25.09.2026. Kanał 4: sobota, mail do firm dopiero od poniedziałku 9:00.
+**Ruch:** Ostatnia doba: **14 odsłon, 8 osób** (spadek o 2% wobec średniej 14,3). Tydzień: 114 odsłon, 46 osób. 30 dni: 274 odsłony, 121 osób (licznik od 20.09 18:27). Najczęściej otwierane: `/` (7), `/narzedzia` (2), `/tansze-automatyzacje` (2). Źródła: www.google.com (7), www.facebook.com (2). Uruchomienia narzędzi: 1 (kalkulator). Z telefonu 1 z 14.
+**Dowód:** Brak zmian w kodzie, brak commita poza dziennikiem.
+**Dla Pawła:** Bez zmian, w tej kolejności: (1) komentarz pod https://forum.gofin.pl/1559625/faktura-sprzedazy-wysylka-do-ksef-czy-jest-to-dozwolone, tekst we wpisie 2026-10-02 23:30; (2) komentarz pod https://forum.gofin.pl/1559621/data-wystawienia-faktury-30092026-a-data-nadania-do-ksef, tekst we wpisie 2026-10-02 19:43; (3) https://www.bing.com/webmasters, „Import your sites from GSC”, zaznaczyć `fluxlab.pl`, „Import” (około 5 minut).
+**Zostało otwarte:** Kanał 4 od poniedziałku 9:00 (sklepy internetowe, odświeżenie `novafinanse.pl`). Kanał 1 tylko przy nowym wątku (numery powyżej 1559625 sprawdzać przez curl). Kanał 3 przy nowym komunikacie MF. Po 4.10 usunąć z FAQ e-Doręczeń zdanie o przerwie 3/4.10. UD477 sprawdzać co kilka dni. Push idzie przez `git push origin HEAD:main`.
+
+<!-- WYSLANO 2026-10-03 19:04 -->
+
+## 2026-10-03 19:46
+
+**Kanał:** brak dowiezionego (sprawdzone kanały 1, 3 i 4; kanał 2 wyczerpany w cyklu 11:46).
+**Co zrobione:** Nic nie poszło w świat. Kanał 1: curl na forum Gofin dla 1559626, 1559631 i 1559645 zwraca przekierowanie na 404, czyli nowszego wątku niż 1559625 nie ma, a dwa gotowe teksty nadal czekają na Pawła. Kanał 3: na ksef.podatki.gov.pl najnowsza data to nadal 25.09.2026. Kanał 4: sobota, mail do firm dopiero od poniedziałku 9:00.
+**Ruch:** Ostatnia doba: **15 odsłon, 9 osób** (wzrost o 5% wobec średniej 14,3). Tydzień: 115 odsłon, 47 osób. 30 dni: 275 odsłon, 122 osoby (licznik od 20.09 18:27). Najczęściej otwierane: `/` (8), `/narzedzia` (2), `/tansze-automatyzacje` (2). Źródła: www.google.com (7), www.facebook.com (2). Uruchomienia narzędzi: 1 (kalkulator). Z telefonu 2 z 15.
+**Dowód:** Brak zmian w kodzie, brak commita poza dziennikiem.
+**Dla Pawła:** Bez zmian, w tej kolejności: (1) komentarz pod https://forum.gofin.pl/1559625/faktura-sprzedazy-wysylka-do-ksef-czy-jest-to-dozwolone, tekst we wpisie 2026-10-02 23:30; (2) komentarz pod https://forum.gofin.pl/1559621/data-wystawienia-faktury-30092026-a-data-nadania-do-ksef, tekst we wpisie 2026-10-02 19:43; (3) https://www.bing.com/webmasters, „Import your sites from GSC”, zaznaczyć `fluxlab.pl`, „Import” (około 5 minut).
+**Zostało otwarte:** Kanał 4 od poniedziałku 9:00 (sklepy internetowe, odświeżenie `novafinanse.pl`). Kanał 1 tylko przy nowym wątku (numery powyżej 1559625 sprawdzać przez curl). Kanał 3 przy nowym komunikacie MF. Po 4.10 usunąć z FAQ e-Doręczeń zdanie o przerwie 3/4.10. UD477 sprawdzać co kilka dni. Push idzie przez `git push origin HEAD:main`.
+
+## 2026-10-03 20:46
+
+**Kanał:** brak dowiezionego (sprawdzone kanały 1, 3 i 4; kanał 2 wyczerpany w cyklu 11:46).
+**Co zrobione:** Nic nie poszło w świat. Kanał 1: curl na forum Gofin dla 1559626, 1559632 i 1559650 zwraca 404, czyli nowszego wątku niż 1559625 nie ma, a dwa gotowe teksty nadal czekają na Pawła. Kanał 3: na ksef.podatki.gov.pl najnowsza data to nadal 25.09.2026. Kanał 4: sobota, mail do firm dopiero od poniedziałku 9:00.
+**Ruch:** Ostatnia doba: **35 odsłon, 9 osób** (wzrost o 143% wobec średniej 14,4). Tydzień: 136 odsłon, 48 osób. 30 dni: 296 odsłon, 123 osoby (licznik od 20.09 18:27). Najczęściej otwierane: `/` (7), `/narzedzia` (3), `/automatyzacja-leadow-crm` (2), `/strony-www` (2), `/tansze-automatyzacje` (2). Źródła: www.google.com (7), www.facebook.com (1). Uruchomienia narzędzi: 1 (kalkulator), zdarzenie lead_diagnoza (1). Z telefonu 2 z 35.
+**Dowód:** Brak zmian w kodzie, brak commita poza dziennikiem.
+**Dla Pawła:** Bez zmian, w tej kolejności: (1) komentarz pod https://forum.gofin.pl/1559625/faktura-sprzedazy-wysylka-do-ksef-czy-jest-to-dozwolone, tekst we wpisie 2026-10-02 23:30; (2) komentarz pod https://forum.gofin.pl/1559621/data-wystawienia-faktury-30092026-a-data-nadania-do-ksef, tekst we wpisie 2026-10-02 19:43; (3) https://www.bing.com/webmasters, „Import your sites from GSC”, zaznaczyć `fluxlab.pl`, „Import” (około 5 minut).
+**Zostało otwarte:** Kanał 4 od poniedziałku 9:00 (sklepy internetowe, odświeżenie `novafinanse.pl`). Kanał 1 tylko przy nowym wątku (numery powyżej 1559625 sprawdzać przez curl). Kanał 3 przy nowym komunikacie MF. Po 4.10 usunąć z FAQ e-Doręczeń zdanie o przerwie 3/4.10. UD477 sprawdzać co kilka dni. Push idzie przez `git push origin HEAD:main`.
+
+## 2026-10-03 21:46
+
+**Kanał:** 2 (widoczność w asystentach AI).
+**Co zrobione:** Na `/e-doreczenia-integracja` i w `llms.txt` jest nowa odpowiedź na pytanie, które firmy z CEIDG zadają tuż po terminie z 1.10: „wniosek o adres do e-Doręczeń został odrzucony, dlaczego i co teraz”. Odpowiedź podaje siedem powodów z Biznes.gov.pl (dane niezgodne z PESEL, polskie znaki i tylko pierwsze imię, podpis niezgodny z reprezentacją, brak pełnomocnictwa, brak podpisu pod załącznikami, firma ma już adres) i mówi, co zrobić przy każdym z nich. Wcześniejsze cykle uznawały kanał 2 za wyczerpany, ale ten temat nie był pokryty. Wyszukiwanie świeżych wątków poza Gofinem (kanał 1) nie dało żadnego otwartego wątku, pod którym dałoby się odpowiedzieć: w wynikach są tylko artykuły prasowe i forum EZD RP dla urzędów.
+**Ruch:** Ostatnia doba: **34 odsłony, 8 osób** (wzrost o 133% wobec średniej 14,6). Tydzień: 136 odsłon, 48 osób. 30 dni: 296 odsłon, 123 osoby (licznik od 20.09 18:27). Najczęściej otwierane: `/` (6), `/narzedzia` (3), `/automatyzacja-leadow-crm` (2), `/strony-www` (2), `/tansze-automatyzacje` (2). Źródła: www.google.com (6), www.facebook.com (1). Uruchomienia narzędzi: 1 (kalkulator), zdarzenie lead_diagnoza (1). Z telefonu 2 z 34.
+**Dowód:** Commit `55155df` na `origin/main`, build i `node scripts/spojnosc.mjs` czyste. Na produkcji https://fluxlab.pl/e-doreczenia-integracja#nasz-wniosek-o-adres-do-e-doreczen-zostal-odrzucony jest nowa odpowiedź, a https://fluxlab.pl/llms.txt zawiera źródło biznes.gov.pl/pl/portal/005778. IndexNow: 111 adresów, 2 z 3 punktów przyjęły (Bing nadal 403).
+**Dla Pawła:** Bez zmian, w tej kolejności: (1) komentarz pod https://forum.gofin.pl/1559625/faktura-sprzedazy-wysylka-do-ksef-czy-jest-to-dozwolone, tekst we wpisie 2026-10-02 23:30; (2) komentarz pod https://forum.gofin.pl/1559621/data-wystawienia-faktury-30092026-a-data-nadania-do-ksef, tekst we wpisie 2026-10-02 19:43; (3) https://www.bing.com/webmasters, „Import your sites from GSC”, zaznaczyć `fluxlab.pl`, „Import” (około 5 minut).
+**Zostało otwarte:** Kanał 4 od poniedziałku 9:00 (sklepy internetowe, odświeżenie `novafinanse.pl`). Kanał 2: po terminie z 1.10 pytania o e-Doręczenia przesuwają się z „od kiedy” na problemy z wnioskiem i aktywacją, warto szukać dalszych takich pytań. Kanał 1 tylko przy nowym wątku (numery powyżej 1559625 sprawdzać przez curl). Kanał 3 przy nowym komunikacie MF. Po 4.10 usunąć z FAQ e-Doręczeń i z `llms.txt` zdanie o przerwie 3/4.10. UD477 sprawdzać co kilka dni. Push idzie przez `git push origin HEAD:main`.
