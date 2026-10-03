@@ -171,6 +171,12 @@ Mapa witryny dla Google, stan z 3.10.2026, sprawdzenie na https://fluxlab.pl/map
 - Brak mapy nie wyklucza strony z Google, ale przy setkach adresów decyduje o tym, ile z nich trafi do wyników.
 - Źródło: https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap Nasza odpowiedź: https://fluxlab.pl/mapa-strony#jak-zglosic-mape-witryny-do-google-i-ktore-pola-mapy-google
 
+Ile zadań liczy Zapier i Make, stan z 3.10.2026, sprawdzenie na https://fluxlab.pl/tansze-automatyzacje:
+- Zapier: do limitu liczy się każdy udany krok akcji. Nie liczą się wyzwalacze, filtry, kroki Paths, Formatter, Delay, Looping ani kroki zakończone błędem.
+- Make: operacja to jedno uruchomienie modułu. Moduł wyzwalający to jedna operacja bez względu na liczbę zwróconych danych, zwykły moduł liczy się osobno dla każdej porcji danych (pięć wysłanych maili to pięć operacji).
+- Do oszacowania rachunku: liczba kroków, które coś wykonują, razy liczba uruchomień w miesiącu.
+- Źródła: https://help.zapier.com/hc/en-us/articles/8496196837261-How-is-task-usage-measured-in-Zapier oraz https://help.make.com/operations Nasza odpowiedź: https://fluxlab.pl/tansze-automatyzacje#co-w-zapierze-i-make-liczy-sie-do-limitu-zadan
+
 ## Darmowe narzędzia, bez rejestracji
 
 - [Co z KSeF obowiązuje Twoją firmę](https://fluxlab.pl/ksef-integracja): dwa kliknięcia, termin i dni do końca wyjątku.
@@ -189,7 +195,7 @@ Mapa witryny dla Google, stan z 3.10.2026, sprawdzenie na https://fluxlab.pl/map
 - [Czy dłużnik znika z KRS](https://fluxlab.pl/czujka-rejestrowa)
 - [Ile spółek dziennie znika z KRS bez likwidacji](https://fluxlab.pl/ile-spolek-znika-z-krs)
 - [Informacja o najniższej cenie przy przecenach, Omnibus](https://fluxlab.pl/rejestr-cen)
-- [Ile przepłacasz za Zapiera i Make](https://fluxlab.pl/tansze-automatyzacje)
+- [Ile przepłacasz za Zapiera i Make](https://fluxlab.pl/tansze-automatyzacje): policzone zadania i operacje na Twoich liczbach.
 - [Sprawdzenie zasad zwrotów w sklepie](https://fluxlab.pl/panel-zwrotow): czego kupujący nie znajdzie, w tym obowiązkowy przycisk odstąpienia od umowy.
 - [Kalkulator kosztu ręcznej obsługi leadów](https://fluxlab.pl/koszt-recznej-obslugi-leadow)
 - [Kalkulator podatkowy JDG](https://fluxlab.pl/kalkulator-podatkowy)

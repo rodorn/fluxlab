@@ -101,6 +101,10 @@ export default function Page() {
           a: "Policz to kalkulatorem wyżej na swoich liczbach. W uproszczeniu: im więcej kroków ma scenariusz i im częściej się uruchamia, tym szybciej migracja się zwraca. Przy kilkuset uruchomieniach miesięcznie zwykle nie warto.",
         },
         {
+          q: "Co w Zapierze i Make liczy się do limitu zadań?",
+          a: "W Zapierze zadaniem jest każdy udany krok akcji. Wyzwalacz, filtry, kroki Paths, Formatter, Delay i Looping zadań nie zużywają, a krok, który zakończył się błędem, też nie. W Make operacją jest jedno uruchomienie modułu, przy czym moduł wyzwalający liczy się jako jedna operacja bez względu na to, ile danych zwróci, a zwykły moduł liczy się osobno dla każdej porcji danych. Pięć maili wysłanych jednym modułem to pięć operacji. Dlatego policz kroki, które naprawdę coś robią, razy liczbę uruchomień, a nie wszystkie klocki na schemacie.",
+        },
+        {
           q: "Czy to jest legalne wobec obecnego dostawcy?",
           a: "Tak. Rezygnujesz z płatnej usługi i uruchamiasz u siebie narzędzie z otwartym kodem, przeznaczone właśnie do tego. Nie obchodzimy żadnych zabezpieczeń ani warunków.",
         },
