@@ -41,7 +41,17 @@ const faqs = [
   {
     question: "Jak liczy się składkę zdrowotną na ryczałcie w 2026?",
     answer:
-      "Na ryczałcie składka zdrowotna wynosi 9% od podstawy zależnej od rocznego przychodu: do 60 000 zł, 60% przeciętnego wynagrodzenia, do 300 000 zł, 100%, powyżej, 180%. W 2026 r. przeciętne wynagrodzenie wynosi 9 322 zł.",
+      "Na ryczałcie składka zdrowotna wynosi 9% od podstawy zależnej od rocznego przychodu: do 60 000 zł, 60% przeciętnego wynagrodzenia, do 300 000 zł, 100%, powyżej, 180%. Podstawą jest przeciętne wynagrodzenie z IV kwartału 2025 r., 9 228,64 zł, więc składka wynosi miesięcznie 498,35 zł, 830,58 zł albo 1 495,04 zł.",
+  },
+  {
+    question: "Ile wynosi ZUS dla JDG w 2026?",
+    answer:
+      "Pełny ZUS liczy się od 5 652 zł (60% prognozowanego przeciętnego wynagrodzenia 9 420 zł): emerytalna 1 103,27 zł, rentowa 452,16 zł, wypadkowa 94,39 zł, Fundusz Pracy i Fundusz Solidarnościowy 138,47 zł, dobrowolna chorobowa 138,47 zł, razem z chorobową 1 926,76 zł miesięcznie. Mały ZUS liczy się od 1 441,80 zł (30% płacy minimalnej 4 806 zł). Składka zdrowotna jest osobno.",
+  },
+  {
+    question: "Ile wynosi minimalna składka zdrowotna na skali i liniowym w 2026?",
+    answer:
+      "432,54 zł miesięcznie od lutego do grudnia 2026 (9% płacy minimalnej 4 806 zł), za styczeń 314,96 zł. Na skali składka to 9% dochodu, na liniowym 4,9% dochodu, ale nigdy mniej niż to minimum. Na liniowym zapłaconą składkę odliczamy od dochodu do 14 100 zł w 2026 r.",
   },
   {
     question: "Czy na ryczałcie możemy odliczać koszty?",
@@ -521,8 +531,10 @@ export default function KalkulatorPodatkowyPage() {
                               Podstawy wymiaru ZUS
                             </p>
                             <p>
-                              Przeciętne wynagrodzenie: 9 322 zł, minimalne
-                              wynagrodzenie: 4 826 zł
+                              Prognozowane przeciętne wynagrodzenie: 9 420 zł,
+                              minimalne wynagrodzenie: 4 806 zł, przeciętne
+                              wynagrodzenie z IV kwartału 2025 r. (ryczałt):
+                              9 228,64 zł
                             </p>
                           </div>
                         </div>

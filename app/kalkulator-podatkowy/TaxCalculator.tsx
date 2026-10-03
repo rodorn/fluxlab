@@ -21,8 +21,8 @@ const TAX_REDUCTION = 3_600; // 12% × 30 000
 const LINEAR_RATE = 0.19;
 
 // ZUS – podstawy wymiaru 2026
-const AVG_SALARY = 9_322;
-const MIN_WAGE = 4_826;
+const AVG_SALARY = 9_420;
+const MIN_WAGE = 4_806;
 const FULL_ZUS_BASE = Math.round(AVG_SALARY * 0.6 * 100) / 100;
 const SMALL_ZUS_BASE = Math.round(MIN_WAGE * 0.3 * 100) / 100;
 
@@ -38,17 +38,19 @@ const FP_RATE = 0.0245;
 // Składka zdrowotna
 const HEALTH_RATE_SKALA = 0.09;
 const HEALTH_RATE_LINEAR = 0.049;
-const HEALTH_MIN_BASE = Math.round(MIN_WAGE * 0.75 * 100) / 100;
+const HEALTH_MIN_BASE = MIN_WAGE;
+// Przeciętne wynagrodzenie w IV kwartale 2025 z nagrodami, podstawa zdrowotnej na ryczałcie
+const RYCZALT_HEALTH_SALARY = 9_228.64;
 
 // Ryczałt – progi składki zdrowotnej
 const RYCZALT_HEALTH_BRACKETS: { limit: number; base: number }[] = [
-  { limit: 60_000, base: Math.round(AVG_SALARY * 0.6 * 100) / 100 },
-  { limit: 300_000, base: AVG_SALARY },
-  { limit: Infinity, base: Math.round(AVG_SALARY * 1.8 * 100) / 100 },
+  { limit: 60_000, base: Math.round(RYCZALT_HEALTH_SALARY * 0.6 * 100) / 100 },
+  { limit: 300_000, base: RYCZALT_HEALTH_SALARY },
+  { limit: Infinity, base: Math.round(RYCZALT_HEALTH_SALARY * 1.8 * 100) / 100 },
 ];
 
 // Limit odliczenia składki zdrowotnej – liniowy
-const LINEAR_HEALTH_CAP = 12_900;
+const LINEAR_HEALTH_CAP = 14_100;
 
 // Najem ryczałt – próg 100 000 zł rocznie
 const NAJEM_THRESHOLD = 100_000;
@@ -250,7 +252,10 @@ function healthSkala(monthlyIncome: number): number {
 }
 
 function healthLinear(monthlyIncome: number): number {
-  return Math.max(monthlyIncome, HEALTH_MIN_BASE) * HEALTH_RATE_LINEAR;
+  return Math.max(
+    monthlyIncome * HEALTH_RATE_LINEAR,
+    HEALTH_MIN_BASE * HEALTH_RATE_SKALA,
+  );
 }
 
 function healthRyczalt(annualRevenue: number): number {

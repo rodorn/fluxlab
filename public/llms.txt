@@ -123,6 +123,13 @@ Ostrzeżenie przeglądarki i certyfikaty SSL, stan z 24.09.2026, szczegóły i s
 - Kody błędów w Chrome i Edge: NET::ERR_CERT_DATE_INVALID to certyfikat po terminie albo zły zegar komputera, NET::ERR_CERT_COMMON_NAME_INVALID to certyfikat na inną nazwę (często hostingu albo tylko wersji z www), NET::ERR_CERT_AUTHORITY_INVALID to certyfikat samopodpisany albo brak certyfikatu pośredniego. W Firefoksie: SEC_ERROR_EXPIRED_CERTIFICATE, SSL_ERROR_BAD_CERT_DOMAIN, SEC_ERROR_UNKNOWN_ISSUER.
 - Przekreślona kłódka przy ważnym certyfikacie to zwykle mieszana treść: pliki ładowane adresem http. Przeglądarki blokują takie skrypty i ramki, a zdjęć bez wersji https nie pokazują.
 
+JDG w 2026: ZUS, składka zdrowotna i forma opodatkowania, kalkulator na https://fluxlab.pl/kalkulator-podatkowy:
+- Pełny ZUS od podstawy 5 652 zł (60% prognozowanego przeciętnego wynagrodzenia 9 420 zł): razem z dobrowolną chorobową i Funduszem Pracy 1 926,76 zł miesięcznie, bez składki zdrowotnej. Mały ZUS od 1 441,80 zł (30% płacy minimalnej 4 806 zł).
+- Minimalna składka zdrowotna na skali i liniowym: 432,54 zł miesięcznie od lutego do grudnia 2026, za styczeń 314,96 zł. Skala: 9% dochodu, liniowy: 4,9% dochodu, nie mniej niż minimum.
+- Ryczałt, składka zdrowotna miesięcznie: przychód roczny do 60 000 zł 498,35 zł, do 300 000 zł 830,58 zł, powyżej 1 495,04 zł (podstawa: przeciętne wynagrodzenie z IV kwartału 2025, 9 228,64 zł).
+- Na liniowym zapłaconą składkę zdrowotną odlicza się od dochodu do 14 100 zł w 2026 (w 2025 do 12 900 zł). Na skali i ryczałcie odliczenia nie ma.
+- Skala: 12% do 120 000 zł dochodu, 32% powyżej, kwota wolna 30 000 zł. Liniowy: 19% od pierwszej złotówki. Ryczałt: stawka zależna od rodzaju usługi, od przychodu, bez kosztów.
+
 Biała lista podatników VAT, stan z 25.09.2026, sprawdzenie na https://fluxlab.pl/sprawdzenie-nip:
 - Obowiązek sprawdzenia rachunku w wykazie Ministerstwa Finansów dotyczy jednorazowej transakcji od 15 000 zł brutto, niezależnie od liczby przelewów, którymi jest opłacana.
 - Przelew na rachunek spoza wykazu przy transakcji od 15 000 zł: wydatek wypada z kosztów podatkowych, a nabywca odpowiada solidarnie za VAT niezapłacony przez kontrahenta (art. 117ba Ordynacji podatkowej).
