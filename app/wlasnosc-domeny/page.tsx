@@ -101,6 +101,10 @@ export default function Page() {
           a: "Zaczynamy od pisma i procedury, bo w większości przypadków to wystarcza, a sprawa bierze się z zaniedbania, nie ze złej woli. Jeśli jednak ktoś odmawia, pozostaje droga przed sądem polubownym do spraw domen i wtedy mówimy wprost, że to koszt rzędu kilku tysięcy i miesiące, a nasza rola się kończy.",
         },
         {
+          q: "Jak przenieść domenę .pl do innego rejestratora?",
+          a: "Potrzebny jest kod AuthInfo od obecnego rejestratora. Według zasad NASK rejestrator wydaje go abonentowi bez zbędnej zwłoki i nie może uzależniać tego od żadnych warunków, także od opłaty. Kod dostaje abonent, więc jeśli w rejestrze figuruje wykonawca, najpierw potrzebna jest zmiana abonenta, a do niej jego zgoda. Gdy zgody brak, spór rozstrzyga Sąd Polubowny do Spraw Domen Internetowych przy Polskiej Izbie Informatyki i Telekomunikacji.",
+        },
+        {
           q: "Czy przeniesienie wyłączy stronę albo pocztę?",
           a: "Prawidłowo przeprowadzone nie. Zmienia się właściciel i miejsce, w którym opłacasz domenę, a ustawienia kierujące ruch zostają nietknięte. Przenosimy je najpierw, zanim cokolwiek się przełączy.",
         },

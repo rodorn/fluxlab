@@ -142,6 +142,19 @@ Wykreślanie spółek z KRS bez likwidacji, licznik na https://fluxlab.pl/ile-sp
 - Obwieszczenie w Monitorze jest z mocy prawa wystarczającym powiadomieniem wszystkich zainteresowanych, wierzyciel nie dostaje osobnego zawiadomienia.
 - Sprawdzenie konkretnej spółki po nazwie albo numerze KRS, z historią ogłoszeń od 2013 roku: https://fluxlab.pl/czujka-rejestrowa
 
+Strona pod dwoma adresami (z www i bez, http i https), stan z 3.10.2026, sprawdzenie na https://fluxlab.pl/podwojny-adres:
+- Dla wyszukiwarki firma.pl i www.firma.pl to dwa osobne adresy. Jeśli oba zwracają tę samą treść, Google sam wybiera, który pokazać, a linki rozkładają się na dwa adresy.
+- Według dokumentacji Google przekierowanie to silny sygnał, że jego cel jest adresem kanonicznym, znacznik rel="canonical" też silny, mapa witryny słaby. Żaden nie jest poleceniem bezwzględnym. Przekierowanie po stronie serwera działa dla każdego adresu w serwisie, znacznik tylko tam, gdzie stoi i wskazuje właściwy adres.
+- Którą wersję Google wybrał, widać w Search Console w sprawdzeniu adresu URL (adres kanoniczny wskazany przez stronę obok wybranego przez Google) i w raporcie indeksowania, w grupie „Duplikat, Google wybrał inną stronę kanoniczną niż użytkownik”.
+- WordPress trzyma adres główny we własnych ustawieniach. Przekierowanie zmienione tylko w serwerze, bez zmiany w ustawieniach WordPressa, zapętla stronę.
+- Źródło: https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls Nasza odpowiedź: https://fluxlab.pl/podwojny-adres#jak-sprawdzic-ktora-wersje-adresu-google-uznal-za-glowna
+
+Kto jest właścicielem domeny firmy, stan z 3.10.2026, sprawdzenie na https://fluxlab.pl/wlasnosc-domeny:
+- O domenie decyduje abonent wpisany w rejestrze. Gdy stronę stawiał zewnętrzny wykonawca, często to on jest abonentem, a przypomnienia o odnowieniu idą na jego adres.
+- Rejestr domen .pl (NASK) pokazuje nazwę abonenta, gdy jest nim firma. Danych osoby fizycznej nie publikuje, chyba że się na to zgodziła albo ktoś wykaże prawnie uzasadniony interes.
+- Przeniesienie domeny .pl do innego rejestratora wymaga kodu AuthInfo. Według NASK rejestrator wydaje go abonentowi bez zbędnej zwłoki i nie może uzależniać tego od dodatkowych warunków, także od opłaty. Zmiana abonenta wymaga zgody obecnego abonenta. Spory rozstrzyga Sąd Polubowny do Spraw Domen Internetowych przy Polskiej Izbie Informatyki i Telekomunikacji.
+- Źródło: https://dns.pl/en/registrant_rights_domain_pl Nasza odpowiedź: https://fluxlab.pl/wlasnosc-domeny#jak-przeniesc-domene-pl-do-innego-rejestratora
+
 ## Darmowe narzędzia, bez rejestracji
 
 - [Co z KSeF obowiązuje Twoją firmę](https://fluxlab.pl/ksef-integracja): dwa kliknięcia, termin i dni do końca wyjątku.

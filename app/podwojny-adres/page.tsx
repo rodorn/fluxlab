@@ -97,6 +97,10 @@ export default function Page() {
           a: "Zwykle tak, bo wyszukiwarka go respektuje. Ale to jest podpowiedź, a nie reguła, i przestaje działać wszędzie tam, gdzie znacznika zabraknie albo gdzie wskaże zły adres. Przekierowanie po stronie serwera działa zawsze i dotyczy każdego adresu w serwisie.",
         },
         {
+          q: "Jak sprawdzić, którą wersję adresu Google uznał za główną?",
+          a: "W Search Console, w sprawdzeniu adresu URL, obok siebie stoją adres kanoniczny wskazany przez stronę i ten wybrany przez Google. Jeśli się różnią, w raporcie indeksowania strona trafia do grupy „Duplikat, Google wybrał inną stronę kanoniczną niż użytkownik”. Według dokumentacji Google przekierowanie i znacznik kanoniczny to silne sygnały, a mapa witryny słaby, ale żaden z nich nie jest dla Google poleceniem bezwzględnym.",
+        },
+        {
           q: "Czy wdrożenie może popsuć stronę?",
           a: "Źle napisana reguła potrafi zapętlić przekierowanie i strona przestaje się otwierać. Dlatego zaczynamy od kopii pliku konfiguracyjnego, a przy WordPressie sprawdzamy najpierw adres zapisany w ustawieniach, bo zmiana tylko w serwerze bez zmiany w ustawieniach daje dokładnie takie zapętlenie.",
         },
