@@ -195,7 +195,7 @@ const CONTACT = [
   { label: "Warszawa", href: null },
   { label: "iwanekpawel55@gmail.com", href: "mailto:iwanekpawel55@gmail.com" },
   { label: "667 767 474", href: "tel:+48667767474" },
-  { label: "fluxlab.pl", href: "https://www.fluxlab.pl" },
+  { label: "fluxlab.pl", href: "https://fluxlab.pl" },
   { label: "gitlab.com/PawelIwanek", href: "https://gitlab.com/PawelIwanek" },
   { label: "carcost.netlify.app", href: "https://carcost.netlify.app" },
 ];
