@@ -2026,3 +2026,14 @@ Dalej aktualne z wpisu 10:43: Wykop dziś do wieczora (tekst z wpisu 05:43) i Go
 **Dowód:** Brak zmian w kodzie, commit tylko z dziennikiem.
 **Dla Pawła:** Bez zmian, w tej kolejności: (1) komentarz pod https://spolecznosc.allegro.pl/t5/dyskusje-kupuj%C4%85cych/wewn%C4%99trzny-identyfikator-podatkowy/m-p/1224959, tekst we wpisie 2026-10-03 22:43; (2) komentarz pod https://forum.gofin.pl/1559625/faktura-sprzedazy-wysylka-do-ksef-czy-jest-to-dozwolone, tekst we wpisie 2026-10-02 23:30; (3) komentarz pod https://forum.gofin.pl/1559621/data-wystawienia-faktury-30092026-a-data-nadania-do-ksef, tekst we wpisie 2026-10-02 19:43; (4) https://www.bing.com/webmasters, „Import your sites from GSC”, zaznaczyć `fluxlab.pl`, „Import” (około 5 minut).
 **Zostało otwarte:** Kanał 4 od poniedziałku 9:00 (sklepy internetowe, odświeżenie `novafinanse.pl`). Kanał 1 tylko przy nowym wątku. Kanał 3 czeka na nowy komunikat MF. UD477 sprawdzać co kilka dni. Push idzie przez `git push origin HEAD:main`, pull z `--autostash`.
+
+<!-- WYSLANO 2026-10-04 07:04 -->
+
+## 2026-10-04 07:50
+
+**Kanał:** brak dowiezionego (sprawdzony kanał 1; kanał 4 niedziela).
+**Co zrobione:** Nic nie poszło w świat. Kanał 1: wyszukiwarka społeczności Allegro dla „KSeF” nadal zaczyna się od wątku 1224959 (ma gotowy tekst dla Pawła), a Gofin dla 1559626, 1559730 i 1559740 daje 404. Kanał 4: niedziela, mail do firm dopiero od poniedziałku 9:00.
+**Ruch:** Ostatnia doba: **30 odsłon, 4 osoby** (wzrost o 98% wobec średniej 15,1). Tydzień: 136 odsłon, 48 osób. 30 dni: 296 odsłon, 123 osoby (licznik od 20.09 18:27). Najczęściej otwierane: `/` (3), `/narzedzia` (3), `/strony-www` (2), `/tansze-automatyzacje` (2), `/kontakt` (2). Źródła: www.google.com (6). Uruchomienia narzędzi: 1 (kalkulator), zdarzenie lead_diagnoza (1). Z telefonu 1 z 30.
+**Dowód:** Brak zmian w kodzie, commit tylko z dziennikiem.
+**Dla Pawła:** Bez zmian, w tej kolejności: (1) komentarz pod https://spolecznosc.allegro.pl/t5/dyskusje-kupuj%C4%85cych/wewn%C4%99trzny-identyfikator-podatkowy/m-p/1224959, tekst we wpisie 2026-10-03 22:43; (2) komentarz pod https://forum.gofin.pl/1559625/faktura-sprzedazy-wysylka-do-ksef-czy-jest-to-dozwolone, tekst we wpisie 2026-10-02 23:30; (3) komentarz pod https://forum.gofin.pl/1559621/data-wystawienia-faktury-30092026-a-data-nadania-do-ksef, tekst we wpisie 2026-10-02 19:43; (4) https://www.bing.com/webmasters, „Import your sites from GSC”, zaznaczyć `fluxlab.pl`, „Import” (około 5 minut).
+**Zostało otwarte:** Kanał 4 od poniedziałku 9:00 (sklepy internetowe, odświeżenie `novafinanse.pl`). Kanał 1 tylko przy nowym wątku. Kanał 3 czeka na nowy komunikat MF. UD477 sprawdzać co kilka dni.
