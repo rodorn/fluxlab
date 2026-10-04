@@ -2160,3 +2160,25 @@ Dalej aktualne z wpisu 10:43: Wykop dziś do wieczora (tekst z wpisu 05:43) i Go
   Wszystkie 11 z wyświetleniami miały już link do fluxlab.pl, ale bez utm, więc wejścia z nich były nierozróżnialne. Po zmianie `curl raw.githubusercontent.com/.../README.md | grep -c utm_source=github` = 1 dla każdego z 10.
 **Dla Pawła:** Bez zmian: komentarz pod https://forum.gofin.pl/1559598/edroeczenia-dotycza-tylko-urzedow-skarbowych-czy-tez-zus (tekst we wpisie 2026-10-04 14:50) i 3 starsze teksty forumowe.
 **Zostało otwarte:** Z8 (dwa posty narzędziowe do kolejki fluxlab-meta), dalej Z9 do Z24 według `cykl/plan-ruchu.md`.
+
+<!-- WYSLANO 2026-10-04 19:07 -->
+
+## 2026-10-04 19:53
+**Kanał:** Facebook (zlecenie Z8) i outreach z raportem, przygotowanie (Z9).
+**Co zrobione:** dwa posty narzędziowe z utm trafiły na początek kolejki fanpage'a (timer opublikuje je jako następne), a dla segmentu dealerów powstało 5 maili z potwierdzonym dziś twardym problemem, gotowych do wysyłki w poniedziałek (Z17).
+**Ruch:** ostatnia doba 28 odsłon, 14 osób (wzrost o 98% wobec średniej 14,1); źródła: www.google.com 2, mail 1, narzedzie 1; z telefonu 11 z 28; uruchomienia narzędzi 1 (uruchomiono_skan 1, klik_po_wyniku 1; to test z Z6).
+**Dowód:**
+- Z8: `~/Projekty/fluxlab-meta/posty/kolejka.json`, pierwsze dwa id `025-e-doreczenia-sprawdz-adres` i `026-ksef-lista-2027`, grafiki `posty/025-*/grafika.png`, `posty/026-*/grafika.png` (obejrzane). Linki z `utm_source=facebook&utm_campaign=narzedzia`. Narzędzie e-Doręczeń to sprawdzenie terminu w 2 kliknięciach, nie wyszukiwanie po NIP, jak zakładał plan, więc post opisuje je zgodnie z tym, jak działa.
+- Z9: audyt 27 domen z `swieze_wybrane.json` silnikiem `/api/audyt-www` na `next dev -p 3100` (wyniki `/tmp/dealaudyt/`), problemy potwierdzone ręcznie curl/openssl/Chrome. Pliki w `~/Projekty/mail-audyt/maile_dealerzy/`:
+
+| Plik | Adres (skąd) | Problem potwierdzony 4.10 |
+|---|---|---|
+| 001_kaufman.pl | serwis.koszalin@kaufman.pl (strona kaufman.pl, skan 1.10) | strona główna, www i /kontakt oddają 0 bajtów, w przeglądarce biała kartka |
+| 002_nivette.pl | serwis@nivette.pl (nivette.pl/kontakt) | pierwszy bajt po 11 do 17 s, audyt przerwał czekanie |
+| 003_kaminski-vw.pl | biuro@kaminski-vw.pl (strona kontaktowa) | certyfikat Certum ważny do 9.10.2026 |
+| 004_vipcar.pl | sekretariat@vipcar.pl (vipcar.pl/kontakt) | 1,7 MB, ok. 8,5 s na 4G, user-scalable=0 |
+| 005_sabat.lublin.pl | serwis@sabat.lublin.pl (sabat.lublin.pl/kontakt) | certyfikat Let's Encrypt wygasł 20.09.2026, strona za ostrzeżeniem |
+
+  Odpadły: 8 firm z puli dostało od nas mail 6.09 (delivered) i ich problem to tylko wolne ładowanie (impwar 58,6 s, carcenter 19,9 s, autoluzar, bursiak, autosliwka, interauto, gablo, budmatauto), więc drugiego maila nie piszemy; wyjątek to sabat, bo strona nie działa. Strony Toyoty (toyota-centrum, toyota-zg, toyotaczestochowa, chodzen) stoją na wspólnej platformie producenta, dealer tego nie naprawi. dynamica.pl pominięta, bo jest powiązana z Carmore. auto-centrum.tychy.pl zwraca 403 narzędziu. Pula to 27 domen, nie 33, jak podał plan.
+**Dla Pawła:** Bez zmian: teksty forumowe z wcześniejszych wpisów.
+**Zostało otwarte:** Z10 (biura rachunkowe bez adresu do e-Doręczeń), dalej Z11 do Z24. Do Z17: `wyslij_kanc.py` czyta tylko `maile_kanc/`, więc przed wysyłką trzeba wskazać katalog `maile_dealerzy/` i plik `wyslane_dealerzy.json` (najlepiej argumentem). kaminski-vw.pl trzeba wysłać w poniedziałek rano, bo certyfikat kończy się w piątek.
