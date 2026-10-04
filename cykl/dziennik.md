@@ -2204,7 +2204,7 @@ Zoho, 24 h: INBOX 1 (Sanity, kod weryfikacyjny), Spam 0; odpowiedzi od firm 0
 **Dla Pawła:** Jeśli segment biur rachunkowych z e-Doręczeniami ma ruszyć, potrzebny jest dostęp do sprawdzania adresów JDG: albo bezpłatny token API CEIDG (wniosek na https://dane.biznes.gov.pl, sekcja API CEIDG, logowanie profilem zaufanym), albo ręczne sprawdzenie w wyszukiwarce BAE w skrzynce e-Doręczeń. Bez zmian: teksty forumowe z wcześniejszych wpisów.
 **Zostało otwarte:** Z13 (zrzuty stron na telefonie), dalej Z14 do Z24. Do Z21: `wyslij_ks.py` czyta tylko `maile_ks/`, do sklepów trzeba wskazać `maile_sklepy/` i `wyslane_sklepy.json`.
 
-## 2026-10-04 22:20
+## 2026-10-04 21:53
 **Kanał:** Google (Z14), strona na telefonie (Z13), fora (Z15, dzienne sprawdzenie) według planu dobowego.
 **Co zrobione:** Strony, na które Google pokazuje frazy „asystent ai na stronie” oraz „automatyzacja crm” i „automatyzacja crm ai”, mają na produkcji tytuły i opisy zaczynające się od tych fraz; sprawdzenie 6 kluczowych stron na telefonie nie wykazało niczego, co blokuje użycie.
 **Ruch:** ostatnia doba 31 odsłon, 17 osób (13 z telefonu); źródła: facebook 3, www.google.com 2, mail 1, narzedzie 1 (to sesja testowa z Z6); uruchomienia narzędzi 1, zdarzenia: uruchomiono_skan 1, klik_po_wyniku 1. Tydzień 127 odsłon, 60 osób.
