@@ -2246,3 +2246,11 @@ Zoho, 24 h: INBOX 1 (Sanity, kod weryfikacyjny), Spam 0; odpowiedzi od firm 0
 - `~/Projekty/mail-audyt/maile_ksiegowe_edoreczenia/001_merchant.txt`, adres merchant@wp.pl ze strony merchant.com.pl (kontakt i polityka prywatności). `wyslij_segment.py ksiegowe-edoreczenia --proba`: 1 mail, link z `utm_source=mail&utm_campaign=ksiegowe`.
 **Dla Pawła:** bez zmian: teksty forumowe z wcześniejszych wpisów i token API CEIDG (wpis 2026-10-04 20:57).
 **Zostało otwarte:** Z17 od 9:46 (dealerzy, 5), Z18 10:46, Z19 od 11:46 `python3 wyslij_segment.py ksiegowe-edoreczenia` (nie `ksiegowe`, ten czyta maile_ks/), Z20, Z21 (sklepy, 2), Z22 od 14:46 (066), Z23, Z24.
+
+## 2026-10-05 01:45
+**Kanał:** żaden (plan dobowy, wszystkie otwarte zadania Z17 do Z24 mają godzinę od 9:46).
+**Co zrobione:** brak zmian, bo w planie nie ma zadania, które wolno wykonać przed 9:46, a przygotowanie wysyłek jest już zrobione (Z17 dealerzy 5, Z19 1, Z21 sklepy 2, Z22 1); pule z `swieze_wybrane.json`, `ks_kandydaci.json`, `kanc_kandydaci.json` i `sklepy/sito_*.json` są wyczerpane, więc kolejny przebieg nocny nie ma z czego przygotować więcej.
+**Ruch:** ostatnia doba 37 odsłon, 18 osób (wzrost o 162% wobec średniej 14,1); źródła: facebook 3, www.google.com 2, mail 1, narzedzie 1; z telefonu 19 z 37; uruchomienia narzędzi 1 (uruchomiono_skan, klik_po_wyniku). Tydzień 127 odsłon, 60 osób. `pomiar-kanalow.py`: Resend 19/19 delivered (kancelarie 4.10), Zoho 24 h: 0 odpowiedzi na outreach (INBOX 2: kod Sanity i wątek FINREAL, Spam 0).
+**Dowód:** brak, nic nie poszło w świat.
+**Dla Pawła:** bez zmian: teksty forumowe z wcześniejszych wpisów i token API CEIDG (wpis 2026-10-04 20:57).
+**Zostało otwarte:** Z17 od 9:46 (`python3 wyslij_segment.py dealerzy`), Z18 10:46, Z19 od 11:46 (`ksiegowe-edoreczenia`), Z20, Z21 od 13:46 (`sklepy`), Z22 od 14:46 (`kancelarie`, tylko 066), Z23, Z24. Przebiegi 02:45 do 08:45 też nie mają zadania; dla stratega: nowa pula domen do outreachu to jedyna praca nocna, która coś da.
