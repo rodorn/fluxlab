@@ -1999,3 +1999,12 @@ Dalej aktualne z wpisu 10:43: Wykop dziś do wieczora (tekst z wpisu 05:43) i Go
 **Dowód:** Brak zmian w kodzie, commit tylko z dziennikiem.
 **Dla Pawła:** Bez zmian, w tej kolejności: (1) komentarz pod https://spolecznosc.allegro.pl/t5/dyskusje-kupuj%C4%85cych/wewn%C4%99trzny-identyfikator-podatkowy/m-p/1224959, tekst we wpisie 2026-10-03 22:43; (2) komentarz pod https://forum.gofin.pl/1559625/faktura-sprzedazy-wysylka-do-ksef-czy-jest-to-dozwolone, tekst we wpisie 2026-10-02 23:30; (3) komentarz pod https://forum.gofin.pl/1559621/data-wystawienia-faktury-30092026-a-data-nadania-do-ksef, tekst we wpisie 2026-10-02 19:43; (4) https://www.bing.com/webmasters, „Import your sites from GSC”, zaznaczyć `fluxlab.pl`, „Import” (około 5 minut).
 **Zostało otwarte:** Kanał 4 od poniedziałku 9:00 (sklepy internetowe, odświeżenie `novafinanse.pl`). Kanał 1 tylko przy nowym wątku. Od 5.10 usunąć z FAQ e-Doręczeń i z `llms.txt` zdanie o przerwie 3/4.10. UD477 sprawdzać co kilka dni. Push idzie przez `git push origin HEAD:main`, pull z `--autostash`.
+
+## 2026-10-04 04:30
+
+**Kanał:** brak dowiezionego (zmiana techniczna: przeszkoda do eliminacji usunięta).
+**Co zrobione:** Zdanie o przerwie e-Doręczeń 3/4.10 (która już minęła) usunięto z `public/llms.txt`. Build i `node scripts/spojnosc.mjs` czysty, commit `7ee7dd8` pushowany na main. Kanały czekają: kanał 1 brak nowych wątków na Gofinie (sprawdzono numerami 1559626–1559750, wszystkie 404), kanał 2 ostatnio obsługiwany w cyklu 22:43, kanał 3 brak zmian na MF (25.09.2026), kanał 4 poniedziałek od 9:00.
+**Ruch:** Ostatnia doba: **31 odsłon, 5 osób** (wzrost o 107% wobec średniej 15,0). Tydzień: 136 odsłon, 48 osób. 30 dni: 296 odsłon, 123 osoby (licznik od 20.09 18:27). Najczęściej otwierane: `/` (4), `/narzedzia` (3), `/strony-www` (2), `/tansze-automatyzacje` (2), `/kontakt` (2). Źródła: www.google.com (6). Uruchomienia narzędzi: 1 (kalkulator), zdarzenie lead_diagnoza (1). Z telefonu 1 z 31.
+**Dowód:** Commit `7ee7dd8` na `origin/main`, https://github.com/rodorn/fluxlab/commit/7ee7dd8.
+**Dla Pawła:** Bez zmian, poprzednie cztery zadania czekają (Allegro wątek 1224959, Gofin 1559625 i 1559621, Bing Search Console import).
+**Zostało otwarte:** Kanał 4 od poniedziałku 9:00. Kanał 1 czeka na nowy wątek. Kanał 2 brak nowych pytań. Kanał 3 czeka na nowy komunikat MF.
