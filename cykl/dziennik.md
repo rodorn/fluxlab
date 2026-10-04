@@ -2203,3 +2203,14 @@ Zoho, 24 h: INBOX 1 (Sanity, kod weryfikacyjny), Spam 0; odpowiedzi od firm 0
 ```
 **Dla Pawła:** Jeśli segment biur rachunkowych z e-Doręczeniami ma ruszyć, potrzebny jest dostęp do sprawdzania adresów JDG: albo bezpłatny token API CEIDG (wniosek na https://dane.biznes.gov.pl, sekcja API CEIDG, logowanie profilem zaufanym), albo ręczne sprawdzenie w wyszukiwarce BAE w skrzynce e-Doręczeń. Bez zmian: teksty forumowe z wcześniejszych wpisów.
 **Zostało otwarte:** Z13 (zrzuty stron na telefonie), dalej Z14 do Z24. Do Z21: `wyslij_ks.py` czyta tylko `maile_ks/`, do sklepów trzeba wskazać `maile_sklepy/` i `wyslane_sklepy.json`.
+
+## 2026-10-04 22:20
+**Kanał:** Google (Z14), strona na telefonie (Z13), fora (Z15, dzienne sprawdzenie) według planu dobowego.
+**Co zrobione:** Strony, na które Google pokazuje frazy „asystent ai na stronie” oraz „automatyzacja crm” i „automatyzacja crm ai”, mają na produkcji tytuły i opisy zaczynające się od tych fraz; sprawdzenie 6 kluczowych stron na telefonie nie wykazało niczego, co blokuje użycie.
+**Ruch:** ostatnia doba 31 odsłon, 17 osób (13 z telefonu); źródła: facebook 3, www.google.com 2, mail 1, narzedzie 1 (to sesja testowa z Z6); uruchomienia narzędzi 1, zdarzenia: uruchomiono_skan 1, klik_po_wyniku 1. Tydzień 127 odsłon, 60 osób.
+**Dowód:**
+- Z13: emulacja telefonu 390 px dla `/`, `/narzedzia`, `/audyt-strony`, `/e-doreczenia-integracja`, `/ksef-2027`, `/kontakt`: scrollWidth 390 na wszystkich, brak przewijania poziomego, poza ekranem tylko ukryte pole antyspamowe. Formularz kontaktu, pole audytu, przyciski e-Doręczeń i listy KSeF widoczne w całości. Nic nie blokowało, bez zmian w kodzie. Zrzuty lokalnie w `skrypty-raport/telefon-390/`.
+- Z14: Search Console (3 mies.): „asystent ai na stronie” 4 wyśw., poz. 49, strona `/widocznosc-w-ai`; „automatyzacja crm” 3 wyśw., poz. 23,7 i „automatyzacja crm ai” 3 wyśw., poz. 25,3, strona `/strefa-wiedzy`. Nowe tytuły: „Asystent AI a Wasza strona: czy ChatGPT ją widzi | Fluxlab” i „Automatyzacja CRM i procesów: strefa wiedzy | Fluxlab”, opisy od frazy (w opisie strefy tylko tematy artykułów, które tam stoją). Commit 0054e9c, sprawdzone curl na produkcji. IndexNow 2 z 3 punktów (wspólny 403 jak w Z5). Bez żądań indeksowania, limit dnia odnawia się o 9:00.
+- Z15: Gofin najnowszy wątek 1559626 (znany), Allegro „KSeF” najnowszy 1224959 (znany). Brak nowego wątku, fora zamknięte na tę dobę.
+**Dla Pawła:** Bez zmian: komentarz Gofin 1559598 (tekst we wpisie 2026-10-04 14:50), 3 starsze komentarze i import w Bing Webmaster (lista we wpisie 2026-10-04 14:50 i wyżej).
+**Zostało otwarte:** Z16 (sprawdzenie efektów nocy w Search Console, rano 8:46), Z17 i dalej wysyłki od poniedziałku 9:46. Uwaga: fraza „asystent ai na stronie” ma pewnie intencję „chatbot na stronie”, a `/widocznosc-w-ai` jest o czymś innym; przy pozycji 49 tytuł niewiele zmieni, to sygnał dla stratega, czy potrzebna osobna strona o asystencie AI na stronie firmy.
