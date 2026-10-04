@@ -64,7 +64,7 @@ const PUNKTY: Punkt[] = [
     zmiana:
       "Gdy KSeF nie działa albo nie ma internetu, fakturę wystawia się w trybie offline i wysyła do systemu później. Taka faktura przekazana klientowi poza systemem musi mieć dwa kody QR, a drugiego nie da się wygenerować bez certyfikatu KSeF typu 2, ważnego 2 lata.",
     zrobic:
-      "Wygenerujcie certyfikat w Aplikacji Podatnika KSeF teraz, a nie w dniu awarii. Tokeny do logowania zostają, bo Ministerstwo Finansów zrezygnowało z ich wygaszenia, więc certyfikat nie zastępuje tokenu, tylko go uzupełnia.",
+      "Wygenerujcie certyfikat w Aplikacji Podatnika KSeF teraz, a nie w dniu awarii. Ministerstwo Finansów zapowiedziało, że tokeny do logowania zostaną po 31 grudnia 2026 r., ale na 4.10.2026 rozporządzenie nadal wskazuje ten termin, więc certyfikat jest też zapasem na wypadek, gdyby nowelizacja nie zdążyła.",
   },
   {
     klucz: "odrzucenia",

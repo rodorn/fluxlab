@@ -42,7 +42,7 @@ const faq = [
   },
   {
     q: "Czy tokeny KSeF wygasają z końcem 2026 roku?",
-    a: "Nie. Ministerstwo Finansów zrezygnowało z wygaszenia tokenów. Do wystawiania faktur w trybie offline potrzebny jest jednak certyfikat KSeF typu 2, bo bez niego nie da się wygenerować drugiego kodu QR na fakturze przekazanej klientowi poza systemem. Certyfikat generuje się w Aplikacji Podatnika KSeF i jest ważny 2 lata.",
+    a: "Najpewniej nie, ale na dziś to tylko zapowiedź. Ministerstwo Finansów zaproponowało na konsultacjach 9.06.2026 i zapisało w Podręczniku KSeF 2.0, że tokeny zostaną po 31 grudnia 2026 r., z ważnością od 1 do 365 dni. Obowiązujące rozporządzenie w sprawie korzystania z KSeF z 12.12.2025 (Dz.U. poz. 1815) nadal wskazuje 31 grudnia 2026 r., a strona Aplikacji Podatnika KSeF podaje generowanie tokenów „do 31 grudnia 2026 r.”. Na 4.10.2026 nie znaleźliśmy opublikowanej nowelizacji. Jeśli program albo integracja łączy się z KSeF tokenem, warto już teraz wygenerować certyfikat KSeF typu 1 jako zapas na wypadek, gdyby zmiana nie zdążyła wejść w życie. Do wystawiania faktur w trybie offline potrzebny jest jednak certyfikat KSeF typu 2, bo bez niego nie da się wygenerować drugiego kodu QR na fakturze przekazanej klientowi poza systemem. Certyfikat generuje się w Aplikacji Podatnika KSeF i jest ważny 2 lata.",
   },
   {
     q: "Czy pracownik musi logować się do KSeF swoim prywatnym mObywatelem?",
