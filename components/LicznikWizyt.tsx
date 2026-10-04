@@ -91,9 +91,7 @@ function Zliczanie() {
       parametry.has("gclid") || parametry.get("utm_medium") === "cpc";
     const dane = {
       sciezka,
-      zrodlo: zReklamy
-        ? "google-ads"
-        : zrodlo || (parametry.get("utm_source") ?? ""),
+      zrodlo: zReklamy ? "google-ads" : parametry.get("utm_source") || zrodlo,
       kampania: parametry.get("utm_campaign") ?? (zReklamy ? "ads" : ""),
       sesja: idSesji(),
       telefon: window.matchMedia("(max-width: 640px)").matches,
