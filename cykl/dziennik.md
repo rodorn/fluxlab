@@ -2214,3 +2214,13 @@ Zoho, 24 h: INBOX 1 (Sanity, kod weryfikacyjny), Spam 0; odpowiedzi od firm 0
 - Z15: Gofin najnowszy wątek 1559626 (znany), Allegro „KSeF” najnowszy 1224959 (znany). Brak nowego wątku, fora zamknięte na tę dobę.
 **Dla Pawła:** Bez zmian: komentarz Gofin 1559598 (tekst we wpisie 2026-10-04 14:50), 3 starsze komentarze i import w Bing Webmaster (lista we wpisie 2026-10-04 14:50 i wyżej).
 **Zostało otwarte:** Z16 (sprawdzenie efektów nocy w Search Console, rano 8:46), Z17 i dalej wysyłki od poniedziałku 9:46. Uwaga: fraza „asystent ai na stronie” ma pewnie intencję „chatbot na stronie”, a `/widocznosc-w-ai` jest o czymś innym; przy pozycji 49 tytuł niewiele zmieni, to sygnał dla stratega, czy potrzebna osobna strona o asystencie AI na stronie firmy.
+
+## 2026-10-04 22:50
+**Kanał:** Google (Z16 z planu dobowego), plus przygotowanie wysyłek outreachu na poniedziałek.
+**Co zrobione:** potwierdzone, że `/ksef-2027` i trzy strony z Z3 są już w indeksie Google, adresy zmienione dziś zgłoszone do IndexNow, a poniedziałkowe wysyłki (Z17 dealerzy, Z21 sklepy) mają jeden skrypt z utm, listą wypisanych i blokadą wysyłki poza dniami roboczymi 9 do 17.
+**Ruch:** ostatnia doba 37 odsłon, 18 osób (wzrost o 162% wobec średniej 14,1); źródła: facebook 3, www.google.com 2, mail 1, narzedzie 1; z telefonu 19 z 37; uruchomienia narzędzi 1 (uruchomiono_skan, klik_po_wyniku). Najczęściej /e-doreczenia-integracja (7). Tydzień 133 odsłony, 61 osób.
+**Dowód:**
+- Z16: Search Console „Sprawdź URL”: /sprawdz-auto, /czas-reakcji-na-leada, /import-radar, /ksef-2027, wszystkie „Adres URL znajduje się w Google” (/ksef-2027 rano jeszcze nie był). IndexNow dla /cv, /strefa-wiedzy/podszywanie-sie-pod-firmowy-email, /e-doreczenia-integracja, /audyt-strony, /tansze-automatyzacje, /widocznosc-w-ai, /strefa-wiedzy: Yandex 200, Naver 200, wspólny punkt 403 (Bing nie zna domeny, bez zmian).
+- `~/Projekty/mail-audyt/wyslij_segment.py <segment> [--proba] [--limit=N]`: katalog i plik wysłanych z segmentu (dealerzy → maile_dealerzy/wyslane_dealerzy.json, sklepy → maile_sklepy/wyslane_sklepy.json), linki z `utm_source=mail&utm_campaign=<segment>`, pomija adresy z `pomijane.json`. `--proba` dla dealerów: 5 maili, dla sklepów: 2, linki z utm; próba prawdziwej wysyłki teraz zwraca „wysyłka tylko pn-pt 9-17”, nic nie wyszło.
+**Dla Pawła:** Bez zmian: teksty forumowe z wcześniejszych wpisów i token API CEIDG (wpis 20:57).
+**Zostało otwarte:** Z17 od 9:46 (`python3 wyslij_segment.py dealerzy`, kaminski-vw.pl pilnie, certyfikat do 9.10), Z18 do Z24 według planu. Do 9:46 nie ma zadania, które wolno wykonać.
