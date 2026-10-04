@@ -122,7 +122,10 @@ export default function LandingForm({
         body: JSON.stringify(data),
       });
       if (res.ok) {
-        gaEvent("generate_lead", {
+        // Serwer udaje sukces, gdy bot wypelni ukryte pole, i nie wysyla maila.
+        // Takie wejscie nie moze trafic do konwersji.
+        const bot = data.website.trim().length > 0;
+        if (!bot) gaEvent("generate_lead", {
           form_id: formId,
           lead_type: data.problemType,
           lead_scale: data.problemScale,
@@ -132,7 +135,7 @@ export default function LandingForm({
         // pory nie byla mierzona nigdzie poza Google Analytics, ktorego nie
         // mamy podlaczonego. Zgloszenie ma keepalive, wiec przezyje
         // przekierowanie na strone z podziekowaniem.
-        zglosZdarzenie("lead_landing");
+        if (!bot) zglosZdarzenie("lead_landing");
         const params = new URLSearchParams({
           type: data.problemType,
           scale: data.problemScale,
