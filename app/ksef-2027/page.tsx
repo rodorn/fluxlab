@@ -60,6 +60,10 @@ const faq = [
     q: "Nie mamy programu do faktur. Czy da się wystawiać faktury w KSeF za darmo?",
     a: "Tak. Ministerstwo Finansów daje trzy bezpłatne narzędzia, wszystkie logują się mObywatelem, profilem zaufanym, e-dowodem albo bankowością elektroniczną. Aplikacja Podatnika KSeF 2.0 (ap.ksef.mf.gov.pl) działa w przeglądarce dla każdej firmy, także spółki, i obsługuje faktury, korekty, faktury offline, pobieranie XML i PDF oraz nadawanie uprawnień biuru rachunkowemu. Aplikacja Mobilna KSeF 2.0 (Google Play, App Store) wystawia faktury i korekty z telefonu, pamięta listę nabywców i rachunków. e-mikrofirma w e-Urzędzie Skarbowym jest tylko dla jednoosobowej działalności: wystawia krajowe faktury sprzedaży przez KSeF, pobiera faktury zakupu i z tych danych tworzy ewidencję VAT i plik JPK_VAT. Przy kilku fakturach miesięcznie to w zupełności wystarcza. Płatny program albo integracja zaczyna się opłacać dopiero, gdy faktury powstają w sklepie, CRM albo innym systemie i ktoś przepisuje je ręcznie do KSeF.",
   },
+  {
+    q: "Czy po przejściu na KSeF trzeba zmienić numerację faktur?",
+    a: "Nie. Numer faktury dalej nadajecie sami, tak jak dotąd, zgodnie z art. 106e ust. 1 pkt 2 ustawy o VAT, i można po prostu kontynuować obecną serię. KSeF dokłada osobny numer KSeF, ale on nie zastępuje Waszego numeru i nie jest elementem faktury. Jedna rzecz, której wcześniej nie było: KSeF odrzuca fakturę z kodem błędu 440 „Duplikat faktury”, jeśli ten sam NIP sprzedawcy wysłał już fakturę tego samego rodzaju z identycznym numerem, a sprawdza to 10 lat wstecz. Numeracja zerowana co roku bez roku w numerze (1, 2, 3…) w drugim roku zacznie więc dawać odrzucenia. Bezpiecznie jest mieć rok, a najlepiej miesiąc i rok, w numerze, np. 7/02/2026, i pilnować, żeby przy zmianie programu, np. na e-mikrofirmę, nowa seria nie powtarzała starych numerów. Faktura, która trafi do KSeF później niż faktura z wyższym numerem, bo pierwsza wysyłka została odrzucona, nie wymaga korekty.",
+  },
 ];
 
 export default function Ksef2027Page() {
