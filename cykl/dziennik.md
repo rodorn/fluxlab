@@ -2224,3 +2224,15 @@ Zoho, 24 h: INBOX 1 (Sanity, kod weryfikacyjny), Spam 0; odpowiedzi od firm 0
 - `~/Projekty/mail-audyt/wyslij_segment.py <segment> [--proba] [--limit=N]`: katalog i plik wysłanych z segmentu (dealerzy → maile_dealerzy/wyslane_dealerzy.json, sklepy → maile_sklepy/wyslane_sklepy.json), linki z `utm_source=mail&utm_campaign=<segment>`, pomija adresy z `pomijane.json`. `--proba` dla dealerów: 5 maili, dla sklepów: 2, linki z utm; próba prawdziwej wysyłki teraz zwraca „wysyłka tylko pn-pt 9-17”, nic nie wyszło.
 **Dla Pawła:** Bez zmian: teksty forumowe z wcześniejszych wpisów i token API CEIDG (wpis 20:57).
 **Zostało otwarte:** Z17 od 9:46 (`python3 wyslij_segment.py dealerzy`, kaminski-vw.pl pilnie, certyfikat do 9.10), Z18 do Z24 według planu. Do 9:46 nie ma zadania, które wolno wykonać.
+
+<!-- WYSLANO 2026-10-04 23:04 -->
+
+## 2026-10-04 23:55
+**Kanał:** outreach (przygotowanie Z22 z planu dobowego; Z17 do Z24 mają godziny od poniedziałku 9:46, więc w nocy wolno tylko przygotowanie).
+**Co zrobione:** druga partia kancelarii przygotowana do poniedziałkowej wysyłki: z 51 niewysłanych domen twardy, sprawdzony problem i adres wzięty ze strony ma tylko jedna, mail gotowy w `maile_kanc/066_wojtyga.txt`, nic nie wysłano.
+**Ruch:** ostatnia doba 37 odsłon, 18 osób (wzrost o 162% wobec średniej 14,1); źródła: facebook 3, www.google.com 2, mail 1, narzedzie 1; z telefonu 19 z 37; uruchomienia narzędzi 1. Tydzień 127 odsłon, 60 osób.
+**Dowód:**
+- Skan 51 domen z `kanc_kandydaci.json` spoza `wyslane_kanc.json` (certyfikat, czas odpowiedzi, wersja http i www). Błąd certyfikatu 12, z tego: strona w przygotowaniu albo zaparkowana 6 (kzlaw.pl, akacperska.pl, ochalek.net, jgkkancelaria.pl, krpgolebiowski.pl, barrister.pl), przekierowanie na inną domenę 2 (radca-gdynia.pl, adwokat-wroclaw.com, obie działają), brak odpowiedzi 1 (pgadwokaci.pl), adw-zygadlo.pl działa tylko po http i linkuje do niedziałającej rwz.com.pl, ale nie ma na stronie adresu e-mail (pominięta), abrich.eu bez DNS. Wolne: llp.com.pl i kmkancelaria.pl przy powtórce 1,1 do 2,7 s, odpadają.
+- `maile_kanc/066_wojtyga.txt`: kancelaria@wojtyga.com (z podstrony Kontakt, adres ukryty skryptem Joomla, odkodowany), problem: strona tylko po http, https z certyfikatem *.home.pl, formularz kontaktowy na stronie „Niezabezpieczona”. Sprawdzone, że przy prawdziwej wysyłce `wyslij_segment.py kancelarie` wyjdzie wyłącznie ten jeden mail (63 pozostałe są w `wyslane_kanc.json`; `--proba` celowo pokazuje wszystkie).
+**Dla Pawła:** bez zmian: teksty forumowe z wcześniejszych wpisów i token API CEIDG (wpis 20:57).
+**Zostało otwarte:** Z17 od 9:46 (dealerzy, 5 maili), Z18, Z19 (bez materiału, Z10 [!]), Z20, Z21 (sklepy, 2), Z22 o 14:46 tylko wysyłka 066, Z23, Z24. Pula kancelarii z `kanc_kandydaci.json` jest praktycznie wyczerpana, nowy segment potrzebuje świeżej listy domen.
