@@ -8,11 +8,11 @@ import OkladkaArtykulu from "@/components/OkladkaArtykulu";
 import { categories } from "@/lib/categories";
 
 export const metadata: Metadata = {
-  title: "Strefa wiedzy: automatyzacja, CRM, API, raporty | Fluxlab",
+  title: "Automatyzacja CRM i procesów: strefa wiedzy | Fluxlab",
   description:
-    "Praktyczne artykuły o automatyzacji procesów biznesowych, CRM, integracjach API, raportowaniu i AI. Bez marketingowej mgły, konkrety dla firm B2B.",
+    "Automatyzacja CRM w praktyce: od czego zacząć, jak połączyć CRM z innymi systemami, Pipedrive czy Salesforce, Make czy n8n, gdzie AI ma sens.",
   openGraph: {
-    title: "Strefa wiedzy: automatyzacja, CRM, API, raporty | Fluxlab",
+    title: "Automatyzacja CRM i procesów: strefa wiedzy | Fluxlab",
     description:
       "Praktyczne artykuły o automatyzacji procesów biznesowych, CRM, integracjach API, raportowaniu i AI.",
     locale: "pl_PL",
