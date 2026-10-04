@@ -56,6 +56,10 @@ const faq = [
     q: "Mamy mniej niż 10 tys. zł faktur miesięcznie. Czy musimy coś robić?",
     a: "Tak, ale do końca 2026 roku. Limit 10 tys. zł brutto miesięcznie pozwala wystawiać faktury poza KSeF tylko do 31 grudnia 2026, i tylko do pierwszego przekroczenia. Faktura, którą przekraczacie limit w danym miesiącu, i każda następna muszą już przejść przez KSeF, także w kolejnych miesiącach poniżej 10 tys. zł. Jedno większe zlecenie jesienią wystarczy, żeby obowiązek zaczął się przed styczniem. Przy kilku fakturach miesięcznie wystarczy darmowa Aplikacja Podatnika KSeF od Ministerstwa Finansów albo program do fakturowania z obsługą KSeF.",
   },
+  {
+    q: "Nie mamy programu do faktur. Czy da się wystawiać faktury w KSeF za darmo?",
+    a: "Tak. Ministerstwo Finansów daje trzy bezpłatne narzędzia, wszystkie logują się mObywatelem, profilem zaufanym, e-dowodem albo bankowością elektroniczną. Aplikacja Podatnika KSeF 2.0 (ap.ksef.mf.gov.pl) działa w przeglądarce dla każdej firmy, także spółki, i obsługuje faktury, korekty, faktury offline, pobieranie XML i PDF oraz nadawanie uprawnień biuru rachunkowemu. Aplikacja Mobilna KSeF 2.0 (Google Play, App Store) wystawia faktury i korekty z telefonu, pamięta listę nabywców i rachunków. e-mikrofirma w e-Urzędzie Skarbowym jest tylko dla jednoosobowej działalności: wystawia krajowe faktury sprzedaży przez KSeF, pobiera faktury zakupu i z tych danych tworzy ewidencję VAT i plik JPK_VAT. Przy kilku fakturach miesięcznie to w zupełności wystarcza. Płatny program albo integracja zaczyna się opłacać dopiero, gdy faktury powstają w sklepie, CRM albo innym systemie i ktoś przepisuje je ręcznie do KSeF.",
+  },
 ];
 
 export default function Ksef2027Page() {
