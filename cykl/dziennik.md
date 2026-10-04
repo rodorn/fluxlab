@@ -2132,3 +2132,31 @@ Dalej aktualne z wpisu 10:43: Wykop dziś do wieczora (tekst z wpisu 05:43) i Go
 **Plan:** `cykl/plan-ruchu.md`, 24 zadania od niedzieli 17:46 do poniedziałku 16:46. Noc: pomiar 19 maili, utm w pipeline wysyłki i w linkach z narzędzi, 8 żądań indeksowania, usunięcie linków www, tytuły pod „mail firmowy", README na GitHubie z utm, 2 posty narzędziowe do kolejki fluxlab-meta, przygotowanie 3 segmentów outreachu (dealerzy ze `swieze_wybrane.json`, biura rachunkowe bez adresu w BAE przez `/api/sprawdz-adres`, sklepy z `sklepy/sito_*.json`), skrypt `cykl/pomiar-kanalow.py`, zrzuty 390 px. Dzień: 4 wysyłki po maks. 12 maili (9:46, 11:46, 13:46, 14:46), odpowiedzi i pomiar utm co 2 godziny. Wyłączone: Gofin co godzinę, nowe FAQ bez danych, teksty na fora do kolejki.
 **Dla Pawła (mail wysłany 17:35):** decyzja, czy outreach idzie dalej po poniedziałkowym pomiarze; Bing Webmaster import (5 min); komentarz Gofin 1559598 (1 min) i 3 starsze.
 **Uwaga dla jutrzejszego stratega:** timer `fluxlab-strategia` startuje 6:15, więc zadania Z14 do Z24 z tego planu będą jeszcze otwarte; szkice maili z Z9 do Z11 leżą w `~/Projekty/mail-audyt/maile_dealerzy/`, `maile_ksiegowe_edoreczenia/`, `maile_sklepy/`. Przenieś niewykonane do nowego planu zamiast pisać je od nowa.
+
+## 2026-10-04 18:57
+**Kanał:** Google (Z5), narzędzia (Z6), GitHub (Z7) według planu dobowego.
+**Co zrobione:** Strona, na którą Google pokazuje frazę „mail firmowy", ma tytuł i opis zaczynające się od tej frazy i jest w kolejce indeksowania; pod wynikiem skanu e-Doręczeń, audytu i kalkulatora stoi link do kontaktu z kampanią utm i zdarzeniem `klik_po_wyniku`; 10 repozytoriów na GitHubie z wyświetleniami linkuje do pasującej strony z `utm_source=github`.
+**Ruch:** Ostatnia doba: **23 odsłony, 13 osób** (wzrost o 64% wobec średniej 14,0). Tydzień: 118 odsłon, 55 osób. 30 dni: 226 odsłon, 129 osób. Najczęściej otwierane: `/audyt-strony` (3), `/` (2), `/ksef-2027` (2), `/narzedzia` (2), `/czas-reakcji-na-leada` (2). Źródła: www.google.com (2), mail (1). Z telefonu 11 z 23. Uruchomienia narzędzi: 0.
+**Dowód:**
+- Z5: fraza „mail firmowy" (10 wyświetleń, 0 kliknięć, średnia pozycja 24,1) trafia na `https://fluxlab.pl/strefa-wiedzy/podszywanie-sie-pod-firmowy-email`. Nowy `<title>` na produkcji: „Mail firmowy: czy ktoś może się pod niego podszyć | Fluxlab", opis od „Mail firmowy bez SPF, DKIM i DMARC...". Commit 9339273, IndexNow 2 z 3 punktów przyjęło, Search Console: „Przesłano prośbę o zindeksowanie" (9. żądanie dnia).
+- Z6: `components/DalejPoWyniku.tsx`, commit 043a506. Test na produkcji (jedna wizyta, port 9228): wiersze 329 `uruchomiono_skan`, 330 `klik_po_wyniku`, 331 `/kontakt` zrodlo=narzedzie, kampania=edoreczenia. To sesja testowa `67405n2ljx3muu28yoj`, nie odwiedzający.
+- Z7: ruch repozytoriów z 14 dni (wyświetlenia/osoby; klonowania to głównie automaty):
+
+| Repozytorium | Wyświetlenia | Klonowania | utm dodany |
+|---|---|---|---|
+| fluxlab-listings-api | 8/2 | 8/8 | tak, /scraping-danych |
+| edoreczenia-klient | 7/3 | 37/26 | tak, /e-doreczenia-integracja |
+| fluxlab-licytacje-monitor | 3/2 | 9/9 | tak, /scraping-danych |
+| fluxlab-baselinker-shopify-sync | 2/2 | 10/10 | tak, /automatyzacja-dla-ecommerce |
+| fluxlab-przetargi-radar | 1/1 | 10/10 | tak, /scraping-danych |
+| fluxlab-auto-due-diligence | 1/1 | 7/7 | tak, /sprawdz-auto |
+| fluxlab-wcag-audyt | 1/1 | 7/7 | tak, /audyt-strony |
+| fluxlab-deal-alerts-bot | 1/1 | 7/7 | tak, /scraping-danych |
+| fluxlab-baselinker-integracje | 1/1 | 8/8 | tak, /integracje-api |
+| fluxlab-n8n-lead-workflow | 1/1 | 6/6 | tak, /n8n |
+| fluxlab-faceless-ai-video | 1/1 | 9/9 | nie, brak pasującej strony |
+| pozostałe 18 (w tym fluxlab, awesome-ksef, fluxlab-ksef-integracja, fluxlab-geo-audyt, fluxlab-import-radar) | 0 | 5 do 3128 | nie |
+
+  Wszystkie 11 z wyświetleniami miały już link do fluxlab.pl, ale bez utm, więc wejścia z nich były nierozróżnialne. Po zmianie `curl raw.githubusercontent.com/.../README.md | grep -c utm_source=github` = 1 dla każdego z 10.
+**Dla Pawła:** Bez zmian: komentarz pod https://forum.gofin.pl/1559598/edroeczenia-dotycza-tylko-urzedow-skarbowych-czy-tez-zus (tekst we wpisie 2026-10-04 14:50) i 3 starsze teksty forumowe.
+**Zostało otwarte:** Z8 (dwa posty narzędziowe do kolejki fluxlab-meta), dalej Z9 do Z24 według `cykl/plan-ruchu.md`.
