@@ -2236,3 +2236,13 @@ Zoho, 24 h: INBOX 1 (Sanity, kod weryfikacyjny), Spam 0; odpowiedzi od firm 0
 - `maile_kanc/066_wojtyga.txt`: kancelaria@wojtyga.com (z podstrony Kontakt, adres ukryty skryptem Joomla, odkodowany), problem: strona tylko po http, https z certyfikatem *.home.pl, formularz kontaktowy na stronie „Niezabezpieczona”. Sprawdzone, że przy prawdziwej wysyłce `wyslij_segment.py kancelarie` wyjdzie wyłącznie ten jeden mail (63 pozostałe są w `wyslane_kanc.json`; `--proba` celowo pokazuje wszystkie).
 **Dla Pawła:** bez zmian: teksty forumowe z wcześniejszych wpisów i token API CEIDG (wpis 20:57).
 **Zostało otwarte:** Z17 od 9:46 (dealerzy, 5 maili), Z18, Z19 (bez materiału, Z10 [!]), Z20, Z21 (sklepy, 2), Z22 o 14:46 tylko wysyłka 066, Z23, Z24. Pula kancelarii z `kanc_kandydaci.json` jest praktycznie wyczerpana, nowy segment potrzebuje świeżej listy domen.
+
+## 2026-10-05 00:55
+**Kanał:** outreach (przygotowanie Z19 z planu dobowego; Z17 do Z24 mają godziny od 9:46, w nocy wolno tylko przygotowanie).
+**Co zrobione:** Z19 dostał materiał, którego Z10 nie znalazł: biuro rachunkowe MERCHANT sp. z o.o. z Gdyni nie ma w odpisie KRS adresu do e-Doręczeń, choć obowiązek ma od 1.04.2025, mail gotowy, nic nie wysłano.
+**Ruch:** ostatnia doba 37 odsłon, 18 osób (wzrost o 162% wobec średniej 14,1); źródła: facebook 3, www.google.com 2, mail 1, narzedzie 1; z telefonu 19 z 37; uruchomienia narzędzi 1 (uruchomiono_skan, klik_po_wyniku). Tydzień 127 odsłon, 60 osób.
+**Dowód:**
+- Z10 sprawdzał w KRS tylko domeny z NIP w białej liście. Na 230 przeskanowanych stronach 7 dalszych miało numer KRS: odpisy z api-krs.ms.gov.pl pokazują adres w BAE u 2beefinanse.pl, alfa-audit-advisory.pl, ampksiegowosc.pl, asygnata.com, biuropodatkowebalance.pl; brak u merchant.com.pl (KRS 0000112973, wpis z 2002, PKD 69.20.Z) i amikus-br.pl (KRS 0001115992, wpis 15.07.2024). Amikus pominięty, bo biuro@awik.waw.pl dostał już mail z segmentu ksiegowe.
+- `~/Projekty/mail-audyt/maile_ksiegowe_edoreczenia/001_merchant.txt`, adres merchant@wp.pl ze strony merchant.com.pl (kontakt i polityka prywatności). `wyslij_segment.py ksiegowe-edoreczenia --proba`: 1 mail, link z `utm_source=mail&utm_campaign=ksiegowe`.
+**Dla Pawła:** bez zmian: teksty forumowe z wcześniejszych wpisów i token API CEIDG (wpis 2026-10-04 20:57).
+**Zostało otwarte:** Z17 od 9:46 (dealerzy, 5), Z18 10:46, Z19 od 11:46 `python3 wyslij_segment.py ksiegowe-edoreczenia` (nie `ksiegowe`, ten czyta maile_ks/), Z20, Z21 (sklepy, 2), Z22 od 14:46 (066), Z23, Z24.
