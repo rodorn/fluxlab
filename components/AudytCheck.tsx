@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 
 import Przyklady from "@/components/Przyklady";
 import { zglosZdarzenie } from "@/lib/zdarzenie";
+import DalejPoWyniku from "@/components/DalejPoWyniku";
 
 /**
  * Darmowy audyt zbiorczy.
@@ -567,6 +568,7 @@ export default function AudytCheck() {
               <p className="mt-2 text-sm leading-relaxed text-gray-700 dark:text-gray-300">
                 {wynik.opis.streszczenie}
               </p>
+              <DalejPoWyniku kampania="audyt" />
             </div>
           )}
 

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { zglosZdarzenie } from "@/lib/zdarzenie";
+import DalejPoWyniku from "@/components/DalejPoWyniku";
 import Scenariusze, { type Scenariusz } from "@/components/Scenariusze";
 
 interface Wynik {
@@ -231,6 +232,7 @@ export default function KalkulatorAutomatyzacji() {
             {wynik.naglowek}
           </p>
           <p className="mt-2 text-sm text-gray-700 dark:text-gray-300">{wynik.opis}</p>
+          <DalejPoWyniku kampania="kalkulator" />
 
           <div className="mt-5 grid gap-3 sm:grid-cols-3">
             <div className="rounded-lg bg-white/70 dark:bg-gray-950/50 p-4">

@@ -16,6 +16,7 @@
 
 import { useState } from "react";
 import { zglosZdarzenie } from "@/lib/zdarzenie";
+import DalejPoWyniku from "@/components/DalejPoWyniku";
 import { PODMIOTY, type Podmiot } from "@/lib/terminy-e-doreczen";
 
 type Skala = {
@@ -226,6 +227,7 @@ export default function EDoreczeniaCheck() {
           <p className="mt-2 text-sm text-gray-700 dark:text-gray-300">
             {wynik.podmiot.opis}
           </p>
+          <DalejPoWyniku kampania="edoreczenia" />
 
           {wynik.podmiot.uwaga && (
             <p className="mt-3 rounded-lg bg-white/70 dark:bg-gray-950/50 px-3 py-2 text-sm text-gray-700 dark:text-gray-300">
