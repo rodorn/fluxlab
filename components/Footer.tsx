@@ -58,6 +58,14 @@ export default function Footer() {
               Regulamin
             </Link>
             <a
+              href="https://www.facebook.com/profile.php?id=61595121744837"
+              target="_blank"
+              rel="noopener"
+              className="text-xs text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
+            >
+              Obserwuj nas na Facebooku
+            </a>
+            <a
               href="https://zleca.pl/wykonawca/fluxlab-strony-internetowe-i-automatyzacja-1790016801"
               target="_blank"
               rel="noopener"
