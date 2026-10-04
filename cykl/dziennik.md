@@ -2183,7 +2183,7 @@ Dalej aktualne z wpisu 10:43: Wykop dziś do wieczora (tekst z wpisu 05:43) i Go
 **Dla Pawła:** Bez zmian: teksty forumowe z wcześniejszych wpisów.
 **Zostało otwarte:** Z10 (biura rachunkowe bez adresu do e-Doręczeń), dalej Z11 do Z24. Do Z17: `wyslij_kanc.py` czyta tylko `maile_kanc/`, więc przed wysyłką trzeba wskazać katalog `maile_dealerzy/` i plik `wyslane_dealerzy.json` (najlepiej argumentem). kaminski-vw.pl trzeba wysłać w poniedziałek rano, bo certyfikat kończy się w piątek.
 
-## 2026-10-04 21:05
+## 2026-10-04 20:57
 **Kanał:** outreach z raportem, przygotowanie (Z10, Z11) i pomiar (Z12).
 **Co zrobione:** dla segmentu sklepów powstały 2 maile z potwierdzonym dziś problemem (do wysyłki w Z21), segment biur rachunkowych bez adresu do e-Doręczeń okazał się nie do zweryfikowania bez logowania (Z10 `[!]`), a `cykl/pomiar-kanalow.py` daje cały pomiar kanałów jednym poleceniem w 6 s.
 **Ruch:** ostatnia doba 31 odsłon, 17 osób (wzrost o 119% wobec średniej 14,1); źródła: facebook 3, www.google.com 2, mail 1, narzedzie 1; z telefonu 13 z 31; uruchomienia narzędzi 1 (uruchomiono_skan, klik_po_wyniku; test z Z6). Kampania facebook/narzedzia: 3 sesje na /e-doreczenia-integracja (posty z Z8 zaczęły przyprowadzać).
