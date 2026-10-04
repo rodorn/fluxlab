@@ -2182,3 +2182,24 @@ Dalej aktualne z wpisu 10:43: Wykop dziś do wieczora (tekst z wpisu 05:43) i Go
   Odpadły: 8 firm z puli dostało od nas mail 6.09 (delivered) i ich problem to tylko wolne ładowanie (impwar 58,6 s, carcenter 19,9 s, autoluzar, bursiak, autosliwka, interauto, gablo, budmatauto), więc drugiego maila nie piszemy; wyjątek to sabat, bo strona nie działa. Strony Toyoty (toyota-centrum, toyota-zg, toyotaczestochowa, chodzen) stoją na wspólnej platformie producenta, dealer tego nie naprawi. dynamica.pl pominięta, bo jest powiązana z Carmore. auto-centrum.tychy.pl zwraca 403 narzędziu. Pula to 27 domen, nie 33, jak podał plan.
 **Dla Pawła:** Bez zmian: teksty forumowe z wcześniejszych wpisów.
 **Zostało otwarte:** Z10 (biura rachunkowe bez adresu do e-Doręczeń), dalej Z11 do Z24. Do Z17: `wyslij_kanc.py` czyta tylko `maile_kanc/`, więc przed wysyłką trzeba wskazać katalog `maile_dealerzy/` i plik `wyslane_dealerzy.json` (najlepiej argumentem). kaminski-vw.pl trzeba wysłać w poniedziałek rano, bo certyfikat kończy się w piątek.
+
+## 2026-10-04 21:05
+**Kanał:** outreach z raportem, przygotowanie (Z10, Z11) i pomiar (Z12).
+**Co zrobione:** dla segmentu sklepów powstały 2 maile z potwierdzonym dziś problemem (do wysyłki w Z21), segment biur rachunkowych bez adresu do e-Doręczeń okazał się nie do zweryfikowania bez logowania (Z10 `[!]`), a `cykl/pomiar-kanalow.py` daje cały pomiar kanałów jednym poleceniem w 6 s.
+**Ruch:** ostatnia doba 31 odsłon, 17 osób (wzrost o 119% wobec średniej 14,1); źródła: facebook 3, www.google.com 2, mail 1, narzedzie 1; z telefonu 13 z 31; uruchomienia narzędzi 1 (uruchomiono_skan, klik_po_wyniku; test z Z6). Kampania facebook/narzedzia: 3 sesje na /e-doreczenia-integracja (posty z Z8 zaczęły przyprowadzać).
+**Dowód:**
+- Z10 `[!]`: silnik `/api/sprawdz-adres` z planu sprawdza przekierowania www, nie BAE. Wyszukiwarka BAE wymaga logowania, CEIDG też (dane.biznes.gov.pl 401, aplikacja.ceidg.gov.pl 403). Jedyne publiczne źródło to odpis KRS z pola `adresDoDoreczenElektronicznychWpisanyDoBAE` (api-krs.ms.gov.pl, sprawdzone na 6 dużych spółkach, wszystkie mają adres). Lejek: 230 domen spoza wysłanych, NIP na stronie 19, z adresem e-mail 12, w białej liście MF 10, z tego 6 JDG (nie do sprawdzenia), 4 w KRS: codexbiuro.pl, hagaw.pl, mikaconsulting.eu mają adres, 2wkonsulting.pl błąd odpisu. 0 firm z potwierdzonym brakiem, więc 0 maili; Z19 nie ma materiału. Wniosek dla stratega: ten segment wymaga logowania Pawła do BAE albo tokenu API CEIDG.
+- Z11: `~/Projekty/mail-audyt/maile_sklepy/004_meggicandles.txt` (kontakt@meggicandles.pl ze strony Kontakt; serwer 6,5 do 7 s do pierwszej odpowiedzi w 3 pomiarach), `005_ciociapsismaczek.txt` (ciociapsismaczek@gmail.com, adres sklepu ze strony głównej i Kontakt; serwer ok. 3 s plus 6,9 s na 4G). Z 9 kandydatów: wcinaj-miod.pl (certyfikat wygasł 11.05), kawaiherbata.com (www z certyfikatem *.iai-system.com), szkolka.sklep.pl (certyfikat bez www) potwierdzone, ale wszystkie trzy dostały od nas mail 30.09 w partii zapisanej w `wyslane_kanc.json`, więc drugiego nie piszemy; nunukids.pl 0,5 s i artsento.pl 1,4 s, czyli już szybkie; braciaziolkowscy.pl i tuszyte.pl mają już SPF; ceramikabeatawozniak.pl bez SPF, ale jedyny adres to prywatny gmail z imieniem i nazwiskiem; kidera.pl nie odpowiada. Audyt lokalnie na `next dev -p 3100`.
+- Z12: `python3 cykl/pomiar-kanalow.py`, wynik z 20:56:
+
+```
+Źródła, 24 h: 17 sesji, 29 odsłon: bez odsyłacza 12, facebook 3, www.google.com 1, mail 1, narzedzie 1
+Źródła, 7 dni: 60 sesji, 113 odsłon: bez odsyłacza 37, www.google.com 12, facebook 3, useme.com 2, teams 2, www.facebook.com 2, chatgpt.com 1, mail 1, narzedzie 1
+Kampanie utm, 7 dni: facebook/narzedzia 3, mail/test-utm 1, narzedzie/edoreczenia 1
+Zdarzenia, 7 dni: uruchomiono_skan 3, strona_stan_* 7, zawezono_katalog 1, uruchomiono_kalkulator 1, klik_po_wyniku 1
+Sesje dziennie: 28.09 6, 29.09 9, 30.09 4, 1.10 4, 2.10 15, 3.10 5, 4.10 17
+Resend, 24 h: 19 wysłanych, wyslane_kanc delivered 19
+Zoho, 24 h: INBOX 1 (Sanity, kod weryfikacyjny), Spam 0; odpowiedzi od firm 0
+```
+**Dla Pawła:** Jeśli segment biur rachunkowych z e-Doręczeniami ma ruszyć, potrzebny jest dostęp do sprawdzania adresów JDG: albo bezpłatny token API CEIDG (wniosek na https://dane.biznes.gov.pl, sekcja API CEIDG, logowanie profilem zaufanym), albo ręczne sprawdzenie w wyszukiwarce BAE w skrzynce e-Doręczeń. Bez zmian: teksty forumowe z wcześniejszych wpisów.
+**Zostało otwarte:** Z13 (zrzuty stron na telefonie), dalej Z14 do Z24. Do Z21: `wyslij_ks.py` czyta tylko `maile_ks/`, do sklepów trzeba wskazać `maile_sklepy/` i `wyslane_sklepy.json`.
