@@ -12,7 +12,7 @@ import NazwaNarzedzia from "@/components/NazwaNarzedzia";
 export const metadata: Metadata = {
   title: "KSeF od 1 stycznia 2027: lista kontrolna dla firm | Fluxlab",
   description:
-    "1 stycznia 2027 kończą się przepisy przejściowe KSeF. Sześć pytań: faktury poza KSeF, kasa, numer KSeF w przelewie, faktury kosztowe, tryb offline, odrzucenia.",
+    "Koniec przepisów przejściowych KSeF 1.01.2027. Siedem pytań: faktury poza KSeF, kasa, numer KSeF w przelewie, koszty, tryb offline, numeracja, odrzucenia.",
   alternates: { canonical: "/ksef-2027" },
   openGraph: {
     title: "KSeF od 1 stycznia 2027: co musicie mieć domknięte",
@@ -88,7 +88,7 @@ export default function Ksef2027Page() {
             <p className="mt-5 text-lg text-gray-600 dark:text-gray-300">
               Tego dnia kończą się naraz wszystkie przepisy przejściowe
               Krajowego Systemu e-Faktur: limit faktur poza KSeF, wyjątek dla
-              kas rejestrujących i swoboda przy przelewach. Sześć pytań poniżej
+              kas rejestrujących i swoboda przy przelewach. Siedem pytań poniżej
               pokazuje, co jeszcze zostało do zrobienia, a na końcu dostajecie
               wykaz braków gotowy do wysłania księgowej. Bez rejestracji i bez
               podawania jakichkolwiek danych.

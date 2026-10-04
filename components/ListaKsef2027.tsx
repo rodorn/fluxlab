@@ -67,6 +67,15 @@ const PUNKTY: Punkt[] = [
       "Wygenerujcie certyfikat w Aplikacji Podatnika KSeF teraz, a nie w dniu awarii. Ministerstwo Finansów zapowiedziało, że tokeny do logowania zostaną po 31 grudnia 2026 r., ale na 4.10.2026 rozporządzenie nadal wskazuje ten termin, więc certyfikat jest też zapasem na wypadek, gdyby nowelizacja nie zdążyła.",
   },
   {
+    klucz: "numeracja",
+    pytanie:
+      "Czy numer faktury wystawionej w styczniu 2027 nie powtórzy żadnego numeru z 2026?",
+    zmiana:
+      "KSeF odrzuca fakturę z kodem błędu 440 „Duplikat faktury”, jeśli ten sam NIP sprzedawcy wysłał już fakturę tego samego rodzaju z identycznym numerem, a sprawdza to 10 lat wstecz. Kto w 2026 wystawiał faktury w KSeF, zeruje numerację co roku i nie ma roku w numerze (FV 1, FV 2…), dostanie odrzucenie już pierwszej faktury w styczniu 2027, bo „FV 1” przeszła przez KSeF rok wcześniej.",
+    zrobic:
+      "Sprawdźcie wzór numeru w programie do faktur. Jeżeli nie ma w nim roku, dopiszcie go przed pierwszą fakturą w 2027, np. 1/01/2027. To samo przy zmianie programu: nowa seria nie może powtarzać numerów wysłanych ze starego.",
+  },
+  {
     klucz: "odrzucenia",
     pytanie:
       "Czy widzicie, która faktura została odrzucona albo jeszcze nie wysłana?",
@@ -130,7 +139,7 @@ export default function ListaKsef2027({
       <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
         Tego dnia kończą się naraz wszystkie przepisy przejściowe KSeF. Same
         kary mają zostać przesunięte na 2028 rok, ale obowiązki z tej listy
-        zaczynają obowiązywać w styczniu 2027 niezależnie od nich. Sześć pytań,
+        zaczynają obowiązywać w styczniu 2027 niezależnie od nich. Siedem pytań,
         przy każdym zaznaczcie, czy macie to załatwione. Na końcu dostaniecie
         listę tego, co zostało, gotową do wysłania księgowej albo osobie od
         systemu.

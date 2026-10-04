@@ -20,7 +20,7 @@ export const RAMKA_HTML = `<div style="border:1px solid #d1d5db;border-radius:12
 <li>przelew za fakturę z KSeF między czynnymi podatnikami VAT ma zawierać jej numer KSeF,</li>
 <li>faktura kosztowa jest otrzymana w dniu nadania jej numeru w KSeF, nawet jeśli nikt jej stamtąd nie pobrał.</li>
 </ul>
-<p style="margin:0"><a href="https://fluxlab.pl/ksef-2027">Lista kontrolna KSeF na 2027: sześć pytań i wykaz braków dla księgowej</a>, bezpłatnie i bez rejestracji. Źródło: Fluxlab.</p>
+<p style="margin:0"><a href="https://fluxlab.pl/ksef-2027">Lista kontrolna KSeF na 2027: siedem pytań i wykaz braków dla księgowej</a>, bezpłatnie i bez rejestracji. Źródło: Fluxlab.</p>
 </div>`;
 
 export default function RamkaKsefDoWstawienia() {

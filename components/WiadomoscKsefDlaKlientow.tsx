@@ -19,7 +19,7 @@ export const WIADOMOSC = [
   "- przelew za fakturę z KSeF między czynnymi podatnikami VAT ma zawierać jej numer KSeF,",
   "- faktura kosztowa jest otrzymana w dniu nadania jej numeru w KSeF, nawet jeśli nikt jej stamtąd nie pobrał.",
   "",
-  "Prosimy o przejście sześciu pytań z tej listy, zajmuje to kilka minut: https://fluxlab.pl/ksef-2027",
+  "Prosimy o przejście siedmiu pytań z tej listy, zajmuje to kilka minut: https://fluxlab.pl/ksef-2027",
   "Na końcu powstaje wykaz tego, co zostało do zrobienia. Prosimy go skopiować i odesłać nam w odpowiedzi na tę wiadomość, wtedy ustalimy, co trzeba zmienić przed styczniem.",
   "",
   "Pozdrawiamy",

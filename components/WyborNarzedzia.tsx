@@ -221,7 +221,7 @@ const SYTUACJE: Sytuacja[] = [
       {
         href: "/ksef-2027",
         powod:
-          "1 stycznia 2027 kończą się naraz wszystkie przepisy przejściowe KSeF. Sześć pytań pokazuje, co jeszcze trzeba domknąć.",
+          "1 stycznia 2027 kończą się naraz wszystkie przepisy przejściowe KSeF. Siedem pytań pokazuje, co jeszcze trzeba domknąć.",
       },
       {
         href: "/e-doreczenia-integracja",

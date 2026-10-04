@@ -134,10 +134,10 @@ export default function NumerKsefPage() {
               Co jeszcze trzeba domknąć przed 1 stycznia 2027
             </h2>
             <p className="mt-3 text-gray-600 dark:text-gray-300">
-              Numer w przelewie to jeden z sześciu punktów, które kończą się
+              Numer w przelewie to jeden z siedmiu punktów, które kończą się
               razem z przepisami przejściowymi KSeF. Pozostałe to faktury poza
-              systemem, kasa rejestrująca, faktury kosztowe, tryb offline i
-              odrzucenia.
+              systemem, kasa rejestrująca, faktury kosztowe, tryb offline,
+              numeracja faktur i odrzucenia.
             </p>
             <p className="mt-4">
               <Link

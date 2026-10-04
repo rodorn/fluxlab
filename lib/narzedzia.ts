@@ -30,7 +30,7 @@ export const businessTools: Narzedzie[] = [
   {
     title: "Lista KSeF na 1 stycznia 2027",
     description:
-      "Sześć pytań o to, co musicie mieć domknięte, zanim skończą się przepisy przejściowe KSeF: faktury poza systemem, kasa, numer KSeF w przelewie, faktury kosztowe, tryb offline i odrzucenia. Na końcu wykaz braków do wysłania księgowej, a biura rachunkowe dostają gotową wiadomość do klientów.",
+      "Siedem pytań o to, co musicie mieć domknięte, zanim skończą się przepisy przejściowe KSeF: faktury poza systemem, kasa, numer KSeF w przelewie, faktury kosztowe, tryb offline, numeracja faktur i odrzucenia. Na końcu wykaz braków do wysłania księgowej, a biura rachunkowe dostają gotową wiadomość do klientów.",
     href: "/ksef-2027",
     ikona: "faktura",
     badge: "Nowość",
