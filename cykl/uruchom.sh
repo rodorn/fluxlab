@@ -4,8 +4,10 @@
 # to osobna sesja Claude, dokladnie tak jak przy cyklu zarobkowym.
 set -uo pipefail
 export PATH="$HOME/.local/bin:/usr/local/bin:/usr/bin:/bin"
-# Model wybiera hamulec limitu: lepszy, dopóki budżet pozwala.
-MODEL=$(cat "$HOME/.claude-session-manager/modele/fluxlab-strona" 2>/dev/null || echo opus)
+# Decyzja Pawła z 4.10.2026: wykonanie co godzinę na Opusie, strategia raz na
+# dobę na Fable (uruchom-strategia.sh). Hamulec ma ten automat odznaczony
+# (dlawic: false), więc nie zwalnia rytmu; plik modelu z hamulca nie obowiązuje.
+MODEL=opus
 LOG="$HOME/Projekty/fluxlab-site/cykl/przebieg.log"
 cd "$HOME/Projekty/fluxlab-site" || exit 1
 {

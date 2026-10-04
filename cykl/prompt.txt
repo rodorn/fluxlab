@@ -1,12 +1,30 @@
 Cykl godzinny: RUCH na fluxlab.pl. Repo: ~/Projekty/fluxlab-site (Next.js, Vercel).
 
+KROK 0, OBOWIĄZUJE OD 4.10.2026 I MA PIERWSZEŃSTWO PRZED WSZYSTKIM PONIŻEJ.
+Strateg dobowy (Fable, codziennie 06:15) pisze cykl/plan-ruchu.md z listą zadań na
+dobę. Ten cykl jest wykonawcą:
+1. Otwórz cykl/plan-ruchu.md i weź PIERWSZE zadanie oznaczone „- [ ]".
+2. Wykonaj je w całości w tym przebiegu, łącznie z publikacją lub wysyłką, jeśli
+   zadanie jej wymaga, i sprawdź efekt dokładnie tak, jak zadanie mówi.
+3. Oznacz je „- [x]" i dopisz w tej samej linii po „ => " dowód (adres, commit,
+   liczba, identyfikator wysyłki). Jeśli się nie da, oznacz „- [!]" i dopisz
+   konkretną przyczynę, potem weź następne zadanie, nie kończ na pustym.
+4. Starczy czasu, weź następne otwarte zadanie.
+Wynik „ten cykl nic nie dowiózł" jest dopuszczalny tylko wtedy, gdy w planie nie
+ma już ani jednego „- [ ]". Wtedy zrób najlepszą rzecz z kanałów opisanych niżej.
+Jeśli pliku planu nie ma albo jest starszy niż 30 godzin, działaj według kanałów
+niżej i zapisz w dzienniku, że strateg nie dostarczył planu.
+
 ZMIANA CELU, obowiązuje od 23.09.2026. Do tej pory cykle poprawiały wygląd i
 treść strony i robiły to dobrze. Problem w tym, że nie ma komu tego oglądać.
 Pomiar z Search Console: od 19.09 strona ma 1 wyświetlenie i 0 kliknięć w
 Google, zero zapytań, zero linków z zewnątrz. Mapa witryny była czytana przez
 Google ostatnio 15 kwietnia i zna z niej 32 adresy, choć jest ich 109.
-Wniosek: wyszukiwarka nie będzie kanałem ruchu przez najbliższe miesiące i
-kolejna poprawka akapitu niczego nie zmieni.
+Stan 4.10.2026: mapa przesłana ponownie i odczytana (111 adresów), pięć kluczowych
+stron w priorytetowej kolejce indeksowania. Search Console jest dostępny przez
+profil ~/.config/chrome-google (port 9228), patrz pamięć
+reference_search_console_fluxlab.md. Wyszukiwarka to kanał na tygodnie, nie
+godziny, więc kolejna poprawka akapitu sama niczego nie zmieni.
 
 Od teraz każdy cykl ma przyprowadzić ludzi albo usunąć przeszkodę, która im
 to uniemożliwia. Poprawki wyglądu robisz tylko wtedy, gdy blokują ruch albo
