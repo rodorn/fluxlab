@@ -2564,3 +2564,57 @@ Z sześciu maili z Z8 dwa nie wyszły: 008 (lukan.grochowska@gmail.com) i 010 (s
 Raport Indeksowanie stron nadal z 21.09.2026 (73 zindeksowane, 30 nie, w tym 16 „zeskanowana, ale jeszcze nie zindeksowana”), ale sprawdzenie pojedynczych adresów jest nowsze: lista 16 jest już nieaktualna. Następny wolny limit żądań: 6.10 ok. 20:00.
 **Dla Pawła:** bez zmian: odpowiedź do Profit Polska czeka na akceptację (mail „Wiadomosc do akceptacji: Formularz fluxlab.pl, ma.kobus@gmail.com” z 15:30).
 **Zostało otwarte:** Z24 05:46 (bilans planu). Innych otwartych zadań w planie nie ma.
+
+## 2026-10-05 20:50
+**Kanał:** pomiar (Z24 z planu stratega, ostatnie otwarte zadanie; zrobione o 20:50 zamiast 05:46, bo Z1 do Z23 są zamknięte; nocne cykle mogą dopisać zmiany).
+**Co zrobione:** bilans planu 2026-10-05/06 dla stratega: 23 z 23 zadań zamknięte, jedyne, co przyprowadziło człowieka, to mail KRS do biura rachunkowego (lead Profit Polska); na wtorek czeka 19 maili w czterech segmentach.
+**Ruch:** ostatnia doba 66 odsłon, 34 osoby (wzrost o 264% wobec średniej 18,1); źródła: mail 4, www.google.com 2, facebook 2, chatgpt.com 1, reszta bez odsyłacza; z telefonu 31 z 66; uruchomienia narzędzi 2. Najczęściej: /e-doreczenia-integracja 10, / 8, /audyt-strony 7, /automatyzacja-dla-biur-rachunkowych 7, /ksef-2027 4.
+**Dowód:**
+
+### Bilans planu 2026-10-05/06
+
+`python3 cykl/pomiar-kanalow.py` (20:43):
+- Źródła 24 h: 34 sesje, 58 odsłon; bez odsyłacza 26, mail 3, www.google.com 2, facebook 2, chatgpt.com 1.
+- Źródła 7 dni: 87 sesji, 164 odsłony; bez odsyłacza 61, www.google.com 11, facebook 5 (+2 www.facebook.com), mail 4, teams 2, chatgpt.com 2, narzedzie 1.
+- Kampanie utm 7 dni: facebook/narzedzia 5, mail/ksiegowe 3, mail/test-utm 1, narzedzie/edoreczenia 1.
+- Zdarzenia 7 dni: uruchomiono_skan 3, audyt_uruchomiony 3, strona_stan_* 3, uruchomiono_skan_krs 1, klik_po_wyniku 1, lead_landing 1, audyt_wynik_slaby 1, audyt_ze_strony_glownej 1, zawezono_katalog 1, uruchomiono_kalkulator 1.
+- Sesje dziennie: 4.10 18, 5.10 33 (najwięcej od startu licznika).
+- Resend 24 h: 32 wysłane, 31 delivered, 1 bounced (biuro@craftbeans.pl, w `pomijane.json`), 0 complained.
+- Zoho 24 h: INBOX 6 (5 FINREAL, 1 Sanity, inny projekt), Spam 0, odpowiedzi na outreach 0.
+
+| Zadanie | Zrobione | Dowód | Co przyprowadziło |
+|---|---|---|---|
+| Z1 tytuł /audyt-google-ads, sekcja enova | tak | c7a3a46 | 0 (fraza na poz. 27,6, efekt w GSC za kilka dni) |
+| Z2 pomiar niedzieli, fora | tak | wpis 07:10 | wniosek: 19 maili z 4.10 nie sprowadziło ludzi; brak nowych wątków |
+| Z3 kontrola maili | tak | 22 maile OK | nie dotyczy |
+| Z4 dealerzy 5 + kancelarie 2 | tak | 7/7 delivered | 0 sesji, 0 odpowiedzi |
+| Z5 ksiegowe 7 | tak | 7/7 delivered | 2 sesje utm (najpewniej skanery linków) |
+| Z6 sklepy 8 | tak | 7 delivered, 1 bounced | 0 |
+| Z7 odpowiedzi | tak | 0 odpowiedzi | nie dotyczy |
+| Z8 partia 2 biur KRS | tak | 6 maili | materiał do Z9 |
+| Z9 ksiegowe 4 | tak | 4/4 delivered | 1 sesja utm = lead Profit Polska (skan, 3 audyty, 2 formularze) |
+| Z10, Z11 pomiar, bilans outreachu | tak | wpisy 15:50, 16:50 | nie dotyczy |
+| Z12 indeksowanie GSC | tak | 10/10 żądań | 7 stron z listy niezindeksowanych już w Google |
+| Z13 tryb KRS w narzędziu e-Doręczeń | tak | 52813d4, 48eca2e | 1 uruchomienie skanu KRS (7 dni) |
+| Z14 sekcja KRS na /e-doreczenia-integracja | tak | f5ea667 | strona najczęściej otwierana w dobie (10) |
+| Z15 post FB 027 do kolejki | tak | kolejka.json poz. 0 | jeszcze nieopublikowany, 0 |
+| Z16 kancelarie KRS | tak | 5 maili na wtorek | wtorek |
+| Z17 linki wewnętrzne | tak | 76d2ac2 | 0 (Google) |
+| Z18 dealerzy KRS | tak | 1 mail (ALMARO TRADE) | wtorek |
+| Z19 sekcja AI w CRM | tak | 23d91fc | 0 (Google) |
+| Z20 pomiar Resend/Zoho | tak | wpis 19:05 | nie dotyczy |
+| Z21 ruch na GitHubie | tak | fca9c74 | 26 wyświetleń repo w 14 dni, 0 wejść z github na stronę |
+| Z22 agencje KRS | tak | 10 maili na wtorek | wtorek |
+| Z23 zrzuty 390 px | tak | 6 zrzutów, scrollWidth 390 | nic nie blokowało |
+
+Maile gotowe na wtorek (adres spoza `wyslane*.json`), razem 19:
+- `maile_kanc`: 5 (068_mcklege, 069_bhr, 070_maliszewska, 071_wojcik, 072_kozlowski)
+- `maile_dealerzy`: 1 (006_almarotrade)
+- `maile_agencje`: 10 (001_adagri do 010_promodigy)
+- `maile_ksiegowe_edoreczenia`: 3 (014_biuro-wroclaw, 015_mscfinanse, 016_alfabusiness)
+
+Trafialność drogi KRS łącznie (8 plików `krs*.json` w `~/Projekty/mail-audyt/maile_*`): 1146 sprawdzonych domen, 246 różnych spółek z odpisem, 50 bez pola adresu do e-Doręczeń (20,3% spółek, 4,4 na 100 domen); po odrzuceniu spółek bez firmowego adresu na stronie zostało 38 maili (19 wysłanych 5.10, 19 na wtorek), czyli 3,3 maila na 100 domen. Najlepsze źródło: agencje (13 z 49 spółek, 26%), najsłabsze: dealerzy (1 z 29).
+
+**Wniosek:** z 23 zadań ruch przyniosło jedno, mail KRS do biur rachunkowych: 1 lead na 11 maili; Google, GitHub, Facebook i maile o stronie dały w tej dobie 0 mierzalnych wejść z leadem.
+**Dla Pawła:** bez zmian: odpowiedź do Profit Polska czeka na akceptację (mail „Wiadomosc do akceptacji: Formularz fluxlab.pl, ma.kobus@gmail.com” z 15:30).
+**Zostało otwarte:** w planie nie ma już „- [ ]”. Wtorek 9:46: 19 maili w czterech segmentach (bez `--limit` wyjdą wszystkie). Następny limit żądań indeksowania: 6.10 ok. 20:00.
