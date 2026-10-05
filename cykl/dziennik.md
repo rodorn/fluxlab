@@ -2388,3 +2388,25 @@ Zoho, 24 h: INBOX 1 (Sanity, kod weryfikacyjny), Spam 0; odpowiedzi od firm 0
 - Z7 (część o niedzieli): Zoho od 4.10, INBOX i Spam oraz Notification, Newsletter, Archive: 0 odpowiedzi na 19 maili z 4.10, 0 odbić. W INBOX tylko kod Sanity i odpowiedź Wiktorii Jagielskiej (FINREAL, 4.10 21:15), nieruszona, inny projekt.
 **Dla Pawła:** bez zmian.
 **Zostało otwarte:** Z4 od 9:46 (następny przebieg startuje 9:43, musi odczekać 3 minuty; `dealerzy --limit=5`, `kancelarie --limit=2`), Z5 od 10:46, Z6 od 11:46, Z7 12:46, Z9 od 14:46, Z10, Z11, Z12 po 19:50 (9 adresów, lista w planie), Z20, Z24.
+
+## 2026-10-05 09:58
+**Kanał:** outreach z gotowym raportem (Z4).
+**Co zrobione:** wyszło 7 maili (5 do dealerów, 2 do kancelarii) z pawel@fluxlab.pl przez Resend, wszystkie 7 dostarczone.
+**Ruch:** ostatnia doba 48 odsłon, 23 osoby (wzrost o 239% wobec średniej 14,1); źródła: facebook 3, www.google.com 2, mail 1, narzedzie 1; z telefonu 27 z 48; uruchomienia narzędzi 2 (uruchomiono_skan 1, uruchomiono_skan_krs 1, klik_po_wyniku 1).
+**Dowód:**
+- Z4, wysyłka 09:46 do 09:48, statusy Resend o 09:58:
+
+| Segment | Adres | Identyfikator | Status |
+|---|---|---|---|
+| dealerzy | serwis.koszalin@kaufman.pl | 01a10b06-e683-7e9f-99ac-2aeab3bb5f7e | delivered |
+| dealerzy | serwis@nivette.pl | 01a10b07-21e7-7c5d-9b94-cc9b8ab1fa46 | delivered |
+| dealerzy | biuro@kaminski-vw.pl | 01a10b07-5d4d-7ba6-98e8-7a21481da09b | delivered |
+| dealerzy | sekretariat@vipcar.pl | 01a10b07-98b0-71b4-acc5-a0115b59648f | delivered |
+| dealerzy | serwis@sabat.lublin.pl | 01a10b07-d418-722a-b1be-f3e0a360788c | delivered |
+| kancelarie | kancelaria@wojtyga.com | 01a10b08-4a36-73fd-825a-31dda6948edf | delivered |
+| kancelarie | sekretariat@reichelt.com.pl | 01a10b08-8588-7098-baf2-5a404c98eba5 | delivered |
+
+  Zapis w `wyslane_dealerzy.json` (5) i `wyslane_kanc.json` (65). Na wtorek nietknięte: dealerzy 006, kancelarie 068 do 072. Uwaga dla wykonawców: `wyslij_segment.py --proba` nie pomija już wysłanych adresów, więc pokazuje pierwsze pliki z katalogu, a nie te, które naprawdę wyjdą.
+- Pozostałe otwarte zadania mają blokadę godzinową (Z5 od 10:46, Z12 po 19:50), więc przebieg kończy się na Z4.
+**Dla Pawła:** bez zmian.
+**Zostało otwarte:** Z5 od 10:46 (`ksiegowe-edoreczenia --limit=7`), Z6 od 11:46, Z7 12:46, Z9 od 14:46, Z10, Z11, Z12 po 19:50 (9 adresów), Z20, Z24.
