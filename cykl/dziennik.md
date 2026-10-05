@@ -2432,3 +2432,30 @@ Zoho, 24 h: INBOX 1 (Sanity, kod weryfikacyjny), Spam 0; odpowiedzi od firm 0
 - Pozostałe otwarte zadania mają blokadę godzinową, przebieg kończy się na Z5.
 **Dla Pawła:** bez zmian.
 **Zostało otwarte:** Z6 od 11:46 (sklepy), Z7 12:46, Z9 od 14:46, Z10, Z11, Z12 po 19:50 (9 adresów), Z20, Z24.
+
+<!-- WYSLANO 2026-10-05 11:05 -->
+
+## 2026-10-05 12:52
+**Kanał:** outreach z gotowym raportem (Z6 sklepy, kontrola statusów; Z7 odpowiedzi i pomiar).
+**Co zrobione:** potwierdzone 8 maili do sklepów wysłanych o 11:43 przez przebieg, który ich nie odhaczył (7 dostarczonych, 1 odbity, adres trafił do listy pominiętych), sprawdzona skrzynka: zero odpowiedzi na outreach.
+**Ruch:** ostatnia doba 56 odsłon, 28 osób (wzrost o 300% wobec średniej 14,0); źródła: mail 3, facebook 3, www.google.com 2, narzedzie 1, chatgpt.com 1; z telefonu 32 z 56; uruchomienia narzędzi 2 (uruchomiono_skan 1, uruchomiono_skan_krs 1, klik_po_wyniku 1). Najczęściej: /e-doreczenia-integracja 11, /automatyzacja-dla-biur-rachunkowych 5, /kontakt 4, /audyt-strony 4.
+**Dowód:**
+- Z6, wysyłka 11:43 do 11:45 (`wyslane_sklepy.json`, 8 adresów), statusy Resend o 12:45:
+
+| Adres | Identyfikator | Status |
+|---|---|---|
+| kontakt@meggicandles.pl | 01a10b72-6c9f-7e1c-8d9b-e09df6e0be64 | delivered |
+| ciociapsismaczek@gmail.com | 01a10b72-a7ff-767a-9ea7-2a5b71ab3654 | delivered |
+| biuro@craftbeans.pl | 01a10b72-e358-7717-a500-b77ab3d4e8d8 | bounced |
+| kontakt@twinklecandle.com | 01a10b73-1eb8-7821-a4bd-fda28ca7a4d3 | delivered |
+| sklep@przyprawomat.pl | 01a10b73-5a2d-7ecf-acce-f018b58aec26 | delivered |
+| purite@purite.pl | 01a10b73-958e-7964-9f58-73334fd9de23 | delivered |
+| info@hundstaff.pl | 01a10b73-d0fa-74ae-a956-e6d78cbc3f41 | delivered |
+| kontakt@insona.pl | 01a10b74-0c69-7d87-95ef-be6e08492711 | delivered |
+
+  `biuro@craftbeans.pl` dopisany do `pomijane.json` (57 adresów).
+- Z7: Zoho INBOX od 4.10 17:00 ma 1 wiadomość, od Wiktorii Jagielskiej (FINREAL, inny projekt, tylko odnotowana), Spam 0. Odpowiedzi na outreach 0, próśb o usunięcie 0.
+- Kampanie utm od 9:46: mail/ksiegowe 2 sesje (10:47 i 10:50, obie z komputera, po 1 odsłonie /e-doreczenia-integracja, bez uruchomienia narzędzia). Weszły minutę i cztery minuty po wysyłce Z5, więc mogą to być skanery linków w skrzynkach. mail/dealerzy 0, mail/kancelarie 0, mail/sklepy 0.
+- Pozostałe otwarte zadania mają blokadę godzinową (Z9 od 14:46), więc przebieg kończy się na Z7.
+**Dla Pawła:** bez zmian.
+**Zostało otwarte:** Z9 od 14:46 (ksiegowe-edoreczenia, 008 do 013), Z10 15:46, Z11 16:46, Z12 po 19:50 (9 adresów), Z20, Z24.
