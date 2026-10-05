@@ -2378,3 +2378,13 @@ Zoho, 24 h: INBOX 1 (Sanity, kod weryfikacyjny), Spam 0; odpowiedzi od firm 0
 - Z23: zrzuty 390 px w `skrypty-raport/telefon-390/` (wynik KRS dla 0000422082, `/audyt-google-ads`, sekcja enova365), szerokość dokumentu 390 na każdej stronie, nic nie blokuje, bez zmian w kodzie.
 **Dla Pawła:** bez zmian.
 **Zostało otwarte:** Z4 od 9:46 (`dealerzy --limit=5`, `kancelarie --limit=2`), Z5 od 10:46, Z6 od 11:46, Z7 12:46, Z9 od 14:46, Z10, Z11, Z12 (żądania indeksowania dopiero po 9:00), Z20 po wysyłkach, Z24 o 05:46. Na wtorek gotowe: kancelarie 5 (068 do 072), dealerzy 1 (006), agencje 10.
+
+## 2026-10-05 09:10
+**Kanał:** Google (część Z12) i odpowiedzi na outreach (część Z7), bo wszystkie otwarte zadania planu mają blokadę godzinową (Z4 dopiero od 9:46).
+**Co zrobione:** `/audyt-google-ads` trafił do priorytetowej kolejki indeksowania Google; pozostałe 9 żądań odrzucił dzienny limit GSC, który wbrew założeniu planu nie odnawia się o 9:00.
+**Ruch:** ostatnia doba 48 odsłon, 23 osoby (wzrost o 239% wobec średniej 14,1); źródła: facebook 3, www.google.com 2, mail 1, narzedzie 1; uruchomienia narzędzi 2.
+**Dowód:**
+- Z12 (częściowo): 09:01 `https://fluxlab.pl/audyt-google-ads` (w Google) → „Przesłano prośbę o zindeksowanie”. 09:02 `https://fluxlab.pl/automatyzacja-dla-biur-rachunkowych` → „Przekroczono limit. Nie udało nam się przetworzyć tego żądania, ponieważ został przekroczony Twój dzienny limit”, potwierdzone ponownie ręcznie. Limit liczy się najpewniej 24 h od serii z 4.10 ok. 19:50, więc reszta po 19:50. Raport Indeksowanie nadal z 21.09 (73 zindeksowane, 30 nie, 16 „zeskanowana, ale jeszcze nie zindeksowana”); 8. strona z listy to w praktyce obrazy `opengraph-image`, nie strony treści. Nowy skrypt `skrypty-raport/gsc_indeksuj.py`.
+- Z7 (część o niedzieli): Zoho od 4.10, INBOX i Spam oraz Notification, Newsletter, Archive: 0 odpowiedzi na 19 maili z 4.10, 0 odbić. W INBOX tylko kod Sanity i odpowiedź Wiktorii Jagielskiej (FINREAL, 4.10 21:15), nieruszona, inny projekt.
+**Dla Pawła:** bez zmian.
+**Zostało otwarte:** Z4 od 9:46 (następny przebieg startuje 9:43, musi odczekać 3 minuty; `dealerzy --limit=5`, `kancelarie --limit=2`), Z5 od 10:46, Z6 od 11:46, Z7 12:46, Z9 od 14:46, Z10, Z11, Z12 po 19:50 (9 adresów, lista w planie), Z20, Z24.
