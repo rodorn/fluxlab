@@ -86,6 +86,19 @@ type Wynik = {
   naglowek: string;
 };
 
+type WynikKrs = {
+  status: "JEST_ADRES" | "BRAK_ADRESU";
+  krs: string;
+  nazwa: string;
+  forma: string;
+  dataWpisu: string;
+  stanZDnia: string;
+  adres: string | null;
+  termin: string;
+  naglowek: string;
+  komentarz: string;
+};
+
 /** Pelne dni miedzy dzisiaj a terminem, liczone na polnocy, zeby godzina
  *  otwarcia strony nie przesuwala wyniku o jeden dzien. */
 function dniDo(iso: string): number {
@@ -107,12 +120,11 @@ function policz(podmiot: Podmiot): Wynik {
       dni,
       werdykt: "CZERWONY",
       etykieta: "Obowiązek już działa",
-      naglowek:
-        podmiot.dataOpis.startsWith("dzień")
-          ? "Adres do doręczeń elektronicznych powinien istnieć od pierwszego dnia"
-          : dni === 0
-            ? `Obowiązek działa od dziś, ${podmiot.dataOpis}`
-            : `Termin minął ${podmiot.dataOpis}, czyli ${Math.abs(dni)} ${odmianaDni(Math.abs(dni))} temu`,
+      naglowek: podmiot.dataOpis.startsWith("dzień")
+        ? "Adres do doręczeń elektronicznych powinien istnieć od pierwszego dnia"
+        : dni === 0
+          ? `Obowiązek działa od dziś, ${podmiot.dataOpis}`
+          : `Termin minął ${podmiot.dataOpis}, czyli ${Math.abs(dni)} ${odmianaDni(Math.abs(dni))} temu`,
     };
   }
   if (dni <= 120) {
@@ -137,8 +149,41 @@ export default function EDoreczeniaCheck() {
   const [wynik, setWynik] = useState<Wynik | null>(null);
   const [skala, setSkala] = useState<Skala | null>(null);
   const [email, setEmail] = useState("");
-  const [leadStan, setLeadStan] = useState<"idle" | "wysylamy" | "ok" | "blad">("idle");
+  const [leadStan, setLeadStan] = useState<"idle" | "wysylamy" | "ok" | "blad">(
+    "idle",
+  );
   const [leadBlad, setLeadBlad] = useState("");
+  const [tryb, setTryb] = useState<"forma" | "krs">("forma");
+  const [krs, setKrs] = useState("");
+  const [krsStan, setKrsStan] = useState<"idle" | "szukamy" | "blad">("idle");
+  const [krsBlad, setKrsBlad] = useState("");
+  const [wynikKrs, setWynikKrs] = useState<WynikKrs | null>(null);
+
+  async function sprawdzKrs(e: React.FormEvent) {
+    e.preventDefault();
+    zglosZdarzenie("uruchomiono_skan_krs");
+    setKrsStan("szukamy");
+    setKrsBlad("");
+    setWynikKrs(null);
+    try {
+      const res = await fetch("/api/sprawdz-krs-edoreczenia", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ krs }),
+      });
+      const d = await res.json().catch(() => null);
+      if (!res.ok || !d || d.error) {
+        setKrsBlad(d?.error || "Nie udało się sprawdzić numeru.");
+        setKrsStan("blad");
+        return;
+      }
+      setWynikKrs(d as WynikKrs);
+      setKrsStan("idle");
+    } catch {
+      setKrsBlad("Brak połączenia. Spróbujcie ponownie za chwilę.");
+      setKrsStan("blad");
+    }
+  }
 
   function wybierz(p: Podmiot) {
     zglosZdarzenie("uruchomiono_skan");
@@ -194,138 +239,274 @@ export default function EDoreczeniaCheck() {
         Od kiedy Wasz podmiot musi mieć adres do e-Doręczeń
       </h2>
       <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-        Terminy wchodzą etapami i zależą wyłącznie od tego, gdzie i kiedy podmiot
-        został zarejestrowany. Naciśnijcie swój przypadek, a policzymy datę z ustawy
-        i dni, które zostały albo minęły. Nic nie trzeba wpisywać.
+        Terminy wchodzą etapami i zależą wyłącznie od tego, gdzie i kiedy
+        podmiot został zarejestrowany. Naciśnijcie swój przypadek, a policzymy
+        datę z ustawy i dni, które zostały albo minęły. Nic nie trzeba wpisywać.
       </p>
 
-      <div className="mt-5 flex flex-wrap gap-2">
-        {PODMIOTY.map((p) => (
+      <div
+        role="tablist"
+        aria-label="Sposób sprawdzenia"
+        className="mt-5 inline-flex rounded-full border border-gray-300 p-1 dark:border-gray-700"
+      >
+        {(
+          [
+            ["forma", "Termin według formy działalności"],
+            ["krs", "Spółka z KRS: sprawdź po numerze"],
+          ] as const
+        ).map(([k, etykieta]) => (
           <button
-            key={p.klucz}
+            key={k}
             type="button"
-            onClick={() => wybierz(p)}
-            className={`rounded-full border px-4 py-2 text-sm font-medium transition-colors ${
-              wynik?.podmiot.klucz === p.klucz
-                ? "border-accent bg-accent-solid text-white"
-                : "border-gray-300 text-gray-700 hover:border-accent hover:text-accent dark:border-gray-700 dark:text-gray-300"
+            role="tab"
+            aria-selected={tryb === k}
+            onClick={() => setTryb(k)}
+            className={`rounded-full px-4 py-1.5 text-sm font-medium transition-colors ${
+              tryb === k
+                ? "bg-accent-solid text-white"
+                : "text-gray-700 hover:text-accent dark:text-gray-300"
             }`}
           >
-            {p.etykieta}
+            {etykieta}
           </button>
         ))}
       </div>
 
-      {wynik && m && (
-        <div className={`mt-6 rounded-xl border ${m.ramka} ${m.tlo} p-5`}>
-          <p className={`text-xs font-bold uppercase tracking-wider ${m.tekst}`}>
-            {wynik.etykieta}
-          </p>
-          <p className="mt-1 text-lg font-bold text-gray-900 dark:text-white">
-            {wynik.naglowek}
-          </p>
-          <p className="mt-2 text-sm text-gray-700 dark:text-gray-300">
-            {wynik.podmiot.opis}
-          </p>
-          <DalejPoWyniku kampania="edoreczenia" />
+      {tryb === "krs" && (
+        <div className="mt-5">
+          <form onSubmit={sprawdzKrs}>
+            <label
+              htmlFor="edoreczenia-krs"
+              className="block text-sm font-medium text-gray-900 dark:text-white"
+            >
+              Numer KRS spółki, sprawdzimy w aktualnym odpisie, czy jest w nim
+              adres do e-Doręczeń
+            </label>
+            <div className="mt-2 flex flex-col gap-3 sm:flex-row">
+              <input
+                id="edoreczenia-krs"
+                inputMode="numeric"
+                autoComplete="off"
+                required
+                value={krs}
+                onChange={(e) => setKrs(e.target.value)}
+                placeholder="np. 0000422082"
+                className="min-w-0 flex-1 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-950 px-4 py-3 text-sm text-gray-900 dark:text-white outline-none focus:border-accent"
+              />
+              <button
+                type="submit"
+                disabled={krsStan === "szukamy"}
+                className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
+              >
+                {krsStan === "szukamy" ? "Sprawdzamy..." : "Sprawdź odpis"}
+              </button>
+            </div>
+            {krsStan === "blad" && (
+              <p className="mt-2 text-sm text-red-600 dark:text-red-400">
+                {krsBlad}
+              </p>
+            )}
+          </form>
 
-          {wynik.podmiot.uwaga && (
-            <p className="mt-3 rounded-lg bg-white/70 dark:bg-gray-950/50 px-3 py-2 text-sm text-gray-700 dark:text-gray-300">
-              <span className="font-semibold text-gray-900 dark:text-white">
-                Uwaga:
-              </span>{" "}
-              {wynik.podmiot.uwaga}
-            </p>
+          {wynikKrs && (
+            <div
+              className={`mt-6 rounded-xl border p-5 ${
+                wynikKrs.status === "JEST_ADRES"
+                  ? `${MOTYW.ZIELONY.ramka} ${MOTYW.ZIELONY.tlo}`
+                  : `${MOTYW.CZERWONY.ramka} ${MOTYW.CZERWONY.tlo}`
+              }`}
+            >
+              <p
+                className={`text-xs font-bold uppercase tracking-wider ${
+                  wynikKrs.status === "JEST_ADRES"
+                    ? MOTYW.ZIELONY.tekst
+                    : MOTYW.CZERWONY.tekst
+                }`}
+              >
+                {wynikKrs.status === "JEST_ADRES"
+                  ? "Adres jest"
+                  : "Brak adresu"}
+              </p>
+              <p className="mt-1 text-lg font-bold text-gray-900 dark:text-white">
+                {wynikKrs.naglowek}
+              </p>
+              <dl className="mt-3 grid gap-x-4 gap-y-1 text-sm text-gray-700 dark:text-gray-300 sm:grid-cols-[auto,1fr]">
+                <dt className="font-semibold text-gray-900 dark:text-white">
+                  Spółka
+                </dt>
+                <dd className="break-words">{wynikKrs.nazwa}</dd>
+                <dt className="font-semibold text-gray-900 dark:text-white">
+                  KRS
+                </dt>
+                <dd>
+                  {wynikKrs.krs}, w rejestrze od {wynikKrs.dataWpisu}, odpis
+                  według stanu z {wynikKrs.stanZDnia}
+                </dd>
+                <dt className="font-semibold text-gray-900 dark:text-white">
+                  Obowiązek
+                </dt>
+                <dd>{wynikKrs.termin}</dd>
+                {wynikKrs.adres && (
+                  <>
+                    <dt className="font-semibold text-gray-900 dark:text-white">
+                      Adres
+                    </dt>
+                    <dd className="break-all">{wynikKrs.adres}</dd>
+                  </>
+                )}
+              </dl>
+              <p className="mt-3 text-sm text-gray-700 dark:text-gray-300">
+                {wynikKrs.komentarz}
+              </p>
+              <DalejPoWyniku kampania="edoreczenia-krs" />
+            </div>
           )}
 
-          <div className="mt-5 border-t border-gray-200/70 dark:border-gray-700/70 pt-4">
-            <p className="text-sm font-semibold text-gray-900 dark:text-white">
-              Druga rzecz do rozstrzygnięcia: czy to w ogóle warto spinać z systemem
-            </p>
-            <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
-              Sam obowiązek nie mówi nic o tym, jak skrzynkę obsługiwać. Ile pism
-              urzędowych dostajecie dziś?
-            </p>
-            <div className="mt-3 flex flex-wrap gap-2">
-              {SKALE.map((s) => (
-                <button
-                  key={s.klucz}
-                  type="button"
-                  onClick={() => setSkala(s)}
-                  className={`rounded-full border px-4 py-2 text-sm font-medium transition-colors ${
-                    skala?.klucz === s.klucz
-                      ? "border-accent bg-accent-solid text-white"
-                      : "border-gray-300 text-gray-700 hover:border-accent hover:text-accent dark:border-gray-700 dark:text-gray-300"
-                  }`}
-                >
-                  {s.etykieta}
-                </button>
-              ))}
-            </div>
-            {skala && (
-              <p className="mt-3 rounded-lg bg-white/70 dark:bg-gray-950/50 px-3 py-2 text-sm text-gray-700 dark:text-gray-300">
-                {skala.odpowiedz}
-              </p>
-            )}
+          <p className="mt-4 text-xs text-gray-500 dark:text-gray-400">
+            Dane z aktualnego odpisu KRS, api-krs.ms.gov.pl (Ministerstwo
+            Sprawiedliwości). Odpis pokazuje stan z dnia ostatniego wpisu, więc
+            adres dodany w ostatnich dniach może się w nim jeszcze nie pojawić.
+          </p>
+        </div>
+      )}
+
+      {tryb === "forma" && (
+        <>
+          <div className="mt-5 flex flex-wrap gap-2">
+            {PODMIOTY.map((p) => (
+              <button
+                key={p.klucz}
+                type="button"
+                onClick={() => wybierz(p)}
+                className={`rounded-full border px-4 py-2 text-sm font-medium transition-colors ${
+                  wynik?.podmiot.klucz === p.klucz
+                    ? "border-accent bg-accent-solid text-white"
+                    : "border-gray-300 text-gray-700 hover:border-accent hover:text-accent dark:border-gray-700 dark:text-gray-300"
+                }`}
+              >
+                {p.etykieta}
+              </button>
+            ))}
           </div>
 
-          <div className="mt-5 border-t border-gray-200/70 dark:border-gray-700/70 pt-4">
-            <p className="text-sm text-gray-700 dark:text-gray-300">
-              Samego adresu nie założymy za Was, bo wniosek składa właściciel
-              skrzynki. Możemy natomiast spiąć ją z systemem, którego używacie, razem
-              z pobieraniem dowodów doręczenia. Klient tego API, którego do tego
-              używamy, jest opublikowany na{" "}
-              <a
-                href="https://github.com/rodorn/edoreczenia-klient"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-medium text-accent underline underline-offset-2"
+          {wynik && m && (
+            <div className={`mt-6 rounded-xl border ${m.ramka} ${m.tlo} p-5`}>
+              <p
+                className={`text-xs font-bold uppercase tracking-wider ${m.tekst}`}
               >
-                GitHubie
-              </a>{" "}
-              na licencji MIT, do obejrzenia przed rozmową z kimkolwiek.
-            </p>
-
-            {leadStan === "ok" ? (
-              <p className="mt-4 text-sm font-semibold text-emerald-700 dark:text-emerald-400">
-                Mamy zgłoszenie razem z tym wynikiem. Odpiszemy na {email}, zwykle tego
-                samego dnia.
+                {wynik.etykieta}
               </p>
-            ) : (
-              <form onSubmit={zamow} className="mt-4">
-                <label
-                  htmlFor="edoreczenia-email"
-                  className="block text-sm font-medium text-gray-900 dark:text-white"
-                >
-                  Podaj maila, odpiszemy, co w Waszym przypadku trzeba spiąć i za ile
-                </label>
-                <div className="mt-2 flex flex-col gap-3 sm:flex-row">
-                  <input
-                    id="edoreczenia-email"
-                    type="email"
-                    required
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="twoj@email.pl"
-                    className="flex-1 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-950 px-4 py-3 text-sm text-gray-900 dark:text-white outline-none focus:border-accent"
-                  />
-                  <button
-                    type="submit"
-                    disabled={leadStan === "wysylamy"}
-                    className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
-                  >
-                    {leadStan === "wysylamy" ? "Wysyłamy..." : "Wyślij zgłoszenie"}
-                  </button>
+              <p className="mt-1 text-lg font-bold text-gray-900 dark:text-white">
+                {wynik.naglowek}
+              </p>
+              <p className="mt-2 text-sm text-gray-700 dark:text-gray-300">
+                {wynik.podmiot.opis}
+              </p>
+              <DalejPoWyniku kampania="edoreczenia" />
+
+              {wynik.podmiot.uwaga && (
+                <p className="mt-3 rounded-lg bg-white/70 dark:bg-gray-950/50 px-3 py-2 text-sm text-gray-700 dark:text-gray-300">
+                  <span className="font-semibold text-gray-900 dark:text-white">
+                    Uwaga:
+                  </span>{" "}
+                  {wynik.podmiot.uwaga}
+                </p>
+              )}
+
+              <div className="mt-5 border-t border-gray-200/70 dark:border-gray-700/70 pt-4">
+                <p className="text-sm font-semibold text-gray-900 dark:text-white">
+                  Druga rzecz do rozstrzygnięcia: czy to w ogóle warto spinać z
+                  systemem
+                </p>
+                <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                  Sam obowiązek nie mówi nic o tym, jak skrzynkę obsługiwać. Ile
+                  pism urzędowych dostajecie dziś?
+                </p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {SKALE.map((s) => (
+                    <button
+                      key={s.klucz}
+                      type="button"
+                      onClick={() => setSkala(s)}
+                      className={`rounded-full border px-4 py-2 text-sm font-medium transition-colors ${
+                        skala?.klucz === s.klucz
+                          ? "border-accent bg-accent-solid text-white"
+                          : "border-gray-300 text-gray-700 hover:border-accent hover:text-accent dark:border-gray-700 dark:text-gray-300"
+                      }`}
+                    >
+                      {s.etykieta}
+                    </button>
+                  ))}
                 </div>
-                {leadStan === "blad" && (
-                  <p className="mt-2 text-sm text-red-600 dark:text-red-400">
-                    {leadBlad}
+                {skala && (
+                  <p className="mt-3 rounded-lg bg-white/70 dark:bg-gray-950/50 px-3 py-2 text-sm text-gray-700 dark:text-gray-300">
+                    {skala.odpowiedz}
                   </p>
                 )}
-              </form>
-            )}
-          </div>
-        </div>
+              </div>
+
+              <div className="mt-5 border-t border-gray-200/70 dark:border-gray-700/70 pt-4">
+                <p className="text-sm text-gray-700 dark:text-gray-300">
+                  Samego adresu nie założymy za Was, bo wniosek składa
+                  właściciel skrzynki. Możemy natomiast spiąć ją z systemem,
+                  którego używacie, razem z pobieraniem dowodów doręczenia.
+                  Klient tego API, którego do tego używamy, jest opublikowany na{" "}
+                  <a
+                    href="https://github.com/rodorn/edoreczenia-klient"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium text-accent underline underline-offset-2"
+                  >
+                    GitHubie
+                  </a>{" "}
+                  na licencji MIT, do obejrzenia przed rozmową z kimkolwiek.
+                </p>
+
+                {leadStan === "ok" ? (
+                  <p className="mt-4 text-sm font-semibold text-emerald-700 dark:text-emerald-400">
+                    Mamy zgłoszenie razem z tym wynikiem. Odpiszemy na {email},
+                    zwykle tego samego dnia.
+                  </p>
+                ) : (
+                  <form onSubmit={zamow} className="mt-4">
+                    <label
+                      htmlFor="edoreczenia-email"
+                      className="block text-sm font-medium text-gray-900 dark:text-white"
+                    >
+                      Podaj maila, odpiszemy, co w Waszym przypadku trzeba spiąć
+                      i za ile
+                    </label>
+                    <div className="mt-2 flex flex-col gap-3 sm:flex-row">
+                      <input
+                        id="edoreczenia-email"
+                        type="email"
+                        required
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="twoj@email.pl"
+                        className="flex-1 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-950 px-4 py-3 text-sm text-gray-900 dark:text-white outline-none focus:border-accent"
+                      />
+                      <button
+                        type="submit"
+                        disabled={leadStan === "wysylamy"}
+                        className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
+                      >
+                        {leadStan === "wysylamy"
+                          ? "Wysyłamy..."
+                          : "Wyślij zgłoszenie"}
+                      </button>
+                    </div>
+                    {leadStan === "blad" && (
+                      <p className="mt-2 text-sm text-red-600 dark:text-red-400">
+                        {leadBlad}
+                      </p>
+                    )}
+                  </form>
+                )}
+              </div>
+            </div>
+          )}
+        </>
       )}
 
       <p className="mt-4 text-xs text-gray-500 dark:text-gray-400">
