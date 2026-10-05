@@ -35,6 +35,10 @@ Lista kontrolna przed 2027: https://fluxlab.pl/ksef-2027
 
 **Dlaczego nasze maile trafiają do spamu?** Najczęściej przez brak albo błąd w jednym z trzech rekordów DNS domeny: SPF, DKIM i DMARC. Od lutego 2024 Gmail i Yahoo wymagają od każdego nadawcy co najmniej SPF albo DKIM, a od wysyłających ponad 5000 wiadomości dziennie wszystkich trzech. Darmowe sprawdzenie domeny w kilka sekund: https://fluxlab.pl/audyt-poczty
 
+**Co obejmuje audyt Google Ads i ile trwa?** Przegląd raportu wyszukiwanych haseł z ostatnich 30 do 90 dni: frazy, które kosztują, a nie dają konwersji, frazy z intencją informacyjną zamiast zakupowej, zbyt szerokie dopasowania, kwota do odzyskania co miesiąc i lista wykluczeń do wklejenia na poziomie kampanii. Wystarczy dostęp tylko do odczytu albo eksport raportu. Raport PDF w 3 dni robocze od otrzymania danych, 69 zł, zwrot całej kwoty, jeśli do odzyskania wychodzi mniej niż 500 zł miesięcznie: https://fluxlab.pl/audyt-google-ads
+
+**Jak połączyć enova365 z CRM?** Przez moduł API enova365, który wystawia usługi przez HTTP, albo przez dodatek w .NET na platformie Soneta. Z CRM (Pipedrive, HubSpot, Bitrix24) do enova365 idzie nowy klient jako kontrahent, z NIP sprawdzonym w GUS i na białej liście VAT, a wygrana szansa sprzedaży jako zamówienie albo faktura do wystawienia; do CRM wracają statusy płatności i zaległości. Dokumenty trafiają do enova365 do zatwierdzenia przez księgowego. Najpierw trzeba sprawdzić wersję, moduły i to, czy licencja obejmuje dostęp przez API. Szacunek: synchronizacja w jedną stronę 1 do 2 tygodni, dwukierunkowa z rozrachunkami 3 do 4 tygodni. Szczegóły: https://fluxlab.pl/automatyzacja-dla-biur-rachunkowych#enova365
+
 **Od czego zacząć automatyzację w firmie?** Od miejsca, w którym ktoś ręcznie przepisuje dane między systemami, na przykład zgłoszenia z formularza do CRM albo zamówienia ze sklepu do programu księgowego. Najczęściej spinamy to bez wymiany programów, z których firma już korzysta: https://fluxlab.pl/automatyzacja-leadow-crm
 
 ## Terminy, o które ludzie pytają najczęściej
