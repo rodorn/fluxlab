@@ -2353,3 +2353,28 @@ Zoho, 24 h: INBOX 1 (Sanity, kod weryfikacyjny), Spam 0; odpowiedzi od firm 0
 **Dowód:** `maile_kanc/panoramafirm_domeny_2026-10-05.json` (kategorie `kancelaria_adwokacka` i `kancelaria_radcy_prawnego`, Warszawa, Kraków, Wrocław, Poznań, Gdańsk, Katowice, Łódź, Lublin, po 3 strony, 48 zapytań co 3 s, 0 błędów). Droga KRS na pierwszych 250 domenach: 31 spółek w KRS, z nich 21 kancelarii (10 trafień to hostingi i agencje ze stopek, np. WENET, nazwa.pl, SEOHOST), 16 z 21 ma adres w odpisie, 5 nie ma: MCKLEGE (Katowice), BHR Adwokaci (Wrocław), Kancelaria dr Maliszewskiej (Warszawa), A. Wójcik i Wspólnicy (Częstochowa), Kozłowski, Pisarkiewicz-Firek (Kraków). Maile `maile_kanc/068` do `072`, adresy ogólne ze stron kancelarii (biuro@, sekretariat@, kancelaria@, prawnik@), bez adresów imiennych. Odrzucone: kancelariafocus.pl, bo KRS ze strony należy do KS Ruch Radzionków. Trafialność kancelarii drogą KRS: 5 na 250 domen, bo większość to praktyki indywidualne bez KRS. Do pliku planu w Z4 dopisane `--limit=2`, żeby 068 do 072 nie wyszły dziś.
 **Dla Pawła:** bez zmian.
 **Zostało otwarte:** Z4 od 9:46 (`kancelarie --limit=2`), Z5 od 10:46 (`--limit=7`), Z6 od 11:46, Z7, Z9 od 14:46, Z10, Z11, Z12 po 9:00; bez blokady: Z17, Z18, Z19, Z21, Z22. W `maile_kanc/panoramafirm_domeny_2026-10-05.json` zostało 286 niesprawdzonych domen.
+
+## 2026-10-05 08:15
+**Kanał:** Google (Z17, Z19), outreach z raportem, przygotowanie na wtorek (Z18, Z22), GitHub (Z21), strona na telefonie (Z23).
+**Co zrobione:** 5 stron bez indeksu dostało linki w treści z 6 zindeksowanych stron, `/strefa-wiedzy` ma sekcję odpowiadającą na frazę „automatyzacja crm ai”, na wtorek czeka 10 maili do agencji marketingowych i 1 do branży motoryzacyjnej (droga KRS), nic nie wysłano.
+**Ruch:** ostatnia doba 38 odsłon, 19 osób (wzrost o 169% wobec średniej 14,1); źródła: facebook 3, www.google.com 2, mail 1, narzedzie 1; z telefonu 20 z 38; uruchomienia narzędzi 1 (uruchomiono_skan 1, klik_po_wyniku 1).
+**Dowód:**
+- Z17, commit `76d2ac2`. Linki w zdaniach (przed → po): `/sprawdz-auto` 0 → 2 i `/import-radar` 0 → 2 (z `/dobor-samochodu` i `/kalkulator-kosztow`), `/czas-reakcji-na-leada` 1 → 3 i `/automatyzacja-follow-up` 1 → 3 (z `/automatyzacja-leadow-crm` i `/automatyzacja-pipedrive`), `/strefa-wiedzy/ai-w-automatyzacji-firm` 0 → 2 (z `/automatyzacja-ai` i `/automatyzacja-procesow-biznesowych`). `/strefa-wiedzy/make-vs-n8n` (10 linków) i `/strefa-wiedzy/automatyzacja-vs-zatrudnienie` (4) bez zmian. Ósmej strony z listy nie ma w dzienniku. Href-y potwierdzone curl na produkcji, IndexNow 11 adresów: Yandex 200, Naver 200.
+- Z19, commit `23d91fc`. GSC 28 dni: „automatyzacja crm ai” 6 wyświetleń, strona `/strefa-wiedzy`, pozycja 27,5, więc tam h2 „Automatyzacja CRM z AI: co AI robi w CRM, a czego nie” (3 akapity: webhook Pipedrive i klasyfikacja, czego nie robi, od 1 500 zł i 2 do 8 tygodni jak w cenniku strony). „"idea getin leasing"” 4 wyświetlenia, strona `/automatyzacja-crm-leasing`, pozycja 1,3, tytuł już ogólny („Automatyzacja CRM dla firm leasingowych”), bez zmian.
+- Z18, dealerzy drogą KRS: 163 domeny z bazy (75 bez strony, 72 bez KRS, 16 spółek, wszystkie z adresem w BAE) plus panoramafirm `salony_samochodowe` i `dealerzy_samochodowi`, 8 miast, 114 domen (19 spółek, 1 bez pola). Razem 29 spółek, 28 z adresem. Mail `maile_dealerzy/006_almarotrade.txt` (ALMARO TRADE sp. z o.o., KRS 0000651485, biuro@ z /kontakt). W Z4 dopisane `--limit=5`, żeby 006 nie wyszedł dziś.
+- Z22, agencje: panoramafirm `agencje_reklamowe` i `agencje_marketingowe`, 6 miast, 181 domen, 49 spółek, 13 bez pola (26 procent), 10 z firmowym adresem ze strony: `maile_agencje/001_adagri` do `010_promodigy`, „U 36 z 49”. Segment `agencje` dodany do `wyslij_segment.py`, `--proba` 10 maili z utm `mail/agencje`.
+- Z21, GitHub, ruch 14 dni:
+
+| Repozytorium | Wyświetlenia / unikalni | Klony / unikalni | Odsyłacze |
+|---|---|---|---|
+| fluxlab-listings-api | 7 / 2 | 37 / 28 | |
+| edoreczenia-klient | 7 / 3 | 37 / 26 | |
+| fluxlab-licytacje-monitor | 3 / 2 | 9 / 9 | github.com 1 |
+| fluxlab-baselinker-shopify-sync | 2 / 2 | 28 / 21 | useme.com 1 |
+| fluxlab-wcag-audyt, przetargi-radar, n8n-lead-workflow, deal-alerts-bot, baselinker-integracje, auto-due-diligence, faceless-ai-video | po 1 / 1 | 7 do 36 | github.com 2 |
+| pozostałe 18 (w tym fluxlab, awesome-ksef, ksef-integracja, geo-audyt, import-radar) | 0 | 5 do 3128 | |
+
+  10 z 11 repozytoriów z wyświetleniami miało już link z utm na górze README; `fluxlab-faceless-ai-video` dostało linię z `/automatyzacja-ai?utm_source=github&utm_campaign=fluxlab-faceless-ai-video`, commit `fca9c74`.
+- Z23: zrzuty 390 px w `skrypty-raport/telefon-390/` (wynik KRS dla 0000422082, `/audyt-google-ads`, sekcja enova365), szerokość dokumentu 390 na każdej stronie, nic nie blokuje, bez zmian w kodzie.
+**Dla Pawła:** bez zmian.
+**Zostało otwarte:** Z4 od 9:46 (`dealerzy --limit=5`, `kancelarie --limit=2`), Z5 od 10:46, Z6 od 11:46, Z7 12:46, Z9 od 14:46, Z10, Z11, Z12 (żądania indeksowania dopiero po 9:00), Z20 po wysyłkach, Z24 o 05:46. Na wtorek gotowe: kancelarie 5 (068 do 072), dealerzy 1 (006), agencje 10.
