@@ -6,14 +6,14 @@ import LandingForm from "@/components/LandingForm";
 import RelatedProducts from "@/components/RelatedProducts";
 
 export const metadata: Metadata = {
-  title: "Audyt zmarnowanego budżetu Google Ads, 69 zł | Fluxlab",
+  title: "Audyt Google Ads: frazy bez konwersji, 69 zł | Fluxlab",
   description:
-    "Sprawdzimy, ile budżetu Google Ads idzie na frazy bez konwersji. Lista wykluczeń i plan naprawy konta. 69 zł z gwarancją zwrotu, jeśli nie ma czego odzyskać.",
+    "Audyt Google Ads: frazy bez konwersji z 30 do 90 dni, kwota do odzyskania co miesiąc i lista wykluczeń. Raport w 3 dni robocze, 69 zł z gwarancją zwrotu.",
   alternates: { canonical: "/audyt-google-ads" },
   openGraph: {
-    title: "Audyt zmarnowanego budżetu Google Ads, 69 zł | Fluxlab",
+    title: "Audyt Google Ads: frazy bez konwersji, 69 zł | Fluxlab",
     description:
-      "Sprawdzimy, ile budżetu Google Ads przepalasz na frazy bez konwersji. Gotowa lista wykluczeń i plan naprawy. 69 zł z gwarancją zwrotu.",
+      "Audyt Google Ads: frazy bez konwersji z 30 do 90 dni, kwota do odzyskania co miesiąc i lista wykluczeń. Raport w 3 dni robocze, 69 zł z gwarancją zwrotu.",
     locale: "pl_PL",
     type: "website",
     images: [
@@ -38,7 +38,7 @@ const steps = [
   },
   {
     title: "Dostajesz raport i listę wykluczeń",
-    desc: "W ciągu kilku dni odsyłamy raport PDF: ile budżetu przepalasz miesięcznie, gotową listę wykluczających słów kluczowych i plan naprawy konta.",
+    desc: "W ciągu 3 dni roboczych odsyłamy raport PDF: ile budżetu przepalasz miesięcznie, gotową listę wykluczających słów kluczowych i plan naprawy konta.",
   },
 ];
 
@@ -90,6 +90,16 @@ export default function AudytGoogleAdsPage() {
               nie sprzedają. Przeglądamy raport wyszukiwanych haseł, liczymy ile
               realnie tracisz co miesiąc i dajemy gotową listę wykluczeń. Za 69
               zł, z gwarancją zwrotu.
+            </p>
+            <p className="mt-4 text-gray-600 dark:text-gray-300">
+              Co obejmuje audyt Google Ads i ile trwa: przechodzimy przez raport
+              wyszukiwanych haseł z ostatnich 30 do 90 dni, wskazujemy frazy,
+              które kosztują, a nie dają konwersji, frazy z intencją
+              informacyjną zamiast zakupowej i zbyt szerokie dopasowania,
+              liczymy kwotę do odzyskania co miesiąc i przygotowujemy listę
+              wykluczeń do wklejenia na poziomie kampanii. Wystarczy nam dostęp
+              tylko do odczytu albo eksport raportu. Raport PDF odsyłamy w 3 dni
+              robocze od otrzymania danych.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <a href="#zamow" className="btn-primary inline-flex">

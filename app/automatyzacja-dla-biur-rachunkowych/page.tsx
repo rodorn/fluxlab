@@ -257,6 +257,54 @@ export default function AutomatyzacjaDlaBiurRachunkowych() {
           </div>
         </section>
 
+        <section
+          id="enova365"
+          className="scroll-mt-20 container-wide pt-6 pb-4"
+        >
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
+              Integracja enova365 z CRM i stroną
+            </h2>
+            <div className="space-y-4 text-gray-600 dark:text-gray-300">
+              <p>
+                Z enova365 da się wyciągnąć dane przez jej interfejs
+                programistyczny: moduł API, który wystawia usługi przez HTTP,
+                albo dodatek pisany w .NET na platformie Soneta. Tą drogą
+                odczytujemy kontrahentów, dokumenty handlowe i księgowe,
+                rozrachunki z terminami płatności i stanem należności, a
+                zapisujemy nowych kontrahentów i dokumenty do zatwierdzenia.
+                Księgowy dalej zatwierdza wszystko w enova365, nic nie trafia do
+                ksiąg bez jego decyzji.
+              </p>
+              <p>
+                Z CRM (Pipedrive, HubSpot, Bitrix24) do enova365 wysyłamy nowego
+                klienta jako kontrahenta, z NIP sprawdzonym w GUS i na białej
+                liście VAT, a wygraną szansę sprzedaży jako zamówienie albo
+                fakturę do wystawienia. W drugą stronę do CRM wracają statusy
+                płatności i zaległości, więc handlowiec widzi, kto nie zapłacił,
+                zanim zadzwoni z nową ofertą. Formularz na stronie, na przykład
+                zgłoszenie nowego klienta biura, zakłada kartę kontrahenta bez
+                przepisywania danych.
+              </p>
+              <p>
+                Synchronizację w jedną stronę (kontrahenci i faktury) szacujemy
+                na 1 do 2 tygodni, dwukierunkową z rozrachunkami na 3 do 4
+                tygodni. Zaczynamy od sprawdzenia, jaką wersję enova365 i jakie
+                moduły macie oraz czy licencja obejmuje dostęp przez API, bo od
+                tego zależy droga integracji. Szerzej o łączeniu systemów
+                sprzedaży z księgowością piszemy na stronie{" "}
+                <Link
+                  href="/integracja-crm-z-erp"
+                  className="text-accent hover:underline"
+                >
+                  integracja CRM z ERP
+                </Link>
+                .
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Treść w zakładkach, nic nie wycięte, podzielone */}
         <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
           <Tabs
@@ -413,10 +461,10 @@ export default function AutomatyzacjaDlaBiurRachunkowych() {
                       <p className="text-gray-500 dark:text-gray-400 mb-12">
                         Dla biur rachunkowych z portfelem od kilkudziesięciu
                         klientów wzwyż, w których ręczne wprowadzanie faktur,
-                        przypominanie klientom o dokumentach i ręczne składanie raportów
-                        miesięcznych zaczyna pochłaniać większość czasu zespołu.
-                        Pracujemy zarówno z biurami pełnoksięgowymi, jak i z
-                        biurami obsługującymi głównie JDG/KPiR/ryczałt.
+                        przypominanie klientom o dokumentach i ręczne składanie
+                        raportów miesięcznych zaczyna pochłaniać większość czasu
+                        zespołu. Pracujemy zarówno z biurami pełnoksięgowymi,
+                        jak i z biurami obsługującymi głównie JDG/KPiR/ryczałt.
                         Szczególnie często wdrażamy{" "}
                         <Link
                           href="/automatyzacja-raportowania"
@@ -480,8 +528,9 @@ export default function AutomatyzacjaDlaBiurRachunkowych() {
                         </h2>
                         <p className="text-gray-500 dark:text-gray-400 mb-8">
                           Opisz, jak dziś wygląda obieg dokumentów w biurze.
-                          Wskażemy miejsca, gdzie dokumenty przechodzą przez ręce
-                          bez potrzeby, i policzymy razem, ile czasu to zabiera.
+                          Wskażemy miejsca, gdzie dokumenty przechodzą przez
+                          ręce bez potrzeby, i policzymy razem, ile czasu to
+                          zabiera.
                         </p>
                         <Link
                           href="/kontakt"
