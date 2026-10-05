@@ -2506,3 +2506,25 @@ Z sześciu maili z Z8 dwa nie wyszły: 008 (lukan.grochowska@gmail.com) i 010 (s
 - Odpowiedzi nie wysyłam z tego przebiegu: przebieg leadów wysłał o 15:28 OSINT („lead 162”), a o 15:30 odpowiedź do klienta poszła do akceptacji (skiwojtner@gmail.com). Drugi mail z innego przebiegu byłby dublem.
 **Dla Pawła:** zaakceptować i wysłać odpowiedź do Profit Polska (mail „Wiadomosc do akceptacji: Formularz fluxlab.pl, ma.kobus@gmail.com” z 15:30). Klient wrócił na stronę o 15:44, więc odpowiedź dziś ma największą szansę.
 **Zostało otwarte:** Z11 16:46 (bilans outreachu: segment ksiegowe-edoreczenia drogą KRS ma 1 lead z 11 maili, pozostałe 0), Z12 po 19:50 (9 adresów), Z20, Z24.
+
+## 2026-10-05 16:50
+**Kanał:** outreach z gotowym raportem (plan stratega, Z11: bilans dnia).
+**Co zrobione:** bilans outreachu 2026-10-05 dla stratega; 26 maili z utm dało 3 sesje i 1 realnego człowieka, który został leadem (Profit Polska).
+**Ruch:** ostatnia doba 68 odsłon, 30 osób (wzrost o 376% wobec średniej 14,3); źródła: mail 5, facebook 3, narzedzie 1, chatgpt.com 1, google 1; z telefonu 32 z 68; uruchomienia narzędzi 3. Najczęściej: /e-doreczenia-integracja 14, /audyt-strony 10, /automatyzacja-dla-biur-rachunkowych 5.
+**Dowód:**
+
+### Bilans outreachu 2026-10-05
+
+| Segment | Wysłane | Delivered | Odbite | Odpowiedzi | Sesje z utm | Uruchomienia narzędzi |
+|---|---|---|---|---|---|---|
+| dealerzy (o stronie) | 5 | 5 | 0 | 0 | 0 | 0 |
+| kancelarie (KRS) | 2 | 2 | 0 | 0 | 0 | 0 |
+| ksiegowe (KRS, Z5 + Z9) | 11 | 11 | 0 | 0 | 3 | 4 (1 skan e-Doręczeń + 3 audyty, wszystkie Profit Polska) |
+| sklepy (2 strona, 6 KRS) | 8 | 7 | 1 | 0 | 0 | 0 |
+| **razem** | **26** | **25** | **1** | **0** | **3** | **4** |
+
+Źródło: Resend (`pomiar-kanalow.py`, 16:43), Zoho INBOX i Spam (tylko FINREAL, inny projekt), `ruch.sqlite` na VPS, sesje z `zrodlo='mail'` od 9:46. Sesje utm (czas polski): `qphzzx9z` 10:47 i `87aktl2b` 10:50, po 1 odsłonie, 0 zdarzeń, minutę i cztery minuty po wysyłce Z5, najpewniej skanery linków; `ofi45e1q` 14:50 Profit Polska: skan 14:50:21, zgłoszenie 14:50:35, potem w sesji `kz1dd35v` audyt profitpolska.pl 3 razy (14:51 do 14:53), wynik słaby, formularz diagnozy 14:54:56; ten sam człowiek wrócił z linku w mailu o 16:38. Poprawka do Z10: drugiego audytu o 15:44 nie ma w bazie, były trzy uruchomienia między 14:51 a 14:53. Niedzielne 19 maili do kancelarii (bez utm) nie są w tabeli.
+
+**Wniosek:** sesje z `utm_source=mail` są: 3 sesje na 26 maili (0,12), z czego realny człowiek 1 na 26 i ten jeden został leadem; cały wynik pochodzi z segmentu biur rachunkowych z zarzutem KRS (1 lead na 11 maili), dealerzy, kancelarie i sklepy dały 0.
+**Dla Pawła:** bez zmian względem 15:50, odpowiedź do Profit Polska czeka na akceptację (mail „Wiadomosc do akceptacji: Formularz fluxlab.pl, ma.kobus@gmail.com” z 15:30); klient wrócił na stronę o 16:38.
+**Zostało otwarte:** Z12 po 19:50 (9 adresów do indeksowania), Z20 01:46, Z24 05:46.
