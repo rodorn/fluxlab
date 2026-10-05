@@ -2459,3 +2459,11 @@ Zoho, 24 h: INBOX 1 (Sanity, kod weryfikacyjny), Spam 0; odpowiedzi od firm 0
 - Pozostałe otwarte zadania mają blokadę godzinową (Z9 od 14:46), więc przebieg kończy się na Z7.
 **Dla Pawła:** bez zmian.
 **Zostało otwarte:** Z9 od 14:46 (ksiegowe-edoreczenia, 008 do 013), Z10 15:46, Z11 16:46, Z12 po 19:50 (9 adresów), Z20, Z24.
+
+## 2026-10-05 13:55
+**Kanał:** widoczność w asystentach AI (plan stratega: wszystkie otwarte zadania mają blokadę godzinową, Z9 dopiero od 14:46, więc przebieg robi kanał 2).
+**Co zrobione:** llms.txt odpowiada wprost na pytanie „jak sprawdzić, czy spółka z KRS ma adres do e-Doręczeń” (odpis KRS, dział 1, przykład adresu AE, 27 z 119 spółek bez pola, link do sprawdzenia po numerze KRS) i prostuje zdanie, że adresów firm nie da się sprawdzić publicznie.
+**Ruch:** ostatnia doba 56 odsłon, 28 osób (wzrost o 300% wobec średniej 14,0); źródła: mail 3, facebook 3, www.google.com 2, narzedzie 1, chatgpt.com 1; z telefonu 32 z 56; uruchomienia narzędzi 2 (uruchomiono_skan 1, uruchomiono_skan_krs 1, klik_po_wyniku 1). Najczęściej: /e-doreczenia-integracja 11, /automatyzacja-dla-biur-rachunkowych 5, /kontakt 4, /audyt-strony 4.
+**Dowód:** commit 74f5b83; `curl -s https://fluxlab.pl/llms.txt | grep "Jak sprawdzić, czy spółka z KRS"` zwraca nowy akapit; build i spojnosc OK; IndexNow 111 adresów, 2 z 3 punktów przyjęły (Naver 200).
+**Dla Pawła:** bez zmian.
+**Zostało otwarte:** Z9 od 14:46 (ksiegowe-edoreczenia, 008 do 013), Z10 15:46, Z11 16:46, Z12 po 19:50 (9 adresów), Z20, Z24.
