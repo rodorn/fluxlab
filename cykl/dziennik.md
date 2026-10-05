@@ -2539,3 +2539,28 @@ Z sześciu maili z Z8 dwa nie wyszły: 008 (lukan.grochowska@gmail.com) i 010 (s
 - Maile na wtorek: `014_biuro-wroclaw.txt` (info@biuro-wroclaw.pl, Selent & Słupina sp.j., KRS 0000316712), `015_mscfinanse.txt` (biuro@mscfinanse.pl, MSC Audyt sp. z o.o., KRS 0000735322), `016_alfabusiness.txt` (biuro@alfabusiness.pl, Alfa Business sp. z o.o., KRS 0000441252); wzór jak 012 (Profit Polska), liczba „U 76 z 94 spółek”, utm `mail/ksiegowe`, `--proba` bez błędów.
 **Dla Pawła:** bez zmian: odpowiedź do Profit Polska czeka na akceptację (mail „Wiadomosc do akceptacji: Formularz fluxlab.pl, ma.kobus@gmail.com” z 15:30); teksty forumowe i token API CEIDG z wcześniejszych wpisów.
 **Zostało otwarte:** Z12 po 19:50 (indeksowanie, 10 adresów), Z24 05:46. Panoramafirm ma jeszcze ok. 200 niesprawdzonych domen biur, ale trafialność spada (2 na 100), więc kolejne partie dają 2 do 3 maili na 150 domen.
+
+<!-- WYSLANO 2026-10-05 19:04 -->
+
+## 2026-10-05 20:02
+**Kanał:** Google (Z12 z planu stratega).
+**Co zrobione:** wszystkie 9 zaległych adresów weszło do priorytetowej kolejki indeksowania Google (razem z porannym `/audyt-google-ads` 10 z 10). Sprawdzenie pokazało, że 7 stron z listy „zeskanowana, ale jeszcze nie zindeksowana” z 21.09 jest już w indeksie.
+**Ruch:** ostatnia doba 48 odsłon, 23 osoby (wzrost o 171% wobec średniej 17,7); źródła: facebook 5, mail 4, www.google.com 2, chatgpt.com 1; z telefonu 23 z 48; uruchomienia narzędzi 2. Najczęściej: /e-doreczenia-integracja 11, /audyt-strony 7, / 6, /automatyzacja-dla-biur-rachunkowych 5, /ksef-2027 4.
+**Dowód:** `skrypty-raport/gsc_indeksuj.py`, limit odnowił się zgodnie z przewidywaniem, 24 h po serii z 4.10:
+
+| Godzina | Adres | Stan przed | Wynik |
+|---|---|---|---|
+| 09:01 | /audyt-google-ads | w Google | prośba przesłana |
+| 19:56 | /automatyzacja-dla-biur-rachunkowych | w Google | prośba przesłana |
+| 19:56 | /e-doreczenia-integracja | w Google | prośba przesłana |
+| 19:57 | /sprawdz-auto | w Google | prośba przesłana |
+| 19:57 | /czas-reakcji-na-leada | w Google | prośba przesłana |
+| 19:58 | /strefa-wiedzy/make-vs-n8n | w Google | prośba przesłana |
+| 19:58 | /automatyzacja-follow-up | w Google | prośba przesłana |
+| 19:59 | /strefa-wiedzy/ai-w-automatyzacji-firm | w Google | prośba przesłana |
+| 20:00 | /strefa-wiedzy/automatyzacja-vs-zatrudnienie | w Google | prośba przesłana |
+| 20:00 | /import-radar | w Google | prośba przesłana |
+
+Raport Indeksowanie stron nadal z 21.09.2026 (73 zindeksowane, 30 nie, w tym 16 „zeskanowana, ale jeszcze nie zindeksowana”), ale sprawdzenie pojedynczych adresów jest nowsze: lista 16 jest już nieaktualna. Następny wolny limit żądań: 6.10 ok. 20:00.
+**Dla Pawła:** bez zmian: odpowiedź do Profit Polska czeka na akceptację (mail „Wiadomosc do akceptacji: Formularz fluxlab.pl, ma.kobus@gmail.com” z 15:30).
+**Zostało otwarte:** Z24 05:46 (bilans planu). Innych otwartych zadań w planie nie ma.
