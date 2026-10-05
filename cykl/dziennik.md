@@ -2484,3 +2484,25 @@ Zoho, 24 h: INBOX 1 (Sanity, kod weryfikacyjny), Spam 0; odpowiedzi od firm 0
 Z sześciu maili z Z8 dwa nie wyszły: 008 (lukan.grochowska@gmail.com) i 010 (sekretariat.essabr@gmail.com), bo plan zabrania pisania na gmail; pliki przemianowane na `*.gmail-pominiete`, żeby skrypt ich nie wysłał. `wyslane_ks.json` ma 76 adresów.
 **Dla Pawła:** bez zmian.
 **Zostało otwarte:** Z10 15:46 (odpowiedzi i utm po wszystkich dzisiejszych segmentach), Z11 16:46, Z12 po 19:50 (9 adresów), Z20, Z24.
+<!-- WYSLANO 2026-10-05 15:04 -->
+
+## 2026-10-05 15:50
+**Kanał:** outreach z gotowym raportem (plan stratega, Z10: odpowiedzi i pomiar po wszystkich dzisiejszych segmentach).
+**Co zrobione:** pierwszy mierzalny lead z outreachu: Profit Polska sp. z o.o., 4 minuty po mailu z Z9 weszła z utm, uruchomiła sprawdzenie, zrobiła audyt własnej strony i zostawiła dwa zgłoszenia, w tym „chcemy diagnozy”.
+**Ruch:** ostatnia doba 65 odsłon, 29 osób (wzrost o 355% wobec średniej 14,3); źródła: mail 4, facebook 3, narzedzie 1, chatgpt.com 1; z telefonu 32 z 65; uruchomienia narzędzi 3, zdarzenia: audyt_uruchomiony 3, uruchomiono_skan 2, lead_landing 1, audyt_wynik_slaby 1. Najczęściej: /e-doreczenia-integracja 13, /audyt-strony 10, /automatyzacja-dla-biur-rachunkowych 5.
+**Dowód:**
+- Resend, wszystkie dzisiejsze wysyłki (stan 15:43):
+
+| Segment | Wysłane | Delivered | Odbite |
+|---|---|---|---|
+| dealerzy | 5 | 5 | 0 |
+| kancelarie | 2 | 2 | 0 |
+| ksiegowe-edoreczenia | 11 | 11 | 0 |
+| sklepy | 8 | 7 | 1 (craftbeans, już w `pomijane.json`) |
+
+- Zoho od 4.10 17:00, INBOX, Spam i pozostałe foldery: odpowiedzi na outreach 0, próśb o usunięcie 0 (jedyne wiadomości: FINREAL, inny projekt, nieruszane).
+- Kampanie utm od 9:46: mail/ksiegowe 3 sesje (10:47, 10:50, 14:50), mail/dealerzy 0, mail/kancelarie 0, mail/sklepy 0.
+- Ścieżka leada (baza `ruch.sqlite` na VPS, czas polski): 14:46 mail do biuro@profitpolska.pl (01a10c1a-075a…, delivered); 14:50:03 wejście na /e-doreczenia-integracja z utm mail/ksiegowe, Chrome na Windows; 14:50:21 `uruchomiono_skan`; 14:50:35 zgłoszenie „Sprawdzenie terminu e-Doręczeń” (spółka w KRS sprzed 2025); 14:51 strona główna, audyt profitpolska.pl, wynik 36/100 (`audyt_wynik_slaby`); 14:54:56 formularz `lead_landing`: firma „Profit Polska sp. z o.o.”, rodzaj „diagnoza”, skala „nie wiemy”, kontakt mailowy, ma.kobus@gmail.com; 15:44 drugi audyt profitpolska.pl. Oba potwierdzenia do klienta i oba powiadomienia na gmail Pawła: delivered.
+- Odpowiedzi nie wysyłam z tego przebiegu: przebieg leadów wysłał o 15:28 OSINT („lead 162”), a o 15:30 odpowiedź do klienta poszła do akceptacji (skiwojtner@gmail.com). Drugi mail z innego przebiegu byłby dublem.
+**Dla Pawła:** zaakceptować i wysłać odpowiedź do Profit Polska (mail „Wiadomosc do akceptacji: Formularz fluxlab.pl, ma.kobus@gmail.com” z 15:30). Klient wrócił na stronę o 15:44, więc odpowiedź dziś ma największą szansę.
+**Zostało otwarte:** Z11 16:46 (bilans outreachu: segment ksiegowe-edoreczenia drogą KRS ma 1 lead z 11 maili, pozostałe 0), Z12 po 19:50 (9 adresów), Z20, Z24.
