@@ -4,9 +4,9 @@ import EDoreczeniaCheck from "@/components/EDoreczeniaCheck";
 import { PODMIOTY } from "@/lib/terminy-e-doreczen";
 
 export const metadata: Metadata = {
-  title: "Od kiedy adres do e-Doręczeń? Termin dla firm | Fluxlab",
+  title: "Od kiedy adres do e-Doręczeń? Sprawdź po KRS | Fluxlab",
   description:
-    "Firmy z CEIDG wpisane przed 2025 mają obowiązek od 1 października 2026. Sprawdźcie swój termin w dwóch kliknięciach i co zrobić, gdy już minął. Bez rejestracji.",
+    "Firmy z CEIDG wpisane przed 2025 mają obowiązek od 1 października 2026, spółki od 1 kwietnia 2025. Sprawdźcie termin albo odpis spółki po numerze KRS.",
   alternates: { canonical: "/e-doreczenia-integracja" },
   openGraph: {
     title:
@@ -22,7 +22,47 @@ export default function EDoreczeniaIntegracja() {
   return (
     <ProductLanding
       slug="e-doreczenia-integracja"
-      tool={<EDoreczeniaCheck />}
+      tool={
+        <>
+          <EDoreczeniaCheck />
+          <section className="mt-10 max-w-3xl">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+              Spółka z KRS bez adresu do e-Doręczeń: co to znaczy i jak sprawdzić
+            </h2>
+            <div className="mt-4 space-y-4 text-gray-600 dark:text-gray-300">
+              <p>
+                Spółka wpisana do KRS przed 2025 rokiem ma obowiązek posiadania adresu do
+                doręczeń elektronicznych od 1 kwietnia 2025, a spółka wpisana później od
+                dnia wpisu. Adres, który jest już w bazie adresów elektronicznych, widać w
+                aktualnym odpisie KRS, w dziale 1 przy siedzibie i adresie spółki. Gdy tego
+                pola w odpisie nie ma, spółka adresu nie ma albo jej skrzynka nie została
+                jeszcze aktywowana.
+              </p>
+              <p>
+                5 października 2026 sprawdziliśmy w ten sposób 119 spółek z branży
+                księgowej, prawnej i handlowej, których strony znaleźliśmy w katalogach
+                firm. U 27 z nich pola w odpisie nie było, czyli półtora roku po terminie
+                ponad co piąta spółka nadal nie ma adresu do e-Doręczeń w bazie.
+              </p>
+              <p>
+                Kary pieniężnej za brak adresu ustawa nie przewiduje. Skutek jest
+                praktyczny: dopóki adresu nie ma w bazie, urzędy doręczają pisma
+                papierowo albo publiczną usługą hybrydową, więc trzeba pilnować zwykłej
+                skrzynki pocztowej i awiz. Po aktywacji skrzynki pismo nieodebrane w
+                ciągu 14 dni uznaje się za doręczone, nawet jeśli nikt go nie otworzył.
+              </p>
+              <p>
+                Wniosek dla spółki składa się wyłącznie przez Biznes.gov.pl, a spółka musi
+                w nim wskazać administratora skrzynki, czyli osobę, która ją aktywuje i
+                zarządza dostępem. Numer KRS swojej spółki albo kontrahenta wpiszcie w
+                narzędziu powyżej, w trybie „Spółka: po numerze KRS”: pobierzemy aktualny
+                odpis z wyszukiwarki Ministerstwa Sprawiedliwości i pokażemy, czy adres w
+                nim jest i od kiedy obowiązuje.
+              </p>
+            </div>
+          </section>
+        </>
+      }
       breadcrumb="Integracja z e-Doręczeniami"
       eyebrow="e-Doręczenia"
       h1="Integracja z e-Doręczeniami"
@@ -107,6 +147,18 @@ export default function EDoreczeniaIntegracja() {
         {
           q: "Jak sprawdzić, czy nasza firma ma już aktywny adres do e-Doręczeń?",
           a: "Publiczna wyszukiwarka adresów na gov.pl pokazuje tylko urzędy i inne podmioty publiczne, adresów firm w niej nie znajdziecie. Stan własnego wniosku sprawdza się po zalogowaniu na edoreczenia.gov.pl, w opcji „Zarządzaj adresami do e-Doręczeń” w prawym górnym rogu, albo w Koncie Przedsiębiorcy, jeśli wniosek szedł przez biznes.gov.pl. Status „W trakcie weryfikacji” znaczy, że wniosek czeka, i nawet gdy zauważycie w nim błąd, nie składajcie drugiego. „Odrzucony” pokazuje powód i wymaga nowego, poprawnego wniosku. „Pozytywnie rozpatrzony” to jeszcze nie koniec, bo administrator musi aktywować skrzynkę po otrzymaniu maila. Dopiero wtedy adres działa.",
+        },
+        {
+          q: "Jak sprawdzić, czy spółka z KRS ma adres do e-Doręczeń?",
+          a: "W aktualnym odpisie KRS. Adres, który jest w bazie adresów elektronicznych, odpis pokazuje w dziale 1, przy siedzibie i adresie spółki, jako adres do doręczeń elektronicznych wpisany do bazy adresów elektronicznych. Odpis pobiera się bezpłatnie na ekrs.ms.gov.pl albo przez interfejs api-krs.ms.gov.pl. Najszybciej wpisać numer KRS w naszym narzędziu na tej stronie, w trybie „Spółka: po numerze KRS”: pokazuje nazwę spółki, datę wpisu do rejestru, stan odpisu i to, czy adres w nim jest. Działa to także dla kontrahenta, bo odpis KRS jest jawny.",
+        },
+        {
+          q: "Od kiedy spółka z o.o. musi mieć adres do e-Doręczeń?",
+          a: "Spółka z o.o. i każda inna spółka wpisana do rejestru przedsiębiorców KRS przed 1 stycznia 2025 ma obowiązek od 1 kwietnia 2025. Spółka wpisana od 1 stycznia 2025 musi mieć adres od dnia wpisu. Oba terminy już minęły, więc spółka bez adresu powinna złożyć wniosek przez Biznes.gov.pl od razu, ze wskazaniem administratora skrzynki. Kary pieniężnej za spóźnienie nie ma, ale do czasu aktywacji urzędy doręczają pisma papierowo albo usługą hybrydową.",
+        },
+        {
+          q: "Złożyliśmy wniosek, a w odpisie KRS dalej nie ma adresu do e-Doręczeń. Dlaczego?",
+          a: "Najczęściej dlatego, że skrzynka nie została jeszcze aktywowana. Pozytywne rozpatrzenie wniosku to nie koniec: administrator dostaje maila z instrukcją i musi aktywować skrzynkę w Koncie Przedsiębiorcy, dopiero wtedy adres trafia do bazy adresów elektronicznych, a z niej do odpisu. Stan wniosku widać w Koncie Przedsiębiorcy, w „Moich sprawach”. Jeśli wniosek ma status „W trakcie weryfikacji”, nie składajcie drugiego, bo to tylko wydłuża sprawę.",
         },
         {
           q: "Nasz wniosek o adres do e-Doręczeń został odrzucony. Dlaczego i co teraz?",
