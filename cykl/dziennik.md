@@ -2410,3 +2410,25 @@ Zoho, 24 h: INBOX 1 (Sanity, kod weryfikacyjny), Spam 0; odpowiedzi od firm 0
 - Pozostałe otwarte zadania mają blokadę godzinową (Z5 od 10:46, Z12 po 19:50), więc przebieg kończy się na Z4.
 **Dla Pawła:** bez zmian.
 **Zostało otwarte:** Z5 od 10:46 (`ksiegowe-edoreczenia --limit=7`), Z6 od 11:46, Z7 12:46, Z9 od 14:46, Z10, Z11, Z12 po 19:50 (9 adresów), Z20, Z24.
+
+## 2026-10-05 10:58
+**Kanał:** outreach z gotowym raportem (Z5, biura rachunkowe, e-Doręczenia w KRS).
+**Co zrobione:** wyszło 7 maili do spółek księgowych bez adresu do e-Doręczeń w odpisie KRS, z pawel@fluxlab.pl przez Resend, wszystkie 7 dostarczone.
+**Ruch:** ostatnia doba 48 odsłon, 23 osoby (wzrost o 239% wobec średniej 14,1); źródła: facebook 3, www.google.com 2, mail 1, narzedzie 1; z telefonu 27 z 48; uruchomienia narzędzi 2 (uruchomiono_skan 1, uruchomiono_skan_krs 1, klik_po_wyniku 1). Najczęściej: /e-doreczenia-integracja 9, /automatyzacja-dla-biur-rachunkowych 5, /audyt-strony 4.
+**Dowód:**
+- Z5, wysyłka 10:46 do 10:48 (`wyslij_segment.py ksiegowe-edoreczenia --limit=7`, utm_campaign=ksiegowe), statusy Resend o 10:58:
+
+| Adres | Identyfikator | Status |
+|---|---|---|
+| merchant@wp.pl | 01a10b3d-cdcc-7b0c-afcf-4957fe34eca5 | delivered |
+| biuro@e-pok.pl | 01a10b3e-0974-7e01-a946-d6eebcb30248 | delivered |
+| biuro@boolska.pl | 01a10b3e-44fe-7169-ac77-16ba6d331d50 | delivered |
+| biuro@accountingpartners.pl | 01a10b3e-805a-7e45-9f92-36f596935048 | delivered |
+| biuro@obilon.pl | 01a10b3e-bbd5-7171-9381-c19c88a038a1 | delivered |
+| biuro@abakus.rzeszow.pl | 01a10b3e-f730-77a2-af69-5dd96f75f150 | delivered |
+| kontakt@agiorzeszow.pl | 01a10b3f-328f-7bd1-9a4c-81c0d7a25f0c | delivered |
+
+  Przed wysyłką próba: 0 długich myślników, 7/7 z utm `ksiegowe`, zdanie o wypisaniu w każdym, żaden adres nie był wcześniej w `wyslane_ks.json`. Teraz plik ma 72 adresy; 008 do 013 nietknięte dla Z9. 0 odbić, `pomijane.json` bez zmian.
+- Pozostałe otwarte zadania mają blokadę godzinową, przebieg kończy się na Z5.
+**Dla Pawła:** bez zmian.
+**Zostało otwarte:** Z6 od 11:46 (sklepy), Z7 12:46, Z9 od 14:46, Z10, Z11, Z12 po 19:50 (9 adresów), Z20, Z24.
