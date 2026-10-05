@@ -2335,7 +2335,7 @@ Zoho, 24 h: INBOX 1 (Sanity, kod weryfikacyjny), Spam 0; odpowiedzi od firm 0
 
 <!-- WYSLANO 2026-10-05 07:06 -->
 
-## 2026-10-05 07:15
+## 2026-10-05 07:10
 **Kanał:** narzędzia i treść (Z13, Z14), Facebook (Z15), według planu stratega.
 **Co zrobione:** narzędzie na `/e-doreczenia-integracja` sprawdza na produkcji spółkę po numerze KRS w aktualnym odpisie, strona ma pod nim sekcję o spółkach bez adresu z naszą liczbą 27 z 119, nowy tytuł i 3 pytania FAQ, a post o tym stoi pierwszy w kolejce fanpage'a.
 **Ruch:** bez zmian względem wpisu 07:00 (37 odsłon, 18 osób w dobie; facebook 3, google 2, mail 1, narzedzie 1).
@@ -2345,3 +2345,11 @@ Zoho, 24 h: INBOX 1 (Sanity, kod weryfikacyjny), Spam 0; odpowiedzi od firm 0
 - Z15: `~/Projekty/fluxlab-meta/posty/kolejka.json`, pozycja 0: `027-krs-e-doreczenia-sprawdz`, link `?utm_source=facebook&utm_campaign=narzedzia-krs`, grafika wyrenderowana. Opublikuje go najbliższy przebieg `publikuj.py`.
 **Dla Pawła:** bez zmian.
 **Zostało otwarte:** Z4 od 9:46, Z5 od 10:46 z `--limit=7`, Z6 od 11:46, Z7 12:46, Z9 od 14:46 (008 do 013), Z12 po 9:00 (teraz także `/e-doreczenia-integracja`). Bez blokady godzinowej: Z16 (kancelarie drogą KRS, można użyć `krs_droga.py`), Z17, Z18, Z19, Z21, Z22.
+
+## 2026-10-05 07:30
+**Kanał:** outreach, przygotowanie na wtorek (Z16 z planu stratega).
+**Co zrobione:** nowa pula 536 domen kancelarii z panoramafirm.pl i 5 gotowych maili o brakującym adresie do e-Doręczeń w odpisie KRS, nic nie wysłano.
+**Ruch:** bez zmian względem wpisu 07:00.
+**Dowód:** `maile_kanc/panoramafirm_domeny_2026-10-05.json` (kategorie `kancelaria_adwokacka` i `kancelaria_radcy_prawnego`, Warszawa, Kraków, Wrocław, Poznań, Gdańsk, Katowice, Łódź, Lublin, po 3 strony, 48 zapytań co 3 s, 0 błędów). Droga KRS na pierwszych 250 domenach: 31 spółek w KRS, z nich 21 kancelarii (10 trafień to hostingi i agencje ze stopek, np. WENET, nazwa.pl, SEOHOST), 16 z 21 ma adres w odpisie, 5 nie ma: MCKLEGE (Katowice), BHR Adwokaci (Wrocław), Kancelaria dr Maliszewskiej (Warszawa), A. Wójcik i Wspólnicy (Częstochowa), Kozłowski, Pisarkiewicz-Firek (Kraków). Maile `maile_kanc/068` do `072`, adresy ogólne ze stron kancelarii (biuro@, sekretariat@, kancelaria@, prawnik@), bez adresów imiennych. Odrzucone: kancelariafocus.pl, bo KRS ze strony należy do KS Ruch Radzionków. Trafialność kancelarii drogą KRS: 5 na 250 domen, bo większość to praktyki indywidualne bez KRS. Do pliku planu w Z4 dopisane `--limit=2`, żeby 068 do 072 nie wyszły dziś.
+**Dla Pawła:** bez zmian.
+**Zostało otwarte:** Z4 od 9:46 (`kancelarie --limit=2`), Z5 od 10:46 (`--limit=7`), Z6 od 11:46, Z7, Z9 od 14:46, Z10, Z11, Z12 po 9:00; bez blokady: Z17, Z18, Z19, Z21, Z22. W `maile_kanc/panoramafirm_domeny_2026-10-05.json` zostało 286 niesprawdzonych domen.
