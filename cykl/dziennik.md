@@ -2467,3 +2467,20 @@ Zoho, 24 h: INBOX 1 (Sanity, kod weryfikacyjny), Spam 0; odpowiedzi od firm 0
 **Dowód:** commit 74f5b83; `curl -s https://fluxlab.pl/llms.txt | grep "Jak sprawdzić, czy spółka z KRS"` zwraca nowy akapit; build i spojnosc OK; IndexNow 111 adresów, 2 z 3 punktów przyjęły (Naver 200).
 **Dla Pawła:** bez zmian.
 **Zostało otwarte:** Z9 od 14:46 (ksiegowe-edoreczenia, 008 do 013), Z10 15:46, Z11 16:46, Z12 po 19:50 (9 adresów), Z20, Z24.
+
+## 2026-10-05 14:57
+**Kanał:** outreach z gotowym raportem (plan stratega, Z9).
+**Co zrobione:** wysłane 4 maile do biur rachunkowych, spółek z KRS bez adresu do e-Doręczeń w odpisie, wszystkie dostarczone.
+**Ruch:** ostatnia doba 54 odsłony, 27 osób (wzrost o 278% wobec średniej 14,3); źródła: mail 3, facebook 3, narzedzie 1, chatgpt.com 1; z telefonu 32 z 54; uruchomienia narzędzi 2 (uruchomiono_skan 1, uruchomiono_skan_krs 1, klik_po_wyniku 1). Najczęściej: /e-doreczenia-integracja 11, /automatyzacja-dla-biur-rachunkowych 5, /audyt-strony 4, /ksef-2027 3, /narzedzia 3.
+**Dowód:** wysyłka 14:46 do 14:47 z pawel@fluxlab.pl, utm mail/ksiegowe, statusy Resend o 14:56:
+
+| Adres | Identyfikator | Status |
+|---|---|---|
+| bur@bur.pl | 01a10c19-908e-7031-a728-d60b3999e6c7 | delivered |
+| biuro@honneymoney.com | 01a10c19-cbfe-772f-ac27-ee8f208cbb53 | delivered |
+| biuro@profitpolska.pl | 01a10c1a-075a-752d-8a33-41588520f901 | delivered |
+| biuro@igbc.pl | 01a10c1a-42b4-765b-8f42-eb56a5dca012 | delivered |
+
+Z sześciu maili z Z8 dwa nie wyszły: 008 (lukan.grochowska@gmail.com) i 010 (sekretariat.essabr@gmail.com), bo plan zabrania pisania na gmail; pliki przemianowane na `*.gmail-pominiete`, żeby skrypt ich nie wysłał. `wyslane_ks.json` ma 76 adresów.
+**Dla Pawła:** bez zmian.
+**Zostało otwarte:** Z10 15:46 (odpowiedzi i utm po wszystkich dzisiejszych segmentach), Z11 16:46, Z12 po 19:50 (9 adresów), Z20, Z24.
