@@ -2302,3 +2302,33 @@ Zoho, 24 h: INBOX 1 (Sanity, kod weryfikacyjny), Spam 0; odpowiedzi od firm 0
 **Ocena kanałów:** Google 1/11 osób, rośnie, 5 zadań. Outreach 0 odpowiedzi na 328, ale prawdopodobnie 13 sesji z niedzieli; dziś pierwszy dzień z utm: 22 gotowe maile plus do 12 z drugiej partii biur, 3 przygotowania nocne drogą KRS (trafialność 12 do 14 procent). Facebook 3/5 przez utm, 1 zlecenie. Narzędzia 0 uruchomień przy 7 odsłonach `/e-doreczenia-integracja`: 2 zadania (tryb KRS). Fora 0/0: raz dziennie. Treści AI 0/1: wyłączone poza frazami z GSC. GitHub niezmierzony: pomiar w Z21.
 **Plan:** `cykl/plan-ruchu.md`, 24 zadania 06:46 do 05:46. Dzień: kontrola `--proba`, 4 wysyłki (dealerzy+kancelarie 9:46, ksiegowe 10:46, sklepy 11:46, druga partia ksiegowe 14:46), odpowiedzi i pomiar 12:46, 15:46, bilans 16:46. Noc: tytuły pod „audyt google ads" i „enova", 10 żądań indeksowania, narzędzie KRS na `/e-doreczenia-integracja` plus sekcja treści i post 027 w kolejce fanpage'a, linki wewnętrzne do 8 stron bez indeksu, 3 partie maili na wtorek (kancelarie, dealerzy, agencje), GitHub traffic, zrzuty 390 px, bilans.
 **Mail do Pawła:** wysłany 06:39 z pawel@fluxlab.pl, temat „FluxLab ruch, plan na 5.10.2026: 18 osób w dobie, 2,5 raza więcej niż dzień wcześniej"; „Dla Pawła": odpowiedź FINREAL, 5 tekstów forumowych, Bing Webmaster, token API CEIDG, decyzja o outreachu po dzisiejszych liczbach.
+
+## 2026-10-05 07:00
+**Kanał:** Google (Z1), pomiar i fora (Z2), outreach kontrola i przygotowanie (Z3, Z8), według planu stratega.
+**Co zrobione:** `/audyt-google-ads` ma tytuł i opis zaczynające się od frazy „Audyt Google Ads” oraz akapit, co audyt obejmuje i ile trwa (3 dni robocze); `/automatyzacja-dla-biur-rachunkowych` ma widoczną nad zakładkami sekcję h2 „Integracja enova365 z CRM i stroną”; 22 maile na dziś przeszły kontrolę, a druga partia biur rachunkowych drogą KRS dała 6 nowych maili na Z9.
+**Ruch:** ostatnia doba 37 odsłon, 18 osób (+162% wobec średniej 14,1); źródła: facebook 3, www.google.com 2, mail 1, narzedzie 1; 19 z 37 odsłon z telefonu; uruchomienia narzędzi 1 (uruchomiono_skan 1, klik_po_wyniku 1).
+**Dowód:**
+- Z1, GSC 28 dni: „audyt google ads” 8 wyświetleń, 0 kliknięć, strona `/audyt-google-ads`, pozycja 27,6; „"enova"” (zapytanie z cudzysłowem) 8 wyświetleń, 0 kliknięć, strona `/automatyzacja-dla-biur-rachunkowych`, pozycja 2,1. Commit c7a3a46. Produkcja: `<title>Audyt Google Ads: frazy bez konwersji, 69 zł | Fluxlab`, nagłówek „Integracja enova365 z CRM i stroną” w HTML. IndexNow: 2 adresy, 2 z 3 punktów przyjęły. Bez żądania indeksowania (przed 9:00, to Z12).
+- Z2 (a), sesje 4.10 17:00 do 5.10 06:00 z `ruch.sqlite`:
+
+| godz. | pierwsza strona | odsyłacz/utm | urządzenie | ścieżka |
+|---|---|---|---|---|
+| 17:50 | /audyt-strony | mail/test-utm | Linux | własny test |
+| 18:08 | /automatyzacja-follow-up | brak | Android | 2 odsłony, test GSC |
+| 18:12 | /strefa-wiedzy/ai-w-automatyzacji-firm | brak | Android | 2 odsłony, test GSC |
+| 18:15 | /strefa-wiedzy/automatyzacja-vs-zatrudnienie | brak | Android | 2 odsłony, test GSC |
+| 18:18 | /import-radar | brak | Android | 2 odsłony, test GSC |
+| 18:32 | /koszt-recznej-obslugi-leadow | brak | Android | 1 odsłona |
+| 18:48 | /strefa-wiedzy/podszywanie-sie-pod-firmowy-email | brak | Android | 2 odsłony, test GSC (Z5 z 4.10) |
+| 18:54 | /e-doreczenia-integracja | brak | Linux | skan, klik_po_wyniku, /kontakt (najpewniej własna weryfikacja) |
+| 20:07 | /e-doreczenia-integracja | facebook/narzedzia | Android | 1 |
+| 20:07 | /e-doreczenia-integracja | facebook/narzedzia | Windows | 1 |
+| 20:07 | /e-doreczenia-integracja | facebook/narzedzia | Android | 1 |
+| 21:43 | / | brak | Android | /narzedzia, /audyt-strony, /e-doreczenia-integracja, /ksef-2027, /kontakt |
+
+  W 3 godziny po wysyłce 17:06 na `/audyt-strony` lub `/kontakt` weszły 2 sesje, obie nasze (test utm i Linux). Sesje „bez odsyłacza” z telefonu to testy na żywo „Sprawdź URL” w Search Console: te same adresy, które zgłaszano do indeksowania, po 2 odsłony każda. Wniosek: NIE, maile z 4.10 nie sprowadziły ludzi; jedyna prawdopodobnie ludzka sesja bez odsyłacza to 21:43 (Android, 6 stron, w tym /kontakt), bez śladu związku z mailem.
+- Z2 (b): Gofin najnowszy wątek 1559627 (wynagrodzenia za 09.2026, nie pasuje do narzędzia), Allegro „KSeF” 1224959 bez zmian. Brak nowego wątku, fora zamknięte na dobę.
+- Z3: po kontroli dealerzy 5, kancelarie 2, ksiegowe-edoreczenia 7, sklepy 8; nic nie odpadło. Wszystkie linki z `utm_source=mail&utm_campaign=<segment>`, zdanie o wypisaniu i źródło adresu w każdym, bez długich myślników, żaden adres nie jest w `wyslane*.json` ani `pomijane.json`. 16 odpisów KRS pobranych ponownie ok. 07:05: pole `adresDoDoreczenElektronicznychWpisanyDoBAE` nadal brak u wszystkich (kontrola, że klucz działa: 0000078004 go ma).
+- Z8: nowy skrypt `~/Projekty/mail-audyt/krs_droga.py` (domena → KRS lub NIP ze strony → biała lista MF → odpis KRS, zapis powodów odrzucenia, do użycia w Z16, Z18, Z22). 110 domen: 73 bez KRS i bez NIP spółki, 11 nie odpowiada, 2 z błędnym KRS, 24 spółki w KRS, z nich 17 z adresem do e-Doręczeń i 7 bez. Maile 008 do 013 (LUKAN, BUR, ESSA, LOWTAX/Honney Money, PROFIT POLSKA, INVEST GROUP); Amikus pominięty, bo na stronie stoi tylko adres innej firmy. Trafialność tej partii 6 na 110 domen. Łączna liczba do maili: u 53 z 68 sprawdzonych spółek księgowych pole jest wypełnione.
+**Dla Pawła:** bez zmian względem wpisu 2026-10-04 23:55 (komentarze na Gofinie i Allegro, import do Bing Webmaster Tools).
+**Zostało otwarte:** Z4 od 9:46 (dealerzy 5, kancelarie 2), Z5 od 10:46 koniecznie z `--limit=7` (w katalogu leżą już 008 do 013 dla Z9), Z6 od 11:46, Z7 12:46, Z9 od 14:46 (6 maili 008 do 013), Z12 dopiero po 9:00. Następne bez blokady godzinowej: Z13 (tryb KRS w narzędziu e-Doręczeń).
