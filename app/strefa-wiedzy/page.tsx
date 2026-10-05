@@ -101,6 +101,70 @@ export default function StrefaWiedzy() {
           />
         </div>
 
+        <section
+          id="automatyzacja-crm-ai"
+          className="scroll-mt-20 container-wide pb-10 lg:pb-12"
+        >
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-5">
+              Automatyzacja CRM z AI: co AI robi w CRM, a czego nie
+            </h2>
+            <div className="space-y-4 text-gray-600 dark:text-gray-400 leading-relaxed">
+              <p>
+                AI w CRM dobrze robi trzy rzeczy: czyta treść, której zwykła
+                reguła nie rozumie, streszcza ją i wyciąga z niej pola. W
+                Pipedrive wygląda to tak: nowy deal z formularza uruchamia
+                webhook, model językowy czyta treść zapytania i ustawia pole
+                „segment” albo „pilność”, a handlowiec dostaje zadanie z
+                jednozdaniowym streszczeniem zamiast ściany tekstu. Ten sam
+                krok potrafi zrobić notatkę z długiego wątku mailowego przy
+                dealu albo przepisać NIP i kwotę z załączonego zapytania
+                ofertowego. Wbudowany Pipedrive AI pisze szkice wiadomości i
+                podsumowania, ale nie zna Waszych reguł przydziału ani cennika.
+              </p>
+              <p>
+                Czego AI w CRM nie robi dobrze: nie decyduje samo o rabacie,
+                ocenie kredytowej ani o tym, komu odmówić, i nie powinno
+                wysyłać klientowi wiadomości bez przeczytania przez człowieka.
+                Nie naprawi też procesu, którego nie ma. Jeśli leady nie mają
+                właściciela, a etapy w lejku znaczą co innego dla każdego
+                handlowca, model tylko szybciej utrwali bałagan. Najpierw
+                przydział, terminy i{" "}
+                <Link
+                  href="/automatyzacja-follow-up"
+                  className="text-accent hover:underline"
+                >
+                  follow-upy
+                </Link>{" "}
+                na zwykłych regułach, AI dopiero tam, gdzie reguła nie wystarcza.
+              </p>
+              <p>
+                Czas i koszt: pojedynczy krok AI w istniejącym CRM (klasyfikacja
+                zapytań, streszczenie, wyciąganie danych) wyceniamy jak
+                naprawę jednego etapu,{" "}
+                <Link
+                  href="/automatyzacja-leadow-crm"
+                  className="text-accent hover:underline"
+                >
+                  od 1 500 zł
+                </Link>
+                , a całe wdrożenie z raportowaniem trwa od 2 do 8 tygodni,
+                zależnie od zakresu. Samo wywołanie modelu przy klasyfikacji
+                jednego leada kosztuje ułamek grosza, więc o opłacalności
+                decyduje czas handlowca, a nie rachunek za API. Szerzej o tym,
+                gdzie AI daje efekt, piszemy w artykule{" "}
+                <Link
+                  href="/strefa-wiedzy/ai-w-automatyzacji-firm"
+                  className="text-accent hover:underline"
+                >
+                  AI w automatyzacji firm
+                </Link>
+                .
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* CTA */}
         <section className="py-8 lg:py-10 border-t border-gray-100 dark:border-gray-800">
           <div className="container-wide">
