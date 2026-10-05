@@ -251,8 +251,8 @@ export default function EDoreczeniaCheck() {
       >
         {(
           [
-            ["forma", "Termin według formy działalności"],
-            ["krs", "Spółka z KRS: sprawdź po numerze"],
+            ["forma", "Według formy"],
+            ["krs", "Spółka: po numerze KRS"],
           ] as const
         ).map(([k, etykieta]) => (
           <button
