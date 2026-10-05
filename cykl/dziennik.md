@@ -2332,3 +2332,16 @@ Zoho, 24 h: INBOX 1 (Sanity, kod weryfikacyjny), Spam 0; odpowiedzi od firm 0
 - Z8: nowy skrypt `~/Projekty/mail-audyt/krs_droga.py` (domena → KRS lub NIP ze strony → biała lista MF → odpis KRS, zapis powodów odrzucenia, do użycia w Z16, Z18, Z22). 110 domen: 73 bez KRS i bez NIP spółki, 11 nie odpowiada, 2 z błędnym KRS, 24 spółki w KRS, z nich 17 z adresem do e-Doręczeń i 7 bez. Maile 008 do 013 (LUKAN, BUR, ESSA, LOWTAX/Honney Money, PROFIT POLSKA, INVEST GROUP); Amikus pominięty, bo na stronie stoi tylko adres innej firmy. Trafialność tej partii 6 na 110 domen. Łączna liczba do maili: u 53 z 68 sprawdzonych spółek księgowych pole jest wypełnione.
 **Dla Pawła:** bez zmian względem wpisu 2026-10-04 23:55 (komentarze na Gofinie i Allegro, import do Bing Webmaster Tools).
 **Zostało otwarte:** Z4 od 9:46 (dealerzy 5, kancelarie 2), Z5 od 10:46 koniecznie z `--limit=7` (w katalogu leżą już 008 do 013 dla Z9), Z6 od 11:46, Z7 12:46, Z9 od 14:46 (6 maili 008 do 013), Z12 dopiero po 9:00. Następne bez blokady godzinowej: Z13 (tryb KRS w narzędziu e-Doręczeń).
+
+<!-- WYSLANO 2026-10-05 07:06 -->
+
+## 2026-10-05 07:15
+**Kanał:** narzędzia i treść (Z13, Z14), Facebook (Z15), według planu stratega.
+**Co zrobione:** narzędzie na `/e-doreczenia-integracja` sprawdza na produkcji spółkę po numerze KRS w aktualnym odpisie, strona ma pod nim sekcję o spółkach bez adresu z naszą liczbą 27 z 119, nowy tytuł i 3 pytania FAQ, a post o tym stoi pierwszy w kolejce fanpage'a.
+**Ruch:** bez zmian względem wpisu 07:00 (37 odsłon, 18 osób w dobie; facebook 3, google 2, mail 1, narzedzie 1).
+**Dowód:**
+- Z13: commity 52813d4 i 48eca2e. `POST https://fluxlab.pl/api/sprawdz-krs-edoreczenia`: 0000422082 → BRAK_ADRESU, E-POK, wpis 25.05.2012, obowiązek od 1.04.2025; 0000078004 → JEST_ADRES, AE:PL-57869-86329-HSJEE-20. Błędy po polsku (nieznany numer 404, zły format 400, limit 10 na minutę 429), pamięć 24 h. Przełącznik „Według formy” / „Spółka: po numerze KRS”, zdarzenie `uruchomiono_skan_krs` (raport ruchu liczy je jako uruchomienie, bo zaczyna się od „uruchomiono”), link `/kontakt?utm_source=narzedzie&utm_campaign=edoreczenia-krs`. Zrzuty 390 px w `skrypty-raport/telefon-390/` (wynik i przełącznik), szerokość dokumentu 390, bez przewijania poziomego; własna wizyta z `fl_nie_licz`.
+- Z14: commit f5ea667. Produkcja: `<title>Od kiedy adres do e-Doręczeń? Sprawdź po KRS | Fluxlab`, h2 „Spółka z KRS bez adresu do e-Doręczeń: co to znaczy i jak sprawdzić”, „U 27 z nich” (119 spółek z 4 plików `krs_*.json`: księgowe 15 z 68 bez adresu, handlowe 11 z 48, prawne 1 z 3). „NIP” celowo nie trafił do tytułu, bo narzędzie nie sprawdza po NIP. IndexNow: Yandex 200, Naver 200, wspólny punkt 403 (Bing bez weryfikacji, bez zmian).
+- Z15: `~/Projekty/fluxlab-meta/posty/kolejka.json`, pozycja 0: `027-krs-e-doreczenia-sprawdz`, link `?utm_source=facebook&utm_campaign=narzedzia-krs`, grafika wyrenderowana. Opublikuje go najbliższy przebieg `publikuj.py`.
+**Dla Pawła:** bez zmian.
+**Zostało otwarte:** Z4 od 9:46, Z5 od 10:46 z `--limit=7`, Z6 od 11:46, Z7 12:46, Z9 od 14:46 (008 do 013), Z12 po 9:00 (teraz także `/e-doreczenia-integracja`). Bez blokady godzinowej: Z16 (kancelarie drogą KRS, można użyć `krs_droga.py`), Z17, Z18, Z19, Z21, Z22.
