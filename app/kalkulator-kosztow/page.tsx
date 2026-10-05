@@ -383,7 +383,24 @@ export default function KalkulatorKosztowPage() {
                             </strong>{" "}
                             Rejestracja, pierwsze wyposażenie, akcesoria, opony
                             zimowe jeśli kupujesz tylko letnie. Na starcie auta
-                            to łatwo 3–8 tys. zł ponad cenę zakupu.
+                            to łatwo 3–8 tys. zł ponad cenę zakupu. Sama cena
+                            zakupu też bywa zawyżona: link do ogłoszenia z
+                            Otomoto lub OLX możesz wkleić w{" "}
+                            <Link
+                              href="/sprawdz-auto"
+                              className="text-accent hover:underline"
+                            >
+                              sprawdzeniu auta przed zakupem
+                            </Link>
+                            , a przy aucie z Niemiec akcyzę, transport i
+                            rejestrację policzy{" "}
+                            <Link
+                              href="/import-radar"
+                              className="text-accent hover:underline"
+                            >
+                              ImportRadar
+                            </Link>
+                            .
                           </p>
                           <p>
                             <strong>

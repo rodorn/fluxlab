@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import LandingForm from "@/components/LandingForm";
 import Tabs from "@/components/Tabs";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Automatyzacja Pipedrive – jak wycisnąć 100% z CRM | Fluxlab",
@@ -102,6 +103,26 @@ export default function AutomatyzacjaPipedrive() {
                         </div>
                       ))}
                     </div>
+                    <p className="mt-8 max-w-3xl text-gray-500 dark:text-gray-400 leading-relaxed">
+                      W Pipedrive najczęściej zaczynamy od dwóch miejsc, gdzie
+                      ucieka sprzedaż:{" "}
+                      <Link
+                        href="/automatyzacja-follow-up"
+                        className="text-accent hover:underline"
+                      >
+                        follow-upy po ofercie
+                      </Link>
+                      , które same zakładają zadanie, gdy deal stoi w etapie
+                      dłużej niż ustalony limit, oraz{" "}
+                      <Link
+                        href="/czas-reakcji-na-leada"
+                        className="text-accent hover:underline"
+                      >
+                        czas reakcji na nowego leada
+                      </Link>
+                      , mierzony od wpadnięcia formularza do pierwszego
+                      kontaktu.
+                    </p>
                   </section>
                 ),
               },

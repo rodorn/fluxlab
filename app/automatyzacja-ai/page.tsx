@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import LandingForm from "@/components/LandingForm";
 import Tabs from "@/components/Tabs";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Automatyzacja AI w procesach firmowych | Fluxlab",
@@ -105,6 +106,18 @@ export default function AutomatyzacjaAI() {
                           </li>
                         ))}
                       </ul>
+                      <p className="mt-8 text-gray-600 dark:text-gray-400 leading-relaxed">
+                        Gdzie AI daje realny efekt, a gdzie nie powinno
+                        decydować samo i potrzebuje zatwierdzenia przez
+                        człowieka, opisujemy w artykule{" "}
+                        <Link
+                          href="/strefa-wiedzy/ai-w-automatyzacji-firm"
+                          className="text-accent hover:underline"
+                        >
+                          AI w automatyzacji firm
+                        </Link>
+                        .
+                      </p>
                     </div>
                   </div>
                 ),

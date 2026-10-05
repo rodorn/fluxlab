@@ -347,7 +347,25 @@ export default function DoborSamochoduPage() {
                             <strong>5. Sprawdź finalistów mechanicznie.</strong>{" "}
                             Przed zakupem każdego używanego auta, niezależny
                             mechanik, nie salon i nie sprzedawca. Koszt 200–400
-                            zł, oszczędność potencjalnie kilka tysięcy.
+                            zł, oszczędność potencjalnie kilka tysięcy. Zanim
+                            umówisz mechanika, wklej link do ogłoszenia w{" "}
+                            <Link
+                              href="/sprawdz-auto"
+                              className="text-accent hover:underline"
+                            >
+                              sprawdzeniu auta przed zakupem
+                            </Link>
+                            : porównanie ceny z rynkiem i oznaki cofniętego
+                            licznika odsieją część ofert jeszcze przed jazdą.
+                            Jeśli finalista jest tańszy w Niemczech,{" "}
+                            <Link
+                              href="/import-radar"
+                              className="text-accent hover:underline"
+                            >
+                              ImportRadar
+                            </Link>{" "}
+                            policzy, czy sprowadzenie się opłaca po wszystkich
+                            kosztach.
                           </p>
                           <p>
                             <strong>

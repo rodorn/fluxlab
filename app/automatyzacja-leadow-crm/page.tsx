@@ -5,6 +5,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import TrackedCTA from "@/components/TrackedCTA";
 import LandingForm from "@/components/LandingForm";
 import Tabs from "@/components/Tabs";
+import Link from "next/link";
 import ProductGrid from "@/components/ProductGrid";
 import DrogaLeada from "@/components/DrogaLeada";
 
@@ -219,6 +220,23 @@ export default function AutomatyzacjaLeadowCRM() {
                           </div>
                         ))}
                       </div>
+                      <p className="mt-8 text-gray-600 dark:text-gray-400 leading-relaxed">
+                        Dwie rzeczy decydują, czy lead zamieni się w rozmowę:{" "}
+                        <Link
+                          href="/czas-reakcji-na-leada"
+                          className="text-accent hover:underline"
+                        >
+                          czas reakcji na leada
+                        </Link>{" "}
+                        liczony w minutach, nie w godzinach, oraz{" "}
+                        <Link
+                          href="/automatyzacja-follow-up"
+                          className="text-accent hover:underline"
+                        >
+                          follow-upy, które CRM przypomina sam
+                        </Link>
+                        , gdy klient nie odpisał po pierwszej wiadomości.
+                      </p>
                     </div>
                   </section>
                 ),

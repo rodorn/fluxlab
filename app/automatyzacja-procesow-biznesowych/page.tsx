@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import LandingForm from "@/components/LandingForm";
 import Tabs from "@/components/Tabs";
+import Link from "next/link";
 import WybierzBranze from "@/components/WybierzBranze";
 
 export const metadata: Metadata = {
@@ -120,6 +121,19 @@ export default function AutomatyzacjaProcesowBiznesowych() {
                           </li>
                         ))}
                       </ul>
+                      <p className="mt-10 text-gray-600 dark:text-gray-400 leading-relaxed">
+                        Model językowy dokładamy tylko tam, gdzie reguła nie
+                        wystarcza: klasyfikacja zapytań, streszczenia,
+                        wyciąganie danych z dokumentów. Konkretne przykłady
+                        opisujemy w artykule{" "}
+                        <Link
+                          href="/strefa-wiedzy/ai-w-automatyzacji-firm"
+                          className="text-accent hover:underline"
+                        >
+                          AI w automatyzacji firm
+                        </Link>
+                        .
+                      </p>
                     </div>
                   </div>
                 ),
