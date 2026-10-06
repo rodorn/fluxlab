@@ -97,7 +97,9 @@ export default function ProductLanding(p: ProductLandingProps) {
             <p className="mt-5 text-lg text-gray-600 dark:text-gray-300">
               {p.lead}
             </p>
-            <div className="mt-8 flex flex-wrap items-center gap-4">
+            <div
+              className={`mt-8 flex-wrap items-center gap-4 ${p.tool ? "hidden md:flex" : "flex"}`}
+            >
               <TrackedCTA
                 href={p.tool ? "#narzedzie" : "#zamow"}
                 location={`${p.formId}_hero`}
@@ -114,7 +116,7 @@ export default function ProductLanding(p: ProductLandingProps) {
           </div>
 
           {p.tool && (
-            <div id="narzedzie" className="mt-12 scroll-mt-24">
+            <div id="narzedzie" className="mt-6 md:mt-12 scroll-mt-24">
               <NazwaNarzedzia href={`/${p.slug}`} />
               {p.tool}
             </div>

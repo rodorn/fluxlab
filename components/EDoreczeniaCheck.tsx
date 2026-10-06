@@ -14,7 +14,7 @@
  * mnie o nic.
  */
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { zglosZdarzenie } from "@/lib/zdarzenie";
 import DalejPoWyniku from "@/components/DalejPoWyniku";
 import { PODMIOTY, type Podmiot } from "@/lib/terminy-e-doreczen";
@@ -159,6 +159,15 @@ export default function EDoreczeniaCheck() {
   const [krsBlad, setKrsBlad] = useState("");
   const [wynikKrs, setWynikKrs] = useState<WynikKrs | null>(null);
 
+  // Wejscie z maila do biur rachunkowych dotyczy odpisu KRS, wiec od razu
+  // pokazujemy pole na numer zamiast wyboru formy.
+  useEffect(() => {
+    const q = new URLSearchParams(window.location.search);
+    if (q.get("tryb") === "krs" || q.get("utm_campaign") === "ksiegowe") {
+      setTryb("krs");
+    }
+  }, []);
+
   async function sprawdzKrs(e: React.FormEvent) {
     e.preventDefault();
     zglosZdarzenie("uruchomiono_skan_krs");
@@ -238,11 +247,13 @@ export default function EDoreczeniaCheck() {
       <h2 className="text-xl font-bold text-gray-900 dark:text-white">
         Od kiedy Wasz podmiot musi mieć adres do e-Doręczeń
       </h2>
-      <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-        Terminy wchodzą etapami i zależą wyłącznie od tego, gdzie i kiedy
-        podmiot został zarejestrowany. Naciśnijcie swój przypadek, a policzymy
-        datę z ustawy i dni, które zostały albo minęły. Nic nie trzeba wpisywać.
-      </p>
+      {tryb === "forma" && (
+        <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+          Terminy wchodzą etapami i zależą wyłącznie od tego, gdzie i kiedy
+          podmiot został zarejestrowany. Naciśnijcie swój przypadek, a policzymy
+          datę z ustawy i dni, które zostały albo minęły. Nic nie trzeba wpisywać.
+        </p>
+      )}
 
       <div
         role="tablist"
