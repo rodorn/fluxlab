@@ -79,6 +79,10 @@ export default function Page() {
       ]}
       faq={[
         {
+          q: "Czy odpowiadamy za to, co obiecał nasz bot?",
+          a: "W praktyce tak. W sprawie Moffatt przeciwko Air Canada z lutego 2024 trybunał uznał, że firma odpowiada za zniżkę obiecaną przez jej chatbota, choć regulamin jej nie przewidywał. Od 2 sierpnia 2026 art. 50 AI Act wymaga też, żeby klient wiedział, że rozmawia z AI. Dlatego sprawdzamy odpowiedzi bota z cennikiem i regulaminem, zanim zrobi to klient.",
+        },
+        {
           q: "Czy będziecie łamali zabezpieczenia naszego bota?",
           a: "Nie. W standardowym audycie zadajemy wyłącznie normalne pytania klienta, czyli rozmowę, którą może odbyć każdy odwiedzający. Testy odporności na manipulację robimy tylko wtedy, gdy wyraźnie o to poprosisz na piśmie.",
         },
