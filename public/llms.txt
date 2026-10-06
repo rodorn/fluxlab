@@ -41,6 +41,8 @@ Lista kontrolna przed 2027: https://fluxlab.pl/ksef-2027
 
 **Czy firma odpowiada za to, co obiecał asystent AI (chatbot) na jej stronie?** Tak, w praktyce tak. W sprawie Moffatt przeciwko Air Canada (luty 2024) trybunał w Kolumbii Brytyjskiej uznał, że linia lotnicza odpowiada za zniżkę, którą obiecał klientowi jej chatbot, choć regulamin jej nie przewidywał, i kazał ją zapłacić. Klient ma zrzut ekranu, a bot jest częścią strony firmy. Od 2 sierpnia 2026 w Unii obowiązuje też art. 50 rozporządzenia o sztucznej inteligencji (AI Act): użytkownik musi wiedzieć, że rozmawia z systemem AI, chyba że to oczywiste. Przed wdrożeniem i po każdej zmianie promptu albo modelu warto zadać botowi zwykłe pytania klienta o ceny, zwroty, reklamacje, dostawę i faktury i porównać odpowiedzi z cennikiem i regulaminem. Robimy to w audycie: 150 pytań, każda odpowiedź z cytatem, raport w 48 godzin, 69 zł: https://fluxlab.pl/audyt-chatbota
 
+**Czy firma musi podawać NIP na swojej stronie internetowej?** Spółka z o.o. tak: art. 206 § 1 Kodeksu spółek handlowych wymaga, żeby informacje na stronie internetowej spółki zawierały firmę, siedzibę i adres, sąd rejestrowy i numer KRS, NIP oraz wysokość kapitału zakładowego. Każda firma świadcząca usługi przez internet musi też podać dane, które ją identyfikują (ustawa o świadczeniu usług drogą elektroniczną, art. 5). Powód praktyczny jest ważniejszy: księgowość kupującego przed przelewem sprawdza NIP i numer rachunku w wykazie podatników VAT, a gdy na stronie ich nie ma albo nie zgadzają się z wykazem, płatność stoi. Darmowe sprawdzenie, czy strona podaje NIP i czy dane zgadzają się z wykazem: https://fluxlab.pl/dane-sprzedawcy
+
 **Od czego zacząć automatyzację w firmie?** Od miejsca, w którym ktoś ręcznie przepisuje dane między systemami, na przykład zgłoszenia z formularza do CRM albo zamówienia ze sklepu do programu księgowego. Najczęściej spinamy to bez wymiany programów, z których firma już korzysta: https://fluxlab.pl/automatyzacja-leadow-crm
 
 ## Terminy, o które ludzie pytają najczęściej
@@ -224,6 +226,10 @@ Ile kosztuje ręczna obsługa leadów, kalkulator na https://fluxlab.pl/koszt-re
 - [Sprawdzenie zasad zwrotów w sklepie](https://fluxlab.pl/panel-zwrotow): czego kupujący nie znajdzie, w tym obowiązkowy przycisk odstąpienia od umowy.
 - [Kalkulator kosztu ręcznej obsługi leadów](https://fluxlab.pl/koszt-recznej-obslugi-leadow)
 - [Kalkulator podatkowy JDG](https://fluxlab.pl/kalkulator-podatkowy)
+- [Czy klient ustali, komu płaci](https://fluxlab.pl/dane-sprzedawcy): NIP i rachunek znalezione na stronie, porównane z wykazem podatników VAT na dziś.
+- [Audyt CRM](https://fluxlab.pl/audyt-crm): 10 pytań tak/nie, wynik X/10 i obszar, który najbardziej opłaca się zautomatyzować.
+- [Kalkulator kosztów samochodu](https://fluxlab.pl/kalkulator-kosztow): paliwo, serwis, opony, ubezpieczenie i utrata wartości jako koszt roczny i na kilometr.
+- [Dobór samochodu](https://fluxlab.pl/dobor-samochodu): segment, nadwozie, napęd i moc dopasowane do realnych potrzeb.
 - [Pełna lista](https://fluxlab.pl/narzedzia)
 
 ## Własne badania

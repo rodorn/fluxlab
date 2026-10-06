@@ -90,7 +90,7 @@ export default function Page() {
       faq={[
         {
           q: "Czy brak NIP-u na stronie jest niezgodny z prawem?",
-          a: "Przepisy o świadczeniu usług drogą elektroniczną wymagają podania danych identyfikujących usługodawcę, natomiast nie będziemy tego sprzedawać jako straszenia karą, bo nie sprawdzaliśmy, czy i jak bywa to egzekwowane. Powód, dla którego warto to poprawić, jest praktyczny: to jest tarcie przy płatności, a nie ryzyko mandatu.",
+          a: "Dla spółki z o.o. tak: art. 206 § 1 Kodeksu spółek handlowych wymaga, żeby informacje na stronie internetowej spółki zawierały firmę, siedzibę i adres, sąd rejestrowy i numer KRS, NIP oraz wysokość kapitału zakładowego. Każdy, kto świadczy usługi przez internet, musi też podać dane identyfikujące (ustawa o świadczeniu usług drogą elektroniczną, art. 5). Nie będziemy jednak sprzedawać tego jako straszenia karą, bo nie sprawdzaliśmy, czy i jak bywa to egzekwowane. Powód, dla którego warto to poprawić, jest praktyczny: to jest tarcie przy płatności, a nie ryzyko mandatu.",
         },
         {
           q: "Wykaz pokazuje status inny niż Czynny, co to znaczy?",
