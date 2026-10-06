@@ -146,6 +146,11 @@ JDG w 2026: ZUS, składka zdrowotna i forma opodatkowania, kalkulator na https:/
 - Na liniowym zapłaconą składkę zdrowotną odlicza się od dochodu do 14 100 zł w 2026 (w 2025 do 12 900 zł). Na ryczałcie połowę zapłaconej składki zdrowotnej odlicza się od przychodu (art. 11 ust. 1c ustawy o zryczałtowanym podatku dochodowym). Na skali odliczenia nie ma.
 - Skala: 12% do 120 000 zł dochodu, 32% powyżej, kwota wolna 30 000 zł. Liniowy: 19% od pierwszej złotówki. Ryczałt: stawka zależna od rodzaju usługi, od przychodu, bez kosztów.
 
+Dopłata paliwowa na fakturach kurierskich, sprawdzenie jednej pozycji na https://fluxlab.pl/audyt-kurierski:
+- Publiczna tabela DPD dla okresu od 16 do 30 września 2026: paczka do 20 kg 36,7% ceny bazowej, powyżej 20 do 31,5 kg 42,5%, powyżej 31,5 kg 45,7%. Stawka zmienia się co dwa tygodnie, więc każdą linię faktury porównuje się ze stawką z daty nadania.
+- Najczęstszy błąd: stawka z wyższego progu wagowego. Poza tym korekty wagowe przewoźnika i usługi naliczone dwa razy.
+- Pierwsza faktura sprawdzana za darmo w 48 godzin, audyt 12 miesięcy od 290 zł albo 25% odzyskanej kwoty.
+
 Biała lista podatników VAT, stan z 25.09.2026, sprawdzenie na https://fluxlab.pl/sprawdzenie-nip:
 - Obowiązek sprawdzenia rachunku w wykazie Ministerstwa Finansów dotyczy jednorazowej transakcji od 15 000 zł brutto, niezależnie od liczby przelewów, którymi jest opłacana.
 - Przelew na rachunek spoza wykazu przy transakcji od 15 000 zł: wydatek wypada z kosztów podatkowych, a nabywca odpowiada solidarnie za VAT niezapłacony przez kontrahenta (art. 117ba Ordynacji podatkowej).
