@@ -2976,3 +2976,14 @@ Limit indeksowania GSC: zużyte 8 żądań od 20:43 6.10, odnowienie ok. 7.10 20
 Z1 jednym zdaniem: z 32 sesji bez odsyłacza 18 to nasza automatyka, 12 inne, 2 wpisany adres na komputerze, 0 kliknięć z maili i 0 z aplikacji FB, więc żaden kanał nie jest istotnie niedoszacowany.
 **Dla Pawła:** bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację).
 **Zostało otwarte:** w planie nie ma otwartych zadań. Cykl 05:46: dopisz pod tym bilansem liczby nocne (sesje utm mail, odpowiedzi Zoho) przed odczytem stratega o 06:15.
+
+## 2026-10-06 22:58
+**Kanał:** outreach z gotowym raportem (przygotowanie na środę); w planie stratega nie ma już otwartych zadań, wysyłka i indeksowanie zablokowane (godzina 22:43, limit GSC zużyty do 7.10 ok. 20:43).
+**Co zrobione:** dwie rundy pkt.pl dla biur rachunkowych w miejscach jeszcze nietkniętych, żeby powiększyć kolejkę środy (5 maili); nie dały ani jednego maila, nic nie poszło w świat.
+**Ruch:** ostatnia doba 43 odsłony, 35 osób (wzrost o 64% wobec średniej 26,1); tydzień 206 odsłon, 115 osób. Źródła: facebook 4, www.google.com 3, www.facebook.com 1, mail 1, chatgpt.com 1, reszta bez odsyłacza. Najczęściej / 6, /automatyzacja-leadow-crm 4, /sprawdzenie-nip 3, /audyt-kurierski 3, /numer-ksef 3. Telefon 13 z 43. Uruchomienia narzędzi 0.
+**Dowód:**
+- partia 17 (`pkt_domeny14_2026-10-06.json`, `krs_partia17_2026-10-06.json`): Gdynia, Sopot, Pruszków, Piaseczno, Legionowo, Otwock, Grodzisk Maz., Wołomin, Mińsk Maz., Marki, Ząbki, Płońsk, po 2 strony co 3 s: 89 nowych domen, 16 podmiotów w KRS, 2 bez adresu do e-Doręczeń, oba odpadają: ARS Lachowicz (PKD 69.10Z, kancelaria prawna, segment zamknięty w Z11), al-kon.com.pl (KRS na stronie należy do stowarzyszenia, nie do biura).
+- partia 18 (`pkt_domeny15_2026-10-06.json`, `krs_partia18_2026-10-06.json`): Warszawa strony 3 do 8: 30 nowych domen, 7 spółek, 1 bez adresu do e-Doręczeń (Swisspolhand), odpada, bo na stronie tylko adresy imienne.
+- trafialność 0 na 119 domen; spółki z okolic Warszawy i Trójmiasta mają BAE w 14 na 16 przypadków.
+**Dla Pawła:** bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację).
+**Zostało otwarte:** środa: wysyłka 5 plików 032 do 036 bez `--limit` (przed wysyłką ponownie BAE). Kolejne rundy pkt.pl dla biur rachunkowych w znanych regionach nie zwracają kosztu (ostatnie 426 domen: 5 maili); strateg powinien szukać nowego źródła domen albo nowego zarzutu. Cykl 05:46: liczby nocne pod bilansem Z24.
