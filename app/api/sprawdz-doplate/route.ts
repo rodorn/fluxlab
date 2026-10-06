@@ -3,20 +3,20 @@ import { NextResponse } from "next/server";
 export const runtime = "nodejs";
 export const maxDuration = 20;
 
-// Stawki odczytane ze strony przewoznika dla okresu 16-30 wrzesnia 2026,
-// przy cenie oleju napedowego 7 964 zl za metr szescienny. Zmieniaja sie co
+// Stawki odczytane ze strony przewoznika dla okresu 1-15 pazdziernika 2026,
+// przy cenie oleju napedowego 7 747 zl za metr szescienny. Zmieniaja sie co
 // dwa tygodnie, wiec data obowiazywania jest czescia odpowiedzi, a nie
 // szczegolem technicznym: bez niej wynik nie znaczy nic.
 const OKRES = {
-  od: "2026-09-16",
-  do: "2026-09-30",
+  od: "2026-10-01",
+  do: "2026-10-15",
   zrodlo: "publiczna tabela przewoźnika DPD",
 };
 
 const PROGI: Array<{ doKg: number; stawka: number; opis: string }> = [
-  { doKg: 20, stawka: 36.7, opis: "do 20 kg" },
-  { doKg: 31.5, stawka: 42.5, opis: "powyżej 20 do 31,5 kg" },
-  { doKg: Infinity, stawka: 45.7, opis: "powyżej 31,5 kg" },
+  { doKg: 20, stawka: 35.9, opis: "do 20 kg" },
+  { doKg: 31.5, stawka: 41.7, opis: "powyżej 20 do 31,5 kg" },
+  { doKg: Infinity, stawka: 44.7, opis: "powyżej 31,5 kg" },
 ];
 
 function stawkaDlaWagi(waga: number) {
