@@ -7,13 +7,13 @@ import TrackedCTA from "@/components/TrackedCTA";
 import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
-  title: "Automatyzacja CRM dla firm leasingowych | Fluxlab",
+  title: "CRM dla firm leasingowych i brokerów leasingu | Fluxlab",
   description:
-    "Leady i CRM dla firm leasingowych i brokerskich: routing po regionie i produkcie, integracje z BIK, KRD i CEIDG, scoring, raportowanie prowizji.",
+    "CRM w leasingu, który sam przypisze lead po regionie, uzupełni dane po NIP z CEIDG i KRS, przygotuje wniosek do leasingodawcy i policzy prowizję.",
   openGraph: {
-    title: "Automatyzacja CRM dla firm leasingowych | Fluxlab",
+    title: "CRM dla firm leasingowych i brokerów leasingu | Fluxlab",
     description:
-      "Leady i CRM dla firm leasingowych i brokerskich: routing po regionie i produkcie, integracje z BIK, KRD i CEIDG, scoring, raportowanie prowizji.",
+      "CRM w leasingu, który sam przypisze lead po regionie, uzupełni dane po NIP z CEIDG i KRS, przygotuje wniosek do leasingodawcy i policzy prowizję.",
     locale: "pl_PL",
     type: "article",
     images: [
