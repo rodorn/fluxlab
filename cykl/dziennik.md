@@ -2942,3 +2942,37 @@ Zoho INBOX od 6.10: 4 wiadomości (FINREAL 3, tylko odnotowane; Kontomatik 1 z 1
 Limit dnia nie wystąpił; zużyte 8 żądań od 20:43, odnowienie ok. 7.10 20:43.
 **Dla Pawła:** bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację).
 **Zostało otwarte:** Z24 o 05:46 (bilans planu). W planie nie ma innych otwartych zadań. Sprawdzenie za 2 do 3 dni, czy 8 adresów weszło do indeksu (Sprawdź URL).
+
+## 2026-10-06 21:50
+**Kanał:** pomiar (Z24 z planu stratega, ostatnie otwarte zadanie; zrobione o 21:50 zamiast 05:46, liczby nocne do odświeżenia przez cykl 05:46).
+**Co zrobione:** bilans planu 2026-10-06/07 dla stratega; nic nowego nie poszło w świat.
+**Ruch:** ostatnia doba 43 odsłony, 35 osób (wzrost o 64% wobec średniej 26,1); tydzień 208 odsłon, 115 osób. Źródła: facebook 4, www.google.com 3, www.facebook.com 1, mail 1, chatgpt.com 1, reszta bez odsyłacza (26 sesji). Najczęściej / 6, /automatyzacja-leadow-crm 4, /sprawdzenie-nip 3, /audyt-kurierski 3, /numer-ksef 3. Telefon 13 z 43. Uruchomienia narzędzi 0.
+**Dowód:** Bilans planu 2026-10-06/07 (`cykl/pomiar-kanalow.py`, 21:43):
+
+| zadanie | zrobione | dowód | co przyprowadziło |
+|---|---|---|---|
+| Z1 pomiar sesji bez odsyłacza | tak | tabela 06:47 | 0, pomiar |
+| Z2 „mail firmowy” | tak | af43d13 | 0 na razie (Google, tygodnie) |
+| Z3 kontrola kolejek | tak | 2 odrzucone | 0, kontrola |
+| Z4 księgowe 11 | tak | 11/11 delivered | 0 sesji utm, 0 odpowiedzi |
+| Z5 kancelarie 8 | tak | 8/8 delivered | 0 |
+| Z6 agencje 9 + dealer 1 | tak | 9 delivered, 1 bounced | 0 |
+| Z7, Z10, Z19 odpowiedzi i pomiar | tak | tabele 12:47, 16:10, 18:44 | 0 odpowiedzi; 1 sesja utm (powrót leada Profit Polska 09:57) |
+| Z8, Z16, Z20, Z22 partie KRS | tak | 2 + 0 + 0 + 5 maili | materiał na środę |
+| Z9 księgowe 6 | tak (16:04, z opóźnieniem) | 6/6 delivered | 0 |
+| Z11 bilans outreachu | tak | wpis 16:47 | zamknięte kancelarie, dealerzy, agencje, sklepy |
+| Z12 pole narzędzia na telefonie | tak | 5ee64ac | 0 uruchomień narzędzi w dobie |
+| Z13 tytuł /automatyzacja-crm-leasing | tak | d403a65 | 0 na razie |
+| Z14 indeksowanie 8 stron | tak | 8/8 prośba przesłana | 0 na razie |
+| Z15 post FB 029 | tak | kolejka.json[0] = 029 | facebook 4 + 1 sesje w dobie (posty FB łącznie) |
+| Z17 llms.txt /audyt-kurierski | tak | f7a9a5e | chatgpt.com 1 sesja w dobie |
+| Z18 linki wewnętrzne | tak | 10fa38c | 0 na razie |
+| Z21 telefon 390 px | tak | bez poprawek | 0 |
+| Z23 fora | tak | 0 wątków | 0 |
+
+Doba w liczbach: 36 maili outreachu (35 delivered, 1 bounced, 0 complained), 0 odpowiedzi, 0 zgłoszeń z formularza, 0 uruchomień narzędzi; kampanie utm 7 dni: facebook/narzedzia 9 sesji, mail/ksiegowe 3.
+Maile gotowe na środę: ksiegowe 5 (032 do 036, spoza `wyslane_ks.json`), kancelarie, agencje, dealerzy, sklepy 0 (segmenty zamknięte w Z11). Zalecenie z Z22: jedna wysyłka 5 plików bez `--limit`.
+Limit indeksowania GSC: zużyte 8 żądań od 20:43 6.10, odnowienie ok. 7.10 20:43.
+Z1 jednym zdaniem: z 32 sesji bez odsyłacza 18 to nasza automatyka, 12 inne, 2 wpisany adres na komputerze, 0 kliknięć z maili i 0 z aplikacji FB, więc żaden kanał nie jest istotnie niedoszacowany.
+**Dla Pawła:** bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację).
+**Zostało otwarte:** w planie nie ma otwartych zadań. Cykl 05:46: dopisz pod tym bilansem liczby nocne (sesje utm mail, odpowiedzi Zoho) przed odczytem stratega o 06:15.
