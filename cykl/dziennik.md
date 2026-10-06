@@ -2838,3 +2838,40 @@ Z10, tabela dnia (stan 16:08):
 Zoho INBOX 24 h: FINREAL 7 (tylko odnotowane), Kontomatik 1, odpowiedzi na outreach 0, Spam 0. Resend: dziś 0 powiadomień z formularza. Sesje z utm mail ze skanerów: 0.
 **Dla Pawła:** bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację).
 **Zostało otwarte:** Z11 o 16:46 (bilans outreachu i decyzja o segmentach; kancelarie mają już dwa dni wysyłek z utm, 5.10 i 6.10, z 0 ludzi), Z14 od 20:05, Z18, Z19, Z21, Z22 (kolejka na środę pusta, potrzebna runda miast konurbacji śląskiej), Z24.
+
+## 2026-10-06 16:47
+**Kanał:** outreach z gotowym raportem (Z11, bilans dnia i decyzja o segmentach).
+**Co zrobione:** bilans outreachu 5.10 i 6.10 per segment; kancelarie, dealerzy, agencje i sklepy zamknięte dla nowych partii, linijka dopisana w „Czego nie robić” planu.
+**Ruch:** ostatnia doba 56 odsłon, 47 osób (wzrost o 155% wobec średniej 22,0); tydzień 197 odsłon, 104 osoby. Źródła 24 h: bez odsyłacza 34 sesje, facebook 6, www.google.com 4, useme.com 1, www.facebook.com 1, mail 1, chatgpt.com 1. Telefon 16 z 56. Uruchomienia narzędzi w dobie 0.
+**Dowód:** Bilans outreachu 2026-10-06 (wysyłki z utm 5.10 i 6.10; Resend, Zoho INBOX i Spam, VPS `wizyty` ze źródłem `mail` od 5.10 00:00, `zgloszenia` od 5.10; stan 16:45):
+
+| segment | dni z utm | wysłane | delivered | odbite | odpowiedzi | sesje utm | ludzie | uruchomienia narzędzi | zgłoszenia |
+|---|---|---|---|---|---|---|---|---|---|
+| ksiegowe | 2 (5.10, 6.10) | 28 (11 + 17) | 28 | 0 | 0 | 4 (3 z 5.10, w tym 2 po 1 odsłonie, prawdopodobnie skanery; 1 powrót Profit Polska 6.10) | 1 (Profit Polska) | 2 | 2 |
+| kancelarie | 2 (5.10, 6.10) | 10 (2 + 8) | 10 | 0 | 0 | 0 | 0 | 0 | 0 |
+| dealerzy | 2 (5.10, 6.10) | 6 (5 + 1) | 6 | 0 | 0 | 0 | 0 | 0 | 0 |
+| agencje | 1 (6.10) | 9 | 8 | 1 | 0 | 0 | 0 | 0 | 0 |
+| sklepy | 1 (5.10) | 8 | 7 | 1 | 0 | 0 | 0 | 0 | 0 |
+| razem | | 61 | 59 | 2 | 0 | 4 | 1 | 2 | 2 |
+
+Decyzja według reguły: kancelarie (10 maili) i dealerzy (6) mają dwa dni wysyłek z utm i 0 ludzi, więc nie dostają nowych partii. Agencje i sklepy mają po jednym dniu z utm i 0 sesji; nie spełniają jeszcze reguły dwóch dni, ale ich kolejki są puste, a zakaz nowych partii już stoi w planie, więc też nie wracają. Jedyny segment z człowiekiem i leadem to biura rachunkowe z zarzutem braku adresu do e-Doręczeń w KRS (1 lead na 28 maili). Linijka dopisana na końcu `cykl/plan-ruchu.md`.
+**Dla Pawła:** bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację).
+**Zostało otwarte:** Z14 od 20:05 (żądania indeksowania), Z18, Z19, Z21, Z22 (kolejka biur rachunkowych na środę pusta, potrzebna runda miast konurbacji śląskiej), Z24.
+
+## 2026-10-06 16:55
+**Kanał:** outreach z gotowym raportem (Z22 z wyprzedzeniem, kolejka biur rachunkowych na środę).
+**Co zrobione:** kolejka na środę urosła z 0 do 5 maili do spółek z PKD 69.20Z bez adresu do e-Doręczeń w KRS, z trzech rund pkt.pl w 32 miastach Śląska, Małopolski zachodniej i Opolszczyzny.
+**Ruch:** ostatnia doba 56 odsłon, 47 osób (wzrost o 155% wobec średniej 22,0). Źródła: facebook 6, www.google.com 4, useme.com 1, www.facebook.com 1, mail 1, reszta bez odsyłacza. Telefon 16 z 56. Uruchomienia narzędzi 0.
+**Dowód:** pkt.pl `biuro-rachunkowe`, po 2 strony co 3 s, domeny spoza wszystkich plików mail-audyt; `krs_droga.py` bezpośrednio na api-krs.ms.gov.pl:
+
+| runda | miasta | nowe domeny | spółki w KRS | bez BAE | maile | na 100 domen |
+|---|---|---|---|---|---|---|
+| partia 14 (`pkt_domeny11`, `krs_partia14`) | Chorzów, Ruda Śl., Jaworzno, Dąbrowa Górn., Mysłowice, Racibórz, Wodzisław Śl., Żory | 64 | 12 | 2 | 1 | 1,6 |
+| partia 15 (`pkt_domeny12`, `krs_partia15`) | Siemianowice Śl., Piekary Śl., Świętochłowice, Będzin, Czeladź, Tarnowskie Góry, Mikołów, Knurów, Jastrzębie-Zdrój (0 nowych), Cieszyn, Żywiec, Pszczyna | 119 | 13 | 3 | 2 | 1,7 |
+| partia 16 (`pkt_domeny13`, `krs_partia16`) | Oświęcim, Chrzanów, Olkusz, Zawiercie, Lubliniec, Kędzierzyn-Koźle (0 nowych), Nysa, Brzeg, Wadowice, Bochnia, Wieliczka, Skawina | 124 | 17 | 3 | 2 | 1,6 |
+
+Kolejka `maile_ksiegowe_edoreczenia` na środę (katalog minus `wyslane_ks.json` i `pomijane.json`): 5. Każdy: odpis pobrany drugi raz kontrolnie 6.10 ok. 16:50, pole `adresDoDoreczenElektronicznychWpisanyDoBAE` brak, PKD 69.20Z, wpis do KRS przed 2025, adres ogólny ze strony, 0 długich myślników, `--proba --limit=40` renderuje z `utm_source=mail&utm_campaign=ksiegowe`:
+`032_biurobomar` (kontakt@, BOMAR sp. z o.o., Ruda Śląska, KRS 0000761245 na /kontakt, ten sam mail w odpisie), `033_taxcontrol` (biuro@, Tax Control sp. z o.o., Siemianowice Śl., KRS 0000909187 w polityce prywatności, ten sam mail w odpisie), `034_contafinanse` (biuro@ z /kontakt, imienny t.szulc@ pominięty, Conta Finanse sp. z o.o., Żywiec, KRS 0000914958 na /kontakt), `035_biuro-mp` (sekretariat@, M. Piszczek sp. z o.o., Bochnia, KRS 0000539532 w stopce), `036_kkfalfa` (alfa@, Kancelaria Księgowo-Finansowa „ALFA” sp. z o.o., Oświęcim; na stronie nazwa spółki i NIP 549-222-92-82, KRS z białej listy MF, mail to mówi wprost).
+Odrzucone: CALMTEC sp. z o.o. (tylko adresy imienne), Kancelaria Usług Finansowo-Księgowych sp. z o.o. Piekary Śl. (brak adresu na stronie), Biuro Rachunkowe Wanda Chrząścik sp. z o.o. (siedziba Warszawa, odpis bez PKD, strona bez KRS i NIP). Statystyka w treści przeliczona na wszystkie partie: 218 z 272 spółek ma adres.
+**Dla Pawła:** bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację).
+**Zostało otwarte:** Z14 od 20:05, Z18, Z19 (00:46), Z21, Z24. Środa: wysyłka 5 plików 032 do 036 o 9:46 lub 14:46 bez `--limit`; przed wysyłką ponownie BAE. Trafialność Śląska spadła z 7,2 do 1,6 na 100 domen, kolejne rundy pkt.pl dają ok. 1 mail na 6 miast.
