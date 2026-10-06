@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -165,6 +166,18 @@ export default function StronyWww() {
                         </li>
                       ))}
                     </ul>
+                    <p className="mt-8 max-w-2xl text-gray-600 dark:text-gray-400">
+                      Przy przenosinach strony zostaje jeszcze poczta na tej
+                      samej domenie. Zanim zmienicie serwer, zróbcie{" "}
+                      <Link
+                        href="/audyt-poczty"
+                        className="text-accent hover:underline"
+                      >
+                        audyt poczty firmowej (SPF, DKIM, DMARC)
+                      </Link>
+                      , bo bez tych wpisów obcy może wysłać mail wyglądający na
+                      Wasz.
+                    </p>
                   </div>
                 ),
               },

@@ -284,7 +284,15 @@ export default function AutomatyzacjaDlaBiurRachunkowych() {
                 płatności i zaległości, więc handlowiec widzi, kto nie zapłacił,
                 zanim zadzwoni z nową ofertą. Formularz na stronie, na przykład
                 zgłoszenie nowego klienta biura, zakłada kartę kontrahenta bez
-                przepisywania danych.
+                przepisywania danych. Pojedynczy numer sprawdzicie ręcznie w
+                naszym{" "}
+                <Link
+                  href="/sprawdzenie-nip"
+                  className="text-accent hover:underline"
+                >
+                  darmowym sprawdzeniu NIP w wykazie VAT
+                </Link>
+                .
               </p>
               <p>
                 Synchronizację w jedną stronę (kontrahenci i faktury) szacujemy
@@ -464,7 +472,16 @@ export default function AutomatyzacjaDlaBiurRachunkowych() {
                         przypominanie klientom o dokumentach i ręczne składanie
                         raportów miesięcznych zaczyna pochłaniać większość czasu
                         zespołu. Pracujemy zarówno z biurami pełnoksięgowymi,
-                        jak i z biurami obsługującymi głównie JDG/KPiR/ryczałt.
+                        jak i z biurami obsługującymi głównie JDG/KPiR/ryczałt
+                        (klientowi, który pyta o zmianę formy opodatkowania,
+                        możecie podesłać nasz{" "}
+                        <Link
+                          href="/kalkulator-podatkowy"
+                          className="text-accent hover:underline"
+                        >
+                          kalkulator JDG 2026: ryczałt, liniowy i skala z ZUS
+                        </Link>
+                        ).
                         Szczególnie często wdrażamy{" "}
                         <Link
                           href="/automatyzacja-raportowania"

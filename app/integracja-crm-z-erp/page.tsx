@@ -33,6 +33,14 @@ export default function IntegracjaCrmZErp() {
       lead="Handlowcy pracują w CRM, księgowość i magazyn w systemie ERP, a między nimi stoi człowiek, który przepisuje dane w obie strony. Spinamy te dwa światy tak, żeby dane szły same, a rozjazd był widoczny od razu, nie na koniec miesiąca."
       ctaLabel="Opisz swoje dwa systemy"
       ctaNote="Odpisujemy zwykle tego samego dnia"
+      powiazane={[
+        {
+          przed: "Połączenie CRM z ERP to zwykle pierwszy krok szerszej",
+          kotwica: "automatyzacji procesów biznesowych w firmie",
+          href: "/automatyzacja-procesow-biznesowych",
+          po: ", od zamówienia po fakturę i raport.",
+        },
+      ]}
       checks={[
         {
           title: "Pierwsza decyzja: gdzie jest źródło prawdy",

@@ -145,6 +145,17 @@ export default async function Page() {
           >
             Sprawdź kontrahenta
           </Link>
+          <p className="mt-4 text-sm text-gray-600 dark:text-gray-400">
+            Przed zaliczką dla nowej firmy przyda się też{" "}
+            <Link
+              href="/sprawdz-kontrahenta"
+              className="text-accent hover:underline"
+            >
+              sprawdzenie kontrahenta przed przelewem
+            </Link>
+            : wykaz VAT, KRS, wiek domeny i to, czy numer konta figuruje w
+            wykazie.
+          </p>
         </div>
 
         <div className="mt-16 max-w-3xl">

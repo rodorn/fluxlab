@@ -275,6 +275,27 @@ export default function AutomatyzacjaDlaEcommerce() {
                         przeszło całą drogę bez udziału człowieka, chyba że
                         człowiek jest naprawdę potrzebny.
                       </p>
+                      <p className="text-gray-500 dark:text-gray-400 mb-10">
+                        Dwa miejsca, w których sklep traci pieniądze po cichu:
+                        dopłaty kurierskie, bo dopłata paliwowa sięga prawie
+                        połowy ceny bazowej (sprawdzicie to w{" "}
+                        <Link
+                          href="/audyt-kurierski"
+                          className="text-accent hover:underline"
+                        >
+                          audycie faktur kurierskich i dopłat
+                        </Link>
+                        ), oraz brak NIP i danych firmy na stronie, przez który
+                        księgowość klienta B2B wstrzymuje przelew. To drugie
+                        pokaże za darmo{" "}
+                        <Link
+                          href="/dane-sprzedawcy"
+                          className="text-accent hover:underline"
+                        >
+                          sprawdzenie danych sprzedawcy na stronie sklepu
+                        </Link>
+                        .
+                      </p>
 
                       <div className="space-y-6">
                         {useCases.map((useCase) => (

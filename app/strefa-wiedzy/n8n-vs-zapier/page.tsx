@@ -352,7 +352,16 @@ export default function N8nVsZapierArticle() {
                         Zapier do prostych automatyzacji departamentowych
                         (marketing, rekrutacja, HR), n8n do core procesów
                         sprzedażowych i operacyjnych, gdzie wolumen i kontrola
-                        danych mają znaczenie.
+                        danych mają znaczenie. Wybór narzędzia przychodzi
+                        jednak dopiero po rozpisaniu procesu, od tego zaczyna
+                        się{" "}
+                        <Link
+                          href="/automatyzacja-procesow-biznesowych"
+                          className="text-accent hover:underline"
+                        >
+                          automatyzacja procesów biznesowych w firmie
+                        </Link>
+                        .
                       </p>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Przykładowy podział:

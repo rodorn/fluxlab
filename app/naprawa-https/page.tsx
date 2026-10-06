@@ -35,6 +35,14 @@ export default function Page() {
       lead="Wklej swój adres zaczynający się od https, nie z zakładki i nie z wyszukiwarki. Jeśli zobaczysz czerwony ekran z ostrzeżeniem, to samo widzi każdy, kto trafia do Ciebie z Google. Strona jest na serwerze i działa, ale odwiedzający musi kliknąć zgodę na ryzyko, czego prawie nikt nie robi."
       ctaLabel="Sprawdź naszą stronę"
       ctaNote="Diagnoza tego samego dnia"
+      powiazane={[
+        {
+          przed: "Jeśli strona poza błędem certyfikatu przekierowuje na obce serwisy albo Google oznaczył ją jako niebezpieczną, to zwykle włamanie, nie konfiguracja. Opisujemy to przy",
+          kotwica: "czyszczeniu zhakowanej strony WordPress",
+          href: "/strona-po-wlamaniu",
+          po: ".",
+        },
+      ]}
       checks={[
         {
           title: "Certyfikat po terminie",

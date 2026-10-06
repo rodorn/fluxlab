@@ -33,6 +33,14 @@ export default function Page() {
       lead="Podejrzewasz, że coś się nie zgadza, ale portal karty pokazuje tylko listę transakcji. Dopiero zestawienie tych transakcji z przebiegami i trasą pokazuje tankowania, których nie da się wytłumaczyć. Zaczynamy od darmowego skanu trzech pojazdów, żebyś zobaczył, czy w ogóle jest o czym rozmawiać."
       ctaLabel="Zamów darmowy skan"
       ctaNote="Trzy pojazdy za jeden miesiąc, bez opłaty"
+      powiazane={[
+        {
+          przed: "Paliwo kosztuje Was też w przesyłkach: dopłata paliwowa kurierów sięga prawie połowy ceny bazowej i zmienia się co dwa tygodnie. Pozycję z faktury sprawdzicie w",
+          kotwica: "audycie faktur kurierskich i dopłat",
+          href: "/audyt-kurierski",
+          po: ".",
+        },
+      ]}
       checks={[
         {
           title: "Więcej litrów niż mieści bak",

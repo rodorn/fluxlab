@@ -69,6 +69,14 @@ export default function EDoreczeniaIntegracja() {
       lead="Skrzynka do doręczeń elektronicznych jest obowiązkowa, ale nikt nie każe obsługiwać jej ręcznie w osobnym panelu. Spinamy ją z systemem, którego już używacie, żeby pisma i dowody doręczenia trafiały tam, gdzie pracujecie."
       ctaLabel="Sprawdź swój termin"
       ctaNote="Dwa kliknięcia, bez wpisywania czegokolwiek"
+      powiazane={[
+        {
+          przed: "Zanim wpiszecie kontrahenta do systemu, warto mieć pewność, że firma istnieje i płaci VAT:",
+          kotwica: "darmowe sprawdzenie NIP w wykazie VAT",
+          href: "/sprawdzenie-nip",
+          po: " pokazuje status podatnika i liczbę zgłoszonych rachunków.",
+        },
+      ]}
       checks={[
         {
           title: "Napisaliśmy klienta tego API i oddaliśmy go za darmo",

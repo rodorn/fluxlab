@@ -35,6 +35,20 @@ export default function KsefIntegracja() {
       lead="Krajowy System e-Faktur jest obowiązkowy, ale nikt nie każe przeklejać do niego faktur ręcznie z osobnej aplikacji. Spinamy z nim system, którego już używacie, żeby faktura wychodziła tam, gdzie powstaje, a numer KSeF i UPO zapisywały się przy dokumencie."
       ctaLabel="Sprawdź, co Was obowiązuje"
       ctaNote="Dwa kliknięcia, bez wpisywania czegokolwiek"
+      powiazane={[
+        {
+          przed: "Faktura w KSeF przypisuje się do NIP nabywcy, więc literówka w numerze trafia do cudzej firmy. Numer kontrahenta przed wystawieniem sprawdzicie przez",
+          kotwica: "sprawdzenie NIP w wykazie VAT",
+          href: "/sprawdzenie-nip",
+          po: ".",
+        },
+        {
+          przed: "Jednoosobowe firmy, które przy okazji KSeF liczą na nowo koszty, porównują formy opodatkowania w",
+          kotwica: "kalkulatorze JDG 2026 (ryczałt, liniowy, skala z ZUS)",
+          href: "/kalkulator-podatkowy",
+          po: ".",
+        },
+      ]}
       checks={[
         {
           title: "Napisaliśmy klienta tego API i oddaliśmy go za darmo",

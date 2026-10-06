@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -30,6 +31,8 @@ export interface ProductLandingProps {
   ctaLabel: string;
   ctaNote?: string;
   checks: { title: string; desc: string }[];
+  /** Zdania z odnosnikiem do pokrewnej strony, wstawiane pod opisem zakresu. */
+  powiazane?: { przed: string; kotwica: string; href: string; po: string }[];
   pricing: Tier[];
   faq: { q: string; a: string }[];
   formId: string;
@@ -137,6 +140,23 @@ export default function ProductLanding(p: ProductLandingProps) {
               </div>
             ))}
           </div>
+
+          {p.powiazane && (
+            <div className="mt-8 max-w-3xl space-y-2 text-sm text-gray-600 dark:text-gray-400">
+              {p.powiazane.map((z) => (
+                <p key={z.href}>
+                  {z.przed}{" "}
+                  <Link
+                    href={z.href}
+                    className="font-medium text-accent underline underline-offset-2"
+                  >
+                    {z.kotwica}
+                  </Link>
+                  {z.po}
+                </p>
+              ))}
+            </div>
+          )}
 
           <div className="mt-16">
             <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
