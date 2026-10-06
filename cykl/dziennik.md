@@ -2919,3 +2919,26 @@ Odrzucone: CALMTEC sp. z o.o. (tylko adresy imienne), Kancelaria Usług Finansow
 Zoho INBOX od 6.10: 4 wiadomości (FINREAL 3, tylko odnotowane; Kontomatik 1 z 12:25), od 16:00 nic nowego; Spam 0. VPS: 0 zgłoszeń i 0 zdarzeń innych niż odsłona od 16:46.
 **Dla Pawła:** bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację).
 **Zostało otwarte:** Z14 część 2 od 20:05 (`skrypty-raport/gsc_indeksuj.py` dla 8 adresów spoza Google), Z24 o 05:46. Cykl 00:46 może dołożyć pomiar wieczornych otwarć maili.
+
+<!-- WYSLANO 2026-10-06 19:05 -->
+
+## 2026-10-06 20:48
+**Kanał:** Google (Z14 część 2 z planu stratega).
+**Co zrobione:** 8 stron, których Google nie miał w indeksie i które w Z18 dostały linki z treści, poszło do kolejki indeksowania przez Search Console (8/8 prośba przesłana).
+**Ruch:** ostatnia doba 29 odsłon, 27 osób (średnia 25,7); tydzień 191 odsłon, 104 osoby. Źródła: facebook 4, www.google.com 3, useme.com 1, www.facebook.com 1, mail 1, reszta bez odsyłacza. Najczęściej / 6, /numer-ksef 4, /automatyzacja-leadow-crm 3, /automatyzacja-dla-biur-rachunkowych 2. Telefon 4 z 29. Uruchomienia narzędzi 0.
+**Dowód:** `skrypty-raport/gsc_indeksuj.py`, stan przed zgłoszeniem i wynik:
+
+| godzina | adres | stan | wynik |
+|---|---|---|---|
+| 20:43:52 | /sprawdzenie-nip | nie w Google | prośba przesłana |
+| 20:44:31 | /audyt-poczty | nie w Google | prośba przesłana |
+| 20:45:07 | /sprawdz-kontrahenta | nie w Google | prośba przesłana |
+| 20:45:40 | /kalkulator-podatkowy | nie w Google | prośba przesłana |
+| 20:46:07 | /audyt-kurierski | nie w Google | prośba przesłana |
+| 20:46:34 | /dane-sprzedawcy | nie w Google | prośba przesłana |
+| 20:47:04 | /strona-po-wlamaniu | nie w Google | prośba przesłana |
+| 20:47:31 | /automatyzacja-procesow-biznesowych | nie w Google | prośba przesłana |
+
+Limit dnia nie wystąpił; zużyte 8 żądań od 20:43, odnowienie ok. 7.10 20:43.
+**Dla Pawła:** bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację).
+**Zostało otwarte:** Z24 o 05:46 (bilans planu). W planie nie ma innych otwartych zadań. Sprawdzenie za 2 do 3 dni, czy 8 adresów weszło do indeksu (Sprawdź URL).
