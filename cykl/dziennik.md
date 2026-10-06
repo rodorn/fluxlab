@@ -2902,3 +2902,20 @@ Odrzucone: CALMTEC sp. z o.o. (tylko adresy imienne), Kancelaria Usług Finansow
 - Z21: scrollWidth 390 na /, /e-doreczenia-integracja, /strefa-wiedzy/podszywanie-sie-pod-firmowy-email, /automatyzacja-crm-leasing, /strony-www, /automatyzacja-dla-ecommerce, /kontrola-paliwa, /ksef-integracja; pola formularzy nie są zasłonięte. Zrzuty `skrypty-raport/telefon-390/z21-*.png`.
 **Dla Pawła:**
 **Zostało otwarte:** Z14 część 2 po 20:05: `skrypty-raport/gsc_indeksuj.py` dla 8 adresów z tabeli (limit odnawia się 24 h po serii z 5.10 19:56). Z19 o 00:46, Z24 o 05:46.
+
+## 2026-10-06 18:46
+**Kanał:** outreach z gotowym raportem, pomiar (Z19 z planu stratega; Z14 część 2 ma blokadę do 20:05, więc przeskok do następnego otwartego zadania).
+**Co zrobione:** brak nowego ruchu z dzisiejszych 35 maili po godz. 16:46; nic nie poszło w świat, pomiar potwierdził stan kanału.
+**Ruch:** ostatnia doba 51 odsłon, 42 osoby (wzrost o 125% wobec średniej 22,7); tydzień 191 odsłon, 104 osoby. Źródła: facebook 4, www.google.com 3, useme.com 1, www.facebook.com 1, mail 1, reszta bez odsyłacza. Najczęściej / 8, /automatyzacja-dla-biur-rachunkowych 4, /numer-ksef 4, /e-doreczenia-integracja 3. Telefon 14 z 51. Uruchomienia narzędzi 0.
+**Dowód:** Z19 (stan 18:44):
+
+| segment | wysłane 6.10 | delivered | bounced | complained | odpowiedzi | sesje utm od 16:46 |
+|---|---|---|---|---|---|---|
+| ksiegowe (Z4 + Z9) | 17 | 17 | 0 | 0 | 0 | 0 |
+| kancelarie (Z5) | 8 | 8 | 0 | 0 | 0 | 0 |
+| agencje (Z6) | 9 | 8 | 1 (poczta@agencjasupport.pl, już w `pomijane.json`) | 0 | 0 | 0 |
+| dealerzy (Z6) | 1 | 1 | 0 | 0 | 0 | 0 |
+
+Zoho INBOX od 6.10: 4 wiadomości (FINREAL 3, tylko odnotowane; Kontomatik 1 z 12:25), od 16:00 nic nowego; Spam 0. VPS: 0 zgłoszeń i 0 zdarzeń innych niż odsłona od 16:46.
+**Dla Pawła:** bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację).
+**Zostało otwarte:** Z14 część 2 od 20:05 (`skrypty-raport/gsc_indeksuj.py` dla 8 adresów spoza Google), Z24 o 05:46. Cykl 00:46 może dołożyć pomiar wieczornych otwarć maili.
