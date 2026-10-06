@@ -2818,3 +2818,23 @@ Wniosek: niedoszacowany jest outreach mailowy (lead z 14:51 nie ma utm, bo wszed
 **Dowód:** pkt.pl `biuro-rachunkowe` Gliwice 16, Zabrze 10, Bytom 9, Sosnowiec 14, Rybnik 13, Tychy 7 nowych domen (po 2 strony co 3 s, domeny spoza wszystkich plików mail-audyt) → `maile_ksiegowe_edoreczenia/pkt_domeny10_2026-10-06.json` (69); `krs_droga.py` → `krs_partia13_2026-10-06.json`: 12 spółek, 5 bez BAE (7,2 maila na 100 domen, najlepsza trafialność od startu). Odpis pobrany drugi raz kontrolnie o 13:50, pole BAE brak we wszystkich 5, numer KRS i adres sprawdzone na stronie źródłowej: `027_borsukpodatki` (hello@, Biuro Borsuk sp.j., Gliwice, KRS 0000930793, 69.20Z), `028_skutslania-kdp` (biuro@, Skut&Słania sp. z o.o., Bobrowniki, KRS 0000571239, 69.20Z, ostatni wpis 06.10.2026), `029_biuroaurum` (sekretariat@, Aurum sp. z o.o., Sosnowiec, KRS 0000460735, 69.20Z), `030_advizor` (info@ z polityki prywatności, imienny annaszostak@ pominięty, Advizor sp. z o.o., Sosnowiec, KRS 0000392082, PKD 69.20A według nowej klasyfikacji, czyli rachunkowość), `031_acartus` (biuro@ z /kontakt, BR Acartus sp. z o.o., Jastrzębie-Zdrój, KRS 0001067957, 69.20Z). Statystyka w treści przeliczona na wszystkie partie: 184 z 230 spółek ma adres. `wyslij_segment.py ksiegowe-edoreczenia --proba --limit=40` renderuje 5 nowych z `utm_source=mail&utm_campaign=ksiegowe` i zdaniem o wypisaniu, 0 długich myślników.
 **Dla Pawła:** bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację).
 **Zostało otwarte:** Z9 o 14:46 wysyła 6 plików 026 do 031 (bez `--limit`), Z10 o 15:46, Z11 o 16:46. Miasta śląskie dają więcej spółek niż powiatowe ze wschodu; Z22 ma dołożyć kolejne miasta konurbacji (Chorzów, Ruda Śląska, Jaworzno, Dąbrowa Górnicza, Mysłowice, Racibórz, Wodzisław Śląski, Żory).
+
+<!-- WYSLANO 2026-10-06 16:08 -->
+
+## 2026-10-06 16:10
+**Kanał:** outreach z gotowym raportem (Z9 wysyłka, Z10 pomiar).
+**Co zrobione:** 6 maili do spółek biur rachunkowych (LIBRO i 5 ze Śląska) z konkretnym brakiem adresu do e-Doręczeń w ich odpisie KRS wyszło i doszło (6/6 delivered); cykl 14:46 nie wystartował, więc wysyłka poszła o 16:04, przed zamknięciem okna 17:00.
+**Ruch:** ostatnia doba 55 odsłon, 44 osoby (wzrost o 153% wobec średniej 21,7); tydzień 194 odsłony, 101 osób. Źródła 24 h: bez odsyłacza 34 sesje, www.google.com 4, facebook 3, mail 1, useme.com 1, www.facebook.com 1, chatgpt.com 1. Telefon 15 z 55. Uruchomienia narzędzi w dobie 0. Boty odrzucone: 7 sesji, 100 odsłon.
+**Dowód:** Z9, przed wysyłką odpis KRS pobrany ponownie dla 6/6, pole `adresDoDoreczenElektronicznychWpisanyDoBAE` brak u wszystkich, 0 długich myślników, żaden adres nie był w `wyslane_ks.json` ani `pomijane.json`. `wyslij_segment.py ksiegowe-edoreczenia`, statusy Resend 16:07 wszystkie `delivered`: biuro@rachunkowosc-libro.pl 01a11188-2e3e-7eec-9673-6cfd7561c194, hello@borsukpodatki.pl 01a11188-6a1f-7844-91b4-7d0688a32575, biuro@skutslania-kdp.pl 01a11188-a666-7e45-a578-3de536d87157, sekretariat@biuroaurum.pl 01a11188-e1be-773b-88a8-3d3f1c366052, info@advizor.pl 01a11189-1d32-7b6d-847c-bdf519dab267, biuro@acartus.pl 01a11189-588d-7e20-a446-d24577df9357. Kolejka `maile_ksiegowe_edoreczenia` pusta.
+Z10, tabela dnia (stan 16:08):
+
+| segment | wysłane | delivered | odbite | odpowiedzi | sesje utm | ludzie | zgłoszenia |
+|---|---|---|---|---|---|---|---|
+| ksiegowe (Z4 + Z9) | 17 | 17 | 0 | 0 | 0 nowych (1 powrót Profit Polska z 5.10, 09:57) | 0 | 0 |
+| kancelarie (Z5) | 8 | 8 | 0 | 0 | 0 | 0 | 0 |
+| agencje (Z6) | 9 | 8 | 1 | 0 | 0 | 0 | 0 |
+| dealerzy (Z6) | 1 | 1 | 0 | 0 | 0 | 0 | 0 |
+
+Zoho INBOX 24 h: FINREAL 7 (tylko odnotowane), Kontomatik 1, odpowiedzi na outreach 0, Spam 0. Resend: dziś 0 powiadomień z formularza. Sesje z utm mail ze skanerów: 0.
+**Dla Pawła:** bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację).
+**Zostało otwarte:** Z11 o 16:46 (bilans outreachu i decyzja o segmentach; kancelarie mają już dwa dni wysyłek z utm, 5.10 i 6.10, z 0 ludzi), Z14 od 20:05, Z18, Z19, Z21, Z22 (kolejka na środę pusta, potrzebna runda miast konurbacji śląskiej), Z24.
