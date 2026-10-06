@@ -2728,3 +2728,11 @@ Wniosek: niedoszacowany jest outreach mailowy (lead z 14:51 nie ma utm, bo wszed
 **Dowód:** zapytanie na `~/fluxlab-ruch/ruch.sqlite` (tabela `wizyty`, okno 5.10 06:00 do 6.10 06:00 CEST), tabela wyżej.
 **Dla Pawła:** bez zmian (komentarz Gofin 1559644, komentarz Gofin 1559598, odpowiedź do Profit Polska).
 **Zostało otwarte:** Z2 (tytuł pod „mail firmowy”) i dalsze zadania planu.
+
+## 2026-10-06 07:10
+**Kanał:** Google (plan stratega, Z2).
+**Co zrobione:** strona, którą Google pokazuje na „mail firmowy” (13 wyświetleń, 0 kliknięć, pozycja 24,5), dostała sekcję odpowiadającą na intencję tej frazy: „Mail firmowy na własnej domenie: co jest potrzebne i ile kosztuje” (domena, ceny skrzynek Google Workspace Business Starter 31,50 zł i Microsoft 365 Business Basic ok. 30 zł netto za osobę, SPF/DKIM/DMARC, linki do /audyt-poczty i /audyt-strony) oraz nowy opis meta.
+**Ruch:** ostatnia doba 70 odsłon, 43 osoby (z tego ok. 18 sesji to nasza automatyka, patrz wpis 06:55); źródła: mail 4, www.google.com 2, facebook 2, chatgpt.com 1, useme.com 1.
+**Dowód:** GSC 28 dni, filtr zapytania: „mail firmowy” → https://fluxlab.pl/strefa-wiedzy/podszywanie-sie-pod-firmowy-email, 0 kliknięć, 13 wyświetleń, pozycja 24,5; „asystent ai na stronie” → https://fluxlab.pl/widocznosc-w-ai, 0/5, pozycja 48,4. Tytuł strony już miał frazę na początku („Mail firmowy: czy ktoś może się pod niego podszyć | Fluxlab”), ale treść była tylko o podszywaniu, więc zgodnie z planem dopisana sekcja zamiast zmiany tytułu. Commit af43d13, `curl` na produkcji pokazuje nowy h2 i opis „Mail firmowy na własnej domenie: co jest potrzebne, ile kosztuje skrzynka w Google i Microsoft…”, IndexNow przyjęło 2 z 3.
+**Dla Pawła:** bez zmian (komentarz Gofin 1559644, komentarz Gofin 1559598, odpowiedź do Profit Polska).
+**Zostało otwarte:** Z3 kontrola kolejki outreachu, wysyłki od 9:46.
