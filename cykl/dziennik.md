@@ -2729,10 +2729,18 @@ Wniosek: niedoszacowany jest outreach mailowy (lead z 14:51 nie ma utm, bo wszed
 **Dla Pawła:** bez zmian (komentarz Gofin 1559644, komentarz Gofin 1559598, odpowiedź do Profit Polska).
 **Zostało otwarte:** Z2 (tytuł pod „mail firmowy”) i dalsze zadania planu.
 
-## 2026-10-06 07:10
+## 2026-10-06 06:52
 **Kanał:** Google (plan stratega, Z2).
 **Co zrobione:** strona, którą Google pokazuje na „mail firmowy” (13 wyświetleń, 0 kliknięć, pozycja 24,5), dostała sekcję odpowiadającą na intencję tej frazy: „Mail firmowy na własnej domenie: co jest potrzebne i ile kosztuje” (domena, ceny skrzynek Google Workspace Business Starter 31,50 zł i Microsoft 365 Business Basic ok. 30 zł netto za osobę, SPF/DKIM/DMARC, linki do /audyt-poczty i /audyt-strony) oraz nowy opis meta.
 **Ruch:** ostatnia doba 70 odsłon, 43 osoby (z tego ok. 18 sesji to nasza automatyka, patrz wpis 06:55); źródła: mail 4, www.google.com 2, facebook 2, chatgpt.com 1, useme.com 1.
 **Dowód:** GSC 28 dni, filtr zapytania: „mail firmowy” → https://fluxlab.pl/strefa-wiedzy/podszywanie-sie-pod-firmowy-email, 0 kliknięć, 13 wyświetleń, pozycja 24,5; „asystent ai na stronie” → https://fluxlab.pl/widocznosc-w-ai, 0/5, pozycja 48,4. Tytuł strony już miał frazę na początku („Mail firmowy: czy ktoś może się pod niego podszyć | Fluxlab”), ale treść była tylko o podszywaniu, więc zgodnie z planem dopisana sekcja zamiast zmiany tytułu. Commit af43d13, `curl` na produkcji pokazuje nowy h2 i opis „Mail firmowy na własnej domenie: co jest potrzebne, ile kosztuje skrzynka w Google i Microsoft…”, IndexNow przyjęło 2 z 3.
 **Dla Pawła:** bez zmian (komentarz Gofin 1559644, komentarz Gofin 1559598, odpowiedź do Profit Polska).
 **Zostało otwarte:** Z3 kontrola kolejki outreachu, wysyłki od 9:46.
+
+## 2026-10-06 07:20
+**Kanał:** outreach, kontrola przed wysyłkami (plan stratega, Z3).
+**Co zrobione:** sprawdzone wszystkie 30 maili w kolejce wtorkowej; 2 przeniesione do `odrzucone/`, 28 gotowe do wysyłki o 9:46, 10:46 i 11:46.
+**Ruch:** ostatnia doba 70 odsłon, 43 osoby (ok. 18 sesji to nasza automatyka, wpis 06:55); źródła: mail 4, www.google.com 2, facebook 2, chatgpt.com 1, useme.com 1.
+**Dowód:** kolejka liczona przez katalog minus `wyslane_*.json` i `pomijane.json`: księgowe-edoreczenia 11 (014 do 024), kancelarie 8 (068 do 075), agencje 10 (001 do 010), dealerzy 1 (006 ALMARO TRADE), zgodnie z planem. Dla każdego maila: odpis KRS pobrany ponownie dziś z api-krs.ms.gov.pl (co 2 s), pole `adresDoDoreczenElektronicznychWpisanyDoBAE` nie występuje w 30 z 30, więc zarzut prawdziwy; adres DO znaleziony na stronie firmy w 30 z 30 (mcklege.pl ma go zakodowanego base64 na /kontakt, odkodowany: biuro@mcklege.pl); utm `mail/<kampania>` w 30 z 30; długich myślników 0. Numer KRS na stronie zgodny w 13, NIP z odpisu na stronie zgodny w 15 kolejnych, innego KRS niż w mailu nie ma nigdzie. Odrzucone, bo na stronie nie ma ani KRS, ani NIP, a sama nazwa i miasto nie wystarczają, żeby zarzucić coś konkretnej spółce: `maile_ksiegowe_edoreczenia/odrzucone/016_alfabusiness.txt` (ALFA BUSINESS sp. z o.o., Gdańsk), `maile_agencje/odrzucone/009_firmamodul.txt` (Firma Reklamowa MODUŁ sp. z o.o., Gdańsk). Po przeniesieniu `--proba` agencje renderuje 9, księgowe bez alfabusiness.
+**Dla Pawła:** bez zmian (komentarz Gofin 1559644, komentarz Gofin 1559598, odpowiedź do Profit Polska czeka na akceptację).
+**Zostało otwarte:** Z4 o 9:46 wysyła 10 maili księgowych (nie 11), Z5 10:46 kancelarie 8, Z6 11:46 agencje 9 + dealer 1. Z1: Chrome/Linux z profilu automatyki zawyża ruch o ok. 18 sesji na dobę, warto go wykluczyć w raporcie.
