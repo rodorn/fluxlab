@@ -2762,3 +2762,31 @@ Wniosek: niedoszacowany jest outreach mailowy (lead z 14:51 nie ma utm, bo wszed
 **Dowód:** commit 5ee64ac. Zrzuty 390 px: strona główna przed (pole audytu y ok. 400, przycisk ok. 450, w ekranie, zmiana zbędna); /e-doreczenia-integracja przed (narzędzie od ok. 580 px, zakładki i pole KRS poniżej 844), po z `?utm_source=mail&utm_campaign=ksiegowe` (pole KRS ok. 725, przycisk ok. 805). DOM po hydratacji: zakładka KRS `aria-selected="true"`. Komputer 1440 px bez zmian. Pliki `skrypty-raport/telefon-390/*-2026-10-06.png`. IndexNow 2/3.
 **Dla Pawła:**
 **Zostało otwarte:** Z4 o 09:46 (ksiegowe, 11 z 12 w kolejce), Z5 10:46, Z6 11:46. Od dziś zdarzenie `uruchomiono_skan_krs` z kampanii `ksiegowe` pokaże, czy otwarty tryb KRS zwiększa liczbę sprawdzeń.
+
+## 2026-10-06 10:02
+**Kanał:** outreach z gotowym raportem (Z4 wysyłka, Z16 i Z20 przygotowanie), Google (Z13), asystenci AI (Z17).
+**Co zrobione:** 11 maili do biur rachunkowych z zarzutem braku adresu do e-Doręczeń w KRS wyszło i doszło (11/11 delivered); strona leasingowa ma tytuł pod „crm dla firm leasingowych”, a llms.txt odpowiada na pytanie o dopłatę paliwową z /audyt-kurierski, czyli strony, na którą 5.10 wszedł ktoś z chatgpt.com.
+**Ruch:** ostatnia doba 61 odsłon, 40 osób (wzrost o 212% wobec średniej 19,6); tydzień 191 odsłon, 98 osób. Źródła: mail 4, www.google.com 3, facebook 3, chatgpt.com 1, useme.com 1, reszta bez odsyłacza. Telefon 17 z 61. Uruchomienia narzędzi 1; zdarzenia: audyt_uruchomiony 3, uruchomiono_skan 1, audyt_ze_strony_glownej 1, audyt_wynik_slaby 1, lead_landing 1. Boty odrzucone: 7 sesji, 100 odsłon.
+**Dowód:**
+- Z4, `wyslij_segment.py ksiegowe-edoreczenia --limit=11`, 09:46 do 09:48, statusy Resend o 09:49 wszystkie `delivered`, 0 odbitych: info@biuro-wroclaw.pl 01a1102d-4909-7387-93ea-c848c978fb4f, biuro@mscfinanse.pl 01a1102d-8476-7331-a030-6d4a1a6018fb, biuro@fabrykaperspektyw.pl 01a1102d-c008-7a92-ab1d-ab87dfbeefb2, kontakt@biuronarkiewicz.pl 01a1102d-fb75-7365-be31-a05c431acfda, biuro@amadeusz.olsztyn.pl 01a1102e-36dd-7ce1-9591-94d8760c5ff4, biuro@taxido.pl 01a1102e-7248-7317-b75a-7fffecb94aa7, biuro@kontax.pl 01a1102e-adaa-768e-a335-38d3e2ee7e32, 100sio@100sio.pl 01a1102e-e906-7e76-8341-b9c3a2e2b332, poczta@rachmistrz-elk.pl 01a1102f-246a-765f-a727-080a1765bb2a, biuro@zbrtarnobrzeg.pl 01a1102f-5fd2-782f-a5bb-b39599d97eea, biuro@hal-jak.pl 01a1102f-9b3b-7d96-8078-3f9e968dd979.
+- Z13, GSC 28 dni, strony według wyświetleń (kliknięcia / wyświetlenia / pozycja):
+
+| Strona | Kl. | Wyśw. | Poz. |
+|---|---|---|---|
+| /e-doreczenia-integracja | 1 | 27 | 7,7 |
+| /automatyzacja-dla-biur-rachunkowych | 0 | 21 | 14,2 |
+| /strefa-wiedzy/podszywanie-sie-pod-firmowy-email | 0 | 19 | 25,2 |
+| / | 8 | 18 | 2,3 |
+| /strefa-wiedzy | 0 | 14 | 24,2 |
+| www /narzedzia | 1 | 12 | 9,5 |
+| /automatyzacja-crm-leasing | 0 | 12 | 4,8 |
+| /automatyzacja-dla-ecommerce | 0 | 12 | 20,8 |
+| /audyt-google-ads | 0 | 12 | 26,0 |
+| /strony-www | 1 | 10 | 2,8 |
+
+  Strona biur zmieniana 5.10, podszywanie to Z2, /strefa-wiedzy to strona pod „automatyzacja crm ai”, więc pierwsza kwalifikująca się to /automatyzacja-crm-leasing. Jej zapytania: "idea getin leasing" 4 (poz. 1,3), "błędami cenowymi" 3, "efl" "raport" 2, crm dla branzy leasingowej 2 (poz. 17,5), crm dla firm leasingowych 1 (poz. 6). Frazy w cudzysłowie to nazwy obcych firm, więc tytuł pod intencję: `<title>CRM dla firm leasingowych i brokerów leasingu | Fluxlab` (było „Automatyzacja CRM dla firm leasingowych”), opis 145 zn. o tym, co CRM robi sam. Commit d403a65, IndexNow 2/3.
+- Z17, VPS `ruch.sqlite` od 20.09: chatgpt.com 3 sesje po 1 odsłonie, 0 zdarzeń (23.09 `/` Safari iOS, 2.10 `/kalkulator-podatkowy` Chrome Windows, 5.10 `/audyt-kurierski` Safari iOS); perplexity, bing, copilot, claude.ai 0. Kalkulator miał już akapit w llms.txt, audyt kurierski nie miał żadnego: dopisany akapit 586 zn. (tabela DPD 16 do 30.09: 36,7%, 42,5%, 45,7% według wagi, zmiana co 2 tygodnie, najczęstszy błąd, ceny). Commit f7a9a5e, `curl https://fluxlab.pl/llms.txt | grep audyt-kurierski` zwraca akapit, IndexNow 2/3.
+- Z16, partia 9 biur rachunkowych (12 miast powiatowych): 86 nowych domen, 9 spółek, 2 bez BAE, 0 maili. POLYMERNET Wojtunik sp.j. ma PKD 22.29Z (tworzywa); Finansistki sp. z o.o. i AM Finanse sp. z o.o. (annaprasniewska.pl, PKD 69.20Z) mają na stronie tylko imienny biuro.annaprasniewska@wp.pl, w KRS gmail.
+- Z20, partia 10, pkt.pl `doradztwo-podatkowe`, 8 miast wojewódzkich: 130 domen, 26 spółek, 23 z adresem do e-Doręczeń, 3 bez (Krakowska Kongregacja Kupiecka, FEHU Global Audyt, KUBA sp.k.), wszystkie tylko z adresami imiennymi, 0 maili. Kategoria nie wraca.
+**Dla Pawła:** bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację).
+**Zostało otwarte:** Z5 kancelarie o 10:46, Z6 agencje i dealer o 11:46, Z7 o 12:46. Kolejka biur rachunkowych na Z9 i środę to tylko 026_rachunkowosc-libro: Z8 dało 2 maile (poniżej 3), więc Z9 robi drugą rundę dla 6 miast (Konin, Kalisz, Leszno, Gorzów Wlkp., Zielona Góra, Jelenia Góra). Partie 9 i 10 dały 0, bo w miastach powiatowych zostały głównie jednoosobowe biura bez KRS, a doradcy podatkowi mają BAE w 88%; Z22 przy kolejce poniżej 8 dołoży rundę miast. Chrome GSC na 9228 był wyłączony o 09:45, uruchomiony ponownie.
