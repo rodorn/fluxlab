@@ -2710,7 +2710,7 @@ Trafialność drogi KRS łącznie (8 plików `krs*.json` w `~/Projekty/mail-audy
 **Plan:** `cykl/plan-ruchu.md`, 24 zadania 06:46 do 05:46. Dzień: pomiar sesji bez odsyłacza, tytuł pod „mail firmowy", kontrola kolejki, wysyłki ksiegowe 9:46 (11), kancelarie 10:46 (8), agencje + dealer 11:46 (11), partia 8 biur 13:46 i wysyłka 14:46, odpowiedzi 12:46 i 15:46, bilans 16:46. Wieczór i noc: pole audytu nad zgięciem na telefonie, 10 stron GSC i tytuł, żądania indeksowania po 20:05 dla stron bez wyświetleń, post FB 029 (faktura w KSeF nie nasza), partie 9 i 10 biur, pomiar wejść z asystentów AI, linki wewnętrzne, zrzuty 390 px, kontrola kolejki na środę, Gofin, bilans.
 **Mail do Pawła:** wysłany 06:49 z pawel@fluxlab.pl, msgid 179126055787.3242625, temat „FluxLab ruch, plan na 6.10.2026: 42 osoby w dobie i pierwszy lead z outreachu"; „Dla Pawła": odpowiedź do Profit Polska, komentarz Gofin 1559644, Bing Webmaster, decyzja o tekstach forumowych.
 
-## 2026-10-06 06:55
+## 2026-10-06 06:47
 **Kanał:** pomiar (plan stratega 6/7.10, Z1).
 **Co zrobione:** rozkład 32 sesji bez odsyłacza z doby 5.10 06:00 do 6.10 06:00 (baza VPS `ruch.sqlite`, boty 8+ odsłon/min odrzucone jak w raporcie); wynik: ponad połowa to nasza własna automatyka, nie ludzie.
 
@@ -2737,7 +2737,7 @@ Wniosek: niedoszacowany jest outreach mailowy (lead z 14:51 nie ma utm, bo wszed
 **Dla Pawła:** bez zmian (komentarz Gofin 1559644, komentarz Gofin 1559598, odpowiedź do Profit Polska).
 **Zostało otwarte:** Z3 kontrola kolejki outreachu, wysyłki od 9:46.
 
-## 2026-10-06 07:20
+## 2026-10-06 06:56
 **Kanał:** outreach, kontrola przed wysyłkami (plan stratega, Z3).
 **Co zrobione:** sprawdzone wszystkie 30 maili w kolejce wtorkowej; 2 przeniesione do `odrzucone/`, 28 gotowe do wysyłki o 9:46, 10:46 i 11:46.
 **Ruch:** ostatnia doba 70 odsłon, 43 osoby (ok. 18 sesji to nasza automatyka, wpis 06:55); źródła: mail 4, www.google.com 2, facebook 2, chatgpt.com 1, useme.com 1.
