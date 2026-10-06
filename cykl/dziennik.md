@@ -2677,3 +2677,21 @@ Trafialność drogi KRS łącznie (8 plików `krs*.json` w `~/Projekty/mail-audy
 **Dowód:** `~/Projekty/mail-audyt/maile_ksiegowe_edoreczenia/pkt_domeny2_2026-10-06.json` (pkt.pl `biuro-rachunkowe`: Rzeszów, Lublin, Szczecin, Bydgoszcz, Koszalin, Legnica, Tarnów, Płock, Elbląg, Kalisz, po 3 strony co 3 s, 137 domen spoza wszystkich plików mail-audyt; w dużych miastach 2 do 5 nowych na stronę, bo pokrywają się z panoramafirm). `krs_droga.py` → `krs_partia6_2026-10-06.json`: 24 spółki z odpisem, 18 z PKD 69.20, 2 bez pola BAE. Mail `022_100sio.txt` do 100sio@100sio.pl (KRS 0000080829, wpis 2002, stan 4.07.2026, NIP 669-10-03-687 na stronie zgodny, ten sam adres spółka podała w KRS jako e-mail), licznik „U 121 z 150 spółek”. Odrzucona: Kancelaria Podatkowa Awans sp. z o.o. (jedyny adres na stronie to imienny brzyska@, osoba prywatna). Duplikatów w plikach mail-audyt brak, 0 długich myślników, `wyslij_segment.py ksiegowe-edoreczenia --proba` bez błędów; poza próbą wyjdzie 9 (014 do 022).
 **Dla Pawła:** bez zmian: odpowiedź do Profit Polska czeka na akceptację (mail „Wiadomosc do akceptacji: Formularz fluxlab.pl, ma.kobus@gmail.com” z 15:30).
 **Zostało otwarte:** wtorek 9:46: 28 maili (kancelarie 8, księgowe 9: 014 do 022, dealerzy 1, agencje 10). Trafialność pkt.pl w tej partii spadła do 0,7 maila na 100 domen; następne partie z mniejszych miast (powiaty), gdzie pkt.pl daje 6 do 9 nowych domen na stronę. Plan stratega na 6/7.10 o 06:15.
+
+## 2026-10-06 04:55
+**Kanał:** dystrybucja narzędzi (plan stratega 5/6.10 zamknięty 24/24, 0 „- [ ]”, plan aktualny do 05:46, więc nie przeterminowany; poprzednie cykle: outreach, asystenci AI, outreach, więc rotacja).
+**Co zrobione:** na Gofinie od ostatniego sprawdzenia (1559627) przybyło 57 wątków do 1559684, dwa o KSeF: 1559644 „Faktura w KSeF nie nasza” (5.10, 1 komentarz bez odpowiedzi na pytanie) dostał gotową odpowiedź z linkiem do /sprawdzenie-nip; 1559637 (awaria połączenia z KSeF 5.10) pominięty, bo żadne nasze narzędzie tego nie rozwiązuje.
+**Ruch:** ostatnia doba 67 odsłon, 40 osób (wzrost o 269% wobec średniej 18,1); źródła: mail 4, www.google.com 2, facebook 2, chatgpt.com 1, useme.com 1, reszta bez odsyłacza; z telefonu 25 z 67; uruchomienia narzędzi 2. Najczęściej: /e-doreczenia-integracja 9, /automatyzacja-dla-biur-rachunkowych 8, / 8, /audyt-strony 7.
+**Dowód:** tekst poniżej, 879 znaków (limit pola 1000), 0 długich myślników; https://fluxlab.pl/sprawdzenie-nip?utm_source=gofin odpowiada 200.
+
+> Odłożyć można, ale lepiej sprawę zamknąć. Sama faktura w KSeF z Waszym NIP nie daje kosztu ani prawa do odliczenia, liczy się to, czy zakup naprawdę był (art. 88 ust. 3a pkt 4 lit. a ustawy o VAT). Urząd widzi jednak tę fakturę w KSeF, więc przy porównaniu z JPK wyjdzie różnica i warto mieć na nią odpowiedź.
+> Kolejność, która zwykle wystarcza:
+> 1. Dane sprzedawcy z faktury (NIP, rachunek) sprawdzić w wykazie MF: czy firma istnieje, czy jest czynna w VAT, czy rachunek jest zgłoszony.
+> 2. Zapytać sprzedawcę mailem, kto zamawiał i gdzie wydano towar. Często wychodzi pracownik albo literówka w NIP.
+> 3. Jeśli to pomyłka, usunąć ją może tylko sprzedawca, wystawiając w KSeF korektę do zera. Nabywca faktury nie odrzuci.
+> 4. Korespondencję zostawić w aktach, na wypadek pytań z urzędu.
+> Wykaz MF po NIP, za darmo i bez rejestracji: https://fluxlab.pl/sprawdzenie-nip?utm_source=gofin
+
+
+**Dla Pawła:** (1) NOWE: komentarz pod https://forum.gofin.pl/1559644/faktura-w-ksef-nie-nasza, pole „Autor”: FluxLab, „Treść komentarza”: tekst z tego wpisu, „+ Dodaj komentarz” (około 1 minuty, wątek z wczoraj, więc dziś ma jeszcze czytelników); (2) bez zmian: komentarz Gofin 1559598 (tekst we wpisie 2026-10-04 14:50), 3 starsze teksty forumowe, odpowiedź do Profit Polska czekająca na akceptację (mail „Wiadomosc do akceptacji: Formularz fluxlab.pl, ma.kobus@gmail.com” z 15:30).
+**Zostało otwarte:** Gofin sprawdzony do 1559684. Wtorek 9:46: 28 maili outreachu w kolejce (kancelarie 8, księgowe 9, dealerzy 1, agencje 10). Plan stratega na 6/7.10 o 06:15.
