@@ -7,7 +7,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 export const metadata: Metadata = {
   title: "Mail firmowy: czy ktoś może się pod niego podszyć | Fluxlab",
   description:
-    "Mail firmowy bez SPF, DKIM i DMARC da się podrobić, a Wasze wiadomości trafiają do spamu. Jak to sprawdzić w minutę i co poprawić w domenie, plus darmowy audyt.",
+    "Mail firmowy na własnej domenie: co jest potrzebne, ile kosztuje skrzynka w Google i Microsoft oraz jak SPF, DKIM i DMARC chronią przed podszywaniem.",
   openGraph: {
     title: "Mail firmowy: czy ktoś może się pod niego podszyć | Fluxlab",
     description:
@@ -72,7 +72,13 @@ export default function PodszywanieEmailArticle() {
         <h1 style={{ fontSize: "2rem", fontWeight: 700, margin: "1rem 0" }}>
           Czy ktoś może podszyć się pod Twój firmowy e-mail?
         </h1>
-        <p style={{ color: "var(--article-muted)", lineHeight: 1.7, fontSize: "1.05rem" }}>
+        <p
+          style={{
+            color: "var(--article-muted)",
+            lineHeight: 1.7,
+            fontSize: "1.05rem",
+          }}
+        >
           To jeden z najczęstszych i najmniej widocznych problemów małych firm.
           Jeśli Twoja domena nie jest poprawnie skonfigurowana, dowolna osoba
           może wysłać wiadomość wyglądającą jak od Ciebie, a część Twoich
@@ -85,7 +91,8 @@ export default function PodszywanieEmailArticle() {
           style={{
             margin: "2rem 0",
             padding: "1.25rem 1.5rem",
-            background: "var(--article-box)", border: "1px solid var(--article-box-border)",
+            background: "var(--article-box)",
+            border: "1px solid var(--article-box-border)",
             borderRadius: 12,
             display: "flex",
             flexWrap: "wrap",
@@ -166,6 +173,45 @@ export default function PodszywanieEmailArticle() {
           Ty widzisz tylko, że wiadomość wyszła.
         </p>
 
+        <h2
+          id="mail-firmowy-na-wlasnej-domenie"
+          style={{ fontSize: "1.4rem", fontWeight: 700, marginTop: "2.5rem" }}
+        >
+          Mail firmowy na własnej domenie: co jest potrzebne i ile kosztuje
+        </h2>
+        <p style={{ color: "var(--article-text)", lineHeight: 1.7 }}>
+          Potrzebne są dwie rzeczy: własna domena (adres w rodzaju
+          biuro@twojafirma.pl, rejestracja .pl to zwykle kilkadziesiąt złotych
+          rocznie, a pierwszy rok bywa promocyjny) oraz usługa poczty, która
+          trzyma skrzynki. Pocztę można mieć w pakiecie hostingu albo u dostawcy
+          biurowego. Adres w Gmailu lub Onecie nie jest mailem firmowym i nie da
+          się go zabezpieczyć rekordami domeny.
+        </p>
+        <p style={{ color: "var(--article-text)", lineHeight: 1.7 }}>
+          Ceny skrzynek u dwóch największych dostawców (październik 2026, netto,
+          za osobę miesięcznie, przy umowie rocznej): Google Workspace Business
+          Starter 31,50 zł (30 GB na pocztę i dysk), Microsoft 365 Business
+          Basic około 30 zł zależnie od sprzedawcy (skrzynka 50 GB i 1 TB
+          OneDrive). Dla trzyosobowej firmy to około 1080 do 1140 zł netto
+          rocznie. Hosting z pocztą jest tańszy, ale filtr spamu i limity
+          wysyłki są tam zwykle słabsze.
+        </p>
+        <p style={{ color: "var(--article-text)", lineHeight: 1.7 }}>
+          Bez względu na dostawcę w DNS domeny trzeba ustawić trzy rekordy: SPF
+          (wskazuje serwery dostawcy), DKIM (klucz generowany w panelu dostawcy)
+          i DMARC (zaczynając od p=none z raportami). Dostawca nie robi tego
+          sam, a bez tych wpisów maile z nowej skrzynki częściej lądują w
+          spamie. Czy rekordy są ustawione, sprawdzicie w kilka sekund w{" "}
+          <Link href="/audyt-poczty" style={{ textDecoration: "underline" }}>
+            darmowym audycie poczty
+          </Link>
+          , a pełniejszy obraz domeny i strony daje{" "}
+          <Link href="/audyt-strony" style={{ textDecoration: "underline" }}>
+            audyt strony
+          </Link>
+          .
+        </p>
+
         <div
           style={{
             margin: "2.5rem 0",
@@ -176,7 +222,11 @@ export default function PodszywanieEmailArticle() {
         >
           <strong style={{ fontSize: "1.1rem" }}>Nie zgaduj, sprawdź</strong>
           <p
-            style={{ color: "var(--article-muted)", lineHeight: 1.6, margin: "0.5rem 0 1rem" }}
+            style={{
+              color: "var(--article-muted)",
+              lineHeight: 1.6,
+              margin: "0.5rem 0 1rem",
+            }}
           >
             Wpisz domenę firmy, a w kilka sekund pokażemy stan SPF, DKIM i DMARC
             oraz co konkretnie wymaga poprawy. Wszystko z publicznego DNS, bez
@@ -206,7 +256,11 @@ export default function PodszywanieEmailArticle() {
                 {item.question}
               </summary>
               <p
-                style={{ color: "var(--article-muted)", lineHeight: 1.7, marginTop: "0.5rem" }}
+                style={{
+                  color: "var(--article-muted)",
+                  lineHeight: 1.7,
+                  marginTop: "0.5rem",
+                }}
               >
                 {item.answer}
               </p>

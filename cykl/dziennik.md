@@ -2709,3 +2709,22 @@ Trafialność drogi KRS łącznie (8 plików `krs*.json` w `~/Projekty/mail-audy
 **Ocena kanałów:** biura rachunkowe drogą KRS 1 lead / 11 maili, dostają 2 wysyłki i 3 partie przygotowania (miasta powiatowe 1,9 na 100 domen, doradcy podatkowi na próbę). Dealerzy, kancelarie, sklepy, agencje: 0 ludzi na 15 maili z utm, dziś wychodzą tylko gotowe 19, nowych partii nie ma. Google 2/11 osób, wyświetlenia rosną, 5 zadań. Facebook 3/8 osób, 0 h, 1 zlecenie. Narzędzia 1 zadanie (widoczność pola na telefonie). AI 1 pomiar. Fora 1 sprawdzenie. GitHub 0 h. Niewiadoma: 32 sesje bez odsyłacza, Z1 je rozkłada na grupy.
 **Plan:** `cykl/plan-ruchu.md`, 24 zadania 06:46 do 05:46. Dzień: pomiar sesji bez odsyłacza, tytuł pod „mail firmowy", kontrola kolejki, wysyłki ksiegowe 9:46 (11), kancelarie 10:46 (8), agencje + dealer 11:46 (11), partia 8 biur 13:46 i wysyłka 14:46, odpowiedzi 12:46 i 15:46, bilans 16:46. Wieczór i noc: pole audytu nad zgięciem na telefonie, 10 stron GSC i tytuł, żądania indeksowania po 20:05 dla stron bez wyświetleń, post FB 029 (faktura w KSeF nie nasza), partie 9 i 10 biur, pomiar wejść z asystentów AI, linki wewnętrzne, zrzuty 390 px, kontrola kolejki na środę, Gofin, bilans.
 **Mail do Pawła:** wysłany 06:49 z pawel@fluxlab.pl, msgid 179126055787.3242625, temat „FluxLab ruch, plan na 6.10.2026: 42 osoby w dobie i pierwszy lead z outreachu"; „Dla Pawła": odpowiedź do Profit Polska, komentarz Gofin 1559644, Bing Webmaster, decyzja o tekstach forumowych.
+
+## 2026-10-06 06:55
+**Kanał:** pomiar (plan stratega 6/7.10, Z1).
+**Co zrobione:** rozkład 32 sesji bez odsyłacza z doby 5.10 06:00 do 6.10 06:00 (baza VPS `ruch.sqlite`, boty 8+ odsłon/min odrzucone jak w raporcie); wynik: ponad połowa to nasza własna automatyka, nie ludzie.
+
+| Grupa | Sesje | Szczegóły |
+|---|---|---|
+| (a) do 30 min po wysyłce 9:46/10:46/11:46/14:46, wejście na /audyt-strony lub /e-doreczenia-integracja | 0 | brak; ale sesja 14:51 (Windows, wejście na /, 4 odsłony, audyt ze strony głównej, `lead_landing`) to wczorajszy lead 5 min po wysyłce 14:46, czyli klik z maila wpisany/skopiowany na stronę główną |
+| (b) Chrome Android z posta FB | 0 | jedyna sesja Android ze strefy wiedzy (19:59) jest w serii automatyki niżej |
+| (c) strona główna z komputera | 2 | 14:51 Windows (lead, jak wyżej), 19:47 Windows 1 odsłona |
+| (d) inne, wyglądające na ludzi | 12 | 08:14 Android /e-doreczenia-integracja 3 odsłony + skan KRS; 10:50 macOS /kontakt; 11:36 iOS / 4 odsłony; 18:09 macOS /narzedzia; 18:13 iOS /; 19:16 Windows /strefa-wiedzy/maile-trafiaja-do-spamu; 19:48 iOS /; 20:31 Windows /strony-www; 20:55 Windows /numer-ksef; 00:19 Windows /produkty; 01:35 macOS /kontakt; 04:06 macOS /jak-pracuje |
+| (e) własna automatyka: Chrome na Linux (Paweł używa Firefoksa) i emulacja Android w tych samych minutach | 18 | seria 19:56 do 20:00 (11 sesji, pary Linux/Android na tych samych stronach: zrzuty 390 px i weryfikacja wdrożeń), 09:01 do 09:03 (3), 07:04 /nie-licz-mnie, 21:23, 04:58 i 05:11 na / |
+| **Suma** | **32** | zgadza się z liczbą sesji bez odsyłacza |
+
+Wniosek: niedoszacowany jest outreach mailowy (lead z 14:51 nie ma utm, bo wszedł przez stronę główną), a przeszacowany ruch ogółem: 18 z 32 sesji bez odsyłacza i 16 odsłon „Chrome na Linux” w raporcie to nasze zrzuty i weryfikacje, więc realnie było około 24 osoby w dobie, nie 42. Filtr Chrome/Linux w `raport_ruchu.py` lub `/nie-licz-mnie` ustawione w profilu Chrome 9228 usunęłoby ten szum.
+**Ruch:** ostatnia doba 70 odsłon, 43 osoby (wzrost o 286% wobec średniej 18,1); źródła: mail 4, www.google.com 2, facebook 2, chatgpt.com 1, useme.com 1, reszta bez odsyłacza; z telefonu 25 z 70; uruchomienia narzędzi 2.
+**Dowód:** zapytanie na `~/fluxlab-ruch/ruch.sqlite` (tabela `wizyty`, okno 5.10 06:00 do 6.10 06:00 CEST), tabela wyżej.
+**Dla Pawła:** bez zmian (komentarz Gofin 1559644, komentarz Gofin 1559598, odpowiedź do Profit Polska).
+**Zostało otwarte:** Z2 (tytuł pod „mail firmowy”) i dalsze zadania planu.
