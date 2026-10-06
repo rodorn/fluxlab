@@ -2875,3 +2875,30 @@ Kolejka `maile_ksiegowe_edoreczenia` na środę (katalog minus `wyslane_ks.json`
 Odrzucone: CALMTEC sp. z o.o. (tylko adresy imienne), Kancelaria Usług Finansowo-Księgowych sp. z o.o. Piekary Śl. (brak adresu na stronie), Biuro Rachunkowe Wanda Chrząścik sp. z o.o. (siedziba Warszawa, odpis bez PKD, strona bez KRS i NIP). Statystyka w treści przeliczona na wszystkie partie: 218 z 272 spółek ma adres.
 **Dla Pawła:** bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację).
 **Zostało otwarte:** Z14 od 20:05, Z18, Z19 (00:46), Z21, Z24. Środa: wysyłka 5 plików 032 do 036 o 9:46 lub 14:46 bez `--limit`; przed wysyłką ponownie BAE. Trafialność Śląska spadła z 7,2 do 1,6 na 100 domen, kolejne rundy pkt.pl dają ok. 1 mail na 6 miast.
+
+## 2026-10-06 17:55
+**Kanał:** Google (Z14 część 1, Z18), strona na telefonie (Z21), według planu stratega.
+**Co zrobione:** w GSC znalezionych 8 stron spoza indeksu Google, wszystkie 8 dostały linki z treści stron, które Google już ma (13 nowych linków, wdrożone i zgłoszone do IndexNow); na telefonie 8 stron bez przewijania poziomego.
+**Ruch:** ostatnia doba 54 odsłony, 45 osób (średnia 22,3); źródła: facebook 5, www.google.com 3, www.facebook.com 1, useme.com 1, mail 1; najczęściej / 9, /automatyzacja-dla-biur-rachunkowych 4, /numer-ksef 4, /e-doreczenia-integracja 3; z telefonu 15 z 54; 0 uruchomień narzędzi.
+**Dowód:**
+- Z14 (część 1): GSC Skuteczność 28 dni, zakładka Strony, 49 wierszy (42 adresy po scaleniu www); z 111 adresów w sitemap 70 bez wyświetleń. Sprawdzenie URL 12 kandydatów:
+
+| Adres | Stan |
+|---|---|
+| /sprawdzenie-nip | nie w Google |
+| /audyt-strony | w Google |
+| /numer-ksef | w Google |
+| /audyt-poczty | nie w Google |
+| /strefa-wiedzy/maile-trafiaja-do-spamu | w Google |
+| /sprawdz-kontrahenta | nie w Google |
+| /kalkulator-podatkowy | nie w Google |
+| /audyt-kurierski | nie w Google |
+| /dane-sprzedawcy | nie w Google |
+| /podwojny-adres | w Google |
+| /strona-po-wlamaniu | nie w Google |
+| /automatyzacja-procesow-biznesowych | nie w Google |
+
+- Z18: commit 10fa38c. Pary (źródło → cel), każda potwierdzona `curl` z `href`: /e-doreczenia-integracja, /automatyzacja-dla-biur-rachunkowych, /ksef-integracja → /sprawdzenie-nip; biura, /ksef-integracja → /kalkulator-podatkowy; /strony-www → /audyt-poczty (plus 3 istniejące z podszywania); /ile-spolek-znika-z-krs → /sprawdz-kontrahenta (plus /czujka-rejestrowa); /automatyzacja-dla-ecommerce, /kontrola-paliwa → /audyt-kurierski; e-commerce → /dane-sprzedawcy (plus /strony-www); /naprawa-https → /strona-po-wlamaniu (plus /strony-www); /integracja-crm-z-erp, /strefa-wiedzy/n8n-vs-zapier → /automatyzacja-procesow-biznesowych. W `ProductLanding` doszedł opcjonalny blok `powiazane` (zdania z linkiem pod opisem zakresu). IndexNow 18 adresów: Yandex i Naver 200, wspólny punkt bez zmian.
+- Z21: scrollWidth 390 na /, /e-doreczenia-integracja, /strefa-wiedzy/podszywanie-sie-pod-firmowy-email, /automatyzacja-crm-leasing, /strony-www, /automatyzacja-dla-ecommerce, /kontrola-paliwa, /ksef-integracja; pola formularzy nie są zasłonięte. Zrzuty `skrypty-raport/telefon-390/z21-*.png`.
+**Dla Pawła:**
+**Zostało otwarte:** Z14 część 2 po 20:05: `skrypty-raport/gsc_indeksuj.py` dla 8 adresów z tabeli (limit odnawia się 24 h po serii z 5.10 19:56). Z19 o 00:46, Z24 o 05:46.
