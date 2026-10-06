@@ -2987,3 +2987,13 @@ Z1 jednym zdaniem: z 32 sesji bez odsyłacza 18 to nasza automatyka, 12 inne, 2 
 - trafialność 0 na 119 domen; spółki z okolic Warszawy i Trójmiasta mają BAE w 14 na 16 przypadków.
 **Dla Pawła:** bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację).
 **Zostało otwarte:** środa: wysyłka 5 plików 032 do 036 bez `--limit` (przed wysyłką ponownie BAE). Kolejne rundy pkt.pl dla biur rachunkowych w znanych regionach nie zwracają kosztu (ostatnie 426 domen: 5 maili); strateg powinien szukać nowego źródła domen albo nowego zarzutu. Cykl 05:46: liczby nocne pod bilansem Z24.
+
+<!-- WYSLANO 2026-10-06 23:04 -->
+
+## 2026-10-06 23:47
+**Kanał:** dystrybucja narzędzi (w planie stratega brak otwartych zadań; wysyłka maili poza godzinami, limit GSC zużyty do 7.10 ok. 20:43).
+**Co zrobione:** narzędzie /audyt-kurierski liczyło październikowe faktury na stawkach DPD z 16 do 30.09, poprawione na stawki 1 do 15.10.2026 (35,9 / 41,7 / 44,7%, ON 7 747 zł/m³, tabela dpd.com) w narzędziu i llms.txt; na czoło kolejki FB dopisany post 030 o dopłacie paliwowej z linkiem do narzędzia (utm facebook/narzedzia), publikator 7.10 ok. 08:12.
+**Ruch:** ostatnia doba 48 odsłon, 35 osób (wzrost o 83% wobec średniej 26,3). Źródła: facebook 4, www.google.com 3, mail 1, chatgpt.com 1, reszta bez odsyłacza. Najczęściej /automatyzacja-leadow-crm 7, / 5, /sprawdzenie-nip 3, /audyt-kurierski 3, /numer-ksef 3. Telefon 19 z 48. Uruchomienia narzędzi 0 (pomiar działa: zdarzenia uruchomień są w bazie VPS, ostatnie 5.10, więc to brak kliknięć, nie brak pomiaru).
+**Dowód:** commit b1f1ff8; POST https://fluxlab.pl/api/sprawdz-doplate zwraca okres 2026-10-01 do 2026-10-15 i progi 35,9/41,7/44,7; `curl https://fluxlab.pl/llms.txt | grep` pokazuje „od 1 do 15 października 2026”; IndexNow 2 adresy, 2/3; `kolejka.json`[0] = `030-doplata-paliwowa-kurier`, grafika `posty/030-doplata-paliwowa-kurier/grafika.png`, 0 długich myślników.
+**Dla Pawła:** bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację).
+**Zostało otwarte:** stawki DPD w `app/api/sprawdz-doplate/route.ts` i llms.txt trzeba podmienić 16.10 (nowy okres 16 do 31.10, tabela https://www.dpd.com/pl/pl/oferta-dla-firm/warunki-wysylki/doplata-paliwowa/); strateg może wpisać to jako stałe zadanie co 2 tygodnie (1. i 16. dnia). Środa: wysyłka 032 do 036; cykl 05:46: liczby nocne pod bilansem Z24.
