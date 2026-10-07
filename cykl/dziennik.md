@@ -3241,3 +3241,42 @@ Z1 jednym zdaniem: z 32 sesji bez odsyłacza 18 to nasza automatyka, 12 inne, 2 
   9,3 maila na 100 domen. Pliki `maile_ksiegowe_edoreczenia/cik_domeny2_2026-10-07.json`, `krs_partia21_2026-10-07.json`, maile 042_kka (Gliwice, 0000259754), 043_podatki-rachunkowosc (Bielsko-Biała, 0000147013), 044_liczbypro (Chorzów, 0001182427, wpis 2025, zdanie o obowiązku od dnia wpisu), 045_biuroktk (Nowy Targ, 0001032644); adres ogólny ze strony, KRS na stronie albo przez NIP z wykazu VAT, PKD 69.20, 0 długich myślników, render `--proba --limit=80` z utm `ksiegowe`.
 **Dla Pawła:** bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację).
 **Zostało otwarte:** Z10 o 15:46 (odpowiedzi i sesje po Z4, Z6, Z9), Z11 o 16:46 (CIK w tabeli źródeł: 2 rundy, 107 domen, 8 maili), Z15 o 20:50, Z19 do Z24; kolejka na czwartek 4 pliki 042 do 045; CIK ma jeszcze 12 województw.
+
+## 2026-10-07 15:51
+**Kanał:** outreach z gotowym raportem (Z10 z planu, odpowiedzi i pomiar po Z4, Z6, Z9).
+**Co zrobione:** sprawdzone odpowiedzi i wejścia z dzisiejszych 20 maili; jedyna odpowiedź to prośba o wypisanie od BR Help (Z9), adres usunięty z wysyłek.
+**Ruch:** ostatnia doba 44 odsłony, 27 osób (mail 10, facebook 7, m.facebook.com 1, www.google.com 1); 3 uruchomienia narzędzi (2 skan przykład, 1 numer KSeF przykład, 1 audyt); odrzucone: boty 7 sesji, własna automatyka 25 sesji.
+**Dowód:** Zoho INBOX i Spam od 7.10, VPS `ruch.sqlite` od 09:00:
+
+| kampania | wysłane dziś | sesje | ludzie | uruchomienia narzędzi | zgłoszenia | odpowiedzi |
+|---|---|---|---|---|---|---|
+| ksiegowe (Z4 09:56) | 5 | 1 (10:29 Firefox Windows) | 1 | 0 | 0 | 0 |
+| ksiegowe-fu (Z6 11:46) | 10 | 4 (11:47 i 11:50 parami w tej samej sekundzie) | 0, skaner | 0 | 0 | 0 |
+| ksiegowe (Z9 14:46) | 5 | 4 (15:02, 15:19, 15:22, 15:24 Edge Windows, po 1 odsłonie) | 1 do 2 | 0 | 0 | 1, wypisanie |
+
+  Odpowiedź: anna.semrau@biuro-help.pl, 15:25, „Nie chcę od Państwa email” na mail z 14:46. Dopisane do `~/Projekty/mail-audyt/pomijane.json` biuro@biuro-help.pl i anna.semrau@biuro-help.pl (58 → 60). Nie odpisywaliśmy, mail obiecywał brak dalszego kontaktu. Sesje Edge 15:19 do 15:24 kończą się minutę przed odmową, więc to najpewniej ta sama osoba. Z maili 6.10 nadal 0 sesji i 0 odpowiedzi.
+**Dla Pawła:** bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację).
+**Zostało otwarte:** Z11 o 16:46 (bilans outreachu: dziś 20 maili, 2 ludzi, 1 wypisanie, 0 leadów), Z15 o 20:50, Z19 do Z24; kolejka na czwartek 4 pliki 042 do 045.
+
+## 2026-10-07 15:59
+**Kanał:** outreach z gotowym raportem (Z11 z planu, bilans dnia; przed czasem, bo wszystkie dzisiejsze wysyłki już wyszły).
+**Co zrobione:** Bilans outreachu 2026-10-07 i decyzja o źródłach domen: `uslugi-ksiegowe` z pkt.pl bez drugiej rundy (dopisane w „Czego nie robić” planu), CIK zostaje głównym źródłem.
+**Ruch:** ostatnia doba 44 odsłony, 27 osób (mail 10, facebook 7, m.facebook.com 1, www.google.com 1); 3 uruchomienia narzędzi; odrzucone: boty 7 sesji, własna automatyka 25 sesji.
+**Dowód:** Bilans outreachu 2026-10-07 (statusy Resend z 10 do 12 min po wysyłce, sesje z VPS do 15:50):
+
+| segment | wysłane | delivered | odbite | odpowiedzi | sesje z utm | ludzie | uruchomienia narzędzi | zgłoszenia |
+|---|---|---|---|---|---|---|---|---|
+| ksiegowe (Z4 09:56, Z9 14:46) | 10 | 10 | 0 | 1 (wypisanie BR Help) | 5 | 2 do 3 | 0 | 0 |
+| ksiegowe-fu (Z6 11:46) | 10 | 10 | 0 | 0 | 4 | 0 (skaner) | 0 | 0 |
+| razem | 20 | 20 | 0 | 1 | 9 | 2 do 3 | 0 | 0 |
+
+| źródło domen | domeny | maile | maile na 100 domen | decyzja |
+|---|---|---|---|---|
+| pkt `biuro-rachunkowe` łącznie (partie 5 do 18, 6.10) | 1119 | 19 | 1,7 | już wstrzymane: partie 17 i 18 dały 0 |
+| pkt `uslugi-ksiegowe` (12 miast, 7.10) | 19 | 0 | 0,0 | bez drugiej rundy |
+| pkt `kancelaria-podatkowa` (12 miast, 7.10) | 79 | 1 (037 HMP Invest) | 1,3 | może dostać rundę |
+| CIK (mazowieckie, śląskie, małopolskie, wielkopolskie) | 107 | 8 (038 do 045) | 7,5 | główne źródło, 12 województw zostało |
+
+  Kolejka na czwartek: 4 pliki 042_kka, 043_podatki-rachunkowosc, 044_liczbypro, 045_biuroktk, żaden adres nie jest w `pomijane.json` ani `wyslane_ks.json`. Od 5.10 segment biur rachunkowych: 48 maili, 1 lead (Profit Polska), 1 wypisanie.
+**Dla Pawła:** bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację).
+**Zostało otwarte:** Z15 o 20:50 (żądania indeksowania), Z19 do Z24; czwartek: CIK kolejne województwa, wysyłka 042 do 045.
