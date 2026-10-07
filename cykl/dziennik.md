@@ -3280,3 +3280,24 @@ Z1 jednym zdaniem: z 32 sesji bez odsyłacza 18 to nasza automatyka, 12 inne, 2 
   Kolejka na czwartek: 4 pliki 042_kka, 043_podatki-rachunkowosc, 044_liczbypro, 045_biuroktk, żaden adres nie jest w `pomijane.json` ani `wyslane_ks.json`. Od 5.10 segment biur rachunkowych: 48 maili, 1 lead (Profit Polska), 1 wypisanie.
 **Dla Pawła:** bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację).
 **Zostało otwarte:** Z15 o 20:50 (żądania indeksowania), Z19 do Z24; czwartek: CIK kolejne województwa, wysyłka 042 do 045.
+
+## 2026-10-07 16:51
+**Kanał:** widoczność w Google (Z21 z planu, przed czasem, bo pierwsze otwarte Z15 ma żądania dopiero od 20:50).
+**Co zrobione:** 8 stron spoza indeksu Google dostało po 2 linki w zdaniach z pokrewnych stron (17 nowych linków na 11 stronach), wdrożone i zgłoszone do IndexNow.
+**Ruch:** ostatnia doba 41 odsłon, 24 osoby (mail 10, facebook 4, m.facebook.com 1, www.google.com 1); najczęściej /e-doreczenia-integracja 10, /audyt-strony 8, /automatyzacja-leadow-crm 5; 3 uruchomienia narzędzi, wszystkie `_przyklad` z testu Z12 (do odjęcia), 1 audyt z własnymi danymi; odrzucone: boty 7 sesji, własna automatyka 25 sesji.
+**Dowód:** commity 096a4b8 i 99944e6, linki sprawdzone na produkcji pojedynczymi wejściami. Linki z treści przed/po:
+
+| strona | przed | po | skąd nowe linki |
+|---|---|---|---|
+| /audyt-chatbota | 0 | 2 | /automatyzacja-dla-ecommerce, /automatyzacja-ai |
+| /audyt-marz | 0 | 2 | /audyt-kurierski, /automatyzacja-dla-ecommerce |
+| /panel-zwrotow | 0 | 2 | /audyt-kurierski, /automatyzacja-dla-ecommerce |
+| /rejestr-cen | 0 | 2 | /dane-sprzedawcy, /automatyzacja-dla-ecommerce |
+| /kontrola-jezykow | 0 | 2 | /widocznosc-w-google, /audyt-strony |
+| /analiza-lokalizacji | 0 | 2 | /widocznosc-w-google, /sprawdz-kontrahenta |
+| /kalkulator-kosztow | 1 | 3 | /kontrola-paliwa, /ceny-energii-jutro |
+| /ceny-energii-jutro | 0 | 2 | /kalkulator-kosztow, /dobor-samochodu |
+
+  /wlasnosc-domeny, /strefa-wiedzy/jaka-forma-opodatkowania-jdg-2026 i /strefa-wiedzy/ryczalt-czy-liniowy miały już 2 i więcej, bez zmian. Zamiast wpisu strefy wiedzy o kosztach link do /ceny-energii-jutro dostał /dobor-samochodu, bo żaden wpis nie dotyczy kosztów energii ani auta. Źródła w indeksie (Z13): /audyt-kurierski, /dane-sprzedawcy, /widocznosc-w-google, /kontrola-paliwa, /ceny-energii-jutro, /sprawdz-kontrahenta. IndexNow: 17 adresów, przyjęte przez 2 z 3 punktów.
+**Dla Pawła:** bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację).
+**Zostało otwarte:** Z15 o 20:50 (żądania indeksowania dla tych samych 10 adresów), Z19, Z20, Z22 do Z24.
