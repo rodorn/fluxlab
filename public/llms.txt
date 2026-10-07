@@ -12,6 +12,15 @@
 - [Integracje i dane](https://fluxlab.pl/scraping-danych): spinanie systemów przez interfejsy programistyczne, porządkowanie danych, raporty, które przychodzą same.
 - [Integracja CRM z systemem magazynowo-księgowym](https://fluxlab.pl/integracja-crm-z-erp): kontrahenci, dokumenty sprzedaży, stany i ceny, z kolejką ponowień.
 - [Wdrożenie n8n i jego koszt](https://fluxlab.pl/wdrozenie-n8n-cena): licencja, serwer, praca i opieka rozbite na osobne liczby.
+- [Integracje API](https://fluxlab.pl/integracje-api): CRM, ERP, sklep i hurtownie spięte tak, żeby dane przechodziły same. Spięcie dwóch systemów od 1 500 zł.
+- [Automatyzacja raportowania](https://fluxlab.pl/automatyzacja-raportowania): raporty sprzedaży, marketingu i operacji, które powstają same o stałej porze. Jedno źródło od 790 zł.
+- [Automatyzacja dla biur rachunkowych](https://fluxlab.pl/automatyzacja-dla-biur-rachunkowych): OCR faktur do Optimy, Symfonii i Enovy, SaldeoSmart, KSeF, przypomnienia o brakujących dokumentach.
+- [Automatyzacja dla e-commerce](https://fluxlab.pl/automatyzacja-dla-ecommerce): stany, faktury, etykiety InPost i DPD, zwroty; Shopify, WooCommerce, PrestaShop, BaseLinker, Allegro.
+- [Automatyzacja dla agencji marketingowych](https://fluxlab.pl/automatyzacja-dla-agencji-marketingowych): raporty z Google Ads, Meta Ads i GA4, onboarding klienta, rozliczanie retainerów.
+- [CRM dla firm leasingowych](https://fluxlab.pl/automatyzacja-crm-leasing): przypisanie leada po regionie, dane po NIP z CEIDG i KRS, wniosek do leasingodawcy, prowizje.
+- [Automatyzacja Pipedrive](https://fluxlab.pl/automatyzacja-pipedrive) i [Salesforce](https://fluxlab.pl/automatyzacja-salesforce): API, webhooki, synchronizacja danych i raporty.
+- [n8n](https://fluxlab.pl/n8n), [n8n dla CRM](https://fluxlab.pl/n8n-dla-crm), [Make czy n8n do CRM](https://fluxlab.pl/make-vs-n8n-crm), [Zapier czy Make](https://fluxlab.pl/zapier-make): kiedy które narzędzie i jak je wdrażamy.
+- [Automatyzacja z AI](https://fluxlab.pl/automatyzacja-ai): klasyfikacja zgłoszeń, streszczenia i analiza treści wpięte w CRM.
 - [Systemy i strony](https://fluxlab.pl/strony-www): aplikacje webowe, panele i formularze będące częścią procesu.
 
 ## Pytania i praktyczne odpowiedzi
@@ -237,6 +246,17 @@ Ceny energii na jutro, godzina po godzinie, na https://fluxlab.pl/ceny-energii-j
 - [Dobór samochodu](https://fluxlab.pl/dobor-samochodu): segment, nadwozie, napęd i moc dopasowane do realnych potrzeb.
 - [Ceny energii na jutro](https://fluxlab.pl/ceny-energii-jutro): najtańsze i najdroższe cztery godziny oraz godziny z ceną ujemną, z danych PSE.
 - [Pełna lista](https://fluxlab.pl/narzedzia)
+
+## Usługi z ceną podaną na stronie
+
+- [Audyt faktur kurierskich](https://fluxlab.pl/audyt-kurierski): jedną pozycję z dopłatą paliwową sprawdzisz od ręki za darmo, całą fakturę od 290 zł.
+- [Sprawdzenie kontrahenta przed przelewem](https://fluxlab.pl/sprawdz-kontrahenta): wykaz VAT, KRS i dane domeny, w tym czy numer konta figuruje w wykazie. Od 9 zł.
+- [Pogotowie automatyzacji](https://fluxlab.pl/pogotowie-automatyzacji): stanęła integracja w n8n albo Make, czytamy logi wykonań i szukamy wygasłych poświadczeń. Diagnoza 49 zł, naprawa od 490 zł.
+- [Strona po włamaniu](https://fluxlab.pl/strona-po-wlamaniu): WordPress przekierowuje na obce serwisy albo Google go oznaczył; porównujemy pliki z oryginałami i usuwamy furtki. Od 49 zł.
+- [Audyt marż sklepu](https://fluxlab.pl/audyt-marz): zysk netto na sztuce po prowizjach, zwrotach i dopłatach do wysyłki, martwy stok. 49 zł.
+- [Audyt tłumaczeń strony i hreflang](https://fluxlab.pl/kontrola-jezykow): polskie fragmenty w wersjach obcojęzycznych i brakujące oznaczenia dla wyszukiwarki. Od 99 zł.
+- [Kontrola paliwa we flocie](https://fluxlab.pl/kontrola-paliwa): transakcje z karty paliwowej zestawione z trasą, tankowanie do kanistra i sklonowana karta. Od 99 zł.
+- [Analiza lokalizacji pod lokal](https://fluxlab.pl/analiza-lokalizacji): konkurenci w promieniu 1, 3 i 5 km i liczba mieszkańców na punkt. Sprawdzenie darmowe, raport od 190 zł.
 
 ## Własne badania
 
