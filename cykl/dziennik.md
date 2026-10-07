@@ -3379,3 +3379,23 @@ Z1 jednym zdaniem: z 32 sesji bez odsyłacza 18 to nasza automatyka, 12 inne, 2 
   Limitu dziennego nie przekroczono. Cele przekierowań sprawdzone 21:02 do 21:04 bez żądań: wszystkie 6 jest w Google. Mapa witryny na produkcji ma 53 adresy. Wniosek dla stratega: lista Z13 powstała przed cięciem o 17:36, a jutrzejsze Z13 i Z15 muszą brać adresy z bieżącej mapy (53), nie z listy z 6.10. Linki z Z21 prowadzące do tych stron zniknęły razem z nimi.
 **Dla Pawła:** bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację; jeśli wejścia z Firefoksa na Androidzie to Twój telefon, otwórz na nim raz https://fluxlab.pl/nie-licz-mnie).
 **Zostało otwarte:** Z23 o 04:46, Z24 o 05:46; czwartek 9:46 wysyłka 042 do 045.
+
+## 2026-10-07 21:47
+**Kanał:** pomiar (Z23 z planu).
+**Co zrobione:** rozpisane sesje bez odsyłacza z dzisiejszej doby i źródło wejść na /automatyzacja-leadow-crm; to nie jest kanał, tylko jedna osoba z telefonu i nasze własne sprawdzenia.
+**Ruch:** ostatnia doba 44 odsłony, 26 osób (mail 10, facebook 4, www.google.com 2, m.facebook.com 1); 3 uruchomienia narzędzi (wszystkie `przyklad`) i 1 audyt; odrzucone: boty 7 sesji / 100 odsłon, własna automatyka 33 sesje / 58 odsłon.
+**Dowód:**
+
+| godzina 7.10 | pierwsza strona | odsłony | urządzenie | ocena |
+|---|---|---|---|---|
+| 08:54 | /dziekuje | 1 | Chrome Windows | nieznane, bez zgłoszenia |
+| 11:50 | /kontakt | 1 | Chrome Windows | prawdopodobnie skaner linków po `ksiegowe-fu` (11:47 do 11:50) |
+| 12:53 | /sprawdzenie-nip | 3 | Chrome Linux | własny test Z12 |
+| 13:17 | /audyt-strony | 1 | Chrome macOS | człowiek, pełny audyt (7 zdarzeń) |
+| 13:45 | /automatyzacja-leadow-crm | 1 | Firefox Android | ta sama osoba co niżej |
+| 17:30 | /automatyzacja-leadow-crm | 1 | Firefox Android | ta sama osoba |
+| 20:50 | /automatyzacja-leadow-crm | 2 | Chrome Linux + Android | własne: GSC sprawdza 301 z /audyt-chatbota (Z15) |
+
+  /automatyzacja-leadow-crm: 6.10 7 odsłon w 5 sesjach (10:25 macOS bez odsyłacza, 10:40 przejście z /audyt-kurierski po wejściu z chatgpt.com, 14:56, 21:21, 23:30 Firefox Android), 7.10 5 odsłon (2 Firefox Android, 2 własne z GSC, 21:25 z www.google.com Chrome Linux). Stałe źródło to Firefox Android bez odsyłacza, 5 sesji w 2 dni o różnych porach, po 1 odsłonie; baza nie trzyma IP, więc nie da się tego rozstrzygnąć. Wniosek: strona nie ma stałego zewnętrznego źródła, nie warto dawać jej osobnego zadania.
+**Dla Pawła:** jeśli Firefox na Twoim telefonie otwiera /automatyzacja-leadow-crm, wejdź nim raz na https://fluxlab.pl/nie-licz-mnie. Poza tym bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację).
+**Zostało otwarte:** Z24 (bilans dla stratega) zostawione na 05:46 z nocnymi liczbami; noc 7/8.10 bez odsyłacza uzupełni Z24; czwartek 9:46 wysyłka 042 do 045.
