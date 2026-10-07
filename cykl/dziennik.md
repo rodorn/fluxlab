@@ -3130,3 +3130,20 @@ Z1 jednym zdaniem: z 32 sesji bez odsyłacza 18 to nasza automatyka, 12 inne, 2 
 **Dowód:** Resend 11:58, 10/10 delivered, 0 bounced: merchant@wp.pl 01a115c1-73e9-7266-bf75-65c6e849d987, biuro@e-pok.pl 01a115c1-af5e-71b3-8e15-011a64f7bd14, biuro@boolska.pl 01a115c1-eac6-75dc-b7a6-3bf276bbacaa, biuro@accountingpartners.pl 01a115c2-2631-7112-8347-71360729d7e2, biuro@obilon.pl 01a115c2-61b5-7d1a-b257-e0b87c6777b9, biuro@abakus.rzeszow.pl 01a115c2-9d16-78cd-b852-cadc589d4067, kontakt@agiorzeszow.pl 01a115c2-d876-71ff-acce-c4b022e448fb, bur@bur.pl 01a115c3-13e8-73d6-9800-ecc83bf8ead5, biuro@honneymoney.com 01a115c3-4f78-719a-ba00-644d19b512cf, biuro@igbc.pl 01a115c3-8af7-727e-9b7d-cd416d1da1af; zapis w `~/Projekty/mail-audyt/wyslane_ks_fu.json` (10). Przed wysyłką Zoho INBOX i Spam od 7.10: 0 wiadomości od tych firm, żadna w `pomijane.json`.
 **Dla Pawła:**
 **Zostało otwarte:** Z7 (12:46, odpowiedzi i sesje z maili Z4 i Z6, zostawione na swoją godzinę, bo po 13 minutach od wysyłki pomiar byłby pusty), Z9 o 14:46 (5 plików 037 do 041 w kolejce), dalej Z10 do Z24.
+
+## 2026-10-07 12:58
+**Kanał:** outreach (Z7, pomiar odpowiedzi) i dystrybucja narzędzi (Z12).
+**Co zrobione:** pomiar porannych wysyłek (0 odpowiedzi, 1 człowiek z maila do biur) oraz osobna etykieta `przyklad` dla uruchomień z gotowego przykładu na /sprawdzenie-nip, /numer-ksef i /audyt-kurierski, wdrożona i sprawdzona na produkcji.
+**Ruch:** ostatnia doba 28 odsłon, 22 osoby (po filtrze: boty 7 sesji, własna automatyka 25 sesji); źródła: mail 6, facebook 4, www.google.com 2, m.facebook.com 1; najczęściej /e-doreczenia-integracja (6), /automatyzacja-leadow-crm (5), /numer-ksef (4); 12 z 28 z telefonu; 0 uruchomień narzędzi.
+**Dowód:**
+
+| kampania | sesje od 09:00 | ludzie | uruchomienia narzędzi | zgłoszenia | odpowiedzi |
+|---|---|---|---|---|---|
+| ksiegowe (Z4, 5 maili 09:56) | 1 | 1 (10:29, Firefox Windows, /e-doreczenia-integracja, 1 odsłona) | 0 | 0 | 0 |
+| ksiegowe-fu (Z6, 10 maili 11:46) | 4 | 0 (11:47:55 i 11:50:12 parami w tej samej sekundzie, 2 z obciętym utm `ksiegowe-`, skaner linków) | 0 | 0 | 0 |
+| maile 6.10 (35) | 0 | 0 | 0 | 0 | 0 |
+
+  Zoho INBOX i Spam od 6.10: tylko FINREAL (4) i Kontomatik (1, zaproszenie od ich supportu ma przyjść dziś, może wpaść do spamu), 0 próśb o wypisanie.
+  Z12: przyciski z przykładami istniały już od commita 8599523, więc zmiana to tylko etykieta zdarzenia; commit d556b8d; test 12:53 z tymczasowego profilu Chrome, sesja wc3tzksz4vcmuxzpefx (do odjęcia w pomiarze): `uruchomiono_skan_przyklad` na /sprawdzenie-nip i /audyt-kurierski, `uruchomiono_numer_ksef_przyklad` na /numer-ksef, wynik widoczny na każdej stronie. IndexNow 111 adresów, 2 z 3.
+**Dla Pawła:** bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację).
+**Zostało otwarte:** Z9 o 14:46 (5 maili 037 do 041, przed wysyłką BAE z odpisu), Z10 o 15:46, Z11 o 16:46, dalej Z13 do Z24.
