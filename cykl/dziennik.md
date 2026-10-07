@@ -3301,3 +3301,21 @@ Z1 jednym zdaniem: z 32 sesji bez odsyłacza 18 to nasza automatyka, 12 inne, 2 
   /wlasnosc-domeny, /strefa-wiedzy/jaka-forma-opodatkowania-jdg-2026 i /strefa-wiedzy/ryczalt-czy-liniowy miały już 2 i więcej, bez zmian. Zamiast wpisu strefy wiedzy o kosztach link do /ceny-energii-jutro dostał /dobor-samochodu, bo żaden wpis nie dotyczy kosztów energii ani auta. Źródła w indeksie (Z13): /audyt-kurierski, /dane-sprzedawcy, /widocznosc-w-google, /kontrola-paliwa, /ceny-energii-jutro, /sprawdz-kontrahenta. IndexNow: 17 adresów, przyjęte przez 2 z 3 punktów.
 **Dla Pawła:** bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację).
 **Zostało otwarte:** Z15 o 20:50 (żądania indeksowania dla tych samych 10 adresów), Z19, Z20, Z22 do Z24.
+
+## 2026-10-07 18:07
+**Kanał:** outreach z gotowym raportem (Z20, kontrola czwartku) i dystrybucja narzędzi (Z22, fora); oba przed czasem, bo pierwsze otwarte Z15 ma żądania indeksowania dopiero od 20:50.
+**Co zrobione:** kolejka maili na czwartek sprawdzona od nowa (4 gotowe, odpisy KRS nadal bez adresu do e-Doręczeń), fora przejrzane bez wątku, na który odpowiada nasze narzędzie.
+**Ruch:** ostatnia doba 42 odsłony, 25 osób (mail 10, facebook 4, m.facebook.com 1, www.google.com 1); 3 uruchomienia narzędzi (2 skan przykład, 1 numer KSeF przykład) i 1 audyt; odrzucone: boty 7 sesji, własna automatyka 25 sesji.
+**Dowód:**
+
+| plik | adres | adres na stronie | KRS i nazwa | BAE w odpisie 17:50 | gotowy |
+|---|---|---|---|---|---|
+| 042_kka | info@kka.pl | tak, strona główna | 0000259754, zgodna | brak (stan 14.01.2026) | tak |
+| 043_podatki-rachunkowosc | biuro@podatki-rachunkowosc.pl | tak, strona główna | 0000147013, zgodna | brak (stan 03.07.2026) | tak |
+| 044_liczbypro | biuro@liczbypro.com | tak, strona główna | 0001182427, zgodna | brak (stan 21.11.2025) | tak |
+| 045_biuroktk | biuro@biuroktk.pl | tak, strona główna | 0001032644, zgodna | brak (stan 16.07.2026) | tak |
+
+  Wszystkie: utm `mail/ksiegowe` doklejany przez `z_utm`, 0 długich myślników, 0 wołaczy, żaden w `pomijane.json` (60) ani w `wypisani`. 4 maile, więc jedna wysyłka w czwartek 9:46 bez `--limit`.
+  Fora: Gofin 1559705 do 1559796, tematy KSeF i e-Doręczeń: 1559733, 1559738, 1559778, żaden nie pasuje wprost do narzędzia, dwa mają już trafną odpowiedź. Allegro: najnowszy wątek o KSeF nadal 1224959. 0 tekstów.
+**Dla Pawła:** bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację).
+**Zostało otwarte:** Z15 o 20:50 (10 żądań indeksowania), Z19 o 00:46, Z23, Z24; czwartek 9:46 wysyłka 042 do 045. Gofin następne sprawdzenie od 1559797.
