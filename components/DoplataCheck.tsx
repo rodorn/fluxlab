@@ -157,10 +157,8 @@ export default function DoplataCheck() {
         Sprawdź jedną pozycję ze swojej faktury kurierskiej
       </h2>
       <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-        Dopłata paliwowa potrafi sięgać prawie połowy ceny bazowej, jej stawka
-        zmienia się co dwa tygodnie i zależy od progu wagowego. Pomyłka o jeden
-        próg jest niewidoczna gołym okiem, a przy kilkuset paczkach robi się z
-        tego realna kwota. Przepisz trzy liczby z faktury.
+        Przepisz trzy liczby z faktury: wagę paczki, kwotę bazową i naliczoną
+        dopłatę.
       </p>
 
       <Przyklady
