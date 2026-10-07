@@ -48,7 +48,7 @@ export default function RachunekWJednymKlikniecu() {
   };
 
   return (
-    <section className="relative z-20 px-6 lg:px-10 py-12 lg:py-16 border-t border-gray-200 dark:border-white/10">
+    <section className="relative z-20 py-12 lg:py-16 px-[max(1.5rem,calc((100%-72rem)/2+1.5rem))] border-t border-gray-200 dark:border-white/10">
       <h2 className="text-xl lg:text-2xl font-semibold tracking-tight text-gray-900 dark:text-white/90">
         Ile kosztuje ręczna obsługa zapytań
       </h2>

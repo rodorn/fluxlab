@@ -13,6 +13,13 @@ const NAV = [
   { href: "/narzedzia", label: "Narzędzia" },
 ];
 
+// Siedem pozycji obok siebie lamalo sie na dwie linie. Trzy filary siedza
+// pod jednym "Usługi", reszta stoi w jednej linii.
+const NAV_RESZTA = NAV.slice(FILARY.length);
+
+const LINK_NAV =
+  "relative whitespace-nowrap text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors";
+
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -43,21 +50,45 @@ export default function Header() {
           flux<span className="text-accent">lab</span>
         </Link>
 
-        {/* Desktop nav, linki z animowanym podkreśleniem */}
-        <nav className="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
-          {NAV.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="relative text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors after:absolute after:-bottom-1.5 after:left-0 after:h-0.5 after:w-0 after:rounded-full after:bg-accent-solid after:transition-all after:duration-300 hover:after:w-full"
+        {/* Desktop nav */}
+        <nav className="hidden lg:flex items-center gap-7 absolute left-1/2 -translate-x-1/2">
+          <div className="group relative">
+            <button
+              type="button"
+              className={`${LINK_NAV} inline-flex items-center gap-1 py-5`}
+              aria-haspopup="true"
             >
+              Usługi
+              <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true" className="transition-transform group-hover:rotate-180 group-focus-within:rotate-180">
+                <path d="M2 3.5l3 3 3-3" stroke="currentColor" strokeWidth="1.4" fill="none" strokeLinecap="round" />
+              </svg>
+            </button>
+            <div className="invisible absolute left-1/2 top-full w-80 -translate-x-1/2 rounded-xl border border-gray-200 bg-white p-2 opacity-0 shadow-xl transition-all group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100 dark:border-white/10 dark:bg-gray-900">
+              {FILARY.map((f) => (
+                <Link
+                  key={f.href}
+                  href={f.href}
+                  className="block rounded-lg px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-white/5"
+                >
+                  <span className="block text-sm font-semibold text-gray-900 dark:text-white">
+                    {f.nazwa}
+                  </span>
+                  <span className="mt-0.5 block text-xs text-gray-500 dark:text-white/55">
+                    {f.opis}
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
+          {NAV_RESZTA.map((item) => (
+            <Link key={item.href} href={item.href} className={LINK_NAV}>
               {item.label}
             </Link>
           ))}
         </nav>
 
         {/* Right */}
-        <div className="hidden md:flex items-center gap-3 shrink-0">
+        <div className="hidden lg:flex items-center gap-3 shrink-0">
           <ThemeToggle />
           <Link href="/kontakt" className="btn-primary text-sm">
             Bezpłatna diagnoza
@@ -65,7 +96,7 @@ export default function Header() {
         </div>
 
         {/* Mobile */}
-        <div className="md:hidden flex items-center gap-1">
+        <div className="lg:hidden flex items-center gap-1">
           <ThemeToggle />
           <button
             type="button"
@@ -97,7 +128,7 @@ export default function Header() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden border-t border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-950 px-5 py-4">
+        <div className="lg:hidden border-t border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-950 px-5 py-4">
           <nav className="flex flex-col gap-1">
             {NAV.map((item) => (
               <Link

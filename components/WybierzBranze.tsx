@@ -294,7 +294,7 @@ export default function WybierzBranze({ wariant = "glowna" }: Props) {
   return (
     <section
       aria-labelledby="wybor-branzy"
-      className="relative z-20 border-t border-gray-200 px-6 py-12 dark:border-white/10 lg:px-10 lg:py-16"
+      className="relative z-20 border-t border-gray-200 py-12 dark:border-white/10 lg:py-16 px-[max(1.5rem,calc((100%-72rem)/2+1.5rem))]"
     >
       {naglowek}
       {przyciski}

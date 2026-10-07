@@ -29,7 +29,7 @@ export default function PoleAudytu() {
   }
 
   return (
-    <div className="mt-5 max-w-2xl">
+    <div className="mx-auto mt-9 max-w-xl text-left">
       <form onSubmit={wyslij} className="flex flex-col gap-2.5 sm:flex-row">
         <label htmlFor="domena-glowna" className="sr-only">
           Adres Twojej strony
@@ -41,17 +41,15 @@ export default function PoleAudytu() {
           value={domena}
           onChange={(e) => setDomena(e.target.value)}
           placeholder="twojafirma.pl"
-          className="flex-1 rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm text-gray-900 outline-none transition-colors focus:border-accent dark:border-white/15 dark:bg-white/[0.04] dark:text-white"
+          className="flex-1 rounded-lg border border-gray-300 bg-white px-4 py-3 text-base text-gray-900 outline-none transition-colors focus:border-accent dark:border-white/15 dark:bg-white/[0.04] dark:text-white"
         />
-        <button type="submit" className="btn-primary justify-center px-5 py-2.5 text-sm">
+        <button type="submit" className="btn-primary justify-center px-6 py-3 text-sm">
           Zrób darmowy audyt
         </button>
       </form>
-      <p className="mt-2 text-xs text-gray-500 dark:text-white/50">
-        Zmierzymy szybkość na komputerze i na telefonie, certyfikat, widoczność w
-        wyszukiwarce i u asystentów AI oraz zabezpieczenia poczty. Raport na
-        ekranie w kilkadziesiąt sekund, bez rejestracji i bez podawania adresu
-        e-mail.
+      <p className="mt-2.5 text-center text-xs text-gray-500 dark:text-white/50">
+        Szybkość, certyfikat, widoczność w Google i u asystentów AI, poczta.
+        Wynik w minutę, bez rejestracji i bez adresu e-mail.
       </p>
     </div>
   );

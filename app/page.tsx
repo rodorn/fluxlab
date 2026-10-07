@@ -15,13 +15,11 @@ const PILLARS = [
     video: "/abstract/automation.mp4",
     videoLight: "/abstract/automation-light.mp4",
     variant: "automation" as const,
-    num: "01",
     desc: "Leady nie trafiają automatycznie do CRM, handlowiec zapomina o follow-upie, a raport składa się ręcznie przez pół dnia. Budujemy przepływ, który robi to sam i nie gubi zgłoszeń.",
     cta: "Znajdź proces do automatyzacji",
     // Akcent: indigo
     ring: "group-hover:ring-accent/80 focus-visible:ring-accent",
     glow: "from-accent/35",
-    numColor: "group-hover:text-accent",
     btn: "text-accent group-hover:bg-accent-solid group-hover:text-white",
   },
   {
@@ -30,13 +28,11 @@ const PILLARS = [
     video: "/abstract/data.mp4",
     videoLight: "/abstract/data-light.mp4",
     variant: "data" as const,
-    num: "02",
     desc: "Dane leżą w kilku systemach i w Excelach, a ERP nie rozmawia z CRM. Spinamy je przez API, porządkujemy i zamieniamy w raport, który przychodzi sam.",
     cta: "Zobacz, jak spiąć systemy",
     // Akcent: zieleń
     ring: "group-hover:ring-emerald-400/80 focus-visible:ring-emerald-400",
     glow: "from-emerald-500/35",
-    numColor: "group-hover:text-emerald-300",
     btn: "text-emerald-300 group-hover:bg-emerald-500 group-hover:text-white",
   },
   {
@@ -45,13 +41,11 @@ const PILLARS = [
     video: "/abstract/web.mp4",
     videoLight: "/abstract/web-light.mp4",
     variant: "web" as const,
-    num: "03",
     desc: "Aplikacje webowe, panele i formularze, które są częścią procesu, a nie osobnym bytem. Strona firmowa też, ale jako element całości, nie jako produkt sam w sobie.",
     cta: "Zobacz, co budujemy",
     // Akcent: fiolet
     ring: "group-hover:ring-violet-400/80 focus-visible:ring-violet-400",
     glow: "from-violet-500/35",
-    numColor: "group-hover:text-violet-300",
     btn: "text-violet-300 group-hover:bg-violet-500 group-hover:text-white",
   },
 ];
@@ -130,87 +124,57 @@ export default function Home() {
     <>
       <Header />
       <main className="relative flex flex-col bg-white text-gray-900 dark:bg-gray-950 dark:text-white min-h-screen pt-16">
-        {/* Hasło */}
-        <div className="relative z-20 px-6 lg:px-10 pt-7 pb-6 lg:pb-8 col-enter-1">
-          <h1 className="text-2xl lg:text-3xl font-semibold tracking-tight text-gray-900 dark:text-white/90">
-            Automatyzujemy procesy sprzedaży i operacji w firmach B2B
+        {/* Hasło: jedno zdanie, jedno wyjaśnienie, jedna akcja. Wcześniej pod
+            nagłówkiem stało sześć elementów drobnym drukiem, a nagłówki kafli
+            były większe od hasła. */}
+        <div className="relative z-20 mx-auto w-full max-w-4xl px-6 pt-16 pb-14 text-center lg:pt-24 lg:pb-20">
+          <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl dark:text-white">
+            Automatyzujemy sprzedaż i{"\u00a0"}operacje w firmach B2B
           </h1>
-          <p className="mt-2 max-w-3xl text-sm lg:text-base text-gray-600 dark:text-white/60">
-            Łączymy CRM, formularze, maile, API i raportowanie tak, żeby ludzie
-            przestali ręcznie przepisywać dane i pilnować procesów.
+          <p className="mx-auto mt-5 max-w-2xl text-base text-gray-600 sm:text-lg dark:text-white/65">
+            Łączymy CRM, formularze, maile i raporty tak, żeby ludzie przestali
+            ręcznie przepisywać dane i pilnować procesów.
           </p>
-          <p className="mt-1.5 text-xs text-gray-500 dark:text-white/60">
-            Pipedrive · HubSpot · Make · n8n · API · Python
-          </p>
-          {/* Darmowe narzedzia to najnizszy prog wejscia, jaki mamy, a strona
-              glowna milczala o nich az do stopki, czyli na telefonie po
-              przewinieciu trzech pelnoekranowych kafli. Liczbe trzymamy zgodna
-              z lista na /narzedzia. */}
-          <Link
-            href="/narzedzia"
-            className="group mt-3 inline-flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-gray-600 dark:text-white/60 hover:text-accent dark:hover:text-accent transition-colors"
-          >
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-semibold text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-400">
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-              Za darmo
-            </span>
-            <span>
-              Sprawdź swoją firmę {LICZBA_NARZEDZI} narzędziami, bez rejestracji{" "}
-              <span
-                aria-hidden="true"
-                className="inline-block transition-transform group-hover:translate-x-0.5"
-              >
-                →
-              </span>
-            </span>
-          </Link>
-
-          {/* Jedyna rzecz, ktora dotyczy kazdego, kto tu trafil: jego wlasna
-              strona. Wynik jest na ekranie, zanim ktokolwiek poprosi go o
-              adres e-mail. */}
           <PoleAudytu />
+          <p className="mt-4 text-sm text-gray-500 dark:text-white/50">
+            Albo{" "}
+            <Link
+              href="/narzedzia"
+              className="font-medium text-accent underline-offset-4 hover:underline"
+            >
+              sprawdź firmę {LICZBA_NARZEDZI} darmowymi narzędziami
+            </Link>
+            .
+          </p>
         </div>
 
-        {/* 3 kolumny wyboru, zaokrąglone karty z odstępem */}
-        <div className="relative z-10 flex-1 grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-5 px-4 lg:px-5 pb-4 lg:pb-5">
-          {PILLARS.map((p, idx) => (
+        {/* Trzy filary */}
+        <div className="relative z-10 mx-auto grid w-full max-w-6xl grid-cols-1 gap-4 px-4 pb-16 md:grid-cols-3 lg:gap-5 lg:px-6">
+          {PILLARS.map((p) => (
             <Link
               key={p.href}
               href={p.href}
-              className={`group relative flex flex-col justify-end overflow-hidden rounded-2xl min-h-[34vh] lg:min-h-[56vh] ring-1 ring-gray-200 dark:ring-white/10 transition-all duration-300 focus:outline-none ${p.ring} hover:ring-2 ${
-                ["col-enter-1", "col-enter-2", "col-enter-3"][idx]
-              }`}
+              className={`group relative flex h-[22rem] flex-col justify-end overflow-hidden rounded-2xl ring-1 ring-gray-200 dark:ring-white/10 transition-all duration-300 focus:outline-none ${p.ring} hover:ring-2`}
             >
-              {/* Animowane tło, zapętlone wideo (Sora): płynna pętla
-                  ping-pong, 10× wolniej, pełna prędkość na hover */}
               <TileVideo
                 srcDark={p.video}
                 srcLight={p.videoLight}
                 poster={p.img}
               />
-              {/* Przyciemnienie dla czytelności */}
-              <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/55 to-gray-950/10 transition-all duration-500 group-hover:from-gray-950/90 group-hover:via-gray-950/35" />
-              {/* Akcentowa poświata od dołu, kolor filaru, na hover */}
+              <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/60 to-gray-950/10 transition-all duration-500 group-hover:from-gray-950/90 group-hover:via-gray-950/40" />
               <div
                 aria-hidden="true"
                 className={`absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t ${p.glow} to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100`}
               />
-
-              {/* Treść, unosi się na hover */}
-              <div className="relative p-7 lg:p-9 transition-transform duration-500 ease-out group-hover:-translate-y-2">
-                <span
-                  className={`text-sm font-mono text-white/40 transition-colors duration-300 ${p.numColor}`}
-                >
-                  {p.num}
-                </span>
-                <h2 className="mt-1.5 text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tight text-white">
+              <div className="relative p-6 lg:p-7 transition-transform duration-500 ease-out group-hover:-translate-y-1">
+                <h2 className="text-2xl font-bold tracking-tight text-white">
                   {nazwaFilaru(p.href)}
                 </h2>
-                <p className="mt-2.5 text-sm lg:text-base text-white/65 leading-relaxed max-w-sm">
+                <p className="mt-2 text-sm leading-relaxed text-white/70">
                   {p.desc}
                 </p>
                 <span
-                  className={`mt-5 inline-flex items-center gap-2 rounded-lg px-3 py-1.5 -ml-3 text-sm font-semibold transition-all duration-300 group-hover:gap-3.5 ${p.btn}`}
+                  className={`mt-4 inline-flex items-center gap-2 rounded-lg px-3 py-1.5 -ml-3 text-sm font-semibold transition-all duration-300 group-hover:gap-3 ${p.btn}`}
                 >
                   {p.cta}
                   <span aria-hidden="true">→</span>
@@ -219,7 +183,6 @@ export default function Home() {
             </Link>
           ))}
         </div>
-
 
         {/* Strona glowna to 20 z 50 odslon na dobe, a uruchomien narzedzi
             bylo zero. Kazdy wynik lezal za przejsciem na inna strone. Ten
@@ -230,7 +193,7 @@ export default function Home() {
             uciazliwosci. Te szesc zdan to jego slowa, a nie nasze nazwy
             kategorii, i kazde prowadzi do strony, ktora opisuje wlasnie ten
             jeden przypadek. */}
-        <section className="relative z-20 px-6 lg:px-10 py-12 lg:py-16 border-t border-gray-200 dark:border-white/10">
+        <section className="relative z-20 py-12 lg:py-16 px-[max(1.5rem,calc((100%-72rem)/2+1.5rem))] border-t border-gray-200 dark:border-white/10">
           <h2 className="text-xl lg:text-2xl font-semibold tracking-tight text-gray-900 dark:text-white/90">
             Najczęściej rozwiązujemy
           </h2>
@@ -274,17 +237,14 @@ export default function Home() {
             powtorzyc i sprawdzic. Na dole, a nie pod haslem: to jest odpowiedz
             na pytanie "skad mamy wiedziec, ze on sie na tym zna", a takie
             pytanie pada po przeczytaniu oferty, nie przed. */}
-        <section className="relative z-20 border-t border-gray-200 px-6 py-12 dark:border-white/10 lg:px-10 lg:py-16">
+        <section className="relative z-20 border-t border-gray-200 py-12 dark:border-white/10 lg:py-16 px-[max(1.5rem,calc((100%-72rem)/2+1.5rem))]">
           <h2 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white/90 lg:text-2xl">
             Skąd mamy wiedzieć, że się na tym znamy
           </h2>
           <p className="mt-2 max-w-3xl text-sm text-gray-600 dark:text-white/60">
-            Nie mamy jeszcze klientów, więc nie pokażemy Wam cudzych logotypów ani
-            opinii. Zamiast tego pokazujemy, co sam zmierzyliśmy. Wzięliśmy 386 stron
-            dealerów samochodowych, bo to branża, w której łatwo o porównywalną
-            próbkę, i sprawdziliśmy je tymi samymi narzędziami, które stoją na tej
-            stronie. Przy każdym badaniu jest metoda i zastrzeżenia, więc można
-            je powtórzyć i sprawdzić, czy się mylimy.
+            Nie pokazujemy cudzych logotypów. Pokazujemy, co sami zmierzyliśmy
+            na 386 stronach dealerów tymi samymi narzędziami, które są tutaj,
+            z metodą, którą każdy może powtórzyć.
           </p>
           <div className="mt-6 grid max-w-3xl gap-3 sm:grid-cols-3">
             {BADANIA.map((b) => (
