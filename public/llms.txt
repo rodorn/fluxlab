@@ -22,6 +22,15 @@
 - [n8n](https://fluxlab.pl/n8n), [n8n dla CRM](https://fluxlab.pl/n8n-dla-crm), [Make czy n8n do CRM](https://fluxlab.pl/make-vs-n8n-crm), [Zapier czy Make](https://fluxlab.pl/zapier-make): kiedy które narzędzie i jak je wdrażamy.
 - [Automatyzacja z AI](https://fluxlab.pl/automatyzacja-ai): klasyfikacja zgłoszeń, streszczenia i analiza treści wpięte w CRM.
 - [Systemy i strony](https://fluxlab.pl/strony-www): aplikacje webowe, panele i formularze będące częścią procesu.
+- [Automatyzacja procesów biznesowych](https://fluxlab.pl/automatyzacja-procesow-biznesowych): od czego zaczynamy, jak liczymy zwrot i co wdrażamy najpierw.
+- [Automatyczne przypisywanie leadów](https://fluxlab.pl/automatyczne-przypisywanie-leadow): lead trafia do handlowca według regionu, źródła, produktu albo obciążenia.
+- [Formularz prosto do Pipedrive](https://fluxlab.pl/automatyzacja-formularza-do-pipedrive): osoba, firma i deal zakładane same, z zadaniem kontaktu.
+- [Follow-upy w CRM](https://fluxlab.pl/automatyzacja-follow-up): przypomnienia, sekwencje po etapach deala i eskalacje.
+- [Czas reakcji na leada](https://fluxlab.pl/czas-reakcji-na-leada): jak zejść z godzin do minut bez dokładania pracy handlowcom.
+- [Raporty z Pipedrive](https://fluxlab.pl/raportowanie-z-pipedrive): pipeline, źródła leadów i prognozy bez poniedziałkowego Excela.
+- [CRM jako system pracy](https://fluxlab.pl/crm-jako-system-pracy): etapy, pola i statusy, które wymuszają proces zamiast notatnika.
+- [Modelowe przepływy](https://fluxlab.pl/case-study): obsługa leada i tygodniowy raport rozpisane na czynności i minuty. To modele, nie opisy cudzych wdrożeń.
+- [Jak pracujemy](https://fluxlab.pl/jak-pracuje) i [pełny katalog](https://fluxlab.pl/produkty).
 
 ## Pytania i praktyczne odpowiedzi
 
@@ -256,13 +265,27 @@ Ceny energii na jutro, godzina po godzinie, na https://fluxlab.pl/ceny-energii-j
 - [Audyt marż sklepu](https://fluxlab.pl/audyt-marz): zysk netto na sztuce po prowizjach, zwrotach i dopłatach do wysyłki, martwy stok. 49 zł.
 - [Audyt tłumaczeń strony i hreflang](https://fluxlab.pl/kontrola-jezykow): polskie fragmenty w wersjach obcojęzycznych i brakujące oznaczenia dla wyszukiwarki. Od 99 zł.
 - [Kontrola paliwa we flocie](https://fluxlab.pl/kontrola-paliwa): transakcje z karty paliwowej zestawione z trasą, tankowanie do kanistra i sklonowana karta. Od 99 zł.
+- [Landing z formularzem i płatnością](https://fluxlab.pl/landing-z-platnoscia): jedna strona z BLIK i przelewami, zgłoszenie zapisane przed płatnością. Od 299 zł.
 - [Analiza lokalizacji pod lokal](https://fluxlab.pl/analiza-lokalizacji): konkurenci w promieniu 1, 3 i 5 km i liczba mieszkańców na punkt. Sprawdzenie darmowe, raport od 190 zł.
 
 ## Własne badania
 
 - [Co jest nie tak ze stronami dealerów samochodowych](https://fluxlab.pl/strefa-wiedzy/co-jest-nie-tak-ze-stronami-dealerow): 386 sprawdzonych stron.
 - [Podszywanie się pod salony samochodowe](https://fluxlab.pl/strefa-wiedzy/podszywanie-pod-salony-samochodowe): pod 84 procent z nich można się podszyć mailowo.
-- [Błędy w rejestrze obiektów hotelarskich](https://fluxlab.pl/strefa-wiedzy/bledy-w-rejestrze-obiektow-hotelarskich)
+- [Błędy w rejestrze obiektów hotelarskich](https://fluxlab.pl/strefa-wiedzy/bledy-w-rejestrze-obiektow-hotelarskich): 504 wpisy z województwem zapisanym jako liczba 1.
+- [Czy asystenci AI widzą strony dealerów](https://fluxlab.pl/strefa-wiedzy/czy-ai-widzi-strony-dealerow): roboty AI blokuje 0,8 procent z 386 domen.
+- [Dane z badań w CSV](https://fluxlab.pl/dane-z-badan): surowe zestawienia do pobrania i cytowania ze źródłem.
+- [Otwarty kod i działające prototypy](https://fluxlab.pl/realizacje)
+
+## Poradniki
+
+- Narzędzia do automatyzacji: [Zapier, Make i n8n](https://fluxlab.pl/strefa-wiedzy/zapier-make-n8n-porownanie), [Zapier czy Make](https://fluxlab.pl/strefa-wiedzy/zapier-vs-make), [Make czy n8n](https://fluxlab.pl/strefa-wiedzy/make-vs-n8n), [n8n czy Zapier](https://fluxlab.pl/strefa-wiedzy/n8n-vs-zapier).
+- Wybór CRM: [HubSpot czy Pipedrive](https://fluxlab.pl/strefa-wiedzy/hubspot-vs-pipedrive), [Pipedrive czy Salesforce](https://fluxlab.pl/strefa-wiedzy/pipedrive-vs-salesforce), [Salesforce w małej firmie](https://fluxlab.pl/strefa-wiedzy/salesforce-dla-malej-firmy), [CRM dla jednoosobowej firmy](https://fluxlab.pl/strefa-wiedzy/crm-dla-jednoosobowej-firmy).
+- CRM w praktyce: [od czego zacząć automatyzację](https://fluxlab.pl/strefa-wiedzy/automatyzacja-crm-od-czego-zaczac), [porządek w procesie sprzedaży](https://fluxlab.pl/strefa-wiedzy/jak-uporzadkowac-proces-sprzedazy-w-crm), [połączenie CRM z innymi systemami](https://fluxlab.pl/strefa-wiedzy/jak-polaczyc-crm-z-innymi-systemami), [kiedy integracja API ma sens](https://fluxlab.pl/strefa-wiedzy/integracje-api-w-firmie-kiedy-warto).
+- Raporty i zwrot: [automatyczne raportowanie](https://fluxlab.pl/strefa-wiedzy/jak-zautomatyzowac-raportowanie-w-firmie), [błędy w raportach sprzedaży](https://fluxlab.pl/strefa-wiedzy/najczestsze-bledy-w-raportowaniu-sprzedazy), [jak policzyć ROI z automatyzacji](https://fluxlab.pl/strefa-wiedzy/jak-policzyc-roi-z-automatyzacji), [automatyzacja czy nowy etat](https://fluxlab.pl/strefa-wiedzy/automatyzacja-vs-zatrudnienie), [licznik konwersji pokazuje zero](https://fluxlab.pl/strefa-wiedzy/konwersje-pokazuja-zero).
+- AI w firmie: [co to jest automatyzacja procesów](https://fluxlab.pl/strefa-wiedzy/co-to-jest-automatyzacja-procesow-biznesowych), [zastosowania AI](https://fluxlab.pl/strefa-wiedzy/ai-w-automatyzacji-firm), [kiedy AI ma sens, a kiedy nie](https://fluxlab.pl/strefa-wiedzy/kiedy-ai-ma-sens-a-kiedy-nie), [kilkanaście sesji AI naraz](https://fluxlab.pl/strefa-wiedzy/panel-do-sesji-ai).
+- Poczta firmowa: [dlaczego maile trafiają do spamu](https://fluxlab.pl/strefa-wiedzy/maile-trafiaja-do-spamu), [czy ktoś może się podszyć pod firmowy adres](https://fluxlab.pl/strefa-wiedzy/podszywanie-sie-pod-firmowy-email).
+- JDG w 2026: [forma opodatkowania](https://fluxlab.pl/strefa-wiedzy/jaka-forma-opodatkowania-jdg-2026), [skala czy liniowy](https://fluxlab.pl/strefa-wiedzy/skala-czy-liniowy-jdg), [ryczałt czy liniowy](https://fluxlab.pl/strefa-wiedzy/ryczalt-czy-liniowy), [składka zdrowotna](https://fluxlab.pl/strefa-wiedzy/jak-liczyc-zdrowotna-jdg), [Mały ZUS Plus](https://fluxlab.pl/strefa-wiedzy/maly-zus-plus-kiedy-sie-oplaca), [VAT w JDG](https://fluxlab.pl/strefa-wiedzy/vat-w-jdg-kiedy-warto).
 
 ## Kontakt
 
