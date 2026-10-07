@@ -22,7 +22,7 @@ export const businessTools: Narzedzie[] = [
   {
     title: "Co z KSeF obowiązuje Was już dziś",
     description:
-      "Naciśnijcie swoją grupę podatnika, a rozpiszemy, od kiedy musicie wystawiać faktury w KSeF, który wyjątek jeszcze Was chroni i ile dni mu zostało do 1 stycznia 2027, kiedy kończą się wszystkie przepisy przejściowe naraz. Bez wpisywania czegokolwiek.",
+      "Wybierzcie grupę podatnika, a pokażemy, od kiedy wystawiacie faktury w KSeF i jaki wyjątek jeszcze Was chroni.",
     href: "/ksef-integracja",
     ikona: "faktura",
     badge: "Nowość",
@@ -30,7 +30,7 @@ export const businessTools: Narzedzie[] = [
   {
     title: "Lista KSeF na 1 stycznia 2027",
     description:
-      "Siedem pytań o to, co musicie mieć domknięte, zanim skończą się przepisy przejściowe KSeF: faktury poza systemem, kasa, numer KSeF w przelewie, faktury kosztowe, tryb offline, numeracja faktur i odrzucenia. Na końcu wykaz braków do wysłania księgowej, a biura rachunkowe dostają gotową wiadomość do klientów.",
+      "Siedem pytań o to, co trzeba domknąć przed 1 stycznia 2027, z listą braków do wysłania księgowej.",
     href: "/ksef-2027",
     ikona: "faktura",
     badge: "Nowość",
@@ -38,7 +38,7 @@ export const businessTools: Narzedzie[] = [
   {
     title: "Sprawdzenie numeru KSeF",
     description:
-      "Wklejcie numer KSeF albo całą listę tytułów przelewów, a sprawdzimy sumę kontrolną, NIP sprzedawcy i datę przyjęcia faktury. Od 1 stycznia 2027 numer trafia do przelewu, więc literówkę lepiej złapać przed bankiem. Liczymy w przeglądarce, nic nie wysyłamy.",
+      "Wklejcie numer KSeF albo tytuły przelewów, a sprawdzimy sumę kontrolną, NIP i datę faktury.",
     href: "/numer-ksef",
     ikona: "faktura",
     badge: "Nowość",
@@ -46,7 +46,7 @@ export const businessTools: Narzedzie[] = [
   {
     title: "Od kiedy musicie mieć adres do e-Doręczeń",
     description:
-      "Naciśnijcie, jak jest zarejestrowany Wasz podmiot, a policzymy datę z ustawy i dni, które zostały albo które minęły od terminu. Terminy wchodzą etapami, inaczej dla firmy z CEIDG, inaczej dla spółki z KRS, inaczej dla zawodów zaufania publicznego. Bez wpisywania czegokolwiek.",
+      "Wybierzcie formę działalności, a policzymy, od kiedy musicie mieć adres do e-Doręczeń.",
     href: "/e-doreczenia-integracja",
     ikona: "pieczec",
     badge: "Nowość",
@@ -54,56 +54,56 @@ export const businessTools: Narzedzie[] = [
   {
     title: "Pełny audyt techniczny strony",
     description:
-      "Jedno wpisanie adresu zamiast siedmiu osobnych sprawdzeń. Mierzymy szybkość na komputerze i osobno na telefonie, ważymy każdy plik, czytamy certyfikat, sprawdzamy widoczność w wyszukiwarce, dostęp dla asystentów AI i zabezpieczenia poczty. Na końcu dostajecie kolejność poprawek i cenę naprawy przy każdej pozycji.",
+      "Szybkość, certyfikat, widoczność w Google i u asystentów AI oraz poczta, z ceną naprawy przy każdej pozycji.",
     href: "/audyt-strony",
     ikona: "lupa",
   },
   {
     title: "Czy asystent AI widzi Twoją stronę",
     description:
-      "Wpiszcie domenę, a sprawdzimy siedem rzeczy, od których zależy, czy roboty zbierające treść dla ChatuGPT, Claude'a i Perplexity mogą ją w ogóle przeczytać: dostęp w robots.txt, treść widoczną bez uruchamiania skryptów, dane uporządkowane, metadane, mapę strony i plik llms.txt.",
+      "Sprawdzamy, czy ChatGPT, Claude i Perplexity mogą przeczytać Waszą stronę i zrozumieć, czym się zajmujecie.",
     href: "/widocznosc-w-ai",
     ikona: "lupa",
   },
   {
     title: "Ile naprawdę płacisz za Zapiera i Make",
     description:
-      "Zapier i Make liczą nie uruchomienia, tylko pojedyncze kroki, więc rachunek rośnie szybciej, niż wynika z cennika. Podajcie liczbę uruchomień i kroków, a pokażemy realny koszt i po ilu miesiącach zwróciłoby się przeniesienie na własny serwer.",
+      "Liczymy, ile miesięcznie płacicie za Zapiera albo Make i ile kosztowałyby te same scenariusze na własnym serwerze.",
     href: "/tansze-automatyzacje",
     ikona: "moneta",
   },
   {
     title: "Sprawdzenie pozycji z faktury kurierskiej",
     description:
-      "Przepiszcie trzy liczby z faktury, a policzymy, czy dopłata paliwowa zgadza się ze stawką dla Waszego progu wagowego i ile ta sama pomyłka kosztuje przy kilkuset paczkach miesięcznie.",
+      "Przeliczamy pozycje z faktury kurierskiej i pokazujemy, gdzie dopłata za wagę albo paliwo jest za wysoka.",
     href: "/audyt-kurierski",
     ikona: "paczka",
   },
   {
     title: "Czy klient ustali, komu płaci",
     description:
-      "Wpiszcie adres firmy, a wyciągniemy ze strony, kontaktu i regulaminu numer NIP oraz numer konta i sprawdzimy je w wykazie podatników VAT, dokładnie tak jak zrobi to księgowość Waszego klienta przed przelewem.",
+      "Wyciągamy NIP i numer konta z Waszej strony i sprawdzamy, czy zgadzają się z wykazem podatników VAT.",
     href: "/dane-sprzedawcy",
     ikona: "pieczec",
   },
   {
     title: "Sprawdzenie NIP i kontrahenta",
     description:
-      "Wpiszcie NIP i sprawdźcie w wykazie Ministerstwa Finansów, czy firma istnieje, czy jest czynnym podatnikiem VAT, od kiedy działa i ile rachunków zgłosiła. Bez rejestracji i bez limitu prób.",
+      "Wpiszcie NIP, a sprawdzimy firmę w wykazie VAT, rachunki bankowe i datę rejestracji.",
     href: "/sprawdzenie-nip",
     ikona: "lupa",
   },
   {
     title: "Audyt bezpieczeństwa poczty",
     description:
-      "Wpiszcie domenę firmy i sprawdźcie w kilka sekund, czy ktoś może podszyć się pod Wasz adres i czy Wasze maile trafiają do klientów. Analiza SPF, DKIM i DMARC z publicznego DNS, bez rejestracji.",
+      "Sprawdzamy SPF, DKIM i DMARC, czyli czy ktoś może wysyłać maile jako Wy i czemu trafiacie do spamu.",
     href: "/audyt-poczty",
     ikona: "koperta",
   },
   {
     title: "Kalkulator kosztu obsługi leadów",
     description:
-      "Sprawdźcie, ile miesięcznie kosztuje ręczne przepisywanie leadów, zakładanie tematów w CRM i ręczne raporty. Realny koszt w zł, nie ogólniki.",
+      "Ile miesięcznie kosztuje ręczne przepisywanie leadów, zadania w CRM i ręczne raporty.",
     href: "/koszt-recznej-obslugi-leadow",
     ikona: "kalkulator",
   },
