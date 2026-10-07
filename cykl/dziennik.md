@@ -3179,3 +3179,19 @@ Z1 jednym zdaniem: z 32 sesji bez odsyłacza 18 to nasza automatyka, 12 inne, 2 
 **Dowód:** `~/Projekty/fluxlab-meta/posty/kolejka.json`: [0] `031-ceny-pradu-jutro` „Ceny prądu na jutro: najtańsze i najdroższe 4 godziny” (dane z /ceny-energii-jutro odczytane 13:57: średnia 587 zł/MWh, najtaniej 11:30 do 15:30 średnio 473 zł, najdrożej 16:30 do 20:30 średnio 771 zł, kwadranse 446,81 do 890,68 zł, 0 poniżej zera), [1] `032-spolka-bez-adresu-edoreczen` „Co piąta spółka biura rachunkowego nie ma adresu do e-Doręczeń” (67 z 342 spółek z partii KRS od 4.10, księgowe i kancelarie, po deduplikacji numerów KRS; plan podawał 54 z 272, to stan sprzed partii 19 i 20). Oba z linkiem `utm_source=facebook&utm_campaign=narzedzia`, 0 długich myślników, bez klientów. Grafiki `posty/031-*/grafika.png`, `posty/032-*/grafika.png` obejrzane, punkty skrócone do jednej linii, żeby nie dotykały nagłówka.
 **Dla Pawła:** bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację).
 **Zostało otwarte:** Z9 o 14:46 (5 maili 037 do 041), Z10 o 15:46, Z11 o 16:46, Z15 o 20:50 (10 adresów z wpisu 13:56); pomiar sesji `facebook/narzedzia` po 16:00 i 20:00.
+
+## 2026-10-07 14:00
+**Kanał:** widoczność w asystentach AI (Z17 z planu, pomiar; zrobione przed czasem, bo Z9 ma „nie wcześniej niż 14:46”).
+**Co zrobione:** pomiar wejść z asystentów AI od 1.10 i stanu Binga (który karmi Copilota i wyszukiwanie ChatGPT); nic nie zmieniane w llms.txt ani treści, zgodnie z planem.
+**Ruch:** bez zmian wobec wpisu 13:56 (42 odsłony, 24 osoby w dobie; mail 6, facebook 4, www.google.com 2, m.facebook.com 1).
+**Dowód:** VPS `ruch.sqlite`, sesje ze źródłem chatgpt, perplexity, bing, copilot, claude.ai, gemini od 1.10:
+
+| data | źródło | pierwsza strona | odsłony | zdarzenia | urządzenie | w llms.txt |
+|---|---|---|---|---|---|---|
+| 2.10 10:45 | chatgpt.com | /kalkulator-podatkowy | 1 | 0 | Chrome Windows | tak |
+| 5.10 09:35 | chatgpt.com | /audyt-kurierski | 1 | 0 | Safari iOS | tak |
+| 6.10 08:39 | chatgpt.com | /audyt-kurierski (potem /automatyzacja-leadow-crm) | 2 | 0 | Chrome Windows | tak |
+
+  0 sesji z perplexity, bing, copilot, claude.ai, gemini. llms.txt ma 112 adresów fluxlab.pl (plan podawał 58, liczone były chyba tylko pozycje listy). Bing Webmaster (profil 9228): sitemapa `https://fluxlab.pl/sitemap.xml` status Success, 108 adresów odkrytych, ostatni odczyt 6.10 (6.10 było Processing); Site Explorer „Indexed URLs: No data available”, Search Performance „check back in 48 hours”. Nic nie klikane.
+**Dla Pawła:** bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację).
+**Zostało otwarte:** Z9 o 14:46 (5 maili 037 do 041), Z10, Z11, Z15 o 20:50, Z16, Z18 do Z24; Bing ponownie za 2 dni (liczba zindeksowanych).
