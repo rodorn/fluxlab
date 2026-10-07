@@ -3147,3 +3147,27 @@ Z1 jednym zdaniem: z 32 sesji bez odsyłacza 18 to nasza automatyka, 12 inne, 2 
   Z12: przyciski z przykładami istniały już od commita 8599523, więc zmiana to tylko etykieta zdarzenia; commit d556b8d; test 12:53 z tymczasowego profilu Chrome, sesja wc3tzksz4vcmuxzpefx (do odjęcia w pomiarze): `uruchomiono_skan_przyklad` na /sprawdzenie-nip i /audyt-kurierski, `uruchomiono_numer_ksef_przyklad` na /numer-ksef, wynik widoczny na każdej stronie. IndexNow 111 adresów, 2 z 3.
 **Dla Pawła:** bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację).
 **Zostało otwarte:** Z9 o 14:46 (5 maili 037 do 041, przed wysyłką BAE z odpisu), Z10 o 15:46, Z11 o 16:46, dalej Z13 do Z24.
+
+## 2026-10-07 13:56
+**Kanał:** Google (Z13 z planu, kontrola indeksowania; zrobione przed czasem, bo Z9 ma „nie wcześniej niż 14:46”).
+**Co zrobione:** wszystkie 8 stron zgłoszonych 6.10 20:43 weszło do indeksu Google w niecałą dobę; znalezione kolejne 10 stron spoza indeksu, gotowa lista na Z15 (20:50).
+**Ruch:** ostatnia doba 42 odsłony, 24 osoby (po filtrze: boty 7 sesji, własna automatyka 25 sesji); źródła: mail 6, facebook 4, www.google.com 2, m.facebook.com 1; najczęściej /audyt-strony (8), /automatyzacja-leadow-crm (6), /numer-ksef (6), /e-doreczenia-integracja (6); 13 z 42 z telefonu. Uruchomienia narzędzi 3, z tego 2 przykłady to nasz test z 12:53, a 1 prawdziwe: sesja b5pnsrvm, Chrome macOS, bez odsyłacza, 7.10 11:17 audyt strony, wynik słaby, rozwinięte wszystkie 5 sekcji wyniku w 70 s.
+**Dowód:** `skrypty-raport/gsc_indeksuj.py --tylko-stan` (nowy przełącznik: tylko odczyt stanu, bez żądania), Sprawdzenie URL w GSC:
+
+| adres | stan 6.10 | stan 7.10 |
+|---|---|---|
+| /sprawdzenie-nip | nie w Google | w Google |
+| /audyt-poczty | nie w Google | w Google |
+| /sprawdz-kontrahenta | nie w Google | w Google |
+| /kalkulator-podatkowy | nie w Google | w Google |
+| /audyt-kurierski | nie w Google | w Google |
+| /dane-sprzedawcy | nie w Google | w Google |
+| /strona-po-wlamaniu | nie w Google | w Google („Strona jest w indeksie”) |
+| /automatyzacja-procesow-biznesowych | nie w Google | w Google |
+| /ceny-energii-jutro | nie sprawdzano | w Google |
+| /sprawdz-auto (Z2) | w Google | w Google |
+| /numer-ksef (Z12) | w Google | w Google |
+
+  Kolejne 20 adresów z mapy (wcześniej niesprawdzane): w Google /ksef-integracja, /ksef-2027, /ile-spolek-znika-z-krs, /czujka-rejestrowa, /kontrola-paliwa, /naprawa-https, /widocznosc-w-google, /audyt-crm, /koszt-recznej-obslugi-leadow, /dane-z-badan; nie w Google: /audyt-chatbota, /audyt-marz, /panel-zwrotow, /rejestr-cen, /wlasnosc-domeny, /kalkulator-kosztow, /analiza-lokalizacji, /kontrola-jezykow, /strefa-wiedzy/jaka-forma-opodatkowania-jdg-2026, /strefa-wiedzy/ryczalt-czy-liniowy. Te 10 to lista na Z15 (wszystkie nadal „nie w Google”, więc strony zmienione dziś i /ceny-energii-jutro odpadają, są już w indeksie).
+**Dla Pawła:** bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację).
+**Zostało otwarte:** Z9 o 14:46 (5 maili 037 do 041, BAE ponownie z odpisu przed wysyłką), Z10, Z11, Z14 (po 14:00), Z15 o 20:50 z listą wyżej; Z21 dostaje teraz te 10 stron zamiast 8 wczorajszych (linki z treści).
