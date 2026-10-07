@@ -3052,3 +3052,54 @@ Z1 jednym zdaniem: z 32 sesji bez odsyłacza 18 to nasza automatyka, 12 inne, 2 
 **Ocena kanałów:** biura rachunkowe drogą KRS 0 nowych / 1 lead / 9 h, materiał wyczerpany (1 mail na 6 miast); dziś 1 wysyłka gotowych 5, follow-up do 11 z 5.10, 2 h nowych źródeł domen (pkt.pl `uslugi-ksiegowe` i `kancelaria-podatkowa`, sprawdzone 06:24: Radom 20 i 19 domen; katalog CIK). Inne segmenty zamknięte. Google 3/13 osób, wyświetlenia 195, 219, 244, 4 h. Facebook 5/13, 0 h, 1 zlecenie dwóch tematów. Narzędzia 0 uruchomień przy 9 odsłonach stron narzędzi dziennie, 2 h (przycisk „Pokaż na przykładzie"). AI 1/3, 3 h nocnych bez efektu, do 14.10 tylko pomiar. Fora 1 h. Pomiar 1 h (filtr własnej automatyki w `raport_ruchu.py`).
 **Plan:** `cykl/plan-ruchu.md`, 24 zadania 06:46 do 05:46. Dzień: filtr automatyki w raporcie, frazy 11 do 65 z GSC i tytuł, follow-up (segment `ksiegowe-fu`), wysyłka 5 o 9:46, nowe kategorie pkt.pl 10:46, follow-up 11:46, odpowiedzi 12:46 i 15:46, CIK 13:46, wysyłka nowych 14:46, bilans 16:46. Wieczór i noc: „Pokaż na przykładzie" na 3 narzędziach, kontrola 8 wczorajszych żądań GSC, posty FB 031 (ceny prądu) i 032 (spółki bez e-Doręczeń), 10 żądań indeksowania po 20:50, partia na czwartek, pomiar AI i Bing, zrzuty 390 px, statusy nocne, kontrola kolejki, linki wewnętrzne, Gofin, sesje bez odsyłacza i `/automatyzacja-leadow-crm`, bilans.
 **Mail do Pawła:** wysłany 06:38 z pawel@fluxlab.pl, msgid 179134698646.3347086, temat „FluxLab ruch, plan na 7.10.2026: 21 osób w dobie, 0 odpowiedzi na 35 maili"; „Dla Pawła": odpowiedź do Profit Polska, 6 tekstów Gofin, decyzja o dalszym outreachu mailowym (390 maili, 1 lead, 9 h dziennie).
+
+## 2026-10-07 10:07
+**Kanał:** pomiar, Google i outreach (plan stratega 7.10, zadania Z1 do Z4).
+**Co zrobione:** raport ruchu odrzuca serie własnych sprawdzeń GSC (Z1); /sprawdz-auto ma tytuł i opis pod frazę „sprawdz auto” (Z2); przygotowany follow-up do 10 biur rachunkowych z 5.10 (Z3); wysłane 5 maili do biur 032 do 036, wszystkie delivered (Z4).
+**Ruch:** przed filtrem 45 odsłon, 32 osoby; po filtrze z Z1 ostatnia doba 29 odsłon, 22 osoby (wzrost o 23% wobec średniej 23,6). Źródła: facebook 4, mail 2, www.google.com 2, chatgpt.com 1, m.facebook.com 1, reszta bez odsyłacza. Najczęściej /automatyzacja-leadow-crm 7, /audyt-kurierski 4, / 4, /numer-ksef 3. Zero uruchomień narzędzi.
+**Dowód:**
+- Z1: fluxlab-ruch 89d2905, `bez_automatyki` w `bez_botow`; doba 6.10 06:00 do 7.10 06:00:
+
+| | odsłony | osoby |
+|---|---|---|
+| przed | 45 | 32 |
+| po | 29 | 22 |
+
+  Odrzucone łącznie 25 sesji, 42 odsłony, trzy serie: 4.10 16:52 (4 sesje), 5.10 19:56 do 20:00 (11), 6.10 20:43 do 20:47 (10), wszystkie to sprawdzenia adresów w Search Console (Chrome Linux i Chrome Android naraz, co pół minuty). Innych sesji filtr nie złapał. `cykl/pomiar-kanalow.py` pobiera teraz przeglądarkę i system, więc liczy to samo (22 sesje w 24 h).
+- Z2: GSC, 28 dni (do 4.10), 65 zapytań, 26 bez „flux” z co najmniej 2 wyświetleniami:
+
+| fraza | kliknięcia | wyśw. | poz. |
+|---|---|---|---|
+| mail firmowy | 0 | 13 | 24,5 |
+| automatyzacja crm ai | 0 | 10 | 28,2 |
+| "enova" | 0 | 8 | 2,1 |
+| audyt google ads | 0 | 8 | 27,6 |
+| asystent ai na stronie | 0 | 5 | 48,4 |
+| "idea getin leasing" | 0 | 4 | 1,2 |
+| ("amodit" or "archman" or "saldeosmart") ("partner" or "reseller" or "wdrożenie" or "dystrybutor") polska -site:linkedin.com -site:twitter.com | 0 | 4 | 3,2 |
+| automatyzacja crm | 0 | 4 | 23,2 |
+| email firmowy | 0 | 4 | 29,2 |
+| "błędami cenowymi" | 0 | 3 | 1,3 |
+| crm dla firm leasingowych | 0 | 3 | 4,3 |
+| sprawdz auto | 0 | 3 | 7,0 |
+| "automatyzacja podatków" | 0 | 3 | 7,3 |
+| marketing automation agency | 0 | 3 | 82,3 |
+| "baselinker" "błąd" | 0 | 2 | 3,5 |
+| "efl" "raport" | 0 | 2 | 4,0 |
+| "e-mail marketing" | 0 | 2 | 5,0 |
+| "agencji marketingowej" | 0 | 2 | 6,5 |
+| asystent ai na stronę | 0 | 2 | 9,0 |
+| crm księgowość | 0 | 2 | 14,0 |
+| crm dla branzy leasingowej | 0 | 2 | 17,5 |
+| audyt konta google ads | 0 | 2 | 22,0 |
+| ocr dla biur rachunkowych | 0 | 2 | 31,0 |
+| automatyzacja e-commerce | 0 | 2 | 70,5 |
+| system ticketowy dla e-commerce | 0 | 2 | 77,5 |
+| automatyzacja sprzedaży e-commerce | 0 | 2 | 81,5 |
+
+  Strony dla fraz bez kliknięć (filtr zapytania, zakładka Strony): mail firmowy i email firmowy: /strefa-wiedzy/podszywanie-sie-pod-firmowy-email; automatyzacja crm ai i automatyzacja crm: /strefa-wiedzy; "enova" i "automatyzacja podatków": /automatyzacja-dla-biur-rachunkowych; audyt google ads i audyt konta google ads: /audyt-google-ads; asystent ai na stronie/stronę: /widocznosc-w-ai; "idea getin leasing", crm dla firm leasingowych, crm dla branzy leasingowej, "błędami cenowymi", "efl" "raport": /automatyzacja-crm-leasing; sprawdz auto: /sprawdz-auto; crm księgowość: /integracja-crm-z-erp; "baselinker" "błąd": /produkty; "e-mail marketing": /automatyzacja-dla-ecommerce; "agencji marketingowej": /automatyzacja-dla-agencji-marketingowych.
+  Wybór: „sprawdz auto” (poz. 7,0, 3 wyśw., 0 kliknięć). Pozostałe frazy z pozycją do 20 trafiają na strony wykluczone albo zmienione 4.10 do 6.10 (/integracja-crm-z-erp 6.10, /widocznosc-w-ai 4.10), a frazy w cudzysłowie z operatorami wyglądają na zapytania narzędzi, nie ludzi. Commit f016cdb; `curl https://fluxlab.pl/sprawdz-auto`: „Sprawdź auto z Otomoto i OLX przed zakupem od 5 zł | Fluxlab”, opis „Wklej link z Otomoto lub OLX. W 24 h raport PDF: cena wobec podobnych ofert, spójność przebiegu, usterki modelu i argumenty do negocjacji. Od 5 zł.”; w nagłówku strony „a ja sprawdzamy” poprawione na „a my sprawdzamy”. IndexNow 111 adresów, 2 z 3.
+- Z3: `~/Projekty/mail-audyt/maile_ksiegowe_fu/` 10 plików, `wyslij_segment.py ksiegowe-fu --proba` renderuje 10 z utm_campaign=ksiegowe-fu; KRS: MERCHANT 0000112973, E-POK 0000422082, Boolska.pl 0000437661, Accounting Partners 0000342934, OBILON 0000674173, ABAKUS 0000447089, AGIO 0000686662, BUR 0000175527, LOWTAX 0000481563, INVEST GROUP 0000158632; odpisy pobrane 7.10 nadal bez BAE; Profit Polska (11. adres) pominięta, bo odpisała i jest leadem.
+- Z4: 5 maili 09:56, delivered: biurobomar 01a1155c-d44b, taxcontrol 01a1155d-0fed, contafinanse 01a1155d-4b42, biuro-mp 01a1155d-86e4, kkfalfa 01a1155d-c23d.
+**Dla Pawła:** bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację).
+**Zostało otwarte:** Z5 (pkt.pl `uslugi-ksiegowe` i `kancelaria-podatkowa`, 12 miast), Z6 wysyłka follow-upu o 11:46 (10 maili, nie 11), dalej według planu.
