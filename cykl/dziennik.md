@@ -3240,4 +3240,4 @@ Z1 jednym zdaniem: z 32 sesji bez odsyłacza 18 to nasza automatyka, 12 inne, 2 
 
   9,3 maila na 100 domen. Pliki `maile_ksiegowe_edoreczenia/cik_domeny2_2026-10-07.json`, `krs_partia21_2026-10-07.json`, maile 042_kka (Gliwice, 0000259754), 043_podatki-rachunkowosc (Bielsko-Biała, 0000147013), 044_liczbypro (Chorzów, 0001182427, wpis 2025, zdanie o obowiązku od dnia wpisu), 045_biuroktk (Nowy Targ, 0001032644); adres ogólny ze strony, KRS na stronie albo przez NIP z wykazu VAT, PKD 69.20, 0 długich myślników, render `--proba --limit=80` z utm `ksiegowe`.
 **Dla Pawła:** bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację).
-**Zostało otwarte:** Z10 o 15:46 (odpowiedzi i sesje po Z4, Z6, Z9), Z11 o 16:46 (CIK w tabeli źródeł: 2 rundy, 107 domen, 8 maili), Z15 o 20:50, Z19 do Z24; kolejka na czwartek 4 pliki 042 do 045; CIK ma jeszcze 13 województw.
+**Zostało otwarte:** Z10 o 15:46 (odpowiedzi i sesje po Z4, Z6, Z9), Z11 o 16:46 (CIK w tabeli źródeł: 2 rundy, 107 domen, 8 maili), Z15 o 20:50, Z19 do Z24; kolejka na czwartek 4 pliki 042 do 045; CIK ma jeszcze 12 województw.
