@@ -30,8 +30,11 @@ function zl(n: number | null) {
 }
 
 export default async function Page() {
-  const d = await doba(1);
+  const jutro = await doba(1);
+  const naJutro = jutro.kwadranse.length > 0;
+  const d = naJutro ? jutro : await doba(0);
   const jest = d.kwadranse.length > 0;
+  const kiedy = naJutro ? "Jutro" : "Dziś";
 
   return (
     <>
@@ -53,12 +56,15 @@ export default async function Page() {
           <NazwaNarzedzia href="/ceny-energii-jutro" />
         </div>
 
-        {!jest ? (
+        {!naJutro && (
           <p className="mt-8 rounded-xl border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-900/60 p-5 text-sm text-gray-700 dark:text-gray-300">
             Ceny na jutro nie są jeszcze opublikowane. Pojawiają się zwykle po
             południu dnia poprzedniego, więc zajrzyjcie po czternastej.
+            {jest && ` Do tego czasu pokazujemy ceny na dziś, ${d.data}.`}
           </p>
-        ) : (
+        )}
+
+        {jest && (
           <>
             <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
               {[
@@ -111,7 +117,7 @@ export default async function Page() {
             {d.oknaUjemne.length > 0 && (
               <div className="mt-6 rounded-2xl border border-amber-500/60 bg-amber-50 dark:bg-amber-950/30 p-5">
                 <p className="text-sm font-bold text-gray-900 dark:text-white">
-                  Jutro cena schodzi poniżej zera
+                  {kiedy} cena schodzi poniżej zera
                 </p>
                 <ul className="mt-2 space-y-1 text-sm text-gray-700 dark:text-gray-300">
                   {d.oknaUjemne.map((o) => (

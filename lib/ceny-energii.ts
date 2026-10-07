@@ -1,5 +1,5 @@
 // Ceny energii z API PSE. Dane na kolejna dobe pojawiaja sie po poludniu dnia
-// poprzedniego, wiec strona ma sens dopiero od okolo 14:00.
+// poprzedniego, wiec do okolo 14:00 strona pokazuje dzisiejsza dobe.
 const BAZA = "https://api.raporty.pse.pl/api/rce-pln";
 
 // PSE podaje w dtime koniec kwadransu (00:15 to cena za 00:00 do 00:15),
