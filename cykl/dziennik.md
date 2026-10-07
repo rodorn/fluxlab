@@ -3408,3 +3408,21 @@ Z1 jednym zdaniem: z 32 sesji bez odsyłacza 18 to nasza automatyka, 12 inne, 2 
   Korekta wniosku z Z15 (21:05): 10 żądań indeksowania z 20:50 do 20:58 nie poszło na przekierowania, bo te strony wróciły o 22:15 jako zwykłe 200; mogą więc normalnie wejść do indeksu. Jutrzejsze Z13 i Z15 biorą adresy z bieżącej mapy (111), nie 53.
 **Dla Pawła:** bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację; jeśli Firefox na Twoim telefonie otwiera /automatyzacja-leadow-crm, wejdź nim raz na https://fluxlab.pl/nie-licz-mnie).
 **Zostało otwarte:** Z24 o 05:46 (przed nim sprawdzić, czy domowe IP przechodzi już przez checkpoint Vercela; jeśli nie, zrzuty i GSC przez 9228 nie zadziałają, odczyty produkcji przez VPS); czwartek 9:46 wysyłka 042 do 045.
+<!-- WYSLANO 2026-10-07 23:12 -->
+
+## 2026-10-07 23:55
+**Kanał:** outreach z gotowym raportem (przygotowanie czwartku), poza planem: jedyne otwarte zadanie (Z24, bilans) czeka na liczby nocne o 05:46.
+**Co zrobione:** trzecia runda katalogu CIK (dolnośląskie, pomorskie, łódzkie, zachodniopomorskie) dała 4 nowe maile do biur bez adresu do e-Doręczeń w KRS; kolejka na czwartek urosła z 4 do 8.
+**Ruch:** ostatnia doba 39 odsłon, 26 osób (mail 10, facebook 4, www.google.com 2, m.facebook.com 1, m.baidu.com 1); 3 uruchomienia narzędzi (2 `uruchomiono_skan_przyklad`, 1 `uruchomiono_numer_ksef_przyklad`) i 1 audyt; odrzucone: boty 7 sesji / 100 odsłon, własna automatyka 33 sesje / 58 odsłon.
+**Dowód:**
+
+| województwo | biura | spółki | z www, nowe | w KRS | bez BAE | maile |
+|---|---|---|---|---|---|---|
+| dolnośląskie | 154 | 58 | 25 | 16 | 6 | 3 |
+| pomorskie | 107 | 38 | 19 | 11 | 1 | 1 |
+| łódzkie | 110 | 26 | 11 | 5 | 1 | 0 |
+| zachodniopomorskie | 66 | 16 | 6 | 1 | 0 | 0 |
+
+  61 domen, 4 maile (6,6 na 100, CIK nadal najlepszym źródłem). Pliki `maile_ksiegowe_edoreczenia/krs_partia22..25_2026-10-08.json`; nowe maile: 046_alza (ALZA Biuro Rachunkowe, Opole, KRS 0000821650, biuro@ na stronie obok KRS), 047_ammes (AMMES, Psary/Rogoż, 0000632921, biuro@ na stronie i w odpisie), 048_blackink (Black Ink, Wrocław, 0000392524, office@ na stronie obok NIP), 049_ksiegownia (Księgownia, Gdynia, 0000808346, hello@ w stopce obok nazwy spółki). PKD 69.20Z we wszystkich, odpisy pobrane 23:45 bez pola BAE. Odrzucone: abak.com.pl i rachbiu.pl (KRS w stopce należy do stowarzyszeń), rachunkowosc.wroclaw.pl (AFJ, PKD 68.10). Licznik w nowych treściach 319 z 391. 0 długich myślników, żaden adres nie jest w `wyslane_ks.json`, `pomijane.json` ani `wypisani.txt`; `--proba --limit=80` renderuje wszystkie 4 z utm `ksiegowe`. Skrypt CIK zapisany na stałe jako `~/Projekty/mail-audyt/cik_woj.py`.
+**Dla Pawła:** bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację; jeśli Firefox na Twoim telefonie otwiera /automatyzacja-leadow-crm, wejdź nim raz na https://fluxlab.pl/nie-licz-mnie).
+**Zostało otwarte:** Z24 o 05:46; czwartek 9:46 wysyłka `ksiegowe-edoreczenia` 042 do 049 (8 maili, jedna wysyłka bez `--limit`, przed nią BAE ponownie z odpisu). CIK ma jeszcze 8 mniejszych województw na kolejne rundy.
