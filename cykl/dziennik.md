@@ -3213,3 +3213,31 @@ Z1 jednym zdaniem: z 32 sesji bez odsyłacza 18 to nasza automatyka, 12 inne, 2 
   Commit 7a11b34 (`components/DoplataCheck.tsx`, 2 linie), produkcja 14:05 zawiera nowy tekst, IndexNow 111 adresów, 2 z 3. Zrzuty `skrypty-raport/telefon-390/z18-*.png`.
 **Dla Pawła:** bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację).
 **Zostało otwarte:** Z9 o 14:46 (5 maili 037 do 041, BAE ponownie z odpisu), Z10 o 15:46, Z11 o 16:46, Z15 o 20:50, Z16, Z19 do Z24.
+<!-- WYSLANO 2026-10-07 15:04 -->
+
+## 2026-10-07 15:28
+**Kanał:** outreach z gotowym raportem (Z9 i Z16 z planu; Z16 przed czasem, bo Z10 czeka na 15:46).
+**Co zrobione:** wysłanych 5 maili do biur bez adresu do e-Doręczeń w KRS (wszystkie delivered) i przygotowane 4 kolejne na czwartek z drugiej rundy katalogu CIK.
+**Ruch:** ostatnia doba 43 odsłony, 25 osób (facebook 7, mail 6, m.facebook.com 1, www.google.com 1); 3 uruchomienia narzędzi (2 skan przykład, 1 numer KSeF przykład, 1 audyt); odrzucone: boty 7 sesji, własna automatyka 25 sesji.
+**Dowód:** Z9: BAE ponownie z odpisów 14:43, 5 z 5 nadal brak; wysyłka 14:46, statusy 14:57:
+
+| adres | spółka, KRS | id Resend | status |
+|---|---|---|---|
+| biuro@hmpinvest.pl | Kancelaria HMP Invest, 0000336773 | 01a11666-57ef-757a-9185-3b2a207d7f74 | delivered |
+| bjmkancelaria@bjmkancelaria.pl | BJM, 0000226847 | 01a11666-9351-75ea-8aaa-026ba2f1d1d9 | delivered |
+| kontakt@aafinanse.pl | AA Finanse, 0001082791 | 01a11666-cec2-7c39-8ed1-10102f93e024 | delivered |
+| biuro@biuro-help.pl | BR Help Anna Semrau, 0000817800 | 01a11667-0a28-704b-bb90-1e6c644600c5 | delivered |
+| info@kancelariaclear.pl | Kancelaria Finansowa Clear, 0000435055 | 01a11667-45b4-75f1-961a-fbdc643eeaf5 | delivered |
+
+  `wyslane_ks.json` 103 wpisy. Z16 (CIK, druga runda, co 3 s, wszystkie strony list):
+
+| województwo | biura | spółki | z www | nowe domeny | spółki w KRS | bez BAE | maile |
+|---|---|---|---|---|---|---|---|
+| śląskie | 159 | 58 | 21 | | | | |
+| małopolskie | 122 | 38 | 14 | | | | |
+| wielkopolskie | 163 | 64 | 24 | | | | |
+| razem | 444 | 160 | 58 | 43 | 26 | 4 | 4 |
+
+  9,3 maila na 100 domen. Pliki `maile_ksiegowe_edoreczenia/cik_domeny2_2026-10-07.json`, `krs_partia21_2026-10-07.json`, maile 042_kka (Gliwice, 0000259754), 043_podatki-rachunkowosc (Bielsko-Biała, 0000147013), 044_liczbypro (Chorzów, 0001182427, wpis 2025, zdanie o obowiązku od dnia wpisu), 045_biuroktk (Nowy Targ, 0001032644); adres ogólny ze strony, KRS na stronie albo przez NIP z wykazu VAT, PKD 69.20, 0 długich myślników, render `--proba --limit=80` z utm `ksiegowe`.
+**Dla Pawła:** bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację).
+**Zostało otwarte:** Z10 o 15:46 (odpowiedzi i sesje po Z4, Z6, Z9), Z11 o 16:46 (CIK w tabeli źródeł: 2 rundy, 107 domen, 8 maili), Z15 o 20:50, Z19 do Z24; kolejka na czwartek 4 pliki 042 do 045; CIK ma jeszcze 13 województw.
