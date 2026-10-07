@@ -63,8 +63,8 @@ export default function DoplataCheck() {
   const [leadStan, setLeadStan] = useState<"idle" | "wysylamy" | "ok" | "blad">("idle");
   const [leadBlad, setLeadBlad] = useState("");
 
-  async function uruchom(w: string, b: string, n: string) {
-    zglosZdarzenie("uruchomiono_skan");
+  async function uruchom(w: string, b: string, n: string, przyklad = false) {
+    zglosZdarzenie(przyklad ? "uruchomiono_skan_przyklad" : "uruchomiono_skan");
     setStan("ladowanie");
     setBlad("");
     setWynik(null);
@@ -105,7 +105,7 @@ export default function DoplataCheck() {
     setWaga(w);
     setBaza(b);
     setNaliczona(n);
-    uruchom(w, b, n);
+    uruchom(w, b, n, true);
   }
 
   async function zamow(e: React.FormEvent) {

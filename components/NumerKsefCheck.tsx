@@ -138,10 +138,12 @@ export default function NumerKsefCheck() {
   const [tekst, setTekst] = useState("");
   const [wyniki, setWyniki] = useState<Wynik[] | null>(null);
 
-  function uruchom(wartosc: string) {
+  function uruchom(wartosc: string, przyklad = true) {
     if (!wartosc.trim()) return;
     setTekst(wartosc);
-    zglosZdarzenie("uruchomiono_numer_ksef");
+    zglosZdarzenie(
+      przyklad ? "uruchomiono_numer_ksef_przyklad" : "uruchomiono_numer_ksef",
+    );
     setWyniki(
       wartosc
         .split(/\r?\n/)
@@ -180,7 +182,7 @@ export default function NumerKsefCheck() {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          uruchom(tekst);
+          uruchom(tekst, false);
         }}
         className="mt-5 flex flex-col gap-3"
       >

@@ -59,15 +59,15 @@ export default function NipCheck() {
 
   async function sprawdz(e: React.FormEvent) {
     e.preventDefault();
-    await uruchom(nip);
+    await uruchom(nip, false);
   }
 
   // Jedno wejscie dla formularza i dla przyciskow z przykladami, zeby
   // wynik powstawal tak samo niezaleznie od tego, skad przyszedl adres.
-  async function uruchom(cel: string) {
+  async function uruchom(cel: string, przyklad = true) {
     if (!cel.trim()) return;
     setNip(cel);
-    zglosZdarzenie("uruchomiono_skan");
+    zglosZdarzenie(przyklad ? "uruchomiono_skan_przyklad" : "uruchomiono_skan");
     setStan("ladowanie");
     setBlad("");
     setWynik(null);
