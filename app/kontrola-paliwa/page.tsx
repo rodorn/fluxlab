@@ -35,6 +35,12 @@ export default function Page() {
       ctaNote="Trzy pojazdy za jeden miesiąc, bez opłaty"
       powiazane={[
         {
+          przed: "Paliwo to tylko część kosztu auta. Ubezpieczenie, serwis, opony i utratę wartości na jednego kierowcę policzycie w",
+          kotwica: "kalkulatorze kosztów auta",
+          href: "/kalkulator-kosztow",
+          po: ".",
+        },
+        {
           przed: "Paliwo kosztuje Was też w przesyłkach: dopłata paliwowa kurierów sięga prawie połowy ceny bazowej i zmienia się co dwa tygodnie. Pozycję z faktury sprawdzicie w",
           kotwica: "audycie faktur kurierskich i dopłat",
           href: "/audyt-kurierski",

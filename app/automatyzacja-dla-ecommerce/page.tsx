@@ -296,6 +296,41 @@ export default function AutomatyzacjaDlaEcommerce() {
                         </Link>
                         .
                       </p>
+                      <p className="text-gray-500 dark:text-gray-400 mb-10">
+                        Panel sklepu pokazuje obrót, a nie to, co zostaje po
+                        prowizji, zwrocie i dopłacie do wysyłki; liczy to{" "}
+                        <Link
+                          href="/audyt-marz"
+                          className="text-accent hover:underline"
+                        >
+                          audyt marży na produktach
+                        </Link>
+                        . Przy przecenach sprawdzamy, czy każda pozycja ma
+                        informację o najniższej cenie z 30 dni (
+                        <Link
+                          href="/rejestr-cen"
+                          className="text-accent hover:underline"
+                        >
+                          kontrola cen przed obniżką
+                        </Link>
+                        ), a przy zwrotach, czy kupujący znajdzie termin,
+                        formularz i koszt odesłania (
+                        <Link
+                          href="/panel-zwrotow"
+                          className="text-accent hover:underline"
+                        >
+                          kontrola informacji o zwrotach
+                        </Link>
+                        ). Jeśli na stronie odpowiada bot, zderzamy jego
+                        odpowiedzi z cennikiem i regulaminem w{" "}
+                        <Link
+                          href="/audyt-chatbota"
+                          className="text-accent hover:underline"
+                        >
+                          audycie chatbota
+                        </Link>
+                        .
+                      </p>
 
                       <div className="space-y-6">
                         {useCases.map((useCase) => (
@@ -327,8 +362,8 @@ export default function AutomatyzacjaDlaEcommerce() {
                       <p className="text-gray-500 dark:text-gray-400 mb-10">
                         Poniżej typowe sytuacje z codziennej pracy sklepu
                         internetowego i to, jak podchodzimy do nich od strony
-                        technicznej. Każda z tych rzeczy jest do
-                        zrobienia w kilka dni lub tygodni, nie miesięcy.
+                        technicznej. Każda z tych rzeczy jest do zrobienia w
+                        kilka dni lub tygodni, nie miesięcy.
                       </p>
 
                       <div className="space-y-6">
@@ -362,8 +397,8 @@ export default function AutomatyzacjaDlaEcommerce() {
                         Nie sprzedajemy konkretnego narzędzia. Dobieramy je do
                         skali sklepu, liczby kanałów i tego, co już działa.
                         Najczęściej spotykany stack dla polskiego e-commerce
-                        wygląda jednak podobnie i poniżej opisujemy
-                        narzędzia, na których takie automatyzacje budujemy.
+                        wygląda jednak podobnie i poniżej opisujemy narzędzia,
+                        na których takie automatyzacje budujemy.
                       </p>
 
                       <div className="space-y-6">

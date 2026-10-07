@@ -35,6 +35,14 @@ export default function Page() {
       lead="Zanim księgowość kupującego wypuści przelew, ustala, kto jest sprzedawcą i czy figuruje w wykazie podatników VAT. Przy większych kwotach sprawdza także, czy numer konta należy do tego samego podmiotu, bo inaczej kupujący traci koszt podatkowy. Jeżeli Twoja strona nie podaje NIP-u, ten test nie ma z czego wyjść i płatność się przesuwa."
       ctaLabel="Sprawdź swoją stronę"
       ctaNote="Sprawdzenie za darmo, od ręki"
+      powiazane={[
+        {
+          przed: "Drugi obowiązek, który kontrola sprawdza z zewnątrz, to cena z 30 dni przed obniżką przy każdej przecenie. Braki na kartach produktów pokaże",
+          kotwica: "kontrola informacji o najniższej cenie",
+          href: "/rejestr-cen",
+          po: ".",
+        },
+      ]}
       checks={[
         {
           title: "Czy NIP jest gdziekolwiek na stronie",

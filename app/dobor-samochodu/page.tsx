@@ -119,9 +119,9 @@ export default function DoborSamochoduPage() {
                           decyzyjnym. Na podstawie Twoich odpowiedzi odsiewa
                           segmenty i napędy, które nie spełniają podanych
                           kryteriów, a następnie pokazuje profil pojazdu
-                          pasujący do Twojego stylu życia, nie pojedynczy
-                          model, lecz zestaw parametrów, w których realnie
-                          opłaca się szukać.
+                          pasujący do Twojego stylu życia, nie pojedynczy model,
+                          lecz zestaw parametrów, w których realnie opłaca się
+                          szukać.
                         </p>
                         <p>Bierzemy pod uwagę cztery grupy kryteriów:</p>
                         <ul className="list-disc pl-5 space-y-2">
@@ -145,10 +145,17 @@ export default function DoborSamochoduPage() {
                           </li>
                           <li>
                             <strong>Ograniczenia techniczne.</strong> Dostęp do
-                            ładowania w domu (klucz dla elektryka), garaż,
-                            częstotliwość długich tras, maksymalna wielkość auta
-                            w mieście. Eliminują opcje, które w teorii pasują,
-                            ale w praktyce nie zadziałają.
+                            ładowania w domu (klucz dla elektryka, bo nocą prąd
+                            bywa najtańszy, co widać w{" "}
+                            <Link
+                              href="/ceny-energii-jutro"
+                              className="text-accent hover:underline"
+                            >
+                              cenach energii na jutro
+                            </Link>
+                            ), garaż, częstotliwość długich tras, maksymalna
+                            wielkość auta w mieście. Eliminują opcje, które w
+                            teorii pasują, ale w praktyce nie zadziałają.
                           </li>
                         </ul>
                         <p>
@@ -157,7 +164,7 @@ export default function DoborSamochoduPage() {
                           modeli (DEKRA, TÜV, J.D. Power) i kosztach utrzymania
                           z serwisów takich jak Spritmonitor, Carfax czy
                           Otomoto. Nie korzystamy z algorytmu „czarnej skrzynki”
-                         , każdą rekomendację można wyjaśnić konkretną
+                          , każdą rekomendację można wyjaśnić konkretną
                           odpowiedzią z Twojego formularza.
                         </p>
                       </div>
@@ -191,8 +198,8 @@ export default function DoborSamochoduPage() {
                           </li>
                           <li>
                             <strong>Firma kupująca flotę.</strong> Zamiast
-                            polegać na rekomendacji dealera („bo akurat mamy to w
-                            promocji”), wchodzisz do rozmowy z konkretnym
+                            polegać na rekomendacji dealera („bo akurat mamy to
+                            w promocji”), wchodzisz do rozmowy z konkretnym
                             profilem auta dopasowanym do pracowników. To daje
                             przewagę negocjacyjną.
                           </li>
@@ -266,8 +273,7 @@ export default function DoborSamochoduPage() {
                             SUV-em po mieście przez 4 lata „na wszelki wypadek”
                             to 8–15 tys. zł rocznie zmarnowane na paliwo, opony
                             i ubezpieczenie. Lepiej dobrać auto do dzisiejszej
-                            sytuacji, a gdy coś się zmieni, sprzedać i
-                            wymienić.
+                            sytuacji, a gdy coś się zmieni, sprzedać i wymienić.
                           </p>
                           <p>
                             <strong>

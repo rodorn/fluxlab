@@ -35,6 +35,20 @@ export default function Page() {
       lead="To nie jest rzadki przypadek. Wersję roboczą buduje się z blokadą, żeby nie trafiła do wyników przed premierą, a potem wgrywa się ją na serwer razem z tą blokadą. Właściciel niczego nie zauważa, bo wchodzi na swoją stronę z zakładki, a firma przestaje istnieć dla wszystkich, którzy jej szukają."
       ctaLabel="Sprawdź swoją stronę"
       ctaNote="Sprawdzenie za darmo, od ręki"
+      powiazane={[
+        {
+          przed: "Strona ma wersję angielską? Nieprzetłumaczone przyciski i brak znaczników wersji językowych to druga rzecz, której właściciel nie widzi. Sprawdza ją",
+          kotwica: "kontrola wersji obcojęzycznej strony",
+          href: "/kontrola-jezykow",
+          po: ".",
+        },
+        {
+          przed: "Klient z okolicy wybiera spośród firm, które widzi w wynikach. Ilu takich konkurentów macie w zasięgu kilku kilometrów i ilu mieszkańców przypada na jeden punkt, pokaże",
+          kotwica: "analiza lokalizacji i konkurencji",
+          href: "/analiza-lokalizacji",
+          po: ".",
+        },
+      ]}
       checks={[
         {
           title: "Znacznik w kodzie strony",

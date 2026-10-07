@@ -116,6 +116,15 @@ export default function AutomatyzacjaAI() {
                         >
                           AI w automatyzacji firm
                         </Link>
+                        . Jeśli bot już odpowiada klientom, zaczynamy od
+                        sprawdzenia, czy jego odpowiedzi zgadzają się z
+                        cennikiem i regulaminem:{" "}
+                        <Link
+                          href="/audyt-chatbota"
+                          className="text-accent hover:underline"
+                        >
+                          audyt chatbota na 150 pytaniach klienta
+                        </Link>
                         .
                       </p>
                     </div>

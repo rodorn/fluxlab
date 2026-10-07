@@ -20,7 +20,12 @@ export const metadata: Metadata = {
     locale: "pl_PL",
     type: "website",
     images: [
-      { url: "/opengraph-image", width: 1200, height: 630, alt: "Fluxlab, ceny energii na jutro" },
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Fluxlab, ceny energii na jutro",
+      },
     ],
   },
 };
@@ -46,10 +51,10 @@ export default async function Page() {
           Ceny energii na jutro
         </h1>
         <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
-          Rynkowa cena energii na dobę {d.data}, w rozbiciu na kwadranse. Pokazujemy
-          najtańsze i najdroższe cztery godziny oraz okna, w których cena schodzi
-          poniżej zera. Dane pochodzą wprost od operatora systemu przesyłowego i
-          odświeżają się co pół godziny.
+          Rynkowa cena energii na dobę {d.data}, w rozbiciu na kwadranse.
+          Pokazujemy najtańsze i najdroższe cztery godziny oraz okna, w których
+          cena schodzi poniżej zera. Dane pochodzą wprost od operatora systemu
+          przesyłowego i odświeżają się co pół godziny.
         </p>
 
         <div className="mt-8 -mb-5">
@@ -80,7 +85,9 @@ export default async function Page() {
                   <p className="text-xl font-bold tabular-nums text-gray-900 dark:text-white">
                     {x.w}
                   </p>
-                  <p className="mt-0.5 text-xs text-gray-500 dark:text-gray-400">{x.e}</p>
+                  <p className="mt-0.5 text-xs text-gray-500 dark:text-gray-400">
+                    {x.e}
+                  </p>
                 </div>
               ))}
             </div>
@@ -137,7 +144,9 @@ export default async function Page() {
                 <thead className="text-gray-500 dark:text-gray-400">
                   <tr>
                     <th className="px-4 py-2 font-medium">Godzina</th>
-                    <th className="px-4 py-2 font-medium">Średnia cena za MWh</th>
+                    <th className="px-4 py-2 font-medium">
+                      Średnia cena za MWh
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
@@ -148,14 +157,20 @@ export default async function Page() {
                       return {
                         czas: p.czas,
                         koniec: g[g.length - 1].koniec,
-                        cena: Math.round((g.reduce((a, x) => a + x.cena, 0) / g.length) * 100) / 100,
+                        cena:
+                          Math.round(
+                            (g.reduce((a, x) => a + x.cena, 0) / g.length) *
+                              100,
+                          ) / 100,
                       };
                     })
                     .map((k) => (
                       <tr
                         key={k.czas}
                         className={`border-t border-gray-100 dark:border-gray-800 ${
-                          k.cena < 0 ? "bg-amber-50/70 dark:bg-amber-950/30" : ""
+                          k.cena < 0
+                            ? "bg-amber-50/70 dark:bg-amber-950/30"
+                            : ""
                         }`}
                       >
                         <td className="px-4 py-1.5 tabular-nums text-gray-700 dark:text-gray-300">
@@ -180,16 +195,25 @@ export default async function Page() {
             To rynkowa cena energii (RCE) publikowana przez operatora systemu
             przesyłowego, a nie cena z Waszej faktury. Według niej liczy się
             wartość energii oddanej do sieci przez prosumentów w net-billingu.
-            Rachunek za energię pobraną zwykle opiera się na taryfie albo umowie,
-            a nie na cenie godzinowej, więc przy zakupie te liczby pokazują, co
-            dzieje się w systemie, a nie ile zapłacicie.
+            Rachunek za energię pobraną zwykle opiera się na taryfie albo
+            umowie, a nie na cenie godzinowej, więc przy zakupie te liczby
+            pokazują, co dzieje się w systemie, a nie ile zapłacicie.
           </p>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
             Ma to natomiast bezpośrednie znaczenie dla każdego, kto rozlicza się
             według cen godzinowych albo może przesunąć zużycie: ładowanie auta,
             pompa ciepła, chłodnia, ogrzewanie wody, magazyn energii przy
-            fotowoltaice. Różnica między najtańszymi a
-            najdroższymi czterema godzinami bywa kilkusetprocentowa.
+            fotowoltaice. Różnica między najtańszymi a najdroższymi czterema
+            godzinami bywa kilkusetprocentowa. Ile przy tym kosztuje cały rok
+            jazdy elektrykiem, razem z ubezpieczeniem, serwisem i utratą
+            wartości, policzycie w{" "}
+            <Link
+              href="/kalkulator-kosztow"
+              className="text-accent hover:underline"
+            >
+              kalkulatorze kosztów auta
+            </Link>
+            .
           </p>
         </div>
 
@@ -199,7 +223,10 @@ export default async function Page() {
           </p>
           <ul className="mt-3 space-y-2 text-sm">
             <li>
-              <Link href="/ile-spolek-znika-z-krs" className="text-accent hover:underline">
+              <Link
+                href="/ile-spolek-znika-z-krs"
+                className="text-accent hover:underline"
+              >
                 Ile spółek dziennie trafia do wykreślenia z KRS
               </Link>
             </li>

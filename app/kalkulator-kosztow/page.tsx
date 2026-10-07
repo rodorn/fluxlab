@@ -262,8 +262,8 @@ export default function KalkulatorKosztowPage() {
                             (250 zł), serwisu (300 zł), opon (150 zł) i utraty
                             wartości ponad ratę (500 zł, bo leasing nie pokrywa
                             całej amortyzacji) dochodzisz do 4 000 zł/mies. To
-                            różnica 14 400 zł rocznie, tyle co dobra premia
-                            albo wakacje.
+                            różnica 14 400 zł rocznie, tyle co dobra premia albo
+                            wakacje.
                           </p>
                           <p>
                             Dla firmy to istotne dwa razy: wpływa na wynik
@@ -297,8 +297,8 @@ export default function KalkulatorKosztowPage() {
                             największa pozycja w całym koszcie auta, a
                             jednocześnie niewidoczna, bo nie pojawia się na
                             żadnym rachunku. Ignorowanie jej oznacza, że w ogóle
-                            nie liczysz kosztu „bycia właścicielem”, tylko
-                            koszt jeżdżenia.
+                            nie liczysz kosztu „bycia właścicielem”, tylko koszt
+                            jeżdżenia.
                           </p>
                           <p>
                             <strong>
@@ -366,7 +366,17 @@ export default function KalkulatorKosztowPage() {
                             </strong>{" "}
                             Wpisz do kalkulatora dane dla auta, które masz, i
                             dla auta, które rozważasz. Różnica roczna pokaże,
-                            czy zmiana ma sens finansowy, i o ile.
+                            czy zmiana ma sens finansowy, i o ile. Przy
+                            elektryku ładowanym w domu cena kWh zależy od
+                            godziny, jeśli masz taryfę dynamiczną; najtańsze
+                            godziny kolejnej doby pokazują{" "}
+                            <Link
+                              href="/ceny-energii-jutro"
+                              className="text-accent hover:underline"
+                            >
+                              ceny energii na jutro
+                            </Link>
+                            .
                           </p>
                           <p>
                             <strong>
@@ -375,7 +385,7 @@ export default function KalkulatorKosztowPage() {
                             Auto tańsze w eksploatacji, ale wymagające częstych
                             wizyt u mechanika, „kosztuje” też Twój czas. Przy
                             4–6 wizytach rocznie po 2–3 godziny to 10–20 godzin
-                           , niewidoczne w żadnym rachunku.
+                            , niewidoczne w żadnym rachunku.
                           </p>
                           <p>
                             <strong>
@@ -407,7 +417,7 @@ export default function KalkulatorKosztowPage() {
                               Sprawdzaj wyniki dla realnego horyzontu.
                             </strong>{" "}
                             Koszt auta za 3 lata i za 7 lat to dwa różne światy
-                           , inne amortyzacja, inne naprawy, inna wartość
+                            , inne amortyzacja, inne naprawy, inna wartość
                             rezydualna. Policz wariant, który odpowiada Twojemu
                             realnemu planowi, nie uśrednienie.
                           </p>
