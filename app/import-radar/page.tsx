@@ -30,15 +30,15 @@ export const metadata: Metadata = {
 const steps = [
   {
     title: "Podajesz auto albo budżet",
-    desc: "Wklejasz link do niemieckiej oferty (np. mobile.de) albo mówisz, jaki masz budżet i jakiego auta szukasz.",
+    desc: "Link do oferty z Niemiec albo budżet i typ auta.",
   },
   {
     title: "Liczymy pełny koszt sprowadzenia",
-    desc: "Akcyza, transport, tłumaczenia, opłaty rejestracyjne i ryzyko kursowe. Nic nie ginie w kalkulacji.",
+    desc: "Akcyza, transport, tłumaczenia i rejestracja.",
   },
   {
     title: "Dostajesz werdykt o marży",
-    desc: "Porównujemy koszt końcowy z cenami tego modelu w Polsce i mówimy wprost, ile realnie zostaje na czysto albo że się nie opłaca.",
+    desc: "Ile zostaje na czysto wobec cen w Polsce albo że się nie opłaca.",
   },
 ];
 
@@ -47,11 +47,9 @@ const pricing = [
     name: "Analiza 1 auta",
     price: "10-20 zł",
     cta: "Zamów analizę auta",
-    desc: "Masz na oku konkretne ogłoszenie z Niemiec i chcesz wiedzieć, czy warto.",
+    desc: "Masz konkretne ogłoszenie i chcesz wiedzieć, czy warto.",
     features: [
-      "pełny rozkład kosztów sprowadzenia",
-      "akcyza wyliczona dla konkretnego pojazdu",
-      "porównanie do cen tego modelu w Polsce",
+      "pełny rozkład kosztów z akcyzą",
       "werdykt: marża netto albo brak opłacalności",
     ],
     featured: false,
@@ -60,12 +58,10 @@ const pricing = [
     name: "Znajdź pod budżet",
     price: "20-30 zł",
     cta: "Zamów wyszukiwanie",
-    desc: "Podajesz budżet i typ auta, a my szukamy modeli z realną marżą po sprowadzeniu.",
+    desc: "Szukamy modeli z realną marżą pod Twój budżet.",
     features: [
-      "wszystko z analizy 1 auta",
-      "przegląd rynku pod Twój budżet",
       "ranking modeli po marży netto",
-      "wskazanie konkretnych, opłacalnych ofert",
+      "konkretne, opłacalne oferty",
     ],
     featured: true,
   },
@@ -75,22 +71,22 @@ const faq = [
   {
     question: "Czy liczycie akcyzę dokładnie?",
     answer:
-      "Tak, akcyzę liczymy według pojemności silnika i typu napędu (osobno dla spalinowych, hybryd i elektryków), a nie szacunkowo. To ona najczęściej przesądza o opłacalności, więc traktujemy ją poważnie.",
+      "Tak, według pojemności silnika i typu napędu, a nie szacunkowo.",
   },
   {
     question: "Czy sprowadzasz auto za mnie?",
     answer:
-      "Nie. ImportRadar to analiza opłacalności, a nie usługa transportu. Dostajesz twarde liczby i decyzję, czy w ogóle warto brać dany samochód. Import realizujesz sam lub przez wybraną firmę.",
+      "Nie. Dostajesz liczby i decyzję, a import robisz sam lub przez wybraną firmę.",
   },
   {
     question: "Skąd bierzecie ceny sprzedaży w Polsce?",
     answer:
-      "Z aktualnych ogłoszeń tego samego modelu, rocznika i zbliżonego przebiegu na polskich portalach. Dzięki temu marża jest liczona wobec realnego rynku, a nie życzeniowej ceny.",
+      "Z aktualnych ogłoszeń tego samego modelu, rocznika i zbliżonego przebiegu.",
   },
   {
     question: "Co jeśli analiza pokaże, że się nie opłaca?",
     answer:
-      "To też jest wynik wart swojej ceny. Lepiej wydać 150 zł na analizę niż stracić kilka tysięcy na aucie, które w Polsce kupisz taniej. Przy pakiecie znajdź pod budżet od razu szukamy alternatyw z marżą.",
+      "To też wynik: lepiej zapłacić za analizę niż stracić kilka tysięcy. W pakiecie pod budżet od razu szukamy alternatyw.",
   },
 ];
 
@@ -108,17 +104,15 @@ export default function ImportRadarPage() {
 
         {/* Hero */}
         <section className="relative overflow-hidden pt-24 pb-12">
-          <div className="blob blob-cyan -z-10 -top-32 -right-24 h-96 w-96" />
+          <div className="blob blob-accent -z-10 -top-32 -right-24 h-96 w-96" />
           <div className="container-wide max-w-3xl">
             <p className="section-label mb-5">Produkt</p>
             <h1 className="display-lg text-gray-900 dark:text-white">
               Sprawdź, czy import z Niemiec naprawdę się opłaca
             </h1>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-300">
-              Cena w niemieckim ogłoszeniu to dopiero początek. Liczymy pełny
-              koszt sprowadzenia, akcyzę, transport i opłaty, a potem porównujemy
-              go z cenami tego auta w Polsce. Dostajesz jedną liczbę, która
-              mówi, ile zostaje na czysto.
+              Liczymy pełny koszt sprowadzenia i porównujemy go z cenami w
+              Polsce. Dostajesz jedną liczbę: ile zostaje na czysto.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <a href="#zamow" className="btn-primary inline-flex">
@@ -165,13 +159,9 @@ export default function ImportRadarPage() {
           {/* Przykładowy efekt */}
           <section>
             <div className="max-w-3xl">
-              <h2 className="display-xl mb-4 text-gray-900 dark:text-white">
+              <h2 className="display-xl mb-8 text-gray-900 dark:text-white">
                 Przykładowy efekt
               </h2>
-              <p className="mb-8 text-gray-600 dark:text-gray-300">
-                Tak wygląda rozkład kosztów w analizie. To przykład działania
-                narzędzia na danych demo, a nie realna oferta.
-              </p>
             </div>
             <div className="max-w-3xl rounded-2xl border border-gray-100 bg-white p-6 dark:border-gray-700 dark:bg-gray-800/60 lg:p-8">
               <div className="flex flex-wrap items-center justify-between gap-3 border-b border-gray-100 pb-4 dark:border-gray-700">
@@ -210,9 +200,8 @@ export default function ImportRadarPage() {
                 ))}
               </dl>
               <p className="mt-4 border-t border-gray-100 pt-4 text-sm text-gray-700 dark:border-gray-700 dark:text-gray-300">
-                <span className="text-accent">→</span> Werdykt: opłacalne, marża
-                ok. 9 100 zł przed kosztami drobnych napraw. Rekomendacja:
-                negocjuj cenę zakupu poniżej 74 000 zł, żeby zwiększyć zapas.
+                <span className="text-accent">→</span> Werdykt: opłacalne.
+                Negocjuj cenę poniżej 74 000 zł.
               </p>
             </div>
           </section>
@@ -325,16 +314,15 @@ export default function ImportRadarPage() {
             </div>
           </section>
 
-          {/* Formularz zamówienia */}
           <RelatedProducts slug="import-radar" />
 
           <section id="zamow" className="scroll-mt-20">
             <LandingForm
               formId="order_import_radar"
               heading="Zamów analizę opłacalności importu"
-              intro="Wklej link do niemieckiej oferty w polu opisu albo podaj budżet i typ auta, jeśli chcesz pakiet znajdź pod budżet. Odsyłamy pełny rozkład kosztów i werdykt o marży, zwykle w ciągu 24h."
+              intro="Wklej link do oferty albo podaj budżet i typ auta."
               submitLabel="Wyślij auto do analizy"
-              microCopy="Odpowiedź w 24h. Płatność ustalamy mailowo po potwierdzeniu zakresu (analiza 1 auta 10-20 zł, znajdź pod budżet 20-30 zł)."
+              microCopy="Odpowiedź w 24h. Płatność po potwierdzeniu zakresu."
             />
           </section>
         </div>

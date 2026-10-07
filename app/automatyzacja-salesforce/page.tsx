@@ -32,20 +32,16 @@ export const metadata: Metadata = {
 
 const offer = [
   {
-    title: "Automatyzacja procesu sprzedaży",
-    desc: "Leady, przypisania, Opportunity i follow-upy odpalają się same, z kontrolą wymaganych danych na każdym etapie.",
+    title: "Proces sprzedaży",
+    desc: "Leady, przypisania i follow-upy odpalają się same, z kontrolą wymaganych danych.",
   },
   {
-    title: "Integracje przez Salesforce API",
-    desc: "ERP, księgowość, e-commerce, hurtownie danych i aplikacje customowe spięte w czasie rzeczywistym. Bez wysp danych.",
+    title: "Integracje przez API",
+    desc: "ERP, księgowość i e-commerce spięte z Salesforce w czasie rzeczywistym.",
   },
   {
-    title: "Logika w Apex i Flow",
-    desc: "Walidacje, wyliczenia, triggery i Platform Events, CRM zaczyna pilnować procesów za zespół.",
-  },
-  {
-    title: "Raporty i hurtownia danych",
-    desc: "Dedykowane dashboardy dla zarządu, analizy konwersji i raporty mailem zamiast ograniczonych raportów standardowych.",
+    title: "Apex, Flow i raporty",
+    desc: "Walidacje, triggery i dashboardy dla zarządu zamiast ręcznej pracy.",
   },
 ];
 
@@ -58,10 +54,10 @@ export default function AutomatyzacjaSalesforce() {
 
         {/* Hero, kompaktowy */}
         <section className="relative overflow-hidden pt-24 pb-12">
-          <div className="blob blob-cyan -top-32 -right-24 w-[420px] h-[420px]" />
+          <div className="blob blob-accent -top-32 -right-24 w-[420px] h-[420px]" />
           <div className="container-wide relative">
             <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2.5 bg-[#00a1e0]/10 dark:bg-[#00a1e0]/15 px-4 py-2 rounded-full mb-6">
+              <div className="inline-flex items-center gap-2.5 bg-gray-100 dark:bg-white/10 px-4 py-2 rounded-full mb-6">
                 <Image
                   src="/photos/Salesforce.com_logo.svg.png"
                   alt="Salesforce"
@@ -74,8 +70,8 @@ export default function AutomatyzacjaSalesforce() {
                 Salesforce wykorzystany w 100%
               </h1>
               <p className="text-lg text-gray-500 dark:text-gray-400 mb-10 max-w-xl">
-                Większość firm używa 30–40% możliwości platformy. Przewaga
-                zaczyna się tam, gdzie kończy się konfiguracja w GUI.
+                Większość firm używa małej części platformy. Automatyzujemy to, czego
+                nie da się wyklikać w GUI.
               </p>
               <a href="#sekcje" className="btn-primary px-8 py-3.5 text-base">
                 Sprawdźmy proces
@@ -84,7 +80,6 @@ export default function AutomatyzacjaSalesforce() {
           </div>
         </section>
 
-        {/* Treść w zakładkach, nic nie wycięte, podzielone */}
         <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
           <Tabs
             ariaLabel="Sekcje oferty automatyzacji Salesforce"
@@ -96,7 +91,7 @@ export default function AutomatyzacjaSalesforce() {
                     <h2 className="display-xl text-gray-900 dark:text-white mb-12 max-w-2xl">
                       Co automatyzujemy
                     </h2>
-                    <div className="grid sm:grid-cols-2 gap-6 max-w-4xl">
+                    <div className="grid sm:grid-cols-3 gap-6 max-w-5xl">
                       {offer.map((item) => (
                         <div
                           key={item.title}
@@ -124,7 +119,7 @@ export default function AutomatyzacjaSalesforce() {
                     <LandingForm
                       formId="diagnosis_salesforce"
                       heading="Sprawdźmy Twój proces w Salesforce"
-                      intro="Opisz krótko, jak dziś wygląda obsługa leadów i deali: jakie dane wchodzą, gdzie się gubią, co handlowcy klikają ręcznie. Dostaniesz informację, czy automatyzacja ma sens i co da największy efekt."
+                      intro="Napisz, gdzie gubią się dane i co handlowcy klikają ręcznie. Odpowiemy, co da największy efekt."
                       submitLabel="Chcemy diagnozę procesu Salesforce"
                     />
                   </section>

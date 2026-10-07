@@ -49,15 +49,12 @@ export default function CrmIntegracjaArticle() {
               Jak połączyć CRM z innymi systemami
             </h1>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-              Sam CRM nie rozwiązuje problemu chaosu, jeśli dalej działa obok
-              reszty firmy. Dopiero połączenie CRM z formularzami, marketingiem,
-              raportowaniem i innymi systemami sprawia, że dane zaczynają
-              pracować, zamiast tylko zalegać w bazie.
+              CRM działający obok reszty firmy nie usuwa chaosu. Dopiero
+              połączony z formularzami i raportami zaczyna pracować.
             </p>
           </div>
         </section>
 
-        {/* Treść w zakładkach, nic nie wycięte, podzielone wg rozdziałów */}
         <div className="container-wide pb-20">
           <Tabs
             ariaLabel="Rozdziały artykułu o łączeniu CRM z innymi systemami"
@@ -70,17 +67,17 @@ export default function CrmIntegracjaArticle() {
                       Od czego zacząć
                     </h2>
                     <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                      Najpierw trzeba ustalić, jakie dane naprawdę mają
-                      przepływać. To jest etap, który firmy najczęściej
-                      pomijają. Zamiast projektować proces, od razu wybierają
-                      narzędzie. Efekt: dane lecą w złą stronę albo aktualizują
-                      się zbyt szeroko.
-                    </p>
-                    <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                      Na początek rozpisz:
+                      Najpierw ustal, jakie dane mają przepływać, dopiero potem
+                      wybieraj narzędzie. Rozpisz:
                     </p>
                     <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-400">
-                      <li className="flex items-start gap-2">
+                      {[
+                        "jakie systemy biorą udział w procesie,",
+                        "jakie dane przechodzą między nimi,",
+                        "kto jest właścicielem danych źródłowych,",
+                        "co ma się stać po zmianie pola lub statusu.",
+                      ].map((item) => (
+                        <li key={item} className="flex items-start gap-2">
                         <svg
                           className="w-5 h-5 text-accent shrink-0 mt-0.5"
                           fill="none"
@@ -94,56 +91,9 @@ export default function CrmIntegracjaArticle() {
                             d="M5 13l4 4L19 7"
                           />
                         </svg>
-                        jakie systemy biorą udział w procesie,
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <svg
-                          className="w-5 h-5 text-accent shrink-0 mt-0.5"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          strokeWidth={2}
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M5 13l4 4L19 7"
-                          />
-                        </svg>
-                        jakie dane przechodzą między nimi,
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <svg
-                          className="w-5 h-5 text-accent shrink-0 mt-0.5"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          strokeWidth={2}
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M5 13l4 4L19 7"
-                          />
-                        </svg>
-                        kto jest właścicielem danych źródłowych,
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <svg
-                          className="w-5 h-5 text-accent shrink-0 mt-0.5"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          strokeWidth={2}
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M5 13l4 4L19 7"
-                          />
-                        </svg>
-                        co ma się stać po zmianie konkretnego pola lub statusu.
-                      </li>
+                          {item}
+                        </li>
+                      ))}
                     </ul>
                   </div>
                 ),
@@ -156,23 +106,16 @@ export default function CrmIntegracjaArticle() {
                       Najczęstszy model połączenia
                     </h2>
                     <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                      Najczęstszy scenariusz jest prosty: formularz lub kampania
-                      generuje leada, CRM tworzy rekord, system przypisuje go do
-                      osoby, a później informacje z CRM trafiają do raportów,
-                      narzędzi operacyjnych albo systemów fakturowych. Kluczem
-                      są tutaj dobrze zaprojektowane{" "}
+                      Formularz tworzy leada w CRM, system przypisuje go do
+                      osoby, a dane trafiają dalej do raportów i faktur. Łączą
+                      to{" "}
                       <Link
                         href="/integracje-api"
                         className="text-accent hover:underline"
                       >
                         integracje API
                       </Link>
-                      , które łączą te systemy w jeden spójny przepływ.
-                    </p>
-                    <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                      W bardziej zaawansowanych procesach CRM staje się centrum
-                      operacyjnym: trzyma statusy, wyzwala działania i zasila
-                      inne narzędzia danymi.
+                      .
                     </p>
                   </div>
                 ),
@@ -184,44 +127,29 @@ export default function CrmIntegracjaArticle() {
                     <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                       Błędy, które psują integrację
                     </h2>
-                    <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                      Pierwszy błąd to brak jednego źródła prawdy. Jeśli ten sam
-                      klient może być edytowany niezależnie w trzech miejscach,
-                      szybko pojawią się konflikty danych.
-                    </p>
-                    <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                      Drugi błąd to brak walidacji. Integracja bez sprawdzania
-                      dubli, pustych pól i niepoprawnych formatów wprowadza
-                      chaos szybciej, niż ręczna praca.
-                    </p>
-                    <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                      Trzeci błąd to automatyzowanie bałaganu. Jeśli pipeline i
-                      statusy w CRM są nieuporządkowane, integracja tylko ten
-                      bałagan rozprowadzi. Dlatego warto najpierw uporządkować
-                      sam proces, pomaga w tym dobrze wdrożona{" "}
-                      <Link
-                        href="/automatyzacja-leadow-crm"
-                        className="text-accent hover:underline"
-                      >
-                        automatyzacja CRM
-                      </Link>
-                      .
-                    </p>
-                  </div>
-                ),
-              },
-              {
-                label: "Jak zrobić to dobrze",
-                content: (
-                  <div className="py-10 lg:py-12 max-w-3xl mx-auto">
-                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                      Jak zrobić to dobrze
-                    </h2>
-                    <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                      Najpierw uporządkuj logikę CRM, potem podłączaj kolejne
-                      systemy. Zacznij od jednego przepływu o wysokiej wartości,
-                      przetestuj wyjątki i dopiero później rozbudowuj
-                      architekturę.
+                    <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                      <li>
+                        Brak jednego źródła prawdy: ten sam klient edytowany w
+                        trzech miejscach.
+                      </li>
+                      <li>
+                        Brak walidacji: duble, puste pola i złe formaty.
+                      </li>
+                      <li>
+                        Automatyzowanie bałaganu. Najpierw uporządkuj proces,
+                        pomaga w tym{" "}
+                        <Link
+                          href="/automatyzacja-leadow-crm"
+                          className="text-accent hover:underline"
+                        >
+                          automatyzacja CRM
+                        </Link>
+                        .
+                      </li>
+                    </ul>
+                    <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                      Zacznij od jednego przepływu o wysokiej wartości,
+                      przetestuj wyjątki, potem rozbudowuj.
                     </p>
 
                     <div className="mt-10 rounded-2xl bg-gray-50 dark:bg-gray-900/50 p-8 lg:p-12 text-center">

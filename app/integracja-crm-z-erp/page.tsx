@@ -30,7 +30,7 @@ export default function IntegracjaCrmZErp() {
       breadcrumb="Integracja CRM z ERP"
       eyebrow="Integracje"
       h1="Integracja CRM z ERP"
-      lead="Handlowcy pracują w CRM, księgowość i magazyn w systemie ERP, a między nimi stoi człowiek, który przepisuje dane w obie strony. Spinamy te dwa światy tak, żeby dane szły same, a rozjazd był widoczny od razu, nie na koniec miesiąca."
+      lead="Handlowcy pracują w CRM, księgowość i magazyn w ERP, a pomiędzy nimi ktoś przepisuje dane. Spinamy oba systemy tak, żeby dane szły same, a rozjazd był widoczny od razu."
       ctaLabel="Opisz swoje dwa systemy"
       ctaNote="Odpisujemy zwykle tego samego dnia"
       powiazane={[
@@ -38,33 +38,33 @@ export default function IntegracjaCrmZErp() {
           przed: "Połączenie CRM z ERP to zwykle pierwszy krok szerszej",
           kotwica: "automatyzacji procesów biznesowych w firmie",
           href: "/automatyzacja-procesow-biznesowych",
-          po: ", od zamówienia po fakturę i raport.",
+          po: ".",
         },
       ]}
       checks={[
         {
-          title: "Pierwsza decyzja: gdzie jest źródło prawdy",
-          desc: "Dla każdego rodzaju danych musi istnieć jeden system, który rozstrzyga spór. Kontrahent zwykle należy do ERP, bo tam powstaje faktura i tam pilnuje się numeru identyfikacyjnego. Szansa sprzedaży należy do CRM, bo w ERP nie ma czegoś takiego. Integracje psują się najczęściej wtedy, gdy obie strony wolno edytować i obie wygrywają na zmianę.",
+          title: "Źródło prawdy",
+          desc: "Dla każdego rodzaju danych jeden system rozstrzyga spór. Kontrahent zwykle należy do ERP, szansa sprzedaży do CRM.",
         },
         {
-          title: "Druga decyzja: po czym poznajemy, że to ten sam kontrahent",
-          desc: "Dopasowanie po nazwie nie działa, bo w CRM stoi nazwa handlowa, a w ERP pełna nazwa rejestrowa ze spółką i skrótami. Klucz budujemy na numerze identyfikacji podatkowej, a jeśli go nie ma, na parze adres i numer klienta. Przed uruchomieniem robimy zestawienie tego, co się nie dopasowało, bo to zwykle kilka procent bazy i lepiej rozstrzygnąć je ręcznie raz niż produkować duplikaty w nieskończoność.",
+          title: "Dopasowanie kontrahenta",
+          desc: "Po NIP, nie po nazwie. Przed startem dostajecie listę rekordów, które nie dopasowały się automatycznie.",
         },
         {
-          title: "Trzecia decyzja: w którym momencie dokument idzie do ERP",
-          desc: "Zwykle przy przejściu szansy sprzedaży w wygraną, ale nie zawsze. W firmach z zamówieniami częściowymi sensowniej wypychać dokument dopiero po potwierdzeniu dostępności, inaczej magazyn dostaje zamówienia na towar, którego nie ma. Ten jeden wybór decyduje o tym, czy księgowość będzie potem ręcznie anulować dokumenty.",
+          title: "Moment wysłania dokumentu",
+          desc: "Zwykle przy wygranej szansie, a przy zamówieniach częściowych dopiero po potwierdzeniu dostępności.",
         },
         {
-          title: "Czwarta decyzja: co się dzieje, gdy nie zadziała",
-          desc: "Integracja bez obsługi błędów to integracja, o której dowiadujesz się od klienta. Każda nieudana operacja trafia do kolejki i jest ponawiana, a jeśli dalej nie przechodzi, dostajesz jedno zbiorcze powiadomienie z treścią błędu i możliwością ponowienia jednym kliknięciem. Cisza oznacza wtedy, że naprawdę wszystko poszło, a nie że nikt nie patrzył.",
+          title: "Obsługa błędów",
+          desc: "Nieudane operacje trafiają do kolejki i są ponawiane. Jeśli dalej nie przechodzą, dostajecie jedno zbiorcze powiadomienie.",
         },
         {
-          title: "Stany magazynowe i ceny w drugą stronę",
-          desc: "Handlowiec potrzebuje w CRM aktualnej ceny i informacji o dostępności, żeby nie obiecywać rzeczy, których nie ma. To synchronizacja odwrotna, z ERP do CRM, i zwykle wystarczy jej odświeżanie cykliczne zamiast reakcji na każde zdarzenie, bo stan sprzed kwadransa jest wystarczająco dobry, a obciążenie systemu dużo mniejsze.",
+          title: "Stany i ceny w drugą stronę",
+          desc: "Handlowiec widzi w CRM aktualną cenę i dostępność. Wystarcza odświeżanie co kilkanaście minut.",
         },
         {
           title: "Czego nie zrobimy",
-          desc: "Nie wejdziemy w integrację, w której obie strony mają swobodnie edytować te same pola i nikt nie chce rozstrzygnąć, kto ma rację. To nie jest problem techniczny, tylko decyzja organizacyjna, i bez niej każde rozwiązanie będzie generować rozjazdy. Powiemy to na początku, a nie po wdrożeniu.",
+          desc: "Integracji, w której obie strony edytują te same pola, a nikt nie rozstrzyga, kto ma rację. Mówimy to na początku.",
         },
       ]}
       pricing={[
@@ -73,9 +73,9 @@ export default function IntegracjaCrmZErp() {
           price: "0 zł",
           desc: "Zanim cokolwiek zlecisz.",
           features: [
-            "Sprawdzamy, czy Twój ERP wystawia interfejs programistyczny, czy trzeba przez pliki",
-            "Zestawienie kontrahentów, którzy nie dopasują się automatycznie",
-            "Informacja, czy integracja ma sens, czy taniej wyjdzie zmiana procesu",
+            "Czy ERP ma interfejs, czy trzeba przez pliki",
+            "Lista kontrahentów, którzy nie dopasują się sami",
+            "Czy integracja ma sens",
           ],
         },
         {
@@ -84,7 +84,7 @@ export default function IntegracjaCrmZErp() {
           desc: "Najczęstszy start: z CRM do ERP.",
           features: [
             "Kontrahent i dokument sprzedaży z CRM do ERP",
-            "Dopasowanie po numerze identyfikacji podatkowej, z listą wyjątków",
+            "Dopasowanie po NIP, z listą wyjątków",
             "Kolejka ponowień i powiadomienie o błędach",
             "Dokumentacja i przekazanie dostępów",
           ],
@@ -106,28 +106,24 @@ export default function IntegracjaCrmZErp() {
       faq={[
         {
           q: "Z jakimi systemami to robicie?",
-          a: "Od strony CRM najczęściej Pipedrive i HubSpot, bo oba mają porządny interfejs programistyczny i zdarzenia. Od strony ERP liczy się nie nazwa, tylko to, czy system udostępnia interfejs, czy tylko import i eksport plików. Przy plikach integracja też jest możliwa, tylko działa cyklicznie zamiast natychmiast, i mówimy o tym wprost przed wyceną.",
-        },
-        {
-          q: "Co, jeśli nasz ERP nie ma żadnego interfejsu?",
-          a: "Wtedy zostaje wymiana plikami w uzgodnionym formacie, podłożonych w miejsce, które ERP sam odczytuje, albo praca na jego bazie danych w trybie odczytu. Drugie rozwiązanie bywa jedyne, ale niesie ryzyko przy aktualizacjach systemu i traktujemy je jako ostateczność, nie jako domyślny wybór.",
+          a: "Od strony CRM najczęściej Pipedrive i HubSpot. Od strony ERP liczy się, czy system ma interfejs, czy tylko import i eksport plików. Przy plikach synchronizacja działa cyklicznie.",
         },
         {
           q: "Ile to trwa?",
-          a: "Wariant jednokierunkowy to zwykle od dwóch do trzech tygodni, licząc od momentu, w którym mamy dostępy testowe do obu systemów. Największą część tego czasu zajmuje nie kod, tylko uzgodnienie, co ma się dziać z kontrahentami, którzy nie dopasowali się automatycznie.",
+          a: "Wariant jednokierunkowy zwykle dwa do trzech tygodni od otrzymania dostępów testowych do obu systemów.",
         },
         {
           q: "Czy dane wychodzą poza naszą firmę?",
-          a: "Nie muszą. Integrację można postawić na Waszym serwerze, wtedy dane idą wyłącznie między Waszym CRM a Waszym ERP. Jeśli wolicie rozwiązanie chmurowe, powiemy, co dokładnie przechodzi przez czyją infrastrukturę, zanim cokolwiek uruchomimy.",
+          a: "Nie muszą. Integrację można postawić na Waszym serwerze.",
         },
         {
           q: "Co zostaje po zakończeniu?",
-          a: "Kod, dostępy i dokumentacja, po Waszej stronie. Nie ma tu żadnego naszego panelu, bez którego integracja przestaje działać, i nie ma abonamentu, który trzeba płacić, żeby dane dalej się synchronizowały. Opieka jest dobrowolna i dotyczy reagowania na zmiany po stronie dostawców, nie dostępu do własnego rozwiązania.",
+          a: "Kod, dostępy i dokumentacja po Waszej stronie. Bez abonamentu, opieka jest dobrowolna.",
         },
       ]}
       formId="integracja_erp"
       formHeading="Napisz, co masz po obu stronach"
-      formIntro="Wystarczy nazwa CRM, nazwa systemu ERP i jedno zdanie o tym, co dziś ktoś przepisuje ręcznie. Odpiszemy, czy da się to spiąć, w którą stronę zacząć i jakie są widełki."
+      formIntro="Podaj nazwę CRM, systemu ERP i napisz, co dziś ktoś przepisuje ręcznie. Odpiszemy, czy da się to spiąć i za ile."
       submitLabel="Wyślij opis"
       microCopy="Bez rozmowy telefonicznej, jeśli nie chcesz. Ustalenia prowadzimy mailowo."
       serviceName="Integracja CRM z ERP"

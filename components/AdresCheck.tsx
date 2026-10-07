@@ -233,7 +233,7 @@ export default function AdresCheck() {
               <span
                 className={`h-2 w-2 shrink-0 rounded-full ${
                   i < etap
-                    ? "bg-emerald-500"
+                    ? "bg-accent"
                     : i === etap
                       ? "bg-accent animate-pulse"
                       : "bg-gray-300 dark:bg-gray-700"
@@ -246,7 +246,7 @@ export default function AdresCheck() {
       )}
 
       {stan === "blad" && (
-        <p className="mt-3 text-sm text-red-600 dark:text-red-400">{blad}</p>
+        <p className="mt-3 text-sm text-red-700 dark:text-red-400">{blad}</p>
       )}
 
       {wynik && m && (
@@ -359,7 +359,7 @@ export default function AdresCheck() {
                   </button>
                 </div>
                 {leadStan === "blad" && (
-                  <p className="mt-2 text-sm text-red-600 dark:text-red-400">
+                  <p className="mt-2 text-sm text-red-700 dark:text-red-400">
                     {leadBlad}
                   </p>
                 )}

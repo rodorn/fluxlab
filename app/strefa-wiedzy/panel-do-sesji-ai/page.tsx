@@ -32,22 +32,22 @@ const faqItems = [
   {
     question: "Dla kogo jest takie narzędzie?",
     answer:
-      "Dla osób, które używają asystenta AI do pracy nad kilkoma rzeczami równolegle: programistów, osób zajmujących się automatyzacją, analityków. Jeśli prowadzisz jedną rozmowę dziennie, terminal wystarczy. Problem zaczyna się przy piątej równoległej sesji, gdy przestajesz wiedzieć, która czeka na Twoją decyzję.",
+      "Dla osób, które prowadzą kilka rozmów z asystentem AI równolegle. Przy jednej rozmowie dziennie terminal wystarczy.",
   },
   {
     question: "Czy to zastępuje asystenta AI?",
     answer:
-      "Nie, to warstwa nad nim. W środku działa dokładnie ten sam program co w terminalu, z pełnym zestawem komend. Panel dokłada to, czego brakuje przy wielu rozmowach naraz: listę stanów, koszty, limity, powiadomienia i historię.",
+      "Nie, to warstwa nad nim. W środku działa ten sam program, a panel dokłada stany, koszty, limity i powiadomienia.",
   },
   {
     question: "Co z bezpieczeństwem danych?",
     answer:
-      "Wszystko działa lokalnie, na Twoim komputerze. Transkrypty, zadania i notatki nie opuszczają maszyny. Wyjątkiem są powiadomienia na telefon, domyślnie wyłączone, które wysyłają wyłącznie nazwę sesji. Klucze i tokeny są trzymane w zaszyfrowanym pliku.",
+      "Wszystko działa lokalnie. Transkrypty i notatki nie opuszczają komputera, a klucze są w zaszyfrowanym pliku.",
   },
   {
     question: "Ile to kosztuje?",
     answer:
-      "Nic. Kod jest otwarty na licencji MIT, można go pobrać, uruchomić i zmienić pod siebie. Płacisz wyłącznie za samego asystenta AI, tak jak dotąd.",
+      "Nic. Kod jest otwarty na licencji MIT. Płacisz tylko za asystenta AI.",
   },
 ];
 
@@ -74,12 +74,9 @@ export default function PanelDoSesjiAiArticle() {
         </h1>
 
         <p style={{ color: "var(--article-muted)", lineHeight: 1.7, fontSize: "1.05rem" }}>
-          Praca z asystentem AI zaczyna się od jednego okna terminala. Po
-          miesiącu okien jest kilkanaście, każde z inną rozmową, i nagle nie
-          wiadomo, która czeka na decyzję, która skończyła pracę, a która stoi
-          od tygodnia. Poniżej opis narzędzia, które zbudowaliśmy, żeby ten
-          problem rozwiązać u siebie, oraz wnioski, które mogą się przydać także
-          wtedy, gdy zbudujesz coś własnego.
+          Po miesiącu pracy z asystentem AI okien terminala jest kilkanaście
+          i nie wiadomo, która rozmowa czeka na decyzję. Opisujemy narzędzie,
+          które zbudowaliśmy, żeby to uporządkować.
         </p>
 
         <div
@@ -120,98 +117,53 @@ export default function PanelDoSesjiAiArticle() {
           Punkt wyjścia: dwadzieścia dwa zapomniane procesy
         </h2>
         <p style={{ color: "var(--article-text)", lineHeight: 1.7 }}>
-          Diagnoza zaczęła się od policzenia, ile rozmów faktycznie działa w
-          tle. Wynik: dwadzieścia dwa procesy, łącznie ponad pięć gigabajtów
-          pamięci, część uruchomiona trzy tygodnie wcześniej i dawno zapomniana.
-          Żadne okno nie pokazywało, która z nich czeka na odpowiedź.
+          W tle działały dwadzieścia dwa procesy, ponad pięć gigabajtów pamięci, część
+          sprzed trzech tygodni. Żadne okno nie pokazywało, która rozmowa czeka na
+          odpowiedź.
         </p>
-        <p style={{ color: "var(--article-text)", lineHeight: 1.7 }}>
-          To nie jest problem asystenta, tylko braku warstwy zarządzania. Ten
-          sam wzorzec widać w firmach: pojedyncza automatyzacja działa świetnie,
-          dopiero przy dziesiątej nikt nie wie, co jest włączone i czy nadal
-          robi to, co miało robić.
-        </p>
-
         <h2
           style={{ fontSize: "1.4rem", fontWeight: 700, marginTop: "2.5rem" }}
         >
-          Cztery rzeczy, które okazały się najważniejsze
+          Co okazało się najważniejsze
         </h2>
-
         <h3 style={{ fontWeight: 700, marginTop: "1.5rem" }}>
-          1. Stan każdej rozmowy, widoczny od razu
+          1. Stan każdej rozmowy
         </h3>
         <p style={{ color: "var(--article-text)", lineHeight: 1.7 }}>
-          Lista wszystkich sesji z jednoznaczną informacją: pracuje, czeka na
-          Twoją decyzję, czy jest gotowa. Do tego, co robi w tej chwili i od jak
-          dawna. Bez tego przełączanie się między oknami jest zgadywanką.
+          Lista sesji: pracuje, czeka na decyzję albo gotowa. Do tego, co robi i od
+          jak dawna.
         </p>
-
         <h3 style={{ fontWeight: 700, marginTop: "1.5rem" }}>
-          2. Pytania, które blokują pracę na godziny
+          2. Pytania, które blokują pracę
         </h3>
         <p style={{ color: "var(--article-text)", lineHeight: 1.7 }}>
-          Jedenaście sesji stało u nas na pytaniu, którego nikt nie zobaczył, bo
-          było w oknie na innym pulpicie. Narzędzie odpowiada na nie samo, a gdy
-          decyzja naprawdę wymaga człowieka, wysyła powiadomienie na telefon.
+          Jedenaście sesji stało na pytaniu, którego nikt nie zobaczył. Narzędzie
+          odpowiada samo, a gdy decyzja wymaga człowieka, wysyła powiadomienie na
+          telefon.
         </p>
-
         <h3 style={{ fontWeight: 700, marginTop: "1.5rem" }}>
           3. Koszty i limity na wierzchu
         </h3>
         <p style={{ color: "var(--article-text)", lineHeight: 1.7 }}>
-          Ile kosztowała każda rozmowa, ile zostało limitu i kiedy się skończy
-          przy obecnym tempie. Przy okazji ujawnił się błąd w liczeniu: asystent
-          zapisuje tę samą odpowiedź kilka razy, więc naiwne sumowanie zawyżało
-          zużycie ponad dwukrotnie.
+          Koszt każdej rozmowy i ile zostało limitu. Przy okazji wyszło, że naiwne
+          sumowanie zawyżało zużycie ponad dwukrotnie.
         </p>
-
         <h3 style={{ fontWeight: 700, marginTop: "1.5rem" }}>
-          4. Zadania i czas w tym samym miejscu
+          4. Zadania w tym samym miejscu
         </h3>
         <p style={{ color: "var(--article-text)", lineHeight: 1.7 }}>
-          Rozmowa z asystentem zwykle wynika z konkretnego zadania i kończy się
-          kolejnym. Trzymanie jednego i drugiego osobno oznacza ciągłe
-          przepisywanie. Tutaj zadanie przeciąga się na godzinę w kalendarzu
-          albo wysyła prosto do sesji jako polecenie.
+          Zadanie przeciąga się na godzinę w kalendarzu albo wysyła prosto do sesji
+          jako polecenie.
         </p>
-
-        <h2
-          style={{ fontSize: "1.4rem", fontWeight: 700, marginTop: "2.5rem" }}
-        >
-          Dlaczego kod jest otwarty
-        </h2>
-        <p style={{ color: "var(--article-text)", lineHeight: 1.7 }}>
-          Z dwóch powodów. Narzędzie steruje całym komputerem i czyta historię
-          rozmów, więc powinno dać się sprawdzić, co dokładnie robi. Drugi powód
-          jest prostszy: opis usług przekonuje mniej niż działający program,
-          którego można użyć bez pytania kogokolwiek o zgodę.
-        </p>
-        <p style={{ color: "var(--article-text)", lineHeight: 1.7 }}>
-          Kod, instrukcja instalacji i opis architektury są dostępne publicznie:{" "}
-          <a
-            href="https://github.com/rodorn/fluxdesk"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ color: "var(--article-link)", textDecoration: "underline" }}
-          >
-            github.com/rodorn/fluxdesk
-          </a>
-          .
-        </p>
-
         <h2
           style={{ fontSize: "1.4rem", fontWeight: 700, marginTop: "2.5rem" }}
         >
           Co z tego wynika dla firm
         </h2>
         <p style={{ color: "var(--article-text)", lineHeight: 1.7 }}>
-          Wniosek, który przenosi się jeden do jednego na automatyzację
-          procesów: narzędzia same z siebie nie robią porządku. Dziesięć
-          automatyzacji bez jednego miejsca, w którym widać ich stan, koszt i
-          błędy, zamienia się w ten sam bałagan co dwadzieścia dwa okna
-          terminala. Warstwa nadzoru jest częścią wdrożenia, nie dodatkiem do
-          niego.
+          Dziesięć automatyzacji bez jednego miejsca, w którym widać ich stan, koszt i
+          błędy, to ten sam bałagan co dwadzieścia dwa okna terminala. Warstwa
+          nadzoru jest częścią wdrożenia.
         </p>
 
         <div
@@ -232,8 +184,7 @@ export default function PanelDoSesjiAiArticle() {
               margin: "0.5rem 0 1rem",
             }}
           >
-            Zrobimy przegląd procesów i pokażemy, gdzie tracisz czas oraz co
-            warto połączyć w jedno miejsce.
+            Pokażemy, gdzie tracisz czas i co warto połączyć w jedno miejsce.
           </div>
           <Link
             href="/kontakt"

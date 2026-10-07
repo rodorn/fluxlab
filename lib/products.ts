@@ -359,22 +359,6 @@ export const PRODUCTS: Product[] = [
 
   // ---------- DANE ----------
   {
-    category: "dane",
-    name: "Sprawdź auto przed zakupem",
-    tagline: "Raport due-diligence dla kupującego",
-    desc: "Wklejasz link do oferty z Otomoto lub OLX, a dostajesz benchmark ceny wobec podobnych aut, listę typowych usterek modelu, wykryte sygnały ostrzegawcze i gotowy skrypt negocjacji.",
-    price: "od 5 zł",
-    href: "/sprawdz-auto",
-    grupa: "raporty",
-    cta: "Zamów sprawdzenie auta",
-    bullets: [
-      "price-check 5 zł, pełny raport 15 zł",
-      "benchmark ceny i wykrywanie cofniętego licznika",
-      "argumenty do negocjacji ceny",
-    ],
-    featured: true,
-  },
-  {
     category: "www",
     name: "Kontrola wersji językowej",
     tagline: "Angielska strona, na której zostały polskie napisy",

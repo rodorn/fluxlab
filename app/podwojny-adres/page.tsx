@@ -32,25 +32,25 @@ export default function Page() {
       breadcrumb="Podwójny adres"
       eyebrow="Pozycje w wyszukiwarce"
       h1="Twoja strona może odpowiadać pod dwoma adresami naraz"
-      lead="Dla Ciebie firma.pl i www.firma.pl to jedno i to samo. Dla wyszukiwarki to dwa osobne adresy, a jeśli oba zwracają tę samą treść, dostaje dwie identyczne strony i sama decyduje, którą pokazać. Efekt jest cichy: linki, opinie i lata pracy nad widocznością rozkładają się na dwa adresy zamiast budować jeden."
+      lead="Dla wyszukiwarki firma.pl i www.firma.pl to dwa adresy. Jeśli oba dają tę samą treść, linki i widoczność dzielą się na dwie strony zamiast budować jedną."
       ctaLabel="Sprawdź swój adres"
       ctaNote="Sprawdzenie za darmo, od ręki"
       checks={[
         {
           title: "Cztery wersje adresu",
-          desc: "Z www i bez, po http i po https. Sprawdzamy każdą osobno i pokazujemy, co dokładnie odpowiada serwer, bez podążania za przekierowaniem.",
+          desc: "Z www i bez, po http i https. Pokazujemy, co odpowiada serwer.",
         },
         {
           title: "Czy treść jest ta sama",
-          desc: "Porównujemy wielkość odpowiedzi. Identyczna treść pod dwoma adresami to sytuacja, w której wyszukiwarka musi wybierać za Ciebie.",
+          desc: "Porównujemy odpowiedzi obu wersji adresu.",
         },
         {
           title: "Czy wskazana jest wersja główna",
-          desc: "Znacznik kanoniczny potrafi uratować sytuację, jeśli jest ustawiony poprawnie. Sprawdzamy, czy w ogóle istnieje i na co wskazuje.",
+          desc: "Sprawdzamy, czy jest znacznik kanoniczny i na co wskazuje.",
         },
         {
           title: "Reguła pod Twój serwer",
-          desc: "Przekierowanie wygląda inaczej na nginx, inaczej na Apache, a jeszcze inaczej przy WordPressie, który trzyma adres główny we własnych ustawieniach. Dostajesz wersję pod to, co faktycznie masz.",
+          desc: "Przekierowanie dla nginx, Apache albo WordPressa, zależnie od tego, co masz.",
         },
       ]}
       pricing={[
@@ -90,30 +90,26 @@ export default function Page() {
       faq={[
         {
           q: "Skąd wiadomo, że to naprawdę szkodzi?",
-          a: "Warunkiem jest identyczna treść pod dwoma adresami i to mierzymy wprost. Nie twierdzimy natomiast, ile dokładnie pozycji przez to tracisz, bo tego z zewnątrz nikt uczciwie nie policzy. Rozstrzyga to dopiero Twoja Search Console, w której widać, ile podstron jest zaindeksowanych pod każdą wersją.",
+          a: "Mierzymy, czy treść pod dwoma adresami jest identyczna. Ile pozycji tracisz, pokaże dopiero Twoja Search Console.",
         },
         {
           q: "Mamy znacznik kanoniczny, czy to wystarczy?",
-          a: "Zwykle tak, bo wyszukiwarka go respektuje. Ale to jest podpowiedź, a nie reguła, i przestaje działać wszędzie tam, gdzie znacznika zabraknie albo gdzie wskaże zły adres. Przekierowanie po stronie serwera działa zawsze i dotyczy każdego adresu w serwisie.",
-        },
-        {
-          q: "Jak sprawdzić, którą wersję adresu Google uznał za główną?",
-          a: "W Search Console, w sprawdzeniu adresu URL, obok siebie stoją adres kanoniczny wskazany przez stronę i ten wybrany przez Google. Jeśli się różnią, w raporcie indeksowania strona trafia do grupy „Duplikat, Google wybrał inną stronę kanoniczną niż użytkownik”. Według dokumentacji Google przekierowanie i znacznik kanoniczny to silne sygnały, a mapa witryny słaby, ale żaden z nich nie jest dla Google poleceniem bezwzględnym.",
+          a: "Zwykle tak, ale to podpowiedź, nie reguła. Przekierowanie na serwerze działa zawsze i dla każdego adresu.",
         },
         {
           q: "Czy wdrożenie może popsuć stronę?",
-          a: "Źle napisana reguła potrafi zapętlić przekierowanie i strona przestaje się otwierać. Dlatego zaczynamy od kopii pliku konfiguracyjnego, a przy WordPressie sprawdzamy najpierw adres zapisany w ustawieniach, bo zmiana tylko w serwerze bez zmiany w ustawieniach daje dokładnie takie zapętlenie.",
+          a: "Zła reguła może zapętlić przekierowanie. Dlatego zaczynamy od kopii konfiguracji, a przy WordPressie sprawdzamy też adres w ustawieniach.",
         },
         {
           q: "Sprawdzenie nic nie wykryło, a mimo to mamy słabe pozycje.",
-          a: "To znaczy tylko tyle, że ten konkretny problem odpada, i tak to napiszemy. Widoczność ma wiele przyczyn, a my wolimy wykluczyć jedną rzecz uczciwie, niż sprzedać Ci audyt na zapas.",
+          a: "To znaczy, że ten problem odpada. Widoczność ma wiele przyczyn, a my nie sprzedajemy audytów na zapas.",
         },
       ]}
       formId="order_podwojny_adres"
-      formIntro="Napisz, jaki masz serwer albo na jakim systemie działa strona, a odeślemy gotową regułę i kolejność wdrożenia."
+      formIntro="Napisz, na jakim serwerze albo systemie działa strona. Odeślemy gotową regułę."
       formHeading="Zamów naprawę adresu"
       submitLabel="Zamów naprawę"
-      microCopy="Do sprawdzenia nie potrzebujemy żadnych dostępów. Dostęp do serwera jest potrzebny dopiero przy samym wdrożeniu, a regułę możemy też przekazać Waszemu informatykowi."
+      microCopy="Do sprawdzenia nie potrzebujemy dostępów. Regułę możemy przekazać Waszemu informatykowi."
       serviceName="Ujednolicenie adresu strony firmowej"
       serviceDesc="Wskazanie wersji kanonicznej adresu, przygotowanie i wdrożenie przekierowania oraz znacznika wersji głównej, wraz z kontrolnym sprawdzeniem po wdrożeniu. Od 190 zł."
       serviceType="Konfiguracja przekierowań i adresu kanonicznego strony"

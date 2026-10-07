@@ -30,27 +30,21 @@ export const metadata: Metadata = {
 };
 
 const offer = [
-  "Integracja CRM, ERP, baz danych i dowolnego API w jeden workflow.",
-  "Webhooki, reakcja na zdarzenia w czasie rzeczywistym, bez pollingu.",
-  "Własna logika w nodach JavaScript i Python tam, gdzie no-code nie wystarcza.",
-  "Self-hosted lub cloud, Twoje dane, Twoja infrastruktura.",
+  "CRM, ERP, bazy danych i dowolne API w jednym workflow.",
+  "Webhooki i własna logika w JavaScript lub Pythonie.",
+  "Self-hosted lub cloud, dane zostają u Ciebie.",
 ];
 
 const faq = [
   {
     question: "Czym n8n różni się od Zapier i Make?",
     answer:
-      "n8n można hostować na własnym serwerze, ma kod nodów (JS, Python) i nie płacisz za każde wykonanie scenariusza.",
-  },
-  {
-    question: "Czy n8n nadaje się dla małej firmy?",
-    answer:
-      "Tak. Wersja self-hosted jest darmowa, a n8n Cloud pozwala zacząć bez własnej infrastruktury.",
+      "Działa na własnym serwerze, pozwala pisać kod i nie płacisz za każde wykonanie.",
   },
   {
     question: "Czy możemy przenieść automatyzacje z Zapier/Make?",
     answer:
-      "Tak. Większość scenariuszy da się odtworzyć w n8n, migracja to dobra okazja, by je uprościć.",
+      "Tak. Większość scenariuszy odtworzymy w n8n i przy okazji uprościmy.",
   },
 ];
 
@@ -61,15 +55,15 @@ export default function N8nPage() {
       <main>
         {/* Hero, kompaktowy */}
         <section className="relative overflow-hidden pt-24 pb-12">
-          <div className="blob blob-violet -z-10 top-[-10%] left-[-5%]" />
+          <div className="blob blob-accent -z-10 top-[-10%] left-[-5%]" />
           <div className="container-wide max-w-3xl mx-auto text-center">
             <p className="section-label mb-5">Usługa</p>
             <h1 className="display-lg text-gray-900 dark:text-white mb-6">
               Automatyzacja z n8n
             </h1>
             <p className="text-lg lg:text-xl text-gray-600 dark:text-gray-300">
-              Workflow, które łączą systemy, API i logikę biznesową w jednym
-              miejscu. Self-hosted lub cloud, z pełną kontrolą nad danymi.
+              Łączymy systemy i API w jeden workflow, z pełną kontrolą nad
+              danymi.
             </p>
             <div className="mt-8">
               <a href="#sekcje" className="btn-primary">
@@ -79,7 +73,6 @@ export default function N8nPage() {
           </div>
         </section>
 
-        {/* Treść w zakładkach, nic nie wycięte, podzielone */}
         <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
           <Tabs
             ariaLabel="Sekcje usługi automatyzacji z n8n"
@@ -157,7 +150,7 @@ export default function N8nPage() {
                       <LandingForm
                         formId="diagnosis_n8n"
                         heading="Sprawdźmy Twój workflow w n8n"
-                        intro="Opisz krótko, jakie procesy chcesz zautomatyzować: jakie systemy łączymy, jaki wolumen, self-hosted czy cloud. Dostaniesz wstępną propozycję architektury."
+                        intro="Napisz, jakie systemy łączymy i w jakim wolumenie. Odeślemy wstępną propozycję."
                         submitLabel="Chcemy diagnozę workflow n8n"
                       />
                     </div>

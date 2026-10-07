@@ -32,15 +32,15 @@ export const metadata: Metadata = {
 const compare = [
   {
     name: "Zapier",
-    desc: "Proste, liniowe przepływy i 7 000+ gotowych integracji. Szybkie wdrożenie, minimalna krzywa uczenia.",
+    desc: "Proste, liniowe przepływy i 7 000+ integracji. Szybkie wdrożenie.",
   },
   {
     name: "Make",
-    desc: "Wizualny builder z rozgałęzieniami, pętlami i obsługą błędów. Wybór, gdy workflow jest wieloetapowy.",
+    desc: "Rozgałęzienia, pętle i obsługa błędów. Dla procesów wieloetapowych.",
   },
   {
     name: "Oba naraz",
-    desc: "Zapier do prostych automatyzacji, Make do procesów operacyjnych. Liczy się dopasowanie do problemu.",
+    desc: "Zapier do prostych automatyzacji, Make do procesów operacyjnych.",
   },
 ];
 
@@ -53,12 +53,12 @@ const faq = [
   {
     question: "Czy możemy przenieść automatyzacje między platformami?",
     answer:
-      "Tak, choć nie ma automatycznej migracji, logikę odtwarza się w nowym narzędziu. Pomagamy w takich migracjach.",
+      "Tak, ale ręcznie: logikę odtwarza się w nowym narzędziu. Robimy takie migracje.",
   },
   {
     question: "Ile kosztuje Zapier vs Make?",
     answer:
-      "Zapier rozlicza zadania, Make operacje. Przy dużej skali Make bywa wyraźnie tańszy. Pomagamy dobrać plan, żeby nie przepłacać.",
+      "Zapier rozlicza zadania, Make operacje. Przy dużej skali Make bywa wyraźnie tańszy.",
   },
 ];
 
@@ -69,15 +69,14 @@ export default function ZapierMake() {
       <main>
         {/* Hero, kompaktowy */}
         <section className="relative overflow-hidden pt-24 pb-12">
-          <div className="blob blob-cyan -z-10 top-[-10%] right-[-5%]" />
+          <div className="blob blob-accent -z-10 top-[-10%] right-[-5%]" />
           <div className="container-wide max-w-3xl mx-auto text-center">
             <p className="section-label mb-5">Usługa</p>
             <h1 className="display-lg text-gray-900 dark:text-white mb-6">
               Zapier vs Make
             </h1>
             <p className="text-lg lg:text-xl text-gray-600 dark:text-gray-300">
-              Dwie najpopularniejsze platformy automatyzacji no-code. Pomagamy
-              wybrać właściwe narzędzie i wdrożyć workflow, które oszczędzają
+              Pomagamy wybrać platformę i wdrażamy workflow, które oszczędzają
               czas.
             </p>
             <div className="mt-8">
@@ -88,7 +87,6 @@ export default function ZapierMake() {
           </div>
         </section>
 
-        {/* Treść w zakładkach, nic nie wycięte, podzielone */}
         <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
           <Tabs
             ariaLabel="Sekcje porównania Zapier vs Make"
@@ -167,7 +165,7 @@ export default function ZapierMake() {
                       <LandingForm
                         formId="diagnosis_zapier_make"
                         heading="Dobierz narzędzie do procesu"
-                        intro="Opisz krótko, jaki proces chcesz zautomatyzować, jakie systemy łączymy i jaki masz wolumen. Dostaniesz informację, czy lepszy będzie Zapier, Make czy n8n."
+                        intro="Opisz proces, systemy i wolumen. Odpowiemy, czy lepszy będzie Zapier, Make czy n8n."
                         submitLabel="Dobierz narzędzie"
                       />
                     </div>

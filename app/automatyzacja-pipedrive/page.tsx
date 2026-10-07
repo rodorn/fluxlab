@@ -7,11 +7,11 @@ import Tabs from "@/components/Tabs";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Automatyzacja Pipedrive – jak wycisnąć 100% z CRM | Fluxlab",
+  title: "Automatyzacja Pipedrive, 100% z CRM | Fluxlab",
   description:
     "Automatyzacje oparte o Pipedrive API, webhooki i integracje systemowe. Obsługa leadów, synchronizacja danych, raporty i koniec ręcznej pracy.",
   openGraph: {
-    title: "Automatyzacja Pipedrive – jak wycisnąć 100% z CRM | Fluxlab",
+    title: "Automatyzacja Pipedrive, 100% z CRM | Fluxlab",
     description:
       "Automatyzacje oparte o Pipedrive API, webhooki i integracje systemowe. Obsługa leadów, synchronizacja danych, raporty i koniec ręcznej pracy.",
     locale: "pl_PL",
@@ -33,19 +33,19 @@ export const metadata: Metadata = {
 const offer = [
   {
     title: "Automatyczna obsługa leadów",
-    desc: "Lead trafia od razu do właściwego handlowca z dealem, etapem i pierwszym zadaniem. Żaden lead nie ginie.",
+    desc: "Lead trafia od razu do właściwego handlowca z dealem i pierwszym zadaniem.",
   },
   {
     title: "Integracje przez API",
-    desc: "Formularze, ERP, księgowość, call center i własne bazy spięte z Pipedrive. Bez duplikatów, bez przepisywania.",
+    desc: "Formularze, ERP, księgowość i call center spięte z Pipedrive, bez duplikatów.",
   },
   {
     title: "Logika biznesowa i webhooki",
-    desc: "Zmiana etapów, follow-upy i procesy backendowe uruchamiają się same, w czasie rzeczywistym, nie w kolejnym cronie.",
+    desc: "Zmiany etapów i follow-upy uruchamiają się same, w czasie rzeczywistym.",
   },
   {
     title: "Raporty i czysta baza",
-    desc: "Dedykowane dashboardy, raporty mailem i automatyczne czyszczenie danych zamiast Excela.",
+    desc: "Dashboardy, raporty mailem i czyszczenie danych zamiast Excela.",
   },
 ];
 
@@ -66,8 +66,8 @@ export default function AutomatyzacjaPipedrive() {
                 Wykorzystaj Pipedrive w 100%
               </h1>
               <p className="text-lg text-gray-500 dark:text-gray-400 mb-10 max-w-xl">
-                Większość firm używa Pipedrive jak notatnika. Z dobrymi
-                automatyzacjami staje się silnikiem sprzedaży.
+                Większość firm używa Pipedrive jak notatnika. Automatyzacje
+                robią z niego silnik sprzedaży.
               </p>
               <a href="#sekcje" className="btn-primary px-8 py-3.5 text-base">
                 Sprawdźmy proces
@@ -76,7 +76,6 @@ export default function AutomatyzacjaPipedrive() {
           </div>
         </section>
 
-        {/* Treść w zakładkach, nic nie wycięte, podzielone */}
         <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
           <Tabs
             ariaLabel="Sekcje oferty automatyzacji Pipedrive"
@@ -104,24 +103,21 @@ export default function AutomatyzacjaPipedrive() {
                       ))}
                     </div>
                     <p className="mt-8 max-w-3xl text-gray-500 dark:text-gray-400 leading-relaxed">
-                      W Pipedrive najczęściej zaczynamy od dwóch miejsc, gdzie
-                      ucieka sprzedaż:{" "}
+                      Zwykle zaczynamy od dwóch rzeczy:{" "}
                       <Link
                         href="/automatyzacja-follow-up"
                         className="text-accent hover:underline"
                       >
                         follow-upy po ofercie
                       </Link>
-                      , które same zakładają zadanie, gdy deal stoi w etapie
-                      dłużej niż ustalony limit, oraz{" "}
+                      {" "}i{" "}
                       <Link
                         href="/czas-reakcji-na-leada"
                         className="text-accent hover:underline"
                       >
                         czas reakcji na nowego leada
                       </Link>
-                      , mierzony od wpadnięcia formularza do pierwszego
-                      kontaktu.
+                      .
                     </p>
                   </section>
                 ),
@@ -136,7 +132,7 @@ export default function AutomatyzacjaPipedrive() {
                     <LandingForm
                       formId="diagnosis_pipedrive"
                       heading="Sprawdźmy Twój proces w Pipedrive"
-                      intro="Opisz krótko, jak dziś wygląda obsługa leadów i deali: skąd przychodzą, kto je obsługuje, gdzie pojawia się ręczna praca. Dostaniesz informację, czy automatyzacja ma sens i co da największy efekt."
+                      intro="Opisz, skąd przychodzą leady, kto je obsługuje i gdzie jest ręczna praca. Odpiszemy, co da największy efekt."
                       submitLabel="Chcemy diagnozę procesu Pipedrive"
                     />
                   </section>

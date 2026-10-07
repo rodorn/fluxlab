@@ -32,25 +32,25 @@ export default function Page() {
       breadcrumb="Kontrola wersji językowej"
       eyebrow="Eksport i wersje obcojęzyczne"
       h1="Wasza angielska strona mówi po polsku i nikt tego nie zauważył"
-      lead="Tłumaczenie serwisu prawie nigdy nie kończy się w stu procentach. Zostają przyciski, nagłówki sekcji, czasem całe akapity. Ich nie widać, bo kto zna polski, ten przeczyta i nie zwróci uwagi, a zagraniczny klient widzi stronę, która wygląda na porzuconą w połowie."
+      lead="Po tłumaczeniu prawie zawsze zostają polskie przyciski, nagłówki, czasem całe akapity. Wy ich nie zauważacie, a zagraniczny klient widzi stronę porzuconą w połowie."
       ctaLabel="Zamów pełny audyt"
       ctaNote="Wynik w 48 godzin"
       checks={[
         {
           title: "Fragment po fragmencie, nie strona po stronie",
-          desc: "Popularne narzędzia oceniają całą stronę jako jeden byt. Strona z czterystoma fragmentami, z których trzynaście jest po polsku, wygląda dla nich na bezbłędną. Rozbijamy ją na pojedyncze fragmenty tekstu.",
+          desc: "Popularne narzędzia oceniają całą stronę naraz i przepuszczają pojedyncze polskie fragmenty. My sprawdzamy każdy fragment osobno.",
         },
         {
           title: "Deklaracja języka kontra rzeczywistość",
-          desc: "Strona potrafi deklarować, że jest angielska, i jednocześnie mieć polskie napisy. Pokazujemy tę sprzeczność wprost, bo to ona najbardziej szkodzi w wyszukiwarce.",
+          desc: "Strona deklaruje angielski, a ma polskie napisy. Ta sprzeczność najbardziej szkodzi w wyszukiwarce.",
         },
         {
           title: "Znaczniki wersji językowych",
-          desc: "Bez nich wyszukiwarka nie wie, że polska i angielska strona to ta sama treść w dwóch językach, więc wersje zaczynają konkurować ze sobą zamiast się wspierać.",
+          desc: "Bez nich wersje językowe konkurują ze sobą w wyszukiwarce zamiast się wspierać.",
         },
         {
           title: "Lista gotowa dla programisty",
-          desc: "Każdy wpis ma adres strony, miejsce i tekst, który trzeba podmienić. Przekazujesz plik dalej i sprawa jest zamknięta, bez tłumaczenia komukolwiek, o co chodzi.",
+          desc: "Każdy wpis ma adres, miejsce i tekst do podmiany. Przekazujesz plik dalej.",
         },
       ]}
       pricing={[
@@ -90,26 +90,26 @@ export default function Page() {
       faq={[
         {
           q: "Czego potrzebujecie, żeby to sprawdzić?",
-          a: "Tylko adresu strony. Wszystko, co analizujemy, jest publicznie dostępne, więc nie potrzebujemy dostępu do panelu ani do systemu zarządzania treścią.",
+          a: "Tylko adresu strony. Nie potrzebujemy żadnych dostępów.",
         },
         {
           q: "Czy sprawdzacie też jakość samego tłumaczenia?",
-          a: "Nie i mówimy to wprost. Wykrywamy tekst, który w ogóle nie został przetłumaczony, oraz błędy w oznaczeniach dla wyszukiwarki. Ocena stylu przekładu to praca dla tłumacza, nie dla narzędzia.",
+          a: "Nie. Wykrywamy tekst nieprzetłumaczony i błędy w znacznikach. Styl przekładu ocenia tłumacz.",
         },
         {
           q: "Mamy stronę na WordPressie z wtyczką do tłumaczeń, czy to zadziała?",
-          a: "Tak, bo sprawdzamy gotową stronę taką, jaką widzi odwiedzający, niezależnie od tego, co ją generuje. Wtyczki do tłumaczeń są zresztą najczęstszym źródłem takich braków, bo nowa podstrona domyślnie pokazuje treść oryginalną.",
+          a: "Tak. Sprawdzamy stronę taką, jaką widzi odwiedzający. Wtyczki to zresztą najczęstsze źródło braków.",
         },
         {
           q: "Co jeśli nic nie znajdziecie?",
-          a: "Wtedy nie płacisz za audyt. Przy serwisach, które sprawdzaliśmy, komplet bez zastrzeżeń zdarza się, ale rzadziej niż braki.",
+          a: "Wtedy nie płacisz za audyt.",
         },
       ]}
       formId="order_kontrola_jezykow"
       formHeading="Zamów pełny audyt wersji językowych"
-      formIntro="Podaj adres strony i napisz, które wersje językowe Was interesują. Odeślemy listę miejsc do poprawy, a jeśli nie znajdziemy ani jednego, nie płacisz."
+      formIntro="Podaj adres strony i wersje językowe. Jeśli nic nie znajdziemy, nie płacisz."
       submitLabel="Zamów audyt"
-      microCopy="Analizujemy wyłącznie publicznie dostępne strony. Nie potrzebujemy żadnych dostępów."
+      microCopy="Analizujemy tylko publiczne strony."
       serviceName="Audyt wersji językowych strony internetowej"
       serviceDesc="Wykrycie nieprzetłumaczonych fragmentów w obcojęzycznych wersjach serwisu oraz błędów w znacznikach hreflang, z listą miejsc do podmiany. Od 99 zł."
       serviceType="Audyt jakości wersji językowych serwisu"

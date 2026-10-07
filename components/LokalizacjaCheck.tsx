@@ -271,7 +271,7 @@ export default function LokalizacjaCheck() {
       )}
 
       {stan === "blad" && (
-        <p className="mt-3 text-sm text-red-600 dark:text-red-400">{blad}</p>
+        <p className="mt-3 text-sm text-red-700 dark:text-red-400">{blad}</p>
       )}
 
       {wynik && wynik.status !== "OK" && (
@@ -330,7 +330,7 @@ export default function LokalizacjaCheck() {
           </div>
 
           {wynik.zastrzezenie && (
-            <p className="mt-4 rounded-lg border border-amber-400/50 bg-white/70 dark:bg-gray-950/50 p-3 text-sm text-gray-800 dark:text-gray-200">
+            <p className="mt-4 rounded-lg border border-amber-500/60 bg-white/70 dark:bg-gray-950/50 p-3 text-sm text-gray-800 dark:text-gray-200">
               {wynik.zastrzezenie}
             </p>
           )}
@@ -400,7 +400,7 @@ export default function LokalizacjaCheck() {
                   </button>
                 </div>
                 {leadStan === "blad" && (
-                  <p className="mt-2 text-sm text-red-600 dark:text-red-400">
+                  <p className="mt-2 text-sm text-red-700 dark:text-red-400">
                     {leadBlad}
                   </p>
                 )}

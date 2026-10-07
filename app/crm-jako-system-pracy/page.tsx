@@ -31,101 +31,46 @@ export const metadata: Metadata = {
   },
 };
 
-const problemPoints = [
-  "CRM jest miejscem dokumentowania chaosu, a nie narzędziem, które ten chaos ogranicza.",
-  "Handlowcy wpisują dane „jakoś”, każdy w innym formacie i z innymi polami.",
-  "Etapy w pipeline'ie nie odpowiadają realnemu stanowi sprzedaży.",
-  "Statusy aktualizowane są raz w tygodniu, na piątkowym callu, kiedy manager pyta.",
-  "Nikt nie wie, co znaczy „w trakcie negocjacji”, bo każdy rozumie to inaczej.",
-  "Raporty z CRM-u są dyplomatycznie ignorowane, bo dane są niewiarygodne.",
-];
-
 const symptoms = [
-  "Manager prosi o status pipeline'u i dostaje arkusz z notatnikiem zamiast raportu z CRM-u.",
-  "Połowa deali ma „aktualizację” starszą niż 14 dni, a mimo to są w aktywnych etapach.",
-  "Custom fieldy w CRM mają po 3–4 tysiące pustych wartości i kilka „testowych”.",
-  "Handlowiec mówi „wiemy, gdzie jest ten klient”, ale w CRM nie ma o tym ani słowa.",
-  "Gdy ktoś idzie na urlop, jego deale stoją, bo nikt nie umie odczytać kontekstu z CRM-u.",
-  "Sprzedaż prowadzi własną tabelę w Excelu, bo CRM-owi nie ufa.",
-];
-
-const beforeSteps = [
-  "Handlowiec wraca z rozmowy, robi notatkę w głowie albo w telefonie.",
-  "Wieczorem albo „jak będzie czas” wpisuje skrót do CRM-u.",
-  "Status zmienia, gdy mu się przypomni, albo przed coniedzielnym raportem.",
-  "Pole „następny krok” wypełnia ogólnikiem typu „kontakt z klientem”.",
-  "Manager w piątek pyta „co z tym dealem”, handlowiec sprawdza maila, nie CRM.",
-  "Raport z CRM-u jest robiony ręcznie w Excelu, bo dane w systemie są niespójne.",
+  "Statusy aktualizowane są raz w tygodniu, gdy manager pyta.",
+  "Połowa deali w aktywnych etapach nie ma aktywności od ponad 14 dni.",
+  "Każdy rozumie „w trakcie negocjacji” inaczej.",
+  "Sprzedaż prowadzi własny Excel, bo CRM-owi nie ufa.",
 ];
 
 const afterSteps = [
-  "CRM ma sztywną strukturę: pola wymagane, słowniki zamiast wolnego tekstu, jasna definicja każdego etapu.",
-  "Po każdej rozmowie handlowiec uzupełnia 3 pola w 30 sekund, system nie pozwala iść dalej bez nich.",
-  "Etap deala zmienia się tylko po spełnieniu warunku (np. „oferta wysłana” = załącznik w deal'u).",
-  "System pilnuje terminów: brak aktywności 7 dni → automatyczne przypomnienie, 14 dni → eskalacja.",
-  "Dashboard managera czyta dane z CRM-u w czasie rzeczywistym, bez Excela.",
-  "Onboarding nowego handlowca to 1 dzień, bo proces jest opisany w narzędziu, nie w głowie poprzednika.",
+  "Pola wymagane i słowniki zamiast wolnego tekstu, jasna definicja każdego etapu.",
+  "Po rozmowie handlowiec uzupełnia 3 pola w 30 sekund.",
+  "Etap zmienia się tylko po spełnieniu warunku, np. „oferta wysłana” = załącznik w dealu.",
+  "Brak aktywności 7 dni daje przypomnienie, 14 dni eskalację.",
+  "Dashboard managera czyta dane z CRM-u na bieżąco, bez Excela.",
 ];
 
 const workflowSteps = [
   {
     n: "1",
     title: "Audyt obecnego CRM",
-    desc: "Mapujemy, jak handlowcy realnie używają systemu, które pola wypełniają, które ignorują, gdzie powstają niespójności.",
+    desc: "Sprawdzamy, które pola zespół wypełnia, które ignoruje i gdzie powstaje bałagan.",
     accent: false,
   },
   {
     n: "2",
-    title: "Definicja procesu sprzedaży",
-    desc: "Ustalamy etapy, kryteria przejścia między nimi i co dokładnie znaczy każdy status. Bez „w trakcie” bez kontekstu.",
+    title: "Etapy, pola i słowniki",
+    desc: "Ustalamy etapy z kryteriami przejścia, usuwamy martwe pola, wolny tekst zamieniamy na słowniki.",
     accent: true,
   },
   {
     n: "3",
-    title: "Czyszczenie pól i słowników",
-    desc: "Usuwamy pola nieużywane, zamieniamy wolny tekst na słowniki, definiujemy pola wymagane na każdym etapie.",
+    title: "Reguły i automatyczne zadania",
+    desc: "Deal nie przejdzie dalej bez danych. CRM tworzy zadania, pilnuje terminów i eskaluje brak aktywności.",
     accent: false,
   },
   {
     n: "4",
-    title: "Reguły walidacji",
-    desc: "Deal nie zmienia etapu, jeśli brakuje danych. Status nie aktualizuje się, jeśli nie ma odpowiadającej aktywności.",
-    accent: false,
-  },
-  {
-    n: "5",
-    title: "Automatyczne zadania i przypomnienia",
-    desc: "CRM tworzy zadania kontaktowe, pilnuje terminów, eskaluje brak aktywności. Handlowiec dostaje listę „dziś”, nie pipeline do przeglądania.",
+    title: "Raporty i kalibracja",
+    desc: "Manager widzi czas w etapie i konwersję. Przez 4 tygodnie poprawiamy reguły na podstawie realnego użycia.",
     accent: true,
   },
-  {
-    n: "6",
-    title: "Raporty operacyjne",
-    desc: "Manager widzi: średni czas w etapie, konwersję między etapami, deale „zalegające”, miejsca gdzie proces się zacina.",
-    accent: false,
-  },
-  {
-    n: "7",
-    title: "Adopcja i kalibracja",
-    desc: "Pierwsze 4 tygodnie: cotygodniowy review użycia, korekty pól i reguł na podstawie tego, gdzie handlowcy się buntują albo gdzie system blokuje sensowne działanie.",
-    accent: true,
-  },
-];
-
-const firstStage = [
-  "Audyt 5–10 najważniejszych pól w deal'u, które są używane, które martwe, które niespójne.",
-  "Definicja 4–6 etapów sprzedaży z jednoznacznym kryterium przejścia (np. „etap N wymaga pola X”).",
-  "Słowniki zamiast wolnego tekstu w polach „branża”, „źródło leada”, „typ kontraktu”.",
-  "Jedna reguła walidacji: nie da się zamknąć deala bez powodu wygranej/przegranej.",
-  "Raport tygodniowy: liczba deali w każdym etapie, średni czas w etapie, deale bez aktywności 7+ dni.",
-];
-
-const mistakes = [
-  "Dodawanie kolejnych custom fieldów „bo manager poprosił”, bez usuwania martwych. CRM puchnie i przestaje być czytelny.",
-  "Etapy pipeline'u kopiowane z metodologii sprzedażowej zamiast dopasowane do faktycznego procesu firmy.",
-  "Sztywne reguły walidacji bez konsultacji z handlowcami, wszyscy znajdą obejście, system traci wiarygodność.",
-  "Manager prosi o aktualizację „na piątkowy raport” zamiast wymagać uzupełnienia po każdej rozmowie. Dane są dopasowywane pod raport, nie pod prawdę.",
-  "Wprowadzanie automatyzacji na bałaganie, tworzenie zadań w CRM, w którym deale nie mają nawet poprawnych etapów. Automatyzowanie bałaganu to tylko szybsze produkowanie bałaganu.",
 ];
 
 const pricing = [
@@ -133,55 +78,43 @@ const pricing = [
     name: "Audyt CRM",
     price: "0 zł",
     description:
-      "Diagnoza: jak handlowcy używają systemu, gdzie powstaje bałagan i co da największy efekt w pierwszej kolejności.",
+      "Diagnoza: gdzie powstaje bałagan i co da największy efekt najpierw.",
   },
   {
     name: "Porządek w CRM",
     price: "od 2 200 zł",
     description:
-      "Czyszczenie pól, definicja etapów i statusów, słowniki, podstawowe reguły walidacji, instrukcja dla zespołu.",
+      "Czyszczenie pól, etapy i statusy, słowniki, podstawowe reguły walidacji.",
     highlighted: true,
   },
   {
     name: "CRM jako system pracy",
     price: "od 4 500 zł",
     description:
-      "Pełne wdrożenie: porządek + automatyczne zadania, eskalacje, raporty operacyjne i kalibracja przez pierwsze 4 tygodnie.",
+      "Porządek plus automatyczne zadania, eskalacje, raporty i 4 tygodnie kalibracji.",
   },
 ];
 
 const faq = [
   {
-    question: "Mamy już CRM od 3 lat. Czy nie taniej zacząć od zera?",
+    question: "Mamy CRM od 3 lat. Nie taniej zacząć od zera?",
     answer:
-      "Prawie nigdy. W obecnym CRM-ie jest historia, którą warto zachować, kontakty, deale, korespondencja. Posprzątanie istniejącego systemu to zwykle 2–3 tygodnie. Migracja do nowego CRM-u to 6–12 tygodni i prawie zawsze powstaje ten sam bałagan, tylko w nowym narzędziu. Najpierw porządek, potem ewentualna zmiana platformy.",
+      "Prawie nigdy. Porządek w obecnym systemie to zwykle 2-3 tygodnie, migracja 6-12 tygodni i ten sam bałagan w nowym narzędziu.",
   },
   {
-    question:
-      "Handlowcy będą się buntować przeciw nowym regułom, co z tym zrobić?",
+    question: "Handlowcy będą się buntować przeciw nowym regułom?",
     answer:
-      "Tak, będą. Dlatego nie wprowadzamy reguł zza biurka, tylko po rozmowie z zespołem. Handlowcy zwykle wiedzą, które pola są bezsensowne i które reguły im pomagają, a które przeszkadzają. Po pierwszych 4 tygodniach dostosowujemy system na podstawie realnego użycia, nie założeń.",
+      "Dlatego reguły ustalamy z zespołem, a przez pierwsze 4 tygodnie dostosowujemy je do realnego użycia.",
   },
   {
-    question:
-      "Czy to działa dla każdego CRM-u (Pipedrive, HubSpot, Salesforce)?",
+    question: "Czy to działa w Pipedrive, HubSpot i Salesforce?",
     answer:
-      "Tak. Mechanika jest ta sama: definicja etapów, pola wymagane, walidacja, automatyczne zadania, raporty. Różni się sposób konfiguracji w narzędziu. Dla bardzo nietypowych procesów łączymy CRM z warstwą pośrednią (n8n, Make), wtedy logika jest poza CRM-em, ale wynik ten sam.",
+      "Tak. Mechanika jest ta sama, różni się konfiguracja. Nietypowe procesy obsługujemy warstwą pośrednią (n8n, Make).",
   },
   {
     question: "Po jakim czasie widać efekty?",
     answer:
-      "Pierwsze efekty (czytelność pipeline'u, krótsze planowanie tygodnia, raporty z CRM-u zamiast Excela), w 2–4 tygodnie. Czy rośnie konwersja i skraca się cykl sprzedaży, da się ocenić dopiero po kilku miesiącach, bo zespół musi się przyzwyczaić do dyscypliny, a nie da się tego obiecać z góry.",
-  },
-  {
-    question: "Co jeśli mamy zespół 2 osób, czy to nie przerost formy?",
-    answer:
-      "Dla 2 osób nie potrzebujesz pełnego systemu z eskalacjami i raportami operacyjnymi. Wystarczy minimum: 4 etapy, 5 pól wymaganych, jedna reguła „brak aktywności 7 dni = przypomnienie”. To jest 1–2 dni pracy, nie wdrożenie. Większa skala uzasadnia większy system.",
-  },
-  {
-    question: "Czy automatyzacja zastąpi managera sprzedaży?",
-    answer:
-      "Nie. Manager nadal robi 1:1, kalibruje zespół, decyduje o priorytetach. Ale przestaje spędzać 4 godziny tygodniowo na ręcznym sklejaniu raportu z CRM-u i Excela. To czas, który wraca do realnej pracy z zespołem i klientami.",
+      "Czytelny pipeline i raporty bez Excela w 2-4 tygodnie. Wpływ na konwersję da się ocenić po kilku miesiącach.",
   },
 ];
 
@@ -233,12 +166,9 @@ export default function CrmJakoSystemPracy() {
                 Jak zmienić CRM z notatnika w system pracy handlowców
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-                CRM nie powinien być miejscem, gdzie handlowiec dokumentuje
-                chaos. Powinien być systemem, który ten chaos ogranicza,
-                wymusza dyscyplinę procesu, pilnuje terminów, podpowiada kolejny
-                krok. Tu opisujemy, jak doprowadzić istniejący CRM do stanu, w
-                którym zespół mu ufa, a manager przestaje sklejać raporty w
-                Excelu.
+                CRM ma ograniczać chaos, a nie go dokumentować. Porządkujemy
+                istniejący system tak, żeby pilnował terminów, podpowiadał
+                kolejny krok, a manager przestał sklejać raporty w Excelu.
               </p>
               <div className="mt-8 flex justify-center">
                 <TrackedCTA
@@ -258,7 +188,6 @@ export default function CrmJakoSystemPracy() {
           </div>
         </section>
 
-        {/* Treść w zakładkach, nic nie wycięte, podzielone */}
         <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
           <Tabs
             ariaLabel="Sekcje artykułu o CRM jako systemie pracy"
@@ -274,28 +203,16 @@ export default function CrmJakoSystemPracy() {
                           CRM, w którym dane są „cokolwiek”, daje raporty
                           „cokolwiek”
                         </h2>
-                      </div>
-                      <div className="text-gray-600 dark:text-gray-400 leading-relaxed space-y-4 mb-10">
-                        <p>
-                          Handlowcy tworzą zadania ręcznie, zapominają o
-                          follow-upach, zmieniają statusy po czasie i wpisują
-                          dane różnie. Potem raport mówi cokolwiek, bo dane są
-                          cokolwiek. Manager patrzy na pipeline 800 tys. zł i
-                          nie wie, czy 200 tys. z tego to realna sprzedaż, czy
-                          80% to „klient się odezwie po wakacjach” z kwietnia.
-                        </p>
-                        <p>
-                          CRM nie powinien być miejscem, gdzie handlowiec
-                          dokumentuje chaos. Powinien być systemem, który ten
-                          chaos ogranicza. Różnica jest w tym, czy narzędzie
-                          wymusza dyscyplinę procesu, czy tylko biernie zapisuje
-                          to, co zespół chce wpisać.
+                        <p className="text-gray-600 dark:text-gray-400 mt-4 leading-relaxed">
+                          Manager patrzy na pipeline 800 tys. zł i nie wie, ile
+                          z tego to realna sprzedaż. Po tym poznasz, że CRM jest
+                          notatnikiem, nie systemem:
                         </p>
                       </div>
                       <ul className="space-y-3">
-                        {problemPoints.map((point) => (
+                        {symptoms.map((item) => (
                           <li
-                            key={point}
+                            key={item}
                             className="flex items-start gap-3 bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-xl px-5 py-4"
                           >
                             <svg
@@ -320,53 +237,6 @@ export default function CrmJakoSystemPracy() {
                               />
                             </svg>
                             <span className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                              {point}
-                            </span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                ),
-              },
-              {
-                label: "Objawy",
-                content: (
-                  <div className="py-10 lg:py-12">
-                    <div className="max-w-3xl mx-auto">
-                      <div className="text-center mb-12">
-                        <span className="section-label">Objawy</span>
-                        <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4">
-                          Po czym poznać, że CRM jest notatnikiem, nie systemem
-                        </h2>
-                        <p className="text-gray-600 dark:text-gray-400 mt-4 leading-relaxed">
-                          Te objawy pojawiają się stopniowo. Firma rośnie,
-                          dochodzą pola, etapy i custom fieldy, a CRM zamiast
-                          usprawniać sprzedaż zaczyna jej przeszkadzać.
-                        </p>
-                      </div>
-                      <ul className="space-y-3">
-                        {symptoms.map((item) => (
-                          <li
-                            key={item}
-                            className="flex items-start gap-3 bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-xl px-5 py-4"
-                          >
-                            <svg
-                              className="flex-shrink-0 mt-0.5 text-accent"
-                              width="20"
-                              height="20"
-                              viewBox="0 0 20 20"
-                              fill="none"
-                            >
-                              <path
-                                d="M4 10l4 4 8-8"
-                                stroke="currentColor"
-                                strokeWidth="2"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                              />
-                            </svg>
-                            <span className="text-gray-700 dark:text-gray-300 leading-relaxed">
                               {item}
                             </span>
                           </li>
@@ -384,75 +254,28 @@ export default function CrmJakoSystemPracy() {
                       <div className="text-center mb-12">
                         <span className="section-label">Koszt problemu</span>
                         <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4">
-                          Ile kosztuje CRM, którego nie używa się dyscyplinarnie
+                          Ile kosztuje administracja w CRM
                         </h2>
                       </div>
                       <div className="text-gray-600 dark:text-gray-400 leading-relaxed space-y-4">
                         <p>
-                          Handlowcy spędzają część dnia na „administracji w
-                          CRM”: szukaniu kontekstu, ręcznym uzupełnianiu pól,
-                          klikaniu między ekranami. Manager sprzedaży skleja
-                          raport z CRM-u i Excela, dopytuje „a co z tym
-                          klientem” i prostuje statusy. Ile to kosztuje,
-                          zależy od zespołu, więc zamiast jednej liczby jest
-                          tu rachunek z jawnymi założeniami.
+                          Szukanie kontekstu, ręczne pola, sklejanie raportów.
+                          Koszt zależy od zespołu, więc zamiast jednej liczby
+                          jest rachunek z jawnymi założeniami.
                         </p>
                         <KosztAdministracjiCrm />
-                        <p>
-                          Plus efekty pośrednie, których rachunek nie
-                          obejmuje: deale, do których nikt się nie odezwał, bo
-                          „status był aktualny”. Dłuższe wdrażanie nowego
-                          handlowca, bo proces jest w głowach, nie w systemie.
-                          Decyzje o produktach i targetach podejmowane na
-                          podstawie raportów, którym sam manager nie ufa.
-                        </p>
-                        <p>
-                          Ile z tego czasu da się odzyskać, widać dopiero po
-                          przejrzeniu Waszego procesu. Wtedy policzymy razem,
-                          czy porządek w CRM się opłaca.
-                        </p>
                       </div>
                     </div>
                   </div>
                 ),
               },
               {
-                label: "Proces przed",
+                label: "Jak to wygląda",
                 content: (
                   <div className="py-10 lg:py-12">
                     <div className="max-w-3xl mx-auto">
                       <div className="text-center mb-12">
-                        <span className="section-label">Proces przed</span>
-                        <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4">
-                          Jak handlowiec używa CRM-u dziś, łańcuch nadziei
-                        </h2>
-                      </div>
-                      <ol className="space-y-3">
-                        {beforeSteps.map((step, i) => (
-                          <li
-                            key={step}
-                            className="flex items-start gap-4 bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-xl px-5 py-4"
-                          >
-                            <span className="flex-shrink-0 w-7 h-7 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400 flex items-center justify-center text-xs font-bold tabular-nums">
-                              {i + 1}
-                            </span>
-                            <span className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                              {step}
-                            </span>
-                          </li>
-                        ))}
-                      </ol>
-                    </div>
-                  </div>
-                ),
-              },
-              {
-                label: "Proces po",
-                content: (
-                  <div className="py-10 lg:py-12">
-                    <div className="max-w-3xl mx-auto">
-                      <div className="text-center mb-12">
-                        <span className="section-label">Proces po</span>
+                        <span className="section-label">Po wdrożeniu</span>
                         <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4">
                           Jak wygląda CRM, który jest systemem pracy
                         </h2>
@@ -477,19 +300,18 @@ export default function CrmJakoSystemPracy() {
                 ),
               },
               {
-                label: "Diagram",
+                label: "Etapy",
                 content: (
                   <div className="py-10 lg:py-12">
                     <div className="container-wide">
                       <div className="max-w-2xl mb-10">
-                        <p className="section-label mb-3">Diagram</p>
+                        <p className="section-label mb-3">Etapy</p>
                         <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
                           Etapy wdrożenia porządku w CRM
                         </h2>
                         <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
-                          To jest sekwencja, którą prowadzimy u większości
-                          klientów. Każdy etap można zatrzymać i mierzyć efekt
-                          po kolei, bez wdrażania wszystkiego naraz.
+                          Każdy etap można zatrzymać i zmierzyć efekt, bez
+                          wdrażania wszystkiego naraz.
                         </p>
                       </div>
                       <ol className="relative max-w-4xl space-y-3 lg:space-y-4">
@@ -548,107 +370,6 @@ export default function CrmJakoSystemPracy() {
                 ),
               },
               {
-                label: "Pierwszy etap",
-                content: (
-                  <div className="py-10 lg:py-12">
-                    <div className="max-w-3xl mx-auto">
-                      <div className="text-center mb-12">
-                        <span className="section-label">Pierwszy etap</span>
-                        <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4">
-                          Co wdrożyć w pierwszym etapie
-                        </h2>
-                        <p className="text-gray-600 dark:text-gray-400 mt-4 leading-relaxed">
-                          Najmniejszy kawałek, który zwykle daje widoczny efekt
-                          już w drugim tygodniu. Bez przebudowy całego CRM-u,
-                          bez migracji do nowego narzędzia.
-                        </p>
-                      </div>
-                      <ul className="space-y-3">
-                        {firstStage.map((item) => (
-                          <li
-                            key={item}
-                            className="flex items-start gap-3 bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-xl px-5 py-4"
-                          >
-                            <svg
-                              className="flex-shrink-0 mt-0.5 text-accent"
-                              width="20"
-                              height="20"
-                              viewBox="0 0 20 20"
-                              fill="none"
-                            >
-                              <path
-                                d="M4 10l4 4 8-8"
-                                stroke="currentColor"
-                                strokeWidth="2"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                              />
-                            </svg>
-                            <span className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                              {item}
-                            </span>
-                          </li>
-                        ))}
-                      </ul>
-                      <p className="mt-8 text-gray-600 dark:text-gray-400 leading-relaxed">
-                        Dopiero potem dochodzą automatyczne sekwencje,
-                        integracje z marketingiem, scoring leadów i raporty
-                        zaawansowane. Najczęstszy błąd to próba zrobienia
-                        wszystkiego naraz, handlowcy nie nadążają z adopcją i
-                        wracają do Excela.
-                      </p>
-                    </div>
-                  </div>
-                ),
-              },
-              {
-                label: "Antywzorce",
-                content: (
-                  <div className="py-10 lg:py-12">
-                    <div className="max-w-3xl mx-auto">
-                      <div className="text-center mb-12">
-                        <span className="section-label">Antywzorce</span>
-                        <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4">
-                          Najczęstsze błędy w porządkowaniu CRM-u
-                        </h2>
-                        <p className="text-gray-600 dark:text-gray-400 mt-4 leading-relaxed">
-                          Te wzorce widzimy regularnie u firm, które próbowały
-                          „naprawić CRM” samodzielnie. Każdy z nich powoduje, że
-                          wdrożenie się rozsypuje po 2–3 miesiącach.
-                        </p>
-                      </div>
-                      <ul className="space-y-3">
-                        {mistakes.map((item) => (
-                          <li
-                            key={item}
-                            className="flex items-start gap-3 bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-xl px-5 py-4"
-                          >
-                            <svg
-                              className="flex-shrink-0 mt-0.5 text-gray-600 dark:text-gray-400"
-                              width="20"
-                              height="20"
-                              viewBox="0 0 20 20"
-                              fill="none"
-                            >
-                              <path
-                                d="M5 5l10 10M15 5L5 15"
-                                stroke="currentColor"
-                                strokeWidth="2"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                              />
-                            </svg>
-                            <span className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                              {item}
-                            </span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                ),
-              },
-              {
                 label: "Cennik",
                 content: (
                   <div className="py-10 lg:py-12">
@@ -658,12 +379,6 @@ export default function CrmJakoSystemPracy() {
                         <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4">
                           Ile kosztuje porządek w CRM-ie
                         </h2>
-                        <p className="text-gray-600 dark:text-gray-400 mt-4 leading-relaxed max-w-2xl mx-auto">
-                          Wycena zależy od skali zespołu, CRM-u, liczby pól i
-                          etapów oraz tego, ile bałaganu trzeba posprzątać.
-                          Poniżej widełki dla typowych wdrożeń. Audyt zawsze
-                          bezpłatny.
-                        </p>
                       </div>
                       <div className="grid sm:grid-cols-3 gap-6">
                         {pricing.map((tier) => (
@@ -776,21 +491,7 @@ export default function CrmJakoSystemPracy() {
                               Automatyzacja follow-upów w CRM
                             </span>
                             <span className="text-sm text-gray-500 dark:text-gray-400">
-                              Sekwencje przypomnień, które pilnują leadów
-                              zamiast handlowca
-                            </span>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            href="/automatyzacja-leadow-crm"
-                            className="block bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-xl px-5 py-4 hover:border-accent/40 transition-colors"
-                          >
-                            <span className="block font-semibold text-gray-900 dark:text-white">
-                              Automatyzacja CRM
-                            </span>
-                            <span className="text-sm text-gray-500 dark:text-gray-400">
-                              Pełny zakres automatyzacji w CRM dla zespołów B2B
+                              Przypomnienia, które pilnują leadów
                             </span>
                           </Link>
                         </li>
@@ -803,7 +504,7 @@ export default function CrmJakoSystemPracy() {
                               Automatyzacja Pipedrive
                             </span>
                             <span className="text-sm text-gray-500 dark:text-gray-400">
-                              API, webhooki i logika sprzedażowa w Pipedrive
+                              API, webhooki i logika sprzedażowa
                             </span>
                           </Link>
                         </li>
@@ -816,7 +517,7 @@ export default function CrmJakoSystemPracy() {
                               Jak uporządkować proces sprzedaży w CRM
                             </span>
                             <span className="text-sm text-gray-500 dark:text-gray-400">
-                              Artykuł: jak ułożyć etapy, pola i statusy w CRM
+                              Etapy, pola i statusy krok po kroku
                             </span>
                           </Link>
                         </li>

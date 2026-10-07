@@ -181,7 +181,7 @@ export default function ZwrotyCheck() {
       )}
 
       {stan === "blad" && (
-        <p className="mt-3 text-sm text-red-600 dark:text-red-400">{blad}</p>
+        <p className="mt-3 text-sm text-red-700 dark:text-red-400">{blad}</p>
       )}
 
       {wynik && wynik.status !== "OK" && (
@@ -214,13 +214,13 @@ export default function ZwrotyCheck() {
                 <p className="flex items-start gap-2 text-sm font-semibold text-gray-900 dark:text-white">
                   <span
                     aria-hidden="true"
-                    className={w.jest ? "text-emerald-700" : "text-red-600"}
+                    className={w.jest ? "text-emerald-700 dark:text-emerald-400" : "text-red-700 dark:text-red-400"}
                   >
                     {w.jest ? "✓" : "✕"}
                   </span>
                   {w.etykieta}
                   {!w.jest && w.waga === "krytyczny" && (
-                    <span className="ml-1 rounded bg-red-100 px-1.5 py-0.5 text-[11px] font-bold text-red-700 dark:bg-red-950/60 dark:text-red-400">
+                    <span className="ml-1 rounded bg-red-50 px-1.5 py-0.5 text-[11px] font-bold text-red-700 dark:bg-red-950/30 dark:text-red-400">
                       podstawa
                     </span>
                   )}
@@ -300,7 +300,7 @@ export default function ZwrotyCheck() {
                   </button>
                 </div>
                 {leadStan === "blad" && (
-                  <p className="mt-2 text-sm text-red-600 dark:text-red-400">{leadBlad}</p>
+                  <p className="mt-2 text-sm text-red-700 dark:text-red-400">{leadBlad}</p>
                 )}
               </form>
             )}

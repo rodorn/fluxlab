@@ -32,25 +32,25 @@ export default function Page() {
       breadcrumb="Analiza lokalizacji"
       eyebrow="Decyzja o lokalu"
       h1="Umowa najmu na pięć lat, a rynek sprawdzony na oko"
-      lead="Mapy pokazują pinezki i na tym koniec. Nie mówią, ilu mieszkańców przypada na jeden taki punkt, ani czy obok jest gmina, gdzie tych punktów jest o połowę mniej. Sprawdzamy to liczbami, zanim podpiszesz coś, z czego trudno wyjść."
+      lead="Mapy pokazują pinezki, ale nie mówią, czy rynek jest już obsadzony. Sprawdzamy to liczbami, zanim podpiszesz najem."
       ctaLabel="Zamów pełny raport"
       ctaNote="Raport w 24 godziny"
       checks={[
         {
           title: "Konkurenci w zasięgu dojazdu, nie w linii prostej",
-          desc: "Klient nie porusza się po okręgu, tylko drogami. W pełnym raporcie liczymy zasięg dziesięciu minut jazdy, bo to on decyduje, gdzie ktoś naprawdę pojedzie.",
+          desc: "W pełnym raporcie liczymy zasięg dziesięciu minut jazdy, bo klient jeździ drogami, nie po okręgu.",
         },
         {
           title: "Nasycenie, a nie sama liczba",
-          desc: "Dwadzieścia punktów w mieście pięćdziesięciotysięcznym i w dziesięciotysięcznym to dwie zupełnie różne sytuacje. Liczy się, ilu mieszkańców przypada na jeden.",
+          desc: "Liczy się, ilu mieszkańców przypada na jeden punkt.",
         },
         {
           title: "Porównanie z sąsiedztwem",
-          desc: "Dopiero zestawienie z sąsiednimi gminami mówi, czy to miejsce jest wyjątkowo puste, czy przeciwnie. To zdanie potrafi też posłużyć do negocjacji czynszu.",
+          desc: "Zestawienie z sąsiednimi gminami pokazuje, czy miejsce jest puste, czy przepełnione. Przydaje się przy negocjacji czynszu.",
         },
         {
           title: "Trend liczby mieszkańców",
-          desc: "Gmina, która rośnie o kilka tysięcy osób w trzy lata, to inna decyzja niż gmina, która się wyludnia, nawet przy identycznej liczbie konkurentów dzisiaj.",
+          desc: "Gmina, która rośnie, to inna decyzja niż gmina, która się wyludnia.",
         },
       ]}
       pricing={[
@@ -90,28 +90,28 @@ export default function Page() {
       faq={[
         {
           q: "Skąd bierzecie dane?",
-          a: "Z otwartej bazy map, w której są punkty usługowe, oraz z publicznego rejestru statystycznego, skąd pochodzi liczba mieszkańców. Oba źródła są jawne, więc każdy wynik da się sprawdzić.",
+          a: "Z otwartej bazy map i publicznego rejestru statystycznego. Oba źródła są jawne.",
         },
         {
           q: "Czy baza map obejmuje wszystkie firmy?",
-          a: "Nie i mówimy to wprost. W miastach pokrycie jest bardzo dobre, na wsiach bywa niepełne. Dlatego traktujemy to jako przekrój rynku, a nie spis powszechny, i tak samo opisujemy w raporcie.",
+          a: "Nie. W miastach pokrycie jest bardzo dobre, na wsiach bywa niepełne, co zaznaczamy w raporcie.",
         },
         {
           q: "Czy wskaźnik na mieszkańca zawsze ma sens?",
-          a: "Nie w miejscowościach turystycznych, gdzie klientami są przyjezdni. Darmowe sprawdzenie samo Cię o tym uprzedzi, jeśli wykryje taki układ, a w pełnym raporcie liczymy wtedy inaczej.",
+          a: "Nie w miejscowościach turystycznych. Sprawdzenie Cię o tym uprzedzi, a w raporcie liczymy wtedy inaczej.",
         },
         {
           q: "Czy to zastąpi rozmowę z pośrednikiem?",
-          a: "Nie, ale zmienia Twoją pozycję w tej rozmowie. Wchodzisz z liczbami zamiast z wrażeniem, a przy negocjacji czynszu to jest cała różnica.",
+          a: "Nie, ale wchodzisz do niej z liczbami zamiast z wrażeniem.",
         },
       ]}
       formId="order_analiza_lokalizacji"
       formHeading="Zamów raport dla swojej lokalizacji"
-      formIntro="Napisz, gdzie jest lokal, jaka to branża i jaki czynsz wchodzi w grę. Odeślemy raport w 24 godziny."
+      formIntro="Napisz, gdzie jest lokal i jaka to branża. Raport odeślemy w 24 godziny."
       submitLabel="Zamów raport"
-      microCopy="Korzystamy wyłącznie z publicznych źródeł danych. Nie potrzebujemy żadnych dokumentów ani dostępów."
+      microCopy="Tylko publiczne źródła danych, bez dokumentów i dostępów."
       serviceName="Analiza potencjału lokalizacji pod punkt usługowy"
-      serviceDesc="Ocena nasycenia rynku w zasięgu dojazdu: liczba konkurentów, liczba mieszkańców na punkt, porównanie z sąsiednimi gminami i trend demograficzny, z jednoznacznym wnioskiem. Od 190 zł."
+      serviceDesc="Ocena nasycenia rynku w zasięgu dojazdu: konkurenci, mieszkańcy na punkt, porównanie z sąsiednimi gminami, z jednoznacznym wnioskiem. Od 190 zł."
       serviceType="Analiza rynku lokalnego pod działalność usługową"
     />
   );

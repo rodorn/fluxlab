@@ -34,22 +34,22 @@ const faqItems = [
   {
     question: "Czy to znaczy, że dane w rejestrze są nieprawdziwe?",
     answer:
-      "Nie. Same wpisy wyglądają poprawnie: nazwa, adres, kategoria i liczba miejsc się zgadzają. Problem dotyczy tego, jak rejestr wydaje te dane na zewnątrz, czyli pola województwa przy pięciu miastach oraz stronicowania przy pobieraniu całości.",
+      "Nie. Same wpisy są poprawne. Błędy dotyczą tego, jak rejestr wydaje dane: pola województwa przy pięciu miastach i stronicowania.",
   },
   {
     question: "Jak to sprawdzić samodzielnie?",
     answer:
-      "Wystarczy pobrać rejestr przez jego publiczny interfejs i policzyć dwie rzeczy: ile rekordów ma województwo zapisane jako liczba oraz ile jest unikalnych identyfikatorów w porównaniu z liczbą, którą deklaruje sam rejestr. Obie liczby powinny się zgadzać i przy stronicowaniu się nie zgadzają.",
+      "Pobierz rejestr przez publiczny interfejs i policz rekordy z województwem zapisanym jako liczba oraz unikalne identyfikatory. Porównaj je z liczbą, którą deklaruje rejestr.",
   },
   {
     question: "Dlaczego liczba zgubionych rekordów jest za każdym razem inna?",
     answer:
-      "Bo kolejność wyników nie jest ustalona. Interfejs sam deklaruje, że dane nie są sortowane, więc przy pobieraniu strona po stronie część rekordów trafia dwa razy, a część nie trafia wcale. W naszych czterech pobraniach strata wyniosła kolejno 158, 188 i 707 rekordów.",
+      "Bo dane nie są sortowane. Przy pobieraniu strona po stronie część rekordów przychodzi dwa razy, a część wcale.",
   },
   {
     question: "Kogo to realnie dotyka?",
     answer:
-      "Każdego, kto buduje coś na tych danych: porównywarki, narzędzia dla branży, analizy rynku noclegowego, a także urzędów korzystających z rejestru w zestawieniach. Jeśli ktoś liczy obiekty w województwie, przy pięciu największych miastach dostanie zero.",
+      "Każdego, kto buduje na tych danych porównywarki, analizy rynku albo zestawienia. Przy filtrze po województwie pięć największych miast daje zero.",
   },
 ];
 
@@ -69,11 +69,9 @@ export default function Page() {
           Rządowy rejestr hoteli gubi Kraków i Warszawę
         </h1>
         <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
-          Centralny Wykaz Obiektów Hotelarskich to jedyne miejsce, w którym
-          państwo potwierdza, że dany obiekt może nazywać się hotelem.
-          Pobraliśmy go w całości i policzyliśmy, co zawiera. Same wpisy są w
-          porządku, natomiast sposób, w jaki rejestr wydaje dane na zewnątrz, ma
-          dwa błędy, z których każdy przekłamuje wynik o kilkanaście procent.
+          Pobraliśmy w całości Centralny Wykaz Obiektów Hotelarskich. Same
+          wpisy są w porządku, ale sposób wydawania danych ma dwa błędy, każdy
+          przekłamuje wynik o kilkanaście procent.
         </p>
 
         <div className="mt-10">
@@ -81,10 +79,8 @@ export default function Page() {
             Pięćset cztery obiekty leżą w województwie o nazwie „1"
           </h2>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-            W 504 wpisach na 3374, czyli w blisko piętnastu procentach rejestru,
-            pole województwa zawiera znak „1" zamiast nazwy. Sprawdziliśmy, o
-            które obiekty chodzi, i okazało się, że to nie jest przypadkowy
-            rozrzut po kraju.
+            W 504 wpisach na 3374 pole województwa zawiera „1" zamiast
+            nazwy. Wszystkie pochodzą z pięciu miast.
           </p>
         </div>
 
@@ -104,33 +100,17 @@ export default function Page() {
 
         <div>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-            To są miasta na prawach powiatu, więc najpewniej gdzieś w drodze
-            gubi się rozróżnienie między powiatem a województwem i zostaje po
-            nim techniczna jedynka. Skutek jest natomiast bardzo praktyczny: kto
-            filtruje rejestr po województwie, przy tych pięciu miastach dostanie
-            pustkę. Małopolska bez Krakowa to 377 obiektów zamiast 584, czyli
-            ponad jedna trzecia rynku znika z zestawienia.
-          </p>
-          <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-            Przy okazji drobiazg tej samej natury: jeden wpis ma województwo
-            zapisane jako „Lubelskie " ze spacją na końcu, więc w każdym
-            grupowaniu tworzy osobną kategorię.
+            Kto filtruje rejestr po województwie, przy tych miastach dostanie
+            pustkę. Małopolska bez Krakowa to 377 obiektów zamiast 584.
           </p>
 
           <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
             Przy pobieraniu znika nawet co piąty obiekt
           </h2>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-            Drugi błąd jest cichszy i przez to groźniejszy. Rejestr wydaje dane
-            stronami i przy każdej odpowiedzi podaje, ile łącznie ma rekordów.
-            Ta liczba zawsze wynosi 3374 i zawsze się zgadza. Nie zgadza się
-            natomiast to, co faktycznie przychodzi.
-          </p>
-          <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-            Pobraliśmy cały rejestr cztery razy, zmieniając wielkość strony i
-            odstęp między zapytaniami. Za każdym razem przyszło dokładnie 3374
-            wiersze. Za każdym razem część z nich była powtórzeniem tego samego
-            obiektu, a tyle samo innych nie przyszło wcale.
+            Rejestr deklaruje 3374 rekordy i tyle wierszy przychodzi. Część z
+            nich to jednak duplikaty, a tyle samo innych obiektów nie przychodzi
+            wcale. Pobraliśmy rejestr cztery razy.
           </p>
         </div>
 
@@ -161,18 +141,9 @@ export default function Page() {
 
         <div>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-            Przyczyna jest widoczna w samej odpowiedzi rejestru: pole mówiące o
-            sortowaniu zawsze informuje, że dane nie są posortowane. Bez
-            ustalonej kolejności stronicowanie nie ma sensu, bo między jedną
-            stroną a drugą kolejność może się zmienić. Część rekordów trafia
-            wtedy dwa razy, a część ani razu.
-          </p>
-          <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-            Najgorsze jest to, że nic tego nie sygnalizuje. Licznik pokazuje
-            poprawną liczbę, pobranie kończy się bez błędu, plik ma właściwą
-            liczbę wierszy. Dopiero policzenie unikalnych identyfikatorów
-            pokazuje, że brakuje co dwudziestego albo co piątego obiektu,
-            zależnie od tego, jak duże strony pobierano.
+            Przyczyna: dane nie są sortowane, więc kolejność zmienia się między
+            stronami. Nic tego nie sygnalizuje, licznik i liczba wierszy się
+            zgadzają.
           </p>
 
           <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
@@ -180,50 +151,20 @@ export default function Page() {
           </h2>
           <ul className="mb-4 ml-5 list-disc space-y-2 text-gray-600 dark:text-gray-400">
             <li className="leading-relaxed">
-              Po pobraniu policz unikalne identyfikatory i porównaj je z liczbą,
-              którą rejestr sam deklaruje. Jeśli się nie zgadzają, pobierz
-              ponownie, aż się zgodzą.
+              Po pobraniu porównaj liczbę unikalnych identyfikatorów z deklarowaną. Przy rozjeździe pobierz ponownie.
             </li>
             <li className="leading-relaxed">
-              Mniejsze strony gubią mniej. W naszym pomiarze strona po 200
-              rekordów traciła około pięciu procent, a po 500 ponad dwadzieścia.
+              Pobieraj mniejsze strony: po 200 rekordów traciły około 5%, po 500 ponad 20%.
             </li>
             <li className="leading-relaxed">
-              Nie filtruj po polu województwa bez wcześniejszego poprawienia
-              piątki miast na prawach powiatu, bo inaczej wypadną z zestawienia
-              w całości.
-            </li>
-            <li className="leading-relaxed">
-              Przycinaj białe znaki w nazwach województw, bo jeden wpis ma
-              spację na końcu.
-            </li>
-          </ul>
-
-          <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
-            Czego nie sprawdziliśmy
-          </h2>
-          <ul className="mb-4 ml-5 list-disc space-y-2 text-gray-600 dark:text-gray-400">
-            <li className="leading-relaxed">
-              Nie wiemy, czy błąd stronicowania występuje zawsze, czy zależy od
-              obciążenia serwera. Zaobserwowaliśmy go w każdym z czterech
-              pobrań, ale za każdym razem z inną skalą.
-            </li>
-            <li className="leading-relaxed">
-              Nie sprawdzaliśmy pozostałych rejestrów turystycznych pod tym
-              samym kątem, poza stwierdzeniem, że dwa z nich są praktycznie
-              puste.
-            </li>
-            <li className="leading-relaxed">
-              Nie zgłosiliśmy tego jeszcze nigdzie. Opisujemy to publicznie,
-              ponieważ każdy, kto korzysta z tych danych, powinien wiedzieć, jak
-              je pobierać, żeby nie stracić części rejestru.
+              Przed filtrem po województwie popraw pięć miast i przytnij spacje w nazwach.
             </li>
           </ul>
         </div>
 
         <div className="mt-10 rounded-2xl border border-gray-200/80 dark:border-gray-800/80 bg-white/70 dark:bg-gray-900/50 p-6">
           <p className="text-base font-bold text-gray-900 dark:text-white">
-            Zobacz też inne nasze badania na publicznych danych
+            Inne nasze badania
           </p>
           <ul className="mt-3 space-y-2 text-sm">
             <li>
@@ -255,7 +196,7 @@ export default function Page() {
 
         <SprawdzPoBadaniu
           naglowek="Zobacz, co publiczny rejestr mówi o konkretnej spółce"
-          opis="Przeszukujemy obwieszczenia Monitora Sądowego i Gospodarczego od 2013 roku i sprawdzamy jedną rzecz: czy wobec podmiotu toczy się postępowanie o rozwiązanie bez likwidacji. To ten sam rodzaj danych, co rejestr z tego badania, tylko inny rejestr."
+          opis="Sprawdzamy w Monitorze Sądowym i Gospodarczym od 2013 roku, czy wobec podmiotu toczy się postępowanie o rozwiązanie bez likwidacji."
           endpoint="/api/sprawdz-spolke"
           pole="zapytanie"
           pozycje={[{ wartosc: "CD PROJEKT" }, { wartosc: "ALLEGRO" }]}

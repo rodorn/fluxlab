@@ -30,36 +30,35 @@ export default function Page() {
       breadcrumb="Pogotowie automatyzacji"
       eyebrow="Awaria automatyzacji"
       h1="Stanęła integracja, a wykonawca zniknął"
-      lead="Scenariusz świeci na zielono, a zamówienia nie schodzą, faktury się nie wystawiają albo leady nie trafiają do CRM. Wchodzimy w logi wykonań, znajdujemy wygasłe poświadczenia, zmienione API i ciche awarie, czyli przebiegi, które kończą się sukcesem, ale nic nie przenoszą."
+      lead="Scenariusz świeci na zielono, a zamówienia nie schodzą albo leady nie trafiają do CRM. Czytamy logi wykonań i znajdujemy wygasłe poświadczenia, zmienione API i ciche awarie."
       ctaLabel="Zgłoś awarię"
       ctaNote="Odpowiedź do 2 godzin w godzinach pracy"
       checks={[
         {
-          title: "Ciche awarie, najgorszy rodzaj",
-          desc: "Scenariusz zielony, ale pusty. Filtr przestał przepuszczać rekordy po zmianie nazwy pola i nikt tego nie zauważył przez trzy tygodnie.",
+          title: "Ciche awarie",
+          desc: "Scenariusz zielony, ale pusty, bo filtr po zmianie nazwy pola przestał przepuszczać rekordy.",
         },
         {
-          title: "Wygasłe poświadczenia i tokeny",
-          desc: "Najczęstsza przyczyna nagłego zatrzymania. Odnawiamy połączenia i ustawiamy ostrzeganie, zanim wygasną następnym razem.",
+          title: "Wygasłe poświadczenia",
+          desc: "Odnawiamy połączenia i ustawiamy ostrzeżenie przed kolejnym wygaśnięciem.",
         },
         {
           title: "Przejęcie po poprzedniku",
-          desc: "Porządkujemy to, co zostało: co robi każdy scenariusz, gdzie są dostępy, co można wyłączyć. Dostajesz opis, który zrozumie też ktoś inny niż ja.",
+          desc: "Opisujemy, co robi każdy scenariusz, gdzie są dostępy i co można wyłączyć.",
         },
         {
-          title: "Monitoring, żeby nie dowiadywać się od klienta",
-          desc: "Alarm, gdy przebieg zakończy się błędem albo gdy przez dobę nie przeszedł ani jeden rekord, choć powinien.",
+          title: "Monitoring",
+          desc: "Alarm, gdy przebieg skończy się błędem albo przez dobę nie przejdzie żaden rekord.",
         },
       ]}
       pricing={[
         {
           name: "Diagnoza",
           price: "49 zł",
-          desc: "Chcesz wiedzieć, co się dzieje i ile to kosztuje.",
+          desc: "Wiesz, co się dzieje i ile kosztuje naprawa.",
           features: [
-            "przegląd logów wykonań i błędów",
-            "lista zepsutych i cichych scenariuszy",
-            "wskazanie przyczyny, nie objawu",
+            "przegląd logów wykonań",
+            "przyczyna, nie objaw",
             "wycena naprawy bez zobowiązania",
           ],
         },
@@ -68,7 +67,6 @@ export default function Page() {
           price: "od 490 zł",
           desc: "Ma znowu działać, najlepiej dzisiaj.",
           features: [
-            "wszystko z diagnozy",
             "naprawa i test na realnych danych",
             "zabezpieczenie przed powtórką",
             "krótka notatka, co było nie tak",
@@ -78,36 +76,35 @@ export default function Page() {
         {
           name: "Opieka",
           price: "299 zł/mc",
-          desc: "Nie chcesz już nigdy się o tym dowiadywać od klienta.",
+          desc: "O awarii nie dowiadujesz się od klienta.",
           features: [
-            "monitoring przelotów i alarmy",
+            "monitoring i alarmy",
             "reakcja do 2 godzin w godzinach pracy",
-            "drobne zmiany w ramach abonamentu",
-            "kwartalny przegląd i porządki",
+            "drobne zmiany w abonamencie",
           ],
         },
       ]}
       faq={[
         {
           q: "Z czym pracujecie?",
-          a: "n8n, Make, Zapier, integracje BaseLinker, WooCommerce, Allegro, Apilo, Pipedrive, webhooki i zwykłe skrypty po poprzednim wykonawcy. Jeśli ma API albo logi, da się to rozebrać.",
+          a: "n8n, Make, Zapier, BaseLinker, WooCommerce, Allegro, Pipedrive, webhooki i skrypty po poprzednim wykonawcy.",
         },
         {
           q: "Nie mamy kontaktu do osoby, która to robiła.",
-          a: "To najczęstsza sytuacja i nie jest problemem. Potrzebujemy dostępu do samego narzędzia, resztę odtwarzamy z konfiguracji i logów.",
+          a: "To częste i nie przeszkadza. Wystarczy dostęp do narzędzia, resztę odtwarzamy z konfiguracji i logów.",
         },
         {
           q: "Jak przekazać dostępy bezpiecznie?",
-          a: "Nie przysyłasz mi haseł. Zakładasz konto o ograniczonych uprawnieniach albo dzielisz się dostępem przez funkcję zapraszania w danym narzędziu, a po zakończeniu je odbierasz.",
+          a: "Bez wysyłania haseł: konto z ograniczonymi uprawnieniami albo zaproszenie w narzędziu, które potem odbierasz.",
         },
         {
           q: "Czy diagnoza przepada, jeśli zlecimy naprawę?",
-          a: "Nie. Kwota diagnozy odlicza się od naprawy, więc płacisz za nią tylko wtedy, gdy zdecydujesz się nic dalej nie robić.",
+          a: "Nie. Kwota diagnozy odlicza się od naprawy.",
         },
       ]}
       formId="order_pogotowie_automatyzacji"
       formHeading="Zgłoś awarię automatyzacji"
-      formIntro="Napisz, na czym to działa (n8n, Make, Zapier, własny skrypt), co przestało działać i od kiedy, oraz czy masz dostęp do narzędzia. Jeśli sprawa jest pilna, bo stoją zamówienia, zaznacz to."
+      formIntro="Napisz, na czym to działa, co przestało działać i od kiedy. Jeśli stoją zamówienia, zaznacz to."
       submitLabel="Zgłoś awarię"
       microCopy="Odpowiedź do 2 godzin w godzinach pracy. Diagnoza płatna z góry i odliczana od naprawy."
       serviceName="Pogotowie automatyzacji, naprawa integracji"

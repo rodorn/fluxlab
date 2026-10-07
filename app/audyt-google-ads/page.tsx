@@ -30,15 +30,15 @@ export const metadata: Metadata = {
 const steps = [
   {
     title: "Dajesz dostęp do konta",
-    desc: "Udostępniasz konto Google Ads w trybie do odczytu albo przesyłasz eksport raportu wyszukiwanych haseł. Nic nie zmieniamy bez Twojej zgody.",
+    desc: "Dostęp tylko do odczytu albo eksport raportu wyszukiwanych haseł.",
   },
   {
     title: "Analizujemy wydatki bez konwersji",
-    desc: "Przechodzimy przez raport search terms i wyławiamy frazy, które kosztują, ale nie sprzedają. Grupujemy je i liczymy realną kwotę do odzyskania.",
+    desc: "Wyławiamy frazy, które kosztują, ale nie sprzedają, i liczymy kwotę do odzyskania.",
   },
   {
     title: "Dostajesz raport i listę wykluczeń",
-    desc: "W ciągu 3 dni roboczych odsyłamy raport PDF: ile budżetu przepalasz miesięcznie, gotową listę wykluczających słów kluczowych i plan naprawy konta.",
+    desc: "W 3 dni robocze: raport PDF, lista wykluczeń i plan naprawy konta.",
   },
 ];
 
@@ -46,22 +46,22 @@ const faq = [
   {
     question: "Jak działa gwarancja zwrotu?",
     answer:
-      "Jeśli w audycie znajdziemy mniej niż 500 zł miesięcznie realnie do odzyskania, zwracamy całe 69 zł. Ryzyko jest po naszej stronie, płacisz tylko wtedy, gdy audyt faktycznie pokazuje pieniądze do zaoszczędzenia.",
+      "Jeśli znajdziemy mniej niż 500 zł miesięcznie do odzyskania, zwracamy całe 69 zł.",
   },
   {
     question: "Czy musicie mieć dostęp do naszego konta Google Ads?",
     answer:
-      "Wystarczy dostęp w trybie tylko do odczytu albo eksport raportu wyszukiwanych haseł z ostatnich 30-90 dni. Nie potrzebujemy uprawnień do zmian, żeby zrobić audyt.",
+      "Wystarczy dostęp tylko do odczytu albo eksport raportu haseł z 30 do 90 dni.",
   },
   {
     question: "Czy sami wprowadzacie zmiany na koncie?",
     answer:
-      "Mini-audyt to diagnoza i gotowa lista wykluczeń, którą wdrażasz sam lub Twoja agencja. Jeśli chcesz, żebyśmy wdrożyli wykluczenia i ustawili nocny skrypt pilnujący konta, ustalamy to osobno po audycie.",
+      "Listę wykluczeń wdrażasz sam albo Twoja agencja. Wdrożenie przez nas ustalamy osobno.",
   },
   {
     question: "Dla jak dużych kont to ma sens?",
     answer:
-      "Najwięcej do odzyskania jest przy budżetach od kilku tysięcy złotych miesięcznie w górę. Przy bardzo małych wydatkach kwoty bywają zbyt niskie, dlatego właśnie działa gwarancja zwrotu, nie ryzykujesz.",
+      "Najwięcej przy budżetach od kilku tysięcy złotych miesięcznie. Przy małych chroni Cię gwarancja zwrotu.",
   },
 ];
 
@@ -79,27 +79,16 @@ export default function AudytGoogleAdsPage() {
 
         {/* Hero */}
         <section className="relative overflow-hidden pt-24 pb-12">
-          <div className="blob blob-cyan -z-10 -top-32 -right-24 h-96 w-96" />
+          <div className="blob blob-accent -z-10 -top-32 -right-24 h-96 w-96" />
           <div className="container-wide max-w-3xl">
             <p className="section-label mb-5">Produkt</p>
             <h1 className="display-lg text-gray-900 dark:text-white">
               Przestań przepalać budżet Google Ads na frazy bez konwersji
             </h1>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-300">
-              Duża część budżetu na Google Ads idzie na kliknięcia, które nigdy
-              nie sprzedają. Przeglądamy raport wyszukiwanych haseł, liczymy ile
-              realnie tracisz co miesiąc i dajemy gotową listę wykluczeń. Za 69
-              zł, z gwarancją zwrotu.
-            </p>
-            <p className="mt-4 text-gray-600 dark:text-gray-300">
-              Co obejmuje audyt Google Ads i ile trwa: przechodzimy przez raport
-              wyszukiwanych haseł z ostatnich 30 do 90 dni, wskazujemy frazy,
-              które kosztują, a nie dają konwersji, frazy z intencją
-              informacyjną zamiast zakupowej i zbyt szerokie dopasowania,
-              liczymy kwotę do odzyskania co miesiąc i przygotowujemy listę
-              wykluczeń do wklejenia na poziomie kampanii. Wystarczy nam dostęp
-              tylko do odczytu albo eksport raportu. Raport PDF odsyłamy w 3 dni
-              robocze od otrzymania danych.
+              Przeglądamy raport wyszukiwanych haseł z 30 do 90 dni, liczymy, ile
+              tracisz co miesiąc, i dajemy gotową listę wykluczeń. 69 zł, z
+              gwarancją zwrotu.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <a href="#zamow" className="btn-primary inline-flex">
@@ -150,8 +139,7 @@ export default function AudytGoogleAdsPage() {
                 Przykładowy efekt
               </h2>
               <p className="mb-8 text-gray-600 dark:text-gray-300">
-                Tak wygląda podsumowanie audytu. To przykład działania narzędzia
-                na danych demo, a nie realne konto klienta.
+                Podsumowanie audytu na danych demo, nie na koncie klienta.
               </p>
             </div>
             <div className="max-w-3xl rounded-2xl border border-gray-100 bg-white p-6 dark:border-gray-700 dark:bg-gray-800/60 lg:p-8">
@@ -164,7 +152,7 @@ export default function AudytGoogleAdsPage() {
                     Budżet 9 000 zł/mc, 30 dni, 214 fraz
                   </p>
                 </div>
-                <span className="rounded-full bg-emerald-500/10 px-3 py-1 text-sm font-semibold text-emerald-700 dark:text-emerald-400">
+                <span className="rounded-full bg-emerald-50 dark:bg-emerald-950/30 px-3 py-1 text-sm font-semibold text-emerald-700 dark:text-emerald-400">
                   Do odzyskania ok. 2 340 zł/mc
                 </span>
               </div>
@@ -196,12 +184,12 @@ export default function AudytGoogleAdsPage() {
               </dl>
               <div className="mt-5 space-y-2 border-t border-gray-100 pt-4 dark:border-gray-700">
                 <p className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300">
-                  <span className="mt-0.5 text-red-600">!</span>
+                  <span className="mt-0.5 text-red-700 dark:text-red-400">!</span>
                   Fraza &bdquo;darmowy&rdquo; w 3 kampaniach: 1 180 zł kosztu,
                   zero konwersji.
                 </p>
                 <p className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300">
-                  <span className="mt-0.5 text-amber-500">•</span>
+                  <span className="mt-0.5 text-amber-700 dark:text-amber-400">•</span>
                   14 fraz z intencją informacyjną, nie zakupową, do
                   przeniesienia na dopasowanie ścisłe.
                 </p>
@@ -232,9 +220,8 @@ export default function AudytGoogleAdsPage() {
                   69 zł
                 </p>
                 <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-                  Jeśli znajdziemy mniej niż 500 zł miesięcznie realnie do
-                  odzyskania, zwracamy całą kwotę. Płacisz tylko wtedy, gdy
-                  audyt pokazuje pieniądze do zaoszczędzenia.
+                  Mniej niż 500 zł miesięcznie do odzyskania? Zwracamy całą
+                  kwotę.
                 </p>
                 <ul className="mt-5 space-y-2">
                   {[
@@ -242,7 +229,6 @@ export default function AudytGoogleAdsPage() {
                     "wyliczenie budżetu przepalanego na frazy bez konwersji",
                     "gotowa lista wykluczających słów kluczowych",
                     "plan naprawy konta uszeregowany według efektu",
-                    "gwarancja zwrotu przy odzysku poniżej 500 zł/mc",
                   ].map((f) => (
                     <li
                       key={f}
@@ -314,16 +300,15 @@ export default function AudytGoogleAdsPage() {
             </div>
           </section>
 
-          {/* Formularz zamówienia */}
           <RelatedProducts slug="audyt-google-ads" />
 
           <section id="zamow" className="scroll-mt-20">
             <LandingForm
               formId="order_audyt_google_ads"
               heading="Zamów mini-audyt Google Ads"
-              intro="Napisz w polu opisu, jaki masz miesięczny budżet i od kiedy działają kampanie. Po zgłoszeniu ustalimy dostęp do konta lub eksport raportu. Cena 69 zł z gwarancją zwrotu, jeśli znajdziemy mniej niż 500 zł miesięcznie do odzyskania."
+              intro="Napisz, jaki masz miesięczny budżet i od kiedy działają kampanie. Potem ustalimy dostęp albo eksport raportu."
               submitLabel="Zamów mini-audyt za 69 zł"
-              microCopy="Odpowiedź w 24h. Płatność ustalamy mailowo. Zwrot całej kwoty, jeśli audyt pokaże mniej niż 500 zł/mc do odzyskania."
+              microCopy="Odpowiedź w 24h. Zwrot całej kwoty przy odzysku poniżej 500 zł/mc."
             />
           </section>
         </div>

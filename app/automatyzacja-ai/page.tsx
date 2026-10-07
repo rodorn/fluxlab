@@ -32,26 +32,26 @@ export const metadata: Metadata = {
 };
 
 const useCases = [
-  "Klasyfikacja i priorytetyzacja zapytań, rozpoznanie tematu, typu klienta i pilności sprawy.",
-  "Streszczenia i porządkowanie informacji, kluczowe punkty z długich maili, notatek i zgłoszeń.",
-  "Wsparcie obsługi i sprzedaży, szkice odpowiedzi, sugestie kolejnych kroków, analiza historii.",
+  "Klasyfikacja zapytań: temat, typ klienta, pilność.",
+  "Streszczenia długich maili, notatek i zgłoszeń.",
+  "Szkice odpowiedzi i sugestie kolejnych kroków dla obsługi i sprzedaży.",
 ];
 
 const faqs = [
   {
     question: "Czy AI zastąpi pracowników?",
     answer:
-      "Nie w tym modelu. AI wspiera ludzi, automatyzując powtarzalne analizy i przygotowując dane do decyzji.",
+      "Nie. AI przejmuje powtarzalne analizy, decyzje zostają u ludzi.",
   },
   {
     question: "Czy AI się myli?",
     answer:
-      "Tak, dlatego projektujemy procesy z weryfikacją i fallbackiem na człowieka tam, gdzie to potrzebne.",
+      "Tak, dlatego tam, gdzie trzeba, wynik zatwierdza człowiek.",
   },
   {
     question: "Czy potrzebujemy własnych danych do treningu?",
     answer:
-      "Nie zawsze. Wiele zastosowań działa na gotowych modelach z odpowiednim promptem i kontekstem.",
+      "Zwykle nie. Większość zastosowań działa na gotowych modelach.",
   },
 ];
 
@@ -64,16 +64,15 @@ export default function AutomatyzacjaAI() {
 
         {/* Hero, kompaktowy */}
         <section className="relative overflow-hidden pt-24 pb-12">
-          <div className="blob blob-violet absolute -top-32 -right-20 h-96 w-96" />
+          <div className="blob blob-accent absolute -top-32 -right-20 h-96 w-96" />
           <div className="container-wide max-w-3xl mx-auto text-center">
             <p className="section-label mb-5">Usługa</p>
             <h1 className="display-lg text-gray-900 dark:text-white mb-6">
               Automatyzacja AI
             </h1>
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
-              Wdrażamy AI tam, gdzie realnie skraca czas pracy: analiza treści,
-              klasyfikacja danych i generowanie odpowiedzi w istniejących
-              procesach. Bez modnego hasła.
+              Wdrażamy AI tam, gdzie skraca czas pracy: klasyfikacja, analiza
+              treści i szkice odpowiedzi w istniejących procesach.
             </p>
             <div>
               <a href="#sekcje" className="btn-primary">
@@ -83,7 +82,6 @@ export default function AutomatyzacjaAI() {
           </div>
         </section>
 
-        {/* Treść w zakładkach, nic nie wycięte, podzielone */}
         <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
           <Tabs
             ariaLabel="Sekcje usługi automatyzacji AI"
@@ -107,18 +105,14 @@ export default function AutomatyzacjaAI() {
                         ))}
                       </ul>
                       <p className="mt-8 text-gray-600 dark:text-gray-400 leading-relaxed">
-                        Gdzie AI daje realny efekt, a gdzie nie powinno
-                        decydować samo i potrzebuje zatwierdzenia przez
-                        człowieka, opisujemy w artykule{" "}
+                        Więcej w artykule{" "}
                         <Link
                           href="/strefa-wiedzy/ai-w-automatyzacji-firm"
                           className="text-accent hover:underline"
                         >
                           AI w automatyzacji firm
                         </Link>
-                        . Jeśli bot już odpowiada klientom, zaczynamy od
-                        sprawdzenia, czy jego odpowiedzi zgadzają się z
-                        cennikiem i regulaminem:{" "}
+                        . Bot już odpowiada klientom? Zacznijcie od{" "}
                         <Link
                           href="/audyt-chatbota"
                           className="text-accent hover:underline"
@@ -178,7 +172,7 @@ export default function AutomatyzacjaAI() {
                       <LandingForm
                         formId="diagnosis_ai"
                         heading="Sprawdźmy, gdzie AI ma sens"
-                        intro="Opisz krótko proces, który chcesz wzbogacić o AI: co dziś robi człowiek ręcznie, na jakich danych i w jakiej skali. W odpowiedzi dostaniesz informację, czy AI rozwiąże problem szybko."
+                        intro="Opisz, co dziś robi człowiek ręcznie, na jakich danych i w jakiej skali. Odpowiemy, czy AI to rozwiąże."
                         submitLabel="Sprawdźmy, gdzie AI ma sens"
                       />
                     </div>

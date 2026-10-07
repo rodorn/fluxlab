@@ -30,25 +30,21 @@ export default function Page() {
       breadcrumb="Strona po włamaniu"
       eyebrow="Ratunek po włamaniu"
       h1="Zhakowana strona, posprzątana do końca"
-      lead="Przywrócenie backupu zwykle przywraca też backdoora i po dwóch dniach jesteś w tym samym miejscu. Porównujemy każdy plik Twojej strony z oryginałem prosto z repozytorium WordPressa, więc listę podmienionych i obcych plików mamy w minuty, a nie po godzinach zgadywania."
+      lead="Przywrócony backup zwykle przywraca też backdoora. Porównujemy każdy plik strony z oryginałem z repozytorium WordPressa, więc obce pliki znamy w minuty."
       ctaLabel="Zgłoś włamanie"
-      ctaNote="Piszesz o każdej porze, odpisujemy najszybciej jak się da"
+      ctaNote="Odpisujemy najszybciej, jak się da"
       checks={[
         {
-          title: "Porównanie z oryginałem, nie zgadywanie",
-          desc: "Pobieramy czyste wersje rdzenia, wtyczek i motywu w dokładnie tych numerach, których używasz, i liczymy sumy kontrolne. Dostajesz listę plików obcych, podmienionych i brakujących.",
+          title: "Porównanie z oryginałem",
+          desc: "Sumy kontrolne rdzenia, wtyczek i motywu w Twoich wersjach. Lista plików obcych i podmienionych.",
         },
         {
-          title: "Baza, nie tylko pliki",
-          desc: "Skan wpisów i opcji pod kątem wstrzykniętych skryptów, przekierowań i podstawionych kont administratora, bo tam najczęściej zostaje wejście na później.",
+          title: "Skan bazy",
+          desc: "Wstrzyknięte skrypty, przekierowania i podstawione konta administratora.",
         },
         {
-          title: "Raport, którędy weszli",
-          desc: "Nieaktualna wtyczka, wykradzione hasło, wgrany plik. Bez tego czyszczenie jest tylko odkładaniem kolejnego włamania.",
-        },
-        {
-          title: "Zabezpieczenie po sprzątaniu",
-          desc: "Wymiana haseł i kluczy sesji, ograniczenie uprawnień, aktualizacje i prośba o ponowne sprawdzenie strony przez Google.",
+          title: "Raport i zabezpieczenie",
+          desc: "Którędy weszli, wymiana haseł, aktualizacje i zgłoszenie do ponownego sprawdzenia w Google.",
         },
       ]}
       pricing={[
@@ -58,8 +54,7 @@ export default function Page() {
           desc: "Chcesz wiedzieć, jak głęboko sięga problem.",
           features: [
             "lista zainfekowanych i obcych plików",
-            "wykryte przekierowania i podstawieni administratorzy",
-            "ocena, czy dane klientów mogły wyciec",
+            "przekierowania i podstawieni administratorzy",
             "wycena czyszczenia bez zobowiązania",
           ],
         },
@@ -70,8 +65,7 @@ export default function Page() {
           features: [
             "wszystko z diagnozy",
             "usunięcie infekcji i backdoorów",
-            "raport, którędy weszli",
-            "zabezpieczenie i zgłoszenie do ponownego sprawdzenia",
+            "raport wejścia i zabezpieczenie",
           ],
           featured: true,
         },
@@ -79,26 +73,22 @@ export default function Page() {
       faq={[
         {
           q: "Nie wystarczy przywrócić kopię zapasową?",
-          a: "Zwykle nie. Kopia pochodzi najczęściej z okresu, gdy backdoor już tam był, więc przywracasz również jego. Dlatego zaczynamy od ustalenia, które pliki są obce, a nie od cofania czasu.",
+          a: "Zwykle nie. Kopia najczęściej zawiera już backdoora.",
         },
         {
           q: "Hosting zawiesił mi konto, co teraz?",
-          a: "Napisz to w zgłoszeniu. Pracujemy wtedy na kopii plików i bazy, które hosting zwykle udostępnia, i przygotowujemy wykaz usuniętych zagrożeń, żeby konto odwiesili.",
-        },
-        {
-          q: "Czy stracimy treści albo zamówienia?",
-          a: "Nie ruszamy treści ani zamówień. Przed jakąkolwiek zmianą robimy kopię dowodową, żeby dało się wrócić do stanu wyjściowego.",
+          a: "Pracujemy na kopii od hostingu i przygotowujemy wykaz usuniętych zagrożeń, żeby konto odwiesili.",
         },
         {
           q: "Czy dajecie gwarancję, że to się nie powtórzy?",
-          a: "Nie i nikt uczciwy jej nie da. Możemy zagwarantować, że usuniemy to, co znajdziemy, pokażemy drogę wejścia i ją zamkniemy. Jeśli infekcja wróci z tego samego powodu w ciągu 14 dni, poprawiamy bez dopłaty.",
+          a: "Nikt uczciwy jej nie da. Jeśli infekcja wróci tą samą drogą w ciągu 14 dni, poprawiamy bez dopłaty.",
         },
       ]}
       formId="order_strona_po_wlamaniu"
       formHeading="Zgłoś zhakowaną stronę"
-      formIntro="Podaj adres strony, hosting i napisz, kiedy zauważyłeś problem oraz co konkretnie się dzieje: przekierowania, ostrzeżenie Google, dziwne wpisy, utrata dostępu do panelu."
+      formIntro="Podaj adres strony, hosting i napisz, co się dzieje."
       submitLabel="Zgłoś włamanie"
-      microCopy="Dostępy przysyłasz dopiero po ustaleniu zakresu. Diagnoza płatna z góry, czyszczenie wyceniane po niej."
+      microCopy="Dostępy przysyłasz po ustaleniu zakresu."
       serviceName="Czyszczenie strony po włamaniu"
       serviceDesc="Usuwanie infekcji z WordPressa i WooCommerce: porównanie plików z oryginałami, skan bazy, raport wejścia i zabezpieczenie. Diagnoza 49 zł, czyszczenie od 299 zł."
       serviceType="Usuwanie skutków włamania na stronę"

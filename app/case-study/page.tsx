@@ -47,13 +47,10 @@ export default function CaseStudy() {
                 Ile czasu pochłania proces przed automatyzacją i po niej
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-                Nie mamy jeszcze wdrożeń u firm, więc nie znajdziecie tu cudzych
-                wyników ani referencji. Zamiast tego dwa procesy, które
-                automatyzujemy najczęściej, rozpisane na czynności, z minutami
-                przy każdej z nich. Możecie odznaczyć to, czego u siebie nie
-                robicie, i zobaczyć własną sumę. Opis wdrożenia z nazwą firmy
-                pojawi się tutaj dopiero wtedy, gdy takie wdrożenie powstanie i
-                firma zgodzi się na publikację, na warunkach{" "}
+                Dwa procesy, które automatyzujemy najczęściej, rozpisane na
+                czynności z minutami. Odznaczcie to, czego nie robicie, i
+                zobaczcie własną sumę. Opisy wdrożeń z nazwą firmy dodamy w
+                ramach{" "}
                 <Link
                   href="/pilotaz"
                   className="text-accent hover:underline font-medium"
@@ -66,7 +63,6 @@ export default function CaseStudy() {
           </div>
         </section>
 
-        {/* Treść w zakładkach, nic nie wycięte, podzielone */}
         <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
           <Tabs
             ariaLabel="Sekcje strony z modelowymi przepływami"
@@ -88,27 +84,25 @@ export default function CaseStudy() {
                         Jak liczymy efekt wdrożenia
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
-                        Bez wymyślnych modeli. Porównujemy cztery rzeczy przed i
-                        po wdrożeniu, to wystarczy, żeby zobaczyć, czy
-                        automatyzacja się zwróciła.
+                        Porównujemy cztery rzeczy przed wdrożeniem i po nim.
                       </p>
                       <ol className="space-y-4">
                         {[
                           {
                             title: "Czas ręcznej pracy",
-                            desc: "Ile minut na jednego leada / raport / fakturę przed automatyzacją vs po.",
+                            desc: "Minuty na jednego leada, raport albo fakturę.",
                           },
                           {
                             title: "Liczba powtórzeń",
-                            desc: "Ile razy w tygodniu/miesiącu proces się wykonuje. Bez tego oszczędność godziny to anegdota.",
+                            desc: "Ile razy w miesiącu proces się wykonuje.",
                           },
                           {
                             title: "Liczba błędów",
-                            desc: "Źle przepisane dane, podwójne zapytania, zgubione leady. Każdy błąd to cofnięcie procesu.",
+                            desc: "Źle przepisane dane, duplikaty, zgubione leady.",
                           },
                           {
-                            title: "Wartość opóźnionych / zgubionych leadów",
-                            desc: "Najczęściej pomijana metryka. Zwykle największa pozycja w kosztorysie.",
+                            title: "Wartość zgubionych leadów",
+                            desc: "Zwykle największa pozycja w rachunku.",
                           },
                         ].map((it, i) => (
                           <li
@@ -130,8 +124,7 @@ export default function CaseStudy() {
                         ))}
                       </ol>
                       <p className="mt-8 text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
-                        Pierwsze dwie rzeczy policzycie sami w zakładce
-                        „Porównanie procesu”. Koszt zgubionych leadów dokłada{" "}
+                        Koszt zgubionych leadów policzy{" "}
                         <Link
                           href="/koszt-recznej-obslugi-leadow"
                           className="text-accent hover:underline font-medium"
@@ -154,8 +147,7 @@ export default function CaseStudy() {
                       </h2>
                       <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
                         Trzy pierwsze firmy dostają wdrożenie za połowę ceny w
-                        zamian za zgodę na publiczny opis efektu. Publikujemy
-                        tylko to, co zaakceptujecie.
+                        zamian za zgodę na opis efektu.
                       </p>
                       <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <Link href="/pilotaz" className="btn-primary">

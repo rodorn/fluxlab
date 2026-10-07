@@ -33,23 +33,19 @@ export const metadata: Metadata = {
 const faq = [
   {
     q: "Co to jest rozwiązanie podmiotu bez przeprowadzenia postępowania likwidacyjnego?",
-    a: "To tryb, w którym sąd rejestrowy z urzędu wykreśla spółkę bez likwidacji, gdy ta latami nie składa sprawozdań finansowych i nie ma majątku ani przedstawiciela, z którym da się to wyjaśnić. Sąd ogłasza wszczęcie takiego postępowania w Monitorze Sądowym i Gospodarczym, zamiast wysyłać pisma bezpośrednio do wspólników czy wierzycieli.",
+    a: "Sąd rejestrowy z urzędu wykreśla spółkę, która latami nie składa sprawozdań i nie ma majątku ani przedstawiciela. Wszczęcie ogłasza w Monitorze Sądowym i Gospodarczym.",
   },
   {
     q: "Ile czasu jest na sprzeciw wobec wykreślenia?",
-    a: "Trzy miesiące od dnia ogłoszenia w Monitorze. W tym czasie każdy, kto ma w tym interes, w tym wierzyciel, może zgłosić sądowi okoliczności przemawiające przeciwko wykreśleniu, na przykład że podmiot jednak ma majątek. Po upływie terminu bez sprzeciwu podmiot znika z rejestru, a jego majątek, jeśli jakiś zostanie ujawniony później, przechodzi na Skarb Państwa.",
+    a: "Trzy miesiące od ogłoszenia. Potem podmiot znika z rejestru, a ujawniony później majątek przechodzi na Skarb Państwa.",
   },
   {
     q: "Czy wierzyciel dostaje osobne zawiadomienie o wykreśleniu dłużnika?",
-    a: "Nie. Obwieszczenie w Monitorze Sądowym i Gospodarczym uznaje się z mocy prawa za wystarczające powiadomienie wszystkich zainteresowanych, więc nikt nie wysyła osobnego pisma do wierzycieli. Kto nie śledzi Monitora, dowiaduje się o wykreśleniu zwykle dopiero wtedy, gdy próbuje wyegzekwować dług.",
+    a: "Nie. Obwieszczenie w Monitorze z mocy prawa zastępuje powiadomienie, więc wierzyciel zwykle dowiaduje się dopiero przy egzekucji.",
   },
   {
     q: "Skąd pochodzą liczby w tym liczniku?",
-    a: "Wprost z wyszukiwarki Monitora Sądowego i Gospodarczego prowadzonej przez Ministerstwo Sprawiedliwości, licząc obwieszczenia z frazą „bez przeprowadzania postępowania likwidacyjnego”. Dane są jawne i publiczne. Licznik odświeża się co godzinę, a Monitor ukazuje się wyłącznie w dni robocze, więc weekendy i święta nie mają własnych słupków.",
-  },
-  {
-    q: "Jak sprawdzić, czy konkretna spółka jest w takim postępowaniu?",
-    a: "Wpisując jej nazwę albo numer KRS w naszym narzędziu Czujka rejestrowa, za darmo i bez rejestracji. Widać tam całą historię ogłoszeń od 2013 roku, nie tylko stan bieżący, oraz datę, do której można jeszcze zgłosić sprzeciw, jeśli postępowanie trwa.",
+    a: "Z wyszukiwarki Monitora Sądowego i Gospodarczego Ministerstwa Sprawiedliwości. Licznik odświeża się co godzinę, Monitor wychodzi tylko w dni robocze.",
   },
 ];
 
@@ -67,10 +63,8 @@ export default async function Page() {
           Ile spółek dziennie trafia do wykreślenia z KRS
         </h1>
         <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
-          Sąd rejestrowy wszczyna z urzędu postępowanie o rozwiązanie podmiotu
-          bez przeprowadzania likwidacji i ogłasza to w Monitorze Sądowym i
-          Gospodarczym. Poniższe liczby wyliczamy wprost z tych obwieszczeń,
-          codziennie. Monitor ukazuje się tylko w dni robocze.
+          Liczymy codziennie obwieszczenia z Monitora Sądowego i Gospodarczego
+          o rozwiązaniu podmiotu bez likwidacji.
         </p>
 
         {d && dni.length > 0 ? (
@@ -111,33 +105,14 @@ export default async function Page() {
           </p>
         )}
 
-        <div className="mt-10">
-          <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
-            Dlaczego to ma znaczenie dla wierzyciela
-          </h2>
-          <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-            Od dnia obwieszczenia biegną trzy miesiące na zgłoszenie
-            okoliczności przemawiających przeciwko wykreśleniu. Po tym terminie
-            podmiot znika z rejestru, a jego majątek przechodzi na Skarb
-            Państwa. Wierzyciel nie dostaje żadnego zawiadomienia, bo
-            obwieszczenie w Monitorze jest z punktu widzenia prawa
-            wystarczającym powiadomieniem wszystkich.
-          </p>
-          <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-            Przy tej skali, kilkadziesiąt podmiotów każdego dnia roboczego,
-            przeglądanie Monitora ręcznie nie ma sensu. Dlatego zrobiliśmy z
-            tego narzędzie.
-          </p>
-        </div>
-
-        <div className="mt-8 rounded-2xl border border-gray-200/80 dark:border-gray-800/80 bg-white/70 dark:bg-gray-900/50 p-6">
+        <div className="mt-12 rounded-2xl border border-gray-200/80 dark:border-gray-800/80 bg-white/70 dark:bg-gray-900/50 p-6">
           <p className="text-base font-bold text-gray-900 dark:text-white">
             Sprawdź konkretną spółkę
           </p>
           <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-            Wpisujesz nazwę albo numer KRS, dostajesz historię ogłoszeń i
-            informację, czy trwa postępowanie o rozwiązanie razem z datą, do
-            której można zgłosić sprzeciw. Za darmo, bez rejestracji.
+            Wierzyciel ma trzy miesiące na sprzeciw i nie dostaje zawiadomienia.
+            Wpisz nazwę albo KRS, a pokażemy, czy trwa postępowanie i do kiedy
+            można zgłosić sprzeciw. Za darmo.
           </p>
           <Link
             href="/czujka-rejestrowa"
@@ -146,15 +121,14 @@ export default async function Page() {
             Sprawdź kontrahenta
           </Link>
           <p className="mt-4 text-sm text-gray-600 dark:text-gray-400">
-            Przed zaliczką dla nowej firmy przyda się też{" "}
+            Przed przelewem zaliczki:{" "}
             <Link
               href="/sprawdz-kontrahenta"
               className="text-accent hover:underline"
             >
-              sprawdzenie kontrahenta przed przelewem
+              sprawdzenie kontrahenta
             </Link>
-            : wykaz VAT, KRS, wiek domeny i to, czy numer konta figuruje w
-            wykazie.
+            .
           </p>
         </div>
 

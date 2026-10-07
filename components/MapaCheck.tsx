@@ -212,7 +212,7 @@ export default function MapaCheck() {
               <span
                 className={`h-2 w-2 shrink-0 rounded-full ${
                   i < etap
-                    ? "bg-emerald-500"
+                    ? "bg-accent"
                     : i === etap
                       ? "bg-accent animate-pulse"
                       : "bg-gray-300 dark:bg-gray-700"
@@ -225,7 +225,7 @@ export default function MapaCheck() {
       )}
 
       {stan === "blad" && (
-        <p className="mt-3 text-sm text-red-600 dark:text-red-400">{blad}</p>
+        <p className="mt-3 text-sm text-red-700 dark:text-red-400">{blad}</p>
       )}
 
       {wynik && wynik.status !== "OK" && (
@@ -280,7 +280,7 @@ export default function MapaCheck() {
               mapa wskazana w robots.txt: {wynik.wskazanaWRobots ? "tak" : "nie"}
             </span>
             {wynik.blokadaIndeksowania && (
-              <span className="rounded-md border border-red-300 dark:border-red-800 bg-red-50 dark:bg-red-950/40 px-2.5 py-1 font-semibold text-red-700 dark:text-red-400">
+              <span className="rounded-md border border-red-500/60 bg-red-50 dark:bg-red-950/30 px-2.5 py-1 font-semibold text-red-700 dark:text-red-400">
                 robots.txt blokuje cały serwis
               </span>
             )}
@@ -301,7 +301,7 @@ export default function MapaCheck() {
                       key={z.adres}
                       className="border-t border-gray-100 dark:border-gray-800"
                     >
-                      <td className="px-3 py-2 font-semibold tabular-nums text-red-600 dark:text-red-400">
+                      <td className="px-3 py-2 font-semibold tabular-nums text-red-700 dark:text-red-400">
                         {z.kod ?? "brak"}
                       </td>
                       <td className="max-w-md truncate px-3 py-2 font-mono text-gray-700 dark:text-gray-300">
@@ -357,7 +357,7 @@ export default function MapaCheck() {
                   </button>
                 </div>
                 {leadStan === "blad" && (
-                  <p className="mt-2 text-sm text-red-600 dark:text-red-400">
+                  <p className="mt-2 text-sm text-red-700 dark:text-red-400">
                     {leadBlad}
                   </p>
                 )}

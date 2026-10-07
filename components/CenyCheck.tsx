@@ -246,7 +246,7 @@ export default function CenyCheck() {
                 aria-hidden="true"
                 className={`h-2 w-2 rounded-full ${
                   i < etap
-                    ? "bg-emerald-500"
+                    ? "bg-accent"
                     : i === etap
                       ? "bg-accent animate-pulse"
                       : "bg-gray-300 dark:bg-gray-700"
@@ -262,7 +262,7 @@ export default function CenyCheck() {
       )}
 
       {stan === "blad" && (
-        <p className="mt-3 text-sm text-red-600 dark:text-red-400">{blad}</p>
+        <p className="mt-3 text-sm text-red-700 dark:text-red-400">{blad}</p>
       )}
 
       {wynik && wynik.status !== "OK" && (
@@ -316,7 +316,7 @@ export default function CenyCheck() {
                       <td className="py-2 pr-3 text-right tabular-nums font-semibold">
                         {p.promocyjna > 0 ? p.promocyjna.toFixed(2) : "\u2014"}
                       </td>
-                      <td className="py-2 pr-3 text-right tabular-nums text-red-600 dark:text-red-400">
+                      <td className="py-2 pr-3 text-right tabular-nums text-gray-700 dark:text-gray-300">
                         {p.obnizka > 0 ? `-${p.obnizka}%` : "\u2014"}
                       </td>
                       <td className="py-2">
@@ -377,7 +377,7 @@ export default function CenyCheck() {
                   </button>
                 </div>
                 {leadStan === "blad" && (
-                  <p className="mt-2 text-sm text-red-600 dark:text-red-400">{leadBlad}</p>
+                  <p className="mt-2 text-sm text-red-700 dark:text-red-400">{leadBlad}</p>
                 )}
                 <p className="mt-2 text-xs text-gray-500 dark:text-gray-400">
                   Przesyłamy tylko adres sklepu i wynik skanu. Bez zapisu na

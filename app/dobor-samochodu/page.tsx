@@ -10,7 +10,7 @@ import NazwaNarzedzia from "@/components/NazwaNarzedzia";
 export const metadata: Metadata = {
   title: "Dobór samochodu, znajdź auto dla siebie | Fluxlab",
   description:
-    "Interaktywny kreator doboru samochodu. Dopasuj segment, nadwozie, napęd i moc do realnych potrzeb – bez marketingowej ściemy.",
+    "Interaktywny kreator doboru samochodu. Dopasuj segment, nadwozie, napęd i moc do realnych potrzeb, bez marketingowej ściemy.",
   openGraph: {
     title: "Dobór samochodu, znajdź auto dla siebie | Fluxlab",
     description:
@@ -35,38 +35,22 @@ const faqs = [
   {
     question: "Skąd wiadomo, że rekomendacja jest trafna?",
     answer:
-      "Konfigurator nie „zgaduje”, działa na zestawie reguł. Każde Twoje pytanie zawęża zbiór segmentów (A/B/C/D/E, SUV-y, kombi, vany), typów nadwozia i przedziałów mocy tak, aby pozostały tylko opcje spełniające wszystkie warunki: budżet, liczbę osób, roczny przebieg, typ tras, wymagania ładunkowe. Na końcu dostajesz nie jeden „idealny” model, tylko profil auta (np. „segment C, kombi, 130–160 KM, diesel lub hybryda”), który pasuje do Twojej sytuacji. To świadoma decyzja, zawsze lepiej mieć 5–10 kandydatów do sprawdzenia niż jeden model wybrany pod wpływem reklamy.",
-  },
-  {
-    question: "Czy rekomendacja uwzględnia koszty serwisu i eksploatacji?",
-    answer:
-      "Konfigurator podpowiada segment i typ napędu z uwzględnieniem ogólnych różnic w kosztach utrzymania, wie, że SUV jest droższy w oponach, diesel droższy w serwisie, a premium droższe w częściach. Nie liczy jednak konkretnej kwoty. Po dobraniu profilu przejdź do kalkulatora kosztów samochodu i wprowadź dane dla 2–3 modeli z rekomendowanego segmentu. Dopiero wtedy zobaczysz rzeczywisty roczny TCO (Total Cost of Ownership) i będziesz mógł wybrać konkretny model na podstawie liczb, a nie wrażeń.",
+      "Kreator działa na regułach, nie zgaduje. Każda odpowiedź odsiewa segmenty, nadwozia i moce, które nie spełniają warunków. Na końcu dostajesz profil auta, nie jeden model.",
   },
   {
     question: "Elektryk, hybryda czy spalinowy, jak wybrać napęd?",
     answer:
-      "Zasada upraszczająca: do 10 tys. km rocznie, głównie w mieście, z możliwością ładowania w domu, elektryk opłaca się najszybciej. 10–20 tys. km, miks miasto/trasa, bez własnego gniazdka, hybryda (pełna, nie mild) daje najlepszy kompromis. Powyżej 25 tys. km, głównie autostrady i szybkie trasy, diesel nadal wygrywa zasięgiem i zużyciem. Benzyna to dobry wybór, gdy nie jeździsz dużo, ale robisz nieregularne długie trasy, bezpiecznie, tanio w zakupie, niskie ryzyko drogich awarii. Konfigurator pytał o Twój profil jazdy właśnie po to, żeby zaproponować odpowiedni napęd.",
+      "Do 10 tys. km rocznie w mieście i z ładowaniem w domu: elektryk. 10 do 20 tys. km bez gniazdka: pełna hybryda. Powyżej 25 tys. km po trasach: diesel.",
   },
   {
-    question: "Czy możemy zmienić preferencje i uruchomić kreator ponownie?",
+    question: "Dlaczego sugerujecie segmenty, a nie konkretne modele?",
     answer:
-      "Tak. Kreator jest bezstanowy, każde uruchomienie zaczynasz od zera i możesz wypróbować kilka scenariuszy. W praktyce warto to zrobić: najpierw wpisz realistyczne odpowiedzi dla codziennej sytuacji, potem spróbuj „optymistycznej” (większy budżet, więcej miejsca) i „minimalnej” (mniej osób, mniejszy budżet). Zobaczysz, jak zmienia się rekomendowany segment. Często okazuje się, że różnica między potrzebami realnymi a wymarzonymi to jeden segment wyżej, co przekłada się na 20–40% wyższe koszty bez realnej korzyści.",
+      "Modele i wersje zmieniają się co roku, a profil (segment, nadwozie, napęd, moc) zostaje aktualny. Z nim przeglądasz bieżący rynek.",
   },
   {
-    question: "Dlaczego sugerujecie te segmenty, a nie konkretne modele?",
+    question: "Czy konfigurator nadaje się do wyboru auta służbowego?",
     answer:
-      "Świadomie. Konkretne modele zmieniają się co roku, generacje, silniki, warianty wyposażenia, roczniki, problemy typowe dla konkretnej partii. Lista „najlepszych 5 modeli” staje się nieaktualna po 6 miesiącach. Segment i profil napędu to trwała informacja: wiesz, że szukasz kombi segmentu C z hybrydą 130–160 KM, i dopiero wtedy przeglądasz aktualny rynek, Toyota Corolla TS, Kia Ceed SW, Skoda Octavia Combi e‑TEC, Ford Focus Mild Hybrid. Wybór konkretnego egzemplarza wymaga sprawdzenia rocznika, przebiegu i stanu, czego żaden konfigurator nie zrobi za Ciebie.",
-  },
-  {
-    question: "Co jeśli żaden wynik mi nie pasuje?",
-    answer:
-      "To oznacza, że Twoje wymagania są wewnętrznie sprzeczne, np. budżet segmentu B, a potrzeby segmentu D, albo niski koszt eksploatacji przy dużym SUV-ie na autostrady. Kreator pokazuje wtedy profil najbliższy Twoim odpowiedziom, ale warto wrócić do pytań i przemyśleć, który parametr realnie jest sztywny, a który tylko „chciałoby się”. Najczęstsze kompromisy: mniejszy segment przy tej samej funkcjonalności, starszy rocznik zamiast niższej klasy, diesel zamiast elektryka przy dużych przebiegach bez dostępu do ładowarki. Jeśli kompromis nie jest możliwy, prawdopodobnie trzeba zwiększyć budżet.",
-  },
-  {
-    question:
-      "Czy konfigurator nadaje się do wyboru auta służbowego dla firmy?",
-    answer:
-      "Tak, ale z jednym zastrzeżeniem. Dla auta służbowego oprócz kryteriów osobistych liczą się regulacje podatkowe (limit 150 tys. zł amortyzacji, 225 tys. zł dla elektryków), reprezentacja wobec klientów i polityka flotowa. Kreator pomoże zawęzić segment i napęd. Konkretny model wybierzesz biorąc pod uwagę dostępność w leasingu, oferty serwisowe, gwarancje flotowe. Przy flotach 3+ aut rozmowa z dealerem często daje lepsze warunki niż indywidualny zakup, ale dopiero po określeniu, czego szukasz. W tym pomaga dobór segmentu.",
+      "Tak, zawęzi segment i napęd. Przy aucie firmowym dochodzą limity amortyzacji (150 tys. zł, dla elektryków 225 tys. zł) i warunki leasingu.",
   },
 ];
 
@@ -85,13 +69,12 @@ export default function DoborSamochoduPage() {
               Dobierz idealny samochód
             </h1>
             <p className="mt-4 text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              Odpowiedz na kilka pytań, a podpowiemy Ci jaki segment, typ
-              nadwozia i moc silnika najlepiej pasują do Twojego stylu jazdy.
+              Odpowiedz na kilka pytań, a podpowiemy segment, nadwozie i moc
+              pasujące do Twojego stylu jazdy.
             </p>
           </div>
         </section>
 
-        {/* Treść w zakładkach */}
         <div className="container-wide pb-20">
           <Tabs
             ariaLabel="Sekcje doboru samochodu"
@@ -115,290 +98,103 @@ export default function DoborSamochoduPage() {
                       </h2>
                       <div className="space-y-4 text-gray-600 dark:text-gray-400">
                         <p>
-                          Kreator opiera się na prostym, przewidywalnym modelu
-                          decyzyjnym. Na podstawie Twoich odpowiedzi odsiewa
-                          segmenty i napędy, które nie spełniają podanych
-                          kryteriów, a następnie pokazuje profil pojazdu
-                          pasujący do Twojego stylu życia, nie pojedynczy model,
-                          lecz zestaw parametrów, w których realnie opłaca się
-                          szukać.
+                          Kreator odsiewa segmenty i napędy, które nie pasują do
+                          Twoich odpowiedzi. Zostaje profil auta: zestaw
+                          parametrów, w których opłaca się szukać.
                         </p>
-                        <p>Bierzemy pod uwagę cztery grupy kryteriów:</p>
                         <ul className="list-disc pl-5 space-y-2">
                           <li>
-                            <strong>Użycie.</strong> Typ tras (miasto / miks /
-                            trasa), roczny przebieg, liczba osób regularnie w
-                            aucie, potrzeby bagażowe (zakupy, dzieci, sprzęt,
-                            przyczepa). To podstawa doboru segmentu i nadwozia.
+                            <strong>Użycie.</strong> Trasy, roczny przebieg,
+                            liczba osób, bagaż.
                           </li>
                           <li>
-                            <strong>Budżet.</strong> Kwota zakupu albo
-                            miesięczna rata leasingu, plus górny akceptowalny
-                            roczny koszt eksploatacji. Definiuje klasę i
-                            dostępne warianty wyposażenia.
+                            <strong>Budżet.</strong> Cena zakupu albo rata i
+                            akceptowalny koszt utrzymania.
                           </li>
                           <li>
-                            <strong>Priorytety.</strong> Co jest dla Ciebie
-                            ważne: ekonomiczność, komfort, osiągi, przestrzeń,
-                            ekologia, prestiż. Te preferencje ważą pozostałe
-                            kryteria, gdy nie da się spełnić wszystkich.
+                            <strong>Priorytety.</strong> Ekonomia, komfort,
+                            osiągi, przestrzeń.
                           </li>
                           <li>
-                            <strong>Ograniczenia techniczne.</strong> Dostęp do
-                            ładowania w domu (klucz dla elektryka, bo nocą prąd
-                            bywa najtańszy, co widać w{" "}
+                            <strong>Ograniczenia.</strong> Ładowanie w domu
+                            (nocą prąd bywa najtańszy, co widać w{" "}
                             <Link
                               href="/ceny-energii-jutro"
                               className="text-accent hover:underline"
                             >
                               cenach energii na jutro
                             </Link>
-                            ), garaż, częstotliwość długich tras, maksymalna
-                            wielkość auta w mieście. Eliminują opcje, które w
-                            teorii pasują, ale w praktyce nie zadziałają.
+                            ), garaż, długie trasy.
                           </li>
                         </ul>
-                        <p>
-                          Rekomendacje opierają się na wiedzy branżowej o
-                          segmentach motoryzacyjnych, danych o niezawodności
-                          modeli (DEKRA, TÜV, J.D. Power) i kosztach utrzymania
-                          z serwisów takich jak Spritmonitor, Carfax czy
-                          Otomoto. Nie korzystamy z algorytmu „czarnej skrzynki”
-                          , każdą rekomendację można wyjaśnić konkretną
-                          odpowiedzią z Twojego formularza.
-                        </p>
                       </div>
                     </div>
                   </div>
                 ),
               },
               {
-                label: "Dla kogo",
-                content: (
-                  <div className="py-10 lg:py-12">
-                    <div className="max-w-3xl">
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        Dla kogo jest ten kreator
-                      </h2>
-                      <div className="space-y-4 text-gray-600 dark:text-gray-400">
-                        <p>
-                          Narzędzie jest dla osób, które chcą wybrać auto
-                          rozumem, a nie emocjami, i wolą przejrzeć 10
-                          realistycznych kandydatów niż wikłać się w
-                          porównywanie 100 modeli. Sprawdzi się w szczególności
-                          w czterech sytuacjach:
-                        </p>
-                        <ul className="list-disc pl-5 space-y-2">
-                          <li>
-                            <strong>Wymieniasz auto po kilku latach.</strong>{" "}
-                            Poprzednie auto było „OK”, ale zmieniło się życie,
-                            nowe dziecko, dłuższa trasa do pracy, firma zamiast
-                            etatu. Kreator pomoże sprawdzić, czy nadal segment C
-                            wystarczy, czy warto wejść wyżej.
-                          </li>
-                          <li>
-                            <strong>Firma kupująca flotę.</strong> Zamiast
-                            polegać na rekomendacji dealera („bo akurat mamy to
-                            w promocji”), wchodzisz do rozmowy z konkretnym
-                            profilem auta dopasowanym do pracowników. To daje
-                            przewagę negocjacyjną.
-                          </li>
-                          <li>
-                            <strong>
-                              Niezdecydowani między markami i napędami.
-                            </strong>{" "}
-                            Jeśli zastanawiasz się nad Toyotą vs Skodą vs Kią,
-                            ale nie wiesz, czy w ogóle szukasz w dobrym
-                            segmencie, zacznij od kreatora, potem przejdź do
-                            konkretów.
-                          </li>
-                          <li>
-                            <strong>Osoby kupujące pierwsze auto.</strong> Bez
-                            bagażu „zawsze jeździłem takim”. Kreator zadaje
-                            pytania, które warto sobie zadać przed pierwszym
-                            zakupem, a często pomijamy pod wpływem marketingu.
-                          </li>
-                        </ul>
-                        <p>
-                          Gdy poznasz już segment i napęd, przejdź do{" "}
-                          <Link
-                            href="/kalkulator-kosztow"
-                            className="text-accent hover:underline"
-                          >
-                            kalkulatora kosztów eksploatacji
-                          </Link>
-                          , żeby sprawdzić, ile konkretny model będzie Cię
-                          kosztować rocznie. Dwa narzędzia razem dają pełny
-                          obraz: czego szukasz i ile to realnie kosztuje.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                ),
-              },
-              {
-                label: "Częste błędy",
+                label: "Co dalej",
                 content: (
                   <div className="py-10 lg:py-12">
                     <div className="max-w-3xl space-y-12">
                       <div>
                         <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                          Najczęstsze błędy przy wyborze samochodu
-                        </h2>
-                        <div className="space-y-4 text-gray-600 dark:text-gray-400">
-                          <p>
-                            <strong>
-                              Kierowanie się marką zamiast potrzebami.
-                            </strong>{" "}
-                            „Kupujemy Audi, bo zawsze chcieliśmy Audi”. To jest
-                            zakup emocjonalny, nie racjonalny. W tym samym
-                            budżecie segmentu premium dostępny jest często
-                            większy segment marki „zwykłej”, który lepiej spełni
-                            funkcję transportową. Marka to kwestia tożsamości,
-                            decyzja świadoma, tak, ale warto wiedzieć, że to
-                            właśnie za nią płacisz.
-                          </p>
-                          <p>
-                            <strong>Pomijanie kosztów utrzymania.</strong> Auto
-                            za 120 tys. zł z tanim serwisem jest często tańsze w
-                            5‑letnim horyzoncie niż auto za 90 tys. zł z drogim
-                            serwisem, szybką utratą wartości i niską
-                            niezawodnością. Wybór auta na podstawie samej ceny
-                            zakupu to najdroższa ścieżka.
-                          </p>
-                          <p>
-                            <strong>Kupowanie „na zapas”.</strong> „Weźmiemy
-                            SUV-a, bo może kiedyś będzie dziecko / przyczepa /
-                            wyjazdy w góry”. Na 95% nie będzie, a jeżdżenie
-                            SUV-em po mieście przez 4 lata „na wszelki wypadek”
-                            to 8–15 tys. zł rocznie zmarnowane na paliwo, opony
-                            i ubezpieczenie. Lepiej dobrać auto do dzisiejszej
-                            sytuacji, a gdy coś się zmieni, sprzedać i wymienić.
-                          </p>
-                          <p>
-                            <strong>
-                              Zakup emocjonalny po jazdzie próbnej.
-                            </strong>{" "}
-                            Salonowa jazda próbna to marketing. Nowiutka
-                            kierownica, świeży zapach, bogato wyposażona wersja,
-                            uprzejmy handlowiec. Decyzja po takiej jeździe jest
-                            skrzywiona. Wróć do niej po tygodniu i sprawdź
-                            ponownie parametry, a nie wrażenia. Albo jeszcze
-                            lepiej, wypożycz ten sam model na weekend z
-                            carsharingu albo z firmy rent‑a‑car.
-                          </p>
-                          <p>
-                            <strong>
-                              Porównywanie aut w różnych wersjach wyposażenia.
-                            </strong>{" "}
-                            „Ten ma skórę, a tamten nie, więc ten jest lepszy”.
-                            Bez wyrównania wersji porównujesz jabłka z
-                            gruszkami. Zrób listę funkcji, które naprawdę chcesz
-                            mieć, i porównuj auta w wersjach, które je
-                            zawierają. Dopiero wtedy ceny są porównywalne.
-                          </p>
-                          <p>
-                            <strong>Ignorowanie kontekstu używania.</strong>{" "}
-                            Super sportowe zawieszenie pięknie wygląda w teście
-                            motoryzacyjnym, ale po 30 km na dziurawej drodze do
-                            pracy codziennie przez 4 lata potrafi sfrustrować.
-                            Auto musi pasować do Twojej trasy, a nie do testów
-                            na torze.
-                          </p>
-                        </div>
-                      </div>
-
-                      <div>
-                        <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                           Co zrobić z rekomendacją kreatora
                         </h2>
-                        <div className="space-y-4 text-gray-600 dark:text-gray-400">
-                          <p>
-                            <strong>1. Zapisz profil, nie tylko wynik.</strong>{" "}
-                            Segment, nadwozie, napęd, zakres mocy, orientacyjny
-                            budżet. To pięć parametrów, na których możesz
-                            pracować przez kolejne tygodnie szukając konkretnego
-                            auta.
-                          </p>
-                          <p>
-                            <strong>
-                              2. Zrób listę 8–12 modeli pasujących do profilu.
-                            </strong>{" "}
-                            Wchodzisz na Otomoto lub OtoMoto, filtrujesz
-                            dokładnie według parametrów kreatora i przeglądasz
-                            ogłoszenia. Cel: zobaczyć, jaka jest realna cena
-                            rynkowa i rozrzut wersji.
-                          </p>
-                          <p>
-                            <strong>3. Zawęź do 3–5 finalistów.</strong> Na
-                            podstawie niezawodności (ranking TÜV / DEKRA dla
-                            konkretnych roczników), dostępnych części, opinii
-                            właścicieli (fora, facebookowe grupy modelowe, tam
-                            poznasz prawdziwe problemy).
-                          </p>
-                          <p>
-                            <strong>4. Policz TCO dla finalistów.</strong> Wrzuć
-                            każdy do{" "}
+                        <ol className="list-decimal pl-5 space-y-3 text-gray-600 dark:text-gray-400">
+                          <li>
+                            Zrób listę 8 do 12 modeli pasujących do profilu i
+                            sprawdź ich ceny w ogłoszeniach.
+                          </li>
+                          <li>
+                            Zawęź do 3 do 5 finalistów według niezawodności i
+                            opinii właścicieli.
+                          </li>
+                          <li>
+                            Policz roczny koszt każdego w{" "}
                             <Link
                               href="/kalkulator-kosztow"
                               className="text-accent hover:underline"
                             >
-                              kalkulatora kosztów
+                              kalkulatorze kosztów
                             </Link>
-                            . Różnica roczna między podobnymi modelami potrafi
-                            wynosić 3–8 tys. zł, w 5‑letnim horyzoncie to 15–40
-                            tys. zł.
-                          </p>
-                          <p>
-                            <strong>5. Sprawdź finalistów mechanicznie.</strong>{" "}
-                            Przed zakupem każdego używanego auta, niezależny
-                            mechanik, nie salon i nie sprzedawca. Koszt 200–400
-                            zł, oszczędność potencjalnie kilka tysięcy. Zanim
-                            umówisz mechanika, wklej link do ogłoszenia w{" "}
+                            . Różnica między podobnymi modelami to często 3 do
+                            8 tys. zł rocznie.
+                          </li>
+                          <li>
+                            Ogłoszenie przepuść przez{" "}
                             <Link
                               href="/sprawdz-auto"
                               className="text-accent hover:underline"
                             >
-                              sprawdzeniu auta przed zakupem
+                              sprawdzenie auta przed zakupem
                             </Link>
-                            : porównanie ceny z rynkiem i oznaki cofniętego
-                            licznika odsieją część ofert jeszcze przed jazdą.
-                            Jeśli finalista jest tańszy w Niemczech,{" "}
+                            , a auto z Niemiec przez{" "}
                             <Link
                               href="/import-radar"
                               className="text-accent hover:underline"
                             >
                               ImportRadar
-                            </Link>{" "}
-                            policzy, czy sprowadzenie się opłaca po wszystkich
-                            kosztach.
-                          </p>
-                          <p>
-                            <strong>
-                              6. Dla firmy, dodaj aspekt podatkowy.
-                            </strong>{" "}
-                            Forma rozliczenia (ewidencja 100%, mieszana 75%/50%)
-                            wpływa na realny koszt po podatkach.{" "}
+                            </Link>
+                            . Potem niezależny mechanik.
+                          </li>
+                          <li>
+                            Dla firmy sprawdź wpływ auta na podatek w{" "}
                             <Link
                               href="/kalkulator-podatkowy"
                               className="text-accent hover:underline"
                             >
-                              Kalkulator podatkowy
-                            </Link>{" "}
-                            pokazuje wpływ samochodu firmowego na wynik JDG.
-                          </p>
-                        </div>
+                              kalkulatorze podatkowym
+                            </Link>
+                            .
+                          </li>
+                        </ol>
                       </div>
 
                       <div className="bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-8 text-center">
-                        <h2 className="text-xl lg:text-2xl font-bold text-gray-900 dark:text-white mb-3">
+                        <h2 className="text-xl lg:text-2xl font-bold text-gray-900 dark:text-white mb-6">
                           Policz realny koszt wybranego auta
                         </h2>
-                        <p className="text-gray-600 dark:text-gray-400 mb-6">
-                          Gdy już wiesz, jakiego segmentu szukasz, sprawdź ile
-                          będzie kosztować Cię rocznie utrzymanie konkretnego
-                          modelu.
-                        </p>
                         <Link
                           href="/kalkulator-kosztow"
                           className="btn-primary px-8 py-3 text-base"
@@ -452,31 +248,25 @@ export default function DoborSamochoduPage() {
                         <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-8">
                           Powiązane treści
                         </h2>
-                        <div className="grid md:grid-cols-2 gap-4">
+                        <div className="grid md:grid-cols-3 gap-4">
                           {[
                             {
                               href: "/kalkulator-kosztow",
                               title: "Kalkulator kosztów samochodu",
                               description:
-                                "Policz roczny koszt utrzymania konkretnego modelu, paliwo, serwis, amortyzacja.",
+                                "Roczny koszt utrzymania konkretnego modelu.",
                             },
                             {
                               href: "/kalkulator-podatkowy",
                               title: "Kalkulator JDG 2026",
                               description:
-                                "Zobacz, jak samochód firmowy wpływa na podatek w każdej z trzech form opodatkowania.",
+                                "Wpływ auta firmowego na podatek.",
                             },
                             {
                               href: "/strefa-wiedzy/jaka-forma-opodatkowania-jdg-2026",
                               title: "Jaka forma opodatkowania JDG w 2026?",
                               description:
-                                "Wybór formy wpływa na to, ile z kosztu auta realnie odzyskasz.",
-                            },
-                            {
-                              href: "/strefa-wiedzy/kiedy-ai-ma-sens-a-kiedy-nie",
-                              title: "Kiedy AI ma sens, a kiedy nie",
-                              description:
-                                "Framework decyzji, ten sam sposób myślenia, którego warto użyć przy wyborze auta.",
+                                "Ile z kosztu auta realnie odzyskasz.",
                             },
                           ].map((article) => (
                             <Link
@@ -500,9 +290,7 @@ export default function DoborSamochoduPage() {
                           Potrzebujesz wsparcia przy decyzjach flotowych?
                         </h2>
                         <p className="text-gray-500 dark:text-gray-400 mb-8">
-                          Jeśli firma rozważa wymianę floty albo wdrożenie
-                          polityki samochodowej, możemy pomóc w analizie kosztów
-                          i procesu.
+                          Pomagamy policzyć koszty floty i uporządkować proces.
                         </p>
                         <Link
                           href="/kontakt"

@@ -31,6 +31,25 @@ export const metadata: Metadata = {
   },
 };
 
+const faq = [
+  {
+    q: "Czy integracje API są tylko dla dużych firm?",
+    a: "Nie. Mniejsze firmy często szybciej odczuwają korzyść.",
+  },
+  {
+    q: "Czy można połączyć CRM z innymi systemami bez pełnego developmentu?",
+    a: "Często tak, zależy to od narzędzi i zakresu procesu.",
+  },
+  {
+    q: "Co jest ważniejsze: narzędzie czy logika procesu?",
+    a: "Logika procesu. Źle przemyślana integracja będzie złym wdrożeniem niezależnie od technologii.",
+  },
+  {
+    q: "Jaki pierwszy scenariusz integracji zwykle daje najlepszy efekt?",
+    a: "Najczęściej leady, CRM i raportowanie.",
+  },
+];
+
 export default function IntegracjeApiArticle() {
   return (
     <>
@@ -43,7 +62,6 @@ export default function IntegracjeApiArticle() {
           ]}
         />
 
-        {/* Nagłówek artykułu, kompaktowy */}
         <section className="pt-16 pb-6">
           <div className="max-w-3xl mx-auto px-6 lg:px-8">
             <span className="section-label">Strefa wiedzy</span>
@@ -51,32 +69,26 @@ export default function IntegracjeApiArticle() {
               Integracje API w firmie, kiedy warto?
             </h1>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-              Integracje API brzmią technicznie, ale ich sens jest bardzo
-              biznesowy. W praktyce chodzi o jedno: czy dane między systemami
-              mają przepływać automatycznie, czy dalej mają być przenoszone
-              ręcznie przez ludzi. Jeżeli firma używa kilku narzędzi
-              jednocześnie i każde z nich żyje własnym życiem, to integracje API
-              przestają być &bdquo;opcją dla działu IT&rdquo;. Zaczynają być
-              elementem sprawnej operacji.
+              Chodzi o jedno: czy dane między systemami przepływają same, czy
+              przenoszą je ludzie. Gdy firma używa kilku narzędzi, które żyją
+              osobno, integracja staje się elementem sprawnej operacji.
             </p>
           </div>
         </section>
 
-        {/* Treść w zakładkach, nic nie wycięte, podzielone wg rozdziałów */}
         <div className="container-wide pb-8">
           <Tabs
             ariaLabel="Rozdziały artykułu"
             tabs={[
               {
-                label: "Czym są integracje",
+                label: "Kiedy warto",
                 content: (
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        Czym są integracje API
+                        Kiedy integracje API mają sens
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        API to sposób, w jaki systemy komunikują się ze sobą.
                         Dzięki{" "}
                         <Link
                           href="/integracje-api"
@@ -84,491 +96,153 @@ export default function IntegracjeApiArticle() {
                         >
                           integracjom API
                         </Link>{" "}
-                        CRM, formularz, ERP, narzędzie mailingowe, baza danych
-                        czy system raportowy mogą wymieniać informacje bez
-                        ręcznego udziału człowieka.
+                        CRM, formularze, ERP i raporty wymieniają dane bez
+                        ręcznego kopiowania. Warto, gdy:
                       </p>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        W praktyce integracja API oznacza, że:
-                      </p>
-                      <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
-                        <li>dane są pobierane i wysyłane automatycznie,</li>
-                        <li>można synchronizować rekordy, statusy i pola,</li>
+                      <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400">
                         <li>
-                          jedno zdarzenie w systemie może uruchamiać kolejne
-                          akcje w innym,
+                          kilka systemów powinno działać jak jeden proces, a
+                          ludzie sklejają go ręcznie,
                         </li>
                         <li>
-                          firma przestaje polegać na kopiowaniu danych z miejsca
-                          do miejsca.
+                          ręczne przenoszenie danych powoduje błędy, duble i
+                          opóźnienia,
                         </li>
+                        <li>
+                          liczy się aktualność: lead od razu w CRM, raport na
+                          bieżących danych,
+                        </li>
+                        <li>arkusz przestaje wystarczać przy rosnącej skali.</li>
                       </ul>
-                      <p className="text-gray-600 dark:text-gray-400 mb-8">
-                        To nie zawsze wymaga &bdquo;wielkiego
-                        developmentu&rdquo;. Czasem jest to prosta, bardzo
-                        konkretna integracja, która eliminuje codzienny problem
-                        operacyjny.
-                      </p>
-
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        Kiedy integracje API mają sens
-                      </h2>
-
-                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                        1. Gdy kilka systemów powinno działać jak jeden proces
-                      </h3>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Najczęstszy przypadek: firma ma CRM, formularze,
-                        arkusze, narzędzie mailingowe, system fakturowy i
-                        raportowanie. Każdy działa osobno, ludzie sklejają
-                        proces ręcznie. Dobra{" "}
-                        <Link
-                          href="/automatyzacja-procesow-biznesowych"
-                          className="text-accent hover:underline"
-                        >
-                          automatyzacja procesów biznesowych
-                        </Link>{" "}
-                        zaczyna się właśnie od spięcia tych systemów, a API jest
-                        do tego najlepszym narzędziem.
-                      </p>
-
-                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                        2. Gdy ręczne przenoszenie danych generuje koszt
-                      </h3>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Samo kopiowanie danych to wierzchołek problemu. Za nim
-                        stoją: błędy, duble, brak aktualności, pytania między
-                        działami, opóźnienia. Im częściej proces się powtarza,
-                        tym szybciej rośnie koszt ręcznego obejścia.
-                      </p>
-
-                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                        3. Gdy liczy się aktualność danych
-                      </h3>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Lead ma być od razu w CRM. Status ma się zmienić szybko.
-                        Raport ma bazować na aktualnych danych.
-                      </p>
-
-                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                        4. Gdy firma potrzebuje stabilniejszej architektury
-                      </h3>
-                      <p className="text-gray-600 dark:text-gray-400">
-                        Na początku wiele da się obsłużyć arkuszem. Ale z czasem
-                        to przestaje być skalowalne.
-                      </p>
                     </div>
                   </div>
                 ),
               },
               {
-                label: "Kiedy API to przesada",
+                label: "Kiedy to przesada",
                 content: (
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                         Kiedy API nie jest najlepszym wyborem
                       </h2>
-
-                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                        1. Gdy proces jest rzadki
-                      </h3>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Jeżeli coś dzieje się raz na miesiąc i zajmuje 5 minut,
-                        to integracja API może być przerostem formy.
-                      </p>
-
-                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                        2. Gdy proces nie jest jeszcze uporządkowany
-                      </h3>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Jeżeli firma nie wie: które dane są ważne, kto jest
-                        właścicielem procesu, które pole ma być źródłem prawdy,
-                        jak wygląda poprawny przepływ, to integracja API
-                        przeniesie chaos między systemami szybciej. Więcej o
-                        porządkowaniu procesów w{" "}
-                        <Link
-                          href="/strefa-wiedzy/co-to-jest-automatyzacja-procesow-biznesowych"
-                          className="text-accent hover:underline"
-                        >
-                          Co to jest automatyzacja procesów biznesowych
-                        </Link>
-                        .
-                      </p>
-
-                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                        3. Gdy wystarczy prostsza automatyzacja
-                      </h3>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Niektóre przypadki lepiej obsłużyć prostym workflow
-                        no-code.
-                      </p>
-                    </div>
-                  </div>
-                ),
-              },
-              {
-                label: "Scenariusze i dobra integracja",
-                content: (
-                  <div className="py-6 lg:py-8">
-                    <div className="max-w-3xl mx-auto">
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        Najczęstsze scenariusze integracji API
-                      </h2>
-
-                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                        CRM + formularze i źródła leadów
-                      </h3>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Nowe zapytanie trafia automatycznie do CRM, jest
-                        oznaczane źródłem, przypisywane do handlowca i wyzwala
-                        zadanie follow-up. To klasyczny scenariusz{" "}
-                        <Link
-                          href="/automatyzacja-leadow-crm"
-                          className="text-accent hover:underline"
-                        >
-                          automatyzacji CRM
-                        </Link>
-                        .
-                      </p>
-
-                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                        CRM + system ofertowy / ERP
-                      </h3>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Dane klienta, status zamówienia są synchronizowane
-                        między systemami.
-                      </p>
-
-                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                        CRM + raportowanie
-                      </h3>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Integracja pozwala zasilać dashboardy bez ręcznej
-                        składanki. Zobacz{" "}
-                        <Link
-                          href="/strefa-wiedzy/jak-zautomatyzowac-raportowanie-w-firmie"
-                          className="text-accent hover:underline"
-                        >
-                          Jak zautomatyzować raportowanie w firmie
-                        </Link>
-                        .
-                      </p>
-
-                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                        Obsługa zgłoszeń + powiadomienia + klasyfikacja
-                      </h3>
-                      <p className="text-gray-600 dark:text-gray-400 mb-8">
-                        Zgłoszenie trafia do odpowiedniego zespołu, jest
-                        kategoryzowane i uruchamia kolejne akcje automatycznie.
-                      </p>
-
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        Jak wygląda dobra integracja API
-                      </h2>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Dobra integracja musi być przewidywalna, zrozumiała i
-                        odporna na problemy. Powinna odpowiadać na pytania:
-                      </p>
-                      <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-8">
-                        <li>co jest źródłem danych,</li>
-                        <li>kiedy dane są synchronizowane,</li>
-                        <li>co dzieje się przy błędzie,</li>
-                        <li>jak wykrywać duplikaty,</li>
-                        <li>kto odpowiada za wyjątki,</li>
-                        <li>jak przetestować poprawność procesu.</li>
+                      <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400">
+                        <li>
+                          Proces jest rzadki: raz w miesiącu przez 5 minut.
+                        </li>
+                        <li>
+                          Proces nie jest uporządkowany. Bez źródła prawdy i
+                          właściciela integracja tylko szybciej przeniesie chaos.
+                        </li>
+                        <li>Wystarczy prosty workflow no-code.</li>
                       </ul>
-
-                      <div className="bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-8 text-center">
-                        <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                          Masz kilka systemów, które powinny działać jak jeden
-                          proces?
-                        </h2>
-                        <p className="text-gray-600 dark:text-gray-400 mb-4">
-                          Bezpłatna diagnoza, bez zobowiązań.
-                        </p>
-                        <Link
-                          href="/kontakt"
-                          className="btn-primary inline-block"
-                        >
-                          Zamów diagnozę procesu
-                        </Link>
-                      </div>
                     </div>
                   </div>
                 ),
               },
               {
-                label: "Błędy i case'y",
+                label: "Scenariusze",
                 content: (
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        Najczęstsze błędy przy integracjach API
+                        Najczęstsze scenariusze
                       </h2>
-
-                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                        Brak jednego źródła prawdy
-                      </h3>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Podstawowy błąd. Jeżeli ten sam rekord może być
-                        edytowany w kilku miejscach bez jasnej logiki, konflikty
-                        danych są kwestią czasu.
-                      </p>
-
-                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                        Integracja bez walidacji
-                      </h3>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Jeżeli integracja nie sprawdza, czy dane są kompletne,
-                        poprawne i nieduplikowane, to nie rozwiązuje problemu,
-                        tylko szybciej rozprowadza błędy.
-                      </p>
-
-                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                        Próba spięcia wszystkiego naraz
-                      </h3>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Lepiej zacząć od jednego krytycznego przepływu.
-                      </p>
-
-                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                        Zbyt techniczne podejście bez perspektywy procesu
-                      </h3>
-                      <p className="text-gray-600 dark:text-gray-400 mb-8">
-                        Integracja może być świetna technicznie i nie
-                        rozwiązywać realnego problemu biznesowego.
-                      </p>
-
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        Mini-case 1: CRM i formularz kontaktowy
-                      </h2>
-                      <p className="text-gray-600 dark:text-gray-400 mb-8">
-                        Firma miała formularz, ale leady trafiały do maila, CRM
-                        aktualizowany ręcznie. Po wdrożeniu: lead automatycznie
-                        w CRM, źródło przypisane, system tworzył zadanie.
-                        Zniknęło ręczne przepisywanie, a z nim opóźnienia i błędy.
-                      </p>
-
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        Mini-case 2: CRM, raportowanie i zespół operacyjny
-                      </h2>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Raportowanie wymagało ręcznego wyciągania danych z CRM i
-                        weryfikacji w innych źródłach. Po integracji: dane nie
-                        przenoszone ręcznie, raport oparty na stałym modelu,
-                        zespół przestał korygować liczby &bdquo;na czuja&rdquo;.
-                      </p>
-                    </div>
-                  </div>
-                ),
-              },
-              {
-                label: "Ocena, API vs AI",
-                content: (
-                  <div className="py-6 lg:py-8">
-                    <div className="max-w-3xl mx-auto">
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        Jak ocenić, czy API ma sens w Twojej firmie
-                      </h2>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Zadaj sobie 5 pytań:
-                      </p>
-                      <ol className="list-decimal pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-8">
-                        <li>Czy ten proces dzieje się często?</li>
+                      <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400">
                         <li>
-                          Czy dane muszą przechodzić między systemami
-                          regularnie?
+                          Formularz i CRM: lead trafia do CRM ze źródłem,
+                          handlowcem i zadaniem follow-up. To klasyczna{" "}
+                          <Link
+                            href="/automatyzacja-leadow-crm"
+                            className="text-accent hover:underline"
+                          >
+                            automatyzacja CRM
+                          </Link>
+                          .
                         </li>
                         <li>
-                          Czy ręczne przenoszenie powoduje błędy lub opóźnienia?
-                        </li>
-                        <li>Czy aktualność danych ma znaczenie biznesowe?</li>
-                        <li>
-                          Czy proces jest już na tyle uporządkowany, że wiadomo,
-                          co ma się dziać?
-                        </li>
-                      </ol>
-
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        API, automatyzacja i AI, co jest czym
-                      </h2>
-                      <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
-                        <li>
-                          Automatyzacja procesów biznesowych to szerszy cel.
+                          CRM i ERP: dane klienta i status zamówienia są
+                          zsynchronizowane.
                         </li>
                         <li>
-                          Integracje API to sposób, by systemy wymieniały dane.
+                          CRM i raportowanie: dashboardy zasilane bez ręcznej
+                          składanki.
                         </li>
                         <li>
-                          AI ma sens tam, gdzie trzeba analizować treści,
-                          klasyfikować dane lub wspierać decyzje.
+                          Zgłoszenia: trafiają do właściwego zespołu i
+                          uruchamiają kolejne akcje.
                         </li>
                       </ul>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        <Link
-                          href="/strefa-wiedzy/co-to-jest-automatyzacja-procesow-biznesowych"
-                          className="text-accent hover:underline"
-                        >
-                          Co to jest automatyzacja procesów biznesowych
-                        </Link>
-                        {" | "}
-                        <Link
-                          href="/strefa-wiedzy/jak-zautomatyzowac-raportowanie-w-firmie"
-                          className="text-accent hover:underline"
-                        >
-                          Jak zautomatyzować raportowanie w firmie
-                        </Link>
-                        {" | "}
-                        <Link
-                          href="/strefa-wiedzy/automatyzacja-crm-od-czego-zaczac"
-                          className="text-accent hover:underline"
-                        >
-                          Automatyzacja CRM, od czego zacząć
-                        </Link>
-                      </p>
                     </div>
                   </div>
                 ),
               },
               {
-                label: "FAQ i podsumowanie",
+                label: "Błędy",
+                content: (
+                  <div className="py-6 lg:py-8">
+                    <div className="max-w-3xl mx-auto">
+                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                        Najczęstsze błędy
+                      </h2>
+                      <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400">
+                        <li>
+                          Brak jednego źródła prawdy: ten sam rekord edytowany w
+                          kilku miejscach.
+                        </li>
+                        <li>
+                          Brak walidacji: integracja szybciej rozprowadza błędy
+                          i duplikaty.
+                        </li>
+                        <li>
+                          Spinanie wszystkiego naraz. Lepiej zacząć od jednego
+                          krytycznego przepływu.
+                        </li>
+                        <li>
+                          Technika bez procesu: integracja działa, ale nie
+                          rozwiązuje problemu biznesowego.
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                ),
+              },
+              {
+                label: "FAQ",
                 content: (
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                         Najczęściej zadawane pytania
                       </h2>
-                      <div className="space-y-4 mb-12">
-                        <details className="group rounded-2xl border border-gray-200 dark:border-gray-700">
-                          <summary className="flex cursor-pointer items-center justify-between p-6 text-gray-900 dark:text-white font-medium">
-                            Czy integracje API są tylko dla dużych firm?
-                            <svg
-                              className="h-5 w-5 shrink-0 text-gray-600 dark:text-gray-400 transition-transform duration-200 group-open:rotate-45"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              stroke="currentColor"
-                              strokeWidth={2}
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                d="M12 4v16m8-8H4"
-                              />
-                            </svg>
-                          </summary>
-                          <div className="px-6 pb-6 text-gray-600 dark:text-gray-400">
-                            Nie. Mniejsze firmy często szybciej odczuwają
-                            korzyść.
-                          </div>
-                        </details>
-
-                        <details className="group rounded-2xl border border-gray-200 dark:border-gray-700">
-                          <summary className="flex cursor-pointer items-center justify-between p-6 text-gray-900 dark:text-white font-medium">
-                            Czy API zawsze jest lepsze od prostych
-                            automatyzacji?
-                            <svg
-                              className="h-5 w-5 shrink-0 text-gray-600 dark:text-gray-400 transition-transform duration-200 group-open:rotate-45"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              stroke="currentColor"
-                              strokeWidth={2}
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                d="M12 4v16m8-8H4"
-                              />
-                            </svg>
-                          </summary>
-                          <div className="px-6 pb-6 text-gray-600 dark:text-gray-400">
-                            Nie. Zależy od procesu, skali, krytyczności i
-                            potrzebnej elastyczności.
-                          </div>
-                        </details>
-
-                        <details className="group rounded-2xl border border-gray-200 dark:border-gray-700">
-                          <summary className="flex cursor-pointer items-center justify-between p-6 text-gray-900 dark:text-white font-medium">
-                            Czy można połączyć CRM z innymi systemami bez
-                            pełnego developmentu?
-                            <svg
-                              className="h-5 w-5 shrink-0 text-gray-600 dark:text-gray-400 transition-transform duration-200 group-open:rotate-45"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              stroke="currentColor"
-                              strokeWidth={2}
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                d="M12 4v16m8-8H4"
-                              />
-                            </svg>
-                          </summary>
-                          <div className="px-6 pb-6 text-gray-600 dark:text-gray-400">
-                            Często tak, ale zależy to od narzędzi i zakresu
-                            procesu.
-                          </div>
-                        </details>
-
-                        <details className="group rounded-2xl border border-gray-200 dark:border-gray-700">
-                          <summary className="flex cursor-pointer items-center justify-between p-6 text-gray-900 dark:text-white font-medium">
-                            Co jest ważniejsze: narzędzie czy logika procesu?
-                            <svg
-                              className="h-5 w-5 shrink-0 text-gray-600 dark:text-gray-400 transition-transform duration-200 group-open:rotate-45"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              stroke="currentColor"
-                              strokeWidth={2}
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                d="M12 4v16m8-8H4"
-                              />
-                            </svg>
-                          </summary>
-                          <div className="px-6 pb-6 text-gray-600 dark:text-gray-400">
-                            Logika procesu. Źle przemyślana integracja będzie
-                            złym wdrożeniem niezależnie od technologii.
-                          </div>
-                        </details>
-
-                        <details className="group rounded-2xl border border-gray-200 dark:border-gray-700">
-                          <summary className="flex cursor-pointer items-center justify-between p-6 text-gray-900 dark:text-white font-medium">
-                            Jaki pierwszy scenariusz integracji zwykle daje
-                            najlepszy efekt?
-                            <svg
-                              className="h-5 w-5 shrink-0 text-gray-600 dark:text-gray-400 transition-transform duration-200 group-open:rotate-45"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              stroke="currentColor"
-                              strokeWidth={2}
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                d="M12 4v16m8-8H4"
-                              />
-                            </svg>
-                          </summary>
-                          <div className="px-6 pb-6 text-gray-600 dark:text-gray-400">
-                            Bardzo często jest to obszar leadów, CRM i
-                            raportowania.
-                          </div>
-                        </details>
+                      <div className="space-y-4">
+                        {faq.map((item) => (
+                          <details
+                            key={item.q}
+                            className="group rounded-2xl border border-gray-200 dark:border-gray-700"
+                          >
+                            <summary className="flex cursor-pointer items-center justify-between p-6 text-gray-900 dark:text-white font-medium">
+                              {item.q}
+                              <svg
+                                className="h-5 w-5 shrink-0 text-gray-600 dark:text-gray-400 transition-transform duration-200 group-open:rotate-45"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                                strokeWidth={2}
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  d="M12 4v16m8-8H4"
+                                />
+                              </svg>
+                            </summary>
+                            <div className="px-6 pb-6 text-gray-600 dark:text-gray-400">
+                              {item.a}
+                            </div>
+                          </details>
+                        ))}
                       </div>
-
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        Podsumowanie
-                      </h2>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Integracje API mają sens wtedy, gdy dane między
-                        systemami powinny przepływać automatycznie, a ręczne
-                        przenoszenie zaczyna być realnym kosztem operacyjnym.
-                        Nie chodzi o to, żeby &bdquo;mieć API&rdquo;, tylko żeby
-                        firma działała sprawniej.
-                      </p>
                     </div>
                   </div>
                 ),
@@ -592,7 +266,7 @@ export default function IntegracjeApiArticle() {
                 Masz kilka systemów, które powinny działać jak jeden proces?
               </h2>
               <p className="text-gray-600 dark:text-gray-400 mb-4">
-                Zobacz usługę integracji i porównaj z artykułami poniżej.
+                Bezpłatna diagnoza, bez zobowiązań.
               </p>
               <Link href="/kontakt" className="btn-primary inline-block">
                 Zamów diagnozę procesu
@@ -659,14 +333,6 @@ export default function IntegracjeApiArticle() {
                   </li>
                   <li>
                     <Link
-                      href="/automatyzacja-raportowania"
-                      className="text-accent hover:underline"
-                    >
-                      Automatyzacja raportowania
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
                       href="/automatyzacja-leadow-crm"
                       className="text-accent hover:underline"
                     >
@@ -713,48 +379,11 @@ export default function IntegracjeApiArticle() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "FAQPage",
-            mainEntity: [
-              {
-                "@type": "Question",
-                name: "Czy integracje API są tylko dla dużych firm?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Nie. Mniejsze firmy często szybciej odczuwają korzyść.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "Czy API zawsze jest lepsze od prostych automatyzacji?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Nie. Zależy od procesu, skali, krytyczności i potrzebnej elastyczności.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "Czy można połączyć CRM z innymi systemami bez pełnego developmentu?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Często tak, ale zależy to od narzędzi i zakresu procesu.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "Co jest ważniejsze: narzędzie czy logika procesu?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Logika procesu. Źle przemyślana integracja będzie złym wdrożeniem niezależnie od technologii.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "Jaki pierwszy scenariusz integracji zwykle daje najlepszy efekt?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Bardzo często jest to obszar leadów, CRM i raportowania.",
-                },
-              },
-            ],
+            mainEntity: faq.map((item) => ({
+              "@type": "Question",
+              name: item.q,
+              acceptedAnswer: { "@type": "Answer", text: item.a },
+            })),
           }),
         }}
       />

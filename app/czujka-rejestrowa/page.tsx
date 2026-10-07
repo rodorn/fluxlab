@@ -32,25 +32,25 @@ export default function Page() {
       breadcrumb="Czujka rejestrowa"
       eyebrow="Należności i kontrahenci"
       h1="Dłużnik może zniknąć z rejestru, a Ty się o tym nie dowiesz"
-      lead="Sąd rejestrowy wszczyna z urzędu postępowanie o rozwiązanie spółki, która nie składa sprawozdań, i robi to bez likwidacji. Publikuje obwieszczenie w Monitorze Sądowym i Gospodarczym, od którego biegną trzy miesiące na zgłoszenie sprzeciwu. Po tym terminie podmiot znika z rejestru, a jego majątek przechodzi na Skarb Państwa. Zawiadomienia nikt do Ciebie nie wyśle."
+      lead="Sąd z urzędu rozwiązuje spółki, które nie składają sprawozdań. Od obwieszczenia w Monitorze Sądowym i Gospodarczym masz trzy miesiące na sprzeciw, potem podmiot znika z rejestru. Nikt Cię o tym nie zawiadomi."
       ctaLabel="Sprawdź kontrahenta"
       ctaNote="Sprawdzenie za darmo, od ręki"
       checks={[
         {
           title: "Czy trwa postępowanie o rozwiązanie",
-          desc: "Szukamy obwieszczeń o rozwiązaniu bez likwidacji i pokazujemy datę publikacji razem z dniem, w którym mija termin na sprzeciw.",
+          desc: "Pokazujemy datę obwieszczenia i dzień, w którym mija termin na sprzeciw.",
         },
         {
           title: "Cała historia ogłoszeń od 2013 roku",
-          desc: "Nie tylko dzisiejszy stan. Widać, co się z podmiotem działo przez lata, bo sekwencja ogłoszeń mówi więcej niż jedno z nich.",
+          desc: "Widać, co działo się z podmiotem przez lata.",
         },
         {
           title: "Codzienne pilnowanie Twojej listy",
-          desc: "Wgrywasz listę kontrahentów, a my porównujemy ją z każdym nowym wydaniem Monitora i odzywamy się w dniu publikacji, nie miesiąc później.",
+          desc: "Porównujemy Twoją listę z każdym wydaniem Monitora i piszemy w dniu publikacji.",
         },
         {
           title: "Skan wsteczny całego portfela",
-          desc: "Jednorazowe sprawdzenie, czy coś już przegapiłeś. Przy setkach kontrahentów to jedyny sposób, żeby się dowiedzieć.",
+          desc: "Jednorazowo sprawdzamy, czy coś już przegapiłeś.",
         },
       ]}
       pricing={[
@@ -90,26 +90,26 @@ export default function Page() {
       faq={[
         {
           q: "Skąd biorą się te dane?",
-          a: "Z wyszukiwarki Monitora Sądowego i Gospodarczego prowadzonej przez Ministerstwo Sprawiedliwości. To dane jawne, publikowane po to, żeby każdy mógł się z nimi zapoznać. Nie wymaga to logowania ani niczyjej zgody.",
+          a: "Z jawnej wyszukiwarki Monitora Sądowego i Gospodarczego Ministerstwa Sprawiedliwości.",
         },
         {
           q: "Czy to znaczy, że spółka na pewno zostanie wykreślona?",
-          a: "Nie. Obwieszczenie oznacza wszczęcie postępowania, a nie jego wynik. Nie wiemy, jaki odsetek kończy się faktycznym wykreśleniem, i nie będziemy tego zgadywać. Wiemy natomiast, że termin na reakcję biegnie od dnia publikacji i że po nim możliwości są znacznie mniejsze.",
+          a: "Nie. Obwieszczenie to wszczęcie postępowania, nie wynik. Ale termin na reakcję biegnie od dnia publikacji.",
         },
         {
           q: "Dlaczego dopasowanie idzie po nazwie, a nie po NIP?",
-          a: "Bo w ogłoszeniach numer NIP pojawia się w około dwóch procentach przypadków, a numer KRS w dwóch trzecich. Sprawdziliśmy to na próbce. Dopasowanie po NIP wyglądałoby precyzyjnie, a przepuszczałoby prawie wszystko.",
+          a: "W ogłoszeniach NIP pojawia się rzadko, numer KRS w dwóch trzecich przypadków. Dlatego dopasowujemy po KRS i nazwie.",
         },
         {
           q: "Czy monitorujecie też upadłości?",
-          a: "Nie i mówimy to wprost, żeby nie było nieporozumienia. Od 2021 roku postanowienia o upadłości trafiają do Krajowego Rejestru Zadłużonych, a nie do Monitora, więc na tych danych nie da się zbudować monitoringu upadłości.",
+          a: "Nie. Od 2021 roku upadłości trafiają do Krajowego Rejestru Zadłużonych, nie do Monitora.",
         },
       ]}
       formId="order_czujka_rejestrowa"
       formHeading="Zamów sprawdzenie listy kontrahentów"
       formIntro="Napisz, ilu macie kontrahentów i w jakiej formie trzymacie listę. Odeślemy zakres, cenę i przykładowy raport."
       submitLabel="Zamów sprawdzenie"
-      microCopy="Do sprawdzenia potrzebujemy wyłącznie listy nazw albo numerów KRS. Żadnych danych osobowych, faktur ani dostępów do Waszych systemów."
+      microCopy="Wystarczy lista nazw albo numerów KRS. Bez danych osobowych i dostępów."
       serviceName="Monitoring Monitora Sądowego i Gospodarczego dla listy kontrahentów"
       serviceDesc="Codzienne porównywanie listy kontrahentów klienta z nowymi wydaniami Monitora Sądowego i Gospodarczego, ze szczególnym uwzględnieniem postępowań o rozwiązanie podmiotu bez likwidacji, wraz z alertem w dniu obwieszczenia. Od 99 zł miesięcznie."
       serviceType="Monitoring rejestrów publicznych"

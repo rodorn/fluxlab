@@ -145,7 +145,7 @@ export default function WidocznoscCheck() {
       </form>
 
       {stan === "blad" && (
-        <p className="mt-3 text-sm text-red-600 dark:text-red-400">{blad}</p>
+        <p className="mt-3 text-sm text-red-700 dark:text-red-400">{blad}</p>
       )}
 
       {wynik &&
@@ -185,7 +185,7 @@ export default function WidocznoscCheck() {
           </p>
 
           {zly && (
-            <div className="mt-4 rounded-lg border border-red-400/60 bg-white/70 dark:bg-gray-950/50 p-4">
+            <div className="mt-4 rounded-lg border border-red-500/60 bg-white/70 dark:bg-gray-950/50 p-4">
               <p className="text-sm font-bold text-red-700 dark:text-red-400">
                 Twoja strona ma {wynik.rozmiarStrony} kilobajtów treści, której
                 nikt nie znajdzie
@@ -264,7 +264,7 @@ export default function WidocznoscCheck() {
                   </button>
                 </div>
                 {leadStan === "blad" && (
-                  <p className="mt-2 text-sm text-red-600 dark:text-red-400">
+                  <p className="mt-2 text-sm text-red-700 dark:text-red-400">
                     {leadBlad}
                   </p>
                 )}

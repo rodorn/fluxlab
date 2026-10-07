@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import {
   narzedziaFilaru,
+  otherTools,
   FILARY_NARZEDZI,
   FILAR_INTRO_NARZEDZI,
   type Narzedzie,
@@ -254,6 +255,22 @@ export default function Narzedzia() {
                 </section>
               );
             })}
+            {/* Narzędzia spoza oferty dla firm: zostają pod swoimi adresami,
+                ale tylko jako krótka lista, żeby nie mieszać ich z resztą. */}
+            <section className="mt-14 border-t border-gray-200 pt-8 dark:border-white/10">
+              <h2 className="text-sm font-semibold text-gray-900 dark:text-white">
+                Inne darmowe sprawdzenia
+              </h2>
+              <ul className="mt-3 grid gap-x-8 gap-y-2 sm:grid-cols-2">
+                {otherTools.map((t) => (
+                  <li key={t.href} className="text-sm">
+                    <Link href={t.href} className="font-medium text-accent hover:underline">
+                      {t.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
           </div>
         </div>
       </main>

@@ -35,28 +35,22 @@ export default function JakaFormaOpodatkowaniaJdgArticle() {
     {
       question: "Czy możemy zmienić formę opodatkowania w trakcie roku?",
       answer:
-        "Nie. Formę opodatkowania można zmienić tylko od 1 stycznia kolejnego roku. Wniosek (lub aktualizację CEIDG) należy złożyć do 20 lutego roku, od którego ma obowiązywać nowa forma.",
-    },
-    {
-      question:
-        "Która forma jest najlepsza przy przychodzie 15 000 zł miesięcznie?",
-      answer:
-        "To zależy przede wszystkim od poziomu kosztów i stawki ryczałtu dla Twojej branży. Jeśli masz niskie koszty i stawkę ryczałtu 12% lub niższą, ryczałt może wygrać. Jeśli masz wysokie koszty, liniowy lub skala będą korzystniejsze. Najlepiej sprawdzić to w kalkulatorze na konkretnych liczbach.",
+        "Nie. Zmiana działa od 1 stycznia, a zgłasza się ją do 20 lutego roku, od którego ma obowiązywać.",
     },
     {
       question: "Czy ryczałt jest zawsze najtańszy?",
       answer:
-        "Nie. Ryczałt nie pozwala odliczać kosztów uzyskania przychodu. Jeśli masz wysokie koszty (np. zakup sprzętu, leasing samochodu, materiały), to podatek od pełnego przychodu może być wyższy niż podatek od dochodu na liniowym lub skali.",
+        "Nie. Ryczałt nie pozwala odliczać kosztów. Przy wysokich kosztach podatek od całego przychodu bywa wyższy niż na liniowym lub skali.",
     },
     {
       question: "Czy na liniowym możemy odliczyć składkę zdrowotną?",
       answer:
-        "Tak. Na podatku liniowym składka zdrowotna wynosi 4,9% dochodu i można ją odliczyć od podstawy opodatkowania do limitu 14 100 zł rocznie.",
+        "Tak. Składka wynosi 4,9% dochodu i można ją odliczyć od podstawy do limitu 14 100 zł rocznie.",
     },
     {
       question: "Czy warto konsultować wybór z księgowym?",
       answer:
-        "Tak, szczególnie jeśli masz złożoną sytuację, np. kilka źródeł dochodu, rozliczenie z małżonkiem, planowane inwestycje lub zmianę branży. Księgowy pomoże uwzględnić niuanse, które kalkulator nie zawsze obejmie.",
+        "Tak, zwłaszcza przy kilku źródłach dochodu, rozliczeniu z małżonkiem albo planowanych inwestycjach.",
     },
   ];
 
@@ -78,17 +72,12 @@ export default function JakaFormaOpodatkowaniaJdgArticle() {
               Jaka forma opodatkowania JDG w 2026?
             </h1>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-              Wybór formy opodatkowania to jedna z najważniejszych decyzji
-              finansowych w jednoosobowej działalności gospodarczej. W 2026 roku
-              dostępne są trzy opcje: skala podatkowa, podatek liniowy i ryczałt
-              ewidencjonowany. Każda ma inne zasady, inne progi i inne
-              konsekwencje dla portfela. Ten artykuł pomoże Ci zrozumieć różnice
-              i wybrać świadomie.
+              W 2026 roku JDG wybiera między skalą, podatkiem liniowym i
+              ryczałtem. Różnią się stawką, kosztami i składką zdrowotną.
             </p>
           </div>
         </section>
 
-        {/* Treść w zakładkach, nic nie wycięte, podzielone wg rozdziałów */}
         <div className="container-wide pb-20">
           <Tabs
             ariaLabel="Rozdziały artykułu o formie opodatkowania JDG w 2026"
@@ -98,156 +87,62 @@ export default function JakaFormaOpodatkowaniaJdgArticle() {
                 content: (
                   <div className="py-6 lg:py-8 max-w-3xl mx-auto">
                     <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                      Trzy formy opodatkowania JDG, krótkie podsumowanie
+                      Trzy formy opodatkowania JDG
                     </h2>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      W 2026 roku przedsiębiorca prowadzący jednoosobową
-                      działalność gospodarczą może wybrać jedną z trzech form
-                      opodatkowania. Każda działa inaczej i każda ma inne
-                      konsekwencje dla składki zdrowotnej, możliwości odliczania
-                      kosztów i końcowego obciążenia podatkowego.
-                    </p>
 
                     <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
                       Skala podatkowa
                     </h3>
                     <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
-                      <li>Stawki: 12% do 120 000 zł dochodu, 32% powyżej</li>
-                      <li>Koszty uzyskania przychodu: tak, odliczalne</li>
+                      <li>12% do 120 000 zł dochodu, 32% powyżej</li>
+                      <li>kwota wolna 30 000 zł, koszty odliczalne</li>
+                      <li>składka zdrowotna 9% dochodu, nieodliczalna</li>
                       <li>
-                        Składka zdrowotna: 9% dochodu, nieodliczalna od podatku
+                        opłaca się przy niższych dochodach i wspólnym
+                        rozliczeniu z małżonkiem
                       </li>
-                      <li>Kwota wolna: 30 000 zł</li>
                     </ul>
 
                     <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
                       Podatek liniowy
                     </h3>
                     <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
-                      <li>Stawka: stała 19% od dochodu</li>
-                      <li>Koszty uzyskania przychodu: tak, odliczalne</li>
+                      <li>stałe 19% od dochodu, bez kwoty wolnej</li>
                       <li>
-                        Składka zdrowotna: 4,9% dochodu, odliczalna do limitu 12
-                        900 zł rocznie
+                        składka zdrowotna 4,9% dochodu, odliczalna do 14 100 zł
+                        rocznie
                       </li>
-                      <li>Kwota wolna: brak</li>
+                      <li>
+                        opłaca się przy dochodzie powyżej ok. 120 tys. zł i
+                        wysokich kosztach
+                      </li>
                     </ul>
 
                     <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
                       Ryczałt ewidencjonowany
                     </h3>
                     <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
+                      <li>od 2% do 17% od przychodu, zależnie od branży</li>
+                      <li>bez odliczania kosztów</li>
                       <li>
-                        Stawki: od 2% do 17% od przychodu (zależnie od rodzaju
-                        działalności)
+                        składka zdrowotna zryczałtowana według progu przychodu
                       </li>
-                      <li>Koszty uzyskania przychodu: nie, brak odliczenia</li>
-                      <li>
-                        Składka zdrowotna: zryczałtowana, zależna od progu
-                        przychodu (ok. 420–940 zł miesięcznie w 2026)
-                      </li>
-                      <li>Kwota wolna: brak</li>
-                    </ul>
-                  </div>
-                ),
-              },
-              {
-                label: "Skala podatkowa",
-                content: (
-                  <div className="py-6 lg:py-8 max-w-3xl mx-auto">
-                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                      Skala podatkowa, kiedy ma sens
-                    </h2>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Skala podatkowa to domyślna forma opodatkowania. Jeśli nie
-                      wybierzesz innej, automatycznie rozliczasz się na skali.
-                      Jej główna przewaga to kwota wolna od podatku, w 2026
-                      roku wynosi 30 000 zł. Oznacza to, że od pierwszych 30 000
-                      zł dochodu nie płacisz podatku dochodowego wcale.
-                    </p>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Skala ma sens przede wszystkim, gdy:
-                    </p>
-                    <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
-                      <li>
-                        Twój roczny dochód nie przekracza 120 000 zł, wtedy
-                        płacisz tylko 12%
-                      </li>
-                      <li>
-                        Chcesz rozliczać się wspólnie z małżonkiem, to możliwe
-                        tylko na skali
-                      </li>
-                      <li>
-                        Masz umiarkowane koszty, ale nie na tyle niskie, żeby
-                        ryczałt był korzystniejszy
-                      </li>
-                      <li>Zależy Ci na kwocie wolnej 30 000 zł</li>
+                      <li>opłaca się przy niskich kosztach i niskiej stawce</li>
                     </ul>
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Wadą skali jest wysoka składka zdrowotna, 9% dochodu,
-                      której nie można odliczyć od podatku. Przy wyższych
-                      dochodach to realnie zwiększa łączne obciążenie.
-                    </p>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Szczegółowe porównanie skali z podatkiem liniowym
-                      znajdziesz w artykule{" "}
+                      Szczegóły:{" "}
                       <Link
                         href="/strefa-wiedzy/skala-czy-liniowy-jdg"
                         className="text-accent hover:underline"
                       >
-                        Skala czy liniowy, porównanie dla JDG w 2026
+                        skala czy liniowy
                       </Link>
-                      .
-                    </p>
-                  </div>
-                ),
-              },
-              {
-                label: "Podatek liniowy",
-                content: (
-                  <div className="py-6 lg:py-8 max-w-3xl mx-auto">
-                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                      Podatek liniowy, kiedy ma sens
-                    </h2>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Podatek liniowy oznacza stałą stawkę 19% od dochodu,
-                      niezależnie od jego wysokości. Nie ma kwoty wolnej, nie ma
-                      progów, za to jest przewidywalność. Wiesz z góry, ile
-                      procent oddasz.
-                    </p>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Liniowy wygrywa, gdy:
-                    </p>
-                    <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
-                      <li>
-                        Twój dochód przekracza ok. 100–120 tys. zł rocznie,
-                        wtedy na skali wchodzisz w stawkę 32%
-                      </li>
-                      <li>
-                        Masz wysokie koszty uzyskania przychodu (sprzęt,
-                        samochód, podwykonawcy)
-                      </li>
-                      <li>
-                        Składka zdrowotna 4,9% z odliczeniem do 14 100 zł jest
-                        dla Ciebie korzystniejsza niż 9% bez odliczenia na skali
-                      </li>
-                      <li>
-                        Nie potrzebujesz rozliczenia z małżonkiem ani kwoty
-                        wolnej
-                      </li>
-                    </ul>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Główna wada: brak kwoty wolnej. Przy niższych dochodach
-                      (poniżej 100 tys. zł) skala podatkowa zwykle wychodzi
-                      korzystniej.
-                    </p>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Porównanie liniowego z ryczałtem znajdziesz w{" "}
+                      ,{" "}
                       <Link
                         href="/strefa-wiedzy/ryczalt-czy-liniowy"
                         className="text-accent hover:underline"
                       >
-                        Ryczałt czy liniowy, co się bardziej opłaca w 2026
+                        ryczałt czy liniowy
                       </Link>
                       .
                     </p>
@@ -255,112 +150,38 @@ export default function JakaFormaOpodatkowaniaJdgArticle() {
                 ),
               },
               {
-                label: "Ryczałt",
+                label: "Jak wybrać formę",
                 content: (
                   <div className="py-6 lg:py-8 max-w-3xl mx-auto">
                     <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                      Ryczałt ewidencjonowany, kiedy ma sens
+                      Jak wybrać formę
                     </h2>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Ryczałt to podatek od przychodu, nie od dochodu. Nie
-                      odliczasz kosztów uzyskania przychodu, płacisz procent od
-                      tego, co zarobisz. Stawka zależy od rodzaju działalności i
-                      waha się od 2% do 17%.
-                    </p>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Ryczałt ma sens, gdy:
-                    </p>
-                    <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
+                    <ol className="list-decimal pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
                       <li>
-                        Masz niskie koszty uzyskania przychodu, poniżej 20–30%
-                        przychodu
+                        Koszty powyżej 30% przychodu? Ryczałt raczej odpada.
                       </li>
                       <li>
-                        Twoja stawka ryczałtu jest niska (np. 8,5% lub 12%)
+                        Niskie koszty i stawka ryczałtu do 12%? Ryczałt jest
+                        mocnym kandydatem.
                       </li>
                       <li>
-                        Nie planujesz dużych inwestycji do odliczenia (sprzęt,
-                        samochód)
+                        Dochód do 120 000 zł? Skala może wygrać z liniowym.
                       </li>
                       <li>
-                        Chcesz prostoty, ryczałt ma uproszczoną ewidencję
+                        Licz podatek razem ze składką zdrowotną, bo potrafi
+                        zmienić wynik o kilka tysięcy złotych.
                       </li>
-                    </ul>
+                    </ol>
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Dodatkowa zaleta: składka zdrowotna na ryczałcie jest
-                      zryczałtowana i nie rośnie proporcjonalnie do przychodu.
-                      Przy wysokich przychodach może być znacząco niższa niż na
-                      skali (9% dochodu) czy liniowym (4,9% dochodu).
-                    </p>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Główna wada: brak odliczenia kosztów. Jeśli masz wysokie
-                      koszty, to płacisz podatek od pieniędzy, które tak
-                      naprawdę wydałeś.
-                    </p>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Więcej o porównaniu z liniowym:{" "}
-                      <Link
-                        href="/strefa-wiedzy/ryczalt-czy-liniowy"
-                        className="text-accent hover:underline"
-                      >
-                        Ryczałt czy liniowy, co się bardziej opłaca w 2026
-                      </Link>
-                      .
-                    </p>
-                  </div>
-                ),
-              },
-              {
-                label: "Składka zdrowotna",
-                content: (
-                  <div className="py-6 lg:py-8 max-w-3xl mx-auto">
-                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                      Składka zdrowotna, klucz do porównania
-                    </h2>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Wybór formy opodatkowania to nie tylko kwestia stawki
-                      podatkowej. Składka zdrowotna w 2026 roku działa zupełnie
-                      inaczej na każdej z trzech form i potrafi zmienić wynik
-                      porównania o kilka tysięcy złotych rocznie.
-                    </p>
-
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                      Skala podatkowa
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      9% dochodu. Nie można jej odliczyć od podatku ani od
-                      podstawy opodatkowania. To realne zwiększenie łącznego
-                      obciążenia, przy dochodzie 150 000 zł to aż 13 500 zł
-                      rocznie.
-                    </p>
-
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                      Podatek liniowy
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      4,9% dochodu. Można ją odliczyć od podstawy opodatkowania,
-                      ale tylko do limitu 14 100 zł rocznie. To sprawia, że
-                      efektywna składka jest niższa, a łączne obciążenie
-                      bardziej przewidywalne.
-                    </p>
-
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                      Ryczałt ewidencjonowany
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Składka zryczałtowana, zależna od progu rocznego
-                      przychodu. Nie rośnie proporcjonalnie, co przy wyższych
-                      przychodach daje znaczącą oszczędność. Można ją częściowo
-                      odliczyć (50% zapłaconej składki).
-                    </p>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Szczegółowe obliczenia składki zdrowotnej dla każdej formy
-                      znajdziesz w{" "}
+                      Nie patrz tylko na stawkę. Ryczałt liczy się od
+                      przychodu, liniowy od dochodu. Przy 40% kosztów liniowy
+                      to ok. 11,4% przychodu, mniej niż 12% ryczałtu. Więcej o
+                      składce:{" "}
                       <Link
                         href="/strefa-wiedzy/jak-liczyc-zdrowotna-jdg"
                         className="text-accent hover:underline"
                       >
-                        Jak liczyć składkę zdrowotną w JDG
+                        jak liczyć składkę zdrowotną w JDG
                       </Link>
                       .
                     </p>
@@ -370,8 +191,7 @@ export default function JakaFormaOpodatkowaniaJdgArticle() {
                         Sprawdź wynik na swoich liczbach
                       </h3>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Porównaj skalę, liniowy i ryczałt w jednym miejscu, z
-                        uwzględnieniem składki zdrowotnej i kosztów.
+                        Porównaj trzy formy razem ze składką zdrowotną.
                       </p>
                       <Link
                         href="/kalkulator-podatkowy"
@@ -380,137 +200,6 @@ export default function JakaFormaOpodatkowaniaJdgArticle() {
                         Sprawdź w kalkulatorze JDG 2026
                       </Link>
                     </div>
-                  </div>
-                ),
-              },
-              {
-                label: "Jak wybrać formę",
-                content: (
-                  <div className="py-6 lg:py-8 max-w-3xl mx-auto">
-                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                      Jak wybrać formę, praktyczny schemat
-                    </h2>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Nie istnieje jedna najlepsza forma opodatkowania. Ale
-                      istnieje logiczny schemat, który pomaga zawęzić wybór:
-                    </p>
-
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                      Krok 1: Oceń swoje koszty
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Jeśli Twoje koszty uzyskania przychodu przekraczają 30–40%
-                      przychodu, ryczałt raczej odpada. Zostają skala i liniowy.
-                    </p>
-
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                      Krok 2: Sprawdź swoją stawkę ryczałtu
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Jeśli koszty są niskie, a Twoja stawka ryczałtu wynosi 12%
-                      lub mniej, ryczałt jest mocnym kandydatem. Przy stawce
-                      15–17% przewaga ryczałtu maleje.
-                    </p>
-
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                      Krok 3: Oszacuj roczny dochód
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Jeśli dochód nie przekracza 120 000 zł, skala podatkowa z
-                      12% stawką i kwotą wolną 30 000 zł może wygrać z liniowym.
-                      Powyżej tego progu liniowy 19% zwykle jest korzystniejszy.
-                    </p>
-
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                      Krok 4: Uwzględnij składkę zdrowotną
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Przelicz łączne obciążenie: podatek plus składka
-                      zdrowotna. Sam podatek nie daje pełnego obrazu. Różnica w
-                      składce zdrowotnej potrafi zmienić wynik o kilka tysięcy
-                      złotych.
-                    </p>
-
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                      Krok 5: Policz na swoich liczbach
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Schemat daje kierunek, ale dokładny wynik zależy od Twoich
-                      konkretnych liczb. Użyj kalkulatora, żeby porównać
-                      wszystkie trzy formy naraz.
-                    </p>
-                  </div>
-                ),
-              },
-              {
-                label: "Pułapki i podsumowanie",
-                content: (
-                  <div className="py-6 lg:py-8 max-w-3xl mx-auto">
-                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                      Najczęstsze pułapki przy wyborze formy
-                    </h2>
-
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                      Ignorowanie składki zdrowotnej
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Największy błąd. Wielu przedsiębiorców porównuje tylko
-                      stawki podatkowe: 12% vs 19% vs ryczałt. Ale składka
-                      zdrowotna potrafi zmienić ranking form. Na skali 9%
-                      nieodliczalna, na liniowym 4,9% częściowo odliczalna, na
-                      ryczałcie zryczałtowana, to fundamentalna różnica.
-                    </p>
-
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                      Zapominanie o kosztach
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Ryczałt wygląda atrakcyjnie, dopóki nie policzysz, ile
-                      kosztów tracisz. Jeśli wydajesz 5 000 zł miesięcznie na
-                      koszty prowadzenia działalności, na ryczałcie te koszty
-                      nie pomniejszają podstawy opodatkowania. Na skali i
-                      liniowym, tak.
-                    </p>
-
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                      Patrzenie tylko na stawkę
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Stawka 12% na ryczałcie brzmi lepiej niż 19% na liniowym.
-                      Ale ryczałt liczy się od przychodu, a liniowy od dochodu.
-                      Jeśli masz 40% kosztów, efektywna stawka liniowego od
-                      przychodu to ok. 11,4%, mniej niż 12% ryczałtu.
-                    </p>
-
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                      Brak aktualizacji co roku
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Sytuacja finansowa zmienia się z roku na rok. Forma, która
-                      była optymalna w 2025, niekoniecznie będzie optymalna w
-                      2026. Warto przeliczać co roku przed 20 lutego.
-                    </p>
-
-                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 mt-12">
-                      Podsumowanie
-                    </h2>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Nie istnieje jedna najlepsza forma opodatkowania JDG w
-                      2026. Skala podatkowa wygrywa przy niższych dochodach i
-                      wspólnym rozliczeniu z małżonkiem. Podatek liniowy, przy
-                      wysokich dochodach i dużych kosztach. Ryczałt, przy
-                      niskich kosztach i korzystnej stawce.
-                    </p>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Kluczem jest policzenie łącznego obciążenia: podatek plus
-                      składka zdrowotna, z uwzględnieniem kosztów uzyskania
-                      przychodu. Sam procent stawki nie wystarczy.
-                    </p>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Wyboru dokonujesz raz w roku, do 20 lutego. Warto
-                      poświęcić godzinę na przeliczenie wariantów, zamiast
-                      tracić tysiące złotych przez cały rok.
-                    </p>
                   </div>
                 ),
               },
@@ -548,88 +237,6 @@ export default function JakaFormaOpodatkowaniaJdgArticle() {
                           </p>
                         </details>
                       ))}
-                    </div>
-
-                    <div className="mt-12 bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-8 text-center">
-                      <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        Potrzebujesz pomocy w wyborze formy opodatkowania?
-                      </h3>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Skorzystaj z kalkulatora lub skontaktuj się z nami,
-                        pomożemy dobrać optymalną formę do Twojej sytuacji.
-                      </p>
-                      <Link
-                        href="/kontakt"
-                        className="btn-primary inline-block"
-                      >
-                        Zamów diagnozę procesu
-                      </Link>
-                    </div>
-
-                    <div className="mt-12 grid md:grid-cols-2 gap-8">
-                      <div>
-                        <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                          Powiązane artykuły
-                        </h3>
-                        <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400">
-                          <li>
-                            <Link
-                              href="/strefa-wiedzy/ryczalt-czy-liniowy"
-                              className="text-accent hover:underline"
-                            >
-                              Ryczałt czy liniowy, co się bardziej opłaca w
-                              2026
-                            </Link>
-                          </li>
-                          <li>
-                            <Link
-                              href="/strefa-wiedzy/skala-czy-liniowy-jdg"
-                              className="text-accent hover:underline"
-                            >
-                              Skala czy liniowy, porównanie dla JDG w 2026
-                            </Link>
-                          </li>
-                          <li>
-                            <Link
-                              href="/strefa-wiedzy/jak-liczyc-zdrowotna-jdg"
-                              className="text-accent hover:underline"
-                            >
-                              Jak liczyć składkę zdrowotną w JDG
-                            </Link>
-                          </li>
-                          <li>
-                            <Link
-                              href="/strefa-wiedzy/maly-zus-plus-kiedy-sie-oplaca"
-                              className="text-accent hover:underline"
-                            >
-                              Mały ZUS Plus, kiedy się opłaca
-                            </Link>
-                          </li>
-                          <li>
-                            <Link
-                              href="/strefa-wiedzy/vat-w-jdg-kiedy-warto"
-                              className="text-accent hover:underline"
-                            >
-                              VAT w JDG, kiedy warto być VATowcem
-                            </Link>
-                          </li>
-                        </ul>
-                      </div>
-                      <div>
-                        <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                          Narzędzia
-                        </h3>
-                        <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400">
-                          <li>
-                            <Link
-                              href="/kalkulator-podatkowy"
-                              className="text-accent hover:underline"
-                            >
-                              Kalkulator JDG 2026
-                            </Link>
-                          </li>
-                        </ul>
-                      </div>
                     </div>
                   </div>
                 ),

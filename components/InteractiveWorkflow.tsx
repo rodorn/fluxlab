@@ -15,7 +15,6 @@ type CardDef = {
   id: string;
   title: string;
   caption: string;
-  color: string;
   icon: ReactNode;
 };
 
@@ -155,40 +154,37 @@ const ICON_CHART = (
   </>
 );
 
+const ACCENT = "rgb(var(--accent))";
+
 const CARDS: CardDef[] = [
   {
     id: "lead",
     title: "Lead",
     caption: "Lead przychodzi z formularza, reklamy albo maila.",
-    color: "#f59e0b",
     icon: ICON_LEAD,
   },
   {
     id: "valid",
     title: "Walidacja",
     caption: "AI sprawdza kompletność danych i klasyfikuje zapytanie.",
-    color: "#06b6d4",
     icon: ICON_CHECK,
   },
   {
     id: "crm",
     title: "CRM",
     caption: "Powstaje osoba, firma i deal, bez ręcznego przepisywania.",
-    color: "#6366f1",
     icon: ICON_DB,
   },
   {
     id: "sales",
     title: "Handlowiec",
     caption: "Przypisanie właściciela i zadanie kontaktu w 5 minut.",
-    color: "#8b5cf6",
     icon: ICON_PERSON,
   },
   {
     id: "report",
     title: "Raport",
     caption: "Dane trafiają do raportu: źródło, czas reakcji, wynik.",
-    color: "#10b981",
     icon: ICON_CHART,
   },
 ];
@@ -410,13 +406,6 @@ export default function InteractiveWorkflow() {
         </title>
 
         <defs>
-          <linearGradient id="iw-flow-grad" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%" stopColor="#f59e0b" />
-            <stop offset="33%" stopColor="#06b6d4" />
-            <stop offset="62%" stopColor="#6366f1" />
-            <stop offset="88%" stopColor="#8b5cf6" />
-            <stop offset="100%" stopColor="#10b981" />
-          </linearGradient>
           <filter id="iw-glow" x="-90%" y="-90%" width="280%" height="280%">
             <feGaussianBlur stdDeviation="3.2" result="b" />
             <feMerge>
@@ -439,11 +428,11 @@ export default function InteractiveWorkflow() {
           strokeLinecap="round"
           strokeLinejoin="round"
         />
-        {/* Ścieżka, gradient overlay */}
+        {/* Ścieżka, nakładka w kolorze marki */}
         <path
           d={FLOW_PATH}
           fill="none"
-          stroke="url(#iw-flow-grad)"
+          style={{ stroke: ACCENT }}
           strokeWidth="2.4"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -464,9 +453,9 @@ export default function InteractiveWorkflow() {
                 height={CARD_H + 10}
                 rx={RX + 5}
                 fill="none"
-                stroke={c.color}
                 strokeWidth="2"
                 style={{
+                  stroke: ACCENT,
                   opacity: isActive ? 0.65 : 0,
                   transition: "opacity 0.25s ease",
                 }}
@@ -480,7 +469,7 @@ export default function InteractiveWorkflow() {
                 className="fill-white dark:fill-gray-900"
                 style={{
                   filter: isActive
-                    ? `drop-shadow(0 10px 22px ${c.color}50)`
+                    ? "drop-shadow(0 10px 22px rgb(var(--accent) / 0.3))"
                     : "drop-shadow(0 3px 8px rgba(15,23,42,0.07))",
                   transition: "filter 0.25s ease",
                 }}
@@ -491,8 +480,8 @@ export default function InteractiveWorkflow() {
                 width={CARD_W}
                 height={CARD_H}
                 rx={RX}
-                fill={c.color}
                 style={{
+                  fill: ACCENT,
                   opacity: isActive ? 0.14 : 0.05,
                   transition: "opacity 0.25s ease",
                 }}
@@ -504,9 +493,9 @@ export default function InteractiveWorkflow() {
                 height={CARD_H}
                 rx={RX}
                 fill="none"
-                stroke={isActive ? c.color : "currentColor"}
+                stroke="currentColor"
                 strokeWidth={isActive ? 1.7 : 1}
-                className={isActive ? "" : "text-gray-200 dark:text-gray-700"}
+                className={isActive ? "text-accent" : "text-gray-200 dark:text-gray-700"}
                 style={{ transition: "stroke 0.25s ease" }}
               />
 
@@ -517,13 +506,13 @@ export default function InteractiveWorkflow() {
                   cx={17}
                   cy={17}
                   r={20}
-                  fill={c.color}
                   style={{
+                    fill: ACCENT,
                     opacity: isActive ? 0.22 : 0.1,
                     transition: "opacity 0.25s ease",
                   }}
                 />
-                <g transform="translate(5, 5)" style={{ color: c.color }}>
+                <g transform="translate(5, 5)" className="text-accent">
                   {c.icon}
                 </g>
               </g>
@@ -550,8 +539,8 @@ export default function InteractiveWorkflow() {
                       cx={x + CARD_W / 2 - ((MAX_FILL - 1) * 11) / 2 + k * 11}
                       cy={CARD_Y + CARD_H - 13}
                       r={3.6}
-                      fill={c.color}
                       style={{
+                        fill: ACCENT,
                         opacity: k < scene.fill ? 1 : 0.18,
                         transition: "opacity 0.2s ease",
                       }}
@@ -573,15 +562,14 @@ export default function InteractiveWorkflow() {
           );
         })}
 
-        {/* Kulka, zmienia kolor wraz z kartą, bez obwoluty */}
+        {/* Kulka, bez obwoluty */}
         {scene.ballVisible && (
           <circle
             cx={scene.ballX}
             cy={scene.ballY}
             r={scene.ballR}
-            fill={activeCard.color}
             filter="url(#iw-glow)"
-            style={{ transition: "fill 0.5s ease" }}
+            style={{ fill: ACCENT }}
           />
         )}
 
@@ -589,7 +577,7 @@ export default function InteractiveWorkflow() {
         {scene.sending && (
           <g style={{ animation: `iw-send ${SEND_MS}ms ease-out forwards` }}>
             <g transform={`translate(${reportCx - 16}, ${CARD_Y - 6})`}>
-              <rect x="0" y="0" width="32" height="22" rx="4" fill="#10b981" />
+              <rect x="0" y="0" width="32" height="22" rx="4" style={{ fill: ACCENT }} />
               <path
                 d="M2 3l14 10L30 3"
                 fill="none"
@@ -606,8 +594,7 @@ export default function InteractiveWorkflow() {
       {/* Wyjaśnienie aktualnego kroku */}
       <div className="mt-3 flex items-center justify-center gap-2.5 min-h-[24px] text-center">
         <span
-          className="inline-block w-2 h-2 rounded-full shrink-0"
-          style={{ background: activeCard.color }}
+          className="inline-block w-2 h-2 rounded-full shrink-0 bg-accent"
           aria-hidden
         />
         <p
@@ -621,10 +608,7 @@ export default function InteractiveWorkflow() {
             </span>
           ) : (
             <>
-              <span
-                className="font-semibold"
-                style={{ color: activeCard.color }}
-              >
+              <span className="font-semibold text-accent">
                 {activeCard.title}:
               </span>{" "}
               {activeCard.caption}

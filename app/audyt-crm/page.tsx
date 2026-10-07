@@ -36,27 +36,22 @@ const faqs = [
   {
     question: "Co dokładnie liczy ten audyt?",
     answer:
-      "Mierzy 10 fundamentów dojrzałości pipeline'u: atrybucję źródeł, routing leadów, kryteria etapów, automatyzację zadań, follow-up, raportowanie end-to-end, ręczne przepisywanie danych, jakość danych, deduplikację i integracje wejściowe. Każdy obszar to jedno pytanie tak/nie. Wynik to liczba pozytywnych odpowiedzi z 10. Pytania o ręczne przepisywanie i duplikaty są odwrócone, tam „tak” oznacza problem, bo świadczy o tym, że proces nie jest jeszcze poukładany. Audyt nie zastąpi pełnej diagnozy procesu, ale w 3 minuty pokazuje, gdzie pipeline ma najsłabsze punkty.",
+      "10 fundamentów pipeline'u: źródła leadów, routing, etapy, zadania, follow-up, raporty, ręczne przepisywanie, jakość danych, duplikaty i integracje. Każdy to jedno pytanie tak/nie.",
   },
   {
-    question: "Co znaczy odpowiedź „nie wiemy” i dlaczego liczy się jak „nie”?",
+    question: "Dlaczego „nie wiemy” liczy się jak „nie”?",
     answer:
-      "Jeśli nie masz pewności, że coś działa, to znaczy, że nie działa świadomie. Na przykład: jeśli nie wiesz, czy każdy lead ma źródło, to znaczy, że nikt tego nie pilnuje, czyli efektywnie atrybucji nie masz. „Nie wiemy” w audycie traktujemy jak czerwoną flagę, bo brak widoczności jest sam w sobie problemem operacyjnym. To nie jest karanie za niewiedzę, to wskazanie obszaru, gdzie warto najpierw zrobić podstawową diagnostykę.",
-  },
-  {
-    question: "Jak interpretujemy wynik X/10?",
-    answer:
-      "8–10 to zdrowy pipeline gotowy do skalowania, automatyzacja na tym etapie wyciska z procesu jeszcze 20–30%. 5–7 to solidny fundament z lukami, najpierw warto załatać największą lukę (audyt ją wskazuje), potem dokładać kolejne automatyzacje. 0–4 to sygnał, że problem nie jest w CRM-ie, tylko w procesie, automatyzacja bałaganu daje zautomatyzowany bałagan, więc trzeba zacząć od ułożenia podstaw: właściciel leada, kryteria etapów, źródło. Wynik to punkt startowy dyskusji, nie ocena końcowa.",
+      "Jeśli nie wiesz, czy coś działa, to nikt tego nie pilnuje. Brak widoczności jest sam w sobie problemem.",
   },
   {
     question: "Dlaczego pytania o duplikaty i przepisywanie są odwrócone?",
     answer:
-      "Bo tam „tak” oznacza problem, a „nie” oznacza zdrowy stan. Jeśli handlowcy ręcznie przepisują dane z formularzy do CRM, to jest bardzo konkretny sygnał, że brakuje integracji wejściowej. Jeśli w CRM masz duplikaty firm i kontaktów, to pokazuje, że proces deduplikacji nie istnieje albo nie działa. Przy 10 pytaniach z różnymi kierunkami chodzi o to, żebyś nie mógł oszukać wyniku przez „klikanie tak na wszystko”, audyt patrzy na realne objawy zdrowego pipeline'u, nie na deklaracje.",
+      "Bo tam „tak” oznacza problem. Ręczne przepisywanie to brak integracji, duplikaty to brak deduplikacji.",
   },
   {
     question: "Czy ten audyt zastępuje konsultację?",
     answer:
-      "Nie. Daje punkt startowy: pokazuje wynik i obszar z największym potencjałem, ale konkretna mapa automatyzacji wymaga rozmowy o specyfice firmy, narzędziach (Pipedrive, HubSpot, Salesforce, Bitrix, własne), wolumenie leadów i tym, co już próbowaliście. W diagnozie 30-minutowej zwykle udaje się ustalić: które 2–3 automatyzacje dadzą największy efekt w pierwszych 4 tygodniach, ile to kosztuje wdrożeniowo i miesięcznie, i czy w ogóle warto teraz, czy najpierw uporządkować proces ręcznie. Audyt online to filtr, diagnoza to konkretny plan.",
+      "Nie. Wskazuje najsłabszy obszar. Konkretny plan, koszt i kolejność wdrożeń ustalamy w 30-minutowej diagnozie.",
   },
 ];
 
@@ -80,13 +75,12 @@ export default function AudytCRMPage() {
               Audyt CRM: czy Twój pipeline nadaje się do automatyzacji?
             </h1>
             <p className="mt-4 text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              10 pytań tak/nie. Wynik X/10 + obszar z największym potencjałem
-              automatyzacji. Bez rejestracji, bez maila, w 3 minuty.
+              10 pytań tak/nie, wynik i obszar do automatyzacji. Bez
+              rejestracji, w 3 minuty.
             </p>
           </div>
         </section>
 
-        {/* Treść w zakładkach, nic nie wycięte, podzielone */}
         <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
           <Tabs
             ariaLabel="Sekcje narzędzia audytu CRM"
@@ -109,119 +103,25 @@ export default function AudytCRMPage() {
                         Jak interpretujemy wynik
                       </h2>
                       <div className="space-y-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-                        <p>
-                          Audyt mierzy 10 fundamentów zdrowego pipeline'u. Każdy
-                          ma jedno pytanie tak/nie z trzecią opcją „nie wiemy”,
-                          która liczy się jak „nie”, bo brak widoczności jest
-                          sam w sobie problemem operacyjnym. Pytania 7 (ręczne
-                          przepisywanie) i 9 (duplikaty) są odwrócone: tam „tak”
-                          oznacza problem.
-                        </p>
                         <ul className="list-disc pl-5 space-y-2">
                           <li>
-                            <strong>8–10, zdrowy pipeline.</strong> Większość
-                            filarów na miejscu. Automatyzacja działa jak
-                            dokładanie sił do działającej maszyny: szybsza
-                            reakcja, mniej ręcznej pracy, lepsze raporty. Dobry
-                            moment, żeby zająć się obszarami granicznymi.
+                            <strong>8 do 10, zdrowy pipeline.</strong>{" "}
+                            Automatyzacja przyspieszy reakcję i odciąży zespół.
                           </li>
                           <li>
-                            <strong>5–7, solidny fundament z lukami.</strong>{" "}
-                            Pipeline działa, ale ma 3–5 brakujących filarów.
-                            Najpierw warto załatać największą lukę (audyt ją
-                            wskazuje), potem wracać do automatyzacji ogólnej.
-                            Próba zautomatyzowania bałaganu daje zautomatyzowany
-                            bałagan.
+                            <strong>5 do 7, fundament z lukami.</strong>{" "}
+                            Najpierw załataj największą lukę, którą wskazuje
+                            audyt.
                           </li>
                           <li>
-                            <strong>0–4, pipeline blokuje sprzedaż.</strong> To
-                            nie problem CRM-a, to problem procesu. Zanim
-                            zautomatyzujesz cokolwiek, trzeba ustalić podstawy:
-                            kto jest właścicielem leada, jakie są kryteria
-                            etapów, skąd lead przychodzi.
+                            <strong>0 do 4, problem jest w procesie.</strong>{" "}
+                            Zacznij od podstaw: właściciel leada, etapy, źródło.
                           </li>
                         </ul>
                         <p>
-                          Po wyniku audyt wskazuje <strong>jeden obszar</strong>{" "}
-                          z największym potencjałem, pierwszy negatywny w
-                          kolejności ważności (definicja „kto jest właścicielem
-                          leada” jest ważniejsza niż „czy raport pokazuje
-                          source-to-revenue”). Do tego obszaru dostajesz 2–3
-                          konkretne pierwsze kroki, które można zrobić bez
-                          wchodzenia w pełne wdrożenie.
+                          Do wyniku dostajesz jeden obszar z największym
+                          potencjałem i 2-3 pierwsze kroki.
                         </p>
-                      </div>
-                    </div>
-                  </div>
-                ),
-              },
-              {
-                label: "Dla kogo",
-                content: (
-                  <div className="py-6 lg:py-8">
-                    <div className="max-w-3xl mx-auto">
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        Dla kogo jest ten audyt
-                      </h2>
-                      <div className="space-y-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-                        <p>
-                          Audyt przyda się każdemu, kto rozważa automatyzację,
-                          ale nie ma pewności, czy proces jest do niej gotowy,
-                          albo czy najpierw nie trzeba uporządkować podstaw.
-                          Najczęściej korzystają z niego:
-                        </p>
-                        <ul className="list-disc pl-5 space-y-2">
-                          <li>
-                            <strong>
-                              Właściciele firm B2B z działającym CRM
-                            </strong>{" "}
-                            (Pipedrive, HubSpot, Salesforce, Bitrix), którzy
-                            podejrzewają, że nie wykorzystują go tak, jak
-                            mogliby.
-                          </li>
-                          <li>
-                            <strong>Szefowie sprzedaży</strong>, którzy mają
-                            wrażenie, że pipeline „żyje własnym życiem”, leady
-                            wpadają, część się zamyka, ale nikt nie wie,
-                            dlaczego konkretnie ta i nie inna.
-                          </li>
-                          <li>
-                            <strong>
-                              Osoby decyzyjne przed wyborem dostawcy
-                              automatyzacji
-                            </strong>{" "}
-                           , zanim zaczniesz rozmawiać z agencją albo
-                            freelancerem, warto wiedzieć, w którym obszarze masz
-                            największą lukę.
-                          </li>
-                          <li>
-                            <strong>Solopreneurzy</strong>, którzy wiedzą, że
-                            tracą czas na ręczną obsługę CRM, ale nie wiedzą, czy
-                            problem jest w konfiguracji, w procesie, czy w tym,
-                            że jeszcze za mało leadów, żeby się tym przejmować.
-                          </li>
-                        </ul>
-                      </div>
-
-                      {/* Mid CTA */}
-                      <div className="mt-12 bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-8 text-center">
-                        <h2 className="text-xl lg:text-2xl font-bold text-gray-900 dark:text-white mb-3">
-                          Wynik audytu wygląda znajomo?
-                        </h2>
-                        <p className="text-gray-600 dark:text-gray-400 mb-6">
-                          W diagnozie 30-minutowej dostaniesz konkretną mapę:
-                          które 2–3 automatyzacje dadzą największy efekt w
-                          pierwszych 4 tygodniach, ile to kosztuje wdrożeniowo i
-                          miesięcznie.
-                        </p>
-                        <TrackedCTA
-                          href="/kontakt"
-                          location="audit_crm_mid"
-                          eventName="cta_click_audit_crm"
-                          className="btn-primary px-8 py-3 text-base"
-                        >
-                          Chcemy mapę automatyzacji CRM
-                        </TrackedCTA>
                       </div>
                     </div>
                   </div>
@@ -274,43 +174,25 @@ export default function AudytCRMPage() {
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-8">
                         Powiązane treści
                       </h2>
-                      <div className="grid md:grid-cols-2 gap-4">
+                      <div className="grid md:grid-cols-3 gap-4">
                         {[
                           {
                             href: "/automatyzacja-leadow-crm",
-                            title: "Automatyzacja leadów i CRM dla firm B2B",
+                            title: "Automatyzacja leadów i CRM",
                             description:
-                              "Co konkretnie da się zautomatyzować w 1. etapie i jak wygląda gotowy proces.",
+                              "Co automatyzujemy w pierwszym etapie.",
                           },
                           {
                             href: "/koszt-recznej-obslugi-leadow",
-                            title: "Kalkulator kosztu ręcznej obsługi leadów",
+                            title: "Koszt ręcznej obsługi leadów",
                             description:
-                              "Policz w zł, ile miesięcznie kosztuje Cię ręczne przepisywanie i pilnowanie follow-upów.",
-                          },
-                          {
-                            href: "/strefa-wiedzy/automatyzacja-vs-zatrudnienie#kalkulator",
-                            title: "Zatrudnić czy zautomatyzować?",
-                            description:
-                              "Kalkulator decyzji: kiedy lepiej dołożyć osobę, a kiedy proces.",
-                          },
-                          {
-                            href: "/strefa-wiedzy/jak-policzyc-roi-z-automatyzacji",
-                            title: "Jak policzyć ROI z automatyzacji",
-                            description:
-                              "Metoda liczenia zwrotu z wdrożenia automatyzacji, bez magii, z liczbami.",
-                          },
-                          {
-                            href: "/strefa-wiedzy/automatyzacja-vs-zatrudnienie",
-                            title: "Automatyzacja vs zatrudnienie",
-                            description:
-                              "Kiedy warto zautomatyzować, a kiedy zatrudnić kolejną osobę.",
+                              "Ile miesięcznie kosztuje ręczna praca.",
                           },
                           {
                             href: "/narzedzia",
                             title: "Wszystkie narzędzia",
                             description:
-                              "Pozostałe kalkulatory i narzędzia online, bez rejestracji, za darmo.",
+                              "Darmowe kalkulatory, bez rejestracji.",
                           },
                         ].map((article) => (
                           <Link
@@ -341,9 +223,8 @@ export default function AudytCRMPage() {
                           Masz wynik, chcesz konkretny plan?
                         </h2>
                         <p className="text-gray-500 dark:text-gray-400 mb-8">
-                          W diagnozie dostaniesz mapę obecnego procesu, listę
-                          ręcznych kroków, 3 automatyzacje o największym wpływie
-                          i orientacyjną wycenę.
+                          W diagnozie dostaniesz mapę procesu, 3 automatyzacje
+                          o największym wpływie i orientacyjną wycenę.
                         </p>
                         <TrackedCTA
                           href="/kontakt"

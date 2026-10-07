@@ -51,10 +51,9 @@ export default async function Page() {
           Ceny energii na jutro
         </h1>
         <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
-          Rynkowa cena energii na dobę {d.data}, w rozbiciu na kwadranse.
-          Pokazujemy najtańsze i najdroższe cztery godziny oraz okna, w których
-          cena schodzi poniżej zera. Dane pochodzą wprost od operatora systemu
-          przesyłowego i odświeżają się co pół godziny.
+          Rynkowa cena energii na dobę {d.data}: najtańsze i najdroższe cztery
+          godziny oraz okna z ceną poniżej zera. Dane operatora, odświeżane co
+          pół godziny.
         </p>
 
         <div className="mt-8 -mb-5">
@@ -63,8 +62,8 @@ export default async function Page() {
 
         {!naJutro && (
           <p className="mt-8 rounded-xl border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-900/60 p-5 text-sm text-gray-700 dark:text-gray-300">
-            Ceny na jutro nie są jeszcze opublikowane. Pojawiają się zwykle po
-            południu dnia poprzedniego, więc zajrzyjcie po czternastej.
+            Ceny na jutro jeszcze nie są opublikowane. Zajrzyjcie po
+            czternastej.
             {jest && ` Do tego czasu pokazujemy ceny na dziś, ${d.data}.`}
           </p>
         )}
@@ -192,21 +191,14 @@ export default async function Page() {
             Co to za cena i czego nie mówi
           </h2>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-            To rynkowa cena energii (RCE) publikowana przez operatora systemu
-            przesyłowego, a nie cena z Waszej faktury. Według niej liczy się
-            wartość energii oddanej do sieci przez prosumentów w net-billingu.
-            Rachunek za energię pobraną zwykle opiera się na taryfie albo
-            umowie, a nie na cenie godzinowej, więc przy zakupie te liczby
-            pokazują, co dzieje się w systemie, a nie ile zapłacicie.
+            To rynkowa cena energii (RCE), a nie cena z Waszej faktury. Według
+            niej rozlicza się energię oddaną do sieci w net-billingu. Rachunek
+            za energię pobraną zwykle wynika z taryfy.
           </p>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-            Ma to natomiast bezpośrednie znaczenie dla każdego, kto rozlicza się
-            według cen godzinowych albo może przesunąć zużycie: ładowanie auta,
-            pompa ciepła, chłodnia, ogrzewanie wody, magazyn energii przy
-            fotowoltaice. Różnica między najtańszymi a najdroższymi czterema
-            godzinami bywa kilkusetprocentowa. Ile przy tym kosztuje cały rok
-            jazdy elektrykiem, razem z ubezpieczeniem, serwisem i utratą
-            wartości, policzycie w{" "}
+            Ma znaczenie, gdy rozliczacie się godzinowo albo możecie przesunąć
+            zużycie: ładowanie auta, pompa ciepła, magazyn energii. Roczny koszt
+            elektryka policzycie w{" "}
             <Link
               href="/kalkulator-kosztow"
               className="text-accent hover:underline"

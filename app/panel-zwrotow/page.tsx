@@ -32,25 +32,25 @@ export default function Page() {
       breadcrumb="Panel zwrotów"
       eyebrow="Obsługa posprzedażowa"
       h1="Zwrot zgłaszany mailem kosztuje Cię za każdym razem"
-      lead="Platformy sklepowe dają najwyżej formularz, który wysyła wiadomość na Twoją skrzynkę. Reszta to już czyjaś praca: odpisać, wyjaśnić termin, wysłać etykietę, przypomnieć o zwrocie pieniędzy. Przy kilkudziesięciu zwrotach miesięcznie robi się z tego stałe zajęcie, którego nikt nie planował."
+      lead="Sklep daje najwyżej formularz, który trafia na Twoją skrzynkę. Odpisać, wysłać etykietę, pilnować terminu musi już ktoś z zespołu."
       ctaLabel="Sprawdź swoje zasady zwrotów"
       ctaNote="Sprawdzenie za darmo, od ręki"
       checks={[
         {
           title: "Kupujący obsługuje się sam",
-          desc: "Wpisuje numer zamówienia i adres mailowy, wybiera pozycje i powód. Nie pisze do Ciebie, bo nie musi.",
+          desc: "Wpisuje numer zamówienia, wybiera pozycje i powód. Nie musi do Ciebie pisać.",
         },
         {
           title: "Etykieta z Twojego konta kurierskiego",
-          desc: "System generuje ją automatycznie, więc korzystasz z własnych stawek, a nie z cennika, który kupujący znajdzie sam.",
+          desc: "Generowana automatycznie, po Twoich stawkach.",
         },
         {
           title: "Pilnowanie terminu na zwrot pieniędzy",
-          desc: "Termin liczy się od zgłoszenia, a jego przekroczenie kończy się skargami. System przypomina, zanim to nastąpi.",
+          desc: "System przypomina, zanim termin minie i pojawią się skargi.",
         },
         {
           title: "Raport, które produkty wracają",
-          desc: "Zestawienie przyczyn zwrotów na produkt i dostawcę. To ono pokazuje, czy problem jest w opisie, w rozmiarówce, czy u konkretnego dostawcy.",
+          desc: "Przyczyny zwrotów na produkt i dostawcę: opis, rozmiarówka czy dostawca.",
         },
       ]}
       pricing={[
@@ -91,32 +91,28 @@ export default function Page() {
       faq={[
         {
           q: "Czego potrzebujecie, żeby zrobić audyt?",
-          a: "Eksportu zamówień i zwrotów z dowolnego okresu, najlepiej pół roku. Im więcej danych, tym pewniejsze wnioski o tym, które produkty wracają systematycznie, a które przypadkiem.",
+          a: "Eksportu zamówień i zwrotów, najlepiej z pół roku.",
         },
         {
           q: "Czy panel zadziała z naszym sklepem?",
-          a: "Najpewniej tak, bo wchodzi na poziomie systemu zamówień, a nie samego sklepu. Napisz, na czym sprzedajesz i czy używasz systemu do obsługi zamówień, powiemy wprost, czy to prosty przypadek, czy nie.",
-        },
-        {
-          q: "Czy to jest porada prawna o regulaminie?",
-          a: "Nie. Sprawdzamy, czy informacja jest podana i łatwa do znalezienia. Ocena samej treści regulaminu należy do prawnika i tak też to opisujemy w raporcie.",
+          a: "Najpewniej tak, bo łączy się z systemem zamówień, nie z samym sklepem. Napisz, na czym sprzedajesz.",
         },
         {
           q: "Czy to sprawdzenie mówi, czy mamy już obowiązkowy przycisk odstąpienia od umowy?",
-          a: "Dyrektywa UE 2023/2673 wymaga od sprzedawców internetowych widocznej, w pełni cyfrowej ścieżki odstąpienia od umowy, przepisy zaczęły się stosować 19 czerwca 2026. Polska ustawa wdrażająca (projekt UC82) wciąż nie jest uchwalona, ale obowiązek unijny obowiązuje niezależnie od tego. Sprawdzamy właśnie ten punkt, zgłoszenie zwrotu online, obok pozostałych informacji wymaganych przy odstąpieniu. To sprawdzenie techniczne, nie opinia prawna o zgodności z dyrektywą.",
+          a: "Tak, sprawdzamy, czy zwrot da się zgłosić online, czego od 19 czerwca 2026 wymaga dyrektywa UE 2023/2673. To sprawdzenie techniczne, nie opinia prawna.",
         },
         {
           q: "Co z danymi kupujących?",
-          a: "Do audytu wystarczą dane o zamówieniach i produktach. Jeśli w eksporcie są dane osobowe, usuwamy je przy wczytywaniu, a pliki kasujemy po dostarczeniu raportu. Przy wdrożeniu podpisujemy umowę powierzenia.",
+          a: "Dane osobowe usuwamy przy wczytywaniu, pliki kasujemy po raporcie. Przy wdrożeniu podpisujemy umowę powierzenia.",
         },
       ]}
       formId="order_panel_zwrotow"
       formHeading="Zamów audyt zwrotów"
-      formIntro="Napisz, na czym sprzedajesz, ile mniej więcej masz zamówień miesięcznie i jak dziś wygląda zgłoszenie zwrotu. Odeślemy wycenę i uczciwą opinię, czy panel Ci się opłaci."
+      formIntro="Napisz, na czym sprzedajesz i ile masz zamówień miesięcznie. Odeślemy wycenę i opinię, czy panel się opłaci."
       submitLabel="Zamów audyt"
       microCopy="Do wyceny nie potrzebujemy dostępów, wystarczy opis procesu."
       serviceName="Audyt i wdrożenie samoobsługowego procesu zwrotów"
-      serviceDesc="Analiza przyczyn zwrotów oraz wdrożenie panelu, w którym kupujący zgłasza zwrot, otrzymuje etykietę i śledzi status, wraz z raportowaniem przyczyn. Od 490 zł."
+      serviceDesc="Analiza przyczyn zwrotów i panel, w którym kupujący zgłasza zwrot, dostaje etykietę i śledzi status. Od 490 zł."
       serviceType="Automatyzacja obsługi zwrotów w sklepie internetowym"
     />
   );

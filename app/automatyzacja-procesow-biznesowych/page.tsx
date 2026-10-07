@@ -4,7 +4,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import LandingForm from "@/components/LandingForm";
 import Tabs from "@/components/Tabs";
-import Link from "next/link";
 import WybierzBranze from "@/components/WybierzBranze";
 
 export const metadata: Metadata = {
@@ -32,26 +31,26 @@ export const metadata: Metadata = {
 };
 
 const offer = [
-  "Obieg danych, z formularzy, maili, CRM i arkuszy trafiają tam, gdzie powinny. Bez kopiowania i dubli.",
-  "Zadania i powiadomienia, nowy klient lub sprawa automatycznie uruchamia kolejny etap procesu.",
-  "Raportowanie, gotowe raporty zamiast ręcznego zbierania danych z kilku miejsc.",
+  "Obieg danych: z formularzy, maili i arkuszy prosto do CRM, bez kopiowania.",
+  "Zadania i powiadomienia: nowa sprawa sama uruchamia kolejny etap.",
+  "Raporty: gotowe zestawienia zamiast zbierania danych ręcznie.",
 ];
 
 const faqs = [
   {
     question: "Czy automatyzacja ma sens w małej firmie?",
     answer:
-      "Tak. Nawet mały zespół szybko traci czas na ręczne przepisywanie danych i pilnowanie statusów.",
+      "Tak. Mały zespół też traci czas na przepisywanie danych.",
   },
   {
     question: "Od czego zacząć automatyzację?",
     answer:
-      "Od procesu, który jest częsty, powtarzalny i generuje błędy albo opóźnienia.",
+      "Od procesu częstego, powtarzalnego i podatnego na błędy.",
   },
   {
     question: "Czy trzeba wymieniać obecne narzędzia?",
     answer:
-      "Nie. Najczęściej automatyzujemy to, co już działa, i łączymy istniejące systemy.",
+      "Nie. Łączymy systemy, które już macie.",
   },
 ];
 
@@ -60,7 +59,7 @@ export default function AutomatyzacjaProcesowBiznesowych() {
     <>
       <Header />
       <main>
-        {/* Hero, kompaktowy */}
+        {/* Hero */}
         <section className="relative overflow-hidden pt-24 pb-12">
           <div className="blob blob-accent -z-10 top-[-10%] left-[-5%]" />
           <div className="container-wide max-w-3xl mx-auto text-center">
@@ -69,9 +68,8 @@ export default function AutomatyzacjaProcesowBiznesowych() {
               Automatyzacja procesów biznesowych
             </h1>
             <p className="text-lg lg:text-xl text-gray-600 dark:text-gray-300">
-              Eliminujemy ręczną, powtarzalną pracę i zastępujemy ją sprawnymi
-              procesami. Mniej błędów, szybsza realizacja zadań, uporządkowany
-              obieg danych.
+              Zastępujemy ręczną, powtarzalną pracę procesami, które działają
+              same. Mniej błędów, szybsza realizacja.
             </p>
             <div className="mt-8">
               <a href="#branza" className="btn-primary">
@@ -81,12 +79,7 @@ export default function AutomatyzacjaProcesowBiznesowych() {
           </div>
         </section>
 
-        {/* Wybor branzy. Stoi nad zakladkami, a nie w nich. Tabs trzyma
-            wszystkie panele w DOM, wiec odnosniki bylyby w zrodle tak czy
-            inaczej, ale lezalyby w kontenerze z atrybutem hidden, czyli w
-            miejscu, ktorego nikt nie widzi bez trafienia w zakladke. To jest
-            jedyna rzecz na tej stronie dajaca odpowiedz bez wypelniania
-            formularza, wiec ma byc widoczna od razu. */}
+        {/* Wybor branzy nad zakladkami, zeby byl widoczny od razu. */}
         <div
           id="branza"
           className="scroll-mt-20 container-wide max-w-4xl mx-auto pb-14"
@@ -94,7 +87,7 @@ export default function AutomatyzacjaProcesowBiznesowych() {
           <WybierzBranze wariant="filar" />
         </div>
 
-        {/* Treść w zakładkach, nic nie wycięte, podzielone */}
+        {/* Treść w zakładkach */}
         <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
           <Tabs
             ariaLabel="Sekcje usługi automatyzacji procesów biznesowych"
@@ -121,19 +114,6 @@ export default function AutomatyzacjaProcesowBiznesowych() {
                           </li>
                         ))}
                       </ul>
-                      <p className="mt-10 text-gray-600 dark:text-gray-400 leading-relaxed">
-                        Model językowy dokładamy tylko tam, gdzie reguła nie
-                        wystarcza: klasyfikacja zapytań, streszczenia,
-                        wyciąganie danych z dokumentów. Konkretne przykłady
-                        opisujemy w artykule{" "}
-                        <Link
-                          href="/strefa-wiedzy/ai-w-automatyzacji-firm"
-                          className="text-accent hover:underline"
-                        >
-                          AI w automatyzacji firm
-                        </Link>
-                        .
-                      </p>
                     </div>
                   </div>
                 ),
@@ -185,7 +165,7 @@ export default function AutomatyzacjaProcesowBiznesowych() {
                       <LandingForm
                         formId="diagnosis_procesy"
                         heading="Sprawdźmy, który proces warto zautomatyzować"
-                        intro="Opisz krótko, co najbardziej kosztuje Cię czas: ręczne raporty, przepisywanie danych, follow-upy, obieg dokumentów. Dostaniesz informację, który proces da największy efekt."
+                        intro="Opisz, co zabiera Wam najwięcej czasu. Wskażemy proces, który da największy efekt."
                         submitLabel="Sprawdźmy, który proces zautomatyzować"
                       />
                     </div>

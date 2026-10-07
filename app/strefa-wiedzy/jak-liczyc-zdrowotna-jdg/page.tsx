@@ -30,6 +30,29 @@ export const metadata: Metadata = {
   },
 };
 
+const faqItems = [
+  {
+    question: "Czy składkę zdrowotną można odliczyć?",
+    answer:
+      "Na liniowym od dochodu, do 14 100 zł rocznie. Na ryczałcie połowę składki od przychodu. Na skali nie.",
+  },
+  {
+    question: "Jaka jest minimalna składka zdrowotna?",
+    answer:
+      "Na skali i liniowym 432,54 zł miesięcznie od lutego do grudnia 2026 (za styczeń 314,96 zł). Obowiązuje nawet przy zerowym dochodzie.",
+  },
+  {
+    question: "Czy na ryczałcie zdrowotna zależy od dochodu?",
+    answer:
+      "Nie. Zależy od progu rocznego przychodu: do 60 tys., do 300 tys. albo powyżej 300 tys. zł.",
+  },
+  {
+    question: "Dlaczego zdrowotna na liniowym jest niższa?",
+    answer:
+      "Stawka to 4,9% dochodu zamiast 9%, a zapłaconą składkę można odliczyć od dochodu do 14 100 zł rocznie.",
+  },
+];
+
 export default function SkladkaZdrowotnaJDGArticle() {
   return (
     <>
@@ -41,7 +64,6 @@ export default function SkladkaZdrowotnaJDGArticle() {
             { label: "Jak liczyć składkę zdrowotną w JDG" },
           ]}
         />
-        {/* Kompaktowy nagłówek */}
         <section className="pt-24 pb-10">
           <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
             <span className="section-label">Strefa wiedzy</span>
@@ -49,181 +71,59 @@ export default function SkladkaZdrowotnaJDGArticle() {
               Jak liczyć składkę zdrowotną w JDG w 2026
             </h1>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-              Składka zdrowotna to jeden z najczęściej pomijanych elementów przy
-              porównywaniu form opodatkowania. A potrafi zmienić wynik o kilka
-              tysięcy złotych rocznie. W 2026 roku zasady są inne dla skali,
-              liniowego i ryczałtu, różnią się stawką, podstawą wymiaru i
-              możliwością odliczenia. Ten artykuł tłumaczy, jak to działa na
-              konkretnych liczbach.
+              Składka zdrowotna potrafi zmienić wynik porównania form
+              opodatkowania o kilka tysięcy złotych rocznie. Na skali, liniowym i
+              ryczałcie liczy się ją inaczej.
             </p>
           </div>
         </section>
 
-        {/* Treść w zakładkach, nic nie wycięte, podzielone wg rozdziałów */}
         <div className="container-wide pb-20">
           <Tabs
             ariaLabel="Rozdziały artykułu o składce zdrowotnej w JDG"
             tabs={[
               {
-                label: "Na skali",
+                label: "Zasady",
                 content: (
                   <div className="py-10 lg:py-12 max-w-3xl mx-auto">
                     <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                      Składka zdrowotna na skali podatkowej
+                      Skala, liniowy i ryczałt
                     </h2>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Na skali podatkowej składka zdrowotna wynosi 9% dochodu.
-                      To najwyższa stawka procentowa spośród wszystkich trzech
-                      form opodatkowania. I co ważne, nie można jej odliczyć od
-                      podatku ani od dochodu.
-                    </p>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Podstawą wymiaru jest dochód z działalności, czyli
-                      przychód minus koszty uzyskania przychodu. Składka jest
-                      naliczana miesięcznie, na podstawie dochodu z danego
-                      miesiąca.
-                    </p>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Istnieje jednak składka minimalna, nie może być niższa
-                      niż 9% od minimalnego wynagrodzenia. W 2026 roku
-                      minimalne wynagrodzenie wynosi 4 806 zł brutto, co daje
-                      minimalną składkę zdrowotną 432,54 zł miesięcznie od
-                      lutego do grudnia. Za styczeń 2026 obowiązywały jeszcze
-                      stare zasady (9% od 75% płacy minimalnej z 2025), czyli
-                      314,96 zł.
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
+                      Skala podatkowa
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-400 mb-6">
+                      9% dochodu, bez żadnego odliczenia. Przy dochodzie 10 000
+                      zł miesięcznie to 900 zł.
                     </p>
                     <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                      Kluczowe cechy na skali
+                      Podatek liniowy
                     </h3>
-                    <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
-                      <li>Stawka: 9% dochodu</li>
-                      <li>
-                        Minimalna podstawa: 100% minimalnego wynagrodzenia (4
-                        806 zł)
-                      </li>
-                      <li>Odliczenie od podatku: NIE</li>
-                      <li>Odliczenie od dochodu: NIE</li>
-                      <li>Naliczanie: miesięczne, od bieżącego dochodu</li>
-                    </ul>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      W praktyce oznacza to, że przy dochodzie 10 000 zł
-                      miesięcznie składka zdrowotna na skali wynosi 900 zł, i
-                      całość jest kosztem, którego nie odzyskasz.
-                    </p>
-                  </div>
-                ),
-              },
-              {
-                label: "Na liniowym",
-                content: (
-                  <div className="py-10 lg:py-12 max-w-3xl mx-auto">
-                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                      Składka zdrowotna na liniowym
-                    </h2>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Na podatku liniowym składka zdrowotna wynosi 4,9% dochodu.
-                      To niemal połowa stawki obowiązującej na skali. Ale to nie
-                      jedyna różnica, na liniowym część składki zdrowotnej
-                      można odliczyć od dochodu.
-                    </p>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Limit odliczenia w 2026 roku wynosi 14 100 zł rocznie
-                      (w 2025 było to 12 900 zł).
-                      Oznacza to, że zapłacona składka zdrowotna (do kwoty
-                      limitu) pomniejsza podstawę opodatkowania, co realnie
-                      obniża podatek dochodowy o 19% tej kwoty.
+                    <p className="text-gray-600 dark:text-gray-400 mb-6">
+                      4,9% dochodu, odliczane od dochodu do 14 100 zł rocznie.
+                      Przy dochodzie 10 000 zł miesięcznie to 490 zł, a
+                      odliczenie obniża podatek o ok. 93 zł.
                     </p>
                     <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                      Kluczowe cechy na liniowym
+                      Ryczałt
                     </h3>
+                    <p className="text-gray-600 dark:text-gray-400 mb-3">
+                      Stała kwota zależna od rocznego przychodu, nie od dochodu.
+                      Połowę zapłaconej składki odlicza się od przychodu.
+                    </p>
                     <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
-                      <li>Stawka: 4,9% dochodu</li>
-                      <li>
-                        Minimalna podstawa: 100% minimalnego wynagrodzenia (4
-                        806 zł)
-                      </li>
-                      <li>Odliczenie od podatku: NIE</li>
-                      <li>
-                        Odliczenie od dochodu: TAK, do limitu 14 100 zł rocznie
-                      </li>
-                      <li>Naliczanie: miesięczne, od bieżącego dochodu</li>
+                      <li>do 60 000 zł: 498,35 zł/mies.,</li>
+                      <li>od 60 001 do 300 000 zł: 830,58 zł/mies.,</li>
+                      <li>powyżej 300 000 zł: 1 495,04 zł/mies.</li>
                     </ul>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Przy dochodzie 10 000 zł miesięcznie składka zdrowotna na
-                      liniowym wynosi 490 zł. Z możliwością odliczenia od
-                      dochodu realna oszczędność podatkowa to dodatkowe ok. 93
-                      zł miesięcznie (19% z 490 zł). Różnica względem skali jest
-                      więc znacząca.
-                    </p>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Minimalna składka działa tak samo jak na skali, nie może
-                      być niższa niż 9% od minimalnego wynagrodzenia, czyli
-                      432,54 zł (tak, minimalna stawka to 9%, nie 4,9%).
-                    </p>
-                  </div>
-                ),
-              },
-              {
-                label: "Na ryczałcie",
-                content: (
-                  <div className="py-10 lg:py-12 max-w-3xl mx-auto">
-                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                      Składka zdrowotna na ryczałcie
-                    </h2>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Na ryczałcie składka zdrowotna działa zupełnie inaczej.
-                      Nie zależy od dochodu, ale od przychodu, a dokładniej od
-                      progu przychodu, w którym się mieścisz. Stawka to 9% od
-                      zryczałtowanej podstawy wymiaru.
-                    </p>
                     <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                      Trzy progi przychodowe w 2026
+                      Minimum
                     </h3>
-                    <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
-                      <li>
-                        Przychód do 60 000 zł rocznie, podstawa: 60%
-                        przeciętnego wynagrodzenia = 5 537,18 zł → składka
-                        498,35 zł/mies.
-                      </li>
-                      <li>
-                        Przychód od 60 001 zł do 300 000 zł, podstawa: 100%
-                        przeciętnego wynagrodzenia = 9 228,64 zł → składka
-                        830,58 zł/mies.
-                      </li>
-                      <li>
-                        Przychód powyżej 300 000 zł, podstawa: 180%
-                        przeciętnego wynagrodzenia = 16 611,55 zł → składka
-                        1 495,04 zł/mies.
-                      </li>
-                    </ul>
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Przeciętne wynagrodzenie to w 2026 kwota z IV kwartału
-                      2025 ogłoszona przez GUS, 9 228,64 zł.
+                      Na skali i liniowym składka nie może być niższa niż 9% od
+                      płacy minimalnej (4 806 zł), czyli 432,54 zł miesięcznie
+                      od lutego 2026. Za styczeń obowiązuje jeszcze 314,96 zł.
                     </p>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      To kluczowa różnica: na ryczałcie nie liczy się dochód
-                      (czyli przychód minus koszty), a sam przychód. Dlatego
-                      forma ta jest szczególnie korzystna dla osób z niskimi
-                      kosztami, ale wysoką marżą.
-                    </p>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Połowę zapłaconej składki zdrowotnej na ryczałcie odlicza
-                      się od przychodu (art. 11 ust. 1c ustawy o
-                      zryczałtowanym podatku dochodowym). Od samego podatku
-                      odliczyć jej nie można.
-                    </p>
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                      Kluczowe cechy na ryczałcie
-                    </h3>
-                    <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
-                      <li>Stawka: 9% od zryczałtowanej podstawy</li>
-                      <li>Podstawa: zależy od progu przychodu (3 progi)</li>
-                      <li>Odliczenie od podatku: NIE</li>
-                      <li>Odliczenie od przychodu: TAK, 50% zapłaconej składki</li>
-                      <li>
-                        Naliczanie: miesięczne, stała kwota w ramach progu
-                      </li>
-                    </ul>
                   </div>
                 ),
               },
@@ -235,75 +135,53 @@ export default function SkladkaZdrowotnaJDGArticle() {
                       Porównanie na przykładach
                     </h2>
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Poniżej trzy scenariusze z konkretnymi kwotami. Zakładamy
-                      niskie koszty działalności (typowe dla usług IT,
-                      konsultingu, freelance).
+                      Składka zdrowotna rocznie, przy niskich kosztach
+                      działalności.
                     </p>
-
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                      Scenariusz 1: dochód 6 000 zł/mies. (przychód ~7 000 zł)
-                    </h3>
-                    <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
-                      <li>Skala: 9% × 6 000 = 540 zł/mies. (6 480 zł/rok)</li>
-                      <li>
-                        Liniowy: 4,9% × 6 000 = 294 zł, to poniżej minimum, więc
-                        432,54 zł/mies. (5 190,48 zł/rok) + odliczenie od
-                        dochodu
-                      </li>
-                      <li>
-                        Ryczałt: przychód do 60k → 498,35 zł/mies. (5 980,20
-                        zł/rok)
-                      </li>
-                    </ul>
+                    <div className="overflow-x-auto mb-6">
+                      <table className="w-full text-left text-sm text-gray-600 dark:text-gray-400">
+                        <thead className="text-gray-900 dark:text-white">
+                          <tr className="border-b border-gray-200 dark:border-gray-700">
+                            <th className="py-2 pr-4 font-semibold">
+                              Dochód miesięcznie
+                            </th>
+                            <th className="py-2 pr-4 font-semibold">Skala</th>
+                            <th className="py-2 pr-4 font-semibold">Liniowy</th>
+                            <th className="py-2 font-semibold">Ryczałt</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {[
+                            ["6 000 zł", "6 480 zł", "5 190,48 zł (minimum)", "5 980,20 zł"],
+                            ["15 000 zł", "16 200 zł", "8 820 zł", "9 966,96 zł"],
+                            ["30 000 zł", "32 400 zł", "17 640 zł", "17 940,48 zł"],
+                          ].map(([d, a, b, c]) => (
+                            <tr
+                              key={d}
+                              className="border-b border-gray-100 dark:border-gray-800"
+                            >
+                              <td className="py-2 pr-4 font-medium text-gray-900 dark:text-white">
+                                {d}
+                              </td>
+                              <td className="py-2 pr-4">{a}</td>
+                              <td className="py-2 pr-4">{b}</td>
+                              <td className="py-2">{c}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Przy niskim dochodzie liniowy wygrywa na składce
-                      zdrowotnej, choć płaci tylko minimum. Ryczałt jest porównywalny ze skalą, ale bez
-                      możliwości odliczenia kosztów.
-                    </p>
-
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                      Scenariusz 2: dochód 15 000 zł/mies. (przychód ~17 000 zł)
-                    </h3>
-                    <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
-                      <li>
-                        Skala: 9% × 15 000 = 1 350 zł/mies. (16 200 zł/rok)
-                      </li>
-                      <li>
-                        Liniowy: 4,9% × 15 000 = 735 zł/mies. (8 820 zł/rok) +
-                        odliczenie od dochodu
-                      </li>
-                      <li>
-                        Ryczałt: przychód 60–300k → 830,58 zł/mies. (9 966,96
-                        zł/rok)
-                      </li>
-                    </ul>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Przy średnim dochodzie różnica między skalą a liniowym to
-                      ponad 7 000 zł rocznie samej składki zdrowotnej. Ryczałt
-                      plasuje się pomiędzy nimi.
-                    </p>
-
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                      Scenariusz 3: dochód 30 000 zł/mies. (przychód ~33 000 zł)
-                    </h3>
-                    <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
-                      <li>
-                        Skala: 9% × 30 000 = 2 700 zł/mies. (32 400 zł/rok)
-                      </li>
-                      <li>
-                        Liniowy: 4,9% × 30 000 = 1 470 zł/mies. (17 640 zł/rok)
-                        + odliczenie od dochodu
-                      </li>
-                      <li>
-                        Ryczałt: przychód powyżej 300k → 1 495,04 zł/mies. (17
-                        940,48 zł/rok)
-                      </li>
-                    </ul>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Przy wysokim dochodzie skala jest najdroższa pod względem
-                      składki zdrowotnej. Liniowy i ryczałt są porównywalne
-                      kwotowo, ale liniowy pozwala na odliczenie od dochodu do
-                      limitu 14 100 zł.
+                      Skala jest najdroższa przy każdym dochodzie. Liniowy
+                      dodatkowo pozwala odliczyć składkę od dochodu. Sam wybór
+                      formy opisujemy w artykule{" "}
+                      <Link
+                        href="/strefa-wiedzy/jaka-forma-opodatkowania-jdg-2026"
+                        className="text-accent hover:underline"
+                      >
+                        Jaka forma opodatkowania JDG w 2026
+                      </Link>
+                      .
                     </p>
 
                     <div className="mt-10 bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-8 text-center">
@@ -321,97 +199,6 @@ export default function SkladkaZdrowotnaJDGArticle() {
                 ),
               },
               {
-                label: "Dlaczego ważna i minimum",
-                content: (
-                  <div className="py-10 lg:py-12 max-w-3xl mx-auto">
-                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                      Dlaczego zdrowotna jest tak ważna przy wyborze formy
-                    </h2>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Wiele osób porównuje formy opodatkowania wyłącznie pod
-                      kątem stawki podatku dochodowego: 12%/32% na skali, 19% na
-                      liniowym, kilka procent na ryczałcie. Ale składka
-                      zdrowotna potrafi zmienić wynik o kilka tysięcy złotych
-                      rocznie.
-                    </p>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Szczególnie przy dochodach w przedziale 10 000–20 000 zł
-                      miesięcznie zdrowotna bywa decydująca. Na skali kosztuje
-                      900–1 800 zł miesięcznie i nie da się jej odliczyć. Na
-                      liniowym to 490–980 zł z możliwością odliczenia od
-                      dochodu.
-                    </p>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Dlatego porównanie form opodatkowania bez uwzględnienia
-                      składki zdrowotnej jest niepełne. Więcej o samym wyborze
-                      formy znajdziesz w artykule{" "}
-                      <Link
-                        href="/strefa-wiedzy/jaka-forma-opodatkowania-jdg-2026"
-                        className="text-accent hover:underline"
-                      >
-                        Jaka forma opodatkowania JDG w 2026
-                      </Link>
-                      .
-                    </p>
-
-                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 mt-12">
-                      Minimum składki zdrowotnej
-                    </h2>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Niezależnie od formy opodatkowania obowiązuje minimalna
-                      składka zdrowotna na skali i liniowym. Od 2026 roku jej
-                      podstawą jest 100% minimalnego wynagrodzenia (wcześniej
-                      75%), a stawka to 9%.
-                    </p>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      W 2026 roku: 9% × 4 806 zł = 432,54 zł miesięcznie, za
-                      miesiące od lutego do grudnia. Składka za styczeń 2026
-                      liczona jest jeszcze po staremu: 314,96 zł.
-                    </p>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Minimum dotyczy sytuacji, gdy dochód jest bardzo niski lub
-                      ujemny. Nawet jeśli w danym miesiącu nie zarobiłeś nic,
-                      składkę zdrowotną i tak musisz zapłacić.
-                    </p>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Na skali i liniowym minimum stosuje się, gdy wyliczona
-                      składka byłaby niższa niż 432,54 zł. Na ryczałcie minimum
-                      nie ma znaczenia, bo kwoty ryczałtowe i tak są wyższe.
-                    </p>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Warto pamiętać, że minimalna składka zdrowotna rośnie co
-                      rok wraz z minimalnym wynagrodzeniem. To oznacza, że nawet
-                      przy zerowym dochodzie koszt zdrowotnej systematycznie
-                      rośnie.
-                    </p>
-
-                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 mt-12">
-                      Podsumowanie
-                    </h2>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Składka zdrowotna w 2026 roku różni się znacząco w
-                      zależności od formy opodatkowania. Na skali to 9% dochodu
-                      bez odliczenia. Na liniowym 4,9% z możliwością odliczenia
-                      od dochodu do 14 100 zł rocznie. Na ryczałcie, stała
-                      kwota zależna od progu przychodu, z której połowę odlicza
-                      się od przychodu.
-                    </p>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Przy wyborze formy opodatkowania nie wystarczy porównać
-                      stawek PIT. Trzeba uwzględnić składkę zdrowotną, bo to ona
-                      potrafi przesądzić o opłacalności. Szczególnie w
-                      przedziale dochodów 8 000–25 000 zł miesięcznie różnice są
-                      wyraźne.
-                    </p>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Najlepszą metodą jest sprawdzenie konkretnych kwot dla
-                      swojego poziomu przychodów i kosztów, z uwzględnieniem
-                      składki zdrowotnej, ZUS i podatku dochodowego łącznie.
-                    </p>
-                  </div>
-                ),
-              },
-              {
                 label: "FAQ",
                 content: (
                   <div className="py-10 lg:py-12 max-w-3xl mx-auto">
@@ -419,117 +206,38 @@ export default function SkladkaZdrowotnaJDGArticle() {
                       FAQ
                     </h2>
                     <div className="space-y-4">
-                      <details className="group rounded-2xl border border-gray-200 dark:border-gray-700">
-                        <summary className="flex cursor-pointer items-center justify-between p-6 text-gray-900 dark:text-white font-medium">
-                          Czy składkę zdrowotną można odliczyć od podatku?
-                          <span className="ml-4 shrink-0 text-gray-600 dark:text-gray-400 transition-transform group-open:rotate-45">
-                            <svg
-                              width="20"
-                              height="20"
-                              viewBox="0 0 20 20"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth="2"
-                            >
-                              <line x1="10" y1="4" x2="10" y2="16" />
-                              <line x1="4" y1="10" x2="16" y2="10" />
-                            </svg>
-                          </span>
-                        </summary>
-                        <p className="px-6 pb-6 text-gray-600 dark:text-gray-400">
-                          Na podatku liniowym można odliczyć składkę zdrowotną
-                          od dochodu, do limitu 14 100 zł rocznie. Na ryczałcie
-                          od przychodu odlicza się połowę zapłaconej składki. Na
-                          skali podatkowej składka zdrowotna nie podlega
-                          odliczeniu.
-                        </p>
-                      </details>
-
-                      <details className="group rounded-2xl border border-gray-200 dark:border-gray-700">
-                        <summary className="flex cursor-pointer items-center justify-between p-6 text-gray-900 dark:text-white font-medium">
-                          Jaka jest minimalna składka zdrowotna?
-                          <span className="ml-4 shrink-0 text-gray-600 dark:text-gray-400 transition-transform group-open:rotate-45">
-                            <svg
-                              width="20"
-                              height="20"
-                              viewBox="0 0 20 20"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth="2"
-                            >
-                              <line x1="10" y1="4" x2="10" y2="16" />
-                              <line x1="4" y1="10" x2="16" y2="10" />
-                            </svg>
-                          </span>
-                        </summary>
-                        <p className="px-6 pb-6 text-gray-600 dark:text-gray-400">
-                          Na skali i liniowym minimalna składka zdrowotna wynosi
-                          od 2026 roku 9% od pełnego minimalnego wynagrodzenia,
-                          czyli 432,54 zł miesięcznie od lutego do grudnia (za
-                          styczeń 314,96 zł). Obowiązuje nawet przy zerowym lub
-                          ujemnym dochodzie.
-                        </p>
-                      </details>
-
-                      <details className="group rounded-2xl border border-gray-200 dark:border-gray-700">
-                        <summary className="flex cursor-pointer items-center justify-between p-6 text-gray-900 dark:text-white font-medium">
-                          Czy na ryczałcie zdrowotna zależy od dochodu?
-                          <span className="ml-4 shrink-0 text-gray-600 dark:text-gray-400 transition-transform group-open:rotate-45">
-                            <svg
-                              width="20"
-                              height="20"
-                              viewBox="0 0 20 20"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth="2"
-                            >
-                              <line x1="10" y1="4" x2="10" y2="16" />
-                              <line x1="4" y1="10" x2="16" y2="10" />
-                            </svg>
-                          </span>
-                        </summary>
-                        <p className="px-6 pb-6 text-gray-600 dark:text-gray-400">
-                          Nie. Na ryczałcie składka zdrowotna zależy od
-                          przychodu, a dokładniej od progu przychodu rocznego
-                          (do 60 tys., do 300 tys. lub powyżej 300 tys.). Dochód
-                          nie ma znaczenia.
-                        </p>
-                      </details>
-
-                      <details className="group rounded-2xl border border-gray-200 dark:border-gray-700">
-                        <summary className="flex cursor-pointer items-center justify-between p-6 text-gray-900 dark:text-white font-medium">
-                          Dlaczego zdrowotna na liniowym jest niższa?
-                          <span className="ml-4 shrink-0 text-gray-600 dark:text-gray-400 transition-transform group-open:rotate-45">
-                            <svg
-                              width="20"
-                              height="20"
-                              viewBox="0 0 20 20"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth="2"
-                            >
-                              <line x1="10" y1="4" x2="10" y2="16" />
-                              <line x1="4" y1="10" x2="16" y2="10" />
-                            </svg>
-                          </span>
-                        </summary>
-                        <p className="px-6 pb-6 text-gray-600 dark:text-gray-400">
-                          Na liniowym stawka wynosi 4,9% dochodu (vs 9% na
-                          skali). Dodatkowo na liniowym można odliczyć zapłaconą
-                          składkę od dochodu do limitu 14 100 zł rocznie, co
-                          jeszcze bardziej zmniejsza efektywny koszt.
-                        </p>
-                      </details>
+                      {faqItems.map((item) => (
+                        <details
+                          key={item.question}
+                          className="group rounded-2xl border border-gray-200 dark:border-gray-700"
+                        >
+                          <summary className="flex cursor-pointer items-center justify-between p-6 text-gray-900 dark:text-white font-medium">
+                            {item.question}
+                            <span className="ml-4 shrink-0 text-gray-600 dark:text-gray-400 transition-transform group-open:rotate-45">
+                              <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 20 20"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                              >
+                                <line x1="10" y1="4" x2="10" y2="16" />
+                                <line x1="4" y1="10" x2="16" y2="10" />
+                              </svg>
+                            </span>
+                          </summary>
+                          <p className="px-6 pb-6 text-gray-600 dark:text-gray-400">
+                            {item.answer}
+                          </p>
+                        </details>
+                      ))}
                     </div>
 
                     <div className="mt-12 bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-8 text-center">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                         Chcesz policzyć składki dla swojej sytuacji?
                       </h2>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Skorzystaj z kalkulatora lub umów się na bezpłatną
-                        konsultację.
-                      </p>
                       <Link
                         href="/kontakt"
                         className="btn-primary inline-block"
@@ -538,61 +246,36 @@ export default function SkladkaZdrowotnaJDGArticle() {
                       </Link>
                     </div>
 
-                    <div className="mt-12 grid md:grid-cols-2 gap-8">
-                      <div>
-                        <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                          Powiązane artykuły
-                        </h3>
-                        <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400">
-                          <li>
-                            <Link
-                              href="/strefa-wiedzy/jaka-forma-opodatkowania-jdg-2026"
-                              className="text-accent hover:underline"
-                            >
-                              Jaka forma opodatkowania JDG w 2026
-                            </Link>
-                          </li>
-                          <li>
-                            <Link
-                              href="/strefa-wiedzy/ryczalt-czy-liniowy"
-                              className="text-accent hover:underline"
-                            >
-                              Ryczałt czy liniowy, co wybrać
-                            </Link>
-                          </li>
-                          <li>
-                            <Link
-                              href="/strefa-wiedzy/skala-czy-liniowy-jdg"
-                              className="text-accent hover:underline"
-                            >
-                              Skala czy liniowy w JDG
-                            </Link>
-                          </li>
-                          <li>
-                            <Link
-                              href="/strefa-wiedzy/maly-zus-plus-kiedy-sie-oplaca"
-                              className="text-accent hover:underline"
-                            >
-                              Mały ZUS Plus, kiedy się opłaca
-                            </Link>
-                          </li>
-                        </ul>
-                      </div>
-                      <div>
-                        <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                          Narzędzia
-                        </h3>
-                        <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400">
-                          <li>
-                            <Link
-                              href="/kalkulator-podatkowy"
-                              className="text-accent hover:underline"
-                            >
-                              Kalkulator podatkowy JDG 2026
-                            </Link>
-                          </li>
-                        </ul>
-                      </div>
+                    <div className="mt-12">
+                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
+                        Powiązane
+                      </h3>
+                      <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400">
+                        <li>
+                          <Link
+                            href="/strefa-wiedzy/skala-czy-liniowy-jdg"
+                            className="text-accent hover:underline"
+                          >
+                            Skala czy liniowy w JDG
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            href="/strefa-wiedzy/ryczalt-czy-liniowy"
+                            className="text-accent hover:underline"
+                          >
+                            Ryczałt czy liniowy, co wybrać
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            href="/kalkulator-podatkowy"
+                            className="text-accent hover:underline"
+                          >
+                            Kalkulator podatkowy JDG 2026
+                          </Link>
+                        </li>
+                      </ul>
                     </div>
                   </div>
                 ),
@@ -600,7 +283,6 @@ export default function SkladkaZdrowotnaJDGArticle() {
             ]}
           />
 
-          {/* Prev / Next */}
           <div className="max-w-3xl mx-auto mt-16">
             <PrevNextArticle currentHref="/strefa-wiedzy/jak-liczyc-zdrowotna-jdg" />
           </div>
@@ -608,47 +290,17 @@ export default function SkladkaZdrowotnaJDGArticle() {
       </main>
       <Footer />
 
-      {/* FAQPage Schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "FAQPage",
-            mainEntity: [
-              {
-                "@type": "Question",
-                name: "Czy składkę zdrowotną można odliczyć od podatku?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Na podatku liniowym można odliczyć składkę zdrowotną od dochodu, do limitu 14 100 zł rocznie. Na ryczałcie od przychodu odlicza się połowę zapłaconej składki. Na skali podatkowej składka zdrowotna nie podlega odliczeniu.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "Jaka jest minimalna składka zdrowotna?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Na skali i liniowym minimalna składka zdrowotna wynosi od 2026 roku 9% od pełnego minimalnego wynagrodzenia, czyli 432,54 zł miesięcznie od lutego do grudnia (za styczeń 314,96 zł). Obowiązuje nawet przy zerowym lub ujemnym dochodzie.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "Czy na ryczałcie zdrowotna zależy od dochodu?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Nie. Na ryczałcie składka zdrowotna zależy od przychodu, a dokładniej od progu przychodu rocznego (do 60 tys., do 300 tys. lub powyżej 300 tys.). Dochód nie ma znaczenia.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "Dlaczego zdrowotna na liniowym jest niższa?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Na liniowym stawka wynosi 4,9% dochodu (vs 9% na skali). Dodatkowo na liniowym można odliczyć zapłaconą składkę od dochodu do limitu 14 100 zł rocznie, co jeszcze bardziej zmniejsza efektywny koszt.",
-                },
-              },
-            ],
+            mainEntity: faqItems.map((item) => ({
+              "@type": "Question",
+              name: item.question,
+              acceptedAnswer: { "@type": "Answer", text: item.answer },
+            })),
           }),
         }}
       />

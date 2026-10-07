@@ -61,28 +61,28 @@ export const businessTools: Narzedzie[] = [
   {
     title: "Czy przeglądarka straszy Twoją stroną",
     description:
-      "Wpiszcie adres strony, a pokażemy, co widzi ktoś, kto trafia do Was z wyszukiwarki. Wygasły certyfikat albo certyfikat firmy hostingowej oznacza pełnoekranowe ostrzeżenie, po którym większość odwiedzających zawraca.",
+      "Wpiszcie adres, a sprawdzimy certyfikat i przekierowania, czyli czy przeglądarka nie straszy klientów ostrzeżeniem.",
     href: "/naprawa-https",
     ikona: "tarcza",
   },
   {
     title: "Przeceny bez wymaganej informacji o cenie",
     description:
-      "Podajcie adres sklepu, a sprawdzimy Wasze aktualne przeceny i pokażemy te, przy których brakuje obowiązkowej informacji o najniższej cenie z trzydziestu dni. Każda pozycja z linkiem do sprawdzenia.",
+      "Sprawdzamy Wasze przeceny i pokazujemy te, przy których brakuje najniższej ceny z 30 dni.",
     href: "/rejestr-cen",
     ikona: "metka",
   },
   {
     title: "Polskie teksty w wersji angielskiej",
     description:
-      "Wpiszcie adres firmy, a znajdziemy Waszą wersję obcojęzyczną i policzymy fragmenty, które zostały po polsku, oraz sprawdzimy, czy wyszukiwarka w ogóle wie, że macie wersje językowe.",
+      "Znajdujemy Waszą wersję obcojęzyczną i liczymy fragmenty, które zostały po polsku.",
     href: "/kontrola-jezykow",
     ikona: "jezyk",
   },
   {
     title: "Ilu masz konkurentów w okolicy",
     description:
-      "Podajcie miejscowość i wybierzcie branżę, a policzymy punkty w promieniu jednego, trzech i pięciu kilometrów oraz to, ilu mieszkańców przypada na jeden taki punkt. Przydaje się przed podpisaniem najmu.",
+      "Podajcie miejscowość i branżę, a policzymy konkurencję w promieniu 1, 3 i 5 km.",
     href: "/analiza-lokalizacji",
     ikona: "pinezka",
   },
@@ -110,7 +110,7 @@ export const businessTools: Narzedzie[] = [
   {
     title: "Czy Twój dłużnik znika z rejestru",
     description:
-      "Wpiszcie nazwę spółki albo numer KRS, a sprawdzimy w Monitorze Sądowym, czy sąd nie wszczął postępowania o jej rozwiązanie bez likwidacji. Od obwieszczenia biegną trzy miesiące na sprzeciw, potem podmiot znika razem z Waszą należnością.",
+      "Sprawdzamy w Monitorze Sądowym, czy spółka Waszego dłużnika nie znika z KRS.",
     href: "/czujka-rejestrowa",
     ikona: "mlotek",
   },
@@ -124,21 +124,21 @@ export const businessTools: Narzedzie[] = [
   {
     title: "Czy Google ma listę Twoich podstron",
     description:
-      "Wpiszcie adres firmy, a sprawdzimy, czy macie mapę strony, czy jest wskazana w robots.txt i czy adresy z niej faktycznie działają. Martwy adres na tej liście zużywa limit odwiedzin robota.",
+      "Sprawdzamy, czy macie mapę strony, czy wskazuje ją robots.txt i czy adresy z niej działają.",
     href: "/mapa-strony",
     ikona: "mapa",
   },
   {
     title: "Czy Google widzi Twoją stronę podwójnie",
     description:
-      "Wpiszcie adres firmy, a sprawdzimy cztery wersje tego adresu, z www i bez, i pokażemy, czy któraś przekierowuje na drugą. Dwie działające wersje z tą samą treścią to dla wyszukiwarki dwie osobne strony.",
+      "Sprawdzamy cztery wersje Waszego adresu, z www i bez, i czy jedna przekierowuje na drugą.",
     href: "/podwojny-adres",
     ikona: "rozwidlenie",
   },
   {
     title: "Kto jest właścicielem Waszej domeny",
     description:
-      "Wpiszcie domenę, a odczytamy z publicznego rejestru, kto figuruje jako abonent i kiedy wygasa rejestracja. Bywa, że właścicielem adresu firmy jest ten, kto kiedyś robił stronę.",
+      "Odczytujemy z rejestru, kto jest abonentem Waszej domeny i kiedy wygasa rejestracja.",
     href: "/wlasnosc-domeny",
     ikona: "klucz",
   },
@@ -159,14 +159,14 @@ export const businessTools: Narzedzie[] = [
   {
     title: "Czy Twoja strona nie wypisała się z Google",
     description:
-      "Wpiszcie adres firmy, a sprawdzimy trzy miejsca, w których zostaje blokada indeksowania po wersji roboczej: nagłówek odpowiedzi, znacznik w kodzie strony i plik robots.txt. Właściciel tego nie widzi, bo wchodzi z zakładki.",
+      "Sprawdzamy trzy miejsca, w których zostaje blokada indeksowania po wersji roboczej strony.",
     href: "/widocznosc-w-google",
     ikona: "oko",
   },
   {
     title: "Czego kupujący nie znajdzie o zwrotach",
     description:
-      "Podajcie adres sklepu, a sprawdzimy sześć rzeczy, których kupujący szuka przed zakupem: termin na odstąpienie, wzór formularza, kto płaci za odesłanie, jak i kiedy wracają pieniądze oraz czy zwrot da się zgłosić online.",
+      "Sprawdzamy, czy kupujący znajdzie w sklepie termin zwrotu, formularz i koszt odesłania.",
     href: "/panel-zwrotow",
     ikona: "zwrot",
   },
@@ -195,9 +195,15 @@ export const businessTools: Narzedzie[] = [
 
 export const otherTools: Narzedzie[] = [
   {
+    title: "Sprawdź auto przed zakupem",
+    description:
+      "Wklejcie link do ogłoszenia, a porównamy cenę z podobnymi ofertami i pokażemy typowe usterki modelu.",
+    href: "/sprawdz-auto",
+  },
+  {
     title: "Ceny energii na jutro",
     description:
-      "Rynkowa cena energii z PSE na kolejną dobę: najtańsze i najdroższe cztery godziny oraz godziny z ceną ujemną. Przydaje się, gdy możecie przesunąć ładowanie auta, pompę ciepła albo magazyn energii.",
+      "Ceny energii z PSE na jutro: najtańsze i najdroższe godziny oraz godziny z ceną ujemną.",
     href: "/ceny-energii-jutro",
   },
   {

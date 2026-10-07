@@ -160,7 +160,7 @@ export default function DomenaCheck() {
       </form>
 
       {stan === "blad" && (
-        <p className="mt-3 text-sm text-red-600 dark:text-red-400">{blad}</p>
+        <p className="mt-3 text-sm text-red-700 dark:text-red-400">{blad}</p>
       )}
 
       {wynik && wynik.status !== "OK" && (
@@ -246,7 +246,7 @@ export default function DomenaCheck() {
                   </button>
                 </div>
                 {leadStan === "blad" && (
-                  <p className="mt-2 text-sm text-red-600 dark:text-red-400">{leadBlad}</p>
+                  <p className="mt-2 text-sm text-red-700 dark:text-red-400">{leadBlad}</p>
                 )}
               </form>
             )}

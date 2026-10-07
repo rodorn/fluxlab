@@ -57,14 +57,14 @@ function PasekAdresu({ domena, zly }: { domena: string; zly: boolean }) {
   return (
     <div className="rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-100 dark:bg-gray-800 p-3 shadow-sm">
       <div className="flex items-center gap-2 mb-2.5">
-        <span className="h-3 w-3 rounded-full bg-red-400" />
-        <span className="h-3 w-3 rounded-full bg-amber-400" />
-        <span className="h-3 w-3 rounded-full bg-emerald-400" />
+        <span className="h-3 w-3 rounded-full bg-gray-300 dark:bg-gray-600" />
+        <span className="h-3 w-3 rounded-full bg-gray-300 dark:bg-gray-600" />
+        <span className="h-3 w-3 rounded-full bg-gray-300 dark:bg-gray-600" />
       </div>
       <div
         className={`flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-mono ${
           zly
-            ? "bg-red-50 dark:bg-red-950/40 text-red-700 dark:text-red-300 ring-1 ring-red-400/50"
+            ? "bg-red-50 dark:bg-red-950/30 text-red-700 dark:text-red-400 ring-1 ring-red-500/60"
             : "bg-white dark:bg-gray-950 text-gray-700 dark:text-gray-200"
         }`}
       >
@@ -76,7 +76,7 @@ function PasekAdresu({ domena, zly }: { domena: string; zly: boolean }) {
             Niebezpieczna
           </span>
         )}
-        <span className={zly ? "line-through decoration-red-500/70" : ""}>
+        <span className={zly ? "line-through decoration-red-500/60" : ""}>
           https://{domena || "twojafirma.pl"}
         </span>
       </div>
@@ -279,7 +279,7 @@ export default function HttpsCheck() {
       )}
 
       {stan === "blad" && (
-        <p className="mt-3 text-sm text-red-600 dark:text-red-400">{blad}</p>
+        <p className="mt-3 text-sm text-red-700 dark:text-red-400">{blad}</p>
       )}
 
       {wynik && m && (
@@ -297,7 +297,7 @@ export default function HttpsCheck() {
           </p>
 
           {wynik.stronaNiedostepna && (
-            <div className="mt-4 rounded-lg border border-red-400/60 bg-white/70 dark:bg-gray-950/50 p-4">
+            <div className="mt-4 rounded-lg border border-red-500/60 bg-white/70 dark:bg-gray-950/50 p-4">
               <p className="text-sm font-bold text-red-700 dark:text-red-400">
                 To jest przypadek najcięższy
               </p>
@@ -401,7 +401,7 @@ export default function HttpsCheck() {
                   </button>
                 </div>
                 {leadStan === "blad" && (
-                  <p className="mt-2 text-sm text-red-600 dark:text-red-400">
+                  <p className="mt-2 text-sm text-red-700 dark:text-red-400">
                     {leadBlad}
                   </p>
                 )}

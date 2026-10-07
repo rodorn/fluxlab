@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import LandingForm from "@/components/LandingForm";
 import RelatedProducts from "@/components/RelatedProducts";
+import NazwaNarzedzia from "@/components/NazwaNarzedzia";
 
 export const metadata: Metadata = {
   title: "Sprawdź auto z Otomoto i OLX przed zakupem od 5 zł | Fluxlab",
@@ -29,16 +30,16 @@ export const metadata: Metadata = {
 
 const steps = [
   {
-    title: "Wklejasz link do oferty",
-    desc: "Podajesz adres ogłoszenia z Otomoto lub OLX w formularzu. Nie musisz przepisywać żadnych danych.",
+    title: "Wklejasz link",
+    desc: "Adres ogłoszenia z Otomoto lub OLX. Nic nie przepisujesz.",
   },
   {
-    title: "Analizujemy ofertę i rynek",
-    desc: "Narzędzie zbiera dane z ogłoszenia, porównuje cenę do podobnych aut i sprawdza spójność przebiegu, roku i wyposażenia.",
+    title: "Porównujemy z rynkiem",
+    desc: "Cena wobec podobnych aut, spójność przebiegu i roku.",
   },
   {
-    title: "Dostajesz raport na maila",
-    desc: "W ciągu 24h odsyłamy gotowy raport PDF: czy cena jest uczciwa, na co uważać przy tym modelu i jak negocjować.",
+    title: "Raport na maila",
+    desc: "PDF w 24 h: czy cena jest uczciwa i jak negocjować.",
   },
 ];
 
@@ -46,25 +47,21 @@ const pricing = [
   {
     name: "Price-check",
     price: "5 zł",
-    desc: "Szybka odpowiedź na jedno pytanie: czy cena tego auta jest uczciwa.",
+    desc: "Czy cena tego auta jest uczciwa.",
     features: [
       "benchmark ceny wobec podobnych ofert",
-      "ocena, czy oferta jest tania, rynkowa czy zawyżona",
-      "sygnał ostrzegawczy przy podejrzanym przebiegu",
-      "odpowiedź w 24h na maila",
+      "sygnał przy podejrzanym przebiegu",
     ],
     featured: false,
   },
   {
     name: "Pełny raport",
     price: "15 zł",
-    desc: "Kompletny due-diligence auta przed oglądaniem i negocjacją.",
+    desc: "Komplet przed oglądaniem i negocjacją.",
     features: [
       "wszystko z price-check",
-      "checklista typowych usterek konkretnego modelu",
-      "wykrywanie red-flag: niespójny przebieg, cofnięty licznik, historia ceny",
-      "gotowy skrypt negocjacji z argumentami na obniżkę",
-      "raport PDF do wglądu przy oglądaniu auta",
+      "typowe usterki modelu i red-flagi",
+      "skrypt negocjacji z argumentami",
     ],
     featured: true,
   },
@@ -72,24 +69,19 @@ const pricing = [
 
 const faq = [
   {
-    question: "Czy to jest raport z historii pojazdu jak w CEPiK czy Carfax?",
+    question: "Czy to raport historii pojazdu jak CEPiK czy Carfax?",
     answer:
-      "Nie. To analiza samej oferty i rynku: czy cena jest uczciwa, czy dane w ogłoszeniu są spójne i na co uważać przy tym modelu. To uzupełnienie oficjalnego raportu historii, a nie jego zamiennik.",
+      "Nie. Analizujemy ofertę i rynek. To uzupełnienie oficjalnego raportu historii, nie zamiennik.",
   },
   {
-    question: "Skąd bierzecie dane do porównania ceny?",
+    question: "Skąd dane do porównania ceny?",
     answer:
-      "Z aktualnych ogłoszeń podobnych aut na portalach sprzedażowych. Porównujemy rocznik, przebieg, wersję i wyposażenie, żeby cena była odniesiona do realnie porównywalnych ofert.",
+      "Z aktualnych ogłoszeń podobnych aut: ten sam rocznik, przebieg, wersja i wyposażenie.",
   },
   {
-    question: "Jak szybko dostaniemy raport?",
+    question: "Co jeśli ogłoszenie zniknie?",
     answer:
-      "Zwykle w ciągu 24h od zgłoszenia i potwierdzenia płatności. Jeśli termin Cię goni, napisz w formularzu, że sprawa jest pilna.",
-  },
-  {
-    question: "Co jeśli oferta zniknie zanim zdążymy zamówić?",
-    answer:
-      "Wystarczy, że wkleisz link. Jeśli ogłoszenie zostanie zdjęte, poprosimy o zrzut ekranu lub dane z oferty i dokończymy analizę na ich podstawie.",
+      "Poprosimy o zrzut ekranu lub dane z oferty i dokończymy analizę.",
   },
 ];
 
@@ -107,17 +99,16 @@ export default function SprawdzAutoPage() {
 
         {/* Hero */}
         <section className="relative overflow-hidden pt-24 pb-12">
-          <div className="blob blob-cyan -z-10 -top-32 -right-24 h-96 w-96" />
+          <div className="blob blob-accent -z-10 -top-32 -right-24 h-96 w-96" />
           <div className="container-wide max-w-3xl">
             <p className="section-label mb-5">Produkt</p>
+            <NazwaNarzedzia href="/sprawdz-auto" />
             <h1 className="display-lg text-gray-900 dark:text-white">
               Nie przepłać za używane auto
             </h1>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-300">
-              Wklejasz link do oferty z Otomoto lub OLX, a my sprawdzamy, czy
-              cena jest uczciwa, czy dane się zgadzają i na co uważać przy tym
-              modelu. Dostajesz raport i gotowe argumenty do negocjacji, zanim
-              pojedziesz oglądać.
+              Wklejasz link z Otomoto lub OLX. Sprawdzamy cenę i dane oferty,
+              a Ty dostajesz argumenty do negocjacji przed oględzinami.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <a href="#zamow" className="btn-primary inline-flex">
@@ -164,13 +155,9 @@ export default function SprawdzAutoPage() {
           {/* Przykładowy efekt */}
           <section>
             <div className="max-w-3xl">
-              <h2 className="display-xl mb-4 text-gray-900 dark:text-white">
-                Przykładowy efekt
+              <h2 className="display-xl mb-8 text-gray-900 dark:text-white">
+                Przykładowy raport (dane demo)
               </h2>
-              <p className="mb-8 text-gray-600 dark:text-gray-300">
-                Tak wygląda fragment raportu. To przykład działania narzędzia na
-                danych demo, a nie realne ogłoszenie.
-              </p>
             </div>
             <div className="max-w-3xl rounded-2xl border border-gray-100 bg-white p-6 dark:border-gray-700 dark:bg-gray-800/60 lg:p-8">
               <div className="flex flex-wrap items-center justify-between gap-3 border-b border-gray-100 pb-4 dark:border-gray-700">
@@ -182,7 +169,7 @@ export default function SprawdzAutoPage() {
                     Audi A4 2.0 TDI, 2017, 178 000 km
                   </p>
                 </div>
-                <span className="rounded-full bg-amber-500/10 px-3 py-1 text-sm font-semibold text-amber-700 dark:text-amber-400">
+                <span className="rounded-full border border-amber-500/60 bg-amber-50 px-3 py-1 text-sm font-semibold text-amber-700 dark:bg-amber-950/30 dark:text-amber-400">
                   Cena zawyżona o ok. 8 500 zł
                 </span>
               </div>
@@ -212,19 +199,12 @@ export default function SprawdzAutoPage() {
               </dl>
               <div className="mt-5 space-y-2 border-t border-gray-100 pt-4 dark:border-gray-700">
                 <p className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300">
-                  <span className="mt-0.5 text-red-600">!</span>
-                  Red-flag: przebieg niższy niż w poprzednim ogłoszeniu tego VIN
-                  sprzed 6 miesięcy.
-                </p>
-                <p className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300">
-                  <span className="mt-0.5 text-amber-500">•</span>
-                  Typowa usterka modelu: łańcuch rozrządu, poproś o fakturę
-                  wymiany.
+                  <span className="mt-0.5 text-red-700 dark:text-red-400">!</span>
+                  Przebieg niższy niż w ogłoszeniu tego VIN sprzed 6 miesięcy.
                 </p>
                 <p className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300">
                   <span className="mt-0.5 text-accent">→</span>
-                  Argument do negocjacji: cena o 13 procent powyżej mediany przy
-                  wyższym niż typowy przebiegu.
+                  Argument: cena 13% powyżej mediany przy wyższym przebiegu.
                 </p>
               </div>
             </div>
@@ -338,16 +318,15 @@ export default function SprawdzAutoPage() {
             </div>
           </section>
 
-          {/* Formularz zamówienia */}
           <RelatedProducts slug="sprawdz-auto" />
 
           <section id="zamow" className="scroll-mt-20">
             <LandingForm
               formId="order_sprawdz_auto"
               heading="Zamów sprawdzenie auta"
-              intro="Wklej link do oferty z Otomoto lub OLX w polu opisu i napisz, czy chcesz price-check (5 zł) czy pełny raport (15 zł). Odsyłamy gotowy raport na maila, zwykle w ciągu 24h."
+              intro="Wklej link z Otomoto lub OLX i napisz: price-check (5 zł) czy pełny raport (15 zł)."
               submitLabel="Wyślij ofertę do sprawdzenia"
-              microCopy="Odpowiedź w 24h. Płatność ustalamy mailowo po potwierdzeniu, że mamy komplet danych z oferty."
+              microCopy="Raport w 24 h. Płatność ustalamy mailowo."
             />
           </section>
         </div>

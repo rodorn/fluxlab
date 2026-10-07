@@ -32,25 +32,25 @@ export default function Page() {
       breadcrumb="Własność domeny"
       eyebrow="Kontrola nad adresem firmy"
       h1="Adres Twojej firmy może formalnie należeć do kogoś innego"
-      lead="W rejestrze domen figuruje jeden podmiot i to jego zgoda jest potrzebna do każdej zmiany. Jeśli stronę stawiał kiedyś zewnętrzny wykonawca, bardzo często to on został wpisany jako właściciel i tak zostało. Dopóki układa się dobrze, nikt tego nie zauważa."
+      lead="Każda zmiana domeny wymaga zgody podmiotu z rejestru. Jeśli stronę stawiał zewnętrzny wykonawca, często to on jest tam wpisany."
       ctaLabel="Sprawdź swoją domenę"
       ctaNote="Sprawdzenie za darmo, od ręki"
       checks={[
         {
           title: "Kto figuruje jako abonent",
-          desc: "To nazwa z publicznego rejestru. Jeśli nie jest to nazwa Twojej firmy, każda zmiana wymaga zgody kogoś innego.",
+          desc: "Nazwa z publicznego rejestru. Jeśli to nie Twoja firma, zmiany wymagają cudzej zgody.",
         },
         {
           title: "Kiedy wygasa rejestracja",
-          desc: "Po tej dacie przestaje działać strona i cała poczta firmowa. Przypomnienia idą na adres abonenta, więc jeśli to obca firma, Ty ich nie zobaczysz.",
+          desc: "Po tej dacie znika strona i poczta. Przypomnienia idą do abonenta, nie do Ciebie.",
         },
         {
           title: "Przeniesienie na właściwą firmę",
-          desc: "Wniosek o zmianę abonenta, dokumenty rejestrowe, transfer do konta, do którego masz dostęp. Prowadzimy sprawę i pilnujemy terminów.",
+          desc: "Zmiana abonenta i transfer na Twoje konto. Prowadzimy sprawę i pilnujemy terminów.",
         },
         {
           title: "Zabezpieczenie na przyszłość",
-          desc: "Automatyczne odnawianie, blokada transferu i przypomnienia na adres, który ktoś w firmie faktycznie czyta.",
+          desc: "Automatyczne odnawianie, blokada transferu, przypomnienia na czytany adres.",
         },
       ]}
       pricing={[
@@ -89,31 +89,27 @@ export default function Page() {
       ]}
       faq={[
         {
-          q: "Skąd bierzecie te dane?",
-          a: "Z publicznego rejestru domen, tego samego, do którego każdy ma dostęp. Nie wymaga to logowania ani niczyjej zgody, bo są to dane jawne.",
-        },
-        {
           q: "Rejestr nie pokazuje nazwy, co to znaczy?",
-          a: "Że abonentem jest osoba fizyczna, a jej dane są chronione. Wtedy z zewnątrz nie da się ustalić, kto to, i trzeba to sprawdzić u rejestratora, mając dostęp do konta.",
+          a: "Abonentem jest osoba fizyczna z chronionymi danymi. Sprawdza się to u rejestratora, z dostępem do konta.",
         },
         {
           q: "Wykonawca nie chce oddać domeny, co wtedy?",
-          a: "Zaczynamy od pisma i procedury, bo w większości przypadków to wystarcza, a sprawa bierze się z zaniedbania, nie ze złej woli. Jeśli jednak ktoś odmawia, pozostaje droga przed sądem polubownym do spraw domen i wtedy mówimy wprost, że to koszt rzędu kilku tysięcy i miesiące, a nasza rola się kończy.",
+          a: "Zaczynamy od pisma, zwykle to wystarcza. Przy odmowie zostaje sąd polubowny do spraw domen: kilka tysięcy złotych i miesiące. Tu nasza rola się kończy.",
         },
         {
           q: "Jak przenieść domenę .pl do innego rejestratora?",
-          a: "Potrzebny jest kod AuthInfo od obecnego rejestratora. Według zasad NASK rejestrator wydaje go abonentowi bez zbędnej zwłoki i nie może uzależniać tego od żadnych warunków, także od opłaty. Kod dostaje abonent, więc jeśli w rejestrze figuruje wykonawca, najpierw potrzebna jest zmiana abonenta, a do niej jego zgoda. Gdy zgody brak, spór rozstrzyga Sąd Polubowny do Spraw Domen Internetowych przy Polskiej Izbie Informatyki i Telekomunikacji.",
+          a: "Potrzebny jest kod AuthInfo. Rejestrator wydaje go abonentowi bez zwłoki i bez opłat. Jeśli abonentem jest wykonawca, najpierw trzeba zmienić abonenta.",
         },
         {
           q: "Czy przeniesienie wyłączy stronę albo pocztę?",
-          a: "Prawidłowo przeprowadzone nie. Zmienia się właściciel i miejsce, w którym opłacasz domenę, a ustawienia kierujące ruch zostają nietknięte. Przenosimy je najpierw, zanim cokolwiek się przełączy.",
+          a: "Nie. Zmienia się właściciel i miejsce opłat, ustawienia ruchu przenosimy najpierw.",
         },
       ]}
       formId="order_wlasnosc_domeny"
       formHeading="Zamów przeniesienie domeny"
-      formIntro="Napisz, o którą domenę chodzi i czy masz kontakt z firmą, która ją zarejestrowała. Odeślemy plan działania i wycenę."
+      formIntro="Podaj domenę i napisz, czy masz kontakt z firmą, która ją rejestrowała. Odeślemy plan i wycenę."
       submitLabel="Zamów przeniesienie"
-      microCopy="Do sprawdzenia nie potrzebujemy niczego poza adresem. Dokumenty są potrzebne dopiero przy samej zmianie abonenta."
+      microCopy="Do sprawdzenia wystarczy adres. Dokumenty są potrzebne dopiero przy zmianie abonenta."
       serviceName="Przeniesienie domeny na właściwego właściciela"
       serviceDesc="Ustalenie abonenta domeny w rejestrze oraz przeprowadzenie zmiany abonenta i transferu do konta klienta, wraz z zabezpieczeniem odnawiania. Od 490 zł."
       serviceType="Obsługa zmiany abonenta i transferu domeny"

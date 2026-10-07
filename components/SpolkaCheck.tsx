@@ -204,7 +204,7 @@ export default function SpolkaCheck() {
               <span
                 className={`h-2 w-2 shrink-0 rounded-full ${
                   i < etap
-                    ? "bg-emerald-500"
+                    ? "bg-accent"
                     : i === etap
                       ? "bg-accent animate-pulse"
                       : "bg-gray-300 dark:bg-gray-700"
@@ -217,7 +217,7 @@ export default function SpolkaCheck() {
       )}
 
       {stan === "blad" && (
-        <p className="mt-3 text-sm text-red-600 dark:text-red-400">{blad}</p>
+        <p className="mt-3 text-sm text-red-700 dark:text-red-400">{blad}</p>
       )}
 
       {wynik && wynik.status !== "OK" && (
@@ -261,7 +261,7 @@ export default function SpolkaCheck() {
                     <tr
                       key={o.data + o.monitor + o.nazwa}
                       className={`border-t border-gray-100 dark:border-gray-800 ${
-                        o.rozwiazanie ? "bg-red-50/60 dark:bg-red-950/30" : ""
+                        o.rozwiazanie ? "bg-red-50 dark:bg-red-950/30" : ""
                       }`}
                     >
                       <td className="px-3 py-2 tabular-nums text-gray-700 dark:text-gray-300">
@@ -273,7 +273,7 @@ export default function SpolkaCheck() {
                       <td className="px-3 py-2 text-gray-700 dark:text-gray-300">
                         {o.nazwa}
                         {o.rozwiazanie && (
-                          <span className="ml-2 rounded bg-red-600/90 px-1.5 py-0.5 text-[10px] font-bold uppercase text-white">
+                          <span className="ml-2 rounded border border-red-500/60 bg-red-50 dark:bg-red-950/30 px-1.5 py-0.5 text-[10px] font-bold uppercase text-red-700 dark:text-red-400">
                             rozwiązanie
                           </span>
                         )}
@@ -333,7 +333,7 @@ export default function SpolkaCheck() {
                   </button>
                 </div>
                 {leadStan === "blad" && (
-                  <p className="mt-2 text-sm text-red-600 dark:text-red-400">
+                  <p className="mt-2 text-sm text-red-700 dark:text-red-400">
                     {leadBlad}
                   </p>
                 )}

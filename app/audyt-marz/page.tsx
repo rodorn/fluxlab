@@ -31,25 +31,25 @@ export default function Page() {
       breadcrumb="Audyt marż"
       eyebrow="Rentowność asortymentu"
       h1="Sprzedajesz dużo, a nie wiadomo, gdzie te pieniądze"
-      lead="Allegro i BaseLinker pokazują obrót i marżę brutto. Nie pokazują, co zostaje po prowizji, zwrocie i dopłacie do darmowej wysyłki. Bierzesz swój eksport sprzedaży i ceny zakupu, a my liczymy realny zysk na każdej sztuce."
+      lead="Allegro i BaseLinker pokazują obrót, a nie to, co zostaje po prowizji, zwrocie i wysyłce. Z eksportu sprzedaży i cen zakupu liczymy realny zysk na każdej sztuce."
       ctaLabel="Zamów audyt marż"
       ctaNote="Raport w 48 godzin"
       checks={[
         {
           title: "Bestsellery, które dokładasz",
-          desc: "Najczęściej to właśnie hity sprzedaży są pod kreską, bo mają najniższą marżę i najwięcej zwrotów. Wskazujemy je z kwotą straty na sztuce.",
+          desc: "Hity sprzedaży często są pod kreską. Wskazujemy je z kwotą straty na sztuce.",
         },
         {
           title: "Wszystkie koszty, nie tylko zakup",
-          desc: "Prowizje marketplace, zwroty, dopłata do wysyłki, alokacja kosztu reklamy. Dopiero po nich widać prawdziwy wynik.",
+          desc: "Prowizje, zwroty, dopłata do wysyłki i koszt reklamy.",
         },
         {
           title: "Martwy stok i zamrożony kapitał",
-          desc: "Ile pieniędzy stoi na półce w towarze, który się nie sprzedaje, i co z tego warto wyprzedać, żeby odzyskać gotówkę.",
+          desc: "Ile pieniędzy stoi w towarze, który się nie sprzedaje.",
         },
         {
           title: "Co dokupić, a co wycofać",
-          desc: "Lista priorytetów, uszeregowana po realnym zysku, a nie po liczbie sztuk.",
+          desc: "Lista priorytetów według zysku, nie liczby sztuk.",
         },
       ]}
       pricing={[
@@ -68,38 +68,37 @@ export default function Page() {
         {
           name: "Comiesięczny rachunek",
           price: "149 zł/mc",
-          desc: "Chcesz widzieć to co miesiąc, a nie raz.",
+          desc: "Ten sam rachunek co miesiąc.",
           features: [
             "wszystko z audytu",
             "porównanie miesiąc do miesiąca",
             "alarm, gdy produkt wpada pod kreskę",
-            "krótkie podsumowanie zmian",
-          ],
+                      ],
         },
       ]}
       faq={[
         {
           q: "Czego potrzebujecie od nas?",
-          a: "Eksportu sprzedaży za wybrany okres, najlepiej trzy miesiące, oraz listy cen zakupu w pliku CSV albo Excel. Im dokładniejsze koszty zakupu, tym dokładniejszy wynik.",
+          a: "Eksportu sprzedaży z trzech miesięcy i listy cen zakupu w CSV albo Excelu.",
         },
         {
-          q: "Z jakich systemów przyjmujesz eksport?",
-          a: "Allegro, BaseLinker, WooCommerce, Shopify, Shoper, IdoSell i zwykły plik z magazynu. Jeśli masz coś innego, przyślij próbkę, zwykle da się to przerobić.",
+          q: "Z jakich systemów przyjmujecie eksport?",
+          a: "Allegro, BaseLinker, WooCommerce, Shopify, Shoper, IdoSell albo plik z magazynu.",
         },
         {
           q: "Co z danymi naszych klientów?",
-          a: "Nie potrzebujemy ich. Wystarczą dane o produktach i transakcjach. Jeśli w eksporcie są dane osobowe, usuwamy je przy wczytywaniu i kasujemy pliki po dostarczeniu raportu.",
+          a: "Nie potrzebujemy ich. Dane osobowe usuwamy przy wczytaniu, pliki kasujemy po raporcie.",
         },
         {
           q: "A jeśli okaże się, że wszystko jest w porządku?",
-          a: "To też jest wynik wart tych pieniędzy, bo przestajesz zgadywać. Z doświadczenia przy katalogu powyżej stu pozycji prawie zawsze znajduje się kilka, które realnie dokładają.",
+          a: "To też wynik: przestajesz zgadywać, ile zarabiasz na każdym produkcie.",
         },
       ]}
       formId="order_audyt_marz"
       formHeading="Zamów audyt marż"
-      formIntro="Napisz, z jakiego systemu masz eksport sprzedaży, za jaki okres i ile mniej więcej masz produktów. Pliki podeślesz mailem po naszej odpowiedzi, nie załączaj ich tutaj."
+      formIntro="Napisz, z jakiego systemu masz eksport i ile masz produktów. Pliki prześlesz mailem po naszej odpowiedzi."
       submitLabel="Zamów audyt marż"
-      microCopy="Raport w 48 godzin. Dane sprzedażowe przetwarzamy tylko na potrzeby raportu i kasujemy po dostarczeniu."
+      microCopy="Raport w 48 godzin. Dane kasujemy po dostarczeniu raportu."
       serviceName="Audyt marż sklepu internetowego"
       serviceDesc="Wyliczenie realnego zysku netto na produkt po prowizjach, zwrotach i kosztach wysyłki, lista pozycji sprzedawanych pod kreską i martwy stok. 49 zł."
       serviceType="Analiza rentowności asortymentu"

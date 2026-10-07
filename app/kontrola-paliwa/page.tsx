@@ -30,18 +30,18 @@ export default function Page() {
       breadcrumb="Kontrola paliwa"
       eyebrow="Straty we flocie"
       h1="Sprawdź, czy paliwo z Twoich kart trafia do Twoich aut"
-      lead="Podejrzewasz, że coś się nie zgadza, ale portal karty pokazuje tylko listę transakcji. Dopiero zestawienie tych transakcji z przebiegami i trasą pokazuje tankowania, których nie da się wytłumaczyć. Zaczynamy od darmowego skanu trzech pojazdów, żebyś zobaczył, czy w ogóle jest o czym rozmawiać."
+      lead="Portal karty pokazuje tylko listę transakcji. Zestawiamy je z przebiegiem i trasą, a wtedy widać tankowania, których nie da się wytłumaczyć. Zaczynamy od darmowego skanu trzech pojazdów."
       ctaLabel="Zamów darmowy skan"
       ctaNote="Trzy pojazdy za jeden miesiąc, bez opłaty"
       powiazane={[
         {
-          przed: "Paliwo to tylko część kosztu auta. Ubezpieczenie, serwis, opony i utratę wartości na jednego kierowcę policzycie w",
+          przed: "Pełny koszt auta na kierowcę policzycie w",
           kotwica: "kalkulatorze kosztów auta",
           href: "/kalkulator-kosztow",
           po: ".",
         },
         {
-          przed: "Paliwo kosztuje Was też w przesyłkach: dopłata paliwowa kurierów sięga prawie połowy ceny bazowej i zmienia się co dwa tygodnie. Pozycję z faktury sprawdzicie w",
+          przed: "Dopłatę paliwową kurierów sprawdzicie w",
           kotwica: "audycie faktur kurierskich i dopłat",
           href: "/audyt-kurierski",
           po: ".",
@@ -50,19 +50,19 @@ export default function Page() {
       checks={[
         {
           title: "Więcej litrów niż mieści bak",
-          desc: "Najprostszy i najczęstszy sygnał. Tankowanie przekraczające pojemność zbiornika oznacza kanister albo drugie auto.",
+          desc: "Najczęstszy sygnał: kanister albo drugie auto.",
         },
         {
           title: "Dwa tankowania, jedna karta, dwa końce Polski",
-          desc: "Transakcje zbyt blisko w czasie, a zbyt daleko od siebie, żeby wykonał je ten sam pojazd.",
+          desc: "Za blisko w czasie, za daleko w przestrzeni dla jednego pojazdu.",
         },
         {
           title: "Tankowanie w dniu bez przejazdu",
-          desc: "Karta pracuje, auto stoi. Zestawiamy każdą transakcję z przebiegiem i trasą z danego dnia.",
+          desc: "Karta pracuje, auto stoi. Sprawdzamy każdą transakcję z trasą z tego dnia.",
         },
         {
           title: "Spalanie odstające od reszty floty",
-          desc: "Pojazd, który nagle pali o kilkanaście procent więcej niż ten sam model obok, plus zakupy niepaliwowe na karcie.",
+          desc: "Auto pali kilkanaście procent więcej niż ten sam model obok.",
         },
       ]}
       pricing={[
@@ -104,26 +104,26 @@ export default function Page() {
       faq={[
         {
           q: "Czego potrzebujecie, żeby to policzyć?",
-          a: "Eksportu transakcji z portalu kart paliwowych, na przykład Orlen Flota, Shell, DKV, UTA albo Circle K, oraz przebiegów pojazdów lub danych z lokalizatora. Im więcej danych o trasie, tym dokładniejszy wynik.",
+          a: "Eksportu transakcji z portalu karty (Orlen Flota, Shell, DKV, UTA, Circle K) oraz przebiegów albo danych z lokalizatora.",
         },
         {
           q: "Czy to jest dowód w sprawie przeciwko kierowcy?",
-          a: "Nie i tak to opisujemy w raporcie. Raport wskazuje transakcje wymagające wyjaśnienia, a nie winnego. To materiał do rozmowy i do uszczelnienia procedur, nie opinia biegłego.",
+          a: "Nie. Raport wskazuje transakcje do wyjaśnienia, a nie winnego. To materiał do rozmowy i uszczelnienia procedur.",
         },
         {
           q: "Co z danymi kierowców?",
-          a: "To dane osobowe, więc podpisujemy umowę powierzenia, przetwarzamy je wyłącznie na potrzeby raportu i kasujemy po dostarczeniu wyników.",
+          a: "Podpisujemy umowę powierzenia, a dane kasujemy po dostarczeniu raportu.",
         },
         {
           q: "Mamy małą flotę, pięć aut. Ma to sens?",
-          a: "Przy pięciu autach jedno nieuczciwe tankowanie tygodniowo to kilkanaście tysięcy złotych rocznie. Dlatego zaczynamy od darmowego skanu, żeby nie płacić za sprawdzenie, czy w ogóle jest problem.",
+          a: "Tak. Jedno nieuczciwe tankowanie tygodniowo to kilkanaście tysięcy złotych rocznie. Darmowy skan pokaże, czy problem jest.",
         },
       ]}
       formId="order_kontrola_paliwa"
       formHeading="Zamów kontrolę paliwa"
-      formIntro="Napisz, ile masz pojazdów, z jakiej karty paliwowej korzystasz i czy masz lokalizator albo zapisy przebiegów. Zaznacz, czy chcesz zacząć od darmowego skanu trzech pojazdów."
+      formIntro="Napisz, ile masz pojazdów, jaką kartę paliwową i czy masz lokalizator albo zapisy przebiegów."
       submitLabel="Zamów kontrolę floty"
-      microCopy="Skan wstępny jest bezpłatny. Dane kierowców objęte umową powierzenia i kasowane po dostarczeniu raportu."
+      microCopy="Skan wstępny jest bezpłatny. Dane kierowców kasujemy po raporcie."
       serviceName="Kontrola paliwa we flocie"
       serviceDesc="Audyt tankowań z kart paliwowych zestawionych z przebiegami i trasą: wykrywanie tankowań do kanistra, obcych pojazdów i klonów karty, z kwotą straty. Skan wstępny bezpłatny, audyt od 99 zł."
       serviceType="Audyt kosztów paliwa we flocie"

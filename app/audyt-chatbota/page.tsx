@@ -31,32 +31,32 @@ export default function Page() {
       breadcrumb="Audyt chatbota"
       eyebrow="Jakość asystenta AI"
       h1="Sprawdź, co Twój bot naprawdę mówi klientom"
-      lead="Bot na stronie działa, więc wygląda, że jest dobrze. Problem w tym, że narzędzia sprawdzają, czy okienko się otwiera, a nie czy odpowiedzi są prawdziwe. Zadajemy 150 realnych pytań klienta i każdą odpowiedź zderzamy z tym, co faktycznie masz w cenniku i regulaminie."
+      lead="Bot działa, ale czy mówi prawdę? Zadajemy 150 realnych pytań klienta i zderzamy odpowiedzi z Twoim cennikiem i regulaminem."
       ctaLabel="Zamów audyt bota"
       ctaNote="Raport w 48 godzin"
       checks={[
         {
           title: "Obietnice, którymi jesteś związany",
-          desc: "Bot potrafi obiecać zwrot po terminie, rabat albo darmową dostawę, których nie oferujesz. To nie jest tylko wpadka wizerunkowa, klient ma zrzut ekranu.",
+          desc: "Zwrot po terminie, rabat albo darmowa dostawa, których nie oferujesz.",
         },
         {
           title: "Halucynacje o produktach",
-          desc: "Wymyślone parametry, dostępność towaru, którego nie ma, i terminy dostawy wzięte z powietrza. Każdą taką odpowiedź pokazujemy z cytatem.",
+          desc: "Wymyślone parametry, dostępność i terminy dostawy. Każdą pokazujemy z cytatem.",
         },
         {
           title: "Sprzeczności z regulaminem",
-          desc: "Zwroty, reklamacje, gwarancja i faktury, czyli miejsca, gdzie rozbieżność między botem a regulaminem kosztuje najwięcej.",
+          desc: "Zwroty, reklamacje, gwarancja i faktury.",
         },
         {
           title: "Zestaw testów na przyszłość",
-          desc: "Trzydzieści pytań kontrolnych do powtórzenia po każdej zmianie promptu albo modelu, bo bot potrafi po cichu zmienić zachowanie po aktualizacji.",
+          desc: "Trzydzieści pytań kontrolnych do powtórzenia po każdej zmianie promptu albo modelu.",
         },
       ]}
       pricing={[
         {
           name: "Audyt",
           price: "69 zł",
-          desc: "Chcesz wiedzieć, czy bot nie szkodzi firmie.",
+          desc: "Jednorazowe sprawdzenie bota.",
           features: [
             "150 realnych pytań klienta",
             "klasyfikacja każdej odpowiedzi z cytatem",
@@ -68,7 +68,7 @@ export default function Page() {
         {
           name: "Audyt z regresją",
           price: "199 zł/mc",
-          desc: "Bot zmienia się po każdej aktualizacji modelu.",
+          desc: "Testy co miesiąc, po każdej zmianie modelu.",
           features: [
             "wszystko z audytu",
             "comiesięczne powtórzenie testów",
@@ -80,30 +80,26 @@ export default function Page() {
       faq={[
         {
           q: "Czy odpowiadamy za to, co obiecał nasz bot?",
-          a: "W praktyce tak. W sprawie Moffatt przeciwko Air Canada z lutego 2024 trybunał uznał, że firma odpowiada za zniżkę obiecaną przez jej chatbota, choć regulamin jej nie przewidywał. Od 2 sierpnia 2026 art. 50 AI Act wymaga też, żeby klient wiedział, że rozmawia z AI. Dlatego sprawdzamy odpowiedzi bota z cennikiem i regulaminem, zanim zrobi to klient.",
+          a: "W praktyce tak. W sprawie Moffatt przeciwko Air Canada (2024) firma odpowiadała za zniżkę obiecaną przez chatbota, choć regulamin jej nie przewidywał.",
         },
         {
           q: "Czy będziecie łamali zabezpieczenia naszego bota?",
-          a: "Nie. W standardowym audycie zadajemy wyłącznie normalne pytania klienta, czyli rozmowę, którą może odbyć każdy odwiedzający. Testy odporności na manipulację robimy tylko wtedy, gdy wyraźnie o to poprosisz na piśmie.",
+          a: "Nie. Zadajemy tylko zwykłe pytania klienta. Testy odporności robimy wyłącznie na pisemną prośbę.",
         },
         {
           q: "Czego potrzebujecie, żeby zacząć?",
-          a: "Adresu strony z botem oraz aktualnego cennika i regulaminu, najlepiej jako link albo plik. Bez nich możemy ocenić spójność odpowiedzi, ale nie ich prawdziwość.",
-        },
-        {
-          q: "Mamy bota regułowego, nie AI. Ma to sens?",
-          a: "Mniejszy. Bot regułowy nie halucynuje, więc audyt sprowadza się do luk w scenariuszach. Napisz, co masz, i powiemy wprost, czy warto.",
+          a: "Adresu strony z botem oraz aktualnego cennika i regulaminu.",
         },
         {
           q: "Co dostajemy na koniec?",
-          a: "Raport PDF z listą błędów, każdy z cytatem i zrzutem, oraz plik z testami kontrolnymi do ponownego użycia.",
+          a: "Raport PDF z listą błędów, cytatami i zrzutami oraz plik z testami kontrolnymi.",
         },
       ]}
       formId="order_audyt_chatbota"
       formHeading="Zamów audyt chatbota"
-      formIntro="Podaj adres strony z botem, napisz na czym jest zbudowany, jeśli wiesz, i podlinkuj cennik oraz regulamin. Jeśli masz obszary, które szczególnie Cię niepokoją, wypisz je."
+      formIntro="Podaj adres strony z botem i podlinkuj cennik oraz regulamin."
       submitLabel="Zamów audyt bota"
-      microCopy="Raport w 48 godzin. Zadajemy wyłącznie zwykłe pytania klienta, bez prób obchodzenia zabezpieczeń."
+      microCopy="Raport w 48 godzin. Tylko zwykłe pytania klienta."
       serviceName="Audyt jakości odpowiedzi chatbota"
       serviceDesc="Weryfikacja asystenta AI: 150 realnych pytań klienta zderzonych z cennikiem i regulaminem, wykrywanie halucynacji i kosztownych obietnic, zestaw testów regresyjnych. 69 zł."
       serviceType="Audyt jakości chatbota"

@@ -220,7 +220,7 @@ export default function JezykCheck() {
       )}
 
       {stan === "blad" && (
-        <p className="mt-3 text-sm text-red-600 dark:text-red-400">{blad}</p>
+        <p className="mt-3 text-sm text-red-700 dark:text-red-400">{blad}</p>
       )}
 
       {wynik && wynik.status !== "OK" && (
@@ -322,7 +322,7 @@ export default function JezykCheck() {
                   </button>
                 </div>
                 {leadStan === "blad" && (
-                  <p className="mt-2 text-sm text-red-600 dark:text-red-400">{leadBlad}</p>
+                  <p className="mt-2 text-sm text-red-700 dark:text-red-400">{leadBlad}</p>
                 )}
                 <p className="mt-2 text-xs text-gray-500 dark:text-gray-400">
                   Przesyłamy tylko adres strony i wynik sprawdzenia. Bez zapisu na
