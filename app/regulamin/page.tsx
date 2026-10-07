@@ -40,7 +40,6 @@ export default function Regulamin() {
           <div className="container-wide">
             <Breadcrumbs
               items={[
-                { label: "Strona główna", href: "/" },
                 { label: "Regulamin" },
               ]}
             />

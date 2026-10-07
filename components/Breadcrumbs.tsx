@@ -5,7 +5,14 @@ interface BreadcrumbItem {
   href?: string;
 }
 
-export default function Breadcrumbs({ items }: { items: BreadcrumbItem[] }) {
+export default function Breadcrumbs({
+  items,
+  kolumna,
+}: {
+  items: BreadcrumbItem[];
+  /** Szerokość kolumny nagłówka pod okruszkami: wąska (max-w-3xl) albo wąska wyśrodkowana. */
+  kolumna?: "waska" | "srodek";
+}) {
   const fullItems = [{ label: "Strona główna", href: "/" }, ...items];
 
   const jsonLd = {
@@ -25,8 +32,15 @@ export default function Breadcrumbs({ items }: { items: BreadcrumbItem[] }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <nav aria-label="Breadcrumb" className="container-wide pt-20 pb-0">
-        <ol className="flex flex-wrap items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400">
+      {/* Wewnątrz innego kontenera (sekcja z container-wide albo main z max-w)
+          okruszki nie dokładają drugiego wcięcia ani górnego odstępu. */}
+      <nav
+        aria-label="Breadcrumb"
+        className={`container-wide pt-20 pb-0 ${kolumna ? "max-w-3xl" : ""} [.container-wide_&]:mb-6 [.container-wide_&]:max-w-none [.container-wide_&]:px-0 [.container-wide_&]:pt-0 [main[class*='max-w-']_&]:mb-6 [main[class*='max-w-']_&]:max-w-none [main[class*='max-w-']_&]:px-0 [main[class*='max-w-']_&]:pt-0`}
+      >
+        <ol
+          className={`flex flex-wrap items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400 ${kolumna === "srodek" ? "justify-center" : ""}`}
+        >
           {fullItems.map((item, index) => {
             const isFirst = index === 0;
             const isLast = index === fullItems.length - 1;

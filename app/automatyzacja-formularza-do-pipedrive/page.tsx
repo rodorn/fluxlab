@@ -136,7 +136,7 @@ export default function AutomatyzacjaFormularzaDoPipedrive() {
     <>
       <Header />
       <main className="pt-16">
-        <Breadcrumbs
+        <Breadcrumbs kolumna="srodek"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Integracja formularza z Pipedrive" },

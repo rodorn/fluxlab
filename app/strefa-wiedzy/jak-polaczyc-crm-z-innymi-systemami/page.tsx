@@ -35,7 +35,7 @@ export default function CrmIntegracjaArticle() {
     <>
       <Header />
       <main className="pt-16 prose-justify">
-        <Breadcrumbs
+        <Breadcrumbs kolumna="srodek"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Jak połączyć CRM z innymi systemami" },

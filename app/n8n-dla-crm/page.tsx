@@ -111,7 +111,7 @@ export default function N8nDlaCrm() {
     <>
       <Header />
       <main>
-        <Breadcrumbs items={[{ label: "n8n dla CRM" }]} />
+        <Breadcrumbs kolumna="srodek" items={[{ label: "n8n dla CRM" }]} />
 
         <section className="pt-24 pb-12 bg-gradient-to-b from-accent/10 to-transparent border-b border-gray-100 dark:border-gray-800">
           <div className="container-wide">

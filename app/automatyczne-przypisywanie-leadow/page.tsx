@@ -121,7 +121,7 @@ export default function AutomatycznePrzypisywanieLeadow() {
     <>
       <Header />
       <main className="pt-16">
-        <Breadcrumbs items={[{ label: "Automatyczne przypisywanie leadów" }]} />
+        <Breadcrumbs kolumna="srodek" items={[{ label: "Automatyczne przypisywanie leadów" }]} />
 
         <section className="pt-16 pb-6 bg-gradient-to-b from-accent/10 to-transparent border-b border-gray-100 dark:border-gray-800">
           <div className="container-wide">

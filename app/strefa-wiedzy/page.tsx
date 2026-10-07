@@ -36,7 +36,7 @@ export default function StrefaWiedzy() {
     <>
       <Header />
       <main className="pt-16 prose-justify">
-        <Breadcrumbs items={[{ label: "Strefa wiedzy" }]} />
+        <Breadcrumbs kolumna="srodek" items={[{ label: "Strefa wiedzy" }]} />
         {/* Hero, kompaktowy */}
         <section className="pt-16 pb-6 bg-gray-50 dark:bg-gray-900/50 border-b border-gray-100 dark:border-gray-800">
           <div className="container-wide">

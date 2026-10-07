@@ -61,7 +61,7 @@ export default function HubspotVsPipedriveArticle() {
     <>
       <Header />
       <main className="pt-16 prose-justify">
-        <Breadcrumbs
+        <Breadcrumbs kolumna="waska"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "HubSpot vs Pipedrive, który CRM dla małej firmy" },

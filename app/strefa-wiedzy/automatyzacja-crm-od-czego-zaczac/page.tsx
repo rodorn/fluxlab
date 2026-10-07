@@ -53,7 +53,7 @@ export default function AutomatyzacjaCrmOdCzegoZaczacArticle() {
     <>
       <Header />
       <main className="pt-16 prose-justify">
-        <Breadcrumbs
+        <Breadcrumbs kolumna="waska"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Automatyzacja CRM, od czego zacząć" },

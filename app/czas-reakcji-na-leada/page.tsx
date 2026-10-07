@@ -103,7 +103,7 @@ export default function CzasReakcjiNaLeada() {
     <>
       <Header />
       <main className="pt-16">
-        <Breadcrumbs items={[{ label: "Czas reakcji na leada" }]} />
+        <Breadcrumbs kolumna="srodek" items={[{ label: "Czas reakcji na leada" }]} />
 
         <section className="pt-16 pb-10 bg-gradient-to-b from-accent/10 to-transparent border-b border-gray-100 dark:border-gray-800">
           <div className="container-wide">

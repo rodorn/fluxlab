@@ -137,7 +137,7 @@ export default function RaportowanieZPipedrive() {
     <>
       <Header />
       <main>
-        <Breadcrumbs
+        <Breadcrumbs kolumna="srodek"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Automatyczne raportowanie z Pipedrive" },

@@ -58,7 +58,7 @@ export default function SkladkaZdrowotnaJDGArticle() {
     <>
       <Header />
       <main className="pt-16 prose-justify">
-        <Breadcrumbs
+        <Breadcrumbs kolumna="srodek"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Jak liczyć składkę zdrowotną w JDG" },

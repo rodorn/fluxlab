@@ -152,7 +152,7 @@ export default function MakeVsN8nCrm() {
     <>
       <Header />
       <main>
-        <Breadcrumbs items={[{ label: "Make czy n8n do CRM" }]} />
+        <Breadcrumbs kolumna="srodek" items={[{ label: "Make czy n8n do CRM" }]} />
 
         {/* Hero, kompaktowy */}
         <section className="pt-24 pb-12 bg-gradient-to-b from-accent/10 to-transparent border-b border-gray-100 dark:border-gray-800">

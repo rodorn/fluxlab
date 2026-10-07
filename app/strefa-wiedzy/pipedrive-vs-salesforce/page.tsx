@@ -69,7 +69,7 @@ export default function PipedriveVsSalesforceArticle() {
     <>
       <Header />
       <main className="pt-16 prose-justify">
-        <Breadcrumbs
+        <Breadcrumbs kolumna="srodek"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Pipedrive vs Salesforce, porównanie CRM dla MŚP 2026" },

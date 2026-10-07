@@ -66,7 +66,7 @@ export default function CrmDlaJednoosobowejFirmyArticle() {
     <>
       <Header />
       <main className="pt-16 prose-justify">
-        <Breadcrumbs
+        <Breadcrumbs kolumna="waska"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "CRM dla jednoosobowej firmy, co wybrać" },

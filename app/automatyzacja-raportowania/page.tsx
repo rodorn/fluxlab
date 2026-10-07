@@ -65,7 +65,7 @@ export default function AutomatyzacjaRaportowania() {
     <>
       <Header />
       <main className="pt-16">
-        <Breadcrumbs items={[{ label: "Automatyzacja raportowania" }]} />
+        <Breadcrumbs kolumna="srodek" items={[{ label: "Automatyzacja raportowania" }]} />
 
         {/* Hero, kompaktowy */}
         <section className="relative overflow-hidden pt-24 pb-12">

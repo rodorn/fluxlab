@@ -66,7 +66,7 @@ export default function IntegracjeApi() {
     <>
       <Header />
       <main>
-        <Breadcrumbs items={[{ label: "Integracje API" }]} />
+        <Breadcrumbs kolumna="srodek" items={[{ label: "Integracje API" }]} />
 
         {/* Hero, kompaktowy */}
         <section className="relative overflow-hidden pt-24 pb-12">

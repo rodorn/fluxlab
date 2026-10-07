@@ -217,7 +217,7 @@ export default function Narzedzia() {
     <>
       <Header />
       <main className="pt-16">
-        <Breadcrumbs items={[{ label: "Narzędzia" }]} />
+        <Breadcrumbs kolumna="srodek" items={[{ label: "Narzędzia" }]} />
         <section className="pt-24 pb-12 bg-gray-50 dark:bg-gray-900/50 border-b border-gray-100 dark:border-gray-800">
           <div className="container-wide">
             <div className="max-w-3xl mx-auto text-center">

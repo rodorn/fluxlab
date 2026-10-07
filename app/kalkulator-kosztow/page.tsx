@@ -59,7 +59,7 @@ export default function KalkulatorKosztowPage() {
     <>
       <Header />
       <main>
-        <Breadcrumbs items={[{ label: "Kalkulator kosztów" }]} />
+        <Breadcrumbs kolumna="srodek" items={[{ label: "Kalkulator kosztów" }]} />
 
         {/* Hero, kompaktowy */}
         <section className="pt-24 pb-12">

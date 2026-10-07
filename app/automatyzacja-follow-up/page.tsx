@@ -146,7 +146,7 @@ export default function AutomatyzacjaFollowUp() {
     <>
       <Header />
       <main className="pt-16">
-        <Breadcrumbs items={[{ label: "Automatyzacja follow-upów w CRM" }]} />
+        <Breadcrumbs kolumna="srodek" items={[{ label: "Automatyzacja follow-upów w CRM" }]} />
 
         <section className="pt-16 pb-10 bg-gradient-to-b from-accent/10 to-transparent border-b border-gray-100 dark:border-gray-800">
           <div className="container-wide">

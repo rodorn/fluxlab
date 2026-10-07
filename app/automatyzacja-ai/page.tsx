@@ -60,7 +60,7 @@ export default function AutomatyzacjaAI() {
     <>
       <Header />
       <main>
-        <Breadcrumbs items={[{ label: "Automatyzacja AI" }]} />
+        <Breadcrumbs kolumna="srodek" items={[{ label: "Automatyzacja AI" }]} />
 
         {/* Hero, kompaktowy */}
         <section className="relative overflow-hidden pt-24 pb-12">

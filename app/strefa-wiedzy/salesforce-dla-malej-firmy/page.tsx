@@ -47,7 +47,7 @@ export default function SalesforceDlaMalejFirmyArticle() {
     <>
       <Header />
       <main className="pt-16 prose-justify">
-        <Breadcrumbs
+        <Breadcrumbs kolumna="srodek"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Salesforce dla małej firmy, czy warto" },

@@ -40,7 +40,6 @@ export default function PolitykaPrywatnosci() {
           <div className="container-wide">
             <Breadcrumbs
               items={[
-                { label: "Strona główna", href: "/" },
                 { label: "Polityka prywatności" },
               ]}
             />

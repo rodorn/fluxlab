@@ -118,7 +118,7 @@ export default function AutomatyzacjaCrmLeasing() {
     <>
       <Header />
       <main>
-        <Breadcrumbs
+        <Breadcrumbs kolumna="srodek"
           items={[
             { label: "Automatyzacja CRM dla firm leasingowych i finansowych" },
           ]}

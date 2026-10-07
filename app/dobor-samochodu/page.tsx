@@ -59,7 +59,7 @@ export default function DoborSamochoduPage() {
     <>
       <Header />
       <main>
-        <Breadcrumbs items={[{ label: "Dobór samochodu" }]} />
+        <Breadcrumbs kolumna="srodek" items={[{ label: "Dobór samochodu" }]} />
 
         {/* Hero, kompaktowy */}
         <section className="pt-24 pb-12">

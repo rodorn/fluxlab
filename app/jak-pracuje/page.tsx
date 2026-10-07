@@ -199,7 +199,7 @@ export default function JakPracuje() {
     <>
       <Header />
       <main>
-        <Breadcrumbs items={[{ label: "Jak pracujemy" }]} />
+        <Breadcrumbs kolumna="srodek" items={[{ label: "Jak pracujemy" }]} />
 
         {/* Hero, kompaktowy */}
         <section className="pt-16 pb-6 bg-gray-50 dark:bg-gray-900/50 border-b border-gray-100 dark:border-gray-800">

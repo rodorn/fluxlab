@@ -60,7 +60,7 @@ export default function AudytCRMPage() {
     <>
       <Header />
       <main>
-        <Breadcrumbs
+        <Breadcrumbs kolumna="srodek"
           items={[
             { label: "Narzędzia", href: "/narzedzia" },
             { label: "Audyt CRM" },

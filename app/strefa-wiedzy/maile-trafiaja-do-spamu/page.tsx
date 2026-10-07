@@ -54,7 +54,7 @@ export default function MaileSpamArticle() {
       <Header />
       <main
         className="container-wide"
-        style={{ maxWidth: 800, margin: "0 auto", padding: "2rem 1.5rem 4rem" }}
+        style={{ maxWidth: 800, margin: "0 auto", padding: "6.5rem 1.5rem 4rem" }}
       >
         <Breadcrumbs
           items={[

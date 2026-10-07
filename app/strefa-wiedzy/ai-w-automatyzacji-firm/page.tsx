@@ -34,7 +34,7 @@ export default function AiWAutomatyzacjiFirmPage() {
     <>
       <Header />
       <main className="pt-16 prose-justify">
-        <Breadcrumbs
+        <Breadcrumbs kolumna="waska"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "AI w automatyzacji firm" },
