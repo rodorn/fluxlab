@@ -3,8 +3,6 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import TileVideo from "@/components/TileVideo";
 import PoleAudytu from "@/components/PoleAudytu";
-import WybierzBranze from "@/components/WybierzBranze";
-import RachunekWJednymKlikniecu from "@/components/RachunekWJednymKlikniecu";
 import { LICZBA_NARZEDZI } from "@/lib/narzedzia";
 import { nazwaFilaru } from "@/lib/filary";
 
@@ -176,11 +174,6 @@ export default function Home() {
           ))}
         </div>
 
-        {/* Strona glowna to 20 z 50 odslon na dobe, a uruchomien narzedzi
-            bylo zero. Kazdy wynik lezal za przejsciem na inna strone. Ten
-            blok daje kwote na miejscu, po jednym kliknieciu. */}
-        <RachunekWJednymKlikniecu />
-
         {/* Klient nie szuka "automatyzacji", tylko konca konkretnej
             uciazliwosci. Te szesc zdan to jego slowa, a nie nasze nazwy
             kategorii, i kazde prowadzi do strony, ktora opisuje wlasnie ten
@@ -221,8 +214,6 @@ export default function Home() {
             ))}
           </ul>
         </section>
-
-        <WybierzBranze />
 
         {/* Dowod kompetencji dla firmy bez ani jednego klienta. Liczby z
             wlasnego pomiaru, z podana probka i metoda, zeby kazdy mogl je
