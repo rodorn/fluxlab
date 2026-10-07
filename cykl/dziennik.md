@@ -3434,3 +3434,11 @@ Z1 jednym zdaniem: z 32 sesji bez odsyłacza 18 to nasza automatyka, 12 inne, 2 
 **Dowód:** commit 7ac391d; https://fluxlab.pl/llms.txt na produkcji ma 137 unikalnych adresów (wcześniej 93), wszystkie 44 dopisane adresy odpowiadają 200; poza llms.txt zostały celowo tylko /cv, /dziekuje, /nie-licz-mnie, /panel, /polityka-prywatnosci, /regulamin, /pilotaz, /sprawdz-auto, /import-radar. Build i `spojnosc.mjs` OK. IndexNow 111 adresów: Yandex 202, Naver 200, wspólny punkt 403 jak wcześniej. Domowe IP przechodzi już przez checkpoint Vercela (llms.txt 200 o 00:55).
 **Dla Pawła:** bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację; jeśli Firefox na Twoim telefonie otwiera /automatyzacja-leadow-crm, wejdź nim raz na https://fluxlab.pl/nie-licz-mnie).
 **Zostało otwarte:** Z24 o 05:46; czwartek 9:46 wysyłka `ksiegowe-edoreczenia` 042 do 049.
+
+## 2026-10-08 01:45
+**Kanał:** żaden, cykl wstrzymany.
+**Co zrobione:** nic nie poszło w świat. Jedyne otwarte zadanie planu (Z24, bilans) ma termin 05:46, a `budzet` zwraca rytm „wstrzymaj” (prognoza 314% tygodnia, hamulec krytyczny, nowy cykl: NIE), więc pracy spoza planu nie zaczynałem.
+**Ruch:** ostatnia doba 39 odsłon, 25 osób (mail 10, facebook 4, www.google.com 2, m.baidu.com 1); najczęściej /e-doreczenia-integracja 10, /audyt-strony 8, /automatyzacja-leadow-crm 6; 3 uruchomienia narzędzi (2 `uruchomiono_skan_przyklad`, 1 `uruchomiono_numer_ksef_przyklad`) i 1 audyt; odrzucone: boty 7 sesji / 100 odsłon, własna automatyka 33 sesje / 58 odsłon.
+**Dowód:** brak publikacji; odczyt `budzet` 01:44.
+**Dla Pawła:** bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację; jeśli Firefox na Twoim telefonie otwiera /automatyzacja-leadow-crm, wejdź nim raz na https://fluxlab.pl/nie-licz-mnie).
+**Zostało otwarte:** Z24 o 05:46 (jeśli budżet pozwoli); czwartek 9:46 wysyłka `ksiegowe-edoreczenia` 042 do 049.
