@@ -3334,3 +3334,25 @@ Z1 jednym zdaniem: z 32 sesji bez odsyłacza 18 to nasza automatyka, 12 inne, 2 
   Zoho od 16:00: jedyny mail to FINREAL 16:14 (klient, tylko odnotowany). `pomijane.json` bez zmian (60). Zgłoszeń 0. Od 16:00 licznik ma jedną wizytę: 17:30 /automatyzacja-leadow-crm bez odsyłacza, Firefox Android, 1 odsłona (materiał dla Z23).
 **Dla Pawła:** bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację).
 **Zostało otwarte:** Z15 o 20:50 (10 żądań indeksowania), Z23 o 04:46, Z24 o 05:46 (w nim liczby nocne Zoho i utm); czwartek 9:46 wysyłka 042 do 045.
+
+<!-- WYSLANO 2026-10-07 19:05 -->
+
+## 2026-10-07 19:50
+**Kanał:** pomiar (część Z23 z planu, która nie zależy od nocy); Z15 ma żądania indeksowania dopiero od 20:50, Z23 i Z24 liczą dobę do 05:00, więc zostają otwarte.
+**Co zrobione:** sprawdzone, skąd przychodzą wejścia na /automatyzacja-leadow-crm: to nie kampania ani wyszukiwarka, tylko powtarzające się wejścia wprost z jednego rodzaju telefonu.
+**Ruch:** ostatnia doba 42 odsłony, 25 osób (mail 10, facebook 4, m.facebook.com 1, www.google.com 1); najczęściej /e-doreczenia-integracja 10, /audyt-strony 8, /automatyzacja-leadow-crm 6; 3 uruchomienia narzędzi (2 skan przykład, 1 numer KSeF przykład) i 1 audyt; odrzucone: boty 7 sesji, własna automatyka 25 sesji.
+**Dowód:** VPS `ruch.sqlite`, wszystkie sesje z /automatyzacja-leadow-crm od 6.10 (godziny CEST):
+
+| czas | źródło | urządzenie | odsłony | przebieg |
+|---|---|---|---|---|
+| 6.10 10:25 | brak | Chrome macOS | 1 | sama strona |
+| 6.10 10:39 | chatgpt.com | Chrome Windows | 2 | /audyt-kurierski, potem ta strona |
+| 6.10 14:56 | brak | Firefox Android | 2 | /, ta strona |
+| 6.10 21:21 | brak | Firefox Android | 1 | sama strona |
+| 6.10 23:30 | brak | Firefox Android | 6 | ta strona, strefa wiedzy, wpis o stronach dealerów, z powrotem 2 razy |
+| 7.10 13:45 | brak | Firefox Android | 1 | sama strona |
+| 7.10 17:30 | brak | Firefox Android | 1 | sama strona |
+
+  Wniosek: 5 z 7 sesji to Firefox na Androidzie bez odsyłacza, wejście wprost na ten adres o różnych porach przez dwa dni (wcześniej taki sam wzór 29.09), bez zdarzeń i zgłoszeń; to najpewniej jedna osoba z zakładką albo otwartą kartą, możliwe że Paweł z telefonu (licznik nie ma tam `fl_nie_licz`). Ta strona nie ma stałego źródła ruchu z zewnątrz, więc nie warto dawać jej osobnego zadania. Część nocna Z23 (sesje bez odsyłacza 7.10 06:00 do 8.10 05:00) zostaje na 04:46.
+**Dla Pawła:** jeśli to Twój telefon (Firefox Android), wejdź raz z niego na https://fluxlab.pl/nie-licz-mnie, wtedy te wejścia znikną z liczb. Poza tym bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację).
+**Zostało otwarte:** Z15 o 20:50 (10 żądań indeksowania), Z23 część nocna o 04:46, Z24 o 05:46; czwartek 9:46 wysyłka 042 do 045.
