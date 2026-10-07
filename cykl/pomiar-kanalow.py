@@ -23,13 +23,14 @@ DOBA, TYDZIEN = T - 86400, T - 7 * 86400
 
 
 def wiersze():
-    # Uklad kolumn jak w raport_ruchu.pobierz (bez_botow czyta r[0], r[3], r[5]),
-    # na koncu kampania.
+    # Uklad kolumn jak w raport_ruchu.pobierz (bez_botow czyta r[0], r[2], r[3],
+    # r[5], r[6], r[7]), na koncu kampania.
     kod = (
         "import sqlite3,json;"
         "db=sqlite3.connect('%s');"
         "r=db.execute('SELECT czas,sciezka,COALESCE(zrodlo,\\'\\'),sesja,telefon,"
-        "COALESCE(zdarzenie,\\'odslona\\'),COALESCE(kampania,\\'\\') FROM wizyty "
+        "COALESCE(zdarzenie,\\'odslona\\'),COALESCE(przegladarka,\\'\\'),"
+        "COALESCE(system,\\'\\'),COALESCE(kampania,\\'\\') FROM wizyty "
         "WHERE czas>%d').fetchall();"
         "print(json.dumps(r))" % (BAZA, T - 14 * 86400)
     )
@@ -80,8 +81,8 @@ def ruch(w):
 
     k = defaultdict(set)
     for r in odslony:
-        if r[0] > TYDZIEN and r[6]:
-            k[f"{r[2]} / {r[6]}"].add(r[3])
+        if r[0] > TYDZIEN and r[8]:
+            k[f"{r[2]} / {r[8]}"].add(r[3])
     tabela("Kampanie utm, 7 dni (sesje)", {a: len(b) for a, b in k.items()})
 
     z = Counter(f"{r[5]}  {r[1]}" for r in w if r[0] > TYDZIEN and r[5] != "odslona")

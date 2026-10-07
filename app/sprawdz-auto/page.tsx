@@ -6,12 +6,12 @@ import LandingForm from "@/components/LandingForm";
 import RelatedProducts from "@/components/RelatedProducts";
 
 export const metadata: Metadata = {
-  title: "Sprawdź auto przed zakupem, raport od 5 zł | Fluxlab",
+  title: "Sprawdź auto z Otomoto i OLX przed zakupem od 5 zł | Fluxlab",
   description:
-    "Wklej link do oferty z Otomoto lub OLX i sprawdź, czy cena jest uczciwa. Benchmark, wykrywanie cofniętego licznika, checklista usterek. Od 5 zł.",
+    "Wklej link z Otomoto lub OLX. W 24 h raport PDF: cena wobec podobnych ofert, spójność przebiegu, usterki modelu i argumenty do negocjacji. Od 5 zł.",
   alternates: { canonical: "/sprawdz-auto" },
   openGraph: {
-    title: "Sprawdź auto przed zakupem, raport od 5 zł | Fluxlab",
+    title: "Sprawdź auto z Otomoto i OLX przed zakupem od 5 zł | Fluxlab",
     description:
       "Wklej link do oferty z Otomoto lub OLX i sprawdź, czy cena jest uczciwa. Benchmark ceny, red-flagi i skrypt negocjacji. Price-check 5 zł, pełny raport 15 zł.",
     locale: "pl_PL",
@@ -114,7 +114,7 @@ export default function SprawdzAutoPage() {
               Nie przepłać za używane auto
             </h1>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-300">
-              Wklejasz link do oferty z Otomoto lub OLX, a ja sprawdzamy, czy
+              Wklejasz link do oferty z Otomoto lub OLX, a my sprawdzamy, czy
               cena jest uczciwa, czy dane się zgadzają i na co uważać przy tym
               modelu. Dostajesz raport i gotowe argumenty do negocjacji, zanim
               pojedziesz oglądać.
