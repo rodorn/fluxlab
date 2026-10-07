@@ -31,33 +31,14 @@ export default function EDoreczeniaIntegracja() {
             </h2>
             <div className="mt-4 space-y-4 text-gray-600 dark:text-gray-300">
               <p>
-                Spółka wpisana do KRS przed 2025 rokiem ma obowiązek posiadania adresu do
-                doręczeń elektronicznych od 1 kwietnia 2025, a spółka wpisana później od
-                dnia wpisu. Adres, który jest już w bazie adresów elektronicznych, widać w
-                aktualnym odpisie KRS, w dziale 1 przy siedzibie i adresie spółki. Gdy tego
-                pola w odpisie nie ma, spółka adresu nie ma albo jej skrzynka nie została
-                jeszcze aktywowana.
+                Spółka wpisana do KRS przed 2025 rokiem musi mieć adres od 1 kwietnia
+                2025, później wpisana od dnia wpisu. Adres widać w odpisie KRS, w dziale
+                1. Gdy go tam nie ma, spółka adresu nie ma albo nie aktywowała skrzynki.
               </p>
               <p>
-                5 października 2026 sprawdziliśmy w ten sposób 119 spółek z branży
-                księgowej, prawnej i handlowej, których strony znaleźliśmy w katalogach
-                firm. U 27 z nich pola w odpisie nie było, czyli półtora roku po terminie
-                ponad co piąta spółka nadal nie ma adresu do e-Doręczeń w bazie.
-              </p>
-              <p>
-                Kary pieniężnej za brak adresu ustawa nie przewiduje. Skutek jest
-                praktyczny: dopóki adresu nie ma w bazie, urzędy doręczają pisma
-                papierowo albo publiczną usługą hybrydową, więc trzeba pilnować zwykłej
-                skrzynki pocztowej i awiz. Po aktywacji skrzynki pismo nieodebrane w
-                ciągu 14 dni uznaje się za doręczone, nawet jeśli nikt go nie otworzył.
-              </p>
-              <p>
-                Wniosek dla spółki składa się wyłącznie przez Biznes.gov.pl, a spółka musi
-                w nim wskazać administratora skrzynki, czyli osobę, która ją aktywuje i
-                zarządza dostępem. Numer KRS swojej spółki albo kontrahenta wpiszcie w
-                narzędziu powyżej, w trybie „Spółka: po numerze KRS”: pobierzemy aktualny
-                odpis z wyszukiwarki Ministerstwa Sprawiedliwości i pokażemy, czy adres w
-                nim jest i od kiedy obowiązuje.
+                5 października 2026 sprawdziliśmy tak 119 spółek: 27 z nich nadal nie ma
+                adresu w bazie. Wpiszcie numer KRS w narzędziu powyżej, w trybie „Spółka:
+                po numerze KRS”, a pokażemy, czy adres jest w odpisie.
               </p>
             </div>
           </section>
@@ -66,41 +47,33 @@ export default function EDoreczeniaIntegracja() {
       breadcrumb="Integracja z e-Doręczeniami"
       eyebrow="e-Doręczenia"
       h1="Integracja z e-Doręczeniami"
-      lead="Skrzynka do doręczeń elektronicznych jest obowiązkowa, ale nikt nie każe obsługiwać jej ręcznie w osobnym panelu. Spinamy ją z systemem, którego już używacie, żeby pisma i dowody doręczenia trafiały tam, gdzie pracujecie."
+      lead="Skrzynka do e-Doręczeń jest obowiązkowa, ale nie musicie obsługiwać jej ręcznie w osobnym panelu. Spinamy ją z Waszym systemem: pisma i dowody doręczenia trafiają tam, gdzie pracujecie."
       ctaLabel="Sprawdź swój termin"
       ctaNote="Dwa kliknięcia, bez wpisywania czegokolwiek"
       powiazane={[
         {
-          przed: "Zanim wpiszecie kontrahenta do systemu, warto mieć pewność, że firma istnieje i płaci VAT:",
+          przed: "Przed wpisaniem kontrahenta do systemu:",
           kotwica: "darmowe sprawdzenie NIP w wykazie VAT",
           href: "/sprawdzenie-nip",
-          po: " pokazuje status podatnika i liczbę zgłoszonych rachunków.",
+          po: ".",
         },
       ]}
       checks={[
         {
-          title: "Napisaliśmy klienta tego API i oddaliśmy go za darmo",
-          desc: "Kod leży publicznie pod adresem github.com/rodorn/edoreczenia-klient, na licencji MIT, do obejrzenia przed rozmową z kimkolwiek. Powstał, bo w całym otwartym kodzie nie było ani jednego klienta tego interfejsu w żadnym języku, a termin dotyczy milionów podmiotów. Możecie go użyć sami albo dać swojemu programiście, bez pytania nas o zgodę.",
+          title: "Otwarty klient tego API, do obejrzenia przed decyzją",
+          desc: "Kod leży publicznie na github.com/rodorn/edoreczenia-klient, na licencji MIT. Możecie go ocenić sami albo dać swojemu programiście.",
         },
         {
-          title: "Dowodem doręczenia jest dowód, nie wiadomość",
-          desc: "To najczęstszy błąd w takich wdrożeniach. Integracja pobiera listę pism i wygląda na gotową, tylko nie ma czym wykazać, że coś zostało doręczone. Dowody są osobnym zasobem i trzeba je pobierać i przechowywać osobno. Bez nich cała integracja nie daje wartości dowodowej, czyli tego jedynego, po co się ją robi.",
+          title: "Pobieramy dowody doręczenia, nie tylko pisma",
+          desc: "Dowody są osobnym zasobem. Bez nich integracja nie ma wartości dowodowej, a to jedyny powód, dla którego się ją robi.",
         },
         {
-          title: "Wysyłka z załącznikiem to trzy kroki, nie jeden",
-          desc: "Najpierw powstaje wersja robocza, potem dołącza się do niej załączniki osobnym wywołaniem, dopiero na końcu następuje wysłanie. Pominięcie środkowego kroku kończy się pismem bez załącznika, wysłanym i nieodwracalnym. Piszemy to wprost, bo to jest dokładnie ten rodzaj błędu, który wychodzi po miesiącu.",
-        },
-        {
-          title: "Gdzie mają trafiać pisma",
-          desc: "Do systemu obiegu dokumentów, do CRM, na skrzynkę, do której już zaglądacie, albo do arkusza, jeśli tak dziś pracujecie. Nie narzucamy narzędzia, bo sens integracji polega właśnie na tym, żeby nie dokładać kolejnego miejsca do sprawdzania.",
-        },
-        {
-          title: "Czego potrzebujemy od Was",
-          desc: "Dostępu do środowiska testowego usługi, o który występuje podmiot, oraz informacji, z jakiego systemu korzystacie po swojej stronie. Wniosku o dostęp nie złożymy za Was, bo składa go właściciel skrzynki.",
+          title: "Pisma trafiają tam, gdzie już pracujecie",
+          desc: "Do obiegu dokumentów, CRM, skrzynki mailowej albo arkusza. Nie dokładamy kolejnego miejsca do sprawdzania.",
         },
         {
           title: "Kiedy to się nie opłaca",
-          desc: "Przy kilku pismach rocznie panel dostawcy w zupełności wystarczy i nie ma czego automatyzować. Integracja zaczyna mieć sens tam, gdzie pism jest na tyle dużo, że ktoś je przepisuje, albo gdzie termin liczy się od doręczenia i ktoś musi tego pilnować.",
+          desc: "Przy kilku pismach rocznie panel w zupełności wystarczy. Integracja ma sens, gdy ktoś pisma przepisuje albo pilnuje terminów od doręczenia.",
         },
       ]}
       pricing={[
@@ -109,9 +82,8 @@ export default function EDoreczeniaIntegracja() {
           price: "0 zł",
           desc: "Zanim cokolwiek zlecicie.",
           features: [
-            "Sprawdzamy, czy Wasz system da się z tym spiąć i czym",
-            "Informacja, ile pism trzeba mieć, żeby to się zwróciło",
-            "Gotowy klient API do obejrzenia, publicznie",
+            "Czy i czym da się spiąć Wasz system",
+            "Przy jakiej liczbie pism to się zwraca",
           ],
         },
         {
@@ -119,9 +91,8 @@ export default function EDoreczeniaIntegracja() {
           price: "3 900 zł",
           desc: "Najczęstszy zakres na start.",
           features: [
-            "Pisma trafiają do Waszego systemu automatycznie",
-            "Dowody doręczenia pobierane i przechowywane razem z nimi",
-            "Powiadomienie o nowym piśmie tam, gdzie je zobaczycie",
+            "Pisma i dowody doręczenia w Waszym systemie",
+            "Powiadomienie o nowym piśmie",
             "Kod i dostępy zostają u Was",
           ],
           featured: true,
@@ -131,10 +102,8 @@ export default function EDoreczeniaIntegracja() {
           price: "7 900 zł",
           desc: "Z wysyłaniem pism z Waszego systemu.",
           features: [
-            "Wszystko z wariantu podstawowego",
-            "Wysyłka z załącznikami, z obsługą wersji roboczej",
-            "Kolejka ponowień, gdy usługa nie odpowiada",
-            "Panel z historią i ręcznym ponowieniem",
+            "Wszystko z odbioru pism",
+            "Wysyłka z załącznikami i ponowieniami",
             "Pierwszy miesiąc opieki w cenie",
           ],
         },
@@ -145,113 +114,21 @@ export default function EDoreczeniaIntegracja() {
           a: PODMIOTY.map((p) => p.opis).join(" "),
         },
         {
-          q: "Jak założyć adres do e-Doręczeń dla jednoosobowej działalności, krok po kroku?",
-          a: "Przez Biznes.gov.pl, na stronie usługi „Złóż wniosek dotyczący adresu do e-Doręczeń dla firmy” (biznes.gov.pl/pl/portal/ou709). 1. Kliknijcie „Załatw online” i zalogujcie się do Konta Przedsiębiorcy, przy pierwszym logowaniu system sam poprowadzi rejestrację. 2. W kreatorze podajcie imię, nazwisko, PESEL, NIP i REGON firmy, adres do korespondencji oraz e-mail, na który przyjdzie informacja o utworzeniu adresu. Jeśli skrzynką ma zarządzać ktoś inny, na przykład księgowa, wpiszcie go jako administratora: imię, nazwisko, PESEL i e-mail. 3. Podpiszcie wniosek profilem zaufanym, podpisem osobistym z e-dowodu albo podpisem kwalifikowanym i kliknijcie „Wyślij”. Na zebranie podpisów są 4 dni. 4. Czekajcie na maila z instrukcją aktywacji, stan sprawy widać w Koncie Przedsiębiorcy w „Moich sprawach”. 5. Po mailu zalogujcie się do Konta Przedsiębiorcy i aktywujcie skrzynkę: e-Doręczenia, „Przejdź do aktywacji”, tam też podajecie zwykły e-mail do powiadomień o nowych pismach. Dopiero po aktywacji adres trafia do bazy adresów elektronicznych i urzędy zaczynają na niego pisać. Całość jest bezpłatna, opłata skarbowa 17 zł dochodzi tylko wtedy, gdy wniosek składa pełnomocnik. Źródło: https://www.biznes.gov.pl/pl/portal/ou709",
-        },
-        {
-          q: "Ile czeka się na aktywację adresu do e-Doręczeń po złożeniu wniosku?",
-          a: "Ustawa nie podaje sztywnego terminu. Wiadomość z potwierdzeniem utworzenia adresu przychodzi mailem dopiero po tym, jak minister właściwy do spraw informatyzacji otrzyma kompletny i poprawny wniosek, a w praktyce zajmuje to od kilku dni do kilku tygodni. Im bliżej terminu obowiązku, tym więcej wniosków trafia do rozpatrzenia naraz, więc czas oczekiwania może się wydłużać. Status swojego wniosku sprawdza się w Koncie Przedsiębiorcy, w sekcji „Moje sprawy”. Firma wpisana do CEIDG przed 2025 rokiem ma obowiązek od 1 października 2026, więc jeśli wniosku jeszcze nie złożyła, powinna zrobić to od razu, bo czas oczekiwania liczy się od złożenia, nie od terminu.",
-        },
-        {
-          q: "Jak sprawdzić, czy nasza firma ma już aktywny adres do e-Doręczeń?",
-          a: "Publiczna wyszukiwarka adresów na gov.pl pokazuje tylko urzędy i inne podmioty publiczne, adresów firm w niej nie znajdziecie. Stan własnego wniosku sprawdza się po zalogowaniu na edoreczenia.gov.pl, w opcji „Zarządzaj adresami do e-Doręczeń” w prawym górnym rogu, albo w Koncie Przedsiębiorcy, jeśli wniosek szedł przez biznes.gov.pl. Status „W trakcie weryfikacji” znaczy, że wniosek czeka, i nawet gdy zauważycie w nim błąd, nie składajcie drugiego. „Odrzucony” pokazuje powód i wymaga nowego, poprawnego wniosku. „Pozytywnie rozpatrzony” to jeszcze nie koniec, bo administrator musi aktywować skrzynkę po otrzymaniu maila. Dopiero wtedy adres działa.",
-        },
-        {
-          q: "Jak sprawdzić, czy spółka z KRS ma adres do e-Doręczeń?",
-          a: "W aktualnym odpisie KRS. Adres, który jest w bazie adresów elektronicznych, odpis pokazuje w dziale 1, przy siedzibie i adresie spółki, jako adres do doręczeń elektronicznych wpisany do bazy adresów elektronicznych. Odpis pobiera się bezpłatnie na ekrs.ms.gov.pl albo przez interfejs api-krs.ms.gov.pl. Najszybciej wpisać numer KRS w naszym narzędziu na tej stronie, w trybie „Spółka: po numerze KRS”: pokazuje nazwę spółki, datę wpisu do rejestru, stan odpisu i to, czy adres w nim jest. Działa to także dla kontrahenta, bo odpis KRS jest jawny.",
-        },
-        {
-          q: "Od kiedy spółka z o.o. musi mieć adres do e-Doręczeń?",
-          a: "Spółka z o.o. i każda inna spółka wpisana do rejestru przedsiębiorców KRS przed 1 stycznia 2025 ma obowiązek od 1 kwietnia 2025. Spółka wpisana od 1 stycznia 2025 musi mieć adres od dnia wpisu. Oba terminy już minęły, więc spółka bez adresu powinna złożyć wniosek przez Biznes.gov.pl od razu, ze wskazaniem administratora skrzynki. Kary pieniężnej za spóźnienie nie ma, ale do czasu aktywacji urzędy doręczają pisma papierowo albo usługą hybrydową.",
-        },
-        {
-          q: "Złożyliśmy wniosek, a w odpisie KRS dalej nie ma adresu do e-Doręczeń. Dlaczego?",
-          a: "Najczęściej dlatego, że skrzynka nie została jeszcze aktywowana. Pozytywne rozpatrzenie wniosku to nie koniec: administrator dostaje maila z instrukcją i musi aktywować skrzynkę w Koncie Przedsiębiorcy, dopiero wtedy adres trafia do bazy adresów elektronicznych, a z niej do odpisu. Stan wniosku widać w Koncie Przedsiębiorcy, w „Moich sprawach”. Jeśli wniosek ma status „W trakcie weryfikacji”, nie składajcie drugiego, bo to tylko wydłuża sprawę.",
-        },
-        {
-          q: "Nasz wniosek o adres do e-Doręczeń został odrzucony. Dlaczego i co teraz?",
-          a: "Powód odrzucenia widać we wniosku, a poprawka to zawsze nowy wniosek. Biznes.gov.pl wymienia siedem powodów. Najczęstszy to dane administratora skrzynki niezgodne z rejestrem PESEL: wpiszcie je jeszcze raz z polskimi znakami i tylko z pierwszym imieniem. Gdy niezgodne są dane osoby składającej wniosek, najpierw poprawcie je w Koncie Przedsiębiorcy. Spółka dostaje odmowę, gdy wniosek podpisał ktoś niezgodnie z reprezentacją wpisaną w rejestrze; wtedy podpisuje właściwa osoba albo dołącza się pełnomocnictwo podpisane zgodnie z reprezentacją. Odmowa przychodzi też przy braku albo złym podpisie elektronicznym, a podpisać trzeba także każdy załącznik. Jeśli powodem jest to, że firma ma już adres do e-Doręczeń, nie składajcie kolejnego wniosku, tylko znajdźcie maila od Zespołu e-Doręczeń i aktywujcie skrzynkę według instrukcji. Źródło: biznes.gov.pl, „Co zrobić, gdy wniosek o adres do e-Doręczeń został odrzucony”.",
-        },
-        {
-          q: "Czy księgowa albo pracownik może odbierać nasze e-Doręczenia?",
-          a: "Tak, i są na to dwie drogi. Pierwsza to wniosek: firma z CEIDG może wskazać w nim administratora skrzynki, na przykład księgową, podając jej imię, nazwisko, PESEL i e-mail, a spółka z KRS musi administratora wskazać. Sam wniosek może też złożyć pełnomocnik, wtedy dochodzi 17 zł opłaty skarbowej od pełnomocnictwa. Druga droga działa po aktywacji: administrator zaprasza kolejne osoby w zakładce „Użytkownicy”, podając ich PESEL, datę urodzenia, imię, nazwisko i e-mail. Do wyboru jest rola „Uprawniony”, która czyta, wysyła, przenosi i usuwa wiadomości, albo „Obserwator”, który tylko czyta. Zaproszenie jest ważne 14 dni, a zaproszona osoba loguje się własnym profilem zaufanym, aplikacją mObywatel, bankowością elektroniczną albo e-dowodem. Dzięki temu pismo z urzędu widzi też księgowa, zanim minie 14 dni na odbiór.",
-        },
-        {
-          q: "Co się dzieje, gdy nie odbierzemy pisma z urzędu w e-Doręczeniach?",
-          a: "Pismo od urzędu, którego nie odbierzecie w ciągu 14 dni, uznaje się za doręczone po upływie tego terminu, tak jak list, po który nikt nie poszedł na pocztę. Mówi o tym art. 41 ust. 1 pkt 3 ustawy o doręczeniach elektronicznych. Od tego dnia biegną terminy na odpowiedź, odwołanie albo zapłatę, nawet jeśli nikt pisma nie otworzył. Dlatego samo założenie skrzynki nie wystarczy. Ktoś musi do niej zaglądać albo dostawać powiadomienia na zwykły adres e-mail.",
-        },
-        {
-          q: "Skąd będziemy wiedzieć, że urząd przysłał nam pismo w e-Doręczeniach?",
-          a: "Z powiadomienia na zwykły adres e-mail. Ten adres podaje administrator przy aktywacji skrzynki: w Koncie Przedsiębiorcy wybiera e-Doręczenia, skrzynkę, „Przejdź do aktywacji” i wpisuje e-mail, na który mają przychodzić powiadomienia. Mail tylko informuje o nowej wiadomości, samo pismo czyta się po zalogowaniu na edoreczenia.gov.pl albo w Koncie Przedsiębiorcy. Skutek prawny nie zależy od tego, czy powiadomienie dotarło: pismo od urzędu nieodebrane w ciągu 14 dni i tak uznaje się za doręczone. Dlatego przy aktywacji podajcie adres, który ktoś w firmie czyta codziennie, na przykład wspólną skrzynkę biura zamiast prywatnej skrzynki właściciela, dodajcie nadawcę powiadomień do zaufanych i sprawdzajcie folder SPAM. Pilnujcie też miejsca w skrzynce e-Doręczeń: gdy jest pełna, nowe wiadomości czekają, aż zwolni się miejsce, choć powiadomienia o pismach od urzędów dalej przychodzą. Zmiana e-maila administratora wymaga wniosku o aktualizację danych na edoreczenia.gov.pl, w opcji „Zarządzaj adresami do e-Doręczeń”, sprawa „Aktualizacja danych”.",
-        },
-        {
-          q: "Czy po założeniu adresu do e-Doręczeń przestaną do nas przychodzić listy papierowe?",
-          a: "Z urzędów w większości tak, z sądów jeszcze nie. Urzędy administracji rządowej, w tym urzędy skarbowe, a także ZUS, KRUS i samorządy są objęte e-Doręczeniami od 2025 roku i od 1 stycznia 2026 to dla nich podstawowy kanał, więc gdy adres Waszej firmy jest już w bazie adresów elektronicznych, ich pisma przychodzą do skrzynki e-Doręczeń. Sądy, trybunały, prokuratura i komornicy mają ten obowiązek dopiero od 1 października 2029 (art. 155 ust. 7 ustawy o doręczeniach elektronicznych), więc do tego czasu pismo z sądu dalej może przyjść listem poleconym z awizo. Komornicy już teraz mogą doręczać pisma w egzekucji na adres do e-Doręczeń z bazy, na podstawie rozporządzenia Ministra Sprawiedliwości, choć nie muszą. Także urząd, który zwykle pisze elektronicznie, może wysłać papier, gdy przepis szczególny przewiduje inną formę doręczenia albo przeszkadzają ograniczenia techniczne. W praktyce od 1 października 2026 pisma z terminami przychodzą do firmy dwiema drogami: do skrzynki e-Doręczeń i do zwykłej skrzynki pocztowej. Pilnujcie obu, bo nieodebrane pismo z urzędu po 14 dniach uznaje się za doręczone w obu przypadkach. Źródła: art. 155 ustawy z 18 listopada 2020 r. o doręczeniach elektronicznych i https://www.gov.pl/web/e-doreczenia/pytania-i-odpowiedzi",
-        },
-        {
-          q: "Jak długo pisma zostają w skrzynce e-Doręczeń i jak je zarchiwizować?",
-          a: "Skrzynka nie jest archiwum i ma limit. Według stanowiska Ministerstwa Cyfryzacji skrzynka firmy mieści 3 GB (urzędu 30 GB), a do limitu liczą się wiadomości odebrane i wysłane, robocze, te w koszu oraz dowody doręczenia. Przy 90% zapełnienia przychodzi ostrzeżenie. Po przekroczeniu 98% skrzynka nie pokazuje pełnej treści nowych wiadomości i nie pozwala niczego wysłać, dopóki nie zwolnicie miejsca, a taka wiadomość czeka najwyżej 180 dni od wysłania. Dlatego pisma, które już obsłużyliście, warto regularnie archiwizować: w skrzynce na edoreczenia.gov.pl zaznaczacie wiadomości, zamawiacie archiwum i w ciągu 24 godzin dostajecie maila, że plik .zip z pismami i dowodami czeka w zakładce „Zamówione archiwa”. Pobrać go trzeba w ciągu 3 dni, jedno archiwum ma najwyżej 25 GB, a po pobraniu zarchiwizowane wiadomości można usunąć ze skrzynki. Trzymajcie dowód doręczenia razem z pismem, bo to on pokazuje datę, od której biegną terminy. Przy zamykaniu firmy pobierzcie archiwum wcześniej: po wykreśleniu adresu z bazy skrzynka razem z zawartością jest usuwana po roku. Źródła: https://kirp.pl/e-doreczenia-pytania-i-odpowiedzi-w-oparciu-o-stanowisko-ministerstwa-cyfryzacji/ i https://www.gov.pl/web/e-doreczenia/Pojemnosc-skrzynki-do-e-doreczen-oraz-archiwizacja-korespondencji",
-        },
-        {
-          q: "Czy przez e-Doręczenia możemy wysłać pismo do innej firmy, na przykład wezwanie do zapłaty?",
-          a: "Tak, ale nie w ramach bezpłatnej skrzynki. Pisma do urzędów wysyłacie za darmo, natomiast korespondencja między firmami, a także między firmą i osobą prywatną, jest płatna i wymaga usługi dodatkowej. U Poczty Polskiej nazywa się ona e-Polecony (kwalifikowana usługa rejestrowanego doręczenia elektronicznego). Według gov.pl działa to tylko wtedy, gdy obie strony mają ją włączoną u Poczty Polskiej albo u innego kwalifikowanego dostawcy, więc zanim wyślecie wezwanie, upewnijcie się u kontrahenta, że ją ma, bo inaczej zostaje list polecony. Włącza ją każda firma sama: loguje się do swojej skrzynki e-Doręczeń, zakłada i aktywuje skrzynkę e-Poleconego i akceptuje regulamin, a uprawnienia użytkowników zwykłej skrzynki tam nie przechodzą. Płaci nadawca, z góry, kartą przez bramkę płatności, a Poczta przysyła fakturę PDF. Według cennika Poczty Polskiej jedna przesyłka kosztuje 2,20 zł brutto (1,79 zł netto), są też pakiety miesięczne, np. 10 sztuk za 20,79 zł brutto. Adresu drugiej firmy nie znajdziecie w wyszukiwarce, bo firmy mogą wyszukiwać tylko adresy urzędów, więc trzeba go dostać od kontrahenta, najlepiej wpisać do umowy. Poczta wystawia dowody nadania i dostarczenia, przechowywane 24 miesiące, odbiorca ma 25 dni na pobranie przesyłki, a w skrzynce e-Poleconego zostaje ona 90 dni, więc ważne pisma od razu zapisujcie u siebie. Źródła: https://www.gov.pl/web/e-doreczenia/pytania-i-odpowiedzi, https://www.gov.pl/web/e-doreczenia/oplaty i https://bip.poczta-polska.pl/kwalifikowana-usluga-rde/",
-        },
-        {
-          q: "Czy zawieszona działalność też musi mieć adres do e-Doręczeń?",
-          a: "Tak. Obowiązek dotyczy każdej firmy wpisanej do CEIDG albo do rejestru przedsiębiorców w KRS, niezależnie od tego, czy działalność jest aktywna, czy zawieszona. Urząd może wysłać pismo także do firmy w zawieszeniu, a 14 dni na odbiór biegnie tak samo. Firmowego adresu nie musi zakładać ktoś, kto nie ma wpisu ani w CEIDG, ani w KRS, na przykład rolnik bez zarejestrowanej działalności.",
-        },
-        {
-          q: "Prowadzimy spółkę cywilną. Kto musi mieć adres do e-Doręczeń?",
-          a: "Każdy wspólnik osobno, a sama spółka cywilna go nie dostanie. Ministerstwo Cyfryzacji odpowiada wprost, że spółka cywilna nie może mieć adresu do doręczeń elektronicznych, bo jest tylko umową między wspólnikami i nie ma własnej podmiotowości prawnej, więc urząd doręcza pisma każdemu wspólnikowi na jego adres. Termin liczy się dla każdego wspólnika według jego własnego wpisu: wspólnik wpisany do CEIDG przed 2025 rokiem ma obowiązek od 1 października 2026, wspólnik wpisany od 2025 roku od dnia wpisu, a wspólnik, który jest spółką z KRS, od terminu tej spółki. Dwóch wspólników z CEIDG to dwa wnioski i dwie skrzynki, do których ktoś musi zaglądać. Źródło: https://www.gov.pl/web/e-doreczenia/pytania-i-odpowiedzi",
-        },
-        {
-          q: "Prowadzimy fundację albo stowarzyszenie. Czy musimy mieć adres do e-Doręczeń?",
-          a: "Zależy od tego, w którym rejestrze KRS jesteście, a nie od formy prawnej. Fundacja albo stowarzyszenie wpisane także do rejestru przedsiębiorców KRS, czyli prowadzące działalność gospodarczą, ma obowiązek jak spółka: od 1 kwietnia 2025, jeśli wpis do rejestru przedsiębiorców był przed 2025 rokiem, albo od dnia wpisu, jeśli był później. Taki termin już minął, więc wniosek składa się od razu, bez kary pieniężnej za spóźnienie. Organizacja tylko w rejestrze stowarzyszeń, bez działalności gospodarczej, może mieć adres, ale nie musi, a 1 października 2026 jej nie dotyczy. Czy jesteście w rejestrze przedsiębiorców, widać w odpisie z KRS na ekrs.ms.gov.pl. Wniosek składa jeden z reprezentantów, a gdy do reprezentacji potrzeba kilku osób, dołącza pełnomocnictwo od pozostałych podpisane profilem zaufanym albo certyfikatem kwalifikowanym, bez opłaty skarbowej. Źródło: https://www.gov.pl/web/e-doreczenia/pytania-i-odpowiedzi",
-        },
-        {
           q: "Ile kosztuje adres do e-Doręczeń i co grozi za jego brak?",
-          a: "Założenie adresu i odbieranie pism są bezpłatne, firma z CEIDG albo z KRS składa wniosek przez Biznes.gov.pl. Ustawa nie przewiduje osobnej kary pieniężnej za brak adresu. Urząd, który nie znajdzie Waszego adresu, może wysłać pismo publiczną usługą hybrydową albo listem poleconym. Prawdziwe ryzyko jest gdzie indziej: pismo w skrzynce, do której nikt nie zagląda, po 14 dniach uznaje się za doręczone.",
-        },
-        {
-          q: "Nie zdążyliśmy z adresem do e-Doręczeń przed 1 października. Co teraz?",
-          a: "Złóżcie wniosek od razu, obowiązek nie wygasa razem z terminem, a ustawa nie przewiduje kary pieniężnej za spóźnienie. Dopóki adresu Waszej firmy nie ma w bazie adresów elektronicznych, urząd doręcza pisma na papierze, publiczną usługą hybrydową albo listem poleconym, więc pilnujcie zwykłej skrzynki pocztowej i awiz. Jeśli wniosek już złożyliście i ma status „W trakcie weryfikacji”, nie składajcie drugiego, tylko czekajcie na maila. Gdy przyjdzie, administrator musi jeszcze aktywować skrzynkę, bo dopiero wtedy adres trafia do bazy. Od tej chwili urzędy piszą na skrzynkę, a pismo nieodebrane w ciągu 14 dni uznaje się za doręczone, dlatego przed aktywacją ustawcie powiadomienia na zwykły adres e-mail.",
-        },
-        {
-          q: "Biznes.gov.pl nie działa albo się zawiesza, a termin mija. Co robimy?",
-          a: "Wniosek dla firmy z CEIDG albo z KRS składa się wyłącznie przez Biznes.gov.pl, więc mObywatel.gov.pl tu nie pomoże, bo służy do prywatnego adresu. Ministerstwo Rozwoju i Technologii potwierdziło w komunikacie z 29.09.2026, że część usług Biznes.gov.pl działa z utrudnieniami: zakładanie i aktywacja adresu do e-Doręczeń, wybrane czynności w CEIDG, logowanie i operacje wymagające kodu weryfikacyjnego. Zalecenia resortu: po błędzie nie ponawiajcie wielokrotnie tego samego działania, sprawdźcie, czy wcześniejszy wniosek nie został już zarejestrowany, a kodu weryfikacyjnego szukajcie także w folderze SPAM. Na gov.pl, na stronie „Planowane niedostępności e-Doręczeń”, jest też zaplanowana przerwa techniczna w nocy z 3 na 4.10.2026 od 20:00 do 7:00. Próbujcie poza godzinami pracy biur, najlepiej wcześnie rano. Zanim wyślecie wniosek drugi raz, sprawdźcie w Koncie Przedsiębiorcy, w „Moich sprawach”, czy pierwszy nie doszedł, bo dwa wnioski tylko wydłużą weryfikację. Jeśli nie zdążycie do 30 września, nie grozi za to kara pieniężna, co MRiT napisało wprost: przepisy nie przewidują kar za niezałożenie adresu w terminie. Złóżcie wniosek w pierwszych dniach października, a do czasu aktywacji adresu urzędy doręczają pisma na papierze. Źródła: https://www.gov.pl/web/e-doreczenia/niedostepnosc-uslugi-edoreczen oraz komunikat MRiT z 29.09.2026 cytowany przez https://forsal.pl/biznes/aktualnosci/artykuly/11321567,problemy-w-dzialaniu-e-doreczen-i-ceidg-jest-komunikat-rzadu.html",
-        },
-        {
-          q: "Czy wniosek o adres do e-Doręczeń można złożyć papierowo w urzędzie gminy?",
-          a: "Według strony Biznes.gov.pl e-usługa „Złóż wniosek o adres do e-Doręczeń dla firmy” działa tylko przez internet, więc na papierze w urzędzie gminy tego wniosku nie złożycie. Ta sama strona wymienia drugą drogę: dane adresu do e-Doręczeń można wskazać we wniosku o wpis albo o zmianę wpisu w CEIDG (dla spółek w KRS), ale wniosek o zmianę wpisu też składa się przez Biznes.gov.pl. Nie znaleźliśmy oficjalnego potwierdzenia, że papierowy wniosek złożony w gminie załatwia adres do e-Doręczeń, więc nie polegajcie na tym w ostatniej chwili. Gdy portal się zawiesza, próbujcie o innej porze, a do czasu aktywacji skrzynki urząd doręcza pisma tradycyjnie. Źródło: https://www.biznes.gov.pl/pl/portal/ou709",
-        },
-        {
-          q: "Czy adres firmy i prywatny adres do e-Doręczeń to ta sama skrzynka?",
-          a: "Nie. Dla osoby prywatnej, dla firmy i dla zawodu zaufania publicznego zakłada się osobne adresy, nawet jeśli wszystkie należą do jednej osoby prowadzącej jednoosobową działalność. Pisma do firmy można odbierać na mObywatel.gov.pl, na edoreczenia.gov.pl, w aplikacji mObywatel, na Koncie Przedsiębiorcy albo w systemie obiegu dokumentów, który jest zintegrowany z usługą.",
-        },
-        {
-          q: "Czy musimy mieć adres do doręczeń, żeby zacząć?",
-          a: "Do samej integracji tak, bo to Wasza skrzynka jest jej punktem zaczepienia. Wniosek o adres składa podmiot i jest to procedura urzędowa, a nie techniczna. Rozpoznanie możemy zrobić wcześniej, na podstawie tego, z jakiego systemu korzystacie.",
+          a: "Adres jest bezpłatny, wniosek składa się przez Biznes.gov.pl. Kary pieniężnej za brak nie ma. Ryzyko jest inne: pismo z urzędu nieodebrane w ciągu 14 dni uznaje się za doręczone.",
         },
         {
           q: "Po co komuś integracja, skoro jest panel dostawcy?",
-          a: "Przy kilku pismach rocznie po nic. Sens pojawia się wtedy, gdy ktoś codziennie loguje się do osobnego panelu, przepisuje z niego dane albo pilnuje terminów liczonych od doręczenia. Wtedy integracja zdejmuje czynność, która i tak musi się dziać, tylko dziś dzieje się ręcznie.",
-        },
-        {
-          q: "Skąd mamy wiedzieć, że umiecie to zrobić?",
-          a: "Z kodu, pod adresem github.com/rodorn/edoreczenia-klient. Jest tam komplet metod z projektu technicznego interfejsu, testy i opis trzech pułapek, na których takie wdrożenia zwykle upadają. Możecie go ocenić sami albo dać do oceny swojemu programiście, zanim cokolwiek zlecicie. To więcej niż referencja, bo referencji nie da się sprawdzić linijka po linijce.",
-        },
-        {
-          q: "Mamy skrzynkę w ePUAP albo w aplikacji mObywatel. Czy to jest to samo, co adres do e-Doręczeń?",
-          a: "Nie, to dwie osobne skrzynki. ePUAP to starsze rozwiązanie z 2008 roku, e-Doręczenia to nowszy system z własnym adresem, prawnie równoważny listowi poleconemu za potwierdzeniem odbioru. Aplikacja mObywatel łączy dostęp do obu, więc z jednego miejsca widać foldery obu skrzynek, ale to nie znaczy, że jedna zastępuje drugą. Konto w ePUAP nie zwalnia z obowiązku założenia adresu do e-Doręczeń, a dla większości urzędów to właśnie e-Doręczenia są dziś domyślnym sposobem korespondencji, nie ePUAP.",
+          a: "Przy kilku pismach rocznie po nic. Ma sens, gdy ktoś codziennie loguje się do panelu, przepisuje z niego dane albo pilnuje terminów liczonych od doręczenia.",
         },
         {
           q: "Czy dane pism wychodzą poza naszą firmę?",
-          a: "Nie muszą. Integrację stawiamy na Waszym serwerze i wtedy pisma idą wyłącznie między usługą a Waszym systemem. Jeśli wolicie rozwiązanie chmurowe, powiemy wprost, co przez czyją infrastrukturę przechodzi, zanim cokolwiek uruchomimy.",
+          a: "Nie muszą. Integrację stawiamy na Waszym serwerze i pisma idą tylko między usługą a Waszym systemem.",
         },
       ]}
       formId="edoreczenia"
       formHeading="Napiszcie, z jakiego systemu korzystacie"
-      formIntro="Wystarczy nazwa systemu obiegu dokumentów albo CRM, i jedno zdanie o tym, ile pism miesięcznie się u Was pojawia. Odpiszemy, czy integracja ma sens, czy panel wystarczy."
+      formIntro="Nazwa systemu i liczba pism miesięcznie wystarczą. Odpiszemy, czy integracja ma sens, czy panel wystarczy."
       submitLabel="Wyślij opis"
       microCopy="Ustalenia prowadzimy mailowo. Telefon, jeśli tak Wam wygodniej."
       serviceName="Integracja z e-Doręczeniami"

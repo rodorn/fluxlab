@@ -30,24 +30,19 @@ export const metadata: Metadata = {
 
 const faqItems = [
   {
-    question: "Skąd mamy wiedzieć, czy ktoś może podszyć się pod naszą domenę?",
-    answer:
-      "Zależy to od trzech rekordów DNS: SPF, DKIM i DMARC. Jeśli domena nie ma DMARC albo ma go w trybie p=none, praktycznie każdy może wysłać wiadomość wyglądającą jak od Ciebie. Najszybciej sprawdzisz to darmowym audytem: wpisujesz domenę i w kilka sekund masz wynik.",
-  },
-  {
     question: "Dlaczego nasze maile z ofertami trafiają do spamu?",
     answer:
-      "Najczęstsza przyczyna to brak lub błędna konfiguracja SPF, DKIM i DMARC. Od 2024 roku Gmail i Outlook wymagają tych rekordów od firm wysyłających więcej wiadomości. Bez nich część poczty jest cicho odrzucana lub ląduje w spamie, a Ty tego nie widzisz, bo z Twojej strony mail wychodzi poprawnie.",
+      "Najczęściej przez brak lub błędne SPF, DKIM i DMARC. Gmail i Outlook wymagają tych rekordów, a bez nich część poczty ginie po cichu.",
   },
   {
     question: "Czy naprawa czegoś nie zepsuje?",
     answer:
-      "Nie, jeśli robi się to etapami. Najpierw DMARC w trybie obserwacji, który tylko zbiera raporty i niczego nie blokuje. Po dwóch tygodniach, gdy wiadomo, kto legalnie wysyła pocztę w imieniu domeny, zaostrza się politykę. Odwrotna kolejność potrafi zablokować własne faktury, dlatego kolejność ma znaczenie.",
+      "Nie, jeśli robi się to etapami. Najpierw DMARC w trybie obserwacji, po dwóch tygodniach zaostrzenie polityki.",
   },
   {
-    question: "Ile trwa i kosztuje uporządkowanie tego?",
+    question: "Ile to trwa?",
     answer:
-      "Sama diagnoza jest darmowa. Podstawowa naprawa SPF i DKIM to kwestia godzin, pełne wdrożenie DMARC do poziomu, który realnie blokuje podszywanie, to zwykle dwa tygodnie, bo trzeba zebrać dane z raportów przed zaostrzeniem polityki.",
+      "Diagnoza jest darmowa. SPF i DKIM poprawia się w kilka godzin, pełne wdrożenie DMARC trwa zwykle dwa tygodnie.",
   },
 ];
 
@@ -79,12 +74,9 @@ export default function PodszywanieEmailArticle() {
             fontSize: "1.05rem",
           }}
         >
-          To jeden z najczęstszych i najmniej widocznych problemów małych firm.
-          Jeśli Twoja domena nie jest poprawnie skonfigurowana, dowolna osoba
-          może wysłać wiadomość wyglądającą jak od Ciebie, a część Twoich
-          własnych maili z ofertami i fakturami może po cichu nie docierać do
-          klientów. Poniżej wyjaśniamy prosto, od czego to zależy i jak to
-          sprawdzić w kilka sekund.
+          Jeśli domena nie jest poprawnie skonfigurowana, każdy może wysłać
+          mail wyglądający jak od Ciebie, a część Twoich ofert i faktur po
+          cichu nie dociera do klientów.
         </p>
 
         <div
@@ -124,53 +116,31 @@ export default function PodszywanieEmailArticle() {
           Trzy rekordy, które decydują o wszystkim
         </h2>
         <p style={{ color: "var(--article-text)", lineHeight: 1.7 }}>
-          Bezpieczeństwo poczty firmowej opiera się na trzech publicznych
-          wpisach w DNS Twojej domeny. Każdy odpowiada za co innego, a razem
-          decydują, czy ktoś może się pod Ciebie podszyć i czy Twoje maile
-          docierają.
+          O tym decydują trzy publiczne wpisy w DNS Twojej domeny.
         </p>
 
         <h3 style={{ fontWeight: 700, marginTop: "1.5rem" }}>
           SPF, kto ma prawo wysyłać w Twoim imieniu
         </h3>
         <p style={{ color: "var(--article-text)", lineHeight: 1.7 }}>
-          SPF to lista serwerów uprawnionych do wysyłania poczty z Twojej
-          domeny. Bez niego dowolny serwer na świecie może podać się za Twój, a
-          odbiorca nie ma jak tego wykryć.
+          Lista serwerów uprawnionych do wysyłania poczty z Twojej domeny.
         </p>
 
         <h3 style={{ fontWeight: 700, marginTop: "1.5rem" }}>
           DKIM, podpis, którego nie da się podrobić
         </h3>
         <p style={{ color: "var(--article-text)", lineHeight: 1.7 }}>
-          DKIM to kryptograficzny podpis dokładany do każdej wiadomości.
-          Odbiorca sprawdza, czy list naprawdę wyszedł od Ciebie i czy nie
-          został po drodze zmieniony.
+          Podpis każdej wiadomości. Odbiorca sprawdza, czy list wyszedł od
+          Ciebie i nie został zmieniony.
         </p>
 
         <h3 style={{ fontWeight: 700, marginTop: "1.5rem" }}>
           DMARC, reguła, co zrobić z podejrzaną pocztą
         </h3>
         <p style={{ color: "var(--article-text)", lineHeight: 1.7 }}>
-          DMARC spina SPF i DKIM i mówi serwerom odbiorców, co zrobić z
-          wiadomością, która nie przechodzi weryfikacji: przepuścić, oznaczyć
-          jako spam czy odrzucić. Od 2024 roku Gmail i Outlook wymagają tego
-          rekordu od firm wysyłających więcej poczty. Jego brak albo tryb p=none
-          oznacza, że nikt nie blokuje podszywania pod Twoją domenę.
-        </p>
-
-        <h2
-          style={{ fontSize: "1.4rem", fontWeight: 700, marginTop: "2.5rem" }}
-        >
-          Dlaczego to realny problem, a nie teoria
-        </h2>
-        <p style={{ color: "var(--article-text)", lineHeight: 1.7 }}>
-          Oszustwo na fałszywą fakturę zaczyna się zwykle od maila, który
-          wygląda jak od zaufanego kontrahenta. Jeśli Twoja domena nie jest
-          zabezpieczona, przestępca może wysłać do Twoich klientów wiadomość z
-          Twojego adresu i zmienionym numerem konta. Drugi, cichszy koszt to
-          utracone maile: bez DMARC część Twoich ofert po prostu nie dociera, a
-          Ty widzisz tylko, że wiadomość wyszła.
+          Mówi serwerom odbiorców, co zrobić z wiadomością, która nie przeszła
+          SPF i DKIM. Brak DMARC albo tryb p=none oznacza, że nikt nie blokuje
+          podszywania pod Twoją domenę.
         </p>
 
         <h2
@@ -180,66 +150,20 @@ export default function PodszywanieEmailArticle() {
           Mail firmowy na własnej domenie: co jest potrzebne i ile kosztuje
         </h2>
         <p style={{ color: "var(--article-text)", lineHeight: 1.7 }}>
-          Potrzebne są dwie rzeczy: własna domena (adres w rodzaju
-          biuro@twojafirma.pl, rejestracja .pl to zwykle kilkadziesiąt złotych
-          rocznie, a pierwszy rok bywa promocyjny) oraz usługa poczty, która
-          trzyma skrzynki. Pocztę można mieć w pakiecie hostingu albo u dostawcy
-          biurowego. Adres w Gmailu lub Onecie nie jest mailem firmowym i nie da
-          się go zabezpieczyć rekordami domeny.
+          Potrzebna jest własna domena i usługa poczty. Skrzynka w Google
+          Workspace Business Starter kosztuje 31,50 zł netto miesięcznie za
+          osobę, w Microsoft 365 Business Basic około 30 zł (październik 2026,
+          umowa roczna). Adresu w Gmailu ani Onecie nie da się zabezpieczyć
+          rekordami domeny.
         </p>
         <p style={{ color: "var(--article-text)", lineHeight: 1.7 }}>
-          Ceny skrzynek u dwóch największych dostawców (październik 2026, netto,
-          za osobę miesięcznie, przy umowie rocznej): Google Workspace Business
-          Starter 31,50 zł (30 GB na pocztę i dysk), Microsoft 365 Business
-          Basic około 30 zł zależnie od sprzedawcy (skrzynka 50 GB i 1 TB
-          OneDrive). Dla trzyosobowej firmy to około 1080 do 1140 zł netto
-          rocznie. Hosting z pocztą jest tańszy, ale filtr spamu i limity
-          wysyłki są tam zwykle słabsze.
-        </p>
-        <p style={{ color: "var(--article-text)", lineHeight: 1.7 }}>
-          Bez względu na dostawcę w DNS domeny trzeba ustawić trzy rekordy: SPF
-          (wskazuje serwery dostawcy), DKIM (klucz generowany w panelu dostawcy)
-          i DMARC (zaczynając od p=none z raportami). Dostawca nie robi tego
-          sam, a bez tych wpisów maile z nowej skrzynki częściej lądują w
-          spamie. Czy rekordy są ustawione, sprawdzicie w kilka sekund w{" "}
+          U każdego dostawcy SPF, DKIM i DMARC trzeba ustawić samemu. Czy są
+          ustawione, sprawdzicie w{" "}
           <Link href="/audyt-poczty" style={{ textDecoration: "underline" }}>
             darmowym audycie poczty
           </Link>
-          , a pełniejszy obraz domeny i strony daje{" "}
-          <Link href="/audyt-strony" style={{ textDecoration: "underline" }}>
-            audyt strony
-          </Link>
           .
         </p>
-
-        <div
-          style={{
-            margin: "2.5rem 0",
-            padding: "1.5rem",
-            border: "1px solid #e5e5e5",
-            borderRadius: 12,
-          }}
-        >
-          <strong style={{ fontSize: "1.1rem" }}>Nie zgaduj, sprawdź</strong>
-          <p
-            style={{
-              color: "var(--article-muted)",
-              lineHeight: 1.6,
-              margin: "0.5rem 0 1rem",
-            }}
-          >
-            Wpisz domenę firmy, a w kilka sekund pokażemy stan SPF, DKIM i DMARC
-            oraz co konkretnie wymaga poprawy. Wszystko z publicznego DNS, bez
-            logowania i bez wysyłania czegokolwiek.
-          </p>
-          <Link
-            href="/audyt-poczty"
-            className="btn-primary"
-            style={{ padding: "0.7rem 1.5rem" }}
-          >
-            Sprawdź bezpieczeństwo poczty
-          </Link>
-        </div>
 
         <h2
           style={{ fontSize: "1.4rem", fontWeight: 700, marginTop: "2.5rem" }}

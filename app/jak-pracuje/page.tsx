@@ -33,56 +33,50 @@ export const metadata: Metadata = {
 const steps = [
   {
     number: "01",
-    title: "Bezpłatna diagnoza (30 min)",
+    title: "Bezpłatna diagnoza",
     duration: "30 minut · online",
     description:
-      "Rozmawiamy o tym, co chcesz usprawnić. Opisujesz problem, dopytujemy o szczegóły i mówimy wprost, czy widzimy sens automatyzacji, czy raczej trzeba najpierw uporządkować proces. Jeśli to nie nasz obszar, powiemy i skierujemy gdzie indziej.",
+      "Opisujesz problem, a my mówimy wprost, czy automatyzacja ma sens. Jeśli to nie nasz obszar, też to powiemy.",
     deliverables: [
-      "Wstępna ocena, czy automatyzacja ma sens",
-      "Wskazanie realnego efektu (ile godzin, jakie dane, jaki proces)",
-      "Szacunkowe widełki czasowe i kosztowe",
-      "Brak zobowiązań, nie kontynuujemy, jeśli nie widzimy wartości",
+      "Ocena, czy automatyzacja ma sens",
+      "Szacunkowe widełki czasu i kosztu",
+      "Brak zobowiązań",
     ],
   },
   {
     number: "02",
     title: "Audyt procesu",
-    duration: "3–7 dni roboczych",
+    duration: "3-7 dni roboczych",
     description:
-      "Jeśli po konsultacji chcemy iść dalej, robimy właściwy audyt. Patrzymy na aktualny proces, dane, narzędzia i integracje. Efekt to dokument z konkretną rekomendacją: co, jak, w jakiej kolejności, ile trwa i ile kosztuje. Audyt jest płatny, ale jego koszt odliczamy od wdrożenia, jeśli zdecydujesz się kontynuować.",
+      "Sprawdzamy proces, dane i narzędzia. Koszt audytu odliczamy od wdrożenia, jeśli idziemy dalej.",
     deliverables: [
-      "Mapa procesu AS-IS → TO-BE",
-      "Lista automatyzacji posortowana wg ROI",
-      "Wybór narzędzi z uzasadnieniem",
-      "Harmonogram wdrożenia z kamieniami milowymi",
-      "Stała cena za cały projekt (bez godzin rozliczeniowych)",
+      "Mapa procesu i lista automatyzacji wg zwrotu",
+      "Harmonogram wdrożenia",
+      "Stała cena za cały projekt",
     ],
   },
   {
     number: "03",
     title: "Wdrożenie",
-    duration: "2–8 tygodni zależnie od zakresu",
+    duration: "2-8 tygodni zależnie od zakresu",
     description:
-      "Pracujemy w krótkich iteracjach. Co tydzień dostajesz mierzalny postęp i możliwość zatrzymania projektu, jeśli coś nie działa jak trzeba. Płatność rozbijamy na transze powiązane z kamieniami milowymi, nie płacisz z góry za coś, czego jeszcze nie widziałeś.",
+      "Pracujemy w krótkich iteracjach, z postępem co tydzień. Płacisz transzami po odbiorze etapów.",
     deliverables: [
-      "Tygodniowy status w formie konkretów (co zrobione, co dalej)",
-      "Środowisko testowe przed wdrożeniem na produkcję",
-      "Dokumentacja każdej automatyzacji (co robi, kiedy się odpala, co zrobić, gdy przestanie działać)",
-      "Szkolenie zespołu (1–2 h)",
-      "Transze płatności powiązane z kamieniami milowymi",
+      "Środowisko testowe przed produkcją",
+      "Dokumentacja każdej automatyzacji",
+      "Szkolenie zespołu (1-2 h)",
     ],
   },
   {
     number: "04",
     title: "Wsparcie po wdrożeniu",
-    duration: "Bezpłatnie przez 30 dni, potem opcjonalnie",
+    duration: "30 dni bezpłatnie, potem opcjonalnie",
     description:
-      "Przez pierwszy miesiąc od wdrożenia poprawiamy bez dodatkowej opłaty wszystko, co wynika z błędów po naszej stronie lub niedoprecyzowanych wymagań. Potem możemy zostać jako stały serwis (retainer) albo przekazać pełną dokumentację twojemu zespołowi, zależnie od tego, co preferujesz.",
+      "Przez miesiąc poprawiamy bez opłat błędy po naszej stronie. Potem zostajemy jako stały serwis albo przekazujemy wszystko Twojemu zespołowi.",
     deliverables: [
-      "30 dni darmowych poprawek (błędy, uzupełnienia wymagań)",
-      "Runbook w razie awarii (co sprawdzić, kogo powiadomić)",
-      "Opcjonalny retainer (reakcja w 24 h w dni robocze)",
-      "Opcjonalne przekazanie wiedzy zespołowi IT",
+      "30 dni darmowych poprawek",
+      "Instrukcja na wypadek awarii",
+      "Opcjonalny stały serwis (reakcja w 24 h)",
     ],
   },
 ];
@@ -91,65 +85,38 @@ const pricingPrinciples = [
   {
     title: "Stała cena za projekt",
     description:
-      "Nie rozliczamy się per godzinę. Po audycie dostajesz konkretną kwotę za cały projekt. Jeśli zajmie nam dłużej, to nasz problem, nie Twój.",
+      "Nie rozliczamy się za godziny. Po audycie dostajesz jedną kwotę za całość.",
   },
   {
-    title: "Audyt odliczany od wdrożenia",
+    title: "Transze po odbiorze",
     description:
-      "Koszt audytu odejmujemy od ceny wdrożenia, jeśli kontynuujemy. Płacisz tylko wtedy, gdy audyt pozostanie samodzielnym opracowaniem (np. zdecydujesz się wdrażać samodzielnie).",
+      "Za każdy etap płacisz dopiero po jego odbiorze. Bez płatności z góry.",
   },
   {
-    title: "Transze płatności",
-    description:
-      "Projekt dzielimy na kamienie milowe. Za każdą transzę płacisz dopiero po odbiorze etapu. Bez płatności z góry za cały zakres.",
-  },
-  {
-    title: "Zero ukrytych kosztów",
-    description:
-      "Licencje narzędzi, koszty serwerowe i subskrypcje ustalamy przed startem. Nic nie dochodzi „po drodze”.",
+    title: "Bez ukrytych kosztów",
+    description: "Licencje, serwery i subskrypcje ustalamy przed startem.",
   },
 ];
 
 const faq = [
   {
     question: "Ile kosztuje konkretna automatyzacja?",
-    answer:
-      "Nie podajemy cennika z sufitu, bo tak samo nazwany projekt może mieć dwa różne koszty w zależności od danych i integracji. Po 30-minutowej konsultacji znasz widełki. Po audycie, konkretną, stałą cenę.",
-  },
-  {
-    question: "Pracujecie sami czy w zespole?",
-    answer:
-      "Pracujemy w wąskim składzie, bez warstw pośrednich. To oznacza dwie rzeczy: nie płacicie za project managerów ani account managerów, ale terminy zależą od małego zespołu, a nie od dużej firmy z zapasem ludzi. Jeśli projekt wymaga więcej rąk, mówimy o tym od razu i albo polecamy kogoś, albo podpinamy konkretnych podwykonawców za Waszą zgodą.",
-  },
-  {
-    question: "Co jeśli automatyzacja przestanie działać po kilku miesiącach?",
-    answer:
-      "Po wdrożeniu dostajesz dokumentację i runbook: co sprawdzić w pierwszej kolejności, kogo powiadomić, jak przywrócić działanie. Jeśli awaria wynika z naszego błędu, poprawiamy bezpłatnie niezależnie od tego, ile czasu minęło. Jeśli z zewnętrznej zmiany (np. API dostawcy), podajemy widełki i termin naprawy.",
-  },
-  {
-    question: "Kto to potem utrzymuje?",
-    answer:
-      "Masz trzy opcje: (1) utrzymanie przejmuje twój zespół, dostaje dokumentację i szkolenie; (2) zostajemy na retainerze ze stałą miesięczną opłatą i zdefiniowanym SLA; (3) rozwiązanie hybrydowe, zespół obsługuje codzienność, my jesteśmy do eskalacji.",
+    answer: "Po 30-minutowej diagnozie znasz widełki, a po audycie stałą cenę.",
   },
   {
     question: "Ile trwa najkrótszy projekt?",
     answer:
-      "Najprostsza integracja (np. formularz → CRM + notyfikacja) zajmuje ok. 2–4 dni roboczych od podpisania do uruchomienia. Wdrożenia CRM zwykle 3–6 tygodni, większe przepływy z integracjami API, do 8 tygodni.",
+      "Prosta integracja, np. formularz do CRM z powiadomieniem, to 2-4 dni robocze. Wdrożenie CRM zwykle 3-6 tygodni.",
   },
   {
-    question: "Czy zobaczymy postęp w trakcie wdrożenia?",
+    question: "Kto to potem utrzymuje?",
     answer:
-      "Tak, co tydzień. Dostajesz krótkie podsumowanie (3–5 zdań): co skończyliśmy, co jest w trakcie, co blokuje. Większe etapy pokazujemy na demo na żywo, zanim idą na produkcję.",
+      "Twój zespół z dokumentacją i szkoleniem, my w stałym serwisie albo oba warianty naraz.",
   },
   {
-    question: "Czy podpisujemy umowę i NDA?",
+    question: "Co jeśli automatyzacja przestanie działać?",
     answer:
-      "Tak. Każdy projekt ma prostą umowę z zakresem, ceną, harmonogramem, warunkami odbioru i warunkami rozwiązania współpracy. NDA podpisujemy standardowo, jeśli potrzebujesz, mamy własny wzór albo pracujemy na twoim.",
-  },
-  {
-    question: "Co jeśli po audycie uznamy, że nam się nie opłaca?",
-    answer:
-      "Dostajesz dokument audytowy i nie kontynuujemy. Koszt audytu nie jest zwracany, ale cały materiał zostaje u ciebie, możesz na jego podstawie wdrożyć się samodzielnie albo zlecić komuś innemu.",
+      "Jeśli to nasz błąd, poprawiamy bezpłatnie bez względu na czas. Jeśli zmienił się zewnętrzny system, podajemy koszt i termin naprawy.",
   },
 ];
 
@@ -243,35 +210,22 @@ export default function JakPracuje() {
                 Jak pracujemy
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-                Wąski skład, stała cena projektowa, tygodniowy postęp w
-                konkretach. Poniżej masz pełny proces od pierwszej rozmowy do
-                wsparcia po wdrożeniu, bez marketingu, bez ukrytych kosztów.
+                Wąski skład, stała cena projektowa i postęp co tydzień.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Treść w zakładkach, nic nie wycięte, podzielone */}
         <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
           <Tabs
             ariaLabel="Sekcje strony Jak pracujemy"
             tabs={[
               {
-                label: "Proces: diagnoza i audyt",
+                label: "Proces",
                 content: (
                   <div className="py-6 lg:py-8">
                     <div className="max-w-4xl mx-auto space-y-6">
-                      {steps.slice(0, 2).map(renderStep)}
-                    </div>
-                  </div>
-                ),
-              },
-              {
-                label: "Proces: wdrożenie i wsparcie",
-                content: (
-                  <div className="py-6 lg:py-8">
-                    <div className="max-w-4xl mx-auto space-y-6">
-                      {steps.slice(2).map(renderStep)}
+                      {steps.map(renderStep)}
                     </div>
                   </div>
                 ),
@@ -286,13 +240,8 @@ export default function JakPracuje() {
                         <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-3 mb-3">
                           Jak wygląda cena
                         </h2>
-                        <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                          Konkretne zasady zamiast marketingowych haseł. Podajemy
-                          widełki po konsultacji, stałą cenę po audycie, a
-                          transze płacisz dopiero po odbiorze etapów.
-                        </p>
                       </div>
-                      <div className="grid md:grid-cols-2 gap-6">
+                      <div className="grid md:grid-cols-3 gap-6">
                         {pricingPrinciples.map((p) => (
                           <div
                             key={p.title}
@@ -316,13 +265,9 @@ export default function JakPracuje() {
                 content: (
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
-                      <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4 text-center">
+                      <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-8 text-center">
                         Najczęstsze pytania
                       </h2>
-                      <p className="text-gray-600 dark:text-gray-400 mb-8 text-center">
-                        Konkretne odpowiedzi na to, o co klienci pytają
-                        najczęściej przed podpisaniem umowy.
-                      </p>
                       <div className="space-y-4">
                         {faq.map((item) => (
                           <details
@@ -368,8 +313,7 @@ export default function JakPracuje() {
                         Zamów diagnozę procesu
                       </h2>
                       <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-                        30 minut, bez zobowiązań. Jeśli widzimy, że automatyzacja
-                        nie ma sensu, powiemy to wprost na pierwszej rozmowie.
+                        30 minut, bez zobowiązań.
                       </p>
                       <Link href="/kontakt" className="btn-primary">
                         Zamów diagnozę

@@ -3,7 +3,6 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import Tabs from "@/components/Tabs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 
 export const metadata: Metadata = {
@@ -42,115 +41,41 @@ export default function AiWAutomatyzacjiFirmPage() {
           ]}
         />
 
-        {/* Nagłówek artykułu, kompaktowy */}
-        <section className="pt-24 pb-10">
+        <section className="pt-24 pb-12">
           <div className="container-wide max-w-3xl mx-auto">
             <span className="section-label">Strefa wiedzy</span>
             <h1 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">
               AI w automatyzacji firm
             </h1>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-              AI nie ma sensu dlatego, że jest modne. Ma sens wtedy, gdy
-              przyspiesza konkretny proces i nie obniża jakości działania firmy.
-              W praktyce najlepiej działa tam, gdzie trzeba szybko zrozumieć
-              dużą liczbę wiadomości, zgłoszeń, leadów albo dokumentów.
+              AI ma sens, gdy przyspiesza konkretny proces i nie obniża
+              jakości. Najlepiej działa tam, gdzie trzeba szybko zrozumieć dużo
+              wiadomości, zgłoszeń, leadów albo dokumentów.
+            </p>
+
+            <h2 className="mt-12 text-2xl font-bold text-gray-900 dark:text-white mb-4">
+              Gdzie AI daje efekt
+            </h2>
+            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+              Klasyfikacja treści, streszczenia, porządkowanie zgłoszeń,
+              wyciąganie danych i robocze odpowiedzi. Efekt to krótszy czas
+              reakcji i mniej ręcznej pracy w{" "}
+              <Link href="/automatyzacja-leadow-crm" className="text-accent hover:underline">
+                obsłudze leadów i CRM
+              </Link>
+              .
+            </p>
+
+            <h2 className="mt-10 text-2xl font-bold text-gray-900 dark:text-white mb-4">
+              Gdzie AI nie powinno decydować samo
+            </h2>
+            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+              Tam, gdzie błąd dużo kosztuje. Sprawdzony model: AI robi pierwszą
+              analizę, system przekazuje wynik dalej, człowiek zatwierdza
+              decyzje o wyższym ryzyku.
             </p>
           </div>
         </section>
-
-        {/* Treść w zakładkach, nic nie wycięte, podzielone wg rozdziałów */}
-        <div className="container-wide pb-8">
-          <Tabs
-            ariaLabel="Rozdziały artykułu"
-            tabs={[
-              {
-                label: "Gdzie AI daje efekt",
-                content: (
-                  <div className="py-10 lg:py-12">
-                    <div className="max-w-3xl mx-auto">
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        Gdzie AI daje realny efekt
-                      </h2>
-                      <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                        <Link
-                          href="/automatyzacja-leadow-crm"
-                          className="text-accent hover:underline"
-                        >
-                          AI w automatyzacji
-                        </Link>{" "}
-                        świetnie radzi sobie z klasyfikacją treści,
-                        streszczaniem informacji, porządkowaniem zgłoszeń,
-                        wyciąganiem kluczowych danych i przygotowaniem roboczych
-                        odpowiedzi. To są zadania, które wcześniej wykonywali
-                        ludzie ręcznie, często w sposób powolny i niespójny.
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                        W firmie oznacza to krótszy czas reakcji i mniejsze
-                        obciążenie zespołu.
-                      </p>
-                    </div>
-                  </div>
-                ),
-              },
-              {
-                label: "Gdzie nie samodzielnie",
-                content: (
-                  <div className="py-10 lg:py-12">
-                    <div className="max-w-3xl mx-auto">
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        Gdzie AI nie powinno działać samodzielnie
-                      </h2>
-                      <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                        AI nie jest dobrym zamiennikiem człowieka w procesach,
-                        gdzie koszt błędu jest wysoki i nie ma walidacji. W
-                        takich miejscach AI powinno wspierać, a nie decydować
-                        samodzielnie.
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                        Najlepszy model to zwykle:
-                      </p>
-                      <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-400">
-                        <li>AI robi pierwszy etap analizy,</li>
-                        <li>system przekazuje wynik dalej,</li>
-                        <li>
-                          człowiek zatwierdza tam, gdzie ryzyko jest wyższe.
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                ),
-              },
-              {
-                label: "Najlepsze wdrożenia",
-                content: (
-                  <div className="py-10 lg:py-12">
-                    <div className="max-w-3xl mx-auto">
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        Najlepsze wdrożenia są nudne
-                      </h2>
-                      <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                        Najlepsze wdrożenia AI często nie wyglądają widowiskowo.
-                        Nie są chatbotem „do wszystkiego". Są małym, praktycznym
-                        elementem szerszej{" "}
-                        <Link
-                          href="/automatyzacja-leadow-crm"
-                          className="text-accent hover:underline"
-                        >
-                          automatyzacji procesów biznesowych
-                        </Link>
-                        , który oszczędza czas i poprawia jakość.
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                        To właśnie takie wdrożenia najczęściej mają sens
-                        biznesowy.
-                      </p>
-                    </div>
-                  </div>
-                ),
-              },
-            ]}
-          />
-        </div>
 
         {/* Prev / Next */}
         <section className="py-12 lg:py-16">
@@ -168,7 +93,7 @@ export default function AiWAutomatyzacjiFirmPage() {
                   Chcesz wdrożyć AI tam, gdzie naprawdę da efekt?
                 </p>
                 <Link href="/automatyzacja-leadow-crm" className="btn-primary">
-                  Zobacz usługę Automatyzacja AI
+                  Zobacz automatyzację leadów i CRM
                 </Link>
               </div>
             </div>

@@ -174,7 +174,7 @@ export default function NipCheck() {
       </form>
 
       {stan === "blad" && (
-        <p className="mt-4 text-sm text-red-600 dark:text-red-400">{blad}</p>
+        <p className="mt-4 text-sm text-red-700 dark:text-red-400">{blad}</p>
       )}
 
       {wynik && k && (
@@ -286,7 +286,7 @@ export default function NipCheck() {
                   </button>
                 </div>
                 {leadStan === "blad" && (
-                  <p className="mt-2 text-sm text-red-600 dark:text-red-400">
+                  <p className="mt-2 text-sm text-red-700 dark:text-red-400">
                     {leadBlad}
                   </p>
                 )}

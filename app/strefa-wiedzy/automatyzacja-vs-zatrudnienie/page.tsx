@@ -11,11 +11,11 @@ import NazwaNarzedzia from "@/components/NazwaNarzedzia";
 export const metadata: Metadata = {
   title: "Automatyzacja czy zatrudnienie w MŚP | Fluxlab",
   description:
-    "Kiedy zatrudnić kolejną osobę, a kiedy zautomatyzować proces. Realne koszty, ryzyka, framework decyzji i praktyczne scenariusze dla firm B2B w 2026.",
+    "Kiedy zatrudnić kolejną osobę, a kiedy zautomatyzować proces. Realne koszty, ryzyka i kalkulator decyzji dla firm B2B w 2026.",
   openGraph: {
     title: "Automatyzacja czy zatrudnienie w MŚP | Fluxlab",
     description:
-      "Kiedy zatrudnić kolejną osobę, a kiedy zautomatyzować proces. Realne koszty, ryzyka, framework decyzji i praktyczne scenariusze dla firm B2B w 2026.",
+      "Kiedy zatrudnić kolejną osobę, a kiedy zautomatyzować proces. Realne koszty, ryzyka i kalkulator decyzji dla firm B2B w 2026.",
     locale: "pl_PL",
     type: "article",
     images: [
@@ -38,58 +38,22 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
       question:
         "Czy automatyzacja realnie zastępuje pracownika, czy tylko odciąża?",
       answer:
-        "W 90% scenariuszy w MŚP, odciąża, nie zastępuje. Automatyzacja przejmuje powtarzalne, regułowe zadania: przepisywanie danych, wysyłkę przypomnień, generowanie raportów, synchronizację systemów. Człowiek nadal podejmuje decyzje, rozmawia z klientem, rozwiązuje wyjątki. Właśnie dlatego hybryda (automat + 1 osoba) zwykle wygrywa z samym etatem w pracach back-office.",
+        "W większości firm odciąża. Przejmuje przepisywanie danych, przypomnienia, raporty i synchronizację systemów. Decyzje, rozmowy z klientem i wyjątki zostają przy człowieku.",
     },
     {
-      question: "Ile realnie kosztuje zatrudnienie pracownika na UoP w 2026?",
+      question: "Ile kosztuje automatyzacja jednego procesu?",
       answer:
-        "Dla pensji 6 000 zł brutto po stronie pracownika koszt pracodawcy to ok. 7 240 zł (ZUS pracodawcy, FP, FGŚP). Do tego dochodzi sprzęt (1,5–3 tys. jednorazowo), szkolenie (20–40 h przez pierwsze 3 miesiące), urlop (26 dni = 2 miesiące pensji rocznie), zastępstwa. Realny koszt roczny junior-specjalisty z pensją 6 000 zł brutto to ok. 95–110 tys. zł.",
+        "Wdrożenie pojedynczego procesu to u nas 1 500 do 8 000 zł, zależnie od liczby integracji i wyjątków. Narzędzia dla kilkunastu scenariuszy to zwykle 200 do 600 zł miesięcznie.",
     },
     {
-      question: "Ile kosztuje średnia automatyzacja procesu w MŚP?",
+      question: "Czy automatyzacja wymaga utrzymania?",
       answer:
-        "Jednorazowe wdrożenie pojedynczego procesu to u nas 1 500 do 8 000 zł, zależnie od liczby integracji i liczby wyjątków. Miesięczne utrzymanie narzędzi, Make, Zapier albo n8n.cloud, dla firmy z kilkunastoma scenariuszami to 200 do 600 zł. Hosting n8n na własnym serwerze to dodatkowe 50 do 150 zł miesięcznie. Zwrot zależy od wolumenu procesu i tego właśnie liczy kalkulator na górze tej strony.",
-    },
-    {
-      question: "Kiedy zatrudnienie ma sens, a automatyzacja nie?",
-      answer:
-        "Gdy praca wymaga osądu, kreatywności, empatii lub negocjacji, czyli sprzedaż, obsługa trudnego klienta, pisanie contentu, decyzje strategiczne. Automatyzacja tam nie zadziała, a próba jej wymuszenia (np. chatboty zamiast handlowców) potrafi kosztować więcej niż koszt etatu.",
-    },
-    {
-      question: "Czy automatyzacja wymaga utrzymania? Jaki to realny koszt?",
-      answer:
-        "Tak. Typowy ekosystem z kilkunastoma scenariuszami wymaga 2–6 godzin miesięcznie utrzymania (zmiany w API dostawców, nowe wymagania, drobne poprawki). W firmie bez osoby technicznej to zwykle umowa z zewnętrznym partnerem, 500–1 500 zł/mies. To i tak ułamek kosztu pełnego etatu.",
-    },
-    {
-      question:
-        "Co się dzieje z automatyzacjami, gdy zmieniamy narzędzia (np. CRM)?",
-      answer:
-        "Scenariusze trzeba odbudować w nowym środowisku, to nie migracja kliknięciem. Dobrze zaprojektowane automatyzacje opierają się jednak na warstwie pośredniej (np. Make, n8n), dzięki czemu wymiana systemu źródłowego wymaga modyfikacji kilku modułów, nie całego ekosystemu. To jeden z głównych argumentów, żeby nie pisać automatyzacji bezpośrednio w kodzie jednej aplikacji.",
-    },
-    {
-      question: "Czy warto zatrudnić osobę do obsługi automatyzacji?",
-      answer:
-        "Dla firm z 50+ automatyzacjami i krytyczną zależnością od nich, tak, ale raczej jako 50% stanowiska lub część roli operations manager. Dla mniejszej skali taniej wychodzi umowa z zewnętrznym partnerem. Pełny etat automation specialist ma sens dopiero przy budżecie narzędzi 3–5 tys. zł/mies. i zespole 20+ osób.",
-    },
-    {
-      question: "Skąd wziąć „czas procesu w godzinach miesięcznie” do kalkulatora?",
-      answer:
-        "Jeśli proces wykonuje jedna osoba, pomnóż liczbę powtórzeń przez średni czas jednego powtórzenia. Na przykład 100 leadów razy 5 minut to 500 minut, czyli około 8,3 godziny. Jeśli wykonuje go kilka osób, zsumuj. Jeśli nie wiesz dokładnie, oszacuj dni pracy w miesiącu poświęcone na ten proces razy 8 i potraktuj to jako górne ograniczenie. Lepiej oszacować z lekkim zapasem niż w dół, celem jest realny obraz, a nie raport do księgowości.",
-    },
-    {
-      question: "Dlaczego etat w kalkulatorze to tylko stawka razy 168 godzin?",
-      answer:
-        "Bo to jest minimum, czyli sama praca. Pełen koszt zatrudnienia jest wyższy o 30 do 50 procent przez ZUS pracodawcy, urlop płatny, sprzęt, oprogramowanie, czas rekrutacji i wdrożenia. Kalkulator tego nie dolicza, bo wynik miałby zbyt dużą wariancję, B2B kontra umowa o pracę, junior kontra senior, biuro kontra praca zdalna. Pokazujemy orientacyjną dolną granicę, żeby porównanie z automatyzacją było uczciwe w dół. Jeśli automatyzacja wychodzi taniej nawet od minimalnego kosztu pracy, to po pełnym koszcie wychodzi taniej tym bardziej.",
-    },
-    {
-      question: "Co znaczy, że proces musi być powtarzalny i stabilny?",
-      answer:
-        "Powtarzalny to taki, w którym ten sam scenariusz wykonujesz wielokrotnie, kroki są przewidywalne, kolejność stała, a wyjątki rzadkie. Stabilny to taki, którego zasady nie zmieniają się co tydzień. Dobrzy kandydaci: obsługa formularza z witryny do CRM, faktury cykliczne, raport tygodniowy, follow-up. Słabi kandydaci: procesy, w których co chwilę dochodzi nowy wyjątek, czyli negocjacje, kwalifikacja niestandardowych zapytań, decyzje wymagające osądu. Te ostatnie warto opisać w procedurze, ale nie automatyzować, bo automat trzeba by ciągle przepisywać.",
+        "Tak. Kilkanaście scenariuszy to zwykle 2 do 6 godzin pracy miesięcznie: zmiany w API dostawców i drobne poprawki. U zewnętrznego partnera to 500 do 1 500 zł miesięcznie.",
     },
     {
       question: "Czy kalkulator zastępuje wycenę?",
       answer:
-        "Nie. Daje skalę decyzji, czyli odpowiedź na pytanie, czy w ogóle warto rozmawiać o automatyzacji tego procesu, czy raczej zostać przy ręcznej obsłudze albo zatrudnić kolejną osobę. Wycena wymaga rozmowy o specyfice procesu: jakie systemy są w grze, ile jest wyjątków, czy jest API, czy trzeba parsować maile, ile osób korzysta z efektu.",
+        "Nie. Pokazuje, czy w ogóle warto rozmawiać o automatyzacji danego procesu. Wycena wymaga rozmowy o systemach, wyjątkach i dostępności API.",
     },
   ];
 
@@ -104,7 +68,6 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
           ]}
         />
 
-        {/* Nagłówek artykułu, kompaktowy */}
         <section className="pt-16 pb-6">
           <div className="max-w-3xl mx-auto px-6 lg:px-8">
             <span className="section-label">Strefa wiedzy</span>
@@ -112,13 +75,9 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
               Automatyzacja vs zatrudnienie, co się bardziej opłaca w MŚP
             </h1>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-              Wolumen pracy rośnie, a zespół ma już pełne ręce. Każdy właściciel
-              firmy prędzej czy później staje przed wyborem: zatrudnić kolejną
-              osobę czy zautomatyzować proces. Ten artykuł pokazuje, jak
-              odpowiedzieć na to pytanie bez emocji, z realnymi liczbami,
-              ryzykami i frameworkiem decyzji. Zaczyna się od kalkulatora,
-              który po czterech ustawieniach pokazuje, czy w Waszym przypadku
-              taniej wychodzi ręczna praca, etat, czy wdrożenie.
+              Pracy przybywa, zespół ma pełne ręce. Kalkulator po czterech
+              ustawieniach pokazuje, czy taniej wychodzi ręczna praca, etat, czy
+              wdrożenie.
             </p>
             <div className="mt-6">
               <Link href="#kalkulator" className="btn-primary">
@@ -128,7 +87,6 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
           </div>
         </section>
 
-        {/* Treść w zakładkach, nic nie wycięte, podzielone wg rozdziałów */}
         <div className="container-wide pb-8">
           <Tabs
             ariaLabel="Rozdziały artykułu"
@@ -140,353 +98,52 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
                   <div className="py-6 lg:py-8">
                     <NazwaNarzedzia href="/strefa-wiedzy/automatyzacja-vs-zatrudnienie" />
                     <KalkulatorDecyzji />
+                    <p className="max-w-3xl mx-auto mt-6 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                      Etat liczymy jako stawkę razy 168 godzin, czyli minimum
+                      bez ZUS-u, urlopu i sprzętu. Jeśli automatyzacja wygrywa
+                      nawet z tym minimum, po pełnym koszcie wygrywa tym
+                      bardziej.
+                    </p>
                   </div>
                 ),
               },
               {
-                label: "Jak liczymy decyzję",
-                kotwica: "jak-licze",
+                label: "Koszty",
+                kotwica: "koszty",
                 content: (
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        Jak liczymy decyzję w kalkulatorze
-                      </h2>
-                      <div className="space-y-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-                        <p>
-                          Kalkulator porównuje trzy scenariusze: ręczną obsługę,
-                          czyli stan obecny, zatrudnienie kolejnej osoby,
-                          orientacyjnie, oraz wdrożenie automatyzacji w zakresie
-                          rynkowym. Logika decyzyjna patrzy na dwa wymiary:
-                          powtarzalność i częstotliwość.
-                        </p>
-                        <ul className="list-disc pl-5 space-y-2">
-                          <li>
-                            <strong>Koszt ręcznej pracy</strong> ={" "}
-                            <code className="text-xs bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded">
-                              czas_h × koszt_h
-                            </code>{" "}
-                            miesięcznie. Roczna wartość to ×12.
-                          </li>
-                          <li>
-                            <strong>Etat orientacyjny</strong> ={" "}
-                            <code className="text-xs bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded">
-                              koszt_h × 168
-                            </code>{" "}
-                            miesięcznie. To stawka razy pełny etat, 168 godzin
-                            miesięcznie, czyli minimum bez ZUS-u, urlopu,
-                            sprzętu i kosztów rekrutacji. Realny pełen koszt
-                            zatrudnienia jest wyższy o 30 do 50 procent, co
-                            rozpisujemy w zakładce o koszcie zatrudnienia.
-                          </li>
-                          <li>
-                            <strong>Automatyzacja orientacyjnie</strong>: 1 500
-                            do 8 000 zł jednorazowo i 0 do 200 zł miesięcznie
-                            utrzymania. Konkretna kwota zależy od liczby
-                            integracji, logiki warunkowej i tego, czy trzeba
-                            parsować dane wejściowe, maile albo pliki PDF.
-                          </li>
-                          <li>
-                            <strong>Sygnał decyzyjny</strong>: jeśli proces jest
-                            powtarzalny i występuje codziennie albo kilka razy w
-                            tygodniu, kalkulator rekomenduje automatyzację.
-                            Jeśli proces nie jest powtarzalny, mówi wprost, żeby
-                            zostawić go ręcznie, bo automatyzacja niestabilnego
-                            procesu to ciągłe dopisywanie wyjątków. Przy małej
-                            skali, poniżej 5 godzin miesięcznie i okazjonalnie,
-                            też odradza wdrożenie.
-                          </li>
-                        </ul>
-                        <p>
-                          Punkt zwrotu liczymy zgrubnie jako{" "}
-                          <code className="text-xs bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded">
-                            koszt_wdrożenia / oszczędność_miesięczna
-                          </code>
-                          . To bardzo zgrubny szacunek, oparty na widełkach
-                          rynkowych, a nie na wycenie konkretnego procesu.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                ),
-              },
-              {
-                label: "Nie albo–albo",
-                kotwica: "nie-albo-albo",
-                content: (
-                  <div className="py-6 lg:py-8">
-                    <div className="max-w-3xl mx-auto">
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        Dlaczego to nie jest wybór „albo–albo”
+                        Ile kosztuje etat, a ile automatyzacja
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Pierwsza rzecz, którą trzeba sobie powiedzieć: w 90%
-                        przypadków właściwa odpowiedź to nie „zatrudniamy” ani
-                        „dajemy to automatom”, tylko kombinacja obu.
-                        Automatyzacja świetnie radzi sobie z zadaniami, które są
-                        powtarzalne, regułowe i mają wyraźny wejście–wyjście.
-                        Człowiek jest nie do zastąpienia tam, gdzie potrzebny
-                        jest osąd, rozmowa, empatia, negocjacja albo
-                        kreatywność.
+                        Pensja 6 000 zł brutto na UoP to ok. 7 240 zł
+                        miesięcznie po stronie pracodawcy. Z urlopem, sprzętem i
+                        wdrożeniem roczny koszt juniora to 95 do 110 tys. zł.
                       </p>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Dlatego zamiast pytać „zatrudnić czy zautomatyzować”,
-                        warto zadać inne pytanie: „które części tej pracy to
-                        rutyna, a które wymagają człowieka”. Zwykle okazuje się,
-                        że 40–70% obowiązków junior-specjalisty można przepiąć
-                        na scenariusze w Make, Zapier albo n8n, i zostaje
-                        30–60% realnej pracy intelektualnej, którą da się pokryć
-                        znacznie mniejszym etatem albo rozłożyć na istniejący
-                        zespół.
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Druga rzecz: decyzja „zatrudniamy” jest trudna do
-                        cofnięcia, decyzja „automatyzujemy”, znacznie łatwiejsza.
-                        Wyłączenie scenariusza to kilka kliknięć. Zwolnienie
-                        pracownika to miesiące stresu, okres wypowiedzenia,
-                        czasem postępowanie sądowe. Dlatego w razie wątpliwości
-                        warto zacząć od automatyzacji, jeśli okaże się
-                        niewystarczająca, zawsze można dorekrutować.
-                      </p>
-                    </div>
-                  </div>
-                ),
-              },
-              {
-                label: "Koszt zatrudnienia",
-                kotwica: "koszt-zatrudnienia",
-                content: (
-                  <div className="py-6 lg:py-8">
-                    <div className="max-w-3xl mx-auto">
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        Realny koszt zatrudnienia w 2026
-                      </h2>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Pensja brutto to wierzchołek góry lodowej. Dla
-                        porównania z automatyzacją potrzebujemy pełnego kosztu
-                        pracodawcy, rozbijmy go dla typowej pensji 6 000 zł
-                        brutto na UoP w 2026:
+                        Do tego dochodzi rekrutacja (15 do 30 godzin managera),
+                        2 do 3 miesięcy niepełnej wydajności i rotacja 15 do 25%
+                        rocznie.
                       </p>
                       <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
-                        <li>Pensja brutto: 6 000 zł</li>
+                        <li>Prosty proces: 1 500 do 3 000 zł jednorazowo</li>
                         <li>
-                          ZUS pracodawcy + FP + FGŚP (ok. 20,6%): ok. 1 236 zł
+                          Średnio złożony, z logiką warunkową: 3 000 do 5 000 zł
                         </li>
-                        <li>Koszt pracodawcy miesięczny: ok. 7 236 zł</li>
-                        <li>Rocznie (12 miesięcy): ok. 86 800 zł</li>
+                        <li>Złożony, bez gotowego API: 5 000 do 8 000 zł</li>
                         <li>
-                          Narzut urlopowy (26 dni płatnego urlopu = ok. 8,5%
-                          rocznej pensji): ok. 7 400 zł
-                        </li>
-                        <li>
-                          Sprzęt i onboarding (laptop, monitor, oprogramowanie,
-                          szkolenie): ok. 3–5 tys. zł w pierwszym roku
-                        </li>
-                        <li>
-                          Ubezpieczenie, benefity, kawa, biuro (jeśli
-                          stacjonarnie): 3–10 tys. zł/rok
+                          Narzędzia i utrzymanie: kilkaset zł do 1 500 zł
+                          miesięcznie
                         </li>
                       </ul>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Realny koszt roczny junior-specjalisty z pensją 6 000 zł
-                        brutto wynosi więc 95–110 tys. zł. Dla mid-specjalisty
-                        (8–10 tys. zł brutto), 140–180 tys. zł. Dla seniora
-                        (12–18 tys. zł brutto), 210–320 tys. zł.
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Dodatkowe koszty, których nie widać w budżecie, ale się
-                        liczą:
-                      </p>
-                      <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
-                        <li>
-                          Czas managera na rekrutację, typowo 15–30 godzin na
-                          jedno stanowisko
-                        </li>
-                        <li>
-                          Okres wdrożenia, pierwsze 2–3 miesiące pracownik
-                          produkuje 30–50% docelowej wartości
-                        </li>
-                        <li>
-                          Rotacja, w MŚP wynosi 15–25% rocznie. Co 4–5 lat
-                          przechodzisz cały proces od nowa
-                        </li>
-                        <li>
-                          Zwolnienia lekarskie, L4, urlopy opiekuńcze, średnio
-                          10–15 dni rocznie
-                        </li>
-                      </ul>
-                      <p className="text-gray-600 dark:text-gray-400 mb-8">
-                        Zanim porównasz z automatyzacją, sprawdź też{" "}
+                      <p className="text-gray-600 dark:text-gray-400">
+                        Ten sam rachunek z drugiej strony:{" "}
                         <Link
                           href="/strefa-wiedzy/jak-policzyc-roi-z-automatyzacji"
                           className="text-accent hover:underline"
                         >
                           jak policzyć ROI z automatyzacji
-                        </Link>{" "}
-                       , to ten sam rachunek, tylko z drugiej strony.
-                      </p>
-                    </div>
-                  </div>
-                ),
-              },
-              {
-                label: "Koszt automatyzacji",
-                kotwica: "koszt-automatyzacji",
-                content: (
-                  <div className="py-6 lg:py-8">
-                    <div className="max-w-3xl mx-auto">
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        Realny koszt automatyzacji, setup i utrzymanie
-                      </h2>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Automatyzacja ma dwa komponenty kosztowe: jednorazowy
-                        (wdrożenie) i miesięczny (narzędzia + utrzymanie).
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Koszt wdrożenia pojedynczego procesu:
-                      </p>
-                      <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
-                        <li>
-                          Prosty proces, synchronizacja dwóch systemów albo
-                          wysyłka powiadomień: 1 500 do 3 000 zł
-                        </li>
-                        <li>
-                          Średnio złożony, CRM plus mailing plus raport, z
-                          logiką warunkową: 3 000 do 5 000 zł
-                        </li>
-                        <li>
-                          Złożony, wiele wyjątków, parsowanie maili albo
-                          plików, integracja z systemem bez gotowego API: 5 000
-                          do 8 000 zł
-                        </li>
-                        <li>
-                          Powyżej 8 000 zł zwykle nie jest to już jeden proces,
-                          tylko wdrożenie wieloprocesowe, które warto rozbić na
-                          etapy i wycenić osobno
-                        </li>
-                      </ul>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Koszt miesięczny narzędzi dla typowej firmy MŚP z
-                        kilkunastoma scenariuszami:
-                      </p>
-                      <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
-                        <li>
-                          Make Pro lub Zapier Professional: 80–400 zł/mies.
-                        </li>
-                        <li>n8n.cloud Pro: ok. 260 zł/mies.</li>
-                        <li>
-                          n8n self-hosted (VPS + ewentualne utrzymanie): 50–400
-                          zł/mies.
-                        </li>
-                        <li>
-                          Ewentualne dodatkowe narzędzia (OpenAI API,
-                          formularze, monitoring): 100–500 zł/mies.
-                        </li>
-                      </ul>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Utrzymanie (zewnętrzny partner lub wewnętrzny czas):
-                      </p>
-                      <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
-                        <li>
-                          Typowe zapotrzebowanie: 2–6 godzin/mies. na całe
-                          środowisko
-                        </li>
-                        <li>
-                          Koszt zewnętrzny: 500–1 500 zł/mies. w modelu
-                          retainerowym
-                        </li>
-                        <li>
-                          Duże zmiany (przepięcie na nowy CRM, migracja ERP):
-                          pojedyncze 3–20 tys. zł co 1–2 lata
-                        </li>
-                      </ul>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Podsumowując: firma, która w pierwszym roku wdraża
-                        kilkanaście scenariuszy, mieści się zwykle w kilkunastu
-                        do kilkudziesięciu tysięcy złotych jednorazowo, przy
-                        kosztach bieżących rzędu kilkuset złotych do półtora
-                        tysiąca miesięcznie razem z utrzymaniem. Przy jednym
-                        etacie za 95 do 110 tys. zł rocznie to jest inny rząd
-                        wielkości, ale tylko wtedy, gdy procesy faktycznie mają
-                        wolumen, co sprawdza kalkulator na górze strony.
-                      </p>
-                    </div>
-                  </div>
-                ),
-              },
-              {
-                label: "Co umie",
-                kotwica: "co-umie",
-                content: (
-                  <div className="py-6 lg:py-8">
-                    <div className="max-w-3xl mx-auto">
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        Co automatyzacja umie, a czego nie
-                      </h2>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Automatyzacja doskonale radzi sobie z:
-                      </p>
-                      <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
-                        <li>
-                          Przepisywaniem danych między systemami (CRM, ERP,
-                          e-mail, arkusz)
-                        </li>
-                        <li>
-                          Wysyłką powiadomień, przypomnień, follow-upów według
-                          harmonogramu
-                        </li>
-                        <li>
-                          Tworzeniem rekordów, dokumentów, faktur z szablonów
-                        </li>
-                        <li>Agregacją danych do raportów i dashboardów</li>
-                        <li>
-                          Walidacją i czyszczeniem danych (brakujące pola,
-                          duplikaty, formaty)
-                        </li>
-                        <li>
-                          Klasyfikacją i routingiem leadów według prostych reguł
-                        </li>
-                        <li>Synchronizacją kalendarzy, zadań, statusów</li>
-                        <li>
-                          Podstawowymi decyzjami warunkowymi (jeśli X to Y)
-                        </li>
-                      </ul>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Automatyzacja nie poradzi sobie z:
-                      </p>
-                      <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
-                        <li>
-                          Rozmową z trudnym klientem, który eskaluje reklamację
-                        </li>
-                        <li>Negocjacjami cen, warunków umowy, terminów</li>
-                        <li>
-                          Kreatywną pracą nad treścią (content marketing, PR,
-                          branding)
-                        </li>
-                        <li>
-                          Decyzjami strategicznymi, gdzie trzeba ważyć sprzeczne
-                          interesy
-                        </li>
-                        <li>
-                          Budowaniem relacji (sprzedaż B2B wysokiej wartości)
-                        </li>
-                        <li>
-                          Sytuacjami, których się nie przewidziało w regułach
-                        </li>
-                      </ul>
-                      <p className="text-gray-600 dark:text-gray-400 mb-8">
-                        AI rozsuwa tę granicę, ale mniej niż się wydaje. LLM-y
-                        potrafią dziś przygotować draft odpowiedzi,
-                        sklasyfikować zgłoszenia, podsumować rozmowę, i tam
-                        faktycznie zastępują fragment pracy człowieka. Ale w
-                        trudnych, niestandardowych sytuacjach wciąż potrzebny
-                        jest ktoś, kto weźmie odpowiedzialność. Więcej na ten
-                        temat w artykule{" "}
-                        <Link
-                          href="/strefa-wiedzy/ai-w-automatyzacji-firm"
-                          className="text-accent hover:underline"
-                        >
-                          Kiedy AI ma sens, a kiedy nie
                         </Link>
                         .
                       </p>
@@ -495,136 +152,41 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
                 ),
               },
               {
-                label: "Framework decyzji",
+                label: "Jak zdecydować",
                 kotwica: "framework",
                 content: (
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        Framework decyzji, 4 pytania, które rozstrzygają
+                        Cztery pytania, które rozstrzygają
                       </h2>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Zanim rozpiszesz ogłoszenie o pracę albo zlecisz audyt
-                        automatyzacji, odpowiedz sobie na te cztery pytania:
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        <strong>1. Jaki jest wolumen pracy do pokrycia?</strong>
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Jeśli mówimy o zadaniu, które pochłania mniej niż 10
-                        godzin miesięcznie, nie warto rekrutować. Ani
-                        automatyzować, chyba że jest krytyczne i obarczone
-                        ryzykiem błędu. Dla 10–40 godzin miesięcznie,
-                        automatyzacja prawie zawsze wygrywa. Dla 40–80 godzin,
-                        rozważ oba warianty, często wychodzi hybryda. Dla 80+
-                        godzin miesięcznie pojedynczego powtarzalnego zadania,
-                        zatrudnienie staje się realne, ale wciąż warto najpierw
-                        zautomatyzować 50–70% i potem dopełnić etatem 25–50%.
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        <strong>2. Jaki jest stosunek rutyny do osądu?</strong>
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Praca back-office (księgowość operacyjna, raportowanie,
-                        administracja) to 70–90% rutyna, idealna pod
-                        automatyzację. Praca front-office (sprzedaż, obsługa
-                        VIP, doradztwo) to 30–50% rutyna, dobrze się
-                        automatyzuje tylko back część, a front wymaga człowieka.
-                        Jeśli nie umiesz rozbić zadania na te dwie kategorie,
-                        potrzebujesz audytu procesu, nie rekrutacji.
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        <strong>3. Czy proces jest ustabilizowany?</strong>
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Automatyzacja wymaga stabilnych reguł. Jeśli proces
-                        zmienia się co tydzień, bo firma jeszcze szuka formuły,
-                        automatyzacja jest przedwczesna. Lepiej zatrudnić
-                        elastycznego człowieka, który zaadaptuje się do zmian, a
-                        po 6–12 miesiącach dopiero zautomatyzować to, co okaże
-                        się powtarzalne.
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        <strong>4. Jak szybko potrzebujesz rezultatu?</strong>
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Rekrutacja trwa 2–4 miesiące (poszukiwania,
-                        wypowiedzenie, onboarding). Pilotażowa automatyzacja,
-                        2–4 tygodnie. Pełne wdrożenie ekosystemu, 2–3 miesiące.
-                        Jeśli boli Cię już teraz, zaczynasz od automatyzacji
-                        najcięższych punktów bólu i równolegle ewentualnie
-                        rekrutujesz na dłuższą metę.
-                      </p>
-                    </div>
-                  </div>
-                ),
-              },
-              {
-                label: "Hybryda",
-                kotwica: "hybryda",
-                content: (
-                  <div className="py-6 lg:py-8">
-                    <div className="max-w-3xl mx-auto">
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        Hybryda, scenariusz, który wygrywa najczęściej
-                      </h2>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        W praktyce najlepsze rezultaty daje model: jedna osoba +
-                        automatyzacja zamiast dwóch osób bez automatyzacji.
-                        Realny przykład z firmy B2B handlującej komponentami
-                        przemysłowymi:
-                      </p>
-                      <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
+                      <ul className="list-disc pl-5 space-y-3 text-gray-600 dark:text-gray-400 mb-6">
                         <li>
-                          Problem: dział obsługi zamówień pracuje po godzinach,
-                          handlowcy skarżą się na tempo
+                          <strong>Ile godzin miesięcznie?</strong> Poniżej 10
+                          zostaw ręcznie. Od 10 do 40 automatyzacja prawie
+                          zawsze wygrywa. Powyżej 80 zautomatyzuj większość i
+                          dopełnij części etatu.
                         </li>
                         <li>
-                          Wariant A (zatrudnienie): druga osoba w obsłudze
-                          zamówień, koszt roczny ok. 110 tys. zł
+                          <strong>Rutyna czy osąd?</strong> Back-office to
+                          głównie rutyna i dobrze się automatyzuje. Sprzedaż i
+                          obsługa ważnych klientów wymagają człowieka.
                         </li>
                         <li>
-                          Wariant B (automatyzacja + zatrudnienie hybrydowe):
-                          automatyzacja generowania ofert i faktur, rejestracja
-                          zamówień z e-maila do CRM, automatyczne powiadomienia
-                          o zmianach statusu. Koszt: 18 tys. zł setup + 6 tys.
-                          zł/rok utrzymanie = 24 tys. zł w pierwszym roku, 6
-                          tys./rok kolejne
+                          <strong>Czy proces jest stabilny?</strong> Jeśli
+                          zasady zmieniają się co tydzień, najpierw zatrudnij, a
+                          po kilku miesiącach zautomatyzuj to, co się powtarza.
                         </li>
                         <li>
-                          Efekt wariantu B: ta sama jedna osoba w obsłudze
-                          obsługuje +70% wolumenu, nie trzeba dodatkowej
-                          rekrutacji
-                        </li>
-                        <li>Oszczędność roczna: ok. 85 tys. zł</li>
-                      </ul>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Drugi typowy scenariusz, hybryda w sprzedaży:
-                      </p>
-                      <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
-                        <li>
-                          Leady kwalifikowane automatycznie (scoring, routing,
-                          pierwszy e-mail), oszczędza 40–60% czasu handlowca na
-                          rozpoznanie leada
-                        </li>
-                        <li>
-                          Follow-up sekwencje i przypomnienia prowadzone przez
-                          CRM + Make, handlowiec dostaje tylko listę rozmów do
-                          wykonania dziś
-                        </li>
-                        <li>
-                          Oferty i faktury generowane z szablonów, oszczędza
-                          2–4 godziny tygodniowo per handlowiec
-                        </li>
-                        <li>
-                          Raporty sprzedaży automatyczne, oszczędza manager i
-                          handlowca 3–6 godzin tygodniowo
+                          <strong>Jak szybko?</strong> Rekrutacja trwa 2 do 4
+                          miesięcy, pilotaż automatyzacji 2 do 4 tygodni.
                         </li>
                       </ul>
-                      <p className="text-gray-600 dark:text-gray-400 mb-8">
-                        Taka hybryda pozwala zespołowi 3 handlowców obsłużyć
-                        wolumen odpowiadający zwykle 5. Więcej o tym modelu
-                        znajdziesz w artykule o{" "}
+                      <p className="text-gray-600 dark:text-gray-400">
+                        Najczęściej wygrywa hybryda: jedna osoba plus
+                        automatyzacja zamiast dwóch osób bez niej. Wyłączenie
+                        scenariusza to kilka kliknięć, zwolnienie pracownika to
+                        miesiące. Więcej w artykule o{" "}
                         <Link
                           href="/strefa-wiedzy/automatyzacja-crm-od-czego-zaczac"
                           className="text-accent hover:underline"
@@ -644,113 +206,31 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        Ryzyka zatrudnienia, o których się zapomina
+                        Ryzyka po obu stronach
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Poza pensją i ZUS-em warto zważyć miękkie koszty i
-                        ryzyka, które w automatyzacji nie występują lub są
-                        znacznie mniejsze:
+                        Etat to rotacja, urlopy i L4, utrata wiedzy przy
+                        odejściu oraz kosztowne zwolnienia przy spadku
+                        koniunktury.
                       </p>
-                      <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
-                        <li>
-                          <strong>Rotacja:</strong> w MŚP średnio 15–25%
-                          rocznie. Co 4–5 lat przechodzisz cały proces od nowa,
-                          rekrutacja, onboarding, spadek produktywności na 2–3
-                          miesiące
-                        </li>
-                        <li>
-                          <strong>Utrata wiedzy:</strong> gdy odchodzi osoba,
-                          która znała proces, wiedza idzie z nią. Jeśli proces
-                          był nieudokumentowany, firma ma realny problem
-                        </li>
-                        <li>
-                          <strong>Urlopy i L4:</strong> 26 dni urlopu + średnio
-                          10 dni chorobowego = ponad miesiąc w roku, w którym
-                          praca nie jest wykonywana albo spada na kogoś innego
-                        </li>
-                        <li>
-                          <strong>Konflikty i motywacja:</strong> człowiek
-                          wymaga feedbacku, podwyżek, rozwoju, atmosfery. To
-                          czas managera i koszt emocjonalny
-                        </li>
-                        <li>
-                          <strong>Prawo pracy:</strong> niewłaściwe zwolnienie
-                          to ryzyko sądu i kosztów kilkudziesięciu tysięcy
-                          złotych
-                        </li>
-                        <li>
-                          <strong>Skalowalność w dół:</strong> spadek
-                          koniunktury zmusza do zwolnień, które są drogie,
-                          bolesne i psują reputację firmy
-                        </li>
-                      </ul>
-                      <p className="text-gray-600 dark:text-gray-400 mb-8">
-                        Automatyzacja nie ma tych problemów, nie odchodzi, nie
-                        choruje, nie żąda podwyżek, a jej „zwolnienie” to
-                        zatrzymanie scenariusza jednym kliknięciem. Ale ma
-                        własne, o których mało kto mówi.
-                      </p>
-
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        Ryzyka automatyzacji, które trzeba znać
-                      </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Uczciwa analiza wymaga przyznania, że automatyzacja ma
-                        też swoje ciemne strony:
+                        Automatyzacja psuje się przy zmianach API i narzędzi, a
+                        błąd bez monitoringu potrafi działać tygodniami. Dlatego
+                        ustawiamy alerty, dokumentację i jednego właściciela
+                        scenariuszy.
                       </p>
-                      <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
-                        <li>
-                          <strong>Kruchość przy zmianach:</strong> aktualizacja
-                          API dostawcy, nowa struktura bazy, zmiana CRM, każda
-                          taka zmiana wymaga modyfikacji scenariuszy. Typowa
-                          firma ma 3–8 takich zdarzeń rocznie
-                        </li>
-                        <li>
-                          <strong>Zależność od zewnętrznych narzędzi:</strong>{" "}
-                          Make ma awarię, Zapier zmienia pricing, n8n wypuszcza
-                          breaking change w major version, w każdym przypadku
-                          trzeba reagować
-                        </li>
-                        <li>
-                          <strong>Błędy ciche:</strong> automatyzacja nie mówi
-                          „coś jest nie tak, sprawdź”. Jeśli nie ma dobrego
-                          monitoringu, błąd może chodzić tygodniami, zanim go
-                          zauważysz
-                        </li>
-                        <li>
-                          <strong>Brak empatii dla edge case:</strong> klient,
-                          który przesłał dziwnie sformatowany e-mail, może
-                          zostać zignorowany, bo nie pasuje do reguły
-                        </li>
-                        <li>
-                          <strong>Koszt błędu:</strong> źle skonfigurowana
-                          automatyzacja, która wyśle 500 błędnych e-maili w
-                          nocy, potrafi narobić więcej szkody niż pomyłka
-                          człowieka, który kończy pracę o 17:00
-                        </li>
-                        <li>
-                          <strong>Zależność od wiedzy wykonawcy:</strong> jeśli
-                          zewnętrzny partner automatyzacji zniknie, a Ty nie
-                          rozumiesz scenariuszy, masz problem. Dlatego warto
-                          wymagać dokumentacji i komentarzy w scenariuszach
-                        </li>
-                      </ul>
                       <p className="text-gray-600 dark:text-gray-400 mb-8">
-                        Dobrze skonfigurowana automatyzacja minimalizuje te
-                        ryzyka przez monitoring, alerty, dokumentację i dobór
-                        stabilnych narzędzi. Ale zero ryzyka nie istnieje, i
-                        każdy, kto Ci to obiecuje, raczej nie pracował z
-                        automatyzacjami w produkcji.
+                        Zatrudnij, gdy praca wymaga relacji, negocjacji,
+                        kreatywności albo codziennych decyzji. Automatyzacja
+                        chaosu daje tylko szybszy chaos.
                       </p>
-
                       <div className="bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-8 text-center">
                         <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                          Zastanawiasz się, zatrudnić czy zautomatyzować?
+                          Zatrudnić czy zautomatyzować?
                         </h2>
                         <p className="text-gray-600 dark:text-gray-400 mb-4">
-                          Bezpłatna diagnoza 30 min, policzymy razem dla
-                          Twojego konkretnego procesu i pokażemy, co da więcej
-                          zwrotu.
+                          Bezpłatna diagnoza 30 min. Policzymy to dla Twojego
+                          procesu.
                         </p>
                         <Link
                           href="/automatyzacja-leadow-crm"
@@ -759,145 +239,6 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
                           Zobacz usługę automatyzacji procesów
                         </Link>
                       </div>
-                    </div>
-                  </div>
-                ),
-              },
-              {
-                label: "Kiedy zatrudnić, błędy",
-                kotwica: "kiedy-zatrudnic",
-                content: (
-                  <div className="py-6 lg:py-8">
-                    <div className="max-w-3xl mx-auto">
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        Kiedy zatrudnienie jest właściwą odpowiedzią
-                      </h2>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Są sytuacje, w których nawet najlepsza automatyzacja nie
-                        zastąpi człowieka. Zatrudnij, gdy:
-                      </p>
-                      <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
-                        <li>
-                          Potrzebujesz relacji sprzedażowej z klientami o dużej
-                          wartości kontraktu
-                        </li>
-                        <li>
-                          Proces jest wysoce zmienny, regułowo nieopisywalny,
-                          kreatywny copywriting, projektowanie, doradztwo
-                        </li>
-                        <li>
-                          Klienci oczekują kontaktu z żywą osobą, B2B premium,
-                          sektor finansowy, usługi regulowane
-                        </li>
-                        <li>
-                          Potrzeba codziennych decyzji wymagających ważenia
-                          wielu zmiennych (operations manager, product manager)
-                        </li>
-                        <li>
-                          Proces dopiero się formuje i wymaga eksperymentowania,
-                          zanim pojawią się stabilne reguły
-                        </li>
-                        <li>
-                          Pracy jest więcej niż 120 godzin miesięcznie i nie ma
-                          co automatyzować, bo logika i tak wymaga ciągłego
-                          osądu
-                        </li>
-                      </ul>
-                      <p className="text-gray-600 dark:text-gray-400 mb-8">
-                        W tych sytuacjach automatyzacja może wspomagać, ale
-                        fundamentem pozostaje człowiek. Często najlepsza
-                        sekwencja to: najpierw zatrudnij, pozwól tej osobie
-                        ustabilizować proces, a po 6–12 miesiącach zautomatyzuj
-                        to, co stało się powtarzalne.
-                      </p>
-
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        Najczęstsze błędy decyzji
-                      </h2>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Z naszych obserwacji wdrożeń w MŚP, pięć powtarzalnych
-                        pułapek:
-                      </p>
-                      <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
-                        <li>
-                          <strong>
-                            Zatrudnianie do pracy, która jest czysto rutynowa
-                          </strong>{" "}
-                         , ktoś przez 3 lata przepisuje dane z e-maili do
-                          arkusza, firma płaci 300 tys. zł łącznie za coś, co
-                          zrobiłby scenariusz za 8 tys. zł
-                        </li>
-                        <li>
-                          <strong>
-                            Automatyzowanie procesu, który jest chaosem
-                          </strong>{" "}
-                         , najpierw trzeba go uporządkować. Automatyzacja
-                          chaosu daje zautomatyzowany chaos, tyle że szybszy
-                        </li>
-                        <li>
-                          <strong>
-                            Oczekiwanie, że automat zastąpi sprzedawcę
-                          </strong>{" "}
-                         , chatbot, który ma zamykać deal za 50 tys. zł, nie
-                          zadziała. Człowiek i automatyzacja to różne narzędzia
-                        </li>
-                        <li>
-                          <strong>
-                            Brak monitoringu i osoby odpowiedzialnej za
-                            automatyzacje
-                          </strong>{" "}
-                         , scenariusze działają, dopóki nie przestaną. A
-                          przestają zawsze. Trzeba ustawić alerty i właściciela
-                        </li>
-                        <li>
-                          <strong>
-                            Rekrutacja „na wyrost”, zanim sprawdzi się
-                            automatyzację
-                          </strong>{" "}
-                         , koszt odwołania decyzji jest asymetryczny.
-                          Wyłączenie scenariusza to nic, zwolnienie pracownika
-                          to trzy miesiące stresu
-                        </li>
-                      </ul>
-
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        Podsumowanie
-                      </h2>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        „Automatyzacja vs zatrudnienie” to w praktyce fałszywa
-                        dychotomia. W większości przypadków odpowiedź brzmi:
-                        najpierw zautomatyzuj to, co powtarzalne, potem
-                        zatrudnij mniej osób do tego, co wymaga człowieka.
-                        Rachunek kosztów zwykle jest jednoznaczny,
-                        automatyzacja za 20–40 tys. zł pokrywa pracę, która
-                        wymagałaby etatu za 100 tys. zł rocznie.
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Ale automatyzacja to nie magia. Wymaga dobrze
-                        zaprojektowanego procesu, utrzymania, monitoringu i
-                        osoby, która rozumie, co się dzieje pod spodem. Jeśli
-                        firma nie ma takich zasobów wewnątrz, warto zacząć od
-                        zewnętrznego partnera i rozwijać kompetencje stopniowo.
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Dobrym pierwszym krokiem jest audyt, dwie godziny
-                        rozmowy o procesach i konkretne wyliczenie, co da
-                        największy zwrot. Zobacz też, jak wygląda{" "}
-                        <Link
-                          href="/jak-pracuje"
-                          className="text-accent hover:underline"
-                        >
-                          nasza metoda pracy
-                        </Link>{" "}
-                        i{" "}
-                        <Link
-                          href="/pilotaz"
-                          className="text-accent hover:underline"
-                        >
-                          program pilotażowy dla pierwszych 3 klientów
-                        </Link>{" "}
-                        z 50% rabatem.
-                      </p>
                     </div>
                   </div>
                 ),
@@ -947,23 +288,20 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
           />
         </div>
 
-        {/* Prev / Next */}
         <section className="py-12 lg:py-16">
           <div className="max-w-3xl mx-auto px-6 lg:px-8">
             <PrevNextArticle currentHref="/strefa-wiedzy/automatyzacja-vs-zatrudnienie" />
           </div>
         </section>
 
-        {/* Final CTA */}
         <section className="py-12 lg:py-16">
           <div className="max-w-3xl mx-auto px-6 lg:px-8">
             <div className="bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-8 text-center">
               <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                Rachunek zatrudnienie vs automatyzacja dla Twojej firmy
+                Policzmy to dla Twojej firmy
               </h2>
               <p className="text-gray-600 dark:text-gray-400 mb-4">
-                30 minut, zero sprzedażowej presji, konkretne liczby dla Twoich
-                procesów.
+                30 minut, konkretne liczby dla Twoich procesów.
               </p>
               <Link href="/kontakt" className="btn-primary inline-block">
                 Zamów diagnozę procesu
@@ -972,95 +310,42 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
           </div>
         </section>
 
-        {/* Related links */}
         <section className="py-12 lg:py-16">
           <div className="max-w-3xl mx-auto px-6 lg:px-8">
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                  Powiązane artykuły
-                </h3>
-                <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400">
-                  <li>
-                    <Link
-                      href="/strefa-wiedzy/jak-policzyc-roi-z-automatyzacji"
-                      className="text-accent hover:underline"
-                    >
-                      Jak policzyć ROI z automatyzacji
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/strefa-wiedzy/co-to-jest-automatyzacja-procesow-biznesowych"
-                      className="text-accent hover:underline"
-                    >
-                      Co to jest automatyzacja procesów biznesowych
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/strefa-wiedzy/ai-w-automatyzacji-firm"
-                      className="text-accent hover:underline"
-                    >
-                      Kiedy AI ma sens, a kiedy nie
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/strefa-wiedzy/automatyzacja-crm-od-czego-zaczac"
-                      className="text-accent hover:underline"
-                    >
-                      Automatyzacja CRM, od czego zacząć
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                  Usługi
-                </h3>
-                <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400">
-                  <li>
-                    <Link
-                      href="/automatyzacja-leadow-crm"
-                      className="text-accent hover:underline"
-                    >
-                      Automatyzacja procesów biznesowych
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/automatyzacja-leadow-crm"
-                      className="text-accent hover:underline"
-                    >
-                      Automatyzacja leadów
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/automatyzacja-raportowania"
-                      className="text-accent hover:underline"
-                    >
-                      Automatyzacja raportowania
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/pilotaz"
-                      className="text-accent hover:underline"
-                    >
-                      Pilotaż (–50%)
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
+              Powiązane
+            </h3>
+            <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400">
+              <li>
+                <Link
+                  href="/strefa-wiedzy/jak-policzyc-roi-z-automatyzacji"
+                  className="text-accent hover:underline"
+                >
+                  Jak policzyć ROI z automatyzacji
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/strefa-wiedzy/ai-w-automatyzacji-firm"
+                  className="text-accent hover:underline"
+                >
+                  Kiedy AI ma sens, a kiedy nie
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/automatyzacja-leadow-crm"
+                  className="text-accent hover:underline"
+                >
+                  Automatyzacja procesów i leadów
+                </Link>
+              </li>
+            </ul>
           </div>
         </section>
       </main>
       <Footer />
 
-      {/* Article Schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -1109,7 +394,6 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
         }}
       />
 
-      {/* FAQPage Schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

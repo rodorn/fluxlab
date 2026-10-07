@@ -35,28 +35,17 @@ const faqItems = [
   {
     question: "Czy takie sprawdzenie jest legalne?",
     answer:
-      "Tak. Pobraliśmy stronę główną, plik robots.txt i plik llms.txt, czyli dokładnie to, co pobiera przeglądarka każdego odwiedzającego i każda wyszukiwarka. Jedna domena to trzy zapytania, czyli mniej niż jedno wejście człowieka. Nie logowaliśmy się nigdzie, nie wysłaliśmy żadnej wiadomości i nie obchodziliśmy żadnych zabezpieczeń.",
+      "Tak. Pobraliśmy stronę główną, robots.txt i llms.txt, czyli to samo, co pobiera każda przeglądarka. Trzy zapytania na domenę, bez logowania i bez obchodzenia zabezpieczeń.",
   },
   {
-    question: "Dlaczego liczycie od 255, a nie od 386?",
+    question: "Czy blokowanie robotów AI to błąd?",
     answer:
-      "Bo 131 domen w ogóle nie oddało strony. To jest osobny wynik, opisany niżej, i mieszanie go z resztą zaciemniałoby obraz. Liczenie domeny bez wpisu w rejestrze nazw jako strony bez danych uporządkowanych byłoby liczeniem tego samego problemu dwa razy.",
+      "Nie zawsze. Wydawca żyjący z treści ma powód, żeby blokować. Dealer zwykle nie ma, a blokada odcina go od kanału, w którym ktoś pyta o serwis albo auto.",
   },
   {
-    question: "Czy blokowanie tych robotów to błąd?",
+    question: "Czy strona bez danych uporządkowanych nie pojawi się w odpowiedzi asystenta?",
     answer:
-      "Nie zawsze. Wydawca, który żyje ze sprzedaży własnych treści, ma dobry powód, żeby nie oddawać ich za darmo do trenowania modeli, i duże redakcje faktycznie je blokują. Dealer samochodowy zwykle takiego powodu nie ma: jego treść to opis usług i oferta, a blokada odcina go od kanału, w którym ktoś właśnie pyta o serwis albo o auto.",
-  },
-  {
-    question:
-      "Czy to znaczy, że strona bez danych uporządkowanych nie pojawi się w odpowiedzi asystenta?",
-    answer:
-      "Nie, to nie jest warunek konieczny. Znaczy tyle, że maszyna musi wywnioskować z układu strony, czym jest firma i co oferuje, zamiast odczytać to wprost. Przy wnioskowaniu myli się częściej, a najczęściej myli się o zakres usług i o lokalizację, czyli dokładnie o to, co rozstrzyga, czy ktoś dostanie polecenie.",
-  },
-  {
-    question: "Skąd wiadomo, że roboty nie uruchamiają skryptów?",
-    answer:
-      "Z dokumentacji dostawców i z zachowania widocznego po stronie serwera. Część z nich potrafi już renderować, ale nie jest to regułą ani gwarancją. Strona, której treść jest w samym dokumencie, działa u wszystkich; strona zależna od skryptów działa u części. Przy porównywalnym koszcie wybór jest oczywisty.",
+      "Może się pojawić, ale maszyna musi zgadywać, czym jest firma. Najczęściej myli się co do zakresu usług i lokalizacji.",
   },
 ];
 
@@ -76,42 +65,24 @@ export default function Page() {
           Czy asystenci AI widzą strony dealerów samochodowych
         </h1>
         <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
-          O widoczności w odpowiedziach asystentów mówi się dziś głównie w
-          kategoriach blokowania robotów. Wzięliśmy 386 domen polskich dealerów
-          i serwisów i sprawdziliśmy to wprost. Okazało się, że blokady prawie
-          nie istnieją, a prawdziwy problem leży zupełnie gdzie indziej i jest
-          znacznie bardziej banalny.
+          Sprawdziliśmy 386 domen polskich dealerów i serwisów. Blokady robotów
+          AI prawie nie istnieją. Problem jest bardziej banalny: na stronach nie
+          ma czego zacytować.
         </p>
 
-        <div className="mt-10">
-          <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
-            Co dokładnie sprawdzaliśmy
-          </h2>
-          <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-            Dla każdej domeny pobraliśmy stronę główną, plik robots.txt i plik
-            llms.txt. Z tego policzyliśmy cztery rzeczy: czy któryś z siedmiu
-            robotów zbierających treść dla asystentów ma zakaz wejścia, ile
-            tekstu zostaje na stronie po odrzuceniu skryptów, czy w dokumencie
-            są dane uporządkowane opisujące firmę i czy wypełniony jest opis w
-            metadanych.
-          </p>
-          <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-            Drugi punkt wymaga wyjaśnienia, bo jest najważniejszy. Roboty
-            zbierające dane na potrzeby modeli w większości nie uruchamiają
-            skryptów. Strona, której treść dokleja się dopiero w przeglądarce,
-            wygląda u człowieka normalnie, a w samym dokumencie ma kilkaset
-            znaków. Dla robota to pusta kartka.
-          </p>
+        <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
+          Co sprawdzaliśmy
+        </h2>
+        <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
+          Blokady dla siedmiu robotów AI, ilość tekstu bez uruchamiania
+          skryptów, dane uporządkowane i opis w metadanych. Większość robotów
+          nie uruchamia skryptów, więc strona doklejana w przeglądarce jest dla
+          nich pustą kartką.
+        </p>
 
-          <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
-            Sto trzydzieści jeden domen nie oddało strony w ogóle
-          </h2>
-          <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-            Zanim doszliśmy do treści, odpadła jedna trzecia próbki. To nie jest
-            błąd pomiaru, tylko pierwszy wynik: dla tych domen pytanie o
-            widoczność w AI jest bezprzedmiotowe, bo nie ma czego odwiedzić.
-          </p>
-        </div>
+        <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
+          131 domen nie oddało strony w ogóle
+        </h2>
 
         <WykresSlupkowy
           tytul="Dlaczego 131 domen nie oddało strony"
@@ -147,38 +118,18 @@ export default function Page() {
           zrodlo="Pomiar Fluxlab, wrzesień 2026. Trzy zapytania na domenę, bez logowania i bez obchodzenia zabezpieczeń."
         />
 
-        <div>
-          <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-            Wśród 255 domen, które stronę oddały, kolejnych 56 zrobiło to
-            dopiero po pominięciu weryfikacji certyfikatu, a 34 wyłącznie bez
-            szyfrowania. Przeglądarka pokazuje w takich przypadkach ostrzeżenie
-            na pełnym ekranie, zanim odwiedzający zobaczy cokolwiek z oferty.
-          </p>
+        <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
+          Blokady robotów AI praktycznie nie istnieją
+        </h2>
+        <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
+          Z 255 działających stron zakaz dla robotów AI mają <strong>dwie</strong>,
+          czyli 0,8 procent. Kolejne 90 działa tylko z błędnym certyfikatem albo
+          bez szyfrowania, więc przeglądarka straszy ostrzeżeniem.
+        </p>
 
-          <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
-            Blokady robotów AI praktycznie nie istnieją
-          </h2>
-          <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-            Spodziewaliśmy się, że to będzie główny wynik badania. Nie jest.
-            Spośród 255 działających stron zakaz wejścia dla robotów
-            zbierających treść dla asystentów ma <strong>dwie</strong>, czyli
-            0,8 procent. Obie blokują wszystkie siedem naraz, co wygląda na
-            regułę ogólną napisaną przeciwko robotom kopiującym treść, a nie na
-            świadomą decyzję akurat o asystentach.
-          </p>
-          <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-            Dla porównania: wśród dużych polskich wydawców blokady są normą.
-            Sprawdziliśmy jeden tytuł prasowy i blokuje pięć z siedmiu tych
-            samych robotów. Tam jest to decyzja biznesowa o nieoddawaniu treści,
-            z której się żyje. U dealera takiej decyzji nie ma, bo nie ma czego
-            bronić: opis serwisu i lista modeli to nie jest towar, który ktoś
-            kupuje osobno.
-          </p>
-
-          <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
-            Prawdziwy problem: nie ma czego zacytować
-          </h2>
-        </div>
+        <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
+          Prawdziwy problem: nie ma czego zacytować
+        </h2>
 
         <WykresSlupkowy
           tytul="Czego brakuje na 255 działających stronach"
@@ -217,115 +168,32 @@ export default function Page() {
           zrodlo="Pomiar Fluxlab, wrzesień 2026. Próbka 255 domen, które oddały stronę główną."
         />
 
-        <div>
-          <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-            Zestawienie ostatnich dwóch słupków jest całą treścią tego badania.
-            Zakaz wejścia dotyczy dwóch stron, a pusty dokument czterdziestu
-            jeden. Dwadzieścia razy częstszy problem polega nie na tym, że robot
-            nie chce wejść, tylko na tym, że po wejściu nie znajduje nic.
-          </p>
-          <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-            Mediana ilości tekstu w dokumencie to 3 331 znaków, czyli mniej
-            więcej jedna strona maszynopisu. Sto cztery strony na 255 mają
-            poniżej dwóch tysięcy znaków. To jest materiał, z którego asystent
-            ma zbudować zdanie o tym, czym firma się zajmuje i komu ją polecić.
-          </p>
-          <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-            Komplet czterech warunków, czyli brak blokady, treść w dokumencie,
-            dane uporządkowane i wypełniony opis, spełnia 63 strony na 255,
-            czyli niecałe 25 procent.
-          </p>
-
-          <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
-            Jedna rzecz, która nas zaskoczyła
-          </h2>
-          <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-            Plik llms.txt, czyli krótki opis serwisu pisany wprost pod modele
-            językowe, ma 53 domeny z 255, czyli co piąta. Spodziewaliśmy się
-            pojedynczych przypadków, bo to rozwiązanie świeże i nieobowiązkowe.
-          </p>
-          <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-            Po zajrzeniu do środka obraz się wyjaśnia. Część plików jest pisana
-            ręcznie i wygląda na przemyślaną, z opisem marek i zakresu usług.
-            Cztery zaczynają się od stopki „wygenerowany przez\" i nazwy
-            popularnej wtyczki optymalizacyjnej. Innymi słowy: to nie jest fala
-            świadomych decyzji, tylko w dużej części efekt uboczny aktualizacji
-            wtyczki, która zaczęła generować ten plik sama.
-          </p>
-          <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-            Wniosek jest dla nas dwuznaczny. Z jednej strony to dowód, że
-            narzędzia same popychają rynek w tę stronę. Z drugiej, plik
-            wygenerowany automatycznie zawiera to samo, co i tak jest na
-            stronie, więc firmie, która nie ma czego powiedzieć, nie pomoże.
-          </p>
-
-          <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
-            Czego nie zmierzyliśmy i nie będziemy udawać, że wiemy
-          </h2>
-          <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-            Nie sprawdzaliśmy, czy którykolwiek asystent faktycznie poleca te
-            firmy, bo takiego pomiaru nie da się zrobić uczciwie. Odpowiedzi
-            różnią się między użytkownikami i zmieniają w czasie, więc
-            pojedyncze zapytanie niczego nie dowodzi. Zmierzyliśmy warunki
-            wstępne, na które właściciel strony ma wpływ, a nie wynik, na który
-            nie ma go nikt.
-          </p>
-          <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-            Nie sprawdzaliśmy też podstron. Strona główna to najlepszy
-            pojedynczy wskaźnik i jednocześnie najmniejsze obciążenie cudzego
-            serwera, ale serwis może mieć dobrze opisane podstrony ofertowe przy
-            ubogiej stronie głównej.
-          </p>
-
-          <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
-            Co z tego wynika praktycznie
-          </h2>
-          <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-            Kolejność działań wynika wprost z liczb. Najpierw sprawdzić, czy
-            strona ma treść w samym dokumencie, bo bez tego reszta nie ma
-            znaczenia. Potem dopisać dane uporządkowane i opis w metadanych, co
-            jest robotą na godziny, nie na tygodnie. Blokady robotów sprawdzić
-            na końcu, bo statystycznie ich nie ma.
-          </p>
-          <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-            Zestawienia, na których stoi to badanie, są{" "}
-            <Link href="/strefa-wiedzy" className="text-accent hover:underline">
-              do pobrania w formacie CSV
-            </Link>
-            , bez rejestracji i do zacytowania z podaniem źródła. Bez nazw
-            domen, bo lista firm z ich słabymi punktami to nie jest materiał do
-            publikacji.
-          </p>
-          <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-            Te same cztery punkty sprawdza nasze{" "}
-            <Link
-              href="/widocznosc-w-ai"
-              className="text-accent hover:underline"
-            >
-              darmowe narzędzie
-            </Link>
-            , na dowolnej domenie, bez rejestracji. Jeśli interesuje Cię, co
-            jeszcze na tych samych 386 domenach wyszło nie tak, mamy też{" "}
-            <Link
-              href="/strefa-wiedzy/co-jest-nie-tak-ze-stronami-dealerow"
-              className="text-accent hover:underline"
-            >
-              przegląd stanu technicznego
-            </Link>{" "}
-            oraz{" "}
-            <Link
-              href="/strefa-wiedzy/podszywanie-pod-salony-samochodowe"
-              className="text-accent hover:underline"
-            >
-              badanie zabezpieczeń poczty
-            </Link>
-            .
-          </p>
-        </div>
+        <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
+          Pusty dokument zdarza się dwadzieścia razy częściej niż blokada.
+          Wszystkie cztery warunki spełnia 63 strony na 255, czyli niecałe 25
+          procent. Co piąta domena ma plik llms.txt, ale część wygenerowała go
+          sama wtyczka.
+        </p>
+        <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
+          Kolejność napraw: najpierw treść w samym dokumencie, potem dane
+          uporządkowane i opis w metadanych, blokady na końcu. Nie mierzyliśmy,
+          czy asystenci faktycznie polecają te firmy, tylko warunki, na które
+          właściciel strony ma wpływ.
+        </p>
+        <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
+          Te same domeny opisujemy też w{" "}
+          <Link
+            href="/strefa-wiedzy/podszywanie-pod-salony-samochodowe"
+            className="text-accent hover:underline"
+          >
+            badaniu zabezpieczeń poczty
+          </Link>
+          .
+        </p>
 
         <SprawdzPoBadaniu
           naglowek="Sprawdź to na żywo, jednym kliknięciem"
-          opis="Pobieramy wybraną domenę tak, jak robi to asystent AI, i patrzymy na te same cztery punkty co w badaniu: treść w dokumencie, dane uporządkowane, opis w metadanych i blokady robotów."
+          opis="Pobieramy domenę tak jak asystent AI i sprawdzamy te same cztery punkty co w badaniu."
           endpoint="/api/sprawdz-ai"
           pozycje={[
             { wartosc: "fluxlab.pl" },

@@ -31,34 +31,34 @@ export default function WidocznoscWAi() {
       breadcrumb="Widoczność w AI"
       eyebrow="Za darmo"
       h1="Czy asystent AI widzi Twoją stronę"
-      lead="Część klientów przestała wpisywać frazy w wyszukiwarkę i zaczęła pytać asystenta o firmę do konkretnego zadania. Odpowiedź powstaje z tego, co robot zdołał przeczytać. Sprawdzamy siedem rzeczy, które decydują, czy Twoja strona w ogóle może się w niej pojawić."
+      lead="Coraz więcej klientów pyta asystenta AI zamiast wpisywać frazę w wyszukiwarkę. Asystent poleci tylko stronę, którą zdołał przeczytać. Sprawdzamy siedem warunków, od których to zależy."
       ctaLabel="Sprawdź swoją stronę"
       ctaNote="Wynik od ręki, bez rejestracji"
       tool={<AiCheck />}
       checks={[
         {
-          title: "Blokada, o której nikt nie pamięta",
-          desc: "Roboty zbierające treść do modeli mają własne nazwy i własne reguły w pliku robots.txt. Reguła napisana kiedyś przeciwko robotom kopiującym treść potrafi przy okazji wyciąć wszystkie z nich naraz. Blokada bywa świadoma i wtedy nie ma o czym mówić, ale warto wiedzieć, że się ją ma, zamiast odkryć to przypadkiem.",
+          title: "Zapomniana blokada",
+          desc: "Stara reguła w robots.txt przeciwko robotom kopiującym treść potrafi zablokować wszystkie roboty AI naraz. Warto wiedzieć, że się ją ma.",
         },
         {
-          title: "Strona, która buduje się dopiero w przeglądarce",
-          desc: "To najczęstszy i najpoważniejszy problem. Sklep albo strona oparta na skryptach wygląda u człowieka normalnie, a w samym dokumencie ma kilkaset znaków. Roboty zbierające dane do modeli w większości nie uruchamiają skryptów, więc widzą pustą kartkę i nie mają czego zacytować.",
+          title: "Strona budowana w przeglądarce",
+          desc: "Najczęstszy problem. Większość robotów AI nie uruchamia skryptów, więc strona oparta na nich jest dla nich pusta.",
         },
         {
-          title: "Firma opisana tak, żeby maszyna nie musiała zgadywać",
-          desc: "Dane uporządkowane to kilkanaście linii w dokumencie, które mówią wprost: to jest firma, tym się zajmuje, tu działa, tak się z nią kontaktuje. Bez nich maszyna wyciąga to z układu strony, a przy wyciąganiu myli branżę i zakres usług znacznie częściej, niż się wydaje.",
+          title: "Dane o firmie dla maszyny",
+          desc: "Kilkanaście linii danych uporządkowanych mówi wprost, czym się zajmujecie i gdzie działacie. Bez nich robot zgaduje i często myli branżę.",
         },
         {
-          title: "Zdanie, którym asystent Cię opisze",
-          desc: 'Tytuł strony i opis w metadanych to najczęściej cytowany fragment całego serwisu. Jeśli stoi tam nazwa firmy i słowo „strona główna", to jest dokładnie to, co usłyszy pytający. Jeśli stoi tam, co robicie i dla kogo, odpowiedź wygląda zupełnie inaczej.',
+          title: "Tytuł i opis strony",
+          desc: "To najczęściej cytowany fragment serwisu. Powinien mówić, co robicie i dla kogo, a nie tylko „strona główna”.",
         },
         {
-          title: "llms.txt, czyli własnymi słowami",
-          desc: "Krótki plik tekstowy, w którym firma sama opisuje, czym jest i gdzie w serwisie leży co. Nie jest wymogiem i jego brak niczego nie psuje. Jest natomiast najtańszym sposobem, żeby samemu napisać zdanie o swojej firmie, zamiast zostawiać je interpretacji.",
+          title: "Plik llms.txt",
+          desc: "Krótki opis firmy Waszymi słowami. Nie jest wymagany, ale to najtańszy sposób, by samemu napisać zdanie o sobie.",
         },
         {
-          title: "Czego to sprawdzenie nie robi",
-          desc: "Nie obiecuje miejsca w odpowiedzi asystenta i nie mierzy, jak często ktoś już Cię wymienia. Żaden dostawca tego nie gwarantuje, a każdy, kto obiecuje pozycję w odpowiedziach AI, obiecuje rzecz, na którą nie ma wpływu. To jest sprawdzenie warunków wstępnych: czy robot w ogóle ma co przeczytać.",
+          title: "Czego nie obiecujemy",
+          desc: "Nikt nie gwarantuje miejsca w odpowiedzi asystenta. Sprawdzamy warunki wstępne: czy robot ma co przeczytać.",
         },
       ]}
       pricing={[
@@ -67,9 +67,8 @@ export default function WidocznoscWAi() {
           price: "0 zł",
           desc: "Tu, na stronie, od ręki.",
           features: [
-            "Siedem punktów z opisem, co dokładnie znaleziono",
-            "Bez rejestracji i bez zapisu na listę",
-            "Wynik możesz przesłać dalej swojemu wykonawcy",
+            "Siedem punktów z opisem wyniku",
+            "Bez rejestracji",
           ],
         },
         {
@@ -77,11 +76,10 @@ export default function WidocznoscWAi() {
           price: "890 zł",
           desc: "Gdy sprawdzenie wyszło na czerwono.",
           features: [
-            "Zdjęcie przypadkowych blokad z robots.txt",
+            "Usunięcie przypadkowych blokad z robots.txt",
             "Dane uporządkowane o firmie i usługach",
-            "Tytuły i opisy na kluczowych podstronach",
-            "Plik llms.txt napisany Waszymi słowami",
-            "Ponowne sprawdzenie po zmianach, na piśmie",
+            "Tytuły i opisy kluczowych podstron",
+            "Plik llms.txt i ponowne sprawdzenie",
           ],
           featured: true,
         },
@@ -90,46 +88,32 @@ export default function WidocznoscWAi() {
           price: "od 1 900 zł",
           desc: "Gdy technicznie jest już dobrze.",
           features: [
-            "Zestaw realnych pytań, które zadaje Wasz klient",
-            "Odpowiedzi na stronie, konkretne i cytowalne",
-            "Układ treści, z którego da się wyciąć fragment",
-            "Bez ogólników o jakości i indywidualnym podejściu",
+            "Realne pytania, które zadaje Wasz klient",
+            "Konkretne odpowiedzi na stronie, łatwe do zacytowania",
           ],
         },
       ]}
       faq={[
         {
           q: "Jak wpuścić ChatGPT na stronę, ale nie oddawać treści do trenowania modeli?",
-          a: "OpenAI ma trzy osobne roboty i każdy ustawia się w robots.txt niezależnie. OAI-SearchBot decyduje, czy strona może się pojawić w wynikach wyszukiwania w ChatGPT. GPTBot zbiera treść, która może trafić do trenowania modeli. ChatGPT-User czyta stronę, gdy użytkownik sam o nią poprosi, i według OpenAI reguły robots.txt mogą go nie obowiązywać. Żeby być w wyszukiwaniu ChatGPT bez oddawania treści do trenowania, w robots.txt wpisujecie dwie grupy: „User-agent: OAI-SearchBot” z „Allow: /” oraz „User-agent: GPTBot” z „Disallow: /”.",
+          a: "W robots.txt wpuśćcie OAI-SearchBot (wyszukiwanie w ChatGPT), a zablokujcie GPTBot (trenowanie): „User-agent: OAI-SearchBot” z „Allow: /” oraz „User-agent: GPTBot” z „Disallow: /”.",
         },
         {
           q: "Czy zablokowanie GPTBot usuwa nas z ChatGPT?",
-          a: "Nie. GPTBot dotyczy tylko trenowania modeli, a za pojawianie się w wyszukiwaniu ChatGPT odpowiada OAI-SearchBot. Częsty błąd idzie w drugą stronę: reguła „User-agent: *” z „Disallow: /” albo gotowa lista blokująca „wszystkie roboty AI” zamyka też OAI-SearchBot, a wtedy strona z wyszukiwania w ChatGPT znika. Tak samo działa to u Anthropic: ClaudeBot zbiera treść do trenowania, Claude-SearchBot indeksuje do wyszukiwania, Claude-User czyta stronę na prośbę użytkownika.",
+          a: "Nie, GPTBot dotyczy tylko trenowania. Z wyszukiwania w ChatGPT usuwa Was natomiast reguła „User-agent: *” z „Disallow: /” albo gotowa lista blokująca wszystkie roboty AI.",
         },
         {
           q: "Czy blokada Google-Extended wyłącza nas z AI Overviews w Google?",
-          a: "Nie. Google-Extended steruje tylko tym, czy treść może służyć do trenowania modeli Gemini i do odpowiedzi w innych produktach Google. Według dokumentacji Google nie wpływa na obecność w wyszukiwarce ani na pozycję. AI Overviews i tryb AI są częścią wyszukiwarki, więc steruje nimi zwykły Googlebot i znaczniki nosnippet, data-nosnippet, max-snippet oraz noindex. Blokada Google-Extended nie zaszkodzi więc widoczności w Google, ale też nie wyjmie strony z AI Overviews.",
-        },
-        {
-          q: "Czy blokowanie tych robotów jest błędem?",
-          a: "Nie zawsze. Wydawca, który żyje ze swoich treści, ma dobry powód, żeby nie oddawać ich do trenowania modeli za darmo. Firma usługowa zwykle nie ma takiego powodu, a blokada odcina ją od kanału, w którym ktoś właśnie pyta o wykonawcę. Sprawdzenie pokazuje stan, a decyzja należy do Was.",
-        },
-        {
-          q: "Skąd wiadomo, że roboty nie uruchamiają skryptów?",
-          a: "Z dokumentacji dostawców i z zachowania, które widać po stronie serwera. Część z nich potrafi już renderować, ale nie jest to regułą i nie jest to gwarantowane. Strona, której treść jest w samym dokumencie, działa u wszystkich, a strona zależna od skryptów działa u części. Przy równym koszcie wybór jest oczywisty.",
+          a: "Nie. Google-Extended dotyczy trenowania Gemini. AI Overviews to część wyszukiwarki, którą steruje zwykły Googlebot i znaczniki takie jak nosnippet czy noindex.",
         },
         {
           q: "Czy da się sprawdzić, czy ChatGPT już mnie wymienia?",
-          a: "Nie tym narzędziem i nie w sposób, który dałoby się nazwać pomiarem. Odpowiedzi asystentów różnią się między użytkownikami i zmieniają w czasie, więc pojedyncze zapytanie niczego nie dowodzi. Dlatego sprawdzamy warunki, na które macie wpływ, a nie wynik, na który nie ma go nikt.",
-        },
-        {
-          q: "Czy to nie jest to samo co pozycjonowanie?",
-          a: "Częściowo się pokrywa, bo jedno i drugie wymaga, żeby treść dała się przeczytać. Różnica jest w tym, co się dzieje dalej: wyszukiwarka pokazuje listę odnośników, a asystent wybiera kilka źródeł i buduje z nich jedną odpowiedź. Materiałem do zacytowania jest konkretna odpowiedź na konkretne pytanie, a nie strona nasycona frazami.",
+          a: "Nie w sposób, który byłby pomiarem. Odpowiedzi asystentów różnią się między użytkownikami i zmieniają w czasie, dlatego sprawdzamy warunki, na które macie wpływ.",
         },
       ]}
       formId="widocznosc_ai"
       formHeading="Wynik wyszedł na czerwono i nie wiesz, od czego zacząć"
-      formIntro="Napisz adres strony i jedno zdanie o tym, kto ją dla Was prowadzi. Odeślemy kolejność działań i informację, co da się zrobić samemu, a co wymaga kogoś z dostępem do kodu."
+      formIntro="Podaj adres strony. Odeślemy kolejność działań i napiszemy, co zrobicie sami, a co wymaga dostępu do kodu."
       submitLabel="Poproś o kolejność działań"
       microCopy="Odpisujemy zwykle tego samego dnia. Ustalenia prowadzimy mailowo."
       serviceName="Audyt widoczności strony dla asystentów AI"

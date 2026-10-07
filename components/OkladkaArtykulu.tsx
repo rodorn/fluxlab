@@ -5,15 +5,15 @@ interface Props {
 }
 
 // Okladka rysowana z tytulu, a nie brana ze zdjec stokowych. Kazdy artykul
-// dostaje wlasny, powtarzalny uklad i kolor, wiec lista przestaje byc sciana
+// dostaje wlasny, powtarzalny uklad i odcien koloru marki, wiec lista przestaje byc sciana
 // tekstu, a strona nie tyje o ani jeden kilobajt obrazkow.
 const PALETY = [
-  ["#6d28d9", "#a78bfa"],
-  ["#0f766e", "#5eead4"],
-  ["#b45309", "#fcd34d"],
-  ["#9d174d", "#f9a8d4"],
-  ["#1d4ed8", "#93c5fd"],
-  ["#4d7c0f", "#bef264"],
+  ["#4f46e5", "#a5b4fc"],
+  ["#3730a3", "#818cf8"],
+  ["#312e81", "#6366f1"],
+  ["#1e1b4b", "#4f46e5"],
+  ["#374151", "#9ca3af"],
+  ["#1f2937", "#6366f1"],
 ];
 
 // Mnoznik 31 na krotkich, podobnie zaczynajacych sie tytulach dawal te sama

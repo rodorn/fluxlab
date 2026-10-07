@@ -31,54 +31,34 @@ export const metadata: Metadata = {
 const czytelnik = [
   {
     q: "Czy numer jest poprawny",
-    a: "Zanim cokolwiek odpytamy, liczymy sumę kontrolną numeru. Literówka w NIP z faktury wychodzi od razu, bez czekania na odpowiedź rejestru.",
+    a: "Liczymy sumę kontrolną, więc literówka z faktury wychodzi od razu.",
   },
   {
-    q: "Czy podmiot figuruje w wykazie",
-    a: "Odpytujemy wykaz podatników VAT prowadzony przez Ministerstwo Finansów. Brak wpisu przy firmie, która wystawia fakturę z VAT, jest sygnałem, którego nie wolno zignorować.",
+    q: "Czy firma jest w wykazie i czy jest czynnym podatnikiem",
+    a: "Brak wpisu albo status zwolniony zmienia Twoje prawo do odliczenia VAT z faktury.",
   },
   {
-    q: "Czy jest czynnym podatnikiem",
-    a: "Status zwolniony albo wykreślony zmienia Twoje prawo do odliczenia podatku z takiej faktury.",
-  },
-  {
-    q: "Ile rachunków firma zgłosiła",
-    a: "Zero zgłoszonych rachunków oznacza, że każdy numer konta, jaki dostaniesz od tej firmy, jest nie do zweryfikowania w wykazie.",
-  },
-  {
-    q: "Od kiedy działa",
-    a: "Data rejestracji sprzed kilku tygodni przy dużym zamówieniu z przedpłatą to typowy układ przy firmach zakładanych na jedną transakcję.",
+    q: "Ile rachunków zgłosiła i od kiedy działa",
+    a: "Zero rachunków albo rejestracja sprzed kilku tygodni przy dużej przedpłacie to sygnał ostrzegawczy.",
   },
 ];
 
 const faq = [
   {
     q: "Czy sprawdzenie jest naprawdę darmowe?",
-    a: "Tak. Nie ma rejestracji, nie ma pola na dane kontaktowe wymaganego do sprawdzenia i nie ma limitu prób. Dane pochodzą z publicznego wykazu Ministerstwa Finansów.",
-  },
-  {
-    q: "Skąd pochodzą dane?",
-    a: "Z wykazu podatników VAT Ministerstwa Finansów, odpytywanego na bieżąco w momencie sprawdzenia. Nic nie jest pobierane z kopii ani z zapasowej bazy.",
+    a: "Tak. Bez rejestracji i bez limitu prób. Dane pochodzą na bieżąco z publicznego wykazu Ministerstwa Finansów.",
   },
   {
     q: "Czy sprawdzicie, czy konto do przelewu należy do tej firmy?",
-    a: "To jest osobny test i najważniejszy z całej weryfikacji, bo podmieniony numer rachunku w mailu jest najczęstszym sposobem przejęcia płatności. Robimy go w płatnym raporcie, bo wymaga porównania Twojego numeru z listą rachunków zgłoszonych przez podmiot.",
-  },
-  {
-    q: "Czy to zastępuje sprawdzenie w KRS?",
-    a: "Nie. Darmowe sprawdzenie pokazuje status podatkowy. Informacje o likwidacji, zaległościach i reprezentacji są w KRS i wchodzą do pełnego raportu.",
-  },
-  {
-    q: "Czy zapisujecie sprawdzane numery?",
-    a: "Sprawdzenie nie wymaga podania żadnych Twoich danych. Adres mailowy zostawiasz tylko wtedy, gdy sam poprosisz o szerszy raport.",
+    a: "Tak, w płatnym raporcie. Porównujemy Twój numer z listą rachunków zgłoszonych przez firmę.",
   },
   {
     q: "Od jakiej kwoty trzeba sprawdzać rachunek w wykazie?",
-    a: "Od 15 000 zł brutto jednorazowej transakcji, niezależnie od tego, na ile przelewów jest podzielona. Przelew poniżej tej kwoty na rachunek spoza wykazu nie rodzi sankcji z art. 117ba Ordynacji podatkowej.",
+    a: "Od 15 000 zł brutto jednorazowej transakcji, niezależnie od liczby przelewów.",
   },
   {
     q: "Zapłaciliśmy na rachunek spoza wykazu, co teraz?",
-    a: "Zawiadomienie ZAW-NR do naczelnika urzędu skarbowego właściwego dla nabywcy w ciągu 7 dni od dnia zlecenia przelewu wyłącza sankcje: koszt zostaje w kosztach podatkowych, a odpowiedzialność solidarna za VAT kontrahenta nie powstaje. Po terminie sankcji już nie da się wyłączyć.",
+    a: "Złóż zawiadomienie ZAW-NR do urzędu skarbowego w ciągu 7 dni od zlecenia przelewu. To wyłącza sankcje, po terminie już się nie da.",
   },
 ];
 
@@ -102,9 +82,8 @@ export default function SprawdzenieNipPage() {
               Sprawdzenie NIP w wykazie Ministerstwa Finansów
             </h1>
             <p className="mt-5 text-lg text-gray-600 dark:text-gray-300">
-              Wpisz numer, a odpytamy wykaz podatników VAT i pokażemy, czy firma
-              tam jest, czy jest czynnym podatnikiem, od kiedy działa i ile
-              rachunków bankowych zgłosiła. Bez rejestracji i bez limitu prób.
+              Wpisz numer i sprawdź status VAT, datę rejestracji oraz liczbę
+              zgłoszonych rachunków. Bez rejestracji.
             </p>
           </div>
 
@@ -136,13 +115,8 @@ export default function SprawdzenieNipPage() {
               Czego darmowe sprawdzenie nie powie
             </h2>
             <p className="mt-3 text-gray-600 dark:text-gray-300">
-              Status w wykazie to dopiero pierwsza warstwa. Firma może być
-              czynnym podatnikiem i jednocześnie być w likwidacji, mieć
-              zaległości ujawnione w rejestrze albo podać Ci numer konta, który
-              do niej nie należy. Najważniejszy test przed przelewem to
-              porównanie numeru rachunku z listą rachunków zgłoszonych przez ten
-              podmiot, bo podmieniony numer w mailu jest najczęstszym sposobem
-              przejęcia płatności.
+              Nie pokaże likwidacji, zaległości ani tego, czy numer konta z maila
+              należy do firmy. To sprawdzamy w pełnym raporcie.
             </p>
             <p className="mt-4">
               <Link

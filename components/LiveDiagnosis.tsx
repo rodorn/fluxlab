@@ -263,7 +263,7 @@ export default function LiveDiagnosis() {
               <p
                 role="alert"
                 aria-live="polite"
-                className="mt-4 text-center text-sm text-red-600"
+                className="mt-4 text-center text-sm text-red-700 dark:text-red-400"
               >
                 {errorMsg}
               </p>
@@ -375,7 +375,7 @@ export default function LiveDiagnosis() {
                 {/* Promocja, program case study */}
                 <a
                   href="/pilotaz"
-                  className="mt-4 block rounded-xl border border-accent/30 bg-gradient-to-br from-accent/10 via-violet-500/10 to-accent/10 p-5 transition-colors hover:border-accent/50"
+                  className="mt-4 block rounded-xl border border-accent/30 bg-gradient-to-br from-accent/10 via-accent/5 to-accent/10 p-5 transition-colors hover:border-accent/50"
                 >
                   <div className="flex items-start gap-3">
                     <span className="flex-shrink-0 inline-flex items-center justify-center px-2.5 py-1 rounded-lg bg-accent-solid text-white text-sm font-bold">
@@ -409,18 +409,18 @@ export default function LiveDiagnosis() {
                 </div>
 
                 {result.honestNote.trim() !== "" && (
-                  <div className="mt-4 rounded-xl border border-amber-300 dark:border-amber-500/40 bg-amber-50 dark:bg-amber-500/10 p-5">
+                  <div className="mt-4 rounded-xl border border-amber-500/60 bg-amber-50 dark:bg-amber-950/30 p-5">
                     <p className="text-xs font-semibold uppercase tracking-wide text-amber-700 dark:text-amber-400">
                       Szczera uwaga
                     </p>
-                    <p className="mt-1 text-sm text-amber-800 dark:text-amber-200">
+                    <p className="mt-1 text-sm text-gray-700 dark:text-gray-300">
                       {result.honestNote}
                     </p>
                   </div>
                 )}
 
                 {leadStan === "ok" ? (
-                  <p className="mt-6 rounded-xl border border-emerald-500/50 bg-emerald-50 dark:bg-emerald-950/30 p-4 text-sm font-semibold text-emerald-700 dark:text-emerald-400">
+                  <p className="mt-6 rounded-xl border border-emerald-500/60 bg-emerald-50 dark:bg-emerald-950/30 p-4 text-sm font-semibold text-emerald-700 dark:text-emerald-400">
                     Mamy zgłoszenie razem z tą analizą. Odpiszemy na {email},
                     zwykle tego samego dnia.
                   </p>
@@ -453,7 +453,7 @@ export default function LiveDiagnosis() {
                       </button>
                     </div>
                     {leadStan === "blad" && (
-                      <p className="mt-2 text-sm text-red-600 dark:text-red-400">
+                      <p className="mt-2 text-sm text-red-700 dark:text-red-400">
                         {leadBlad}
                       </p>
                     )}

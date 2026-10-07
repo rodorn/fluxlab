@@ -29,24 +29,14 @@ export const metadata: Metadata = {
 
 const faqItems = [
   {
-    question: "Jak w minutę sprawdzić, czy formularz przeładowuje stronę?",
-    answer:
-      "Wyślij zgłoszenie testowe i spójrz na adres w pasku przeglądarki. Jeżeli po wysłaniu zmienił się na stronę z podziękowaniem, przeładowanie następuje i zliczanie odsłony zadziała. Jeżeli adres został ten sam, a komunikat pojawił się w miejscu formularza, to formularz wysyła się w tle i liczenie odsłony nigdy niczego nie policzy.",
-  },
-  {
     question: "Czy zliczanie kliknięcia w przycisk jest zawsze błędem?",
     answer:
-      "Nie, o ile świadomie wybieramy je jako miarę zainteresowania, a nie zgłoszeń. Problem zaczyna się wtedy, gdy ta sama liczba trafia do systemu reklamowego jako konwersja i decyduje o budżecie. Wtedy płacisz za kliknięcia w przycisk, a nie za zgłoszenia, i nigdy się o tym nie dowiesz.",
-  },
-  {
-    question: "Skąd mamy wiedzieć, czy konwersja liczy się dwa razy?",
-    answer:
-      "Porównaj liczbę zgłoszeń w swojej skrzynce z liczbą konwersji w panelu za ten sam dzień. Jeżeli wyszło dokładnie dwa razy więcej niż maili, prawie na pewno to samo zdarzenie jest zliczane osobno przez analitykę i osobno przez system reklamowy, a oba wysyłają dane do jednego miejsca.",
+      "Nie, jeśli to miara zainteresowania. Błędem jest wysyłanie tej liczby do systemu reklamowego jako konwersji, bo wtedy płacisz za kliknięcia, a nie za zgłoszenia.",
   },
   {
     question: "Czy nasze własne wejścia mają aż takie znaczenie?",
     answer:
-      "Przy dużym ruchu nie. Przy stronie, którą odwiedza kilkadziesiąt osób dziennie, kilka własnych testów i sprawdzeń potrafi przesunąć wynik o kilkanaście procent, a po wdrożeniu zmian sprawdza się je zwykle kilkanaście razy w ciągu jednego dnia.",
+      "Przy dużym ruchu nie. Przy kilkudziesięciu odwiedzinach dziennie własne testy potrafią przesunąć wynik o kilkanaście procent.",
   },
 ];
 
@@ -66,10 +56,9 @@ export default function Page() {
           Licznik konwersji pokazuje zero, a zgłoszenia przychodzą
         </h1>
         <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
-          To jedna z tych sytuacji, w których łatwo wyciągnąć najgorszy możliwy
-          wniosek: że strona nie działa i że reklama nie ma sensu. Najczęściej
-          jest inaczej. Zgłoszenia docierają, tylko nikt ich nie liczy, a
-          przyczyna jest zwykle jedna z czterech.
+          Zero w panelu rzadko znaczy, że strona nie działa. Zwykle zgłoszenia
+          docierają, tylko nikt ich nie liczy. Przyczyna to najczęściej jedna z
+          czterech.
         </p>
 
         <div className="mt-10">
@@ -77,86 +66,53 @@ export default function Page() {
             Pierwsza: formularz nie przeładowuje strony
           </h2>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-            Najstarszy sposób liczenia zgłoszeń polega na zliczaniu odsłon
-            strony z podziękowaniem. Działa, dopóki wysłanie formularza
-            faktycznie przenosi odwiedzającego pod nowy adres. Nowsze formularze
-            wysyłają się w tle i pokazują komunikat w miejscu, w którym przed
-            chwilą był formularz. Adres się nie zmienia, odsłony nie ma, licznik
-            zostaje na zerze.
-          </p>
-          <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-            Skutek jest podstępny, bo nic się nie psuje widocznie. Zgłoszenia
-            przychodzą na skrzynkę, właściciel widzi w panelu zero i po kilku
-            tygodniach wyłącza reklamę, która akurat działała.
+            Stary sposób liczy odsłony strony z podziękowaniem. Nowsze
+            formularze wysyłają się w tle, adres się nie zmienia, więc licznik
+            stoi na zerze, a zgłoszenia przychodzą na skrzynkę.
           </p>
 
           <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
             Druga: konwersja podpięta pod kliknięcie
           </h2>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-            To poprawka na pierwszy problem, robiona w pośpiechu: skoro nie ma
-            strony z podziękowaniem, policzmy naciśnięcie przycisku. Liczby
-            natychmiast przestają być zerem, więc wygląda to na rozwiązanie.
-          </p>
-          <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-            Tyle że wtedy liczy się każda próba, także ta nieudana. Ktoś nie
-            zaznaczył zgody, ktoś wpisał adres z literówką, ktoś nacisnął dwa
-            razy, bo nic się nie stało. Wynik jest zawyżony, a przy kampanii
-            płatnej system reklamowy uczy się przyciągać ludzi, którzy naciskają
-            przycisk, a nie tych, którzy wysyłają zgłoszenie. Błąd kosztuje tym
-            więcej, im dłużej działa.
+            Liczy się wtedy każda próba, także nieudana albo podwójna. Wynik
+            jest zawyżony, a system reklamowy uczy się przyciągać ludzi, którzy
+            klikają, a nie tych, którzy wysyłają zgłoszenie.
           </p>
 
           <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
             Trzecia: to samo zdarzenie liczone dwa razy
           </h2>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-            Typowy układ jest taki, że konwersję ustawia agencja w systemie
-            reklamowym, a potem ktoś inny dokłada ją w analityce, przy czym
-            analityka też przekazuje dane do reklam. Jedno zgłoszenie zamienia
-            się w dwie konwersje. Rozpoznaje się to w minutę: wystarczy porównać
-            liczbę konwersji z liczbą wiadomości w skrzynce za ten sam dzień.
+            Konwersję ustawia agencja w systemie reklamowym, a ktoś inny dokłada
+            ją w analityce, która też przekazuje dane do reklam. Jedno
+            zgłoszenie staje się dwiema konwersjami.
           </p>
 
           <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
             Czwarta: liczysz samego siebie
           </h2>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-            Po każdej zmianie na stronie sprawdza się ją kilkanaście razy, a po
-            wdrożeniu formularza wysyła się kilka zgłoszeń testowych. Przy
-            stronie odwiedzanej przez kilkadziesiąt osób dziennie to nie jest
-            szum, tylko istotna część wyniku. Wykluczenie własnych wejść to
-            jedno ustawienie, a robi się je zwykle dopiero wtedy, gdy ktoś
-            zauważy dziwną liczbę.
+            Przy kilkudziesięciu odwiedzinach dziennie własne testy to istotna
+            część wyniku. Wykluczenie własnych wejść to jedno ustawienie.
           </p>
 
           <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
             Jak rozstrzygnąć, która to przyczyna
           </h2>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-            Kolejność jest prosta i zajmuje kwadrans. Wyślij jedno zgłoszenie
-            testowe i sprawdź, czy adres w pasku przeglądarki się zmienił. To
-            rozstrzyga między pierwszą przyczyną a resztą. Potem porównaj liczbę
-            konwersji z liczbą wiadomości w skrzynce za wczoraj: równo dwa razy
-            więcej oznacza podwójne zliczanie, znacznie więcej bez pokrycia w
-            skrzynce oznacza liczenie kliknięć. Na koniec sprawdź, czy Twoje
-            własne wejścia są wykluczone.
-          </p>
-          <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-            Dopiero gdy wszystkie cztery są w porządku, a konwersji dalej nie
-            ma, wniosek o braku zainteresowania jest uprawniony. Wcześniej to
-            nie jest wniosek, tylko domysł oparty na zepsutym pomiarze.
+            Wyślij zgłoszenie testowe i sprawdź, czy zmienił się adres w pasku.
+            Potem porównaj konwersje z mailami za wczoraj: dwa razy więcej to
+            podwójne liczenie, dużo więcej bez pokrycia to liczenie kliknięć.
+            Na koniec sprawdź wykluczenie własnych wejść.
           </p>
 
           <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
-            Jedna rzecz, o której warto pomyśleć od razu
+            Strona z płatnością
           </h2>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-            Jeżeli na stronie jest płatność, zapisuj zgłoszenie zanim
-            odwiedzający przejdzie do zapłaty, a nie po. Osoba, która wypełniła
-            formularz i odpadła przy płatności, jest najbliższa zakupowi ze
-            wszystkich, które tego dnia weszły, a przy zapisie po płatności
-            znika bez śladu. Opisaliśmy to szerzej przy{" "}
+            Zapisuj zgłoszenie przed przejściem do zapłaty, a nie po. Inaczej
+            osoba, która odpadła przy płatności, znika bez śladu. Więcej przy{" "}
             <Link
               href="/strony-www"
               className="text-accent hover:underline"
@@ -169,7 +125,7 @@ export default function Page() {
 
         <SprawdzPoBadaniu
           naglowek="Nie masz pewności, która z czterech przyczyn zachodzi u Ciebie?"
-          opis="Na tę akurat rzecz nie mamy sprawdzenia, które da wynik jednym kliknięciem: rozstrzygnięcie wymaga zajrzenia do ustawień pomiaru na konkretnej stronie. Napisz, co pokazuje licznik, a co przychodzi na skrzynkę."
+          opis="Tu potrzebne jest zajrzenie do ustawień pomiaru na konkretnej stronie. Napisz, co pokazuje licznik, a co przychodzi na skrzynkę."
           narzedzie={{
             href: "/strony-www",
             etykieta: "Zobacz, jak zapisujemy zgłoszenie przed płatnością",

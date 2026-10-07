@@ -390,7 +390,7 @@ export default function LandingForm({
         </button>
 
         {errorMsg && (
-          <p className="text-center text-sm text-red-600">{errorMsg}</p>
+          <p className="text-center text-sm text-red-700 dark:text-red-400">{errorMsg}</p>
         )}
 
         <p className="text-center text-xs text-gray-600 dark:text-gray-400">

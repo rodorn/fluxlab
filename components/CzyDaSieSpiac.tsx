@@ -29,19 +29,19 @@ import { zglosZdarzenie } from "@/lib/zdarzenie";
 
 const KOLOR: Record<number, { ramka: string; tlo: string; tekst: string }> = {
   1: {
-    ramka: "border-emerald-500/40",
+    ramka: "border-emerald-500/60",
     tlo: "bg-emerald-50 dark:bg-emerald-950/30",
-    tekst: "text-emerald-700 dark:text-emerald-300",
+    tekst: "text-emerald-700 dark:text-emerald-400",
   },
   2: {
-    ramka: "border-amber-500/40",
+    ramka: "border-amber-500/60",
     tlo: "bg-amber-50 dark:bg-amber-950/30",
-    tekst: "text-amber-700 dark:text-amber-300",
+    tekst: "text-amber-700 dark:text-amber-400",
   },
   3: {
-    ramka: "border-rose-500/40",
-    tlo: "bg-rose-50 dark:bg-rose-950/30",
-    tekst: "text-rose-700 dark:text-rose-300",
+    ramka: "border-red-500/60",
+    tlo: "bg-red-50 dark:bg-red-950/30",
+    tekst: "text-red-700 dark:text-red-400",
   },
 };
 

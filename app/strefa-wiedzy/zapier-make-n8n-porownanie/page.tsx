@@ -35,37 +35,22 @@ export default function ZapierMakeN8nPorownanieArticle() {
     {
       question: "Które narzędzie jest najlepsze dla małej firmy?",
       answer:
-        "Dla małej firmy (do 5–10 osób) bez działu IT najczęściej Zapier lub Make. Zapier, gdy potrzebujecie głównie prostych integracji typu „przepisz dane z A do B” i cenicie czas startu. Make, gdy procesy są nieco bardziej złożone (warunki, pętle) i chcecie kontrolować koszty już od początku.",
+        "Bez działu IT najczęściej Zapier lub Make. Zapier przy prostych integracjach i szybkim starcie, Make przy bardziej złożonych procesach i niższym koszcie.",
     },
     {
       question: "Czy n8n da się używać bez znajomości kodu?",
       answer:
-        "Tak, ale z ograniczeniami. Wizualny edytor pozwala budować scenariusze bez kodu, podobnie jak w Make. Pełnia możliwości n8n (Code node, expressions w stylu JavaScript, custom modules) wymaga jednak chociaż podstaw programowania. n8n.cloud znosi barierę administracji serwera, ale nie barierę logiki technicznej.",
+        "Tak, edytor jest wizualny jak w Make. Pełnia możliwości (Code node, wyrażenia JavaScript) wymaga jednak podstaw programowania.",
     },
     {
       question: "Co jest najtańsze przy 100 000 wykonań miesięcznie?",
       answer:
-        "n8n self-hosted, bez wątpienia. Serwer za 25–100 zł/mies. plus utrzymanie 200–500 zł/mies. spokojnie udźwignie taki wolumen. Make w tej skali to ok. 200–400 USD/mies. Zapier, często powyżej 600 USD/mies. Różnica między n8n a SaaS-ami przy tej skali to często rząd wielkości.",
+        "n8n self-hosted: serwer 25-100 zł/mies. plus utrzymanie 200-500 zł/mies. Make to ok. 200-400 USD/mies., Zapier często ponad 600 USD/mies.",
     },
     {
-      question: "Czy któreś z tych narzędzi obsługuje on-premise?",
+      question: "Czy możemy zacząć od Zapiera i przejść później na Make lub n8n?",
       answer:
-        "Tylko n8n. Zapier i Make to wyłącznie SaaS, nie ma wersji on-prem. n8n Community Edition i Enterprise Edition można instalować w pełni wewnętrznie, w sieci klienta, bez dostępu do internetu (jeśli nie ma webhooków przychodzących). To często decyduje w branżach regulowanych.",
-    },
-    {
-      question: "Czy możemy zacząć od Zapiera i przejść na Make/n8n później?",
-      answer:
-        "Tak, to częsta ścieżka. Wiele firm zaczyna od Zapiera (najszybszy start), a po roku-dwóch, gdy procesy się ustabilizują i wolumen urośnie, migruje wybrane scenariusze do Make lub n8n. Nie ma automatycznego importera, ale doświadczenie z Zapiera bardzo przyspiesza budowę w nowym narzędziu.",
-    },
-    {
-      question: "Które ma najlepszy support?",
-      answer:
-        "Zapier i Make mają płatny support na wyższych planach (Team/Pro+) z odpowiedzią w 24–48h. Enterprise daje dedykowanego account managera. n8n Community ma support społeczności (Discord, forum), n8n.cloud ma email support, n8n Enterprise, dedykowany SLA. Dla typowej firmy MŚP support na poziomie Starter/Pro w obu narzędziach jest porównywalny.",
-    },
-    {
-      question: "Co z bezpieczeństwem danych w każdym z tych narzędzi?",
-      answer:
-        "Wszystkie trzy mają SOC 2, podpisują DPA i obsługują RODO. Make i n8n mają serwery w UE, Zapier w USA. n8n self-hosted to opcja maksymalnej kontroli, dane w ogóle nie wychodzą poza Twoją sieć. Dla wrażliwych danych (finanse, zdrowie) n8n self-hosted jest standardem.",
+        "Tak, to częsta ścieżka. Nie ma automatycznego importu, ale scenariusze przenosi się wybiórczo, gdy procesy się ustabilizują i wolumen urośnie.",
     },
   ];
 
@@ -80,7 +65,6 @@ export default function ZapierMakeN8nPorownanieArticle() {
           ]}
         />
 
-        {/* Kompaktowy nagłówek */}
         <section className="pt-16 pb-6">
           <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
             <span className="section-label">Strefa wiedzy</span>
@@ -88,12 +72,9 @@ export default function ZapierMakeN8nPorownanieArticle() {
               Zapier vs Make vs n8n, wielkie porównanie 2026
             </h1>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-              Trzy najpopularniejsze narzędzia automatyzacji w 2026 roku. Każde
-              rozwiązuje ten sam problem inaczej. Zapier optymalizuje na
-              prostotę i szybkość startu, Make na elastyczność w rozsądnej
-              cenie, n8n na pełną kontrolę i koszt przy dużej skali. Ten artykuł
-              porównuje wszystkie trzy w siedmiu wymiarach: pricing, integracje,
-              logika, krzywa nauki, skalowalność, compliance i utrzymanie.
+              Zapier stawia na prostotę i szybki start, Make na elastyczność w
+              rozsądnej cenie, n8n na pełną kontrolę i niski koszt przy dużej
+              skali. Porównujemy cenę, integracje, naukę, utrzymanie i RODO.
             </p>
           </div>
         </section>
@@ -103,109 +84,48 @@ export default function ZapierMakeN8nPorownanieArticle() {
             ariaLabel="Rozdziały artykułu Zapier vs Make vs n8n"
             tabs={[
               {
-                label: "Filozofie i pricing",
+                label: "Ceny",
                 content: (
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        Krótko: trzy narzędzia, trzy filozofie
+                        Ile to kosztuje na trzech wolumenach
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Zapier (USA, od 2012), pełny SaaS, najwięcej integracji
-                        (ok. 6 000), najprostszy interfejs „krok po kroku".
-                        Płaci się za taski.
+                        Zapier liczy taski (każda akcja), Make operacje (każdy
+                        moduł), n8n wykonania całego scenariusza. Przykład: lead
+                        z formularza do CRM z powiadomieniem, ok. 7 kroków.
                       </p>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Make (Czechy, dawniej Integromat, część Celonis), pełny
-                        SaaS, ok. 1 800 integracji, wizualny diagram z mocną
-                        logiką. Płaci się za operacje, znacznie taniej niż
-                        Zapier przy podobnym wolumenie.
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        n8n (Niemcy, open-source), chmura n8n.cloud lub własny
-                        serwer (self-hosted). Ok. 500+ natywnych integracji +
-                        moduł HTTP/Code dla dowolnego API. Płaci się za serwer
-                        (self-hosted) lub plan (cloud).
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        To nie jest „lepszy/gorszy". To trzy różne strategie pod
-                        różne sytuacje. W tym artykule pokazujemy, kiedy każde z
-                        nich wygrywa.
-                      </p>
-
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 mt-12">
-                        Pricing, porównanie na trzech wolumenach
-                      </h2>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Pricing jest najbardziej mylący w porównaniu, bo każde
-                        narzędzie liczy inną jednostkę. Zapier liczy taski
-                        (każda akcja = 1 task), Make liczy operacje (każdy moduł
-                        = 1 operacja), n8n liczy wykonania scenariusza (cały
-                        workflow = 1 wykonanie). Trzy bardzo różne metryki.
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Aby uczciwie porównać, weźmy realny scenariusz: lead z
-                        formularza, walidacja, sprawdzenie w CRM, utworzenie /
-                        aktualizacja, powiadomienie do Slacka, zadanie w Asanie.
-                        Średnio 6–7 kroków. Trzy wolumeny:
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        <strong>
-                          500 leadów miesięcznie (~3 500 operacji):
-                        </strong>
+                        <strong>500 leadów miesięcznie (~3 500 operacji):</strong>
                       </p>
                       <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
-                        <li>
-                          Zapier Professional (750 tasków), ok. 19,99 USD/mies.
-                        </li>
-                        <li>Make Core (10 000 operacji), ok. 9 USD/mies.</li>
-                        <li>
-                          n8n.cloud Starter (2 500 wykonań), ok. 24 EUR/mies.
-                        </li>
-                        <li>
-                          n8n self-hosted, ok. 25 zł/mies. (sam serwer, bez
-                          utrzymania)
-                        </li>
+                        <li>Zapier Professional, ok. 19,99 USD/mies.</li>
+                        <li>Make Core, ok. 9 USD/mies.</li>
+                        <li>n8n.cloud Starter, ok. 24 EUR/mies.</li>
+                        <li>n8n self-hosted, ok. 25 zł/mies. za serwer</li>
                       </ul>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        <strong>
-                          5 000 leadów miesięcznie (~35 000 operacji):
-                        </strong>
+                        <strong>5 000 leadów miesięcznie (~35 000 operacji):</strong>
                       </p>
                       <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
-                        <li>
-                          Zapier Team (2 000 tasków + nadwyżka), ok. 200 USD
-                        </li>
-                        <li>
-                          Make Pro (10 000 + nadwyżka), ok. 60–80 USD/mies.
-                        </li>
-                        <li>
-                          n8n.cloud Pro (10 000 wykonań), ok. 60 EUR/mies.
-                        </li>
-                        <li>
-                          n8n self-hosted, ok. 25 zł serwer + 300 zł utrzymania
-                          = ok. 325 zł
-                        </li>
+                        <li>Zapier Team, ok. 200 USD/mies.</li>
+                        <li>Make Pro, ok. 60-80 USD/mies.</li>
+                        <li>n8n.cloud Pro, ok. 60 EUR/mies.</li>
+                        <li>n8n self-hosted, ok. 325 zł z utrzymaniem</li>
                       </ul>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        <strong>
-                          50 000 leadów miesięcznie (~350 000 operacji):
-                        </strong>
+                        <strong>50 000 leadów miesięcznie (~350 000 operacji):</strong>
                       </p>
                       <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
                         <li>Zapier Company, od ok. 600 USD/mies.</li>
-                        <li>Make Teams, ok. 200–400 USD/mies.</li>
-                        <li>n8n.cloud Enterprise, wycena indywidualna</li>
-                        <li>
-                          n8n self-hosted (większy serwer, queue mode), ok. 200
-                          zł serwer + 500 zł utrzymania = ok. 700 zł/mies.
-                        </li>
+                        <li>Make Teams, ok. 200-400 USD/mies.</li>
+                        <li>n8n self-hosted, ok. 700 zł/mies. z utrzymaniem</li>
                       </ul>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Wniosek: na małej skali różnice są nieistotne. Przy
-                        średniej skali Make i n8n.cloud są wyraźnie tańsze od
-                        Zapiera. Przy dużej, n8n self-hosted to zwykle rząd
-                        wielkości taniej.
+                        Na małej skali różnice są nieistotne. Przy średniej Make
+                        i n8n.cloud są wyraźnie tańsze od Zapiera, przy dużej n8n
+                        self-hosted bywa tańszy o rząd wielkości.
                       </p>
                     </div>
                   </div>
@@ -217,293 +137,112 @@ export default function ZapierMakeN8nPorownanieArticle() {
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        Integracje, kto pokrywa co
+                        Integracje
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Surowe liczby:
-                      </p>
-                      <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
-                        <li>Zapier, ok. 6 000 integracji</li>
-                        <li>Make, ok. 1 800 integracji</li>
-                        <li>n8n, ok. 500+ natywnych integracji</li>
-                      </ul>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Ale liczby kłamią. Wszystkie popularne SaaS-y (HubSpot,
-                        Pipedrive, Salesforce, Slack, Notion, Asana, Airtable,
-                        Google Workspace, Microsoft 365, Stripe, Shopify,
-                        WooCommerce, Mailchimp, ActiveCampaign) są w każdym z
-                        trzech narzędzi.
+                        Zapier ma ok. 6 000 integracji, Make ok. 1 800, n8n ponad
+                        500. Popularne systemy (HubSpot, Pipedrive, Slack, Google
+                        Workspace, Shopify) są wszędzie.
                       </p>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Różnica zaczyna się przy:
-                      </p>
-                      <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
-                        <li>
-                          Niszowych SaaS-ach (np. polskie systemy CRM, lokalne
-                          narzędzia księgowe), Zapier zwykle pojawia się jako
-                          pierwszy
-                        </li>
-                        <li>
-                          Głębokości integracji, Make często ma więcej akcji
-                          per aplikacja niż Zapier
-                        </li>
-                        <li>
-                          Customowych API, n8n ma najlepszy moduł HTTP i Code,
-                          pozwala zintegrować się z dowolnym REST API w 30
-                          minut, bez czekania na natywny moduł
-                        </li>
-                      </ul>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Praktyka: jeśli używasz nietypowego SaaS-u, sprawdź
-                        najpierw katalog wszystkich trzech narzędzi. Jeśli go
-                        nie ma, n8n będzie najszybszy do dorobienia integracji
-                        przez API.
+                        Przy niszowych SaaS-ach Zapier zwykle jest pierwszy.
+                        Przy nietypowym API n8n wygrywa modułem HTTP i Code,
+                        który podłącza dowolne REST API bez czekania na gotowy
+                        moduł.
                       </p>
 
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 mt-12">
-                        Krzywa nauki, kto jest najszybszy do zbudowania
-                        pierwszego scenariusza
+                        Nauka i logika
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Zapier, pierwsza automatyzacja w 10–15 minut, bez
-                        dokumentacji, bez konfiguracji. Wybierasz trigger,
-                        akcję, mapujesz pola, koniec. To absolutny zwycięzca w
-                        kategorii „chcemy mieć działające coś na wczoraj".
+                        Zapier: pierwsza automatyzacja w 15 minut, ale słaba
+                        obsługa warunków, pętli i błędów. Make: 30-45 minut na
+                        start, za to routery, iteratory i obsługa błędów per
+                        moduł.
                       </p>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Make, pierwszy scenariusz w 30–45 minut. Trzeba
-                        zrozumieć diagram, kierunek przepływu danych, jak
-                        działają routery i iteratory. Krzywa stroma na początku,
-                        ale za to dużo większe możliwości od razu.
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        n8n, pierwszy scenariusz w 1–2 godziny (n8n.cloud) lub
-                        pół dnia (self-hosted, z instalacją). Filozofia podobna
-                        do Make, ale więcej elementów technicznych. Expressions
-                        w stylu JavaScript, code nodes, zaawansowane opcje
-                        autentykacji. Dla osoby technicznej, atut, dla
-                        nietechnicznej, dodatkowy próg.
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Praktyka: jeśli automatyzacje ma budować osoba z biznesu
-                        (marketing, operations), Zapier lub Make. Jeśli osoba
-                        półtechniczna lub programista, n8n da znacznie więcej
-                        swobody.
-                      </p>
-
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 mt-12">
-                        Logika i obsługa błędów
-                      </h2>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Zapier, najsłabszy w tej kategorii. Ścieżki warunkowe
-                        (Paths) są dostępne od planu Professional, ale dość
-                        ograniczone. Iteratory nad listami, przez obejście Code
-                        step. Error handling, proste retries, brak fallback
-                        paths.
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Make, bardzo mocny. Routery z warunkami, iteratory,
-                        agregatory, error handlers per moduł, ponawianie z
-                        opóźnieniem, breakpointy do debugowania. Dla większości
-                        procesów biznesowych w pełni wystarczające.
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        n8n, najmocniejszy. Wszystko, co ma Make, plus: Code
-                        node (pełny JavaScript/Python), sub-workflows (workflow
-                        jako funkcja), wersjonowanie w gicie (Enterprise),
-                        własne moduły w TypeScripcie. Dla scenariuszy
-                        graniczących z programowaniem, bezkonkurencyjny.
+                        n8n: 1-2 godziny na start, najwięcej możliwości (kod w
+                        JavaScript lub Pythonie, pod-scenariusze). Dla osoby z
+                        biznesu wybierzcie Zapier lub Make, dla osoby
+                        technicznej n8n.
                       </p>
                     </div>
                   </div>
                 ),
               },
               {
-                label: "Skalowanie i compliance",
+                label: "Utrzymanie i RODO",
                 content: (
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        Skalowalność, co się dzieje przy wzroście wolumenu
+                        RODO i lokalizacja danych
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Zapier, skaluje się liniowo z kosztem. Każdy task to
-                        pieniądz. Plan Company (od ok. 599 USD/mies.) ma górne
-                        limity. Powyżej, Enterprise, zwykle z dużymi opłatami.
+                        Zapier trzyma dane głównie w USA, co bywa problemem w
+                        branżach regulowanych. Make (Czechy) i n8n.cloud (Niemcy)
+                        mają serwery w UE.
                       </p>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Make, podobnie skaluje się z kosztem, ale taniej. Plan
-                        Teams górnie ok. 800 000 operacji/mies. Powyżej,
-                        Enterprise z indywidualną wyceną.
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        n8n self-hosted, skaluje się z mocą serwera. Mały VPS
-                        obsłuży kilka tysięcy wykonań dziennie. Większy,
-                        kilkanaście tysięcy. Powyżej, queue mode (Redis +
-                        workers), horyzontalne skalowanie. Praktycznie bez
-                        górnego limitu.
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        n8n.cloud, skaluje się jak SaaS, ale plany są wyraźnie
-                        tańsze niż Zapier i Make przy podobnym wolumenie
-                        wykonań.
+                        n8n self-hosted to jedyna opcja on-premise: dane nie
+                        wychodzą poza Waszą sieć. To standard w finansach i
+                        zdrowiu.
                       </p>
 
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 mt-12">
-                        Compliance, RODO, lokalizacja danych
+                        Kto utrzymuje
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Zapier, siedziba USA, serwery globalne (USA dominuje).
-                        DPA, SOC 2 Type II, ISO 27001. Dla większości firm
-                        wystarczy, ale dla branż regulowanych (finanse, zdrowie,
-                        sektor publiczny) bywa problematyczny.
+                        Zapier, Make i n8n.cloud to SaaS: producent dba o
+                        serwery i aktualizacje. Przy n8n self-hosted serwer,
+                        aktualizacje, kopie i monitoring są po Waszej stronie,
+                        zwykle 1-3 godziny miesięcznie.
                       </p>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Make, siedziba Czechy (Celonis), serwery w UE. DPA, SOC
-                        2. Dla typowej polskiej firmy MŚP, wybór bezpieczny i
-                        prosty do uzasadnienia.
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        n8n.cloud, siedziba Niemcy (Berlin), serwery w UE
-                        (Niemcy). Bezpieczne dla RODO.
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        n8n self-hosted, pełna kontrola, dane nigdy nie
-                        wychodzą poza Twoją sieć. Standard dla branż
-                        regulowanych. Można instalować w pełni wewnętrznie, bez
-                        dostępu do internetu (jeśli nie ma webhooków
-                        przychodzących).
-                      </p>
-
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 mt-12">
-                        Kto za co odpowiada, model utrzymania
-                      </h2>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Zapier i Make, pełen SaaS. Producent odpowiada za
-                        serwery, aktualizacje, security. Twoja rola: budować i
-                        utrzymywać scenariusze, monitorować błędy, pilnować
-                        pakietu tasków/operacji.
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        n8n.cloud, analogicznie do Make.
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        n8n self-hosted, Ty (lub Twój wykonawca) odpowiadasz
-                        za: serwer (OS, security), n8n (aktualizacje, breaking
-                        changes), backup bazy i credentials, monitoring uptime,
-                        SSL i reverse proxy. To 1–3 godziny miesięcznie po
-                        dobrym wdrożeniu, ale wymaga osoby technicznej.
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Praktyka: jeśli nie macie osoby znającej Linuxa i
-                        Dockera, n8n self-hosted nie ma sensu, wybierajcie
-                        n8n.cloud, Make albo Zapier.
+                        Bez osoby znającej Linuksa i Dockera self-hosted nie ma
+                        sensu. Wtedy n8n.cloud, Make albo Zapier.
                       </p>
                     </div>
                   </div>
                 ),
               },
               {
-                label: "Decyzja i podsumowanie",
+                label: "Decyzja",
                 content: (
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
                       <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        Decyzja w 4 krokach, który wybrać
+                        Który wybrać
                       </h2>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Zamiast pisać kolejną tabelę, prosty algorytm:
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        <strong>Krok 1: jaki wolumen?</strong>
-                      </p>
                       <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
                         <li>
-                          Mały (do 1 000 operacji/mies.), wszystko jest tanie,
-                          wybierz po prostocie
+                          <strong>Zapier:</strong> mały wolumen, buduje osoba z
+                          biznesu, automatyzacja potrzebna od razu.
                         </li>
                         <li>
-                          Średni (1 000–30 000), Make lub n8n.cloud, Zapier
-                          robi się kosztowny
+                          <strong>Make:</strong> rosnący wolumen, bardziej
+                          złożone procesy, dane w UE. Najlepszy kompromis dla
+                          większości firm MŚP.
                         </li>
-                        <li>Duży (30 000+), n8n self-hosted lub Make</li>
-                      </ul>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        <strong>Krok 2: kto buduje scenariusze?</strong>
-                      </p>
-                      <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
                         <li>
-                          Osoba z biznesu, bez technicznego backgroundu, Zapier
-                        </li>
-                        <li>Osoba z biznesu, ale ogarnięta, Make</li>
-                        <li>Osoba półtechniczna lub programista, n8n</li>
-                      </ul>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        <strong>Krok 3: jakie wymagania compliance?</strong>
-                      </p>
-                      <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
-                        <li>Standardowa firma B2B, wszystko jest OK</li>
-                        <li>Branża z lokalizacją danych w UE, Make lub n8n</li>
-                        <li>
-                          Branża regulowana (finanse, zdrowie, sektor publiczny)
-                         , n8n self-hosted
+                          <strong>n8n:</strong> duży wolumen, wymogi compliance,
+                          integracje z systemami wewnętrznymi i osoba techniczna
+                          w zespole.
                         </li>
                       </ul>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        <strong>Krok 4: kto utrzymuje?</strong>
-                      </p>
-                      <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
-                        <li>
-                          Tylko biznes, bez IT, Zapier, Make lub n8n.cloud
-                        </li>
-                        <li>
-                          Macie własne IT lub zewnętrznego partnera, wszystko
-                          otwarte
-                        </li>
-                      </ul>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Trzy odpowiedzi z czterech zwykle wskazują jedno
-                        narzędzie.
+                        Średnie firmy często łączą dwa narzędzia: Zapier lub Make
+                        do prostych integracji działów, n8n do sprzedaży,
+                        raportowania i integracji z ERP lub CRM.
                       </p>
 
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 mt-12">
-                        Hybryda, najczęstszy układ w średnich firmach
-                      </h2>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        W praktyce większość firm średnich nie wybiera jednego
-                        narzędzia. Najczęstszy układ to dwa narzędzia
-                        równolegle:
-                      </p>
-                      <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
-                        <li>
-                          Zapier (lub Make), proste integracje departamentowe
-                          (marketing, HR, recruiting)
-                        </li>
-                        <li>
-                          n8n self-hosted, core procesy biznesowe (sprzedaż,
-                          operacje, raportowanie, integracje z ERP/CRM)
-                        </li>
-                      </ul>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Taki model daje szybkość Zapiera/Make tam, gdzie nie
-                        trzeba schodzić nisko, i pełną kontrolę n8n tam, gdzie
-                        błąd kosztuje pieniądze. Pełniejsze omówienie tego
-                        modelu znajdziesz w{" "}
-                        n8n vs Zapier{" "}
-                        oraz{" "}
-                        Make vs n8n
-                        .
-                      </p>
-
-                      {/* Mid CTA */}
                       <div className="bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-8 text-center mt-12">
                         <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                          Chcesz dobrać narzędzie pod swoje realne procesy?
+                          Chcesz dobrać narzędzie pod swoje procesy?
                         </h2>
                         <p className="text-gray-600 dark:text-gray-400 mb-4">
-                          Zrobimy audyt Twoich procesów, policzymy 12-miesięczny
-                          koszt każdego z trzech narzędzi i pomożemy zbudować
-                          pierwsze scenariusze. Bez sprzedażowej presji.
+                          Policzymy roczny koszt każdego z trzech narzędzi i
+                          zbudujemy pierwsze scenariusze.
                         </p>
                         <Link
                           href="/automatyzacja-leadow-crm"
@@ -512,44 +251,6 @@ export default function ZapierMakeN8nPorownanieArticle() {
                           Zobacz usługę automatyzacji procesów
                         </Link>
                       </div>
-
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 mt-12">
-                        Podsumowanie, który dla kogo
-                      </h2>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Zapier, gdy potrzebujesz działającej automatyzacji w 15
-                        minut, masz mały wolumen, i nie chcesz inwestować w
-                        naukę narzędzi.
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Make, gdy procesy są nieco bardziej złożone, wolumen
-                        rośnie, i chcesz rozsądnego kompromisu między łatwością
-                        a elastycznością. Sweet spot dla większości firm MŚP.
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        n8n, gdy macie osobę techniczną na pokładzie, wymagania
-                        compliance, integracje z systemami wewnętrznymi, albo
-                        wolumen, który czyni SaaS-y bolesnymi.
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Najczęstszy błąd: wybór narzędzia „bo wszyscy używają"
-                        zamiast „bo pasuje do naszych procesów". Sprawdź też{" "}
-                        <Link
-                          href="/strefa-wiedzy/co-to-jest-automatyzacja-procesow-biznesowych"
-                          className="text-accent hover:underline"
-                        >
-                          co to jest automatyzacja procesów biznesowych
-                        </Link>{" "}
-                        i{" "}
-                        <Link
-                          href="/strefa-wiedzy/jak-policzyc-roi-z-automatyzacji"
-                          className="text-accent hover:underline"
-                        >
-                          jak policzyć ROI z automatyzacji
-                        </Link>{" "}
-                       , to dwie rzeczy, które warto zrobić przed wyborem
-                        narzędzia.
-                      </p>
                     </div>
                   </div>
                 ),
@@ -601,15 +302,12 @@ export default function ZapierMakeN8nPorownanieArticle() {
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
                       <PrevNextArticle currentHref="/strefa-wiedzy/zapier-make-n8n-porownanie" />
 
-                      {/* Final CTA */}
                       <div className="bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-8 text-center mt-12">
                         <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
                           Pomożemy wybrać i wdrożyć, bez przepłacania
                         </h2>
                         <p className="text-gray-600 dark:text-gray-400 mb-4">
-                          Krótka rozmowa, w której zobaczymy, które narzędzie
-                          pasuje do Twoich procesów, skali i kompetencji w
-                          zespole.
+                          Krótka rozmowa o Waszych procesach, skali i zespole.
                         </p>
                         <Link
                           href="/kontakt"
@@ -619,47 +317,36 @@ export default function ZapierMakeN8nPorownanieArticle() {
                         </Link>
                       </div>
 
-                      {/* Related links */}
-                      <div className="grid md:grid-cols-2 gap-8 mt-12">
-                        <div>
-                          <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                            Powiązane artykuły
-                          </h3>
-                          <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400">
-                            <li>
-                              <Link
-                                href="/strefa-wiedzy/automatyzacja-vs-zatrudnienie"
-                                className="text-accent hover:underline"
-                              >
-                                Automatyzacja vs zatrudnienie, co się bardziej
-                                opłaca
-                              </Link>
-                            </li>
-                          </ul>
-                        </div>
-                        <div>
-                          <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                            Usługi
-                          </h3>
-                          <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400">
-                            <li>
-                              <Link
-                                href="/automatyzacja-leadow-crm"
-                                className="text-accent hover:underline"
-                              >
-                                Automatyzacja procesów biznesowych
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                href="/integracje-api"
-                                className="text-accent hover:underline"
-                              >
-                                Integracje API
-                              </Link>
-                            </li>
-                          </ul>
-                        </div>
+                      <div className="mt-12">
+                        <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
+                          Zobacz też
+                        </h3>
+                        <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400">
+                          <li>
+                            <Link
+                              href="/strefa-wiedzy/jak-policzyc-roi-z-automatyzacji"
+                              className="text-accent hover:underline"
+                            >
+                              Jak policzyć ROI z automatyzacji
+                            </Link>
+                          </li>
+                          <li>
+                            <Link
+                              href="/automatyzacja-leadow-crm"
+                              className="text-accent hover:underline"
+                            >
+                              Automatyzacja procesów biznesowych
+                            </Link>
+                          </li>
+                          <li>
+                            <Link
+                              href="/integracje-api"
+                              className="text-accent hover:underline"
+                            >
+                              Integracje API
+                            </Link>
+                          </li>
+                        </ul>
                       </div>
                     </div>
                   </div>

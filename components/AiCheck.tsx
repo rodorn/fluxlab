@@ -45,7 +45,7 @@ const MOTYW: Record<string, { ramka: string; tlo: string; tekst: string; etykiet
 const ZNAK: Record<Punkt["stan"], { s: string; k: string }> = {
   ok: { s: "✓", k: "text-emerald-700 dark:text-emerald-400" },
   uwaga: { s: "!", k: "text-amber-700 dark:text-amber-400" },
-  zle: { s: "×", k: "text-red-600 dark:text-red-400" },
+  zle: { s: "×", k: "text-red-700 dark:text-red-400" },
 };
 
 
@@ -172,7 +172,7 @@ export default function AiCheck() {
       </form>
 
       {stan === "blad" && (
-        <p className="mt-3 text-sm text-red-600 dark:text-red-400">{blad}</p>
+        <p className="mt-3 text-sm text-red-700 dark:text-red-400">{blad}</p>
       )}
 
       {wynik && wynik.status !== "OK" && (
@@ -309,7 +309,7 @@ export default function AiCheck() {
                   </button>
                 </div>
                 {leadStan === "blad" && (
-                  <p className="mt-2 text-sm text-red-600 dark:text-red-400">
+                  <p className="mt-2 text-sm text-red-700 dark:text-red-400">
                     {leadBlad}
                   </p>
                 )}

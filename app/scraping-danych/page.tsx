@@ -27,19 +27,19 @@ export const metadata: Metadata = {
 const sourceTypes = [
   {
     title: "Web scraping",
-    examples: "Monitoring cen, oferty konkurencji, katalogi branżowe.",
+    examples: "Ceny, oferty konkurencji, katalogi.",
   },
   {
     title: "PDF i dokumenty",
-    examples: "Faktury, umowy, raporty, OCR + AI klasyfikacja pól.",
+    examples: "Faktury, umowy, raporty, także skany.",
   },
   {
     title: "Maile",
-    examples: "Zapytania ofertowe, zamówienia, kontakty z luźnych wiadomości.",
+    examples: "Zapytania ofertowe i zamówienia.",
   },
   {
     title: "Dokumenty Office",
-    examples: "Excel, Word, chaos arkuszy do jednego czystego schematu.",
+    examples: "Wiele arkuszy w jednym schemacie.",
   },
 ];
 
@@ -47,17 +47,17 @@ const faq = [
   {
     question: "Czy scraping jest legalny?",
     answer:
-      "Publiczne strony zgodnie z TOS i robots.txt, tak. Chronione, logged-in albo paid content, nie. Każdy przypadek oceniamy indywidualnie i mówimy wprost, gdy widzimy ryzyko.",
+      "Publiczne strony zgodnie z regulaminem i robots.txt, tak. Treści za logowaniem albo płatne, nie. Gdy widzimy ryzyko, mówimy wprost.",
   },
   {
     question: "Co jeśli strona zmieni layout?",
     answer:
-      "Każdy produkcyjny scraper ma monitoring i alerty na anomalia. Aktualizację selektorów robimy w ramach wsparcia, zwykle 1–2 dni od zgłoszenia.",
+      "Każdy stały scraper ma monitoring i alerty. Poprawkę robimy w ramach wsparcia, zwykle w 1 do 2 dni.",
   },
   {
     question: "Czy dane są bezpieczne?",
     answer:
-      "Tak. Pipeline szyfrowany, dane w Twojej infrastrukturze. Mamy dostęp tylko na czas wdrożenia, później wszystko jest po Twojej stronie. NDA standardowo.",
+      "Tak. Dane trafiają do Twojej infrastruktury, dostęp mamy tylko na czas wdrożenia. NDA standardowo.",
   },
 ];
 
@@ -75,11 +75,11 @@ export default function ScrapingDanychPage() {
         >
           <div
             aria-hidden="true"
-            className="blob blob-cyan -z-10 top-[-15%] left-[-10%] w-[600px] h-[600px]"
+            className="blob blob-accent -z-10 top-[-15%] left-[-10%] w-[600px] h-[600px]"
           />
           <div
             aria-hidden="true"
-            className="blob blob-violet -z-10 bottom-[-20%] right-[-10%] w-[500px] h-[500px]"
+            className="blob blob-accent -z-10 bottom-[-20%] right-[-10%] w-[500px] h-[500px]"
           />
           <div className="container-wide relative">
             <div className="max-w-3xl">
@@ -93,8 +93,8 @@ export default function ScrapingDanychPage() {
                 Wyciągamy dane z miejsc, w których normalnie giną.
               </h1>
               <p className="animate-fade-up-3 text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-10 max-w-2xl">
-                Strony WWW, PDF-y, maile, dokumenty. AI rozpoznaje pola,
-                pipeline trafia do Twojego CRM albo arkusza. Bez kopiowania.
+                Strony WWW, PDF-y, maile i dokumenty trafiają do Twojego CRM
+                albo arkusza. Bez ręcznego kopiowania.
               </p>
               <div className="animate-fade-up-4 flex flex-wrap items-center gap-4">
                 <TrackedCTA
@@ -124,7 +124,6 @@ export default function ScrapingDanychPage() {
           <CzyDaSieSpiac biezacaStrona="/scraping-danych" />
         </section>
 
-        {/* Treść w zakładkach, nic nie wycięte, podzielone */}
         <section className="container-wide pb-16">
           <ProductGrid category="dane" showHeading />
         </section>
@@ -136,27 +135,25 @@ export default function ScrapingDanychPage() {
             Ile to kosztuje
           </h2>
           <p className="mt-3 max-w-2xl text-gray-600 dark:text-gray-300">
-            Płacisz za dane, nie za godziny. Zbieranie robi automat, więc mały
-            zbiór kosztuje tyle, co obiad, a nie tyle, co dzień pracy
-            programisty.
+            Płacisz za dane, nie za godziny. Zbieranie robi automat.
           </p>
           <div className="mt-6 grid gap-5 md:grid-cols-3">
             {[
               {
                 title: "Jednorazowy zbiór",
                 price: "od 49 zł",
-                desc: "Jedno źródło, ustalone kolumny, wynik w pliku XLSX lub CSV. Cena rośnie z liczbą rekordów i trudnością źródła.",
+                desc: "Jedno źródło, wynik w XLSX lub CSV.",
               },
               {
                 title: "Odświeżanie cykliczne",
                 price: "od 99 zł miesięcznie",
-                desc: "Ten sam zbiór zbierany automatycznie w ustalonym rytmie, z oznaczeniem, co się zmieniło od poprzedniego razu.",
+                desc: "Zbiór odświeżany automatycznie, ze zmianami oznaczonymi.",
                 accent: true,
               },
               {
                 title: "Źródło trudne",
                 price: "wycena po sprawdzeniu",
-                desc: "Logowanie, limity zapytań, treść doładowywana skryptem. Zanim wycenimy, sprawdzamy, czy da się to zebrać legalnie i stabilnie.",
+                desc: "Najpierw sprawdzamy, czy da się to zebrać legalnie i stabilnie.",
               },
             ].map((c) => (
               <div
@@ -178,9 +175,8 @@ export default function ScrapingDanychPage() {
             ))}
           </div>
           <p className="mt-5 max-w-2xl text-sm text-gray-500 dark:text-gray-400">
-            Przed zleceniem zbieramy za darmo próbkę kilkunastu rekordów w
-            docelowym układzie kolumn, żebyś ocenił jakość, zanim cokolwiek
-            zapłacisz.
+            Na start darmowa próbka kilkunastu rekordów, żebyś ocenił jakość
+            przed zapłatą.
           </p>
         </section>
 
@@ -215,33 +211,6 @@ export default function ScrapingDanychPage() {
                           </article>
                         </div>
                       ))}
-                    </div>
-                  </section>
-                ),
-              },
-              {
-                label: "Etyka i prawo",
-                content: (
-                  <section
-                    id="etyka"
-                    aria-labelledby="etyka-heading"
-                    className="py-10 lg:py-12"
-                  >
-                    <div className="max-w-3xl">
-                      <p className="section-label mb-3">Etyka i prawo</p>
-                      <h2
-                        id="etyka-heading"
-                        className="display-lg text-gray-900 dark:text-white mb-6"
-                      >
-                        Scraping to narzędzie, nie wytrych.
-                      </h2>
-                      <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
-                        Robimy scraping publicznych stron zgodnie z TOS i
-                        robots.txt oraz ekstrakcję z Twoich danych. Nie obchodzimy
-                        zabezpieczeń, nie ruszamy chronionych zasobów ani danych
-                        osobowych bez podstawy prawnej. Gdy widzimy ryzyko, mówimy
-                        wprost.
-                      </p>
                     </div>
                   </section>
                 ),
@@ -307,7 +276,7 @@ export default function ScrapingDanychPage() {
                     <LandingForm
                       formId="diagnosis_scraping"
                       heading="Bezpłatna diagnoza scrapingu"
-                      intro="Opisz krótko, jakich danych potrzebujesz i z jakich źródeł. Wrócimy w 24h z informacją, czy widzimy dopasowanie i czy źródło jest dostępne legalnie."
+                      intro="Opisz, jakich danych potrzebujesz i skąd. Wrócimy w 24h z odpowiedzią, czy da się je zebrać."
                       submitLabel="Zamów diagnozę"
                     />
                   </section>

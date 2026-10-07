@@ -44,17 +44,15 @@ const steps = [
   {
     title: "Diagnoza",
     description:
-      "Opisujesz proces. Dostajesz mapę przepływu, wąskie gardła i szacowany ROI. Bezpłatnie.",
+      "Opisujesz proces, dostajesz mapę i wąskie gardła. Bezpłatnie.",
   },
   {
     title: "Wdrożenie",
-    description:
-      "Budujemy automatyzację, testujemy na realnych danych, dopracowujemy przypadki brzegowe.",
+    description: "Budujemy i testujemy na realnych danych.",
   },
   {
     title: "Dokumentacja",
-    description:
-      "Dostajesz instrukcję, opis działania i gotowość do dalszego rozwoju procesu.",
+    description: "Dostajesz instrukcję i opis działania.",
   },
 ];
 
@@ -68,33 +66,21 @@ const pricing = [
 const faq = [
   {
     question: "Czy musimy mieć już CRM?",
-    answer:
-      "Nie. Możemy zacząć od arkuszy lub maili. Jeśli CRM jest potrzebny, dobierzemy najprostsze rozwiązanie do skali firmy.",
-  },
-  {
-    question: "Czy automatyzacja zastąpi handlowca?",
-    answer:
-      "Nie. Usuwa przepisywanie danych i pilnowanie follow-upów. Handlowiec ma sprzedawać, nie klikać.",
+    answer: "Nie. Możemy zacząć od arkuszy lub maili i dobrać najprostszy CRM.",
   },
   {
     question: "Co jeśli nasze dane to bałagan?",
-    answer:
-      "Najpierw porządkujemy minimum: pola, statusy, źródła i reguły etapów. Automatyzowanie bałaganu to szybszy bałagan.",
-  },
-  {
-    question: "Czy można ustawić różne reguły przypisywania zapytań?",
-    answer:
-      "Tak. Routing opiera się na warunkach, które i tak macie w firmie: region, branża, typ zapytania, wartość albo zwykła kolejka.",
+    answer: "Najpierw porządkujemy minimum: pola, statusy i źródła.",
   },
   {
     question: "Z jakimi systemami CRM to działa?",
     answer:
-      "Najwięcej pracujemy na Pipedrive. Poza tym liczy się nie nazwa systemu, tylko to, czy ma API pozwalające zakładać rekordy i zadania, a mają je wszystkie popularne CRM-y.",
+      "Najczęściej z Pipedrive, ale z każdym popularnym CRM-em, który ma API.",
   },
   {
     question: "Ile to kosztuje?",
     answer:
-      "Naprawa jednego etapu zaczyna się od 1 500 zł, cała ścieżka z raportem od 2 500 zł. Integracje przez API wyceniamy osobno, bo zakres jest za każdym razem inny. Diagnoza przed wyceną jest bezpłatna.",
+      "Jeden etap od 1 500 zł, cała ścieżka z raportem od 2 500 zł. Diagnoza jest bezpłatna.",
   },
 ];
 
@@ -150,8 +136,8 @@ export default function AutomatyzacjaLeadowCRM() {
                 Przestań tracić leady przez pracę ręczną.
               </h1>
               <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-                Leady same trafiają do CRM, dostają handlowca, zadanie i raport.
-                Twój zespół sprzedaje, zamiast przepisywać dane.
+                Leady same trafiają do CRM i dostają handlowca, zadanie i
+                raport.
               </p>
               <div className="mt-10">
                 <TrackedCTA
@@ -168,7 +154,6 @@ export default function AutomatyzacjaLeadowCRM() {
           </div>
         </section>
 
-        {/* Treść w zakładkach, nic nie wycięte, podzielone */}
         {/* Wybor etapu stoi przed katalogiem, bo to jedyna rzecz na tej
             stronie, ktora daje odpowiedz od razu i nie wymaga wpisywania
             czegokolwiek. Katalog produktow czeka nizej. */}
@@ -221,21 +206,21 @@ export default function AutomatyzacjaLeadowCRM() {
                         ))}
                       </div>
                       <p className="mt-8 text-gray-600 dark:text-gray-400 leading-relaxed">
-                        Dwie rzeczy decydują, czy lead zamieni się w rozmowę:{" "}
+                        Najwięcej daje{" "}
                         <Link
                           href="/czas-reakcji-na-leada"
                           className="text-accent hover:underline"
                         >
-                          czas reakcji na leada
+                          szybka reakcja na leada
                         </Link>{" "}
-                        liczony w minutach, nie w godzinach, oraz{" "}
+                        i{" "}
                         <Link
                           href="/automatyzacja-follow-up"
                           className="text-accent hover:underline"
                         >
-                          follow-upy, które CRM przypomina sam
+                          automatyczne follow-upy
                         </Link>
-                        , gdy klient nie odpisał po pierwszej wiadomości.
+                        .
                       </p>
                     </div>
                   </section>
@@ -285,8 +270,7 @@ export default function AutomatyzacjaLeadowCRM() {
                         ))}
                       </div>
                       <p className="mt-6 text-sm text-gray-500 dark:text-gray-500">
-                        Orientacyjne zakresy. Dokładną wycenę dostajesz po
-                        bezpłatnej diagnozie.
+                        Dokładna wycena po bezpłatnej diagnozie.
                       </p>
                     </div>
                   </section>
@@ -347,7 +331,7 @@ export default function AutomatyzacjaLeadowCRM() {
                     <LandingForm
                       formId="diagnosis_lp_leadow"
                       heading="Sprawdźmy, gdzie tracisz leady"
-                      intro="Opisz krótko, skąd przychodzą leady i co robicie ręcznie. Dostaniesz informację, czy automatyzacja ma sens i jaki pierwszy krok da największy efekt."
+                      intro="Napisz, skąd przychodzą leady i co robicie ręcznie. Odpowiemy, od czego zacząć."
                       submitLabel="Chcemy mapę pierwszej automatyzacji"
                     />
                   </section>

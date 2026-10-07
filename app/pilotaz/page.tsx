@@ -33,104 +33,73 @@ const whatYouGet = [
   {
     title: "50% ceny projektu",
     description:
-      "Pełny zakres audytu i wdrożenia za połowę standardowej ceny. Widełki potwierdzamy po konsultacji, stałą cenę po audycie, bez niespodzianek.",
+      "Pełny audyt i wdrożenie za połowę standardowej ceny. Stałą cenę potwierdzamy po audycie.",
   },
   {
-    title: "Priorytet i zaangażowanie",
-    description:
-      "Te projekty mają dla nas najwyższy priorytet, bo ich powodzenie buduje publiczną bibliotekę case studies, na której opieramy dalszą sprzedaż. Dostajesz szybszą reakcję, więcej uwagi, pełne zaangażowanie.",
+    title: "Priorytet",
+    description: "Szybsza reakcja i więcej uwagi przez cały projekt.",
   },
   {
-    title: "Rozszerzone wsparcie po wdrożeniu",
+    title: "Dłuższe wsparcie",
     description:
-      "60 dni darmowych poprawek zamiast standardowych 30. Plus bezpłatna sesja optymalizacyjna po 3 miesiącach od wdrożenia.",
+      "60 dni poprawek zamiast 30 i bezpłatna sesja optymalizacyjna po 3 miesiącach.",
   },
   {
-    title: "Stała cena projektowa",
-    description:
-      "Tak jak w standardowych projektach, płacisz za efekt, nie za godziny. Transze powiązane z kamieniami milowymi.",
+    title: "Płatność za efekt",
+    description: "Stała cena projektowa, transze po kamieniach milowych.",
   },
 ];
 
 const whatYouGive = [
   {
-    title: "Case study (mierzalne efekty)",
+    title: "Case study",
     description:
-      "Po zakończeniu wdrożenia wspólnie opisujemy co, jak i z jakim efektem (oszczędność czasu, eliminacja błędów, szybsza reakcja). Case study publikujemy na fluxlab.pl.",
+      "Wspólny opis wdrożenia i jego mierzalnego efektu, publikowany na fluxlab.pl.",
   },
   {
-    title: "Testimonial (krótka wypowiedź)",
+    title: "Krótka referencja",
     description:
-      "Imię, nazwisko, stanowisko, firma plus 2–4 zdania o współpracy. Akceptujesz treść przed publikacją.",
+      "Kilka zdań o współpracy z imieniem, stanowiskiem i firmą.",
   },
   {
-    title: "Zgoda na referencje",
-    description:
-      "Możliwość poproszenia cię o referencje przez przyszłych klientów (mail lub krótka rozmowa telefoniczna). Nigdy bez twojej zgody na konkretną sytuację.",
-  },
-  {
-    title: "Feedback w trakcie wdrożenia",
-    description:
-      "Regularna informacja zwrotna co tydzień, nie tylko „działa / nie działa”, ale co można poprawić. Pomaga mi ulepszać proces dla kolejnych klientów.",
+    title: "Feedback w trakcie",
+    description: "Krótka informacja zwrotna raz w tygodniu.",
   },
 ];
 
 const criteria = [
-  "Firma B2B z konkretnym, powtarzalnym procesem: obsługa leadów, CRM, raportowanie, integracje API, n8n lub automatyzacje z AI",
-  "Zespół sprzedaży, kilka źródeł leadów, CRM (lub gotowość do jego doboru) i problem z ręczną obsługą danych",
-  "Decydent po Twojej stronie dostępny na 2–3 rozmowy w trakcie wdrożenia",
-  "Gotowość na publikację case study w ciągu 30 dni od zakończenia wdrożenia (treść akceptujesz przed publikacją)",
-  "Działalność w Polsce (ze względu na zgodność prawną umowy)",
+  "Firma B2B z powtarzalnym procesem: leady, CRM, raportowanie lub integracje",
+  "Decydent dostępny na 2 lub 3 rozmowy w trakcie wdrożenia",
+  "Zgoda na publikację case study do 30 dni po wdrożeniu",
+  "Działalność w Polsce",
 ];
 
 const notSuitable = [
-  "Firmy, które „może kiedyś coś zautomatyzują”, bez konkretnego problemu na stole",
-  "Brak osoby decyzyjnej po stronie firmy do prowadzenia wdrożenia",
-  "Oczekiwanie, że AI magicznie naprawi źle zaprojektowany proces",
-  "Proces nieuporządkowany na poziomie biznesowym, najpierw proces, potem automatyzacja, nie odwrotnie",
-  "Pojedyncze, niepowtarzalne zadanie zamiast cyklicznego procesu",
+  "Brak konkretnego problemu do rozwiązania",
+  "Nieuporządkowany proces: najpierw proces, potem automatyzacja",
+  "Jednorazowe zadanie zamiast cyklicznego procesu",
 ];
 
 const faq = [
   {
     question: "Czy nasza firma się nadaje?",
     answer:
-      "Najszybciej sprawdzimy to na bezpłatnej 30-minutowej konsultacji. Ogólnie: nadajesz się, jeśli masz konkretny, powtarzalny proces, który chcesz zautomatyzować, i jesteś w stanie pokazać mierzalny efekt po wdrożeniu.",
+      "Sprawdzimy to na bezpłatnej 30-minutowej konsultacji. Wystarczy powtarzalny proces i możliwość pokazania efektu po wdrożeniu.",
   },
   {
-    question: "Ile trwa wdrożenie w programie case study?",
+    question: "Czy musimy ujawnić nazwę firmy?",
     answer:
-      "Tyle samo co zwykłe, zależnie od zakresu od 2 do 8 tygodni. Program case study nie oznacza „na szybko”, oznacza obniżoną cenę w zamian za publikację rezultatu.",
+      "Wolimy imienne case study, ale możemy opisać tylko branżę i skalę. Ustalamy to przed startem.",
   },
   {
-    question: "Czy musimy ujawnić nazwę firmy w case study?",
+    question: "Czy 50% ceny oznacza niższą jakość?",
     answer:
-      "Preferujemy, żeby tak, imienne case studies są znacznie bardziej wiarygodne. Jeśli to niemożliwe (np. ze względu na zastrzeżenia prawne lub konkurencyjne), możemy opisać branżę i skalę bez nazwy. Ustalamy to przed startem.",
-  },
-  {
-    question: "Kiedy musimy dać testimonial?",
-    answer:
-      "W ciągu 30 dni od zakończenia wdrożenia i odbioru wszystkich kamieni milowych. Dajemy ci projekt case study do akceptacji, nic nie publikujemy bez twojej zgody.",
-  },
-  {
-    question: "Czy 50% ceny oznacza niższą jakość pracy?",
-    answer:
-      "Nie. Rabat nie wynika z tego, że jesteśmy na początku drogi, wynika z tego, że publiczne case study jest dla nas cenniejsze niż pełna marża na pojedynczym projekcie. Jakość techniczna, dokumentacja, testy i wsparcie są takie same jak w pełnopłatnych wdrożeniach. Często wyższe, bo pilnujemy, żeby efekt nadawał się do publikacji.",
+      "Nie. Jakość, dokumentacja, testy i wsparcie są takie same jak w pełnopłatnych wdrożeniach.",
   },
   {
     question: "Co jeśli projekt się nie uda?",
     answer:
-      "Jeśli nie dojdziemy do uzgodnionych kamieni milowych z naszej winy, nie płacisz za niedostarczony etap, a także nie wymagamy case study. Ryzyko leży po naszej stronie.",
-  },
-  {
-    question: "Dlaczego tylko 3 miejsca?",
-    answer:
-      "Bo jako solo consultant możemy realnie poprowadzić maksymalnie 3 takie projekty równolegle bez spadku jakości. Po zrealizowaniu 3 case studies oferta kończy się i wracamy do standardowych stawek.",
-  },
-  {
-    question: "Jak wygląda aplikacja?",
-    answer:
-      "Wypełniasz formularz na dole strony lub piszesz wprost. W ciągu 48 h dostajesz odpowiedź: albo umawiamy konsultację, albo, jeśli nie widzimy dopasowania, dostajesz szczere wyjaśnienie dlaczego.",
+      "Jeśli z naszej winy nie dowieziemy etapu, nie płacisz za niego i nie wymagamy case study.",
   },
 ];
 
@@ -169,16 +138,8 @@ export default function Pilotaz() {
                 50% ceny wdrożenia w zamian za publiczny opis efektu
               </p>
               <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-                3 firmy B2B otrzymają wdrożenie automatyzacji za 50%
-                standardowej ceny w zamian za zgodę na przygotowanie case study
-                i krótkiej referencji po zakończeniu projektu. Publikujemy tylko
-                to, co wcześniej zaakceptujesz, bez danych wrażliwych, bez
-                tajemnic handlowych, bez stawiania Twojej firmy w złym świetle.
-              </p>
-              <p className="mt-6 text-sm text-gray-600 dark:text-gray-400 leading-relaxed max-w-2xl mx-auto">
-                To nie jest oferta dla &bdquo;pierwszych klientów&rdquo;. Rabat
-                wynika z tego, że chcemy opublikować mocny dowód działania, a nie
-                z braku doświadczenia. Akceptacja treści jest po Twojej stronie.
+                Publikujemy tylko to, co zaakceptujesz, bez danych wrażliwych i
+                tajemnic handlowych.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="#sekcje" className="btn-primary">
@@ -192,7 +153,6 @@ export default function Pilotaz() {
           </div>
         </section>
 
-        {/* Treść w zakładkach, nic nie wycięte, podzielone */}
         <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
           <Tabs
             ariaLabel="Sekcje programu case study"
@@ -239,10 +199,6 @@ export default function Pilotaz() {
                         <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4">
                           Co dajesz w zamian
                         </h2>
-                        <p className="text-gray-600 dark:text-gray-400 mt-4 max-w-2xl mx-auto">
-                          Nic, co wymagałoby ujawnienia wrażliwych danych.
-                          Wszystko akceptujesz przed publikacją.
-                        </p>
                       </div>
                       <div className="grid md:grid-cols-2 gap-6">
                         {whatYouGive.map((item) => (
@@ -273,12 +229,6 @@ export default function Pilotaz() {
                         <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4">
                           Dla kogo
                         </h2>
-                        <p className="text-gray-600 dark:text-gray-400 mt-4">
-                          Program jest celowo wąski, chcemy mieć pewność, że
-                          projekty zakończą się sukcesem nadającym się do
-                          publikacji. Dopasowanie weryfikujemy na bezpłatnej
-                          konsultacji.
-                        </p>
                       </div>
                       <ul className="space-y-3">
                         {criteria.map((c) => (
@@ -321,10 +271,6 @@ export default function Pilotaz() {
                         <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4">
                           Dla kogo NIE
                         </h2>
-                        <p className="text-gray-600 dark:text-gray-400 mt-4 leading-relaxed">
-                          Najpierw proces, potem automatyzacja. Nie odwrotnie,
-                          bo wtedy powstaje szybki chaos zamiast wolnego chaosu.
-                        </p>
                       </div>
                       <ul className="space-y-3">
                         {notSuitable.map((c) => (
@@ -373,17 +319,17 @@ export default function Pilotaz() {
                           {
                             n: "1",
                             title: "Zgłoszenie",
-                            desc: "Wysyłasz krótki opis problemu przez formularz lub e-mail. Nie musisz znać rozwiązania, wystarczy opisać ból.",
+                            desc: "Krótki opis problemu przez formularz lub e-mail.",
                           },
                           {
                             n: "2",
                             title: "Konsultacja (48 h)",
-                            desc: "W ciągu 48 h odpowiadamy: albo umawiamy bezpłatną 30-minutową konsultację, albo mówimy wprost, że nie widzimy dopasowania.",
+                            desc: "W ciągu 48 h umawiamy bezpłatną rozmowę albo mówimy wprost, że nie pasujemy.",
                           },
                           {
                             n: "3",
                             title: "Audyt i decyzja",
-                            desc: "Jeśli widzimy dopasowanie, robimy audyt (koszt obniżony), po którym dostajesz konkretną wycenę i harmonogram. Startujemy po akceptacji.",
+                            desc: "Po audycie dostajesz stałą wycenę i harmonogram.",
                           },
                         ].map((s) => (
                           <div
@@ -456,11 +402,10 @@ export default function Pilotaz() {
                   <div className="py-10 lg:py-12">
                     <div className="max-w-2xl mx-auto text-center bg-accent/10 border border-gray-100 dark:border-gray-800 rounded-2xl p-10">
                       <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                        3 miejsca. Kończą się jak się skończą.
+                        Zostały 3 miejsca
                       </h2>
                       <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-                        Aplikuj, nawet jeśli nie masz pewności czy się
-                        kwalifikujesz, w 48 h dostaniesz szczerą odpowiedź.
+                        Odpowiadamy w 48 h.
                       </p>
                       <Link href="/kontakt" className="btn-primary">
                         Aplikuj do programu case study

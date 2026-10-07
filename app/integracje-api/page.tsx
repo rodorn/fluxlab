@@ -33,31 +33,31 @@ export const metadata: Metadata = {
 };
 
 const useCases = [
-  "CRM z formularzami i źródłami leadów, nowe dane trafiają do CRM bez opóźnień.",
-  "Systemy operacyjne i finansowe, statusy, klienci i zamówienia synchronizowane między sobą.",
-  "Raportowanie i bazy danych, jeden uporządkowany przepływ danych do raportów i analiz.",
+  "CRM z formularzami i źródłami leadów.",
+  "Systemy operacyjne i finansowe: statusy, klienci, zamówienia.",
+  "Bazy danych i raporty z jednego przepływu danych.",
 ];
 
 const faq = [
   {
     question: "Ile kosztuje integracja?",
     answer:
-      "Spięcie dwóch systemów w jedną stronę to 1 500 do 2 900 zł. Każdy kolejny system dokłada 690 do 1 400 zł, praca w obie strony 590 do 1 200 zł, a system bez otwartego API 890 do 1 900 zł. Kalkulator na tej stronie składa z tego zakres dla Twojego przypadku. Wiążąca kwota pada po bezpłatnej diagnozie.",
+      "Spięcie dwóch systemów w jedną stronę to 1 500 do 2 900 zł. Kolejne systemy i praca w obie strony podnoszą kwotę. Wiążącą cenę podajemy po bezpłatnej diagnozie.",
   },
   {
     question: "Czym różni się integracja API od zwykłej automatyzacji?",
     answer:
-      "Integracja API skupia się na bezpośredniej wymianie danych między systemami, w bardziej stabilny i elastyczny sposób.",
+      "Integracja API wymienia dane bezpośrednio między systemami, stabilniej niż proste automaty.",
   },
   {
     question: "Czy da się połączyć systemy bez otwartego API?",
     answer:
-      "Zwykle tak, tylko inną drogą: przez eksport pliku, skrzynkę pocztową albo pobieranie ze strony. Działa to wolniej i wymaga czujnika na zmianę formatu, bo taka zmiana nie zgłasza się sama. W wycenie to osobna pozycja, 890 do 1 900 zł.",
+      "Zwykle tak: przez eksport pliku, skrzynkę pocztową albo pobieranie ze strony. W wycenie to osobna pozycja, 890 do 1 900 zł.",
   },
   {
     question: "Czy integracje API są tylko dla dużych firm?",
     answer:
-      "Nie. Mniejsze firmy często szybciej odczuwają wartość, bo eliminują ręczną pracę na małym zespole.",
+      "Nie. Małe zespoły zwykle najszybciej odczuwają brak ręcznej pracy.",
   },
 ];
 
@@ -70,17 +70,15 @@ export default function IntegracjeApi() {
 
         {/* Hero, kompaktowy */}
         <section className="relative overflow-hidden pt-24 pb-12">
-          <div className="blob blob-cyan absolute -top-32 -right-20 h-96 w-96" />
+          <div className="blob blob-accent absolute -top-32 -right-20 h-96 w-96" />
           <div className="container-wide max-w-3xl mx-auto text-center">
             <p className="section-label mb-5">Usługa</p>
             <h1 className="display-lg text-gray-900 dark:text-white mb-6">
               Integracje API
             </h1>
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
-              Łączymy systemy ze sprzedaży, operacji i raportowania tak, żeby dane
-              trafiały tam, gdzie trzeba, bez ręcznego przepisywania. Spięcie
-              dwóch systemów w jedną stronę zaczyna się od 1 500 zł, a co
-              podnosi tę kwotę, rozpisujemy niżej co do pozycji.
+              Łączymy systemy tak, żeby dane przechodziły same, bez ręcznego
+              przepisywania. Spięcie dwóch systemów od 1 500 zł.
             </p>
             <div>
               <a href="#sekcje" className="btn-primary">
@@ -90,7 +88,6 @@ export default function IntegracjeApi() {
           </div>
         </section>
 
-        {/* Treść w zakładkach, nic nie wycięte, podzielone */}
         <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
           <Tabs
             ariaLabel="Sekcje usługi integracji API"
@@ -104,10 +101,8 @@ export default function IntegracjeApi() {
                         Ile to kosztuje
                       </h2>
                       <p className="text-gray-600 dark:text-gray-300 mb-8">
-                        Integracja nie ma jednej ceny, bo spięcie dwóch systemów
-                        przez otwarte API i spięcie czterech, z których jeden
-                        oddaje dane plikiem, to inny zakres pracy. Zaznacz, co u
-                        Ciebie występuje, a zobaczysz rząd wielkości od razu.
+                        Zaznacz, co u Ciebie występuje, a zobaczysz rząd
+                        wielkości.
                       </p>
                       <ZakresWyceny wycena={WYCENA_INTEGRACJE} />
                     </div>
@@ -183,7 +178,7 @@ export default function IntegracjeApi() {
                       <LandingForm
                         formId="diagnosis_api"
                         heading="Sprawdźmy Twój stack integracji"
-                        intro="Opisz krótko, jakie systemy chcesz połączyć i gdzie dziś pojawia się ręczne przepisywanie danych. W odpowiedzi dostaniesz wstępną propozycję architektury i informację, od czego zacząć."
+                        intro="Napisz, jakie systemy chcesz połączyć. Odpowiemy, od czego zacząć."
                         submitLabel="Chcemy diagnozę integracji"
                       />
                     </div>

@@ -313,7 +313,7 @@ export default function EDoreczeniaCheck() {
               </button>
             </div>
             {krsStan === "blad" && (
-              <p className="mt-2 text-sm text-red-600 dark:text-red-400">
+              <p className="mt-2 text-sm text-red-700 dark:text-red-400">
                 {krsBlad}
               </p>
             )}
@@ -508,7 +508,7 @@ export default function EDoreczeniaCheck() {
                       </button>
                     </div>
                     {leadStan === "blad" && (
-                      <p className="mt-2 text-sm text-red-600 dark:text-red-400">
+                      <p className="mt-2 text-sm text-red-700 dark:text-red-400">
                         {leadBlad}
                       </p>
                     )}

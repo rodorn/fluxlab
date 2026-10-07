@@ -43,7 +43,7 @@ export default function WykresSlupkowy({
               <span
                 className={`shrink-0 text-sm font-bold tabular-nums ${
                   s.wyroznij
-                    ? "text-red-600 dark:text-red-400"
+                    ? "text-red-700 dark:text-red-400"
                     : "text-gray-900 dark:text-white"
                 }`}
               >

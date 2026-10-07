@@ -62,7 +62,7 @@ export default async function CategoryPage({ params }: Props) {
         <section className="py-16 lg:py-24 bg-gray-50 dark:bg-gray-900/50 border-b border-gray-100 dark:border-gray-800">
           <div className="container-wide">
             <div className="max-w-3xl mx-auto text-center">
-              <p className="section-label mb-4">{category.name}</p>
+              <p className="section-label mb-4">Strefa wiedzy</p>
               <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
                 {category.name}
               </h1>

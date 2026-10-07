@@ -40,13 +40,10 @@ export default function ProduktyPage() {
               Produkty
             </p>
             <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white">
-              Gotowe narzędzia, które rozwiązują jeden policzalny problem
+              Gotowe narzędzia na jeden konkretny problem
             </h1>
             <p className="mt-5 text-lg text-gray-600 dark:text-gray-300">
-              Zamiast długiego wdrożenia dostajesz konkretny efekt za stałą
-              cenę. Większość raportów powstaje automatycznie, dlatego kosztują
-              tyle, co obiad, a nie tyle, co konsulting. Zgłoszenie realizujemy i
-              odsyłamy wynik mailem.
+              Konkretny efekt za stałą cenę. Wynik odsyłamy mailem.
             </p>
           </div>
 
@@ -59,9 +56,7 @@ export default function ProduktyPage() {
               Potrzebujesz czegoś szytego pod Twój proces?
             </h2>
             <p className="mt-3 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              Produkty to gotowe rozwiązania ze stałą ceną. Jeśli masz szerszy proces do
-              zautomatyzowania, zaczniemy od bezpłatnej diagnozy i darmowego dowodu
-              na wąskim wycinku.
+              Zaczynamy od bezpłatnej diagnozy procesu.
             </p>
             <div className="mt-6">
               <TrackedCTA

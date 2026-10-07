@@ -32,25 +32,21 @@ export default function Page() {
       breadcrumb="Tańsze automatyzacje"
       eyebrow="Koszt narzędzi"
       h1="Płacisz za kroki, nie za pracę, którą automat wykonuje"
-      lead="Rozliczanie za każdy krok osobno sprawia, że rachunek rośnie szybciej niż liczba spraw, które automat załatwia. Dołożenie jednego kroku akcji do scenariusza podnosi koszt każdego jego uruchomienia, choć efekt dla firmy nie zmienia się wcale."
+      lead="Zapier i Make liczą każdy krok osobno, więc rachunek rośnie szybciej niż liczba załatwionych spraw. Przenosimy te same scenariusze na Twój serwer, z kosztem stałym."
       ctaLabel="Zamów przeniesienie"
       ctaNote="Wycena po zobaczeniu scenariuszy"
       checks={[
         {
-          title: "Te same scenariusze, nie nowe",
-          desc: "Nie przebudowujemy Wam procesów. Odtwarzamy dokładnie to, co już działa, żeby po migracji nikt w firmie nie musiał uczyć się niczego od nowa.",
+          title: "Te same scenariusze",
+          desc: "Odtwarzamy to, co już działa. Nikt w firmie nie musi uczyć się niczego od nowa.",
         },
         {
-          title: "Koszt przestaje rosnąć z wolumenem",
-          desc: "Na własnym serwerze płacisz za maszynę, a nie za liczbę wykonanych kroków. Podwojenie liczby zamówień nie podwaja rachunku za automatyzację.",
+          title: "Koszt nie rośnie z wolumenem",
+          desc: "Płacisz za serwer, nie za kroki. Dwa razy więcej zamówień nie podwaja rachunku.",
         },
         {
-          title: "Powiemy wprost, gdy się nie opłaca",
-          desc: "Kalkulator wyżej potrafi odpowiedzieć, że przy Twojej skali migracja się nie zwróci. Wolimy to powiedzieć od razu niż wziąć pieniądze za coś, co nie ma sensu.",
-        },
-        {
-          title: "Utrzymanie, a nie porzucenie",
-          desc: "Własny serwer wymaga aktualizacji i kopii zapasowych. To realne dwie do czterech godzin miesięcznie, które bierzemy na siebie, bo inaczej oszczędność zamienia się w problem.",
+          title: "Powiemy, gdy się nie opłaca",
+          desc: "Jeśli kalkulator pokaże, że migracja się nie zwróci, mówimy to od razu.",
         },
       ]}
       pricing={[
@@ -90,28 +86,24 @@ export default function Page() {
       faq={[
         {
           q: "Czy stracimy coś na jakości?",
-          a: "Nie, bo to to samo narzędzie w wersji, którą uruchamiasz u siebie. Różnica jest w rozliczeniu, nie w możliwościach. Wyjątkiem są gotowe integracje z bardzo niszowymi usługami, które czasem trzeba dopisać ręcznie, i mówimy o tym przed migracją, a nie po.",
+          a: "Nie. To to samo narzędzie uruchomione u Ciebie, różni się tylko rozliczenie. Niszowe integracje czasem trzeba dopisać i mówimy o tym przed migracją.",
         },
         {
           q: "Co, jeśli serwer padnie?",
-          a: "Dlatego utrzymanie jest osobną pozycją, a nie dodatkiem gratis. Kopie zapasowe, aktualizacje i monitoring wykonań to praca, która musi się dziać co miesiąc, i uczciwiej jest ją wycenić, niż udawać, że jej nie ma.",
+          a: "Dlatego utrzymanie jest osobną pozycją: kopie zapasowe, aktualizacje i monitoring wykonań co miesiąc.",
         },
         {
           q: "Od jakiej skali to się opłaca?",
-          a: "Policz to kalkulatorem wyżej na swoich liczbach. W uproszczeniu: im więcej kroków ma scenariusz i im częściej się uruchamia, tym szybciej migracja się zwraca. Przy kilkuset uruchomieniach miesięcznie zwykle nie warto.",
+          a: "Policz kalkulatorem wyżej. Im więcej kroków i uruchomień, tym szybciej się zwraca. Przy kilkuset uruchomieniach miesięcznie zwykle nie warto.",
         },
         {
-          q: "Co w Zapierze i Make liczy się do limitu zadań?",
-          a: "W Zapierze zadaniem jest każdy udany krok akcji. Wyzwalacz, filtry, kroki Paths, Formatter, Delay i Looping zadań nie zużywają, a krok, który zakończył się błędem, też nie. W Make operacją jest jedno uruchomienie modułu, przy czym moduł wyzwalający liczy się jako jedna operacja bez względu na to, ile danych zwróci, a zwykły moduł liczy się osobno dla każdej porcji danych. Pięć maili wysłanych jednym modułem to pięć operacji. Dlatego policz kroki, które naprawdę coś robią, razy liczbę uruchomień, a nie wszystkie klocki na schemacie.",
-        },
-        {
-          q: "Czy to jest legalne wobec obecnego dostawcy?",
-          a: "Tak. Rezygnujesz z płatnej usługi i uruchamiasz u siebie narzędzie z otwartym kodem, przeznaczone właśnie do tego. Nie obchodzimy żadnych zabezpieczeń ani warunków.",
+          q: "Co w Zapierze i Make liczy się do limitu?",
+          a: "W Zapierze każdy udany krok akcji, bez wyzwalacza, filtrów i Formattera. W Make każde uruchomienie modułu, osobno dla każdej porcji danych. Licz kroki, które coś robią, razy liczbę uruchomień.",
         },
       ]}
       formId="order_tansze_automatyzacje"
       formHeading="Zamów przeniesienie automatyzacji"
-      formIntro="Napisz, z czego dziś korzystasz, ile mniej więcej macie scenariuszy i co robią najważniejsze z nich. Odeślemy wycenę i uczciwą opinię, czy migracja ma u Was sens."
+      formIntro="Napisz, z czego korzystasz i ile macie scenariuszy. Odeślemy wycenę i opinię, czy migracja ma sens."
       submitLabel="Zamów wycenę"
       microCopy="Do wyceny nie potrzebujemy dostępów, wystarczy opis scenariuszy."
       serviceName="Migracja automatyzacji na własny serwer"

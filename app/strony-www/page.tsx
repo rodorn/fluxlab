@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 const offer = [
   "Nowa strona od zera albo poprawki w istniejącej.",
   "Next.js + Tailwind, mobile-first, Web Vitals 90+.",
-  "Treści i grafiki z AI, żebyś nie pisał ich miesiącami.",
+  "Treści i grafiki z AI.",
   "Hosting i deployment w cenie wdrożenia.",
 ];
 
@@ -34,14 +34,12 @@ const pricing = [
   {
     title: "Poprawki i nowe podstrony",
     price: "od 99 zł",
-    description:
-      "Zmiana w istniejącej stronie albo dołożenie podstrony. Wycena po opisie zmiany.",
+    description: "Zmiana w istniejącej stronie albo nowa podstrona.",
   },
   {
     title: "Landing z formularzem i płatnością",
     price: "od 299 zł",
-    description:
-      "Jedna strona pod cel, z formularzem, płatnością i wdrożeniem na serwer.",
+    description: "Jedna strona z formularzem i płatnością, wdrożona na serwer.",
     accent: true,
   },
   {
@@ -55,17 +53,17 @@ const faq = [
   {
     question: "Ile czasu zajmuje wdrożenie?",
     answer:
-      "Poprawka albo nowa podstrona: zwykle ten sam lub następny dzień. Landing z formularzem i płatnością: 3-5 dni roboczych. Strona firmowa z kilkoma podstronami: 2-3 tygodnie. Czas zależy głównie od tego, jak szybko dostajemy treści i decyzje po Twojej stronie.",
+      "Poprawka: zwykle ten sam lub następny dzień. Landing: 3-5 dni roboczych. Strona firmowa: 2-3 tygodnie.",
   },
   {
     question: "Czy możemy modyfikować treści samodzielnie?",
     answer:
-      "Tak. Dla strony firmowej podpinamy prosty CMS (Sanity albo Notion), w którym edytujesz teksty jak dokument. Dla landing page-a treści edytujesz przez interfejs GitHuba.",
+      "Tak. Strona firmowa dostaje prosty CMS, w którym edytujesz teksty jak dokument.",
   },
   {
     question: "Hosting i domena?",
     answer:
-      "Hosting w cenie wdrożenia, bo Vercel ma darmowy plan wystarczający dla większości stron. Domenę kupujesz na siebie (50-150 zł/rok), pomagamy z konfiguracją.",
+      "Hosting jest w cenie wdrożenia. Domenę kupujesz na siebie (50-150 zł/rok), konfigurację robimy my.",
   },
 ];
 
@@ -83,7 +81,6 @@ export default function StronyWww() {
         >
           <div className="absolute inset-0 -z-10" aria-hidden="true">
             <div className="blob blob-accent w-[520px] h-[520px] -top-32 -left-32 animate-drift" />
-            <div className="blob blob-violet w-[480px] h-[480px] top-20 -right-24 animate-drift-slow" />
           </div>
           <div className="container-wide">
             <div className="max-w-3xl">
@@ -123,7 +120,6 @@ export default function StronyWww() {
           <CoZeStrona biezacaStrona="/strony-www" />
         </section>
 
-        {/* Treść w zakładkach, nic nie wycięte, podzielone */}
         <section className="container-wide pb-16">
           <ProductGrid category="www" showHeading />
         </section>
@@ -167,16 +163,14 @@ export default function StronyWww() {
                       ))}
                     </ul>
                     <p className="mt-8 max-w-2xl text-gray-600 dark:text-gray-400">
-                      Przy przenosinach strony zostaje jeszcze poczta na tej
-                      samej domenie. Zanim zmienicie serwer, zróbcie{" "}
+                      Przenosisz stronę? Najpierw zrób{" "}
                       <Link
                         href="/audyt-poczty"
                         className="text-accent hover:underline"
                       >
-                        audyt poczty firmowej (SPF, DKIM, DMARC)
+                        audyt poczty firmowej
                       </Link>
-                      , bo bez tych wpisów obcy może wysłać mail wyglądający na
-                      Wasz.
+                      , żeby nie stracić maili na tej samej domenie.
                     </p>
                   </div>
                 ),
@@ -261,7 +255,7 @@ export default function StronyWww() {
                     <LandingForm
                       formId="diagnosis_web"
                       heading="Bezpłatna diagnoza strony WWW"
-                      intro="Krótko opisz, jakiej strony potrzebujesz albo co Ci przeszkadza w obecnej. Wrócimy w ciągu 24h z kolejnym krokiem."
+                      intro="Napisz, jakiej strony potrzebujesz. Odpowiemy w ciągu 24h."
                       submitLabel="Zamów diagnozę"
                     />
                   </div>
@@ -297,8 +291,8 @@ export default function StronyWww() {
               },
               {
                 "@type": "Offer",
-                name: "Landing page",
-                price: "2500",
+                name: "Landing z formularzem i płatnością",
+                price: "299",
                 priceCurrency: "PLN",
                 description:
                   "Jedna strona z formularzem, deployment, podstawowy SEO.",
@@ -306,7 +300,7 @@ export default function StronyWww() {
               {
                 "@type": "Offer",
                 name: "Strona firmowa",
-                price: "4500",
+                price: "450",
                 priceCurrency: "PLN",
                 description:
                   "5+ podstron, CMS, blog, deployment, SEO i schema.",

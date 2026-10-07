@@ -24,58 +24,38 @@ export const metadata: Metadata = {
 const czesci = [
   {
     q: "10 cyfr: NIP sprzedawcy",
-    a: "Numer zaczyna się od NIP-u firmy, która wystawiła fakturę. Sprawdzamy jego sumę kontrolną tak samo, jak przy każdym NIP-ie.",
+    a: "Sprawdzamy jego sumę kontrolną jak przy każdym NIP-ie.",
   },
   {
     q: "8 cyfr: data przyjęcia w KSeF",
-    a: "Data w układzie RRRRMMDD, czyli dzień, w którym KSeF przyjął fakturę i nadał jej numer. Od tego dnia faktura kosztowa jest uznana za otrzymaną.",
+    a: "Układ RRRRMMDD. Od tego dnia faktura kosztowa jest uznana za otrzymaną.",
   },
   {
     q: "12 znaków: część techniczna",
-    a: "Cyfry i litery od A do F nadawane przez system. Nie niosą treści, którą dałoby się odczytać.",
+    a: "Cyfry i litery A do F nadawane przez system.",
   },
   {
     q: "2 znaki: suma kontrolna",
-    a: "Wynik CRC-8 z pierwszych 32 znaków numeru razem z myślnikami. Zmiana jednego znaku w numerze prawie zawsze zmienia sumę, więc literówka wychodzi od razu.",
+    a: "CRC-8 z pierwszych 32 znaków. Literówka prawie zawsze zmienia sumę, więc wychodzi od razu.",
   },
 ];
 
 const faq = [
   {
-    q: "Jak wygląda numer KSeF?",
-    a: "Ma 35 znaków w układzie 9999999999-RRRRMMDD-FFFFFFFFFFFF-FF: NIP sprzedawcy, data przyjęcia faktury w KSeF, 12 znaków części technicznej i 2 znaki sumy kontrolnej. Przykład z dokumentacji Ministerstwa Finansów: 5265877635-20250826-0100001AF629-AF.",
-  },
-  {
-    q: "Jak liczy się sumę kontrolną numeru KSeF?",
-    a: "To CRC-8 z wielomianem 0x07 i wartością początkową 0x00, liczone z pierwszych 32 znaków numeru razem z myślnikami. Wynik zapisuje się jako dwa znaki szesnastkowe wielkimi literami. Dla 5265877635-20250826-0100001AF629 suma wynosi AF.",
-  },
-  {
     q: "Czy numer KSeF trzeba podawać w przelewie?",
-    a: "Od 1 stycznia 2027 tak, przy zapłacie za fakturę wystawioną w KSeF między czynnymi podatnikami VAT. Przy zapłacie za wiele faktur jednego kontrahenta wystarczy identyfikator zbiorczy wygenerowany w KSeF. Obowiązek nie dotyczy płatności kartą, BLIK-iem ani gotówką.",
-  },
-  {
-    q: "Czy numer KSeF w przelewie MPP obowiązuje już teraz?",
-    a: "Nie. W podzielonej płatności numer KSeF zamiast numeru faktury wpisuje się w komunikacie przelewu MPP przy płatnościach od 1 stycznia 2027, tak samo jak w zwykłym przelewie. W sieci krążą wcześniejsze daty, ale Ministerstwo Finansów na ksef.podatki.gov.pl podaje 1 stycznia 2027. Do końca 2026 w komunikacie MPP wpisuje się numer faktury nadany przez sprzedawcę. Numeru KSeF nie trzeba podawać przy fakturze wystawionej w trybie offline, która z powodu ogłoszonej awarii KSeF nie trafiła jeszcze do systemu.",
+    a: "Od 1 stycznia 2027 tak, przy zapłacie za fakturę z KSeF między czynnymi podatnikami VAT, także w przelewie MPP. Nie dotyczy karty, BLIK-a ani gotówki.",
   },
   {
     q: "Czy poprawny numer oznacza, że faktura istnieje?",
-    a: "Nie. Poprawna suma kontrolna mówi tylko, że w numerze nie ma literówki. Istnienie faktury potwierdza KSeF, na przykład w Aplikacji Podatnika KSeF albo w programie do fakturowania.",
+    a: "Nie. Poprawna suma mówi tylko, że nie ma literówki. Istnienie faktury potwierdza KSeF.",
   },
   {
     q: "Numer jest z faktury sprzed 2026 roku i wychodzi błąd sumy kontrolnej, to na pewno literówka?",
-    a: "Niekoniecznie. Numery nadane w dobrowolnym KSeF przed startem API 2.0 (1 lutego 2026) czasem liczą sumę kontrolną innym wzorem, nigdzie oficjalnie nie opisanym przez Ministerstwo Finansów. CIRFMF potwierdził, że to zamierzona różnica algorytmów, nie błąd. Przy takich numerach sprawdzenie i tak wychwytuje literówki w NIP-ie sprzedawcy i w dacie, a przy samej sumie kontrolnej pewność daje tylko KSeF.",
+    a: "Niekoniecznie. Numery sprzed 1 lutego 2026 czasem liczą sumę innym wzorem. Literówki w NIP-ie i dacie i tak wychwycimy.",
   },
   {
     q: "Czy wysyłacie gdzieś wklejone numery?",
-    a: "Nie. Całe sprawdzenie liczy się w Waszej przeglądarce. Nie ma rejestracji, limitu prób ani pola na dane kontaktowe.",
-  },
-  {
-    q: "Gdzie znaleźć numer KSeF faktury?",
-    a: "Nadaje go KSeF w chwili przyjęcia faktury. Widać go w Aplikacji Podatnika KSeF, w programie do fakturowania połączonym z KSeF i w pobranym z systemu pliku faktury. Na wizualizacji faktury przekazanej poza KSeF jest przy kodzie QR.",
-  },
-  {
-    q: "Część faktur sprzedaży wystawiamy poza e-mikrofirmą, w Aplikacji Podatnika KSeF. Jak je przenieść do e-mikrofirmy?",
-    a: "Nie da się ich zaimportować. e-mikrofirma pobiera z KSeF tylko faktury zakupu, a na liście sprzedaży pokazuje wyłącznie faktury wystawione w niej samej. Fakturę sprzedaży wystawioną gdzie indziej, na przykład zaliczkową, wprowadza się ręcznie jako Nowy inny wpis sprzedaży, rodzaj wpisu Dowolny wpis sprzedaży. W oznaczeniu faktury zaznacza się NrKSeF i przepisuje numer KSeF, a datę księgowania ustawia na miesiąc powstania obowiązku podatkowego, przy zaliczce to miesiąc jej otrzymania. Przepisany ręcznie numer warto sprawdzić tutaj, zanim trafi do JPK. Przy fakturze końcowej pilnujcie, żeby VAT od zaliczki nie wszedł do ewidencji drugi raz. Źródło: podręcznik użytkownika e-mikrofirmy Ministerstwa Finansów, kwiecień 2026.",
+    a: "Nie. Sprawdzenie liczy się w Waszej przeglądarce, bez rejestracji i limitu prób.",
   },
 ];
 
@@ -99,10 +79,8 @@ export default function NumerKsefPage() {
               Sprawdzenie numeru KSeF przed przelewem
             </h1>
             <p className="mt-5 text-lg text-gray-600 dark:text-gray-300">
-              Od 1 stycznia 2027 numer KSeF faktury trafia do tytułu przelewu.
-              Jedna literówka i księgowość kontrahenta nie połączy wpłaty z
-              fakturą. Wklejcie numery, a sprawdzimy sumę kontrolną, NIP
-              sprzedawcy i datę przyjęcia, zanim pójdą do banku.
+              Od 1 stycznia 2027 numer KSeF trafia do tytułu przelewu. Wklejcie
+              numery, a sprawdzimy, czy nie ma w nich literówki.
             </p>
           </div>
 
@@ -135,9 +113,7 @@ export default function NumerKsefPage() {
             </h2>
             <p className="mt-3 text-gray-600 dark:text-gray-300">
               Numer w przelewie to jeden z siedmiu punktów, które kończą się
-              razem z przepisami przejściowymi KSeF. Pozostałe to faktury poza
-              systemem, kasa rejestrująca, faktury kosztowe, tryb offline,
-              numeracja faktur i odrzucenia.
+              razem z przepisami przejściowymi KSeF.
             </p>
             <p className="mt-4">
               <Link

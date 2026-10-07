@@ -17,10 +17,6 @@ const PILLARS = [
     variant: "automation" as const,
     desc: "Leady nie trafiają automatycznie do CRM, handlowiec zapomina o follow-upie, a raport składa się ręcznie przez pół dnia. Budujemy przepływ, który robi to sam i nie gubi zgłoszeń.",
     cta: "Znajdź proces do automatyzacji",
-    // Akcent: indigo
-    ring: "group-hover:ring-accent/80 focus-visible:ring-accent",
-    glow: "from-accent/35",
-    btn: "text-accent group-hover:bg-accent-solid group-hover:text-white",
   },
   {
     href: "/scraping-danych",
@@ -30,10 +26,6 @@ const PILLARS = [
     variant: "data" as const,
     desc: "Dane leżą w kilku systemach i w Excelach, a ERP nie rozmawia z CRM. Spinamy je przez API, porządkujemy i zamieniamy w raport, który przychodzi sam.",
     cta: "Zobacz, jak spiąć systemy",
-    // Akcent: zieleń
-    ring: "group-hover:ring-emerald-400/80 focus-visible:ring-emerald-400",
-    glow: "from-emerald-500/35",
-    btn: "text-emerald-300 group-hover:bg-emerald-500 group-hover:text-white",
   },
   {
     href: "/strony-www",
@@ -43,10 +35,6 @@ const PILLARS = [
     variant: "web" as const,
     desc: "Aplikacje webowe, panele i formularze, które są częścią procesu, a nie osobnym bytem. Strona firmowa też, ale jako element całości, nie jako produkt sam w sobie.",
     cta: "Zobacz, co budujemy",
-    // Akcent: fiolet
-    ring: "group-hover:ring-violet-400/80 focus-visible:ring-violet-400",
-    glow: "from-violet-500/35",
-    btn: "text-violet-300 group-hover:bg-violet-500 group-hover:text-white",
   },
 ];
 
@@ -154,7 +142,7 @@ export default function Home() {
             <Link
               key={p.href}
               href={p.href}
-              className={`group relative flex h-[22rem] flex-col justify-end overflow-hidden rounded-2xl ring-1 ring-gray-200 dark:ring-white/10 transition-all duration-300 focus:outline-none ${p.ring} hover:ring-2`}
+              className="group relative flex h-[22rem] flex-col justify-end overflow-hidden rounded-2xl ring-1 ring-gray-200 dark:ring-white/10 transition-all duration-300 focus:outline-none group-hover:ring-accent/80 focus-visible:ring-accent hover:ring-2"
             >
               <TileVideo
                 srcDark={p.video}
@@ -164,7 +152,7 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/60 to-gray-950/10 transition-all duration-500 group-hover:from-gray-950/90 group-hover:via-gray-950/40" />
               <div
                 aria-hidden="true"
-                className={`absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t ${p.glow} to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100`}
+                className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-accent/35 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
               />
               <div className="relative p-6 lg:p-7 transition-transform duration-500 ease-out group-hover:-translate-y-1">
                 <h2 className="text-2xl font-bold tracking-tight text-white">
@@ -174,7 +162,7 @@ export default function Home() {
                   {p.desc}
                 </p>
                 <span
-                  className={`mt-4 inline-flex items-center gap-2 rounded-lg px-3 py-1.5 -ml-3 text-sm font-semibold transition-all duration-300 group-hover:gap-3 ${p.btn}`}
+                  className="mt-4 inline-flex items-center gap-2 rounded-lg px-3 py-1.5 -ml-3 text-sm font-semibold text-white transition-all duration-300 group-hover:gap-3 group-hover:bg-accent-solid"
                 >
                   {p.cta}
                   <span aria-hidden="true">→</span>

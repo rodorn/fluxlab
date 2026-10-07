@@ -363,11 +363,11 @@ function MetricCard({
 }) {
   const variantStyles: Record<string, string> = {
     automate:
-      "border-emerald-500/40 bg-emerald-500/5 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-300",
+      "border-emerald-500/60 bg-emerald-50 dark:bg-emerald-950/30 text-emerald-700 dark:text-emerald-400",
     manual:
       "border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800/40 text-gray-700 dark:text-gray-300",
     consider:
-      "border-amber-500/40 bg-amber-500/5 dark:bg-amber-500/10 text-amber-700 dark:text-amber-300",
+      "border-amber-500/60 bg-amber-50 dark:bg-amber-950/30 text-amber-700 dark:text-amber-400",
   };
 
   if (variant) {

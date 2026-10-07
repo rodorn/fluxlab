@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 
 import {
-  businessTools,
-  otherTools,
   narzedziaFilaru,
   FILARY_NARZEDZI,
   FILAR_INTRO_NARZEDZI,
@@ -11,21 +9,18 @@ import {
 import { CATEGORY_LABEL } from "@/lib/products";
 import WyborNarzedzia from "@/components/WyborNarzedzia";
 import Link from "next/link";
-import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
   title: "Narzędzia: kalkulatory, audyty i decyzje | Fluxlab",
   description:
-    "Bezpłatne narzędzia dla firm: kalkulator kosztu ręcznej obsługi leadów, audyt CRM, decyzja zatrudnić czy zautomatyzować, kalkulator JDG. Bez rejestracji.",
+    "Bezpłatne narzędzia dla firm: kalkulator kosztu ręcznej obsługi leadów, decyzja zatrudnić czy zautomatyzować i inne. Bez rejestracji.",
   openGraph: {
-    title:
-      "Narzędzia: kalkulatory ROI, audyty CRM i decyzje biznesowe | Fluxlab",
+    title: "Narzędzia: kalkulatory, audyty i decyzje | Fluxlab",
     description:
-      "Bezpłatne narzędzia online dla firm B2B: kalkulator kosztu ręcznej obsługi leadów, audyt CRM, decyzja zatrudnić/zautomatyzować, kalkulator podatkowy JDG.",
+      "Bezpłatne narzędzia online dla firm B2B: kalkulator kosztu ręcznej obsługi leadów, decyzja zatrudnić czy zautomatyzować i inne.",
     locale: "pl_PL",
     type: "website",
     images: [
@@ -161,8 +156,6 @@ const IKONY: Record<string, React.ReactElement> = {
   ),
 };
 
-/** Kafelek narzedzia. Wyjety z petli, bo lista jest teraz podzielona na trzy
- *  filary i ten sam markup renderuje sie w trzech miejscach. */
 function KafelekNarzedzia({ tool }: { tool: Narzedzie }) {
   return (
     <Link
@@ -189,9 +182,9 @@ function KafelekNarzedzia({ tool }: { tool: Narzedzie }) {
           {IKONY[tool.ikona ?? "lista"] ?? IKONY.lista}
         </svg>
       </div>
-      <h4 className="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-accent transition-colors mb-2">
+      <h3 className="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-accent transition-colors mb-2">
         {tool.title}
-      </h4>
+      </h3>
       <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed flex-1 mb-5">
         {tool.description}
       </p>
@@ -224,122 +217,44 @@ export default function Narzedzia() {
       <Header />
       <main className="pt-16">
         <Breadcrumbs items={[{ label: "Narzędzia" }]} />
-        {/* Hero, kompaktowy */}
         <section className="pt-24 pb-12 bg-gray-50 dark:bg-gray-900/50 border-b border-gray-100 dark:border-gray-800">
           <div className="container-wide">
             <div className="max-w-3xl mx-auto text-center">
               <p className="section-label mb-4">Narzędzia</p>
               <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
-                Praktyczne narzędzia online
+                Sprawdź swoją firmę, zanim komukolwiek zapłacisz
               </h1>
-              <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
-                Bezpłatne kalkulatory i narzędzia, które pomagają podejmować
-                lepsze decyzje. Bez rejestracji, bez zbędnych kroków.
+              <p className="text-lg text-gray-600 dark:text-gray-400">
+                Każde narzędzie kończy się konkretną liczbą albo werdyktem. Bez
+                rejestracji i bez zostawiania adresu.
               </p>
-              <Link href="#sekcje" className="btn-primary">
-                Przeglądaj narzędzia
-              </Link>
             </div>
           </div>
         </section>
 
-        {/* Treść w zakładkach, nic nie wycięte, podzielone */}
-        <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
-          <Tabs
-            ariaLabel="Kategorie narzędzi"
-            tabs={[
-              {
-                label: "Dla firm B2B",
-                content: (
-                  <div className="py-10 lg:py-12">
-                    <div className="max-w-5xl mx-auto">
-                      <div className="mb-8">
-                        <p className="section-label mb-2">Dla firm B2B</p>
-                        <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
-                          Sprawdź swoją firmę, zanim zapłacisz komukolwiek
-                        </h2>
-                        <p className="mt-2 text-gray-600 dark:text-gray-400 max-w-2xl">
-                          Każde narzędzie pracuje na Twoich danych i kończy
-                          konkretną liczbą albo werdyktem, nie ogólnikiem. Bez
-                          rejestracji i bez zostawiania adresu.
-                        </p>
-                      </div>
-                      <WyborNarzedzia />
-                      {FILARY_NARZEDZI.map((filar) => {
-                        const wFilarze = narzedziaFilaru(filar);
-                        if (!wFilarze.length) return null;
-                        return (
-                          <section key={filar} className="mt-12 first:mt-10">
-                            <h3 className="text-xl font-bold text-gray-900 dark:text-white">
-                              {CATEGORY_LABEL[filar]}
-                            </h3>
-                            <p className="mt-1 mb-6 text-sm text-gray-600 dark:text-gray-400 max-w-2xl">
-                              {FILAR_INTRO_NARZEDZI[filar]}
-                            </p>
-                            <div className="grid md:grid-cols-3 gap-6">
-                              {wFilarze.map((tool) => (
-                                <KafelekNarzedzia key={tool.href} tool={tool} />
-                              ))}
-                            </div>
-                          </section>
-                        );
-                      })}
-                    </div>
+        <div id="sekcje" className="scroll-mt-20 container-wide py-12 pb-20">
+          <div className="max-w-5xl mx-auto">
+            <WyborNarzedzia />
+            {FILARY_NARZEDZI.map((filar) => {
+              const wFilarze = narzedziaFilaru(filar);
+              if (!wFilarze.length) return null;
+              return (
+                <section key={filar} className="mt-12 first:mt-10">
+                  <h2 className="text-xl font-bold text-gray-900 dark:text-white">
+                    {CATEGORY_LABEL[filar]}
+                  </h2>
+                  <p className="mt-1 mb-6 text-sm text-gray-600 dark:text-gray-400 max-w-2xl">
+                    {FILAR_INTRO_NARZEDZI[filar]}
+                  </p>
+                  <div className="grid md:grid-cols-3 gap-6">
+                    {wFilarze.map((tool) => (
+                      <KafelekNarzedzia key={tool.href} tool={tool} />
+                    ))}
                   </div>
-                ),
-              },
-              {
-                label: "Pozostałe",
-                content: (
-                  <div className="py-10 lg:py-12">
-                    <div className="max-w-5xl mx-auto">
-                      <div className="mb-8">
-                        <p className="section-label mb-2">Pozostałe</p>
-                        <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
-                          Narzędzia dla samodzielnych decyzji
-                        </h2>
-                        <p className="mt-2 text-gray-600 dark:text-gray-400 max-w-2xl">
-                          Kalkulatory niezwiązane bezpośrednio z automatyzacją
-                          B2B, ale przydatne, jeśli prowadzisz JDG albo szukasz
-                          auta.
-                        </p>
-                      </div>
-                      <div className="grid md:grid-cols-3 gap-6">
-                        {otherTools.map((tool) => (
-                          <Link
-                            key={tool.href}
-                            href={tool.href}
-                            className="group block rounded-2xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800/60 overflow-hidden hover:border-accent/30 dark:hover:border-accent/50 transition-colors"
-                          >
-                            {tool.image && (
-                              <div className="aspect-[16/10] overflow-hidden bg-gray-100 dark:bg-gray-800">
-                                <Image
-                                  src={tool.image}
-                                  alt={tool.title}
-                                  width={400}
-                                  height={250}
-                                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                                  unoptimized
-                                />
-                              </div>
-                            )}
-                            <div className="p-6">
-                              <h3 className="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-accent transition-colors mb-2">
-                                {tool.title}
-                              </h3>
-                              <p className="text-sm text-gray-500 dark:text-gray-400">
-                                {tool.description}
-                              </p>
-                            </div>
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                ),
-              },
-            ]}
-          />
+                </section>
+              );
+            })}
+          </div>
         </div>
       </main>
       <Footer />

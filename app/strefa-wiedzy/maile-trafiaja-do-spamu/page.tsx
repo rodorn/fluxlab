@@ -32,24 +32,19 @@ export const metadata: Metadata = {
 
 const faqItems = [
   {
-    question: "Dlaczego akurat nasze maile trafiają do spamu, a innych nie?",
-    answer:
-      "Najczęściej przez brak lub błędną konfigurację SPF, DKIM i DMARC. Filtry Gmaila i Outlooka od 2024 roku traktują brak tych rekordów jako sygnał ostrzegawczy. Do tego dochodzi reputacja adresu IP i domeny oraz treść wiadomości. Konfiguracja DNS to jednak pierwsza i najłatwiejsza do naprawienia przyczyna.",
-  },
-  {
     question: "Jak sprawdzić, czy problem jest po naszej stronie?",
     answer:
-      "Zacznij od audytu rekordów DNS domeny: SPF, DKIM, DMARC. Jeśli któregoś brakuje lub DMARC jest w trybie p=none, masz konkretną przyczynę do naprawy. Darmowy audyt pokaże to w kilka sekund, bez logowania.",
+      "Uruchom audyt rekordów SPF, DKIM i DMARC. Jeśli któregoś brakuje albo DMARC ma p=none, masz konkretną przyczynę do naprawy.",
   },
   {
-    question: "Czy wysyłka przez Gmaila albo własną skrzynkę coś zmienia?",
+    question: "Czy wysyłka przez narzędzie do mailingu coś zmienia?",
     answer:
-      "Tak. Jeśli wysyłasz newsletter albo masową ofertę, dostawca poczty (Google Workspace, Microsoft 365, Zoho) musi mieć poprawnie ustawione SPF i DKIM dla Twojej domeny, a Ty potrzebujesz DMARC. Wysyłka przez zewnętrzne narzędzie (np. do mailingu) wymaga dodania jego serwerów do SPF, inaczej te maile będą odrzucane.",
+      "Tak. Jego serwery muszą być dopisane do SPF Twojej domeny, inaczej te maile będą odrzucane.",
   },
   {
     question: "Ile trwa poprawa dostarczalności?",
     answer:
-      "Poprawki SPF i DKIM działają od razu po propagacji DNS (zwykle do kilku godzin). DMARC wdraża się etapami przez około dwa tygodnie: najpierw obserwacja, potem zaostrzenie. Reputacja domeny odbudowuje się dłużej, ale konfiguracja to fundament, bez którego reszta nie zadziała.",
+      "SPF i DKIM działają po propagacji DNS, zwykle w kilka godzin. DMARC wdraża się etapami przez około dwa tygodnie.",
   },
 ];
 
@@ -81,11 +76,8 @@ export default function MaileSpamArticle() {
             fontSize: "1.05rem",
           }}
         >
-          Wysyłasz ofertę albo fakturę, system pokazuje, że wiadomość została wysłana, a
-          klient jej nie dostaje albo znajduje ją w spamie. To jeden z
-          najbardziej frustrujących problemów, bo z Twojej strony wszystko
-          wygląda poprawnie. W większości przypadków przyczyna jest konkretna i
-          naprawialna: konfiguracja poczty w DNS.
+          Oferta wysłana, a klient znajduje ją w spamie albo wcale. Zwykle
+          przyczyna jest konkretna i naprawialna: konfiguracja poczty w DNS.
         </p>
 
         <div
@@ -128,44 +120,37 @@ export default function MaileSpamArticle() {
 
         <h3 style={{ fontWeight: 700, marginTop: "1.5rem" }}>1. Brak DMARC</h3>
         <p style={{ color: "var(--article-text)", lineHeight: 1.7 }}>
-          To dziś przyczyna numer jeden. Od 2024 roku Gmail i Outlook wymagają
-          rekordu DMARC od firm wysyłających więcej poczty. Jego brak sprawia,
-          że część wiadomości jest cicho odrzucana lub trafia do spamu, a Ty nie
-          dostajesz o tym żadnej informacji.
+          Przyczyna numer jeden. Od 2024 roku Gmail i Outlook wymagają DMARC,
+          a bez niego część wiadomości cicho trafia do spamu.
         </p>
 
         <h3 style={{ fontWeight: 700, marginTop: "1.5rem" }}>
           2. Brakujący lub błędny SPF
         </h3>
         <p style={{ color: "var(--article-text)", lineHeight: 1.7 }}>
-          Jeśli serwer wysyłający nie jest wpisany w SPF Twojej domeny, odbiorca
-          traktuje wiadomość jak podejrzaną. Częsty błąd to dodanie nowego
-          narzędzia do mailingu bez dopisania jego serwerów do SPF, albo dwa
-          rekordy SPF naraz, co unieważnia oba.
+          Serwer spoza SPF wygląda podejrzanie. Częste błędy: nowe narzędzie
+          do mailingu niedopisane do SPF albo dwa rekordy SPF naraz.
         </p>
 
         <h3 style={{ fontWeight: 700, marginTop: "1.5rem" }}>
           3. Brak podpisu DKIM
         </h3>
         <p style={{ color: "var(--article-text)", lineHeight: 1.7 }}>
-          Bez DKIM wiadomość nie ma kryptograficznego dowodu, że naprawdę wyszła
-          od Ciebie i nie została zmieniona. Filtry ufają takim wiadomościom
-          mniej, zwłaszcza gdy są przekazywane dalej.
+          Bez DKIM nie ma dowodu, że wiadomość wyszła od Ciebie i nie została
+          zmieniona. Filtry ufają jej mniej.
         </p>
 
         <h3 style={{ fontWeight: 700, marginTop: "1.5rem" }}>
           4. Reputacja i treść
         </h3>
         <p style={{ color: "var(--article-text)", lineHeight: 1.7 }}>
-          Nawet z poprawną konfiguracją zaszkodzić może zła reputacja adresu IP,
-          nagły wzrost wysyłki z nowej domeny albo treść wyglądająca na spam. To
-          jednak ma sens naprawiać dopiero po uporządkowaniu fundamentu, czyli
-          SPF, DKIM i DMARC.
+          Szkodzi też zła reputacja IP, nagły wzrost wysyłki albo spamowa
+          treść. To naprawia się dopiero po SPF, DKIM i DMARC.
         </p>
 
         <SprawdzPoBadaniu
           naglowek="Zobacz to sprawdzenie na żywo"
-          opis="Odpytujemy serwery nazw wybranej domeny o rekordy SPF, DKIM i DMARC i pokazujemy, czego w nich brakuje. Nic nie wpisujesz, nic nie zakładasz."
+          opis="Odpytujemy DNS wybranej domeny o SPF, DKIM i DMARC i pokazujemy, czego brakuje."
           endpoint="/api/audyt"
           pozycje={[
             { wartosc: "fluxlab.pl" },

@@ -3,7 +3,6 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import Tabs from "@/components/Tabs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 
 export const metadata: Metadata = {
@@ -30,17 +29,32 @@ export const metadata: Metadata = {
   },
 };
 
-const checkIcon = (
-  <svg
-    className="w-5 h-5 text-accent shrink-0 mt-0.5"
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke="currentColor"
-    strokeWidth={2}
-  >
-    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-  </svg>
-);
+const faqItems = [
+  {
+    question: "Czy darmowy HubSpot wystarczy małej firmie?",
+    answer:
+      "Na start często tak. Workflow, raporty i marketing automation wymagają płatnych planów, których koszt rośnie szybko.",
+  },
+  {
+    question: "Co kosztuje więcej długoterminowo?",
+    answer:
+      "Zwykle HubSpot, gdy korzystasz z Marketing Hub i Sales Hub Professional. Pipedrive rośnie liniowo z liczbą użytkowników.",
+  },
+  {
+    question: "Czy łatwo zmigrować z HubSpota do Pipedrive?",
+    answer:
+      "Kontakty i deale tak, przez CSV albo API. Historię maili, scoring i workflow często trzeba budować od nowa.",
+  },
+  {
+    question: "Co wybrać, jeśli nie mamy jeszcze procesu sprzedaży?",
+    answer:
+      "Najpierw uporządkuj proces, potem wybieraj narzędzie. Bez procesu każdy CRM będzie tylko ładniejszą bazą kontaktów.",
+  },
+];
+
+const h2 = "mt-12 mb-4 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white";
+const p = "mb-4 text-gray-600 dark:text-gray-400 leading-relaxed";
+const ul = "mb-4 ml-5 list-disc space-y-2 text-gray-600 dark:text-gray-400";
 
 export default function HubspotVsPipedriveArticle() {
   return (
@@ -54,7 +68,6 @@ export default function HubspotVsPipedriveArticle() {
           ]}
         />
 
-        {/* Nagłówek artykułu, kompaktowy */}
         <section className="pt-16 pb-6">
           <div className="container-wide max-w-3xl mx-auto">
             <span className="section-label">Strefa wiedzy</span>
@@ -62,522 +75,86 @@ export default function HubspotVsPipedriveArticle() {
               HubSpot vs Pipedrive, który CRM dla małej firmy
             </h1>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-              HubSpot i Pipedrive trafiają na krótkie listy w niemal każdej
-              małej firmie B2B. Różnią się jednak fundamentalnie filozofią:
-              HubSpot to platforma growth, w której CRM jest tylko częścią
-              układanki, Pipedrive to czysty pipeline sprzedażowy. Wybór między
-              nimi przesądza nie funkcja, tylko model rozwoju firmy.
+              HubSpot to platforma marketingowa, w której CRM jest jedną z
+              części. Pipedrive to czysty pipeline sprzedażowy. O wyborze
+              decyduje sposób, w jaki firma pozyskuje klientów.
             </p>
+
+            <h2 className={h2}>Cennik 2026, orientacyjnie</h2>
+            <ul className={ul}>
+              <li>HubSpot: darmowy CRM z limitami, Sales Hub Starter od ok. 20 USD za stanowisko, Professional kilkaset USD miesięcznie.</li>
+              <li>Pipedrive: Essential ok. 14 USD, Advanced ok. 29 USD, Professional ok. 49 USD za użytkownika.</li>
+            </ul>
+            <p className={p}>
+              HubSpot jest tańszy na starcie i droższy przy rozwoju. Wyższe
+              plany oraz płatne pakiety kontaktów marketingowych potrafią
+              kosztować więcej niż roczna licencja Pipedrive dla zespołu.
+              Pipedrive liczy tylko użytkowników.
+            </p>
+
+            <h2 className={h2}>Funkcje i marketing</h2>
+            <p className={p}>
+              Pipedrive jest szybszy w codziennej pracy handlowca. HubSpot daje
+              głębszą personalizację i wyraźnie wygrywa w marketingu: landing
+              page, automatyzacja e-mail, scoring i atrybucja w jednym miejscu.
+              W Pipedrive marketing dokładasz integracją z Brevo,
+              ActiveCampaign albo Mailchimpem.
+            </p>
+
+            <h2 className={h2}>Dla kogo który</h2>
+            <ul className={ul}>
+              <li>
+                <strong className="text-gray-900 dark:text-white">HubSpot</strong>, gdy sprzedaż napędzają treści, SEO i webinary, a marketing automation ma być w CRM.
+              </li>
+              <li>
+                <strong className="text-gray-900 dark:text-white">Pipedrive</strong>, gdy liczy się outbound i pipeline, przewidywalny koszt i swoboda wyboru narzędzia do marketingu.
+              </li>
+            </ul>
+            <p className={p}>
+              W obu przypadkach o efekcie decyduje{" "}
+              <Link href="/automatyzacja-leadow-crm" className="text-accent hover:underline">
+                automatyzacja leadów i CRM
+              </Link>
+              . Dla Pipedrive najczęściej zaczynamy od{" "}
+              <Link href="/automatyzacja-formularza-do-pipedrive" className="text-accent hover:underline">
+                połączenia formularza z Pipedrive
+              </Link>
+              .
+            </p>
+
+            <h2 className={h2}>Pytania</h2>
+            <dl className="space-y-5">
+              {faqItems.map((f) => (
+                <div key={f.question}>
+                  <dt className="font-semibold text-gray-900 dark:text-white">
+                    {f.question}
+                  </dt>
+                  <dd className="mt-1 text-gray-600 dark:text-gray-400">
+                    {f.answer}
+                  </dd>
+                </div>
+              ))}
+            </dl>
           </div>
         </section>
 
-        {/* Treść w zakładkach, nic nie wycięte, podzielone wg rozdziałów */}
-        <div className="container-wide pb-8">
-          <Tabs
-            ariaLabel="Rozdziały artykułu"
-            tabs={[
-              {
-                label: "Podejścia i cennik",
-                content: (
-                  <div className="py-6 lg:py-8">
-                    <div className="max-w-3xl mx-auto">
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        Dwa różne podejścia
-                      </h2>
-                      <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                        HubSpot powstał wokół inbound marketingu. CRM był
-                        dodawany jako brakująca część układanki, najpierw
-                        treści i lejek, potem zarządzanie kontaktami. Dziś
-                        HubSpot to pakiet hubów: Marketing, Sales, Service,
-                        Content, Operations i Commerce. Wszystko opiera się na
-                        jednej bazie kontaktów.
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-                        Pipedrive odwrotnie, zaczął jako narzędzie dla
-                        handlowców i nadal nim pozostał. Pipeline, deale,
-                        zadania, e-mail, aktywności. Marketing i obsługa klienta
-                        to obszar dla integracji, a nie wbudowane moduły.
-                      </p>
-
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        Cennik 2026, pułapka „darmowego" HubSpota
-                      </h2>
-                      <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                        HubSpot ma darmowy CRM, i to mocna karta. Małej firmie
-                        często wystarcza on na start: kontakty, deale,
-                        podstawowy pipeline, zadania, integracja ze skrzynką.
-                        Problem zaczyna się przy rozwoju.
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed font-medium">
-                        HubSpot, orientacyjnie 2026:
-                      </p>
-                      <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-400">
-                        <li className="flex items-start gap-2">
-                          {checkIcon}
-                          Free CRM, 0 USD, ale z limitami i brandingiem.
-                        </li>
-                        <li className="flex items-start gap-2">
-                          {checkIcon}
-                          Sales Hub Starter, od ok. 20 USD / seat / mies.
-                        </li>
-                        <li className="flex items-start gap-2">
-                          {checkIcon}
-                          Professional Suite, kilkaset USD miesięcznie + per
-                          seat.
-                        </li>
-                        <li className="flex items-start gap-2">
-                          {checkIcon}
-                          Enterprise Suite, kilka tysięcy USD miesięcznie.
-                        </li>
-                      </ul>
-                      <p className="mt-6 text-gray-600 dark:text-gray-400 mb-4 leading-relaxed font-medium">
-                        Pipedrive, orientacyjnie 2026:
-                      </p>
-                      <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-400">
-                        <li className="flex items-start gap-2">
-                          {checkIcon}
-                          Essential, ok. 14 USD / user / mies.
-                        </li>
-                        <li className="flex items-start gap-2">
-                          {checkIcon}
-                          Advanced, ok. 29 USD / user / mies.
-                        </li>
-                        <li className="flex items-start gap-2">
-                          {checkIcon}
-                          Professional, ok. 49 USD / user / mies.
-                        </li>
-                      </ul>
-                      <p className="mt-6 text-gray-600 dark:text-gray-400 leading-relaxed">
-                        HubSpot wygrywa cenowo na samym starcie i przegrywa, gdy
-                        firma chce wykorzystać Marketing Hub czy Service Hub w
-                        poważnej skali. Pipedrive ma bardziej liniowy koszt,
-                        dokładasz stanowiska, bez skoków o kilka tysięcy USD.
-                      </p>
-                    </div>
-                  </div>
-                ),
-              },
-              {
-                label: "Funkcje i marketing",
-                content: (
-                  <div className="py-6 lg:py-8">
-                    <div className="max-w-3xl mx-auto">
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        Funkcje sprzedażowe
-                      </h2>
-                      <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                        Oba narzędzia obsługują kontakty, firmy, deale, etapy,
-                        zadania, integrację e-mail, prosty workflow i raporty
-                        pipeline. Różnice są w detalach.
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                        Pipedrive jest szybszy w codziennej pracy. Widok deali,
-                        drag-and-drop, jeden klik do follow-upu. Handlowcy
-                        zwykle mówią, że „nie przeszkadza im pracować". HubSpot
-                        oferuje głębszą personalizację (custom obiekty od Pro,
-                        custom properties bez limitu na wyższych planach), ale
-                        interfejs bywa cięższy.
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-                        Reguły dla samego pipeline opisaliśmy w artykule o tym,
-                        jak{" "}
-                        <Link
-                          href="/strefa-wiedzy/automatyzacja-crm-od-czego-zaczac"
-                          className="text-accent hover:underline"
-                        >
-                          uporządkować proces sprzedaży w CRM
-                        </Link>{" "}
-                       , działają niezależnie od narzędzia.
-                      </p>
-
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        Marketing, gdzie HubSpot wyraźnie wygrywa
-                      </h2>
-                      <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                        Jeśli sprzedajesz przez treści, SEO, webinary,
-                        formularze i nurturing, HubSpot ma realną przewagę.
-                        Marketing Hub to dojrzałe narzędzie do landing
-                        page&apos;y, automatyzacji e-mail, scoringu i atrybucji
-                        w jednym miejscu z CRM.
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                        Pipedrive świadomie nie próbuje być platformą
-                        marketingową. Marketing pokrywasz integracją z Brevo,
-                        ActiveCampaign, Mailchimpem albo dedykowanym MA. Dla
-                        wielu firm to nawet zaleta, zachowujesz wybór i unikasz
-                        kosztu pełnego pakietu.
-                      </p>
-                    </div>
-                  </div>
-                ),
-              },
-              {
-                label: "Lock-in i automatyzacja",
-                content: (
-                  <div className="py-6 lg:py-8">
-                    <div className="max-w-3xl mx-auto">
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        Lock-in i ścieżka skalowania
-                      </h2>
-                      <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                        HubSpot konstruuje cennik tak, by wciągać do wyższych
-                        planów. Najpierw darmowy CRM, później Starter, później
-                        skok do Professional, gdzie funkcje workflow, raportów i
-                        custom obiektów stają się sensowne. Po drodze często
-                        dochodzą contact tier&apos;y płatne osobno za rosnącą
-                        bazę.
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                        Pipedrive prowadzi prościej: zwiększasz plan tylko, gdy
-                        potrzebujesz konkretnej funkcji (workflow, raporty,
-                        administracja, projekty). Nie ma „skoków" o setki
-                        procent kosztu.
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-                        Praktyczny wniosek: HubSpot łatwiej zacząć, trudniej
-                        odejść. Pipedrive trudniej oczarować na pokazie, łatwiej
-                        z nim żyć.
-                      </p>
-
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        Automatyzacja i integracje
-                      </h2>
-                      <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                        HubSpot ma rozbudowane workflow, ale realnie sensowne
-                        dopiero od planu Professional. Marketplace integracji
-                        jest duży, API stabilne. Dla firm typowo marketingowych
-                        to często jedyny słuszny wybór.
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                        Pipedrive ma własne workflow już w niższych planach,
-                        marketplace oraz dobre API. Najczęściej jednak prawdziwą
-                        moc daje{" "}
-                        <Link
-                          href="/automatyzacja-formularza-do-pipedrive"
-                          className="text-accent hover:underline"
-                        >
-                          dedykowana automatyzacja Pipedrive
-                        </Link>{" "}
-                        osadzona w realnym procesie firmy oraz integracje przez
-                        iPaaS (n8n, Make, Zapier).
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                        O tym, kiedy w ogóle warto integrować, pisałem w
-                        materiale o{" "}
-                        <Link
-                          href="/strefa-wiedzy/automatyzacja-crm-od-czego-zaczac"
-                          className="text-accent hover:underline"
-                        >
-                          łączeniu CRM z innymi systemami
-                        </Link>
-                        .
-                      </p>
-                    </div>
-                  </div>
-                ),
-              },
-              {
-                label: "Dla kogo, scenariusze",
-                content: (
-                  <div className="py-6 lg:py-8">
-                    <div className="max-w-3xl mx-auto">
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        Dla kogo HubSpot, dla kogo Pipedrive
-                      </h2>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed font-medium">
-                        HubSpot zwykle wygrywa, gdy:
-                      </p>
-                      <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-400">
-                        <li className="flex items-start gap-2">
-                          {checkIcon}
-                          sprzedaż napędzana jest content marketingiem i SEO,
-                        </li>
-                        <li className="flex items-start gap-2">
-                          {checkIcon}
-                          potrzebujesz marketing automation w jednym miejscu z
-                          CRM,
-                        </li>
-                        <li className="flex items-start gap-2">
-                          {checkIcon}
-                          stać Cię na Professional Suite albo zaczynasz na Free
-                          i akceptujesz, że to początek dłuższej drogi.
-                        </li>
-                      </ul>
-                      <p className="mt-6 text-gray-600 dark:text-gray-400 mb-4 leading-relaxed font-medium">
-                        Pipedrive ma sens, gdy:
-                      </p>
-                      <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-400">
-                        <li className="flex items-start gap-2">
-                          {checkIcon}
-                          najważniejsza jest sprzedaż outboundowa i pipeline,
-                        </li>
-                        <li className="flex items-start gap-2">
-                          {checkIcon}
-                          chcesz przewidywalny koszt rosnący wraz z zespołem,
-                        </li>
-                        <li className="flex items-start gap-2">
-                          {checkIcon}
-                          preferujesz osobne narzędzie do marketingu i unikasz
-                          lock-inu jednego dostawcy.
-                        </li>
-                      </ul>
-                      <p className="mt-6 text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-                        Niezależnie od wyboru, dopiero{" "}
-                        <Link
-                          href="/automatyzacja-leadow-crm"
-                          className="text-accent hover:underline"
-                        >
-                          automatyzacja CRM
-                        </Link>{" "}
-                        i sensownie ułożona{" "}
-                        <Link
-                          href="/automatyzacja-leadow-crm"
-                          className="text-accent hover:underline"
-                        >
-                          automatyzacja leadów
-                        </Link>{" "}
-                        odróżniają system, który tylko trzyma kontakty, od
-                        narzędzia, które realnie napędza sprzedaż.
-                      </p>
-
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        Opłata za kontakty, detal, który boli
-                      </h2>
-                      <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                        HubSpot w planach wyższych niż Free wprowadza koncept
-                        marketing contacts. Płacisz za liczbę osób, do których
-                        komunikujesz się marketingowo, i ta liczba rośnie w
-                        miarę, jak sensownie rozwijasz bazę. Pakiety są skokowe
-                        (1 000, 2 000, 5 000 itd.), a różnica w kosztach między
-                        tierami bywa większa niż roczna licencja na Pipedrive
-                        dla zespołu.
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-                        Pipedrive nie ma takiego mechanizmu. Liczba kontaktów
-                        nie wpływa na cennik, płacisz tylko za użytkowników. W
-                        dłuższej perspektywie sprzedaż inbound w HubSpot bywa
-                        więc droższa nie tyle przez abonament, co przez rosnącą
-                        bazę, którą sami budujecie.
-                      </p>
-
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        Trzy realne scenariusze
-                      </h2>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed font-medium">
-                        Scenariusz A: software house, 6 osób, leady głównie z
-                        poleceń i LinkedIn.
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                        Brak potrzeby marketing automation w CRM. Pipedrive
-                        Advanced pokrywa proces w całości, koszty przewidywalne.
-                        HubSpot Free dałby radę, ale wyższe plany byłyby
-                        pieniądzem wyrzuconym w funkcje, których nikt nie używa.
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed font-medium">
-                        Scenariusz B: SaaS B2B oparty o content, SEO i webinary.
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                        HubSpot wygrywa wyraźnie. Marketing Hub, CMS, Workflow,
-                        lead scoring i atrybucja w jednym miejscu skracają czas
-                        pracy marketingu i utrzymują spójność danych. Pipedrive
-                        wymagałby 3–4 osobnych narzędzi i iPaaS-a do ich
-                        spięcia.
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed font-medium">
-                        Scenariusz C: dystrybutor B2B, 20 handlowców, prosty
-                        marketing, mocny outbound.
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                        Pipedrive Professional obsłuży ten proces taniej i
-                        sprawniej. HubSpot Sales Hub Pro wejdzie w grę tylko,
-                        gdy firma rozważa budowę marketingu content w
-                        perspektywie 12 miesięcy.
-                      </p>
-                    </div>
-                  </div>
-                ),
-              },
-              {
-                label: "Wdrożenie",
-                content: (
-                  <div className="py-6 lg:py-8">
-                    <div className="max-w-3xl mx-auto">
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        Jak wygląda wdrożenie tydzień po tygodniu
-                      </h2>
-                      <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                        W małej firmie B2B sensowne uruchomienie Pipedrive albo
-                        HubSpot trwa zwykle 3–6 tygodni. Rozkład pracy w obu
-                        przypadkach wygląda bardzo podobnie, różni się głębokość
-                        konfiguracji. Poniżej typowy timeline.
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed font-medium">
-                        Tydzień 1: proces i dane.
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                        Mapa obecnego procesu sprzedaży, lista pól
-                        obowiązkowych, definicja leada i deala, identyfikacja
-                        źródeł kontaktów (formularz, e-mail, polecenia). Bez
-                        tego konfiguracja CRM zamieni się w zgadywanie.
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed font-medium">
-                        Tydzień 2: konfiguracja podstawowa.
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                        Pipeline, etapy, pola custom, użytkownicy, uprawnienia,
-                        integracja ze skrzynką i kalendarzem. Na tym etapie
-                        HubSpot wymaga więcej decyzji (custom properties,
-                        associations), Pipedrive jest szybszy.
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed font-medium">
-                        Tydzień 3–4: automatyzacje i integracje.
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                        Lead z formularza, automatyczne przypisanie, follow-upy,
-                        pola obowiązkowe, integracja z fakturowaniem i
-                        komunikatorami. Tutaj zwykle największy zwrot daje
-                        przemyślana{" "}
-                        <Link
-                          href="/automatyzacja-leadow-crm"
-                          className="text-accent hover:underline"
-                        >
-                          automatyzacja CRM
-                        </Link>
-                        .
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed font-medium">
-                        Tydzień 5–6: raporty i korekty.
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-                        Dashboardy dla handlowców i zarządu, raporty pipeline i
-                        konwersji, zbiór feedbacku z zespołu, dopięcie
-                        brakujących pól i reguł. Po tym etapie firma ma
-                        działający CRM, a nie tylko kupione licencje.
-                      </p>
-                    </div>
-                  </div>
-                ),
-              },
-              {
-                label: "FAQ",
-                content: (
-                  <div className="py-6 lg:py-8">
-                    <div className="max-w-3xl mx-auto">
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        FAQ
-                      </h2>
-                      <div className="space-y-6">
-                        <div>
-                          <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                            Czy darmowy HubSpot wystarczy małej firmie?
-                          </h3>
-                          <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                            Na samym starcie często tak. Bariery zaczynają się
-                            przy workflow, raportach i marketing automation, to
-                            wymaga płatnych planów, których koszt rośnie szybko.
-                          </p>
-                        </div>
-                        <div>
-                          <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                            Co kosztuje więcej długoterminowo?
-                          </h3>
-                          <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                            W większości scenariuszy droższy jest HubSpot, gdy
-                            wykorzystujesz Marketing Hub i Sales Hub
-                            Professional. Pipedrive utrzymuje liniowy koszt
-                            rosnący z liczbą userów.
-                          </p>
-                        </div>
-                        <div>
-                          <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                            Czy łatwo zmigrować z HubSpota do Pipedrive (lub
-                            odwrotnie)?
-                          </h3>
-                          <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                            Same kontakty i deale tak, przez eksport CSV lub
-                            API. Trudniejsze są historia maili, scoring, custom
-                            obiekty, workflow i automatyzacje, często wymagają
-                            przebudowy od zera.
-                          </p>
-                        </div>
-                        <div>
-                          <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                            Czy Pipedrive ma marketing automation?
-                          </h3>
-                          <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                            Pipedrive ma proste e-mail kampanie i formularze,
-                            ale to nie jest pełne MA. Dla nurturingu, scoringu i
-                            zaawansowanej segmentacji warto użyć osobnego
-                            narzędzia i połączyć je z CRM.
-                          </p>
-                        </div>
-                        <div>
-                          <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                            Który CRM jest łatwiejszy dla zespołu sprzedaży?
-                          </h3>
-                          <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                            W codziennej pracy zwykle Pipedrive, interfejs jest
-                            bardziej skupiony na sprzedaży i mniej rozprasza.
-                            HubSpot ma więcej zakładek, z których część przyda
-                            się dopiero w przyszłości.
-                          </p>
-                        </div>
-                        <div>
-                          <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                            Czy oba mają AI?
-                          </h3>
-                          <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                            Tak. HubSpot Breeze i Pipedrive AI generują
-                            wiadomości, sugerują akcje i pomagają w analizach. W
-                            obu przypadkach AI to dodatek, a nie warunek
-                            konieczny do sensownej pracy.
-                          </p>
-                        </div>
-                        <div>
-                          <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                            Co wybrać, jeśli nie mamy jeszcze procesu sprzedaży?
-                          </h3>
-                          <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                            Najpierw uporządkuj proces, potem wybieraj narzędzie
-                           , szczegóły znajdziesz w artykule{" "}
-                            <Link
-                              href="/strefa-wiedzy/automatyzacja-crm-od-czego-zaczac"
-                              className="text-accent hover:underline"
-                            >
-                              automatyzacja CRM, od czego zacząć
-                            </Link>
-                            .
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ),
-              },
-            ]}
-          />
-        </div>
-
-        {/* Prev / Next */}
         <section className="py-12 lg:py-16">
           <div className="max-w-3xl mx-auto px-6 lg:px-8">
             <PrevNextArticle currentHref="/strefa-wiedzy/hubspot-vs-pipedrive" />
           </div>
         </section>
 
-        {/* CTA */}
         <section className="py-12 lg:py-16">
           <div className="max-w-3xl mx-auto px-6 lg:px-8">
             <div className="rounded-2xl bg-accent/10 p-8 lg:p-12 text-center">
               <p className="text-lg font-medium text-gray-900 dark:text-white">
-                Nie wiesz, czy HubSpot czy Pipedrive lepiej pasuje do Twojej
-                firmy?
+                Nie wiesz, który CRM pasuje do Twojej firmy?
               </p>
               <Link
                 href="/automatyzacja-leadow-crm"
                 className="btn-primary mt-6 inline-block"
               >
-                Zobacz usługę Automatyzacja CRM
+                Zobacz automatyzację CRM
               </Link>
             </div>
           </div>
@@ -585,7 +162,6 @@ export default function HubspotVsPipedriveArticle() {
       </main>
       <Footer />
 
-      {/* Article Schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -610,71 +186,17 @@ export default function HubspotVsPipedriveArticle() {
         }}
       />
 
-      {/* FAQ Schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "FAQPage",
-            mainEntity: [
-              {
-                "@type": "Question",
-                name: "Czy darmowy HubSpot wystarczy małej firmie?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Na samym starcie często tak. Bariery zaczynają się przy workflow, raportach i marketing automation, to wymaga płatnych planów, których koszt rośnie szybko.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "Co kosztuje więcej długoterminowo?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "W większości scenariuszy droższy jest HubSpot, gdy wykorzystujesz Marketing Hub i Sales Hub Professional. Pipedrive utrzymuje liniowy koszt rosnący z liczbą userów.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "Czy łatwo zmigrować z HubSpota do Pipedrive?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Same kontakty i deale tak, przez eksport CSV lub API. Trudniejsze są historia maili, scoring, custom obiekty i workflow, często wymagają przebudowy od zera.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "Czy Pipedrive ma marketing automation?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Pipedrive ma proste e-mail kampanie i formularze, ale to nie jest pełne MA. Dla nurturingu, scoringu i zaawansowanej segmentacji warto użyć osobnego narzędzia i połączyć je z CRM.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "Który CRM jest łatwiejszy dla zespołu sprzedaży?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "W codziennej pracy zwykle Pipedrive, interfejs jest bardziej skupiony na sprzedaży i mniej rozprasza. HubSpot ma więcej zakładek, z których część przyda się dopiero w przyszłości.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "Czy oba mają AI?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Tak. HubSpot Breeze i Pipedrive AI generują wiadomości, sugerują akcje i pomagają w analizach. AI jest dodatkiem, a nie warunkiem koniecznym.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "Co wybrać, jeśli nie mamy jeszcze procesu sprzedaży?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Najpierw uporządkuj proces, potem wybieraj narzędzie. Bez procesu każdy CRM stanie się tylko ładniejszą bazą kontaktów.",
-                },
-              },
-            ],
+            mainEntity: faqItems.map((f) => ({
+              "@type": "Question",
+              name: f.question,
+              acceptedAnswer: { "@type": "Answer", text: f.answer },
+            })),
           }),
         }}
       />

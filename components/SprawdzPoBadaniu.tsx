@@ -165,7 +165,7 @@ export default function SprawdzPoBadaniu({
       )}
 
       {stan === "blad" && (
-        <p className="mt-4 text-sm text-red-600 dark:text-red-400">{blad}</p>
+        <p className="mt-4 text-sm text-red-700 dark:text-red-400">{blad}</p>
       )}
 
       {stan === "gotowe" && wynik && m && (

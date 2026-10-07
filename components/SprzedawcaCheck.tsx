@@ -228,7 +228,7 @@ export default function SprzedawcaCheck() {
       )}
 
       {stan === "blad" && (
-        <p className="mt-3 text-sm text-red-600 dark:text-red-400">{blad}</p>
+        <p className="mt-3 text-sm text-red-700 dark:text-red-400">{blad}</p>
       )}
 
       {wynik && wynik.status !== "OK" && (
@@ -300,7 +300,7 @@ export default function SprzedawcaCheck() {
                         className={`font-semibold ${
                           p.statusVat === "Czynny"
                             ? "text-emerald-700 dark:text-emerald-400"
-                            : "text-red-600 dark:text-red-400"
+                            : "text-red-700 dark:text-red-400"
                         }`}
                       >
                         {p.statusVat || "brak danych"}
@@ -377,7 +377,7 @@ export default function SprzedawcaCheck() {
                   </button>
                 </div>
                 {leadStan === "blad" && (
-                  <p className="mt-2 text-sm text-red-600 dark:text-red-400">
+                  <p className="mt-2 text-sm text-red-700 dark:text-red-400">
                     {leadBlad}
                   </p>
                 )}

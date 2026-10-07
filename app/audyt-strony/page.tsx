@@ -33,27 +33,25 @@ export default function Page() {
       breadcrumb="Audyt strony"
       eyebrow="Darmowy audyt techniczny"
       h1="Zobacz, co jest nie tak z Twoją stroną, zanim zapłacisz komukolwiek"
-      lead="Wpisz adres i poczekaj kilkadziesiąt sekund. Zmierzymy szybkość na komputerze i osobno na telefonie, zważymy każdy plik, sprawdzimy certyfikat, widoczność w wyszukiwarce, dostęp dla asystentów AI oraz zabezpieczenia poczty. Dostaniesz raport z listą poprawek ułożoną w kolejności i z ceną za naprawę. Za darmo, bez rejestracji, bez podawania adresu e-mail."
+      lead="Wpisz adres i poczekaj kilkadziesiąt sekund. Zmierzymy szybkość na komputerze i telefonie, certyfikat, widoczność w wyszukiwarce, dostęp dla asystentów AI i zabezpieczenia poczty. Dostaniesz listę poprawek w kolejności, z ceną naprawy. Za darmo i bez rejestracji."
       ctaLabel="Porozmawiajmy o naprawie"
       ctaNote="Diagnoza nic nie kosztuje"
-      powiazane={[
-      ]}
       checks={[
         {
           title: "Osobny pomiar dla telefonu",
-          desc: "Pobieramy stronę drugi raz z nagłówkami telefonu i sprawdzamy, czy układ ma się czym przestawić, czy obrazy mają wersje na mniejszy ekran i ile to wszystko waży na łączu komórkowym.",
+          desc: "Sprawdzamy układ, obrazy i wagę strony na łączu komórkowym.",
         },
         {
           title: "Liczby, nie wrażenia",
-          desc: "Ważymy każdy plik z osobna zamiast wierzyć deklaracjom serwera i podajemy, ilu plików nie udało się zważyć. Przy każdym ustaleniu widzisz, co dokładnie zmierzyliśmy.",
+          desc: "Ważymy każdy plik z osobna. Przy każdym ustaleniu widzisz, co zmierzyliśmy.",
         },
         {
           title: "Kolejność zamiast listy uwag",
-          desc: "Darmowe skanery oddają setkę uwag bez znaczenia. Tu dostajesz kilka kroków w kolejności wykonania, z wyjaśnieniem, dlaczego akurat ten jest pierwszy.",
+          desc: "Kilka kroków w kolejności wykonania zamiast setki uwag bez znaczenia.",
         },
         {
-          title: "Cena naprawy od razu w raporcie",
-          desc: "Przy każdym problemie stoi koszt jego usunięcia, a na końcu cena za komplet. Widzisz też, które rzeczy zrobisz sam bez programisty, więc nie płacisz za to nikomu.",
+          title: "Cena naprawy w raporcie",
+          desc: "Przy każdym problemie koszt usunięcia. Widzisz też, co zrobisz sam.",
         },
       ]}
       pricing={[
@@ -65,27 +63,25 @@ export default function Page() {
             "pomiar na komputerze i na telefonie",
             "certyfikat, wyszukiwarka, asystenci AI, poczta",
             "kolejność poprawek z uzasadnieniem",
-            "wycena naprawy i lista potrzebnych dostępów",
+            "wycena naprawy",
           ],
           featured: true,
         },
         {
           name: "Naprawa warstwy krytycznej",
           price: "od 150 zł",
-          desc: "Tylko to, co blokuje. Reszta czeka.",
+          desc: "Tylko to, co blokuje.",
           features: [
-            "rzeczy oznaczone w raporcie jako krytyczne",
+            "poprawki oznaczone jako krytyczne",
             "ponowny pomiar po zmianach",
-            "krótkie podsumowanie, co się zmieniło",
           ],
         },
         {
           name: "Naprawa kompletu",
           price: "wg raportu",
-          desc: "Wszystkie ustalenia z audytu w jednym podejściu, taniej niż każde osobno.",
+          desc: "Wszystkie ustalenia naraz, taniej niż osobno.",
           features: [
             "wszystkie poprawki z raportu",
-            "rabat rosnący z liczbą pozycji",
             "ponowny audyt na dowód",
             "wycena wiążąca przez 30 dni",
           ],
@@ -94,32 +90,24 @@ export default function Page() {
       faq={[
         {
           q: "Czemu to jest za darmo?",
-          a: "Bo diagnoza zajmuje maszynie kilkadziesiąt sekund, a naprawa zajmuje nas. Wolimy, żeby ktoś przyszedł do nas z gotową listą i sam zdecydował, czy chce ją zlecić, niż żeby płacił nam za dowiedzenie się, co jest nie tak. Jeżeli okaże się, że strona jest w porządku, raport tak powie i nie będziemy szukać problemów na siłę.",
+          a: "Diagnoza zajmuje maszynie kilkadziesiąt sekund. Wolimy, żeby klient przyszedł z gotową listą i sam zdecydował, czy zleca naprawę.",
         },
         {
           q: "Czym to się różni od PageSpeed Insights?",
-          a: "PageSpeed uruchamia przeglądarkę i mierzy czas rysowania, czego ja nie robimy i wprost o tym piszemy w raporcie. Za to sprawdzamy rzeczy, których PageSpeed nie rusza: certyfikat i jego zgodność z domeną, duplikat wersji z www i bez www, dostęp dla robotów asystentów AI, zabezpieczenia poczty oraz to, czy strona nie prosi wyszukiwarki, żeby ją pominęła. Na końcu podajemy cenę naprawy, a nie samą ocenę.",
+          a: "Nie mierzymy czasu rysowania w przeglądarce. Sprawdzamy za to certyfikat, wersje z www i bez, dostęp dla asystentów AI i pocztę, a na końcu podajemy cenę naprawy.",
         },
         {
           q: "Czy musimy podać e-mail?",
-          a: "Nie. Raport pokazuje się na ekranie od razu i jest kompletny. Adres podajesz tylko wtedy, gdy chcesz dostać ten sam dokument na skrzynkę, żeby przesłać go dalej informatykowi albo agencji.",
+          a: "Nie. Raport pokazuje się od razu na ekranie. Adres podajesz tylko, gdy chcesz dostać go na skrzynkę.",
         },
         {
-          q: "Czy audyt obciąży nasz serwer?",
-          a: "Nie w stopniu, który dałoby się zauważyć. Pobieramy stronę główną dwa razy i najwyżej trzydzieści plików, które i tak pobiera każdy odwiedzający. Przedstawiamy się w nagłówku jako FluxlabAudyt, więc zobaczycie mnie w logach.",
-        },
-        {
-          q: "Czy potrzebujecie dostępów do czegokolwiek?",
-          a: "Do audytu nie, wystarczy publiczny adres. Dostępy są potrzebne dopiero przy naprawie i raport wypisuje dokładnie które. Nigdy nie potrzebujemy Waszych haseł, tylko konta nadanego mnie, które cofniecie jednym kliknięciem po zakończeniu pracy.",
-        },
-        {
-          q: "Skąd mamy wiedzieć, że wycena nie jest naciągana?",
-          a: "Bo przy każdym pojedynczym problemie stoi jego cena i widzicie, z czego składa się suma. Cena za komplet jest niższa niż suma pozycji, bo dostępy, wdrożenie i testy robi się raz. Część rzeczy raport oznacza jako możliwe do zrobienia samodzielnie i wtedy wprost mówi, żeby za nie nie płacić.",
+          q: "Czy potrzebujecie dostępów?",
+          a: "Do audytu nie, wystarczy publiczny adres. Przy naprawie raport wypisuje, które dostępy są potrzebne.",
         },
       ]}
       formId="audyt_strony_naprawa"
       formHeading="Raport pokazał coś, czego nie chcesz ruszać sam"
-      formIntro="Wklej adres strony i napisz, która pozycja z raportu Cię niepokoi. Odpiszemy, ile to zajmie i czy da się to zrobić taniej, niż wyszło w wycenie."
+      formIntro="Wklej adres strony i napisz, która pozycja z raportu Cię niepokoi. Odpiszemy, ile to zajmie."
       submitLabel="Napisz w sprawie naprawy"
       microCopy="Odpisujemy zwykle tego samego dnia. Ustalenia prowadzimy mailowo."
       serviceName="Darmowy audyt techniczny strony internetowej"

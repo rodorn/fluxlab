@@ -6,7 +6,6 @@ import LandingForm from "@/components/LandingForm";
 import TrackedCTA from "@/components/TrackedCTA";
 import NipCheck from "@/components/NipCheck";
 import NazwaNarzedzia from "@/components/NazwaNarzedzia";
-import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Sprawdź kontrahenta przed przelewem, od 9 zł | Fluxlab",
@@ -34,19 +33,19 @@ export const metadata: Metadata = {
 const checks = [
   {
     title: "Czy konto należy do tej firmy",
-    desc: "Najważniejszy test. Porównujemy numer, na który masz zapłacić, z rachunkami zgłoszonymi do wykazu VAT. Podmieniony numer konta w mailu to najczęstszy sposób przejęcia płatności.",
+    desc: "Porównujemy numer do przelewu z rachunkami zgłoszonymi do wykazu VAT. Podmieniony numer w mailu to najczęstszy sposób przejęcia płatności.",
   },
   {
     title: "Status VAT i dane rejestrowe",
-    desc: "Czy podmiot w ogóle istnieje w wykazie Ministerstwa Finansów, czy jest czynnym podatnikiem i od kiedy działa.",
+    desc: "Czy firma jest w wykazie VAT, czy jest czynnym podatnikiem i od kiedy działa.",
   },
   {
     title: "KRS bez upiększeń",
-    desc: "Wykreślenie, likwidacja, upadłość, restrukturyzacja oraz ujawnione zaległości i wierzyciele. To dane z odpisu, nie z wizytówki firmy.",
+    desc: "Likwidacja, upadłość, wykreślenie i ujawnione zaległości, prosto z odpisu.",
   },
   {
     title: "Wiek domeny",
-    desc: "Domena założona dwa tygodnie temu przy prośbie o dużą przedpłatę to klasyczny element sklepu widma.",
+    desc: "Świeża domena i prośba o dużą przedpłatę to typowy sklep widmo.",
   },
 ];
 
@@ -56,8 +55,7 @@ const pricing = [
     price: "9 zł",
     desc: "Jedno pytanie: czy coś tu nie gra, zanim wyślesz przelew.",
     features: [
-      "status VAT i istnienie podmiotu",
-      "weryfikacja numeru konta w wykazie",
+      "status VAT i numer konta w wykazie",
       "werdykt zielony, żółty albo czerwony",
       "odpowiedź w 24h na maila",
     ],
@@ -69,8 +67,7 @@ const pricing = [
     desc: "Komplet do decyzji o umowie albo większej zaliczce.",
     features: [
       "wszystko ze szybkiego checku",
-      "odpis KRS: likwidacja, zaległości, wykreślenie",
-      "wiek domeny i dane rejestrowe",
+      "odpis KRS i wiek domeny",
       "raport PDF z uzasadnieniem każdej flagi",
     ],
     featured: true,
@@ -79,22 +76,18 @@ const pricing = [
 
 const faq = [
   {
-    q: "Czym to się różni od darmowego sprawdzenia na Białej Liście?",
-    a: "Biała Lista odpowiada na jedno pytanie i nic nie mówi o reszcie. Ja składamy wykaz VAT, odpis KRS i dane domeny w jeden werdykt, a przy każdej fladze piszemy, co ona realnie oznacza dla Twoich pieniędzy. Sam sprawdzisz to w kilku miejscach, tu masz odpowiedź w jednym.",
+    q: "Czym to się różni od Białej Listy?",
+    a: "Biała Lista odpowiada na jedno pytanie. My składamy wykaz VAT, odpis KRS i dane domeny w jeden werdykt z wyjaśnieniem każdej flagi.",
   },
   {
     q: "Dlaczego numer konta jest taki ważny?",
-    a: "Płatność powyżej 15 tysięcy złotych na rachunek spoza wykazu oznacza brak kosztu uzyskania przychodu i odpowiedzialność solidarną za VAT sprzedawcy. Niezależnie od podatków, podmieniony numer w mailu to najczęstszy sposób, w jaki znikają przelewy.",
+    a: "Przelew powyżej 15 tysięcy złotych na rachunek spoza wykazu oznacza brak kosztu uzyskania przychodu i odpowiedzialność solidarną za VAT. To też najczęstszy sposób, w jaki znikają przelewy.",
   },
   {
-    q: "Czy zielony werdykt gwarantuje, że firma jest uczciwa?",
-    a: "Nie i tak to opisujemy w raporcie. Brak sygnałów ostrzegawczych znaczy tyle, że w danych publicznych nie ma nic niepokojącego. To analiza ryzyka, nie gwarancja wypłacalności ani porada prawna.",
+    q: "Czy zielony werdykt gwarantuje uczciwość firmy?",
+    a: "Nie. Znaczy tylko, że w danych publicznych nie ma nic niepokojącego. To analiza ryzyka, nie porada prawna.",
   },
-  {
-    q: "Jak szybko dostaniemy raport?",
-    a: "Zwykle tego samego dnia, najpóźniej w ciągu 24 godzin. Jeśli sprawa jest pilna, bo masz zapłacić dziś, napisz to w zgłoszeniu.",
-  },
-];
+]
 
 export default function SprawdzKontrahentaPage() {
   return (
@@ -112,10 +105,8 @@ export default function SprawdzKontrahentaPage() {
               Sprawdź firmę, zanim wyślesz przelew
             </h1>
             <p className="mt-5 text-lg text-gray-600 dark:text-gray-300">
-              Podajesz NIP, a jeśli masz, też numer konta i adres strony.
-              Dostajesz jeden werdykt złożony z wykazu VAT, odpisu KRS i danych
-              rejestrowych domeny, z wyjaśnieniem, co każdy sygnał oznacza dla
-              Twoich pieniędzy.
+              Podajesz NIP, numer konta i adres strony. Dostajesz jeden werdykt
+              z wykazu VAT, odpisu KRS i danych domeny.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <TrackedCTA
@@ -151,19 +142,6 @@ export default function SprawdzKontrahentaPage() {
               </div>
             ))}
           </div>
-
-          <p className="mt-8 max-w-3xl text-sm text-gray-600 dark:text-gray-400">
-            Przed podpisaniem umowy najmu lokalu sprawdźcie tutaj wynajmującego,
-            a rynek wokół lokalu, czyli ilu konkurentów jest w okolicy i ilu
-            mieszkańców przypada na jeden punkt, pokaże{" "}
-            <Link
-              href="/narzedzia"
-              className="font-medium text-accent underline underline-offset-2"
-            >
-              analiza lokalizacji
-            </Link>
-            .
-          </p>
 
           <div className="mt-16">
             <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -255,9 +233,9 @@ export default function SprawdzKontrahentaPage() {
             <LandingForm
               formId="order_sprawdz_kontrahenta"
               heading="Zamów sprawdzenie kontrahenta"
-              intro="W polu opisu podaj NIP firmy, a jeśli masz, także numer konta do przelewu i adres jej strony. Napisz, czy chcesz szybki check (9 zł) czy pełny raport (29 zł). Odsyłamy PDF na maila."
+              intro="Podaj NIP firmy, numer konta i adres strony. Napisz, czy chcesz szybki check (9 zł) czy pełny raport (29 zł)."
               submitLabel="Wyślij firmę do sprawdzenia"
-              microCopy="Odpowiedź zwykle tego samego dnia. Płatność ustalamy mailowo. Raport to analiza danych publicznych, nie porada prawna."
+              microCopy="Odpowiedź zwykle tego samego dnia. Płatność ustalamy mailowo."
             />
           </div>
         </section>

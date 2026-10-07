@@ -46,75 +46,30 @@ const GH = "https://github.com/rodorn";
 
 const GROUPS: Group[] = [
   {
-    title: "Produkty i narzędzia",
-    blurb:
-      "Gotowe narzędzia, które rozwiązują konkretny, policzalny problem, z działającym kodem i przykładowym raportem.",
-    items: [
-      {
-        name: "Sprawdź auto przed zakupem",
-        desc: "Raport due-diligence dla kupującego: benchmark ceny wobec podobnych ofert, checklista typowych usterek modelu, wykrywanie red-flag (niespójny przebieg, cofnięty licznik) i gotowy skrypt negocjacji.",
-        stack: ["Python", "Otomoto", "PDF"],
-        repo: `${GH}/fluxlab-auto-due-diligence`,
-      },
-      {
-        name: "ImportRadar DE/NL → PL",
-        desc: "Radar okazji importowych: skanuje żywe oferty z DE/NL i pokazuje, które konkretne auta realnie zarabiają po odjęciu wszystkich kosztów sprowadzenia, plus modele z kosztownymi usterkami do unikania.",
-        stack: ["Python", "Kalkulator", "PDF"],
-        repo: `${GH}/fluxlab-import-radar`,
-      },
-      {
-        name: "Radar przetargów IT (Baza Konkurencyjności)",
-        desc: "Monitoring unijnie finansowanych zapytań ofertowych IT z filtrem po zakresie i wymogu referencji oraz codziennym digestem, bez przeoczonych terminów.",
-        stack: ["Python", "Scraping", "SQLite"],
-        repo: `${GH}/fluxlab-przetargi-radar`,
-      },
-      {
-        name: "Audyt zmarnowanego budżetu Google Ads",
-        desc: "Analiza raportu wyszukiwanych haseł: ile budżetu idzie na frazy bez konwersji, gotowa lista wykluczeń i nocny skrypt-strażnik utrzymujący konto.",
-        stack: ["Python", "Google Ads", "PDF"],
-        repo: `${GH}/fluxlab-ads-wasted-spend`,
-      },
-      {
-        name: "Kalkulatory lead-gen (osadzalne)",
-        desc: "Gotowe kalkulatory do osadzenia na stronie klienta (oszczędności PV i pompa/EV oraz forma opodatkowania JDG), które liczą wynik i zbierają leada. Branding klienta przez jeden plik.",
-        stack: ["JavaScript", "Lead-gen", "iframe"],
-        repo: `${GH}/fluxlab-kalkulatory`,
-        live: "https://rodorn.github.io/fluxlab-kalkulatory/",
-      },
-      {
-        name: "Radar naborów dotacyjnych",
-        desc: "Monitoring nowych naborów UE i krajowych z filtrem po specjalizacji (region, typ beneficjenta, tematyka) i codziennym digestem z terminami, dla firm doradztwa dotacyjnego.",
-        stack: ["Python", "Scraping", "SQLite"],
-        repo: `${GH}/fluxlab-radar-dotacji`,
-      },
-    ],
-  },
-  {
     title: "Integracje i API",
-    blurb:
-      "Łączenie systemów sprzedażowych i magazynowych: BaseLinker, Shopify, GoHighLevel, KSeF.",
+    blurb: "Łączymy systemy sprzedażowe i magazynowe.",
     items: [
       {
         name: "BaseLinker, klient API i eksport zamówień",
-        desc: "Podwykonawstwo integracji BaseLinker w Pythonie: pobieranie i eksport zamówień, mapowanie danych, testy i CI.",
+        desc: "Pobieranie i eksport zamówień z mapowaniem danych, testami i CI.",
         stack: ["Python", "BaseLinker API", "CI"],
         repo: `${GH}/fluxlab-baselinker-integracje`,
       },
       {
-        name: "Synchronizacja BaseLinker ↔ Shopify (multi-magazyn)",
-        desc: "Synchronizacja stanów z wielu magazynów do wielu Shopify Locations, z obsługą konfliktów i logowaniem.",
+        name: "Synchronizacja BaseLinker ↔ Shopify",
+        desc: "Stany z wielu magazynów w wielu lokalizacjach Shopify, z obsługą konfliktów.",
         stack: ["Python", "Shopify", "BaseLinker"],
         repo: `${GH}/fluxlab-baselinker-shopify-sync`,
       },
       {
-        name: "GoHighLevel, webhook leadów i integracje",
-        desc: "Odbiór leadów z GoHighLevel przez webhook i przekazywanie do zewnętrznych systemów oraz arkuszy.",
+        name: "GoHighLevel, webhook leadów",
+        desc: "Leady z GoHighLevel trafiają do zewnętrznych systemów i arkuszy.",
         stack: ["Python", "Webhooki", "REST"],
         repo: `${GH}/fluxlab-ghl-integration`,
       },
       {
         name: "Integracja KSeF 2.0",
-        desc: "Obsługa Krajowego Systemu e-Faktur (API v2, format FA(3)), wysyłka i pobieranie faktur.",
+        desc: "Wysyłka i pobieranie e-faktur przez API v2 w formacie FA(3).",
         stack: ["Python", "KSeF API v2", "FA(3)"],
         repo: `${GH}/fluxlab-ksef-integracja`,
       },
@@ -122,118 +77,77 @@ const GROUPS: Group[] = [
   },
   {
     title: "Automatyzacja i dane",
-    blurb:
-      "Scraping, scoring i przepływy, które zamieniają rozproszone dane w gotowe do działania sygnały.",
+    blurb: "Rozproszone dane zamieniamy w gotowe sygnały.",
     items: [
       {
-        name: "Deal-alerts, silnik płatnego feedu",
-        desc: "Scraper + scoring okazji + model subskrypcji: wykrywanie i dystrybucja alertów o okazjach.",
-        stack: ["Python", "Scraping", "Scoring"],
-        repo: `${GH}/fluxlab-deal-alerts-bot`,
-      },
-      {
-        name: "Monitor licytacji komorniczych",
-        desc: "Monitoring licytacji ruchomości z automatycznym scoringiem opłacalności okazji.",
-        stack: ["Python", "Scraping", "Dane"],
-        repo: `${GH}/fluxlab-licytacje-monitor`,
-      },
-      {
-        name: "Listings API (FastAPI)",
-        desc: "Znormalizowane dane ogłoszeń jako API, gotowe do publikacji na RapidAPI Hub.",
-        stack: ["Python", "FastAPI", "REST"],
-        repo: `${GH}/fluxlab-listings-api`,
+        name: "Radar przetargów IT",
+        desc: "Codzienny przegląd zapytań ofertowych z Bazy Konkurencyjności z filtrem po zakresie.",
+        stack: ["Python", "Scraping", "SQLite"],
+        repo: `${GH}/fluxlab-przetargi-radar`,
       },
       {
         name: "Workflow n8n, pozyskiwanie i ocena leadów",
-        desc: "Gotowy przepływ n8n łączący scraping, ocenę leadów i powiadomienia.",
+        desc: "Przepływ łączący scraping, ocenę leadów i powiadomienia.",
         stack: ["n8n", "Python", "API"],
         repo: `${GH}/fluxlab-n8n-lead-workflow`,
+      },
+      {
+        name: "Listings API (FastAPI)",
+        desc: "Znormalizowane dane ogłoszeń udostępnione jako API.",
+        stack: ["Python", "FastAPI", "REST"],
+        repo: `${GH}/fluxlab-listings-api`,
       },
     ],
   },
   {
     title: "Audyty",
-    blurb:
-      "Automatyczne audyty, które wskazują konkretne problemy i sposób ich naprawy.",
+    blurb: "Automaty, które wskazują problem i sposób naprawy.",
     items: [
       {
         name: "Audyt dostępności WCAG 2.2",
-        desc: "Skan dostępności (axe) z raportem HTML/PDF i oceną ryzyka względem wymogów EAA.",
+        desc: "Skan axe z raportem PDF i oceną ryzyka względem wymogów EAA.",
         stack: ["Python", "axe", "PDF"],
         repo: `${GH}/fluxlab-wcag-audyt`,
       },
       {
-        name: "Audyt feedów Merchant / Meta Catalog",
-        desc: "Parser i audyt feedów produktowych Google Merchant i Meta Catalog z wykrywaniem odrzuceń i auto-poprawkami.",
+        name: "Audyt feedów Merchant i Meta",
+        desc: "Wykrywa odrzucenia w feedach produktowych i proponuje poprawki.",
         stack: ["Python", "XML/CSV", "e-commerce"],
         repo: `${GH}/fluxlab-merchant-feed-audit`,
       },
       {
-        name: "Audyt martwych ofert (404 na 301)",
-        desc: "Crawler wykrywa karty ofert zwracające 404 zamiast 301, linki prowadzące donikąd i błędy sitemap, generuje gotową mapę przekierowań (nginx/.htaccess) i dowód PDF.",
-        stack: ["Python", "SEO", "Redirects"],
-        repo: `${GH}/fluxlab-dead-listings`,
-      },
-      {
-        name: "Skaner Consent Mode v2 (zgody cookie)",
-        desc: "Wchodzi na stronę bez klikania bannera i wykrywa, czy tagi GA4, Google Ads i Meta Pixel uruchamiają się przed zgodą, ocenia konfigurację Consent Mode i daje dowód PDF.",
+        name: "Skaner Consent Mode v2",
+        desc: "Sprawdza, czy GA4, Google Ads i Meta Pixel startują przed zgodą na cookies.",
         stack: ["Python", "Playwright", "GTM"],
         repo: `${GH}/fluxlab-consent-audit`,
       },
       {
-        name: "Audyt Wizytówki Google (local pack)",
-        desc: "Porównuje firmę z konkurentami w mapce Google (opinie, zdjęcia, Posty, odpowiedzi na opinie), wskazuje luki i konkretne poprawki, raport PDF.",
-        stack: ["Python", "Local SEO", "PDF"],
-        repo: `${GH}/fluxlab-wizytowka-audyt`,
-      },
-      {
-        name: "Audyt GEO/AEO (widoczność w AI)",
-        desc: "Sprawdza, czy ChatGPT, Perplexity i Google AI Overviews polecają markę na zapytania zakupowe, kogo polecają zamiast niej, i z jakich źródeł, z dowodem w PDF.",
+        name: "Audyt widoczności w AI",
+        desc: "Sprawdza, czy ChatGPT i Perplexity polecają markę i kogo polecają zamiast niej.",
         stack: ["Python", "GEO/AEO", "PDF"],
         repo: `${GH}/fluxlab-geo-audyt`,
       },
     ],
   },
   {
-    title: "Wideo AI i prototypy",
-    blurb:
-      "Generowanie treści wideo z lektorem AI oraz interaktywne prototypy produktowe.",
+    title: "AI w praktyce",
+    blurb: "Modele językowe i głos AI w konkretnych zadaniach.",
     items: [
       {
-        name: "Faceless AI video, pełny potok",
-        desc: "Scenariusz → lektor AI (ElevenLabs, polski głos) → napisy → montaż FFmpeg → gotowy pionowy klip 9:16, z opcją tła wideo.",
-        stack: ["Python", "ElevenLabs", "FFmpeg"],
-        repo: `${GH}/fluxlab-faceless-ai-video`,
-      },
-      {
-        name: "PMGMOTO+, prototyp aplikacji mobilnej",
-        desc: "Dopracowany prototyp PWA (cyfrowy garaż / prywatne biuro motoryzacyjne), 5 ekranów, do obejrzenia na żywo.",
-        stack: ["PWA", "UI/UX", "Prototyp"],
-        repo: `${GH}/fluxlab-pmgmoto-plus`,
-        live: "https://rodorn.github.io/fluxlab-pmgmoto-plus/",
-      },
-      {
-        name: "Lektor / dubbing PL do filmów klienta",
-        desc: "Przyjmuje gotowy film klienta, tworzy transkrypcję, tłumaczy na polski i podkłada profesjonalny głos AI z duckingiem pod oryginał, oddaje gotowy plik MP4.",
-        stack: ["Python", "ElevenLabs", "FFmpeg"],
-        repo: `${GH}/fluxlab-dubbing-pl`,
-      },
-      {
-        name: "Fabryka wideo-reklam produktowych",
-        desc: "Z karty produktu robi krótkie wideo-reklamy 9:16 w trzech wariantach A/B (hook, lektor, napisy, CTA) plus wyszukiwarka sklepów wydających budżet wyłącznie na statyczne kreacje (Meta Ad Library).",
-        stack: ["Python", "FFmpeg", "Ads"],
-        repo: `${GH}/fluxlab-video-reklamy`,
-      },
-      {
-        name: "Auto-recepcja AI dla komisu",
-        desc: "Bot odpowiada natychmiast na zapytania kupujących z twardymi danymi oferty i wykrytą intencją (rezerwacja, oględziny, zamiana, finansowanie), z live demo na autach komisu.",
+        name: "Auto-recepcja AI",
+        desc: "Bot od razu odpowiada na zapytania danymi z oferty i rozpoznaje intencję klienta.",
         stack: ["Python", "FastAPI", "LLM"],
         repo: `${GH}/fluxlab-auto-recepcja`,
+      },
+      {
+        name: "Lektor PL do filmów",
+        desc: "Transkrypcja, tłumaczenie i polski głos AI podłożony pod gotowy film.",
+        stack: ["Python", "ElevenLabs", "FFmpeg"],
+        repo: `${GH}/fluxlab-dubbing-pl`,
       },
     ],
   },
 ];
-
 export default function RealizacjePage() {
   return (
     <>
@@ -250,10 +164,8 @@ export default function RealizacjePage() {
               Zamiast obietnic, otwarty kod i działające narzędzia
             </h1>
             <p className="mt-5 text-lg text-gray-600 dark:text-gray-300">
-              Poniżej publiczne repozytoria i prototypy Fluxlab. Każdy projekt
-              możesz otworzyć na GitHubie i ocenić jakość kodu, zanim cokolwiek
-              zlecisz. To są rzeczy zbudowane przez nas, nie opisy cudzych
-              wdrożeń ani referencje, których nie mamy.
+              Publiczne repozytoria zbudowane przez nas. Otwórz kod na GitHubie
+              i oceń jakość, zanim cokolwiek zlecisz.
             </p>
           </div>
 
@@ -335,8 +247,8 @@ export default function RealizacjePage() {
               Masz proces, który da się zautomatyzować?
             </h2>
             <p className="mt-3 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              Zaczniemy od bezpłatnej diagnozy i darmowego dowodu na wąskim
-              wycinku, żebyś zobaczył efekt, zanim cokolwiek zlecisz.
+              Zaczynamy od bezpłatnej diagnozy, żebyś zobaczył efekt, zanim
+              cokolwiek zlecisz.
             </p>
             <div className="mt-6">
               <TrackedCTA

@@ -158,7 +158,7 @@ const MOTYW_WAGI: Record<
   krytyczne: {
     kropka: "bg-red-500",
     ramka: "border-l-red-500",
-    tekst: "text-red-600 dark:text-red-400",
+    tekst: "text-red-700 dark:text-red-400",
     nazwa: "Krytyczne",
   },
   wazne: {
@@ -193,7 +193,7 @@ function slownie(p: number): string {
 function kolorOceny(p: number): string {
   if (p >= 75) return "text-emerald-700 dark:text-emerald-400";
   if (p >= 45) return "text-amber-700 dark:text-amber-400";
-  return "text-red-600 dark:text-red-400";
+  return "text-red-700 dark:text-red-400";
 }
 
 /** Pierścień z oceną. Liczba sama w sobie nic nie znaczy, więc obok jest skala. */
@@ -502,7 +502,7 @@ export default function AudytCheck() {
       )}
 
       {stan === "blad" && (
-        <p className="mt-3 text-sm text-red-600 dark:text-red-400">{blad}</p>
+        <p className="mt-3 text-sm text-red-700 dark:text-red-400">{blad}</p>
       )}
 
       {wynik && p && (
@@ -552,7 +552,7 @@ export default function AudytCheck() {
                   ) : null,
                 )}
                 {!wynik.ustalenia.length && (
-                  <span className="rounded-full border border-emerald-500/50 px-3 py-1 text-xs font-semibold text-emerald-700 dark:text-emerald-400">
+                  <span className="rounded-full border border-emerald-500/60 px-3 py-1 text-xs font-semibold text-emerald-700 dark:text-emerald-400">
                     Nie znaleźliśmy nic do poprawy
                   </span>
                 )}
@@ -694,7 +694,7 @@ export default function AudytCheck() {
           )}
 
           {wynik.opis && wynik.opis.mocneStrony.length > 0 && (
-            <div className="rounded-xl border border-emerald-500/40 bg-emerald-50/60 p-5 dark:bg-emerald-950/20">
+            <div className="rounded-xl border border-emerald-500/60 bg-emerald-50 p-5 dark:bg-emerald-950/30">
               <p className="text-sm font-bold text-emerald-700 dark:text-emerald-400">
                 Co jest zrobione dobrze
               </p>
@@ -704,7 +704,7 @@ export default function AudytCheck() {
                     key={x}
                     className="flex gap-2 text-sm text-gray-700 dark:text-gray-300"
                   >
-                    <span aria-hidden="true" className="text-emerald-700">
+                    <span aria-hidden="true" className="text-emerald-700 dark:text-emerald-400">
                       ✓
                     </span>
                     {x}
@@ -1073,7 +1073,7 @@ export default function AudytCheck() {
                     </span>
                   </label>
                   {mailStan === "blad" && (
-                    <p className="text-sm text-red-600 dark:text-red-400">
+                    <p className="text-sm text-red-700 dark:text-red-400">
                       {mailBlad}
                     </p>
                   )}

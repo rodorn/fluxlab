@@ -33,38 +33,35 @@ export default function Page() {
       breadcrumb="Audyt kurierski"
       eyebrow="Koszty wysyłki"
       h1="Prawie połowa ceny bazowej to dopłata, której nikt nie sprawdza"
-      lead="Dopłata paliwowa dochodzi do czterdziestu pięciu procent ceny bazowej, jej stawka zmienia się co dwa tygodnie i zależy od progu wagowego przesyłki. Nikt w małym sklepie nie porównuje każdej linii faktury ze stawką z właściwego okresu, bo przy kilkuset paczkach to kilka godzin pracy miesięcznie."
+      lead="Dopłata paliwowa dochodzi do 45% ceny bazowej i zmienia się co dwa tygodnie. Przy kilkuset paczkach nikt nie sprawdza każdej linii faktury, więc robimy to za Ciebie."
       ctaLabel="Zamów audyt faktur"
       ctaNote="Pierwsza faktura sprawdzona za darmo"
-      powiazane={[
-      ]}
       checks={[
         {
           title: "Stawka z właściwego okresu",
-          desc: "Stawka obowiązuje przez dwa tygodnie, więc przesyłka z końca miesiąca rozlicza się inaczej niż ta z początku. Sprawdzamy każdą linię wobec stawki z daty tej konkretnej przesyłki.",
+          desc: "Stawka zmienia się co dwa tygodnie. Każdą linię sprawdzamy wobec stawki z daty przesyłki.",
         },
         {
           title: "Właściwy próg wagowy",
-          desc: "Trzy progi, trzy różne stawki. Naliczenie stawki z wyższego progu jest niewidoczne na jednej fakturze i kosztowne w skali roku.",
+          desc: "Stawka z wyższego progu jest niewidoczna na jednej fakturze, a kosztowna w skali roku.",
         },
         {
           title: "Korekty wagowe do konfrontacji",
-          desc: "Przewoźnik mierzy paczkę u siebie i dolicza różnicę. Ty masz własne wymiary w systemie magazynowym, więc da się sprawdzić, które korekty są zasadne, a które nie.",
+          desc: "Porównujemy doliczenia przewoźnika z wymiarami z Twojego systemu magazynowego.",
         },
         {
           title: "Usługi podwójne i niezrealizowane",
-          desc: "Druga próba doręczenia, pobranie, zwrot. Te pozycje potrafią pojawić się dwa razy albo dotyczyć usługi, która się nie odbyła.",
+          desc: "Druga próba doręczenia, pobranie, zwrot: naliczone dwa razy albo za usługę, której nie było.",
         },
       ]}
       pricing={[
         {
           name: "Pierwsza faktura",
           price: "0 zł",
-          desc: "Dowolny miesiąc, sprawdzony w 48 godzin.",
+          desc: "Dowolny miesiąc, wynik w 48 godzin.",
           features: [
             "lista spornych pozycji z kwotami",
-            "wyliczenie różnicy",
-            "jeśli nic nie znajdziemy, nic nie płacisz",
+            "nic nie znajdziemy, nic nie płacisz",
           ],
         },
         {
@@ -73,8 +70,7 @@ export default function Page() {
           desc: "Dwanaście miesięcy faktur, wszystkie linie.",
           features: [
             "każda pozycja wobec stawki z jej okresu",
-            "korekty wagowe do konfrontacji",
-            "zestawienie w arkuszu i podsumowanie",
+            "zestawienie w arkuszu",
             "gotowa treść reklamacji",
           ],
           featured: true,
@@ -82,10 +78,9 @@ export default function Page() {
         {
           name: "Prowizja od odzysku",
           price: "25 procent",
-          desc: "Dla tych, którzy wolą nie płacić z góry.",
+          desc: "Bez opłaty z góry.",
           features: [
-            "płacisz tylko od kwoty, którą odzyskasz",
-            "brak opłaty, gdy nie ma czego odzyskać",
+            "płacisz tylko od odzyskanej kwoty",
             "rozliczenie po decyzji przewoźnika",
           ],
         },
@@ -93,28 +88,24 @@ export default function Page() {
       faq={[
         {
           q: "Czego potrzebujecie, żeby sprawdzić nasze faktury?",
-          a: "Pliku faktury w formacie, w którym pobierasz ją od przewoźnika, najlepiej arkusza albo pliku CSV. Przydaje się też eksport przesyłek z Twojego systemu, bo pozwala skonfrontować wagi i wymiary.",
+          a: "Faktury od przewoźnika, najlepiej w arkuszu albo CSV. Przyda się też eksport przesyłek z Twojego systemu, żeby porównać wagi.",
         },
         {
           q: "Czy składacie reklamacje za nas?",
-          a: "Nie, bo stroną umowy z przewoźnikiem jesteś Ty. Dostajesz od nas wyliczenie i gotową treść, którą wysyłasz ze swojego konta. To też chroni Cię przed sytuacją, w której ktoś obcy występuje w Twoim imieniu.",
-        },
-        {
-          q: "A jeśli nasz przewoźnik ma inny cennik niż ten na stronie?",
-          a: "Prawie na pewno ma, bo stawki bazowe są indywidualne. Dlatego liczymy wobec Twojej umowy, a nie wobec cennika publicznego. Publiczne są tylko stawki dopłaty paliwowej i te są wspólne dla wszystkich klientów danego przewoźnika.",
+          a: "Nie, stroną umowy jesteś Ty. Dostajesz wyliczenie i gotową treść do wysłania ze swojego konta.",
         },
         {
           q: "Ile zwykle udaje się znaleźć?",
-          a: "Nie podamy Ci procentu, bo nie mamy jeszcze własnych statystyk i nie zamierzamy powoływać się na cudze. Dlatego pierwsza faktura jest sprawdzana za darmo: albo znajdziemy coś konkretnego, albo nie i wtedy nic nie płacisz.",
+          a: "Nie mamy jeszcze własnych statystyk i nie podajemy cudzych. Dlatego pierwszą fakturę sprawdzamy za darmo.",
         },
       ]}
       formId="order_audyt_kurierski"
       formHeading="Prześlij fakturę do sprawdzenia"
-      formIntro="Napisz, z którym przewoźnikiem współpracujesz i ile mniej więcej paczek nadajesz miesięcznie. Pierwszą fakturę sprawdzamy za darmo, plik podeślesz mailem po naszej odpowiedzi."
+      formIntro="Napisz, z którym przewoźnikiem pracujesz i ile paczek nadajesz miesięcznie. Plik podeślesz mailem po naszej odpowiedzi."
       submitLabel="Zamów sprawdzenie"
-      microCopy="Dane z faktur przetwarzamy wyłącznie na potrzeby audytu i kasujemy po przekazaniu wyniku."
+      microCopy="Dane z faktur kasujemy po przekazaniu wyniku."
       serviceName="Audyt faktur kurierskich"
-      serviceDesc="Weryfikacja faktur przewoźnika linia po linii: dopłata paliwowa wobec stawki z właściwego okresu i progu wagowego, korekty wagowe, usługi naliczone podwójnie, wraz z gotową treścią reklamacji. Od 290 zł."
+      serviceDesc="Weryfikacja faktur przewoźnika linia po linii: dopłata paliwowa, korekty wagowe, usługi naliczone podwójnie, z gotową treścią reklamacji. Od 290 zł."
       serviceType="Audyt kosztów przesyłek kurierskich"
     />
   );

@@ -33,30 +33,30 @@ export const metadata: Metadata = {
 };
 
 const useCases = [
-  "Raportowanie sprzedaży, pipeline, leady, konwersje i wyniki zbierane automatycznie.",
-  "Raportowanie marketingu, dane z reklam, formularzy i CRM w jednym widoku.",
-  "Raportowanie operacyjne, statusy zadań, czas realizacji i wąskie gardła.",
+  "Sprzedaż: pipeline, leady i konwersje.",
+  "Marketing: reklamy, formularze i CRM w jednym widoku.",
+  "Operacje: statusy zadań, czas realizacji, wąskie gardła.",
 ];
 
 const faqs = [
   {
     question: "Ile kosztuje automatyzacja raportu?",
     answer:
-      "Raport z jednego źródła, wysyłany o stałej porze, to 790 do 1 500 zł. Każde kolejne źródło dokłada 390 do 700 zł, uzgodnienie rozjeżdżających się liczb 490 do 1 200 zł, a panel w przeglądarce zamiast maila 900 do 1 800 zł. Kalkulator na tej stronie składa z tego zakres dla Twojego przypadku.",
+      "Raport z jednego źródła to 790 do 1 500 zł. Każde kolejne źródło dokłada 390 do 700 zł, a panel w przeglądarce 900 do 1 800 zł.",
   },
   {
     question: "Czy można połączyć dane z kilku źródeł?",
-    answer: "Tak, to jedna z głównych korzyści automatyzacji raportowania.",
+    answer: "Tak, łączymy dane z kilku systemów w jeden raport.",
   },
   {
     question: "Co jeśli dane są dziś niespójne?",
     answer:
-      "To częsty problem i zwykle najdłuższa część pracy. Najpierw ustalamy, która definicja obowiązuje i po czym dopasować rekordy między źródłami, dopiero potem automatyzujemy raport. W wycenie to osobna pozycja, 490 do 1 200 zł.",
+      "Najpierw ustalamy jedną definicję i dopasowujemy rekordy między źródłami, potem automatyzujemy raport. To osobna pozycja, 490 do 1 200 zł.",
   },
   {
     question: "Czy to ma sens przy małym zespole?",
     answer:
-      "Tak. Czasem największą wartość daje po prostu stały, poprawny raport wysyłany automatycznie.",
+      "Tak. Często największą wartość daje stały, poprawny raport wysyłany automatycznie.",
   },
 ];
 
@@ -76,10 +76,8 @@ export default function AutomatyzacjaRaportowania() {
               Automatyzacja raportowania
             </h1>
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
-              Dane z różnych źródeł zbierają się same, a zespół pracuje na
-              aktualnych, spójnych liczbach. Bez przeklejania, bez błędów.
-              Raport z jednego źródła, wysyłany o stałej porze, zaczyna się od
-              790 zł, a co podnosi tę kwotę, rozpisujemy niżej co do pozycji.
+              Dane z różnych źródeł zbierają się same, a raport przychodzi o
+              stałej porze. Jedno źródło od 790 zł.
             </p>
             <div>
               <a href="#sekcje" className="btn-primary">
@@ -89,7 +87,7 @@ export default function AutomatyzacjaRaportowania() {
           </div>
         </section>
 
-        {/* Treść w zakładkach, nic nie wycięte, podzielone */}
+        {/* Treść w zakładkach */}
         <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
           <Tabs
             ariaLabel="Sekcje oferty automatyzacji raportowania"
@@ -103,10 +101,8 @@ export default function AutomatyzacjaRaportowania() {
                         Ile to kosztuje
                       </h2>
                       <p className="text-gray-600 dark:text-gray-300 mb-8">
-                        Raport raportowi nierówny: jedno źródło i wysyłka na
-                        maila to inna praca niż cztery źródła, które dziś
-                        pokazują różne liczby. Zaznacz, co u Ciebie występuje, a
-                        zobaczysz rząd wielkości od razu.
+                        Zaznacz, co u Ciebie występuje, a zobaczysz zakres
+                        ceny od razu.
                       </p>
                       <ZakresWyceny wycena={WYCENA_RAPORTOWANIE} />
                     </div>
@@ -184,7 +180,7 @@ export default function AutomatyzacjaRaportowania() {
                     <LandingForm
                       formId="diagnosis_raport"
                       heading="Sprawdźmy Twój proces raportowania"
-                      intro="Opisz krótko, skąd pochodzą dane, kto składa raport i jak często. W odpowiedzi dostaniesz informację, czy raport da się zautomatyzować i co z tego wyniknie."
+                      intro="Napisz, skąd pochodzą dane i jak często składacie raport. Odpowiemy, czy da się go zautomatyzować."
                       submitLabel="Chcemy diagnozę raportowania"
                     />
                   </section>

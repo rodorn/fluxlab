@@ -4,7 +4,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
-import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
   title: "Jak policzyć ROI z automatyzacji | Fluxlab",
@@ -30,6 +29,33 @@ export const metadata: Metadata = {
   },
 };
 
+const faq = [
+  {
+    q: "Czy ROI z automatyzacji da się policzyć bez idealnych danych?",
+    a: "Tak. Wystarczy uczciwe oszacowanie czasu, kosztu pracy i skali procesu.",
+  },
+  {
+    q: "Co jeśli proces nie daje dużej oszczędności czasu?",
+    a: "Sprawdź, czy nie poprawia jakości danych, przewidywalności albo czasu reakcji.",
+  },
+  {
+    q: "Jaki proces najłatwiej policzyć?",
+    a: "Zwykle raportowanie, obsługę leadów, CRM i zadania operacyjne.",
+  },
+  {
+    q: "Czy małe wdrożenia też mają sens ekonomiczny?",
+    a: "Tak. Małe, dobrze trafione wdrożenia często dają najlepszy stosunek kosztu do efektu.",
+  },
+];
+
+const kroki = [
+  ["Policz czas ręcznej pracy", "15 minut na zgłoszenie, 80 zgłoszeń miesięcznie = 20 godzin."],
+  ["Przemnóż przez koszt godziny", "20 godzin x 90 zł = 1800 zł miesięcznie, 21 600 zł rocznie."],
+  ["Dodaj koszt błędów i opóźnień", "Na przykład utracone leady i godziny poprawiania danych."],
+  ["Załóż realistyczną poprawę", "Zwykle 50 do 80% mniej ręcznej pracy, nie 100%."],
+  ["Porównaj z kosztem wdrożenia i utrzymania", "Wdrożenie 7000 zł przy rocznej korzyści 18 000 zł to prosta decyzja."],
+];
+
 export default function RoiAutomatyzacjiArticle() {
   return (
     <>
@@ -41,7 +67,6 @@ export default function RoiAutomatyzacjiArticle() {
             { label: "Jak policzyć ROI z automatyzacji" },
           ]}
         />
-        {/* Kompaktowy nagłówek */}
         <section className="pt-16 pb-6">
           <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
             <span className="section-label">Strefa wiedzy</span>
@@ -49,651 +74,128 @@ export default function RoiAutomatyzacjiArticle() {
               Jak policzyć ROI z automatyzacji
             </h1>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-              Wiele firm intuicyjnie czuje, że automatyzacja &bdquo;powinna się
-              opłacać&rdquo;, ale nie potrafi tego przełożyć na liczby. Efekt
-              jest prosty: decyzja o wdrożeniu jest odwlekana, bo nikt nie chce
-              inwestować w coś, czego nie potrafi obronić finansowo.
-            </p>
-            <p className="mt-4 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-              Problem w tym, że ROI z automatyzacji bardzo często da się
-              policzyć znacznie prościej, niż się wydaje, pod warunkiem, że nie
-              próbujesz budować idealnego modelu na start.
+              Wdrożenie jest odwlekane, bo nikt nie umie go obronić liczbami. A
+              ROI da się policzyć prościej, niż się wydaje, bez idealnego modelu
+              na start.
             </p>
           </div>
         </section>
 
-        {/* Treść w zakładkach, nic nie wycięte, podzielone wg rozdziałów */}
         <div className="container-wide pb-20">
-          <Tabs
-            ariaLabel="Rozdziały artykułu o liczeniu ROI z automatyzacji"
-            tabs={[
-              {
-                label: "Czym jest ROI",
-                content: (
-                  <div className="py-6 lg:py-8 max-w-3xl mx-auto">
-                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                      Czym właściwie jest ROI z automatyzacji
-                    </h2>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      ROI, czyli zwrot z inwestycji, pokazuje, czy wdrożenie
-                      przyniosło więcej korzyści niż kosztowało. W przypadku{" "}
-                      <Link
-                        href="/automatyzacja-leadow-crm"
-                        className="text-accent hover:underline"
-                      >
-                        automatyzacji procesów biznesowych
-                      </Link>{" "}
-                      nie chodzi tylko o &bdquo;zaoszczędzone godziny&rdquo;.
-                      Trzeba patrzeć szerzej:
-                    </p>
-                    <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
-                      <li>oszczędność czasu,</li>
-                      <li>ograniczenie liczby błędów,</li>
-                      <li>szybszy czas reakcji,</li>
-                      <li>lepsze wykorzystanie leadów,</li>
-                      <li>większą przewidywalność procesu,</li>
-                      <li>mniejsze obciążenie zespołu operacyjnego.</li>
-                    </ul>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Najprostszy wzór:
-                    </p>
-                    <div className="bg-gray-50 dark:bg-gray-800/60 rounded-2xl p-6 border border-gray-100 dark:border-gray-700 font-mono text-center text-lg">
-                      ROI = (korzyść roczna &minus; koszt wdrożenia &minus;
-                      koszt utrzymania) / koszt wdrożenia
-                    </div>
+          <div className="max-w-3xl mx-auto">
+            <div className="bg-gray-50 dark:bg-gray-800/60 rounded-2xl p-6 border border-gray-100 dark:border-gray-700 font-mono text-center text-lg">
+              ROI = (korzyść roczna &minus; koszt wdrożenia &minus; koszt
+              utrzymania) / koszt wdrożenia
+            </div>
 
-                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 mt-12">
-                      Dlaczego firmy źle liczą ROI z automatyzacji
-                    </h2>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Najczęstszy błąd: liczą tylko najbardziej oczywiste
-                      kliknięcia, a pomijają całą resztę kosztu procesu. Ktoś
-                      mówi: &bdquo;To tylko 10 minut dziennie, nie ma co
-                      liczyć&rdquo;. Tylko że te 10 minut:
-                    </p>
-                    <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
-                      <li>powtarza się codziennie,</li>
-                      <li>dotyczy kilku osób,</li>
-                      <li>generuje błędy,</li>
-                      <li>opóźnia kolejne etapy,</li>
-                      <li>wymaga poprawek,</li>
-                      <li>tworzy chaos informacyjny.</li>
-                    </ul>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Drugi błąd: skrajny optymizm. Lepsze założenie to redukcja
-                      50&ndash;80%.
-                    </p>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Trzeci błąd: ignorowanie kosztów utrzymania.
-                    </p>
-                  </div>
-                ),
-              },
-              {
-                label: "Koszty i korzyści",
-                content: (
-                  <div className="py-6 lg:py-8 max-w-3xl mx-auto">
-                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                      Co liczyć po stronie kosztów
-                    </h2>
+            <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 mt-12">
+              Co liczyć
+            </h2>
+            <p className="text-gray-600 dark:text-gray-400 mb-4">
+              <strong className="text-gray-900 dark:text-white">Koszty:</strong>{" "}
+              wdrożenie (analiza, konfiguracja, integracje, testy), utrzymanie
+              (abonamenty, monitoring, poprawki) i czas Twojego zespołu przy
+              wdrożeniu.
+            </p>
+            <p className="text-gray-600 dark:text-gray-400 mb-4">
+              <strong className="text-gray-900 dark:text-white">Korzyści:</strong>{" "}
+              zaoszczędzone godziny, mniej błędów, szybsza reakcja na leady i
+              mniej ręcznej koordynacji. Nie licz tylko czasu kliknięcia,
+              poprawki i opóźnienia też kosztują.
+            </p>
 
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                      Koszt wdrożenia
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Analiza, projekt logiki procesu, konfiguracja narzędzi,
-                      integracje, testy, wdrożenie produkcyjne, dokumentacja lub
-                      przekazanie procesu zespołowi.
-                    </p>
+            <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 mt-12">
+              Model w pięciu krokach
+            </h2>
+            <ol className="list-decimal pl-5 space-y-3 text-gray-600 dark:text-gray-400 mb-6">
+              {kroki.map(([t, d]) => (
+                <li key={t}>
+                  <span className="font-semibold text-gray-900 dark:text-white">
+                    {t}.
+                  </span>{" "}
+                  {d}
+                </li>
+              ))}
+            </ol>
 
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                      Koszt utrzymania
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Abonamenty narzędzi, monitoring działania, poprawki przy
-                      zmianach procesu, drobne aktualizacje lub rozwój.
-                    </p>
+            <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 mt-12">
+              Przykład: obsługa leadów
+            </h2>
+            <p className="text-gray-600 dark:text-gray-400 mb-4">
+              8 minut na leada, 180 leadów miesięcznie, czyli 24 godziny i 24 480
+              zł rocznie przy 85 zł za godzinę. Po{" "}
+              <Link
+                href="/automatyzacja-leadow-crm"
+                className="text-accent hover:underline"
+              >
+                automatyzacji leadów
+              </Link>{" "}
+              70% mniej pracy daje 17 136 zł rocznie.
+            </p>
+            <p className="text-gray-600 dark:text-gray-400 mb-4">
+              Wdrożenie 6500 zł plus utrzymanie 200 zł miesięcznie to 8900 zł w
+              pierwszym roku. Korzyść netto: ponad 8200 zł.
+            </p>
 
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                      Koszt wewnętrznego zaangażowania
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Jeżeli po stronie firmy kilka osób musi poświęcić czas na
-                      zebranie wymagań, testy i dopięcie wdrożenia, to też jest
-                      koszt.
-                    </p>
+            <div className="mt-12 bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-8 text-center">
+              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                Policzymy ROI dla Twojego procesu
+              </h2>
+              <p className="text-gray-600 dark:text-gray-400 mb-4">
+                Bezpłatna diagnoza, bez zobowiązań.
+              </p>
+              <Link href="/kontakt" className="btn-primary inline-block">
+                Zamów diagnozę procesu
+              </Link>
+            </div>
 
-                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 mt-12">
-                      Co liczyć po stronie korzyści
-                    </h2>
+            <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 mt-12">
+              FAQ
+            </h2>
+            <dl className="space-y-5">
+              {faq.map((f) => (
+                <div key={f.q}>
+                  <dt className="font-semibold text-gray-900 dark:text-white">
+                    {f.q}
+                  </dt>
+                  <dd className="mt-1 text-gray-600 dark:text-gray-400">
+                    {f.a}
+                  </dd>
+                </div>
+              ))}
+            </dl>
 
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                      1. Oszczędność czasu
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Najłatwiej policzyć. Jeżeli pracownik spędza 20 godzin
-                      miesięcznie na ręcznych czynnościach, a koszt jednej
-                      godziny wynosi 80 zł, to mówimy o 1600 zł miesięcznie i
-                      19&nbsp;200 zł rocznie.
-                    </p>
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3 mt-12">
+              Powiązane
+            </h3>
+            <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400">
+              <li>
+                <Link
+                  href="/strefa-wiedzy/jak-zautomatyzowac-raportowanie-w-firmie"
+                  className="text-accent hover:underline"
+                >
+                  Jak zautomatyzować raportowanie w firmie
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/automatyzacja-raportowania"
+                  className="text-accent hover:underline"
+                >
+                  Automatyzacja raportowania
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/integracje-api"
+                  className="text-accent hover:underline"
+                >
+                  Integracje API
+                </Link>
+              </li>
+            </ul>
+          </div>
 
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                      2. Ograniczenie błędów
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Błąd w danych może kosztować dużo więcej niż jedno
-                      kliknięcie: pomyłka w leadzie, źle przypisana sprawa, brak
-                      follow-upu, błędny raport, niepotrzebna praca naprawcza.
-                    </p>
-
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                      3. Szybszy czas reakcji
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      W procesach sprzedażowych czas reakcji ma realną wartość.
-                      Lead obsłużony szybciej ma większą szansę na przejście
-                      dalej.
-                    </p>
-
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                      4. Lepsze wykorzystanie zasobów ludzi
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Jeżeli handlowiec przestaje wykonywać ręczne,
-                      niskowartościowe czynności, to ten czas może zostać
-                      wykorzystany lepiej.
-                    </p>
-
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                      5. Większa przewidywalność procesu
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Mniej gaszenia pożarów, mniej pytań &bdquo;kto to miał
-                      zrobić?&rdquo;, mniej ręcznej koordynacji.
-                    </p>
-                  </div>
-                ),
-              },
-              {
-                label: "Model liczenia",
-                content: (
-                  <div className="py-6 lg:py-8 max-w-3xl mx-auto">
-                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                      Najprostszy model liczenia ROI
-                    </h2>
-
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                      Krok 1: policz czas ręcznej pracy
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Sprawdź ile razy proces dzieje się w tygodniu/miesiącu,
-                      ile trwa średnio, ile osób jest zaangażowanych.
-                    </p>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Przykład: 15 minut na obsługę jednego zgłoszenia, 80
-                      zgłoszeń miesięcznie = 1200 minut = 20 godzin miesięcznie.
-                    </p>
-
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                      Krok 2: przemnóż przez koszt godziny
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      20 godzin x 90 zł = 1800 zł miesięcznie, 21&nbsp;600 zł
-                      rocznie.
-                    </p>
-
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                      Krok 3: dodaj koszt błędów lub opóźnień
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Np. 2 utracone leady miesięcznie, 4 godziny na poprawianie
-                      błędnych danych.
-                    </p>
-
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                      Krok 4: określ realistyczny poziom poprawy
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Np. 60% redukcji ręcznej pracy, 50% mniej błędów, 30%
-                      szybszy czas reakcji.
-                    </p>
-
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                      Krok 5: porównaj to z kosztem wdrożenia
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Jeżeli wdrożenie kosztuje 7000 zł, a roczna korzyść netto
-                      wynosi 18&nbsp;000 zł, to decyzja jest prosta.
-                    </p>
-
-                    <div className="mt-10 bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-8 text-center">
-                      <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        Chcesz policzyć ROI dla konkretnego procesu w Twojej
-                        firmie?
-                      </h3>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Bezpłatna diagnoza, bez zobowiązań.
-                      </p>
-                      <Link
-                        href="/kontakt"
-                        className="btn-primary inline-block"
-                      >
-                        Zamów diagnozę procesu
-                      </Link>
-                    </div>
-                  </div>
-                ),
-              },
-              {
-                label: "Przykłady i mini-case'y",
-                content: (
-                  <div className="py-6 lg:py-8 max-w-3xl mx-auto">
-                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                      Przykład 1: ROI z automatyzacji leadów
-                    </h2>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Weźmy konkretny przykład z obszaru{" "}
-                      <Link
-                        href="/automatyzacja-leadow-crm"
-                        className="text-accent hover:underline"
-                      >
-                        automatyzacji leadów
-                      </Link>
-                      . Czas na jednego leada: 8 minut. 180 leadów miesięcznie =
-                      24 godziny. Koszt godziny 85 zł = 2040 zł/mies =
-                      24&nbsp;480 zł/rok.
-                    </p>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      70% redukcja = 17h mniej = 1428 zł/mies = 17&nbsp;136
-                      zł/rok.
-                    </p>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Wdrożenie 6500 zł + utrzymanie 200 zł/mies = 8900 zł/rok.
-                    </p>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Korzyść netto: ponad 8200 zł w pierwszym roku.
-                    </p>
-
-                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 mt-12">
-                      Przykład 2: ROI z automatyzacji raportowania
-                    </h2>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Drugi przykład dotyczy{" "}
-                      <Link
-                        href="/automatyzacja-raportowania"
-                        className="text-accent hover:underline"
-                      >
-                        automatyzacji raportowania
-                      </Link>
-                      . 2,5h na raport, 2 osoby, co tydzień = 20h/mies. Koszt
-                      100 zł/h = 2000 zł/mies = 24&nbsp;000 zł/rok.
-                    </p>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Po wdrożeniu: 4h/mies = 400 zł. Oszczędność: 19&nbsp;200
-                      zł/rok. Wdrożenie: 9000 zł.
-                    </p>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Więcej o tym w{" "}
-                      <Link
-                        href="/strefa-wiedzy/jak-zautomatyzowac-raportowanie-w-firmie"
-                        className="text-accent hover:underline"
-                      >
-                        Jak zautomatyzować raportowanie w firmie
-                      </Link>
-                      .
-                    </p>
-
-                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 mt-12">
-                      Mini-case 1: Firma usługowa i chaos leadowy
-                    </h2>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Firma usługowa z kilkuosobowym zespołem handlowym traci
-                      leady, bo nikt nie pilnuje ręcznie, które zapytania
-                      zostały obsłużone. Część leadów ginie w skrzynce mailowej,
-                      część trafia do CRM z opóźnieniem, a follow-upy są
-                      nieregularne.
-                    </p>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Po automatyzacji: leady trafiają do CRM natychmiast,
-                      handlowiec dostaje powiadomienie, follow-up jest
-                      zaplanowany automatycznie. Czas reakcji spadł z kilku
-                      godzin do kilku minut.
-                    </p>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      ROI było dodatnie jeszcze zanim policzono miękkie
-                      korzyści: mniej stresu, mniej pytań &bdquo;kto to miał
-                      zrobić&rdquo;, lepsze nastroje w zespole.
-                    </p>
-
-                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 mt-12">
-                      Mini-case 2: Zespół operacyjny i raporty z trzech źródeł
-                    </h2>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Zespół operacyjny co tydzień zbiera dane z trzech
-                      systemów, składa je w Excelu i wysyła raport do zarządu.
-                      Proces trwa kilka godzin, a dane i tak bywają niespójne.
-                      Zaufanie do raportów jest niskie, a decyzje opóźnione.
-                    </p>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Po automatyzacji: dane są pobierane automatycznie, raport
-                      generuje się sam, a zespół zajmuje się analizą zamiast
-                      składaniem danych. Czas przygotowania spadł o 80%, a jakość
-                      danych wzrosła.
-                    </p>
-                  </div>
-                ),
-              },
-              {
-                label: "Jak nie zepsuć",
-                content: (
-                  <div className="py-6 lg:py-8 max-w-3xl mx-auto">
-                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                      Jak nie zepsuć liczenia ROI
-                    </h2>
-
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                      Nie próbuj być idealnie precyzyjny
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      ROI to model decyzyjny, nie raport dla audytora.
-                    </p>
-
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                      Nie licz tylko czasu kliknięcia
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Uwzględnij: poprawki, pytania między działami, opóźnienia,
-                      koszt utraconych szans, koszt chaosu informacyjnego.
-                    </p>
-
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                      Nie zakładaj 100% oszczędności
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Automatyzacja ogranicza ręczną pracę, ale nie zawsze
-                      eliminuje ją do zera.
-                    </p>
-
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                      Nie ignoruj skali
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Proces, który dziś wydaje się &bdquo;mały&rdquo;, po
-                      wzroście firmy może być już bardzo kosztowny.
-                    </p>
-
-                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 mt-12">
-                      Jakie procesy zwykle mają najlepszy ROI
-                    </h2>
-                    <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
-                      <li>obsługa leadów,</li>
-                      <li>CRM i follow-upy,</li>
-                      <li>raportowanie,</li>
-                      <li>przekazywanie danych między systemami,</li>
-                      <li>zadania i powiadomienia operacyjne.</li>
-                    </ul>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Więcej o tych procesach znajdziesz w artykułach:{" "}
-                      <Link
-                        href="/strefa-wiedzy/co-to-jest-automatyzacja-procesow-biznesowych"
-                        className="text-accent hover:underline"
-                      >
-                        Co to jest automatyzacja procesów biznesowych
-                      </Link>
-                      ,{" "}
-                      <Link
-                        href="/integracje-api"
-                        className="text-accent hover:underline"
-                      >
-                        Integracje API w firmie, kiedy warto
-                      </Link>{" "}
-                      oraz{" "}
-                      <Link
-                        href="/strefa-wiedzy/jak-zautomatyzowac-raportowanie-w-firmie"
-                        className="text-accent hover:underline"
-                      >
-                        Jak zautomatyzować raportowanie w firmie
-                      </Link>
-                      .
-                    </p>
-
-                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 mt-12">
-                      Podsumowanie
-                    </h2>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      ROI z automatyzacji nie musi być skomplikowany. Wystarczy
-                      policzyć koszt ręcznej pracy, koszt błędów i opóźnień,
-                      oszacować realistyczną poprawę i porównać to z kosztem
-                      wdrożenia.
-                    </p>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Największy błąd to w ogóle nie liczyć i zostawiać procesy
-                      ręczne tylko dlatego, że &bdquo;tak się zawsze
-                      robiło&rdquo;.
-                    </p>
-                  </div>
-                ),
-              },
-              {
-                label: "FAQ",
-                content: (
-                  <div className="py-6 lg:py-8 max-w-3xl mx-auto">
-                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                      FAQ
-                    </h2>
-                    <div className="space-y-4">
-                      <details className="group rounded-2xl border border-gray-200 dark:border-gray-700">
-                        <summary className="flex cursor-pointer items-center justify-between p-6 text-gray-900 dark:text-white font-medium">
-                          Czy ROI z automatyzacji da się policzyć bez idealnych
-                          danych?
-                          <span className="ml-4 shrink-0 text-gray-600 dark:text-gray-400 transition-transform group-open:rotate-45">
-                            <svg
-                              width="20"
-                              height="20"
-                              viewBox="0 0 20 20"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth="2"
-                            >
-                              <line x1="10" y1="4" x2="10" y2="16" />
-                              <line x1="4" y1="10" x2="16" y2="10" />
-                            </svg>
-                          </span>
-                        </summary>
-                        <p className="px-6 pb-6 text-gray-600 dark:text-gray-400">
-                          Tak. W większości przypadków wystarczy uczciwe
-                          oszacowanie czasu, kosztu pracy i skali procesu.
-                        </p>
-                      </details>
-
-                      <details className="group rounded-2xl border border-gray-200 dark:border-gray-700">
-                        <summary className="flex cursor-pointer items-center justify-between p-6 text-gray-900 dark:text-white font-medium">
-                          Czy trzeba liczyć tylko twarde oszczędności?
-                          <span className="ml-4 shrink-0 text-gray-600 dark:text-gray-400 transition-transform group-open:rotate-45">
-                            <svg
-                              width="20"
-                              height="20"
-                              viewBox="0 0 20 20"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth="2"
-                            >
-                              <line x1="10" y1="4" x2="10" y2="16" />
-                              <line x1="4" y1="10" x2="16" y2="10" />
-                            </svg>
-                          </span>
-                        </summary>
-                        <p className="px-6 pb-6 text-gray-600 dark:text-gray-400">
-                          Nie. Warto uwzględnić też błędy, opóźnienia i wpływ na
-                          wykorzystanie leadów.
-                        </p>
-                      </details>
-
-                      <details className="group rounded-2xl border border-gray-200 dark:border-gray-700">
-                        <summary className="flex cursor-pointer items-center justify-between p-6 text-gray-900 dark:text-white font-medium">
-                          Co jeśli proces nie daje dużej oszczędności czasu?
-                          <span className="ml-4 shrink-0 text-gray-600 dark:text-gray-400 transition-transform group-open:rotate-45">
-                            <svg
-                              width="20"
-                              height="20"
-                              viewBox="0 0 20 20"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth="2"
-                            >
-                              <line x1="10" y1="4" x2="10" y2="16" />
-                              <line x1="4" y1="10" x2="16" y2="10" />
-                            </svg>
-                          </span>
-                        </summary>
-                        <p className="px-6 pb-6 text-gray-600 dark:text-gray-400">
-                          Sprawdź, czy nie daje dużej poprawy jakości,
-                          przewidywalności albo czasu reakcji.
-                        </p>
-                      </details>
-
-                      <details className="group rounded-2xl border border-gray-200 dark:border-gray-700">
-                        <summary className="flex cursor-pointer items-center justify-between p-6 text-gray-900 dark:text-white font-medium">
-                          Jaki proces najłatwiej policzyć?
-                          <span className="ml-4 shrink-0 text-gray-600 dark:text-gray-400 transition-transform group-open:rotate-45">
-                            <svg
-                              width="20"
-                              height="20"
-                              viewBox="0 0 20 20"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth="2"
-                            >
-                              <line x1="10" y1="4" x2="10" y2="16" />
-                              <line x1="4" y1="10" x2="16" y2="10" />
-                            </svg>
-                          </span>
-                        </summary>
-                        <p className="px-6 pb-6 text-gray-600 dark:text-gray-400">
-                          Zwykle raportowanie, leady, CRM i zadania operacyjne.
-                        </p>
-                      </details>
-
-                      <details className="group rounded-2xl border border-gray-200 dark:border-gray-700">
-                        <summary className="flex cursor-pointer items-center justify-between p-6 text-gray-900 dark:text-white font-medium">
-                          Czy małe wdrożenia też mają sens ekonomiczny?
-                          <span className="ml-4 shrink-0 text-gray-600 dark:text-gray-400 transition-transform group-open:rotate-45">
-                            <svg
-                              width="20"
-                              height="20"
-                              viewBox="0 0 20 20"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth="2"
-                            >
-                              <line x1="10" y1="4" x2="10" y2="16" />
-                              <line x1="4" y1="10" x2="16" y2="10" />
-                            </svg>
-                          </span>
-                        </summary>
-                        <p className="px-6 pb-6 text-gray-600 dark:text-gray-400">
-                          Tak. Często właśnie małe, dobrze trafione wdrożenia
-                          dają najlepszy stosunek kosztu do efektu.
-                        </p>
-                      </details>
-                    </div>
-
-                    <div className="mt-12 bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-8 text-center">
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        Chcesz policzyć ROI dla konkretnego procesu w Twojej
-                        firmie, a nie w teorii?
-                      </h2>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Zobacz usługę automatyzacji i porównaj z artykułami
-                        poniżej.
-                      </p>
-                      <Link
-                        href="/kontakt"
-                        className="btn-primary inline-block"
-                      >
-                        Zamów diagnozę procesu
-                      </Link>
-                    </div>
-
-                    <div className="mt-12 grid md:grid-cols-2 gap-8">
-                      <div>
-                        <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                          Powiązane artykuły
-                        </h3>
-                        <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400">
-                          <li>
-                            <Link
-                              href="/strefa-wiedzy/co-to-jest-automatyzacja-procesow-biznesowych"
-                              className="text-accent hover:underline"
-                            >
-                              Co to jest automatyzacja procesów biznesowych
-                            </Link>
-                          </li>
-                          <li>
-                            <Link
-                              href="/integracje-api"
-                              className="text-accent hover:underline"
-                            >
-                              Integracje API w firmie, kiedy warto
-                            </Link>
-                          </li>
-                          <li>
-                            <Link
-                              href="/strefa-wiedzy/jak-zautomatyzowac-raportowanie-w-firmie"
-                              className="text-accent hover:underline"
-                            >
-                              Jak zautomatyzować raportowanie w firmie
-                            </Link>
-                          </li>
-                        </ul>
-                      </div>
-                      <div>
-                        <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                          Powiązane usługi
-                        </h3>
-                        <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400">
-                          <li>
-                            <Link
-                              href="/automatyzacja-leadow-crm"
-                              className="text-accent hover:underline"
-                            >
-                              Automatyzacja procesów biznesowych
-                            </Link>
-                          </li>
-                          <li>
-                            <Link
-                              href="/integracje-api"
-                              className="text-accent hover:underline"
-                            >
-                              Integracje API
-                            </Link>
-                          </li>
-                          <li>
-                            <Link
-                              href="/automatyzacja-raportowania"
-                              className="text-accent hover:underline"
-                            >
-                              Automatyzacja raportowania
-                            </Link>
-                          </li>
-                          <li>
-                            <Link
-                              href="/automatyzacja-leadow-crm"
-                              className="text-accent hover:underline"
-                            >
-                              Automatyzacja CRM
-                            </Link>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                ),
-              },
-            ]}
-          />
-
-          {/* Prev / Next */}
           <div className="max-w-3xl mx-auto mt-16">
             <PrevNextArticle currentHref="/strefa-wiedzy/jak-policzyc-roi-z-automatyzacji" />
           </div>
@@ -701,7 +203,6 @@ export default function RoiAutomatyzacjiArticle() {
       </main>
       <Footer />
 
-      {/* Article Schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -725,56 +226,17 @@ export default function RoiAutomatyzacjiArticle() {
           }),
         }}
       />
-
-      {/* FAQPage Schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "FAQPage",
-            mainEntity: [
-              {
-                "@type": "Question",
-                name: "Czy ROI z automatyzacji da się policzyć bez idealnych danych?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Tak. W większości przypadków wystarczy uczciwe oszacowanie czasu, kosztu pracy i skali procesu.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "Czy trzeba liczyć tylko twarde oszczędności?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Nie. Warto uwzględnić też błędy, opóźnienia i wpływ na wykorzystanie leadów.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "Co jeśli proces nie daje dużej oszczędności czasu?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Sprawdź, czy nie daje dużej poprawy jakości, przewidywalności albo czasu reakcji.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "Jaki proces najłatwiej policzyć?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Zwykle raportowanie, leady, CRM i zadania operacyjne.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "Czy małe wdrożenia też mają sens ekonomiczny?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Tak. Często właśnie małe, dobrze trafione wdrożenia dają najlepszy stosunek kosztu do efektu.",
-                },
-              },
-            ],
+            mainEntity: faq.map((f) => ({
+              "@type": "Question",
+              name: f.q,
+              acceptedAnswer: { "@type": "Answer", text: f.a },
+            })),
           }),
         }}
       />

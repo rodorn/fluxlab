@@ -22,7 +22,7 @@ export default function ProductCard({ p }: { p: Product }) {
         {p.name}
       </h3>
       {p.narzedzie && (
-        <p className="mt-2 inline-flex w-fit items-center gap-1.5 rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-semibold text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-400">
+        <p className="mt-2 inline-flex w-fit items-center gap-1.5 rounded-full bg-accent/10 px-2.5 py-1 text-xs font-semibold text-accent">
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
             <path
               d="M2 6.2l2.6 2.6L10 3.4"
