@@ -3120,3 +3120,13 @@ Z1 jednym zdaniem: z 32 sesji bez odsyłacza 18 to nasza automatyka, 12 inne, 2 
   Maile (wszystkie PKD 69.20Z w odpisie pobranym 7.10, adres ogólny ze strony): 037 Kancelaria HMP Invest, Legnica, KRS 0000336773, biuro@hmpinvest.pl; 038 BJM, Szczytno, 0000226847, bjmkancelaria@bjmkancelaria.pl; 039 AA Finanse, Warszawa, 0001082791, kontakt@aafinanse.pl; 040 Biuro Rachunkowe Help Anna Semrau, Warszawa, 0000817800, biuro@biuro-help.pl; 041 Kancelaria Finansowa Clear, Warszawa, 0000435055, info@kancelariaclear.pl. Odrzucone: alltax.slupsk.pl (JDG, KRS w stopce należy do agencji CatchyMedia), sklodowscy.pl (HONESTUS, PKD bez 69.20, strona kilku spółek). Statystyka w treści maili przeliczona: 272 z 336 spółek ma BAE.
 **Dla Pawła:** bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację).
 **Zostało otwarte:** Z6 wysyłka follow-upu 10 maili o 11:46; Z7 o 12:46; Z9 o 14:46 ma 5 maili (próg 3 spełniony, przed wysyłką BAE ponownie z odpisu); CIK ma 15 innych województw do drugiej rundy.
+
+<!-- WYSLANO 2026-10-07 11:04 -->
+
+## 2026-10-07 11:59
+**Kanał:** outreach (Z6, follow-up biur rachunkowych).
+**Co zrobione:** 10 follow-upów `ksiegowe-fu` do biur z wysyłki 5.10 (spółki nadal bez adresu do e-Doręczeń w odpisie KRS) wysłane o 11:46 z pawel@fluxlab.pl, wszystkie dostarczone.
+**Ruch:** ostatnia doba 22 odsłony, 16 osób (po filtrze botów i własnej automatyki: odrzucone 7 sesji botów, 25 sesji automatyki); źródła: facebook 4, mail 2, www.google.com 1, m.facebook.com 1; 12 z 22 z telefonu; 0 uruchomień narzędzi; najczęściej /automatyzacja-leadow-crm (5), /numer-ksef (3).
+**Dowód:** Resend 11:58, 10/10 delivered, 0 bounced: merchant@wp.pl 01a115c1-73e9-7266-bf75-65c6e849d987, biuro@e-pok.pl 01a115c1-af5e-71b3-8e15-011a64f7bd14, biuro@boolska.pl 01a115c1-eac6-75dc-b7a6-3bf276bbacaa, biuro@accountingpartners.pl 01a115c2-2631-7112-8347-71360729d7e2, biuro@obilon.pl 01a115c2-61b5-7d1a-b257-e0b87c6777b9, biuro@abakus.rzeszow.pl 01a115c2-9d16-78cd-b852-cadc589d4067, kontakt@agiorzeszow.pl 01a115c2-d876-71ff-acce-c4b022e448fb, bur@bur.pl 01a115c3-13e8-73d6-9800-ecc83bf8ead5, biuro@honneymoney.com 01a115c3-4f78-719a-ba00-644d19b512cf, biuro@igbc.pl 01a115c3-8af7-727e-9b7d-cd416d1da1af; zapis w `~/Projekty/mail-audyt/wyslane_ks_fu.json` (10). Przed wysyłką Zoho INBOX i Spam od 7.10: 0 wiadomości od tych firm, żadna w `pomijane.json`.
+**Dla Pawła:**
+**Zostało otwarte:** Z7 (12:46, odpowiedzi i sesje z maili Z4 i Z6, zostawione na swoją godzinę, bo po 13 minutach od wysyłki pomiar byłby pusty), Z9 o 14:46 (5 plików 037 do 041 w kolejce), dalej Z10 do Z24.
