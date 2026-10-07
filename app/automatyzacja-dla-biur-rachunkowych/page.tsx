@@ -162,26 +162,16 @@ const faq = [
 ];
 
 const relatedServices = [
-  {
-    label: "Automatyzacja procesów biznesowych",
-    href: "/automatyzacja-procesow-biznesowych",
-  },
   { label: "Integracje API", href: "/integracje-api" },
   { label: "Automatyzacja raportowania", href: "/automatyzacja-raportowania" },
   { label: "Automatyzacja CRM", href: "/automatyzacja-leadow-crm" },
   { label: "Automatyzacja leadów", href: "/automatyzacja-leadow-crm" },
-  { label: "n8n, wdrożenia", href: "/n8n" },
-  { label: "Zapier i Make", href: "/zapier-make" },
 ];
 
 const relatedArticles = [
   {
     label: "Co to jest automatyzacja procesów biznesowych",
     href: "/strefa-wiedzy/co-to-jest-automatyzacja-procesow-biznesowych",
-  },
-  {
-    label: "Integracje API w firmie, kiedy warto",
-    href: "/strefa-wiedzy/integracje-api-w-firmie-kiedy-warto",
   },
   {
     label: "Jak zautomatyzować raportowanie w firmie",
@@ -302,7 +292,7 @@ export default function AutomatyzacjaDlaBiurRachunkowych() {
                 tego zależy droga integracji. Szerzej o łączeniu systemów
                 sprzedaży z księgowością piszemy na stronie{" "}
                 <Link
-                  href="/integracja-crm-z-erp"
+                  href="/integracje-api"
                   className="text-accent hover:underline"
                 >
                   integracja CRM z ERP
@@ -425,14 +415,14 @@ export default function AutomatyzacjaDlaBiurRachunkowych() {
                         Po szczegóły dotyczące samej platformy automatyzacji
                         zajrzyj do{" "}
                         <Link
-                          href="/n8n"
+                          href="/strefa-wiedzy/zapier-make-n8n-porownanie"
                           className="text-accent hover:underline"
                         >
                           n8n
                         </Link>{" "}
                         lub{" "}
                         <Link
-                          href="/zapier-make"
+                          href="/strefa-wiedzy/zapier-make-n8n-porownanie"
                           className="text-accent hover:underline"
                         >
                           Zapier i Make
@@ -476,7 +466,7 @@ export default function AutomatyzacjaDlaBiurRachunkowych() {
                         (klientowi, który pyta o zmianę formy opodatkowania,
                         możecie podesłać nasz{" "}
                         <Link
-                          href="/kalkulator-podatkowy"
+                          href="/narzedzia"
                           className="text-accent hover:underline"
                         >
                           kalkulator JDG 2026: ryczałt, liniowy i skala z ZUS

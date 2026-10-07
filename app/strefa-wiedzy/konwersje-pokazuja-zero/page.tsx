@@ -158,7 +158,7 @@ export default function Page() {
             wszystkich, które tego dnia weszły, a przy zapisie po płatności
             znika bez śladu. Opisaliśmy to szerzej przy{" "}
             <Link
-              href="/landing-z-platnoscia"
+              href="/strony-www"
               className="text-accent hover:underline"
             >
               stronach sprzedażowych z płatnością
@@ -171,7 +171,7 @@ export default function Page() {
           naglowek="Nie masz pewności, która z czterech przyczyn zachodzi u Ciebie?"
           opis="Na tę akurat rzecz nie mamy sprawdzenia, które da wynik jednym kliknięciem: rozstrzygnięcie wymaga zajrzenia do ustawień pomiaru na konkretnej stronie. Napisz, co pokazuje licznik, a co przychodzi na skrzynkę."
           narzedzie={{
-            href: "/landing-z-platnoscia",
+            href: "/strony-www",
             etykieta: "Zobacz, jak zapisujemy zgłoszenie przed płatnością",
           }}
           kontakt="Wolisz, żeby ktoś przeszedł te cztery punkty za Ciebie?"

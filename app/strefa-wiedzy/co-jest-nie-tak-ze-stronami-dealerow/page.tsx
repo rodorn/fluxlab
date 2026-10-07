@@ -176,7 +176,7 @@ export default function Page() {
             wszystko wygląda normalnie.
           </p>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-            <Link href="/mapa-strony" className="text-accent hover:underline">
+            <Link href="/" className="text-accent hover:underline">
               Sprawdź mapę swojej strony
             </Link>
             .
@@ -202,7 +202,7 @@ export default function Page() {
           </p>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
             <Link
-              href="/wlasnosc-domeny"
+              href="/audyt-poczty"
               className="text-accent hover:underline"
             >
               Sprawdź, kto jest abonentem Twojej domeny
@@ -278,9 +278,9 @@ export default function Page() {
           <ul className="mt-3 space-y-2 text-sm">
             {[
               ["/dane-sprzedawcy", "Czy klient ustali, komu płaci"],
-              ["/mapa-strony", "Czy wyszukiwarka ma listę Twoich podstron"],
-              ["/wlasnosc-domeny", "Kto jest właścicielem Waszej domeny"],
-              ["/podwojny-adres", "Czy Google widzi Twoją stronę podwójnie"],
+              ["/", "Czy wyszukiwarka ma listę Twoich podstron"],
+              ["/audyt-poczty", "Kto jest właścicielem Waszej domeny"],
+              ["/audyt-poczty", "Czy Google widzi Twoją stronę podwójnie"],
             ].map(([href, tytul]) => (
               <li key={href}>
                 <Link href={href} className="text-accent hover:underline">

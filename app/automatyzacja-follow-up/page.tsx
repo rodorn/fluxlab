@@ -797,7 +797,7 @@ export default function AutomatyzacjaFollowUp() {
                           <ul className="grid sm:grid-cols-2 gap-3">
                             <li>
                               <Link
-                                href="/crm-jako-system-pracy"
+                                href="/automatyzacja-leadow-crm"
                                 className="block bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-xl px-5 py-4 hover:border-accent/40 transition-colors"
                               >
                                 <span className="block font-semibold text-gray-900 dark:text-white">
@@ -825,7 +825,7 @@ export default function AutomatyzacjaFollowUp() {
                             </li>
                             <li>
                               <Link
-                                href="/automatyzacja-pipedrive"
+                                href="/automatyzacja-formularza-do-pipedrive"
                                 className="block bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-xl px-5 py-4 hover:border-accent/40 transition-colors"
                               >
                                 <span className="block font-semibold text-gray-900 dark:text-white">
@@ -838,7 +838,7 @@ export default function AutomatyzacjaFollowUp() {
                             </li>
                             <li>
                               <Link
-                                href="/strefa-wiedzy/jak-uporzadkowac-proces-sprzedazy-w-crm"
+                                href="/strefa-wiedzy/automatyzacja-crm-od-czego-zaczac"
                                 className="block bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-xl px-5 py-4 hover:border-accent/40 transition-colors"
                               >
                                 <span className="block font-semibold text-gray-900 dark:text-white">

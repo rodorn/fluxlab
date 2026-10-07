@@ -659,7 +659,7 @@ export default function KosztRecznejObslugiLeadow() {
                             </Link>
                             . Konkretną wycenę dla Pipedrive, w{" "}
                             <Link
-                              href="/automatyzacja-pipedrive"
+                              href="/automatyzacja-formularza-do-pipedrive"
                               className="text-accent hover:underline"
                             >
                               automatyzacji Pipedrive
@@ -902,7 +902,7 @@ export default function KosztRecznejObslugiLeadow() {
                             </Link>
                             {" · "}
                             <Link
-                              href="/automatyzacja-pipedrive"
+                              href="/automatyzacja-formularza-do-pipedrive"
                               className="text-accent hover:underline"
                             >
                               Automatyzacja Pipedrive

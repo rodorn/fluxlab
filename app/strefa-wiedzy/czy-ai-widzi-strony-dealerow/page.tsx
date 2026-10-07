@@ -289,7 +289,7 @@ export default function Page() {
           </p>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
             Zestawienia, na których stoi to badanie, są{" "}
-            <Link href="/dane-z-badan" className="text-accent hover:underline">
+            <Link href="/strefa-wiedzy" className="text-accent hover:underline">
               do pobrania w formacie CSV
             </Link>
             , bez rejestracji i do zacytowania z podaniem źródła. Bez nazw

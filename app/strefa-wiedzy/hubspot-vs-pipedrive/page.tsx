@@ -182,7 +182,7 @@ export default function HubspotVsPipedriveArticle() {
                         Reguły dla samego pipeline opisaliśmy w artykule o tym,
                         jak{" "}
                         <Link
-                          href="/strefa-wiedzy/jak-uporzadkowac-proces-sprzedazy-w-crm"
+                          href="/strefa-wiedzy/automatyzacja-crm-od-czego-zaczac"
                           className="text-accent hover:underline"
                         >
                           uporządkować proces sprzedaży w CRM
@@ -253,7 +253,7 @@ export default function HubspotVsPipedriveArticle() {
                         marketplace oraz dobre API. Najczęściej jednak prawdziwą
                         moc daje{" "}
                         <Link
-                          href="/automatyzacja-pipedrive"
+                          href="/automatyzacja-formularza-do-pipedrive"
                           className="text-accent hover:underline"
                         >
                           dedykowana automatyzacja Pipedrive
@@ -265,7 +265,7 @@ export default function HubspotVsPipedriveArticle() {
                         O tym, kiedy w ogóle warto integrować, pisałem w
                         materiale o{" "}
                         <Link
-                          href="/strefa-wiedzy/jak-polaczyc-crm-z-innymi-systemami"
+                          href="/strefa-wiedzy/automatyzacja-crm-od-czego-zaczac"
                           className="text-accent hover:underline"
                         >
                           łączeniu CRM z innymi systemami

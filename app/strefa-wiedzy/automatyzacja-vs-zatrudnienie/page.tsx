@@ -483,7 +483,7 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
                         jest ktoś, kto weźmie odpowiedzialność. Więcej na ten
                         temat w artykule{" "}
                         <Link
-                          href="/strefa-wiedzy/kiedy-ai-ma-sens-a-kiedy-nie"
+                          href="/strefa-wiedzy/ai-w-automatyzacji-firm"
                           className="text-accent hover:underline"
                         >
                           Kiedy AI ma sens, a kiedy nie
@@ -753,7 +753,7 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
                           zwrotu.
                         </p>
                         <Link
-                          href="/automatyzacja-procesow-biznesowych"
+                          href="/automatyzacja-leadow-crm"
                           className="btn-primary inline-block"
                         >
                           Zobacz usługę automatyzacji procesów
@@ -999,7 +999,7 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
                   </li>
                   <li>
                     <Link
-                      href="/strefa-wiedzy/kiedy-ai-ma-sens-a-kiedy-nie"
+                      href="/strefa-wiedzy/ai-w-automatyzacji-firm"
                       className="text-accent hover:underline"
                     >
                       Kiedy AI ma sens, a kiedy nie
@@ -1022,7 +1022,7 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
                 <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400">
                   <li>
                     <Link
-                      href="/automatyzacja-procesow-biznesowych"
+                      href="/automatyzacja-leadow-crm"
                       className="text-accent hover:underline"
                     >
                       Automatyzacja procesów biznesowych

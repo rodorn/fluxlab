@@ -36,12 +36,6 @@ export default function Page() {
       ctaLabel="Sprawdź swoją stronę"
       ctaNote="Sprawdzenie za darmo, od ręki"
       powiazane={[
-        {
-          przed: "Drugi obowiązek, który kontrola sprawdza z zewnątrz, to cena z 30 dni przed obniżką przy każdej przecenie. Braki na kartach produktów pokaże",
-          kotwica: "kontrola informacji o najniższej cenie",
-          href: "/rejestr-cen",
-          po: ".",
-        },
       ]}
       checks={[
         {

@@ -55,14 +55,12 @@ const GROUPS: Group[] = [
         desc: "Raport due-diligence dla kupującego: benchmark ceny wobec podobnych ofert, checklista typowych usterek modelu, wykrywanie red-flag (niespójny przebieg, cofnięty licznik) i gotowy skrypt negocjacji.",
         stack: ["Python", "Otomoto", "PDF"],
         repo: `${GH}/fluxlab-auto-due-diligence`,
-        landing: "/sprawdz-auto",
       },
       {
         name: "ImportRadar DE/NL → PL",
         desc: "Radar okazji importowych: skanuje żywe oferty z DE/NL i pokazuje, które konkretne auta realnie zarabiają po odjęciu wszystkich kosztów sprowadzenia, plus modele z kosztownymi usterkami do unikania.",
         stack: ["Python", "Kalkulator", "PDF"],
         repo: `${GH}/fluxlab-import-radar`,
-        landing: "/import-radar",
       },
       {
         name: "Radar przetargów IT (Baza Konkurencyjności)",
@@ -75,7 +73,6 @@ const GROUPS: Group[] = [
         desc: "Analiza raportu wyszukiwanych haseł: ile budżetu idzie na frazy bez konwersji, gotowa lista wykluczeń i nocny skrypt-strażnik utrzymujący konto.",
         stack: ["Python", "Google Ads", "PDF"],
         repo: `${GH}/fluxlab-ads-wasted-spend`,
-        landing: "/audyt-google-ads",
       },
       {
         name: "Kalkulatory lead-gen (osadzalne)",
@@ -257,17 +254,6 @@ export default function RealizacjePage() {
               możesz otworzyć na GitHubie i ocenić jakość kodu, zanim cokolwiek
               zlecisz. To są rzeczy zbudowane przez nas, nie opisy cudzych
               wdrożeń ani referencje, których nie mamy.
-            </p>
-            <p className="mt-4 text-gray-600 dark:text-gray-300">
-              Osobno rozpisujemy{" "}
-              <Link
-                href="/case-study"
-                className="text-accent hover:underline font-medium"
-              >
-                modelowe przepływy z policzonym czasem
-              </Link>
-              , czyli ile minut zajmuje obsługa leada i tygodniowy raport przed
-              automatyzacją i po niej, czynność po czynności.
             </p>
           </div>
 

@@ -81,7 +81,7 @@ export default function AutomatyzacjaProcesowArticle() {
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Najprościej mówiąc,{" "}
                         <Link
-                          href="/automatyzacja-procesow-biznesowych"
+                          href="/automatyzacja-leadow-crm"
                           className="text-accent hover:underline"
                         >
                           automatyzacja procesów biznesowych
@@ -550,7 +550,7 @@ export default function AutomatyzacjaProcesowArticle() {
                         </Link>
                         {" | "}
                         <Link
-                          href="/strefa-wiedzy/integracje-api-w-firmie-kiedy-warto"
+                          href="/integracje-api"
                           className="text-accent hover:underline"
                         >
                           Integracje API w firmie, kiedy warto
@@ -790,7 +790,7 @@ export default function AutomatyzacjaProcesowArticle() {
                   </li>
                   <li>
                     <Link
-                      href="/strefa-wiedzy/integracje-api-w-firmie-kiedy-warto"
+                      href="/integracje-api"
                       className="text-accent hover:underline"
                     >
                       Integracje API w firmie, kiedy warto
@@ -813,7 +813,7 @@ export default function AutomatyzacjaProcesowArticle() {
                 <ul className="space-y-2">
                   <li>
                     <Link
-                      href="/automatyzacja-procesow-biznesowych"
+                      href="/automatyzacja-leadow-crm"
                       className="text-accent hover:underline"
                     >
                       Automatyzacja procesów biznesowych

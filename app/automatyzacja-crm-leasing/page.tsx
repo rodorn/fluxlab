@@ -755,7 +755,7 @@ export default function AutomatyzacjaCrmLeasing() {
                             </li>
                             <li>
                               <Link
-                                href="/automatyzacja-pipedrive"
+                                href="/automatyzacja-formularza-do-pipedrive"
                                 className="text-accent hover:underline"
                               >
                                 Automatyzacja Pipedrive
@@ -763,7 +763,7 @@ export default function AutomatyzacjaCrmLeasing() {
                             </li>
                             <li>
                               <Link
-                                href="/automatyzacja-salesforce"
+                                href="/automatyzacja-leadow-crm"
                                 className="text-accent hover:underline"
                               >
                                 Automatyzacja Salesforce
@@ -771,7 +771,7 @@ export default function AutomatyzacjaCrmLeasing() {
                             </li>
                             <li>
                               <Link
-                                href="/n8n"
+                                href="/strefa-wiedzy/zapier-make-n8n-porownanie"
                                 className="text-accent hover:underline"
                               >
                                 n8n, wdrożenia
@@ -779,7 +779,7 @@ export default function AutomatyzacjaCrmLeasing() {
                             </li>
                             <li>
                               <Link
-                                href="/n8n-dla-crm"
+                                href="/strefa-wiedzy/zapier-make-n8n-porownanie"
                                 className="text-accent hover:underline"
                               >
                                 n8n dla CRM
@@ -787,7 +787,7 @@ export default function AutomatyzacjaCrmLeasing() {
                             </li>
                             <li>
                               <Link
-                                href="/zapier-make"
+                                href="/strefa-wiedzy/zapier-make-n8n-porownanie"
                                 className="text-accent hover:underline"
                               >
                                 Zapier i Make
@@ -802,7 +802,7 @@ export default function AutomatyzacjaCrmLeasing() {
                           <ul className="space-y-2 text-sm">
                             <li>
                               <Link
-                                href="/strefa-wiedzy/make-vs-n8n"
+                                href="/strefa-wiedzy/zapier-make-n8n-porownanie"
                                 className="text-accent hover:underline"
                               >
                                 Make vs n8n
@@ -810,7 +810,7 @@ export default function AutomatyzacjaCrmLeasing() {
                             </li>
                             <li>
                               <Link
-                                href="/strefa-wiedzy/n8n-vs-zapier"
+                                href="/strefa-wiedzy/zapier-make-n8n-porownanie"
                                 className="text-accent hover:underline"
                               >
                                 n8n vs Zapier
@@ -818,7 +818,7 @@ export default function AutomatyzacjaCrmLeasing() {
                             </li>
                             <li>
                               <Link
-                                href="/make-vs-n8n-crm"
+                                href="/strefa-wiedzy/zapier-make-n8n-porownanie"
                                 className="text-accent hover:underline"
                               >
                                 Make vs n8n dla CRM

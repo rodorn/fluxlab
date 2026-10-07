@@ -111,7 +111,7 @@ export const STANY: Stan[] = [
     przygotowac:
       "Jedno zdanie o tym, co ma się dziać po wejściu na stronę, i pomysł na domenę.",
     zakres: 3,
-    produkt: "/landing-z-platnoscia",
+    produkt: "/strony-www",
   },
   {
     klucz: "obca",
@@ -124,7 +124,7 @@ export const STANY: Stan[] = [
     przygotowac:
       "Umowa z firmą, która ją prowadzi, i adres strony. Reszty nie potrzebujemy, wpis w rejestrze jest jawny.",
     zakres: 3,
-    produkt: "/wlasnosc-domeny",
+    produkt: "/audyt-poczty",
   },
 ];
 
@@ -157,7 +157,7 @@ export const ZMIANY: Zmiana[] = [
     czegoNieZalatwi:
       "Formularz nie zastąpi decyzji, kto i w jakim czasie na zgłoszenie odpowiada. Bez tego zgłoszenia tylko zmieniają miejsce oczekiwania.",
     zakres: 1,
-    produkt: "/landing-z-platnoscia",
+    produkt: "/strony-www",
   },
   {
     klucz: "platnosc",
@@ -167,7 +167,7 @@ export const ZMIANY: Zmiana[] = [
     czegoNieZalatwi:
       "Płatność wymaga regulaminu, polityki prywatności i widocznych danych sprzedawcy. To nie jest ozdoba, tylko warunek, żeby operator w ogóle włączył Wam przyjmowanie wpłat.",
     zakres: 2,
-    produkt: "/landing-z-platnoscia",
+    produkt: "/strony-www",
   },
   {
     klucz: "szybkosc",
@@ -187,7 +187,7 @@ export const ZMIANY: Zmiana[] = [
     czegoNieZalatwi:
       "Techniczne poprawki wpuszczają stronę do indeksu, ale nie ustawiają jej wysoko na zapytania ogólne. To jest osobna, dłuższa praca nad treścią i linkami.",
     zakres: 2,
-    produkt: "/widocznosc-w-google",
+    produkt: "/audyt-strony",
   },
 ];
 
@@ -244,10 +244,10 @@ export function ocenStrone(stan: Stan, zmiana: Zmiana): WerdyktStrony {
 /** Strony powiazane, wypisywane pod przyciskami, zawsze w zrodle HTML. */
 export const LINKI_POWIAZANE = [
   "/strony-www",
-  "/landing-z-platnoscia",
+  "/strony-www",
   "/audyt-strony",
-  "/wlasnosc-domeny",
-  "/widocznosc-w-google",
+  "/audyt-poczty",
+  "/audyt-strony",
 ]
   .map((href) => produktPo(href))
   .filter(

@@ -69,18 +69,6 @@ export const categories: Category[] = [
           "Audyt procesu, leady, zadania, statusy i pierwsze wdrożenia.",
       },
       {
-        href: "/strefa-wiedzy/jak-uporzadkowac-proces-sprzedazy-w-crm",
-        title: "Jak uporządkować proces sprzedaży w CRM",
-        description:
-          "Etapy, kryteria przejścia, pola obowiązkowe i raportowanie.",
-      },
-      {
-        href: "/strefa-wiedzy/jak-polaczyc-crm-z-innymi-systemami",
-        title: "Jak połączyć CRM z innymi systemami",
-        description:
-          "Model wdrożenia, najczęstsze błędy i jedno źródło prawdy.",
-      },
-      {
         href: "/strefa-wiedzy/pipedrive-vs-salesforce",
         title: "Pipedrive vs Salesforce, które CRM wybrać",
         description:
@@ -92,18 +80,6 @@ export const categories: Category[] = [
         description:
           "Freemium HubSpot kontra prostota Pipedrive. Pricing, skalowanie, realne koszty.",
       },
-      {
-        href: "/strefa-wiedzy/crm-dla-jednoosobowej-firmy",
-        title: "CRM dla jednoosobowej firmy",
-        description:
-          "Czy solo-firma potrzebuje CRM. Pipedrive, HubSpot Free, Folk, co wybrać i kiedy.",
-      },
-      {
-        href: "/strefa-wiedzy/salesforce-dla-malej-firmy",
-        title: "Salesforce dla małej firmy, czy ma sens",
-        description:
-          "Starter Suite, Enterprise, koszty wdrożenia i typowe pułapki w MŚP.",
-      },
     ],
   },
   {
@@ -113,34 +89,10 @@ export const categories: Category[] = [
       "Porównania narzędzi automatyzacji, Zapier, Make, n8n. Kiedy co wybrać w praktyce MŚP.",
     articles: [
       {
-        href: "/strefa-wiedzy/zapier-vs-make",
-        title: "Zapier vs Make, co wybrać w 2026",
-        description:
-          "Porównanie prostoty, elastyczności i kosztów. Praktyczne scenariusze MŚP.",
-      },
-      {
-        href: "/strefa-wiedzy/n8n-vs-zapier",
-        title: "n8n vs Zapier, kiedy warto przejść na self-hosting",
-        description:
-          "Open-source kontra SaaS. Koszt, kontrola danych, wymagania techniczne.",
-      },
-      {
-        href: "/strefa-wiedzy/make-vs-n8n",
-        title: "Make vs n8n, porównanie dla MŚP",
-        description:
-          "Koszt, elastyczność, krzywa nauki i lokalizacja danych w UE.",
-      },
-      {
         href: "/strefa-wiedzy/zapier-make-n8n-porownanie",
         title: "Zapier vs Make vs n8n, wielkie porównanie 2026",
         description:
           "Pełne porównanie trzech największych narzędzi automatyzacji, ceny, ograniczenia, rekomendacje.",
-      },
-      {
-        href: "/strefa-wiedzy/panel-do-sesji-ai",
-        title: "Kilkanaście sesji AI naraz: jak nad tym zapanować",
-        description:
-          "Stan rozmów, koszty i limity w jednym miejscu. Opis narzędzia z otwartym kodem.",
       },
     ],
   },
@@ -168,12 +120,6 @@ export const categories: Category[] = [
         description:
           "Jak ktoś obcy wysyła wiadomości z Twojej domeny i co ustawić, żeby przestał.",
       },
-      {
-        href: "/strefa-wiedzy/integracje-api-w-firmie-kiedy-warto",
-        title: "Integracje API w firmie, kiedy warto?",
-        description:
-          "Kiedy API ma sens, jakie problemy rozwiązuje i kiedy lepiej nie komplikować.",
-      },
     ],
   },
   {
@@ -183,22 +129,10 @@ export const categories: Category[] = [
       "Jak zautomatyzować raportowanie i unikać najczęstszych błędów w raportowaniu sprzedaży.",
     articles: [
       {
-        href: "/strefa-wiedzy/bledy-w-rejestrze-obiektow-hotelarskich",
-        title: "Rządowy rejestr hoteli gubi Kraków i Warszawę",
-        description:
-          "Dwa błędy w publicznym rejestrze: pięćset wpisów bez województwa i znikające rekordy przy poprawnym liczniku.",
-      },
-      {
         href: "/strefa-wiedzy/jak-zautomatyzowac-raportowanie-w-firmie",
         title: "Jak zautomatyzować raportowanie w firmie",
         description:
           "Krok po kroku: definicje, źródła danych, automatyczne dostarczanie.",
-      },
-      {
-        href: "/strefa-wiedzy/najczestsze-bledy-w-raportowaniu-sprzedazy",
-        title: "Najczęstsze błędy w raportowaniu sprzedaży",
-        description:
-          "Złe definicje, rozjazd danych, vanity metrics i ręczne arkusze.",
       },
     ],
   },
@@ -214,12 +148,6 @@ export const categories: Category[] = [
         description:
           "Praktyczne zastosowania: klasyfikacja, streszczenia, wsparcie obsługi.",
       },
-      {
-        href: "/strefa-wiedzy/kiedy-ai-ma-sens-a-kiedy-nie",
-        title: "Kiedy AI ma sens, a kiedy nie",
-        description:
-          "Prosty framework decyzji: wolumen, powtarzalność, jakość danych.",
-      },
     ],
   },
   {
@@ -228,40 +156,6 @@ export const categories: Category[] = [
     description:
       "Formy opodatkowania JDG, składka zdrowotna, mały ZUS Plus i VAT, porównania i kalkulacje na 2026 rok.",
     articles: [
-      {
-        href: "/strefa-wiedzy/jaka-forma-opodatkowania-jdg-2026",
-        title: "Jaka forma opodatkowania JDG w 2026?",
-        description:
-          "Porównanie skali, liniowego i ryczałtu, kryteria wyboru, progi, pułapki.",
-      },
-      {
-        href: "/strefa-wiedzy/ryczalt-czy-liniowy",
-        title: "Ryczałt czy liniowy, co się bardziej opłaca",
-        description:
-          "Kiedy ryczałt wygrywa, kiedy przegrywa i jak to policzyć.",
-      },
-      {
-        href: "/strefa-wiedzy/skala-czy-liniowy-jdg",
-        title: "Skala czy liniowy, porównanie dla JDG",
-        description: "Kwota wolna, progi, zdrowotna i realne scenariusze.",
-      },
-      {
-        href: "/strefa-wiedzy/jak-liczyc-zdrowotna-jdg",
-        title: "Jak liczyć składkę zdrowotną w JDG",
-        description: "Zasady 2026 dla skali, liniowego i ryczałtu.",
-      },
-      {
-        href: "/strefa-wiedzy/maly-zus-plus-kiedy-sie-oplaca",
-        title: "Mały ZUS Plus, kiedy się opłaca",
-        description:
-          "Warunki, limity, oszczędności i kiedy lepiej z niego nie korzystać.",
-      },
-      {
-        href: "/strefa-wiedzy/vat-w-jdg-kiedy-warto",
-        title: "VAT w JDG, kiedy warto być vatowcem",
-        description:
-          "Zwolnienie podmiotowe, próg 200 000 zł i wpływ na cashflow.",
-      },
     ],
   },
 ];

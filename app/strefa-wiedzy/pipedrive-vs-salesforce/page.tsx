@@ -204,7 +204,7 @@ export default function PipedriveVsSalesforceArticle() {
                           Jeśli interesuje Cię praca nad samym pipeline, zobacz
                           osobny materiał o tym, jak{" "}
                           <Link
-                            href="/strefa-wiedzy/jak-uporzadkowac-proces-sprzedazy-w-crm"
+                            href="/strefa-wiedzy/automatyzacja-crm-od-czego-zaczac"
                             className="text-accent hover:underline"
                           >
                             uporządkować proces sprzedaży w CRM
@@ -275,7 +275,7 @@ export default function PipedriveVsSalesforceArticle() {
                           skrzynką, kalendarzem, fakturowaniem, formularzami i
                           komunikatorami. Tu dobrze sprawdza się{" "}
                           <Link
-                            href="/automatyzacja-pipedrive"
+                            href="/automatyzacja-formularza-do-pipedrive"
                             className="text-accent hover:underline"
                           >
                             dedykowana automatyzacja Pipedrive
@@ -290,14 +290,14 @@ export default function PipedriveVsSalesforceArticle() {
                           architekturę. Praktyczne pokrycie tematu znajdziesz w
                           artykule o{" "}
                           <Link
-                            href="/strefa-wiedzy/jak-polaczyc-crm-z-innymi-systemami"
+                            href="/strefa-wiedzy/automatyzacja-crm-od-czego-zaczac"
                             className="text-accent hover:underline"
                           >
                             łączeniu CRM z innymi systemami
                           </Link>
                           , a samo wdrożenie domyka{" "}
                           <Link
-                            href="/automatyzacja-salesforce"
+                            href="/automatyzacja-leadow-crm"
                             className="text-accent hover:underline"
                           >
                             automatyzacja Salesforce
@@ -509,7 +509,7 @@ export default function PipedriveVsSalesforceArticle() {
                             Brevo, ActiveCampaign, MailerLite), szczegóły w
                             materiale o{" "}
                             <Link
-                              href="/strefa-wiedzy/jak-polaczyc-crm-z-innymi-systemami"
+                              href="/strefa-wiedzy/automatyzacja-crm-od-czego-zaczac"
                               className="text-accent hover:underline"
                             >
                               łączeniu CRM z innymi systemami

@@ -59,34 +59,6 @@ export const businessTools: Narzedzie[] = [
     ikona: "lupa",
   },
   {
-    title: "Czy przeglądarka straszy Twoją stroną",
-    description:
-      "Wpiszcie adres strony, a pokażemy, co widzi ktoś, kto trafia do Was z wyszukiwarki. Wygasły certyfikat albo certyfikat firmy hostingowej oznacza pełnoekranowe ostrzeżenie, po którym większość odwiedzających zawraca.",
-    href: "/naprawa-https",
-    ikona: "tarcza",
-  },
-  {
-    title: "Przeceny bez wymaganej informacji o cenie",
-    description:
-      "Podajcie adres sklepu, a sprawdzimy Wasze aktualne przeceny i pokażemy te, przy których brakuje obowiązkowej informacji o najniższej cenie z trzydziestu dni. Każda pozycja z linkiem do sprawdzenia.",
-    href: "/rejestr-cen",
-    ikona: "metka",
-  },
-  {
-    title: "Polskie teksty w wersji angielskiej",
-    description:
-      "Wpiszcie adres firmy, a znajdziemy Waszą wersję obcojęzyczną i policzymy fragmenty, które zostały po polsku, oraz sprawdzimy, czy wyszukiwarka w ogóle wie, że macie wersje językowe.",
-    href: "/kontrola-jezykow",
-    ikona: "jezyk",
-  },
-  {
-    title: "Ilu masz konkurentów w okolicy",
-    description:
-      "Podajcie miejscowość i wybierzcie branżę, a policzymy punkty w promieniu jednego, trzech i pięciu kilometrów oraz to, ilu mieszkańców przypada na jeden taki punkt. Przydaje się przed podpisaniem najmu.",
-    href: "/analiza-lokalizacji",
-    ikona: "pinezka",
-  },
-  {
     title: "Czy asystent AI widzi Twoją stronę",
     description:
       "Wpiszcie domenę, a sprawdzimy siedem rzeczy, od których zależy, czy roboty zbierające treść dla ChatuGPT, Claude'a i Perplexity mogą ją w ogóle przeczytać: dostęp w robots.txt, treść widoczną bez uruchamiania skryptów, dane uporządkowane, metadane, mapę strony i plik llms.txt.",
@@ -108,39 +80,11 @@ export const businessTools: Narzedzie[] = [
     ikona: "paczka",
   },
   {
-    title: "Czy Twój dłużnik znika z rejestru",
-    description:
-      "Wpiszcie nazwę spółki albo numer KRS, a sprawdzimy w Monitorze Sądowym, czy sąd nie wszczął postępowania o jej rozwiązanie bez likwidacji. Od obwieszczenia biegną trzy miesiące na sprzeciw, potem podmiot znika razem z Waszą należnością.",
-    href: "/czujka-rejestrowa",
-    ikona: "mlotek",
-  },
-  {
     title: "Czy klient ustali, komu płaci",
     description:
       "Wpiszcie adres firmy, a wyciągniemy ze strony, kontaktu i regulaminu numer NIP oraz numer konta i sprawdzimy je w wykazie podatników VAT, dokładnie tak jak zrobi to księgowość Waszego klienta przed przelewem.",
     href: "/dane-sprzedawcy",
     ikona: "pieczec",
-  },
-  {
-    title: "Czy Google ma listę Twoich podstron",
-    description:
-      "Wpiszcie adres firmy, a sprawdzimy, czy macie mapę strony, czy jest wskazana w robots.txt i czy adresy z niej faktycznie działają. Martwy adres na tej liście zużywa limit odwiedzin robota.",
-    href: "/mapa-strony",
-    ikona: "mapa",
-  },
-  {
-    title: "Czy Google widzi Twoją stronę podwójnie",
-    description:
-      "Wpiszcie adres firmy, a sprawdzimy cztery wersje tego adresu, z www i bez, i pokażemy, czy któraś przekierowuje na drugą. Dwie działające wersje z tą samą treścią to dla wyszukiwarki dwie osobne strony.",
-    href: "/podwojny-adres",
-    ikona: "rozwidlenie",
-  },
-  {
-    title: "Kto jest właścicielem Waszej domeny",
-    description:
-      "Wpiszcie domenę, a odczytamy z publicznego rejestru, kto figuruje jako abonent i kiedy wygasa rejestracja. Bywa, że właścicielem adresu firmy jest ten, kto kiedyś robił stronę.",
-    href: "/wlasnosc-domeny",
-    ikona: "klucz",
   },
   {
     title: "Sprawdzenie NIP i kontrahenta",
@@ -157,32 +101,11 @@ export const businessTools: Narzedzie[] = [
     ikona: "koperta",
   },
   {
-    title: "Czy Twoja strona nie wypisała się z Google",
-    description:
-      "Wpiszcie adres firmy, a sprawdzimy trzy miejsca, w których zostaje blokada indeksowania po wersji roboczej: nagłówek odpowiedzi, znacznik w kodzie strony i plik robots.txt. Właściciel tego nie widzi, bo wchodzi z zakładki.",
-    href: "/widocznosc-w-google",
-    ikona: "oko",
-  },
-  {
-    title: "Czego kupujący nie znajdzie o zwrotach",
-    description:
-      "Podajcie adres sklepu, a sprawdzimy sześć rzeczy, których kupujący szuka przed zakupem: termin na odstąpienie, wzór formularza, kto płaci za odesłanie, jak i kiedy wracają pieniądze oraz czy zwrot da się zgłosić online.",
-    href: "/panel-zwrotow",
-    ikona: "zwrot",
-  },
-  {
     title: "Kalkulator kosztu obsługi leadów",
     description:
       "Sprawdźcie, ile miesięcznie kosztuje ręczne przepisywanie leadów, zakładanie tematów w CRM i ręczne raporty. Realny koszt w zł, nie ogólniki.",
     href: "/koszt-recznej-obslugi-leadow",
     ikona: "kalkulator",
-  },
-  {
-    title: "Audyt CRM, checklist online",
-    description:
-      "10 pytań tak/nie. Wynik X/10 + obszar z największym potencjałem automatyzacji. Bez rejestracji, w 3 minuty.",
-    href: "/audyt-crm",
-    ikona: "lista",
   },
   {
     title: "Zatrudnić czy zautomatyzować?",
@@ -194,33 +117,6 @@ export const businessTools: Narzedzie[] = [
 ];
 
 export const otherTools: Narzedzie[] = [
-  {
-    title: "Ceny energii na jutro",
-    description:
-      "Rynkowa cena energii z PSE na kolejną dobę: najtańsze i najdroższe cztery godziny oraz godziny z ceną ujemną. Przydaje się, gdy możecie przesunąć ładowanie auta, pompę ciepła albo magazyn energii.",
-    href: "/ceny-energii-jutro",
-  },
-  {
-    title: "Dobór samochodu",
-    description:
-      "Znajdź idealny segment, nadwozie i moc dla siebie. Odpowiedz na kilka pytań, a algorytm dopasuje najlepsze propozycje.",
-    href: "/dobor-samochodu",
-    image: "/photos/car-chooser/type-sport.webp",
-  },
-  {
-    title: "Kalkulator kosztów auta",
-    description:
-      "Oblicz pełny koszt posiadania samochodu: paliwo, ubezpieczenie, serwis, amortyzacja i więcej.",
-    href: "/kalkulator-kosztow",
-    image: "/photos/car-chooser/type-osobowy.jpg",
-  },
-  {
-    title: "Kalkulator podatkowy JDG",
-    description:
-      "Porównaj skalę podatkową, podatek liniowy i ryczałt. Uwzględnia składki ZUS, VAT, ulgi i daje jasną odpowiedź, co się bardziej opłaca.",
-    href: "/kalkulator-podatkowy",
-    image: "/photos/tax-calculation/calculator.jpg",
-  },
 ];
 
 /** Ile narzędzi obiecujemy na stronie głównej. */
@@ -232,7 +128,6 @@ export const LICZBA_NARZEDZI = businessTools.length;
  * produktu pod tym samym adresem nie trafiały do dwóch różnych działów.
  */
 const FILAR_SPOZA_KATALOGU: Record<string, ProductCategory> = {
-  "/audyt-crm": "automatyzacja",
   "/koszt-recznej-obslugi-leadow": "automatyzacja",
   "/ksef-2027": "dane",
   "/numer-ksef": "dane",
@@ -276,5 +171,4 @@ export function narzedziaFilaru(filar: ProductCategory): Narzedzie[] {
  */
 export const NARZEDZIE_WSPOLNE: Record<string, string> = {
   "/sprawdz-kontrahenta": "/sprawdzenie-nip",
-  "/wdrozenie-n8n-cena": "/tansze-automatyzacje",
 };

@@ -37,12 +37,6 @@ export default function Page() {
       ctaLabel="Porozmawiajmy o naprawie"
       ctaNote="Diagnoza nic nie kosztuje"
       powiazane={[
-        {
-          przed: "Jeśli strona ma wersję obcojęzyczną, osobno sprawdzamy, czy nie zostały w niej polskie przyciski i akapity:",
-          kotwica: "kontrola wersji językowych",
-          href: "/kontrola-jezykow",
-          po: ".",
-        },
       ]}
       checks={[
         {

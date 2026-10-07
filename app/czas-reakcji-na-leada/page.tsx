@@ -765,7 +765,7 @@ export default function CzasReakcjiNaLeada() {
                               </li>
                               <li>
                                 <Link
-                                  href="/automatyzacja-pipedrive"
+                                  href="/automatyzacja-formularza-do-pipedrive"
                                   className="text-accent hover:underline"
                                 >
                                   Automatyzacja Pipedrive

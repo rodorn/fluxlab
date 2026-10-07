@@ -49,7 +49,7 @@ export const BRANZE: Branza[] = [
     robie:
       "Stan magazynowy ma jedno źródło prawdy, a pozostałe miejsca z niego czytają. Zamówienie, faktura i etykieta kurierska powstają z tego samego rekordu, więc znika miejsce, w którym dane się rozjeżdżają.",
     narzedzie: {
-      href: "/rejestr-cen",
+      href: "/narzedzia",
       label: "Sprawdź, czy Wasze przeceny spełniają Omnibusa",
     },
   },

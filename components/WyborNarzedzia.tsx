@@ -49,21 +49,6 @@ const SYTUACJE: Sytuacja[] = [
     odpowiedz:
       "Zanim ktokolwiek zacznie pozycjonować, warto wykluczyć trzy rzeczy, które po prostu wyłączają stronę z wyników.",
     wskazania: [
-      {
-        href: "/widocznosc-w-google",
-        powod:
-          "Blokada indeksowania zostawiona po wersji roboczej wyłącza całą witrynę i nie widać jej z przeglądarki.",
-      },
-      {
-        href: "/mapa-strony",
-        powod:
-          "Bez działającej mapy strony robot sam musi znaleźć podstrony, a martwe adresy na liście zużywają jego limit.",
-      },
-      {
-        href: "/podwojny-adres",
-        powod:
-          "Dwie działające wersje adresu z tą samą treścią to dla wyszukiwarki dwie strony, które odbierają sobie pozycje.",
-      },
     ],
   },
   {
@@ -96,11 +81,6 @@ const SYTUACJE: Sytuacja[] = [
           "Od 1 stycznia 2027 przelew za fakturę z KSeF zawiera jej numer. Suma kontrolna wyłapie literówkę, zanim wpłata utknie u kontrahenta.",
       },
       {
-        href: "/czujka-rejestrowa",
-        powod:
-          "Sąd może rozwiązać spółkę bez likwidacji. Od obwieszczenia biegną trzy miesiące na sprzeciw, potem należność znika razem z dłużnikiem.",
-      },
-      {
         href: "/dane-sprzedawcy",
         powod:
           "To samo z drugiej strony: czy klient ustali ze strony, komu płaci, zanim zrezygnuje z zakupu.",
@@ -113,16 +93,6 @@ const SYTUACJE: Sytuacja[] = [
     odpowiedz:
       "Trzy miejsca, w których sklep traci pieniądze po cichu: przecena, zwrot i faktura od kuriera.",
     wskazania: [
-      {
-        href: "/rejestr-cen",
-        powod:
-          "Przy każdej obniżce trzeba podać najniższą cenę z trzydziestu dni. Sprawdzenie pokazuje pozycje, przy których jej nie ma.",
-      },
-      {
-        href: "/panel-zwrotow",
-        powod:
-          "Kupujący, który nie znajdzie zasad zwrotu, pisze maila albo nie kupuje wcale.",
-      },
       {
         href: "/audyt-kurierski",
         powod:
@@ -159,11 +129,6 @@ const SYTUACJE: Sytuacja[] = [
         powod:
           "Przepisywanie leadów, zakładanie tematów w CRM i ręczne raporty, przeliczone na koszt miesięczny w złotych.",
       },
-      {
-        href: "/audyt-crm",
-        powod:
-          "Dziesięć pytań tak lub nie i wskazanie obszaru, w którym automatyzacja da najwięcej.",
-      },
     ],
   },
   {
@@ -172,16 +137,6 @@ const SYTUACJE: Sytuacja[] = [
     odpowiedz:
       "Dwie rzeczy, które zwykle zostają u wykonawcy, a powinny należeć do firmy.",
     wskazania: [
-      {
-        href: "/wlasnosc-domeny",
-        powod:
-          "Publiczny rejestr pokazuje, kto figuruje jako abonent domeny i kiedy wygasa rejestracja.",
-      },
-      {
-        href: "/naprawa-https",
-        powod:
-          "Wygasły certyfikat albo certyfikat wystawiony na firmę hostingową oznacza pełnoekranowe ostrzeżenie przy wejściu.",
-      },
     ],
   },
   {
@@ -190,16 +145,6 @@ const SYTUACJE: Sytuacja[] = [
     odpowiedz:
       "Trzy sprawdzenia przed decyzją: ilu konkurentów, w jakim języku i czy asystenci AI w ogóle Was przeczytają.",
     wskazania: [
-      {
-        href: "/analiza-lokalizacji",
-        powod:
-          "Liczba punktów w promieniu jednego, trzech i pięciu kilometrów oraz liczba mieszkańców na jeden punkt.",
-      },
-      {
-        href: "/kontrola-jezykow",
-        powod:
-          "Wersja obcojęzyczna z połową tekstów po polsku kosztuje zaufanie dokładnie tam, gdzie go najmniej macie.",
-      },
       {
         href: "/widocznosc-w-ai",
         powod:
@@ -227,11 +172,6 @@ const SYTUACJE: Sytuacja[] = [
         href: "/e-doreczenia-integracja",
         powod:
           "Terminy na adres do doręczeń elektronicznych wchodzą etapami i zależą od tego, gdzie i kiedy podmiot został zarejestrowany.",
-      },
-      {
-        href: "/rejestr-cen",
-        powod:
-          "Przecena bez informacji o najniższej cenie z trzydziestu dni jest naruszeniem, a sprawdzenie pokazuje konkretne karty produktów.",
       },
     ],
   },

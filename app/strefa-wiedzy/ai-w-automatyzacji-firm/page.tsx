@@ -73,7 +73,7 @@ export default function AiWAutomatyzacjiFirmPage() {
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
                         <Link
-                          href="/automatyzacja-ai"
+                          href="/automatyzacja-leadow-crm"
                           className="text-accent hover:underline"
                         >
                           AI w automatyzacji
@@ -133,7 +133,7 @@ export default function AiWAutomatyzacjiFirmPage() {
                         Nie są chatbotem „do wszystkiego". Są małym, praktycznym
                         elementem szerszej{" "}
                         <Link
-                          href="/automatyzacja-procesow-biznesowych"
+                          href="/automatyzacja-leadow-crm"
                           className="text-accent hover:underline"
                         >
                           automatyzacji procesów biznesowych
@@ -167,7 +167,7 @@ export default function AiWAutomatyzacjiFirmPage() {
                 <p className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
                   Chcesz wdrożyć AI tam, gdzie naprawdę da efekt?
                 </p>
-                <Link href="/automatyzacja-ai" className="btn-primary">
+                <Link href="/automatyzacja-leadow-crm" className="btn-primary">
                   Zobacz usługę Automatyzacja AI
                 </Link>
               </div>

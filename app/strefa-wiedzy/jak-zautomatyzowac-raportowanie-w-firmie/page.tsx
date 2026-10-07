@@ -190,7 +190,7 @@ export default function AutomatyzacjaRaportowaniaArticle() {
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
                       Więcej o integracji źródeł w{" "}
                       <Link
-                        href="/strefa-wiedzy/integracje-api-w-firmie-kiedy-warto"
+                        href="/integracje-api"
                         className="text-accent hover:underline"
                       >
                         Integracje API w firmie, kiedy warto
@@ -495,7 +495,7 @@ export default function AutomatyzacjaRaportowaniaArticle() {
                       </li>
                       <li>
                         <Link
-                          href="/strefa-wiedzy/integracje-api-w-firmie-kiedy-warto"
+                          href="/integracje-api"
                           className="text-accent hover:underline"
                         >
                           Integracje API w firmie, kiedy warto
@@ -724,7 +724,7 @@ export default function AutomatyzacjaRaportowaniaArticle() {
                           </li>
                           <li>
                             <Link
-                              href="/strefa-wiedzy/integracje-api-w-firmie-kiedy-warto"
+                              href="/integracje-api"
                               className="text-accent hover:underline"
                             >
                               Integracje API w firmie, kiedy warto
@@ -739,7 +739,7 @@ export default function AutomatyzacjaRaportowaniaArticle() {
                         <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400">
                           <li>
                             <Link
-                              href="/automatyzacja-procesow-biznesowych"
+                              href="/automatyzacja-leadow-crm"
                               className="text-accent hover:underline"
                             >
                               Automatyzacja procesów biznesowych

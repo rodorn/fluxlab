@@ -237,9 +237,6 @@ export default function AutomatyzacjaFormularzaDoPipedrive() {
                 >
                   Chcemy połączyć formularz z CRM
                 </TrackedCTA>
-                <Link href="/automatyzacja-pipedrive" className="btn-secondary">
-                  Zobacz pełną ofertę Pipedrive
-                </Link>
               </div>
             </div>
           </div>
@@ -737,15 +734,10 @@ export default function AutomatyzacjaFormularzaDoPipedrive() {
                           </div>
                           <p className="mt-6 text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
                             Powiązane:{" "}
-                            <Link
-                              href="/automatyzacja-pipedrive"
-                              className="text-accent hover:underline"
-                            >
-                              automatyzacja Pipedrive
-                            </Link>
+                            automatyzacja Pipedrive
                             ,{" "}
                             <Link
-                              href="/raportowanie-z-pipedrive"
+                              href="/automatyzacja-raportowania"
                               className="text-accent hover:underline"
                             >
                               raportowanie z Pipedrive

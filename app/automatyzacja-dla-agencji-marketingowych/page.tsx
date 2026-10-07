@@ -159,30 +159,16 @@ const faq = [
 ];
 
 const relatedServices = [
-  {
-    label: "Automatyzacja procesów biznesowych",
-    href: "/automatyzacja-procesow-biznesowych",
-  },
   { label: "Automatyzacja CRM", href: "/automatyzacja-leadow-crm" },
   { label: "Automatyzacja raportowania", href: "/automatyzacja-raportowania" },
   { label: "Automatyzacja leadów", href: "/automatyzacja-leadow-crm" },
   { label: "Integracje API", href: "/integracje-api" },
-  { label: "n8n, wdrożenia", href: "/n8n" },
-  { label: "Zapier i Make", href: "/zapier-make" },
 ];
 
 const relatedArticles = [
   {
     label: "Jak zautomatyzować raportowanie w firmie",
     href: "/strefa-wiedzy/jak-zautomatyzowac-raportowanie-w-firmie",
-  },
-  {
-    label: "Jak połączyć CRM z innymi systemami",
-    href: "/strefa-wiedzy/jak-polaczyc-crm-z-innymi-systemami",
-  },
-  {
-    label: "Najczęstsze błędy w raportowaniu sprzedaży",
-    href: "/strefa-wiedzy/najczestsze-bledy-w-raportowaniu-sprzedazy",
   },
   {
     label: "Jak policzyć ROI z automatyzacji",
@@ -365,14 +351,14 @@ export default function AutomatyzacjaDlaAgencjiMarketingowych() {
                         Po szczegóły dotyczące samych platform automatyzacji
                         zajrzyj do{" "}
                         <Link
-                          href="/n8n"
+                          href="/strefa-wiedzy/zapier-make-n8n-porownanie"
                           className="text-accent hover:underline"
                         >
                           n8n
                         </Link>{" "}
                         lub{" "}
                         <Link
-                          href="/zapier-make"
+                          href="/strefa-wiedzy/zapier-make-n8n-porownanie"
                           className="text-accent hover:underline"
                         >
                           Zapier i Make

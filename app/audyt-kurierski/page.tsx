@@ -37,18 +37,6 @@ export default function Page() {
       ctaLabel="Zamów audyt faktur"
       ctaNote="Pierwsza faktura sprawdzona za darmo"
       powiazane={[
-        {
-          przed: "Dopłaty to tylko jedna z pozycji, które zjadają zysk. Ile zostaje na każdej sztuce po prowizji, zwrocie i dopłacie do darmowej wysyłki, pokazuje",
-          kotwica: "audyt marży na produktach",
-          href: "/audyt-marz",
-          po: ".",
-        },
-        {
-          przed: "Część paczek na fakturze to zwroty. Czy kupujący znajdzie na Waszej stronie termin, formularz i informację, kto płaci za odesłanie, sprawdzicie w",
-          kotwica: "kontroli informacji o zwrotach",
-          href: "/panel-zwrotow",
-          po: ".",
-        },
       ]}
       checks={[
         {

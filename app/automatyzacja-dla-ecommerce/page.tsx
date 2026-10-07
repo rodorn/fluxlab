@@ -160,25 +160,15 @@ const faq = [
 ];
 
 const relatedServices = [
-  {
-    label: "Automatyzacja procesów biznesowych",
-    href: "/automatyzacja-procesow-biznesowych",
-  },
   { label: "Integracje API", href: "/integracje-api" },
   { label: "Automatyzacja CRM", href: "/automatyzacja-leadow-crm" },
   { label: "Automatyzacja raportowania", href: "/automatyzacja-raportowania" },
-  { label: "n8n, wdrożenia", href: "/n8n" },
-  { label: "Zapier i Make", href: "/zapier-make" },
 ];
 
 const relatedArticles = [
   {
     label: "Co to jest automatyzacja procesów biznesowych",
     href: "/strefa-wiedzy/co-to-jest-automatyzacja-procesow-biznesowych",
-  },
-  {
-    label: "Integracje API w firmie, kiedy warto",
-    href: "/strefa-wiedzy/integracje-api-w-firmie-kiedy-warto",
   },
   {
     label: "Jak policzyć ROI z automatyzacji",
@@ -300,7 +290,7 @@ export default function AutomatyzacjaDlaEcommerce() {
                         Panel sklepu pokazuje obrót, a nie to, co zostaje po
                         prowizji, zwrocie i dopłacie do wysyłki; liczy to{" "}
                         <Link
-                          href="/audyt-marz"
+                          href="/narzedzia"
                           className="text-accent hover:underline"
                         >
                           audyt marży na produktach
@@ -308,23 +298,18 @@ export default function AutomatyzacjaDlaEcommerce() {
                         . Przy przecenach sprawdzamy, czy każda pozycja ma
                         informację o najniższej cenie z 30 dni (
                         <Link
-                          href="/rejestr-cen"
+                          href="/narzedzia"
                           className="text-accent hover:underline"
                         >
                           kontrola cen przed obniżką
                         </Link>
                         ), a przy zwrotach, czy kupujący znajdzie termin,
                         formularz i koszt odesłania (
-                        <Link
-                          href="/panel-zwrotow"
-                          className="text-accent hover:underline"
-                        >
-                          kontrola informacji o zwrotach
-                        </Link>
+                        kontrola informacji o zwrotach
                         ). Jeśli na stronie odpowiada bot, zderzamy jego
                         odpowiedzi z cennikiem i regulaminem w{" "}
                         <Link
-                          href="/audyt-chatbota"
+                          href="/automatyzacja-leadow-crm"
                           className="text-accent hover:underline"
                         >
                           audycie chatbota
@@ -420,14 +405,14 @@ export default function AutomatyzacjaDlaEcommerce() {
                       <p className="text-sm text-gray-500 dark:text-gray-400 mt-8">
                         Jeśli dopiero zastanawiasz się, czy wybrać{" "}
                         <Link
-                          href="/n8n"
+                          href="/strefa-wiedzy/zapier-make-n8n-porownanie"
                           className="text-accent hover:underline"
                         >
                           n8n
                         </Link>{" "}
                         czy{" "}
                         <Link
-                          href="/zapier-make"
+                          href="/strefa-wiedzy/zapier-make-n8n-porownanie"
                           className="text-accent hover:underline"
                         >
                           Zapier lub Make

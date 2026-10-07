@@ -78,7 +78,7 @@ export default function RoiAutomatyzacjiArticle() {
                       ROI, czyli zwrot z inwestycji, pokazuje, czy wdrożenie
                       przyniosło więcej korzyści niż kosztowało. W przypadku{" "}
                       <Link
-                        href="/automatyzacja-procesow-biznesowych"
+                        href="/automatyzacja-leadow-crm"
                         className="text-accent hover:underline"
                       >
                         automatyzacji procesów biznesowych
@@ -442,7 +442,7 @@ export default function RoiAutomatyzacjiArticle() {
                       </Link>
                       ,{" "}
                       <Link
-                        href="/strefa-wiedzy/integracje-api-w-firmie-kiedy-warto"
+                        href="/integracje-api"
                         className="text-accent hover:underline"
                       >
                         Integracje API w firmie, kiedy warto
@@ -631,7 +631,7 @@ export default function RoiAutomatyzacjiArticle() {
                           </li>
                           <li>
                             <Link
-                              href="/strefa-wiedzy/integracje-api-w-firmie-kiedy-warto"
+                              href="/integracje-api"
                               className="text-accent hover:underline"
                             >
                               Integracje API w firmie, kiedy warto
@@ -654,7 +654,7 @@ export default function RoiAutomatyzacjiArticle() {
                         <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400">
                           <li>
                             <Link
-                              href="/automatyzacja-procesow-biznesowych"
+                              href="/automatyzacja-leadow-crm"
                               className="text-accent hover:underline"
                             >
                               Automatyzacja procesów biznesowych

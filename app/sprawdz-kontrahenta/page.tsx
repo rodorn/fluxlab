@@ -157,7 +157,7 @@ export default function SprawdzKontrahentaPage() {
             a rynek wokół lokalu, czyli ilu konkurentów jest w okolicy i ilu
             mieszkańców przypada na jeden punkt, pokaże{" "}
             <Link
-              href="/analiza-lokalizacji"
+              href="/narzedzia"
               className="font-medium text-accent underline underline-offset-2"
             >
               analiza lokalizacji

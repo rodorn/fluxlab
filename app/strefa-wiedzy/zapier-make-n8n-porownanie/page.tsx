@@ -489,19 +489,9 @@ export default function ZapierMakeN8nPorownanieArticle() {
                         trzeba schodzić nisko, i pełną kontrolę n8n tam, gdzie
                         błąd kosztuje pieniądze. Pełniejsze omówienie tego
                         modelu znajdziesz w{" "}
-                        <Link
-                          href="/strefa-wiedzy/n8n-vs-zapier"
-                          className="text-accent hover:underline"
-                        >
-                          n8n vs Zapier
-                        </Link>{" "}
+                        n8n vs Zapier{" "}
                         oraz{" "}
-                        <Link
-                          href="/strefa-wiedzy/make-vs-n8n"
-                          className="text-accent hover:underline"
-                        >
-                          Make vs n8n
-                        </Link>
+                        Make vs n8n
                         .
                       </p>
 
@@ -516,7 +506,7 @@ export default function ZapierMakeN8nPorownanieArticle() {
                           pierwsze scenariusze. Bez sprzedażowej presji.
                         </p>
                         <Link
-                          href="/automatyzacja-procesow-biznesowych"
+                          href="/automatyzacja-leadow-crm"
                           className="btn-primary inline-block"
                         >
                           Zobacz usługę automatyzacji procesów
@@ -638,31 +628,6 @@ export default function ZapierMakeN8nPorownanieArticle() {
                           <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400">
                             <li>
                               <Link
-                                href="/strefa-wiedzy/zapier-vs-make"
-                                className="text-accent hover:underline"
-                              >
-                                Zapier vs Make, co wybrać do automatyzacji w
-                                2026
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                href="/strefa-wiedzy/n8n-vs-zapier"
-                                className="text-accent hover:underline"
-                              >
-                                n8n vs Zapier, kiedy warto iść w self-hosting
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                href="/strefa-wiedzy/make-vs-n8n"
-                                className="text-accent hover:underline"
-                              >
-                                Make vs n8n, porównanie dla firm MŚP
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
                                 href="/strefa-wiedzy/automatyzacja-vs-zatrudnienie"
                                 className="text-accent hover:underline"
                               >
@@ -679,23 +644,7 @@ export default function ZapierMakeN8nPorownanieArticle() {
                           <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400">
                             <li>
                               <Link
-                                href="/zapier-make"
-                                className="text-accent hover:underline"
-                              >
-                                Zapier i Make
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                href="/n8n"
-                                className="text-accent hover:underline"
-                              >
-                                n8n
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                href="/automatyzacja-procesow-biznesowych"
+                                href="/automatyzacja-leadow-crm"
                                 className="text-accent hover:underline"
                               >
                                 Automatyzacja procesów biznesowych
