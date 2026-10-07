@@ -3103,3 +3103,20 @@ Z1 jednym zdaniem: z 32 sesji bez odsyłacza 18 to nasza automatyka, 12 inne, 2 
 - Z4: 5 maili 09:56, delivered: biurobomar 01a1155c-d44b, taxcontrol 01a1155d-0fed, contafinanse 01a1155d-4b42, biuro-mp 01a1155d-86e4, kkfalfa 01a1155d-c23d.
 **Dla Pawła:** bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację).
 **Zostało otwarte:** Z5 (pkt.pl `uslugi-ksiegowe` i `kancelaria-podatkowa`, 12 miast), Z6 wysyłka follow-upu o 11:46 (10 maili, nie 11), dalej według planu.
+
+## 2026-10-07 11:25
+**Kanał:** outreach (nowe źródła domen, Z5 i Z8 z planu).
+**Co zrobione:** dwa nowe źródła domen przepuszczone przez drogę KRS; w kolejce na Z9 (14:46) stoi 5 sprawdzonych maili 037 do 041 do biur bez adresu do e-Doręczeń.
+**Ruch:** ostatnia doba 25 odsłon, 19 osób (po filtrze własnej automatyki); źródła: facebook 4, www.google.com 2, mail 2, m.facebook.com 1; najczęściej /automatyzacja-leadow-crm (5), / (4), /numer-ksef (3); 0 uruchomień narzędzi; odrzucone boty 7 sesji, własna automatyka 25 sesji.
+**Dowód:**
+
+| źródło | kategoria / zakres | domeny na liście | nowe domeny | spółki w KRS | bez BAE | maile | maile na 100 domen |
+|---|---|---|---|---|---|---|---|
+| pkt.pl | `uslugi-ksiegowe`, 12 miast | 172 | 19 | 14 (razem) | 2 (razem) | 1 (razem) | 1,0 (razem) |
+| pkt.pl | `kancelaria-podatkowa`, 12 miast | 93 | 79 | | | | |
+| CIK | mazowieckie, 308 biur, 131 spółek, 70 z www | 70 | 64 | 29 | 5 | 4 | 6,3 |
+
+  Miasta pkt.pl: Radom, Płock, Włocławek, Elbląg, Słupsk, Legnica, Tarnów, Nowy Sącz, Koszalin, Wałbrzych, Grudziądz, Piotrków Trybunalski, po 2 strony na kategorię (druga strona prawie pusta, stąd 98 zamiast ok. 240 domen). Pliki: `pkt_domeny16_2026-10-07.json` (15 był zajęty), `krs_partia19_2026-10-07.json`, `cik_domeny_2026-10-07.json`, `krs_partia20_2026-10-07.json`.
+  Maile (wszystkie PKD 69.20Z w odpisie pobranym 7.10, adres ogólny ze strony): 037 Kancelaria HMP Invest, Legnica, KRS 0000336773, biuro@hmpinvest.pl; 038 BJM, Szczytno, 0000226847, bjmkancelaria@bjmkancelaria.pl; 039 AA Finanse, Warszawa, 0001082791, kontakt@aafinanse.pl; 040 Biuro Rachunkowe Help Anna Semrau, Warszawa, 0000817800, biuro@biuro-help.pl; 041 Kancelaria Finansowa Clear, Warszawa, 0000435055, info@kancelariaclear.pl. Odrzucone: alltax.slupsk.pl (JDG, KRS w stopce należy do agencji CatchyMedia), sklodowscy.pl (HONESTUS, PKD bez 69.20, strona kilku spółek). Statystyka w treści maili przeliczona: 272 z 336 spółek ma BAE.
+**Dla Pawła:** bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację).
+**Zostało otwarte:** Z6 wysyłka follow-upu 10 maili o 11:46; Z7 o 12:46; Z9 o 14:46 ma 5 maili (próg 3 spełniony, przed wysyłką BAE ponownie z odpisu); CIK ma 15 innych województw do drugiej rundy.
