@@ -3319,3 +3319,18 @@ Z1 jednym zdaniem: z 32 sesji bez odsyłacza 18 to nasza automatyka, 12 inne, 2 
   Fora: Gofin 1559705 do 1559796, tematy KSeF i e-Doręczeń: 1559733, 1559738, 1559778, żaden nie pasuje wprost do narzędzia, dwa mają już trafną odpowiedź. Allegro: najnowszy wątek o KSeF nadal 1224959. 0 tekstów.
 **Dla Pawła:** bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację).
 **Zostało otwarte:** Z15 o 20:50 (10 żądań indeksowania), Z19 o 00:46, Z23, Z24; czwartek 9:46 wysyłka 042 do 045. Gofin następne sprawdzenie od 1559797.
+
+## 2026-10-07 18:52
+**Kanał:** outreach z gotowym raportem (Z19 z planu, pomiar wieczorny; przed czasem, bo Z15 ma żądania indeksowania dopiero od 20:50, a reszta planu jest nocna).
+**Co zrobione:** statusy wszystkich 20 dzisiejszych maili sprawdzone 4 do 9 godzin po wysyłce, skrzynka Zoho i licznik przejrzane od 16:00; nic nowego nie przyszło.
+**Ruch:** ostatnia doba 42 odsłony, 25 osób (mail 10, facebook 4, m.facebook.com 1, www.google.com 1); najczęściej /e-doreczenia-integracja 10, /audyt-strony 8, /automatyzacja-leadow-crm 6; 3 uruchomienia narzędzi (2 skan przykład, 1 numer KSeF przykład) i 1 audyt; odrzucone: boty 7 sesji, własna automatyka 25 sesji.
+**Dowód:**
+
+| segment | wysłane | delivered | bounced | complained | odpowiedzi od 16:00 | sesje `mail` od 16:46 | uruchomienia od 17:46 |
+|---|---|---|---|---|---|---|---|
+| ksiegowe (Z4 09:56, Z9 14:46) | 10 | 10 | 0 | 0 | 0 | 0 | 0 |
+| ksiegowe-fu (Z6 11:46) | 10 | 10 | 0 | 0 | 0 | 0 | 0 |
+
+  Zoho od 16:00: jedyny mail to FINREAL 16:14 (klient, tylko odnotowany). `pomijane.json` bez zmian (60). Zgłoszeń 0. Od 16:00 licznik ma jedną wizytę: 17:30 /automatyzacja-leadow-crm bez odsyłacza, Firefox Android, 1 odsłona (materiał dla Z23).
+**Dla Pawła:** bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację).
+**Zostało otwarte:** Z15 o 20:50 (10 żądań indeksowania), Z23 o 04:46, Z24 o 05:46 (w nim liczby nocne Zoho i utm); czwartek 9:46 wysyłka 042 do 045.
