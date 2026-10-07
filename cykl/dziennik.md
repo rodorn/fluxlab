@@ -3195,3 +3195,21 @@ Z1 jednym zdaniem: z 32 sesji bez odsyłacza 18 to nasza automatyka, 12 inne, 2 
   0 sesji z perplexity, bing, copilot, claude.ai, gemini. llms.txt ma 112 adresów fluxlab.pl (plan podawał 58, liczone były chyba tylko pozycje listy). Bing Webmaster (profil 9228): sitemapa `https://fluxlab.pl/sitemap.xml` status Success, 108 adresów odkrytych, ostatni odczyt 6.10 (6.10 było Processing); Site Explorer „Indexed URLs: No data available”, Search Performance „check back in 48 hours”. Nic nie klikane.
 **Dla Pawła:** bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację).
 **Zostało otwarte:** Z9 o 14:46 (5 maili 037 do 041), Z10, Z11, Z15 o 20:50, Z16, Z18 do Z24; Bing ponownie za 2 dni (liczba zindeksowanych).
+
+## 2026-10-07 14:06
+**Kanał:** dystrybucja narzędzi (Z18 z planu, strona na telefonie; zrobione przed czasem).
+**Co zrobione:** na /audyt-kurierski przyciski „Policz na gotowej pozycji” były na telefonie pod pierwszym ekranem; akapit karty narzędzia, który powtarzał nagłówek strony, skrócony do instrukcji, wdrożone, pierwszy przykład widać teraz bez przewijania.
+**Ruch:** bez zmian wobec wpisu 13:56 (42 odsłony, 24 osoby w dobie; mail 6, facebook 4, www.google.com 2, m.facebook.com 1).
+**Dowód:** profil 9228, ekran 390 na 844:
+
+| strona | scrollWidth | przykład bez przewijania | górna krawędź pola |
+|---|---|---|---|
+| /sprawdz-auto (Z2) | 390 | nie dotyczy, przycisk „Sprawdź auto od 5 zł” widoczny | formularz niżej, 5404 px |
+| /sprawdzenie-nip | 390 | tak („NIP Allegro”, „NIP CD Projekt”) | 815 px |
+| /numer-ksef | 390 | tak (2 przyciski) | 821 px |
+| /audyt-kurierski przed | 390 | nie | 1001 px |
+| /audyt-kurierski po 7a11b34 | 390 | tak („Paczka 25 kg, dopłata 12,75 zł”) | 901 px |
+
+  Commit 7a11b34 (`components/DoplataCheck.tsx`, 2 linie), produkcja 14:05 zawiera nowy tekst, IndexNow 111 adresów, 2 z 3. Zrzuty `skrypty-raport/telefon-390/z18-*.png`.
+**Dla Pawła:** bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację).
+**Zostało otwarte:** Z9 o 14:46 (5 maili 037 do 041, BAE ponownie z odpisu), Z10 o 15:46, Z11 o 16:46, Z15 o 20:50, Z16, Z19 do Z24.
