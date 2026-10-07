@@ -114,7 +114,7 @@ export default function Page() {
             Zapisuj zgłoszenie przed przejściem do zapłaty, a nie po. Inaczej
             osoba, która odpadła przy płatności, znika bez śladu. Więcej przy{" "}
             <Link
-              href="/strony-www"
+              href="/landing-z-platnoscia"
               className="text-accent hover:underline"
             >
               stronach sprzedażowych z płatnością
@@ -127,7 +127,7 @@ export default function Page() {
           naglowek="Nie masz pewności, która z czterech przyczyn zachodzi u Ciebie?"
           opis="Tu potrzebne jest zajrzenie do ustawień pomiaru na konkretnej stronie. Napisz, co pokazuje licznik, a co przychodzi na skrzynkę."
           narzedzie={{
-            href: "/strony-www",
+            href: "/landing-z-platnoscia",
             etykieta: "Zobacz, jak zapisujemy zgłoszenie przed płatnością",
           }}
           kontakt="Wolisz, żeby ktoś przeszedł te cztery punkty za Ciebie?"

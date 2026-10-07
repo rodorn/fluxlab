@@ -54,7 +54,7 @@ export const ZRODLA: Zrodlo[] = [
     przygotowac:
       "Klucz z uprawnieniem do odczytu i lista pól, które faktycznie mają wyjeżdżać na zewnątrz.",
     trudnosc: 1,
-    produkt: "/integracje-api",
+    produkt: "/integracja-crm-z-erp",
   },
   {
     klucz: "arkusz",
@@ -66,7 +66,7 @@ export const ZRODLA: Zrodlo[] = [
     przygotowac:
       "Jeden arkusz uznany za obowiązujący i zgoda na to, że od tej pory kolumny nie zmieniają kolejności.",
     trudnosc: 1,
-    produkt: "/integracje-api",
+    produkt: "/integracja-crm-z-erp",
   },
   {
     klucz: "excel",
@@ -78,7 +78,7 @@ export const ZRODLA: Zrodlo[] = [
     przygotowac:
       "Trzy ostatnie pliki, żeby dało się zobaczyć, co w nich jest stałe, a co zmienne.",
     trudnosc: 2,
-    produkt: "/integracje-api",
+    produkt: "/integracja-crm-z-erp",
   },
   {
     klucz: "strona",
@@ -126,7 +126,7 @@ export const ZRODLA: Zrodlo[] = [
     przygotowac:
       "Nazwa i wersja programu oraz kontakt do kogoś, kto wie, na czym trzyma dane.",
     trudnosc: 3,
-    produkt: "/integracje-api",
+    produkt: "/integracja-crm-z-erp",
   },
 ];
 
@@ -158,7 +158,7 @@ export const CELE: Cel[] = [
     ryzyko:
       "Część systemów księgowych przyjmuje tylko import ręczny, więc automat kończy się na przygotowaniu pliku, a ostatni krok robi człowiek. Lepiej wiedzieć to na starcie niż po wdrożeniu.",
     trudnosc: 2,
-    produkt: "/integracje-api",
+    produkt: "/integracja-crm-z-erp",
   },
   {
     klucz: "panel",
@@ -226,7 +226,7 @@ export function ocenSpiecie(zrodlo: Zrodlo, cel: Cel): Werdykt {
 
 /** Strony powiazane, wypisywane pod przyciskami, zawsze w zrodle HTML. */
 export const LINKI_POWIAZANE = [
-  "/integracje-api",
+  "/integracja-crm-z-erp",
   "/scraping-danych",
   "/automatyzacja-raportowania",
   "/ksef-integracja",

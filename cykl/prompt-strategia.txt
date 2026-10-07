@@ -74,10 +74,9 @@ dobowa <data>"), git pull --rebase --autostash, push na origin/main.
 Odpowiedź końcowa: 5 linijek. Wynik doby, liczba zadań w planie, trzy pierwsze
 zadania, czy mail wyszedł.
 
-TWARDA ZASADA OD 7.10.2026 (decyzja Pawła po audycie: mniej treści, mniej stron).
-Nie twórz nowych stron, podstron, artykułów ani narzędzi pod nowym adresem. Strona
-ma około 55 adresów i tak zostaje. Treści na istniejących stronach nie wydłużaj:
-zmiana tekstu ma go skracać albo wymieniać na lepszy o tej samej lub mniejszej
-długości. Kolory: jeden kolor marki (accent), zieleń, żółty i czerwony wyłącznie
-jako status wyniku (dobrze, uwaga, źle). Lista usuniętych adresów i przekierowań:
-scripts/ciecie-stron.json; żadnego z nich nie przywracaj.
+ZASADA OD 7.10.2026 (Paweł): każda pojedyncza strona ma mieć MAŁO treści. Krótkie
+akapity (2-3 zdania), FAQ najwyżej 4 pytania, bez powtórzeń tej samej myśli w kilku
+sekcjach. Nowe strony wolno dodawać, ale tylko krótkie; zmiana tekstu na istniejącej
+stronie ma go skracać albo wymieniać na lepszy o tej samej lub mniejszej długości.
+Kolory: jeden kolor marki (accent); zieleń, żółty i czerwony wyłącznie jako status
+wyniku (dobrze, uwaga, źle).

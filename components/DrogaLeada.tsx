@@ -59,6 +59,18 @@ const ETAPY: Etap[] = [
     },
   },
   {
+    klucz: "crm",
+    nazwa: "Wpis do CRM",
+    objaw:
+      "Dane z zapytania ktoś przepisuje ręcznie. Przy przepisywaniu gubi się źródło, powstają duplikaty tej samej firmy i pola bywają puste, bo w pośpiechu wypełnia się tylko te wymagane.",
+    sprawdz:
+      "Otwórz w CRM listę rekordów z ostatniego miesiąca i policz, ile ma puste pole źródła. To jest liczba zapytań, o których nie wiecie, skąd przyszły.",
+    robie:
+      "Rekord powstaje automatycznie z jednym kompletem pól: osoba, firma, źródło, treść zapytania. Duplikaty są łączone po adresie i numerze telefonu.",
+    href: "/crm-jako-system-pracy",
+    hrefLabel: "CRM jako system pracy, nie baza kontaktów",
+  },
+  {
     klucz: "przypisanie",
     nazwa: "Przypisanie handlowca",
     objaw:
@@ -93,6 +105,18 @@ const ETAPY: Etap[] = [
       "Brak aktywności przez ustalony czas sam tworzy zadanie albo wiadomość. Zapytanie nie może po cichu wypaść z procesu, musi zostać zamknięte świadomie.",
     href: "/automatyzacja-follow-up",
     hrefLabel: "Follow-up, który pilnuje się sam",
+  },
+  {
+    klucz: "raport",
+    nazwa: "Raport",
+    objaw:
+      "Liczby składa się ręcznie z CRM i arkuszy, więc powstają rzadko i późno. Bez nich nie widać, na którym etapie odpada najwięcej zapytań, a to jest jedyna informacja potrzebna do decyzji, co naprawiać.",
+    sprawdz:
+      "Zapytaj, ile godzin zajęło złożenie ostatniego raportu sprzedaży i z ilu źródeł trzeba było ręcznie skopiować dane.",
+    robie:
+      "Raport składa się sam i pokazuje liczbę zapytań, czas reakcji i etap, na którym odpadają. Przychodzi w ustalonym dniu, bez proszenia.",
+    href: "/raportowanie-z-pipedrive",
+    hrefLabel: "Raport, który przychodzi sam",
   },
 ];
 

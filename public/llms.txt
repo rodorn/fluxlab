@@ -10,12 +10,17 @@
 
 - [Automatyzacja leadów i CRM](https://fluxlab.pl/automatyzacja-leadow-crm): zgłoszenie z formularza trafia do CRM samo, z właścicielem i pierwszym zadaniem.
 - [Integracje i dane](https://fluxlab.pl/scraping-danych): spinanie systemów przez interfejsy programistyczne, porządkowanie danych, raporty, które przychodzą same.
+- [Integracja CRM z systemem magazynowo-księgowym](https://fluxlab.pl/integracja-crm-z-erp): kontrahenci, dokumenty sprzedaży, stany i ceny, z kolejką ponowień.
+- [Wdrożenie n8n i jego koszt](https://fluxlab.pl/wdrozenie-n8n-cena): licencja, serwer, praca i opieka rozbite na osobne liczby.
 - [Integracje API](https://fluxlab.pl/integracje-api): CRM, ERP, sklep i hurtownie spięte tak, żeby dane przechodziły same. Spięcie dwóch systemów od 1 500 zł.
 - [Automatyzacja raportowania](https://fluxlab.pl/automatyzacja-raportowania): raporty sprzedaży, marketingu i operacji, które powstają same o stałej porze. Jedno źródło od 790 zł.
 - [Automatyzacja dla biur rachunkowych](https://fluxlab.pl/automatyzacja-dla-biur-rachunkowych): OCR faktur do Optimy, Symfonii i Enovy, SaldeoSmart, KSeF, przypomnienia o brakujących dokumentach.
 - [Automatyzacja dla e-commerce](https://fluxlab.pl/automatyzacja-dla-ecommerce): stany, faktury, etykiety InPost i DPD, zwroty; Shopify, WooCommerce, PrestaShop, BaseLinker, Allegro.
 - [Automatyzacja dla agencji marketingowych](https://fluxlab.pl/automatyzacja-dla-agencji-marketingowych): raporty z Google Ads, Meta Ads i GA4, onboarding klienta, rozliczanie retainerów.
 - [CRM dla firm leasingowych](https://fluxlab.pl/automatyzacja-crm-leasing): przypisanie leada po regionie, dane po NIP z CEIDG i KRS, wniosek do leasingodawcy, prowizje.
+- [Automatyzacja Pipedrive](https://fluxlab.pl/automatyzacja-pipedrive) i [Salesforce](https://fluxlab.pl/automatyzacja-salesforce): API, webhooki, synchronizacja danych i raporty.
+- [n8n](https://fluxlab.pl/n8n), [n8n dla CRM](https://fluxlab.pl/n8n-dla-crm), [Make czy n8n do CRM](https://fluxlab.pl/make-vs-n8n-crm), [Zapier czy Make](https://fluxlab.pl/zapier-make): kiedy które narzędzie i jak je wdrażamy.
+- [Automatyzacja z AI](https://fluxlab.pl/automatyzacja-ai): klasyfikacja zgłoszeń, streszczenia i analiza treści wpięte w CRM.
 - [Systemy i strony](https://fluxlab.pl/strony-www): aplikacje webowe, panele i formularze będące częścią procesu.
 
 ## Pytania i praktyczne odpowiedzi
@@ -39,9 +44,11 @@ Lista kontrolna przed 2027: https://fluxlab.pl/ksef-2027
 
 **Dlaczego nasze maile trafiają do spamu?** Najczęściej przez brak albo błąd w jednym z trzech rekordów DNS domeny: SPF, DKIM i DMARC. Od lutego 2024 Gmail i Yahoo wymagają od każdego nadawcy co najmniej SPF albo DKIM, a od wysyłających ponad 5000 wiadomości dziennie wszystkich trzech. Darmowe sprawdzenie domeny w kilka sekund: https://fluxlab.pl/audyt-poczty
 
+**Co obejmuje audyt Google Ads i ile trwa?** Przegląd raportu wyszukiwanych haseł z ostatnich 30 do 90 dni: frazy, które kosztują, a nie dają konwersji, frazy z intencją informacyjną zamiast zakupowej, zbyt szerokie dopasowania, kwota do odzyskania co miesiąc i lista wykluczeń do wklejenia na poziomie kampanii. Wystarczy dostęp tylko do odczytu albo eksport raportu. Raport PDF w 3 dni robocze od otrzymania danych, 69 zł, zwrot całej kwoty, jeśli do odzyskania wychodzi mniej niż 500 zł miesięcznie: https://fluxlab.pl/audyt-google-ads
 
 **Jak połączyć enova365 z CRM?** Przez moduł API enova365, który wystawia usługi przez HTTP, albo przez dodatek w .NET na platformie Soneta. Z CRM (Pipedrive, HubSpot, Bitrix24) do enova365 idzie nowy klient jako kontrahent, z NIP sprawdzonym w GUS i na białej liście VAT, a wygrana szansa sprzedaży jako zamówienie albo faktura do wystawienia; do CRM wracają statusy płatności i zaległości. Dokumenty trafiają do enova365 do zatwierdzenia przez księgowego. Najpierw trzeba sprawdzić wersję, moduły i to, czy licencja obejmuje dostęp przez API. Szacunek: synchronizacja w jedną stronę 1 do 2 tygodni, dwukierunkowa z rozrachunkami 3 do 4 tygodni. Szczegóły: https://fluxlab.pl/automatyzacja-dla-biur-rachunkowych#enova365
 
+**Czy firma odpowiada za to, co obiecał asystent AI (chatbot) na jej stronie?** Tak, w praktyce tak. W sprawie Moffatt przeciwko Air Canada (luty 2024) trybunał w Kolumbii Brytyjskiej uznał, że linia lotnicza odpowiada za zniżkę, którą obiecał klientowi jej chatbot, choć regulamin jej nie przewidywał, i kazał ją zapłacić. Klient ma zrzut ekranu, a bot jest częścią strony firmy. Od 2 sierpnia 2026 w Unii obowiązuje też art. 50 rozporządzenia o sztucznej inteligencji (AI Act): użytkownik musi wiedzieć, że rozmawia z systemem AI, chyba że to oczywiste. Przed wdrożeniem i po każdej zmianie promptu albo modelu warto zadać botowi zwykłe pytania klienta o ceny, zwroty, reklamacje, dostawę i faktury i porównać odpowiedzi z cennikiem i regulaminem. Robimy to w audycie: 150 pytań, każda odpowiedź z cytatem, raport w 48 godzin, 69 zł: https://fluxlab.pl/audyt-chatbota
 
 **Czy firma musi podawać NIP na swojej stronie internetowej?** Spółka z o.o. tak: art. 206 § 1 Kodeksu spółek handlowych wymaga, żeby informacje na stronie internetowej spółki zawierały firmę, siedzibę i adres, sąd rejestrowy i numer KRS, NIP oraz wysokość kapitału zakładowego. Każda firma świadcząca usługi przez internet musi też podać dane, które ją identyfikują (ustawa o świadczeniu usług drogą elektroniczną, art. 5). Powód praktyczny jest ważniejszy: księgowość kupującego przed przelewem sprawdza NIP i numer rachunku w wykazie podatników VAT, a gdy na stronie ich nie ma albo nie zgadzają się z wykazem, płatność stoi. Darmowe sprawdzenie, czy strona podaje NIP i czy dane zgadzają się z wykazem: https://fluxlab.pl/dane-sprzedawcy
 
@@ -120,14 +127,17 @@ Maile w spamie i podszywanie pod domenę, szczegóły i sprawdzenie na https://f
 - DMARC na start: rekord TXT _dmarc.domena z v=DMARC1; p=none; rua=mailto:adres, po kilku tygodniach raportów p=quarantine, potem p=reject.
 - Bez DMARC w trybie quarantine albo reject obcy nadawca może wysłać wiadomość z adresem firmy w polu Od. W naszym badaniu 317 domen salonów samochodowych komplet, który blokuje podszywanie, miało 16 procent.
 
+Przycisk odstąpienia od umowy w sklepie internetowym, stan prawny z 28.09.2026, sprawdzenie na https://fluxlab.pl/panel-zwrotow:
 - Dyrektywa Parlamentu Europejskiego i Rady (UE) 2023/2673 z 22 listopada 2023 wymaga od sprzedawców internetowych (sklepy, marketplace'y, aplikacje, usługi cyfrowe i subskrypcje) widocznej, łatwo dostępnej i w pełni cyfrowej ścieżki odstąpienia od umowy zawartej z konsumentem przez internet. Termin transpozycji do prawa krajowego minął 19 grudnia 2025, a stosowanie przepisów zaczęło się 19 czerwca 2026.
 - Polska ustawa wdrażająca dyrektywę (projekt UC82) nie została uchwalona, prace nad nią zostały wstrzymane w maju 2026. Obowiązek unijny mimo to już obowiązuje, niezależnie od stanu polskiej ustawy o prawach konsumenta.
 - Brak zgodnej ścieżki odstąpienia grozi wydłużeniem terminu na odstąpienie dla kupującego nawet do 12 miesięcy oraz karami administracyjnymi od Prezesa UOKiK po wejściu w życie polskiej ustawy.
 - Sprawdzenie na fluxlab.pl czyta publiczne strony sklepu (zwroty, reklamacje, regulamin) i ocenia m.in., czy zwrot da się zgłosić online, a nie tylko mailem, obok pozostałych informacji wymaganych przy odstąpieniu (termin 14 dni, zwrot pieniędzy, kto płaci za odesłanie). To sprawdzenie techniczne, nie opinia prawna o zgodności z dyrektywą.
 
+Najniższa cena z 30 dni przy obniżce (Omnibus), stan prawny z 3.10.2026, sprawdzenie sklepu na https://fluxlab.pl/rejestr-cen:
 - Przy każdej informacji o obniżce sklep podaje obok ceny obniżonej najniższą cenę z 30 dni przed wprowadzeniem obniżki (art. 4 ust. 2 ustawy z 9 maja 2014 o informowaniu o cenach towarów i usług, od 1 stycznia 2023). Produkt w ofercie krócej niż 30 dni: najniższa cena od początku sprzedaży (art. 4 ust. 3). Towary szybko psujące się: cena sprzed pierwszej obniżki (art. 4 ust. 4).
 - Procent rabatu liczy się od najniższej ceny z 30 dni, nie od ceny z dnia przed promocją: wyrok TSUE z 26 września 2024, C-330/23 (Aldi Süd).
 - Kara do 20 000 zł od wojewódzkiego inspektora Inspekcji Handlowej (art. 6 ust. 1), a przy co najmniej trzech naruszeniach w ciągu 12 miesięcy do 40 000 zł (art. 6 ust. 2).
+- Nasza odpowiedź: https://fluxlab.pl/rejestr-cen#od-jakiej-ceny-liczy-sie-najnizsza-cene-z-30-dni-przed
 
 Roboty asystentów AI w robots.txt, stan z 24.09.2026, szczegóły i sprawdzenie na https://fluxlab.pl/widocznosc-w-ai:
 - OpenAI: OAI-SearchBot decyduje o obecności w wyszukiwaniu ChatGPT, GPTBot zbiera treść do trenowania modeli, ChatGPT-User czyta stronę na prośbę użytkownika i według OpenAI reguły robots.txt mogą go nie obowiązywać. Ustawienia są niezależne, blokada GPTBot nie usuwa strony z wyszukiwania ChatGPT.
@@ -135,10 +145,12 @@ Roboty asystentów AI w robots.txt, stan z 24.09.2026, szczegóły i sprawdzenie
 - Google-Extended steruje tylko trenowaniem Gemini i odpowiedziami w innych produktach Google, nie wpływa na obecność w wyszukiwarce ani na AI Overviews. AI Overviews steruje Googlebot oraz nosnippet, data-nosnippet, max-snippet i noindex.
 - Reguła User-agent: * z Disallow: / albo gotowa lista blokująca wszystkie roboty AI wycina też roboty wyszukiwania, nie tylko te od trenowania.
 
+Ostrzeżenie przeglądarki i certyfikaty SSL, stan z 24.09.2026, szczegóły i sprawdzenie na https://fluxlab.pl/naprawa-https:
 - Maksymalna ważność publicznego certyfikatu TLS (CA/Browser Forum, uchwała SC-081): 200 dni od 15 marca 2026 (wcześniej 398), 100 dni od 15 marca 2027, 47 dni od 15 marca 2029. Let's Encrypt: 90 dni, 64 dni od 10 lutego 2027, 45 dni od 16 lutego 2028.
 - Kody błędów w Chrome i Edge: NET::ERR_CERT_DATE_INVALID to certyfikat po terminie albo zły zegar komputera, NET::ERR_CERT_COMMON_NAME_INVALID to certyfikat na inną nazwę (często hostingu albo tylko wersji z www), NET::ERR_CERT_AUTHORITY_INVALID to certyfikat samopodpisany albo brak certyfikatu pośredniego. W Firefoksie: SEC_ERROR_EXPIRED_CERTIFICATE, SSL_ERROR_BAD_CERT_DOMAIN, SEC_ERROR_UNKNOWN_ISSUER.
 - Przekreślona kłódka przy ważnym certyfikacie to zwykle mieszana treść: pliki ładowane adresem http. Przeglądarki blokują takie skrypty i ramki, a zdjęć bez wersji https nie pokazują.
 
+JDG w 2026: ZUS, składka zdrowotna i forma opodatkowania, kalkulator na https://fluxlab.pl/kalkulator-podatkowy:
 - Pełny ZUS od podstawy 5 652 zł (60% prognozowanego przeciętnego wynagrodzenia 9 420 zł): razem z dobrowolną chorobową i Funduszem Pracy 1 926,76 zł miesięcznie, bez składki zdrowotnej. Mały ZUS od 1 441,80 zł (30% płacy minimalnej 4 806 zł).
 - Minimalna składka zdrowotna na skali i liniowym: 432,54 zł miesięcznie od lutego do grudnia 2026, za styczeń 314,96 zł. Skala: 9% dochodu, liniowy: 4,9% dochodu, nie mniej niż minimum.
 - Ryczałt, składka zdrowotna miesięcznie: przychód roczny do 60 000 zł 498,35 zł, do 300 000 zł 830,58 zł, powyżej 1 495,04 zł (podstawa: przeciętne wynagrodzenie z IV kwartału 2025, 9 228,64 zł).
@@ -156,27 +168,37 @@ Biała lista podatników VAT, stan z 25.09.2026, sprawdzenie na https://fluxlab.
 - Zawiadomienie ZAW-NR do naczelnika urzędu skarbowego właściwego dla nabywcy, złożone w ciągu 7 dni od dnia zlecenia przelewu, wyłącza obie sankcje. Po terminie nie da się już tego naprawić.
 - Poniżej 15 000 zł sankcje z art. 117ba nie powstają, sprawdzenie rachunku jest wtedy wyłącznie dobrą praktyką, nie obowiązkiem.
 
+Wykreślanie spółek z KRS bez likwidacji, licznik na https://fluxlab.pl/ile-spolek-znika-z-krs:
 - Sąd rejestrowy wszczyna z urzędu postępowanie o rozwiązanie podmiotu bez likwidacji, gdy ten latami nie składa sprawozdań i nie ma majątku ani przedstawiciela. Ogłasza to w Monitorze Sądowym i Gospodarczym.
 - Od dnia ogłoszenia biegną trzy miesiące na zgłoszenie sądowi okoliczności przemawiających przeciwko wykreśleniu. Po tym terminie podmiot znika z rejestru, a jego majątek przechodzi na Skarb Państwa.
 - Obwieszczenie w Monitorze jest z mocy prawa wystarczającym powiadomieniem wszystkich zainteresowanych, wierzyciel nie dostaje osobnego zawiadomienia.
+- Sprawdzenie konkretnej spółki po nazwie albo numerze KRS, z historią ogłoszeń od 2013 roku: https://fluxlab.pl/czujka-rejestrowa
 
+Strona pod dwoma adresami (z www i bez, http i https), stan z 3.10.2026, sprawdzenie na https://fluxlab.pl/podwojny-adres:
 - Dla wyszukiwarki firma.pl i www.firma.pl to dwa osobne adresy. Jeśli oba zwracają tę samą treść, Google sam wybiera, który pokazać, a linki rozkładają się na dwa adresy.
 - Według dokumentacji Google przekierowanie to silny sygnał, że jego cel jest adresem kanonicznym, znacznik rel="canonical" też silny, mapa witryny słaby. Żaden nie jest poleceniem bezwzględnym. Przekierowanie po stronie serwera działa dla każdego adresu w serwisie, znacznik tylko tam, gdzie stoi i wskazuje właściwy adres.
 - Którą wersję Google wybrał, widać w Search Console w sprawdzeniu adresu URL (adres kanoniczny wskazany przez stronę obok wybranego przez Google) i w raporcie indeksowania, w grupie „Duplikat, Google wybrał inną stronę kanoniczną niż użytkownik”.
 - WordPress trzyma adres główny we własnych ustawieniach. Przekierowanie zmienione tylko w serwerze, bez zmiany w ustawieniach WordPressa, zapętla stronę.
+- Źródło: https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls Nasza odpowiedź: https://fluxlab.pl/podwojny-adres#jak-sprawdzic-ktora-wersje-adresu-google-uznal-za-glowna
 
+Kto jest właścicielem domeny firmy, stan z 3.10.2026, sprawdzenie na https://fluxlab.pl/wlasnosc-domeny:
 - O domenie decyduje abonent wpisany w rejestrze. Gdy stronę stawiał zewnętrzny wykonawca, często to on jest abonentem, a przypomnienia o odnowieniu idą na jego adres.
 - Rejestr domen .pl (NASK) pokazuje nazwę abonenta, gdy jest nim firma. Danych osoby fizycznej nie publikuje, chyba że się na to zgodziła albo ktoś wykaże prawnie uzasadniony interes.
 - Przeniesienie domeny .pl do innego rejestratora wymaga kodu AuthInfo. Według NASK rejestrator wydaje go abonentowi bez zbędnej zwłoki i nie może uzależniać tego od dodatkowych warunków, także od opłaty. Zmiana abonenta wymaga zgody obecnego abonenta. Spory rozstrzyga Sąd Polubowny do Spraw Domen Internetowych przy Polskiej Izbie Informatyki i Telekomunikacji.
+- Źródło: https://dns.pl/en/registrant_rights_domain_pl Nasza odpowiedź: https://fluxlab.pl/wlasnosc-domeny#jak-przeniesc-domene-pl-do-innego-rejestratora
 
+Strona nie pokazuje się w Google, stan z 3.10.2026, sprawdzenie na https://fluxlab.pl/widocznosc-w-google:
 - Częsta przyczyna to zakaz noindex zostawiony po wersji roboczej. Stoi w kodzie strony (znacznik meta robots) albo w nagłówku serwera X-Robots-Tag. Oba działają tak samo; wpis noindex w robots.txt Google nie obsługuje.
 - Pułapka: strona zablokowana w robots.txt nie zostanie odwiedzona, więc robot nie zobaczy noindex i adres może dalej wisieć w wynikach bez opisu.
 - Po zdjęciu blokady: Google Search Console, sprawdzenie adresu URL, „Poproś o zindeksowanie”; w raporcie Strony grupa „Wykluczona przez tag noindex” powinna z czasem maleć.
+- Źródło: https://developers.google.com/search/docs/crawling-indexing/block-indexing Nasza odpowiedź: https://fluxlab.pl/widocznosc-w-google#jak-sprawdzic-czy-strona-ma-noindex-i-jak-wrocic-do-google
 
+Mapa witryny dla Google, stan z 3.10.2026, sprawdzenie na https://fluxlab.pl/mapa-strony:
 - Zgłoszenie: w Google Search Console zakładka Mapy witryn oraz linia „Sitemap:” z pełnym adresem mapy w pliku robots.txt.
 - Google ignoruje w mapie pola priority i changefreq. Datę lastmod uwzględnia tylko wtedy, gdy jest spójna z faktycznymi zmianami treści.
 - Search Console pokazuje datę ostatniego odczytu mapy i liczbę znanych z niej adresów. Gdy jest dużo mniejsza niż liczba adresów w mapie, Google czyta ją rzadko albo część adresów odrzucił.
 - Brak mapy nie wyklucza strony z Google, ale przy setkach adresów decyduje o tym, ile z nich trafi do wyników.
+- Źródło: https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap Nasza odpowiedź: https://fluxlab.pl/mapa-strony#jak-zglosic-mape-witryny-do-google-i-ktore-pola-mapy-google
 
 Ile zadań liczy Zapier i Make, stan z 3.10.2026, sprawdzenie na https://fluxlab.pl/tansze-automatyzacje:
 - Zapier: do limitu liczy się każdy udany krok akcji. Nie liczą się wyzwalacze, filtry, kroki Paths, Formatter, Delay, Looping ani kroki zakończone błędem.
@@ -191,6 +213,7 @@ Ile kosztuje ręczna obsługa leadów, kalkulator na https://fluxlab.pl/koszt-re
 - Kalkulator pokazuje koszt stanu obecnego, bez kosztu wdrożenia i abonamentów. Czas zwrotu to cena wdrożenia podzielona przez ten koszt.
 - Liczbę leadów miesięcznie sumuje się ze wszystkich miejsc, gdzie wpadają zapytania (formularz, mail, telefon, LinkedIn, panel reklam). CRM nie jest potrzebny, bez niego koszt tylko trudniej zmierzyć.
 
+Ceny energii na jutro, godzina po godzinie, na https://fluxlab.pl/ceny-energii-jutro:
 - Rynkową cenę energii (RCE) na kolejną dobę publikują Polskie Sieci Elektroenergetyczne, zwykle wczesnym popołudniem dnia poprzedniego (dla 7 października 2026 publikacja 6 października o 13:43), w rozdzielczości 15 minut, w złotych za MWh.
 - Według RCE liczy się wartość energii oddanej do sieci przez prosumentów w net-billingu. Rachunek za energię pobraną zwykle opiera się na taryfie albo umowie, nie na cenie godzinowej.
 - Strona pokazuje średnią doby, najtańsze i najdroższe kolejne cztery godziny oraz okna z ceną ujemną, prosto z API PSE (api.raporty.pse.pl), odświeżane co 30 minut. Dla przykładu 7 października 2026: średnia 738 zł/MWh, najtaniej 11:00 do 15:00 (średnio 479 zł), najdrożej 16:30 do 20:30.
@@ -203,22 +226,43 @@ Ile kosztuje ręczna obsługa leadów, kalkulator na https://fluxlab.pl/koszt-re
 - [Od kiedy adres do e-Doręczeń](https://fluxlab.pl/e-doreczenia-integracja): dwa kliknięcia, data z ustawy.
 - [Pełny audyt techniczny strony](https://fluxlab.pl/audyt-strony): szybkość, certyfikat, widoczność w Google i w AI, poczta.
 - [Dlaczego maile trafiają do spamu](https://fluxlab.pl/audyt-poczty): SPF, DKIM i DMARC domeny.
+- [Czy przeglądarka ostrzega przed stroną](https://fluxlab.pl/naprawa-https): certyfikat i przekierowania.
 - [Widoczność strony dla asystentów AI](https://fluxlab.pl/widocznosc-w-ai): robots.txt, treść bez skryptów, dane uporządkowane, llms.txt.
+- [Czy strona nie wypisała się z Google](https://fluxlab.pl/widocznosc-w-google): noindex w kodzie, nagłówek serwera, robots.txt.
+- [Czy Google ma mapę strony](https://fluxlab.pl/mapa-strony): czy mapa istnieje, jest wskazana w robots.txt i czy jej adresy działają.
+- [Czy Google widzi stronę pod dwoma adresami](https://fluxlab.pl/podwojny-adres)
+- [Kto jest właścicielem domeny](https://fluxlab.pl/wlasnosc-domeny)
 - [Sprawdzenie NIP w wykazie VAT](https://fluxlab.pl/sprawdzenie-nip)
+- [Czy dłużnik znika z KRS](https://fluxlab.pl/czujka-rejestrowa)
+- [Ile spółek dziennie znika z KRS bez likwidacji](https://fluxlab.pl/ile-spolek-znika-z-krs)
+- [Informacja o najniższej cenie przy przecenach, Omnibus](https://fluxlab.pl/rejestr-cen)
 - [Ile przepłacasz za Zapiera i Make](https://fluxlab.pl/tansze-automatyzacje): policzone zadania i operacje na Twoich liczbach.
+- [Sprawdzenie zasad zwrotów w sklepie](https://fluxlab.pl/panel-zwrotow): czego kupujący nie znajdzie, w tym obowiązkowy przycisk odstąpienia od umowy.
 - [Kalkulator kosztu ręcznej obsługi leadów](https://fluxlab.pl/koszt-recznej-obslugi-leadow)
+- [Kalkulator podatkowy JDG](https://fluxlab.pl/kalkulator-podatkowy)
 - [Czy klient ustali, komu płaci](https://fluxlab.pl/dane-sprzedawcy): NIP i rachunek znalezione na stronie, porównane z wykazem podatników VAT na dziś.
+- [Audyt CRM](https://fluxlab.pl/audyt-crm): 10 pytań tak/nie, wynik X/10 i obszar, który najbardziej opłaca się zautomatyzować.
+- [Kalkulator kosztów samochodu](https://fluxlab.pl/kalkulator-kosztow): paliwo, serwis, opony, ubezpieczenie i utrata wartości jako koszt roczny i na kilometr.
+- [Dobór samochodu](https://fluxlab.pl/dobor-samochodu): segment, nadwozie, napęd i moc dopasowane do realnych potrzeb.
+- [Ceny energii na jutro](https://fluxlab.pl/ceny-energii-jutro): najtańsze i najdroższe cztery godziny oraz godziny z ceną ujemną, z danych PSE.
 - [Pełna lista](https://fluxlab.pl/narzedzia)
 
 ## Usługi z ceną podaną na stronie
 
 - [Audyt faktur kurierskich](https://fluxlab.pl/audyt-kurierski): jedną pozycję z dopłatą paliwową sprawdzisz od ręki za darmo, całą fakturę od 290 zł.
 - [Sprawdzenie kontrahenta przed przelewem](https://fluxlab.pl/sprawdz-kontrahenta): wykaz VAT, KRS i dane domeny, w tym czy numer konta figuruje w wykazie. Od 9 zł.
+- [Pogotowie automatyzacji](https://fluxlab.pl/pogotowie-automatyzacji): stanęła integracja w n8n albo Make, czytamy logi wykonań i szukamy wygasłych poświadczeń. Diagnoza 49 zł, naprawa od 490 zł.
+- [Strona po włamaniu](https://fluxlab.pl/strona-po-wlamaniu): WordPress przekierowuje na obce serwisy albo Google go oznaczył; porównujemy pliki z oryginałami i usuwamy furtki. Od 49 zł.
+- [Audyt marż sklepu](https://fluxlab.pl/audyt-marz): zysk netto na sztuce po prowizjach, zwrotach i dopłatach do wysyłki, martwy stok. 49 zł.
+- [Audyt tłumaczeń strony i hreflang](https://fluxlab.pl/kontrola-jezykow): polskie fragmenty w wersjach obcojęzycznych i brakujące oznaczenia dla wyszukiwarki. Od 99 zł.
+- [Kontrola paliwa we flocie](https://fluxlab.pl/kontrola-paliwa): transakcje z karty paliwowej zestawione z trasą, tankowanie do kanistra i sklonowana karta. Od 99 zł.
+- [Analiza lokalizacji pod lokal](https://fluxlab.pl/analiza-lokalizacji): konkurenci w promieniu 1, 3 i 5 km i liczba mieszkańców na punkt. Sprawdzenie darmowe, raport od 190 zł.
 
 ## Własne badania
 
 - [Co jest nie tak ze stronami dealerów samochodowych](https://fluxlab.pl/strefa-wiedzy/co-jest-nie-tak-ze-stronami-dealerow): 386 sprawdzonych stron.
 - [Podszywanie się pod salony samochodowe](https://fluxlab.pl/strefa-wiedzy/podszywanie-pod-salony-samochodowe): pod 84 procent z nich można się podszyć mailowo.
+- [Błędy w rejestrze obiektów hotelarskich](https://fluxlab.pl/strefa-wiedzy/bledy-w-rejestrze-obiektow-hotelarskich)
 
 ## Kontakt
 

@@ -43,6 +43,12 @@ export default function KsefIntegracja() {
           href: "/sprawdzenie-nip",
           po: ".",
         },
+        {
+          przed: "Jednoosobowe firmy, które przy okazji KSeF liczą na nowo koszty, porównują formy opodatkowania w",
+          kotwica: "kalkulatorze JDG 2026 (ryczałt, liniowy, skala z ZUS)",
+          href: "/kalkulator-podatkowy",
+          po: ".",
+        },
       ]}
       checks={[
         {
