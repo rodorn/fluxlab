@@ -3021,3 +3021,12 @@ Z1 jednym zdaniem: z 32 sesji bez odsyłacza 18 to nasza automatyka, 12 inne, 2 
 **Dowód:** commit 0fae9fe; `curl https://fluxlab.pl/ceny-energii-jutro` o 03:00 pokazuje dobę 2026-10-08 (przed poprawką 2026-10-07) i etykietę „Darmowe narzędzie”; /narzedzia ma link do strony; llms.txt 2 wystąpienia; lokalnie `doba(0)` dla 7.10: najtaniej 11:00 do 15:00 (479 zł), najdrożej 16:30 do 20:30 (1035 zł), zgodnie z ręcznym przeliczeniem z api.raporty.pse.pl; build i spójność OK; IndexNow 111 adresów, 2 z 3.
 **Dla Pawła:** bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację).
 **Zostało otwarte:** od północy do ok. 14:00 strona pokazuje tylko „ceny na jutro nie są jeszcze opublikowane”, a to pora, kiedy ludzie szukają cen; strateg może zlecić pokazywanie w tym czasie cen na dziś. W llms.txt nadal brak stron płatnych usług. Środa: wysyłka 032 do 036; cykl 05:46: liczby nocne pod bilansem Z24; 16.10 stawki DPD.
+<!-- WYSLANO 2026-10-07 03:05 -->
+
+## 2026-10-07 03:47
+**Kanał:** dystrybucja narzędzi (w planie stratega z 6.10 nie ma otwartych zadań, 24/24 zamknięte; maile poza godzinami, limit GSC zużyty do 7.10 ok. 20:43).
+**Co zrobione:** /ceny-energii-jutro od północy do ok. 14:00 pokazywała tylko „ceny na jutro nie są jeszcze opublikowane”, czyli pustą stronę w godzinach, kiedy ludzie najczęściej sprawdzają ceny; teraz w tym czasie pokazuje pełną dzisiejszą dobę (średnia, minimum, maksimum, najtańsze i najdroższe 4 godziny, okna ujemne, tabela godzinowa) z jednym zdaniem, że to ceny na dziś, a po publikacji PSE przełącza się na jutro.
+**Ruch:** ostatnia doba 48 odsłon, 35 osób (wzrost o 82% wobec średniej 26,4); tydzień 214 odsłon, 118 osób. Źródła: facebook 4, www.google.com 3, mail 1, chatgpt.com 1, m.facebook.com 1, reszta bez odsyłacza. Najczęściej /automatyzacja-leadow-crm 7, / 6, /sprawdzenie-nip 3, /audyt-kurierski 3, /numer-ksef 3. Telefon 21 z 48. Uruchomienia narzędzi 0.
+**Dowód:** commit e032c14; `curl https://fluxlab.pl/ceny-energii-jutro` o 03:46 zawiera „Do tego czasu pokazujemy ceny na dziś, 2026-10-07”, dobę 2026-10-07 i okno najtańsze 11:00 do 15:00 (zgodne z przeliczeniem z poprzedniego cyklu); build i spójność OK; IndexNow 111 adresów, 2 z 3.
+**Dla Pawła:** bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację).
+**Zostało otwarte:** w llms.txt nadal brak stron płatnych usług. Środa: wysyłka 032 do 036 (przed wysyłką ponownie BAE); cykl 05:46: liczby nocne pod bilansem Z24; 16.10 stawki DPD.
