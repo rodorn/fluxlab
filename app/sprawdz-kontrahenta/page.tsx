@@ -6,6 +6,7 @@ import LandingForm from "@/components/LandingForm";
 import TrackedCTA from "@/components/TrackedCTA";
 import NipCheck from "@/components/NipCheck";
 import NazwaNarzedzia from "@/components/NazwaNarzedzia";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Sprawdź kontrahenta przed przelewem, od 9 zł | Fluxlab",
@@ -150,6 +151,19 @@ export default function SprawdzKontrahentaPage() {
               </div>
             ))}
           </div>
+
+          <p className="mt-8 max-w-3xl text-sm text-gray-600 dark:text-gray-400">
+            Przed podpisaniem umowy najmu lokalu sprawdźcie tutaj wynajmującego,
+            a rynek wokół lokalu, czyli ilu konkurentów jest w okolicy i ilu
+            mieszkańców przypada na jeden punkt, pokaże{" "}
+            <Link
+              href="/analiza-lokalizacji"
+              className="font-medium text-accent underline underline-offset-2"
+            >
+              analiza lokalizacji
+            </Link>
+            .
+          </p>
 
           <div className="mt-16">
             <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
