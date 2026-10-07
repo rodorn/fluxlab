@@ -3,6 +3,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import NazwaNarzedzia from "@/components/NazwaNarzedzia";
 import { doba } from "@/lib/ceny-energii";
 
 export const revalidate = 1800;
@@ -48,10 +49,14 @@ export default async function Page() {
           odświeżają się co pół godziny.
         </p>
 
+        <div className="mt-8 -mb-5">
+          <NazwaNarzedzia href="/ceny-energii-jutro" />
+        </div>
+
         {!jest ? (
           <p className="mt-8 rounded-xl border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-900/60 p-5 text-sm text-gray-700 dark:text-gray-300">
             Ceny na jutro nie są jeszcze opublikowane. Pojawiają się zwykle po
-            południu dnia poprzedniego, więc zajrzyj po czternastej.
+            południu dnia poprzedniego, więc zajrzyjcie po czternastej.
           </p>
         ) : (
           <>
@@ -126,12 +131,20 @@ export default async function Page() {
                 <thead className="text-gray-500 dark:text-gray-400">
                   <tr>
                     <th className="px-4 py-2 font-medium">Godzina</th>
-                    <th className="px-4 py-2 font-medium">Cena za MWh</th>
+                    <th className="px-4 py-2 font-medium">Średnia cena za MWh</th>
                   </tr>
                 </thead>
                 <tbody>
                   {d.kwadranse
                     .filter((_, i) => i % 4 === 0)
+                    .map((p, j) => {
+                      const g = d.kwadranse.slice(j * 4, j * 4 + 4);
+                      return {
+                        czas: p.czas,
+                        koniec: g[g.length - 1].koniec,
+                        cena: Math.round((g.reduce((a, x) => a + x.cena, 0) / g.length) * 100) / 100,
+                      };
+                    })
                     .map((k) => (
                       <tr
                         key={k.czas}
@@ -140,7 +153,7 @@ export default async function Page() {
                         }`}
                       >
                         <td className="px-4 py-1.5 tabular-nums text-gray-700 dark:text-gray-300">
-                          {k.czas}
+                          {k.czas} do {k.koniec}
                         </td>
                         <td className="px-4 py-1.5 tabular-nums font-medium text-gray-900 dark:text-white">
                           {k.cena.toLocaleString("pl-PL")} zł
@@ -158,16 +171,18 @@ export default async function Page() {
             Co to za cena i czego nie mówi
           </h2>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-            To jest cena rynku bilansującego publikowana przez operatora systemu
-            przesyłowego, a nie cena z Twojej faktury. Rachunek gospodarstwa
-            domowego zwykle opiera się na taryfie, a nie na cenie godzinowej, więc
-            traktuj te liczby jako obraz tego, co dzieje się w systemie, a nie jako
-            to, ile zapłacisz.
+            To rynkowa cena energii (RCE) publikowana przez operatora systemu
+            przesyłowego, a nie cena z Waszej faktury. Według niej liczy się
+            wartość energii oddanej do sieci przez prosumentów w net-billingu.
+            Rachunek za energię pobraną zwykle opiera się na taryfie albo umowie,
+            a nie na cenie godzinowej, więc przy zakupie te liczby pokazują, co
+            dzieje się w systemie, a nie ile zapłacicie.
           </p>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
             Ma to natomiast bezpośrednie znaczenie dla każdego, kto rozlicza się
             według cen godzinowych albo może przesunąć zużycie: ładowanie auta,
-            pompa ciepła, chłodnia, ogrzewanie wody. Różnica między najtańszymi a
+            pompa ciepła, chłodnia, ogrzewanie wody, magazyn energii przy
+            fotowoltaice. Różnica między najtańszymi a
             najdroższymi czterema godzinami bywa kilkusetprocentowa.
           </p>
         </div>

@@ -195,6 +195,12 @@ export const businessTools: Narzedzie[] = [
 
 export const otherTools: Narzedzie[] = [
   {
+    title: "Ceny energii na jutro",
+    description:
+      "Rynkowa cena energii z PSE na kolejną dobę: najtańsze i najdroższe cztery godziny oraz godziny z ceną ujemną. Przydaje się, gdy możecie przesunąć ładowanie auta, pompę ciepła albo magazyn energii.",
+    href: "/ceny-energii-jutro",
+  },
+  {
     title: "Dobór samochodu",
     description:
       "Znajdź idealny segment, nadwozie i moc dla siebie. Odpowiedz na kilka pytań, a algorytm dopasuje najlepsze propozycje.",

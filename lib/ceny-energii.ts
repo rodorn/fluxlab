@@ -2,7 +2,9 @@
 // poprzedniego, wiec strona ma sens dopiero od okolo 14:00.
 const BAZA = "https://api.raporty.pse.pl/api/rce-pln";
 
-export type Kwadrans = { czas: string; okres: string; cena: number };
+// PSE podaje w dtime koniec kwadransu (00:15 to cena za 00:00 do 00:15),
+// wiec poczatek bierzemy z pola period, a koniec z dtime.
+export type Kwadrans = { czas: string; koniec: string; okres: string; cena: number };
 export type Okno = { od: string; do: string; srednia: number };
 
 export type Doba = {
@@ -17,8 +19,10 @@ export type Doba = {
   najdrozsze4h: Okno | null;
 };
 
+// Serwer liczy w UTC, a doba PSE to doba polska. Bez strefy miedzy polnoca
+// a druga w nocy "jutro" wskazywaloby dzisiejsza dobe.
 function nastr(d: Date) {
-  return d.toISOString().slice(0, 10);
+  return d.toLocaleDateString("sv-SE", { timeZone: "Europe/Warsaw" });
 }
 
 async function pobierz(dzien: string): Promise<Kwadrans[]> {
@@ -37,7 +41,8 @@ async function pobierz(dzien: string): Promise<Kwadrans[]> {
     return ((j?.value as Record<string, string>[]) || [])
       .filter((x) => x.rce_pln !== null && x.rce_pln !== undefined)
       .map((x) => ({
-        czas: String(x.dtime).slice(11, 16),
+        czas: String(x.period).slice(0, 5),
+        koniec: String(x.dtime).slice(0, 10) > dzien ? "24:00" : String(x.dtime).slice(11, 16),
         okres: String(x.period),
         cena: Number(x.rce_pln),
       }));
@@ -63,7 +68,7 @@ function okno(k: Kwadrans[], najtansze: boolean): Okno | null {
   if (best < 0) return null;
   return {
     od: k[best].czas,
-    do: k[best + N - 1].czas,
+    do: k[best + N - 1].koniec,
     srednia: Math.round(bestSuma / N),
   };
 }
@@ -75,7 +80,7 @@ function scalUjemne(k: Kwadrans[]) {
   for (const x of k) {
     if (x.cena < 0) {
       if (start === null) start = x.czas;
-      poprzedni = x.czas;
+      poprzedni = x.koniec;
     } else if (start !== null) {
       okna.push({ od: start, do: poprzedni as string });
       start = null;
@@ -86,8 +91,7 @@ function scalUjemne(k: Kwadrans[]) {
 }
 
 export async function doba(przesuniecie = 1): Promise<Doba> {
-  const d = new Date();
-  d.setDate(d.getDate() + przesuniecie);
+  const d = new Date(Date.now() + przesuniecie * 86400000);
   const dzien = nastr(d);
   const k = await pobierz(dzien);
   const ceny = k.map((x) => x.cena);

@@ -204,6 +204,11 @@ Ile kosztuje ręczna obsługa leadów, kalkulator na https://fluxlab.pl/koszt-re
 - Kalkulator pokazuje koszt stanu obecnego, bez kosztu wdrożenia i abonamentów. Czas zwrotu to cena wdrożenia podzielona przez ten koszt.
 - Liczbę leadów miesięcznie sumuje się ze wszystkich miejsc, gdzie wpadają zapytania (formularz, mail, telefon, LinkedIn, panel reklam). CRM nie jest potrzebny, bez niego koszt tylko trudniej zmierzyć.
 
+Ceny energii na jutro, godzina po godzinie, na https://fluxlab.pl/ceny-energii-jutro:
+- Rynkową cenę energii (RCE) na kolejną dobę publikują Polskie Sieci Elektroenergetyczne, zwykle wczesnym popołudniem dnia poprzedniego (dla 7 października 2026 publikacja 6 października o 13:43), w rozdzielczości 15 minut, w złotych za MWh.
+- Według RCE liczy się wartość energii oddanej do sieci przez prosumentów w net-billingu. Rachunek za energię pobraną zwykle opiera się na taryfie albo umowie, nie na cenie godzinowej.
+- Strona pokazuje średnią doby, najtańsze i najdroższe kolejne cztery godziny oraz okna z ceną ujemną, prosto z API PSE (api.raporty.pse.pl), odświeżane co 30 minut. Dla przykładu 7 października 2026: średnia 738 zł/MWh, najtaniej 11:00 do 15:00 (średnio 479 zł), najdrożej 16:30 do 20:30.
+
 ## Darmowe narzędzia, bez rejestracji
 
 - [Co z KSeF obowiązuje Twoją firmę](https://fluxlab.pl/ksef-integracja): dwa kliknięcia, termin i dni do końca wyjątku.
@@ -230,6 +235,7 @@ Ile kosztuje ręczna obsługa leadów, kalkulator na https://fluxlab.pl/koszt-re
 - [Audyt CRM](https://fluxlab.pl/audyt-crm): 10 pytań tak/nie, wynik X/10 i obszar, który najbardziej opłaca się zautomatyzować.
 - [Kalkulator kosztów samochodu](https://fluxlab.pl/kalkulator-kosztow): paliwo, serwis, opony, ubezpieczenie i utrata wartości jako koszt roczny i na kilometr.
 - [Dobór samochodu](https://fluxlab.pl/dobor-samochodu): segment, nadwozie, napęd i moc dopasowane do realnych potrzeb.
+- [Ceny energii na jutro](https://fluxlab.pl/ceny-energii-jutro): najtańsze i najdroższe cztery godziny oraz godziny z ceną ujemną, z danych PSE.
 - [Pełna lista](https://fluxlab.pl/narzedzia)
 
 ## Własne badania
