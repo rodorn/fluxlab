@@ -12,6 +12,7 @@ const PILLARS = [
   {
     href: "/automatyzacja-leadow-crm",
     img: "/abstract/automation.webp",
+    imgLight: "/abstract/automation-light.webp",
     video: "/abstract/automation.mp4",
     videoLight: "/abstract/automation-light.mp4",
     variant: "automation" as const,
@@ -21,6 +22,7 @@ const PILLARS = [
   {
     href: "/scraping-danych",
     img: "/abstract/data.webp",
+    imgLight: "/abstract/data-light.webp",
     video: "/abstract/data.mp4",
     videoLight: "/abstract/data-light.mp4",
     variant: "data" as const,
@@ -30,6 +32,7 @@ const PILLARS = [
   {
     href: "/strony-www",
     img: "/abstract/web.webp",
+    imgLight: "/abstract/web-light.webp",
     video: "/abstract/web.mp4",
     videoLight: "/abstract/web-light.mp4",
     variant: "web" as const,
@@ -142,27 +145,28 @@ export default function Home() {
             <Link
               key={p.href}
               href={p.href}
-              className="group relative flex h-[22rem] flex-col justify-end overflow-hidden rounded-2xl ring-1 ring-gray-200 dark:ring-white/10 transition-all duration-300 focus:outline-none group-hover:ring-accent/80 focus-visible:ring-accent hover:ring-2"
+              className="group relative flex h-[22rem] flex-col justify-end overflow-hidden rounded-2xl bg-white dark:bg-gray-950 ring-1 ring-gray-200 dark:ring-white/10 transition-all duration-300 focus:outline-none group-hover:ring-accent/80 focus-visible:ring-accent hover:ring-2"
             >
               <TileVideo
                 srcDark={p.video}
                 srcLight={p.videoLight}
                 poster={p.img}
+                posterLight={p.imgLight}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/60 to-gray-950/10 transition-all duration-500 group-hover:from-gray-950/90 group-hover:via-gray-950/40" />
+              <div className="absolute inset-0 bg-gradient-to-t from-white via-white/85 to-white/30 transition-all duration-500 group-hover:via-white/70 dark:from-gray-950 dark:via-gray-950/60 dark:to-gray-950/10 dark:group-hover:from-gray-950/90 dark:group-hover:via-gray-950/40" />
               <div
                 aria-hidden="true"
-                className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-accent/35 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-accent/15 dark:from-accent/35 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
               />
               <div className="relative p-6 lg:p-7 transition-transform duration-500 ease-out group-hover:-translate-y-1">
-                <h2 className="text-2xl font-bold tracking-tight text-white">
+                <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                   {nazwaFilaru(p.href)}
                 </h2>
-                <p className="mt-2 text-sm leading-relaxed text-white/70">
+                <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-white/70">
                   {p.desc}
                 </p>
                 <span
-                  className="mt-4 inline-flex items-center gap-2 rounded-lg px-3 py-1.5 -ml-3 text-sm font-semibold text-white transition-all duration-300 group-hover:gap-3 group-hover:bg-accent-solid"
+                  className="mt-4 inline-flex items-center gap-2 rounded-lg px-3 py-1.5 -ml-3 text-sm font-semibold text-accent dark:text-white transition-all duration-300 group-hover:gap-3 group-hover:bg-accent-solid group-hover:text-white"
                 >
                   {p.cta}
                   <span aria-hidden="true">→</span>

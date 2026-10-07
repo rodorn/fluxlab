@@ -20,10 +20,12 @@ export default function TileVideo({
   srcDark,
   srcLight,
   poster,
+  posterLight,
 }: {
   srcDark: string;
   srcLight: string;
   poster: string;
+  posterLight: string;
 }) {
   const ref = useRef<HTMLVideoElement | null>(null);
   const [gra, setGra] = useState(false);
@@ -44,9 +46,7 @@ export default function TileVideo({
     const karta = video.closest("a");
     if (!karta) return;
 
-    const ciemny = () =>
-      document.documentElement.classList.contains("dark") ||
-      window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const ciemny = () => document.documentElement.classList.contains("dark");
 
     const wejscie = () => {
       // Pobranie zaczyna się tutaj, nie przy wczytaniu strony.
@@ -73,19 +73,32 @@ export default function TileVideo({
   }, [srcDark, srcLight]);
 
   return (
-    <video
-      ref={ref}
-      poster={poster}
-      muted
-      loop
-      playsInline
-      preload="none"
-      aria-hidden="true"
-      className={`absolute inset-0 h-full w-full object-cover transition-all duration-700 ease-out ${
-        gra
-          ? "opacity-100 saturate-150"
-          : "opacity-90 saturate-[0.9] dark:opacity-60"
-      }`}
-    />
+    <>
+      {/* Obraz w kolorach motywu: ciemny pod ciemnym, jasny pod jasnym.
+          Atrybut poster nie umie zależeć od motywu. */}
+      <img
+        src={posterLight}
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 h-full w-full object-cover dark:hidden"
+      />
+      <img
+        src={poster}
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 hidden h-full w-full object-cover opacity-60 dark:block"
+      />
+      <video
+        ref={ref}
+        muted
+        loop
+        playsInline
+        preload="none"
+        aria-hidden="true"
+        className={`absolute inset-0 h-full w-full object-cover transition-all duration-700 ease-out ${
+          gra ? "opacity-100 saturate-150" : "opacity-0"
+        }`}
+      />
+    </>
   );
 }
