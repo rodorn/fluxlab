@@ -3356,3 +3356,26 @@ Z1 jednym zdaniem: z 32 sesji bez odsyłacza 18 to nasza automatyka, 12 inne, 2 
   Wniosek: 5 z 7 sesji to Firefox na Androidzie bez odsyłacza, wejście wprost na ten adres o różnych porach przez dwa dni (wcześniej taki sam wzór 29.09), bez zdarzeń i zgłoszeń; to najpewniej jedna osoba z zakładką albo otwartą kartą, możliwe że Paweł z telefonu (licznik nie ma tam `fl_nie_licz`). Ta strona nie ma stałego źródła ruchu z zewnątrz, więc nie warto dawać jej osobnego zadania. Część nocna Z23 (sesje bez odsyłacza 7.10 06:00 do 8.10 05:00) zostaje na 04:46.
 **Dla Pawła:** jeśli to Twój telefon (Firefox Android), wejdź raz z niego na https://fluxlab.pl/nie-licz-mnie, wtedy te wejścia znikną z liczb. Poza tym bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację).
 **Zostało otwarte:** Z15 o 20:50 (10 żądań indeksowania), Z23 część nocna o 04:46, Z24 o 05:46; czwartek 9:46 wysyłka 042 do 045.
+
+## 2026-10-07 21:05
+**Kanał:** Google (Z15 z planu, żądania indeksowania).
+**Co zrobione:** seria 10 żądań indeksowania z listy Z13 wysłana 20:50 do 20:58, 9 przyjętych; po serii wyszło, że całą tę listę audyt wyciął o 17:36, więc prośby dotyczyły przekierowań 301 i niczego nie przyniosą.
+**Ruch:** ostatnia doba 42 odsłony, 25 osób (mail 10, facebook 4, m.facebook.com 1, www.google.com 1); 3 uruchomienia narzędzi (wszystkie `przyklad`) i 1 audyt; odrzucone: boty 7 sesji, własna automatyka 25 sesji.
+**Dowód:**
+
+| adres | stan | wynik |
+|---|---|---|
+| /audyt-chatbota | nie w Google, 301 do /automatyzacja-leadow-crm | prośba przesłana 20:50 |
+| /audyt-marz | nie w Google, 301 do /narzedzia | prośba przesłana 20:51 |
+| /panel-zwrotow | nie w Google, 301 do /automatyzacja-dla-ecommerce | brak potwierdzenia 20:54 i 21:01 |
+| /rejestr-cen | nie w Google, 301 do /narzedzia | prośba przesłana 20:55 |
+| /wlasnosc-domeny | nie w Google, 301 do /audyt-poczty | prośba przesłana 20:55 |
+| /kalkulator-kosztow | nie w Google, 301 do /koszt-recznej-obslugi-leadow | prośba przesłana 20:56 |
+| /analiza-lokalizacji | nie w Google, 301 do /narzedzia | prośba przesłana 20:56 |
+| /kontrola-jezykow | nie w Google, 301 do /narzedzia | prośba przesłana 20:57 |
+| /strefa-wiedzy/jaka-forma-opodatkowania-jdg-2026 | nie w Google, 301 do /strefa-wiedzy | prośba przesłana 20:57 |
+| /strefa-wiedzy/ryczalt-czy-liniowy | nie w Google, 301 do /strefa-wiedzy | prośba przesłana 20:58 |
+
+  Limitu dziennego nie przekroczono. Cele przekierowań sprawdzone 21:02 do 21:04 bez żądań: wszystkie 6 jest w Google. Mapa witryny na produkcji ma 53 adresy. Wniosek dla stratega: lista Z13 powstała przed cięciem o 17:36, a jutrzejsze Z13 i Z15 muszą brać adresy z bieżącej mapy (53), nie z listy z 6.10. Linki z Z21 prowadzące do tych stron zniknęły razem z nimi.
+**Dla Pawła:** bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację; jeśli wejścia z Firefoksa na Androidzie to Twój telefon, otwórz na nim raz https://fluxlab.pl/nie-licz-mnie).
+**Zostało otwarte:** Z23 o 04:46, Z24 o 05:46; czwartek 9:46 wysyłka 042 do 045.
