@@ -82,6 +82,10 @@ export default function Page() {
               className="underline"
             >
               dlaczego firmowe maile trafiają do spamu
+            </Link>{" "}
+            i{" "}
+            <Link href="/mail-firmowy" className="underline">
+              ile kosztuje mail firmowy we własnej domenie
             </Link>
             .
           </p>

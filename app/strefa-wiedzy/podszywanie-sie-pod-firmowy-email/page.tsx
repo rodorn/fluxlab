@@ -153,8 +153,11 @@ export default function PodszywanieEmailArticle() {
           Potrzebna jest własna domena i usługa poczty. Skrzynka w Google
           Workspace Business Starter kosztuje 31,50 zł netto miesięcznie za
           osobę, w Microsoft 365 Business Basic około 30 zł (październik 2026,
-          umowa roczna). Adresu w Gmailu ani Onecie nie da się zabezpieczyć
-          rekordami domeny.
+          umowa roczna). Ceny trzech dostawców porównaliśmy na stronie{" "}
+          <Link href="/mail-firmowy" style={{ textDecoration: "underline" }}>
+            mail firmowy
+          </Link>
+          .
         </p>
         <p style={{ color: "var(--article-text)", lineHeight: 1.7 }}>
           U każdego dostawcy SPF, DKIM i DMARC trzeba ustawić samemu. Czy są
