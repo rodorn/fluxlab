@@ -198,7 +198,36 @@ export default function AutomatyzacjaDlaEcommerce() {
                         >
                           sprawdzenie danych sprzedawcy
                         </Link>
-                        ).
+                        ). Ile zostaje na sztuce po prowizji i zwrocie, liczy{" "}
+                        <Link
+                          href="/audyt-marz"
+                          className="text-accent hover:underline"
+                        >
+                          audyt marży
+                        </Link>
+                        , a braki w cenie z 30 dni, zasadach zwrotu i
+                        odpowiedziach bota pokażą{" "}
+                        <Link
+                          href="/rejestr-cen"
+                          className="text-accent hover:underline"
+                        >
+                          kontrola cen
+                        </Link>
+                        ,{" "}
+                        <Link
+                          href="/panel-zwrotow"
+                          className="text-accent hover:underline"
+                        >
+                          kontrola zwrotów
+                        </Link>{" "}
+                        i{" "}
+                        <Link
+                          href="/audyt-chatbota"
+                          className="text-accent hover:underline"
+                        >
+                          audyt chatbota
+                        </Link>
+                        .
                       </p>
 
                       <div className="space-y-6">

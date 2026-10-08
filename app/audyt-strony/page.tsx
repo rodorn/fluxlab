@@ -36,6 +36,14 @@ export default function Page() {
       lead="Wpisz adres i poczekaj kilkadziesiąt sekund. Zmierzymy szybkość na komputerze i telefonie, certyfikat, widoczność w wyszukiwarce, dostęp dla asystentów AI i zabezpieczenia poczty. Dostaniesz listę poprawek w kolejności, z ceną naprawy. Za darmo i bez rejestracji."
       ctaLabel="Porozmawiajmy o naprawie"
       ctaNote="Diagnoza nic nie kosztuje"
+      powiazane={[
+        {
+          przed: "Wersję obcojęzyczną sprawdza osobno",
+          kotwica: "kontrola wersji językowych",
+          href: "/kontrola-jezykow",
+          po: ".",
+        },
+      ]}
       checks={[
         {
           title: "Osobny pomiar dla telefonu",

@@ -42,6 +42,12 @@ export default function Page() {
           href: "/rejestr-cen",
           po: ".",
         },
+        {
+          przed: "Czy kupujący znajdzie termin, formularz i koszt odesłania, sprawdza",
+          kotwica: "kontrola informacji o zwrotach",
+          href: "/panel-zwrotow",
+          po: ".",
+        },
       ]}
       checks={[
         {

@@ -33,6 +33,14 @@ export default function Page() {
       lead="Przywrócony backup zwykle przywraca też backdoora. Porównujemy każdy plik strony z oryginałem z repozytorium WordPressa, więc obce pliki znamy w minuty."
       ctaLabel="Zgłoś włamanie"
       ctaNote="Odpisujemy najszybciej, jak się da"
+      powiazane={[
+        {
+          przed: "Po sprzątaniu sprawdźcie też, czy domena jest zapisana na Waszą firmę:",
+          kotwica: "kto jest właścicielem domeny",
+          href: "/wlasnosc-domeny",
+          po: ".",
+        },
+      ]}
       checks={[
         {
           title: "Porównanie z oryginałem",

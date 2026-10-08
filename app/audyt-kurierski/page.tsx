@@ -36,6 +36,14 @@ export default function Page() {
       lead="Dopłata paliwowa dochodzi do 45% ceny bazowej i zmienia się co dwa tygodnie. Przy kilkuset paczkach nikt nie sprawdza każdej linii faktury, więc robimy to za Ciebie."
       ctaLabel="Zamów audyt faktur"
       ctaNote="Pierwsza faktura sprawdzona za darmo"
+      powiazane={[
+        {
+          przed: "Ile zostaje na każdej sztuce po prowizji, zwrocie i dopłacie do wysyłki, pokazuje",
+          kotwica: "audyt marży na produktach",
+          href: "/audyt-marz",
+          po: ".",
+        },
+      ]}
       checks={[
         {
           title: "Stawka z właściwego okresu",
