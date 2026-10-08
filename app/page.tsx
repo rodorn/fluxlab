@@ -179,15 +179,15 @@ export default function Home() {
             kategorii, i kazde prowadzi do strony, ktora opisuje wlasnie ten
             jeden przypadek. */}
         <section className="relative z-20 py-12 lg:py-16 px-[max(1.5rem,calc((100%-72rem)/2+1.5rem))] border-t border-gray-200 dark:border-white/10">
-          <h2 className="text-xl lg:text-2xl font-semibold tracking-tight text-gray-900 dark:text-white/90">
+          <h2 className="text-center text-2xl lg:text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
             Najczęściej rozwiązujemy
           </h2>
-          <p className="mt-2 max-w-3xl text-sm text-gray-600 dark:text-white/60">
+          <p className="mx-auto mt-3 max-w-2xl text-center text-base text-gray-600 dark:text-white/60">
             Jeśli któreś z tych zdań brzmi jak Twoja firma, kliknij. Pod każdym
             opisaliśmy, na czym dokładnie polega problem, ile kosztuje i co
             zostaje po wdrożeniu.
           </p>
-          <ul className="mt-7 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {PROBLEMY.map((p) => (
               <li key={p.href}>
                 <Link
@@ -221,15 +221,15 @@ export default function Home() {
             na pytanie "skad mamy wiedziec, ze on sie na tym zna", a takie
             pytanie pada po przeczytaniu oferty, nie przed. */}
         <section className="relative z-20 border-t border-gray-200 py-12 dark:border-white/10 lg:py-16 px-[max(1.5rem,calc((100%-72rem)/2+1.5rem))]">
-          <h2 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white/90 lg:text-2xl">
+          <h2 className="text-center text-2xl lg:text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
             Skąd mamy wiedzieć, że się na tym znamy
           </h2>
-          <p className="mt-2 max-w-3xl text-sm text-gray-600 dark:text-white/60">
+          <p className="mx-auto mt-3 max-w-2xl text-center text-base text-gray-600 dark:text-white/60">
             Nie pokazujemy cudzych logotypów. Pokazujemy, co sami zmierzyliśmy
             na 386 stronach dealerów tymi samymi narzędziami, które są tutaj,
             z metodą, którą każdy może powtórzyć.
           </p>
-          <div className="mt-6 grid max-w-3xl gap-3 sm:grid-cols-3">
+          <div className="mx-auto mt-8 grid max-w-3xl gap-3 sm:grid-cols-3">
             {BADANIA.map((b) => (
               <Link
                 key={b.href}
