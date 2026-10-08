@@ -3610,3 +3610,12 @@ Z19: VPS od 1.10 tylko 3 sesje chatgpt.com (2.10 `/kalkulator-podatkowy`, 5.10 i
 **Dowód:** `cykl/plan-ruchu.md` Z21 => lista 8 plików z KRS i datą stanu odpisu.
 **Dla Pawła:** odpowiedź do Profit Polska (lead z 5.10) nadal czeka na akceptację.
 **Zostało otwarte:** Z6 o 11:46 (`--limit=20`), Z7 o 12:46, Z9 o 14:46 (050 do 057, `--limit=8`), Z10, Z11, Z15 po 20:52, Z16, Z23, Z24.
+<!-- WYSLANO 2026-10-08 11:04 -->
+
+## 2026-10-08 12:01
+**Kanał:** outreach (Z6, follow-up).
+**Co zrobione:** 17 biur rachunkowych z wtorkowej wysyłki dostało ostatnie przypomnienie, że odpis KRS ich spółki nadal nie ma adresu do e-Doręczeń, z linkiem `?krs=` otwierającym gotowy wynik.
+**Ruch:** ostatnia doba 36 odsłon, 20 osób (raport 11:51); źródła: mail 6, facebook 4, www.google.com 1, m.baidu.com 1, narzedzie 1. Najczęściej /audyt-strony 8, /e-doreczenia-integracja 8, /automatyzacja-leadow-crm 6. Uruchomienia narzędzi 5 (`uruchomiono_skan_krs_z_linku` 2, przykłady 3 razem z KSeF, audyt 1).
+**Dowód:** `wyslane_ks_fu.json` 10 do 27, wysyłka 11:46 do 11:50, status 12:00: 17/17 `delivered`. Adresy: info@biuro-wroclaw.pl, biuro@mscfinanse.pl, biuro@fabrykaperspektyw.pl, kontakt@biuronarkiewicz.pl, biuro@amadeusz.olsztyn.pl, biuro@taxido.pl, biuro@kontax.pl, 100sio@100sio.pl, poczta@rachmistrz-elk.pl, biuro@zbrtarnobrzeg.pl, biuro@hal-jak.pl, biuro@rachunkowosc-libro.pl, hello@borsukpodatki.pl, biuro@skutslania-kdp.pl, sekretariat@biuroaurum.pl, info@advizor.pl, biuro@acartus.pl. Id w planie przy Z6. Zoho INBOX i Spam od 8.10 przed wysyłką: 0 odpowiedzi na Z4 ani na follow-up (tylko korespondencja Kontomatik).
+**Dla Pawła:** odpowiedź do Profit Polska (lead z 5.10) nadal czeka na akceptację. Kontomatik (Olga Głuchowska) odpisała dziś 10:40 i 11:06 w sprawie sandboxa i cennika API, w Zoho INBOX.
+**Zostało otwarte:** Z7 o 12:46 (odpowiedzi na Z4 i Z6, sesje z utm `ksiegowe`/`ksiegowe-fu`), Z9 o 14:46 (050 do 057, `--limit=8`), Z10, Z11, Z15 po 20:52, Z16, Z23, Z24.
