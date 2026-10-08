@@ -40,7 +40,7 @@ export default function ProduktyPage() {
               Produkty
             </p>
             <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white">
-              Gotowe narzędzia na jeden konkretny problem
+              Gotowe narzędzia na konkretne problemy
             </h1>
             <p className="mt-5 text-lg text-gray-600 dark:text-gray-300">
               Konkretny efekt za stałą cenę. Wynik odsyłamy mailem.
