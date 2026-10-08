@@ -706,3 +706,24 @@ html.dark {
     transform: none !important;
   }
 }
+
+/* Sekcja tuż pod okruszkami nie dokłada własnego górnego odstępu (było 64-96 px pustki). */
+nav[aria-label="Breadcrumb"] + section,
+nav[aria-label="Breadcrumb"] + article {
+  padding-top: 1.5rem;
+}
+
+/* main z pt-16 już robi miejsce na nagłówek, okruszki dokładają tylko 1 rem. */
+main[class*="pt-16"] > nav[aria-label="Breadcrumb"] {
+  padding-top: 1rem;
+}
+
+/* Okruszki jako pierwszy element sekcji container-wide (np. /realizacje): sekcja nie dokłada py-20 nad nimi. */
+section.container-wide:has(> nav[aria-label="Breadcrumb"]) {
+  padding-top: 1rem;
+}
+
+/* main z max-w i pt-28/32 (strony narzędzi): nagłówek 4 rem + 1.5 rem nad okruszkami. */
+main[class*="max-w-"]:has(> nav[aria-label="Breadcrumb"]) {
+  padding-top: 5.5rem;
+}
