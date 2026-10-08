@@ -3468,3 +3468,56 @@ Z1 jednym zdaniem: z 32 sesji bez odsyłacza 18 to nasza automatyka, 12 inne, 2 
 **Dowód:** brak publikacji; odczyt `budzet` 04:43.
 **Dla Pawła:** bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację; jeśli Firefox na Twoim telefonie otwiera /automatyzacja-leadow-crm, wejdź nim raz na https://fluxlab.pl/nie-licz-mnie).
 **Zostało otwarte:** Z24 o 05:46; czwartek 9:46 wysyłka `ksiegowe-edoreczenia` 042 do 049.
+
+## 2026-10-08 05:46
+**Kanał:** pomiar (Z24 planu 7/8.10, ostatnie zadanie).
+**Co zrobione:** bilans planu 2026-10-07/08 dla stratega: 24 z 24 zadań zamknięte; ludzi przyprowadził tylko mail KRS do biur rachunkowych (2 do 3 osoby z utm `ksiegowe`, 0 uruchomień, 0 zgłoszeń, 1 wypisanie), reszta kanałów 0 mierzalnych wejść.
+**Ruch:** ostatnia doba 29 odsłon, 25 sesji (mail 10, bez odsyłacza 8, facebook 4, www.google.com 2, m.baidu.com 1); 7 dni 113 sesji, 167 odsłon; sesje 7.10: 27 (najwięcej od startu licznika, 5.10 26, 6.10 25).
+**Dowód:**
+
+### Bilans planu 2026-10-07/08
+
+`python3 cykl/pomiar-kanalow.py` (05:43):
+- Źródła 24 h: 25 sesji, 29 odsłon; mail 10, bez odsyłacza 8, facebook 4, www.google.com 2, m.baidu.com 1.
+- Źródła 7 dni: 113 sesji, 167 odsłon; bez odsyłacza 65, mail 14, www.google.com 13, facebook 13 (+3 www.facebook.com, +1 m.facebook.com), chatgpt.com 3, narzedzie 1, useme.com 1, m.baidu.com 1.
+- Kampanie utm 7 dni: facebook/narzedzia 13, mail/ksiegowe 9, mail/ksiegowe-fu 2, mail/ksiegowe- 2 (skaner, obcięty utm), mail/test-utm 1, narzedzie/edoreczenia 1.
+- Zdarzenia 7 dni: audyt_uruchomiony 4, uruchomiono_skan 2 (e-Doręczenia), uruchomiono_skan_krs 1, `_przyklad` 3 (wszystkie z testu Z12 12:53, własne), audyt_wynik_slaby 2, lead_landing 1, klik_po_wyniku 1, uruchomiono_kalkulator 1, zawezono_katalog 1, rozwinięcia audytu 5 (jedna sesja 7.10 13:17 macOS).
+- Resend 24 h: 22 wysłane, 22 delivered (ksiegowe 10, ksiegowe-fu 10, 2 spoza plików outreachu), 0 bounced, 0 complained.
+- Zoho 24 h: INBOX 9 (FINREAL 6, Anthropic 2, BR Help 1 = wypisanie z 15:25), Spam 0.
+
+| Zadanie | Zrobione | Dowód | Co przyprowadziło |
+|---|---|---|---|
+| Z1 filtr własnej automatyki | tak | fluxlab-ruch 89d2905 | nie dotyczy (doba 6/7.10 po filtrze 22 osoby zamiast 32) |
+| Z2 frazy GSC, /sprawdz-auto | tak | f016cdb | 0 (efekt w GSC za kilka dni) |
+| Z3 segment ksiegowe-fu | tak | `wyslij_segment.py` | materiał do Z6 |
+| Z4 ksiegowe 032 do 036 | tak | 5/5 delivered | 1 sesja utm 10:29, 1 osoba, 0 uruchomień |
+| Z5 pkt.pl nowe kategorie | tak | krs_partia19, 1 mail | 1,0 maila na 100 domen |
+| Z6 follow-up 10 maili | tak | 10/10 delivered | 4 sesje skanera, 0 ludzi |
+| Z7 odpowiedzi | tak | 0 odpowiedzi | nie dotyczy |
+| Z8 CIK mazowieckie | tak | krs_partia20, 4 maile | 6,3 maila na 100 domen |
+| Z9 ksiegowe 037 do 041 | tak | 5/5 delivered | 4 sesje utm Edge Windows (prawdopodobnie 1 osoba, BR Help), 1 wypisanie |
+| Z10, Z11 odpowiedzi, bilans outreachu | tak | wpisy 15:50, 15:58 | nie dotyczy |
+| Z12 przyciski przykładu | tak | d556b8d | 0 uruchomień `_przyklad` poza własnym testem |
+| Z13 kontrola indeksu | tak | `--tylko-stan` 13:55 | 8 z 8 zgłoszonych 6.10 w Google |
+| Z14 posty FB 031, 032 | tak | kolejka.json | facebook 4 sesje w 24 h (utm facebook/narzedzia), 0 uruchomień |
+| Z15 żądania indeksowania | tak | 9 z 10 „Przesłano prośbę” 20:50 do 20:58 | 0, wszystkie 10 adresów to od 546b83f przekierowania 301, prośby zmarnowane |
+| Z16 CIK druga runda | tak | krs_partia21, 4 maile | 9,3 maila na 100 domen |
+| Z17 asystenci AI, Bing | tak | wpis 14:00 | 3 sesje chatgpt.com od 1.10, 0 z innych asystentów |
+| Z18 zrzuty 390 px | tak | 7a11b34 | poprawiony pierwszy ekran /audyt-kurierski |
+| Z19 statusy po kilku godzinach | tak | 20/20 delivered | 0 sesji po 16:46 |
+| Z20 kontrola kolejki | tak | 4 maile 042 do 045 | czwartek |
+| Z21 linki wewnętrzne | tak | 096a4b8, 99944e6 | 0 (Google) |
+| Z22 Gofin, Allegro | tak | 92 wątki, 0 tekstów | 0 |
+| Z23 sesje bez odsyłacza | tak | wpis 21:45 | stałe źródło /automatyzacja-leadow-crm: Firefox Android bez odsyłacza |
+| Z24 bilans | tak | ten wpis | nie dotyczy |
+
+Osobno:
+- Maile gotowe na czwartek (katalog `maile_ksiegowe_edoreczenia` minus `wyslane_ks.json` 103 i `pomijane.json` 60): 8, czyli 042_kka, 043_podatki-rachunkowosc, 044_liczbypro, 045_biuroktk, 046_alza, 047_ammes, 048_blackink, 049_ksiegownia. Mniej niż 20, jedna wysyłka 9:46 bez `--limit`.
+- Trafialność nowych źródeł domen (maile na 100 domen): CIK mazowieckie 6,3 (Z8), CIK śląskie, małopolskie, wielkopolskie 9,3 (Z16), pkt `kancelaria-podatkowa` 1,3, pkt `uslugi-ksiegowe` 0,0, pkt `biuro-rachunkowe` ostatnie 2 partie 0. CIK to jedyne źródło warte dalszych rund (pozostałe województwa).
+- Limit indeksowania GSC: zużyty 7.10 20:50 do 20:58 (9 potwierdzonych + 2 próby /panel-zwrotow), odnowienie 8.10 ok. 20:50. Z 10 adresów Z13 żaden nie jest już w mapie (cięcie 546b83f, mapa 53 adresy), więc następna seria musi brać adresy z obecnej mapy.
+- Z13: 8 z 8 adresów zgłoszonych 6.10 20:43 jest w Google (w tym /ceny-energii-jutro, /sprawdz-auto, /numer-ksef, /strona-po-wlamaniu).
+- Noc 7.10 21:45 do 8.10 05:46 (VPS): 3 odsłony, 2 sesje, 0 z utm, 0 zdarzeń, 0 zgłoszeń: 22:53 m.baidu.com wpis strefy wiedzy o CRM, 23:57 Firefox Android bez odsyłacza /automatyzacja-leadow-crm i / (ta sama przeglądarka co w Z23). Zoho od 21:02: 0 nowych wiadomości, 0 odpowiedzi z outreachu.
+
+**Wniosek:** doba 7.10 dała 20 maili do biur (2 do 3 osoby, 1 wypisanie, 0 leadów); Google, Facebook, asystenci AI i fora 0 uruchomień narzędzi i 0 zgłoszeń. Najmocniejsza dźwignia na czwartek to CIK jako źródło adresów (6 do 9 maili na 100 domen wobec 0 do 1 z pkt.pl).
+**Dla Pawła:** bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację; jeśli Firefox na Twoim telefonie otwiera /automatyzacja-leadow-crm, wejdź nim raz na https://fluxlab.pl/nie-licz-mnie).
+**Zostało otwarte:** w planie 7/8.10 nie ma już „- [ ]”; nowy plan strateg pisze o 06:15. Czwartek 9:46 wysyłka `ksiegowe-edoreczenia` 042 do 049 (8 maili). Limit indeksowania od ok. 20:50, adresy z obecnej mapy.
