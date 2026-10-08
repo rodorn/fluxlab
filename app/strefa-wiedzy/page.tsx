@@ -46,8 +46,8 @@ export default function StrefaWiedzy() {
                 Strefa wiedzy
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-400">
-                Krótko i konkretnie o automatyzacji, CRM, integracjach i AI
-                dla firm B2B.
+                Krótko i konkretnie o automatyzacji, CRM, integracjach i AI dla
+                firm B2B.
               </p>
             </div>
           </div>
@@ -81,14 +81,15 @@ export default function StrefaWiedzy() {
                           <OkladkaArtykulu
                             tytul={article.title}
                             kategoria={category.name}
+                            src={`/okladki/${article.href.split("/").pop()}.webp`}
                           />
                           <div className="p-4">
-                          <h3 className="text-base font-semibold text-gray-900 dark:text-white group-hover:text-accent transition-colors mb-1">
-                            {article.title}
-                          </h3>
-                          <p className="text-sm text-gray-500 dark:text-gray-400">
-                            {article.description}
-                          </p>
+                            <h3 className="text-base font-semibold text-gray-900 dark:text-white group-hover:text-accent transition-colors mb-1">
+                              {article.title}
+                            </h3>
+                            <p className="text-sm text-gray-500 dark:text-gray-400">
+                              {article.description}
+                            </p>
                           </div>
                         </Link>
                       ))}

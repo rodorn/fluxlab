@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import OkladkaArtykulu from "@/components/OkladkaArtykulu";
 import {
   categories,
   getCategoryBySlug,
@@ -51,7 +52,8 @@ export default async function CategoryPage({ params }: Props) {
     <>
       <Header />
       <main className="pt-16 prose-justify">
-        <Breadcrumbs kolumna="srodek"
+        <Breadcrumbs
+          kolumna="srodek"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: category.name },
@@ -82,14 +84,21 @@ export default async function CategoryPage({ params }: Props) {
                   <Link
                     key={article.href}
                     href={article.href}
-                    className="block p-6 rounded-2xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800/60 hover:border-accent/30 dark:hover:border-accent/50 transition-colors group"
+                    className="block overflow-hidden rounded-xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800/60 hover:border-accent/30 dark:hover:border-accent/50 transition-colors group"
                   >
-                    <h2 className="text-base font-semibold text-gray-900 dark:text-white group-hover:text-accent transition-colors mb-2">
-                      {article.title}
-                    </h2>
-                    <p className="text-sm text-gray-500 dark:text-gray-400">
-                      {article.description}
-                    </p>
+                    <OkladkaArtykulu
+                      tytul={article.title}
+                      kategoria={category.name}
+                      src={`/okladki/${article.href.split("/").pop()}.webp`}
+                    />
+                    <div className="p-4">
+                      <h2 className="text-base font-semibold text-gray-900 dark:text-white group-hover:text-accent transition-colors mb-1">
+                        {article.title}
+                      </h2>
+                      <p className="text-sm text-gray-500 dark:text-gray-400">
+                        {article.description}
+                      </p>
+                    </div>
                   </Link>
                 ))}
               </div>
