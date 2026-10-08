@@ -3705,3 +3705,29 @@ Z19: VPS od 1.10 tylko 3 sesje chatgpt.com (2.10 `/kalkulator-podatkowy`, 5.10 i
 **Dowód:** brak (plan bez zmian, 0 commitów).
 **Dla Pawła:** bez zmian: dwie odpowiedzi Kontomatik w pawel@fluxlab.pl, komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację.
 **Zostało otwarte:** Z15 od 20:52, Z16 o 21:46, Z23 o 04:46, Z24 o 05:46; piątek 9:46 wysyłka 050 do 057 (`--limit=8`).
+
+## 2026-10-08 18:45
+**Kanał:** żaden, przebieg bez dostawy.
+**Co zrobione:** nic nie poszło w świat: wszystkie otwarte zadania planu mają późniejsze godziny (Z15 żądania indeksowania od 20:52, Z16 pomiar 21:46, Z23 04:46, Z24 05:46), a `budzet` o 18:43 daje rytm „wstrzymaj” (prognoza 164% tygodnia, hamulec krytyczny, nowy cykl: NIE), więc nie biorę pracy spoza planu.
+**Ruch:** ostatnia doba 19 odsłon, 15 osób (raport 18:43); źródła: www.google.com 3, mail 3, facebook 2, m.baidu.com 1, narzedzie 1. Najczęściej /e-doreczenia-integracja 6, /automatyzacja-leadow-crm 4, / 4. Uruchomienia narzędzi 2 (`uruchomiono_skan_krs_z_linku`). Tydzień 200 odsłon, 122 osoby.
+**Dowód:** brak (plan bez zmian, 0 commitów).
+**Dla Pawła:** bez zmian: dwie odpowiedzi Kontomatik w pawel@fluxlab.pl, komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację.
+**Zostało otwarte:** Z15 od 20:52, Z16 o 21:46, Z23 o 04:46, Z24 o 05:46; piątek 9:46 wysyłka 050 do 057 (`--limit=8`).
+
+<!-- WYSLANO 2026-10-08 19:05 -->
+
+## 2026-10-08 19:45
+**Kanał:** żaden, przebieg bez dostawy.
+**Co zrobione:** nic nie poszło w świat: wszystkie otwarte zadania planu mają późniejsze godziny (Z15 żądania indeksowania od 20:52, Z16 pomiar 21:46, Z23 04:46, Z24 05:46), a `budzet` o 19:43 daje rytm „wstrzymaj” (prognoza 175% tygodnia, hamulec krytyczny, nowy cykl: NIE), więc nie biorę pracy spoza planu.
+**Ruch:** ostatnia doba 20 odsłon, 16 osób (raport 19:43); źródła: www.google.com 4, mail 3, facebook 2, m.baidu.com 1, narzedzie 1. Najczęściej /e-doreczenia-integracja 6, / 5, /automatyzacja-leadow-crm 4, /kontakt 2. Uruchomienia narzędzi 2 (`uruchomiono_skan_krs_z_linku`). Tydzień 201 odsłon, 123 osoby.
+**Dowód:** brak (plan bez zmian, 0 commitów).
+**Dla Pawła:** bez zmian: dwie odpowiedzi Kontomatik w pawel@fluxlab.pl, komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację.
+**Zostało otwarte:** Z15 od 20:52, Z16 o 21:46, Z23 o 04:46, Z24 o 05:46; piątek 9:46 wysyłka 050 do 057 (`--limit=8`).
+
+## 2026-10-08 21:45
+**Kanał:** Google (żądania indeksowania, Z15) i pomiar outreachu (Z16).
+**Co zrobione:** 8 próśb o zindeksowanie w Search Console (seria 21:43 do 21:52) oraz wieczorny pomiar wysyłek: 25/25 dostarczone, 0 odpowiedzi, 0 wejść z maila po 16:46.
+**Ruch:** ostatnia doba 17 odsłon, 14 osób (raport 21:43); źródła: mail 3, www.google.com 3, facebook 2, m.baidu.com 1, narzedzie 1. Najczęściej /e-doreczenia-integracja 6, / 5, /kontakt 2. Uruchomienia narzędzi 2 (`uruchomiono_skan_krs_z_linku`). Tydzień 201 odsłon, 123 osoby.
+**Dowód:** „Przesłano prośbę” dla /mail-firmowy, /audyt-chatbota, /audyt-marz (te trzy już w Google), /wlasnosc-domeny, /kalkulator-kosztow, /analiza-lokalizacji, /kontrola-jezykow, /strefa-wiedzy/jaka-forma-opodatkowania-jdg-2026 (nie w Google); wszystkie 10 adresów 200 z VPS. Bez potwierdzenia: /panel-zwrotow (2 próby), /rejestr-cen (limit dnia o 21:55). Resend 8.10: `ksiegowe-edoreczenia` 8 delivered, `ksiegowe-fu` 17 delivered, 0 bounced/complained. Zoho od 16:00: INBOX 0, Spam 0. VPS: sesje `mail` od 16:46 0, skany z linku od 09:00 1 (skaner), zgłoszenia 0.
+**Dla Pawła:** bez zmian: dwie odpowiedzi Kontomatik w pawel@fluxlab.pl, komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację.
+**Zostało otwarte:** Z23 o 04:46, Z24 o 05:46; /panel-zwrotow i /rejestr-cen na początek serii GSC 9.10 od ok. 21:45; piątek 9:46 wysyłka 050 do 057 (`--limit=8`). `budzet` 21:43: wstrzymaj (prognoza 210%).
