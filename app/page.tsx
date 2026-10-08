@@ -163,9 +163,7 @@ export default function Home() {
                 <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-white/70">
                   {p.desc}
                 </p>
-                <span
-                  className="mt-4 inline-flex items-center gap-2 rounded-lg px-3 py-1.5 -ml-3 text-sm font-semibold text-accent dark:text-white transition-all duration-300 group-hover:gap-3 group-hover:bg-accent-solid group-hover:text-white"
-                >
+                <span className="mt-4 inline-flex items-center gap-2 rounded-lg px-3 py-1.5 -ml-3 text-sm font-semibold text-accent dark:text-white transition-all duration-300 group-hover:gap-3 group-hover:bg-accent-solid group-hover:text-white">
                   {p.cta}
                   <span aria-hidden="true">→</span>
                 </span>
@@ -222,12 +220,12 @@ export default function Home() {
             pytanie pada po przeczytaniu oferty, nie przed. */}
         <section className="relative z-20 border-t border-gray-200 py-12 dark:border-white/10 lg:py-16 px-[max(1.5rem,calc((100%-72rem)/2+1.5rem))]">
           <h2 className="text-center text-2xl lg:text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
-            Skąd mamy wiedzieć, że się na tym znamy
+            Co sami zmierzyliśmy
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-center text-base text-gray-600 dark:text-white/60">
             Nie pokazujemy cudzych logotypów. Pokazujemy, co sami zmierzyliśmy
-            na 386 stronach dealerów tymi samymi narzędziami, które są tutaj,
-            z metodą, którą każdy może powtórzyć.
+            na 386 stronach dealerów tymi samymi narzędziami, które są tutaj, z
+            metodą, którą każdy może powtórzyć.
           </p>
           <div className="mx-auto mt-8 grid max-w-3xl gap-3 sm:grid-cols-3">
             {BADANIA.map((b) => (
@@ -255,7 +253,6 @@ export default function Home() {
             ))}
           </div>
         </section>
-
       </main>
       <Footer />
     </>
