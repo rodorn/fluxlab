@@ -3619,3 +3619,19 @@ Z19: VPS od 1.10 tylko 3 sesje chatgpt.com (2.10 `/kalkulator-podatkowy`, 5.10 i
 **Dowód:** `wyslane_ks_fu.json` 10 do 27, wysyłka 11:46 do 11:50, status 12:00: 17/17 `delivered`. Adresy: info@biuro-wroclaw.pl, biuro@mscfinanse.pl, biuro@fabrykaperspektyw.pl, kontakt@biuronarkiewicz.pl, biuro@amadeusz.olsztyn.pl, biuro@taxido.pl, biuro@kontax.pl, 100sio@100sio.pl, poczta@rachmistrz-elk.pl, biuro@zbrtarnobrzeg.pl, biuro@hal-jak.pl, biuro@rachunkowosc-libro.pl, hello@borsukpodatki.pl, biuro@skutslania-kdp.pl, sekretariat@biuroaurum.pl, info@advizor.pl, biuro@acartus.pl. Id w planie przy Z6. Zoho INBOX i Spam od 8.10 przed wysyłką: 0 odpowiedzi na Z4 ani na follow-up (tylko korespondencja Kontomatik).
 **Dla Pawła:** odpowiedź do Profit Polska (lead z 5.10) nadal czeka na akceptację. Kontomatik (Olga Głuchowska) odpisała dziś 10:40 i 11:06 w sprawie sandboxa i cennika API, w Zoho INBOX.
 **Zostało otwarte:** Z7 o 12:46 (odpowiedzi na Z4 i Z6, sesje z utm `ksiegowe`/`ksiegowe-fu`), Z9 o 14:46 (050 do 057, `--limit=8`), Z10, Z11, Z15 po 20:52, Z16, Z23, Z24.
+
+## 2026-10-08 12:52
+**Kanał:** outreach z gotowym raportem (Z7 z planu, odpowiedzi i pomiar po Z4 i Z6; Z9 zamknięte decyzją).
+**Co zrobione:** sprawdzone odpowiedzi i wejścia po 25 dzisiejszych mailach: 0 odpowiedzi, 0 zgłoszeń, jedyny skan z linku `?krs=` zrobił skaner pocztowy minutę po wysyłce; Z9 przeniesione na piątek, bo CIK (Z5, Z8) dał 0 maili.
+**Ruch:** ostatnia doba 38 odsłon, 22 osoby (mail 7, facebook 5, www.google.com 1, m.baidu.com 1, narzędzie 1); 5 uruchomień narzędzi (skan przykład 2, skan KRS z linku 2, numer KSeF przykład 1, audyt 1); odrzucone: boty 7 sesji, własna automatyka 33 sesje.
+**Dowód:** Zoho INBOX i Spam od 8.10 (IMAP, tylko odczyt), VPS `ruch.sqlite` od 09:00 CEST:
+
+| kampania | wysłane dziś | sesje | ludzie | skany z linku | zgłoszenia | odpowiedzi |
+|---|---|---|---|---|---|---|
+| ksiegowe (Z4 09:46) | 8 | 1 (`0gh0m9lo` 09:47:31 Chrome macOS) | 0, skaner | 1 (skaner, ta sama sekunda co odsłona) | 0 | 0 |
+| ksiegowe (starsze maile) | 0 | 1 (`p5z13ydi` 12:35 Edge Windows, 1 odsłona, bez zdarzenia) | 0 do 1 | 0 | 0 | 0 |
+| ksiegowe-fu (Z6 11:46) | 17 | 0 | 0 | 0 | 0 | 0 |
+
+  Sesja 12:35 nie ma zdarzenia `uruchomiono_skan_krs_z_linku`, a komponent odpala je przy każdym wejściu z poprawnym `?krs=`, więc link był bez numeru: to mail sprzed 8.10 (Z1 dodał `?krs=` dziś rano). Wniosek pomiarowy: zdarzenie z linku powstaje już przy otwarciu strony, więc skanery pocztowe je zawyżają; za człowieka liczyć tylko wejścia później niż minutę po dostarczeniu. W Zoho poza tym 5 maili od Kontomatik (konto testowe i dwie odpowiedzi Olgi Głuchowskiej w sprawie sandboxa i cennika API), inny wątek, tylko odnotowane.
+**Dla Pawła:** dwie odpowiedzi Kontomatik (olga.gluchowska@kontomatik.com, 10:40 i 11:06, „Re: Zapytanie o sandbox i cennik API…”) czekają w pawel@fluxlab.pl, nie dotyczą outreachu. Poza tym bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację).
+**Zostało otwarte:** Z10 o 15:46 (odpowiedzi i sesje po Z4 i Z6; Z9 nie wysyła), Z11 o 16:46, Z15 żądania od 20:52, Z16, Z23, Z24; kolejka piątkowa 050 do 057.
