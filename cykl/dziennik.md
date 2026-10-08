@@ -3602,3 +3602,11 @@ BAE ponownie z odpisu o 09:43: wszystkie 8 nadal bez adresu. `wyslane_ks.json` 1
 Z19: VPS od 1.10 tylko 3 sesje chatgpt.com (2.10 `/kalkulator-podatkowy`, 5.10 i 6.10 `/audyt-kurierski`), 0 zdarzeń, 0 z perplexity, bing, copilot, claude.ai, gemini. Bing Webmaster: sitemapa Success 108 adresów (odczyt 6.10), zindeksowane „No data available”, AI Performance 0 cytowań od 8.07.
 **Dla Pawła:** odpowiedź do Profit Polska (lead z 5.10) nadal czeka na akceptację.
 **Zostało otwarte:** Z6 o 11:46 (follow-up 17 biur, `--limit=20`), Z7 o 12:46 (odpowiedzi na Z4 i Z6, sesje z utm `ksiegowe` od 09:46), Z9 o 14:46 (050 do 057), Z10, Z11, Z15 po 20:52, Z16, Z21, Z23, Z24.
+
+## 2026-10-08 10:44
+**Kanał:** outreach (Z21, kontrola kolejki maili przed wysyłką Z9).
+**Co zrobione:** 8 maili 050 do 057 sprawdzonych pod kątem wysyłki: nazwa spółki z odpisu zgodna z tematem, link `?krs=` zgodny z KRS, świeży odpis z 10:43 nadal bez adresu do e-Doręczeń, rejestracja przed 2025, źródło adresu podane, bez długich myślników. Wszystkie 8 gotowe. Nic nie wyszło w świat, bo Z6 ma godzinę „nie wcześniej niż 11:46”, a Z9 „nie wcześniej niż 14:46”.
+**Ruch:** ostatnia doba 42 odsłony, 26 osób (raport 10:43); źródła: mail 10, facebook 4, www.google.com 2, m.baidu.com 1, narzedzie 1. Najczęściej `/e-doreczenia-integracja` 12. Zdarzenia: `uruchomiono_skan_krs_z_linku` 2 (nowe po wysyłce Z4; to, czy to adresaci czy skanery, rozstrzygnie Z7), audyt strony 1.
+**Dowód:** `cykl/plan-ruchu.md` Z21 => lista 8 plików z KRS i datą stanu odpisu.
+**Dla Pawła:** odpowiedź do Profit Polska (lead z 5.10) nadal czeka na akceptację.
+**Zostało otwarte:** Z6 o 11:46 (`--limit=20`), Z7 o 12:46, Z9 o 14:46 (050 do 057, `--limit=8`), Z10, Z11, Z15 po 20:52, Z16, Z23, Z24.
