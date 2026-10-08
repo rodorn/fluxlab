@@ -3635,3 +3635,19 @@ Z19: VPS od 1.10 tylko 3 sesje chatgpt.com (2.10 `/kalkulator-podatkowy`, 5.10 i
   Sesja 12:35 nie ma zdarzenia `uruchomiono_skan_krs_z_linku`, a komponent odpala je przy każdym wejściu z poprawnym `?krs=`, więc link był bez numeru: to mail sprzed 8.10 (Z1 dodał `?krs=` dziś rano). Wniosek pomiarowy: zdarzenie z linku powstaje już przy otwarciu strony, więc skanery pocztowe je zawyżają; za człowieka liczyć tylko wejścia później niż minutę po dostarczeniu. W Zoho poza tym 5 maili od Kontomatik (konto testowe i dwie odpowiedzi Olgi Głuchowskiej w sprawie sandboxa i cennika API), inny wątek, tylko odnotowane.
 **Dla Pawła:** dwie odpowiedzi Kontomatik (olga.gluchowska@kontomatik.com, 10:40 i 11:06, „Re: Zapytanie o sandbox i cennik API…”) czekają w pawel@fluxlab.pl, nie dotyczą outreachu. Poza tym bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację).
 **Zostało otwarte:** Z10 o 15:46 (odpowiedzi i sesje po Z4 i Z6; Z9 nie wysyła), Z11 o 16:46, Z15 żądania od 20:52, Z16, Z23, Z24; kolejka piątkowa 050 do 057.
+
+## 2026-10-08 13:51
+**Kanał:** outreach z gotowym raportem (Z10 z planu, odpowiedzi i pomiar po Z4 i Z6).
+**Co zrobione:** nic nowego nie poszło w świat; sprawdzone odpowiedzi i wejścia po 25 dzisiejszych mailach: od pomiaru Z7 (12:50) 0 nowych odpowiedzi, 0 nowych sesji z maili, 0 zgłoszeń.
+**Ruch:** ostatnia doba 26 odsłon, 22 osoby (raport 13:50); źródła: mail 7, facebook 5, www.google.com 3, m.baidu.com 1, narzedzie 1. Najczęściej /e-doreczenia-integracja 10, /automatyzacja-leadow-crm 6. Uruchomienia narzędzi 2 (oba `uruchomiono_skan_krs_z_linku`, w dobie, w tym 1 skaner po Z4).
+**Dowód:** Zoho INBOX i Spam od 8.10 (IMAP, tylko odczyt), VPS `ruch.sqlite` od 09:00 CEST:
+
+| kampania | wysłane dziś | sesje | ludzie | skany z linku | zgłoszenia | odpowiedzi |
+|---|---|---|---|---|---|---|
+| ksiegowe (Z4 09:46) | 8 | 1 (`0gh0m9lo` 09:47:31) | 0, skaner | 1 (skaner) | 0 | 0 |
+| ksiegowe (starsze maile) | 0 | 1 (`p5z13ydi` 12:35 Edge, bez `?krs=`) | 0 do 1 | 0 | 0 | 0 |
+| ksiegowe-fu (Z6 11:46) | 17 | 0 | 0 | 0 | 0 | 0 |
+| Z9 | 0 (przeniesione na piątek) | | | | | |
+
+**Dla Pawła:** bez zmian: dwie odpowiedzi Kontomatik (10:40 i 11:06) w pawel@fluxlab.pl, komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację.
+**Zostało otwarte:** Z11 o 16:46 (bilans outreachu i decyzja o follow-upach), Z15 żądania indeksowania od 20:52, Z16 o 21:46, Z23, Z24; kolejka piątkowa 050 do 057.
