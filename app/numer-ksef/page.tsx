@@ -8,12 +8,12 @@ import NumerKsefCheck from "@/components/NumerKsefCheck";
 import NazwaNarzedzia from "@/components/NazwaNarzedzia";
 
 export const metadata: Metadata = {
-  title: "Sprawdzenie numeru KSeF za darmo, suma kontrolna | Fluxlab",
+  title: "Numer KSeF: sprawdzenie w 10 s, bez logowania | Fluxlab",
   description:
-    "Wklejcie numer KSeF albo listę numerów z przelewów i sprawdźcie za darmo, czy nie ma literówki. Liczymy sumę kontrolną, NIP sprzedawcy i datę przyjęcia.",
+    "Numer KSeF sprawdzicie w 10 s, bez logowania: suma kontrolna, NIP sprzedawcy i data przyjęcia faktury. Przykład działa jednym kliknięciem.",
   alternates: { canonical: "/numer-ksef" },
   openGraph: {
-    title: "Sprawdzenie numeru KSeF za darmo, suma kontrolna | Fluxlab",
+    title: "Numer KSeF: sprawdzenie w 10 s, bez logowania | Fluxlab",
     description:
       "Darmowe sprawdzenie numeru KSeF przed przelewem. Suma kontrolna, NIP sprzedawcy i data przyjęcia faktury, liczone w przeglądarce.",
     locale: "pl_PL",

@@ -7,12 +7,12 @@ import NipCheck from "@/components/NipCheck";
 import NazwaNarzedzia from "@/components/NazwaNarzedzia";
 
 export const metadata: Metadata = {
-  title: "Sprawdzenie NIP za darmo, wykaz VAT i status firmy | Fluxlab",
+  title: "Sprawdzenie NIP w 10 s: status VAT, bez logowania | Fluxlab",
   description:
-    "Wpisz NIP i sprawdź za darmo, czy firma jest w wykazie Ministerstwa Finansów, czy jest czynnym podatnikiem VAT i ile ma zgłoszonych rachunków.",
+    "NIP sprawdzicie w 10 s, bez logowania: status VAT w wykazie Ministerstwa Finansów i rachunki firmy. Przykład działa jednym kliknięciem.",
   alternates: { canonical: "/sprawdzenie-nip" },
   openGraph: {
-    title: "Sprawdzenie NIP za darmo, wykaz VAT i status firmy | Fluxlab",
+    title: "Sprawdzenie NIP w 10 s: status VAT, bez logowania | Fluxlab",
     description:
       "Darmowe sprawdzenie NIP w wykazie Ministerstwa Finansów. Status VAT, data rejestracji i liczba zgłoszonych rachunków.",
     locale: "pl_PL",
@@ -115,8 +115,8 @@ export default function SprawdzenieNipPage() {
               Czego darmowe sprawdzenie nie powie
             </h2>
             <p className="mt-3 text-gray-600 dark:text-gray-300">
-              Nie pokaże likwidacji, zaległości ani tego, czy numer konta z maila
-              należy do firmy. To sprawdzamy w pełnym raporcie.
+              Nie pokaże likwidacji, zaległości ani tego, czy numer konta z
+              maila należy do firmy. To sprawdzamy w pełnym raporcie.
             </p>
             <p className="mt-4">
               <Link
