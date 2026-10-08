@@ -14,7 +14,7 @@
  * mnie o nic.
  */
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { zglosZdarzenie } from "@/lib/zdarzenie";
 import DalejPoWyniku from "@/components/DalejPoWyniku";
 import { PODMIOTY, type Podmiot } from "@/lib/terminy-e-doreczen";
@@ -161,16 +161,37 @@ export default function EDoreczeniaCheck() {
 
   // Wejscie z maila do biur rachunkowych dotyczy odpisu KRS, wiec od razu
   // pokazujemy pole na numer zamiast wyboru formy.
+  const wynikKrsRef = useRef<HTMLDivElement>(null);
+  const zLinku = useRef(false);
+
+  // Link z maila niesie numer KRS spolki, wiec sprawdzamy odpis od razu.
   useEffect(() => {
     const q = new URLSearchParams(window.location.search);
-    if (q.get("tryb") === "krs" || q.get("utm_campaign") === "ksiegowe") {
+    const krsZLinku = q.get("krs")?.trim() ?? "";
+    if (/^\d{10}$/.test(krsZLinku)) {
+      setTryb("krs");
+      setKrs(krsZLinku);
+      zLinku.current = true;
+      void sprawdzOdpis(krsZLinku, "uruchomiono_skan_krs_z_linku");
+    } else if (q.get("tryb") === "krs" || q.get("utm_campaign") === "ksiegowe") {
       setTryb("krs");
     }
   }, []);
 
-  async function sprawdzKrs(e: React.FormEvent) {
+  useEffect(() => {
+    if (wynikKrs && zLinku.current) {
+      zLinku.current = false;
+      wynikKrsRef.current?.scrollIntoView({ block: "start" });
+    }
+  }, [wynikKrs]);
+
+  function sprawdzKrs(e: React.FormEvent) {
     e.preventDefault();
-    zglosZdarzenie("uruchomiono_skan_krs");
+    void sprawdzOdpis(krs, "uruchomiono_skan_krs");
+  }
+
+  async function sprawdzOdpis(krs: string, zdarzenie: string) {
+    zglosZdarzenie(zdarzenie);
     setKrsStan("szukamy");
     setKrsBlad("");
     setWynikKrs(null);
@@ -321,7 +342,8 @@ export default function EDoreczeniaCheck() {
 
           {wynikKrs && (
             <div
-              className={`mt-6 rounded-xl border p-5 ${
+              ref={wynikKrsRef}
+              className={`mt-6 scroll-mt-24 rounded-xl border p-5 ${
                 wynikKrs.status === "JEST_ADRES"
                   ? `${MOTYW.ZIELONY.ramka} ${MOTYW.ZIELONY.tlo}`
                   : `${MOTYW.CZERWONY.ramka} ${MOTYW.CZERWONY.tlo}`
