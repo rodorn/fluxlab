@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
+import Znak from "./Znak";
 import { FILARY } from "@/lib/filary";
 
 const NAV = [
@@ -46,8 +47,10 @@ export default function Header() {
           href="/"
           className="flex items-center gap-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white shrink-0"
         >
-          <span className="inline-block w-2.5 h-2.5 rounded-full bg-gradient-to-br from-accent to-violet-500" />
-          flux<span className="text-accent">lab</span>
+          <Znak className="h-7 w-7" />
+          <span>
+            flux<span className="text-accent">lab</span>
+          </span>
         </Link>
 
         {/* Desktop nav */}
@@ -59,8 +62,20 @@ export default function Header() {
               aria-haspopup="true"
             >
               Usługi
-              <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true" className="transition-transform group-hover:rotate-180 group-focus-within:rotate-180">
-                <path d="M2 3.5l3 3 3-3" stroke="currentColor" strokeWidth="1.4" fill="none" strokeLinecap="round" />
+              <svg
+                width="10"
+                height="10"
+                viewBox="0 0 10 10"
+                aria-hidden="true"
+                className="transition-transform group-hover:rotate-180 group-focus-within:rotate-180"
+              >
+                <path
+                  d="M2 3.5l3 3 3-3"
+                  stroke="currentColor"
+                  strokeWidth="1.4"
+                  fill="none"
+                  strokeLinecap="round"
+                />
               </svg>
             </button>
             <div className="invisible absolute left-1/2 top-full w-80 -translate-x-1/2 rounded-xl border border-gray-200 bg-white p-2 opacity-0 shadow-xl transition-all group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100 dark:border-white/10 dark:bg-gray-900">

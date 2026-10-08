@@ -34,16 +34,37 @@ export default async function OGImage() {
           gap: "24px",
         }}
       >
-        <div
-          style={{
-            fontSize: 72,
-            fontWeight: 700,
-            fontFamily: "Inter",
-            color: "#ffffff",
-            letterSpacing: "-2px",
-          }}
-        >
-          Fluxlab
+        <div style={{ display: "flex", alignItems: "center", gap: "24px" }}>
+          <svg viewBox="0 0 1080 1080" width="96" height="96">
+            <rect width="1080" height="1080" rx="240" fill="#6366f1" />
+            <g
+              fill="none"
+              stroke="#fff"
+              strokeWidth="100"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M380 800 V410 Q380 290 500 290 H590" />
+              <path d="M270 540 H500" />
+              <path d="M760 290 V800" />
+            </g>
+            <g fill="#fff">
+              <circle cx="590" cy="540" r="36" opacity="0.95" />
+              <circle cx="660" cy="540" r="26" opacity="0.7" />
+              <circle cx="702" cy="540" r="14" opacity="0.45" />
+            </g>
+          </svg>
+          <div
+            style={{
+              fontSize: 72,
+              fontWeight: 700,
+              fontFamily: "Inter",
+              color: "#ffffff",
+              letterSpacing: "-2px",
+            }}
+          >
+            Fluxlab
+          </div>
         </div>
         <div
           style={{

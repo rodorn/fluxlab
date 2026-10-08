@@ -1,4 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="8" fill="#6366f1"/>
-  <text x="5" y="23" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="19" fill="white">fl</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6366f1"/>
+      <stop offset="1" stop-color="#8b5cf6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1080" rx="240" fill="url(#g)"/>
+  <g fill="none" stroke="#ffffff" stroke-width="100" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M380 800 V410 Q380 290 500 290 H590"/>
+    <path d="M270 540 H500"/>
+    <path d="M760 290 V800"/>
+  </g>
+  <g fill="#ffffff">
+    <circle cx="590" cy="540" r="36" opacity="0.95"/>
+    <circle cx="660" cy="540" r="26" opacity="0.7"/>
+    <circle cx="702" cy="540" r="14" opacity="0.45"/>
+  </g>
 </svg>

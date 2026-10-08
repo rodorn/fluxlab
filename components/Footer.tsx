@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { FILARY } from "@/lib/filary";
+import Znak from "./Znak";
 
 const links = [
   ...FILARY.map((f) => ({ href: f.href, label: f.nazwa })),
@@ -18,8 +19,11 @@ export default function Footer() {
       <div className="container-wide">
         <div className="flex flex-wrap items-start justify-between gap-x-10 gap-y-5">
           <div>
-            <span className="text-sm font-bold tracking-tight text-gray-900 dark:text-white">
-              flux<span className="text-accent">lab</span>
+            <span className="flex items-center gap-2 text-sm font-bold tracking-tight text-gray-900 dark:text-white">
+              <Znak className="h-5 w-5" />
+              <span>
+                flux<span className="text-accent">lab</span>
+              </span>
             </span>
             <p className="mt-1 text-xs text-gray-600 dark:text-gray-400">
               Strony, automatyzacja, dane dla firm B2B
