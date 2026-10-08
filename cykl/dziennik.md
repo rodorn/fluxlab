@@ -3561,3 +3561,23 @@ Osobno:
 - IndexNow: /e-doreczenia-integracja, /mail-firmowy, /audyt-poczty, wpis o podszywaniu, /numer-ksef, /sprawdzenie-nip, /automatyzacja-leadow-crm.
 **Dla Pawła:** bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację; jeśli Firefox na Twoim telefonie otwiera /automatyzacja-leadow-crm, wejdź nim raz na https://fluxlab.pl/nie-licz-mnie).
 **Zostało otwarte:** Z4 o 9:46: kolejka `ksiegowe-edoreczenia` to 16 maili (042 do 057), domyślny limit skryptu to 12, więc `--limit=20`; Z6 o 11:46 też z `--limit=20` (17 plików). Dalej Z7, Z9 (brak nowych plików poza 057, więc według planu przeniesienie na piątek), Z10, Z11, Z15 po 20:52, Z16, Z19, Z20, Z21, Z23, Z24.
+
+## 2026-10-08 08:49
+**Kanał:** widoczność w Google (Z20 z planu, przed czasem, bo Z4 ma wysyłkę dopiero od 9:46).
+**Co zrobione:** 7 z 16 linków w treści z 7.10 zniknęło przy skracaniu stron o 22:23; przywrócone jako zdania (każda strona najwyżej +1 zdanie), dodatkowo 2 linki do /wlasnosc-domeny, która nie miała żadnego; wdrożone i zgłoszone do IndexNow.
+**Ruch:** ostatnia doba 41 odsłon, 26 osób (mail 11, facebook 4, www.google.com 2, m.baidu.com 1); najczęściej /e-doreczenia-integracja 12, /audyt-strony 8, /automatyzacja-leadow-crm 6; 4 uruchomienia narzędzi (3 `_przyklad`, 1 audyt); odrzucone: boty 7 sesji, własna automatyka 33 sesje.
+**Dowód:** commit e4cc383, 12 linków sprawdzonych na produkcji z VPS pojedynczymi wejściami. Linki z treści przed/po:
+
+| strona | przed | po | skąd nowe |
+|---|---|---|---|
+| /audyt-chatbota | 1 | 2 | /automatyzacja-dla-ecommerce |
+| /audyt-marz | 0 | 2 | /automatyzacja-dla-ecommerce, /audyt-kurierski |
+| /panel-zwrotow | 0 | 2 | /automatyzacja-dla-ecommerce, /dane-sprzedawcy |
+| /rejestr-cen | 1 | 2 | /automatyzacja-dla-ecommerce |
+| /kontrola-jezykow | 1 | 2 | /audyt-strony |
+| /analiza-lokalizacji | 1 | 2 | /sprawdz-kontrahenta |
+| /wlasnosc-domeny | 0 | 2 | /audyt-poczty (w istniejącym zdaniu „Więcej:”), /strona-po-wlamaniu |
+
+  /kalkulator-kosztow, /ceny-energii-jutro i /mail-firmowy mają po 2, wpisy JDG po 5 i więcej, bez zmian. IndexNow: 14 adresów, przyjęte przez 2 z 3 punktów (wspólny punkt nadal 403).
+**Dla Pawła:** bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację).
+**Zostało otwarte:** Z4 o 9:46 (`--limit=20`, 16 maili), Z6 o 11:46, Z7, Z9, Z10, Z11, Z15 po 20:52, Z16, Z19, Z21, Z23, Z24.
