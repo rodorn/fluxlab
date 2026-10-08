@@ -3679,3 +3679,13 @@ Z19: VPS od 1.10 tylko 3 sesje chatgpt.com (2.10 `/kalkulator-podatkowy`, 5.10 i
   Domeny w województwach z rund 1 do 3 to liczby z plików `cik_domeny_<woj>`; rundy 2 i 4 po odjęciu powtórek miały 43 i 21. Zoho: 5 maili od 8.10, wszystkie Kontomatik, 0 od adresatów. Decyzje: (a) follow-up 2 próby, 27 maili, 0 ludzi: dopisane „nie wysyłać follow-upów” w „Czego nie robić” planu; (b) link `?krs=`: 0 skanów od ludzi przy 0 do 1 człowieku z maila, za mało do oceny, zostaje w każdym mailu (zapisane w „Czego nie robić”). Kolejka na piątek (katalog minus `wyslane_ks.json`, `pomijane.json`, wypisani): 8 plików 050 do 057, wszystkie z linkiem `?krs=`.
 **Dla Pawła:** bez zmian: dwie odpowiedzi Kontomatik (10:40 i 11:06) w pawel@fluxlab.pl, komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację.
 **Zostało otwarte:** Z15 żądania indeksowania nie wcześniej niż 20:52 (lista 10 w Z2, przed tym `--tylko-stan` dla adresów, które mogły wejść), Z16 o 21:46, Z23 o 04:46, Z24 o 05:46; piątek 9:46 wysyłka 050 do 057 (`--limit=8`).
+
+<!-- WYSLANO 2026-10-08 15:04 -->
+
+## 2026-10-08 15:45
+**Kanał:** żaden, przebieg bez dostawy.
+**Co zrobione:** nic nie poszło w świat, bo wszystkie otwarte zadania planu mają późniejsze godziny (Z15 żądania indeksowania nie wcześniej niż 20:52, Z16 pomiar wieczorny 21:46, Z23 04:46, Z24 05:46), a `budzet` o 15:43 daje rytm „wstrzymaj”, hamulec krytyczny (prognoza 151% tygodnia), nowy cykl: NIE, więc nie biorę pracy spoza planu.
+**Ruch:** ostatnia doba 18 odsłon, 14 osób (raport 15:43); źródła: www.google.com 3, mail 3, facebook 2, m.baidu.com 1, narzedzie 1. Najczęściej /e-doreczenia-integracja 6, /automatyzacja-leadow-crm 5. Uruchomienia narzędzi 2 (`uruchomiono_skan_krs_z_linku`: 1 skaner po Z4, 1 własny test Z1).
+**Dowód:** brak (plan bez zmian, 0 commitów).
+**Dla Pawła:** bez zmian: dwie odpowiedzi Kontomatik w pawel@fluxlab.pl, komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację.
+**Zostało otwarte:** Z15 od 20:52, Z16 o 21:46, Z23 o 04:46, Z24 o 05:46; piątek 9:46 wysyłka 050 do 057 (`--limit=8`). Budżet sprawdzić ponownie ok. 18:45.
