@@ -3651,3 +3651,31 @@ Z19: VPS od 1.10 tylko 3 sesje chatgpt.com (2.10 `/kalkulator-podatkowy`, 5.10 i
 
 **Dla Pawła:** bez zmian: dwie odpowiedzi Kontomatik (10:40 i 11:06) w pawel@fluxlab.pl, komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację.
 **Zostało otwarte:** Z11 o 16:46 (bilans outreachu i decyzja o follow-upach), Z15 żądania indeksowania od 20:52, Z16 o 21:46, Z23, Z24; kolejka piątkowa 050 do 057.
+
+## 2026-10-08 14:50
+**Kanał:** outreach z gotowym raportem (Z11 z planu, bilans dnia i decyzja o follow-upach).
+**Co zrobione:** Bilans outreachu 2026-10-08: 25 maili dziś, 0 ludzi, 0 odpowiedzi, 0 zgłoszeń; follow-upy trafiły do „Czego nie robić” (druga próba, znów 0 ludzi), link `?krs=` zostaje bez oceny, bo nie było ludzi, którzy mogliby go kliknąć.
+**Ruch:** ostatnia doba 22 odsłony, 18 osób (raport 14:43); źródła: mail 7, www.google.com 3, facebook 2, m.baidu.com 1, narzedzie 1. Najczęściej /e-doreczenia-integracja 10, /automatyzacja-leadow-crm 5. Uruchomienia narzędzi 2 (`uruchomiono_skan_krs_z_linku`, w tym 1 skaner po Z4 i 1 własny test Z1).
+**Dowód:** Bilans outreachu 2026-10-08 (Resend 14:46 z `User-Agent: curl/8.5.0`, Zoho INBOX i Spam od 8.10 przez IMAP, VPS `ruch.sqlite` od 09:00 CEST):
+
+| segment | wysłane | delivered | odbite | odpowiedzi | sesje z utm | ludzie | skany z linku | zgłoszenia |
+|---|---|---|---|---|---|---|---|---|
+| ksiegowe (Z4 09:46) | 8 | 8 | 0 | 0 | 2 (`0gh0m9lo` skaner 09:47:31; `p5z13ydi` 12:35 Edge bez `?krs=`, mail sprzed 8.10) | 0 z dzisiejszych, 0 do 1 ze starszych | 1 (skaner) | 0 |
+| ksiegowe-fu (Z6 11:46) | 17 | 17 | 0 | 0 | 0 | 0 | 0 | 0 |
+
+| CIK od 7.10 | domeny nowe | maile | maile na 100 |
+|---|---|---|---|
+| mazowieckie | 64 | 4 | 6,3 |
+| śląskie | 21 | 3 | 14,3 |
+| małopolskie | 14 | 1 | 7,1 |
+| wielkopolskie | 24 | 0 | 0,0 |
+| dolnośląskie | 25 | 3 | 12,0 |
+| pomorskie | 19 | 1 | 5,3 |
+| łódzkie | 11 | 0 | 0,0 |
+| zachodniopomorskie | 6 | 0 | 0,0 |
+| 8 pozostałych (lubelskie, podkarpackie, kujawsko-pomorskie, warmińsko-mazurskie, podlaskie, świętokrzyskie, lubuskie, opolskie) | 21 po odjęciu powtórek | 0 | 0,0 |
+| razem (po odjęciu powtórek między rundami) | 189 | 12 | 6,3 |
+
+  Domeny w województwach z rund 1 do 3 to liczby z plików `cik_domeny_<woj>`; rundy 2 i 4 po odjęciu powtórek miały 43 i 21. Zoho: 5 maili od 8.10, wszystkie Kontomatik, 0 od adresatów. Decyzje: (a) follow-up 2 próby, 27 maili, 0 ludzi: dopisane „nie wysyłać follow-upów” w „Czego nie robić” planu; (b) link `?krs=`: 0 skanów od ludzi przy 0 do 1 człowieku z maila, za mało do oceny, zostaje w każdym mailu (zapisane w „Czego nie robić”). Kolejka na piątek (katalog minus `wyslane_ks.json`, `pomijane.json`, wypisani): 8 plików 050 do 057, wszystkie z linkiem `?krs=`.
+**Dla Pawła:** bez zmian: dwie odpowiedzi Kontomatik (10:40 i 11:06) w pawel@fluxlab.pl, komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację.
+**Zostało otwarte:** Z15 żądania indeksowania nie wcześniej niż 20:52 (lista 10 w Z2, przed tym `--tylko-stan` dla adresów, które mogły wejść), Z16 o 21:46, Z23 o 04:46, Z24 o 05:46; piątek 9:46 wysyłka 050 do 057 (`--limit=8`).
