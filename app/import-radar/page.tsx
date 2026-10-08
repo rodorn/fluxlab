@@ -45,7 +45,7 @@ const steps = [
 const pricing = [
   {
     name: "Analiza 1 auta",
-    price: "10-20 zł",
+    price: "0 zł",
     cta: "Zamów analizę auta",
     desc: "Masz konkretne ogłoszenie i chcesz wiedzieć, czy warto.",
     features: [
@@ -56,7 +56,7 @@ const pricing = [
   },
   {
     name: "Znajdź pod budżet",
-    price: "20-30 zł",
+    price: "0 zł",
     cta: "Zamów wyszukiwanie",
     desc: "Szukamy modeli z realną marżą pod Twój budżet.",
     features: [
@@ -116,7 +116,7 @@ export default function ImportRadarPage() {
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <a href="#zamow" className="btn-primary inline-flex">
-                Zamów analizę od 10 zł
+                Zamów analizę za darmo
               </a>
               <a
                 href="#cennik"
@@ -322,7 +322,7 @@ export default function ImportRadarPage() {
               heading="Zamów analizę opłacalności importu"
               intro="Wklej link do oferty albo podaj budżet i typ auta."
               submitLabel="Wyślij auto do analizy"
-              microCopy="Odpowiedź w 24h. Płatność po potwierdzeniu zakresu."
+              microCopy="Odpowiedź w 24h. Bez opłat."
             />
           </section>
         </div>
@@ -337,7 +337,7 @@ export default function ImportRadarPage() {
             "@type": "Service",
             name: "ImportRadar, opłacalność importu aut DE→PL",
             description:
-              "Analiza opłacalności sprowadzenia auta z Niemiec do Polski: pełny kalkulator kosztów, akcyza i marża netto wobec cen w Polsce. Analiza 1 auta 10-20 zł, znajdź pod budżet 20-30 zł.",
+              "Analiza opłacalności sprowadzenia auta z Niemiec do Polski: pełny kalkulator kosztów, akcyza i marża netto wobec cen w Polsce. Analiza 1 auta i wyszukiwanie pod budżet za darmo.",
             provider: { "@id": "https://fluxlab.pl/#organization" },
             areaServed: { "@type": "Country", name: "Polska" },
             serviceType: "Analiza opłacalności importu samochodu",
@@ -346,13 +346,13 @@ export default function ImportRadarPage() {
               {
                 "@type": "Offer",
                 name: "Analiza 1 auta",
-                price: "10",
+                price: "0",
                 priceCurrency: "PLN",
               },
               {
                 "@type": "Offer",
                 name: "Znajdź pod budżet",
-                price: "20",
+                price: "0",
                 priceCurrency: "PLN",
               },
             ],

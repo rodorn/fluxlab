@@ -9,13 +9,13 @@ import NazwaNarzedzia from "@/components/NazwaNarzedzia";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Sprawdź kontrahenta przed przelewem, od 9 zł | Fluxlab",
+  title: "Sprawdź kontrahenta przed przelewem, za darmo | Fluxlab",
   description:
-    "Zanim wyślesz zaliczkę, sprawdź firmę. Werdykt z wykazu VAT, KRS i danych domeny, w tym test, czy numer konta figuruje w wykazie. Od 9 zł.",
+    "Zanim wyślesz zaliczkę, sprawdź firmę. Werdykt z wykazu VAT, KRS i danych domeny, w tym test, czy numer konta figuruje w wykazie. Za darmo.",
   alternates: { canonical: "/sprawdz-kontrahenta" },
   openGraph: {
     title:
-      "Sprawdź kontrahenta przed przelewem, raport ryzyka od 9 zł | Fluxlab",
+      "Sprawdź kontrahenta przed przelewem, raport ryzyka za darmo | Fluxlab",
     description:
       "Werdykt o firmie z wykazu VAT, KRS i danych domeny. Sprawdzamy też, czy konto do przelewu należy do tej firmy.",
     locale: "pl_PL",
@@ -53,7 +53,7 @@ const checks = [
 const pricing = [
   {
     name: "Szybki check",
-    price: "9 zł",
+    price: "0 zł",
     desc: "Jedno pytanie: czy coś tu nie gra, zanim wyślesz przelew.",
     features: [
       "status VAT i numer konta w wykazie",
@@ -64,7 +64,7 @@ const pricing = [
   },
   {
     name: "Pełny raport",
-    price: "29 zł",
+    price: "0 zł",
     desc: "Komplet do decyzji o umowie albo większej zaliczce.",
     features: [
       "wszystko ze szybkiego checku",
@@ -115,7 +115,7 @@ export default function SprawdzKontrahentaPage() {
                 location="kontrahent_hero"
                 className="btn-primary"
               >
-                Sprawdź firmę od 9 zł
+                Sprawdź firmę za darmo
               </TrackedCTA>
               <span className="text-sm text-gray-500 dark:text-gray-400">
                 Odpowiedź zwykle tego samego dnia
@@ -246,9 +246,9 @@ export default function SprawdzKontrahentaPage() {
             <LandingForm
               formId="order_sprawdz_kontrahenta"
               heading="Zamów sprawdzenie kontrahenta"
-              intro="Podaj NIP firmy, numer konta i adres strony. Napisz, czy chcesz szybki check (9 zł) czy pełny raport (29 zł)."
+              intro="Podaj NIP firmy, numer konta i adres strony. Napisz, czy chcesz szybki check czy pełny raport. Oba są darmowe."
               submitLabel="Wyślij firmę do sprawdzenia"
-              microCopy="Odpowiedź zwykle tego samego dnia. Płatność ustalamy mailowo."
+              microCopy="Odpowiedź zwykle tego samego dnia. Bez opłat."
             />
           </div>
         </section>
@@ -262,7 +262,7 @@ export default function SprawdzKontrahentaPage() {
             "@type": "Service",
             name: "Sprawdzony kontrahent, raport ryzyka przed transakcją",
             description:
-              "Weryfikacja firmy przed przelewem: wykaz VAT, odpis KRS, wiek domeny oraz sprawdzenie, czy numer konta figuruje w wykazie tej firmy. Szybki check 9 zł, pełny raport 29 zł.",
+              "Weryfikacja firmy przed przelewem: wykaz VAT, odpis KRS, wiek domeny oraz sprawdzenie, czy numer konta figuruje w wykazie tej firmy. Szybki check i pełny raport za darmo.",
             provider: { "@id": "https://fluxlab.pl/#organization" },
             areaServed: { "@type": "Country", name: "Polska" },
             serviceType: "Weryfikacja kontrahenta",
@@ -271,13 +271,13 @@ export default function SprawdzKontrahentaPage() {
               {
                 "@type": "Offer",
                 name: "Szybki check",
-                price: "9",
+                price: "0",
                 priceCurrency: "PLN",
               },
               {
                 "@type": "Offer",
                 name: "Pełny raport",
-                price: "29",
+                price: "0",
                 priceCurrency: "PLN",
               },
             ],

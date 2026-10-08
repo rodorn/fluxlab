@@ -123,7 +123,7 @@ export default function SprawdzenieNipPage() {
                 href="/sprawdz-kontrahenta"
                 className="font-semibold text-accent hover:underline"
               >
-                Zobacz pełny raport o kontrahencie, od 9 zł
+                Zobacz pełny raport o kontrahencie, za darmo
               </Link>
             </p>
           </div>
