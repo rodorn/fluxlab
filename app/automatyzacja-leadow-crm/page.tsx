@@ -10,13 +10,13 @@ import ProductGrid from "@/components/ProductGrid";
 import DrogaLeada from "@/components/DrogaLeada";
 
 export const metadata: Metadata = {
-  title: "Automatyzacja leadów i CRM dla firm B2B | Fluxlab",
+  title: "Automatyzacja CRM z AI: lead w minutę | Fluxlab",
   description:
-    "Automatyzujemy obsługę leadów, CRM, follow-upy i raportowanie dla firm B2B. Leady trafiają do CRM, dostają handlowca, zadanie i raport bez ręcznej pracy.",
+    "Automatyzacja CRM z AI: lead w minutę trafia do Pipedrive albo HubSpot, AI ocenia zapytanie, a handlowiec dostaje zadanie. Bez przepisywania.",
   openGraph: {
-    title: "Automatyzacja leadów i CRM dla firm B2B | Fluxlab",
+    title: "Automatyzacja CRM z AI: lead w minutę | Fluxlab",
     description:
-      "Automatyzujemy obsługę leadów, CRM, follow-upy i raportowanie dla firm B2B. Leady trafiają do CRM, dostają handlowca, zadanie i raport bez ręcznej pracy.",
+      "Automatyzacja CRM z AI: lead w minutę trafia do Pipedrive albo HubSpot, AI ocenia zapytanie, a handlowiec dostaje zadanie. Bez przepisywania.",
     locale: "pl_PL",
     type: "website",
     images: [
@@ -133,7 +133,7 @@ export default function AutomatyzacjaLeadowCRM() {
             <div className="max-w-3xl">
               <span className="section-label">Automatyzacja leadów i CRM</span>
               <h1 className="display-lg text-gray-900 dark:text-white mt-4">
-                Przestań tracić leady przez pracę ręczną.
+                Automatyzacja CRM z AI bez pracy ręcznej.
               </h1>
               <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
                 Leady same trafiają do CRM i dostają handlowca, zadanie i

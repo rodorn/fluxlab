@@ -69,8 +69,8 @@ export default function MailFirmowy() {
           wpada do spamu
         </h1>
         <p style={{ ...tekst, fontSize: "1.05rem" }}>
-          Adres w stylu biuro@wasza-firma.pl wymaga domeny i płatnej skrzynki. O
-          tym, czy maile dochodzą, decydują trzy wpisy w DNS domeny.
+          Adres w stylu biuro@wasza-firma.pl wymaga domeny i skrzynki u dostawcy
+          poczty. O tym, czy maile dochodzą, decydują trzy wpisy w DNS domeny.
         </p>
 
         <div
