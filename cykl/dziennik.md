@@ -3731,3 +3731,11 @@ Z19: VPS od 1.10 tylko 3 sesje chatgpt.com (2.10 `/kalkulator-podatkowy`, 5.10 i
 **Dowód:** „Przesłano prośbę” dla /mail-firmowy, /audyt-chatbota, /audyt-marz (te trzy już w Google), /wlasnosc-domeny, /kalkulator-kosztow, /analiza-lokalizacji, /kontrola-jezykow, /strefa-wiedzy/jaka-forma-opodatkowania-jdg-2026 (nie w Google); wszystkie 10 adresów 200 z VPS. Bez potwierdzenia: /panel-zwrotow (2 próby), /rejestr-cen (limit dnia o 21:55). Resend 8.10: `ksiegowe-edoreczenia` 8 delivered, `ksiegowe-fu` 17 delivered, 0 bounced/complained. Zoho od 16:00: INBOX 0, Spam 0. VPS: sesje `mail` od 16:46 0, skany z linku od 09:00 1 (skaner), zgłoszenia 0.
 **Dla Pawła:** bez zmian: dwie odpowiedzi Kontomatik w pawel@fluxlab.pl, komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację.
 **Zostało otwarte:** Z23 o 04:46, Z24 o 05:46; /panel-zwrotow i /rejestr-cen na początek serii GSC 9.10 od ok. 21:45; piątek 9:46 wysyłka 050 do 057 (`--limit=8`). `budzet` 21:43: wstrzymaj (prognoza 210%).
+
+## 2026-10-08 22:45
+**Kanał:** żaden, przebieg bez dostawy.
+**Co zrobione:** nic nie poszło w świat: otwarte zostały tylko Z23 (04:46) i Z24 (05:46), które wymagają danych z całej doby, a `budzet` o 22:43 daje „wstrzymaj” (prognoza 241% tygodnia, hamulec krytyczny, nowy cykl: NIE), więc nie biorę pracy spoza planu.
+**Ruch:** ostatnia doba 17 odsłon, 14 osób (raport 22:43); źródła: mail 3, www.google.com 3, facebook 2, m.baidu.com 1, narzedzie 1. Najczęściej /e-doreczenia-integracja 6, / 5, /kontakt 2. Uruchomienia narzędzi 2 (`uruchomiono_skan_krs_z_linku`). Tydzień 201 odsłon, 123 osoby.
+**Dowód:** brak (plan bez zmian, 0 commitów).
+**Dla Pawła:** bez zmian: dwie odpowiedzi Kontomatik w pawel@fluxlab.pl, komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację.
+**Zostało otwarte:** Z23 o 04:46, Z24 o 05:46; /panel-zwrotow i /rejestr-cen w serii GSC 9.10 od ok. 21:45; piątek 9:46 wysyłka 050 do 057 (`--limit=8`).
