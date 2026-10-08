@@ -3521,3 +3521,20 @@ Osobno:
 **Wniosek:** doba 7.10 dała 20 maili do biur (2 do 3 osoby, 1 wypisanie, 0 leadów); Google, Facebook, asystenci AI i fora 0 uruchomień narzędzi i 0 zgłoszeń. Najmocniejsza dźwignia na czwartek to CIK jako źródło adresów (6 do 9 maili na 100 domen wobec 0 do 1 z pkt.pl).
 **Dla Pawła:** bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację; jeśli Firefox na Twoim telefonie otwiera /automatyzacja-leadow-crm, wejdź nim raz na https://fluxlab.pl/nie-licz-mnie).
 **Zostało otwarte:** w planie 7/8.10 nie ma już „- [ ]”; nowy plan strateg pisze o 06:15. Czwartek 9:46 wysyłka `ksiegowe-edoreczenia` 042 do 049 (8 maili). Limit indeksowania od ok. 20:50, adresy z obecnej mapy.
+
+<!-- WYSLANO 2026-10-08 07:03 -->
+
+## 2026-10-08 07:06
+**Kanał:** outreach z gotowym raportem (przygotowanie czwartku), poza planem: plan 7/8.10 ma 24 z 24 zadań zamkniętych, a nowego planu strateg nie dostarczył (w `cykl/strategia.log` brak startu 8.10 06:15, ostatni przebieg 7.10 06:15 skończył się limitem tygodniowym).
+**Co zrobione:** dwa nowe źródła adresów biur dały 7 maili do biur bez adresu do e-Doręczeń w KRS; kolejka na czwartek urosła z 8 do 15.
+**Ruch:** ostatnia doba 39 odsłon, 25 osób (mail 10, facebook 4, www.google.com 2, m.baidu.com 1); najczęściej /e-doreczenia-integracja 10, /audyt-strony 8, /automatyzacja-leadow-crm 6; 3 uruchomienia narzędzi (2 `uruchomiono_skan_przyklad`, 1 `uruchomiono_numer_ksef_przyklad`), 1 audyt; odrzucone: boty 7 sesji / 100 odsłon, własna automatyka 33 sesje / 58 odsłon.
+**Dowód:**
+
+| źródło | biura | spółki | domeny nowe | w KRS | bez BAE (po weryfikacji) | maile |
+|---|---|---|---|---|---|---|
+| CIK, 8 ostatnich województw | 376 | 99 | 21 | 10 | 0 | 0 |
+| baza biur SKwP (skwp.pl) | 543 | 181 | 154 | 60 | 8 | 7 |
+
+  CIK jest wyczerpany (16 z 16 województw), plik `krs_partia26_2026-10-08.json`. SKwP to nowe źródło: cała baza stoi w HTML strony jako znaczniki mapy, karta biura podaje NIP i e-mail, skrypt `~/Projekty/mail-audyt/skwp_baza.py`, plik `krs_partia27_2026-10-08.json`, 4,5 maila na 100 domen. Każdy kandydat sprawdzony NIP-em z karty SKwP przez białą listę i odpisem KRS z 8.10 (PKD 69.20Z we wszystkich, brak pola BAE): 050_biuro-gawron (Biuro Rachunkowe Gawron, Częstochowa, KRS 0001069006, info@), 051_biuroprofesja (Profesja, Kraków, 0000431225, kontakt@), 052_biurodgc (DGC, Łódź, 0000384095, kontakt@), 053_inland (inLAND Audit, Poznań, 0000188541, audit@), 054_otuspodatki (OTUS, Szczecin, 0000657490, otus@otuspodatki.pl ze strony, bo karta SKwP ma starą domenę), 055_palewscy (Świnoujście, 0000941213, biuro@, ten sam adres w odpisie), 056_ww-finance (Warszawa, 0001034929, biuro@). Odrzucone: jtax.pl (BiT Trade and Service, adres już w `wyslane_ks.json`), Commerbook (tylko adres imienny pracownicy), ONEOFFICE i Sterling & Honest (krs_droga wziął zły KRS ze strony, pod właściwym NIP-em BAE jest). Licznik w nowych treściach 376 z 457. 0 długich myślników, żaden adres nie jest w `wyslane*.json`, `pomijane.json` ani `wypisani.txt`, MX odpowiada dla wszystkich 7; `--proba --limit=80` renderuje 7 z utm `ksiegowe`.
+**Dla Pawła:** bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację; jeśli Firefox na Twoim telefonie otwiera /automatyzacja-leadow-crm, wejdź nim raz na https://fluxlab.pl/nie-licz-mnie).
+**Zostało otwarte:** czwartek 9:46 wysyłka `ksiegowe-edoreczenia` 042 do 056 (15 maili, jedna wysyłka bez `--limit`, przed nią BAE ponownie z odpisu). Strateg nie napisał planu na 8/9.10; jeśli do 9:46 go nie będzie, cykl działa według kanałów. Źródła domen biur: CIK i SKwP wyczerpane, pkt.pl `biuro-rachunkowe` wyczerpany; trzeba nowego katalogu.
