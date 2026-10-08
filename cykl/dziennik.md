@@ -3581,3 +3581,24 @@ Osobno:
   /kalkulator-kosztow, /ceny-energii-jutro i /mail-firmowy mają po 2, wpisy JDG po 5 i więcej, bez zmian. IndexNow: 14 adresów, przyjęte przez 2 z 3 punktów (wspólny punkt nadal 403).
 **Dla Pawła:** bez zmian (komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację).
 **Zostało otwarte:** Z4 o 9:46 (`--limit=20`, 16 maili), Z6 o 11:46, Z7, Z9, Z10, Z11, Z15 po 20:52, Z16, Z19, Z21, Z23, Z24.
+
+## 2026-10-08 10:06
+**Kanał:** outreach (Z4) i asystenci AI, pomiar (Z19).
+**Co zrobione:** 8 maili do biur rachunkowych bez adresu do e-Doręczeń w KRS poszło o 09:46, każdy z linkiem `?krs=` otwierającym gotowy wynik dla ich spółki; Z19 (pomiar asystentów AI i Binga) zrobiony w wolnym slocie.
+**Ruch:** ostatnia doba 39 odsłon, 24 osoby (raport 09:43); źródła: mail 10, facebook 4, www.google.com 2, m.baidu.com 1. Tydzień 191 odsłon, 114 osób. Uruchomienia narzędzi 4 (przykłady 3, audyt 1).
+**Dowód:**
+| adres | KRS | Resend id | status 09:58 |
+|---|---|---|---|
+| info@kka.pl | 0000259754 | 01a11a7a-4241-7687-8c15-dce1726b6d9f | delivered |
+| biuro@podatki-rachunkowosc.pl | 0000147013 | 01a11a7a-7db6-783f-b843-821f156c1d42 | delivered |
+| biuro@liczbypro.com | 0001182427 | 01a11a7a-b970-74a5-8c2e-de3b94b719f3 | delivered |
+| biuro@biuroktk.pl | 0001032644 | 01a11a7a-f4ca-7db7-9319-fbaba4b46bf8 | delivered |
+| biuro@alza.com.pl | 0000821650 | 01a11a7b-3036-7a8b-bf6f-108eef982f4d | delivered |
+| biuro@ammes.com.pl | 0000632921 | 01a11a7b-6b9d-78d6-b800-b33728b719d9 | delivered |
+| office@blackink.com.pl | 0000392524 | 01a11a7b-a74a-7f32-a89b-d5e3d4faeca3 | delivered |
+| hello@ksiegownia.pl | 0000808346 | 01a11a7b-e2a8-741f-9d41-4788c48a422e | delivered |
+
+BAE ponownie z odpisu o 09:43: wszystkie 8 nadal bez adresu. `wyslane_ks.json` 103 do 111. Wysyłka z `--limit=8`, bo skrypt bez limitu wziąłby 12, w tym 050 do 053 przeznaczone na Z9. Uwaga: `wyslij_segment.py --proba` nie pomija już wysłanych, więc pokazuje stare maile; rzeczywistą kolejkę liczyć przez katalog minus `wyslane_ks.json` (dziś 8 plików 050 do 057 na Z9).
+Z19: VPS od 1.10 tylko 3 sesje chatgpt.com (2.10 `/kalkulator-podatkowy`, 5.10 i 6.10 `/audyt-kurierski`), 0 zdarzeń, 0 z perplexity, bing, copilot, claude.ai, gemini. Bing Webmaster: sitemapa Success 108 adresów (odczyt 6.10), zindeksowane „No data available”, AI Performance 0 cytowań od 8.07.
+**Dla Pawła:** odpowiedź do Profit Polska (lead z 5.10) nadal czeka na akceptację.
+**Zostało otwarte:** Z6 o 11:46 (follow-up 17 biur, `--limit=20`), Z7 o 12:46 (odpowiedzi na Z4 i Z6, sesje z utm `ksiegowe` od 09:46), Z9 o 14:46 (050 do 057), Z10, Z11, Z15 po 20:52, Z16, Z21, Z23, Z24.
