@@ -4029,7 +4029,7 @@ Wniosek: realnie 10 osób na dobę i żadna nie uruchomiła narzędzia; jedyne p
 **Dla Pawła:** pusto.
 **Zostało otwarte:** Z4 wysyłka o 9:46 (050 do 057, `--limit=8`), potem Z7; Z10, Z11; Z16 od 21:50; Z17, Z20, Z21, Z23, Z24 według planu.
 
-## 2026-10-09 08:58
+## 2026-10-09 08:54
 **Kanał:** asystenci AI i Bing (Z20, tylko pomiar, bez zmian w treści).
 **Co zrobione:** policzone wejścia z asystentów AI od 1.10 i odczytany stan Binga. Asystenci dali 3 osoby w 9 dni, Bing jeszcze nie pokazuje żadnych danych.
 
