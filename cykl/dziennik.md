@@ -4028,3 +4028,21 @@ Wniosek: realnie 10 osób na dobę i żadna nie uruchomiła narzędzia; jedyne p
 **Dowód:** commity 9461ed4 i f045185; produkcja 08:49 i 08:51: `href="/automatyzacja-dla-biur-rachunkowych"` na `/` i `/e-doreczenia-integracja`, `href="/mail-firmowy"` i `href="/audyt-google-ads"` na `/narzedzia` i `/strefa-wiedzy`, przycisk `href="/ksef-2027"` na stronie biur; build i `spojnosc.mjs` OK; IndexNow 5 adresów, 2 z 3 punktów.
 **Dla Pawła:** pusto.
 **Zostało otwarte:** Z4 wysyłka o 9:46 (050 do 057, `--limit=8`), potem Z7; Z10, Z11; Z16 od 21:50; Z17, Z20, Z21, Z23, Z24 według planu.
+
+## 2026-10-09 08:58
+**Kanał:** asystenci AI i Bing (Z20, tylko pomiar, bez zmian w treści).
+**Co zrobione:** policzone wejścia z asystentów AI od 1.10 i odczytany stan Binga. Asystenci dali 3 osoby w 9 dni, Bing jeszcze nie pokazuje żadnych danych.
+
+| Data | Źródło | Pierwsza strona | Odsłony | Zdarzenia |
+|---|---|---|---|---|
+| 2.10 12:45 | chatgpt.com (Chrome, Windows) | /kalkulator-podatkowy | 1 | 0 |
+| 5.10 11:35 | chatgpt.com (Safari, iOS) | /audyt-kurierski | 1 | 0 |
+| 6.10 10:39 | chatgpt.com (Chrome, Windows) | /audyt-kurierski | 1 | 0 |
+
+- perplexity, bing, copilot, claude.ai, gemini: 0 sesji od 1.10.
+- Bing Webmaster (Chrome 9228): mapa `sitemap.xml` wysłana i odczytana 6.10, Success, 108 adresów. Search Performance: „Please check back in 48 hours” (danych jeszcze nie ma). Site Explorer, zindeksowane adresy: „No data available”. AI Performance (cytowania w Copilocie): 0 przez 3 miesiące. IndexNow: 452 adresy przyjęte w ostatnich 6 h, w tym 4 zgłoszone o 08:51.
+
+**Ruch:** doba 13 odsłon, 12 osób; źródła jak w 08:53.
+**Dowód:** zapytanie do `ruch.sqlite` na VPS (sesje ze źródłem AI od 1.10); odczyty `bing.com/webmasters/sitemaps`, `searchperf`, `aiperformance`, `siteexplorer`, `indexnow` o 08:55.
+**Dla Pawła:** pusto.
+**Zostało otwarte:** Z4 o 9:46, potem Z7; Z10, Z11; Z16 od 21:50; Z17, Z21, Z23, Z24.
