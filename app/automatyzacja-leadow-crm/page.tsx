@@ -270,7 +270,13 @@ export default function AutomatyzacjaLeadowCRM() {
                         ))}
                       </div>
                       <p className="mt-6 text-sm text-gray-500 dark:text-gray-500">
-                        Dokładna wycena po bezpłatnej diagnozie.
+                        <Link
+                          href="/strefa-wiedzy/automatyzacja-crm-od-czego-zaczac"
+                          className="text-accent hover:underline"
+                        >
+                          Automatyzacja CRM: od czego zacząć
+                        </Link>
+                        .
                       </p>
                     </div>
                   </section>
