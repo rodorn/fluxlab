@@ -4069,3 +4069,16 @@ Outreach do biur 5.10 do 9.10 (VPS `ruch.sqlite` sesje `utm_source=mail` od 5.10
 - Z5 (wyszukiwarka KRS) dała 2,2 maila na 100 spółek, poniżej progu 3, więc druga partia nie powstała. Kolejka na poniedziałek: 1 plik (058_asset-lublin).
 **Dla Pawła:** bez zmian: dwie odpowiedzi Kontomatik w pawel@fluxlab.pl, komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację.
 **Zostało otwarte:** Z7 o 12:46 (odpowiedzi i sesje po Z4), Z10 15:46, Z11 16:46 (bilans dnia i decyzja o wstrzymaniu outreachu), Z16 żądania nie wcześniej niż 21:50, Z17 22:46, Z23 04:46, Z24 05:46.
+
+## 2026-10-09 10:46
+**Kanał:** outreach z gotowym raportem (Z7, odpowiedzi i pomiar po wysyłce Z4).
+**Co zrobione:** sprawdzony efekt 8 maili z 09:46. Wszystkie doręczone, ale przez godzinę nikt nie odpisał, nie wszedł z linku i nie uruchomił skanu.
+
+| dostarczone | odbite / skargi | odpowiedzi | sesje `mail/ksiegowe` | ludzie | skany z linku | zgłoszenia |
+|---|---|---|---|---|---|---|
+| 8 z 8 | 0 / 0 | 0 | 0 | 0 | 0 | 0 |
+
+**Ruch:** ostatnia doba 10 odsłon, 10 osób (−64% wobec średniej 27,9); źródła: www.google.com 3, facebook 1, mail 1, lm.facebook.com 1. Uruchomień narzędzi 0. Tydzień 198 odsłon, 120 osób.
+**Dowód:** Resend `GET /emails/<id>` (8 identyfikatorów z `wyslane_ks.json`, 10:44): `last_event` delivered dla wszystkich; Zoho IMAP `SINCE 09-Oct-2026` INBOX 1 (Zoho, nowe logowanie 10:06), Spam 0; VPS `ruch.sqlite` od 09:40: brak wierszy, ostatni wpis 08:56, `fluxlab-ruch.service` active.
+**Dla Pawła:** bez zmian: dwie odpowiedzi Kontomatik, komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację.
+**Zostało otwarte:** Z10 o 15:46 (powtórka pomiaru dla Z4), Z11 o 16:46 (bilans dnia i decyzja o wstrzymaniu outreachu), Z16 od 21:50, Z17, Z23, Z24 według godzin. Pozostałe otwarte zadania mają późniejsze godziny, więc ten przebieg kończy się na Z7.
