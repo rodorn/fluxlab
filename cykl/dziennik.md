@@ -4092,3 +4092,11 @@ Outreach do biur 5.10 do 9.10 (VPS `ruch.sqlite` sesje `utm_source=mail` od 5.10
 **Dowód:** commit ddcc9d7 (tylko ten fragment; cudze niezacommitowane zmiany w ~100 plikach zostały w drzewie nietknięte); produkcja z VPS: `/automatyzacja-leadow-crm` 200, link obecny, stare zdanie 0 wystąpień; IndexNow Yandex 200, Naver 200. GSC inspekcja: `/strefa-wiedzy/automatyzacja-crm-od-czego-zaczac` i `/strefa-wiedzy/jak-polaczyc-crm-z-innymi-systemami` „nie znajduje się w Google”. Inne frazy: „automatyzacja crm ai” 11 wyśw. też na `/strefa-wiedzy`; „pipedrive” 5 wyśw., poz. 2,8, rozproszone po 5 stronach (bez zmian); „marketing automation” 7 wyśw., poz. 84,9, `/automatyzacja-dla-agencji-marketingowych` (bez zmian, pozycja zbyt daleka).
 **Dla Pawła:** bez zmian: dwie odpowiedzi Kontomatik, komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację.
 **Zostało otwarte:** Z10 15:46, Z11 16:46, Z16 od 21:50 (z nowym kandydatem), Z17, Z23, Z24.
+
+## 2026-10-09 12:46
+**Kanał:** Google (poza planem: otwarte Z10, Z11, Z16, Z17, Z23, Z24 mają późniejsze godziny; Z10 celowo nie wcześniej, żeby pomiar po wysyłce Z4 objął całe popołudnie).
+**Co zrobione:** fraza „automatyzacja crm ai” (11 wyśw., 0 kliknięć) ląduje na liście `/strefa-wiedzy`; słowa „CRM” i „AI” we wstępie listy linkują teraz do `/strefa-wiedzy/automatyzacja-crm-od-czego-zaczac` i `/strefa-wiedzy/ai-w-automatyzacji-firm` (bez nowych słów, wstęp 12 → 12).
+**Ruch:** ostatnia doba 9 odsłon, 9 osób (−68% wobec średniej 28,1); źródła: www.google.com 4, lm.facebook.com 1. Uruchomień narzędzi 0. Tydzień 199 odsłon, 121 osób.
+**Dowód:** commit 3e11b7b; produkcja z VPS: `/strefa-wiedzy` 200, oba linki w HTML, tekst „O automatyzacji, CRM, AI, poczcie firmowej i Google Ads”; IndexNow 2 z 3 (Naver 200).
+**Dla Pawła:** bez zmian: dwie odpowiedzi Kontomatik, komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację.
+**Zostało otwarte:** Z10 15:46, Z11 16:46, Z16 od 21:50, Z17, Z23, Z24.
