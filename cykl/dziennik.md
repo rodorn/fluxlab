@@ -4116,3 +4116,18 @@ Outreach do biur 5.10 do 9.10 (VPS `ruch.sqlite` sesje `utm_source=mail` od 5.10
 **Dowód:** commit d03cd3c; produkcja 14:5x: nowy `<title>` i opis w HTML; IndexNow 2 z 3 (Yandex 200, Naver 200). Inne frazy z pełnej tabeli GSC (100 wierszy) bez zmian: „sprawdz auto” 3 wyśw., poz. 7 idzie na stary adres `www.fluxlab.pl/sprawdz-auto` (www już 308, zleje się samo); „crm księgowość” 3 / 14 na `/integracja-crm-z-erp`; „asystent ai na stronę” 2 / 9 na `/widocznosc-w-ai` (zakaz zmian pod AI do 14.10).
 **Dla Pawła:** bez zmian: dwie odpowiedzi Kontomatik, komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację.
 **Zostało otwarte:** Z10 15:46, Z11 16:46, Z16 od 21:50 (warto dopisać `/numer-ksef`, jeśli zostanie miejsce w limicie 10), Z17, Z23, Z24. Kandydat na kolejny tytuł: „crm księgowość” → `/integracja-crm-z-erp`.
+
+<!-- WYSLANO 2026-10-09 15:05 -->
+
+## 2026-10-09 15:52
+**Kanał:** outreach z gotowym raportem (Z10, odpowiedzi i pomiar wszystkich dzisiejszych wysyłek; Z9 skończyło się bez wysyłki, więc to tylko 8 maili Z4).
+**Co zrobione:** pomiar po 6 godzinach: jedna osoba weszła z maila do biur rachunkowych, odpowiedzi i skanów brak.
+
+| dostarczone | odbite / skargi | odpowiedzi | sesje `mail/ksiegowe` | ludzie | skany z linku | zgłoszenia |
+|---|---|---|---|---|---|---|
+| 8 z 8 | 0 / 0 | 0 | 1 | 1 | 0 | 0 |
+
+**Ruch:** ostatnia doba 11 odsłon, 11 osób (−61% wobec średniej 28,3); źródła: www.google.com 4, lm.facebook.com 1, mail 1; z telefonu 3 z 11; uruchomień narzędzi 0. Tydzień 193 odsłony, 121 osób.
+**Dowód:** Resend `GET /emails/<id>` dla 8 adresów z `wyslane_ks.json` z 9.10 (15:50): `last_event` delivered na wszystkich; Zoho IMAP `SINCE 09-Oct-2026` INBOX 1 (Zoho, nowe logowanie 10:06), Spam 0; VPS `ruch.sqlite` od 09:40: 5 wierszy, w tym `mail/ksiegowe` 12:31:28 `/e-doreczenia-integracja`, Chrome na Windows, 1 odsłona, bez zdarzenia. To 2 h 45 min po dostarczeniu, więc nie skaner poczty. Pozostałe 4 wejścia to Google (3) i jedno bez odsyłacza na `/`.
+**Dla Pawła:** bez zmian: dwie odpowiedzi Kontomatik, komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację.
+**Zostało otwarte:** Z11 o 16:46 (bilans outreachu: dziś jest 1 człowiek z nowych maili, więc warunek „0 ludzi drugi dzień z rzędu” nie jest spełniony, decyzja zależy już tylko od Z5 poniżej progu); Z16 od 21:50, Z17, Z23, Z24.
