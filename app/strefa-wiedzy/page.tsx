@@ -46,7 +46,7 @@ export default function StrefaWiedzy() {
                 Strefa wiedzy
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-400">
-                Krótko o automatyzacji, CRM, AI,{" "}
+                O automatyzacji, CRM, AI,{" "}
                 <Link href="/mail-firmowy" className="text-accent hover:underline">
                   poczcie firmowej
                 </Link>{" "}
