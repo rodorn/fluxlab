@@ -3962,3 +3962,15 @@ Wniosek: realnie 10 osób na dobę i żadna nie uruchomiła narzędzia; jedyne p
 **Dowód:** commit 476b9ba; produkcja `<title>Automatyzacja biur rachunkowych: enova i KSeF | Fluxlab</title>` i nowy `meta description` na `/audyt-google-ads` (06:57); build i `spojnosc.mjs` OK; IndexNow 2 adresy: Yandex 200, Naver 200, wspólny punkt 403 (znany `UserForbiddedToAccessSite`).
 **Dla Pawła:** pusto.
 **Zostało otwarte:** Z4 wysyłka o 9:46; Z7 odpowiedzi; Z9 według reguły bez wysyłki (Z5 dało 1 mail); Z12 dalej.
+
+## 2026-10-09 07:01
+**Kanał:** Google (Z12, tytuł pod „automatyzacja podatków”).
+**Co zrobione:** tytuł `/automatyzacja-dla-biur-rachunkowych` zaczyna się teraz od frazy „Automatyzacja podatków” i nadal ma „enova” z Z6, ta sama długość.
+
+- Zapytanie `"automatyzacja podatków"` (w cudzysłowie, jak „enova”): 5 wyświetleń, 0 kliknięć, pozycja 8,4 (28 dni). Strony docelowe: `/automatyzacja-dla-biur-rachunkowych` 4, `/narzedzia` 1. Pozostałe zapytania tej strony spisane w wpisie 06:58 (Z6). Strona docelowa to nie lista `/strefa-wiedzy`, więc bez zmiany zdań na liście.
+- Tytuł przed: „Automatyzacja biur rachunkowych: enova i KSeF | Fluxlab” (55 znaków, z Z6); po: „Automatyzacja podatków dla biur: enova i KSeF | Fluxlab” (55). Opis bez zmian. Słowa treści strony bez zmian (605 w `<main>`).
+
+**Ruch:** jak w 06:47 (doba 16 odsłon, 14 osób).
+**Dowód:** commit a9cb170; produkcja `<title>Automatyzacja podatków dla biur: enova i KSeF | Fluxlab</title>`; build i `spojnosc.mjs` OK; IndexNow 2 z 3 punktów (wspólny 403 jak zawsze).
+**Dla Pawła:** pusto.
+**Zostało otwarte:** Z4 o 9:46 (050 do 057, `--limit=8`), potem Z7; Z13 (dwa posty FB) do wzięcia od razu w następnym przebiegu.
