@@ -3974,3 +3974,28 @@ Wniosek: realnie 10 osób na dobę i żadna nie uruchomiła narzędzia; jedyne p
 **Dowód:** commit a9cb170; produkcja `<title>Automatyzacja podatków dla biur: enova i KSeF | Fluxlab</title>`; build i `spojnosc.mjs` OK; IndexNow 2 z 3 punktów (wspólny 403 jak zawsze).
 **Dla Pawła:** pusto.
 **Zostało otwarte:** Z4 o 9:46 (050 do 057, `--limit=8`), potem Z7; Z13 (dwa posty FB) do wzięcia od razu w następnym przebiegu.
+
+<!-- WYSLANO 2026-10-09 07:12 -->
+
+## 2026-10-09 08:05
+**Kanał:** Google (Z14, Z15, Z18), Facebook (Z13), outreach pomiar (Z9). Z4 czeka na 9:46, więc wziąłem zadania bez blokady godzinowej.
+**Co zrobione:** nowy tytuł i opis `/e-doreczenia-integracja` pod jednoosobowe firmy i spółki, link do `/mail-firmowy` w pierwszym zdaniu wpisu o podszywaniu (zapytanie „mail firmowy” 13 wyświetleń), dwa posty w kolejce FB, lista stron bez indeksu i pomiar nasycenia BAE.
+
+- Z13: `fluxlab-meta/posty/kolejka.json` 36 → 38, po 036: `037-audyt-google-ads-frazy` (mini-audyt opisany wprost jako płatny, 69 zł) i `038-jedna-wersja-strony-www` (wynik Z2: 10 z 10 alternatyw w GSC to www, u nas 308), oba z `utm_source=facebook&utm_campaign=narzedzia`, `json.load` OK.
+- Z9 (bez wysyłki, Z5 dało 1 mail): w `krs_partia2` do `27` (5.10 do 8.10) 421 spółek z KRS, 335 z adresem do e-Doręczeń, 86 bez, **79,6% nasycenia**. W partii z wyszukiwarki KRS (Z5, PKD 69.20) 28 z 45, czyli 62%. Wniosek dla Pawła: 4 na 5 spółek z biur rachunkowych w naszych partiach już ma adres, mail „nie macie adresu” trafia do coraz węższej grupy.
+- Z14: „Zeskanowana, ale niezindeksowana” 15 adresów, z czego tylko 3 to strony; reszta to 6 obrazków `opengraph-image`, 2 avif, 2 fonty woff2 i 2 stare adresy www (te mają 308 i nie wymagają działania).
+
+| Strona | Kod | Canonical | Słowa | W mapie | Linki wewn. |
+|---|---|---|---|---|---|
+| /dobor-samochodu | 200 | do siebie | 589 | tak | 2 |
+| /raportowanie-z-pipedrive | 200 | do siebie | 611 | tak | 1 |
+| /strefa-wiedzy/zapier-vs-make | 200 | do siebie | 718 | tak | 1 |
+
+  Wszystkie 3 to kandydaci do Z16. Żadna nie ma 0 linków, więc Z22 nic nie dostaje z tej listy.
+- Z15: strona 68 wyświetleń, 1 klik, pozycja 6,9; GSC pokazuje tylko 3 zapytania po 1 wyświetleniu, reszta jest anonimowa: „mam jednoosobową działalność gospodarczą” (poz. 2), „prowadzę firmę” (6), „status doręczeń potwierdzenia system” (30). Tytuł „Od kiedy adres do e-Doręczeń? Sprawdź po KRS | Fluxlab” (54) → „e-Doręczenia dla JDG i spółek: od kiedy? | Fluxlab” (50). Opis 150 → 144 znaki, kończy się „Termin i odpis po KRS w 10 sekund”.
+- Z18: `/automatyzacja-crm-leasing` 25 wyświetleń: „crm dla firm leasingowych” 4 / poz. 4,8 to największe zapytanie od ludzi (zapytania w cudzysłowie to automaty), a tytuł już się od niego zaczyna, więc go nie ruszałem. Wpis `/strefa-wiedzy/podszywanie-sie-pod-firmowy-email` 20 wyświetleń („mail firmowy” 13 / 24,5, „email firmowy” 4 / 29,3): pierwsze zdanie wymienione na zdanie z linkiem do `/mail-firmowy`, 27 → 26 słów.
+
+**Ruch:** doba 16 odsłon, 14 osób (spadek o 41% wobec średniej 27). Źródła: mail 3, www.google.com 3, facebook 2, narzedzie 1, lm.facebook.com 1. Zdarzenia: `uruchomiono_skan_krs_z_linku` 2.
+**Dowód:** commit 6ed9024 (produkcja 07:54, `<title>e-Doręczenia dla JDG i spółek: od kiedy? | Fluxlab</title>`), commit 0ec2d12 (produkcja 07:58, `href="/mail-firmowy"` w pierwszym akapicie); build i `spojnosc.mjs` OK, IndexNow 2 z 3 punktów za każdym razem; `kolejka.json` 38 wpisów.
+**Dla Pawła:** liczba z Z9: 79,6% spółek z biur rachunkowych w naszych partiach już ma adres do e-Doręczeń (335 z 421).
+**Zostało otwarte:** Z4 wysyłka o 9:46 (050 do 057, `--limit=8`), potem Z7; Z16 żądania od 21:50 (`/panel-zwrotow`, `/rejestr-cen`, 3 strony z Z14, zmienione dziś: `/automatyzacja-dla-biur-rachunkowych`, `/audyt-google-ads`, `/e-doreczenia-integracja`); Z19, Z22 i pomiary według planu.
