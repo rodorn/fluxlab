@@ -4131,3 +4131,24 @@ Outreach do biur 5.10 do 9.10 (VPS `ruch.sqlite` sesje `utm_source=mail` od 5.10
 **Dowód:** Resend `GET /emails/<id>` dla 8 adresów z `wyslane_ks.json` z 9.10 (15:50): `last_event` delivered na wszystkich; Zoho IMAP `SINCE 09-Oct-2026` INBOX 1 (Zoho, nowe logowanie 10:06), Spam 0; VPS `ruch.sqlite` od 09:40: 5 wierszy, w tym `mail/ksiegowe` 12:31:28 `/e-doreczenia-integracja`, Chrome na Windows, 1 odsłona, bez zdarzenia. To 2 h 45 min po dostarczeniu, więc nie skaner poczty. Pozostałe 4 wejścia to Google (3) i jedno bez odsyłacza na `/`.
 **Dla Pawła:** bez zmian: dwie odpowiedzi Kontomatik, komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację.
 **Zostało otwarte:** Z11 o 16:46 (bilans outreachu: dziś jest 1 człowiek z nowych maili, więc warunek „0 ludzi drugi dzień z rzędu” nie jest spełniony, decyzja zależy już tylko od Z5 poniżej progu); Z16 od 21:50, Z17, Z23, Z24.
+
+## 2026-10-09 16:50
+**Kanał:** outreach z gotowym raportem (Z11, bilans outreachu 2026-10-09 i decyzja na sobotę i poniedziałek).
+**Co zrobione:** policzony bilans dnia. Decyzja zapisana w „Czego nie robić” planu: od 10.10 nie robimy nowych partii do biur, w poniedziałek wychodzi tylko plik 058, kolejne partie dopiero z nowym źródłem dającym co najmniej 3 maile na 100 spółek. Dosłowny warunek wstrzymania nie jest spełniony, bo z dzisiejszych maili wszedł 1 człowiek. Mimo to nie ma źródła, z którego dałoby się zrobić kolejną partię.
+
+**Bilans outreachu 2026-10-09**
+
+| segment | wysłane | delivered | odbite / skargi | odpowiedzi | sesje z utm | ludzie | skany z linku | zgłoszenia |
+|---|---|---|---|---|---|---|---|---|
+| ksiegowe-edoreczenia (Z4, 050 do 057) | 8 | 8 | 0 / 0 | 0 | 1 | 1 | 0 | 0 |
+| Z9 | 0 (bez wysyłki, Z5 poniżej progu) | – | – | – | – | – | – | – |
+
+| Z5 źródło | numerów KRS | spółek 69.20 | bez BAE | z ogólnym adresem | maili | trafialność |
+|---|---|---|---|---|---|---|
+| wyszukiwarka KRS po nazwie (JSON, bez captchy) | 60 | 45 | 17 | 1 | 1 (058) | 2,2 na 100 spółek (próg 3) |
+
+Liczby dla stratega 10.10: od 5.10 segment dał 54 maile i 27 follow-upów, 81 z 81 delivered, 4 do 7 ludzi, 1 lead (Profit Polska), 1 wypisanie. Kolejka na poniedziałek to 1 plik (058). Rynek jest w większości nasycony: 79,6% spółek z partii KRS ma już adres do e-Doręczeń (Z9).
+**Ruch:** ostatnia doba 14 odsłon, 12 osób (−51% wobec średniej 28,3); źródła: www.google.com 4, lm.facebook.com 1, mail 1; z telefonu 3 z 14. Zdarzenia: audyt_uruchomiony 1, audyt_wynik_sredni 1 (16:35, `/audyt-strony`, wejście bez odsyłacza, Chrome na Windows, czyli ktoś z zewnątrz uruchomił audyt). Tydzień 195 odsłon, 121 osób.
+**Dowód:** Resend `GET /emails/<id>` 16:47 dla 8 adresów z `wyslane_ks.json` (info@biuro-gawron.pl, kontakt@biuroprofesja.pl, kontakt@biurodgc.pl, audit@inland.pl, otus@otuspodatki.pl, biuro@palewscy.pl, biuro@ww-finance.pl, biuro@biuroprofi.eu): wszystkie `delivered`. Zoho IMAP `SINCE 09-Oct-2026`: INBOX 1 (Zoho, logowanie 10:06), Spam 0. VPS `ruch.sqlite` od 09:40: 1 wiersz `mail/ksiegowe` (sesja fm2wsqzv9cdmv0y2j3t), 0 wierszy w `zgloszenia`. Korekta wpisu 15:52: baza na VPS zapisuje czas w UTC, więc ta sesja była o 14:31 czasu polskiego, 4 h 45 min po dostarczeniu, nie 2 h 45 min. Wniosek bez zmian: to człowiek, nie skaner poczty.
+**Dla Pawła:** bez zmian: dwie odpowiedzi Kontomatik, komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację.
+**Zostało otwarte:** Z16 od 21:50 (żądania indeksowania), Z17 22:46, Z23 04:46, Z24 05:46. Przy odczytach z `ruch.sqlite` dodawać 2 h do czasu bazy.
