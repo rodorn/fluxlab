@@ -52,7 +52,11 @@ export default function PodszywanieEmailArticle() {
       <Header />
       <main
         className="container-wide"
-        style={{ maxWidth: 800, margin: "0 auto", padding: "6.5rem 1.5rem 4rem" }}
+        style={{
+          maxWidth: 800,
+          margin: "0 auto",
+          padding: "6.5rem 1.5rem 4rem",
+        }}
       >
         <Breadcrumbs
           items={[
@@ -74,9 +78,12 @@ export default function PodszywanieEmailArticle() {
             fontSize: "1.05rem",
           }}
         >
-          Jeśli domena nie jest poprawnie skonfigurowana, każdy może wysłać
-          mail wyglądający jak od Ciebie, a część Twoich ofert i faktur po
-          cichu nie dociera do klientów.
+          Jeśli{" "}
+          <Link href="/mail-firmowy" style={{ textDecoration: "underline" }}>
+            mail firmowy
+          </Link>{" "}
+          na Twojej domenie nie ma poprawnej konfiguracji, każdy może wysłać
+          wiadomość jak od Ciebie, a część ofert i faktur po cichu nie dociera.
         </p>
 
         <div
