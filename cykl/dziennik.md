@@ -4100,3 +4100,11 @@ Outreach do biur 5.10 do 9.10 (VPS `ruch.sqlite` sesje `utm_source=mail` od 5.10
 **Dowód:** commit 3e11b7b; produkcja z VPS: `/strefa-wiedzy` 200, oba linki w HTML, tekst „O automatyzacji, CRM, AI, poczcie firmowej i Google Ads”; IndexNow 2 z 3 (Naver 200).
 **Dla Pawła:** bez zmian: dwie odpowiedzi Kontomatik, komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację.
 **Zostało otwarte:** Z10 15:46, Z11 16:46, Z16 od 21:50, Z17, Z23, Z24.
+
+## 2026-10-09 13:46
+**Kanał:** Google (poza planem: otwarte Z10, Z11, Z16, Z17, Z23, Z24 mają późniejsze godziny).
+**Co zrobione:** fraza „porównanie kosztów automatyzacji vs zatrudniania” (GSC 28 dni: 4 wyśw., 0 kliknięć, poz. 2,8) trafia na `/strefa-wiedzy/automatyzacja-vs-zatrudnienie`; tytuł zmieniony na „Koszt automatyzacji vs zatrudnienia | Fluxlab” (46 → 45 znaków), opis meta zaczyna się od „Porównanie kosztów automatyzacji i zatrudnienia” (125 → 124 znaki). Przy pozycji 2,8 przeszkodą był tytuł, nie pozycja.
+**Ruch:** ostatnia doba 8 odsłon, 8 osób (−72% wobec średniej 28,4); źródła: www.google.com 3, lm.facebook.com 1. Uruchomień narzędzi 0. Tydzień 193 odsłony, 120 osób. Wejście na `/dziekuje` 06:56 to pojedyncza odsłona bez zgłoszenia (ostatnie zgłoszenie w bazie: Profit Polska, 5.10).
+**Dowód:** commit b999713; produkcja z VPS: 200, nowy `<title>` i opis w HTML; IndexNow 2 z 3 (Naver 200). Inne frazy przejrzane bez zmian: „asystent ai na stronie” 6 wyśw., poz. 40,8 i „system ticketowy dla e-commerce” 4 wyśw., poz. 77,3 (za daleko na zmianę tytułu).
+**Dla Pawła:** bez zmian: dwie odpowiedzi Kontomatik, komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację.
+**Zostało otwarte:** Z10 15:46, Z11 16:46, Z16 od 21:50, Z17, Z23, Z24.
