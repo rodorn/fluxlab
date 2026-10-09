@@ -3784,3 +3784,22 @@ Z19: VPS od 1.10 tylko 3 sesje chatgpt.com (2.10 `/kalkulator-podatkowy`, 5.10 i
 **Dowód:** `kolejka.json` 34 → 36 pozycji, najbliższe nieopublikowane: 035, 036, 012; grafiki `posty/035-przelew-biala-lista/grafika.png`, `posty/036-podmieniony-numer-konta/grafika.png`; oba linki z VPS 200. Commita brak, bo fluxlab-meta nie jest repozytorium git.
 **Dla Pawła:** bez zmian: dwie odpowiedzi Kontomatik w pawel@fluxlab.pl, komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację.
 **Zostało otwarte:** Z23 o 04:46, Z24 o 05:46 (w bilansie policzyć sesje z utm `facebook/narzedzia` na `/sprawdzenie-nip` i `/sprawdz-kontrahenta` po publikacji 035 i 036); piątek 9:46 wysyłka 050 do 057 (`--limit=8`).
+
+## 2026-10-09 04:45
+**Kanał:** pomiar (Z23 z planu).
+**Co zrobione:** pełny podział doby 8.10 06:00 do 9.10 04:30 z `ruch.sqlite` na VPS (40 wierszy, bez filtrów raportu): ludzie, skanery, własne, zdarzenia i kontrola Firefox Android.
+
+| grupa | sesje | odsłony | zdarzenia | szczegóły |
+|---|---|---|---|---|
+| ludzie | 10 | 10 | 0 | facebook/narzedzia 2 (08:03 `/audyt-poczty`, 12:09 `/e-doreczenia-integracja`), www.google.com 3 (13:13 `/`, 13:33 `/ksef-2027`, 19:27 `/`), lm.facebook.com 1 (18:36 `/`, Android), mail/ksiegowe 1 (12:35 Edge, mail sprzed 8.10, bez `?krs=`), bez odsyłacza 3 (17:10 `/` iOS, 9.10 02:24 i 02:30 `/audyt-kurierski` Chrome Windows, dwie sesje po 1 odsłonie, niepewne) |
+| skanery | 3 | 3 | 1 | `0gh0m9lo` 09:47:31 mail/ksiegowe macOS (`uruchomiono_skan_krs_z_linku` w tej samej sekundzie), `us3pshiq` i `vnchj2xe` 09:48:27 `/kontakt` (narzedzie/edoreczenia-krs i bez odsyłacza, ta sama sekunda, 56 s po skanie: skaner klika linki z wyniku) |
+| własne: Z1 test | 1 | 1 | 1 | `0hbwfonb` 07:46 mail/test-krs Chrome Linux |
+| własne: GSC Z2/Z15 | 1 | 26 | 0 | `fnfbzuab` 20:52 do 21:55, każda strona jako Linux i Android |
+| własne: zrzuty Z18 | 0 | 0 | 0 | headless z tymczasowego profilu, licznik ich nie zapisał |
+
+Zdarzenia uruchomień: 2, oba `uruchomiono_skan_krs_z_linku` (1 skaner, 1 własny test), `z_linku` od ludzi 0, `przyklad` 0, własne dane wpisane przez człowieka 0. Firefox Android bez odsyłacza na `/automatyzacja-leadow-crm`: 0 wejść w dobie (ostatnie 7.10 23:57), czyli ustało; strona nie miała w tej dobie żadnej odsłony.
+Wniosek: realnie 10 osób na dobę i żadna nie uruchomiła narzędzia; jedyne pewne źródła z zamiarem to Facebook z utm (2) i Google (3), a mail dał tylko skaner.
+**Ruch:** ostatnia doba 16 odsłon, 14 osób (raport 04:43); źródła: mail 3, www.google.com 3, facebook 2, narzedzie 1, lm.facebook.com 1. Uruchomienia narzędzi 2 (`uruchomiono_skan_krs_z_linku`). Tydzień 197 odsłon, 119 osób.
+**Dowód:** zapytanie `SELECT * FROM wizyty WHERE czas>=1791432000 AND czas<1791513000` na `ruch.sqlite` (VPS), 40 wierszy; Z23 oznaczone w `cykl/plan-ruchu.md`.
+**Dla Pawła:** bez zmian: dwie odpowiedzi Kontomatik w pawel@fluxlab.pl, komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację.
+**Zostało otwarte:** Z24 o 05:46 (bilans planu); piątek 9:46 wysyłka 050 do 057 (`--limit=8`); sesje utm `facebook/narzedzia` na `/sprawdzenie-nip` i `/sprawdz-kontrahenta` po publikacji 035 i 036.
