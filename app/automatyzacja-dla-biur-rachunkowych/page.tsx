@@ -8,13 +8,13 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
-  title: "Automatyzacja dla biur rachunkowych, KSeF i OCR | Fluxlab",
+  title: "Automatyzacja biur rachunkowych: enova i KSeF | Fluxlab",
   description:
-    "OCR faktur do Optimy, Symfonii i Enovy, integracje z SaldeoSmart i KSeF, przypomnienia o brakujących dokumentach i raporty, które robią się same.",
+    "Integracja enova365, Optimy i Symfonii z KSeF i SaldeoSmart, OCR faktur, przypomnienia o brakujących dokumentach i raporty, które robią się same.",
   openGraph: {
-    title: "Automatyzacja dla biur rachunkowych, KSeF i OCR | Fluxlab",
+    title: "Automatyzacja biur rachunkowych: enova i KSeF | Fluxlab",
     description:
-      "OCR faktur do Optimy, Symfonii i Enovy, integracje z SaldeoSmart i KSeF, przypomnienia o brakujących dokumentach i raporty, które robią się same.",
+      "Integracja enova365, Optimy i Symfonii z KSeF i SaldeoSmart, OCR faktur, przypomnienia o brakujących dokumentach i raporty, które robią się same.",
     locale: "pl_PL",
     type: "article",
     images: [
@@ -417,7 +417,7 @@ export default function AutomatyzacjaDlaBiurRachunkowych() {
             "@type": "Service",
             name: "Automatyzacja dla biur rachunkowych",
             description:
-              "OCR faktur do Optimy, Symfonii i Enovy, integracje z SaldeoSmart i KSeF, przypomnienia o brakujących dokumentach i raporty, które robią się same.",
+              "Integracja enova365, Optimy i Symfonii z KSeF i SaldeoSmart, OCR faktur, przypomnienia o brakujących dokumentach i raporty, które robią się same.",
             provider: { "@id": "https://fluxlab.pl/#organization" },
             areaServed: { "@type": "Country", name: "PL" },
             serviceType:

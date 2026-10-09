@@ -3855,3 +3855,93 @@ Wniosek: realnie 10 osób na dobę i żadna nie uruchomiła narzędzia; jedyne p
 **Ocena kanałów:** outreach nowe maile 0 do 1 / ok. 6 / 7 h, drugi dzień bez człowieka z nowych maili, źródła wyczerpane: 5 h (wysyłka 8, odpowiedzi, bilans, jedna próba wyszukiwarki KRS po nazwie z limitem 60 min). Follow-upy 0 / 0 / 2 h: wyłączone. Google 3 / 15 / 5 h, wyświetlenia 244, 324, 433, jedyny kanał rosnący bez wysyłek: 10 h (duplikat www, 5 tytułów pod frazy z wyświetleniami, 15 stron bez indeksu, 10 żądań po 21:45, linki wewnętrzne). Facebook 2 / 15 / 0 h: 1 h (dwa tematy do kolejki). Narzędzia 0 uruchomień w dobie: tylko tytuły. Bez odsyłacza 3 / 62 / 0 h: pomiar w Z1. AI 0 / 3 / 0 h: tylko pomiar.
 **Plan:** `cykl/plan-ruchu.md`, 24 zadania 06:46 do 05:46. Dzień: Z1 bez odsyłacza, Z2 www, Z3 przygotowanie, Z4 wysyłka 8 (9:46), Z5 wyszukiwarka KRS (limit 60 min), Z6 tytuł enova, Z7 i Z10 odpowiedzi, Z8 audyt google ads, Z9 wysyłka warunkowa albo nasycenie BAE, Z11 bilans i decyzja o wstrzymaniu outreachu. Wieczór i noc: Z12 automatyzacja podatków, Z13 posty 037 i 038, Z14 15 stron bez indeksu, Z15 tytuł e-Doręczeń, Z16 10 żądań GSC po 21:50, Z17 pomiar, Z18 CRM leasing i wpis o podszywaniu, Z19 zrzuty 390 px, Z20 AI i Bing, Z21 kolejka na poniedziałek albo tabela łączna outreachu, Z22 linki wewnętrzne, Z23 pomiar doby, Z24 bilans.
 **Mail do Pawła:** wysłany 06:43 z pawel@fluxlab.pl, msgid 179151976792.1379727, temat „FluxLab ruch, plan na 9.10.2026: 10 osób w dobie, 0 uruchomień narzędzi, kolejka maili kończy się dziś"; „Dla Pawła": Profit Polska (5. dzień), decyzja o płatnej bazie firm albo innym segmencie dla outreachu, 6 tekstów Gofin, dwie odpowiedzi Kontomatik.
+
+## 2026-10-09 06:50
+**Kanał:** pomiar (Z1, sesje bez odsyłacza z 7 dni).
+**Co zrobione:** podział 60 sesji bez odsyłacza (2.10 06:43 do 9.10 06:43, po filtrach `raport_ruchu.py`) na grupy; okazało się, że to nie kanał, tylko resztka innych kanałów plus własne sprawdzenia.
+
+| Grupa | Sesje | Z uruchomieniem | Przykłady |
+|---|---|---|---|
+| (a) `/`, `/kontakt`, `/dziekuje` z komputera, pn do pt 8 do 17 | 5 | 1 | 05.10 14:51 `/` Windows, 5 odsłon, 3 audyty, `lead_landing` (to lead Profit Polska); 07.10 11:50 `/kontakt` Windows; 08.10 09:48 `/kontakt` Windows |
+| (b) strony narzędzi z linków utm bez odsyłacza | 0 | 0 | utm zawsze zapisuje źródło, więc takie wejście nie trafia do „bez odsyłacza” |
+| (c) pojedyncza odsłona głębokiej strony | 22 | 1 | 07.10 13:17 `/audyt-strony` macOS, audyt uruchomiony i 5 sekcji rozwiniętych; 05.10 19:16 `/strefa-wiedzy/maile-trafiaja-do-spamu`; 06.10 14:13 `/panel-zwrotow` |
+| (d) własne i boty renderujące | 13 | 1 | 10 sesji „ta sama strona 2 razy w ciągu 0 do 1 s”, Chrome Linux/Android, 4.10 16:46 do 18:48, 5.10 09:01 do 09:03, 7.10 20:50: to render Google przy naszych żądaniach indeksowania w GSC; 2× `/nie-licz-mnie`; 07.10 12:53 `/sprawdzenie-nip` z `*_przyklad` (nasz test) |
+| reszta: `/` jedna odsłona | 13 | 0 | 6 z Safari iOS (02.10 16:15, 05.10 18:13, 08.10 17:10), 3 nocne Chrome Linux (03.10 05:00, 06.10 04:58, 05:11) |
+| reszta: kilka odsłon | 7 | 1 | 05.10 08:14 `/e-doreczenia-integracja` Android, skan KRS; 02.10 18:35 `/` Windows 7 odsłon; 06.10 23:30 `/automatyzacja-leadow-crm` Firefox Android 6 odsłon |
+
+- Jeden powtarzalny wzorzec: Firefox Android wraca na `/automatyzacja-leadow-crm` 6 razy w 2 dni (06.10 14:56 do 07.10 23:57). Jedna osoba, prawdopodobnie ktoś z naszych (Paweł używa Firefoksa); bez pełnego UA w bazie nie da się tego wykluczyć wpisem do listy, więc `raport_ruchu.py` bez zmian.
+- Render Google (grupa d, 10 sesji) też nie ma własnego UA w bazie (zapisywane są tylko przeglądarka i system). Wykluczenie wymagałoby nowej reguły „dwie odsłony tej samej strony w 1 s”, czyli zmiany logiki liczenia, której plan zabrania; zostawiam strategowi jako propozycję.
+- Wniosek: z 60 sesji realnie ok. 40 to ludzie, a wartościowe są 3 (lead 5.10, audyt 7.10, skan KRS 5.10). Nie ma czego „zasilać”: to ludzie z maili otwieranych w aplikacjach, z asystentów AI i z zakładek. Kanał bez godzin cyklu.
+
+**Ruch:** ostatnia doba 16 odsłon, 14 osób (−41% wobec średniej 27,0); źródła: mail 3, www.google.com 3, facebook 2, narzedzie 1, lm.facebook.com 1. Uruchomienia 2 (`uruchomiono_skan_krs_z_linku`). Tydzień 197 odsłon, 119 osób.
+**Dowód:** `raport_ruchu.pobierz()` z VPS `ruch.sqlite`, 60 sesji bez źródła z 7 dni, skrypt `/tmp/z1.py`; Z1 oznaczone w `cykl/plan-ruchu.md`.
+**Dla Pawła:** pusto.
+**Zostało otwarte:** Z2 (duplikat www) w tym samym przebiegu.
+
+## 2026-10-09 06:58
+**Kanał:** Google (Z2, duplikat www).
+**Co zrobione:** sprawdzone, że duplikatu do naprawy nie ma: wersja www już przekierowuje stałym 308 na adres bez www (Vercel, ustawienie domeny), kanoniczne wskazują wersję bez www; bez commita.
+
+| Adres | Kod | Location |
+|---|---|---|
+| `https://www.fluxlab.pl/narzedzia` | 308 | `https://fluxlab.pl/narzedzia` |
+| `https://www.fluxlab.pl/` | 308 | `https://fluxlab.pl/` |
+| `http://fluxlab.pl/` | 308 | `https://fluxlab.pl/` |
+| `http://www.fluxlab.pl/kontrola-paliwa` | 308 | `https://www.fluxlab.pl/kontrola-paliwa` (drugi skok 308 na `https://fluxlab.pl/...`) |
+
+- `<link rel="canonical">`: `/` → `https://fluxlab.pl`, `/narzedzia` → `https://fluxlab.pl/narzedzia`, `/e-doreczenia-integracja` → `https://fluxlab.pl/e-doreczenia-integracja`.
+- GSC „Alternatywna strona zawierająca prawidłowy tag strony kanonicznej” (29, stan 4.10, weryfikacja „Nie rozpoczęto”): 10 z 10 pierwszych adresów to www (`/pogotowie-automatyzacji`, `/sprawdz-auto`, `/tansze-automatyzacje`, `/audyt-google-ads`, `/naprawa-https`, `/produkty`, `/strony-www`, `/crm-jako-system-pracy`, `/strefa-wiedzy/kategoria/crm`, `/strefa-wiedzy/crm-dla-jednoosobowej-firmy`), ostatnio skanowane 8 do 20.09. To stan prawidłowy: Google zna stare adresy www i sam przypisuje je do wersji bez www; wiersze `www.fluxlab.pl/narzedzia` w tabeli skuteczności to dane sprzed przepięcia i z czasem znikną.
+- Post 038 w Z13 („strona z www i bez www”) ma więc oprzeć się na tym, że u nas jest to zrobione, a narzędzie pokazuje, czy u Was też.
+
+**Ruch:** jak w 06:50 (doba 16 odsłon, 14 osób).
+**Dowód:** `curl -sI` 4 adresów 06:55; GSC `index?resource_id=sc-domain%3Afluxlab.pl` przez Chrome 9228, 10 adresów powyżej; Z2 oznaczone w planie.
+**Dla Pawła:** pusto.
+**Zostało otwarte:** Z3 (przygotowanie 8 maili 050 do 057).
+
+## 2026-10-09 07:08
+**Kanał:** outreach z gotowym raportem (Z3, przygotowanie wysyłki 9:46).
+**Co zrobione:** 8 maili 050 do 057 gotowych do wysyłki: wszystkie 8 spółek nadal bez adresu do e-Doręczeń w odpisie, linki i adresy poprawne; nic nie wypada do `nieaktualne/`.
+
+| Plik | Adres | KRS | Odpis, stan z dnia | BAE |
+|---|---|---|---|---|
+| 050 | info@biuro-gawron.pl | 0001069006 | 14.07.2026 | brak |
+| 051 | kontakt@biuroprofesja.pl | 0000431225 | 27.04.2026 | brak |
+| 052 | kontakt@biurodgc.pl | 0000384095 | 15.05.2026 | brak |
+| 053 | audit@inland.pl | 0000188541 | 15.07.2026 | brak |
+| 054 | otus@otuspodatki.pl | 0000657490 | 09.07.2026 | brak |
+| 055 | biuro@palewscy.pl | 0000941213 | 28.07.2026 | brak |
+| 056 | biuro@ww-finance.pl | 0001034929 | 05.06.2026 | brak |
+| 057 | biuro@biuroprofi.eu | 0000763701 | 14.07.2026 | brak |
+
+- Kolejka przez katalog: 54 pliki `.txt` minus `wyslane_ks.json` (111) i `pomijane.json` (60) = 8, dokładnie 050 do 057.
+- Próba: `z_utm` na treści każdego z 8 plików, każdy ma jeden link `fluxlab.pl/e-doreczenia-integracja?krs=<10 cyfr>&utm_source=mail&utm_campaign=ksiegowe`, 0 adresów gmail i imiennych, 0 błędów. Uwaga dla wykonawcy: `wyslij_segment.py --proba` nie pomija już wysłanych (warunek `not PROBA`), więc z `--limit=8` pokazuje pliki 000 do 007, nie 050 do 057; dlatego próba robiona bezpośrednio na 8 plikach tą samą funkcją `z_utm`. Wysyłka bez `--proba` pomija wysłane i weźmie dokładnie 050 do 057.
+
+**Ruch:** jak w 06:50.
+**Dowód:** odpisy `api-krs.ms.gov.pl/api/krs/OdpisAktualny` co 2 s (07:05), 8 × brak `adresDoDoreczenElektronicznychWpisanyDoBAE`; Z3 oznaczone w planie.
+**Dla Pawła:** pusto.
+**Zostało otwarte:** Z4 wysyłka 9:46; w międzyczasie Z5 (wyszukiwarka KRS po nazwie, limit 60 min).
+
+## 2026-10-09 07:25
+**Kanał:** outreach z gotowym raportem (Z5, nowe źródło: wyszukiwarka KRS po nazwie).
+**Co zrobione:** wyszukiwarka działa i daje JSON bez captchy, ale trafialność na maile jest poniżej progu: 1 mail na 45 spółek 69.20 (2,2 na 100, próg 3); plik `058_asset-lublin.txt` gotowy, nie wysyłany przed decyzją Z9.
+
+- API: `POST https://wyszukiwarka-krs-api.ms.gov.pl/api/wyszukiwarka/krs`, nagłówki `x-api-key: TopSecretApiKey` i długi `apiKey` z przeglądarki, paginacja do 100 na stronę; wywołania przez `fetch` w karcie Chrome 9228 (Incapsula przepuszcza tylko z przeglądarki). Wyników: „BIURO RACHUNKOWE” 2410, „KSIEGOW” 1927, „DORADZTWO PODATKOWE” 81. Z pierwszych stron (581 pozycji) 604 numery spoza `krs_partia*` i bez „w likwidacji” (pula na kolejne partie jest duża).
+
+| Etap | Liczba |
+|---|---|
+| numery KRS wzięte (25 + 25 + 10 z trzech zapytań) | 60 |
+| odpis niedostępny (pusta odpowiedź, wykreślone) | 11 |
+| spółki z PKD 69.20 | 45 |
+| z adresem w BAE | 28 (62%) |
+| bez BAE | 17 |
+| z e-mailem w odpisie | 5 (1 gmail, 3 × `100sio@` trzech spółek 100-SIO, 1 `biuro@`) |
+| z adresem ogólnym (biuro@, kontakt@, sekretariat@, office@) | 1 |
+| maile gotowe | 1 (`058`, biuro@asset-lublin.pl, KRS 0000120471) |
+| trafialność | 2,2 na 100 spółek 69.20 (1,7 na 100 numerów) |
+
+- Wąskie gardło to nie wyszukiwanie, tylko adres: 12 z 17 spółek bez BAE nie ma e-maila w odpisie, a domen nie wolno zgadywać ani szukać w wyszukiwarkach.
+
+**Ruch:** jak w 06:50.
+**Dowód:** `~/Projekty/mail-audyt/maile_ksiegowe_edoreczenia/krs_wyszukiwarka1_2026-10-09.json` (60 odpisów), `krs_wyszukiwarka_lista_2026-10-09.json` (604 numery), `058_asset-lublin.txt`; Z5 oznaczone w planie.
+**Dla Pawła:** pusto.
+**Zostało otwarte:** Z4 wysyłka 050 do 057 o 9:46; Z9 według reguły planu bez wysyłki (mniej niż 3 maile), 058 czeka na decyzję stratega.

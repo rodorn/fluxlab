@@ -8,12 +8,12 @@ import RelatedProducts from "@/components/RelatedProducts";
 export const metadata: Metadata = {
   title: "Audyt Google Ads: frazy bez konwersji, 69 zł | Fluxlab",
   description:
-    "Audyt Google Ads: frazy bez konwersji z 30 do 90 dni, kwota do odzyskania co miesiąc i lista wykluczeń. Raport w 3 dni robocze, 69 zł z gwarancją zwrotu.",
+    "W 3 dni robocze dostajecie frazy Google Ads, które biorą budżet bez konwersji, kwotę do odzyskania co miesiąc i listę wykluczeń. 69 zł z gwarancją zwrotu.",
   alternates: { canonical: "/audyt-google-ads" },
   openGraph: {
     title: "Audyt Google Ads: frazy bez konwersji, 69 zł | Fluxlab",
     description:
-      "Audyt Google Ads: frazy bez konwersji z 30 do 90 dni, kwota do odzyskania co miesiąc i lista wykluczeń. Raport w 3 dni robocze, 69 zł z gwarancją zwrotu.",
+      "W 3 dni robocze dostajecie frazy Google Ads, które biorą budżet bez konwersji, kwotę do odzyskania co miesiąc i listę wykluczeń. 69 zł z gwarancją zwrotu.",
     locale: "pl_PL",
     type: "website",
     images: [
@@ -43,11 +43,6 @@ const steps = [
 ];
 
 const faq = [
-  {
-    question: "Jak działa gwarancja zwrotu?",
-    answer:
-      "Jeśli znajdziemy mniej niż 500 zł miesięcznie do odzyskania, zwracamy całe 69 zł.",
-  },
   {
     question: "Czy musicie mieć dostęp do naszego konta Google Ads?",
     answer:
@@ -223,37 +218,6 @@ export default function AudytGoogleAdsPage() {
                   Mniej niż 500 zł miesięcznie do odzyskania? Zwracamy całą
                   kwotę.
                 </p>
-                <ul className="mt-5 space-y-2">
-                  {[
-                    "analiza raportu wyszukiwanych haseł z 30-90 dni",
-                    "wyliczenie budżetu przepalanego na frazy bez konwersji",
-                    "gotowa lista wykluczających słów kluczowych",
-                    "plan naprawy konta uszeregowany według efektu",
-                  ].map((f) => (
-                    <li
-                      key={f}
-                      className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300"
-                    >
-                      <svg
-                        className="mt-0.5 flex-shrink-0 text-accent"
-                        width="14"
-                        height="14"
-                        viewBox="0 0 14 14"
-                        fill="none"
-                        aria-hidden="true"
-                      >
-                        <path
-                          d="M2.5 7l3 3 6-6"
-                          stroke="currentColor"
-                          strokeWidth="1.6"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                      <span className="leading-snug">{f}</span>
-                    </li>
-                  ))}
-                </ul>
                 <a
                   href="#zamow"
                   className="btn-primary mt-6 w-full justify-center text-center text-sm"
