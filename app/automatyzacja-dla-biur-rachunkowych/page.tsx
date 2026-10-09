@@ -8,11 +8,11 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
-  title: "Automatyzacja biur rachunkowych: enova i KSeF | Fluxlab",
+  title: "Automatyzacja podatków dla biur: enova i KSeF | Fluxlab",
   description:
     "Integracja enova365, Optimy i Symfonii z KSeF i SaldeoSmart, OCR faktur, przypomnienia o brakujących dokumentach i raporty, które robią się same.",
   openGraph: {
-    title: "Automatyzacja biur rachunkowych: enova i KSeF | Fluxlab",
+    title: "Automatyzacja podatków dla biur: enova i KSeF | Fluxlab",
     description:
       "Integracja enova365, Optimy i Symfonii z KSeF i SaldeoSmart, OCR faktur, przypomnienia o brakujących dokumentach i raporty, które robią się same.",
     locale: "pl_PL",
