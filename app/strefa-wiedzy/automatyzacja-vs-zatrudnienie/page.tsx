@@ -10,13 +10,13 @@ import KalkulatorDecyzji from "@/components/KalkulatorDecyzji";
 import NazwaNarzedzia from "@/components/NazwaNarzedzia";
 
 export const metadata: Metadata = {
-  title: "Automatyzacja czy zatrudnienie w MŚP | Fluxlab",
+  title: "Koszt automatyzacji vs zatrudnienia | Fluxlab",
   description:
-    "Kiedy zatrudnić kolejną osobę, a kiedy zautomatyzować proces. Realne koszty, ryzyka i kalkulator decyzji dla firm B2B w 2026.",
+    "Porównanie kosztów automatyzacji i zatrudnienia: kiedy nowa osoba, kiedy automat. Realne kwoty, ryzyka i kalkulator dla MŚP.",
   openGraph: {
-    title: "Automatyzacja czy zatrudnienie w MŚP | Fluxlab",
+    title: "Koszt automatyzacji vs zatrudnienia | Fluxlab",
     description:
-      "Kiedy zatrudnić kolejną osobę, a kiedy zautomatyzować proces. Realne koszty, ryzyka i kalkulator decyzji dla firm B2B w 2026.",
+      "Porównanie kosztów automatyzacji i zatrudnienia: kiedy nowa osoba, kiedy automat. Realne kwoty, ryzyka i kalkulator dla MŚP.",
     locale: "pl_PL",
     type: "article",
     images: [
