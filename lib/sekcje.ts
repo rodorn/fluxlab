@@ -168,7 +168,7 @@ export const SEKCJE: Sekcja[] = [
           s("/strefa-wiedzy", "Strefa wiedzy"),
           s("/strefa-wiedzy/kategoria/[slug]", "Kategoria artykułów"),
           s("/strefa-wiedzy/ai-w-automatyzacji-firm", "AI w automatyzacji firm"),
-          s("/strefa-wiedzy/automatyzacja-crm-od-czego-zaczac", "Automatyzacja CRM, od czego zacząć"),
+          s("/strefa-wiedzy/automatyzacja-crm-od-czego-zaczac", "Automatyzacja CRM z AI, od czego zacząć"),
           s("/strefa-wiedzy/automatyzacja-vs-zatrudnienie", "Automatyzacja vs zatrudnienie"),
           s("/strefa-wiedzy/bledy-w-rejestrze-obiektow-hotelarskich", "Błędy w rejestrze hoteli"),
           s("/strefa-wiedzy/co-jest-nie-tak-ze-stronami-dealerow", "Badanie stron dealerów"),

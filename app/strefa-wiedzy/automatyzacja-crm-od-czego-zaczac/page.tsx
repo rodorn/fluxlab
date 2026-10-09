@@ -7,13 +7,13 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 
 export const metadata: Metadata = {
-  title: "Automatyzacja CRM, od czego zacząć | Fluxlab",
+  title: "Automatyzacja CRM z AI, od czego zacząć | Fluxlab",
   description:
-    "Jak zacząć automatyzację CRM w firmie: audyt procesu, leady, zadania, statusy, walidacja danych i pierwsze wdrożenia o największym zwrocie.",
+    "Jak zacząć automatyzację CRM, także z AI: proces, leady, zadania, walidacja danych i pierwsze wdrożenia o największym zwrocie.",
   openGraph: {
-    title: "Automatyzacja CRM, od czego zacząć | Fluxlab",
+    title: "Automatyzacja CRM z AI, od czego zacząć | Fluxlab",
     description:
-      "Jak zacząć automatyzację CRM w firmie: audyt procesu, leady, zadania, statusy, walidacja danych i pierwsze wdrożenia o największym zwrocie.",
+      "Jak zacząć automatyzację CRM, także z AI: proces, leady, zadania, walidacja danych i pierwsze wdrożenia o największym zwrocie.",
     locale: "pl_PL",
     type: "article",
     images: [
@@ -44,8 +44,8 @@ const steps = [
     text: "Automatyzacja bez zasad przyspiesza chaos. Ustal, kiedy lead zmienia etap, kto odpowiada za kolejny ruch i kiedy sprawa jest zamknięta.",
   },
   {
-    title: "Dodaj walidację i wyjątki",
-    text: "Dobra automatyzacja pilnuje jakości: wyłapuje duplikaty, braki w polach i sprawy, które trzeba oddać człowiekowi.",
+    title: "Dodaj walidację, potem AI",
+    text: "AI sortuje leady dobrze tylko na danych bez duplikatów i braków. Niepewne sprawy oddaj człowiekowi.",
   },
 ];
 
@@ -57,7 +57,7 @@ export default function AutomatyzacjaCrmOdCzegoZaczacArticle() {
         <Breadcrumbs href="/strefa-wiedzy/automatyzacja-crm-od-czego-zaczac" kolumna="waska"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
-            { label: "Automatyzacja CRM, od czego zacząć" },
+            { label: "Automatyzacja CRM z AI, od czego zacząć" },
           ]}
         />
 
@@ -65,7 +65,7 @@ export default function AutomatyzacjaCrmOdCzegoZaczacArticle() {
           <div className="container-wide max-w-3xl mx-auto">
             <span className="section-label">Strefa wiedzy</span>
             <h1 className="mt-4 h1-artykulu">
-              Automatyzacja CRM, od czego zacząć
+              Automatyzacja CRM z AI, od czego zacząć
             </h1>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed !text-left">
               Wiele firm ma CRM, a zespół dalej robi większość pracy ręcznie.
@@ -117,9 +117,9 @@ export default function AutomatyzacjaCrmOdCzegoZaczacArticle() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Article",
-            headline: "Automatyzacja CRM, od czego zacząć",
+            headline: "Automatyzacja CRM z AI, od czego zacząć",
             description:
-              "Jak zacząć automatyzację CRM w firmie: audyt procesu, leady, zadania, statusy, walidacja danych i pierwsze wdrożenia o największym zwrocie.",
+              "Jak zacząć automatyzację CRM, także z AI: proces, leady, zadania, walidacja danych i pierwsze wdrożenia o największym zwrocie.",
             datePublished: "2026-03-30",
             author: {
               "@type": "Organization",

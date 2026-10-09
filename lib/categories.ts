@@ -56,7 +56,7 @@ export const categories: Category[] = [
     articles: [
       {
         href: "/strefa-wiedzy/automatyzacja-crm-od-czego-zaczac",
-        title: "Automatyzacja CRM, od czego zacząć",
+        title: "Automatyzacja CRM z AI, od czego zacząć",
         description:
           "Audyt procesu, leady, zadania, statusy i pierwsze wdrożenia.",
       },
