@@ -36,7 +36,11 @@ export default function StrefaWiedzy() {
     <>
       <Header />
       <main className="pt-16 prose-justify">
-        <Breadcrumbs href="/strefa-wiedzy" kolumna="srodek" items={[{ label: "Strefa wiedzy" }]} />
+        <Breadcrumbs
+          href="/strefa-wiedzy"
+          kolumna="srodek"
+          items={[{ label: "Strefa wiedzy" }]}
+        />
         {/* Hero, kompaktowy */}
         <section className="pt-16 pb-6 bg-gray-50 dark:bg-gray-900/50 border-b border-gray-100 dark:border-gray-800">
           <div className="container-wide">
@@ -46,12 +50,32 @@ export default function StrefaWiedzy() {
                 Strefa wiedzy
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-400">
-                O automatyzacji, CRM, AI,{" "}
-                <Link href="/mail-firmowy" className="text-accent hover:underline">
+                O automatyzacji,{" "}
+                <Link
+                  href="/strefa-wiedzy/automatyzacja-crm-od-czego-zaczac"
+                  className="text-accent hover:underline"
+                >
+                  CRM
+                </Link>
+                ,{" "}
+                <Link
+                  href="/strefa-wiedzy/ai-w-automatyzacji-firm"
+                  className="text-accent hover:underline"
+                >
+                  AI
+                </Link>
+                ,{" "}
+                <Link
+                  href="/mail-firmowy"
+                  className="text-accent hover:underline"
+                >
                   poczcie firmowej
                 </Link>{" "}
                 i{" "}
-                <Link href="/audyt-google-ads" className="text-accent hover:underline">
+                <Link
+                  href="/audyt-google-ads"
+                  className="text-accent hover:underline"
+                >
                   Google Ads
                 </Link>{" "}
                 dla firm B2B.
