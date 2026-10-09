@@ -245,7 +245,21 @@ export default function Narzedzia() {
                     {CATEGORY_LABEL[filar]}
                   </h2>
                   <p className="mt-1 mb-6 text-sm text-gray-600 dark:text-gray-400 max-w-2xl">
-                    {FILAR_INTRO_NARZEDZI[filar]}
+                    {filar === "www" ? (
+                      <>
+                        Strona w oczach wyszukiwarki i asystenta AI,{" "}
+                        <Link href="/mail-firmowy" className="text-accent hover:underline">
+                          poczta firmowa
+                        </Link>{" "}
+                        i{" "}
+                        <Link href="/audyt-google-ads" className="text-accent hover:underline">
+                          kampania Google Ads
+                        </Link>
+                        .
+                      </>
+                    ) : (
+                      FILAR_INTRO_NARZEDZI[filar]
+                    )}
                   </p>
                   <div className="grid md:grid-cols-3 gap-6">
                     {wFilarze.map((tool) => (

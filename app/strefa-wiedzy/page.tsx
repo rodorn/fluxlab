@@ -46,8 +46,15 @@ export default function StrefaWiedzy() {
                 Strefa wiedzy
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-400">
-                Krótko i konkretnie o automatyzacji, CRM, integracjach i AI dla
-                firm B2B.
+                Krótko o automatyzacji, CRM, AI,{" "}
+                <Link href="/mail-firmowy" className="text-accent hover:underline">
+                  poczcie firmowej
+                </Link>{" "}
+                i{" "}
+                <Link href="/audyt-google-ads" className="text-accent hover:underline">
+                  Google Ads
+                </Link>{" "}
+                dla firm B2B.
               </p>
             </div>
           </div>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import ProductLanding from "@/components/ProductLanding";
 import EDoreczeniaCheck from "@/components/EDoreczeniaCheck";
 import { PODMIOTY } from "@/lib/terminy-e-doreczen";
@@ -69,7 +70,18 @@ export default function EDoreczeniaIntegracja() {
         },
         {
           title: "Pisma trafiają tam, gdzie już pracujecie",
-          desc: "Do obiegu dokumentów, CRM, skrzynki mailowej albo arkusza. Nie dokładamy kolejnego miejsca do sprawdzania.",
+          desc: (
+            <>
+              Do obiegu dokumentów, CRM, skrzynki albo{" "}
+              <Link
+                href="/automatyzacja-dla-biur-rachunkowych"
+                className="text-accent hover:underline"
+              >
+                programu księgowego biura
+              </Link>
+              . Bez kolejnego panelu do sprawdzania.
+            </>
+          ),
         },
         {
           title: "Kiedy to się nie opłaca",

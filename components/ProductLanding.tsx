@@ -30,7 +30,7 @@ export interface ProductLandingProps {
   lead: string;
   ctaLabel: string;
   ctaNote?: string;
-  checks: { title: string; desc: string }[];
+  checks: { title: string; desc: ReactNode }[];
   /** Zdania z odnosnikiem do pokrewnej strony, wstawiane pod opisem zakresu. */
   powiazane?: { przed: string; kotwica: string; href: string; po: string }[];
   pricing: Tier[];

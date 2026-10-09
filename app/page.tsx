@@ -182,8 +182,14 @@ export default function Home() {
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-center text-base text-gray-600 dark:text-white/60">
             Jeśli któreś z tych zdań brzmi jak Twoja firma, kliknij. Pod każdym
-            opisaliśmy, na czym dokładnie polega problem, ile kosztuje i co
-            zostaje po wdrożeniu.
+            jest problem, jego koszt i efekt wdrożenia, a osobno opisaliśmy{" "}
+            <Link
+              href="/automatyzacja-dla-biur-rachunkowych"
+              className="font-medium text-accent underline-offset-4 hover:underline"
+            >
+              biura rachunkowe
+            </Link>
+            .
           </p>
           <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {PROBLEMY.map((p) => (
