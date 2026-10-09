@@ -4108,3 +4108,11 @@ Outreach do biur 5.10 do 9.10 (VPS `ruch.sqlite` sesje `utm_source=mail` od 5.10
 **Dowód:** commit b999713; produkcja z VPS: 200, nowy `<title>` i opis w HTML; IndexNow 2 z 3 (Naver 200). Inne frazy przejrzane bez zmian: „asystent ai na stronie” 6 wyśw., poz. 40,8 i „system ticketowy dla e-commerce” 4 wyśw., poz. 77,3 (za daleko na zmianę tytułu).
 **Dla Pawła:** bez zmian: dwie odpowiedzi Kontomatik, komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację.
 **Zostało otwarte:** Z10 15:46, Z11 16:46, Z16 od 21:50, Z17, Z23, Z24.
+
+## 2026-10-09 14:46
+**Kanał:** KSeF jako magnes, przez Google (poza planem: otwarte Z10 15:46, Z11 16:46, Z16 od 21:50, Z17, Z23, Z24 mają późniejsze godziny; Z10 celowo po 15:46, żeby pomiar objął popołudnie po wysyłce Z4).
+**Co zrobione:** narzędzie `/numer-ksef` (GSC 28 dni: 14 wyśw., 0 kliknięć, śr. poz. 12,9) dostało tytuł i opis pod frazę „sprawdz fakture ksef po numerze” (2 wyśw., poz. 11) i „numer ksef” (2 wyśw., poz. 2): tytuł „Numer KSeF: sprawdzenie w 10 s, bez logowania | Fluxlab” (55) → „Sprawdź numer KSeF faktury: NIP, data i suma | Fluxlab” (54), opis 138 → 137 znaków, zaczyna się od „Sprawdźcie fakturę po numerze KSeF”. Tytuł nie obiecuje sprawdzenia istnienia faktury, bo narzędzie liczy sumę kontrolną, NIP i datę.
+**Ruch:** ostatnia doba 10 odsłon, 10 osób (−65% wobec średniej 28,4); źródła: www.google.com 3, lm.facebook.com 1, mail 1. Uruchomień narzędzi 0. Tydzień 193 odsłony, 121 osób.
+**Dowód:** commit d03cd3c; produkcja 14:5x: nowy `<title>` i opis w HTML; IndexNow 2 z 3 (Yandex 200, Naver 200). Inne frazy z pełnej tabeli GSC (100 wierszy) bez zmian: „sprawdz auto” 3 wyśw., poz. 7 idzie na stary adres `www.fluxlab.pl/sprawdz-auto` (www już 308, zleje się samo); „crm księgowość” 3 / 14 na `/integracja-crm-z-erp`; „asystent ai na stronę” 2 / 9 na `/widocznosc-w-ai` (zakaz zmian pod AI do 14.10).
+**Dla Pawła:** bez zmian: dwie odpowiedzi Kontomatik, komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację.
+**Zostało otwarte:** Z10 15:46, Z11 16:46, Z16 od 21:50 (warto dopisać `/numer-ksef`, jeśli zostanie miejsce w limicie 10), Z17, Z23, Z24. Kandydat na kolejny tytuł: „crm księgowość” → `/integracja-crm-z-erp`.
