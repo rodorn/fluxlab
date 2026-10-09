@@ -3803,3 +3803,49 @@ Wniosek: realnie 10 osób na dobę i żadna nie uruchomiła narzędzia; jedyne p
 **Dowód:** zapytanie `SELECT * FROM wizyty WHERE czas>=1791432000 AND czas<1791513000` na `ruch.sqlite` (VPS), 40 wierszy; Z23 oznaczone w `cykl/plan-ruchu.md`.
 **Dla Pawła:** bez zmian: dwie odpowiedzi Kontomatik w pawel@fluxlab.pl, komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację.
 **Zostało otwarte:** Z24 o 05:46 (bilans planu); piątek 9:46 wysyłka 050 do 057 (`--limit=8`); sesje utm `facebook/narzedzia` na `/sprawdzenie-nip` i `/sprawdz-kontrahenta` po publikacji 035 i 036.
+
+## 2026-10-09 05:45
+**Kanał:** pomiar (Z24 z planu, ostatnie zadanie doby).
+**Co zrobione:** wpis „Bilans planu 2026-10-08/09” dla stratega, z `cykl/pomiar-kanalow.py` (05:43), VPS `ruch.sqlite` i Resend/Zoho.
+
+### Bilans planu 2026-10-08/09
+
+| zad. | kanał | zrobione | dowód | co przyprowadziło |
+|---|---|---|---|---|
+| Z1 | narzędzia + outreach | tak | commit 4ba8a6f, link `?krs=` | 0 ludzi; 2 zdarzenia `z_linku` (1 skaner, 1 własny test) |
+| Z2 | Google indeks | tak | 20 adresów `--tylko-stan` | 10 z 20 w Google; z serii 7.10 0 z 10 po 11 h |
+| Z3 | follow-up, przygotowanie | tak | 17 plików `maile_ksiegowe_fu` | — |
+| Z4 | outreach `ksiegowe` | tak | 8/8 delivered | 1 sesja skanera, 0 ludzi, 0 odpowiedzi |
+| Z5 | CIK runda 4 | tak (0 maili) | 4 woj., 26 domen | 0 maili |
+| Z6 | follow-up | tak | 17/17 delivered | 0 sesji, 0 odpowiedzi |
+| Z7, Z10 | odpowiedzi | tak | Zoho 0 od adresatów | — |
+| Z8 | CIK runda 5 | tak (0 maili) | 4 woj., 6 domen | 0; CIK wyczerpany |
+| Z9 | outreach | nie (warunek ≥3 niespełniony) | przeniesione na 9.10 9:46 | — |
+| Z11 | bilans outreachu | tak | wpis w dzienniku | follow-up do „Czego nie robić” |
+| Z12 | Google treść | tak | commit 806f094 `/mail-firmowy` | 0 sesji (jeszcze brak w wynikach) |
+| Z13 | Google tytuły | tak | commit a69bda3 | 0 sesji na `/numer-ksef`, `/sprawdzenie-nip` |
+| Z14 | Facebook zlecenie | tak | 033, 034 w kolejce | 2 sesje `facebook/narzedzia` w dobie (posty wcześniejsze) |
+| Z15 | GSC żądania | tak, 8/10 | seria 21:43 do 21:52 | — |
+| Z16 | Resend | tak | 25/25 delivered, 0 bounced/complained | — |
+| Z17 | źródło domen | tak | KIDP bez www, SKwP przerobione | 1 mail (057) |
+| Z18 | telefon 390 px | tak | 4 zrzuty, 0 błędów | — |
+| Z19 | AI + Bing | tak | chatgpt 3 sesje od 1.10, Bing No data | — |
+| Z20 | linki wewnętrzne | tak | commit e4cc383, 12 linków | — |
+| Z21 | kolejka piątek | tak | 8 plików 050 do 057 OK | — |
+| Z22 | Google tytuł CRM | tak | commit 0f1a163 | — |
+| Z23 | pomiar doby | tak | wpis 04:45 | ludzie 10 sesji, 0 uruchomień |
+| Z24 | bilans | tak | ten wpis | — |
+
+23 z 24 zrobione, 1 przeniesione warunkowo (Z9). Doba: realnie 10 osób, 0 uruchomień narzędzi przez ludzi, 0 zgłoszeń. Outreach dał tylko skanery.
+
+- **Maile gotowe na piątek:** 8 (050 do 057), w tym 057 z Z17; wysyłka 9.10 9:46 z `--limit=8`. Po nich kolejka pusta.
+- **Trafialność CIK łącznie:** 189 nowych domen, 12 maili, 6,3 na 100 (mazowieckie 6,3; śląskie, małopolskie, wielkopolskie 9,3; pozostałe 8 województw 0 na 100). Źródło wyczerpane. Z17: KIDP nie podaje www (0 maili), SKwP 4,5 na 100 i też przerobione; zapas z odrzuconych partii KRS 2,6 na 100 spółek. Na następne dni brak źródła z sensowną trafialnością.
+- **Limit indeksowania GSC:** zużyty 7.10 20:50 i 8.10 21:43 do 21:52 (8 przesłanych), odnawia się ok. 21:45 9.10; pierwsze w kolejce `/panel-zwrotow` i `/rejestr-cen`.
+- **Wynik Z2 (10 adresów z 7.10):** 07:48 0 z 10 w Google; przy Z15 (21:43) w Google 2 z 10 (`/audyt-chatbota`, `/audyt-marz`), 7 nadal nie, `/rejestr-cen` nieustalone.
+- **Noc 22:00 do 05:43:** sesje z utm 0, ludzie 2 (02:24 i 02:30 `/audyt-kurierski`, Chrome Windows, bez odsyłacza); Zoho INBOX 5 w 24 h, wszystkie Kontomatik, 0 od adresatów, Spam 0; Resend 25/25 delivered.
+- **Budżet 05:43:** rytm przyspiesz, prognoza 50% tygodnia, nowy cykl tak, wysiłek high.
+
+**Ruch:** ostatnia doba 16 odsłon, 14 osób (spadek o 41% wobec średniej 27,0); źródła: mail 3, www.google.com 3, facebook 2, narzedzie 1, lm.facebook.com 1. Najczęściej /e-doreczenia-integracja 6, / 4, /kontakt 2, /audyt-kurierski 2. Uruchomienia narzędzi 2 (`uruchomiono_skan_krs_z_linku`, skaner i własny test). Tydzień 197 odsłon, 119 osób.
+**Dowód:** `cykl/pomiar-kanalow.py` 05:43; VPS `wizyty` od 9.10 00:00 UTC: 2 wiersze (id 556, 557); Z24 oznaczone w `cykl/plan-ruchu.md`.
+**Dla Pawła:** bez zmian: dwie odpowiedzi Kontomatik w pawel@fluxlab.pl, komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację od 5.10.
+**Zostało otwarte:** plan doby zamknięty; strateg 06:15 pisze nowy. Piątek 9:46 wysyłka 050 do 057 (`--limit=8`), GSC od ok. 21:45 `/panel-zwrotow` i `/rejestr-cen`, sesje `facebook/narzedzia` po publikacji 035 i 036.
