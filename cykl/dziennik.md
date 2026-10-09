@@ -3773,3 +3773,14 @@ Z19: VPS od 1.10 tylko 3 sesje chatgpt.com (2.10 `/kalkulator-podatkowy`, 5.10 i
 **Dowód:** brak (plan bez zmian, 0 commitów kodu).
 **Dla Pawła:** bez zmian: dwie odpowiedzi Kontomatik w pawel@fluxlab.pl, komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację.
 **Zostało otwarte:** Z23 o 04:46, Z24 o 05:46; /panel-zwrotow i /rejestr-cen w serii GSC 9.10 od ok. 21:45; piątek 9:46 wysyłka 050 do 057 (`--limit=8`).
+
+## 2026-10-09 03:05
+**Raport zbiorczy:** cztery godziny minęły bez zmian (wpisy 23:45 do 02:45 to przebiegi bez dostawy, 0 commitów z kodem, budzet wstrzymaj/zwolnij), mail nie został wysłany. Znacznik WYSLANO pozostaje przy 2026-10-08 23:04, żeby następny raport objął także te wpisy.
+
+## 2026-10-09 03:45
+**Kanał:** dystrybucja narzędzi (Facebook, kolejka fanpage'a), poza planem: Z23 i Z24 mają godziny 04:46 i 05:46, a `budzet` o 03:43 daje „przyspiesz” (prognoza 66% tygodnia, nowy cykl: tak).
+**Co zrobione:** w `~/Projekty/fluxlab-meta/posty/kolejka.json` przed 012 dopisane dwa posty z linkami do narzędzi, które nie miały jeszcze posta: `035-przelew-biala-lista` (przelew od 15 000 zł na rachunek spoza wykazu VAT, ZAW-NR w 7 dni, link `/sprawdzenie-nip`) i `036-podmieniony-numer-konta` (zmiana numeru konta w mailu od dostawcy, link `/sprawdz-kontrahenta`), oba z `utm_source=facebook&utm_campaign=narzedzia`. Publikator weźmie je jako dwa najbliższe posty. Grafiki wyrenderowane i obejrzane (w 035 twarda spacja w „15 000”, żeby liczba się nie łamała). Fakty zgodne z treścią `/sprawdzenie-nip`. Próba odczytu w GSC, na które strony padają frazy „pipedrive” (poz. 2,3) i „porównanie kosztów automatyzacji vs zatrudniania” (poz. 2,7), się nie udała: filtr w adresie raportu jest ignorowany, a dane GSC kończą się 6.10, czyli nic nowego od odczytu 8.10 06:20.
+**Ruch:** ostatnia doba 16 odsłon, 14 osób (raport 03:43); źródła: mail 3, www.google.com 3, facebook 2, narzedzie 1, lm.facebook.com 1. Najczęściej /e-doreczenia-integracja 6, / 4, /kontakt 2, /audyt-kurierski 2. Uruchomienia narzędzi 2 (`uruchomiono_skan_krs_z_linku`). Tydzień 197 odsłon, 119 osób.
+**Dowód:** `kolejka.json` 34 → 36 pozycji, najbliższe nieopublikowane: 035, 036, 012; grafiki `posty/035-przelew-biala-lista/grafika.png`, `posty/036-podmieniony-numer-konta/grafika.png`; oba linki z VPS 200. Commita brak, bo fluxlab-meta nie jest repozytorium git.
+**Dla Pawła:** bez zmian: dwie odpowiedzi Kontomatik w pawel@fluxlab.pl, komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację.
+**Zostało otwarte:** Z23 o 04:46, Z24 o 05:46 (w bilansie policzyć sesje z utm `facebook/narzedzia` na `/sprawdzenie-nip` i `/sprawdz-kontrahenta` po publikacji 035 i 036); piątek 9:46 wysyłka 050 do 057 (`--limit=8`).
