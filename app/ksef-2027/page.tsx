@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { kotwica } from "@/lib/kotwica";
 import ListaKsef2027 from "@/components/ListaKsef2027";
@@ -51,7 +52,7 @@ export default function Ksef2027Page() {
     <>
       <Header />
       <main>
-        <Breadcrumbs
+        <Breadcrumbs href="/ksef-2027"
           items={[
             { label: "Narzędzia", href: "/narzedzia" },
             { label: "KSeF od 1 stycznia 2027" },
@@ -59,10 +60,8 @@ export default function Ksef2027Page() {
         />
         <section className="container-wide pb-14 md:pb-20 pt-6">
           <div className="max-w-3xl">
-            <p className="text-sm font-semibold text-accent uppercase tracking-wider mb-3">
-              Darmowa lista kontrolna
-            </p>
-            <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white">
+            <p className="section-label mb-3">Narzędzie</p>
+            <h1 className="h1-strony">
               KSeF od 1 stycznia 2027: co musicie mieć domknięte
             </h1>
             <p className="mt-5 text-lg text-gray-600 dark:text-gray-300">
@@ -86,7 +85,7 @@ export default function Ksef2027Page() {
           </div>
 
           <div className="mt-14 max-w-3xl">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+            <h2 className="h2-sekcji">
               Częste pytania o KSeF w 2027
             </h2>
             <dl className="mt-6 space-y-5">
@@ -104,7 +103,7 @@ export default function Ksef2027Page() {
           </div>
 
           <div className="mt-14 max-w-3xl rounded-2xl border border-gray-200/80 dark:border-gray-800/80 bg-gray-50/60 dark:bg-gray-900/40 p-8">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+            <h2 className="h2-sekcji">
               Kiedy faktury powstają poza programem księgowym
             </h2>
             <p className="mt-3 text-gray-600 dark:text-gray-300">
@@ -130,6 +129,7 @@ export default function Ksef2027Page() {
           </div>
         </section>
       </main>
+      <CTA />
 
       <script
         type="application/ld+json"

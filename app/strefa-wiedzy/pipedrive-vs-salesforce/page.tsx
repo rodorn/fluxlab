@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 
@@ -61,15 +62,15 @@ const faq = [
 ];
 
 const h2 =
-  "mt-12 mb-4 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white";
+  "h2-sekcji mt-12 mb-4";
 const p = "mb-4 text-gray-600 dark:text-gray-400 leading-relaxed";
 
 export default function PipedriveVsSalesforceArticle() {
   return (
     <>
       <Header />
-      <main className="pt-16 prose-justify">
-        <Breadcrumbs kolumna="srodek"
+      <main className="pt-16">
+        <Breadcrumbs href="/strefa-wiedzy/pipedrive-vs-salesforce" kolumna="srodek"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Pipedrive vs Salesforce, porównanie CRM dla MŚP 2026" },
@@ -79,7 +80,7 @@ export default function PipedriveVsSalesforceArticle() {
         <section className="pt-24 pb-6">
           <div className="container-wide max-w-3xl mx-auto text-center">
             <span className="section-label">Strefa wiedzy</span>
-            <h1 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">
+            <h1 className="h1-artykulu mt-4">
               Pipedrive vs Salesforce, porównanie CRM dla MŚP 2026
             </h1>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -90,7 +91,7 @@ export default function PipedriveVsSalesforceArticle() {
           </div>
         </section>
 
-        <article className="container-wide max-w-3xl mx-auto px-6 lg:px-8 pb-20">
+        <article className="container-wide max-w-3xl mx-auto px-6 lg:px-8 pb-20 prose-justify">
           <h2 className={h2}>Co właściwie kupujesz</h2>
           <p className={p}>
             Pipedrive jest zbudowany wokół lejka: handlowiec widzi, co ma
@@ -187,17 +188,14 @@ export default function PipedriveVsSalesforceArticle() {
             <PrevNextArticle currentHref="/strefa-wiedzy/pipedrive-vs-salesforce" />
           </div>
 
-          <div className="mt-16 rounded-2xl bg-accent/10 p-8 lg:p-12 text-center">
-            <p className="text-lg font-medium text-gray-900 dark:text-white">
-              Wahasz się między Pipedrive a Salesforce?
-            </p>
-            <Link
-              href="/automatyzacja-leadow-crm"
-              className="btn-primary mt-6 inline-block"
-            >
+          <p className="mt-12 text-center text-gray-600 dark:text-gray-400">
+            Wahasz się między Pipedrive a Salesforce?{" "}
+            <Link href="/automatyzacja-leadow-crm" className="text-accent hover:underline">
               Zobacz usługę Automatyzacja CRM
             </Link>
-          </div>
+          </p>
+
+          <CTA />
         </article>
       </main>
       <Footer />

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 
@@ -52,7 +53,7 @@ const faqItems = [
   },
 ];
 
-const h2 = "mt-12 mb-4 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white";
+const h2 = "mt-12 mb-4 h2-sekcji";
 const p = "mb-4 text-gray-600 dark:text-gray-400 leading-relaxed";
 const ul = "mb-4 ml-5 list-disc space-y-2 text-gray-600 dark:text-gray-400";
 
@@ -61,7 +62,7 @@ export default function HubspotVsPipedriveArticle() {
     <>
       <Header />
       <main className="pt-16 prose-justify">
-        <Breadcrumbs kolumna="waska"
+        <Breadcrumbs href="/strefa-wiedzy/hubspot-vs-pipedrive" kolumna="waska"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "HubSpot vs Pipedrive, który CRM dla małej firmy" },
@@ -71,10 +72,10 @@ export default function HubspotVsPipedriveArticle() {
         <section className="pt-16 pb-6">
           <div className="container-wide max-w-3xl mx-auto">
             <span className="section-label">Strefa wiedzy</span>
-            <h1 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">
+            <h1 className="mt-4 h1-artykulu">
               HubSpot vs Pipedrive, który CRM dla małej firmy
             </h1>
-            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed !text-left">
               HubSpot to platforma marketingowa, w której CRM jest jedną z
               części. Pipedrive to czysty pipeline sprzedażowy. O wyborze
               decyduje sposób, w jaki firma pozyskuje klientów.
@@ -144,21 +145,7 @@ export default function HubspotVsPipedriveArticle() {
           </div>
         </section>
 
-        <section className="py-12 lg:py-16">
-          <div className="max-w-3xl mx-auto px-6 lg:px-8">
-            <div className="rounded-2xl bg-accent/10 p-8 lg:p-12 text-center">
-              <p className="text-lg font-medium text-gray-900 dark:text-white">
-                Nie wiesz, który CRM pasuje do Twojej firmy?
-              </p>
-              <Link
-                href="/automatyzacja-leadow-crm"
-                className="btn-primary mt-6 inline-block"
-              >
-                Zobacz automatyzację CRM
-              </Link>
-            </div>
-          </div>
-        </section>
+        <CTA naglowek="Nie wiesz, który CRM pasuje do Twojej firmy?" />
       </main>
       <Footer />
 

@@ -18,8 +18,8 @@ export default function NieLiczMnie() {
     <>
       <Header />
       <main className="mx-auto max-w-3xl px-4 pb-20 pt-28 md:pt-32">
-        <Breadcrumbs items={[{ label: "Nie licz moich wizyt" }]} />
-        <h1 className="mt-6 text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
+        <Breadcrumbs href="/nie-licz-mnie" items={[{ label: "Nie licz moich wizyt" }]} />
+        <h1 className="h1-strony mt-6">
           Nie licz moich wizyt
         </h1>
         <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">

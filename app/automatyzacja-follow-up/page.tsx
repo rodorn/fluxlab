@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TrackedCTA from "@/components/TrackedCTA";
 
@@ -146,13 +147,13 @@ export default function AutomatyzacjaFollowUp() {
     <>
       <Header />
       <main className="pt-16">
-        <Breadcrumbs kolumna="srodek" items={[{ label: "Automatyzacja follow-upów w CRM" }]} />
+        <Breadcrumbs href="/automatyzacja-follow-up" kolumna="srodek" items={[{ label: "Automatyzacja follow-upów w CRM" }]} />
 
         <section className="pt-16 pb-10 bg-gradient-to-b from-accent/10 to-transparent border-b border-gray-100 dark:border-gray-800">
           <div className="container-wide">
-            <div className="max-w-3xl mx-auto text-center">
-              <span className="section-label">Follow-up w CRM</span>
-              <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mt-4 mb-6 leading-tight">
+            <div className="max-w-3xl">
+              <span className="section-label">Usługa</span>
+              <h1 className="h1-strony mt-4 mb-6">
                 Automatyczne follow-upy w CRM bez utraty kontroli nad sprzedażą
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -160,15 +161,15 @@ export default function AutomatyzacjaFollowUp() {
                 każdego deala zamiast handlowca. Sekwencja sama staje, gdy klient
                 odpowie.
               </p>
-              <div className="mt-8 flex justify-center">
+              <div className="mt-8 flex">
                 <TrackedCTA
                   href="#sekcje"
                   location="article_automatyzacja-follow-up_hero"
-                  label="zautomatyzuj follow-upy"
+                  label="Bezpłatna diagnoza"
                   eventName="cta_click_article_audit"
-                  className="btn-primary px-8 py-3.5 text-base"
+                  className="btn-primary"
                 >
-                  Zautomatyzuj follow-upy
+                  Bezpłatna diagnoza
                 </TrackedCTA>
               </div>
             </div>
@@ -177,7 +178,7 @@ export default function AutomatyzacjaFollowUp() {
 
         <div id="sekcje" className="scroll-mt-20 container-wide py-16 space-y-16">
           <section className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+            <h2 className="h2-sekcji mb-4">
               Follow-up nie powinien zależeć od pamięci handlowca
             </h2>
             <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
@@ -200,7 +201,7 @@ export default function AutomatyzacjaFollowUp() {
           </section>
 
           <section className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+            <h2 className="h2-sekcji mb-4">
               Ile kosztuje zaniedbany follow-up
             </h2>
             <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -212,7 +213,7 @@ export default function AutomatyzacjaFollowUp() {
           </section>
 
           <section className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
+            <h2 className="h2-sekcji mb-6">
               Jak działa sekwencja po wysłanej ofercie
             </h2>
             <ol className="space-y-3">
@@ -238,7 +239,7 @@ export default function AutomatyzacjaFollowUp() {
           </section>
 
           <section className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4 text-center">
+            <h2 className="h2-sekcji mb-4 text-center">
               Ile kosztuje automatyzacja follow-upów
             </h2>
             <p className="text-gray-600 dark:text-gray-400 mb-8 text-center">
@@ -279,17 +280,17 @@ export default function AutomatyzacjaFollowUp() {
               <TrackedCTA
                 href="/kontakt"
                 location="article_automatyzacja-follow-up_pricing"
-                label="diagnoza"
+                label="Bezpłatna diagnoza"
                 eventName="cta_click_article_audit"
                 className="btn-primary px-8 py-3.5 text-base"
               >
-                Sprawdź koszt naszego procesu
+                Bezpłatna diagnoza
               </TrackedCTA>
             </div>
           </section>
 
           <section className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
+            <h2 className="h2-sekcji mb-6">
               Najczęstsze pytania
             </h2>
             <div className="space-y-4">
@@ -327,7 +328,7 @@ export default function AutomatyzacjaFollowUp() {
           </section>
 
           <section className="max-w-3xl mx-auto">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+            <h2 className="h2-sekcji mb-4">
               Zobacz też
             </h2>
             <ul className="space-y-2">
@@ -348,25 +349,9 @@ export default function AutomatyzacjaFollowUp() {
               </li>
             </ul>
           </section>
-
-          <section className="max-w-2xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-              Przestań tracić deale przez „odezwę się w przyszłym tygodniu”
-            </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
-              30 minut diagnozy i mapa pierwszej sekwencji dla Twojego CRM-u.
-            </p>
-            <TrackedCTA
-              href="/kontakt"
-              location="article_automatyzacja-follow-up_final"
-              label="zautomatyzuj follow-upy"
-              eventName="cta_click_article_audit"
-              className="btn-primary px-8 py-3.5 text-base"
-            >
-              Zautomatyzuj follow-upy
-            </TrackedCTA>
-          </section>
         </div>
+        <CTA />
+
       </main>
       <Footer />
 

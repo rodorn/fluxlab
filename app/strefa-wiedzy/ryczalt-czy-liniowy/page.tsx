@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 import Tabs from "@/components/Tabs";
@@ -57,8 +58,8 @@ export default function RyczaltCzyLiniowyArticle() {
   return (
     <>
       <Header />
-      <main className="pt-16 prose-justify">
-        <Breadcrumbs kolumna="srodek"
+      <main className="pt-16">
+        <Breadcrumbs href="/strefa-wiedzy/ryczalt-czy-liniowy" kolumna="srodek"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Ryczałt czy liniowy" },
@@ -68,7 +69,7 @@ export default function RyczaltCzyLiniowyArticle() {
         <section className="pt-24 pb-10">
           <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
             <span className="section-label">Strefa wiedzy</span>
-            <h1 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">
+            <h1 className="h1-artykulu mt-4">
               Ryczałt czy liniowy, co się bardziej opłaca w 2026
             </h1>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -79,7 +80,7 @@ export default function RyczaltCzyLiniowyArticle() {
           </div>
         </section>
 
-        <div className="container-wide pb-20">
+        <div className="container-wide pb-20 prose-justify">
           <Tabs
             ariaLabel="Rozdziały artykułu Ryczałt czy liniowy"
             tabs={[
@@ -88,7 +89,7 @@ export default function RyczaltCzyLiniowyArticle() {
                 content: (
                   <div className="py-10 lg:py-12">
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                      <h2 className="h2-sekcji mb-6">
                         Ryczałt
                       </h2>
                       <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
@@ -104,7 +105,7 @@ export default function RyczaltCzyLiniowyArticle() {
                         <li>Prosta ewidencja przychodów, bez KPiR</li>
                       </ul>
 
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 mt-12">
+                      <h2 className="h2-sekcji mb-6 mt-12">
                         Liniowy
                       </h2>
                       <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
@@ -140,7 +141,7 @@ export default function RyczaltCzyLiniowyArticle() {
                 content: (
                   <div className="py-10 lg:py-12">
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                      <h2 className="h2-sekcji mb-6">
                         Ryczałt wygrywa, gdy
                       </h2>
                       <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
@@ -149,7 +150,7 @@ export default function RyczaltCzyLiniowyArticle() {
                         <li>nie planujesz dużych zakupów firmowych</li>
                       </ul>
 
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 mt-12">
+                      <h2 className="h2-sekcji mb-6 mt-12">
                         Liniowy wygrywa, gdy
                       </h2>
                       <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
@@ -161,7 +162,7 @@ export default function RyczaltCzyLiniowyArticle() {
                         </li>
                       </ul>
 
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 mt-12">
+                      <h2 className="h2-sekcji mb-6 mt-12">
                         Dwa przykłady
                       </h2>
                       <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
@@ -186,17 +187,13 @@ export default function RyczaltCzyLiniowyArticle() {
                       </p>
 
                       <div className="bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-8 text-center mt-12">
-                        <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                        <h2 className="h2-sekcji mb-6">
                           Sprawdź na swoich liczbach
                         </h2>
                         <p className="text-gray-600 dark:text-gray-400 mb-4">
-                          Wpisz przychód, koszty i stawkę ryczałtu, a kalkulator
-                          pokaże, która forma jest tańsza.
+                          Wpisz przychód, koszty i stawkę ryczałtu, a kalkulator pokaże, która forma jest tańsza.
                         </p>
-                        <Link
-                          href="/kalkulator-podatkowy"
-                          className="btn-primary inline-block"
-                        >
+                        <Link href="/kalkulator-podatkowy" className="btn-primary inline-block">
                           Sprawdź w kalkulatorze JDG 2026
                         </Link>
                       </div>
@@ -209,7 +206,7 @@ export default function RyczaltCzyLiniowyArticle() {
                 content: (
                   <div className="py-10 lg:py-12">
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                      <h2 className="h2-sekcji mb-6">
                         FAQ
                       </h2>
                       <div className="space-y-4">
@@ -251,21 +248,7 @@ export default function RyczaltCzyLiniowyArticle() {
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
                       <PrevNextArticle currentHref="/strefa-wiedzy/ryczalt-czy-liniowy" />
 
-                      <div className="bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-8 text-center mt-12">
-                        <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                          Nie wiesz, która forma jest lepsza dla Ciebie?
-                        </h2>
-                        <p className="text-gray-600 dark:text-gray-400 mb-4">
-                          Napisz do nas, pomożemy policzyć i wybrać formę
-                          opodatkowania.
-                        </p>
-                        <Link
-                          href="/kontakt"
-                          className="btn-primary inline-block"
-                        >
-                          Zamów diagnozę procesu
-                        </Link>
-                      </div>
+                      <CTA />
 
                       <div className="mt-12">
                         <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">

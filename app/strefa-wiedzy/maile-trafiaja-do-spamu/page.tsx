@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import SprawdzPoBadaniu from "@/components/SprawdzPoBadaniu";
 
@@ -56,7 +57,7 @@ export default function MaileSpamArticle() {
         className="container-wide"
         style={{ maxWidth: 800, margin: "0 auto", padding: "6.5rem 1.5rem 4rem" }}
       >
-        <Breadcrumbs
+        <Breadcrumbs href="/strefa-wiedzy/maile-trafiaja-do-spamu"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             {
@@ -66,7 +67,8 @@ export default function MaileSpamArticle() {
           ]}
         />
 
-        <h1 style={{ fontSize: "2rem", fontWeight: 700, margin: "1rem 0" }}>
+        <span className="section-label mt-6 block">Strefa wiedzy</span>
+        <h1 className="h1-artykulu mt-4 mb-4">
           Dlaczego firmowe maile trafiają do spamu i jak to naprawić
         </h1>
         <p
@@ -112,9 +114,7 @@ export default function MaileSpamArticle() {
           </Link>
         </div>
 
-        <h2
-          style={{ fontSize: "1.4rem", fontWeight: 700, marginTop: "2.5rem" }}
-        >
+        <h2 className="h2-sekcji mt-10 mb-4">
           Najczęstsze przyczyny, po kolei
         </h2>
 
@@ -164,9 +164,7 @@ export default function MaileSpamArticle() {
           kontakt="Chcesz, żeby te rekordy ktoś ustawił za Ciebie?"
         />
 
-        <h2
-          style={{ fontSize: "1.4rem", fontWeight: 700, marginTop: "2.5rem" }}
-        >
+        <h2 className="h2-sekcji mt-10 mb-4">
           Najczęstsze pytania
         </h2>
         <div style={{ marginTop: "1rem" }}>
@@ -207,6 +205,7 @@ export default function MaileSpamArticle() {
           </Link>
         </p>
       </main>
+      <CTA />
       <Footer />
     </>
   );

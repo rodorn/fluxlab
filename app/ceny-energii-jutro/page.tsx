@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import NazwaNarzedzia from "@/components/NazwaNarzedzia";
 import { doba } from "@/lib/ceny-energii";
@@ -45,9 +46,10 @@ export default async function Page() {
     <>
       <Header />
       <main className="mx-auto max-w-3xl px-4 pb-20 pt-28 md:pt-32">
-        <Breadcrumbs items={[{ label: "Ceny energii na jutro" }]} />
+        <Breadcrumbs href="/ceny-energii-jutro" items={[{ label: "Ceny energii na jutro" }]} />
 
-        <h1 className="mt-6 text-3xl font-bold tracking-tight text-gray-900 dark:text-white md:text-4xl">
+        <p className="section-label mt-6 mb-3">Narzędzie</p>
+        <h1 className="h1-strony">
           Ceny energii na jutro
         </h1>
         <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
@@ -187,7 +189,7 @@ export default async function Page() {
         )}
 
         <div className="mt-10">
-          <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
+          <h2 className="h2-sekcji mt-12 mb-5">
             Co to za cena i czego nie mówi
           </h2>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -230,6 +232,7 @@ export default async function Page() {
           </ul>
         </div>
       </main>
+      <CTA />
       <Footer />
     </>
   );

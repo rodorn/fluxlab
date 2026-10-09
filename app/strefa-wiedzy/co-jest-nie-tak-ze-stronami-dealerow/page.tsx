@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import WykresSlupkowy from "@/components/WykresSlupkowy";
 import SprawdzPoBadaniu from "@/components/SprawdzPoBadaniu";
@@ -53,14 +54,15 @@ export default function Page() {
     <>
       <Header />
       <main className="mx-auto max-w-3xl px-4 pb-20 pt-28 md:pt-32">
-        <Breadcrumbs
+        <Breadcrumbs href="/strefa-wiedzy/co-jest-nie-tak-ze-stronami-dealerow"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Badanie stron dealerów" },
           ]}
         />
 
-        <h1 className="mt-6 text-3xl font-bold tracking-tight text-gray-900 dark:text-white md:text-4xl">
+        <p className="section-label mt-6">Strefa wiedzy</p>
+        <h1 className="mt-4 h1-artykulu">
           Sprawdziliśmy 386 stron dealerów samochodowych
         </h1>
         <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
@@ -70,7 +72,7 @@ export default function Page() {
         </p>
 
         <div className="mt-10">
-          <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
+          <h2 className="mt-12 mb-5 h2-sekcji">
             Czterech na pięciu nie da się zidentyfikować przed przelewem
           </h2>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -118,7 +120,7 @@ export default function Page() {
             .
           </p>
 
-          <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
+          <h2 className="mt-12 mb-5 h2-sekcji">
             Dwie trzecie stron nie daje wyszukiwarce listy podstron
           </h2>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -148,7 +150,7 @@ export default function Page() {
         />
 
         <div>
-          <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
+          <h2 className="mt-12 mb-5 h2-sekcji">
             Dziesięć firm nie jest właścicielem własnego adresu
           </h2>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -165,7 +167,7 @@ export default function Page() {
             .
           </p>
 
-          <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
+          <h2 className="mt-12 mb-5 h2-sekcji">
             Ograniczenia pomiaru
           </h2>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -174,7 +176,7 @@ export default function Page() {
             odpowiedziały i nie liczymy ich ani na plus, ani na minus.
           </p>
 
-          <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
+          <h2 className="mt-12 mb-5 h2-sekcji">
             Wniosek
           </h2>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -201,7 +203,7 @@ export default function Page() {
         />
 
         <section className="mt-12">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+          <h2 className="h2-sekcji">
             Pytania
           </h2>
           <dl className="mt-5 space-y-5">
@@ -256,6 +258,7 @@ export default function Page() {
             }),
           }}
         />
+        <CTA />
       </main>
       <Footer />
     </>

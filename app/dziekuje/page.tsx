@@ -42,7 +42,7 @@ export default function Dziekuje() {
                 </svg>
               </div>
 
-              <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+              <h1 className="h1-strony mb-4">
                 Mamy Twoje zgłoszenie
               </h1>
 

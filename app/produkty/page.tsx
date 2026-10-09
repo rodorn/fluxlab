@@ -7,14 +7,14 @@ import KatalogProduktow from "@/components/KatalogProduktow";
 import { PRODUCTS } from "@/lib/products";
 
 export const metadata: Metadata = {
-  title: "Produkty i narzędzia: raporty, audyty, wdrożenia | Fluxlab",
+  title: "Cennik: usługi ze stałą ceną | Fluxlab",
   description:
-    "Katalog Fluxlab w trzech filarach: automatyzacja procesów, integracje i dane, systemy i strony. Filtr zawęża listę jednym naciśnięciem.",
+    "Cennik Fluxlab: usługi ze stałą ceną w działach automatyzacja, integracje i dane, systemy i strony oraz dla osób prywatnych.",
   alternates: { canonical: "/produkty" },
   openGraph: {
-    title: "Produkty i narzędzia: raporty, audyty, wdrożenia | Fluxlab",
+    title: "Cennik: usługi ze stałą ceną | Fluxlab",
     description:
-      "Katalog Fluxlab w trzech filarach: automatyzacja procesów, integracje i dane, systemy i strony. Filtr zawęża listę jednym naciśnięciem.",
+      "Cennik Fluxlab: usługi ze stałą ceną w działach automatyzacja, integracje i dane, systemy i strony oraz dla osób prywatnych.",
     locale: "pl_PL",
     type: "website",
     images: [
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab, produkty i narzędzia",
+        alt: "Fluxlab, cennik usług ze stałą ceną",
       },
     ],
   },
@@ -32,22 +32,25 @@ export default function ProduktyPage() {
   return (
     <>
       <Header />
-      <main>
-        <Breadcrumbs items={[{ label: "Produkty" }]} />
-        <section className="container-wide pb-14 md:pb-20 pt-6">
-          <div className="max-w-3xl">
-            <p className="text-sm font-semibold text-accent uppercase tracking-wider mb-3">
-              Produkty
-            </p>
-            <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white">
-              Gotowe narzędzia na konkretne problemy
-            </h1>
-            <p className="mt-5 text-lg text-gray-600 dark:text-gray-300">
-              Konkretny efekt za stałą cenę. Wynik odsyłamy mailem.
-            </p>
+      <main className="pt-16">
+        <Breadcrumbs href="/produkty" kolumna="srodek" items={[{ label: "Cennik" }]} />
+        <section className="pt-12 lg:pt-24 pb-10 lg:pb-12 bg-gray-50 dark:bg-gray-900/50 border-b border-gray-100 dark:border-gray-800">
+          <div className="container-wide">
+            <div className="max-w-3xl mx-auto text-center">
+              <p className="section-label mb-4">Cennik</p>
+              <h1 className="text-3xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+                Usługi ze stałą ceną
+              </h1>
+              <p className="text-lg text-gray-600 dark:text-gray-400">
+                Każda pozycja ma podaną kwotę wejścia i konkretny efekt, a wynik
+                odsyłamy mailem.
+              </p>
+            </div>
           </div>
+        </section>
 
-          <div className="mt-12">
+        <section className="container-wide pb-14 md:pb-20">
+          <div className="mt-8 lg:mt-12">
             <KatalogProduktow />
           </div>
 
@@ -77,7 +80,7 @@ export default function ProduktyPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ItemList",
-            name: "Produkty i narzędzia Fluxlab",
+            name: "Cennik Fluxlab",
             itemListElement: PRODUCTS.map((p, i) => ({
               "@type": "ListItem",
               position: i + 1,

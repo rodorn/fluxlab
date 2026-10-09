@@ -252,8 +252,8 @@ const POWIERZCHNIE_NAWIGACJI = [
 for (const plik of POWIERZCHNIE_NAWIGACJI) {
   if (!exists(plik)) continue;
   const tresc = read(plik);
-  if (!tresc.includes("@/lib/filary")) {
-    add("filar", `${plik}: nazywa filary, nie biorac ich z lib/filary.ts`);
+  if (!tresc.includes("@/lib/filary") && !tresc.includes("@/lib/sekcje")) {
+    add("filar", `${plik}: nazywa filary, nie biorac ich z lib/filary.ts ani lib/sekcje.ts`);
     continue;
   }
   for (const href of FILARY_HREFY) {
@@ -699,6 +699,49 @@ if (sankcjeDaty.size > 1) {
         if (trafione)
           add("liczba pojedyncza", `${wzgledna}:${i + 1}: "${trafione}"`);
       });
+    }
+  }
+}
+
+// --- 1h. jeden adres, jedna nazwa ---
+// Ten sam adres nazywal sie na kaflu narzedzi, w katalogu produktow i w menu
+// trzema roznymi zdaniami. Nazwa kanoniczna stoi w lib/sekcje.ts; kafle
+// narzedzi (pole title) i pozycje katalogu (pole name) maja ja powtarzac,
+// a pytanie z kafla trafia do osobnego pola `pytanie`. Nazwy filarow maja
+// byc nazwami grup uslug.
+{
+  const sekcjeSrc = read("lib/sekcje.ts");
+  const nazwy = new Map(
+    [...sekcjeSrc.matchAll(/\bs\("([^"]+)",\s*"([^"]+)"\)/g)].map((m) => [
+      m[1],
+      m[2],
+    ]),
+  );
+  const sprawdz = (zrodlo, href, nazwa) => {
+    const kanon = nazwy.get(href.split("#")[0]);
+    if (kanon === undefined) {
+      add("nazwa", `${zrodlo}: ${href} nie ma wpisu w lib/sekcje.ts`);
+    } else if (kanon !== nazwa) {
+      add(
+        "nazwa",
+        `${zrodlo}: ${href} nazywa sie "${nazwa}", w lib/sekcje.ts "${kanon}"`,
+      );
+    }
+  };
+  for (const c of catalog) sprawdz("lib/products.ts", c.href, c.name);
+  for (const wpis of narzedzia.split(/\n  \{\n/).slice(1)) {
+    const href = wpis.match(/\n    href: "([^"]+)"/)?.[1];
+    const title = wpis.match(/^    title: "([^"]+)"/)?.[1];
+    if (href && title) sprawdz("lib/narzedzia.ts", href, title);
+  }
+  const grupyUslug = new Set(
+    [...sekcjeSrc.matchAll(/nazwa: "([^"]+)",\n\s+hub: "\/[^"]+"/g)].map(
+      (m) => m[1],
+    ),
+  );
+  for (const m of filaryTresc.matchAll(/nazwa: "([^"]+)"/g)) {
+    if (!grupyUslug.has(m[1])) {
+      add("nazwa", `lib/filary.ts: filar "${m[1]}" nie jest grupa z lib/sekcje.ts`);
     }
   }
 }

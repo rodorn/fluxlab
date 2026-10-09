@@ -1,29 +1,54 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
 import Znak from "./Znak";
-import { FILARY } from "@/lib/filary";
+import { SEKCJE, type Sekcja } from "@/lib/sekcje";
 
-const NAV = [
-  ...FILARY.map((f) => ({ href: f.href, label: f.nazwa })),
-  { href: "/produkty", label: "Produkty" },
-  { href: "/realizacje", label: "Realizacje" },
-  { href: "/strefa-wiedzy", label: "Strefa wiedzy" },
-  { href: "/narzedzia", label: "Narzędzia" },
-];
+const sekcja = (slug: string): Sekcja => SEKCJE.find((x) => x.slug === slug)!;
+const USLUGI = sekcja("uslugi");
+const NARZEDZIA = sekcja("narzedzia");
+const CENNIK = sekcja("cennik");
+const WIEDZA = sekcja("strefa-wiedzy");
+const O_NAS = sekcja("o-nas");
 
-// Siedem pozycji obok siebie lamalo sie na dwie linie. Trzy filary siedza
-// pod jednym "Usługi", reszta stoi w jednej linii.
-const NAV_RESZTA = NAV.slice(FILARY.length);
+const BRANZE = USLUGI.grupy.find((g) => g.nazwa === "Branże")!;
+const FILARY_MENU = USLUGI.grupy.filter((g) => g.hub);
 
 const LINK_NAV =
   "relative whitespace-nowrap text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors";
+const LINK_PODMENU =
+  "block rounded-md px-2 py-1 text-[13px] leading-snug text-gray-600 hover:bg-gray-50 hover:text-accent dark:text-white/65 dark:hover:bg-white/5";
+const NAGLOWEK_PODMENU =
+  "block px-2 pb-1 text-sm font-semibold text-gray-900 hover:text-accent dark:text-white";
+
+function Strzalka({ otwarte }: { otwarte: boolean }) {
+  return (
+    <svg
+      width="10"
+      height="10"
+      viewBox="0 0 10 10"
+      aria-hidden="true"
+      className={`transition-transform ${otwarte ? "rotate-180" : ""}`}
+    >
+      <path
+        d="M2 3.5l3 3 3-3"
+        stroke="currentColor"
+        strokeWidth="1.4"
+        fill="none"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
 
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [menu, setMenu] = useState<string | null>(null);
+  const [mobGrupa, setMobGrupa] = useState<string | null>(null);
+  const przyciski = useRef<Record<string, HTMLButtonElement | null>>({});
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -31,6 +56,152 @@ export default function Header() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    if (!menu && !open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key !== "Escape") return;
+      if (menu) przyciski.current[menu]?.focus();
+      setMenu(null);
+      setOpen(false);
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [menu, open]);
+
+  const zamknij = () => {
+    setMenu(null);
+    setOpen(false);
+  };
+
+  const rozwijane = (
+    id: string,
+    etykieta: string,
+    panel: React.ReactNode,
+    wrapperClass = "relative",
+  ) => (
+    <div
+      className={wrapperClass}
+      onMouseEnter={() => setMenu(id)}
+      onMouseLeave={() => setMenu((m) => (m === id ? null : m))}
+      onBlur={(e) => {
+        if (!e.currentTarget.contains(e.relatedTarget as Node | null))
+          setMenu((m) => (m === id ? null : m));
+      }}
+    >
+      <button
+        type="button"
+        ref={(el) => {
+          przyciski.current[id] = el;
+        }}
+        className={`${LINK_NAV} inline-flex items-center gap-1 py-5`}
+        aria-haspopup="true"
+        aria-expanded={menu === id}
+        aria-controls={`menu-${id}`}
+        onClick={() => setMenu((m) => (m === id ? null : id))}
+      >
+        {etykieta}
+        <Strzalka otwarte={menu === id} />
+      </button>
+      <div id={`menu-${id}`} hidden={menu !== id}>
+        {panel}
+      </div>
+    </div>
+  );
+
+  const panelUslug = (
+    <div className="absolute left-1/2 top-full w-[min(60rem,calc(100vw-2rem))] -translate-x-1/2 rounded-xl border border-gray-200 bg-white p-4 shadow-xl dark:border-white/10 dark:bg-gray-900">
+      <div className="grid grid-cols-3 gap-4">
+        {FILARY_MENU.map((g) => (
+          <div key={g.nazwa}>
+            <Link href={g.hub!} onClick={zamknij} className={NAGLOWEK_PODMENU}>
+              {g.nazwa}
+            </Link>
+            <ul>
+              {g.strony
+                .filter((x) => x.href !== g.hub)
+                .map((x) => (
+                  <li key={x.href}>
+                    <Link
+                      href={x.href}
+                      onClick={zamknij}
+                      className={LINK_PODMENU}
+                    >
+                      {x.nazwa}
+                    </Link>
+                  </li>
+                ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+      <div className="mt-3 border-t border-gray-100 pt-3 dark:border-white/10">
+        <p className="px-2 pb-1 text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-white/50">
+          {BRANZE.nazwa}
+        </p>
+        <ul className="grid grid-cols-2 gap-x-4">
+          {BRANZE.strony.map((x) => (
+            <li key={x.href}>
+              <Link href={x.href} onClick={zamknij} className={LINK_PODMENU}>
+                {x.nazwa}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+
+  const panelONas = (
+    <div className="absolute right-0 top-full w-60 rounded-xl border border-gray-200 bg-white p-2 shadow-xl dark:border-white/10 dark:bg-gray-900">
+      <ul>
+        {O_NAS.grupy
+          .flatMap((g) => g.strony)
+          .map((x) => (
+            <li key={x.href}>
+              <Link
+                href={x.href}
+                onClick={zamknij}
+                className={`${LINK_PODMENU} px-3 py-2 text-sm`}
+              >
+                {x.nazwa}
+              </Link>
+            </li>
+          ))}
+      </ul>
+    </div>
+  );
+
+  const prosty = (s: Sekcja, etykieta: string) => (
+    <Link href={s.hub!} className={LINK_NAV}>
+      {etykieta}
+    </Link>
+  );
+
+  const MOB_LINK =
+    "block py-2 text-sm text-gray-700 dark:text-gray-200 hover:text-accent transition-colors";
+
+  const mobGrupaPrzycisk = (
+    id: string,
+    etykieta: string,
+    tresc: React.ReactNode,
+  ) => (
+    <div className="border-b border-gray-100 dark:border-gray-800">
+      <button
+        type="button"
+        aria-expanded={mobGrupa === id}
+        aria-controls={`mob-${id}`}
+        onClick={() => setMobGrupa((g) => (g === id ? null : id))}
+        className="flex w-full items-center justify-between py-2.5 text-sm font-medium text-gray-700 dark:text-gray-200"
+      >
+        {etykieta}
+        <Strzalka otwarte={mobGrupa === id} />
+      </button>
+      <div id={`mob-${id}`} hidden={mobGrupa !== id} className="pb-2 pl-3">
+        {tresc}
+      </div>
+    </div>
+  );
 
   return (
     <header
@@ -54,52 +225,15 @@ export default function Header() {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden lg:flex items-center gap-7 absolute left-1/2 -translate-x-1/2">
-          <div className="group relative">
-            <button
-              type="button"
-              className={`${LINK_NAV} inline-flex items-center gap-1 py-5`}
-              aria-haspopup="true"
-            >
-              Usługi
-              <svg
-                width="10"
-                height="10"
-                viewBox="0 0 10 10"
-                aria-hidden="true"
-                className="transition-transform group-hover:rotate-180 group-focus-within:rotate-180"
-              >
-                <path
-                  d="M2 3.5l3 3 3-3"
-                  stroke="currentColor"
-                  strokeWidth="1.4"
-                  fill="none"
-                  strokeLinecap="round"
-                />
-              </svg>
-            </button>
-            <div className="invisible absolute left-1/2 top-full w-80 -translate-x-1/2 rounded-xl border border-gray-200 bg-white p-2 opacity-0 shadow-xl transition-all group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100 dark:border-white/10 dark:bg-gray-900">
-              {FILARY.map((f) => (
-                <Link
-                  key={f.href}
-                  href={f.href}
-                  className="block rounded-lg px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-white/5"
-                >
-                  <span className="block text-sm font-semibold text-gray-900 dark:text-white">
-                    {f.nazwa}
-                  </span>
-                  <span className="mt-0.5 block text-xs text-gray-500 dark:text-white/55">
-                    {f.opis}
-                  </span>
-                </Link>
-              ))}
-            </div>
-          </div>
-          {NAV_RESZTA.map((item) => (
-            <Link key={item.href} href={item.href} className={LINK_NAV}>
-              {item.label}
-            </Link>
-          ))}
+        <nav
+          aria-label="Menu główne"
+          className="hidden lg:flex items-center gap-7 absolute left-1/2 -translate-x-1/2"
+        >
+          {rozwijane("uslugi", "Usługi", panelUslug, "")}
+          {prosty(NARZEDZIA, "Narzędzia")}
+          {prosty(CENNIK, "Cennik")}
+          {prosty(WIEDZA, "Strefa wiedzy")}
+          {rozwijane("o-nas", "O nas", panelONas)}
         </nav>
 
         {/* Right */}
@@ -143,22 +277,84 @@ export default function Header() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="lg:hidden border-t border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-950 px-5 py-4">
-          <nav className="flex flex-col gap-1">
-            {NAV.map((item) => (
+        <div className="lg:hidden max-h-[calc(100vh-4rem)] overflow-y-auto border-t border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-950 px-5 py-4">
+          <nav aria-label="Menu mobilne" className="flex flex-col">
+            {mobGrupaPrzycisk(
+              "uslugi",
+              "Usługi",
+              <>
+                {FILARY_MENU.map((g) => (
+                  <div key={g.nazwa} className="mb-2">
+                    <Link
+                      href={g.hub!}
+                      onClick={zamknij}
+                      className="block py-2 text-sm font-semibold text-gray-900 dark:text-white"
+                    >
+                      {g.nazwa}
+                    </Link>
+                    {g.strony
+                      .filter((x) => x.href !== g.hub)
+                      .map((x) => (
+                        <Link
+                          key={x.href}
+                          href={x.href}
+                          onClick={zamknij}
+                          className={MOB_LINK}
+                        >
+                          {x.nazwa}
+                        </Link>
+                      ))}
+                  </div>
+                ))}
+                <p className="pt-1 text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-white/50">
+                  {BRANZE.nazwa}
+                </p>
+                {BRANZE.strony.map((x) => (
+                  <Link
+                    key={x.href}
+                    href={x.href}
+                    onClick={zamknij}
+                    className={MOB_LINK}
+                  >
+                    {x.nazwa}
+                  </Link>
+                ))}
+              </>,
+            )}
+            {[
+              [NARZEDZIA, "Narzędzia"],
+              [CENNIK, "Cennik"],
+              [WIEDZA, "Strefa wiedzy"],
+            ].map(([s, etykieta]) => (
               <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setOpen(false)}
-                className="py-2.5 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-accent transition-colors"
+                key={(s as Sekcja).slug}
+                href={(s as Sekcja).hub!}
+                onClick={zamknij}
+                className="border-b border-gray-100 py-2.5 text-sm font-medium text-gray-700 hover:text-accent transition-colors dark:border-gray-800 dark:text-gray-200"
               >
-                {item.label}
+                {etykieta as string}
               </Link>
             ))}
+            {mobGrupaPrzycisk(
+              "o-nas",
+              "O nas",
+              O_NAS.grupy
+                .flatMap((g) => g.strony)
+                .map((x) => (
+                  <Link
+                    key={x.href}
+                    href={x.href}
+                    onClick={zamknij}
+                    className={MOB_LINK}
+                  >
+                    {x.nazwa}
+                  </Link>
+                )),
+            )}
             <Link
               href="/kontakt"
-              onClick={() => setOpen(false)}
-              className="btn-primary mt-3 text-sm"
+              onClick={zamknij}
+              className="btn-primary mt-4 text-sm"
             >
               Bezpłatna diagnoza
             </Link>

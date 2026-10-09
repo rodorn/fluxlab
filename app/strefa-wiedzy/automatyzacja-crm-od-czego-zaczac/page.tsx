@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 
@@ -53,7 +54,7 @@ export default function AutomatyzacjaCrmOdCzegoZaczacArticle() {
     <>
       <Header />
       <main className="pt-16 prose-justify">
-        <Breadcrumbs kolumna="waska"
+        <Breadcrumbs href="/strefa-wiedzy/automatyzacja-crm-od-czego-zaczac" kolumna="waska"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Automatyzacja CRM, od czego zacząć" },
@@ -63,10 +64,10 @@ export default function AutomatyzacjaCrmOdCzegoZaczacArticle() {
         <section className="pt-24 pb-10">
           <div className="container-wide max-w-3xl mx-auto">
             <span className="section-label">Strefa wiedzy</span>
-            <h1 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">
+            <h1 className="mt-4 h1-artykulu">
               Automatyzacja CRM, od czego zacząć
             </h1>
-            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed !text-left">
               Wiele firm ma CRM, a zespół dalej robi większość pracy ręcznie.
               Oto cztery kroki, od których zaczynamy.
             </p>
@@ -78,7 +79,7 @@ export default function AutomatyzacjaCrmOdCzegoZaczacArticle() {
             <ol className="space-y-8">
               {steps.map((step, i) => (
                 <li key={step.title}>
-                  <h2 className="text-xl lg:text-2xl font-bold text-gray-900 dark:text-white mb-3">
+                  <h2 className="mb-3 h2-sekcji">
                     {i + 1}. {step.title}
                   </h2>
                   <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -106,21 +107,7 @@ export default function AutomatyzacjaCrmOdCzegoZaczacArticle() {
           </div>
         </section>
 
-        <section className="py-12 lg:py-16">
-          <div className="max-w-3xl mx-auto px-6 lg:px-8">
-            <div className="rounded-2xl bg-accent/10 p-8 lg:p-12 text-center">
-              <p className="text-lg font-medium text-gray-900 dark:text-white">
-                Masz CRM, ale zespół dalej klika za dużo ręcznie?
-              </p>
-              <Link
-                href="/automatyzacja-leadow-crm"
-                className="btn-primary mt-6 inline-block"
-              >
-                Zobacz usługę Automatyzacja CRM
-              </Link>
-            </div>
-          </div>
-        </section>
+        <CTA naglowek="Masz CRM, ale zespół dalej klika za dużo ręcznie?" />
       </main>
       <Footer />
 

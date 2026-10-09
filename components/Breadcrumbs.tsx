@@ -1,19 +1,66 @@
 import Link from "next/link";
+import { sekcjaStrony, wszystkieStrony } from "@/lib/sekcje";
 
 interface BreadcrumbItem {
   label: string;
   href?: string;
 }
 
+/** Poziom pośredni (hub grupy albo sekcji) dla bieżącej strony, jeśli go brakuje w items. */
+function poziomPosredni(
+  items: BreadcrumbItem[],
+  href?: string,
+): BreadcrumbItem | undefined {
+  let biezaca = href;
+  if (!biezaca) {
+    for (let i = items.length - 1; i >= 0; i--) {
+      const h = items[i].href;
+      if (h) {
+        biezaca = h;
+        break;
+      }
+    }
+  }
+  if (!biezaca) {
+    const ostatni = items[items.length - 1]?.label;
+    biezaca = wszystkieStrony().find((x) => x.nazwa === ostatni)?.href;
+  }
+  if (!biezaca) return undefined;
+
+  const trafienie = sekcjaStrony(biezaca);
+  if (!trafienie) return undefined;
+  const { sekcja, grupa } = trafienie;
+  const bez = biezaca.split(/[?#]/)[0].replace(/(.)\/+$/, "$1");
+
+  let rodzic: BreadcrumbItem | undefined;
+  if (grupa.hub && grupa.hub !== sekcja.hub) {
+    rodzic = { label: grupa.nazwa, href: grupa.hub };
+  } else if (sekcja.hub) {
+    rodzic = { label: sekcja.nazwa, href: sekcja.hub };
+  }
+  if (!rodzic || rodzic.href === bez) return undefined;
+  if (items.some((x) => x.href === rodzic!.href || x.label === rodzic!.label))
+    return undefined;
+  return rodzic;
+}
+
 export default function Breadcrumbs({
   items,
   kolumna,
+  href,
 }: {
   items: BreadcrumbItem[];
+  /** Ścieżka bieżącej strony. Bez niej wnioskujemy z ostatniego elementu items z href. */
+  href?: string;
   /** Szerokość kolumny nagłówka pod okruszkami: wąska (max-w-3xl) albo wąska wyśrodkowana. */
   kolumna?: "waska" | "srodek";
 }) {
-  const fullItems = [{ label: "Strona główna", href: "/" }, ...items];
+  const posredni = poziomPosredni(items, href);
+  const fullItems: BreadcrumbItem[] = [
+    { label: "Strona główna", href: "/" },
+    ...(posredni ? [posredni] : []),
+    ...items,
+  ];
 
   const jsonLd = {
     "@context": "https://schema.org",

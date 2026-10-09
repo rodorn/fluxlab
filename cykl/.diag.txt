@@ -1,0 +1,5 @@
+ cykl/dziennik.md | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
+   39fec3e..eeab651  HEAD -> main
+eeab651 Dziennik cyklu: kanal 3, FAQ o fakturach z zagranicznymi klientami i dostawcami a KSeF
+21

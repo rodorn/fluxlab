@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 import Tabs from "@/components/Tabs";
@@ -57,8 +58,8 @@ export default function N8nVsZapierArticle() {
   return (
     <>
       <Header />
-      <main className="pt-16 prose-justify">
-        <Breadcrumbs kolumna="srodek"
+      <main className="pt-16">
+        <Breadcrumbs href="/strefa-wiedzy/n8n-vs-zapier" kolumna="srodek"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "n8n vs Zapier" },
@@ -68,7 +69,7 @@ export default function N8nVsZapierArticle() {
         <section className="pt-24 pb-10">
           <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
             <span className="section-label">Strefa wiedzy</span>
-            <h1 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">
+            <h1 className="h1-artykulu mt-4">
               n8n vs Zapier, kiedy warto iść w self-hosting
             </h1>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -79,7 +80,7 @@ export default function N8nVsZapierArticle() {
           </div>
         </section>
 
-        <div className="container-wide pb-20">
+        <div className="container-wide pb-20 prose-justify">
           <Tabs
             ariaLabel="Rozdziały artykułu n8n vs Zapier"
             tabs={[
@@ -88,7 +89,7 @@ export default function N8nVsZapierArticle() {
                 content: (
                   <div className="py-10 lg:py-12">
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                      <h2 className="h2-sekcji mb-6">
                         Czym różni się n8n od Zapiera
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
@@ -102,7 +103,7 @@ export default function N8nVsZapierArticle() {
                         diagram, rozgałęzienia, pętle.
                       </p>
 
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 mt-12">
+                      <h2 className="h2-sekcji mb-6 mt-12">
                         Gdzie jest realna oszczędność
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
@@ -139,7 +140,7 @@ export default function N8nVsZapierArticle() {
                 content: (
                   <div className="py-10 lg:py-12">
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                      <h2 className="h2-sekcji mb-6">
                         Start i utrzymanie
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
@@ -153,7 +154,7 @@ export default function N8nVsZapierArticle() {
                         wsparcia albo n8n.cloud.
                       </p>
 
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 mt-12">
+                      <h2 className="h2-sekcji mb-6 mt-12">
                         Kontrola danych
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
@@ -164,7 +165,7 @@ export default function N8nVsZapierArticle() {
                         zewnątrz.
                       </p>
 
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 mt-12">
+                      <h2 className="h2-sekcji mb-6 mt-12">
                         Integracje
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
@@ -182,7 +183,7 @@ export default function N8nVsZapierArticle() {
                 content: (
                   <div className="py-10 lg:py-12">
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                      <h2 className="h2-sekcji mb-6">
                         Co się dzieje, gdy wolumen rośnie
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
@@ -195,7 +196,7 @@ export default function N8nVsZapierArticle() {
                         praktycznie zawsze tańszy, nawet z kosztem utrzymania.
                       </p>
 
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 mt-12">
+                      <h2 className="h2-sekcji mb-6 mt-12">
                         Kiedy zostać przy Zapierze
                       </h2>
                       <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
@@ -205,7 +206,7 @@ export default function N8nVsZapierArticle() {
                         <li>Nie musicie trzymać danych w UE ani łączyć systemów wewnętrznych</li>
                       </ul>
 
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 mt-12">
+                      <h2 className="h2-sekcji mb-6 mt-12">
                         Najczęstszy układ: hybryda
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
@@ -223,12 +224,11 @@ export default function N8nVsZapierArticle() {
                       </p>
 
                       <div className="bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-8 text-center mt-12">
-                        <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                        <h2 className="h2-sekcji mb-6">
                           Chcesz n8n bez utrzymywania serwera?
                         </h2>
                         <p className="text-gray-600 dark:text-gray-400 mb-4">
-                          Wdrażamy n8n na Twoim serwerze albo zarządzamy nim za
-                          Ciebie.
+                          Wdrażamy n8n na Twoim serwerze albo zarządzamy nim za Ciebie.
                         </p>
                         <Link href="/n8n" className="btn-primary inline-block">
                           Zobacz usługę n8n
@@ -243,7 +243,7 @@ export default function N8nVsZapierArticle() {
                 content: (
                   <div className="py-10 lg:py-12">
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                      <h2 className="h2-sekcji mb-6">
                         FAQ
                       </h2>
                       <div className="space-y-4">
@@ -285,21 +285,7 @@ export default function N8nVsZapierArticle() {
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
                       <PrevNextArticle currentHref="/strefa-wiedzy/n8n-vs-zapier" />
 
-                      <div className="bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-8 text-center mt-12">
-                        <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                          Nie wiesz, czy warto wchodzić w self-hosting?
-                        </h2>
-                        <p className="text-gray-600 dark:text-gray-400 mb-4">
-                          Przejrzymy Twoje procesy i porównamy koszty na 12 i 24
-                          miesiące.
-                        </p>
-                        <Link
-                          href="/kontakt"
-                          className="btn-primary inline-block"
-                        >
-                          Zamów diagnozę procesu
-                        </Link>
-                      </div>
+                      <CTA />
 
                       <div className="mt-12">
                         <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">

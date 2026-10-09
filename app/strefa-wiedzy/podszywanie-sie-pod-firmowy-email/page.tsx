@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
@@ -58,7 +59,7 @@ export default function PodszywanieEmailArticle() {
           padding: "6.5rem 1.5rem 4rem",
         }}
       >
-        <Breadcrumbs
+        <Breadcrumbs href="/strefa-wiedzy/podszywanie-sie-pod-firmowy-email"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             {
@@ -68,7 +69,8 @@ export default function PodszywanieEmailArticle() {
           ]}
         />
 
-        <h1 style={{ fontSize: "2rem", fontWeight: 700, margin: "1rem 0" }}>
+        <span className="section-label mt-6 block">Strefa wiedzy</span>
+        <h1 className="h1-artykulu mt-4 mb-4">
           Czy ktoś może podszyć się pod Twój firmowy e-mail?
         </h1>
         <p
@@ -117,9 +119,7 @@ export default function PodszywanieEmailArticle() {
           </Link>
         </div>
 
-        <h2
-          style={{ fontSize: "1.4rem", fontWeight: 700, marginTop: "2.5rem" }}
-        >
+        <h2 className="h2-sekcji mt-10 mb-4">
           Trzy rekordy, które decydują o wszystkim
         </h2>
         <p style={{ color: "var(--article-text)", lineHeight: 1.7 }}>
@@ -151,9 +151,7 @@ export default function PodszywanieEmailArticle() {
         </p>
 
         <h2
-          id="mail-firmowy-na-wlasnej-domenie"
-          style={{ fontSize: "1.4rem", fontWeight: 700, marginTop: "2.5rem" }}
-        >
+          id="mail-firmowy-na-wlasnej-domenie" className="h2-sekcji mt-10 mb-4">
           Mail firmowy na własnej domenie: co jest potrzebne i ile kosztuje
         </h2>
         <p style={{ color: "var(--article-text)", lineHeight: 1.7 }}>
@@ -175,9 +173,7 @@ export default function PodszywanieEmailArticle() {
           .
         </p>
 
-        <h2
-          style={{ fontSize: "1.4rem", fontWeight: 700, marginTop: "2.5rem" }}
-        >
+        <h2 className="h2-sekcji mt-10 mb-4">
           Najczęstsze pytania
         </h2>
         <div style={{ marginTop: "1rem" }}>
@@ -202,6 +198,7 @@ export default function PodszywanieEmailArticle() {
           ))}
         </div>
       </main>
+      <CTA />
       <Footer />
     </>
   );

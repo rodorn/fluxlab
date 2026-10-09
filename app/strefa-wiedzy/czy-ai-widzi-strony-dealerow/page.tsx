@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import WykresSlupkowy from "@/components/WykresSlupkowy";
 import SprawdzPoBadaniu from "@/components/SprawdzPoBadaniu";
@@ -54,14 +55,15 @@ export default function Page() {
     <>
       <Header />
       <main className="mx-auto max-w-3xl px-4 pb-20 pt-28 md:pt-32">
-        <Breadcrumbs
+        <Breadcrumbs href="/strefa-wiedzy/czy-ai-widzi-strony-dealerow"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Czy AI widzi strony dealerów" },
           ]}
         />
 
-        <h1 className="mt-6 text-3xl font-bold tracking-tight text-gray-900 dark:text-white md:text-4xl">
+        <p className="section-label mt-6">Strefa wiedzy</p>
+        <h1 className="mt-4 h1-artykulu">
           Czy asystenci AI widzą strony dealerów samochodowych
         </h1>
         <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
@@ -70,7 +72,7 @@ export default function Page() {
           ma czego zacytować.
         </p>
 
-        <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
+        <h2 className="mt-12 mb-5 h2-sekcji">
           Co sprawdzaliśmy
         </h2>
         <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -80,7 +82,7 @@ export default function Page() {
           nich pustą kartką.
         </p>
 
-        <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
+        <h2 className="mt-12 mb-5 h2-sekcji">
           131 domen nie oddało strony w ogóle
         </h2>
 
@@ -118,7 +120,7 @@ export default function Page() {
           zrodlo="Pomiar Fluxlab, wrzesień 2026. Trzy zapytania na domenę, bez logowania i bez obchodzenia zabezpieczeń."
         />
 
-        <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
+        <h2 className="mt-12 mb-5 h2-sekcji">
           Blokady robotów AI praktycznie nie istnieją
         </h2>
         <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -127,7 +129,7 @@ export default function Page() {
           bez szyfrowania, więc przeglądarka straszy ostrzeżeniem.
         </p>
 
-        <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
+        <h2 className="mt-12 mb-5 h2-sekcji">
           Prawdziwy problem: nie ma czego zacytować
         </h2>
 
@@ -208,7 +210,7 @@ export default function Page() {
         />
 
         <section className="mt-12">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+          <h2 className="h2-sekcji">
             Pytania
           </h2>
           <dl className="mt-5 space-y-5">
@@ -263,6 +265,7 @@ export default function Page() {
             }),
           }}
         />
+        <CTA />
       </main>
       <Footer />
     </>

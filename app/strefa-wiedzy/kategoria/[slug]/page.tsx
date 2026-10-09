@@ -79,7 +79,15 @@ export default async function CategoryPage({ params }: Props) {
         <section className="py-16 lg:py-24">
           <div className="container-wide">
             <div className="max-w-4xl mx-auto">
-              <div className="grid md:grid-cols-2 gap-4">
+              {category.wstep?.map((akapit) => (
+                <p
+                  key={akapit}
+                  className="text-gray-600 dark:text-gray-400 leading-relaxed mb-4 max-w-3xl"
+                >
+                  {akapit}
+                </p>
+              ))}
+              <div className="grid md:grid-cols-2 gap-4 mt-6">
                 {category.articles.map((article) => (
                   <Link
                     key={article.href}
@@ -88,8 +96,11 @@ export default async function CategoryPage({ params }: Props) {
                   >
                     <OkladkaArtykulu
                       tytul={article.title}
-                      kategoria={category.name}
-                      src={`/okladki/${article.href.split("/").pop()}.webp`}
+                      src={
+                        article.bezOkladki
+                          ? undefined
+                          : `/okladki/${article.href.split("/").pop()}.webp`
+                      }
                     />
                     <div className="p-4">
                       <h2 className="text-base font-semibold text-gray-900 dark:text-white group-hover:text-accent transition-colors mb-1">

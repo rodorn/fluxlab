@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 
@@ -61,7 +62,7 @@ export default function RoiAutomatyzacjiArticle() {
     <>
       <Header />
       <main className="pt-16 prose-justify">
-        <Breadcrumbs kolumna="srodek"
+        <Breadcrumbs href="/strefa-wiedzy/jak-policzyc-roi-z-automatyzacji" kolumna="srodek"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Jak policzyć ROI z automatyzacji" },
@@ -70,10 +71,10 @@ export default function RoiAutomatyzacjiArticle() {
         <section className="pt-16 pb-6">
           <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
             <span className="section-label">Strefa wiedzy</span>
-            <h1 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">
+            <h1 className="mt-4 h1-artykulu">
               Jak policzyć ROI z automatyzacji
             </h1>
-            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed !text-left">
               Wdrożenie jest odwlekane, bo nikt nie umie go obronić liczbami. A
               ROI da się policzyć prościej, niż się wydaje, bez idealnego modelu
               na start.
@@ -88,7 +89,7 @@ export default function RoiAutomatyzacjiArticle() {
               utrzymania) / koszt wdrożenia
             </div>
 
-            <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 mt-12">
+            <h2 className="mb-6 mt-12 h2-sekcji">
               Co liczyć
             </h2>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
@@ -104,7 +105,7 @@ export default function RoiAutomatyzacjiArticle() {
               poprawki i opóźnienia też kosztują.
             </p>
 
-            <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 mt-12">
+            <h2 className="mb-6 mt-12 h2-sekcji">
               Model w pięciu krokach
             </h2>
             <ol className="list-decimal pl-5 space-y-3 text-gray-600 dark:text-gray-400 mb-6">
@@ -118,7 +119,7 @@ export default function RoiAutomatyzacjiArticle() {
               ))}
             </ol>
 
-            <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 mt-12">
+            <h2 className="mb-6 mt-12 h2-sekcji">
               Przykład: obsługa leadów
             </h2>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
@@ -137,19 +138,8 @@ export default function RoiAutomatyzacjiArticle() {
               pierwszym roku. Korzyść netto: ponad 8200 zł.
             </p>
 
-            <div className="mt-12 bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-8 text-center">
-              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                Policzymy ROI dla Twojego procesu
-              </h2>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
-                Bezpłatna diagnoza, bez zobowiązań.
-              </p>
-              <Link href="/kontakt" className="btn-primary inline-block">
-                Zamów diagnozę procesu
-              </Link>
-            </div>
 
-            <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 mt-12">
+            <h2 className="mb-6 mt-12 h2-sekcji">
               FAQ
             </h2>
             <dl className="space-y-5">
@@ -200,6 +190,7 @@ export default function RoiAutomatyzacjiArticle() {
             <PrevNextArticle currentHref="/strefa-wiedzy/jak-policzyc-roi-z-automatyzacji" />
           </div>
         </div>
+        <CTA naglowek="Policzymy ROI dla Twojego procesu" />
       </main>
       <Footer />
 

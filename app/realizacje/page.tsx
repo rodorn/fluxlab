@@ -3,7 +3,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import TrackedCTA from "@/components/TrackedCTA";
+import CTA from "@/components/CTA";
 
 export const metadata: Metadata = {
   title: "Realizacje, otwarty kod i działające narzędzia | Fluxlab",
@@ -154,13 +154,11 @@ export default function RealizacjePage() {
       <Header />
       <main className="pt-16">
         <section className="container-wide py-14 md:py-20">
-          <Breadcrumbs items={[{ label: "Realizacje" }]} />
+          <Breadcrumbs href="/realizacje" items={[{ label: "Realizacje" }]} />
 
-          <div className="max-w-3xl">
-            <p className="text-sm font-semibold text-accent uppercase tracking-wider mb-3">
-              Realizacje
-            </p>
-            <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white">
+          <div className="max-w-3xl mx-auto text-center">
+            <p className="section-label mb-3">O nas</p>
+            <h1 className="h1-strony">
               Zamiast obietnic, otwarty kod i działające narzędzia
             </h1>
             <p className="mt-5 text-lg text-gray-600 dark:text-gray-300">
@@ -173,7 +171,7 @@ export default function RealizacjePage() {
             {GROUPS.map((group) => (
               <div key={group.title}>
                 <div className="max-w-2xl mb-6">
-                  <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+                  <h2 className="h2-sekcji">
                     {group.title}
                   </h2>
                   <p className="mt-2 text-gray-600 dark:text-gray-400">
@@ -241,26 +239,8 @@ export default function RealizacjePage() {
               </div>
             ))}
           </div>
-
-          <div className="mt-16 rounded-2xl border border-gray-200/80 dark:border-gray-800/80 bg-gray-50/60 dark:bg-gray-900/40 p-8 text-center">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
-              Masz proces, który da się zautomatyzować?
-            </h2>
-            <p className="mt-3 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              Zaczynamy od bezpłatnej diagnozy, żebyś zobaczył efekt, zanim
-              cokolwiek zlecisz.
-            </p>
-            <div className="mt-6">
-              <TrackedCTA
-                href="/kontakt"
-                location="realizacje_cta"
-                className="btn-primary"
-              >
-                Bezpłatna diagnoza
-              </TrackedCTA>
-            </div>
-          </div>
         </section>
+        <CTA />
       </main>
       <Footer />
     </>

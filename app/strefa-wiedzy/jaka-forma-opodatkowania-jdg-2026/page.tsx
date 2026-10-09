@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 import Tabs from "@/components/Tabs";
@@ -58,7 +59,7 @@ export default function JakaFormaOpodatkowaniaJdgArticle() {
     <>
       <Header />
       <main className="pt-16 prose-justify">
-        <Breadcrumbs kolumna="srodek"
+        <Breadcrumbs href="/strefa-wiedzy/jaka-forma-opodatkowania-jdg-2026" kolumna="srodek"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Jaka forma opodatkowania JDG w 2026?" },
@@ -68,10 +69,10 @@ export default function JakaFormaOpodatkowaniaJdgArticle() {
         <section className="pt-16 pb-6">
           <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
             <span className="section-label">Strefa wiedzy</span>
-            <h1 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">
+            <h1 className="mt-4 h1-artykulu">
               Jaka forma opodatkowania JDG w 2026?
             </h1>
-            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed !text-left">
               W 2026 roku JDG wybiera między skalą, podatkiem liniowym i
               ryczałtem. Różnią się stawką, kosztami i składką zdrowotną.
             </p>
@@ -86,7 +87,7 @@ export default function JakaFormaOpodatkowaniaJdgArticle() {
                 label: "Trzy formy",
                 content: (
                   <div className="py-6 lg:py-8 max-w-3xl mx-auto">
-                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                    <h2 className="mb-6 h2-sekcji">
                       Trzy formy opodatkowania JDG
                     </h2>
 
@@ -153,7 +154,7 @@ export default function JakaFormaOpodatkowaniaJdgArticle() {
                 label: "Jak wybrać formę",
                 content: (
                   <div className="py-6 lg:py-8 max-w-3xl mx-auto">
-                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                    <h2 className="mb-6 h2-sekcji">
                       Jak wybrać formę
                     </h2>
                     <ol className="list-decimal pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
@@ -207,7 +208,7 @@ export default function JakaFormaOpodatkowaniaJdgArticle() {
                 label: "FAQ",
                 content: (
                   <div className="py-6 lg:py-8 max-w-3xl mx-auto">
-                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                    <h2 className="mb-6 h2-sekcji">
                       FAQ
                     </h2>
                     <div className="space-y-4">
@@ -249,6 +250,7 @@ export default function JakaFormaOpodatkowaniaJdgArticle() {
             <PrevNextArticle currentHref="/strefa-wiedzy/jaka-forma-opodatkowania-jdg-2026" />
           </div>
         </div>
+        <CTA />
       </main>
       <Footer />
 

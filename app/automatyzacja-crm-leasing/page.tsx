@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TrackedCTA from "@/components/TrackedCTA";
 import Tabs from "@/components/Tabs";
@@ -118,7 +119,7 @@ export default function AutomatyzacjaCrmLeasing() {
     <>
       <Header />
       <main>
-        <Breadcrumbs kolumna="srodek"
+        <Breadcrumbs href="/automatyzacja-crm-leasing" kolumna="srodek"
           items={[
             { label: "Automatyzacja CRM dla firm leasingowych i finansowych" },
           ]}
@@ -126,9 +127,9 @@ export default function AutomatyzacjaCrmLeasing() {
 
         <section className="pt-16 pb-6 bg-gradient-to-b from-accent/10 to-transparent border-b border-gray-100 dark:border-gray-800">
           <div className="container-wide">
-            <div className="max-w-3xl mx-auto text-center">
-              <p className="section-label mb-4">Branża: leasing i finanse</p>
-              <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+            <div className="max-w-3xl">
+              <p className="section-label mb-4">Branża</p>
+              <h1 className="h1-strony mb-6">
                 Automatyzacja leadów i CRM dla firm leasingowych, finansowych i
                 brokerskich
               </h1>
@@ -140,12 +141,12 @@ export default function AutomatyzacjaCrmLeasing() {
               <TrackedCTA
                 href="#sekcje"
                 location="article_automatyzacja-crm-leasing_hero"
-                label="Chcemy audyt procesu leadów"
+                label="Bezpłatna diagnoza"
                 eventName="cta_click_article_audit"
                 className="btn-primary"
               >
-                Chcemy audyt procesu leadów
-              </TrackedCTA>
+                  Bezpłatna diagnoza
+                </TrackedCTA>
             </div>
           </div>
         </section>
@@ -159,8 +160,7 @@ export default function AutomatyzacjaCrmLeasing() {
                 content: (
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
-                      <span className="section-label">Problem</span>
-                      <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-6">
+                      <h2 className="h2-sekcji mt-4 mb-6">
                         Pipeline w głowie brokera, prowizje w Excelu
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
@@ -190,8 +190,7 @@ export default function AutomatyzacjaCrmLeasing() {
                 content: (
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
-                      <span className="section-label">Koszt problemu</span>
-                      <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-6">
+                      <h2 className="h2-sekcji mt-4 mb-6">
                         Ile to kosztuje firmę 6-osobową
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
@@ -238,8 +237,7 @@ export default function AutomatyzacjaCrmLeasing() {
                 content: (
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto mb-8">
-                      <span className="section-label">Jak to działa</span>
-                      <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-4">
+                      <h2 className="h2-sekcji mt-4 mb-4">
                         Od leada do prowizji bez przepisywania
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -285,8 +283,7 @@ export default function AutomatyzacjaCrmLeasing() {
                 content: (
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
-                      <span className="section-label">Cennik</span>
-                      <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-4">
+                      <h2 className="h2-sekcji mt-4 mb-4">
                         Ile kosztuje wdrożenie
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
@@ -334,7 +331,7 @@ export default function AutomatyzacjaCrmLeasing() {
                 content: (
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
-                      <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-8 text-center">
+                      <h2 className="h2-sekcji mb-8 text-center">
                         Najczęstsze pytania
                       </h2>
                       <div className="space-y-4">
@@ -402,34 +399,11 @@ export default function AutomatyzacjaCrmLeasing() {
                   </div>
                 ),
               },
-              {
-                label: "Audyt",
-                content: (
-                  <div className="py-6 lg:py-8">
-                    <div className="max-w-2xl mx-auto text-center">
-                      <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                        Audyt procesu leadów dla biura brokerskiego
-                      </h2>
-                      <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-                        30 minut rozmowy. Dostajesz mapę procesu, 3 miejsca do
-                        automatyzacji i widełki cenowe. Bez zobowiązań.
-                      </p>
-                      <TrackedCTA
-                        href="/kontakt"
-                        location="article_automatyzacja-crm-leasing_final"
-                        label="Chcemy audyt procesu leadów"
-                        eventName="cta_click_article_audit"
-                        className="btn-primary"
-                      >
-                        Chcemy audyt procesu leadów
-                      </TrackedCTA>
-                    </div>
-                  </div>
-                ),
-              },
             ]}
           />
         </div>
+        <CTA />
+
       </main>
       <Footer />
 

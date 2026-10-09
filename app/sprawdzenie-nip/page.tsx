@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import NipCheck from "@/components/NipCheck";
 import NazwaNarzedzia from "@/components/NazwaNarzedzia";
@@ -68,17 +69,15 @@ export default function SprawdzenieNipPage() {
       <Header />
       <main>
         <Breadcrumbs
+          href="/sprawdzenie-nip"
           items={[
-            { label: "Produkty", href: "/produkty" },
             { label: "Sprawdzenie NIP" },
           ]}
         />
         <section className="container-wide pb-14 md:pb-20 pt-6">
           <div className="max-w-3xl">
-            <p className="text-sm font-semibold text-accent uppercase tracking-wider mb-3">
-              Darmowe narzędzie
-            </p>
-            <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white">
+            <p className="section-label mb-3">Narzędzie</p>
+            <h1 className="h1-strony">
               Sprawdzenie NIP w wykazie Ministerstwa Finansów
             </h1>
             <p className="mt-5 text-lg text-gray-600 dark:text-gray-300">
@@ -93,7 +92,7 @@ export default function SprawdzenieNipPage() {
           </div>
 
           <div className="mt-16 max-w-3xl">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+            <h2 className="h2-sekcji">
               Co dokładnie sprawdzamy
             </h2>
             <dl className="mt-6 space-y-5">
@@ -111,7 +110,7 @@ export default function SprawdzenieNipPage() {
           </div>
 
           <div className="mt-14 max-w-3xl rounded-2xl border border-gray-200/80 dark:border-gray-800/80 bg-gray-50/60 dark:bg-gray-900/40 p-8">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+            <h2 className="h2-sekcji">
               Czego darmowe sprawdzenie nie powie
             </h2>
             <p className="mt-3 text-gray-600 dark:text-gray-300">
@@ -129,7 +128,7 @@ export default function SprawdzenieNipPage() {
           </div>
 
           <div className="mt-14 max-w-3xl">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+            <h2 className="h2-sekcji">
               Częste pytania
             </h2>
             <dl className="mt-6 space-y-5">
@@ -147,6 +146,7 @@ export default function SprawdzenieNipPage() {
           </div>
         </section>
       </main>
+      <CTA />
 
       <script
         type="application/ld+json"

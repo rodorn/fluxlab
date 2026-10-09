@@ -58,9 +58,10 @@ export default function DaneZBadan() {
     <>
       <Header />
       <main className="mx-auto max-w-3xl px-4 pb-20 pt-28 md:pt-32">
-        <Breadcrumbs items={[{ label: "Dane z badań" }]} />
+        <Breadcrumbs href="/dane-z-badan" items={[{ label: "Dane z badań" }]} />
 
-        <h1 className="mt-6 text-3xl font-bold tracking-tight text-gray-900 dark:text-white md:text-4xl">
+        <p className="section-label mt-6">Badanie</p>
+        <h1 className="h1-strony mt-3">
           Dane z naszych badań, do pobrania
         </h1>
         <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
@@ -69,7 +70,7 @@ export default function DaneZBadan() {
         </p>
 
         <section className="mt-10">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+          <h2 className="h2-sekcji">
             Widoczność stron dla asystentów AI, wrzesień 2026
           </h2>
           <p className="mt-3 text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -106,7 +107,7 @@ export default function DaneZBadan() {
         </section>
 
         <section className="mt-12">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+          <h2 className="h2-sekcji">
             Bez nazw firm
           </h2>
           <p className="mt-3 text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -120,7 +121,7 @@ export default function DaneZBadan() {
         </section>
 
         <section className="mt-12">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+          <h2 className="h2-sekcji">
             Warunki użycia
           </h2>
           <p className="mt-3 text-gray-600 dark:text-gray-400 leading-relaxed">

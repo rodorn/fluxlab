@@ -54,7 +54,7 @@ interface Props {
   formId: string;
   heading: string;
   intro: string;
-  submitLabel: string;
+  submitLabel?: string;
   /** Mikrotekst pod przyciskiem. */
   microCopy?: string;
 }
@@ -63,8 +63,8 @@ export default function LandingForm({
   formId,
   heading,
   intro,
-  submitLabel,
-  microCopy = "Odpowiedź w 24h. Bez spamu, bez newslettera, bez „szybkiej rozmowy” narzucanej na siłę.",
+  submitLabel = "Wyślij",
+  microCopy = "Odpowiedź zwykle tego samego dnia.",
 }: Props) {
   const router = useRouter();
   const [loading, setLoading] = useState(false);

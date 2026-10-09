@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import SprawdzPoBadaniu from "@/components/SprawdzPoBadaniu";
 
@@ -45,14 +46,15 @@ export default function Page() {
     <>
       <Header />
       <main className="mx-auto max-w-3xl px-4 pb-20 pt-28 md:pt-32">
-        <Breadcrumbs
+        <Breadcrumbs href="/strefa-wiedzy/konwersje-pokazuja-zero"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Konwersje pokazują zero" },
           ]}
         />
 
-        <h1 className="mt-6 text-3xl font-bold tracking-tight text-gray-900 dark:text-white md:text-4xl">
+        <span className="section-label mt-6 block">Strefa wiedzy</span>
+        <h1 className="h1-artykulu mt-4">
           Licznik konwersji pokazuje zero, a zgłoszenia przychodzą
         </h1>
         <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
@@ -62,7 +64,7 @@ export default function Page() {
         </p>
 
         <div className="mt-10">
-          <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
+          <h2 className="h2-sekcji mt-12 mb-5">
             Pierwsza: formularz nie przeładowuje strony
           </h2>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -71,7 +73,7 @@ export default function Page() {
             stoi na zerze, a zgłoszenia przychodzą na skrzynkę.
           </p>
 
-          <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
+          <h2 className="h2-sekcji mt-12 mb-5">
             Druga: konwersja podpięta pod kliknięcie
           </h2>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -80,7 +82,7 @@ export default function Page() {
             klikają, a nie tych, którzy wysyłają zgłoszenie.
           </p>
 
-          <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
+          <h2 className="h2-sekcji mt-12 mb-5">
             Trzecia: to samo zdarzenie liczone dwa razy
           </h2>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -89,7 +91,7 @@ export default function Page() {
             zgłoszenie staje się dwiema konwersjami.
           </p>
 
-          <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
+          <h2 className="h2-sekcji mt-12 mb-5">
             Czwarta: liczysz samego siebie
           </h2>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -97,7 +99,7 @@ export default function Page() {
             część wyniku. Wykluczenie własnych wejść to jedno ustawienie.
           </p>
 
-          <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
+          <h2 className="h2-sekcji mt-12 mb-5">
             Jak rozstrzygnąć, która to przyczyna
           </h2>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -107,7 +109,7 @@ export default function Page() {
             Na koniec sprawdź wykluczenie własnych wejść.
           </p>
 
-          <h2 className="mt-12 mb-5 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
+          <h2 className="h2-sekcji mt-12 mb-5">
             Strona z płatnością
           </h2>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -134,7 +136,7 @@ export default function Page() {
         />
 
         <section className="mt-12">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+          <h2 className="h2-sekcji">
             Pytania
           </h2>
           <dl className="mt-5 space-y-5">
@@ -190,6 +192,7 @@ export default function Page() {
           }}
         />
       </main>
+      <CTA />
       <Footer />
     </>
   );

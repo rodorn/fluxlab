@@ -84,11 +84,11 @@ export default function Tabs({ tabs, ariaLabel = "Sekcje strony" }: Props) {
   return (
     <div ref={wrapRef}>
       {/* Pasek zakładek, sticky pod headerem */}
-      <div className="sticky top-16 z-30 -mx-6 lg:-mx-8 px-6 lg:px-8 py-3 bg-white/85 dark:bg-gray-950/85 backdrop-blur-md border-b border-gray-100 dark:border-gray-800">
+      <div className="sticky top-16 z-30 -mx-6 lg:-mx-8 px-6 lg:px-8 bg-white/85 dark:bg-gray-950/85 backdrop-blur-md">
         <div
           role="tablist"
           aria-label={ariaLabel}
-          className="container-wide flex flex-wrap gap-2"
+          className="container-wide flex flex-wrap gap-x-6 gap-y-0 border-b border-gray-200 dark:border-gray-800"
         >
           {tabs.map((t, i) => (
             <button
@@ -103,10 +103,10 @@ export default function Tabs({ tabs, ariaLabel = "Sekcje strony" }: Props) {
               tabIndex={active === i ? 0 : -1}
               onClick={() => select(i)}
               onKeyDown={(e) => onKeyDown(e, i)}
-              className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
+              className={`-mb-px border-b-2 px-1 py-3 text-sm font-semibold transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-t ${
                 active === i
-                  ? "bg-accent-solid text-white shadow-sm shadow-accent/30"
-                  : "text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+                  ? "border-accent text-accent"
+                  : "border-transparent text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
               }`}
             >
               {t.label}

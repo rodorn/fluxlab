@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import WykresSlupkowy from "@/components/WykresSlupkowy";
 import { wykreslenia } from "@/lib/wykreslenia";
@@ -57,9 +58,10 @@ export default async function Page() {
     <>
       <Header />
       <main className="mx-auto max-w-3xl px-4 pb-20 pt-28 md:pt-32">
-        <Breadcrumbs items={[{ label: "Ile spółek znika z KRS" }]} />
+        <Breadcrumbs href="/ile-spolek-znika-z-krs" items={[{ label: "Ile spółek znika z KRS" }]} />
 
-        <h1 className="mt-6 text-3xl font-bold tracking-tight text-gray-900 dark:text-white md:text-4xl">
+        <p className="section-label mt-6 mb-3">Badanie</p>
+        <h1 className="h1-strony">
           Ile spółek dziennie trafia do wykreślenia z KRS
         </h1>
         <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
@@ -133,7 +135,7 @@ export default async function Page() {
         </div>
 
         <div className="mt-16 max-w-3xl">
-          <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
+          <h2 className="h2-sekcji">
             Najczęstsze pytania
           </h2>
           <div className="mt-6 space-y-4">
@@ -153,6 +155,7 @@ export default async function Page() {
           </div>
         </div>
       </main>
+      <CTA />
 
       <script
         type="application/ld+json"

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 
@@ -33,8 +34,8 @@ export default function BledyRaportowanieArticle() {
   return (
     <>
       <Header />
-      <main className="pt-16 prose-justify">
-        <Breadcrumbs kolumna="srodek"
+      <main className="pt-16">
+        <Breadcrumbs href="/strefa-wiedzy/najczestsze-bledy-w-raportowaniu-sprzedazy" kolumna="srodek"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Najczęstsze błędy w raportowaniu sprzedaży" },
@@ -45,7 +46,7 @@ export default function BledyRaportowanieArticle() {
         <section className="pt-24 pb-10">
           <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
             <span className="section-label">Strefa wiedzy</span>
-            <h1 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">
+            <h1 className="h1-artykulu mt-4">
               Najczęstsze błędy w raportowaniu sprzedaży
             </h1>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -55,7 +56,7 @@ export default function BledyRaportowanieArticle() {
           </div>
         </section>
 
-        <div className="container-wide pb-20">
+        <div className="container-wide pb-20 prose-justify">
           <div className="max-w-3xl mx-auto px-6 lg:px-8 space-y-10">
             <ol className="space-y-6">
               {[
@@ -74,7 +75,7 @@ export default function BledyRaportowanieArticle() {
             </ol>
 
             <section>
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+              <h2 className="h2-sekcji mb-4">
                 Jak to naprawić
               </h2>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -92,14 +93,14 @@ export default function BledyRaportowanieArticle() {
 
             <PrevNextArticle currentHref="/strefa-wiedzy/najczestsze-bledy-w-raportowaniu-sprzedazy" />
 
-            <div className="rounded-2xl bg-gray-50 dark:bg-gray-900/50 p-8 text-center">
-              <p className="text-lg font-medium text-gray-900 dark:text-white">
-                Nie masz pewności, czy raporty pokazują prawdę?
-              </p>
-              <Link href="/automatyzacja-raportowania" className="btn-primary mt-6 inline-block">
+            <p className="text-center text-gray-600 dark:text-gray-400">
+              Nie masz pewności, czy raporty pokazują prawdę?{" "}
+              <Link href="/automatyzacja-raportowania" className="text-accent hover:underline">
                 Zobacz usługę Automatyzacja raportowania
               </Link>
-            </div>
+            </p>
+
+            <CTA />
           </div>
         </div>
       </main>

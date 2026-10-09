@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TrackedCTA from "@/components/TrackedCTA";
 import LandingForm from "@/components/LandingForm";
 import Tabs from "@/components/Tabs";
 import Link from "next/link";
-import ProductGrid from "@/components/ProductGrid";
+import ProductCard from "@/components/ProductCard";
+import { PRODUCTS } from "@/lib/products";
 import DrogaLeada from "@/components/DrogaLeada";
 
 export const metadata: Metadata = {
@@ -84,6 +86,12 @@ const faq = [
   },
 ];
 
+const POWIAZANE_Z_CRM = [
+  "/integracja-crm-z-erp",
+  "/automatyzacja-raportowania",
+  "/wdrozenie-n8n-cena",
+];
+
 export default function AutomatyzacjaLeadowCRM() {
   const faqSchema = {
     "@context": "https://schema.org",
@@ -124,16 +132,16 @@ export default function AutomatyzacjaLeadowCRM() {
     <>
       <Header />
       <main className="pt-16">
-        <Breadcrumbs items={[{ label: "Automatyzacja leadów i CRM" }]} />
+        <Breadcrumbs href="/automatyzacja-leadow-crm" items={[{ label: "Automatyzacja leadów i CRM" }]} />
 
         {/* Hero, kompaktowy */}
         <section className="relative overflow-hidden pt-24 pb-12">
           <div className="blob blob-accent w-[40rem] h-[40rem] -top-40 -right-40 animate-drift-slow" />
           <div className="container-wide relative">
             <div className="max-w-3xl">
-              <span className="section-label">Automatyzacja leadów i CRM</span>
-              <h1 className="display-lg text-gray-900 dark:text-white mt-4">
-                Automatyzacja CRM z AI bez pracy ręcznej.
+              <span className="section-label">Usługa</span>
+              <h1 className="h1-strony mt-4">
+                Automatyzacja CRM z AI bez pracy ręcznej
               </h1>
               <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
                 Leady same trafiają do CRM i dostają handlowca, zadanie i
@@ -143,11 +151,11 @@ export default function AutomatyzacjaLeadowCRM() {
                 <TrackedCTA
                   href="#sekcje"
                   location="lp_leadow_hero"
-                  label="diagnoza"
+                  label="Bezpłatna diagnoza"
                   eventName="cta_click_landing_audit"
-                  className="btn-primary px-8 py-3.5 text-base"
+                  className="btn-primary"
                 >
-                  Zamów bezpłatną diagnozę
+                  Bezpłatna diagnoza
                 </TrackedCTA>
               </div>
             </div>
@@ -162,7 +170,19 @@ export default function AutomatyzacjaLeadowCRM() {
         </section>
 
         <section className="container-wide pb-16">
-          <ProductGrid category="automatyzacja" showHeading />
+          <h2 className="h2-sekcji">Zobacz, jak to wdrażamy</h2>
+          <div className="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {PRODUCTS.filter((p) => POWIAZANE_Z_CRM.includes(p.href)).map(
+              (p) => (
+                <ProductCard key={p.name} p={p} />
+              ),
+            )}
+          </div>
+          <p className="mt-6">
+            <Link href="/produkty" className="text-accent hover:underline">
+              Zobacz cały cennik
+            </Link>
+          </p>
         </section>
 
         <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
@@ -174,8 +194,7 @@ export default function AutomatyzacjaLeadowCRM() {
                 content: (
                   <section className="py-10 lg:py-12">
                     <div className="max-w-4xl">
-                      <span className="section-label">Co dostajesz</span>
-                      <h2 className="display-md text-gray-900 dark:text-white mt-4 mb-12">
+                      <h2 className="h2-sekcji mt-4 mb-12">
                         Proces, który pilnuje się sam.
                       </h2>
                       <div className="grid sm:grid-cols-2 gap-5">
@@ -231,8 +250,7 @@ export default function AutomatyzacjaLeadowCRM() {
                 content: (
                   <section className="py-10 lg:py-12">
                     <div className="max-w-4xl">
-                      <span className="section-label">Jak to działa</span>
-                      <h2 className="display-md text-gray-900 dark:text-white mt-4 mb-12">
+                      <h2 className="h2-sekcji mt-4 mb-12">
                         Trzy kroki do wdrożenia.
                       </h2>
                       <div className="grid md:grid-cols-3 gap-5">
@@ -287,8 +305,7 @@ export default function AutomatyzacjaLeadowCRM() {
                 content: (
                   <section className="py-10 lg:py-12">
                     <div className="max-w-3xl">
-                      <span className="section-label">FAQ</span>
-                      <h2 className="display-md text-gray-900 dark:text-white mt-4 mb-10">
+                      <h2 className="h2-sekcji mt-4 mb-10">
                         Najczęstsze pytania.
                       </h2>
                       <div className="space-y-4">
@@ -346,6 +363,7 @@ export default function AutomatyzacjaLeadowCRM() {
             ]}
           />
         </div>
+        <CTA />
       </main>
       <Footer />
 

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import CTA from "@/components/CTA";
 import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
@@ -129,13 +129,13 @@ function renderStep(step: Step) {
       className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-6 lg:p-8"
     >
       <div className="flex flex-col lg:flex-row lg:items-start gap-6">
-        <div className="flex-shrink-0">
+        <div className="w-16 shrink-0 tabular-nums">
           <span className="text-4xl lg:text-5xl font-bold text-accent">
             {step.number}
           </span>
         </div>
         <div className="flex-1">
-          <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-1">
+          <h2 className="h2-sekcji mb-1">
             {step.title}
           </h2>
           <p className="text-sm text-accent font-medium mb-3">
@@ -199,14 +199,14 @@ export default function JakPracuje() {
     <>
       <Header />
       <main>
-        <Breadcrumbs kolumna="srodek" items={[{ label: "Jak pracujemy" }]} />
+        <Breadcrumbs href="/jak-pracuje" kolumna="srodek" items={[{ label: "Jak pracujemy" }]} />
 
         {/* Hero, kompaktowy */}
         <section className="pt-16 pb-6 bg-gray-50 dark:bg-gray-900/50 border-b border-gray-100 dark:border-gray-800">
           <div className="container-wide">
             <div className="max-w-3xl mx-auto text-center">
-              <span className="section-label">Proces współpracy</span>
-              <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mt-3 mb-4 leading-tight">
+              <p className="section-label mb-3">O nas</p>
+              <h1 className="h1-strony mb-4">
                 Jak pracujemy
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -236,8 +236,7 @@ export default function JakPracuje() {
                   <div className="py-6 lg:py-8">
                     <div className="max-w-4xl mx-auto">
                       <div className="text-center mb-8">
-                        <span className="section-label">Model rozliczeń</span>
-                        <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-3 mb-3">
+                        <h2 className="h2-sekcji mb-3">
                           Jak wygląda cena
                         </h2>
                       </div>
@@ -265,7 +264,7 @@ export default function JakPracuje() {
                 content: (
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
-                      <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-8 text-center">
+                      <h2 className="h2-sekcji mb-8 text-center">
                         Najczęstsze pytania
                       </h2>
                       <div className="space-y-4">
@@ -304,27 +303,10 @@ export default function JakPracuje() {
                   </div>
                 ),
               },
-              {
-                label: "Kontakt",
-                content: (
-                  <div className="py-6 lg:py-8">
-                    <div className="max-w-2xl mx-auto text-center">
-                      <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                        Zamów diagnozę procesu
-                      </h2>
-                      <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-                        30 minut, bez zobowiązań.
-                      </p>
-                      <Link href="/kontakt" className="btn-primary">
-                        Zamów diagnozę
-                      </Link>
-                    </div>
-                  </div>
-                ),
-              },
             ]}
           />
         </div>
+        <CTA />
       </main>
       <Footer />
 

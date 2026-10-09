@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 import Tabs from "@/components/Tabs";
@@ -34,8 +35,8 @@ export default function VatWJdgArticle() {
   return (
     <>
       <Header />
-      <main className="pt-16 prose-justify">
-        <Breadcrumbs kolumna="srodek"
+      <main className="pt-16">
+        <Breadcrumbs href="/strefa-wiedzy/vat-w-jdg-kiedy-warto" kolumna="srodek"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "VAT w JDG, kiedy warto" },
@@ -45,7 +46,7 @@ export default function VatWJdgArticle() {
         <section className="pt-24 pb-10">
           <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
             <span className="section-label">Strefa wiedzy</span>
-            <h1 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">
+            <h1 className="h1-artykulu mt-4">
               VAT w JDG, kiedy warto być vatowcem
             </h1>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -56,7 +57,7 @@ export default function VatWJdgArticle() {
           </div>
         </section>
 
-        <div className="container-wide pb-20">
+        <div className="container-wide pb-20 prose-justify">
           <Tabs
             ariaLabel="Rozdziały artykułu VAT w JDG"
             tabs={[
@@ -65,7 +66,7 @@ export default function VatWJdgArticle() {
                 content: (
                   <div className="py-10 lg:py-12">
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                      <h2 className="h2-sekcji mb-6">
                         Zwolnienie podmiotowe
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
@@ -79,7 +80,7 @@ export default function VatWJdgArticle() {
                         w trakcie roku, limit liczy się proporcjonalnie.
                       </p>
 
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 mt-12">
+                      <h2 className="h2-sekcji mb-6 mt-12">
                         Kiedy musisz być vatowcem
                       </h2>
                       <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
@@ -108,7 +109,7 @@ export default function VatWJdgArticle() {
                 content: (
                   <div className="py-10 lg:py-12">
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                      <h2 className="h2-sekcji mb-6">
                         Kiedy warto być vatowcem dobrowolnie
                       </h2>
                       <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
@@ -128,7 +129,7 @@ export default function VatWJdgArticle() {
                         1 150 zł VAT miesięcznie, czyli 13 800 zł rocznie.
                       </p>
 
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 mt-12">
+                      <h2 className="h2-sekcji mb-6 mt-12">
                         Kiedy NIE warto
                       </h2>
                       <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
@@ -152,10 +153,7 @@ export default function VatWJdgArticle() {
                         <p className="text-gray-600 dark:text-gray-400 mb-4">
                           Sprawdź wpływ VAT na Twoje rozliczenie
                         </p>
-                        <Link
-                          href="/kalkulator-podatkowy"
-                          className="btn-primary inline-block"
-                        >
+                        <Link href="/kalkulator-podatkowy" className="btn-primary inline-block">
                           Sprawdź w kalkulatorze JDG 2026
                         </Link>
                       </div>
@@ -168,7 +166,7 @@ export default function VatWJdgArticle() {
                 content: (
                   <div className="py-10 lg:py-12">
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                      <h2 className="h2-sekcji mb-6">
                         Wpływ VAT na cashflow
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
@@ -183,7 +181,7 @@ export default function VatWJdgArticle() {
                         faktury.
                       </p>
 
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 mt-12">
+                      <h2 className="h2-sekcji mb-6 mt-12">
                         VAT a forma opodatkowania
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
@@ -200,7 +198,7 @@ export default function VatWJdgArticle() {
                         .
                       </p>
 
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 mt-12">
+                      <h2 className="h2-sekcji mb-6 mt-12">
                         VAT a samochód w firmie
                       </h2>
                       <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
@@ -219,7 +217,7 @@ export default function VatWJdgArticle() {
                         do utrzymania.
                       </p>
 
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 mt-12">
+                      <h2 className="h2-sekcji mb-6 mt-12">
                         Podsumowanie
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
@@ -237,7 +235,7 @@ export default function VatWJdgArticle() {
                 content: (
                   <div className="py-10 lg:py-12">
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                      <h2 className="h2-sekcji mb-6">
                         FAQ
                       </h2>
                       <div className="space-y-4">
@@ -340,21 +338,7 @@ export default function VatWJdgArticle() {
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
                       <PrevNextArticle currentHref="/strefa-wiedzy/vat-w-jdg-kiedy-warto" />
 
-                      <div className="bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-8 text-center mt-12">
-                        <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                          Nie wiesz, czy warto rejestrować się do VAT?
-                        </h2>
-                        <p className="text-gray-600 dark:text-gray-400 mb-4">
-                          Sprawdź kalkulator lub umów się na bezpłatną
-                          konsultację.
-                        </p>
-                        <Link
-                          href="/kontakt"
-                          className="btn-primary inline-block"
-                        >
-                          Zamów diagnozę procesu
-                        </Link>
-                      </div>
+                      <CTA />
 
                       <div className="mt-12">
                         <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">

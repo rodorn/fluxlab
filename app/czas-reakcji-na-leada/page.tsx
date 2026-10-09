@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TrackedCTA from "@/components/TrackedCTA";
 
@@ -82,7 +83,7 @@ const faq = [
   },
 ];
 
-const h2 = "mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-6 leading-tight";
+const h2 = "h2-sekcji mt-4 mb-6";
 const card = "bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-xl px-5 py-4";
 
 export default function CzasReakcjiNaLeada() {
@@ -103,13 +104,13 @@ export default function CzasReakcjiNaLeada() {
     <>
       <Header />
       <main className="pt-16">
-        <Breadcrumbs kolumna="srodek" items={[{ label: "Czas reakcji na leada" }]} />
+        <Breadcrumbs href="/czas-reakcji-na-leada" kolumna="srodek" items={[{ label: "Czas reakcji na leada" }]} />
 
         <section className="pt-16 pb-10 bg-gradient-to-b from-accent/10 to-transparent border-b border-gray-100 dark:border-gray-800">
           <div className="container-wide">
-            <div className="max-w-3xl mx-auto text-center">
-              <span className="section-label">Speed-to-lead B2B</span>
-              <h1 className="mt-4 text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+            <div className="max-w-3xl">
+              <span className="section-label">Usługa</span>
+              <h1 className="h1-strony mt-4 mb-6">
                 Jak skrócić czas reakcji na leada bez dokładania pracy
                 handlowcom
               </h1>
@@ -119,15 +120,15 @@ export default function CzasReakcjiNaLeada() {
                 Automatyzujemy drogę leada tak, żeby handlowiec wiedział o nim w
                 kilka sekund.
               </p>
-              <div className="mt-8 flex justify-center">
+              <div className="mt-8 flex">
                 <TrackedCTA
                   href="#sekcje"
                   location="article_speed_hero"
-                  label="Chcemy szybszą obsługę leadów"
+                  label="Bezpłatna diagnoza"
                   eventName="cta_click_article_audit"
-                  className="btn-primary px-8 py-3.5 text-base"
+                  className="btn-primary"
                 >
-                  Chcemy szybszą obsługę leadów
+                  Bezpłatna diagnoza
                 </TrackedCTA>
               </div>
             </div>
@@ -136,7 +137,6 @@ export default function CzasReakcjiNaLeada() {
 
         <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
           <section className="pt-12 max-w-3xl mx-auto">
-            <span className="section-label">Problem</span>
             <h2 className={h2}>Po czym poznać, że leady czekają za długo</h2>
             <ul className="space-y-3">
               {symptoms.map((s) => (
@@ -160,7 +160,6 @@ export default function CzasReakcjiNaLeada() {
           </section>
 
           <section className="mt-12 pt-12 border-t border-gray-100 dark:border-gray-800 max-w-3xl mx-auto">
-            <span className="section-label">Jak to działa</span>
             <h2 className={h2}>Pierwsze 30 sekund po wysłaniu formularza</h2>
             <ol className="space-y-3">
               {workflowSteps.map((s, i) => (
@@ -188,7 +187,6 @@ export default function CzasReakcjiNaLeada() {
 
           <section className="mt-12 pt-12 border-t border-gray-100 dark:border-gray-800 max-w-4xl mx-auto">
             <div className="text-center mb-10">
-              <span className="section-label">Cennik</span>
               <h2 className={h2}>Ile kosztuje wdrożenie</h2>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                 Stała cena za projekt. Konkretną wycenę podajemy po 30-minutowej
@@ -274,26 +272,9 @@ export default function CzasReakcjiNaLeada() {
               .
             </p>
           </section>
-
-          <section className="mt-12 pt-12 border-t border-gray-100 dark:border-gray-800 max-w-2xl mx-auto text-center">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Leady odbierane w 5 minut zamiast 5 godzin
-            </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-              30 minut rozmowy: pierwszy krok i szacunkowy koszt. Bez
-              zobowiązań.
-            </p>
-            <TrackedCTA
-              href="/kontakt"
-              location="article_speed_final"
-              label="Chcemy szybszą obsługę leadów"
-              eventName="cta_click_article_audit"
-              className="btn-primary px-8 py-3.5 text-base"
-            >
-              Chcemy szybszą obsługę leadów
-            </TrackedCTA>
-          </section>
         </div>
+        <CTA />
+
       </main>
       <Footer />
 

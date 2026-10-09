@@ -3,6 +3,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import CTA from "@/components/CTA";
 import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
@@ -121,17 +122,18 @@ export default function Pilotaz() {
     <>
       <Header />
       <main className="pt-16 prose-justify">
-        <Breadcrumbs kolumna="srodek" items={[{ label: "Program case study" }]} />
+        <Breadcrumbs href="/pilotaz" kolumna="srodek" items={[{ label: "Program case study" }]} />
 
         {/* Hero, kompaktowy */}
         <section className="pt-24 pb-12 bg-gradient-to-b from-accent/10 to-transparent border-b border-gray-100 dark:border-gray-800">
           <div className="container-wide">
             <div className="max-w-3xl mx-auto text-center">
+              <p className="section-label mb-3">O nas</p>
               <div className="inline-flex items-center gap-2 bg-accent/15 text-accent-hover text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
                 <span className="w-1.5 h-1.5 bg-accent rounded-full animate-pulse" />
                 Zostały 3 miejsca
               </div>
-              <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+              <h1 className="h1-strony mb-6">
                 3 miejsca na publiczne case study
               </h1>
               <p className="text-xl text-gray-700 dark:text-gray-300 mb-4 font-medium">
@@ -144,9 +146,6 @@ export default function Pilotaz() {
               <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="#sekcje" className="btn-primary">
                   Aplikuj do programu case study
-                </Link>
-                <Link href="/jak-pracuje" className="btn-secondary">
-                  Zobacz jak pracujemy
                 </Link>
               </div>
             </div>
@@ -163,10 +162,7 @@ export default function Pilotaz() {
                   <div className="py-10 lg:py-12">
                     <div className="max-w-4xl mx-auto">
                       <div className="text-center mb-12">
-                        <span className="section-label">
-                          Twoja strona umowy
-                        </span>
-                        <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4">
+                        <h2 className="h2-sekcji">
                           Co dostajesz
                         </h2>
                       </div>
@@ -195,8 +191,7 @@ export default function Pilotaz() {
                   <div className="py-10 lg:py-12">
                     <div className="max-w-4xl mx-auto">
                       <div className="text-center mb-12">
-                        <span className="section-label">Nasza strona umowy</span>
-                        <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4">
+                        <h2 className="h2-sekcji">
                           Co dajesz w zamian
                         </h2>
                       </div>
@@ -225,8 +220,7 @@ export default function Pilotaz() {
                   <div className="py-10 lg:py-12">
                     <div className="max-w-3xl mx-auto">
                       <div className="text-center mb-12">
-                        <span className="section-label">Kryteria</span>
-                        <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4">
+                        <h2 className="h2-sekcji">
                           Dla kogo
                         </h2>
                       </div>
@@ -267,8 +261,7 @@ export default function Pilotaz() {
                   <div className="py-10 lg:py-12">
                     <div className="max-w-3xl mx-auto">
                       <div className="text-center mb-12">
-                        <span className="section-label">Wykluczenia</span>
-                        <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4">
+                        <h2 className="h2-sekcji">
                           Dla kogo NIE
                         </h2>
                       </div>
@@ -309,8 +302,7 @@ export default function Pilotaz() {
                   <div className="py-10 lg:py-12">
                     <div className="max-w-4xl mx-auto">
                       <div className="text-center mb-12">
-                        <span className="section-label">Proces</span>
-                        <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4">
+                        <h2 className="h2-sekcji">
                           Jak wygląda aplikacja
                         </h2>
                       </div>
@@ -357,7 +349,7 @@ export default function Pilotaz() {
                 content: (
                   <div className="py-10 lg:py-12">
                     <div className="max-w-3xl mx-auto">
-                      <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-12 text-center">
+                      <h2 className="h2-sekcji mb-12 text-center">
                         Najczęstsze pytania
                       </h2>
                       <div className="space-y-4">
@@ -396,27 +388,10 @@ export default function Pilotaz() {
                   </div>
                 ),
               },
-              {
-                label: "Aplikuj",
-                content: (
-                  <div className="py-10 lg:py-12">
-                    <div className="max-w-2xl mx-auto text-center bg-accent/10 border border-gray-100 dark:border-gray-800 rounded-2xl p-10">
-                      <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                        Zostały 3 miejsca
-                      </h2>
-                      <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-                        Odpowiadamy w 48 h.
-                      </p>
-                      <Link href="/kontakt" className="btn-primary">
-                        Aplikuj do programu case study
-                      </Link>
-                    </div>
-                  </div>
-                ),
-              },
             ]}
           />
         </div>
+        <CTA naglowek="Zostały 3 miejsca" opis="Odpowiadamy w 48 h." etykieta="Aplikuj do programu case study" />
       </main>
       <Footer />
 

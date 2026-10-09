@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import LandingForm from "@/components/LandingForm";
 import TrackedCTA from "@/components/TrackedCTA";
@@ -66,7 +67,7 @@ export default function ScrapingDanychPage() {
     <>
       <Header />
       <main>
-        <Breadcrumbs items={[{ label: "Scraping danych" }]} />
+        <Breadcrumbs href="/scraping-danych" items={[{ label: "Scraping danych" }]} />
 
         {/* Hero, kompaktowy */}
         <section
@@ -81,16 +82,14 @@ export default function ScrapingDanychPage() {
             aria-hidden="true"
             className="blob blob-accent -z-10 bottom-[-20%] right-[-10%] w-[500px] h-[500px]"
           />
-          <div className="container-wide relative">
-            <div className="max-w-3xl">
-              <p className="section-label animate-fade-up-1 mb-4">
-                Scraping danych
-              </p>
+          <div className="container-wide max-w-3xl mx-auto relative">
+            <div>
+              <p className="section-label animate-fade-up-1 mb-4">Usługa</p>
               <h1
                 id="hero-heading"
-                className="display-xl animate-fade-up-2 mb-6 text-gray-900 dark:text-white"
+                className="h1-strony animate-fade-up-2 mb-6"
               >
-                Wyciągamy dane z miejsc, w których normalnie giną.
+                Wyciągamy dane z miejsc, w których normalnie giną
               </h1>
               <p className="animate-fade-up-3 text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-10 max-w-2xl">
                 Strony WWW, PDF-y, maile i dokumenty trafiają do Twojego CRM
@@ -102,9 +101,9 @@ export default function ScrapingDanychPage() {
                   location="hero_scraping"
                   label="diagnoza"
                   eventName="cta_click_hero_scraping_audit"
-                  className="btn-primary text-base px-8 py-4"
+                  className="btn-primary"
                 >
-                  Zamów bezpłatną diagnozę
+                  Bezpłatna diagnoza
                 </TrackedCTA>
                 {/* Odnosnik do sprawdzenia stoi obok glownego przycisku, bo
                     pomiar pokazal, ze narzedzia schowane nizej nikt nie
@@ -130,7 +129,7 @@ export default function ScrapingDanychPage() {
         <section className="container-wide pb-16" aria-labelledby="cennik-heading">
           <h2
             id="cennik-heading"
-            className="text-2xl font-bold text-gray-900 dark:text-white"
+            className="h2-sekcji"
           >
             Ile to kosztuje
           </h2>
@@ -194,7 +193,7 @@ export default function ScrapingDanychPage() {
                   >
                     <h2
                       id="zrodla-heading"
-                      className="display-lg text-gray-900 dark:text-white mb-12 max-w-2xl"
+                      className="h2-sekcji mb-12 max-w-2xl"
                     >
                       4 typy źródeł, jeden pipeline
                     </h2>
@@ -226,7 +225,7 @@ export default function ScrapingDanychPage() {
                     <div className="max-w-3xl mx-auto">
                       <h2
                         id="faq-heading"
-                        className="display-lg text-gray-900 dark:text-white mb-8"
+                        className="h2-sekcji mb-8"
                       >
                         Częste pytania
                       </h2>
@@ -285,6 +284,7 @@ export default function ScrapingDanychPage() {
             ]}
           />
         </div>
+      <CTA />
       </main>
 
       {/* Service Schema */}

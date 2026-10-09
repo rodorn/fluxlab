@@ -96,8 +96,8 @@ export default function ImportRadarPage() {
       <Header />
       <main className="pt-16">
         <Breadcrumbs
+          href="/import-radar"
           items={[
-            { label: "Produkty", href: "/produkty" },
             { label: "ImportRadar DE→PL" },
           ]}
         />
@@ -105,9 +105,10 @@ export default function ImportRadarPage() {
         {/* Hero */}
         <section className="relative overflow-hidden pt-24 pb-12">
           <div className="blob blob-accent -z-10 -top-32 -right-24 h-96 w-96" />
-          <div className="container-wide max-w-3xl">
-            <p className="section-label mb-5">Produkt</p>
-            <h1 className="display-lg text-gray-900 dark:text-white">
+          <div className="container-wide">
+          <div className="max-w-3xl">
+            <p className="section-label mb-5">Narzędzie</p>
+            <h1 className="h1-strony text-gray-900 dark:text-white">
               Sprawdź, czy import z Niemiec naprawdę się opłaca
             </h1>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-300">
@@ -118,13 +119,8 @@ export default function ImportRadarPage() {
               <a href="#zamow" className="btn-primary inline-flex">
                 Zamów analizę za darmo
               </a>
-              <a
-                href="#cennik"
-                className="text-sm font-semibold text-accent hover:underline"
-              >
-                Zobacz cennik →
-              </a>
             </div>
+          </div>
           </div>
         </section>
 
@@ -132,7 +128,7 @@ export default function ImportRadarPage() {
           {/* Jak działa */}
           <section>
             <div className="max-w-3xl">
-              <h2 className="display-xl mb-10 text-gray-900 dark:text-white">
+              <h2 className="h2-sekcji mb-10 text-gray-900 dark:text-white">
                 Jak to działa
               </h2>
             </div>
@@ -159,7 +155,7 @@ export default function ImportRadarPage() {
           {/* Przykładowy efekt */}
           <section>
             <div className="max-w-3xl">
-              <h2 className="display-xl mb-8 text-gray-900 dark:text-white">
+              <h2 className="h2-sekcji mb-8 text-gray-900 dark:text-white">
                 Przykładowy efekt
               </h2>
             </div>
@@ -209,7 +205,7 @@ export default function ImportRadarPage() {
           {/* Cennik */}
           <section id="cennik" className="scroll-mt-20">
             <div className="max-w-3xl">
-              <h2 className="display-xl mb-10 text-gray-900 dark:text-white">
+              <h2 className="h2-sekcji mb-10 text-gray-900 dark:text-white">
                 Cennik
               </h2>
             </div>
@@ -281,7 +277,7 @@ export default function ImportRadarPage() {
           {/* FAQ */}
           <section>
             <div className="max-w-3xl">
-              <h2 className="display-xl mb-10 text-gray-900 dark:text-white">
+              <h2 className="h2-sekcji mb-10 text-gray-900 dark:text-white">
                 Pytania i odpowiedzi
               </h2>
               <div className="space-y-4">

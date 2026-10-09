@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Tabs from "@/components/Tabs";
 import PrevNextArticle from "@/components/PrevNextArticle";
@@ -66,7 +67,7 @@ export default function CrmDlaJednoosobowejFirmyArticle() {
     <>
       <Header />
       <main className="pt-16 prose-justify">
-        <Breadcrumbs kolumna="waska"
+        <Breadcrumbs href="/strefa-wiedzy/crm-dla-jednoosobowej-firmy" kolumna="waska"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "CRM dla jednoosobowej firmy, co wybrać" },
@@ -76,10 +77,10 @@ export default function CrmDlaJednoosobowejFirmyArticle() {
         <section className="pt-24 pb-10">
           <div className="container-wide max-w-3xl mx-auto">
             <span className="section-label">Strefa wiedzy</span>
-            <h1 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">
+            <h1 className="mt-4 h1-artykulu">
               CRM dla jednoosobowej firmy, co wybrać
             </h1>
-            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed !text-left">
               W jednoosobowej firmie CRM ma przypominać, do kogo wrócić, i
               pokazywać, gdzie utknęły rozmowy. Wszystko poza tym to
               overengineering.
@@ -96,7 +97,7 @@ export default function CrmDlaJednoosobowejFirmyArticle() {
                 content: (
                   <div className="py-10 lg:py-12">
                     <div className="max-w-3xl mx-auto">
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                      <h2 className="mb-6 h2-sekcji">
                         Pipedrive i HubSpot Free
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
@@ -125,7 +126,7 @@ export default function CrmDlaJednoosobowejFirmyArticle() {
                         .
                       </p>
 
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                      <h2 className="mb-6 h2-sekcji">
                         Folk, Attio, Notion i Arkusze Google
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
@@ -150,7 +151,7 @@ export default function CrmDlaJednoosobowejFirmyArticle() {
                 content: (
                   <div className="py-10 lg:py-12">
                     <div className="max-w-3xl mx-auto">
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                      <h2 className="mb-6 h2-sekcji">
                         Jak wybrać w praktyce
                       </h2>
                       <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-400">
@@ -172,7 +173,7 @@ export default function CrmDlaJednoosobowejFirmyArticle() {
                         </li>
                       </ul>
 
-                      <h2 className="mt-10 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                      <h2 className="mt-10 mb-6 h2-sekcji">
                         Czego unikać
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
@@ -188,7 +189,7 @@ export default function CrmDlaJednoosobowejFirmyArticle() {
                         .
                       </p>
 
-                      <h2 className="mt-10 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                      <h2 className="mt-10 mb-6 h2-sekcji">
                         Minimalny zestaw automatów
                       </h2>
                       <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-400">
@@ -232,7 +233,7 @@ export default function CrmDlaJednoosobowejFirmyArticle() {
                 content: (
                   <div className="py-10 lg:py-12">
                     <div className="max-w-3xl mx-auto">
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                      <h2 className="mb-6 h2-sekcji">
                         FAQ
                       </h2>
                       <div className="space-y-6">
@@ -263,21 +264,7 @@ export default function CrmDlaJednoosobowejFirmyArticle() {
         </section>
 
         {/* CTA */}
-        <section className="py-12 lg:py-16">
-          <div className="max-w-3xl mx-auto px-6 lg:px-8">
-            <div className="rounded-2xl bg-accent/10 p-8 lg:p-12 text-center">
-              <p className="text-lg font-medium text-gray-900 dark:text-white">
-                Chcesz dobrać CRM i automaty pod swoją jednoosobową firmę?
-              </p>
-              <Link
-                href="/automatyzacja-leadow-crm"
-                className="btn-primary mt-6 inline-block"
-              >
-                Zobacz usługę Automatyzacja CRM
-              </Link>
-            </div>
-          </div>
-        </section>
+        <CTA naglowek="Chcesz dobrać CRM i automaty pod swoją jednoosobową firmę?" />
       </main>
       <Footer />
 

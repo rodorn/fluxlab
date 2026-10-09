@@ -1,4 +1,4 @@
-export type ProductCategory = "www" | "automatyzacja" | "dane";
+export type ProductCategory = "www" | "automatyzacja" | "dane" | "prywatne";
 
 /**
  * Drugi poziom porządku. Trzy filary to za mało, żeby połapać się w
@@ -33,6 +33,7 @@ export const CATEGORY_LABEL: Record<ProductCategory, string> = {
   automatyzacja: "Automatyzacja procesów",
   dane: "Integracje i dane",
   www: "Systemy i strony",
+  prywatne: "Dla osób prywatnych",
 };
 
 export const GROUP_LABEL: Record<ProductGroup, string> = {
@@ -63,6 +64,7 @@ export const CATEGORY_ORDER: ProductCategory[] = [
   "automatyzacja",
   "dane",
   "www",
+  "prywatne",
 ];
 
 export const GROUP_INTRO: Record<ProductGroup, string> = {
@@ -83,6 +85,8 @@ export const CATEGORY_INTRO: Record<ProductCategory, string> = {
   automatyzacja:
     "Audyty i naprawy tego, co już masz wdrożone, oraz nowe integracje szyte pod Twój proces.",
   dane: "Raporty, które zamieniają publiczne i Twoje własne dane w jedną decyzję: kupować, sprzedawać, sprawdzić.",
+  prywatne:
+    "Darmowe sprawdzenia dla osób prywatnych: samochód, podatki i ceny energii.",
 };
 
 export const PRODUCTS: Product[] = [
@@ -105,7 +109,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     category: "www",
-    name: "Poprawki i nowe podstrony",
+    name: "Strony WWW i poprawki",
     tagline: "WordPress, Elementor, Greenshift",
     desc: "Drobne zmiany na działającej stronie robione tak, żeby przeżyły aktualizację motywu: style globalne zamiast lokalnych nadpisań i punkty graniczne motywu zamiast sztywnych pikseli.",
     price: "od 99 zł",
@@ -136,7 +140,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     category: "www",
-    name: "Landing z formularzem i płatnością",
+    name: "Landing z płatnością",
     tagline: "Szybkie wdrożenie pod jedną kampanię",
     desc: "Jedna strona sprzedażowa z formularzem i bramką płatniczą, gotowa pod BLIK i przelewy. Zgłoszenie zapisuje się zanim klient przejdzie do płatności, więc nie tracisz danych osób, które zrezygnują w trakcie.",
     price: "od 299 zł",
@@ -188,7 +192,7 @@ export const PRODUCTS: Product[] = [
     name: "Widoczność w AI",
     tagline: "Czy asystent w ogóle widzi Twoją stronę",
     desc: "Klient coraz częściej pyta asystenta o firmę do konkretnego zadania zamiast wpisywać frazę w wyszukiwarkę. Sprawdzamy siedem warunków, od których zależy, czy Twoja strona może w takiej odpowiedzi wystąpić: dostęp dla robotów, treść bez skryptów, dane uporządkowane, metadane, mapa strony i llms.txt.",
-    price: "sprawdzenie za darmo",
+    price: "0 zł",
     href: "/widocznosc-w-ai",
     grupa: "diagnostyka",
     narzedzie: true,
@@ -279,8 +283,8 @@ export const PRODUCTS: Product[] = [
     featured: true,
   },
   {
-    category: "automatyzacja",
-    name: "Audyt zmarnowanego budżetu Google Ads",
+    category: "www",
+    name: "Audyt Google Ads",
     tagline: "Odzyskaj pieniądze przepalane na frazy bez konwersji",
     desc: "Analiza raportu wyszukiwanych haseł: ile budżetu idzie na kliknięcia bez efektu, gotowa lista wykluczeń i plan naprawy konta.",
     price: "69 zł",
@@ -294,7 +298,7 @@ export const PRODUCTS: Product[] = [
     ],
   },
   {
-    category: "automatyzacja",
+    category: "www",
     name: "Audyt poczty firmowej",
     tagline: "SPF, DKIM i DMARC w jednym raporcie",
     desc: "Automat sprawdza, czy Twoja domena jest poprawnie zabezpieczona i czy ktoś może podszyć się pod Twój adres. To najczęstszy powód, dla którego firmowe maile lądują w spamie.",
@@ -326,13 +330,13 @@ export const PRODUCTS: Product[] = [
     ],
   },
   {
-    category: "automatyzacja",
+    category: "dane",
     name: "Integracje API",
     tagline: "Spięcie systemów, które nie chcą rozmawiać",
     desc: "Łączymy sklep, CRM, ERP i hurtownie tak, żeby dane przechodziły same: synchronizacja przyrostowa, obsługa limitów API i logi, które pokazują cichy błąd zanim zepsuje dane.",
     price: "od 1 500 zł",
     href: "/integracje-api",
-    grupa: "wdrozenia",
+    grupa: "integracje",
     cta: "Opisz integrację",
     bullets: [
       "synchronizacja różnicowa zamiast pełnych przebiegów",
@@ -392,7 +396,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     category: "www",
-    name: "Podstrony niewidoczne dla wyszukiwarki",
+    name: "Mapa strony dla Google",
     tagline: "Robot dostaje listę albo zgaduje",
     desc: "Mapa strony to lista adresów, którą wyszukiwarka pobiera jednym zapytaniem. Bez niej podstrony podlinkowane głęboko bywają odkrywane miesiącami. Z nią, ale wypełnioną adresami usuniętych ofert, robot zużywa limit odwiedzin na błędy. Sprawdzamy jedno i drugie.",
     price: "od 240 zł",
@@ -408,7 +412,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     category: "www",
-    name: "Strona pod dwoma adresami naraz",
+    name: "Strona pod dwoma adresami",
     tagline: "Wyszukiwarka liczy to jako dwie różne strony",
     desc: "Adres z www i bez www zwracają tę samą treść, żaden nie przekierowuje na drugi. Siła linków prowadzących do firmy dzieli się wtedy na dwa adresy zamiast sumować na jednym, a wyszukiwarka sama wybiera, którą wersję pokazać, często nie tę z wizytówki i faktur. W przeglądarce nie widać tego wcale.",
     price: "od 190 zł",
@@ -424,7 +428,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     category: "www",
-    name: "Domena zapisana na obcą firmę",
+    name: "Właściciel domeny",
     tagline: "Właścicielem adresu bywa ten, kto robił stronę",
     desc: "W rejestrze wpisany jest jeden podmiot i to on decyduje o domenie, a więc o stronie i całej poczcie firmowej. Jeśli jest nim dawny wykonawca, przy konflikcie firma traci wszystko naraz. Sprawdzamy, kto figuruje w rejestrze, i prowadzimy przeniesienie na właściwą spółkę.",
     price: "od 490 zł",
@@ -440,7 +444,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     category: "www",
-    name: "Strona niewidoczna w wyszukiwarce",
+    name: "Widoczność w Google",
     tagline: "Kod strony każe Google jej nie pokazywać",
     desc: "Jedno polecenie zostawione po wersji roboczej potrafi wyłączyć całą witrynę z wyników wyszukiwania. Właściciel tego nie widzi, bo wchodzi z zakładki, a firma znika z internetu dla każdego, kto jej szuka. Sprawdzamy trzy miejsca, w których taka blokada bywa ukryta, i zdejmujemy ją.",
     price: "od 190 zł",
@@ -551,7 +555,7 @@ export const PRODUCTS: Product[] = [
     ],
   },
   {
-    category: "dane",
+    category: "prywatne",
     name: "ImportRadar DE→PL",
     tagline: "Które auta z Niemiec realnie się opłacają",
     desc: "Skanujemy żywe oferty z DE i NL i wskazujemy konkretne egzemplarze, które zarabiają po odjęciu wszystkich kosztów sprowadzenia, oraz modele z kosztownymi wadami, których lepiej unikać.",
@@ -597,7 +601,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     category: "dane",
-    name: "Scraping danych na zamówienie",
+    name: "Scraping danych",
     tagline: "Dane, których nie da się wyeksportować",
     desc: "Zbieramy dane z serwisów, które nie mają eksportu ani API: oferty, ceny, katalogi, listy firm. Dostajesz gotowy arkusz albo zasilaną cyklicznie bazę, bez duplikatów.",
     price: "od 49 zł",

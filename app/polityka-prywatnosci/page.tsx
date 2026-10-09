@@ -38,13 +38,13 @@ export default function PolitykaPrywatnosci() {
         {/* Hero, kompaktowy */}
         <section className="pt-24 pb-12">
           <div className="container-wide">
-            <Breadcrumbs
+            <Breadcrumbs href="/polityka-prywatnosci"
               items={[
                 { label: "Polityka prywatności" },
               ]}
             />
 
-            <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900 dark:text-white mt-8 mb-4">
+            <h1 className="h1-strony mt-8 mb-4">
               Polityka prywatności
             </h1>
             <p className="text-sm text-gray-600 dark:text-gray-400">

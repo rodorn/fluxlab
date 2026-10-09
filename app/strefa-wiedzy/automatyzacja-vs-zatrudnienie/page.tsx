@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Tabs from "@/components/Tabs";
 import PrevNextArticle from "@/components/PrevNextArticle";
@@ -61,7 +62,7 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
     <>
       <Header />
       <main className="pt-16 prose-justify">
-        <Breadcrumbs kolumna="waska"
+        <Breadcrumbs href="/strefa-wiedzy/automatyzacja-vs-zatrudnienie" kolumna="waska"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Automatyzacja vs zatrudnienie" },
@@ -71,10 +72,10 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
         <section className="pt-16 pb-6">
           <div className="max-w-3xl mx-auto px-6 lg:px-8">
             <span className="section-label">Strefa wiedzy</span>
-            <h1 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">
+            <h1 className="mt-4 h1-artykulu">
               Automatyzacja vs zatrudnienie, co się bardziej opłaca w MŚP
             </h1>
-            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed !text-left">
               Pracy przybywa, zespół ma pełne ręce. Kalkulator po czterech
               ustawieniach pokazuje, czy taniej wychodzi ręczna praca, etat, czy
               wdrożenie.
@@ -113,7 +114,7 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
                 content: (
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                      <h2 className="mb-6 h2-sekcji">
                         Ile kosztuje etat, a ile automatyzacja
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
@@ -157,7 +158,7 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
                 content: (
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                      <h2 className="mb-6 h2-sekcji">
                         Cztery pytania, które rozstrzygają
                       </h2>
                       <ul className="list-disc pl-5 space-y-3 text-gray-600 dark:text-gray-400 mb-6">
@@ -205,7 +206,7 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
                 content: (
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                      <h2 className="mb-6 h2-sekcji">
                         Ryzyka po obu stronach
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
@@ -225,7 +226,7 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
                         chaosu daje tylko szybszy chaos.
                       </p>
                       <div className="bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-8 text-center">
-                        <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                        <h2 className="mb-6 h2-sekcji">
                           Zatrudnić czy zautomatyzować?
                         </h2>
                         <p className="text-gray-600 dark:text-gray-400 mb-4">
@@ -249,7 +250,7 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
                 content: (
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                      <h2 className="mb-6 h2-sekcji">
                         FAQ
                       </h2>
                       <div className="space-y-4">
@@ -294,21 +295,7 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
           </div>
         </section>
 
-        <section className="py-12 lg:py-16">
-          <div className="max-w-3xl mx-auto px-6 lg:px-8">
-            <div className="bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-8 text-center">
-              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                Policzmy to dla Twojej firmy
-              </h2>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
-                30 minut, konkretne liczby dla Twoich procesów.
-              </p>
-              <Link href="/kontakt" className="btn-primary inline-block">
-                Zamów diagnozę procesu
-              </Link>
-            </div>
-          </div>
-        </section>
+        <CTA naglowek="Policzmy to dla Twojej firmy" opis="30 minut, konkretne liczby dla Twoich procesów." />
 
         <section className="py-12 lg:py-16">
           <div className="max-w-3xl mx-auto px-6 lg:px-8">

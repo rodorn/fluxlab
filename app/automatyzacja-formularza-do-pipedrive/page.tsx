@@ -2,15 +2,16 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TrackedCTA from "@/components/TrackedCTA";
 
 export const metadata: Metadata = {
-  title: "Integracja formularza z Pipedrive | Automatyczne leady w CRM",
+  title: "Formularz do Pipedrive: leady bez przepisywania | Fluxlab",
   description:
     "Jak połączyć formularz na stronie z Pipedrive bez przepisywania leadów. Tworzenie osoby, firmy i deala, routing do handlowca, zadanie kontaktu.",
   openGraph: {
-    title: "Integracja formularza z Pipedrive | Automatyczne leady w CRM",
+    title: "Formularz do Pipedrive: leady bez przepisywania | Fluxlab",
     description:
       "Jak połączyć formularz na stronie z Pipedrive bez przepisywania leadów. Tworzenie osoby, firmy i deala, routing do handlowca, zadanie kontaktu.",
     locale: "pl_PL",
@@ -96,7 +97,7 @@ const pricing = [
   },
 ];
 
-const h2 = "mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-6";
+const h2 = "h2-sekcji mt-4 mb-6";
 const card = "bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-xl px-5 py-4";
 
 export default function AutomatyzacjaFormularzaDoPipedrive() {
@@ -136,18 +137,15 @@ export default function AutomatyzacjaFormularzaDoPipedrive() {
     <>
       <Header />
       <main className="pt-16">
-        <Breadcrumbs kolumna="srodek"
-          items={[
-            { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
-            { label: "Integracja formularza z Pipedrive" },
-          ]}
+        <Breadcrumbs href="/automatyzacja-formularza-do-pipedrive" kolumna="srodek"
+          items={[{ label: "Integracja formularza z Pipedrive" }]}
         />
 
         <section className="pt-16 pb-10 bg-gradient-to-b from-accent/10 to-transparent border-b border-gray-100 dark:border-gray-800">
           <div className="container-wide">
-            <div className="max-w-3xl mx-auto text-center">
-              <span className="section-label">Integracja Pipedrive</span>
-              <h1 className="mt-4 text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+            <div className="max-w-3xl">
+              <span className="section-label">Usługa</span>
+              <h1 className="h1-strony mt-4 mb-6">
                 Integracja formularza z Pipedrive bez ręcznego przepisywania
                 leadów
               </h1>
@@ -156,15 +154,15 @@ export default function AutomatyzacjaFormularzaDoPipedrive() {
                 który przepisuje je z maila. Łączymy formularz z Pipedrive tak,
                 żeby lead trafiał do handlowca w kilka sekund.
               </p>
-              <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="mt-8 flex flex-col sm:flex-row gap-4">
                 <TrackedCTA
                   href="#sekcje"
                   location="article_formularz_pipedrive_hero"
-                  label="Chcemy połączyć formularz z CRM"
+                  label="Bezpłatna diagnoza"
                   eventName="cta_click_article_audit"
                   className="btn-primary text-base px-7 py-3"
                 >
-                  Chcemy połączyć formularz z CRM
+                  Bezpłatna diagnoza
                 </TrackedCTA>
               </div>
             </div>
@@ -173,7 +171,6 @@ export default function AutomatyzacjaFormularzaDoPipedrive() {
 
         <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
           <section className="pt-12 max-w-3xl mx-auto">
-            <span className="section-label">Problem</span>
             <h2 className={h2}>Po czym poznać, że masz ten problem</h2>
             <ul className="space-y-3">
               {symptoms.map((s) => (
@@ -194,7 +191,6 @@ export default function AutomatyzacjaFormularzaDoPipedrive() {
           </section>
 
           <section className="mt-12 pt-12 border-t border-gray-100 dark:border-gray-800 max-w-3xl mx-auto">
-            <span className="section-label">Jak to działa</span>
             <h2 className={h2}>Od kliknięcia „Wyślij” do zadania u handlowca</h2>
             <ol className="space-y-3">
               {afterSteps.map((s, i) => (
@@ -220,7 +216,6 @@ export default function AutomatyzacjaFormularzaDoPipedrive() {
           </section>
 
           <section className="mt-12 pt-12 border-t border-gray-100 dark:border-gray-800 max-w-3xl mx-auto">
-            <span className="section-label">Cennik</span>
             <h2 className={h2}>Ile to kosztuje</h2>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-8">
               Stała cena za projekt, płatna w transzach po kamieniach milowych.
@@ -263,11 +258,11 @@ export default function AutomatyzacjaFormularzaDoPipedrive() {
               <TrackedCTA
                 href="/kontakt"
                 location="article_formularz_pipedrive_pricing_primary"
-                label="Chcemy połączyć formularz z CRM"
+                label="Bezpłatna diagnoza"
                 eventName="cta_click_article_audit"
                 className="btn-primary"
               >
-                Chcemy połączyć formularz z CRM
+                Bezpłatna diagnoza
               </TrackedCTA>
             </div>
             <p className="mt-6 text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
@@ -318,26 +313,9 @@ export default function AutomatyzacjaFormularzaDoPipedrive() {
               ))}
             </div>
           </section>
-
-          <section className="mt-12 pt-12 border-t border-gray-100 dark:border-gray-800 max-w-2xl mx-auto text-center">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Czas, żeby formularz sam wpisywał leady do CRM
-            </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-              W 30 minut rozmowy ocenimy, czy u Was da się to zamknąć w 2 do 4
-              dni roboczych.
-            </p>
-            <TrackedCTA
-              href="/kontakt"
-              location="article_formularz_pipedrive_final"
-              label="Chcemy połączyć formularz z CRM"
-              eventName="cta_click_article_audit"
-              className="btn-primary text-base px-7 py-3"
-            >
-              Chcemy połączyć formularz z CRM
-            </TrackedCTA>
-          </section>
         </div>
+
+        <CTA />
 
         <div className="pb-8">
           <Breadcrumbs

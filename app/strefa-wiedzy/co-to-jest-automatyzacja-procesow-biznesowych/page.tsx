@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 
@@ -48,7 +49,7 @@ const faq = [
   },
 ];
 
-const h2 = "text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mt-12 mb-4";
+const h2 = "mt-12 mb-4 h2-sekcji";
 const p = "text-gray-600 dark:text-gray-400 mb-4";
 const ul = "list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-4";
 
@@ -57,7 +58,7 @@ export default function AutomatyzacjaProcesowArticle() {
     <>
       <Header />
       <main className="pt-16 prose-justify">
-        <Breadcrumbs kolumna="waska"
+        <Breadcrumbs href="/strefa-wiedzy/co-to-jest-automatyzacja-procesow-biznesowych" kolumna="waska"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Co to jest automatyzacja procesów biznesowych?" },
@@ -66,10 +67,10 @@ export default function AutomatyzacjaProcesowArticle() {
 
         <article className="max-w-3xl mx-auto px-6 lg:px-8 pt-16 pb-8">
           <span className="section-label">Strefa wiedzy</span>
-          <h1 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">
+          <h1 className="mt-4 h1-artykulu">
             Co to jest automatyzacja procesów biznesowych?
           </h1>
-          <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+          <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed !text-left">
             To przeniesienie powtarzalnej pracy z ludzi na systemy. Zamiast
             przepisywania danych i pilnowania kroków z pamięci, proces działa
             sam, szybciej i z mniejszą liczbą błędów.
@@ -205,21 +206,7 @@ export default function AutomatyzacjaProcesowArticle() {
           </div>
         </section>
 
-        <section className="pb-12 lg:pb-16">
-          <div className="max-w-3xl mx-auto px-6 lg:px-8">
-            <div className="bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-8 text-center">
-              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                Który proces w Twojej firmie zautomatyzować najpierw?
-              </h2>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
-                Bezpłatna diagnoza, bez zobowiązań.
-              </p>
-              <Link href="/kontakt" className="btn-primary inline-block">
-                Zamów diagnozę procesu
-              </Link>
-            </div>
-          </div>
-        </section>
+        <CTA naglowek="Który proces w Twojej firmie zautomatyzować najpierw?" opis="Bezpłatna diagnoza, bez zobowiązań." />
       </main>
       <Footer />
 

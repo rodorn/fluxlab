@@ -3,7 +3,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import TrackedCTA from "@/components/TrackedCTA";
+import CTA from "@/components/CTA";
 import Tabs from "@/components/Tabs";
 import PorownanieProcesu from "./PorownanieProcesu";
 
@@ -36,14 +36,14 @@ export default function CaseStudy() {
     <>
       <Header />
       <main>
-        <Breadcrumbs items={[{ label: "Modelowe przepływy" }]} />
+        <Breadcrumbs href="/case-study" items={[{ label: "Modelowe przepływy" }]} />
 
         {/* Hero, kompaktowy */}
         <section className="pt-16 pb-6">
           <div className="container-wide">
-            <div className="max-w-3xl">
-              <p className="section-label mb-3">Modelowe przepływy</p>
-              <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-5 leading-tight">
+            <div className="max-w-3xl mx-auto text-center">
+              <p className="section-label mb-3">O nas</p>
+              <h1 className="h1-strony mb-5">
                 Ile czasu pochłania proces przed automatyzacją i po niej
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -80,7 +80,7 @@ export default function CaseStudy() {
                 content: (
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-5">
+                      <h2 className="h2-sekcji mb-5">
                         Jak liczymy efekt wdrożenia
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
@@ -137,39 +137,10 @@ export default function CaseStudy() {
                   </div>
                 ),
               },
-              {
-                label: "Kontakt",
-                content: (
-                  <div className="py-6 lg:py-8">
-                    <div className="max-w-2xl mx-auto text-center">
-                      <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                        Chcesz, żeby Wasz proces trafił tutaj?
-                      </h2>
-                      <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-                        Trzy pierwsze firmy dostają wdrożenie za połowę ceny w
-                        zamian za zgodę na opis efektu.
-                      </p>
-                      <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Link href="/pilotaz" className="btn-primary">
-                          Zobacz warunki programu
-                        </Link>
-                        <TrackedCTA
-                          href="/kontakt"
-                          location="case_study_final"
-                          label="diagnoza"
-                          eventName="cta_click_case_study"
-                          className="btn-secondary"
-                        >
-                          Najpierw diagnoza procesu
-                        </TrackedCTA>
-                      </div>
-                    </div>
-                  </div>
-                ),
-              },
             ]}
           />
         </div>
+        <CTA />
       </main>
       <Footer />
     </>

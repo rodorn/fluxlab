@@ -145,7 +145,7 @@ export default function KatalogProduktow() {
       ? CATEGORY_INTRO[filar]
       : pasmo
         ? PRICE_BAND_INTRO[pasmo]
-        : "Cały katalog, podzielony na trzy obszary pracy. Zawęź go jednym naciśnięciem.";
+        : "Cały katalog, podzielony na obszary pracy. Zawęź go jednym naciśnięciem.";
 
   const czysto = !filar && !grupa && !tylkoDarmowe && !pasmo;
 

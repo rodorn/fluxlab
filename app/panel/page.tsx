@@ -46,8 +46,7 @@ export default async function PanelPage({
       <main className="min-h-[70vh] flex items-center">
         <div className="container-wide py-24 lg:py-28">
           <div className="max-w-xl">
-            <p className="section-label mb-3">Fluxdesk</p>
-            <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            <h1 className="h1-strony mb-4">
               {authorized ? "Wejście do panelu" : "Panel jest na hasło"}
             </h1>
 

@@ -19,9 +19,11 @@ type Wynik = {
 
 export default function AudytPocztyKlient({
   nazwa,
+  breadcrumbs,
   children,
 }: {
   nazwa: React.ReactNode;
+  breadcrumbs: React.ReactNode;
   children: React.ReactNode;
 }) {
   const [domena, setDomena] = useState("");
@@ -92,233 +94,170 @@ export default function AudytPocztyKlient({
     }
   }
 
-  const kolor =
+  const kolorTekst =
     wynik && wynik.punkty >= 90
-      ? "#16a34a"
+      ? "text-green-600 dark:text-green-400"
       : wynik && wynik.punkty >= 60
-        ? "#d97706"
-        : "#dc2626";
+        ? "text-amber-600 dark:text-amber-400"
+        : "text-red-600 dark:text-red-400";
+  const kolorRamka =
+    wynik && wynik.punkty >= 90
+      ? "border-green-600 dark:border-green-400"
+      : wynik && wynik.punkty >= 60
+        ? "border-amber-600 dark:border-amber-400"
+        : "border-red-600 dark:border-red-400";
+
+  const poleClass =
+    "w-full rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent";
 
   return (
-    <main
-      className="container-wide"
-      style={{ maxWidth: 720, margin: "0 auto", padding: "7rem 1.5rem 4rem" }}
-    >
-      <span className="section-label">Bezpieczeństwo poczty</span>
-      <h1
-        style={{ fontSize: "2rem", fontWeight: 700, margin: "0.5rem 0 1rem" }}
-      >
-        Sprawdź, czy ktoś może podszyć się pod Waszą firmową pocztę
-      </h1>
-      <p className="text-gray-600 dark:text-gray-300" style={{ lineHeight: 1.6, marginBottom: "2rem" }}>
-        Wpisz domenę firmy. W kilka sekund sprawdzimy publiczne rekordy SPF,
-        DKIM i DMARC i pokażemy, czy Wasze maile z ofertami i fakturami
-        docierają do klientów oraz czy ktoś obcy może wysyłać wiadomości w
-        Waszym imieniu. Sprawdzamy tylko jawne dane DNS, nie logujemy się
-        nigdzie i nie wysyłamy żadnych wiadomości.
-      </p>
-
-      {nazwa}
-      <Przyklady
-        pozycje={[
-          { wartosc: "fluxlab.pl" },
-          { wartosc: "allegro.pl" },
-          { wartosc: "x-kom.pl" },
-        ]}
-        onWybor={uruchom}
-        zablokowane={laduje}
-        wstep="Nie masz pod ręką swojej domeny? Zobacz na gotowym przykładzie:"
-      />
-
-      <form
-        onSubmit={sprawdz}
-        style={{ display: "flex", gap: 8, marginBottom: "2rem" }}
-      >
-        <input
-          value={domena}
-          onChange={(e) => setDomena(e.target.value)}
-          placeholder="np. twojafirma.pl"
-          style={{
-            flex: 1,
-            minWidth: 0,
-            padding: "0.75rem 1rem",
-            border: "1px solid #ccc",
-            borderRadius: 8,
-            fontSize: "1rem",
-          }}
-        />
-        <button
-          className="btn-primary"
-          disabled={laduje || !domena.trim()}
-          style={{ padding: "0.75rem 1.5rem" }}
-        >
-          {laduje ? "Sprawdzamy..." : "Sprawdź"}
-        </button>
-      </form>
-
-      {blad && <p style={{ color: "var(--stan-zle)" }}>{blad}</p>}
-
-      {wynik && (
-        <div
-          style={{
-            border: "1px solid #e5e5e5",
-            borderRadius: 12,
-            padding: "1.5rem",
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              alignItems: "baseline",
-              justifyContent: "space-between",
-              marginBottom: "1rem",
-            }}
-          >
-            <strong style={{ fontSize: "1.1rem" }}>{wynik.domena}</strong>
-            <span style={{ fontSize: "1.5rem", fontWeight: 700, color: kolor }}>
-              {wynik.punkty}/100
-            </span>
-          </div>
-          <p
-            style={{ color: "var(--article-muted)", fontSize: "0.9rem", marginBottom: "1rem" }}
-          >
-            Dostawca poczty: {wynik.dostawca}
+    <main>
+      {breadcrumbs}
+      <section className="pt-24 pb-8">
+        <div className="container-wide max-w-3xl">
+          <p className="section-label mb-5">Narzędzie</p>
+          <h1 className="h1-strony">
+            Sprawdź, czy ktoś może podszyć się pod Waszą firmową pocztę
+          </h1>
+          <p className="mt-6 text-lg leading-relaxed text-gray-600 dark:text-gray-300">
+            Wpisz domenę firmy. W kilka sekund sprawdzimy publiczne rekordy SPF,
+            DKIM i DMARC i pokażemy, czy Wasze maile z ofertami i fakturami
+            docierają do klientów oraz czy ktoś obcy może wysyłać wiadomości w
+            Waszym imieniu. Sprawdzamy tylko jawne dane DNS, nie logujemy się
+            nigdzie i nie wysyłamy żadnych wiadomości.
           </p>
+        </div>
+      </section>
 
-          {wynik.problemy.length === 0 ? (
-            <p style={{ color: "var(--stan-dobrze)" }}>
-              Konfiguracja jest poprawna. Nie ma nic do poprawy.
+      <div className="container-wide max-w-3xl pb-16">
+        {nazwa}
+        <Przyklady
+          pozycje={[
+            { wartosc: "fluxlab.pl" },
+            { wartosc: "allegro.pl" },
+            { wartosc: "x-kom.pl" },
+          ]}
+          onWybor={uruchom}
+          zablokowane={laduje}
+          wstep="Nie masz pod ręką swojej domeny? Zobacz na gotowym przykładzie:"
+        />
+
+        <form onSubmit={sprawdz} className="mt-6 mb-8 flex gap-2">
+          <input
+            value={domena}
+            onChange={(e) => setDomena(e.target.value)}
+            placeholder="np. twojafirma.pl"
+            aria-label="Domena firmy"
+            className={`${poleClass} min-w-0 flex-1 px-4 py-3`}
+          />
+          <button
+            className="btn-primary px-6 py-3 disabled:opacity-60"
+            disabled={laduje || !domena.trim()}
+          >
+            {laduje ? "Sprawdzamy..." : "Sprawdź"}
+          </button>
+        </form>
+
+        {blad && <p className="text-red-600 dark:text-red-400">{blad}</p>}
+
+        {wynik && (
+          <div className="rounded-xl border border-gray-200 bg-white p-6 dark:border-gray-700 dark:bg-gray-800/60">
+            <div className="mb-4 flex items-baseline justify-between">
+              <strong className="text-lg text-gray-900 dark:text-white">
+                {wynik.domena}
+              </strong>
+              <span className={`text-2xl font-bold ${kolorTekst}`}>
+                {wynik.punkty}/100
+              </span>
+            </div>
+            <p className="mb-4 text-sm text-gray-600 dark:text-gray-400">
+              Dostawca poczty: {wynik.dostawca}
             </p>
-          ) : (
-            <>
-              <p style={{ fontWeight: 600, marginBottom: "0.75rem" }}>
-                Znaleźliśmy {wynik.problemy.length}{" "}
-                {wynik.problemy.length === 1 ? "problem" : "problemy"}:
-              </p>
-              <ul
-                style={{
-                  listStyle: "none",
-                  padding: 0,
-                  display: "grid",
-                  gap: "0.75rem",
-                }}
-              >
-                {wynik.problemy.map((p, i) => (
-                  <li
-                    key={i}
-                    style={{
-                      borderLeft: `3px solid ${kolor}`,
-                      paddingLeft: "0.75rem",
-                    }}
-                  >
-                    <strong>{p.tytul}</strong>
-                    <div style={{ color: "var(--article-muted)", fontSize: "0.9rem" }}>
-                      {p.opis}
-                    </div>
-                  </li>
-                ))}
-              </ul>
-              <div
-                style={{
-                  marginTop: "1.5rem",
-                  padding: "1rem",
-                  background: "var(--article-box)",
-                  borderRadius: 8,
-                }}
-              >
-                <p style={{ margin: "0 0 0.75rem", fontWeight: 600 }}>
-                  Chcecie, żebyśmy to uporządkowali?
-                </p>
-                <p
-                  style={{
-                    margin: "0 0 1rem",
-                    color: "var(--article-muted)",
-                    fontSize: "0.9rem",
-                  }}
-                >
-                  Pełny raport z audytu (co dokładnie jest źle i gotowe rekordy
-                  do wklejenia) jest za darmo. Ekspresowa naprawa, czyli ustawienie
-                  SPF, DKIM i DMARC w trybie, który realnie blokuje podszywanie,
-                  to 299 zł. Zostaw adres, a wyślemy raport dla{" "}
-                  <strong>{wynik.domena}</strong> i wycenę naprawy. Bez
-                  zobowiązań.
-                </p>
-                {leadStan === "ok" ? (
-                  <p style={{ color: "var(--stan-dobrze)", fontWeight: 600, margin: 0 }}>
-                    Dziękujemy. Raport dla {wynik.domena} przygotujemy i odpiszemy na{" "}
-                    {leadEmail}.
-                  </p>
-                ) : (
-                  <form
-                    onSubmit={zamowRaport}
-                    style={{ display: "flex", gap: 8, flexWrap: "wrap" }}
-                  >
-                    <input
-                      type="email"
-                      required
-                      value={leadEmail}
-                      onChange={(e) => setLeadEmail(e.target.value)}
-                      placeholder="Twój adres e-mail"
-                      style={{
-                        flex: "1 1 220px",
-                        padding: "0.6rem 0.9rem",
-                        border: "1px solid #ccc",
-                        borderRadius: 8,
-                      }}
-                    />
-                    <button
-                      type="submit"
-                      className="btn-primary"
-                      disabled={leadStan === "laduje"}
-                      style={{ padding: "0.6rem 1.25rem" }}
-                    >
-                      {leadStan === "laduje"
-                        ? "Wysyłamy..."
-                        : "Wyślij mi raport i wycenę"}
-                    </button>
-                    {leadStan === "blad" && (
-                      <span
-                        style={{
-                          color: "var(--stan-zle)",
-                          flexBasis: "100%",
-                          fontSize: "0.85rem",
-                        }}
-                      >
-                        Nie udało się wysłać. Spróbuj ponownie za chwilę.
-                      </span>
-                    )}
-                  </form>
-                )}
-              </div>
-            </>
-          )}
 
-          <details style={{ marginTop: "1.25rem" }}>
-            <summary
-              style={{ cursor: "pointer", color: "var(--article-muted)", fontSize: "0.85rem" }}
-            >
-              Pokaż surowe rekordy DNS
-            </summary>
-            <pre
-              style={{
-                fontSize: "0.75rem",
-                overflowX: "auto",
-                background: "var(--article-box)",
-                padding: "0.75rem",
-                borderRadius: 6,
-                marginTop: "0.5rem",
-              }}
-            >
-              {`MX:    ${wynik.mx.join(", ") || "brak"}
+            {wynik.problemy.length === 0 ? (
+              <p className="text-green-600 dark:text-green-400">
+                Konfiguracja jest poprawna. Nie ma nic do poprawy.
+              </p>
+            ) : (
+              <>
+                <p className="mb-3 font-semibold text-gray-900 dark:text-white">
+                  Znaleźliśmy {wynik.problemy.length}{" "}
+                  {wynik.problemy.length === 1 ? "problem" : "problemy"}:
+                </p>
+                <ul className="grid list-none gap-3 p-0">
+                  {wynik.problemy.map((p, i) => (
+                    <li key={i} className={`border-l-[3px] pl-3 ${kolorRamka}`}>
+                      <strong className="text-gray-900 dark:text-white">
+                        {p.tytul}
+                      </strong>
+                      <div className="text-sm text-gray-600 dark:text-gray-400">
+                        {p.opis}
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-6 rounded-lg bg-gray-50 p-4 dark:bg-gray-900/60">
+                  <p className="mb-3 font-semibold text-gray-900 dark:text-white">
+                    Chcecie, żebyśmy to uporządkowali?
+                  </p>
+                  <p className="mb-4 text-sm text-gray-600 dark:text-gray-400">
+                    Pełny raport z audytu (co dokładnie jest źle i gotowe rekordy
+                    do wklejenia) jest za darmo. Ekspresowa naprawa, czyli ustawienie
+                    SPF, DKIM i DMARC w trybie, który realnie blokuje podszywanie,
+                    to 299 zł. Zostaw adres, a wyślemy raport dla{" "}
+                    <strong>{wynik.domena}</strong> i wycenę naprawy. Bez
+                    zobowiązań.
+                  </p>
+                  {leadStan === "ok" ? (
+                    <p className="font-semibold text-green-600 dark:text-green-400">
+                      Dziękujemy. Raport dla {wynik.domena} przygotujemy i odpiszemy na{" "}
+                      {leadEmail}.
+                    </p>
+                  ) : (
+                    <form onSubmit={zamowRaport} className="flex flex-wrap gap-2">
+                      <input
+                        type="email"
+                        required
+                        value={leadEmail}
+                        onChange={(e) => setLeadEmail(e.target.value)}
+                        placeholder="Twój adres e-mail"
+                        aria-label="Twój adres e-mail"
+                        className={`${poleClass} flex-[1_1_220px] px-3.5 py-2.5`}
+                      />
+                      <button
+                        type="submit"
+                        className="btn-primary px-5 py-2.5 disabled:opacity-60"
+                        disabled={leadStan === "laduje"}
+                      >
+                        {leadStan === "laduje"
+                          ? "Wysyłamy..."
+                          : "Wyślij mi raport i wycenę"}
+                      </button>
+                      {leadStan === "blad" && (
+                        <span className="basis-full text-sm text-red-600 dark:text-red-400">
+                          Nie udało się wysłać. Spróbuj ponownie za chwilę.
+                        </span>
+                      )}
+                    </form>
+                  )}
+                </div>
+              </>
+            )}
+
+            <details className="mt-5">
+              <summary className="cursor-pointer text-sm text-gray-600 dark:text-gray-400">
+                Pokaż surowe rekordy DNS
+              </summary>
+              <pre className="mt-2 overflow-x-auto rounded-md bg-gray-50 p-3 text-xs text-gray-800 dark:bg-gray-900/60 dark:text-gray-200">
+                {`MX:    ${wynik.mx.join(", ") || "brak"}
 SPF:   ${wynik.spf || "brak"}
 DMARC: ${wynik.dmarc || "brak"}
 DKIM:  ${wynik.dkim ? "wykryto" : "nie wykryto"}`}
-            </pre>
-          </details>
-        </div>
-      )}
-      {children}
-      <div className="container-wide">
+              </pre>
+            </details>
+          </div>
+        )}
+        {children}
         <RelatedProducts slug="audyt-poczty" />
       </div>
     </main>

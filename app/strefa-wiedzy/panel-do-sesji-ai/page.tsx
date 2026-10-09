@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
@@ -59,7 +59,7 @@ export default function PanelDoSesjiAiArticle() {
         className="container-wide"
         style={{ maxWidth: 800, margin: "0 auto", padding: "6.5rem 1.5rem 4rem" }}
       >
-        <Breadcrumbs
+        <Breadcrumbs href="/strefa-wiedzy/panel-do-sesji-ai"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             {
@@ -69,7 +69,8 @@ export default function PanelDoSesjiAiArticle() {
           ]}
         />
 
-        <h1 style={{ fontSize: "2rem", fontWeight: 700, margin: "1rem 0" }}>
+        <span className="section-label mt-6 block">Strefa wiedzy</span>
+        <h1 className="h1-artykulu mt-4 mb-4">
           Kilkanaście sesji AI naraz: jak nad tym zapanować
         </h1>
 
@@ -111,9 +112,7 @@ export default function PanelDoSesjiAiArticle() {
           </a>
         </div>
 
-        <h2
-          style={{ fontSize: "1.4rem", fontWeight: 700, marginTop: "2.5rem" }}
-        >
+        <h2 className="h2-sekcji mt-10 mb-4">
           Punkt wyjścia: dwadzieścia dwa zapomniane procesy
         </h2>
         <p style={{ color: "var(--article-text)", lineHeight: 1.7 }}>
@@ -121,9 +120,7 @@ export default function PanelDoSesjiAiArticle() {
           sprzed trzech tygodni. Żadne okno nie pokazywało, która rozmowa czeka na
           odpowiedź.
         </p>
-        <h2
-          style={{ fontSize: "1.4rem", fontWeight: 700, marginTop: "2.5rem" }}
-        >
+        <h2 className="h2-sekcji mt-10 mb-4">
           Co okazało się najważniejsze
         </h2>
         <h3 style={{ fontWeight: 700, marginTop: "1.5rem" }}>
@@ -155,9 +152,7 @@ export default function PanelDoSesjiAiArticle() {
           Zadanie przeciąga się na godzinę w kalendarzu albo wysyła prosto do sesji
           jako polecenie.
         </p>
-        <h2
-          style={{ fontSize: "1.4rem", fontWeight: 700, marginTop: "2.5rem" }}
-        >
+        <h2 className="h2-sekcji mt-10 mb-4">
           Co z tego wynika dla firm
         </h2>
         <p style={{ color: "var(--article-text)", lineHeight: 1.7 }}>
@@ -166,38 +161,8 @@ export default function PanelDoSesjiAiArticle() {
           nadzoru jest częścią wdrożenia.
         </p>
 
-        <div
-          style={{
-            margin: "2.5rem 0 1rem",
-            padding: "1.25rem 1.5rem",
-            background: "var(--article-box)", border: "1px solid var(--article-box-border)",
-            borderRadius: 12,
-          }}
-        >
-          <strong style={{ fontSize: "1.05rem" }}>
-            Masz automatyzacje, ale nie wiesz, co dokładnie robią?
-          </strong>
-          <div
-            style={{
-              color: "var(--article-muted)",
-              fontSize: "0.95rem",
-              margin: "0.5rem 0 1rem",
-            }}
-          >
-            Pokażemy, gdzie tracisz czas i co warto połączyć w jedno miejsce.
-          </div>
-          <Link
-            href="/kontakt"
-            className="btn-primary"
-            style={{ padding: "0.7rem 1.5rem", display: "inline-block" }}
-          >
-            Umów bezpłatną diagnozę
-          </Link>
-        </div>
 
-        <h2
-          style={{ fontSize: "1.4rem", fontWeight: 700, marginTop: "2.5rem" }}
-        >
+        <h2 className="h2-sekcji mt-10 mb-4">
           Najczęstsze pytania
         </h2>
         {faqItems.map((item) => (
@@ -222,6 +187,7 @@ export default function PanelDoSesjiAiArticle() {
           }}
         />
       </main>
+      <CTA naglowek="Masz automatyzacje, ale nie wiesz, co dokładnie robią?" opis="Pokażemy, gdzie tracisz czas i co warto połączyć w jedno miejsce." />
       <Footer />
     </>
   );

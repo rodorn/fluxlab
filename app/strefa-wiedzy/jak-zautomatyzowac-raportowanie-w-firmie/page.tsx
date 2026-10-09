@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 import Tabs from "@/components/Tabs";
@@ -35,7 +36,7 @@ export default function AutomatyzacjaRaportowaniaArticle() {
     <>
       <Header />
       <main className="pt-16 prose-justify">
-        <Breadcrumbs kolumna="srodek"
+        <Breadcrumbs href="/strefa-wiedzy/jak-zautomatyzowac-raportowanie-w-firmie" kolumna="srodek"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Jak zautomatyzować raportowanie w firmie" },
@@ -45,10 +46,10 @@ export default function AutomatyzacjaRaportowaniaArticle() {
         <section className="pt-16 pb-6">
           <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
             <span className="section-label">Strefa wiedzy</span>
-            <h1 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">
+            <h1 className="mt-4 h1-artykulu">
               Jak zautomatyzować raportowanie w firmie
             </h1>
-            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed !text-left">
               Dane leżą w CRM, arkuszach i kampaniach, a ktoś co tydzień skleja
               je ręcznie. Automatyzacja raportowania daje spójne liczby i raport
               gotowy wtedy, kiedy jest potrzebny.
@@ -64,7 +65,7 @@ export default function AutomatyzacjaRaportowaniaArticle() {
                 label: "Od czego zacząć",
                 content: (
                   <div className="py-6 lg:py-8 max-w-3xl mx-auto">
-                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                    <h2 className="mb-6 h2-sekcji">
                       Od czego zacząć
                     </h2>
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
@@ -116,7 +117,7 @@ export default function AutomatyzacjaRaportowaniaArticle() {
                 label: "Wdrożenie krok po kroku",
                 content: (
                   <div className="py-6 lg:py-8 max-w-3xl mx-auto">
-                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                    <h2 className="mb-6 h2-sekcji">
                       Jak wdrażać raportowanie krok po kroku
                     </h2>
 
@@ -159,20 +160,6 @@ export default function AutomatyzacjaRaportowaniaArticle() {
                       kolejne.
                     </p>
 
-                    <div className="mt-10 bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-8 text-center">
-                      <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        Masz dane w kilku miejscach i nie ufasz raportom?
-                      </h3>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Bezpłatna diagnoza, bez zobowiązań.
-                      </p>
-                      <Link
-                        href="/kontakt"
-                        className="btn-primary inline-block"
-                      >
-                        Zamów diagnozę procesu
-                      </Link>
-                    </div>
                   </div>
                 ),
               },
@@ -180,7 +167,7 @@ export default function AutomatyzacjaRaportowaniaArticle() {
                 label: "Najczęstsze błędy",
                 content: (
                   <div className="py-6 lg:py-8 max-w-3xl mx-auto">
-                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                    <h2 className="mb-6 h2-sekcji">
                       Najczęstsze błędy
                     </h2>
 
@@ -213,7 +200,7 @@ export default function AutomatyzacjaRaportowaniaArticle() {
                 label: "FAQ",
                 content: (
                   <div className="py-6 lg:py-8 max-w-3xl mx-auto">
-                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                    <h2 className="mb-6 h2-sekcji">
                       FAQ
                     </h2>
                     <div className="space-y-4">
@@ -351,6 +338,7 @@ export default function AutomatyzacjaRaportowaniaArticle() {
             <PrevNextArticle currentHref="/strefa-wiedzy/jak-zautomatyzowac-raportowanie-w-firmie" />
           </div>
         </div>
+        <CTA naglowek="Masz dane w kilku miejscach i nie ufasz raportom?" />
       </main>
       <Footer />
 

@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Tabs from "@/components/Tabs";
 import CzasRaportowAgencji from "@/components/CzasRaportowAgencji";
@@ -111,57 +111,24 @@ export default function AutomatyzacjaDlaAgencjiMarketingowych() {
     <>
       <Header />
       <main className="pt-16">
-        <Breadcrumbs
+        <Breadcrumbs href="/automatyzacja-dla-agencji-marketingowych"
           items={[{ label: "Automatyzacja dla agencji marketingowych" }]}
         />
 
         {/* Hero, kompaktowy */}
-        <section className="relative pt-16 pb-6 overflow-hidden">
-          <div className="absolute inset-0 -z-10">
-            <div className="absolute inset-0 bg-gray-50 dark:hidden" />
-            <img
-              src="/photos/Flow.avif"
-              alt=""
-              aria-hidden="true"
-              className="absolute inset-0 w-full h-full object-cover opacity-[0.08] dark:hidden"
-              style={{ filter: "invert(1)" }}
-            />
-            <img
-              src="/photos/Flow.avif"
-              alt=""
-              aria-hidden="true"
-              className="w-full h-full object-cover hidden dark:block"
-            />
-            <div className="absolute inset-0 hidden dark:block bg-gray-950/90" />
-            <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-white to-transparent dark:hidden" />
-            <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white to-transparent dark:hidden" />
-            <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-gray-950 to-transparent hidden dark:block" />
-            <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-gray-950 to-transparent hidden dark:block" />
-          </div>
-          <div className="container-wide max-w-5xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-10 items-center">
-              <div className="text-center lg:text-left">
-                <p className="section-label mb-4">Dla branży</p>
-                <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
-                  Automatyzacja dla agencji marketingowych
-                </h1>
-                <p className="text-lg text-gray-600 dark:text-gray-300">
-                  Raporty, onboarding i faktury robią się same. Zespół zajmuje
+        <section className="relative overflow-hidden pt-24 pb-12">
+          <div className="blob blob-accent absolute -top-32 -right-20 h-96 w-96" />
+          <div className="container-wide max-w-3xl mx-auto">
+            <p className="section-label mb-5">Branża</p>
+            <h1 className="h1-strony mb-6">
+              Automatyzacja dla agencji marketingowych
+            </h1>
+            <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
+              Raporty, onboarding i faktury robią się same. Zespół zajmuje
                   się klientem, a nie składaniem slajdów.
-                </p>
-              </div>
-              <div className="relative mx-auto lg:mx-0 w-full max-w-md">
-                <div className="rounded-2xl overflow-hidden shadow-xl shadow-gray-200/50 dark:shadow-black/30 border border-gray-100 dark:border-gray-800">
-                  <Image
-                    src="/photos/raport.jpg"
-                    alt="Automatyzacja dla agencji marketingowych"
-                    width={480}
-                    height={320}
-                    className="w-full h-auto object-cover"
-                    priority
-                  />
-                </div>
-              </div>
+            </p>
+            <div>
+              <a href="#sekcje" className="btn-primary">Bezpłatna diagnoza</a>
             </div>
           </div>
         </section>
@@ -175,7 +142,7 @@ export default function AutomatyzacjaDlaAgencjiMarketingowych() {
                 content: (
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
+                      <h2 className="h2-sekcji mb-4">
                         Co automatyzujemy w agencji
                       </h2>
                       <p className="text-gray-500 dark:text-gray-400 mb-10">
@@ -189,7 +156,7 @@ export default function AutomatyzacjaDlaAgencjiMarketingowych() {
                         {useCases.map((useCase) => (
                           <div
                             key={useCase.title}
-                            className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-8"
+                            className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-5"
                           >
                             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
                               {useCase.title}
@@ -209,7 +176,7 @@ export default function AutomatyzacjaDlaAgencjiMarketingowych() {
                 content: (
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
+                      <h2 className="h2-sekcji mb-4">
                         Narzędzia, które spinamy
                       </h2>
                       <p className="text-gray-500 dark:text-gray-400 mb-10">
@@ -221,7 +188,7 @@ export default function AutomatyzacjaDlaAgencjiMarketingowych() {
                         {tools.map((tool) => (
                           <div
                             key={tool.name}
-                            className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-8"
+                            className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-5"
                           >
                             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
                               {tool.name}
@@ -252,7 +219,7 @@ export default function AutomatyzacjaDlaAgencjiMarketingowych() {
                 content: (
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
+                      <h2 className="h2-sekcji mb-4">
                         Dla kogo
                       </h2>
                       <p className="text-gray-500 dark:text-gray-400 mb-12">
@@ -261,7 +228,7 @@ export default function AutomatyzacjaDlaAgencjiMarketingowych() {
                         fakturowanie zjadają najwięcej czasu.
                       </p>
 
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-8">
+                      <h2 className="h2-sekcji mb-8">
                         Najczęściej zadawane pytania
                       </h2>
                       <div className="space-y-4">
@@ -300,25 +267,10 @@ export default function AutomatyzacjaDlaAgencjiMarketingowych() {
                 content: (
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
-                      <div className="max-w-2xl mx-auto text-center bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-10 mb-16">
-                        <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                          Zespół spędza więcej czasu na raportach niż na
-                          klientach?
-                        </h2>
-                        <p className="text-gray-500 dark:text-gray-400 mb-8">
-                          Opisz Wasz proces, a wskażemy, co warto
-                          zautomatyzować.
-                        </p>
-                        <Link
-                          href="/kontakt"
-                          className="btn-primary px-8 py-3.5 text-base"
-                        >
-                          Zamów diagnozę
-                        </Link>
-                        <p className="mt-4 text-xs text-gray-600 dark:text-gray-400">
-                          Bezpłatna diagnoza · Odpowiedź w 24h
-                        </p>
-                      </div>
+                      <CTA
+                        naglowek="Zespół spędza więcej czasu na raportach niż na klientach?"
+                        opis="Opisz Wasz proces, a wskażemy, co warto zautomatyzować."
+                      />
 
                       <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
                         Zobacz też

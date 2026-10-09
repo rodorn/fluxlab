@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 
@@ -34,7 +35,7 @@ export default function JakUporzadkowacProcesSprzedazyArticle() {
     <>
       <Header />
       <main className="pt-16 prose-justify">
-        <Breadcrumbs kolumna="srodek"
+        <Breadcrumbs href="/strefa-wiedzy/jak-uporzadkowac-proces-sprzedazy-w-crm" kolumna="srodek"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Jak uporządkować proces sprzedaży w CRM" },
@@ -44,10 +45,10 @@ export default function JakUporzadkowacProcesSprzedazyArticle() {
         <section className="pt-24 pb-10">
           <div className="container-wide max-w-3xl mx-auto text-center">
             <span className="section-label">Strefa wiedzy</span>
-            <h1 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">
+            <h1 className="mt-4 h1-artykulu">
               Jak uporządkować proces sprzedaży w CRM
             </h1>
-            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed !text-left">
               Problemy z CRM rzadko wynikają z narzędzia. Częściej z procesu,
               którego nikt nie opisał.
             </p>
@@ -57,7 +58,7 @@ export default function JakUporzadkowacProcesSprzedazyArticle() {
         <div className="container-wide pb-20">
           <div className="max-w-3xl mx-auto space-y-10">
             <section>
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+              <h2 className="mb-4 h2-sekcji">
                 Etapy z kryteriami przejścia
               </h2>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -67,7 +68,7 @@ export default function JakUporzadkowacProcesSprzedazyArticle() {
               </p>
             </section>
             <section>
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+              <h2 className="mb-4 h2-sekcji">
                 Jakość danych, potem automatyzacja
               </h2>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -82,14 +83,6 @@ export default function JakUporzadkowacProcesSprzedazyArticle() {
                 tworzy zadania, przypomina o follow-upie i pilnuje braków.
               </p>
             </section>
-            <div className="rounded-2xl bg-accent/10 p-8 text-center">
-              <p className="text-lg font-medium text-gray-900 dark:text-white">
-                Chcesz uporządkować proces przed automatyzacją?
-              </p>
-              <Link href="/automatyzacja-leadow-crm" className="btn-primary mt-6 inline-block">
-                Zobacz usługę Automatyzacja CRM
-              </Link>
-            </div>
           </div>
 
           {/* Prev / Next */}
@@ -97,6 +90,7 @@ export default function JakUporzadkowacProcesSprzedazyArticle() {
             <PrevNextArticle currentHref="/strefa-wiedzy/jak-uporzadkowac-proces-sprzedazy-w-crm" />
           </div>
         </div>
+        <CTA naglowek="Chcesz uporządkować proces przed automatyzacją?" />
       </main>
       <Footer />
 

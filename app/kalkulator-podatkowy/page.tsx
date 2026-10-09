@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CTA from "@/components/CTA";
 import TaxCalculator from "./TaxCalculator";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Tabs from "@/components/Tabs";
@@ -60,14 +61,14 @@ export default function KalkulatorPodatkowyPage() {
     <>
       <Header />
       <main>
-        <Breadcrumbs items={[{ label: "Kalkulator podatkowy" }]} />
+        <Breadcrumbs href="/kalkulator-podatkowy" items={[{ label: "Kalkulator podatkowy" }]} />
 
         <section className="pt-16 pb-6">
           <div className="container-wide max-w-5xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-8 items-center">
-              <div className="text-center lg:text-left">
+              <div>
                 <p className="section-label mb-3">Narzędzie</p>
-                <h1 className="text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 dark:text-white">
+                <h1 className="h1-strony">
                   Kalkulator JDG 2026
                 </h1>
                 <p className="mt-3 text-lg text-gray-600 dark:text-gray-400">
@@ -158,7 +159,7 @@ export default function KalkulatorPodatkowyPage() {
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl space-y-8">
                       <div>
-                        <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                        <h2 className="h2-sekcji mb-6">
                           Jak działa kalkulator
                         </h2>
                         <div className="space-y-4 text-gray-600 dark:text-gray-400">
@@ -186,20 +187,6 @@ export default function KalkulatorPodatkowyPage() {
                         </div>
                       </div>
 
-                      <div className="bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-8 text-center">
-                        <h2 className="text-xl lg:text-2xl font-bold text-gray-900 dark:text-white mb-3">
-                          Potrzebujesz pomocy z wyborem formy opodatkowania?
-                        </h2>
-                        <p className="text-gray-600 dark:text-gray-400 mb-6">
-                          Przy złożonej sytuacji porozmawiaj z ekspertem.
-                        </p>
-                        <Link
-                          href="/kontakt"
-                          className="btn-primary px-8 py-3 text-base"
-                        >
-                          Zamów diagnozę
-                        </Link>
-                      </div>
                     </div>
                   </div>
                 ),
@@ -209,7 +196,7 @@ export default function KalkulatorPodatkowyPage() {
                 content: (
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl">
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                      <h2 className="h2-sekcji mb-6">
                         Najczęstsze pytania
                       </h2>
                       <div className="space-y-3">
@@ -290,7 +277,7 @@ export default function KalkulatorPodatkowyPage() {
                       </div>
 
                       <div>
-                        <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-5">
+                        <h2 className="h2-sekcji mb-5">
                           Powiązane artykuły
                         </h2>
                         <div className="grid md:grid-cols-2 gap-3">
@@ -331,21 +318,6 @@ export default function KalkulatorPodatkowyPage() {
                         </div>
                       </div>
 
-                      <div className="bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-8 text-center">
-                        <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-3">
-                          Chcesz zautomatyzować procesy w firmie?
-                        </h2>
-                        <p className="text-gray-600 dark:text-gray-400 mb-6">
-                          Automatyzujemy raportowanie, integracje i obsługę
-                          leadów. Porozmawiajmy.
-                        </p>
-                        <Link
-                          href="/kontakt"
-                          className="btn-primary px-8 py-3.5 text-base"
-                        >
-                          Zamów diagnozę procesu
-                        </Link>
-                      </div>
                     </div>
                   </div>
                 ),
@@ -354,6 +326,7 @@ export default function KalkulatorPodatkowyPage() {
           />
         </div>
       </main>
+      <CTA />
 
       {/* FAQPage Schema */}
       <script

@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import LandingForm from "@/components/LandingForm";
 import TrackedCTA from "@/components/TrackedCTA";
@@ -72,7 +73,7 @@ export default function StronyWww() {
     <>
       <Header />
       <main>
-        <Breadcrumbs items={[{ label: "Strony WWW" }]} />
+        <Breadcrumbs href="/strony-www" items={[{ label: "Strony WWW" }]} />
 
         {/* Hero, kompaktowy */}
         <section
@@ -82,16 +83,14 @@ export default function StronyWww() {
           <div className="absolute inset-0 -z-10" aria-hidden="true">
             <div className="blob blob-accent w-[520px] h-[520px] -top-32 -left-32 animate-drift" />
           </div>
-          <div className="container-wide">
-            <div className="max-w-3xl">
-              <p className="section-label mb-4 animate-fade-up-1">
-                Strony WWW · Fluxlab
-              </p>
+          <div className="container-wide max-w-3xl mx-auto">
+            <div>
+              <p className="section-label mb-4 animate-fade-up-1">Usługa</p>
               <h1
                 id="hero-heading"
-                className="display-xl text-gray-900 dark:text-white mb-6 animate-fade-up-2"
+                className="h1-strony mb-6 animate-fade-up-2"
               >
-                Strona, która działa: szybko, mobilnie, z AI.
+                Strona, która działa: szybko, mobilnie, z AI
               </h1>
               <p className="text-lg lg:text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed animate-fade-up-3">
                 Nowa strona od zera albo poprawki w istniejącej. Pierwsza wersja
@@ -103,7 +102,7 @@ export default function StronyWww() {
                   location="strony_www_hero"
                   className="btn-primary"
                 >
-                  Zamów bezpłatną diagnozę
+                  Bezpłatna diagnoza
                 </TrackedCTA>
                 <a
                   href="#poprawiac-czy-budowac"
@@ -132,8 +131,7 @@ export default function StronyWww() {
                 label: "Co oferujemy",
                 content: (
                   <div className="py-10 lg:py-12">
-                    <p className="section-label mb-3">Co oferujemy</p>
-                    <h2 className="display-lg text-gray-900 dark:text-white mb-8">
+                    <h2 className="h2-sekcji mb-8">
                       Krótko i konkretnie
                     </h2>
                     <ul className="space-y-4 max-w-2xl">
@@ -179,8 +177,7 @@ export default function StronyWww() {
                 label: "Cennik",
                 content: (
                   <div className="py-10 lg:py-12">
-                    <p className="section-label mb-3">Cennik</p>
-                    <h2 className="display-lg text-gray-900 dark:text-white mb-10">
+                    <h2 className="h2-sekcji mb-10">
                       Trzy ścieżki
                     </h2>
                     <div className="grid md:grid-cols-3 gap-5 lg:gap-6">
@@ -212,8 +209,7 @@ export default function StronyWww() {
                 label: "FAQ",
                 content: (
                   <div className="py-10 lg:py-12">
-                    <p className="section-label mb-3">FAQ</p>
-                    <h2 className="display-lg text-gray-900 dark:text-white mb-8">
+                    <h2 className="h2-sekcji mb-8">
                       Najczęstsze pytania
                     </h2>
                     <div className="space-y-4 max-w-3xl">
@@ -264,6 +260,7 @@ export default function StronyWww() {
             ]}
           />
         </div>
+      <CTA />
       </main>
 
       {/* Service Schema */}

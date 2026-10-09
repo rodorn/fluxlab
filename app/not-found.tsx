@@ -2,17 +2,25 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { FILARY } from "@/lib/filary";
+import { SEKCJE } from "@/lib/sekcje";
 
 export const metadata: Metadata = {
   title: "Strona nie znaleziona | Fluxlab",
   robots: { index: false, follow: true },
 };
 
-const links = FILARY.map((f) => ({
-  title: f.nazwa,
-  desc: f.opis,
-  href: f.href,
+const OPISY: Record<string, string> = {
+  uslugi: "Automatyzacja procesów, integracje i dane, systemy i strony",
+  narzedzia: "Darmowe sprawdzenia firmy, strony i poczty",
+  cennik: "Produkty i ceny",
+  "strefa-wiedzy": "Artykuły, porównania i nasze badania",
+  "o-nas": "Realizacje, sposób pracy i kontakt",
+};
+
+const links = SEKCJE.filter((x) => x.wMenu).map((x) => ({
+  title: x.nazwa,
+  desc: OPISY[x.slug] ?? "",
+  href: x.hub ?? x.grupy[0].hub ?? x.grupy[0].strony[0].href,
 }));
 
 export default function NotFound() {
@@ -34,10 +42,10 @@ export default function NotFound() {
             <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-10 max-w-xl">
               Adres nie istnieje albo został przeniesiony. Trochę ironiczne dla
               kogoś, kto zawodowo pilnuje, żeby nic nie ginęło, ale zdarza się.
-              Wróć na stronę główną albo wybierz, czego szukasz.
+              Wróć na stronę główną albo wybierz dział.
             </p>
 
-            <div className="grid sm:grid-cols-3 gap-3 mb-10">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-10">
               {links.map((l) => (
                 <Link
                   key={l.href}
@@ -59,7 +67,7 @@ export default function NotFound() {
                 ← Wróć na stronę główną
               </Link>
               <Link href="/kontakt" className="btn-secondary">
-                Zamów bezpłatną diagnozę
+                Bezpłatna diagnoza
               </Link>
             </div>
           </div>

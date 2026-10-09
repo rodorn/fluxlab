@@ -2,16 +2,16 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
-  title: "Mail firmowy we własnej domenie: koszt i test spamu",
+  title: "Mail firmowy we własnej domenie: koszt i test | Fluxlab",
   description:
     "Ile kosztuje mail firmowy w Google Workspace, Microsoft 365 i Zoho, które trzy wpisy w DNS decydują o spamie i jak sprawdzić swoją domenę w 10 sekund.",
   alternates: { canonical: "/mail-firmowy" },
   openGraph: {
-    title:
-      "Mail firmowy we własnej domenie: koszt, konfiguracja i test, czy nie wpada do spamu",
+    title: "Mail firmowy we własnej domenie: koszt i test | Fluxlab",
     description:
       "Ceny skrzynek w domenie, SPF, DKIM i DMARC jednym zdaniem każde oraz darmowy test domeny bez rejestracji.",
     locale: "pl_PL",
@@ -46,7 +46,6 @@ const faqItems = [
 ];
 
 const tekst = { color: "var(--article-text)", lineHeight: 1.7 };
-const h2 = { fontSize: "1.4rem", fontWeight: 700, marginTop: "2.5rem" };
 
 export default function MailFirmowy() {
   return (
@@ -60,11 +59,12 @@ export default function MailFirmowy() {
           padding: "6.5rem 1.5rem 4rem",
         }}
       >
-        <Breadcrumbs
+        <Breadcrumbs href="/mail-firmowy"
           items={[{ label: "Mail firmowy", href: "/mail-firmowy" }]}
         />
 
-        <h1 style={{ fontSize: "2rem", fontWeight: 700, margin: "1rem 0" }}>
+        <p className="section-label mb-5">Usługa</p>
+        <h1 className="h1-strony mb-6">
           Mail firmowy we własnej domenie: koszt, konfiguracja i test, czy nie
           wpada do spamu
         </h1>
@@ -104,14 +104,14 @@ export default function MailFirmowy() {
           </Link>
         </div>
 
-        <h2 style={h2}>Ile kosztuje skrzynka</h2>
+        <h2 className="h2-sekcji mt-10 mb-3">Ile kosztuje skrzynka</h2>
         <p style={tekst}>
           Google Workspace Business Starter kosztuje 31,50 zł, Microsoft 365
           Business Basic 6,07 €, a Zoho Mail Lite 0,90 € netto miesięcznie za
           osobę przy umowie rocznej (cenniki z 8.10.2026).
         </p>
 
-        <h2 style={h2}>Co ustawić, żeby maile dochodziły</h2>
+        <h2 className="h2-sekcji mt-10 mb-3">Co ustawić, żeby maile dochodziły</h2>
         <p style={tekst}>
           SPF to lista serwerów, które mogą wysyłać pocztę z Waszej domeny. DKIM
           podpisuje każdą wiadomość. DMARC mówi serwerom odbiorców, co zrobić z
@@ -125,7 +125,7 @@ export default function MailFirmowy() {
           .
         </p>
 
-        <h2 style={h2}>Jak sprawdzić własną domenę</h2>
+        <h2 className="h2-sekcji mt-10 mb-3">Jak sprawdzić własną domenę</h2>
         <p style={tekst}>
           Wpiszcie domenę w{" "}
           <Link href="/audyt-poczty" style={{ textDecoration: "underline" }}>
@@ -135,12 +135,12 @@ export default function MailFirmowy() {
           dopisać w DNS.
         </p>
 
-        <h2 style={h2}>Najczęstsze pytania</h2>
+        <h2 className="h2-sekcji mt-10 mb-3">Najczęstsze pytania</h2>
         <div style={{ marginTop: "1rem" }}>
           {faqItems.map((item, i) => (
             <details
               key={i}
-              style={{ borderBottom: "1px solid #eee", padding: "0.85rem 0" }}
+              style={{ borderBottom: "1px solid var(--article-box-border)", padding: "0.85rem 0" }}
             >
               <summary style={{ cursor: "pointer", fontWeight: 600 }}>
                 {item.question}
@@ -157,6 +157,8 @@ export default function MailFirmowy() {
             </details>
           ))}
         </div>
+
+        <CTA />
       </main>
       <Footer />
 

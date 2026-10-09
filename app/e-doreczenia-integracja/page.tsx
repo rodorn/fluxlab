@@ -27,7 +27,7 @@ export default function EDoreczeniaIntegracja() {
         <>
           <EDoreczeniaCheck />
           <section className="mt-10 max-w-3xl">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+            <h2 className="h2-sekcji">
               Spółka z KRS bez adresu do e-Doręczeń: co to znaczy i jak sprawdzić
             </h2>
             <div className="mt-4 space-y-4 text-gray-600 dark:text-gray-300">

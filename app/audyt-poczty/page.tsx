@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import AudytPocztyKlient from "./AudytPocztyKlient";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import NazwaNarzedzia from "@/components/NazwaNarzedzia";
@@ -51,44 +53,43 @@ export default function Page() {
   return (
     <>
       <Header />
-      <AudytPocztyKlient nazwa={<NazwaNarzedzia href="/audyt-poczty" />}>
-        <section style={{ marginTop: "3rem" }}>
-          <h2 style={{ fontSize: "1.4rem", fontWeight: 700 }}>
+      <AudytPocztyKlient
+        nazwa={<NazwaNarzedzia href="/audyt-poczty" />}
+        breadcrumbs={
+          <Breadcrumbs href="/audyt-poczty" kolumna="srodek" items={[{ label: "Audyt poczty firmowej" }]} />
+        }
+      >
+        <section className="mt-12">
+          <h2 className="h2-sekcji">
             Najczęstsze pytania o maile w spamie i podszywanie
           </h2>
-          <dl style={{ marginTop: "1rem" }}>
+          <dl className="mt-4">
             {faq.map((f) => (
               <div
                 key={f.q}
-                style={{ borderBottom: "1px solid #eee", padding: "1rem 0" }}
+                className="border-b border-gray-200 py-4 dark:border-gray-700"
               >
-                <dt style={{ fontWeight: 600 }}>{f.q}</dt>
-                <dd
-                  className="text-gray-600 dark:text-gray-300"
-                  style={{ margin: "0.5rem 0 0", lineHeight: 1.7 }}
-                >
+                <dt className="font-semibold text-gray-900 dark:text-white">{f.q}</dt>
+                <dd className="mt-2 leading-relaxed text-gray-600 dark:text-gray-300">
                   {f.a}
                 </dd>
               </div>
             ))}
           </dl>
-          <p
-            className="text-gray-600 dark:text-gray-300"
-            style={{ marginTop: "1.5rem", lineHeight: 1.7 }}
-          >
+          <p className="mt-6 leading-relaxed text-gray-600 dark:text-gray-300">
             Więcej:{" "}
             <Link
               href="/strefa-wiedzy/maile-trafiaja-do-spamu"
-              className="underline"
+              className="text-accent hover:underline"
             >
               dlaczego firmowe maile trafiają do spamu
             </Link>
             ,{" "}
-            <Link href="/mail-firmowy" className="underline">
+            <Link href="/mail-firmowy" className="text-accent hover:underline">
               ile kosztuje mail firmowy we własnej domenie
             </Link>{" "}
             i{" "}
-            <Link href="/wlasnosc-domeny" className="underline">
+            <Link href="/wlasnosc-domeny" className="text-accent hover:underline">
               kto jest właścicielem domeny
             </Link>
             .
@@ -109,6 +110,7 @@ export default function Page() {
           }}
         />
       </AudytPocztyKlient>
+      <CTA />
       <Footer />
     </>
   );

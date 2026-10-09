@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import LandingForm from "@/components/LandingForm";
 import Tabs from "@/components/Tabs";
@@ -54,22 +55,22 @@ export default function AutomatyzacjaPipedrive() {
     <>
       <Header />
       <main className="pt-16">
-        <Breadcrumbs items={[{ label: "Automatyzacja Pipedrive" }]} />
+        <Breadcrumbs href="/automatyzacja-pipedrive" items={[{ label: "Automatyzacja Pipedrive" }]} />
 
         {/* Hero, kompaktowy */}
         <section className="relative overflow-hidden pt-24 pb-12">
           <div className="blob blob-accent -top-32 -right-24 w-[420px] h-[420px]" />
-          <div className="container-wide relative">
-            <div className="max-w-3xl">
-              <p className="section-label mb-5">Pipedrive CRM</p>
-              <h1 className="display-lg text-gray-900 dark:text-white mb-6">
+          <div className="container-wide max-w-3xl mx-auto relative">
+            <div>
+              <p className="section-label mb-5">Usługa</p>
+              <h1 className="h1-strony mb-6">
                 Wykorzystaj Pipedrive w 100%
               </h1>
               <p className="text-lg text-gray-500 dark:text-gray-400 mb-10 max-w-xl">
                 Większość firm używa Pipedrive jak notatnika. Automatyzacje
                 robią z niego silnik sprzedaży.
               </p>
-              <a href="#sekcje" className="btn-primary px-8 py-3.5 text-base">
+              <a href="#sekcje" className="btn-primary">
                 Sprawdźmy proces
               </a>
             </div>
@@ -84,7 +85,7 @@ export default function AutomatyzacjaPipedrive() {
                 label: "Co automatyzujemy",
                 content: (
                   <section className="py-10 lg:py-12">
-                    <h2 className="display-xl text-gray-900 dark:text-white mb-12 max-w-2xl">
+                    <h2 className="h2-sekcji mb-12 max-w-2xl">
                       Co automatyzujemy
                     </h2>
                     <div className="grid sm:grid-cols-2 gap-6 max-w-4xl">
@@ -141,6 +142,7 @@ export default function AutomatyzacjaPipedrive() {
             ]}
           />
         </div>
+      <CTA />
       </main>
 
       {/* Service Schema */}

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TrackedCTA from "@/components/TrackedCTA";
 import Tabs from "@/components/Tabs";
@@ -121,13 +122,13 @@ export default function AutomatycznePrzypisywanieLeadow() {
     <>
       <Header />
       <main className="pt-16">
-        <Breadcrumbs kolumna="srodek" items={[{ label: "Automatyczne przypisywanie leadów" }]} />
+        <Breadcrumbs href="/automatyczne-przypisywanie-leadow" kolumna="srodek" items={[{ label: "Automatyczne przypisywanie leadów" }]} />
 
         <section className="pt-16 pb-6 bg-gradient-to-b from-accent/10 to-transparent border-b border-gray-100 dark:border-gray-800">
           <div className="container-wide">
-            <div className="max-w-3xl mx-auto text-center">
-              <span className="section-label">Lead routing CRM</span>
-              <h1 className="mt-4 text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+            <div className="max-w-3xl">
+              <span className="section-label">Usługa</span>
+              <h1 className="h1-strony mt-4 mb-6">
                 Automatyczne przypisywanie leadów do handlowców według regionu,
                 źródła lub produktu
               </h1>
@@ -136,15 +137,15 @@ export default function AutomatycznePrzypisywanieLeadow() {
                 dzwoni po obiedzie. Klient jest już u konkurencji. Ustawiamy
                 routing, który przypisuje leada w kilka sekund.
               </p>
-              <div className="mt-8 flex justify-center">
+              <div className="mt-8 flex">
                 <TrackedCTA
                   href="#sekcje"
                   location="article_routing_hero"
-                  label="Sprawdź routing leadów"
+                  label="Bezpłatna diagnoza"
                   eventName="cta_click_article_audit"
-                  className="btn-primary px-8 py-3.5 text-base"
+                  className="btn-primary"
                 >
-                  Sprawdź routing leadów
+                  Bezpłatna diagnoza
                 </TrackedCTA>
               </div>
               <p className="mt-6 text-sm text-gray-500 dark:text-gray-500">
@@ -164,8 +165,7 @@ export default function AutomatycznePrzypisywanieLeadow() {
                 content: (
                   <div className="py-6 lg:py-8">
                     <section className="max-w-3xl mx-auto">
-                      <span className="section-label">Problem biznesowy</span>
-                      <h2 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+                      <h2 className="h2-sekcji mt-4 mb-6">
                         Leady giną, bo między formularzem a CRM-em jest człowiek
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
@@ -186,8 +186,7 @@ export default function AutomatycznePrzypisywanieLeadow() {
                     </section>
 
                     <section className="mt-10 lg:mt-12 pt-10 lg:pt-12 border-t border-gray-100 dark:border-gray-800 max-w-3xl mx-auto">
-                      <span className="section-label">Koszt problemu</span>
-                      <h2 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+                      <h2 className="h2-sekcji mt-4 mb-6">
                         Ile kosztuje ręczne rozdzielanie leadów
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
@@ -224,8 +223,7 @@ export default function AutomatycznePrzypisywanieLeadow() {
                 content: (
                   <div className="py-6 lg:py-8">
                     <section className="max-w-4xl mx-auto">
-                      <span className="section-label">Jak to działa</span>
-                      <h2 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+                      <h2 className="h2-sekcji mt-4 mb-6">
                         Routing leada od formularza do handlowca
                       </h2>
                       <ol className="relative space-y-3 lg:space-y-4">
@@ -288,8 +286,7 @@ export default function AutomatycznePrzypisywanieLeadow() {
                 content: (
                   <div className="py-6 lg:py-8">
                     <section className="max-w-3xl mx-auto">
-                      <span className="section-label">Pierwszy etap</span>
-                      <h2 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+                      <h2 className="h2-sekcji mt-4 mb-6">
                         Efekt po tygodniu, nie po kwartale
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -302,8 +299,7 @@ export default function AutomatycznePrzypisywanieLeadow() {
                     </section>
 
                     <section className="mt-10 lg:mt-12 pt-10 lg:pt-12 border-t border-gray-100 dark:border-gray-800 max-w-3xl mx-auto">
-                      <span className="section-label">Typowe błędy</span>
-                      <h2 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+                      <h2 className="h2-sekcji mt-4 mb-6">
                         Czego unikamy przy routingu
                       </h2>
                       <div className="space-y-4">
@@ -328,8 +324,7 @@ export default function AutomatycznePrzypisywanieLeadow() {
                   <div className="py-6 lg:py-8">
                     <section className="max-w-4xl mx-auto">
                       <div className="text-center mb-10">
-                        <span className="section-label">Cennik</span>
-                        <h2 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                        <h2 className="h2-sekcji mt-4 mb-4">
                           Ile kosztuje wdrożenie routingu leadów
                         </h2>
                         <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -381,7 +376,7 @@ export default function AutomatycznePrzypisywanieLeadow() {
                 content: (
                   <div className="py-6 lg:py-8">
                     <section className="max-w-3xl mx-auto">
-                      <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-12 text-center">
+                      <h2 className="h2-sekcji mb-12 text-center">
                         Najczęstsze pytania o routing leadów
                       </h2>
                       <div className="space-y-4">
@@ -446,32 +441,14 @@ export default function AutomatycznePrzypisywanieLeadow() {
                         </ul>
                       </div>
                     </section>
-
-                    <section className="mt-10 lg:mt-12 pt-10 lg:pt-12 border-t border-gray-100 dark:border-gray-800 max-w-2xl mx-auto text-center">
-                      <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                        Chcesz, żeby leady same trafiały do właściwego
-                        handlowca?
-                      </h2>
-                      <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
-                        30-minutowa diagnoza, mapa pierwszego kroku i szacowany
-                        ROI. Bez zobowiązań.
-                      </p>
-                      <TrackedCTA
-                        href="/kontakt"
-                        location="article_routing_final"
-                        label="Sprawdź routing leadów"
-                        eventName="cta_click_article_audit"
-                        className="btn-primary px-8 py-3.5 text-base"
-                      >
-                        Sprawdź routing leadów
-                      </TrackedCTA>
-                    </section>
                   </div>
                 ),
               },
             ]}
           />
         </div>
+        <CTA />
+
       </main>
       <Footer />
 

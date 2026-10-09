@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CTA from "@/components/CTA";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import LandingForm from "@/components/LandingForm";
 import Tabs from "@/components/Tabs";
 import WybierzBranze from "@/components/WybierzBranze";
@@ -59,12 +61,14 @@ export default function AutomatyzacjaProcesowBiznesowych() {
     <>
       <Header />
       <main>
+        <Breadcrumbs href="/automatyzacja-procesow-biznesowych" kolumna="srodek" items={[{ label: "Automatyzacja procesów biznesowych" }]} />
+
         {/* Hero */}
         <section className="relative overflow-hidden pt-24 pb-12">
           <div className="blob blob-accent -z-10 top-[-10%] left-[-5%]" />
-          <div className="container-wide max-w-3xl mx-auto text-center">
+          <div className="container-wide max-w-3xl mx-auto">
             <p className="section-label mb-5">Usługa</p>
-            <h1 className="display-lg text-gray-900 dark:text-white mb-6">
+            <h1 className="h1-strony mb-6">
               Automatyzacja procesów biznesowych
             </h1>
             <p className="text-lg lg:text-xl text-gray-600 dark:text-gray-300">
@@ -97,7 +101,7 @@ export default function AutomatyzacjaProcesowBiznesowych() {
                 content: (
                   <div className="py-10 lg:py-12">
                     <div className="max-w-3xl mx-auto">
-                      <h2 className="display-md text-gray-900 dark:text-white mb-10">
+                      <h2 className="h2-sekcji mb-10">
                         Co oferujemy
                       </h2>
                       <ul className="space-y-5">
@@ -123,7 +127,7 @@ export default function AutomatyzacjaProcesowBiznesowych() {
                 content: (
                   <div className="py-10 lg:py-12">
                     <div className="max-w-3xl mx-auto">
-                      <h2 className="display-md text-gray-900 dark:text-white mb-10">
+                      <h2 className="h2-sekcji mb-10">
                         Częste pytania
                       </h2>
                       <div className="space-y-4">
@@ -175,6 +179,7 @@ export default function AutomatyzacjaProcesowBiznesowych() {
             ]}
           />
         </div>
+      <CTA />
       </main>
 
       {/* Service Schema */}

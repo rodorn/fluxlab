@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import LandingForm from "@/components/LandingForm";
 import Tabs from "@/components/Tabs";
@@ -65,14 +66,14 @@ export default function AutomatyzacjaRaportowania() {
     <>
       <Header />
       <main className="pt-16">
-        <Breadcrumbs kolumna="srodek" items={[{ label: "Automatyzacja raportowania" }]} />
+        <Breadcrumbs href="/automatyzacja-raportowania" kolumna="srodek" items={[{ label: "Automatyzacja raportowania" }]} />
 
         {/* Hero, kompaktowy */}
         <section className="relative overflow-hidden pt-24 pb-12">
           <div className="blob blob-accent absolute -top-32 -right-20 h-96 w-96" />
-          <div className="container-wide max-w-3xl mx-auto text-center">
+          <div className="container-wide max-w-3xl mx-auto">
             <p className="section-label mb-5">Usługa</p>
-            <h1 className="display-lg text-gray-900 dark:text-white mb-6">
+            <h1 className="h1-strony mb-6">
               Automatyzacja raportowania
             </h1>
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
@@ -97,7 +98,7 @@ export default function AutomatyzacjaRaportowania() {
                 content: (
                   <section className="py-10 lg:py-12">
                     <div className="max-w-3xl mx-auto">
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-3">
+                      <h2 className="h2-sekcji mb-3">
                         Ile to kosztuje
                       </h2>
                       <p className="text-gray-600 dark:text-gray-300 mb-8">
@@ -114,7 +115,7 @@ export default function AutomatyzacjaRaportowania() {
                 content: (
                   <section className="py-10 lg:py-12">
                     <div className="max-w-3xl mx-auto">
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-8">
+                      <h2 className="h2-sekcji mb-8">
                         Co automatyzujemy
                       </h2>
                       <ul className="grid gap-4">
@@ -136,7 +137,7 @@ export default function AutomatyzacjaRaportowania() {
                 content: (
                   <section className="py-10 lg:py-12">
                     <div className="max-w-3xl mx-auto">
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-8">
+                      <h2 className="h2-sekcji mb-8">
                         Najczęstsze pytania
                       </h2>
                       <div className="space-y-4">
@@ -189,6 +190,7 @@ export default function AutomatyzacjaRaportowania() {
             ]}
           />
         </div>
+      <CTA />
       </main>
 
       {/* Service Schema */}

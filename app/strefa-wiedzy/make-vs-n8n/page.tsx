@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 import Tabs from "@/components/Tabs";
@@ -57,8 +58,8 @@ export default function MakeVsN8nArticle() {
   return (
     <>
       <Header />
-      <main className="pt-16 prose-justify">
-        <Breadcrumbs kolumna="srodek"
+      <main className="pt-16">
+        <Breadcrumbs href="/strefa-wiedzy/make-vs-n8n" kolumna="srodek"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Make vs n8n" },
@@ -69,7 +70,7 @@ export default function MakeVsN8nArticle() {
         <section className="pt-16 pb-6">
           <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
             <span className="section-label">Strefa wiedzy</span>
-            <h1 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">
+            <h1 className="h1-artykulu mt-4">
               Make vs n8n, porównanie dla firm MŚP
             </h1>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -80,7 +81,7 @@ export default function MakeVsN8nArticle() {
           </div>
         </section>
 
-        <div className="container-wide pb-20">
+        <div className="container-wide pb-20 prose-justify">
           <Tabs
             ariaLabel="Rozdziały artykułu Make vs n8n"
             tabs={[
@@ -89,7 +90,7 @@ export default function MakeVsN8nArticle() {
                 content: (
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                      <h2 className="h2-sekcji mb-6">
                         Model i koszt dla MŚP
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
@@ -120,7 +121,7 @@ export default function MakeVsN8nArticle() {
                 content: (
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                      <h2 className="h2-sekcji mb-6">
                         Nauka i elastyczność
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
@@ -134,7 +135,7 @@ export default function MakeVsN8nArticle() {
                         rośnie przy 50+ scenariuszach i osobnych środowiskach.
                       </p>
 
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 mt-12">
+                      <h2 className="h2-sekcji mb-6 mt-12">
                         Dane i utrzymanie
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
@@ -161,7 +162,7 @@ export default function MakeVsN8nArticle() {
                 content: (
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                      <h2 className="h2-sekcji mb-6">
                         Kiedy Make, a kiedy n8n
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
@@ -195,16 +196,13 @@ export default function MakeVsN8nArticle() {
                       </p>
 
                       <div className="bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-8 text-center mt-12">
-                        <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                        <h2 className="h2-sekcji mb-6">
                           Make czy n8n? Pomożemy dobrać i wdrożyć.
                         </h2>
                         <p className="text-gray-600 dark:text-gray-400 mb-4">
                           Krótka rozmowa o Twojej skali i procesach.
                         </p>
-                        <Link
-                          href="/automatyzacja-procesow-biznesowych"
-                          className="btn-primary inline-block"
-                        >
+                        <Link href="/automatyzacja-procesow-biznesowych" className="btn-primary inline-block">
                           Zobacz usługę automatyzacji procesów
                         </Link>
                       </div>
@@ -217,7 +215,7 @@ export default function MakeVsN8nArticle() {
                 content: (
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                      <h2 className="h2-sekcji mb-6">
                         FAQ
                       </h2>
                       <div className="space-y-4">
@@ -259,20 +257,7 @@ export default function MakeVsN8nArticle() {
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
                       <PrevNextArticle currentHref="/strefa-wiedzy/make-vs-n8n" />
 
-                      <div className="bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-8 text-center mt-12">
-                        <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                          Nie wiesz, co wybrać?
-                        </h2>
-                        <p className="text-gray-600 dark:text-gray-400 mb-4">
-                          Sprawdzimy, co pasuje do Twojej skali i procesów.
-                        </p>
-                        <Link
-                          href="/kontakt"
-                          className="btn-primary inline-block"
-                        >
-                          Zamów diagnozę procesu
-                        </Link>
-                      </div>
+                      <CTA />
 
                       <div className="mt-12">
                         <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">

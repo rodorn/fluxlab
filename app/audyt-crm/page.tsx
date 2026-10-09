@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TrackedCTA from "@/components/TrackedCTA";
 import Tabs from "@/components/Tabs";
@@ -60,7 +61,7 @@ export default function AudytCRMPage() {
     <>
       <Header />
       <main>
-        <Breadcrumbs kolumna="srodek"
+        <Breadcrumbs href="/audyt-crm" kolumna="srodek"
           items={[
             { label: "Narzędzia", href: "/narzedzia" },
             { label: "Audyt CRM" },
@@ -69,12 +70,12 @@ export default function AudytCRMPage() {
 
         {/* Hero, kompaktowy */}
         <section className="pt-16 pb-6">
-          <div className="container-wide text-center max-w-3xl mx-auto">
+          <div className="container-wide max-w-3xl">
             <p className="section-label mb-4">Narzędzie</p>
-            <h1 className="text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 dark:text-white">
+            <h1 className="h1-strony">
               Audyt CRM: czy Twój pipeline nadaje się do automatyzacji?
             </h1>
-            <p className="mt-4 text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            <p className="mt-4 text-lg text-gray-600 dark:text-gray-400 max-w-2xl">
               10 pytań tak/nie, wynik i obszar do automatyzacji. Bez
               rejestracji, w 3 minuty.
             </p>
@@ -99,7 +100,7 @@ export default function AudytCRMPage() {
                 content: (
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                      <h2 className="h2-sekcji mb-6">
                         Jak interpretujemy wynik
                       </h2>
                       <div className="space-y-4 text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -132,7 +133,7 @@ export default function AudytCRMPage() {
                 content: (
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-8">
+                      <h2 className="h2-sekcji mb-8">
                         Najczęstsze pytania
                       </h2>
                       <div className="space-y-4">
@@ -171,7 +172,7 @@ export default function AudytCRMPage() {
                 content: (
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-8">
+                      <h2 className="h2-sekcji mb-8">
                         Powiązane treści
                       </h2>
                       <div className="grid md:grid-cols-3 gap-4">
@@ -213,35 +214,11 @@ export default function AudytCRMPage() {
                   </div>
                 ),
               },
-              {
-                label: "Kontakt",
-                content: (
-                  <div className="py-6 lg:py-8">
-                    <div className="max-w-2xl mx-auto text-center">
-                      <div className="bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-10">
-                        <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                          Masz wynik, chcesz konkretny plan?
-                        </h2>
-                        <p className="text-gray-500 dark:text-gray-400 mb-8">
-                          W diagnozie dostaniesz mapę procesu, 3 automatyzacje
-                          o największym wpływie i orientacyjną wycenę.
-                        </p>
-                        <TrackedCTA
-                          href="/kontakt"
-                          location="audit_crm_final"
-                          eventName="cta_click_audit_crm"
-                          className="btn-primary px-8 py-3.5 text-base"
-                        >
-                          Chcemy mapę automatyzacji CRM
-                        </TrackedCTA>
-                      </div>
-                    </div>
-                  </div>
-                ),
-              },
             ]}
           />
         </div>
+        <CTA />
+
       </main>
 
       {/* FAQPage Schema */}

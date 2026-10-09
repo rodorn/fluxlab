@@ -1,0 +1,42 @@
+=== 2026-10-04 17:08:56 start
+Wynik doby: 13 odsłon, 7 osób, 0 uruchomień narzędzi, 0 zgłoszeń; w tygodniu 51 osób (Google 12, Facebook 2, chatgpt 1); outreach 309 maili od 6.09, 1 odpowiedź, dziś 19 maili wyszło w niedzielę 17:06 poza cyklem i bez utm, więc wejścia z maili są niemierzalne.
+
+Plan `cykl/plan-ruchu.md` ma 24 zadania (niedziela 17:46 do poniedziałku 16:46), commit `8c537c0` na `origin/main`, wpis „Strategia dobowa 2026-10-04" w dzienniku.
+
+Trzy pierwsze zadania: Z1 pomiar 19 dzisiejszych maili (Resend, Zoho, wejścia na `/audyt-strony`), Z2 utm w pipeline wysyłki plus test, czy licznik zapisuje kampanię, Z3 osiem żądań indeksowania w Search Console dla stron zeskanowanych bez indeksu.
+
+Wyłączone w planie: sprawdzanie Gofinu co godzinę (16 pustych przebiegów), nowe FAQ KSeF bez danych z Search Console, kolejne teksty na fora do kolejki dla Pawła.
+
+Mail do Pawła wyszedł z `pawel@fluxlab.pl` (msgid `179112742158.398375...@fluxlab.pl`), temat „FluxLab ruch, plan na 5.10.2026: 7 osób w dobie, 1 odpowiedź na 309 maili", z decyzją o dalszym outreachu, importem do Bing i komentarzem Gofin.
+=== 2026-10-04 17:24:23 koniec, kod 0
+=== 2026-10-05 06:15:02 start
+Wynik doby: 35 odsłon, 18 osób (doba wcześniej 7), 0 uruchomień narzędzi przez ludzi, 0 odpowiedzi na 19 niedzielnych maili (19/19 dostarczone); GSC 28 dni: 12 kliknięć, 195 wyświetleń; 13 sesji bez odsyłacza przyszło zaraz po mailach, co cykl zweryfikuje o 7:46.
+Plan `cykl/plan-ruchu.md`: 24 zadania, od 06:46 dziś do 05:46 jutro, commit `e8930d4` na origin/main.
+Trzy pierwsze: Z1 tytuły i treść pod frazy „audyt google ads" i „enova" z GSC; Z2 przypisanie 13 sesji z niedzieli do maili plus jedno sprawdzenie forów; Z3 kontrola 22 gotowych maili przez `--proba` i ponowne potwierdzenie braku adresu w KRS.
+Dzień: 4 wysyłki z utm (22 gotowe plus do 12 z drugiej partii biur rachunkowych), bilans outreachu o 16:46; noc: narzędzie sprawdzania spółki po KRS na `/e-doreczenia-integracja`, 10 żądań indeksowania, linki wewnętrzne, 3 partie maili na wtorek drogą KRS.
+Mail do Pawła wyszedł o 06:39 z pawel@fluxlab.pl na iwanekpawel55@gmail.com, w sekcji „Dla Pawła": odpowiedź klientki FINREAL z decyzjami, 5 tekstów forumowych, Bing Webmaster, token API CEIDG, decyzja o outreachu po dzisiejszych liczbach.
+=== 2026-10-05 06:25:52 koniec, kod 0
+=== 2026-10-06 06:15:08 start
+Wynik doby: 42 osoby, 69 odsłon (poprzednia doba 18 osób), pierwszy lead z outreachu (Profit Polska, biuro rachunkowe, 1 lead na 11 maili z zarzutem KRS), GSC 219 wyświetleń przy 12 kliknięciach, 0 odpowiedzi w Zoho.
+Plan: 24 zadania w `cykl/plan-ruchu.md` (06:46 dziś do 05:46 jutro), commit a780f5d na origin/main, wpis „Strategia dobowa 2026-10-06” w dzienniku.
+Z1: rozkład 32 sesji bez odsyłacza na grupy (po mailach, aplikacja FB, wpisany adres).
+Z2: tytuł i opis strony pod „mail firmowy” (13 wyświetleń, 0 kliknięć), deploy i IndexNow. Z3: kontrola kolejki 30 maili przed wysyłkami o 9:46, 10:46, 11:46 i 14:46.
+Mail do Pawła wyszedł o 06:49 z pawel@fluxlab.pl (temat „FluxLab ruch, plan na 6.10.2026: 42 osoby w dobie i pierwszy lead z outreachu”), w sekcji „Dla Pawła” odpowiedź do Profit Polska, komentarz Gofin, Bing Webmaster i decyzja o tekstach forumowych.
+=== 2026-10-06 06:23:26 koniec, kod 0
+=== 2026-10-07 06:15:14 start
+You've hit your weekly limit · resets 9am (Europe/Warsaw)
+=== 2026-10-07 06:23:33 koniec, kod 1
+=== 2026-10-08 07:00:00 start
+Wynik doby 7.10: 25 sesji, 29 odsłon po filtrach (rekord licznika), 20 maili do biur dostarczonych w całości, 0 odpowiedzi, 1 wypisanie, 5 wejść z maili bez żadnego skanu; GSC 15 kliknięć i 324 wyświetlenia w 28 dniach, 91 stron w indeksie.
+Plan `cykl/plan-ruchu.md` na 8/9.10: 24 zadania, commit b81cc81 na origin/main.
+Z1 06:46: parametr `?krs=` na `/e-doreczenia-integracja` z gotowym wynikiem i linkiem w 8 mailach na dziś.
+Z2 07:46: kontrola indeksu 20 adresów (w tym 10 z serii 7.10) i lista do nocnych żądań; Z3 08:46: ostatni follow-up do 17 biur z 6.10 z gotowym wynikiem.
+Mail do Pawła wyszedł 06:43 z pawel@fluxlab.pl (msgid 179143606062.727963), „Dla Pawła": odpowiedź do Profit Polska czeka trzeci dzień, 6 tekstów Gofin, `/nie-licz-mnie` z telefonu, źródło adresów po wyczerpaniu CIK.
+=== 2026-10-08 07:08:14 koniec, kod 0
+=== 2026-10-09 06:15:14 start
+Wynik doby 8.10: 14 sesji po filtrach, realnie 10 osób, 0 uruchomień narzędzi przez ludzi, 0 zgłoszeń; outreach 25 maili, 25 dostarczonych, 0 odpowiedzi, 0 ludzi; Search Console 16 kliknięć i 433 wyświetlenia (było 15 i 324), Google jako jedyny kanał rośnie co dobę.
+Plan `cykl/plan-ruchu.md`: 24 zadania od 06:46 do 05:46, commit 147f77e na origin/main, wpis „Strategia dobowa 2026-10-09” w dzienniku.
+Trzy pierwsze zadania: Z1 pomiar 62 sesji bez odsyłacza z tygodnia; Z2 sprawdzenie i naprawa przekierowania www.fluxlab.pl na fluxlab.pl (Google indeksuje www osobno); Z3 przygotowanie 8 ostatnich maili do biur rachunkowych przed wysyłką o 9:46.
+Outreach dostał 5 h (ostatnie 8 maili, jedna próba wyszukiwarki KRS po nazwie z limitem 60 minut, decyzja o wstrzymaniu w Z11), Google 10 h (tytuły pod frazy z wyświetleniami bez kliknięć, 15 stron bez indeksu, 10 żądań po 21:45, linki wewnętrzne), Facebook 1 h.
+Mail do Pawła wyszedł 06:43 z pawel@fluxlab.pl; sekcja „Dla Pawła”: odpowiedź do Profit Polska (5. dzień), decyzja o płatnej bazie firm albo innym segmencie, 6 tekstów Gofin, dwie odpowiedzi Kontomatik.
+=== 2026-10-09 06:23:31 koniec, kod 0

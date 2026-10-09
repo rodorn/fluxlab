@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TrackedCTA from "@/components/TrackedCTA";
 import Tabs from "@/components/Tabs";
@@ -155,14 +156,14 @@ export default function CrmJakoSystemPracy() {
     <>
       <Header />
       <main>
-        <Breadcrumbs kolumna="srodek" items={[{ label: "CRM jako system pracy" }]} />
+        <Breadcrumbs href="/crm-jako-system-pracy" kolumna="srodek" items={[{ label: "CRM jako system pracy" }]} />
 
         {/* Hero, kompaktowy */}
         <section className="pt-24 pb-12 bg-gradient-to-b from-accent/10 to-transparent border-b border-gray-100 dark:border-gray-800">
           <div className="container-wide">
-            <div className="max-w-3xl mx-auto text-center">
-              <span className="section-label">CRM jako system pracy</span>
-              <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mt-4 mb-6 leading-tight">
+            <div className="max-w-3xl">
+              <span className="section-label">Usługa</span>
+              <h1 className="h1-strony mt-4 mb-6">
                 Jak zmienić CRM z notatnika w system pracy handlowców
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -170,15 +171,15 @@ export default function CrmJakoSystemPracy() {
                 istniejący system tak, żeby pilnował terminów, podpowiadał
                 kolejny krok, a manager przestał sklejać raporty w Excelu.
               </p>
-              <div className="mt-8 flex justify-center">
+              <div className="mt-8 flex">
                 <TrackedCTA
                   href="#sekcje"
                   location="article_crm-jako-system-pracy_hero"
-                  label="uporządkuj crm"
+                  label="Bezpłatna diagnoza"
                   eventName="cta_click_article_audit"
-                  className="btn-primary px-8 py-3.5 text-base"
+                  className="btn-primary"
                 >
-                  Uporządkuj CRM
+                  Bezpłatna diagnoza
                 </TrackedCTA>
               </div>
               <p className="mt-6 text-sm text-gray-500 dark:text-gray-500">
@@ -198,8 +199,7 @@ export default function CrmJakoSystemPracy() {
                   <div className="py-10 lg:py-12">
                     <div className="max-w-3xl mx-auto">
                       <div className="text-center mb-12">
-                        <span className="section-label">Problem</span>
-                        <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 leading-tight">
+                        <h2 className="h2-sekcji mt-4">
                           CRM, w którym dane są „cokolwiek”, daje raporty
                           „cokolwiek”
                         </h2>
@@ -252,8 +252,7 @@ export default function CrmJakoSystemPracy() {
                   <div className="py-10 lg:py-12">
                     <div className="max-w-3xl mx-auto">
                       <div className="text-center mb-12">
-                        <span className="section-label">Koszt problemu</span>
-                        <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4">
+                        <h2 className="h2-sekcji mt-4">
                           Ile kosztuje administracja w CRM
                         </h2>
                       </div>
@@ -275,8 +274,7 @@ export default function CrmJakoSystemPracy() {
                   <div className="py-10 lg:py-12">
                     <div className="max-w-3xl mx-auto">
                       <div className="text-center mb-12">
-                        <span className="section-label">Po wdrożeniu</span>
-                        <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4">
+                        <h2 className="h2-sekcji mt-4">
                           Jak wygląda CRM, który jest systemem pracy
                         </h2>
                       </div>
@@ -305,8 +303,7 @@ export default function CrmJakoSystemPracy() {
                   <div className="py-10 lg:py-12">
                     <div className="container-wide">
                       <div className="max-w-2xl mb-10">
-                        <p className="section-label mb-3">Etapy</p>
-                        <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                        <h2 className="h2-sekcji mb-4">
                           Etapy wdrożenia porządku w CRM
                         </h2>
                         <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
@@ -375,8 +372,7 @@ export default function CrmJakoSystemPracy() {
                   <div className="py-10 lg:py-12">
                     <div className="max-w-4xl mx-auto">
                       <div className="text-center mb-12">
-                        <span className="section-label">Cennik</span>
-                        <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4">
+                        <h2 className="h2-sekcji mt-4">
                           Ile kosztuje porządek w CRM-ie
                         </h2>
                       </div>
@@ -415,12 +411,12 @@ export default function CrmJakoSystemPracy() {
                         <TrackedCTA
                           href="/kontakt"
                           location="article_crm-jako-system-pracy_pricing"
-                          label="wycena"
+                          label="Bezpłatna diagnoza"
                           eventName="cta_click_article_audit"
                           className="btn-primary px-8 py-3.5 text-base"
                         >
-                          Wyceń nasz CRM
-                        </TrackedCTA>
+                Bezpłatna diagnoza
+              </TrackedCTA>
                       </div>
                     </div>
                   </div>
@@ -432,8 +428,7 @@ export default function CrmJakoSystemPracy() {
                   <div className="py-10 lg:py-12">
                     <div className="max-w-3xl mx-auto">
                       <div className="text-center mb-12">
-                        <span className="section-label">FAQ</span>
-                        <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4">
+                        <h2 className="h2-sekcji mt-4">
                           Najczęstsze pytania o porządkowanie CRM-u
                         </h2>
                       </div>
@@ -478,7 +473,7 @@ export default function CrmJakoSystemPracy() {
                 content: (
                   <div className="py-10 lg:py-12">
                     <div className="max-w-3xl mx-auto">
-                      <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+                      <h2 className="h2-sekcji mb-6">
                         Zobacz też
                       </h2>
                       <ul className="grid sm:grid-cols-2 gap-3">
@@ -526,37 +521,11 @@ export default function CrmJakoSystemPracy() {
                   </div>
                 ),
               },
-              {
-                label: "Kontakt",
-                content: (
-                  <div className="py-10 lg:py-12">
-                    <div className="max-w-2xl mx-auto text-center">
-                      <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                        Zrób z CRM-u system pracy, nie cmentarz danych
-                      </h2>
-                      <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-                        30 minut audytu, mapa porządku, wycena pierwszego etapu.
-                        Bez sprzedażowej presji.
-                      </p>
-                      <TrackedCTA
-                        href="/kontakt"
-                        location="article_crm-jako-system-pracy_final"
-                        label="uporządkuj crm"
-                        eventName="cta_click_article_audit"
-                        className="btn-primary px-8 py-3.5 text-base"
-                      >
-                        Uporządkuj CRM
-                      </TrackedCTA>
-                      <p className="mt-4 text-sm text-gray-500 dark:text-gray-500">
-                        Odpowiedź w 24h · audyt CRM · bez zobowiązań
-                      </p>
-                    </div>
-                  </div>
-                ),
-              },
             ]}
           />
         </div>
+        <CTA />
+
       </main>
       <Footer />
 

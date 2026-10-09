@@ -3,7 +3,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import LandingForm from "@/components/LandingForm";
-import TrackedCTA from "@/components/TrackedCTA";
 import NipCheck from "@/components/NipCheck";
 import NazwaNarzedzia from "@/components/NazwaNarzedzia";
 import Link from "next/link";
@@ -95,32 +94,18 @@ export default function SprawdzKontrahentaPage() {
     <>
       <Header />
       <main>
-        <Breadcrumbs items={[{ label: "Sprawdź kontrahenta" }]} />
+        <Breadcrumbs href="/sprawdz-kontrahenta" items={[{ label: "Sprawdź kontrahenta" }]} />
 
         <section className="container-wide pt-6 pb-14">
           <div className="max-w-3xl">
-            <p className="text-sm font-semibold text-accent uppercase tracking-wider mb-3">
-              Sprawdzony kontrahent
-            </p>
-            <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white">
+            <p className="section-label mb-3">Narzędzie</p>
+            <h1 className="h1-strony">
               Sprawdź firmę, zanim wyślesz przelew
             </h1>
             <p className="mt-5 text-lg text-gray-600 dark:text-gray-300">
               Podajesz NIP, numer konta i adres strony. Dostajesz jeden werdykt
               z wykazu VAT, odpisu KRS i danych domeny.
             </p>
-            <div className="mt-8 flex flex-wrap items-center gap-4">
-              <TrackedCTA
-                href="#zamow"
-                location="kontrahent_hero"
-                className="btn-primary"
-              >
-                Sprawdź firmę za darmo
-              </TrackedCTA>
-              <span className="text-sm text-gray-500 dark:text-gray-400">
-                Odpowiedź zwykle tego samego dnia
-              </span>
-            </div>
           </div>
 
           <div className="mt-12">
@@ -157,14 +142,14 @@ export default function SprawdzKontrahentaPage() {
           </p>
 
           <div className="mt-16">
-            <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
+            <h2 className="h2-sekcji">
               Cennik
             </h2>
-            <div className="mt-8 grid gap-6 md:grid-cols-2 max-w-3xl">
+            <div className="mt-8 grid gap-6 md:grid-cols-2 items-stretch">
               {pricing.map((t) => (
                 <div
                   key={t.name}
-                  className={`flex flex-col rounded-2xl border p-6 ${
+                  className={`flex h-full flex-col rounded-2xl border p-6 ${
                     t.featured
                       ? "border-accent/60 bg-white/80 dark:bg-gray-900/60"
                       : "border-gray-200/80 dark:border-gray-800/80 bg-white/60 dark:bg-gray-900/40"
@@ -184,7 +169,7 @@ export default function SprawdzKontrahentaPage() {
                   <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
                     {t.desc}
                   </p>
-                  <ul className="mt-4 space-y-2">
+                  <ul className="mt-4 flex-1 space-y-2">
                     {t.features.map((f) => (
                       <li
                         key={f}
@@ -221,8 +206,8 @@ export default function SprawdzKontrahentaPage() {
             </div>
           </div>
 
-          <div className="mt-16 max-w-3xl">
-            <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
+          <div className="mt-16">
+            <h2 className="h2-sekcji">
               Najczęstsze pytania
             </h2>
             <div className="mt-6 space-y-4">

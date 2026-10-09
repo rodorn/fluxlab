@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 
@@ -34,7 +35,7 @@ export default function KiedyAiMaSensPage() {
     <>
       <Header />
       <main className="pt-16 prose-justify">
-        <Breadcrumbs kolumna="srodek"
+        <Breadcrumbs href="/strefa-wiedzy/kiedy-ai-ma-sens-a-kiedy-nie" kolumna="srodek"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Kiedy AI ma sens, a kiedy nie" },
@@ -44,10 +45,10 @@ export default function KiedyAiMaSensPage() {
           <div className="container-wide">
             <div className="max-w-3xl mx-auto text-center">
               <span className="section-label">Strefa wiedzy</span>
-              <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-6">
+              <h1 className="mt-4 mb-6 h1-artykulu">
                 Kiedy AI ma sens, a kiedy nie
               </h1>
-              <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+              <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed !text-left">
                 Drogo kosztuje zarówno AI wdrożone „bo wszyscy to robią", jak i
                 AI odrzucone tam, gdzie szybko odciążyłoby zespół. Wystarczy
                 prosty filtr.
@@ -58,7 +59,7 @@ export default function KiedyAiMaSensPage() {
 
         <div className="container-wide pb-20">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+            <h2 className="mb-6 h2-sekcji">
               Pięć pytań przed wdrożeniem
             </h2>
             <ul className="space-y-3 text-gray-600 dark:text-gray-400 mb-6 list-disc pl-5">
@@ -74,7 +75,7 @@ export default function KiedyAiMaSensPage() {
               walidacji to zły kandydat.
             </p>
 
-            <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+            <h2 className="mb-6 h2-sekcji">
               Najpierw proces, potem AI
             </h2>
             <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -96,20 +97,13 @@ export default function KiedyAiMaSensPage() {
               .
             </p>
 
-            <div className="mt-10 bg-accent/10 rounded-2xl p-8 lg:p-12 text-center">
-              <p className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-                Nie wiesz, czy AI ma sens w Twoim procesie?
-              </p>
-              <Link href="/automatyzacja-ai" className="btn-primary">
-                Zobacz usługę Automatyzacja AI
-              </Link>
-            </div>
 
             <div className="mt-16">
               <PrevNextArticle currentHref="/strefa-wiedzy/kiedy-ai-ma-sens-a-kiedy-nie" />
             </div>
           </div>
         </div>
+        <CTA naglowek="Nie wiesz, czy AI ma sens w Twoim procesie?" />
       </main>
       <Footer />
 

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CTA from "@/components/CTA";
 import CarCostCalculator from "./CarCostCalculator";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Tabs from "@/components/Tabs";
@@ -59,16 +60,16 @@ export default function KalkulatorKosztowPage() {
     <>
       <Header />
       <main>
-        <Breadcrumbs kolumna="srodek" items={[{ label: "Kalkulator kosztów" }]} />
+        <Breadcrumbs href="/kalkulator-kosztow" kolumna="srodek" items={[{ label: "Kalkulator kosztów" }]} />
 
         {/* Hero, kompaktowy */}
         <section className="pt-24 pb-12">
-          <div className="container-wide text-center max-w-3xl mx-auto">
+          <div className="container-wide max-w-3xl">
             <p className="section-label mb-4">Narzędzie</p>
-            <h1 className="text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 dark:text-white">
+            <h1 className="h1-strony">
               Kalkulator kosztów samochodu
             </h1>
-            <p className="mt-4 text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            <p className="mt-4 text-lg text-gray-600 dark:text-gray-400">
               Ile naprawdę kosztuje auto: paliwo, olej, opony, serwis,
               ubezpieczenie i utrata wartości.
             </p>
@@ -93,7 +94,7 @@ export default function KalkulatorKosztowPage() {
                 content: (
                   <div className="py-10 lg:py-12">
                     <div className="max-w-3xl">
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                      <h2 className="h2-sekcji mb-6">
                         Jak liczymy koszt samochodu
                       </h2>
                       <div className="space-y-4 text-gray-600 dark:text-gray-400">
@@ -158,7 +159,7 @@ export default function KalkulatorKosztowPage() {
                   <div className="py-10 lg:py-12">
                     <div className="max-w-3xl space-y-12">
                       <div>
-                        <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-8">
+                        <h2 className="h2-sekcji mb-8">
                           Najczęstsze pytania
                         </h2>
                         <div className="space-y-4">
@@ -191,7 +192,7 @@ export default function KalkulatorKosztowPage() {
                       </div>
 
                       <div>
-                        <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-8">
+                        <h2 className="h2-sekcji mb-8">
                           Powiązane treści
                         </h2>
                         <div className="grid md:grid-cols-3 gap-4">
@@ -231,21 +232,6 @@ export default function KalkulatorKosztowPage() {
                         </div>
                       </div>
 
-                      <div className="bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-10 text-center">
-                        <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                          Potrzebujesz automatyzacji procesów w firmie?
-                        </h2>
-                        <p className="text-gray-500 dark:text-gray-400 mb-8">
-                          Automatyzujemy raporty kosztów floty i integracje z
-                          księgowością.
-                        </p>
-                        <Link
-                          href="/kontakt"
-                          className="btn-primary px-8 py-3.5 text-base"
-                        >
-                          Zamów diagnozę procesu
-                        </Link>
-                      </div>
                     </div>
                   </div>
                 ),
@@ -254,6 +240,7 @@ export default function KalkulatorKosztowPage() {
           />
         </div>
       </main>
+      <CTA />
 
       {/* FAQPage Schema */}
       <script

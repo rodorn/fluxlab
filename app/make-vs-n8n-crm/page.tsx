@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TrackedCTA from "@/components/TrackedCTA";
 import Tabs from "@/components/Tabs";
@@ -152,14 +153,14 @@ export default function MakeVsN8nCrm() {
     <>
       <Header />
       <main>
-        <Breadcrumbs kolumna="srodek" items={[{ label: "Make czy n8n do CRM" }]} />
+        <Breadcrumbs href="/make-vs-n8n-crm" kolumna="srodek" items={[{ label: "Make czy n8n do CRM" }]} />
 
         {/* Hero, kompaktowy */}
         <section className="pt-24 pb-12 bg-gradient-to-b from-accent/10 to-transparent border-b border-gray-100 dark:border-gray-800">
           <div className="container-wide">
-            <div className="max-w-3xl mx-auto text-center">
-              <p className="section-label mb-4">Make vs n8n dla CRM</p>
-              <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+            <div className="max-w-3xl">
+              <p className="section-label mb-4">Usługa</p>
+              <h1 className="h1-strony mb-6">
                 Make czy n8n: co wybrać do automatyzacji CRM i leadów?
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
@@ -170,12 +171,12 @@ export default function MakeVsN8nCrm() {
               <TrackedCTA
                 href="#sekcje"
                 location="article_make-vs-n8n-crm_hero"
-                label="Dobierz narzędzie do procesu"
+                label="Bezpłatna diagnoza"
                 eventName="cta_click_article_audit"
                 className="btn-primary"
               >
-                Dobierz narzędzie do procesu
-              </TrackedCTA>
+                  Bezpłatna diagnoza
+                </TrackedCTA>
             </div>
           </div>
         </section>
@@ -189,8 +190,7 @@ export default function MakeVsN8nCrm() {
                 content: (
                   <div className="py-10 lg:py-12">
                     <div className="max-w-3xl mx-auto">
-                      <span className="section-label">Problem biznesowy</span>
-                      <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-6">
+                      <h2 className="h2-sekcji mt-4 mb-6">
                         Najpierw proces, potem narzędzie
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
@@ -220,8 +220,7 @@ export default function MakeVsN8nCrm() {
                 content: (
                   <div className="py-10 lg:py-12">
                     <div className="max-w-3xl mx-auto">
-                      <span className="section-label">5 problemów CRM</span>
-                      <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-6">
+                      <h2 className="h2-sekcji mt-4 mb-6">
                         Jak każde narzędzie rozwiązuje typowe problemy CRM
                       </h2>
                       <div className="space-y-6">
@@ -271,8 +270,7 @@ export default function MakeVsN8nCrm() {
                 content: (
                   <div className="py-10 lg:py-12">
                     <div className="max-w-4xl mx-auto">
-                      <span className="section-label">Tabela</span>
-                      <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-6">
+                      <h2 className="h2-sekcji mt-4 mb-6">
                         Make vs n8n w skrócie
                       </h2>
                       <div className="overflow-x-auto rounded-2xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800/60">
@@ -316,8 +314,7 @@ export default function MakeVsN8nCrm() {
                 content: (
                   <div className="py-10 lg:py-12">
                     <div className="max-w-3xl mx-auto">
-                      <span className="section-label">Decyzja</span>
-                      <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-6">
+                      <h2 className="h2-sekcji mt-4 mb-6">
                         Kiedy Make, a kiedy n8n
                       </h2>
                       <div className="grid md:grid-cols-2 gap-6 mb-8">
@@ -360,8 +357,7 @@ export default function MakeVsN8nCrm() {
                 content: (
                   <div className="py-10 lg:py-12">
                     <div className="max-w-3xl mx-auto">
-                      <span className="section-label">Cennik</span>
-                      <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-4">
+                      <h2 className="h2-sekcji mt-4 mb-4">
                         Ile kosztuje wdrożenie
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
@@ -410,7 +406,7 @@ export default function MakeVsN8nCrm() {
                 content: (
                   <div className="py-10 lg:py-12">
                     <div className="max-w-3xl mx-auto">
-                      <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-12 text-center">
+                      <h2 className="h2-sekcji mb-12 text-center">
                         Najczęstsze pytania
                       </h2>
                       <div className="space-y-4">
@@ -450,27 +446,10 @@ export default function MakeVsN8nCrm() {
                 ),
               },
               {
-                label: "Kontakt",
+                label: "Powiązane",
                 content: (
                   <div className="py-10 lg:py-12">
                     <div className="max-w-2xl mx-auto text-center">
-                      <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                        Dobierzmy narzędzie do Twojego procesu
-                      </h2>
-                      <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-                        30 minut rozmowy o procesie sprzedaży. Wyjdziesz z
-                        rekomendacją dopasowaną do wolumenu, zespołu i
-                        integracji.
-                      </p>
-                      <TrackedCTA
-                        href="/kontakt"
-                        location="article_make-vs-n8n-crm_final"
-                        label="Dobierz narzędzie do procesu"
-                        eventName="cta_click_article_audit"
-                        className="btn-primary"
-                      >
-                        Dobierz narzędzie do procesu
-                      </TrackedCTA>
                       <ul className="mt-10 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
                         <li>
                           <Link
@@ -504,6 +483,7 @@ export default function MakeVsN8nCrm() {
             ]}
           />
         </div>
+        <CTA />
       </main>
       <Footer />
 

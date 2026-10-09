@@ -5,6 +5,11 @@ import TileVideo from "@/components/TileVideo";
 import PoleAudytu from "@/components/PoleAudytu";
 import { LICZBA_NARZEDZI } from "@/lib/narzedzia";
 import { nazwaFilaru } from "@/lib/filary";
+import { SEKCJE } from "@/lib/sekcje";
+
+const BRANZE = SEKCJE.find((x) => x.slug === "uslugi")!.grupy.find(
+  (g) => g.nazwa === "Branże",
+)!.strony;
 
 const PILLARS = [
   {
@@ -176,36 +181,127 @@ export default function Home() {
             uciazliwosci. Te szesc zdan to jego slowa, a nie nasze nazwy
             kategorii, i kazde prowadzi do strony, ktora opisuje wlasnie ten
             jeden przypadek. */}
-        <section className="relative z-20 py-12 lg:py-16 px-[max(1.5rem,calc((100%-72rem)/2+1.5rem))] border-t border-gray-200 dark:border-white/10">
-          <h2 className="text-center text-2xl lg:text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
-            Najczęściej rozwiązujemy
-          </h2>
-          <p className="mx-auto mt-3 max-w-2xl text-center text-base text-gray-600 dark:text-white/60">
-            Jeśli któreś z tych zdań brzmi jak Twoja firma, kliknij. Pod każdym
-            jest problem, jego koszt i efekt wdrożenia, a osobno opisaliśmy{" "}
-            <Link
-              href="/automatyzacja-dla-biur-rachunkowych"
-              className="font-medium text-accent underline-offset-4 hover:underline"
-            >
-              biura rachunkowe
-            </Link>
-            .
-          </p>
-          <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {PROBLEMY.map((p) => (
-              <li key={p.href}>
+        <section className="relative z-20 py-12 lg:py-16 border-t border-gray-200 dark:border-white/10">
+          <div className="container-wide">
+            <h2 className="text-center text-2xl lg:text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
+              Najczęściej rozwiązujemy
+            </h2>
+            <p className="mx-auto mt-3 max-w-2xl text-center text-base text-gray-600 dark:text-white/60">
+              Jeśli któreś z tych zdań brzmi jak Twoja firma, kliknij. Pod
+              każdym jest problem, jego koszt i efekt wdrożenia, a osobno
+              opisaliśmy{" "}
+              <Link
+                href="/automatyzacja-dla-biur-rachunkowych"
+                className="font-medium text-accent underline-offset-4 hover:underline"
+              >
+                biura rachunkowe
+              </Link>
+              .
+            </p>
+            <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {PROBLEMY.map((p) => (
+                <li key={p.href}>
+                  <Link
+                    href={p.href}
+                    className="group flex h-full flex-col rounded-xl border border-gray-200 dark:border-white/10 bg-white/60 dark:bg-white/[0.03] p-5 transition-colors hover:border-accent/70 dark:hover:border-accent/70"
+                  >
+                    <span className="text-[15px] font-semibold leading-snug text-gray-900 dark:text-white/90">
+                      {p.zdanie}
+                    </span>
+                    <span className="mt-2 text-sm text-gray-600 dark:text-white/55">
+                      {p.skutek}
+                    </span>
+                    <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-accent">
+                      {p.cta}
+                      <span
+                        aria-hidden="true"
+                        className="inline-block transition-transform group-hover:translate-x-0.5"
+                      >
+                        →
+                      </span>
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        {/* Branże i dalsze kroki: pod sekcjami usług, żeby z głównej dało się
+            wejść w każdy dział bez zgadywania. */}
+        <section
+          aria-label="Branże i dalsze kroki"
+          className="relative z-20 border-t border-gray-200 py-10 dark:border-white/10"
+        >
+          <div className="container-wide">
+            <p className="text-center text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-white/50">
+              Branże
+            </p>
+            <ul className="mt-4 flex flex-wrap justify-center gap-2">
+              {BRANZE.map((b) => (
+                <li key={b.href}>
+                  <Link
+                    href={b.href}
+                    className="inline-block rounded-full border border-gray-200 bg-white/60 px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:border-accent/70 hover:text-accent dark:border-white/10 dark:bg-white/[0.03] dark:text-white/80"
+                  >
+                    {b.nazwa}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-6 text-center text-sm text-gray-600 dark:text-white/60">
+              <Link
+                href="/produkty"
+                className="font-semibold text-accent underline-offset-4 hover:underline"
+              >
+                Zobacz cennik
+              </Link>
+              <span
+                aria-hidden="true"
+                className="mx-3 text-gray-300 dark:text-white/20"
+              >
+                |
+              </span>
+              <Link
+                href="/strefa-wiedzy"
+                className="font-semibold text-accent underline-offset-4 hover:underline"
+              >
+                Strefa wiedzy
+              </Link>
+            </p>
+          </div>
+        </section>
+
+        {/* Dowod kompetencji dla firmy bez ani jednego klienta. Liczby z
+            wlasnego pomiaru, z podana probka i metoda, zeby kazdy mogl je
+            powtorzyc i sprawdzic. Na dole, a nie pod haslem: to jest odpowiedz
+            na pytanie "skad mamy wiedziec, ze on sie na tym zna", a takie
+            pytanie pada po przeczytaniu oferty, nie przed. */}
+        <section className="relative z-20 border-t border-gray-200 py-12 dark:border-white/10 lg:py-16">
+          <div className="container-wide">
+            <h2 className="text-center text-2xl lg:text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
+              Co sami zmierzyliśmy
+            </h2>
+            <p className="mx-auto mt-3 max-w-2xl text-center text-base text-gray-600 dark:text-white/60">
+              Nie pokazujemy cudzych logotypów. Pokazujemy, co sami zmierzyliśmy
+              na 386 stronach dealerów tymi samymi narzędziami, które są tutaj,
+              z metodą, którą każdy może powtórzyć.
+            </p>
+            <div className="mt-8 grid gap-3 sm:grid-cols-3">
+              {BADANIA.map((b) => (
                 <Link
-                  href={p.href}
-                  className="group flex h-full flex-col rounded-xl border border-gray-200 dark:border-white/10 bg-white/60 dark:bg-white/[0.03] p-5 transition-colors hover:border-accent/70 dark:hover:border-accent/70"
+                  key={b.href}
+                  href={b.href}
+                  className="group rounded-xl border border-gray-200 bg-white/60 p-4 transition-colors hover:border-accent/70 dark:border-white/10 dark:bg-white/[0.03] dark:hover:border-accent/70"
                 >
-                  <span className="text-[15px] font-semibold leading-snug text-gray-900 dark:text-white/90">
-                    {p.zdanie}
+                  <span className="block text-xl font-bold tabular-nums text-gray-900 dark:text-white">
+                    {b.liczba}
                   </span>
-                  <span className="mt-2 text-sm text-gray-600 dark:text-white/55">
-                    {p.skutek}
+                  <span className="mt-1 block text-sm text-gray-600 dark:text-white/60">
+                    {b.opis}
                   </span>
-                  <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-accent">
-                    {p.cta}
+                  <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-accent">
+                    Nasze badanie
                     <span
                       aria-hidden="true"
                       className="inline-block transition-transform group-hover:translate-x-0.5"
@@ -214,49 +310,28 @@ export default function Home() {
                     </span>
                   </span>
                 </Link>
-              </li>
-            ))}
-          </ul>
+              ))}
+            </div>
+          </div>
         </section>
 
-        {/* Dowod kompetencji dla firmy bez ani jednego klienta. Liczby z
-            wlasnego pomiaru, z podana probka i metoda, zeby kazdy mogl je
-            powtorzyc i sprawdzic. Na dole, a nie pod haslem: to jest odpowiedz
-            na pytanie "skad mamy wiedziec, ze on sie na tym zna", a takie
-            pytanie pada po przeczytaniu oferty, nie przed. */}
-        <section className="relative z-20 border-t border-gray-200 py-12 dark:border-white/10 lg:py-16 px-[max(1.5rem,calc((100%-72rem)/2+1.5rem))]">
-          <h2 className="text-center text-2xl lg:text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
-            Co sami zmierzyliśmy
-          </h2>
-          <p className="mx-auto mt-3 max-w-2xl text-center text-base text-gray-600 dark:text-white/60">
-            Nie pokazujemy cudzych logotypów. Pokazujemy, co sami zmierzyliśmy
-            na 386 stronach dealerów tymi samymi narzędziami, które są tutaj, z
-            metodą, którą każdy może powtórzyć.
-          </p>
-          <div className="mx-auto mt-8 grid max-w-3xl gap-3 sm:grid-cols-3">
-            {BADANIA.map((b) => (
+        <section className="relative z-20 border-t border-gray-200 py-8 dark:border-white/10 lg:py-10">
+          <div className="container-wide">
+            <div className="mx-auto max-w-2xl rounded-2xl border border-accent/20 bg-accent/5 p-8 text-center dark:bg-accent/10">
+              <h2 className="mb-3 text-2xl font-bold text-gray-900 dark:text-white lg:text-3xl">
+                Nie wiesz, od czego zacząć?
+              </h2>
+              <p className="mb-6 text-gray-600 dark:text-gray-400">
+                Opisz, co robicie ręcznie. Wskażemy, co da się zautomatyzować,
+                bez zobowiązań.
+              </p>
               <Link
-                key={b.href}
-                href={b.href}
-                className="group rounded-xl border border-gray-200 bg-white/60 p-4 transition-colors hover:border-accent/70 dark:border-white/10 dark:bg-white/[0.03] dark:hover:border-accent/70"
+                href="/kontakt"
+                className="btn-primary px-8 py-3.5 text-base"
               >
-                <span className="block text-xl font-bold tabular-nums text-gray-900 dark:text-white">
-                  {b.liczba}
-                </span>
-                <span className="mt-1 block text-sm text-gray-600 dark:text-white/60">
-                  {b.opis}
-                </span>
-                <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-accent">
-                  Nasze badanie
-                  <span
-                    aria-hidden="true"
-                    className="inline-block transition-transform group-hover:translate-x-0.5"
-                  >
-                    →
-                  </span>
-                </span>
+                Bezpłatna diagnoza
               </Link>
-            ))}
+            </div>
           </div>
         </section>
       </main>

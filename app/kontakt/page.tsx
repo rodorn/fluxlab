@@ -24,12 +24,11 @@ export default function KontaktPage() {
     <>
       <Header />
       <main>
-        <Breadcrumbs items={[{ label: "Kontakt" }]} />
-        {/* Diagnoza przed formularzem: odwiedzajacy dostaje konkret zanim
-            cokolwiek o sobie poda. */}
-        <LiveDiagnosis />
+        <Breadcrumbs href="/kontakt" items={[{ label: "Kontakt" }]} />
+        <CTA />
+        {/* Generator AI jako druga sekcja, pod formularzem. */}
         <div className="pt-8 lg:pt-12">
-          <CTA />
+          <LiveDiagnosis />
         </div>
       </main>
       <Footer />

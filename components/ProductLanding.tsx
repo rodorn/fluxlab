@@ -10,6 +10,7 @@ import NazwaNarzedzia from "@/components/NazwaNarzedzia";
 import { cenaWejscia } from "@/lib/products";
 import { kotwica } from "@/lib/kotwica";
 import FaqOtwieracz from "@/components/FaqOtwieracz";
+import CTA from "@/components/CTA";
 
 export interface Tier {
   name: string;
@@ -25,7 +26,10 @@ export interface ProductLandingProps {
       Odwiedzajacy dostaje dzialajacy wynik, zanim zacznie czytac oferte. */
   tool?: ReactNode;
   breadcrumb: string;
-  eyebrow: string;
+  /** Nieużywane: etykieta nad h1 wynika z `typ`. Zostaje dla zgodności wywołań. */
+  eyebrow?: string;
+  /** Rodzaj strony: etykieta „Narzędzie” albo „Usługa”. Domyślnie z obecności `tool`. */
+  typ?: "narzedzie" | "usluga";
   h1: string;
   lead: string;
   ctaLabel: string;
@@ -83,18 +87,18 @@ function oferta(t: Tier) {
 }
 
 export default function ProductLanding(p: ProductLandingProps) {
+  const typ = p.typ ?? (p.tool ? "narzedzie" : "usluga");
+  const etykietaTypu = typ === "narzedzie" ? "Narzędzie" : "Usługa";
   return (
     <>
       <Header />
       <main>
-        <Breadcrumbs items={[{ label: p.breadcrumb }]} />
+        <Breadcrumbs items={[{ label: p.breadcrumb }]} href={`/${p.slug}`} />
 
         <section className="container-wide pt-6 pb-14">
           <div className="max-w-3xl">
-            <p className="text-sm font-semibold text-accent uppercase tracking-wider mb-3">
-              {p.eyebrow}
-            </p>
-            <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white">
+            <p className="section-label mb-3">{etykietaTypu}</p>
+            <h1 className="h1-strony">
               {p.h1}
             </h1>
             <p className="mt-5 text-lg text-gray-600 dark:text-gray-300">
@@ -125,15 +129,18 @@ export default function ProductLanding(p: ProductLandingProps) {
             </div>
           )}
 
-          <div className="mt-14 grid gap-6 md:grid-cols-2">
+          <div className="mt-14 max-w-3xl">
+            <h2 className="h2-sekcji">Jak to działa</h2>
+          </div>
+          <div className="mt-6 grid gap-6 md:grid-cols-2 max-w-3xl">
             {p.checks.map((c) => (
               <div
                 key={c.title}
                 className="rounded-2xl border border-gray-200/80 dark:border-gray-800/80 bg-white/60 dark:bg-gray-900/40 p-6"
               >
-                <h2 className="text-lg font-bold text-gray-900 dark:text-white">
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white">
                   {c.title}
-                </h2>
+                </h3>
                 <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
                   {c.desc}
                 </p>
@@ -142,7 +149,9 @@ export default function ProductLanding(p: ProductLandingProps) {
           </div>
 
           {p.powiazane && (
-            <div className="mt-8 max-w-3xl space-y-2 text-sm text-gray-600 dark:text-gray-400">
+            <div className="mt-8 max-w-3xl">
+              <h2 className="h2-sekcji">Powiązane</h2>
+              <div className="mt-4 space-y-2 text-sm text-gray-600 dark:text-gray-400">
               {p.powiazane.map((z) => (
                 <p key={z.href}>
                   {z.przed}{" "}
@@ -155,14 +164,13 @@ export default function ProductLanding(p: ProductLandingProps) {
                   {z.po}
                 </p>
               ))}
+              </div>
             </div>
           )}
 
-          <div className="mt-16">
-            <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
-              Cennik
-            </h2>
-            <div className="mt-8 grid gap-6 md:grid-cols-2 max-w-3xl">
+          <div className="mt-16 max-w-3xl">
+            <h2 className="h2-sekcji">Cennik</h2>
+            <div className="mt-8 grid gap-6 md:grid-cols-2">
               {p.pricing.map((t) => (
                 <div
                   key={t.name}
@@ -186,7 +194,7 @@ export default function ProductLanding(p: ProductLandingProps) {
                   <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
                     {t.desc}
                   </p>
-                  <ul className="mt-4 space-y-2">
+                  <ul className="mt-4 space-y-2 flex-1">
                     {t.features.map((f) => (
                       <li
                         key={f}
@@ -224,9 +232,7 @@ export default function ProductLanding(p: ProductLandingProps) {
           </div>
 
           <div className="mt-16 max-w-3xl">
-            <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
-              Najczęstsze pytania
-            </h2>
+            <h2 className="h2-sekcji">Pytania i odpowiedzi</h2>
             <div className="mt-6 space-y-4">
               {p.faq.map((item) => (
                 <details
@@ -247,6 +253,13 @@ export default function ProductLanding(p: ProductLandingProps) {
           </div>
 
           <RelatedProducts slug={p.slug} />
+
+          <div className="mt-16">
+            <CTA
+              etykieta={p.ctaLabel}
+              href={p.tool ? "#narzedzie" : "#zamow"}
+            />
+          </div>
 
           <div id="zamow" className="mt-16 scroll-mt-20">
             <LandingForm

@@ -591,7 +591,7 @@ export default function AudytCRM() {
               eventName="cta_click_audit_crm"
               className="btn-primary px-8 py-3 text-base"
             >
-              Chcemy mapę automatyzacji CRM
+              Bezpłatna diagnoza
             </TrackedCTA>
           </div>
 

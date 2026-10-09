@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 import Tabs from "@/components/Tabs";
@@ -57,8 +58,8 @@ export default function ZapierVsMakeArticle() {
   return (
     <>
       <Header />
-      <main className="pt-16 prose-justify">
-        <Breadcrumbs kolumna="srodek"
+      <main className="pt-16">
+        <Breadcrumbs href="/strefa-wiedzy/zapier-vs-make" kolumna="srodek"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Zapier vs Make" },
@@ -67,7 +68,7 @@ export default function ZapierVsMakeArticle() {
         <section className="bg-gray-50 dark:bg-gray-900/50 pt-16 pb-6">
           <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
             <span className="section-label">Strefa wiedzy</span>
-            <h1 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">
+            <h1 className="h1-artykulu mt-4">
               Zapier vs Make, co wybrać do automatyzacji w 2026
             </h1>
             <p className="mt-4 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -86,7 +87,7 @@ export default function ZapierVsMakeArticle() {
                 label: "Jak działają",
                 content: (
                   <div className="max-w-3xl mx-auto px-6 lg:px-8 py-6 lg:py-8">
-                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                    <h2 className="h2-sekcji mb-6">
                       Zapier, jak działa i dla kogo
                     </h2>
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
@@ -110,7 +111,7 @@ export default function ZapierVsMakeArticle() {
                       do B".
                     </p>
 
-                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                    <h2 className="h2-sekcji mb-6">
                       Make, jak działa i dla kogo
                     </h2>
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
@@ -142,7 +143,7 @@ export default function ZapierVsMakeArticle() {
                 label: "Pricing",
                 content: (
                   <div className="max-w-3xl mx-auto px-6 lg:px-8 py-6 lg:py-8">
-                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                    <h2 className="h2-sekcji mb-6">
                       Pricing w praktyce, gdzie się rozjeżdża
                     </h2>
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
@@ -166,7 +167,7 @@ export default function ZapierVsMakeArticle() {
                 label: "Integracje i nauka",
                 content: (
                   <div className="max-w-3xl mx-auto px-6 lg:px-8 py-6 lg:py-8">
-                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                    <h2 className="h2-sekcji mb-6">
                       Integracje i pokrycie aplikacji
                     </h2>
                     <p className="text-gray-600 dark:text-gray-400 mb-10">
@@ -183,7 +184,7 @@ export default function ZapierVsMakeArticle() {
                       .
                     </p>
 
-                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                    <h2 className="h2-sekcji mb-6">
                       Krzywa nauki i utrzymanie
                     </h2>
                     <p className="text-gray-600 dark:text-gray-400">
@@ -199,7 +200,7 @@ export default function ZapierVsMakeArticle() {
                 label: "Logika i compliance",
                 content: (
                   <div className="max-w-3xl mx-auto px-6 lg:px-8 py-6 lg:py-8">
-                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                    <h2 className="h2-sekcji mb-6">
                       Logika i obsługa błędów
                     </h2>
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
@@ -212,7 +213,7 @@ export default function ZapierVsMakeArticle() {
                       <li>obsługa błędów i ponawianie per moduł</li>
                     </ul>
 
-                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                    <h2 className="h2-sekcji mb-6">
                       Compliance i RODO
                     </h2>
                     <p className="text-gray-600 dark:text-gray-400">
@@ -238,7 +239,7 @@ export default function ZapierVsMakeArticle() {
                 label: "Który wybrać",
                 content: (
                   <div className="max-w-3xl mx-auto px-6 lg:px-8 py-6 lg:py-8">
-                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                    <h2 className="h2-sekcji mb-6">
                       Kiedy Zapier, a kiedy Make
                     </h2>
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
@@ -271,17 +272,13 @@ export default function ZapierVsMakeArticle() {
                     </p>
 
                     <div className="bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-8 text-center">
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                      <h2 className="h2-sekcji mb-6">
                         Nie wiesz, które narzędzie pasuje do Twoich procesów?
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Dobierzemy i wdrożymy platformę bez przepłacania za
-                        zbędne funkcje.
+                        Dobierzemy i wdrożymy platformę bez przepłacania za zbędne funkcje.
                       </p>
-                      <Link
-                        href="/zapier-make"
-                        className="btn-primary inline-block"
-                      >
+                      <Link href="/zapier-make" className="btn-primary inline-block">
                         Zobacz usługę Zapier i Make
                       </Link>
                     </div>
@@ -292,7 +289,7 @@ export default function ZapierVsMakeArticle() {
                 label: "FAQ",
                 content: (
                   <div className="max-w-3xl mx-auto px-6 lg:px-8 py-6 lg:py-8">
-                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                    <h2 className="h2-sekcji mb-6">
                       FAQ
                     </h2>
                     <div className="space-y-4">
@@ -338,17 +335,7 @@ export default function ZapierVsMakeArticle() {
 
         <section className="py-8 lg:py-10">
           <div className="max-w-3xl mx-auto px-6 lg:px-8">
-            <div className="bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-8 text-center">
-              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                Chcesz wdrożyć automatyzację bez zgadywania, co lepsze?
-              </h2>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
-                Audyt, dobór narzędzia i pierwsze scenariusze w 2 tygodnie.
-              </p>
-              <Link href="/kontakt" className="btn-primary inline-block">
-                Zamów diagnozę procesu
-              </Link>
-            </div>
+            <CTA />
           </div>
         </section>
 

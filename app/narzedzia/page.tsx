@@ -1,13 +1,11 @@
 import type { Metadata } from "next";
 
 import {
-  narzedziaFilaru,
-  otherTools,
-  FILARY_NARZEDZI,
-  FILAR_INTRO_NARZEDZI,
+  narzedziaGrupy,
+  GRUPY_NARZEDZI,
+  GRUPA_INTRO_NARZEDZI,
   type Narzedzie,
 } from "@/lib/narzedzia";
-import { CATEGORY_LABEL } from "@/lib/products";
 import WyborNarzedzia from "@/components/WyborNarzedzia";
 import Link from "next/link";
 import Header from "@/components/Header";
@@ -186,6 +184,11 @@ function KafelekNarzedzia({ tool }: { tool: Narzedzie }) {
       <h3 className="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-accent transition-colors mb-2">
         {tool.title}
       </h3>
+      {tool.pytanie && (
+        <p className="text-sm font-medium text-gray-800 dark:text-gray-200 mb-2">
+          {tool.pytanie}
+        </p>
+      )}
       <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed flex-1 mb-5">
         {tool.description}
       </p>
@@ -217,12 +220,12 @@ export default function Narzedzia() {
     <>
       <Header />
       <main className="pt-16">
-        <Breadcrumbs kolumna="srodek" items={[{ label: "Narzędzia" }]} />
-        <section className="pt-24 pb-12 bg-gray-50 dark:bg-gray-900/50 border-b border-gray-100 dark:border-gray-800">
+        <Breadcrumbs href="/narzedzia" kolumna="srodek" items={[{ label: "Narzędzia" }]} />
+        <section className="pt-12 lg:pt-24 pb-10 lg:pb-12 bg-gray-50 dark:bg-gray-900/50 border-b border-gray-100 dark:border-gray-800">
           <div className="container-wide">
             <div className="max-w-3xl mx-auto text-center">
               <p className="section-label mb-4">Narzędzia</p>
-              <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+              <h1 className="text-3xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
                 Sprawdź swoją firmę, zanim komukolwiek zapłacisz
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-400">
@@ -235,56 +238,28 @@ export default function Narzedzia() {
 
         <div id="sekcje" className="scroll-mt-20 container-wide py-12 pb-20">
           <div className="max-w-5xl mx-auto">
-            <WyborNarzedzia />
-            {FILARY_NARZEDZI.map((filar) => {
-              const wFilarze = narzedziaFilaru(filar);
-              if (!wFilarze.length) return null;
+            {/* Na telefonie pastylki idą w jednym rzędzie z przewijaniem, żeby
+                nie spychały kafli pod krawędź ekranu. */}
+            <div className="max-sm:[&_div.flex-wrap]:flex-nowrap max-sm:[&_div.flex-wrap]:overflow-x-auto max-sm:[&_button]:shrink-0 max-sm:[&_button]:whitespace-nowrap">
+              <WyborNarzedzia />
+            </div>
+            {GRUPY_NARZEDZI.map((grupa) => {
+              const wGrupie = narzedziaGrupy(grupa);
+              if (!wGrupie.length) return null;
               return (
-                <section key={filar} className="mt-12 first:mt-10">
-                  <h2 className="text-xl font-bold text-gray-900 dark:text-white">
-                    {CATEGORY_LABEL[filar]}
-                  </h2>
+                <section key={grupa} className="mt-12 first:mt-10">
+                  <h2 className="h2-sekcji">{grupa}</h2>
                   <p className="mt-1 mb-6 text-sm text-gray-600 dark:text-gray-400 max-w-2xl">
-                    {filar === "www" ? (
-                      <>
-                        Strona w oczach wyszukiwarki i asystenta AI,{" "}
-                        <Link href="/mail-firmowy" className="text-accent hover:underline">
-                          poczta firmowa
-                        </Link>{" "}
-                        i{" "}
-                        <Link href="/audyt-google-ads" className="text-accent hover:underline">
-                          kampania Google Ads
-                        </Link>
-                        .
-                      </>
-                    ) : (
-                      FILAR_INTRO_NARZEDZI[filar]
-                    )}
+                    {GRUPA_INTRO_NARZEDZI[grupa]}
                   </p>
                   <div className="grid md:grid-cols-3 gap-6">
-                    {wFilarze.map((tool) => (
+                    {wGrupie.map((tool) => (
                       <KafelekNarzedzia key={tool.href} tool={tool} />
                     ))}
                   </div>
                 </section>
               );
             })}
-            {/* Narzędzia spoza oferty dla firm: zostają pod swoimi adresami,
-                ale tylko jako krótka lista, żeby nie mieszać ich z resztą. */}
-            <section className="mt-14 border-t border-gray-200 pt-8 dark:border-white/10">
-              <h2 className="text-sm font-semibold text-gray-900 dark:text-white">
-                Inne darmowe sprawdzenia
-              </h2>
-              <ul className="mt-3 grid gap-x-8 gap-y-2 sm:grid-cols-2">
-                {otherTools.map((t) => (
-                  <li key={t.href} className="text-sm">
-                    <Link href={t.href} className="font-medium text-accent hover:underline">
-                      {t.title}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </section>
           </div>
         </div>
       </main>

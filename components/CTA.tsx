@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import TrackedCTA from "@/components/TrackedCTA";
 import { event as gaEvent } from "@/lib/gtag";
 import { zglosZdarzenie } from "@/lib/zdarzenie";
 import { PROBLEM_TYPES, getScalesForType } from "@/lib/form-options";
@@ -49,7 +50,45 @@ function readUtm(): UtmFields {
   };
 }
 
-export default function CTA() {
+interface CTAProps {
+  naglowek?: string;
+  opis?: string;
+  etykieta?: string;
+  href?: string;
+}
+
+/**
+ * Jeden końcowy blok CTA dla całej strony. Na /kontakt zamiast bloku
+ * renderuje pełny formularz diagnozy (tę stronę wywołuje `<CTA />` bez propsów).
+ */
+export default function CTA({
+  naglowek = "Nie wiesz, od czego zacząć?",
+  opis = "Bezpłatna diagnoza procesu, bez zobowiązań.",
+  etykieta = "Bezpłatna diagnoza",
+  href = "/kontakt",
+}: CTAProps = {}) {
+  const pathname = usePathname();
+  if (pathname === "/kontakt") return <CTAFormularz />;
+  return (
+    <section className="py-4 lg:py-7" aria-label="Kontakt">
+      <div className="container-wide">
+        <div className="cta-koncowe">
+          <h2 className="h2-sekcji">{naglowek}</h2>
+          <p className="mt-3 text-gray-600 dark:text-gray-300">{opis}</p>
+          <TrackedCTA
+            href={href}
+            location="cta_koncowe"
+            className="btn-primary mt-6"
+          >
+            {etykieta}
+          </TrackedCTA>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function CTAFormularz() {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);

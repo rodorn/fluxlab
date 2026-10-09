@@ -950,3 +950,209 @@ Google Calendar i Google Drive wymagają autoryzacji w ustawieniach konektorów 
 === 2026-09-29 16:43:13 start
 === 2026-09-29 17:43:13 start
 === 2026-09-29 18:43:15 start
+=== 2026-10-04 04:46:09 start
+Czekam na polecenie, Paweł. Dostałem instrukcję o cyklu godzinnym dla FluxLab — zmiana celu z 23.09 (traffic zamiast estetyki), cztery kanały do rotacji, zasady twarde.
+
+Mam teraz:
+- Zapamiętać tę instrukcję do pamięci projektu?
+- Uruchomić nowy cykl (który kanał, który numer)?
+- Coś innego?
+
+Widzę, że `cykl/przebieg.log` jest zmodyfikowany — czy przebieg jest już w toku?
+=== 2026-10-04 04:46:24 koniec, kod 0
+=== 2026-10-04 05:46:10 start
+=== 2026-10-04 06:46:10 start
+=== 2026-10-04 07:46:11 start
+=== 2026-10-04 08:46:12 start
+=== 2026-10-04 09:43:02 start
+=== 2026-10-04 10:43:00 start
+=== 2026-10-04 11:43:00 start
+=== 2026-10-04 12:43:00 start
+=== 2026-10-04 13:43:02 start
+=== 2026-10-04 14:43:00 start
+=== 2026-10-04 15:46:15 start
+Ten cykl nic nie dowiózł. Wpis w dzienniku jest już wypchnięty na `origin/main` (commit `92f4dd8`).
+
+- **Ruch:** w ostatniej dobie 24 odsłony i 3 osoby, źródło www.google.com (2). Narzędzia nie były uruchamiane ani razu.
+- **Kanał 1:** lista wątków na Gofinie nadal kończy się na 1559626. Wszystkie wątki o KSeF i e-Doręczeniach z 1.10–2.10 mają już przygotowany tekst we wcześniejszych wpisach.
+- **Kanały 2 i 3:** brak nowego pytania ani zmiany przepisów, więc nie dopisywałem treści na siłę.
+- **Kanał 4:** dziś niedziela, wraca w poniedziałek o 9:00.
+- **Zadania dla Pawła:** w dzienniku jest lista pięciu kliknięć, z adresami i wskazaniem wpisów z gotowymi tekstami (cztery komentarze na forach, jeden import do Bing Webmaster).
+- **Poza commitem:** zostały niezacommitowane `cykl/przebieg.log` i `cykl/raport.log`.
+
+Nie robiłem builda, `scripts/spojnosc.mjs` ani IndexNow, bo kod strony się nie zmienił.
+=== 2026-10-04 15:46:51 koniec, kod 0
+=== 2026-10-04 16:46:16 start
+W tym cyklu nic nie poszło w świat. Wpis z 16:50 jest w dzienniku i wypchnięty na `origin/main`; kod się nie zmienił, więc nie było builda, `spojnosc.mjs` ani IndexNow.
+
+- **Ruch (ostatnia doba):** 5 odsłon, 3 osoby, czyli spadek o 64% wobec średniej 14,0. Źródło: www.google.com (2). Uruchomień narzędzi: 0.
+- **Kanał 1:** lista wątków Gofin nadal kończy się na 1559626, więc nie było nowego tematu o KSeF, e-Doręczeniach ani spamie.
+- **Kanały 2 i 3:** nie pojawiło się nowe pytanie ani zmiana przepisów, a dopisywanie treści dla samego dopisania nie ma sensu.
+- **Kanał 4:** zaczyna się w poniedziałek o 9:00.
+- **Strona:** odpowiada 200.
+
+Do Pawła zostają bez zmian komentarze na Gofin i Allegro oraz import do Bing Webmaster Tools. Dokładne adresy i teksty są w dzienniku.
+
+Przy `git pull --rebase` pierwsza próba padła na niezacommitowanych `cykl/przebieg.log`, `cykl/raport.log` i `tsconfig.tsbuildinfo`. Powtórzyłem ją z `--autostash` i poszła. Po pushu został zmodyfikowany tylko `cykl/przebieg.log`.
+=== 2026-10-04 16:46:50 koniec, kod 0
+=== 2026-10-04 17:43:22 start
+=== 2026-10-04 18:43:00 start
+=== 2026-10-04 19:43:00 start
+=== 2026-10-04 20:43:00 start
+=== 2026-10-04 21:43:00 start
+=== 2026-10-04 22:43:00 start
+=== 2026-10-04 23:43:00 start
+=== 2026-10-05 00:43:30 start
+=== 2026-10-05 01:43:12 start
+=== 2026-10-05 02:43:02 start
+=== 2026-10-05 03:43:12 start
+=== 2026-10-05 04:43:22 start
+=== 2026-10-05 05:43:02 start
+=== 2026-10-05 06:43:22 start
+=== 2026-10-05 07:43:02 start
+=== 2026-10-05 08:43:02 start
+=== 2026-10-05 09:43:00 start
+=== 2026-10-05 10:43:00 start
+=== 2026-10-05 11:43:00 start
+Statusy przyjdą z zadania w tle około 11:56.
+=== 2026-10-05 11:45:55 koniec, kod 0
+=== 2026-10-05 12:43:00 start
+=== 2026-10-05 13:43:00 start
+=== 2026-10-05 14:43:00 start
+=== 2026-10-05 15:43:00 start
+=== 2026-10-05 16:43:00 start
+=== 2026-10-05 17:43:28 start
+Czekam na wynik skanu (powiadomienie przyjdzie samo).
+=== 2026-10-05 17:45:04 koniec, kod 0
+=== 2026-10-05 18:43:00 start
+=== 2026-10-05 19:43:00 start
+=== 2026-10-05 20:43:00 start
+=== 2026-10-05 21:43:00 start
+=== 2026-10-05 22:43:00 start
+=== 2026-10-05 23:43:00 start
+=== 2026-10-06 00:43:28 start
+=== 2026-10-06 01:43:30 start
+=== 2026-10-06 02:43:12 start
+=== 2026-10-06 03:43:30 start
+=== 2026-10-06 04:43:28 start
+=== 2026-10-06 05:43:30 start
+=== 2026-10-06 06:43:00 start
+=== 2026-10-06 07:43:30 start
+=== 2026-10-06 08:43:28 start
+=== 2026-10-06 09:43:00 start
+=== 2026-10-06 10:43:00 start
+=== 2026-10-06 11:43:00 start
+=== 2026-10-06 12:43:00 start
+Droga KRS dla 60 domen z 6 miast (Gniezno, Piła, Ostrów Wlkp., Inowrocław, Głogów, Lubin) jeszcze się liczy w tle. Po wyniku dokończę Z22 i dopiszę dziennik.
+=== 2026-10-06 12:45:52 koniec, kod 0
+=== 2026-10-06 13:43:00 start
+=== 2026-10-06 16:04:09 start
+=== 2026-10-06 16:43:00 start
+=== 2026-10-06 17:43:03 start
+=== 2026-10-06 18:43:00 start
+=== 2026-10-06 19:43:25 start
+Jest 19:53, skrypt nadal czeka na 20:06. Monitora nie uzbrajam ponownie, bo zadanie w tle samo da znać, kiedy się skończy.
+=== 2026-10-06 19:54:07 koniec, kod 0
+=== 2026-10-06 20:43:00 start
+=== 2026-10-06 21:43:15 start
+=== 2026-10-06 22:43:00 start
+=== 2026-10-06 23:43:30 start
+=== 2026-10-07 00:43:25 start
+=== 2026-10-07 01:43:30 start
+=== 2026-10-07 02:43:25 start
+=== 2026-10-07 03:43:24 start
+=== 2026-10-07 04:43:25 start
+=== 2026-10-07 05:43:30 start
+=== 2026-10-07 06:43:30 start
+You've hit your weekly limit · resets 9am (Europe/Warsaw)
+=== 2026-10-07 06:43:33 koniec, kod 0
+=== 2026-10-07 07:43:25 start
+You've hit your weekly limit · resets 9am (Europe/Warsaw)
+=== 2026-10-07 07:43:28 koniec, kod 0
+=== 2026-10-07 08:43:24 start
+You've hit your weekly limit · resets 9am (Europe/Warsaw)
+=== 2026-10-07 08:43:28 koniec, kod 0
+=== 2026-10-07 09:43:00 start
+=== 2026-10-07 10:43:00 start
+=== 2026-10-07 11:43:00 start
+=== 2026-10-07 12:43:00 start
+=== 2026-10-07 13:43:00 start
+=== 2026-10-07 14:43:00 start
+=== 2026-10-07 15:43:00 start
+=== 2026-10-07 16:43:00 start
+=== 2026-10-07 17:43:04 start
+=== 2026-10-07 18:43:05 start
+=== 2026-10-07 19:43:25 start
+=== 2026-10-07 20:43:00 start
+=== 2026-10-07 21:43:05 start
+=== 2026-10-07 22:43:30 start
+=== 2026-10-07 23:43:00 start
+=== 2026-10-08 00:43:05 start
+=== 2026-10-08 01:43:25 start
+=== 2026-10-08 02:43:05 start
+=== 2026-10-08 03:43:25 start
+=== 2026-10-08 04:43:15 start
+=== 2026-10-08 05:43:15 start
+=== 2026-10-08 06:43:30 start
+=== 2026-10-08 07:43:30 start
+=== 2026-10-08 08:43:02 start
+=== 2026-10-08 09:43:00 start
+=== 2026-10-08 10:43:00 start
+=== 2026-10-08 11:43:00 start
+=== 2026-10-08 12:43:15 start
+=== 2026-10-08 13:43:00 start
+=== 2026-10-08 14:43:00 start
+=== 2026-10-08 15:43:00 start
+=== 2026-10-08 16:43:00 start
+=== 2026-10-08 17:43:00 start
+=== 2026-10-08 18:43:00 start
+Ten przebieg nic nie dowiózł. Wszystkie otwarte zadania planu mają późniejsze godziny: Z15 (żądania indeksowania) od 20:52, Z16 o 21:46, Z23 o 04:46 i Z24 o 05:46. Do tego `budzet` daje rytm „wstrzymaj”: prognoza to 164% tygodnia, hamulec krytyczny, nowych cykli nie zaczynać. Dlatego nie brałem pracy spoza planu.
+
+- **Ruch z ostatniej doby:** 19 odsłon, 15 osób. Źródła: Google 3, mail 3, Facebook 2, Baidu 1, narzędzie 1. Narzędzia uruchomiono 2 razy, oba to skan KRS z linku.
+- **Dziennik:** dopisałem wpis 18:45 do `cykl/dziennik.md`. Nie było żadnego commitu.
+=== 2026-10-08 18:43:26 koniec, kod 0
+=== 2026-10-08 19:43:15 start
+Ten przebieg nic nie dowiózł.
+
+- **Dlaczego:** każde otwarte zadanie w planie ma późniejszą godzinę. Z15, czyli prośby o zaindeksowanie, można zacząć dopiero o 20:52. Z16 jest o 21:46, Z23 o 04:46, Z24 o 05:46. Do tego `budzet` o 19:43 daje rytm „wstrzymaj”: prognoza to 175% tygodniowego limitu, hamulec jest krytyczny, a nowe cykle są zablokowane. Dlatego nie brałem pracy spoza planu.
+- **Ruch z ostatniej doby:** 20 odsłon, 16 osób. Źródła: Google 4, mail 3, Facebook 2, m.baidu.com 1, narzędzie 1. Narzędzia uruchomiono 2 razy, oba to `uruchomiono_skan_krs_z_linku`. Za tydzień: 201 odsłon, 123 osoby.
+- **Dziennik:** dopisałem wpis „2026-10-08 19:45” w `cykl/dziennik.md`. Nie było commitu ani wdrożenia.
+- **Czeka na Ciebie (bez zmian):** dwie odpowiedzi od Kontomatik w pawel@fluxlab.pl, komentarze na Gofinie 1559644 i 1559598 oraz odpowiedź do Profit Polska, która czeka na Twoją akceptację.
+=== 2026-10-08 19:43:40 koniec, kod 0
+=== 2026-10-08 20:43:02 start
+Seria trwa (3 z 10), zadanie w tle powiadomi po zakończeniu.
+=== 2026-10-08 20:54:01 koniec, kod 0
+=== 2026-10-08 21:43:01 start
+=== 2026-10-08 22:43:00 start
+=== 2026-10-08 23:43:00 start
+=== 2026-10-09 00:43:25 start
+=== 2026-10-09 01:43:24 start
+=== 2026-10-09 02:43:24 start
+=== 2026-10-09 03:43:25 start
+=== 2026-10-09 04:43:15 start
+=== 2026-10-09 05:43:25 start
+=== 2026-10-09 06:43:05 start
+=== 2026-10-09 07:43:05 start
+=== 2026-10-09 08:43:25 start
+=== 2026-10-09 09:43:01 start
+=== 2026-10-09 10:43:00 start
+=== 2026-10-09 11:43:00 start
+W tym przebiegu żadne zadanie z planu nie było jeszcze do wzięcia: wszystkie otwarte (Z10, Z11, Z16, Z17, Z23, Z24) mają godzinę późniejszą niż 11:46. Żeby przebieg nie był pusty, zrobiłem jedną rzecz w kanale Google.
+
+**Co zrobione:** w Search Console fraza „automatyzacja crm” ma 17 wyświetleń, 0 kliknięć i pozycję 24,6, ale Google kieruje ją na samą listę `/strefa-wiedzy`. Powód: wpis `/strefa-wiedzy/automatyzacja-crm-od-czego-zaczac` nie jest w indeksie Google. Strona `/automatyzacja-leadow-crm` dostała do niego link w miejsce zdania, które powtarzało cennik. Liczba słów się nie zmieniła (5 → 5).
+
+| | |
+|---|---|
+| Commit | `ddcc9d7`, tylko mój fragment |
+| Produkcja (sprawdzone z VPS) | 200, link jest na stronie, stare zdanie zniknęło |
+| IndexNow | Yandex 200, Naver 200 |
+| Plan | wpis dopisany do kandydatów Z16 (prośby o indeksowanie od 21:50, wcześniej blokuje limit) |
+| Dziennik | wpis 11:46, commit `17ff2c2` |
+| Ruch z ostatniej doby | 10 odsłon, 10 osób (−64% wobec średniej), 0 uruchomień narzędzi |
+
+Pozostałe frazy zostawiłem bez zmian:
+- „pipedrive”: 5 wyświetleń rozłożonych na 5 stron.
+- „marketing automation”: 7 wyświetleń, ale pozycja 84,9, za daleko, żeby tytuł coś zmienił.
+
+Ważne: w tym samym repo inna sesja ma niezacommitowane zmiany w około 100 plikach, także w `app/automatyzacja-leadow-crm/page.tsx`. Do commita wziąłem tylko swój fragment, ich zmiany zostały w drzewie nietknięte. Trzeba jednak pamiętać, że build i `spojnosc.mjs` przed commitem przeszły na drzewie razem z tymi cudzymi zmianami. Spojnosc zgłasza też uwagi niezwiązane z moją zmianą (dwa pliki nie biorą nazw filarów z `lib/filary.ts`, `/spis-stron` nie ma w sitemap), z moją zmianą i bez niej identyczne.
+=== 2026-10-09 11:50:38 koniec, kod 0

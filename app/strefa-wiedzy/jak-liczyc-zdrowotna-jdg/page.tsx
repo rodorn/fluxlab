@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 import Tabs from "@/components/Tabs";
@@ -58,7 +59,7 @@ export default function SkladkaZdrowotnaJDGArticle() {
     <>
       <Header />
       <main className="pt-16 prose-justify">
-        <Breadcrumbs kolumna="srodek"
+        <Breadcrumbs href="/strefa-wiedzy/jak-liczyc-zdrowotna-jdg" kolumna="srodek"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Jak liczyć składkę zdrowotną w JDG" },
@@ -67,10 +68,10 @@ export default function SkladkaZdrowotnaJDGArticle() {
         <section className="pt-24 pb-10">
           <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
             <span className="section-label">Strefa wiedzy</span>
-            <h1 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">
+            <h1 className="mt-4 h1-artykulu">
               Jak liczyć składkę zdrowotną w JDG w 2026
             </h1>
-            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed !text-left">
               Składka zdrowotna potrafi zmienić wynik porównania form
               opodatkowania o kilka tysięcy złotych rocznie. Na skali, liniowym i
               ryczałcie liczy się ją inaczej.
@@ -86,7 +87,7 @@ export default function SkladkaZdrowotnaJDGArticle() {
                 label: "Zasady",
                 content: (
                   <div className="py-10 lg:py-12 max-w-3xl mx-auto">
-                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                    <h2 className="mb-6 h2-sekcji">
                       Skala, liniowy i ryczałt
                     </h2>
                     <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
@@ -131,7 +132,7 @@ export default function SkladkaZdrowotnaJDGArticle() {
                 label: "Porównanie",
                 content: (
                   <div className="py-10 lg:py-12 max-w-3xl mx-auto">
-                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                    <h2 className="mb-6 h2-sekcji">
                       Porównanie na przykładach
                     </h2>
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
@@ -202,7 +203,7 @@ export default function SkladkaZdrowotnaJDGArticle() {
                 label: "FAQ",
                 content: (
                   <div className="py-10 lg:py-12 max-w-3xl mx-auto">
-                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                    <h2 className="mb-6 h2-sekcji">
                       FAQ
                     </h2>
                     <div className="space-y-4">
@@ -234,17 +235,6 @@ export default function SkladkaZdrowotnaJDGArticle() {
                       ))}
                     </div>
 
-                    <div className="mt-12 bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-8 text-center">
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        Chcesz policzyć składki dla swojej sytuacji?
-                      </h2>
-                      <Link
-                        href="/kontakt"
-                        className="btn-primary inline-block"
-                      >
-                        Zamów diagnozę procesu
-                      </Link>
-                    </div>
 
                     <div className="mt-12">
                       <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
@@ -287,6 +277,7 @@ export default function SkladkaZdrowotnaJDGArticle() {
             <PrevNextArticle currentHref="/strefa-wiedzy/jak-liczyc-zdrowotna-jdg" />
           </div>
         </div>
+        <CTA naglowek="Chcesz policzyć składki dla swojej sytuacji?" />
       </main>
       <Footer />
 

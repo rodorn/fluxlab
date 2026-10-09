@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 import Tabs from "@/components/Tabs";
@@ -46,8 +47,8 @@ export default function SalesforceDlaMalejFirmyArticle() {
   return (
     <>
       <Header />
-      <main className="pt-16 prose-justify">
-        <Breadcrumbs kolumna="srodek"
+      <main className="pt-16">
+        <Breadcrumbs href="/strefa-wiedzy/salesforce-dla-malej-firmy" kolumna="srodek"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Salesforce dla małej firmy, czy warto" },
@@ -57,7 +58,7 @@ export default function SalesforceDlaMalejFirmyArticle() {
         <section className="pt-16 pb-6">
           <div className="container-wide max-w-3xl mx-auto text-center">
             <span className="section-label">Strefa wiedzy</span>
-            <h1 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">
+            <h1 className="h1-artykulu mt-4">
               Salesforce dla małej firmy, czy warto
             </h1>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -67,7 +68,7 @@ export default function SalesforceDlaMalejFirmyArticle() {
           </div>
         </section>
 
-        <div className="container-wide pb-20">
+        <div className="container-wide pb-20 prose-justify">
           <Tabs
             ariaLabel="Rozdziały artykułu Salesforce dla małej firmy"
             tabs={[
@@ -77,7 +78,7 @@ export default function SalesforceDlaMalejFirmyArticle() {
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto px-6 lg:px-8 space-y-16">
                       <div>
-                        <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                        <h2 className="h2-sekcji mb-6">
                           Realny koszt Salesforce 2026
                         </h2>
                         <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
@@ -110,7 +111,7 @@ export default function SalesforceDlaMalejFirmyArticle() {
                         </p>
                       </div>
                       <div>
-                        <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                        <h2 className="h2-sekcji mb-6">
                           Czas wdrożenia
                         </h2>
                         <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -137,7 +138,7 @@ export default function SalesforceDlaMalejFirmyArticle() {
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto px-6 lg:px-8 space-y-16">
                       <div>
-                        <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                        <h2 className="h2-sekcji mb-6">
                           Kiedy Salesforce ma sens
                         </h2>
                         <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-400">
@@ -160,7 +161,7 @@ export default function SalesforceDlaMalejFirmyArticle() {
                         </ul>
                       </div>
                       <div>
-                        <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                        <h2 className="h2-sekcji mb-6">
                           Kiedy nie ma sensu
                         </h2>
                         <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-400">
@@ -216,7 +217,7 @@ export default function SalesforceDlaMalejFirmyArticle() {
                 content: (
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                      <h2 className="h2-sekcji mb-6">
                         FAQ
                       </h2>
                       <div className="space-y-6">
@@ -264,18 +265,15 @@ export default function SalesforceDlaMalejFirmyArticle() {
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
                       <PrevNextArticle currentHref="/strefa-wiedzy/salesforce-dla-malej-firmy" />
 
-                      <div className="mt-16 rounded-2xl bg-accent/10 p-8 lg:p-12 text-center">
-                        <p className="text-lg font-medium text-gray-900 dark:text-white">
-                          Zastanawiasz się, czy Salesforce to dla Ciebie nie za
-                          dużo?
-                        </p>
-                        <Link
-                          href="/automatyzacja-salesforce"
-                          className="btn-primary mt-6 inline-block"
-                        >
+                      <p className="mt-12 text-center text-gray-600 dark:text-gray-400">
+                        Zastanawiasz się, czy Salesforce to dla Ciebie nie za
+                          dużo?{" "}
+                        <Link href="/automatyzacja-salesforce" className="text-accent hover:underline">
                           Zobacz usługę Automatyzacja Salesforce
                         </Link>
-                      </div>
+                      </p>
+
+                      <CTA />
                     </div>
                   </div>
                 ),

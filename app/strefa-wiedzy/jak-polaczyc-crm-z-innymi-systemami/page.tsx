@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 import Tabs from "@/components/Tabs";
@@ -35,7 +36,7 @@ export default function CrmIntegracjaArticle() {
     <>
       <Header />
       <main className="pt-16 prose-justify">
-        <Breadcrumbs kolumna="srodek"
+        <Breadcrumbs href="/strefa-wiedzy/jak-polaczyc-crm-z-innymi-systemami" kolumna="srodek"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Jak połączyć CRM z innymi systemami" },
@@ -45,10 +46,10 @@ export default function CrmIntegracjaArticle() {
         <section className="pt-24 pb-10">
           <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
             <span className="section-label">Strefa wiedzy</span>
-            <h1 className="mt-4 text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">
+            <h1 className="mt-4 h1-artykulu">
               Jak połączyć CRM z innymi systemami
             </h1>
-            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed !text-left">
               CRM działający obok reszty firmy nie usuwa chaosu. Dopiero
               połączony z formularzami i raportami zaczyna pracować.
             </p>
@@ -63,7 +64,7 @@ export default function CrmIntegracjaArticle() {
                 label: "Od czego zacząć",
                 content: (
                   <div className="py-10 lg:py-12 max-w-3xl mx-auto">
-                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                    <h2 className="mb-6 h2-sekcji">
                       Od czego zacząć
                     </h2>
                     <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
@@ -102,7 +103,7 @@ export default function CrmIntegracjaArticle() {
                 label: "Model połączenia",
                 content: (
                   <div className="py-10 lg:py-12 max-w-3xl mx-auto">
-                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                    <h2 className="mb-6 h2-sekcji">
                       Najczęstszy model połączenia
                     </h2>
                     <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
@@ -124,7 +125,7 @@ export default function CrmIntegracjaArticle() {
                 label: "Błędy integracji",
                 content: (
                   <div className="py-10 lg:py-12 max-w-3xl mx-auto">
-                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                    <h2 className="mb-6 h2-sekcji">
                       Błędy, które psują integrację
                     </h2>
                     <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
@@ -152,25 +153,6 @@ export default function CrmIntegracjaArticle() {
                       przetestuj wyjątki, potem rozbudowuj.
                     </p>
 
-                    <div className="mt-10 rounded-2xl bg-gray-50 dark:bg-gray-900/50 p-8 lg:p-12 text-center">
-                      <p className="text-lg font-medium text-gray-900 dark:text-white">
-                        CRM działa, ale nie jest spięty z resztą firmy?
-                      </p>
-                      <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <Link
-                          href="/automatyzacja-leadow-crm"
-                          className="btn-primary inline-block"
-                        >
-                          Automatyzacja CRM
-                        </Link>
-                        <Link
-                          href="/integracje-api"
-                          className="btn-secondary inline-block"
-                        >
-                          Integracje API
-                        </Link>
-                      </div>
-                    </div>
                   </div>
                 ),
               },
@@ -182,6 +164,7 @@ export default function CrmIntegracjaArticle() {
             <PrevNextArticle currentHref="/strefa-wiedzy/jak-polaczyc-crm-z-innymi-systemami" />
           </div>
         </div>
+        <CTA naglowek="CRM działa, ale nie jest spięty z resztą firmy?" />
       </main>
       <Footer />
 

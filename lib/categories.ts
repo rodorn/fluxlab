@@ -2,12 +2,16 @@ export interface Article {
   href: string;
   title: string;
   description: string;
+  /** Strona spoza katalogu strefy wiedzy: nie ma pliku okładki, pokazujemy rysowaną. */
+  bezOkladki?: true;
 }
 
 export interface Category {
   name: string;
   slug: string;
   description: string;
+  /** Akapity wstępne nad listą artykułów, jeśli kategoria ich wymaga. */
+  wstep?: string[];
   articles: Article[];
 }
 
@@ -23,18 +27,6 @@ export const categories: Category[] = [
         title: "Licznik konwersji pokazuje zero, a zgłoszenia przychodzą",
         description:
           "Cztery przyczyny, przez które analityka nie widzi zgłoszeń docierających na skrzynkę, i kwadrans na rozstrzygnięcie, która to.",
-      },
-      {
-        href: "/strefa-wiedzy/czy-ai-widzi-strony-dealerow",
-        title: "Czy asystenci AI widzą strony dealerów samochodowych",
-        description:
-          "Blokuje je 0,8 procent stron, ale ponad połowa w ogóle nie mówi maszynie, czym jest firma. Badanie na tych samych 386 domenach.",
-      },
-      {
-        href: "/strefa-wiedzy/co-jest-nie-tak-ze-stronami-dealerow",
-        title: "Sprawdziliśmy 386 stron dealerów samochodowych",
-        description:
-          "Ile stron nie pozwala ustalić sprzedawcy, ile nie ma mapy strony i czyje naprawdę są te domeny. Pomiar z metodą i zastrzeżeniami.",
       },
       {
         href: "/strefa-wiedzy/co-to-jest-automatyzacja-procesow-biznesowych",
@@ -142,6 +134,20 @@ export const categories: Category[] = [
         description:
           "Stan rozmów, koszty i limity w jednym miejscu. Opis narzędzia z otwartym kodem.",
       },
+      {
+        href: "/zapier-make",
+        title: "Zapier vs Make, porównanie i wdrożenie",
+        description:
+          "Porównanie platform automatyzacji i wdrożenie workflow dopasowanego do firmy.",
+        bezOkladki: true,
+      },
+      {
+        href: "/make-vs-n8n-crm",
+        title: "Make czy n8n do automatyzacji CRM?",
+        description:
+          "Pięć typowych problemów i to, jak rozwiązuje je każde z narzędzi.",
+        bezOkladki: true,
+      },
     ],
   },
   {
@@ -151,11 +157,65 @@ export const categories: Category[] = [
       "Integracje API w firmie, kiedy warto, jakie problemy rozwiązują i jak je wdrożyć.",
     articles: [
       {
+        href: "/strefa-wiedzy/integracje-api-w-firmie-kiedy-warto",
+        title: "Integracje API w firmie, kiedy warto?",
+        description:
+          "Kiedy API ma sens, jakie problemy rozwiązuje i kiedy lepiej nie komplikować.",
+      },
+    ],
+  },
+  {
+    name: "Badania",
+    slug: "badania",
+    description:
+      "Nasze pomiary publicznych rejestrów i stron firm, każdy z metodą i zastrzeżeniami.",
+    articles: [
+      {
+        href: "/strefa-wiedzy/co-jest-nie-tak-ze-stronami-dealerow",
+        title: "Sprawdziliśmy 386 stron dealerów samochodowych",
+        description:
+          "Ile stron nie pozwala ustalić sprzedawcy, ile nie ma mapy strony i czyje naprawdę są te domeny. Pomiar z metodą i zastrzeżeniami.",
+      },
+      {
+        href: "/strefa-wiedzy/czy-ai-widzi-strony-dealerow",
+        title: "Czy asystenci AI widzą strony dealerów samochodowych",
+        description:
+          "Blokuje je 0,8 procent stron, ale ponad połowa w ogóle nie mówi maszynie, czym jest firma. Badanie na tych samych 386 domenach.",
+      },
+      {
         href: "/strefa-wiedzy/podszywanie-pod-salony-samochodowe",
         title: "Pod 84 procent salonów można się podszyć mailowo",
         description:
           "Badanie zabezpieczeń poczty na 386 domenach dealerskich. Komplet ochrony ma tylko szesnaście procent.",
       },
+      {
+        href: "/strefa-wiedzy/bledy-w-rejestrze-obiektow-hotelarskich",
+        title: "Rządowy rejestr hoteli gubi Kraków i Warszawę",
+        description:
+          "Dwa błędy w publicznym rejestrze: pięćset wpisów bez województwa i znikające rekordy przy poprawnym liczniku.",
+      },
+      {
+        href: "/ile-spolek-znika-z-krs",
+        title: "Ile spółek dziennie znika z KRS bez likwidacji",
+        description:
+          "Codziennie aktualizowany licznik spółek kierowanych przez sąd do rozwiązania bez likwidacji, z Monitora Sądowego.",
+        bezOkladki: true,
+      },
+      {
+        href: "/dane-z-badan",
+        title: "Dane z naszych badań do pobrania",
+        description:
+          "Zestawienia w CSV z badania 386 domen dealerskich, do pobrania bez rejestracji.",
+        bezOkladki: true,
+      },
+    ],
+  },
+  {
+    name: "Poczta",
+    slug: "poczta",
+    description:
+      "Dlaczego firmowe maile trafiają do spamu i jak zabezpieczyć domenę przed podszyciem.",
+    articles: [
       {
         href: "/strefa-wiedzy/maile-trafiaja-do-spamu",
         title: "Dlaczego firmowe maile trafiają do spamu",
@@ -168,12 +228,6 @@ export const categories: Category[] = [
         description:
           "Jak ktoś obcy wysyła wiadomości z Twojej domeny i co ustawić, żeby przestał.",
       },
-      {
-        href: "/strefa-wiedzy/integracje-api-w-firmie-kiedy-warto",
-        title: "Integracje API w firmie, kiedy warto?",
-        description:
-          "Kiedy API ma sens, jakie problemy rozwiązuje i kiedy lepiej nie komplikować.",
-      },
     ],
   },
   {
@@ -182,12 +236,6 @@ export const categories: Category[] = [
     description:
       "Jak zautomatyzować raportowanie i unikać najczęstszych błędów w raportowaniu sprzedaży.",
     articles: [
-      {
-        href: "/strefa-wiedzy/bledy-w-rejestrze-obiektow-hotelarskich",
-        title: "Rządowy rejestr hoteli gubi Kraków i Warszawę",
-        description:
-          "Dwa błędy w publicznym rejestrze: pięćset wpisów bez województwa i znikające rekordy przy poprawnym liczniku.",
-      },
       {
         href: "/strefa-wiedzy/jak-zautomatyzowac-raportowanie-w-firmie",
         title: "Jak zautomatyzować raportowanie w firmie",
@@ -207,6 +255,10 @@ export const categories: Category[] = [
     slug: "ai",
     description:
       "Praktyczne zastosowania AI w firmie, klasyfikacja, streszczenia, wsparcie obsługi i framework decyzji.",
+    wstep: [
+      "AI w CRM czyta treść zapytania, streszcza ją i wypełnia pola, na przykład segment albo pilność leada. Nie decyduje o rabatach ani nie wysyła wiadomości do klienta bez człowieka. Nie naprawi też procesu, którego nie ma: najpierw przydział i follow-upy na regułach, AI tam, gdzie reguła nie wystarcza.",
+      "Pojedynczy krok AI w istniejącym CRM wyceniamy od 1 500 zł. Więcej w artykule o AI w automatyzacji firm poniżej.",
+    ],
     articles: [
       {
         href: "/strefa-wiedzy/ai-w-automatyzacji-firm",

@@ -2,16 +2,17 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TrackedCTA from "@/components/TrackedCTA";
 import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
-  title: "n8n dla CRM | Automatyzacja leadów, zadań i raportów",
+  title: "n8n dla CRM: automatyzacja leadów i raportów | Fluxlab",
   description:
     "Jak n8n staje się warstwą automatyzacji nad Pipedrive, HubSpotem i Salesforce: routing leadów, sync, raporty, follow-upy. Self-hosted czy cloud.",
   openGraph: {
-    title: "n8n dla CRM | Automatyzacja leadów, zadań i raportów",
+    title: "n8n dla CRM: automatyzacja leadów i raportów | Fluxlab",
     description:
       "Jak n8n staje się warstwą automatyzacji nad Pipedrive, HubSpotem i Salesforce: routing leadów, sync, raporty, follow-upy. Self-hosted czy cloud.",
     locale: "pl_PL",
@@ -111,13 +112,13 @@ export default function N8nDlaCrm() {
     <>
       <Header />
       <main>
-        <Breadcrumbs kolumna="srodek" items={[{ label: "n8n dla CRM" }]} />
+        <Breadcrumbs href="/n8n-dla-crm" kolumna="srodek" items={[{ label: "n8n dla CRM" }]} />
 
         <section className="pt-24 pb-12 bg-gradient-to-b from-accent/10 to-transparent border-b border-gray-100 dark:border-gray-800">
           <div className="container-wide">
-            <div className="max-w-3xl mx-auto text-center">
-              <p className="section-label mb-4">n8n dla CRM</p>
-              <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+            <div className="max-w-3xl">
+              <p className="section-label mb-4">Usługa</p>
+              <h1 className="h1-strony mb-6">
                 n8n jako warstwa automatyzacji dla CRM
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
@@ -128,12 +129,12 @@ export default function N8nDlaCrm() {
               <TrackedCTA
                 href="#sekcje"
                 location="article_n8n-dla-crm_hero"
-                label="Sprawdź, czy n8n ma sens u nas"
+                label="Bezpłatna diagnoza"
                 eventName="cta_click_article_audit"
                 className="btn-primary"
               >
-                Sprawdź, czy n8n ma sens u nas
-              </TrackedCTA>
+                  Bezpłatna diagnoza
+                </TrackedCTA>
             </div>
           </div>
         </section>
@@ -147,8 +148,7 @@ export default function N8nDlaCrm() {
                 content: (
                   <div className="py-10 lg:py-12">
                     <div className="max-w-3xl mx-auto">
-                      <span className="section-label">Problem</span>
-                      <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-6">
+                      <h2 className="h2-sekcji mt-4 mb-6">
                         Gdzie CRM przestaje wyrabiać
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
@@ -179,8 +179,7 @@ export default function N8nDlaCrm() {
                 content: (
                   <div className="py-10 lg:py-12">
                     <div className="max-w-3xl mx-auto mb-10">
-                      <span className="section-label">Jak to działa</span>
-                      <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-4">
+                      <h2 className="h2-sekcji mt-4 mb-4">
                         Od formularza do raportu, bez przepisywania
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -248,8 +247,7 @@ export default function N8nDlaCrm() {
                 content: (
                   <div className="py-10 lg:py-12">
                     <div className="max-w-3xl mx-auto">
-                      <span className="section-label">Decyzja techniczna</span>
-                      <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-6">
+                      <h2 className="h2-sekcji mt-4 mb-6">
                         n8n.cloud czy własny serwer
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
@@ -288,8 +286,7 @@ export default function N8nDlaCrm() {
                 content: (
                   <div className="py-10 lg:py-12">
                     <div className="max-w-3xl mx-auto">
-                      <span className="section-label">Cennik</span>
-                      <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mt-4 mb-4">
+                      <h2 className="h2-sekcji mt-4 mb-4">
                         Ile to kosztuje
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
@@ -338,7 +335,7 @@ export default function N8nDlaCrm() {
                 content: (
                   <div className="py-10 lg:py-12">
                     <div className="max-w-3xl mx-auto">
-                      <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-12 text-center">
+                      <h2 className="h2-sekcji mb-12 text-center">
                         Najczęstsze pytania
                       </h2>
                       <div className="space-y-4">
@@ -378,27 +375,10 @@ export default function N8nDlaCrm() {
                 ),
               },
               {
-                label: "Kontakt",
+                label: "Powiązane",
                 content: (
                   <div className="py-10 lg:py-12">
                     <div className="max-w-2xl mx-auto text-center">
-                      <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                        Sprawdźmy, gdzie u was n8n ma sens
-                      </h2>
-                      <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-                        30 minut rozmowy o procesie. Dostaniesz listę miejsc do
-                        automatyzacji albo uczciwą informację, że n8n jeszcze
-                        się nie opłaca.
-                      </p>
-                      <TrackedCTA
-                        href="/kontakt"
-                        location="article_n8n-dla-crm_final"
-                        label="Sprawdź, czy n8n ma sens u nas"
-                        eventName="cta_click_article_audit"
-                        className="btn-primary"
-                      >
-                        Sprawdź, czy n8n ma sens u nas
-                      </TrackedCTA>
                       <ul className="mt-10 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
                         <li>
                           <Link href="/n8n" className="text-accent hover:underline">
@@ -429,6 +409,7 @@ export default function N8nDlaCrm() {
             ]}
           />
         </div>
+        <CTA />
       </main>
       <Footer />
 

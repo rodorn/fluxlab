@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next";
 import datyStron from "@/lib/daty-stron.json";
+import { wszystkieStrony } from "@/lib/sekcje";
+import { getAllCategorySlugs } from "@/lib/categories";
 
 // Data ostatniej zmiany pochodzi z historii gita danej strony, a nie z momentu
 // budowania, zeby wyszukiwarka odrozniala strony faktycznie zmienione od calej
@@ -243,6 +245,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/spis-stron`,
+      changeFrequency: "monthly" as const,
+      priority: 0.5,
+    },
+    {
       url: `${baseUrl}/mapa-strony`,
       changeFrequency: "monthly" as const,
       priority: 0.9,
@@ -423,5 +430,34 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticPages, ...articlePages].map(zData);
+  // Strony z drzewa nawigacji (lib/sekcje.ts), ktorych nie ma w recznym spisie
+  // wyzej. Strony bez indeksu i wzorzec dynamiczny [slug] pomijamy.
+  const NOINDEX = new Set(["/cv", "/panel", "/dziekuje", "/nie-licz-mnie"]);
+  const znane = new Set([...staticPages, ...articlePages].map((p) => p.url));
+  const zNawigacji = wszystkieStrony()
+    .filter((p) => !NOINDEX.has(p.href) && !p.href.includes("["))
+    .map((p) => ({
+      url: `${baseUrl}${p.href}`,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    }))
+    .filter((p) => !znane.has(p.url));
+
+  const kategorie = getAllCategorySlugs().map((slug) => ({
+    url: `${baseUrl}/strefa-wiedzy/kategoria/${slug}`,
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
+
+  const wszystkie = [...staticPages, ...articlePages, ...zNawigacji, ...kategorie];
+  const widziane = new Set<string>();
+  return wszystkie
+    .filter((p) => {
+      const url = p.url.length > baseUrl.length + 1 ? p.url.replace(/\/+$/, "") : p.url;
+      if (NOINDEX.has(url.replace(baseUrl, "") || "/")) return false;
+      if (widziane.has(url)) return false;
+      widziane.add(url);
+      return true;
+    })
+    .map(zData);
 }

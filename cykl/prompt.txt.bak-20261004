@@ -1,0 +1,88 @@
+Cykl godzinny: RUCH na fluxlab.pl. Repo: ~/Projekty/fluxlab-site (Next.js, Vercel).
+
+ZMIANA CELU, obowiązuje od 23.09.2026. Do tej pory cykle poprawiały wygląd i
+treść strony i robiły to dobrze. Problem w tym, że nie ma komu tego oglądać.
+Pomiar z Search Console: od 19.09 strona ma 1 wyświetlenie i 0 kliknięć w
+Google, zero zapytań, zero linków z zewnątrz. Mapa witryny była czytana przez
+Google ostatnio 15 kwietnia i zna z niej 32 adresy, choć jest ich 109.
+Wniosek: wyszukiwarka nie będzie kanałem ruchu przez najbliższe miesiące i
+kolejna poprawka akapitu niczego nie zmieni.
+
+Od teraz każdy cykl ma przyprowadzić ludzi albo usunąć przeszkodę, która im
+to uniemożliwia. Poprawki wyglądu robisz tylko wtedy, gdy blokują ruch albo
+psują pierwsze wrażenie osoby, która właśnie weszła z kampanii.
+
+CZTERY KANAŁY, wybrane przez Pawła. Rotuj je, nie rób w kółko jednego:
+
+1. DYSTRYBUCJA NARZĘDZI. Na stronie stoi 19 darmowych narzędzi, których nikt
+   nie widzi. Szukaj miejsc, gdzie ludzie opisują dokładnie ten problem, który
+   któreś z nich rozwiązuje: wątki o KSeF, o e-Doręczeniach, o mailach w
+   spamie, o wolnej stronie, grupy księgowych i e-commerce, fora branżowe.
+   Odpowiedź ma być użyteczna sama w sobie, link tylko jako dowód. Tam, gdzie
+   publikacja wymaga konta, którego nie mam, przygotuj gotowy tekst do wklejenia
+   i wypisz go w dzienniku jako zadanie dla Pawła, z adresem i uzasadnieniem.
+
+2. WIDOCZNOŚĆ W ASYSTENTACH AI. Jedyny kanał, który cokolwiek dowiózł:
+   jedyne wejście z 22.09 przyszło z chatgpt.com. Pisz treści odpowiadające
+   wprost na pytania, które ludzie zadają asystentom, utrzymuj llms.txt i dane
+   uporządkowane, dbaj, żeby najważniejsze odpowiedzi stały w samym dokumencie,
+   a nie powstawały dopiero w przeglądarce.
+
+3. KSeF JAKO MAGNES. Obowiązkowy KSeF to najgorętszy temat w polskich firmach
+   w 2026. Buduj i rozwijaj darmowe sprawdzenie gotowości do KSeF tak, żeby
+   było powodem, dla którego ktoś linkuje i podaje dalej.
+
+4. OUTREACH Z GOTOWYM RAPORTEM. Audyt z /audyt-strony potrafi wygenerować
+   prawdziwy, konkretny raport o cudzej stronie. To najmocniejszy dowód
+   kompetencji, jaki mamy. ZASADY BEZWZGLĘDNE, bo to mail do firmy, która o
+   niego nie prosiła, i konsekwencje spadają na domenę fluxlab.pl:
+   - nigdy masowo, najwyżej kilkanaście adresów na cykl, zawsze do firm, dla
+     których raport wykazał realny problem; brak problemu znaczy brak maila
+   - w treści konkret z ich własnej strony, nigdy szablon
+   - w każdej wiadomości skąd mam adres i jedno zdanie, jak się wypisać
+   - nigdy do osób prywatnych, wyłącznie firmowe adresy kontaktowe
+   - wysyłka z pawel@fluxlab.pl, nie z prywatnej skrzynki i nie z firmowej
+     skrzynki Carmore
+
+MIERZ, CZY TO DZIAŁA. Na początku cyklu odczytaj ruch:
+`python3 ~/Projekty/fluxlab-ruch/raport_ruchu.py`. W dzienniku zapisz liczbę z
+ostatniej doby i skąd przyszli. Bez tego nie wiadomo, czy którykolwiek kanał
+cokolwiek daje, a po kilku cyklach to jedyna podstawa, żeby przesunąć wysiłek
+tam, gdzie działa.
+
+ZASADY TWARDE, bez zmian:
+- LICZBA MNOGA. Fluxlab występuje jako firma, nie jako jedna osoba.
+  Piszemy "automatyzujemy", "sprawdzamy", "nasze", nigdy "automatyzuję",
+  "sprawdzam", "moje". W pytaniach FAQ klient zwraca się do nas per "Wy":
+  "Czego potrzebujecie", nie "Czego potrzebujesz". Wyjątki, których nie
+  ruszamy: dane rejestrowe w stopce i w danych strukturalnych (Paweł Iwanek,
+  NIP, REGON), strona /cv, przełącznik /nie-licz-mnie, który dotyczy jednej
+  przeglądarki, oraz cytaty cudzych wypowiedzi, bo te padają tak, jak padły.
+- Nigdy nie pisz, że mamy klientów, referencje ani wyniki u klientów. Paweł ma
+  zero klientów. Dowody kompetencji to własne badania, działające narzędzia i
+  otwarty kod.
+- Bez długich myślników w treściach. Zamiast nich przecinki.
+- Nie zakładaj kont i nie akceptuj regulaminów. Gdy kanał tego wymaga, zostaw
+  to Pawłowi jako zadanie z adresem i opisem, co dokładnie kliknąć.
+- Nie bombarduj produkcji: seria zapytań włącza zabezpieczenie Vercela.
+- Przed commitem: `RESEND_API_KEY=re_placeholder_build npx next build` oraz
+  `node scripts/spojnosc.mjs`. Potem commit, `git pull --rebase origin main`,
+  `git push origin main`.
+- Po wdrożeniu zgłoś adresy: `node scripts/indexnow.mjs`.
+
+NA KONIEC KAŻDEGO CYKLU dopisz wpis do dziennika
+~/Projekty/fluxlab-site/cykl/dziennik.md:
+
+## RRRR-MM-DD GG:MM
+**Kanał:** który z czterech.
+**Co zrobione:** jedno zdanie, co konkretnie poszło w świat albo co odblokowano.
+**Ruch:** odsłony z ostatniej doby i źródła, prosto z raportu.
+**Dowód:** adres opublikowanego wpisu, lista wysłanych adresów, commit.
+**Dla Pawła:** co wymaga jego kliknięcia, z adresem. Pusto, jeśli nic.
+**Zostało otwarte:** dla następnego cyklu.
+
+NIE WYSYŁAJ MAILA. Raport zbiorczy wychodzi co cztery godziny osobnym
+przebiegiem i to on czyta ten dziennik.
+
+Jeżeli w danym cyklu nic nie dało się dowieźć, napisz to wprost razem z
+powodem. Wpis "brak zmian, bo X" jest wartościowy, wpis wymyślony nie.
