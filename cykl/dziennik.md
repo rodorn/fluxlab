@@ -4082,3 +4082,13 @@ Outreach do biur 5.10 do 9.10 (VPS `ruch.sqlite` sesje `utm_source=mail` od 5.10
 **Dowód:** Resend `GET /emails/<id>` (8 identyfikatorów z `wyslane_ks.json`, 10:44): `last_event` delivered dla wszystkich; Zoho IMAP `SINCE 09-Oct-2026` INBOX 1 (Zoho, nowe logowanie 10:06), Spam 0; VPS `ruch.sqlite` od 09:40: brak wierszy, ostatni wpis 08:56, `fluxlab-ruch.service` active.
 **Dla Pawła:** bez zmian: dwie odpowiedzi Kontomatik, komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację.
 **Zostało otwarte:** Z10 o 15:46 (powtórka pomiaru dla Z4), Z11 o 16:46 (bilans dnia i decyzja o wstrzymaniu outreachu), Z16 od 21:50, Z17, Z23, Z24 według godzin. Pozostałe otwarte zadania mają późniejsze godziny, więc ten przebieg kończy się na Z7.
+
+<!-- WYSLANO 2026-10-09 11:04 -->
+
+## 2026-10-09 11:46
+**Kanał:** Google (poza planem: wszystkie otwarte zadania Z10, Z11, Z16, Z17, Z23, Z24 mają późniejsze godziny).
+**Co zrobione:** fraza „automatyzacja crm” (GSC 28 dni: 17 wyśw., 0 kliknięć, poz. 24,6) ląduje na liście `/strefa-wiedzy`, bo wpis `/strefa-wiedzy/automatyzacja-crm-od-czego-zaczac` nie jest w Google; filar `/automatyzacja-leadow-crm` dostał do niego link w miejsce zdania powtarzającego cennik („Dokładna wycena po bezpłatnej diagnozie.”, 5 słów → link 5 słów), a wpis dopisany do kandydatów Z16.
+**Ruch:** ostatnia doba 10 odsłon, 10 osób (−64% wobec średniej 27,9); źródła: www.google.com 3, facebook 1, mail 1, lm.facebook.com 1. Uruchomień narzędzi 0. Tydzień 198 odsłon, 120 osób.
+**Dowód:** commit ddcc9d7 (tylko ten fragment; cudze niezacommitowane zmiany w ~100 plikach zostały w drzewie nietknięte); produkcja z VPS: `/automatyzacja-leadow-crm` 200, link obecny, stare zdanie 0 wystąpień; IndexNow Yandex 200, Naver 200. GSC inspekcja: `/strefa-wiedzy/automatyzacja-crm-od-czego-zaczac` i `/strefa-wiedzy/jak-polaczyc-crm-z-innymi-systemami` „nie znajduje się w Google”. Inne frazy: „automatyzacja crm ai” 11 wyśw. też na `/strefa-wiedzy`; „pipedrive” 5 wyśw., poz. 2,8, rozproszone po 5 stronach (bez zmian); „marketing automation” 7 wyśw., poz. 84,9, `/automatyzacja-dla-agencji-marketingowych` (bez zmian, pozycja zbyt daleka).
+**Dla Pawła:** bez zmian: dwie odpowiedzi Kontomatik, komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację.
+**Zostało otwarte:** Z10 15:46, Z11 16:46, Z16 od 21:50 (z nowym kandydatem), Z17, Z23, Z24.
