@@ -3856,7 +3856,7 @@ Wniosek: realnie 10 osób na dobę i żadna nie uruchomiła narzędzia; jedyne p
 **Plan:** `cykl/plan-ruchu.md`, 24 zadania 06:46 do 05:46. Dzień: Z1 bez odsyłacza, Z2 www, Z3 przygotowanie, Z4 wysyłka 8 (9:46), Z5 wyszukiwarka KRS (limit 60 min), Z6 tytuł enova, Z7 i Z10 odpowiedzi, Z8 audyt google ads, Z9 wysyłka warunkowa albo nasycenie BAE, Z11 bilans i decyzja o wstrzymaniu outreachu. Wieczór i noc: Z12 automatyzacja podatków, Z13 posty 037 i 038, Z14 15 stron bez indeksu, Z15 tytuł e-Doręczeń, Z16 10 żądań GSC po 21:50, Z17 pomiar, Z18 CRM leasing i wpis o podszywaniu, Z19 zrzuty 390 px, Z20 AI i Bing, Z21 kolejka na poniedziałek albo tabela łączna outreachu, Z22 linki wewnętrzne, Z23 pomiar doby, Z24 bilans.
 **Mail do Pawła:** wysłany 06:43 z pawel@fluxlab.pl, msgid 179151976792.1379727, temat „FluxLab ruch, plan na 9.10.2026: 10 osób w dobie, 0 uruchomień narzędzi, kolejka maili kończy się dziś"; „Dla Pawła": Profit Polska (5. dzień), decyzja o płatnej bazie firm albo innym segmencie dla outreachu, 6 tekstów Gofin, dwie odpowiedzi Kontomatik.
 
-## 2026-10-09 06:50
+## 2026-10-09 06:47
 **Kanał:** pomiar (Z1, sesje bez odsyłacza z 7 dni).
 **Co zrobione:** podział 60 sesji bez odsyłacza (2.10 06:43 do 9.10 06:43, po filtrach `raport_ruchu.py`) na grupy; okazało się, że to nie kanał, tylko resztka innych kanałów plus własne sprawdzenia.
 
@@ -3878,7 +3878,7 @@ Wniosek: realnie 10 osób na dobę i żadna nie uruchomiła narzędzia; jedyne p
 **Dla Pawła:** pusto.
 **Zostało otwarte:** Z2 (duplikat www) w tym samym przebiegu.
 
-## 2026-10-09 06:58
+## 2026-10-09 06:48
 **Kanał:** Google (Z2, duplikat www).
 **Co zrobione:** sprawdzone, że duplikatu do naprawy nie ma: wersja www już przekierowuje stałym 308 na adres bez www (Vercel, ustawienie domeny), kanoniczne wskazują wersję bez www; bez commita.
 
@@ -3894,11 +3894,11 @@ Wniosek: realnie 10 osób na dobę i żadna nie uruchomiła narzędzia; jedyne p
 - Post 038 w Z13 („strona z www i bez www”) ma więc oprzeć się na tym, że u nas jest to zrobione, a narzędzie pokazuje, czy u Was też.
 
 **Ruch:** jak w 06:50 (doba 16 odsłon, 14 osób).
-**Dowód:** `curl -sI` 4 adresów 06:55; GSC `index?resource_id=sc-domain%3Afluxlab.pl` przez Chrome 9228, 10 adresów powyżej; Z2 oznaczone w planie.
+**Dowód:** `curl -sI` 4 adresów 06:48; GSC `index?resource_id=sc-domain%3Afluxlab.pl` przez Chrome 9228, 10 adresów powyżej; Z2 oznaczone w planie.
 **Dla Pawła:** pusto.
 **Zostało otwarte:** Z3 (przygotowanie 8 maili 050 do 057).
 
-## 2026-10-09 07:08
+## 2026-10-09 06:50
 **Kanał:** outreach z gotowym raportem (Z3, przygotowanie wysyłki 9:46).
 **Co zrobione:** 8 maili 050 do 057 gotowych do wysyłki: wszystkie 8 spółek nadal bez adresu do e-Doręczeń w odpisie, linki i adresy poprawne; nic nie wypada do `nieaktualne/`.
 
@@ -3916,12 +3916,12 @@ Wniosek: realnie 10 osób na dobę i żadna nie uruchomiła narzędzia; jedyne p
 - Kolejka przez katalog: 54 pliki `.txt` minus `wyslane_ks.json` (111) i `pomijane.json` (60) = 8, dokładnie 050 do 057.
 - Próba: `z_utm` na treści każdego z 8 plików, każdy ma jeden link `fluxlab.pl/e-doreczenia-integracja?krs=<10 cyfr>&utm_source=mail&utm_campaign=ksiegowe`, 0 adresów gmail i imiennych, 0 błędów. Uwaga dla wykonawcy: `wyslij_segment.py --proba` nie pomija już wysłanych (warunek `not PROBA`), więc z `--limit=8` pokazuje pliki 000 do 007, nie 050 do 057; dlatego próba robiona bezpośrednio na 8 plikach tą samą funkcją `z_utm`. Wysyłka bez `--proba` pomija wysłane i weźmie dokładnie 050 do 057.
 
-**Ruch:** jak w 06:50.
-**Dowód:** odpisy `api-krs.ms.gov.pl/api/krs/OdpisAktualny` co 2 s (07:05), 8 × brak `adresDoDoreczenElektronicznychWpisanyDoBAE`; Z3 oznaczone w planie.
+**Ruch:** jak w 06:47.
+**Dowód:** odpisy `api-krs.ms.gov.pl/api/krs/OdpisAktualny` co 2 s (06:49), 8 × brak `adresDoDoreczenElektronicznychWpisanyDoBAE`; Z3 oznaczone w planie.
 **Dla Pawła:** pusto.
 **Zostało otwarte:** Z4 wysyłka 9:46; w międzyczasie Z5 (wyszukiwarka KRS po nazwie, limit 60 min).
 
-## 2026-10-09 07:25
+## 2026-10-09 06:53
 **Kanał:** outreach z gotowym raportem (Z5, nowe źródło: wyszukiwarka KRS po nazwie).
 **Co zrobione:** wyszukiwarka działa i daje JSON bez captchy, ale trafialność na maile jest poniżej progu: 1 mail na 45 spółek 69.20 (2,2 na 100, próg 3); plik `058_asset-lublin.txt` gotowy, nie wysyłany przed decyzją Z9.
 
@@ -3941,7 +3941,24 @@ Wniosek: realnie 10 osób na dobę i żadna nie uruchomiła narzędzia; jedyne p
 
 - Wąskie gardło to nie wyszukiwanie, tylko adres: 12 z 17 spółek bez BAE nie ma e-maila w odpisie, a domen nie wolno zgadywać ani szukać w wyszukiwarkach.
 
-**Ruch:** jak w 06:50.
+**Ruch:** jak w 06:47.
 **Dowód:** `~/Projekty/mail-audyt/maile_ksiegowe_edoreczenia/krs_wyszukiwarka1_2026-10-09.json` (60 odpisów), `krs_wyszukiwarka_lista_2026-10-09.json` (604 numery), `058_asset-lublin.txt`; Z5 oznaczone w planie.
 **Dla Pawła:** pusto.
 **Zostało otwarte:** Z4 wysyłka 050 do 057 o 9:46; Z9 według reguły planu bez wysyłki (mniej niż 3 maile), 058 czeka na decyzję stratega.
+
+## 2026-10-09 06:58
+**Kanał:** Google (Z6 tytuł pod „enova”, Z8 opis `/audyt-google-ads`).
+**Co zrobione:** na produkcji nowy tytuł i opis `/automatyzacja-dla-biur-rachunkowych` z „enova” oraz nowy opis `/audyt-google-ads` odpowiadający na „co dostanę i kiedy”, z wycięciem dwóch powtórzeń na tej stronie.
+
+- Z6: zapytanie `"enova"` (w cudzysłowie) 14 wyświetleń, 0 kliknięć, pozycja 3,1, jedyna strona docelowa `/automatyzacja-dla-biur-rachunkowych` (cała strona 54 wyświetlenia, 1 klik, poz. 12,5). Pozostałe zapytania tej strony: zapytanie z operatorami `("amodit" or "archman" or "saldeosmart") ("partner" or ...)` 11 wyśw. poz. 3,1, `"automatyzacja podatków"` 4 / 8,0, `"symfonia" "ksef" -"aldehydowa" ...` 3 / 4,3, `"pipedrive"` 2 / 1,5, `"saldeosmart"` 2 / 2,0, `"bitrix24"` 2 / 6,0, `ocr dla biur rachunkowych` 2 / 31,0. Uwaga dla stratega: większość tych zapytań to cudzysłowy i operatory boolowskie, czyli automat (prawdopodobnie agent szukający partnerów wdrożeniowych), a nie człowiek; 0 kliknięć przy pozycji 3 to potwierdza. Zmiana tytułu jest tania, ale realnego ruchu stąd nie należy się spodziewać.
+  - Tytuł przed: „Automatyzacja dla biur rachunkowych, KSeF i OCR | Fluxlab” (57 znaków, 9 słów); po: „Automatyzacja biur rachunkowych: enova i KSeF | Fluxlab” (55, 8).
+  - Opis przed: „OCR faktur do Optimy, Symfonii i Enovy, integracje z SaldeoSmart i KSeF, ...” (145 znaków); po: „Integracja enova365, Optimy i Symfonii z KSeF i SaldeoSmart, OCR faktur, przypomnienia o brakujących dokumentach i raporty, które robią się same.” (145).
+  - Kotwica sekcji o enova już była (`id="enova365"`). Słowa pliku `page.tsx` 1490 → 1485, treść strony bez zmian (605 słów w `<main>`).
+- Z8: „audyt google ads” 8 wyświetleń, 0 kliknięć, pozycja 27,6, strona `/audyt-google-ads`. Tytuł bez zmian.
+  - Opis przed: „Audyt Google Ads: frazy bez konwersji z 30 do 90 dni, kwota do odzyskania co miesiąc i lista wykluczeń. Raport w 3 dni robocze, 69 zł z gwarancją zwrotu.”; po: „W 3 dni robocze dostajecie frazy Google Ads, które biorą budżet bez konwersji, kwotę do odzyskania co miesiąc i listę wykluczeń. 69 zł z gwarancją zwrotu.” (154 znaki).
+  - Pierwszy ekran ma przycisk „Zamów mini-audyt za 69 zł”. Słowa w `<main>` 530 → 488 (treść własna strony bez bloku „Inne gotowce” i formularza 316 → 274, poniżej 400): wycięta lista 4 punktów w cenniku (powtarzała kroki „Jak to działa”) i pytanie FAQ o gwarancję (powtarzało zdanie z cennika), FAQ ma teraz 3 pytania.
+
+**Ruch:** jak w 06:47 (doba 16 odsłon, 14 osób).
+**Dowód:** commit 476b9ba; produkcja `<title>Automatyzacja biur rachunkowych: enova i KSeF | Fluxlab</title>` i nowy `meta description` na `/audyt-google-ads` (06:57); build i `spojnosc.mjs` OK; IndexNow 2 adresy: Yandex 200, Naver 200, wspólny punkt 403 (znany `UserForbiddedToAccessSite`).
+**Dla Pawła:** pusto.
+**Zostało otwarte:** Z4 wysyłka o 9:46; Z7 odpowiedzi; Z9 według reguły bez wysyłki (Z5 dało 1 mail); Z12 dalej.
