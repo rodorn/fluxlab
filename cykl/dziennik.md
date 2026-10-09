@@ -3999,3 +3999,32 @@ Wniosek: realnie 10 osób na dobę i żadna nie uruchomiła narzędzia; jedyne p
 **Dowód:** commit 6ed9024 (produkcja 07:54, `<title>e-Doręczenia dla JDG i spółek: od kiedy? | Fluxlab</title>`), commit 0ec2d12 (produkcja 07:58, `href="/mail-firmowy"` w pierwszym akapicie); build i `spojnosc.mjs` OK, IndexNow 2 z 3 punktów za każdym razem; `kolejka.json` 38 wpisów.
 **Dla Pawła:** liczba z Z9: 79,6% spółek z biur rachunkowych w naszych partiach już ma adres do e-Doręczeń (335 z 421).
 **Zostało otwarte:** Z4 wysyłka o 9:46 (050 do 057, `--limit=8`), potem Z7; Z16 żądania od 21:50 (`/panel-zwrotow`, `/rejestr-cen`, 3 strony z Z14, zmienione dziś: `/automatyzacja-dla-biur-rachunkowych`, `/audyt-google-ads`, `/e-doreczenia-integracja`); Z19, Z22 i pomiary według planu.
+
+## 2026-10-09 08:53
+**Kanał:** Google (Z22, linki wewnętrzne) i pierwsze wrażenie na telefonie (Z19). Z4 czeka na 9:46, więc wziąłem zadania bez blokady godzinowej.
+**Co zrobione:** strona dla biur rachunkowych ma teraz przycisk na pierwszym ekranie telefonu, a trzy strony z dzisiejszymi zmianami tytułów dostały po 2 linki ze stron z wyświetleniami, bez wydłużania tekstu.
+
+- Z19, telefon 390 px (Chrome 9228, pojedyncze wejścia):
+
+| Strona | scrollWidth | Przycisk na 1. ekranie | Błędy konsoli |
+|---|---|---|---|
+| /automatyzacja-dla-biur-rachunkowych | 390 | brak → „Lista kontrolna KSeF 2027” | 0 |
+| /audyt-google-ads | 390 | „Zamów mini-audyt za 69 zł” | 0 |
+| /e-doreczenia-integracja | 390 | przyciski sprawdzenia terminu | 0 |
+| /automatyzacja-crm-leasing | 390 | „Chcemy audyt procesu leadów” | 0 |
+| /strefa-wiedzy/podszywanie-sie-pod-firmowy-email | 390 | „Uruchom darmowy audyt” | 0 |
+
+- Z22, linki przez wymianę zdań:
+
+| Strona docelowa | Strony źródłowe | Słowa zdania przed → po |
+|---|---|---|
+| /automatyzacja-dla-biur-rachunkowych | `/` (wstęp „Najczęściej rozwiązujemy”), `/e-doreczenia-integracja` (karta „Pisma trafiają tam, gdzie już pracujecie”) | 24 → 23, 14 → 14 |
+| /mail-firmowy | `/narzedzia` (wstęp działu www), `/strefa-wiedzy` (wstęp) | 15 → 12, 12 → 12 |
+| /audyt-google-ads | te same dwa zdania co wyżej | jw. |
+
+  Strony z Z14 mają po co najmniej 1 linku, więc nie było czego dopisywać.
+
+**Ruch:** doba 13 odsłon, 12 osób (spadek o 52% wobec średniej 27,3). Źródła: www.google.com 3, mail 2, narzedzie 1, facebook 1, lm.facebook.com 1. Zdarzenia: `uruchomiono_skan_krs_z_linku` 1. Z telefonu 2 z 13.
+**Dowód:** commity 9461ed4 i f045185; produkcja 08:49 i 08:51: `href="/automatyzacja-dla-biur-rachunkowych"` na `/` i `/e-doreczenia-integracja`, `href="/mail-firmowy"` i `href="/audyt-google-ads"` na `/narzedzia` i `/strefa-wiedzy`, przycisk `href="/ksef-2027"` na stronie biur; build i `spojnosc.mjs` OK; IndexNow 5 adresów, 2 z 3 punktów.
+**Dla Pawła:** pusto.
+**Zostało otwarte:** Z4 wysyłka o 9:46 (050 do 057, `--limit=8`), potem Z7; Z10, Z11; Z16 od 21:50; Z17, Z20, Z21, Z23, Z24 według planu.
