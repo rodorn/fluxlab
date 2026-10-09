@@ -4046,3 +4046,26 @@ Wniosek: realnie 10 osób na dobę i żadna nie uruchomiła narzędzia; jedyne p
 **Dowód:** zapytanie do `ruch.sqlite` na VPS (sesje ze źródłem AI od 1.10); odczyty `bing.com/webmasters/sitemaps`, `searchperf`, `aiperformance`, `siteexplorer`, `indexnow` o 08:55.
 **Dla Pawła:** pusto.
 **Zostało otwarte:** Z4 o 9:46, potem Z7; Z10, Z11; Z16 od 21:50; Z17, Z21, Z23, Z24.
+
+## 2026-10-09 09:58
+**Kanał:** outreach z gotowym raportem (Z4 wysyłka, Z21 tabela łączna, bo Z5 poniżej progu).
+**Co zrobione:** 8 maili do biur rachunkowych bez adresu do e-Doręczeń (pliki 050 do 057, każdy z linkiem `?krs=` i `utm_source=mail&utm_campaign=ksiegowe`) wyszło 09:46 do 09:48, wszystkie doręczone; policzony bilans całego segmentu od 5.10.
+**Ruch:** ostatnia doba 14 odsłon, 13 osób (−49% wobec średniej 27,3); źródła: www.google.com 3, mail 2, narzedzie 1, facebook 1, lm.facebook.com 1. Uruchomienia 1 (`uruchomiono_skan_krs_z_linku`). Tydzień 198 odsłon, 120 osób.
+**Dowód:** Resend 09:57 (`User-Agent: curl/8.5.0`): info@biuro-gawron.pl 01a11fa0-5499, kontakt@biuroprofesja.pl 01a11fa0-9001, kontakt@biurodgc.pl 01a11fa0-cb70, audit@inland.pl 01a11fa1-06d8, otus@otuspodatki.pl 01a11fa1-423b, biuro@palewscy.pl 01a11fa1-7e6a, biuro@ww-finance.pl 01a11fa1-b9cc, biuro@biuroprofi.eu 01a11fa1-f528: 8 z 8 delivered, 0 bounced, 0 complained. `wyslane_ks.json` 111 → 119, `pomijane.json` bez zmian (biuro-help pominięte jako wypisane). VPS: 0 sesji od 09:46 do 09:57.
+
+Outreach do biur 5.10 do 9.10 (VPS `ruch.sqlite` sesje `utm_source=mail` od 5.10 bez własnego testu `test-krs`, Resend, tabele bilansów z dziennika):
+
+| dzień | maile nowe | follow-up | delivered | sesje z utm | w tym skanery | ludzie | skany od ludzi | leady | wpisy outreachu w dzienniku |
+|---|---|---|---|---|---|---|---|---|---|
+| 5.10 | 11 | 0 | 11 | 3 | 2 (macOS, 1 odsłona) | 1 (Profit Polska) | 1 (ręczny) | 1 | 19 |
+| 6.10 | 17 | 0 | 17 | 0 nowych | 0 | 0 | 0 | 0 | 17 |
+| 7.10 | 10 | 10 | 20 | 10 | 4 (follow-up, pary w tej samej sekundzie) | 2 do 4 | 0 | 0 (1 wypisanie) | 11 |
+| 8.10 | 8 | 17 | 25 | 2 | 1 (09:47, skan z linku) | 0 do 1 | 0 | 0 | 9 |
+| 9.10 do 09:57 | 8 | 0 | 8 | 0 | 0 | 0 | 0 | 0 | 3 |
+| razem | 54 | 27 | 81 z 81 | 15 | 7 | 4 do 6 | 1 | 1 | 59 |
+
+- Link `?krs=` (od 8.10, 16 maili): 1 skan, i to skaner w sekundę po doręczeniu; od ludzi 0.
+- Koszt: 59 przebiegów cyklu na 1 lead i 4 do 6 osób, czyli ok. 10 do 15 przebiegów na osobę; Facebook w tym czasie dał 15 sesji w tygodniu przy 1 przebiegu.
+- Z5 (wyszukiwarka KRS) dała 2,2 maila na 100 spółek, poniżej progu 3, więc druga partia nie powstała. Kolejka na poniedziałek: 1 plik (058_asset-lublin).
+**Dla Pawła:** bez zmian: dwie odpowiedzi Kontomatik w pawel@fluxlab.pl, komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska czeka na akceptację.
+**Zostało otwarte:** Z7 o 12:46 (odpowiedzi i sesje po Z4), Z10 15:46, Z11 16:46 (bilans dnia i decyzja o wstrzymaniu outreachu), Z16 żądania nie wcześniej niż 21:50, Z17 22:46, Z23 04:46, Z24 05:46.
