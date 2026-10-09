@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /
-Disallow: /panel
+Disallow: /panel$
+Disallow: /panel/
 Disallow: /api/panel
 
 Sitemap: https://fluxlab.pl/sitemap.xml
