@@ -4372,3 +4372,13 @@ Osobno:
 **Dowód:** commity 1625198 i d1f4a9f. Produkcja z VPS: 200, `<title>` „Numeracja faktur w KSeF 2027, błąd 440”, canonical na siebie, `"@type":"Question"` 4, link do `/ksef-2027`, adres w `sitemap.xml` i na `/strefa-wiedzy`, 301 słów w `<main>` razem z nawigacją. Build i `spojnosc.mjs` OK. IndexNow 2 adresy, 2 z 3 punktów.
 **Dla Pawła:** bez zmian (Gofin 1559884 z wpisu 08:50, Profit Polska, timery grup FB).
 **Zostało otwarte:** Z15 (od 20:46), Z17 (7 żądań od 22:50; dwa nowe artykuły z dziś, `kiedy-odliczyc-vat-z-faktury-ksef` i `numeracja-faktur-ksef-2027`, można dopisać jako 8. i 9. adres), Z18, Z20 (od 11.10 02:00), Z22, Z23. Po 14.10: oba artykuły do `llms.txt`. Gofin: następne sprawdzenie od 1559889.
+
+<!-- WYSLANO 2026-10-10 11:04 -->
+
+## 2026-10-10 11:48
+**Kanał:** dystrybucja narzędzi (przegląd), potem KSeF jako magnes. Wszystkie otwarte zadania planu mają blokady czasowe (Z15 od 20:46, Z17 od 22:50, Z18, Z22 i Z23 to pomiary nocne, Z20 Bing od 11.10 02:00).
+**Co zrobione:** Gofin: brak nowych wątków od 1559889, dział KSeF bez nowych tematów od 1559738, starsze wątki KSeF (1559639, 1559235, 1558787) mają już odpowiedzi; 1559881 (paragon bez NIP) nie pasuje do żadnego narzędzia. Reddit (403) i fora infor/ifirma/elektroda (brak odpowiedzi także z VPS) niedostępne. Na `/ksef-2027`, najczęstszym wejściu z Google, wstęp listy powtarzał nagłówek i akapit strony; skrócony z 6 do 3 linii (dotyczy też `/ksef-integracja`).
+**Ruch:** ostatnia doba 28 odsłon, 17 osób (−1% wobec średniej 28,3). Źródła: www.google.com 8, facebook 7, mail 1. Z telefonu 11 z 28. Uruchomienia narzędzi 2 (audyt 2, skan KRS 2). `/ksef-2027` w 14 dniach (VPS): 3 wejścia z Google (5.10, 8.10, 9.10, wszystkie Windows, 1 odsłona), 2 z Facebooka, 0 zdarzeń `uruchomiono_liste_ksef_2027`; odpowiedzi stoją w treści listy, więc wyjście po 1 odsłonie nie musi oznaczać porażki.
+**Dowód:** commit 0f95d35. Produkcja z VPS: `/ksef-2027` i `/ksef-integracja` 200, nowy wstęp w HTML, stary „Tego dnia kończą się naraz” zniknął. Build i `spojnosc.mjs` OK. IndexNow 2 adresy, 2 z 3 punktów.
+**Dla Pawła:** bez zmian (Gofin 1559884 z wpisu 08:50, Profit Polska, timery grup FB).
+**Zostało otwarte:** Z15 (od 20:46), Z17 (od 22:50; 8. i 9. adres: dwa nowe artykuły z dziś), Z18, Z20 (od 11.10 02:00), Z22, Z23. Gofin: następne sprawdzenie od 1559889.
