@@ -4314,3 +4314,25 @@ Osobno:
 **Ocena kanałów:** Google 5 / 17 / 10 h, jedyny kanał z uruchomieniami narzędzi: 12 h, ale bez nowych tytułów (7 zmian z 9.10 niezmierzone do 13.10); dziś higiena po przebudowie 96c40ba (404, duplikaty, sieroty, długość stron, FAQ do 4), 10 żądań po 22:50, odczyt po odświeżeniu. Outreach 1 / 4 do 6 / 6 h: weekend 0 h poza sprawdzeniem 058; decyzja o bazie u Pawła. Follow-upy wyłączone. Facebook 0 / ok. 8 / 1 h: pomiar per post i kolejność kolejki. Narzędzia 4 uruchomienia, 0 adresów z 6 audytów: 3 h (lejek audytu, lejek skanu, przeniesienie istniejącego formularza raportu pod ustalenia). AI 0 / 2 / 0 h: pomiar. Bing: odczyt po 48 h.
 **Plan:** `cykl/plan-ruchu.md`, 23 zadania 06:46 do 04:46, sobota bez maili. Dzień: Z1 lejek audytu, Z2 lejek skanu KRS i zdanie pod wynikiem, Z3 crawl 119 stron (404, duplikaty, sieroty, FAQ, długość), Z4 naprawa linków i duplikatów, Z5 formularz raportu pod ustalenia, Z6 sprawdzenie na produkcji, Z7 zrzuty 390 px menu po przebudowie, Z8 linki do sierot, Z9 pomiar południe, Z10 Facebook per post, Z11 CWV/HTTPS/linki zewnętrzne, Z12 sprawdzenie 10 adresów w Google, Z13 skrócenie najdłuższej strony o 30%, Z14 FAQ do 4, Z15 GSC po odświeżeniu, Z16 lista do serii, Z17 10 żądań po 22:50. Noc (pomiary, mogą poczekać na rano przy „wstrzymaj"): Z18 wieczór, Z19 AI, Z20 Bing, Z21 plik 058 na poniedziałek, Z22 doba, Z23 bilans.
 **Mail do Pawła:** wysłany 06:45 z pawel@fluxlab.pl, msgid 179160632061.2594661, temat „FluxLab ruch, plan na 10.10.2026: 9 osób w dobie, 4 uruchomienia narzędzi, 0 adresów z 6 audytów"; „Dla Pawła": Profit Polska (6. dzień), decyzja o płatnej bazie albo segmencie, timery grup FB i pytanie w „ChatGPT Polska", post na LinkedIn z linkiem utm, Gofin, Kontomatik.
+
+<!-- WYSLANO 2026-10-10 07:05 -->
+
+## 2026-10-10 07:15
+**Kanał:** narzędzia (lejek audytu i skanu KRS) oraz Google (higiena po przebudowie).
+**Co zrobione:** Zamknięte Z1 do Z14, Z16, Z19, Z21 z planu 10.10. Formularz raportu audytu stoi teraz zaraz pod ustaleniami (wcześniej na samym dole, za wyceną, i nikt do niego nie doszedł). Pod wynikiem skanu KRS zamiast ogólnego „Napiszcie" jest oferta spięcia skrzynki z linkiem do kontaktu. Katalog /produkty jest krótszy o 42%. 3 strony bez linków z treści dostały link przez wymianę zdań. Poprawiony błąd faktów: wynik audytu i mail raportu twierdziły „Ceny bez VAT, zwolnienie podmiotowe", teraz „Ceny netto, doliczamy 23% VAT".
+**Ruch:** ostatnia doba 26 odsłon, 15 osób (−8% wobec średniej 28,1); źródła: www.google.com 8, facebook 4, mail 1; z telefonu 10 z 26; uruchomienia narzędzi 2 (audyt 2, skan KRS 2 w jednej sesji). Od 06:00 do 07:00 dziś 0 wierszy w bazie.
+**Dowód:**
+- Lejek audytu (14 dni): 4 sesje ludzi, 1 rozwinęła sekcje, 0 doszło do formularza, 0 ; Resend  od ludzi: profitpolska.pl, es-investment.pl, useme.com, bestcollect.pl, satisfly.co, wszystkie anonim.
+- Lejek skanu KRS (14 dni): 9 sesji ze skanem, 0 kliknięć ludzi po wyniku (jedyne było naszym testem z 4.10).
+- Commity: 63c15d8 (skan KRS, ), 3a98172 (formularz audytu i VAT), 16c4b5b (temat maila raportu „do poprawy: N" zamiast „3 spraw"), 68cc008 (linki do /jak-pracuje, /realizacje, /case-study), 96130c4 (/produkty 2696 → 1573 słów).
+- Test na produkcji 06:51: audyt fluxlab.pl 85/100, raport wysłany z formularza, Resend 01a12426-85b6-7bb5-9749-7d27b9a0848c delivered, w Zoho INBOX po niecałej minucie.
+- Crawl 119 stron (): wszystkie 200, canonical poprawny, 0 zepsutych linków wewnętrznych, 0 duplikatów tytułu i opisu, 0 stron z FAQ powyżej 4.
+- GSC: 9 z 9 adresów z serii 9.10 jest już w Google, `/panel-zwrotow` jeszcze nie. CWV: za mało danych. HTTPS: 22 adresy, 0 problemów. Linki zewnętrzne: 1 (zleca.pl).
+- Facebook (14 dni): 24 sesje, z tego 16 to podglądy linku przy publikacji, ludzi 0 do 1 na post; kolejka bez zmian.
+- Asystenci AI od 1.10: 3 sesje z chatgpt.com, inne źródła 0.
+- Poniedziałek: w kolejce 1 mail (058, ASSET Lublin, nadal bez adresu do e-Doręczeń).
+- IndexNow: 6 adresów, 2 z 3 punktów przyjęły.
+**Dla Pawła:**
+- Odpowiedź do Profit Polska nadal czeka. To jedyny lead z audytu w 14 dniach.
+- Facebook bez grup daje 0 do 1 osoby na post i 0 uruchomień narzędzi w 14 dniach. Timery grup FB stoją od 8.10 i czekają na Twoją decyzję.
+**Zostało otwarte:** Z15 (GSC po odświeżeniu, od 20:46), Z17 (7 żądań indeksowania od 22:50, lista w linii Z17), Z18 (pomiar wieczorny), Z20 (Bing po 48 h, czyli od 11.10 02:00), Z22, Z23. Za 7 dni (17.10) policzyć: `audyt_mail_*` i `edor_klik_kontakt` od ludzi.
