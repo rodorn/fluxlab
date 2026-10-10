@@ -191,6 +191,7 @@ export const SEKCJE: Sekcja[] = [
           s("/strefa-wiedzy/maly-zus-plus-kiedy-sie-oplaca", "Mały ZUS Plus"),
           s("/strefa-wiedzy/n8n-vs-zapier", "n8n vs Zapier"),
           s("/strefa-wiedzy/najczestsze-bledy-w-raportowaniu-sprzedazy", "Błędy w raportowaniu sprzedaży"),
+          s("/strefa-wiedzy/numeracja-faktur-ksef-2027", "Numeracja faktur w KSeF w 2027"),
           s("/strefa-wiedzy/panel-do-sesji-ai", "Panel do sesji AI"),
           s("/strefa-wiedzy/pipedrive-vs-salesforce", "Pipedrive vs Salesforce"),
           s("/strefa-wiedzy/podszywanie-pod-salony-samochodowe", "Podszywanie pod salony samochodowe"),

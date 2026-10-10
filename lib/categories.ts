@@ -320,6 +320,12 @@ export const categories: Category[] = [
         description: "Liczy się dzień nadania numeru KSeF, nie data wystawienia.",
         bezOkladki: true,
       },
+      {
+        href: "/strefa-wiedzy/numeracja-faktur-ksef-2027",
+        title: "Numeracja faktur w KSeF w 2027",
+        description: "Numer bez roku da w 2027 błąd 440, duplikat faktury.",
+        bezOkladki: true,
+      },
     ],
   },
 ];
