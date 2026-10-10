@@ -314,6 +314,12 @@ export const categories: Category[] = [
         description:
           "Zwolnienie podmiotowe, próg 200 000 zł i wpływ na cashflow.",
       },
+      {
+        href: "/strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef",
+        title: "Kiedy odliczyć VAT z faktury z KSeF",
+        description: "Liczy się dzień nadania numeru KSeF, nie data wystawienia.",
+        bezOkladki: true,
+      },
     ],
   },
 ];

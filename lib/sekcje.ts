@@ -184,6 +184,7 @@ export const SEKCJE: Sekcja[] = [
           s("/strefa-wiedzy/jak-uporzadkowac-proces-sprzedazy-w-crm", "Proces sprzedaży w CRM"),
           s("/strefa-wiedzy/jak-zautomatyzowac-raportowanie-w-firmie", "Automatyzacja raportowania w firmie"),
           s("/strefa-wiedzy/kiedy-ai-ma-sens-a-kiedy-nie", "Kiedy AI ma sens"),
+          s("/strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef", "Odliczenie VAT z faktury KSeF"),
           s("/strefa-wiedzy/konwersje-pokazuja-zero", "Konwersje pokazują zero"),
           s("/strefa-wiedzy/maile-trafiaja-do-spamu", "Maile trafiają do spamu"),
           s("/strefa-wiedzy/make-vs-n8n", "Make vs n8n"),
