@@ -4408,3 +4408,13 @@ Osobno:
 **Dla Pawła:** (1) bez zmian: Gofin 1559884 i 1559826 z wpisów 08:50 i 13:55, Profit Polska, timery grup FB. (2) NOWE: komentarz pod https://forum.gofin.pl/1559890/spolka-brak-dokumentacji-czy-ktos-ma-pomysl, „Autor”: FluxLab, Turnstile, „+ Dodaj komentarz” (662 znaków z 1000). Wątek sprzed pół godziny, bez odpowiedzi:
 > Faktury od 1.04.2026 (sprzedaż i zakupy) są w KSeF i tam ich nikt nie zgubi. Prezes, jako osoba uprawniona spółki w KSeF (ZAW-FA albo pieczęć kwalifikowana), nadaje biuru po NIP uprawnienie do przeglądania faktur w Aplikacji Podatnika KSeF i biuro pobiera całość samo. Przy okazji warto odebrać uprawnienia poprzedniemu biuru. Deklaracji KSeF nie trzyma: UPO z JPK_V7 ma ten, kto je wysyłał, więc o UPO i ostatni JPK z nadwyżką (do przeniesienia) trzeba pisemnie wezwać inFakt; skoro urząd nic nie widzi, możliwe, że za te miesiące JPK w ogóle nie poszły. Krótko opisaliśmy kroki: https://fluxlab.pl/strefa-wiedzy/faktury-z-ksef-po-zmianie-biura?utm_source=gofin
 **Zostało otwarte:** Z15 (od 20:46), Z17 (11 adresów od 22:50, gotowe polecenie w linii), Z18, Z20 (od 11.10 02:00), Z22, Z23. Po 14.10: cztery dzisiejsze artykuły do `llms.txt`. Gofin: następne sprawdzenie od 1559891.
+
+<!-- WYSLANO 2026-10-10 15:05 -->
+
+## 2026-10-10 15:45
+**Kanał:** dystrybucja narzędzi (Gofin). Wszystkie otwarte zadania planu mają blokady czasowe (Z15 od 20:46, Z17 od 22:50, Z18, Z22 i Z23 to pomiary nocne, Z20 Bing od 11.10 02:00).
+**Co zrobione:** Nic nie poszło w świat, bo nie było pod co pisać: na Gofin brak nowych wątków po 1559890 (1559891 do 1559893 zwracają 404, strona główna forum kończy się na 1559890). W trzech wątkach czekających na Pawła (1559884, 1559826, 1559890) wciąż nie ma komentarza FluxLab; 1559890 nadal bez żadnej odpowiedzi, więc komentarz z wpisu 14:55 jest wciąż pierwszy.
+**Ruch:** ostatnia doba 26 odsłon, 15 osób (−6% wobec średniej 27,6). Źródła: facebook 9, www.google.com 5. Z telefonu 12 z 26. Uruchomienia narzędzi 2 (audyt 2, skan KRS 2). Najczęściej: /audyt-strony 8, / 5, /e-doreczenia-integracja 3, /audyt-google-ads 3. Tydzień: 197 odsłon, 126 osób (+101%).
+**Dowód:** `curl` forum.gofin.pl/1559891..1559893 = 404; w HTML wątków 1559884, 1559826, 1559890 zero wystąpień „FluxLab”. Kod strony bez zmian, bez builda i IndexNow.
+**Dla Pawła:** bez zmian: komentarze Gofin z wpisów 08:50 (1559884), 13:55 (1559826) i 14:55 (1559890, najpilniejszy, wątek wciąż bez odpowiedzi), Profit Polska, timery grup FB.
+**Zostało otwarte:** Z15 (od 20:46), Z17 (11 adresów od 22:50, gotowe polecenie w linii), Z18, Z20 (od 11.10 02:00), Z22, Z23. Po 14.10: cztery dzisiejsze artykuły do `llms.txt`. Gofin: następne sprawdzenie od 1559891.
