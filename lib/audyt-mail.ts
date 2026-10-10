@@ -201,7 +201,7 @@ export function zlozRaportHtml(
           ? `<div style="font-size:13px;color:#4b5563;margin-top:10px;padding-top:10px;border-top:1px solid #c7d2fe">Jeżeli budżet ma być mniejszy, sama warstwa krytyczna to <strong>${d.wycena.pilne} zł</strong>. Reszta może poczekać, te rzeczy nie mogą.</div>`
           : ""
       }
-      <div style="font-size:12px;color:#6b7280;margin-top:12px">Ceny brutto, bez VAT (zwolnienie podmiotowe). Wycena jest wiążąca przez 30 dni od daty raportu. Jeżeli po wejściu w kod okaże się, że problem jest innego rzędu niż widać z zewnątrz, mówimy o tym przed rozpoczęciem pracy, a nie po.</div>
+      <div style="font-size:12px;color:#6b7280;margin-top:12px">Ceny netto, doliczamy 23% VAT. Wycena jest wiążąca przez 30 dni od daty raportu. Jeżeli po wejściu w kod okaże się, że problem jest innego rzędu niż widać z zewnątrz, mówimy o tym przed rozpoczęciem pracy, a nie po.</div>
     </div>`
     : `${naglowekSekcji("Wycena")}
     <p style="font-size:14px;line-height:1.7;color:#374151">Nie znaleźliśmy nic, za co warto byłoby wziąć pieniądze. Strona przeszła wszystkie sprawdzenia, które wykonujemy z zewnątrz.</p>`;

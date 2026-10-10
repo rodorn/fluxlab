@@ -667,6 +667,71 @@ export default function AudytCheck() {
             </div>
           )}
 
+          {/* Raport na maila */}
+          <div className="rounded-2xl border border-gray-200 bg-gray-50/60 p-6 dark:border-gray-800 dark:bg-gray-900/40">
+            {mailStan === "ok" ? (
+              <div>
+                <p className="text-base font-bold text-emerald-700 dark:text-emerald-400">
+                  Wysłaliśmy raport na {email}
+                </p>
+                <p className="mt-1.5 text-sm text-gray-600 dark:text-gray-400">
+                  Jeżeli nie dotrze w ciągu kilku minut, zajrzyjcie do spamu.
+                  Zgodę wycofacie, odpisując jednym słowem.
+                </p>
+              </div>
+            ) : (
+              <>
+                <h3 className="text-base font-bold text-gray-900 dark:text-white">
+                  Chcecie ten raport na maila?
+                </h3>
+                <p className="mt-1.5 text-sm text-gray-600 dark:text-gray-400">
+                  Wyślemy ten raport na Wasz adres, bez listy wysyłkowej.
+                </p>
+                <form onSubmit={poproszOMaila} className="mt-4 space-y-3">
+                  <div className="flex flex-col gap-3 sm:flex-row">
+                    <input
+                      type="email"
+                      required
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="twoj@adres.pl"
+                      aria-label="Adres e-mail do wysyłki raportu"
+                      className="flex-1 rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 outline-none focus:border-accent dark:border-gray-700 dark:bg-gray-950 dark:text-white"
+                    />
+                    <button
+                      type="submit"
+                      disabled={mailStan === "wysylamy" || !zgoda}
+                      className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
+                    >
+                      {mailStan === "wysylamy"
+                        ? "Wysyłamy..."
+                        : "Wyślij raport"}
+                    </button>
+                  </div>
+                  <label className="flex cursor-pointer items-start gap-2.5 text-sm text-gray-600 dark:text-gray-400">
+                    <input
+                      type="checkbox"
+                      checked={zgoda}
+                      onChange={(e) => setZgoda(e.target.checked)}
+                      className="mt-0.5 h-4 w-4 shrink-0 rounded border-gray-300 text-accent focus:ring-accent dark:border-gray-600"
+                    />
+                    <span>
+                      Zgadzamy się na przesłanie raportu na podany adres i na
+                      kontakt w sprawie jego wyników. Zgodę możemy wycofać w
+                      każdej chwili, odpisując na wiadomość.
+                    </span>
+                  </label>
+                  {mailStan === "blad" && (
+                    <p className="text-sm text-red-700 dark:text-red-400">
+                      {mailBlad}
+                    </p>
+                  )}
+                </form>
+              </>
+            )}
+          </div>
+
+
           {/* Kolejność i mocne strony */}
           {wynik.opis && wynik.opis.kolejnosc.length > 0 && (
             <div>
@@ -963,7 +1028,7 @@ export default function AudytCheck() {
                 {wynik.wycena.dniRobocze === 1
                   ? "dzień roboczy"
                   : "dni roboczych"}{" "}
-                od otrzymania dostępów. Ceny bez VAT, zwolnienie podmiotowe.
+                od otrzymania dostępów. Ceny netto, doliczamy 23% VAT.
                 Wycena jest wiążąca przez 30 dni.
               </p>
               {wynik.wycena.pilne > 0 && (
@@ -1013,79 +1078,6 @@ export default function AudytCheck() {
               </p>
             </div>
           )}
-
-          {/* Raport na maila */}
-          <div className="rounded-2xl border border-gray-200 bg-gray-50/60 p-6 dark:border-gray-800 dark:bg-gray-900/40">
-            {mailStan === "ok" ? (
-              <div>
-                <p className="text-base font-bold text-emerald-700 dark:text-emerald-400">
-                  Wysłaliśmy raport na {email}
-                </p>
-                <p className="mt-1.5 text-sm text-gray-600 dark:text-gray-400">
-                  Jeżeli nie dotrze w ciągu kilku minut, zajrzyj do spamu. Zgodę
-                  możesz wycofać, odpisując na tę wiadomość jednym słowem,
-                  usuwamy adres tego samego dnia.
-                </p>
-              </div>
-            ) : (
-              <>
-                <h3 className="text-base font-bold text-gray-900 dark:text-white">
-                  Chcesz ten raport na maila?
-                </h3>
-                <p className="mt-1.5 text-sm text-gray-600 dark:text-gray-400">
-                  Wyślemy dokładnie to, co widzisz wyżej, w formie, którą da się
-                  przesłać dalej informatykowi albo agencji. Raport jest już
-                  gotowy, więc adres podajesz tylko wtedy, gdy faktycznie chcesz
-                  go dostać.
-                </p>
-                <form onSubmit={poproszOMaila} className="mt-4 space-y-3">
-                  <div className="flex flex-col gap-3 sm:flex-row">
-                    <input
-                      type="email"
-                      required
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      placeholder="twoj@adres.pl"
-                      aria-label="Adres e-mail do wysyłki raportu"
-                      className="flex-1 rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 outline-none focus:border-accent dark:border-gray-700 dark:bg-gray-950 dark:text-white"
-                    />
-                    <button
-                      type="submit"
-                      disabled={mailStan === "wysylamy" || !zgoda}
-                      className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
-                    >
-                      {mailStan === "wysylamy"
-                        ? "Wysyłamy..."
-                        : "Wyślij raport"}
-                    </button>
-                  </div>
-                  <label className="flex cursor-pointer items-start gap-2.5 text-sm text-gray-600 dark:text-gray-400">
-                    <input
-                      type="checkbox"
-                      checked={zgoda}
-                      onChange={(e) => setZgoda(e.target.checked)}
-                      className="mt-0.5 h-4 w-4 shrink-0 rounded border-gray-300 text-accent focus:ring-accent dark:border-gray-600"
-                    />
-                    <span>
-                      Zgadzamy się na przesłanie raportu na podany adres i na
-                      kontakt w sprawie jego wyników. Zgodę możemy wycofać w
-                      każdej chwili, odpisując na wiadomość.
-                    </span>
-                  </label>
-                  {mailStan === "blad" && (
-                    <p className="text-sm text-red-700 dark:text-red-400">
-                      {mailBlad}
-                    </p>
-                  )}
-                  <p className="text-xs text-gray-500 dark:text-gray-400">
-                    Adres służy do wysłania tego raportu i ewentualnej rozmowy o
-                    nim. Nie trafia do żadnej listy wysyłkowej i nie jest nikomu
-                    przekazywany.
-                  </p>
-                </form>
-              </>
-            )}
-          </div>
 
           {/* Metodyka */}
           <Skladane
