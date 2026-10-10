@@ -332,6 +332,12 @@ export const categories: Category[] = [
         description: "W JDG to dwie osobne skrzynki, prywatna nie zastąpi firmowej.",
         bezOkladki: true,
       },
+      {
+        href: "/strefa-wiedzy/faktury-z-ksef-po-zmianie-biura",
+        title: "Faktury z KSeF po zmianie biura",
+        description: "Nowe biuro pobierze faktury z 2026 z KSeF po nadaniu uprawnienia.",
+        bezOkladki: true,
+      },
     ],
   },
 ];

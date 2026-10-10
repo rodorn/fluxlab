@@ -178,6 +178,7 @@ export const SEKCJE: Sekcja[] = [
           s("/strefa-wiedzy/hubspot-vs-pipedrive", "HubSpot vs Pipedrive"),
           s("/strefa-wiedzy/integracje-api-w-firmie-kiedy-warto", "Integracje API, kiedy warto"),
           s("/strefa-wiedzy/e-doreczenia-adres-prywatny-i-firmowy", "e-Doręczenia: adres prywatny i firmowy"),
+          s("/strefa-wiedzy/faktury-z-ksef-po-zmianie-biura", "Faktury z KSeF po zmianie biura"),
           s("/strefa-wiedzy/jaka-forma-opodatkowania-jdg-2026", "Forma opodatkowania JDG 2026"),
           s("/strefa-wiedzy/jak-liczyc-zdrowotna-jdg", "Składka zdrowotna w JDG"),
           s("/strefa-wiedzy/jak-polaczyc-crm-z-innymi-systemami", "Łączenie CRM z systemami"),
