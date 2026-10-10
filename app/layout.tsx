@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   },
   title: "Strony, automatyzacja, dane dla firm B2B | Fluxlab",
   description:
-    "Trzy ścieżki: tworzymy strony WWW, automatyzujemy CRM i obsługę leadów, wyciągamy dane z różnych źródeł. Stała cena, mierzalne efekty, pierwsze wdrożenia w 2-4 dni.",
+    "Tworzymy strony WWW, automatyzujemy CRM i obsługę leadów, wyciągamy dane z różnych źródeł. Stała cena, mierzalne efekty, pierwsze wdrożenia w 2-4 dni.",
   openGraph: {
     title: "Strony, automatyzacja, dane dla firm B2B | Fluxlab",
     description:

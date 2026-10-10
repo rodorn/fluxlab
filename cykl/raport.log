@@ -827,3 +827,77 @@ Mail obejmuje wpisy dziennika od 08:05 do 10:46.
 
 Przeczytałem treść przed wysyłką i poprawiłem dwie rzeczy: godzinę w nagłówku (wpisałem 11:10, a było 11:05) i zdanie, które sugerowało, że uruchomienia wypadły z okna ostatniej doby „po południu”, choć była jeszcze pora przedpołudniowa.
 === 2026-10-09 11:05:03 koniec, kod 0
+=== 2026-10-09 15:03:00 start raportu
+Raport poszedł na iwanekpawel55@gmail.com z pawel@fluxlab.pl. Serwer SMTP przyjął wiadomość. Doręczenia ani wyglądu maila w skrzynce nie sprawdzałem.
+
+Temat: „FluxLab strona, 15:10, nowe menu z pięcioma pozycjami i cztery tytuły pod frazy z Google”. W dzienniku znacznik `<!-- WYSLANO 2026-10-09 15:05 -->` ma 15:05, bo tyle pokazał zegar przy zapisie, a temat ma 15:10, bo tę godzinę wpisałem ręcznie w danych raportu.
+
+Treść maila:
+- **Zmiany:** pięć sekcji, po jednej na zmianę.
+  - Najważniejsza to nowe menu z pięcioma pozycjami zamiast dziewięciu, jedna stopka i `/spis-stron`, z commitu 96c40ba.
+  - Pozostałe cztery to nowe tytuły, opisy i linki z wpisów 11:46, 12:46, 13:46 i 14:46.
+  - Zrzut strony głównej z produkcji jest załączony jako cid.
+- **Czego nie udało się zrobić:** pomiar po wysyłce do biur rachunkowych (Z10) jest zaplanowany na 15:46, więc go jeszcze nie ma. Prośby o indeksowanie w Search Console czekają na odnowienie limitu około 21:45.
+- **Ruch:** pełny wynik, z podziałem na przeglądarki i zastrzeżeniem o danych sprzed 21.09 godz. 16:00. Uruchomień narzędzi nadal 0.
+- **Lista audytowa:** 10 z 15 pozycji zamkniętych w głównej tabeli audytu technicznego. Dalej bierzemy pozycję 13 (strony z jednym linkiem przychodzącym).
+
+Commit 96c40ba nie miał wpisu w dzienniku, więc opisałem go z commitu i z produkcji, i napisałem to w mailu. W mailu zaznaczyłem też, że przy nim nie uruchamiałem buildu ani skryptu spójności.
+=== 2026-10-09 15:05:23 koniec, kod 0
+=== 2026-10-09 19:03:00 start raportu
+Raport poszedł z pawel@fluxlab.pl na iwanekpawel55@gmail.com. Temat: „FluxLab strona, 19:05, wznowione publikowanie na fanpage”. Skrypt wysyłki potwierdził nadanie (msgid `<179156547977.186206.3606383051610195939@fluxlab.pl>`), ale nie sprawdzałem skrzynki odbiorczej. Na końcu dziennika dopisałem znacznik `<!-- WYSLANO 2026-10-09 19:04 -->`.
+
+W okresie 15:05–19:05 nie zmieniło się nic w kodzie strony. Ostatni commit to tytuł `/numer-ksef` z 14:47, już opisany w poprzednim raporcie. Zrzutu ekranu nie dołączałem, bo nie było zmiany wizualnej.
+
+Mail zawiera:
+- **Fanpage:** wznowione publikowanie. Wszystkie cztery timery Facebooka zatrzymano 8.10 o 22:26 bez śladu decyzji. Od 18:50 działają `-post` i `-dopisz`, a zaległy post 035 już wyszedł.
+- **Wysyłki do biur rachunkowych:** pomiar z 15:52 i bilans z 16:50. Dostarczone 8 z 8, odpowiedzi 0. Z nowego źródła adresów wyszło 2,2 maila na 100 spółek przy progu 3, więc od 10.10 nie ma nowych partii, w poniedziałek tylko plik 058.
+- **Przegląd Search Console:** nie było strony do poprawy tytułu. Lista 10 adresów do indeksowania czeka na 21:50.
+- **Ruch:** pełny wynik z raportu, podział na przeglądarki i zastrzeżenie o danych sprzed 21.09 godz. 16:00. Uruchomienia narzędzi: 0 w odczytach do 17:55, 2 w odczycie z 18:50.
+- **Lista audytowa:** w audycie technicznym 24 zamknięte i 5 otwartych. W audycie treści 22 zamknięte i jeden zbiorczy wiersz otwarty. W audycie SEO 1 zamknięta, 4 częściowo i 2 niezaczęte. Następna pozycja to linkowanie stron z jednym linkiem przychodzącym (13 z audytu technicznego).
+
+W sekcji „Czego nie udało się zrobić” są dwie rzeczy do Twojej decyzji. Timery `fluxlab-fb-grupy` i `fluxlab-fb-pytania` nadal stoją, bo piszą w cudzych grupach. Poza tym zostały sprawy bez zmian: dwie odpowiedzi Kontomatik, komentarze Gofin i odpowiedź do Profit Polska.
+
+Zanim wysłałem, usunąłem z maila trzy stwierdzenia, których źródła nie potwierdzały, m.in. że Facebook jest „jedynym” kanałem bez ręcznej wysyłki (Google też przyprowadza ludzi).
+=== 2026-10-09 19:04:50 koniec, kod 0
+=== 2026-10-09 23:03:00 start raportu
+Raport poszedł na iwanekpawel55@gmail.com z tematem „FluxLab strona, 23:05, odblokowany /panel-zwrotow w robots.txt”. Skrypt wysyłki potwierdził wysyłkę przez Zoho. Skrzynki odbiorczej nie sprawdzałem. Na końcu dziennika dopisałem znacznik `<!-- WYSLANO 2026-10-09 23:04 -->`.
+
+Przed wysłaniem przeczytałem treść pod kątem ortografii, ale nie czytałem gotowego HTML-a w skrzynce. Mail ma trzy sekcje zmian z osobna:
+- przepisany wpis o automatyzacji CRM pod zapytanie „automatyzacja crm ai”;
+- naprawiona publikacja na fanpage'u i opublikowany post 036;
+- poprawka w `robots.txt`, który blokował `/panel-zwrotow`, i 9 próśb o indeksowanie.
+
+Dalej są sekcje „Czego NIE udało się zrobić”, ruch, stan listy audytowej i wniosek. Zrzutu ekranu nie ma, bo nie było zmiany wizualnej. Prośba o indeksowanie `/panel-zwrotow` czeka na 10.10 po 22:00.
+
+Ruch w mailu: ostatnia doba 26 odsłon i 16 osób, uruchomienia narzędzi 2 (bez zmiany od poprzedniego raportu).
+
+Przy stanie audytów nie sprawdzałem, które pozycje są zamknięte w samych plikach `AUDYT_*.md`. Pliki nie mają pól do odhaczania, więc przepisałem liczby z poprzedniego raportu, w którym żadna pozycja nie została zamknięta w tym okresie. Następna w kolejce jest pozycja 13 z audytu technicznego, czyli linkowanie wewnętrzne.
+=== 2026-10-09 23:04:07 koniec, kod 0
+=== 2026-10-10 03:03:09 start raportu
+Maila nie wysłałem, bo od ostatniego raportu (10.10, 23:04) nie było żadnej zmiany na stronie.
+
+- **Dziennik:** są cztery wpisy (23:45, 00:45, 01:45, 02:45) i wszystkie mówią "bez zmian". `budzet` przez cały ten czas wskazuje rytm "wstrzymaj".
+- **Git:** jedyne nowe commity to wpisy dziennika. Poprawka `robots.txt` z 22:45 weszła do poprzedniego raportu.
+- **Dopisek:** na końcu `cykl/dziennik.md` dodałem notatkę, że cztery godziny minęły bez zmian.
+- **Znacznik:** nie dopisałem `<!-- WYSLANO -->`, bo nic nie wysłałem. Następny raport przeczyta te same cztery wpisy razem z nowymi.
+
+Pominąłem raport ruchu i audyty. Przy braku zmian nie było czego raportować, więc nie uruchamiałem `raport_ruchu.py` ani nie czytałem plików audytowych.
+
+Z23 (pomiar doby po 04:30) i Z24 (05:46) są dalej w planie. Raport o 07:00 powinien już mieć o czym pisać.
+=== 2026-10-10 03:03:23 koniec, kod 0
+=== 2026-10-10 07:03:00 start raportu
+=== 2026-10-10 11:03:00 start raportu
+Raport poszedł na iwanekpawel55@gmail.com. Serwer Zoho przyjął wiadomość, ale nie sprawdzałem skrzynki, więc dostarczenia nie potwierdziłem. Temat: „FluxLab strona, 11:05, krótszy katalog /produkty i dwa nowe artykuły o KSeF”. Na końcu dziennika dopisałem `<!-- WYSLANO 2026-10-10 11:04 -->`.
+
+Treść maila:
+- **Zmiany na stronie (3):**
+  - Katalog /produkty jest o 42% krótszy (2696 → 1573 słów), a jego HTML ma 168 KB zamiast 248 KB. Zrzut z produkcji jest w załączniku jako obraz inline.
+  - Nowy artykuł o terminie odliczenia VAT z faktury z KSeF.
+  - Nowy artykuł o numeracji faktur w 2027 i błędzie 440.
+- **Prace poza stroną (2):** odpowiedź na wątek Gofin 1559884 czeka na Pawła, bo forum wymaga Turnstile. Poprawiłem też tryb próbny wysyłki do biur.
+- **Czego nie udało się zrobić:** sześć zadań planu jest zablokowanych godzinami, a `llms.txt` czeka do 14.10.
+- **Ruch:** 28 odsłon i 17 osób w ostatniej dobie, 2 uruchomienia narzędzi (bez zmiany od poprzedniego raportu), z podziałem na przeglądarki i zastrzeżeniem o danych sprzed 21.09 16:00.
+- **Lista audytowa:** w technicznym 24 pozycje zamknięte i 5 otwartych. Pozycja 11 jest po zmianie w większości wykonana, ale w pliku audytu nadal ma status „do zrobienia”. Następna do wzięcia jest pozycja 13 (strony z jednym linkiem przychodzącym).
+
+Plik audytu technicznego zostawiłem bez zmian, bo nie było to w zakresie zlecenia.
+=== 2026-10-10 11:04:49 koniec, kod 0

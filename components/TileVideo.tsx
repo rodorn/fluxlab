@@ -78,12 +78,24 @@ export default function TileVideo({
           Atrybut poster nie umie zależeć od motywu. */}
       <img
         src={posterLight}
+        srcSet={`${posterLight.replace(/\.webp$/, "-480.webp")} 480w, ${posterLight} 800w`}
+        sizes="(max-width: 768px) 100vw, 33vw"
+        width={800}
+        height={1422}
+        loading="lazy"
+        decoding="async"
         alt=""
         aria-hidden="true"
         className="absolute inset-0 h-full w-full object-cover dark:hidden"
       />
       <img
         src={poster}
+        srcSet={`${poster.replace(/\.webp$/, "-480.webp")} 480w, ${poster} 900w`}
+        sizes="(max-width: 768px) 100vw, 33vw"
+        width={900}
+        height={1350}
+        loading="lazy"
+        decoding="async"
         alt=""
         aria-hidden="true"
         className="absolute inset-0 hidden h-full w-full object-cover opacity-60 dark:block"
