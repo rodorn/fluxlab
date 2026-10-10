@@ -137,12 +137,9 @@ export default function ListaKsef2027({
         Lista na 1 stycznia 2027: co musicie mieć domknięte
       </h2>
       <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-        Tego dnia kończą się naraz wszystkie przepisy przejściowe KSeF. Same
-        kary mają zostać przesunięte na 2028 rok, ale obowiązki z tej listy
-        zaczynają obowiązywać w styczniu 2027 niezależnie od nich. Siedem pytań,
-        przy każdym zaznaczcie, czy macie to załatwione. Na końcu dostaniecie
-        listę tego, co zostało, gotową do wysłania księgowej albo osobie od
-        systemu.
+        Kary mają zostać przesunięte na 2028 rok, ale obowiązki z tej listy
+        zaczynają się w styczniu 2027. Przy każdym pytaniu zaznaczcie, czy macie
+        to załatwione, a na końcu dostaniecie wykaz braków dla księgowej.
       </p>
 
       <ol className="mt-6 space-y-4">
