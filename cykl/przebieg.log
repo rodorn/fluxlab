@@ -1220,3 +1220,6 @@ Commity: 1625198, d1f4a9f, wpis w dzienniku c4c36f1.
 Seria indeksowania wystartuje o 22:50 w tle. Skończy się do około 23:10, wtedy dostanę powiadomienie i domknę Z15, Z17 oraz wpis w dzienniku.
 === 2026-10-10 22:43:56 koniec, kod 0
 === 2026-10-10 23:43:00 start
+Monitor serii Z17 wygasł po 10 minutach. Nie wznawiam go, bo seria już się zakończyła, a jej wynik jest w dzienniku.
+=== 2026-10-10 23:54:10 koniec, kod 0
+=== 2026-10-11 00:43:03 start

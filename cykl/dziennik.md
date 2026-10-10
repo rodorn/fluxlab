@@ -4478,3 +4478,11 @@ Osobno:
 **Dowód:** `skrypty-raport/gsc_indeksuj.py`, 11 × „prośba przesłana” (panel-zwrotow, jak-pracuje, realizacje, case-study, produkty, narzedzia, automatyzacja-leadow-crm, kiedy-odliczyc-vat-z-faktury-ksef, numeracja-faktur-ksef-2027, e-doreczenia-adres-prywatny-i-firmowy, faktury-z-ksef-po-zmianie-biura); 2 × „limit dnia”. Para Linux+Android 23:43 na /panel-zwrotow w VPS to render Google po żądaniu. Resend 24 h 4/4 delivered. Szczegóły Z18 w `cykl/plan-ruchu.md`. Kod strony bez zmian, bez builda i IndexNow.
 **Dla Pawła:** bez zmian: komentarze Gofin z wpisów 08:50 (1559884), 13:55 (1559826) i 14:55 (1559890), Profit Polska, timery grup FB.
 **Zostało otwarte:** Z15 (ponowny odczyt), Z20 (od 11.10 01:46), Z22, Z23. Jutro po 23:50 żądania dla faktura-gdy-ksef-nie-dziala i faktura-dla-osoby-prywatnej-ksef. Po 14.10: sześć dzisiejszych artykułów do `llms.txt`.
+
+## 2026-10-11 00:50
+**Kanał:** Bing i asystenci AI (Z20, pomiar); Google (Z15, odczyt).
+**Co zrobione:** Z20: Bing Webmaster odczytany, 7 cytowań fluxlab.pl w Copilocie (7.10), 15 wyświetleń w wyszukiwarce Bing w 7 dni, mapa 109 adresów bez błędów. Z15 nadal zablokowane: GSC o 00:46 „Ostatnia aktualizacja: 47 godzin temu”, 28 dni bez zmian (16 kliknięć, 433 wyświetlenia, CTR 3,7%, pozycja 15,3).
+**Ruch:** ostatnia doba 20 odsłon, 19 osób (−30% wobec średniej 28,6). Źródła: facebook 5, www.facebook.com 3, l.facebook.com 2, www.google.com 1, facebook.com 1. Z telefonu 8 z 20. Uruchomienia narzędzi 0. Tydzień: 209 odsłon, 137 osób (+111%).
+**Dowód:** linia Z20 w `cykl/plan-ruchu.md` (Search Performance 0/15, Site Explorer bez danych, mapa Success 9.10, IndexNow 40 w 22 h i 507 łącznie, AI Performance 7 cytowań). Kod strony bez zmian, bez builda i IndexNow.
+**Dla Pawła:** bez zmian: komentarze Gofin z wpisów 08:50 (1559884), 13:55 (1559826) i 14:55 (1559890), Profit Polska, timery grup FB.
+**Zostało otwarte:** Z15 (ponowny odczyt GSC), Z22 (po 03:30, cała doba), Z23 (bilans planu). Strateg dobowy pisze nowy plan o 06:15.
