@@ -279,7 +279,7 @@ export default function KatalogProduktow() {
                     {pasuje
                       .filter((p) => p.category === f && p.grupa === g)
                       .map((p) => (
-                        <ProductCard key={p.name} p={p} />
+                        <ProductCard key={p.name} p={p} krotko />
                       ))}
                   </div>
                 </section>
