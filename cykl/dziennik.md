@@ -4468,3 +4468,13 @@ Osobno:
 **Dowód:** odczyt GSC Skuteczność z profilu 9228 (21:44, „44 godziny temu”); `curl` forum.gofin.pl/1559894..1559910 = 404. Kod strony bez zmian, bez builda i IndexNow.
 **Dla Pawła:** bez zmian: komentarze Gofin z wpisów 08:50 (1559884), 13:55 (1559826) i 14:55 (1559890), Profit Polska, timery grup FB.
 **Zostało otwarte:** Z15 (ponowny odczyt), Z17 (13 adresów od 22:50; limit GSC ok. 10, nadmiarowe na jutro), Z18, Z20 (od 11.10 02:00), Z22, Z23. Po 14.10: sześć dzisiejszych artykułów do `llms.txt`. Gofin: następne sprawdzenie od 1559894.
+
+<!-- WYSLANO 2026-10-10 23:06 -->
+
+## 2026-10-10 23:45
+**Kanał:** Google (Z17, żądania indeksowania; Z15 odczyt GSC) i pomiar (Z18).
+**Co zrobione:** Z17: Search Console przyjął 11 żądań indeksowania (23:43 do 23:49), dwunaste zatrzymał limit dnia o 23:49:44. Z18 policzony: od 14:46 7 sesji ludzi, 0 uruchomień narzędzi, 0 odpowiedzi w Zoho. Z15 nadal zablokowane: GSC o 23:51 „Ostatnia aktualizacja: 46 godzin temu”, 28 dni bez zmian (16 kliknięć, 433 wyświetlenia, CTR 3,7%, pozycja 15,3).
+**Ruch:** ostatnia doba 18 odsłon, 17 osób (−37% wobec średniej 28,6). Źródła: facebook 5, www.facebook.com 3, l.facebook.com 2, www.google.com 1, facebook.com 1. Z telefonu 7 z 18. Uruchomienia narzędzi 0. Tydzień: 207 odsłon, 135 osób (+109%).
+**Dowód:** `skrypty-raport/gsc_indeksuj.py`, 11 × „prośba przesłana” (panel-zwrotow, jak-pracuje, realizacje, case-study, produkty, narzedzia, automatyzacja-leadow-crm, kiedy-odliczyc-vat-z-faktury-ksef, numeracja-faktur-ksef-2027, e-doreczenia-adres-prywatny-i-firmowy, faktury-z-ksef-po-zmianie-biura); 2 × „limit dnia”. Para Linux+Android 23:43 na /panel-zwrotow w VPS to render Google po żądaniu. Resend 24 h 4/4 delivered. Szczegóły Z18 w `cykl/plan-ruchu.md`. Kod strony bez zmian, bez builda i IndexNow.
+**Dla Pawła:** bez zmian: komentarze Gofin z wpisów 08:50 (1559884), 13:55 (1559826) i 14:55 (1559890), Profit Polska, timery grup FB.
+**Zostało otwarte:** Z15 (ponowny odczyt), Z20 (od 11.10 01:46), Z22, Z23. Jutro po 23:50 żądania dla faktura-gdy-ksef-nie-dziala i faktura-dla-osoby-prywatnej-ksef. Po 14.10: sześć dzisiejszych artykułów do `llms.txt`.

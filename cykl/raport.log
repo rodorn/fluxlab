@@ -901,3 +901,45 @@ Treść maila:
 
 Plik audytu technicznego zostawiłem bez zmian, bo nie było to w zakresie zlecenia.
 === 2026-10-10 11:04:49 koniec, kod 0
+=== 2026-10-10 15:03:00 start raportu
+Raport poszedł na iwanekpawel55@gmail.com z pawel@fluxlab.pl. Skrypt wysyłki potwierdził to komunikatem „WYSLANO". Skrzynki odbiorczej nie otwierałem, więc dotarcia maila nie sprawdziłem. Temat: „FluxLab strona, 15:05, dwa nowe artykuły: adres e-Doręczeń w JDG i faktury z KSeF po zmianie biura". Na końcu dziennika dopisałem linię `<!-- WYSLANO 2026-10-10 15:05 -->`.
+
+Treść maila:
+- **Zmiany na stronie:** cztery osobne sekcje. To skrócony wstęp listy KSeF 2027, mniejsze obrazy kafli na stronie głównej, artykuł o adresie e-Doręczeń w JDG i artykuł o fakturach z KSeF po zmianie biura. Przed napisaniem sprawdziłem na produkcji kody 200, tytuły, `srcSet` i sitemapę.
+- **Pozostałe sekcje:** prace poza stroną, czego nie udało się zrobić, ruch (pełny wynik z zastrzeżeniem o danych sprzed 21.09 godz. 16:00 i z przeglądarkami), stan audytów i jedno zdanie wniosku. Liczba uruchomień narzędzi nie zmieniła się od poprzedniego raportu: nadal 2.
+- **Załącznik:** brak, bo w tym okresie nie było zmiany wizualnej, którą dałoby się pokazać na zrzucie.
+- **Komentarze dla Pawła:** pod wątkami Gofin 1559826 i 1559890 czekają dwa gotowe komentarze. Ich teksty są w dzienniku we wpisach z 13:55 i 14:55. Formularz forum wymaga Turnstile, więc muszą je opublikować ręcznie.
+
+Dwie rzeczy, o których warto wiedzieć:
+- **Obrazy kafli:** zmianę z 12:38 (commit f7b90fc) opisałem na podstawie samego commitu i produkcji, bo dziennik nie ma o niej wpisu. W mailu napisałem, że nie mierzyłem jej wpływu na czas ładowania.
+- **Zdanie o `llms.txt`:** w sekcji „Czego NIE udało się zrobić" jest niezgrabne. Napisałem tam „trzech dzisiejszych artykułów (cztery razem z wcześniejszym)", a dziennik mówi o czterech dzisiejszych. Mail już wyszedł, więc zostaje, jak jest.
+=== 2026-10-10 15:04:36 koniec, kod 0
+=== 2026-10-10 19:03:00 start raportu
+Raport wysłany z pawel@fluxlab.pl na iwanekpawel55@gmail.com z tematem „FluxLab strona, 19:05, dwa nowe artykuły o KSeF: faktura przy awarii i dla osoby prywatnej". Serwer SMTP przyjął wiadomość, ale w skrzynce odbiorcy jej nie sprawdzałem. W dzienniku dopisałem znacznik `<!-- WYSLANO 2026-10-10 19:05 -->`.
+
+Okres 15:05 do 19:05 objął:
+- **Zmiany na stronie:** dwa nowe artykuły w Strefie wiedzy. Jeden dotyczy faktury, gdy KSeF nie działa (1fd90b0, 231fd5b), drugi faktury dla osoby prywatnej a KSeF (db4a188, 811ca43). Oba są na produkcji i dopisane do serii indeksowania w Google.
+- **Bez zmian na stronie:** dwa przebiegi (15:45 i 18:45) to samo sprawdzenie forum Gofin, bez nowych pasujących wątków.
+- **Załącznik:** brak, bo nie było zmiany wizualnej.
+
+W sekcji o ruchu zapisałem, że uruchomienia narzędzi spadły z 2 do 0. Dodałem też, że lista zdarzeń pokazuje jedno uruchomienie audytu, którego licznik nie liczy, i że nie ustaliłem, skąd ta różnica.
+
+Stan listy audytowej bez zmian: audyt techniczny 24 z 29 pozycji zamkniętych. Dalej bierzemy pozycję 13, strony z jednym linkiem przychodzącym.
+=== 2026-10-10 19:04:11 koniec, kod 0
+=== 2026-10-10 23:03:00 start raportu
+Raport wysłałem na iwanekpawel55@gmail.com, serwer Zoho potwierdził wysyłkę. Treść przeczytałem przed wysłaniem. Znacznik `<!-- WYSLANO 2026-10-10 23:06 -->` jest na końcu dziennika.
+
+Temat: „FluxLab strona, 23:05, bez zmian na stronie, Search Console nadal bez odświeżenia danych”.
+
+W okresie 19:05–23:05 były trzy wpisy w dzienniku (19:45, 20:45, 21:45), ale żaden nie zmienił strony. Zamiast „bez wpisów” wysłałem więc raport o braku zmian. Mail opisuje:
+- **Search Console:** dane stoją na 6 października (44 godziny bez odświeżenia), więc ocena serii indeksowania (Z15) czeka.
+- **Gofin:** brak nowych wątków na nasz temat.
+- **Budżet:** rytm „zwolnij”, więc nie powstał żaden nowy artykuł.
+- **Czego nie zrobiono:** sekcja obowiązkowa, z powodami.
+- **Ruch:** pełny wynik z raportu ruchu, z podziałem na przeglądarki i zastrzeżeniem o danych sprzed 21.09 godz. 16:00. Uruchomienia narzędzi są na zerze od 18:45.
+- **Lista audytowa:** bez zmian. Audyt techniczny ma 24 z 29 pozycji zamkniętych, a następna w kolejce jest pozycja 13 (strony z jednym linkiem przychodzącym).
+
+Nie dołączyłem zrzutu ekranu, bo nie było zmiany wizualnej.
+
+Wpisu o serii indeksowania Z17 (22:50) w dzienniku nie ma. W mailu napisałem wprost, że nie podaję jej wyniku.
+=== 2026-10-10 23:03:53 koniec, kod 0
