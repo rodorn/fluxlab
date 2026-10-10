@@ -4336,3 +4336,11 @@ Osobno:
 - Odpowiedź do Profit Polska nadal czeka. To jedyny lead z audytu w 14 dniach.
 - Facebook bez grup daje 0 do 1 osoby na post i 0 uruchomień narzędzi w 14 dniach. Timery grup FB stoją od 8.10 i czekają na Twoją decyzję.
 **Zostało otwarte:** Z15 (GSC po odświeżeniu, od 20:46), Z17 (7 żądań indeksowania od 22:50, lista w linii Z17), Z18 (pomiar wieczorny), Z20 (Bing po 48 h, czyli od 11.10 02:00), Z22, Z23. Za 7 dni (17.10) policzyć: `audyt_mail_*` i `edor_klik_kontakt` od ludzi.
+
+## 2026-10-10 07:45
+**Kanał:** outreach (przygotowanie poniedziałku, bez wysyłki).
+**Co zrobione:** Wszystkie otwarte zadania planu mają blokadę czasową (Z15 od 20:46, Z17 od 22:50, Z18, Z22 i Z23 to pomiary wieczorne i nocne, Z20 Bing od 11.10 02:00), więc nic z planu nie dało się zrobić. Zamiast tego poprawiony tryb próbny `~/Projekty/mail-audyt/wyslij_segment.py`: `--proba` pomija już adresy z pliku wysłanych (warunek `wypisany(do) or do in wysl`, wcześniej `and not PROBA`), więc próba pokazuje tę samą kolejkę, którą w poniedziałek dostanie wysyłka. Błąd wykrył Z21.
+**Ruch:** ostatnia doba 26 odsłon, 15 osób (−8% wobec średniej 28,1); źródła: www.google.com 8, facebook 4, mail 1; z telefonu 10 z 26; uruchomienia narzędzi 2.
+**Dowód:** `wyslij_segment.py ksiegowe-edoreczenia --proba --limit=5`: 1 pozycja, biuro@asset-lublin.pl (058) z linkiem `?krs=0000120471&utm_source=mail&utm_campaign=ksiegowe`, „w tym przebiegu: 1, w pliku: 119”; nic nie wysłane. Kopia przed zmianą `/tmp/wyslij_segment.py.bak` (katalog bez gita).
+**Dla Pawła:** bez zmian względem wpisu 07:15 (Profit Polska, timery grup FB).
+**Zostało otwarte:** Z15 (od 20:46), Z17 (7 żądań od 22:50, lista w linii Z17), Z18, Z20 (od 11.10 02:00), Z22, Z23.
