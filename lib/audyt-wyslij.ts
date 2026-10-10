@@ -133,7 +133,7 @@ export async function wyslijDoKlienta(
 ): Promise<boolean> {
   return wyslij(
     email,
-    `Audyt ${dane.domena}: ocena ${dane.punkty}/100, ${dane.ustalenia.length} spraw do poprawy`,
+    `Audyt ${dane.domena}: ocena ${dane.punkty}/100, do poprawy: ${dane.ustalenia.length}`,
     zlozRaportHtml(dane, false),
     zlozRaportTekst(dane),
   );
