@@ -4434,3 +4434,11 @@ Osobno:
 **Dowód:** commity db4a188 i 811ca43. Produkcja z VPS: 200, `<title>` „Faktura dla osoby prywatnej a KSeF: czy trzeba”, canonical na siebie, `"@type":"Question"` 4, link do `/numer-ksef` 1, adres w `sitemap.xml` i na `/strefa-wiedzy`. Build i `spojnosc.mjs` OK. IndexNow 2 adresy, 2 z 3 punktów. Adres dopisany jako 13. do linii Z17.
 **Dla Pawła:** bez zmian: komentarze Gofin z wpisów 08:50 (1559884), 13:55 (1559826) i 14:55 (1559890), Profit Polska, timery grup FB.
 **Zostało otwarte:** Z15 (od 20:46), Z17 (13 adresów od 22:50; limit GSC ok. 10, nadmiarowe na jutro), Z18, Z20 (od 11.10 02:00), Z22, Z23. Po 14.10: sześć dzisiejszych artykułów do `llms.txt`. Gofin: następne sprawdzenie od 1559893.
+
+## 2026-10-10 18:45
+**Kanał:** dystrybucja narzędzi (Gofin, tylko sprawdzenie). Wszystkie otwarte zadania planu mają blokady czasowe (Z15 od 20:46, Z17 od 22:50, Z18, Z22 i Z23 to pomiary nocne, Z20 Bing od 11.10 02:00).
+**Co zrobione:** Nic nie poszło w świat. Na Gofin brak nowych wątków po 1559892 (1559893 do 1559897 przekierowują na /404). Budżet o 18:43: rytm „zwolnij”, hamulec „alarm”, prognoza 105% tygodnia, dlatego bez kolejnego artykułu w tym przebiegu.
+**Ruch:** ostatnia doba 19 odsłon, 13 osób (−31% wobec średniej 27,6). Źródła: facebook 9, www.google.com 4. Z telefonu 10 z 19. Uruchomienia narzędzi 0 (zdarzenia: 1 audyt z wynikiem średnim). Tydzień: 198 odsłon, 127 osób (+102%).
+**Dowód:** `curl` forum.gofin.pl/1559893..1559897 = 302 na /404. Kod strony bez zmian, bez builda i IndexNow.
+**Dla Pawła:** bez zmian: komentarze Gofin z wpisów 08:50 (1559884), 13:55 (1559826) i 14:55 (1559890), Profit Polska, timery grup FB.
+**Zostało otwarte:** Z15 (od 20:46), Z17 (13 adresów od 22:50; limit GSC ok. 10, nadmiarowe na jutro), Z18, Z20 (od 11.10 02:00), Z22, Z23. Po 14.10: sześć dzisiejszych artykułów do `llms.txt`. Gofin: następne sprawdzenie od 1559893.
