@@ -326,6 +326,12 @@ export const categories: Category[] = [
         description: "Numer bez roku da w 2027 błąd 440, duplikat faktury.",
         bezOkladki: true,
       },
+      {
+        href: "/strefa-wiedzy/e-doreczenia-adres-prywatny-i-firmowy",
+        title: "e-Doręczenia: adres prywatny i firmowy",
+        description: "W JDG to dwie osobne skrzynki, prywatna nie zastąpi firmowej.",
+        bezOkladki: true,
+      },
     ],
   },
 ];
