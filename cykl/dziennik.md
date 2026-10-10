@@ -4258,3 +4258,53 @@ Wniosek: 9 osób na dobę, 3 z nich uruchomiły narzędzie (2 audyty strony, 1 o
 **Dowód:** `SELECT * FROM wizyty WHERE czas>=1791518400 AND czas<1791599400` na `ruch.sqlite` (VPS), 45 wierszy; Z23 oznaczone w `cykl/plan-ruchu.md`.
 **Dla Pawła:** bez zmian względem wpisu 23:45.
 **Zostało otwarte:** Z24 o 05:46 (bilans planu). `/panel-zwrotow` do żądania indeksowania 10.10 po 22:00.
+
+## 2026-10-10 05:45
+**Kanał:** pomiar (Z24 z planu, ostatnie zadanie doby).
+**Co zrobione:** bilans planu 2026-10-09/10 dla stratega z `cykl/pomiar-kanalow.py` (05:43) i dowodów Z1 do Z23.
+
+### Bilans planu 2026-10-09/10
+`pomiar-kanalow.py` 05:43: doba 15 sesji, 19 odsłon (bez odsyłacza 5, google 5, facebook 4, mail 1); 7 dni 122 sesje, 169 odsłon (bez odsyłacza 61, facebook 19, mail 18, google 17, chatgpt 2, useme 1); utm 7 dni: facebook/narzedzia 19, mail/ksiegowe 12, ksiegowe-fu 2; zdarzenia 7 dni: audyt 6, skan KRS 3 (+2 z linku), lead_landing 1; Resend 24 h 10 delivered; Zoho 24 h 1 (systemowy), 0 odpowiedzi.
+
+| zadanie | zrobione | dowód | co przyprowadziło |
+|---|---|---|---|
+| Z1 pomiar bez odsyłacza | tak | 60 sesji w 4 grupach | 0 (pomiar) |
+| Z2 www | tak | 308 na 4 adresach, bez commita | 0 |
+| Z3 przygotowanie 8 maili | tak | 050 do 057 bez BAE | 0 |
+| Z4 wysyłka 8 maili | tak | 8/8 delivered, `wyslane_ks` 119 | 1 człowiek (14:31 `/e-doreczenia-integracja`), 0 skanów, 0 odpowiedzi, 0 leadów |
+| Z5 KRS po nazwie | tak | 60 KRS, 1 mail (058), 2,2/100 | 0, źródło poniżej progu |
+| Z6 tytuł „enova" | tak | 476b9ba | za wcześnie (GSC z opóźnieniem 2 do 3 dni) |
+| Z7, Z10, Z17 pomiar maili | tak | 0 odpowiedzi | 0 |
+| Z8 opis `/audyt-google-ads` | tak | 476b9ba | za wcześnie |
+| Z9 wysyłka warunkowa | tak, bez wysyłki | nasycenie BAE 79,6% | 0 |
+| Z11 bilans outreachu | tak | decyzja w „Czego nie robić" | 0 |
+| Z12 tytuł „automatyzacja podatków" | tak | a9cb170 | za wcześnie |
+| Z13 dwa posty FB | tak | kolejka 38 wpisów | 0 (jeszcze nieopublikowane); 035 i 036 dały 4 podglądy linków, 0 ludzi |
+| Z14 zeskanowane bez indeksu | tak | 3 strony kandydaci | 0 |
+| Z15 tytuł `/e-doreczenia-integracja` | tak | 6ed9024 | za wcześnie; ta strona dała 1 osobę ze skanem KRS z Google (17:48) |
+| Z16 żądania indeksowania | tak (9 z 10) | seria 22:50 do 22:54 | 0 dziś; `/panel-zwrotow` odrzucony (robots.txt, poprawione becf92f) |
+| Z18 tytuł i link leasing/mail | tak | wpis 08:05 | za wcześnie |
+| Z19 telefon 390 px | tak | 9461ed4, 5 zrzutów | 0 |
+| Z20 AI i Bing | tak | chatgpt 3 sesje od 1.10 | 0 (pomiar) |
+| Z21 tabela outreachu 5.10 do 9.10 | tak | 81 maili, 1 lead | 0 |
+| Z22 linki wewnętrzne | tak | 9461ed4, f045185 | 0 |
+| Z23 pomiar doby | tak | 9 ludzi, 4 uruchomienia | 0 (pomiar) |
+| Z24 bilans | tak | ten wpis | 0 (pomiar) |
+
+Wynik doby: 24 z 24 zadań, 9 ludzi (Google 5, bez odsyłacza 3, mail 1), uruchomienia od ludzi 4 (audyt 2, skan KRS 2 w jednej sesji), leadów 0.
+
+Osobno:
+- Maile gotowe na poniedziałek 12.10: 1 (058), zgodnie z decyzją Z11 bez nowych partii.
+- Źródło z Z5 (wyszukiwarka KRS po nazwie): działa bez captchy, JSON, ale 2,2 maila na 100 spółek (próg 3); 79,6% spółek z segmentu ma już adres do e-Doręczeń, rynek nasycony.
+- Limit GSC: seria Z16 9.10 22:50 do 22:54, 9 żądań bez limitu; następne okno 10.10 ok. 22:50, wtedy `/panel-zwrotow` (robots.txt poprawiony 22:49).
+- Z2 (www): www i http już 308 na `https://fluxlab.pl`, canonical bez www, 10 z 10 alternatyw w GSC to www (stan prawidłowy), zmian nie trzeba.
+- Do kontroli w GSC 17.10 (7 dni):
+  - „enova" → `/automatyzacja-dla-biur-rachunkowych`, tytuł „Automatyzacja podatków dla biur: enova i KSeF | Fluxlab" (Z6, potem Z12)
+  - „automatyzacja podatków" → ta sama strona i tytuł (Z12)
+  - „audyt google ads" → `/audyt-google-ads`, nowy opis meta 154 znaki (Z8), poz. 27,6
+  - `/e-doreczenia-integracja` → „e-Doręczenia dla JDG i spółek: od kiedy? | Fluxlab" (Z15), 68 wyśw., CTR 1,5%
+  - „mail firmowy" → `/strefa-wiedzy/podszywanie-sie-pod-firmowy-email` z linkiem do `/mail-firmowy` w pierwszym zdaniu (Z18); `/automatyzacja-crm-leasing` bez zmiany tytułu
+**Ruch:** ostatnia doba 26 odsłon, 15 osób (−8% wobec średniej 28,1); źródła: www.google.com 8, facebook 4, mail 1; z telefonu 10 z 26. Uruchomienia narzędzi 2 (audyt 2, skan KRS 2). Tydzień 199 odsłon, 122 osoby.
+**Dowód:** `python3 cykl/pomiar-kanalow.py` 05:43; Z24 oznaczone w `cykl/plan-ruchu.md`.
+**Dla Pawła:** bez zmian względem wpisu 23:45 (pytanie w grupie „ChatGPT Polska", timery `fluxlab-fb-grupy` i `fluxlab-fb-pytania` stoją od 8.10 22:26, odpowiedzi Kontomatik, komentarze Gofin 1559644 i 1559598, odpowiedź do Profit Polska).
+**Zostało otwarte:** plan 9.10/10 zamknięty w całości; nowy plan od stratega o 06:15. `/panel-zwrotow` do żądania indeksowania 10.10 po 22:50.
