@@ -344,6 +344,12 @@ export const categories: Category[] = [
         description: "Offline24, niedostępność i awaria: kiedy dosłać fakturę do KSeF.",
         bezOkladki: true,
       },
+      {
+        href: "/strefa-wiedzy/faktura-dla-osoby-prywatnej-ksef",
+        title: "Faktura dla osoby prywatnej a KSeF",
+        description: "Dla konsumenta KSeF jest dobrowolny; jak przekazać fakturę z KSeF.",
+        bezOkladki: true,
+      },
     ],
   },
 ];
