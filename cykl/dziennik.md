@@ -4322,11 +4322,11 @@ Osobno:
 **Co zrobione:** Zamknięte Z1 do Z14, Z16, Z19, Z21 z planu 10.10. Formularz raportu audytu stoi teraz zaraz pod ustaleniami (wcześniej na samym dole, za wyceną, i nikt do niego nie doszedł). Pod wynikiem skanu KRS zamiast ogólnego „Napiszcie" jest oferta spięcia skrzynki z linkiem do kontaktu. Katalog /produkty jest krótszy o 42%. 3 strony bez linków z treści dostały link przez wymianę zdań. Poprawiony błąd faktów: wynik audytu i mail raportu twierdziły „Ceny bez VAT, zwolnienie podmiotowe", teraz „Ceny netto, doliczamy 23% VAT".
 **Ruch:** ostatnia doba 26 odsłon, 15 osób (−8% wobec średniej 28,1); źródła: www.google.com 8, facebook 4, mail 1; z telefonu 10 z 26; uruchomienia narzędzi 2 (audyt 2, skan KRS 2 w jednej sesji). Od 06:00 do 07:00 dziś 0 wierszy w bazie.
 **Dowód:**
-- Lejek audytu (14 dni): 4 sesje ludzi, 1 rozwinęła sekcje, 0 doszło do formularza, 0 ; Resend  od ludzi: profitpolska.pl, es-investment.pl, useme.com, bestcollect.pl, satisfly.co, wszystkie anonim.
+- Lejek audytu (14 dni): 4 sesje ludzi, 1 rozwinęła sekcje, 0 doszło do formularza, 0 `audyt_klik_zlecam`; Resend `[audyt]` od ludzi: profitpolska.pl, es-investment.pl, useme.com, bestcollect.pl, satisfly.co, wszystkie anonim.
 - Lejek skanu KRS (14 dni): 9 sesji ze skanem, 0 kliknięć ludzi po wyniku (jedyne było naszym testem z 4.10).
-- Commity: 63c15d8 (skan KRS, ), 3a98172 (formularz audytu i VAT), 16c4b5b (temat maila raportu „do poprawy: N" zamiast „3 spraw"), 68cc008 (linki do /jak-pracuje, /realizacje, /case-study), 96130c4 (/produkty 2696 → 1573 słów).
+- Commity: 63c15d8 (skan KRS, `edor_klik_kontakt`), 3a98172 (formularz audytu i VAT), 16c4b5b (temat maila raportu „do poprawy: N" zamiast „3 spraw"), 68cc008 (linki do /jak-pracuje, /realizacje, /case-study), 96130c4 (/produkty 2696 → 1573 słów).
 - Test na produkcji 06:51: audyt fluxlab.pl 85/100, raport wysłany z formularza, Resend 01a12426-85b6-7bb5-9749-7d27b9a0848c delivered, w Zoho INBOX po niecałej minucie.
-- Crawl 119 stron (): wszystkie 200, canonical poprawny, 0 zepsutych linków wewnętrznych, 0 duplikatów tytułu i opisu, 0 stron z FAQ powyżej 4.
+- Crawl 119 stron (`cykl/crawl-2026-10-10.json`): wszystkie 200, canonical poprawny, 0 zepsutych linków wewnętrznych, 0 duplikatów tytułu i opisu, 0 stron z FAQ powyżej 4.
 - GSC: 9 z 9 adresów z serii 9.10 jest już w Google, `/panel-zwrotow` jeszcze nie. CWV: za mało danych. HTTPS: 22 adresy, 0 problemów. Linki zewnętrzne: 1 (zleca.pl).
 - Facebook (14 dni): 24 sesje, z tego 16 to podglądy linku przy publikacji, ludzi 0 do 1 na post; kolejka bez zmian.
 - Asystenci AI od 1.10: 3 sesje z chatgpt.com, inne źródła 0.
