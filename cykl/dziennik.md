@@ -4239,3 +4239,22 @@ Raport zbiorczy: od 23:04 minęły cztery godziny bez zmian na stronie (wpisy 23
 **Dowód:** `budzet` 03:43: „rytm wstrzymaj, nowy cykl: NIE, przerwa 180 min, prognoza 123%”.
 **Dla Pawła:** bez zmian względem wpisu 23:45.
 **Zostało otwarte:** Z23 po 04:30, Z24 05:46 (pomiar, wykonać mimo wstrzymanego budżetu). `/panel-zwrotow` do żądania indeksowania 10.10 po 22:00.
+
+## 2026-10-10 04:45
+**Kanał:** pomiar (Z23 z planu).
+**Co zrobione:** pełny podział doby 9.10 06:00 do 10.10 04:30 z `ruch.sqlite` na VPS (45 wierszy, 26 sesji, bez filtrów raportu): ludzie, podglądy linków, własne, zdarzenia.
+
+| grupa | sesje | odsłony | zdarzenia | szczegóły |
+|---|---|---|---|---|
+| ludzie | 9 | 13 | 7 | www.google.com 5 (11:54 `/automatyzacja-dla-biur-rachunkowych` macOS, 12:51 `/ksef-2027`, 15:26 `/sprawdz-auto` iOS, 17:48 `/e-doreczenia-integracja` Firefox Windows ze skanem KRS 2×, 23:00 `/strony-www` → `/` → audyt Firefox Android, 4 odsłony), mail/ksiegowe 1 (14:31 `/e-doreczenia-integracja`, 2 h 45 min po dostarczeniu, bez skanu), bez odsyłacza 3 (14:17 `/` Windows, 16:34 `/audyt-strony` Windows z audytem, 17:51 `/` → `/automatyczne-przypisywanie-leadow` Firefox Android) |
+| niepewne | 1 | 1 | 0 | `shv2yj2o` 08:56 `/dziekuje` Chrome Windows bez odsyłacza, bez zgłoszenia w Zoho (prawdopodobnie odświeżona stara karta) |
+| podglądy linków FB | 4 | 4 | 0 | facebook/narzedzia parami w tej samej sekundzie: 18:49 `/sprawdzenie-nip` (035), 20:56 `/sprawdz-kontrahenta` (036) |
+| własne: GSC Z16 | 12 | 20 | 0 | `sainv5…` 22:47 do 22:54, każdy adres jako Linux i Android |
+| własne: Z3, Z19, Z2 do Z18 | 0 | 0 | 0 | `--proba` nie otwiera strony, zrzuty headless i `curl` licznik pomija |
+
+Zdarzenia uruchomień: ludzie 4 (audyt 2: 16:34 bez odsyłacza i 23:00 z Google przez `audyt_ze_strony_glownej`, oba `audyt_wynik_sredni`; skan KRS 2 w sesji z Google 17:48), własne 0, `z_linku` 0.
+Wniosek: 9 osób na dobę, 3 z nich uruchomiły narzędzie (2 audyty strony, 1 osoba skan KRS), wszystkie z Google albo bez odsyłacza; Facebook dał tylko podglądy linków, mail 1 osobę bez uruchomienia.
+**Ruch:** ostatnia doba 25 odsłon, 14 osób (raport 04:43); źródła: www.google.com 8, facebook 4, mail 1. Uruchomienia narzędzi 2 (audyt 2, skan KRS 2). Tydzień 199 odsłon, 122 osoby.
+**Dowód:** `SELECT * FROM wizyty WHERE czas>=1791518400 AND czas<1791599400` na `ruch.sqlite` (VPS), 45 wierszy; Z23 oznaczone w `cykl/plan-ruchu.md`.
+**Dla Pawła:** bez zmian względem wpisu 23:45.
+**Zostało otwarte:** Z24 o 05:46 (bilans planu). `/panel-zwrotow` do żądania indeksowania 10.10 po 22:00.
