@@ -391,7 +391,17 @@ export default function EDoreczeniaCheck() {
               <p className="mt-3 text-sm text-gray-700 dark:text-gray-300">
                 {wynikKrs.komentarz}
               </p>
-              <DalejPoWyniku kampania="edoreczenia-krs" />
+              <p className="mt-3 text-sm text-gray-700 dark:text-gray-300">
+                Spinamy skrzynkę z systemem:{" "}
+                <a
+                  href="/kontakt?temat=e-Doręczenia&utm_source=narzedzie&utm_campaign=edoreczenia-krs"
+                  onClick={() => zglosZdarzenie("edor_klik_kontakt")}
+                  className="font-semibold text-accent underline underline-offset-2"
+                >
+                  napiszcie po wycenę
+                </a>
+                .
+              </p>
             </div>
           )}
 
