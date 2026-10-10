@@ -4382,3 +4382,11 @@ Osobno:
 **Dowód:** commit 0f95d35. Produkcja z VPS: `/ksef-2027` i `/ksef-integracja` 200, nowy wstęp w HTML, stary „Tego dnia kończą się naraz” zniknął. Build i `spojnosc.mjs` OK. IndexNow 2 adresy, 2 z 3 punktów.
 **Dla Pawła:** bez zmian (Gofin 1559884 z wpisu 08:50, Profit Polska, timery grup FB).
 **Zostało otwarte:** Z15 (od 20:46), Z17 (od 22:50; 8. i 9. adres: dwa nowe artykuły z dziś), Z18, Z20 (od 11.10 02:00), Z22, Z23. Gofin: następne sprawdzenie od 1559889.
+
+## 2026-10-10 12:55
+**Kanał:** dystrybucja narzędzi (przegląd forów), potem przygotowanie Google. Wszystkie otwarte zadania planu mają blokady czasowe (Z15 od 20:46, Z17 od 22:50, Z18, Z22 i Z23 to pomiary nocne, Z20 Bing od 11.10 02:00).
+**Co zrobione:** Nic nie poszło w świat. Gofin: brak nowych wątków po 1559888; wyszukiwarka forum dla „doręczeń” i „KSeF” dała tylko obsłużone już wątki (1559542 odpowiedziany wcześniej, 1559778 o numerze KSeF w przelewie przy korekcie ma trafną odpowiedź z 7.10), 1559884 nadal czeka na komentarz Pawła. Dwa dzisiejsze artykuły dopisane do polecenia Z17 jako 8. i 9. adres po sprawdzeniu warunków Z16 z VPS.
+**Ruch:** ostatnia doba 29 odsłon, 18 osób (+2% wobec średniej 28,4). Źródła: facebook 9, www.google.com 7, mail 1. Z telefonu 12 z 29. Uruchomienia narzędzi 2 (audyt 2, skan KRS 2). Najczęściej: /audyt-strony 8, / 6, /e-doreczenia-integracja 4.
+**Dowód:** z VPS `/strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef` i `/strefa-wiedzy/numeracja-faktur-ksef-2027`: 200, canonical na siebie, każdy 1× w `sitemap.xml`, `robots.txt` blokuje tylko `/panel$`, `/panel/`, `/api/panel`. Linia Z17 w `cykl/plan-ruchu.md` ma teraz 9 adresów. Kod strony bez zmian, więc bez builda i IndexNow.
+**Dla Pawła:** bez zmian (Gofin 1559884 z wpisu 08:50, wciąż bez odpowiedzi w wątku; Profit Polska, timery grup FB).
+**Zostało otwarte:** Z15 (od 20:46), Z17 (9 adresów od 22:50, gotowe polecenie w linii), Z18, Z20 (od 11.10 02:00), Z22, Z23. Gofin: następne sprawdzenie od 1559889.
