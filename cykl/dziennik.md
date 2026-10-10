@@ -4356,3 +4356,11 @@ Osobno:
 
 (2) Bez zmian: Profit Polska, timery grup FB (wpis 07:15).
 **Zostało otwarte:** Z15 (od 20:46), Z17 (7 żądań od 22:50, lista w linii Z17), Z18, Z20 (od 11.10 02:00), Z22, Z23. Gofin: następne sprawdzenie od 1559887.
+
+## 2026-10-10 09:45
+**Kanał:** widoczność w asystentach AI i KSeF jako magnes. Wszystkie otwarte zadania planu mają blokady czasowe (Z15 od 20:46, Z17 od 22:50, Z18, Z22 i Z23 to pomiary nocne, Z20 Bing od 11.10 02:00).
+**Co zrobione:** Nowy krótki artykuł https://fluxlab.pl/strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef. Odpowiada wprost na pytanie z wątku Gofin 1559884 i 1559621: VAT z faktury z KSeF odliczamy najwcześniej za miesiąc nadania numeru KSeF (art. 86 ust. 10b pkt 1, art. 106na ust. 3), przykład z fakturą z 30.09 i numerem z 1.10. Odpowiedź stoi w HTML, FAQ 4 pytania w JSON-LD, link do `/numer-ksef`. Gofin od 08:50: 1 nowy wątek (1559887, rower elektryczny, nie na temat).
+**Ruch:** ostatnia doba 28 odsłon, 17 osób (−1% wobec średniej 28,3). Źródła: www.google.com 8, facebook 7, mail 1. Z telefonu 11 z 28. Uruchomienia narzędzi 2 (audyt 2, skan KRS 2).
+**Dowód:** commity 4c28ee9 i a796a44 (daty w mapie). Produkcja: 200, `<title>` „Kiedy odliczyć VAT z faktury z KSeF”, `"@type":"Question"` 4, `href="/numer-ksef"` 1, adres w `sitemap.xml` i na `/strefa-wiedzy`, 295 słów w `<main>` razem z nawigacją. IndexNow 2 adresy, 2 z 3 punktów (wspólny 403 jak wcześniej). `llms.txt` nieruszony, bo Z19 każe zostawić go bez zmian do 14.10.
+**Dla Pawła:** bez zmian (Gofin 1559884 z wpisu 08:50, Profit Polska, timery grup FB).
+**Zostało otwarte:** Z15 (od 20:46), Z17 (7 żądań od 22:50; nowy artykuł można dopisać jako 8. adres), Z18, Z20 (od 11.10 02:00), Z22, Z23. Po 14.10: dopisać artykuł do `llms.txt` w linii „JDG w 2026”.
