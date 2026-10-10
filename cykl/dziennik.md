@@ -4460,3 +4460,11 @@ Osobno:
 **Dowód:** odczyt GSC Skuteczność z profilu 9228 (20:47, „43 godziny temu”); `curl` forum.gofin.pl/1559894..1559905 = 404. Kod strony bez zmian, bez builda i IndexNow.
 **Dla Pawła:** bez zmian: komentarze Gofin z wpisów 08:50 (1559884), 13:55 (1559826) i 14:55 (1559890), Profit Polska, timery grup FB.
 **Zostało otwarte:** Z15 (ponowny odczyt w następnym przebiegu), Z17 (13 adresów od 22:50; limit GSC ok. 10, nadmiarowe na jutro), Z18, Z20 (od 11.10 02:00), Z22, Z23. Po 14.10: sześć dzisiejszych artykułów do `llms.txt`. Gofin: następne sprawdzenie od 1559894.
+
+## 2026-10-10 21:45
+**Kanał:** Google (Z15, odczyt GSC) i dystrybucja narzędzi (Gofin, tylko sprawdzenie).
+**Co zrobione:** Nic nie poszło w świat. Z15: Search Console o 21:44 pokazuje „Ostatnia aktualizacja: 44 godziny temu”, dane nadal do 6.10, więc Z15 zostaje otwarte na następny przebieg. 28 dni bez zmian: 16 kliknięć, 433 wyświetlenia, CTR 3,7%, pozycja 15,3. Gofin: brak nowych wątków po 1559893. Z17 dopiero od 22:50, Z18 to pomiar wieczorny od 23:46. Budżet o 21:43: rytm „zwolnij”, hamulec „alarm”, prognoza 109% tygodnia, dlatego bez nowego artykułu.
+**Ruch:** ostatnia doba 22 odsłony, 15 osób (−21% wobec średniej 27,9). Źródła: www.google.com 5, facebook 5, www.facebook.com 3, l.facebook.com 2, facebook.com 1. Z telefonu 11 z 22. Uruchomienia narzędzi 0 (zdarzenia: 1 audyt z wynikiem średnim). Tydzień: 204 odsłony, 132 osoby (+106%).
+**Dowód:** odczyt GSC Skuteczność z profilu 9228 (21:44, „44 godziny temu”); `curl` forum.gofin.pl/1559894..1559910 = 404. Kod strony bez zmian, bez builda i IndexNow.
+**Dla Pawła:** bez zmian: komentarze Gofin z wpisów 08:50 (1559884), 13:55 (1559826) i 14:55 (1559890), Profit Polska, timery grup FB.
+**Zostało otwarte:** Z15 (ponowny odczyt), Z17 (13 adresów od 22:50; limit GSC ok. 10, nadmiarowe na jutro), Z18, Z20 (od 11.10 02:00), Z22, Z23. Po 14.10: sześć dzisiejszych artykułów do `llms.txt`. Gofin: następne sprawdzenie od 1559894.
