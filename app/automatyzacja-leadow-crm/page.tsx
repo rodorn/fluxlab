@@ -144,8 +144,11 @@ export default function AutomatyzacjaLeadowCRM() {
                 Automatyzacja CRM z AI bez pracy ręcznej
               </h1>
               <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-                Leady same trafiają do CRM i dostają handlowca, zadanie i
-                raport.
+                Leady same trafiają do CRM i{" "}
+                <Link href="/case-study" className="text-accent hover:underline">
+                  dostają handlowca, zadanie i raport
+                </Link>
+                .
               </p>
               <div className="mt-10">
                 <TrackedCTA

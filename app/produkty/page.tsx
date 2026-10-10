@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -59,7 +60,11 @@ export default function ProduktyPage() {
               Potrzebujesz czegoś szytego pod Twój proces?
             </h2>
             <p className="mt-3 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              Zaczynamy od bezpłatnej diagnozy procesu.
+              Zaczynamy od diagnozy,{" "}
+              <Link href="/jak-pracuje" className="text-accent hover:underline">
+                tak pracujemy
+              </Link>
+              .
             </p>
             <div className="mt-6">
               <TrackedCTA

@@ -229,8 +229,12 @@ export default function Narzedzia() {
                 Sprawdź swoją firmę, zanim komukolwiek zapłacisz
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-400">
-                Każde narzędzie kończy się konkretną liczbą albo werdyktem. Bez
-                rejestracji i bez zostawiania adresu.
+                Każde kończy się liczbą albo werdyktem, bez rejestracji i
+                adresu.{" "}
+                <Link href="/realizacje" className="text-accent hover:underline">
+                  Część kodu jest otwarta
+                </Link>
+                .
               </p>
             </div>
           </div>
