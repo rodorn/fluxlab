@@ -1223,3 +1223,24 @@ Seria indeksowania wystartuje o 22:50 w tle. Skończy się do około 23:10, wted
 Monitor serii Z17 wygasł po 10 minutach. Nie wznawiam go, bo seria już się zakończyła, a jej wynik jest w dzienniku.
 === 2026-10-10 23:54:10 koniec, kod 0
 === 2026-10-11 00:43:03 start
+W tym przebiegu zrobiłem jeden pomiar (Z20). Z15 zostaje otwarte. Na stronie nic nie zmieniałem, więc nie było builda ani IndexNow.
+
+**Ruch (ostatnia doba):** 20 odsłon, 19 osób, o 30% mniej niż średnia. Źródła to głównie Facebook (11 odsłon) i 1 wejście z Google. Nikt nie uruchomił żadnego narzędzia.
+
+**Z20, Bing Webmaster (oznaczone [x]):** dane w panelu sięgają 8.10.
+
+| Pomiar | Wynik |
+|---|---|
+| Wyszukiwarka Bing, 7 dni | 0 kliknięć, 15 wyświetleń (zapytania o sprawdzenie NIP i VAT) |
+| Cytowania w Copilocie (AI Performance) | 7, wszystkie z 7.10 |
+| Mapa witryny | 109 adresów, bez błędów, ostatnio czytana 9.10 |
+| IndexNow | 40 adresów w ostatnich 22 h, łącznie 507 |
+| Zindeksowane adresy (Site Explorer) | Bing nie pokazuje jeszcze danych |
+
+**Z15, odczyt Search Console:** Google nadal nie odświeżył danych, ostatnia aktualizacja 47 godzin temu, a liczby z 28 dni się nie zmieniły. Zadanie zostaje na następny przebieg.
+
+**Zostało w planie:** Z15, Z22 (pomiar całej doby, sensowny dopiero po 03:30) i Z23 (bilans planu). Strateg napisze nowy plan o 06:15.
+
+Wpis w dzienniku i linia Z20 w planie są w commicie `08a4dd1`, wypchniętym na main.
+=== 2026-10-11 00:45:28 koniec, kod 0
+=== 2026-10-11 01:43:03 start
