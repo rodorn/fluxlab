@@ -338,6 +338,12 @@ export const categories: Category[] = [
         description: "Nowe biuro pobierze faktury z 2026 z KSeF po nadaniu uprawnienia.",
         bezOkladki: true,
       },
+      {
+        href: "/strefa-wiedzy/faktura-gdy-ksef-nie-dziala",
+        title: "Faktura, gdy KSeF nie działa",
+        description: "Offline24, niedostępność i awaria: kiedy dosłać fakturę do KSeF.",
+        bezOkladki: true,
+      },
     ],
   },
 ];
