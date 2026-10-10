@@ -4344,3 +4344,15 @@ Osobno:
 **Dowód:** `wyslij_segment.py ksiegowe-edoreczenia --proba --limit=5`: 1 pozycja, biuro@asset-lublin.pl (058) z linkiem `?krs=0000120471&utm_source=mail&utm_campaign=ksiegowe`, „w tym przebiegu: 1, w pliku: 119”; nic nie wysłane. Kopia przed zmianą `/tmp/wyslij_segment.py.bak` (katalog bez gita).
 **Dla Pawła:** bez zmian względem wpisu 07:15 (Profit Polska, timery grup FB).
 **Zostało otwarte:** Z15 (od 20:46), Z17 (7 żądań od 22:50, lista w linii Z17), Z18, Z20 (od 11.10 02:00), Z22, Z23.
+
+## 2026-10-10 08:50
+**Kanał:** dystrybucja narzędzi (forum Gofin). Otwarte zadania planu mają blokady czasowe: Z15 od 20:46, Z17 od 22:50, Z18, Z22 i Z23 to pomiary nocne, Z20 Bing od 11.10 02:00.
+**Co zrobione:** Przejrzane nowe wątki Gofin od 1559797 do 1559886. Pasuje jeden, 1559884 „Zaliczka KSeF” z 9.10 22:15, wciąż bez odpowiedzi. Przygotowana odpowiedź z podstawą prawną (art. 86 ust. 10b pkt 1, art. 106na ust. 3, art. 86 ust. 11) i linkiem do `/numer-ksef`, które przy każdym numerze pokazuje datę przyjęcia w KSeF. Wątek 1559826 o dwóch skrzynkach e-Doręczeń (osobista i JDG) pominięty: nasz skan sprawdza tylko spółki z KRS, a odpowiedź już padła.
+**Ruch:** ostatnia doba 29 odsłon, 18 osób (+3% wobec średniej 28,1). Źródła: www.google.com 8, facebook 7, mail 1. Z telefonu 11 z 29. Uruchomienia narzędzi 2 (audyt 2, skan KRS 2).
+**Dowód:** treść poniżej (704 znaki z limitu 1000), formularz Gofin wymaga Turnstile i oznacza akceptację regulaminu, więc publikuje Paweł.
+**Dla Pawła:** (1) NOWE: komentarz pod https://forum.gofin.pl/1559884/zaliczka-ksef. Pole „Autor”: FluxLab, „Treść komentarza”: tekst niżej, zaznacz Turnstile, „+ Dodaj komentarz” (ok. 1 minuty). Wątek z wczoraj bez odpowiedzi, więc pytający jeszcze czeka.
+> Najwcześniej w deklaracji za październik. Odliczenie przysługuje nie wcześniej niż za okres, w którym faktura została otrzymana (art. 86 ust. 10b pkt 1 ustawy o VAT), a fakturę z KSeF uznaje się za otrzymaną w dniu nadania jej numeru w KSeF (art. 106na ust. 3). Data wystawienia i data zapłaty zaliczki tego nie przesuwają. Jeśli nie odliczycie za październik, można to zrobić w jednym z trzech kolejnych okresów (art. 86 ust. 11).
+> Datę nadania widać w samym numerze KSeF: po 10 cyfrach NIP sprzedawcy stoi 8 cyfr w układzie RRRRMMDD. Przy kilku fakturach z przełomu miesiąca można wkleić numery tutaj, przy każdym pokaże datę przyjęcia i wyłapie literówkę: https://fluxlab.pl/numer-ksef?utm_source=gofin
+
+(2) Bez zmian: Profit Polska, timery grup FB (wpis 07:15).
+**Zostało otwarte:** Z15 (od 20:46), Z17 (7 żądań od 22:50, lista w linii Z17), Z18, Z20 (od 11.10 02:00), Z22, Z23. Gofin: następne sprawdzenie od 1559887.
