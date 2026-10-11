@@ -74,7 +74,7 @@ export default function Ksef2027Page() {
 
           <div className="mt-10 max-w-4xl">
             <NazwaNarzedzia href="/ksef-2027" />
-            <ListaKsef2027 formularz="/ksef-integracja#zamow" />
+            <ListaKsef2027 formularz="/ksef-integracja#zamow" naglowek={false} />
           </div>
 
           <div className="mt-14 max-w-4xl">

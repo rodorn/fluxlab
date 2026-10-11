@@ -102,8 +102,12 @@ type Odp = "tak" | "nie";
 
 export default function ListaKsef2027({
   formularz = "#zamow",
+  naglowek = true,
 }: {
   formularz?: string;
+  // Na /ksef-2027 H1 i pierwszy akapit mowia to samo, a na telefonie ten
+  // naglowek spychal pierwszy przycisk ponizej pierwszego ekranu.
+  naglowek?: boolean;
 }) {
   const [odp, setOdp] = useState<Record<string, Odp>>({});
   const [skopiowano, setSkopiowano] = useState(false);
@@ -143,16 +147,21 @@ export default function ListaKsef2027({
       id="lista-2027"
       className="mt-8 scroll-mt-24 rounded-2xl border border-gray-200/80 dark:border-gray-800/80 bg-white/70 dark:bg-gray-900/50 p-6 md:p-8"
     >
-      <h2 className="text-xl font-bold text-gray-900 dark:text-white">
-        Lista na 1 stycznia 2027: co musicie mieć domknięte
-      </h2>
-      <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-        Kary mają zostać przesunięte na 2028 rok, ale obowiązki z tej listy
-        zaczynają się w styczniu 2027. Przy każdym pytaniu zaznaczcie, czy macie
-        to załatwione, a na końcu dostaniecie wykaz braków dla księgowej.
-      </p>
+      {naglowek && (
+        <>
+          <h2 className="text-xl font-bold text-gray-900 dark:text-white">
+            Lista na 1 stycznia 2027: co musicie mieć domknięte
+          </h2>
+          <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+            Kary mają zostać przesunięte na 2028 rok, ale obowiązki z tej listy
+            zaczynają się w styczniu 2027. Przy każdym pytaniu zaznaczcie, czy
+            macie to załatwione, a na końcu dostaniecie wykaz braków dla
+            księgowej.
+          </p>
+        </>
+      )}
 
-      <ol className="mt-6 space-y-4">
+      <ol className={`${naglowek ? "mt-6" : ""} space-y-4`}>
         {PUNKTY.map((p, i) => {
           const o = odp[p.klucz];
           return (
