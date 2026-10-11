@@ -204,7 +204,9 @@ export default function NipCheck() {
                   Status VAT:
                 </dt>
                 <dd className="font-medium text-gray-900 dark:text-white">
-                  {wynik.statusVat || "brak danych"}
+                  {wynik.statusVat === "Czynny"
+                    ? "czynny podatnik VAT"
+                    : wynik.statusVat || "brak danych"}
                 </dd>
               </div>
               <div className="flex gap-2">

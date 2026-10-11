@@ -77,7 +77,7 @@ export async function POST(request: Request) {
       status: "brak_w_wykazie",
       nip,
       verdict: "CZERWONY",
-      headline: "Tego numeru nie ma w wykazie podatników VAT",
+      headline: "Niezarejestrowany: tego numeru nie ma w wykazie podatników VAT",
       detail:
         "Ministerstwo Finansów nie zwraca żadnego podmiotu dla tego numeru. To najpoważniejszy sygnał ostrzegawczy. Nie wysyłaj zaliczki i zażądaj dokumentów rejestrowych.",
     });

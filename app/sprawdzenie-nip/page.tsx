@@ -81,8 +81,8 @@ export default function SprawdzenieNipPage() {
               Sprawdzenie NIP w wykazie Ministerstwa Finansów
             </h1>
             <p className="mt-5 text-lg text-gray-600 dark:text-gray-300">
-              Wpisz numer i sprawdź status VAT, datę rejestracji oraz liczbę
-              zgłoszonych rachunków. Bez rejestracji.
+              Czy ten NIP jest czynnym płatnikiem VAT? Wpisz numer, wynik z
+              białej listy MF w 10 s.
             </p>
           </div>
 
@@ -114,8 +114,8 @@ export default function SprawdzenieNipPage() {
               Czego darmowe sprawdzenie nie powie
             </h2>
             <p className="mt-3 text-gray-600 dark:text-gray-300">
-              Nie pokaże likwidacji, zaległości ani tego, czy numer konta z
-              maila należy do firmy. To sprawdzamy w pełnym raporcie.
+              Nie pokaże likwidacji, zaległości ani czy konto z maila należy
+              do firmy. To sprawdza pełny raport.
             </p>
             <p className="mt-4">
               <Link
