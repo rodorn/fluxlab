@@ -40,6 +40,12 @@ export default function IntegracjaCrmZErp() {
           href: "/automatyzacja-procesow-biznesowych",
           po: ".",
         },
+        {
+          przed: "Przykład branżowy:",
+          kotwica: "CRM dla firm leasingowych",
+          href: "/automatyzacja-crm-leasing",
+          po: ".",
+        },
       ]}
       checks={[
         {
@@ -48,7 +54,7 @@ export default function IntegracjaCrmZErp() {
         },
         {
           title: "Dopasowanie kontrahenta",
-          desc: "Po NIP, nie po nazwie. Przed startem dostajecie listę rekordów, które nie dopasowały się automatycznie.",
+          desc: "Po NIP, nie po nazwie. Przed startem dostajecie listę rekordów bez dopasowania.",
         },
         {
           title: "Moment wysłania dokumentu",
@@ -60,11 +66,11 @@ export default function IntegracjaCrmZErp() {
         },
         {
           title: "Stany i ceny w drugą stronę",
-          desc: "Handlowiec widzi w CRM aktualną cenę i dostępność. Wystarcza odświeżanie co kilkanaście minut.",
+          desc: "Handlowiec widzi w CRM aktualną cenę i dostępność, odświeżane co kilkanaście minut.",
         },
         {
           title: "Czego nie zrobimy",
-          desc: "Integracji, w której obie strony edytują te same pola, a nikt nie rozstrzyga, kto ma rację. Mówimy to na początku.",
+          desc: "Integracji, w której obie strony edytują te same pola, a nikt nie rozstrzyga, kto ma rację.",
         },
       ]}
       pricing={[

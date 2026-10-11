@@ -40,7 +40,7 @@ const symptoms = [
 ];
 
 const afterSteps = [
-  "Pola wymagane i słowniki zamiast wolnego tekstu, jasna definicja każdego etapu.",
+  "Pola wymagane i słowniki zamiast wolnego tekstu.",
   "Po rozmowie handlowiec uzupełnia 3 pola w 30 sekund.",
   "Etap zmienia się tylko po spełnieniu warunku, np. „oferta wysłana” = załącznik w dealu.",
   "Brak aktywności 7 dni daje przypomnienie, 14 dni eskalację.",
@@ -204,8 +204,9 @@ export default function CrmJakoSystemPracy() {
                           „cokolwiek”
                         </h2>
                         <p className="text-gray-600 dark:text-gray-400 mt-4 leading-relaxed">
-                          Manager patrzy na pipeline 800 tys. zł i nie wie, ile
-                          z tego to realna sprzedaż. Po tym poznasz, że CRM jest
+                          Manager, także w{" "}
+                          <Link href="/automatyzacja-crm-leasing" className="text-accent hover:underline">CRM dla firm leasingowych</Link>, widzi pipeline 800 tys. zł i nie wie, ile
+                          to realna sprzedaż. Po tym poznasz, że CRM jest
                           notatnikiem, nie systemem:
                         </p>
                       </div>

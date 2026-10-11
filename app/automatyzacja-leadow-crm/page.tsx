@@ -46,7 +46,7 @@ const steps = [
   {
     title: "Diagnoza",
     description:
-      "Opisujesz proces, dostajesz mapę i wąskie gardła. Bezpłatnie.",
+      "Mapa procesu i wąskie gardła, bezpłatnie.",
   },
   {
     title: "Wdrożenie",
@@ -54,7 +54,7 @@ const steps = [
   },
   {
     title: "Dokumentacja",
-    description: "Dostajesz instrukcję i opis działania.",
+    description: "Instrukcja i opis działania.",
   },
 ];
 
@@ -68,16 +68,16 @@ const pricing = [
 const faq = [
   {
     question: "Czy musimy mieć już CRM?",
-    answer: "Nie. Możemy zacząć od arkuszy lub maili i dobrać najprostszy CRM.",
+    answer: "Nie. Zaczniemy od arkuszy lub maili i dobierzemy prosty CRM.",
   },
   {
     question: "Co jeśli nasze dane to bałagan?",
-    answer: "Najpierw porządkujemy minimum: pola, statusy i źródła.",
+    answer: "Porządkujemy minimum: pola, statusy i źródła.",
   },
   {
     question: "Z jakimi systemami CRM to działa?",
     answer:
-      "Najczęściej z Pipedrive, ale z każdym popularnym CRM-em, który ma API.",
+      "Z Pipedrive i każdym CRM-em, który ma API.",
   },
   {
     question: "Ile to kosztuje?",
@@ -242,7 +242,8 @@ export default function AutomatyzacjaLeadowCRM() {
                         >
                           automatyczne follow-upy
                         </Link>
-                        .
+                        . W leasingu:{" "}
+                        <Link href="/automatyzacja-crm-leasing" className="text-accent hover:underline">CRM dla firm leasingowych</Link>.
                       </p>
                     </div>
                   </section>
