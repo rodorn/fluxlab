@@ -1244,3 +1244,13 @@ W tym przebiegu zrobiłem jeden pomiar (Z20). Z15 zostaje otwarte. Na stronie ni
 Wpis w dzienniku i linia Z20 w planie są w commicie `08a4dd1`, wypchniętym na main.
 === 2026-10-11 00:45:28 koniec, kod 0
 === 2026-10-11 01:43:03 start
+Ten przebieg nic nie wypuścił w świat. Jedyne otwarte zadanie bez blokady czasowej, Z15, nadal czeka na nowe dane z Google, a pozostałe dwa mają godziny „nie wcześniej niż”.
+
+- **Z15 (odczyt Search Console):** o 01:44 panel pokazuje „Ostatnia aktualizacja: 44 godziny temu”, a dane nadal kończą się na 6.10. Za 28 dni bez zmian: 16 kliknięć, 433 wyświetlenia, CTR 3,7%, pozycja 15,3. Zgodnie z planem zadanie zostaje otwarte na następny przebieg.
+- **Z22 i Z23:** według planu wolno je zacząć dopiero od 03:46 i 04:46.
+- **Forum Gofin:** jedyny nowy wątek (1559894, o składkach ZUS) nie pasuje do żadnego z naszych narzędzi.
+- **Ruch z ostatniej doby:** 20 odsłon, 19 osób, czyli 30% poniżej średniej. Wejścia głównie z Facebooka (11), z Google 1. Nikt nie uruchomił żadnego narzędzia.
+
+Wpis dopisałem do `cykl/dziennik.md`, commit `edbc8ea` jest wypchnięty na main. Kod strony się nie zmienił, więc nie było builda ani zgłoszenia adresów przez IndexNow.
+=== 2026-10-11 01:44:15 koniec, kod 0
+=== 2026-10-11 02:43:03 start

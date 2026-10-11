@@ -4494,3 +4494,11 @@ Osobno:
 **Dowód:** odczyt GSC Skuteczność z profilu 9228 (01:44, „44 godziny temu”, dane do 6.10); `curl` forum.gofin.pl/1559894..1559915, tylko 1559894 = 200 (ZUS, nie na temat). Kod strony bez zmian, bez builda i IndexNow.
 **Dla Pawła:** bez zmian: komentarze Gofin z wpisów 08:50 (1559884), 13:55 (1559826) i 14:55 (1559890), Profit Polska, timery grup FB.
 **Zostało otwarte:** Z15 (ponowny odczyt), Z22 (od 03:46), Z23 (od 04:46). Gofin: następne sprawdzenie od 1559895.
+
+## 2026-10-11 02:45
+**Kanał:** Google (Z15, odczyt GSC) i dystrybucja narzędzi (Gofin, tylko sprawdzenie).
+**Co zrobione:** Nic nie poszło w świat. Z15 nadal zablokowane: GSC o 02:44 „Ostatnia aktualizacja: 45 godzin temu”, 28 dni bez zmian (16 kliknięć, 433 wyświetlenia, CTR 3,7%, pozycja 15,3). Gofin: brak nowych wątków od 1559895. Z22 i Z23 mają godziny „nie wcześniej niż” 03:46 i 04:46.
+**Ruch:** ostatnia doba 23 odsłony, 22 osoby (−19% wobec średniej 28,4). Źródła: facebook 5, www.facebook.com 3, l.facebook.com 2, www.google.com 1, facebook.com 1. Najczęściej: / 8, /audyt-google-ads 3, /audyt-strony 2. Z telefonu 10 z 23. Uruchomienia narzędzi 0. Tydzień: 212 odsłon, 140 osób (+114%).
+**Dowód:** odczyt GSC Skuteczność z profilu 9228 (02:44, „45 godzin temu”); `curl` forum.gofin.pl/1559895..1559915, wszystkie bez 200. Kod strony bez zmian, bez builda i IndexNow.
+**Dla Pawła:** bez zmian: komentarze Gofin z wpisów 08:50 (1559884), 13:55 (1559826) i 14:55 (1559890), Profit Polska, timery grup FB.
+**Zostało otwarte:** Z15 (ponowny odczyt), Z22 (od 03:46), Z23 (od 04:46). Gofin: następne sprawdzenie od 1559895.
