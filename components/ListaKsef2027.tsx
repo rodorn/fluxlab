@@ -14,17 +14,20 @@
 
 import { useState } from "react";
 import { zglosZdarzenie } from "@/lib/zdarzenie";
+import { zLinkami, type LinkWTekscie } from "@/lib/zLinkami";
 
 type Punkt = {
   klucz: string;
   pytanie: string;
   zmiana: string;
   zrobic: string;
+  linki?: LinkWTekscie[];
 };
 
 const PUNKTY: Punkt[] = [
   {
     klucz: "poza-ksef",
+    linki: [{ fraza: "każda faktura dla firmy", href: "/strefa-wiedzy/faktura-dla-osoby-prywatnej-ksef" }],
     pytanie: "Czy wszystkie faktury dla firm wystawiacie już w KSeF?",
     zmiana:
       "1 stycznia 2027 znika limit 10 tys. zł brutto miesięcznie na faktury wystawiane poza KSeF. Od tego dnia każda faktura dla firmy musi przejść przez system.",
@@ -51,6 +54,10 @@ const PUNKTY: Punkt[] = [
   },
   {
     klucz: "koszty",
+    linki: [
+      { fraza: "uznana za otrzymaną w dniu nadania jej numeru", href: "/strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef" },
+      { fraza: "kto i jak często pobiera faktury zakupowe", href: "/strefa-wiedzy/faktury-z-ksef-po-zmianie-biura" },
+    ],
     pytanie: "Czy ktoś regularnie pobiera faktury kosztowe z KSeF?",
     zmiana:
       "Faktura od dostawcy jest uznana za otrzymaną w dniu nadania jej numeru w KSeF. Dostawca nie musi już wysyłać jej mailem, więc termin płatności biegnie także wtedy, gdy nikt do systemu nie zajrzał.",
@@ -59,6 +66,7 @@ const PUNKTY: Punkt[] = [
   },
   {
     klucz: "offline",
+    linki: [{ fraza: "Gdy KSeF nie działa", href: "/strefa-wiedzy/faktura-gdy-ksef-nie-dziala" }],
     pytanie:
       "Czy macie certyfikat KSeF do wystawiania faktur w trybie offline?",
     zmiana:
@@ -68,6 +76,7 @@ const PUNKTY: Punkt[] = [
   },
   {
     klucz: "numeracja",
+    linki: [{ fraza: "kodem błędu 440 „Duplikat faktury”", href: "/strefa-wiedzy/numeracja-faktur-ksef-2027" }],
     pytanie:
       "Czy numer faktury wystawionej w styczniu 2027 nie powtórzy żadnego numeru z 2026?",
     zmiana:
@@ -163,13 +172,13 @@ export default function ListaKsef2027({
                 <span className="font-semibold text-gray-900 dark:text-white">
                   Co się zmienia:
                 </span>{" "}
-                {p.zmiana}
+                {zLinkami(p.zmiana, p.linki)}
               </p>
               <p className="mt-2 text-sm text-gray-700 dark:text-gray-300">
                 <span className="font-semibold text-gray-900 dark:text-white">
                   Co zrobić:
                 </span>{" "}
-                {p.zrobic}
+                {zLinkami(p.zrobic, p.linki)}
               </p>
               <div className="mt-3 flex flex-wrap gap-2">
                 {(

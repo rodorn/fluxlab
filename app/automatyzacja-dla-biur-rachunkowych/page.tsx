@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import EDoreczeniaCheck from "@/components/EDoreczeniaCheck";
+import { zLinkami } from "@/lib/zLinkami";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -52,6 +53,7 @@ const useCases = [
     title: "Onboarding nowego klienta",
     description:
       "Formularz, podpis umowy online, dane z GUS, UPL-1 i założenie klienta w systemie księgowym oraz CRM. Jedno wypełnienie zamiast pięciu systemów.",
+    linki: [{ fraza: "założenie klienta w systemie księgowym", href: "/strefa-wiedzy/faktury-z-ksef-po-zmianie-biura" }],
   },
 ];
 
@@ -187,7 +189,13 @@ export default function AutomatyzacjaDlaBiurRachunkowych() {
         <section className="container-wide pt-6 pb-4">
           <div className="max-w-3xl mx-auto">
             <p className="mb-4 text-gray-600 dark:text-gray-300">
-              Sprawdźcie, czy spółka klienta ma adres do e-Doręczeń.
+              Sprawdźcie, czy spółka klienta ma{" "}
+              <Link
+                href="/strefa-wiedzy/e-doreczenia-adres-prywatny-i-firmowy"
+                className="text-accent hover:underline"
+              >
+                adres do e-Doręczeń
+              </Link>.
             </p>
             <EDoreczeniaCheck trybStartowy="krs" />
           </div>
@@ -220,7 +228,7 @@ export default function AutomatyzacjaDlaBiurRachunkowych() {
                               {useCase.title}
                             </h3>
                             <p className="text-sm text-gray-600 dark:text-gray-400">
-                              {useCase.description}
+                              {zLinkami(useCase.description, useCase.linki)}
                             </p>
                           </div>
                         ))}

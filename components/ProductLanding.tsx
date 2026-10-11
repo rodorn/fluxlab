@@ -9,6 +9,7 @@ import RelatedProducts from "@/components/RelatedProducts";
 import NazwaNarzedzia from "@/components/NazwaNarzedzia";
 import { cenaWejscia } from "@/lib/products";
 import { kotwica } from "@/lib/kotwica";
+import { zLinkami, type LinkWTekscie } from "@/lib/zLinkami";
 import FaqOtwieracz from "@/components/FaqOtwieracz";
 import CTA from "@/components/CTA";
 
@@ -38,7 +39,7 @@ export interface ProductLandingProps {
   /** Zdania z odnosnikiem do pokrewnej strony, wstawiane pod opisem zakresu. */
   powiazane?: { przed: string; kotwica: string; href: string; po: string }[];
   pricing: Tier[];
-  faq: { q: string; a: string }[];
+  faq: { q: string; a: string; linki?: LinkWTekscie[] }[];
   formId: string;
   formHeading: string;
   formIntro: string;
@@ -244,7 +245,7 @@ export default function ProductLanding(p: ProductLandingProps) {
                     {item.q}
                   </summary>
                   <div className="px-5 pb-5 text-sm text-gray-600 dark:text-gray-400">
-                    {item.a}
+                    {zLinkami(item.a, item.linki)}
                   </div>
                 </details>
               ))}

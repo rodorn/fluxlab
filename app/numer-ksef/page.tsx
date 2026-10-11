@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { zLinkami, type LinkWTekscie } from "@/lib/zLinkami";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
   },
 };
 
-const czesci = [
+const czesci: { q: string; a: string; linki?: LinkWTekscie[] }[] = [
   {
     q: "10 cyfr: NIP sprzedawcy",
     a: "Sprawdzamy jego sumę kontrolną jak przy każdym NIP-ie.",
@@ -30,6 +31,7 @@ const czesci = [
   {
     q: "8 cyfr: data przyjęcia w KSeF",
     a: "Układ RRRRMMDD. Od tego dnia faktura kosztowa jest uznana za otrzymaną.",
+    linki: [{ fraza: "faktura kosztowa jest uznana za otrzymaną", href: "/strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef" }],
   },
   {
     q: "12 znaków: część techniczna",
@@ -41,14 +43,16 @@ const czesci = [
   },
 ];
 
-const faq = [
+const faq: { q: string; a: string; linki?: LinkWTekscie[] }[] = [
   {
     q: "Czy numer KSeF trzeba podawać w przelewie?",
     a: "Od 1 stycznia 2027 tak, przy zapłacie za fakturę z KSeF między czynnymi podatnikami VAT, także w przelewie MPP. Nie dotyczy karty, BLIK-a ani gotówki.",
+    linki: [{ fraza: "między czynnymi podatnikami VAT", href: "/strefa-wiedzy/faktura-dla-osoby-prywatnej-ksef" }],
   },
   {
     q: "Czy poprawny numer oznacza, że faktura istnieje?",
     a: "Nie. Poprawna suma mówi tylko, że nie ma literówki. Istnienie faktury potwierdza KSeF.",
+    linki: [{ fraza: "Istnienie faktury potwierdza KSeF", href: "/strefa-wiedzy/faktura-gdy-ksef-nie-dziala" }],
   },
   {
     q: "Numer jest z faktury sprzed 2026 roku i wychodzi błąd sumy kontrolnej, to na pewno literówka?",
@@ -99,7 +103,7 @@ export default function NumerKsefPage() {
                     {c.q}
                   </dt>
                   <dd className="mt-1 text-gray-600 dark:text-gray-300">
-                    {c.a}
+                    {zLinkami(c.a, c.linki)}
                   </dd>
                 </div>
               ))}
@@ -135,7 +139,7 @@ export default function NumerKsefPage() {
                     {f.q}
                   </dt>
                   <dd className="mt-1 text-gray-600 dark:text-gray-300">
-                    {f.a}
+                    {zLinkami(f.a, f.linki)}
                   </dd>
                 </div>
               ))}

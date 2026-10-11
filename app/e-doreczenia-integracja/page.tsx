@@ -124,6 +124,12 @@ export default function EDoreczeniaIntegracja() {
         {
           q: "Od kiedy firma musi mieć adres do e-Doręczeń?",
           a: PODMIOTY.map((p) => p.opis).join(" "),
+          linki: [
+            {
+              fraza: "Przedsiębiorcy wpisani do CEIDG do 31 grudnia 2024",
+              href: "/strefa-wiedzy/e-doreczenia-adres-prywatny-i-firmowy",
+            },
+          ],
         },
         {
           q: "Ile kosztuje adres do e-Doręczeń i co grozi za jego brak?",
