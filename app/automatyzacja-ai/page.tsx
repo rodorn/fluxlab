@@ -9,13 +9,13 @@ import Tabs from "@/components/Tabs";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Automatyzacja AI w procesach firmowych | Fluxlab",
+  title: "Automatyzacja AI dla firm: procesy, CRM, dokumenty | Fluxlab",
   description:
-    "Wdrażamy automatyzację AI: klasyfikacja danych, streszczenia, analiza treści, wsparcie obsługi i przepływy połączone z CRM i innymi systemami.",
+    "Automatyzacja AI dla firm: klasyfikacja zapytań, streszczenia maili i szkice odpowiedzi w procesach połączonych z CRM i innymi systemami.",
   openGraph: {
-    title: "Automatyzacja AI w procesach firmowych | Fluxlab",
+    title: "Automatyzacja AI dla firm: procesy, CRM, dokumenty | Fluxlab",
     description:
-      "Wdrażamy automatyzację AI: klasyfikacja danych, streszczenia, analiza treści, wsparcie obsługi i przepływy połączone z CRM i innymi systemami.",
+      "Automatyzacja AI dla firm: klasyfikacja zapytań, streszczenia maili i szkice odpowiedzi w procesach połączonych z CRM i innymi systemami.",
     locale: "pl_PL",
     type: "article",
     images: [
@@ -69,11 +69,11 @@ export default function AutomatyzacjaAI() {
           <div className="container-wide max-w-3xl mx-auto">
             <p className="section-label mb-5">Usługa</p>
             <h1 className="h1-strony mb-6">
-              Automatyzacja AI
+              Automatyzacja AI dla firm
             </h1>
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
               Wdrażamy AI tam, gdzie skraca czas pracy: klasyfikacja, analiza
-              treści i szkice odpowiedzi w istniejących procesach.
+              treści i szkice odpowiedzi.
             </p>
             <div>
               <a href="#sekcje" className="btn-primary">
@@ -195,7 +195,7 @@ export default function AutomatyzacjaAI() {
             "@type": "Service",
             name: "Automatyzacja AI",
             description:
-              "Wdrażamy automatyzację AI: klasyfikacja danych, streszczenia, analiza treści, wsparcie obsługi i przepływy połączone z CRM i innymi systemami.",
+              "Automatyzacja AI dla firm: klasyfikacja zapytań, streszczenia maili i szkice odpowiedzi w procesach połączonych z CRM i innymi systemami.",
             provider: { "@id": "https://fluxlab.pl/#organization" },
             areaServed: { "@type": "Country", name: "Polska" },
             serviceType: "Automatyzacja procesów biznesowych",

@@ -49,9 +49,12 @@ export default function AiWAutomatyzacjiFirmPage() {
               AI w automatyzacji firm
             </h1>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed !text-left">
-              AI ma sens, gdy przyspiesza konkretny proces i nie obniża
-              jakości. Najlepiej działa tam, gdzie trzeba szybko zrozumieć dużo
-              wiadomości, zgłoszeń, leadów albo dokumentów.
+              <Link href="/automatyzacja-ai" className="text-accent hover:underline">
+                Automatyzacja AI dla firm
+              </Link>{" "}
+              ma sens, gdy przyspiesza konkretny proces i nie obniża jakości.
+              Najlepiej działa tam, gdzie trzeba zrozumieć dużo wiadomości albo
+              dokumentów.
             </p>
 
             <h2 className="mt-12 mb-4 h2-sekcji">
