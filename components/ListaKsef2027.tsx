@@ -45,6 +45,7 @@ const PUNKTY: Punkt[] = [
   },
   {
     klucz: "przelew",
+    linki: [{ fraza: "35-znakowy numer KSeF", href: "/numer-ksef" }],
     pytanie:
       "Czy numer KSeF faktury kosztowej jest pod ręką, kiedy robicie przelew?",
     zmiana:

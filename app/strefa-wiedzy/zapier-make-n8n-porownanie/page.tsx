@@ -125,8 +125,14 @@ export default function ZapierMakeN8nPorownanieArticle() {
                       </ul>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Na małej skali różnice są nieistotne. Przy średniej Make
-                        i n8n.cloud są wyraźnie tańsze od Zapiera, przy dużej n8n
-                        self-hosted bywa tańszy o rząd wielkości.
+                        i n8n.cloud są wyraźnie tańsze od Zapiera, przy dużej{" "}
+                        <Link
+                          href="/strefa-wiedzy/n8n-vs-zapier"
+                          className="text-accent hover:underline"
+                        >
+                          n8n self-hosted bywa tańszy
+                        </Link>{" "}
+                        o rząd wielkości.
                       </p>
                     </div>
                   </div>
