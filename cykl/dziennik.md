@@ -4633,3 +4633,13 @@ Wniosek: 6 osób, żadna nic nie uruchomiła, nikt nie zostawił adresu; nowe zd
 **Dowód:** `curl` forum.gofin.pl/1559895 = 200, 1559896..1559912 = 404; zapytanie do `ruch.sqlite` (wizyty od 04:00 UTC: 11 wierszy, jedna sesja `sainv5`).
 **Dla Pawła:** bez zmian: komentarz Gofin 1559894 (tekst we wpisie 09:50) oraz komentarze z wpisów 08:50 (1559884), 13:55 (1559826) i 14:55 (1559890), Profit Polska, timery grup FB, decyzja o źródle adresów dla outreachu.
 **Zostało otwarte:** Z14 (19:46), Z18 (po 23:50), Z20, Z22, Z23. Gofin: następne sprawdzenie od 1559896.
+
+<!-- WYSLANO 2026-10-11 11:05 -->
+
+## 2026-10-11 11:45
+**Kanał:** widoczność w asystentach AI. Otwarte zadania planu Z14 (19:46, okno od 13:46), Z18 (po 23:50), Z20, Z22, Z23 mają późniejsze godziny.
+**Co zrobione:** porównanie mapy witryny (125 adresów) z llms.txt. Spośród stron usług i narzędzi brakowało tylko dwóch, czyli `/sprawdz-auto` (sprawdzenie auta z Otomoto lub OLX, 5 zł, pełny raport 15 zł) i `/import-radar` (analiza importu z Niemiec, za darmo). Obie dopisane do sekcji „Usługi z ceną”. Pozostałe braki to kategorie strefy wiedzy, regulamin, polityka, spis stron i /pilotaż, więc je pomijamy.
+**Ruch:** ostatnia doba 46 odsłon, 37 osób (+59% wobec średniej 28,9). Źródła: www.facebook.com 3, facebook 2, l.facebook.com 2, www.google.com 1, facebook.com 1. Najczęściej /audyt-strony (10), / (8), /ksef-2027 (8), /numer-ksef (6). Uruchomienia narzędzi 3 (audyt_uruchomiony 3, numer_ksef_przyklad 3). Wzrost od 10:45 dają dwie paczki sesji bez źródła, Chrome Android: 10:56:45 (3 sesje w tej samej sekundzie: /numer-ksef, /audyt-strony, /ceny-energii-jutro) i 11:09:06 (4 sesje: /numer-ksef ×2, /audyt-strony, /). Audyt i przykład KSeF odpalają się w tej samej sekundzie co wejście, czyli prawie na pewno jeden telefon przywracający karty, a nie 7 nowych osób. Z14 i Z20 powinny liczyć je jako 1 osobę albo jako ruch własny.
+**Dowód:** commit ddca3f7; `curl https://fluxlab.pl/llms.txt` zawiera oba adresy (po ok. 100 s od pusha); build i `spojnosc.mjs` OK; IndexNow 1 z 3 (Naver 200, wspólny 403, Yandex błąd połączenia); Gofin 1559896 = 404, nowych wątków brak.
+**Dla Pawła:** bez zmian: komentarz Gofin 1559894 (tekst we wpisie 09:50) oraz komentarze z wpisów 08:50 (1559884), 13:55 (1559826) i 14:55 (1559890), Profit Polska, timery grup FB, decyzja o źródle adresów dla outreachu. Jeśli karty fluxlab.pl (/numer-ksef, /audyt-strony) masz otwarte w Chrome na telefonie, wejdź raz na https://fluxlab.pl/nie-licz-mnie , żeby nie zawyżały pomiaru.
+**Zostało otwarte:** Z14 (19:46), Z18 (po 23:50), Z20, Z22, Z23. Gofin: następne sprawdzenie od 1559896.
