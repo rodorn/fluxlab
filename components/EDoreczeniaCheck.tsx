@@ -145,7 +145,11 @@ function policz(podmiot: Podmiot): Wynik {
   };
 }
 
-export default function EDoreczeniaCheck() {
+export default function EDoreczeniaCheck({
+  trybStartowy = "forma",
+}: {
+  trybStartowy?: "forma" | "krs";
+}) {
   const [wynik, setWynik] = useState<Wynik | null>(null);
   const [skala, setSkala] = useState<Skala | null>(null);
   const [email, setEmail] = useState("");
@@ -153,7 +157,7 @@ export default function EDoreczeniaCheck() {
     "idle",
   );
   const [leadBlad, setLeadBlad] = useState("");
-  const [tryb, setTryb] = useState<"forma" | "krs">("forma");
+  const [tryb, setTryb] = useState<"forma" | "krs">(trybStartowy);
   const [krs, setKrs] = useState("");
   const [krsStan, setKrsStan] = useState<"idle" | "szukamy" | "blad">("idle");
   const [krsBlad, setKrsBlad] = useState("");
@@ -552,29 +556,31 @@ export default function EDoreczeniaCheck() {
         </>
       )}
 
-      <p className="mt-4 text-xs text-gray-500 dark:text-gray-400">
-        Daty pochodzą z ustawy o doręczeniach elektronicznych i z harmonogramu
-        Ministerstwa Cyfryzacji:{" "}
-        <a
-          href="https://www.gov.pl/web/e-doreczenia/harmonogram"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline underline-offset-2 hover:text-accent"
-        >
-          gov.pl/web/e-doreczenia/harmonogram
-        </a>{" "}
-        oraz{" "}
-        <a
-          href="https://www.biznes.gov.pl/pl/portal/004495"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline underline-offset-2 hover:text-accent"
-        >
-          biznes.gov.pl
-        </a>
-        . To sprawdzenie techniczne, nie porada prawna, a przypadki nietypowe
-        rozstrzyga treść ustawy.
-      </p>
+      {tryb === "forma" && (
+        <p className="mt-4 text-xs text-gray-500 dark:text-gray-400">
+          Daty pochodzą z ustawy o doręczeniach elektronicznych i z harmonogramu
+          Ministerstwa Cyfryzacji:{" "}
+          <a
+            href="https://www.gov.pl/web/e-doreczenia/harmonogram"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline underline-offset-2 hover:text-accent"
+          >
+            gov.pl/web/e-doreczenia/harmonogram
+          </a>{" "}
+          oraz{" "}
+          <a
+            href="https://www.biznes.gov.pl/pl/portal/004495"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline underline-offset-2 hover:text-accent"
+          >
+            biznes.gov.pl
+          </a>
+          . To sprawdzenie techniczne, nie porada prawna, a przypadki nietypowe
+          rozstrzyga treść ustawy.
+        </p>
+      )}
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import EDoreczeniaCheck from "@/components/EDoreczeniaCheck";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -40,17 +41,12 @@ const useCases = [
   {
     title: "Przypomnienia o brakujących dokumentach",
     description:
-      "System widzi, czego brakuje od klienta za bieżący miesiąc, i wysyła przypomnienie mailem lub SMS-em. Po kilku dniach sprawa wraca do opiekuna. Koniec z dzwonieniem do tych samych klientów.",
-  },
-  {
-    title: "Integracja z KSeF",
-    description:
-      "Pobieramy faktury z KSeF dla każdego klienta biura po pełnomocnictwach i wprowadzamy je do systemu księgowego. 1 stycznia 2027 kończą się przepisy przejściowe, więc warto zamknąć temat wcześniej.",
+      "System widzi, czego brakuje od klienta za bieżący miesiąc, i wysyła przypomnienie mailem lub SMS-em. Po kilku dniach sprawa wraca do opiekuna.",
   },
   {
     title: "Raporty miesięczne dla klientów",
     description:
-      "Po zamknięciu okresu system przygotowuje raport dla każdego klienta w jednym formacie i wysyła go bezpiecznym kanałem. Klient nie pyta, kiedy dostanie raport.",
+      "Po zamknięciu okresu system przygotowuje raport dla każdego klienta w jednym formacie i wysyła go bezpiecznym kanałem.",
   },
   {
     title: "Onboarding nowego klienta",
@@ -98,7 +94,7 @@ const faq = [
   {
     question: "Ile kosztuje wdrożenie automatyzacji w biurze rachunkowym?",
     answer:
-      "Pojedynczy proces, np. przypomnienia albo spięcie SaldeoSmart z Optimą, to 1 do 2 tygodni pracy. Pełne wdrożenie robimy etapami w 2 do 4 miesięcy. Wycenę dajemy po rozmowie i przejrzeniu Waszych narzędzi.",
+      "Pojedynczy proces, np. przypomnienia albo spięcie SaldeoSmart z Optimą, to 1 do 2 tygodni pracy. Pełne wdrożenie robimy etapami w 2 do 4 miesięcy.",
   },
 ];
 
@@ -188,6 +184,15 @@ export default function AutomatyzacjaDlaBiurRachunkowych() {
           </div>
         </section>
 
+        <section className="container-wide pt-6 pb-4">
+          <div className="max-w-3xl mx-auto">
+            <p className="mb-4 text-gray-600 dark:text-gray-300">
+              Sprawdźcie, czy spółka klienta ma adres do e-Doręczeń.
+            </p>
+            <EDoreczeniaCheck trybStartowy="krs" />
+          </div>
+        </section>
+
         <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
           <Tabs
             ariaLabel="Sekcje oferty dla biur rachunkowych"
@@ -201,7 +206,6 @@ export default function AutomatyzacjaDlaBiurRachunkowych() {
                         Co automatyzujemy w biurze rachunkowym
                       </h2>
                       <p className="text-gray-500 dark:text-gray-400 mb-10">
-                        Ręczna praca rośnie razem z portfelem klientów.
                         Automatyzacja pozwala obsłużyć więcej klientów bez
                         powiększania zespołu.
                       </p>
@@ -253,17 +257,6 @@ export default function AutomatyzacjaDlaBiurRachunkowych() {
                           </div>
                         ))}
                       </div>
-
-                      <p className="text-sm text-gray-500 dark:text-gray-400 mt-8">
-                        Szczegóły i darmowe sprawdzenie na stronie{" "}
-                        <Link
-                          href="/ksef-integracja"
-                          className="text-accent hover:underline"
-                        >
-                          integracji z KSeF
-                        </Link>
-                        .
-                      </p>
                     </div>
                   </div>
                 ),
