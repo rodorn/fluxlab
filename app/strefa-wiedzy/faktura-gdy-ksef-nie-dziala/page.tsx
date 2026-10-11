@@ -109,14 +109,21 @@ export default function FakturaGdyKsefNieDzialaArticle() {
             <section>
               <h2 className="mb-4 h2-sekcji">Czy faktura doszła</h2>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                Po dosłaniu faktura dostaje numer KSeF z datą nadania. Nasze{" "}
+                Bez numeru faktura ma w JPK_VAT{" "}
+                <Link
+                  href="/strefa-wiedzy/oznaczenia-jpk-ksef"
+                  className="text-accent hover:underline"
+                >
+                  oznaczenie DI albo OFF
+                </Link>
+                .{" "}
                 <Link
                   href="/numer-ksef"
                   className="text-accent hover:underline"
                 >
-                  sprawdzenie numeru KSeF
+                  Sprawdzenie numeru KSeF
                 </Link>{" "}
-                odczytuje tę datę i wyłapuje literówki, bez rejestracji.
+                odczytuje datę nadania i wyłapuje literówki, bez rejestracji.
               </p>
             </section>
             <section>
