@@ -4502,3 +4502,22 @@ Osobno:
 **Dowód:** odczyt GSC Skuteczność z profilu 9228 (02:44, „45 godzin temu”); `curl` forum.gofin.pl/1559895..1559915, wszystkie bez 200. Kod strony bez zmian, bez builda i IndexNow.
 **Dla Pawła:** bez zmian: komentarze Gofin z wpisów 08:50 (1559884), 13:55 (1559826) i 14:55 (1559890), Profit Polska, timery grup FB.
 **Zostało otwarte:** Z15 (ponowny odczyt), Z22 (od 03:46), Z23 (od 04:46). Gofin: następne sprawdzenie od 1559895.
+
+<!-- WYSLANO 2026-10-11 03:06 -->
+
+## 2026-10-11 03:50
+**Kanał:** pomiar (Z22, doba) i Google (Z15, odczyt GSC).
+**Co zrobione:** Z22: podział doby 10.10 06:00 do 11.10 03:30 z `ruch.sqlite` (48 wierszy, 0 zdarzeń).
+
+| grupa | sesje | odsłony | zdarzenia | szczegóły |
+|---|---|---|---|---|
+| ludzie | 6 | 7 | 0 | www.google.com 1 (19:45 `/` macOS), l.facebook.com 1 (20:41 `/` → `/kontakt` Firefox Linux), facebook.com 1 (20:46 `/` iOS), bez odsyłacza 3 (13:12 `/pilotaz` Android, 17:49 `/` Chrome Linux, 22:53 `/strefa-wiedzy/faktury-z-ksef-po-zmianie-biura` Android) |
+| podglądy linków FB | 8 | 8 | 0 | utm narzedzia: 08:14 `/audyt-google-ads` 3×, 12:05 `/audyt-strony` 2×; 19:42 `/` 3× z www.facebook.com w tej samej sekundzie |
+| Google render po Z17 | 33 | 32 | 0 | `sainv5…` 22:25 do 23:50 pary Linux+Android, potem 5 pojedynczych pobrań do 02:30 (`/spis-stron`, `/n8n`, `/strona-po-wlamaniu`, 2 artykuły KSeF) |
+| własne Z3, Z6, Z7, Z13 | 0 | 0 | 0 | headless i `curl` licznik pomija; Resend 4 × `[audyt]` fluxlab.pl to testy Z6 |
+
+Wniosek: 6 osób, żadna nic nie uruchomiła, nikt nie zostawił adresu; nowe zdarzenia po Z2/Z5 jeszcze nie wystąpiły. Z15 nadal zablokowane: GSC o 03:48 „Ostatnia aktualizacja: 46 godzin temu”, dane do 6.10, 28 dni bez zmian (16 kliknięć, 433 wyświetlenia).
+**Ruch:** ostatnia doba 23 odsłony, 22 osoby (−19% wobec średniej 28,4). Źródła: facebook 5, www.facebook.com 3, l.facebook.com 2, www.google.com 1, facebook.com 1. Z telefonu 10 z 23. Uruchomienia narzędzi 0. Tydzień: 212 odsłon, 140 osób (+114%).
+**Dowód:** `SELECT … FROM wizyty WHERE czas>=1791604800 AND czas<1791682200` na VPS; Resend `GET /emails` (4 wiersze z doby, wszystkie fluxlab.pl); linia Z22 w `cykl/plan-ruchu.md`. Kod strony bez zmian, bez builda i IndexNow.
+**Dla Pawła:** bez zmian: komentarze Gofin z wpisów 08:50 (1559884), 13:55 (1559826) i 14:55 (1559890), Profit Polska, timery grup FB.
+**Zostało otwarte:** Z23 (od 04:46, bilans planu), Z15 (ponowny odczyt GSC).
