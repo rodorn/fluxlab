@@ -351,6 +351,12 @@ export const categories: Category[] = [
         bezOkladki: true,
       },
       {
+        href: "/strefa-wiedzy/samofakturowanie-ksef",
+        title: "Samofakturowanie w KSeF",
+        description: "Umowa, uprawnienie w KSeF i pole P_17.",
+        bezOkladki: true,
+      },
+      {
         href: "/strefa-wiedzy/oznaczenia-jpk-ksef",
         title: "Oznaczenia KSeF w JPK_VAT",
         description: "Numer KSeF, OFF, BFK czy DI: co wpisać w ewidencji.",

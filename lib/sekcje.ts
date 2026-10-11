@@ -183,6 +183,7 @@ export const SEKCJE: Sekcja[] = [
           s("/strefa-wiedzy/blad-w-fakturze-ksef", "Błąd w fakturze w KSeF"),
           s("/strefa-wiedzy/faktura-zaliczkowa-ksef", "Faktura zaliczkowa w KSeF"),
           s("/strefa-wiedzy/oznaczenia-jpk-ksef", "Oznaczenia KSeF w JPK_VAT"),
+          s("/strefa-wiedzy/samofakturowanie-ksef", "Samofakturowanie w KSeF"),
           s("/strefa-wiedzy/faktura-dla-osoby-prywatnej-ksef", "Faktura dla osoby prywatnej a KSeF"),
           s("/strefa-wiedzy/jaka-forma-opodatkowania-jdg-2026", "Forma opodatkowania JDG 2026"),
           s("/strefa-wiedzy/jak-liczyc-zdrowotna-jdg", "Składka zdrowotna w JDG"),
