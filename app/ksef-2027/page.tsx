@@ -13,7 +13,7 @@ import NazwaNarzedzia from "@/components/NazwaNarzedzia";
 export const metadata: Metadata = {
   title: "KSeF od 1 stycznia 2027: lista kontrolna dla firm | Fluxlab",
   description:
-    "Koniec przepisów przejściowych KSeF 1.01.2027. Siedem pytań: faktury poza KSeF, kasa, numer KSeF w przelewie, koszty, tryb offline, numeracja, odrzucenia.",
+    "1 stycznia 2027 kończą się przepisy przejściowe KSeF: znika limit 10 tys. zł, faktury z kas wchodzą do KSeF, a przelew ma zawierać numer KSeF.",
   alternates: { canonical: "/ksef-2027" },
   openGraph: {
     title: "KSeF od 1 stycznia 2027: co musicie mieć domknięte",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 const faq = [
   {
     q: "Co się zmienia w KSeF 1 stycznia 2027?",
-    a: "Kończą się wszystkie przepisy przejściowe. Znika limit 10 tys. zł na faktury poza KSeF, faktury z kas też muszą przez niego przechodzić, a przelew za fakturę z KSeF między czynnymi podatnikami VAT ma zawierać jej numer KSeF.",
+    a: "Kończą się wszystkie przepisy przejściowe: znika limit na faktury poza KSeF, faktury z kas wchodzą do KSeF, a przelew między czynnymi podatnikami VAT ma zawierać numer KSeF.",
   },
   {
     q: "Czy kary za fakturę poza KSeF zaczną obowiązywać w 2027?",
@@ -65,9 +65,10 @@ export default function Ksef2027Page() {
               KSeF od 1 stycznia 2027: co musicie mieć domknięte
             </h1>
             <p className="mt-5 text-lg text-gray-600 dark:text-gray-300">
-              Tego dnia kończą się przepisy przejściowe KSeF. Siedem pytań
+              1 stycznia 2027 kończą się przepisy przejściowe KSeF i każda
+              faktura dla firmy musi przejść przez system. Siedem pytań
               pokazuje, co zostało do zrobienia, a na końcu dostajecie wykaz
-              braków dla księgowej. Bez rejestracji.
+              braków dla księgowej.
             </p>
           </div>
 
