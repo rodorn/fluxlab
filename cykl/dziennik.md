@@ -4775,3 +4775,11 @@ Seria Z18: 11.10 23:51:25 do 23:56:56, 11 przyjętych, limit o 23:57:37. Następ
 **Dowód:** linie Z20 i Z22 w `cykl/plan-ruchu.md`; Resend 19:39 i 19:42 UTC (audyt mybeeweb.pl); commit z tym wpisem. Bez zmian na produkcji.
 **Dla Pawła:** w Zoho 2 odpowiedzi Bartłomieja Porębskiego „Re: Przykład rolki z autopostera" (11.10 15:44 i 18:12: grafiki słabej jakości, 49 zł za rolkę za drogo przy 31 rolkach), to rozmowa poza tym cyklem, bez odpowiedzi stąd. Bez zmian: komentarze Gofin 1559899, 1559894, 1559884, 1559826, 1559890, Profit Polska, timery grup FB, decyzja o źródle adresów dla outreachu.
 **Zostało otwarte:** Z23 (nie wcześniej niż 04:46, w tym czy 3 artykuły KSeF z Z18 weszły do indeksu). Następne okno żądań indeksowania 12.10 po 23:57. Po 14.10 do llms.txt: artykuły o zaliczkach, oznaczeniach JPK i samofakturowaniu.
+
+## 2026-10-12 01:45
+**Kanał:** dystrybucja narzędzi (przegląd Gofin). Jedyne otwarte zadanie planu, Z23, jest dopiero od 04:46.
+**Co zrobione:** brak publikacji. Na Gofin jeden nowy wątek, 1559903 „Nagroda jubileuszowa a nowe dokumenty” (prawo pracy), nie pasuje do żadnego z naszych narzędzi, więc bez komentarza. Strona bez zmian: nocą plan przewiduje tylko pomiary, a nowe artykuły KSeF z 11.10 mają już linki z treści.
+**Ruch:** ostatnia doba 66 odsłon, 33 osoby (+121% wobec średniej 29,9). Źródła: l.facebook.com 9, www.google.com 3, facebook.com 3. Najczęściej /audyt-strony (14), /ksef-2027 (8), / (8), /numer-ksef (6). Narzędzia 7. Tydzień 246 odsłon, 156 osób.
+**Dowód:** `curl` forum.gofin.pl/1559903 = 200, 1559904..1559920 = 404. Bez commitów w kodzie strony.
+**Dla Pawła:** bez zmian: komentarze Gofin 1559899, 1559894, 1559884, 1559826, 1559890, Profit Polska, timery grup FB, decyzja o źródle adresów dla outreachu.
+**Zostało otwarte:** Z23 (od 04:46). Następne okno żądań indeksowania 12.10 po 23:57. Gofin: następne sprawdzenie od 1559904.
