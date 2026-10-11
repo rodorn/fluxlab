@@ -30,7 +30,7 @@ export default function IntegracjaCrmZErp() {
       breadcrumb="Integracja CRM z ERP"
       eyebrow="Integracje"
       h1="Integracja CRM z ERP"
-      lead="Handlowcy pracują w CRM, księgowość i magazyn w ERP, a pomiędzy nimi ktoś przepisuje dane. Spinamy oba systemy tak, żeby dane szły same, a rozjazd był widoczny od razu."
+      lead="Handlowcy pracują w CRM, a księgowość i magazyn w ERP. Spinamy oba systemy: CRM z danymi z ERP, bez przepisywania i z rozjazdem widocznym od razu."
       ctaLabel="Opisz swoje dwa systemy"
       ctaNote="Odpisujemy zwykle tego samego dnia"
       powiazane={[
@@ -58,11 +58,11 @@ export default function IntegracjaCrmZErp() {
         },
         {
           title: "Moment wysłania dokumentu",
-          desc: "Zwykle przy wygranej szansie, a przy zamówieniach częściowych dopiero po potwierdzeniu dostępności.",
+          desc: "Przy wygranej szansie, a przy zamówieniach częściowych po potwierdzeniu dostępności.",
         },
         {
           title: "Obsługa błędów",
-          desc: "Nieudane operacje trafiają do kolejki i są ponawiane. Jeśli dalej nie przechodzą, dostajecie jedno zbiorcze powiadomienie.",
+          desc: "Nieudane operacje wracają do kolejki, a uporczywe błędy przychodzą w jednym powiadomieniu.",
         },
         {
           title: "Stany i ceny w drugą stronę",
@@ -111,20 +111,20 @@ export default function IntegracjaCrmZErp() {
       ]}
       faq={[
         {
+          q: "Co daje integracja ERP z CRM?",
+          a: "Kontrahent i dokument sprzedaży trafiają do ERP bez przepisywania. Handlowiec widzi w CRM ceny, stany i status płatności.",
+        },
+        {
+          q: "Czy warto integrować CRM z ERP?",
+          a: "Tak, jeśli ktoś dziś przepisuje dane między systemami. Sens oceniamy na bezpłatnym rozpoznaniu.",
+        },
+        {
+          q: "Kto wdraża integrację CRM z ERP?",
+          a: "My: rozpoznanie, wdrożenie i przekazanie kodu z dokumentacją. Jeden kierunek trwa zwykle dwa do trzech tygodni.",
+        },
+        {
           q: "Z jakimi systemami to robicie?",
-          a: "Od strony CRM najczęściej Pipedrive i HubSpot. Od strony ERP liczy się, czy system ma interfejs, czy tylko import i eksport plików. Przy plikach synchronizacja działa cyklicznie.",
-        },
-        {
-          q: "Ile to trwa?",
-          a: "Wariant jednokierunkowy zwykle dwa do trzech tygodni od otrzymania dostępów testowych do obu systemów.",
-        },
-        {
-          q: "Czy dane wychodzą poza naszą firmę?",
-          a: "Nie muszą. Integrację można postawić na Waszym serwerze.",
-        },
-        {
-          q: "Co zostaje po zakończeniu?",
-          a: "Kod, dostępy i dokumentacja po Waszej stronie. Bez abonamentu, opieka jest dobrowolna.",
+          a: "Najczęściej Pipedrive i HubSpot. Od strony ERP liczy się, czy system ma interfejs, czy tylko pliki.",
         },
       ]}
       formId="integracja_erp"

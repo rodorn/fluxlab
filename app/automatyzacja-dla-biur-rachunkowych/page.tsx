@@ -168,8 +168,14 @@ export default function AutomatyzacjaDlaBiurRachunkowych() {
               </p>
               <p>
                 Synchronizacja w jedną stronę to 1 do 2 tygodni, dwukierunkowa z
-                rozrachunkami 3 do 4 tygodni. Więcej o łączeniu systemów na
-                stronie{" "}
+                rozrachunkami 3 do 4 tygodni. Więcej:{" "}
+                <Link
+                  href="/integracja-crm-z-erp"
+                  className="text-accent hover:underline"
+                >
+                  integracja CRM z ERP
+                </Link>{" "}
+                i{" "}
                 <Link
                   href="/integracje-api"
                   className="text-accent hover:underline"

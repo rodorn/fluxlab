@@ -42,7 +42,7 @@ const offer = [
   },
   {
     title: "Logika biznesowa i webhooki",
-    desc: "Zmiany etapów i follow-upy uruchamiają się same, w czasie rzeczywistym.",
+    desc: "Zmiany etapów i follow-upy uruchamiają się same.",
   },
   {
     title: "Raporty i czysta baza",
@@ -104,19 +104,26 @@ export default function AutomatyzacjaPipedrive() {
                       ))}
                     </div>
                     <p className="mt-8 max-w-3xl text-gray-500 dark:text-gray-400 leading-relaxed">
-                      Zwykle zaczynamy od dwóch rzeczy:{" "}
+                      Zwykle zaczynamy od{" "}
                       <Link
                         href="/automatyzacja-follow-up"
                         className="text-accent hover:underline"
                       >
-                        follow-upy po ofercie
+                        follow-upów po ofercie
                       </Link>
                       {" "}i{" "}
                       <Link
                         href="/czas-reakcji-na-leada"
                         className="text-accent hover:underline"
                       >
-                        czas reakcji na nowego leada
+                        czasu reakcji na leada
+                      </Link>
+                      , potem{" "}
+                      <Link
+                        href="/integracja-crm-z-erp"
+                        className="text-accent hover:underline"
+                      >
+                        integracja CRM z ERP
                       </Link>
                       .
                     </p>
