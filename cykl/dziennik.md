@@ -4521,3 +4521,52 @@ Wniosek: 6 osób, żadna nic nie uruchomiła, nikt nie zostawił adresu; nowe zd
 **Dowód:** `SELECT … FROM wizyty WHERE czas>=1791604800 AND czas<1791682200` na VPS; Resend `GET /emails` (4 wiersze z doby, wszystkie fluxlab.pl); linia Z22 w `cykl/plan-ruchu.md`. Kod strony bez zmian, bez builda i IndexNow.
 **Dla Pawła:** bez zmian: komentarze Gofin z wpisów 08:50 (1559884), 13:55 (1559826) i 14:55 (1559890), Profit Polska, timery grup FB.
 **Zostało otwarte:** Z23 (od 04:46, bilans planu), Z15 (ponowny odczyt GSC).
+
+## 2026-10-11 04:55
+**Kanał:** Google (Z15, odczyt GSC po odświeżeniu) i pomiar (Z23, bilans planu).
+**Co zrobione:** Search Console po raz pierwszy od 9.10 ma nowe dni (7.10 i 8.10): 28 dni 19 kliknięć, 692 wyświetlenia (było 433), CTR 2,7%, pozycja 14,6; plan 10.10/11 zamknięty, 23 z 23 zadań.
+**Ruch:** ostatnia doba 23 odsłony, 22 osoby (−19% wobec średniej 28,4). Źródła: facebook 5, www.facebook.com 3, l.facebook.com 2, www.google.com 1, facebook.com 1. Z telefonu 10 z 23. Uruchomienia narzędzi 0. Tydzień: 212 odsłon, 140 osób (+114%).
+
+### Bilans planu 2026-10-10/11
+
+`python3 cykl/pomiar-kanalow.py` (04:48): 24 h 22 sesje / 23 odsłony (bez odsyłacza 11, facebook 11 łącznie z podglądami, www.google.com 1). 7 dni 140 sesji / 183 odsłony: bez odsyłacza 69, facebook 24 (utm narzedzia, głównie podglądy linków), mail 18 (ksiegowe 12), www.google.com 17, chatgpt.com 2, narzedzie 2, useme 1, m.baidu 1. Zdarzenia 7 dni: audyt 6 + 2 ze strony głównej, skan KRS 3 + 2 z linku + 2 zwykłe, 1 `klik_po_wyniku`, 1 `lead_landing` (Profit Polska, 5.10). Sesje dziennie: 26, 25, 27 (5 do 7.10, outreach), potem 12, 16, 17. Resend 24 h 4 (testy Z6, delivered 4/4), Zoho 24 h INBOX 0, Spam 0.
+
+| zadanie | zrobione | dowód | co przyprowadziło |
+|---|---|---|---|
+| Z1 lejek audytu | tak | 4 sesje ludzi w 14 dni, 0 `audyt_mail_*`, 0 `audyt_klik_zlecam` | 0 (pomiar) |
+| Z2 lejek skanu KRS | tak | commit 63c15d8, zdanie z linkiem i `edor_klik_kontakt` | 0 dotąd |
+| Z3 crawl higieny | tak | `cykl/crawl-2026-10-10.json`, 119/119 = 200 | 0 (pomiar) |
+| Z4 naprawa linków | tak, bez zmian | 0 linków bez 200, 0 duplikatów | 0 |
+| Z5 formularz raportu wyżej | tak | commit 3a98172 | 0 dotąd |
+| Z6 sprawdzenie na produkcji | tak | Resend 01a12426…, mail w Zoho w 1 min | 0 (test) |
+| Z7 telefon 390 px | tak | 6 stron scrollWidth 390, menu 5 pozycji 200 | 0 |
+| Z8 sieroty | tak | commit 68cc008, 3 linki | 0 dotąd |
+| Z9 pomiar południe | tak | Zoho 0 odpowiedzi, Resend 3/3 | 0 |
+| Z10 kolejka FB | tak | 16 z 24 sesji FB to podglądy, ludzi 2 do 6 | 0 |
+| Z11 CWV, HTTPS, linki | tak | CWV za mało danych, HTTPS 22/0, 1 link zewnętrzny (zleca.pl) | 0 |
+| Z12 indeks serii 9.10 | tak | 9 z 9 w Google, poza `/panel-zwrotow` | wyświetlenia stron serii (np. e-Doręczenia 138) |
+| Z13 skrócenie `/produkty` | tak | commit 96130c4, 2696 → 1573 słów | 0 dotąd |
+| Z14 FAQ > 4 | tak, bez zmian | 0 stron do cięcia | 0 |
+| Z15 odczyt GSC | tak | 28 dni 19/692, dane do 8.10 | pomiar |
+| Z16 lista do serii | tak | 7 adresów 200, canonical | 0 |
+| Z17 żądania indeksowania | tak | 11 z 13 przyjętych, 23:43:42 do 23:49:17 | za 1 do 3 dni |
+| Z18 pomiar wieczór | tak | Resend 4/4, Zoho 0 | 0 |
+| Z19 asystenci AI | tak | chatgpt.com 2 sesje w 7 dni | 0 nowych |
+| Z20 Bing | tak | 0 kl. / 15 wyśw. 7 dni, 7 cytowań w Copilocie | 0 |
+| Z21 kolejka na poniedziałek | tak | 058 asset-lublin.pl bez BAE, kolejka 1 | 0 dziś |
+| Z22 pomiar doby | tak | 6 osób, 0 uruchomień, 0 adresów | 0 |
+| Z23 bilans | tak | ten wpis | 0 |
+
+**Narzędzia.** Lejek audytu (Z1): 4 osoby w 14 dni uruchomiły audyt, najdalej doszły do rozwinięcia sekcji, 0 do formularza raportu, 0 kliknięć „zlecam”, 1 lead (Profit Polska z 5.10). Skan KRS (Z2): 9 sesji ze skanem, 0 kliknięć po wyniku od ludzi, 0 leadów. Zmiany: Z5 przeniósł formularz raportu pod „Co znaleźliśmy” (390 px y 3604+ → 2494 lokalnie), Z2 wymienił zdanie pod wynikiem KRS na link do wyceny ze zdarzeniem `edor_klik_kontakt`. Sprawdzenie 17.10: w `ruch.sqlite` zdarzenia `audyt_mail_*` i `edor_klik_kontakt` od 10.10 bez sesji własnych; przy co najmniej 5 audytach i 0 maili formularz nie jest przeszkodą, tylko brak powodu.
+
+**Higiena.** 404 naprawionych 0 (nie było żadnego), duplikatów tytułu i opisu 0, sieroty podlinkowane 3 z 5 (`/jak-pracuje`, `/realizacje`, `/case-study`; `/spis-stron` i `/regulamin` celowo pominięte), stron skróconych 1 (`/produkty` −41,7%), stron z FAQ powyżej 4 zaległych 0 (72 strony mają 4 pytania).
+
+**Indeksowanie.** Z17: 11 z 13 przyjętych, ostatnie 23:49:17 10.10, limit od 23:49:44. Następne okno 11.10 po 23:50: `/strefa-wiedzy/faktura-dla-osoby-prywatnej-ksef` (nie w Google) i `/strefa-wiedzy/faktura-gdy-ksef-nie-dziala` (już w Google, niski priorytet).
+
+**GSC (Z15).** Nowe dni są (7.10 i 8.10), ale dalej sprzed zmian tytułów z 9.10. Strony ze zmianą tytułu mają wyświetlenia: e-Doręczenia 138, biura rachunkowe 97, numer KSeF 30, audyt Google Ads 13, automatyzacja vs zatrudnienie 6. Seria 7.10: 3 z 10 stron ma pierwsze wyświetlenia (po 1). Kliknięcia spoza marki 28 dni: 1 („krajowy system e-faktur”) plus pojedyncze na stronach `/ksef-2027` (2), `/e-doreczenia-integracja`, `/automatyzacja-dla-biur-rachunkowych`, `/numer-ksef`, `/strony-www`. Ocena tytułów najwcześniej 13.10, gdy GSC pokaże 10.10.
+
+**Bing (Z20).** 0 kliknięć, 15 wyświetleń w 7 dni, mapa 109 adresów bez błędów, IndexNow 507 łącznie, 7 cytowań w Copilocie.
+
+**Dowód:** linie Z15 i Z23 w `cykl/plan-ruchu.md` (pełne tabele zapytań i stron 28 dni); odczyt GSC z profilu 9228 o 04:45 („Ostatnia aktualizacja: 55,5 godziny temu”, wykres 19.09 do 8.10). Kod strony bez zmian, bez builda i IndexNow.
+**Dla Pawła:** bez zmian: komentarze Gofin z wpisów 08:50 (1559884), 13:55 (1559826) i 14:55 (1559890), Profit Polska, timery grup FB, decyzja o źródle adresów dla outreachu.
+**Zostało otwarte:** plan 10.10/11 bez otwartych zadań; strateg pisze nowy o 06:15. Na nowy plan: 2 żądania indeksowania po 23:50, sprawdzenie zdarzeń po Z2/Z5 17.10, ocena tytułów od 13.10.
