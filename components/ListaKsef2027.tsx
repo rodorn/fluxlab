@@ -87,6 +87,7 @@ const PUNKTY: Punkt[] = [
   },
   {
     klucz: "odrzucenia",
+    linki: [{ fraza: "Faktura odrzucona po cichu", href: "/strefa-wiedzy/blad-w-fakturze-ksef" }],
     pytanie:
       "Czy widzicie, która faktura została odrzucona albo jeszcze nie wysłana?",
     zmiana:
