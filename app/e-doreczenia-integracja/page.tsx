@@ -28,18 +28,21 @@ export default function EDoreczeniaIntegracja() {
           <EDoreczeniaCheck />
           <section className="mt-10 max-w-3xl">
             <h2 className="h2-sekcji">
-              Spółka z KRS bez adresu do e-Doręczeń: co to znaczy i jak sprawdzić
+              Spółka z KRS bez adresu do e-Doręczeń: co to znaczy i jak
+              sprawdzić
             </h2>
             <div className="mt-4 space-y-4 text-gray-600 dark:text-gray-300">
               <p>
-                Spółka wpisana do KRS przed 2025 rokiem musi mieć adres od 1 kwietnia
-                2025, później wpisana od dnia wpisu. Adres widać w odpisie KRS, w dziale
-                1. Gdy go tam nie ma, spółka adresu nie ma albo nie aktywowała skrzynki.
+                Spółka wpisana do KRS przed 2025 rokiem musi mieć adres od 1
+                kwietnia 2025, później wpisana od dnia wpisu. Adres widać w
+                odpisie KRS, w dziale 1. Gdy go tam nie ma, spółka adresu nie ma
+                albo nie aktywowała skrzynki.
               </p>
               <p>
-                5 października 2026 sprawdziliśmy tak 119 spółek: 27 z nich nadal nie ma
-                adresu w bazie. Wpiszcie numer KRS w narzędziu powyżej, w trybie „Spółka:
-                po numerze KRS”, a pokażemy, czy adres jest w odpisie.
+                5 października 2026 sprawdziliśmy tak 119 spółek: 27 z nich
+                nadal nie ma adresu w bazie. Wpiszcie numer KRS w narzędziu
+                powyżej, w trybie „Spółka: po numerze KRS”, a pokażemy, czy
+                adres jest w odpisie.
               </p>
             </div>
           </section>
@@ -100,7 +103,7 @@ export default function EDoreczeniaIntegracja() {
         },
         {
           name: "Odbiór pism",
-          price: "3 900 zł",
+          price: "1 490 zł",
           desc: "Najczęstszy zakres na start.",
           features: [
             "Pisma i dowody doręczenia w Waszym systemie",
@@ -111,7 +114,7 @@ export default function EDoreczeniaIntegracja() {
         },
         {
           name: "Odbiór i wysyłka",
-          price: "7 900 zł",
+          price: "2 900 zł",
           desc: "Z wysyłaniem pism z Waszego systemu.",
           features: [
             "Wszystko z odbioru pism",
