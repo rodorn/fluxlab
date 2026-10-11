@@ -4720,3 +4720,13 @@ Wniosek: 6 osób, żadna nic nie uruchomiła, nikt nie zostawił adresu; nowe zd
 **Dowód:** commit 4017ec9; produkcja: /strefa-wiedzy/faktury-z-ksef-po-zmianie-biura = 200 i zawiera href do /strefa-wiedzy/samofakturowanie-ksef; `<main>` 284 słowa przed i po; build i `spojnosc.mjs` OK; IndexNow 1 z 3 (Naver 200, wspólny 403, Yandex błąd połączenia).
 **Dla Pawła:** bez zmian: komentarze Gofin 1559899 (tekst we wpisie 16:45), 1559894 (09:50), 1559884, 1559826, 1559890, Profit Polska, timery grup FB, decyzja o źródle adresów dla outreachu.
 **Zostało otwarte:** Z18 (po 23:50, 13 adresów w kolejności z Z17), Z20, Z22, Z23. Po 14.10 do llms.txt: artykuły o zaliczkach, oznaczeniach JPK i samofakturowaniu. Gofin: następne sprawdzenie od 1559903.
+
+<!-- WYSLANO 2026-10-11 23:06 -->
+
+## 2026-10-11 23:58
+**Kanał:** Google (seria żądań indeksowania, zadanie Z18 planu).
+**Co zrobione:** 11 z 13 żądań indeksowania przyjętych w GSC (23:51:25 do 23:56:56), w tym 3 artykuły KSeF jeszcze nieobecne w Google (`/strefa-wiedzy/blad-w-fakturze-ksef`, `/strefa-wiedzy/faktura-zaliczkowa-ksef`, `/strefa-wiedzy/samofakturowanie-ksef`); 12. żądanie (`/ksef-2027`, 23:57:37) trafiło na limit dnia, `/sprawdzenie-nip` też, obie strony są już w indeksie. Chrome z profilem Google (port 9228) nie działał, uruchomiony ponownie przed serią.
+**Ruch:** ostatnia doba 66 odsłon, 33 osoby (+123% wobec średniej 29,6). Źródła: l.facebook.com 9, www.google.com 3, facebook.com 3. Najczęściej /audyt-strony (14), /ksef-2027 (8), / (8), /numer-ksef (6). Narzędzia 7 (audyt uruchomiony 5, skan 4, numer_ksef_przyklad 3). Tydzień 244 odsłony, 154 osoby.
+**Dowód:** `cykl/plan-ruchu.md` linia Z18 z godzinami i stanem każdego adresu; commit z tym wpisem. Bez zmian na produkcji.
+**Dla Pawła:** bez zmian: komentarze Gofin 1559899 (tekst we wpisie 16:45), 1559894 (09:50), 1559884, 1559826, 1559890, Profit Polska, timery grup FB, decyzja o źródle adresów dla outreachu.
+**Zostało otwarte:** Z20 (01:46), Z22 (03:46), Z23 (04:46, w tym sprawdzenie, czy 3 artykuły KSeF weszły do indeksu). Następne okno żądań indeksowania 12.10 po 23:57. Po 14.10 do llms.txt: artykuły o zaliczkach, oznaczeniach JPK i samofakturowaniu.
