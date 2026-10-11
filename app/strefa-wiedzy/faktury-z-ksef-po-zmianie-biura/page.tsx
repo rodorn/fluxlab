@@ -83,19 +83,28 @@ export default function FakturyZKsefPoZmianieBiuraArticle() {
             <section>
               <h2 className="mb-4 h2-sekcji">Co zrobić krok po kroku</h2>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                Osoba uprawniona w firmie loguje się do Aplikacji Podatnika
-                KSeF i nadaje biuru, po jego NIP, uprawnienie do przeglądania
-                faktur. Biuro widzi wtedy faktury wystawione i otrzymane za
-                cały okres, w którym firma była w KSeF.
+                Osoba uprawniona nadaje biuru w Aplikacji Podatnika KSeF, po
+                NIP, uprawnienie do przeglądania faktur, tak jak nabywcy przy{" "}
+                <Link
+                  href="/strefa-wiedzy/samofakturowanie-ksef"
+                  className="text-accent hover:underline"
+                >
+                  samofakturowaniu
+                </Link>
+                . Biuro widzi wtedy faktury wystawione i otrzymane za cały
+                okres, w którym firma była w KSeF.
               </p>
             </section>
             <section>
               <h2 className="mb-4 h2-sekcji">Czego w KSeF nie ma</h2>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                Faktur sprzed wejścia firmy do KSeF, paragonów i deklaracji
-                VAT. Przy fakturach z KSeF datę przyjęcia widać w samym numerze,
-                co sprawdzi nasz{" "}
-                <Link href="/numer-ksef" className="text-accent hover:underline">
+                Faktur sprzed wejścia firmy do KSeF, paragonów i deklaracji VAT.
+                Przy fakturach z KSeF datę przyjęcia widać w samym numerze, co
+                sprawdzi nasz{" "}
+                <Link
+                  href="/numer-ksef"
+                  className="text-accent hover:underline"
+                >
                   bezpłatny odczyt numeru KSeF
                 </Link>
                 .
