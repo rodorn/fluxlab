@@ -93,7 +93,14 @@ export default function NumeracjaFakturKsef2027Article() {
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                 Firm, które w 2026 wystawiały faktury w KSeF i zerują numerację
                 co roku albo co miesiąc bez roku w numerze (FV 1, FV 2 albo
-                1/01). Pierwszy powtórzony numer w 2027 wróci jako odrzucenie.
+                1/01). Pierwszy powtórzony numer w 2027{" "}
+                <Link
+                  href="/strefa-wiedzy/blad-w-fakturze-ksef"
+                  className="text-accent hover:underline"
+                >
+                  wróci jako odrzucenie
+                </Link>
+                .
               </p>
             </section>
             <section>
