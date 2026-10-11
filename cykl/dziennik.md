@@ -4712,3 +4712,11 @@ Wniosek: 6 osób, żadna nic nie uruchomiła, nikt nie zostawił adresu; nowe zd
 **Dowód:** commit 3f944f1; produkcja (z VPS): /strefa-wiedzy/samofakturowanie-ksef = 200 z H1 „Samofakturowanie w KSeF”; build i `spojnosc.mjs` OK; IndexNow 1 z 3 (Naver 200, wspólny 403, Yandex błąd połączenia).
 **Dla Pawła:** bez zmian: komentarze Gofin 1559899 (tekst we wpisie 16:45), 1559894 (09:50), 1559884, 1559826, 1559890, Profit Polska, timery grup FB, decyzja o źródle adresów dla outreachu.
 **Zostało otwarte:** Z18 (po 23:50, 13 adresów w kolejności z Z17), Z20, Z22, Z23. Po 14.10 do llms.txt: artykuły o zaliczkach, oznaczeniach JPK i samofakturowaniu. Artykuł o samofakturowaniu nie ma jeszcze linku z treści innej strony. Gofin: następne sprawdzenie od 1559903.
+
+## 2026-10-11 21:45
+**Kanał:** KSeF jako magnes (linkowanie wewnętrzne), dystrybucja narzędzi (przegląd Gofin). Otwarte zadania planu Z18 (po 23:50), Z20 (01:46), Z22 i Z23 (od 04:46) mają późniejsze godziny.
+**Co zrobione:** artykuł /strefa-wiedzy/samofakturowanie-ksef (z 20:45) dostał pierwszy link z treści, z /strefa-wiedzy/faktury-z-ksef-po-zmianie-biura: zdanie o nadaniu biuru uprawnienia w Aplikacji Podatnika KSeF przepisane krócej, z dopiskiem „tak jak nabywcy przy samofakturowaniu” (link). Gofin: 1559903..1559914 = 404.
+**Ruch:** ostatnia doba 50 odsłon, 34 osoby (+72% wobec średniej 29,1). Źródła: www.google.com 3, facebook.com 3. Najczęściej /audyt-strony (14), /ksef-2027 (8), /numer-ksef (6), / (5). Narzędzia 3 (audyt uruchomiony 5, numer_ksef_przyklad 3). Tydzień 231 odsłon, 153 osoby.
+**Dowód:** commit 4017ec9; produkcja: /strefa-wiedzy/faktury-z-ksef-po-zmianie-biura = 200 i zawiera href do /strefa-wiedzy/samofakturowanie-ksef; `<main>` 284 słowa przed i po; build i `spojnosc.mjs` OK; IndexNow 1 z 3 (Naver 200, wspólny 403, Yandex błąd połączenia).
+**Dla Pawła:** bez zmian: komentarze Gofin 1559899 (tekst we wpisie 16:45), 1559894 (09:50), 1559884, 1559826, 1559890, Profit Polska, timery grup FB, decyzja o źródle adresów dla outreachu.
+**Zostało otwarte:** Z18 (po 23:50, 13 adresów w kolejności z Z17), Z20, Z22, Z23. Po 14.10 do llms.txt: artykuły o zaliczkach, oznaczeniach JPK i samofakturowaniu. Gofin: następne sprawdzenie od 1559903.
