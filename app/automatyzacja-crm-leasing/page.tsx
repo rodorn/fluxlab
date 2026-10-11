@@ -80,24 +80,24 @@ const diagramSteps = [
 
 const faq = [
   {
-    question: "Czy automatyzacja BIK/KRD jest legalna?",
+    question: "Czym różni się CRM dla firm leasingowych od zwykłego CRM?",
     answer:
-      "Tak, jeśli macie zgodę klienta i umowę z BIK lub KRD. CRM odpytuje API dopiero po zgodzie i zapisuje wynik w dealu. Wdrożenie konsultujemy z Waszym prawnikiem lub IOD.",
+      "Zwykły CRM kończy się na leadzie. CRM dla firm leasingowych sam robi scoring BIK/KRD, wniosek do leasingodawcy i prowizję.",
+  },
+  {
+    question: "Jak zautomatyzować scoring leasingowy w CRM?",
+    answer:
+      "Po zgodzie klienta CRM odpytuje BIK lub KRD przez API i zapisuje scoring w dealu. Wymaga to umowy z BIK lub KRD.",
   },
   {
     question: "Mamy własny CRM sprzed lat. Da się go spiąć?",
     answer:
-      "Tak, jeśli ma API, eksport CSV albo dostęp do bazy. Zwykle budujemy warstwę pośrednią (n8n self-hosted), która łączy systemy bez wymiany CRM.",
+      "Tak, jeśli ma API, eksport CSV albo dostęp do bazy. Łączymy go przez n8n, bez wymiany CRM.",
   },
   {
     question: "Czy musimy integrować się ze wszystkimi leasingodawcami?",
     answer:
       "Nie. Zaczynamy od 1-2 partnerów, którzy dają większość wolumenu. Gdy ktoś nie ma API, automatyzujemy wysyłkę dokumentów do jego portalu.",
-  },
-  {
-    question: "Co z RODO?",
-    answer:
-      "Automatyzację stawiamy na n8n self-hosted na Waszym serwerze w Polsce lub EOG. Konfigurujemy retencję, rejestr zgód i logi dostępu.",
   },
 ];
 
@@ -130,13 +130,12 @@ export default function AutomatyzacjaCrmLeasing() {
             <div className="max-w-3xl">
               <p className="section-label mb-4">Branża</p>
               <h1 className="h1-strony mb-6">
-                Automatyzacja leadów i CRM dla firm leasingowych, finansowych i
-                brokerskich
+                CRM dla firm leasingowych, finansowych i brokerskich
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
-                Automatyzujemy obsługę leada od wpadnięcia do CRM, przez BIK/KRD
-                i wniosek do leasingodawcy, aż po prowizję. Zgodnie z RODO i
-                wymogami sektora finansowego.
+                CRM dla branży leasingowej sam robi scoring BIK/KRD, wypełnia
+                wniosek do leasingodawcy i liczy prowizję. Raport pokazuje
+                każdy wniosek od leada do wypłaty, zgodnie z RODO.
               </p>
               <TrackedCTA
                 href="#sekcje"
