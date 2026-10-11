@@ -4730,3 +4730,48 @@ Wniosek: 6 osób, żadna nic nie uruchomiła, nikt nie zostawił adresu; nowe zd
 **Dowód:** `cykl/plan-ruchu.md` linia Z18 z godzinami i stanem każdego adresu; commit z tym wpisem. Bez zmian na produkcji.
 **Dla Pawła:** bez zmian: komentarze Gofin 1559899 (tekst we wpisie 16:45), 1559894 (09:50), 1559884, 1559826, 1559890, Profit Polska, timery grup FB, decyzja o źródle adresów dla outreachu.
 **Zostało otwarte:** Z20 (01:46), Z22 (03:46), Z23 (04:46, w tym sprawdzenie, czy 3 artykuły KSeF weszły do indeksu). Następne okno żądań indeksowania 12.10 po 23:57. Po 14.10 do llms.txt: artykuły o zaliczkach, oznaczeniach JPK i samofakturowaniu.
+
+## Bilans planu 2026-10-11/12 (00:55)
+`pomiar-kanalow.py` 00:52: 24 h 32 sesje, 43 odsłony (bez odsyłacza 28, www.google.com 2, facebook.com 1, l.facebook.com 1); 7 dni 155 sesji, 196 odsłon (bez odsyłacza 85, facebook/narzedzia 21, google 18, mail 17, chatgpt.com 2). Kampanie 7 dni: facebook/narzedzia 21, mail/ksiegowe 16, test-krs 1, edoreczenia-krs 1. Zdarzenia 7 dni: audyt uruchomiony 11, numer KSeF przykład 4, skan KRS 3 + 2 z linku, lead_landing 1. Resend 24 h 6 (powiadomienia o audytach, delivered). Zoho 24 h: INBOX 2 (Bartłomiej Porębski, autoposter), Spam 0. Po odjęciu automatów i renderów (Z20): realnie 4 osoby, w tym 1 audyt cudzej strony z Facebooka (mybeeweb.pl).
+
+| zadanie | stan | dowód | co przyprowadziło w dobie |
+|---|---|---|---|
+| Z1 pomiar GSC | zrobione | 3 wiadomości z września, 10/10 adresów w Google | 0 (pomiar) |
+| Z2 leasing H1/FAQ | zrobione | a0b8cdd, poz. 1 w SERP z personalizacją | 0 |
+| Z3 linki do leasingu | zrobione | 9c1a42f, linki 1 → 4 | 0 |
+| Z4 CRM z ERP FAQ | zrobione | 12ff99f, 3 pytania z GSC | 0 |
+| Z5 automatyzacja AI | zrobione | 1888d8b | 0 |
+| Z6 skan KRS u biur | zrobione | 97fcbf8 | 0 skanów z tej strony |
+| Z7 kontrola 390 px | zrobione | 4 zrzuty, scrollWidth 390 | 0 |
+| Z8 pomiar południe | zrobione | 0 wierszy do 07:04 | 0 |
+| Z9 linki do 6 artykułów KSeF | zrobione | 56e6a75, każdy ≥2 linki z filarów | 0 |
+| Z10 ksef-2027 opis | zrobione | 5a985cf | 0 (ocena od 13.10) |
+| Z11 sprawdzenie NIP | zrobione | 521a5aa | 0 |
+| Z12 strony z ≤2 linkami | zrobione | 37fa3fc | 0 |
+| Z13 wyniki rozszerzone | zrobione | 0 błędów na 4 stronach | 0 |
+| Z14 pomiar wieczór | zrobione | 0 wierszy 13:46 do 15:45 | 0 |
+| Z15 asystenci AI | zrobione | 0 wejść z asystentów od 7.10, ukryte 239/356 | 0 |
+| Z16 Bing | zrobione | mapa przesłana 08:01, 15 wyświetleń | 0 |
+| Z17 lista serii | zrobione | 13 adresów, 200/canonical/sitemap/robots | 0 |
+| Z18 żądania indeksowania | zrobione | 11 z 13 przyjętych 23:51 do 23:56 | 0 (wynik po dobie) |
+| Z19 SERP | zrobione | „fluxlab" poz. 1, leasing poz. 1 (personalizacja) | 0 |
+| Z20 pomiar doby | zrobione | 43 sesje, 4 osoby pewne, 6 zdarzeń ludzi | 0 (pomiar) |
+| Z21 nic nie wyśle się samo | zrobione | 0 timerów z wysyłką, kolejka 1 plik (058) | 0 |
+| Z22 bilans | zrobione | ten wpis | 0 |
+| Z23 GSC po odświeżeniu | otwarte | nie wcześniej niż 04:46 | |
+
+Ludzie doby: Google 1 (macOS, `/audyt-kurierski`, `/realizacje`, `/`), Facebook 2 (iOS z audytem mybeeweb.pl, Opera z katalogiem produktów), bez odsyłacza 1 (`/pilotaz`). Żadna z 23 pozycji planu nie przyprowadziła w tej dobie mierzalnie nikogo; zmiany tytułów i linków są do oceny od 13.10 (GSC ma dane do 8.10).
+
+Słowa stron zmienionych 11.10 (przed → po, z dowodów zadań): leasing 471 → 467; leadow-crm 655 → 654; crm-jako-system-pracy 582 → 582; integracja-crm-z-erp 605 → 604 → 602; automatyzacja-ai 280 → 279; ai-w-automatyzacji-firm 144 → 144; biura 602 → 600 → 600; pipedrive 254 → 254; ksef-2027 1614 → 1612 (Z10), `<main>` 1567 → 1525 (d25edba, 08:45, inna metoda liczenia); numer-ksef 289 → 289; e-doreczenia-integracja 934 → 934; ksef-integracja 1818 → 1818; zapier-make-n8n-porownanie 672 → 672; sprawdzenie-nip 275 → 275; faktura-gdy-ksef-nie-dziala 311 → 312 (kropka po linku); faktury-z-ksef-po-zmianie-biura 284 → 284. Commity 13:44 (link w liście KSeF 2027), 15:45 (kiedy-odliczyc), 18:44 (numeracja) to tylko linki na istniejących frazach, bez nowych zdań. Żadna strona nie jest dłuższa. Nowe krótkie artykuły: blad-w-fakturze-ksef, faktura-zaliczkowa-ksef, oznaczenia-jpk-ksef, samofakturowanie-ksef. Poza planem: 05b0558 (cennik, 14:59) i 5a9107b (ceny e-Doręczeń, 12:32) zmieniły ceny, nie długość; ddca3f7 (11:44) znów zmienił llms.txt mimo zakazu do 14.10.
+
+Linie bazowe GSC (28 dni, dane do 8.10), ocena od 18.10: `/automatyzacja-ai` 0 kl. / 0 wyśw. / brak pozycji; `/ksef-2027` 2 / 65 / CTR 3,1% / poz. 8,4; `/automatyzacja-crm-leasing` 0 / 35 / poz. 22,3; `/integracja-crm-z-erp` 0 / 21 / poz. 13; `/strefa-wiedzy/ai-w-automatyzacji-firm` 0 / 30 / poz. 28,2.
+
+Seria Z18: 11.10 23:51:25 do 23:56:56, 11 przyjętych, limit o 23:57:37. Następne okno żądań indeksowania: 12.10 po 23:57.
+
+## 2026-10-12 00:55
+**Kanał:** pomiar (zadania Z20 i Z22 planu).
+**Co zrobione:** pomiar doby 11.10 (Z20) i bilans planu (Z22, wpis wyżej); z 43 sesji w bazie realnych ludzi 4, w tym jedna osoba z Facebooka uruchomiła audyt cudzej strony (mybeeweb.pl, 94/100), reszta to własne testy, render Google po serii Z18 i paczki w tej samej sekundzie.
+**Ruch:** raport: ostatnia doba 65 odsłon, 32 osoby (+118% wobec średniej 29,9), narzędzia 7; po ręcznym odsianiu realnie 4 osoby: Facebook 2, Google 1, bez odsyłacza 1. Tydzień 245 odsłon, 155 osób.
+**Dowód:** linie Z20 i Z22 w `cykl/plan-ruchu.md`; Resend 19:39 i 19:42 UTC (audyt mybeeweb.pl); commit z tym wpisem. Bez zmian na produkcji.
+**Dla Pawła:** w Zoho 2 odpowiedzi Bartłomieja Porębskiego „Re: Przykład rolki z autopostera" (11.10 15:44 i 18:12: grafiki słabej jakości, 49 zł za rolkę za drogo przy 31 rolkach), to rozmowa poza tym cyklem, bez odpowiedzi stąd. Bez zmian: komentarze Gofin 1559899, 1559894, 1559884, 1559826, 1559890, Profit Polska, timery grup FB, decyzja o źródle adresów dla outreachu.
+**Zostało otwarte:** Z23 (nie wcześniej niż 04:46, w tym czy 3 artykuły KSeF z Z18 weszły do indeksu). Następne okno żądań indeksowania 12.10 po 23:57. Po 14.10 do llms.txt: artykuły o zaliczkach, oznaczeniach JPK i samofakturowaniu.
