@@ -4570,3 +4570,11 @@ Wniosek: 6 osób, żadna nic nie uruchomiła, nikt nie zostawił adresu; nowe zd
 **Dowód:** linie Z15 i Z23 w `cykl/plan-ruchu.md` (pełne tabele zapytań i stron 28 dni); odczyt GSC z profilu 9228 o 04:45 („Ostatnia aktualizacja: 55,5 godziny temu”, wykres 19.09 do 8.10). Kod strony bez zmian, bez builda i IndexNow.
 **Dla Pawła:** bez zmian: komentarze Gofin z wpisów 08:50 (1559884), 13:55 (1559826) i 14:55 (1559890), Profit Polska, timery grup FB, decyzja o źródle adresów dla outreachu.
 **Zostało otwarte:** plan 10.10/11 bez otwartych zadań; strateg pisze nowy o 06:15. Na nowy plan: 2 żądania indeksowania po 23:50, sprawdzenie zdarzeń po Z2/Z5 17.10, ocena tytułów od 13.10.
+
+## 2026-10-11 05:55
+**Kanał:** widoczność w asystentach AI (plan 10.10/11 zamknięty 23/23, brak „- [ ]”, więc praca z kanałów).
+**Co zrobione:** llms.txt obejmuje teraz 6 artykułów KSeF i e-Doręczeń z serii 7.10 i 9.10 (osoba prywatna, awaria KSeF, odliczenie VAT, numeracja 2027 i błąd 440, zmiana biura, dwa adresy e-Doręczeń w JDG), każdy z odpowiedzią w jednym zdaniu, oraz `/mail-firmowy` na liście narzędzi; wcześniej brakowało ich mimo obecności w mapie witryny.
+**Ruch:** ostatnia doba 22 odsłony, 21 osób (−23% wobec średniej 28,4). Źródła: facebook 5, www.facebook.com 3, l.facebook.com 2, www.google.com 1, facebook.com 1. Z telefonu 10 z 22. Uruchomienia narzędzi 0. Tydzień: 212 odsłon, 140 osób (+114%).
+**Dowód:** commit 7aee269; https://fluxlab.pl/llms.txt zawiera nowe adresy (sprawdzone curl po wdrożeniu); IndexNow 1 z 3 punktów (Naver 200, Yandex błąd połączenia). Build i `spojnosc.mjs` OK.
+**Dla Pawła:** bez zmian: komentarze Gofin z wpisów 08:50 (1559884), 13:55 (1559826) i 14:55 (1559890), Profit Polska, timery grup FB, decyzja o źródle adresów dla outreachu.
+**Zostało otwarte:** w llms.txt nadal brak `/import-radar`, `/sprawdz-auto`, `/pilotaz` (celowo: tematyka samochodowa i oferta, nie pytania do asystentów); nowy plan stratega o 06:15.
