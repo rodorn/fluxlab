@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
+import { zLinkami, type LinkWTekscie } from "@/lib/zLinkami";
 
 const OPIS =
   "Fakturę z KSeF uznaje się za otrzymaną w dniu nadania numeru KSeF. Od tego dnia, a nie od daty wystawienia, zależy miesiąc odliczenia VAT.";
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
   },
 };
 
-const faq = [
+const faq: { q: string; a: string; linki?: LinkWTekscie[] }[] = [
   {
     q: "Faktura wystawiona 30 września, numer KSeF nadany 1 października. Kiedy odliczamy VAT?",
     a: "Najwcześniej w JPK_V7 za październik. Za otrzymaną uznaje się ją 1 października, czyli w dniu nadania numeru.",
@@ -40,6 +41,7 @@ const faq = [
   {
     q: "Czy przy zaliczce liczy się data zapłaty?",
     a: "Zapłata tworzy obowiązek podatkowy u sprzedawcy, ale odliczenie i tak nie może wypaść przed okresem, w którym nadano numer KSeF faktury zaliczkowej.",
+    linki: [{ fraza: "faktury zaliczkowej", href: "/strefa-wiedzy/faktura-zaliczkowa-ksef" }],
   },
   {
     q: "A faktura wystawiona w trybie offline?",
@@ -124,7 +126,7 @@ export default function KiedyOdliczycVatKsefArticle() {
                       {f.q}
                     </summary>
                     <p className="px-6 pb-6 text-gray-600 dark:text-gray-400">
-                      {f.a}
+                      {zLinkami(f.a, f.linki)}
                     </p>
                   </details>
                 ))}

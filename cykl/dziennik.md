@@ -4667,3 +4667,13 @@ Wniosek: 6 osób, żadna nic nie uruchomiła, nikt nie zostawił adresu; nowe zd
 **Dowód:** commit 1052f44; produkcja: /strefa-wiedzy/faktura-zaliczkowa-ksef = 200 z nowym H1; build i `spojnosc.mjs` OK; IndexNow 1 z 3 (Naver 200, wspólny 403, Yandex błąd połączenia).
 **Dla Pawła:** bez zmian: komentarz Gofin 1559894 (tekst we wpisie 09:50) oraz komentarze z wpisów 08:50 (1559884), 13:55 (1559826) i 14:55 (1559890), Profit Polska, timery grup FB, decyzja o źródle adresów dla outreachu.
 **Zostało otwarte:** Z14 (19:46), Z18 (po 23:50, dopisać /strefa-wiedzy/blad-w-fakturze-ksef i /strefa-wiedzy/faktura-zaliczkowa-ksef, jeśli jest miejsce), Z20, Z22, Z23. llms.txt: dopisać artykuł o zaliczkach po 14.10. Gofin: następne sprawdzenie od 1559899.
+
+<!-- WYSLANO 2026-10-11 15:05 -->
+
+## 2026-10-11 15:45
+**Kanał:** pomiar (plan Z14), KSeF jako magnes (linkowanie wewnętrzne), dystrybucja narzędzi (przegląd).
+**Co zrobione:** Z14 zamknięte w oknie od 13:46 (wcześniejsze przebiegi odkładały je wbrew planowi, który pozwala brać je od razu). Artykuł /strefa-wiedzy/faktura-zaliczkowa-ksef dostał pierwszy link z treści: fraza „faktury zaliczkowej” w FAQ /strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef, bez nowych słów. Gofin: 1559899 = 404, brak nowych wątków.
+**Ruch:** ostatnia doba 44 odsłony, 35 osób. Źródła: www.facebook.com 3, l.facebook.com 2, www.google.com 1, facebook.com 1. Narzędzia 3 (audyt 3, numer_ksef_przyklad 3). Od 13:46 do 15:45 zero wejść w bazie (ostatnie 12:24, kolektor działa). Resend: o 14:29 audyt adwokatkurek.pl 61/100 bez wiersza w bazie (blokada licznika albo `fl_nie_licz`). Zoho od 13:46: 0.
+**Dowód:** plan Z14 => liczby; commit ponizej; build i `spojnosc.mjs` OK.
+**Dla Pawła:** bez zmian: komentarz Gofin 1559894 (tekst we wpisie 09:50) oraz komentarze z wpisów 08:50 (1559884), 13:55 (1559826) i 14:55 (1559890), Profit Polska, timery grup FB, decyzja o źródle adresów dla outreachu.
+**Zostało otwarte:** Z18 (po 23:50, z /strefa-wiedzy/blad-w-fakturze-ksef i /strefa-wiedzy/faktura-zaliczkowa-ksef, jeśli jest miejsce), Z20, Z22, Z23. Gofin: następne sprawdzenie od 1559899.
