@@ -4610,3 +4610,18 @@ Wniosek: 6 osób, żadna nic nie uruchomiła, nikt nie zostawił adresu; nowe zd
 **Dowód:** commit d25edba; produkcja sprawdzona `curl` z VPS (fraza nagłówka znikła z /ksef-2027, została na /ksef-integracja); słowa `<main>` /ksef-2027 1567 → 1525; build i `spojnosc.mjs` OK; IndexNow 1 z 3 (Naver 200).
 **Dla Pawła:** bez zmian: komentarze Gofin z wpisów 08:50 (1559884), 13:55 (1559826) i 14:55 (1559890), Profit Polska, timery grup FB, decyzja o źródle adresów dla outreachu.
 **Zostało otwarte:** Z14 (19:46), Z18 (po 23:50), Z20, Z22, Z23. Z14/Z20 niech liczą `uruchomiono_liste_ksef_2027` osobno, to pierwszy pomiar listy po zmianie.
+
+## 2026-10-11 09:50
+**Kanał:** dystrybucja narzędzi (Gofin). Otwarte zadania planu Z14 (19:46), Z18 (po 23:50), Z20, Z22, Z23 mają późniejsze godziny.
+**Co zrobione:** Na Gofin jeden nowy wątek, 1559894 „Ile więcej będę płacił zus” (10.10 21:44): JDG na skali, faktura 6700 zł netto, koniec preferencyjnego ZUS, pyta o nową kwotę faktury; dwa komentarze bez wyliczenia. Przygotowana odpowiedź z wyliczeniem (faktura ok. 8171 zł, różnica 1470,57 zł równa różnicy składek, bo na skali w pierwszym progu ZUS odlicza się w całości), wskazaniem Małego ZUS Plus (ok. 1060 zł zamiast 1927 zł, 7 dni na zgłoszenie) i linkiem do `/kalkulator-podatkowy`, który liczy te same warianty tą samą metodą (`zusBase` w `TaxCalculator.tsx`).
+**Ruch:** ostatnia doba 30 odsłon, 29 osób (+4% wobec średniej 28,9). Źródła: www.facebook.com 3, facebook 2, l.facebook.com 2, www.google.com 1, facebook.com 1. Najczęściej /ksef-2027 (8), / (7). Z telefonu 20 z 30. Uruchomienia narzędzi 0. Tydzień 223 odsłony, 151 osób.
+**Dowód:** treść niżej (874 znaki z limitu 1000); `curl` forum.gofin.pl/1559895..1559915 = 404, `fluxlab.pl/kalkulator-podatkowy?utm_source=gofin` = 200. Formularz Gofin wymaga Turnstile i oznacza akceptację regulaminu, więc publikuje Paweł. Kod strony bez zmian.
+**Dla Pawła:** (1) NOWE: komentarz pod https://forum.gofin.pl/1559894 . Pole „Autor”: FluxLab, „Treść komentarza”: tekst niżej, zaznacz Turnstile, „+ Dodaj komentarz” (ok. 1 minuty). Pytający czeka, bo jego księgowa jest na urlopie, a wcześniejszy komentarz odmówił wyliczenia.
+> Na skali, przy dochodzie poniżej 120 tys. zł rocznie, faktura musi wzrosnąć dokładnie o różnicę w składkach społecznych, bo społeczne odlicza się od dochodu, a FP idzie w koszty. Przy 6700 zł netto i stawkach 2026 z chorobową: preferencyjny 456,19 zł, pełny 1926,76 zł z FP, różnica 1470,57 zł. Faktura ok. 8171 zł netto daje te same ok. 5233 zł na rękę, bo zdrowotna 9% i podatek liczą się od tego samego dochodu. Bez chorobowej różnica to 1367 zł. Wyliczone 1500 zł to więc dobry rząd.
+> 
+> Warto sprawdzić Mały ZUS Plus: jeśli działalność trwała cały 2025 rok, a przychód był poniżej 120 tys. zł, składki liczy się od połowy dochodu, przy tych kwotach ok. 1060 zł zamiast 1927 zł. Zgłoszenie jest w ciągu 7 dni od końca okresu preferencyjnego.
+> 
+> Pełny ZUS, Mały ZUS Plus i trzy formy opodatkowania w jednym porównaniu: https://fluxlab.pl/kalkulator-podatkowy?utm_source=gofin
+
+(2) Bez zmian: komentarze Gofin z wpisów 08:50 (1559884), 13:55 (1559826) i 14:55 (1559890), Profit Polska, timery grup FB, decyzja o źródle adresów dla outreachu.
+**Zostało otwarte:** Z14 (19:46), Z18 (po 23:50), Z20, Z22, Z23. Gofin: następne sprawdzenie od 1559895.
