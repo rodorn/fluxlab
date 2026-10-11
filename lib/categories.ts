@@ -345,6 +345,12 @@ export const categories: Category[] = [
         bezOkladki: true,
       },
       {
+        href: "/strefa-wiedzy/blad-w-fakturze-ksef",
+        title: "Błąd w fakturze w KSeF",
+        description: "Korekta, zły NIP i odrzucony plik: jak poprawić fakturę w KSeF.",
+        bezOkladki: true,
+      },
+      {
         href: "/strefa-wiedzy/faktura-dla-osoby-prywatnej-ksef",
         title: "Faktura dla osoby prywatnej a KSeF",
         description: "Dla konsumenta KSeF jest dobrowolny; jak przekazać fakturę z KSeF.",
