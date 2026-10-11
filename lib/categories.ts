@@ -345,6 +345,12 @@ export const categories: Category[] = [
         bezOkladki: true,
       },
       {
+        href: "/strefa-wiedzy/faktura-zaliczkowa-ksef",
+        title: "Faktura zaliczkowa w KSeF",
+        description: "Zaliczka, rozliczenie i numery KSeF zaliczek w fakturze końcowej.",
+        bezOkladki: true,
+      },
+      {
         href: "/strefa-wiedzy/blad-w-fakturze-ksef",
         title: "Błąd w fakturze w KSeF",
         description: "Korekta, zły NIP i odrzucony plik: jak poprawić fakturę w KSeF.",

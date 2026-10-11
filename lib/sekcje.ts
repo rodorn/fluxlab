@@ -181,6 +181,7 @@ export const SEKCJE: Sekcja[] = [
           s("/strefa-wiedzy/faktury-z-ksef-po-zmianie-biura", "Faktury z KSeF po zmianie biura"),
           s("/strefa-wiedzy/faktura-gdy-ksef-nie-dziala", "Faktura, gdy KSeF nie działa"),
           s("/strefa-wiedzy/blad-w-fakturze-ksef", "Błąd w fakturze w KSeF"),
+          s("/strefa-wiedzy/faktura-zaliczkowa-ksef", "Faktura zaliczkowa w KSeF"),
           s("/strefa-wiedzy/faktura-dla-osoby-prywatnej-ksef", "Faktura dla osoby prywatnej a KSeF"),
           s("/strefa-wiedzy/jaka-forma-opodatkowania-jdg-2026", "Forma opodatkowania JDG 2026"),
           s("/strefa-wiedzy/jak-liczyc-zdrowotna-jdg", "Składka zdrowotna w JDG"),
