@@ -44,7 +44,7 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
     {
       question: "Ile kosztuje automatyzacja jednego procesu?",
       answer:
-        "Wdrożenie pojedynczego procesu to u nas 1 500 do 8 000 zł, zależnie od liczby integracji i wyjątków. Narzędzia dla kilkunastu scenariuszy to zwykle 200 do 600 zł miesięcznie.",
+        "Wdrożenie pojedynczego procesu to u nas 990 do 8 000 zł, zależnie od liczby integracji i wyjątków. Narzędzia dla kilkunastu scenariuszy to zwykle 200 do 600 zł miesięcznie.",
     },
     {
       question: "Czy automatyzacja wymaga utrzymania?",

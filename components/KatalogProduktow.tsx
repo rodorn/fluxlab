@@ -25,7 +25,7 @@ import {
   PRICE_BAND_INTRO,
   PRICE_BAND_LABEL,
   PRICE_BAND_ORDER,
-  PRODUCTS,
+  CENNIK as PRODUCTS,
   pasmoCeny,
   type PriceBand,
   type ProductCategory,

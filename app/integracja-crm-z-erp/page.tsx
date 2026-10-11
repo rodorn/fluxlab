@@ -86,7 +86,7 @@ export default function IntegracjaCrmZErp() {
         },
         {
           name: "Jeden kierunek",
-          price: "2 900 zł",
+          price: "1 900 zł",
           desc: "Najczęstszy start: z CRM do ERP.",
           features: [
             "Kontrahent i dokument sprzedaży z CRM do ERP",
@@ -98,7 +98,7 @@ export default function IntegracjaCrmZErp() {
         },
         {
           name: "W obie strony",
-          price: "5 900 zł",
+          price: "3 500 zł",
           desc: "Z synchronizacją stanów i cen z powrotem.",
           features: [
             "Wszystko z wariantu jednokierunkowego",

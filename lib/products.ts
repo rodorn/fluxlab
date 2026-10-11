@@ -192,7 +192,7 @@ export const PRODUCTS: Product[] = [
     name: "Widoczność w AI",
     tagline: "Czy asystent w ogóle widzi Twoją stronę",
     desc: "Klient coraz częściej pyta asystenta o firmę do konkretnego zadania zamiast wpisywać frazę w wyszukiwarkę. Sprawdzamy siedem warunków, od których zależy, czy Twoja strona może w takiej odpowiedzi wystąpić: dostęp dla robotów, treść bez skryptów, dane uporządkowane, metadane, mapa strony i llms.txt.",
-    price: "0 zł",
+    price: "od 890 zł",
     href: "/widocznosc-w-ai",
     grupa: "diagnostyka",
     narzedzie: true,
@@ -224,14 +224,14 @@ export const PRODUCTS: Product[] = [
     name: "Integracja z KSeF",
     tagline: "Faktury wychodzą tam, gdzie powstają",
     desc: "Krajowy System e-Faktur jest obowiązkowy, ale nikt nie każe przeklejać do niego faktur ręcznie z osobnej aplikacji. Spinamy z nim Wasz system: wysyłka w schemacie FA(3), zapis numeru KSeF i UPO przy dokumencie, pobieranie faktur kosztowych.",
-    price: "od 4 900 zł",
+    price: "od 1 900 zł",
     href: "/ksef-integracja",
     grupa: "integracje",
     narzedzie: true,
     cta: "Opisz, w czym fakturujecie",
     bullets: [
       "otwarty klient tego API z trybem demo, do uruchomienia przed decyzją",
-      "odbiór faktur kosztowych 4 900 zł, z wystawianiem 9 900 zł",
+      "odbiór faktur kosztowych 1 900 zł, z wystawianiem 3 900 zł",
       "kod i dostępy zostają u Was",
     ],
   },
@@ -240,13 +240,13 @@ export const PRODUCTS: Product[] = [
     name: "Integracja CRM z ERP",
     tagline: "Koniec z przepisywaniem w obie strony",
     desc: "Handlowcy pracują w CRM, księgowość i magazyn w ERP, a między nimi stoi człowiek przepisujący dane. Spinamy oba systemy: kontrahenci, dokumenty sprzedaży, stany i ceny, z kolejką ponowień i powiadomieniem, gdy coś nie przejdzie.",
-    price: "od 2 900 zł",
+    price: "od 1 900 zł",
     href: "/integracja-crm-z-erp",
     grupa: "integracje",
     cta: "Opisz swoje dwa systemy",
     bullets: [
       "rozpoznanie i lista niedopasowanych kontrahentów za darmo",
-      "jeden kierunek 2 900 zł, w obie strony 5 900 zł",
+      "jeden kierunek 1 900 zł, w obie strony 3 500 zł",
       "kod i dostępy zostają u Ciebie, bez abonamentu za dostęp",
     ],
   },
@@ -302,7 +302,7 @@ export const PRODUCTS: Product[] = [
     name: "Audyt poczty firmowej",
     tagline: "SPF, DKIM i DMARC w jednym raporcie",
     desc: "Automat sprawdza, czy Twoja domena jest poprawnie zabezpieczona i czy ktoś może podszyć się pod Twój adres. To najczęstszy powód, dla którego firmowe maile lądują w spamie.",
-    price: "0 zł",
+    price: "od 299 zł",
     href: "/audyt-poczty",
     grupa: "naprawy",
     narzedzie: true,
@@ -334,7 +334,7 @@ export const PRODUCTS: Product[] = [
     name: "Integracje API",
     tagline: "Spięcie systemów, które nie chcą rozmawiać",
     desc: "Łączymy sklep, CRM, ERP i hurtownie tak, żeby dane przechodziły same: synchronizacja przyrostowa, obsługa limitów API i logi, które pokazują cichy błąd zanim zepsuje dane.",
-    price: "od 1 500 zł",
+    price: "od 990 zł",
     href: "/integracje-api",
     grupa: "integracje",
     cta: "Opisz integrację",
@@ -673,6 +673,12 @@ export function cenaWejscia(price: string): number | null {
   const liczba = price.replace(/(\d)[\s  ](?=\d)/g, "$1").match(/\d+/);
   return liczba ? Number(liczba[0]) : null;
 }
+
+/**
+ * Cennik pokazuje tylko to, za co się płaci. Pozycje za 0 zł są darmowymi
+ * narzędziami i mieszkają w dziale Narzędzia, a nie w cenniku.
+ */
+export const CENNIK = PRODUCTS.filter((p) => cenaWejscia(p.price) !== 0);
 
 export function pasmoCeny(price: string): PriceBand {
   const kwota = cenaWejscia(price);

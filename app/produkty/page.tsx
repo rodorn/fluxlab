@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TrackedCTA from "@/components/TrackedCTA";
 import KatalogProduktow from "@/components/KatalogProduktow";
-import { PRODUCTS } from "@/lib/products";
+import { CENNIK as PRODUCTS } from "@/lib/products";
 
 export const metadata: Metadata = {
   title: "Cennik: usługi ze stałą ceną | Fluxlab",
@@ -34,7 +34,11 @@ export default function ProduktyPage() {
     <>
       <Header />
       <main className="pt-16">
-        <Breadcrumbs href="/produkty" kolumna="srodek" items={[{ label: "Cennik" }]} />
+        <Breadcrumbs
+          href="/produkty"
+          kolumna="srodek"
+          items={[{ label: "Cennik" }]}
+        />
         <section className="pt-12 lg:pt-24 pb-10 lg:pb-12 bg-gray-50 dark:bg-gray-900/50 border-b border-gray-100 dark:border-gray-800">
           <div className="container-wide">
             <div className="max-w-3xl mx-auto text-center">
@@ -45,6 +49,16 @@ export default function ProduktyPage() {
               <p className="text-lg text-gray-600 dark:text-gray-400">
                 Każda pozycja ma podaną kwotę wejścia i konkretny efekt, a wynik
                 odsyłamy mailem.
+              </p>
+              <p className="mt-4 text-sm text-gray-600 dark:text-gray-400">
+                Darmowe sprawdzenia i kalkulatory są w dziale{" "}
+                <Link
+                  href="/narzedzia"
+                  className="font-semibold text-accent hover:underline"
+                >
+                  Narzędzia
+                </Link>
+                .
               </p>
             </div>
           </div>

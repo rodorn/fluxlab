@@ -81,7 +81,7 @@ export default function KsefIntegracja() {
         },
         {
           name: "Odbiór faktur kosztowych",
-          price: "4 900 zł",
+          price: "1 900 zł",
           desc: "Najczęstszy zakres na start.",
           features: [
             "Faktury zakupowe pobierane z KSeF automatycznie",
@@ -93,7 +93,7 @@ export default function KsefIntegracja() {
         },
         {
           name: "Wystawianie i odbiór",
-          price: "9 900 zł",
+          price: "3 900 zł",
           desc: "Z wysyłaniem faktur z Waszego systemu.",
           features: [
             "Wszystko z wariantu podstawowego",
