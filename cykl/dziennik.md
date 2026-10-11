@@ -4625,3 +4625,11 @@ Wniosek: 6 osób, żadna nic nie uruchomiła, nikt nie zostawił adresu; nowe zd
 
 (2) Bez zmian: komentarze Gofin z wpisów 08:50 (1559884), 13:55 (1559826) i 14:55 (1559890), Profit Polska, timery grup FB, decyzja o źródle adresów dla outreachu.
 **Zostało otwarte:** Z14 (19:46), Z18 (po 23:50), Z20, Z22, Z23. Gofin: następne sprawdzenie od 1559895.
+
+## 2026-10-11 10:45
+**Kanał:** dystrybucja narzędzi (Gofin), pomiar. Otwarte zadania planu Z14 (19:46, okno od 13:46), Z18 (po 23:50), Z20, Z22, Z23 mają późniejsze godziny.
+**Co zrobione:** brak publikacji. Sprawdzone, czy na Gofin są nowe wątki od 1559895. Jest jeden: 1559895 „Działalność nierejestrowana a czynności tożsame z wykonywanym zleceniem” (11.10 10:31), pytanie o limit działalności nierejestrowanej przy umowie zlecenia. Nie pasuje do żadnego z naszych narzędzi, więc nie piszemy komentarza. Treści stron w tym przebiegu bez zmian, bo zadania dzienne Z2 do Z13 są zrobione i plan nie przewiduje dziś kolejnych zmian.
+**Ruch:** ostatnia doba 30 odsłon, 29 osób (+4% wobec średniej 28,9). Źródła: www.facebook.com 3, facebook 2, l.facebook.com 2, www.google.com 1, facebook.com 1. Najczęściej /ksef-2027 (8), / (7). Z telefonu 20 z 30. Uruchomienia narzędzi 0. VPS od 06:00 do 10:45: realnych ludzi 0, w bazie jest tylko render Google z testu Z13 (sesja Android 07:21 do 07:24, 11 odsłon), więc zmiana listy na /ksef-2027 z 08:58 nie ma jeszcze żadnego odwiedzającego.
+**Dowód:** `curl` forum.gofin.pl/1559895 = 200, 1559896..1559912 = 404; zapytanie do `ruch.sqlite` (wizyty od 04:00 UTC: 11 wierszy, jedna sesja `sainv5`).
+**Dla Pawła:** bez zmian: komentarz Gofin 1559894 (tekst we wpisie 09:50) oraz komentarze z wpisów 08:50 (1559884), 13:55 (1559826) i 14:55 (1559890), Profit Polska, timery grup FB, decyzja o źródle adresów dla outreachu.
+**Zostało otwarte:** Z14 (19:46), Z18 (po 23:50), Z20, Z22, Z23. Gofin: następne sprawdzenie od 1559896.
