@@ -1,5 +1,4 @@
 import Link from "next/link";
-import KtoZaTymStoi from "@/components/KtoZaTymStoi";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import TileVideo from "@/components/TileVideo";
@@ -313,12 +312,6 @@ export default function Home() {
                 </Link>
               ))}
             </div>
-          </div>
-        </section>
-
-        <section className="relative z-20 border-t border-gray-200 py-12 dark:border-white/10 lg:py-16">
-          <div className="container-wide">
-            <KtoZaTymStoi />
           </div>
         </section>
 

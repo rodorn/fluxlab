@@ -415,7 +415,8 @@ const OPIS_MAX = 160;
 // Duplikat tytulu znaczy, ze dwie strony walcza w wyszukiwarce o to samo.
 const znaneTytuly = new Map();
 const pages = sourceFiles.filter(
-  (f) => /^app\/.*\/page\.tsx$/.test(f) || f === "app/page.tsx",
+  (f) =>
+    (/^app\/.*\/page\.tsx$/.test(f) && !/\/_/.test(f)) || f === "app/page.tsx",
 );
 for (const f of pages) {
   const body = read(f);

@@ -226,7 +226,6 @@ export const SEKCJE: Sekcja[] = [
       {
         nazwa: "O nas",
         strony: [
-          s("/o-nas", "Kto za tym stoi"),
           s("/realizacje", "Realizacje"),
           s("/case-study", "Modelowe przepływy"),
           s("/jak-pracuje", "Jak pracujemy"),

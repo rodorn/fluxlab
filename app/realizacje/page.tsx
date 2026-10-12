@@ -4,7 +4,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import CTA from "@/components/CTA";
-import KtoZaTymStoi from "@/components/KtoZaTymStoi";
 import { WDROZENIA } from "@/lib/wdrozenia";
 
 export const metadata: Metadata = {
@@ -205,10 +204,6 @@ export default function RealizacjePage() {
                 </p>
               </article>
             ))}
-          </div>
-
-          <div className="mt-12">
-            <KtoZaTymStoi />
           </div>
 
           <div className="mx-auto mt-20 max-w-3xl text-center">
