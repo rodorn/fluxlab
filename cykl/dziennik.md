@@ -4849,3 +4849,11 @@ Seria Z18: 11.10 23:51:25 do 23:56:56, 11 przyjętych, limit o 23:57:37. Następ
 **Dowód:** linia Z6 w `cykl/plan-ruchu.md`. Wynik słaby lub średni: 4 sesje (useme.com, bestcollect.pl, satisfly.co, domena Profit Polska), formularz raportu 0, formularz leada 1 (Profit Polska 5.10). 4 z 9 sesji to testy fluxlab.pl z telefonu i Linuksa bez `fl_nie_licz`. Osoby z wynikiem średnim kończą na wyniku albo wracają na stronę główną; nikt nie zostawił adresu do raportu.
 **Dla Pawła:** telefon Androida, z którego 11.10 10:56 do 11:09 szły 3 audyty fluxlab.pl, nie ma `fl_nie_licz` (wejdź na https://fluxlab.pl/nie-licz-mnie z tego telefonu). Reszta bez zmian wobec 06:50.
 **Zostało otwarte:** Z7 (zmiana, warunek spełniony: 0 formularzy raportu) czeka na rytm razem z Z3 do Z5; następne (lekkie): Z8 od 13:46, Z9.
+
+## 2026-10-12 09:56
+**Kanał:** Google (Z9 planu, lekkie, wzięte przed godziną planu). Rytm budżetu 09:43 „wstrzymaj”, nowy cykl NIE, reset za 48 h: Z3, Z4, Z5, Z7 (zmiana) dalej odłożone do rytmu „utrzymaj”.
+**Co zrobione:** odczyt raportu Strony, wskaźników i HTTPS w GSC, kontrola 34 niezindeksowanych stron z VPS i lista 10 kandydatów do serii indeksowania Z17/Z18; bez zmian na stronie.
+**Ruch:** ostatnia doba 65 odsłon, 32 osoby (+104% wobec średniej 31,9). Źródła: l.facebook.com 9, www.google.com 5, facebook.com 3, www.bing.com 1. Najczęściej /audyt-strony (14), / (10), /numer-ksef (6). Narzędzia 7.
+**Dowód:** linia Z9 w `cykl/plan-ruchu.md`. GSC (dane do 9.10): zindeksowane 106 (4.10: 73), niezindeksowane 90; „alternatywna z canonical” 34 to same adresy www. (zamierzone); „wykryta, niezindeksowana” 29 stron, których Google jeszcze nie skanował; „zeskanowana” 20, z czego stron tylko 5 i wszystkie już były w seriach 10.10 i 11.10. 34/34 stron: 200, canonical na siebie, w mapie, index. Wskaźniki: za mało danych; HTTPS 43/0.
+**Dla Pawła:** bez zmian wobec 08:50 (telefon Androida bez `fl_nie_licz`: https://fluxlab.pl/nie-licz-mnie; źródło adresów do outreachu; B. Porębski; Profit Polska; post na LinkedIn).
+**Zostało otwarte:** Z3 do Z5, Z7 (zmiana) czekają na rytm; następne (lekkie): Z8 od 13:46, Z11 (Bing), Z13, Z15; seria indeksowania Z17/Z18 po 23:58 z listy Z9.
