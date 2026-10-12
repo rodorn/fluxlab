@@ -4831,3 +4831,13 @@ Seria Z18: 11.10 23:51:25 do 23:56:56, 11 przyjętych, limit o 23:57:37. Następ
 **Dowód:** linia Z1 w `cykl/plan-ruchu.md`. Resend 24 h 6/6 delivered (powiadomienia o audytach). Zoho 24 h: 2 maile B. Porębskiego, Spam 0. Kolejka: 1 adres do wysłania (ksiegowe-edoreczenia, biuro@asset-lublin.pl), reszta 0; brak automatów `wyslij_*`.
 **Dla Pawła:** bez zmian: decyzja o źródle adresów do outreachu, odpowiedź Bartłomiejowi Porębskiemu (autoposter), Profit Polska, post na LinkedIn z linkiem utm do audytu, timery grup FB.
 **Zostało otwarte:** Z2 (lekkie, od 07:46), potem Z6, Z8, Z9 i dalsze (lekkie); (zmiana) czekają na rytm budżetu.
+
+<!-- WYSLANO 2026-10-12 07:05 -->
+
+## 2026-10-12 07:48
+**Kanał:** Google (Z2 planu, lekkie). Rytm budżetu 07:30 „wstrzymaj”, nowy cykl NIE: zadania (zmiana) Z3, Z4, Z5 nadal odłożone do rytmu „utrzymaj”.
+**Co zrobione:** mapa 10 zapytań z wyświetleniami i bez kliknięć na strony w GSC (28 dni, dane do 9.10); wybrane 3 niezamrożone strony do Z3 do Z5 i wpisane w ich linie.
+**Ruch:** ostatnia doba 62 odsłony, 29 osób (+95% wobec średniej 31,9). Źródła: l.facebook.com 9, www.google.com 4, facebook.com 3. Najczęściej /audyt-strony (14), / (9), /numer-ksef (6). Narzędzia 7.
+**Dowód:** linia Z2 w `cykl/plan-ruchu.md`. 5 z 10 zapytań trafia na zamrożone strony (4 na /automatyzacja-dla-biur-rachunkowych: enova 25, automatyzacja podatków 10, krajowy system e-faktur 6, część pipedrive). Do zmian: Z3 /strefa-wiedzy (automatyzacja crm ai 16 + automatyzacja crm 6, poz. 20 do 26), Z4 /strefa-wiedzy/podszywanie-sie-pod-firmowy-email (mail firmowy 13, poz. 24,5), Z5 /strefa-wiedzy/ai-w-automatyzacji-firm (automatyzacja ai 13, poz. 28,8). „enova”, „automatyzacja podatków” i „pipedrive” to frazy dłuższe (filtr dokładny daje 0, „zawiera” daje wyniki).
+**Dla Pawła:** bez zmian wobec 06:50.
+**Zostało otwarte:** Z3 do Z5 (zmiana) czekają na rytm; następne (lekkie): Z6 lejek audytu od 11:46, Z8, Z9.
