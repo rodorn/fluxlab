@@ -4809,3 +4809,11 @@ Seria Z18: 11.10 23:51:25 do 23:56:56, 11 przyjętych, limit o 23:57:37. Następ
 **Dowód:** linia Z23 w `cykl/plan-ruchu.md` (tabele zapytań, stron i linie 8 stron ze zmianą tytułu dla 8.10 i 9.10: 2 kliknięcia z 87 wyświetleń, za mało na ocenę). Gofin 1559905..1559916 = 404, brak nowych wątków. Bez zmian na produkcji.
 **Dla Pawła:** bez zmian: komentarze Gofin 1559899, 1559894, 1559884, 1559826, 1559890, Profit Polska, timery grup FB, decyzja o źródle adresów dla outreachu.
 **Zostało otwarte:** plan 11.10 zamknięty (0 otwartych zadań), nowy plan stratega o 06:15. Ocena tytułów z 8.10 i 9.10 od 13.10. Następne okno żądań indeksowania 12.10 po 23:57. Gofin: następne sprawdzenie od 1559905.
+
+## 2026-10-12 05:45
+**Kanał:** dystrybucja narzędzi (przegląd Gofin). Plan 11.10 zamknięty (23 z 23, 0 otwartych), nowy plan stratega o 06:15.
+**Co zrobione:** brak publikacji i brak zmian na stronie: na Gofin od 1559905 do 1559916 brak nowych wątków (404), a do nowego planu zostało pół godziny.
+**Ruch:** ostatnia doba 71 odsłon, 38 osób (+134% wobec średniej 30,3). Źródła: l.facebook.com 9, www.google.com 3, facebook.com 3. Najczęściej /audyt-strony (14), /ksef-2027 (8), / (8), /numer-ksef (6). Narzędzia 7 (audyt uruchomiony 5, skan 4, numer_ksef_przyklad 3). Tydzień 254 odsłony, 164 osoby.
+**Dowód:** `curl` forum.gofin.pl/1559905..1559916 = 404. Bez commitów w kodzie strony.
+**Dla Pawła:** bez zmian: komentarze Gofin 1559899, 1559894, 1559884, 1559826, 1559890, Profit Polska, timery grup FB, decyzja o źródle adresów dla outreachu.
+**Zostało otwarte:** nowy plan stratega (06:15). Ocena tytułów z 8.10 i 9.10 od 13.10. Następne okno żądań indeksowania 12.10 po 23:57. Gofin: następne sprawdzenie od 1559905.
