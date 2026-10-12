@@ -105,6 +105,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/o-nas`,
+      changeFrequency: "monthly" as const,
+      priority: 0.85,
+    },
+    {
       url: `${baseUrl}/jak-pracuje`,
       changeFrequency: "monthly" as const,
       priority: 0.85,

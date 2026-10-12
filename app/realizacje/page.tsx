@@ -4,14 +4,16 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import CTA from "@/components/CTA";
+import KtoZaTymStoi from "@/components/KtoZaTymStoi";
+import { WDROZENIA } from "@/lib/wdrozenia";
 
 export const metadata: Metadata = {
-  title: "Realizacje, otwarty kod i działające narzędzia | Fluxlab",
+  title: "Realizacje: wdrożenia i ich efekty | Fluxlab",
   description:
-    "Publiczne repozytoria i działające prototypy Fluxlab: integracje API, automatyzacje, scraping, audyty i wideo AI. Zamiast obietnic, kod i demo.",
+    "Wdrożenia Fluxlab opisane problemem i wynikiem: wybór aut z tysięcy ogłoszeń, wniosek leasingowy z CRM, zdjęcia bez danych dealera, baza 30 000 wersji aut.",
   alternates: { canonical: "/realizacje" },
   openGraph: {
-    title: "Realizacje, otwarty kod i działające narzędzia | Fluxlab",
+    title: "Realizacje: wdrożenia i ich efekty | Fluxlab",
     description:
       "Publiczne repozytoria i działające prototypy Fluxlab: integracje API, automatyzacje, scraping, audyty i wideo AI.",
     locale: "pl_PL",
@@ -158,12 +160,62 @@ export default function RealizacjePage() {
 
           <div className="max-w-3xl mx-auto text-center">
             <p className="section-label mb-3">O nas</p>
-            <h1 className="h1-strony">
-              Zamiast obietnic, otwarty kod i działające narzędzia
-            </h1>
+            <h1 className="h1-strony">Wdrożenia i ich efekty</h1>
             <p className="mt-5 text-lg text-gray-600 dark:text-gray-300">
-              Publiczne repozytoria zbudowane przez nas. Otwórz kod na GitHubie
-              i oceń jakość, zanim cokolwiek zlecisz.
+              Co było problemem, co zrobiliśmy i co dało się zmierzyć. To
+              wdrożenia Pawła Iwanka w Carmore, firmie z branży leasingu i
+              sprzedaży samochodów, działające na produkcji.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-5 md:grid-cols-2">
+            {WDROZENIA.map((w) => (
+              <article
+                key={w.tytul}
+                className="flex flex-col rounded-2xl border border-gray-200/80 bg-white/60 p-6 dark:border-gray-800/80 dark:bg-gray-900/40"
+              >
+                <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
+                  {w.tytul}
+                </h2>
+                <dl className="mt-3 grow space-y-3 text-sm">
+                  <div>
+                    <dt className="font-semibold text-gray-900 dark:text-white">
+                      Problem
+                    </dt>
+                    <dd className="text-gray-600 dark:text-gray-400">
+                      {w.problem}
+                    </dd>
+                  </div>
+                  <div>
+                    <dt className="font-semibold text-gray-900 dark:text-white">
+                      Efekt
+                    </dt>
+                    <dd className="text-gray-600 dark:text-gray-400">
+                      {w.efekt}
+                    </dd>
+                  </div>
+                </dl>
+                <p className="mt-5 border-t border-gray-200 pt-4 dark:border-gray-800">
+                  <span className="text-2xl font-bold tabular-nums text-accent">
+                    {w.liczba}
+                  </span>{" "}
+                  <span className="text-sm text-gray-600 dark:text-gray-400">
+                    {w.liczbaOpis}
+                  </span>
+                </p>
+              </article>
+            ))}
+          </div>
+
+          <div className="mt-12">
+            <KtoZaTymStoi />
+          </div>
+
+          <div className="mx-auto mt-20 max-w-3xl text-center">
+            <h2 className="h2-sekcji">Otwarty kod, dla programistów</h2>
+            <p className="mt-3 text-gray-600 dark:text-gray-300">
+              Jeśli macie programistę, może ocenić naszą pracę w publicznych
+              repozytoriach poniżej.
             </p>
           </div>
 
@@ -171,9 +223,9 @@ export default function RealizacjePage() {
             {GROUPS.map((group) => (
               <div key={group.title}>
                 <div className="max-w-2xl mb-6">
-                  <h2 className="h2-sekcji">
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">
                     {group.title}
-                  </h2>
+                  </h3>
                   <p className="mt-2 text-gray-600 dark:text-gray-400">
                     {group.blurb}
                   </p>
@@ -185,9 +237,9 @@ export default function RealizacjePage() {
                       key={item.repo}
                       className="flex flex-col rounded-2xl border border-gray-200/80 dark:border-gray-800/80 bg-white/60 dark:bg-gray-900/40 p-6 transition-colors hover:border-accent/50"
                     >
-                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                      <h4 className="text-lg font-semibold text-gray-900 dark:text-white">
                         {item.name}
-                      </h3>
+                      </h4>
                       <p className="mt-2 text-sm text-gray-600 dark:text-gray-400 grow">
                         {item.desc}
                       </p>
