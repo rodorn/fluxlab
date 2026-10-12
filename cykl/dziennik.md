@@ -4857,3 +4857,12 @@ Seria Z18: 11.10 23:51:25 do 23:56:56, 11 przyjętych, limit o 23:57:37. Następ
 **Dowód:** linia Z9 w `cykl/plan-ruchu.md`. GSC (dane do 9.10): zindeksowane 106 (4.10: 73), niezindeksowane 90; „alternatywna z canonical” 34 to same adresy www. (zamierzone); „wykryta, niezindeksowana” 29 stron, których Google jeszcze nie skanował; „zeskanowana” 20, z czego stron tylko 5 i wszystkie już były w seriach 10.10 i 11.10. 34/34 stron: 200, canonical na siebie, w mapie, index. Wskaźniki: za mało danych; HTTPS 43/0.
 **Dla Pawła:** bez zmian wobec 08:50 (telefon Androida bez `fl_nie_licz`: https://fluxlab.pl/nie-licz-mnie; źródło adresów do outreachu; B. Porębski; Profit Polska; post na LinkedIn).
 **Zostało otwarte:** Z3 do Z5, Z7 (zmiana) czekają na rytm; następne (lekkie): Z8 od 13:46, Z11 (Bing), Z13, Z15; seria indeksowania Z17/Z18 po 23:58 z listy Z9.
+
+## 2026-10-12 10:50
+**Kanał:** Facebook (Z13 planu, lekkie, wzięte przed godziną planu). Rytm budżetu 10:43 „wstrzymaj”, nowy cykl NIE, reset za 47 h: Z3, Z4, Z5, Z7, Z10, Z12 (zmiana) dalej odłożone do rytmu „utrzymaj”.
+**Co zrobione:** rozbiór 31 sesji z Facebooka od 5.10 na posty fluxlab-meta; bez zmian na stronie i w kolejce postów.
+**Ruch:** ostatnia doba 65 odsłon, 32 osoby (+104% wobec średniej 31,9). Źródła: l.facebook.com 9, www.google.com 5, facebook.com 3, www.bing.com 1. Najczęściej /audyt-strony (14), / (10), /numer-ksef (6). Narzędzia 7.
+**Dowód:** linia Z13 w `cykl/plan-ruchu.md`. 22 sesje z utm `facebook` to podglądy przy publikacji (1 odsłona, 0 zdarzeń, ta sama sekunda), ludzi 0. Ludzie 7 (w tym 1 prawdopodobnie Paweł), wszyscy bez utm, wejście na /, wieczorem 18:36 do 00:32.
+**Dla fluxlab-meta:** typ posta → ludzie / sesje z narzędziem: AI i llms.txt (010, 054) 3 / 2; automatyzacja i inne 2 / 0; KSeF i e-Doręczenia 1 / 0; bezpieczeństwo i przelewy 0 / 0; audyt i Ads 0 / 0. Link utm w treści nie działa, ruch idzie przez profil. Bez zmian w kolejce.
+**Dla Pawła:** bez zmian wobec 09:56 (telefon Androida bez `fl_nie_licz`: https://fluxlab.pl/nie-licz-mnie; źródło adresów do outreachu; B. Porębski; Profit Polska; post na LinkedIn).
+**Zostało otwarte:** Z3 do Z5, Z7, Z10, Z12 (zmiana) czekają na rytm; następne (lekkie): Z8 od 13:46, Z11 (Bing), Z15 (linki); seria Z17/Z18 po 23:58.
