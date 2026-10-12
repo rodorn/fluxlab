@@ -4791,3 +4791,13 @@ Seria Z18: 11.10 23:51:25 do 23:56:56, 11 przyjętych, limit o 23:57:37. Następ
 **Dowód:** `curl` forum.gofin.pl/1559904..1559915 = 404. Bez commitów w kodzie strony.
 **Dla Pawła:** bez zmian: komentarze Gofin 1559899, 1559894, 1559884, 1559826, 1559890, Profit Polska, timery grup FB, decyzja o źródle adresów dla outreachu.
 **Zostało otwarte:** Z23 (od 04:46). Następne okno żądań indeksowania 12.10 po 23:57. Gofin: następne sprawdzenie od 1559904.
+
+<!-- WYSLANO 2026-10-12 03:06 -->
+
+## 2026-10-12 03:45
+**Kanał:** dystrybucja narzędzi (przegląd Gofin). Jedyne otwarte zadanie planu, Z23, jest dopiero od 04:46.
+**Co zrobione:** brak publikacji i brak zmian na stronie: na Gofin jeden nowy wątek, 1559904 „Jak zaksięgować taką fakturę do podatku i VAT?” (moment podatkowy faktury za usługi IT z KSeF), czysto księgowe pytanie, żadne z naszych narzędzi go nie rozwiązuje, więc bez komentarza.
+**Ruch:** ostatnia doba 67 odsłon, 34 osoby (+121% wobec średniej 30,3). Źródła: l.facebook.com 9, www.google.com 3, facebook.com 3. Najczęściej /audyt-strony (14), /ksef-2027 (8), / (8), /numer-ksef (6). Narzędzia 7. Tydzień 250 odsłon, 160 osób.
+**Dowód:** `curl` forum.gofin.pl/1559904 = 200, 1559905..1559918 = 404. Bez commitów w kodzie strony.
+**Dla Pawła:** bez zmian: komentarze Gofin 1559899, 1559894, 1559884, 1559826, 1559890, Profit Polska, timery grup FB, decyzja o źródle adresów dla outreachu.
+**Zostało otwarte:** Z23 (od 04:46). Następne okno żądań indeksowania 12.10 po 23:57. Gofin: następne sprawdzenie od 1559905.
