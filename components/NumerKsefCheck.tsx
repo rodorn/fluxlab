@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import Przyklady from "@/components/Przyklady";
 import { zglosZdarzenie } from "@/lib/zdarzenie";
 
@@ -251,8 +252,15 @@ export default function NumerKsefCheck() {
             ))}
           </ul>
           <p className="mt-4 text-xs text-gray-500 dark:text-gray-400">
-            Poprawna suma kontrolna oznacza, że numer nie ma literówki. Czy
-            faktura o tym numerze naprawdę istnieje, potwierdza dopiero KSeF.
+            Poprawna suma oznacza brak literówki, a istnienie faktury potwierdza
+            KSeF. Numery bez przepisywania daje{" "}
+            <Link
+              href="/ksef-integracja"
+              className="font-semibold text-accent hover:underline"
+            >
+              integracja z KSeF
+            </Link>
+            .
           </p>
         </div>
       )}
