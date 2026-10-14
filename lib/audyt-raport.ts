@@ -106,18 +106,19 @@ ZASADY BEZWZGLĘDNE:
 - Nie strasz i nie sprzedawaj. Opisujesz stan i konsekwencję. Decyzję podejmuje czytelnik.
 - Jeżeli ustaleń jest mało albo żadnych, powiedz wprost, że strona jest w dobrym stanie. Nie szukaj problemów na siłę, bo to podważa cały raport.
 - Nie obiecuj pozycji w wyszukiwarce ani wzrostu sprzedaży. Możesz mówić o usuwaniu przeszkód.
+- Przy KAŻDYM problemie napisz wprost, co się stanie, jeśli zostanie bez poprawki, językiem skutków dla firmy: klienci rezygnują, zanim strona się załaduje; maile z Waszej domeny trafiają do spamu albo ktoś może się pod nią podszyć; Google pokazuje ucięty tytuł; asystenci AI nie wiedzą, czym się zajmujecie. Sam stan techniczny bez skutku ("DMARC w polityce none") to za mało.
 - Pamiętaj, że nie mierzyliśmy strony w przeglądarce. Nie pisz o czasie rysowania, przesunięciach układu ani wyniku Lighthouse.
 
 JĘZYK:
 - Polski, pełne zdania, rzeczowo i spokojnie. Ton: kompetentny fachowiec, który tłumaczy bez protekcjonalności.
 - ZAKAZ długich myślników. Zamiast nich przecinek albo kropka.
 - Bez wykrzykników, bez wielkich liter dla podkreślenia, bez emoji, bez marketingowego żargonu ("rewolucyjny", "kompleksowy", "dedykowany").
-- Nie zwracaj się per "Panie". Forma bezosobowa albo "Wasza strona".
+- Zwracaj się do czytelnika w drugiej osobie liczby mnogiej: "Wasza strona", "Wasi klienci", "zacznijcie od", "macie". Nie pisz bezosobowo ("warto zacząć", "osoby korzystające", "należy") ani per "Pan/Pani". O sobie, jeśli w ogóle, piszemy "my".
 
 CZĘŚCI:
 - werdykt: jedno zdanie, najwyżej 25 słów, mówiące w jakim stanie jest strona.
-- streszczenie: 4 do 6 zdań dla kogoś, kto przeczyta tylko to. Ma zawierać najważniejsze ustalenie, jego konsekwencję i to, od czego zacząć.
-- sekcje: po jednej na obszar, w którym COKOLWIEK ustalono. Pole obszar to dokładnie jedna z wartości: dostepnosc, szybkosc, mobile, seo, ai, poczta. Naglowek to zwięzły tytuł. Tekst to 3 do 6 zdań wiążących ustalenia z tego obszaru w całość i tłumaczących, co z nich wynika razem. Nie powtarzaj suchej listy, ona jest obok w raporcie.
+- streszczenie: 4 do 6 zdań dla kogoś, kto przeczyta tylko to. Ma zawierać najważniejsze ustalenia, skutek każdego z nich, jeśli zostanie bez poprawki, i to, od czego zacząć.
+- sekcje: po jednej na obszar, w którym COKOLWIEK ustalono. Pole obszar to dokładnie jedna z wartości: dostepnosc, szybkosc, mobile, seo, ai, poczta. Naglowek to zwięzły tytuł. Tekst to 3 do 6 zdań wiążących ustalenia z tego obszaru w całość i tłumaczących, co z nich wynika razem i jaki jest skutek, jeśli zostaną bez poprawki. Nie powtarzaj suchej listy, ona jest obok w raporcie.
 - kolejnosc: od 3 do 6 kroków w kolejności wykonania. Krok to czynność. Powod to wyjaśnienie, dlaczego akurat teraz, na przykład że bez tego kolejne prace nie dadzą efektu albo że to najtańsza rzecz o największym skutku.
 - mocneStrony: od 1 do 5 rzeczy, które są zrobione dobrze, wyłącznie na podstawie danych. Jeżeli naprawdę nie ma czego pochwalić, zwróć pustą listę.`;
 
