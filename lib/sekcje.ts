@@ -166,6 +166,7 @@ export const SEKCJE: Sekcja[] = [
         hub: "/strefa-wiedzy",
         strony: [
           s("/strefa-wiedzy", "Strefa wiedzy"),
+          s("/slownik", "Słownik pojęć"),
           s("/strefa-wiedzy/kategoria/[slug]", "Kategoria artykułów"),
           s("/strefa-wiedzy/ai-w-automatyzacji-firm", "AI w automatyzacji firm"),
           s("/strefa-wiedzy/automatyzacja-crm-od-czego-zaczac", "Automatyzacja CRM z AI, od czego zacząć"),

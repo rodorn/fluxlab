@@ -80,6 +80,16 @@ export default function StrefaWiedzy() {
                 </Link>
                 .
               </p>
+              <p className="mt-3 text-sm text-gray-600 dark:text-gray-400">
+                Nie znacie jakiegoś pojęcia? Zajrzyjcie do{" "}
+                <Link
+                  href="/slownik"
+                  className="font-semibold text-accent hover:underline"
+                >
+                  słownika
+                </Link>
+                .
+              </p>
             </div>
           </div>
         </section>
