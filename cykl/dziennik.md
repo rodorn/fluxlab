@@ -4975,3 +4975,11 @@ Seria Z18: 11.10 23:51:25 do 23:56:56, 11 przyjętych, limit o 23:57:37. Następ
 **Dowód:** linia Z23 w `cykl/plan-ruchu.md`; /sprawdzenie-nip 277 słów, /kalkulator-podatkowy 1760, /numer-ksef 295, /integracja-crm-z-erp 578; test wyników rozszerzonych 4 i 3 prawidłowe elementy.
 **Dla Pawła:** Content Rocket (kontakt@content-rocket.pl) nadal czeka na odpowiedź w Zoho od 13.10 14:02 („Współpraca reklamowa”).
 **Zostało otwarte:** Z6 seria indeksowania po 23:58, Z7 bilans o 00:46, Z11/Z12 od 04:46, Z16 wysyłka do agencji 15.10 od 9:00. Nowe źródło w raporcie: useme.com 9 odsłon w dobie, do rozpoznania w Z19 (ludzie czy podgląd linku).
+
+## 2026-10-14 21:45
+**Kanał:** pomiar (rozpoznanie źródła useme.com z Z19, wzięte wcześniej). Z6 czeka na okno po 23:58, Z7 i dalsze mają godziny nocne i dzienne, budżet „zwolnij”, hamulec alarm (prognoza 117% tygodnia), więc bez zmian na produkcji.
+**Co zrobione:** useme.com to jedna prawdziwa osoba, nie podgląd linku: sesja `z3x9kp4bcmmv8f1mku`, Chrome Windows, 14.10 18:01 do 18:03, 9 odsłon (wejście /automatyzacja-raportowania, potem /, /narzedzia, /ksef-2027), bez zdarzeń i bez leadu. Najpewniej zleceniodawca z Useme oglądający ofertę Pawła: o 17:19 przyszło powiadomienie Useme „Masz nową wiadomość od: mGiełda.pl”, wcześniej o 11:19 od „Maciej D.”.
+**Ruch:** doba do 21:45 na VPS od 16:00: 21 odsłon; poza useme 10 sesji bez odsyłacza (2 pary Android/macOS w tej samej sekundzie 16:51 i 16:53 to podglądy linków, 18:43 dwie sesje `sainv5vm…` to render Google). Leady 0.
+**Dowód:** zapytanie do `ruch.sqlite` od 14.10 16:00; powiadomienia Useme w gmail-prywatny (id 33443, 33407).
+**Dla Pawła:** sprawdzić na Useme wiadomości od mGiełda.pl (17:19) i Macieja D. (11:19); ktoś z Useme przeglądał fluxlab.pl 18:01 przez 2 minuty. Content Rocket (kontakt@content-rocket.pl) nadal czeka w Zoho od 13.10.
+**Zostało otwarte:** Z6 seria indeksowania po 23:58, Z7 bilans o 00:46, Z11/Z12 od 04:46, Z16 wysyłka do agencji 15.10 od 9:00. Useme jako kanał: linki z ofert Pawła przyprowadzają ludzi, warte osobnego utm w ofertach (decyzja stratega).
