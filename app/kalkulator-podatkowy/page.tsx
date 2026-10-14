@@ -61,16 +61,17 @@ export default function KalkulatorPodatkowyPage() {
     <>
       <Header />
       <main>
-        <Breadcrumbs href="/kalkulator-podatkowy" items={[{ label: "Kalkulator podatkowy" }]} />
+        <Breadcrumbs
+          href="/kalkulator-podatkowy"
+          items={[{ label: "Kalkulator podatkowy" }]}
+        />
 
         <section className="pt-16 pb-6">
           <div className="container-wide max-w-5xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-8 items-center">
               <div>
                 <p className="section-label mb-3">Narzędzie</p>
-                <h1 className="h1-strony">
-                  Kalkulator JDG 2026
-                </h1>
+                <h1 className="h1-strony">Kalkulator JDG 2026</h1>
                 <p className="mt-3 text-lg text-gray-600 dark:text-gray-400">
                   Porównaj ryczałt, podatek liniowy i skalę podatkową.
                 </p>
@@ -170,8 +171,15 @@ export default function KalkulatorPodatkowyPage() {
                           </p>
                           <p>
                             Uwzględnia pełny i mały ZUS, ulgę na start, mały ZUS
-                            Plus, VAT czynny, zwolniony i marżę, koszty prywatne
-                            oraz samochód firmowy lub mieszany.
+                            Plus,{" "}
+                            <Link
+                              href="/strefa-wiedzy/vat-w-jdg-kiedy-warto"
+                              className="text-accent hover:underline"
+                            >
+                              VAT czynny, zwolniony
+                            </Link>{" "}
+                            i marżę, koszty prywatne oraz samochód firmowy lub
+                            mieszany.
                           </p>
                           <p>
                             Ryczałt przegrywa zwykle przy wysokich kosztach i
@@ -186,7 +194,6 @@ export default function KalkulatorPodatkowyPage() {
                           </p>
                         </div>
                       </div>
-
                     </div>
                   </div>
                 ),
@@ -196,9 +203,7 @@ export default function KalkulatorPodatkowyPage() {
                 content: (
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl">
-                      <h2 className="h2-sekcji mb-6">
-                        Najczęstsze pytania
-                      </h2>
+                      <h2 className="h2-sekcji mb-6">Najczęstsze pytania</h2>
                       <div className="space-y-3">
                         {faqs.map((faq) => (
                           <details
@@ -277,9 +282,7 @@ export default function KalkulatorPodatkowyPage() {
                       </div>
 
                       <div>
-                        <h2 className="h2-sekcji mb-5">
-                          Powiązane artykuły
-                        </h2>
+                        <h2 className="h2-sekcji mb-5">Powiązane artykuły</h2>
                         <div className="grid md:grid-cols-2 gap-3">
                           {[
                             {
@@ -317,7 +320,6 @@ export default function KalkulatorPodatkowyPage() {
                           ))}
                         </div>
                       </div>
-
                     </div>
                   </div>
                 ),
