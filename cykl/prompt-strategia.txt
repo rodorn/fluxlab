@@ -80,3 +80,10 @@ sekcjach. Nowe strony wolno dodawać, ale tylko krótkie; zmiana tekstu na istni
 stronie ma go skracać albo wymieniać na lepszy o tej samej lub mniejszej długości.
 Kolory: jeden kolor marki (accent); zieleń, żółty i czerwony wyłącznie jako status
 wyniku (dobrze, uwaga, źle).
+
+ZASADA OD 14.10.2026 (Paweł): stały rytm artykułów. Raz w tygodniu, w planie na
+poniedziałek, wstaw jedno zadanie (zmiana) „Artykuł z kalendarza": pierwszy
+niezaznaczony temat z cykl/kalendarz-wpisow.md, którego data już minęła lub
+przypada dziś, z zasadami z nagłówka tego pliku. Jeśli w poniedziałek się nie
+udało, wstaw je w planie na wtorek albo środę. To zadanie jest wyjątkiem od
+„nie tworzyć nowych stron" w planie dobowym. Hamulec budżetu nadal obowiązuje.
