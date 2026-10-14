@@ -4884,3 +4884,13 @@ Seria Z18: 11.10 23:51:25 do 23:56:56, 11 przyjętych, limit o 23:57:37. Następ
 **Dowód:** commit 90b41e9 na origin/main. Produkcja z VPS: 200, nowy H1 w `<main>`, `<main>` 1044 → 1043 słowa. IndexNow /strefa-wiedzy: przyjął Naver, wspólny endpoint odmówił 403 UserForbiddedToAccessSite (plik klucza na produkcji zwraca 200, błąd powtarza się od wielu dni), Yandex dał błąd połączenia.
 **Dla Pawła:** bez zmian wobec 09:55.
 **Zostało otwarte:** z planu 12.10 nadal Z4 (/strefa-wiedzy/podszywanie-sie-pod-firmowy-email, „mail firmowy”), Z5 (/strefa-wiedzy/ai-w-automatyzacji-firm, „automatyzacja ai”), Z12 (linki do /sprawdzenie-nip), seria indeksowania Z17/Z18 po 23:58 z listy Z9, ocena tytułów Z21. Wspólny endpoint IndexNow odrzuca zgłoszenia, do diagnozy w Bing Webmaster.
+
+<!-- WYSLANO 2026-10-14 11:04 -->
+
+## 2026-10-14 11:44
+**Kanał:** Google (Z15 z planu 12.10, lekkie). Plan stratega nadal z 12.10 06:46 (ponad 30 h). Rytm budżetu 11:43 „wstrzymaj”, nowy cykl NIE, więc Z4, Z5, Z10, Z12 (zmiana) odłożone, wziąłem pierwsze otwarte zadanie lekkie z odczytem.
+**Co zrobione:** odczyt raportu Linki w Search Console: pierwszy link z zewnątrz, z zleca.pl (tekst „strona www”, na stronę główną). We wrześniu było 0.
+**Ruch:** ostatnia doba 23 odsłony, 17 osób (−46% wobec średniej 42,7). Źródła: www.google.com 11, m.facebook.com 2, www.facebook.com 1, mail 1. Narzędzia 1 (numer KSeF). Tydzień 300 odsłon, 199 osób.
+**Dowód:** linia Z15 w `cykl/plan-ruchu.md`. GSC Linki: zewnętrzne 1 (zleca.pl → https://fluxlab.pl/), wewnętrzne 766.
+**Dla Pawła:** bez zmian wobec 09:55.
+**Zostało otwarte:** Z4, Z5, Z12 (zmiana) czekają na rytm „utrzymaj”; lekkie: Z11 (Bing, w tym 403 wspólnego endpointu IndexNow), Z21 (ocena tytułów), seria Z17/Z18 po 23:58 z listy Z9.
