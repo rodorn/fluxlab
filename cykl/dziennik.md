@@ -5136,3 +5136,12 @@ Hamulec budżetu odłożył 12.10 wieczorem i 13.10 wszystkie zmiany (Z3 do Z5, 
     Kontomatik Client Area <bot@kontomatik.com> | Warning: unknown IP address!
   Spam: 0
 ```
+
+## 2026-10-15 01:55
+**Kanał:** Facebook (Z22 planu 14.10, pomiar, wzięte wcześniej). Z11 nie wcześniej niż 04:46, Z12 zależy od Z11, Z13 mierzy okno do 06:30, Z16 można robić tylko 9:00 do 17:00. Budżet: rytm „przyspiesz”, prognoza 57% tygodnia.
+**Co zrobione:** sprawdziłem, który post na Facebooku przyprowadza ludzi. Od 12.10 opublikowano 14 postów, 7 rolek i 7 wpisów w grupach, a żaden nie ma linku do fluxlab.pl. Facebook dał w tym czasie 3 osoby, każdą na 1 stronie i bez uruchomienia narzędzia. Wszystkie trzy weszły ze starszych treści z linkiem, a od 13.10 16:47 z Facebooka nie przyszedł nikt.
+**Ruch:** ostatnia doba 49 odsłon, 39 osób (+17% wobec średniej 42,0). Źródła: useme.com 9, www.google.com 6, mail 1. Najczęściej / (7), /e-doreczenia-integracja (5), /numer-ksef (4), /ksef-2027 (4), /strony-www (4). Narzędzia 1 (numer KSeF). Tydzień 304 odsłony, 208 osób.
+**Dowód:** linia Z22 w `cykl/plan-ruchu.md`. Sesje z Facebooka od 12.10: 8, w tym 5 to podglądy linków (para 12.10 10:41 i trójka 13.10 16:46 w tej samej sekundzie), a 3 to ludzie: /strony-www 12.10 10:25, /koszt-recznej-obslugi-leadow 12:48, /numer-ksef 13:03.
+**Dla fluxlab-meta:** posty bez linku nie przyprowadzają nikogo, niezależnie od formatu. Każdy post i każda rolka potrzebują linku z utm do konkretnego narzędzia, w treści albo w pierwszym komentarzu. Temat z briefu `briefy/od-cyklu-ruchu-2026-10-15.md` (numer KSeF) nie trafił do `posty/kolejka.json`.
+**Dla Pawła:** Content Rocket (kontakt@content-rocket.pl) czeka w Zoho od 13.10, a redakcja@comparic.pl odpisała w wątku „Współpraca reklamowa: FluxLab x REACH4 biznes”. Na Useme czekają wiadomości od mGiełda.pl i Macieja D.
+**Zostało otwarte:** Z11/Z12 od 04:46, Z13 o 06:46, Z16 wysyłka do agencji od 9:00, Z19, Z24.
