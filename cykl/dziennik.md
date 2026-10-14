@@ -5000,3 +5000,139 @@ Seria Z18: 11.10 23:51:25 do 23:56:56, 11 przyjętych, limit o 23:57:37. Następ
 **Dowód:** linia Z6 w `cykl/plan-ruchu.md`; zgłoszone 14.10 23:58:43 do 15.10 00:03:35: /automatyzacja-pipedrive, /automatyzacja-raportowania, /wdrozenie-n8n-cena, /integracje-api, /automatyczne-przypisywanie-leadow, /strefa-wiedzy/hubspot-vs-pipedrive, /strefa-wiedzy/jak-polaczyc-crm-z-innymi-systemami, /strefa-wiedzy/vat-w-jdg-kiedy-warto, /strefa-wiedzy/skala-czy-liniowy-jdg, /strefa-wiedzy/maly-zus-plus-kiedy-sie-oplaca. Budżet: rytm „dociśnij”, prognoza 84%.
 **Dla Pawła:** Content Rocket (kontakt@content-rocket.pl) nadal czeka w Zoho od 13.10. Na Useme są wiadomości od mGiełda.pl i Macieja D.
 **Zostało otwarte:** Z7 bilans o 00:46 (okno VPS do 00:30, więc nie wcześniej), Z11/Z12 od 04:46, Z13 o 06:46 sprawdzi, ile z tych 10 adresów weszło do indeksu, Z16 wysyłka do agencji od 9:00. Następne okno indeksowania od 15.10 23:59 dla 19 adresów z Z3.
+
+## 2026-10-15 00:50
+**Kanał:** pomiar (Z7 planu 14.10: doba i bilans starego planu). Budżet: rytm „przyspiesz”, prognoza 64% tygodnia, hamulec spokój.
+**Co zrobione:** bilans planu 2026-10-12/14 i doby 14.10 06:00 do 15.10 00:30 poniżej. Seria indeksowania z Z6 dała render Google wszystkich 10 adresów w ciągu 5 minut (23:58 do 00:03, sesje `fnfbzuab…`/`otar88…`, pary Android/Linux).
+**Ruch:** ostatnia doba 47 odsłon, 37 osób (+12% wobec średniej 42,1). Źródła: useme.com 9, www.google.com 6, mail 1. Najczęściej / (7), /e-doreczenia-integracja (5), /numer-ksef (4), /ksef-2027 (4), /strony-www (4). Narzędzia 1 (numer KSeF). Tydzień 302 odsłony, 206 osób.
+**Dowód:** linia Z7 w `cykl/plan-ruchu.md`, tabele niżej.
+**Dla Pawła:** Content Rocket (kontakt@content-rocket.pl) czeka w Zoho od 13.10; nowa odpowiedź w Zoho od redakcja@comparic.pl („Re: Współpraca reklamowa: FluxLab x REACH4 biznes”). Na Useme wiadomości od mGiełda.pl i Macieja D.
+**Zostało otwarte:** Z11/Z12 od 04:46, Z13 o 06:46, Z16 wysyłka do agencji od 9:00, Z19, Z22, Z24.
+
+### Bilans planu 2026-10-12/14
+
+| Zadanie | Stan | Kiedy | Co przyprowadziło |
+|---|---|---|---|
+| Z1 pomiar i outreach | zrobione | 12.10 06:50 | 0 (pomiar) |
+| Z2 mapa zapytanie→strona | zrobione | 12.10 07:47 | 0 (pomiar) |
+| Z3 H1 /strefa-wiedzy | zrobione | 14.10 10:55, 90b41e9 | 0 w dobie, ocena od 17.10 |
+| Z4 H1 mail firmowy | zrobione | 14.10 12:55, 2d52477 | 0 w dobie, ocena od 17.10 |
+| Z5 H1 automatyzacja AI | zrobione | 14.10 13:05, ed1bccc | 0 w dobie, ocena od 17.10 |
+| Z6 lejek audytu | zrobione | 14.10 08:50 | 0 (pomiar) |
+| Z7 formularz po ocenie audytu | zrobione | 14.10 09:55, 506b3a8 i 60ab6a9 | 0 formularzy w dobie (0 audytów od ludzi) |
+| Z8 pomiar południe | zrobione | 14.10 14:10 | 0 |
+| Z9 raport Strony GSC | zrobione | 14.10 09:55 | 0 (106 zindeksowanych / 90 nie) |
+| Z10 pierwsze zdanie 6 artykułów KSeF | zrobione, 0 zmian | 14.10 09:55 | 0 |
+| Z11 Bing | zrobione | 14.10 14:30 | 0 |
+| Z12 linki do /sprawdzenie-nip | zrobione, 0 zmian (5 linków ≥4) | 14.10 14:05 | 0 |
+| Z13 Facebook | zrobione | 14.10 10:50 | 0 (pomiar) |
+| Z14 pomiar wieczór | nie | odłożone hamulcem „wstrzymaj” 12.10 wieczorem | — |
+| Z15 linki z zewnątrz | zrobione | 14.10 11:44 | 0 (1 witryna: zleca.pl) |
+| Z16 kontrola zmian | zrobione | 14.10 14:50 | 0 |
+| Z17 lista serii | zrobione | 14.10 14:52 | 0 |
+| Z18 seria indeksowania | nie w tym planie; wykonane jako Z6 nowego planu | 14.10 23:58 do 00:03, 10/10 | render Google 10/10 w 5 min; wejścia od 15.10 |
+| Z19 pomiar doby | nie | hamulec do 14.10 rano, potem zastąpione planem 14.10 | — |
+| Z20 bilans | nie, zastąpione tym wpisem | — | — |
+| Z21 ocena tytułów | zrobione | 14.10 15:50 | 0 (pomiar) |
+
+Hamulec budżetu odłożył 12.10 wieczorem i 13.10 wszystkie zmiany (Z3 do Z5, Z7, Z10, Z12); zrobiono je 14.10 rano. Wynik: 17 z 21 zadań, mierzalnie 0 nowych osób z żadnego zadania w dobie.
+
+### Słowa `<main>` przed / po, strony zmienione 14.10
+| Strona | Zadanie | Przed | Po |
+|---|---|---|---|
+| /strefa-wiedzy | stary Z3 | 1044 | 1043 |
+| /strefa-wiedzy/podszywanie-sie-pod-firmowy-email | stary Z4 | 301 | 301 |
+| /strefa-wiedzy/ai-w-automatyzacji-firm | stary Z5 | 144 | 144 |
+| /audyt-strony (AudytCheck) | stary Z7 | przeniesienie formularza, bez nowego tekstu | (+64/−65 i +12/−12 linii kodu) |
+| — | stary Z12 | 0 zmian | 0 zmian |
+| /sprawdzenie-nip | nowy Z5 | 278 | 277 |
+| /kalkulator-podatkowy | nowy (99c23a1) | 1760 | 1760 |
+| /numer-ksef | nowy (0174c2d) | 295 | 295 |
+| /integracja-crm-z-erp | nowy (9772bc5) | 601 | 578 |
+
+### VPS 14.10 06:00 do 15.10 00:30 (czas polski)
+- Ludzie (prawdopodobni): 23 sesje, ok. 21 osób. Google 4 osoby / 6 sesji (Firefox Win /numer-ksef z uruchomieniem 08:39 i 2 × /e-doreczenia-integracja 08:41, 08:48; Chrome Win /ksef-2027 09:35 i 13:50; Chrome Win / 14:37). useme.com 1 osoba, 9 odsłon (20:01). Bez odsyłacza 16 sesji po 1 do 2 odsłon (rano 3 × telefon 06:27 do 06:33; wieczorem 18:03 do 00:24 pojedyncze artykuły i strony leadów z Windows/macOS, część może być automatyką czytników).
+- Nie ludzie: para mail `ksiegowe` + /dziekuje 09:33:03 (skaner poczty); pary Android/macOS w tej samej sekundzie 18:51 /e-doreczenia-integracja i 18:53 /numer-ksef (podglądy po wdrożeniu 0174c2d); 4 sesje /strony-www 22:03:57 w tej samej sekundzie (bot); render Google `sainv5vm…` 14:44 (2) i 20:43 (/sprawdzenie-nip, /integracja-crm-z-erp, czyli po zmianach Z5); render po Z6 23:58 do 00:03: 15 sesji na 10 zgłoszonych adresach.
+- Zdarzenia ludzi: 1 (`uruchomiono_numer_ksef`), `lead_*` 0, zgłoszenia 0.
+- Resend 24 h: 5, wszystkie delivered, spoza `wyslane*.json` (powiadomienia, nie outreach). Zoho 24 h: INBOX 4 (2 × Kontomatik, Wiktoria Jagielska FINREAL, redakcja@comparic.pl), Spam 0, odpowiedzi na outreach 0.
+
+### `python3 cykl/pomiar-kanalow.py` (15.10 00:43)
+```
+# Pomiar kanałów, 2026-10-15 00:43
+
+## Źródła, 24 h: 37 sesji, 46 odsłon
+  (bez odsyłacza)                             29
+  www.google.com                               6
+  mail                                         1
+  useme.com                                    1
+
+## Źródła, 7 dni: 206 sesji, 264 odsłon
+  (bez odsyłacza)                            138
+  www.google.com                              22
+  facebook                                    11
+  youtube                                     10
+  mail                                         6
+  www.facebook.com                             6
+  m.facebook.com                               4
+  l.facebook.com                               2
+  facebook.com                                 2
+  www.bing.com                                 2
+  narzedzie                                    1
+  lm.facebook.com                              1
+  useme.com                                    1
+
+## Kampanie utm, 7 dni (sesje)
+  facebook / narzedzia                        11
+  mail / ksiegowe                              5
+  youtube / 014-wizytowka                      3
+  youtube / 028-numer-ksef                     2
+  youtube / 038-www                            2
+  mail / test-krs                              1
+  narzedzie / edoreczenia-krs                  1
+
+## Zdarzenia, 7 dni (uruchomienia narzędzi, lead_*, klik_po_wyniku)
+  audyt_uruchomiony  /audyt-strony             9
+  audyt_wynik_dobry  /audyt-strony             5
+  uruchomiono_numer_ksef_przyklad  /numer-ksef     4
+  uruchomiono_skan_krs_z_linku  /e-doreczenia-integracja     2
+  audyt_wynik_sredni  /audyt-strony            2
+  uruchomiono_skan_krs  /e-doreczenia-integracja     2
+  audyt_ze_strony_glownej  /                   2
+  uruchomiono_skan  /strefa-wiedzy/czy-ai-widzi-strony-dealerow     2
+  uruchomiono_skan  /widocznosc-w-ai           2
+  wynik_zielony  /widocznosc-w-ai              2
+  audyt_rozwin_szybkosc  /audyt-strony         1
+  zawezono_katalog  /produkty                  1
+  wynik_zolty  /strefa-wiedzy/czy-ai-widzi-strony-dealerow     1
+  wynik_czerwony  /strefa-wiedzy/czy-ai-widzi-strony-dealerow     1
+  uruchomiono_skan  /sprawdzenie-nip           1
+  uruchomiono_numer_ksef  /numer-ksef          1
+
+## Sesje dziennie, 14 dni
+  2026-10-01 Thu     4  ####
+  2026-10-02 Fri    15  ###############
+  2026-10-03 Sat     5  #####
+  2026-10-04 Sun    14  ##############
+  2026-10-05 Mon    26  ##########################
+  2026-10-06 Tue    25  #########################
+  2026-10-07 Wed    27  ###########################
+  2026-10-08 Thu    12  ############
+  2026-10-09 Fri    16  ################
+  2026-10-10 Sat    17  #################
+  2026-10-11 Sun    33  #################################
+  2026-10-12 Mon    67  ###################################################################
+  2026-10-13 Tue    25  #########################
+  2026-10-14 Wed    35  ###################################
+  2026-10-15 Thu     2  ##
+
+## Resend, wysłane w 24 h: 5
+  spoza wyslane*.json          delivered         5
+
+## Zoho, wiadomości przychodzące w 24 h
+  INBOX: 4
+    Kontomatik Client Area <bot@kontomatik.com> | Kontomatik production account created
+    Wiktoria Jagielska <wiktoriajagielska13@gmail.com> | Re: FINREAL: nowe poradniki i uzupełnienia strony – prośba o sprawdzen
+    redakcja@comparic.pl | Re: Współpraca reklamowa: FluxLab x REACH4 biznes
+    Kontomatik Client Area <bot@kontomatik.com> | Warning: unknown IP address!
+  Spam: 0
+```
