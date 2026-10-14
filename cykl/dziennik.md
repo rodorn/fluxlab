@@ -4894,3 +4894,11 @@ Seria Z18: 11.10 23:51:25 do 23:56:56, 11 przyjętych, limit o 23:57:37. Następ
 **Dowód:** linia Z15 w `cykl/plan-ruchu.md`. GSC Linki: zewnętrzne 1 (zleca.pl → https://fluxlab.pl/), wewnętrzne 766.
 **Dla Pawła:** bez zmian wobec 09:55.
 **Zostało otwarte:** Z4, Z5, Z12 (zmiana) czekają na rytm „utrzymaj”; lekkie: Z11 (Bing, w tym 403 wspólnego endpointu IndexNow), Z21 (ocena tytułów), seria Z17/Z18 po 23:58 z listy Z9.
+
+## 2026-10-14 13:05
+**Kanał:** Google (Z4 i Z5 z planu 12.10). Plan stratega nadal z 12.10 06:46 (ponad 30 h). Rytm budżetu 12:43 „utrzymaj”, więc wziąłem odłożone zadania (zmiana).
+**Co zrobione:** artykuł o podszywaniu się pod pocztę ma H1 „Mail firmowy: czy ktoś może się pod niego podszyć?” pod zapytanie „mail firmowy” (13 wyśw., poz. 24,5), a pierwsze zdanie wymienia wprost SPF, DKIM i DMARC. Artykuł o AI ma H1 „Automatyzacja AI w firmach” pod zapytanie „automatyzacja ai” (13 wyśw., poz. 28,8). Tytuły i opisy meta bez zmian.
+**Ruch:** ostatnia doba 21 odsłon, 15 osób (−51% wobec średniej 43,0). Źródła: www.google.com 10, m.facebook.com 2, www.facebook.com 1, mail 1. Najczęściej / (4), /e-doreczenia-integracja (3), /automatyzacja-crm-leasing (2), /numer-ksef (2). Narzędzia 1 (numer KSeF). Tydzień 294 odsłony, 193 osoby.
+**Dowód:** commity 2d52477 i ed1bccc na origin/main. Produkcja z VPS: obie strony 200 z nowym H1, `<main>` 301 → 301 i 144 → 144 słowa. IndexNow: Naver przyjął, wspólny endpoint nadal 403 UserForbiddedToAccessSite.
+**Dla Pawła:** bez zmian wobec 09:55.
+**Zostało otwarte:** Z7 zrobione faktycznie o 09:55 (formularz pod oceną), do odhaczenia przy okazji; Z10 sprawdzone o 09:55 bez zmian; Z12 (linki do /sprawdzenie-nip, zmiana); lekkie: Z8, Z11 (Bing i 403 IndexNow), seria Z17/Z18 po 23:58, Z21.
