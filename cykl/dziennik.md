@@ -4967,3 +4967,11 @@ Seria Z18: 11.10 23:51:25 do 23:56:56, 11 przyjętych, limit o 23:57:37. Następ
 **Dowód:** `~/Projekty/mail-audyt/maile_agencje/013_digitalmonsters.txt` do `017_riocreativo.txt` (hello@digitalmonsters.studio, biuro@ibpartner.pl, kontakt@lumen-technik.com, biuro@arsmedia.pl, biuro@riocreativo.pl), `pkt_domeny_2026-10-15.json`, `krs_2026-10-15.json`; Bing Request indexing 4 z 4 (/sprawdzenie-nip, /kalkulator-podatkowy, /numer-ksef, /integracja-crm-z-erp), IndexNow Yandex 200, Naver 200; linie Z15 i Z21 w `cykl/plan-ruchu.md`.
 **Dla Pawła:** Content Rocket (kontakt@content-rocket.pl) nadal czeka na odpowiedź w Zoho od 13.10 14:02 („Współpraca reklamowa”).
 **Zostało otwarte:** Z6 seria indeksowania po 23:58, Z7 bilans o 00:46, Z11/Z12 od 04:46, Z16 wysyłka 5 maili do agencji 15.10 od 9:00. Bing pokazuje /integracja-crm-z-erp jako „URL cannot appear”, do sprawdzenia w Z17.
+
+## 2026-10-14 20:50
+**Kanał:** kontrola zmian dla Google (Z23 planu 14.10). Z6 czeka na okno po 23:58, Z7, Z11 do Z13 i Z16 mają godziny nocne i dzienne, budżet w rytmie „zwolnij”, więc wzięte jedyne lekkie zadanie wykonalne teraz.
+**Co zrobione:** 4 strony zmienione dziś sprawdzone na produkcji: 200, tytuły bez zmian, canonical na siebie, JSON-LD bez błędów, treść nie dłuższa niż przed zmianą, bez nowych kolorów; test wyników rozszerzonych Google bez błędów krytycznych dla 2 z nich.
+**Ruch:** ostatnia doba 37 odsłon, 27 osób (−14% wobec średniej 43,1). Źródła: useme.com 9, www.google.com 6, mail 1. Najczęściej / (7), /e-doreczenia-integracja (5), /numer-ksef (4), /ksef-2027 (4), /automatyzacja-raportowania (3). Narzędzia 1 (numer KSeF). Tydzień 297 odsłon, 199 osób.
+**Dowód:** linia Z23 w `cykl/plan-ruchu.md`; /sprawdzenie-nip 277 słów, /kalkulator-podatkowy 1760, /numer-ksef 295, /integracja-crm-z-erp 578; test wyników rozszerzonych 4 i 3 prawidłowe elementy.
+**Dla Pawła:** Content Rocket (kontakt@content-rocket.pl) nadal czeka na odpowiedź w Zoho od 13.10 14:02 („Współpraca reklamowa”).
+**Zostało otwarte:** Z6 seria indeksowania po 23:58, Z7 bilans o 00:46, Z11/Z12 od 04:46, Z16 wysyłka do agencji 15.10 od 9:00. Nowe źródło w raporcie: useme.com 9 odsłon w dobie, do rozpoznania w Z19 (ludzie czy podgląd linku).
