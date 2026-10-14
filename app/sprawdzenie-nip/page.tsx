@@ -78,10 +78,10 @@ export default function SprawdzenieNipPage() {
           <div className="max-w-3xl">
             <p className="section-label mb-3">Narzędzie</p>
             <h1 className="h1-strony">
-              Sprawdzenie NIP w wykazie Ministerstwa Finansów
+              Sprawdzenie NIP VAT w wykazie MF
             </h1>
             <p className="mt-5 text-lg text-gray-600 dark:text-gray-300">
-              Czy ten NIP jest czynnym płatnikiem VAT? Wpisz numer, wynik z
+              Czy firma jest czynnym podatnikiem VAT? Wpiszcie NIP, wynik z
               białej listy MF w 10 s.
             </p>
           </div>
