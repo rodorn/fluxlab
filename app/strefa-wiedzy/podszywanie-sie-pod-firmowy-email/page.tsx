@@ -71,7 +71,7 @@ export default function PodszywanieEmailArticle() {
 
         <span className="section-label mt-6 block">Strefa wiedzy</span>
         <h1 className="h1-artykulu mt-4 mb-4">
-          Czy ktoś może podszyć się pod Twój firmowy e-mail?
+          Mail firmowy: czy ktoś może się pod niego podszyć?
         </h1>
         <p
           style={{
@@ -84,8 +84,8 @@ export default function PodszywanieEmailArticle() {
           <Link href="/mail-firmowy" style={{ textDecoration: "underline" }}>
             mail firmowy
           </Link>{" "}
-          na Twojej domenie nie ma poprawnej konfiguracji, każdy może wysłać
-          wiadomość jak od Ciebie, a część ofert i faktur po cichu nie dociera.
+          na Twojej domenie nie ma SPF, DKIM i DMARC, każdy może wysłać
+          wiadomość jak od Ciebie, a część ofert i faktur nie dociera.
         </p>
 
         <div
