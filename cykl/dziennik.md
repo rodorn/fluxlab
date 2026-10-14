@@ -4910,3 +4910,13 @@ Seria Z18: 11.10 23:51:25 do 23:56:56, 11 przyjętych, limit o 23:57:37. Następ
 **Dowód:** linie Z7, Z8, Z10, Z11, Z12 w `cykl/plan-ruchu.md`. Bing: limit zgłoszeń 100 → 87. Bing 7 dni: 1 kliknięcie, 27 wyświetleń, z tego 19 na /sprawdzenie-nip (poz. 6,8). IndexNow faktycznie trafia do Bing (dziś 10:45 i 12:46), 403 wspólnego endpointu nie blokuje Bing.
 **Dla Pawła:** Content Rocket (kontakt@content-rocket.pl) odpisał 13.10 14:02 na „Współpraca reklamowa”, że propozycja jest interesująca, w Zoho INBOX czeka odpowiedź. Laba przekazała dalej, To się opłaca odmówiła. Reszta bez zmian wobec 09:55.
 **Zostało otwarte:** Z14 (pomiar wieczorny), Z16 (kontrola zmian dnia), seria Google Z17/Z18 po 23:58, Z19 do Z21. W Bing jutro sprawdzić, czy 6 artykułów KSeF weszło do indeksu.
+
+<!-- WYSLANO 2026-10-14 15:04 -->
+
+## 2026-10-14 15:10
+**Kanał:** Google i Bing (Z16, Z17 z planu 12.10 oraz zgłoszenia w Bing poza planem). Plan stratega nadal z 12.10 06:46 (56 h), strateg nie dostarczył nowego. Rytm budżetu „dociśnij”. Z14 (pomiar od 13:46) zostawiony na wieczór, bo o 14:45 miałby godzinę danych.
+**Co zrobione:** 45 stron, których Bing nie miał w indeksie (34 „Discovered but not crawled”, 11 „URL cannot appear”, m.in. /numer-ksef, /ksef-integracja, /mail-firmowy, /widocznosc-w-ai, /sprawdz-kontrahenta, artykuły strefy wiedzy), zgłoszonych ręcznie do indeksowania w Bing Webmaster; kontrola dzisiejszych zmian na produkcji bez uwag; lista 10 adresów na nocną serię Google gotowa.
+**Ruch:** ostatnia doba 21 odsłon, 19 osób (−51% wobec średniej 43,1). Źródła: www.google.com 6, m.facebook.com 2, www.facebook.com 1, mail 1. Narzędzia 1 (numer KSeF).
+**Dowód:** Bing URL Inspection dla 111 adresów z sitemap.xml (poza 15 sprawdzonymi wcześniej): 66 w indeksie, 45 zgłoszonych 14:52 do 15:08, widoczne w Bing „URL Submission” → „Submitted Urls list”; limit dobowy 87 → ok. 42. Z16: 4 strony 200, tytuły bez zmian od 11.10, canonical na siebie, JSON-LD poprawne, `<main>` 1043/301/144/607 słów; test wyników rozszerzonych 2 × 3 prawidłowe elementy. Z17: 10 adresów 200, canonical, w mapie (linia Z17 w `cykl/plan-ruchu.md`).
+**Dla Pawła:** Content Rocket (kontakt@content-rocket.pl) czeka na odpowiedź w Zoho od 13.10 14:02 („Współpraca reklamowa”, zainteresowani). Reszta bez zmian wobec 09:55.
+**Zostało otwarte:** Z14 (pomiar wieczorny, 19:46), Z18 seria Google po 23:58 z listy Z17, Z19 do Z21. Jutro w Bing sprawdzić, ile z 59 zgłoszonych dziś adresów (14 + 45) weszło do indeksu.
