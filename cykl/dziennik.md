@@ -4958,3 +4958,12 @@ Seria Z18: 11.10 23:51:25 do 23:56:56, 11 przyjętych, limit o 23:57:37. Następ
 **Dowód:** commity da6d848 (NIP), 99c23a1 (kalkulator), 0174c2d (numer KSeF), 9772bc5 (CRM z ERP), wszystkie na origin/main, z VPS 200 z nową treścią, IndexNow 2 z 3 dla każdej; `~/Projekty/fluxlab-meta/briefy/od-cyklu-ruchu-2026-10-15.md`; linie Z2 do Z20 w `cykl/plan-ruchu.md`.
 **Dla Pawła:** Content Rocket (kontakt@content-rocket.pl) nadal czeka na odpowiedź w Zoho od 13.10 14:02 („Współpraca reklamowa”).
 **Zostało otwarte:** Z6 seria indeksowania po 23:58 (10 adresów, 19 kolejnych dopisanych na następne okno), Z7 bilans o 00:46, Z11/Z12 tytuł e-Doręczeń od 04:46, Z15/Z16 outreach do agencji (wysyłka 15.10 od 9:00). Dla stratega: `/numer-ksef` ma w PSI LCP 4,3 s (FCP 2,9 s) przy 1,2 s na `/e-doreczenia-integracja`, do powtórzenia i rozpisania.
+<!-- WYSLANO 2026-10-14 19:07 -->
+
+## 2026-10-14 20:10
+**Kanał:** outreach z gotowym raportem (Z15) i zgłoszenie zmian w wyszukiwarkach (Z21 planu 14.10). Z6 czeka na okno po 23:58, Z7 i Z11 mają godziny nocne, więc wzięte pierwsze zadania wykonalne teraz.
+**Co zrobione:** nowe źródło dla segmentu agencji: pkt.pl `agencja-reklamowa` w 10 miastach średnich dało 146 nowych domen, 18 spółek w KRS, 9 bez adresu do e-Doręczeń i 5 maili po odsiewie (PKD 73.11Z, NIP ze strony zgodny z odpisem, adres firmowy ze strony głównej); kolejka `agencje` gotowa do wysyłki 15.10 od 9:00 (Z16). Cztery strony zmienione dziś zgłoszone ręcznie w Bing i przez IndexNow.
+**Ruch:** ostatnia doba 28 odsłon, 26 osób (−35% wobec średniej 43,1). Źródła: www.google.com 6, mail 1. Najczęściej /e-doreczenia-integracja (5), /numer-ksef (4), / (4), /naprawa-https (2), /ksef-2027 (2). Narzędzia 1 (numer KSeF). Tydzień 288 odsłon, 198 osób.
+**Dowód:** `~/Projekty/mail-audyt/maile_agencje/013_digitalmonsters.txt` do `017_riocreativo.txt` (hello@digitalmonsters.studio, biuro@ibpartner.pl, kontakt@lumen-technik.com, biuro@arsmedia.pl, biuro@riocreativo.pl), `pkt_domeny_2026-10-15.json`, `krs_2026-10-15.json`; Bing Request indexing 4 z 4 (/sprawdzenie-nip, /kalkulator-podatkowy, /numer-ksef, /integracja-crm-z-erp), IndexNow Yandex 200, Naver 200; linie Z15 i Z21 w `cykl/plan-ruchu.md`.
+**Dla Pawła:** Content Rocket (kontakt@content-rocket.pl) nadal czeka na odpowiedź w Zoho od 13.10 14:02 („Współpraca reklamowa”).
+**Zostało otwarte:** Z6 seria indeksowania po 23:58, Z7 bilans o 00:46, Z11/Z12 od 04:46, Z16 wysyłka 5 maili do agencji 15.10 od 9:00. Bing pokazuje /integracja-crm-z-erp jako „URL cannot appear”, do sprawdzenia w Z17.
