@@ -560,18 +560,6 @@ export default function AudytCheck() {
             </div>
           </div>
 
-          {wynik.opis && (
-            <div className="rounded-xl border-l-4 border-accent bg-gray-50 p-5 dark:bg-gray-900/50">
-              <p className="text-sm font-semibold text-gray-900 dark:text-white">
-                Streszczenie
-              </p>
-              <p className="mt-2 text-sm leading-relaxed text-gray-700 dark:text-gray-300">
-                {wynik.opis.streszczenie}
-              </p>
-              <DalejPoWyniku kampania="audyt" />
-            </div>
-          )}
-
           {/* Raport na maila */}
           <div className="rounded-2xl border border-gray-200 bg-gray-50/60 p-6 dark:border-gray-800 dark:bg-gray-900/40">
             {mailStan === "ok" ? (
@@ -635,6 +623,18 @@ export default function AudytCheck() {
               </>
             )}
           </div>
+
+          {wynik.opis && (
+            <div className="rounded-xl border-l-4 border-accent bg-gray-50 p-5 dark:bg-gray-900/50">
+              <p className="text-sm font-semibold text-gray-900 dark:text-white">
+                Streszczenie
+              </p>
+              <p className="mt-2 text-sm leading-relaxed text-gray-700 dark:text-gray-300">
+                {wynik.opis.streszczenie}
+              </p>
+              <DalejPoWyniku kampania="audyt" />
+            </div>
+          )}
 
           {/* Ustalenia */}
           {wynik.ustalenia.length > 0 && (
