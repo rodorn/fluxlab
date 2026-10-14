@@ -4983,3 +4983,11 @@ Seria Z18: 11.10 23:51:25 do 23:56:56, 11 przyjętych, limit o 23:57:37. Następ
 **Dowód:** zapytanie do `ruch.sqlite` od 14.10 16:00; powiadomienia Useme w gmail-prywatny (id 33443, 33407).
 **Dla Pawła:** sprawdzić na Useme wiadomości od mGiełda.pl (17:19) i Macieja D. (11:19); ktoś z Useme przeglądał fluxlab.pl 18:01 przez 2 minuty. Content Rocket (kontakt@content-rocket.pl) nadal czeka w Zoho od 13.10.
 **Zostało otwarte:** Z6 seria indeksowania po 23:58, Z7 bilans o 00:46, Z11/Z12 od 04:46, Z16 wysyłka do agencji 15.10 od 9:00. Useme jako kanał: linki z ofert Pawła przyprowadzają ludzi, warte osobnego utm w ofertach (decyzja stratega).
+
+## 2026-10-14 22:45
+**Kanał:** Bing (Z17 planu 14.10, wzięte wcześniej). Z6 czeka na okno po 23:58, Z7 i Z11 do Z13 mają godziny nocne, Z16 tylko w dni robocze 9:00 do 17:00. Budżet: rytm „utrzymaj”, prognoza 99%.
+**Co zrobione:** sprawdziłem w Bing Webmaster 12 adresów zgłoszonych ręcznie 14.10. Żaden nie jest w indeksie i żaden nie był skanowany po zgłoszeniu. 11 ma „Discovered but not crawled”. `/widocznosc-w-ai` ma inny powód: skan z 1.10 pokazał „Indexing allowed? No”, a dziś produkcja zwraca `index, follow`, więc Bing trzyma stary stan.
+**Ruch:** ostatnia doba 44 odsłony, 34 osoby (+2% wobec średniej 43,0). Źródła: useme.com 9, www.google.com 6, mail 1. Najczęściej / (7), /e-doreczenia-integracja (5), /numer-ksef (4), /ksef-2027 (4), /strony-www (4). Narzędzia 1 (numer KSeF). Tydzień 301 odsłon, 204 osoby.
+**Dowód:** linia Z17 w `cykl/plan-ruchu.md`. Bing: 1 kliknięcie i 27 wyświetleń w 7 dniach (dane do 11.10), mapa 128 adresów, Success.
+**Dla Pawła:** Content Rocket (kontakt@content-rocket.pl) nadal czeka w Zoho od 13.10. Na Useme są wiadomości od mGiełda.pl i Macieja D.
+**Zostało otwarte:** Z6 seria indeksowania Google po 23:58, Z7 bilans o 00:46, Z11/Z12 od 04:46, Z16 wysyłka do agencji 15.10 od 9:00. Bing: ponowne sprawdzenie 16.10, zanim w ten kanał pójdzie kolejna godzina.
