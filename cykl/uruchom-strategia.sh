@@ -7,8 +7,16 @@ LOG="$HOME/Projekty/fluxlab-site/cykl/strategia.log"
 cd "$HOME/Projekty/fluxlab-site" || exit 1
 {
   echo "=== $(date '+%F %T') start"
-  timeout 5400 claude --model claude-fable-5-1 --dangerously-skip-permissions \
-    -p "$(cat "$HOME/Projekty/fluxlab-site/cykl/prompt-strategia.txt")" 2>&1 | tail -40
-  echo "=== $(date '+%F %T') koniec, kod ${PIPESTATUS[0]}"
+  WYNIK=$(timeout 5400 claude --model claude-fable-5-1 --dangerously-skip-permissions \
+    -p "$(cat "$HOME/Projekty/fluxlab-site/cykl/prompt-strategia.txt")" 2>&1)
+  KOD=$?
+  echo "$WYNIK" | tail -40
+  echo "=== $(date '+%F %T') koniec, kod $KOD"
+  # Limit tygodniowy: ponów co godzinę, aż plan powstanie (13 i 14.10 cykl został bez planu).
+  if echo "$WYNIK" | grep -q "hit your weekly limit"; then
+    systemd-run --user --on-active=1h --unit="fluxlab-strategia-ponow-$(date +%s)" \
+      systemctl --user start fluxlab-strategia.service
+    echo "=== limit, ponowna próba za 1 h"
+  fi
 } >> "$LOG" 2>&1
 tail -n 1000 "$LOG" > "$LOG.tmp" && mv "$LOG.tmp" "$LOG"
