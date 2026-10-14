@@ -30,8 +30,8 @@ export default function IntegracjaCrmZErp() {
       breadcrumb="Integracja CRM z ERP"
       eyebrow="Integracje"
       h1="Integracja CRM z ERP"
-      lead="Handlowcy pracują w CRM, a księgowość i magazyn w ERP. Spinamy oba systemy: CRM z danymi z ERP, bez przepisywania i z rozjazdem widocznym od razu."
-      ctaLabel="Opisz swoje dwa systemy"
+      lead="Integracja CRM z ERP łączy CRM handlowców z księgowością i magazynem w ERP. Spinamy oba systemy: CRM z danymi z ERP, bez przepisywania."
+      ctaLabel="Opiszcie swoje dwa systemy"
       ctaNote="Odpisujemy zwykle tego samego dnia"
       powiazane={[
         {
@@ -68,16 +68,12 @@ export default function IntegracjaCrmZErp() {
           title: "Stany i ceny w drugą stronę",
           desc: "Handlowiec widzi w CRM aktualną cenę i dostępność, odświeżane co kilkanaście minut.",
         },
-        {
-          title: "Czego nie zrobimy",
-          desc: "Integracji, w której obie strony edytują te same pola, a nikt nie rozstrzyga, kto ma rację.",
-        },
       ]}
       pricing={[
         {
           name: "Rozpoznanie",
           price: "0 zł",
-          desc: "Zanim cokolwiek zlecisz.",
+          desc: "Zanim cokolwiek zlecicie.",
           features: [
             "Czy ERP ma interfejs, czy trzeba przez pliki",
             "Lista kontrahentów, którzy nie dopasują się sami",
@@ -128,10 +124,10 @@ export default function IntegracjaCrmZErp() {
         },
       ]}
       formId="integracja_erp"
-      formHeading="Napisz, co masz po obu stronach"
-      formIntro="Podaj nazwę CRM, systemu ERP i napisz, co dziś ktoś przepisuje ręcznie. Odpiszemy, czy da się to spiąć i za ile."
+      formHeading="Napiszcie, co macie po obu stronach"
+      formIntro="Podajcie nazwę CRM i ERP oraz co dziś ktoś przepisuje ręcznie. Odpiszemy, czy da się to spiąć i za ile."
       submitLabel="Wyślij opis"
-      microCopy="Bez rozmowy telefonicznej, jeśli nie chcesz. Ustalenia prowadzimy mailowo."
+      microCopy="Bez rozmowy telefonicznej, jeśli nie chcecie. Ustalenia prowadzimy mailowo."
       serviceName="Integracja CRM z ERP"
       serviceDesc="Spięcie systemu CRM z systemem magazynowo-księgowym: kontrahenci, dokumenty sprzedaży, stany magazynowe i ceny, z obsługą błędów i ponowień."
       serviceType="Integracja systemów informatycznych"
