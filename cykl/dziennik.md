@@ -4991,3 +4991,12 @@ Seria Z18: 11.10 23:51:25 do 23:56:56, 11 przyjętych, limit o 23:57:37. Następ
 **Dowód:** linia Z17 w `cykl/plan-ruchu.md`. Bing: 1 kliknięcie i 27 wyświetleń w 7 dniach (dane do 11.10), mapa 128 adresów, Success.
 **Dla Pawła:** Content Rocket (kontakt@content-rocket.pl) nadal czeka w Zoho od 13.10. Na Useme są wiadomości od mGiełda.pl i Macieja D.
 **Zostało otwarte:** Z6 seria indeksowania Google po 23:58, Z7 bilans o 00:46, Z11/Z12 od 04:46, Z16 wysyłka do agencji 15.10 od 9:00. Bing: ponowne sprawdzenie 16.10, zanim w ten kanał pójdzie kolejna godzina.
+<!-- WYSLANO 2026-10-14 23:04 -->
+
+## 2026-10-15 00:04
+**Kanał:** Google (Z6 planu 14.10, seria żądań indeksowania).
+**Co zrobione:** 10 adresów zgłoszonych w Search Console do indeksowania, wszystkie przyjęte („prośba przesłana”), żaden nie był wcześniej w indeksie Google.
+**Ruch:** ostatnia doba 45 odsłon, 35 osób (+6% wobec średniej 42,3). Źródła: useme.com 9, www.google.com 6, mail 1. Najczęściej / (7), /e-doreczenia-integracja (5), /numer-ksef (4), /ksef-2027 (4), /strony-www (4). Narzędzia 1 (numer KSeF). Tydzień 302 odsłony, 205 osób.
+**Dowód:** linia Z6 w `cykl/plan-ruchu.md`; zgłoszone 14.10 23:58:43 do 15.10 00:03:35: /automatyzacja-pipedrive, /automatyzacja-raportowania, /wdrozenie-n8n-cena, /integracje-api, /automatyczne-przypisywanie-leadow, /strefa-wiedzy/hubspot-vs-pipedrive, /strefa-wiedzy/jak-polaczyc-crm-z-innymi-systemami, /strefa-wiedzy/vat-w-jdg-kiedy-warto, /strefa-wiedzy/skala-czy-liniowy-jdg, /strefa-wiedzy/maly-zus-plus-kiedy-sie-oplaca. Budżet: rytm „dociśnij”, prognoza 84%.
+**Dla Pawła:** Content Rocket (kontakt@content-rocket.pl) nadal czeka w Zoho od 13.10. Na Useme są wiadomości od mGiełda.pl i Macieja D.
+**Zostało otwarte:** Z7 bilans o 00:46 (okno VPS do 00:30, więc nie wcześniej), Z11/Z12 od 04:46, Z13 o 06:46 sprawdzi, ile z tych 10 adresów weszło do indeksu, Z16 wysyłka do agencji od 9:00. Następne okno indeksowania od 15.10 23:59 dla 19 adresów z Z3.
