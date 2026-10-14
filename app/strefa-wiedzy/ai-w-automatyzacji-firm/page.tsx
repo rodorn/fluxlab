@@ -46,7 +46,7 @@ export default function AiWAutomatyzacjiFirmPage() {
           <div className="container-wide max-w-3xl mx-auto">
             <span className="section-label">Strefa wiedzy</span>
             <h1 className="mt-4 h1-artykulu">
-              AI w automatyzacji firm
+              Automatyzacja AI w firmach
             </h1>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed !text-left">
               <Link href="/automatyzacja-ai" className="text-accent hover:underline">
