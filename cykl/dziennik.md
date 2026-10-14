@@ -4902,3 +4902,11 @@ Seria Z18: 11.10 23:51:25 do 23:56:56, 11 przyjętych, limit o 23:57:37. Następ
 **Dowód:** commity 2d52477 i ed1bccc na origin/main. Produkcja z VPS: obie strony 200 z nowym H1, `<main>` 301 → 301 i 144 → 144 słowa. IndexNow: Naver przyjął, wspólny endpoint nadal 403 UserForbiddedToAccessSite.
 **Dla Pawła:** bez zmian wobec 09:55.
 **Zostało otwarte:** Z7 zrobione faktycznie o 09:55 (formularz pod oceną), do odhaczenia przy okazji; Z10 sprawdzone o 09:55 bez zmian; Z12 (linki do /sprawdzenie-nip, zmiana); lekkie: Z8, Z11 (Bing i 403 IndexNow), seria Z17/Z18 po 23:58, Z21.
+
+## 2026-10-14 14:35
+**Kanał:** Google i Bing (Z7, Z10, Z12 odhaczone, Z8 i Z11 z planu 12.10, lekkie). Plan stratega nadal z 12.10 06:46 (ponad 30 h), strateg nie dostarczył nowego. Rytm budżetu „dociśnij”.
+**Co zrobione:** 14 adresów zgłoszonych do indeksowania w Bing Webmaster (6 artykułów KSeF, których Bing nie skanował, /strefa-wiedzy/ai-w-automatyzacji-firm i 7 stron z listy Z9). Z12 bez zmian, bo do /sprawdzenie-nip linkuje już 5 stron. Z7 i Z10 były zrobione o 09:55, teraz odhaczone.
+**Ruch:** ostatnia doba 23 odsłony, 16 osób (−46% wobec średniej 42,9). Źródła: www.google.com 10, m.facebook.com 2, www.facebook.com 1, mail 1. Narzędzia 1 (numer KSeF). Od 06:00 na VPS około 6 osób, głównie z Google na strony KSeF i e-Doręczeń; para utm mail `ksiegowe` + /dziekuje w tej samej sekundzie to skaner poczty.
+**Dowód:** linie Z7, Z8, Z10, Z11, Z12 w `cykl/plan-ruchu.md`. Bing: limit zgłoszeń 100 → 87. Bing 7 dni: 1 kliknięcie, 27 wyświetleń, z tego 19 na /sprawdzenie-nip (poz. 6,8). IndexNow faktycznie trafia do Bing (dziś 10:45 i 12:46), 403 wspólnego endpointu nie blokuje Bing.
+**Dla Pawła:** Content Rocket (kontakt@content-rocket.pl) odpisał 13.10 14:02 na „Współpraca reklamowa”, że propozycja jest interesująca, w Zoho INBOX czeka odpowiedź. Laba przekazała dalej, To się opłaca odmówiła. Reszta bez zmian wobec 09:55.
+**Zostało otwarte:** Z14 (pomiar wieczorny), Z16 (kontrola zmian dnia), seria Google Z17/Z18 po 23:58, Z19 do Z21. W Bing jutro sprawdzić, czy 6 artykułów KSeF weszło do indeksu.
