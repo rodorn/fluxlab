@@ -47,29 +47,29 @@ export default function StrefaWiedzy() {
             <div className="max-w-3xl mx-auto text-center">
               <p className="section-label mb-3">Wiedza</p>
               <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4 leading-tight">
-                Strefa wiedzy
+                Automatyzacja CRM i AI
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-400">
-                O automatyzacji,{" "}
+                Od{" "}
                 <Link
                   href="/strefa-wiedzy/automatyzacja-crm-od-czego-zaczac"
                   className="text-accent hover:underline"
                 >
                   CRM
-                </Link>
-                ,{" "}
+                </Link>{" "}
+                i{" "}
                 <Link
                   href="/strefa-wiedzy/ai-w-automatyzacji-firm"
                   className="text-accent hover:underline"
                 >
                   AI
-                </Link>
-                ,{" "}
+                </Link>{" "}
+                po{" "}
                 <Link
                   href="/mail-firmowy"
                   className="text-accent hover:underline"
                 >
-                  poczcie firmowej
+                  pocztę firmową
                 </Link>{" "}
                 i{" "}
                 <Link
@@ -77,8 +77,8 @@ export default function StrefaWiedzy() {
                   className="text-accent hover:underline"
                 >
                   Google Ads
-                </Link>{" "}
-                dla firm B2B.
+                </Link>
+                .
               </p>
             </div>
           </div>
