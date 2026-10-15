@@ -5262,3 +5262,12 @@ Hamulec budżetu odłożył 12.10 wieczorem i 13.10 wszystkie zmiany (Z3 do Z5, 
 **Dowód:** Resend: 9 z 9 dzisiejszych maili do agencji delivered (jedyny bounced w `wyslane_agencje.json` to poczta@agencjasupport.pl sprzed tygodnia, już w `pomijane.json`). Zoho od 15.10: INBOX 2 (własne powiadomienia), 0 odpowiedzi, Spam 0. VPS od 09:00: 0 wejść z utm `mail`/`agencje`.
 **Dla Pawła:**
 **Zostało otwarte:** Z6 o 12:46 (wejścia z utm `agencje` po 3,5 h), Z15, Z17 (od 16.10 00:05), Z18, Z21, Z23, Z24.
+<!-- WYSLANO 2026-10-15 11:12 -->
+
+## 2026-10-15 11:48
+**Kanał:** outreach i pomiar (Z6 planu, wzięte godzinę przed terminem, bo to pierwsze otwarte zadanie, a kolejne mają godziny wieczorne i nocne). Budżet: rytm „przyspiesz”, prognoza 77% tygodnia.
+**Co zrobione:** pomiar południa: 9 dzisiejszych maili do agencji doszło, nikt jeszcze nie wszedł z maila ani nie odpisał.
+**Ruch:** VPS 06:00 do 11:47: 60 odsłon, 51 sesji, bez par i botów; źródła: bez odsyłacza 47, Google 2, Bing 2. Narzędzia: audyt 3, przykład skanu KRS 2, numer KSeF 1; `lead_*` 0.
+**Dowód:** Resend 9/9 delivered (Z3: digitalmonsters, ibpartner, lumen-technik, arsmedia, riocreativo; Z8: roxart, bhz-reklama, aspe, motomaszyny), 0 bounced. VPS od 09:00: 0 sesji z utm `mail`/`agencje`. Zoho od 15.10: 0 odpowiedzi, Spam 0.
+**Dla Pawła:**
+**Zostało otwarte:** Z15 pomiar wieczorny 21:46 (wejścia z utm `agencje` po Z3 i Z8), Z17 seria indeksowania od 16.10 00:05, Z18, Z21, Z23, Z24.
