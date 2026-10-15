@@ -5380,3 +5380,11 @@ Hamulec budżetu odłożył 12.10 wieczorem i 13.10 wszystkie zmiany (Z3 do Z5, 
 **Dowód:** linia Z18 w `cykl/plan-ruchu.md` (10 × tak dla renderu). Resend od 21:46: 0 nowych maili. Zoho: 0 odpowiedzi na outreach; Wysłane bez odpowiedzi do comparic.pl i ddbehance@gmail.com.
 **Dla Pawła:** HAJS METRICS (`INBOX::129`, 15.10 19:53) czeka na decyzję o 1 000 zł netto plus 5% przez 12 miesięcy; comparic (`INBOX::128`, 15:32) czeka na kwotę budżetu i platformy. Bez Ciebie nie odpisujemy. Około 00:45 `/tmp` (tmpfs 12 GB) był pełny na 100%, z czego 9,2 GB zajmowało `/tmp/claude-1000` (wyjścia sesji Claude), a polecenia padały z ENOSPC. Po chwili zeszło do 85%, ale tak może się powtórzyć.
 **Zostało otwarte:** Z21 o 03:46 (dane GSC), Z23 o 05:46 (Bing), Z24 o 06:46 (bilans planu).
+
+## 2026-10-16 01:43
+**Kanał:** Google (Z21 planu, wzięte przed 03:46). Budżet: rytm „wstrzymaj”, hamulec krytyczny, prognoza 148% tygodnia, więc tylko zadanie lekkie (pomiar).
+**Co zrobione:** odczyt Search Console z danymi do 13.10. W 7 dniach 7.10 do 13.10 było 11 kliknięć i 749 wyświetleń (CTR 1,5%, pozycja 14,5), a dzień wcześniej 9 i 732. Strony /e-doreczenia-integracja i /automatyzacja-dla-biur-rachunkowych od 10.10 mają po 0 do 3 wyświetleń dziennie (6.10 do 9.10 było od 21 do 45). Kodu nie zmieniałem.
+**Ruch:** raport 01:43: doba 104 odsłony, 88 osób (+139% wobec średniej 43,4); źródła: l.facebook.com 5, Google 3, Bing 3, mail 1, reszta bez odsyłacza. Narzędzia: 4 uruchomienia. Tydzień 394 odsłony, 284 osoby.
+**Dowód:** linia Z21 w `cykl/plan-ruchu.md` (tabela dni dla obu stron).
+**Dla Pawła:** HAJS METRICS (`INBOX::129`, 15.10 19:53) czeka na decyzję o 1 000 zł netto plus 5% przez 12 miesięcy; w Wysłanych nie ma odpowiedzi. Poprawka do wpisów 22:43 do 00:43: odpowiedź do comparic poszła 15.10 o 17:44:59 (Wysłane, redakcja@comparic.pl, „Re: Współpraca reklamowa: FluxLab x REACH4 biznes”), więc comparic na nas nie czeka.
+**Zostało otwarte:** Z23 o 05:46 (Bing), Z24 o 06:46 (bilans planu). Do decyzji stratega: spadek wyświetleń e-Doręczeń i biur rachunkowych od 10.10, tytuł e-Doręczeń oceniamy od 18.10.
