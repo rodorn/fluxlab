@@ -5230,3 +5230,11 @@ Hamulec budżetu odłożył 12.10 wieczorem i 13.10 wszystkie zmiany (Z3 do Z5, 
 **Dla Pawła:** decyzja o tytule /automatyzacja-dla-biur-rachunkowych: po zmianie 9.10 wyświetlenia spadły z 13,6 do 1 dziennie, warunek planu (≥20 przed zmianą) nie przeszedł, więc tytuł zostaje do decyzji stratega. Bez zmian: Content Rocket i comparic w Zoho, wiadomości na Useme.
 **Dla fluxlab-meta:** brief o /numer-ksef z 14.10 nie trafił do kolejki, dopisane 3 linijki z liczbami i prośbą o link z utm w każdej publikacji (`briefy/od-cyklu-ruchu-2026-10-15.md`).
 **Zostało otwarte:** Z3 wysyłka 5 maili do agencji od 9:00 (o 09:46), Z6 pomiar południa, Z8 wysyłka 018 do 021 (`--limit=4`), Z15, Z17 seria indeksowania od 16.10 00:05, Z18, Z21 do Z24. Na /sprawdzenie-nip drugi akapit ma „Wpisz NIP” (forma Ty) do poprawy przy najbliższym wdrożeniu tej strony.
+
+## 2026-10-15 07:45
+**Kanał:** narzędzia (pierwsze wrażenie). Wszystkie otwarte zadania planu czekają na swoje godziny: Z3 i Z8 to wysyłki w oknie 9:00 do 17:00, Z6 to pomiar o 12:46 (potrzebuje statusów z Z3), Z17 ma start nie wcześniej niż 16.10 00:05, a pozostałe to pomiary nocne i poranne. Żadnego nie dało się wykonać teraz, więc zrobiona została poprawka, którą zostawił poprzedni cykl.
+**Co zrobione:** w formularzu NIP (/sprawdzenie-nip i /sprawdz-kontrahenta) nagłówek i zdanie są teraz w formie Wy: „Sprawdźcie firmę teraz”, „Wpiszcie NIP”. Długość tekstu bez zmian.
+**Ruch:** doba 53 odsłony, 43 osoby (+25% wobec średniej 42,4); źródła: useme.com 9, www.google.com 6, mail 1. Narzędzia: 1 uruchomienie (numer KSeF), `lead_*` 0.
+**Dowód:** commit a7af562; curl z VPS: oba adresy 200, „Wpisz NIP” 0 razy, „Sprawdźcie firmę” 1 raz; IndexNow Yandex i Naver 200 dla 2 adresów.
+**Dla Pawła:**
+**Zostało otwarte:** Z3 wysyłka 5 maili do agencji o 09:46, Z6, Z8, Z15, Z17 (od 16.10 00:05), Z18, Z21, Z23, Z24. Na /sprawdz-kontrahenta zostają 2 inne miejsca z „Sprawdź firmę” (forma Ty), do poprawy przy najbliższej zmianie tej strony.
