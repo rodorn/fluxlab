@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import LandingForm from "@/components/LandingForm";
-import TrackedCTA from "@/components/TrackedCTA";
+import SzybkiKontakt from "@/components/SzybkiKontakt";
 import Tabs from "@/components/Tabs";
 import ProductGrid from "@/components/ProductGrid";
 import CoZeStrona from "@/components/CoZeStrona";
@@ -96,19 +96,17 @@ export default function StronyWww() {
                 Nowa strona od zera albo poprawki w istniejącej. Pierwsza wersja
                 w 2-3 tygodnie.
               </p>
-              <div className="animate-fade-up-4 flex flex-wrap items-center gap-5">
-                <TrackedCTA
-                  href="#sekcje"
-                  location="strony_www_hero"
-                  className="btn-primary"
-                >
-                  Bezpłatna diagnoza
-                </TrackedCTA>
+              <div className="animate-fade-up-4">
+                <SzybkiKontakt
+                  formId="strony_www"
+                  temat="Strona internetowa"
+                  podpowiedz="Nowa strona czy poprawki?"
+                />
                 <a
                   href="#poprawiac-czy-budowac"
-                  className="text-base font-semibold text-accent hover:underline"
+                  className="mt-4 inline-block text-sm font-semibold text-accent hover:underline"
                 >
-                  Sprawdź, poprawiać czy budować od nowa
+                  Sprawdźcie, poprawiać czy budować od nowa ↓
                 </a>
               </div>
             </div>
