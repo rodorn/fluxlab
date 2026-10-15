@@ -133,8 +133,14 @@ export default function PipedriveVsSalesforceArticle() {
             do 2 tygodni.
           </p>
           <p className={p}>
-            Salesforce pozwala zbudować dowolny proces i model danych, od
-            sprzedaży po serwis. Wdrożenie Enterprise to 3 do 6 miesięcy i
+            Salesforce pozwala{" "}
+            <Link
+              href="/automatyzacja-salesforce"
+              className="text-accent hover:underline"
+            >
+              zbudować dowolny proces
+            </Link>{" "}
+            i model danych, od sprzedaży po serwis. Wdrożenie Enterprise to 3 do 6 miesięcy i
             ktoś musi to potem utrzymać.
           </p>
           <p className={p}>

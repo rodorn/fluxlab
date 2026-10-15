@@ -149,8 +149,14 @@ export default function CrmIntegracjaArticle() {
                       </li>
                     </ul>
                     <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                      Zacznij od jednego przepływu o wysokiej wartości,
-                      przetestuj wyjątki, potem rozbudowuj.
+                      Zacznij od jednego{" "}
+                      <Link
+                        href="/strefa-wiedzy/integracje-api-w-firmie-kiedy-warto"
+                        className="text-accent hover:underline"
+                      >
+                        przepływu o wysokiej wartości
+                      </Link>
+                      , przetestuj wyjątki, potem rozbudowuj.
                     </p>
 
                   </div>

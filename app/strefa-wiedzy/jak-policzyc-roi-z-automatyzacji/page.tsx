@@ -100,7 +100,10 @@ export default function RoiAutomatyzacjiArticle() {
             </p>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
               <strong className="text-gray-900 dark:text-white">Korzyści:</strong>{" "}
-              zaoszczędzone godziny, mniej błędów, szybsza reakcja na leady i
+              <Link href="/case-study" className="text-accent hover:underline">
+                zaoszczędzone godziny
+              </Link>
+              , mniej błędów, szybsza reakcja na leady i
               mniej ręcznej koordynacji. Nie licz tylko czasu kliknięcia,
               poprawki i opóźnienia też kosztują.
             </p>
