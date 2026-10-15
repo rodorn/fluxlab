@@ -5185,3 +5185,48 @@ Hamulec budżetu odłożył 12.10 wieczorem i 13.10 wszystkie zmiany (Z3 do Z5, 
 **Kanały (ludzie doba / sesje tydzień / h wczoraj → h dziś):** Google 6/22/11 → 10; outreach 1/6/2 → 4 (dwie wysyłki do agencji i partia na piątek, bo 20 wejść z 81 maili i jedyny lead); narzędzia 1/19/2 → 2 (LCP 4,3 s na /numer-ksef, lejek skanu KRS); bez odsyłacza 15/216/1 → 0; Facebook 0/21/2 → 1 (kontrola briefu); Bing 0/2/1 → 1; asystenci AI 0/0/0 → 1 (SSR); YouTube, Gofin, Allegro → 0.
 **Plan:** 24 zadania w `cykl/plan-ruchu.md`; pierwsze: Z1 bilans starego planu, Z2 GSC 7 dni po stronach i decyzja o tytule biur rachunkowych, Z3 wysyłka 5 maili do agencji o 9:46. Kluczowe: Z5 warunkowy powrót tytułu `/automatyzacja-dla-biur-rachunkowych` (sprzed 476b9ba), Z7 LCP numeru KSeF, Z8 druga wysyłka, Z14 `/automatyzacja-crm-leasing` pod „crm dla firm leasingowych", Z17 seria indeksowania po 00:05 (10 adresów z listy 19). Stary plan zarchiwizowany jako `cykl/.plan-ruchu-2026-10-14.bak` (otwarte w nim Z16 → Z3, Z19 → Z6, Z24 → Z1).
 **Dla Pawła:** w mailu (Content Rocket, comparic, Useme, Kontomatik, linki w postach FB).
+
+## Bilans planu 2026-10-14/15
+| Zadanie | Stan | Godzina | Dowód | Co przyprowadziło |
+|---|---|---|---|---|
+| Z1 pomiar startu | tak | 14.10 18:05 | VPS 16 sesji, 11 ludzi | 0 (pomiar) |
+| Z2 GSC strony 28 dni | tak | 14.10 18:45 | tabela 20 stron | 0 (pomiar) |
+| Z3 GSC 90 niezindeksowanych | tak | 14.10 18:47 | 7 przyczyn, lista 29 | 0 (pomiar) |
+| Z4 lejek numeru KSeF | tak | 14.10 18:48 | 6 sesji, 6 kończy na narzędziu | 0 (pomiar) |
+| Z5 /sprawdzenie-nip H1 | tak | 14.10 18:52 | da6d848 | 0 (GSC dane do 12.10) |
+| Z6 żądania indeksowania | tak | 14.10 23:58 | 10 z 10 przyjęte | 3 z 3 w indeksie, 0 ludzi |
+| Z7 bilans 12/14 | tak | 15.10 00:50 | wpis 00:50 | 0 (pomiar) |
+| Z8 linki wewnętrzne | tak | 14.10 18:53 | 99c23a1 | 0 |
+| Z9 wskaźniki stron | tak | 14.10 18:58 | PSI /numer-ksef LCP 4,3 s | 0 (pomiar) |
+| Z10 bez odsyłacza | tak | 14.10 18:50 | 125 sesji, 90% 1 odsłona | 0 (pomiar) |
+| Z11 tytuły dzień 2 | tak | 15.10 04:45 | e-Doręczenia 0,3/dzień | 0 (pomiar) |
+| Z12 powrót tytułu e-Doręczeń | tak | 15.10 04:45 | fb89548 | ocena od 18.10 |
+| Z13 poranek | tak | 15.10 05:45 | render 10 z 10 | 0 (pomiar) |
+| Z14 brief Facebook | tak | 14.10 18:51 | briefy/od-cyklu-ruchu-2026-10-15.md | 0 |
+| Z15 kolejka agencji | tak | 14.10 20:05 | 146 domen → 5 plików | 0 (wysyłka dziś) |
+| Z16 wysyłka agencji | nie | | przeniesione do Z3 nowego planu (okno 9:00) | 0 |
+| Z17 Bing kontrola | tak | 14.10 22:45 | 0 z 12 w indeksie | 0 (pomiar) |
+| Z18 link pod numerem KSeF | tak | 14.10 18:56 | 0174c2d | 0 |
+| Z19 pomiar południa | nie | | przeniesione do Z6 nowego planu | 0 |
+| Z20 /integracja-crm-z-erp | tak | 14.10 19:05 | 9772bc5 | 0 |
+| Z21 IndexNow i Bing | tak | 14.10 20:00 | 4 z 4 zgłoszone | 0 |
+| Z22 Facebook który post | tak | 15.10 01:55 | 28 publikacji bez linku | 0 (pomiar) |
+| Z23 kontrola zmian | tak | 14.10 20:50 | 4 × 200, słowa ≤ | 0 (pomiar) |
+| Z24 bilans | tak | 15.10 06:50 | ten wpis (jako Z1 nowego planu) | 0 (pomiar) |
+
+**Wynik planu:** 22 z 24 zrobione (Z16 i Z19 czekały na godziny i przeszły do nowego planu). Żadna osoba nie przyszła mierzalnie z zadań tego planu: zmiany treści z 14.10 i 15.10 nie mają jeszcze danych w GSC (dane do 12.10), a mail wyjdzie dopiero dziś.
+**Ludzie 14.10 06:00 do 15.10 06:50** (VPS, bez botów ≥8 odsłon na minutę i bez sesji, które weszły na ten sam adres w ciągu 3 s co inna, czyli podglądów i renderu Google): 50 sesji, 66 odsłon, 14 w parach, **36 ludzi**: bez odsyłacza 28, Google 6, mail `ksiegowe` 1, Useme 1. Wobec 26 z poprzedniej doby: +10, cały przyrost to sesje bez odsyłacza po 1 odsłonie. Zdarzenia ludzi: 1 (`uruchomiono_numer_ksef` 14.10 06:39), `lead_*` 0.
+**Słowa `<main>` z VPS (przed → po):** /sprawdzenie-nip 278 → 277, /kalkulator-podatkowy 1760 → 1760, /numer-ksef 295 → 295, /integracja-crm-z-erp 601 → 578, /e-doreczenia-integracja 937 → 937 (zmiana tylko `<title>`). Wszystkie 200.
+**Resend 24 h:** 5 wysłanych, 5 delivered, wszystkie to powiadomienia o audytach (spoza `wyslane_*.json`). **Zoho 24 h:** INBOX 4 (Kontomatik × 2, Wiktoria Jagielska „Re: FINREAL”, redakcja@comparic.pl „Re: Współpraca reklamowa”), 0 odpowiedzi na outreach, Spam 0.
+**Kolejka outreachu:** agencje 5 (hello@digitalmonsters.studio, biuro@ibpartner.pl, kontakt@lumen-technik.com, biuro@arsmedia.pl, biuro@riocreativo.pl), ksiegowe-edoreczenia 1 (według `wyslij_segment.py --proba`), pozostałe segmenty 0.
+
+<!-- WYSLANO 2026-10-15 07:07 -->
+
+## 2026-10-15 07:15
+**Kanał:** Google, outreach, narzędzia, Facebook (Z1, Z2, Z4, Z5, Z7, Z9 do Z14, Z16, Z19, Z20 z planu stratega; Z3, Z6, Z8 czekają na okno wysyłki 9:00 do 17:00). Budżet: rytm „przyspiesz”, prognoza 23% tygodnia.
+**Co zrobione:** na produkcji 3 nowe linki z treści do stron bez linków (/automatyzacja-salesforce, /case-study, artykuł o integracjach API), pierwsze zdanie /automatyzacja-crm-leasing pod „crm dla firm leasingowych”, a mapa witryny dostała daty zmian z 11 do 15.10 (stała na 9.10). Do jutrzejszych wysyłek gotowych jest 5 nowych maili do agencji (018 do 022, łącznie w kolejce 10).
+**Ruch:** doba 47 odsłon, 37 osób (+11% wobec średniej 42,4); źródła: useme.com 9, www.google.com 6, mail 1. Po odsiewie podglądów (14.10 06:00 do 15.10 06:50) 36 ludzi: bez odsyłacza 28, Google 6, mail `ksiegowe` 1, Useme 1. Narzędzia: 1 uruchomienie (numer KSeF).
+**Dowód:** commity ecc6ae5 (linki), 6abed40 (CRM leasing, 467 → 461 słów), 2d4bae6 (lastmod); curl z VPS 200 dla 7 adresów z nowymi linkami i zdaniem; IndexNow Yandex i Naver 200. GSC 7 dni: 9 kliknięć, 732 wyświetlenia, poz. 14,1. Seria indeksowania z 14.10: 10 z 10 adresów w Google. PSI /numer-ksef: 4,4 s przy pierwszym pomiarze i 1,8 s przy drugim, to zimny cache, a nie kod. Pliki `maile_agencje/018_roxart.txt` do `022_adream.txt`.
+**Dla Pawła:** decyzja o tytule /automatyzacja-dla-biur-rachunkowych: po zmianie 9.10 wyświetlenia spadły z 13,6 do 1 dziennie, warunek planu (≥20 przed zmianą) nie przeszedł, więc tytuł zostaje do decyzji stratega. Bez zmian: Content Rocket i comparic w Zoho, wiadomości na Useme.
+**Dla fluxlab-meta:** brief o /numer-ksef z 14.10 nie trafił do kolejki, dopisane 3 linijki z liczbami i prośbą o link z utm w każdej publikacji (`briefy/od-cyklu-ruchu-2026-10-15.md`).
+**Zostało otwarte:** Z3 wysyłka 5 maili do agencji od 9:00 (o 09:46), Z6 pomiar południa, Z8 wysyłka 018 do 021 (`--limit=4`), Z15, Z17 seria indeksowania od 16.10 00:05, Z18, Z21 do Z24. Na /sprawdzenie-nip drugi akapit ma „Wpisz NIP” (forma Ty) do poprawy przy najbliższym wdrożeniu tej strony.
