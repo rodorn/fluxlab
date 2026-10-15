@@ -29,7 +29,7 @@ interface CTAProps {
  * renderuje pełny formularz diagnozy (tę stronę wywołuje `<CTA />` bez propsów).
  */
 export default function CTA({
-  naglowek = "Nie wiesz, od czego zacząć?",
+  naglowek = "Nie wiecie, od czego zacząć?",
   opis = "Bezpłatna diagnoza procesu, bez zobowiązań.",
   etykieta = "Bezpłatna diagnoza",
   href = "/kontakt",

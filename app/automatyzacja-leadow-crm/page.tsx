@@ -357,7 +357,7 @@ export default function AutomatyzacjaLeadowCRM() {
                   >
                     <LandingForm
                       formId="diagnosis_lp_leadow"
-                      heading="Sprawdźmy, gdzie tracisz leady"
+                      heading="Sprawdźmy, gdzie tracicie leady"
                       intro="Napisz, skąd przychodzą leady i co robicie ręcznie. Odpowiemy, od czego zacząć."
                       submitLabel="Chcemy mapę pierwszej automatyzacji"
                     />

@@ -325,7 +325,7 @@ export default function Home() {
           <div className="container-wide">
             <div className="mx-auto max-w-2xl rounded-2xl border border-accent/20 bg-accent/5 p-8 text-center dark:bg-accent/10">
               <h2 className="mb-3 text-2xl font-bold text-gray-900 dark:text-white lg:text-3xl">
-                Nie wiesz, od czego zacząć?
+                Nie wiecie, od czego zacząć?
               </h2>
               <p className="mb-6 text-gray-600 dark:text-gray-400">
                 Opisz, co robicie ręcznie. Wskażemy, co da się zautomatyzować,

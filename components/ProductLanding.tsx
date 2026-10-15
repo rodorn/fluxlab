@@ -1,17 +1,16 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
+import SzybkiKontakt from "@/components/SzybkiKontakt";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import LandingForm from "@/components/LandingForm";
-import TrackedCTA from "@/components/TrackedCTA";
 import RelatedProducts from "@/components/RelatedProducts";
 import NazwaNarzedzia from "@/components/NazwaNarzedzia";
 import { cenaWejscia } from "@/lib/products";
 import { kotwica } from "@/lib/kotwica";
 import { zLinkami, type LinkWTekscie } from "@/lib/zLinkami";
 import FaqOtwieracz from "@/components/FaqOtwieracz";
-import CTA from "@/components/CTA";
 
 export interface Tier {
   name: string;
@@ -87,6 +86,16 @@ function oferta(t: Tier) {
   };
 }
 
+/** Najniższa cena z cennika jako jedno zdanie, np. „Od 1 490 zł netto”. */
+function cenaOd(pricing: Tier[]): string | null {
+  const kwoty = pricing
+    .filter((t) => /zł/.test(t.price) && !/\/\s?mc|miesi/.test(t.price))
+    .map((t) => cenaWejscia(t.price))
+    .filter((k): k is number => k !== null && k > 0);
+  if (!kwoty.length) return null;
+  return `Od ${String(Math.min(...kwoty)).replace(/\B(?=(\d{3})+$)/g, "\u00a0")} zł netto`;
+}
+
 export default function ProductLanding(p: ProductLandingProps) {
   const typ = p.typ ?? (p.tool ? "narzedzie" : "usluga");
   const etykietaTypu = typ === "narzedzie" ? "Narzędzie" : "Usługa";
@@ -105,67 +114,26 @@ export default function ProductLanding(p: ProductLandingProps) {
             <p className="mt-5 text-lg text-gray-600 dark:text-gray-300">
               {p.lead}
             </p>
-            <div
-              className={`mt-8 flex-wrap items-center gap-4 ${p.tool ? "hidden md:flex" : "flex"}`}
-            >
-              <TrackedCTA
-                href={p.tool ? "#narzedzie" : "#zamow"}
-                location={`${p.formId}_hero`}
-                className="btn-primary"
+            {cenaOd(p.pricing) && (
+              <p className="mt-4 text-base font-semibold text-gray-900 dark:text-white">
+                {cenaOd(p.pricing)}
+              </p>
+            )}
+            <SzybkiKontakt formId={p.formId} temat={p.serviceName} />
+            {p.tool && (
+              <a
+                href="#narzedzie"
+                className="mt-4 inline-block text-sm font-semibold text-accent hover:underline"
               >
-                {p.ctaLabel}
-              </TrackedCTA>
-              {p.ctaNote && (
-                <span className="text-sm text-gray-500 dark:text-gray-400">
-                  {p.ctaNote}
-                </span>
-              )}
-            </div>
+                {p.ctaLabel} ↓
+              </a>
+            )}
           </div>
 
           {p.tool && (
             <div id="narzedzie" className="mt-6 md:mt-12 scroll-mt-24">
               <NazwaNarzedzia href={`/${p.slug}`} />
               {p.tool}
-            </div>
-          )}
-
-          <div className="mt-14 max-w-3xl">
-            <h2 className="h2-sekcji">Jak to działa</h2>
-          </div>
-          <div className="mt-6 grid gap-6 md:grid-cols-2 max-w-3xl">
-            {p.checks.map((c) => (
-              <div
-                key={c.title}
-                className="rounded-2xl border border-gray-200/80 dark:border-gray-800/80 bg-white/60 dark:bg-gray-900/40 p-6"
-              >
-                <h3 className="text-lg font-bold text-gray-900 dark:text-white">
-                  {c.title}
-                </h3>
-                <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-                  {c.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          {p.powiazane && (
-            <div className="mt-8 max-w-3xl">
-              <h2 className="h2-sekcji">Powiązane</h2>
-              <div className="mt-4 space-y-2 text-sm text-gray-600 dark:text-gray-400">
-              {p.powiazane.map((z) => (
-                <p key={z.href}>
-                  {z.przed}{" "}
-                  <Link
-                    href={z.href}
-                    className="font-medium text-accent underline underline-offset-2"
-                  >
-                    {z.kotwica}
-                  </Link>
-                  {z.po}
-                </p>
-              ))}
-              </div>
             </div>
           )}
 
@@ -232,6 +200,48 @@ export default function ProductLanding(p: ProductLandingProps) {
             </div>
           </div>
 
+          <details className="mt-16 max-w-3xl group">
+            <summary className="cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+              <h2 className="h2-sekcji inline">Jak to działa</h2>
+              <span className="ml-3 text-sm font-semibold text-accent group-open:hidden">Rozwiń</span>
+            </summary>
+          <div className="mt-6 grid gap-6 md:grid-cols-2 max-w-3xl">
+            {p.checks.map((c) => (
+              <div
+                key={c.title}
+                className="rounded-2xl border border-gray-200/80 dark:border-gray-800/80 bg-white/60 dark:bg-gray-900/40 p-6"
+              >
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white">
+                  {c.title}
+                </h3>
+                <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                  {c.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {p.powiazane && (
+            <div className="mt-8">
+              <h2 className="h2-sekcji">Powiązane</h2>
+              <div className="mt-4 space-y-2 text-sm text-gray-600 dark:text-gray-400">
+              {p.powiazane.map((z) => (
+                <p key={z.href}>
+                  {z.przed}{" "}
+                  <Link
+                    href={z.href}
+                    className="font-medium text-accent underline underline-offset-2"
+                  >
+                    {z.kotwica}
+                  </Link>
+                  {z.po}
+                </p>
+              ))}
+              </div>
+            </div>
+          )}
+          </details>
+
           <div className="mt-16 max-w-3xl">
             <h2 className="h2-sekcji">Pytania i odpowiedzi</h2>
             <div className="mt-6 space-y-4">
@@ -254,13 +264,6 @@ export default function ProductLanding(p: ProductLandingProps) {
           </div>
 
           <RelatedProducts slug={p.slug} />
-
-          <div className="mt-16">
-            <CTA
-              etykieta={p.ctaLabel}
-              href={p.tool ? "#narzedzie" : "#zamow"}
-            />
-          </div>
 
           <div id="zamow" className="mt-16 scroll-mt-20">
             <LandingForm
