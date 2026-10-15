@@ -5,7 +5,7 @@ import EDoreczeniaCheck from "@/components/EDoreczeniaCheck";
 import { PODMIOTY } from "@/lib/terminy-e-doreczen";
 
 export const metadata: Metadata = {
-  title: "e-Doręczenia dla JDG i spółek: od kiedy? | Fluxlab",
+  title: "Od kiedy adres do e-Doręczeń? Sprawdź po KRS | Fluxlab",
   description:
     "Jednoosobowa firma z CEIDG wpisana przed 2025 ma obowiązek od 1 października 2026, spółka od 1 kwietnia 2025. Termin i odpis po KRS w 10 sekund.",
   alternates: { canonical: "/e-doreczenia-integracja" },
