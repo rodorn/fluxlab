@@ -140,10 +140,10 @@ export default function NipCheck() {
   return (
     <div className="rounded-2xl border border-gray-200/80 dark:border-gray-800/80 bg-white/70 dark:bg-gray-900/50 p-6">
       <h2 className="text-xl font-bold text-gray-900 dark:text-white">
-        Sprawdź firmę teraz, za darmo
+        Sprawdźcie firmę teraz, za darmo
       </h2>
       <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-        Wpisz NIP, a od razu sprawdzimy go w wykazie podatników VAT Ministerstwa
+        Wpiszcie NIP, a od razu sprawdzimy go w wykazie podatników VAT Ministerstwa
         Finansów. Bez zakładania konta i bez czekania.
       </p>
       <Przyklady
