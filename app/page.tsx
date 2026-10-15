@@ -13,6 +13,16 @@ const BRANZE = SEKCJE.find((x) => x.slug === "uslugi")!.grupy.find(
 
 const PILLARS = [
   {
+    href: "/strony-www",
+    img: "/abstract/web.webp",
+    imgLight: "/abstract/web-light.webp",
+    video: "/abstract/web.mp4",
+    videoLight: "/abstract/web-light.mp4",
+    variant: "web" as const,
+    desc: "Strony firmowe, landingi i sklepy: szybkie na telefonie, z CMS do samodzielnej edycji. Formularz trafia od razu do CRM, więc żadne zapytanie nie ginie.",
+    cta: "Zobacz, jak robimy strony",
+  },
+  {
     href: "/automatyzacja-leadow-crm",
     img: "/abstract/automation.webp",
     imgLight: "/abstract/automation-light.webp",
@@ -31,16 +41,6 @@ const PILLARS = [
     variant: "data" as const,
     desc: "Dane leżą w kilku systemach i w Excelach, a ERP nie rozmawia z CRM. Spinamy je przez API, porządkujemy i zamieniamy w raport, który przychodzi sam.",
     cta: "Zobacz, jak spiąć systemy",
-  },
-  {
-    href: "/strony-www",
-    img: "/abstract/web.webp",
-    imgLight: "/abstract/web-light.webp",
-    video: "/abstract/web.mp4",
-    videoLight: "/abstract/web-light.mp4",
-    variant: "web" as const,
-    desc: "Aplikacje webowe, panele i formularze, które są częścią procesu, a nie osobnym bytem. Strona firmowa też, ale jako element całości, nie jako produkt sam w sobie.",
-    cta: "Zobacz, co budujemy",
   },
 ];
 
@@ -123,20 +123,26 @@ export default function Home() {
             były większe od hasła. */}
         <div className="relative z-20 mx-auto w-full max-w-4xl px-6 pt-16 pb-14 text-center lg:pt-24 lg:pb-20">
           <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl dark:text-white">
-            Automatyzujemy sprzedaż i{"\u00a0"}operacje w firmach B2B
+            Strony internetowe i{"\u00a0"}automatyzacje dla firm
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-base text-gray-600 sm:text-lg dark:text-white/65">
-            Łączymy CRM, formularze, maile i raporty tak, żeby ludzie przestali
-            ręcznie przepisywać dane i pilnować procesów.
+            Robimy strony firmowe, landingi i sklepy, z których zapytanie trafia
+            od razu do CRM. Potem automatyzujemy to, co dzieje się z nim dalej.
           </p>
           <PoleAudytu />
           <p className="mt-4 text-sm text-gray-500 dark:text-white/50">
-            Albo{" "}
+            <Link
+              href="/strony-www"
+              className="font-medium text-accent underline-offset-4 hover:underline"
+            >
+              Zobaczcie, jak robimy strony
+            </Link>{" "}
+            albo{" "}
             <Link
               href="/narzedzia"
               className="font-medium text-accent underline-offset-4 hover:underline"
             >
-              sprawdź firmę {LICZBA_NARZEDZI} darmowymi narzędziami
+              sprawdźcie firmę {LICZBA_NARZEDZI} darmowymi narzędziami
             </Link>
             .
           </p>

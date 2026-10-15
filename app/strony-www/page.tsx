@@ -90,7 +90,7 @@ export default function StronyWww() {
                 id="hero-heading"
                 className="h1-strony mb-6 animate-fade-up-2"
               >
-                Strona, która działa: szybko, mobilnie, z AI
+                Strony internetowe dla firm
               </h1>
               <p className="text-lg lg:text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed animate-fade-up-3">
                 Nowa strona od zera albo poprawki w istniejącej. Pierwsza wersja

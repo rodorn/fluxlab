@@ -32,7 +32,7 @@ export interface Product {
 export const CATEGORY_LABEL: Record<ProductCategory, string> = {
   automatyzacja: "Automatyzacja procesów",
   dane: "Integracje i dane",
-  www: "Systemy i strony",
+  www: "Strony internetowe",
   prywatne: "Dla osób prywatnych",
 };
 

@@ -29,8 +29,8 @@ export const FILARY: Filar[] = [
   },
   {
     href: "/strony-www",
-    nazwa: "Systemy i strony",
-    opis: "Strony, panele i formularze będące częścią procesu, nie osobnym bytem",
+    nazwa: "Strony internetowe",
+    opis: "Strony firmowe, landingi i sklepy z formularzem podpiętym do CRM",
   },
 ];
 

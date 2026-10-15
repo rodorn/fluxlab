@@ -229,6 +229,9 @@ export default function Header() {
           aria-label="Menu główne"
           className="hidden lg:flex items-center gap-7 absolute left-1/2 -translate-x-1/2"
         >
+          <Link href="/strony-www" className={LINK_NAV}>
+            Strony internetowe
+          </Link>
           {rozwijane("uslugi", "Usługi", panelUslug, "")}
           {prosty(NARZEDZIA, "Narzędzia")}
           {prosty(CENNIK, "Cennik")}
@@ -279,6 +282,13 @@ export default function Header() {
       {open && (
         <div className="lg:hidden max-h-[calc(100vh-4rem)] overflow-y-auto border-t border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-950 px-5 py-4">
           <nav aria-label="Menu mobilne" className="flex flex-col">
+            <Link
+              href="/strony-www"
+              onClick={zamknij}
+              className="border-b border-gray-100 py-2.5 text-sm font-medium text-gray-700 hover:text-accent transition-colors dark:border-gray-800 dark:text-gray-200"
+            >
+              Strony internetowe
+            </Link>
             {mobGrupaPrzycisk(
               "uslugi",
               "Usługi",

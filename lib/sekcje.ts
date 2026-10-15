@@ -19,6 +19,16 @@ export const SEKCJE: Sekcja[] = [
     wMenu: true,
     grupy: [
       {
+        nazwa: "Strony internetowe",
+        hub: "/strony-www",
+        strony: [
+          s("/strony-www", "Strony WWW i poprawki"),
+          s("/landing-z-platnoscia", "Landing z płatnością"),
+          s("/strona-po-wlamaniu", "Ratunek po włamaniu na stronę"),
+          s("/mail-firmowy", "Mail firmowy"),
+        ],
+      },
+      {
         nazwa: "Automatyzacja procesów",
         hub: "/automatyzacja-leadow-crm",
         strony: [
@@ -51,16 +61,6 @@ export const SEKCJE: Sekcja[] = [
           s("/integracja-crm-z-erp", "Integracja CRM z ERP"),
           s("/audyt-marz", "Audyt marż sklepu"),
           s("/kontrola-paliwa", "Kontrola paliwa we flocie"),
-        ],
-      },
-      {
-        nazwa: "Systemy i strony",
-        hub: "/strony-www",
-        strony: [
-          s("/strony-www", "Strony WWW i poprawki"),
-          s("/landing-z-platnoscia", "Landing z płatnością"),
-          s("/strona-po-wlamaniu", "Ratunek po włamaniu na stronę"),
-          s("/mail-firmowy", "Mail firmowy"),
         ],
       },
       {
