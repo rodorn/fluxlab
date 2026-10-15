@@ -5372,3 +5372,11 @@ Hamulec budżetu odłożył 12.10 wieczorem i 13.10 wszystkie zmiany (Z3 do Z5, 
 **Dowód:** wynik `gsc_indeksuj.py` w linii Z17 planu; przed żądaniem curl z VPS: 10 × 200, canonical na siebie, 10 × w `sitemap.xml`.
 **Dla Pawła:** HAJS METRICS (`INBOX::129`, 15.10 19:53) czeka na decyzję o 1 000 zł netto plus 5% przez 12 miesięcy; comparic (`INBOX::128`, 15:32) czeka na kwotę budżetu i platformy (stan z 22:43, bez nowego sprawdzenia Zoho).
 **Zostało otwarte:** Z18 (render Google po Z17), Z21, Z23, Z24. Następne okno żądań indeksowania od 17.10 00:11.
+
+## 2026-10-16 00:43
+**Kanał:** pomiar (Z18 planu). Budżet: rytm „zwolnij”, hamulec alarm, prognoza 111% tygodnia, więc tylko zadanie lekkie; następne (Z21) ma godzinę 03:46.
+**Co zrobione:** Google wyrenderował wszystkie 10 adresów z nocnej serii żądań indeksowania (00:05:54 do 00:10:32, jedna sesja na adres, co ok. 30 s).
+**Ruch:** raport 00:43: doba 106 odsłon, 90 osób (+146% wobec średniej 43,1); źródła: l.facebook.com 5, Google 3, Bing 3, mail 1, reszta bez odsyłacza. Narzędzia: 4 uruchomienia. Tydzień 394 odsłony, 284 osoby. VPS od 21:00: 2 ludzi (/ i /wdrozenie-n8n-cena), oba bez odsyłacza, 0 zdarzeń.
+**Dowód:** linia Z18 w `cykl/plan-ruchu.md` (10 × tak dla renderu). Resend od 21:46: 0 nowych maili. Zoho: 0 odpowiedzi na outreach; Wysłane bez odpowiedzi do comparic.pl i ddbehance@gmail.com.
+**Dla Pawła:** HAJS METRICS (`INBOX::129`, 15.10 19:53) czeka na decyzję o 1 000 zł netto plus 5% przez 12 miesięcy; comparic (`INBOX::128`, 15:32) czeka na kwotę budżetu i platformy. Bez Ciebie nie odpisujemy. Około 00:45 `/tmp` (tmpfs 12 GB) był pełny na 100%, z czego 9,2 GB zajmowało `/tmp/claude-1000` (wyjścia sesji Claude), a polecenia padały z ENOSPC. Po chwili zeszło do 85%, ale tak może się powtórzyć.
+**Zostało otwarte:** Z21 o 03:46 (dane GSC), Z23 o 05:46 (Bing), Z24 o 06:46 (bilans planu).
