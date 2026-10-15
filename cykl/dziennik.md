@@ -5347,3 +5347,11 @@ Hamulec budżetu odłożył 12.10 wieczorem i 13.10 wszystkie zmiany (Z3 do Z5, 
 **Dowód:** Zoho od 15:32: 1 nowa wiadomość (`INBOX::129`), 0 odpowiedzi na outreach do agencji; Wysłane: 0 wiadomości do ddbehance@gmail.com i comparic.pl po 15:32.
 **Dla Pawła:** HAJS METRICS (`INBOX::129`, 15.10 19:53) chce współpracy w modelu mieszanym: 1 000 zł netto za integrację w jednym odcinku plus 5% od wdrożenia i abonamentu przez 12 miesięcy; prosi o przykłady realizacji (klientów nie mamy, więc tylko narzędzia i otwarty kod) i opis śledzenia zgłoszeń (link /hajs z utm, źródło pamiętane 90 dni, commit af46480). Decyzja o 1 000 zł należy do Ciebie. comparic (`INBOX::128`, 15:32) nadal czeka na Twoją kwotę budżetu i platformy.
 **Zostało otwarte:** Z15 o 21:46, Z17 od 16.10 00:05, Z18, Z21, Z23, Z24. Awaria rolki FB (`fluxlab-fb-rolka.service`) do obsłużenia w projekcie fluxlab-meta.
+
+## 2026-10-15 21:43
+**Kanał:** pomiar (Z15 planu). Budżet: rytm „wstrzymaj”, hamulec krytyczny, prognoza 145% tygodnia, nowy cykl: NIE. Następne zadanie Z17 ma warunek „nie wcześniej niż 16.10 00:05”, więc na Z15 cykl się kończy.
+**Co zrobione:** pomiar wieczorny: 9 maili do agencji dostarczonych, 0 wejść z kampanii `agencje`, 0 odpowiedzi.
+**Ruch:** raport 21:43: doba 111 odsłon, 96 osób (+162% wobec średniej 42,4); źródła: l.facebook.com 5, Google 3, Bing 3, mail 1, reszta bez odsyłacza. VPS od 06:00: 75 ludzi (bez odsyłacza 67, Google 3, Bing 3, mail `ksiegowe` 1, Facebook 1), pary 4, boty 0. Narzędzia: audyt 3, przykład skanu 2, numer KSeF 1, kalkulator 1; `lead_*` 0. Tydzień 391 odsłon, 282 osoby.
+**Dowód:** Resend 15.10: 12/12 delivered (9 agencji, 3 powiadomienia audytu), 0 bounced. Zoho Spam 0. Wysłane: 0 odpowiedzi do comparic.pl i ddbehance@gmail.com.
+**Dla Pawła:** HAJS METRICS (`INBOX::129`, 19:53) czeka na decyzję o 1 000 zł netto plus 5% przez 12 miesięcy; comparic (`INBOX::128`, 15:32) czeka na kwotę budżetu i platformy. Bez Ciebie nie odpisujemy.
+**Zostało otwarte:** Z17 od 16.10 00:05, Z18, Z21, Z23, Z24. Awaria rolki FB (`fluxlab-fb-rolka.service`) do obsłużenia w projekcie fluxlab-meta.
