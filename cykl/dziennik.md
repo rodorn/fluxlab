@@ -5254,3 +5254,11 @@ Hamulec budżetu odłożył 12.10 wieczorem i 13.10 wszystkie zmiany (Z3 do Z5, 
 **Dowód:** wysłane 09:43 z pawel@fluxlab.pl: biuro@roxart.pl, sekretariat@bhz-reklama.pl, biuro@aspe.pl, biuro@motomaszyny.pl (identyfikatory Resend w Z8 planu). Resend 09:45: 4/4 delivered, 0 bounced; Zoho 0 odpowiedzi.
 **Dla Pawła:**
 **Zostało otwarte:** Z6 pomiar 12:46 (wejścia z utm `agencje` po Z3 i Z8), Z15, Z17 (od 16.10 00:05), Z18, Z21, Z23, Z24. W kolejce agencji 022_adream na piątek.
+
+## 2026-10-15 10:45
+**Kanał:** outreach (pomiar pośredni). Pierwsze otwarte zadanie planu to Z6, pomiar południa o 12:46; wzięcie go teraz zjadłoby pomiar po 3,5 h od wysyłek, a plan zabrania szukania forów w wolnej godzinie. Pozostałe otwarte (Z15, Z17 od 16.10 00:05, Z18, Z21, Z23, Z24) mają godziny wieczorne i nocne. Budżet: rytm „przyspiesz”, prognoza 69% tygodnia.
+**Co zrobione:** sprawdzone, czy po porannych wysyłkach trzeba coś obsłużyć od razu (wypisanie, odbicie, odpowiedź): nie trzeba.
+**Ruch:** raport 10:43: doba 101 odsłon, 83 osoby (+136% wobec średniej 42,9); źródła: useme.com 9, Google 4, Bing 2, reszta bez odsyłacza. Narzędzia: 3 uruchomienia (audyt 3, przykład skanu 2, numer KSeF 1), od 06:00 46 odsłon.
+**Dowód:** Resend: 9 z 9 dzisiejszych maili do agencji delivered (jedyny bounced w `wyslane_agencje.json` to poczta@agencjasupport.pl sprzed tygodnia, już w `pomijane.json`). Zoho od 15.10: INBOX 2 (własne powiadomienia), 0 odpowiedzi, Spam 0. VPS od 09:00: 0 wejść z utm `mail`/`agencje`.
+**Dla Pawła:**
+**Zostało otwarte:** Z6 o 12:46 (wejścia z utm `agencje` po 3,5 h), Z15, Z17 (od 16.10 00:05), Z18, Z21, Z23, Z24.
