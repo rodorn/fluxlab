@@ -66,7 +66,7 @@ function oferta(t: Tier) {
   if (kwota === null || !/zł/.test(t.price)) return podstawa;
 
   const widelki = /\bod\b/.test(t.price);
-  const miesiecznie = /\/\s?mc|miesi/.test(t.price);
+  const miesiecznie = /\/\s?(mc|mies)|miesi/.test(t.price);
   return {
     ...podstawa,
     priceSpecification: {
@@ -89,7 +89,7 @@ function oferta(t: Tier) {
 /** Najniższa cena z cennika jako jedno zdanie, np. „Od 1 490 zł netto”. */
 function cenaOd(pricing: Tier[]): string | null {
   const kwoty = pricing
-    .filter((t) => /zł/.test(t.price) && !/\/\s?mc|miesi/.test(t.price))
+    .filter((t) => /zł/.test(t.price) && !/\/\s?(mc|mies)|miesi/.test(t.price))
     .map((t) => cenaWejscia(t.price))
     .filter((k): k is number => k !== null && k > 0);
   if (!kwoty.length) return null;
