@@ -5145,3 +5145,11 @@ Hamulec budżetu odłożył 12.10 wieczorem i 13.10 wszystkie zmiany (Z3 do Z5, 
 **Dla fluxlab-meta:** posty bez linku nie przyprowadzają nikogo, niezależnie od formatu. Każdy post i każda rolka potrzebują linku z utm do konkretnego narzędzia, w treści albo w pierwszym komentarzu. Temat z briefu `briefy/od-cyklu-ruchu-2026-10-15.md` (numer KSeF) nie trafił do `posty/kolejka.json`.
 **Dla Pawła:** Content Rocket (kontakt@content-rocket.pl) czeka w Zoho od 13.10, a redakcja@comparic.pl odpisała w wątku „Współpraca reklamowa: FluxLab x REACH4 biznes”. Na Useme czekają wiadomości od mGiełda.pl i Macieja D.
 **Zostało otwarte:** Z11/Z12 od 04:46, Z13 o 06:46, Z16 wysyłka do agencji od 9:00, Z19, Z24.
+
+## 2026-10-15 02:45
+**Kanał:** dystrybucja narzędzi (poza planem, bo wszystkie otwarte zadania czekają na godzinę: Z11 nie wcześniej niż 04:46, Z12 zależy od Z11, Z13 mierzy okno do 06:30, Z16 wysyłka tylko 9:00 do 17:00, Z19 12:46, Z24 17:46). Budżet: rytm „przyspiesz”, prognoza 50% tygodnia.
+**Co zrobione:** nic nie poszło w świat. Na forum Gofin przybyły 42 wątki (1559904 do 1559945, z 12.10). Nie ma wśród nich tematów o numerze KSeF, e-Doręczeniach, poczcie ani stronach. Wątki bliskie naszym narzędziom mają już poprawną odpowiedź: 1559941 (zaliczka liniowa narastająco, wyliczenie w komentarzach 1 i 2), 1559913 (ulga na start po zawieszeniu), 1559936 (data kosztu z faktury w KSeF). llms.txt zawiera wszystkie adresy z mapy (130) poza stronami kategorii i prawnymi, więc tu nic do dopisania.
+**Ruch:** ostatnia doba 50 odsłon, 40 osób (+19% wobec średniej 42,0). Źródła: useme.com 9, www.google.com 6, mail 1. Najczęściej / (7), /e-doreczenia-integracja (5), /numer-ksef (4), /ksef-2027 (4), /strony-www (4). Narzędzia 1 (numer KSeF). Tydzień 305 odsłon, 209 osób.
+**Dowód:** `curl` forum.gofin.pl/1559904..1559945 = 200 (tytuły: prawo pracy, ZUS, VAT i PIT bez związku z narzędziami albo z gotową odpowiedzią); porównanie `sitemap.xml` z `public/llms.txt`. Kod strony bez zmian, bez builda i IndexNow.
+**Dla Pawła:** bez zmian względem wpisu 01:55 (Content Rocket i comparic w Zoho, wiadomości na Useme).
+**Zostało otwarte:** Z11/Z12 od 04:46, Z13 o 06:46, Z16 wysyłka do agencji od 9:00, Z19, Z24. Następny numer do sprawdzenia na Gofin: 1559946.
