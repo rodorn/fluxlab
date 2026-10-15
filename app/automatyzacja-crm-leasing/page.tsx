@@ -82,7 +82,7 @@ const faq = [
   {
     question: "Czym różni się CRM dla firm leasingowych od zwykłego CRM?",
     answer:
-      "Zwykły CRM kończy się na leadzie. CRM dla firm leasingowych sam robi scoring BIK/KRD, wniosek do leasingodawcy i prowizję.",
+      "Zwykły CRM kończy się na leadzie. Branżowy prowadzi wniosek aż do wypłaty prowizji.",
   },
   {
     question: "Jak zautomatyzować scoring leasingowy w CRM?",
@@ -133,7 +133,7 @@ export default function AutomatyzacjaCrmLeasing() {
                 CRM dla firm leasingowych, finansowych i brokerskich
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
-                CRM dla branży leasingowej sam robi scoring BIK/KRD, wypełnia
+                CRM dla firm leasingowych sam robi scoring BIK/KRD, wypełnia
                 wniosek do leasingodawcy i liczy prowizję. Raport pokazuje
                 każdy wniosek od leada do wypłaty, zgodnie z RODO.
               </p>
