@@ -2,6 +2,7 @@
 
 import { usePathname, useSearchParams } from "next/navigation";
 import { Suspense, useEffect } from "react";
+import { zapamietajZrodlo } from "@/lib/zrodlo";
 
 // Identyfikator sesji jest losowy i ginie razem z karta. Nie pozwala rozpoznac
 // osoby ani powiazac jej wizyt miedzy dniami, a wystarcza, zeby odroznic jedna
@@ -68,6 +69,7 @@ function Zliczanie() {
   const parametry = useSearchParams();
 
   useEffect(() => {
+    zapamietajZrodlo();
     if (sterowanaSkryptem()) return;
     // Wyłączenie ustawione na /nie-licz-mnie, dla osób pracujących nad stroną.
     try {

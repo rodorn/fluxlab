@@ -5,6 +5,7 @@ import { usePathname, useRouter } from "next/navigation";
 import TrackedCTA from "@/components/TrackedCTA";
 import { event as gaEvent } from "@/lib/gtag";
 import { zglosZdarzenie } from "@/lib/zdarzenie";
+import { readUtm, type UtmFields } from "@/lib/zrodlo";
 import { PROBLEM_TYPES, getScalesForType } from "@/lib/form-options";
 
 const inputClass =
@@ -15,40 +16,6 @@ const CONTACT_PREFS = [
   { value: "phone", label: "Telefon" },
   { value: "meet", label: "Google Meet" },
 ];
-
-interface UtmFields {
-  utm_source: string;
-  utm_medium: string;
-  utm_campaign: string;
-  utm_term: string;
-  utm_content: string;
-  landing_page: string;
-  referrer: string;
-}
-
-function readUtm(): UtmFields {
-  if (typeof window === "undefined") {
-    return {
-      utm_source: "",
-      utm_medium: "",
-      utm_campaign: "",
-      utm_term: "",
-      utm_content: "",
-      landing_page: "",
-      referrer: "",
-    };
-  }
-  const params = new URLSearchParams(window.location.search);
-  return {
-    utm_source: params.get("utm_source") ?? "",
-    utm_medium: params.get("utm_medium") ?? "",
-    utm_campaign: params.get("utm_campaign") ?? "",
-    utm_term: params.get("utm_term") ?? "",
-    utm_content: params.get("utm_content") ?? "",
-    landing_page: window.location.pathname,
-    referrer: document.referrer ?? "",
-  };
-}
 
 interface CTAProps {
   naglowek?: string;

@@ -11,6 +11,14 @@ const nextConfig: NextConfig = {
   // filar, wiec te przekierowania obsluguja wylacznie ruch z zewnatrz.
   async redirects() {
     return [
+      // Krotkie linki dla partnerow z YouTube: widz wpisuje je z ekranu, a
+      // utm_medium sprawia, ze zrodlo zostaje zapamietane do formularza.
+      {
+        source: "/hajs",
+        destination:
+          "/?utm_source=hajsmetrics&utm_medium=youtube&utm_campaign=partner",
+        permanent: false,
+      },
       {
         source: "/automatyzacja-leadow",
         destination: "/automatyzacja-leadow-crm",
