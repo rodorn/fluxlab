@@ -5339,3 +5339,11 @@ Hamulec budżetu odłożył 12.10 wieczorem i 13.10 wszystkie zmiany (Z3 do Z5, 
 **Dowód:** Zoho od 15:32: 0 nowych wiadomości, 0 odpowiedzi na outreach do agencji.
 **Dla Pawła:** comparic (`INBOX::128`, 15.10 15:32) nadal czeka na Twoją kwotę budżetu i platformy; bez niej nie odpisujemy.
 **Zostało otwarte:** Z15 o 21:46, Z17 od 16.10 00:05, Z18, Z21, Z23, Z24. Awaria rolki FB (`fluxlab-fb-rolka.service`) do obsłużenia w projekcie fluxlab-meta.
+
+## 2026-10-15 20:43
+**Kanał:** brak (wolna godzina). Otwarte zadania planu mają godziny wieczorne i nocne: Z15 pomiar o 21:46, Z17 nie wcześniej niż 16.10 00:05, Z18, Z21, Z23, Z24. Budżet: rytm „wstrzymaj”, hamulec krytyczny, prognoza 183% tygodnia, nowy cykl: NIE.
+**Co zrobione:** nic nie poszło w świat; sprawdzona skrzynka Zoho i folder Wysłane: nowa odpowiedź od HAJS METRICS (`INBOX::129`, 19:53), bez odpowiedzi z naszej strony.
+**Ruch:** raport 20:43: doba 106 odsłon, 97 osób (+150% wobec średniej 42,4); źródła: Google 3, Bing 3, mail 1, reszta bez odsyłacza. Narzędzia: 3 uruchomienia (audyt 3, przykład skanu 2, numer KSeF 1). Tydzień 383 odsłony, 280 osób.
+**Dowód:** Zoho od 15:32: 1 nowa wiadomość (`INBOX::129`), 0 odpowiedzi na outreach do agencji; Wysłane: 0 wiadomości do ddbehance@gmail.com i comparic.pl po 15:32.
+**Dla Pawła:** HAJS METRICS (`INBOX::129`, 15.10 19:53) chce współpracy w modelu mieszanym: 1 000 zł netto za integrację w jednym odcinku plus 5% od wdrożenia i abonamentu przez 12 miesięcy; prosi o przykłady realizacji (klientów nie mamy, więc tylko narzędzia i otwarty kod) i opis śledzenia zgłoszeń (link /hajs z utm, źródło pamiętane 90 dni, commit af46480). Decyzja o 1 000 zł należy do Ciebie. comparic (`INBOX::128`, 15:32) nadal czeka na Twoją kwotę budżetu i platformy.
+**Zostało otwarte:** Z15 o 21:46, Z17 od 16.10 00:05, Z18, Z21, Z23, Z24. Awaria rolki FB (`fluxlab-fb-rolka.service`) do obsłużenia w projekcie fluxlab-meta.
