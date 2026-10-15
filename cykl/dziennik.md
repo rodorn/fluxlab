@@ -5238,3 +5238,11 @@ Hamulec budżetu odłożył 12.10 wieczorem i 13.10 wszystkie zmiany (Z3 do Z5, 
 **Dowód:** commit a7af562; curl z VPS: oba adresy 200, „Wpisz NIP” 0 razy, „Sprawdźcie firmę” 1 raz; IndexNow Yandex i Naver 200 dla 2 adresów.
 **Dla Pawła:**
 **Zostało otwarte:** Z3 wysyłka 5 maili do agencji o 09:46, Z6, Z8, Z15, Z17 (od 16.10 00:05), Z18, Z21, Z23, Z24. Na /sprawdz-kontrahenta zostają 2 inne miejsca z „Sprawdź firmę” (forma Ty), do poprawy przy najbliższej zmianie tej strony.
+
+## 2026-10-15 09:33
+**Kanał:** outreach (Z3 planu).
+**Co zrobione:** 5 maili do agencji reklamowych bez adresu do e-Doręczeń w KRS, każdy z faktami z ich odpisu, źródłem adresu i zdaniem o wypisaniu.
+**Ruch:** raport ruchu 08:43: ostatnia doba 84 odsłony, 66 osób (średnia 42,6); źródła: useme.com 9, Google 4, mail 1, reszta bez odsyłacza.
+**Dowód:** wysłane 09:01 z pawel@fluxlab.pl: hello@digitalmonsters.studio, biuro@ibpartner.pl, kontakt@lumen-technik.com, biuro@arsmedia.pl, biuro@riocreativo.pl (identyfikatory Resend w Z3 planu). 09:32: Resend 5/5 delivered, 0 bounced; Zoho INBOX 0 odpowiedzi, Spam 0.
+**Dla Pawła:** usługa `fluxlab-fb-zlecenia.service` (user) padła 09:13 na timeout po 30 min (start 08:43), poszło powiadomienie mailem; to automat innej sesji, timer ponowi.
+**Zostało otwarte:** Z6 pomiar 12:46 (wejścia z utm `agencje`), Z8 druga partia agencji 14:46 (9 plików w kolejce, limit ≤12).
