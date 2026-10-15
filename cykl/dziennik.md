@@ -5153,3 +5153,28 @@ Hamulec budżetu odłożył 12.10 wieczorem i 13.10 wszystkie zmiany (Z3 do Z5, 
 **Dowód:** `curl` forum.gofin.pl/1559904..1559945 = 200 (tytuły: prawo pracy, ZUS, VAT i PIT bez związku z narzędziami albo z gotową odpowiedzią); porównanie `sitemap.xml` z `public/llms.txt`. Kod strony bez zmian, bez builda i IndexNow.
 **Dla Pawła:** bez zmian względem wpisu 01:55 (Content Rocket i comparic w Zoho, wiadomości na Useme).
 **Zostało otwarte:** Z11/Z12 od 04:46, Z13 o 06:46, Z16 wysyłka do agencji od 9:00, Z19, Z24. Następny numer do sprawdzenia na Gofin: 1559946.
+<!-- WYSLANO 2026-10-15 03:11 -->
+
+## 2026-10-15 03:50
+**Kanał:** dystrybucja narzędzi i pomiar (poza planem, bo wszystkie otwarte zadania czekają na godzinę: Z11 nie wcześniej niż 04:46, Z12 zależy od Z11, Z13 o 06:46, Z16 wysyłka 9:00 do 17:00, Z19 12:46, Z24 17:46). Budżet: rytm „przyspiesz”, prognoza 49% tygodnia.
+**Co zrobione:** nic nie poszło w świat. Sprawdziłem nowe źródło useme.com (9 odsłon w dobie): to 1 osoba, Chrome Windows, 14.10 18:01 do 18:03, weszła z Useme na `/automatyzacja-raportowania`, potem `/`, `/narzedzia`, `/ksef-2027`; ostatnie 4 odsłony w 3 sekundy to cofanie w przeglądarce. Wcześniej z Useme przyszły 3 sesje (20.09, 28.09, 5.10). Na Gofin 30 nowych wątków (1559946 do 1559975), żaden o numerze KSeF, e-Doręczeniach, poczcie, stronach ani sprawdzaniu NIP.
+**Ruch:** ostatnia doba 50 odsłon, 40 osób (+19% wobec średniej 42,0). Źródła: useme.com 9 (1 osoba), www.google.com 6, mail 1. Najczęściej / (7), /e-doreczenia-integracja (5), /numer-ksef (4), /ksef-2027 (4), /strony-www (4). Narzędzia 1 (numer KSeF). Tydzień 305 odsłon, 209 osób.
+**Dowód:** zapytanie do `ruch.sqlite` po sesjach ze `zrodlo` useme (sesja `z3x9kp4b`, 9 odsłon); `curl` forum.gofin.pl/1559946..1559975 = 200 (ZUS, prawo pracy, VAT od samochodów). Kod strony bez zmian.
+**Dla Pawła:** ktoś z Useme oglądał 14.10 o 18:01 przez 2 minuty `/automatyzacja-raportowania` i `/ksef-2027`, prawdopodobnie odbiorca Waszej oferty; na Useme czekają wiadomości od mGiełda.pl i Macieja D. Content Rocket i comparic w Zoho bez zmian.
+**Zostało otwarte:** Z11/Z12 od 04:46, Z13 o 06:46, Z16 wysyłka do agencji od 9:00, Z19, Z24. Następny numer na Gofin: 1559976.
+
+## 2026-10-15 04:47
+**Kanał:** widoczność w Google (Z11 i Z12 z planu stratega).
+**Co zrobione:** przywrócony tytuł `/e-doreczenia-integracja` sprzed 9.10, bo po zmianie wyświetlenia w Google spadły z ok. 35 do 0,3 dziennie (10.10 do 12.10: 0, 0, 1).
+**Ruch:** doba 50 odsłon, 40 osób (+19% wobec średniej 42,0); źródła: useme.com 9, www.google.com 6, mail 1, reszta bez odsyłacza; narzędzia 1 uruchomienie (numer KSeF).
+**Dowód:** commit fb89548; https://fluxlab.pl/e-doreczenia-integracja zwraca 200 z `<title>Od kiedy adres do e-Doręczeń? Sprawdź po KRS | Fluxlab</title>` (curl z VPS 04:46); IndexNow 2 z 3. GSC dane do 12.10. Ocena tytułu liczona od 15.10 04:46 przez 3 dni.
+**Dla Pawła:**
+**Zostało otwarte:** Z13 (pomiar poranka, okno do 06:30, celowo nie robiony o 04:47), potem Z16 od 9:00. Do sprawdzenia: skąd 9 wejść z useme.com w dobie (nowe źródło), `/automatyzacja-dla-biur-rachunkowych` też spadła od 8.10 (41 → 0 do 2 dziennie).
+
+## 2026-10-15 05:46
+**Kanał:** widoczność w Google i pomiar (Z13 z planu stratega).
+**Co zrobione:** sprawdziłem, czy seria indeksowania z nocy (Z6) weszła do Google: 3 z 3 skontrolowanych adresów są w indeksie (/automatyzacja-pipedrive, /automatyzacja-raportowania, /wdrozenie-n8n-cena), render Google odwiedził wszystkie 10 adresów serii między 00:00 a 00:03.
+**Ruch:** doba 50 odsłon, 40 osób (+19% wobec średniej 42,0); źródła: useme.com 9 (1 osoba), www.google.com 6, mail 1, reszta bez odsyłacza; narzędzia 1 (numer KSeF). Noc 00:00 do 05:45: 0 ludzi pewnych, 10 sesji renderu Google, 5 pojedynczych nocnych odsłon głębokich stron z desktopu bez odsyłacza (raczej roboty). Budżet: rytm „przyspiesz”, prognoza 29% tygodnia.
+**Dowód:** linia Z13 w `cykl/plan-ruchu.md`; GSC Kontrola adresu 05:44 do 05:45 „Adres URL znajduje się w Google” × 3. Resend 24 h: 5 powiadomień o audytach, delivered (w tym graniteo.pl 82/100 z 14.10 19:09, uruchomione anonimowo). Zoho: 0 odpowiedzi na outreach, Spam 0. Kod strony bez zmian.
+**Dla Pawła:** bez zmian: Content Rocket i redakcja@comparic.pl w Zoho, wiadomości od mGiełda.pl i Macieja D. na Useme.
+**Zostało otwarte:** Z16 wysyłka do agencji od 9:00, Z19 o 12:46, Z24 o 17:46. Pozostałe 7 adresów serii Z6 do kontroli w Z24.
