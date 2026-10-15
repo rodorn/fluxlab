@@ -24,7 +24,7 @@ export default function Przyklady({
   pozycje,
   onWybor,
   zablokowane = false,
-  wstep = "Nie masz pod ręką swoich danych? Zobacz na gotowym przykładzie:",
+  wstep = "Nie macie pod ręką swoich danych? Zobaczcie na gotowym przykładzie:",
 }: {
   pozycje: Przyklad[];
   onWybor: (wartosc: string) => void;

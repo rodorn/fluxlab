@@ -93,7 +93,7 @@ export default function CzyDaSieSpiac({ biezacaStrona }: Props) {
         Czy da się to spiąć
       </h2>
       <p className="mt-3 max-w-2xl text-gray-600 dark:text-gray-300">
-        Naciśnij, gdzie dziś leżą Wasze dane. Napiszemy, jak się je stamtąd
+        Naciśnijcie, gdzie dziś leżą Wasze dane. Napiszemy, jak się je stamtąd
         wyciąga i co przy takim źródle psuje spięcie najczęściej. Drugie
         naciśnięcie, o tym dokąd mają trafiać, dokłada ocenę całości. Bez
         wpisywania czegokolwiek i bez podawania adresu.
@@ -140,7 +140,7 @@ export default function CzyDaSieSpiac({ biezacaStrona }: Props) {
       <div aria-live="polite">
         {!zrodlo ? (
           <p className="mt-6 text-sm text-gray-500 dark:text-gray-400">
-            Naciśnij jedno z miejsc powyżej, żeby zobaczyć odpowiedź.
+            Naciśnijcie jedno z miejsc powyżej, żeby zobaczyć odpowiedź.
           </p>
         ) : (
           <div className="mt-6 rounded-2xl border border-gray-200 bg-white/70 p-6 dark:border-gray-800 dark:bg-gray-950/40">
@@ -197,7 +197,7 @@ export default function CzyDaSieSpiac({ biezacaStrona }: Props) {
 
             {!cel ? (
               <p className="mt-5 text-sm text-gray-500 dark:text-gray-400">
-                Naciśnij jeszcze, dokąd te dane mają trafiać, a dopiszę ocenę
+                Naciśnijcie jeszcze, dokąd te dane mają trafiać, a dopiszę ocenę
                 całego spięcia.
               </p>
             ) : (

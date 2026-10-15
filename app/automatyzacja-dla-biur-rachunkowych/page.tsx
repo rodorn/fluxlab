@@ -324,12 +324,12 @@ export default function AutomatyzacjaDlaBiurRachunkowych() {
                     <div className="max-w-3xl mx-auto">
                       <CTA
                         naglowek="KSeF już obowiązuje, a zespół nie wyrabia z papierami?"
-                        opis="Opisz obieg dokumentów w biurze. Wskażemy, gdzie traci się czas, i policzymy, ile."
+                        opis="Opiszcie obieg dokumentów w biurze. Wskażemy, gdzie traci się czas, i policzymy, ile."
                       />
 
                       <div>
                         <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-                          Zobacz też
+                          Zobaczcie też
                         </h2>
                         <ul className="space-y-3">
                           {relatedLinks.map((item) => (

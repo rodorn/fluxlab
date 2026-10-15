@@ -9,7 +9,7 @@ import SprawdzPoBadaniu from "@/components/SprawdzPoBadaniu";
 export const metadata: Metadata = {
   title: "Dlaczego firmowe maile trafiają do spamu | Fluxlab",
   description:
-    "Twoje oferty i faktury trafiają do spamu klientów? Najczęstsze przyczyny (SPF, DKIM, DMARC, reputacja) i konkretne kroki naprawy. Plus darmowy audyt domeny.",
+    "Wasze oferty i faktury trafiają do spamu klientów? Najczęstsze przyczyny (SPF, DKIM, DMARC, reputacja) i konkretne kroki naprawy. Plus darmowy audyt domeny.",
   openGraph: {
     title:
       "Dlaczego firmowe maile trafiają do spamu i jak to naprawić | Fluxlab",
@@ -35,12 +35,12 @@ const faqItems = [
   {
     question: "Jak sprawdzić, czy problem jest po naszej stronie?",
     answer:
-      "Uruchom audyt rekordów SPF, DKIM i DMARC. Jeśli któregoś brakuje albo DMARC ma p=none, masz konkretną przyczynę do naprawy.",
+      "Uruchomcie audyt rekordów SPF, DKIM i DMARC. Jeśli któregoś brakuje albo DMARC ma p=none, macie konkretną przyczynę do naprawy.",
   },
   {
     question: "Czy wysyłka przez narzędzie do mailingu coś zmienia?",
     answer:
-      "Tak. Jego serwery muszą być dopisane do SPF Twojej domeny, inaczej te maile będą odrzucane.",
+      "Tak. Jego serwery muszą być dopisane do SPF Waszej domeny, inaczej te maile będą odrzucane.",
   },
   {
     question: "Ile trwa poprawa dostarczalności?",
@@ -98,10 +98,10 @@ export default function MaileSpamArticle() {
         >
           <div>
             <strong style={{ fontSize: "1.05rem" }}>
-              Sprawdź, gdzie leży problem
+              Sprawdźcie, gdzie leży problem
             </strong>
             <div style={{ color: "var(--article-muted)", fontSize: "0.9rem" }}>
-              Darmowy audyt SPF, DKIM i DMARC Twojej domeny. Wynik od razu, bez
+              Darmowy audyt SPF, DKIM i DMARC Waszej domeny. Wynik od razu, bez
               rejestracji.
             </div>
           </div>
@@ -110,7 +110,7 @@ export default function MaileSpamArticle() {
             className="btn-primary"
             style={{ padding: "0.7rem 1.5rem", whiteSpace: "nowrap" }}
           >
-            Uruchom darmowy audyt
+            Uruchomcie darmowy audyt
           </Link>
         </div>
 
@@ -136,7 +136,7 @@ export default function MaileSpamArticle() {
           3. Brak podpisu DKIM
         </h3>
         <p style={{ color: "var(--article-text)", lineHeight: 1.7 }}>
-          Bez DKIM nie ma dowodu, że wiadomość wyszła od Ciebie i nie została
+          Bez DKIM nie ma dowodu, że wiadomość wyszła od Was i nie została
           zmieniona. Filtry ufają jej mniej.
         </p>
 
@@ -149,7 +149,7 @@ export default function MaileSpamArticle() {
         </p>
 
         <SprawdzPoBadaniu
-          naglowek="Zobacz to sprawdzenie na żywo"
+          naglowek="Zobaczcie to sprawdzenie na żywo"
           opis="Odpytujemy DNS wybranej domeny o SPF, DKIM i DMARC i pokazujemy, czego brakuje."
           endpoint="/api/audyt"
           pozycje={[
@@ -159,9 +159,9 @@ export default function MaileSpamArticle() {
           ]}
           narzedzie={{
             href: "/audyt-poczty",
-            etykieta: "Sprawdź swoją domenę",
+            etykieta: "Sprawdźcie swoją domenę",
           }}
-          kontakt="Chcesz, żeby te rekordy ktoś ustawił za Ciebie?"
+          kontakt="Chcecie, żeby te rekordy ktoś ustawił za Was?"
         />
 
         <h2 className="h2-sekcji mt-10 mb-4">
@@ -196,12 +196,12 @@ export default function MaileSpamArticle() {
             fontSize: "0.95rem",
           }}
         >
-          Zobacz też:{" "}
+          Zobaczcie też:{" "}
           <Link
             href="/strefa-wiedzy/podszywanie-sie-pod-firmowy-email"
             style={{ color: "var(--article-link)" }}
           >
-            Czy ktoś może podszyć się pod Twój firmowy e-mail?
+            Czy ktoś może podszyć się pod Wasz firmowy e-mail?
           </Link>
         </p>
       </main>

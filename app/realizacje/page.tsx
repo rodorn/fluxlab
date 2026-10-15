@@ -254,7 +254,7 @@ export default function RealizacjePage() {
                             href={item.landing}
                             className="text-sm font-semibold text-accent hover:underline"
                           >
-                            Zamów / szczegóły →
+                            Zamawiam / szczegóły →
                           </Link>
                         )}
                         <a
@@ -276,7 +276,7 @@ export default function RealizacjePage() {
                             rel="noopener noreferrer"
                             className="text-sm font-semibold text-gray-900 dark:text-white hover:underline"
                           >
-                            Zobacz na żywo →
+                            Zobaczcie na żywo →
                           </a>
                         )}
                       </div>

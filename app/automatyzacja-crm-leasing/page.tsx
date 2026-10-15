@@ -319,7 +319,7 @@ export default function AutomatyzacjaCrmLeasing() {
                         href="/automatyzacja-leadow-crm"
                         className="btn-secondary"
                       >
-                        Zobacz pełny cennik automatyzacji CRM
+                        Zobaczcie pełny cennik automatyzacji CRM
                       </Link>
                     </div>
                   </div>

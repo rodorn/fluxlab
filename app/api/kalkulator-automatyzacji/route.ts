@@ -74,13 +74,13 @@ export async function POST(request: Request) {
 
   if (!Number.isFinite(uruchomienia) || uruchomienia < 1 || uruchomienia > 5_000_000) {
     return NextResponse.json(
-      { error: "Podaj, ile razy miesięcznie uruchamiają się Twoje automatyzacje." },
+      { error: "Podajcie, ile razy miesięcznie uruchamiają się Wasze automatyzacje." },
       { status: 400 },
     );
   }
   if (!Number.isFinite(kroki) || kroki < 1 || kroki > 100) {
     return NextResponse.json(
-      { error: "Podaj liczbę kroków w typowym scenariuszu, od 1 do 100." },
+      { error: "Podajcie liczbę kroków w typowym scenariuszu, od 1 do 100." },
       { status: 400 },
     );
   }
@@ -108,22 +108,22 @@ export async function POST(request: Request) {
   const werdykt = !oplacalne ? "ZOLTY" : oszczednoscRok >= 10000 ? "ZIELONY" : "ZOLTY";
 
   const naglowek = !oplacalne
-    ? "Przy tej skali migracja Ci się nie opłaca"
+    ? "Przy tej skali migracja Wam się nie opłaca"
     : `Około ${oszczednoscRok.toLocaleString("pl-PL")} zł rocznie mniej za to samo`;
 
   const opis = !oplacalne
     ? oszczednoscMies === 0
-      ? "Dziś płacisz mniej, niż kosztowałby sam serwer pod własną automatyzację, więc przeniesienie nic by nie zaoszczędziło. Wróć do tego, gdy wolumen urośnie."
+      ? "Dziś płacicie mniej, niż kosztowałby sam serwer pod własną automatyzację, więc przeniesienie nic by nie zaoszczędziło. Wróćcie do tego, gdy wolumen urośnie."
       : `Przy takiej skali rachunek jest jeszcze na tyle niski, że przeniesienie zwróciłoby się dopiero po ${
         zwrotMiesiecy ?? "wielu"
-      } miesiącach. Wróć do tego, gdy wolumen urośnie. Wolimy to powiedzieć teraz, niż wziąć pieniądze za coś, co Ci się nie zwróci.`
-    : `Twoje automatyzacje zużywają około ${zadania.toLocaleString("pl-PL")} zadań miesięcznie, bo każdy krok liczy się osobno. To jest ta różnica, której najczęściej się nie zauważa: pięciokrokowy scenariusz uruchomiony tysiąc razy to pięć tysięcy zadań, a nie tysiąc.`;
+      } miesiącach. Wróćcie do tego, gdy wolumen urośnie. Wolimy to powiedzieć teraz, niż wziąć pieniądze za coś, co Wam się nie zwróci.`
+    : `Wasze automatyzacje zużywają około ${zadania.toLocaleString("pl-PL")} zadań miesięcznie, bo każdy krok liczy się osobno. To jest ta różnica, której najczęściej się nie zauważa: pięciokrokowy scenariusz uruchomiony tysiąc razy to pięć tysięcy zadań, a nie tysiąc.`;
 
   const zastrzezenie =
     zapier.prog === null
       ? "Powyżej najwyższego progu z publicznego cennika dostawca wycenia indywidualnie, więc kwotę po jego stronie szacujemy proporcjonalnie do ostatniego progu."
       : zapier.usd === 0
-        ? "Mieścisz się w darmowym planie dostawcy, do 100 zadań miesięcznie."
+        ? "Mieścicie się w darmowym planie dostawcy, do 100 zadań miesięcznie."
         : `Liczymy od najtańszego planu z publicznego cennika, progu do ${zapier.prog.toLocaleString("pl-PL")} zadań przy płatności miesięcznej. Przy płatności rocznej rachunek jest niższy, a przy planie zespołowym wyższy.`;
 
   return NextResponse.json({

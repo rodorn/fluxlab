@@ -9,11 +9,11 @@ import PrevNextArticle from "@/components/PrevNextArticle";
 export const metadata: Metadata = {
   title: "Najczęstsze błędy w raportowaniu sprzedaży | Fluxlab",
   description:
-    "Sprawdź najczęstsze błędy w raportowaniu sprzedaży: złe definicje, rozjazd danych, vanity metrics i ręczne arkusze, które fałszują obraz biznesu.",
+    "Sprawdźcie najczęstsze błędy w raportowaniu sprzedaży: złe definicje, rozjazd danych, vanity metrics i ręczne arkusze, które fałszują obraz biznesu.",
   openGraph: {
     title: "Najczęstsze błędy w raportowaniu sprzedaży | Fluxlab",
     description:
-      "Sprawdź najczęstsze błędy w raportowaniu sprzedaży: złe definicje, rozjazd danych, vanity metrics i ręczne arkusze, które fałszują obraz biznesu.",
+      "Sprawdźcie najczęstsze błędy w raportowaniu sprzedaży: złe definicje, rozjazd danych, vanity metrics i ręczne arkusze, które fałszują obraz biznesu.",
     locale: "pl_PL",
     type: "article",
     images: [
@@ -87,16 +87,16 @@ export default function BledyRaportowanieArticle() {
                 <Link href="/automatyzacja-raportowania" className="text-accent hover:underline">
                   automatyzacja raportowania
                 </Link>
-                . Inaczej zautomatyzujesz bałagan.
+                . Inaczej zautomatyzujecie bałagan.
               </p>
             </section>
 
             <PrevNextArticle currentHref="/strefa-wiedzy/najczestsze-bledy-w-raportowaniu-sprzedazy" />
 
             <p className="text-center text-gray-600 dark:text-gray-400">
-              Nie masz pewności, czy raporty pokazują prawdę?{" "}
+              Nie macie pewności, czy raporty pokazują prawdę?{" "}
               <Link href="/automatyzacja-raportowania" className="text-accent hover:underline">
-                Zobacz usługę Automatyzacja raportowania
+                Zobaczcie usługę Automatyzacja raportowania
               </Link>
             </p>
 
@@ -115,7 +115,7 @@ export default function BledyRaportowanieArticle() {
             "@type": "Article",
             headline: "Najczęstsze błędy w raportowaniu sprzedaży",
             description:
-              "Sprawdź najczęstsze błędy w raportowaniu sprzedaży: złe definicje, rozjazd danych, vanity metrics i ręczne arkusze, które fałszują obraz biznesu.",
+              "Sprawdźcie najczęstsze błędy w raportowaniu sprzedaży: złe definicje, rozjazd danych, vanity metrics i ręczne arkusze, które fałszują obraz biznesu.",
             datePublished: "2026-03-30",
             author: {
               "@type": "Organization",

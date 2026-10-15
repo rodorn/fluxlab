@@ -31,7 +31,7 @@ export default function Page() {
       eyebrow="Ratunek po włamaniu"
       h1="Zhakowana strona, posprzątana do końca"
       lead="Przywrócony backup zwykle przywraca też backdoora. Porównujemy każdy plik strony z oryginałem z repozytorium WordPressa, więc obce pliki znamy w minuty."
-      ctaLabel="Zgłoś włamanie"
+      ctaLabel="Zgłoście włamanie"
       ctaNote="Odpisujemy najszybciej, jak się da"
       powiazane={[
         {
@@ -44,7 +44,7 @@ export default function Page() {
       checks={[
         {
           title: "Porównanie z oryginałem",
-          desc: "Sumy kontrolne rdzenia, wtyczek i motywu w Twoich wersjach. Lista plików obcych i podmienionych.",
+          desc: "Sumy kontrolne rdzenia, wtyczek i motywu w Waszych wersjach. Lista plików obcych i podmienionych.",
         },
         {
           title: "Skan bazy",
@@ -59,7 +59,7 @@ export default function Page() {
         {
           name: "Diagnoza",
           price: "49 zł",
-          desc: "Chcesz wiedzieć, jak głęboko sięga problem.",
+          desc: "Chcecie wiedzieć, jak głęboko sięga problem.",
           features: [
             "lista zainfekowanych i obcych plików",
             "przekierowania i podstawieni administratorzy",
@@ -93,10 +93,10 @@ export default function Page() {
         },
       ]}
       formId="order_strona_po_wlamaniu"
-      formHeading="Zgłoś zhakowaną stronę"
-      formIntro="Podaj adres strony, hosting i napisz, co się dzieje."
-      submitLabel="Zgłoś włamanie"
-      microCopy="Dostępy przysyłasz po ustaleniu zakresu."
+      formHeading="Zgłoście zhakowaną stronę"
+      formIntro="Podajcie adres strony, hosting i napiszcie, co się dzieje."
+      submitLabel="Zgłoście włamanie"
+      microCopy="Dostępy przysyłacie po ustaleniu zakresu."
       serviceName="Czyszczenie strony po włamaniu"
       serviceDesc="Usuwanie infekcji z WordPressa i WooCommerce: porównanie plików z oryginałami, skan bazy, raport wejścia i zabezpieczenie. Diagnoza 49 zł, czyszczenie od 299 zł."
       serviceType="Usuwanie skutków włamania na stronę"

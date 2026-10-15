@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 
 const steps = [
   {
-    title: "Podajesz auto albo budżet",
+    title: "Podajecie auto albo budżet",
     desc: "Link do oferty z Niemiec albo budżet i typ auta.",
   },
   {
@@ -37,7 +37,7 @@ const steps = [
     desc: "Akcyza, transport, tłumaczenia i rejestracja.",
   },
   {
-    title: "Dostajesz werdykt o marży",
+    title: "Dostajecie werdykt o marży",
     desc: "Ile zostaje na czysto wobec cen w Polsce albo że się nie opłaca.",
   },
 ];
@@ -46,8 +46,8 @@ const pricing = [
   {
     name: "Analiza 1 auta",
     price: "0 zł",
-    cta: "Zamów analizę auta",
-    desc: "Masz konkretne ogłoszenie i chcesz wiedzieć, czy warto.",
+    cta: "Zamawiam analizę auta",
+    desc: "Macie konkretne ogłoszenie i chcecie wiedzieć, czy warto.",
     features: [
       "pełny rozkład kosztów z akcyzą",
       "werdykt: marża netto albo brak opłacalności",
@@ -55,10 +55,10 @@ const pricing = [
     featured: false,
   },
   {
-    name: "Znajdź pod budżet",
+    name: "Znajdźcie pod budżet",
     price: "0 zł",
-    cta: "Zamów wyszukiwanie",
-    desc: "Szukamy modeli z realną marżą pod Twój budżet.",
+    cta: "Zamawiam wyszukiwanie",
+    desc: "Szukamy modeli z realną marżą pod Wasz budżet.",
     features: [
       "ranking modeli po marży netto",
       "konkretne, opłacalne oferty",
@@ -74,9 +74,9 @@ const faq = [
       "Tak, według pojemności silnika i typu napędu, a nie szacunkowo.",
   },
   {
-    question: "Czy sprowadzasz auto za mnie?",
+    question: "Czy sprowadzacie auto za mnie?",
     answer:
-      "Nie. Dostajesz liczby i decyzję, a import robisz sam lub przez wybraną firmę.",
+      "Nie. Dostajecie liczby i decyzję, a import robicie sam lub przez wybraną firmę.",
   },
   {
     question: "Skąd bierzecie ceny sprzedaży w Polsce?",
@@ -109,15 +109,15 @@ export default function ImportRadarPage() {
           <div className="max-w-3xl">
             <p className="section-label mb-5">Narzędzie</p>
             <h1 className="h1-strony text-gray-900 dark:text-white">
-              Sprawdź, czy import z Niemiec naprawdę się opłaca
+              Sprawdźcie, czy import z Niemiec naprawdę się opłaca
             </h1>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-300">
               Liczymy pełny koszt sprowadzenia i porównujemy go z cenami w
-              Polsce. Dostajesz jedną liczbę: ile zostaje na czysto.
+              Polsce. Dostajecie jedną liczbę: ile zostaje na czysto.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <a href="#zamow" className="btn-primary inline-flex">
-                Zamów analizę za darmo
+                Zamawiam analizę za darmo
               </a>
             </div>
           </div>
@@ -197,7 +197,7 @@ export default function ImportRadarPage() {
               </dl>
               <p className="mt-4 border-t border-gray-100 pt-4 text-sm text-gray-700 dark:border-gray-700 dark:text-gray-300">
                 <span className="text-accent">→</span> Werdykt: opłacalne.
-                Negocjuj cenę poniżej 74 000 zł.
+                Negocjujcie cenę poniżej 74 000 zł.
               </p>
             </div>
           </section>
@@ -315,9 +315,9 @@ export default function ImportRadarPage() {
           <section id="zamow" className="scroll-mt-20">
             <LandingForm
               formId="order_import_radar"
-              heading="Zamów analizę opłacalności importu"
-              intro="Wklej link do oferty albo podaj budżet i typ auta."
-              submitLabel="Wyślij auto do analizy"
+              heading="Zamówcie analizę opłacalności importu"
+              intro="Wklejcie link do oferty albo podajcie budżet i typ auta."
+              submitLabel="Wyślijcie auto do analizy"
               microCopy="Odpowiedź w 24h. Bez opłat."
             />
           </section>
@@ -347,7 +347,7 @@ export default function ImportRadarPage() {
               },
               {
                 "@type": "Offer",
-                name: "Znajdź pod budżet",
+                name: "Znajdźcie pod budżet",
                 price: "0",
                 priceCurrency: "PLN",
               },

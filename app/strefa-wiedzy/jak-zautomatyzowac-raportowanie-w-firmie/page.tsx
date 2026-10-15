@@ -81,15 +81,15 @@ export default function AutomatyzacjaRaportowaniaArticle() {
                     </p>
 
                     <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                      1. Ustal, co mierzysz
+                      1. Ustalcie, co mierzycie
                     </h3>
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Wybierz wskaźniki, które naprawdę są ważne, i ustal, dla
+                      Wybierzcie wskaźniki, które naprawdę są ważne, i ustalcie, dla
                       kogo oraz jak często powstaje raport.
                     </p>
 
                     <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                      2. Zmapuj źródła danych
+                      2. Zmapujcie źródła danych
                     </h3>
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
                       CRM, formularze, kampanie, arkusze. Przy kilku źródłach
@@ -104,7 +104,7 @@ export default function AutomatyzacjaRaportowaniaArticle() {
                     </p>
 
                     <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                      3. Ustal jedno źródło prawdy
+                      3. Ustalcie jedno źródło prawdy
                     </h3>
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
                       Np. CRM dla statusów sprzedaży, system reklamowy dla
@@ -122,41 +122,41 @@ export default function AutomatyzacjaRaportowaniaArticle() {
                     </h2>
 
                     <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                      Krok 1: wybierz jeden raport o wysokiej wartości
+                      Krok 1: wybierzcie jeden raport o wysokiej wartości
                     </h3>
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
                       Np. tygodniowy raport sprzedaży albo raport źródeł leadów.
                     </p>
                     <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                      Krok 2: ustal definicje
+                      Krok 2: ustalcie definicje
                     </h3>
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Co liczysz, z jakiego źródła i według jakiej logiki.
+                      Co liczycie, z jakiego źródła i według jakiej logiki.
                     </p>
                     <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                      Krok 3: uporządkuj dane wejściowe
+                      Krok 3: uporządkujcie dane wejściowe
                     </h3>
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Jeżeli CRM lub źródła są nieuporządkowane, popraw to
+                      Jeżeli CRM lub źródła są nieuporządkowane, poprawcie to
                       najpierw.
                     </p>
                     <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                      Krok 4: zautomatyzuj pobieranie i łączenie
+                      Krok 4: zautomatyzujcie pobieranie i łączenie
                     </h3>
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Dopiero teraz podpinasz narzędzia i logikę.
+                      Dopiero teraz podpinacie narzędzia i logikę.
                     </p>
                     <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                      Krok 5: testuj wyjątki
+                      Krok 5: testujcie wyjątki
                     </h3>
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
                       Brak pola, zdublowany rekord, zmienione źródło.
                     </p>
                     <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                      Krok 6: dopiero potem rozbudowuj
+                      Krok 6: dopiero potem rozbudowujcie
                     </h3>
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Gdy pierwszy raport działa i jest zaufany, dopinaj
+                      Gdy pierwszy raport działa i jest zaufany, dopinajcie
                       kolejne.
                     </p>
 
@@ -298,7 +298,7 @@ export default function AutomatyzacjaRaportowaniaArticle() {
 
                     <div className="mt-12">
                       <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                        Zobacz też
+                        Zobaczcie też
                       </h3>
                       <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400">
                         <li>
@@ -338,7 +338,7 @@ export default function AutomatyzacjaRaportowaniaArticle() {
             <PrevNextArticle currentHref="/strefa-wiedzy/jak-zautomatyzowac-raportowanie-w-firmie" />
           </div>
         </div>
-        <CTA naglowek="Masz dane w kilku miejscach i nie ufasz raportom?" />
+        <CTA naglowek="Macie dane w kilku miejscach i nie ufacie raportom?" />
       </main>
       <Footer />
 
@@ -423,33 +423,33 @@ export default function AutomatyzacjaRaportowaniaArticle() {
             step: [
               {
                 "@type": "HowToStep",
-                name: "Krok 1: wybierz jeden raport o wysokiej wartości",
+                name: "Krok 1: wybierzcie jeden raport o wysokiej wartości",
                 text: "Np. tygodniowy raport sprzedaży albo raport źródeł leadów.",
               },
               {
                 "@type": "HowToStep",
-                name: "Krok 2: ustal definicje",
-                text: "Co liczysz, z jakiego źródła i według jakiej logiki.",
+                name: "Krok 2: ustalcie definicje",
+                text: "Co liczycie, z jakiego źródła i według jakiej logiki.",
               },
               {
                 "@type": "HowToStep",
-                name: "Krok 3: uporządkuj dane wejściowe",
-                text: "Jeżeli CRM lub źródła są nieuporządkowane, popraw to najpierw.",
+                name: "Krok 3: uporządkujcie dane wejściowe",
+                text: "Jeżeli CRM lub źródła są nieuporządkowane, poprawcie to najpierw.",
               },
               {
                 "@type": "HowToStep",
-                name: "Krok 4: zautomatyzuj pobieranie i łączenie",
-                text: "Dopiero teraz podpinasz narzędzia i logikę.",
+                name: "Krok 4: zautomatyzujcie pobieranie i łączenie",
+                text: "Dopiero teraz podpinacie narzędzia i logikę.",
               },
               {
                 "@type": "HowToStep",
-                name: "Krok 5: testuj wyjątki",
+                name: "Krok 5: testujcie wyjątki",
                 text: "Brak pola, zdublowany rekord, zmienione źródło.",
               },
               {
                 "@type": "HowToStep",
-                name: "Krok 6: dopiero potem rozbudowuj",
-                text: "Gdy pierwszy raport działa i jest zaufany, dopinaj kolejne.",
+                name: "Krok 6: dopiero potem rozbudowujcie",
+                text: "Gdy pierwszy raport działa i jest zaufany, dopinajcie kolejne.",
               },
             ],
           }),

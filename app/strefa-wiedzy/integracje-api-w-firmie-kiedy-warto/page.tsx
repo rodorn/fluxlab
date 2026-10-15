@@ -260,7 +260,7 @@ export default function IntegracjeApiArticle() {
         </section>
 
         {/* Final CTA */}
-        <CTA naglowek="Masz kilka systemów, które powinny działać jak jeden proces?" opis="Bezpłatna diagnoza, bez zobowiązań." />
+        <CTA naglowek="Macie kilka systemów, które powinny działać jak jeden proces?" opis="Bezpłatna diagnoza, bez zobowiązań." />
 
         {/* Related links */}
         <section className="py-12 lg:py-16">

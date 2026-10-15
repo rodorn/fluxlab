@@ -111,7 +111,7 @@ export default function SpolkaCheck() {
       setWynik(data);
       setStan("gotowe");
     } catch {
-      setBlad("Brak połączenia. Spróbuj ponownie za chwilę.");
+      setBlad("Brak połączenia. Spróbujcie ponownie za chwilę.");
       setStan("blad");
     }
   }
@@ -145,7 +145,7 @@ export default function SpolkaCheck() {
       }
       setLeadStan("ok");
     } catch {
-      setLeadBlad("Brak połączenia. Spróbuj ponownie za chwilę.");
+      setLeadBlad("Brak połączenia. Spróbujcie ponownie za chwilę.");
       setLeadStan("blad");
     }
   }
@@ -155,13 +155,13 @@ export default function SpolkaCheck() {
   return (
     <div className="rounded-2xl border border-gray-200/80 dark:border-gray-800/80 bg-white/70 dark:bg-gray-900/50 p-6 md:p-8">
       <h2 className="text-xl font-bold text-gray-900 dark:text-white">
-        Sprawdź, czy Twój kontrahent nie znika z rejestru
+        Sprawdźcie, czy Wasz kontrahent nie znika z rejestru
       </h2>
       <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
         Sąd może z urzędu wszcząć postępowanie o rozwiązanie spółki bez
         likwidacji. Od obwieszczenia w Monitorze Sądowym i Gospodarczym biegną
         trzy miesiące na sprzeciw, a potem podmiot znika z rejestru razem z
-        Twoją należnością. Zawiadomienia nikt nie wysyła.
+        Waszą należnością. Zawiadomienia nikt nie wysyła.
       </p>
       <Przyklady
         pozycje={[
@@ -170,7 +170,7 @@ export default function SpolkaCheck() {
         ]}
         onWybor={uruchom}
         zablokowane={stan === "ladowanie"}
-        wstep="Nie masz pod ręką nazwy? Zobacz na gotowym przykładzie:"
+        wstep="Nie macie pod ręką nazwy? Zobaczcie na gotowym przykładzie:"
       />
       <form onSubmit={sprawdz} className="mt-5 flex flex-col gap-3 sm:flex-row">
         <input
@@ -186,7 +186,7 @@ export default function SpolkaCheck() {
           disabled={stan === "ladowanie"}
           className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
         >
-          {stan === "ladowanie" ? "Sprawdzamy..." : "Sprawdź w Monitorze"}
+          {stan === "ladowanie" ? "Sprawdzamy..." : "Sprawdźcie w Monitorze"}
         </button>
       </form>
 
@@ -297,8 +297,8 @@ export default function SpolkaCheck() {
           <div className="mt-5 border-t border-gray-200/70 dark:border-gray-700/70 pt-4">
             <p className="text-sm text-gray-700 dark:text-gray-300">
               {wynik.werdykt === "ZIELONY"
-                ? "Jeśli masz listę kontrahentów, możemy sprawdzać ją codziennie i odezwać się dopiero wtedy, gdy któryś trafi do wykreślenia."
-                : "Przy takim obwieszczeniu liczy się czas, bo termin biegnie od dnia publikacji. Możemy sprawdzić całą Twoją listę kontrahentów wstecz i pilnować jej codziennie."}
+                ? "Jeśli macie listę kontrahentów, możemy sprawdzać ją codziennie i odezwać się dopiero wtedy, gdy któryś trafi do wykreślenia."
+                : "Przy takim obwieszczeniu liczy się czas, bo termin biegnie od dnia publikacji. Możemy sprawdzić całą Waszą listę kontrahentów wstecz i pilnować jej codziennie."}
             </p>
 
             {leadStan === "ok" ? (
@@ -312,7 +312,7 @@ export default function SpolkaCheck() {
                   htmlFor="spolka-email"
                   className="block text-sm font-medium text-gray-900 dark:text-white"
                 >
-                  Podaj maila, odeślemy zasady sprawdzenia całej listy kontrahentów
+                  Podajcie maila, odeślemy zasady sprawdzenia całej listy kontrahentów
                 </label>
                 <div className="mt-2 flex flex-col gap-3 sm:flex-row">
                   <input
@@ -329,7 +329,7 @@ export default function SpolkaCheck() {
                     disabled={leadStan === "wysylamy"}
                     className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
                   >
-                    {leadStan === "wysylamy" ? "Wysyłamy..." : "Wyślij zgłoszenie"}
+                    {leadStan === "wysylamy" ? "Wysyłamy..." : "Wyślijcie zgłoszenie"}
                   </button>
                 </div>
                 {leadStan === "blad" && (

@@ -3,12 +3,12 @@ import ProductLanding from "@/components/ProductLanding";
 import SprzedawcaCheck from "@/components/SprzedawcaCheck";
 
 export const metadata: Metadata = {
-  title: "Czy klient ustali, komu płaci, sprawdź za darmo | Fluxlab",
+  title: "Czy klient ustali, komu płaci, sprawdźcie za darmo | Fluxlab",
   description:
-    "Księgowość kupującego sprawdza sprzedawcę w wykazie VAT przed przelewem. Sprawdź za darmo, czy strona podaje NIP i czy dane się zgadzają.",
+    "Księgowość kupującego sprawdza sprzedawcę w wykazie VAT przed przelewem. Sprawdźcie za darmo, czy strona podaje NIP i czy dane się zgadzają.",
   alternates: { canonical: "/dane-sprzedawcy" },
   openGraph: {
-    title: "Czy klient ustali, komu płaci, sprawdź za darmo | Fluxlab",
+    title: "Czy klient ustali, komu płaci, sprawdźcie za darmo | Fluxlab",
     description:
       "Wyciągamy NIP i numer konta ze strony, kontaktu i regulaminu, po czym sprawdzamy je w wykazie podatników VAT. Od ręki, bez rejestracji.",
     locale: "pl_PL",
@@ -31,9 +31,9 @@ export default function Page() {
       tool={<SprzedawcaCheck />}
       breadcrumb="Dane sprzedawcy"
       eyebrow="Przelewy między firmami"
-      h1="Klient firmowy sprawdza Cię w rejestrze, zanim zapłaci"
-      lead="Zanim księgowość kupującego wypuści przelew, ustala, kto jest sprzedawcą i czy figuruje w wykazie podatników VAT. Przy większych kwotach sprawdza także, czy numer konta należy do tego samego podmiotu, bo inaczej kupujący traci koszt podatkowy. Jeżeli Twoja strona nie podaje NIP-u, ten test nie ma z czego wyjść i płatność się przesuwa."
-      ctaLabel="Sprawdź swoją stronę"
+      h1="Klient firmowy sprawdza Was w rejestrze, zanim zapłaci"
+      lead="Zanim księgowość kupującego wypuści przelew, ustala, kto jest sprzedawcą i czy figuruje w wykazie podatników VAT. Przy większych kwotach sprawdza także, czy numer konta należy do tego samego podmiotu, bo inaczej kupujący traci koszt podatkowy. Jeżeli Wasza strona nie podaje NIP-u, ten test nie ma z czego wyjść i płatność się przesuwa."
+      ctaLabel="Sprawdźcie swoją stronę"
       ctaNote="Sprawdzenie za darmo, od ręki"
       powiazane={[
         {
@@ -108,7 +108,7 @@ export default function Page() {
         },
         {
           q: "Wykaz pokazuje status inny niż Czynny, co to znaczy?",
-          a: "Niekoniecznie coś złego. Taki status zwracają także duże, działające firmy, na przykład przez sposób rozliczania w grupie. Dlatego nie nazywamy tego z góry problemem, tylko sygnałem do wyjaśnienia. Istotne jest to, że Twój klient zobaczy dokładnie to samo i bez wyjaśnienia wyciągnie własne wnioski.",
+          a: "Niekoniecznie coś złego. Taki status zwracają także duże, działające firmy, na przykład przez sposób rozliczania w grupie. Dlatego nie nazywamy tego z góry problemem, tylko sygnałem do wyjaśnienia. Istotne jest to, że Wasz klient zobaczy dokładnie to samo i bez wyjaśnienia wyciągnie własne wnioski.",
         },
         {
           q: "Sprawdzacie tylko sześć podstron, a nasze dane są gdzie indziej.",
@@ -120,9 +120,9 @@ export default function Page() {
         },
       ]}
       formId="order_dane_sprzedawcy"
-      formHeading="Zamów uzupełnienie danych"
-      formIntro="Napisz, ile macie domen i na jakim systemie działa strona, a odeślemy przegląd wszystkich adresów razem z gotowym fragmentem do wklejenia."
-      submitLabel="Zamów uzupełnienie"
+      formHeading="Zamówcie uzupełnienie danych"
+      formIntro="Napiszcie, ile macie domen i na jakim systemie działa strona, a odeślemy przegląd wszystkich adresów razem z gotowym fragmentem do wklejenia."
+      submitLabel="Zamawiam uzupełnienie"
       microCopy="Do sprawdzenia nie potrzebujemy żadnych dostępów, bo pracujemy na tym, co i tak widzi każdy odwiedzający. Dostęp jest potrzebny dopiero przy wklejeniu poprawki."
       serviceName="Uzupełnienie danych rejestrowych na stronie firmowej"
       serviceDesc="Przegląd wszystkich domen firmy pod kątem danych identyfikujących sprzedawcę, zestawienie ich z wykazem podatników VAT oraz przygotowanie gotowej stopki i znaczników do wdrożenia. Od 290 zł."

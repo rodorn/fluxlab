@@ -201,7 +201,7 @@ export default function NumerKsefCheck() {
           disabled={!tekst.trim()}
           className="btn-primary justify-center px-6 text-sm disabled:opacity-50 sm:self-start"
         >
-          Sprawdź numery
+          Sprawdźcie numery
         </button>
       </form>
 

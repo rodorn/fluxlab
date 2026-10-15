@@ -5,7 +5,7 @@ import DoplataCheck from "@/components/DoplataCheck";
 export const metadata: Metadata = {
   title: "Audyt faktur kurierskich i dopłat, od 290 zł | Fluxlab",
   description:
-    "Dopłata paliwowa sięga prawie połowy ceny bazowej i zmienia się co dwa tygodnie. Sprawdź jedną pozycję od ręki, a potem całą fakturę. Od 290 zł.",
+    "Dopłata paliwowa sięga prawie połowy ceny bazowej i zmienia się co dwa tygodnie. Sprawdźcie jedną pozycję od ręki, a potem całą fakturę. Od 290 zł.",
   alternates: { canonical: "/audyt-kurierski" },
   openGraph: {
     title:
@@ -33,8 +33,8 @@ export default function Page() {
       breadcrumb="Audyt kurierski"
       eyebrow="Koszty wysyłki"
       h1="Prawie połowa ceny bazowej to dopłata, której nikt nie sprawdza"
-      lead="Dopłata paliwowa dochodzi do 45% ceny bazowej i zmienia się co dwa tygodnie. Przy kilkuset paczkach nikt nie sprawdza każdej linii faktury, więc robimy to za Ciebie."
-      ctaLabel="Zamów audyt faktur"
+      lead="Dopłata paliwowa dochodzi do 45% ceny bazowej i zmienia się co dwa tygodnie. Przy kilkuset paczkach nikt nie sprawdza każdej linii faktury, więc robimy to za Was."
+      ctaLabel="Zamawiam audyt faktur"
       ctaNote="Pierwsza faktura sprawdzona za darmo"
       powiazane={[
         {
@@ -55,7 +55,7 @@ export default function Page() {
         },
         {
           title: "Korekty wagowe do konfrontacji",
-          desc: "Porównujemy doliczenia przewoźnika z wymiarami z Twojego systemu magazynowego.",
+          desc: "Porównujemy doliczenia przewoźnika z wymiarami z Waszego systemu magazynowego.",
         },
         {
           title: "Usługi podwójne i niezrealizowane",
@@ -69,7 +69,7 @@ export default function Page() {
           desc: "Dowolny miesiąc, wynik w 48 godzin.",
           features: [
             "lista spornych pozycji z kwotami",
-            "nic nie znajdziemy, nic nie płacisz",
+            "nic nie znajdziemy, nic nie płacicie",
           ],
         },
         {
@@ -88,7 +88,7 @@ export default function Page() {
           price: "25 procent",
           desc: "Bez opłaty z góry.",
           features: [
-            "płacisz tylko od odzyskanej kwoty",
+            "płacicie tylko od odzyskanej kwoty",
             "rozliczenie po decyzji przewoźnika",
           ],
         },
@@ -96,11 +96,11 @@ export default function Page() {
       faq={[
         {
           q: "Czego potrzebujecie, żeby sprawdzić nasze faktury?",
-          a: "Faktury od przewoźnika, najlepiej w arkuszu albo CSV. Przyda się też eksport przesyłek z Twojego systemu, żeby porównać wagi.",
+          a: "Faktury od przewoźnika, najlepiej w arkuszu albo CSV. Przyda się też eksport przesyłek z Waszego systemu, żeby porównać wagi.",
         },
         {
           q: "Czy składacie reklamacje za nas?",
-          a: "Nie, stroną umowy jesteś Ty. Dostajesz wyliczenie i gotową treść do wysłania ze swojego konta.",
+          a: "Nie, stroną umowy jesteście Wy. Dostajecie wyliczenie i gotową treść do wysłania ze swojego konta.",
         },
         {
           q: "Ile zwykle udaje się znaleźć?",
@@ -108,9 +108,9 @@ export default function Page() {
         },
       ]}
       formId="order_audyt_kurierski"
-      formHeading="Prześlij fakturę do sprawdzenia"
-      formIntro="Napisz, z którym przewoźnikiem pracujesz i ile paczek nadajesz miesięcznie. Plik podeślesz mailem po naszej odpowiedzi."
-      submitLabel="Zamów sprawdzenie"
+      formHeading="Prześlijcie fakturę do sprawdzenia"
+      formIntro="Napiszcie, z którym przewoźnikiem pracujecie i ile paczek nadajecie miesięcznie. Plik podeślecie mailem po naszej odpowiedzi."
+      submitLabel="Zamawiam sprawdzenie"
       microCopy="Dane z faktur kasujemy po przekazaniu wyniku."
       serviceName="Audyt faktur kurierskich"
       serviceDesc="Weryfikacja faktur przewoźnika linia po linii: dopłata paliwowa, korekty wagowe, usługi naliczone podwójnie, z gotową treścią reklamacji. Od 290 zł."

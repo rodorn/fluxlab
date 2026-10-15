@@ -109,18 +109,18 @@ export default async function Page() {
 
         <div className="mt-12 rounded-2xl border border-gray-200/80 dark:border-gray-800/80 bg-white/70 dark:bg-gray-900/50 p-6">
           <p className="text-base font-bold text-gray-900 dark:text-white">
-            Sprawdź konkretną spółkę
+            Sprawdźcie konkretną spółkę
           </p>
           <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
             Wierzyciel ma trzy miesiące na sprzeciw i nie dostaje zawiadomienia.
-            Wpisz nazwę albo KRS, a pokażemy, czy trwa postępowanie i do kiedy
+            Wpiszcie nazwę albo KRS, a pokażemy, czy trwa postępowanie i do kiedy
             można zgłosić sprzeciw. Za darmo.
           </p>
           <Link
             href="/czujka-rejestrowa"
             className="btn-primary mt-4 inline-flex px-5 py-2.5 text-sm"
           >
-            Sprawdź kontrahenta
+            Sprawdźcie kontrahenta
           </Link>
           <p className="mt-4 text-sm text-gray-600 dark:text-gray-400">
             Przed przelewem zaliczki:{" "}

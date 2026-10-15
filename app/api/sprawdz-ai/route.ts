@@ -211,7 +211,7 @@ function szkicLlms(
   linie.push(
     opis
       ? `> ${opis}`
-      : `> [Tu wpisz jedno zdanie o tym, czym zajmuje się firma i dla kogo. Na stronie nie było opisu w metadanych, więc nie mamy czego zacytować.]`,
+      : `> [Tu wpiszcie jedno zdanie o tym, czym zajmuje się firma i dla kogo. Na stronie nie było opisu w metadanych, więc nie mamy czego zacytować.]`,
   );
   linie.push("");
   if (podstrony.length) {
@@ -221,7 +221,7 @@ function szkicLlms(
   }
   linie.push("## Kontakt", "");
   linie.push(`- https://${domena}`);
-  linie.push("- [Tu wpisz adres e-mail albo odnośnik do formularza kontaktu.]");
+  linie.push("- [Tu wpiszcie adres e-mail albo odnośnik do formularza kontaktu.]");
   return linie.join("\n");
 }
 
@@ -271,7 +271,7 @@ export async function POST(request: Request) {
   }
   if (!/^[a-z0-9.-]+\.[a-z]{2,}$/.test(domena)) {
     return NextResponse.json(
-      { error: "Podaj samą domenę, na przykład twojafirma.pl" },
+      { error: "Podajcie samą domenę, na przykład twojafirma.pl" },
       { status: 400 },
     );
   }
@@ -288,7 +288,7 @@ export async function POST(request: Request) {
       domena,
       naglowek: "Nie możemy połączyć się z tą stroną",
       komentarz:
-        "Ani wersja z www, ani bez www nie odpowiedziała. Sprawdź pisownię albo spróbuj za chwilę.",
+        "Ani wersja z www, ani bez www nie odpowiedziała. Sprawdźcie pisownię albo spróbujcie za chwilę.",
     });
   }
 
@@ -324,7 +324,7 @@ export async function POST(request: Request) {
         : "ZIELONY";
 
   const naglowek = trescPusta
-    ? "Bez uruchomienia skryptów Twoja strona jest prawie pusta"
+    ? "Bez uruchomienia skryptów Wasza strona jest prawie pusta"
     : odcinajace.length
       ? `${odcinajace.length} z ${sprawdzaneOdcinajace} robotów wyszukiwania AI ma zakaz wejścia`
       : typy.length === 0
@@ -374,7 +374,7 @@ export async function POST(request: Request) {
     opis:
       tytul && opis
         ? "Strona ma wypełniony tytuł i opis, czyli dwa zdania, które najczęściej cytuje się w podsumowaniu."
-        : `Brakuje ${!tytul ? "sensownego tytułu" : ""}${!tytul && !opis ? " oraz " : ""}${!opis ? "opisu w metadanych" : ""}. To jest materiał, z którego asystent buduje jedno zdanie o Twojej firmie.`,
+        : `Brakuje ${!tytul ? "sensownego tytułu" : ""}${!tytul && !opis ? " oraz " : ""}${!opis ? "opisu w metadanych" : ""}. To jest materiał, z którego asystent buduje jedno zdanie o Waszej firmie.`,
   });
 
   punkty.push({
@@ -390,14 +390,14 @@ export async function POST(request: Request) {
     stan: maLlms ? "ok" : "uwaga",
     opis: maLlms
       ? "Strona ma plik llms.txt, czyli krótki opis serwisu pisany wprost pod modele językowe."
-      : "Nie ma pliku llms.txt. To nie jest wymóg i jego brak niczego nie psuje, natomiast jest to najtańszy sposób, żeby samemu napisać zdanie, którym asystent opisze Twoją firmę, zamiast zostawiać to jego interpretacji.",
+      : "Nie ma pliku llms.txt. To nie jest wymóg i jego brak niczego nie psuje, natomiast jest to najtańszy sposób, żeby samemu napisać zdanie, którym asystent opisze Waszą firmę, zamiast zostawiać to jego interpretacji.",
   });
 
   const komentarz = trescPusta
     ? "Najpoważniejszy problem jest tu jeden: strona buduje się dopiero w przeglądarce. Dla odwiedzającego to niewidoczne, dla robota oznacza pustą kartkę. Zanim cokolwiek innego, warto sprawić, żeby najważniejsza treść była w samym dokumencie."
     : odcinajace.length
       ? "Zablokowane roboty wyszukiwania to często pozostałość po regule wpisanej dawno temu przeciwko zupełnie innym robotom. Da się to rozdzielić: zostawić zakaz dla GPTBot, ClaudeBot i CCBot, które zbierają treść do trenowania, a wpuścić OAI-SearchBot, Claude-SearchBot i PerplexityBot osobnymi grupami z „Allow: /”. Wtedy treść nie idzie do trenowania, a strona zostaje w odpowiedziach asystentów."
-      : "Technicznie nic tu nie stoi na przeszkodzie. To, czy asystent poleci akurat Ciebie, zależy dalej od tego, czy na stronie stoją konkretne odpowiedzi na pytania klientów, a nie ogólne hasła o jakości i indywidualnym podejściu.";
+      : "Technicznie nic tu nie stoi na przeszkodzie. To, czy asystent poleci akurat Was, zależy dalej od tego, czy na stronie stoją konkretne odpowiedzi na pytania klientów, a nie ogólne hasła o jakości i indywidualnym podejściu.";
 
   return NextResponse.json({
     status: "OK",

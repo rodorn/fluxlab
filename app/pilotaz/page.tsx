@@ -9,7 +9,7 @@ import Tabs from "@/components/Tabs";
 export const metadata: Metadata = {
   title: "3 miejsca na publiczne case study, 50% ceny | Fluxlab",
   description:
-    "3 firmy B2B otrzymają wdrożenie automatyzacji za 50 procent ceny w zamian za zgodę na publiczne case study. Publikujemy tylko to, co zaakceptujesz.",
+    "3 firmy B2B otrzymają wdrożenie automatyzacji za 50 procent ceny w zamian za zgodę na publiczne case study. Publikujemy tylko to, co zaakceptujecie.",
   openGraph: {
     title: "3 miejsca na publiczne case study, 50% ceny | Fluxlab",
     description:
@@ -100,7 +100,7 @@ const faq = [
   {
     question: "Co jeśli projekt się nie uda?",
     answer:
-      "Jeśli z naszej winy nie dowieziemy etapu, nie płacisz za niego i nie wymagamy case study.",
+      "Jeśli z naszej winy nie dowieziemy etapu, nie płacicie za niego i nie wymagamy case study.",
   },
 ];
 
@@ -140,12 +140,12 @@ export default function Pilotaz() {
                 50% ceny wdrożenia w zamian za publiczny opis efektu
               </p>
               <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-                Publikujemy tylko to, co zaakceptujesz, bez danych wrażliwych i
+                Publikujemy tylko to, co zaakceptujecie, bez danych wrażliwych i
                 tajemnic handlowych.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="#sekcje" className="btn-primary">
-                  Aplikuj do programu case study
+                  Aplikujcie do programu case study
                 </Link>
               </div>
             </div>
@@ -157,13 +157,13 @@ export default function Pilotaz() {
             ariaLabel="Sekcje programu case study"
             tabs={[
               {
-                label: "Co dostajesz",
+                label: "Co dostajecie",
                 content: (
                   <div className="py-10 lg:py-12">
                     <div className="max-w-4xl mx-auto">
                       <div className="text-center mb-12">
                         <h2 className="h2-sekcji">
-                          Co dostajesz
+                          Co dostajecie
                         </h2>
                       </div>
                       <div className="grid md:grid-cols-2 gap-6">
@@ -186,13 +186,13 @@ export default function Pilotaz() {
                 ),
               },
               {
-                label: "Co dajesz w zamian",
+                label: "Co dajecie w zamian",
                 content: (
                   <div className="py-10 lg:py-12">
                     <div className="max-w-4xl mx-auto">
                       <div className="text-center mb-12">
                         <h2 className="h2-sekcji">
-                          Co dajesz w zamian
+                          Co dajecie w zamian
                         </h2>
                       </div>
                       <div className="grid md:grid-cols-2 gap-6">
@@ -321,7 +321,7 @@ export default function Pilotaz() {
                           {
                             n: "3",
                             title: "Audyt i decyzja",
-                            desc: "Po audycie dostajesz stałą wycenę i harmonogram.",
+                            desc: "Po audycie dostajecie stałą wycenę i harmonogram.",
                           },
                         ].map((s) => (
                           <div
@@ -391,7 +391,7 @@ export default function Pilotaz() {
             ]}
           />
         </div>
-        <CTA naglowek="Zostały 3 miejsca" opis="Odpowiadamy w 48 h." etykieta="Aplikuj do programu case study" />
+        <CTA naglowek="Zostały 3 miejsca" opis="Odpowiadamy w 48 h." etykieta="Aplikujcie do programu case study" />
       </main>
       <Footer />
 

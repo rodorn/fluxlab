@@ -9,11 +9,11 @@ import Tabs from "@/components/Tabs";
 export const metadata: Metadata = {
   title: "Polityka prywatności | Fluxlab",
   description:
-    "Polityka prywatności serwisu fluxlab.pl. Dowiedz się, jak przetwarzamy Twoje dane osobowe zgodnie z RODO.",
+    "Polityka prywatności serwisu fluxlab.pl. Dowiedz się, jak przetwarzamy Wasze dane osobowe zgodnie z RODO.",
   openGraph: {
     title: "Polityka prywatności | Fluxlab",
     description:
-      "Polityka prywatności serwisu fluxlab.pl. Dowiedz się, jak przetwarzamy Twoje dane osobowe zgodnie z RODO.",
+      "Polityka prywatności serwisu fluxlab.pl. Dowiedz się, jak przetwarzamy Wasze dane osobowe zgodnie z RODO.",
     locale: "pl_PL",
     type: "website",
     images: [
@@ -220,7 +220,7 @@ export default function PolitykaPrywatnosci() {
                         <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
                           7. Prawa użytkownika
                         </h2>
-                        <p>Zgodnie z RODO przysługują Ci następujące prawa:</p>
+                        <p>Zgodnie z RODO przysługują Wam następujące prawa:</p>
                         <ul className="list-disc pl-6 mt-2 space-y-1">
                           <li>Prawo dostępu do swoich danych osobowych.</li>
                           <li>Prawo do sprostowania (poprawiania) danych.</li>
@@ -242,7 +242,7 @@ export default function PolitykaPrywatnosci() {
                           </li>
                         </ul>
                         <p className="mt-2">
-                          Aby skorzystać z powyższych praw, skontaktuj się z
+                          Aby skorzystać z powyższych praw, skontaktujcie się z
                           nami za pośrednictwem formularza kontaktowego w
                           Serwisie.
                         </p>

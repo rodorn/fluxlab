@@ -151,7 +151,7 @@ export default function CzasReakcjiNaLeada() {
             <p className="mt-6 text-gray-600 dark:text-gray-400 leading-relaxed">
               Rozwiązaniem nie jest szybsza praca handlowców, tylko informacja
               o leadzie, która sama trafia do właściwej osoby, z terminem.
-              Ile kosztuje Was wolna reakcja, policzysz w{" "}
+              Ile kosztuje Was wolna reakcja, policzycie w{" "}
               <Link href="/koszt-recznej-obslugi-leadow" className="text-accent hover:underline">
                 kalkulatorze kosztu obsługi leadów
               </Link>
@@ -221,7 +221,7 @@ export default function CzasReakcjiNaLeada() {
             </div>
             <div className="text-center">
               <Link href="/automatyzacja-leadow-crm" className="btn-secondary">
-                Zobacz pełną ofertę automatyzacji leadów
+                Zobaczcie pełną ofertę automatyzacji leadów
               </Link>
             </div>
           </section>

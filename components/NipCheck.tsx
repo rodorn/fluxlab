@@ -88,7 +88,7 @@ export default function NipCheck() {
       setWynik(data);
       setStan("gotowe");
     } catch {
-      setBlad("Brak połączenia. Spróbuj ponownie za chwilę.");
+      setBlad("Brak połączenia. Spróbujcie ponownie za chwilę.");
       setStan("blad");
     }
   }
@@ -130,7 +130,7 @@ export default function NipCheck() {
       }
       setLeadStan("ok");
     } catch {
-      setLeadBlad("Brak polaczenia. Sprobuj ponownie.");
+      setLeadBlad("Brak polaczenia. Sprobujcie ponownie.");
       setLeadStan("blad");
     }
   }
@@ -153,7 +153,7 @@ export default function NipCheck() {
         ]}
         onWybor={uruchom}
         zablokowane={stan === "ladowanie"}
-        wstep="Nie masz pod ręką numeru? Zobacz na gotowym przykładzie:"
+        wstep="Nie macie pod ręką numeru? Zobaczcie na gotowym przykładzie:"
       />
       <form onSubmit={sprawdz} className="mt-5 flex flex-col gap-3 sm:flex-row">
         <input
@@ -169,7 +169,7 @@ export default function NipCheck() {
           disabled={stan === "ladowanie" || nip.replace(/\D/g, "").length < 10}
           className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
         >
-          {stan === "ladowanie" ? "Sprawdzamy..." : "Sprawdź NIP"}
+          {stan === "ladowanie" ? "Sprawdzamy..." : "Sprawdźcie NIP"}
         </button>
       </form>
 
@@ -250,8 +250,8 @@ export default function NipCheck() {
           <div className="mt-5 border-t border-gray-200/70 dark:border-gray-700/70 pt-4">
             <p className="text-sm text-gray-700 dark:text-gray-300">
               {wynik.verdict === "ZIELONY"
-                ? "To szybki sprawdzian z jednego rejestru. Pełny raport dokłada odpis KRS (likwidacja, zaległości, wykreślenie), wiek domeny oraz najważniejsze: sprawdzenie, czy numer konta, na który masz zapłacić, rzeczywiście należy do tej firmy."
-                : "Zanim cokolwiek przelejesz, warto sprawdzić resztę. Pełny raport dokłada odpis KRS (likwidacja, zaległości, wykreślenie), wiek domeny oraz sprawdzenie, czy numer konta, na który masz zapłacić, rzeczywiście należy do tej firmy."}
+                ? "To szybki sprawdzian z jednego rejestru. Pełny raport dokłada odpis KRS (likwidacja, zaległości, wykreślenie), wiek domeny oraz najważniejsze: sprawdzenie, czy numer konta, na który macie zapłacić, rzeczywiście należy do tej firmy."
+                : "Zanim cokolwiek przelejecie, warto sprawdzić resztę. Pełny raport dokłada odpis KRS (likwidacja, zaległości, wykreślenie), wiek domeny oraz sprawdzenie, czy numer konta, na który macie zapłacić, rzeczywiście należy do tej firmy."}
             </p>
 
             {leadStan === "ok" ? (
@@ -265,7 +265,7 @@ export default function NipCheck() {
                   htmlFor="nipcheck-email"
                   className="block text-sm font-medium text-gray-900 dark:text-white"
                 >
-                  Podaj maila, odeślemy pełny raport dla tego numeru
+                  Podajcie maila, odeślemy pełny raport dla tego numeru
                 </label>
                 <div className="mt-2 flex flex-col gap-3 sm:flex-row">
                   <input
@@ -284,7 +284,7 @@ export default function NipCheck() {
                   >
                     {leadStan === "wysylamy"
                       ? "Wysyłamy..."
-                      : "Zamów pełny raport"}
+                      : "Zamawiam pełny raport"}
                   </button>
                 </div>
                 {leadStan === "blad" && (

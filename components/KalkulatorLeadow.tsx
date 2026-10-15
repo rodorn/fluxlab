@@ -234,11 +234,11 @@ export default function KalkulatorLeadow() {
       <div className="space-y-8">
         <div className="space-y-1">
           <h2 className="text-lg font-bold text-gray-900 dark:text-white">
-            Twoje dane
+            Wasze dane
           </h2>
           <p className="text-sm text-gray-500 dark:text-gray-400">
             Wynik liczy się na bieżąco. Domyślne wartości to typowy mały zespół
-            B2B, podmień na własne, żeby zobaczyć realny koszt u siebie.
+            B2B, podmieńcie na własne, żeby zobaczyć realny koszt u siebie.
           </p>
         </div>
 
@@ -246,7 +246,7 @@ export default function KalkulatorLeadow() {
           pozycje={SCENARIUSZE}
           wybrany={wybrany}
           onWybor={wybierzScenariusz}
-          wstep="Nie masz teraz swoich liczb pod ręką? Podstaw gotowe:"
+          wstep="Nie macie teraz swoich liczb pod ręką? Podstaw gotowe:"
         />
 
         <div className="grid sm:grid-cols-2 gap-6">
@@ -304,11 +304,11 @@ export default function KalkulatorLeadow() {
       <div className="space-y-6">
         <div className="rounded-2xl border-2 border-accent/30 bg-accent/5 dark:bg-accent/10 p-6 sm:p-8">
           <p className="text-sm leading-relaxed text-gray-700 dark:text-gray-300">
-            Ręczna obsługa leadów kosztuje Cię około{" "}
+            Ręczna obsługa leadów kosztuje Was około{" "}
             <strong className="text-accent">
               {fmtPLN(result.kosztRecznejPracy)} zł miesięcznie
             </strong>{" "}
-            w samym czasie pracy. Jeśli przez opóźnienia tracisz nawet{" "}
+            w samym czasie pracy. Jeśli przez opóźnienia tracicie nawet{" "}
             <strong className="text-accent">{data.opoznione}%</strong>{" "}
             potencjalnych klientów, realny koszt może być znacznie wyższy,
             szacunkowo{" "}
@@ -351,10 +351,10 @@ export default function KalkulatorLeadow() {
       {/* ── CTA ── */}
       <div className="rounded-2xl border border-accent/20 bg-accent/5 dark:bg-accent/10 p-8 text-center">
         <h3 className="text-xl lg:text-2xl font-bold text-gray-900 dark:text-white mb-3">
-          Chcesz sprawdzić, które kroki da się usunąć?
+          Chcecie sprawdzić, które kroki da się usunąć?
         </h3>
         <p className="text-sm text-gray-600 dark:text-gray-400 mb-6 max-w-xl mx-auto">
-          W diagnozie pokazujemy, gdzie w Twoim procesie tracisz czas i leady oraz
+          W diagnozie pokazujemy, gdzie w Waszym procesie tracicie czas i leady oraz
           który pierwszy etap warto zautomatyzować, żeby ten koszt spadł.
         </p>
         <TrackedCTA
@@ -363,7 +363,7 @@ export default function KalkulatorLeadow() {
           eventName="cta_click_calc_leads"
           className="btn-primary px-8 py-3 text-base"
         >
-          Zamów bezpłatną diagnozę
+          Zamawiam bezpłatną diagnozę
         </TrackedCTA>
       </div>
     </div>

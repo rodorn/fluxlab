@@ -3,14 +3,14 @@ import ProductLanding from "@/components/ProductLanding";
 import SpolkaCheck from "@/components/SpolkaCheck";
 
 export const metadata: Metadata = {
-  title: "Twój dłużnik może zniknąć z KRS w trzy miesiące | Fluxlab",
+  title: "Wasz dłużnik może zniknąć z KRS w trzy miesiące | Fluxlab",
   description:
-    "Sąd wszczyna z urzędu postępowanie o rozwiązanie spółki i daje trzy miesiące na sprzeciw. Sprawdź za darmo, czy jest na niej kontrahent. Monitoring od 99 zł.",
+    "Sąd wszczyna z urzędu postępowanie o rozwiązanie spółki i daje trzy miesiące na sprzeciw. Sprawdźcie za darmo, czy jest na niej kontrahent. Monitoring od 99 zł.",
   alternates: { canonical: "/czujka-rejestrowa" },
   openGraph: {
-    title: "Twój dłużnik może zniknąć z KRS w trzy miesiące | Fluxlab",
+    title: "Wasz dłużnik może zniknąć z KRS w trzy miesiące | Fluxlab",
     description:
-      "Obwieszczenie w Monitorze Sądowym uruchamia trzymiesięczny termin. Sprawdź kontrahenta za darmo, bez rejestracji.",
+      "Obwieszczenie w Monitorze Sądowym uruchamia trzymiesięczny termin. Sprawdźcie kontrahenta za darmo, bez rejestracji.",
     locale: "pl_PL",
     type: "website",
     images: [
@@ -31,9 +31,9 @@ export default function Page() {
       tool={<SpolkaCheck />}
       breadcrumb="Czujka rejestrowa"
       eyebrow="Należności i kontrahenci"
-      h1="Dłużnik może zniknąć z rejestru, a Ty się o tym nie dowiesz"
-      lead="Sąd z urzędu rozwiązuje spółki, które nie składają sprawozdań. Od obwieszczenia w Monitorze Sądowym i Gospodarczym masz trzy miesiące na sprzeciw, potem podmiot znika z rejestru. Nikt Cię o tym nie zawiadomi."
-      ctaLabel="Sprawdź kontrahenta"
+      h1="Dłużnik może zniknąć z rejestru, a Wy się o tym nie dowiecie"
+      lead="Sąd z urzędu rozwiązuje spółki, które nie składają sprawozdań. Od obwieszczenia w Monitorze Sądowym i Gospodarczym macie trzy miesiące na sprzeciw, potem podmiot znika z rejestru. Nikt Was o tym nie zawiadomi."
+      ctaLabel="Sprawdźcie kontrahenta"
       ctaNote="Sprawdzenie za darmo, od ręki"
       checks={[
         {
@@ -45,12 +45,12 @@ export default function Page() {
           desc: "Widać, co działo się z podmiotem przez lata.",
         },
         {
-          title: "Codzienne pilnowanie Twojej listy",
-          desc: "Porównujemy Twoją listę z każdym wydaniem Monitora i piszemy w dniu publikacji.",
+          title: "Codzienne pilnowanie Waszej listy",
+          desc: "Porównujemy Waszą listę z każdym wydaniem Monitora i piszemy w dniu publikacji.",
         },
         {
           title: "Skan wsteczny całego portfela",
-          desc: "Jednorazowo sprawdzamy, czy coś już przegapiłeś.",
+          desc: "Jednorazowo sprawdzamy, czy coś już przegapiliście.",
         },
       ]}
       pricing={[
@@ -106,9 +106,9 @@ export default function Page() {
         },
       ]}
       formId="order_czujka_rejestrowa"
-      formHeading="Zamów sprawdzenie listy kontrahentów"
-      formIntro="Napisz, ilu macie kontrahentów i w jakiej formie trzymacie listę. Odeślemy zakres, cenę i przykładowy raport."
-      submitLabel="Zamów sprawdzenie"
+      formHeading="Zamówcie sprawdzenie listy kontrahentów"
+      formIntro="Napiszcie, ilu macie kontrahentów i w jakiej formie trzymacie listę. Odeślemy zakres, cenę i przykładowy raport."
+      submitLabel="Zamawiam sprawdzenie"
       microCopy="Wystarczy lista nazw albo numerów KRS. Bez danych osobowych i dostępów."
       serviceName="Monitoring Monitora Sądowego i Gospodarczego dla listy kontrahentów"
       serviceDesc="Codzienne porównywanie listy kontrahentów klienta z nowymi wydaniami Monitora Sądowego i Gospodarczego, ze szczególnym uwzględnieniem postępowań o rozwiązanie podmiotu bez likwidacji, wraz z alertem w dniu obwieszczenia. Od 99 zł miesięcznie."

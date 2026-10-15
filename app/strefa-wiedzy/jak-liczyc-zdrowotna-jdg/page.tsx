@@ -187,13 +187,13 @@ export default function SkladkaZdrowotnaJDGArticle() {
 
                     <div className="mt-10 bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-8 text-center">
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Sprawdź wpływ zdrowotnej na Twój wynik
+                        Sprawdźcie wpływ zdrowotnej na Wasz wynik
                       </p>
                       <Link
                         href="/kalkulator-podatkowy"
                         className="btn-primary inline-block"
                       >
-                        Sprawdź w kalkulatorze JDG 2026
+                        Sprawdźcie w kalkulatorze JDG 2026
                       </Link>
                     </div>
                   </div>
@@ -277,7 +277,7 @@ export default function SkladkaZdrowotnaJDGArticle() {
             <PrevNextArticle currentHref="/strefa-wiedzy/jak-liczyc-zdrowotna-jdg" />
           </div>
         </div>
-        <CTA naglowek="Chcesz policzyć składki dla swojej sytuacji?" />
+        <CTA naglowek="Chcecie policzyć składki dla swojej sytuacji?" />
       </main>
       <Footer />
 

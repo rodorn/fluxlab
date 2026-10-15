@@ -260,7 +260,7 @@ export default function EDoreczeniaCheck({
       }
       setLeadStan("ok");
     } catch {
-      setLeadBlad("Brak połączenia. Spróbuj ponownie za chwilę.");
+      setLeadBlad("Brak połączenia. Spróbujcie ponownie za chwilę.");
       setLeadStan("blad");
     }
   }
@@ -334,7 +334,7 @@ export default function EDoreczeniaCheck({
                 disabled={krsStan === "szukamy"}
                 className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
               >
-                {krsStan === "szukamy" ? "Sprawdzamy..." : "Sprawdź odpis"}
+                {krsStan === "szukamy" ? "Sprawdzamy..." : "Sprawdźcie odpis"}
               </button>
             </div>
             {krsStan === "blad" && (
@@ -520,7 +520,7 @@ export default function EDoreczeniaCheck({
                       htmlFor="edoreczenia-email"
                       className="block text-sm font-medium text-gray-900 dark:text-white"
                     >
-                      Podaj maila, odpiszemy, co w Waszym przypadku trzeba spiąć
+                      Podajcie maila, odpiszemy, co w Waszym przypadku trzeba spiąć
                       i za ile
                     </label>
                     <div className="mt-2 flex flex-col gap-3 sm:flex-row">
@@ -540,7 +540,7 @@ export default function EDoreczeniaCheck({
                       >
                         {leadStan === "wysylamy"
                           ? "Wysyłamy..."
-                          : "Wyślij zgłoszenie"}
+                          : "Wyślijcie zgłoszenie"}
                       </button>
                     </div>
                     {leadStan === "blad" && (

@@ -173,7 +173,7 @@ export default function AutomatyzacjaAI() {
                       <LandingForm
                         formId="diagnosis_ai"
                         heading="Sprawdźmy, gdzie AI ma sens"
-                        intro="Opisz, co dziś robi człowiek ręcznie, na jakich danych i w jakiej skali. Odpowiemy, czy AI to rozwiąże."
+                        intro="Opiszcie, co dziś robi człowiek ręcznie, na jakich danych i w jakiej skali. Odpowiemy, czy AI to rozwiąże."
                         submitLabel="Sprawdźmy, gdzie AI ma sens"
                       />
                     </div>

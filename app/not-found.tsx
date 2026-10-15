@@ -42,7 +42,7 @@ export default function NotFound() {
             <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-10 max-w-xl">
               Adres nie istnieje albo został przeniesiony. Trochę ironiczne dla
               kogoś, kto zawodowo pilnuje, żeby nic nie ginęło, ale zdarza się.
-              Wróć na stronę główną albo wybierz dział.
+              Wróćcie na stronę główną albo wybierzcie dział.
             </p>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-10">
@@ -64,7 +64,7 @@ export default function NotFound() {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/" className="btn-primary">
-                ← Wróć na stronę główną
+                ← Wróćcie na stronę główną
               </Link>
               <Link href="/kontakt" className="btn-secondary">
                 Bezpłatna diagnoza

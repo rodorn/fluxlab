@@ -10,12 +10,12 @@ import NumerKsefCheck from "@/components/NumerKsefCheck";
 import NazwaNarzedzia from "@/components/NazwaNarzedzia";
 
 export const metadata: Metadata = {
-  title: "Sprawdź numer KSeF faktury: NIP, data i suma | Fluxlab",
+  title: "Sprawdźcie numer KSeF faktury: NIP, data i suma | Fluxlab",
   description:
     "Sprawdźcie fakturę po numerze KSeF w 10 s, bez logowania: NIP sprzedawcy, data przyjęcia i suma kontrolna. Liczymy w Waszej przeglądarce.",
   alternates: { canonical: "/numer-ksef" },
   openGraph: {
-    title: "Sprawdź numer KSeF faktury: NIP, data i suma | Fluxlab",
+    title: "Sprawdźcie numer KSeF faktury: NIP, data i suma | Fluxlab",
     description:
       "Darmowe sprawdzenie numeru KSeF przed przelewem. Suma kontrolna, NIP sprzedawcy i data przyjęcia faktury, liczone w przeglądarce.",
     locale: "pl_PL",

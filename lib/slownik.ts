@@ -18,7 +18,7 @@ export const SLOWNIK: Haslo[] = [
     haslo: "Numer KSeF",
     slug: "numer-ksef",
     opis: "Identyfikator, który KSeF nadaje fakturze po jej przyjęciu. Zawiera NIP sprzedawcy, datę przyjęcia i sumę kontrolną, więc da się go sprawdzić bez logowania.",
-    link: { href: "/numer-ksef", tekst: "Sprawdź numer KSeF" },
+    link: { href: "/numer-ksef", tekst: "Sprawdźcie numer KSeF" },
   },
   {
     haslo: "FA(3)",
@@ -62,13 +62,13 @@ export const SLOWNIK: Haslo[] = [
     haslo: "Biała lista VAT",
     slug: "biala-lista",
     opis: "Wykaz podatników VAT prowadzony przez Ministerstwo Finansów, z ich statusem i rachunkami bankowymi. Zapłata za transakcję powyżej 15 tys. zł na rachunek spoza wykazu odbiera prawo do kosztu.",
-    link: { href: "/sprawdzenie-nip", tekst: "Sprawdź NIP w wykazie" },
+    link: { href: "/sprawdzenie-nip", tekst: "Sprawdźcie NIP w wykazie" },
   },
   {
     haslo: "e-Doręczenia",
     slug: "e-doreczenia",
     opis: "Elektroniczny odpowiednik listu poleconego za potwierdzeniem odbioru. Urzędy wysyłają pisma na adres do e-Doręczeń, a pismo nieodebrane przez 14 dni uznaje się za doręczone.",
-    link: { href: "/e-doreczenia-integracja", tekst: "Sprawdź swój termin" },
+    link: { href: "/e-doreczenia-integracja", tekst: "Sprawdźcie swój termin" },
   },
   {
     haslo: "Adres do e-Doręczeń",
@@ -195,7 +195,7 @@ export const SLOWNIK: Haslo[] = [
     haslo: "Widoczność w AI",
     slug: "widocznosc-w-ai",
     opis: "To, czy asystenci AI znają firmę i polecają ją w odpowiedziach. Zależy od tego, czy roboty mogą przeczytać stronę i czy jasno mówi, czym firma się zajmuje.",
-    link: { href: "/widocznosc-w-ai", tekst: "Sprawdź widoczność w AI" },
+    link: { href: "/widocznosc-w-ai", tekst: "Sprawdźcie widoczność w AI" },
   },
   {
     haslo: "SPF",

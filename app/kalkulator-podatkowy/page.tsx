@@ -12,11 +12,11 @@ import NazwaNarzedzia from "@/components/NazwaNarzedzia";
 export const metadata: Metadata = {
   title: "Kalkulator JDG 2026: ryczałt, liniowy, skala i ZUS | Fluxlab",
   description:
-    "Porównaj ryczałt, podatek liniowy i skalę dla JDG w 2026. Uwzględnia ZUS, składkę zdrowotną, VAT, koszty prywatne i samochód. Bez rejestracji.",
+    "Porównajcie ryczałt, podatek liniowy i skalę dla JDG w 2026. Uwzględnia ZUS, składkę zdrowotną, VAT, koszty prywatne i samochód. Bez rejestracji.",
   openGraph: {
     title: "Kalkulator JDG 2026: ryczałt, liniowy, skala i ZUS | Fluxlab",
     description:
-      "Porównaj ryczałt, podatek liniowy i skalę podatkową dla JDG w 2026. ZUS, zdrowotna, VAT, koszty prywatne i samochód.",
+      "Porównajcie ryczałt, podatek liniowy i skalę podatkową dla JDG w 2026. ZUS, zdrowotna, VAT, koszty prywatne i samochód.",
     locale: "pl_PL",
     type: "website",
     images: [
@@ -73,7 +73,7 @@ export default function KalkulatorPodatkowyPage() {
                 <p className="section-label mb-3">Narzędzie</p>
                 <h1 className="h1-strony">Kalkulator JDG 2026</h1>
                 <p className="mt-3 text-lg text-gray-600 dark:text-gray-400">
-                  Porównaj ryczałt, podatek liniowy i skalę podatkową.
+                  Porównajcie ryczałt, podatek liniowy i skalę podatkową.
                 </p>
                 <ul className="mt-4 space-y-2">
                   {[

@@ -46,11 +46,11 @@ const checkIcon = (
 const faq = [
   {
     q: "Czy solo consultant w ogóle potrzebuje CRM?",
-    a: "Przy kilkunastu aktywnych rozmowach naraz tak. Bez systemu leady giną, bo nie wracasz do nich na czas.",
+    a: "Przy kilkunastu aktywnych rozmowach naraz tak. Bez systemu leady giną, bo nie wracacie do nich na czas.",
   },
   {
     q: "Czy darmowy HubSpot wystarczy na lata?",
-    a: "Często tak. Granica pojawia się, gdy potrzebujesz workflow, scoringu i raportów spoza prostych dashboardów.",
+    a: "Często tak. Granica pojawia się, gdy potrzebujecie workflow, scoringu i raportów spoza prostych dashboardów.",
   },
   {
     q: "Co z arkuszem Google jako CRM?",
@@ -58,7 +58,7 @@ const faq = [
   },
   {
     q: "Kiedy warto zmienić CRM?",
-    a: "Gdy regularnie tracisz dane, a obejścia zajmują więcej czasu, niż oszczędzają. Najpierw jednak uporządkuj pola i dołóż automaty.",
+    a: "Gdy regularnie tracicie dane, a obejścia zajmują więcej czasu, niż oszczędzają. Najpierw jednak uporządkujcie pola i dołóżcie automaty.",
   },
 ];
 
@@ -115,7 +115,7 @@ export default function CrmDlaJednoosobowejFirmyArticle() {
                       <p className="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
                         HubSpot Free często wystarcza jednej osobie: kontakty,
                         deale, zadania, integracja z Gmailem. Przy poważniejszej
-                        automatyzacji szybko trafisz na płatne plany. Więcej w
+                        automatyzacji szybko traficie na płatne plany. Więcej w
                         porównaniu{" "}
                         <Link
                           href="/strefa-wiedzy/hubspot-vs-pipedrive"
@@ -133,7 +133,7 @@ export default function CrmDlaJednoosobowejFirmyArticle() {
                         Folk i Attio to nowsze CRM-y pod pracę na relacjach, od
                         ok. 20 do 30 USD miesięcznie. Folk jest prostszy dla
                         konsultanta, Attio bardziej elastyczny. Monday CRM ma
-                        sens tylko, gdy i tak pracujesz w Monday, bo zwykle
+                        sens tylko, gdy i tak pracujecie w Monday, bo zwykle
                         wymaga minimum 3 licencji.
                       </p>
                       <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -264,7 +264,7 @@ export default function CrmDlaJednoosobowejFirmyArticle() {
         </section>
 
         {/* CTA */}
-        <CTA naglowek="Chcesz dobrać CRM i automaty pod swoją jednoosobową firmę?" />
+        <CTA naglowek="Chcecie dobrać CRM i automaty pod swoją jednoosobową firmę?" />
       </main>
       <Footer />
 

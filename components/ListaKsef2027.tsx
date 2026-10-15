@@ -251,7 +251,7 @@ export default function ListaKsef2027({
               >
                 {skopiowano
                   ? "Skopiowane, wklejcie w maila"
-                  : "Skopiuj listę do wysłania"}
+                  : "Skopiujcie listę do wysłania"}
               </button>
               {otwarte.some((p) =>
                 ["przelew", "koszty", "odrzucenia"].includes(p.klucz),

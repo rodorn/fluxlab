@@ -345,7 +345,7 @@ export default function RaportowanieZPipedrive() {
                                 Zakres
                               </th>
                               <th className="px-6 py-4 font-semibold">
-                                Co dostajesz
+                                Co dostajecie
                               </th>
                               <th className="px-6 py-4 font-semibold">
                                 Widełki
@@ -396,11 +396,11 @@ export default function RaportowanieZPipedrive() {
                         <TrackedCTA
                           href="/automatyzacja-leadow-crm"
                           location="article_raportowanie_pipedrive_pricing"
-                          label="Zobacz pełną ofertę"
+                          label="Zobaczcie pełną ofertę"
                           eventName="cta_click_article_audit"
                           className="btn-secondary"
                         >
-                          Zobacz pełną ofertę: automatyzacja leadów do CRM
+                          Zobaczcie pełną ofertę: automatyzacja leadów do CRM
                         </TrackedCTA>
                         <TrackedCTA
                           href="/kontakt"

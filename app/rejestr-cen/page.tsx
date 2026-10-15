@@ -33,7 +33,7 @@ export default function Page() {
       eyebrow="Obowiązek informowania o cenie"
       h1="Przecena bez informacji o cenie z 30 dni to ryzyko, którego nie widać z panelu"
       lead="Wtyczka liczy cenę minimalną z własnej bazy, która bywa czyszczona albo nadpisana importem. Sprawdzamy każdą przecenę z zewnątrz, tak jak zobaczy ją kontrola."
-      ctaLabel="Sprawdź nasz sklep"
+      ctaLabel="Sprawdźcie nasz sklep"
       ctaNote="Wynik tego samego dnia"
       checks={[
         {
@@ -50,7 +50,7 @@ export default function Page() {
         },
         {
           title: "Rejestr cen",
-          desc: "Codziennie zapisujemy ceny sklepu. Po 30 dniach masz niezależną historię na wypadek sporu.",
+          desc: "Codziennie zapisujemy ceny sklepu. Po 30 dniach macie niezależną historię na wypadek sporu.",
         },
       ]}
       pricing={[
@@ -99,13 +99,13 @@ export default function Page() {
         },
         {
           q: "A jeśli nic nie znajdziecie?",
-          a: "Wtedy nie płacisz za skan.",
+          a: "Wtedy nie płacicie za skan.",
         },
       ]}
       formId="order_rejestr_cen"
-      formHeading="Sprawdź swój sklep"
-      formIntro="Podaj adres sklepu i silnik. Jeśli nie znajdziemy niezgodności, nie płacisz."
-      submitLabel="Zamów skan sklepu"
+      formHeading="Sprawdźcie swój sklep"
+      formIntro="Podajcie adres sklepu i silnik. Jeśli nie znajdziemy niezgodności, nie płacicie."
+      submitLabel="Zamawiam skan sklepu"
       microCopy="Skan tylko publicznych stron sklepu, bez dostępów."
       serviceName="Skan obowiązku informowania o najniższej cenie z 30 dni"
       serviceDesc="Sprawdzenie wszystkich przecenionych pozycji w sklepie pod kątem obowiązkowej informacji o najniższej cenie z 30 dni przed obniżką, wraz z raportem PDF. Od 49 zł."

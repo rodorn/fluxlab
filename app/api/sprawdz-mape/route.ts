@@ -136,7 +136,7 @@ export async function POST(request: Request) {
   }
   if (!/^[a-z0-9.-]+\.[a-z]{2,}$/.test(domena)) {
     return NextResponse.json(
-      { error: "Podaj samą domenę, na przykład twojafirma.pl" },
+      { error: "Podajcie samą domenę, na przykład twojafirma.pl" },
       { status: 400 },
     );
   }
@@ -152,7 +152,7 @@ export async function POST(request: Request) {
         domena,
         naglowek: "Nie możemy połączyć się z tą stroną",
         komentarz:
-          "Ani wersja z www, ani bez www nie odpowiedziała. Sprawdź pisownię albo spróbuj za chwilę.",
+          "Ani wersja z www, ani bez www nie odpowiedziała. Sprawdźcie pisownię albo spróbujcie za chwilę.",
       });
     }
   }
@@ -251,7 +251,7 @@ export async function POST(request: Request) {
   const naglowek = blokada
     ? "Strona prosi wyszukiwarki, żeby jej nie odwiedzały"
     : obce && obce.ile >= unikalne.length / 2
-      ? `Adresy w mapie prowadzą poza Twoją stronę, ${obce.ile} z ${unikalne.length}`
+      ? `Adresy w mapie prowadzą poza Waszą stronę, ${obce.ile} z ${unikalne.length}`
       : zepsute.length
       ? `${zepsute.length} z ${probka.length} sprawdzonych adresów nie działa`
       : wskazanaNieDziala
@@ -274,7 +274,7 @@ export async function POST(request: Request) {
       : wskazanaNieDziala
         ? `Plik robots.txt wskazuje mapę strony pod adresem ${wskazane[0]}, a ten adres nie odpowiada. Sama mapa istnieje i znaleźliśmy ją pod ${uzyte[uzyte.length - 1]}, czyli obok. Dla wyszukiwarki to jednak ślepy zaułek: dostaje jeden konkretny adres i pod nim nic nie ma.`
         : wskazane.length
-          ? "Mapa strony jest, jest wskazana w robots.txt i sprawdzone adresy odpowiadają poprawnie. Tego punktu nie musisz ruszać."
+          ? "Mapa strony jest, jest wskazana w robots.txt i sprawdzone adresy odpowiadają poprawnie. Tego punktu nie musicie ruszać."
           : "Mapa strony istnieje, ale plik robots.txt o niej nie wspomina. Wyszukiwarka zwykle i tak sprawdzi standardową lokalizację, więc to nie jest awaria, natomiast wskazanie mapy wprost jest darmowe i usuwa zgadywanie.";
 
   // Wyjasnienie przyczyny idzie przed reszta komentarza, bo gdy adresy

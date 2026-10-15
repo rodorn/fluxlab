@@ -73,7 +73,7 @@ export default function N8nVsZapierArticle() {
               n8n vs Zapier, kiedy warto iść w self-hosting
             </h1>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-              Zapier jest szybki i wygodny, ale płacisz za każdy krok. n8n na
+              Zapier jest szybki i wygodny, ale płacicie za każdy krok. n8n na
               własnym serwerze wymaga więcej pracy, za to daje kontrolę i niższe
               koszty przy dużym wolumenie. Pokazujemy, kiedy to się opłaca.
             </p>
@@ -93,12 +93,12 @@ export default function N8nVsZapierArticle() {
                         Czym różni się n8n od Zapiera
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Zapier to usługa w chmurze w USA: zakładasz konto, łączysz
-                        aplikacje, płacisz co miesiąc. Nie kontrolujesz serwera
+                        Zapier to usługa w chmurze w USA: zakładacie konto, łączycie
+                        aplikacje, płacicie co miesiąc. Nie kontrolujecie serwera
                         ani drogi, którą płyną dane.
                       </p>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        n8n to platforma open-source. Uruchamiasz ją na własnym
+                        n8n to platforma open-source. Uruchamiacie ją na własnym
                         serwerze albo w n8n.cloud. Interfejsem jest bliżej Make:
                         diagram, rozgałęzienia, pętle.
                       </p>
@@ -121,8 +121,8 @@ export default function N8nVsZapierArticle() {
                       </ul>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         W n8n wykonanie to cały scenariusz. Ten sam scenariusz z
-                        10 krokami to w Zapierze 10 tasków. Zanim zdecydujesz,
-                        policz{" "}
+                        10 krokami to w Zapierze 10 tasków. Zanim zdecydujecie,
+                        policzcie{" "}
                         <Link
                           href="/strefa-wiedzy/jak-policzyc-roi-z-automatyzacji"
                           className="text-accent hover:underline"
@@ -158,7 +158,7 @@ export default function N8nVsZapierArticle() {
                         Kontrola danych
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        n8n self-hosted nie wypuszcza danych poza Twoją
+                        n8n self-hosted nie wypuszcza danych poza Waszą
                         infrastrukturę, a serwer w Polsce upraszcza zgodność z
                         RODO. Może też działać w sieci wewnętrznej i łączyć się z
                         CRM, ERP czy bazą księgową, które nie są wystawione na
@@ -225,13 +225,13 @@ export default function N8nVsZapierArticle() {
 
                       <div className="bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-8 text-center mt-12">
                         <h2 className="h2-sekcji mb-6">
-                          Chcesz n8n bez utrzymywania serwera?
+                          Chcecie n8n bez utrzymywania serwera?
                         </h2>
                         <p className="text-gray-600 dark:text-gray-400 mb-4">
-                          Wdrażamy n8n na Twoim serwerze albo zarządzamy nim za Ciebie.
+                          Wdrażamy n8n na Waszym serwerze albo zarządzamy nim za Was.
                         </p>
                         <Link href="/n8n" className="btn-primary inline-block">
-                          Zobacz usługę n8n
+                          Zobaczcie usługę n8n
                         </Link>
                       </div>
                     </div>
@@ -289,7 +289,7 @@ export default function N8nVsZapierArticle() {
 
                       <div className="mt-12">
                         <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                          Zobacz też
+                          Zobaczcie też
                         </h3>
                         <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400">
                           <li>

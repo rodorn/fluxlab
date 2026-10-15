@@ -232,7 +232,7 @@ export default function KsefCheck() {
       }
       setLeadStan("ok");
     } catch {
-      setLeadBlad("Brak połączenia. Spróbuj ponownie za chwilę.");
+      setLeadBlad("Brak połączenia. Spróbujcie ponownie za chwilę.");
       setLeadStan("blad");
     }
   }
@@ -296,7 +296,7 @@ export default function KsefCheck() {
             onClick={kopiujLink}
             className="mt-3 rounded-lg border border-gray-300 px-3 py-1.5 text-xs font-semibold text-gray-700 transition-colors hover:border-accent hover:text-accent dark:border-gray-700 dark:text-gray-300"
           >
-            {linkSkopiowany ? "Link skopiowany" : "Kopiuj link do tego wyniku"}
+            {linkSkopiowany ? "Link skopiowany" : "Kopiujcie link do tego wyniku"}
           </button>
 
           {!wynik.podatnik.pozaObowiazkiem && (
@@ -384,7 +384,7 @@ export default function KsefCheck() {
                   htmlFor="ksef-email"
                   className="block text-sm font-medium text-gray-900 dark:text-white"
                 >
-                  Podaj maila, odpiszemy, co w Waszym przypadku trzeba spiąć i
+                  Podajcie maila, odpiszemy, co w Waszym przypadku trzeba spiąć i
                   za ile
                 </label>
                 <div className="mt-2 flex flex-col gap-3 sm:flex-row">
@@ -404,7 +404,7 @@ export default function KsefCheck() {
                   >
                     {leadStan === "wysylamy"
                       ? "Wysyłamy..."
-                      : "Wyślij zgłoszenie"}
+                      : "Wyślijcie zgłoszenie"}
                   </button>
                 </div>
                 {leadStan === "blad" && (

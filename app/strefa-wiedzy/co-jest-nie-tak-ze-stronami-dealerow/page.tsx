@@ -45,7 +45,7 @@ const faqItems = [
   {
     question: "Znaleźliście coś u nas, co dalej?",
     answer:
-      "Sprawdź swój adres darmowym narzędziem, bez rejestracji. Płatna jest dopiero naprawa.",
+      "Sprawdźcie swój adres darmowym narzędziem, bez rejestracji. Płatna jest dopiero naprawa.",
   },
 ];
 
@@ -115,7 +115,7 @@ export default function Page() {
               href="/dane-sprzedawcy"
               className="text-accent hover:underline"
             >
-              Sprawdź swoją stronę tym samym narzędziem
+              Sprawdźcie swoją stronę tym samym narzędziem
             </Link>
             .
           </p>
@@ -162,7 +162,7 @@ export default function Page() {
               href="/audyt-poczty"
               className="text-accent hover:underline"
             >
-              Sprawdź, kto jest abonentem Twojej domeny
+              Sprawdźcie, kto jest abonentem Waszej domeny
             </Link>
             .
           </p>
@@ -181,13 +181,13 @@ export default function Page() {
           </h2>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
             Żaden z tych problemów nie unieruchamia strony, ale wszystkie są
-            niewidoczne z fotela właściciela. Dlatego każdy sprawdzisz darmowym
+            niewidoczne z fotela właściciela. Dlatego każdy sprawdzicie darmowym
             narzędziem od ręki.
           </p>
         </div>
 
         <SprawdzPoBadaniu
-          naglowek="Zobacz pierwsze z tych sprawdzeń na żywo"
+          naglowek="Zobaczcie pierwsze z tych sprawdzeń na żywo"
           opis="Szukamy NIP-u na stronie wybranej domeny i zestawiamy go z wykazem podatników VAT, tak jak przy 386 domenach z badania."
           endpoint="/api/sprawdz-sprzedawce"
           pozycje={[
@@ -197,9 +197,9 @@ export default function Page() {
           ]}
           narzedzie={{
             href: "/dane-sprzedawcy",
-            etykieta: "Sprawdź swoją stronę",
+            etykieta: "Sprawdźcie swoją stronę",
           }}
-          kontakt="Chcesz, żeby ktoś uzupełnił te dane na Twojej stronie?"
+          kontakt="Chcecie, żeby ktoś uzupełnił te dane na Waszej stronie?"
         />
 
         <section className="mt-12">

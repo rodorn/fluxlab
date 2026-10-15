@@ -85,12 +85,12 @@ const faq = [
   {
     question: "Co z RODO, gdy lead leci przez n8n?",
     answer:
-      "n8n na Twoim serwerze trzyma dane u Ciebie. n8n.cloud ma serwery w UE i DPA, co wystarcza większości firm B2B.",
+      "n8n na Waszym serwerze trzyma dane u Was. n8n.cloud ma serwery w UE i DPA, co wystarcza większości firm B2B.",
   },
   {
     question: "Czy możemy utrzymać workflow sami po wdrożeniu?",
     answer:
-      "Tak. Dostajesz dokumentację i 30 dni darmowych poprawek, a dalsza opieka nie jest obowiązkowa.",
+      "Tak. Dostajecie dokumentację i 30 dni darmowych poprawek, a dalsza opieka nie jest obowiązkowa.",
   },
 ];
 
@@ -251,7 +251,7 @@ export default function N8nDlaCrm() {
                         n8n.cloud czy własny serwer
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
-                        Bez osoby od infrastruktury zacznij od chmury. Przeniesienie
+                        Bez osoby od infrastruktury zacznijcie od chmury. Przeniesienie
                         na własny serwer jest proste, gdy wiadomo już, które
                         workflow zostają.
                       </p>
@@ -324,7 +324,7 @@ export default function N8nDlaCrm() {
                         href="/automatyzacja-leadow-crm"
                         className="btn-secondary"
                       >
-                        Zobacz pełny cennik automatyzacji CRM
+                        Zobaczcie pełny cennik automatyzacji CRM
                       </Link>
                     </div>
                   </div>

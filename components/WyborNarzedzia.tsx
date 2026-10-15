@@ -256,7 +256,7 @@ export default function WyborNarzedzia() {
         Od czego zacząć
       </h3>
       <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
-        Naciśnij to, co sprawia Ci kłopot, a wskażemy narzędzia, od których to
+        Naciśnijcie to, co sprawia Wam kłopot, a wskażemy narzędzia, od których to
         widać. Bez wpisywania czegokolwiek.
       </p>
 

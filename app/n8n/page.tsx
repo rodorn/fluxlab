@@ -34,14 +34,14 @@ export const metadata: Metadata = {
 const offer = [
   "CRM, ERP, bazy danych i dowolne API w jednym workflow.",
   "Webhooki i własna logika w JavaScript lub Pythonie.",
-  "Self-hosted lub cloud, dane zostają u Ciebie.",
+  "Self-hosted lub cloud, dane zostają u Was.",
 ];
 
 const faq = [
   {
     question: "Czym n8n różni się od Zapier i Make?",
     answer:
-      "Działa na własnym serwerze, pozwala pisać kod i nie płacisz za każde wykonanie.",
+      "Działa na własnym serwerze, pozwala pisać kod i nie płacicie za każde wykonanie.",
   },
   {
     question: "Czy możemy przenieść automatyzacje z Zapier/Make?",
@@ -71,7 +71,7 @@ export default function N8nPage() {
             </p>
             <div className="mt-8">
               <a href="#sekcje" className="btn-primary">
-                Sprawdź swój workflow
+                Sprawdźcie swój workflow
               </a>
             </div>
           </div>
@@ -153,8 +153,8 @@ export default function N8nPage() {
                     <div className="container-wide">
                       <LandingForm
                         formId="diagnosis_n8n"
-                        heading="Sprawdźmy Twój workflow w n8n"
-                        intro="Napisz, jakie systemy łączymy i w jakim wolumenie. Odeślemy wstępną propozycję."
+                        heading="Sprawdźmy Wasz workflow w n8n"
+                        intro="Napiszcie, jakie systemy łączymy i w jakim wolumenie. Odeślemy wstępną propozycję."
                         submitLabel="Chcemy diagnozę workflow n8n"
                       />
                     </div>

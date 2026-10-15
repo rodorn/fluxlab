@@ -5,7 +5,7 @@ import ZwrotyCheck from "@/components/ZwrotyCheck";
 export const metadata: Metadata = {
   title: "Panel zwrotów dla sklepu, od 490 zł | Fluxlab",
   description:
-    "Sprawdź za darmo, czego kupujący nie znajdzie o zwrotach w Twoim sklepie, i policz koszt ręcznej obsługi. Audyt od 490 zł, panel od 3500 zł.",
+    "Sprawdźcie za darmo, czego kupujący nie znajdzie o zwrotach w Waszym sklepie, i policzcie koszt ręcznej obsługi. Audyt od 490 zł, panel od 3500 zł.",
   alternates: { canonical: "/panel-zwrotow" },
   openGraph: {
     title: "Panel zwrotów dla sklepu, od 490 zł | Fluxlab",
@@ -31,18 +31,18 @@ export default function Page() {
       tool={<ZwrotyCheck />}
       breadcrumb="Panel zwrotów"
       eyebrow="Obsługa posprzedażowa"
-      h1="Zwrot zgłaszany mailem kosztuje Cię za każdym razem"
-      lead="Sklep daje najwyżej formularz, który trafia na Twoją skrzynkę. Odpisać, wysłać etykietę, pilnować terminu musi już ktoś z zespołu."
-      ctaLabel="Sprawdź swoje zasady zwrotów"
+      h1="Zwrot zgłaszany mailem kosztuje Was za każdym razem"
+      lead="Sklep daje najwyżej formularz, który trafia na Waszą skrzynkę. Odpisać, wysłać etykietę, pilnować terminu musi już ktoś z zespołu."
+      ctaLabel="Sprawdźcie swoje zasady zwrotów"
       ctaNote="Sprawdzenie za darmo, od ręki"
       checks={[
         {
           title: "Kupujący obsługuje się sam",
-          desc: "Wpisuje numer zamówienia, wybiera pozycje i powód. Nie musi do Ciebie pisać.",
+          desc: "Wpisuje numer zamówienia, wybiera pozycje i powód. Nie musi do Was pisać.",
         },
         {
-          title: "Etykieta z Twojego konta kurierskiego",
-          desc: "Generowana automatycznie, po Twoich stawkach.",
+          title: "Etykieta z Waszego konta kurierskiego",
+          desc: "Generowana automatycznie, po Waszych stawkach.",
         },
         {
           title: "Pilnowanie terminu na zwrot pieniędzy",
@@ -95,7 +95,7 @@ export default function Page() {
         },
         {
           q: "Czy panel zadziała z naszym sklepem?",
-          a: "Najpewniej tak, bo łączy się z systemem zamówień, nie z samym sklepem. Napisz, na czym sprzedajesz.",
+          a: "Najpewniej tak, bo łączy się z systemem zamówień, nie z samym sklepem. Napiszcie, na czym sprzedajecie.",
         },
         {
           q: "Czy to sprawdzenie mówi, czy mamy już obowiązkowy przycisk odstąpienia od umowy?",
@@ -107,9 +107,9 @@ export default function Page() {
         },
       ]}
       formId="order_panel_zwrotow"
-      formHeading="Zamów audyt zwrotów"
-      formIntro="Napisz, na czym sprzedajesz i ile masz zamówień miesięcznie. Odeślemy wycenę i opinię, czy panel się opłaci."
-      submitLabel="Zamów audyt"
+      formHeading="Zamówcie audyt zwrotów"
+      formIntro="Napiszcie, na czym sprzedajecie i ile macie zamówień miesięcznie. Odeślemy wycenę i opinię, czy panel się opłaci."
+      submitLabel="Zamawiam audyt"
       microCopy="Do wyceny nie potrzebujemy dostępów, wystarczy opis procesu."
       serviceName="Audyt i wdrożenie samoobsługowego procesu zwrotów"
       serviceDesc="Analiza przyczyn zwrotów i panel, w którym kupujący zgłasza zwrot, dostaje etykietę i śledzi status. Od 490 zł."

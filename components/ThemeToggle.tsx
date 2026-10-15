@@ -27,7 +27,7 @@ export default function ThemeToggle() {
     <button
       type="button"
       onClick={toggle}
-      aria-label={isDark ? "Włącz tryb jasny" : "Włącz tryb ciemny"}
+      aria-label={isDark ? "Włączcie tryb jasny" : "Włączcie tryb ciemny"}
       className="p-2 rounded-lg text-gray-500 hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-gray-100 dark:hover:bg-gray-800 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
     >
       {/* Przed hydration, placeholder o stałym rozmiarze, bez migotania ikony */}

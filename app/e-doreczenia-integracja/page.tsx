@@ -5,7 +5,7 @@ import EDoreczeniaCheck from "@/components/EDoreczeniaCheck";
 import { PODMIOTY } from "@/lib/terminy-e-doreczen";
 
 export const metadata: Metadata = {
-  title: "Od kiedy adres do e-Doręczeń? Sprawdź po KRS | Fluxlab",
+  title: "Od kiedy adres do e-Doręczeń? Sprawdźcie po KRS | Fluxlab",
   description:
     "Jednoosobowa firma z CEIDG wpisana przed 2025 ma obowiązek od 1 października 2026, spółka od 1 kwietnia 2025. Termin i odpis po KRS w 10 sekund.",
   alternates: { canonical: "/e-doreczenia-integracja" },
@@ -52,7 +52,7 @@ export default function EDoreczeniaIntegracja() {
       eyebrow="e-Doręczenia"
       h1="Integracja z e-Doręczeniami"
       lead="Skrzynka do e-Doręczeń jest obowiązkowa, ale nie musicie obsługiwać jej ręcznie w osobnym panelu. Spinamy ją z Waszym systemem: pisma i dowody doręczenia trafiają tam, gdzie pracujecie."
-      ctaLabel="Sprawdź swój termin"
+      ctaLabel="Sprawdźcie swój termin"
       ctaNote="Dwa kliknięcia, bez wpisywania czegokolwiek"
       powiazane={[
         {
@@ -150,7 +150,7 @@ export default function EDoreczeniaIntegracja() {
       formId="edoreczenia"
       formHeading="Napiszcie, z jakiego systemu korzystacie"
       formIntro="Nazwa systemu i liczba pism miesięcznie wystarczą. Odpiszemy, czy integracja ma sens, czy panel wystarczy."
-      submitLabel="Wyślij opis"
+      submitLabel="Wyślijcie opis"
       microCopy="Ustalenia prowadzimy mailowo. Telefon, jeśli tak Wam wygodniej."
       serviceName="Integracja z e-Doręczeniami"
       serviceDesc="Spięcie skrzynki do doręczeń elektronicznych z systemem obiegu dokumentów, CRM albo inną aplikacją: odbiór pism, pobieranie dowodów doręczenia, wysyłka z załącznikami."

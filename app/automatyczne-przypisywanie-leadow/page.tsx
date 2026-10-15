@@ -328,7 +328,7 @@ export default function AutomatycznePrzypisywanieLeadow() {
                           Ile kosztuje wdrożenie routingu leadów
                         </h2>
                         <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                          Stała cena za projekt. Konkretną wycenę dostajesz po
+                          Stała cena za projekt. Konkretną wycenę dostajecie po
                           30-minutowej rozmowie.
                         </p>
                       </div>
@@ -364,7 +364,7 @@ export default function AutomatycznePrzypisywanieLeadow() {
                           href="/automatyzacja-leadow-crm"
                           className="btn-secondary"
                         >
-                          Zobacz pełną ofertę automatyzacji leadów
+                          Zobaczcie pełną ofertę automatyzacji leadów
                         </Link>
                       </div>
                     </section>

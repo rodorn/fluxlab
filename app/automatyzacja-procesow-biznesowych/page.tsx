@@ -77,7 +77,7 @@ export default function AutomatyzacjaProcesowBiznesowych() {
             </p>
             <div className="mt-8">
               <a href="#branza" className="btn-primary">
-                Sprawdź, co pochłania czas w Waszej branży
+                Sprawdźcie, co pochłania czas w Waszej branży
               </a>
             </div>
           </div>
@@ -169,7 +169,7 @@ export default function AutomatyzacjaProcesowBiznesowych() {
                       <LandingForm
                         formId="diagnosis_procesy"
                         heading="Sprawdźmy, który proces warto zautomatyzować"
-                        intro="Opisz, co zabiera Wam najwięcej czasu. Wskażemy proces, który da największy efekt."
+                        intro="Opiszcie, co zabiera Wam najwięcej czasu. Wskażemy proces, który da największy efekt."
                         submitLabel="Sprawdźmy, który proces zautomatyzować"
                       />
                     </div>

@@ -36,7 +36,7 @@ const steps = [
     title: "Bezpłatna diagnoza",
     duration: "30 minut · online",
     description:
-      "Opisujesz problem, a my mówimy wprost, czy automatyzacja ma sens. Jeśli to nie nasz obszar, też to powiemy.",
+      "Opisujecie problem, a my mówimy wprost, czy automatyzacja ma sens. Jeśli to nie nasz obszar, też to powiemy.",
     deliverables: [
       "Ocena, czy automatyzacja ma sens",
       "Szacunkowe widełki czasu i kosztu",
@@ -60,7 +60,7 @@ const steps = [
     title: "Wdrożenie",
     duration: "2-8 tygodni zależnie od zakresu",
     description:
-      "Pracujemy w krótkich iteracjach, z postępem co tydzień. Płacisz transzami po odbiorze etapów.",
+      "Pracujemy w krótkich iteracjach, z postępem co tydzień. Płacicie transzami po odbiorze etapów.",
     deliverables: [
       "Środowisko testowe przed produkcją",
       "Dokumentacja każdej automatyzacji",
@@ -72,7 +72,7 @@ const steps = [
     title: "Wsparcie po wdrożeniu",
     duration: "30 dni bezpłatnie, potem opcjonalnie",
     description:
-      "Przez miesiąc poprawiamy bez opłat błędy po naszej stronie. Potem zostajemy jako stały serwis albo przekazujemy wszystko Twojemu zespołowi.",
+      "Przez miesiąc poprawiamy bez opłat błędy po naszej stronie. Potem zostajemy jako stały serwis albo przekazujemy wszystko Waszemu zespołowi.",
     deliverables: [
       "30 dni darmowych poprawek",
       "Instrukcja na wypadek awarii",
@@ -85,12 +85,12 @@ const pricingPrinciples = [
   {
     title: "Stała cena za projekt",
     description:
-      "Nie rozliczamy się za godziny. Po audycie dostajesz jedną kwotę za całość.",
+      "Nie rozliczamy się za godziny. Po audycie dostajecie jedną kwotę za całość.",
   },
   {
     title: "Transze po odbiorze",
     description:
-      "Za każdy etap płacisz dopiero po jego odbiorze. Bez płatności z góry.",
+      "Za każdy etap płacicie dopiero po jego odbiorze. Bez płatności z góry.",
   },
   {
     title: "Bez ukrytych kosztów",
@@ -101,7 +101,7 @@ const pricingPrinciples = [
 const faq = [
   {
     question: "Ile kosztuje konkretna automatyzacja?",
-    answer: "Po 30-minutowej diagnozie znasz widełki, a po audycie stałą cenę.",
+    answer: "Po 30-minutowej diagnozie znacie widełki, a po audycie stałą cenę.",
   },
   {
     question: "Ile trwa najkrótszy projekt?",
@@ -111,7 +111,7 @@ const faq = [
   {
     question: "Kto to potem utrzymuje?",
     answer:
-      "Twój zespół z dokumentacją i szkoleniem, my w stałym serwisie albo oba warianty naraz.",
+      "Wasz zespół z dokumentacją i szkoleniem, my w stałym serwisie albo oba warianty naraz.",
   },
   {
     question: "Co jeśli automatyzacja przestanie działać?",
@@ -146,7 +146,7 @@ function renderStep(step: Step) {
           </p>
           <div>
             <p className="text-sm font-semibold text-gray-900 dark:text-white mb-2">
-              Co dostajesz:
+              Co dostajecie:
             </p>
             <ul className="space-y-1.5">
               {step.deliverables.map((d) => (

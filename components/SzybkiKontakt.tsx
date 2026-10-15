@@ -69,7 +69,7 @@ export default function SzybkiKontakt({
   return (
     <form onSubmit={wyslij} className="mt-8 max-w-2xl">
       <div className="hidden" aria-hidden="true">
-        <label htmlFor={`${formId}-www`}>Nie wypełniaj tego pola</label>
+        <label htmlFor={`${formId}-www`}>Nie wypełniajcie tego pola</label>
         <input
           id={`${formId}-www`}
           name="website"

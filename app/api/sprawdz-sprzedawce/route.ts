@@ -144,7 +144,7 @@ export async function POST(request: Request) {
   }
   if (!/^[a-z0-9.-]+\.[a-z]{2,}$/.test(domena)) {
     return NextResponse.json(
-      { error: "Podaj samą domenę, na przykład twojafirma.pl" },
+      { error: "Podajcie samą domenę, na przykład twojafirma.pl" },
       { status: 400 },
     );
   }
@@ -158,7 +158,7 @@ export async function POST(request: Request) {
         domena,
         naglowek: "Nie możemy połączyć się z tą stroną",
         komentarz:
-          "Ani wersja z www, ani bez www nie odpowiedziała. Sprawdź pisownię albo spróbuj za chwilę.",
+          "Ani wersja z www, ani bez www nie odpowiedziała. Sprawdźcie pisownię albo spróbujcie za chwilę.",
       });
     }
   }
@@ -194,9 +194,9 @@ export async function POST(request: Request) {
 
   if (!nipy.length && rachunki.length) {
     werdykt = "CZERWONY";
-    naglowek = "Podajesz numer konta, ale nie podajesz NIP-u";
+    naglowek = "Podajecie numer konta, ale nie podajecie NIP-u";
     komentarz =
-      "To najgorsze z możliwych połączeń. Klient firmowy ma dokąd przelać pieniądze, ale nie ma jak sprawdzić, czy ten rachunek należy do Ciebie, bo sprawdzenie w wykazie podatników wymaga pary: numeru konta i NIP-u. Jego księgowość albo zadzwoni z pytaniem, albo wstrzyma przelew.";
+      "To najgorsze z możliwych połączeń. Klient firmowy ma dokąd przelać pieniądze, ale nie ma jak sprawdzić, czy ten rachunek należy do Was, bo sprawdzenie w wykazie podatników wymaga pary: numeru konta i NIP-u. Jego księgowość albo zadzwoni z pytaniem, albo wstrzyma przelew.";
   } else if (!nipy.length) {
     werdykt = "CZERWONY";
     naglowek = "Na stronie nie ma NIP-u";
@@ -206,10 +206,10 @@ export async function POST(request: Request) {
     naglowek = "Dane rejestrowe wymagają wyjaśnienia";
     komentarz = `NIP ze strony należy do podmiotu ${glowny?.name}, ale w wykazie podatników ma status ${glowny?.statusVat ?? "nieznany"}${
       glowny?.rachunkow === 0 ? " i nie ma zgłoszonego żadnego rachunku" : ""
-    }. Uprzedzamy od razu, że taki status nie zawsze oznacza problem, bo zwracają go także duże, działające firmy, na przykład z powodu rozliczania się w grupie. Natomiast Twój klient zobaczy dokładnie to samo co my i bez wyjaśnienia potraktuje to jako sygnał ostrzegawczy.`;
+    }. Uprzedzamy od razu, że taki status nie zawsze oznacza problem, bo zwracają go także duże, działające firmy, na przykład z powodu rozliczania się w grupie. Natomiast Wasz klient zobaczy dokładnie to samo co my i bez wyjaśnienia potraktuje to jako sygnał ostrzegawczy.`;
   } else if (rachunki.length) {
     werdykt = "ZIELONY";
-    naglowek = "Klient sprawdzi Cię w kilkanaście sekund";
+    naglowek = "Klient sprawdzi Was w kilkanaście sekund";
     komentarz = `Na stronie jest NIP i numer konta, a NIP prowadzi w wykazie do firmy ${glowny?.name} ze statusem ${glowny?.statusVat}. To komplet potrzebny księgowości kupującego, żeby zrobić swoje sprawdzenie i zrealizować przelew bez pytań.`;
   } else {
     werdykt = "ZOLTY";

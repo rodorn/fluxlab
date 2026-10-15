@@ -112,7 +112,7 @@ export default function DaneZBadan() {
           </h2>
           <p className="mt-3 text-gray-600 dark:text-gray-400 leading-relaxed">
             Publikujemy tylko zestawienia zbiorcze, bez nazw domen. Swój wynik
-            sprawdzisz od ręki przez{" "}
+            sprawdzicie od ręki przez{" "}
             <Link href="/widocznosc-w-ai" className="text-accent hover:underline">
               darmowe narzędzie
             </Link>
@@ -125,9 +125,9 @@ export default function DaneZBadan() {
             Warunki użycia
           </h2>
           <p className="mt-3 text-gray-600 dark:text-gray-400 leading-relaxed">
-            Możesz ich używać, także komercyjnie, podając źródło: Fluxlab z
+            Możecie ich używać, także komercyjnie, podając źródło: Fluxlab z
             odnośnikiem do tej strony. Pomiar jest z września 2026, więc nie
-            podawaj go jako stanu bieżącego.
+            podawajcie go jako stanu bieżącego.
           </p>
         </section>
       </main>

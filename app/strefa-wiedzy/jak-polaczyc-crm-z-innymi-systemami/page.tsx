@@ -68,8 +68,8 @@ export default function CrmIntegracjaArticle() {
                       Od czego zacząć
                     </h2>
                     <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                      Najpierw ustal, jakie dane mają przepływać, dopiero potem
-                      wybieraj narzędzie. Rozpisz:
+                      Najpierw ustalcie, jakie dane mają przepływać, dopiero potem
+                      wybierajcie narzędzie. Rozpiszcie:
                     </p>
                     <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-400">
                       {[
@@ -137,7 +137,7 @@ export default function CrmIntegracjaArticle() {
                         Brak walidacji: duble, puste pola i złe formaty.
                       </li>
                       <li>
-                        Automatyzowanie bałaganu. Najpierw uporządkuj proces,
+                        Automatyzowanie bałaganu. Najpierw uporządkujcie proces,
                         pomaga w tym{" "}
                         <Link
                           href="/automatyzacja-leadow-crm"
@@ -149,14 +149,14 @@ export default function CrmIntegracjaArticle() {
                       </li>
                     </ul>
                     <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                      Zacznij od jednego{" "}
+                      Zacznijcie od jednego{" "}
                       <Link
                         href="/strefa-wiedzy/integracje-api-w-firmie-kiedy-warto"
                         className="text-accent hover:underline"
                       >
                         przepływu o wysokiej wartości
                       </Link>
-                      , przetestuj wyjątki, potem rozbudowuj.
+                      , przetestujcie wyjątki, potem rozbudowujcie.
                     </p>
 
                   </div>

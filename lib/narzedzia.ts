@@ -65,7 +65,7 @@ export const businessTools: Narzedzie[] = [
   },
   {
     title: "Naprawa ostrzeżenia o stronie",
-    pytanie: "Czy przeglądarka straszy Twoją stroną?",
+    pytanie: "Czy przeglądarka straszy Waszą stroną?",
     description:
       "Wpiszcie adres, a sprawdzimy certyfikat i przekierowania, czyli czy przeglądarka nie straszy klientów ostrzeżeniem.",
     href: "/naprawa-https",
@@ -94,7 +94,7 @@ export const businessTools: Narzedzie[] = [
   },
   {
     title: "Widoczność w AI",
-    pytanie: "Czy asystent AI widzi Twoją stronę?",
+    pytanie: "Czy asystent AI widzi Waszą stronę?",
     description:
       "Sprawdzamy, czy ChatGPT, Claude i Perplexity mogą przeczytać Waszą stronę i zrozumieć, czym się zajmujecie.",
     href: "/widocznosc-w-ai",
@@ -102,7 +102,7 @@ export const businessTools: Narzedzie[] = [
   },
   {
     title: "Tańsze automatyzacje",
-    pytanie: "Ile naprawdę płacisz za Zapiera i Make?",
+    pytanie: "Ile naprawdę płacicie za Zapiera i Make?",
     description:
       "Liczymy, ile miesięcznie płacicie za Zapiera albo Make i ile kosztowałyby te same scenariusze na własnym serwerze.",
     href: "/tansze-automatyzacje",
@@ -117,7 +117,7 @@ export const businessTools: Narzedzie[] = [
   },
   {
     title: "Dłużnik znika z rejestru",
-    pytanie: "Czy Twój dłużnik znika z rejestru?",
+    pytanie: "Czy Wasz dłużnik znika z rejestru?",
     description:
       "Sprawdzamy w Monitorze Sądowym, czy spółka Waszego dłużnika nie znika z KRS.",
     href: "/czujka-rejestrowa",
@@ -133,7 +133,7 @@ export const businessTools: Narzedzie[] = [
   },
   {
     title: "Mapa strony dla Google",
-    pytanie: "Czy Google ma listę Twoich podstron?",
+    pytanie: "Czy Google ma listę Waszych podstron?",
     description:
       "Sprawdzamy, czy macie mapę strony, czy wskazuje ją robots.txt i czy adresy z niej działają.",
     href: "/mapa-strony",
@@ -141,7 +141,7 @@ export const businessTools: Narzedzie[] = [
   },
   {
     title: "Strona pod dwoma adresami",
-    pytanie: "Czy Google widzi Twoją stronę podwójnie?",
+    pytanie: "Czy Google widzi Waszą stronę podwójnie?",
     description:
       "Sprawdzamy cztery wersje Waszego adresu, z www i bez, i czy jedna przekierowuje na drugą.",
     href: "/podwojny-adres",
@@ -171,7 +171,7 @@ export const businessTools: Narzedzie[] = [
   },
   {
     title: "Widoczność w Google",
-    pytanie: "Czy Twoja strona nie wypisała się z Google?",
+    pytanie: "Czy Wasza strona nie wypisała się z Google?",
     description:
       "Sprawdzamy trzy miejsca, w których zostaje blokada indeksowania po wersji roboczej strony.",
     href: "/widocznosc-w-google",
@@ -211,7 +211,7 @@ export const businessTools: Narzedzie[] = [
 
 export const otherTools: Narzedzie[] = [
   {
-    title: "Sprawdź auto przed zakupem",
+    title: "Sprawdźcie auto przed zakupem",
     description:
       "Wklejcie link do ogłoszenia, a porównamy cenę z podobnymi ofertami i pokażemy typowe usterki modelu.",
     href: "/sprawdz-auto",
@@ -225,21 +225,21 @@ export const otherTools: Narzedzie[] = [
   {
     title: "Dobór samochodu",
     description:
-      "Znajdź idealny segment, nadwozie i moc dla siebie. Odpowiedz na kilka pytań, a algorytm dopasuje najlepsze propozycje.",
+      "Znajdźcie idealny segment, nadwozie i moc dla siebie. Odpowiedz na kilka pytań, a algorytm dopasuje najlepsze propozycje.",
     href: "/dobor-samochodu",
     image: "/photos/car-chooser/type-sport.webp",
   },
   {
     title: "Kalkulator kosztów auta",
     description:
-      "Oblicz pełny koszt posiadania samochodu: paliwo, ubezpieczenie, serwis, amortyzacja i więcej.",
+      "Obliczcie pełny koszt posiadania samochodu: paliwo, ubezpieczenie, serwis, amortyzacja i więcej.",
     href: "/kalkulator-kosztow",
     image: "/photos/car-chooser/type-osobowy.jpg",
   },
   {
     title: "Kalkulator podatkowy JDG",
     description:
-      "Porównaj skalę podatkową, podatek liniowy i ryczałt. Uwzględnia składki ZUS, VAT, ulgi i daje jasną odpowiedź, co się bardziej opłaca.",
+      "Porównajcie skalę podatkową, podatek liniowy i ryczałt. Uwzględnia składki ZUS, VAT, ulgi i daje jasną odpowiedź, co się bardziej opłaca.",
     href: "/kalkulator-podatkowy",
     image: "/photos/tax-calculation/calculator.jpg",
   },

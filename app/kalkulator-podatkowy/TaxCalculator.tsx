@@ -1109,7 +1109,7 @@ function ResultCard({
             label: "↳ dodatkowo na konto IKZE",
             value: r.ikzeContribution,
             green: true as const,
-            tip: `Oprócz kwoty do dyspozycji, ${v(r.ikzeContribution)}${sfx} trafia na Twoje konto IKZE. Dzięki odliczeniu od dochodu oszczędzasz ${v(r.ikzeTaxSavings)}${sfx} na podatku.`,
+            tip: `Oprócz kwoty do dyspozycji, ${v(r.ikzeContribution)}${sfx} trafia na Wasze konto IKZE. Dzięki odliczeniu od dochodu oszczędzacie ${v(r.ikzeTaxSavings)}${sfx} na podatku.`,
           },
         ]
       : []),
@@ -1563,7 +1563,7 @@ export default function TaxCalculator() {
                     onClick={addSource}
                     className="text-xs font-medium text-accent hover:text-accent/80 transition"
                   >
-                    + Dodaj źródło
+                    + Dodajcie źródło
                   </button>
                 </div>
                 <div className="space-y-3">
@@ -1635,7 +1635,7 @@ export default function TaxCalculator() {
                               type="button"
                               onClick={() => removeSource(src.id)}
                               className="text-gray-600 dark:text-gray-400 hover:text-red-600 transition flex-shrink-0"
-                              title="Usuń"
+                              title="Usuńcie"
                             >
                               <svg
                                 className="w-3.5 h-3.5"
@@ -1833,14 +1833,14 @@ export default function TaxCalculator() {
                               />
                             </svg>
                           )}
-                          Dodaj z AI
+                          Dodajcie z AI
                         </button>
                         <button
                           type="button"
                           onClick={() => addCost(type)}
                           className="text-xs font-medium text-accent hover:text-accent/80 transition"
                         >
-                          + Dodaj
+                          + Dodajcie
                         </button>
                       </div>
                     </div>
@@ -1868,7 +1868,7 @@ export default function TaxCalculator() {
                                   type="button"
                                   onClick={() => removeCost(c.id)}
                                   className="text-gray-600 dark:text-gray-400 hover:text-red-600 transition"
-                                  title="Usuń"
+                                  title="Usuńcie"
                                 >
                                   <svg
                                     className="w-3.5 h-3.5"
@@ -2098,9 +2098,9 @@ export default function TaxCalculator() {
                   />
                   {malyPlusRevExceeded && (
                     <div className="rounded-lg bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 px-3 py-2 text-xs text-red-700 dark:text-red-300">
-                      Twój roczny przychód ({pln(annualRevenue)}) przekracza
+                      Wasz roczny przychód ({pln(annualRevenue)}) przekracza
                       limit Małego ZUS Plus ({pln(MALY_PLUS_REVENUE_LIMIT)}).
-                      Nie kwalifikujesz się – przejdź na pełny ZUS.
+                      Nie kwalifikujecie się, przejdźcie na pełny ZUS.
                     </div>
                   )}
                   <p className="text-xs text-gray-600 dark:text-gray-400">
@@ -2142,7 +2142,7 @@ export default function TaxCalculator() {
                   <span>Limit: {pln(Math.round(IKZE_LIMIT_JDG))}/rok</span>
                 </div>
                 <p className="text-xs text-gray-600 dark:text-gray-400">
-                  Wpłaty na IKZE odliczasz od dochodu, obniżają podatek
+                  Wpłaty na IKZE odliczacie od dochodu, obniżają podatek
                   dochodowy. Rocznie: {pln(ikzeMonthly * 12)}.
                 </p>
               </div>
@@ -2169,8 +2169,8 @@ export default function TaxCalculator() {
 
                 {vatExemptExceeded && (
                   <div className="rounded-lg bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 px-3 py-2 text-xs text-red-700 dark:text-red-300">
-                    Twój roczny przychód ({pln(annualRevenue)}) przekracza limit
-                    zwolnienia z VAT ({pln(VAT_EXEMPT_LIMIT)}). Musisz
+                    Wasz roczny przychód ({pln(annualRevenue)}) przekracza limit
+                    zwolnienia z VAT ({pln(VAT_EXEMPT_LIMIT)}). Musicie
                     zarejestrować się jako czynny podatnik VAT.
                   </div>
                 )}
@@ -2373,7 +2373,7 @@ export default function TaxCalculator() {
           {/* Disclaimer */}
           <div className="rounded-xl bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 p-4 text-sm text-amber-800 dark:text-amber-200">
             <strong>Uwaga:</strong> Kalkulator ma charakter poglądowy (stawki{" "}
-            {YEAR}). Skonsultuj się z księgowym przed podjęciem decyzji.
+            {YEAR}). Skonsultujcie się z księgowym przed podjęciem decyzji.
           </div>
 
           {/* ── INFO TABLE ── */}

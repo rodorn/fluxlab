@@ -206,7 +206,7 @@ export default function CrmJakoSystemPracy() {
                         <p className="text-gray-600 dark:text-gray-400 mt-4 leading-relaxed">
                           Manager, także w{" "}
                           <Link href="/automatyzacja-crm-leasing" className="text-accent hover:underline">CRM dla firm leasingowych</Link>, widzi pipeline 800 tys. zł i nie wie, ile
-                          to realna sprzedaż. Po tym poznasz, że CRM jest
+                          to realna sprzedaż. Po tym poznacie, że CRM jest
                           notatnikiem, nie systemem:
                         </p>
                       </div>
@@ -403,11 +403,11 @@ export default function CrmJakoSystemPracy() {
                         <TrackedCTA
                           href="/automatyzacja-leadow-crm"
                           location="article_crm-jako-system-pracy_pricing"
-                          label="zobacz pełną ofertę"
+                          label="zobaczcie pełną ofertę"
                           eventName="cta_click_article_audit"
                           className="btn-secondary px-6 py-3 text-base"
                         >
-                          Zobacz pełną ofertę
+                          Zobaczcie pełną ofertę
                         </TrackedCTA>
                         <TrackedCTA
                           href="/kontakt"
@@ -470,12 +470,12 @@ export default function CrmJakoSystemPracy() {
                 ),
               },
               {
-                label: "Zobacz też",
+                label: "Zobaczcie też",
                 content: (
                   <div className="py-10 lg:py-12">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="h2-sekcji mb-6">
-                        Zobacz też
+                        Zobaczcie też
                       </h2>
                       <ul className="grid sm:grid-cols-2 gap-3">
                         <li>

@@ -91,7 +91,7 @@ export default function CoZeStrona({ biezacaStrona }: Props) {
         Poprawiać czy budować od nowa
       </h2>
       <p className="mt-3 max-w-2xl text-gray-600 dark:text-gray-300">
-        Naciśnij, co dziś stoi pod Waszym adresem. Napiszemy, co w takim miejscu
+        Naciśnijcie, co dziś stoi pod Waszym adresem. Napiszemy, co w takim miejscu
         da się zmienić bez przebudowy i gdzie kończy się poprawianie. Drugie
         naciśnięcie, o tym co ma się zmienić, dokłada ocenę całości. Bez
         wpisywania czegokolwiek i bez podawania adresu.
@@ -138,7 +138,7 @@ export default function CoZeStrona({ biezacaStrona }: Props) {
       <div aria-live="polite">
         {!stan ? (
           <p className="mt-6 text-sm text-gray-500 dark:text-gray-400">
-            Naciśnij jedną z pozycji powyżej, żeby zobaczyć odpowiedź.
+            Naciśnijcie jedną z pozycji powyżej, żeby zobaczyć odpowiedź.
           </p>
         ) : (
           <div className="mt-6 rounded-2xl border border-gray-200 bg-white/70 p-6 dark:border-gray-800 dark:bg-gray-950/40">
@@ -195,7 +195,7 @@ export default function CoZeStrona({ biezacaStrona }: Props) {
 
             {!zmiana ? (
               <p className="mt-5 text-sm text-gray-500 dark:text-gray-400">
-                Naciśnij jeszcze, co ma się zmienić, a dopiszemy ocenę całości.
+                Naciśnijcie jeszcze, co ma się zmienić, a dopiszemy ocenę całości.
               </p>
             ) : (
               werdykt &&

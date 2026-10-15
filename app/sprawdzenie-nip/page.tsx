@@ -36,7 +36,7 @@ const czytelnik = [
   },
   {
     q: "Czy firma jest w wykazie i czy jest czynnym podatnikiem",
-    a: "Brak wpisu albo status zwolniony zmienia Twoje prawo do odliczenia VAT z faktury.",
+    a: "Brak wpisu albo status zwolniony zmienia Wasze prawo do odliczenia VAT z faktury.",
   },
   {
     q: "Ile rachunków zgłosiła i od kiedy działa",
@@ -51,7 +51,7 @@ const faq = [
   },
   {
     q: "Czy sprawdzicie, czy konto do przelewu należy do tej firmy?",
-    a: "Tak, w płatnym raporcie. Porównujemy Twój numer z listą rachunków zgłoszonych przez firmę.",
+    a: "Tak, w płatnym raporcie. Porównujemy Wasz numer z listą rachunków zgłoszonych przez firmę.",
   },
   {
     q: "Od jakiej kwoty trzeba sprawdzać rachunek w wykazie?",
@@ -59,7 +59,7 @@ const faq = [
   },
   {
     q: "Zapłaciliśmy na rachunek spoza wykazu, co teraz?",
-    a: "Złóż zawiadomienie ZAW-NR do urzędu skarbowego w ciągu 7 dni od zlecenia przelewu. To wyłącza sankcje, po terminie już się nie da.",
+    a: "Złóżcie zawiadomienie ZAW-NR do urzędu skarbowego w ciągu 7 dni od zlecenia przelewu. To wyłącza sankcje, po terminie już się nie da.",
   },
 ];
 
@@ -122,7 +122,7 @@ export default function SprawdzenieNipPage() {
                 href="/sprawdz-kontrahenta"
                 className="font-semibold text-accent hover:underline"
               >
-                Zobacz pełny raport o kontrahencie, za darmo
+                Zobaczcie pełny raport o kontrahencie, za darmo
               </Link>
             </p>
           </div>

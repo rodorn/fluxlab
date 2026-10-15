@@ -48,7 +48,7 @@ export async function POST(req: Request) {
     domena = String(body.domena || "").trim().toLowerCase()
       .replace(/^https?:\/\//, "").replace(/\/.*$/, "").replace(/^www\./, "");
   } catch {
-    return NextResponse.json({ error: "Podaj domenę." }, { status: 400 });
+    return NextResponse.json({ error: "Podajcie domenę." }, { status: 400 });
   }
   if (!/^[a-z0-9.-]+\.[a-z]{2,}$/.test(domena)) {
     return NextResponse.json({ error: "To nie wygląda na poprawną domenę." }, { status: 400 });

@@ -110,8 +110,8 @@ export default function AutomatyzacjaSalesforce() {
                   >
                     <LandingForm
                       formId="diagnosis_salesforce"
-                      heading="Sprawdźmy Twój proces w Salesforce"
-                      intro="Napisz, gdzie gubią się dane i co handlowcy klikają ręcznie. Odpowiemy, co da największy efekt."
+                      heading="Sprawdźmy Wasz proces w Salesforce"
+                      intro="Napiszcie, gdzie gubią się dane i co handlowcy klikają ręcznie. Odpowiemy, co da największy efekt."
                       submitLabel="Chcemy diagnozę procesu Salesforce"
                     />
                   </section>

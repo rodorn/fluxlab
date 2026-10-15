@@ -375,7 +375,7 @@ export default function AudytCheck() {
       );
     } catch {
       if (timer.current) clearInterval(timer.current);
-      setBlad("Brak połączenia. Spróbuj ponownie za chwilę.");
+      setBlad("Brak połączenia. Spróbujcie ponownie za chwilę.");
       setStan("blad");
     }
   }
@@ -405,7 +405,7 @@ export default function AudytCheck() {
       setMailStan("ok");
       zglosZdarzenie("audyt_raport_na_maila");
     } catch {
-      setMailBlad("Brak połączenia. Spróbuj ponownie za chwilę.");
+      setMailBlad("Brak połączenia. Spróbujcie ponownie za chwilę.");
       setMailStan("blad");
     }
   }
@@ -432,12 +432,12 @@ export default function AudytCheck() {
   return (
     <div className="rounded-2xl border border-gray-200/80 bg-white/70 p-6 dark:border-gray-800/80 dark:bg-gray-900/50 md:p-8">
       <h2 className="text-xl font-bold text-gray-900 dark:text-white">
-        Darmowy audyt techniczny Twojej strony
+        Darmowy audyt techniczny Waszej strony
       </h2>
       <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-        Wpisz adres, a w kilkadziesiąt sekund zmierzymy szybkość na komputerze i
+        Wpiszcie adres, a w kilkadziesiąt sekund zmierzymy szybkość na komputerze i
         na telefonie, sprawdzimy certyfikat, widoczność w wyszukiwarce, dostęp
-        dla asystentów AI oraz zabezpieczenia poczty. Dostaniesz gotowy raport z
+        dla asystentów AI oraz zabezpieczenia poczty. Dostaniecie gotowy raport z
         listą poprawek w kolejności i z ceną za naprawę. Bez rejestracji, bez
         podawania adresu e-mail i bez żadnych dostępów do Waszych systemów.
       </p>
@@ -464,7 +464,7 @@ export default function AudytCheck() {
           disabled={stan === "ladowanie"}
           className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
         >
-          {stan === "ladowanie" ? "Badamy stronę..." : "Zrób darmowy audyt"}
+          {stan === "ladowanie" ? "Badamy stronę..." : "Zróbcie darmowy audyt"}
         </button>
       </form>
 
@@ -598,7 +598,7 @@ export default function AudytCheck() {
                     >
                       {mailStan === "wysylamy"
                         ? "Wysyłamy..."
-                        : "Wyślij raport"}
+                        : "Wyślijcie raport"}
                     </button>
                   </div>
                   <label className="flex cursor-pointer items-start gap-2.5 text-sm text-gray-600 dark:text-gray-400">
@@ -709,7 +709,7 @@ export default function AudytCheck() {
                             <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs">
                               {u.samodzielnie && (
                                 <span className="font-medium text-emerald-700 dark:text-emerald-400">
-                                  Zrobisz to sam, bez programisty
+                                  Zrobicie to sam, bez programisty
                                 </span>
                               )}
                               {u.material && (
@@ -784,7 +784,7 @@ export default function AudytCheck() {
               Surowe pomiary
             </h3>
             <p className="text-sm text-gray-600 dark:text-gray-400">
-              Wszystko powyżej wynika z tych liczb. Zaglądaj tu, gdy chcesz
+              Wszystko powyżej wynika z tych liczb. Zaglądajcie tu, gdy chcecie
               sprawdzić, skąd wzięło się któreś ustalenie.
             </p>
             <Skladane
@@ -1101,7 +1101,7 @@ export default function AudytCheck() {
                 graniczne warto sprawdzić drugi raz.
               </p>
               <p>
-                Jeżeli któraś liczba budzi wątpliwość, napisz. Sprawdzimy ją
+                Jeżeli któraś liczba budzi wątpliwość, napiszcie. Sprawdzimy ją
                 jeszcze raz i wytłumaczymy, skąd się wzięła.
               </p>
             </div>

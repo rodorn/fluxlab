@@ -138,7 +138,7 @@ export async function POST(request: Request) {
   }
   if (!/^[a-z0-9.-]+\.[a-z]{2,}$/.test(domena)) {
     return NextResponse.json(
-      { error: "Podaj sam adres sklepu, na przykład twojsklep.pl" },
+      { error: "Podajcie sam adres sklepu, na przykład twojsklep.pl" },
       { status: 400 },
     );
   }
@@ -150,7 +150,7 @@ export async function POST(request: Request) {
       status: "BRAK_SKLEPU",
       domena,
       naglowek: "Nie możemy otworzyć tego sklepu",
-      opis: "Sprawdź pisownię adresu. Jeśli jest poprawny, sprawdzimy go ręcznie.",
+      opis: "Sprawdźcie pisownię adresu. Jeśli jest poprawny, sprawdzimy go ręcznie.",
     });
   }
 
@@ -176,7 +176,7 @@ export async function POST(request: Request) {
       domena,
       naglowek: "Nie znaleźliśmy strony o zwrotach ani regulaminu",
       opis:
-        "To samo w sobie jest problemem: kupujący szukający zasad zwrotu nie znajdzie ich przed zakupem, a część z niego zrezygnuje. Jeśli te informacje są pod nietypowym adresem, podaj go, sprawdzimy dokładnie.",
+        "To samo w sobie jest problemem: kupujący szukający zasad zwrotu nie znajdzie ich przed zakupem, a część z niego zrezygnuje. Jeśli te informacje są pod nietypowym adresem, podajcie go, sprawdzimy dokładnie.",
     });
   }
 

@@ -9,11 +9,11 @@ import PrevNextArticle from "@/components/PrevNextArticle";
 export const metadata: Metadata = {
   title: "Kiedy AI ma sens w firmie, a kiedy nie | Fluxlab",
   description:
-    "Jak ocenić, czy AI ma sens w Twojej firmie. Prosty framework decyzji: wolumen, powtarzalność, jakość danych, koszt błędu i rola człowieka.",
+    "Jak ocenić, czy AI ma sens w Waszej firmie. Prosty framework decyzji: wolumen, powtarzalność, jakość danych, koszt błędu i rola człowieka.",
   openGraph: {
     title: "Kiedy AI ma sens w firmie, a kiedy nie | Fluxlab",
     description:
-      "Jak ocenić, czy AI ma sens w Twojej firmie. Prosty framework decyzji: wolumen, powtarzalność, jakość danych, koszt błędu i rola człowieka.",
+      "Jak ocenić, czy AI ma sens w Waszej firmie. Prosty framework decyzji: wolumen, powtarzalność, jakość danych, koszt błędu i rola człowieka.",
     locale: "pl_PL",
     type: "article",
     images: [
@@ -103,7 +103,7 @@ export default function KiedyAiMaSensPage() {
             </div>
           </div>
         </div>
-        <CTA naglowek="Nie wiesz, czy AI ma sens w Twoim procesie?" />
+        <CTA naglowek="Nie wiecie, czy AI ma sens w Waszym procesie?" />
       </main>
       <Footer />
 
@@ -116,7 +116,7 @@ export default function KiedyAiMaSensPage() {
             "@type": "Article",
             headline: "Kiedy AI ma sens, a kiedy nie",
             description:
-              "Jak ocenić, czy AI ma sens w Twojej firmie. Prosty framework decyzji: wolumen, powtarzalność, jakość danych, koszt błędu i rola człowieka.",
+              "Jak ocenić, czy AI ma sens w Waszej firmie. Prosty framework decyzji: wolumen, powtarzalność, jakość danych, koszt błędu i rola człowieka.",
             datePublished: "2026-03-30",
             author: {
               "@type": "Organization",

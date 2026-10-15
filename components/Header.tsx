@@ -253,7 +253,7 @@ export default function Header() {
           <button
             type="button"
             onClick={() => setOpen(!open)}
-            aria-label={open ? "Zamknij menu" : "Otwórz menu"}
+            aria-label={open ? "Zamknijcie menu" : "Otwórzcie menu"}
             aria-expanded={open}
             className="p-2 text-gray-700 dark:text-gray-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-lg"
           >

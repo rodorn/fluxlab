@@ -3,12 +3,12 @@ import ProductLanding from "@/components/ProductLanding";
 import DomenaCheck from "@/components/DomenaCheck";
 
 export const metadata: Metadata = {
-  title: "Kto jest właścicielem domeny, sprawdź za darmo | Fluxlab",
+  title: "Kto jest właścicielem domeny, sprawdźcie za darmo | Fluxlab",
   description:
-    "W rejestrze wpisany jest jeden podmiot i to on decyduje o adresie, stronie i poczcie. Sprawdź za darmo, czy to Twoja firma i kiedy wygasa rejestracja.",
+    "W rejestrze wpisany jest jeden podmiot i to on decyduje o adresie, stronie i poczcie. Sprawdźcie za darmo, czy to Wasza firma i kiedy wygasa rejestracja.",
   alternates: { canonical: "/wlasnosc-domeny" },
   openGraph: {
-    title: "Kto jest właścicielem domeny, sprawdź za darmo | Fluxlab",
+    title: "Kto jest właścicielem domeny, sprawdźcie za darmo | Fluxlab",
     description:
       "Abonent domeny decyduje o stronie i poczcie firmowej. Sprawdzenie w publicznym rejestrze, od ręki i bez rejestracji.",
     locale: "pl_PL",
@@ -31,22 +31,22 @@ export default function Page() {
       tool={<DomenaCheck />}
       breadcrumb="Własność domeny"
       eyebrow="Kontrola nad adresem firmy"
-      h1="Adres Twojej firmy może formalnie należeć do kogoś innego"
+      h1="Adres Waszej firmy może formalnie należeć do kogoś innego"
       lead="Każda zmiana domeny wymaga zgody podmiotu z rejestru. Jeśli stronę stawiał zewnętrzny wykonawca, często to on jest tam wpisany."
-      ctaLabel="Sprawdź swoją domenę"
+      ctaLabel="Sprawdźcie swoją domenę"
       ctaNote="Sprawdzenie za darmo, od ręki"
       checks={[
         {
           title: "Kto figuruje jako abonent",
-          desc: "Nazwa z publicznego rejestru. Jeśli to nie Twoja firma, zmiany wymagają cudzej zgody.",
+          desc: "Nazwa z publicznego rejestru. Jeśli to nie Wasza firma, zmiany wymagają cudzej zgody.",
         },
         {
           title: "Kiedy wygasa rejestracja",
-          desc: "Po tej dacie znika strona i poczta. Przypomnienia idą do abonenta, nie do Ciebie.",
+          desc: "Po tej dacie znika strona i poczta. Przypomnienia idą do abonenta, nie do Was.",
         },
         {
           title: "Przeniesienie na właściwą firmę",
-          desc: "Zmiana abonenta i transfer na Twoje konto. Prowadzimy sprawę i pilnujemy terminów.",
+          desc: "Zmiana abonenta i transfer na Wasze konto. Prowadzimy sprawę i pilnujemy terminów.",
         },
         {
           title: "Zabezpieczenie na przyszłość",
@@ -71,7 +71,7 @@ export default function Page() {
           features: [
             "pismo o wydanie kodu przeniesienia",
             "wniosek o zmianę abonenta",
-            "transfer do Twojego konta",
+            "transfer do Waszego konta",
             "odnawianie i blokada transferu",
           ],
           featured: true,
@@ -106,9 +106,9 @@ export default function Page() {
         },
       ]}
       formId="order_wlasnosc_domeny"
-      formHeading="Zamów przeniesienie domeny"
-      formIntro="Podaj domenę i napisz, czy masz kontakt z firmą, która ją rejestrowała. Odeślemy plan i wycenę."
-      submitLabel="Zamów przeniesienie"
+      formHeading="Zamówcie przeniesienie domeny"
+      formIntro="Podajcie domenę i napiszcie, czy macie kontakt z firmą, która ją rejestrowała. Odeślemy plan i wycenę."
+      submitLabel="Zamawiam przeniesienie"
       microCopy="Do sprawdzenia wystarczy adres. Dokumenty są potrzebne dopiero przy zmianie abonenta."
       serviceName="Przeniesienie domeny na właściwego właściciela"
       serviceDesc="Ustalenie abonenta domeny w rejestrze oraz przeprowadzenie zmiany abonenta i transferu do konta klienta, wraz z zabezpieczeniem odnawiania. Od 490 zł."

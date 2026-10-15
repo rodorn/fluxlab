@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Landing z formularzem i płatnością, od 299 zł | Fluxlab",
     description:
-      "Szybkie wdrożenie pod jedną kampanię. Nie tracisz danych osób, które zrezygnują w trakcie płatności.",
+      "Szybkie wdrożenie pod jedną kampanię. Nie tracicie danych osób, które zrezygnują w trakcie płatności.",
     locale: "pl_PL",
     type: "website",
     images: [
@@ -31,12 +31,12 @@ export default function LandingZPlatnoscia() {
       eyebrow="Strony"
       h1="Landing z formularzem i płatnością"
       lead="Jedna strona pod jedną kampanię: opis, formularz, płatność. Zgłoszenie zapisuje się przed płatnością, a status potwierdza operator płatności."
-      ctaLabel="Opisz, co sprzedajesz"
+      ctaLabel="Opiszcie, co sprzedajecie"
       ctaNote="Od 299 zł, wdrożenie zwykle w kilka dni"
       checks={[
         {
           title: "Zgłoszenie zapisuje się przed płatnością",
-          desc: "Osoba, która wypełniła formularz i zrezygnowała przy BLIK-u, nie znika. Masz do kogo wrócić.",
+          desc: "Osoba, która wypełniła formularz i zrezygnowała przy BLIK-u, nie znika. Macie do kogo wrócić.",
         },
         {
           title: "Potwierdzenie płatności idzie webhookiem",
@@ -107,9 +107,9 @@ export default function LandingZPlatnoscia() {
         },
       ]}
       formId="landing_platnosc"
-      formHeading="Napisz, co sprzedajesz i komu"
+      formHeading="Napiszcie, co sprzedajecie i komu"
       formIntro="Jedno zdanie o produkcie, cena i czy macie bramkę płatniczą. Odpiszemy, który wariant ma sens."
-      submitLabel="Wyślij opis kampanii"
+      submitLabel="Wyślijcie opis kampanii"
       microCopy="Odpisujemy zwykle tego samego dnia. Ustalenia prowadzimy mailowo."
       serviceName="Landing z formularzem i płatnością"
       serviceDesc="Strona sprzedażowa pod jedną kampanię, z formularzem zapisującym zgłoszenie przed płatnością i bramką płatniczą potwierdzaną webhookiem."

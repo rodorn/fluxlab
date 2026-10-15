@@ -213,7 +213,7 @@ export default async function Page() {
 
         <div className="mt-8 rounded-2xl border border-gray-200/80 dark:border-gray-800/80 bg-white/70 dark:bg-gray-900/50 p-6">
           <p className="text-base font-bold text-gray-900 dark:text-white">
-            Zobacz też
+            Zobaczcie też
           </p>
           <ul className="mt-3 space-y-2 text-sm">
             <li>

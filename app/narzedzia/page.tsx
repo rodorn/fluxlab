@@ -193,7 +193,7 @@ function KafelekNarzedzia({ tool }: { tool: Narzedzie }) {
         {tool.description}
       </p>
       <span className="text-sm font-medium text-accent inline-flex items-center gap-1.5">
-        Otwórz narzędzie
+        Otwórzcie narzędzie
         <svg
           width="14"
           height="14"
@@ -226,7 +226,7 @@ export default function Narzedzia() {
             <div className="max-w-3xl mx-auto text-center">
               <p className="section-label mb-4">Narzędzia</p>
               <h1 className="text-3xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
-                Sprawdź swoją firmę, zanim komukolwiek zapłacisz
+                Sprawdźcie swoją firmę, zanim komukolwiek zapłacicie
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-400">
                 Każde kończy się liczbą albo werdyktem, bez rejestracji i

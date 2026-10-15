@@ -11,7 +11,7 @@ import NazwaNarzedzia from "@/components/NazwaNarzedzia";
 export const metadata: Metadata = {
   title: "Audyt poczty firmowej, ochrona przed podszyciem | Fluxlab",
   description:
-    "Sprawdzamy SPF, DKIM i DMARC Twojej domeny i mówimy, czy ktoś obcy może wysłać wiadomość wyglądającą na Waszą. Wynik od ręki, bez rejestracji.",
+    "Sprawdzamy SPF, DKIM i DMARC Waszej domeny i mówimy, czy ktoś obcy może wysłać wiadomość wyglądającą na Waszą. Wynik od ręki, bez rejestracji.",
   alternates: { canonical: "/audyt-poczty" },
   openGraph: {
     title: "Audyt poczty firmowej, ochrona przed podszyciem | Fluxlab",

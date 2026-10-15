@@ -54,7 +54,7 @@ export const WYCENA_INTEGRACJE: Wycena = {
   baza: {
     id: "baza",
     co: "Dwa systemy, dane idą w jedną stronę",
-    opis: "Uzgodnienie pól, przepływ przyrostowy zamiast pełnych przebiegów, obsługa błędów i log, w którym widać cichą awarię. Uruchomienie na Twoich kontach, z przekazaniem konfiguracji.",
+    opis: "Uzgodnienie pól, przepływ przyrostowy zamiast pełnych przebiegów, obsługa błędów i log, w którym widać cichą awarię. Uruchomienie na Waszych kontach, z przekazaniem konfiguracji.",
     min: 990,
     max: 1900,
   },
@@ -102,7 +102,7 @@ export const WYCENA_INTEGRACJE: Wycena = {
     min: 190,
     max: 190,
   },
-  skad: "Widełki liczymy z własnych stawek za pracę, tych samych, które stoją jawnie na stronie o koszcie wdrożenia n8n. To rząd wielkości do zaplanowania budżetu, nie oferta. Wiążącą kwotę podajemy po bezpłatnej diagnozie, w której sprawdzamy, co Twoje systemy naprawdę potrafią oddać.",
+  skad: "Widełki liczymy z własnych stawek za pracę, tych samych, które stoją jawnie na stronie o koszcie wdrożenia n8n. To rząd wielkości do zaplanowania budżetu, nie oferta. Wiążącą kwotę podajemy po bezpłatnej diagnozie, w której sprawdzamy, co Wasze systemy naprawdę potrafią oddać.",
 };
 
 export const WYCENA_RAPORTOWANIE: Wycena = {

@@ -157,7 +157,7 @@ export default function Page() {
         </p>
 
         <SprawdzPoBadaniu
-          naglowek="Uruchom to sprawdzenie na dowolnej domenie"
+          naglowek="Uruchomcie to sprawdzenie na dowolnej domenie"
           opis="Ten sam odczyt SPF, DKIM i DMARC, którym zmierzyliśmy 386 domen."
           endpoint="/api/audyt"
           pozycje={[
@@ -167,9 +167,9 @@ export default function Page() {
           ]}
           narzedzie={{
             href: "/audyt-poczty",
-            etykieta: "Sprawdź pocztę swojej firmy",
+            etykieta: "Sprawdźcie pocztę swojej firmy",
           }}
-          kontakt="Chcesz, żeby brakujące rekordy ktoś ustawił?"
+          kontakt="Chcecie, żeby brakujące rekordy ktoś ustawił?"
         />
 
         <p className="mt-4 text-sm text-gray-600 dark:text-gray-400">
@@ -177,7 +177,7 @@ export default function Page() {
             href="/strefa-wiedzy/co-jest-nie-tak-ze-stronami-dealerow"
             className="text-accent hover:underline"
           >
-            Zobacz też badanie stron tych samych firm
+            Zobaczcie też badanie stron tych samych firm
           </Link>
           .
         </p>

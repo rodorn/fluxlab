@@ -22,7 +22,7 @@ export const SEKCJE: Sekcja[] = [
         nazwa: "Strony internetowe",
         hub: "/strony-www",
         strony: [
-          s("/strony-www", "Strony WWW i poprawki"),
+          s("/strony-www", "Strony internetowe"),
           s("/landing-z-platnoscia", "Landing z płatnością"),
           s("/strona-po-wlamaniu", "Ratunek po włamaniu na stronę"),
           s("/mail-firmowy", "Mail firmowy"),
@@ -32,6 +32,7 @@ export const SEKCJE: Sekcja[] = [
         nazwa: "Automatyzacja procesów",
         hub: "/automatyzacja-leadow-crm",
         strony: [
+          s("/wlasny-crm", "Własny CRM (FluxCRM)"),
           s("/automatyzacja-leadow-crm", "Automatyzacja leadów w CRM"),
           s("/automatyzacja-procesow-biznesowych", "Automatyzacja procesów biznesowych"),
           s("/automatyzacja-formularza-do-pipedrive", "Formularz do Pipedrive"),
@@ -132,7 +133,7 @@ export const SEKCJE: Sekcja[] = [
       {
         nazwa: "Dla osób prywatnych",
         strony: [
-          s("/sprawdz-auto", "Sprawdź auto przed zakupem"),
+          s("/sprawdz-auto", "Sprawdźcie auto przed zakupem"),
           s("/import-radar", "ImportRadar DE→PL"),
           s("/dobor-samochodu", "Dobór samochodu"),
           s("/kalkulator-kosztow", "Kalkulator kosztów auta"),

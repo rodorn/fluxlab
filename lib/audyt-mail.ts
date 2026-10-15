@@ -310,7 +310,7 @@ export function zlozRaportHtml(
 
     <div style="margin-top:28px;padding-top:18px;border-top:1px solid #e5e7eb">
       <a href="${BAZA}/kontakt" style="display:inline-block;background:#4338ca;color:#fff;text-decoration:none;padding:12px 22px;border-radius:8px;font-weight:700;font-size:15px">Zlecamy naprawę${d.wycena.pakiet ? ` za ${d.wycena.pakiet} zł` : ""}</a>
-      <div style="font-size:13px;color:#6b7280;margin-top:12px">Albo odpisz na tę wiadomość, jeżeli chcesz najpierw o czymś dopytać.</div>
+      <div style="font-size:13px;color:#6b7280;margin-top:12px">Albo odpiszcie na tę wiadomość, jeżeli chcecie najpierw o czymś dopytać.</div>
     </div>
   </div>
 
@@ -319,7 +319,7 @@ export function zlozRaportHtml(
     ${
       dlaWlasciciela
         ? "Kopia wewnętrzna raportu wygenerowanego przez odwiedzającego."
-        : `Dostajesz tę wiadomość, bo poprosiłeś o przesłanie raportu z audytu ${esc(d.domena)} i zaznaczyłeś zgodę na kontakt. Żeby ją wycofać, odpisz jednym słowem, usuwamy adres tego samego dnia.`
+        : `Dostajecie tę wiadomość, bo poprosiliście o przesłanie raportu z audytu ${esc(d.domena)} i zaznaczyliście zgodę na kontakt. Żeby ją wycofać, odpiszcie jednym słowem, usuwamy adres tego samego dnia.`
     }
   </div>
 </div>

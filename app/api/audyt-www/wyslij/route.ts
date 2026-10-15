@@ -26,7 +26,7 @@ export async function POST(request: Request) {
   }
 
   if (!EMAIL_RX.test(email)) {
-    return NextResponse.json({ error: "Podaj poprawny adres e-mail." }, { status: 400 });
+    return NextResponse.json({ error: "Podajcie poprawny adres e-mail." }, { status: 400 });
   }
   // Bez zgody nie wysyłamy nic i nie zapisujemy adresu. Sam fakt wpisania
   // adresu w pole nie jest zgodą na cokolwiek.
@@ -42,7 +42,7 @@ export async function POST(request: Request) {
   // tekstem, a nie naszym raportem.
   if (!dokument || !podpis || !podpisZgodny(dokument, podpis)) {
     return NextResponse.json(
-      { error: "Nie możemy potwierdzić tego raportu. Uruchom sprawdzenie jeszcze raz." },
+      { error: "Nie możemy potwierdzić tego raportu. Uruchomcie sprawdzenie jeszcze raz." },
       { status: 400 },
     );
   }
@@ -65,7 +65,7 @@ export async function POST(request: Request) {
   const wyslano = await wyslijDoKlienta(email, dane);
   if (!wyslano) {
     return NextResponse.json(
-      { error: "Nie udało się wysłać wiadomości. Spróbuj jeszcze raz za chwilę." },
+      { error: "Nie udało się wysłać wiadomości. Spróbujcie jeszcze raz za chwilę." },
       { status: 502 },
     );
   }

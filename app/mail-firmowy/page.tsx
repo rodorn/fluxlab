@@ -100,7 +100,7 @@ export default function MailFirmowy() {
             className="btn-primary"
             style={{ padding: "0.7rem 1.5rem", whiteSpace: "nowrap" }}
           >
-            Sprawdź domenę
+            Sprawdźcie domenę
           </Link>
         </div>
 

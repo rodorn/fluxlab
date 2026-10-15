@@ -193,7 +193,7 @@ export default function ProductLanding(p: ProductLandingProps) {
                     href="#zamow"
                     className="btn-primary mt-6 w-full justify-center text-center text-sm"
                   >
-                    Zamów
+                    Zamawiam
                   </a>
                 </div>
               ))}
@@ -203,7 +203,7 @@ export default function ProductLanding(p: ProductLandingProps) {
           <details className="mt-16 max-w-3xl group">
             <summary className="cursor-pointer list-none [&::-webkit-details-marker]:hidden">
               <h2 className="h2-sekcji inline">Jak to działa</h2>
-              <span className="ml-3 text-sm font-semibold text-accent group-open:hidden">Rozwiń</span>
+              <span className="ml-3 text-sm font-semibold text-accent group-open:hidden">Rozwińcie</span>
             </summary>
           <div className="mt-6 grid gap-6 md:grid-cols-2 max-w-3xl">
             {p.checks.map((c) => (

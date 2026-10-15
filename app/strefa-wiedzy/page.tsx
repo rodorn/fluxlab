@@ -158,7 +158,7 @@ export default function StrefaWiedzy() {
           <div className="container-wide">
             <div className="max-w-2xl mx-auto text-center bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-8">
               <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-3">
-                Porozmawiajmy o automatyzacji w Twojej firmie
+                Porozmawiajmy o automatyzacji w Waszej firmie
               </h2>
               <p className="text-gray-600 dark:text-gray-400 mb-6">
                 Bezpłatna diagnoza, bez zobowiązań.

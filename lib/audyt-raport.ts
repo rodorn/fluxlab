@@ -15,11 +15,11 @@ import type { Ustalenie, Wycena } from "./audyt-ocena";
 /** Artykuł, który realnie rozwija dane ustalenie. Bez naciągania. */
 const MATERIALY: Record<string, { tytul: string; href: string }> = {
   pusta_tresc: {
-    tytul: "Czy asystenci AI widzą Twoją stronę",
+    tytul: "Czy asystenci AI widzą Waszą stronę",
     href: "/strefa-wiedzy/czy-ai-widzi-strony-dealerow",
   },
   blokada_ai: {
-    tytul: "Czy asystenci AI widzą Twoją stronę",
+    tytul: "Czy asystenci AI widzą Waszą stronę",
     href: "/strefa-wiedzy/czy-ai-widzi-strony-dealerow",
   },
   brak_danych: {
@@ -211,7 +211,7 @@ export async function napiszRaport(
         // wywołanie błędem 400. Sprawdzone na narzędziu diagnozy.
         max_output_tokens: 5000,
         instructions: INSTRUKCJA,
-        input: `Dane z pomiaru strony ${p.domena}. Napisz raport.\n\n${materialDlaModelu(p, ustalenia, wycena, punkty)}`,
+        input: `Dane z pomiaru strony ${p.domena}. Napiszcie raport.\n\n${materialDlaModelu(p, ustalenia, wycena, punkty)}`,
         text: {
           format: {
             type: "json_schema",

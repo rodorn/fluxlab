@@ -46,7 +46,7 @@ export default function ProductCard({
               strokeLinejoin="round"
             />
           </svg>
-          Sprawdzisz sam za darmo, bez rejestracji
+          Sprawdzicie sam za darmo, bez rejestracji
         </p>
       )}
       <p className={`mt-3 text-sm text-gray-600 dark:text-gray-400 ${krotko ? "mb-4" : ""}`}>

@@ -28,14 +28,14 @@ export default function SlownikLista() {
   return (
     <div>
       <label htmlFor="slownik-szukaj" className="sr-only">
-        Szukaj pojęcia
+        Szukajcie pojęcia
       </label>
       <input
         id="slownik-szukaj"
         type="search"
         value={szukaj}
         onChange={(e) => setSzukaj(e.target.value)}
-        placeholder="Wpisz pojęcie, np. KSeF, webhook, DMARC"
+        placeholder="Wpiszcie pojęcie, np. KSeF, webhook, DMARC"
         className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-base text-gray-900 placeholder:text-gray-400 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30 dark:border-white/10 dark:bg-gray-900 dark:text-white"
       />
       <p

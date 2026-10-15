@@ -33,7 +33,7 @@ export default function KsefIntegracja() {
       eyebrow="KSeF"
       h1="Integracja z KSeF"
       lead="KSeF jest obowiązkowy, ale faktur nie trzeba przeklejać ręcznie. Spinamy z nim system, którego już używacie, a numer KSeF i UPO zapisują się przy dokumencie."
-      ctaLabel="Sprawdź, co Was obowiązuje"
+      ctaLabel="Sprawdźcie, co Was obowiązuje"
       ctaNote="Dwa kliknięcia, bez wpisywania czegokolwiek"
       powiazane={[
         {
@@ -125,7 +125,7 @@ export default function KsefIntegracja() {
       formId="ksef"
       formHeading="Napiszcie, w czym dziś wystawiacie faktury"
       formIntro="Nazwa programu i liczba faktur miesięcznie wystarczą. Odpiszemy, czy integracja ma sens."
-      submitLabel="Wyślij opis"
+      submitLabel="Wyślijcie opis"
       microCopy="Ustalenia prowadzimy mailowo. Telefon, jeśli tak Wam wygodniej."
       serviceName="Integracja z KSeF"
       serviceDesc="Spięcie systemu sprzedażowego, ERP albo programu księgowego z Krajowym Systemem e-Faktur: wysyłka faktur w schemacie FA(3) przez API v2, zapis numeru KSeF i UPO, pobieranie faktur kosztowych."

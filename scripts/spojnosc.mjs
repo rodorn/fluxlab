@@ -597,6 +597,7 @@ if (sankcjeDaty.size > 1) {
   // pojedynczej, wiec sprawdzamy je wprost, a rzeczowniki na -am trzymamy na
   // krotkiej liscie wyjatkow.
   const RZECZOWNIKI_AM = new Set([
+    "zamawiam",
     "diagram",
     "program",
     "harmonogram",
@@ -700,6 +701,54 @@ if (sankcjeDaty.size > 1) {
         if (trafione)
           add("liczba pojedyncza", `${wzgledna}:${i + 1}: "${trafione}"`);
       });
+    }
+  }
+}
+
+// --- 1g2. do odwiedzającego na „Wy” ---
+// Paweł 16.10.2026: strona mówi do klienta „Wy” („Wasza strona”, „sprawdźcie”),
+// także na przyciskach. Forma „ty” wracała przy każdej nowej podstronie.
+{
+  const TY = /^(twój|twoja|twoje|twojego|twojej|twoim|twoją|twoi|twoich|twoimi|ciebie|cię|tobie|chcesz|masz|możesz|wiesz|płacisz|tracisz|potrzebujesz|dostaniesz|sprawdź|zobacz|wybierz|napisz|wpisz|policz|kliknij|zamów|wyślij|pobierz|porównaj|otwórz|wklej|zostaw|zrób|znajdź|weź|przejdź|umieść)$/i;
+  const POMIN = [
+    "app/api/",
+    "lib/audyt-raport.ts",
+    "components/WylaczLicznik.tsx",
+    "app/nie-licz-mnie/",
+    "app/cv/",
+  ];
+  const CYTAT = /„[^”]*”/g;
+  const stos = ["app", "components", "lib"];
+  while (stos.length) {
+    const biezacy = stos.pop();
+    const pelna = path.join(ROOT, biezacy);
+    if (!fs.existsSync(pelna)) continue;
+    for (const wpis of fs.readdirSync(pelna, { withFileTypes: true })) {
+      const wzgledna = path.join(biezacy, wpis.name);
+      if (wpis.isDirectory()) {
+        stos.push(wzgledna);
+        continue;
+      }
+      if (!/\.(tsx|ts)$/.test(wpis.name)) continue;
+      if (POMIN.some((x) => wzgledna.replace(/\\/g, "/").includes(x))) continue;
+      read(wzgledna)
+        .split("\n")
+        .forEach((l, i) => {
+          const t = l.trim();
+          if (t.startsWith("//") || t.startsWith("*") || t.startsWith("/*"))
+            return;
+          // Identyfikatory (pobierz(), policz:, .zobacz) nie sa tekstem.
+          const tekst = l
+            .replace(CYTAT, "")
+            .replace(/[\p{L}\w]+\s*[(:]/gu, " ")
+            .replace(/\.[\p{L}\w]+/gu, " ")
+            .replace(/\b(const|let|function|import|from)\s+[\p{L}\w{}, ]+/gu, " ");
+          const trafione = (tekst.match(/[\p{L}]+/gu) ?? []).find((w) =>
+            TY.test(w),
+          );
+          if (trafione)
+            add("forma ty", `${wzgledna}:${i + 1}: "${trafione}"`);
+        });
     }
   }
 }

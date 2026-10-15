@@ -40,7 +40,7 @@ const faqItems = [
   {
     question: "Jak to sprawdzić samodzielnie?",
     answer:
-      "Pobierz rejestr przez publiczny interfejs i policz rekordy z województwem zapisanym jako liczba oraz unikalne identyfikatory. Porównaj je z liczbą, którą deklaruje rejestr.",
+      "Pobierzcie rejestr przez publiczny interfejs i policzcie rekordy z województwem zapisanym jako liczba oraz unikalne identyfikatory. Porównajcie je z liczbą, którą deklaruje rejestr.",
   },
   {
     question: "Dlaczego liczba zgubionych rekordów jest za każdym razem inna?",
@@ -149,17 +149,17 @@ export default function Page() {
           </p>
 
           <h2 className="mt-12 mb-5 h2-sekcji">
-            Co z tym zrobić, jeśli korzystasz z tych danych
+            Co z tym zrobić, jeśli korzystacie z tych danych
           </h2>
           <ul className="mb-4 ml-5 list-disc space-y-2 text-gray-600 dark:text-gray-400">
             <li className="leading-relaxed">
-              Po pobraniu porównaj liczbę unikalnych identyfikatorów z deklarowaną. Przy rozjeździe pobierz ponownie.
+              Po pobraniu porównajcie liczbę unikalnych identyfikatorów z deklarowaną. Przy rozjeździe pobierzcie ponownie.
             </li>
             <li className="leading-relaxed">
-              Pobieraj mniejsze strony: po 200 rekordów traciły około 5%, po 500 ponad 20%.
+              Pobierajcie mniejsze strony: po 200 rekordów traciły około 5%, po 500 ponad 20%.
             </li>
             <li className="leading-relaxed">
-              Przed filtrem po województwie popraw pięć miast i przytnij spacje w nazwach.
+              Przed filtrem po województwie poprawcie pięć miast i przytnijcie spacje w nazwach.
             </li>
           </ul>
         </div>
@@ -197,17 +197,17 @@ export default function Page() {
         </div>
 
         <SprawdzPoBadaniu
-          naglowek="Zobacz, co publiczny rejestr mówi o konkretnej spółce"
+          naglowek="Zobaczcie, co publiczny rejestr mówi o konkretnej spółce"
           opis="Sprawdzamy w Monitorze Sądowym i Gospodarczym od 2013 roku, czy wobec podmiotu toczy się postępowanie o rozwiązanie bez likwidacji."
           endpoint="/api/sprawdz-spolke"
           pole="zapytanie"
           pozycje={[{ wartosc: "CD PROJEKT" }, { wartosc: "ALLEGRO" }]}
-          wstep="Nie masz pod ręką nazwy? Uruchom na gotowym przykładzie:"
+          wstep="Nie macie pod ręką nazwy? Uruchomcie na gotowym przykładzie:"
           narzedzie={{
             href: "/ile-spolek-znika-z-krs",
-            etykieta: "Sprawdź swojego kontrahenta",
+            etykieta: "Sprawdźcie swojego kontrahenta",
           }}
-          kontakt="Chcesz mieć takie sprawdzenie na całej swojej bazie kontrahentów?"
+          kontakt="Chcecie mieć takie sprawdzenie na całej swojej bazie kontrahentów?"
         />
 
         <section className="mt-12">

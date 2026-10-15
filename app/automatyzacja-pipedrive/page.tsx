@@ -64,7 +64,7 @@ export default function AutomatyzacjaPipedrive() {
             <div>
               <p className="section-label mb-5">Usługa</p>
               <h1 className="h1-strony mb-6">
-                Wykorzystaj Pipedrive w 100%
+                Wykorzystajcie Pipedrive w 100%
               </h1>
               <p className="text-lg text-gray-500 dark:text-gray-400 mb-10 max-w-xl">
                 Większość firm używa Pipedrive jak notatnika. Automatyzacje
@@ -139,8 +139,8 @@ export default function AutomatyzacjaPipedrive() {
                   >
                     <LandingForm
                       formId="diagnosis_pipedrive"
-                      heading="Sprawdźmy Twój proces w Pipedrive"
-                      intro="Opisz, skąd przychodzą leady, kto je obsługuje i gdzie jest ręczna praca. Odpiszemy, co da największy efekt."
+                      heading="Sprawdźmy Wasz proces w Pipedrive"
+                      intro="Opiszcie, skąd przychodzą leady, kto je obsługuje i gdzie jest ręczna praca. Odpiszemy, co da największy efekt."
                       submitLabel="Chcemy diagnozę procesu Pipedrive"
                     />
                   </section>

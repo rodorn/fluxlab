@@ -165,7 +165,7 @@ export default function MakeVsN8nCrm() {
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
                 Make to wygodne narzędzie bez kodu, n8n to silnik, który
-                postawisz u siebie. Nad CRM działają oba, ale wygrywają w innych
+                postawicie u siebie. Nad CRM działają oba, ale wygrywają w innych
                 sytuacjach.
               </p>
               <TrackedCTA
@@ -194,7 +194,7 @@ export default function MakeVsN8nCrm() {
                         Najpierw proces, potem narzędzie
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
-                        Zacznij od pytania, który proces powtarza się często i
+                        Zacznijcie od pytania, który proces powtarza się często i
                         kosztuje czas albo sprzedaż. Dopiero wtedy wybór narzędzia
                         ma sens. Sygnały, że jest co automatyzować:
                       </p>
@@ -320,7 +320,7 @@ export default function MakeVsN8nCrm() {
                       <div className="grid md:grid-cols-2 gap-6 mb-8">
                         <div className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-6">
                           <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
-                            Wybierz Make, gdy:
+                            Wybierzcie Make, gdy:
                           </h3>
                           <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
                             scenariusze buduje osoba z biznesu, wolumen nie
@@ -330,7 +330,7 @@ export default function MakeVsN8nCrm() {
                         </div>
                         <div className="bg-white dark:bg-gray-800/60 border border-accent/30 rounded-2xl p-6">
                           <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
-                            Wybierz n8n, gdy:
+                            Wybierzcie n8n, gdy:
                           </h3>
                           <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
                             macie osobę techniczną, wolumen rośnie, łączycie
@@ -395,7 +395,7 @@ export default function MakeVsN8nCrm() {
                         href="/automatyzacja-leadow-crm"
                         className="btn-secondary"
                       >
-                        Zobacz pełny cennik automatyzacji CRM
+                        Zobaczcie pełny cennik automatyzacji CRM
                       </Link>
                     </div>
                   </div>

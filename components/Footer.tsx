@@ -134,7 +134,7 @@ export default function Footer() {
               rel="noopener"
               className="text-xs text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
             >
-              Obserwuj nas na Facebooku
+              Obserwujcie nas na Facebooku
             </a>
             <a
               href="https://zleca.pl/wykonawca/fluxlab-strony-internetowe-i-automatyzacja-1790016801"

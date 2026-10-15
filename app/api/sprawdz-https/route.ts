@@ -161,7 +161,7 @@ export async function POST(request: Request) {
 
   if (!/^[a-z0-9.-]+\.[a-z]{2,}$/.test(domena)) {
     return NextResponse.json(
-      { error: "Podaj sam adres strony, na przykład twojafirma.pl" },
+      { error: "Podajcie sam adres strony, na przykład twojafirma.pl" },
       { status: 400 },
     );
   }
@@ -175,7 +175,7 @@ export async function POST(request: Request) {
   let klasa = "OK";
   let naglowek = "Połączenie szyfrowane działa poprawnie";
   let opis =
-    "Przeglądarka otwiera Twoją stronę bez ostrzeżeń, a kłódka przy adresie jest zamknięta.";
+    "Przeglądarka otwiera Waszą stronę bez ostrzeżeń, a kłódka przy adresie jest zamknięta.";
   let hosting: string | null = null;
 
   if (blad === "TIMEOUT" || blad === "ECONNREFUSED" || blad === "ENOTFOUND") {
@@ -186,14 +186,14 @@ export async function POST(request: Request) {
         : "Serwer nie obsługuje połączenia szyfrowanego";
     opis =
       blad === "ENOTFOUND"
-        ? "Sprawdź pisownię adresu. Jeśli jest poprawny, domena nie wskazuje na żaden serwer."
+        ? "Sprawdźcie pisownię adresu. Jeśli jest poprawny, domena nie wskazuje na żaden serwer."
         : "Każde wejście na adres zaczynający się od https kończy się błędem, bo serwer nie odpowiada na tym porcie.";
   } else if (!zaufany && cert) {
     const przeterminowany = cert.dniDoKonca !== null && cert.dniDoKonca < 0;
     const niepasuje = cert.nazwy.length > 0 && !pasuje(domena, cert.nazwy);
     if (przeterminowany) {
       klasa = "WYGASLY";
-      naglowek = "Certyfikat Twojej strony wygasł";
+      naglowek = "Certyfikat Waszej strony wygasł";
       opis = `Stracił ważność ${Math.abs(cert.dniDoKonca as number)} dni temu. Przeglądarka pokazuje odwiedzającym pełnoekranowe ostrzeżenie o niebezpiecznym połączeniu.`;
     } else if (niepasuje) {
       klasa = "CERT_NIE_TEJ_DOMENY";
@@ -201,10 +201,10 @@ export async function POST(request: Request) {
         cert.nazwy.some((n) => n.includes(h.wzorzec)),
       );
       hosting = trafiony?.nazwa || null;
-      naglowek = "Certyfikat nie należy do Twojej domeny";
+      naglowek = "Certyfikat nie należy do Waszej domeny";
       opis = hosting
-        ? `Twój serwer podaje certyfikat współdzielony firmy ${hosting}, a nie certyfikat wystawiony na Twoją domenę. Przeglądarka traktuje to jak próbę podszycia się pod cudzą stronę i blokuje wejście.`
-        : "Certyfikat jest wystawiony na inną nazwę niż Twoja domena, więc przeglądarka blokuje wejście i ostrzega odwiedzającego.";
+        ? `Wasz serwer podaje certyfikat współdzielony firmy ${hosting}, a nie certyfikat wystawiony na Waszą domenę. Przeglądarka traktuje to jak próbę podszycia się pod cudzą stronę i blokuje wejście.`
+        : "Certyfikat jest wystawiony na inną nazwę niż Wasza domena, więc przeglądarka blokuje wejście i ostrzega odwiedzającego.";
     } else {
       klasa = "BLAD_CERTYFIKATU";
       naglowek = "Połączenie szyfrowane nie jest zaufane";

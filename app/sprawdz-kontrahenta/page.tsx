@@ -8,13 +8,13 @@ import NazwaNarzedzia from "@/components/NazwaNarzedzia";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Sprawdź kontrahenta przed przelewem, za darmo | Fluxlab",
+  title: "Sprawdźcie kontrahenta przed przelewem, za darmo | Fluxlab",
   description:
-    "Zanim wyślesz zaliczkę, sprawdź firmę. Werdykt z wykazu VAT, KRS i danych domeny, w tym test, czy numer konta figuruje w wykazie. Za darmo.",
+    "Zanim wyślecie zaliczkę, sprawdźcie firmę. Werdykt z wykazu VAT, KRS i danych domeny, w tym test, czy numer konta figuruje w wykazie. Za darmo.",
   alternates: { canonical: "/sprawdz-kontrahenta" },
   openGraph: {
     title:
-      "Sprawdź kontrahenta przed przelewem, raport ryzyka za darmo | Fluxlab",
+      "Sprawdźcie kontrahenta przed przelewem, raport ryzyka za darmo | Fluxlab",
     description:
       "Werdykt o firmie z wykazu VAT, KRS i danych domeny. Sprawdzamy też, czy konto do przelewu należy do tej firmy.",
     locale: "pl_PL",
@@ -53,7 +53,7 @@ const pricing = [
   {
     name: "Szybki check",
     price: "0 zł",
-    desc: "Jedno pytanie: czy coś tu nie gra, zanim wyślesz przelew.",
+    desc: "Jedno pytanie: czy coś tu nie gra, zanim wyślecie przelew.",
     features: [
       "status VAT i numer konta w wykazie",
       "werdykt zielony, żółty albo czerwony",
@@ -94,16 +94,16 @@ export default function SprawdzKontrahentaPage() {
     <>
       <Header />
       <main>
-        <Breadcrumbs href="/sprawdz-kontrahenta" items={[{ label: "Sprawdź kontrahenta" }]} />
+        <Breadcrumbs href="/sprawdz-kontrahenta" items={[{ label: "Sprawdźcie kontrahenta" }]} />
 
         <section className="container-wide pt-6 pb-14">
           <div className="max-w-3xl">
             <p className="section-label mb-3">Narzędzie</p>
             <h1 className="h1-strony">
-              Sprawdź firmę, zanim wyślesz przelew
+              Sprawdźcie firmę, zanim wyślecie przelew
             </h1>
             <p className="mt-5 text-lg text-gray-600 dark:text-gray-300">
-              Podajesz NIP, numer konta i adres strony. Dostajesz jeden werdykt
+              Podajecie NIP, numer konta i adres strony. Dostajecie jeden werdykt
               z wykazu VAT, odpisu KRS i danych domeny.
             </p>
           </div>
@@ -199,7 +199,7 @@ export default function SprawdzKontrahentaPage() {
                     href="#zamow"
                     className="btn-primary mt-6 w-full justify-center text-center text-sm"
                   >
-                    Zamów {t.name.toLowerCase()}
+                    Zamawiam {t.name.toLowerCase()}
                   </a>
                 </div>
               ))}
@@ -230,9 +230,9 @@ export default function SprawdzKontrahentaPage() {
           <div id="zamow" className="mt-16 scroll-mt-20">
             <LandingForm
               formId="order_sprawdz_kontrahenta"
-              heading="Zamów sprawdzenie kontrahenta"
-              intro="Podaj NIP firmy, numer konta i adres strony. Napisz, czy chcesz szybki check czy pełny raport. Oba są darmowe."
-              submitLabel="Wyślij firmę do sprawdzenia"
+              heading="Zamówcie sprawdzenie kontrahenta"
+              intro="Podajcie NIP firmy, numer konta i adres strony. Napiszcie, czy chcecie szybki check czy pełny raport. Oba są darmowe."
+              submitLabel="Wyślijcie firmę do sprawdzenia"
               microCopy="Odpowiedź zwykle tego samego dnia. Bez opłat."
             />
           </div>

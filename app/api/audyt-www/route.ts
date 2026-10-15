@@ -39,7 +39,7 @@ export async function POST(request: Request) {
     request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "nieznany";
   if (przekroczonyLimit(ip)) {
     return NextResponse.json(
-      { error: "Za dużo sprawdzeń z tego adresu. Spróbuj za godzinę." },
+      { error: "Za dużo sprawdzeń z tego adresu. Spróbujcie za godzinę." },
       { status: 429 },
     );
   }
@@ -53,7 +53,7 @@ export async function POST(request: Request) {
   }
   if (!/^[a-z0-9.-]+\.[a-z]{2,}$/.test(domena)) {
     return NextResponse.json(
-      { error: "Podaj sam adres strony, na przykład twojafirma.pl" },
+      { error: "Podajcie sam adres strony, na przykład twojafirma.pl" },
       { status: 400 },
     );
   }

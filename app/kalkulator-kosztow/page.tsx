@@ -11,11 +11,11 @@ import NazwaNarzedzia from "@/components/NazwaNarzedzia";
 export const metadata: Metadata = {
   title: "Kalkulator kosztów samochodu | Fluxlab",
   description:
-    "Oblicz pełny roczny koszt posiadania samochodu: paliwo, olej, opony, serwis, ubezpieczenie i utrata wartości. Poznaj realny koszt na kilometr.",
+    "Obliczcie pełny roczny koszt posiadania samochodu: paliwo, olej, opony, serwis, ubezpieczenie i utrata wartości. Poznajcie realny koszt na kilometr.",
   openGraph: {
     title: "Kalkulator kosztów samochodu | Fluxlab",
     description:
-      "Oblicz pełny roczny koszt posiadania samochodu: paliwo, serwis, opony, ubezpieczenie, spadek wartości.",
+      "Obliczcie pełny roczny koszt posiadania samochodu: paliwo, serwis, opony, ubezpieczenie, spadek wartości.",
     locale: "pl_PL",
     type: "website",
     images: [
@@ -36,7 +36,7 @@ const faqs = [
   {
     question: "Jak policzyć koszt auta elektrycznego?",
     answer:
-      "Zamiast litrów wpisz zużycie energii, np. 18 kWh/100 km, i cenę kWh. Pomiń olej i obniż serwis. Utratę wartości załóż ostrożniej niż przy spalinowym.",
+      "Zamiast litrów wpiszcie zużycie energii, np. 18 kWh/100 km, i cenę kWh. Pomińcie olej i obniżcie serwis. Utratę wartości załóżcie ostrożniej niż przy spalinowym.",
   },
   {
     question: "Dlaczego amortyzacja potrafi być największą pozycją kosztu?",
@@ -46,12 +46,12 @@ const faqs = [
   {
     question: "Czy auto firmowe w JDG jest tańsze od prywatnego?",
     answer:
-      "Zwykle tak, ale mniej niż się wydaje: w praktyce 15 do 25% całkowitego kosztu. Formę rozliczenia policzysz w kalkulatorze podatkowym.",
+      "Zwykle tak, ale mniej niż się wydaje: w praktyce 15 do 25% całkowitego kosztu. Formę rozliczenia policzycie w kalkulatorze podatkowym.",
   },
   {
     question: "Czy leasing obniża realny koszt auta?",
     answer:
-      "Nie, przenosi go. Suma rat i wykupu jest zbliżona do zakupu za gotówkę. Zyskujesz płynność i ratę w kosztach firmy.",
+      "Nie, przenosi go. Suma rat i wykupu jest zbliżona do zakupu za gotówkę. Zyskujecie płynność i ratę w kosztach firmy.",
   },
 ];
 
@@ -100,7 +100,7 @@ export default function KalkulatorKosztowPage() {
                       <div className="space-y-4 text-gray-600 dark:text-gray-400">
                         <p>
                           Kalkulator sumuje sześć składników rocznie i rozkłada
-                          je na miesiąc i kilometr. Każdą liczbę możesz
+                          je na miesiąc i kilometr. Każdą liczbę możecie
                           nadpisać własnymi danymi.
                         </p>
                         <ul className="list-disc pl-5 space-y-2">
@@ -122,7 +122,7 @@ export default function KalkulatorKosztowPage() {
                             segmentu C około 2 000 do 4 000 zł rocznie.
                           </li>
                           <li>
-                            <strong>Ubezpieczenie.</strong> Twoja roczna polisa
+                            <strong>Ubezpieczenie.</strong> Wasza roczna polisa
                             OC, AC i NNW.
                           </li>
                           <li>
@@ -131,8 +131,8 @@ export default function KalkulatorKosztowPage() {
                           </li>
                         </ul>
                         <p>
-                          Porównuj koszt na kilometr i zawsze dwa auta naraz.
-                          Przy elektryku sprawdź{" "}
+                          Porównujcie koszt na kilometr i zawsze dwa auta naraz.
+                          Przy elektryku sprawdźcie{" "}
                           <Link
                             href="/ceny-energii-jutro"
                             className="text-accent hover:underline"
@@ -201,7 +201,7 @@ export default function KalkulatorKosztowPage() {
                               href: "/dobor-samochodu",
                               title: "Dobór samochodu, interaktywny kreator",
                               description:
-                                "Dobierz segment, nadwozie i napęd.",
+                                "Dobierzcie segment, nadwozie i napęd.",
                             },
                             {
                               href: "/kalkulator-podatkowy",
@@ -213,7 +213,7 @@ export default function KalkulatorKosztowPage() {
                               href: "/strefa-wiedzy/jaka-forma-opodatkowania-jdg-2026",
                               title: "Jaka forma opodatkowania JDG w 2026?",
                               description:
-                                "Ile z kosztu auta odzyskasz.",
+                                "Ile z kosztu auta odzyskacie.",
                             },
                           ].map((article) => (
                             <Link

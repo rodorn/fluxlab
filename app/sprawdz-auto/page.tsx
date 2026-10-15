@@ -7,14 +7,14 @@ import RelatedProducts from "@/components/RelatedProducts";
 import NazwaNarzedzia from "@/components/NazwaNarzedzia";
 
 export const metadata: Metadata = {
-  title: "Sprawdź auto z Otomoto i OLX przed zakupem od 5 zł | Fluxlab",
+  title: "Sprawdźcie auto z Otomoto/OLX przed kupnem od 5 zł | Fluxlab",
   description:
-    "Wklej link z Otomoto lub OLX. W 24 h raport PDF: cena wobec podobnych ofert, spójność przebiegu, usterki modelu i argumenty do negocjacji. Od 5 zł.",
+    "Wklejcie link z Otomoto lub OLX. W 24 h raport PDF: cena wobec podobnych ofert, spójność przebiegu, usterki modelu i argumenty do negocjacji. Od 5 zł.",
   alternates: { canonical: "/sprawdz-auto" },
   openGraph: {
-    title: "Sprawdź auto z Otomoto i OLX przed zakupem od 5 zł | Fluxlab",
+    title: "Sprawdźcie auto z Otomoto/OLX przed kupnem od 5 zł | Fluxlab",
     description:
-      "Wklej link do oferty z Otomoto lub OLX i sprawdź, czy cena jest uczciwa. Benchmark ceny, red-flagi i skrypt negocjacji. Price-check 5 zł, pełny raport 15 zł.",
+      "Wklejcie link do oferty z Otomoto lub OLX i sprawdźcie, czy cena jest uczciwa. Benchmark ceny, red-flagi i skrypt negocjacji. Price-check 5 zł, pełny raport 15 zł.",
     locale: "pl_PL",
     type: "website",
     images: [
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab, sprawdź auto przed zakupem",
+        alt: "Fluxlab, sprawdźcie auto przed zakupem",
       },
     ],
   },
@@ -30,8 +30,8 @@ export const metadata: Metadata = {
 
 const steps = [
   {
-    title: "Wklejasz link",
-    desc: "Adres ogłoszenia z Otomoto lub OLX. Nic nie przepisujesz.",
+    title: "Wklejacie link",
+    desc: "Adres ogłoszenia z Otomoto lub OLX. Nic nie przepisujecie.",
   },
   {
     title: "Porównujemy z rynkiem",
@@ -93,7 +93,7 @@ export default function SprawdzAutoPage() {
         <Breadcrumbs
           href="/sprawdz-auto"
           items={[
-            { label: "Sprawdź auto przed zakupem" },
+            { label: "Sprawdźcie auto przed zakupem" },
           ]}
         />
 
@@ -107,12 +107,12 @@ export default function SprawdzAutoPage() {
               Nie przepłać za używane auto
             </h1>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-300">
-              Wklejasz link z Otomoto lub OLX. Sprawdzamy cenę i dane oferty,
-              a Ty dostajesz argumenty do negocjacji przed oględzinami.
+              Wklejacie link z Otomoto lub OLX. Sprawdzamy cenę i dane oferty,
+              a Wy dostajecie argumenty do negocjacji przed oględzinami.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <a href="#zamow" className="btn-primary inline-flex">
-                Sprawdź auto od 5 zł
+                Sprawdźcie auto od 5 zł
               </a>
             </div>
           </div>
@@ -269,7 +269,7 @@ export default function SprawdzAutoPage() {
                         : "inline-flex items-center rounded-lg border border-gray-200 px-4 py-3 font-semibold text-gray-900 transition-colors hover:border-accent dark:border-gray-700 dark:text-white"
                     }`}
                   >
-                    Zamów {tier.name.toLowerCase()}
+                    Zamawiam {tier.name.toLowerCase()}
                   </a>
                 </div>
               ))}
@@ -317,9 +317,9 @@ export default function SprawdzAutoPage() {
           <section id="zamow" className="scroll-mt-20">
             <LandingForm
               formId="order_sprawdz_auto"
-              heading="Zamów sprawdzenie auta"
-              intro="Wklej link z Otomoto lub OLX i napisz: price-check (5 zł) czy pełny raport (15 zł)."
-              submitLabel="Wyślij ofertę do sprawdzenia"
+              heading="Zamówcie sprawdzenie auta"
+              intro="Wklejcie link z Otomoto lub OLX i napiszcie: price-check (5 zł) czy pełny raport (15 zł)."
+              submitLabel="Wyślijcie ofertę do sprawdzenia"
               microCopy="Raport w 24 h. Płatność ustalamy mailowo."
             />
           </section>
@@ -333,7 +333,7 @@ export default function SprawdzAutoPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Service",
-            name: "Sprawdź auto przed zakupem",
+            name: "Sprawdźcie auto przed zakupem",
             description:
               "Raport due-diligence oferty samochodu: benchmark ceny, wykrywanie red-flag, checklista usterek modelu i skrypt negocjacji. Price-check 5 zł, pełny raport 15 zł.",
             provider: { "@id": "https://fluxlab.pl/#organization" },

@@ -45,12 +45,12 @@ export const BRANZE: Branza[] = [
     systemy: "Shopify, WooCommerce, BaseLinker, Allegro",
     czas: "Ten sam towar ma osobny stan magazynowy w sklepie, na Allegro i w programie magazynowym. Każda z tych liczb zmienia się w swoim tempie, więc ktoś je codziennie ręcznie zgrywa, a między jednym zgraniem a drugim sprzedaje się rzeczy, których nie ma.",
     policz:
-      "Weź zamówienia z ostatniego miesiąca i policz, ile z nich trzeba było anulować albo dopłacić do wysyłki, bo towaru nie było. Osobno policz, ile minut dziennie zajmuje samo zgrywanie stanów.",
+      "Weźcie zamówienia z ostatniego miesiąca i policzcie, ile z nich trzeba było anulować albo dopłacić do wysyłki, bo towaru nie było. Osobno policzcie, ile minut dziennie zajmuje samo zgrywanie stanów.",
     robie:
       "Stan magazynowy ma jedno źródło prawdy, a pozostałe miejsca z niego czytają. Zamówienie, faktura i etykieta kurierska powstają z tego samego rekordu, więc znika miejsce, w którym dane się rozjeżdżają.",
     narzedzie: {
       href: "/narzedzia",
-      label: "Sprawdź, czy Wasze przeceny spełniają Omnibusa",
+      label: "Sprawdźcie, czy Wasze przeceny spełniają Omnibusa",
     },
   },
   {
@@ -67,12 +67,12 @@ export const BRANZE: Branza[] = [
     systemy: "Comarch Optima, Symfonia, enova, KSeF",
     czas: "Dokumenty przychodzą kilkoma kanałami naraz: mailem, przez panel, komunikatorem, w reklamówce. Zanim cokolwiek trafi do programu księgowego, ktoś musi je zebrać, nazwać, przepisać i dopilnować, czego brakuje, a ta praca powtarza się co miesiąc od zera.",
     policz:
-      "Policz, ile razy w zeszłym miesiącu ktoś wysłał do klienta przypomnienie o brakującym dokumencie. Pomnóż przez czas potrzebny na ustalenie, czego dokładnie brakuje.",
+      "Policzcie, ile razy w zeszłym miesiącu ktoś wysłał do klienta przypomnienie o brakującym dokumencie. Pomnóżcie przez czas potrzebny na ustalenie, czego dokładnie brakuje.",
     robie:
       "Dokumenty przychodzą jednym kanałem i same trafiają do programu z rozpoznanymi danymi. Brakujące pozycje wylicza system i to on wysyła przypomnienie, zamiast księgowej.",
     narzedzie: {
       href: "/ksef-integracja",
-      label: "Sprawdź za darmo gotowość na KSeF",
+      label: "Sprawdźcie za darmo gotowość na KSeF",
     },
   },
   {
@@ -89,12 +89,12 @@ export const BRANZE: Branza[] = [
     systemy: "Google Ads, Meta Ads, GA4, Looker Studio",
     czas: "Raport dla każdego klienta składa się ręcznie z kilku paneli reklamowych i analityki. Przy piętnastu klientach to piętnaście razy ta sama czynność co miesiąc, w terminie, którego nie da się przesunąć, bo wynika z umowy.",
     policz:
-      "Policz, ile godzin w zeszłym miesiącu zespół spędził na składaniu raportów, i porównaj to ze stawką, po której te godziny sprzedajecie klientom.",
+      "Policzcie, ile godzin w zeszłym miesiącu zespół spędził na składaniu raportów, i porównajcie to ze stawką, po której te godziny sprzedajecie klientom.",
     robie:
       "Dane z paneli schodzą się same do jednego miejsca, a raport składa się w ustalonym dniu i idzie do klienta bez proszenia. Ta sama definicja liczb obowiązuje każdego klienta.",
     narzedzie: {
       href: "/widocznosc-w-ai",
-      label: "Sprawdź, czy modele AI widzą Waszą stronę",
+      label: "Sprawdźcie, czy modele AI widzą Waszą stronę",
     },
   },
   {
@@ -111,12 +111,12 @@ export const BRANZE: Branza[] = [
     systemy: "Pipedrive, HubSpot, systemy finansujące",
     czas: "Każde zapytanie wymaga sprawdzenia podmiotu w kilku rejestrach, zanim ktokolwiek zacznie liczyć ofertę. Sprawdzenie robi się ręcznie, w kilku zakładkach, a wynik trafia do notatki, której nie widać ani w raporcie, ani w historii sprawy.",
     policz:
-      "Weź dziesięć ostatnich spraw i policz, ile minut minęło od zapytania do pierwszej wyliczonej oferty. Osobno sprawdź, w ilu z nich wynik weryfikacji jest zapisany w CRM, a w ilu tylko w czyjejś głowie.",
+      "Weźcie dziesięć ostatnich spraw i policzcie, ile minut minęło od zapytania do pierwszej wyliczonej oferty. Osobno sprawdźcie, w ilu z nich wynik weryfikacji jest zapisany w CRM, a w ilu tylko w czyjejś głowie.",
     robie:
       "Weryfikacja w rejestrach uruchamia się z rekordu, a jej wynik zapisuje się jako pole, nie jako notatka. Przypisanie sprawy idzie po regionie i produkcie, więc żadna nie czeka na to, aż ktoś ją zauważy.",
     narzedzie: {
       href: "/sprawdz-kontrahenta",
-      label: "Sprawdź kontrahenta w rejestrach",
+      label: "Sprawdźcie kontrahenta w rejestrach",
     },
   },
 ];

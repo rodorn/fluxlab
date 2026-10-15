@@ -47,7 +47,7 @@ const faqItems = [
   {
     question: "Ile to kosztuje?",
     answer:
-      "Nic. Kod jest otwarty na licencji MIT. Płacisz tylko za asystenta AI.",
+      "Nic. Kod jest otwarty na licencji MIT. Płacicie tylko za asystenta AI.",
   },
 ];
 
@@ -108,7 +108,7 @@ export default function PanelDoSesjiAiArticle() {
             className="btn-primary"
             style={{ padding: "0.7rem 1.5rem", whiteSpace: "nowrap" }}
           >
-            Zobacz na GitHubie
+            Zobaczcie na GitHubie
           </a>
         </div>
 
@@ -187,7 +187,7 @@ export default function PanelDoSesjiAiArticle() {
           }}
         />
       </main>
-      <CTA naglowek="Masz automatyzacje, ale nie wiesz, co dokładnie robią?" opis="Pokażemy, gdzie tracisz czas i co warto połączyć w jedno miejsce." />
+      <CTA naglowek="Macie automatyzacje, ale nie wiecie, co dokładnie robią?" opis="Pokażemy, gdzie tracicie czas i co warto połączyć w jedno miejsce." />
       <Footer />
     </>
   );

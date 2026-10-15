@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Asystent AI a Wasza strona: czy ChatGPT ją widzi | Fluxlab",
     description:
-      "Klient pyta asystenta zamiast wpisywać frazę. Sprawdź, czy Twoja strona może w takiej odpowiedzi wystąpić.",
+      "Klient pyta asystenta zamiast wpisywać frazę. Sprawdźcie, czy Wasza strona może w takiej odpowiedzi wystąpić.",
     locale: "pl_PL",
     type: "website",
     images: [
@@ -30,9 +30,9 @@ export default function WidocznoscWAi() {
       slug="widocznosc-w-ai"
       breadcrumb="Widoczność w AI"
       eyebrow="Za darmo"
-      h1="Czy asystent AI widzi Twoją stronę"
+      h1="Czy asystent AI widzi Waszą stronę"
       lead="Coraz więcej klientów pyta asystenta AI zamiast wpisywać frazę w wyszukiwarkę. Asystent poleci tylko stronę, którą zdołał przeczytać. Sprawdzamy siedem warunków, od których to zależy."
-      ctaLabel="Sprawdź swoją stronę"
+      ctaLabel="Sprawdźcie swoją stronę"
       ctaNote="Wynik od ręki, bez rejestracji"
       tool={<AiCheck />}
       checks={[
@@ -112,9 +112,9 @@ export default function WidocznoscWAi() {
         },
       ]}
       formId="widocznosc_ai"
-      formHeading="Wynik wyszedł na czerwono i nie wiesz, od czego zacząć"
-      formIntro="Podaj adres strony. Odeślemy kolejność działań i napiszemy, co zrobicie sami, a co wymaga dostępu do kodu."
-      submitLabel="Poproś o kolejność działań"
+      formHeading="Wynik wyszedł na czerwono i nie wiecie, od czego zacząć"
+      formIntro="Podajcie adres strony. Odeślemy kolejność działań i napiszemy, co zrobicie sami, a co wymaga dostępu do kodu."
+      submitLabel="Poproście o kolejność działań"
       microCopy="Odpisujemy zwykle tego samego dnia. Ustalenia prowadzimy mailowo."
       serviceName="Audyt widoczności strony dla asystentów AI"
       serviceDesc="Sprawdzenie, czy roboty zbierające treść na potrzeby asystentów AI mogą przeczytać stronę: dostęp w robots.txt, treść bez skryptów, dane uporządkowane, metadane, mapa strony i llms.txt."

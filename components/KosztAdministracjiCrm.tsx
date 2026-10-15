@@ -72,7 +72,7 @@ export default function KosztAdministracjiCrm() {
   return (
     <div>
       <p className="text-sm text-gray-600 dark:text-gray-400">
-        Wybierz zespół najbliższy Waszemu. Rachunek policzy się od razu, bez
+        Wybierzcie zespół najbliższy Waszemu. Rachunek policzy się od razu, bez
         wpisywania czegokolwiek.
       </p>
 
@@ -109,7 +109,7 @@ export default function KosztAdministracjiCrm() {
       <div aria-live="polite">
         {!u ? (
           <p className="mt-4 text-xs text-gray-600 dark:text-gray-400">
-            Naciśnij jeden z trzech, żeby zobaczyć rachunek.
+            Naciśnijcie jeden z trzech, żeby zobaczyć rachunek.
           </p>
         ) : (
           <div className="mt-4 rounded-2xl border border-accent/30 bg-accent-light dark:bg-accent-dark-light p-6">

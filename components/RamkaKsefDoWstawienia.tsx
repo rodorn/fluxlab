@@ -64,7 +64,7 @@ export default function RamkaKsefDoWstawienia() {
       >
         {skopiowano
           ? "Skopiowane, wklejcie w edytor strony"
-          : "Skopiuj kod ramki"}
+          : "Skopiujcie kod ramki"}
       </button>
     </div>
   );

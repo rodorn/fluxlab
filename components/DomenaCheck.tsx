@@ -78,7 +78,7 @@ export default function DomenaCheck() {
       setWynik(data);
       setStan("gotowe");
     } catch {
-      setBlad("Brak połączenia. Spróbuj ponownie za chwilę.");
+      setBlad("Brak połączenia. Spróbujcie ponownie za chwilę.");
       setStan("blad");
     }
   }
@@ -113,7 +113,7 @@ export default function DomenaCheck() {
       }
       setLeadStan("ok");
     } catch {
-      setLeadBlad("Brak połączenia. Spróbuj ponownie za chwilę.");
+      setLeadBlad("Brak połączenia. Spróbujcie ponownie za chwilę.");
       setLeadStan("blad");
     }
   }
@@ -155,7 +155,7 @@ export default function DomenaCheck() {
           disabled={stan === "ladowanie"}
           className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
         >
-          {stan === "ladowanie" ? "Sprawdzamy..." : "Sprawdź domenę"}
+          {stan === "ladowanie" ? "Sprawdzamy..." : "Sprawdźcie domenę"}
         </button>
       </form>
 
@@ -210,8 +210,8 @@ export default function DomenaCheck() {
           <div className="mt-5 border-t border-gray-200/70 dark:border-gray-700/70 pt-4">
             <p className="text-sm text-gray-700 dark:text-gray-300">
               {wynik.werdykt === "ZIELONY"
-                ? "Nie mamy Ci tu nic do sprzedania. Jeśli chcesz, możemy pilnować terminu i tego, czy abonent się nie zmienił, ale to wszystko."
-                : "Przeniesienie domeny na właściwą firmę to procedura papierowa: wniosek o zmianę abonenta, dokumenty rejestrowe i transfer do konta, do którego masz dostęp. Zajmuje się tym rejestrator, a my prowadzimy sprawę i pilnujemy terminów."}
+                ? "Nie mamy Wam tu nic do sprzedania. Jeśli chcecie, możemy pilnować terminu i tego, czy abonent się nie zmienił, ale to wszystko."
+                : "Przeniesienie domeny na właściwą firmę to procedura papierowa: wniosek o zmianę abonenta, dokumenty rejestrowe i transfer do konta, do którego macie dostęp. Zajmuje się tym rejestrator, a my prowadzimy sprawę i pilnujemy terminów."}
             </p>
 
             {leadStan === "ok" ? (
@@ -225,7 +225,7 @@ export default function DomenaCheck() {
                   htmlFor="domena-email"
                   className="block text-sm font-medium text-gray-900 dark:text-white"
                 >
-                  Podaj maila, odeślemy co dokładnie zrobić w tej sprawie
+                  Podajcie maila, odeślemy co dokładnie zrobić w tej sprawie
                 </label>
                 <div className="mt-2 flex flex-col gap-3 sm:flex-row">
                   <input
@@ -242,7 +242,7 @@ export default function DomenaCheck() {
                     disabled={leadStan === "wysylamy"}
                     className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
                   >
-                    {leadStan === "wysylamy" ? "Wysyłamy..." : "Wyślij zgłoszenie"}
+                    {leadStan === "wysylamy" ? "Wysyłamy..." : "Wyślijcie zgłoszenie"}
                   </button>
                 </div>
                 {leadStan === "blad" && (

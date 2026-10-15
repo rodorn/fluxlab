@@ -11,7 +11,7 @@ import NazwaNarzedzia from "@/components/NazwaNarzedzia";
 export const metadata: Metadata = {
   title: "Kalkulator kosztu ręcznej obsługi leadów | Fluxlab",
   description:
-    "Policz, ile miesięcznie kosztuje ręczne przepisywanie leadów, zgubione zapytania i ręczne raporty. Wynik w zł, bez logowania, z pełnym rachunkiem.",
+    "Policzcie, ile miesięcznie kosztuje ręczne przepisywanie leadów, zgubione zapytania i ręczne raporty. Wynik w zł, bez logowania, z pełnym rachunkiem.",
   openGraph: {
     title: "Koszt ręcznej obsługi leadów, kalkulator | Fluxlab",
     description:
@@ -102,7 +102,7 @@ const faq = [
   {
     question: "Skąd założenie, że 30% opóźnionych leadów jest utraconych?",
     answer:
-      "To konserwatywny model. Szybka reakcja podnosi konwersję, a parametr możesz zmienić suwakiem na własny.",
+      "To konserwatywny model. Szybka reakcja podnosi konwersję, a parametr możecie zmienić suwakiem na własny.",
   },
   {
     question: "Czy kalkulator uwzględnia koszt narzędzi i wdrożenia?",
@@ -139,7 +139,7 @@ export default function KosztRecznejObslugiLeadow() {
                 Ile kosztuje ręczna obsługa leadów w firmie B2B?
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-                Kalkulator liczy koszt Twojego procesu w zł na miesiąc i rok,
+                Kalkulator liczy koszt Waszego procesu w zł na miesiąc i rok,
                 bez logowania. Czas pracy to tylko część rachunku.
               </p>
               <div className="mt-8 flex">
@@ -150,7 +150,7 @@ export default function KosztRecznejObslugiLeadow() {
                   eventName="cta_click_calculator"
                   className="btn-primary"
                 >
-                  Policz koszt naszego procesu
+                  Policzcie koszt naszego procesu
                 </TrackedCTA>
               </div>
             </div>

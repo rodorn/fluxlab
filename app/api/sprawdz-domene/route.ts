@@ -73,7 +73,7 @@ export async function POST(request: Request) {
   }
   if (!/^[a-z0-9.-]+\.[a-z]{2,}$/.test(domena)) {
     return NextResponse.json(
-      { error: "Podaj samą domenę, na przykład twojafirma.pl" },
+      { error: "Podajcie samą domenę, na przykład twojafirma.pl" },
       { status: 400 },
     );
   }
@@ -83,7 +83,7 @@ export async function POST(request: Request) {
       domena,
       naglowek: "Na razie sprawdzamy tylko domeny polskie",
       opis:
-        "Rejestr, z którego korzystamy, obejmuje domeny z końcówką pl. Dla innych końcówek sprawdzimy to ręcznie, jeśli napiszesz.",
+        "Rejestr, z którego korzystamy, obejmuje domeny z końcówką pl. Dla innych końcówek sprawdzimy to ręcznie, jeśli napiszecie.",
     });
   }
 
@@ -98,7 +98,7 @@ export async function POST(request: Request) {
       status: "BRAK_ODPOWIEDZI",
       domena,
       naglowek: "Rejestr nie odpowiedział",
-      opis: "Spróbuj za chwilę. Jeśli to się powtórzy, sprawdzimy ręcznie.",
+      opis: "Spróbujcie za chwilę. Jeśli to się powtórzy, sprawdzimy ręcznie.",
     });
   }
 
@@ -110,7 +110,7 @@ export async function POST(request: Request) {
       domena,
       naglowek: "Rejestr chwilowo ogranicza zapytania",
       opis:
-        "To ograniczenie po stronie rejestru domen, nie problem z Twoją domeną. Spróbuj za kilka minut.",
+        "To ograniczenie po stronie rejestru domen, nie problem z Waszą domeną. Spróbujcie za kilka minut.",
     });
   }
   if (odpowiedz.status === 404) {
@@ -119,7 +119,7 @@ export async function POST(request: Request) {
       domena,
       naglowek: "Nie znaleźliśmy takiej domeny w rejestrze",
       opis:
-        "Sprawdź pisownię. Jeśli adres jest poprawny, może to być subdomena, a wtedy liczy się właściciel domeny nadrzędnej.",
+        "Sprawdźcie pisownię. Jeśli adres jest poprawny, może to być subdomena, a wtedy liczy się właściciel domeny nadrzędnej.",
     });
   }
   if (!odpowiedz.ok) {
@@ -127,7 +127,7 @@ export async function POST(request: Request) {
       status: "BRAK_ODPOWIEDZI",
       domena,
       naglowek: "Rejestr odpowiedział błędem",
-      opis: "Spróbuj za chwilę.",
+      opis: "Spróbujcie za chwilę.",
     });
   }
 
@@ -167,9 +167,9 @@ export async function POST(request: Request) {
     komentarz: !abonent
       ? "Rejestr ukrywa dane, co przy osobie fizycznej jest normalne. Nie da się wtedy stwierdzić z zewnątrz, kto jest właścicielem."
       : pilne
-        ? "To jest termin, po którym domena przestaje działać razem ze stroną i całą pocztą firmową. Sprawdź, czy ktokolwiek pilnuje tego odnowienia i czy przypomnienia trafiają na adres, który ktoś czyta."
+        ? "To jest termin, po którym domena przestaje działać razem ze stroną i całą pocztą firmową. Sprawdźcie, czy ktokolwiek pilnuje tego odnowienia i czy przypomnienia trafiają na adres, który ktoś czyta."
         : wyglada
-          ? "Nazwa abonenta wygląda na firmę informatyczną albo agencję, a nie na firmę korzystającą z tej domeny. Jeśli to Twoja domena, a nazwa nie jest Twoja, warto ustalić, czy tak miało być. Bywa, że to świadome rozwiązanie z umową, ale częściej to pozostałość po wykonawcy strony."
+          ? "Nazwa abonenta wygląda na firmę informatyczną albo agencję, a nie na firmę korzystającą z tej domeny. Jeśli to Wasza domena, a nazwa nie jest Wasza, warto ustalić, czy tak miało być. Bywa, że to świadome rozwiązanie z umową, ale częściej to pozostałość po wykonawcy strony."
           : "Abonentem wygląda na firmę korzystającą z domeny, czyli tak jak być powinno.",
   });
 }

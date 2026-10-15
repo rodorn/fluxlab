@@ -29,9 +29,9 @@ export default function Page() {
       slug="kontrola-paliwa"
       breadcrumb="Kontrola paliwa"
       eyebrow="Straty we flocie"
-      h1="Sprawdź, czy paliwo z Twoich kart trafia do Twoich aut"
+      h1="Sprawdźcie, czy paliwo z Waszych kart trafia do Waszych aut"
       lead="Portal karty pokazuje tylko listę transakcji. Zestawiamy je z przebiegiem i trasą, a wtedy widać tankowania, których nie da się wytłumaczyć. Zaczynamy od darmowego skanu trzech pojazdów."
-      ctaLabel="Zamów darmowy skan"
+      ctaLabel="Zamawiam darmowy skan"
       ctaNote="Trzy pojazdy za jeden miesiąc, bez opłaty"
       powiazane={[
         {
@@ -92,7 +92,7 @@ export default function Page() {
         {
           name: "Monitoring",
           price: "149 zł/mc",
-          desc: "Chcesz wiedzieć na bieżąco, nie po roku.",
+          desc: "Chcecie wiedzieć na bieżąco, nie po roku.",
           features: [
             "comiesięczne przeliczenie reguł",
             "alarm przy nowych anomaliach",
@@ -120,9 +120,9 @@ export default function Page() {
         },
       ]}
       formId="order_kontrola_paliwa"
-      formHeading="Zamów kontrolę paliwa"
-      formIntro="Napisz, ile masz pojazdów, jaką kartę paliwową i czy masz lokalizator albo zapisy przebiegów."
-      submitLabel="Zamów kontrolę floty"
+      formHeading="Zamówcie kontrolę paliwa"
+      formIntro="Napiszcie, ile macie pojazdów, jaką kartę paliwową i czy macie lokalizator albo zapisy przebiegów."
+      submitLabel="Zamawiam kontrolę floty"
       microCopy="Skan wstępny jest bezpłatny. Dane kierowców kasujemy po raporcie."
       serviceName="Kontrola paliwa we flocie"
       serviceDesc="Audyt tankowań z kart paliwowych zestawionych z przebiegami i trasą: wykrywanie tankowań do kanistra, obcych pojazdów i klonów karty, z kwotą straty. Skan wstępny bezpłatny, audyt od 99 zł."

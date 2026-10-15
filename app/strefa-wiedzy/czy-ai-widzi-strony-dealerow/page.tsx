@@ -177,7 +177,7 @@ export default function Page() {
           sama wtyczka.
         </p>
         <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-          Kolejność napraw: najpierw treść w samym dokumencie, potem dane
+          Kolejność naprawcie: najpierw treść w samym dokumencie, potem dane
           uporządkowane i opis w metadanych, blokady na końcu. Nie mierzyliśmy,
           czy asystenci faktycznie polecają te firmy, tylko warunki, na które
           właściciel strony ma wpływ.
@@ -194,7 +194,7 @@ export default function Page() {
         </p>
 
         <SprawdzPoBadaniu
-          naglowek="Sprawdź to na żywo, jednym kliknięciem"
+          naglowek="Sprawdźcie to na żywo, jednym kliknięciem"
           opis="Pobieramy domenę tak jak asystent AI i sprawdzamy te same cztery punkty co w badaniu."
           endpoint="/api/sprawdz-ai"
           pozycje={[
@@ -204,9 +204,9 @@ export default function Page() {
           ]}
           narzedzie={{
             href: "/widocznosc-w-ai",
-            etykieta: "Sprawdź swoją domenę",
+            etykieta: "Sprawdźcie swoją domenę",
           }}
-          kontakt="Chcesz, żeby ktoś poprawił to, co wyszło na czerwono?"
+          kontakt="Chcecie, żeby ktoś poprawił to, co wyszło na czerwono?"
         />
 
         <section className="mt-12">

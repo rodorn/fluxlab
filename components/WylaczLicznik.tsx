@@ -51,13 +51,13 @@ export default function WylaczLicznik() {
     >
       <p className="text-lg font-bold text-gray-900 dark:text-white">
         {wylaczony
-          ? "Twoje wizyty nie są liczone"
-          : "Twoje wizyty są liczone jak wszystkie inne"}
+          ? "Wasze wizyty nie są liczone"
+          : "Wasze wizyty są liczone jak wszystkie inne"}
       </p>
       <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
         {wylaczony
           ? "Ta przeglądarka nie wysyła już nic do licznika. Ustawienie siedzi wyłącznie tutaj, więc na innym urządzeniu albo w trybie prywatnym trzeba je włączyć osobno."
-          : "Jeżeli to Twoja strona albo pracujesz nad nią, wyłącz liczenie. Inaczej własne wejścia zawyżą statystyki i będą wyglądać jak ruch z zewnątrz."}
+          : "Jeżeli to Wasza strona albo pracujecie nad nią, wyłączcie liczenie. Inaczej własne wejścia zawyżą statystyki i będą wyglądać jak ruch z zewnątrz."}
       </p>
       <button
         type="button"

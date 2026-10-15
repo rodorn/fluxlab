@@ -38,15 +38,15 @@ const pricing = [
     description: "Zmiana w istniejącej stronie albo nowa podstrona.",
   },
   {
-    title: "Landing z formularzem i płatnością",
-    price: "od 299 zł",
-    description: "Jedna strona z formularzem i płatnością, wdrożona na serwer.",
+    title: "Landing do 5 podstron",
+    price: "od 4 500 zł",
+    description: "Formularz prosto do CRM albo skrzynki, z pomiarem źródła zapytań.",
     accent: true,
   },
   {
-    title: "Strona firmowa",
-    price: "od 450 zł",
-    description: "Kilka podstron, blog, CMS do samodzielnej edycji treści.",
+    title: "Strona firmowa z CMS",
+    price: "od 9 000 zł",
+    description: "Strona w Next.js z panelem do edycji treści i audytem przed startem. Sklep z integracją od 15 000 zł.",
   },
 ];
 
@@ -59,12 +59,12 @@ const faq = [
   {
     question: "Czy możemy modyfikować treści samodzielnie?",
     answer:
-      "Tak. Strona firmowa dostaje prosty CMS, w którym edytujesz teksty jak dokument.",
+      "Tak. Strona firmowa dostaje prosty CMS, w którym edytujecie teksty jak dokument.",
   },
   {
     question: "Hosting i domena?",
     answer:
-      "Hosting jest w cenie wdrożenia. Domenę kupujesz na siebie (50-150 zł/rok), konfigurację robimy my.",
+      "Hosting jest w cenie wdrożenia. Domenę kupujecie na siebie (50-150 zł/rok), konfigurację robimy my.",
   },
 ];
 
@@ -159,7 +159,7 @@ export default function StronyWww() {
                       ))}
                     </ul>
                     <p className="mt-8 max-w-2xl text-gray-600 dark:text-gray-400">
-                      Przenosisz stronę? Najpierw zrób{" "}
+                      Przenosicie stronę? Najpierw zróbcie{" "}
                       <Link
                         href="/audyt-poczty"
                         className="text-accent hover:underline"
@@ -249,8 +249,8 @@ export default function StronyWww() {
                     <LandingForm
                       formId="diagnosis_web"
                       heading="Bezpłatna diagnoza strony WWW"
-                      intro="Napisz, jakiej strony potrzebujesz. Odpowiemy w ciągu 24h."
-                      submitLabel="Zamów diagnozę"
+                      intro="Napiszcie, jakiej strony potrzebujecie. Odpowiemy w ciągu 24h."
+                      submitLabel="Zamawiam diagnozę"
                     />
                   </div>
                 ),
@@ -286,19 +286,19 @@ export default function StronyWww() {
               },
               {
                 "@type": "Offer",
-                name: "Landing z formularzem i płatnością",
-                price: "299",
+                name: "Landing do 5 podstron",
+                price: "4500",
                 priceCurrency: "PLN",
                 description:
-                  "Jedna strona z formularzem, deployment, podstawowy SEO.",
+                  "Do 5 podstron, formularz do CRM albo skrzynki, pomiar źródła zapytań.",
               },
               {
                 "@type": "Offer",
-                name: "Strona firmowa",
-                price: "450",
+                name: "Strona firmowa z CMS",
+                price: "9000",
                 priceCurrency: "PLN",
                 description:
-                  "5+ podstron, CMS, blog, deployment, SEO i schema.",
+                  "Strona w Next.js z panelem do edycji treści, SEO i audytem przed startem.",
               },
             ],
           }),

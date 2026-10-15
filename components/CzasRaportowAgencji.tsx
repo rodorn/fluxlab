@@ -69,7 +69,7 @@ export default function CzasRaportowAgencji() {
   return (
     <div className="mb-10">
       <p className="text-sm text-gray-600 dark:text-gray-400">
-        Ile czasu pochłaniają same raporty? Wybierz agencję najbliższą Waszej.
+        Ile czasu pochłaniają same raporty? Wybierzcie agencję najbliższą Waszej.
         Rachunek policzy się od razu, bez wpisywania czegokolwiek.
       </p>
 
@@ -106,7 +106,7 @@ export default function CzasRaportowAgencji() {
       <div aria-live="polite">
         {!u ? (
           <p className="mt-4 text-xs text-gray-600 dark:text-gray-400">
-            Naciśnij jeden z trzech, żeby zobaczyć rachunek.
+            Naciśnijcie jeden z trzech, żeby zobaczyć rachunek.
           </p>
         ) : (
           <div className="mt-4 rounded-2xl border border-accent/30 bg-accent-light dark:bg-accent-dark-light p-6">

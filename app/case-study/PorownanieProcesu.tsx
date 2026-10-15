@@ -216,7 +216,7 @@ export default function PorownanieProcesu() {
             Dziś, ręcznie
           </p>
           <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
-            Odznacz czynności, których u siebie nie wykonujecie, a wynik przeliczy się
+            Odznaczcie czynności, których u siebie nie wykonujecie, a wynik przeliczy się
             od razu.
           </p>
           <ul className="space-y-2">

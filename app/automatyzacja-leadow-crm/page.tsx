@@ -173,7 +173,7 @@ export default function AutomatyzacjaLeadowCRM() {
         </section>
 
         <section className="container-wide pb-16">
-          <h2 className="h2-sekcji">Zobacz, jak to wdrażamy</h2>
+          <h2 className="h2-sekcji">Zobaczcie, jak to wdrażamy</h2>
           <div className="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {PRODUCTS.filter((p) => POWIAZANE_Z_CRM.includes(p.href)).map(
               (p) => (
@@ -183,7 +183,7 @@ export default function AutomatyzacjaLeadowCRM() {
           </div>
           <p className="mt-6">
             <Link href="/produkty" className="text-accent hover:underline">
-              Zobacz cały cennik
+              Zobaczcie cały cennik
             </Link>
           </p>
         </section>
@@ -193,7 +193,7 @@ export default function AutomatyzacjaLeadowCRM() {
             ariaLabel="Sekcje oferty automatyzacji leadów i CRM"
             tabs={[
               {
-                label: "Co dostajesz",
+                label: "Co dostajecie",
                 content: (
                   <section className="py-10 lg:py-12">
                     <div className="max-w-4xl">
@@ -358,7 +358,7 @@ export default function AutomatyzacjaLeadowCRM() {
                     <LandingForm
                       formId="diagnosis_lp_leadow"
                       heading="Sprawdźmy, gdzie tracicie leady"
-                      intro="Napisz, skąd przychodzą leady i co robicie ręcznie. Odpowiemy, od czego zacząć."
+                      intro="Napiszcie, skąd przychodzą leady i co robicie ręcznie. Odpowiemy, od czego zacząć."
                       submitLabel="Chcemy mapę pierwszej automatyzacji"
                     />
                   </section>

@@ -72,7 +72,7 @@ dzięki za opis procesu. Przejrzymy zgłoszenie i wrócimy z informacją, czy wi
 
 Jeśli widzimy dopasowanie, odpiszemy z konkretną propozycją zakresu i wyceną. Jeśli proces wygląda na zbyt mały albo nieopłacalny do automatyzacji na tym etapie, napiszemy to wprost, i uzasadnimy dlaczego.
 
-Pracujemy i ustalamy wszystko mailowo, więc możesz po prostu odpisać na tę wiadomość.
+Pracujemy i ustalamy wszystko mailowo, więc możecie po prostu odpisać na tę wiadomość.
 
 Paweł
 Fluxlab, automatyzacja leadów, CRM i raportowania dla firm B2B
@@ -101,7 +101,7 @@ export async function POST(req: Request) {
 
   if (!email || !problemType || !problemScale) {
     return NextResponse.json(
-      { error: "Wypełnij wymagane pola." },
+      { error: "Wypełnijcie wymagane pola." },
       { status: 400 },
     );
   }
@@ -223,7 +223,7 @@ export async function POST(req: Request) {
 Klient: ${email}
 Temat zgłoszenia: ${problemTypeLabel}${subjectCompany}
 
-Z jego perspektywy wysłał formularz i nie dostał żadnej odpowiedzi, więc odpisz mu ręcznie, najlepiej od razu. Wystarczy odpowiedzieć na tego maila, bo adres zwrotny jest ustawiony na klienta.
+Z jego perspektywy wysłał formularz i nie dostał żadnej odpowiedzi, więc odpiszcie mu ręcznie, najlepiej od razu. Wystarczy odpowiedzieć na tego maila, bo adres zwrotny jest ustawiony na klienta.
 
 Przyczyna techniczna: ${e instanceof Error ? e.message : String(e)}
 

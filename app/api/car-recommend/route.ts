@@ -128,7 +128,7 @@ export async function POST(req: Request) {
 
   const body: RecommendRequest = await req.json();
   if (!body.budget || body.budget < 5000) {
-    return NextResponse.json({ error: "Podaj budżet" }, { status: 400 });
+    return NextResponse.json({ error: "Podajcie budżet" }, { status: 400 });
   }
 
   const bodyStyleLabels: Record<string, string> = {
@@ -162,7 +162,7 @@ export async function POST(req: Request) {
     `Orientacyjny budżet: ${body.budget.toLocaleString("pl-PL")} PLN (podaj REALNE ceny, nie dopasowuj do budżetu!)`,
     `Typ samochodu: ${bodyStyleLabel}`,
     `Forma nadwozia: ${shapesLabel}`,
-    `SEGMENT: ${segmentLabel}, WIĘKSZOŚĆ modeli (min. 3 z 5 w każdej kategorii) musi być z segmentu ${body.segment}. Resztę możesz uzupełnić z: ${allowedSegments.join(", ")}. NIGDY niższe.`,
+    `SEGMENT: ${segmentLabel}, WIĘKSZOŚĆ modeli (min. 3 z 5 w każdej kategorii) musi być z segmentu ${body.segment}. Resztę możecie uzupełnić z: ${allowedSegments.join(", ")}. NIGDY niższe.`,
     `Minimalna moc silnika: ${body.hp || 150} KM`,
     `Pasażerowie: ${body.passengers} os.`,
     body.additionalInfo ? `Dodatkowe wymagania: ${body.additionalInfo}` : "",

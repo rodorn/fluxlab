@@ -81,7 +81,7 @@ export default function ZakresWyceny({ wycena }: { wycena: Wycena }) {
 
       <div className="rounded-2xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800/60 p-5 sm:p-6">
         <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
-          Zaznacz to, co u Ciebie występuje. Kwota przelicza się od razu.
+          Zaznaczcie to, co u Was występuje. Kwota przelicza się od razu.
         </p>
 
         <ul className="space-y-2">
@@ -199,7 +199,7 @@ export default function ZakresWyceny({ wycena }: { wycena: Wycena }) {
           aria-pressed={opieka}
           className="mt-4 text-sm font-semibold text-accent underline underline-offset-4"
         >
-          {opieka ? "Ukryj opiekę po wdrożeniu" : "A co z opieką po wdrożeniu?"}
+          {opieka ? "Ukryjcie opiekę po wdrożeniu" : "A co z opieką po wdrożeniu?"}
         </button>
         {opieka && (
           <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">

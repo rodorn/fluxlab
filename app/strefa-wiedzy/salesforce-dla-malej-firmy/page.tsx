@@ -115,7 +115,7 @@ export default function SalesforceDlaMalejFirmyArticle() {
                           Czas wdrożenia
                         </h2>
                         <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                          Starter skonfigurujesz w 1 do 2 tygodni, ale nie ma
+                          Starter skonfigurujecie w 1 do 2 tygodni, ale nie ma
                           custom obiektów ani Sandboxa. Enterprise z
                           automatyzacjami i integracjami to 3 do 6 miesięcy.
                           Sens nadaje mu dopiero{" "}
@@ -183,7 +183,7 @@ export default function SalesforceDlaMalejFirmyArticle() {
                           </li>
                         </ul>
                         <p className="mt-6 text-gray-600 dark:text-gray-400 leading-relaxed">
-                          Wtedy lepiej sprawdzi się Pipedrive lub HubSpot. Zobacz
+                          Wtedy lepiej sprawdzi się Pipedrive lub HubSpot. Zobaczcie
                           porównania{" "}
                           <Link
                             href="/strefa-wiedzy/pipedrive-vs-salesforce"
@@ -198,7 +198,7 @@ export default function SalesforceDlaMalejFirmyArticle() {
                           >
                             HubSpot vs Pipedrive
                           </Link>
-                          . Niezależnie od narzędzia zacznij od{" "}
+                          . Niezależnie od narzędzia zacznijcie od{" "}
                           <Link
                             href="/strefa-wiedzy/jak-uporzadkowac-proces-sprzedazy-w-crm"
                             className="text-accent hover:underline"
@@ -226,7 +226,7 @@ export default function SalesforceDlaMalejFirmyArticle() {
                             Czy Salesforce Starter Suite to dobry wybór dla małej firmy?
                           </h3>
                           <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                            Bywa sensowny, ale w tej klasie zwykle wygrywa Pipedrive albo HubSpot. Starter ma sens, gdy planujesz przejście na wyższy plan Salesforce w ciągu roku lub dwóch.
+                            Bywa sensowny, ale w tej klasie zwykle wygrywa Pipedrive albo HubSpot. Starter ma sens, gdy planujecie przejście na wyższy plan Salesforce w ciągu roku lub dwóch.
                           </p>
                         </div>
                         <div>
@@ -266,10 +266,10 @@ export default function SalesforceDlaMalejFirmyArticle() {
                       <PrevNextArticle currentHref="/strefa-wiedzy/salesforce-dla-malej-firmy" />
 
                       <p className="mt-12 text-center text-gray-600 dark:text-gray-400">
-                        Zastanawiasz się, czy Salesforce to dla Ciebie nie za
+                        Zastanawiacie się, czy Salesforce to dla Was nie za
                           dużo?{" "}
                         <Link href="/automatyzacja-salesforce" className="text-accent hover:underline">
-                          Zobacz usługę Automatyzacja Salesforce
+                          Zobaczcie usługę Automatyzacja Salesforce
                         </Link>
                       </p>
 
@@ -320,7 +320,7 @@ export default function SalesforceDlaMalejFirmyArticle() {
                 name: "Czy Salesforce Starter Suite to dobry wybór dla małej firmy?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Bywa sensowny, ale w tej klasie zwykle wygrywa Pipedrive albo HubSpot. Starter ma sens, gdy planujesz przejście na wyższy plan Salesforce w ciągu roku lub dwóch.",
+                  text: "Bywa sensowny, ale w tej klasie zwykle wygrywa Pipedrive albo HubSpot. Starter ma sens, gdy planujecie przejście na wyższy plan Salesforce w ciągu roku lub dwóch.",
                 },
               },
               {

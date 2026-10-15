@@ -33,7 +33,7 @@ const MOTYW: Record<string, { ramka: string; tlo: string; tekst: string; etykiet
     ramka: "border-amber-500/60",
     tlo: "bg-amber-50 dark:bg-amber-950/30",
     tekst: "text-amber-700 dark:text-amber-400",
-    etykieta: "Rozbieżność na Twoją korzyść",
+    etykieta: "Rozbieżność na Waszą korzyść",
   },
   CZERWONY: {
     ramka: "border-red-500/60",
@@ -88,7 +88,7 @@ export default function DoplataCheck() {
       setWynik(data);
       setStan("gotowe");
     } catch {
-      setBlad("Brak połączenia. Spróbuj ponownie za chwilę.");
+      setBlad("Brak połączenia. Spróbujcie ponownie za chwilę.");
       setStan("blad");
     }
   }
@@ -144,7 +144,7 @@ export default function DoplataCheck() {
       }
       setLeadStan("ok");
     } catch {
-      setLeadBlad("Brak połączenia. Spróbuj ponownie za chwilę.");
+      setLeadBlad("Brak połączenia. Spróbujcie ponownie za chwilę.");
       setLeadStan("blad");
     }
   }
@@ -154,10 +154,10 @@ export default function DoplataCheck() {
   return (
     <div className="rounded-2xl border border-gray-200/80 dark:border-gray-800/80 bg-white/70 dark:bg-gray-900/50 p-6 md:p-8">
       <h2 className="text-xl font-bold text-gray-900 dark:text-white">
-        Sprawdź jedną pozycję ze swojej faktury kurierskiej
+        Sprawdźcie jedną pozycję ze swojej faktury kurierskiej
       </h2>
       <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-        Przepisz trzy liczby z faktury: wagę paczki, kwotę bazową i naliczoną
+        Przepiszcie trzy liczby z faktury: wagę paczki, kwotę bazową i naliczoną
         dopłatę.
       </p>
 
@@ -165,7 +165,7 @@ export default function DoplataCheck() {
         pozycje={PRZYKLADY}
         onWybor={pokazPrzyklad}
         zablokowane={stan === "ladowanie"}
-        wstep="Nie masz faktury pod ręką? Policz na gotowej pozycji:"
+        wstep="Nie macie faktury pod ręką? Policzcie na gotowej pozycji:"
       />
 
       <form onSubmit={sprawdz} className="mt-5 space-y-3">
@@ -215,7 +215,7 @@ export default function DoplataCheck() {
           disabled={stan === "ladowanie"}
           className="btn-primary w-full justify-center px-6 py-3 text-sm disabled:opacity-50"
         >
-          {stan === "ladowanie" ? "Liczymy..." : "Sprawdź tę pozycję"}
+          {stan === "ladowanie" ? "Liczymy..." : "Sprawdźcie tę pozycję"}
         </button>
       </form>
 
@@ -292,7 +292,7 @@ export default function DoplataCheck() {
             </ul>
             <p className="mt-2 text-xs text-gray-500 dark:text-gray-400">
               Okres {wynik.okres.od} do {wynik.okres.do}, źródło: {wynik.okres.zrodlo}.
-              Jeśli Twoja faktura dotyczy innego okresu, stawka była inna i wynik
+              Jeśli Wasza faktura dotyczy innego okresu, stawka była inna i wynik
               trzeba policzyć na stawkach z tamtych dwóch tygodni.
             </p>
           </div>
@@ -316,7 +316,7 @@ export default function DoplataCheck() {
                   htmlFor="doplata-email"
                   className="block text-sm font-medium text-gray-900 dark:text-white"
                 >
-                  Podaj maila, sprawdzimy tak całą Twoją fakturę za darmo
+                  Podajcie maila, sprawdzimy tak całą Waszą fakturę za darmo
                 </label>
                 <div className="mt-2 flex flex-col gap-3 sm:flex-row">
                   <input
@@ -333,7 +333,7 @@ export default function DoplataCheck() {
                     disabled={leadStan === "wysylamy"}
                     className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
                   >
-                    {leadStan === "wysylamy" ? "Wysyłamy..." : "Wyślij zgłoszenie"}
+                    {leadStan === "wysylamy" ? "Wysyłamy..." : "Wyślijcie zgłoszenie"}
                   </button>
                 </div>
                 {leadStan === "blad" && (

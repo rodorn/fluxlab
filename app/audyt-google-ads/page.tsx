@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 
 const steps = [
   {
-    title: "Dajesz dostęp do konta",
+    title: "Dajecie dostęp do konta",
     desc: "Dostęp tylko do odczytu albo eksport raportu wyszukiwanych haseł.",
   },
   {
@@ -37,7 +37,7 @@ const steps = [
     desc: "Wyławiamy frazy, które kosztują, ale nie sprzedają, i liczymy kwotę do odzyskania.",
   },
   {
-    title: "Dostajesz raport i listę wykluczeń",
+    title: "Dostajecie raport i listę wykluczeń",
     desc: "W 3 dni robocze: raport PDF, lista wykluczeń i plan naprawy konta.",
   },
 ];
@@ -51,12 +51,12 @@ const faq = [
   {
     question: "Czy sami wprowadzacie zmiany na koncie?",
     answer:
-      "Listę wykluczeń wdrażasz sam albo Twoja agencja. Wdrożenie przez nas ustalamy osobno.",
+      "Listę wykluczeń wdrażacie sam albo Wasza agencja. Wdrożenie przez nas ustalamy osobno.",
   },
   {
     question: "Dla jak dużych kont to ma sens?",
     answer:
-      "Najwięcej przy budżetach od kilku tysięcy złotych miesięcznie. Przy małych chroni Cię gwarancja zwrotu.",
+      "Najwięcej przy budżetach od kilku tysięcy złotych miesięcznie. Przy małych chroni Was gwarancja zwrotu.",
   },
 ];
 
@@ -78,16 +78,16 @@ export default function AudytGoogleAdsPage() {
           <div className="container-wide max-w-3xl">
             <p className="section-label mb-5">Usługa</p>
             <h1 className="h1-strony text-gray-900 dark:text-white">
-              Przestań przepalać budżet Google Ads na frazy bez konwersji
+              Przestańcie przepalać budżet Google Ads na frazy bez konwersji
             </h1>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-300">
               Przeglądamy raport wyszukiwanych haseł z 30 do 90 dni, liczymy, ile
-              tracisz co miesiąc, i dajemy gotową listę wykluczeń. 69 zł, z
+              tracicie co miesiąc, i dajemy gotową listę wykluczeń. 69 zł, z
               gwarancją zwrotu.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <a href="#zamow" className="btn-primary inline-flex">
-                Zamów mini-audyt za 69 zł
+                Zamawiam mini-audyt za 69 zł
               </a>
             </div>
           </div>
@@ -216,7 +216,7 @@ export default function AudytGoogleAdsPage() {
                   href="#zamow"
                   className="btn-primary mt-6 w-full justify-center text-center text-sm"
                 >
-                  Zamów mini-audyt
+                  Zamawiam mini-audyt
                 </a>
               </div>
             </div>
@@ -263,9 +263,9 @@ export default function AudytGoogleAdsPage() {
           <section id="zamow" className="scroll-mt-20">
             <LandingForm
               formId="order_audyt_google_ads"
-              heading="Zamów mini-audyt Google Ads"
-              intro="Napisz, jaki masz miesięczny budżet i od kiedy działają kampanie. Potem ustalimy dostęp albo eksport raportu."
-              submitLabel="Zamów mini-audyt za 69 zł"
+              heading="Zamówcie mini-audyt Google Ads"
+              intro="Napiszcie, jaki macie miesięczny budżet i od kiedy działają kampanie. Potem ustalimy dostęp albo eksport raportu."
+              submitLabel="Zamawiam mini-audyt za 69 zł"
               microCopy="Odpowiedź w 24h. Zwrot całej kwoty przy odzysku poniżej 500 zł/mc."
             />
           </section>

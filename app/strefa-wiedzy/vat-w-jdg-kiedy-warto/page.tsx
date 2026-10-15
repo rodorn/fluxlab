@@ -51,8 +51,8 @@ export default function VatWJdgArticle() {
             </h1>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
               Czynny VAT pozwala odliczać podatek od zakupów, ale podnosi cenę
-              brutto. O wyborze decydują dwie rzeczy: czy sprzedajesz firmom
-              (B2B) czy osobom prywatnym (B2C) i ile wydajesz na koszty z VAT.
+              brutto. O wyborze decydują dwie rzeczy: czy sprzedajecie firmom
+              (B2B) czy osobom prywatnym (B2C) i ile wydajecie na koszty z VAT.
             </p>
           </div>
         </section>
@@ -70,18 +70,18 @@ export default function VatWJdgArticle() {
                         Zwolnienie podmiotowe
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Przy rocznej sprzedaży netto do 200 000 zł możesz
-                        korzystać ze zwolnienia z VAT. Nie naliczasz VAT, nie
-                        składasz JPK_V7, ale też nie odliczasz VAT od zakupów.
+                        Przy rocznej sprzedaży netto do 200 000 zł możecie
+                        korzystać ze zwolnienia z VAT. Nie naliczacie VAT, nie
+                        składacie JPK_V7, ale też nie odliczacie VAT od zakupów.
                       </p>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Zwolnienie działa domyślnie, bez wniosku. Rejestracja
-                        jako czynny VAT wymaga formularza VAT-R. Gdy zaczynasz
+                        jako czynny VAT wymaga formularza VAT-R. Gdy zaczynacie
                         w trakcie roku, limit liczy się proporcjonalnie.
                       </p>
 
                       <h2 className="h2-sekcji mb-6 mt-12">
-                        Kiedy musisz być vatowcem
+                        Kiedy musicie być vatowcem
                       </h2>
                       <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
                         <li>
@@ -97,7 +97,7 @@ export default function VatWJdgArticle() {
                         <li>Handel internetowy towarami akcyzowymi</li>
                       </ul>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        W tych kategoriach rejestrujesz się od pierwszego dnia
+                        W tych kategoriach rejestrujecie się od pierwszego dnia
                         działalności. Obrót warto monitorować na bieżąco.
                       </p>
                     </div>
@@ -116,8 +116,8 @@ export default function VatWJdgArticle() {
                         Klienci B2B
                       </h3>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Firma odlicza VAT z Twojej faktury, więc liczy się dla
-                        niej kwota netto. Zwolnienie nic jej nie daje, a Tobie
+                        Firma odlicza VAT z Waszej faktury, więc liczy się dla
+                        niej kwota netto. Zwolnienie nic jej nie daje, a Wam
                         odbiera odliczenie VAT od zakupów.
                       </p>
                       <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
@@ -125,7 +125,7 @@ export default function VatWJdgArticle() {
                       </h3>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Sprzęt, oprogramowanie, usługi, samochód: VAT od nich
-                        odliczasz. Przy kosztach 5 000 zł netto miesięcznie to
+                        odliczacie. Przy kosztach 5 000 zł netto miesięcznie to
                         1 150 zł VAT miesięcznie, czyli 13 800 zł rocznie.
                       </p>
 
@@ -151,10 +151,10 @@ export default function VatWJdgArticle() {
 
                       <div className="bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-8 text-center mt-12">
                         <p className="text-gray-600 dark:text-gray-400 mb-4">
-                          Sprawdź wpływ VAT na Twoje rozliczenie
+                          Sprawdźcie wpływ VAT na Wasze rozliczenie
                         </p>
                         <Link href="/kalkulator-podatkowy" className="btn-primary inline-block">
-                          Sprawdź w kalkulatorze JDG 2026
+                          Sprawdźcie w kalkulatorze JDG 2026
                         </Link>
                       </div>
                     </div>
@@ -171,13 +171,13 @@ export default function VatWJdgArticle() {
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Faktura na 10 000 zł netto daje 12 300 zł na koncie,
-                        ale 2 300 zł (minus VAT z zakupów) oddajesz do 25. dnia
+                        ale 2 300 zł (minus VAT z zakupów) oddajecie do 25. dnia
                         następnego miesiąca albo, przy rozliczeniu kwartalnym,
                         miesiąca po kwartale.
                       </p>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        VAT płacisz, nawet gdy klient spóźnia się z zapłatą.
-                        Odkładaj go na osobne subkonto zaraz po wystawieniu
+                        VAT płacicie, nawet gdy klient spóźnia się z zapłatą.
+                        Odkładajcie go na osobne subkonto zaraz po wystawieniu
                         faktury.
                       </p>
 
@@ -185,7 +185,7 @@ export default function VatWJdgArticle() {
                         VAT a forma opodatkowania
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        VAT i PIT to osobne decyzje. Czynny VAT połączysz z
+                        VAT i PIT to osobne decyzje. Czynny VAT połączycie z
                         ryczałtem, liniowym i skalą. Ryczałtowiec nie odlicza
                         kosztów w PIT, ale VAT od zakupów odlicza. Więcej w
                         artykule 
@@ -203,7 +203,7 @@ export default function VatWJdgArticle() {
                       </h2>
                       <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
                         <li>
-                          Użytek mieszany: odliczasz 50% VAT od zakupu i
+                          Użytek mieszany: odliczacie 50% VAT od zakupu i
                           eksploatacji, bez kilometrówki
                         </li>
                         <li>
@@ -223,7 +223,7 @@ export default function VatWJdgArticle() {
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         B2B i koszty z VAT: rejestracja prawie zawsze się
                         opłaca. B2C i niskie koszty: zwolnienie jest prostsze i
-                        daje niższą cenę brutto. Z VAT możesz zrezygnować po
+                        daje niższą cenę brutto. Z VAT możecie zrezygnować po
                         roku, jeśli obrót nie przekracza 200 000 zł.
                       </p>
                     </div>
@@ -257,7 +257,7 @@ export default function VatWJdgArticle() {
                             </span>
                           </summary>
                           <p className="px-6 pb-6 text-gray-600 dark:text-gray-400">
-                            Tak, najwcześniej po roku, jeśli obrót nie przekroczył 200 000 zł. Rezygnację zgłaszasz na VAT-R.
+                            Tak, najwcześniej po roku, jeśli obrót nie przekroczył 200 000 zł. Rezygnację zgłaszacie na VAT-R.
                           </p>
                         </details>
 
@@ -394,7 +394,7 @@ export default function VatWJdgArticle() {
                 name: "Czy możemy zrezygnować z VAT po rejestracji?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Tak, najwcześniej po roku, jeśli obrót nie przekroczył 200 000 zł. Rezygnację zgłaszasz na VAT-R.",
+                  text: "Tak, najwcześniej po roku, jeśli obrót nie przekroczył 200 000 zł. Rezygnację zgłaszacie na VAT-R.",
                 },
               },
               {

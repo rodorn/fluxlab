@@ -84,8 +84,8 @@ export default function PodszywanieEmailArticle() {
           <Link href="/mail-firmowy" style={{ textDecoration: "underline" }}>
             mail firmowy
           </Link>{" "}
-          na Twojej domenie nie ma SPF, DKIM i DMARC, każdy może wysłać
-          wiadomość jak od Ciebie, a część ofert i faktur nie dociera.
+          na Waszej domenie nie ma SPF, DKIM i DMARC, każdy może wysłać
+          wiadomość jak od Was, a część ofert i faktur nie dociera.
         </p>
 
         <div
@@ -104,7 +104,7 @@ export default function PodszywanieEmailArticle() {
         >
           <div>
             <strong style={{ fontSize: "1.05rem" }}>
-              Sprawdź swoją domenę teraz
+              Sprawdźcie swoją domenę teraz
             </strong>
             <div style={{ color: "var(--article-muted)", fontSize: "0.9rem" }}>
               Darmowy audyt SPF, DKIM i DMARC. Bez rejestracji, wynik od razu.
@@ -115,7 +115,7 @@ export default function PodszywanieEmailArticle() {
             className="btn-primary"
             style={{ padding: "0.7rem 1.5rem", whiteSpace: "nowrap" }}
           >
-            Uruchom darmowy audyt
+            Uruchomcie darmowy audyt
           </Link>
         </div>
 
@@ -123,14 +123,14 @@ export default function PodszywanieEmailArticle() {
           Trzy rekordy, które decydują o wszystkim
         </h2>
         <p style={{ color: "var(--article-text)", lineHeight: 1.7 }}>
-          O tym decydują trzy publiczne wpisy w DNS Twojej domeny.
+          O tym decydują trzy publiczne wpisy w DNS Waszej domeny.
         </p>
 
         <h3 style={{ fontWeight: 700, marginTop: "1.5rem" }}>
-          SPF, kto ma prawo wysyłać w Twoim imieniu
+          SPF, kto ma prawo wysyłać w Waszym imieniu
         </h3>
         <p style={{ color: "var(--article-text)", lineHeight: 1.7 }}>
-          Lista serwerów uprawnionych do wysyłania poczty z Twojej domeny.
+          Lista serwerów uprawnionych do wysyłania poczty z Waszej domeny.
         </p>
 
         <h3 style={{ fontWeight: 700, marginTop: "1.5rem" }}>
@@ -138,7 +138,7 @@ export default function PodszywanieEmailArticle() {
         </h3>
         <p style={{ color: "var(--article-text)", lineHeight: 1.7 }}>
           Podpis każdej wiadomości. Odbiorca sprawdza, czy list wyszedł od
-          Ciebie i nie został zmieniony.
+          Was i nie został zmieniony.
         </p>
 
         <h3 style={{ fontWeight: 700, marginTop: "1.5rem" }}>
@@ -147,7 +147,7 @@ export default function PodszywanieEmailArticle() {
         <p style={{ color: "var(--article-text)", lineHeight: 1.7 }}>
           Mówi serwerom odbiorców, co zrobić z wiadomością, która nie przeszła
           SPF i DKIM. Brak DMARC albo tryb p=none oznacza, że nikt nie blokuje
-          podszywania pod Twoją domenę.
+          podszywania pod Waszą domenę.
         </p>
 
         <h2

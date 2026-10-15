@@ -139,12 +139,12 @@ function CTAFormularz() {
       setLoading(false);
       setErrorMsg(
         payload?.error ??
-          "Coś poszło nie tak. Spróbuj ponownie lub napisz bezpośrednio na pawel@fluxlab.pl.",
+          "Coś poszło nie tak. Spróbujcie ponownie lub napiszcie bezpośrednio na pawel@fluxlab.pl.",
       );
     } catch {
       setLoading(false);
       setErrorMsg(
-        "Problem z połączeniem. Spróbuj ponownie lub napisz na pawel@fluxlab.pl.",
+        "Problem z połączeniem. Spróbujcie ponownie lub napiszcie na pawel@fluxlab.pl.",
       );
     }
   }
@@ -162,10 +162,10 @@ function CTAFormularz() {
             id="kontakt-heading"
             className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4"
           >
-            Sprawdźmy, czy automatyzacja ma u Ciebie sens
+            Sprawdźmy, czy automatyzacja ma u Was sens
           </h2>
           <p className="text-gray-500 dark:text-gray-400 text-lg mb-12">
-            Wyślij krótki opis problemu. W odpowiedzi dostaniesz informację, czy
+            Wyślijcie krótki opis problemu. W odpowiedzi dostaniecie informację, czy
             widzimy potencjał na automatyzację, co można poprawić jako pierwsze i
             jaki byłby sensowny kolejny krok.
           </p>
@@ -186,7 +186,7 @@ function CTAFormularz() {
                 overflow: "hidden",
               }}
             >
-              <label htmlFor="website">Nie wypełniaj tego pola</label>
+              <label htmlFor="website">Nie wypełniajcie tego pola</label>
               <input
                 id="website"
                 name="website"
@@ -240,7 +240,7 @@ function CTAFormularz() {
                   htmlFor="problemType"
                   className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5"
                 >
-                  Co chcesz usprawnić? <span className="text-accent">*</span>
+                  Co chcecie usprawnić? <span className="text-accent">*</span>
                 </label>
                 <select
                   id="problemType"
@@ -289,7 +289,7 @@ function CTAFormularz() {
                       {problemType
                         ? opt.label
                         : opt.value === ""
-                          ? "Najpierw wybierz obszar..."
+                          ? "Najpierw wybierzcie obszar..."
                           : opt.label}
                     </option>
                   ))}
@@ -302,7 +302,7 @@ function CTAFormularz() {
                 htmlFor="message"
                 className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5"
               >
-                Opisz problem w 2–3 zdaniach{" "}
+                Opiszcie problem w 2–3 zdaniach{" "}
                 <span className="text-gray-600 dark:text-gray-400 font-normal text-xs">
                   (opcjonalnie)
                 </span>

@@ -5,7 +5,7 @@ import KalkulatorAutomatyzacji from "@/components/KalkulatorAutomatyzacji";
 export const metadata: Metadata = {
   title: "Tańsze automatyzacje, koniec opłat za kroki | Fluxlab",
   description:
-    "Zapier i Make liczą każdy krok osobno, więc pięć kroków razy tysiąc uruchomień to pięć tysięcy zadań. Policz oszczędność i przenieś to na swój serwer.",
+    "Zapier i Make liczą każdy krok osobno, więc pięć kroków razy tysiąc uruchomień to pięć tysięcy zadań. Policzcie oszczędność i przenieście to na swój serwer.",
   alternates: { canonical: "/tansze-automatyzacje" },
   openGraph: {
     title: "Tańsze automatyzacje, koniec opłat za kroki | Fluxlab",
@@ -31,9 +31,9 @@ export default function Page() {
       tool={<KalkulatorAutomatyzacji />}
       breadcrumb="Tańsze automatyzacje"
       eyebrow="Koszt narzędzi"
-      h1="Płacisz za kroki, nie za pracę, którą automat wykonuje"
-      lead="Zapier i Make liczą każdy krok osobno, więc rachunek rośnie szybciej niż liczba załatwionych spraw. Przenosimy te same scenariusze na Twój serwer, z kosztem stałym."
-      ctaLabel="Zamów przeniesienie"
+      h1="Płacicie za kroki, nie za pracę, którą automat wykonuje"
+      lead="Zapier i Make liczą każdy krok osobno, więc rachunek rośnie szybciej niż liczba załatwionych spraw. Przenosimy te same scenariusze na Wasz serwer, z kosztem stałym."
+      ctaLabel="Zamawiam przeniesienie"
       ctaNote="Wycena po zobaczeniu scenariuszy"
       checks={[
         {
@@ -42,7 +42,7 @@ export default function Page() {
         },
         {
           title: "Koszt nie rośnie z wolumenem",
-          desc: "Płacisz za serwer, nie za kroki. Dwa razy więcej zamówień nie podwaja rachunku.",
+          desc: "Płacicie za serwer, nie za kroki. Dwa razy więcej zamówień nie podwaja rachunku.",
         },
         {
           title: "Powiemy, gdy się nie opłaca",
@@ -63,7 +63,7 @@ export default function Page() {
         {
           name: "Przeniesienie",
           price: "od 790 zł",
-          desc: "Scenariusze na Twoim serwerze.",
+          desc: "Scenariusze na Waszym serwerze.",
           features: [
             "postawienie i zabezpieczenie serwera",
             "odtworzenie scenariuszy jeden do jednego",
@@ -75,7 +75,7 @@ export default function Page() {
         {
           name: "Utrzymanie",
           price: "od 200 zł/mc",
-          desc: "Żeby działało bez Twojego udziału.",
+          desc: "Żeby działało bez Waszego udziału.",
           features: [
             "aktualizacje i kopie zapasowe",
             "monitoring, czy scenariusze się wykonują",
@@ -86,7 +86,7 @@ export default function Page() {
       faq={[
         {
           q: "Czy stracimy coś na jakości?",
-          a: "Nie. To to samo narzędzie uruchomione u Ciebie, różni się tylko rozliczenie. Niszowe integracje czasem trzeba dopisać i mówimy o tym przed migracją.",
+          a: "Nie. To to samo narzędzie uruchomione u Was, różni się tylko rozliczenie. Niszowe integracje czasem trzeba dopisać i mówimy o tym przed migracją.",
         },
         {
           q: "Co, jeśli serwer padnie?",
@@ -94,17 +94,17 @@ export default function Page() {
         },
         {
           q: "Od jakiej skali to się opłaca?",
-          a: "Policz kalkulatorem wyżej. Im więcej kroków i uruchomień, tym szybciej się zwraca. Przy kilkuset uruchomieniach miesięcznie zwykle nie warto.",
+          a: "Policzcie kalkulatorem wyżej. Im więcej kroków i uruchomień, tym szybciej się zwraca. Przy kilkuset uruchomieniach miesięcznie zwykle nie warto.",
         },
         {
           q: "Co w Zapierze i Make liczy się do limitu?",
-          a: "W Zapierze każdy udany krok akcji, bez wyzwalacza, filtrów i Formattera. W Make każde uruchomienie modułu, osobno dla każdej porcji danych. Licz kroki, które coś robią, razy liczbę uruchomień.",
+          a: "W Zapierze każdy udany krok akcji, bez wyzwalacza, filtrów i Formattera. W Make każde uruchomienie modułu, osobno dla każdej porcji danych. Liczcie kroki, które coś robią, razy liczbę uruchomień.",
         },
       ]}
       formId="order_tansze_automatyzacje"
-      formHeading="Zamów przeniesienie automatyzacji"
-      formIntro="Napisz, z czego korzystasz i ile macie scenariuszy. Odeślemy wycenę i opinię, czy migracja ma sens."
-      submitLabel="Zamów wycenę"
+      formHeading="Zamówcie przeniesienie automatyzacji"
+      formIntro="Napiszcie, z czego korzystacie i ile macie scenariuszy. Odeślemy wycenę i opinię, czy migracja ma sens."
+      submitLabel="Zamawiam wycenę"
       microCopy="Do wyceny nie potrzebujemy dostępów, wystarczy opis scenariuszy."
       serviceName="Migracja automatyzacji na własny serwer"
       serviceDesc="Przeniesienie istniejących scenariuszy z usług rozliczanych za każdy krok na własną instancję n8n, wraz z utrzymaniem serwera. Od 790 zł."

@@ -96,7 +96,7 @@ export const ZRODLA: Zrodlo[] = [
     klucz: "pdf",
     nazwa: "PDF-y i skany",
     opis: "Faktury, umowy, protokoły, specyfikacje.",
-    jak: "Dokument przechodzi przez rozpoznanie tekstu, a z niego wyciąga się pola, których szukasz.",
+    jak: "Dokument przechodzi przez rozpoznanie tekstu, a z niego wyciąga się pola, których szukacie.",
     ryzyko:
       "Przy słabym skanie i nietypowym układzie rozpoznanie bywa niepewne, więc takie pozycje trafiają do ręcznego potwierdzenia zamiast trafiać do systemu po cichu.",
     przygotowac:

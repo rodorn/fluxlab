@@ -58,7 +58,7 @@ const faq = [
   {
     question: "Czy dane są bezpieczne?",
     answer:
-      "Tak. Dane trafiają do Twojej infrastruktury, dostęp mamy tylko na czas wdrożenia. NDA standardowo.",
+      "Tak. Dane trafiają do Waszej infrastruktury, dostęp mamy tylko na czas wdrożenia. NDA standardowo.",
   },
 ];
 
@@ -92,7 +92,7 @@ export default function ScrapingDanychPage() {
                 Wyciągamy dane z miejsc, w których normalnie giną
               </h1>
               <p className="animate-fade-up-3 text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-10 max-w-2xl">
-                Strony WWW, PDF-y, maile i dokumenty trafiają do Twojego CRM
+                Strony WWW, PDF-y, maile i dokumenty trafiają do Waszego CRM
                 albo arkusza. Bez ręcznego kopiowania.
               </p>
               <div className="animate-fade-up-4 flex flex-wrap items-center gap-4">
@@ -112,7 +112,7 @@ export default function ScrapingDanychPage() {
                   href="#czy-da-sie-spiac"
                   className="text-base font-semibold text-accent hover:underline"
                 >
-                  Sprawdź, czy da się to spiąć
+                  Sprawdźcie, czy da się to spiąć
                 </a>
               </div>
             </div>
@@ -134,7 +134,7 @@ export default function ScrapingDanychPage() {
             Ile to kosztuje
           </h2>
           <p className="mt-3 max-w-2xl text-gray-600 dark:text-gray-300">
-            Płacisz za dane, nie za godziny. Zbieranie robi automat.
+            Płacicie za dane, nie za godziny. Zbieranie robi automat.
           </p>
           <div className="mt-6 grid gap-5 md:grid-cols-3">
             {[
@@ -174,7 +174,7 @@ export default function ScrapingDanychPage() {
             ))}
           </div>
           <p className="mt-5 max-w-2xl text-sm text-gray-500 dark:text-gray-400">
-            Na start darmowa próbka kilkunastu rekordów, żebyś ocenił jakość
+            Na start darmowa próbka kilkunastu rekordów, żebyście ocenili jakość
             przed zapłatą.
           </p>
         </section>
@@ -275,8 +275,8 @@ export default function ScrapingDanychPage() {
                     <LandingForm
                       formId="diagnosis_scraping"
                       heading="Bezpłatna diagnoza scrapingu"
-                      intro="Opisz, jakich danych potrzebujesz i skąd. Wrócimy w 24h z odpowiedzią, czy da się je zebrać."
-                      submitLabel="Zamów diagnozę"
+                      intro="Opiszcie, jakich danych potrzebujecie i skąd. Wrócimy w 24h z odpowiedzią, czy da się je zebrać."
+                      submitLabel="Zamawiam diagnozę"
                     />
                   </section>
                 ),

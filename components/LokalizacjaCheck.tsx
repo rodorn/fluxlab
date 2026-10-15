@@ -159,7 +159,7 @@ export default function LokalizacjaCheck() {
       setWynik(data);
       setStan("gotowe");
     } catch {
-      setBlad("Brak połączenia. Spróbuj ponownie za chwilę.");
+      setBlad("Brak połączenia. Spróbujcie ponownie za chwilę.");
       setStan("blad");
     }
   }
@@ -201,7 +201,7 @@ export default function LokalizacjaCheck() {
       }
       setLeadStan("ok");
     } catch {
-      setLeadBlad("Brak połączenia. Spróbuj ponownie za chwilę.");
+      setLeadBlad("Brak połączenia. Spróbujcie ponownie za chwilę.");
       setLeadStan("blad");
     }
   }
@@ -211,10 +211,10 @@ export default function LokalizacjaCheck() {
   return (
     <div className="rounded-2xl border border-gray-200/80 dark:border-gray-800/80 bg-white/70 dark:bg-gray-900/50 p-6 md:p-8">
       <h2 className="text-xl font-bold text-gray-900 dark:text-white">
-        Sprawdź, ilu masz konkurentów w okolicy
+        Sprawdźcie, ilu macie konkurentów w okolicy
       </h2>
       <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-        Podaj miejscowość albo adres i wybierz branżę. Policzymy punkty w
+        Podajcie miejscowość albo adres i wybierzcie branżę. Policzymy punkty w
         promieniu pięciu kilometrów, zestawimy je z liczbą mieszkańców gminy i
         powiemy, ilu ludzi przypada na jeden taki punkt. Bez rejestracji.
       </p>
@@ -229,7 +229,7 @@ export default function LokalizacjaCheck() {
           void uruchom(m, b);
         }}
         zablokowane={stan === "ladowanie"}
-        wstep="Nie masz jeszcze konkretnego adresu? Zobacz na gotowym przykładzie:"
+        wstep="Nie macie jeszcze konkretnego adresu? Zobaczcie na gotowym przykładzie:"
       />
 
       <form onSubmit={sprawdz} className="mt-5 space-y-3">
@@ -259,7 +259,7 @@ export default function LokalizacjaCheck() {
           disabled={stan === "ladowanie"}
           className="btn-primary w-full justify-center px-6 py-3 text-sm disabled:opacity-50"
         >
-          {stan === "ladowanie" ? "Liczymy..." : "Sprawdź okolicę"}
+          {stan === "ladowanie" ? "Liczymy..." : "Sprawdźcie okolicę"}
         </button>
       </form>
 
@@ -361,7 +361,7 @@ export default function LokalizacjaCheck() {
           <div className="mt-5 border-t border-gray-200/70 dark:border-gray-700/70 pt-4">
             <p className="text-sm text-gray-700 dark:text-gray-300">
               To jest szybki przekrój jednej branży w jednym promieniu. Pełny
-              raport liczy zasięg dojazdu zamiast okręgu, zestawia Twoją
+              raport liczy zasięg dojazdu zamiast okręgu, zestawia Waszą
               lokalizację z sąsiednimi gminami, dokłada trend liczby mieszkańców
               i kończy się wnioskiem: otwierać, negocjować czynsz albo zrezygnować.
             </p>
@@ -377,7 +377,7 @@ export default function LokalizacjaCheck() {
                   htmlFor="lokalizacja-email"
                   className="block text-sm font-medium text-gray-900 dark:text-white"
                 >
-                  Podaj maila, odeślemy pełny raport dla tej lokalizacji
+                  Podajcie maila, odeślemy pełny raport dla tej lokalizacji
                 </label>
                 <div className="mt-2 flex flex-col gap-3 sm:flex-row">
                   <input
@@ -396,7 +396,7 @@ export default function LokalizacjaCheck() {
                   >
                     {leadStan === "wysylamy"
                       ? "Wysyłamy..."
-                      : "Wyślij zgłoszenie"}
+                      : "Wyślijcie zgłoszenie"}
                   </button>
                 </div>
                 {leadStan === "blad" && (
@@ -413,7 +413,7 @@ export default function LokalizacjaCheck() {
       <p className="mt-4 text-xs text-gray-500 dark:text-gray-400">
         Dane o punktach pochodzą z otwartej bazy map, a liczba mieszkańców z
         publicznego rejestru statystycznego. Baza map bywa niekompletna na
-        wsiach, więc wynik traktuj jako przekrój, nie spis powszechny.
+        wsiach, więc wynik traktujcie jako przekrój, nie spis powszechny.
       </p>
     </div>
   );

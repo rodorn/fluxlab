@@ -111,7 +111,7 @@ export default function MapaCheck() {
       setWynik(data);
       setStan("gotowe");
     } catch {
-      setBlad("Brak połączenia. Spróbuj ponownie za chwilę.");
+      setBlad("Brak połączenia. Spróbujcie ponownie za chwilę.");
       setStan("blad");
     }
   }
@@ -149,7 +149,7 @@ export default function MapaCheck() {
       }
       setLeadStan("ok");
     } catch {
-      setLeadBlad("Brak połączenia. Spróbuj ponownie za chwilę.");
+      setLeadBlad("Brak połączenia. Spróbujcie ponownie za chwilę.");
       setLeadStan("blad");
     }
   }
@@ -161,7 +161,7 @@ export default function MapaCheck() {
   return (
     <div className="rounded-2xl border border-gray-200/80 dark:border-gray-800/80 bg-white/70 dark:bg-gray-900/50 p-6 md:p-8">
       <h2 className="text-xl font-bold text-gray-900 dark:text-white">
-        Sprawdź, czy wyszukiwarka w ogóle ma listę Twoich podstron
+        Sprawdźcie, czy wyszukiwarka w ogóle ma listę Waszych podstron
       </h2>
       <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
         Mapa strony to lista adresów, którą wyszukiwarka pobiera jednym
@@ -194,7 +194,7 @@ export default function MapaCheck() {
           disabled={stan === "ladowanie"}
           className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
         >
-          {stan === "ladowanie" ? "Sprawdzamy..." : "Sprawdź mapę strony"}
+          {stan === "ladowanie" ? "Sprawdzamy..." : "Sprawdźcie mapę strony"}
         </button>
       </form>
 
@@ -321,7 +321,7 @@ export default function MapaCheck() {
           <div className="mt-5 border-t border-gray-200/70 dark:border-gray-700/70 pt-4">
             <p className="text-sm text-gray-700 dark:text-gray-300">
               {wynik.werdykt === "ZIELONY"
-                ? "Nie mamy Ci tu nic do sprzedania. Jeśli chcesz, możemy sprawdzać to cyklicznie i odzywać się dopiero wtedy, gdy coś się zepsuje."
+                ? "Nie mamy Wam tu nic do sprzedania. Jeśli chcecie, możemy sprawdzać to cyklicznie i odzywać się dopiero wtedy, gdy coś się zepsuje."
                 : "Naprawa to wygenerowanie mapy strony pod Wasz system, wskazanie jej w robots.txt oraz rozstrzygnięcie, co zrobić z adresami, które nie działają: przekierować na następcę czy usunąć z listy. Pokazujemy pełną listę, a nie tylko próbkę."}
             </p>
 
@@ -336,7 +336,7 @@ export default function MapaCheck() {
                   htmlFor="mapa-email"
                   className="block text-sm font-medium text-gray-900 dark:text-white"
                 >
-                  Podaj maila, odeślemy pełny przegląd wszystkich adresów
+                  Podajcie maila, odeślemy pełny przegląd wszystkich adresów
                 </label>
                 <div className="mt-2 flex flex-col gap-3 sm:flex-row">
                   <input
@@ -353,7 +353,7 @@ export default function MapaCheck() {
                     disabled={leadStan === "wysylamy"}
                     className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
                   >
-                    {leadStan === "wysylamy" ? "Wysyłamy..." : "Wyślij zgłoszenie"}
+                    {leadStan === "wysylamy" ? "Wysyłamy..." : "Wyślijcie zgłoszenie"}
                   </button>
                 </div>
                 {leadStan === "blad" && (

@@ -5,7 +5,7 @@ import WidocznoscCheck from "@/components/WidocznoscCheck";
 export const metadata: Metadata = {
   title: "Strona nie pokazuje się w Google, od 190 zł | Fluxlab",
   description:
-    "Jedno polecenie zostawione po wersji roboczej potrafi wyłączyć całą stronę z wyników. Sprawdź za darmo trzy miejsca, w których siedzi taka blokada.",
+    "Jedno polecenie zostawione po wersji roboczej potrafi wyłączyć całą stronę z wyników. Sprawdźcie za darmo trzy miejsca, w których siedzi taka blokada.",
   alternates: { canonical: "/widocznosc-w-google" },
   openGraph: {
     title: "Strona nie pokazuje się w Google, od 190 zł | Fluxlab",
@@ -31,13 +31,13 @@ export default function Page() {
       tool={<WidocznoscCheck />}
       breadcrumb="Widoczność w Google"
       eyebrow="Blokada indeksowania"
-      h1="Twoja strona może mieć w kodzie polecenie, żeby jej nie pokazywać"
+      h1="Wasza strona może mieć w kodzie polecenie, żeby jej nie pokazywać"
       lead="Wersja robocza powstaje z blokadą dla wyszukiwarek, a potem trafia na serwer razem z nią. Właściciel wchodzi z zakładki i nic nie widzi, a klienci nie znajdują firmy."
-      ctaLabel="Sprawdź swoją stronę"
+      ctaLabel="Sprawdźcie swoją stronę"
       ctaNote="Sprawdzenie za darmo, od ręki"
       powiazane={[
         {
-          przed: "Szukasz miejsca pod lokal? Zobacz",
+          przed: "Szukacie miejsca pod lokal? Zobaczcie",
           kotwica: "analizę lokalizacji",
           href: "/analiza-lokalizacji",
           po: ".",
@@ -109,13 +109,13 @@ export default function Page() {
         },
         {
           q: "Co jeśli nic nie znajdziecie, a mimo to nie widać mnie w wynikach?",
-          a: "Wtedy nie płacisz i powiemy wprost, od czego zacząć szukać przyczyny.",
+          a: "Wtedy nie płacicie i powiemy wprost, od czego zacząć szukać przyczyny.",
         },
       ]}
       formId="order_widocznosc"
-      formHeading="Zamów naprawę widoczności"
-      formIntro="Podaj adres strony. Odeślemy, co trzeba zmienić, i wycenę."
-      submitLabel="Zamów naprawę"
+      formHeading="Zamówcie naprawę widoczności"
+      formIntro="Podajcie adres strony. Odeślemy, co trzeba zmienić, i wycenę."
+      submitLabel="Zamawiam naprawę"
       microCopy="Dostępy są potrzebne dopiero do naprawy."
       serviceName="Usunięcie blokady indeksowania strony"
       serviceDesc="Wykrycie i usunięcie poleceń blokujących indeksowanie strony w wyszukiwarce, w kodzie strony, nagłówkach serwera i pliku robots, wraz ze zgłoszeniem do ponownego odwiedzenia. Od 190 zł."
