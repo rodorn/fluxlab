@@ -5363,3 +5363,12 @@ Hamulec budżetu odłożył 12.10 wieczorem i 13.10 wszystkie zmiany (Z3 do Z5, 
 **Dowód:** Zoho INBOX: ostatnia wiadomość `INBOX::129` (19:53), 0 nowych odpowiedzi na outreach do agencji; Wysłane: 0 odpowiedzi do comparic.pl i ddbehance@gmail.com.
 **Dla Pawła:** HAJS METRICS (`INBOX::129`, 19:53) czeka na decyzję o 1 000 zł netto plus 5% przez 12 miesięcy; comparic (`INBOX::128`, 15:32) czeka na kwotę budżetu i platformy. Bez Ciebie nie odpisujemy.
 **Zostało otwarte:** Z17 od 16.10 00:05, Z18, Z21, Z23, Z24. Awaria rolki FB (`fluxlab-fb-rolka.service`) do obsłużenia w projekcie fluxlab-meta.
+<!-- WYSLANO 2026-10-15 23:06 -->
+
+## 2026-10-15 23:43
+**Kanał:** Google (Z17 planu). Budżet: rytm „zwolnij”, hamulec alarm, prognoza 123% tygodnia, więc tylko zadanie lekkie.
+**Co zrobione:** 10 żądań indeksowania w Search Console przyjętych (00:06:00 do 00:10:43, bez limitu) dla 8 artykułów strefy wiedzy, `/automatyzacja-salesforce` i `/case-study`; wszystkie były poza indeksem.
+**Ruch:** raport 23:43: doba 107 odsłon, 91 osób (+148% wobec średniej 43,1); źródła: l.facebook.com 5, Google 3, Bing 3, mail 1, reszta bez odsyłacza. Narzędzia: 4 uruchomienia (audyt 3, przykład skanu 2, numer KSeF 1, kalkulator 1). Tydzień 393 odsłony, 283 osoby.
+**Dowód:** wynik `gsc_indeksuj.py` w linii Z17 planu; przed żądaniem curl z VPS: 10 × 200, canonical na siebie, 10 × w `sitemap.xml`.
+**Dla Pawła:** HAJS METRICS (`INBOX::129`, 15.10 19:53) czeka na decyzję o 1 000 zł netto plus 5% przez 12 miesięcy; comparic (`INBOX::128`, 15:32) czeka na kwotę budżetu i platformy (stan z 22:43, bez nowego sprawdzenia Zoho).
+**Zostało otwarte:** Z18 (render Google po Z17), Z21, Z23, Z24. Następne okno żądań indeksowania od 17.10 00:11.
