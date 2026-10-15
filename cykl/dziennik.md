@@ -5246,3 +5246,11 @@ Hamulec budżetu odłożył 12.10 wieczorem i 13.10 wszystkie zmiany (Z3 do Z5, 
 **Dowód:** wysłane 09:01 z pawel@fluxlab.pl: hello@digitalmonsters.studio, biuro@ibpartner.pl, kontakt@lumen-technik.com, biuro@arsmedia.pl, biuro@riocreativo.pl (identyfikatory Resend w Z3 planu). 09:32: Resend 5/5 delivered, 0 bounced; Zoho INBOX 0 odpowiedzi, Spam 0.
 **Dla Pawła:** usługa `fluxlab-fb-zlecenia.service` (user) padła 09:13 na timeout po 30 min (start 08:43), poszło powiadomienie mailem; to automat innej sesji, timer ponowi.
 **Zostało otwarte:** Z6 pomiar 12:46 (wejścia z utm `agencje`), Z8 druga partia agencji 14:46 (9 plików w kolejce, limit ≤12).
+
+## 2026-10-15 09:46
+**Kanał:** outreach (Z8 planu, wzięte wcześniej w oknie wysyłki; Z6 to pomiar o 12:46, potrzebuje czasu od wysyłek).
+**Co zrobione:** druga partia: 4 maile do agencji reklamowych bez adresu do e-Doręczeń w KRS (018 do 021), każdy z faktami z odpisu, źródłem adresu i zdaniem o wypisaniu.
+**Ruch:** raport 09:43: doba 89 odsłon, 71 osób (średnia 43,0); źródła: useme.com 9, Google 4, Bing 2, reszta bez odsyłacza. Narzędzia: 3 uruchomienia (audyt 3, przykład skanu 2, numer KSeF 1).
+**Dowód:** wysłane 09:43 z pawel@fluxlab.pl: biuro@roxart.pl, sekretariat@bhz-reklama.pl, biuro@aspe.pl, biuro@motomaszyny.pl (identyfikatory Resend w Z8 planu). Resend 09:45: 4/4 delivered, 0 bounced; Zoho 0 odpowiedzi.
+**Dla Pawła:**
+**Zostało otwarte:** Z6 pomiar 12:46 (wejścia z utm `agencje` po Z3 i Z8), Z15, Z17 (od 16.10 00:05), Z18, Z21, Z23, Z24. W kolejce agencji 022_adream na piątek.
