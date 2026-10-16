@@ -63,7 +63,47 @@ def tabela(tytul, licznik, kol="sesje"):
         )
 
 
+def odsiew(w):
+    """Sesje, ktore nie sa ludzmi: pary i serie testowe.
+
+    Para: dwie lub wiecej sesji bez odsylacza zaczete w tej samej sekundzie
+    (podglad linku, skaner poczty). Seria testowa: 15.10 08:23 do 09:19 inna
+    sesja otworzyla 37 razy po jednej stronie jako Chrome na Android. Prog: co
+    najmniej 5 sesji bez odsylacza, kazda po 1 odslonie, ta sama trojka
+    przegladarka/system/telefon, wszystkie w oknie 15 minut.
+    """
+    ods = defaultdict(list)
+    for r in w:
+        if r[5] == "odslona" and r[3]:
+            ods[r[3]].append(r)
+    gole = {s: v for s, v in ods.items() if not any(r[2] for r in v)}
+    start = defaultdict(set)
+    for s, v in gole.items():
+        start[min(r[0] for r in v)].add(s)
+    pary = set().union(*(x for x in start.values() if len(x) > 1))
+    pojedyncze = defaultdict(list)
+    for s, v in gole.items():
+        if len(v) == 1 and s not in pary:
+            pojedyncze[(v[0][6], v[0][7], v[0][4])].append((v[0][0], s))
+    serie = set()
+    for lista in pojedyncze.values():
+        lista.sort()
+        for i, (t0, _) in enumerate(lista):
+            okno = [s for t, s in lista[i:] if t - t0 < 900]
+            if len(okno) >= 5:
+                serie.update(okno)
+    return pary, serie
+
+
 def ruch(w):
+    pary, serie = odsiew(w)
+    for nazwa, od in (("24 h", DOBA), ("7 dni", TYDZIEN)):
+        sesje = {r[3] for r in w if r[0] > od and r[5] == "odslona"}
+        print(
+            f"\n## Odsiew, {nazwa}: ludzie {len(sesje - pary - serie)}, "
+            f"pary {len(sesje & pary)}, serie testowe {len(sesje & serie)}"
+        )
+    w = [r for r in w if r[3] not in pary and r[3] not in serie]
     odslony = [r for r in w if r[5] == "odslona"]
     for nazwa, od in (("24 h", DOBA), ("7 dni", TYDZIEN)):
         s = defaultdict(set)
