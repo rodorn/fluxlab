@@ -73,8 +73,8 @@ export default function StronyWww() {
           <div className="absolute inset-0 -z-10" aria-hidden="true">
             <div className="blob blob-accent w-[520px] h-[520px] -top-32 -left-32 animate-drift" />
           </div>
-          <div className="container-wide max-w-3xl mx-auto">
-            <div>
+          <div className="container-wide">
+            <div className="max-w-3xl">
               <p className="section-label mb-4 animate-fade-up-1">Usługa</p>
               <h1
                 id="hero-heading"
@@ -98,7 +98,7 @@ export default function StronyWww() {
           </div>
         </section>
 
-        <section className="container-wide pb-12 max-w-5xl">
+        <section className="container-wide pb-12">
           <div className="grid gap-5 md:grid-cols-[2fr_3fr]">
             <Link
               href="/realizacje"
@@ -193,7 +193,7 @@ export default function StronyWww() {
 
         <section
           id="kontakt"
-          className="scroll-mt-20 container-wide max-w-3xl mx-auto pb-20"
+          className="scroll-mt-20 container-wide pb-20"
         >
           <LandingForm
             formId="diagnosis_web"

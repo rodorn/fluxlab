@@ -131,7 +131,7 @@ export default function LandingForm({
   }
 
   return (
-    <div className="max-w-5xl mx-auto grid lg:grid-cols-5 gap-8 lg:gap-10 items-start">
+    <div className="grid lg:grid-cols-5 gap-8 lg:gap-10 items-start">
       <div className="lg:col-span-2">
         <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
           {heading}

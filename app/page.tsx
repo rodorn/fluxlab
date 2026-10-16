@@ -88,7 +88,7 @@ export default function Home() {
 
         <section
           aria-labelledby="oferta"
-          className="container-wide max-w-6xl pb-16"
+          className="container-wide pb-16"
         >
           <h2 id="oferta" className="sr-only">
             Oferta
@@ -146,7 +146,7 @@ export default function Home() {
         </section>
 
         <section className="border-t border-gray-200 dark:border-white/10 py-14">
-          <div className="container-wide max-w-5xl grid gap-8 md:grid-cols-2 md:items-center">
+          <div className="container-wide grid gap-8 md:grid-cols-2 md:items-center">
             <div>
               <p className="section-label mb-3">Ostatnia realizacja</p>
               <h2 className="text-2xl font-bold lg:text-3xl">
