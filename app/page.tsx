@@ -27,8 +27,8 @@ const OFERTA = [
     opis: "Lead z formularza, telefonu i poczty trafia sam do handlowca, z zadaniem „zadzwoń w 15 minut”.",
     punkty: [
       "abonament 499 zł/mies. do 3 osób, potem 99 zł za osobę",
-      "do 3 handlowców wdrożenie 1 zł (beta)",
-      "większy zespół: wdrożenie 12 900 zł",
+      "pilotaż do 3 osób: wdrożenie 1 zł, miejsca ograniczone",
+      "z dowolnymi integracjami: 12 900 zł, z narzędziami AI: 24 900 zł",
     ],
     cta: "Zobacz CRM",
   },
