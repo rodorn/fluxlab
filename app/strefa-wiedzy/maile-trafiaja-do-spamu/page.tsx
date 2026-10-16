@@ -120,8 +120,11 @@ export default function MaileSpamArticle() {
 
         <h3 style={{ fontWeight: 700, marginTop: "1.5rem" }}>1. Brak DMARC</h3>
         <p style={{ color: "var(--article-text)", lineHeight: 1.7 }}>
-          Przyczyna numer jeden. Od 2024 roku Gmail i Outlook wymagają DMARC,
-          a bez niego część wiadomości cicho trafia do spamu.
+          Przyczyna numer jeden. Od 2024 roku Gmail i Outlook wymagają{" "}
+          <Link href="/slownik#dmarc" style={{ color: "var(--article-link)" }}>
+            DMARC
+          </Link>
+          , a bez niego część wiadomości cicho trafia do spamu.
         </p>
 
         <h3 style={{ fontWeight: 700, marginTop: "1.5rem" }}>
