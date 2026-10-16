@@ -9,6 +9,7 @@
 ## Co robimy
 
 - [Automatyzacja leadów i CRM](https://fluxlab.pl/automatyzacja-leadow-crm): zgłoszenie z formularza trafia do CRM samo, z właścicielem i pierwszym zadaniem.
+- [Własny CRM (FluxCRM)](https://fluxlab.pl/wlasny-crm): lead z formularza, telefonu i poczty trafia sam do opiekuna z zadaniem „zadzwoń w 15 minut”; uruchomienie w trzy tygodnie, pilotaż wdrożenia za 1 zł, abonament 499 zł netto miesięcznie do 3 osób.
 - [Integracje i dane](https://fluxlab.pl/scraping-danych): spinanie systemów przez interfejsy programistyczne, porządkowanie danych, raporty, które przychodzą same.
 - [Integracja CRM z systemem magazynowo-księgowym](https://fluxlab.pl/integracja-crm-z-erp): kontrahenci, dokumenty sprzedaży, stany i ceny, z kolejką ponowień.
 - [Wdrożenie n8n i jego koszt](https://fluxlab.pl/wdrozenie-n8n-cena): licencja, serwer, praca i opieka rozbite na osobne liczby.
