@@ -9,11 +9,11 @@ import TrackedCTA from "@/components/TrackedCTA";
 export const metadata: Metadata = {
   title: "Automatyzacja follow-upów w CRM | Fluxlab",
   description:
-    "Follow-upy w CRM: przypomnienia sprzedażowe, sekwencje po etapach deala i eskalacje, które pilnują leadów zamiast handlowca.",
+    "Follow-upy w CRM: przypomnienia sprzedażowe, sekwencje po etapach transakcji i eskalacje, które pilnują leadów zamiast handlowca.",
   openGraph: {
     title: "Automatyzacja follow-upów w CRM | Fluxlab",
     description:
-      "Follow-upy w CRM: przypomnienia sprzedażowe, sekwencje po etapach deala i eskalacje, które pilnują leadów zamiast handlowca.",
+      "Follow-upy w CRM: przypomnienia sprzedażowe, sekwencje po etapach transakcji i eskalacje, które pilnują leadów zamiast handlowca.",
     locale: "pl_PL",
     type: "website",
     images: [
@@ -41,7 +41,7 @@ const workflowSteps = [
   {
     n: "1",
     title: "Wejście do sekwencji",
-    desc: "Zmiana etapu deala, np. „wysłana oferta”, uruchamia sekwencję.",
+    desc: "Zmiana etapu transakcji, np. „wysłana oferta”, uruchamia sekwencję.",
   },
   {
     n: "2",
@@ -76,7 +76,7 @@ const pricing = [
     name: "Pierwsza sekwencja",
     price: "od 1 800 zł",
     description:
-      "Jedna sekwencja dla wybranego etapu deala: zadania, szablony, pauza po odpowiedzi.",
+      "Jedna sekwencja dla wybranego etapu transakcji: zadania, szablony, pauza po odpowiedzi.",
     highlighted: true,
   },
   {
@@ -158,7 +158,7 @@ export default function AutomatyzacjaFollowUp() {
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
                 Ustawiamy sekwencje przypomnień i eskalacje, które pilnują
-                każdego deala zamiast handlowca. Sekwencja sama staje, gdy klient
+                każdej transakcji zamiast handlowca. Sekwencja sama staje, gdy klient
                 odpowie.
               </p>
               <div className="mt-8 flex">
@@ -208,7 +208,7 @@ export default function AutomatyzacjaFollowUp() {
               Przykład: 4 handlowców, po 30 deali za 15 000 zł. Spadek konwersji
               z 22% do 9% przez brak drugiego kontaktu to 234 000 zł niepodjętej
               sprzedaży kwartalnie. Wdrożenie dla takiego zespołu zwraca się
-              przy odzyskaniu jednego deala.
+              przy odzyskaniu jednej transakcji.
             </p>
           </section>
 

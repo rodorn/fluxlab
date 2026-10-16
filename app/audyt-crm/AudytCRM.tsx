@@ -194,7 +194,7 @@ const RECOMMENDATIONS: Record<Area, string[]> = {
   ],
   przepisywanie: [
     "Zacznij od formularza www, to zwykle największe źródło ręcznego przepisywania.",
-    "Make/Zapier/n8n: webhook formularza → tworzenie kontaktu/firmy/deala w CRM jednym kliknięciem.",
+    "Make/Zapier/n8n: webhook formularza → tworzenie kontaktu/firmy/transakcji w CRM jednym kliknięciem.",
     "Dla maili z zapytaniami, parser (regex albo LLM) wyciągający dane do CRM.",
   ],
   jakosc_danych: [

@@ -34,7 +34,7 @@ export default function OsCzasuStrony() {
         {ETAPY.map((e) => (
           <li key={e.co} className="border-l-2 border-accent pl-3">
             <p className="text-lg font-bold text-gray-900 dark:text-white">
-              {dzis ? fmt(zaDniRobocze(dzis, e.dni)) : `${e.dni} dni rob.`}
+              {dzis ? fmt(zaDniRobocze(dzis, e.dni)) : `${e.dni} dni roboczych`}
             </p>
             <p className="text-sm text-gray-600 dark:text-gray-400">{e.co}</p>
           </li>

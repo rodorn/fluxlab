@@ -203,7 +203,7 @@ export const businessTools: Narzedzie[] = [
     title: "Automatyzacja vs zatrudnienie",
     pytanie: "Zatrudnić czy zautomatyzować?",
     description:
-      "Porównaj koszt miesięcznej ręcznej pracy z kosztem wdrożenia automatyzacji. 4 inputy, 1 jasna decyzja.",
+      "Porównaj koszt miesięcznej ręcznej pracy z kosztem wdrożenia automatyzacji. Cztery liczby i jasna odpowiedź.",
     href: "/strefa-wiedzy/automatyzacja-vs-zatrudnienie#kalkulator",
     ikona: "kalkulator",
   },

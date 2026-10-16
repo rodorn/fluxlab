@@ -48,7 +48,7 @@ const workflowSteps = [
   {
     n: "2",
     title: "Reguły routingu",
-    desc: "Region, produkt, wartość deala, obciążenie pipeline'u i dostępność handlowca decydują, kto dostaje leada.",
+    desc: "Region, produkt, wartość transakcji, obciążenie pipeline'u i dostępność handlowca decydują, kto dostaje leada.",
     accent: true,
   },
   {
@@ -84,7 +84,7 @@ const faq = [
   {
     question: "Po jakich kryteriach najlepiej rozdzielać leady?",
     answer:
-      "Najczęściej region, produkt, źródło i wartość deala, do tego obciążenie pipeline'u i dostępność. Najlepiej działa kombinacja 2-3 kryteriów, nie jeden wymiar i nie dwanaście.",
+      "Najczęściej region, produkt, źródło i wartość transakcji, do tego obciążenie pipeline'u i dostępność. Najlepiej działa kombinacja 2-3 kryteriów, nie jeden wymiar i nie dwanaście.",
   },
   {
     question: "Jak obsłużyć urlopy bez ręcznego przepinania?",
@@ -292,7 +292,7 @@ export default function AutomatycznePrzypisywanieLeadow() {
                       <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                         Zaczynamy od jednego źródła leadów, jednej reguły
                         (round-robin między 2-3 handlowcami) i automatycznego
-                        deala w CRM z powiadomieniem. To 2-4 dni robocze.
+                        transakcji w CRM z powiadomieniem. To 2-4 dni robocze.
                         Kolejne reguły dokładamy po dwóch tygodniach pracy na
                         żywych danych.
                       </p>

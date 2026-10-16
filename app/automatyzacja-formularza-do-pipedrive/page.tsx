@@ -9,11 +9,11 @@ import TrackedCTA from "@/components/TrackedCTA";
 export const metadata: Metadata = {
   title: "Formularz do Pipedrive: leady bez przepisywania | Fluxlab",
   description:
-    "Jak połączyć formularz na stronie z Pipedrive bez przepisywania leadów. Tworzenie osoby, firmy i deala, routing do handlowca, zadanie kontaktu.",
+    "Jak połączyć formularz na stronie z Pipedrive bez przepisywania leadów. Tworzenie osoby, firmy i transakcji, routing do handlowca, zadanie kontaktu.",
   openGraph: {
     title: "Formularz do Pipedrive: leady bez przepisywania | Fluxlab",
     description:
-      "Jak połączyć formularz na stronie z Pipedrive bez przepisywania leadów. Tworzenie osoby, firmy i deala, routing do handlowca, zadanie kontaktu.",
+      "Jak połączyć formularz na stronie z Pipedrive bez przepisywania leadów. Tworzenie osoby, firmy i transakcji, routing do handlowca, zadanie kontaktu.",
     locale: "pl_PL",
     type: "article",
     images: [

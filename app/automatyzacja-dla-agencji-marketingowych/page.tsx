@@ -46,7 +46,7 @@ const useCases = [
   {
     title: "Godziny i rentowność klienta",
     description:
-      "Czas z time trackera zestawiamy z umową klienta. Przekroczenie budżetu retainera widzisz od razu, a nie przy fakturowaniu.",
+      "Czas z rejestru godzin zestawiamy z umową klienta. Przekroczenie budżetu retainera widzisz od razu, a nie przy fakturowaniu.",
   },
   {
     title: "Fakturowanie retainerów",

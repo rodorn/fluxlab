@@ -42,7 +42,7 @@ const crmProblems = [
   {
     n: "1",
     title: "Lead z formularza do CRM ze wzbogaceniem",
-    make: "Webhook, zapytanie do GUS, utworzenie osoby i deala. Działa w 30 minut, ale każdy moduł to osobna operacja.",
+    make: "Webhook, zapytanie do GUS, utworzenie osoby i transakcji. Działa w 30 minut, ale każdy moduł to osobna operacja.",
     n8n: "Ta sama struktura, a logikę deduplikacji mieści jeden węzeł z kodem. Jeden lead to jedno wykonanie.",
     winner: "Remis przy małej skali, n8n przy rozbudowanej deduplikacji.",
   },

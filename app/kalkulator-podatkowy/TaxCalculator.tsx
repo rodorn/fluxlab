@@ -2077,7 +2077,7 @@ export default function TaxCalculator() {
                   {
                     value: "malyPlus",
                     label: "Mały ZUS Plus",
-                    desc: `Przychód z poprz. roku ≤ ${pln(MALY_PLUS_REVENUE_LIMIT)}. Max ${MALY_PLUS_MAX_MONTHS} mies. w 60. Podstawa od dochodu.`,
+                    desc: `Przychód z poprzedniego roku ≤ ${pln(MALY_PLUS_REVENUE_LIMIT)}. Max ${MALY_PLUS_MAX_MONTHS} mies. w 60. Podstawa od dochodu.`,
                   },
                   {
                     value: "pelny",
@@ -2443,7 +2443,7 @@ export default function TaxCalculator() {
                 <strong>Min. wynagrodzenie:</strong> {pln(MIN_WAGE)}
               </div>
               <div>
-                <strong>Przeciętne wynagr.:</strong> {pln(AVG_SALARY)}
+                <strong>Przeciętne wynagrodzenie:</strong> {pln(AVG_SALARY)}
               </div>
             </div>
           </div>

@@ -127,7 +127,7 @@ interface Recommendation {
 }
 
 const TEAM_INSIGHT: Record<TeamSize, string> = {
-  "1": "Jedna osoba obsługująca proces to single point of failure, choroba, urlop albo zmiana pracy zatrzymuje cały przepływ. Automatyzacja działa tu też jako ubezpieczenie ciągłości, nie tylko oszczędność czasu.",
+  "1": "Jedna osoba obsługująca proces to jedyny punkt awarii: choroba, urlop albo zmiana pracy zatrzymuje cały przepływ. Automatyzacja działa tu też jako ubezpieczenie ciągłości, nie tylko oszczędność czasu.",
   "2-3":
     "Przy 2–3 osobach zaczyna kosztować koordynacja: każdy ma trochę inny sposób, dane wpisywane są niespójnie, a follow-up zależy od tego, kto akurat zauważył maila. Automatyzacja usuwa rozbieżności między osobami.",
   zespol:

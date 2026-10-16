@@ -66,7 +66,7 @@ const pricing = [
     price: "0 zł",
     desc: "Komplet do decyzji o umowie albo większej zaliczce.",
     features: [
-      "wszystko ze szybkiego checku",
+      "wszystko z szybkiego sprawdzenia",
       "odpis KRS i wiek domeny",
       "raport PDF z uzasadnieniem każdej flagi",
     ],
