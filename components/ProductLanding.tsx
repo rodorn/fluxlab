@@ -17,6 +17,9 @@ export interface Tier {
   desc: string;
   features: string[];
   featured?: boolean;
+  /** Dokąd prowadzi przycisk, domyślnie do formularza na dole. */
+  href?: string;
+  cta?: string;
 }
 
 export interface ProductLandingProps {
@@ -120,16 +123,17 @@ export default function ProductLanding(p: ProductLandingProps) {
                 {cenaOd(p.pricing)}
               </p>
             )}
+            {/* Na stronie z narzędziem pierwszym krokiem jest narzędzie. */}
             <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
-              <a href="#zamow" className="btn-primary">
-                Napisz do nas
+              <a href={p.tool ? "#narzedzie" : "#zamow"} className="btn-primary">
+                {p.tool ? p.ctaLabel : "Napisz do nas"}
               </a>
               {p.tool && (
                 <a
-                  href="#narzedzie"
+                  href="#zamow"
                   className="text-sm font-semibold text-accent hover:underline"
                 >
-                  {p.ctaLabel} ↓
+                  Napisz do nas ↓
                 </a>
               )}
             </div>
@@ -195,10 +199,10 @@ export default function ProductLanding(p: ProductLandingProps) {
                     ))}
                   </ul>
                   <a
-                    href="#zamow"
+                    href={t.href ?? "#zamow"}
                     className="btn-primary mt-6 w-full justify-center text-center text-sm"
                   >
-                    Zamawiam
+                    {t.cta ?? "Zamawiam"}
                   </a>
                 </div>
               ))}

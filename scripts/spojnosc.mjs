@@ -598,6 +598,7 @@ if (sankcjeDaty.size > 1) {
   // krotkiej liscie wyjatkow.
   const RZECZOWNIKI_AM = new Set([
     "zamawiam",
+    "zgadzam", // klauzula zgody wypowiadana przez klienta
     "diagram",
     "program",
     "harmonogram",

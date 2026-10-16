@@ -470,7 +470,9 @@ export default function AudytCheck() {
       </form>
 
       {stan === "ladowanie" && (
-        <>
+        // Wysokość zbliżona do wyniku, żeby w trakcie badania cennik nie
+        // podjeżdżał pod pole, a potem nie uciekał w dół.
+        <div className="min-h-[70vh]">
           <ol className="mt-5 space-y-2">
             {ETAPY.map((tekst, i) => (
               <li
@@ -499,7 +501,7 @@ export default function AudytCheck() {
             Pełne badanie trwa zwykle od trzydziestu sekund do minuty, bo ważymy
             każdy plik osobno, zamiast wierzyć deklaracjom serwera.
           </p>
-        </>
+        </div>
       )}
 
       {stan === "blad" && (
@@ -561,6 +563,11 @@ export default function AudytCheck() {
             </div>
           </div>
 
+          {/* Płatny audyt całej strony */}
+          {wynik.osiagalna && (
+            <ZamowAudytCalosci domena={wynik.domena} miejsce="wynik" />
+          )}
+
           {/* Raport na maila */}
           <div className="rounded-2xl border border-gray-200 bg-gray-50/60 p-6 dark:border-gray-800 dark:bg-gray-900/40">
             {mailStan === "ok" ? (
@@ -610,8 +617,8 @@ export default function AudytCheck() {
                       className="mt-0.5 h-4 w-4 shrink-0 rounded border-gray-300 text-accent focus:ring-accent dark:border-gray-600"
                     />
                     <span>
-                      Zgadzamy się na przesłanie raportu na podany adres i na
-                      kontakt w sprawie jego wyników. Zgodę możemy wycofać w
+                      Zgadzam się na przesłanie raportu na podany adres i na
+                      kontakt w sprawie jego wyników. Zgodę mogę wycofać w
                       każdej chwili, odpisując na wiadomość.
                     </span>
                   </label>
@@ -1077,11 +1084,6 @@ export default function AudytCheck() {
                 przesłać im tę listę.
               </p>
             </div>
-          )}
-
-          {/* Płatny audyt całej strony */}
-          {wynik.osiagalna && (
-            <ZamowAudytCalosci domena={wynik.domena} miejsce="wynik" />
           )}
 
           {/* Metodyka */}

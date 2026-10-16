@@ -35,7 +35,7 @@ export default function Page() {
       eyebrow="Darmowy audyt techniczny"
       h1="Zobacz, co jest nie tak z Twoją stroną, zanim komukolwiek zapłacisz"
       lead="Wpisz adres i poczekaj kilkadziesiąt sekund. Zmierzymy szybkość na komputerze i telefonie, certyfikat, widoczność w wyszukiwarce, dostęp dla asystentów AI i zabezpieczenia poczty. Dostaniesz listę poprawek w kolejności, z ceną naprawy. Za darmo i bez rejestracji."
-      ctaLabel="Porozmawiajmy o naprawie"
+      ctaLabel="Zrób darmowy audyt"
       ctaNote="Diagnoza nic nie kosztuje"
       powiazane={[
         {
@@ -75,6 +75,20 @@ export default function Page() {
             "wycena naprawy",
           ],
           featured: true,
+          href: "#narzedzie",
+          cta: "Zrób darmowy audyt",
+        },
+        {
+          name: "Audyt całej strony",
+          price: "10 zł",
+          desc: "Wszystkie podstrony, raport mailem, płacisz po otrzymaniu.",
+          features: [
+            "do 200 podstron z mapy witryny",
+            "błędy 404, tytuły, opisy i nagłówki",
+            "obrazy bez opisu i niedziałające linki",
+          ],
+          href: "#audyt-calosci",
+          cta: "Zamawiam",
         },
         {
           name: "Naprawa warstwy krytycznej",
