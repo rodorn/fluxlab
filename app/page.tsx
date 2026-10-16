@@ -81,8 +81,8 @@ export default function Home() {
             href="/realizacje"
             className="mt-8 inline-flex items-center gap-2 rounded-full border border-gray-200 dark:border-white/15 px-4 py-1.5 text-sm text-gray-700 dark:text-white/75 hover:border-accent transition-colors"
           >
-            <span className="font-semibold text-accent">45 → 97</span>
-            ostatnia strona klienta w audycie, gotowa w 12 dni →
+            <span className="font-semibold text-accent">12 dni</span>
+            tyle zajęła ostatnia strona dla klienta, od opłacenia do startu →
           </Link>
         </section>
 
