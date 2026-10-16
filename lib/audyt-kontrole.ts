@@ -156,6 +156,101 @@ export const KATALOG: Record<string, OpisKontroli> = {
   },
 };
 
+export const KATALOG_E: Record<string, OpisKontroli> = {
+  // --- E: prawo, zaufanie, sprzedaż ---------------------------------------
+  brak_polityki: {
+    tytul: "Brak linku do polityki prywatności",
+    skutek:
+      "Zbierasz dane z formularza albo z analityki bez widocznej informacji, co z nimi robisz, a za to RODO przewiduje kary i skargi do UODO.",
+    waga: "wazne",
+    obszar: "prawo",
+    koszt: 200,
+    dostep: PANEL,
+    zakres: "witryna",
+  },
+  sledzenie_bez_zgody: {
+    tytul: "Skrypty śledzące bez widocznej zgody na cookies",
+    skutek:
+      "Analityka albo piksel reklamowy startują, zanim odwiedzający się zgodzi, co narusza prawo telekomunikacyjne i RODO, a Google Ads bez zgody przestaje liczyć konwersje.",
+    waga: "wazne",
+    obszar: "prawo",
+    koszt: 250,
+    dostep: KOD,
+    zakres: "witryna",
+  },
+  brak_telefonu: {
+    tytul: "Brak klikalnego numeru telefonu",
+    skutek:
+      "Na telefonie klient nie zadzwoni jednym dotknięciem, tylko musi przepisać numer, a część osób w tym miejscu rezygnuje.",
+    waga: "drobne",
+    obszar: "prawo",
+    koszt: 50,
+    dostep: PANEL,
+    zakres: "witryna",
+  },
+  brak_emaila: {
+    tytul: "Brak klikalnego adresu e-mail",
+    skutek:
+      "Kto woli napisać niż dzwonić, musi szukać adresu albo go przepisywać, więc część zapytań w ogóle nie powstaje.",
+    waga: "drobne",
+    obszar: "prawo",
+    koszt: 50,
+    dostep: PANEL,
+    zakres: "witryna",
+  },
+  brak_nip: {
+    tytul: "Na stronie nie widać NIP firmy",
+    skutek:
+      "Klient nie sprawdzi, z kim ma do czynienia, a firma bez danych rejestrowych wygląda mniej wiarygodnie, zwłaszcza przy pierwszym zamówieniu.",
+    waga: "drobne",
+    obszar: "prawo",
+    koszt: 50,
+    dostep: PANEL,
+    zakres: "witryna",
+  },
+  brak_formularza: {
+    tytul: "Brak formularza kontaktowego",
+    skutek:
+      "Klient, który nie chce dzwonić ani otwierać poczty, nie ma jak zostawić zapytania, więc odchodzi do konkurencji.",
+    waga: "drobne",
+    obszar: "prawo",
+    koszt: 300,
+    dostep: KOD,
+    zakres: "witryna",
+  },
+  formularz_404: {
+    tytul: "Formularz wysyła dane pod adres, który nie istnieje",
+    skutek:
+      "Klient wypełnia formularz, klika wyślij i trafia na błąd, a zapytanie przepada, zanim ktokolwiek je zobaczy.",
+    waga: "wazne",
+    obszar: "prawo",
+    koszt: 200,
+    dostep: KOD,
+    zakres: "witryna",
+  },
+  sklep_bez_regulaminu: {
+    tytul: "Sklep bez linku do regulaminu",
+    skutek:
+      "Sprzedaż przez internet wymaga regulaminu dostępnego przed zakupem. Bez niego klient może odstąpić od umowy na dłużej, a UOKiK może nałożyć karę.",
+    waga: "wazne",
+    obszar: "prawo",
+    koszt: 300,
+    dostep: PANEL,
+    zakres: "witryna",
+  },
+  brak_omnibus: {
+    tytul: "Przeceny bez najniższej ceny z 30 dni",
+    skutek:
+      "Przy każdej obniżce prawo wymaga podania najniższej ceny z ostatnich 30 dni. Bez niej grozi kara UOKiK do 10% obrotu.",
+    waga: "wazne",
+    obszar: "prawo",
+    koszt: 300,
+    dostep: KOD,
+    zakres: "witryna",
+  },
+};
+Object.assign(KATALOG, KATALOG_E);
+
 /* ------------------------------------------------------------------ */
 /* Pomocnicze                                                           */
 /* ------------------------------------------------------------------ */
@@ -331,6 +426,144 @@ export function kontroleStrony(html: string, adres: string): Znalezisko[] {
 }
 
 /* ------------------------------------------------------------------ */
+/* Cechy witryny (E): zbierane z każdej podstrony, oceniane razem       */
+/* ------------------------------------------------------------------ */
+
+export type Cechy = {
+  polityka: boolean;
+  telefon: boolean;
+  email: boolean;
+  nip: boolean;
+  formularz: boolean;
+  sklep: boolean;
+  regulamin: boolean;
+  przecena: boolean;
+  omnibus: boolean;
+  sledzenie: string[];
+  zgoda: boolean;
+  /** Adresy, pod które wysyłają formularze (tylko w obrębie domeny). */
+  akcje: string[];
+};
+
+const SLEDZENIE: [string, RegExp][] = [
+  ["Google Tag Manager", /googletagmanager\.com\/gtm\.js|GTM-[A-Z0-9]{4,}/],
+  ["Google Analytics", /googletagmanager\.com\/gtag\/js|google-analytics\.com\/(analytics|ga)\.js/],
+  ["piksel Meta", /connect\.facebook\.net\/[^"']*fbevents|fbq\(\s*['"]init/],
+  ["Hotjar", /static\.hotjar\.com|hotjar\.com\/c\/hotjar/],
+  ["Microsoft Clarity", /clarity\.ms\/tag/],
+  ["piksel TikTok", /analytics\.tiktok\.com/],
+  ["LinkedIn Insight", /snap\.licdn\.com/],
+];
+const ZGODA =
+  /cookiebot|cookieyes|cookie-law-info|complianz|cmplz|onetrust|usercentrics|iubenda|termly|klaro|osano|consentmanager|borlabs|cookie-notice|moove_gdpr|gdpr-cookie|cookiefirst|didomi|quantcast|axeptio|tarteaucitron|cookieconsent|cookie-consent|cookie_consent|cookiebanner|cookie-banner|cc-window|silktide|cookiehub|cookie-script|termsfeed|gtag\(\s*['"]consent['"]\s*,\s*['"]default/i;
+
+export function cechyStrony(html: string, adres: string): Cechy {
+  const tagi = znaczniki(html, ["a", "form", "link"]);
+  const tekst = tekstWidoczny(html);
+  const linki = tagi.filter((t) => t.tag === "a");
+  const zLinkow = (re: RegExp) =>
+    linki.some((t) => {
+      const h = t.atr.get("href") ?? "";
+      const napis = html.slice(t.koniec, html.indexOf("</a", t.koniec)).replace(/<[^>]+>/g, " ");
+      return re.test(h) || re.test(dekoduj(napis)) || re.test(t.atr.get("title") ?? "");
+    });
+  let host = "";
+  try {
+    host = new URL(adres).hostname.replace(/^www\./, "");
+  } catch {
+    /* bez hosta */
+  }
+  // Formularz kontaktowy: ma pole na wiadomość, e-mail albo telefon.
+  // Wyszukiwarka i newsletter z jednym polem się nie liczą.
+  const formularze = [...bezSkryptow(html).matchAll(/<form\b([^>]*)>([\s\S]*?)<\/form>/gi)];
+  const kontaktowe = formularze.filter((m) => /<textarea\b/i.test(m[2]) || (/type=["']?(email|tel)\b/i.test(m[2]) && (m[2].match(/<(input|textarea|select)\b/gi) ?? []).length >= 3));
+  const akcje: string[] = [];
+  for (const m of formularze) {
+    const a = m[1].match(/\baction\s*=\s*["']([^"']*)["']/i)?.[1];
+    if (!a || a.startsWith("#") || /^(javascript|mailto):/i.test(a)) continue;
+    try {
+      const u = new URL(dekoduj(a), adres);
+      if (u.hostname.replace(/^www\./, "") === host && /^https?:$/.test(u.protocol)) {
+        u.hash = "";
+        if (!akcje.includes(u.toString())) akcje.push(u.toString());
+      }
+    } catch {
+      /* zły adres */
+    }
+  }
+  return {
+    polityka: zLinkow(/polityk\w*[\s-]+prywatno|privacy|rodo|ochron\w*[\s-]+danych|polityk\w*[\s-]+cookie/i),
+    telefon: linki.some((t) => /^tel:/i.test(t.atr.get("href") ?? "")),
+    email: linki.some((t) => /^mailto:/i.test(t.atr.get("href") ?? "")),
+    nip: /\bNIP\b[\s:.-]*(PL)?\s*\d{3}[-\s]?\d{2,3}[-\s]?\d{2}[-\s]?\d{2,3}/i.test(tekst),
+    formularz: kontaktowe.length > 0,
+    // Sam napis „woocommerce” to za mało: zostawiają go też wtyczki na
+    // stronach bez sprzedaży. Liczy się przycisk albo cena produktu.
+    sklep:
+      /add[-_]to[-_]cart|woocommerce-Price-amount|cdn\.shopify\.com\/s\/files|Shopify\.theme|var prestashop|shoper\.pl\/|idosell|iai-shop/i.test(html) ||
+      /dodaj do koszyka/i.test(tekst),
+    regulamin: zLinkow(/regulamin|terms|warunki[\s-]+sprzeda/i),
+    przecena:
+      /<del\b[^>]*>[\s\S]{0,300}?(zł|pln)/i.test(html) ||
+      /class=["'][^"']*\b(old-price|price-old|was-price|price--compare|compare-at-price|price__compare|product-price-old)\b/i.test(html),
+    omnibus: /najni(ż|z)sz\w* cen|30 dni/i.test(tekst),
+    sledzenie: SLEDZENIE.filter(([, re]) => re.test(html)).map(([n]) => n),
+    zgoda: ZGODA.test(html) || (/cookie|ciasteczk/i.test(tekst) && /akceptuj|zgadzam|zgod[aęy]|odrzu[cć]/i.test(tekst)),
+    akcje,
+  };
+}
+
+export function polaczCechy(lista: Cechy[]): Cechy {
+  const lub = (k: keyof Cechy) => lista.some((c) => c[k] === true);
+  return {
+    polityka: lub("polityka"),
+    telefon: lub("telefon"),
+    email: lub("email"),
+    nip: lub("nip"),
+    formularz: lub("formularz"),
+    sklep: lub("sklep"),
+    regulamin: lub("regulamin"),
+    przecena: lub("przecena"),
+    omnibus: lub("omnibus"),
+    sledzenie: [...new Set(lista.flatMap((c) => c.sledzenie))],
+    // zgoda musi być tam, gdzie jest śledzenie: wystarczy, że jest na stronach ze skryptami
+    zgoda: lista.filter((c) => c.sledzenie.length).every((c) => c.zgoda),
+    akcje: [...new Set(lista.flatMap((c) => c.akcje))].sort(),
+  };
+}
+
+/** Ocena cech. `gdzie` trafia do opisu: „na stronie głównej” albo „na żadnej z N podstron”. */
+export function kontroleWitryny(c: Cechy, gdzie: string): Znalezisko[] {
+  const z: Znalezisko[] = [];
+  if (!c.polityka) z.push({ klucz: "brak_polityki", szczegol: `Nie znaleźliśmy linku do polityki prywatności ${gdzie}.` });
+  if (c.sledzenie.length && !c.zgoda)
+    z.push({
+      klucz: "sledzenie_bez_zgody",
+      szczegol: `Ładuje się ${c.sledzenie.join(", ")}, a w kodzie strony nie widać okna zgody na cookies.`,
+    });
+  if (!c.telefon) z.push({ klucz: "brak_telefonu", szczegol: `Brak linku tel: ${gdzie}.` });
+  if (!c.email) z.push({ klucz: "brak_emaila", szczegol: `Brak linku mailto: ${gdzie}.` });
+  if (!c.nip) z.push({ klucz: "brak_nip", szczegol: `Nie znaleźliśmy numeru NIP ${gdzie}.` });
+  if (!c.formularz) z.push({ klucz: "brak_formularza", szczegol: `Nie znaleźliśmy formularza kontaktowego ${gdzie}.` });
+  if (c.sklep && !c.regulamin) z.push({ klucz: "sklep_bez_regulaminu", szczegol: `Strona wygląda na sklep, a nie znaleźliśmy linku do regulaminu ${gdzie}.` });
+  if (c.przecena && !c.omnibus)
+    z.push({ klucz: "brak_omnibus", szczegol: `Są przekreślone ceny, a nie ma informacji o najniższej cenie z 30 dni ${gdzie}.` });
+  return z;
+}
+
+/** Formularze wysyłające pod adres 404 albo 410. */
+export async function sprawdzAkcje(akcje: string[]): Promise<Znalezisko[]> {
+  const wyniki = await Promise.all(
+    akcje.slice(0, 20).map(async (a) => {
+      const o = await zapytaj(a, { maxZnakow: 1_000 });
+      return o && (o.status === 404 || o.status === 410) ? `${a} (kod ${o.status})` : null;
+    }),
+  );
+  const zle = wyniki.filter(Boolean) as string[];
+  return zle.length ? [{ klucz: "formularz_404", szczegol: `Formularz wysyła na: ${lista(zle, 3)}.` }] : [];
+}
+
+/* ------------------------------------------------------------------ */
 /* Kontrole domeny (sieć, raz na badanie)                               */
 /* ------------------------------------------------------------------ */
 
@@ -396,18 +629,21 @@ async function bezpieczenstwo(k: KontekstDomeny): Promise<Znalezisko[]> {
     const v = h.get(n);
     if (v && /\d+\.\d+/.test(v)) wersje.push(`${n}: ${v.slice(0, 60)}`);
   }
-  const generator =
-    k.html.match(
-      /<meta[^>]+name=["']generator["'][^>]*content=["']([^"']+)["']/i,
-    )?.[1] ??
-    k.html.match(
-      /<meta[^>]+content=["']([^"']+)["'][^>]*name=["']generator["']/i,
-    )?.[1];
+  // Tylko generatory systemów stron. Wtyczki też się wpisują, ale ich wersja
+  // nie mówi o luce w samej stronie.
+  const generatory = [...k.html.matchAll(/<meta\b[^>]*>/gi)]
+    .map((m) => m[0])
+    .filter((t) => /name=["']generator["']/i.test(t))
+    .map((t) => t.match(/content=["']([^"']+)["']/i)?.[1] ?? "");
+  const generator = generatory.find((g) =>
+    /wordpress|joomla|drupal|typo3|prestashop|magento|shopware|wix|squarespace|webflow/i.test(g),
+  );
   if (generator && /\d+\.\d+/.test(generator))
     wersje.push(`meta generator: ${generator.slice(0, 60)}`);
   if (wersje.length)
     z.push({ klucz: "wersja_widoczna", szczegol: wersje.join("; ") });
 
+  const wp = /wp-content|wp-includes/i.test(k.html);
   // Odsłonięte pliki. Bez przekierowań i z kontrolą treści, bo wiele serwerów
   // na każdy adres oddaje stronę główną z kodem 200.
   const pliki: [string, (t: string) => boolean][] = [
@@ -416,7 +652,9 @@ async function bezpieczenstwo(k: KontekstDomeny): Promise<Znalezisko[]> {
       "/.env",
       (t) => /^\s*[A-Z][A-Z0-9_]*\s*=/m.test(t) && !/<html|<!doctype/i.test(t),
     ],
-    ...[
+    // Kopie wp-config tylko na WordPressie: każde zbędne zapytanie o taki
+    // adres zapora może uznać za atak i zablokować resztę audytu.
+    ...(wp ? [
       "wp-config.php.bak",
       "wp-config.php~",
       "wp-config.bak",
@@ -424,7 +662,7 @@ async function bezpieczenstwo(k: KontekstDomeny): Promise<Znalezisko[]> {
       "wp-config.old",
       "wp-config.php.old",
       "wp-config.txt",
-    ].map(
+    ] : []).map(
       (p) =>
         [`/${p}`, (t: string) => /DB_PASSWORD|DB_NAME/.test(t)] as [
           string,
@@ -432,7 +670,6 @@ async function bezpieczenstwo(k: KontekstDomeny): Promise<Znalezisko[]> {
         ],
     ),
   ];
-  const wp = /wp-content|wp-includes/i.test(k.html);
   const [odsloniete, uzytkownicy, xmlrpc, katalog, wersjaWp] =
     await Promise.all([
       Promise.all(
@@ -536,6 +773,16 @@ async function bezpieczenstwo(k: KontekstDomeny): Promise<Znalezisko[]> {
     });
 
   return z;
+}
+
+/** Wszystko, co audyt jednej strony sprawdza na samej stronie głównej. */
+export async function kontroleGlownej(html: string, adres: string): Promise<Znalezisko[]> {
+  const cechy = cechyStrony(html, adres);
+  return [
+    ...kontroleStrony(html, adres),
+    ...kontroleWitryny(cechy, "na stronie głównej"),
+    ...(await sprawdzAkcje(cechy.akcje)),
+  ];
 }
 
 export async function kontroleDomeny(k: KontekstDomeny): Promise<Znalezisko[]> {

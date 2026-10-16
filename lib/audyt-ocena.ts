@@ -10,7 +10,7 @@
 
 import { odmien, orzeczenieMnogie } from "./odmiana";
 import type { Pomiar } from "./audyt-pomiar";
-import { KATALOG } from "./audyt-kontrole";
+import { KATALOG, type Znalezisko } from "./audyt-kontrole";
 
 export type Waga = "krytyczne" | "wazne" | "drobne";
 
@@ -52,6 +52,23 @@ function mb(b: number): string {
   return b >= 1_048_576
     ? `${(b / 1_048_576).toFixed(1)} MB`
     : `${Math.round(b / 1024)} kB`;
+}
+
+/** Znalezisko wspólnej kontroli jako ustalenie z opisem z katalogu. */
+export function zZnaleziska(z: Znalezisko): Ustalenie | null {
+  const k = KATALOG[z.klucz];
+  if (!k) return null;
+  return {
+    klucz: z.klucz,
+    obszar: k.obszar,
+    waga: k.waga,
+    tytul: k.tytul,
+    fakt: z.szczegol,
+    skutek: k.skutek,
+    koszt: k.koszt,
+    samodzielnie: false,
+    dostep: k.dostep,
+  };
 }
 
 /** Wspólna kontrola, którą pomijamy, gdy to samo mówi już ustalenie z listy. */
@@ -758,21 +775,11 @@ export function ocenStrone(p: Pomiar): Ustalenie[] {
   // --- wspólne kontrole (lib/audyt-kontrole.ts) ---------------------------
   const juz = new Set(u.map((x) => x.klucz));
   for (const z of p.znaleziska ?? []) {
-    const k = KATALOG[z.klucz];
-    if (!k || juz.has(z.klucz) || POMIJANE[z.klucz]?.some((x) => juz.has(x)))
+    const x = zZnaleziska(z);
+    if (!x || juz.has(z.klucz) || POMIJANE[z.klucz]?.some((k) => juz.has(k)))
       continue;
     juz.add(z.klucz);
-    dodaj({
-      klucz: z.klucz,
-      obszar: k.obszar,
-      waga: k.waga,
-      tytul: k.tytul,
-      fakt: z.szczegol,
-      skutek: k.skutek,
-      koszt: k.koszt,
-      samodzielnie: false,
-      dostep: k.dostep,
-    });
+    dodaj(x);
   }
 
   // --- poczta, bo idzie tym samym kanałem co formularz --------------------

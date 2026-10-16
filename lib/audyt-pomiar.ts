@@ -18,7 +18,7 @@ import tls from "tls";
 import { arkuszeStrony, przygotujCss, sprawdzKursor } from "./kursor";
 import {
   kontroleDomeny,
-  kontroleStrony,
+  kontroleGlownej,
   type Znalezisko,
 } from "./audyt-kontrole";
 
@@ -852,7 +852,7 @@ export async function zmierz(domenaWejscie: string): Promise<Pomiar> {
     : null;
 
   const adresKoncowy = dok.odp.url || baza;
-  const [zasoby, kursor, domenowe] = await Promise.all([
+  const [zasoby, kursor, domenowe, glowna] = await Promise.all([
     zmierzZasoby(zasobyZHtml(html, baza)),
     zmierzKursor(html, adresKoncowy),
     kontroleDomeny({
@@ -861,10 +861,11 @@ export async function zmierz(domenaWejscie: string): Promise<Pomiar> {
       html,
       naglowki: dok.odp.headers,
     }).catch(() => [] as Znalezisko[]),
+    kontroleGlownej(html, adresKoncowy).catch(() => [] as Znalezisko[]),
   ]);
   wynik.zasoby = zasoby;
   wynik.kursor = kursor;
-  wynik.znaleziska = [...domenowe, ...kontroleStrony(html, adresKoncowy)];
+  wynik.znaleziska = [...domenowe, ...glowna];
   const wagaZasobow = wynik.zasoby.reduce((s, z) => s + (z.bajty ?? 0), 0);
   wynik.mobile = await zmierzMobile(baza, html, wagaZasobow);
   return wynik;

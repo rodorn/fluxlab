@@ -12,9 +12,18 @@
  */
 
 import { czystaDomena, zmierz } from "./audyt-pomiar";
-import { ocenStrone, type Ustalenie } from "./audyt-ocena";
+import { ocenStrone, zZnaleziska, type Ustalenie } from "./audyt-ocena";
 import { odmien } from "./odmiana";
-import { KATALOG, kontroleStrony, type Znalezisko } from "./audyt-kontrole";
+import {
+  KATALOG,
+  cechyStrony,
+  kontroleStrony,
+  kontroleWitryny,
+  polaczCechy,
+  sprawdzAkcje,
+  type Cechy,
+  type Znalezisko,
+} from "./audyt-kontrole";
 import { arkuszeStrony, przygotujCss, sprawdzKursor, type ArkuszKursora } from "./kursor";
 
 const UA =
@@ -52,6 +61,7 @@ export type Strona = {
   kursor: { bezRaczki: number; przyklady: string[] } | null;
   /** Wspólne kontrole jednej podstrony (lib/audyt-kontrole.ts). */
   znaleziska: Znalezisko[];
+  cechy: Cechy | null;
 };
 
 export type WynikCalosci = {
@@ -220,6 +230,7 @@ function przeanalizuj(adres: string, o: Odpowiedz, hosty: Set<string>): Strona {
     linki: [],
     kursor: null,
     znaleziska: [],
+    cechy: null,
   };
   const html = o.tekst;
   if (html === null) return s;
@@ -269,7 +280,10 @@ function przeanalizuj(adres: string, o: Odpowiedz, hosty: Set<string>): Strona {
     s.mieszane = [...mieszane].sort().slice(0, 10);
   }
   s.linki = linkiZHtml(html, o.koncowy, hosty);
-  if (o.status < 300) s.znaleziska = kontroleStrony(html, o.koncowy);
+  if (o.status < 300) {
+    s.znaleziska = kontroleStrony(html, o.koncowy);
+    s.cechy = cechyStrony(html, o.koncowy);
+  }
   return s;
 }
 
@@ -502,6 +516,7 @@ export async function zbadajCalosc(
               linki: [],
               kursor: null,
               znaleziska: [],
+              cechy: null,
             } satisfies Strona);
         if (o?.tekst && o.status < 300) {
           const { arkusze, nieprzeczytane } = await arkuszeStrony(
@@ -572,7 +587,25 @@ export async function zbadajCalosc(
     wynik.zlamane.sort((a, b) => a.cel.localeCompare(b.cel));
   }
 
-  wynik.domenowe = await domenowePromise;
+  // Cechy całej witryny (polityka prywatności, kontakt, NIP, zgoda na
+  // cookies, sklep): wystarczy, że są na którejkolwiek podstronie.
+  const cechy = wynik.strony.flatMap((s) => (s.cechy ? [s.cechy] : []));
+  const witryna = cechy.length
+    ? [
+        ...kontroleWitryny(
+          polaczCechy(cechy),
+          `na żadnej z ${cechy.length} ${odmien(cechy.length, "sprawdzonej podstrony", "sprawdzonych podstron", "sprawdzonych podstron")}`,
+        ),
+        ...(await sprawdzAkcje(polaczCechy(cechy).akcje)),
+      ]
+    : [];
+  wynik.domenowe = [
+    ...(await domenowePromise),
+    ...witryna.flatMap((z) => {
+      const u = zZnaleziska(z);
+      return u ? [u] : [];
+    }),
+  ].sort((a, b) => (a.waga === b.waga ? 0 : a.waga === "krytyczne" || (a.waga === "wazne" && b.waga === "drobne") ? -1 : 1));
   wynik.czasS = Math.round((Date.now() - start) / 1000);
   return wynik;
 }
@@ -990,10 +1023,10 @@ export function raportHtml(
     }
   }
 
-  tresc += h2("Domena, serwer i poczta");
+  tresc += h2("Cała witryna, domena i poczta");
   if (w.domenowe.length === 0) {
     tresc += p(
-      "Certyfikat, wersje adresu, przekierowanie z http i zabezpieczenia poczty są w porządku albo nie dało się ich zmierzyć.",
+      "Certyfikat, nagłówki, dane kontaktowe, polityka prywatności i zabezpieczenia poczty są w porządku albo nie dało się ich zmierzyć.",
     );
   } else {
     tresc += `<ul style="margin:0;padding-left:18px">`;
@@ -1056,7 +1089,7 @@ export function raportTekst(
     }
   }
   if (w.domenowe.length) {
-    l.push("Domena, serwer i poczta");
+    l.push("Cała witryna, domena i poczta");
     for (const u of w.domenowe) l.push(`  ${u.tytul}: ${u.fakt}`);
     l.push("");
   }
