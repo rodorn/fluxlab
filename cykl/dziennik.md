@@ -5388,3 +5388,63 @@ Hamulec budżetu odłożył 12.10 wieczorem i 13.10 wszystkie zmiany (Z3 do Z5, 
 **Dowód:** linia Z21 w `cykl/plan-ruchu.md` (tabela dni dla obu stron).
 **Dla Pawła:** HAJS METRICS (`INBOX::129`, 15.10 19:53) czeka na decyzję o 1 000 zł netto plus 5% przez 12 miesięcy; w Wysłanych nie ma odpowiedzi. Poprawka do wpisów 22:43 do 00:43: odpowiedź do comparic poszła 15.10 o 17:44:59 (Wysłane, redakcja@comparic.pl, „Re: Współpraca reklamowa: FluxLab x REACH4 biznes”), więc comparic na nas nie czeka.
 **Zostało otwarte:** Z23 o 05:46 (Bing), Z24 o 06:46 (bilans planu). Do decyzji stratega: spadek wyświetleń e-Doręczeń i biur rachunkowych od 10.10, tytuł e-Doręczeń oceniamy od 18.10.
+
+## 2026-10-16 02:45
+**Kanał:** Bing (Z23 planu, wzięte przed 05:46). Budżet: rytm „wstrzymaj”, hamulec krytyczny, prognoza 167% tygodnia, więc tylko zadanie lekkie (kontrola).
+**Co zrobione:** sprawdziłem w Bing Webmaster 12 adresów zgłoszonych ręcznie 14.10 i 3 z 15.10. W indeksie jest /ksef-integracja (skan 13.10, sprzed zgłoszenia), /sprawdzenie-nip i /kalkulator-podatkowy; 10 adresów nadal „Discovered but not crawled” bez próby skanu. /integracja-crm-z-erp miała stary stan „Indexing allowed? No” z 3.10, produkcja jest poprawna, więc zgłosiłem ją ponownie („Indexing requested.”). Kodu nie zmieniałem.
+**Ruch:** raport 02:43: doba 103 odsłony, 87 osób (+136% wobec średniej 43,6); źródła: l.facebook.com 5, Google 3, Bing 3 (bing.com 2, www.bing.com 1), mail 1, reszta bez odsyłacza. Narzędzia: 4 uruchomienia (audyt 3, przykład skanu 2, numer KSeF 1, kalkulator 1). Tydzień 392 odsłony, 282 osoby. Bing 7 dni (do 13.10): 2 kliknięcia, 42 wyświetlenia, prawie wszystko to wyszukiwania NIP.
+**Dowód:** linia Z23 w `cykl/plan-ruchu.md`; Bing URL Inspection „Indexing requested.” dla https://fluxlab.pl/integracja-crm-z-erp; mapa 129 adresów, odczyt 13.10, Success.
+**Dla Pawła:** HAJS METRICS (`INBOX::129`, 15.10 19:53) nadal czeka na decyzję (stan z 01:43, nie sprawdzałem ponownie Wysłanych).
+**Zostało otwarte:** Z24 o 06:46 (bilans planu). Wniosek dla stratega: ręczne zgłoszenia w Bing nie dają skanu w 33 h, więc kolejne godziny na Bing nie mają uzasadnienia.
+
+<!-- WYSLANO 2026-10-16 03:07 -->
+
+## 2026-10-16 03:48
+**Kanał:** pomiar (Z24 planu, wzięte przed 06:46, bo to ostatnie otwarte zadanie). Budżet: rytm „wstrzymaj”, hamulec krytyczny, prognoza 158% tygodnia, więc tylko zadanie lekkie.
+**Co zrobione:** Bilans planu 2026-10-15/16 (niżej). Kodu nie zmieniałem.
+**Ruch:** pomiar 03:43: 24 h 87 sesji, 93 odsłony; bez odsyłacza 80, Google 3, Bing 3 (bing.com 2, www.bing.com 1), mail 1, l.facebook.com 1. Dzień 15.10: 91 sesji (14.10: 35, 13.10: 25). 7 dni 282 sesje, 346 odsłon.
+**Dowód:** linia Z24 w `cykl/plan-ruchu.md`; `python3 cykl/pomiar-kanalow.py` 03:43.
+
+### Bilans planu 2026-10-15/16
+| Zad. | Kanał | Zrobione | Godzina | Efekt, co przyprowadziło |
+|---|---|---|---|---|
+| Z1 | pomiar | tak | 15.10 06:50 | bilans 14/15, 0 osób z zadań |
+| Z2 | Google | tak | 06:53 | GSC 7 dni 9 kl., 732 wyśw.; decyzja „nie” dla tytułu biur |
+| Z3 | outreach | tak | 09:01 | 5 maili do agencji, 0 wejść, 0 odpowiedzi |
+| Z4 | outreach | tak | 06:58 | druga partia z pkt.pl (pliki do Z8) |
+| Z5 | Google | tak, bez zmian | 06:54 | warunek niespełniony, tytuł zostaje |
+| Z6 | pomiar | tak | 11:48 | 51 sesji od 06:00, 0 z kampanii agencje |
+| Z7 | narzędzia | tak, bez zmian | 07:02 | PSI /numer-ksef 78, drugi pomiar LCP 1,8 s |
+| Z8 | outreach | tak | 09:43 | 4 maile do agencji, 0 wejść, 0 odpowiedzi |
+| Z9 | AI i Google | tak, bez zmian | 07:04 | 5 stron, odpowiedzi w HTML z serwera |
+| Z10 | narzędzia | tak, bez zmian | 07:04 | 3 ludzi ze skanem KRS od 1.10 |
+| Z11 | Bing i Google | tak, nic do zgłoszenia | 07:06 | brak zmienionych adresów |
+| Z12 | Facebook | tak | 07:06 | brief o /numer-ksef nie trafił do kolejki |
+| Z13 | Google | tak | 07:09 | linki wewnętrzne, commit ecc6ae5 |
+| Z14 | Google | tak | 07:09 | /automatyzacja-crm-leasing, commit 6abed40 |
+| Z15 | pomiar | tak | 21:50 | 75 ludzi od 06:00, 9/9 delivered |
+| Z16 | outreach | tak | 07:12 | partia na piątek z pkt.pl |
+| Z17 | Google | tak | 16.10 00:06 | 10/10 żądań indeksowania przyjętych |
+| Z18 | pomiar | tak | 00:50 | 10/10 adresów wyrenderowanych przez Google |
+| Z19 | Google | tak | 15.10 07:14 | 7/7 adresów serii 14.10 w Google |
+| Z20 | Google | tak | 07:14 | daty w mapie, commit 2d4bae6 |
+| Z21 | Google | tak | 16.10 01:50 | dane do 13.10: 11 kl., 749 wyśw. |
+| Z22 | Google | tak | 15.10 07:17 | 20 zeskanowanych bez indeksu, 5 to strony |
+| Z23 | Bing | tak | 16.10 02:45 | 3 z 15 w indeksie, 1 ponowne zgłoszenie |
+| Z24 | pomiar | tak | 03:48 | ten wpis |
+
+Plan 24 z 24. Mierzalnie z zadań: 0 osób (żadne wejście z utm `agencje`, wejście z Facebooka nie pochodzi z briefu z Z12).
+
+Ludzie w dobie wobec 26 z 14.10: 87 sesji w 24 h, z czego 80 bez odsyłacza. Cały wzrost (dzień 15.10: 91 sesji) siedzi w ruchu bez odsyłacza, którego nie da się przypisać do żadnego kanału; ze źródeł mierzalnych było 8 (Google 3, Bing 3, mail `ksiegowe` 1, Facebook 1).
+
+Maile dnia: 9 do agencji wysłanych (Z3 5, Z8 4), 9 delivered, 0 bounced, 0 wejść z utm `agencje`, 0 odpowiedzi.
+
+Dla stratega, 3 liczby, które zmieniły się najbardziej:
+1. Wejścia bez odsyłacza: 28 (14.10) → 80 w 24 h; do wyjaśnienia, zanim ktoś przypisze to kanałom.
+2. Zindeksowane w Google: 7/7 z serii 14.10 w indeksie, 10/10 nowych żądań przyjętych i wyrenderowanych 16.10 00:06 do 00:10. GSC 7 dni: 9 → 11 kliknięć, 732 → 749 wyświetleń (dane do 13.10).
+3. Wejścia z maili: 0 z 9 dostarczonych do agencji (łącznie 0 z kampanii agencje).
+
+Otwarte decyzje: tytuł biur rachunkowych (Z5 „nie”, wyświetlenia 13,6 → 1,0 dziennie po 9.10, e-Doręczenia ten sam spadek, ocena od 18.10); LCP /numer-ksef (78 i 1,8 s w dwóch pomiarach, bez zmiany); Bing (ręczne zgłoszenia bez skanu po 33 h, dalsze godziny bez uzasadnienia); linki w postach FB (brief o /numer-ksef nie trafił do `posty/kolejka.json`, sprawa projektu fluxlab-meta).
+
+**Dla Pawła:** HAJS METRICS (`INBOX::129`, 15.10 19:53) czeka na decyzję o 1 000 zł netto plus 5% przez 12 miesięcy; w Wysłanych 16.10 03:45 nie ma odpowiedzi do ddbehance@gmail.com.
+**Zostało otwarte:** w planie 2026-10-15/16 nic. Następny plan strateg pisze o 06:15; partia agencji z Z16 czeka na wysyłkę w piątek od 9:00.
