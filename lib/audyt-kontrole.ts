@@ -605,7 +605,7 @@ export const KATALOG_F: Record<string, OpisKontroli> = {
     tytul: "Nie znaleźliśmy podpisu DKIM",
     skutek:
       "Bez podpisu Gmail i Outlook częściej wrzucają Twoje wiadomości do spamu, a Gmail odrzuca masowe wysyłki bez DKIM.",
-    waga: "wazne",
+    waga: "drobne",
     obszar: "poczta",
     koszt: 120,
     dostep: DNS_DOMENY,
@@ -1598,7 +1598,13 @@ export function zablokowanyPrzezRobots(sciezka: string, r: { allow: string[]; di
   return d >= 0 && d > najdluzszy(r.allow);
 }
 
-const SELEKTORY_DKIM = ["google", "default", "selector1", "selector2", "k1", "mail", "dkim", "s1", "s2"];
+// Selektor DKIM może mieć dowolną nazwę, więc sprawdzamy te, których używają
+// popularne usługi (Google, Microsoft, Zoho, Resend, Mailchimp, Mailjet...).
+// Brak trafienia nie jest dowodem, dlatego to ustalenie ma wagę drobną.
+const SELEKTORY_DKIM = [
+  "google", "default", "selector1", "selector2", "k1", "k2", "mail", "dkim",
+  "s1", "s2", "zmail", "zoho", "resend", "mailjet", "mte1", "smtp", "protonmail",
+];
 
 function zLimitem<T>(p: Promise<T>, ms = CZAS_MS): Promise<T | null> {
   return Promise.race([p, new Promise<null>((r) => setTimeout(() => r(null), ms))]).catch(() => null);
