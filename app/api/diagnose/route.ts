@@ -183,7 +183,7 @@ WSTĘPNA WYCENA (estimatedCost), orientacyjne widełki na bazie cennika Fluxlab:
 - Średnie wdrożenie (kilka kroków, integracje, routing, follow-up): 300 – 700 zł
 - Większy proces sprzedaży / multi-source / niestandardowa logika: od 700 zł lub "wycena indywidualna"
 - Scraping: jednorazowy zbiór z jednego źródła od 49 zł, odświeżanie cykliczne od 99 zł miesięcznie, rozbudowany pipeline od 500 zł
-- Strona WWW: poprawki i nowe podstrony od 99 zł, landing do 5 podstron od 4 500 zł, strona firmowa z CMS od 9 000 zł, sklep z integracją od 15 000 zł, własny CRM według wielkości firmy: do 3 handlowców 7 900 zł + 690 zł/mies., do 10 osób 12 900 zł + 1 190 zł/mies., kilka zespołów od 24 900 zł + od 2 190 zł/mies.
+- Strona WWW: poprawki i nowe podstrony od 99 zł, landing do 5 podstron od 4 500 zł, strona firmowa z CMS od 9 000 zł, sklep z integracją od 15 000 zł, własny CRM według wielkości firmy: do 3 handlowców wdrożenie 1 zł w fazie beta (zamiast 1 900 zł) + 690 zł/mies., do 10 osób 12 900 zł + 1 190 zł/mies., kilka zespołów od 24 900 zł + od 2 190 zł/mies.
 Podawaj WIDEŁKI, nie pojedynczą liczbę. Trzymaj się tych kwot i NIE zawyżaj: większość raportów powstaje automatycznie, więc niska cena jest prawdziwa, a zawyżona wycena odstrasza klienta, zanim zdąży o cokolwiek zapytać. W costNote zaznacz, że to wstępny szacunek, a wiążąca wycena powstaje po bezpłatnej diagnozie.
 
 Wywołaj generate_diagnosis.`,

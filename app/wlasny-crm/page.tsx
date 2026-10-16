@@ -5,7 +5,7 @@ import KalkulatorLeadow from "@/components/KalkulatorLeadow";
 export const metadata: Metadata = {
   title: "Własny CRM dla firmy w trzy tygodnie | Fluxlab",
   description:
-    "Własny CRM: lead z formularza, telefonu i poczty trafia sam do handlowca. Pakiety od 7 900 zł wdrożenia i 690 zł miesięcznie, zależnie od wielkości firmy.",
+    "Własny CRM: lead z formularza, telefonu i poczty trafia sam do handlowca. W fazie beta wdrożenie dla małej firmy za 1 zł, abonament od 690 zł miesięcznie.",
   alternates: { canonical: "/wlasny-crm" },
   openGraph: {
     title: "Własny CRM dla firmy w trzy tygodnie | Fluxlab",
@@ -48,8 +48,10 @@ export default function WlasnyCrm() {
       pricing={[
         {
           name: "Mała firma",
-          price: "7 900 zł",
-          desc: "Do 3 handlowców. Abonament 690 zł miesięcznie.",
+          oldPrice: "1 900 zł",
+          price: "1 zł",
+          badge: "Faza beta",
+          desc: "Wdrożenie do 3 handlowców za 1 zł, póki CRM jest w fazie beta. Abonament 690 zł miesięcznie.",
           features: [
             "Gotowy lejek, leady z formularza i poczty",
             "Aplikacja na komputer i telefon",
@@ -81,7 +83,7 @@ export default function WlasnyCrm() {
       faq={[
         {
           q: "Ile kosztuje własny CRM?",
-          a: "Zależy od wielkości firmy: od 7 900 zł wdrożenia i 690 zł miesięcznie dla zespołu do 3 osób, 12 900 zł i 1 190 zł do 10 osób. Ceny netto. W abonamencie zawsze są serwer w UE, kopie, aktualizacje i godziny rozwoju.",
+          a: "Zależy od wielkości firmy. Dla zespołu do 3 osób wdrożenie kosztuje w fazie beta 1 zł zamiast 1 900 zł, abonament 690 zł miesięcznie, 12 900 zł i 1 190 zł do 10 osób. Ceny netto. W abonamencie zawsze są serwer w UE, kopie, aktualizacje i godziny rozwoju.",
         },
         {
           q: "Czym to się różni od Pipedrive?",

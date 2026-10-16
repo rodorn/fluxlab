@@ -17,6 +17,10 @@ export interface Tier {
   desc: string;
   features: string[];
   featured?: boolean;
+  /** Cena przed promocją, pokazana jako przekreślona. */
+  oldPrice?: string;
+  /** Plakietka zamiast „Najczęściej wybierany”, np. „Faza beta”. */
+  badge?: string;
   /** Dokąd prowadzi przycisk, domyślnie do formularza na dole. */
   href?: string;
   cta?: string;
@@ -148,7 +152,9 @@ export default function ProductLanding(p: ProductLandingProps) {
 
           <div className="mt-16 max-w-3xl">
             <h2 className="h2-sekcji">Cennik</h2>
-            <div className="mt-8 grid gap-6 md:grid-cols-2">
+            <div
+              className={`mt-8 grid gap-6 md:grid-cols-2 ${p.pricing.length === 3 ? "lg:grid-cols-3" : ""}`}
+            >
               {p.pricing.map((t) => (
                 <div
                   key={t.name}
@@ -158,15 +164,20 @@ export default function ProductLanding(p: ProductLandingProps) {
                       : "border-gray-200/80 dark:border-gray-800/80 bg-white/60 dark:bg-gray-900/40"
                   }`}
                 >
-                  {t.featured && (
+                  {(t.badge || t.featured) && (
                     <span className="self-start rounded-full bg-accent/10 px-3 py-1 text-xs font-semibold text-accent">
-                      Najczęściej wybierany
+                      {t.badge ?? "Najczęściej wybierany"}
                     </span>
                   )}
                   <h3 className="mt-2 text-lg font-semibold text-gray-900 dark:text-white">
                     {t.name}
                   </h3>
                   <p className="mt-1 text-3xl font-bold text-gray-900 dark:text-white">
+                    {t.oldPrice && (
+                      <s className="mr-3 text-xl font-semibold text-gray-400 dark:text-gray-500">
+                        {t.oldPrice}
+                      </s>
+                    )}
                     {t.price}
                   </p>
                   <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">

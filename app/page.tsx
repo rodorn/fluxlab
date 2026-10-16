@@ -23,10 +23,10 @@ const OFERTA = [
   {
     href: "/wlasny-crm",
     nazwa: "Własny CRM",
-    cena: "od 7 900 zł",
+    cena: "wdrożenie od 1 zł",
     opis: "Lead z formularza, telefonu i poczty trafia sam do handlowca, z zadaniem „zadzwoń w 15 minut”.",
     punkty: [
-      "do 3 handlowców: 7 900 zł + 690 zł/mies.",
+      "do 3 handlowców: 1 zł (beta) + 690 zł/mies.",
       "do 10 osób: 12 900 zł + 1 190 zł/mies.",
       "kilka zespołów: od 24 900 zł",
     ],
