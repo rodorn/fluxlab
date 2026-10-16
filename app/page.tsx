@@ -26,7 +26,7 @@ const OFERTA = [
     cena: "wdrożenie od 1 zł",
     opis: "Lead z formularza, telefonu i poczty trafia sam do handlowca, z zadaniem „zadzwoń w 15 minut”.",
     punkty: [
-      "abonament 99 zł miesięcznie za konto",
+      "abonament 499 zł/mies. do 3 osób, potem 99 zł za osobę",
       "do 3 handlowców wdrożenie 1 zł (beta)",
       "do 10 osób wdrożenie 12 900 zł",
     ],

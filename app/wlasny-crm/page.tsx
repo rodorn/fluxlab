@@ -5,7 +5,7 @@ import KalkulatorLeadow from "@/components/KalkulatorLeadow";
 export const metadata: Metadata = {
   title: "Własny CRM dla firmy w trzy tygodnie | Fluxlab",
   description:
-    "Własny CRM: lead z formularza, telefonu i poczty trafia sam do handlowca. W fazie beta wdrożenie dla małej firmy za 1 zł, abonament 99 zł miesięcznie za konto.",
+    "Własny CRM: lead z formularza, telefonu i poczty trafia sam do handlowca. W fazie beta wdrożenie dla małej firmy za 1 zł. Abonament 499 zł miesięcznie do 3 osób.",
   alternates: { canonical: "/wlasny-crm" },
   openGraph: {
     title: "Własny CRM dla firmy w trzy tygodnie | Fluxlab",
@@ -51,7 +51,7 @@ export default function WlasnyCrm() {
           oldPrice: "1 900 zł",
           price: "1 zł",
           badge: "Faza beta",
-          desc: "Wdrożenie do 3 handlowców za 1 zł, póki CRM jest w fazie beta. Abonament 99 zł miesięcznie za konto.",
+          desc: "Wdrożenie do 3 handlowców za 1 zł, póki CRM jest w fazie beta. Abonament 499 zł miesięcznie.",
           features: [
             "Gotowy lejek, leady z formularza i poczty",
             "Aplikacja na komputer i telefon",
@@ -61,7 +61,7 @@ export default function WlasnyCrm() {
         {
           name: "Firma",
           price: "12 900 zł",
-          desc: "Do 10 osób. Abonament 99 zł miesięcznie za konto.",
+          desc: "Do 10 osób. Abonament 499 zł miesięcznie za 3 konta i 99 zł za każde kolejne.",
           features: [
             "Lejek pod Twoją branżę, także leady z telefonu",
             "Przydział opiekuna i eskalacja po 30 minutach",
@@ -72,7 +72,7 @@ export default function WlasnyCrm() {
         {
           name: "Kilka zespołów",
           price: "od 24 900 zł",
-          desc: "Oddziały albo ponad 10 osób. Abonament 99 zł miesięcznie za konto.",
+          desc: "Oddziały albo ponad 10 osób. Abonament 499 zł miesięcznie za 3 konta i 99 zł za każde kolejne.",
           features: [
             "Role i widoki dla oddziałów i kierowników",
             "Integracja z systemem księgowym albo ERP",
@@ -83,7 +83,7 @@ export default function WlasnyCrm() {
       faq={[
         {
           q: "Ile kosztuje własny CRM?",
-          a: "Abonament to 99 zł miesięcznie za każde konto. Wdrożenie zależy od wielkości firmy: do 3 osób w fazie beta 1 zł zamiast 1 900 zł, do 10 osób 12 900 zł. Ceny netto. W abonamencie są serwer w UE, kopie i aktualizacje.",
+          a: "Abonament to 499 zł miesięcznie za 3 konta i 99 zł za każde kolejne. Wdrożenie zależy od wielkości firmy: do 3 osób w fazie beta 1 zł zamiast 1 900 zł, do 10 osób 12 900 zł. Ceny netto. W abonamencie są serwer w UE, kopie i aktualizacje.",
         },
         {
           q: "Czym to się różni od Pipedrive?",
