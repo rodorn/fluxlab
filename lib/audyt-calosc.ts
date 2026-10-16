@@ -26,6 +26,15 @@ import {
   type Cechy,
   type Znalezisko,
 } from "./audyt-kontrole";
+import {
+  analizujJezyk,
+  hreflangi,
+  kontrolaTlumaczenia,
+  kontroleJezykaStrony,
+  pobierzHtml,
+  type AnalizaJezyka,
+} from "./audyt-jezyki";
+import { znajdzLiterowki } from "./audyt-pisownia";
 import { arkuszeStrony, przygotujCss, sprawdzKursor, type ArkuszKursora } from "./kursor";
 
 const UA =
@@ -527,6 +536,11 @@ export async function zbadajCalosc(
       return w;
     };
 
+    // Analiza języka każdej podstrony i jej wersje z hreflang. Sam HTML
+    // nie zostaje w pamięci, tylko to, czego potrzebują kontrole.
+    const jezyki = new Map<string, AnalizaJezyka>();
+    const alternatywy = new Map<string, { kod: string; adres: string }[]>();
+
     const znalezione = new Set<string>(zaplanowane);
     await pula(
       kolejka,
@@ -569,6 +583,12 @@ export async function zbadajCalosc(
               przyklady: k.problemy.slice(0, 3).map((x) => x.opis),
             };
           }
+        }
+        if (o?.tekst && o.status < 300 && s.html) {
+          const a = analizujJezyk(o.tekst);
+          jezyki.set(adres, a);
+          alternatywy.set(adres, hreflangi(o.tekst, o.koncowy));
+          s.znaleziska.push(...kontroleJezykaStrony(a));
         }
         stronyPoAdresie.set(adres, s);
         for (const l of s.linki) {
@@ -690,6 +710,61 @@ export async function zbadajCalosc(
           continue;
         const zrodlo = poAdresie.get(bezUkosnika([...na].sort()[0]));
         if (zrodlo) dopisz(zrodlo, "poza_mapa", krotki(l));
+      }
+    }
+
+    // Wersje językowe: obca wersja porównana z polską. Brakujące alternatywy
+    // dociągamy, najwyżej 15 i tylko gdy zostało dość czasu.
+    const analizaPo = (a: string) => {
+      for (const [k, v] of jezyki) if (bezUkosnika(k) === bezUkosnika(a)) return v;
+      return undefined;
+    };
+    const doPobrania = new Map<string, string>();
+    for (const s of wynik.strony) {
+      const a = jezyki.get(s.adres);
+      if (!a || a.jezyk !== "pl") continue;
+      for (const alt of alternatywy.get(s.adres) ?? []) {
+        if (/^pl/.test(alt.kod) || bezUkosnika(alt.adres) === bezUkosnika(s.adres)) continue;
+        if (!analizaPo(alt.adres) && !doPobrania.has(alt.adres)) doPobrania.set(alt.adres, s.adres);
+      }
+    }
+    const dociagniete = new Map<string, AnalizaJezyka>();
+    if (Date.now() < start + 225_000)
+      await pula(
+        [...doPobrania.keys()].sort().slice(0, 15),
+        async (alt) => {
+          const h = await pobierzHtml(alt, CZAS_LINKU_MS);
+          if (h) dociagniete.set(alt, analizujJezyk(h));
+        },
+        () => Date.now() < start + 240_000,
+      );
+    for (const s of wynik.strony) {
+      const pl = jezyki.get(s.adres);
+      if (!pl || pl.jezyk !== "pl") continue;
+      for (const alt of alternatywy.get(s.adres) ?? []) {
+        if (/^pl/.test(alt.kod) || bezUkosnika(alt.adres) === bezUkosnika(s.adres)) continue;
+        const zbadana = analizaPo(alt.adres);
+        const obca = zbadana ?? dociagniete.get(alt.adres);
+        if (!obca || obca.jezyk === "pl") continue;
+        const t = kontrolaTlumaczenia(obca, pl, krotki(s.adres));
+        const cel = zbadana ? poAdresie.get(bezUkosnika(alt.adres)) : s;
+        if (!cel) continue;
+        const przedrostek = zbadana ? "" : `wersja ${krotki(alt.adres)}: `;
+        if (t) dopisz(cel, t.klucz, przedrostek + t.szczegol);
+        // Podstrony z crawla mają już własne kontrole języka, dociągnięte nie.
+        if (!zbadana) for (const z of kontroleJezykaStrony(obca)) dopisz(s, z.klucz, przedrostek + z.szczegol);
+      }
+    }
+
+    // Literówki na podstronach rozpoznanych jako polskie.
+    if (Date.now() < start + 250_000) {
+      const polskie = wynik.strony
+        .filter((s) => jezyki.get(s.adres)?.rozpoznany === "pl")
+        .map((s) => ({ adres: s.adres, tekst: jezyki.get(s.adres)!.tekst }));
+      const literowki = polskie.length ? await znajdzLiterowki(polskie, domena) : null;
+      for (const l of literowki ?? []) {
+        const s = poAdresie.get(bezUkosnika(l.adres));
+        if (s) dopisz(s, "literowki", `${l.slowo} → ${l.podpowiedz}${l.cytat ? ` („${l.cytat}”)` : ""}`);
       }
     }
     wynik.sprawdzonychLinkow = [...zrodla.keys()].filter((l) =>

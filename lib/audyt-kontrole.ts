@@ -654,6 +654,61 @@ export const KATALOG_F: Record<string, OpisKontroli> = {
 };
 Object.assign(KATALOG, KATALOG_F);
 
+export const KATALOG_J: Record<string, OpisKontroli> = {
+  // --- języki i pisownia ---------------------------------------------------
+  jezyk_obce_bloki: {
+    tytul: "Fragmenty w innym języku niż strona",
+    skutek:
+      "Klient z zagranicy trafia na tekst, którego nie rozumie, i uznaje wersję za niedokończoną, a wyszukiwarka nie wie, w jakim języku pokazać stronę.",
+    waga: "wazne",
+    obszar: "seo",
+    koszt: 200,
+    dostep: PANEL,
+    zakres: "strona",
+  },
+  brak_tlumaczenia: {
+    tytul: "Wersja językowa bez tłumaczenia",
+    skutek:
+      "Pod adresem obcojęzycznym jest prawie ten sam tekst co w wersji polskiej, więc klient z zagranicy nic nie zrozumie, a Google uzna obie strony za duplikat.",
+    waga: "wazne",
+    obszar: "seo",
+    koszt: 400,
+    dostep: PANEL,
+    zakres: "strona",
+  },
+  jezyk_lang_niezgodny: {
+    tytul: "Atrybut lang nie zgadza się z językiem treści",
+    skutek:
+      "Przeglądarka proponuje tłumaczenie nie tej strony, czytnik ekranu czyta tekst z obcym akcentem, a Google może pokazać ją nie tym klientom.",
+    waga: "drobne",
+    obszar: "seo",
+    koszt: 50,
+    dostep: KOD,
+    zakres: "strona",
+  },
+  jezyk_meta: {
+    tytul: "Tytuł, opis, alt albo przyciski w złym języku",
+    skutek:
+      "W wynikach Google i na przyciskach klient widzi tekst w innym języku niż reszta strony, co wygląda na niedokończone tłumaczenie.",
+    waga: "drobne",
+    obszar: "seo",
+    koszt: 100,
+    dostep: PANEL,
+    zakres: "strona",
+  },
+  literowki: {
+    tytul: "Literówki w tekście",
+    skutek:
+      "Błąd w tekście od razu rzuca się w oczy i obniża zaufanie do firmy, zwłaszcza gdy klient porównuje kilka ofert.",
+    waga: "drobne",
+    obszar: "prawo",
+    koszt: 50,
+    dostep: PANEL,
+    zakres: "strona",
+  },
+};
+Object.assign(KATALOG, KATALOG_J);
+
 /* ------------------------------------------------------------------ */
 /* Pomocnicze                                                           */
 /* ------------------------------------------------------------------ */

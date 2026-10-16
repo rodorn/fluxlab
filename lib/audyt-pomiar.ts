@@ -15,6 +15,8 @@
 import dns from "dns/promises";
 import tls from "tls";
 
+import { kontroleJezykoweGlownej, type AnalizaJezyka } from "./audyt-jezyki";
+import { znajdzLiterowki } from "./audyt-pisownia";
 import { arkuszeStrony, przygotujCss, sprawdzKursor } from "./kursor";
 import {
   kontroleDomeny,
@@ -657,6 +659,26 @@ function zamknietyDla(
   return blok.disallow.some((d) => d === "/");
 }
 
+/** Literówki na stronie głównej, tylko gdy jest po polsku. */
+async function pisownia(
+  a: AnalizaJezyka | null,
+  adres: string,
+  domena: string,
+): Promise<Znalezisko[]> {
+  if (!a || a.rozpoznany !== "pl") return [];
+  const l = await znajdzLiterowki([{ adres, tekst: a.tekst }], domena);
+  if (!l || !l.length) return [];
+  return [
+    {
+      klucz: "literowki",
+      szczegol: l
+        .slice(0, 5)
+        .map((x) => `${x.slowo} → ${x.podpowiedz}${x.cytat ? ` („${x.cytat}”)` : ""}`)
+        .join("; "),
+    },
+  ];
+}
+
 /** Kursor nad klikalnymi elementami: style z dokumentu i z arkuszy. */
 async function zmierzKursor(
   html: string,
@@ -862,7 +884,7 @@ export async function zmierz(domenaWejscie: string): Promise<Pomiar> {
   const tekstyCss: string[] = [
     ...[...html.matchAll(/<style[^>]*>([\s\S]*?)<\/style>/gi)].map((m) => m[1]),
   ];
-  const [zasoby, kursor, domenowe, glowna] = await Promise.all([
+  const [zasoby, kursor, domenowe, glowna, jezyki] = await Promise.all([
     zmierzZasoby(zasobyZHtml(html, baza)),
     zmierzKursor(html, adresKoncowy, tekstyCss),
     kontroleDomeny({
@@ -872,6 +894,7 @@ export async function zmierz(domenaWejscie: string): Promise<Pomiar> {
       naglowki: dok.odp.headers,
     }).catch(() => [] as Znalezisko[]),
     kontroleGlownej(html, adresKoncowy).catch(() => [] as Znalezisko[]),
+    kontroleJezykoweGlownej(domena, html, adresKoncowy).catch(() => null),
   ]);
   wynik.zasoby = zasoby;
   wynik.kursor = kursor;
@@ -879,6 +902,8 @@ export async function zmierz(domenaWejscie: string): Promise<Pomiar> {
     ...domenowe,
     ...glowna,
     ...obrazy404(zasoby),
+    ...(jezyki?.znaleziska ?? []),
+    ...(await pisownia(jezyki?.glowna ?? null, adresKoncowy, domena)),
     ...(await kontroleZasobow(zasoby, html, adresKoncowy, tekstyCss).catch(
       () => [] as Znalezisko[],
     )),
