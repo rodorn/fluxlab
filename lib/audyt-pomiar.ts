@@ -215,9 +215,12 @@ export function czystaDomena(wejscie: unknown): string {
 const UA_TELEFON =
   "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1 (compatible; FluxlabAudyt/1.0; +https://fluxlab.pl/audyt)";
 
-/** Domeny, których serwer odrzucił zwykły pomiar; ich pliki (mapa strony,
- *  robots.txt, style) po odmowie też pobieramy przez Zyte. */
-const przezZyteDomeny = new Set<string>();
+/** Domeny, których serwer odrzucił zwykły pomiar; ich pliki tekstowe (mapa
+ *  strony, robots.txt, style) po odmowie też pobieramy przez Zyte, najwyżej
+ *  kilka na badanie, żeby zmieścić się w czasie. Obrazów i skryptów nie. */
+const przezZyteDomeny = new Map<string, number>();
+const ZYTE_NA_DOMENE = 6;
+const ZYTE_PLIKI = /(robots\.txt|sitemap[^/]*\.xml|\.xml|\.css)(\?|$)/i;
 
 function hostBezWww(adres: string): string {
   try {
@@ -259,10 +262,13 @@ async function pobierz(
     if (
       metoda === "GET" &&
       [403, 429, 503].includes(odp.status) &&
-      przezZyteDomeny.has(hostBezWww(adres))
+      ZYTE_PLIKI.test(adres) &&
+      (przezZyteDomeny.get(hostBezWww(adres)) ?? ZYTE_NA_DOMENE) < ZYTE_NA_DOMENE
     ) {
+      const host = hostBezWww(adres);
+      przezZyteDomeny.set(host, (przezZyteDomeny.get(host) ?? 0) + 1);
       await odp.body?.cancel().catch(() => {});
-      const z = await pobierzPrzezZyte(adres);
+      const z = await pobierzPrzezZyte(adres, 15000);
       if (z)
         return {
           odp: new Response(null, { status: z.status, headers: z.naglowki }),
@@ -770,7 +776,7 @@ export async function zmierz(domenaWejscie: string): Promise<Pomiar> {
     const z = await pobierzPrzezZyte(baza);
     if (z && !wykryjBlokade(z.status, z.tekst)) {
       wynik.przezZyte = blokada;
-      przezZyteDomeny.add(domena);
+      przezZyteDomeny.set(domena, 0);
       dok = {
         odp: new Response(null, { status: z.status, headers: z.naglowki }),
         tekst: z.tekst,

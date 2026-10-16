@@ -12,7 +12,7 @@ export const dynamic = "force-dynamic";
 // Pomiar dobiera wagę plików, których serwer nie zadeklarował, więc bywa
 // dłuższy niż zwykłe sprawdzenie. Sześćdziesiąt sekund to górna granica
 // planu i jednocześnie granica cierpliwości człowieka patrzącego na pasek.
-export const maxDuration = 60;
+export const maxDuration = 120;
 
 /**
  * Prosty licznik zapytań na adres. Trzymany w pamięci funkcji, więc po
