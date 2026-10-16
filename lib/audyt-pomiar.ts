@@ -666,7 +666,7 @@ async function pisownia(
   domena: string,
 ): Promise<Znalezisko[]> {
   if (!a || a.rozpoznany !== "pl") return [];
-  const l = await znajdzLiterowki([{ adres, tekst: a.tekst }], domena);
+  const l = await znajdzLiterowki([{ adres, tekst: a.tekst }], domena, 8_000);
   if (!l || !l.length) return [];
   return [
     {

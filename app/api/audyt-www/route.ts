@@ -35,6 +35,7 @@ function przekroczonyLimit(ip: string): boolean {
 }
 
 export async function POST(request: Request) {
+  const start = Date.now();
   const ip =
     request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "nieznany";
   if (przekroczonyLimit(ip)) {
@@ -69,7 +70,14 @@ export async function POST(request: Request) {
   // odpowie, klient i tak dostaje wszystkie ustalenia, kolejność i cenę,
   // bo te nie pochodzą od modelu. Lepszy raport bez eseju niż błąd.
   const opis = klucz
-    ? await napiszRaport(pomiar, ustalenia, wycena, punkty, klucz)
+    ? await napiszRaport(
+        pomiar,
+        ustalenia,
+        wycena,
+        punkty,
+        klucz,
+        Math.max(3_000, 54_000 - (Date.now() - start)),
+      )
     : null;
 
   const zbadano = new Date().toISOString();

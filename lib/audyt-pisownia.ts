@@ -63,6 +63,7 @@ function adresKolektora(): string {
 /** Zapytanie do kolektora. Null, gdy nie odpowiedział: wtedy nie wydajemy werdyktu. */
 export async function sprawdzSlowa(
   slowa: string[],
+  limitMs = 15_000,
 ): Promise<Map<string, { en: boolean; podpowiedzi: string[] }> | null> {
   const sekret = process.env.RUCH_SEKRET;
   if (!sekret || !slowa.length) return slowa.length ? null : new Map();
@@ -71,7 +72,7 @@ export async function sprawdzSlowa(
       method: "POST",
       headers: { "Content-Type": "application/json", "X-Sekret": sekret },
       body: JSON.stringify({ slowa: slowa.slice(0, MAX_SLOW) }),
-      signal: AbortSignal.timeout(15_000),
+      signal: AbortSignal.timeout(limitMs),
     });
     if (!odp.ok) return null;
     const j = (await odp.json()) as {
@@ -105,6 +106,7 @@ function zdanie(tekst: string, slowo: string): string {
 export async function znajdzLiterowki(
   strony: { adres: string; tekst: string }[],
   domena = "",
+  limitMs = 15_000,
 ): Promise<Literowka[] | null> {
   const gdzie = new Map<string, string[]>();
   for (const s of strony)
@@ -116,7 +118,7 @@ export async function znajdzLiterowki(
     .filter(([, a]) => a.length < 3)
     .map(([w]) => w)
     .sort();
-  const wynik = await sprawdzSlowa(kandydaci.slice(0, MAX_SLOW));
+  const wynik = await sprawdzSlowa(kandydaci.slice(0, MAX_SLOW), limitMs);
   if (!wynik) return null;
   const literowki: Literowka[] = [];
   for (const [slowo, info] of [...wynik].sort((a, b) =>

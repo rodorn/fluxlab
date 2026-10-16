@@ -506,7 +506,7 @@ export async function zbadajWersje(
     const wyniki = await Promise.all(
       ["en", "de"].map(async (kod) => {
         for (const baza of [`https://${domena}`, `https://www.${domena}`]) {
-          const html = await pobierzHtml(`${baza}/${kod}/`, 10000);
+          const html = await pobierzHtml(`${baza}/${kod}/`, 8000);
           if (html && html.length > 2000) return `${baza}/${kod}/`;
         }
         return null;
@@ -514,19 +514,25 @@ export async function zbadajWersje(
     );
     wersje = wyniki.filter((w): w is string => !!w);
   }
-  const zbadane: WersjaZbadana[] = [];
   const juz = new Set<string>();
-  for (const url of wersje) {
-    const pelny = pelnyAdres(url, domena);
-    const klucz = pelny.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "");
-    if (juz.has(klucz)) continue;
-    juz.add(klucz);
-    const html = await pobierzHtml(pelny);
-    if (html === null) continue;
+  const adresy = wersje
+    .map((url) => pelnyAdres(url, domena))
+    .filter((pelny) => {
+      const klucz = pelny.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "");
+      if (juz.has(klucz)) return false;
+      juz.add(klucz);
+      return true;
+    });
+  // Równolegle, bo audyt jednej strony ma na wszystko jedną minutę.
+  const pobrane = await Promise.all(adresy.map((a) => pobierzHtml(a, 10_000)));
+  const zbadane: WersjaZbadana[] = [];
+  adresy.forEach((pelny, i) => {
+    const html = pobrane[i];
+    if (html === null || zbadane.length >= 3) return;
     const lang = html.match(/<html[^>]*\blang=["']([^"']+)["']/i)?.[1] ?? null;
     // Trafiliśmy na wersję polską: pomijamy ją zamiast raportować jej własny
     // język jako niedokończone tłumaczenie.
-    if (lang && /^pl/i.test(lang)) continue;
+    if (lang && /^pl/i.test(lang)) return;
     const bloki = blokiTekstu(html);
     const polskie = bloki
       .map((b) => ({ tekst: b.slice(0, 160), trafienia: polskiBlok(b) }))
@@ -539,8 +545,7 @@ export async function zbadajWersje(
       polskie,
       analiza: analizujJezyk(html),
     });
-    if (zbadane.length >= 3) break;
-  }
+  });
   return zbadane;
 }
 

@@ -201,9 +201,13 @@ export async function napiszRaport(
   wycena: Wycena,
   punkty: number | null,
   klucz: string,
+  limitMs?: number,
 ): Promise<RaportAI | null> {
   try {
     const odp = await fetch("https://api.openai.com/v1/responses", {
+      // Bez limitu długi opis przekraczał czas funkcji i klient dostawał
+      // błąd zamiast wyniku. Po limicie wynik idzie bez opisu modelu.
+      signal: limitMs ? AbortSignal.timeout(limitMs) : undefined,
       method: "POST",
       headers: { "Content-Type": "application/json", Authorization: `Bearer ${klucz}` },
       body: JSON.stringify({
