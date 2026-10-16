@@ -17,7 +17,7 @@ const RYCZALT_RATES = [
 const detectRateTool = {
   type: "function",
   name: "set_ryczalt_rate",
-  description: "Ustawcie stawkę ryczałtu i stawkę VAT dla podanego źródła przychodu",
+  description: "Ustaw stawkę ryczałtu i stawkę VAT dla podanego źródła przychodu",
   parameters: {
     type: "object",
     properties: {
@@ -47,7 +47,7 @@ const detectRateTool = {
 const suggestCostsTool = {
   type: "function",
   name: "suggest_costs",
-  description: "Zasugerujcie koszty firmowe lub prywatne dla JDG",
+  description: "Zasugeruj koszty firmowe lub prywatne dla JDG",
   parameters: {
     type: "object",
     properties: {

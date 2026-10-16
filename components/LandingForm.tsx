@@ -30,7 +30,7 @@ export default function LandingForm({
   formId,
   heading,
   intro,
-  submitLabel = "Wyślijcie",
+  submitLabel = "Wyślij",
   microCopy = "Odpowiedź zwykle tego samego dnia.",
 }: Props) {
   const router = useRouter();
@@ -134,12 +134,12 @@ export default function LandingForm({
       setLoading(false);
       setErrorMsg(
         payload?.error ??
-          "Coś poszło nie tak. Spróbujcie ponownie lub napiszcie bezpośrednio na pawel@fluxlab.pl.",
+          "Coś poszło nie tak. Spróbuj ponownie lub napisz bezpośrednio na pawel@fluxlab.pl.",
       );
     } catch {
       setLoading(false);
       setErrorMsg(
-        "Problem z połączeniem. Spróbujcie ponownie lub napiszcie na pawel@fluxlab.pl.",
+        "Problem z połączeniem. Spróbuj ponownie lub napisz na pawel@fluxlab.pl.",
       );
     }
   }
@@ -156,11 +156,11 @@ export default function LandingForm({
 
         <div className="bg-white dark:bg-gray-800/80 border border-gray-100 dark:border-gray-700 rounded-2xl p-5 lg:p-6">
           <p className="text-sm font-semibold text-gray-900 dark:text-white mb-3">
-            Co dostajecie po zgłoszeniu:
+            Co dostajesz po zgłoszeniu:
           </p>
           <ul className="space-y-2 mb-4">
             {[
-              "ocenę, czy automatyzacja ma sens w Waszym przypadku",
+              "ocenę, czy automatyzacja ma sens w Twoim przypadku",
               "wskazanie pierwszego procesu do uruchomienia",
               "orientacyjne widełki kosztu wdrożenia",
               "odpowiedź w ciągu 24h",
@@ -211,7 +211,7 @@ export default function LandingForm({
             overflow: "hidden",
           }}
         >
-          <label htmlFor="website">Nie wypełniajcie tego pola</label>
+          <label htmlFor="website">Nie wypełniaj tego pola</label>
           <input
             id="website"
             name="website"
@@ -266,7 +266,7 @@ export default function LandingForm({
               htmlFor="problemType"
               className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5"
             >
-              Co chcecie usprawnić? <span className="text-accent">*</span>
+              Co chcesz usprawnić? <span className="text-accent">*</span>
             </label>
             <select
               id="problemType"
@@ -315,7 +315,7 @@ export default function LandingForm({
                   {problemType
                     ? opt.label
                     : opt.value === ""
-                      ? "Najpierw wybierzcie obszar..."
+                      ? "Najpierw wybierz obszar..."
                       : opt.label}
                 </option>
               ))}
@@ -328,7 +328,7 @@ export default function LandingForm({
             htmlFor="message"
             className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5"
           >
-            Opiszcie problem w 2–3 zdaniach{" "}
+            Opisz problem w 2–3 zdaniach{" "}
             <span className="text-gray-600 dark:text-gray-400 font-normal text-xs">
               (opcjonalnie)
             </span>

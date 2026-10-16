@@ -9,7 +9,7 @@ import SprawdzPoBadaniu from "@/components/SprawdzPoBadaniu";
 export const metadata: Metadata = {
   title: "Licznik konwersji pokazuje zero, a zgłoszenia są | Fluxlab",
   description:
-    "Cztery przyczyny, przez które analityka nie widzi zgłoszeń, które faktycznie docierają, i sposób na rozstrzygnięcie, która z nich zachodzi u Was.",
+    "Cztery przyczyny, przez które analityka nie widzi zgłoszeń, które faktycznie docierają, i sposób na rozstrzygnięcie, która z nich zachodzi u ciebie.",
   alternates: { canonical: "/strefa-wiedzy/konwersje-pokazuja-zero" },
   openGraph: {
     title: "Licznik konwersji pokazuje zero, a zgłoszenia są | Fluxlab",
@@ -32,7 +32,7 @@ const faqItems = [
   {
     question: "Czy zliczanie kliknięcia w przycisk jest zawsze błędem?",
     answer:
-      "Nie, jeśli to miara zainteresowania. Błędem jest wysyłanie tej liczby do systemu reklamowego jako konwersji, bo wtedy płacicie za kliknięcia, a nie za zgłoszenia.",
+      "Nie, jeśli to miara zainteresowania. Błędem jest wysyłanie tej liczby do systemu reklamowego jako konwersji, bo wtedy płacisz za kliknięcia, a nie za zgłoszenia.",
   },
   {
     question: "Czy nasze własne wejścia mają aż takie znaczenie?",
@@ -92,7 +92,7 @@ export default function Page() {
           </p>
 
           <h2 className="h2-sekcji mt-12 mb-5">
-            Czwarta: liczycie samego siebie
+            Czwarta: liczysz samego siebie
           </h2>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
             Przy kilkudziesięciu odwiedzinach dziennie własne testy to istotna
@@ -103,17 +103,17 @@ export default function Page() {
             Jak rozstrzygnąć, która to przyczyna
           </h2>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-            Wyślijcie zgłoszenie testowe i sprawdźcie, czy zmienił się adres w pasku.
-            Potem porównajcie konwersje z mailami za wczoraj: dwa razy więcej to
+            Wyślij zgłoszenie testowe i sprawdź, czy zmienił się adres w pasku.
+            Potem porównaj konwersje z mailami za wczoraj: dwa razy więcej to
             podwójne liczenie, dużo więcej bez pokrycia to liczenie kliknięć.
-            Na koniec sprawdźcie wykluczenie własnych wejść.
+            Na koniec sprawdź wykluczenie własnych wejść.
           </p>
 
           <h2 className="h2-sekcji mt-12 mb-5">
             Strona z płatnością
           </h2>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-            Zapisujcie zgłoszenie przed przejściem do zapłaty, a nie po. Inaczej
+            Zapisuj zgłoszenie przed przejściem do zapłaty, a nie po. Inaczej
             osoba, która odpadła przy płatności, znika bez śladu. Więcej przy{" "}
             <Link
               href="/landing-z-platnoscia"
@@ -126,13 +126,13 @@ export default function Page() {
         </div>
 
         <SprawdzPoBadaniu
-          naglowek="Nie macie pewności, która z czterech przyczyn zachodzi u Was?"
-          opis="Tu potrzebne jest zajrzenie do ustawień pomiaru na konkretnej stronie. Napiszcie, co pokazuje licznik, a co przychodzi na skrzynkę."
+          naglowek="Nie masz pewności, która z czterech przyczyn zachodzi u ciebie?"
+          opis="Tu potrzebne jest zajrzenie do ustawień pomiaru na konkretnej stronie. Napisz, co pokazuje licznik, a co przychodzi na skrzynkę."
           narzedzie={{
             href: "/landing-z-platnoscia",
-            etykieta: "Zobaczcie, jak zapisujemy zgłoszenie przed płatnością",
+            etykieta: "Zobacz, jak zapisujemy zgłoszenie przed płatnością",
           }}
-          kontakt="Wolicie, żeby ktoś przeszedł te cztery punkty za Was?"
+          kontakt="Wolisz, żeby ktoś przeszedł te cztery punkty za ciebie?"
         />
 
         <section className="mt-12">

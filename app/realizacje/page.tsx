@@ -209,7 +209,7 @@ export default function RealizacjePage() {
           <div className="mx-auto mt-20 max-w-3xl text-center">
             <h2 className="h2-sekcji">Otwarty kod, dla programistów</h2>
             <p className="mt-3 text-gray-600 dark:text-gray-300">
-              Jeśli macie programistę, może ocenić naszą pracę w publicznych
+              Jeśli masz programistę, może ocenić naszą pracę w publicznych
               repozytoriach poniżej.
             </p>
           </div>
@@ -276,7 +276,7 @@ export default function RealizacjePage() {
                             rel="noopener noreferrer"
                             className="text-sm font-semibold text-gray-900 dark:text-white hover:underline"
                           >
-                            Zobaczcie na żywo →
+                            Zobacz na żywo →
                           </a>
                         )}
                       </div>

@@ -82,7 +82,7 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
             </p>
             <div className="mt-6">
               <Link href="#kalkulator" className="btn-primary">
-                Otwórzcie kalkulator
+                Otwórz kalkulator
               </Link>
             </div>
           </div>
@@ -164,9 +164,9 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
                       <ul className="list-disc pl-5 space-y-3 text-gray-600 dark:text-gray-400 mb-6">
                         <li>
                           <strong>Ile godzin miesięcznie?</strong> Poniżej 10
-                          zostawcie ręcznie. Od 10 do 40 automatyzacja prawie
-                          zawsze wygrywa. Powyżej 80 zautomatyzujcie większość i
-                          dopełnijcie części etatu.
+                          zostaw ręcznie. Od 10 do 40 automatyzacja prawie
+                          zawsze wygrywa. Powyżej 80 zautomatyzuj większość i
+                          dopełnij części etatu.
                         </li>
                         <li>
                           <strong>Rutyna czy osąd?</strong> Back-office to
@@ -175,8 +175,8 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
                         </li>
                         <li>
                           <strong>Czy proces jest stabilny?</strong> Jeśli
-                          zasady zmieniają się co tydzień, najpierw zatrudnijcie, a
-                          po kilku miesiącach zautomatyzujcie to, co się powtarza.
+                          zasady zmieniają się co tydzień, najpierw zatrudnij, a
+                          po kilku miesiącach zautomatyzuj to, co się powtarza.
                         </li>
                         <li>
                           <strong>Jak szybko?</strong> Rekrutacja trwa 2 do 4
@@ -221,7 +221,7 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
                         scenariuszy.
                       </p>
                       <p className="text-gray-600 dark:text-gray-400 mb-8">
-                        Zatrudnijcie, gdy praca wymaga relacji, negocjacji,
+                        Zatrudnij, gdy praca wymaga relacji, negocjacji,
                         kreatywności albo codziennych decyzji. Automatyzacja
                         chaosu daje tylko szybszy chaos.
                       </p>
@@ -230,14 +230,14 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
                           Zatrudnić czy zautomatyzować?
                         </h2>
                         <p className="text-gray-600 dark:text-gray-400 mb-4">
-                          Bezpłatna diagnoza 30 min. Policzymy to dla Waszego
+                          Bezpłatna diagnoza 30 min. Policzymy to dla Twojego
                           procesu.
                         </p>
                         <Link
                           href="/automatyzacja-leadow-crm"
                           className="btn-primary inline-block"
                         >
-                          Zobaczcie usługę automatyzacji procesów
+                          Zobacz usługę automatyzacji procesów
                         </Link>
                       </div>
                     </div>
@@ -295,7 +295,7 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
           </div>
         </section>
 
-        <CTA naglowek="Policzmy to dla Waszej firmy" opis="30 minut, konkretne liczby dla Waszych procesów." />
+        <CTA naglowek="Policzmy to dla Twojej firmy" opis="30 minut, konkretne liczby dla Twoich procesów." />
 
         <section className="py-12 lg:py-16">
           <div className="max-w-3xl mx-auto px-6 lg:px-8">

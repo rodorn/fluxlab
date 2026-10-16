@@ -34,16 +34,16 @@ export const metadata: Metadata = {
 
 const faq = [
   {
-    q: "Rachunek oznaczacie DI czy BFK?",
+    q: "Rachunek oznaczasz DI czy BFK?",
     a: "Rachunek nie jest fakturą, więc DI. Rachunek od sprzedawcy zwolnionego z VAT nie daje odliczenia, więc w ewidencji zakupu zwykle go nie ma.",
   },
   {
     q: "Faktura offline24 nie ma numeru w dniu złożenia JPK?",
-    a: "Oznaczacie ją DI, a gdy dostanie numer KSeF, korygujecie ewidencję i wpisujecie ten numer.",
+    a: "Oznaczasz ją DI, a gdy dostanie numer KSeF, korygujesz ewidencję i wpisujesz ten numer.",
   },
   {
     q: "Faktura z awarii KSeF nie ma jeszcze numeru?",
-    a: "Oznaczacie ją OFF. Po nadaniu numeru korekta ewidencji nie jest potrzebna.",
+    a: "Oznaczasz ją OFF. Po nadaniu numeru korekta ewidencji nie jest potrzebna.",
   },
   {
     q: "Faktura od zagranicznego dostawcy?",
@@ -133,7 +133,7 @@ export default function OznaczeniaJpkKsefArticle() {
             <PrevNextArticle currentHref="/strefa-wiedzy/oznaczenia-jpk-ksef" />
           </div>
         </div>
-        <CTA naglowek="Chcecie, żeby faktury z KSeF same trafiały do księgowości?" />
+        <CTA naglowek="Chcesz, żeby faktury z KSeF same trafiały do księgowości?" />
       </main>
       <Footer />
 

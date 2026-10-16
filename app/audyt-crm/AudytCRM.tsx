@@ -87,7 +87,7 @@ const QUESTIONS: Question[] = [
   },
   {
     id: 9,
-    text: "Czy w CRM macie duplikaty firm lub kontaktów?",
+    text: "Czy w CRM masz duplikaty firm lub kontaktów?",
     area: "deduplikacja",
     areaLabel: "deduplikacja kontaktów",
     inverted: true,
@@ -163,52 +163,52 @@ const SCENARIUSZE: Scenariusz<Record<number, Answer>>[] = [
 
 const RECOMMENDATIONS: Record<Area, string[]> = {
   atrybucja: [
-    "Dodajcie pole „źródło leada” jako obowiązkowe na każdym deal'u.",
-    "Skonfigurujcie UTM-y w formularzach, żeby źródło wpadało automatycznie.",
-    "W raporcie konwersji rozbij wynik per kanał, zobaczycie, co skaluje się tanio.",
+    "Dodaj pole „źródło leada” jako obowiązkowe na każdym deal'u.",
+    "Skonfiguruj UTM-y w formularzach, żeby źródło wpadało automatycznie.",
+    "W raporcie konwersji rozbij wynik per kanał, zobaczysz, co skaluje się tanio.",
   ],
   routing: [
-    "Ustawcie regułę przypisania właściciela natychmiast po utworzeniu leada (round-robin albo per region/produkt).",
-    "Dodajcie fallback, jeśli reguła nie zadziała, lead trafia do menedżera, nie zostaje bez właściciela.",
+    "Ustaw regułę przypisania właściciela natychmiast po utworzeniu leada (round-robin albo per region/produkt).",
+    "Dodaj fallback, jeśli reguła nie zadziała, lead trafia do menedżera, nie zostaje bez właściciela.",
     "Powiadomienie handlowca o nowym leadzie w 60 sekund od pojawienia się w CRM.",
   ],
   kwalifikacja: [
-    "Spiszcie kryteria wejścia/wyjścia z każdego etapu w 1 zdaniu, bez tego pipeline jest fikcją.",
-    "Wprowadźcie checklisty kwalifikacji (BANT, MEDDIC albo własną) widoczne na karcie deal'a.",
+    "Spisz kryteria wejścia/wyjścia z każdego etapu w 1 zdaniu, bez tego pipeline jest fikcją.",
+    "Wprowadź checklisty kwalifikacji (BANT, MEDDIC albo własną) widoczne na karcie deal'a.",
     "Etap „kwalifikowany” powinien wymagać konkretnych pól, nie deklaracji handlowca.",
   ],
   automatyzacja_zadan: [
-    "Zautomatyzujcie zadanie „pierwszy kontakt 15 min po dodaniu leada”.",
+    "Zautomatyzuj zadanie „pierwszy kontakt 15 min po dodaniu leada”.",
     "Po przejściu na etap kolejny, automatyczne zadanie z domyślnym terminem.",
     "Dla deali bez aktywności 7+ dni, auto-przypomnienie do właściciela.",
   ],
   follow_up: [
-    "Skonfigurujcie drabinkę przypomnień: 1, 3, 7, 14 dni po ostatnim kontakcie.",
+    "Skonfiguruj drabinkę przypomnień: 1, 3, 7, 14 dni po ostatnim kontakcie.",
     "Dla deali w „rozmowach” bez aktywności 14 dni, eskalacja do menedżera.",
     "Sekwencje mailowe dla zimnych leadów, minimum 3 punkty styku, automatycznie.",
   ],
   raportowanie: [
-    "Zbudujcie raport źródło → konwersja → MRR/wartość kontraktu, to podstawa decyzji marketingowych.",
+    "Zbuduj raport źródło → konwersja → MRR/wartość kontraktu, to podstawa decyzji marketingowych.",
     "Dashboard z czasem reakcji per handlowiec, to jeden z najsilniejszych predyktorów konwersji.",
     "Raport pipeline velocity, ile dni lead spędza w każdym etapie.",
   ],
   przepisywanie: [
-    "Zacznijcie od formularza www, to zwykle największe źródło ręcznego przepisywania.",
+    "Zacznij od formularza www, to zwykle największe źródło ręcznego przepisywania.",
     "Make/Zapier/n8n: webhook formularza → tworzenie kontaktu/firmy/deala w CRM jednym kliknięciem.",
     "Dla maili z zapytaniami, parser (regex albo LLM) wyciągający dane do CRM.",
   ],
   jakosc_danych: [
-    "Zdefiniujcie minimalne wymagane pola dla każdego etapu i włączcie walidację w CRM.",
+    "Zdefiniuj minimalne wymagane pola dla każdego etapu i włącz walidację w CRM.",
     "Co tydzień raport „braki danych”, które deale mają puste pola krytyczne.",
     "Onboarding handlowca: konkretny standard wypełniania CRM, nie „rób jak chcesz”.",
   ],
   deduplikacja: [
-    "Włączcie wbudowaną deduplikację po e-mailu i numerze NIP/VAT (jeśli dostępna).",
-    "Zróbcie jednorazowe sprzątanie, eksport, dedup w arkuszu, import z merge.",
+    "Włącz wbudowaną deduplikację po e-mailu i numerze NIP/VAT (jeśli dostępna).",
+    "Zrób jednorazowe sprzątanie, eksport, dedup w arkuszu, import z merge.",
     "Reguła: nowy lead ze znanego maila/NIP-u łączy się z istniejącym kontaktem, nie tworzy duplikatu.",
   ],
   integracje: [
-    "Połączcie Meta Lead Ads / Google Lead Form bezpośrednio z CRM (natywne integracje albo Make/Zapier).",
+    "Połącz Meta Lead Ads / Google Lead Form bezpośrednio z CRM (natywne integracje albo Make/Zapier).",
     "Formularz na stronie www → webhook → CRM, bez przepisywania.",
     "Dla LinkedIn/maili: parser, który raz dziennie zgarnia nowe zapytania do CRM.",
   ],
@@ -265,7 +265,7 @@ function scoreAnswers(answers: Record<number, Answer>): ScoreResult {
     category = "zdrowy";
     categoryHeadline = "Zdrowy pipeline, gotowy do skalowania";
     categoryNarrative =
-      "Wasz CRM ma większość kluczowych filarów na miejscu. Automatyzacja na tym etapie to dokładanie sił do działającej maszyny, szybka reakcja, mniej ręcznej pracy, lepsze raporty. Dobry moment, żeby zająć się obszarami granicznymi i wycisnąć z procesu jeszcze 20–30%.";
+      "Twój CRM ma większość kluczowych filarów na miejscu. Automatyzacja na tym etapie to dokładanie sił do działającej maszyny, szybka reakcja, mniej ręcznej pracy, lepsze raporty. Dobry moment, żeby zająć się obszarami granicznymi i wycisnąć z procesu jeszcze 20–30%.";
   } else if (score >= 5) {
     category = "solidny";
     categoryHeadline = "Solidny fundament, kilka brakujących filarów";
@@ -275,7 +275,7 @@ function scoreAnswers(answers: Record<number, Answer>): ScoreResult {
     category = "blokuje";
     categoryHeadline = "Pipeline blokuje sprzedaż";
     categoryNarrative =
-      "To nie jest problem CRM-a, to problem procesu. Zanim zautomatyzujecie cokolwiek, trzeba ustalić podstawy: kto jest właścicielem leada, jakie są kryteria etapów, skąd lead przychodzi. Automatyzacja bez tego daje tylko więcej zamieszania, nie więcej sprzedaży. Dobra wiadomość: gdy to ułożycie, kolejne etapy idą dużo szybciej.";
+      "To nie jest problem CRM-a, to problem procesu. Zanim zautomatyzujesz cokolwiek, trzeba ustalić podstawy: kto jest właścicielem leada, jakie są kryteria etapów, skąd lead przychodzi. Automatyzacja bez tego daje tylko więcej zamieszania, nie więcej sprzedaży. Dobra wiadomość: gdy to ułożysz, kolejne etapy idą dużo szybciej.";
   }
 
   return {
@@ -428,12 +428,12 @@ export default function AudytCRM() {
       {/* Intro */}
       <div className="space-y-3">
         <h2 className="text-lg font-bold text-gray-900 dark:text-white">
-          10 pytań o Wasz pipeline
+          10 pytań o Twój pipeline
         </h2>
         <p className="text-sm text-gray-500 dark:text-gray-400">
           Każde pytanie ma trzy odpowiedzi: <strong>tak</strong>,{" "}
           <strong>nie</strong> albo <strong>nie wiemy</strong>. „Nie wiemy" liczy
-          się jak „nie", bo jeśli nie macie pewności, że coś działa, to znaczy,
+          się jak „nie", bo jeśli nie masz pewności, że coś działa, to znaczy,
           że nie działa świadomie.
         </p>
       </div>
@@ -442,7 +442,7 @@ export default function AudytCRM() {
         pozycje={SCENARIUSZE}
         wybrany={wybrany}
         onWybor={wybierzScenariusz}
-        wstep="Nie chcecie odpowiadać na dziesięć pytań? Zobaczcie gotowy przypadek:"
+        wstep="Nie chcesz odpowiadać na dziesięć pytań? Zobacz gotowy przypadek:"
       />
 
       <ProgressBar done={answeredCount} total={QUESTIONS.length} />
@@ -578,7 +578,7 @@ export default function AudytCRM() {
           {/* CTA */}
           <div className="rounded-2xl border border-accent/20 bg-accent/5 dark:bg-accent/10 p-8 text-center">
             <h3 className="text-xl lg:text-2xl font-bold text-gray-900 dark:text-white mb-3">
-              Chcecie konkretną mapę automatyzacji dla tego pipeline'u?
+              Chcesz konkretną mapę automatyzacji dla tego pipeline'u?
             </h3>
             <p className="text-sm text-gray-600 dark:text-gray-400 mb-6 max-w-xl mx-auto">
               W diagnozie pokażemy, które z {result.problemAreas.length || "tych"}{" "}
@@ -600,7 +600,7 @@ export default function AudytCRM() {
             onClick={reset}
             className="w-full py-3 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-600 text-sm font-medium text-gray-500 dark:text-gray-400 hover:border-accent hover:text-accent transition-colors"
           >
-            Zacznijcie audyt od nowa
+            Zacznij audyt od nowa
           </button>
         </div>
       )}

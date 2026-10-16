@@ -30,13 +30,13 @@ export default function Page() {
       slug="audyt-marz"
       breadcrumb="Audyt marż"
       eyebrow="Rentowność asortymentu"
-      h1="Sprzedajecie dużo, a nie wiadomo, gdzie te pieniądze"
+      h1="Sprzedajesz dużo, a nie wiadomo, gdzie te pieniądze"
       lead="Allegro i BaseLinker pokazują obrót, a nie to, co zostaje po prowizji, zwrocie i wysyłce. Z eksportu sprzedaży i cen zakupu liczymy realny zysk na każdej sztuce."
       ctaLabel="Zamawiam audyt marż"
       ctaNote="Raport w 48 godzin"
       checks={[
         {
-          title: "Bestsellery, które dokładacie",
+          title: "Bestsellery, które dokładasz",
           desc: "Hity sprzedaży często są pod kreską. Wskazujemy je z kwotą straty na sztuce.",
         },
         {
@@ -91,12 +91,12 @@ export default function Page() {
         },
         {
           q: "A jeśli okaże się, że wszystko jest w porządku?",
-          a: "To też wynik: przestajecie zgadywać, ile zarabiacie na każdym produkcie.",
+          a: "To też wynik: przestajesz zgadywać, ile zarabiasz na każdym produkcie.",
         },
       ]}
       formId="order_audyt_marz"
-      formHeading="Zamówcie audyt marż"
-      formIntro="Napiszcie, z jakiego systemu macie eksport i ile macie produktów. Pliki prześlecie mailem po naszej odpowiedzi."
+      formHeading="Zamów audyt marż"
+      formIntro="Napisz, z jakiego systemu masz eksport i ile masz produktów. Pliki prześlesz mailem po naszej odpowiedzi."
       submitLabel="Zamawiam audyt marż"
       microCopy="Raport w 48 godzin. Dane kasujemy po dostarczeniu raportu."
       serviceName="Audyt marż sklepu internetowego"

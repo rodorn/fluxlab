@@ -318,8 +318,8 @@ export default function AutomatyzacjaDlaEcommerce() {
                 label: "Diagnoza",
                 content: (
                   <CTA
-                    naglowek="Wasz sklep rośnie, a operacja zaczyna gasić pożary?"
-                    opis="Opiszcie narzędzia i procesy. Wskażemy, gdzie dane przepisuje się ręcznie i czy automatyzacja się opłaca."
+                    naglowek="Twój sklep rośnie, a operacja zaczyna gasić pożary?"
+                    opis="Opisz narzędzia i procesy. Wskażemy, gdzie dane przepisuje się ręcznie i czy automatyzacja się opłaca."
                   />
                 ),
               },

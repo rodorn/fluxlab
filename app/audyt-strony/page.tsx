@@ -6,7 +6,7 @@ import ProductLanding from "@/components/ProductLanding";
 export const metadata: Metadata = {
   title: "Darmowy audyt techniczny strony, raport w minutę | Fluxlab",
   description:
-    "Wpiszcie adres, a zmierzymy szybkość, certyfikat, widoczność w wyszukiwarce, dostęp dla asystentów AI i zabezpieczenia poczty. Bez rejestracji i bez e-maila.",
+    "Wpisz adres, a zmierzymy szybkość, certyfikat, widoczność w wyszukiwarce, dostęp dla asystentów AI i zabezpieczenia poczty. Bez rejestracji i bez e-maila.",
   alternates: { canonical: "/audyt-strony" },
   openGraph: {
     title: "Darmowy audyt techniczny strony | Fluxlab",
@@ -32,8 +32,8 @@ export default function Page() {
       tool={<AudytCheck />}
       breadcrumb="Audyt strony"
       eyebrow="Darmowy audyt techniczny"
-      h1="Zobaczcie, co jest nie tak z Waszą stroną, zanim zapłacicie komukolwiek"
-      lead="Wpiszcie adres i poczekajcie kilkadziesiąt sekund. Zmierzymy szybkość na komputerze i telefonie, certyfikat, widoczność w wyszukiwarce, dostęp dla asystentów AI i zabezpieczenia poczty. Dostaniecie listę poprawek w kolejności, z ceną naprawy. Za darmo i bez rejestracji."
+      h1="Zobacz, co jest nie tak z Twoją stroną, zanim komukolwiek zapłacisz"
+      lead="Wpisz adres i poczekaj kilkadziesiąt sekund. Zmierzymy szybkość na komputerze i telefonie, certyfikat, widoczność w wyszukiwarce, dostęp dla asystentów AI i zabezpieczenia poczty. Dostaniesz listę poprawek w kolejności, z ceną naprawy. Za darmo i bez rejestracji."
       ctaLabel="Porozmawiajmy o naprawie"
       ctaNote="Diagnoza nic nie kosztuje"
       powiazane={[
@@ -51,7 +51,7 @@ export default function Page() {
         },
         {
           title: "Liczby, nie wrażenia",
-          desc: "Ważymy każdy plik z osobna. Przy każdym ustaleniu widzicie, co zmierzyliśmy.",
+          desc: "Ważymy każdy plik z osobna. Przy każdym ustaleniu widzisz, co zmierzyliśmy.",
         },
         {
           title: "Kolejność zamiast listy uwag",
@@ -59,7 +59,7 @@ export default function Page() {
         },
         {
           title: "Cena naprawy w raporcie",
-          desc: "Przy każdym problemie koszt usunięcia. Widzicie też, co zrobicie sam.",
+          desc: "Przy każdym problemie koszt usunięcia. Widzisz też, co zrobisz sam.",
         },
       ]}
       pricing={[
@@ -106,7 +106,7 @@ export default function Page() {
         },
         {
           q: "Czy musimy podać e-mail?",
-          a: "Nie. Raport pokazuje się od razu na ekranie. Adres podajecie tylko, gdy chcecie dostać go na skrzynkę.",
+          a: "Nie. Raport pokazuje się od razu na ekranie. Adres podajesz tylko, gdy chcesz dostać go na skrzynkę.",
         },
         {
           q: "Czy potrzebujecie dostępów?",
@@ -114,9 +114,9 @@ export default function Page() {
         },
       ]}
       formId="audyt_strony_naprawa"
-      formHeading="Raport pokazał coś, czego nie chcecie ruszać sam"
-      formIntro="Wklejcie adres strony i napiszcie, która pozycja z raportu Was niepokoi. Odpiszemy, ile to zajmie."
-      submitLabel="Napiszcie w sprawie naprawy"
+      formHeading="Raport pokazał coś, czego nie chcesz ruszać sam"
+      formIntro="Wklej adres strony i napisz, która pozycja z raportu cię niepokoi. Odpiszemy, ile to zajmie."
+      submitLabel="Napisz w sprawie naprawy"
       microCopy="Odpisujemy zwykle tego samego dnia. Ustalenia prowadzimy mailowo."
       serviceName="Darmowy audyt techniczny strony internetowej"
       serviceDesc="Bezpłatne badanie strony: szybkość na komputerze i na telefonie, waga plików, certyfikat, widoczność w wyszukiwarce, dostęp dla asystentów AI i zabezpieczenia poczty, z listą poprawek w kolejności i wyceną naprawy."

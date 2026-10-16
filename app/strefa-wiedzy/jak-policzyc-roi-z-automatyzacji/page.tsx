@@ -9,11 +9,11 @@ import PrevNextArticle from "@/components/PrevNextArticle";
 export const metadata: Metadata = {
   title: "Jak policzyć ROI z automatyzacji | Fluxlab",
   description:
-    "Zobaczcie, jak policzyć ROI z automatyzacji procesów biznesowych. Oszczędność czasu, koszt pracy, błędy, opóźnienia i wpływ na sprzedaż, bez marketingowej mgły.",
+    "Zobacz, jak policzyć ROI z automatyzacji procesów biznesowych. Oszczędność czasu, koszt pracy, błędy, opóźnienia i wpływ na sprzedaż, bez marketingowej mgły.",
   openGraph: {
     title: "Jak policzyć ROI z automatyzacji | Fluxlab",
     description:
-      "Zobaczcie, jak policzyć ROI z automatyzacji procesów biznesowych. Oszczędność czasu, koszt pracy, błędy, opóźnienia i wpływ na sprzedaż, bez marketingowej mgły.",
+      "Zobacz, jak policzyć ROI z automatyzacji procesów biznesowych. Oszczędność czasu, koszt pracy, błędy, opóźnienia i wpływ na sprzedaż, bez marketingowej mgły.",
     locale: "pl_PL",
     type: "article",
     images: [
@@ -37,7 +37,7 @@ const faq = [
   },
   {
     q: "Co jeśli proces nie daje dużej oszczędności czasu?",
-    a: "Sprawdźcie, czy nie poprawia jakości danych, przewidywalności albo czasu reakcji.",
+    a: "Sprawdź, czy nie poprawia jakości danych, przewidywalności albo czasu reakcji.",
   },
   {
     q: "Jaki proces najłatwiej policzyć?",
@@ -50,11 +50,11 @@ const faq = [
 ];
 
 const kroki = [
-  ["Policzcie czas ręcznej pracy", "15 minut na zgłoszenie, 80 zgłoszeń miesięcznie = 20 godzin."],
-  ["Przemnóżcie przez koszt godziny", "20 godzin x 90 zł = 1800 zł miesięcznie, 21 600 zł rocznie."],
-  ["Dodajcie koszt błędów i opóźnień", "Na przykład utracone leady i godziny poprawiania danych."],
-  ["Załóżcie realistyczną poprawę", "Zwykle 50 do 80% mniej ręcznej pracy, nie 100%."],
-  ["Porównajcie z kosztem wdrożenia i utrzymania", "Wdrożenie 7000 zł przy rocznej korzyści 18 000 zł to prosta decyzja."],
+  ["Policz czas ręcznej pracy", "15 minut na zgłoszenie, 80 zgłoszeń miesięcznie = 20 godzin."],
+  ["Przemnóż przez koszt godziny", "20 godzin x 90 zł = 1800 zł miesięcznie, 21 600 zł rocznie."],
+  ["Dodaj koszt błędów i opóźnień", "Na przykład utracone leady i godziny poprawiania danych."],
+  ["Załóż realistyczną poprawę", "Zwykle 50 do 80% mniej ręcznej pracy, nie 100%."],
+  ["Porównaj z kosztem wdrożenia i utrzymania", "Wdrożenie 7000 zł przy rocznej korzyści 18 000 zł to prosta decyzja."],
 ];
 
 export default function RoiAutomatyzacjiArticle() {
@@ -95,7 +95,7 @@ export default function RoiAutomatyzacjiArticle() {
             <p className="text-gray-600 dark:text-gray-400 mb-4">
               <strong className="text-gray-900 dark:text-white">Koszty:</strong>{" "}
               wdrożenie (analiza, konfiguracja, integracje, testy), utrzymanie
-              (abonamenty, monitoring, poprawki) i czas Waszego zespołu przy
+              (abonamenty, monitoring, poprawki) i czas Twojego zespołu przy
               wdrożeniu.
             </p>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
@@ -104,7 +104,7 @@ export default function RoiAutomatyzacjiArticle() {
                 zaoszczędzone godziny
               </Link>
               , mniej błędów, szybsza reakcja na leady i
-              mniej ręcznej koordynacji. Nie liczcie tylko czasu kliknięcia,
+              mniej ręcznej koordynacji. Nie licz tylko czasu kliknięcia,
               poprawki i opóźnienia też kosztują.
             </p>
 
@@ -193,7 +193,7 @@ export default function RoiAutomatyzacjiArticle() {
             <PrevNextArticle currentHref="/strefa-wiedzy/jak-policzyc-roi-z-automatyzacji" />
           </div>
         </div>
-        <CTA naglowek="Policzymy ROI dla Waszego procesu" />
+        <CTA naglowek="Policzymy ROI dla Twojego procesu" />
       </main>
       <Footer />
 
@@ -205,7 +205,7 @@ export default function RoiAutomatyzacjiArticle() {
             "@type": "Article",
             headline: "Jak policzyć ROI z automatyzacji",
             description:
-              "Zobaczcie, jak policzyć ROI z automatyzacji procesów biznesowych. Oszczędność czasu, koszt pracy, błędy, opóźnienia i wpływ na sprzedaż, bez marketingowej mgły.",
+              "Zobacz, jak policzyć ROI z automatyzacji procesów biznesowych. Oszczędność czasu, koszt pracy, błędy, opóźnienia i wpływ na sprzedaż, bez marketingowej mgły.",
             datePublished: "2026-03-30",
             author: {
               "@type": "Organization",

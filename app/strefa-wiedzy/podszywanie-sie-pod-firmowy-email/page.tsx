@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Mail firmowy: czy ktoś może się pod niego podszyć | Fluxlab",
     description:
-      "Mail firmowy bez SPF, DKIM i DMARC da się podrobić, a Wasze wiadomości trafiają do spamu. Darmowy audyt domeny w kilka sekund.",
+      "Mail firmowy bez SPF, DKIM i DMARC da się podrobić, a Twoje wiadomości trafiają do spamu. Darmowy audyt domeny w kilka sekund.",
     locale: "pl_PL",
     type: "article",
     images: [
@@ -84,8 +84,8 @@ export default function PodszywanieEmailArticle() {
           <Link href="/mail-firmowy" style={{ textDecoration: "underline" }}>
             mail firmowy
           </Link>{" "}
-          na Waszej domenie nie ma SPF, DKIM i DMARC, każdy może wysłać
-          wiadomość jak od Was, a część ofert i faktur nie dociera.
+          na Twojej domenie nie ma SPF, DKIM i DMARC, każdy może wysłać
+          wiadomość jak od ciebie, a część ofert i faktur nie dociera.
         </p>
 
         <div
@@ -104,7 +104,7 @@ export default function PodszywanieEmailArticle() {
         >
           <div>
             <strong style={{ fontSize: "1.05rem" }}>
-              Sprawdźcie swoją domenę teraz
+              Sprawdź swoją domenę teraz
             </strong>
             <div style={{ color: "var(--article-muted)", fontSize: "0.9rem" }}>
               Darmowy audyt SPF, DKIM i DMARC. Bez rejestracji, wynik od razu.
@@ -115,7 +115,7 @@ export default function PodszywanieEmailArticle() {
             className="btn-primary"
             style={{ padding: "0.7rem 1.5rem", whiteSpace: "nowrap" }}
           >
-            Uruchomcie darmowy audyt
+            Uruchom darmowy audyt
           </Link>
         </div>
 
@@ -123,14 +123,14 @@ export default function PodszywanieEmailArticle() {
           Trzy rekordy, które decydują o wszystkim
         </h2>
         <p style={{ color: "var(--article-text)", lineHeight: 1.7 }}>
-          O tym decydują trzy publiczne wpisy w DNS Waszej domeny.
+          O tym decydują trzy publiczne wpisy w DNS Twojej domeny.
         </p>
 
         <h3 style={{ fontWeight: 700, marginTop: "1.5rem" }}>
-          SPF, kto ma prawo wysyłać w Waszym imieniu
+          SPF, kto ma prawo wysyłać w Twoim imieniu
         </h3>
         <p style={{ color: "var(--article-text)", lineHeight: 1.7 }}>
-          Lista serwerów uprawnionych do wysyłania poczty z Waszej domeny.
+          Lista serwerów uprawnionych do wysyłania poczty z Twojej domeny.
         </p>
 
         <h3 style={{ fontWeight: 700, marginTop: "1.5rem" }}>
@@ -138,7 +138,7 @@ export default function PodszywanieEmailArticle() {
         </h3>
         <p style={{ color: "var(--article-text)", lineHeight: 1.7 }}>
           Podpis każdej wiadomości. Odbiorca sprawdza, czy list wyszedł od
-          Was i nie został zmieniony.
+          ciebie i nie został zmieniony.
         </p>
 
         <h3 style={{ fontWeight: 700, marginTop: "1.5rem" }}>
@@ -147,7 +147,7 @@ export default function PodszywanieEmailArticle() {
         <p style={{ color: "var(--article-text)", lineHeight: 1.7 }}>
           Mówi serwerom odbiorców, co zrobić z wiadomością, która nie przeszła
           SPF i DKIM. Brak DMARC albo tryb p=none oznacza, że nikt nie blokuje
-          podszywania pod Waszą domenę.
+          podszywania pod Twoją domenę.
         </p>
 
         <h2
@@ -166,7 +166,7 @@ export default function PodszywanieEmailArticle() {
         </p>
         <p style={{ color: "var(--article-text)", lineHeight: 1.7 }}>
           U każdego dostawcy SPF, DKIM i DMARC trzeba ustawić samemu. Czy są
-          ustawione, sprawdzicie w{" "}
+          ustawione, sprawdzisz w{" "}
           <Link href="/audyt-poczty" style={{ textDecoration: "underline" }}>
             darmowym audycie poczty
           </Link>

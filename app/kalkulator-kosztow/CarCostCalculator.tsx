@@ -254,7 +254,7 @@ function EditableValue({
         setEditing(true);
       }}
       className="text-sm font-semibold text-accent tabular-nums hover:bg-accent/10 rounded-md px-1.5 py-0.5 -mr-1.5 transition-colors cursor-text"
-      title="Kliknijcie, aby wpisać wartość"
+      title="Kliknij, aby wpisać wartość"
     >
       {value.toLocaleString("pl-PL")}
       {unit && <span className="text-gray-600 dark:text-gray-400 font-normal"> {unit}</span>}
@@ -789,7 +789,7 @@ export default function CarCostCalculator() {
           Szybkie wypełnianie
         </h2>
         <p className="text-sm text-gray-600 dark:text-gray-400">
-          Wklejcie link do ogłoszenia lub opiszcie samochód. Rozdziel średnikiem, żeby
+          Wklej link do ogłoszenia lub opisz samochód. Rozdziel średnikiem, żeby
           porównać kilka naraz.
         </p>
         <div className="flex gap-2">
@@ -831,7 +831,7 @@ export default function CarCostCalculator() {
                 Analizujemy...
               </span>
             ) : (
-              "Uzupełnijcie"
+              "Uzupełnij"
             )}
           </button>
         </div>
@@ -857,7 +857,7 @@ export default function CarCostCalculator() {
         </div>
         <p className="text-sm text-gray-500 dark:text-gray-400">
           {activeCarId != null
-            ? "Edytujecie zapisany pojazd, zmiany aktualizują się na żywo"
+            ? "Edytujesz zapisany pojazd, zmiany aktualizują się na żywo"
             : "Podstawowe informacje o samochodzie"}
         </p>
       </div>
@@ -967,7 +967,7 @@ export default function CarCostCalculator() {
         {showAdvanced && (
           <div className="px-6 pb-6 space-y-6 border-t border-gray-100 dark:border-gray-800 pt-4">
             <p className="text-xs text-gray-600 dark:text-gray-400">
-              Najedźcie na ikonę, żeby zobaczyć opis. Te wartości są ustawiane
+              Najedź na ikonę, żeby zobaczyć opis. Te wartości są ustawiane
               automatycznie przez AI.
             </p>
 
@@ -1101,7 +1101,7 @@ export default function CarCostCalculator() {
           }}
           className="btn-primary flex-1 text-center text-lg"
         >
-          Obliczcie koszty
+          Oblicz koszty
         </button>
         {activeCarId == null && (
           <button
@@ -1109,7 +1109,7 @@ export default function CarCostCalculator() {
             onClick={addToCompare}
             className="px-5 py-3 rounded-xl text-sm font-medium border-2 border-accent text-accent hover:bg-accent/10 transition-colors shrink-0"
           >
-            + Porównajcie
+            + Porównaj
           </button>
         )}
       </div>
@@ -1160,7 +1160,7 @@ export default function CarCostCalculator() {
                         ? "text-accent font-medium"
                         : "text-gray-700 dark:text-gray-300 hover:text-accent"
                     }`}
-                    title="Edytujcie ten pojazd w formularzu"
+                    title="Edytuj ten pojazd w formularzu"
                   >
                     {car.name}
                   </button>
@@ -1338,7 +1338,7 @@ export default function CarCostCalculator() {
             }}
             className="w-full py-3 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-600 text-sm font-medium text-gray-500 dark:text-gray-400 hover:border-accent hover:text-accent transition-colors"
           >
-            + Dodajcie nowy samochód
+            + Dodaj nowy samochód
           </button>
         </div>
       )}
@@ -1360,7 +1360,7 @@ export default function CarCostCalculator() {
           </div>
 
           <PillSelector<KmPeriod>
-            label="Podajcie przebiegi za okres"
+            label="Podaj przebiegi za okres"
             options={[
               { id: "dzien", label: "Dzień" },
               { id: "tydzien", label: "Tydzień" },

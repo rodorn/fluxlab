@@ -32,20 +32,20 @@ export const metadata: Metadata = {
 
 const steps = [
   {
-    title: "Sprawdźcie, gdzie CRM dziś nie działa",
-    text: "Wypiszcie, co handlowcy robią ręcznie każdego dnia: zadania, statusy, follow-upy, uzupełnianie pól, przepisywanie leadów. Tam leży najszybszy zwrot.",
+    title: "Sprawdź, gdzie CRM dziś nie działa",
+    text: "Wypisz, co handlowcy robią ręcznie każdego dnia: zadania, statusy, follow-upy, uzupełnianie pól, przepisywanie leadów. Tam leży najszybszy zwrot.",
   },
   {
-    title: "Nie automatyzujcie wszystkiego naraz",
-    text: "Zacznijcie od dwóch, trzech scenariuszy: tworzenie leada, przypisanie do osoby, przypomnienie o follow-upie, kontrola obowiązkowych pól.",
+    title: "Nie automatyzuj wszystkiego naraz",
+    text: "Zacznij od dwóch, trzech scenariuszy: tworzenie leada, przypisanie do osoby, przypomnienie o follow-upie, kontrola obowiązkowych pól.",
   },
   {
-    title: "Uporządkujcie zasady procesu",
-    text: "Automatyzacja bez zasad przyspiesza chaos. Ustalcie, kiedy lead zmienia etap, kto odpowiada za kolejny ruch i kiedy sprawa jest zamknięta.",
+    title: "Uporządkuj zasady procesu",
+    text: "Automatyzacja bez zasad przyspiesza chaos. Ustal, kiedy lead zmienia etap, kto odpowiada za kolejny ruch i kiedy sprawa jest zamknięta.",
   },
   {
-    title: "Dodajcie walidację, potem AI",
-    text: "AI sortuje leady dobrze tylko na danych bez duplikatów i braków. Niepewne sprawy oddajcie człowiekowi.",
+    title: "Dodaj walidację, potem AI",
+    text: "AI sortuje leady dobrze tylko na danych bez duplikatów i braków. Niepewne sprawy oddaj człowiekowi.",
   },
 ];
 
@@ -107,7 +107,7 @@ export default function AutomatyzacjaCrmOdCzegoZaczacArticle() {
           </div>
         </section>
 
-        <CTA naglowek="Macie CRM, ale zespół dalej klika za dużo ręcznie?" />
+        <CTA naglowek="Masz CRM, ale zespół dalej klika za dużo ręcznie?" />
       </main>
       <Footer />
 

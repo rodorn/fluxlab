@@ -106,7 +106,7 @@ export default function LiveDiagnosis() {
       });
 
       if (res.status === 429) {
-        setErrorMsg("Za dużo zapytań, odczekaj chwilę i spróbujcie ponownie.");
+        setErrorMsg("Za dużo zapytań, odczekaj chwilę i spróbuj ponownie.");
         return;
       }
 
@@ -116,7 +116,7 @@ export default function LiveDiagnosis() {
         } | null;
         setErrorMsg(
           payload?.error ??
-            "Nie udało się wygenerować diagnozy. Spróbujcie ponownie za moment.",
+            "Nie udało się wygenerować diagnozy. Spróbuj ponownie za moment.",
         );
         return;
       }
@@ -126,7 +126,7 @@ export default function LiveDiagnosis() {
       gaEvent("ai_diagnosis_result", { pillar: data.pillar });
     } catch {
       setErrorMsg(
-        "Problem z połączeniem. Spróbujcie ponownie lub napiszcie na pawel@fluxlab.pl.",
+        "Problem z połączeniem. Spróbuj ponownie lub napisz na pawel@fluxlab.pl.",
       );
     } finally {
       setLoading(false);
@@ -172,7 +172,7 @@ export default function LiveDiagnosis() {
       }
       setLeadStan("ok");
     } catch {
-      setLeadBlad("Brak połączenia. Spróbujcie ponownie za chwilę.");
+      setLeadBlad("Brak połączenia. Spróbuj ponownie za chwilę.");
       setLeadStan("blad");
     }
   }
@@ -200,10 +200,10 @@ export default function LiveDiagnosis() {
           {/* H1, bo ten blok otwiera `/kontakt` i jest jedynym miejscem, gdzie
               komponent sie pojawia. Strona nie miala zadnego H1. */}
           <h1 id="generator-heading" className="display-lg mb-4">
-            Zobaczcie swoją automatyzację, teraz
+            Zobacz swoją automatyzację, teraz
           </h1>
           <p className="text-gray-500 dark:text-gray-400 text-lg">
-            Opiszcie proces, który pochłania Wasz czas. Działający na żywo model AI w
+            Opisz proces, który pochłania Twój czas. Działający na żywo model AI w
             kilka sekund nazwie go, rozpisze na konkretne kroki i ostrożnie
             oszacuje, ile godzin miesięcznie da się odzyskać.
           </p>
@@ -215,7 +215,7 @@ export default function LiveDiagnosis() {
               htmlFor="diagnosis-input"
               className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
             >
-              Opiszcie proces w 1–2 zdaniach
+              Opisz proces w 1–2 zdaniach
             </label>
             <textarea
               id="diagnosis-input"
@@ -233,7 +233,7 @@ export default function LiveDiagnosis() {
 
             <div className="mt-3">
               <p className="text-xs font-medium text-gray-600 dark:text-gray-400 mb-2">
-                Albo zacznijcie od przykładu:
+                Albo zacznij od przykładu:
               </p>
               <div className="flex flex-wrap gap-2">
                 {EXAMPLES.map((ex) => (
@@ -256,7 +256,7 @@ export default function LiveDiagnosis() {
               disabled={tooShort || loading}
               className="btn-primary w-full mt-5 py-3.5 text-base disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {loading ? "Analizujemy..." : "Pokażcie mi automatyzację"}
+              {loading ? "Analizujemy..." : "Pokaż mi automatyzację"}
             </button>
 
             {errorMsg && (
@@ -386,13 +386,13 @@ export default function LiveDiagnosis() {
                         Program case study, zostały 3 miejsca
                       </p>
                       <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                        Zgadzacie się, żebyśmy opisali efekt wdrożenia jako
-                        publiczne case study, płacicie{" "}
+                        Zgadzasz się, żebyśmy opisali efekt wdrożenia jako
+                        publiczne case study, płacisz{" "}
                         <strong>połowę ceny</strong>. Wycena powyżej spada wtedy
                         o 50%.
                       </p>
                       <span className="mt-1.5 inline-flex items-center gap-1 text-sm font-medium text-accent">
-                        Zobaczcie zasady programu
+                        Zobacz zasady programu
                         <span aria-hidden="true">→</span>
                       </span>
                     </div>
@@ -430,7 +430,7 @@ export default function LiveDiagnosis() {
                       htmlFor="diagnoza-email"
                       className="block text-sm font-medium text-gray-700 dark:text-gray-300"
                     >
-                      Podajcie maila, odeślemy pełną diagnozę tego procesu
+                      Podaj maila, odeślemy pełną diagnozę tego procesu
                     </label>
                     <div className="mt-2 flex flex-col gap-3 sm:flex-row">
                       <input
@@ -461,8 +461,8 @@ export default function LiveDiagnosis() {
                 )}
 
                 <p className="mt-4 text-center text-xs text-gray-600 dark:text-gray-400">
-                  To wstępna, automatyczna analiza. Wysyłamy ją razem z Waszym
-                  zgłoszeniem, więc nie musicie opisywać wszystkiego od nowa.
+                  To wstępna, automatyczna analiza. Wysyłamy ją razem z Twoim
+                  zgłoszeniem, więc nie musisz opisywać wszystkiego od nowa.
                   Pełną diagnozę procesu robimy osobiście i jest bezpłatna.
                 </p>
               </div>

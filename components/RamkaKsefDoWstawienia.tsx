@@ -45,9 +45,9 @@ export default function RamkaKsefDoWstawienia() {
         Na stronę biura: ramka do wklejenia
       </h2>
       <p className="mt-3 text-gray-600 dark:text-gray-300">
-        Jeżeli prowadzicie na stronie zakładkę z aktualnościami dla klientów,
-        możecie wkleić tam poniższą ramkę. To zwykły HTML bez skryptów: w
-        WordPressie wklejcie go w blok „Własny HTML”, w innych edytorach w tryb
+        Jeżeli prowadzisz na stronie zakładkę z aktualnościami dla klientów,
+        możesz wkleić tam poniższą ramkę. To zwykły HTML bez skryptów: w
+        WordPressie wklej go w blok „Własny HTML”, w innych edytorach w tryb
         kodu. Wygląda tak:
       </p>
       <div
@@ -63,8 +63,8 @@ export default function RamkaKsefDoWstawienia() {
         className="btn-primary mt-4 justify-center px-6 text-sm"
       >
         {skopiowano
-          ? "Skopiowane, wklejcie w edytor strony"
-          : "Skopiujcie kod ramki"}
+          ? "Skopiowane, wklej w edytor strony"
+          : "Skopiuj kod ramki"}
       </button>
     </div>
   );

@@ -145,7 +145,7 @@ export default function KatalogProduktow() {
       ? CATEGORY_INTRO[filar]
       : pasmo
         ? PRICE_BAND_INTRO[pasmo]
-        : "Cały katalog, podzielony na obszary pracy. Zawęźcie go jednym naciśnięciem.";
+        : "Cały katalog, podzielony na obszary pracy. Zawęź go jednym naciśnięciem.";
 
   const czysto = !filar && !grupa && !tylkoDarmowe && !pasmo;
 
@@ -153,7 +153,7 @@ export default function KatalogProduktow() {
     <div>
       <div className="rounded-2xl border border-gray-200/80 dark:border-gray-800/80 bg-gray-50/60 dark:bg-gray-900/40 p-6">
         <p className="text-sm font-semibold text-gray-900 dark:text-white">
-          Czego szukacie?
+          Czego szukasz?
         </p>
 
         <div className="mt-4 flex flex-wrap gap-1.5 sm:gap-2">
@@ -248,7 +248,7 @@ export default function KatalogProduktow() {
             onClick={() => setWybor(PUSTY)}
             className="mt-3 text-sm font-semibold text-accent underline underline-offset-4"
           >
-            Pokażcie wszystko
+            Pokaż wszystko
           </button>
         )}
       </div>

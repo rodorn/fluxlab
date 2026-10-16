@@ -51,7 +51,7 @@ export const STANY: Stan[] = [
   {
     klucz: "firmowa",
     nazwa: "Strona firmowa zrobiona na zamówienie",
-    opis: "Kilka podstron, ktoś ją kiedyś dla Was napisał.",
+    opis: "Kilka podstron, ktoś ją kiedyś dla ciebie napisał.",
     coDaSie:
       "Treść, nowe podstrony, formularz, płatność, poprawki wyglądu. Przy własnym kodzie zmiana idzie tam, gdzie ma iść, i nic obok niej się nie rusza.",
     ograniczenie:
@@ -66,9 +66,9 @@ export const STANY: Stan[] = [
     nazwa: "Strona z kreatora",
     opis: "Wix, Squarespace, kreator od hostingu.",
     coDaSie:
-      "Teksty, zdjęcia, układ sekcji i formularz zmienia się w panelu kreatora, często szybciej niż w kodzie. Do takich zmian nie potrzebujecie nikogo z zewnątrz.",
+      "Teksty, zdjęcia, układ sekcji i formularz zmienia się w panelu kreatora, często szybciej niż w kodzie. Do takich zmian nie potrzebujesz nikogo z zewnątrz.",
     ograniczenie:
-      "Kreator nie oddaje kontroli nad tym, co wysyła do przeglądarki, więc czas ładowania i część rzeczy, których szuka wyszukiwarka, nie są w Waszych rękach. Tu kończy się poprawianie, a zaczyna decyzja o przeprowadzce.",
+      "Kreator nie oddaje kontroli nad tym, co wysyła do przeglądarki, więc czas ładowania i część rzeczy, których szuka wyszukiwarka, nie są w Twoich rękach. Tu kończy się poprawianie, a zaczyna decyzja o przeprowadzce.",
     przygotowac:
       "Login do panelu i informacja, na kogo zapisana jest domena, bo w kreatorach bywa zapisana na kreator.",
     zakres: 2,
@@ -107,7 +107,7 @@ export const STANY: Stan[] = [
     coDaSie:
       "Nic, bo nie ma czego poprawiać. Za to start od zera jest tańszy niż przerabianie cudzego: nic nie trzeba najpierw rozbierać.",
     ograniczenie:
-      "Najczęstszy błąd na tym etapie to zamawianie od razu całego serwisu. Jedna strona pod jedną rzecz, którą chcecie sprzedać, wystarcza na początek i pokazuje, czy w ogóle ktoś na nią wchodzi.",
+      "Najczęstszy błąd na tym etapie to zamawianie od razu całego serwisu. Jedna strona pod jedną rzecz, którą chcesz sprzedać, wystarcza na początek i pokazuje, czy w ogóle ktoś na nią wchodzi.",
     przygotowac:
       "Jedno zdanie o tym, co ma się dziać po wejściu na stronę, i pomysł na domenę.",
     zakres: 3,
@@ -116,7 +116,7 @@ export const STANY: Stan[] = [
   {
     klucz: "obca",
     nazwa: "Stroną zarządza obca firma",
-    opis: "Nie macie loginów ani dostępu do domeny.",
+    opis: "Nie masz loginów ani dostępu do domeny.",
     coDaSie:
       "Dopóki nie ma dostępu, nic. Da się natomiast sprawdzić od zewnątrz, na kogo zapisana jest domena i gdzie stoi strona, i z tym pójść do rozmowy.",
     ograniczenie:
@@ -145,7 +145,7 @@ export const ZMIANY: Zmiana[] = [
     opis: "Strona robi wrażenie zrobionej w pośpiechu.",
     jak: "Typografia, odstępy, kolory i zachowanie na telefonie. To jest najtańsza część pracy nad stroną i najszybciej widoczna.",
     czegoNieZalatwi:
-      "Wygląd nie naprawia tego, że nie wiadomo, co firma robi. Jeśli pierwsze zdanie na stronie nie mówi wprost, czym się zajmujecie, ładniejszy krój tego nie zastąpi.",
+      "Wygląd nie naprawia tego, że nie wiadomo, co firma robi. Jeśli pierwsze zdanie na stronie nie mówi wprost, czym się zajmujesz, ładniejszy krój tego nie zastąpi.",
     zakres: 1,
     produkt: "/strony-www",
   },
@@ -153,7 +153,7 @@ export const ZMIANY: Zmiana[] = [
     klucz: "zgloszenia",
     nazwa: "Zbierać zgłoszenia z formularza",
     opis: "Dziś ludzie dzwonią albo piszą maila.",
-    jak: "Formularz z potwierdzeniem, wiadomość do Was i zapis zgłoszenia poza samą skrzynką, żeby żadne nie zginęło w mailach.",
+    jak: "Formularz z potwierdzeniem, wiadomość do ciebie i zapis zgłoszenia poza samą skrzynką, żeby żadne nie zginęło w mailach.",
     czegoNieZalatwi:
       "Formularz nie zastąpi decyzji, kto i w jakim czasie na zgłoszenie odpowiada. Bez tego zgłoszenia tylko zmieniają miejsce oczekiwania.",
     zakres: 1,
@@ -165,7 +165,7 @@ export const ZMIANY: Zmiana[] = [
     opis: "Zamówienie i zapłata bez faktury wystawianej ręcznie.",
     jak: "Podpięcie operatora płatności, strona z potwierdzeniem i przekazanie zamówienia dalej, do miejsca, w którym powstaje faktura.",
     czegoNieZalatwi:
-      "Płatność wymaga regulaminu, polityki prywatności i widocznych danych sprzedawcy. To nie jest ozdoba, tylko warunek, żeby operator w ogóle włączył Wam przyjmowanie wpłat.",
+      "Płatność wymaga regulaminu, polityki prywatności i widocznych danych sprzedawcy. To nie jest ozdoba, tylko warunek, żeby operator w ogóle włączył ci przyjmowanie wpłat.",
     zakres: 2,
     produkt: "/landing-z-platnoscia",
   },
@@ -175,7 +175,7 @@ export const ZMIANY: Zmiana[] = [
     opis: "Na komórce strona buduje się kilkanaście sekund.",
     jak: "Najpierw pomiar, co konkretnie waży, bo przyczyną bywa jeden nieskompresowany obraz albo jeden skrypt, a nie cała strona. Poprawki idą dopiero po pomiarze.",
     czegoNieZalatwi:
-      "Na kreatorze i na obcym szablonie część wagi jest poza Waszą kontrolą, więc pomiar potrafi skończyć się wnioskiem, że dalej da się tylko przenosząc stronę.",
+      "Na kreatorze i na obcym szablonie część wagi jest poza Twoją kontrolą, więc pomiar potrafi skończyć się wnioskiem, że dalej da się tylko przenosząc stronę.",
     zakres: 2,
     produkt: "/audyt-strony",
   },
@@ -228,7 +228,7 @@ export function ocenStrone(stan: Stan, zmiana: Zmiana): WerdyktStrony {
       poziom,
       naglowek: "Poprawka tak, ale najpierw pomiar",
       zdanie:
-        "Tu odpowiedź zależy od tego, co jest pod spodem, a tego nie da się orzec z zewnątrz bez pomiaru. Darmowy audyt techniczny mówi, czy wystarczy poprawka, czy trafiliście na granicę tego, co ta strona umie. Zamawianie przebudowy przed tym pomiarem to kupowanie w ciemno.",
+        "Tu odpowiedź zależy od tego, co jest pod spodem, a tego nie da się orzec z zewnątrz bez pomiaru. Darmowy audyt techniczny mówi, czy wystarczy poprawka, czy trafia się na granicę tego, co ta strona umie. Zamawianie przebudowy przed tym pomiarem to kupowanie w ciemno.",
       produkt: produktPo(href),
     };
   }

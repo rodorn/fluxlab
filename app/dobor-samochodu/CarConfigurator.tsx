@@ -861,7 +861,7 @@ const BODY_STYLES: {
       <>
         SUV-y i crossovery mają w większości pokrywający się wybór modeli.{" "}
         <strong>
-          Sugerujemy wybór SUV-a wyłącznie jeśli planujecie zjeżdżać z asfaltu
+          Sugerujemy wybór SUV-a wyłącznie jeśli planujesz zjeżdżać z asfaltu
         </strong>{" "}
         – w przeciwnym razie crossover będzie lepszym wyborem.
       </>
@@ -921,8 +921,8 @@ const SHAPES_STANDARD: ShapeOption[] = [
     ],
     cons: [
       "Mały otwór załadunkowy",
-      "Nie przewieziecie dużych przedmiotów",
-      "Nie złożycie siedzeń tak łatwo",
+      "Nie przewieziesz dużych przedmiotów",
+      "Nie złożysz siedzeń tak łatwo",
     ],
   },
   {
@@ -1584,11 +1584,11 @@ export default function CarConfigurator() {
     <div className="space-y-8">
       <div className="rounded-2xl bg-accent/5 dark:bg-accent/10 border border-accent/20 p-6">
         <h3 className="text-sm font-semibold text-accent mb-2">
-          Jaki typ samochodu do Was pasuje?
+          Jaki typ samochodu do ciebie pasuje?
         </h3>
         <p className="text-sm text-gray-600 dark:text-gray-400">
-          Każdy typ ma swoje zalety i wady. Kliknijcie kartę, która najlepiej
-          odpowiada Waszym potrzebom.
+          Każdy typ ma swoje zalety i wady. Kliknij kartę, która najlepiej
+          odpowiada Twoim potrzebom.
         </p>
       </div>
       <CardSelector<BodyStyle>
@@ -1617,7 +1617,7 @@ export default function CarConfigurator() {
               </p>
             </div>
             <Slider
-              label="Jak często przewozicie dużo bagaży?"
+              label="Jak często przewozisz dużo bagaży?"
               value={answers.luggageFreq}
               min={0}
               max={100}
@@ -1649,11 +1649,11 @@ export default function CarConfigurator() {
                 Jaki rodzaj nadwozia sportowego?
               </h3>
               <p className="text-sm text-gray-600 dark:text-gray-400">
-                Przesuńcie suwak, żeby określić ile funkcjonalności potrzebujecie.
+                Przesuń suwak, żeby określić ile funkcjonalności potrzebujesz.
               </p>
             </div>
             <Slider
-              label="Ile funkcjonalności potrzebujecie?"
+              label="Ile funkcjonalności potrzebujesz?"
               value={answers.luggageFreq}
               min={0}
               max={100}
@@ -1675,7 +1675,7 @@ export default function CarConfigurator() {
                 : "Zwykły czy coupé?"}
             </h3>
             <p className="text-sm text-gray-600 dark:text-gray-400">
-              Domyślnie zaznaczono zwykłe nadwozie. Możecie zaznaczyć lub
+              Domyślnie zaznaczono zwykłe nadwozie. Możesz zaznaczyć lub
               odznaczyć dowolne opcje.
             </p>
           </div>
@@ -1708,7 +1708,7 @@ export default function CarConfigurator() {
           Segment i moc
         </h3>
         <p className="text-sm text-gray-600 dark:text-gray-400">
-          Odpowiedz na pytania, a dobierzemy optymalny segment i moc. Możecie je
+          Odpowiedz na pytania, a dobierzemy optymalny segment i moc. Możesz je
           potem skorygować ręcznie.
         </p>
       </div>
@@ -1716,7 +1716,7 @@ export default function CarConfigurator() {
       {/* Sliders for segment */}
       <div className="space-y-8">
         <Slider
-          label="Wasz wzrost"
+          label="Twój wzrost"
           value={answers.height}
           min={150}
           max={210}
@@ -1732,7 +1732,7 @@ export default function CarConfigurator() {
           max={answers.bodyStyle === "van" ? 8 : 5}
           step={1}
           unit="os."
-          hint="Ile osób jednocześnie przewozicie najczęściej?"
+          hint="Ile osób jednocześnie przewozisz najczęściej?"
           onChange={(v) => set("passengers", v)}
         />
       </div>
@@ -1812,7 +1812,7 @@ export default function CarConfigurator() {
         </div>
         <div className="space-y-2">
           <p className="text-xs text-gray-500 dark:text-gray-400 text-center">
-            Możecie wybrać inny segment:
+            Możesz wybrać inny segment:
           </p>
           <div className="flex flex-wrap justify-center gap-2">
             {SEGMENTS_ORDERED.filter((s) => {
@@ -1864,7 +1864,7 @@ export default function CarConfigurator() {
       {/* Power */}
       <div className="space-y-8">
         <Slider
-          label="Maksymalna prędkość, z jaką jeździcie regularnie"
+          label="Maksymalna prędkość, z jaką jeździsz regularnie"
           value={answers.maxSpeed}
           min={100}
           max={250}
@@ -1895,14 +1895,14 @@ export default function CarConfigurator() {
         </div>
 
         <Slider
-          label="Wasza korekta mocy"
+          label="Twoja korekta mocy"
           value={displayHP}
           min={50}
           max={700}
           step={5}
           unit="KM"
           onChange={(v) => set("powerOverride", v)}
-          hint="Przesuńcie, jeśli chcecie więcej lub mniej mocy niż sugerujemy."
+          hint="Przesuń, jeśli chcesz więcej lub mniej mocy niż sugerujemy."
         />
       </div>
     </div>
@@ -1917,7 +1917,7 @@ export default function CarConfigurator() {
           Budżet i użytkowanie
         </h3>
         <p className="text-sm text-gray-600 dark:text-gray-400">
-          AI dobierze modele do Waszego budżetu. Podajcie planowany okres
+          AI dobierze modele do Twojego budżetu. Podaj planowany okres
           użytkowania, żeby wyliczyć koszty posiadania.
         </p>
       </div>
@@ -2081,7 +2081,7 @@ export default function CarConfigurator() {
             onClick={fetchRecommendations}
             className="mt-3 btn-primary text-sm"
           >
-            Spróbujcie ponownie
+            Spróbuj ponownie
           </button>
         </div>
       )}
@@ -2093,7 +2093,7 @@ export default function CarConfigurator() {
             {fmt(answers.budget)} PLN.
           </p>
           <p className="text-xs text-amber-700 dark:text-amber-500">
-            Spróbujcie zwiększyć budżet, obniżyć wymaganą moc lub wybrać niższy
+            Spróbuj zwiększyć budżet, obniżyć wymaganą moc lub wybrać niższy
             segment.
           </p>
           <button
@@ -2101,7 +2101,7 @@ export default function CarConfigurator() {
             onClick={() => setStep(Math.max(0, lastStep - 2))}
             className="btn-secondary text-sm mt-2"
           >
-            Zmieńcie kryteria
+            Zmień kryteria
           </button>
         </div>
       )}
@@ -2117,7 +2117,7 @@ export default function CarConfigurator() {
                 <p className="text-sm text-gray-600 dark:text-gray-400">
                   {BODY_STYLES.find((b) => b.id === answers.bodyStyle)?.title ??
                     "Samochód"}{" "}
-                 , kliknijcie kategorię wiekową, żeby zobaczyć propozycje.
+                 , kliknij kategorię wiekową, żeby zobaczyć propozycje.
                 </p>
               </div>
             </div>
@@ -2648,7 +2648,7 @@ export default function CarConfigurator() {
       {!loading && !error && !results && (
         <div className="flex flex-col items-center justify-center py-20 gap-4">
           <p className="text-sm text-gray-500 dark:text-gray-400">
-            Kliknijcie &quot;Szukajcie modeli&quot;, żeby zobaczyć rekomendacje
+            Kliknij &quot;Szukaj modeli&quot;, żeby zobaczyć rekomendacje
           </p>
         </div>
       )}
@@ -2761,7 +2761,7 @@ export default function CarConfigurator() {
             disabled={!canNext()}
             className="btn-primary disabled:opacity-30 disabled:pointer-events-none"
           >
-            Szukajcie modeli →
+            Szukaj modeli →
           </button>
         ) : (
           <button
@@ -2773,7 +2773,7 @@ export default function CarConfigurator() {
             }}
             className="btn-secondary"
           >
-            Zacznijcie od nowa
+            Zacznij od nowa
           </button>
         )}
       </div>

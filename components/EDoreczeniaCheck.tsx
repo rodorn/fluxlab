@@ -35,7 +35,7 @@ const SKALE: Skala[] = [
     etykieta: "Kilka pism w roku",
     werdykt: "PANEL",
     odpowiedz:
-      "Panel dostawcy w zupełności wystarczy i nie ma czego automatyzować. Załóżcie adres, ustawcie powiadomienia na maila i wróćcie do tematu, jeśli pism zacznie przybywać.",
+      "Panel dostawcy w zupełności wystarczy i nie ma czego automatyzować. Załóż adres, ustaw powiadomienia na maila i wróć do tematu, jeśli pism zacznie przybywać.",
   },
   {
     klucz: "do-dziesieciu",
@@ -56,7 +56,7 @@ const SKALE: Skala[] = [
     etykieta: "Powyżej 50 pism miesięcznie",
     werdykt: "INTEGRACJA",
     odpowiedz:
-      "Przy tej skali osobny panel jest kolejnym miejscem do sprawdzania i najsłabszym ogniwem w liczeniu terminów. Pisma i dowody doręczenia powinny trafiać wprost do systemu, w którym pracujecie.",
+      "Przy tej skali osobny panel jest kolejnym miejscem do sprawdzania i najsłabszym ogniwem w liczeniu terminów. Pisma i dowody doręczenia powinny trafiać wprost do systemu, w którym pracujesz.",
   },
 ];
 
@@ -214,7 +214,7 @@ export default function EDoreczeniaCheck({
       setWynikKrs(d as WynikKrs);
       setKrsStan("idle");
     } catch {
-      setKrsBlad("Brak połączenia. Spróbujcie ponownie za chwilę.");
+      setKrsBlad("Brak połączenia. Spróbuj ponownie za chwilę.");
       setKrsStan("blad");
     }
   }
@@ -260,7 +260,7 @@ export default function EDoreczeniaCheck({
       }
       setLeadStan("ok");
     } catch {
-      setLeadBlad("Brak połączenia. Spróbujcie ponownie za chwilę.");
+      setLeadBlad("Brak połączenia. Spróbuj ponownie za chwilę.");
       setLeadStan("blad");
     }
   }
@@ -270,12 +270,12 @@ export default function EDoreczeniaCheck({
   return (
     <div className="rounded-2xl border border-gray-200/80 dark:border-gray-800/80 bg-white/70 dark:bg-gray-900/50 p-6 md:p-8">
       <h2 className="text-xl font-bold text-gray-900 dark:text-white">
-        Od kiedy Wasz podmiot musi mieć adres do e-Doręczeń
+        Od kiedy Twój podmiot musi mieć adres do e-Doręczeń
       </h2>
       {tryb === "forma" && (
         <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
           Terminy wchodzą etapami i zależą wyłącznie od tego, gdzie i kiedy
-          podmiot został zarejestrowany. Naciśnijcie swój przypadek, a policzymy
+          podmiot został zarejestrowany. Wybierz swój przypadek, a policzymy
           datę z ustawy i dni, które zostały albo minęły. Nic nie trzeba wpisywać.
         </p>
       )}
@@ -334,7 +334,7 @@ export default function EDoreczeniaCheck({
                 disabled={krsStan === "szukamy"}
                 className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
               >
-                {krsStan === "szukamy" ? "Sprawdzamy..." : "Sprawdźcie odpis"}
+                {krsStan === "szukamy" ? "Sprawdzamy..." : "Sprawdź odpis"}
               </button>
             </div>
             {krsStan === "blad" && (
@@ -402,7 +402,7 @@ export default function EDoreczeniaCheck({
                   onClick={() => zglosZdarzenie("edor_klik_kontakt")}
                   className="font-semibold text-accent underline underline-offset-2"
                 >
-                  napiszcie po wycenę
+                  napisz po wycenę
                 </a>
                 .
               </p>
@@ -467,7 +467,7 @@ export default function EDoreczeniaCheck({
                 </p>
                 <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
                   Sam obowiązek nie mówi nic o tym, jak skrzynkę obsługiwać. Ile
-                  pism urzędowych dostajecie dziś?
+                  pism urzędowych dostajesz dziś?
                 </p>
                 <div className="mt-3 flex flex-wrap gap-2">
                   {SKALE.map((s) => (
@@ -494,9 +494,9 @@ export default function EDoreczeniaCheck({
 
               <div className="mt-5 border-t border-gray-200/70 dark:border-gray-700/70 pt-4">
                 <p className="text-sm text-gray-700 dark:text-gray-300">
-                  Samego adresu nie założymy za Was, bo wniosek składa
+                  Samego adresu nie założymy za ciebie, bo wniosek składa
                   właściciel skrzynki. Możemy natomiast spiąć ją z systemem,
-                  którego używacie, razem z pobieraniem dowodów doręczenia.
+                  którego używasz, razem z pobieraniem dowodów doręczenia.
                   Klient tego API, którego do tego używamy, jest opublikowany na{" "}
                   <a
                     href="https://github.com/rodorn/edoreczenia-klient"
@@ -520,7 +520,7 @@ export default function EDoreczeniaCheck({
                       htmlFor="edoreczenia-email"
                       className="block text-sm font-medium text-gray-900 dark:text-white"
                     >
-                      Podajcie maila, odpiszemy, co w Waszym przypadku trzeba spiąć
+                      Podaj maila, odpiszemy, co w Twoim przypadku trzeba spiąć
                       i za ile
                     </label>
                     <div className="mt-2 flex flex-col gap-3 sm:flex-row">
@@ -540,7 +540,7 @@ export default function EDoreczeniaCheck({
                       >
                         {leadStan === "wysylamy"
                           ? "Wysyłamy..."
-                          : "Wyślijcie zgłoszenie"}
+                          : "Wyślij zgłoszenie"}
                       </button>
                     </div>
                     {leadStan === "blad" && (

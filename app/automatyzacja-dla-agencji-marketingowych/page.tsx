@@ -46,7 +46,7 @@ const useCases = [
   {
     title: "Godziny i rentowność klienta",
     description:
-      "Czas z time trackera zestawiamy z umową klienta. Przekroczenie budżetu retainera widzicie od razu, a nie przy fakturowaniu.",
+      "Czas z time trackera zestawiamy z umową klienta. Przekroczenie budżetu retainera widzisz od razu, a nie przy fakturowaniu.",
   },
   {
     title: "Fakturowanie retainerów",
@@ -59,7 +59,7 @@ const tools = [
   {
     name: "HubSpot i Pipedrive",
     description:
-      "CRM do leadów i obsługi klientów. Zostaje ten, który już macie.",
+      "CRM do leadów i obsługi klientów. Zostaje ten, który już masz.",
   },
   {
     name: "ClickUp i Asana",
@@ -180,7 +180,7 @@ export default function AutomatyzacjaDlaAgencjiMarketingowych() {
                         Narzędzia, które spinamy
                       </h2>
                       <p className="text-gray-500 dark:text-gray-400 mb-10">
-                        Łączymy to, co już macie. Nie sprzedajemy nowego
+                        Łączymy to, co już masz. Nie sprzedajemy nowego
                         oprogramowania.
                       </p>
 
@@ -269,11 +269,11 @@ export default function AutomatyzacjaDlaAgencjiMarketingowych() {
                     <div className="max-w-3xl mx-auto">
                       <CTA
                         naglowek="Zespół spędza więcej czasu na raportach niż na klientach?"
-                        opis="Opiszcie Wasz proces, a wskażemy, co warto zautomatyzować."
+                        opis="Opisz Twój proces, a wskażemy, co warto zautomatyzować."
                       />
 
                       <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-                        Zobaczcie też
+                        Zobacz też
                       </h2>
                       <ul className="space-y-3">
                         {related.map((item) => (

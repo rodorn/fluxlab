@@ -95,7 +95,7 @@ export default function AiWAutomatyzacjiFirmPage() {
             </div>
           </div>
         </section>
-        <CTA naglowek="Chcecie wdrożyć AI tam, gdzie naprawdę da efekt?" />
+        <CTA naglowek="Chcesz wdrożyć AI tam, gdzie naprawdę da efekt?" />
       </main>
       <Footer />
 

@@ -14,8 +14,8 @@ function zaDniRobocze(od: Date, dni: number): Date {
 
 const ETAPY = [
   { dni: 1, co: "Odpisujemy z ceną i zakresem" },
-  { dni: 5, co: "Widzicie projekt pierwszych podstron" },
-  { dni: 15, co: "Strona działa pod Waszym adresem" },
+  { dni: 5, co: "Widzisz projekt pierwszych podstron" },
+  { dni: 15, co: "Strona działa pod Twoim adresem" },
 ];
 
 /** Oś „jeśli napiszecie dziś”, z datami liczonymi w przeglądarce. */
@@ -28,7 +28,7 @@ export default function OsCzasuStrony() {
   return (
     <div className="rounded-2xl border border-gray-200/80 dark:border-gray-800/80 bg-white/60 dark:bg-gray-900/40 p-6">
       <p className="text-sm font-semibold text-gray-900 dark:text-white">
-        Jeśli napiszecie dziś
+        Jeśli napiszesz dziś
       </p>
       <ol className="mt-4 grid gap-4 sm:grid-cols-3">
         {ETAPY.map((e) => (

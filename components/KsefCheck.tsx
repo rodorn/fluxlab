@@ -32,7 +32,7 @@ type Sposob = {
   odpowiedz: string;
 };
 
-/** Druga decyzja: co u Was konkretnie zostalo do zrobienia. Pierwsza
+/** Druga decyzja: co u ciebie konkretnie zostalo do zrobienia. Pierwsza
  *  odpowiedz jest odmowna, bo firma z gotowym KSeF w programie ksiegowym
  *  nie potrzebuje wdrozenia, tylko najwyzej odbioru kosztowych. */
 const SPOSOBY: Sposob[] = [
@@ -41,14 +41,14 @@ const SPOSOBY: Sposob[] = [
     etykieta: "Program księgowy z wbudowanym KSeF",
     werdykt: "GOTOWE",
     odpowiedz:
-      "Wystawianie macie rozwiązane i nie ma tu czego wdrażać. Zostaje druga strona, o której łatwo zapomnieć: faktury kosztowe, które od 1 lutego 2026 trafiają do KSeF także do Was. Jeżeli ktoś pobiera je ręcznie i przepisuje do systemu, to jest jedyne miejsce, gdzie warto tu cokolwiek automatyzować.",
+      "Wystawianie masz rozwiązane i nie ma tu czego wdrażać. Zostaje druga strona, o której łatwo zapomnieć: faktury kosztowe, które od 1 lutego 2026 trafiają do KSeF także do ciebie. Jeżeli ktoś pobiera je ręcznie i przepisuje do systemu, to jest jedyne miejsce, gdzie warto tu cokolwiek automatyzować.",
   },
   {
     klucz: "program-bez-ksef",
     etykieta: "Program bez KSeF albo własny system",
     werdykt: "DO_DOMKNIECIA",
     odpowiedz:
-      "Potrzebna jest warstwa pośrednia: Wasz system produkuje dane faktury, ona zamienia je na XML w schemacie FA(3), wysyła przez API i zapisuje numer KSeF razem z UPO przy dokumencie. Bez zapisanego numeru i UPO nie ma czym wykazać, że faktura została przyjęta, a od 1 stycznia 2027 numer KSeF trzeba podawać w przelewie.",
+      "Potrzebna jest warstwa pośrednia: Twój system produkuje dane faktury, ona zamienia je na XML w schemacie FA(3), wysyła przez API i zapisuje numer KSeF razem z UPO przy dokumencie. Bez zapisanego numeru i UPO nie ma czym wykazać, że faktura została przyjęta, a od 1 stycznia 2027 numer KSeF trzeba podawać w przelewie.",
   },
   {
     klucz: "sklep",
@@ -62,14 +62,14 @@ const SPOSOBY: Sposob[] = [
     etykieta: "Kasa fiskalna i paragony z NIP",
     werdykt: "DO_DOMKNIECIA",
     odpowiedz:
-      "Do 31 grudnia 2026 możecie zostać przy kasie i nic nie robić. Warto natomiast wiedzieć, że to się kończy z dnia na dzień, razem z brakiem sankcji, więc grudzień 2026 będzie najgorszym możliwym momentem na wybieranie rozwiązania.",
+      "Do 31 grudnia 2026 możesz zostać przy kasie i nic nie robić. Warto natomiast wiedzieć, że to się kończy z dnia na dzień, razem z brakiem sankcji, więc grudzień 2026 będzie najgorszym możliwym momentem na wybieranie rozwiązania.",
   },
   {
     klucz: "recznie",
     etykieta: "Excel, Word albo papier",
     werdykt: "DO_ZBUDOWANIA",
     odpowiedz:
-      "Przy kilku fakturach miesięcznie nie potrzebujecie wdrożenia, tylko darmowej Aplikacji Podatnika KSeF od Ministerstwa Finansów albo zwykłego programu do fakturowania. Powiemy to wprost, zamiast sprzedawać Wam integrację: jeżeli faktur jest mniej niż kilkadziesiąt w miesiącu i nie powstają w żadnym systemie, integracja nie ma czego spinać.",
+      "Przy kilku fakturach miesięcznie nie potrzebujesz wdrożenia, tylko darmowej Aplikacji Podatnika KSeF od Ministerstwa Finansów albo zwykłego programu do fakturowania. Powiemy to wprost, zamiast sprzedawać ci integrację: jeżeli faktur jest mniej niż kilkadziesiąt w miesiącu i nie powstają w żadnym systemie, integracja nie ma czego spinać.",
   },
 ];
 
@@ -122,8 +122,8 @@ function policz(podatnik: Podatnik): Wynik {
     return {
       ...wspolne,
       werdykt: "ZIELONY",
-      etykieta: "Obowiązek Was nie obejmuje",
-      naglowek: "Faktur w KSeF wystawiać nie musicie",
+      etykieta: "Obowiązek cię nie obejmuje",
+      naglowek: "Faktur w KSeF wystawiać nie musisz",
     };
   }
   if (dni <= 0) {
@@ -232,7 +232,7 @@ export default function KsefCheck() {
       }
       setLeadStan("ok");
     } catch {
-      setLeadBlad("Brak połączenia. Spróbujcie ponownie za chwilę.");
+      setLeadBlad("Brak połączenia. Spróbuj ponownie za chwilę.");
       setLeadStan("blad");
     }
   }
@@ -242,12 +242,12 @@ export default function KsefCheck() {
   return (
     <div className="rounded-2xl border border-gray-200/80 dark:border-gray-800/80 bg-white/70 dark:bg-gray-900/50 p-6 md:p-8">
       <h2 className="text-xl font-bold text-gray-900 dark:text-white">
-        Co z KSeF obowiązuje Was już dziś, a co jeszcze nie
+        Co z KSeF obowiązuje cię już dziś, a co jeszcze nie
       </h2>
       <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
         Terminy weszły etapami i większość z nich już minęła, ale do końca 2026
-        roku działa kilka wyjątków naraz. Naciśnijcie swój przypadek, a
-        rozpiszemy, co obowiązuje, jaki wyjątek jeszcze Was chroni i ile dni mu
+        roku działa kilka wyjątków naraz. Wybierz swój przypadek, a
+        rozpiszemy, co obowiązuje, jaki wyjątek jeszcze cię chroni i ile dni mu
         zostało. Nic nie trzeba wpisywać.
       </p>
 
@@ -296,7 +296,7 @@ export default function KsefCheck() {
             onClick={kopiujLink}
             className="mt-3 rounded-lg border border-gray-300 px-3 py-1.5 text-xs font-semibold text-gray-700 transition-colors hover:border-accent hover:text-accent dark:border-gray-700 dark:text-gray-300"
           >
-            {linkSkopiowany ? "Link skopiowany" : "Kopiujcie link do tego wyniku"}
+            {linkSkopiowany ? "Link skopiowany" : "Kopiuj link do tego wyniku"}
           </button>
 
           {!wynik.podatnik.pozaObowiazkiem && (
@@ -326,10 +326,10 @@ export default function KsefCheck() {
 
           <div className="mt-5 border-t border-gray-200/70 dark:border-gray-700/70 pt-4">
             <p className="text-sm font-semibold text-gray-900 dark:text-white">
-              Druga rzecz do rozstrzygnięcia: co u Was zostało do zrobienia
+              Druga rzecz do rozstrzygnięcia: co u ciebie zostało do zrobienia
             </p>
             <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
-              Sam termin nie mówi nic o nakładzie pracy. Jak dziś powstają u Was
+              Sam termin nie mówi nic o nakładzie pracy. Jak dziś powstają u ciebie
               faktury?
             </p>
             <div className="mt-3 flex flex-wrap gap-2">
@@ -357,7 +357,7 @@ export default function KsefCheck() {
 
           <div className="mt-5 border-t border-gray-200/70 dark:border-gray-700/70 pt-4">
             <p className="text-sm text-gray-700 dark:text-gray-300">
-              Faktur za Was wystawiać nie będziemy, bo to robi Wasz system.
+              Faktur za ciebie wystawiać nie będziemy, bo to robi Twój system.
               Możemy spiąć go z KSeF: wysyłkę w schemacie FA(3), zapis numeru
               KSeF i UPO przy dokumencie oraz pobieranie faktur kosztowych.
               Klient tego API, którego używamy, jest dostępny otwarcie na{" "}
@@ -384,7 +384,7 @@ export default function KsefCheck() {
                   htmlFor="ksef-email"
                   className="block text-sm font-medium text-gray-900 dark:text-white"
                 >
-                  Podajcie maila, odpiszemy, co w Waszym przypadku trzeba spiąć i
+                  Podaj maila, odpiszemy, co w Twoim przypadku trzeba spiąć i
                   za ile
                 </label>
                 <div className="mt-2 flex flex-col gap-3 sm:flex-row">
@@ -404,7 +404,7 @@ export default function KsefCheck() {
                   >
                     {leadStan === "wysylamy"
                       ? "Wysyłamy..."
-                      : "Wyślijcie zgłoszenie"}
+                      : "Wyślij zgłoszenie"}
                   </button>
                 </div>
                 {leadStan === "blad" && (
@@ -438,7 +438,7 @@ export default function KsefCheck() {
           zasady limitu 10 tys. zł
         </a>
         . To sprawdzenie techniczne, nie porada podatkowa, a przypadki nietypowe
-        rozstrzyga treść ustawy i Wasz księgowy.
+        rozstrzyga treść ustawy i Twój księgowy.
       </p>
     </div>
   );

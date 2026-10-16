@@ -43,7 +43,7 @@ const faq = [
   },
   {
     q: "Zaliczkowa poszła przed obowiązkiem KSeF, rozliczenie już w KSeF?",
-    a: "W fakturze rozliczeniowej podajecie wtedy zwykły numer tamtej faktury zamiast numeru KSeF, bo go nie dostała.",
+    a: "W fakturze rozliczeniowej podajesz wtedy zwykły numer tamtej faktury zamiast numeru KSeF, bo go nie dostała.",
   },
   {
     q: "Ile zaliczek zmieści jedna faktura rozliczeniowa?",
@@ -128,7 +128,7 @@ export default function FakturaZaliczkowaKsefArticle() {
             <PrevNextArticle currentHref="/strefa-wiedzy/faktura-zaliczkowa-ksef" />
           </div>
         </div>
-        <CTA naglowek="Chcecie, żeby faktury z KSeF same trafiały do księgowości?" />
+        <CTA naglowek="Chcesz, żeby faktury z KSeF same trafiały do księgowości?" />
       </main>
       <Footer />
 

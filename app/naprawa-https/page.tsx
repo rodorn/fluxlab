@@ -31,13 +31,13 @@ export default function Page() {
       tool={<HttpsCheck />}
       breadcrumb="Naprawa HTTPS"
       eyebrow="Ostrzeżenie przeglądarki"
-      h1="Wasza strona działa, tylko nikt jej nie widzi"
-      lead="Wpiszcie swój adres z https ręcznie, nie z zakładki. Jeśli widzicie ostrzeżenie przeglądarki, widzi je każdy klient z Google i prawie nikt nie klika dalej."
-      ctaLabel="Sprawdźcie naszą stronę"
+      h1="Twoja strona działa, tylko nikt jej nie widzi"
+      lead="Wpisz swój adres z https ręcznie, nie z zakładki. Jeśli widzisz ostrzeżenie przeglądarki, widzi je każdy klient z Google i prawie nikt nie klika dalej."
+      ctaLabel="Sprawdź naszą stronę"
       ctaNote="Diagnoza tego samego dnia"
       powiazane={[
         {
-          przed: "Strona przekierowuje na obce serwisy? To zwykle włamanie, zobaczcie",
+          przed: "Strona przekierowuje na obce serwisy? To zwykle włamanie, zobacz",
           kotwica: "czyszczenie zhakowanej strony WordPress",
           href: "/strona-po-wlamaniu",
           po: ".",
@@ -49,7 +49,7 @@ export default function Page() {
           desc: "Najczęstszy przypadek. Bywa przeterminowany od lat, a firma o tym nie wie.",
         },
         {
-          title: "Certyfikat hostingu zamiast Waszego",
+          title: "Certyfikat hostingu zamiast Twojego",
           desc: "Certyfikat na nazwę hostingu. Przeglądarka blokuje wejście.",
         },
         {
@@ -65,7 +65,7 @@ export default function Page() {
         {
           name: "Diagnoza",
           price: "0 zł",
-          desc: "Piszecie adres, odsyłamy konkretną przyczynę.",
+          desc: "Piszesz adres, odsyłamy konkretną przyczynę.",
           features: [
             "co dokładnie widzi odwiedzający",
             "na jaką nazwę wystawiony jest certyfikat",
@@ -77,7 +77,7 @@ export default function Page() {
           price: "od 190 zł",
           desc: "Certyfikat, przekierowania, warianty adresu.",
           features: [
-            "poprawny certyfikat na Waszą domenę",
+            "poprawny certyfikat na Twoją domenę",
             "przekierowania, które nie prowadzą w pustkę",
             "wariant z www i bez www",
             "ponowne sprawdzenie po zmianach",
@@ -110,13 +110,13 @@ export default function Page() {
         },
         {
           q: "Czy certyfikat nie jest darmowy?",
-          a: "Sam certyfikat tak. Płacicie za znalezienie przyczyny, poprawne wpięcie na serwerze i przekierowania.",
+          a: "Sam certyfikat tak. Płacisz za znalezienie przyczyny, poprawne wpięcie na serwerze i przekierowania.",
         },
       ]}
       formId="order_naprawa_https"
-      formHeading="Sprawdźcie swoją stronę"
-      formIntro="Podajcie adres strony. Odeślemy przyczynę ostrzeżenia albo potwierdzimy, że wszystko jest w porządku."
-      submitLabel="Poproście o diagnozę"
+      formHeading="Sprawdź swoją stronę"
+      formIntro="Podaj adres strony. Odeślemy przyczynę ostrzeżenia albo potwierdzimy, że wszystko jest w porządku."
+      submitLabel="Poproś o diagnozę"
       microCopy="Diagnoza tylko na publicznych danych serwera, bez logowania."
       serviceName="Diagnoza i naprawa warstwy HTTPS strony firmowej"
       serviceDesc="Ustalenie przyczyny ostrzeżenia przeglądarki i naprawa: certyfikat wystawiony na właściwą domenę, przekierowania, warianty adresu, zasoby ładowane bez szyfrowania. Od 190 zł."

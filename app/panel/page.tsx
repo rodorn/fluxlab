@@ -54,7 +54,7 @@ export default async function PanelPage({
               <>
                 <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
                   Odnośnik otworzy panel tylko na urządzeniu podłączonym do
-                  Waszego tailnetu. Z innej sieci, bez Tailscale, adres nie
+                  Twojego tailnetu. Z innej sieci, bez Tailscale, adres nie
                   odpowie.
                 </p>
 
@@ -86,7 +86,7 @@ export default async function PanelPage({
                     type="submit"
                     className="text-sm text-gray-500 dark:text-gray-400 hover:text-accent transition-colors"
                   >
-                    Wylogujcie z tej strony
+                    Wyloguj z tej strony
                   </button>
                 </form>
               </>
@@ -124,7 +124,7 @@ export default async function PanelPage({
                     type="submit"
                     className="btn-primary w-full sm:w-auto mt-5"
                   >
-                    Wejdźcie
+                    Wejdź
                   </button>
                 </form>
               </>

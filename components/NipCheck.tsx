@@ -88,7 +88,7 @@ export default function NipCheck() {
       setWynik(data);
       setStan("gotowe");
     } catch {
-      setBlad("Brak połączenia. Spróbujcie ponownie za chwilę.");
+      setBlad("Brak połączenia. Spróbuj ponownie za chwilę.");
       setStan("blad");
     }
   }
@@ -130,7 +130,7 @@ export default function NipCheck() {
       }
       setLeadStan("ok");
     } catch {
-      setLeadBlad("Brak polaczenia. Sprobujcie ponownie.");
+      setLeadBlad("Brak polaczenia. Sprobuj ponownie.");
       setLeadStan("blad");
     }
   }
@@ -140,10 +140,10 @@ export default function NipCheck() {
   return (
     <div className="rounded-2xl border border-gray-200/80 dark:border-gray-800/80 bg-white/70 dark:bg-gray-900/50 p-6">
       <h2 className="text-xl font-bold text-gray-900 dark:text-white">
-        Sprawdźcie firmę teraz, za darmo
+        Sprawdź firmę teraz, za darmo
       </h2>
       <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-        Wpiszcie NIP, a od razu sprawdzimy go w wykazie podatników VAT Ministerstwa
+        Wpisz NIP, a od razu sprawdzimy go w wykazie podatników VAT Ministerstwa
         Finansów. Bez zakładania konta i bez czekania.
       </p>
       <Przyklady
@@ -153,7 +153,7 @@ export default function NipCheck() {
         ]}
         onWybor={uruchom}
         zablokowane={stan === "ladowanie"}
-        wstep="Nie macie pod ręką numeru? Zobaczcie na gotowym przykładzie:"
+        wstep="Nie masz pod ręką numeru? Zobacz na gotowym przykładzie:"
       />
       <form onSubmit={sprawdz} className="mt-5 flex flex-col gap-3 sm:flex-row">
         <input
@@ -169,7 +169,7 @@ export default function NipCheck() {
           disabled={stan === "ladowanie" || nip.replace(/\D/g, "").length < 10}
           className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
         >
-          {stan === "ladowanie" ? "Sprawdzamy..." : "Sprawdźcie NIP"}
+          {stan === "ladowanie" ? "Sprawdzamy..." : "Sprawdź NIP"}
         </button>
       </form>
 
@@ -250,8 +250,8 @@ export default function NipCheck() {
           <div className="mt-5 border-t border-gray-200/70 dark:border-gray-700/70 pt-4">
             <p className="text-sm text-gray-700 dark:text-gray-300">
               {wynik.verdict === "ZIELONY"
-                ? "To szybki sprawdzian z jednego rejestru. Pełny raport dokłada odpis KRS (likwidacja, zaległości, wykreślenie), wiek domeny oraz najważniejsze: sprawdzenie, czy numer konta, na który macie zapłacić, rzeczywiście należy do tej firmy."
-                : "Zanim cokolwiek przelejecie, warto sprawdzić resztę. Pełny raport dokłada odpis KRS (likwidacja, zaległości, wykreślenie), wiek domeny oraz sprawdzenie, czy numer konta, na który macie zapłacić, rzeczywiście należy do tej firmy."}
+                ? "To szybki sprawdzian z jednego rejestru. Pełny raport dokłada odpis KRS (likwidacja, zaległości, wykreślenie), wiek domeny oraz najważniejsze: sprawdzenie, czy numer konta, na który masz zapłacić, rzeczywiście należy do tej firmy."
+                : "Zanim cokolwiek przelejesz, warto sprawdzić resztę. Pełny raport dokłada odpis KRS (likwidacja, zaległości, wykreślenie), wiek domeny oraz sprawdzenie, czy numer konta, na który masz zapłacić, rzeczywiście należy do tej firmy."}
             </p>
 
             {leadStan === "ok" ? (
@@ -265,7 +265,7 @@ export default function NipCheck() {
                   htmlFor="nipcheck-email"
                   className="block text-sm font-medium text-gray-900 dark:text-white"
                 >
-                  Podajcie maila, odeślemy pełny raport dla tego numeru
+                  Podaj maila, odeślemy pełny raport dla tego numeru
                 </label>
                 <div className="mt-2 flex flex-col gap-3 sm:flex-row">
                   <input

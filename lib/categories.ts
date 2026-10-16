@@ -226,7 +226,7 @@ export const categories: Category[] = [
         href: "/strefa-wiedzy/podszywanie-sie-pod-firmowy-email",
         title: "Podszywanie się pod firmowy adres",
         description:
-          "Jak ktoś obcy wysyła wiadomości z Waszej domeny i co ustawić, żeby przestał.",
+          "Jak ktoś obcy wysyła wiadomości z Twojej domeny i co ustawić, żeby przestał.",
       },
     ],
   },

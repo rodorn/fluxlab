@@ -86,7 +86,7 @@ export default function SprawdzPoBadaniu({
   pozycje = [],
   wstep,
   narzedzie,
-  kontakt = "Chcecie to poprawić u siebie i nie robić tego samodzielnie?",
+  kontakt = "Chcesz to poprawić u siebie i nie robić tego samodzielnie?",
 }: {
   /** Naglowek bloku, mowi wprost, co da sie tu kliknac. */
   naglowek: string;
@@ -133,7 +133,7 @@ export default function SprawdzPoBadaniu({
       setStan("gotowe");
       zglosZdarzenie(`wynik_${u.werdykt.toLowerCase()}`);
     } catch {
-      setBlad("Brak połączenia. Spróbujcie ponownie za chwilę.");
+      setBlad("Brak połączenia. Spróbuj ponownie za chwilę.");
       setStan("blad");
     }
   }
@@ -154,7 +154,7 @@ export default function SprawdzPoBadaniu({
           pozycje={pozycje}
           onWybor={uruchom}
           zablokowane={stan === "ladowanie"}
-          wstep={wstep ?? "Uruchomcie na gotowym przykładzie, jednym kliknięciem:"}
+          wstep={wstep ?? "Uruchom na gotowym przykładzie, jednym kliknięciem:"}
         />
       )}
 
@@ -186,7 +186,7 @@ export default function SprawdzPoBadaniu({
         <span className="text-gray-600 dark:text-gray-400">
           {kontakt}{" "}
           <Link href="/kontakt" className="text-accent hover:underline">
-            Napiszcie, co chcecie zmienić
+            Napisz, co chcesz zmienić
           </Link>
           .
         </span>

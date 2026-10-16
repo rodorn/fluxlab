@@ -3,12 +3,12 @@ import ProductLanding from "@/components/ProductLanding";
 import MapaCheck from "@/components/MapaCheck";
 
 export const metadata: Metadata = {
-  title: "Czy Google ma listę podstron, sprawdźcie za darmo | Fluxlab",
+  title: "Czy Google ma listę podstron, sprawdź za darmo | Fluxlab",
   description:
-    "Mapa strony to lista adresów, którą wyszukiwarka pobiera jednym zapytaniem. Sprawdźcie za darmo, czy Wasza ją ma i czy adresy działają. Naprawa od 240 zł.",
+    "Mapa strony to lista adresów, którą wyszukiwarka pobiera jednym zapytaniem. Sprawdź za darmo, czy Twoja ją ma i czy adresy działają. Naprawa od 240 zł.",
   alternates: { canonical: "/mapa-strony" },
   openGraph: {
-    title: "Czy Google ma listę podstron, sprawdźcie za darmo | Fluxlab",
+    title: "Czy Google ma listę podstron, sprawdź za darmo | Fluxlab",
     description:
       "Sprawdzenie mapy strony, pliku robots.txt i adresów, które z tej mapy nie działają. Od ręki, bez rejestracji.",
     locale: "pl_PL",
@@ -31,9 +31,9 @@ export default function Page() {
       tool={<MapaCheck />}
       breadcrumb="Mapa strony"
       eyebrow="Indeksowanie w wyszukiwarce"
-      h1="Wyszukiwarka może nie wiedzieć o połowie Waszych podstron"
+      h1="Wyszukiwarka może nie wiedzieć o połowie Twoich podstron"
       lead="Robot dostaje gotową listę adresów albo odtwarza ją, klikając w linki. Wtedy podstrona ukryta w menu bywa odkrywana miesiącami, a martwe adresy z listy psują zaufanie do całości."
-      ctaLabel="Sprawdźcie swoją mapę strony"
+      ctaLabel="Sprawdź swoją mapę strony"
       ctaNote="Sprawdzenie za darmo, od ręki"
       checks={[
         {
@@ -69,7 +69,7 @@ export default function Page() {
           desc: "Cała lista, nie próbka.",
           features: [
             "wszystkie adresy z mapy",
-            "nowa mapa pod Wasz system",
+            "nowa mapa pod Twój system",
             "decyzja dla każdego martwego adresu",
           ],
           featured: true,
@@ -103,8 +103,8 @@ export default function Page() {
         },
       ]}
       formId="order_mapa_strony"
-      formHeading="Zamówcie pełny przegląd"
-      formIntro="Napiszcie, na czym stoi strona. Odeślemy przegląd wszystkich adresów i propozycję naprawy."
+      formHeading="Zamów pełny przegląd"
+      formIntro="Napisz, na czym stoi strona. Odeślemy przegląd wszystkich adresów i propozycję naprawy."
       submitLabel="Zamawiam przegląd"
       microCopy="Do sprawdzenia nie potrzebujemy dostępów."
       serviceName="Przegląd mapy strony i naprawa martwych adresów"

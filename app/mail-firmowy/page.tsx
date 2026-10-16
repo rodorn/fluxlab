@@ -36,7 +36,7 @@ const faqItems = [
   {
     question: "Czy adres w Gmailu wystarczy do firmy?",
     answer:
-      "Działa, ale nie da się go zabezpieczyć rekordami SPF, DKIM i DMARC, bo domena nie należy do Was.",
+      "Działa, ale nie da się go zabezpieczyć rekordami SPF, DKIM i DMARC, bo domena nie należy do ciebie.",
   },
   {
     question: "Dlaczego nasze maile trafiają do spamu?",
@@ -69,7 +69,7 @@ export default function MailFirmowy() {
           wpada do spamu
         </h1>
         <p style={{ ...tekst, fontSize: "1.05rem" }}>
-          Adres w stylu biuro@wasza-firma.pl wymaga domeny i skrzynki u dostawcy
+          Adres w stylu biuro@twoja-firma.pl wymaga domeny i skrzynki u dostawcy
           poczty. O tym, czy maile dochodzą, decydują trzy wpisy w DNS domeny.
         </p>
 
@@ -89,7 +89,7 @@ export default function MailFirmowy() {
         >
           <div>
             <strong style={{ fontSize: "1.05rem" }}>
-              Czy Wasza poczta wpada do spamu?
+              Czy Twoja poczta wpada do spamu?
             </strong>
             <div style={{ color: "var(--article-muted)", fontSize: "0.9rem" }}>
               Test SPF, DKIM i DMARC w 10 sekund, bez rejestracji.
@@ -100,7 +100,7 @@ export default function MailFirmowy() {
             className="btn-primary"
             style={{ padding: "0.7rem 1.5rem", whiteSpace: "nowrap" }}
           >
-            Sprawdźcie domenę
+            Sprawdź domenę
           </Link>
         </div>
 
@@ -113,25 +113,25 @@ export default function MailFirmowy() {
 
         <h2 className="h2-sekcji mt-10 mb-3">Co ustawić, żeby maile dochodziły</h2>
         <p style={tekst}>
-          SPF to lista serwerów, które mogą wysyłać pocztę z Waszej domeny. DKIM
+          SPF to lista serwerów, które mogą wysyłać pocztę z Twojej domeny. DKIM
           podpisuje każdą wiadomość. DMARC mówi serwerom odbiorców, co zrobić z
           mailem, który nie przeszedł tych dwóch sprawdzeń, i chroni przed{" "}
           <Link
             href="/strefa-wiedzy/podszywanie-sie-pod-firmowy-email"
             style={{ textDecoration: "underline" }}
           >
-            podszywaniem się pod Wasz adres
+            podszywaniem się pod Twój adres
           </Link>
           .
         </p>
 
         <h2 className="h2-sekcji mt-10 mb-3">Jak sprawdzić własną domenę</h2>
         <p style={tekst}>
-          Wpiszcie domenę w{" "}
+          Wpisz domenę w{" "}
           <Link href="/audyt-poczty" style={{ textDecoration: "underline" }}>
             darmowym audycie poczty
           </Link>
-          , a po 10 sekundach zobaczycie, którego wpisu brakuje i co dokładnie
+          , a po 10 sekundach zobaczysz, którego wpisu brakuje i co dokładnie
           dopisać w DNS.
         </p>
 

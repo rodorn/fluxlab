@@ -3,14 +3,11 @@ import Link from "next/link";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import LandingForm from "@/components/LandingForm";
-import SzybkiKontakt from "@/components/SzybkiKontakt";
 import OsCzasuStrony from "@/components/OsCzasuStrony";
 import Tabs from "@/components/Tabs";
 import ProductGrid from "@/components/ProductGrid";
-import CoZeStrona from "@/components/CoZeStrona";
 
 export const metadata: Metadata = {
   title: "Tworzenie stron WWW i poprawki w obecnych | Fluxlab",
@@ -60,12 +57,12 @@ const faq = [
   {
     question: "Czy możemy modyfikować treści samodzielnie?",
     answer:
-      "Tak. Strona firmowa dostaje prosty CMS, w którym edytujecie teksty jak dokument.",
+      "Tak. Strona firmowa dostaje prosty CMS, w którym edytujesz teksty jak dokument.",
   },
   {
     question: "Hosting i domena?",
     answer:
-      "Hosting jest w cenie wdrożenia. Domenę kupujecie na siebie (50-150 zł/rok), konfigurację robimy my.",
+      "Hosting jest w cenie wdrożenia. Domenę kupujesz na siebie (50-150 zł/rok), konfigurację robimy my.",
   },
 ];
 
@@ -97,18 +94,13 @@ export default function StronyWww() {
                 Nowa strona od zera albo poprawki w istniejącej. Pierwsza wersja
                 w 2-3 tygodnie.
               </p>
-              <div className="animate-fade-up-4">
-                <SzybkiKontakt
-                  formId="strony_www"
-                  temat="Strona internetowa"
-                  podpowiedz="Nowa strona czy poprawki?"
-                />
-                <a
-                  href="#poprawiac-czy-budowac"
-                  className="mt-4 inline-block text-sm font-semibold text-accent hover:underline"
-                >
-                  Sprawdźcie, poprawiać czy budować od nowa ↓
+              <div className="animate-fade-up-4 flex flex-wrap items-center gap-x-6 gap-y-3">
+                <a href="#kontakt" className="btn-primary">
+                  Napisz do nas
                 </a>
+                <span className="text-sm text-gray-600 dark:text-gray-400">
+                  Odpisujemy tego samego dnia, z ceną i terminem.
+                </span>
               </div>
             </div>
           </div>
@@ -128,15 +120,11 @@ export default function StronyWww() {
                 punktów w audycie technicznym, strona 6,4 raza lżejsza
               </p>
               <span className="mt-4 inline-block text-sm font-semibold text-accent group-hover:underline">
-                Zobaczcie realizacje →
+                Zobacz realizacje →
               </span>
             </Link>
             <OsCzasuStrony />
           </div>
-        </section>
-
-        <section className="container-wide pb-16">
-          <CoZeStrona biezacaStrona="/strony-www" />
         </section>
 
         <section className="container-wide pb-16">
@@ -181,7 +169,7 @@ export default function StronyWww() {
                       ))}
                     </ul>
                     <p className="mt-8 max-w-2xl text-gray-600 dark:text-gray-400">
-                      Przenosicie stronę? Najpierw zróbcie{" "}
+                      Przenosisz stronę? Najpierw zrób{" "}
                       <Link
                         href="/audyt-poczty"
                         className="text-accent hover:underline"
@@ -223,7 +211,7 @@ export default function StronyWww() {
                       ))}
                     </div>
                     <p className="mt-6 max-w-3xl text-sm text-gray-600 dark:text-gray-400">
-                      Macie już stronę i chcecie, żeby zaczęła zbierać zapytania?
+                      Masz już stronę i chcesz, żeby zaczęła zbierać zapytania?
                       Pakiet START: porządki po audycie, tytuły dla Google, zbieranie
                       opinii, wizytówka Google przez 3 miesiące i 2 landingi za
                       3 900 zł netto, z opieką 590 zł miesięcznie.
@@ -269,24 +257,20 @@ export default function StronyWww() {
                   </div>
                 ),
               },
-              {
-                label: "Diagnoza",
-                content: (
-                  <div id="diagnoza" className="scroll-mt-20 py-10 lg:py-12">
-                    <h2 className="sr-only">Bezpłatna diagnoza strony WWW</h2>
-                    <LandingForm
-                      formId="diagnosis_web"
-                      heading="Bezpłatna diagnoza strony WWW"
-                      intro="Napiszcie, jakiej strony potrzebujecie. Odpowiemy w ciągu 24h."
-                      submitLabel="Zamawiam diagnozę"
-                    />
-                  </div>
-                ),
-              },
             ]}
           />
         </div>
-      <CTA />
+        <section
+          id="kontakt"
+          className="scroll-mt-20 container-wide max-w-3xl mx-auto pb-20"
+        >
+          <LandingForm
+            formId="diagnosis_web"
+            heading="Napisz, jakiej strony potrzebujesz"
+            intro="Odpiszemy z ceną i terminem, zwykle tego samego dnia."
+            submitLabel="Wyślij"
+          />
+        </section>
       </main>
 
       {/* Service Schema */}

@@ -134,7 +134,7 @@ export default function FakturyZKsefPoZmianieBiuraArticle() {
             <PrevNextArticle currentHref="/strefa-wiedzy/faktury-z-ksef-po-zmianie-biura" />
           </div>
         </div>
-        <CTA naglowek="Chcecie, żeby faktury z KSeF same trafiały do Waszego systemu?" />
+        <CTA naglowek="Chcesz, żeby faktury z KSeF same trafiały do Twojego systemu?" />
       </main>
       <Footer />
 

@@ -96,7 +96,7 @@ export const ZRODLA: Zrodlo[] = [
     klucz: "pdf",
     nazwa: "PDF-y i skany",
     opis: "Faktury, umowy, protokoły, specyfikacje.",
-    jak: "Dokument przechodzi przez rozpoznanie tekstu, a z niego wyciąga się pola, których szukacie.",
+    jak: "Dokument przechodzi przez rozpoznanie tekstu, a z niego wyciąga się pola, których szukasz.",
     ryzyko:
       "Przy słabym skanie i nietypowym układzie rozpoznanie bywa niepewne, więc takie pozycje trafiają do ręcznego potwierdzenia zamiast trafiać do systemu po cichu.",
     przygotowac:
@@ -166,7 +166,7 @@ export const CELE: Cel[] = [
     opis: "Miejsce, w którym dane mają jedno źródło prawdy.",
     jak: "Dane trafiają do bazy, a panel pokazuje je zespołowi w takiej formie, w jakiej ma z nich korzystać.",
     ryzyko:
-      "Własny panel to rzecz do utrzymania. Ma sens wtedy, gdy żaden gotowy system nie obsługuje tego, co robicie, a nie dlatego, że tak ładniej.",
+      "Własny panel to rzecz do utrzymania. Ma sens wtedy, gdy żaden gotowy system nie obsługuje tego, co robisz, a nie dlatego, że tak ładniej.",
     trudnosc: 1,
   },
 ];

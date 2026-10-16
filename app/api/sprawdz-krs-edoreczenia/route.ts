@@ -104,7 +104,7 @@ function ocen(krs: string, odpis: any): Wynik {
     termin,
     naglowek: "W odpisie KRS nie ma adresu do e-Doręczeń",
     komentarz:
-      "Wniosek o adres składa się przez Biznes.gov.pl, spółka wskazuje w nim administratora skrzynki. Kary pieniężnej za brak adresu nie ma, ale urzędy doręczają wtedy pisma papierowo albo usługą hybrydową. Jeśli wniosek już złożyliście i czeka na aktywację, adres pojawi się w odpisie po aktywacji.",
+      "Wniosek o adres składa się przez Biznes.gov.pl, spółka wskazuje w nim administratora skrzynki. Kary pieniężnej za brak adresu nie ma, ale urzędy doręczają wtedy pisma papierowo albo usługą hybrydową. Jeśli wniosek już czeka na aktywację, adres pojawi się w odpisie po aktywacji.",
   };
 }
 
@@ -115,7 +115,7 @@ export async function POST(request: Request) {
     "nieznany";
   if (przekroczonyLimit(ip)) {
     return NextResponse.json(
-      { error: "Za dużo sprawdzeń w ciągu minuty. Spróbujcie za chwilę." },
+      { error: "Za dużo sprawdzeń w ciągu minuty. Spróbuj za chwilę." },
       { status: 429 },
     );
   }
@@ -132,7 +132,7 @@ export async function POST(request: Request) {
   }
   if (!cyfry || cyfry.length > 10 || /^0+$/.test(cyfry)) {
     return NextResponse.json(
-      { error: "Podajcie numer KRS, do 10 cyfr, na przykład 0000422082." },
+      { error: "Podaj numer KRS, do 10 cyfr, na przykład 0000422082." },
       { status: 400 },
     );
   }
@@ -148,7 +148,7 @@ export async function POST(request: Request) {
     if (!odpis) {
       return NextResponse.json(
         {
-          error: `Nie ma w KRS podmiotu o numerze ${krs}. Sprawdźcie numer, na przykład w stopce strony albo na fakturze.`,
+          error: `Nie ma w KRS podmiotu o numerze ${krs}. Sprawdź numer, na przykład w stopce strony albo na fakturze.`,
         },
         { status: 404 },
       );
@@ -160,7 +160,7 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         error:
-          "Wyszukiwarka KRS Ministerstwa Sprawiedliwości nie odpowiedziała. Spróbujcie za kilka minut.",
+          "Wyszukiwarka KRS Ministerstwa Sprawiedliwości nie odpowiedziała. Spróbuj za kilka minut.",
       },
       { status: 502 },
     );

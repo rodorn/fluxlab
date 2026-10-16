@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Landing z formularzem i płatnością, od 299 zł | Fluxlab",
     description:
-      "Szybkie wdrożenie pod jedną kampanię. Nie tracicie danych osób, które zrezygnują w trakcie płatności.",
+      "Szybkie wdrożenie pod jedną kampanię. Nie tracisz danych osób, które zrezygnują w trakcie płatności.",
     locale: "pl_PL",
     type: "website",
     images: [
@@ -31,12 +31,12 @@ export default function LandingZPlatnoscia() {
       eyebrow="Strony"
       h1="Landing z formularzem i płatnością"
       lead="Jedna strona pod jedną kampanię: opis, formularz, płatność. Zgłoszenie zapisuje się przed płatnością, a status potwierdza operator płatności."
-      ctaLabel="Opiszcie, co sprzedajecie"
+      ctaLabel="Opisz, co sprzedajesz"
       ctaNote="Od 299 zł, wdrożenie zwykle w kilka dni"
       checks={[
         {
           title: "Zgłoszenie zapisuje się przed płatnością",
-          desc: "Osoba, która wypełniła formularz i zrezygnowała przy BLIK-u, nie znika. Macie do kogo wrócić.",
+          desc: "Osoba, która wypełniła formularz i zrezygnowała przy BLIK-u, nie znika. Masz do kogo wrócić.",
         },
         {
           title: "Potwierdzenie płatności idzie webhookiem",
@@ -48,7 +48,7 @@ export default function LandingZPlatnoscia() {
         },
         {
           title: "Czego nie obejmuje cena",
-          desc: "Umowy z operatorem płatności, jego prowizji oraz domeny i hostingu, jeśli nie macie własnych.",
+          desc: "Umowy z operatorem płatności, jego prowizji oraz domeny i hostingu, jeśli nie masz własnych.",
         },
       ]}
       pricing={[
@@ -57,7 +57,7 @@ export default function LandingZPlatnoscia() {
           price: "299 zł",
           desc: "Strona, formularz, powiadomienia.",
           features: [
-            "Jedna strona sprzedażowa na Waszej domenie",
+            "Jedna strona sprzedażowa na Twojej domenie",
             "Formularz z zapisem przed płatnością",
             "Powiadomienie mailem o każdym zgłoszeniu",
             "Potwierdzenie dla kupującego",
@@ -91,7 +91,7 @@ export default function LandingZPlatnoscia() {
       faq={[
         {
           q: "Jakiej bramki płatniczej używacie?",
-          a: "Tej, którą wybierzecie, bo umowa jest zawierana na Waszą firmę. Wszyscy liczący się operatorzy w Polsce wysyłają potwierdzenie webhookiem.",
+          a: "Tej, którą wybierzesz, bo umowa jest zawierana na Twoją firmę. Wszyscy liczący się operatorzy w Polsce wysyłają potwierdzenie webhookiem.",
         },
         {
           q: "Ile to trwa?",
@@ -99,17 +99,17 @@ export default function LandingZPlatnoscia() {
         },
         {
           q: "Czy strona będzie na WordPressie?",
-          a: "Nie, jeśli nie ma powodu. Bez CMS-a strona ładuje się szybciej i nie wymaga aktualizacji. Jeśli landing ma być częścią Waszego WordPressa, zrobimy go tam.",
+          a: "Nie, jeśli nie ma powodu. Bez CMS-a strona ładuje się szybciej i nie wymaga aktualizacji. Jeśli landing ma być częścią Twojego WordPressa, zrobimy go tam.",
         },
         {
           q: "Co, jeśli kampania nie przyniesie efektów?",
-          a: "Strona i kod zostają u Was. Nie ma abonamentu ani przywiązania do naszego serwera.",
+          a: "Strona i kod zostają u ciebie. Nie ma abonamentu ani przywiązania do naszego serwera.",
         },
       ]}
       formId="landing_platnosc"
-      formHeading="Napiszcie, co sprzedajecie i komu"
-      formIntro="Jedno zdanie o produkcie, cena i czy macie bramkę płatniczą. Odpiszemy, który wariant ma sens."
-      submitLabel="Wyślijcie opis kampanii"
+      formHeading="Napisz, co sprzedajesz i komu"
+      formIntro="Jedno zdanie o produkcie, cena i czy masz bramkę płatniczą. Odpiszemy, który wariant ma sens."
+      submitLabel="Wyślij opis kampanii"
       microCopy="Odpisujemy zwykle tego samego dnia. Ustalenia prowadzimy mailowo."
       serviceName="Landing z formularzem i płatnością"
       serviceDesc="Strona sprzedażowa pod jedną kampanię, z formularzem zapisującym zgłoszenie przed płatnością i bramką płatniczą potwierdzaną webhookiem."

@@ -4,7 +4,7 @@ import { KONIEC_PRZEJSCIOWYCH } from "@/lib/terminy-ksef";
 export const runtime = "edge";
 
 export const alt =
-  "Sprawdzenie KSeF w dwóch kliknięciach: od kiedy obowiązuje Waszą firmę i ile dni zostało do 1 stycznia 2027";
+  "Sprawdzenie KSeF w dwóch kliknięciach: od kiedy obowiązuje Twoją firmę i ile dni zostało do 1 stycznia 2027";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -50,7 +50,7 @@ export default async function OGImage() {
             lineHeight: 1.1,
           }}
         >
-          Od kiedy KSeF obowiązuje Waszą firmę?
+          Od kiedy KSeF obowiązuje Twoją firmę?
         </div>
       </div>
       <div style={{ display: "flex", alignItems: "baseline", gap: "28px" }}>
@@ -78,7 +78,7 @@ export default async function OGImage() {
         }}
       >
         <div style={{ display: "flex", fontSize: 24, color: "#c7d2fe" }}>
-          Wynik z terminem i tym, co zrobić przy Waszym programie
+          Wynik z terminem i tym, co zrobić przy Twoim programie
         </div>
         <div
           style={{

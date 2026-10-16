@@ -705,11 +705,17 @@ if (sankcjeDaty.size > 1) {
   }
 }
 
-// --- 1g2. do odwiedzającego na „Wy” ---
-// Paweł 16.10.2026: strona mówi do klienta „Wy” („Wasza strona”, „sprawdźcie”),
-// także na przyciskach. Forma „ty” wracała przy każdej nowej podstronie.
+// --- 1g2. do odwiedzającego na „ty” ---
+// Paweł 16.10.2026: strona mówi do klienta w liczbie pojedynczej („Twoja
+// strona”, „sprawdź”, „Wyślij”). Formy „Wy” („Wasza”, „sprawdźcie”) wracały.
 {
-  const TY = /^(twój|twoja|twoje|twojego|twojej|twoim|twoją|twoi|twoich|twoimi|ciebie|cię|tobie|chcesz|masz|możesz|wiesz|płacisz|tracisz|potrzebujesz|dostaniesz|sprawdź|zobacz|wybierz|napisz|wpisz|policz|kliknij|zamów|wyślij|pobierz|porównaj|otwórz|wklej|zostaw|zrób|znajdź|weź|przejdź|umieść)$/i;
+  const ZAIMKI = /^(wasz|wasza|wasze|waszego|waszej|waszym|waszą|wasi|waszych|waszymi|wam|wami)$/i;
+  // Rzeczowniki i liczebniki na -cie, które nie są formą „Wy”.
+  const NIE_WY = new Set(
+    `wejście wejscie raporcie dokumencie kilkanaście kilkanascie audycie formacie zwrocie wsparcie spięcie spiecie kliknięcie klikniecie trakcie mieście flocie koszcie zużycie zuzycie schemacie ryczałcie rozstrzygnięcie przejście przejscie produkcie starcie poczcie liście liscie usunięcie pokrycie ofercie koncie karcie fragmencie zdjęcie wyjście wyjscie tekście tekscie szesnaście przesunięcie przesuniecie podejście osobiście naciśnięcie nacisniecie certyfikacie aucie abonamencie wykrycie segmencie rzeczywiście rozbicie przedpłacie programiście porcie otwarcie momencie fakcie asystencie zeszycie zejście zamknięcie wzroście wypłacie wszczęcie wpięcie użycie trzecie tarcie świecie sprzęcie skrócie przejęcie pominięcie pojęcie podszycie podpięcie piętnaście pietnascie pakiecie obrocie limicie kredycie korekcie kontrahencie kontakcie konflikcie kliencie istocie hoście efekcie dwanaście dopłacie budżecie asfalcie projekcie jedenaście jedenascie rabacie internecie obiekcie domenawejscie ocenspiecie gicie linkwtekscie zapłacie dacie hubspocie infakcie`.split(" "),
+  );
+  const WY = (w) =>
+    ZAIMKI.test(w) || (/cie$/i.test(w) && !NIE_WY.has(w.toLowerCase()));
   const POMIN = [
     "app/api/",
     "lib/audyt-raport.ts",
@@ -737,17 +743,16 @@ if (sankcjeDaty.size > 1) {
           const t = l.trim();
           if (t.startsWith("//") || t.startsWith("*") || t.startsWith("/*"))
             return;
-          // Identyfikatory (pobierz(), policz:, .zobacz) nie sa tekstem.
+          // Pytanie FAQ zadaje klient do nas („Czy robicie sklepy?”).
+          if (/^(q|question|pytanie):/.test(t)) return;
           const tekst = l
             .replace(CYTAT, "")
             .replace(/[\p{L}\w]+\s*[(:]/gu, " ")
             .replace(/\.[\p{L}\w]+/gu, " ")
             .replace(/\b(const|let|function|import|from)\s+[\p{L}\w{}, ]+/gu, " ");
-          const trafione = (tekst.match(/[\p{L}]+/gu) ?? []).find((w) =>
-            TY.test(w),
-          );
+          const trafione = (tekst.match(/[\p{L}]+/gu) ?? []).find(WY);
           if (trafione)
-            add("forma ty", `${wzgledna}:${i + 1}: "${trafione}"`);
+            add("forma wy", `${wzgledna}:${i + 1}: "${trafione}"`);
         });
     }
   }
@@ -806,7 +811,7 @@ if (!problems.length) {
 console.log(`ROZJAZDY: ${problems.length}`);
 for (const [kind, msgs] of Object.entries(byKind)) {
   console.log(`\n[${kind}] ${msgs.length}`);
-  for (const m of msgs.slice(0, 40)) console.log("  - " + m);
+  for (const m of msgs.slice(0, Number(process.env.SPOJNOSC_ILE ?? 40))) console.log("  - " + m);
   if (msgs.length > 40) console.log(`  ... i ${msgs.length - 40} wiecej`);
 }
 process.exit(1);

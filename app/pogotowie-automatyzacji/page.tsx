@@ -31,7 +31,7 @@ export default function Page() {
       eyebrow="Awaria automatyzacji"
       h1="Stanęła integracja, a wykonawca zniknął"
       lead="Scenariusz świeci na zielono, a zamówienia nie schodzą albo leady nie trafiają do CRM. Czytamy logi wykonań i znajdujemy wygasłe poświadczenia, zmienione API i ciche awarie."
-      ctaLabel="Zgłoście awarię"
+      ctaLabel="Zgłoś awarię"
       ctaNote="Odpowiedź do 2 godzin w godzinach pracy"
       checks={[
         {
@@ -55,7 +55,7 @@ export default function Page() {
         {
           name: "Diagnoza",
           price: "49 zł",
-          desc: "Wiecie, co się dzieje i ile kosztuje naprawa.",
+          desc: "Wiesz, co się dzieje i ile kosztuje naprawa.",
           features: [
             "przegląd logów wykonań",
             "przyczyna, nie objaw",
@@ -76,7 +76,7 @@ export default function Page() {
         {
           name: "Opieka",
           price: "299 zł/mc",
-          desc: "O awarii nie dowiadujecie się od klienta.",
+          desc: "O awarii nie dowiadujesz się od klienta.",
           features: [
             "monitoring i alarmy",
             "reakcja do 2 godzin w godzinach pracy",
@@ -95,7 +95,7 @@ export default function Page() {
         },
         {
           q: "Jak przekazać dostępy bezpiecznie?",
-          a: "Bez wysyłania haseł: konto z ograniczonymi uprawnieniami albo zaproszenie w narzędziu, które potem odbieracie.",
+          a: "Bez wysyłania haseł: konto z ograniczonymi uprawnieniami albo zaproszenie w narzędziu, które potem odbierasz.",
         },
         {
           q: "Czy diagnoza przepada, jeśli zlecimy naprawę?",
@@ -103,9 +103,9 @@ export default function Page() {
         },
       ]}
       formId="order_pogotowie_automatyzacji"
-      formHeading="Zgłoście awarię automatyzacji"
-      formIntro="Napiszcie, na czym to działa, co przestało działać i od kiedy. Jeśli stoją zamówienia, zaznaczcie to."
-      submitLabel="Zgłoście awarię"
+      formHeading="Zgłoś awarię automatyzacji"
+      formIntro="Napisz, na czym to działa, co przestało działać i od kiedy. Jeśli stoją zamówienia, zaznacz to."
+      submitLabel="Zgłoś awarię"
       microCopy="Odpowiedź do 2 godzin w godzinach pracy. Diagnoza płatna z góry i odliczana od naprawy."
       serviceName="Pogotowie automatyzacji, naprawa integracji"
       serviceDesc="Diagnoza i naprawa zepsutych automatyzacji: n8n, Make, Zapier, BaseLinker, WooCommerce, Allegro, webhooki. Diagnoza 49 zł, naprawa od 490 zł, opieka 299 zł miesięcznie."

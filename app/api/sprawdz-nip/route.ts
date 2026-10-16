@@ -66,7 +66,7 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         error:
-          "Rejestr Ministerstwa Finansów nie odpowiedział. Spróbujcie za chwilę albo Zamówcie pełny raport, wtedy sprawdzimy to ręcznie.",
+          "Rejestr Ministerstwa Finansów nie odpowiedział. Spróbuj za chwilę albo Zamów pełny raport, wtedy sprawdzimy to ręcznie.",
       },
       { status: 502 },
     );
@@ -130,7 +130,7 @@ export async function POST(request: Request) {
         ? "Podstawowe dane się zgadzają"
         : verdict === "ZOLTY"
           ? "Jest kilka rzeczy do wyjaśnienia"
-          : "Uważajcie, te dane budzą wątpliwości",
+          : "Uważaj, te dane budzą wątpliwości",
     name: String(subject.name ?? ""),
     statusVat,
     regon: String(subject.regon ?? ""),

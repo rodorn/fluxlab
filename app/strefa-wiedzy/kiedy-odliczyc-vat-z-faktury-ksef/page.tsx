@@ -45,7 +45,7 @@ const faq: { q: string; a: string; linki?: LinkWTekscie[] }[] = [
   },
   {
     q: "A faktura wystawiona w trybie offline?",
-    a: "Też liczy się dzień nadania numeru po jej przesłaniu do KSeF, nie dzień, w którym dostaliście wizualizację z kodem QR.",
+    a: "Też liczy się dzień nadania numeru po jej przesłaniu do KSeF, nie dzień, w którym dostajesz wizualizację z kodem QR.",
   },
   {
     q: "Gdzie sprawdzić datę nadania numeru?",
@@ -92,7 +92,7 @@ export default function KiedyOdliczycVatKsefArticle() {
               </p>
             </section>
             <section>
-              <h2 className="mb-4 h2-sekcji">Gdy nie zdążycie</h2>
+              <h2 className="mb-4 h2-sekcji">Gdy nie zdążysz</h2>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                 Przy rozliczeniu miesięcznym VAT można odliczyć jeszcze w jednym
                 z trzech kolejnych miesięcy (art. 86 ust. 11). Faktury z
@@ -138,7 +138,7 @@ export default function KiedyOdliczycVatKsefArticle() {
             <PrevNextArticle currentHref="/strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef" />
           </div>
         </div>
-        <CTA naglowek="Chcecie, żeby faktury z KSeF same trafiały do księgowości?" />
+        <CTA naglowek="Chcesz, żeby faktury z KSeF same trafiały do księgowości?" />
       </main>
       <Footer />
 

@@ -208,11 +208,11 @@ export function zlozRaportHtml(
 
   const blokDostepow = d.dostepy.length
     ? `${naglowekSekcji("Czego potrzebujemy, żeby to naprawić")}
-    <p style="font-size:14px;line-height:1.7;color:#374151;margin:0 0 10px">Nie potrzebujemy haseł do niczego. Potrzebujemy dostępu nadanego na nasze konto, który możecie cofnąć jednym kliknięciem po zakończeniu pracy.</p>
+    <p style="font-size:14px;line-height:1.7;color:#374151;margin:0 0 10px">Nie potrzebujemy haseł do niczego. Potrzebujemy dostępu nadanego na nasze konto, który możesz cofnąć jednym kliknięciem po zakończeniu pracy.</p>
     <ul style="margin:0;padding-left:20px;font-size:14px;color:#374151;line-height:1.9">
       ${d.dostepy.map((x) => `<li>${esc(x)}</li>`).join("")}
     </ul>
-    <p style="font-size:13px;color:#6b7280;margin-top:12px">Jeżeli stroną opiekuje się agencja albo informatyk, wystarczy przesłać im tę listę. Część poprawek oznaczonych wyżej jako możliwe samodzielnie zrobicie bez niczyjej pomocy.</p>`
+    <p style="font-size:13px;color:#6b7280;margin-top:12px">Jeżeli stroną opiekuje się agencja albo informatyk, wystarczy przesłać im tę listę. Część poprawek oznaczonych wyżej jako możliwe samodzielnie zrobisz bez niczyjej pomocy.</p>`
     : "";
 
   const blokKolejnosci = d.opis?.kolejnosc.length
@@ -259,7 +259,7 @@ export function zlozRaportHtml(
         ? `<div style="display:block;border:1px solid #e5e7eb;border-radius:10px;padding:18px;margin-bottom:22px">
       <div style="font-size:13px;color:#6b7280">Ocena ogólna</div>
       <div style="font-size:20px;font-weight:700;color:#6b7280;line-height:1.3">Nie wystawiamy oceny</div>
-      <div style="font-size:14px;color:#374151;margin-top:4px">Nie zobaczyliśmy tej strony, więc liczba byłaby oceną czegoś innego niż Wasz serwis. Szczegóły niżej.</div>
+      <div style="font-size:14px;color:#374151;margin-top:4px">Nie zobaczyliśmy tej strony, więc liczba byłaby oceną czegoś innego niż Twój serwis. Szczegóły niżej.</div>
     </div>`
         : `<div style="display:block;border:1px solid #e5e7eb;border-radius:10px;padding:18px;margin-bottom:22px">
       <div style="font-size:13px;color:#6b7280">Ocena ogólna</div>
@@ -305,12 +305,12 @@ export function zlozRaportHtml(
       Czego tu nie ma, żeby nie było nieporozumień: nie uruchamiałem przeglądarki, więc nie mierzyłem czasu rysowania strony, przesunięć układu ani wyniku Lighthouse. Nie sprawdzałem treści pod kątem merytorycznym, nie oceniałem wyglądu i nie analizowałem konkurencji. Badałem stronę główną, nie każdą podstronę. Pojedynczy pomiar czasu zawsze zależy od chwili, więc wartości graniczne warto sprawdzić drugi raz.
     </p>
     <p style="font-size:13px;line-height:1.7;color:#4b5563;margin:0">
-      Raport jest bezpłatny i nie zobowiązuje do niczego. Jeżeli coś w nim budzi wątpliwość, napiszcie, sprawdzimy to jeszcze raz i wytłumaczymy, skąd wzięła się liczba.
+      Raport jest bezpłatny i nie zobowiązuje do niczego. Jeżeli coś w nim budzi wątpliwość, napisz, sprawdzimy to jeszcze raz i wytłumaczymy, skąd wzięła się liczba.
     </p>
 
     <div style="margin-top:28px;padding-top:18px;border-top:1px solid #e5e7eb">
       <a href="${BAZA}/kontakt" style="display:inline-block;background:#4338ca;color:#fff;text-decoration:none;padding:12px 22px;border-radius:8px;font-weight:700;font-size:15px">Zlecamy naprawę${d.wycena.pakiet ? ` za ${d.wycena.pakiet} zł` : ""}</a>
-      <div style="font-size:13px;color:#6b7280;margin-top:12px">Albo odpiszcie na tę wiadomość, jeżeli chcecie najpierw o czymś dopytać.</div>
+      <div style="font-size:13px;color:#6b7280;margin-top:12px">Albo odpisz na tę wiadomość, jeżeli chcesz najpierw o czymś dopytać.</div>
     </div>
   </div>
 
@@ -319,7 +319,7 @@ export function zlozRaportHtml(
     ${
       dlaWlasciciela
         ? "Kopia wewnętrzna raportu wygenerowanego przez odwiedzającego."
-        : `Dostajecie tę wiadomość, bo poprosiliście o przesłanie raportu z audytu ${esc(d.domena)} i zaznaczyliście zgodę na kontakt. Żeby ją wycofać, odpiszcie jednym słowem, usuwamy adres tego samego dnia.`
+        : `Dostajesz tę wiadomość, bo zamówiono raport z audytu ${esc(d.domena)} i zaznaczono zgodę na kontakt. Żeby ją wycofać, odpisz jednym słowem, usuwamy adres tego samego dnia.`
     }
   </div>
 </div>

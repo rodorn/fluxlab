@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 const faq = [
   {
     q: "Czy po przejściu na KSeF trzeba zmienić numerację faktur?",
-    a: "Nie, numer nadajecie sami jak dotąd. Zmiana jest potrzebna tylko wtedy, gdy wzór numeru nie zawiera roku.",
+    a: "Nie, numer nadajesz sami jak dotąd. Zmiana jest potrzebna tylko wtedy, gdy wzór numeru nie zawiera roku.",
   },
   {
     q: "Jak długo KSeF pamięta numery?",
@@ -106,7 +106,7 @@ export default function NumeracjaFakturKsef2027Article() {
             <section>
               <h2 className="mb-4 h2-sekcji">Co zrobić teraz</h2>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                Sprawdźcie wzór numeru w programie do faktur i dopiszcie rok,
+                Sprawdź wzór numeru w programie do faktur i dopisz rok,
                 np. 1/01/2027. Pozostałe sprawy na koniec przepisów
                 przejściowych zbiera nasza{" "}
                 <Link
@@ -142,7 +142,7 @@ export default function NumeracjaFakturKsef2027Article() {
             <PrevNextArticle currentHref="/strefa-wiedzy/numeracja-faktur-ksef-2027" />
           </div>
         </div>
-        <CTA naglowek="Chcecie, żeby faktury z KSeF same trafiały do księgowości?" />
+        <CTA naglowek="Chcesz, żeby faktury z KSeF same trafiały do księgowości?" />
       </main>
       <Footer />
 

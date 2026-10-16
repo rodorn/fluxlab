@@ -10,12 +10,12 @@ import NumerKsefCheck from "@/components/NumerKsefCheck";
 import NazwaNarzedzia from "@/components/NazwaNarzedzia";
 
 export const metadata: Metadata = {
-  title: "Sprawdźcie numer KSeF faktury: NIP, data i suma | Fluxlab",
+  title: "Sprawdź numer KSeF faktury: NIP, data i suma | Fluxlab",
   description:
-    "Sprawdźcie fakturę po numerze KSeF w 10 s, bez logowania: NIP sprzedawcy, data przyjęcia i suma kontrolna. Liczymy w Waszej przeglądarce.",
+    "Sprawdź fakturę po numerze KSeF w 10 s, bez logowania: NIP sprzedawcy, data przyjęcia i suma kontrolna. Liczymy w Twojej przeglądarce.",
   alternates: { canonical: "/numer-ksef" },
   openGraph: {
-    title: "Sprawdźcie numer KSeF faktury: NIP, data i suma | Fluxlab",
+    title: "Sprawdź numer KSeF faktury: NIP, data i suma | Fluxlab",
     description:
       "Darmowe sprawdzenie numeru KSeF przed przelewem. Suma kontrolna, NIP sprzedawcy i data przyjęcia faktury, liczone w przeglądarce.",
     locale: "pl_PL",
@@ -60,7 +60,7 @@ const faq: { q: string; a: string; linki?: LinkWTekscie[] }[] = [
   },
   {
     q: "Czy wysyłacie gdzieś wklejone numery?",
-    a: "Nie. Sprawdzenie liczy się w Waszej przeglądarce, bez rejestracji i limitu prób.",
+    a: "Nie. Sprawdzenie liczy się w Twojej przeglądarce, bez rejestracji i limitu prób.",
   },
 ];
 
@@ -82,7 +82,7 @@ export default function NumerKsefPage() {
               Sprawdzenie numeru KSeF przed przelewem
             </h1>
             <p className="mt-5 text-lg text-gray-600 dark:text-gray-300">
-              Od 1 stycznia 2027 numer KSeF trafia do tytułu przelewu. Wklejcie
+              Od 1 stycznia 2027 numer KSeF trafia do tytułu przelewu. Wklej
               numery, a sprawdzimy, czy nie ma w nich literówki.
             </p>
           </div>
@@ -123,7 +123,7 @@ export default function NumerKsefPage() {
                 href="/ksef-2027"
                 className="font-semibold text-accent hover:underline"
               >
-                Przejdźcie listę KSeF na 1 stycznia 2027
+                Przejdź listę KSeF na 1 stycznia 2027
               </Link>
             </p>
           </div>

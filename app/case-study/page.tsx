@@ -10,7 +10,7 @@ import PorownanieProcesu from "./PorownanieProcesu";
 export const metadata: Metadata = {
   title: "Modelowe przepływy automatyzacji | Fluxlab",
   description:
-    "Obsługa leadów i tygodniowy raport, czynność po czynności, z minutami przy każdej. Policzcie, ile zajmują u Was. To modele, nie opisy cudzych wdrożeń.",
+    "Obsługa leadów i tygodniowy raport, czynność po czynności, z minutami przy każdej. Policz, ile zajmują u ciebie. To modele, nie opisy cudzych wdrożeń.",
   alternates: {
     canonical: "/case-study",
   },
@@ -48,8 +48,8 @@ export default function CaseStudy() {
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
                 Dwa procesy, które automatyzujemy najczęściej, rozpisane na
-                czynności z minutami. Odznaczcie to, czego nie robicie, i
-                zobaczcie własną sumę. Opisy wdrożeń z nazwą firmy dodamy w
+                czynności z minutami. Odznacz to, czego nie robisz, i
+                zobacz własną sumę. Opisy wdrożeń z nazwą firmy dodamy w
                 ramach{" "}
                 <Link
                   href="/pilotaz"

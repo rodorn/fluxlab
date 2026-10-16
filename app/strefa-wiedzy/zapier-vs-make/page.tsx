@@ -106,8 +106,8 @@ export default function ZapierVsMakeArticle() {
                       </li>
                     </ul>
                     <p className="text-gray-600 dark:text-gray-400 mb-10">
-                      Dobry wybór, gdy chcecie szybko ruszyć bez dewelopera i
-                      potrzebujecie prostych integracji typu „przepiszcie dane z A
+                      Dobry wybór, gdy chcesz szybko ruszyć bez dewelopera i
+                      potrzebujesz prostych integracji typu „przepisz dane z A
                       do B".
                     </p>
 
@@ -219,7 +219,7 @@ export default function ZapierVsMakeArticle() {
                     <p className="text-gray-600 dark:text-gray-400">
                       Make ma serwery w UE, Zapier działa globalnie z USA. Dla
                       branż regulowanych Make jest zwykle prostszy. Przy danych
-                      wyjątkowo wrażliwych rozważcie{" "}
+                      wyjątkowo wrażliwych rozważ{" "}
                       <Link href="/n8n" className="text-accent hover:underline">
                         n8n self-hosted
                       </Link>
@@ -243,25 +243,25 @@ export default function ZapierVsMakeArticle() {
                       Kiedy Zapier, a kiedy Make
                     </h2>
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Wybierzcie Zapier, gdy:
+                      Wybierz Zapier, gdy:
                     </p>
                     <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
-                      <li>macie proste, liniowe automatyzacje</li>
+                      <li>masz proste, liniowe automatyzacje</li>
                       <li>wolumen to do kilku tysięcy tasków miesięcznie</li>
                       <li>zespół potrzebuje „działa od jutra"</li>
                     </ul>
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Wybierzcie Make, gdy:
+                      Wybierz Make, gdy:
                     </p>
                     <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
-                      <li>macie scenariusze z warunkami i pętlami</li>
+                      <li>masz scenariusze z warunkami i pętlami</li>
                       <li>wolumen przekracza 5 000 operacji miesięcznie</li>
-                      <li>potrzebujecie obsługi błędów i danych w UE</li>
+                      <li>potrzebujesz obsługi błędów i danych w UE</li>
                     </ul>
                     <p className="text-gray-600 dark:text-gray-400 mb-10">
                       Hybryda też ma sens: Zapier do prostych integracji
-                      działowych, Make do procesów sprzedaży. Zanim wybierzecie,
-                      policzcie{" "}
+                      działowych, Make do procesów sprzedaży. Zanim wybierzesz,
+                      policz{" "}
                       <Link
                         href="/strefa-wiedzy/jak-policzyc-roi-z-automatyzacji"
                         className="text-accent hover:underline"
@@ -273,13 +273,13 @@ export default function ZapierVsMakeArticle() {
 
                     <div className="bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-8 text-center">
                       <h2 className="h2-sekcji mb-6">
-                        Nie wiecie, które narzędzie pasuje do Waszych procesów?
+                        Nie wiesz, które narzędzie pasuje do Twoich procesów?
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Dobierzemy i wdrożymy platformę bez przepłacania za zbędne funkcje.
                       </p>
                       <Link href="/zapier-make" className="btn-primary inline-block">
-                        Zobaczcie usługę Zapier i Make
+                        Zobacz usługę Zapier i Make
                       </Link>
                     </div>
                   </div>

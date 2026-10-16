@@ -43,11 +43,11 @@ const faq = [
   },
   {
     q: "Jak konsument dostanie fakturę wystawioną w KSeF?",
-    a: "Nie zaloguje się do KSeF, więc przekazujecie ją w uzgodniony sposób, na przykład PDF mailem albo wydruk z kodem QR.",
+    a: "Nie zaloguje się do KSeF, więc przekazujesz ją w uzgodniony sposób, na przykład PDF mailem albo wydruk z kodem QR.",
   },
   {
     q: "A faktura do paragonu?",
-    a: "Ta sama zasada: dla konsumenta możecie wystawić ją w KSeF albo poza nim.",
+    a: "Ta sama zasada: dla konsumenta możesz wystawić ją w KSeF albo poza nim.",
   },
 ];
 
@@ -69,7 +69,7 @@ export default function FakturaDlaOsobyPrywatnejKsefArticle() {
             <span className="section-label">Strefa wiedzy</span>
             <h1 className="mt-4 h1-artykulu">Faktura dla osoby prywatnej a KSeF</h1>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed !text-left">
-              Nie musicie wystawiać jej w KSeF. Fakturę dla konsumenta wolno
+              Nie musisz wystawiać jej w KSeF. Fakturę dla konsumenta wolno
               wystawić na papierze albo w PDF, tak jak przed 2026 rokiem.
             </p>
           </div>
@@ -86,9 +86,9 @@ export default function FakturaDlaOsobyPrywatnejKsefArticle() {
               </p>
             </section>
             <section>
-              <h2 className="mb-4 h2-sekcji">Gdy wystawicie ją w KSeF</h2>
+              <h2 className="mb-4 h2-sekcji">Gdy wystawisz ją w KSeF</h2>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                Konsument nie ma dostępu do KSeF, więc fakturę dostaje od Was jako
+                Konsument nie ma dostępu do KSeF, więc fakturę dostaje od ciebie jako
                 PDF albo wydruk z kodem QR. Numer takiej faktury i datę jego
                 nadania odczyta nasze{" "}
                 <Link
@@ -124,7 +124,7 @@ export default function FakturaDlaOsobyPrywatnejKsefArticle() {
             <PrevNextArticle currentHref="/strefa-wiedzy/faktura-dla-osoby-prywatnej-ksef" />
           </div>
         </div>
-        <CTA naglowek="Chcecie, żeby faktury z KSeF same trafiały do księgowości?" />
+        <CTA naglowek="Chcesz, żeby faktury z KSeF same trafiały do księgowości?" />
       </main>
       <Footer />
 

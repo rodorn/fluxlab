@@ -57,7 +57,7 @@ export function ocenStrone(p: Pomiar): Ustalenie[] {
       tytul: "Serwer nie wpuścił naszego pomiaru",
       fakt: `Zamiast strony dostaliśmy ${p.powodBlokady}.`,
       skutek:
-        "To zwykle znaczy, że stronę osłania system chroniący przed robotami, i sam w sobie nie jest wadą. Nie możemy jednak na tej podstawie powiedzieć nic o szybkości, treści ani o widoczności, bo nie zobaczyliśmy Waszej strony, tylko ekran ochrony. Żeby zbadać ją porządnie, potrzebowalibyśmy zgody na przepuszczenie pomiaru albo dostępu od środka. Poniżej zostaje tylko to, co dało się ustalić z DNS i z certyfikatu.",
+        "To zwykle znaczy, że stronę osłania system chroniący przed robotami, i sam w sobie nie jest wadą. Nie możemy jednak na tej podstawie powiedzieć nic o szybkości, treści ani o widoczności, bo nie zobaczyliśmy Twojej strony, tylko ekran ochrony. Żeby zbadać ją porządnie, potrzebowalibyśmy zgody na przepuszczenie pomiaru albo dostępu od środka. Poniżej zostaje tylko to, co dało się ustalić z DNS i z certyfikatu.",
       koszt: 0,
       samodzielnie: false,
     });
@@ -85,7 +85,7 @@ export function ocenStrone(p: Pomiar): Ustalenie[] {
         tytul: "Poczta z tej domeny nie ma wpisu SPF",
         fakt: "W DNS nie ma rekordu zaczynającego się od v=spf1.",
         skutek:
-          "Wiadomości z Waszego adresu łatwiej lądują w spamie, a ktoś obcy może podszyć się pod tę domenę.",
+          "Wiadomości z Twojego adresu łatwiej lądują w spamie, a ktoś obcy może podszyć się pod tę domenę.",
         koszt: 120,
         samodzielnie: false,
         dostep: "dostęp do DNS domeny",
@@ -705,7 +705,7 @@ export function ocenStrone(p: Pomiar): Ustalenie[] {
       tytul: "Roboty wyszukiwania w asystentach AI mają wstęp wzbroniony",
       fakt: `Zablokowane w robots.txt: ${p.robots.blokujeAi.join(", ")}.`,
       skutek:
-        "To nie są roboty zbierające treść do trenowania, tylko te, od których zależy, czy strona pojawi się w odpowiedzi ChatGPT, Claude albo Perplexity. Jeżeli blokada została wklejona z cudzego pliku, odcina kanał, w którym ktoś właśnie pyta asystenta o wykonawcę w Waszej branży.",
+        "To nie są roboty zbierające treść do trenowania, tylko te, od których zależy, czy strona pojawi się w odpowiedzi ChatGPT, Claude albo Perplexity. Jeżeli blokada została wklejona z cudzego pliku, odcina kanał, w którym ktoś właśnie pyta asystenta o wykonawcę w Twojej branży.",
       koszt: 50,
       samodzielnie: true,
       dostep: "dostęp do plików na serwerze",
@@ -735,7 +735,7 @@ export function ocenStrone(p: Pomiar): Ustalenie[] {
       tytul: "Poczta z tej domeny nie ma wpisu SPF",
       fakt: "W DNS nie ma rekordu zaczynającego się od v=spf1.",
       skutek:
-        "Wiadomości z Waszego adresu łatwiej lądują w spamie, a ktoś obcy może podszyć się pod tę domenę bez żadnej przeszkody.",
+        "Wiadomości z Twojego adresu łatwiej lądują w spamie, a ktoś obcy może podszyć się pod tę domenę bez żadnej przeszkody.",
       koszt: 120,
       samodzielnie: false,
       dostep: "dostęp do DNS domeny",
@@ -749,7 +749,7 @@ export function ocenStrone(p: Pomiar): Ustalenie[] {
       tytul: "Brak polityki DMARC",
       fakt: "Nie ma rekordu _dmarc dla tej domeny.",
       skutek:
-        "DMARC mówi serwerom odbiorców, co zrobić z wiadomością, która podszywa się pod Waszą domenę. Bez niego decyzja należy do nich.",
+        "DMARC mówi serwerom odbiorców, co zrobić z wiadomością, która podszywa się pod Twoją domenę. Bez niego decyzja należy do nich.",
       koszt: 120,
       samodzielnie: false,
       dostep: "dostęp do DNS domeny",

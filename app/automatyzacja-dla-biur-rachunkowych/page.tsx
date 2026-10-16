@@ -71,7 +71,7 @@ const tools = [
   {
     name: "n8n na serwerze biura",
     description:
-      "Na nim budujemy większość przepływów. Dane klientów zostają u Was (RODO, tajemnica zawodowa), bez limitów liczby dokumentów.",
+      "Na nim budujemy większość przepływów. Dane klientów zostają u ciebie (RODO, tajemnica zawodowa), bez limitów liczby dokumentów.",
   },
 ];
 
@@ -91,7 +91,7 @@ const faq = [
   {
     question: "Co z tajemnicą zawodową i RODO?",
     answer:
-      "Dane klientów zostają w Polsce, najczęściej na serwerze biura (n8n na Waszej infrastrukturze). Integracje z KSeF, GUS i białą listą działają na oficjalnych API.",
+      "Dane klientów zostają w Polsce, najczęściej na serwerze biura (n8n na Twojej infrastrukturze). Integracje z KSeF, GUS i białą listą działają na oficjalnych API.",
   },
   {
     question: "Ile kosztuje wdrożenie automatyzacji w biurze rachunkowym?",
@@ -155,7 +155,7 @@ export default function AutomatyzacjaDlaBiurRachunkowych() {
               <p>
                 Nowy klient z CRM trafia do enova365 z NIP sprawdzonym w GUS i
                 na białej liście VAT. Do CRM wracają statusy płatności, więc
-                handlowiec widzi zaległości. Pojedynczy numer sprawdzicie w{" "}
+                handlowiec widzi zaległości. Pojedynczy numer sprawdzisz w{" "}
                 <Link
                   href="/sprawdzenie-nip"
                   className="text-accent hover:underline"
@@ -189,7 +189,7 @@ export default function AutomatyzacjaDlaBiurRachunkowych() {
         <section className="container-wide pt-6 pb-4">
           <div className="max-w-3xl mx-auto">
             <p className="mb-4 text-gray-600 dark:text-gray-300">
-              Sprawdźcie, czy spółka klienta ma{" "}
+              Sprawdź, czy spółka klienta ma{" "}
               <Link
                 href="/strefa-wiedzy/e-doreczenia-adres-prywatny-i-firmowy"
                 className="text-accent hover:underline"
@@ -246,7 +246,7 @@ export default function AutomatyzacjaDlaBiurRachunkowych() {
                         Narzędzia, z którymi pracujemy w biurach rachunkowych
                       </h2>
                       <p className="text-gray-500 dark:text-gray-400 mb-10">
-                        Spinamy to, co już macie, z OCR, KSeF i automatyczną
+                        Spinamy to, co już masz, z OCR, KSeF i automatyczną
                         komunikacją z klientami.
                       </p>
 
@@ -324,12 +324,12 @@ export default function AutomatyzacjaDlaBiurRachunkowych() {
                     <div className="max-w-3xl mx-auto">
                       <CTA
                         naglowek="KSeF już obowiązuje, a zespół nie wyrabia z papierami?"
-                        opis="Opiszcie obieg dokumentów w biurze. Wskażemy, gdzie traci się czas, i policzymy, ile."
+                        opis="Opisz obieg dokumentów w biurze. Wskażemy, gdzie traci się czas, i policzymy, ile."
                       />
 
                       <div>
                         <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-                          Zobaczcie też
+                          Zobacz też
                         </h2>
                         <ul className="space-y-3">
                           {relatedLinks.map((item) => (

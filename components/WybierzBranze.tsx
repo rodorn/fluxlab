@@ -119,7 +119,7 @@ export default function WybierzBranze({ wariant = "glowna" }: Props) {
           onClick={() => zglosZdarzenie(`branza_przejscie_${b.klucz}`)}
           className="group inline-flex items-center gap-1.5 font-semibold text-accent hover:underline"
         >
-          Zobaczcie, jak to rozwiązujemy
+          Zobacz, jak to rozwiązujemy
           <span
             aria-hidden="true"
             className="inline-block transition-transform group-hover:translate-x-0.5"
@@ -157,7 +157,7 @@ export default function WybierzBranze({ wariant = "glowna" }: Props) {
         </div>
         <div>
           <dt className="font-semibold text-gray-900 dark:text-white">
-            Policzcie to sam, bez naszego udziału
+            Policz to sam, bez naszego udziału
           </dt>
           <dd className="mt-1 text-gray-700 dark:text-gray-300">{b.policz}</dd>
         </div>
@@ -215,7 +215,7 @@ export default function WybierzBranze({ wariant = "glowna" }: Props) {
           >
             {dane.warto
               ? `${b.nazwa}, dane ${dane.nazwa.toLowerCase()}: jest z czego zbudować`
-              : `${b.nazwa}, dane ${dane.nazwa.toLowerCase()}: najpierw uporządkujcie dane`}
+              : `${b.nazwa}, dane ${dane.nazwa.toLowerCase()}: najpierw uporządkuj dane`}
           </p>
           <p className="mt-2 text-sm leading-relaxed text-gray-700 dark:text-gray-300">
             {dane.werdykt}
@@ -244,7 +244,7 @@ export default function WybierzBranze({ wariant = "glowna" }: Props) {
           href="/kontakt"
           className="text-gray-600 hover:text-accent dark:text-gray-400 dark:hover:text-accent"
         >
-          Opiszcie swój proces, odpowiemy, co da się z nim zrobić →
+          Opisz swój proces, odpowiemy, co da się z nim zrobić →
         </Link>
       </div>
     </div>
@@ -261,7 +261,7 @@ export default function WybierzBranze({ wariant = "glowna" }: Props) {
             : "text-xl font-semibold tracking-tight text-gray-900 dark:text-white/90 lg:text-2xl"
         }
       >
-        {filar ? "Co pochłania czas w Waszej branży?" : "Z jakiej branży jesteście?"}
+        {filar ? "Co pochłania czas w Twojej branży?" : "Z jakiej branży jesteś?"}
       </h2>
       <p
         className={`mt-2 max-w-3xl text-sm ${
@@ -271,8 +271,8 @@ export default function WybierzBranze({ wariant = "glowna" }: Props) {
         }`}
       >
         {filar
-          ? "Naciśnijcie branżę, a pokażemy, która czynność pochłania w niej najwięcej powtarzalnej pracy, jak to policzyć u siebie jeszcze dzisiaj i co z tym robimy. Drugie kliknięcie, o tym gdzie trzymacie dane, decyduje, czy w ogóle jest co automatyzować."
-          : "Kliknijcie, a pokażemy, co w tej branży najczęściej pochłania czas i co da się z tym zrobić. Bez formularza i bez podawania czegokolwiek."}
+          ? "Wybierz branżę, a pokażemy, która czynność pochłania w niej najwięcej powtarzalnej pracy, jak to policzyć u siebie jeszcze dzisiaj i co z tym robimy. Drugie kliknięcie, o tym gdzie trzymasz dane, decyduje, czy w ogóle jest co automatyzować."
+          : "Kliknij, a pokażemy, co w tej branży najczęściej pochłania czas i co da się z tym zrobić. Bez formularza i bez podawania czegokolwiek."}
       </p>
     </>
   );

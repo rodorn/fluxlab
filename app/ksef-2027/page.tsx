@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "1 stycznia 2027 kończą się przepisy przejściowe KSeF: znika limit 10 tys. zł, faktury z kas wchodzą do KSeF, a przelew ma zawierać numer KSeF.",
   alternates: { canonical: "/ksef-2027" },
   openGraph: {
-    title: "KSeF od 1 stycznia 2027: co musicie mieć domknięte",
+    title: "KSeF od 1 stycznia 2027: co musisz mieć domknięte",
     description:
       "Darmowa lista kontrolna na koniec przepisów przejściowych KSeF. Na końcu wykaz braków gotowy do wysłania księgowej, bez rejestracji.",
     locale: "pl_PL",
@@ -43,7 +43,7 @@ const faq = [
   },
   {
     q: "Czy po przejściu na KSeF trzeba zmienić numerację faktur?",
-    a: "Nie, numer nadajecie sami jak dotąd. KSeF odrzuca jednak duplikat numeru z ostatnich 10 lat, więc numeracja bez roku w numerze (1, 2, 3) w drugim roku zacznie dawać odrzucenia.",
+    a: "Nie, numer nadajesz jak dotąd. KSeF odrzuca jednak duplikat numeru z ostatnich 10 lat, więc numeracja bez roku w numerze (1, 2, 3) w drugim roku zacznie dawać odrzucenia.",
   },
 ];
 
@@ -62,12 +62,12 @@ export default function Ksef2027Page() {
           <div className="max-w-3xl">
             <p className="section-label mb-3">Narzędzie</p>
             <h1 className="h1-strony">
-              KSeF od 1 stycznia 2027: co musicie mieć domknięte
+              KSeF od 1 stycznia 2027: co musisz mieć domknięte
             </h1>
             <p className="mt-5 text-lg text-gray-600 dark:text-gray-300">
               1 stycznia 2027 kończą się przepisy przejściowe KSeF i każda
               faktura dla firmy musi przejść przez system. Siedem pytań
-              pokazuje, co zostało do zrobienia, a na końcu dostajecie wykaz
+              pokazuje, co zostało do zrobienia, a na końcu dostajesz wykaz
               braków dla księgowej.
             </p>
           </div>
@@ -124,7 +124,7 @@ export default function Ksef2027Page() {
                 href="/numer-ksef"
                 className="font-semibold text-accent hover:underline"
               >
-                Sprawdźcie numery KSeF z przelewów
+                Sprawdź numery KSeF z przelewów
               </Link>
             </p>
           </div>

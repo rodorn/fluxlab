@@ -116,7 +116,7 @@ const faq = [
   {
     question: "Make czy n8n, które jest lepsze do automatyzacji CRM?",
     answer:
-      "Make, gdy scenariusze buduje osoba z biznesu, a wolumen nie przekracza 30 tys. operacji miesięcznie. n8n, gdy macie osobę techniczną, rosnący wolumen, własne systemy albo dane muszą zostać u Was.",
+      "Make, gdy scenariusze buduje osoba z biznesu, a wolumen nie przekracza 30 tys. operacji miesięcznie. n8n, gdy masz osobę techniczną, rosnący wolumen, własne systemy albo dane muszą zostać u Ciebie.",
   },
   {
     question: "Czy możemy użyć obu narzędzi?",
@@ -131,7 +131,7 @@ const faq = [
   {
     question: "Co z RODO przy automatyzacji CRM?",
     answer:
-      "Make i n8n.cloud trzymają dane w UE i mają DPA. W branżach regulowanych polecamy n8n na Waszym serwerze.",
+      "Make i n8n.cloud trzymają dane w UE i mają DPA. W branżach regulowanych polecamy n8n na Twoim serwerze.",
   },
 ];
 
@@ -165,7 +165,7 @@ export default function MakeVsN8nCrm() {
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
                 Make to wygodne narzędzie bez kodu, n8n to silnik, który
-                postawicie u siebie. Nad CRM działają oba, ale wygrywają w innych
+                postawisz u siebie. Nad CRM działają oba, ale wygrywają w innych
                 sytuacjach.
               </p>
               <TrackedCTA
@@ -194,7 +194,7 @@ export default function MakeVsN8nCrm() {
                         Najpierw proces, potem narzędzie
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
-                        Zacznijcie od pytania, który proces powtarza się często i
+                        Zacznij od pytania, który proces powtarza się często i
                         kosztuje czas albo sprzedaż. Dopiero wtedy wybór narzędzia
                         ma sens. Sygnały, że jest co automatyzować:
                       </p>
@@ -320,7 +320,7 @@ export default function MakeVsN8nCrm() {
                       <div className="grid md:grid-cols-2 gap-6 mb-8">
                         <div className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-6">
                           <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
-                            Wybierzcie Make, gdy:
+                            Wybierz Make, gdy:
                           </h3>
                           <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
                             scenariusze buduje osoba z biznesu, wolumen nie
@@ -330,11 +330,11 @@ export default function MakeVsN8nCrm() {
                         </div>
                         <div className="bg-white dark:bg-gray-800/60 border border-accent/30 rounded-2xl p-6">
                           <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
-                            Wybierzcie n8n, gdy:
+                            Wybierz n8n, gdy:
                           </h3>
                           <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                            macie osobę techniczną, wolumen rośnie, łączycie
-                            własne systemy albo dane muszą zostać u Was.
+                            masz osobę techniczną, wolumen rośnie, łączysz
+                            własne systemy albo dane muszą zostać u Ciebie.
                           </p>
                         </div>
                       </div>
@@ -395,7 +395,7 @@ export default function MakeVsN8nCrm() {
                         href="/automatyzacja-leadow-crm"
                         className="btn-secondary"
                       >
-                        Zobaczcie pełny cennik automatyzacji CRM
+                        Zobacz pełny cennik automatyzacji CRM
                       </Link>
                     </div>
                   </div>

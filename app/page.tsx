@@ -20,7 +20,7 @@ const PILLARS = [
     videoLight: "/abstract/web-light.mp4",
     variant: "web" as const,
     desc: "Strony firmowe, landingi i sklepy: szybkie na telefonie, z CMS do samodzielnej edycji. Formularz trafia od razu do CRM, więc żadne zapytanie nie ginie.",
-    cta: "Zobaczcie, jak robimy strony",
+    cta: "Zobacz, jak robimy strony",
   },
   {
     href: "/automatyzacja-leadow-crm",
@@ -30,7 +30,7 @@ const PILLARS = [
     videoLight: "/abstract/automation-light.mp4",
     variant: "automation" as const,
     desc: "Leady nie trafiają automatycznie do CRM, handlowiec zapomina o follow-upie, a raport składa się ręcznie przez pół dnia. Budujemy przepływ, który robi to sam i nie gubi zgłoszeń.",
-    cta: "Znajdźcie proces do automatyzacji",
+    cta: "Znajdź proces do automatyzacji",
   },
   {
     href: "/scraping-danych",
@@ -40,7 +40,7 @@ const PILLARS = [
     videoLight: "/abstract/data-light.mp4",
     variant: "data" as const,
     desc: "Dane leżą w kilku systemach i w Excelach, a ERP nie rozmawia z CRM. Spinamy je przez API, porządkujemy i zamieniamy w raport, który przychodzi sam.",
-    cta: "Zobaczcie, jak spiąć systemy",
+    cta: "Zobacz, jak spiąć systemy",
   },
 ];
 
@@ -50,42 +50,42 @@ const PROBLEMY = [
     zdanie: "Zgłoszenia z formularza przepisujemy do CRM ręcznie",
     skutek:
       "Przy kilkunastu leadach dziennie to godzina pracy i regularnie gubiona jedna sprawa.",
-    cta: "Zobaczcie, jak to spiąć",
+    cta: "Zobacz, jak to spiąć",
   },
   {
     href: "/czas-reakcji-na-leada",
     zdanie: "Handlowiec oddzwania po dwóch dniach albo wcale",
     skutek:
       "Klient w tym czasie zdążył dostać ofertę od kogoś, kto odezwał się w kwadrans.",
-    cta: "Policzcie, ile to kosztuje",
+    cta: "Policz, ile to kosztuje",
   },
   {
     href: "/automatyzacja-follow-up",
     zdanie: "Follow-upy giną, bo nikt ich nie pilnuje",
     skutek:
       "Deale stoją tygodniami w tym samym etapie i nikt nie wie, na kogo czekają.",
-    cta: "Zobaczcie przepływ",
+    cta: "Zobacz przepływ",
   },
   {
     href: "/automatyzacja-raportowania",
     zdanie: "Raport sprzedaży składamy ręcznie przez pół dnia",
     skutek:
       "Co miesiąc to samo: eksport, sklejanie w Excelu, przeliczanie, wysyłka.",
-    cta: "Zobaczcie, co da się zautomatyzować",
+    cta: "Zobacz, co da się zautomatyzować",
   },
   {
     href: "/integracje-api",
     zdanie: "ERP nie rozmawia z CRM, dane żyją w kilku Excelach",
     skutek:
       "Każdy dział ma swoją wersję prawdy, a uzgodnienie jej zajmuje więcej niż sama praca.",
-    cta: "Zobaczcie, jak łączymy systemy",
+    cta: "Zobacz, jak łączymy systemy",
   },
   {
     href: "/automatyczne-przypisywanie-leadow",
     zdanie: "Leady wpadają bez właściciela i leżą",
     skutek:
       "Nikt nie czuje się za nie odpowiedzialny, więc odzywa się do nich ktoś przypadkiem.",
-    cta: "Zobaczcie zasady przydziału",
+    cta: "Zobacz zasady przydziału",
   },
 ];
 
@@ -135,14 +135,14 @@ export default function Home() {
               href="/strony-www"
               className="font-medium text-accent underline-offset-4 hover:underline"
             >
-              Zobaczcie, jak robimy strony
+              Zobacz, jak robimy strony
             </Link>{" "}
             albo{" "}
             <Link
               href="/narzedzia"
               className="font-medium text-accent underline-offset-4 hover:underline"
             >
-              sprawdźcie firmę {LICZBA_NARZEDZI} darmowymi narzędziami
+              sprawdź firmę {LICZBA_NARZEDZI} darmowymi narzędziami
             </Link>
             .
           </p>
@@ -200,7 +200,7 @@ export default function Home() {
               Najczęściej rozwiązujemy
             </h2>
             <p className="mx-auto mt-3 max-w-2xl text-center text-base text-gray-600 dark:text-white/60">
-              Jeśli któreś z tych zdań brzmi jak Wasza firma, kliknijcie. Pod
+              Jeśli któreś z tych zdań brzmi jak Twoja firma, kliknij. Pod
               każdym jest problem, jego koszt i efekt wdrożenia, a osobno
               opisaliśmy{" "}
               <Link
@@ -267,7 +267,7 @@ export default function Home() {
                 href="/produkty"
                 className="font-semibold text-accent underline-offset-4 hover:underline"
               >
-                Zobaczcie cennik
+                Zobacz cennik
               </Link>
               <span
                 aria-hidden="true"
@@ -332,10 +332,10 @@ export default function Home() {
           <div className="container-wide">
             <div className="mx-auto max-w-2xl rounded-2xl border border-accent/20 bg-accent/5 p-8 text-center dark:bg-accent/10">
               <h2 className="mb-3 text-2xl font-bold text-gray-900 dark:text-white lg:text-3xl">
-                Nie wiecie, od czego zacząć?
+                Nie wiesz, od czego zacząć?
               </h2>
               <p className="mb-6 text-gray-600 dark:text-gray-400">
-                Opiszcie, co robicie ręcznie. Wskażemy, co da się zautomatyzować,
+                Opisz, co robisz ręcznie. Wskażemy, co da się zautomatyzować,
                 bez zobowiązań.
               </p>
               <Link

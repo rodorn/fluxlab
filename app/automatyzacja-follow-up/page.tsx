@@ -271,11 +271,11 @@ export default function AutomatyzacjaFollowUp() {
               <TrackedCTA
                 href="/automatyzacja-leadow-crm"
                 location="article_automatyzacja-follow-up_pricing"
-                label="zobaczcie pełną ofertę"
+                label="zobacz pełną ofertę"
                 eventName="cta_click_article_audit"
                 className="btn-secondary px-6 py-3 text-base"
               >
-                Zobaczcie pełną ofertę
+                Zobacz pełną ofertę
               </TrackedCTA>
               <TrackedCTA
                 href="/kontakt"
@@ -329,7 +329,7 @@ export default function AutomatyzacjaFollowUp() {
 
           <section className="max-w-3xl mx-auto">
             <h2 className="h2-sekcji mb-4">
-              Zobaczcie też
+              Zobacz też
             </h2>
             <ul className="space-y-2">
               <li>

@@ -11,7 +11,7 @@ import NazwaNarzedzia from "@/components/NazwaNarzedzia";
 export const metadata: Metadata = {
   title: "Audyt poczty firmowej, ochrona przed podszyciem | Fluxlab",
   description:
-    "Sprawdzamy SPF, DKIM i DMARC Waszej domeny i mówimy, czy ktoś obcy może wysłać wiadomość wyglądającą na Waszą. Wynik od ręki, bez rejestracji.",
+    "Sprawdzamy SPF, DKIM i DMARC Twojej domeny i mówimy, czy ktoś obcy może wysłać wiadomość wyglądającą na Twoją. Wynik od ręki, bez rejestracji.",
   alternates: { canonical: "/audyt-poczty" },
   openGraph: {
     title: "Audyt poczty firmowej, ochrona przed podszyciem | Fluxlab",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 const faq = [
   {
     q: "Dlaczego nasze maile trafiają do spamu, skoro wysyłka się udaje?",
-    a: "O tym, czy mail trafi do skrzynki, decyduje serwer odbiorcy. Najpierw sprawdza rekordy SPF, DKIM i DMARC Waszej domeny. Gdy któregoś brakuje albo jest błędny, Gmail i Outlook odkładają wiadomość do spamu albo ją odrzucają.",
+    a: "O tym, czy mail trafi do skrzynki, decyduje serwer odbiorcy. Najpierw sprawdza rekordy SPF, DKIM i DMARC Twojej domeny. Gdy któregoś brakuje albo jest błędny, Gmail i Outlook odkładają wiadomość do spamu albo ją odrzucają.",
   },
   {
     q: "Czy SPF, DKIM i DMARC są obowiązkowe?",

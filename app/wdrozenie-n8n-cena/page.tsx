@@ -32,7 +32,7 @@ export default function WdrozenieN8nCena() {
       eyebrow="n8n"
       h1="Ile kosztuje wdrożenie n8n"
       lead="Cztery pozycje: licencja, serwer, praca i opieka. Każdą podajemy z widełkami, żeby budżet dało się oszacować bez zapytania ofertowego."
-      ctaLabel="Policzcie swój koszt"
+      ctaLabel="Policz swój koszt"
       ctaNote="Kalkulator niżej, bez rejestracji"
       tool={<KalkulatorAutomatyzacji />}
       checks={[
@@ -50,11 +50,11 @@ export default function WdrozenieN8nCena() {
         },
         {
           title: "Opieka: 190 zł miesięcznie albo zero",
-          desc: "Aktualizacje, alerty i poprawki po zmianach API. Nieobowiązkowa, bo dostajecie serwer i całą konfigurację.",
+          desc: "Aktualizacje, alerty i poprawki po zmianach API. Nieobowiązkowa, bo dostajesz serwer i całą konfigurację.",
         },
         {
           title: "Kiedy się nie opłaca",
-          desc: "Przy jednym prostym scenariuszu wystarczy darmowy plan Zapiera albo Make. n8n wygrywa przy dużym ruchu albo gdy dane muszą zostać u Was.",
+          desc: "Przy jednym prostym scenariuszu wystarczy darmowy plan Zapiera albo Make. n8n wygrywa przy dużym ruchu albo gdy dane muszą zostać u ciebie.",
         },
       ]}
       pricing={[
@@ -73,7 +73,7 @@ export default function WdrozenieN8nCena() {
           price: "2 400 zł",
           desc: "Serwer, trzy przepływy i monitoring.",
           features: [
-            "n8n na Waszym serwerze z kopiami zapasowymi",
+            "n8n na Twoim serwerze z kopiami zapasowymi",
             "trzy przepływy uzgodnione po rozmowie",
             "alert, gdy przepływ przestanie działać",
             "pierwszy miesiąc opieki w cenie",
@@ -83,7 +83,7 @@ export default function WdrozenieN8nCena() {
         {
           name: "Opieka",
           price: "190 zł / mc",
-          desc: "Gdy nie chcecie tego pilnować sam.",
+          desc: "Gdy nie chcesz tego pilnować sam.",
           features: [
             "aktualizacje n8n i serwera",
             "poprawki po zmianach API",
@@ -94,7 +94,7 @@ export default function WdrozenieN8nCena() {
       faq={[
         {
           q: "Czy n8n jest darmowy?",
-          a: "Wersja na własnym serwerze tak, także do użytku komercyjnego. Płacicie za serwer i za pracę.",
+          a: "Wersja na własnym serwerze tak, także do użytku komercyjnego. Płacisz za serwer i za pracę.",
         },
         {
           q: "Ile trwa wdrożenie?",
@@ -102,7 +102,7 @@ export default function WdrozenieN8nCena() {
         },
         {
           q: "Co, jeśli zechcemy to przenieść gdzie indziej?",
-          a: "Przepływy to pliki, które dostajecie razem z dostępem do serwera. Możecie je prowadzić sam albo oddać komuś innemu.",
+          a: "Przepływy to pliki, które dostajesz razem z dostępem do serwera. Możesz je prowadzić sam albo oddać komuś innemu.",
         },
         {
           q: "Czym to się różni od Zapiera i Make?",
@@ -110,10 +110,10 @@ export default function WdrozenieN8nCena() {
         },
       ]}
       formId="wycena_n8n"
-      formHeading="Opiszcie proces, odeślemy widełki"
-      formIntro="Napiszcie, co dziś robicie ręcznie i co ma się stać na końcu. Odeślemy widełki."
-      submitLabel="Poproście o wycenę"
-      microCopy="Odpisujemy zwykle tego samego dnia. Bez rozmowy telefonicznej, jeśli nie chcecie."
+      formHeading="Opisz proces, odeślemy widełki"
+      formIntro="Napisz, co dziś robisz ręcznie i co ma się stać na końcu. Odeślemy widełki."
+      submitLabel="Poproś o wycenę"
+      microCopy="Odpisujemy zwykle tego samego dnia. Bez rozmowy telefonicznej, jeśli nie chcesz."
       serviceName="Wdrożenie n8n"
       serviceDesc="Postawienie n8n na własnym serwerze i zbudowanie przepływów automatyzujących obsługę leadów, synchronizację danych i raportowanie."
       serviceType="Automatyzacja procesów biznesowych"

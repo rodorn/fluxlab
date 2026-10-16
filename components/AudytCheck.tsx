@@ -375,7 +375,7 @@ export default function AudytCheck() {
       );
     } catch {
       if (timer.current) clearInterval(timer.current);
-      setBlad("Brak połączenia. Spróbujcie ponownie za chwilę.");
+      setBlad("Brak połączenia. Spróbuj ponownie za chwilę.");
       setStan("blad");
     }
   }
@@ -405,7 +405,7 @@ export default function AudytCheck() {
       setMailStan("ok");
       zglosZdarzenie("audyt_raport_na_maila");
     } catch {
-      setMailBlad("Brak połączenia. Spróbujcie ponownie za chwilę.");
+      setMailBlad("Brak połączenia. Spróbuj ponownie za chwilę.");
       setMailStan("blad");
     }
   }
@@ -432,14 +432,14 @@ export default function AudytCheck() {
   return (
     <div className="rounded-2xl border border-gray-200/80 bg-white/70 p-6 dark:border-gray-800/80 dark:bg-gray-900/50 md:p-8">
       <h2 className="text-xl font-bold text-gray-900 dark:text-white">
-        Darmowy audyt techniczny Waszej strony
+        Darmowy audyt techniczny Twojej strony
       </h2>
       <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-        Wpiszcie adres, a w kilkadziesiąt sekund zmierzymy szybkość na komputerze i
+        Wpisz adres, a w kilkadziesiąt sekund zmierzymy szybkość na komputerze i
         na telefonie, sprawdzimy certyfikat, widoczność w wyszukiwarce, dostęp
-        dla asystentów AI oraz zabezpieczenia poczty. Dostaniecie gotowy raport z
+        dla asystentów AI oraz zabezpieczenia poczty. Dostaniesz gotowy raport z
         listą poprawek w kolejności i z ceną za naprawę. Bez rejestracji, bez
-        podawania adresu e-mail i bez żadnych dostępów do Waszych systemów.
+        podawania adresu e-mail i bez żadnych dostępów do Twoich systemów.
       </p>
 
       <Przyklady
@@ -464,7 +464,7 @@ export default function AudytCheck() {
           disabled={stan === "ladowanie"}
           className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
         >
-          {stan === "ladowanie" ? "Badamy stronę..." : "Zróbcie darmowy audyt"}
+          {stan === "ladowanie" ? "Badamy stronę..." : "Zrób darmowy audyt"}
         </button>
       </form>
 
@@ -528,7 +528,7 @@ export default function AudytCheck() {
               {wynik.punkty === null && (
                 <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
                   {wynik.zablokowany
-                    ? `Serwer nie wpuścił naszego pomiaru: ${wynik.powodBlokady}. Ocena wystawiona ekranowi ochrony nie mówiłaby nic o Waszej stronie, więc jej nie wystawiamy.`
+                    ? `Serwer nie wpuścił naszego pomiaru: ${wynik.powodBlokady}. Ocena wystawiona ekranowi ochrony nie mówiłaby nic o Twojej stronie, więc jej nie wystawiamy.`
                     : "Ten adres nie odpowiedział, więc nie mamy czego oceniać."}
                 </p>
               )}
@@ -568,17 +568,17 @@ export default function AudytCheck() {
                   Wysłaliśmy raport na {email}
                 </p>
                 <p className="mt-1.5 text-sm text-gray-600 dark:text-gray-400">
-                  Jeżeli nie dotrze w ciągu kilku minut, zajrzyjcie do spamu.
-                  Zgodę wycofacie, odpisując jednym słowem.
+                  Jeżeli nie dotrze w ciągu kilku minut, zajrzyj do spamu.
+                  Zgodę wycofasz, odpisując jednym słowem.
                 </p>
               </div>
             ) : (
               <>
                 <h3 className="text-base font-bold text-gray-900 dark:text-white">
-                  Chcecie ten raport na maila?
+                  Chcesz ten raport na maila?
                 </h3>
                 <p className="mt-1.5 text-sm text-gray-600 dark:text-gray-400">
-                  Wyślemy ten raport na Wasz adres, bez listy wysyłkowej.
+                  Wyślemy ten raport na Twój adres, bez listy wysyłkowej.
                 </p>
                 <form onSubmit={poproszOMaila} className="mt-4 space-y-3">
                   <div className="flex flex-col gap-3 sm:flex-row">
@@ -598,7 +598,7 @@ export default function AudytCheck() {
                     >
                       {mailStan === "wysylamy"
                         ? "Wysyłamy..."
-                        : "Wyślijcie raport"}
+                        : "Wyślij raport"}
                     </button>
                   </div>
                   <label className="flex cursor-pointer items-start gap-2.5 text-sm text-gray-600 dark:text-gray-400">
@@ -709,7 +709,7 @@ export default function AudytCheck() {
                             <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs">
                               {u.samodzielnie && (
                                 <span className="font-medium text-emerald-700 dark:text-emerald-400">
-                                  Zrobicie to sam, bez programisty
+                                  Zrobisz to sam, bez programisty
                                 </span>
                               )}
                               {u.material && (
@@ -784,7 +784,7 @@ export default function AudytCheck() {
               Surowe pomiary
             </h3>
             <p className="text-sm text-gray-600 dark:text-gray-400">
-              Wszystko powyżej wynika z tych liczb. Zaglądajcie tu, gdy chcecie
+              Wszystko powyżej wynika z tych liczb. Zaglądaj tu, gdy chcesz
               sprawdzić, skąd wzięło się któreś ustalenie.
             </p>
             <Skladane
@@ -1055,7 +1055,7 @@ export default function AudytCheck() {
               </h3>
               <p className="mt-1.5 text-sm text-gray-600 dark:text-gray-400">
                 Nie potrzebujemy haseł do niczego. Potrzebujemy dostępu nadanego
-                na nasze konto, który cofniecie jednym kliknięciem po
+                na nasze konto, który cofniesz jednym kliknięciem po
                 zakończeniu pracy.
               </p>
               <ul className="mt-3 space-y-1.5">
@@ -1101,7 +1101,7 @@ export default function AudytCheck() {
                 graniczne warto sprawdzić drugi raz.
               </p>
               <p>
-                Jeżeli któraś liczba budzi wątpliwość, napiszcie. Sprawdzimy ją
+                Jeżeli któraś liczba budzi wątpliwość, napisz. Sprawdzimy ją
                 jeszcze raz i wytłumaczymy, skąd się wzięła.
               </p>
             </div>

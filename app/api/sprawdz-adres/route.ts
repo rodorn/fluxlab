@@ -93,7 +93,7 @@ export async function POST(request: Request) {
   }
   if (!/^[a-z0-9.-]+\.[a-z]{2,}$/.test(domena)) {
     return NextResponse.json(
-      { error: "Podajcie samą domenę, na przykład twojafirma.pl" },
+      { error: "Podaj samą domenę, na przykład twojafirma.pl" },
       { status: 400 },
     );
   }
@@ -139,21 +139,21 @@ export async function POST(request: Request) {
     werdykt = "NIEROZSTRZYGNIETE";
     naglowek = "Żaden z adresów nie odpowiedział";
     komentarz =
-      "Strona może być chwilowo niedostępna albo blokuje połączenia spoza przeglądarki. Spróbujcie za chwilę.";
+      "Strona może być chwilowo niedostępna albo blokuje połączenia spoza przeglądarki. Spróbuj za chwilę.";
   } else if (zablokowane) {
     werdykt = "NIEROZSTRZYGNIETE";
     naglowek = "Serwer blokuje to sprawdzenie";
     komentarz =
-      "Wszystkie cztery adresy odpowiedziały odmową dostępu, niezależnie od wersji. To zabezpieczenie hostingu przed ruchem z serwerowni, a nie błąd Waszej strony. Z zewnątrz nie da się wtedy ocenić przekierowań i nie będziemy zgadywać.";
+      "Wszystkie cztery adresy odpowiedziały odmową dostępu, niezależnie od wersji. To zabezpieczenie hostingu przed ruchem z serwerowni, a nie błąd Twojej strony. Z zewnątrz nie da się wtedy ocenić przekierowań i nie będziemy zgadywać.";
   } else if (obaDzialaja && tenSamRozmiar && canonicalNaSiebie) {
     werdykt = "CZERWONY";
     naglowek = "Każda wersja adresu ogłasza się główną";
     komentarz = `Obie wersje zwracają tę samą treść i obie mają znacznik wersji głównej, tylko że każda wskazuje samą siebie: ${bezWww.canonical} oraz ${zWww.canonical}. To nie scala niczego. Wyszukiwarka dostaje dwa adresy, z których każdy twierdzi, że jest tym właściwym, więc wybiera sama, a siła linków dalej dzieli się na dwa. Brzmi jak drobiazg, ale skutek jest identyczny jak przy całkowitym braku znacznika.`;
   } else if (obaDzialaja && tenSamRozmiar && !maCanonical) {
     werdykt = "CZERWONY";
-    naglowek = "Wasza strona odpowiada pod dwoma adresami naraz";
+    naglowek = "Twoja strona odpowiada pod dwoma adresami naraz";
     komentarz =
-      "Adres z www i bez www zwracają tę samą treść, żaden nie przekierowuje na drugi i nie ma znacznika wskazującego wersję główną. Dla wyszukiwarki to dwie osobne strony o identycznej zawartości: siła linków prowadzących do Was dzieli się na dwa adresy zamiast sumować na jednym, a wyszukiwarka sama wybiera, którą wersję pokazać. Często nie tę, która jest na wizytówce i na fakturach.";
+      "Adres z www i bez www zwracają tę samą treść, żaden nie przekierowuje na drugi i nie ma znacznika wskazującego wersję główną. Dla wyszukiwarki to dwie osobne strony o identycznej zawartości: siła linków prowadzących do ciebie dzieli się na dwa adresy zamiast sumować na jednym, a wyszukiwarka sama wybiera, którą wersję pokazać. Często nie tę, która jest na wizytówce i na fakturach.";
   } else if (obaDzialaja && tenSamRozmiar && maCanonical) {
     werdykt = "ZOLTY";
     naglowek = "Dwa adresy działają, ale wersja główna jest wskazana";
@@ -175,15 +175,15 @@ export async function POST(request: Request) {
       zepsuta.kod === null
         ? "nie nawiązuje połączenia"
         : `zwraca błąd ${zepsuta.kod}`
-    }, podczas gdy druga wersja działa normalnie. Klient, który wpisze adres w tej wersji albo trafi na starszy link, zobaczy komunikat o błędzie zamiast Waszej strony. Najczęstsza przyczyna to certyfikat wystawiony tylko na jedną z wersji albo brak przekierowania dla drugiej.`;
+    }, podczas gdy druga wersja działa normalnie. Klient, który wpisze adres w tej wersji albo trafi na starszy link, zobaczy komunikat o błędzie zamiast Twojej strony. Najczęstsza przyczyna to certyfikat wystawiony tylko na jedną z wersji albo brak przekierowania dla drugiej.`;
   } else if (obaDzialaja && !tenSamRozmiar) {
     werdykt = "ZOLTY";
     naglowek = "Oba adresy działają, ale pokazują różną treść";
     komentarz =
-      "Wersja z www i bez www odpowiadają, lecz zwracają treść różnej wielkości. To bywa celowe, na przykład gdy jedna wersja to osobny serwis, ale bywa też objawem dwóch niezależnych kopii strony, z których jedna nie jest aktualizowana. Warto to rozstrzygnąć, zanim zaczniecie inwestować w pozycjonowanie.";
+      "Wersja z www i bez www odpowiadają, lecz zwracają treść różnej wielkości. To bywa celowe, na przykład gdy jedna wersja to osobny serwis, ale bywa też objawem dwóch niezależnych kopii strony, z których jedna nie jest aktualizowana. Warto to rozstrzygnąć, zanim zaczniesz inwestować w pozycjonowanie.";
   } else {
     werdykt = "ZIELONY";
-    naglowek = "Macie jeden adres główny";
+    naglowek = "Masz jeden adres główny";
     komentarz =
       "Jedna wersja adresu przekierowuje na drugą, więc wyszukiwarka widzi jedną stronę i cała siła linków kumuluje się na jednym adresie. Tak właśnie powinno to wyglądać.";
   }

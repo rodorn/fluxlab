@@ -216,7 +216,7 @@ export default function PorownanieProcesu() {
             Dziś, ręcznie
           </p>
           <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
-            Odznaczcie czynności, których u siebie nie wykonujecie, a wynik przeliczy się
+            Odznacz czynności, których u siebie nie wykonujesz, a wynik przeliczy się
             od razu.
           </p>
           <ul className="space-y-2">
@@ -357,7 +357,7 @@ export default function PorownanieProcesu() {
         <p className="mt-4 pt-4 border-t border-gray-100 dark:border-gray-700 text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
           Skąd te minuty: {proces.skad} To model przepływu, nie opis wdrożenia u
           firmy, bo takich wdrożeń jeszcze nie mamy. Wynik mówi, ile czasu zajmują
-          wypisane wyżej czynności, a nie ile zarobi na tym Wasza firma.
+          wypisane wyżej czynności, a nie ile zarobi na tym Twoja firma.
         </p>
       </div>
     </div>

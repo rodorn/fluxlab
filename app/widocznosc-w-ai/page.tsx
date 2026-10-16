@@ -3,14 +3,14 @@ import ProductLanding from "@/components/ProductLanding";
 import AiCheck from "@/components/AiCheck";
 
 export const metadata: Metadata = {
-  title: "Asystent AI a Wasza strona: czy ChatGPT ją widzi | Fluxlab",
+  title: "Asystent AI a Twoja strona: czy ChatGPT ją widzi | Fluxlab",
   description:
-    "Asystent AI poleci Waszą firmę tylko, gdy przeczyta stronę. Sprawdzamy za darmo 7 rzeczy, od których to zależy: dostęp robotów, treść, dane, llms.txt.",
+    "Asystent AI poleci Twoją firmę tylko, gdy przeczyta stronę. Sprawdzamy za darmo 7 rzeczy, od których to zależy: dostęp robotów, treść, dane, llms.txt.",
   alternates: { canonical: "/widocznosc-w-ai" },
   openGraph: {
-    title: "Asystent AI a Wasza strona: czy ChatGPT ją widzi | Fluxlab",
+    title: "Asystent AI a Twoja strona: czy ChatGPT ją widzi | Fluxlab",
     description:
-      "Klient pyta asystenta zamiast wpisywać frazę. Sprawdźcie, czy Wasza strona może w takiej odpowiedzi wystąpić.",
+      "Klient pyta asystenta zamiast wpisywać frazę. Sprawdź, czy Twoja strona może w takiej odpowiedzi wystąpić.",
     locale: "pl_PL",
     type: "website",
     images: [
@@ -30,9 +30,9 @@ export default function WidocznoscWAi() {
       slug="widocznosc-w-ai"
       breadcrumb="Widoczność w AI"
       eyebrow="Za darmo"
-      h1="Czy asystent AI widzi Waszą stronę"
+      h1="Czy asystent AI widzi Twoją stronę"
       lead="Coraz więcej klientów pyta asystenta AI zamiast wpisywać frazę w wyszukiwarkę. Asystent poleci tylko stronę, którą zdołał przeczytać. Sprawdzamy siedem warunków, od których to zależy."
-      ctaLabel="Sprawdźcie swoją stronę"
+      ctaLabel="Sprawdź swoją stronę"
       ctaNote="Wynik od ręki, bez rejestracji"
       tool={<AiCheck />}
       checks={[
@@ -46,15 +46,15 @@ export default function WidocznoscWAi() {
         },
         {
           title: "Dane o firmie dla maszyny",
-          desc: "Kilkanaście linii danych uporządkowanych mówi wprost, czym się zajmujecie i gdzie działacie. Bez nich robot zgaduje i często myli branżę.",
+          desc: "Kilkanaście linii danych uporządkowanych mówi wprost, czym się zajmujesz i gdzie działasz. Bez nich robot zgaduje i często myli branżę.",
         },
         {
           title: "Tytuł i opis strony",
-          desc: "To najczęściej cytowany fragment serwisu. Powinien mówić, co robicie i dla kogo, a nie tylko „strona główna”.",
+          desc: "To najczęściej cytowany fragment serwisu. Powinien mówić, co robisz i dla kogo, a nie tylko „strona główna”.",
         },
         {
           title: "Plik llms.txt",
-          desc: "Krótki opis firmy Waszymi słowami. Nie jest wymagany, ale to najtańszy sposób, by samemu napisać zdanie o sobie.",
+          desc: "Krótki opis firmy Twoimi słowami. Nie jest wymagany, ale to najtańszy sposób, by samemu napisać zdanie o sobie.",
         },
         {
           title: "Czego nie obiecujemy",
@@ -88,7 +88,7 @@ export default function WidocznoscWAi() {
           price: "od 1 900 zł",
           desc: "Gdy technicznie jest już dobrze.",
           features: [
-            "Realne pytania, które zadaje Wasz klient",
+            "Realne pytania, które zadaje Twój klient",
             "Konkretne odpowiedzi na stronie, łatwe do zacytowania",
           ],
         },
@@ -96,11 +96,11 @@ export default function WidocznoscWAi() {
       faq={[
         {
           q: "Jak wpuścić ChatGPT na stronę, ale nie oddawać treści do trenowania modeli?",
-          a: "W robots.txt wpuśćcie OAI-SearchBot (wyszukiwanie w ChatGPT), a zablokujcie GPTBot (trenowanie): „User-agent: OAI-SearchBot” z „Allow: /” oraz „User-agent: GPTBot” z „Disallow: /”.",
+          a: "W robots.txt wpuść OAI-SearchBot (wyszukiwanie w ChatGPT), a zablokuj GPTBot (trenowanie): „User-agent: OAI-SearchBot” z „Allow: /” oraz „User-agent: GPTBot” z „Disallow: /”.",
         },
         {
           q: "Czy zablokowanie GPTBot usuwa nas z ChatGPT?",
-          a: "Nie, GPTBot dotyczy tylko trenowania. Z wyszukiwania w ChatGPT usuwa Was natomiast reguła „User-agent: *” z „Disallow: /” albo gotowa lista blokująca wszystkie roboty AI.",
+          a: "Nie, GPTBot dotyczy tylko trenowania. Z wyszukiwania w ChatGPT usuwa cię natomiast reguła „User-agent: *” z „Disallow: /” albo gotowa lista blokująca wszystkie roboty AI.",
         },
         {
           q: "Czy blokada Google-Extended wyłącza nas z AI Overviews w Google?",
@@ -108,13 +108,13 @@ export default function WidocznoscWAi() {
         },
         {
           q: "Czy da się sprawdzić, czy ChatGPT już mnie wymienia?",
-          a: "Nie w sposób, który byłby pomiarem. Odpowiedzi asystentów różnią się między użytkownikami i zmieniają w czasie, dlatego sprawdzamy warunki, na które macie wpływ.",
+          a: "Nie w sposób, który byłby pomiarem. Odpowiedzi asystentów różnią się między użytkownikami i zmieniają w czasie, dlatego sprawdzamy warunki, na które masz wpływ.",
         },
       ]}
       formId="widocznosc_ai"
-      formHeading="Wynik wyszedł na czerwono i nie wiecie, od czego zacząć"
-      formIntro="Podajcie adres strony. Odeślemy kolejność działań i napiszemy, co zrobicie sami, a co wymaga dostępu do kodu."
-      submitLabel="Poproście o kolejność działań"
+      formHeading="Wynik wyszedł na czerwono i nie wiesz, od czego zacząć"
+      formIntro="Podaj adres strony. Odeślemy kolejność działań i napiszemy, co zrobisz sam, a co wymaga dostępu do kodu."
+      submitLabel="Poproś o kolejność działań"
       microCopy="Odpisujemy zwykle tego samego dnia. Ustalenia prowadzimy mailowo."
       serviceName="Audyt widoczności strony dla asystentów AI"
       serviceDesc="Sprawdzenie, czy roboty zbierające treść na potrzeby asystentów AI mogą przeczytać stronę: dostęp w robots.txt, treść bez skryptów, dane uporządkowane, metadane, mapa strony i llms.txt."

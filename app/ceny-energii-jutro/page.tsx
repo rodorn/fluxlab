@@ -64,7 +64,7 @@ export default async function Page() {
 
         {!naJutro && (
           <p className="mt-8 rounded-xl border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-900/60 p-5 text-sm text-gray-700 dark:text-gray-300">
-            Ceny na jutro jeszcze nie są opublikowane. Zajrzyjcie po
+            Ceny na jutro jeszcze nie są opublikowane. Zajrzyj po
             czternastej.
             {jest && ` Do tego czasu pokazujemy ceny na dziś, ${d.data}.`}
           </p>
@@ -193,14 +193,14 @@ export default async function Page() {
             Co to za cena i czego nie mówi
           </h2>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-            To rynkowa cena energii (RCE), a nie cena z Waszej faktury. Według
+            To rynkowa cena energii (RCE), a nie cena z Twojej faktury. Według
             niej rozlicza się energię oddaną do sieci w net-billingu. Rachunek
             za energię pobraną zwykle wynika z taryfy.
           </p>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-            Ma znaczenie, gdy rozliczacie się godzinowo albo możecie przesunąć
+            Ma znaczenie, gdy rozliczasz się godzinowo albo możesz przesunąć
             zużycie: ładowanie auta, pompa ciepła, magazyn energii. Roczny koszt
-            elektryka policzycie w{" "}
+            elektryka policzysz w{" "}
             <Link
               href="/kalkulator-kosztow"
               className="text-accent hover:underline"
@@ -213,7 +213,7 @@ export default async function Page() {
 
         <div className="mt-8 rounded-2xl border border-gray-200/80 dark:border-gray-800/80 bg-white/70 dark:bg-gray-900/50 p-6">
           <p className="text-base font-bold text-gray-900 dark:text-white">
-            Zobaczcie też
+            Zobacz też
           </p>
           <ul className="mt-3 space-y-2 text-sm">
             <li>

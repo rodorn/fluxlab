@@ -76,7 +76,7 @@ export default function MakeVsN8nArticle() {
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
               Oba to wizualne platformy automatyzacji z mocną logiką. Różnią je
               model dostarczania, koszt przy wzroście i miejsce, w którym leżą
-              Wasze dane.
+              Twoje dane.
             </p>
           </div>
         </section>
@@ -126,7 +126,7 @@ export default function MakeVsN8nArticle() {
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Make ma dopracowany interfejs i więcej poradników, pierwszy
-                        scenariusz zbudujecie w niecałą godzinę. n8n jest bliżej
+                        scenariusz zbudujesz w niecałą godzinę. n8n jest bliżej
                         programisty: kod JavaScript w scenariuszu, własne moduły,
                         wersjonowanie w gicie.
                       </p>
@@ -166,21 +166,21 @@ export default function MakeVsN8nArticle() {
                         Kiedy Make, a kiedy n8n
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Wybierzcie Make, gdy:
+                        Wybierz Make, gdy:
                       </p>
                       <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
-                        <li>nie macie osoby technicznej,</li>
+                        <li>nie masz osoby technicznej,</li>
                         <li>wolumen nie przekracza 30 000 operacji miesięcznie,</li>
-                        <li>chcecie ruszyć w tym tygodniu.</li>
+                        <li>chcesz ruszyć w tym tygodniu.</li>
                       </ul>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Wybierzcie n8n, gdy:
+                        Wybierz n8n, gdy:
                       </p>
                       <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
-                        <li>macie osobę techniczną albo partnera od infrastruktury,</li>
+                        <li>masz osobę techniczną albo partnera od infrastruktury,</li>
                         <li>koszty Make przekraczają ok. 50 USD miesięcznie,</li>
                         <li>
-                          łączycie systemy wewnętrzne albo branża wymaga pełnej
+                          łączysz systemy wewnętrzne albo branża wymaga pełnej
                           kontroli nad danymi.
                         </li>
                       </ul>
@@ -200,10 +200,10 @@ export default function MakeVsN8nArticle() {
                           Make czy n8n? Pomożemy dobrać i wdrożyć.
                         </h2>
                         <p className="text-gray-600 dark:text-gray-400 mb-4">
-                          Krótka rozmowa o Waszej skali i procesach.
+                          Krótka rozmowa o Twojej skali i procesach.
                         </p>
                         <Link href="/automatyzacja-procesow-biznesowych" className="btn-primary inline-block">
-                          Zobaczcie usługę automatyzacji procesów
+                          Zobacz usługę automatyzacji procesów
                         </Link>
                       </div>
                     </div>

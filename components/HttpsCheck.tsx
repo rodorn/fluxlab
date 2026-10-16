@@ -86,10 +86,10 @@ function PasekAdresu({ domena, zly }: { domena: string; zly: boolean }) {
             🚫
           </p>
           <p className="mt-2 text-sm font-bold text-gray-900 dark:text-white">
-            Wasze połączenie nie jest prywatne
+            Twoje połączenie nie jest prywatne
           </p>
           <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
-            Tak wygląda Wasza strona dla kogoś, kto trafia na nią z wyszukiwarki
+            Tak wygląda Twoja strona dla kogoś, kto trafia na nią z wyszukiwarki
           </p>
         </div>
       )}
@@ -156,7 +156,7 @@ export default function HttpsCheck() {
       setStan("gotowe");
     } catch {
       if (timer.current) clearInterval(timer.current);
-      setBlad("Brak połączenia. Spróbujcie ponownie za chwilę.");
+      setBlad("Brak połączenia. Spróbuj ponownie za chwilę.");
       setStan("blad");
     }
   }
@@ -204,7 +204,7 @@ export default function HttpsCheck() {
       }
       setLeadStan("ok");
     } catch {
-      setLeadBlad("Brak połączenia. Spróbujcie ponownie za chwilę.");
+      setLeadBlad("Brak połączenia. Spróbuj ponownie za chwilę.");
       setLeadStan("blad");
     }
   }
@@ -215,12 +215,12 @@ export default function HttpsCheck() {
   return (
     <div className="rounded-2xl border border-gray-200/80 dark:border-gray-800/80 bg-white/70 dark:bg-gray-900/50 p-6 md:p-8">
       <h2 className="text-xl font-bold text-gray-900 dark:text-white">
-        Sprawdźcie, co widzi Wasz klient
+        Sprawdź, co widzi Twój klient
       </h2>
       <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-        Wpiszcie adres swojej strony. W kilka sekund powiemy, czy przeglądarka
+        Wpisz adres swojej strony. W kilka sekund powiemy, czy przeglądarka
         ostrzega przed nią odwiedzających i dlaczego. Bez rejestracji i bez
-        żadnych dostępów, sprawdzamy tylko to, co Wasz serwer i tak pokazuje
+        żadnych dostępów, sprawdzamy tylko to, co Twój serwer i tak pokazuje
         publicznie.
       </p>
       <Przyklady
@@ -247,7 +247,7 @@ export default function HttpsCheck() {
           disabled={stan === "ladowanie"}
           className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
         >
-          {stan === "ladowanie" ? "Sprawdzamy..." : "Sprawdźcie stronę"}
+          {stan === "ladowanie" ? "Sprawdzamy..." : "Sprawdź stronę"}
         </button>
       </form>
 
@@ -303,7 +303,7 @@ export default function HttpsCheck() {
               </p>
               <p className="mt-1 text-sm text-gray-700 dark:text-gray-300">
                 Wejście na adres bez szyfrowania jest automatycznie
-                przekierowywane na adres szyfrowany, który nie działa. Do Waszej
+                przekierowywane na adres szyfrowany, który nie działa. Do Twojej
                 strony nie da się dotrzeć inaczej niż przez kliknięcie zgody na
                 ryzyko. Treść jest na serwerze i działa, tylko nikt jej nie
                 ogląda.
@@ -361,8 +361,8 @@ export default function HttpsCheck() {
           <div className="mt-5 border-t border-gray-200/70 dark:border-gray-700/70 pt-4">
             <p className="text-sm text-gray-700 dark:text-gray-300">
               {wynik.werdykt === "ZIELONY"
-                ? "Nie musimy Wam nic naprawiać i nie będziemy tego udawać. Jeśli chcecie, możemy pilnować terminu ważności, żeby nie zaskoczył Was w najgorszym momencie."
-                : "To da się naprawić zwykle w jeden dzień roboczy i bez zmiany hostingu. Zostawcie adres, odeślemy konkretny plan naprawy razem z tym rozpoznaniem."}
+                ? "Nie musimy Ci nic naprawiać i nie będziemy tego udawać. Jeśli chcesz, możemy pilnować terminu ważności, żeby nie zaskoczył cię w najgorszym momencie."
+                : "To da się naprawić zwykle w jeden dzień roboczy i bez zmiany hostingu. Zostaw adres, odeślemy konkretny plan naprawy razem z tym rozpoznaniem."}
             </p>
 
             {leadStan === "ok" ? (
@@ -377,8 +377,8 @@ export default function HttpsCheck() {
                   className="block text-sm font-medium text-gray-900 dark:text-white"
                 >
                   {wynik.werdykt === "ZIELONY"
-                    ? "Podajcie maila, jeśli chcecie, żebyśmy pilnowali terminu"
-                    : "Podajcie maila, odeślemy plan naprawy"}
+                    ? "Podaj maila, jeśli chcesz, żebyśmy pilnowali terminu"
+                    : "Podaj maila, odeślemy plan naprawy"}
                 </label>
                 <div className="mt-2 flex flex-col gap-3 sm:flex-row">
                   <input
@@ -397,7 +397,7 @@ export default function HttpsCheck() {
                   >
                     {leadStan === "wysylamy"
                       ? "Wysyłamy..."
-                      : "Wyślijcie zgłoszenie"}
+                      : "Wyślij zgłoszenie"}
                   </button>
                 </div>
                 {leadStan === "blad" && (

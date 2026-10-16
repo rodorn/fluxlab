@@ -194,7 +194,7 @@ export default function Page() {
         </p>
 
         <SprawdzPoBadaniu
-          naglowek="Sprawdźcie to na żywo, jednym kliknięciem"
+          naglowek="Sprawdź to na żywo, jednym kliknięciem"
           opis="Pobieramy domenę tak jak asystent AI i sprawdzamy te same cztery punkty co w badaniu."
           endpoint="/api/sprawdz-ai"
           pozycje={[
@@ -204,9 +204,9 @@ export default function Page() {
           ]}
           narzedzie={{
             href: "/widocznosc-w-ai",
-            etykieta: "Sprawdźcie swoją domenę",
+            etykieta: "Sprawdź swoją domenę",
           }}
-          kontakt="Chcecie, żeby ktoś poprawił to, co wyszło na czerwono?"
+          kontakt="Chcesz, żeby ktoś poprawił to, co wyszło na czerwono?"
         />
 
         <section className="mt-12">

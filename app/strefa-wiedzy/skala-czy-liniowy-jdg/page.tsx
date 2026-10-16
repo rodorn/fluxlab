@@ -172,10 +172,10 @@ export default function SkalaCzyLiniowyJdgArticle() {
 
                       <div className="bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-8 text-center mt-12">
                         <h2 className="h2-sekcji mb-6">
-                          Porównajcie na swoich danych
+                          Porównaj na swoich danych
                         </h2>
                         <Link href="/kalkulator-podatkowy" className="btn-primary inline-block">
-                          Sprawdźcie w kalkulatorze JDG 2026
+                          Sprawdź w kalkulatorze JDG 2026
                         </Link>
                       </div>
                     </div>
@@ -195,15 +195,15 @@ export default function SkalaCzyLiniowyJdgArticle() {
                       </h3>
                       <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
                         <li>dochód nie przekracza 100 do 120 tys. zł,</li>
-                        <li>chcecie rozliczać się z małżonkiem,</li>
-                        <li>korzystacie z ulg dostępnych tylko na skali.</li>
+                        <li>chcesz rozliczać się z małżonkiem,</li>
+                        <li>korzystasz z ulg dostępnych tylko na skali.</li>
                       </ul>
                       <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
                         Liniowy, gdy:
                       </h3>
                       <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
                         <li>dochód przekracza 120 do 150 tys. zł,</li>
-                        <li>nie rozliczacie się z małżonkiem,</li>
+                        <li>nie rozliczasz się z małżonkiem,</li>
                         <li>niższa składka zdrowotna daje realną oszczędność.</li>
                       </ul>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">

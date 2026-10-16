@@ -48,14 +48,14 @@ const ETAPY: Etap[] = [
     objaw:
       "Zgłoszenie wychodzi z formularza jako mail i dalej żyje tylko w czyjejś skrzynce. Jeśli ten mail wpadnie do spamu albo trafi na urlop, nikt się o nim nie dowie, bo nie ma żadnego drugiego śladu.",
     sprawdz:
-      "Wyślijcie zgłoszenie przez własny formularz z prywatnego adresu i sprawdźcie, w ilu miejscach się pojawiło. Jeśli tylko w jednej skrzynce, to jest cały Wasz rejestr zapytań.",
+      "Wyślij zgłoszenie przez własny formularz z prywatnego adresu i sprawdź, w ilu miejscach się pojawiło. Jeśli tylko w jednej skrzynce, to jest cały Twój rejestr zapytań.",
     robie:
       "Formularz zapisuje zgłoszenie do CRM jako rekord, a mail zostaje tylko powiadomieniem. Awaria poczty przestaje oznaczać utratę zapytania.",
     href: "/automatyzacja-formularza-do-pipedrive",
     hrefLabel: "Formularz prosto do CRM",
     narzedzie: {
       href: "/audyt-poczty",
-      label: "Sprawdźcie, czy Wasza poczta nie ląduje w spamie",
+      label: "Sprawdź, czy Twoja poczta nie ląduje w spamie",
     },
   },
   {
@@ -64,7 +64,7 @@ const ETAPY: Etap[] = [
     objaw:
       "Dane z zapytania ktoś przepisuje ręcznie. Przy przepisywaniu gubi się źródło, powstają duplikaty tej samej firmy i pola bywają puste, bo w pośpiechu wypełnia się tylko te wymagane.",
     sprawdz:
-      "Otwórzcie w CRM listę rekordów z ostatniego miesiąca i policzcie, ile ma puste pole źródła. To jest liczba zapytań, o których nie wiecie, skąd przyszły.",
+      "Otwórz w CRM listę rekordów z ostatniego miesiąca i policz, ile ma puste pole źródła. To jest liczba zapytań, o których nie wiesz, skąd przyszły.",
     robie:
       "Rekord powstaje automatycznie z jednym kompletem pól: osoba, firma, źródło, treść zapytania. Duplikaty są łączone po adresie i numerze telefonu.",
     href: "/crm-jako-system-pracy",
@@ -76,9 +76,9 @@ const ETAPY: Etap[] = [
     objaw:
       "Zapytanie leży bez właściciela, dopóki ktoś go nie zauważy. Przy dwóch osobach to działa, przy pięciu zaczyna się „myślałem, że Ty to bierzesz”, a w weekend nie bierze tego nikt.",
     sprawdz:
-      "Sprawdźcie w CRM, ile otwartych zapytań nie ma dziś przypisanej osoby. Potem sprawdźcie to samo dla zapytań z piątku po południu.",
+      "Sprawdź w CRM, ile otwartych zapytań nie ma dziś przypisanej osoby. Potem sprawdź to samo dla zapytań z piątku po południu.",
     robie:
-      "Reguła przypisania działa na warunkach, które i tak macie w głowie: region, branża, wartość, kolejka. Brak właściciela przestaje być możliwym stanem.",
+      "Reguła przypisania działa na warunkach, które i tak masz w głowie: region, branża, wartość, kolejka. Brak właściciela przestaje być możliwym stanem.",
     href: "/automatyczne-przypisywanie-leadow",
     hrefLabel: "Automatyczne przypisywanie zgłoszeń",
   },
@@ -88,7 +88,7 @@ const ETAPY: Etap[] = [
     objaw:
       "Zapytanie czeka na moment, w którym ktoś ma czas. Pytający w tym czasie zwykle wysłał to samo zapytanie do kilku firm i rozmawia z tą, która odezwała się pierwsza.",
     sprawdz:
-      "Weźcie dziesięć ostatnich zapytań i policzcie różnicę między godziną wpłynięcia a godziną pierwszej odpowiedzi. Mediana z tych dziesięciu to Wasz realny czas reakcji.",
+      "Weź dziesięć ostatnich zapytań i policz różnicę między godziną wpłynięcia a godziną pierwszej odpowiedzi. Mediana z tych dziesięciu to Twój realny czas reakcji.",
     robie:
       "Potwierdzenie idzie do pytającego od razu, a do handlowca trafia zadanie z terminem. Czas reakcji zaczyna być mierzony, więc da się o nim rozmawiać.",
     href: "/czas-reakcji-na-leada",
@@ -100,7 +100,7 @@ const ETAPY: Etap[] = [
     objaw:
       "Pierwszy kontakt jest, drugiego nie ma. Nikt nie pilnuje zapytań, które utknęły na „odezwę się w przyszłym tygodniu”, bo pilnowanie ich to osobna praca, której nikt nie ma w zakresie.",
     sprawdz:
-      "Odfiltrujcie w CRM zapytania bez aktywności od trzydziestu dni, które nie są zamknięte. To jest lista, o której zespół już zapomniał.",
+      "Odfiltruj w CRM zapytania bez aktywności od trzydziestu dni, które nie są zamknięte. To jest lista, o której zespół już zapomniał.",
     robie:
       "Brak aktywności przez ustalony czas sam tworzy zadanie albo wiadomość. Zapytanie nie może po cichu wypaść z procesu, musi zostać zamknięte świadomie.",
     href: "/automatyzacja-follow-up",
@@ -112,7 +112,7 @@ const ETAPY: Etap[] = [
     objaw:
       "Liczby składa się ręcznie z CRM i arkuszy, więc powstają rzadko i późno. Bez nich nie widać, na którym etapie odpada najwięcej zapytań, a to jest jedyna informacja potrzebna do decyzji, co naprawiać.",
     sprawdz:
-      "Zapytajcie, ile godzin zajęło złożenie ostatniego raportu sprzedaży i z ilu źródeł trzeba było ręcznie skopiować dane.",
+      "Zapytaj, ile godzin zajęło złożenie ostatniego raportu sprzedaży i z ilu źródeł trzeba było ręcznie skopiować dane.",
     robie:
       "Raport składa się sam i pokazuje liczbę zapytań, czas reakcji i etap, na którym odpadają. Przychodzi w ustalonym dniu, bez proszenia.",
     href: "/raportowanie-z-pipedrive",
@@ -135,7 +135,7 @@ const SKALE: Skala[] = [
     nazwa: "Do 20 miesięcznie",
     warto: false,
     werdykt:
-      "Przy tej skali nie budowalibyśmy pod to automatyzacji. Dwadzieścia zapytań miesięcznie da się obsłużyć ręcznie i uczciwiej jest powiedzieć, że wdrożenie zwróci się tu bardzo długo. Zróbcie powyższe sprawdzenie sami i poprawcie jedną rzecz, która wyjdzie najgorzej.",
+      "Przy tej skali nie budowalibyśmy pod to automatyzacji. Dwadzieścia zapytań miesięcznie da się obsłużyć ręcznie i uczciwiej jest powiedzieć, że wdrożenie zwróci się tu bardzo długo. Zrób powyższe sprawdzenie sami i popraw jedną rzecz, która wyjdzie najgorzej.",
     koszt: "Koszt: zero, to zmiana w sposobie pracy, nie we wdrożeniu.",
   },
   {
@@ -183,10 +183,10 @@ export default function DrogaLeada() {
         id="droga-leada"
         className="display-md mt-3 text-gray-900 dark:text-white"
       >
-        Na którym etapie gubią się Wasze zapytania?
+        Na którym etapie gubią się Twoje zapytania?
       </h2>
       <p className="mt-3 max-w-2xl text-gray-600 dark:text-gray-400">
-        Naciśnijcie etap, a pokażemy, co się tam psuje, jak to sprawdzić u siebie
+        Kliknij etap, a pokażemy, co się tam psuje, jak to sprawdzić u siebie
         jeszcze dzisiaj i co z tym robimy. Drugie kliknięcie, o skali, decyduje,
         czy w ogóle warto to automatyzować.
       </p>
@@ -247,7 +247,7 @@ export default function DrogaLeada() {
             </div>
             <div>
               <dt className="font-semibold text-gray-900 dark:text-white">
-                Sprawdźcie to sami, bez naszego udziału
+                Sprawdź to sami, bez naszego udziału
               </dt>
               <dd className="mt-1 text-gray-700 dark:text-gray-300">
                 {etap.sprawdz}
@@ -265,7 +265,7 @@ export default function DrogaLeada() {
 
           <div className="mt-5 border-t border-gray-200 pt-5 dark:border-gray-700">
             <p className="text-sm font-semibold text-gray-900 dark:text-white">
-              Ile zapytań wpada do Was miesięcznie?
+              Ile zapytań wpada do ciebie miesięcznie?
             </p>
             <div className="mt-3 flex flex-wrap gap-2">
               {SKALE.map((s) => {
@@ -336,7 +336,7 @@ export default function DrogaLeada() {
               href="/koszt-recznej-obslugi-leadow"
               className="text-gray-600 hover:text-accent dark:text-gray-400 dark:hover:text-accent"
             >
-              Policzcie, ile kosztuje Was ręczna obsługa →
+              Policz, ile kosztuje cię ręczna obsługa →
             </Link>
           </div>
         </div>

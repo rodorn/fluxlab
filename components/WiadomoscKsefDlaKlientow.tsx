@@ -62,7 +62,7 @@ export default function WiadomoscKsefDlaKlientow() {
         onClick={kopiuj}
         className="btn-primary mt-4 justify-center px-6 text-sm"
       >
-        {skopiowano ? "Skopiowane, wklejcie w maila" : "Skopiujcie wiadomość"}
+        {skopiowano ? "Skopiowane, wklej w maila" : "Skopiuj wiadomość"}
       </button>
     </div>
   );

@@ -83,7 +83,7 @@ export default function ONasPage() {
                 projektów i bez ceny ustalanej na końcu.
               </p>
               <p className="mt-4 text-gray-600 dark:text-gray-300">
-                Każde zlecenie prowadzi osobiście: rozmawiacie z nim od
+                Każde zlecenie prowadzi osobiście: rozmawiasz z nim od
                 pierwszego maila do odbioru. Kod piszemy z pomocą AI, dlatego
                 prace, które w agencji trwają tygodnie, oddajemy w dni.
               </p>
@@ -160,7 +160,7 @@ export default function ONasPage() {
               ))}
             </dl>
             <p className="mt-6 text-sm text-gray-600 dark:text-gray-400">
-              Dane sprawdzicie w{" "}
+              Dane sprawdzisz w{" "}
               <a
                 href="https://aplikacja.ceidg.gov.pl/ceidg/ceidg.public.ui/search.aspx"
                 target="_blank"

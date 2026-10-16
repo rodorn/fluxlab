@@ -171,7 +171,7 @@ export default function AutomatyzacjaFormularzaDoPipedrive() {
 
         <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
           <section className="pt-12 max-w-3xl mx-auto">
-            <h2 className={h2}>Po czym poznać, że macie ten problem</h2>
+            <h2 className={h2}>Po czym poznać, że masz ten problem</h2>
             <ul className="space-y-3">
               {symptoms.map((s) => (
                 <li key={s} className={`flex items-start gap-3 ${card}`}>
@@ -191,7 +191,7 @@ export default function AutomatyzacjaFormularzaDoPipedrive() {
           </section>
 
           <section className="mt-12 pt-12 border-t border-gray-100 dark:border-gray-800 max-w-3xl mx-auto">
-            <h2 className={h2}>Od kliknięcia „Wyślijcie” do zadania u handlowca</h2>
+            <h2 className={h2}>Od kliknięcia „Wyślij” do zadania u handlowca</h2>
             <ol className="space-y-3">
               {afterSteps.map((s, i) => (
                 <li key={s.title} className={`flex items-start gap-4 ${card}`}>
@@ -226,7 +226,7 @@ export default function AutomatyzacjaFormularzaDoPipedrive() {
                 <thead className="bg-gray-50 dark:bg-gray-900/50 text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400">
                   <tr>
                     <th className="px-6 py-4 font-semibold">Zakres</th>
-                    <th className="px-6 py-4 font-semibold">Co dostajecie</th>
+                    <th className="px-6 py-4 font-semibold">Co dostajesz</th>
                     <th className="px-6 py-4 font-semibold">Widełki</th>
                   </tr>
                 </thead>
@@ -249,11 +249,11 @@ export default function AutomatyzacjaFormularzaDoPipedrive() {
               <TrackedCTA
                 href="/automatyzacja-leadow-crm"
                 location="article_formularz_pipedrive_pricing"
-                label="Zobaczcie pełną ofertę"
+                label="Zobacz pełną ofertę"
                 eventName="cta_click_article_audit"
                 className="btn-secondary"
               >
-                Zobaczcie pełną ofertę: automatyzacja leadów do CRM
+                Zobacz pełną ofertę: automatyzacja leadów do CRM
               </TrackedCTA>
               <TrackedCTA
                 href="/kontakt"

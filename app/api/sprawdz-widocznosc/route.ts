@@ -64,7 +64,7 @@ export async function POST(request: Request) {
   }
   if (!/^[a-z0-9.-]+\.[a-z]{2,}$/.test(domena)) {
     return NextResponse.json(
-      { error: "Podajcie sam adres strony, na przykład twojafirma.pl" },
+      { error: "Podaj sam adres strony, na przykład twojafirma.pl" },
       { status: 400 },
     );
   }
@@ -80,7 +80,7 @@ export async function POST(request: Request) {
       domena,
       naglowek: "Nie możemy otworzyć tej strony",
       opis:
-        "Strona nie odpowiedziała. Jeśli adres jest poprawny, problem może leżeć w certyfikacie albo w samym serwerze, a wtedy wyszukiwarka też jej nie odwiedza. Sprawdzimy to ręcznie, jeśli napiszecie.",
+        "Strona nie odpowiedziała. Jeśli adres jest poprawny, problem może leżeć w certyfikacie albo w samym serwerze, a wtedy wyszukiwarka też jej nie odwiedza. Sprawdzimy to ręcznie, jeśli napiszesz.",
     });
   }
 
@@ -96,7 +96,7 @@ export async function POST(request: Request) {
       opis:
         "Serwer odpowiedział kodem " +
         strona.status +
-        ", czyli odmową, i zamiast strony głównej oddał stronę zapory przed automatami. Nie wyciągamy z niej żadnych wniosków, bo nie jest tym, co widzi wyszukiwarka. Wyszukiwarki zwykle mają na takich zaporach wyjątek. Jeśli chcecie mieć pewność, napiszcie, a sprawdzimy to ręcznie.",
+        ", czyli odmową, i zamiast strony głównej oddał stronę zapory przed automatami. Nie wyciągamy z niej żadnych wniosków, bo nie jest tym, co widzi wyszukiwarka. Wyszukiwarki zwykle mają na takich zaporach wyjątek. Jeśli chcesz mieć pewność, napisz, a sprawdzimy to ręcznie.",
     });
   }
 
@@ -153,10 +153,10 @@ export async function POST(request: Request) {
     domena,
     werdykt: zablokowana ? "CZERWONY" : "ZIELONY",
     naglowek: zablokowana
-      ? "Wasza strona każe wyszukiwarce się nie pokazywać"
+      ? "Twoja strona każe wyszukiwarce się nie pokazywać"
       : "Nic nie blokuje wyszukiwarki",
     opis: zablokowana
-      ? "Znaleźliśmy polecenie, przez które strona nie trafia do wyników wyszukiwania. Dopóki tam jest, nie znajdzie Was nikt, kto nie zna adresu na pamięć, a reklama i wizytówki to jedyne źródło wejść."
+      ? "Znaleźliśmy polecenie, przez które strona nie trafia do wyników wyszukiwania. Dopóki tam jest, nie znajdzie cię nikt, kto nie zna adresu na pamięć, a reklama i wizytówki to jedyne źródło wejść."
       : "Nie znaleźliśmy żadnego polecenia blokującego indeksowanie. To nie gwarantuje wysokiej pozycji, ale znaczy, że przynajmniej nic nie stoi na przeszkodzie.",
     blokady,
     // Blokada w kodzie to fakt, ale wypadniecie z wynikow bywa opoznione

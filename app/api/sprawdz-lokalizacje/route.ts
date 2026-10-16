@@ -193,7 +193,7 @@ export async function POST(request: Request) {
   if (miejsce.length < 3) {
     return NextResponse.json(
       {
-        error: "Podajcie miejscowość albo adres, na przykład Grodzisk Mazowiecki.",
+        error: "Podaj miejscowość albo adres, na przykład Grodzisk Mazowiecki.",
       },
       { status: 400 },
     );
@@ -201,7 +201,7 @@ export async function POST(request: Request) {
   const def = BRANZE[branza];
   if (!def) {
     return NextResponse.json(
-      { error: "Wybierzcie branżę z listy." },
+      { error: "Wybierz branżę z listy." },
       { status: 400 },
     );
   }
@@ -227,7 +227,7 @@ export async function POST(request: Request) {
     return NextResponse.json({
       status: "BRAK_MIEJSCA",
       naglowek: "Nie znaleźliśmy takiego miejsca w Polsce",
-      opis: "Spróbujcie samą nazwą miejscowości albo dopiszcie gminę, na przykład Grodzisk Mazowiecki, mazowieckie.",
+      opis: "Spróbuj samą nazwą miejscowości albo dopisz gminę, na przykład Grodzisk Mazowiecki, mazowieckie.",
     });
   }
 
@@ -267,7 +267,7 @@ export async function POST(request: Request) {
     return NextResponse.json({
       status: "BRAK_DANYCH",
       naglowek: "Żaden serwer z danymi map nie odpowiedział",
-      opis: "Punkty pochodzą z OpenStreetMap, a udostępniają je darmowe serwery, które bywają przeciążone. Odpytaliśmy trzy po kolei i żaden nie oddał danych. Spróbujcie za kilka minut, a jeśli to się powtórzy, napiszcie do nas, policzymy ręcznie.",
+      opis: "Punkty pochodzą z OpenStreetMap, a udostępniają je darmowe serwery, które bywają przeciążone. Odpytaliśmy trzy po kolei i żaden nie oddał danych. Spróbuj za kilka minut, a jeśli to się powtórzy, napisz do nas, policzymy ręcznie.",
     });
   }
 

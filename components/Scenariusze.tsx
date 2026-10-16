@@ -29,7 +29,7 @@ export default function Scenariusze<T>({
   pozycje,
   onWybor,
   wybrany,
-  wstep = "Nie chcecie wypełniać pól? Zacznijcie od gotowego układu:",
+  wstep = "Nie chcesz wypełniać pól? Zacznij od gotowego układu:",
 }: {
   pozycje: Scenariusz<T>[];
   onWybor: (dane: T, etykieta: string) => void;

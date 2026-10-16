@@ -42,7 +42,7 @@ const faqs = [
   {
     question: "Dlaczego „nie wiemy” liczy się jak „nie”?",
     answer:
-      "Jeśli nie wiecie, czy coś działa, to nikt tego nie pilnuje. Brak widoczności jest sam w sobie problemem.",
+      "Jeśli nie wiesz, czy coś działa, to nikt tego nie pilnuje. Brak widoczności jest sam w sobie problemem.",
   },
   {
     question: "Dlaczego pytania o duplikaty i przepisywanie są odwrócone?",
@@ -73,7 +73,7 @@ export default function AudytCRMPage() {
           <div className="container-wide max-w-3xl">
             <p className="section-label mb-4">Narzędzie</p>
             <h1 className="h1-strony">
-              Audyt CRM: czy Wasz pipeline nadaje się do automatyzacji?
+              Audyt CRM: czy Twój pipeline nadaje się do automatyzacji?
             </h1>
             <p className="mt-4 text-lg text-gray-600 dark:text-gray-400 max-w-2xl">
               10 pytań tak/nie, wynik i obszar do automatyzacji. Bez
@@ -111,16 +111,16 @@ export default function AudytCRMPage() {
                           </li>
                           <li>
                             <strong>5 do 7, fundament z lukami.</strong>{" "}
-                            Najpierw załatajcie największą lukę, którą wskazuje
+                            Najpierw załataj największą lukę, którą wskazuje
                             audyt.
                           </li>
                           <li>
                             <strong>0 do 4, problem jest w procesie.</strong>{" "}
-                            Zacznijcie od podstaw: właściciel leada, etapy, źródło.
+                            Zacznij od podstaw: właściciel leada, etapy, źródło.
                           </li>
                         </ul>
                         <p>
-                          Do wyniku dostajecie jeden obszar z największym
+                          Do wyniku dostajesz jeden obszar z największym
                           potencjałem i 2-3 pierwsze kroki.
                         </p>
                       </div>

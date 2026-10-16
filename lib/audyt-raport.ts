@@ -15,11 +15,11 @@ import type { Ustalenie, Wycena } from "./audyt-ocena";
 /** Artykuł, który realnie rozwija dane ustalenie. Bez naciągania. */
 const MATERIALY: Record<string, { tytul: string; href: string }> = {
   pusta_tresc: {
-    tytul: "Czy asystenci AI widzą Waszą stronę",
+    tytul: "Czy asystenci AI widzą Twoją stronę",
     href: "/strefa-wiedzy/czy-ai-widzi-strony-dealerow",
   },
   blokada_ai: {
-    tytul: "Czy asystenci AI widzą Waszą stronę",
+    tytul: "Czy asystenci AI widzą Twoją stronę",
     href: "/strefa-wiedzy/czy-ai-widzi-strony-dealerow",
   },
   brak_danych: {
@@ -106,14 +106,14 @@ ZASADY BEZWZGLĘDNE:
 - Nie strasz i nie sprzedawaj. Opisujesz stan i konsekwencję. Decyzję podejmuje czytelnik.
 - Jeżeli ustaleń jest mało albo żadnych, powiedz wprost, że strona jest w dobrym stanie. Nie szukaj problemów na siłę, bo to podważa cały raport.
 - Nie obiecuj pozycji w wyszukiwarce ani wzrostu sprzedaży. Możesz mówić o usuwaniu przeszkód.
-- Przy KAŻDYM problemie napisz wprost, co się stanie, jeśli zostanie bez poprawki, językiem skutków dla firmy: klienci rezygnują, zanim strona się załaduje; maile z Waszej domeny trafiają do spamu albo ktoś może się pod nią podszyć; Google pokazuje ucięty tytuł; asystenci AI nie wiedzą, czym się zajmujecie. Sam stan techniczny bez skutku ("DMARC w polityce none") to za mało.
+- Przy KAŻDYM problemie napisz wprost, co się stanie, jeśli zostanie bez poprawki, językiem skutków dla firmy: klienci rezygnują, zanim strona się załaduje; maile z Twojej domeny trafiają do spamu albo ktoś może się pod nią podszyć; Google pokazuje ucięty tytuł; asystenci AI nie wiedzą, czym się zajmujesz. Sam stan techniczny bez skutku ("DMARC w polityce none") to za mało.
 - Pamiętaj, że nie mierzyliśmy strony w przeglądarce. Nie pisz o czasie rysowania, przesunięciach układu ani wyniku Lighthouse.
 
 JĘZYK:
 - Polski, pełne zdania, rzeczowo i spokojnie. Ton: kompetentny fachowiec, który tłumaczy bez protekcjonalności.
 - ZAKAZ długich myślników. Zamiast nich przecinek albo kropka.
 - Bez wykrzykników, bez wielkich liter dla podkreślenia, bez emoji, bez marketingowego żargonu ("rewolucyjny", "kompleksowy", "dedykowany").
-- Zwracaj się do czytelnika w drugiej osobie liczby mnogiej: "Wasza strona", "Wasi klienci", "zacznijcie od", "macie". Nie pisz bezosobowo ("warto zacząć", "osoby korzystające", "należy") ani per "Pan/Pani". O sobie, jeśli w ogóle, piszemy "my".
+- Zwracaj się do czytelnika w drugiej osobie liczby pojedynczej (ty): "Twoja strona", "Twoi klienci", "zacznij od", "masz". Nie pisz bezosobowo ("warto zacząć", "osoby korzystające", "należy") ani per "Pan/Pani". O sobie, jeśli w ogóle, piszemy "my".
 
 CZĘŚCI:
 - werdykt: jedno zdanie, najwyżej 25 słów, mówiące w jakim stanie jest strona.
@@ -211,7 +211,7 @@ export async function napiszRaport(
         // wywołanie błędem 400. Sprawdzone na narzędziu diagnozy.
         max_output_tokens: 5000,
         instructions: INSTRUKCJA,
-        input: `Dane z pomiaru strony ${p.domena}. Napiszcie raport.\n\n${materialDlaModelu(p, ustalenia, wycena, punkty)}`,
+        input: `Dane z pomiaru strony ${p.domena}. Napisz raport.\n\n${materialDlaModelu(p, ustalenia, wycena, punkty)}`,
         text: {
           format: {
             type: "json_schema",

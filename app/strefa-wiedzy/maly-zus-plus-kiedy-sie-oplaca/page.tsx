@@ -10,11 +10,11 @@ import Tabs from "@/components/Tabs";
 export const metadata: Metadata = {
   title: "Mały ZUS Plus w 2026, kiedy się opłaca | Fluxlab",
   description:
-    "Mały ZUS Plus w 2026: kto może skorzystać, jakie są warunki, limity przychodowe i ile realnie oszczędzacie. Porównanie z pełnym ZUS i ulgą na start.",
+    "Mały ZUS Plus w 2026: kto może skorzystać, jakie są warunki, limity przychodowe i ile realnie oszczędzasz. Porównanie z pełnym ZUS i ulgą na start.",
   openGraph: {
     title: "Mały ZUS Plus w 2026, kiedy się opłaca | Fluxlab",
     description:
-      "Mały ZUS Plus w 2026: kto może skorzystać, jakie są warunki, limity przychodowe i ile realnie oszczędzacie. Porównanie z pełnym ZUS i ulgą na start.",
+      "Mały ZUS Plus w 2026: kto może skorzystać, jakie są warunki, limity przychodowe i ile realnie oszczędzasz. Porównanie z pełnym ZUS i ulgą na start.",
     locale: "pl_PL",
     type: "article",
     images: [
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "Czy mały ZUS Plus obniża składkę zdrowotną?",
-    a: "Nie. Dotyczy tylko składek społecznych. Zdrowotną liczycie według zasad swojej formy opodatkowania.",
+    a: "Nie. Dotyczy tylko składek społecznych. Zdrowotną liczysz według zasad swojej formy opodatkowania.",
   },
   {
     q: "Jak długo można korzystać z małego ZUS Plus?",
@@ -70,7 +70,7 @@ export default function MalyZusPlusArticle() {
             </h1>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
               Mały ZUS Plus obniża składki społeczne przy niższych przychodach.
-              Czy warto, zależy od dochodu i tego, jak długo prowadzicie
+              Czy warto, zależy od dochodu i tego, jak długo prowadzisz
               działalność.
             </p>
           </div>
@@ -89,7 +89,7 @@ export default function MalyZusPlusArticle() {
                         Co to jest i kto może skorzystać
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Składki społeczne liczycie od dochodu z poprzedniego
+                        Składki społeczne liczysz od dochodu z poprzedniego
                         roku, a nie od 60% przeciętnego wynagrodzenia (5 652 zł
                         w 2026). Ulga nie dotyczy składki zdrowotnej.
                       </p>
@@ -97,7 +97,7 @@ export default function MalyZusPlusArticle() {
                         <li>przychód w poprzednim roku do 120 000 zł (przychód, nie dochód),</li>
                         <li>działalność przez co najmniej 60 dni w poprzednim roku,</li>
                         <li>brak ulgi na start i preferencyjnego ZUS w poprzednim roku,</li>
-                        <li>nie pracujecie na rzecz byłego pracodawcy w tym samym zakresie,</li>
+                        <li>nie pracujesz na rzecz byłego pracodawcy w tym samym zakresie,</li>
                         <li>najwyżej 36 miesięcy ulgi w ciągu ostatnich 60.</li>
                       </ul>
                     </div>
@@ -105,7 +105,7 @@ export default function MalyZusPlusArticle() {
                 ),
               },
               {
-                label: "Ile zaoszczędzicie",
+                label: "Ile zaoszczędzisz",
                 content: (
                   <div className="py-10 lg:py-12">
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
@@ -125,10 +125,10 @@ export default function MalyZusPlusArticle() {
 
                       <div className="bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-8 text-center mt-12">
                         <p className="text-gray-600 dark:text-gray-400 mb-4">
-                          Sprawdźcie różnicę między pełnym i małym ZUS
+                          Sprawdź różnicę między pełnym i małym ZUS
                         </p>
                         <Link href="/kalkulator-podatkowy" className="btn-primary inline-block">
-                          Sprawdźcie w kalkulatorze JDG 2026
+                          Sprawdź w kalkulatorze JDG 2026
                         </Link>
                       </div>
                     </div>
@@ -167,7 +167,7 @@ export default function MalyZusPlusArticle() {
                         Jak złożyć wniosek
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Zgłaszacie się deklaracją ZUS DRA z kodem 0590xx lub
+                        Zgłaszasz się deklaracją ZUS DRA z kodem 0590xx lub
                         0592xx, przez PUE ZUS (eZUS) albo w oddziale. Termin:
                         do 31 stycznia albo 7 dni od spełnienia warunków.
                       </p>

@@ -24,9 +24,9 @@ export type Narzedzie = {
 export const businessTools: Narzedzie[] = [
   {
     title: "Integracja z KSeF",
-    pytanie: "Co z KSeF obowiązuje Was już dziś?",
+    pytanie: "Co z KSeF obowiązuje cię już dziś?",
     description:
-      "Wybierzcie grupę podatnika, a pokażemy, od kiedy wystawiacie faktury w KSeF i jaki wyjątek jeszcze Was chroni.",
+      "Wybierz grupę podatnika, a pokażemy, od kiedy wystawiasz faktury w KSeF i jaki wyjątek jeszcze cię chroni.",
     href: "/ksef-integracja",
     ikona: "faktura",
     badge: "Nowość",
@@ -42,16 +42,16 @@ export const businessTools: Narzedzie[] = [
   {
     title: "Sprawdzenie numeru KSeF",
     description:
-      "Wklejcie numer KSeF albo tytuły przelewów, a sprawdzimy sumę kontrolną, NIP i datę faktury.",
+      "Wklej numer KSeF albo tytuły przelewów, a sprawdzimy sumę kontrolną, NIP i datę faktury.",
     href: "/numer-ksef",
     ikona: "faktura",
     badge: "Nowość",
   },
   {
     title: "Integracja z e-Doręczeniami",
-    pytanie: "Od kiedy musicie mieć adres do e-Doręczeń?",
+    pytanie: "Od kiedy musisz mieć adres do e-Doręczeń?",
     description:
-      "Wybierzcie formę działalności, a policzymy, od kiedy musicie mieć adres do e-Doręczeń.",
+      "Wybierz formę działalności, a policzymy, od kiedy musisz mieć adres do e-Doręczeń.",
     href: "/e-doreczenia-integracja",
     ikona: "pieczec",
     badge: "Nowość",
@@ -65,46 +65,46 @@ export const businessTools: Narzedzie[] = [
   },
   {
     title: "Naprawa ostrzeżenia o stronie",
-    pytanie: "Czy przeglądarka straszy Waszą stroną?",
+    pytanie: "Czy przeglądarka straszy Twoją stroną?",
     description:
-      "Wpiszcie adres, a sprawdzimy certyfikat i przekierowania, czyli czy przeglądarka nie straszy klientów ostrzeżeniem.",
+      "Wpisz adres, a sprawdzimy certyfikat i przekierowania, czyli czy przeglądarka nie straszy klientów ostrzeżeniem.",
     href: "/naprawa-https",
     ikona: "tarcza",
   },
   {
     title: "Rejestr cen w sklepie",
     description:
-      "Sprawdzamy Wasze przeceny i pokazujemy te, przy których brakuje najniższej ceny z 30 dni.",
+      "Sprawdzamy Twoje przeceny i pokazujemy te, przy których brakuje najniższej ceny z 30 dni.",
     href: "/rejestr-cen",
     ikona: "metka",
   },
   {
     title: "Kontrola wersji językowej",
     description:
-      "Znajdujemy Waszą wersję obcojęzyczną i liczymy fragmenty, które zostały po polsku.",
+      "Znajdujemy Twoją wersję obcojęzyczną i liczymy fragmenty, które zostały po polsku.",
     href: "/kontrola-jezykow",
     ikona: "jezyk",
   },
   {
     title: "Analiza lokalizacji pod punkt",
     description:
-      "Podajcie miejscowość i branżę, a policzymy konkurencję w promieniu 1, 3 i 5 km.",
+      "Podaj miejscowość i branżę, a policzymy konkurencję w promieniu 1, 3 i 5 km.",
     href: "/analiza-lokalizacji",
     ikona: "pinezka",
   },
   {
     title: "Widoczność w AI",
-    pytanie: "Czy asystent AI widzi Waszą stronę?",
+    pytanie: "Czy asystent AI widzi Twoją stronę?",
     description:
-      "Sprawdzamy, czy ChatGPT, Claude i Perplexity mogą przeczytać Waszą stronę i zrozumieć, czym się zajmujecie.",
+      "Sprawdzamy, czy ChatGPT, Claude i Perplexity mogą przeczytać Twoją stronę i zrozumieć, czym się zajmujesz.",
     href: "/widocznosc-w-ai",
     ikona: "lupa",
   },
   {
     title: "Tańsze automatyzacje",
-    pytanie: "Ile naprawdę płacicie za Zapiera i Make?",
+    pytanie: "Ile naprawdę płacisz za Zapiera i Make?",
     description:
-      "Liczymy, ile miesięcznie płacicie za Zapiera albo Make i ile kosztowałyby te same scenariusze na własnym serwerze.",
+      "Liczymy, ile miesięcznie płacisz za Zapiera albo Make i ile kosztowałyby te same scenariusze na własnym serwerze.",
     href: "/tansze-automatyzacje",
     ikona: "moneta",
   },
@@ -117,9 +117,9 @@ export const businessTools: Narzedzie[] = [
   },
   {
     title: "Dłużnik znika z rejestru",
-    pytanie: "Czy Wasz dłużnik znika z rejestru?",
+    pytanie: "Czy Twój dłużnik znika z rejestru?",
     description:
-      "Sprawdzamy w Monitorze Sądowym, czy spółka Waszego dłużnika nie znika z KRS.",
+      "Sprawdzamy w Monitorze Sądowym, czy spółka Twojego dłużnika nie znika z KRS.",
     href: "/czujka-rejestrowa",
     ikona: "mlotek",
   },
@@ -127,51 +127,51 @@ export const businessTools: Narzedzie[] = [
     title: "Klient nie wie, komu płaci",
     pytanie: "Czy klient ustali, komu płaci?",
     description:
-      "Wyciągamy NIP i numer konta z Waszej strony i sprawdzamy, czy zgadzają się z wykazem podatników VAT.",
+      "Wyciągamy NIP i numer konta z Twojej strony i sprawdzamy, czy zgadzają się z wykazem podatników VAT.",
     href: "/dane-sprzedawcy",
     ikona: "pieczec",
   },
   {
     title: "Mapa strony dla Google",
-    pytanie: "Czy Google ma listę Waszych podstron?",
+    pytanie: "Czy Google ma listę Twoich podstron?",
     description:
-      "Sprawdzamy, czy macie mapę strony, czy wskazuje ją robots.txt i czy adresy z niej działają.",
+      "Sprawdzamy, czy masz mapę strony, czy wskazuje ją robots.txt i czy adresy z niej działają.",
     href: "/mapa-strony",
     ikona: "mapa",
   },
   {
     title: "Strona pod dwoma adresami",
-    pytanie: "Czy Google widzi Waszą stronę podwójnie?",
+    pytanie: "Czy Google widzi Twoją stronę podwójnie?",
     description:
-      "Sprawdzamy cztery wersje Waszego adresu, z www i bez, i czy jedna przekierowuje na drugą.",
+      "Sprawdzamy cztery wersje Twojego adresu, z www i bez, i czy jedna przekierowuje na drugą.",
     href: "/podwojny-adres",
     ikona: "rozwidlenie",
   },
   {
     title: "Właściciel domeny",
-    pytanie: "Kto jest właścicielem Waszej domeny?",
+    pytanie: "Kto jest właścicielem Twojej domeny?",
     description:
-      "Odczytujemy z rejestru, kto jest abonentem Waszej domeny i kiedy wygasa rejestracja.",
+      "Odczytujemy z rejestru, kto jest abonentem Twojej domeny i kiedy wygasa rejestracja.",
     href: "/wlasnosc-domeny",
     ikona: "klucz",
   },
   {
     title: "Sprawdzenie NIP",
     description:
-      "Wpiszcie NIP, a sprawdzimy firmę w wykazie VAT, rachunki bankowe i datę rejestracji.",
+      "Wpisz NIP, a sprawdzimy firmę w wykazie VAT, rachunki bankowe i datę rejestracji.",
     href: "/sprawdzenie-nip",
     ikona: "lupa",
   },
   {
     title: "Audyt poczty firmowej",
     description:
-      "Sprawdzamy SPF, DKIM i DMARC, czyli czy ktoś może wysyłać maile jako Wy i czemu trafiacie do spamu.",
+      "Sprawdzamy SPF, DKIM i DMARC, czyli czy ktoś może wysyłać maile w Twoim imieniu i czemu Twoje wiadomości trafiają do spamu.",
     href: "/audyt-poczty",
     ikona: "koperta",
   },
   {
     title: "Widoczność w Google",
-    pytanie: "Czy Wasza strona nie wypisała się z Google?",
+    pytanie: "Czy Twoja strona nie wypisała się z Google?",
     description:
       "Sprawdzamy trzy miejsca, w których zostaje blokada indeksowania po wersji roboczej strony.",
     href: "/widocznosc-w-google",
@@ -203,7 +203,7 @@ export const businessTools: Narzedzie[] = [
     title: "Automatyzacja vs zatrudnienie",
     pytanie: "Zatrudnić czy zautomatyzować?",
     description:
-      "Porównajcie koszt miesięcznej ręcznej pracy z kosztem wdrożenia automatyzacji. 4 inputy, 1 jasna decyzja.",
+      "Porównaj koszt miesięcznej ręcznej pracy z kosztem wdrożenia automatyzacji. 4 inputy, 1 jasna decyzja.",
     href: "/strefa-wiedzy/automatyzacja-vs-zatrudnienie#kalkulator",
     ikona: "kalkulator",
   },
@@ -211,9 +211,9 @@ export const businessTools: Narzedzie[] = [
 
 export const otherTools: Narzedzie[] = [
   {
-    title: "Sprawdźcie auto przed zakupem",
+    title: "Sprawdź auto przed zakupem",
     description:
-      "Wklejcie link do ogłoszenia, a porównamy cenę z podobnymi ofertami i pokażemy typowe usterki modelu.",
+      "Wklej link do ogłoszenia, a porównamy cenę z podobnymi ofertami i pokażemy typowe usterki modelu.",
     href: "/sprawdz-auto",
   },
   {
@@ -225,21 +225,21 @@ export const otherTools: Narzedzie[] = [
   {
     title: "Dobór samochodu",
     description:
-      "Znajdźcie idealny segment, nadwozie i moc dla siebie. Odpowiedz na kilka pytań, a algorytm dopasuje najlepsze propozycje.",
+      "Znajdź idealny segment, nadwozie i moc dla siebie. Odpowiedz na kilka pytań, a algorytm dopasuje najlepsze propozycje.",
     href: "/dobor-samochodu",
     image: "/photos/car-chooser/type-sport.webp",
   },
   {
     title: "Kalkulator kosztów auta",
     description:
-      "Obliczcie pełny koszt posiadania samochodu: paliwo, ubezpieczenie, serwis, amortyzacja i więcej.",
+      "Oblicz pełny koszt posiadania samochodu: paliwo, ubezpieczenie, serwis, amortyzacja i więcej.",
     href: "/kalkulator-kosztow",
     image: "/photos/car-chooser/type-osobowy.jpg",
   },
   {
     title: "Kalkulator podatkowy JDG",
     description:
-      "Porównajcie skalę podatkową, podatek liniowy i ryczałt. Uwzględnia składki ZUS, VAT, ulgi i daje jasną odpowiedź, co się bardziej opłaca.",
+      "Porównaj skalę podatkową, podatek liniowy i ryczałt. Uwzględnia składki ZUS, VAT, ulgi i daje jasną odpowiedź, co się bardziej opłaca.",
     href: "/kalkulator-podatkowy",
     image: "/photos/tax-calculation/calculator.jpg",
   },
@@ -265,7 +265,7 @@ export const GRUPA_INTRO_NARZEDZI: Record<string, string> = {
   "Strona i poczta":
     "Strona w oczach wyszukiwarki i asystenta AI, certyfikat, poczta firmowa i zasady sklepu.",
   "Firma i rejestry":
-    "Publiczne rejestry i Wasze własne liczby: kontrahent, dłużnik, faktura od kuriera, konkurencja w okolicy.",
+    "Publiczne rejestry i Twoje własne liczby: kontrahent, dłużnik, faktura od kuriera, konkurencja w okolicy.",
   "KSeF i e-Doręczenia":
     "Terminy i sprawdzenia przed obowiązkowymi systemami, z listą braków do przekazania księgowej.",
   "Koszt automatyzacji":

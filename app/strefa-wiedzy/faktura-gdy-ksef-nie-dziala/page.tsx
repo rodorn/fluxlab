@@ -35,11 +35,11 @@ export const metadata: Metadata = {
 const faq = [
   {
     q: "Nie mamy internetu, a klient czeka na fakturę. Co robimy?",
-    a: "Wystawiacie ją w trybie offline24 w strukturze FA(3) i wysyłacie do KSeF najpóźniej następnego dnia roboczego. Ogłoszenie awarii nie jest do tego potrzebne.",
+    a: "Wystawiasz ją w trybie offline24 w strukturze FA(3) i wysyłasz do KSeF najpóźniej następnego dnia roboczego. Ogłoszenie awarii nie jest do tego potrzebne.",
   },
   {
     q: "Jaka jest data wystawienia takiej faktury?",
-    a: "Data z pola P_1, czyli ta, którą wpisaliście na fakturze, a nie dzień wysłania do KSeF.",
+    a: "Data z pola P_1, czyli ta wpisana na fakturze, a nie dzień wysłania do KSeF.",
   },
   {
     q: "Kiedy nabywca ją otrzymuje?",
@@ -47,7 +47,7 @@ const faq = [
   },
   {
     q: "Po co certyfikat KSeF?",
-    a: "Bez certyfikatu typu offline nie wygenerujecie drugiego kodu QR. Wyrabia się go w Aplikacji Podatnika KSeF i warto zrobić to przed pierwszą awarią.",
+    a: "Bez certyfikatu typu offline nie wygenerujesz drugiego kodu QR. Wyrabia się go w Aplikacji Podatnika KSeF i warto zrobić to przed pierwszą awarią.",
   },
 ];
 
@@ -69,7 +69,7 @@ export default function FakturaGdyKsefNieDzialaArticle() {
             <span className="section-label">Strefa wiedzy</span>
             <h1 className="mt-4 h1-artykulu">Faktura, gdy KSeF nie działa</h1>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed !text-left">
-              Wystawiacie ją dalej, w tej samej strukturze FA(3), i dosyłacie do
+              Wystawiasz ją dalej, w tej samej strukturze FA(3), i dosyłasz do
               KSeF później. Termin zależy od tego, czyja to przerwa.
             </p>
           </div>
@@ -81,7 +81,7 @@ export default function FakturaGdyKsefNieDzialaArticle() {
               <h2 className="mb-4 h2-sekcji">Trzy terminy</h2>
               <ul className="list-disc pl-6 space-y-2 text-gray-600 dark:text-gray-400 leading-relaxed">
                 <li>
-                  Problem po Waszej stronie (tryb offline24, art. 106nda):
+                  Problem po Twojej stronie (tryb offline24, art. 106nda):
                   najpóźniej następny dzień roboczy po wystawieniu.
                 </li>
                 <li>
@@ -150,7 +150,7 @@ export default function FakturaGdyKsefNieDzialaArticle() {
             <PrevNextArticle currentHref="/strefa-wiedzy/faktura-gdy-ksef-nie-dziala" />
           </div>
         </div>
-        <CTA naglowek="Chcecie, żeby faktury z KSeF same trafiały do księgowości?" />
+        <CTA naglowek="Chcesz, żeby faktury z KSeF same trafiały do księgowości?" />
       </main>
       <Footer />
 

@@ -88,7 +88,7 @@ export default function AudytPocztyKlient({
       if (!r.ok) setBlad(d.error || "Coś poszło nie tak.");
       else setWynik(d);
     } catch {
-      setBlad("Nie udało się połączyć. Spróbujcie ponownie.");
+      setBlad("Nie udało się połączyć. Spróbuj ponownie.");
     } finally {
       setLaduje(false);
     }
@@ -117,13 +117,13 @@ export default function AudytPocztyKlient({
         <div className="container-wide max-w-3xl">
           <p className="section-label mb-5">Narzędzie</p>
           <h1 className="h1-strony">
-            Sprawdźcie, czy ktoś może podszyć się pod Waszą firmową pocztę
+            Sprawdź, czy ktoś może podszyć się pod Twoją firmową pocztę
           </h1>
           <p className="mt-6 text-lg leading-relaxed text-gray-600 dark:text-gray-300">
-            Wpiszcie domenę firmy. W kilka sekund sprawdzimy publiczne rekordy SPF,
-            DKIM i DMARC i pokażemy, czy Wasze maile z ofertami i fakturami
+            Wpisz domenę firmy. W kilka sekund sprawdzimy publiczne rekordy SPF,
+            DKIM i DMARC i pokażemy, czy Twoje maile z ofertami i fakturami
             docierają do klientów oraz czy ktoś obcy może wysyłać wiadomości w
-            Waszym imieniu. Sprawdzamy tylko jawne dane DNS, nie logujemy się
+            Twoim imieniu. Sprawdzamy tylko jawne dane DNS, nie logujemy się
             nigdzie i nie wysyłamy żadnych wiadomości.
           </p>
         </div>
@@ -139,7 +139,7 @@ export default function AudytPocztyKlient({
           ]}
           onWybor={uruchom}
           zablokowane={laduje}
-          wstep="Nie macie pod ręką swojej domeny? Zobaczcie na gotowym przykładzie:"
+          wstep="Nie masz pod ręką swojej domeny? Zobacz na gotowym przykładzie:"
         />
 
         <form onSubmit={sprawdz} className="mt-6 mb-8 flex gap-2">
@@ -154,7 +154,7 @@ export default function AudytPocztyKlient({
             className="btn-primary px-6 py-3 disabled:opacity-60"
             disabled={laduje || !domena.trim()}
           >
-            {laduje ? "Sprawdzamy..." : "Sprawdźcie"}
+            {laduje ? "Sprawdzamy..." : "Sprawdź"}
           </button>
         </form>
 
@@ -198,13 +198,13 @@ export default function AudytPocztyKlient({
                 </ul>
                 <div className="mt-6 rounded-lg bg-gray-50 p-4 dark:bg-gray-900/60">
                   <p className="mb-3 font-semibold text-gray-900 dark:text-white">
-                    Chcecie, żebyśmy to uporządkowali?
+                    Chcesz, żebyśmy to uporządkowali?
                   </p>
                   <p className="mb-4 text-sm text-gray-600 dark:text-gray-400">
                     Pełny raport z audytu (co dokładnie jest źle i gotowe rekordy
                     do wklejenia) jest za darmo. Ekspresowa naprawa, czyli ustawienie
                     SPF, DKIM i DMARC w trybie, który realnie blokuje podszywanie,
-                    to 299 zł. Zostawcie adres, a wyślemy raport dla{" "}
+                    to 299 zł. Zostaw adres, a wyślemy raport dla{" "}
                     <strong>{wynik.domena}</strong> i wycenę naprawy. Bez
                     zobowiązań.
                   </p>
@@ -220,8 +220,8 @@ export default function AudytPocztyKlient({
                         required
                         value={leadEmail}
                         onChange={(e) => setLeadEmail(e.target.value)}
-                        placeholder="Wasz adres e-mail"
-                        aria-label="Wasz adres e-mail"
+                        placeholder="Twój adres e-mail"
+                        aria-label="Twój adres e-mail"
                         className={`${poleClass} flex-[1_1_220px] px-3.5 py-2.5`}
                       />
                       <button
@@ -231,11 +231,11 @@ export default function AudytPocztyKlient({
                       >
                         {leadStan === "laduje"
                           ? "Wysyłamy..."
-                          : "Wyślijcie mi raport i wycenę"}
+                          : "Wyślij mi raport i wycenę"}
                       </button>
                       {leadStan === "blad" && (
                         <span className="basis-full text-sm text-red-600 dark:text-red-400">
-                          Nie udało się wysłać. Spróbujcie ponownie za chwilę.
+                          Nie udało się wysłać. Spróbuj ponownie za chwilę.
                         </span>
                       )}
                     </form>
@@ -246,7 +246,7 @@ export default function AudytPocztyKlient({
 
             <details className="mt-5">
               <summary className="cursor-pointer text-sm text-gray-600 dark:text-gray-400">
-                Pokażcie surowe rekordy DNS
+                Pokaż surowe rekordy DNS
               </summary>
               <pre className="mt-2 overflow-x-auto rounded-md bg-gray-50 p-3 text-xs text-gray-800 dark:bg-gray-900/60 dark:text-gray-200">
                 {`MX:    ${wynik.mx.join(", ") || "brak"}

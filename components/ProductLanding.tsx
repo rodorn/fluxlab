@@ -1,6 +1,5 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
-import SzybkiKontakt from "@/components/SzybkiKontakt";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -119,15 +118,19 @@ export default function ProductLanding(p: ProductLandingProps) {
                 {cenaOd(p.pricing)}
               </p>
             )}
-            <SzybkiKontakt formId={p.formId} temat={p.serviceName} />
-            {p.tool && (
-              <a
-                href="#narzedzie"
-                className="mt-4 inline-block text-sm font-semibold text-accent hover:underline"
-              >
-                {p.ctaLabel} ↓
+            <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
+              <a href="#zamow" className="btn-primary">
+                Napisz do nas
               </a>
-            )}
+              {p.tool && (
+                <a
+                  href="#narzedzie"
+                  className="text-sm font-semibold text-accent hover:underline"
+                >
+                  {p.ctaLabel} ↓
+                </a>
+              )}
+            </div>
           </div>
 
           {p.tool && (
@@ -203,7 +206,7 @@ export default function ProductLanding(p: ProductLandingProps) {
           <details className="mt-16 max-w-3xl group">
             <summary className="cursor-pointer list-none [&::-webkit-details-marker]:hidden">
               <h2 className="h2-sekcji inline">Jak to działa</h2>
-              <span className="ml-3 text-sm font-semibold text-accent group-open:hidden">Rozwińcie</span>
+              <span className="ml-3 text-sm font-semibold text-accent group-open:hidden">Rozwiń</span>
             </summary>
           <div className="mt-6 grid gap-6 md:grid-cols-2 max-w-3xl">
             {p.checks.map((c) => (

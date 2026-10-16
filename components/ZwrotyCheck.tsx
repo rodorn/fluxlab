@@ -84,7 +84,7 @@ export default function ZwrotyCheck() {
       setWynik(data);
       setStan("gotowe");
     } catch {
-      setBlad("Brak połączenia. Spróbujcie ponownie za chwilę.");
+      setBlad("Brak połączenia. Spróbuj ponownie za chwilę.");
       setStan("blad");
     }
   }
@@ -121,7 +121,7 @@ export default function ZwrotyCheck() {
       }
       setLeadStan("ok");
     } catch {
-      setLeadBlad("Brak połączenia. Spróbujcie ponownie za chwilę.");
+      setLeadBlad("Brak połączenia. Spróbuj ponownie za chwilę.");
       setLeadStan("blad");
     }
   }
@@ -137,10 +137,10 @@ export default function ZwrotyCheck() {
   return (
     <div className="rounded-2xl border border-gray-200/80 dark:border-gray-800/80 bg-white/70 dark:bg-gray-900/50 p-6 md:p-8">
       <h2 className="text-xl font-bold text-gray-900 dark:text-white">
-        Sprawdźcie, czego kupujący nie znajdzie o zwrotach
+        Sprawdź, czego kupujący nie znajdzie o zwrotach
       </h2>
       <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-        Podajcie adres sklepu. Znajdziemy Wasze strony o zwrotach, reklamacjach i
+        Podaj adres sklepu. Znajdziemy Twoje strony o zwrotach, reklamacjach i
         regulamin, przeczytamy je razem i pokażemy, których informacji brakuje.
         Każdy taki brak kończy się mailem z pytaniem, na które ktoś musi
         odpowiedzieć ręcznie.
@@ -169,7 +169,7 @@ export default function ZwrotyCheck() {
           disabled={stan === "ladowanie"}
           className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
         >
-          {stan === "ladowanie" ? "Czytamy..." : "Sprawdźcie sklep"}
+          {stan === "ladowanie" ? "Czytamy..." : "Sprawdź sklep"}
         </button>
       </form>
 
@@ -202,7 +202,7 @@ export default function ZwrotyCheck() {
             {wynik.naglowek}
           </p>
           <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
-            Przeczytałem {wynik.zbadaneStrony?.length} stron Waszego sklepu.
+            Przeczytałem {wynik.zbadaneStrony?.length} stron Twojego sklepu.
           </p>
 
           <ul className="mt-4 space-y-2">
@@ -239,7 +239,7 @@ export default function ZwrotyCheck() {
               htmlFor="zwroty-zamowienia"
               className="block text-sm font-medium text-gray-900 dark:text-white"
             >
-              Ile zamówień miesięcznie realizujecie?
+              Ile zamówień miesięcznie realizujesz?
             </label>
             <input
               id="zwroty-zamowienia"
@@ -264,7 +264,7 @@ export default function ZwrotyCheck() {
           <div className="mt-5 border-t border-gray-200/70 dark:border-gray-700/70 pt-4">
             <p className="text-sm text-gray-700 dark:text-gray-300">
               {braki.length === 0
-                ? "Informacje są kompletne, więc regulaminu nie ma po co poprawiać. Zostaje pytanie, czy zwroty obsługujecie ręcznie, bo to kosztuje niezależnie od tego, co jest napisane."
+                ? "Informacje są kompletne, więc regulaminu nie ma po co poprawiać. Zostaje pytanie, czy zwroty obsługujesz ręcznie, bo to kosztuje niezależnie od tego, co jest napisane."
                 : "Uzupełnienie tych braków to jedna rzecz, a druga to sam proces: dopóki zwrot zgłasza się mailem, każda sprawa przechodzi przez czyjeś ręce."}
             </p>
 
@@ -279,7 +279,7 @@ export default function ZwrotyCheck() {
                   htmlFor="zwroty-email"
                   className="block text-sm font-medium text-gray-900 dark:text-white"
                 >
-                  Podajcie maila, odeślemy pełny raport i wycenę panelu
+                  Podaj maila, odeślemy pełny raport i wycenę panelu
                 </label>
                 <div className="mt-2 flex flex-col gap-3 sm:flex-row">
                   <input
@@ -296,7 +296,7 @@ export default function ZwrotyCheck() {
                     disabled={leadStan === "wysylamy"}
                     className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
                   >
-                    {leadStan === "wysylamy" ? "Wysyłamy..." : "Wyślijcie zgłoszenie"}
+                    {leadStan === "wysylamy" ? "Wysyłamy..." : "Wyślij zgłoszenie"}
                   </button>
                 </div>
                 {leadStan === "blad" && (
@@ -309,7 +309,7 @@ export default function ZwrotyCheck() {
       )}
 
       <p className="mt-4 text-xs text-gray-500 dark:text-gray-400">
-        Czytamy wyłącznie publicznie dostępne strony Waszego sklepu. To sprawdzenie
+        Czytamy wyłącznie publicznie dostępne strony Twojego sklepu. To sprawdzenie
         techniczne, czy informacja jest podana i łatwa do znalezienia, a nie opinia
         prawna o treści regulaminu.
       </p>

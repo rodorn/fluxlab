@@ -158,10 +158,10 @@ export default function NumerKsefCheck() {
   return (
     <div className="rounded-2xl border border-gray-200/80 dark:border-gray-800/80 bg-white/70 dark:bg-gray-900/50 p-6">
       <h2 className="text-xl font-bold text-gray-900 dark:text-white">
-        Sprawdźcie numer KSeF przed przelewem
+        Sprawdź numer KSeF przed przelewem
       </h2>
       <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-        Wklejcie jeden numer albo całą listę, po jednym w wierszu. Mogą być całe
+        Wklej jeden numer albo całą listę, po jednym w wierszu. Mogą być całe
         tytuły przelewów, numery wyłuskamy sami. Liczymy wszystko w
         przeglądarce, nic nie wysyłamy.
       </p>
@@ -178,7 +178,7 @@ export default function NumerKsefCheck() {
           },
         ]}
         onWybor={uruchom}
-        wstep="Nie macie pod ręką numeru? Zobaczcie na gotowym przykładzie:"
+        wstep="Nie masz pod ręką numeru? Zobacz na gotowym przykładzie:"
       />
       <form
         onSubmit={(e) => {
@@ -201,7 +201,7 @@ export default function NumerKsefCheck() {
           disabled={!tekst.trim()}
           className="btn-primary justify-center px-6 text-sm disabled:opacity-50 sm:self-start"
         >
-          Sprawdźcie numery
+          Sprawdź numery
         </button>
       </form>
 

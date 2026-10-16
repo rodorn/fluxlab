@@ -370,7 +370,7 @@ export async function POST(request: Request) {
 
   if (!/^[a-z0-9.-]+\.[a-z]{2,}$/.test(domena)) {
     return NextResponse.json(
-      { error: "Podajcie sam adres sklepu, na przykład twojsklep.pl" },
+      { error: "Podaj sam adres sklepu, na przykład twojsklep.pl" },
       { status: 400 },
     );
   }
@@ -382,7 +382,7 @@ export async function POST(request: Request) {
       status: "BRAK_ODPOWIEDZI",
       naglowek: "Ten adres nie odpowiedział",
       opis:
-        "Pod tym adresem nie dostaliśmy strony sklepu. Sprawdźcie, czy nie ma literówki, i czy sklep na pewno działa pod tą domeną.",
+        "Pod tym adresem nie dostaliśmy strony sklepu. Sprawdź, czy nie ma literówki, i czy sklep na pewno działa pod tą domeną.",
     });
   }
 
@@ -404,7 +404,7 @@ export async function POST(request: Request) {
       status: "BRAK_API",
       naglowek: "Nie możemy odczytać listy produktów z tego sklepu",
       opis:
-        "Ten sklep nie udostępnia listy przecen w żaden ze sposobów, które sprawdzamy, i nie ma czytelnej mapy strony z kartami produktów. Najczęściej znaczy to, że ceny doczytuje skrypt już w przeglądarce. Napiszcie, na jakim oprogramowaniu działa sklep, sprawdzimy go ręcznie i odeślemy wynik.",
+        "Ten sklep nie udostępnia listy przecen w żaden ze sposobów, które sprawdzamy, i nie ma czytelnej mapy strony z kartami produktów. Najczęściej znaczy to, że ceny doczytuje skrypt już w przeglądarce. Napisz, na jakim oprogramowaniu działa sklep, sprawdzimy go ręcznie i odeślemy wynik.",
     });
   }
 
@@ -415,7 +415,7 @@ export async function POST(request: Request) {
       metoda,
       naglowek: "Nie widzimy teraz żadnej aktywnej promocji",
       opis:
-        "Obowiązek podania najniższej ceny z 30 dni dotyczy momentu obniżki, więc bez aktywnych przecen nie ma czego sprawdzać. Wróćcie, gdy ruszy najbliższa promocja, albo napiszcie, a sprawdzimy archiwalne.",
+        "Obowiązek podania najniższej ceny z 30 dni dotyczy momentu obniżki, więc bez aktywnych przecen nie ma czego sprawdzać. Wróć, gdy ruszy najbliższa promocja, albo napisz, a sprawdzimy archiwalne.",
     });
   }
 
@@ -440,7 +440,7 @@ export async function POST(request: Request) {
     opis:
       niezgodne.length === 0
         ? "Na sprawdzonych kartach znaleźliśmy komunikat o najniższej cenie z 30 dni przed obniżką. To dobra wiadomość, choć nie mówi jeszcze, czy podana kwota jest prawdziwa."
-        : "Przy każdej obniżce sklep ma obowiązek podać najniższą cenę z 30 dni przed promocją. Poniżej pozycje, na których tej informacji nie znaleźliśmy. Każda ma link, więc sprawdzicie to samodzielnie.",
+        : "Przy każdej obniżce sklep ma obowiązek podać najniższą cenę z 30 dni przed promocją. Poniżej pozycje, na których tej informacji nie znaleźliśmy. Każda ma link, więc sprawdzisz to samodzielnie.",
     produkty: karty.map((p) => ({
       nazwa: p.nazwa,
       url: p.url,

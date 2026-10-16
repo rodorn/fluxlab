@@ -64,7 +64,7 @@ export default function WidocznoscCheck() {
       setWynik(data);
       setStan("gotowe");
     } catch {
-      setBlad("Brak połączenia. Spróbujcie ponownie za chwilę.");
+      setBlad("Brak połączenia. Spróbuj ponownie za chwilę.");
       setStan("blad");
     }
   }
@@ -98,7 +98,7 @@ export default function WidocznoscCheck() {
       }
       setLeadStan("ok");
     } catch {
-      setLeadBlad("Brak połączenia. Spróbujcie ponownie za chwilę.");
+      setLeadBlad("Brak połączenia. Spróbuj ponownie za chwilę.");
       setLeadStan("blad");
     }
   }
@@ -108,7 +108,7 @@ export default function WidocznoscCheck() {
   return (
     <div className="rounded-2xl border border-gray-200/80 dark:border-gray-800/80 bg-white/70 dark:bg-gray-900/50 p-6 md:p-8">
       <h2 className="text-xl font-bold text-gray-900 dark:text-white">
-        Sprawdźcie, czy Wasza strona nie wypisała się z wyszukiwarki
+        Sprawdź, czy Twoja strona nie wypisała się z wyszukiwarki
       </h2>
       <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
         Zdarza się, że strona ma w kodzie polecenie, żeby wyszukiwarka jej nie
@@ -140,7 +140,7 @@ export default function WidocznoscCheck() {
           disabled={stan === "ladowanie"}
           className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
         >
-          {stan === "ladowanie" ? "Sprawdzamy..." : "Sprawdźcie widoczność"}
+          {stan === "ladowanie" ? "Sprawdzamy..." : "Sprawdź widoczność"}
         </button>
       </form>
 
@@ -187,12 +187,12 @@ export default function WidocznoscCheck() {
           {zly && (
             <div className="mt-4 rounded-lg border border-red-500/60 bg-white/70 dark:bg-gray-950/50 p-4">
               <p className="text-sm font-bold text-red-700 dark:text-red-400">
-                Wasza strona ma {wynik.rozmiarStrony} kilobajtów treści, której
+                Twoja strona ma {wynik.rozmiarStrony} kilobajtów treści, której
                 nikt nie znajdzie
               </p>
               <p className="mt-1 text-sm text-gray-700 dark:text-gray-300">
                 Cała praca włożona w opisy, zdjęcia i ofertę jest na serwerze i
-                działa, ale nie istnieje dla nikogo, kto szuka Was w
+                działa, ale nie istnieje dla nikogo, kto szuka cię w
                 wyszukiwarce.
               </p>
             </div>
@@ -224,8 +224,8 @@ export default function WidocznoscCheck() {
           <div className="mt-5 border-t border-gray-200/70 dark:border-gray-700/70 pt-4">
             <p className="text-sm text-gray-700 dark:text-gray-300">
               {zly
-                ? "Zdjęcie takiej blokady to zwykle kilkanaście minut pracy w systemie, na którym stoi strona, plus zgłoszenie do ponownego odwiedzenia przez wyszukiwarkę. Zostawcie adres, odeślemy dokładnie, co i gdzie trzeba zmienić."
-                : "Nic tu nie naprawimy i nie będziemy tego udawać. Jeśli mimo to nie widać Was w wynikach, przyczyna leży gdzie indziej, a wtedy warto zacząć od sprawdzenia, czy wyszukiwarka w ogóle ma dostęp do strony."}
+                ? "Zdjęcie takiej blokady to zwykle kilkanaście minut pracy w systemie, na którym stoi strona, plus zgłoszenie do ponownego odwiedzenia przez wyszukiwarkę. Zostaw adres, odeślemy dokładnie, co i gdzie trzeba zmienić."
+                : "Nic tu nie naprawimy i nie będziemy tego udawać. Jeśli mimo to nie widać cię w wynikach, przyczyna leży gdzie indziej, a wtedy warto zacząć od sprawdzenia, czy wyszukiwarka w ogóle ma dostęp do strony."}
             </p>
 
             {leadStan === "ok" ? (
@@ -240,8 +240,8 @@ export default function WidocznoscCheck() {
                   className="block text-sm font-medium text-gray-900 dark:text-white"
                 >
                   {zly
-                    ? "Podajcie maila, odeślemy instrukcję naprawy"
-                    : "Podajcie maila, jeśli chcecie, żebyśmy poszukali innej przyczyny"}
+                    ? "Podaj maila, odeślemy instrukcję naprawy"
+                    : "Podaj maila, jeśli chcesz, żebyśmy poszukali innej przyczyny"}
                 </label>
                 <div className="mt-2 flex flex-col gap-3 sm:flex-row">
                   <input
@@ -260,7 +260,7 @@ export default function WidocznoscCheck() {
                   >
                     {leadStan === "wysylamy"
                       ? "Wysyłamy..."
-                      : "Wyślijcie zgłoszenie"}
+                      : "Wyślij zgłoszenie"}
                   </button>
                 </div>
                 {leadStan === "blad" && (
@@ -275,7 +275,7 @@ export default function WidocznoscCheck() {
       )}
 
       <p className="mt-4 text-xs text-gray-500 dark:text-gray-400">
-        Sprawdzamy wyłącznie to, co Wasz serwer pokazuje publicznie każdemu
+        Sprawdzamy wyłącznie to, co Twój serwer pokazuje publicznie każdemu
         odwiedzającemu. Nie logujemy się nigdzie i nie potrzebujemy żadnych
         dostępów.
       </p>

@@ -52,7 +52,7 @@ const faqs = [
   {
     question: "Czy trzeba wymieniać obecne narzędzia?",
     answer:
-      "Nie. Łączymy systemy, które już macie.",
+      "Nie. Łączymy systemy, które już masz.",
   },
 ];
 
@@ -77,7 +77,7 @@ export default function AutomatyzacjaProcesowBiznesowych() {
             </p>
             <div className="mt-8">
               <a href="#branza" className="btn-primary">
-                Sprawdźcie, co pochłania czas w Waszej branży
+                Sprawdź, co pochłania czas w Twojej branży
               </a>
             </div>
           </div>
@@ -169,7 +169,7 @@ export default function AutomatyzacjaProcesowBiznesowych() {
                       <LandingForm
                         formId="diagnosis_procesy"
                         heading="Sprawdźmy, który proces warto zautomatyzować"
-                        intro="Opiszcie, co zabiera Wam najwięcej czasu. Wskażemy proces, który da największy efekt."
+                        intro="Opisz, co zabiera Ci najwięcej czasu. Wskażemy proces, który da największy efekt."
                         submitLabel="Sprawdźmy, który proces zautomatyzować"
                       />
                     </div>

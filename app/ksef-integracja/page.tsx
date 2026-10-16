@@ -7,13 +7,13 @@ import { PODATNICY } from "@/lib/terminy-ksef";
 export const metadata: Metadata = {
   title: "Od kiedy KSeF jest obowiązkowy? Terminy dla firm | Fluxlab",
   description:
-    "Duże firmy od 1 lutego 2026, pozostałe od 1 kwietnia, sprzedaż do 10 tys. zł miesięcznie i kasy od 1 stycznia 2027. Sprawdźcie swój termin, bez rejestracji.",
+    "Duże firmy od 1 lutego 2026, pozostałe od 1 kwietnia, sprzedaż do 10 tys. zł miesięcznie i kasy od 1 stycznia 2027. Sprawdź swój termin, bez rejestracji.",
   alternates: { canonical: "/ksef-integracja" },
   openGraph: {
     title:
-      "Od kiedy KSeF obowiązuje Waszą firmę? Sprawdzenie w dwóch kliknięciach",
+      "Od kiedy KSeF obowiązuje Twoją firmę? Sprawdzenie w dwóch kliknięciach",
     description:
-      "Wybieracie rodzaj sprzedaży i sposób wystawiania faktur, a wynik pokazuje termin, liczbę dni do 1 stycznia 2027 i co zrobić przy Waszym programie. Bez rejestracji.",
+      "Wybierasz rodzaj sprzedaży i sposób wystawiania faktur, a wynik pokazuje termin, liczbę dni do 1 stycznia 2027 i co zrobić przy Twoim programie. Bez rejestracji.",
     locale: "pl_PL",
     type: "website",
   },
@@ -32,13 +32,13 @@ export default function KsefIntegracja() {
       breadcrumb="Integracja z KSeF"
       eyebrow="KSeF"
       h1="Integracja z KSeF"
-      lead="KSeF jest obowiązkowy, ale faktur nie trzeba przeklejać ręcznie. Spinamy z nim system, którego już używacie, a numer KSeF i UPO zapisują się przy dokumencie."
-      ctaLabel="Sprawdźcie, co Was obowiązuje"
+      lead="KSeF jest obowiązkowy, ale faktur nie trzeba przeklejać ręcznie. Spinamy z nim system, którego już używasz, a numer KSeF i UPO zapisują się przy dokumencie."
+      ctaLabel="Sprawdź, co cię obowiązuje"
       ctaNote="Dwa kliknięcia, bez wpisywania czegokolwiek"
       powiazane={[
         {
           przed:
-            "Literówka w NIP nabywcy wysyła fakturę do cudzej firmy. Numer sprawdzicie przez",
+            "Literówka w NIP nabywcy wysyła fakturę do cudzej firmy. Numer sprawdzisz przez",
           kotwica: "sprawdzenie NIP w wykazie VAT",
           href: "/sprawdzenie-nip",
           po: ".",
@@ -53,11 +53,11 @@ export default function KsefIntegracja() {
       checks={[
         {
           title: "Kod klienta API jest publiczny",
-          desc: "Klient KSeF API v2 z wysyłką faktur FA(3) i pobieraniem UPO leży na github.com/rodorn/fluxlab-ksef-integracja. Działa w trybie demo, więc ocenicie go przed rozmową z nami.",
+          desc: "Klient KSeF API v2 z wysyłką faktur FA(3) i pobieraniem UPO leży na github.com/rodorn/fluxlab-ksef-integracja. Działa w trybie demo, więc ocenisz go przed rozmową z nami.",
         },
         {
           title: "Numer KSeF i UPO zapisane przy dokumencie",
-          desc: "Bez nich nie wykażecie, że faktura została przyjęta. Od 1 stycznia 2027 numer KSeF trzeba też podawać przy płatności.",
+          desc: "Bez nich nie wykażesz, że faktura została przyjęta. Od 1 stycznia 2027 numer KSeF trzeba też podawać przy płatności.",
         },
         {
           title: "Odrzucona faktura nie przejdzie po cichu",
@@ -72,10 +72,10 @@ export default function KsefIntegracja() {
         {
           name: "Rozpoznanie",
           price: "0 zł",
-          desc: "Zanim cokolwiek zlecicie.",
+          desc: "Zanim cokolwiek zlecisz.",
           features: [
-            "Sprawdzamy, czy Wasz system da się z tym spiąć i czym",
-            "Informacja, czy wystarczy Wam gotowy program zamiast wdrożenia",
+            "Sprawdzamy, czy Twój system da się z tym spiąć i czym",
+            "Informacja, czy wystarczy Ci gotowy program zamiast wdrożenia",
             "Gotowy klient API do uruchomienia u siebie, publicznie",
           ],
         },
@@ -87,14 +87,14 @@ export default function KsefIntegracja() {
             "Faktury zakupowe pobierane z KSeF automatycznie",
             "Trafiają do księgowości, obiegu dokumentów albo arkusza",
             "Numer KSeF i UPO zapisane przy każdym dokumencie",
-            "Kod i dostępy zostają u Was",
+            "Kod i dostępy zostają u ciebie",
           ],
           featured: true,
         },
         {
           name: "Wystawianie i odbiór",
           price: "3 900 zł",
-          desc: "Z wysyłaniem faktur z Waszego systemu.",
+          desc: "Z wysyłaniem faktur z Twojego systemu.",
           features: [
             "Wszystko z wariantu podstawowego",
             "Wysyłka w schemacie FA(3), z walidacją przed wysłaniem",
@@ -123,10 +123,10 @@ export default function KsefIntegracja() {
         },
       ]}
       formId="ksef"
-      formHeading="Napiszcie, w czym dziś wystawiacie faktury"
+      formHeading="Napisz, w czym dziś wystawiasz faktury"
       formIntro="Nazwa programu i liczba faktur miesięcznie wystarczą. Odpiszemy, czy integracja ma sens."
-      submitLabel="Wyślijcie opis"
-      microCopy="Ustalenia prowadzimy mailowo. Telefon, jeśli tak Wam wygodniej."
+      submitLabel="Wyślij opis"
+      microCopy="Ustalenia prowadzimy mailowo. Telefon, jeśli tak Ci wygodniej."
       serviceName="Integracja z KSeF"
       serviceDesc="Spięcie systemu sprzedażowego, ERP albo programu księgowego z Krajowym Systemem e-Faktur: wysyłka faktur w schemacie FA(3) przez API v2, zapis numeru KSeF i UPO, pobieranie faktur kosztowych."
       serviceType="Integracja systemów informatycznych"

@@ -37,7 +37,7 @@ const ETAPY = [
 ];
 
 // Sklepy dobrane pomiarem: kazdy z nich odpowiada na sprawdzenie i wraca
-// z wynikiem, zeby pierwsze klikniecie nie konczylo sie komunikatem o braku
+// z wynikiem, zeby pierwsze klikniesz nie konczylo sie komunikatem o braku
 // danych. Werdykt liczony jest na zywo, nie jest tu zapisany.
 const PRZYKLADY = [
   { wartosc: "wittchen.com" },
@@ -141,7 +141,7 @@ export default function CenyCheck() {
       setStan("gotowe");
     } catch {
       if (timer.current) clearInterval(timer.current);
-      setBlad("Brak połączenia. Spróbujcie ponownie za chwilę.");
+      setBlad("Brak połączenia. Spróbuj ponownie za chwilę.");
       setStan("blad");
     }
   }
@@ -182,7 +182,7 @@ export default function CenyCheck() {
       }
       setLeadStan("ok");
     } catch {
-      setLeadBlad("Brak połączenia. Spróbujcie ponownie za chwilę.");
+      setLeadBlad("Brak połączenia. Spróbuj ponownie za chwilę.");
       setLeadStan("blad");
     }
   }
@@ -193,10 +193,10 @@ export default function CenyCheck() {
   return (
     <div className="rounded-2xl border border-gray-200/80 dark:border-gray-800/80 bg-white/70 dark:bg-gray-900/50 p-6 md:p-8">
       <h2 className="text-xl font-bold text-gray-900 dark:text-white">
-        Sprawdźcie swoje przeceny za darmo
+        Sprawdź swoje przeceny za darmo
       </h2>
       <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-        Wpiszcie adres sklepu. Pobierzemy listę produktów, które są u Was teraz
+        Wpisz adres sklepu. Pobierzemy listę produktów, które są u ciebie teraz
         przecenione, otworzymy ich karty i sprawdzimy, czy jest przy nich wymagana
         informacja o najniższej cenie z 30 dni. Bez rejestracji i bez żadnych
         dostępów do panelu.
@@ -217,14 +217,14 @@ export default function CenyCheck() {
           disabled={stan === "ladowanie"}
           className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
         >
-          {stan === "ladowanie" ? "Sprawdzamy..." : "Sprawdźcie sklep"}
+          {stan === "ladowanie" ? "Sprawdzamy..." : "Sprawdź sklep"}
         </button>
       </form>
 
       <Przyklady
         pozycje={PRZYKLADY}
         zablokowane={stan === "ladowanie"}
-        wstep="Nie chcecie zaczynać od własnego sklepu? Sprawdźcie gotowy:"
+        wstep="Nie chcesz zaczynać od własnego sklepu? Sprawdź gotowy:"
         onWybor={(w) => {
           setDomena(w);
           void sprawdz(null, w);
@@ -303,7 +303,7 @@ export default function CenyCheck() {
                     <th className="pb-2 pr-3 font-semibold text-right">Było</th>
                     <th className="pb-2 pr-3 font-semibold text-right">Jest</th>
                     <th className="pb-2 pr-3 font-semibold text-right">Obniżka</th>
-                    <th className="pb-2 font-semibold">Sprawdźcie</th>
+                    <th className="pb-2 font-semibold">Sprawdź</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-200/70 dark:divide-gray-700/70">
@@ -326,7 +326,7 @@ export default function CenyCheck() {
                           rel="noopener noreferrer"
                           className="text-accent hover:underline"
                         >
-                          otwórzcie
+                          otwórz
                         </a>
                       </td>
                     </tr>
@@ -339,8 +339,8 @@ export default function CenyCheck() {
           <div className="mt-5 border-t border-gray-200/70 dark:border-gray-700/70 pt-4">
             <p className="text-sm text-gray-700 dark:text-gray-300">
               {wynik.niezgodne === 0
-                ? "Sprawdziliśmy tylko obecność komunikatu, nie to, czy podana kwota jest prawdziwa. Tego nie da się ustalić z zewnątrz, bo nikt nie ma historii cen Waszego sklepu. Właśnie dlatego prowadzenie rejestru cen jest osobną usługą: od dnia uruchomienia zbiera dowód na przyszłość."
-                : "To sprawdzenie objęło tylko kilka pierwszych przecen. Pełny skan przechodzi przez wszystkie i kończy się raportem PDF, który można przekazać obsłudze sklepu. Zostawcie adres, odeślemy wynik razem z listą pozycji do poprawy."}
+                ? "Sprawdziliśmy tylko obecność komunikatu, nie to, czy podana kwota jest prawdziwa. Tego nie da się ustalić z zewnątrz, bo nikt nie ma historii cen Twojego sklepu. Właśnie dlatego prowadzenie rejestru cen jest osobną usługą: od dnia uruchomienia zbiera dowód na przyszłość."
+                : "To sprawdzenie objęło tylko kilka pierwszych przecen. Pełny skan przechodzi przez wszystkie i kończy się raportem PDF, który można przekazać obsłudze sklepu. Zostaw adres, odeślemy wynik razem z listą pozycji do poprawy."}
             </p>
 
             {leadStan === "ok" ? (
@@ -355,8 +355,8 @@ export default function CenyCheck() {
                   className="block text-sm font-medium text-gray-900 dark:text-white"
                 >
                   {wynik.niezgodne === 0
-                    ? "Podajcie maila, jeśli chcecie rejestr cen na przyszłość"
-                    : "Podajcie maila, odeślemy pełny skan wszystkich przecen"}
+                    ? "Podaj maila, jeśli chcesz rejestr cen na przyszłość"
+                    : "Podaj maila, odeślemy pełny skan wszystkich przecen"}
                 </label>
                 <div className="mt-2 flex flex-col gap-3 sm:flex-row">
                   <input
@@ -373,7 +373,7 @@ export default function CenyCheck() {
                     disabled={leadStan === "wysylamy"}
                     className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
                   >
-                    {leadStan === "wysylamy" ? "Wysyłamy..." : "Wyślijcie zgłoszenie"}
+                    {leadStan === "wysylamy" ? "Wysyłamy..." : "Wyślij zgłoszenie"}
                   </button>
                 </div>
                 {leadStan === "blad" && (
@@ -390,7 +390,7 @@ export default function CenyCheck() {
       )}
 
       <p className="mt-4 text-xs text-gray-500 dark:text-gray-400">
-        Sprawdzamy wyłącznie publicznie dostępne strony Waszego sklepu i pobieramy
+        Sprawdzamy wyłącznie publicznie dostępne strony Twojego sklepu i pobieramy
         kilka pierwszych przecen. To ocena techniczna obecności komunikatu, nie
         opinia prawna.
       </p>

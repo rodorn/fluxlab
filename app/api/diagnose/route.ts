@@ -144,7 +144,7 @@ export async function POST(req: Request) {
   const input = typeof body.input === "string" ? body.input.trim() : "";
   if (input.length < 10 || input.length > 600) {
     return NextResponse.json(
-      { error: "Opiszcie proces w 10–600 znakach." },
+      { error: "Opisz proces w 10–600 znakach." },
       { status: 400 },
     );
   }

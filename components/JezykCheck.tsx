@@ -108,7 +108,7 @@ export default function JezykCheck() {
       setStan("gotowe");
     } catch {
       if (timer.current) clearInterval(timer.current);
-      setBlad("Brak połączenia. Spróbujcie ponownie za chwilę.");
+      setBlad("Brak połączenia. Spróbuj ponownie za chwilę.");
       setStan("blad");
     }
   }
@@ -149,7 +149,7 @@ export default function JezykCheck() {
       }
       setLeadStan("ok");
     } catch {
-      setLeadBlad("Brak połączenia. Spróbujcie ponownie za chwilę.");
+      setLeadBlad("Brak połączenia. Spróbuj ponownie za chwilę.");
       setLeadStan("blad");
     }
   }
@@ -159,12 +159,12 @@ export default function JezykCheck() {
   return (
     <div className="rounded-2xl border border-gray-200/80 dark:border-gray-800/80 bg-white/70 dark:bg-gray-900/50 p-6 md:p-8">
       <h2 className="text-xl font-bold text-gray-900 dark:text-white">
-        Sprawdźcie swoją wersję obcojęzyczną
+        Sprawdź swoją wersję obcojęzyczną
       </h2>
       <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-        Wpiszcie adres strony. Znajdziemy Waszą wersję angielską albo niemiecką, rozbijemy
+        Wpisz adres strony. Znajdziemy Twoją wersję angielską albo niemiecką, rozbijemy
         ją na pojedyncze fragmenty i pokażemy te, które zostały po polsku, a także
-        czy wyszukiwarka w ogóle wie, że macie wersje językowe.
+        czy wyszukiwarka w ogóle wie, że masz wersje językowe.
       </p>
       <Przyklady
         pozycje={[
@@ -190,7 +190,7 @@ export default function JezykCheck() {
           disabled={stan === "ladowanie"}
           className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
         >
-          {stan === "ladowanie" ? "Sprawdzamy..." : "Sprawdźcie stronę"}
+          {stan === "ladowanie" ? "Sprawdzamy..." : "Sprawdź stronę"}
         </button>
       </form>
 
@@ -287,7 +287,7 @@ export default function JezykCheck() {
             <p className="text-sm text-gray-700 dark:text-gray-300">
               {wynik.werdykt === "ZIELONY"
                 ? "Na sprawdzonych stronach nie znaleźliśmy polskich fragmentów ani braków w oznaczeniach. Pełny audyt idzie głębiej: obejmuje wszystkie podstrony, tytuły, opisy dla wyszukiwarki i opisy zdjęć."
-                : "To sprawdzenie objęło tylko kilka stron. Pełny audyt przechodzi przez cały serwis i kończy się listą, w której każdy wpis ma adres, miejsce na stronie i tekst do podmiany, więc przekazujecie ją wprost programiście."}
+                : "To sprawdzenie objęło tylko kilka stron. Pełny audyt przechodzi przez cały serwis i kończy się listą, w której każdy wpis ma adres, miejsce na stronie i tekst do podmiany, więc przekazujesz ją wprost programiście."}
             </p>
 
             {leadStan === "ok" ? (
@@ -301,7 +301,7 @@ export default function JezykCheck() {
                   htmlFor="jezykcheck-email"
                   className="block text-sm font-medium text-gray-900 dark:text-white"
                 >
-                  Podajcie maila, odeślemy pełną listę miejsc do poprawy
+                  Podaj maila, odeślemy pełną listę miejsc do poprawy
                 </label>
                 <div className="mt-2 flex flex-col gap-3 sm:flex-row">
                   <input
@@ -318,7 +318,7 @@ export default function JezykCheck() {
                     disabled={leadStan === "wysylamy"}
                     className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
                   >
-                    {leadStan === "wysylamy" ? "Wysyłamy..." : "Wyślijcie zgłoszenie"}
+                    {leadStan === "wysylamy" ? "Wysyłamy..." : "Wyślij zgłoszenie"}
                   </button>
                 </div>
                 {leadStan === "blad" && (

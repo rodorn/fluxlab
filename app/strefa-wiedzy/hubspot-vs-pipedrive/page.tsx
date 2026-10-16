@@ -39,7 +39,7 @@ const faqItems = [
   {
     question: "Co kosztuje więcej długoterminowo?",
     answer:
-      "Zwykle HubSpot, gdy korzystacie z Marketing Hub i Sales Hub Professional. Pipedrive rośnie liniowo z liczbą użytkowników.",
+      "Zwykle HubSpot, gdy korzystasz z Marketing Hub i Sales Hub Professional. Pipedrive rośnie liniowo z liczbą użytkowników.",
   },
   {
     question: "Czy łatwo zmigrować z HubSpota do Pipedrive?",
@@ -49,7 +49,7 @@ const faqItems = [
   {
     question: "Co wybrać, jeśli nie mamy jeszcze procesu sprzedaży?",
     answer:
-      "Najpierw uporządkujcie proces, potem wybierajcie narzędzie. Bez procesu każdy CRM będzie tylko ładniejszą bazą kontaktów.",
+      "Najpierw uporządkuj proces, potem wybieraj narzędzie. Bez procesu każdy CRM będzie tylko ładniejszą bazą kontaktów.",
   },
 ];
 
@@ -98,7 +98,7 @@ export default function HubspotVsPipedriveArticle() {
               Pipedrive jest szybszy w codziennej pracy handlowca. HubSpot daje
               głębszą personalizację i wyraźnie wygrywa w marketingu: landing
               page, automatyzacja e-mail, scoring i atrybucja w jednym miejscu.
-              W Pipedrive marketing dokładacie integracją z Brevo,
+              W Pipedrive marketing dokładasz integracją z Brevo,
               ActiveCampaign albo Mailchimpem.
             </p>
 
@@ -145,7 +145,7 @@ export default function HubspotVsPipedriveArticle() {
           </div>
         </section>
 
-        <CTA naglowek="Nie wiecie, który CRM pasuje do Waszej firmy?" />
+        <CTA naglowek="Nie wiesz, który CRM pasuje do Twojej firmy?" />
       </main>
       <Footer />
 

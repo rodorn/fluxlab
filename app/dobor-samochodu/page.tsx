@@ -9,13 +9,13 @@ import Tabs from "@/components/Tabs";
 import NazwaNarzedzia from "@/components/NazwaNarzedzia";
 
 export const metadata: Metadata = {
-  title: "Dobór samochodu, znajdźcie auto dla siebie | Fluxlab",
+  title: "Dobór samochodu, znajdź auto dla siebie | Fluxlab",
   description:
-    "Interaktywny kreator doboru samochodu. Dopasujcie segment, nadwozie, napęd i moc do realnych potrzeb, bez marketingowej ściemy.",
+    "Interaktywny kreator doboru samochodu. Dopasuj segment, nadwozie, napęd i moc do realnych potrzeb, bez marketingowej ściemy.",
   openGraph: {
-    title: "Dobór samochodu, znajdźcie auto dla siebie | Fluxlab",
+    title: "Dobór samochodu, znajdź auto dla siebie | Fluxlab",
     description:
-      "Interaktywne narzędzie do doboru samochodu. Dopasujcie segment, nadwozie i moc do swoich potrzeb.",
+      "Interaktywne narzędzie do doboru samochodu. Dopasuj segment, nadwozie i moc do swoich potrzeb.",
     locale: "pl_PL",
     type: "website",
     images: [
@@ -36,7 +36,7 @@ const faqs = [
   {
     question: "Skąd wiadomo, że rekomendacja jest trafna?",
     answer:
-      "Kreator działa na regułach, nie zgaduje. Każda odpowiedź odsiewa segmenty, nadwozia i moce, które nie spełniają warunków. Na końcu dostajecie profil auta, nie jeden model.",
+      "Kreator działa na regułach, nie zgaduje. Każda odpowiedź odsiewa segmenty, nadwozia i moce, które nie spełniają warunków. Na końcu dostajesz profil auta, nie jeden model.",
   },
   {
     question: "Elektryk, hybryda czy spalinowy, jak wybrać napęd?",
@@ -44,9 +44,9 @@ const faqs = [
       "Do 10 tys. km rocznie w mieście i z ładowaniem w domu: elektryk. 10 do 20 tys. km bez gniazdka: pełna hybryda. Powyżej 25 tys. km po trasach: diesel.",
   },
   {
-    question: "Dlaczego sugerujecie segmenty, a nie konkretne modele?",
+    question: "Dlaczego sugerujesz segmenty, a nie konkretne modele?",
     answer:
-      "Modele i wersje zmieniają się co roku, a profil (segment, nadwozie, napęd, moc) zostaje aktualny. Z nim przeglądacie bieżący rynek.",
+      "Modele i wersje zmieniają się co roku, a profil (segment, nadwozie, napęd, moc) zostaje aktualny. Z nim przeglądasz bieżący rynek.",
   },
   {
     question: "Czy konfigurator nadaje się do wyboru auta służbowego?",
@@ -67,11 +67,11 @@ export default function DoborSamochoduPage() {
           <div className="container-wide max-w-3xl">
             <p className="section-label mb-4">Narzędzie</p>
             <h1 className="h1-strony">
-              Dobierzcie idealny samochód
+              Dobierz idealny samochód
             </h1>
             <p className="mt-4 text-lg text-gray-600 dark:text-gray-400">
               Odpowiedz na kilka pytań, a podpowiemy segment, nadwozie i moc
-              pasujące do Waszego stylu jazdy.
+              pasujące do Twojego stylu jazdy.
             </p>
           </div>
         </section>
@@ -100,7 +100,7 @@ export default function DoborSamochoduPage() {
                       <div className="space-y-4 text-gray-600 dark:text-gray-400">
                         <p>
                           Kreator odsiewa segmenty i napędy, które nie pasują do
-                          Waszych odpowiedzi. Zostaje profil auta: zestaw
+                          Twoich odpowiedzi. Zostaje profil auta: zestaw
                           parametrów, w których opłaca się szukać.
                         </p>
                         <ul className="list-disc pl-5 space-y-2">
@@ -144,15 +144,15 @@ export default function DoborSamochoduPage() {
                         </h2>
                         <ol className="list-decimal pl-5 space-y-3 text-gray-600 dark:text-gray-400">
                           <li>
-                            Zróbcie listę 8 do 12 modeli pasujących do profilu i
-                            sprawdźcie ich ceny w ogłoszeniach.
+                            Zrób listę 8 do 12 modeli pasujących do profilu i
+                            sprawdź ich ceny w ogłoszeniach.
                           </li>
                           <li>
-                            Zawęźcie do 3 do 5 finalistów według niezawodności i
+                            Zawęź do 3 do 5 finalistów według niezawodności i
                             opinii właścicieli.
                           </li>
                           <li>
-                            Policzcie roczny koszt każdego w{" "}
+                            Policz roczny koszt każdego w{" "}
                             <Link
                               href="/kalkulator-kosztow"
                               className="text-accent hover:underline"
@@ -163,7 +163,7 @@ export default function DoborSamochoduPage() {
                             8 tys. zł rocznie.
                           </li>
                           <li>
-                            Ogłoszenie przepuśćcie przez{" "}
+                            Ogłoszenie przepuść przez{" "}
                             <Link
                               href="/sprawdz-auto"
                               className="text-accent hover:underline"
@@ -180,7 +180,7 @@ export default function DoborSamochoduPage() {
                             . Potem niezależny mechanik.
                           </li>
                           <li>
-                            Dla firmy sprawdźcie wpływ auta na podatek w{" "}
+                            Dla firmy sprawdź wpływ auta na podatek w{" "}
                             <Link
                               href="/kalkulator-podatkowy"
                               className="text-accent hover:underline"
@@ -256,7 +256,7 @@ export default function DoborSamochoduPage() {
                               href: "/strefa-wiedzy/jaka-forma-opodatkowania-jdg-2026",
                               title: "Jaka forma opodatkowania JDG w 2026?",
                               description:
-                                "Ile z kosztu auta realnie odzyskacie.",
+                                "Ile z kosztu auta realnie odzyskasz.",
                             },
                           ].map((article) => (
                             <Link

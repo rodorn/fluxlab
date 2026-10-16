@@ -126,9 +126,9 @@ export default function AutomatyzacjaProcesowArticle() {
 
           <h2 className={h2}>Od czego zacząć</h2>
           <p className={p}>
-            Wybierzcie jeden częsty i uciążliwy proces. Rozpiszcie, kto co robi i
-            gdzie są opóźnienia, ustalcie efekt (szybsza reakcja, mniej błędów),
-            uprośćcie logikę, wdróżcie i zmierzcie. Jak policzyć zwrot, piszemy w
+            Wybierz jeden częsty i uciążliwy proces. Rozpisz, kto co robi i
+            gdzie są opóźnienia, ustal efekt (szybsza reakcja, mniej błędów),
+            uprość logikę, wdróż i zmierz. Jak policzyć zwrot, piszemy w
             artykule{" "}
             <Link
               href="/strefa-wiedzy/jak-policzyc-roi-z-automatyzacji"
@@ -206,7 +206,7 @@ export default function AutomatyzacjaProcesowArticle() {
           </div>
         </section>
 
-        <CTA naglowek="Który proces w Waszej firmie zautomatyzować najpierw?" opis="Bezpłatna diagnoza, bez zobowiązań." />
+        <CTA naglowek="Który proces w Twojej firmie zautomatyzować najpierw?" opis="Bezpłatna diagnoza, bez zobowiązań." />
       </main>
       <Footer />
 

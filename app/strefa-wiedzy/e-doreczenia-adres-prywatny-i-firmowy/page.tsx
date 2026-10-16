@@ -72,7 +72,7 @@ export default function EDoreczeniaAdresPrywatnyIFirmowyArticle() {
             </h1>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed !text-left">
               Tak, można mieć oba i to nie koliduje. Adres prywatny służy do
-              Waszych spraw jako osoby, adres firmowy do spraw działalności z
+              Twoich spraw jako osoby, adres firmowy do spraw działalności z
               CEIDG.
             </p>
           </div>
@@ -84,7 +84,7 @@ export default function EDoreczeniaAdresPrywatnyIFirmowyArticle() {
               <h2 className="mb-4 h2-sekcji">Dwie osobne skrzynki</h2>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                 Pisma do firmy urząd wyśle na adres przedsiębiorcy, pisma do
-                Was prywatnie na adres prywatny. Każdą skrzynkę trzeba czytać
+                ciebie prywatnie na adres prywatny. Każdą skrzynkę trzeba czytać
                 osobno, bo list w jednej nie pojawi się w drugiej.
               </p>
             </section>
@@ -126,7 +126,7 @@ export default function EDoreczeniaAdresPrywatnyIFirmowyArticle() {
             <PrevNextArticle currentHref="/strefa-wiedzy/e-doreczenia-adres-prywatny-i-firmowy" />
           </div>
         </div>
-        <CTA naglowek="Chcecie, żeby pisma z e-Doręczeń same trafiały do systemu?" />
+        <CTA naglowek="Chcesz, żeby pisma z e-Doręczeń same trafiały do systemu?" />
       </main>
       <Footer />
 

@@ -38,19 +38,19 @@ export async function POST(request: Request) {
 
   if (!Number.isFinite(waga) || waga <= 0 || waga > 1000) {
     return NextResponse.json(
-      { error: "Podajcie wagę paczki w kilogramach." },
+      { error: "Podaj wagę paczki w kilogramach." },
       { status: 400 },
     );
   }
   if (!Number.isFinite(baza) || baza <= 0 || baza > 100000) {
     return NextResponse.json(
-      { error: "Podajcie kwotę bazową za przesyłkę, bez dopłat." },
+      { error: "Podaj kwotę bazową za przesyłkę, bez dopłat." },
       { status: 400 },
     );
   }
   if (!Number.isFinite(naliczona) || naliczona < 0 || naliczona > 100000) {
     return NextResponse.json(
-      { error: "Podajcie dopłatę paliwową z faktury." },
+      { error: "Podaj dopłatę paliwową z faktury." },
       { status: 400 },
     );
   }
@@ -71,7 +71,7 @@ export async function POST(request: Request) {
 
   let werdykt: "ZIELONY" | "ZOLTY" | "CZERWONY" = "ZIELONY";
   let naglowek = "Dopłata policzona prawidłowo";
-  let opis = `Przy wadze ${waga} kg obowiązuje stawka ${prog.stawka} procent, czyli ${powinnaBycKwota.toFixed(2)} zł od kwoty bazowej. Tyle właśnie widnieje na Waszej fakturze.`;
+  let opis = `Przy wadze ${waga} kg obowiązuje stawka ${prog.stawka} procent, czyli ${powinnaBycKwota.toFixed(2)} zł od kwoty bazowej. Tyle właśnie widnieje na Twojej fakturze.`;
 
   if (!zgodne && roznica > 0) {
     werdykt = "CZERWONY";
@@ -82,7 +82,7 @@ export async function POST(request: Request) {
   } else if (!zgodne && roznica < 0) {
     werdykt = "ZOLTY";
     naglowek = `Naliczono o ${Math.abs(roznica).toFixed(2)} zł mniej, niż wynika ze stawki`;
-    opis = `Naliczono ${naliczonyProcent} procent zamiast ${prog.stawka} procent. Na Waszą korzyść, ale warto wiedzieć, bo bywa, że różnica wraca w korekcie.`;
+    opis = `Naliczono ${naliczonyProcent} procent zamiast ${prog.stawka} procent. Na Twoją korzyść, ale warto wiedzieć, bo bywa, że różnica wraca w korekcie.`;
   }
 
   return NextResponse.json({

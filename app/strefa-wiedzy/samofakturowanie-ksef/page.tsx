@@ -39,7 +39,7 @@ const faq = [
   },
   {
     q: "KSeF odrzuca fakturę z błędem uprawnień?",
-    a: "Sprawdźcie, czy uprawnienie nadano na właściwy NIP i czy sprzedawca go nie odebrał. Faktura bez numeru KSeF nie jest wystawiona.",
+    a: "Sprawdź, czy uprawnienie nadano na właściwy NIP i czy sprzedawca go nie odebrał. Faktura bez numeru KSeF nie jest wystawiona.",
   },
   {
     q: "Kto widzi taką fakturę?",
@@ -124,7 +124,7 @@ export default function SamofakturowanieKsefArticle() {
             <PrevNextArticle currentHref="/strefa-wiedzy/samofakturowanie-ksef" />
           </div>
         </div>
-        <CTA naglowek="Chcecie, żeby faktury z KSeF same trafiały do księgowości?" />
+        <CTA naglowek="Chcesz, żeby faktury z KSeF same trafiały do księgowości?" />
       </main>
       <Footer />
 

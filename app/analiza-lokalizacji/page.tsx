@@ -5,7 +5,7 @@ import LokalizacjaCheck from "@/components/LokalizacjaCheck";
 export const metadata: Metadata = {
   title: "Analiza lokalizacji pod lokal, od 190 zł | Fluxlab",
   description:
-    "Zanim podpiszecie najem, sprawdźcie nasycenie rynku: konkurenci w promieniu 1, 3 i 5 km i liczba mieszkańców na punkt. Darmowe sprawdzenie, raport od 190 zł.",
+    "Zanim podpiszesz najem, sprawdź nasycenie rynku: konkurenci w promieniu 1, 3 i 5 km i liczba mieszkańców na punkt. Darmowe sprawdzenie, raport od 190 zł.",
   alternates: { canonical: "/analiza-lokalizacji" },
   openGraph: {
     title: "Analiza lokalizacji pod lokal, od 190 zł | Fluxlab",
@@ -32,7 +32,7 @@ export default function Page() {
       breadcrumb="Analiza lokalizacji"
       eyebrow="Decyzja o lokalu"
       h1="Umowa najmu na pięć lat, a rynek sprawdzony na oko"
-      lead="Mapy pokazują pinezki, ale nie mówią, czy rynek jest już obsadzony. Sprawdzamy to liczbami, zanim podpiszecie najem."
+      lead="Mapy pokazują pinezki, ale nie mówią, czy rynek jest już obsadzony. Sprawdzamy to liczbami, zanim podpiszesz najem."
       ctaLabel="Zamawiam pełny raport"
       ctaNote="Raport w 24 godziny"
       checks={[
@@ -79,7 +79,7 @@ export default function Page() {
         {
           name: "Porównanie miejsc",
           price: "od 899 zł",
-          desc: "Macie trzy lokale i nie wiecie który.",
+          desc: "Masz trzy lokale i nie wiesz, który.",
           features: [
             "trzy lokalizacje w jednym zestawieniu",
             "ranking z uzasadnieniem",
@@ -98,16 +98,16 @@ export default function Page() {
         },
         {
           q: "Czy wskaźnik na mieszkańca zawsze ma sens?",
-          a: "Nie w miejscowościach turystycznych. Sprawdzenie Was o tym uprzedzi, a w raporcie liczymy wtedy inaczej.",
+          a: "Nie w miejscowościach turystycznych. Sprawdzenie cię o tym uprzedzi, a w raporcie liczymy wtedy inaczej.",
         },
         {
           q: "Czy to zastąpi rozmowę z pośrednikiem?",
-          a: "Nie, ale wchodzicie do niej z liczbami zamiast z wrażeniem.",
+          a: "Nie, ale wchodzisz do niej z liczbami zamiast z wrażeniem.",
         },
       ]}
       formId="order_analiza_lokalizacji"
-      formHeading="Zamówcie raport dla swojej lokalizacji"
-      formIntro="Napiszcie, gdzie jest lokal i jaka to branża. Raport odeślemy w 24 godziny."
+      formHeading="Zamów raport dla swojej lokalizacji"
+      formIntro="Napisz, gdzie jest lokal i jaka to branża. Raport odeślemy w 24 godziny."
       submitLabel="Zamawiam raport"
       microCopy="Tylko publiczne źródła danych, bez dokumentów i dostępów."
       serviceName="Analiza potencjału lokalizacji pod punkt usługowy"

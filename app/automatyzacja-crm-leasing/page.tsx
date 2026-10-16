@@ -224,7 +224,7 @@ export default function AutomatyzacjaCrmLeasing() {
                         </div>
                       </div>
                       <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                        Czy wdrożenie się spłaci, liczymy na Waszych danych
+                        Czy wdrożenie się spłaci, liczymy na Twoich danych
                         przed wyceną.
                       </p>
                     </div>
@@ -319,7 +319,7 @@ export default function AutomatyzacjaCrmLeasing() {
                         href="/automatyzacja-leadow-crm"
                         className="btn-secondary"
                       >
-                        Zobaczcie pełny cennik automatyzacji CRM
+                        Zobacz pełny cennik automatyzacji CRM
                       </Link>
                     </div>
                   </div>

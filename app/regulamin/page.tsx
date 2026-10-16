@@ -85,7 +85,7 @@ export default function Regulamin() {
                         </p>
                         <p className="mt-2">
                           Korzystanie z Serwisu oznacza akceptację niniejszego
-                          Regulaminu. Jeśli nie zgadzacie się z jego
+                          Regulaminu. Jeśli nie zgadzasz się z jego
                           postanowieniami, prosimy o niekorzystanie z Serwisu.
                         </p>
                       </section>

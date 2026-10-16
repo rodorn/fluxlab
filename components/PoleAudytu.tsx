@@ -32,7 +32,7 @@ export default function PoleAudytu() {
     <div className="mx-auto mt-9 max-w-xl text-left">
       <form onSubmit={wyslij} className="flex flex-col gap-2.5 sm:flex-row">
         <label htmlFor="domena-glowna" className="sr-only">
-          Adres Waszej strony
+          Adres Twojej strony
         </label>
         <input
           id="domena-glowna"
@@ -44,7 +44,7 @@ export default function PoleAudytu() {
           className="flex-1 rounded-lg border border-gray-300 bg-white px-4 py-3 text-base text-gray-900 outline-none transition-colors focus:border-accent dark:border-white/15 dark:bg-white/[0.04] dark:text-white"
         />
         <button type="submit" className="btn-primary justify-center px-6 py-3 text-sm">
-          Zróbcie darmowy audyt
+          Zrób darmowy audyt
         </button>
       </form>
       <p className="mt-2.5 text-center text-xs text-gray-500 dark:text-white/50">

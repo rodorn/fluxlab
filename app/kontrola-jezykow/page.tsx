@@ -31,8 +31,8 @@ export default function Page() {
       tool={<JezykCheck />}
       breadcrumb="Kontrola wersji językowej"
       eyebrow="Eksport i wersje obcojęzyczne"
-      h1="Wasza angielska strona mówi po polsku i nikt tego nie zauważył"
-      lead="Po tłumaczeniu prawie zawsze zostają polskie przyciski, nagłówki, czasem całe akapity. Wy ich nie zauważacie, a zagraniczny klient widzi stronę porzuconą w połowie."
+      h1="Twoja angielska strona mówi po polsku i nikt tego nie zauważył"
+      lead="Po tłumaczeniu prawie zawsze zostają polskie przyciski, nagłówki, czasem całe akapity. Ty ich nie zauważasz, a zagraniczny klient widzi stronę porzuconą w połowie."
       ctaLabel="Zamawiam pełny audyt"
       ctaNote="Wynik w 48 godzin"
       checks={[
@@ -50,7 +50,7 @@ export default function Page() {
         },
         {
           title: "Lista gotowa dla programisty",
-          desc: "Każdy wpis ma adres, miejsce i tekst do podmiany. Przekazujecie plik dalej.",
+          desc: "Każdy wpis ma adres, miejsce i tekst do podmiany. Przekazujesz plik dalej.",
         },
       ]}
       pricing={[
@@ -61,7 +61,7 @@ export default function Page() {
           features: [
             "liczba polskich fragmentów",
             "brakujące znaczniki językowe",
-            "przykładowe cytaty z Waszej strony",
+            "przykładowe cytaty z Twojej strony",
           ],
         },
         {
@@ -102,12 +102,12 @@ export default function Page() {
         },
         {
           q: "Co jeśli nic nie znajdziecie?",
-          a: "Wtedy nie płacicie za audyt.",
+          a: "Wtedy nie płacisz za audyt.",
         },
       ]}
       formId="order_kontrola_jezykow"
-      formHeading="Zamówcie pełny audyt wersji językowych"
-      formIntro="Podajcie adres strony i wersje językowe. Jeśli nic nie znajdziemy, nie płacicie."
+      formHeading="Zamów pełny audyt wersji językowych"
+      formIntro="Podaj adres strony i wersje językowe. Jeśli nic nie znajdziemy, nie płacisz."
       submitLabel="Zamawiam audyt"
       microCopy="Analizujemy tylko publiczne strony."
       serviceName="Audyt wersji językowych strony internetowej"

@@ -4,11 +4,11 @@ import ProductLanding from "@/components/ProductLanding";
 export const metadata: Metadata = {
   title: "Audyt chatbota, co asystent AI mówi klientom | Fluxlab",
   description:
-    "Zadajemy Waszemu botowi 150 realnych pytań klienta i zderzamy odpowiedzi z cennikiem, regulaminem i zasadami zwrotów. Wyłapujemy halucynacje. 69 zł.",
+    "Zadajemy Twojemu botowi 150 realnych pytań klienta i zderzamy odpowiedzi z cennikiem, regulaminem i zasadami zwrotów. Wyłapujemy halucynacje. 69 zł.",
   alternates: { canonical: "/audyt-chatbota" },
   openGraph: {
     title:
-      "Audyt chatbota, sprawdźcie co Wasz asystent AI mówi klientom | Fluxlab",
+      "Audyt chatbota, sprawdź co Twój asystent AI mówi klientom | Fluxlab",
     description:
       "150 realnych pytań klienta zderzonych z cennikiem i regulaminem. Wyłapujemy halucynacje i obietnice, którymi firma jest związana. 69 zł.",
     locale: "pl_PL",
@@ -30,14 +30,14 @@ export default function Page() {
       slug="audyt-chatbota"
       breadcrumb="Audyt chatbota"
       eyebrow="Jakość asystenta AI"
-      h1="Sprawdźcie, co Wasz bot naprawdę mówi klientom"
-      lead="Bot działa, ale czy mówi prawdę? Zadajemy 150 realnych pytań klienta i zderzamy odpowiedzi z Waszym cennikiem i regulaminem."
+      h1="Sprawdź, co Twój bot naprawdę mówi klientom"
+      lead="Bot działa, ale czy mówi prawdę? Zadajemy 150 realnych pytań klienta i zderzamy odpowiedzi z Twoim cennikiem i regulaminem."
       ctaLabel="Zamawiam audyt bota"
       ctaNote="Raport w 48 godzin"
       checks={[
         {
-          title: "Obietnice, którymi jesteście związani",
-          desc: "Zwrot po terminie, rabat albo darmowa dostawa, których nie oferujecie.",
+          title: "Obietnice, którymi jesteś związani",
+          desc: "Zwrot po terminie, rabat albo darmowa dostawa, których nie oferujesz.",
         },
         {
           title: "Halucynacje o produktach",
@@ -96,8 +96,8 @@ export default function Page() {
         },
       ]}
       formId="order_audyt_chatbota"
-      formHeading="Zamówcie audyt chatbota"
-      formIntro="Podajcie adres strony z botem i podlinkujcie cennik oraz regulamin."
+      formHeading="Zamów audyt chatbota"
+      formIntro="Podaj adres strony z botem i podlinkuj cennik oraz regulamin."
       submitLabel="Zamawiam audyt bota"
       microCopy="Raport w 48 godzin. Tylko zwykłe pytania klienta."
       serviceName="Audyt jakości odpowiedzi chatbota"

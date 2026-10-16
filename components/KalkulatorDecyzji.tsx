@@ -147,7 +147,7 @@ function recommend(d: Inputs): Recommendation {
     return {
       kind: "manual",
       headline: "Automatyzacja ma niski sens, proces jest niestabilny.",
-      detail: `Jeśli wymagania ciągle się zmieniają, automatyzacja będzie wymagała ciągłego dopisywania wyjątków. To koszt nie tylko wdrożeniowy, ale też operacyjny, częściej niż częściowo zautomatyzowany proces lepiej trzymać jako ludzki, ale dobrze opisany (checklisty, szablony, SOP-y). Zautomatyzujcie dopiero, gdy proces sam się ustabilizuje. ${teamInsight}`,
+      detail: `Jeśli wymagania ciągle się zmieniają, automatyzacja będzie wymagała ciągłego dopisywania wyjątków. To koszt nie tylko wdrożeniowy, ale też operacyjny, częściej niż częściowo zautomatyzowany proces lepiej trzymać jako ludzki, ale dobrze opisany (checklisty, szablony, SOP-y). Zautomatyzuj dopiero, gdy proces sam się ustabilizuje. ${teamInsight}`,
     };
   }
 
@@ -165,21 +165,21 @@ function recommend(d: Inputs): Recommendation {
     if (d.team === "zespol") {
       return {
         kind: "automate",
-        headline: "Zdecydowanie automatyzujcie, skala robi największą różnicę.",
-        detail: `Codziennie/kilka razy w tygodniu × cały zespół = klasyczny przypadek z największą dźwignią ROI. Oszczędność rośnie liniowo z liczbą osób, a po ilu miesiącach wdrożenie się spłaci przy Waszych liczbach, pokazuje punkt zwrotu niżej. ${teamInsight}`,
+        headline: "Zdecydowanie automatyzuj, skala robi największą różnicę.",
+        detail: `Codziennie/kilka razy w tygodniu × cały zespół = klasyczny przypadek z największą dźwignią ROI. Oszczędność rośnie liniowo z liczbą osób, a po ilu miesiącach wdrożenie się spłaci przy Twoich liczbach, pokazuje punkt zwrotu niżej. ${teamInsight}`,
       };
     }
     if (d.team === "1") {
       return {
         kind: "automate",
-        headline: "Automatyzujcie i zabezpieczcie proces przed błędem człowieka.",
+        headline: "Automatyzuj i zabezpiecz proces przed błędem człowieka.",
         detail: `Wysoka częstotliwość + jedna osoba to nie tylko marnowanie czasu, ale też ryzyko operacyjne. Automatyzacja oddaje proces systemowi, który nie zapomina, nie idzie na urlop i nie myli się przy 50. powtórzeniu z rzędu. ${teamInsight}`,
       };
     }
     return {
       kind: "automate",
-      headline: "Mocna rekomendacja: zautomatyzujcie.",
-      detail: `Powtarzalny proces o wysokiej częstotliwości to klasyczny przypadek dla automatyzacji. Oszczędność czasu jest stała każdego miesiąca, nie tylko raz, a po ilu miesiącach wdrożenie się spłaci przy Waszych liczbach, pokazuje punkt zwrotu niżej. ${teamInsight}`,
+      headline: "Mocna rekomendacja: zautomatyzuj.",
+      detail: `Powtarzalny proces o wysokiej częstotliwości to klasyczny przypadek dla automatyzacji. Oszczędność czasu jest stała każdego miesiąca, nie tylko raz, a po ilu miesiącach wdrożenie się spłaci przy Twoich liczbach, pokazuje punkt zwrotu niżej. ${teamInsight}`,
     };
   }
 
@@ -218,7 +218,7 @@ function recommend(d: Inputs): Recommendation {
   return {
     kind: "consider",
     headline: "Warto policzyć dokładniej.",
-    detail: `Wasze parametry są w środku przedziału, automatyzacja może mieć sens, ale wynik zależy od konkretu. To dobry moment na bezpłatną diagnozę. ${teamInsight}`,
+    detail: `Twoje parametry są w środku przedziału, automatyzacja może mieć sens, ale wynik zależy od konkretu. To dobry moment na bezpłatną diagnozę. ${teamInsight}`,
   };
 }
 
@@ -477,11 +477,11 @@ export default function KalkulatorDecyzji() {
       <div className="space-y-8">
         <div className="space-y-1">
           <h2 className="text-lg font-bold text-gray-900 dark:text-white">
-            Wasz proces
+            Twój proces
           </h2>
           <p className="text-sm text-gray-500 dark:text-gray-400">
             Wynik liczy się na bieżąco. Domyślne wartości to typowy proces
-            obsługi 100 leadów miesięcznie, podmieńcie na własne.
+            obsługi 100 leadów miesięcznie, podmień na własne.
           </p>
         </div>
 
@@ -489,12 +489,12 @@ export default function KalkulatorDecyzji() {
           pozycje={SCENARIUSZE}
           wybrany={wybrany}
           onWybor={wybierzScenariusz}
-          wstep="Nie wiecie, od czego zacząć? Podstaw gotowy proces:"
+          wstep="Nie wiesz, od czego zacząć? Podstaw gotowy proces:"
         />
 
         <div className="grid sm:grid-cols-2 gap-6">
           <NumberField
-            label="Ile godzin miesięcznie zajmuje Wam ten proces?"
+            label="Ile godzin miesięcznie zajmuje ci ten proces?"
             value={data.czasH}
             min={1}
             unit="h/mies."
@@ -547,7 +547,7 @@ export default function KalkulatorDecyzji() {
       <div className="space-y-6">
         <div className="rounded-2xl border-2 border-accent/30 bg-accent/5 dark:bg-accent/10 p-6 sm:p-8">
           <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300">
-            Wasz proces zajmuje{" "}
+            Twój proces zajmuje{" "}
             <strong className="text-accent">
               {data.czasH} godzin miesięcznie
             </strong>{" "}
@@ -608,10 +608,10 @@ export default function KalkulatorDecyzji() {
             label="Sygnał decyzyjny"
             value={
               result.recommendation.kind === "automate"
-                ? "Automatyzujcie"
+                ? "Automatyzuj"
                 : result.recommendation.kind === "manual"
-                  ? "Zostańcie przy ręcznej"
-                  : "Policzcie dokładniej"
+                  ? "Zostań przy ręcznej"
+                  : "Policz dokładniej"
             }
             variant={result.recommendation.kind}
             hint={`${FREQUENCY_LABELS[data.frequency]} · ${TEAM_LABELS[data.team]}`}
@@ -673,7 +673,7 @@ export default function KalkulatorDecyzji() {
                     : "brak danych"}
                 </strong>
                 . To bardzo zgrubny szacunek, w diagnozie liczymy konkretnie pod
-                Wasz proces.
+                Twój proces.
               </p>
             </div>
           </div>
@@ -690,11 +690,11 @@ export default function KalkulatorDecyzji() {
       {/* ── CTA, primary ── */}
       <div className="rounded-2xl border border-accent/20 bg-accent/5 dark:bg-accent/10 p-8 text-center">
         <h3 className="text-xl lg:text-2xl font-bold text-gray-900 dark:text-white mb-3">
-          Chcecie konkretnie sprawdzić, ile zaoszczędzicie?
+          Chcesz konkretnie sprawdzić, ile zaoszczędzisz?
         </h3>
         <p className="text-sm text-gray-600 dark:text-gray-400 mb-6 max-w-xl mx-auto">
           W diagnozie 30-minutowej liczymy pełny koszt obecnego procesu, koszt
-          wdrożenia automatyzacji i punkt zwrotu, pod Wasze konkretne narzędzia
+          wdrożenia automatyzacji i punkt zwrotu, pod Twoje konkretne narzędzia
           i wolumen.
         </p>
         <TrackedCTA
@@ -703,14 +703,14 @@ export default function KalkulatorDecyzji() {
           eventName="cta_click_calc_choice"
           className="btn-primary px-8 py-3 text-base"
         >
-          Sprawdźcie, ile zaoszczędzicie konkretnie
+          Sprawdź, ile zaoszczędzisz konkretnie
         </TrackedCTA>
       </div>
 
       {/* ── CTA, secondary ── */}
       <div className="text-center">
         <p className="text-sm text-gray-500 dark:text-gray-400">
-          Jeśli problemem są leady, użyjcie precyzyjniejszego kalkulatora →{" "}
+          Jeśli problemem są leady, użyj precyzyjniejszego kalkulatora →{" "}
           <a
             href="/koszt-recznej-obslugi-leadow"
             className="text-accent hover:underline font-medium"

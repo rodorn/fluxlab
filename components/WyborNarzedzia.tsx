@@ -75,7 +75,7 @@ const SYTUACJE: Sytuacja[] = [
       {
         href: "/audyt-poczty",
         powod:
-          "SPF, DKIM i DMARC decydują, czy list trafi do skrzynki, do spamu, oraz czy ktoś obcy może wysyłać z Waszego adresu.",
+          "SPF, DKIM i DMARC decydują, czy list trafi do skrzynki, do spamu, oraz czy ktoś obcy może wysyłać z Twojego adresu.",
       },
     ],
   },
@@ -134,7 +134,7 @@ const SYTUACJE: Sytuacja[] = [
     klucz: "rachunek",
     etykieta: "Rachunek za automatyzacje rośnie",
     odpowiedz:
-      "Dwie liczby do porównania, zanim podpiszecie kolejny abonament albo umowę o pracę.",
+      "Dwie liczby do porównania, zanim podpiszesz kolejny abonament albo umowę o pracę.",
     wskazania: [
       {
         href: "/tansze-automatyzacje",
@@ -144,7 +144,7 @@ const SYTUACJE: Sytuacja[] = [
       {
         href: "/strefa-wiedzy/automatyzacja-vs-zatrudnienie#kalkulator",
         powod:
-          "Cztery pola i jedna odpowiedź, łącznie z tą, że przy Waszej skali automatyzacja się nie opłaca.",
+          "Cztery pola i jedna odpowiedź, łącznie z tą, że przy Twojej skali automatyzacja się nie opłaca.",
       },
     ],
   },
@@ -188,7 +188,7 @@ const SYTUACJE: Sytuacja[] = [
     klucz: "nowy-rynek",
     etykieta: "Planujemy nowy punkt albo nowy rynek",
     odpowiedz:
-      "Trzy sprawdzenia przed decyzją: ilu konkurentów, w jakim języku i czy asystenci AI w ogóle Was przeczytają.",
+      "Trzy sprawdzenia przed decyzją: ilu konkurentów, w jakim języku i czy asystenci AI w ogóle cię przeczytają.",
     wskazania: [
       {
         href: "/analiza-lokalizacji",
@@ -198,7 +198,7 @@ const SYTUACJE: Sytuacja[] = [
       {
         href: "/kontrola-jezykow",
         powod:
-          "Wersja obcojęzyczna z połową tekstów po polsku kosztuje zaufanie dokładnie tam, gdzie go najmniej macie.",
+          "Wersja obcojęzyczna z połową tekstów po polsku kosztuje zaufanie dokładnie tam, gdzie go najmniej masz.",
       },
       {
         href: "/widocznosc-w-ai",
@@ -216,7 +216,7 @@ const SYTUACJE: Sytuacja[] = [
       {
         href: "/ksef-integracja",
         powod:
-          "Wystawianie faktur w KSeF obowiązuje etapami od lutego 2026. Sprawdzenie pokazuje, od kiedy dotyczy to Waszej grupy podatników.",
+          "Wystawianie faktur w KSeF obowiązuje etapami od lutego 2026. Sprawdzenie pokazuje, od kiedy dotyczy to Twojej grupy podatników.",
       },
       {
         href: "/ksef-2027",
@@ -256,7 +256,7 @@ export default function WyborNarzedzia() {
         Od czego zacząć
       </h3>
       <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
-        Naciśnijcie to, co sprawia Wam kłopot, a wskażemy narzędzia, od których to
+        Wybierz to, co sprawia ci kłopot, a wskażemy narzędzia, od których to
         widać. Bez wpisywania czegokolwiek.
       </p>
 

@@ -48,7 +48,7 @@ export async function POST(req: Request) {
     domena = String(body.domena || "").trim().toLowerCase()
       .replace(/^https?:\/\//, "").replace(/\/.*$/, "").replace(/^www\./, "");
   } catch {
-    return NextResponse.json({ error: "Podajcie domenę." }, { status: 400 });
+    return NextResponse.json({ error: "Podaj domenę." }, { status: 400 });
   }
   if (!/^[a-z0-9.-]+\.[a-z]{2,}$/.test(domena)) {
     return NextResponse.json({ error: "To nie wygląda na poprawną domenę." }, { status: 400 });
@@ -85,10 +85,10 @@ export async function POST(req: Request) {
   )).some(Boolean);
 
   if (!spf) problemy.push({ tytul: "Brak rekordu SPF", waga: 40,
-    opis: "Bez SPF dowolna osoba może wysłać maila podpisanego Waszą domeną, a odbiorca tego nie wykryje." });
+    opis: "Bez SPF dowolna osoba może wysłać maila podpisanego Twoją domeną, a odbiorca tego nie wykryje." });
   else {
     if (wieleSpf) problemy.push({ tytul: "Dwa rekordy SPF", waga: 35,
-      opis: "Standard nakazuje odrzucić oba. W praktyce Wasz SPF nie działa wcale." });
+      opis: "Standard nakazuje odrzucić oba. W praktyce Twój SPF nie działa wcale." });
     const all = spf.match(/([~\-+?])all/)?.[0];
     if (all === "+all") problemy.push({ tytul: "SPF kończy się +all", waga: 40,
       opis: "Rekord przepuszcza dowolnego nadawcę na świecie. To zwykle literówka." });
@@ -96,7 +96,7 @@ export async function POST(req: Request) {
       opis: "Polityka neutralna, nic nie chroni." });
   }
   if (!dmTxt) problemy.push({ tytul: "Brak rekordu DMARC", waga: 35,
-    opis: "Od 2024 Gmail i Outlook wymagają DMARC. Bez niego część Waszych maili trafia do spamu, a Wy tego nie widzicie." });
+    opis: "Od 2024 Gmail i Outlook wymagają DMARC. Bez niego część Twoich maili trafia do spamu, a ty tego nie widzisz." });
   else if (dmarcP === "none") problemy.push({ tytul: "DMARC tylko obserwuje (p=none)", waga: 20,
     opis: "Rekord jest, ale nie blokuje podszywania. Dobry na start, na stałe nie chroni." });
   if (!dkim) problemy.push({ tytul: "Nie wykryto podpisu DKIM", waga: 10,

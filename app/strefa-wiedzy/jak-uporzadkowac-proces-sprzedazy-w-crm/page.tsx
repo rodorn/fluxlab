@@ -63,7 +63,7 @@ export default function JakUporzadkowacProcesSprzedazyArticle() {
               </h2>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                 Lepiej mniej etapów, ale z jasnym warunkiem wejścia, obowiązkowymi
-                danymi, kolejnym ruchem i osobą odpowiedzialną. Jeśli nie wiecie, po
+                danymi, kolejnym ruchem i osobą odpowiedzialną. Jeśli nie wiesz, po
                 czym poznać przejście z etapu A do B, proces jest uznaniowy.
               </p>
             </section>
@@ -90,7 +90,7 @@ export default function JakUporzadkowacProcesSprzedazyArticle() {
             <PrevNextArticle currentHref="/strefa-wiedzy/jak-uporzadkowac-proces-sprzedazy-w-crm" />
           </div>
         </div>
-        <CTA naglowek="Chcecie uporządkować proces przed automatyzacją?" />
+        <CTA naglowek="Chcesz uporządkować proces przed automatyzacją?" />
       </main>
       <Footer />
 

@@ -70,7 +70,7 @@ export async function POST(request: Request) {
   }
   if (zapytanie.length < 3) {
     return NextResponse.json(
-      { error: "Podajcie numer KRS albo nazwę spółki, co najmniej trzy znaki." },
+      { error: "Podaj numer KRS albo nazwę spółki, co najmniej trzy znaki." },
       { status: 400 },
     );
   }
@@ -137,7 +137,7 @@ export async function POST(request: Request) {
         : "Było postępowanie o rozwiązanie, termin już minął"
       : `Znaleźliśmy ${wszystkie.length} ogłoszeń, żadne nie dotyczy rozwiązania`,
     komentarz: najnowszeRozwiazanie
-      ? "Sąd wszczął z urzędu postępowanie o rozwiązanie podmiotu bez przeprowadzania likwidacji. Od dnia obwieszczenia biegnie trzymiesięczny termin na zgłoszenie okoliczności przemawiających przeciwko wykreśleniu. Po tym terminie podmiot znika z rejestru, a jego majątek przechodzi na Skarb Państwa. Jeśli ta spółka jest Wam winna pieniądze, to jest moment na reakcję, a nie po fakcie."
+      ? "Sąd wszczął z urzędu postępowanie o rozwiązanie podmiotu bez przeprowadzania likwidacji. Od dnia obwieszczenia biegnie trzymiesięczny termin na zgłoszenie okoliczności przemawiających przeciwko wykreśleniu. Po tym terminie podmiot znika z rejestru, a jego majątek przechodzi na Skarb Państwa. Jeśli ta spółka jest ci winna pieniądze, to jest moment na reakcję, a nie po fakcie."
       : "W Monitorze nie ma obwieszczenia o rozwiązaniu tego podmiotu bez likwidacji. To jedno konkretne ryzyko, które właśnie wykluczyliśmy, a nie ocena kondycji firmy.",
     liczbaOgloszen: wszystkie.length,
     ogloszenia: posortowane.slice(0, 12).map((x) => ({

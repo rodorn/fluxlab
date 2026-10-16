@@ -57,7 +57,7 @@ const faq = [
   },
   {
     q: "Czy da się zacząć od Pipedrive i przejść na Salesforce?",
-    a: "Tak, i często to ma sens. Najpierw uporządkujcie proces i dane, a migrujcie, gdy naprawdę brakuje Wam możliwości platformy.",
+    a: "Tak, i często to ma sens. Najpierw uporządkuj proces i dane, a migruj, gdy naprawdę brakuje ci możliwości platformy.",
   },
 ];
 
@@ -92,7 +92,7 @@ export default function PipedriveVsSalesforceArticle() {
         </section>
 
         <article className="container-wide max-w-3xl mx-auto px-6 lg:px-8 pb-20 prose-justify">
-          <h2 className={h2}>Co właściwie kupujecie</h2>
+          <h2 className={h2}>Co właściwie kupujesz</h2>
           <p className={p}>
             Pipedrive jest zbudowany wokół lejka: handlowiec widzi, co ma
             zrobić dziś, a manager widzi cały pipeline. Konfiguracja zajmuje
@@ -195,9 +195,9 @@ export default function PipedriveVsSalesforceArticle() {
           </div>
 
           <p className="mt-12 text-center text-gray-600 dark:text-gray-400">
-            Wahacie się między Pipedrive a Salesforce?{" "}
+            Wahasz się między Pipedrive a Salesforce?{" "}
             <Link href="/automatyzacja-leadow-crm" className="text-accent hover:underline">
-              Zobaczcie usługę Automatyzacja CRM
+              Zobacz usługę Automatyzacja CRM
             </Link>
           </p>
 

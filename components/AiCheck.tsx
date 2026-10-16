@@ -38,7 +38,7 @@ const MOTYW: Record<string, { ramka: string; tlo: string; tekst: string; etykiet
     ramka: "border-red-500/60",
     tlo: "bg-red-50 dark:bg-red-950/30",
     tekst: "text-red-700 dark:text-red-400",
-    etykieta: "Asystent Was nie zobaczy",
+    etykieta: "Asystent cię nie zobaczy",
   },
 };
 
@@ -95,7 +95,7 @@ export default function AiCheck() {
       setStan("gotowe");
       zglosZdarzenie(`wynik_${String(data?.werdykt ?? "brak").toLowerCase()}`);
     } catch {
-      setBlad("Brak połączenia. Spróbujcie ponownie za chwilę.");
+      setBlad("Brak połączenia. Spróbuj ponownie za chwilę.");
       setStan("blad");
     }
   }
@@ -127,7 +127,7 @@ export default function AiCheck() {
       }
       setLeadStan("ok");
     } catch {
-      setLeadBlad("Brak połączenia. Spróbujcie ponownie za chwilę.");
+      setLeadBlad("Brak połączenia. Spróbuj ponownie za chwilę.");
       setLeadStan("blad");
     }
   }
@@ -137,12 +137,12 @@ export default function AiCheck() {
   return (
     <div className="rounded-2xl border border-gray-200/80 dark:border-gray-800/80 bg-white/70 dark:bg-gray-900/50 p-6 md:p-8">
       <h2 className="text-xl font-bold text-gray-900 dark:text-white">
-        Sprawdźcie, czy asystent AI w ogóle widzi Waszą stronę
+        Sprawdź, czy asystent AI w ogóle widzi Twoją stronę
       </h2>
       <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
         Coraz częściej klient nie wpisuje frazy w wyszukiwarkę, tylko pyta
         asystenta o firmę do konkretnego zadania. Sprawdzamy siedem rzeczy, od
-        których zależy, czy Wasza strona może w takiej odpowiedzi wystąpić.
+        których zależy, czy Twoja strona może w takiej odpowiedzi wystąpić.
         Bez rejestracji.
       </p>
 
@@ -167,7 +167,7 @@ export default function AiCheck() {
           disabled={stan === "ladowanie"}
           className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
         >
-          {stan === "ladowanie" ? "Sprawdzamy..." : "Sprawdźcie stronę"}
+          {stan === "ladowanie" ? "Sprawdzamy..." : "Sprawdź stronę"}
         </button>
       </form>
 
@@ -229,14 +229,14 @@ export default function AiCheck() {
               klucz: "dane",
               tytul: `Gotowe dane uporządkowane dla ${wynik.domena}`,
               opis:
-                "Wklejcie to w sekcję head swojej strony głównej. Od tego momentu maszyna odczytuje nazwę firmy i opis wprost, zamiast wnioskować z układu strony.",
+                "Wklej to w sekcję head swojej strony głównej. Od tego momentu maszyna odczytuje nazwę firmy i opis wprost, zamiast wnioskować z układu strony.",
               tresc: wynik.szkicDanych,
             },
             wynik.szkicLlms && {
               klucz: "llms",
               tytul: `Gotowy szkic pliku llms.txt dla ${wynik.domena}`,
               opis:
-                "Uzupełnijcie miejsca w nawiasach kwadratowych, zapiszcie jako llms.txt i umieśćcie w katalogu głównym serwisu, obok robots.txt. Nic więcej.",
+                "Uzupełnij miejsca w nawiasach kwadratowych, zapisz jako llms.txt i umieść w katalogu głównym serwisu, obok robots.txt. Nic więcej.",
               tresc: wynik.szkicLlms,
             },
           ]
@@ -270,7 +270,7 @@ export default function AiCheck() {
                     }}
                     className="mt-3 rounded-lg border border-gray-300 px-4 py-2 text-sm font-semibold text-gray-900 transition-colors hover:border-accent dark:border-gray-700 dark:text-white"
                   >
-                    {skopiowane === blok.klucz ? "Skopiowane" : "Skopiujcie do schowka"}
+                    {skopiowane === blok.klucz ? "Skopiowane" : "Skopiuj do schowka"}
                   </button>
                 </div>
               );
@@ -288,7 +288,7 @@ export default function AiCheck() {
                   htmlFor="ai-email"
                   className="block text-sm font-medium text-gray-900 dark:text-white"
                 >
-                  Podajcie maila, odeślemy co dokładnie zmienić i w jakiej kolejności
+                  Podaj maila, odeślemy co dokładnie zmienić i w jakiej kolejności
                 </label>
                 <div className="mt-2 flex flex-col gap-3 sm:flex-row">
                   <input
@@ -305,7 +305,7 @@ export default function AiCheck() {
                     disabled={leadStan === "wysylamy"}
                     className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
                   >
-                    {leadStan === "wysylamy" ? "Wysyłamy..." : "Wyślijcie zgłoszenie"}
+                    {leadStan === "wysylamy" ? "Wysyłamy..." : "Wyślij zgłoszenie"}
                   </button>
                 </div>
                 {leadStan === "blad" && (

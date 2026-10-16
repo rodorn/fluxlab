@@ -71,7 +71,7 @@ export default function ProduktyPage() {
 
           <div className="mt-16 rounded-2xl border border-gray-200/80 dark:border-gray-800/80 bg-gray-50/60 dark:bg-gray-900/40 p-8 text-center">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
-              Potrzebujecie czegoś szytego pod Wasz proces?
+              Potrzebujesz czegoś szytego pod Twój proces?
             </h2>
             <p className="mt-3 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               Zaczynamy od diagnozy,{" "}

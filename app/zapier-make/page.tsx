@@ -10,11 +10,11 @@ import Tabs from "@/components/Tabs";
 export const metadata: Metadata = {
   title: "Zapier vs Make, porównanie i wdrożenie | Fluxlab",
   description:
-    "Zapier czy Make? Porównujemy platformy automatyzacji, pomagamy wybrać najlepsze narzędzie i wdrażamy workflow dopasowane do potrzeb Waszej firmy.",
+    "Zapier czy Make? Porównujemy platformy automatyzacji, pomagamy wybrać najlepsze narzędzie i wdrażamy workflow dopasowane do potrzeb Twojej firmy.",
   openGraph: {
     title: "Zapier vs Make, porównanie i wdrożenie | Fluxlab",
     description:
-      "Zapier czy Make? Porównujemy platformy automatyzacji, pomagamy wybrać najlepsze narzędzie i wdrażamy workflow dopasowane do potrzeb Waszej firmy.",
+      "Zapier czy Make? Porównujemy platformy automatyzacji, pomagamy wybrać najlepsze narzędzie i wdrażamy workflow dopasowane do potrzeb Twojej firmy.",
     locale: "pl_PL",
     type: "article",
     images: [
@@ -85,7 +85,7 @@ export default function ZapierMake() {
             </p>
             <div className="mt-8">
               <a href="#sekcje" className="btn-primary">
-                Dobierzcie narzędzie
+                Dobierz narzędzie
               </a>
             </div>
           </div>
@@ -168,9 +168,9 @@ export default function ZapierMake() {
                     <div className="container-wide">
                       <LandingForm
                         formId="diagnosis_zapier_make"
-                        heading="Dobierzcie narzędzie do procesu"
-                        intro="Opiszcie proces, systemy i wolumen. Odpowiemy, czy lepszy będzie Zapier, Make czy n8n."
-                        submitLabel="Dobierzcie narzędzie"
+                        heading="Dobierz narzędzie do procesu"
+                        intro="Opisz proces, systemy i wolumen. Odpowiemy, czy lepszy będzie Zapier, Make czy n8n."
+                        submitLabel="Dobierz narzędzie"
                       />
                     </div>
                   </div>
@@ -191,7 +191,7 @@ export default function ZapierMake() {
             "@type": "Service",
             name: "Zapier vs Make, wdrożenie automatyzacji",
             description:
-              "Zapier czy Make? Porównujemy platformy automatyzacji, pomagamy wybrać najlepsze narzędzie i wdrażamy workflow dopasowane do potrzeb Waszej firmy.",
+              "Zapier czy Make? Porównujemy platformy automatyzacji, pomagamy wybrać najlepsze narzędzie i wdrażamy workflow dopasowane do potrzeb Twojej firmy.",
             provider: { "@id": "https://fluxlab.pl/#organization" },
             areaServed: { "@type": "Country", name: "Polska" },
             serviceType: "Automatyzacja procesów biznesowych",

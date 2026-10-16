@@ -10,7 +10,7 @@ import NazwaNarzedzia from "@/components/NazwaNarzedzia";
 export const metadata: Metadata = {
   title: "Sprawdzenie NIP w 10 s: status VAT, bez logowania | Fluxlab",
   description:
-    "NIP sprawdzicie w 10 s, bez logowania: status VAT w wykazie Ministerstwa Finansów i rachunki firmy. Przykład działa jednym kliknięciem.",
+    "NIP sprawdzisz w 10 s, bez logowania: status VAT w wykazie Ministerstwa Finansów i rachunki firmy. Przykład działa jednym kliknięciem.",
   alternates: { canonical: "/sprawdzenie-nip" },
   openGraph: {
     title: "Sprawdzenie NIP w 10 s: status VAT, bez logowania | Fluxlab",
@@ -36,7 +36,7 @@ const czytelnik = [
   },
   {
     q: "Czy firma jest w wykazie i czy jest czynnym podatnikiem",
-    a: "Brak wpisu albo status zwolniony zmienia Wasze prawo do odliczenia VAT z faktury.",
+    a: "Brak wpisu albo status zwolniony zmienia Twoje prawo do odliczenia VAT z faktury.",
   },
   {
     q: "Ile rachunków zgłosiła i od kiedy działa",
@@ -51,7 +51,7 @@ const faq = [
   },
   {
     q: "Czy sprawdzicie, czy konto do przelewu należy do tej firmy?",
-    a: "Tak, w płatnym raporcie. Porównujemy Wasz numer z listą rachunków zgłoszonych przez firmę.",
+    a: "Tak, w płatnym raporcie. Porównujemy Twój numer z listą rachunków zgłoszonych przez firmę.",
   },
   {
     q: "Od jakiej kwoty trzeba sprawdzać rachunek w wykazie?",
@@ -59,7 +59,7 @@ const faq = [
   },
   {
     q: "Zapłaciliśmy na rachunek spoza wykazu, co teraz?",
-    a: "Złóżcie zawiadomienie ZAW-NR do urzędu skarbowego w ciągu 7 dni od zlecenia przelewu. To wyłącza sankcje, po terminie już się nie da.",
+    a: "Złóż zawiadomienie ZAW-NR do urzędu skarbowego w ciągu 7 dni od zlecenia przelewu. To wyłącza sankcje, po terminie już się nie da.",
   },
 ];
 
@@ -81,7 +81,7 @@ export default function SprawdzenieNipPage() {
               Sprawdzenie NIP VAT w wykazie MF
             </h1>
             <p className="mt-5 text-lg text-gray-600 dark:text-gray-300">
-              Czy firma jest czynnym podatnikiem VAT? Wpiszcie NIP, wynik z
+              Czy firma jest czynnym podatnikiem VAT? Wpisz NIP, wynik z
               białej listy MF w 10 s.
             </p>
           </div>
@@ -122,7 +122,7 @@ export default function SprawdzenieNipPage() {
                 href="/sprawdz-kontrahenta"
                 className="font-semibold text-accent hover:underline"
               >
-                Zobaczcie pełny raport o kontrahencie, za darmo
+                Zobacz pełny raport o kontrahencie, za darmo
               </Link>
             </p>
           </div>

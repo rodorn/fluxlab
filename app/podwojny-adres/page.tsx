@@ -5,12 +5,12 @@ import AdresCheck from "@/components/AdresCheck";
 export const metadata: Metadata = {
   title: "Czy Google widzi stronę podwójnie, za darmo | Fluxlab",
   description:
-    "Adres z www i bez www to dla wyszukiwarki dwie strony. Jeśli obie dają tę samą treść, siła linków dzieli się na pół. Sprawdźcie za darmo cztery wersje.",
+    "Adres z www i bez www to dla wyszukiwarki dwie strony. Jeśli obie dają tę samą treść, siła linków dzieli się na pół. Sprawdź za darmo cztery wersje.",
   alternates: { canonical: "/podwojny-adres" },
   openGraph: {
     title: "Czy Google widzi stronę podwójnie, za darmo | Fluxlab",
     description:
-      "Sprawdzenie czterech wersji adresu firmy, od ręki i bez rejestracji. Pokazujemy, czy wyszukiwarka liczy Waszą stronę raz, czy dwa razy.",
+      "Sprawdzenie czterech wersji adresu firmy, od ręki i bez rejestracji. Pokazujemy, czy wyszukiwarka liczy Twoją stronę raz, czy dwa razy.",
     locale: "pl_PL",
     type: "website",
     images: [
@@ -31,9 +31,9 @@ export default function Page() {
       tool={<AdresCheck />}
       breadcrumb="Podwójny adres"
       eyebrow="Pozycje w wyszukiwarce"
-      h1="Wasza strona może odpowiadać pod dwoma adresami naraz"
+      h1="Twoja strona może odpowiadać pod dwoma adresami naraz"
       lead="Dla wyszukiwarki firma.pl i www.firma.pl to dwa adresy. Jeśli oba dają tę samą treść, linki i widoczność dzielą się na dwie strony zamiast budować jedną."
-      ctaLabel="Sprawdźcie swój adres"
+      ctaLabel="Sprawdź swój adres"
       ctaNote="Sprawdzenie za darmo, od ręki"
       checks={[
         {
@@ -49,8 +49,8 @@ export default function Page() {
           desc: "Sprawdzamy, czy jest znacznik kanoniczny i na co wskazuje.",
         },
         {
-          title: "Reguła pod Wasz serwer",
-          desc: "Przekierowanie dla nginx, Apache albo WordPressa, zależnie od tego, co macie.",
+          title: "Reguła pod Twój serwer",
+          desc: "Przekierowanie dla nginx, Apache albo WordPressa, zależnie od tego, co masz.",
         },
       ]}
       pricing={[
@@ -70,7 +70,7 @@ export default function Page() {
           desc: "Diagnoza z gotową regułą.",
           features: [
             "wybór wersji głównej wraz z uzasadnieniem",
-            "reguła przekierowania pod Wasz serwer",
+            "reguła przekierowania pod Twój serwer",
             "wskazanie wersji głównej w kodzie strony",
             "kontrolne sprawdzenie po wdrożeniu",
           ],
@@ -90,7 +90,7 @@ export default function Page() {
       faq={[
         {
           q: "Skąd wiadomo, że to naprawdę szkodzi?",
-          a: "Mierzymy, czy treść pod dwoma adresami jest identyczna. Ile pozycji tracicie, pokaże dopiero Wasza Search Console.",
+          a: "Mierzymy, czy treść pod dwoma adresami jest identyczna. Ile pozycji tracisz, pokaże dopiero Twoja Search Console.",
         },
         {
           q: "Mamy znacznik kanoniczny, czy to wystarczy?",
@@ -106,10 +106,10 @@ export default function Page() {
         },
       ]}
       formId="order_podwojny_adres"
-      formIntro="Napiszcie, na jakim serwerze albo systemie działa strona. Odeślemy gotową regułę."
-      formHeading="Zamówcie naprawę adresu"
+      formIntro="Napisz, na jakim serwerze albo systemie działa strona. Odeślemy gotową regułę."
+      formHeading="Zamów naprawę adresu"
       submitLabel="Zamawiam naprawę"
-      microCopy="Do sprawdzenia nie potrzebujemy dostępów. Regułę możemy przekazać Waszemu informatykowi."
+      microCopy="Do sprawdzenia nie potrzebujemy dostępów. Regułę możemy przekazać Twojemu informatykowi."
       serviceName="Ujednolicenie adresu strony firmowej"
       serviceDesc="Wskazanie wersji kanonicznej adresu, przygotowanie i wdrożenie przekierowania oraz znacznika wersji głównej, wraz z kontrolnym sprawdzeniem po wdrożeniu. Od 190 zł."
       serviceType="Konfiguracja przekierowań i adresu kanonicznego strony"

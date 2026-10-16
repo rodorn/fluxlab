@@ -6,7 +6,7 @@ const CEIDG = PODMIOTY.find((p) => p.klucz === "ceidg-stare")!;
 export const runtime = "edge";
 
 export const alt =
-  "Sprawdzenie e-Doręczeń w jednym kliknięciu: od kiedy Wasza firma musi mieć adres do doręczeń elektronicznych i ile dni zostało do terminu albo minęło od niego";
+  "Sprawdzenie e-Doręczeń w jednym kliknięciu: od kiedy Twoja firma musi mieć adres do doręczeń elektronicznych i ile dni zostało do terminu albo minęło od niego";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -52,7 +52,7 @@ export default async function OGImage() {
             lineHeight: 1.1,
           }}
         >
-          Od kiedy Wasza firma musi mieć adres do e-Doręczeń?
+          Od kiedy Twoja firma musi mieć adres do e-Doręczeń?
         </div>
       </div>
       <div style={{ display: "flex", alignItems: "baseline", gap: "28px" }}>

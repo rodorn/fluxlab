@@ -114,7 +114,7 @@ export async function POST(request: Request) {
 
   if (!/^[a-z0-9.-]+\.[a-z]{2,}$/.test(domena)) {
     return NextResponse.json(
-      { error: "Podajcie sam adres strony, na przykład twojafirma.pl" },
+      { error: "Podaj sam adres strony, na przykład twojafirma.pl" },
       { status: 400 },
     );
   }
@@ -126,7 +126,7 @@ export async function POST(request: Request) {
       status: "BRAK_STRONY",
       naglowek: "Nie możemy otworzyć tej strony",
       opis:
-        "Strona nie odpowiedziała albo odrzuciła połączenie. Sprawdźcie pisownię adresu. Jeśli jest poprawny, sprawdzimy ją ręcznie i odeślemy wynik.",
+        "Strona nie odpowiedziała albo odrzuciła połączenie. Sprawdź pisownię adresu. Jeśli jest poprawny, sprawdzimy ją ręcznie i odeślemy wynik.",
     });
   }
 
@@ -155,7 +155,7 @@ export async function POST(request: Request) {
       status: "BRAK_WERSJI",
       naglowek: "Nie znaleźliśmy obcojęzycznej wersji tej strony",
       opis:
-        "Nie widzimy ani odnośników do wersji językowych, ani znaczników, po których wyszukiwarka je rozpoznaje. Jeśli wersja obcojęzyczna istnieje pod innym adresem, podajcie go wprost, a sprawdzimy właśnie ją.",
+        "Nie widzimy ani odnośników do wersji językowych, ani znaczników, po których wyszukiwarka je rozpoznaje. Jeśli wersja obcojęzyczna istnieje pod innym adresem, podaj go wprost, a sprawdzimy właśnie ją.",
     });
   }
 

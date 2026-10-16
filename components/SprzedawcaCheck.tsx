@@ -115,7 +115,7 @@ export default function SprzedawcaCheck() {
       setWynik(data);
       setStan("gotowe");
     } catch {
-      setBlad("Brak połączenia. Spróbujcie ponownie za chwilę.");
+      setBlad("Brak połączenia. Spróbuj ponownie za chwilę.");
       setStan("blad");
     }
   }
@@ -153,7 +153,7 @@ export default function SprzedawcaCheck() {
       }
       setLeadStan("ok");
     } catch {
-      setLeadBlad("Brak połączenia. Spróbujcie ponownie za chwilę.");
+      setLeadBlad("Brak połączenia. Spróbuj ponownie za chwilę.");
       setLeadStan("blad");
     }
   }
@@ -164,14 +164,14 @@ export default function SprzedawcaCheck() {
   return (
     <div className="rounded-2xl border border-gray-200/80 dark:border-gray-800/80 bg-white/70 dark:bg-gray-900/50 p-6 md:p-8">
       <h2 className="text-xl font-bold text-gray-900 dark:text-white">
-        Sprawdźcie, czy klient ustali ze strony, komu płaci
+        Sprawdź, czy klient ustali ze strony, komu płaci
       </h2>
       <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-        Księgowość firmy, która ma Wam zapłacić, przed przelewem sprawdza
+        Księgowość firmy, która ma tobie zapłacić, przed przelewem sprawdza
         sprzedawcę w wykazie podatników VAT. Potrzebuje do tego NIP-u, a przy
         większych kwotach także numeru konta. Zaglądamy na stronę główną, kontakt
         i regulamin, wyciągamy te dane i sprawdzamy je w wykazie tak samo, jak
-        zrobi to Wasz klient.
+        zrobi to Twój klient.
       </p>
       <Przyklady
         pozycje={[
@@ -197,7 +197,7 @@ export default function SprzedawcaCheck() {
           disabled={stan === "ladowanie"}
           className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
         >
-          {stan === "ladowanie" ? "Sprawdzamy..." : "Sprawdźcie dane sprzedawcy"}
+          {stan === "ladowanie" ? "Sprawdzamy..." : "Sprawdź dane sprzedawcy"}
         </button>
       </form>
 
@@ -341,7 +341,7 @@ export default function SprzedawcaCheck() {
           <div className="mt-5 border-t border-gray-200/70 dark:border-gray-700/70 pt-4">
             <p className="text-sm text-gray-700 dark:text-gray-300">
               {wynik.werdykt === "ZIELONY"
-                ? "Nie mamy Wam tu nic do sprzedania. Jeśli macie więcej domen albo oddziałów, możemy sprawdzić wszystkie naraz i pilnować, czy coś się w wykazie nie zmieniło."
+                ? "Nie mamy ci tu nic do sprzedania. Jeśli masz więcej domen albo oddziałów, możemy sprawdzić wszystkie naraz i pilnować, czy coś się w wykazie nie zmieniło."
                 : "Naprawa jest tania: brakujące dane w stopce i w regulaminie plus znacznik, po którym wyszukiwarka i narzędzia zakupowe odczytają je automatycznie. Odsyłamy gotowy fragment do wklejenia, nie samą diagnozę."}
             </p>
 
@@ -356,7 +356,7 @@ export default function SprzedawcaCheck() {
                   htmlFor="sprzedawca-email"
                   className="block text-sm font-medium text-gray-900 dark:text-white"
                 >
-                  Podajcie maila, odeślemy gotowy fragment do wklejenia w stopkę
+                  Podaj maila, odeślemy gotowy fragment do wklejenia w stopkę
                 </label>
                 <div className="mt-2 flex flex-col gap-3 sm:flex-row">
                   <input
@@ -373,7 +373,7 @@ export default function SprzedawcaCheck() {
                     disabled={leadStan === "wysylamy"}
                     className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
                   >
-                    {leadStan === "wysylamy" ? "Wysyłamy..." : "Wyślijcie zgłoszenie"}
+                    {leadStan === "wysylamy" ? "Wysyłamy..." : "Wyślij zgłoszenie"}
                   </button>
                 </div>
                 {leadStan === "blad" && (

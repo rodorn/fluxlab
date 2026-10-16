@@ -133,7 +133,7 @@ export const SEKCJE: Sekcja[] = [
       {
         nazwa: "Dla osób prywatnych",
         strony: [
-          s("/sprawdz-auto", "Sprawdźcie auto przed zakupem"),
+          s("/sprawdz-auto", "Sprawdź auto przed zakupem"),
           s("/import-radar", "ImportRadar DE→PL"),
           s("/dobor-samochodu", "Dobór samochodu"),
           s("/kalkulator-kosztow", "Kalkulator kosztów auta"),

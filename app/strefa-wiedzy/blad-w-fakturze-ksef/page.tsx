@@ -35,11 +35,11 @@ export const metadata: Metadata = {
 const faq = [
   {
     q: "Czy fakturę w KSeF da się anulować albo usunąć?",
-    a: "Nie. Faktura z numerem KSeF zostaje w systemie na zawsze, więc błąd poprawiacie fakturą korygującą, w razie potrzeby do zera.",
+    a: "Nie. Faktura z numerem KSeF zostaje w systemie na zawsze, więc błąd poprawiasz fakturą korygującą, w razie potrzeby do zera.",
   },
   {
     q: "Ile korekt można wystawić do jednej faktury?",
-    a: "Bez limitu. Wystawiacie tyle korekt, ile trzeba, żeby faktura była w końcu prawidłowa.",
+    a: "Bez limitu. Wystawiasz tyle korekt, ile trzeba, żeby faktura była w końcu prawidłowa.",
   },
   {
     q: "Klient chce korekty do zera, bo brakuje numeru zamówienia. Musimy?",
@@ -47,7 +47,7 @@ const faq = [
   },
   {
     q: "Jedna korekta do kilku faktur?",
-    a: "Można, ale korekta zbiorcza musi wskazać każdą fakturę pierwotną: numer nadany przez Was, numer KSeF i datę wystawienia.",
+    a: "Można, ale korekta zbiorcza musi wskazać każdą fakturę pierwotną: numer nadany przez ciebie, numer KSeF i datę wystawienia.",
   },
 ];
 
@@ -91,7 +91,7 @@ export default function BladWFakturzeKsefArticle() {
                 </li>
                 <li>
                   Plik odrzucony przez KSeF: faktura nie powstała, więc
-                  wysyłacie nowy, poprawny plik zamiast korekty.
+                  wysyłasz nowy, poprawny plik zamiast korekty.
                 </li>
               </ul>
             </section>
@@ -140,7 +140,7 @@ export default function BladWFakturzeKsefArticle() {
             <PrevNextArticle currentHref="/strefa-wiedzy/blad-w-fakturze-ksef" />
           </div>
         </div>
-        <CTA naglowek="Chcecie, żeby faktury z KSeF same trafiały do księgowości?" />
+        <CTA naglowek="Chcesz, żeby faktury z KSeF same trafiały do księgowości?" />
       </main>
       <Footer />
 

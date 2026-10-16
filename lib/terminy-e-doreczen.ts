@@ -22,7 +22,7 @@ export const PODMIOTY: Podmiot[] = [
     opis:
       "Przedsiębiorcy wpisani do CEIDG do 31 grudnia 2024 mają obowiązek posiadania adresu do doręczeń elektronicznych od 1 października 2026. Adres można założyć wcześniej, wniosek jest bezpłatny i składa się go przez Biznes.gov.pl.",
     uwaga:
-      "Jeżeli po 30 czerwca 2025 składaliście jakikolwiek wniosek o zmianę wpisu w CEIDG, dane do utworzenia adresu trzeba było podać już przy tamtym wniosku, czyli termin minął wcześniej.",
+      "Jeżeli po 30 czerwca 2025 złożono jakikolwiek wniosek o zmianę wpisu w CEIDG, dane do utworzenia adresu trzeba było podać już przy tamtym wniosku, czyli termin minął wcześniej.",
   },
   {
     klucz: "ceidg-nowe",

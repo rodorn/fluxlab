@@ -82,7 +82,7 @@ export default function AutomatyzacjaRaportowania() {
             </p>
             <div>
               <a href="#sekcje" className="btn-primary">
-                Policzcie zakres wyceny
+                Policz zakres wyceny
               </a>
             </div>
           </div>
@@ -102,7 +102,7 @@ export default function AutomatyzacjaRaportowania() {
                         Ile to kosztuje
                       </h2>
                       <p className="text-gray-600 dark:text-gray-300 mb-8">
-                        Zaznaczcie, co u Was występuje, a zobaczycie zakres
+                        Zaznacz, co u Ciebie występuje, a zobaczysz zakres
                         ceny od razu.
                       </p>
                       <ZakresWyceny wycena={WYCENA_RAPORTOWANIE} />
@@ -180,8 +180,8 @@ export default function AutomatyzacjaRaportowania() {
                   >
                     <LandingForm
                       formId="diagnosis_raport"
-                      heading="Sprawdźmy Wasz proces raportowania"
-                      intro="Napiszcie, skąd pochodzą dane i jak często składacie raport. Odpowiemy, czy da się go zautomatyzować."
+                      heading="Sprawdźmy Twój proces raportowania"
+                      intro="Napisz, skąd pochodzą dane i jak często składasz raport. Odpowiemy, czy da się go zautomatyzować."
                       submitLabel="Chcemy diagnozę raportowania"
                     />
                   </section>

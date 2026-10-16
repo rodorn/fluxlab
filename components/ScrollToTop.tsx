@@ -38,7 +38,7 @@ export default function ScrollToTop() {
     <button
       type="button"
       onClick={scrollUp}
-      aria-label="Wróćcie na górę strony"
+      aria-label="Wróć na górę strony"
       tabIndex={visible ? 0 : -1}
       className={`fixed bottom-6 right-6 z-40 w-11 h-11 rounded-xl flex items-center justify-center bg-accent-solid text-white shadow-lg shadow-accent/30 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 ${
         visible

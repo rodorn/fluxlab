@@ -170,7 +170,7 @@ export default function ZapierMakeN8nPorownanieArticle() {
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         n8n: 1-2 godziny na start, najwięcej możliwości (kod w
                         JavaScript lub Pythonie, pod-scenariusze). Dla osoby z
-                        biznesu wybierzcie Zapier lub Make, dla osoby
+                        biznesu wybierz Zapier lub Make, dla osoby
                         technicznej n8n.
                       </p>
                     </div>
@@ -192,7 +192,7 @@ export default function ZapierMakeN8nPorownanieArticle() {
                       </p>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         n8n self-hosted to jedyna opcja on-premise: dane nie
-                        wychodzą poza Waszą sieć. To standard w finansach i
+                        wychodzą poza Twoją sieć. To standard w finansach i
                         zdrowiu.
                       </p>
 
@@ -202,7 +202,7 @@ export default function ZapierMakeN8nPorownanieArticle() {
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Zapier, Make i n8n.cloud to SaaS: producent dba o
                         serwery i aktualizacje. Przy n8n self-hosted serwer,
-                        aktualizacje, kopie i monitoring są po Waszej stronie,
+                        aktualizacje, kopie i monitoring są po Twojej stronie,
                         zwykle 1-3 godziny miesięcznie.
                       </p>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
@@ -245,13 +245,13 @@ export default function ZapierMakeN8nPorownanieArticle() {
 
                       <div className="bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-8 text-center mt-12">
                         <h2 className="h2-sekcji mb-6">
-                          Chcecie dobrać narzędzie pod swoje procesy?
+                          Chcesz dobrać narzędzie pod swoje procesy?
                         </h2>
                         <p className="text-gray-600 dark:text-gray-400 mb-4">
                           Policzymy roczny koszt każdego z trzech narzędzi i zbudujemy pierwsze scenariusze.
                         </p>
                         <Link href="/automatyzacja-leadow-crm" className="btn-primary inline-block">
-                          Zobaczcie usługę automatyzacji procesów
+                          Zobacz usługę automatyzacji procesów
                         </Link>
                       </div>
                     </div>
@@ -309,7 +309,7 @@ export default function ZapierMakeN8nPorownanieArticle() {
 
                       <div className="mt-12">
                         <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                          Zobaczcie też
+                          Zobacz też
                         </h3>
                         <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400">
                           <li>

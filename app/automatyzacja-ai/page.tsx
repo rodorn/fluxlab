@@ -113,7 +113,7 @@ export default function AutomatyzacjaAI() {
                         >
                           AI w automatyzacji firm
                         </Link>
-                        . Bot już odpowiada klientom? Zacznijcie od{" "}
+                        . Bot już odpowiada klientom? Zacznij od{" "}
                         <Link
                           href="/audyt-chatbota"
                           className="text-accent hover:underline"
@@ -173,7 +173,7 @@ export default function AutomatyzacjaAI() {
                       <LandingForm
                         formId="diagnosis_ai"
                         heading="Sprawdźmy, gdzie AI ma sens"
-                        intro="Opiszcie, co dziś robi człowiek ręcznie, na jakich danych i w jakiej skali. Odpowiemy, czy AI to rozwiąże."
+                        intro="Opisz, co dziś robi człowiek ręcznie, na jakich danych i w jakiej skali. Odpowiemy, czy AI to rozwiąże."
                         submitLabel="Sprawdźmy, gdzie AI ma sens"
                       />
                     </div>

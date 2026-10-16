@@ -5,15 +5,15 @@ import EDoreczeniaCheck from "@/components/EDoreczeniaCheck";
 import { PODMIOTY } from "@/lib/terminy-e-doreczen";
 
 export const metadata: Metadata = {
-  title: "Od kiedy adres do e-Doręczeń? Sprawdźcie po KRS | Fluxlab",
+  title: "Od kiedy adres do e-Doręczeń? Sprawdź po KRS | Fluxlab",
   description:
     "Jednoosobowa firma z CEIDG wpisana przed 2025 ma obowiązek od 1 października 2026, spółka od 1 kwietnia 2025. Termin i odpis po KRS w 10 sekund.",
   alternates: { canonical: "/e-doreczenia-integracja" },
   openGraph: {
     title:
-      "Od kiedy Wasza firma musi mieć adres do e-Doręczeń? Sprawdzenie w jednym kliknięciu",
+      "Od kiedy Twoja firma musi mieć adres do e-Doręczeń? Sprawdzenie w jednym kliknięciu",
     description:
-      "Wybieracie formę działalności, a wynik pokazuje termin obowiązku, ile dni zostało albo minęło i co zrobić dalej. Firmy z CEIDG wpisane przed 2025 mają obowiązek od 1 października 2026. Bez rejestracji.",
+      "Wybierasz formę działalności, a wynik pokazuje termin obowiązku, ile dni zostało albo minęło i co zrobić dalej. Firmy z CEIDG wpisane przed 2025 mają obowiązek od 1 października 2026. Bez rejestracji.",
     locale: "pl_PL",
     type: "website",
   },
@@ -40,7 +40,7 @@ export default function EDoreczeniaIntegracja() {
               </p>
               <p>
                 5 października 2026 sprawdziliśmy tak 119 spółek: 27 z nich
-                nadal nie ma adresu w bazie. Wpiszcie numer KRS w narzędziu
+                nadal nie ma adresu w bazie. Wpisz numer KRS w narzędziu
                 powyżej, w trybie „Spółka: po numerze KRS”, a pokażemy, czy
                 adres jest w odpisie.
               </p>
@@ -51,8 +51,8 @@ export default function EDoreczeniaIntegracja() {
       breadcrumb="Integracja z e-Doręczeniami"
       eyebrow="e-Doręczenia"
       h1="Integracja z e-Doręczeniami"
-      lead="Skrzynka do e-Doręczeń jest obowiązkowa, ale nie musicie obsługiwać jej ręcznie w osobnym panelu. Spinamy ją z Waszym systemem: pisma i dowody doręczenia trafiają tam, gdzie pracujecie."
-      ctaLabel="Sprawdźcie swój termin"
+      lead="Skrzynka do e-Doręczeń jest obowiązkowa, ale nie musisz obsługiwać jej ręcznie w osobnym panelu. Spinamy ją z Twoim systemem: pisma i dowody doręczenia trafiają tam, gdzie pracujesz."
+      ctaLabel="Sprawdź swój termin"
       ctaNote="Dwa kliknięcia, bez wpisywania czegokolwiek"
       powiazane={[
         {
@@ -65,14 +65,14 @@ export default function EDoreczeniaIntegracja() {
       checks={[
         {
           title: "Otwarty klient tego API, do obejrzenia przed decyzją",
-          desc: "Kod leży publicznie na github.com/rodorn/edoreczenia-klient, na licencji MIT. Możecie go ocenić sami albo dać swojemu programiście.",
+          desc: "Kod leży publicznie na github.com/rodorn/edoreczenia-klient, na licencji MIT. Możesz go ocenić sami albo dać swojemu programiście.",
         },
         {
           title: "Pobieramy dowody doręczenia, nie tylko pisma",
           desc: "Dowody są osobnym zasobem. Bez nich integracja nie ma wartości dowodowej, a to jedyny powód, dla którego się ją robi.",
         },
         {
-          title: "Pisma trafiają tam, gdzie już pracujecie",
+          title: "Pisma trafiają tam, gdzie już pracujesz",
           desc: (
             <>
               Do obiegu dokumentów, CRM, skrzynki albo{" "}
@@ -95,9 +95,9 @@ export default function EDoreczeniaIntegracja() {
         {
           name: "Rozpoznanie",
           price: "0 zł",
-          desc: "Zanim cokolwiek zlecicie.",
+          desc: "Zanim cokolwiek zlecisz.",
           features: [
-            "Czy i czym da się spiąć Wasz system",
+            "Czy i czym da się spiąć Twój system",
             "Przy jakiej liczbie pism to się zwraca",
           ],
         },
@@ -106,16 +106,16 @@ export default function EDoreczeniaIntegracja() {
           price: "1 490 zł",
           desc: "Najczęstszy zakres na start.",
           features: [
-            "Pisma i dowody doręczenia w Waszym systemie",
+            "Pisma i dowody doręczenia w Twoim systemie",
             "Powiadomienie o nowym piśmie",
-            "Kod i dostępy zostają u Was",
+            "Kod i dostępy zostają u ciebie",
           ],
           featured: true,
         },
         {
           name: "Odbiór i wysyłka",
           price: "2 900 zł",
-          desc: "Z wysyłaniem pism z Waszego systemu.",
+          desc: "Z wysyłaniem pism z Twojego systemu.",
           features: [
             "Wszystko z odbioru pism",
             "Wysyłka z załącznikami i ponowieniami",
@@ -144,14 +144,14 @@ export default function EDoreczeniaIntegracja() {
         },
         {
           q: "Czy dane pism wychodzą poza naszą firmę?",
-          a: "Nie muszą. Integrację stawiamy na Waszym serwerze i pisma idą tylko między usługą a Waszym systemem.",
+          a: "Nie muszą. Integrację stawiamy na Twoim serwerze i pisma idą tylko między usługą a Twoim systemem.",
         },
       ]}
       formId="edoreczenia"
-      formHeading="Napiszcie, z jakiego systemu korzystacie"
+      formHeading="Napisz, z jakiego systemu korzystasz"
       formIntro="Nazwa systemu i liczba pism miesięcznie wystarczą. Odpiszemy, czy integracja ma sens, czy panel wystarczy."
-      submitLabel="Wyślijcie opis"
-      microCopy="Ustalenia prowadzimy mailowo. Telefon, jeśli tak Wam wygodniej."
+      submitLabel="Wyślij opis"
+      microCopy="Ustalenia prowadzimy mailowo. Telefon, jeśli tak ci wygodniej."
       serviceName="Integracja z e-Doręczeniami"
       serviceDesc="Spięcie skrzynki do doręczeń elektronicznych z systemem obiegu dokumentów, CRM albo inną aplikacją: odbiór pism, pobieranie dowodów doręczenia, wysyłka z załącznikami."
       serviceType="Integracja systemów informatycznych"

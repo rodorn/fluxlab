@@ -32,26 +32,26 @@ const PUNKTY: Punkt[] = [
     zmiana:
       "1 stycznia 2027 znika limit 10 tys. zł brutto miesięcznie na faktury wystawiane poza KSeF. Od tego dnia każda faktura dla firmy musi przejść przez system.",
     zrobic:
-      "Jeżeli choć część faktur powstaje w Wordzie, w Excelu albo w programie bez KSeF, przenieście je do programu z KSeF albo do darmowej Aplikacji Podatnika KSeF jeszcze w 2026, kiedy pomyłka nic nie kosztuje.",
+      "Jeżeli choć część faktur powstaje w Wordzie, w Excelu albo w programie bez KSeF, przenieś je do programu z KSeF albo do darmowej Aplikacji Podatnika KSeF jeszcze w 2026, kiedy pomyłka nic nie kosztuje.",
   },
   {
     klucz: "kasa",
     pytanie:
-      "Czy macie ustalone, gdzie od stycznia powstanie faktura do sprzedaży z kasy?",
+      "Czy masz ustalone, gdzie od stycznia powstanie faktura do sprzedaży z kasy?",
     zmiana:
       "Faktury wystawiane przy użyciu kasy rejestrującej, w tym paragony z NIP do 450 zł uznawane za faktury uproszczone, są poza KSeF tylko do 31 grudnia 2026.",
     zrobic:
-      "Jeżeli sprzedajecie przez kasę, a klienci proszą o fakturę, wybierzcie program, w którym ta faktura powstanie od stycznia, i przećwiczcie to na jednym dokumencie. Jeżeli nie macie kasy, ten punkt Was nie dotyczy.",
+      "Jeżeli sprzedajesz przez kasę, a klienci proszą o fakturę, wybierz program, w którym ta faktura powstanie od stycznia, i przećwicz to na jednym dokumencie. Jeżeli nie masz kasy, ten punkt Cię nie dotyczy.",
   },
   {
     klucz: "przelew",
     linki: [{ fraza: "35-znakowy numer KSeF", href: "/numer-ksef" }],
     pytanie:
-      "Czy numer KSeF faktury kosztowej jest pod ręką, kiedy robicie przelew?",
+      "Czy numer KSeF faktury kosztowej jest pod ręką, kiedy robisz przelew?",
     zmiana:
       "Od 1 stycznia 2027 przelew za fakturę z KSeF między czynnymi podatnikami VAT ma zawierać jej 35-znakowy numer KSeF. Przy zapłacie za wiele faktur jednego kontrahenta wystarczy jeden identyfikator zbiorczy wygenerowany w KSeF. Nie dotyczy to płatności kartą, BLIK-iem ani gotówką.",
     zrobic:
-      "Sprawdźcie, czy numer KSeF trafia z programu księgowego do pliku przelewów albo do banku. Jeżeli przelewy robi ktoś, kto widzi tylko PDF faktury, numer będzie przepisywany ręcznie przy każdej płatności.",
+      "Sprawdź, czy numer KSeF trafia z programu księgowego do pliku przelewów albo do banku. Jeżeli przelewy robi ktoś, kto widzi tylko PDF faktury, numer będzie przepisywany ręcznie przy każdej płatności.",
   },
   {
     klucz: "koszty",
@@ -63,17 +63,17 @@ const PUNKTY: Punkt[] = [
     zmiana:
       "Faktura od dostawcy jest uznana za otrzymaną w dniu nadania jej numeru w KSeF. Dostawca nie musi już wysyłać jej mailem, więc termin płatności biegnie także wtedy, gdy nikt do systemu nie zajrzał.",
     zrobic:
-      "Ustalcie, kto i jak często pobiera faktury zakupowe i dokąd one trafiają. Bez tego o fakturze dowiecie się dopiero z upomnienia dostawcy.",
+      "Ustal, kto i jak często pobiera faktury zakupowe i dokąd one trafiają. Bez tego o fakturze dowiesz się dopiero z upomnienia dostawcy.",
   },
   {
     klucz: "offline",
     linki: [{ fraza: "Gdy KSeF nie działa", href: "/strefa-wiedzy/faktura-gdy-ksef-nie-dziala" }],
     pytanie:
-      "Czy macie certyfikat KSeF do wystawiania faktur w trybie offline?",
+      "Czy masz certyfikat KSeF do wystawiania faktur w trybie offline?",
     zmiana:
       "Gdy KSeF nie działa albo nie ma internetu, fakturę wystawia się w trybie offline i wysyła do systemu później. Taka faktura przekazana klientowi poza systemem musi mieć dwa kody QR, a drugiego nie da się wygenerować bez certyfikatu KSeF typu 2, ważnego 2 lata.",
     zrobic:
-      "Wygenerujcie certyfikat w Aplikacji Podatnika KSeF teraz, a nie w dniu awarii. Ministerstwo Finansów zapowiedziało, że tokeny do logowania zostaną po 31 grudnia 2026 r., ale na 4.10.2026 rozporządzenie nadal wskazuje ten termin, więc certyfikat jest też zapasem na wypadek, gdyby nowelizacja nie zdążyła.",
+      "Wygeneruj certyfikat w Aplikacji Podatnika KSeF teraz, a nie w dniu awarii. Ministerstwo Finansów zapowiedziało, że tokeny do logowania zostaną po 31 grudnia 2026 r., ale na 4.10.2026 rozporządzenie nadal wskazuje ten termin, więc certyfikat jest też zapasem na wypadek, gdyby nowelizacja nie zdążyła.",
   },
   {
     klucz: "numeracja",
@@ -83,15 +83,15 @@ const PUNKTY: Punkt[] = [
     zmiana:
       "KSeF odrzuca fakturę z kodem błędu 440 „Duplikat faktury”, jeśli ten sam NIP sprzedawcy wysłał już fakturę tego samego rodzaju z identycznym numerem, a sprawdza to 10 lat wstecz. Kto w 2026 wystawiał faktury w KSeF, zeruje numerację co roku i nie ma roku w numerze (FV 1, FV 2…), dostanie odrzucenie już pierwszej faktury w styczniu 2027, bo „FV 1” przeszła przez KSeF rok wcześniej.",
     zrobic:
-      "Sprawdźcie wzór numeru w programie do faktur. Jeżeli nie ma w nim roku, dopiszcie go przed pierwszą fakturą w 2027, np. 1/01/2027. To samo przy zmianie programu: nowa seria nie może powtarzać numerów wysłanych ze starego.",
+      "Sprawdź wzór numeru w programie do faktur. Jeżeli nie ma w nim roku, dopisz go przed pierwszą fakturą w 2027, np. 1/01/2027. To samo przy zmianie programu: nowa seria nie może powtarzać numerów wysłanych ze starego.",
   },
   {
     klucz: "odrzucenia",
     linki: [{ fraza: "Faktura odrzucona po cichu", href: "/strefa-wiedzy/blad-w-fakturze-ksef" }],
     pytanie:
-      "Czy widzicie, która faktura została odrzucona albo jeszcze nie wysłana?",
+      "Czy widzisz, która faktura została odrzucona albo jeszcze nie wysłana?",
     zmiana:
-      "Kary z art. 106ni ustawy o VAT, czyli do 100% kwoty VAT z faktury wystawionej poza KSeF albo do 18,7% kwoty należności przy fakturze bez VAT, miały zacząć obowiązywać 1 stycznia 2027. Ministerstwo Finansów zapowiedziało 16 września 2026, że przesunie je na 1 stycznia 2028, a 23 września 2026 opublikowało projekt tej ustawy na stronie Rządowego Centrum Legislacji (numer w wykazie prac rządu UD477, legislacja.rcl.gov.pl/projekt/12414954). To na dziś projekt, a nie uchwalone prawo, więc nie planujcie w oparciu o pewność, że kary nie przyjdą wcześniej. Sam obowiązek wystawiania faktur w KSeF nie jest zawieszony ani o jeden dzień, a brak automatycznej kary to nie brak konsekwencji: urząd widzi w JPK_V7 znaczniki faktur, które nie przeszły przez KSeF, i wzywa do wyjaśnienia, zanim w ogóle dojdzie do kary. Według projektu w 2027 urząd najpierw przypomina o obowiązku, a gdy firma nie zareaguje, sprawdza jej rozliczenia.",
+      "Kary z art. 106ni ustawy o VAT, czyli do 100% kwoty VAT z faktury wystawionej poza KSeF albo do 18,7% kwoty należności przy fakturze bez VAT, miały zacząć obowiązywać 1 stycznia 2027. Ministerstwo Finansów zapowiedziało 16 września 2026, że przesunie je na 1 stycznia 2028, a 23 września 2026 opublikowało projekt tej ustawy na stronie Rządowego Centrum Legislacji (numer w wykazie prac rządu UD477, legislacja.rcl.gov.pl/projekt/12414954). To na dziś projekt, a nie uchwalone prawo, więc nie planuj w oparciu o pewność, że kary nie przyjdą wcześniej. Sam obowiązek wystawiania faktur w KSeF nie jest zawieszony ani o jeden dzień, a brak automatycznej kary to nie brak konsekwencji: urząd widzi w JPK_V7 znaczniki faktur, które nie przeszły przez KSeF, i wzywa do wyjaśnienia, zanim w ogóle dojdzie do kary. Według projektu w 2027 urząd najpierw przypomina o obowiązku, a gdy firma nie zareaguje, sprawdza jej rozliczenia.",
     zrobic:
       "Program albo integracja muszą pokazywać stan każdej faktury: przyjęta z numerem KSeF, odrzucona albo czekająca na wysłanie po trybie offline. Faktura odrzucona po cichu wygląda w systemie tak samo jak wystawiona.",
   },
@@ -151,12 +151,12 @@ export default function ListaKsef2027({
       {naglowek && (
         <>
           <h2 className="text-xl font-bold text-gray-900 dark:text-white">
-            Lista na 1 stycznia 2027: co musicie mieć domknięte
+            Lista na 1 stycznia 2027: co musisz mieć domknięte
           </h2>
           <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
             Kary mają zostać przesunięte na 2028 rok, ale obowiązki z tej listy
-            zaczynają się w styczniu 2027. Przy każdym pytaniu zaznaczcie, czy
-            macie to załatwione, a na końcu dostaniecie wykaz braków dla
+            zaczynają się w styczniu 2027. Przy każdym pytaniu zaznacz, czy
+            masz to załatwione, a na końcu dostaniesz wykaz braków dla
             księgowej.
           </p>
         </>
@@ -231,8 +231,8 @@ export default function ListaKsef2027({
           {otwarte.length === 0 ? (
             <p className="mt-2 text-sm text-gray-700 dark:text-gray-300">
               {wszystkie
-                ? "Na koniec przepisów przejściowych jesteście przygotowani. Wróćcie do tej listy w grudniu, bo zmiany w programie albo w zespole potrafią rozszczelnić to, co dziś działa."
-                : "Na razie nic nie zostało otwarte. Zaznaczcie pozostałe punkty, żeby mieć pełny obraz."}
+                ? "Na koniec przepisów przejściowych masz wszystko przygotowane. Wróć do tej listy w grudniu, bo zmiany w programie albo w zespole potrafią rozszczelnić to, co dziś działa."
+                : "Na razie nic nie zostało otwarte. Zaznacz pozostałe punkty, żeby mieć pełny obraz."}
             </p>
           ) : (
             <>
@@ -250,8 +250,8 @@ export default function ListaKsef2027({
                 className="btn-primary mt-4 justify-center px-6 text-sm"
               >
                 {skopiowano
-                  ? "Skopiowane, wklejcie w maila"
-                  : "Skopiujcie listę do wysłania"}
+                  ? "Skopiowane, wklej w maila"
+                  : "Skopiuj listę do wysłania"}
               </button>
               {otwarte.some((p) =>
                 ["przelew", "koszty", "odrzucenia"].includes(p.klucz),
@@ -259,8 +259,8 @@ export default function ListaKsef2027({
                 <p className="mt-4 text-sm text-gray-700 dark:text-gray-300">
                   Punkty o przelewach, fakturach kosztowych i stanie faktur to
                   miejsca, gdzie dane przechodzą między programami, i tam
-                  integracja oszczędza najwięcej ręcznej pracy. Jeżeli chcecie,
-                  napiszcie przez{" "}
+                  integracja oszczędza najwięcej ręcznej pracy. Jeżeli chcesz,
+                  napisz przez{" "}
                   <a
                     href={formularz}
                     className="font-medium text-accent underline underline-offset-2"
@@ -269,7 +269,7 @@ export default function ListaKsef2027({
                       ? "formularz niżej"
                       : "formularz"}
                   </a>
-                  , w czym dziś wystawiacie faktury, a odpiszemy, co da się
+                  , w czym dziś wystawiasz faktury, a odpiszemy, co da się
                   spiąć.
                 </p>
               )}

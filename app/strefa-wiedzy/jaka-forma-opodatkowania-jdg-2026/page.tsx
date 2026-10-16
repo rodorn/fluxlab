@@ -169,12 +169,12 @@ export default function JakaFormaOpodatkowaniaJdgArticle() {
                         Dochód do 120 000 zł? Skala może wygrać z liniowym.
                       </li>
                       <li>
-                        Liczcie podatek razem ze składką zdrowotną, bo potrafi
+                        Licz podatek razem ze składką zdrowotną, bo potrafi
                         zmienić wynik o kilka tysięcy złotych.
                       </li>
                     </ol>
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Nie patrzcie tylko na stawkę. Ryczałt liczy się od
+                      Nie patrz tylko na stawkę. Ryczałt liczy się od
                       przychodu, liniowy od dochodu. Przy 40% kosztów liniowy
                       to ok. 11,4% przychodu, mniej niż 12% ryczałtu. Więcej o
                       składce:{" "}
@@ -189,16 +189,16 @@ export default function JakaFormaOpodatkowaniaJdgArticle() {
 
                     <div className="mt-10 bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-8 text-center">
                       <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                        Sprawdźcie wynik na swoich liczbach
+                        Sprawdź wynik na swoich liczbach
                       </h3>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Porównajcie trzy formy razem ze składką zdrowotną.
+                        Porównaj trzy formy razem ze składką zdrowotną.
                       </p>
                       <Link
                         href="/kalkulator-podatkowy"
                         className="btn-primary inline-block"
                       >
-                        Sprawdźcie w kalkulatorze JDG 2026
+                        Sprawdź w kalkulatorze JDG 2026
                       </Link>
                     </div>
                   </div>

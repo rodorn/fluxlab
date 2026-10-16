@@ -18,7 +18,7 @@ export const SLOWNIK: Haslo[] = [
     haslo: "Numer KSeF",
     slug: "numer-ksef",
     opis: "Identyfikator, który KSeF nadaje fakturze po jej przyjęciu. Zawiera NIP sprzedawcy, datę przyjęcia i sumę kontrolną, więc da się go sprawdzić bez logowania.",
-    link: { href: "/numer-ksef", tekst: "Sprawdźcie numer KSeF" },
+    link: { href: "/numer-ksef", tekst: "Sprawdź numer KSeF" },
   },
   {
     haslo: "FA(3)",
@@ -62,13 +62,13 @@ export const SLOWNIK: Haslo[] = [
     haslo: "Biała lista VAT",
     slug: "biala-lista",
     opis: "Wykaz podatników VAT prowadzony przez Ministerstwo Finansów, z ich statusem i rachunkami bankowymi. Zapłata za transakcję powyżej 15 tys. zł na rachunek spoza wykazu odbiera prawo do kosztu.",
-    link: { href: "/sprawdzenie-nip", tekst: "Sprawdźcie NIP w wykazie" },
+    link: { href: "/sprawdzenie-nip", tekst: "Sprawdź NIP w wykazie" },
   },
   {
     haslo: "e-Doręczenia",
     slug: "e-doreczenia",
     opis: "Elektroniczny odpowiednik listu poleconego za potwierdzeniem odbioru. Urzędy wysyłają pisma na adres do e-Doręczeń, a pismo nieodebrane przez 14 dni uznaje się za doręczone.",
-    link: { href: "/e-doreczenia-integracja", tekst: "Sprawdźcie swój termin" },
+    link: { href: "/e-doreczenia-integracja", tekst: "Sprawdź swój termin" },
   },
   {
     haslo: "Adres do e-Doręczeń",
@@ -195,7 +195,7 @@ export const SLOWNIK: Haslo[] = [
     haslo: "Widoczność w AI",
     slug: "widocznosc-w-ai",
     opis: "To, czy asystenci AI znają firmę i polecają ją w odpowiedziach. Zależy od tego, czy roboty mogą przeczytać stronę i czy jasno mówi, czym firma się zajmuje.",
-    link: { href: "/widocznosc-w-ai", tekst: "Sprawdźcie widoczność w AI" },
+    link: { href: "/widocznosc-w-ai", tekst: "Sprawdź widoczność w AI" },
   },
   {
     haslo: "SPF",
@@ -206,13 +206,13 @@ export const SLOWNIK: Haslo[] = [
   {
     haslo: "DKIM",
     slug: "dkim",
-    opis: "Cyfrowy podpis wiadomości, który potwierdza, że mail naprawdę wyszedł z Waszej domeny i nikt go nie zmienił po drodze.",
+    opis: "Cyfrowy podpis wiadomości, który potwierdza, że mail naprawdę wyszedł z Twojej domeny i nikt go nie zmienił po drodze.",
     link: { href: "/audyt-poczty", tekst: "Audyt poczty" },
   },
   {
     haslo: "DMARC",
     slug: "dmarc",
-    opis: "Reguła w DNS, która mówi skrzynkom odbiorców, co zrobić z mailem podszywającym się pod domenę. Bez niej każdy może wysłać wiadomość wyglądającą na Waszą.",
+    opis: "Reguła w DNS, która mówi skrzynkom odbiorców, co zrobić z mailem podszywającym się pod domenę. Bez niej każdy może wysłać wiadomość wyglądającą na Twoją.",
     link: {
       href: "/strefa-wiedzy/podszywanie-sie-pod-firmowy-email",
       tekst: "Podszywanie się pod firmowy mail",

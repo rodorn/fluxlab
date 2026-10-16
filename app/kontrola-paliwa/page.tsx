@@ -29,19 +29,19 @@ export default function Page() {
       slug="kontrola-paliwa"
       breadcrumb="Kontrola paliwa"
       eyebrow="Straty we flocie"
-      h1="Sprawdźcie, czy paliwo z Waszych kart trafia do Waszych aut"
+      h1="Sprawdź, czy paliwo z Twoich kart trafia do Twoich aut"
       lead="Portal karty pokazuje tylko listę transakcji. Zestawiamy je z przebiegiem i trasą, a wtedy widać tankowania, których nie da się wytłumaczyć. Zaczynamy od darmowego skanu trzech pojazdów."
       ctaLabel="Zamawiam darmowy skan"
       ctaNote="Trzy pojazdy za jeden miesiąc, bez opłaty"
       powiazane={[
         {
-          przed: "Pełny koszt auta na kierowcę policzycie w",
+          przed: "Pełny koszt auta na kierowcę policzysz w",
           kotwica: "kalkulatorze kosztów auta",
           href: "/kalkulator-kosztow",
           po: ".",
         },
         {
-          przed: "Dopłatę paliwową kurierów sprawdzicie w",
+          przed: "Dopłatę paliwową kurierów sprawdzisz w",
           kotwica: "audycie faktur kurierskich i dopłat",
           href: "/audyt-kurierski",
           po: ".",
@@ -92,7 +92,7 @@ export default function Page() {
         {
           name: "Monitoring",
           price: "149 zł/mc",
-          desc: "Chcecie wiedzieć na bieżąco, nie po roku.",
+          desc: "Chcesz wiedzieć na bieżąco, nie po roku.",
           features: [
             "comiesięczne przeliczenie reguł",
             "alarm przy nowych anomaliach",
@@ -120,8 +120,8 @@ export default function Page() {
         },
       ]}
       formId="order_kontrola_paliwa"
-      formHeading="Zamówcie kontrolę paliwa"
-      formIntro="Napiszcie, ile macie pojazdów, jaką kartę paliwową i czy macie lokalizator albo zapisy przebiegów."
+      formHeading="Zamów kontrolę paliwa"
+      formIntro="Napisz, ile masz pojazdów, jaką kartę paliwową i czy masz lokalizator albo zapisy przebiegów."
       submitLabel="Zamawiam kontrolę floty"
       microCopy="Skan wstępny jest bezpłatny. Dane kierowców kasujemy po raporcie."
       serviceName="Kontrola paliwa we flocie"

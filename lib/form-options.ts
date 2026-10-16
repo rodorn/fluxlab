@@ -1,7 +1,7 @@
 export type FormOption = { value: string; label: string };
 
 export const PROBLEM_TYPES: FormOption[] = [
-  { value: "", label: "Wybierzcie obszar..." },
+  { value: "", label: "Wybierz obszar..." },
   { value: "strony-www", label: "Strony WWW (nowa lub poprawki)" },
   { value: "leady", label: "Obsługa leadów" },
   { value: "crm", label: "CRM (Pipedrive / HubSpot / Salesforce)" },
@@ -13,13 +13,13 @@ export const PROBLEM_TYPES: FormOption[] = [
 ];
 
 const FALLBACK_SCALE: FormOption[] = [
-  { value: "", label: "Wybierzcie skalę..." },
+  { value: "", label: "Wybierz skalę..." },
   { value: "nie-wiemy", label: "Nie wiemy" },
 ];
 
 export const PROBLEM_SCALES_BY_TYPE: Record<string, FormOption[]> = {
   "strony-www": [
-    { value: "", label: "Wybierzcie typ projektu..." },
+    { value: "", label: "Wybierz typ projektu..." },
     { value: "landing", label: "Landing page (1 strona)" },
     { value: "firmowa", label: "Strona firmowa (kilka podstron)" },
     { value: "poprawki", label: "Poprawki w obecnej stronie" },
@@ -27,28 +27,28 @@ export const PROBLEM_SCALES_BY_TYPE: Record<string, FormOption[]> = {
     { value: "nie-wiemy", label: "Nie wiemy" },
   ],
   leady: [
-    { value: "", label: "Wybierzcie skalę..." },
+    { value: "", label: "Wybierz skalę..." },
     { value: "do-30", label: "Do 30 leadów miesięcznie" },
     { value: "30-100", label: "30–100 leadów miesięcznie" },
     { value: "100-plus", label: "100+ leadów miesięcznie" },
     { value: "nie-wiemy", label: "Nie wiemy" },
   ],
   crm: [
-    { value: "", label: "Wybierzcie skalę bazy..." },
+    { value: "", label: "Wybierz skalę bazy..." },
     { value: "mala-baza", label: "Mała baza (do 100 kontaktów)" },
     { value: "srednia-baza", label: "Średnia (100–1000)" },
     { value: "duza-baza", label: "Duża (1000+)" },
     { value: "nie-wiemy", label: "Nie wiemy" },
   ],
   raportowanie: [
-    { value: "", label: "Wybierzcie skalę raportów..." },
+    { value: "", label: "Wybierz skalę raportów..." },
     { value: "jeden-raport", label: "Jeden cykliczny raport" },
     { value: "kilka-raportow", label: "Kilka raportów (2–5)" },
     { value: "dashboard", label: "Pełny dashboard / wiele raportów" },
     { value: "nie-wiemy", label: "Nie wiemy" },
   ],
   scraping: [
-    { value: "", label: "Wybierzcie typ scrapingu..." },
+    { value: "", label: "Wybierz typ scrapingu..." },
     { value: "jedno-zrodlo", label: "Jedno źródło (np. monitoring 1 strony)" },
     { value: "kilka-zrodel", label: "Kilka źródeł (2–5)" },
     {
@@ -59,21 +59,21 @@ export const PROBLEM_SCALES_BY_TYPE: Record<string, FormOption[]> = {
     { value: "nie-wiemy", label: "Nie wiemy" },
   ],
   integracje: [
-    { value: "", label: "Wybierzcie skalę integracji..." },
+    { value: "", label: "Wybierz skalę integracji..." },
     { value: "1-2-systemy", label: "Łączymy 1–2 systemy" },
     { value: "3-5-systemow", label: "3–5 systemów" },
     { value: "wieksza-architektura", label: "Większa architektura (5+)" },
     { value: "nie-wiemy", label: "Nie wiemy" },
   ],
   przepisywanie: [
-    { value: "", label: "Wybierzcie skalę pracy..." },
+    { value: "", label: "Wybierz skalę pracy..." },
     { value: "do-godziny", label: "Do godziny dziennie" },
     { value: "kilka-godzin", label: "Kilka godzin dziennie" },
     { value: "caly-etat", label: "Cały etat na przepisywanie" },
     { value: "nie-wiemy", label: "Nie wiemy" },
   ],
   diagnoza: [
-    { value: "", label: "Wybierzcie typ pytania..." },
+    { value: "", label: "Wybierz typ pytania..." },
     {
       value: "co-mamy-automatyzowac",
       label: "Nie wiemy, co u nas automatyzować",
