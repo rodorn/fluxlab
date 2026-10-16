@@ -1110,7 +1110,18 @@ export function cechyStrony(html: string, adres: string): Cechy {
   // Formularz kontaktowy: ma pole na wiadomość, e-mail albo telefon.
   // Wyszukiwarka i newsletter z jednym polem się nie liczą.
   const formularze = [...bezSkryptow(html).matchAll(/<form\b([^>]*)>([\s\S]*?)<\/form>/gi)];
-  const kontaktowe = formularze.filter((m) => /<textarea\b/i.test(m[2]) || (/type=["']?(email|tel)\b/i.test(m[2]) && (m[2].match(/<(input|textarea|select)\b/gi) ?? []).length >= 3));
+  // Pole kontaktu rozpoznajemy po typie, ale też po nazwie, autocomplete albo
+  // podpowiedzi, bo wiele stron (np. carmore.pl) ma e-mail i telefon jako
+  // type="text" z name="email" / name="phone".
+  const POLE_KONTAKTU =
+    /<input\b[^>]*(?:type=["']?(?:email|tel)\b|(?:name|id|autocomplete|placeholder)=["'][^"']*(?:e-?mail|phone|tel|telefon)[^"']*["'])/i;
+  const widocznePola = (f: string) =>
+    (f.match(/<(input|textarea|select)\b[^>]*>/gi) ?? []).filter(
+      (t) => !/type=["']?(hidden|checkbox|radio|submit|button)\b|display:\s*none|class=["'][^"']*\bhidden\b/i.test(t),
+    ).length;
+  const kontaktowe = formularze.filter(
+    (m) => /<textarea\b/i.test(m[2]) || (POLE_KONTAKTU.test(m[2]) && widocznePola(m[2]) >= 2),
+  );
   const akcje: string[] = [];
   for (const m of formularze) {
     const a = m[1].match(/\baction\s*=\s*["']([^"']*)["']/i)?.[1];
