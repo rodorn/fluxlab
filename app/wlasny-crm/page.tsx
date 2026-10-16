@@ -5,7 +5,7 @@ import KalkulatorLeadow from "@/components/KalkulatorLeadow";
 export const metadata: Metadata = {
   title: "Własny CRM dla firmy w trzy tygodnie | Fluxlab",
   description:
-    "Własny CRM: lead z formularza, telefonu i poczty trafia sam do handlowca. W fazie beta wdrożenie dla małej firmy za 1 zł. Abonament 499 zł miesięcznie do 3 osób.",
+    "Własny CRM: lead z formularza, telefonu i poczty sam trafia do handlowca. W becie wdrożenie dla małej firmy za 1 zł. Abonament 499 zł miesięcznie do 3 osób.",
   alternates: { canonical: "/wlasny-crm" },
   openGraph: {
     title: "Własny CRM dla firmy w trzy tygodnie | Fluxlab",
