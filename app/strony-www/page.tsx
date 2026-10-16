@@ -6,8 +6,6 @@ import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import LandingForm from "@/components/LandingForm";
 import OsCzasuStrony from "@/components/OsCzasuStrony";
-import Tabs from "@/components/Tabs";
-import ProductGrid from "@/components/ProductGrid";
 
 export const metadata: Metadata = {
   title: "Tworzenie stron WWW i poprawki w obecnych | Fluxlab",
@@ -21,13 +19,6 @@ export const metadata: Metadata = {
     type: "website",
   },
 };
-
-const offer = [
-  "Nowa strona od zera albo poprawki w istniejącej.",
-  "Next.js + Tailwind, mobile-first, Web Vitals 90+.",
-  "Treści i grafiki z AI.",
-  "Hosting i deployment w cenie wdrożenia.",
-];
 
 const pricing = [
   {
@@ -127,66 +118,10 @@ export default function StronyWww() {
           </div>
         </section>
 
-        <section className="container-wide pb-16">
-          <ProductGrid category="www" showHeading />
-        </section>
-
-        <div id="sekcje" className="scroll-mt-20 container-wide pb-20">
-          <Tabs
-            ariaLabel="Sekcje oferty stron WWW"
-            tabs={[
-              {
-                label: "Co oferujemy",
-                content: (
-                  <div className="py-10 lg:py-12">
-                    <h2 className="h2-sekcji mb-8">
-                      Krótko i konkretnie
-                    </h2>
-                    <ul className="space-y-4 max-w-2xl">
-                      {offer.map((item) => (
-                        <li
-                          key={item}
-                          className="flex items-start gap-3 text-lg text-gray-700 dark:text-gray-300"
-                        >
-                          <svg
-                            className="flex-shrink-0 mt-1.5 text-accent"
-                            width="18"
-                            height="18"
-                            viewBox="0 0 16 16"
-                            fill="none"
-                            aria-hidden="true"
-                          >
-                            <path
-                              d="M3 8l3.5 3.5L13 5"
-                              stroke="currentColor"
-                              strokeWidth="1.8"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
-                          <span className="leading-snug">{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <p className="mt-8 max-w-2xl text-gray-600 dark:text-gray-400">
-                      Przenosisz stronę? Najpierw zrób{" "}
-                      <Link
-                        href="/audyt-poczty"
-                        className="text-accent hover:underline"
-                      >
-                        audyt poczty firmowej
-                      </Link>
-                      , żeby nie stracić maili na tej samej domenie.
-                    </p>
-                  </div>
-                ),
-              },
-              {
-                label: "Cennik",
-                content: (
-                  <div className="py-10 lg:py-12">
+        <section id="cennik" className="scroll-mt-20 container-wide">
+          <div className="py-10 lg:py-12">
                     <h2 className="h2-sekcji mb-10">
-                      Trzy ścieżki
+                      Ceny
                     </h2>
                     <div className="grid md:grid-cols-3 gap-5 lg:gap-6">
                       {pricing.map((track) => (
@@ -217,12 +152,10 @@ export default function StronyWww() {
                       3 900 zł netto, z opieką 590 zł miesięcznie.
                     </p>
                   </div>
-                ),
-              },
-              {
-                label: "FAQ",
-                content: (
-                  <div className="py-10 lg:py-12">
+        </section>
+
+        <section className="container-wide pb-12">
+          <div className="py-10 lg:py-12">
                     <h2 className="h2-sekcji mb-8">
                       Najczęstsze pytania
                     </h2>
@@ -255,11 +188,8 @@ export default function StronyWww() {
                       ))}
                     </div>
                   </div>
-                ),
-              },
-            ]}
-          />
-        </div>
+        </section>
+
         <section
           id="kontakt"
           className="scroll-mt-20 container-wide max-w-3xl mx-auto pb-20"

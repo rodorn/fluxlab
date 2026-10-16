@@ -5,16 +5,10 @@ import { useRouter } from "next/navigation";
 import { event as gaEvent } from "@/lib/gtag";
 import { zglosZdarzenie } from "@/lib/zdarzenie";
 import { readUtm, type UtmFields } from "@/lib/zrodlo";
-import { PROBLEM_TYPES, getScalesForType } from "@/lib/form-options";
 
 const inputClass =
   "w-full px-4 py-2.5 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-sm text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-colors disabled:opacity-50 disabled:cursor-not-allowed";
 
-const CONTACT_PREFS = [
-  { value: "email", label: "E-mail" },
-  { value: "phone", label: "Telefon" },
-  { value: "meet", label: "Google Meet" },
-];
 
 interface Props {
   /** Identyfikator formularza w GA, np. "diagnosis_lp_leadow". */
@@ -36,10 +30,6 @@ export default function LandingForm({
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
-  const [contactPref, setContactPref] = useState("email");
-  const [problemType, setProblemType] = useState("");
-  const [problemScale, setProblemScale] = useState("");
-  const scaleOptions = getScalesForType(problemType);
   const [utm, setUtm] = useState<UtmFields>(() => ({
     utm_source: "",
     utm_medium: "",
@@ -87,14 +77,12 @@ export default function LandingForm({
     const data = {
       email: (form.elements.namedItem("email") as HTMLInputElement).value,
       company: (form.elements.namedItem("company") as HTMLInputElement).value,
-      problemType: (form.elements.namedItem("problemType") as HTMLSelectElement)
-        .value,
-      problemScale: (
-        form.elements.namedItem("problemScale") as HTMLSelectElement
-      ).value,
+      // Temat zgłoszenia to nazwa strony, z której przyszło.
+      problemType: document.title.split("|")[0].trim() || formId,
+      problemScale: "nie-wiemy",
       message: (form.elements.namedItem("message") as HTMLTextAreaElement)
         .value,
-      contactPref,
+      contactPref: "email",
       website:
         (form.elements.namedItem("website") as HTMLInputElement | null)
           ?.value ?? "",
@@ -113,8 +101,6 @@ export default function LandingForm({
         if (!bot) gaEvent("generate_lead", {
           form_id: formId,
           lead_type: data.problemType,
-          lead_scale: data.problemScale,
-          contact_pref: contactPref,
         });
         // Zapytanie od klienta to jedyna konwersja, ktora sie liczy, a do tej
         // pory nie byla mierzona nigdzie poza Google Analytics, ktorego nie
@@ -150,50 +136,10 @@ export default function LandingForm({
         <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
           {heading}
         </h2>
-        <p className="text-gray-600 dark:text-gray-400 text-base lg:text-lg leading-relaxed mb-8">
+        <p className="text-gray-600 dark:text-gray-400 text-base lg:text-lg leading-relaxed">
           {intro}
         </p>
 
-        <div className="bg-white dark:bg-gray-800/80 border border-gray-100 dark:border-gray-700 rounded-2xl p-5 lg:p-6">
-          <p className="text-sm font-semibold text-gray-900 dark:text-white mb-3">
-            Co dostajesz po zgłoszeniu:
-          </p>
-          <ul className="space-y-2 mb-4">
-            {[
-              "ocenę, czy automatyzacja ma sens w Twoim przypadku",
-              "wskazanie pierwszego procesu do uruchomienia",
-              "orientacyjne widełki kosztu wdrożenia",
-              "odpowiedź w ciągu 24h",
-            ].map((item) => (
-              <li
-                key={item}
-                className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300"
-              >
-                <svg
-                  className="flex-shrink-0 mt-0.5 text-accent"
-                  width="14"
-                  height="14"
-                  viewBox="0 0 14 14"
-                  fill="none"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M2.5 7l3 3 6-6"
-                    stroke="currentColor"
-                    strokeWidth="1.6"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-                <span className="leading-snug">{item}</span>
-              </li>
-            ))}
-          </ul>
-          <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed pt-3 border-t border-gray-100 dark:border-gray-700">
-            Pełna dokumentacja techniczna i mapa AS-IS → TO-BE to zakres
-            płatnego audytu, diagnoza daje wstępny kierunek, nie pełny projekt.
-          </p>
-        </div>
       </div>
 
       <form
@@ -228,7 +174,7 @@ export default function LandingForm({
               htmlFor="email"
               className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5"
             >
-              E-mail służbowy <span className="text-accent">*</span>
+              E-mail <span className="text-accent">*</span>
             </label>
             <input
               id="email"
@@ -260,111 +206,21 @@ export default function LandingForm({
           </div>
         </div>
 
-        <div className="grid sm:grid-cols-2 gap-5">
-          <div>
-            <label
-              htmlFor="problemType"
-              className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5"
-            >
-              Co chcesz usprawnić? <span className="text-accent">*</span>
-            </label>
-            <select
-              id="problemType"
-              name="problemType"
-              required
-              value={problemType}
-              onChange={(e) => {
-                setProblemType(e.target.value);
-                setProblemScale("");
-              }}
-              className={inputClass}
-            >
-              {PROBLEM_TYPES.map((opt) => (
-                <option
-                  key={opt.value}
-                  value={opt.value}
-                  disabled={opt.value === ""}
-                >
-                  {opt.label}
-                </option>
-              ))}
-            </select>
-          </div>
-          <div>
-            <label
-              htmlFor="problemScale"
-              className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5"
-            >
-              Skala / typ <span className="text-accent">*</span>
-            </label>
-            <select
-              id="problemScale"
-              name="problemScale"
-              required
-              value={problemScale}
-              onChange={(e) => setProblemScale(e.target.value)}
-              disabled={!problemType}
-              className={inputClass}
-            >
-              {scaleOptions.map((opt) => (
-                <option
-                  key={opt.value}
-                  value={opt.value}
-                  disabled={opt.value === ""}
-                >
-                  {problemType
-                    ? opt.label
-                    : opt.value === ""
-                      ? "Najpierw wybierz obszar..."
-                      : opt.label}
-                </option>
-              ))}
-            </select>
-          </div>
-        </div>
-
         <div>
           <label
             htmlFor="message"
             className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5"
           >
-            Opisz problem w 2–3 zdaniach{" "}
-            <span className="text-gray-600 dark:text-gray-400 font-normal text-xs">
-              (opcjonalnie)
-            </span>
+            Czego potrzebujesz? <span className="text-accent">*</span>
           </label>
           <textarea
             id="message"
             name="message"
-            rows={4}
-            placeholder="Np. leady przychodzą z formularza i maila, handlowcy ręcznie przepisują dane do CRM, a raport robimy w Google Sheets."
+            rows={3}
+            required
+            placeholder="Jedno, dwa zdania wystarczą."
             className={`${inputClass} resize-none`}
           />
-        </div>
-
-        <div>
-          <p className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-            Preferowany kontakt{" "}
-            <span className="text-gray-600 dark:text-gray-400 font-normal text-xs">
-              (opcjonalnie)
-            </span>
-          </p>
-          <div className="flex flex-wrap gap-2">
-            {CONTACT_PREFS.map((opt) => (
-              <button
-                key={opt.value}
-                type="button"
-                onClick={() => setContactPref(opt.value)}
-                className={`px-4 py-2 rounded-lg text-sm font-medium border transition-colors ${
-                  contactPref === opt.value
-                    ? "bg-accent-solid text-white border-accent"
-                    : "bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-accent/50"
-                }`}
-              >
-                {opt.label}
-              </button>
-            ))}
-          </div>
         </div>
 
         <button

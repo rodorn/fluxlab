@@ -12,8 +12,6 @@ const POMIN = new Set(["/cv", "/panel", "/dziekuje"]);
 const LINK = "text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors";
 const NAGLOWEK_KOLUMNY =
   "text-sm font-semibold text-gray-900 dark:text-white hover:text-accent transition-colors";
-const NAGLOWEK_GRUPY =
-  "text-xs font-semibold uppercase tracking-wider text-gray-600 dark:text-gray-400";
 
 function Kolumna({ s, children }: { s: Sekcja; children: React.ReactNode }) {
   return (
@@ -46,28 +44,16 @@ function Lista({ strony }: { strony: { href: string; nazwa: string }[] }) {
   );
 }
 
-/** Kolumna z grupami: mały nagłówek (link do huba, jeśli jest) i podstrony. */
+/** Kolumna z samymi nazwami grup; szczegóły są na stronie sekcji. */
 function Pogrupowana({ s }: { s: Sekcja }) {
   return (
     <Kolumna s={s}>
-      {s.grupy.map((g) => {
-        const reszta = g.strony.filter((x) => x.href !== g.hub && x.href !== s.hub);
-        if (reszta.length === 0) return null;
-        return (
-          <div key={g.nazwa}>
-            {g.hub ? (
-              <Link href={g.hub} className={`${NAGLOWEK_GRUPY} hover:text-accent transition-colors`}>
-                {g.nazwa}
-              </Link>
-            ) : (
-              <p className={NAGLOWEK_GRUPY}>{g.nazwa}</p>
-            )}
-            <div className="mt-1.5">
-              <Lista strony={reszta} />
-            </div>
-          </div>
-        );
-      })}
+      <Lista
+        strony={s.grupy.map((g) => ({
+          href: g.hub ?? g.strony[0]?.href ?? s.hub,
+          nazwa: g.nazwa,
+        }))}
+      />
     </Kolumna>
   );
 }
@@ -80,15 +66,10 @@ export default function Footer() {
   const oNas = sekcja("o-nas");
   const prawne = sekcja("prawne");
 
-  const wiedzaStrony = [
-    ...categories.map((c) => ({
-      href: `/strefa-wiedzy/kategoria/${c.slug}`,
-      nazwa: c.name,
-    })),
-    ...wiedza.grupy
-      .flatMap((g) => g.strony)
-      .filter((x) => !x.href.startsWith("/strefa-wiedzy")),
-  ];
+  const wiedzaStrony = categories.map((c) => ({
+    href: `/strefa-wiedzy/kategoria/${c.slug}`,
+    nazwa: c.name,
+  }));
 
   return (
     <footer className="border-t border-gray-100 dark:border-gray-800 py-10">
