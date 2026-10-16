@@ -5,7 +5,7 @@ import KalkulatorLeadow from "@/components/KalkulatorLeadow";
 export const metadata: Metadata = {
   title: "Własny CRM dla firmy w trzy tygodnie | Fluxlab",
   description:
-    "FluxCRM: lead z formularza, telefonu i poczty trafia sam do opiekuna. Aplikacja na komputer i telefon, serwer w UE. 12 900 zł wdrożenia i 1 190 zł miesięcznie.",
+    "Własny CRM: lead z formularza, telefonu i poczty trafia sam do handlowca. Pakiety od 7 900 zł wdrożenia i 690 zł miesięcznie, zależnie od wielkości firmy.",
   alternates: { canonical: "/wlasny-crm" },
   openGraph: {
     title: "Własny CRM dla firmy w trzy tygodnie | Fluxlab",
@@ -47,31 +47,41 @@ export default function WlasnyCrm() {
       ]}
       pricing={[
         {
-          name: "Wdrożenie",
-          price: "12 900 zł",
-          desc: "Uruchomienie w trzy tygodnie od akceptacji zakresu.",
+          name: "Mała firma",
+          price: "7 900 zł",
+          desc: "Do 3 handlowców. Abonament 690 zł miesięcznie.",
           features: [
-            "Lejek pod Twoją branżę",
-            "Import leadów z arkusza i szkolenie zespołu",
-            "30 dni wsparcia po starcie",
+            "Gotowy lejek, leady z formularza i poczty",
+            "Aplikacja na komputer i telefon",
+            "Import z arkusza, 1 godzina rozwoju w miesiącu",
+          ],
+        },
+        {
+          name: "Firma",
+          price: "12 900 zł",
+          desc: "Do 10 osób. Abonament 1 190 zł miesięcznie.",
+          features: [
+            "Lejek pod Twoją branżę, także leady z telefonu",
+            "Przydział opiekuna i eskalacja po 30 minutach",
+            "Szkolenie zespołu, 3 godziny rozwoju w miesiącu",
           ],
           featured: true,
         },
         {
-          name: "Abonament",
-          price: "1 190 zł / mies.",
-          desc: "Serwer, opieka i rozwój.",
+          name: "Kilka zespołów",
+          price: "od 24 900 zł",
+          desc: "Oddziały albo ponad 10 osób. Abonament od 2 190 zł miesięcznie.",
           features: [
-            "Serwer w UE, kopie i aktualizacje",
-            "3 godziny rozwoju miesięcznie",
-            "Wypowiedzenie z miesięcznym okresem",
+            "Role i widoki dla oddziałów i kierowników",
+            "Integracja z systemem księgowym albo ERP",
+            "Telefonia, SMS, umowy, 8 godzin rozwoju w miesiącu",
           ],
         },
       ]}
       faq={[
         {
           q: "Ile kosztuje własny CRM?",
-          a: "12 900 zł netto za wdrożenie i 1 190 zł netto miesięcznie. W abonamencie są serwer, kopie, aktualizacje i 3 godziny rozwoju w miesiącu.",
+          a: "Zależy od wielkości firmy: od 7 900 zł wdrożenia i 690 zł miesięcznie dla zespołu do 3 osób, 12 900 zł i 1 190 zł do 10 osób. Ceny netto. W abonamencie zawsze są serwer w UE, kopie, aktualizacje i godziny rozwoju.",
         },
         {
           q: "Czym to się różni od Pipedrive?",
