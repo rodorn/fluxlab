@@ -13,7 +13,7 @@ const LINK = "text-sm text-gray-600 dark:text-gray-400 hover:text-accent transit
 const NAGLOWEK_KOLUMNY =
   "text-sm font-semibold text-gray-900 dark:text-white hover:text-accent transition-colors";
 const NAGLOWEK_GRUPY =
-  "text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-500";
+  "text-xs font-semibold uppercase tracking-wider text-gray-600 dark:text-gray-400";
 
 function Kolumna({ s, children }: { s: Sekcja; children: React.ReactNode }) {
   return (
