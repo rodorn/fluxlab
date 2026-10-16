@@ -13,6 +13,8 @@
  *  - "domena": raz na domenę (nagłówki, pliki na serwerze, DNS).
  */
 
+import dns from "dns/promises";
+
 import { odmien } from "./odmiana";
 
 export type WagaKontroli = "wazne" | "drobne";
@@ -585,6 +587,72 @@ export const KATALOG_C: Record<string, OpisKontroli> = {
   },
 };
 Object.assign(KATALOG, KATALOG_C);
+
+const DNS_DOMENY = "dostęp do DNS domeny";
+export const KATALOG_F: Record<string, OpisKontroli> = {
+  // --- F: domena i poczta --------------------------------------------------
+  brak_mx: {
+    tytul: "Domena nie ma rekordu MX",
+    skutek:
+      "Wiadomość wysłana na adres w tej domenie nie dojdzie, więc jeśli klienci piszą na taki adres, ich maile przepadają.",
+    waga: "drobne",
+    obszar: "poczta",
+    koszt: 80,
+    dostep: DNS_DOMENY,
+    zakres: "domena",
+  },
+  brak_dkim: {
+    tytul: "Nie znaleźliśmy podpisu DKIM",
+    skutek:
+      "Bez podpisu Gmail i Outlook częściej wrzucają Twoje wiadomości do spamu, a Gmail odrzuca masowe wysyłki bez DKIM.",
+    waga: "wazne",
+    obszar: "poczta",
+    koszt: 120,
+    dostep: DNS_DOMENY,
+    zakres: "domena",
+  },
+  brak_mta_sts: {
+    tytul: "Brak MTA-STS",
+    skutek:
+      "Poczta przychodząca może zostać przesłana bez szyfrowania, jeśli ktoś po drodze podsunie serwerom gorsze połączenie.",
+    waga: "drobne",
+    obszar: "poczta",
+    koszt: 150,
+    dostep: DNS_DOMENY,
+    zakres: "domena",
+  },
+  brak_caa: {
+    tytul: "Brak rekordu CAA",
+    skutek:
+      "Każdy urząd certyfikacji może wystawić certyfikat dla Twojej domeny, więc łatwiej o fałszywy certyfikat do podszywania się pod stronę.",
+    waga: "drobne",
+    obszar: "bezpieczenstwo",
+    koszt: 50,
+    dostep: DNS_DOMENY,
+    zakres: "domena",
+  },
+  brak_dnssec: {
+    tytul: "Domena bez DNSSEC",
+    skutek:
+      "Odpowiedzi DNS nie są podpisane, więc ktoś w sieci może podsunąć fałszywy adres serwera i przekierować klientów albo pocztę.",
+    waga: "drobne",
+    obszar: "bezpieczenstwo",
+    koszt: 100,
+    dostep: "panel rejestratora domeny",
+    zakres: "domena",
+  },
+  domena_wygasa: {
+    tytul: "Domena wkrótce wygasa",
+    skutek:
+      "Po wygaśnięciu przestaje działać i strona, i poczta, a wolną domenę może przejąć ktoś inny.",
+    waga: "wazne",
+    obszar: "dostepnosc",
+    koszt: 0,
+    dostep: "panel rejestratora domeny",
+    zakres: "domena",
+  },
+};
+Object.assign(KATALOG, KATALOG_F);
 
 /* ------------------------------------------------------------------ */
 /* Pomocnicze                                                           */
@@ -1527,10 +1595,86 @@ export function zablokowanyPrzezRobots(sciezka: string, r: { allow: string[]; di
   return d >= 0 && d > najdluzszy(r.allow);
 }
 
+const SELEKTORY_DKIM = ["google", "default", "selector1", "selector2", "k1", "mail", "dkim", "s1", "s2"];
+
+function zLimitem<T>(p: Promise<T>, ms = CZAS_MS): Promise<T | null> {
+  return Promise.race([p, new Promise<null>((r) => setTimeout(() => r(null), ms))]).catch(() => null);
+}
+
+async function pocztaDomeny(k: KontekstDomeny): Promise<Znalezisko[]> {
+  const z: Znalezisko[] = [];
+  const d = k.domena;
+  // Brak rekordu to wynik, błąd zapytania to brak wiedzy. Tylko ten pierwszy
+  // wolno zamienić w ustalenie.
+  const brak = (e: unknown) => {
+    const kod = (e as { code?: string })?.code;
+    return kod === "ENODATA" || kod === "ENOTFOUND" ? "brak" : "blad";
+  };
+  const mx = await zLimitem(dns.resolveMx(d).then((r) => (r.length ? "jest" : "brak")).catch(brak));
+  if (mx === "brak") z.push({ klucz: "brak_mx", szczegol: `Dla ${d} nie ma rekordu MX.` });
+  const [dkim, mtaSts, caa, ds, rdap] = await Promise.all([
+    mx === "jest"
+      ? Promise.all(
+          SELEKTORY_DKIM.map((sel) =>
+            zLimitem(
+              dns
+                .resolveTxt(`${sel}._domainkey.${d}`)
+                .then((r) => r.some((t) => /v=DKIM1|k=rsa|p=/i.test(t.join(""))))
+                .catch(() => false),
+              4_000,
+            ),
+          ),
+        ).then((l) => (l.some((x) => x === true) ? true : l.some((x) => x === null) ? null : false))
+      : null,
+    mx === "jest"
+      ? zLimitem(
+          dns
+            .resolveTxt(`_mta-sts.${d}`)
+            .then((r) => r.some((t) => /v=STSv1/i.test(t.join(""))))
+            .catch((e) => (brak(e) === "brak" ? false : null)),
+        )
+      : null,
+    zLimitem(dns.resolveCaa(d).then((r) => r.length > 0).catch((e) => (brak(e) === "brak" ? false : null))),
+    zapytaj(`https://dns.google/resolve?name=${encodeURIComponent(d)}&type=DS`, { maxZnakow: 20_000 }),
+    zapytaj(`https://rdap.org/domain/${encodeURIComponent(d)}`, { maxZnakow: 200_000 }),
+  ]);
+  if (dkim === false)
+    z.push({ klucz: "brak_dkim", szczegol: `Brak klucza DKIM pod popularnymi selektorami: ${SELEKTORY_DKIM.join(", ")}.` });
+  if (mtaSts === false) z.push({ klucz: "brak_mta_sts", szczegol: `Brak rekordu _mta-sts.${d}.` });
+  if (caa === false) z.push({ klucz: "brak_caa", szczegol: `Dla ${d} nie ma rekordu CAA.` });
+  if (ds && ds.status === 200) {
+    try {
+      const j = JSON.parse(ds.tekst);
+      if (j.Status === 0 && !(j.Answer ?? []).some((a: { type: number }) => a.type === 43))
+        z.push({ klucz: "brak_dnssec", szczegol: `Domena ${d} nie ma rekordu DS w strefie nadrzędnej.` });
+    } catch {
+      /* brak odpowiedzi */
+    }
+  }
+  if (rdap && rdap.status === 200) {
+    try {
+      const j = JSON.parse(rdap.tekst);
+      const wygasa = (j.events ?? []).find((e: { eventAction?: string }) => e.eventAction === "expiration")?.eventDate;
+      if (wygasa) {
+        const dni = Math.floor((Date.parse(wygasa) - Date.now()) / 86_400_000);
+        if (dni < 30)
+          z.push({
+            klucz: "domena_wygasa",
+            szczegol: `Według rejestru domena wygasa ${String(wygasa).slice(0, 10)}, za ${dni} ${odmien(dni, "dzień", "dni", "dni")}.`,
+          });
+      }
+    } catch {
+      /* brak danych */
+    }
+  }
+  return z;
+}
+
 export async function kontroleDomeny(k: KontekstDomeny): Promise<Znalezisko[]> {
   const czesci = await Promise.all([
     bezpieczenstwo(k).catch(() => []),
     seoDomeny(k).catch(() => []),
+    pocztaDomeny(k).catch(() => []),
   ]);
   return czesci.flat();
 }
