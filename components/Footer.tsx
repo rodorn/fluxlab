@@ -107,6 +107,14 @@ export default function Footer() {
             <p className="mt-1 text-xs text-gray-600 dark:text-gray-400">
               Paweł Iwanek, NIP 7123336008, REGON 366862577
             </p>
+            <p className="mt-1 text-xs">
+              <a
+                href="mailto:pawel@fluxlab.pl"
+                className="text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
+              >
+                pawel@fluxlab.pl
+              </a>
+            </p>
           </div>
           <div className="flex flex-wrap gap-x-4 gap-y-2">
             <a

@@ -138,7 +138,7 @@ export default function Home() {
               audyt wszystkich podstron 10 zł
             </Link>
             , pozostałe drobne usługi w{" "}
-            <Link href="/cennik" className="text-accent hover:underline">
+            <Link href="/produkty" className="text-accent hover:underline">
               cenniku
             </Link>
             .

@@ -190,6 +190,50 @@ for (const plik of strony) {
   }
 }
 
+const strony_ = strony;
+// --- 2b. linki wewnętrzne ---
+// Każdy link /coś w zbudowanym HTML prowadzi do zbudowanej strony, pliku
+// z public/ albo trasy dynamicznej z app/ (np. /api/..., /[slug]).
+{
+  const strony = new Set(
+    strony_.map((p) => "/" + path.relative(APP, p).replace(/\.html$/, "").replace(/^index$/, "")),
+  );
+  const istniejeTrasa = (adres) => {
+    let dir = path.join(ROOT, "app");
+    for (const seg of adres.split("/").filter(Boolean)) {
+      if (!fs.existsSync(dir)) return false;
+      const wpisy = fs.readdirSync(dir, { withFileTypes: true }).filter((w) => w.isDirectory());
+      const dokladny = wpisy.find((w) => w.name === seg);
+      const dyn = wpisy.find((w) => /^\[.*\]$/.test(w.name));
+      const grupy = wpisy.filter((w) => /^\(.*\)$/.test(w.name));
+      if (dokladny) dir = path.join(dir, seg);
+      else if (dyn) {
+        if (dyn.name.startsWith("[...")) return true;
+        dir = path.join(dir, dyn.name);
+      } else if (grupy.some((g) => fs.existsSync(path.join(dir, g.name, seg))))
+        dir = path.join(dir, grupy.find((g) => fs.existsSync(path.join(dir, g.name, seg))).name, seg);
+      else return false;
+    }
+    return ["page.tsx", "page.ts", "route.ts", "route.tsx"].some((f) => fs.existsSync(path.join(dir, f)));
+  };
+  const zle = new Map();
+  for (const plik of strony_) {
+    const adresStrony = "/" + path.relative(APP, plik).replace(/\.html$/, "").replace(/^index$/, "");
+    for (const [, href] of fs.readFileSync(plik, "utf8").matchAll(/<a\b[^>]*\shref="(\/[^"/][^"]*|\/)"/g)) {
+      const cel = decodeURIComponent(href.split("#")[0].split("?")[0]).replace(/\/$/, "") || "/";
+      if (cel === "/" || strony.has(cel) || cel.startsWith("/_next/")) continue;
+      if (fs.existsSync(path.join(ROOT, "public", cel))) continue;
+      if (istniejeTrasa(cel)) continue;
+      if (!zle.has(cel)) zle.set(cel, new Set());
+      zle.get(cel).add(adresStrony);
+    }
+  }
+  for (const [cel, skad] of zle) {
+    const a = [...skad].sort();
+    bledy.push(["link", `${cel} nie istnieje, link na ${a.slice(0, 3).join(", ")}${a.length > 3 ? ` i ${a.length - 3} innych` : ""}`]);
+  }
+}
+
 // --- 3. mapa witryny ---
 // Każdy adres z sitemap.xml ma zbudowaną stronę bez noindex, każda zbudowana
 // strona bez noindex jest w mapie, bez powtórzeń i bez dat z przyszłości.
