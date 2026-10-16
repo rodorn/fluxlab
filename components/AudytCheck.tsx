@@ -100,6 +100,12 @@ type Wynik = {
       wagaCalosci: number;
       cssZnakow: number;
     };
+    kursor?: {
+      klikalnych: number;
+      bezRaczki: number;
+      problemy: { opis: string; ile: number }[];
+      arkuszyNieprzeczytanych: number;
+    } | null;
     zasoby: {
       znalezione: number;
       zwazone: number;
@@ -950,6 +956,34 @@ export default function AudytCheck() {
                 wartosc={`${p.trescZnakow} ${odmien(p.trescZnakow, "znak", "znaki", "znaków")}`}
               />
             </Skladane>
+
+            {p.kursor && (
+              <Skladane
+                tytul="Kursor nad przyciskami"
+                naZdarzenie={() => zglosZdarzenie("audyt_rozwin_kursor")}
+              >
+                <Wiersz
+                  nazwa="Klikalne elementy, razem z linkami"
+                  wartosc={String(p.kursor.klikalnych)}
+                />
+                <Wiersz
+                  nazwa="Bez rączki po najechaniu"
+                  wartosc={
+                    p.kursor.arkuszyNieprzeczytanych > 0
+                      ? "nie udało się przeczytać wszystkich stylów"
+                      : String(p.kursor.bezRaczki)
+                  }
+                />
+                {p.kursor.arkuszyNieprzeczytanych === 0 &&
+                  p.kursor.problemy.map((x) => (
+                    <Wiersz
+                      key={x.opis}
+                      nazwa={x.opis}
+                      wartosc={x.ile > 1 ? `${x.ile} razy` : "1 raz"}
+                    />
+                  ))}
+              </Skladane>
+            )}
 
             <Skladane
               tytul="Certyfikat i poczta"

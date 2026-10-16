@@ -136,6 +136,7 @@ export async function POST(request: Request) {
       cert: pomiar.cert,
       poczta: pomiar.poczta,
       mobile: pomiar.mobile,
+      kursor: pomiar.kursor,
       zasoby: {
         znalezione: pomiar.zasoby.length,
         zwazone: pomiar.zasoby.filter((z) => z.bajty !== null).length,

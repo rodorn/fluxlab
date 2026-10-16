@@ -726,6 +726,23 @@ export function ocenStrone(p: Pomiar): Ustalenie[] {
     });
   }
 
+  if (p.kursor && p.kursor.bezRaczki > 0 && p.kursor.arkuszyNieprzeczytanych === 0) {
+    const k = p.kursor;
+    const przyklady = k.problemy.slice(0, 3).map((x) => x.opis).join(", ");
+    dodaj({
+      klucz: "kursor",
+      obszar: "dostepnosc",
+      waga: "drobne",
+      tytul: `${k.bezRaczki} ${odmien(k.bezRaczki, "klikalny element nie zmienia", "klikalne elementy nie zmieniają", "klikalnych elementów nie zmienia")} kursora na rączkę`,
+      fakt: `Na stronie głównej ${k.bezRaczki} z ${k.klikalnych} klikalnych elementów nie ma w stylach cursor: pointer, na przykład: ${przyklady}.`,
+      skutek:
+        "Przycisk, który nie zmienia kursora, wygląda na nieklikalny, więc część osób go nie kliknie.",
+      koszt: 80,
+      samodzielnie: false,
+      dostep: "dostęp do kodu strony",
+    });
+  }
+
   // --- poczta, bo idzie tym samym kanałem co formularz --------------------
   if (p.poczta.mx && !p.poczta.spf) {
     dodaj({

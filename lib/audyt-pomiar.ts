@@ -15,6 +15,8 @@
 import dns from "dns/promises";
 import tls from "tls";
 
+import { arkuszeStrony, przygotujCss, sprawdzKursor } from "./kursor";
+
 /** Górne ograniczenia, żeby jeden audyt nie zjadł całego czasu funkcji. */
 const CZAS_STRONY_MS = 12_000;
 const CZAS_ZASOBU_MS = 6_000;
@@ -117,6 +119,14 @@ export type Pomiar = {
     mx: boolean;
   };
   mobile: Mobile;
+  /** Klikalne elementy strony głównej, nad którymi kursor nie zmienia się
+   *  w rączkę. Null, gdy nie badaliśmy dokumentu. */
+  kursor: {
+    klikalnych: number;
+    bezRaczki: number;
+    problemy: { opis: string; ile: number }[];
+    arkuszyNieprzeczytanych: number;
+  } | null;
 };
 
 function pusty(domena: string): Pomiar {
@@ -172,6 +182,7 @@ function pusty(domena: string): Pomiar {
       cssZnakow: 0,
       arkuszyNieprzeczytanych: 0,
     },
+    kursor: null,
   };
 }
 
@@ -635,6 +646,21 @@ function zamknietyDla(
   return blok.disallow.some((d) => d === "/");
 }
 
+/** Kursor nad klikalnymi elementami: style z dokumentu i z arkuszy. */
+async function zmierzKursor(html: string, baza: string): Promise<Pomiar["kursor"]> {
+  const { arkusze, nieprzeczytane } = await arkuszeStrony(html, baza, async (a) => {
+    const o = await pobierz(a, CZAS_ZASOBU_MS);
+    return o && o.odp.ok ? { arkusz: przygotujCss(o.tekst), bajty: o.tekst.length } : null;
+  });
+  const w = sprawdzKursor(html, arkusze);
+  return {
+    klikalnych: w.klikalnych,
+    bezRaczki: w.bezRaczki,
+    problemy: w.problemy.slice(0, 10).map((x) => ({ opis: x.opis, ile: x.ile })),
+    arkuszyNieprzeczytanych: nieprzeczytane,
+  };
+}
+
 export async function zmierz(domenaWejscie: string): Promise<Pomiar> {
   const domena = czystaDomena(domenaWejscie);
   const wynik = pusty(domena);
@@ -816,7 +842,12 @@ export async function zmierz(domenaWejscie: string): Promise<Pomiar> {
     ? poHttp.odp.url.startsWith("https://")
     : null;
 
-  wynik.zasoby = await zmierzZasoby(zasobyZHtml(html, baza));
+  const [zasoby, kursor] = await Promise.all([
+    zmierzZasoby(zasobyZHtml(html, baza)),
+    zmierzKursor(html, dok.odp.url || baza),
+  ]);
+  wynik.zasoby = zasoby;
+  wynik.kursor = kursor;
   const wagaZasobow = wynik.zasoby.reduce((s, z) => s + (z.bajty ?? 0), 0);
   wynik.mobile = await zmierzMobile(baza, html, wagaZasobow);
   return wynik;

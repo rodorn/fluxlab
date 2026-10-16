@@ -14,6 +14,7 @@
 import { czystaDomena, zmierz } from "./audyt-pomiar";
 import { ocenStrone, type Ustalenie } from "./audyt-ocena";
 import { odmien } from "./odmiana";
+import { arkuszeStrony, przygotujCss, sprawdzKursor, type ArkuszKursora } from "./kursor";
 
 const UA =
   "Mozilla/5.0 (compatible; FluxlabAudyt/1.0; +https://fluxlab.pl/audyt)";
@@ -45,6 +46,9 @@ export type Strona = {
   obrazyBezAlt: number;
   mieszane: string[];
   linki: string[];
+  /** Klikalne elementy bez rączki kursora. Null, gdy nie dało się ocenić
+   *  (brak dokumentu albo nieprzeczytany arkusz stylów). */
+  kursor: { bezRaczki: number; przyklady: string[] } | null;
 };
 
 export type WynikCalosci = {
@@ -211,6 +215,7 @@ function przeanalizuj(adres: string, o: Odpowiedz, hosty: Set<string>): Strona {
     obrazyBezAlt: 0,
     mieszane: [],
     linki: [],
+    kursor: null,
   };
   const html = o.tekst;
   if (html === null) return s;
@@ -378,7 +383,13 @@ export async function zbadajCalosc(
 
   // Sprawy całej domeny liczymy równolegle, tym samym pomiarem co darmowy audyt.
   const domenowePromise = zmierz(domena)
-    .then((p) => (p.osiagalna && !p.zablokowany ? ocenStrone(p) : []))
+    .then((p) =>
+      // Kursor oceniamy osobno na każdej podstronie, więc nie powtarzamy go
+      // w sprawach domeny.
+      p.osiagalna && !p.zablokowany
+        ? ocenStrone(p).filter((u) => u.klucz !== "kursor")
+        : [],
+    )
     .catch(() => [] as Ustalenie[]);
 
   const hosty = new Set([domena, `www.${domena}`]);
@@ -434,6 +445,30 @@ export async function zbadajCalosc(
       dodaj(startowy);
     }
 
+    // Arkusz stylów pobieramy raz na adres, bo zwykle wszystkie podstrony
+    // dzielą te same pliki.
+    const arkuszePamiec = new Map<
+      string,
+      Promise<{ arkusz: ArkuszKursora; bajty: number } | null>
+    >();
+    const arkusz = (adres: string) => {
+      let w = arkuszePamiec.get(adres);
+      if (!w) {
+        w = fetch(adres, {
+          headers: { "user-agent": UA },
+          signal: AbortSignal.timeout(CZAS_LINKU_MS),
+        })
+          .then(async (r) => {
+            if (!r.ok) return null;
+            const t = await r.text();
+            return { arkusz: przygotujCss(t), bajty: t.length };
+          })
+          .catch(() => null);
+        arkuszePamiec.set(adres, w);
+      }
+      return w;
+    };
+
     const znalezione = new Set<string>(zaplanowane);
     await pula(
       kolejka,
@@ -456,7 +491,22 @@ export async function zbadajCalosc(
               obrazyBezAlt: 0,
               mieszane: [],
               linki: [],
+              kursor: null,
             } satisfies Strona);
+        if (o?.tekst && o.status < 300) {
+          const { arkusze, nieprzeczytane } = await arkuszeStrony(
+            o.tekst,
+            o.koncowy,
+            arkusz,
+          );
+          if (nieprzeczytane === 0) {
+            const k = sprawdzKursor(o.tekst, arkusze);
+            s.kursor = {
+              bezRaczki: k.bezRaczki,
+              przyklady: k.problemy.slice(0, 3).map((x) => x.opis),
+            };
+          }
+        }
         stronyPoAdresie.set(adres, s);
         for (const l of s.linki) {
           znalezione.add(l);
@@ -636,6 +686,11 @@ export function grupujProblemy(w: WynikCalosci): Grupa[] {
     "Mieszana treść: pliki po http na stronie https",
     "Przeglądarka blokuje takie pliki albo pokazuje ostrzeżenie, że strona nie jest w pełni bezpieczna.",
   );
+  const kursor = g(
+    "kursor",
+    "Klikalne elementy nie zmieniają kursora na rączkę",
+    "Przycisk, który nie zmienia kursora, wygląda na nieklikalny, więc część osób go nie kliknie.",
+  );
   const zlamane = g(
     "zlamane",
     "Linki wewnętrzne prowadzą do błędu",
@@ -732,6 +787,11 @@ export function grupujProblemy(w: WynikCalosci): Grupa[] {
         adres: s.adres,
         szczegol: `${s.obrazyBezAlt} ${odmien(s.obrazyBezAlt, "obraz", "obrazy", "obrazów")}`,
       });
+    if (s.kursor && s.kursor.bezRaczki > 0)
+      kursor.wpisy.push({
+        adres: s.adres,
+        szczegol: `${s.kursor.bezRaczki} ${odmien(s.kursor.bezRaczki, "element", "elementy", "elementów")}, np. ${s.kursor.przyklady.join(", ")}`,
+      });
     if (s.mieszane.length > 0)
       mieszane.wpisy.push({
         adres: s.adres,
@@ -768,6 +828,7 @@ export function grupujProblemy(w: WynikCalosci): Grupa[] {
     tytulDl,
     opisDl,
     alt,
+    kursor,
     ciezki,
   ].filter((x) => x.wpisy.length > 0);
 }

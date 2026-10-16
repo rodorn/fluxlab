@@ -7,12 +7,16 @@
 //     angielskie nazwy produktów). Nieznane angielskie słowo też tu wypada.
 //  2. obrazy: plik z public/ musi mieć co najmniej 2x szerokość, w jakiej strona
 //     go pokazuje (atrybut width), żeby był ostry na ekranie retina.
+//  3. mapa witryny zgodna ze zbudowanymi stronami.
+//  4. kursor: klikalne elementy muszą mieć cursor: pointer (lib/kursor.ts,
+//     ta sama funkcja co w audycie dla klientów).
 // Uruchomienie: node scripts/jakosc.mjs  (po buildzie). Wynik „JAKOSC OK”.
 import fs from "node:fs";
 import path from "node:path";
 import os from "node:os";
 import zlib from "node:zlib";
 import { execFileSync } from "node:child_process";
+import { arkuszeZHtml, przygotujCss, sprawdzKursor } from "../lib/kursor.ts";
 
 const ROOT = path.resolve(
   path.dirname(new URL(import.meta.url).pathname),
@@ -220,9 +224,38 @@ for (const plik of strony) {
   }
 }
 
+// --- 4. kursor ---
+let klikalnych = 0;
+{
+  const arkusze = new Map();
+  for (const plik of strony) {
+    const adres =
+      "/" + path.relative(APP, plik).replace(/\.html$/, "").replace(/^index$/, "");
+    const html = fs.readFileSync(plik, "utf8");
+    const css = [];
+    for (const a of arkuszeZHtml(html, "https://fluxlab.pl/")) {
+      const u = new URL(a);
+      if (u.host !== "fluxlab.pl" || !u.pathname.startsWith("/_next/static/")) continue;
+      const lokalny = path.join(ROOT, ".next", u.pathname.slice("/_next".length));
+      if (!arkusze.has(lokalny)) {
+        if (!fs.existsSync(lokalny)) {
+          bledy.push(["kursor", `${adres}: brak pliku ${u.pathname}`]);
+          continue;
+        }
+        arkusze.set(lokalny, przygotujCss(fs.readFileSync(lokalny, "utf8")));
+      }
+      css.push(arkusze.get(lokalny));
+    }
+    const w = sprawdzKursor(html, css);
+    klikalnych += w.klikalnych;
+    for (const p of w.problemy)
+      bledy.push(["kursor", `${adres}: ${p.opis}${p.ile > 1 ? ` (${p.ile} razy)` : ""} bez cursor: pointer`]);
+  }
+}
+
 if (!bledy.length) {
   console.log(
-    `JAKOSC OK: ${strony.length} stron, ${gdzie.size} słów, ${sprawdzone.size} obrazów, mapa witryny zgodna.`,
+    `JAKOSC OK: ${strony.length} stron, ${gdzie.size} słów, ${sprawdzone.size} obrazów, mapa witryny zgodna, ${klikalnych} klikalnych elementów z rączką.`,
   );
   process.exit(0);
 }

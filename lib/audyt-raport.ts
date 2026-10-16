@@ -178,6 +178,7 @@ export function materialDlaModelu(
         robots: p.robots,
         obrazy: p.obrazy,
       },
+      kursor_nad_klikalnymi: p.kursor,
       certyfikat: p.cert,
       poczta: p.poczta,
       ustalenia: ustalenia.map((u) => ({

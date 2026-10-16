@@ -58,6 +58,17 @@ html.dark {
     @apply box-border;
   }
 
+  /* Preflight daje rączkę tylko przyciskom. Lista rozwijana, rozwijany
+     blok i pola wyboru też są klikalne, więc kursor ma to pokazać.
+     Sprawdza to sekcja „kursor” w scripts/jakosc.mjs. */
+  select,
+  summary,
+  input[type="checkbox"],
+  input[type="radio"],
+  input[type="file"] {
+    cursor: pointer;
+  }
+
   :focus-visible {
     @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-white dark:ring-offset-gray-950;
     border-radius: 6px;
