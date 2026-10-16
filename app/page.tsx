@@ -82,7 +82,7 @@ export default function Home() {
             className="mt-8 inline-flex items-center gap-2 rounded-full border border-gray-200 dark:border-white/15 px-4 py-1.5 text-sm text-gray-700 dark:text-white/75 hover:border-accent transition-colors"
           >
             <span className="font-semibold text-accent">12 dni</span>
-            tyle zajęła ostatnia strona dla klienta, od opłacenia do startu →
+            tyle zajęła ostatnia strona dla klienta, od startu prac do publikacji →
           </Link>
         </section>
 
@@ -155,7 +155,7 @@ export default function Home() {
               <p className="mt-3 text-gray-600 dark:text-white/70">
                 Stara strona miała 45 punktów w audycie technicznym i ładowała
                 się na telefonie 11 sekund. Nowa ma 97 punktów i waży 6,4 raza
-                mniej. Oddaliśmy ją 12 dni po opłaceniu, przy terminie 5 tygodni.
+                mniej. Oddaliśmy ją 12 dni od startu prac, przy terminie 5 tygodni.
               </p>
               <Link
                 href="/realizacje"

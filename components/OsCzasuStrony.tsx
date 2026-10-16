@@ -42,7 +42,7 @@ export default function OsCzasuStrony() {
       </ol>
       <p className="mt-4 text-xs text-gray-500 dark:text-gray-400">
         Terminy dla landingu albo strony firmowej po akceptacji zakresu.
-        Ostatnią stronę oddaliśmy 12 dni po opłaceniu.
+        Ostatnią stronę oddaliśmy 12 dni od startu prac.
       </p>
     </div>
   );

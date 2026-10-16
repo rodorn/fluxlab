@@ -277,7 +277,7 @@ export const PRODUCTS: Product[] = [
     cta: "Zgłoś awarię",
     bullets: [
       "odpowiedź do 2 godzin w godzinach pracy",
-      "diagnoza płatna z góry, naprawa wyceniana po niej",
+      "naprawa wyceniana po diagnozie",
       "przejęcie opieki po wykonawcy, który zniknął",
     ],
     featured: true,

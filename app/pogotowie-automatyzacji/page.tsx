@@ -106,7 +106,7 @@ export default function Page() {
       formHeading="Zgłoś awarię automatyzacji"
       formIntro="Napisz, na czym to działa, co przestało działać i od kiedy. Jeśli stoją zamówienia, zaznacz to."
       submitLabel="Zgłoś awarię"
-      microCopy="Odpowiedź do 2 godzin w godzinach pracy. Diagnoza płatna z góry i odliczana od naprawy."
+      microCopy="Odpowiedź do 2 godzin w godzinach pracy. Koszt diagnozy odliczamy od naprawy."
       serviceName="Pogotowie automatyzacji, naprawa integracji"
       serviceDesc="Diagnoza i naprawa zepsutych automatyzacji: n8n, Make, Zapier, BaseLinker, WooCommerce, Allegro, webhooki. Diagnoza 49 zł, naprawa od 490 zł, opieka 299 zł miesięcznie."
       serviceType="Naprawa i utrzymanie automatyzacji"

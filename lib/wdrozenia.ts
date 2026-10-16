@@ -15,7 +15,7 @@ export const WDROZENIA: Wdrozenie[] = [
     problem:
       "Strona ważyła 6,2 MB, blog na telefonie pokazywał treść po 11 sekundach, a audyt techniczny dawał 45 na 100.",
     efekt:
-      "Projekt z Figmy przenieśliśmy na Next.js z CMS. Stare adresy przekierowane, strona na produkcji 12 dni po opłaceniu, przy terminie 5 tygodni.",
+      "Projekt z Figmy przenieśliśmy na Next.js z CMS. Stare adresy przekierowane, strona na produkcji 12 dni od startu prac, przy terminie 5 tygodni.",
     liczba: "45 → 97",
     liczbaOpis: "punktów w audycie, strona główna 6,4 raza lżejsza",
   },
