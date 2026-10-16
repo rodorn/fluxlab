@@ -900,11 +900,15 @@ export function punktacja(ustalenia: Ustalenie[]): number | null {
   ) {
     return null;
   }
-  const kara = ustalenia.reduce(
-    (s, x) => s + (x.waga === "krytyczne" ? 22 : x.waga === "wazne" ? 9 : 3),
-    0,
+  // Kara procentowa zamiast stałej: przy kilkudziesięciu kontrolach stała
+  // kara sprowadzała duże, działające strony do zera. Każde ustalenie
+  // zabiera część tego, co zostało.
+  const mnoznik = ustalenia.reduce(
+    (m, x) =>
+      m * (x.waga === "krytyczne" ? 0.8 : x.waga === "wazne" ? 0.94 : 0.985),
+    1,
   );
-  return Math.max(0, Math.min(100, 100 - kara));
+  return Math.max(0, Math.min(100, Math.round(100 * mnoznik)));
 }
 
 /** Zbiór dostępów bez powtórzeń, w kolejności od najczęściej potrzebnego. */
