@@ -14,6 +14,7 @@
 import { czystaDomena, zmierz } from "./audyt-pomiar";
 import { ocenStrone, type Ustalenie } from "./audyt-ocena";
 import { odmien } from "./odmiana";
+import { KATALOG, kontroleStrony, type Znalezisko } from "./audyt-kontrole";
 import { arkuszeStrony, przygotujCss, sprawdzKursor, type ArkuszKursora } from "./kursor";
 
 const UA =
@@ -49,6 +50,8 @@ export type Strona = {
   /** Klikalne elementy bez rączki kursora. Null, gdy nie dało się ocenić
    *  (brak dokumentu albo nieprzeczytany arkusz stylów). */
   kursor: { bezRaczki: number; przyklady: string[] } | null;
+  /** Wspólne kontrole jednej podstrony (lib/audyt-kontrole.ts). */
+  znaleziska: Znalezisko[];
 };
 
 export type WynikCalosci = {
@@ -216,6 +219,7 @@ function przeanalizuj(adres: string, o: Odpowiedz, hosty: Set<string>): Strona {
     mieszane: [],
     linki: [],
     kursor: null,
+    znaleziska: [],
   };
   const html = o.tekst;
   if (html === null) return s;
@@ -265,6 +269,7 @@ function przeanalizuj(adres: string, o: Odpowiedz, hosty: Set<string>): Strona {
     s.mieszane = [...mieszane].sort().slice(0, 10);
   }
   s.linki = linkiZHtml(html, o.koncowy, hosty);
+  if (o.status < 300) s.znaleziska = kontroleStrony(html, o.koncowy);
   return s;
 }
 
@@ -387,7 +392,11 @@ export async function zbadajCalosc(
       // Kursor oceniamy osobno na każdej podstronie, więc nie powtarzamy go
       // w sprawach domeny.
       p.osiagalna && !p.zablokowany
-        ? ocenStrone(p).filter((u) => u.klucz !== "kursor")
+        ? ocenStrone(p).filter(
+            (u) =>
+              u.klucz !== "kursor" &&
+              (KATALOG[u.klucz]?.zakres ?? "domena") === "domena",
+          )
         : [],
     )
     .catch(() => [] as Ustalenie[]);
@@ -492,6 +501,7 @@ export async function zbadajCalosc(
               mieszane: [],
               linki: [],
               kursor: null,
+              znaleziska: [],
             } satisfies Strona);
         if (o?.tekst && o.status < 300) {
           const { arkusze, nieprzeczytane } = await arkuszeStrony(
@@ -575,6 +585,7 @@ export type Grupa = {
   klucz: string;
   tytul: string;
   ryzyko: string;
+  waga: "wazne" | "drobne";
   wpisy: { adres: string; szczegol?: string }[];
 };
 
@@ -588,10 +599,20 @@ function bezUkosnika(a: string): string {
 }
 
 export function grupujProblemy(w: WynikCalosci): Grupa[] {
+  // Grupy, które mówią o błędach i utracie ruchu, idą przed kosmetyką.
+  const WAZNE = new Set([
+    "bledy",
+    "zlamane",
+    "brak_odpowiedzi",
+    "noindex",
+    "canonical_inny",
+    "mieszana",
+  ]);
   const g = (klucz: string, tytul: string, ryzyko: string): Grupa => ({
     klucz,
     tytul,
     ryzyko,
+    waga: WAZNE.has(klucz) ? "wazne" : "drobne",
     wpisy: [],
   });
   const bledy = g(
@@ -809,6 +830,23 @@ export function grupujProblemy(w: WynikCalosci): Grupa[] {
     });
   }
 
+  const wspolne = new Map<string, Grupa>();
+  for (const s of html) {
+    for (const z of s.znaleziska) {
+      const k = KATALOG[z.klucz];
+      if (!k) continue;
+      if (!wspolne.has(z.klucz))
+        wspolne.set(z.klucz, {
+          klucz: z.klucz,
+          tytul: k.tytul,
+          ryzyko: k.skutek,
+          waga: k.waga,
+          wpisy: [],
+        });
+      wspolne.get(z.klucz)!.wpisy.push({ adres: s.adres, szczegol: z.szczegol });
+    }
+  }
+
   return [
     bledy,
     zlamane,
@@ -830,12 +868,19 @@ export function grupujProblemy(w: WynikCalosci): Grupa[] {
     alt,
     kursor,
     ciezki,
-  ].filter((x) => x.wpisy.length > 0);
+    ...wspolne.values(),
+  ]
+    .filter((x) => x.wpisy.length > 0)
+    // sort jest stabilny, więc w obrębie wagi zostaje kolejność z listy
+    .sort((a, b) => (a.waga === b.waga ? 0 : a.waga === "wazne" ? -1 : 1));
 }
 
 /* ------------------------------------------------------------------ */
 /* Raport mailem                                                        */
 /* ------------------------------------------------------------------ */
+
+/** Tyle adresów pokazujemy w grupie, resztę liczbą. */
+const NAJWYZEJ_ADRESOW = 10;
 
 export const PLATNOSC = {
   netto: "10,00 zł",
@@ -936,9 +981,11 @@ export function raportHtml(
       tresc += `<h3 style="margin:22px 0 4px;font-size:15px;color:#111827">${esc(g.tytul)} (${g.wpisy.length})</h3>`;
       tresc += `<p style="margin:0 0 8px;font-size:13px;color:#6b7280">${esc(g.ryzyko)}</p>`;
       tresc += `<ul style="margin:0;padding-left:18px">`;
-      for (const x of g.wpisy) {
+      for (const x of g.wpisy.slice(0, NAJWYZEJ_ADRESOW)) {
         tresc += `<li style="font-size:13px;line-height:1.5;color:#374151;word-break:break-all"><a href="${esc(x.adres)}" style="color:#4f46e5">${esc(krotki(x.adres))}</a>${x.szczegol ? ` <span style="color:#6b7280">(${esc(x.szczegol)})</span>` : ""}</li>`;
       }
+      if (g.wpisy.length > NAJWYZEJ_ADRESOW)
+        tresc += `<li style="font-size:13px;line-height:1.5;color:#6b7280">i ${g.wpisy.length - NAJWYZEJ_ADRESOW} innych</li>`;
       tresc += `</ul>`;
     }
   }
@@ -1001,8 +1048,10 @@ export function raportTekst(
     );
     for (const g of d.grupy) {
       l.push(`${g.tytul} (${g.wpisy.length})`, g.ryzyko);
-      for (const x of g.wpisy)
+      for (const x of g.wpisy.slice(0, NAJWYZEJ_ADRESOW))
         l.push(`  ${x.adres}${x.szczegol ? ` (${x.szczegol})` : ""}`);
+      if (g.wpisy.length > NAJWYZEJ_ADRESOW)
+        l.push(`  i ${g.wpisy.length - NAJWYZEJ_ADRESOW} innych`);
       l.push("");
     }
   }

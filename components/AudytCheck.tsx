@@ -147,6 +147,8 @@ const NAZWA_OBSZARU: Record<string, string> = {
   seo: "Widoczność w wyszukiwarce",
   ai: "Widoczność dla asystentów AI",
   poczta: "Poczta firmowa",
+  bezpieczenstwo: "Bezpieczeństwo",
+  prawo: "Prawo i zaufanie klientów",
 };
 
 const KOLEJNOSC_OBSZAROW = [
@@ -155,6 +157,8 @@ const KOLEJNOSC_OBSZAROW = [
   "mobile",
   "seo",
   "ai",
+  "bezpieczenstwo",
+  "prawo",
   "poczta",
 ];
 

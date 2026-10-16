@@ -16,6 +16,11 @@ import dns from "dns/promises";
 import tls from "tls";
 
 import { arkuszeStrony, przygotujCss, sprawdzKursor } from "./kursor";
+import {
+  kontroleDomeny,
+  kontroleStrony,
+  type Znalezisko,
+} from "./audyt-kontrole";
 
 /** Górne ograniczenia, żeby jeden audyt nie zjadł całego czasu funkcji. */
 const CZAS_STRONY_MS = 12_000;
@@ -127,6 +132,9 @@ export type Pomiar = {
     problemy: { opis: string; ile: number }[];
     arkuszyNieprzeczytanych: number;
   } | null;
+  /** Wyniki wspólnych kontroli (lib/audyt-kontrole.ts) dla strony głównej
+   *  i domeny. Opis każdej stoi w KATALOGU. */
+  znaleziska: Znalezisko[];
 };
 
 function pusty(domena: string): Pomiar {
@@ -183,6 +191,7 @@ function pusty(domena: string): Pomiar {
       arkuszyNieprzeczytanych: 0,
     },
     kursor: null,
+    znaleziska: [],
   };
 }
 
@@ -842,12 +851,20 @@ export async function zmierz(domenaWejscie: string): Promise<Pomiar> {
     ? poHttp.odp.url.startsWith("https://")
     : null;
 
-  const [zasoby, kursor] = await Promise.all([
+  const adresKoncowy = dok.odp.url || baza;
+  const [zasoby, kursor, domenowe] = await Promise.all([
     zmierzZasoby(zasobyZHtml(html, baza)),
-    zmierzKursor(html, dok.odp.url || baza),
+    zmierzKursor(html, adresKoncowy),
+    kontroleDomeny({
+      domena,
+      baza: new URL(adresKoncowy).origin,
+      html,
+      naglowki: dok.odp.headers,
+    }).catch(() => [] as Znalezisko[]),
   ]);
   wynik.zasoby = zasoby;
   wynik.kursor = kursor;
+  wynik.znaleziska = [...domenowe, ...kontroleStrony(html, adresKoncowy)];
   const wagaZasobow = wynik.zasoby.reduce((s, z) => s + (z.bajty ?? 0), 0);
   wynik.mobile = await zmierzMobile(baza, html, wagaZasobow);
   return wynik;

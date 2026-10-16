@@ -10,12 +10,21 @@
 
 import { odmien, orzeczenieMnogie } from "./odmiana";
 import type { Pomiar } from "./audyt-pomiar";
+import { KATALOG } from "./audyt-kontrole";
 
 export type Waga = "krytyczne" | "wazne" | "drobne";
 
 export type Ustalenie = {
   klucz: string;
-  obszar: "dostepnosc" | "szybkosc" | "mobile" | "seo" | "ai" | "poczta";
+  obszar:
+    | "dostepnosc"
+    | "szybkosc"
+    | "mobile"
+    | "seo"
+    | "ai"
+    | "poczta"
+    | "bezpieczenstwo"
+    | "prawo";
   waga: Waga;
   tytul: string;
   /** Co dokładnie zmierzono. Zawsze z liczbą albo cytatem, nigdy ogólnik. */
@@ -44,6 +53,9 @@ function mb(b: number): string {
     ? `${(b / 1_048_576).toFixed(1)} MB`
     : `${Math.round(b / 1024)} kB`;
 }
+
+/** Wspólna kontrola, którą pomijamy, gdy to samo mówi już ustalenie z listy. */
+const POMIJANE: Record<string, string[]> = {};
 
 export function ocenStrone(p: Pomiar): Ustalenie[] {
   const u: Ustalenie[] = [];
@@ -740,6 +752,26 @@ export function ocenStrone(p: Pomiar): Ustalenie[] {
       koszt: 80,
       samodzielnie: false,
       dostep: "dostęp do kodu strony",
+    });
+  }
+
+  // --- wspólne kontrole (lib/audyt-kontrole.ts) ---------------------------
+  const juz = new Set(u.map((x) => x.klucz));
+  for (const z of p.znaleziska ?? []) {
+    const k = KATALOG[z.klucz];
+    if (!k || juz.has(z.klucz) || POMIJANE[z.klucz]?.some((x) => juz.has(x)))
+      continue;
+    juz.add(z.klucz);
+    dodaj({
+      klucz: z.klucz,
+      obszar: k.obszar,
+      waga: k.waga,
+      tytul: k.tytul,
+      fakt: z.szczegol,
+      skutek: k.skutek,
+      koszt: k.koszt,
+      samodzielnie: false,
+      dostep: k.dostep,
     });
   }
 

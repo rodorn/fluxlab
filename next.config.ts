@@ -9,6 +9,25 @@ const nextConfig: NextConfig = {
   // znikaja, a ich adresy prowadza na filar, zeby nie stracic tego, co juz
   // wskazuje na stare sciezki. Linki wewnetrzne sa przepisane wprost na
   // filar, wiec te przekierowania obsluguja wylacznie ruch z zewnatrz.
+  // Nagłówki bezpieczeństwa. Audyt dla klientów sprawdza je na ich stronach,
+  // więc nasza strona ma je mieć. CSP nie stawiamy, bo bez nonce zablokowałby
+  // skrypty analityki.
+  async headers() {
+    return [
+      {
+        source: "/:path*",
+        headers: [
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "X-Frame-Options", value: "SAMEORIGIN" },
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+          {
+            key: "Permissions-Policy",
+            value: "camera=(), microphone=(), geolocation=(), payment=()",
+          },
+        ],
+      },
+    ];
+  },
   async redirects() {
     return [
       // Krotkie linki dla partnerow z YouTube: widz wpisuje je z ekranu, a

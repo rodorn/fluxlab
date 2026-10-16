@@ -47,6 +47,8 @@ const NAZWA_OBSZARU: Record<string, string> = {
   seo: "Widoczność w wyszukiwarce",
   ai: "Widoczność dla asystentów AI",
   poczta: "Poczta firmowa",
+  bezpieczenstwo: "Bezpieczeństwo",
+  prawo: "Prawo i zaufanie klientów",
 };
 
 function esc(t: string): string {
