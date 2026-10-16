@@ -26,9 +26,9 @@ const OFERTA = [
     cena: "wdrożenie od 1 zł",
     opis: "Lead z formularza, telefonu i poczty trafia sam do handlowca, z zadaniem „zadzwoń w 15 minut”.",
     punkty: [
-      "do 3 handlowców: 1 zł (beta) + 690 zł/mies.",
-      "do 10 osób: 12 900 zł + 1 190 zł/mies.",
-      "kilka zespołów: od 24 900 zł",
+      "abonament 99 zł miesięcznie za konto",
+      "do 3 handlowców wdrożenie 1 zł (beta)",
+      "do 10 osób wdrożenie 12 900 zł",
     ],
     cta: "Zobacz CRM",
   },
