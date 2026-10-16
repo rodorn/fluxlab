@@ -41,7 +41,7 @@ export function poJezyku(k: KodJezyka): string {
 }
 
 const SLOWA: Record<KodJezyka, string> = {
-  pl: "i w na z się nie do że jest to jak po dla od o ale co już tak czy jego jej ich przez przy oraz lub być który która które ten ta te tym tego jako są tylko może można także także także więc gdy bardzo także nasz nasze naszych twoje twój jeśli jeżeli również będzie został zostać",
+  pl: "bez i w na z się nie do że jest to jak po dla od o ale co już tak czy jego jej ich przez przy oraz lub być który która które ten ta te tym tego jako są tylko może można także także także więc gdy bardzo także nasz nasze naszych twoje twój jeśli jeżeli również będzie został zostać",
   en: "the and of to in is that for it with as was on be by are this from or have an not but at which you your we our they their will can has had been more all about there if would what when so no who its also into than only other than these those how then them should could may were",
   de: "der die das und ist nicht ein eine einen dem den des mit auf für von zu im sich auch es wir sie ihr ihre unsere unser wie oder aber bei nach aus wenn werden wird wurde hat haben sind noch nur über durch zum zur dass kann können mehr diese dieser sehr schon",
   uk: "і в на з що не до це як та для від по за але його її їх ми ви вони він вона бути є було буде також який яка які цей ця ці щоб коли тому або вже ще дуже тільки може можна наш наші ваш ваші при через між після",
@@ -84,12 +84,11 @@ export type Rozpoznanie = {
  * musi mieć co najmniej dwa razy tyle trafień co drugi język.
  */
 export function rozpoznajJezyk(tekst: string, minimum = 3): Rozpoznanie {
-  const maly = tekst.toLowerCase();
-  // Jednoliterowe słowo pisane wielką literą to zwykle skrót (S.A., A4),
-  // a nie spójnik, więc go nie liczymy.
-  const slowa = (tekst.match(/[\p{L}']+/gu) ?? [])
-    .filter((w) => w.length > 1 || w === w.toLowerCase())
-    .map((w) => w.toLowerCase());
+  // Skróty pisane wielkimi literami (NIP, VAT, API, S.A.) to nie słowa
+  // funkcyjne żadnego języka, więc nie liczą się ani do słów, ani do liter.
+  const bezSkrotow = tekst.replace(/(?<![\p{L}])\p{Lu}[\p{Lu}\d]*(?![\p{Ll}])/gu, " ");
+  const maly = bezSkrotow.toLowerCase();
+  const slowa = (maly.match(/[\p{L}']+/gu) ?? []);
   // Najpierw alfabet: tekst cyrylicą to ukraiński albo rosyjski, łaciński to
   // cała reszta. Dzięki temu wspólne krótkie słowa nie mieszają obu grup.
   const cyr = (maly.match(/\p{Script=Cyrillic}/gu) ?? []).length;
@@ -108,12 +107,19 @@ export function rozpoznajJezyk(tekst: string, minimum = 3): Rozpoznanie {
   // polską literą nie przeważyła całego zdania po angielsku.
   for (const [k, re] of ZNAKI)
     if (k in punkty) punkty[k] += Math.min(2, (maly.match(re) ?? []).length);
+  // Polska litera wyklucza czeski, czeska wyklucza polski.
+  if ("cs" in punkty && /[ąęłńśźżć]/.test(maly)) punkty.cs = 0;
+  if ("pl" in punkty && /[ěřů]/.test(maly)) punkty.pl = 0;
   const ranking = (Object.entries(punkty) as [KodJezyka, number][]).sort(
     (a, b) => b[1] - a[1],
   );
   const [pierwszy, drugi = ["pl", 0] as [KodJezyka, number]] = ranking;
+  // Krótki tekst (poniżej 8 słów) rozstrzygamy tylko przy innym alfabecie
+  // niż łaciński. Kilka słów to za mało, żeby odróżnić „bez” polskie od
+  // czeskiego.
+  const krotki = slowa.length < 8 && !(cyr > lac);
   const jezyk =
-    pierwszy[1] >= minimum && pierwszy[1] >= 2 * drugi[1] ? pierwszy[0] : null;
+    !krotki && pierwszy[1] >= minimum && pierwszy[1] >= 2 * drugi[1] ? pierwszy[0] : null;
   return { jezyk, trafien: Math.round(pierwszy[1] * 10) / 10, slow: slowa.length };
 }
 
@@ -147,9 +153,14 @@ function bezKodu(html: string): string {
     .replace(/<!--[\s\S]*?-->/g, " ");
 }
 
-/** Widoczne bloki tekstu (między znacznikami), od 12 do 400 znaków. */
+/** Znaczniki w środku tekstu: nie dzielą słów ani zdań (<strong>P</strong>amiętaj). */
+const INLINE =
+  /<\/?(a|span|strong|b|em|i|u|mark|sup|sub|small|abbr|font|s|del|ins|q|cite|code|kbd|time|label|wbr)\b[^>]*>|\u00ad|&shy;/gi;
+
+/** Widoczne bloki tekstu (między znacznikami blokowymi), od 12 do 400 znaków. */
 export function blokiTekstu(html: string): string[] {
   return bezKodu(html)
+    .replace(INLINE, "")
     .split(/<[^>]+>/)
     .map((t) => dekoduj(t).replace(/\s+/g, " ").trim())
     .filter((t) => t.length >= 12 && t.length <= 400);
@@ -157,7 +168,7 @@ export function blokiTekstu(html: string): string[] {
 
 export function tekstStrony(html: string): string {
   const body = html.match(/<body\b[\s\S]*$/i)?.[0] ?? html;
-  return dekoduj(bezKodu(body).replace(/<[^>]+>/g, " "))
+  return dekoduj(bezKodu(body).replace(INLINE, "").replace(/<[^>]+>/g, " "))
     .replace(/\s+/g, " ")
     .trim();
 }

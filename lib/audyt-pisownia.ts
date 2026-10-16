@@ -24,6 +24,8 @@ const MARKI = new Set([
   "whatsapp", "messenger", "google", "allegro", "inpost", "paczkomat", "blik",
   "przelewy", "payu", "tpay", "paypal", "olx", "otomoto", "booking", "spotify",
   "telegram", "signal", "threads", "snapchat", "vimeo", "wordpress", "shopify",
+  // zwroty łacińskie z tekstów prawnych i finansowych
+  "minimis", "facto", "iure", "jure", "lege", "artis", "vacatio", "legis", "bona", "fide",
 ]);
 
 /** Odległość Damerau-Levenshteina (wariant z jedną zamianą sąsiednich liter). */
@@ -64,21 +66,30 @@ function adresKolektora(): string {
 export async function sprawdzSlowa(
   slowa: string[],
   limitMs = 15_000,
-): Promise<Map<string, { en: boolean; podpowiedzi: string[] }> | null> {
+  rdzenie: string[] = [],
+): Promise<{
+  nieznane: Map<string, { en: boolean; podpowiedzi: string[] }>;
+  rdzenieEn: Set<string>;
+} | null> {
   const sekret = process.env.RUCH_SEKRET;
-  if (!sekret || !slowa.length) return slowa.length ? null : new Map();
+  if (!slowa.length) return { nieznane: new Map(), rdzenieEn: new Set() };
+  if (!sekret) return null;
   try {
     const odp = await fetch(adresKolektora(), {
       method: "POST",
       headers: { "Content-Type": "application/json", "X-Sekret": sekret },
-      body: JSON.stringify({ slowa: slowa.slice(0, MAX_SLOW) }),
+      body: JSON.stringify({ slowa: slowa.slice(0, MAX_SLOW), rdzenie: rdzenie.slice(0, MAX_SLOW) }),
       signal: AbortSignal.timeout(limitMs),
     });
     if (!odp.ok) return null;
     const j = (await odp.json()) as {
       nieznane?: Record<string, { en: boolean; podpowiedzi: string[] }>;
+      rdzenieEn?: string[];
     };
-    return new Map(Object.entries(j.nieznane ?? {}));
+    return {
+      nieznane: new Map(Object.entries(j.nieznane ?? {})),
+      rdzenieEn: new Set(j.rdzenieEn ?? []),
+    };
   } catch {
     return null;
   }
@@ -98,6 +109,37 @@ function zdanie(tekst: string, slowo: string): string {
   return tekst.slice(start, koniec).trim();
 }
 
+const KONCOWKI = [
+  "owania", "owanie", "owaniu", "owaniem", "ować", "owy", "owe", "owych", "owej", "owego",
+  "owi", "ach", "ami", "ów", "em", "om", "ie", "u", "a", "y", "i", "e",
+];
+
+/** Rdzenie słowa po odcięciu polskiej końcówki, co najmniej 4 litery. */
+function rdzenieSlowa(w: string): string[] {
+  return KONCOWKI.filter((k) => w.endsWith(k) && w.length - k.length >= 4).map((k) =>
+    w.slice(0, -k.length),
+  );
+}
+
+const SKROTY = new Set(["późn", "zm", "ust", "pkt", "art", "poz", "tj", "tzw", "np", "m.in", "nast", "wg", "ok", "godz", "tel", "ul", "zob", "por", "dz", "dot"]);
+
+/**
+ * Jedno przejście po tekście całej witryny: słowa zapisane gdzieś z wielką
+ * literą (KSeF, Enova, czyli nazwy) i krótkie słowa, po których stoi kropka
+ * i mała litera albo cyfra (skróty: „późn. zm.”, „ust. 2”).
+ */
+function indeksWitryny(tekst: string): { wielkie: Set<string>; skroty: Set<string> } {
+  const wielkie = new Set<string>();
+  const skroty = new Set<string>();
+  for (const m of tekst.matchAll(/(?<![\p{L}])(\p{L}+)(\.\s*[\p{Ll}\d])?/gu)) {
+    const w = m[1];
+    const maly = w.toLowerCase();
+    if (w !== maly) wielkie.add(maly);
+    if (m[2] && w.length <= 5) skroty.add(maly);
+  }
+  return { wielkie, skroty };
+}
+
 /**
  * Literówki na stronach po polsku. `strony` to tekst każdej podstrony. Słowo
  * występujące na 3 i więcej podstronach uznajemy za celowe (nazwa, termin).
@@ -114,17 +156,29 @@ export async function znajdzLiterowki(
       if (!gdzie.has(w)) gdzie.set(w, []);
       gdzie.get(w)!.push(s.adres);
     }
+  const indeks = indeksWitryny(strony.map((s) => s.tekst).join("\n"));
   const kandydaci = [...gdzie]
-    .filter(([, a]) => a.length < 3)
+    .filter(
+      ([w, a]) =>
+        a.length < 3 && !SKROTY.has(w) && !indeks.skroty.has(w) && !indeks.wielkie.has(w),
+    )
     .map(([w]) => w)
-    .sort();
-  const wynik = await sprawdzSlowa(kandydaci.slice(0, MAX_SLOW), limitMs);
-  if (!wynik) return null;
+    .sort()
+    .slice(0, MAX_SLOW);
+  // Rdzenie bez polskiej końcówki idą w tym samym zapytaniu: „dashboardów”
+  // to „dashboard” z polską odmianą, a nie literówka.
+  const rdzenie = new Map(kandydaci.map((w) => [w, rdzenieSlowa(w)]));
+  const odpowiedz = await sprawdzSlowa(kandydaci, limitMs, [
+    ...new Set([...rdzenie.values()].flat()),
+  ]);
+  if (!odpowiedz) return null;
+  const wynik = odpowiedz.nieznane;
   const literowki: Literowka[] = [];
-  for (const [slowo, info] of [...wynik].sort((a, b) =>
-    a[0].localeCompare(b[0], "pl"),
-  )) {
+  for (const slowo of kandydaci.sort((a, b) => a.localeCompare(b, "pl"))) {
+    const info = wynik.get(slowo);
+    if (!info) continue;
     if (info.en || MARKI.has(slowo) || (domena && domena.includes(slowo))) continue;
+    if ((rdzenie.get(slowo) ?? []).some((r) => odpowiedz.rdzenieEn.has(r))) continue;
     // Podpowiedź ze spacją albo łącznikiem („face book”) to rozbicie nazwy,
     // a nie poprawka literówki.
     const podpowiedz = info.podpowiedzi.find(
@@ -133,7 +187,11 @@ export async function znajdzLiterowki(
     if (!podpowiedz) continue;
     for (const adres of gdzie.get(slowo) ?? []) {
       const tekst = strony.find((s) => s.adres === adres)?.tekst ?? "";
-      literowki.push({ adres, slowo, podpowiedz, cytat: zdanie(tekst, slowo) });
+      const cytat = zdanie(tekst, slowo);
+      // Kod HTML, który przedostał się do tekstu (np. „<a href=”), to nie
+      // literówka w treści.
+      if (/[<>=&]/.test(cytat)) continue;
+      literowki.push({ adres, slowo, podpowiedz, cytat });
     }
   }
   return literowki;

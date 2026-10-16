@@ -730,12 +730,31 @@ export async function zbadajCalosc(
       }
     }
     if (mapa) {
+      const poza: [string, Set<string>][] = [];
       for (const [l, na] of zrodla) {
         if (wMapie.has(bezUkosnika(l)) || dokad.has(l) || statusy.get(l) !== 200) continue;
         const u = new URL(l);
         // Kolejne strony listy wpisów nie muszą być w mapie.
         if (u.search || PLIKI.test(u.pathname) || /\/page\/\d+\/?$/.test(u.pathname))
           continue;
+        poza.push([l, na]);
+      }
+      // Strona z noindex (meta albo X-Robots-Tag) albo z canonical na inny
+      // adres celowo nie stoi w mapie, więc najpierw czytamy jej nagłówek.
+      const doMapy = new Set<string>();
+      await pula(
+        poza.map(([l]) => l).slice(0, 40),
+        async (l) => {
+          const o = await pobierz(l, CZAS_LINKU_MS, true);
+          if (!o || o.tekst === null || o.status !== 200) return;
+          const s = przeanalizuj(l, o, hosty);
+          if (!s.noindex && (!s.canonical || bezUkosnika(s.canonical) === bezUkosnika(s.koncowy)))
+            doMapy.add(l);
+        },
+        () => Date.now() < start + 230_000,
+      );
+      for (const [l, na] of poza.slice(0, 40)) {
+        if (!doMapy.has(l)) continue;
         const zrodlo = poAdresie.get(bezUkosnika([...na].sort()[0]));
         if (zrodlo) dopisz(zrodlo, "poza_mapa", krotki(l));
       }
