@@ -5472,6 +5472,8 @@ Otwarte decyzje: tytuł biur rachunkowych (Z5 „nie”, wyświetlenia 13,6 → 
 **Plan:** 23 zadania w `cykl/plan-ruchu.md`, stary plan w `cykl/.plan-ruchu-2026-10-15.bak`; pierwsze: Z1 filtr serii testowych w liczniku kanałów, Z2 IndexNow dla 111 stron zmienionych przez FL_strona i kontrola `lastmod`, Z3 ostatni mail do agencji (022_adream) i zamknięcie segmentu. Kluczowe: Z4 i Z6 partia 10 biur rachunkowych bez adresu BAE (CIK, `krs_droga.py`, wysyłka do 17:00), Z5 warunkowy tekst przycisku po wyniku audytu (0 kliknięć z 10), Z9 i Z16 linki wewnętrzne i lista 10 adresów na serię 17.10 00:10, Z17 notatki do artykułu „Limit 10 tys. zł poza KSeF" na poniedziałek 19.10, Z19 żądania indeksowania, Z23 bilans.
 **Mail do Pawła:** wysłany 16.10 06:4x na iwanekpawel55@gmail.com, temat „FluxLab ruch, plan na 16.10.2026: ok. 36 osób w dobie, 0 wejść z 18 maili do agencji". Dla Pawła: decyzja HAJS METRICS (5 min), linki z utm w publikacjach FB i YouTube (10 min), testy na produkcji z `fl_nie_licz=1` (2 min).
 
+<!-- WYSLANO 2026-10-16 07:08 -->
+
 ## 2026-10-16 07:10
 **Kanał:** pomiar, Google i Bing, outreach (plan Z1, Z2, Z4, Z5).
 **Co zrobione:** licznik kanałów odsiewa pary i serie testowe (Z1); 111 stron zmienionych w nocy przez FL_strona zgłoszone do IndexNow, a mapa witryny dostała ich nowe daty (Z2); partia biur rachunkowych z pkt.pl dała 0 adresatów (Z4, [!]); przycisk po wyniku audytu bez zmian, bo wyników jest 7, a próg to 8 (Z5).
@@ -5479,3 +5481,11 @@ Otwarte decyzje: tytuł biur rachunkowych (Z5 „nie”, wyświetlenia 13,6 → 
 **Dowód:** commity 9bcf4c6 (odsiew w `cykl/pomiar-kanalow.py`), 031a73d (`lib/daty-stron.json`, po wdrożeniu lastmod 16.10 01:53 dla /n8n-dla-crm, /wdrozenie-n8n-cena, /automatyzacja-crm-leasing i in.); IndexNow 111 adresów, Yandex 200, Naver 200; 5 × curl z VPS 200, canonical na siebie. Z4: `krs_partia28_2026-10-16.json`, 195 domen, 19 spółek, 18 z adresem BAE.
 **Dla Pawła:**
 **Zostało otwarte:** Z3 (ostatni mail do agencji, od 9:00), Z6 nie ma plików do wysłania (biura bez BAE wyczerpane w CIK i pkt.pl, strateg powinien zmienić segment), Z7 do Z23 według godzin.
+
+## 2026-10-16 08:15
+**Kanał:** Google i asystenci AI (plan Z8, Z9, Z11; Z3 i Z6 czekają na okno wysyłek od 9:00).
+**Co zrobione:** sprawdziłem w Search Console 41 adresów i okazało się, że prawie cała witryna jest już w Google, poza Google zostało 6 adresów; dwa z nich dostały link z treści innej strony (commit a4462dd), a 5 kluczowych stron ma w HTML bez JS H1, pierwszy akapit i FAQ zgodne z JSON-LD.
+**Ruch:** raport 07:43: doba 105 odsłon, 89 osób; źródła l.facebook.com 5, Google 3, bing.com 2, www.bing.com 1, mail 1. Po odsiewie (`pomiar-kanalow.py` 08:10): doba ludzie 47, pary 7, serie testowe 36; tydzień ludzie 197. GSC 7 dni (dane do 13.10): 11 kliknięć, 749 wyświetleń.
+**Dowód:** Z8: seria 16.10 po 7,5 h 5 z 5 „w Google”, tabela 15 stron w linii Z8. Z9: Kontrola adresu 07:47 do 07:59: 5/5 „zeskanowanych” z Z22, /realizacje, 10/10 serii 14.10, 12/16 adresów mapy bez wyświetleń są w Google; poza Google /slownik, /strefa-wiedzy/ryczalt-czy-liniowy, /wlasny-crm, kategorie ai, narzedzia, raportowanie. Linki: /automatyzacja-leadow-crm „Leady same trafiają do CRM” → /wlasny-crm (0 → 1), /strefa-wiedzy/maile-trafiaja-do-spamu „DMARC” → /slownik#dmarc (1 → 2); curl z VPS oba w HTML; IndexNow 5 adresów, Yandex 200, Naver 200. Z11: tabela w linii Z11, 5 × 200, FAQ 3/3, 3/3, 4/4, 4/4, 4/4.
+**Dla Pawła:**
+**Zostało otwarte:** Z3 (ostatni mail do agencji) i Z6 (ksiegowe, plików brak po Z4) od 9:00; Z16 i Z19 mają tylko 6 adresów na serię 17.10, bo reszta jest już w indeksie, strateg może przesunąć godziny z serii indeksowania na inny kanał.
