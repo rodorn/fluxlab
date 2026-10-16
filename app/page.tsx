@@ -28,7 +28,7 @@ const OFERTA = [
     punkty: [
       "abonament 499 zł/mies. do 3 osób, potem 99 zł za osobę",
       "do 3 handlowców wdrożenie 1 zł (beta)",
-      "do 10 osób wdrożenie 12 900 zł",
+      "większy zespół: wdrożenie 12 900 zł",
     ],
     cta: "Zobacz CRM",
   },

@@ -5,7 +5,7 @@ import KalkulatorLeadow from "@/components/KalkulatorLeadow";
 export const metadata: Metadata = {
   title: "Własny CRM dla firmy w trzy tygodnie | Fluxlab",
   description:
-    "Własny CRM: lead z formularza, telefonu i poczty sam trafia do handlowca. W becie wdrożenie dla małej firmy za 1 zł. Abonament 499 zł miesięcznie do 3 osób.",
+    "Własny CRM: lead z formularza, telefonu i poczty sam trafia do handlowca. Wdrożenie w fazie beta za 1 zł, abonament 499 zł miesięcznie do 3 osób.",
   alternates: { canonical: "/wlasny-crm" },
   openGraph: {
     title: "Własny CRM dla firmy w trzy tygodnie | Fluxlab",
@@ -59,9 +59,9 @@ export default function WlasnyCrm() {
           ],
         },
         {
-          name: "Firma",
+          name: "Większa firma",
           price: "12 900 zł",
-          desc: "Do 10 osób. Abonament 499 zł miesięcznie za 3 konta i 99 zł za każde kolejne.",
+          desc: "Większy zespół, oddziały. Abonament 499 zł miesięcznie za 3 konta i 99 zł za każde kolejne.",
           features: [
             "Lejek pod Twoją branżę, także leady z telefonu",
             "Przydział opiekuna i eskalacja po 30 minutach",
@@ -69,21 +69,11 @@ export default function WlasnyCrm() {
           ],
           featured: true,
         },
-        {
-          name: "Kilka zespołów",
-          price: "od 24 900 zł",
-          desc: "Oddziały albo ponad 10 osób. Abonament 499 zł miesięcznie za 3 konta i 99 zł za każde kolejne.",
-          features: [
-            "Role i widoki dla oddziałów i kierowników",
-            "Integracja z systemem księgowym albo ERP",
-            "Telefonia, SMS i umowy do podpisu",
-          ],
-        },
       ]}
       faq={[
         {
           q: "Ile kosztuje własny CRM?",
-          a: "Abonament to 499 zł miesięcznie za 3 konta i 99 zł za każde kolejne. Wdrożenie zależy od wielkości firmy: do 3 osób w fazie beta 1 zł zamiast 1 900 zł, do 10 osób 12 900 zł. Ceny netto. W abonamencie są serwer w UE, kopie i aktualizacje.",
+          a: "Abonament to 499 zł miesięcznie za 3 konta i 99 zł za każde kolejne. Wdrożenie zależy od wielkości firmy: do 3 osób w fazie beta 1 zł zamiast 1 900 zł, większy zespół 12 900 zł. Ceny netto. W abonamencie są serwer w UE, kopie i aktualizacje.",
         },
         {
           q: "Czym to się różni od Pipedrive?",
