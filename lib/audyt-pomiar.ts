@@ -20,6 +20,7 @@ import {
   kontroleDomeny,
   kontroleGlownej,
   obrazy404,
+  kontroleZasobow,
   type Znalezisko,
 } from "./audyt-kontrole";
 
@@ -657,9 +658,14 @@ function zamknietyDla(
 }
 
 /** Kursor nad klikalnymi elementami: style z dokumentu i z arkuszy. */
-async function zmierzKursor(html: string, baza: string): Promise<Pomiar["kursor"]> {
+async function zmierzKursor(
+  html: string,
+  baza: string,
+  tekstyCss: string[] = [],
+): Promise<Pomiar["kursor"]> {
   const { arkusze, nieprzeczytane } = await arkuszeStrony(html, baza, async (a) => {
     const o = await pobierz(a, CZAS_ZASOBU_MS);
+    if (o && o.odp.ok) tekstyCss.push(o.tekst.slice(0, 1_500_000));
     return o && o.odp.ok ? { arkusz: przygotujCss(o.tekst), bajty: o.tekst.length } : null;
   });
   const w = sprawdzKursor(html, arkusze);
@@ -853,9 +859,12 @@ export async function zmierz(domenaWejscie: string): Promise<Pomiar> {
     : null;
 
   const adresKoncowy = dok.odp.url || baza;
+  const tekstyCss: string[] = [
+    ...[...html.matchAll(/<style[^>]*>([\s\S]*?)<\/style>/gi)].map((m) => m[1]),
+  ];
   const [zasoby, kursor, domenowe, glowna] = await Promise.all([
     zmierzZasoby(zasobyZHtml(html, baza)),
-    zmierzKursor(html, adresKoncowy),
+    zmierzKursor(html, adresKoncowy, tekstyCss),
     kontroleDomeny({
       domena,
       baza: new URL(adresKoncowy).origin,
@@ -866,7 +875,14 @@ export async function zmierz(domenaWejscie: string): Promise<Pomiar> {
   ]);
   wynik.zasoby = zasoby;
   wynik.kursor = kursor;
-  wynik.znaleziska = [...domenowe, ...glowna, ...obrazy404(zasoby)];
+  wynik.znaleziska = [
+    ...domenowe,
+    ...glowna,
+    ...obrazy404(zasoby),
+    ...(await kontroleZasobow(zasoby, html, adresKoncowy, tekstyCss).catch(
+      () => [] as Znalezisko[],
+    )),
+  ];
   const wagaZasobow = wynik.zasoby.reduce((s, z) => s + (z.bajty ?? 0), 0);
   wynik.mobile = await zmierzMobile(baza, html, wagaZasobow);
   return wynik;

@@ -76,6 +76,7 @@ const POMIJANE: Record<string, string[]> = {
   viewport: ["brak_viewport"],
   malo_tresci: ["pusta_tresc"],
   og_niepelne: ["brak_og"],
+  brak_lazy_dalszych: ["brak_lazy"],
 };
 
 export function ocenStrone(p: Pomiar): Ustalenie[] {

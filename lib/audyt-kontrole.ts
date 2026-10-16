@@ -426,6 +426,101 @@ export const KATALOG_A: Record<string, OpisKontroli> = {
 };
 Object.assign(KATALOG, KATALOG_A);
 
+export const KATALOG_B: Record<string, OpisKontroli> = {
+  // --- B: wydajność --------------------------------------------------------
+  obrazy_ciezkie: {
+    tytul: "Obrazy cięższe niż 300 kB",
+    skutek:
+      "Każdy taki obraz to na telefonie osobna sekunda albo kilka czekania, a te same zdjęcia da się zwykle zmniejszyć kilkukrotnie bez widocznej różnicy.",
+    waga: "wazne",
+    obszar: "szybkosc",
+    koszt: 150,
+    dostep: PANEL,
+    zakres: "domena",
+  },
+  obrazy_stary_format: {
+    tytul: "Obrazy JPG i PNG bez wersji WebP albo AVIF",
+    skutek:
+      "Nowsze formaty ważą zwykle o jedną trzecią mniej przy tej samej jakości, więc strona ładuje się dłużej, niż musi.",
+    waga: "drobne",
+    obszar: "szybkosc",
+    koszt: 200,
+    dostep: KOD,
+    zakres: "strona",
+  },
+  obrazy_bez_wymiarow: {
+    tytul: "Obrazy bez podanej szerokości i wysokości",
+    skutek:
+      "Treść przeskakuje w dół, gdy obraz się doczyta, więc klient traci miejsce, w którym czytał, albo klika nie w to, co chciał.",
+    waga: "drobne",
+    obszar: "szybkosc",
+    koszt: 100,
+    dostep: KOD,
+    zakres: "strona",
+  },
+  brak_lazy_dalszych: {
+    tytul: "Obrazy z dołu strony ładują się od razu",
+    skutek:
+      "Przeglądarka pobiera zdjęcia, do których klient może nigdy nie przewinąć, i przez to później pokazuje to, co widać na początku.",
+    waga: "drobne",
+    obszar: "szybkosc",
+    koszt: 80,
+    dostep: KOD,
+    zakres: "strona",
+  },
+  skrypty_blokujace: {
+    tytul: "Skrypty w nagłówku wstrzymują wyświetlanie",
+    skutek:
+      "Przeglądarka nie pokaże niczego, dopóki nie pobierze i nie uruchomi tych skryptów, więc klient dłużej patrzy na pusty ekran.",
+    waga: "drobne",
+    obszar: "szybkosc",
+    koszt: 150,
+    dostep: KOD,
+    zakres: "strona",
+  },
+  waga_js: {
+    tytul: "Strona pobiera dużo JavaScriptu",
+    skutek:
+      "Na słabszym telefonie samo uruchomienie skryptów trwa kilka sekund, w tym czasie strona nie reaguje na dotyk.",
+    waga: "wazne",
+    obszar: "szybkosc",
+    koszt: 300,
+    dostep: KOD,
+    zakres: "domena",
+  },
+  zewnetrzne_skrypty: {
+    tytul: "Skrypty z wielu obcych domen",
+    skutek:
+      "Każda domena to osobne połączenie i osobne ryzyko: gdy któraś zwolni albo padnie, Twoja strona czeka razem z nią.",
+    waga: "drobne",
+    obszar: "szybkosc",
+    koszt: 150,
+    dostep: KOD,
+    zakres: "domena",
+  },
+  kompresja_zasobow: {
+    tytul: "Skrypty i style bez kompresji",
+    skutek:
+      "Pliki tekstowe skompresowane ważą kilka razy mniej, więc bez kompresji klient pobiera kilka razy więcej niż trzeba.",
+    waga: "wazne",
+    obszar: "szybkosc",
+    koszt: 100,
+    dostep: SERWER,
+    zakres: "domena",
+  },
+  fonty_bez_display: {
+    tytul: "Fonty bez font-display",
+    skutek:
+      "Dopóki font się nie pobierze, tekst jest niewidoczny, więc na wolnym łączu klient widzi pustą stronę z samymi obrazkami.",
+    waga: "drobne",
+    obszar: "szybkosc",
+    koszt: 80,
+    dostep: KOD,
+    zakres: "domena",
+  },
+};
+Object.assign(KATALOG, KATALOG_B);
+
 /* ------------------------------------------------------------------ */
 /* Pomocnicze                                                           */
 /* ------------------------------------------------------------------ */
@@ -433,6 +528,8 @@ Object.assign(KATALOG, KATALOG_A);
 const UA =
   "Mozilla/5.0 (compatible; FluxlabAudyt/1.0; +https://fluxlab.pl/audyt)";
 const CZAS_MS = 6_000;
+const UA_PRZEGLADARKA =
+  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36 (compatible; FluxlabAudyt/1.0; +https://fluxlab.pl/audyt)";
 
 type Odp = { status: number; url: string; naglowki: Headers; tekst: string };
 
@@ -444,6 +541,7 @@ export async function zapytaj(
     przekierowania?: boolean;
     maxZnakow?: number;
     cialo?: string;
+    ua?: string;
   } = {},
 ): Promise<Odp | null> {
   try {
@@ -451,7 +549,10 @@ export async function zapytaj(
       method: opcje.metoda ?? "GET",
       redirect: opcje.przekierowania === false ? "manual" : "follow",
       signal: AbortSignal.timeout(CZAS_MS),
-      headers: { "user-agent": UA, "accept-encoding": "gzip, deflate, br" },
+      headers: {
+        "user-agent": opcje.ua ?? UA,
+        "accept-encoding": "gzip, deflate, br",
+      },
       body: opcje.cialo,
     });
     let tekst = "";
@@ -659,6 +760,56 @@ export function kontroleStrony(html: string, adres: string): Znalezisko[] {
     const max = Math.max(...lata);
     if (max < rok) z.push({ klucz: "stary_rok", szczegol: `W stopce © ${max}` });
   }
+
+  // --- B: wydajność ---
+  const obrazy = tagi.filter((t) => t.tag === "img" && t.atr.has("src") && !/^data:/i.test(t.atr.get("src") ?? ""));
+  // Obraz rozciągnięty w ramce (position: absolute) nie przesuwa układu.
+  const bezWymiarow = obrazy.filter(
+    (t) =>
+      (!t.atr.has("width") || !t.atr.has("height")) &&
+      t.atr.get("data-nimg") !== "fill" &&
+      !/position\s*:\s*(absolute|fixed)/i.test(t.atr.get("style") ?? ""),
+  );
+  if (bezWymiarow.length)
+    z.push({
+      klucz: "obrazy_bez_wymiarow",
+      szczegol: `${bezWymiarow.length} z ${obrazy.length} ${odmien(obrazy.length, "obrazu", "obrazów", "obrazów")}, np. ${krotko(bezWymiarow[0].atr.get("src") ?? "", 60)}`,
+    });
+  const dalsze = obrazy.slice(2).filter((t) => (t.atr.get("loading") ?? "").toLowerCase() !== "lazy");
+  if (dalsze.length >= 3)
+    z.push({ klucz: "brak_lazy_dalszych", szczegol: `${dalsze.length} ${odmien(dalsze.length, "obraz", "obrazy", "obrazów")} poza pierwszymi dwoma bez loading="lazy"` });
+  // Pozycje znaczników liczone są w HTML bez treści skryptów, tak jak tutaj.
+  const czysty = bezSkryptow(html, true);
+  const nowoczesne: [number, number][] = [];
+  for (const m of czysty.matchAll(/<picture\b[\s\S]*?<\/picture>/gi))
+    if (/type=["']image\/(webp|avif)/i.test(m[0]))
+      nowoczesne.push([m.index ?? 0, (m.index ?? 0) + m[0].length]);
+  const wPicture = (poz: number) => nowoczesne.some(([a, b]) => poz > a && poz < b);
+  const stare = obrazy.filter((t) => {
+    const src = t.atr.get("src") ?? "";
+    if (!/\.(jpe?g|png)(\?|#|$)/i.test(src)) return false;
+    if (/\/_next\/image|\/cdn-cgi\/image|[?&](format|fm|auto)=|\.webp|\.avif/i.test(src + " " + (t.atr.get("srcset") ?? ""))) return false;
+    return !wPicture(t.poz);
+  });
+  if (stare.length)
+    z.push({
+      klucz: "obrazy_stary_format",
+      szczegol: `${stare.length} ${odmien(stare.length, "obraz", "obrazy", "obrazów")}, np. ${krotko((stare[0].atr.get("src") ?? "").split("/").pop() ?? "", 60)}`,
+    });
+  const glowa = czysty.split(/<\/head>/i)[0];
+  const blokujace = znaczniki(glowa, ["script"]).filter(
+    (t) =>
+      t.atr.has("src") &&
+      !t.atr.has("async") &&
+      !t.atr.has("defer") &&
+      !t.atr.has("nomodule") &&
+      (t.atr.get("type") ?? "").toLowerCase() !== "module",
+  );
+  if (blokujace.length)
+    z.push({
+      klucz: "skrypty_blokujace",
+      szczegol: `${blokujace.length} ${odmien(blokujace.length, "skrypt", "skrypty", "skryptów")} bez async ani defer, np. ${krotko((blokujace[0].atr.get("src") ?? "").split("/").pop() ?? "", 60)}`,
+    });
 
   // D: target=_blank bez noopener (do obcych domen)
   const blank = tagi.filter((t) => {
@@ -1110,6 +1261,77 @@ async function seoDomeny(k: KontekstDomeny): Promise<Znalezisko[]> {
   if (obraz) z.push({ klucz: "og_obraz", szczegol: obraz });
   if (!ikona && (!favicon || favicon.status !== 200 || /text\/html/i.test(favicon.naglowki.get("content-type") ?? "")))
     z.push({ klucz: "brak_favicony", szczegol: "Nie ma <link rel=\"icon\"> ani pliku /favicon.ico." });
+  return z;
+}
+
+
+/** Kontrole z pomiaru zasobów strony głównej (wagi, kompresja) i jej stylów. */
+export async function kontroleZasobow(
+  zasoby: { adres: string; rodzaj: string; bajty: number | null; kompresja: string | null }[],
+  html: string,
+  baza: string,
+  css: string[],
+): Promise<Znalezisko[]> {
+  const z: Znalezisko[] = [];
+  const nazwa = (a: string) => {
+    const ostatni = a.split("/").pop() || a;
+    return krotko(ostatni.split("?")[0].length >= 6 ? ostatni.split("?")[0] : ostatni, 50);
+  };
+  const ciezkie = zasoby.filter((x) => x.rodzaj === "obraz" && (x.bajty ?? 0) > 300_000);
+  if (ciezkie.length)
+    z.push({
+      klucz: "obrazy_ciezkie",
+      szczegol: lista(ciezkie.map((x) => `${nazwa(x.adres)} (${Math.round((x.bajty ?? 0) / 1024)} kB)`), 3),
+    });
+  const js = zasoby.filter((x) => x.rodzaj === "skrypt" && x.bajty !== null);
+  const sumaJs = js.reduce((s, x) => s + (x.bajty ?? 0), 0);
+  if (sumaJs > 500_000)
+    z.push({
+      klucz: "waga_js",
+      szczegol: `${Math.round(sumaJs / 1024)} kB w ${js.length} ${odmien(js.length, "pliku", "plikach", "plikach")} (mierzone z pierwszych plików strony głównej)`,
+    });
+  const tekstowe = zasoby.filter(
+    (x) => (x.rodzaj === "skrypt" || x.rodzaj === "styl") && (x.bajty ?? 0) > 10_000 && !x.kompresja,
+  );
+  // Odpowiedź na HEAD często nie podaje kompresji, choć GET ją ma, więc
+  // każdy podejrzany plik sprawdzamy zwykłym pobraniem.
+  const bezKompresji = (
+    await Promise.all(
+      tekstowe.slice(0, 6).map(async (x) => {
+        // Część serwerów (także Google) nie kompresuje odpowiedzi dla robotów,
+        // więc tu przedstawiamy się jak przeglądarka z dopiskiem, kim jesteśmy.
+        const o = await zapytaj(x.adres, { maxZnakow: 1, ua: UA_PRZEGLADARKA });
+        return o && o.status === 200 && !o.naglowki.get("content-encoding") ? x : null;
+      }),
+    )
+  ).filter(Boolean) as typeof tekstowe;
+  if (bezKompresji.length)
+    z.push({ klucz: "kompresja_zasobow", szczegol: lista(bezKompresji.map((x) => nazwa(x.adres)), 3) });
+  let host = "";
+  try {
+    host = new URL(baza).hostname.replace(/^www\./, "");
+  } catch {
+    /* bez hosta */
+  }
+  const domeny = new Set<string>();
+  for (const t of znaczniki(html, ["script"])) {
+    const src = t.atr.get("src");
+    if (!src) continue;
+    try {
+      const h = new URL(src, baza).hostname.replace(/^www\./, "");
+      if (h !== host && !h.endsWith("." + host)) domeny.add(h);
+    } catch {
+      /* zły adres */
+    }
+  }
+  if (domeny.size > 5)
+    z.push({ klucz: "zewnetrzne_skrypty", szczegol: `${domeny.size} domen: ${lista([...domeny].sort(), 6)}` });
+  const fonty = new Set<string>();
+  for (const c of css)
+    for (const m of c.matchAll(/@font-face\s*\{([^}]*)\}/gi))
+      if (!/font-display\s*:/i.test(m[1]))
+        fonty.add((m[1].match(/font-family\s*:\s*["']?([^;"']+)/i)?.[1] ?? "?").trim());
+  if (fonty.size) z.push({ klucz: "fonty_bez_display", szczegol: lista([...fonty], 4) });
   return z;
 }
 

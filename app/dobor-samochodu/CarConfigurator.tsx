@@ -765,19 +765,19 @@ const IMG = "/photos/car-chooser";
 
 const BG_IMAGES: Record<BodyStyle, { light: string; dark: string }> = {
   sportowy: {
-    light: `${IMG}/bg-sport-light.jpg`,
+    light: `${IMG}/bg-sport-light.webp`,
     dark: `${IMG}/bg-sport-dark.webp`,
   },
   sedan: {
     light: `${IMG}/bg-osobowy-light.webp`,
-    dark: `${IMG}/bg-osobowy-dark.jpg`,
+    dark: `${IMG}/bg-osobowy-dark.webp`,
   },
-  van: { light: `${IMG}/bg-van-light.webp`, dark: `${IMG}/bg-van-dark.jpg` },
+  van: { light: `${IMG}/bg-van-light.webp`, dark: `${IMG}/bg-van-dark.webp` },
   crossover: {
     light: `${IMG}/bg-crossover-light.webp`,
-    dark: `${IMG}/bg-crossover-dark.jpg`,
+    dark: `${IMG}/bg-crossover-dark.webp`,
   },
-  suv: { light: `${IMG}/bg-suv-light.webp`, dark: `${IMG}/bg-suv-dark.jpeg` },
+  suv: { light: `${IMG}/bg-suv-light.webp`, dark: `${IMG}/bg-suv-dark.webp` },
   terenowy: {
     light: `${IMG}/bg-terenowy-light.webp`,
     dark: `${IMG}/bg-terenowy-dark.avif`,
@@ -810,7 +810,7 @@ const BODY_STYLES: {
   {
     id: "sedan",
     title: "Osobowy",
-    image: `${IMG}/type-osobowy.jpg`,
+    image: `${IMG}/type-osobowy.webp`,
     pros: [
       "Uniwersalny – sprawdzi się wszędzie",
       "Dobry komfort na trasie",
@@ -821,7 +821,7 @@ const BODY_STYLES: {
   {
     id: "van",
     title: "Van",
-    image: `${IMG}/type-van.jpeg`,
+    image: `${IMG}/type-van.webp`,
     pros: ["Doskonała funkcjonalność", "Optymalne wykorzystanie przestrzeni"],
     cons: [
       "Wyższe spalanie niż osobowy",
@@ -846,7 +846,7 @@ const BODY_STYLES: {
   {
     id: "suv",
     title: "SUV",
-    image: `${IMG}/type-suv.jpg`,
+    image: `${IMG}/type-suv.webp`,
     pros: [
       "Wyższa pozycja – lepsza widoczność",
       "Wygodne wsiadanie/wysiadanie",
@@ -899,7 +899,7 @@ const SHAPES_STANDARD: ShapeOption[] = [
   {
     id: "hatchback",
     title: "Hatchback",
-    image: `${IMG}/shape-hatchback.jpg`,
+    image: `${IMG}/shape-hatchback.webp`,
     pros: [
       "Kompaktowy – idealny do miasta",
       "Uchylna klapa – łatwy załadunek",
@@ -990,7 +990,7 @@ const SHAPES_SPORT: ShapeOption[] = [
   {
     id: "coupe-2plus2",
     title: "Coupé 2+2",
-    image: `${IMG}/shape-coupe-2plus2.jpg`,
+    image: `${IMG}/shape-coupe-2plus2.webp`,
     pros: [
       "Sportowy charakter + awaryjne tylne miejsca",
       "Kompromis między stylem a użytecznością",
@@ -1020,7 +1020,7 @@ const SHAPES_SPORT: ShapeOption[] = [
   {
     id: "hot-hatch",
     title: "Hot Hatch",
-    image: `${IMG}/shape-hot-hatch.jpg`,
+    image: `${IMG}/shape-hot-hatch.webp`,
     pros: [
       "Praktyczność hatchbacka + sportowe osiągi",
       "5 miejsc i użyteczny bagażnik",

@@ -234,7 +234,7 @@ export const otherTools: Narzedzie[] = [
     description:
       "Oblicz pełny koszt posiadania samochodu: paliwo, ubezpieczenie, serwis, amortyzacja i więcej.",
     href: "/kalkulator-kosztow",
-    image: "/photos/car-chooser/type-osobowy.jpg",
+    image: "/photos/car-chooser/type-osobowy.webp",
   },
   {
     title: "Kalkulator podatkowy JDG",
