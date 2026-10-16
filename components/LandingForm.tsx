@@ -61,6 +61,24 @@ export default function LandingForm({
     gaEvent("form_start", { form_id: formId });
   }
 
+  // Wpisany sam NIP zamieniamy na nazwę z wykazu VAT, żeby nikt nie musiał
+  // przepisywać pełnej nazwy spółki.
+  async function uzupelnijZNip(e: React.FocusEvent<HTMLInputElement>) {
+    const pole = e.currentTarget;
+    const nip = pole.value.replace(/[\s-]/g, "");
+    if (!/^\d{10}$/.test(nip)) return;
+    try {
+      const res = await fetch("/api/sprawdz-nip", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ nip }),
+      });
+      const d = (await res.json()) as { name?: string };
+      if (d.name && pole.value.replace(/[\s-]/g, "") === nip)
+        pole.value = `${d.name} (NIP ${nip})`;
+    } catch {}
+  }
+
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setLoading(true);
@@ -235,7 +253,8 @@ export default function LandingForm({
               id="company"
               name="company"
               type="text"
-              placeholder="Nazwa firmy"
+              placeholder="Nazwa firmy albo NIP"
+              onBlur={uzupelnijZNip}
               className={inputClass}
             />
           </div>

@@ -310,4 +310,5 @@ export function narzedziaGrupy(grupa: string): Narzedzie[] {
 export const NARZEDZIE_WSPOLNE: Record<string, string> = {
   "/sprawdz-kontrahenta": "/sprawdzenie-nip",
   "/wdrozenie-n8n-cena": "/tansze-automatyzacje",
+  "/wlasny-crm": "/koszt-recznej-obslugi-leadow",
 };

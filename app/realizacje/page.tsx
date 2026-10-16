@@ -161,9 +161,9 @@ export default function RealizacjePage() {
             <p className="section-label mb-3">O nas</p>
             <h1 className="h1-strony">Wdrożenia i ich efekty</h1>
             <p className="mt-5 text-lg text-gray-600 dark:text-gray-300">
-              Co było problemem, co zrobiliśmy i co dało się zmierzyć. To
-              wdrożenia Pawła Iwanka w Carmore, firmie z branży leasingu i
-              sprzedaży samochodów, działające na produkcji.
+              Co było problemem, co zrobiliśmy i co dało się zmierzyć. Pierwsza
+              to strona dla klienta Fluxlab, pozostałe to wdrożenia Pawła
+              Iwanka w Carmore, firmie z branży leasingu samochodów.
             </p>
           </div>
 

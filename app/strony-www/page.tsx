@@ -7,6 +7,7 @@ import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import LandingForm from "@/components/LandingForm";
 import SzybkiKontakt from "@/components/SzybkiKontakt";
+import OsCzasuStrony from "@/components/OsCzasuStrony";
 import Tabs from "@/components/Tabs";
 import ProductGrid from "@/components/ProductGrid";
 import CoZeStrona from "@/components/CoZeStrona";
@@ -113,6 +114,27 @@ export default function StronyWww() {
           </div>
         </section>
 
+        <section className="container-wide pb-12 max-w-5xl">
+          <div className="grid gap-5 md:grid-cols-[2fr_3fr]">
+            <Link
+              href="/realizacje"
+              className="group rounded-2xl border border-accent/40 bg-white/60 dark:bg-gray-900/40 p-6 hover:border-accent transition-colors"
+            >
+              <p className="text-sm font-semibold text-gray-900 dark:text-white">
+                Ostatnia realizacja: strona pośrednika kredytowego
+              </p>
+              <p className="mt-3 text-4xl font-bold text-accent">45 → 97</p>
+              <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                punktów w audycie technicznym, strona 6,4 raza lżejsza
+              </p>
+              <span className="mt-4 inline-block text-sm font-semibold text-accent group-hover:underline">
+                Zobaczcie realizacje →
+              </span>
+            </Link>
+            <OsCzasuStrony />
+          </div>
+        </section>
+
         <section className="container-wide pb-16">
           <CoZeStrona biezacaStrona="/strony-www" />
         </section>
@@ -200,6 +222,12 @@ export default function StronyWww() {
                         </div>
                       ))}
                     </div>
+                    <p className="mt-6 max-w-3xl text-sm text-gray-600 dark:text-gray-400">
+                      Macie już stronę i chcecie, żeby zaczęła zbierać zapytania?
+                      Pakiet START: porządki po audycie, tytuły dla Google, zbieranie
+                      opinii, wizytówka Google przez 3 miesiące i 2 landingi za
+                      3 900 zł netto, z opieką 590 zł miesięcznie.
+                    </p>
                   </div>
                 ),
               },

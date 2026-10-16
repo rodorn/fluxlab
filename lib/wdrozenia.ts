@@ -6,10 +6,19 @@ export interface Wdrozenie {
   liczbaOpis: string;
 }
 
-/* Wdrozenia Pawla w Carmore (leasing i sprzedaz samochodow). Same fakty z
-   produkcji, liczby z wlasnych pomiarow. Klientow Fluxlab dopisujemy dopiero
-   za ich zgoda. */
+/* Pierwsza pozycja to klient Fluxlab bez nazwy, bo zgody na marke jeszcze nie
+   ma. Reszta to wdrozenia Pawla w Carmore (leasing i sprzedaz samochodow).
+   Same fakty z produkcji, liczby z wlasnych pomiarow. */
 export const WDROZENIA: Wdrozenie[] = [
+  {
+    tytul: "Nowa strona pośrednika kredytowego",
+    problem:
+      "Strona ważyła 6,2 MB, blog na telefonie pokazywał treść po 11 sekundach, a audyt techniczny dawał 45 na 100.",
+    efekt:
+      "Projekt z Figmy przenieśliśmy na Next.js z CMS. Stare adresy przekierowane, strona na produkcji 12 dni po opłaceniu, przy terminie 5 tygodni.",
+    liczba: "45 → 97",
+    liczbaOpis: "punktów w audycie, strona główna 6,4 raza lżejsza",
+  },
   {
     tytul: "Wybór aut do zakupu z tysięcy ogłoszeń",
     problem:

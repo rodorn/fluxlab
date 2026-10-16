@@ -146,6 +146,13 @@ export default function Home() {
             </Link>
             .
           </p>
+          <Link
+            href="/realizacje"
+            className="mt-6 inline-flex items-center gap-2 rounded-full border border-gray-200 dark:border-white/15 px-4 py-1.5 text-sm text-gray-700 dark:text-white/75 hover:border-accent transition-colors"
+          >
+            <span className="font-semibold text-accent">45 → 97</span>
+            ostatnia strona klienta w audycie, na produkcji w 12 dni →
+          </Link>
         </div>
 
         {/* Trzy filary */}

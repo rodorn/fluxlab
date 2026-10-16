@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ProductLanding from "@/components/ProductLanding";
+import KalkulatorLeadow from "@/components/KalkulatorLeadow";
 
 export const metadata: Metadata = {
   title: "Własny CRM dla firmy w trzy tygodnie | Fluxlab",
@@ -20,11 +21,12 @@ export default function WlasnyCrm() {
     <ProductLanding
       slug="wlasny-crm"
       typ="usluga"
+      tool={<KalkulatorLeadow />}
       breadcrumb="Własny CRM"
       eyebrow="FluxCRM"
       h1="Własny CRM dla Waszej firmy"
       lead="Lead z formularza, telefonu i poczty trafia sam do opiekuna, z zadaniem „zadzwoń w 15 minut”. Aplikacja na komputerze i telefonie każdego handlowca, uruchomienie w trzy tygodnie."
-      ctaLabel="Zapytajcie o wdrożenie"
+      ctaLabel="Policzcie, ile kosztują Was gubione leady"
       checks={[
         {
           title: "Żaden lead nie ginie",
