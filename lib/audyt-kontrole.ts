@@ -1089,7 +1089,7 @@ const SLEDZENIE: [string, RegExp][] = [
   ["LinkedIn Insight", /snap\.licdn\.com/],
 ];
 const ZGODA =
-  /cookiebot|cookieyes|cookie-law-info|complianz|cmplz|onetrust|usercentrics|iubenda|termly|klaro|osano|consentmanager|borlabs|cookie-notice|moove_gdpr|gdpr-cookie|cookiefirst|didomi|quantcast|axeptio|tarteaucitron|cookieconsent|cookie-consent|cookie_consent|cookiebanner|cookie-banner|cc-window|silktide|cookiehub|cookie-script|termsfeed|gtag\(\s*['"]consent['"]\s*,\s*['"]default/i;
+  /cookiebot|cookieyes|cookie-law-info|complianz|cmplz|onetrust|usercentrics|iubenda|termly|klaro|osano|consentmanager|borlabs|cookie-notice|moove_gdpr|gdpr-cookie|cookiefirst|didomi|quantcast|axeptio|tarteaucitron|cookieconsent|cookie-consent|cookie_consent|cookiebanner|cookie-banner|cc-window|silktide|cookiehub|cookie-script|termsfeed/i;
 
 export function cechyStrony(html: string, adres: string): Cechy {
   const tagi = znaczniki(html, ["a", "form", "link"]);
@@ -1505,10 +1505,11 @@ export async function kontroleZasobow(
     });
   const js = zasoby.filter((x) => x.rodzaj === "skrypt" && x.bajty !== null);
   const sumaJs = js.reduce((s, x) => s + (x.bajty ?? 0), 0);
-  if (sumaJs > 500_000)
+  // Bajty po rozpakowaniu, bo tyle przeglądarka musi przeczytać i uruchomić.
+  if (sumaJs > 1_000_000)
     z.push({
       klucz: "waga_js",
-      szczegol: `${Math.round(sumaJs / 1024)} kB w ${js.length} ${odmien(js.length, "pliku", "plikach", "plikach")} (mierzone z pierwszych plików strony głównej)`,
+      szczegol: `${Math.round(sumaJs / 1024)} kB w ${js.length} ${odmien(js.length, "pliku", "plikach", "plikach")} po rozpakowaniu (mierzone z pierwszych plików strony głównej)`,
     });
   const tekstowe = zasoby.filter(
     (x) => (x.rodzaj === "skrypt" || x.rodzaj === "styl") && (x.bajty ?? 0) > 10_000 && !x.kompresja,
@@ -1549,7 +1550,9 @@ export async function kontroleZasobow(
   const fonty = new Set<string>();
   for (const c of css)
     for (const m of c.matchAll(/@font-face\s*\{([^}]*)\}/gi))
-      if (!/font-display\s*:/i.test(m[1]))
+      // Zastępczy font z samym local() (np. „Inter Fallback” w Next.js)
+      // niczego nie pobiera, więc font-display nie ma tu znaczenia.
+      if (!/font-display\s*:/i.test(m[1]) && /url\(/i.test(m[1]))
         fonty.add((m[1].match(/font-family\s*:\s*["']?([^;"']+)/i)?.[1] ?? "?").trim());
   if (fonty.size) z.push({ klucz: "fonty_bez_display", szczegol: lista([...fonty], 4) });
   return z;
