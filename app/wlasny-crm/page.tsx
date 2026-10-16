@@ -22,6 +22,7 @@ export default function WlasnyCrm() {
       slug="wlasny-crm"
       typ="usluga"
       tool={<KalkulatorLeadow />}
+      cena="Wdrożenie od 1 zł w pilotażu, abonament 499 zł miesięcznie, ceny netto"
       breadcrumb="Własny CRM"
       eyebrow="FluxCRM"
       h1="Własny CRM dla Twojej firmy"
@@ -47,7 +48,7 @@ export default function WlasnyCrm() {
       ]}
       pricing={[
         {
-          name: "Mała firma",
+          name: "Startup",
           oldPrice: "1 900 zł",
           price: "1 zł",
           badge: "Pilotaż, ograniczona liczba miejsc",

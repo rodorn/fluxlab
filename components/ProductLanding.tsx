@@ -33,6 +33,8 @@ export interface ProductLandingProps {
   /** Darmowe narzedzie renderowane tuz pod naglowkiem, przed opisem zakresu.
       Odwiedzajacy dostaje dzialajacy wynik, zanim zacznie czytac oferte. */
   tool?: ReactNode;
+  /** Własny tekst ceny w nagłówku zamiast wyliczonego „Od X zł netto”. */
+  cena?: string;
   breadcrumb: string;
   /** Nieużywane: etykieta nad h1 wynika z `typ`. Zostaje dla zgodności wywołań. */
   eyebrow?: string;
@@ -109,6 +111,16 @@ function cenaOd(pricing: Tier[]): string | null {
 export default function ProductLanding(p: ProductLandingProps) {
   const typ = p.typ ?? (p.tool ? "narzedzie" : "usluga");
   const etykietaTypu = typ === "narzedzie" ? "Narzędzie" : "Usługa";
+  const narzedzieNajpierw = Boolean(p.tool) && typ === "narzedzie";
+  const narzedzie = p.tool && (
+    <div
+      id="narzedzie"
+      className="mt-6 md:mt-12 scroll-mt-24 [&>*]:!mx-0 [&>*]:!max-w-none"
+    >
+      <NazwaNarzedzia href={`/${p.slug}`} />
+      {p.tool}
+    </div>
+  );
   return (
     <>
       <Header />
@@ -124,33 +136,29 @@ export default function ProductLanding(p: ProductLandingProps) {
             <p className="mt-5 text-lg text-gray-600 dark:text-gray-300">
               {p.lead}
             </p>
-            {cenaOd(p.pricing) && (
+            {(p.cena ?? cenaOd(p.pricing)) && (
               <p className="mt-4 text-base font-semibold text-gray-900 dark:text-white">
-                {cenaOd(p.pricing)}
+                {p.cena ?? cenaOd(p.pricing)}
               </p>
             )}
-            {/* Na stronie z narzędziem pierwszym krokiem jest narzędzie. */}
+            {/* Na stronie narzędzia pierwszym krokiem jest narzędzie, na
+                stronie usługi zamówienie, a narzędzie stoi pod cennikiem. */}
             <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
-              <a href={p.tool ? "#narzedzie" : "#zamow"} className="btn-primary">
-                {p.tool ? p.ctaLabel : "Napisz do nas"}
+              <a href={narzedzieNajpierw ? "#narzedzie" : "#zamow"} className="btn-primary">
+                {narzedzieNajpierw ? p.ctaLabel : "Napisz do nas"}
               </a>
               {p.tool && (
                 <a
-                  href="#zamow"
+                  href={narzedzieNajpierw ? "#zamow" : "#narzedzie"}
                   className="text-sm font-semibold text-accent hover:underline"
                 >
-                  Napisz do nas ↓
+                  {narzedzieNajpierw ? "Napisz do nas" : p.ctaLabel} ↓
                 </a>
               )}
             </div>
           </div>
 
-          {p.tool && (
-            <div id="narzedzie" className="mt-6 md:mt-12 scroll-mt-24 [&>*]:!mx-0">
-              <NazwaNarzedzia href={`/${p.slug}`} />
-              {p.tool}
-            </div>
-          )}
+          {narzedzieNajpierw && narzedzie}
 
           <div className="mt-16">
             <h2 className="h2-sekcji">Cennik</h2>
@@ -239,6 +247,8 @@ export default function ProductLanding(p: ProductLandingProps) {
               ))}
             </div>
           </div>
+
+          {!narzedzieNajpierw && narzedzie}
 
           <details className="mt-16 max-w-3xl group">
             <summary className="cursor-pointer list-none [&::-webkit-details-marker]:hidden">
