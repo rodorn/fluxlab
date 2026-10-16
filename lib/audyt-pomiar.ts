@@ -12,6 +12,7 @@
  * to, co widać z serwera, i to nazywamy po imieniu.
  */
 
+import { pobierzPrzezZyte } from "./zyte";
 import dns from "dns/promises";
 import tls from "tls";
 
@@ -75,6 +76,8 @@ export type Pomiar = {
   /** Serwer odpowiedział, ale nie treścią strony, tylko ekranem ochrony. */
   zablokowany: boolean;
   powodBlokady: string | null;
+  /** Powód, dla którego stronę pobraliśmy przez Zyte (serwer odrzucił zwykły pomiar). */
+  przezZyte: string | null;
   /** Czas do pierwszego bajtu dokumentu, w milisekundach. */
   ttfbMs: number | null;
   /** Pełny czas pobrania dokumentu. */
@@ -148,6 +151,7 @@ function pusty(domena: string): Pomiar {
     osiagalna: false,
     zablokowany: false,
     powodBlokady: null,
+    przezZyte: null,
     ttfbMs: null,
     pelnyMs: null,
     statusHtml: null,
@@ -733,9 +737,22 @@ export async function zmierz(domenaWejscie: string): Promise<Pomiar> {
   // dłoni, niezależnie od tego, co serwer zrobił z zapytaniem HTTP.
   const blokada = wykryjBlokade(dok.odp.status, dok.tekst);
   if (blokada) {
-    wynik.zablokowany = true;
-    wynik.powodBlokady = blokada;
-    return wynik;
+    // Drugie podejście przez Zyte: pobiera stronę jak przeglądarka z adresu
+    // domowego. Czasów z tego pobrania nie liczymy jako szybkości serwera.
+    const z = await pobierzPrzezZyte(baza);
+    if (z && !wykryjBlokade(z.status, z.tekst)) {
+      wynik.przezZyte = blokada;
+      dok = {
+        odp: new Response(null, { status: z.status, headers: z.naglowki }),
+        tekst: z.tekst,
+        ttfb: 0,
+        pelny: 0,
+      };
+    } else {
+      wynik.zablokowany = true;
+      wynik.powodBlokady = blokada;
+      return wynik;
+    }
   }
 
   // Czas pierwszej odpowiedzi bierzemy z lepszego z dwóch pomiarów, i tylko
@@ -744,9 +761,9 @@ export async function zmierz(domenaWejscie: string): Promise<Pomiar> {
   // pierwszą odpowiedź po sekundzie, a każdą następną po kilkudziesięciu
   // milisekundach. Bez tego powtórzenia wystawialibyśmy rachunek na kilkaset
   // złotych za wolny serwer komuś, kto ma po prostu usypianą instancję.
-  wynik.ttfbMs = dok.ttfb;
-  wynik.pelnyMs = dok.pelny;
-  if (dok.ttfb > 700) {
+  wynik.ttfbMs = wynik.przezZyte ? null : dok.ttfb;
+  wynik.pelnyMs = wynik.przezZyte ? null : dok.pelny;
+  if (!wynik.przezZyte && dok.ttfb > 700) {
     const kontrola = await pobierz(baza, CZAS_STRONY_MS);
     if (kontrola && kontrola.ttfb < dok.ttfb) {
       wynik.ttfbMs = kontrola.ttfb;

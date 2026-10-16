@@ -83,6 +83,20 @@ export function ocenStrone(p: Pomiar): Ustalenie[] {
   const u: Ustalenie[] = [];
   const dodaj = (x: Ustalenie) => u.push(x);
 
+  if (p.przezZyte) {
+    dodaj({
+      klucz: "blokuje_roboty",
+      obszar: "dostepnosc",
+      waga: "drobne",
+      tytul: "Serwer odrzuca automatyczne odwiedziny",
+      fakt: `Zwykły pomiar dostał: ${p.przezZyte}. Dlatego stronę pobraliśmy tak jak przeglądarka. Czasu odpowiedzi serwera w tej sytuacji nie mierzyliśmy.`,
+      skutek:
+        "Ta sama ochrona może zatrzymywać część wyszukiwarek, asystentów AI i narzędzi do podglądu linków, więc Twoja strona pokazuje się tam gorzej albo wcale.",
+      koszt: 150,
+      samodzielnie: false,
+    });
+  }
+
   if (p.zablokowany) {
     dodaj({
       klucz: "zablokowany",

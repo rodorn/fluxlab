@@ -11,6 +11,7 @@
  * pomiar darmowego audytu. Nie powielamy go tu, tylko wołamy.
  */
 
+import { pobierzPrzezZyte } from "./zyte";
 import { czystaDomena, zmierz } from "./audyt-pomiar";
 import { ocenStrone, zZnaleziska, type Ustalenie } from "./audyt-ocena";
 import { odmien } from "./odmiana";
@@ -127,7 +128,34 @@ function dekoduj(s: string): string {
  * Pobranie z ręcznym prowadzeniem przekierowań, żeby każdy krok trafił do
  * raportu. Treść czytamy tylko z dokumentu HTML i tylko gdy jest potrzebna.
  */
+const BLOKADA = /cf-browser-verification|just a moment|attention required|access denied|datadome|please enable js and disable any ad blocker/i;
+
+/** Pobranie podstrony; gdy serwer odrzuca zwykły pomiar, drugie podejście przez Zyte. */
 async function pobierz(
+  adres: string,
+  limitMs: number,
+  czytajTresc: boolean,
+): Promise<Odpowiedz | null> {
+  const o = await pobierzWprost(adres, limitMs, czytajTresc);
+  const zablokowana =
+    !o ||
+    o.status === 403 ||
+    o.status === 429 ||
+    o.status === 503 ||
+    (o.tekst !== null && BLOKADA.test(o.tekst.slice(0, 4000)));
+  if (!czytajTresc || !zablokowana) return o;
+  const z = await pobierzPrzezZyte(adres, Math.min(limitMs * 3, 40000));
+  if (!z || z.status >= 400 || BLOKADA.test(z.tekst.slice(0, 4000))) return o;
+  return {
+    status: z.status,
+    koncowy: z.koncowy,
+    przekierowania: o?.przekierowania ?? [],
+    naglowki: z.naglowki,
+    tekst: z.tekst.length > MAX_HTML_BAJTOW ? z.tekst.slice(0, MAX_HTML_BAJTOW) : z.tekst,
+  };
+}
+
+async function pobierzWprost(
   adres: string,
   limitMs: number,
   czytajTresc: boolean,
