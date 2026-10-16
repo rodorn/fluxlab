@@ -55,7 +55,10 @@ export default function ZamowAudytCalosci({
     "w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 outline-none focus:border-accent dark:border-gray-700 dark:bg-gray-950 dark:text-white";
 
   return (
-    <div className="rounded-2xl border border-accent/40 bg-accent/5 p-6 text-left">
+    <div
+      id={miejsce === "dol" ? "audyt-calosci" : undefined}
+      className="scroll-mt-24 rounded-2xl border border-accent/40 bg-accent/5 p-6 text-left"
+    >
       {stan === "ok" ? (
         <div>
           <p className="text-base font-bold text-emerald-700 dark:text-emerald-400">

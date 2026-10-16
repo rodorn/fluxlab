@@ -101,6 +101,14 @@ export default function Home() {
             od razu do CRM. Potem automatyzujemy to, co dzieje się z nim dalej.
           </p>
           <PoleAudytu />
+          <p className="mt-3 text-sm font-semibold">
+            <Link
+              href="/audyt-strony#audyt-calosci"
+              className="text-accent underline-offset-4 hover:underline"
+            >
+              Audyt całej strony, wszystkie podstrony: 10 zł →
+            </Link>
+          </p>
           <p className="mt-4 text-sm text-gray-500 dark:text-white/50">
             <Link
               href="/strony-www"
