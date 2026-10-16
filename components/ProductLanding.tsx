@@ -128,7 +128,7 @@ export default function ProductLanding(p: ProductLandingProps) {
         <Breadcrumbs items={[{ label: p.breadcrumb }]} href={`/${p.slug}`} />
 
         <section className="container-wide pt-6 pb-14">
-          <div className="max-w-3xl">
+          <div className="mx-auto max-w-3xl text-center">
             <p className="section-label mb-3">{etykietaTypu}</p>
             <h1 className="h1-strony">
               {p.h1}
@@ -143,7 +143,7 @@ export default function ProductLanding(p: ProductLandingProps) {
             )}
             {/* Na stronie narzędzia pierwszym krokiem jest narzędzie, na
                 stronie usługi zamówienie, a narzędzie stoi pod cennikiem. */}
-            <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
               <a href={narzedzieNajpierw ? "#narzedzie" : "#zamow"} className="btn-primary">
                 {narzedzieNajpierw ? p.ctaLabel : "Napisz do nas"}
               </a>
@@ -161,7 +161,7 @@ export default function ProductLanding(p: ProductLandingProps) {
           {narzedzieNajpierw && narzedzie}
 
           <div className="mt-16">
-            <h2 className="h2-sekcji">Cennik</h2>
+            <h2 className="h2-sekcji text-center">Cennik</h2>
             <div
               className={`mt-8 grid gap-6 md:grid-cols-2 ${p.pricing.length === 3 ? "lg:grid-cols-3" : ""}`}
             >
@@ -250,12 +250,12 @@ export default function ProductLanding(p: ProductLandingProps) {
 
           {!narzedzieNajpierw && narzedzie}
 
-          <details className="mt-16 max-w-3xl group">
-            <summary className="cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+          <details className="mt-16 mx-auto max-w-3xl group">
+            <summary className="cursor-pointer list-none text-center [&::-webkit-details-marker]:hidden">
               <h2 className="h2-sekcji inline">Jak to działa</h2>
               <span className="ml-3 text-sm font-semibold text-accent group-open:hidden">Rozwiń</span>
             </summary>
-          <div className="mt-6 grid gap-6 md:grid-cols-2 max-w-3xl">
+          <div className="mt-6 grid gap-6 md:grid-cols-2 mx-auto max-w-3xl">
             {p.checks.map((c) => (
               <div
                 key={c.title}
@@ -272,7 +272,7 @@ export default function ProductLanding(p: ProductLandingProps) {
           </div>
 
           {p.powiazane && (
-            <div className="mt-8">
+            <div className="mt-8 mx-auto max-w-3xl">
               <h2 className="h2-sekcji">Powiązane</h2>
               <div className="mt-4 space-y-2 text-sm text-gray-600 dark:text-gray-400">
               {p.powiazane.map((z) => (
@@ -292,8 +292,8 @@ export default function ProductLanding(p: ProductLandingProps) {
           )}
           </details>
 
-          <div className="mt-16 max-w-3xl">
-            <h2 className="h2-sekcji">Pytania i odpowiedzi</h2>
+          <div className="mt-16 mx-auto max-w-3xl">
+            <h2 className="h2-sekcji text-center">Pytania i odpowiedzi</h2>
             <div className="mt-6 space-y-4">
               {p.faq.map((item) => (
                 <details

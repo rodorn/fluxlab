@@ -131,8 +131,8 @@ export default function LandingForm({
   }
 
   return (
-    <div className="grid lg:grid-cols-5 gap-8 lg:gap-10 items-start">
-      <div className="lg:col-span-2">
+    <div className="mx-auto max-w-2xl">
+      <div className="mb-8 text-center">
         <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
           {heading}
         </h2>
@@ -145,7 +145,7 @@ export default function LandingForm({
       <form
         onSubmit={handleSubmit}
         onFocus={handleFormStart}
-        className="lg:col-span-3 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-2xl p-6 lg:p-8 shadow-sm text-left space-y-5"
+        className="bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-2xl p-6 lg:p-8 shadow-sm text-left space-y-5"
       >
         <div
           aria-hidden="true"

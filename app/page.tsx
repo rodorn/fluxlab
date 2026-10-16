@@ -58,7 +58,7 @@ export default function Home() {
       <Header />
       <main className="relative flex flex-col bg-white text-gray-900 dark:bg-gray-950 dark:text-white pt-16">
         <section className="mx-auto w-full max-w-4xl px-6 pt-16 pb-12 text-center lg:pt-24">
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+          <h1 className="text-balance text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
             Strony internetowe i CRM dla firm
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-base text-gray-600 sm:text-lg dark:text-white/65">

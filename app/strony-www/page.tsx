@@ -74,7 +74,7 @@ export default function StronyWww() {
             <div className="blob blob-accent w-[520px] h-[520px] -top-32 -left-32 animate-drift" />
           </div>
           <div className="container-wide">
-            <div className="max-w-3xl">
+            <div className="mx-auto max-w-3xl text-center">
               <p className="section-label mb-4 animate-fade-up-1">Usługa</p>
               <h1
                 id="hero-heading"
@@ -86,7 +86,7 @@ export default function StronyWww() {
                 Nowa strona od zera albo poprawki w istniejącej. Pierwsza wersja
                 w 2-3 tygodnie.
               </p>
-              <div className="animate-fade-up-4 flex flex-wrap items-center gap-x-6 gap-y-3">
+              <div className="animate-fade-up-4 flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
                 <a href="#kontakt" className="btn-primary">
                   Napisz do nas
                 </a>
@@ -121,7 +121,7 @@ export default function StronyWww() {
 
         <section id="cennik" className="scroll-mt-20 container-wide">
           <div className="py-10 lg:py-12">
-                    <h2 className="h2-sekcji mb-10">
+                    <h2 className="h2-sekcji mb-10 text-center">
                       Ceny
                     </h2>
                     <div className="grid md:grid-cols-3 gap-5 lg:gap-6">
@@ -146,7 +146,7 @@ export default function StronyWww() {
                         </div>
                       ))}
                     </div>
-                    <p className="mt-6 max-w-3xl text-sm text-gray-600 dark:text-gray-400">
+                    <p className="mt-6 mx-auto max-w-3xl text-center text-sm text-gray-600 dark:text-gray-400">
                       Masz już stronę i chcesz, żeby zaczęła zbierać zapytania?
                       Pakiet START: porządki po audycie, tytuły dla Google, zbieranie
                       opinii, wizytówka Google przez 3 miesiące i 2 landingi za
@@ -157,10 +157,10 @@ export default function StronyWww() {
 
         <section className="container-wide pb-12">
           <div className="py-10 lg:py-12">
-                    <h2 className="h2-sekcji mb-8">
+                    <h2 className="h2-sekcji mb-8 text-center">
                       Najczęstsze pytania
                     </h2>
-                    <div className="space-y-4 max-w-3xl">
+                    <div className="space-y-4 mx-auto max-w-3xl">
                       {faq.map((item, idx) => (
                         <details
                           key={idx}
