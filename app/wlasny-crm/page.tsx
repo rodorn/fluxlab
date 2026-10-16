@@ -13,6 +13,7 @@ export const metadata: Metadata = {
       "Lead z każdego źródła trafia sam do opiekuna z zadaniem na 15 minut. Uruchomienie w trzy tygodnie, dane zawsze Twoje.",
     locale: "pl_PL",
     type: "website",
+    images: ["/opengraph-image"],
   },
 };
 
