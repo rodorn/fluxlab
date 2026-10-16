@@ -235,6 +235,7 @@ export default function LokalizacjaCheck() {
       <form onSubmit={sprawdz} className="mt-5 space-y-3">
         <div className="flex flex-col gap-3 sm:flex-row">
           <input
+            aria-label="Miejscowość albo adres"
             type="text"
             required
             value={miejsce}
@@ -243,6 +244,7 @@ export default function LokalizacjaCheck() {
             className="flex-1 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-950 px-4 py-3 text-sm text-gray-900 dark:text-white outline-none focus:border-accent"
           />
           <select
+            aria-label="Branża"
             value={branza}
             onChange={(e) => setBranza(e.target.value)}
             className="rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-950 px-4 py-3 text-sm text-gray-900 dark:text-white outline-none focus:border-accent"

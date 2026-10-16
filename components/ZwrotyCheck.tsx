@@ -156,6 +156,7 @@ export default function ZwrotyCheck() {
       />
       <form onSubmit={sprawdz} className="mt-5 flex flex-col gap-3 sm:flex-row">
         <input
+          aria-label="Adres sklepu"
           type="text"
           inputMode="url"
           required

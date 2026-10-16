@@ -618,6 +618,7 @@ function NumberInput({
       </div>
       <div className="relative">
         <input
+          aria-label={label}
           type="number"
           value={value || ""}
           min={min}
@@ -1581,6 +1582,7 @@ export default function TaxCalculator() {
                       >
                         <div className="flex items-center gap-2">
                           <input
+                            aria-label="Nazwa źródła przychodu"
                             type="text"
                             value={src.name}
                             placeholder="Nazwa źródła..."
@@ -1666,6 +1668,7 @@ export default function TaxCalculator() {
                               Kwota/mies.
                             </label>
                             <input
+                              aria-label="Kwota miesięcznie"
                               type="number"
                               value={src.amount || ""}
                               min={0}
@@ -1695,6 +1698,7 @@ export default function TaxCalculator() {
                                 VAT
                               </label>
                               <select
+                                aria-label="Stawka VAT"
                                 value={String(src.vatRate)}
                                 onChange={(e) =>
                                   updateSource(src.id, {
@@ -1716,6 +1720,7 @@ export default function TaxCalculator() {
                               Stawka ryczałtu
                             </label>
                             <select
+                              aria-label="Stawka ryczałtu"
                               value={src.isNajem ? "najem" : String(src.rate)}
                               onChange={(e) => {
                                 const val = e.target.value;
@@ -1855,6 +1860,7 @@ export default function TaxCalculator() {
                           >
                             <div className="flex items-center gap-2">
                               <input
+                                aria-label="Nazwa kosztu"
                                 type="text"
                                 value={c.name}
                                 placeholder="Nazwa kosztu..."
@@ -1918,6 +1924,7 @@ export default function TaxCalculator() {
                                   )}
                                 </div>
                                 <input
+                                  aria-label="Kwota kosztu"
                                   type="number"
                                   value={c.amount || ""}
                                   min={0}
@@ -1947,6 +1954,7 @@ export default function TaxCalculator() {
                                     VAT
                                   </label>
                                   <select
+                                    aria-label="Stawka VAT kosztu"
                                     value={String(c.vatRate)}
                                     onChange={(e) =>
                                       updateCost(c.id, {
@@ -2008,6 +2016,7 @@ export default function TaxCalculator() {
                       Stawka VAT samochodu
                     </label>
                     <select
+                      aria-label="Stawka VAT samochodu"
                       value={String(carVatRate)}
                       onChange={(e) => setCarVatRate(Number(e.target.value))}
                       className="w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-3 py-2 text-sm focus:border-accent focus:ring-2 focus:ring-accent/30 outline-none"
@@ -2129,6 +2138,7 @@ export default function TaxCalculator() {
                   </span>
                 </div>
                 <input
+                  aria-label="Wpłata IKZE miesięcznie"
                   type="range"
                   min={0}
                   max={Math.ceil(IKZE_LIMIT_JDG / 12)}

@@ -154,6 +154,7 @@ export default function AiCheck() {
 
       <form onSubmit={sprawdz} className="mt-4 flex flex-col gap-3 sm:flex-row">
         <input
+          aria-label="Adres strony"
           type="text"
           inputMode="url"
           required

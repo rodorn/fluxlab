@@ -521,6 +521,71 @@ export const KATALOG_B: Record<string, OpisKontroli> = {
 };
 Object.assign(KATALOG, KATALOG_B);
 
+export const KATALOG_C: Record<string, OpisKontroli> = {
+  // --- C: dostępność -------------------------------------------------------
+  pola_bez_etykiety: {
+    tytul: "Pola formularza bez etykiety",
+    skutek:
+      "Czytnik ekranu nie powie, co wpisać, a po kliknięciu w pole podpowiedź znika, więc część osób nie wypełni formularza poprawnie.",
+    waga: "wazne",
+    obszar: "dostepnosc",
+    koszt: 100,
+    dostep: KOD,
+    zakres: "strona",
+  },
+  bez_nazwy: {
+    tytul: "Przyciski i linki bez nazwy (same ikony)",
+    skutek:
+      "Czytnik ekranu odczyta tylko „przycisk” albo „link”, bez informacji, dokąd prowadzi, a Google nie wie, o czym jest odnośnik.",
+    waga: "wazne",
+    obszar: "dostepnosc",
+    koszt: 100,
+    dostep: KOD,
+    zakres: "strona",
+  },
+  linki_ogolne: {
+    tytul: "Linki „kliknij tutaj” albo „więcej” bez kontekstu",
+    skutek:
+      "Z samego napisu nie wiadomo, dokąd prowadzi link, więc klient klika mniej chętnie, a wyszukiwarka nie wie, o czym jest strona docelowa.",
+    waga: "drobne",
+    obszar: "dostepnosc",
+    koszt: 80,
+    dostep: PANEL,
+    zakres: "strona",
+  },
+  iframe_bez_title: {
+    tytul: "Osadzone ramki bez tytułu",
+    skutek:
+      "Osoba korzystająca z czytnika ekranu nie wie, co jest w ramce (mapa, film, formularz), i musi wejść do środka, żeby się dowiedzieć.",
+    waga: "drobne",
+    obszar: "dostepnosc",
+    koszt: 50,
+    dostep: KOD,
+    zakres: "strona",
+  },
+  duplikaty_id: {
+    tytul: "Ten sam identyfikator (id) użyty kilka razy",
+    skutek:
+      "Etykiety, kotwice i skrypty trafiają w niewłaściwy element, więc kliknięcie w etykietę albo link do sekcji może prowadzić w złe miejsce.",
+    waga: "drobne",
+    obszar: "dostepnosc",
+    koszt: 80,
+    dostep: KOD,
+    zakres: "strona",
+  },
+  tabindex_dodatni: {
+    tytul: "Wymuszona kolejność przechodzenia klawiszem Tab",
+    skutek:
+      "Osoba poruszająca się klawiaturą skacze po stronie w nieoczekiwanej kolejności i łatwo gubi miejsce, w którym była.",
+    waga: "drobne",
+    obszar: "dostepnosc",
+    koszt: 50,
+    dostep: KOD,
+    zakres: "strona",
+  },
+};
+Object.assign(KATALOG, KATALOG_C);
+
 /* ------------------------------------------------------------------ */
 /* Pomocnicze                                                           */
 /* ------------------------------------------------------------------ */
@@ -810,6 +875,93 @@ export function kontroleStrony(html: string, adres: string): Znalezisko[] {
       klucz: "skrypty_blokujace",
       szczegol: `${blokujace.length} ${odmien(blokujace.length, "skrypt", "skrypty", "skryptów")} bez async ani defer, np. ${krotko((blokujace[0].atr.get("src") ?? "").split("/").pop() ?? "", 60)}`,
     });
+
+  // --- C: dostępność ---
+  {
+    const bezSvg = czysty.replace(/<svg\b[\s\S]*?<\/svg>/gi, (m) => " ".repeat(m.length));
+    const etykietyDla = new Set(tagi.filter((t) => t.tag === "label" && t.atr.get("for")).map((t) => t.atr.get("for")!));
+    const wLabelu = (poz: number) => {
+      const p = czysty.lastIndexOf("<label", poz);
+      if (p < 0) return false;
+      const k = czysty.indexOf("</label", p);
+      return k < 0 || k > poz;
+    };
+    const opisane = (t: Tag) =>
+      !!(t.atr.get("aria-label")?.trim() || t.atr.get("aria-labelledby")?.trim() || t.atr.get("title")?.trim());
+    const ukryte = (t: Tag) =>
+      t.atr.has("hidden") || t.atr.get("aria-hidden") === "true" || /display\s*:\s*none/i.test(t.atr.get("style") ?? "");
+    const pola = tagi.filter(
+      (t) =>
+        (t.tag === "select" || t.tag === "textarea" ||
+          (t.tag === "input" && !/^(hidden|submit|button|reset|image)$/i.test(t.atr.get("type") ?? "text"))) &&
+        !ukryte(t),
+    );
+    const bezEtykiety = pola.filter(
+      (t) => !opisane(t) && !(t.atr.get("id") && etykietyDla.has(t.atr.get("id")!)) && !wLabelu(t.poz),
+    );
+    if (bezEtykiety.length)
+      z.push({
+        klucz: "pola_bez_etykiety",
+        szczegol: `${bezEtykiety.length} ${odmien(bezEtykiety.length, "pole", "pola", "pól")}, np. ${bezEtykiety
+          .slice(0, 3)
+          .map((t) => `${t.tag}${t.atr.get("name") ? ` name=${t.atr.get("name")}` : ""}${t.atr.get("placeholder") ? ` „${krotko(t.atr.get("placeholder")!, 30)}”` : ""}`)
+          .join(", ")}`,
+      });
+
+    const tresc = (t: Tag) => {
+      const k = czysty.indexOf(`</${t.tag}`, t.koniec);
+      return k < 0 ? "" : czysty.slice(t.koniec, k);
+    };
+    const maNazwe = (t: Tag) => {
+      if (opisane(t)) return true;
+      const w = tresc(t);
+      if (dekoduj(w.replace(/<svg\b[\s\S]*?<\/svg>/gi, " ").replace(/<[^>]+>/g, " ")).trim()) return true;
+      if (/<img\b[^>]*\balt\s*=\s*["'][^"']+["']/i.test(w)) return true;
+      if (/<svg\b[\s\S]*?<title>[^<]+</i.test(w)) return true;
+      if (/aria-label\s*=\s*["'][^"']+["']/i.test(w)) return true;
+      return false;
+    };
+    const bezNazwy = tagi.filter(
+      (t) => ((t.tag === "a" && t.atr.has("href")) || t.tag === "button") && !ukryte(t) && !maNazwe(t),
+    );
+    if (bezNazwy.length)
+      z.push({
+        klucz: "bez_nazwy",
+        szczegol: `${bezNazwy.length} ${odmien(bezNazwy.length, "element", "elementy", "elementów")}, np. ${bezNazwy
+          .slice(0, 3)
+          .map((t) => (t.tag === "a" ? `link do ${krotko(t.atr.get("href") ?? "", 50)}` : `button${t.atr.get("class") ? ` .${t.atr.get("class")!.split(/\s+/)[0]}` : ""}`))
+          .join(", ")}`,
+      });
+
+    const ogolne = new Set<string>();
+    for (const t of tagi) {
+      if (t.tag !== "a" || !t.atr.has("href") || opisane(t)) continue;
+      const napis = dekoduj(tresc(t).replace(/<[^>]+>/g, " ")).replace(/\s+/g, " ").trim().replace(/[.»›→!…:]+$/u, "").trim();
+      if (/^(kliknij( tutaj| tu)?|tutaj|tu|więcej|czytaj (dalej|więcej)|zobacz( więcej)?|dowiedz się więcej|sprawdź|link|here|click here|read more|more|learn more)$/i.test(napis))
+        ogolne.add(napis.toLowerCase());
+    }
+    if (ogolne.size) z.push({ klucz: "linki_ogolne", szczegol: [...ogolne].map((x) => `„${x}”`).join(", ") });
+
+    const ramki = tagi.filter((t) => t.tag === "iframe" && !t.atr.get("title")?.trim() && !ukryte(t));
+    if (ramki.length)
+      z.push({
+        klucz: "iframe_bez_title",
+        szczegol: `${ramki.length} ${odmien(ramki.length, "ramka", "ramki", "ramek")}, np. ${krotko(ramki[0].atr.get("src") ?? "bez adresu", 60)}`,
+      });
+
+    const licznik = new Map<string, number>();
+    for (const t of znaczniki(bezSvg)) {
+      const id = t.atr.get("id");
+      if (id) licznik.set(id, (licznik.get(id) ?? 0) + 1);
+    }
+    const powtorzone = [...licznik].filter(([, n]) => n > 1).map(([id, n]) => `${id} (${n}x)`);
+    if (powtorzone.length)
+      z.push({ klucz: "duplikaty_id", szczegol: `${powtorzone.length} ${odmien(powtorzone.length, "identyfikator", "identyfikatory", "identyfikatorów")}, np. ${lista(powtorzone, 3)}` });
+
+    const dodatnie = tagi.filter((t) => Number(t.atr.get("tabindex") ?? 0) > 0);
+    if (dodatnie.length)
+      z.push({ klucz: "tabindex_dodatni", szczegol: `${dodatnie.length} ${odmien(dodatnie.length, "element", "elementy", "elementów")} z tabindex większym od 0` });
+  }
 
   // D: target=_blank bez noopener (do obcych domen)
   const blank = tagi.filter((t) => {

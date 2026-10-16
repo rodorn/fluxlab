@@ -174,6 +174,7 @@ export default function SpolkaCheck() {
       />
       <form onSubmit={sprawdz} className="mt-5 flex flex-col gap-3 sm:flex-row">
         <input
+          aria-label="Numer KRS albo nazwa spółki"
           type="text"
           required
           value={zapytanie}

@@ -247,6 +247,7 @@ function NumberField({
       <div className="relative">
         <input
           type="number"
+          aria-label={label}
           inputMode="numeric"
           min={min}
           value={value}

@@ -202,6 +202,7 @@ export default function AdresCheck() {
       />
       <form onSubmit={sprawdz} className="mt-5 flex flex-col gap-3 sm:flex-row">
         <input
+          aria-label="Adres strony"
           type="text"
           inputMode="url"
           required

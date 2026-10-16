@@ -307,6 +307,7 @@ function Slider({
           />
         </div>
         <input
+          aria-label={label}
           type="range"
           min={min}
           max={max}
@@ -374,6 +375,7 @@ function LogSlider({
           />
         </div>
         <input
+          aria-label={label}
           type="range"
           min={logMin}
           max={logMax}
@@ -794,6 +796,7 @@ export default function CarCostCalculator() {
         </p>
         <div className="flex gap-2">
           <input
+            aria-label="Model samochodu albo link do ogłoszenia"
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
