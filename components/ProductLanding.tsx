@@ -19,7 +19,7 @@ export interface Tier {
   featured?: boolean;
   /** Cena przed promocją, pokazana jako przekreślona. */
   oldPrice?: string;
-  /** Plakietka zamiast „Najczęściej wybierany”, np. „Faza beta”. */
+  /** Plakietka nad nazwą, np. „Faza beta”. */
   badge?: string;
   /** Dokąd prowadzi przycisk, domyślnie do formularza na dole. */
   href?: string;
@@ -164,9 +164,9 @@ export default function ProductLanding(p: ProductLandingProps) {
                       : "border-gray-200/80 dark:border-gray-800/80 bg-white/60 dark:bg-gray-900/40"
                   }`}
                 >
-                  {(t.badge || t.featured) && (
+                  {t.badge && (
                     <span className="self-start rounded-full bg-accent/10 px-3 py-1 text-xs font-semibold text-accent">
-                      {t.badge ?? "Najczęściej wybierany"}
+                      {t.badge}
                     </span>
                   )}
                   <h3 className="mt-2 text-lg font-semibold text-gray-900 dark:text-white">

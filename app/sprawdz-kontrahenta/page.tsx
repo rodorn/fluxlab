@@ -155,11 +155,6 @@ export default function SprawdzKontrahentaPage() {
                       : "border-gray-200/80 dark:border-gray-800/80 bg-white/60 dark:bg-gray-900/40"
                   }`}
                 >
-                  {t.featured && (
-                    <span className="self-start rounded-full bg-accent/10 px-3 py-1 text-xs font-semibold text-accent">
-                      Najczęściej wybierany
-                    </span>
-                  )}
                   <h3 className="mt-2 text-lg font-semibold text-gray-900 dark:text-white">
                     {t.name}
                   </h3>

@@ -219,11 +219,6 @@ export default function ImportRadarPage() {
                       : "border-gray-100 bg-white dark:border-gray-700 dark:bg-gray-800/60"
                   }`}
                 >
-                  {tier.featured && (
-                    <span className="mb-3 inline-block w-fit rounded-full bg-accent-solid px-3 py-1 text-xs font-semibold text-white">
-                      Najczęściej wybierany
-                    </span>
-                  )}
                   <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                     {tier.name}
                   </h3>
