@@ -66,9 +66,10 @@ def tabela(tytul, licznik, kol="sesje"):
 def odsiew(w):
     """Sesje, ktore nie sa ludzmi: pary i serie testowe.
 
-    Para: dwie lub wiecej sesji bez odsylacza zaczete w tej samej sekundzie
-    (podglad linku, skaner poczty). Seria testowa: 15.10 08:23 do 09:19 inna
-    sesja otworzyla 37 razy po jednej stronie jako Chrome na Android. Prog: co
+    Para: dwie lub wiecej sesji zaczete w odstepie najwyzej 1 s, takze z
+    odsylaczem lub utm (podglad linku, skaner poczty: 13, 14 i 16.10 wejscie z
+    utm ksiegowe razem z /dziekuje bez odsylacza). Seria testowa: 15.10 08:23
+    do 09:19 inna sesja otworzyla 37 razy po jednej stronie jako Chrome na Android. Prog: co
     najmniej 5 sesji bez odsylacza, kazda po 1 odslonie, ta sama trojka
     przegladarka/system/telefon, wszystkie w oknie 15 minut.
     """
@@ -77,10 +78,11 @@ def odsiew(w):
         if r[5] == "odslona" and r[3]:
             ods[r[3]].append(r)
     gole = {s: v for s, v in ods.items() if not any(r[2] for r in v)}
-    start = defaultdict(set)
-    for s, v in gole.items():
-        start[min(r[0] for r in v)].add(s)
-    pary = set().union(*(x for x in start.values() if len(x) > 1))
+    start = sorted((min(r[0] for r in v), s) for s, v in ods.items())
+    pary = set()
+    for (t0, s0), (t1, s1) in zip(start, start[1:]):
+        if t1 - t0 <= 1:
+            pary.update((s0, s1))
     pojedyncze = defaultdict(list)
     for s, v in gole.items():
         if len(v) == 1 and s not in pary:
