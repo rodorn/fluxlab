@@ -17,6 +17,8 @@ export interface Tier {
   desc: string;
   features: string[];
   featured?: boolean;
+  /** Opłata miesięczna pokazana osobno pod ceną jednorazową. */
+  monthly?: string;
   /** Cena przed promocją, pokazana jako przekreślona. */
   oldPrice?: string;
   /** Plakietka nad nazwą, np. „Faza beta”. */
@@ -164,10 +166,15 @@ export default function ProductLanding(p: ProductLandingProps) {
                       : "border-gray-200/80 dark:border-gray-800/80 bg-white/60 dark:bg-gray-900/40"
                   }`}
                 >
-                  {t.badge && (
-                    <span className="self-start rounded-full bg-accent/10 px-3 py-1 text-xs font-semibold text-accent">
-                      {t.badge}
-                    </span>
+                  {/* Miejsce na plakietkę we wszystkich kartach, żeby ceny stały w jednej linii. */}
+                  {p.pricing.some((x) => x.badge) && (
+                    <div className="h-7">
+                      {t.badge && (
+                        <span className="inline-block rounded-full bg-accent/10 px-3 py-1 text-xs font-semibold text-accent">
+                          {t.badge}
+                        </span>
+                      )}
+                    </div>
                   )}
                   <h3 className="mt-2 text-lg font-semibold text-gray-900 dark:text-white">
                     {t.name}
@@ -180,6 +187,19 @@ export default function ProductLanding(p: ProductLandingProps) {
                     )}
                     {t.price}
                   </p>
+                  {t.monthly && (
+                    <>
+                      <p className="mt-1 text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
+                        wdrożenie jednorazowo
+                      </p>
+                      <p className="mt-3 text-xl font-bold text-gray-900 dark:text-white">
+                        + {t.monthly}
+                      </p>
+                      <p className="mt-1 text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
+                        abonament
+                      </p>
+                    </>
+                  )}
                   <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
                     {t.desc}
                   </p>

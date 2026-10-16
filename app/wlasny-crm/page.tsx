@@ -51,7 +51,8 @@ export default function WlasnyCrm() {
           oldPrice: "1 900 zł",
           price: "1 zł",
           badge: "Pilotaż, ograniczona liczba miejsc",
-          desc: "Wdrożenie do 3 osób za 1 zł w ramach pilotażu. Rozwiązania wypracowujemy razem z Tobą. Abonament 499 zł miesięcznie.",
+          monthly: "499 zł / mies.",
+          desc: "Do 3 osób, pilotaż. Rozwiązania wypracowujemy razem z Tobą.",
           features: [
             "Gotowy lejek, leady z formularza i poczty",
             "Aplikacja na komputer i telefon",
@@ -61,7 +62,8 @@ export default function WlasnyCrm() {
         {
           name: "Większa firma",
           price: "12 900 zł",
-          desc: "Większy zespół, oddziały. Abonament 499 zł miesięcznie za 3 konta i 99 zł za każde kolejne.",
+          monthly: "499 zł / mies.",
+          desc: "Większy zespół, oddziały. Abonament obejmuje 3 konta, każde kolejne 99 zł miesięcznie.",
           features: [
             "Dowolne integracje i automatyzacje, jakich potrzebujesz",
             "Lejek pod Twoją branżę, także leady z telefonu",
@@ -73,7 +75,8 @@ export default function WlasnyCrm() {
         {
           name: "CRM z narzędziami AI",
           price: "24 900 zł",
-          desc: "Wszystko z pakietu za 12 900 zł plus narzędzia AI. Abonament 499 zł miesięcznie za 3 konta i 99 zł za każde kolejne.",
+          monthly: "499 zł / mies.",
+          desc: "Wszystko z pakietu za 12 900 zł plus narzędzia AI. Abonament obejmuje 3 konta, każde kolejne 99 zł miesięcznie.",
           features: [
             "Dowolne narzędzia AI do tekstu i nagrań, jakich potrzebujesz",
             "Na przykład streszczenia i ocena rozmów, analiza dokumentów",
