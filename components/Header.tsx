@@ -243,7 +243,7 @@ export default function Header() {
         <div className="hidden lg:flex items-center gap-3 shrink-0">
           <ThemeToggle />
           <Link href="/kontakt" className="btn-primary text-sm">
-            Bezpłatna diagnoza
+            Zamów wycenę
           </Link>
         </div>
 
@@ -366,7 +366,7 @@ export default function Header() {
               onClick={zamknij}
               className="btn-primary mt-4 text-sm"
             >
-              Bezpłatna diagnoza
+              Zamów wycenę
             </Link>
           </nav>
         </div>
