@@ -84,7 +84,7 @@ async function przezSmtp(
 }
 
 /** Najpierw Resend, a gdy odmówi, zwykłe SMTP. Jedna droga to jedna awaria. */
-async function wyslij(
+export async function wyslij(
   to: string,
   temat: string,
   html: string,

@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import Przyklady from "@/components/Przyklady";
 import { zglosZdarzenie } from "@/lib/zdarzenie";
 import DalejPoWyniku from "@/components/DalejPoWyniku";
+import ZamowAudytCalosci from "@/components/ZamowAudytCalosci";
 
 /**
  * Darmowy audyt zbiorczy.
@@ -1076,6 +1077,11 @@ export default function AudytCheck() {
                 przesłać im tę listę.
               </p>
             </div>
+          )}
+
+          {/* Płatny audyt całej strony */}
+          {wynik.osiagalna && (
+            <ZamowAudytCalosci domena={wynik.domena} miejsce="wynik" />
           )}
 
           {/* Metodyka */}

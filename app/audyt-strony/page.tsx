@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import AudytCheck from "@/components/AudytCheck";
 import ProductLanding from "@/components/ProductLanding";
+import ZamowAudytCalosci from "@/components/ZamowAudytCalosci";
 
 export const metadata: Metadata = {
   title: "Darmowy audyt techniczny strony, raport w minutę | Fluxlab",
@@ -114,6 +115,7 @@ export default function Page() {
         },
       ]}
       formId="audyt_strony_naprawa"
+      poFormularzu={<ZamowAudytCalosci miejsce="dol" />}
       formHeading="Raport pokazał coś, czego nie chcesz ruszać sam"
       formIntro="Wklej adres strony i napisz, która pozycja z raportu cię niepokoi. Odpiszemy, ile to zajmie."
       submitLabel="Napisz w sprawie naprawy"

@@ -39,6 +39,8 @@ export interface ProductLandingProps {
   pricing: Tier[];
   faq: { q: string; a: string; linki?: LinkWTekscie[] }[];
   formId: string;
+  /** Dodatkowy blok pod formularzem, na przykład płatny wariant narzędzia. */
+  poFormularzu?: ReactNode;
   formHeading: string;
   formIntro: string;
   submitLabel: string;
@@ -276,6 +278,7 @@ export default function ProductLanding(p: ProductLandingProps) {
               submitLabel={p.submitLabel}
               microCopy={p.microCopy}
             />
+            {p.poFormularzu && <div className="mt-8">{p.poFormularzu}</div>}
           </div>
         </section>
       </main>
