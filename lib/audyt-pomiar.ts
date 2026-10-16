@@ -19,6 +19,7 @@ import { arkuszeStrony, przygotujCss, sprawdzKursor } from "./kursor";
 import {
   kontroleDomeny,
   kontroleGlownej,
+  obrazy404,
   type Znalezisko,
 } from "./audyt-kontrole";
 
@@ -865,7 +866,7 @@ export async function zmierz(domenaWejscie: string): Promise<Pomiar> {
   ]);
   wynik.zasoby = zasoby;
   wynik.kursor = kursor;
-  wynik.znaleziska = [...domenowe, ...glowna];
+  wynik.znaleziska = [...domenowe, ...glowna, ...obrazy404(zasoby)];
   const wagaZasobow = wynik.zasoby.reduce((s, z) => s + (z.bajty ?? 0), 0);
   wynik.mobile = await zmierzMobile(baza, html, wagaZasobow);
   return wynik;

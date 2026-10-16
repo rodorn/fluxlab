@@ -17,6 +17,7 @@ export const metadata: Metadata = {
     description: "Nowa strona albo poprawki w obecnej. Szybko, mobilnie, z AI.",
     locale: "pl_PL",
     type: "website",
+    images: ["/opengraph-image"],
   },
 };
 

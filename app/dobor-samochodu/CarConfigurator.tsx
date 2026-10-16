@@ -1583,9 +1583,9 @@ export default function CarConfigurator() {
   const renderStep0 = () => (
     <div className="space-y-8">
       <div className="rounded-2xl bg-accent/5 dark:bg-accent/10 border border-accent/20 p-6">
-        <h3 className="text-sm font-semibold text-accent mb-2">
+        <h2 className="text-sm font-semibold text-accent mb-2">
           Jaki typ samochodu do ciebie pasuje?
-        </h3>
+        </h2>
         <p className="text-sm text-gray-600 dark:text-gray-400">
           Każdy typ ma swoje zalety i wady. Kliknij kartę, która najlepiej
           odpowiada Twoim potrzebom.

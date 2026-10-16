@@ -20,6 +20,8 @@ import {
   kontroleStrony,
   kontroleWitryny,
   polaczCechy,
+  regulyRobots,
+  zablokowanyPrzezRobots,
   sprawdzAkcje,
   type Cechy,
   type Znalezisko,
@@ -62,6 +64,12 @@ export type Strona = {
   /** Wspólne kontrole jednej podstrony (lib/audyt-kontrole.ts). */
   znaleziska: Znalezisko[];
   cechy: Cechy | null;
+  /** Treść pierwszego H1. */
+  h1Tekst: string | null;
+  /** Adresy z link rel=alternate hreflang. */
+  hreflang: string[];
+  /** Adresy obrazów z dokumentu (do sprawdzenia, czy istnieją). */
+  obrazy: string[];
 };
 
 export type WynikCalosci = {
@@ -231,6 +239,9 @@ function przeanalizuj(adres: string, o: Odpowiedz, hosty: Set<string>): Strona {
     kursor: null,
     znaleziska: [],
     cechy: null,
+    h1Tekst: null,
+    hreflang: [],
+    obrazy: [],
   };
   const html = o.tekst;
   if (html === null) return s;
@@ -240,6 +251,30 @@ function przeanalizuj(adres: string, o: Odpowiedz, hosty: Set<string>): Strona {
   s.tytul = t === undefined ? null : dekoduj(t.replace(/\s+/g, " ").trim());
   s.opis = metaTresc(glowa, "description");
   s.h1 = (html.match(/<h1[\s>]/gi) ?? []).length;
+  const h1 = html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i)?.[1];
+  s.h1Tekst = h1
+    ? dekoduj(h1.replace(/<[^>]+>/g, " ")).replace(/\s+/g, " ").trim() || null
+    : null;
+  for (const m of html.matchAll(/<link\s[^>]*hreflang[^>]*>/gi)) {
+    const h = m[0].match(/href\s*=\s*["']([^"']+)["']/i)?.[1];
+    if (!h) continue;
+    try {
+      s.hreflang.push(new URL(dekoduj(h), o.koncowy).toString());
+    } catch {
+      /* zły adres */
+    }
+  }
+  const obrazy = new Set<string>();
+  for (const m of html.matchAll(/<img\s[^>]*?\ssrc\s*=\s*["']([^"']+)["']/gi)) {
+    if (/^data:/i.test(m[1])) continue;
+    try {
+      const u = new URL(dekoduj(m[1].trim()), o.koncowy);
+      if (/^https?:$/.test(u.protocol)) obrazy.add(u.toString());
+    } catch {
+      /* zły adres */
+    }
+  }
+  s.obrazy = [...obrazy].slice(0, 50);
   for (const m of glowa.matchAll(/<link\s[^>]*>/gi)) {
     if (/rel\s*=\s*["']canonical["']/i.test(m[0])) {
       const h = m[0].match(/href\s*=\s*["']([^"']+)["']/i)?.[1];
@@ -291,7 +326,7 @@ function przeanalizuj(adres: string, o: Odpowiedz, hosty: Set<string>): Strona {
 async function adresyZMapy(
   baza: string,
   hosty: Set<string>,
-): Promise<{ adresy: string[]; razem: number } | null> {
+): Promise<{ adresy: string[]; razem: number; robots: string } | null> {
   let robots = "";
   try {
     const o = await fetch(`${baza}/robots.txt`, {
@@ -363,7 +398,7 @@ async function adresyZMapy(
     }
     if (!dodano) break;
   }
-  return { adresy: wybrane, razem: wszystkie.size };
+  return { adresy: wybrane, razem: wszystkie.size, robots };
 }
 
 /** Pula zadań o stałej współbieżności, z kolejką, która może rosnąć w trakcie. */
@@ -517,6 +552,9 @@ export async function zbadajCalosc(
               kursor: null,
               znaleziska: [],
               cechy: null,
+              h1Tekst: null,
+              hreflang: [],
+              obrazy: [],
             } satisfies Strona);
         if (o?.tekst && o.status < 300) {
           const { arkusze, nieprzeczytane } = await arkuszeStrony(
@@ -555,7 +593,11 @@ export async function zbadajCalosc(
     // Linki wewnętrzne: status celu znamy z badania podstron, resztę
     // sprawdzamy osobno, bez czytania treści.
     const statusy = new Map<string, number | null>();
-    for (const s of wynik.strony) statusy.set(s.adres, s.status);
+    const dokad = new Map<string, string>();
+    for (const s of wynik.strony) {
+      statusy.set(s.adres, s.status);
+      if (s.przekierowania.length) dokad.set(s.adres, s.koncowy);
+    }
     const zrodla = new Map<string, Set<string>>();
     for (const s of wynik.strony) {
       for (const l of s.linki) {
@@ -572,9 +614,84 @@ export async function zbadajCalosc(
       async (cel) => {
         const o = await pobierz(cel, CZAS_LINKU_MS, false);
         statusy.set(cel, o ? o.status : null);
+        if (o && o.przekierowania.length) dokad.set(cel, o.koncowy);
       },
       () => Date.now() < terminLinkow,
     );
+
+    // Obrazy: każdy adres raz, najwyżej 150 na badanie.
+    const obrazyZ = new Map<string, Set<string>>();
+    for (const s of wynik.strony)
+      for (const i of s.obrazy) {
+        if (!obrazyZ.has(i)) obrazyZ.set(i, new Set());
+        obrazyZ.get(i)!.add(s.adres);
+      }
+    const statusObrazu = new Map<string, number | null>();
+    await pula(
+      [...obrazyZ.keys()].sort().slice(0, 150),
+      async (i) => {
+        const o = await pobierz(i, CZAS_LINKU_MS, false);
+        statusObrazu.set(i, o ? o.status : null);
+      },
+      () => Date.now() < terminLinkow,
+    );
+    const zlychObrazow = new Map<string, string[]>();
+    for (const [i, st] of statusObrazu) {
+      if (st !== 404 && st !== 410) continue;
+      for (const a of obrazyZ.get(i)!) {
+        if (!zlychObrazow.has(a)) zlychObrazow.set(a, []);
+        zlychObrazow.get(a)!.push(i);
+      }
+    }
+
+    // Zależności między podstronami: przekierowania w linkach, hreflang,
+    // mapa a robots.txt, podstrony spoza mapy.
+    const poAdresie = new Map(wynik.strony.map((s) => [bezUkosnika(s.adres), s]));
+    const dopisz = (s: Strona, klucz: string, szczegol: string) => {
+      const juz = s.znaleziska.find((z) => z.klucz === klucz);
+      if (juz) {
+        if (juz.szczegol.length < 300) juz.szczegol += `; ${szczegol}`;
+        else if (!juz.szczegol.endsWith("i więcej"))
+          juz.szczegol += "; i więcej";
+      }
+      else s.znaleziska.push({ klucz, szczegol });
+    };
+    const robots = mapa ? regulyRobots(mapa.robots) : null;
+    const wMapie = new Set((mapa?.adresy ?? []).map(bezUkosnika));
+    for (const s of wynik.strony) {
+      const doPrzekierowan = s.linki.filter((l) => dokad.has(l));
+      if (doPrzekierowan.length)
+        dopisz(
+          s,
+          "linki_do_przekierowan",
+          `${doPrzekierowan.length} ${odmien(doPrzekierowan.length, "link", "linki", "linków")}, np. ${krotki(doPrzekierowan[0])} → ${krotki(dokad.get(doPrzekierowan[0])!)}`,
+        );
+      const zle = zlychObrazow.get(s.adres);
+      if (zle)
+        dopisz(s, "obrazy_404", `${zle.length} ${odmien(zle.length, "obraz", "obrazy", "obrazów")}, np. ${zle[0]}`);
+      for (const h of s.hreflang) {
+        const cel = poAdresie.get(bezUkosnika(h));
+        if (!cel || cel === s || !cel.html) continue;
+        if (!cel.hreflang.some((x) => bezUkosnika(x) === bezUkosnika(s.adres)))
+          dopisz(s, "hreflang_bledy", `${krotki(cel.adres)} nie wskazuje z powrotem tej podstrony`);
+      }
+      if (robots && wMapie.has(bezUkosnika(s.adres))) {
+        const u = new URL(s.adres);
+        if (zablokowanyPrzezRobots(u.pathname + u.search, robots))
+          dopisz(s, "robots_blokuje_mape", "adres jest w mapie i jest zablokowany w robots.txt");
+      }
+    }
+    if (mapa) {
+      for (const [l, na] of zrodla) {
+        if (wMapie.has(bezUkosnika(l)) || dokad.has(l) || statusy.get(l) !== 200) continue;
+        const u = new URL(l);
+        // Kolejne strony listy wpisów nie muszą być w mapie.
+        if (u.search || PLIKI.test(u.pathname) || /\/page\/\d+\/?$/.test(u.pathname))
+          continue;
+        const zrodlo = poAdresie.get(bezUkosnika([...na].sort()[0]));
+        if (zrodlo) dopisz(zrodlo, "poza_mapa", krotki(l));
+      }
+    }
     wynik.sprawdzonychLinkow = [...zrodla.keys()].filter((l) =>
       statusy.has(l),
     ).length;
@@ -803,6 +920,8 @@ export function grupujProblemy(w: WynikCalosci): Grupa[] {
     }
   };
   duplikaty((s) => s.tytul, tytulDup);
+  const h1Dup = g("h1_duplikat", KATALOG.h1_duplikat.tytul, KATALOG.h1_duplikat.skutek);
+  duplikaty((s) => s.h1Tekst, h1Dup);
   duplikaty((s) => s.opis, opisDup);
 
   for (const s of html) {
@@ -901,6 +1020,7 @@ export function grupujProblemy(w: WynikCalosci): Grupa[] {
     alt,
     kursor,
     ciezki,
+    h1Dup,
     ...wspolne.values(),
   ]
     .filter((x) => x.wpisy.length > 0)
@@ -950,8 +1070,12 @@ export function daneliczbowe(w: WynikCalosci) {
     zBledem: w.strony.filter((s) => s.status === null || s.status >= 400)
       .length,
     problemow: grupy.reduce((s, g) => s + g.wpisy.length, 0),
+    // Liczymy tylko zbadane podstrony. Wpisy o złamanych linkach mają
+    // w adresie cel linku, a nie podstronę.
     podstronZProblemem: new Set(
-      grupy.flatMap((g) => g.wpisy.map((x) => x.adres)),
+      grupy
+        .flatMap((g) => g.wpisy.map((x) => x.adres))
+        .filter((a) => w.strony.some((s) => s.adres === a)),
     ).size,
   };
 }

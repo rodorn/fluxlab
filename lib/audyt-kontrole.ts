@@ -251,6 +251,181 @@ export const KATALOG_E: Record<string, OpisKontroli> = {
 };
 Object.assign(KATALOG, KATALOG_E);
 
+export const KATALOG_A: Record<string, OpisKontroli> = {
+  // --- A: SEO i treść ------------------------------------------------------
+  brak_lang: {
+    tytul: "Strona nie podaje języka",
+    skutek:
+      "Wyszukiwarka i czytnik ekranu muszą zgadywać język, więc tekst bywa czytany z obcym akcentem, a strona rzadziej trafia do wyników w tym języku.",
+    waga: "drobne",
+    obszar: "seo",
+    koszt: 50,
+    dostep: KOD,
+    zakres: "strona",
+  },
+  viewport: {
+    tytul: "Podstrona bez znacznika viewport",
+    skutek:
+      "Na telefonie podstrona wyświetla się jak pomniejszona wersja komputerowa, więc trzeba ją powiększać palcami, a Google obniża jej ocenę.",
+    waga: "wazne",
+    obszar: "mobile",
+    koszt: 50,
+    dostep: KOD,
+    zakres: "strona",
+  },
+  naglowki_przeskok: {
+    tytul: "Nagłówki przeskakują poziom",
+    skutek:
+      "Wyszukiwarka i czytnik ekranu czytają strukturę strony z poziomów nagłówków, a przeskok sprawia, że trudniej zrozumieć, co jest częścią czego.",
+    waga: "drobne",
+    obszar: "seo",
+    koszt: 50,
+    dostep: KOD,
+    zakres: "strona",
+  },
+  malo_tresci: {
+    tytul: "Mniej niż 150 słów treści",
+    skutek:
+      "Tak krótka podstrona rzadko odpowiada na pytanie klienta, więc Google pokazuje ją nisko albo wcale, a odwiedzający nie znajduje powodu, żeby zostać.",
+    waga: "drobne",
+    obszar: "seo",
+    koszt: 150,
+    dostep: PANEL,
+    zakres: "strona",
+  },
+  h1_duplikat: {
+    tytul: "Ten sam nagłówek H1 na kilku podstronach",
+    skutek:
+      "Podstrony wyglądają dla wyszukiwarki na powielone i konkurują ze sobą, zamiast każda zbierać ruch na swój temat.",
+    waga: "drobne",
+    obszar: "seo",
+    koszt: 100,
+    dostep: PANEL,
+    zakres: "strona",
+  },
+  og_niepelne: {
+    tytul: "Niepełny podgląd przy udostępnianiu (Open Graph)",
+    skutek:
+      "Link wklejony na Facebooka, LinkedIna albo do komunikatora pokazuje się bez obrazka albo opisu, więc rzadziej ktoś w niego kliknie.",
+    waga: "drobne",
+    obszar: "seo",
+    koszt: 80,
+    dostep: KOD,
+    zakres: "strona",
+  },
+  og_obraz: {
+    tytul: "Obrazek podglądu (og:image) nie działa albo jest za mały",
+    skutek:
+      "Przy udostępnieniu linku obrazek się nie pokaże albo będzie rozmyty, a to on najczęściej decyduje o kliknięciu.",
+    waga: "drobne",
+    obszar: "seo",
+    koszt: 80,
+    dostep: PANEL,
+    zakres: "domena",
+  },
+  brak_favicony: {
+    tytul: "Brak ikony strony (favicon)",
+    skutek:
+      "W karcie przeglądarki, w zakładkach i w wynikach Google przy adresie stoi pusta ikona, przez co strona wygląda na niedokończoną.",
+    waga: "drobne",
+    obszar: "seo",
+    koszt: 50,
+    dostep: KOD,
+    zakres: "domena",
+  },
+  hreflang_bledy: {
+    tytul: "Błędy w oznaczeniach wersji językowych (hreflang)",
+    skutek:
+      "Google może pokazać klientowi z Polski wersję w innym języku albo zignorować oznaczenia, a wersje językowe zaczną ze sobą konkurować.",
+    waga: "drobne",
+    obszar: "seo",
+    koszt: 150,
+    dostep: KOD,
+    zakres: "strona",
+  },
+  jsonld_blad: {
+    tytul: "Błąd w danych uporządkowanych (JSON-LD)",
+    skutek:
+      "Google odrzuca cały blok z błędem, więc gwiazdki, ceny czy dane firmy z tego bloku nie pojawią się w wynikach.",
+    waga: "wazne",
+    obszar: "seo",
+    koszt: 100,
+    dostep: KOD,
+    zakres: "strona",
+  },
+  adres_format: {
+    tytul: "Adres podstrony z wielkimi literami, podkreśleniem albo za długi",
+    skutek:
+      "Takie adresy łatwo przepisać z błędem, a wielkie i małe litery dają dla wyszukiwarki dwa różne adresy tej samej treści.",
+    waga: "drobne",
+    obszar: "seo",
+    koszt: 100,
+    dostep: PANEL,
+    zakres: "strona",
+  },
+  tekst_szablonu: {
+    tytul: "Tekst z szablonu albo lorem ipsum",
+    skutek:
+      "Klient widzi, że strona jest niedokończona, i traci zaufanie, a wyszukiwarka uznaje taką treść za bezwartościową.",
+    waga: "wazne",
+    obszar: "seo",
+    koszt: 100,
+    dostep: PANEL,
+    zakres: "strona",
+  },
+  stary_rok: {
+    tytul: "Nieaktualny rok w stopce",
+    skutek:
+      "Stary rok przy © sugeruje, że nikt strony nie prowadzi, a klient zaczyna się zastanawiać, czy firma jeszcze działa.",
+    waga: "drobne",
+    obszar: "prawo",
+    koszt: 30,
+    dostep: PANEL,
+    zakres: "strona",
+  },
+  obrazy_404: {
+    tytul: "Obrazy, których nie ma na serwerze",
+    skutek:
+      "W miejscu zdjęcia klient widzi pustą ramkę albo ikonę błędu, co wygląda na zaniedbaną stronę.",
+    waga: "wazne",
+    obszar: "seo",
+    koszt: 100,
+    dostep: PANEL,
+    zakres: "strona",
+  },
+  linki_do_przekierowan: {
+    tytul: "Linki wewnętrzne prowadzą przez przekierowanie",
+    skutek:
+      "Każde kliknięcie to dodatkowe oczekiwanie, a wyszukiwarka traci czas na adresy pośrednie zamiast na właściwe podstrony.",
+    waga: "drobne",
+    obszar: "seo",
+    koszt: 100,
+    dostep: PANEL,
+    zakres: "strona",
+  },
+  poza_mapa: {
+    tytul: "Podstrony, których nie ma w mapie witryny",
+    skutek:
+      "Wyszukiwarka dowiaduje się o nich tylko z linków, więc trafiają do wyników później albo wcale.",
+    waga: "drobne",
+    obszar: "seo",
+    koszt: 100,
+    dostep: PANEL,
+    zakres: "strona",
+  },
+  robots_blokuje_mape: {
+    tytul: "robots.txt blokuje adresy z mapy witryny",
+    skutek:
+      "Mapa mówi wyszukiwarce, żeby te podstrony odwiedziła, a robots.txt jej tego zabrania, więc nie trafią do wyników.",
+    waga: "wazne",
+    obszar: "seo",
+    koszt: 100,
+    dostep: SERWER,
+    zakres: "strona",
+  },
+};
+Object.assign(KATALOG, KATALOG_A);
+
 /* ------------------------------------------------------------------ */
 /* Pomocnicze                                                           */
 /* ------------------------------------------------------------------ */
@@ -395,6 +570,94 @@ export function kontroleStrony(html: string, adres: string): Znalezisko[] {
     host = new URL(adres).hostname.replace(/^www\./, "");
   } catch {
     /* adres bez hosta */
+  }
+
+
+  // --- A: SEO i treść ---
+  if (!/<html\b[^>]*\blang\s*=\s*["']?[a-z]/i.test(html))
+    z.push({ klucz: "brak_lang", szczegol: "Znacznik <html> nie ma atrybutu lang." });
+  if (!tagi.some((t) => t.tag === "meta" && (t.atr.get("name") ?? "").toLowerCase() === "viewport"))
+    z.push({ klucz: "viewport", szczegol: "Brak <meta name=\"viewport\">." });
+
+  const naglowki = [...bezSkryptow(html).matchAll(/<h([1-6])\b[^>]*>([\s\S]*?)<\/h\1>/gi)].map((m) => ({
+    poziom: Number(m[1]),
+    tekst: dekoduj(m[2].replace(/<[^>]+>/g, " ")).replace(/\s+/g, " ").trim(),
+  }));
+  for (let i = 1; i < naglowki.length; i++) {
+    if (naglowki[i].poziom > naglowki[i - 1].poziom + 1) {
+      z.push({
+        klucz: "naglowki_przeskok",
+        szczegol: `H${naglowki[i - 1].poziom} → H${naglowki[i].poziom} przy „${krotko(naglowki[i].tekst, 50)}”`,
+      });
+      break;
+    }
+  }
+
+  const tekst = tekstWidoczny(html);
+  const slow = tekst.split(" ").filter((w) => /\p{L}{2,}/u.test(w)).length;
+  if (slow < 150) z.push({ klucz: "malo_tresci", szczegol: `${slow} ${odmien(slow, "słowo", "słowa", "słów")}` });
+
+  const meta = (nazwa: string) =>
+    tagi.find((t) => t.tag === "meta" && ((t.atr.get("property") ?? t.atr.get("name") ?? "").toLowerCase() === nazwa))?.atr.get("content");
+  const brakOg = ["og:title", "og:description", "og:image"].filter((n) => !meta(n));
+  if (brakOg.length) z.push({ klucz: "og_niepelne", szczegol: `Brakuje: ${brakOg.join(", ")}` });
+
+  const hreflang = tagi.filter((t) => t.tag === "link" && t.atr.has("hreflang"));
+  if (hreflang.length) {
+    const bledy: string[] = [];
+    const kody = hreflang.map((t) => t.atr.get("hreflang") ?? "");
+    const zle = kody.filter((k) => !/^(x-default|[a-z]{2,3}(-[a-z]{4})?(-([a-z]{2}|\d{3}))?)$/i.test(k));
+    if (zle.length) bledy.push(`niepoprawne kody: ${lista(zle, 3)}`);
+    if (!kody.some((k) => k.toLowerCase() === "x-default")) bledy.push("brak x-default");
+    const bez = (u: string) => u.replace(/[?#].*$/, "").replace(/\/$/, "");
+    const wlasny = hreflang.some((t) => {
+      try {
+        return bez(new URL(t.atr.get("href") ?? "", adres).toString()) === bez(adres);
+      } catch {
+        return false;
+      }
+    });
+    if (!wlasny) bledy.push("brak wskazania samej siebie");
+    if (bledy.length) z.push({ klucz: "hreflang_bledy", szczegol: bledy.join(", ") });
+  }
+
+  const zleLd: string[] = [];
+  for (const m of html.matchAll(/<script\b[^>]*type\s*=\s*["']?application\/ld\+json["']?[^>]*>([\s\S]*?)<\/script>/gi)) {
+    const tresc = m[1].replace(/^\s*(<!--|\/\*\s*<!\[CDATA\[\s*\*\/)/, "").replace(/(-->|\/\*\s*\]\]>\s*\*\/)\s*$/, "").trim();
+    if (!tresc) continue;
+    try {
+      JSON.parse(tresc);
+    } catch (e) {
+      zleLd.push(krotko(String((e as Error).message), 80));
+    }
+  }
+  if (zleLd.length)
+    z.push({ klucz: "jsonld_blad", szczegol: `${zleLd.length} ${odmien(zleLd.length, "blok nie daje", "bloki nie dają", "bloków nie daje")} się odczytać: ${zleLd[0]}` });
+
+  try {
+    const u = new URL(adres);
+    const sciezka = decodeURIComponent(u.pathname);
+    const uwagi: string[] = [];
+    if (/[A-ZĄĆĘŁŃÓŚŹŻ]/.test(sciezka)) uwagi.push("wielkie litery");
+    if (sciezka.includes("_")) uwagi.push("podkreślenie");
+    if (adres.length > 100)
+      uwagi.push(`${adres.length} ${odmien(adres.length, "znak", "znaki", "znaków")}`);
+    if (uwagi.length) z.push({ klucz: "adres_format", szczegol: uwagi.join(", ") });
+  } catch {
+    /* zły adres */
+  }
+
+  const szablon = tekst.match(/lorem ipsum|hello world!?|witaj,? świecie!?|przykładowa strona|sample page|just another wordpress site|kolejna witryna oparta na wordpressie|to jest przykładowa strona/i);
+  if (szablon) z.push({ klucz: "tekst_szablonu", szczegol: `„${szablon[0]}”` });
+
+  const lata = [...tekst.matchAll(/(?:©|\(c\)|copyright)\s*(?:by\s+)?(\d{4})(?:\s*[-–]\s*(\d{4}))?/gi)].flatMap((m) =>
+    [m[1], m[2]].filter(Boolean).map(Number),
+  ).filter((r) => r > 1990 && r < 2100);
+  if (lata.length) {
+    const teraz = new Date();
+    const rok = teraz.getFullYear() - (teraz.getMonth() === 0 ? 1 : 0);
+    const max = Math.max(...lata);
+    if (max < rok) z.push({ klucz: "stary_rok", szczegol: `W stopce © ${max}` });
   }
 
   // D: target=_blank bez noopener (do obcych domen)
@@ -785,7 +1048,115 @@ export async function kontroleGlownej(html: string, adres: string): Promise<Znal
   ];
 }
 
+
+/** Wymiary obrazu z nagłówka pliku (PNG, JPEG, WebP, GIF). */
+export function wymiaryObrazu(b: Uint8Array): [number, number] | null {
+  const dv = new DataView(b.buffer, b.byteOffset, b.byteLength);
+  const txt = (o: number, n: number) => String.fromCharCode(...b.subarray(o, o + n));
+  try {
+    if (txt(1, 3) === "PNG") return [dv.getUint32(16), dv.getUint32(20)];
+    if (txt(0, 3) === "GIF") return [dv.getUint16(6, true), dv.getUint16(8, true)];
+    if (txt(0, 4) === "RIFF" && txt(8, 4) === "WEBP") {
+      const t = txt(12, 4);
+      if (t === "VP8X") return [1 + (dv.getUint32(24, true) & 0xffffff), 1 + (dv.getUint32(27, true) & 0xffffff)];
+      if (t === "VP8L") {
+        const v = dv.getUint32(21, true);
+        return [1 + (v & 0x3fff), 1 + ((v >> 14) & 0x3fff)];
+      }
+      return [dv.getUint16(26, true) & 0x3fff, dv.getUint16(28, true) & 0x3fff];
+    }
+    if (b[0] === 0xff && b[1] === 0xd8) {
+      let i = 2;
+      while (i + 9 < b.length) {
+        const m = b[i + 1];
+        if (m >= 0xc0 && m <= 0xcf && ![0xc4, 0xc8, 0xcc].includes(m)) return [dv.getUint16(i + 7), dv.getUint16(i + 5)];
+        i += 2 + dv.getUint16(i + 2);
+      }
+    }
+  } catch {
+    /* uszkodzony nagłówek */
+  }
+  return null;
+}
+
+async function seoDomeny(k: KontekstDomeny): Promise<Znalezisko[]> {
+  const z: Znalezisko[] = [];
+  const tagi = znaczniki(k.html, ["meta", "link"]);
+  const og = tagi.find((t) => t.tag === "meta" && (t.atr.get("property") ?? "").toLowerCase() === "og:image")?.atr.get("content");
+  const ikona = tagi.some((t) => t.tag === "link" && /\bicon\b/i.test(t.atr.get("rel") ?? ""));
+  const [obraz, favicon] = await Promise.all([
+    og
+      ? (async () => {
+          try {
+            // Drugie podejście, bo pojedynczy zerwany transfer to jeszcze nie
+            // dowód, że obrazka nie ma.
+            const pobierzObraz = () =>
+              fetch(new URL(og, k.baza), {
+                headers: { "user-agent": UA },
+                signal: AbortSignal.timeout(10_000),
+              });
+            const o = await pobierzObraz().catch(() => pobierzObraz());
+            if (!o.ok) return `${krotko(og)} zwraca kod ${o.status}`;
+            const w = wymiaryObrazu(new Uint8Array(await o.arrayBuffer()));
+            if (w && (w[0] < 1200 || w[1] < 630)) return `${krotko(og)} ma ${w[0]}x${w[1]} px, a zalecane minimum to 1200x630`;
+            return null;
+          } catch {
+            return `${krotko(og)} nie odpowiada`;
+          }
+        })()
+      : null,
+    ikona ? null : zapytaj(`${k.baza}/favicon.ico`, { maxZnakow: 100 }),
+  ]);
+  if (obraz) z.push({ klucz: "og_obraz", szczegol: obraz });
+  if (!ikona && (!favicon || favicon.status !== 200 || /text\/html/i.test(favicon.naglowki.get("content-type") ?? "")))
+    z.push({ klucz: "brak_favicony", szczegol: "Nie ma <link rel=\"icon\"> ani pliku /favicon.ico." });
+  return z;
+}
+
+/** Obrazy z dokumentu, które zwróciły 404 albo 410 (z pomiaru zasobów). */
+export function obrazy404(zasoby: { adres: string; rodzaj: string; status: number | null }[]): Znalezisko[] {
+  const zle = zasoby.filter((x) => x.rodzaj === "obraz" && (x.status === 404 || x.status === 410)).map((x) => krotko(x.adres));
+  return zle.length ? [{ klucz: "obrazy_404", szczegol: `${zle.length} ${odmien(zle.length, "obraz", "obrazy", "obrazów")}: ${lista(zle, 3)}` }] : [];
+}
+
+/** Ścieżka zablokowana regułami robots.txt dla wszystkich robotów albo Googlebota. */
+export function regulyRobots(tekst: string): { allow: string[]; disallow: string[] } {
+  const wynik = { allow: [] as string[], disallow: [] as string[] };
+  let agenci: string[] = [];
+  let wRegulach = false;
+  for (const surowa of tekst.split(/\r?\n/)) {
+    const linia = surowa.replace(/#.*/, "").trim();
+    const m = linia.match(/^([a-z-]+)\s*:\s*(.*)$/i);
+    if (!m) continue;
+    const pole = m[1].toLowerCase();
+    const wartosc = m[2].trim();
+    if (pole === "user-agent") {
+      if (wRegulach) agenci = [];
+      wRegulach = false;
+      agenci.push(wartosc.toLowerCase());
+    } else if (pole === "allow" || pole === "disallow") {
+      wRegulach = true;
+      if (!agenci.some((a) => a === "*" || a === "googlebot") || !wartosc) continue;
+      wynik[pole].push(wartosc);
+    }
+  }
+  return wynik;
+}
+
+export function zablokowanyPrzezRobots(sciezka: string, r: { allow: string[]; disallow: string[] }): boolean {
+  const pasuje = (wzor: string) => {
+    const re = new RegExp("^" + wzor.replace(/[.+?^${}()|[\]\\]/g, "\\$&").replace(/\*/g, ".*").replace(/\\\$$/, "$"));
+    return re.test(sciezka);
+  };
+  const najdluzszy = (l: string[]) => Math.max(-1, ...l.filter(pasuje).map((w) => w.length));
+  const d = najdluzszy(r.disallow);
+  return d >= 0 && d > najdluzszy(r.allow);
+}
+
 export async function kontroleDomeny(k: KontekstDomeny): Promise<Znalezisko[]> {
-  const czesci = await Promise.all([bezpieczenstwo(k).catch(() => [])]);
+  const czesci = await Promise.all([
+    bezpieczenstwo(k).catch(() => []),
+    seoDomeny(k).catch(() => []),
+  ]);
   return czesci.flat();
 }

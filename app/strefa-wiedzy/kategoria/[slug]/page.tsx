@@ -35,6 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description,
       locale: "pl_PL",
       type: "website",
+      images: ["/opengraph-image"],
     },
     alternates: {
       canonical: `/strefa-wiedzy/kategoria/${slug}`,

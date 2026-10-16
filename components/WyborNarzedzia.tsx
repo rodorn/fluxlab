@@ -252,9 +252,9 @@ export default function WyborNarzedzia() {
 
   return (
     <div className="rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800/60 p-6">
-      <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+      <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
         Od czego zacząć
-      </h3>
+      </h2>
       <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
         Wybierz to, co sprawia ci kłopot, a wskażemy narzędzia, od których to
         widać. Bez wpisywania czegokolwiek.

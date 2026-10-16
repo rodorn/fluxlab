@@ -72,7 +72,11 @@ export function zZnaleziska(z: Znalezisko): Ustalenie | null {
 }
 
 /** Wspólna kontrola, którą pomijamy, gdy to samo mówi już ustalenie z listy. */
-const POMIJANE: Record<string, string[]> = {};
+const POMIJANE: Record<string, string[]> = {
+  viewport: ["brak_viewport"],
+  malo_tresci: ["pusta_tresc"],
+  og_niepelne: ["brak_og"],
+};
 
 export function ocenStrone(p: Pomiar): Ustalenie[] {
   const u: Ustalenie[] = [];

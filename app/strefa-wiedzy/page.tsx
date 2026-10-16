@@ -130,9 +130,9 @@ export default function StrefaWiedzy() {
                             }
                           />
                           <div className="p-4">
-                            <h3 className="text-base font-semibold text-gray-900 dark:text-white group-hover:text-accent transition-colors mb-1">
+                            <h2 className="text-base font-semibold text-gray-900 dark:text-white group-hover:text-accent transition-colors mb-1">
                               {article.title}
-                            </h3>
+                            </h2>
                             <p className="text-sm text-gray-500 dark:text-gray-400">
                               {article.description}
                             </p>

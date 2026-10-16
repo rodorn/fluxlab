@@ -22,6 +22,7 @@ export const metadata: Metadata = {
       "Wyciągamy strukturalne dane ze stron, PDF-ów, maili. AI rozpoznaje pola.",
     locale: "pl_PL",
     type: "website",
+    images: ["/opengraph-image"],
   },
 };
 

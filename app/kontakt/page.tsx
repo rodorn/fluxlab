@@ -16,6 +16,7 @@ export const metadata: Metadata = {
       "Napisz, z czym potrzebujesz pomocy. Bezpłatna diagnoza, odpowiedź w 24h.",
     locale: "pl_PL",
     type: "website",
+    images: ["/opengraph-image"],
   },
 };
 
