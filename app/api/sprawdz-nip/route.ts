@@ -88,6 +88,8 @@ export async function POST(request: Request) {
     ? (subject.accountNumbers as string[])
     : [];
   const registered = String(subject.registrationLegalDate ?? "");
+  const removed = String(subject.removalDate ?? "");
+  const removalBasis = String(subject.removalBasis ?? "");
 
   let ageDays: number | null = null;
   if (registered) {
@@ -101,6 +103,11 @@ export async function POST(request: Request) {
   if (statusVat !== "Czynny") {
     warnings.push(
       `Podmiot nie jest czynnym podatnikiem VAT (status: ${statusVat || "brak"}).`,
+    );
+  }
+  if (removed) {
+    warnings.push(
+      `Wykreślony z rejestru VAT ${removed}${removalBasis ? `, podstawa: ${removalBasis}` : ""}. Faktura z VAT wystawiona po tej dacie wymaga wyjaśnienia.`,
     );
   }
   if (accounts.length === 0) {
@@ -137,6 +144,7 @@ export async function POST(request: Request) {
     krs: String(subject.krs ?? ""),
     address: String(subject.workingAddress ?? subject.residenceAddress ?? ""),
     registered,
+    removed,
     accountsCount: accounts.length,
     warnings,
   });

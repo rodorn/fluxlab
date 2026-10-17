@@ -16,6 +16,7 @@ interface Wynik {
   krs?: string;
   address?: string;
   registered?: string;
+  removed?: string;
   accountsCount?: number;
   warnings?: string[];
 }
@@ -217,6 +218,16 @@ export default function NipCheck() {
                   {wynik.registered || "brak danych"}
                 </dd>
               </div>
+              {wynik.removed && (
+                <div className="flex gap-2">
+                  <dt className="text-gray-500 dark:text-gray-400">
+                    Wykreślony:
+                  </dt>
+                  <dd className="font-medium text-gray-900 dark:text-white">
+                    {wynik.removed}
+                  </dd>
+                </div>
+              )}
               <div className="flex gap-2">
                 <dt className="text-gray-500 dark:text-gray-400">
                   Rachunki w wykazie:
