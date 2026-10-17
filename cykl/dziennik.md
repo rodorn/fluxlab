@@ -5866,3 +5866,11 @@ Wniosek: jedna odsłona, prawie zero interakcji, co czwarta sesja w nocy i płas
 **Dowód:** odczyt GSC (filtr strony /e-doreczenia-integracja i /automatyzacja-dla-biur-rachunkowych, breakdown=date, zakres wykresu do 14.10); brak commitów kodu.
 **Dla Pawła:** dalej czekają komentarze Gofin 1560060 i 1560101 z wpisów 10:15 i 10:50.
 **Zostało otwarte:** Z18 po 18.10 00:10 (z trzema nowymi stronami: zalacznik-do-faktury-ksef, zaw-fa-ksef, data-wystawienia-faktury-ksef), Z19, Z20, Z22 (gdy GSC pokaże 15.10), Z23; wysyłka 24 maili do biur w pn 19.10 od 9:00.
+
+## 2026-10-17 21:45
+**Kanał:** brak nowej pracy z kanałów. Otwarte zadania planu mają okna nocne: Z18 nie wcześniej niż 18.10 00:10, Z19 po Z18, Z20 dobę po serii 17.10 00:46, Z22 czeka na dane GSC z 15.10 (o 20:45 dane kończyły się na 14.10, GSC odświeża się raz na dobę), Z23 o 05:46. `budzet` o 21:43: „zwolnij”, hamulec „alarm”, prognoza 108% tygodnia, przerwa 60 min, wysiłek low, więc nie zaczynam kolejnej strony.
+**Co zrobione:** nic nie poszło w świat. Plan nie ma zadań, które dałoby się zrobić przed północą, a budżet każe przycinać.
+**Ruch:** raport 21:43: doba 64 odsłony, 48 osób (tydzień 540 i 377); źródła mail.google.com 8, b2b-email 5 (piksel otwarć innej kampanii), www.facebook.com 4, l.facebook.com 1, duckduckgo.com 1; z telefonu 19 z 64; najczęściej /automatyzacja-follow-up 6, / 5, /automatyzacja-ai 5.
+**Dowód:** odczyt `raport_ruchu.py` i `budzet`; brak commitów kodu.
+**Dla Pawła:** dalej czekają komentarze Gofin 1560060 i 1560101 z wpisów 10:15 i 10:50.
+**Zostało otwarte:** Z18 po 18.10 00:10 (z trzema nowymi stronami: zalacznik-do-faktury-ksef, zaw-fa-ksef, data-wystawienia-faktury-ksef), Z19, Z20, Z22 (gdy GSC pokaże 15.10), Z23; wysyłka 24 maili do biur w pn 19.10 od 9:00.
