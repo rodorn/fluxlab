@@ -138,7 +138,7 @@ export default function AutomatyzacjaLeadowCRM() {
         <section className="relative overflow-hidden pt-24 pb-12">
           <div className="blob blob-accent w-[40rem] h-[40rem] -top-40 -right-40 animate-drift-slow" />
           <div className="container-wide relative">
-            <div className="max-w-3xl">
+            <div className="max-w-3xl mx-auto">
               <span className="section-label">Usługa</span>
               <h1 className="h1-strony mt-4">
                 Automatyzacja CRM z AI bez pracy ręcznej
@@ -199,7 +199,7 @@ export default function AutomatyzacjaLeadowCRM() {
                 label: "Co dostajesz",
                 content: (
                   <section className="py-10 lg:py-12">
-                    <div className="max-w-4xl">
+                    <div className="max-w-4xl mx-auto">
                       <h2 className="h2-sekcji mt-4 mb-12">
                         Proces, który pilnuje się sam.
                       </h2>
@@ -256,7 +256,7 @@ export default function AutomatyzacjaLeadowCRM() {
                 label: "Jak to działa",
                 content: (
                   <section className="py-10 lg:py-12">
-                    <div className="max-w-4xl">
+                    <div className="max-w-4xl mx-auto">
                       <h2 className="h2-sekcji mt-4 mb-12">
                         Trzy kroki do wdrożenia.
                       </h2>
@@ -311,7 +311,7 @@ export default function AutomatyzacjaLeadowCRM() {
                 label: "FAQ",
                 content: (
                   <section className="py-10 lg:py-12">
-                    <div className="max-w-3xl">
+                    <div className="max-w-3xl mx-auto">
                       <h2 className="h2-sekcji mt-4 mb-10">
                         Najczęstsze pytania.
                       </h2>

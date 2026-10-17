@@ -61,7 +61,7 @@ export default function ZakresWyceny({ wycena }: { wycena: Wycena }) {
     wybrane.reduce((s, d) => s + d.max, 0);
 
   return (
-    <div className="max-w-3xl">
+    <div className="max-w-3xl mx-auto">
       <div className="flex flex-wrap items-center gap-2 mb-6">
         <span className="text-xs font-semibold uppercase tracking-widest text-gray-500 dark:text-gray-400 w-full sm:w-auto sm:mr-1">
           {wycena.pytanie}

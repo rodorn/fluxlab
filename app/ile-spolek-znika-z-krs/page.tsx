@@ -134,7 +134,7 @@ export default async function Page() {
           </p>
         </div>
 
-        <div className="mt-16 max-w-3xl">
+        <div className="mt-16 max-w-3xl mx-auto">
           <h2 className="h2-sekcji">
             Najczęstsze pytania
           </h2>

@@ -80,7 +80,7 @@ export default function AutomatyzacjaSalesforce() {
                 label: "Co automatyzujemy",
                 content: (
                   <section className="py-10 lg:py-12">
-                    <h2 className="h2-sekcji mb-12 max-w-2xl">
+                    <h2 className="h2-sekcji mb-12 max-w-2xl mx-auto text-center">
                       Co automatyzujemy
                     </h2>
                     <div className="grid sm:grid-cols-3 gap-6 max-w-5xl">

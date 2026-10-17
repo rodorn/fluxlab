@@ -172,7 +172,7 @@ export default function PorownanieProcesu() {
   }
 
   return (
-    <div className="max-w-4xl">
+    <div className="max-w-4xl mx-auto">
       <div className="flex flex-wrap items-center gap-2 mb-4">
         <span className="text-xs font-semibold uppercase tracking-widest text-gray-500 dark:text-gray-400 w-full sm:w-auto sm:mr-1">
           Który proces

@@ -88,11 +88,11 @@ export default function CzyDaSieSpiac({ biezacaStrona }: Props) {
     >
       <h2
         id="spiecie-heading"
-        className="text-2xl font-bold text-gray-900 dark:text-white"
+        className="text-center text-2xl font-bold text-gray-900 dark:text-white"
       >
         Czy da się to spiąć
       </h2>
-      <p className="mt-3 max-w-2xl text-gray-600 dark:text-gray-300">
+      <p className="mx-auto mt-3 max-w-2xl text-center text-gray-600 dark:text-gray-300">
         Kliknij, gdzie dziś leżą Twoje dane. Napiszemy, jak się je stamtąd
         wyciąga i co przy takim źródle psuje spięcie najczęściej. Drugie
         naciśnięcie, o tym dokąd mają trafiać, dokłada ocenę całości. Bez

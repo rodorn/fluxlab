@@ -127,7 +127,7 @@ export default function AutomatyzacjaCrmLeasing() {
 
         <section className="pt-16 pb-6 bg-gradient-to-b from-accent/10 to-transparent border-b border-gray-100 dark:border-gray-800">
           <div className="container-wide">
-            <div className="max-w-3xl">
+            <div className="max-w-3xl mx-auto">
               <p className="section-label mb-4">Branża</p>
               <h1 className="h1-strony mb-6">
                 CRM dla firm leasingowych, finansowych i brokerskich

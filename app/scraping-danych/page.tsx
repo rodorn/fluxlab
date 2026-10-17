@@ -130,11 +130,11 @@ export default function ScrapingDanychPage() {
         <section className="container-wide pb-16" aria-labelledby="cennik-heading">
           <h2
             id="cennik-heading"
-            className="h2-sekcji"
+            className="h2-sekcji text-center"
           >
             Ile to kosztuje
           </h2>
-          <p className="mt-3 max-w-2xl text-gray-600 dark:text-gray-300">
+          <p className="mx-auto mt-3 max-w-2xl text-center text-gray-600 dark:text-gray-300">
             Płacisz za dane, nie za godziny. Zbieranie robi automat.
           </p>
           <div className="mt-6 grid gap-5 md:grid-cols-3">
@@ -194,7 +194,7 @@ export default function ScrapingDanychPage() {
                   >
                     <h2
                       id="zrodla-heading"
-                      className="h2-sekcji mb-12 max-w-2xl"
+                      className="h2-sekcji mb-12 max-w-2xl mx-auto text-center"
                     >
                       4 typy źródeł, jeden pipeline
                     </h2>

@@ -178,14 +178,14 @@ export default function DrogaLeada() {
       aria-labelledby="droga-leada"
       className="rounded-2xl border border-gray-200 bg-white p-6 lg:p-8 dark:border-gray-700 dark:bg-gray-800/60"
     >
-      <span className="section-label">Za darmo, bez wpisywania</span>
+      <span className="section-label block text-center">Za darmo, bez wpisywania</span>
       <h2
         id="droga-leada"
-        className="display-md mt-3 text-gray-900 dark:text-white"
+        className="display-md mt-3 text-center text-gray-900 dark:text-white"
       >
         Na którym etapie gubią się Twoje zapytania?
       </h2>
-      <p className="mt-3 max-w-2xl text-gray-600 dark:text-gray-400">
+      <p className="mx-auto mt-3 max-w-2xl text-center text-gray-600 dark:text-gray-400">
         Kliknij etap, a pokażemy, co się tam psuje, jak to sprawdzić u siebie
         jeszcze dzisiaj i co z tym robimy. Drugie kliknięcie, o skali, decyduje,
         czy w ogóle warto to automatyzować.

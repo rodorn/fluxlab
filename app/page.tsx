@@ -1,7 +1,9 @@
+import Image from "next/image";
 import Link from "next/link";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import LandingForm from "@/components/LandingForm";
+import RevealOnScroll from "@/components/RevealOnScroll";
 import { nazwaFilaru } from "@/lib/filary";
 
 // Oferta jak w szkoleniu produktowym (16.10.2026): projekty z ceną z góry,
@@ -52,38 +54,38 @@ const KROKI = [
   ["Strona działa po 2–3 tygodniach", "Płacisz za efekt, nie za godziny."],
 ];
 
+const WYNIKI = [
+  ["12 dni", "od startu prac do publikacji, przy terminie 5 tygodni"],
+  ["97/100", "w audycie technicznym, stara strona miała 45"],
+  ["6,4×", "mniej danych do pobrania niż na starej stronie"],
+];
+
 export default function Home() {
   return (
     <>
       <Header />
       <main className="relative flex flex-col bg-white text-gray-900 dark:bg-gray-950 dark:text-white pt-16">
-        <section className="mx-auto w-full max-w-4xl px-6 pt-16 pb-12 text-center lg:pt-24">
-          <h1 className="text-balance text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+        <section className="mx-auto flex min-h-[72vh] w-full max-w-6xl flex-col items-center justify-center px-6 pt-16 pb-16 text-center lg:pt-20">
+          <h1 className="animate-fade-up text-balance text-5xl font-bold leading-[0.95] tracking-tighter sm:text-7xl lg:text-8xl">
             Strony internetowe i CRM dla firm
           </h1>
-          <p className="mx-auto mt-5 max-w-2xl text-base text-gray-600 sm:text-lg dark:text-white/65">
-            Budujemy stronę z formularzem podpiętym do CRM, a potem system, w
-            którym żadne zapytanie nie ginie. Cena z góry, pierwsza wersja w 2–3
-            tygodnie.
+          <p className="animate-fade-up-1 mx-auto mt-7 max-w-xl text-lg text-gray-600 sm:text-xl dark:text-white/65">
+            Formularz podpięty do CRM, cena z góry, gotowe w 2–3 tygodnie.
           </p>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
-            <a href="#kontakt" className="btn-primary px-7 py-3.5 text-base">
+          <div className="animate-fade-up-1 mt-10 flex w-full flex-col items-center justify-center gap-3 sm:w-auto sm:flex-row">
+            <a
+              href="#kontakt"
+              className="btn-primary w-full rounded-full px-8 py-4 text-base sm:w-60"
+            >
               Zamów wycenę
             </a>
             <Link
               href="/audyt-strony"
-              className="text-sm font-semibold text-accent hover:underline"
+              className="btn-secondary w-full rounded-full px-8 py-4 text-base sm:w-60"
             >
-              Sprawdź swoją stronę za darmo →
+              Sprawdź swoją stronę
             </Link>
           </div>
-          <Link
-            href="/realizacje"
-            className="mt-8 inline-flex items-center gap-2 rounded-full border border-gray-200 dark:border-white/15 px-4 py-1.5 text-sm text-gray-700 dark:text-white/75 hover:border-accent transition-colors"
-          >
-            <span className="font-semibold text-accent">12 dni</span>
-            tyle zajęła ostatnia strona dla klienta, od startu prac do publikacji →
-          </Link>
         </section>
 
         <section
@@ -145,29 +147,55 @@ export default function Home() {
           </p>
         </section>
 
-        <section className="border-t border-gray-200 dark:border-white/10 py-14">
-          <div className="container-wide grid gap-8 md:grid-cols-2 md:items-center">
-            <div>
+        <section className="border-t border-gray-200 dark:border-white/10 py-20 lg:py-28">
+          <div className="container-wide">
+            <RevealOnScroll className="text-center">
               <p className="section-label mb-3">Ostatnia realizacja</p>
-              <h2 className="text-2xl font-bold lg:text-3xl">
-                Nowa strona pośrednika kredytowego w 12 dni
+              <h2 className="text-balance text-4xl font-bold tracking-tighter lg:text-6xl">
+                Strona pośrednika kredytowego w 12 dni
               </h2>
-              <p className="mt-3 text-gray-600 dark:text-white/70">
-                Stara strona miała 45 punktów w audycie technicznym i ładowała
-                się na telefonie 11 sekund. Nowa ma 97 punktów i waży 6,4 raza
-                mniej. Oddaliśmy ją 12 dni od startu prac, przy terminie 5 tygodni.
-              </p>
+            </RevealOnScroll>
+            <RevealOnScroll delay={1}>
               <Link
                 href="/realizacje"
-                className="mt-4 inline-block text-sm font-semibold text-accent hover:underline"
+                className="group mx-auto mt-12 block max-w-5xl overflow-hidden rounded-2xl border border-gray-200 dark:border-white/10 shadow-2xl shadow-black/10 transition-colors hover:border-accent"
               >
-                Zobacz realizacje →
+                <div className="flex items-center gap-1.5 border-b border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-gray-900 px-4 py-2.5">
+                  <span className="h-2.5 w-2.5 rounded-full bg-gray-300 dark:bg-white/20" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-gray-300 dark:bg-white/20" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-gray-300 dark:bg-white/20" />
+                  <span className="ml-3 text-xs text-gray-500 dark:text-white/50">
+                    finreal.pl
+                  </span>
+                </div>
+                <Image
+                  src="/photos/realizacja-finreal-ostra.webp"
+                  alt="Strona główna finreal.pl zrobiona przez FluxLab"
+                  width={2048}
+                  height={1152}
+                  sizes="(min-width: 1024px) 1024px, 100vw"
+                  className="h-auto w-full transition-transform duration-700 group-hover:scale-[1.015]"
+                />
               </Link>
-            </div>
-            <ol className="grid gap-4">
+            </RevealOnScroll>
+            <dl className="mx-auto mt-16 grid max-w-4xl grid-cols-1 gap-10 text-center sm:grid-cols-3">
+              {WYNIKI.map(([liczba, opis], i) => (
+                <RevealOnScroll key={liczba} delay={(i + 1) as 1 | 2 | 3}>
+                  <dt className="text-5xl font-bold tracking-tighter lg:text-6xl">
+                    {liczba}
+                  </dt>
+                  <dd className="mx-auto mt-2 max-w-[15rem] text-balance text-sm text-gray-600 dark:text-white/65">
+                    {opis}
+                  </dd>
+                </RevealOnScroll>
+              ))}
+            </dl>
+            <ol className="mx-auto mt-20 grid max-w-5xl gap-4 md:grid-cols-3">
               {KROKI.map(([tytul, opis], i) => (
-                <li
+                <RevealOnScroll
+                  as="li"
                   key={tytul}
+                  delay={(i + 1) as 1 | 2 | 3}
                   className="flex gap-4 rounded-2xl border border-gray-200 dark:border-white/10 p-5"
                 >
                   <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent-solid text-sm font-bold text-white">
@@ -179,7 +207,7 @@ export default function Home() {
                       {opis}
                     </p>
                   </div>
-                </li>
+                </RevealOnScroll>
               ))}
             </ol>
           </div>

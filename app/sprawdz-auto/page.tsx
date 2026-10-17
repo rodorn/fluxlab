@@ -121,7 +121,7 @@ export default function SprawdzAutoPage() {
         <div className="container-wide pb-8 space-y-16 lg:space-y-20">
           {/* Jak działa */}
           <section>
-            <div className="max-w-3xl">
+            <div className="max-w-3xl mx-auto">
               <h2 className="h2-sekcji mb-10 text-gray-900 dark:text-white">
                 Jak to działa
               </h2>
@@ -148,12 +148,12 @@ export default function SprawdzAutoPage() {
 
           {/* Przykładowy efekt */}
           <section>
-            <div className="max-w-3xl">
+            <div className="max-w-3xl mx-auto">
               <h2 className="h2-sekcji mb-8 text-gray-900 dark:text-white">
                 Przykładowy raport (dane demo)
               </h2>
             </div>
-            <div className="max-w-3xl rounded-2xl border border-gray-100 bg-white p-6 dark:border-gray-700 dark:bg-gray-800/60 lg:p-8">
+            <div className="max-w-3xl mx-auto rounded-2xl border border-gray-100 bg-white p-6 dark:border-gray-700 dark:bg-gray-800/60 lg:p-8">
               <div className="flex flex-wrap items-center justify-between gap-3 border-b border-gray-100 pb-4 dark:border-gray-700">
                 <div>
                   <p className="text-sm text-gray-500 dark:text-gray-400">
@@ -206,12 +206,12 @@ export default function SprawdzAutoPage() {
 
           {/* Cennik */}
           <section id="cennik" className="scroll-mt-20">
-            <div className="max-w-3xl">
+            <div className="max-w-3xl mx-auto">
               <h2 className="h2-sekcji mb-10 text-gray-900 dark:text-white">
                 Cennik
               </h2>
             </div>
-            <div className="grid gap-5 md:grid-cols-2 lg:max-w-4xl">
+            <div className="grid gap-5 md:grid-cols-2 lg:max-w-4xl mx-auto">
               {pricing.map((tier) => (
                 <div
                   key={tier.name}
@@ -273,7 +273,7 @@ export default function SprawdzAutoPage() {
 
           {/* FAQ */}
           <section>
-            <div className="max-w-3xl">
+            <div className="max-w-3xl mx-auto">
               <h2 className="h2-sekcji mb-10 text-gray-900 dark:text-white">
                 Pytania i odpowiedzi
               </h2>

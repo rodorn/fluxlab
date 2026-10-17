@@ -116,7 +116,7 @@ export default function N8nDlaCrm() {
 
         <section className="pt-24 pb-12 bg-gradient-to-b from-accent/10 to-transparent border-b border-gray-100 dark:border-gray-800">
           <div className="container-wide">
-            <div className="max-w-3xl">
+            <div className="max-w-3xl mx-auto">
               <p className="section-label mb-4">Usługa</p>
               <h1 className="h1-strony mb-6">
                 n8n jako warstwa automatyzacji dla CRM

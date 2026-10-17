@@ -86,11 +86,11 @@ export default function CoZeStrona({ biezacaStrona }: Props) {
     >
       <h2
         id="stan-strony-heading"
-        className="text-2xl font-bold text-gray-900 dark:text-white"
+        className="text-center text-2xl font-bold text-gray-900 dark:text-white"
       >
         Poprawiać czy budować od nowa
       </h2>
-      <p className="mt-3 max-w-2xl text-gray-600 dark:text-gray-300">
+      <p className="mx-auto mt-3 max-w-2xl text-center text-gray-600 dark:text-gray-300">
         Kliknij, co dziś stoi pod Twoim adresem. Napiszemy, co w takim miejscu
         da się zmienić bez przebudowy i gdzie kończy się poprawianie. Drugie
         naciśnięcie, o tym co ma się zmienić, dokłada ocenę całości. Bez

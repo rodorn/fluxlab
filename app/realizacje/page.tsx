@@ -217,7 +217,7 @@ export default function RealizacjePage() {
           <div className="mt-14 space-y-16">
             {GROUPS.map((group) => (
               <div key={group.title}>
-                <div className="max-w-2xl mb-6">
+                <div className="max-w-2xl mx-auto mb-6 text-center">
                   <h3 className="text-xl font-bold text-gray-900 dark:text-white">
                     {group.title}
                   </h3>

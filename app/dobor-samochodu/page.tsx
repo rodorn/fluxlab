@@ -93,7 +93,7 @@ export default function DoborSamochoduPage() {
                 label: "Jak działa",
                 content: (
                   <div className="py-10 lg:py-12">
-                    <div className="max-w-3xl">
+                    <div className="max-w-3xl mx-auto">
                       <h2 className="h2-sekcji mb-6">
                         Jak działa dobór samochodu
                       </h2>

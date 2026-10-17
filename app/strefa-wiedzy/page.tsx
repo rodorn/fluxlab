@@ -109,7 +109,7 @@ export default function StrefaWiedzy() {
                     {category.wstep?.map((akapit) => (
                       <p
                         key={akapit}
-                        className="text-gray-600 dark:text-gray-400 leading-relaxed mb-4 max-w-3xl"
+                        className="text-gray-600 dark:text-gray-400 leading-relaxed mb-4 max-w-3xl mx-auto"
                       >
                         {akapit}
                       </p>

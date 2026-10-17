@@ -28,7 +28,7 @@ export default function ProductGrid({
   return (
     <div>
       {showHeading && (
-        <div className="max-w-3xl">
+        <div className="max-w-3xl mx-auto text-center">
           <Heading className="text-2xl md:text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
             {CATEGORY_LABEL[category]}
           </Heading>

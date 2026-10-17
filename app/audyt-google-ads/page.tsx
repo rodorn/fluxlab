@@ -96,7 +96,7 @@ export default function AudytGoogleAdsPage() {
         <div className="container-wide pb-8 space-y-16 lg:space-y-20">
           {/* Jak działa */}
           <section>
-            <div className="max-w-3xl">
+            <div className="max-w-3xl mx-auto">
               <h2 className="h2-sekcji mb-10 text-gray-900 dark:text-white">
                 Jak to działa
               </h2>
@@ -123,7 +123,7 @@ export default function AudytGoogleAdsPage() {
 
           {/* Przykładowy efekt */}
           <section>
-            <div className="max-w-3xl">
+            <div className="max-w-3xl mx-auto">
               <h2 className="h2-sekcji mb-4 text-gray-900 dark:text-white">
                 Przykładowy efekt
               </h2>
@@ -131,7 +131,7 @@ export default function AudytGoogleAdsPage() {
                 Podsumowanie audytu na danych demo, nie na koncie klienta.
               </p>
             </div>
-            <div className="max-w-3xl rounded-2xl border border-gray-100 bg-white p-6 dark:border-gray-700 dark:bg-gray-800/60 lg:p-8">
+            <div className="max-w-3xl mx-auto rounded-2xl border border-gray-100 bg-white p-6 dark:border-gray-700 dark:bg-gray-800/60 lg:p-8">
               <div className="flex flex-wrap items-center justify-between gap-3 border-b border-gray-100 pb-4 dark:border-gray-700">
                 <div>
                   <p className="text-sm text-gray-500 dark:text-gray-400">
@@ -192,12 +192,12 @@ export default function AudytGoogleAdsPage() {
 
           {/* Cennik i gwarancja */}
           <section id="cennik" className="scroll-mt-20">
-            <div className="max-w-3xl">
+            <div className="max-w-3xl mx-auto">
               <h2 className="h2-sekcji mb-10 text-gray-900 dark:text-white">
                 Cennik i gwarancja
               </h2>
             </div>
-            <div className="lg:max-w-2xl">
+            <div className="lg:max-w-2xl mx-auto">
               <div className="flex flex-col rounded-2xl border border-accent bg-accent/5 p-6 dark:bg-accent/10 lg:p-8">
                 <span className="mb-3 inline-block w-fit rounded-full bg-accent-solid px-3 py-1 text-xs font-semibold text-white">
                   Z gwarancją zwrotu
@@ -224,7 +224,7 @@ export default function AudytGoogleAdsPage() {
 
           {/* FAQ */}
           <section>
-            <div className="max-w-3xl">
+            <div className="max-w-3xl mx-auto">
               <h2 className="h2-sekcji mb-10 text-gray-900 dark:text-white">
                 Pytania i odpowiedzi
               </h2>

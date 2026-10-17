@@ -257,7 +257,7 @@ export default function KatalogProduktow() {
         {CATEGORY_ORDER.filter((f) => pasuje.some((p) => p.category === f)).map(
           (f) => (
             <div key={f}>
-              <div className="max-w-3xl">
+              <div className="max-w-3xl mx-auto text-center">
                 <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
                   {CATEGORY_LABEL[f]}
                 </h2>

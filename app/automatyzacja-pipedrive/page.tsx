@@ -85,10 +85,10 @@ export default function AutomatyzacjaPipedrive() {
                 label: "Co automatyzujemy",
                 content: (
                   <section className="py-10 lg:py-12">
-                    <h2 className="h2-sekcji mb-12 max-w-2xl">
+                    <h2 className="h2-sekcji mb-12 max-w-2xl mx-auto text-center">
                       Co automatyzujemy
                     </h2>
-                    <div className="grid sm:grid-cols-2 gap-6 max-w-4xl">
+                    <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
                       {offer.map((item) => (
                         <div
                           key={item.title}

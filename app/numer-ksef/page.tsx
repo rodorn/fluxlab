@@ -76,7 +76,7 @@ export default function NumerKsefPage() {
           ]}
         />
         <section className="container-wide pb-14 md:pb-20 pt-6">
-          <div className="max-w-3xl">
+          <div className="max-w-3xl mx-auto">
             <p className="section-label mb-3">Narzędzie</p>
             <h1 className="h1-strony">
               Sprawdzenie numeru KSeF przed przelewem
@@ -92,7 +92,7 @@ export default function NumerKsefPage() {
             <NumerKsefCheck />
           </div>
 
-          <div className="mt-16 max-w-3xl">
+          <div className="mt-16 max-w-3xl mx-auto">
             <h2 className="h2-sekcji">
               Z czego składa się numer KSeF
             </h2>
@@ -110,7 +110,7 @@ export default function NumerKsefPage() {
             </dl>
           </div>
 
-          <div className="mt-14 max-w-3xl rounded-2xl border border-gray-200/80 dark:border-gray-800/80 bg-gray-50/60 dark:bg-gray-900/40 p-8">
+          <div className="mt-14 max-w-3xl mx-auto rounded-2xl border border-gray-200/80 dark:border-gray-800/80 bg-gray-50/60 dark:bg-gray-900/40 p-8">
             <h2 className="h2-sekcji">
               Co jeszcze trzeba domknąć przed 1 stycznia 2027
             </h2>
@@ -128,7 +128,7 @@ export default function NumerKsefPage() {
             </p>
           </div>
 
-          <div className="mt-14 max-w-3xl">
+          <div className="mt-14 max-w-3xl mx-auto">
             <h2 className="h2-sekcji">
               Częste pytania
             </h2>

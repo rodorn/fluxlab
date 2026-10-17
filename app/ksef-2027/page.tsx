@@ -60,7 +60,7 @@ export default function Ksef2027Page() {
           ]}
         />
         <section className="container-wide pb-14 md:pb-20 pt-6">
-          <div className="max-w-3xl">
+          <div className="max-w-3xl mx-auto">
             <p className="section-label mb-3">Narzędzie</p>
             <h1 className="h1-strony">
               KSeF od 1 stycznia 2027: co musisz mieć domknięte
@@ -76,7 +76,7 @@ export default function Ksef2027Page() {
             </p>
           </div>
 
-          <div className="mt-10 max-w-4xl">
+          <div className="mt-10 max-w-4xl mx-auto">
             <NazwaNarzedzia href="/ksef-2027" />
             <ListaKsef2027
               formularz="/ksef-integracja#zamow"
@@ -84,15 +84,15 @@ export default function Ksef2027Page() {
             />
           </div>
 
-          <div className="mt-14 max-w-4xl">
+          <div className="mt-14 max-w-4xl mx-auto">
             <WiadomoscKsefDlaKlientow />
           </div>
 
-          <div className="mt-14 max-w-4xl">
+          <div className="mt-14 max-w-4xl mx-auto">
             <RamkaKsefDoWstawienia />
           </div>
 
-          <div className="mt-14 max-w-3xl">
+          <div className="mt-14 max-w-3xl mx-auto">
             <h2 className="h2-sekcji">Częste pytania o KSeF w 2027</h2>
             <dl className="mt-6 space-y-5">
               {faq.map((f) => (
@@ -108,7 +108,7 @@ export default function Ksef2027Page() {
             </dl>
           </div>
 
-          <div className="mt-14 max-w-3xl rounded-2xl border border-gray-200/80 dark:border-gray-800/80 bg-gray-50/60 dark:bg-gray-900/40 p-8">
+          <div className="mt-14 max-w-3xl mx-auto rounded-2xl border border-gray-200/80 dark:border-gray-800/80 bg-gray-50/60 dark:bg-gray-900/40 p-8">
             <h2 className="h2-sekcji">
               Kiedy faktury powstają poza programem księgowym
             </h2>

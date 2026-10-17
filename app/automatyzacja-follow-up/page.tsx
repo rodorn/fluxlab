@@ -151,7 +151,7 @@ export default function AutomatyzacjaFollowUp() {
 
         <section className="pt-16 pb-10 bg-gradient-to-b from-accent/10 to-transparent border-b border-gray-100 dark:border-gray-800">
           <div className="container-wide">
-            <div className="max-w-3xl">
+            <div className="max-w-3xl mx-auto">
               <span className="section-label">Usługa</span>
               <h1 className="h1-strony mt-4 mb-6">
                 Automatyczne follow-upy w CRM bez utraty kontroli nad sprzedażą

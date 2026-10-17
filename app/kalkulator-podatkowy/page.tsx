@@ -202,7 +202,7 @@ export default function KalkulatorPodatkowyPage() {
                 label: "FAQ",
                 content: (
                   <div className="py-6 lg:py-8">
-                    <div className="max-w-3xl">
+                    <div className="max-w-3xl mx-auto">
                       <h2 className="h2-sekcji mb-6">Najczęstsze pytania</h2>
                       <div className="space-y-3">
                         {faqs.map((faq) => (
