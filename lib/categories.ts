@@ -321,6 +321,12 @@ export const categories: Category[] = [
         bezOkladki: true,
       },
       {
+        href: "/strefa-wiedzy/faktura-dla-kontrahenta-zagranicznego-ksef",
+        title: "Faktura dla kontrahenta zagranicznego w KSeF",
+        description: "Wystawiasz w KSeF, klientowi wysyłasz PDF z kodem QR.",
+        bezOkladki: true,
+      },
+      {
         href: "/strefa-wiedzy/numeracja-faktur-ksef-2027",
         title: "Numeracja faktur w KSeF w 2027",
         description: "Numer bez roku da w 2027 błąd 440, duplikat faktury.",
