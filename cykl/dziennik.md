@@ -5832,3 +5832,11 @@ Wniosek: jedna odsłona, prawie zero interakcji, co czwarta sesja w nocy i płas
 **Dowód:** odczyt GSC i `raport_ruchu.py` jak wyżej; brak commitów kodu.
 **Dla Pawła:** dalej czekają komentarze Gofin 1560060 i 1560101 z wpisów 10:15 i 10:50.
 **Zostało otwarte:** Z18 po 18.10 00:10, Z19, Z20, Z22 (gdy GSC pokaże 15.10), Z23; wysyłka 24 maili do biur w pn 19.10 od 9:00. Budżet sprawdzić ponownie ok. 19:45.
+
+## 2026-10-17 17:45
+**Kanał:** KSeF jako magnes i asystenci AI. Wszystkie otwarte zadania planu są przypięte do nocy (Z18 po 18.10 00:10, Z19, Z20, Z23); Z22 sprawdzone o 17:47: GSC „4 godziny temu”, dane dzienne /e-doreczenia-integracja dalej kończą się na 14.10, więc zostaje. `budzet` o 17:43 daje „utrzymaj” (nowy cykl: tak, 2 kamienie), więc wziąłem pracę z kanałów.
+**Co zrobione:** nowa krótka strona https://fluxlab.pl/strefa-wiedzy/zalacznik-do-faktury-ksef na pytanie, na które nie mieliśmy odpowiedzi (załącznik tylko w XML od 1.02.2026, zgłoszenie w e-US, odbiór bez zgłoszenia, 3 MB, tylko programy z API KSeF 2.0, PDF i protokół odbioru poza KSeF); fakty z FAQ MF, sekcja „Załączniki do faktur” (https://ksef.podatki.gov.pl/pytania-i-odpowiedzi-ksef-20/, odczyt z VPS 17.10). Temat spoza kalendarza poniedziałków.
+**Ruch:** raport 17:43: doba 90 odsłon, 54 osoby; źródła b2b-email 21 (piksel otwarć innej kampanii), www.facebook.com 6, mail.google.com 6, m.facebook.com 3, mail 2; narzędzia 2 uruchomienia (numer KSeF 2). Pomiar po odsiewie: 25 sesji dziś; Resend 24 h 0; Zoho 1 (newsletter Dobra Treść, nie outreach).
+**Dowód:** commit 616ed9a (strona, lib/categories.ts, lib/sekcje.ts, public/llms.txt, link „PDF mailem” z /strefa-wiedzy/faktura-dla-kontrahenta-zagranicznego-ksef) i db52063 (daty w mapie). Z VPS: 200, title „Załącznik do faktury w KSeF: co wolno i jak | Fluxlab”, canonical na siebie, llms.txt 1 wystąpienie, sitemap lastmod 2026-10-17T15:49Z, link na stronie zagranicznej 1. Build OK, SPOJNOSC OK, JAKOSC OK, IndexNow 2 z 3 punktów.
+**Dla Pawła:** dalej czekają komentarze Gofin 1560060 i 1560101 z wpisów 10:15 i 10:50.
+**Zostało otwarte:** Z18 po 18.10 00:10 (dołóż do listy https://fluxlab.pl/strefa-wiedzy/zalacznik-do-faktury-ksef zaraz po stronie z Z12), Z19, Z20, Z22 (gdy GSC pokaże 15.10), Z23; wysyłka 24 maili do biur w pn 19.10 od 9:00.
