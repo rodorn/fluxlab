@@ -71,7 +71,14 @@ export default function VatWJdgArticle() {
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Przy rocznej sprzedaży netto do 200 000 zł możesz
-                        korzystać ze zwolnienia z VAT. Nie naliczasz VAT, nie
+                        korzystać{" "}
+                        <Link
+                          href="/strefa-wiedzy/ksef-jdg-zwolniona-z-vat"
+                          className="text-accent hover:underline"
+                        >
+                          ze zwolnienia z VAT
+                        </Link>
+                        . Nie naliczasz VAT, nie
                         składasz JPK_V7, ale też nie odliczasz VAT od zakupów.
                       </p>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">

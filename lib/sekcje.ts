@@ -188,6 +188,7 @@ export const SEKCJE: Sekcja[] = [
           s("/strefa-wiedzy/samofakturowanie-ksef", "Samofakturowanie w KSeF"),
           s("/strefa-wiedzy/faktura-dla-osoby-prywatnej-ksef", "Faktura dla osoby prywatnej a KSeF"),
           s("/strefa-wiedzy/faktura-dla-kontrahenta-zagranicznego-ksef", "Faktura dla firmy zagranicznej a KSeF"),
+          s("/strefa-wiedzy/ksef-jdg-zwolniona-z-vat", "KSeF w JDG zwolnionej z VAT"),
           s("/strefa-wiedzy/jaka-forma-opodatkowania-jdg-2026", "Forma opodatkowania JDG 2026"),
           s("/strefa-wiedzy/jak-liczyc-zdrowotna-jdg", "Składka zdrowotna w JDG"),
           s("/strefa-wiedzy/jak-polaczyc-crm-z-innymi-systemami", "Łączenie CRM z systemami"),

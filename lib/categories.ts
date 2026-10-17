@@ -327,6 +327,12 @@ export const categories: Category[] = [
         bezOkladki: true,
       },
       {
+        href: "/strefa-wiedzy/ksef-jdg-zwolniona-z-vat",
+        title: "KSeF w JDG zwolnionej z VAT",
+        description: "Faktury dla firm w KSeF od 1 kwietnia 2026, mimo zwolnienia.",
+        bezOkladki: true,
+      },
+      {
         href: "/strefa-wiedzy/numeracja-faktur-ksef-2027",
         title: "Numeracja faktur w KSeF w 2027",
         description: "Numer bez roku da w 2027 błąd 440, duplikat faktury.",
