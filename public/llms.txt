@@ -31,6 +31,7 @@
 - [Raporty z Pipedrive](https://fluxlab.pl/raportowanie-z-pipedrive): pipeline, źródła leadów i prognozy bez poniedziałkowego Excela.
 - [CRM jako system pracy](https://fluxlab.pl/crm-jako-system-pracy): etapy, pola i statusy, które wymuszają proces zamiast notatnika.
 - [Modelowe przepływy](https://fluxlab.pl/case-study): obsługa leada i tygodniowy raport rozpisane na czynności i minuty. To modele, nie opisy cudzych wdrożeń.
+- [Program case study](https://fluxlab.pl/pilotaz): 3 miejsca na wdrożenie automatyzacji za 50% ceny w zamian za publiczny opis efektu; dla firm B2B w Polsce z powtarzalnym procesem (leady, CRM, raporty, integracje).
 - [Jak pracujemy](https://fluxlab.pl/jak-pracuje) i [pełny katalog](https://fluxlab.pl/produkty).
 
 ## Pytania i praktyczne odpowiedzi
