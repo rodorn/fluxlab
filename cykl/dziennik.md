@@ -5719,3 +5719,54 @@ Otwarte decyzje: nowy segment albo nowy fakt do maili (biura z BAE odpadają); t
 **Dowód:** `cykl/plan-ruchu.md`, commit niżej.
 **Dla Pawła:** mail „FluxLab ruch, plan na 17.10" (lista punktów do decyzji w mailu).
 **Zostało otwarte:** Z1 o 07:46.
+
+<!-- WYSLANO 2026-10-17 07:04 -->
+
+## 2026-10-17 07:20
+**Kanał:** Google i KSeF (plan Z1, Z4, Z6) oraz outreach (Z2, Z3).
+**Co zrobione:** pomiar GSC i stanu indeksu (Z1), 24 maile DMARC do biur rachunkowych przygotowane (Z2), link do narzędzia /mapa-strony z treści (Z4) i link do /numer-ksef w pierwszym akapicie /ksef-2027 (Z6); wysyłka Z3 przesunięta, bo 17.10 to sobota.
+**Ruch:** raport 06:43: doba 136 odsłon, 79 osób; źródła b2b-email 30 (piksel otwarć innej kampanii), www.facebook.com 6, m.facebook.com 4, mail 2, Google 2; narzędzia 4 uruchomienia (skan 4, audyt 1).
+**Dowód:** GSC 7 dni (8.10 do 14.10) 12 kliknięć, 721 wyświetleń, poz. 15,7; Kontrola adresu 17 stron z list „wykryta/zeskanowana” (raport z 12.10): 15 w Google, poza Google tylko /mapa-strony i /polityka-prywatnosci. Outreach: 238 domen sprawdzonych w DNS, 170 kandydatów, 43 z ogólnym adresem firmowym, 24 pliki w `mail-audyt/maile_ks/` (szablon z dopisanym źródłem adresu i wypisaniem). Commity 3b61a37, 3bd8b3b, a50b262, 3d78183; curl z VPS nowe linki w HTML, zrzut 390 px /ksef-2027; IndexNow 3 adresy (2 z 3 punktów).
+**Dla Pawła:**
+**Zostało otwarte:** Z3 i Z8 (wysyłka) czekają do pn 19.10 9:00: `python3 ~/Projekty/mail-audyt/wyslij_segment.py ksiegowe --limit=12`, skrypt nie wysyła w weekend. Następne w planie Z5 (pomiar 11:46), Z7 (tytuł /ai-w-automatyzacji-firm).
+
+## 2026-10-17 10:05
+**Kanał:** Google, KSeF i asystenci AI (plan Z5, Z7, Z9, Z10, Z12, Z13, Z14, Z16, Z17, Z21).
+**Co zrobione:** nowa krótka strona https://fluxlab.pl/strefa-wiedzy/ksef-jdg-zwolniona-z-vat (FAQ MF, wpis w llms.txt, link z /vat-w-jdg-kiedy-warto), tytuł i pierwsze zdanie /strefa-wiedzy/ai-w-automatyzacji-firm pod „automatyzacja AI”, na /numer-ksef pole i przycisk na pierwszym ekranie telefonu, /strefa-wiedzy w llms.txt, szkic artykułu na 19.10, brief dla fluxlab-meta.
+**Ruch:** raport 10:05: doba 137 odsłon, 80 osób; źródła b2b-email 30 (piksel otwarć innej kampanii), www.facebook.com 6, m.facebook.com 4, mail 2, Google 2; narzędzia 4 uruchomienia. Ludzie po odsiewie: 25 w dobie (21 bez odsyłacza, Google 2, Facebook 2, mail 1), od 06:00 tylko 1.
+**Dowód:** commity 7b1ab25, 0f9f30b (AI), 4799c17, 808304e, 6f2513b, 1f064be (KSeF JDG), 0f9a3d0 (/numer-ksef), eed5366 (llms.txt); Z14: 9 zmienionych adresów 200 z VPS, canonical, title, lastmod, llms.txt OK; IndexNow 2 z 3. GSC „Linki” (pierwszy pomiar): 1 link zewnętrzny (zleca.pl → /), 766 wewnętrznych. Lejek audytu od przebudowy 16.10 10:35: 0 uruchomień u ludzi, 0 zamówień (3 „[audyt całości]” to testy). /numer-ksef 7 dni: 5 ludzi, 2 uruchomienia, 0 drugich odsłon. Brief `~/Projekty/fluxlab-meta/briefy/od-cyklu-ruchu-2026-10-17.md` (posty 16.10 bez linków i utm, prośba o 026 z utm_campaign=ksef-2027).
+**Dla Pawła:**
+**Zostało otwarte:** Z11 (17:46), Z15 (21:46), Z18 (żądania GSC po 00:10, kolejność: /strefa-wiedzy/ksef-jdg-zwolniona-z-vat, /strefa-wiedzy/ai-w-automatyzacji-firm, /ksef-2027), Z19, Z20, Z22, Z23. Wysyłka 24 maili do biur (Z3/Z8) w pn 19.10 od 9:00.
+
+## 2026-10-17 08:50
+**Kanał:** pomiar (plan Z15, część 7-dniowa). Z11 (17:46, okno od 12:00), Z18 (po 00:10), Z19, Z20, Z22 (GSC ma dane do 14.10, zadanie czeka na 15.10) i Z23 są przypięte do późniejszych godzin, więc zostają otwarte.
+**Co zrobione:** klasyfikacja sesji „bez odsyłacza” z 7 dni; wniosek: to w większości automaty, a nie ludzie z asystentów AI czy komunikatorów.
+**Ruch:** raport 08:43: doba 123 odsłony, 70 osób; źródła b2b-email 30 (piksel otwarć innej kampanii), www.facebook.com 3, m.facebook.com 3, mail 2, Google 2; narzędzia 2 uruchomienia.
+
+| 7 dni, po odsiewie par i serii | wartość |
+|---|---|
+| sesje ludzi / bez odsyłacza | 196 / 143 (73%) |
+| wejście na / | 30 |
+| wejście na strefę wiedzy | 35 |
+| wejście na narzędzia i usługi | 78 |
+| jedna odsłona | 126 (88%) |
+| 2+ odsłony | 17 |
+| sesje między 0 a 5 | 35 (24%) |
+| zdarzenia (audyt, katalog) | 4 |
+| Chrome Android / Windows / macOS / Safari iOS | 47 / 35 / 31 / 9 |
+
+Wniosek: jedna odsłona, prawie zero interakcji, co czwarta sesja w nocy i płaski rozkład godzin to profil automatów (podglądy linków, skanery, prerender). Realnych ludzi w tej grupie jest ok. 17 sesji tygodniowo (2+ odsłony), więc rzeczywisty ruch ludzi to ok. 2 do 3 sesji dziennie bez odsyłacza plus źródła mierzalne. Dla stratega: liczba „ludzie w dobie” (ok. 25) jest zawyżona mniej więcej trzykrotnie; do oceny kanałów lepiej liczyć sesje z 2+ odsłonami albo zdarzeniem.
+**Dowód:** `cykl/plan-ruchu.md` linia Z15; zapytanie przez `wiersze()` i `odsiew()` z `cykl/pomiar-kanalow.py`.
+**Dla Pawła:**
+**Zostało otwarte:** Z11 (17:46), Z18 (po 00:10), Z19, Z20, Z22, Z23; wysyłka 24 maili do biur (Z3/Z8) w pn 19.10 od 9:00.
+
+## 2026-10-17 10:15
+**Kanał:** dystrybucja narzędzi (Gofin) i usunięcie przeszkody w narzędziu. Otwarte zadania planu (Z11 okno od 12:00, Z18 po 00:10, Z19, Z20, Z22, Z23) są przypięte do późniejszych godzin; Z22 sprawdzone: GSC dalej „4,5 godziny temu”, dane do 14.10, 15.10 brak.
+**Co zrobione:** /sprawdzenie-nip pokazuje teraz datę i podstawę wykreślenia z rejestru VAT (pola `removalDate`, `removalBasis` wykazu MF), czyli dokładnie to, czego szuka autor wątku Gofin 1560060 (odliczony VAT 8500 zł z faktury KSeF od kontrahenta wykreślonego z VAT); do tego wątku gotowy komentarz dla Pawła.
+**Ruch:** raport 10:10: doba 117 odsłon, 64 osoby; źródła b2b-email 30 (piksel otwarć innej kampanii), www.facebook.com 2, m.facebook.com 2, mail.google.com 2, www.google.com 1; narzędzia 2 uruchomienia. Po odsiewie: ludzie 26, pary 16, serie testowe 5.
+**Dowód:** commit 748e0c0, build OK, SPOJNOSC OK, JAKOSC OK; POST https://fluxlab.pl/api/sprawdz-nip dla wykreślonego NIP zwraca `"removed":"2025-03-20"` i ostrzeżenie „Wykreślony z rejestru VAT 2025-03-20, podstawa: Art. 96 ust. 9a pkt 1”; IndexNow 2 z 3. Gofin przejrzany 1559976 do 1560090: wątki KSeF 1560010, 1560024, 1560032, 1560051, 1560081 mają już poprawne odpowiedzi, 1560086 (numer KSeF w przelewie) ma nasz komentarz z 15.10.
+**Dla Pawła:** komentarz pod https://forum.gofin.pl/1560060 (Autor: FluxLab, Turnstile, „+ Dodaj komentarz”, ok. 1 min). Pytający od 15.10 nie wie, czy stracił odliczenie, a nikt nie wskazał rubryki z datą wykreślenia ani wyroku TSUE. Treść (904 znaki):
+> W tym samym wpisie białej listy są jeszcze rubryki „Data wykreślenia” i „Podstawa prawna wykreślenia”, i to one rozstrzygają sprawę. Jeśli wykreślenie jest późniejsze niż data faktury, sprzedawca był czynnym podatnikiem w dniu wystawienia i z tego powodu odliczenia korygować nie trzeba. Jeśli wcześniejsze, sam status też nie przekreśla odliczenia: TSUE w wyroku C-101/16 (Paper Consult) uznał, że nie można go odmówić tylko dlatego, że dostawca był wykreślony z rejestru, gdy transakcja była rzeczywista, a nabywca nie wiedział o oszustwie. Dlatego rada z kom. 6, żeby zebrać dowody wykonania, jest kluczowa.
+>
+> Do kom. 8: przy płatności powyżej 15 tys. zł na rachunek spoza wykazu tracisz koszt, chyba że w ciągu 7 dni złożysz ZAW-NR, więc sprawdzenie przed przelewem się opłaca. Datę i podstawę wykreślenia pokazujemy też w darmowym sprawdzeniu NIP: https://fluxlab.pl/sprawdzenie-nip?utm_source=gofin
+**Zostało otwarte:** Z11 (17:46), Z22 (gdy GSC pokaże 15.10), Z18 po 00:10, Z19, Z20, Z23; wysyłka 24 maili do biur (Z3/Z8) w pn 19.10 od 9:00. Gofin: następny do sprawdzenia od 1560091.
