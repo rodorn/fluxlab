@@ -52,7 +52,8 @@ export default function Ksef2027Page() {
     <>
       <Header />
       <main>
-        <Breadcrumbs href="/ksef-2027"
+        <Breadcrumbs
+          href="/ksef-2027"
           items={[
             { label: "Narzędzia", href: "/narzedzia" },
             { label: "KSeF od 1 stycznia 2027" },
@@ -65,16 +66,22 @@ export default function Ksef2027Page() {
               KSeF od 1 stycznia 2027: co musisz mieć domknięte
             </h1>
             <p className="mt-5 text-lg text-gray-600 dark:text-gray-300">
-              1 stycznia 2027 kończą się przepisy przejściowe KSeF i każda
-              faktura dla firmy musi przejść przez system. Siedem pytań
-              pokazuje, co zostało do zrobienia, a na końcu dostajesz wykaz
-              braków dla księgowej.
+              1 stycznia 2027 każda faktura dla firmy przechodzi przez KSeF, a
+              przelew zawiera jej{" "}
+              <Link href="/numer-ksef" className="text-accent hover:underline">
+                numer KSeF
+              </Link>
+              . Siedem pytań pokazuje, co zostało do zrobienia, a na końcu
+              dostajesz wykaz braków dla księgowej.
             </p>
           </div>
 
           <div className="mt-10 max-w-4xl">
             <NazwaNarzedzia href="/ksef-2027" />
-            <ListaKsef2027 formularz="/ksef-integracja#zamow" naglowek={false} />
+            <ListaKsef2027
+              formularz="/ksef-integracja#zamow"
+              naglowek={false}
+            />
           </div>
 
           <div className="mt-14 max-w-4xl">
@@ -86,9 +93,7 @@ export default function Ksef2027Page() {
           </div>
 
           <div className="mt-14 max-w-3xl">
-            <h2 className="h2-sekcji">
-              Częste pytania o KSeF w 2027
-            </h2>
+            <h2 className="h2-sekcji">Częste pytania o KSeF w 2027</h2>
             <dl className="mt-6 space-y-5">
               {faq.map((f) => (
                 <div key={f.q} id={kotwica(f.q)} className="scroll-mt-20">
