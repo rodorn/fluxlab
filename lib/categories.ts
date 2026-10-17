@@ -333,6 +333,12 @@ export const categories: Category[] = [
         bezOkladki: true,
       },
       {
+        href: "/strefa-wiedzy/data-wystawienia-faktury-ksef",
+        title: "Data wystawienia faktury w KSeF",
+        description: "Faktura online jest wystawiona w dniu wysyłki do KSeF, nie nadania numeru.",
+        bezOkladki: true,
+      },
+      {
         href: "/strefa-wiedzy/zaw-fa-ksef",
         title: "ZAW-FA w spółce",
         description: "Jedna osoba w zgłoszeniu nadaje uprawnienia pozostałym; gdy odejdzie, nowe ZAW-FA.",

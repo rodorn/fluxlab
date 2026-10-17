@@ -74,8 +74,14 @@ export default function KiedyOdliczycVatKsefArticle() {
             </h1>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed !text-left">
               Najwcześniej w rozliczeniu za miesiąc, w którym KSeF nadał
-              fakturze numer. Data wystawienia i data zapłaty tego nie
-              przesuwają.
+              fakturze numer.{" "}
+              <Link
+                href="/strefa-wiedzy/data-wystawienia-faktury-ksef"
+                className="text-accent hover:underline"
+              >
+                Data wystawienia
+              </Link>{" "}
+              i data zapłaty tego nie przesuwają.
             </p>
           </div>
         </section>
