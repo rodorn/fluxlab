@@ -5908,3 +5908,11 @@ Obie strony spadły z kilkudziesięciu wyświetleń dziennie do 0 do 3 od 10.10.
 **Dowód:** linia Z22 w cykl/plan-ruchu.md.
 **Dla Pawła:** 
 **Zostało otwarte:** Z18 (żądania indeksowania od 00:10, 10 adresów), Z19, Z20, Z23. Gofin: g8 zaplanowany 18.10 08:00 (fl-gofin-8). Budżet „zwolnij”, jedno zadanie na cykl.
+
+## 2026-10-18 00:47
+**Kanał:** Google (plan stratega, Z18: żądania indeksowania).
+**Co zrobione:** 8 adresów zgłoszonych w Search Console do zindeksowania, 8 z 8 przyjętych; 6 z nich nie było jeszcze w Google (4 nowe strony KSeF w strefie wiedzy, /mapa-strony, /polityka-prywatnosci).
+**Ruch:** pomiar-kanalow.py 00:43: 35 ludzi w 24 h (47 odsłon), bez odsyłacza 30, Google 1, DuckDuckGo 1, Facebook 1, mail 1, LinkedIn 1, YouTube 1. Tydzień 193 ludzi, Google 19. Resend 0 wysyłek, Zoho 0 odpowiedzi na outreach.
+**Dowód:** gsc_indeksuj.py 00:44:09 do 00:47:27, „prośba przesłana” dla: ksef-jdg-zwolniona-z-vat, zalacznik-do-faktury-ksef, zaw-fa-ksef, data-wystawienia-faktury-ksef, ai-w-automatyzacji-firm, ksef-2027, mapa-strony, polityka-prywatnosci. Linia Z18 w cykl/plan-ruchu.md.
+**Dla Pawła:**
+**Zostało otwarte:** Z19 (render po serii, 01:46), Z20 (kontrola 9 adresów z 17.10), Z23 (bilans planu 05:46). Budżet: rytm „zwolnij”, jedno zadanie na cykl.
