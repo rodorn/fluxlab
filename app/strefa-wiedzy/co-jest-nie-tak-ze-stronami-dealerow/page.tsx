@@ -54,7 +54,8 @@ export default function Page() {
     <>
       <Header />
       <main className="mx-auto max-w-3xl px-4 pb-20 pt-28 md:pt-32">
-        <Breadcrumbs href="/strefa-wiedzy/co-jest-nie-tak-ze-stronami-dealerow"
+        <Breadcrumbs
+          href="/strefa-wiedzy/co-jest-nie-tak-ze-stronami-dealerow"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Badanie stron dealerów" },
@@ -66,9 +67,9 @@ export default function Page() {
           Sprawdziliśmy 386 stron dealerów samochodowych
         </h1>
         <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
-          Wzięliśmy listę stron polskich dealerów i serwisów i zmierzyliśmy
-          trzy rzeczy: czy klient ustali, komu płaci, czy wyszukiwarka dostaje
-          listę podstron i kto jest właścicielem domeny.
+          Wzięliśmy listę stron polskich dealerów i serwisów i zmierzyliśmy trzy
+          rzeczy: czy klient ustali, komu płaci, czy wyszukiwarka dostaje listę
+          podstron i kto jest właścicielem domeny.
         </p>
 
         <div className="mt-10">
@@ -124,8 +125,11 @@ export default function Page() {
             Dwie trzecie stron nie daje wyszukiwarce listy podstron
           </h2>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-            Mapa strony to plik z listą adresów dla wyszukiwarki. Przy katalogu
-            z setkami ofert decyduje o tym, ile z nich trafi do wyników.
+            <Link href="/mapa-strony" className="text-accent hover:underline">
+              Mapa strony
+            </Link>{" "}
+            to plik z listą adresów dla wyszukiwarki. Przy katalogu z setkami
+            ofert decyduje o tym, ile z nich trafi do wyników.
           </p>
         </div>
 
@@ -158,27 +162,20 @@ export default function Page() {
             dziesięciu przypadkach była nim agencja albo firma informatyczna,
             która kiedyś robiła stronę. Zwykle to pozostałość po starym
             wdrożeniu, nie zła wola.{" "}
-            <Link
-              href="/audyt-poczty"
-              className="text-accent hover:underline"
-            >
+            <Link href="/audyt-poczty" className="text-accent hover:underline">
               Sprawdź, kto jest abonentem Twojej domeny
             </Link>
             .
           </p>
 
-          <h2 className="mt-12 mb-5 h2-sekcji">
-            Ograniczenia pomiaru
-          </h2>
+          <h2 className="mt-12 mb-5 h2-sekcji">Ograniczenia pomiaru</h2>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
             Nie uruchamialiśmy przeglądarki i nie czytaliśmy PDF-ów, więc część
             braków mogła zostać zaliczona niesłusznie. 83 domeny nie
             odpowiedziały i nie liczymy ich ani na plus, ani na minus.
           </p>
 
-          <h2 className="mt-12 mb-5 h2-sekcji">
-            Wniosek
-          </h2>
+          <h2 className="mt-12 mb-5 h2-sekcji">Wniosek</h2>
           <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">
             Żaden z tych problemów nie unieruchamia strony, ale wszystkie są
             niewidoczne z fotela właściciela. Dlatego każdy sprawdzisz darmowym
@@ -203,9 +200,7 @@ export default function Page() {
         />
 
         <section className="mt-12">
-          <h2 className="h2-sekcji">
-            Pytania
-          </h2>
+          <h2 className="h2-sekcji">Pytania</h2>
           <dl className="mt-5 space-y-5">
             {faqItems.map((f) => (
               <div key={f.question}>
