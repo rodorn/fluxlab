@@ -83,7 +83,13 @@ export default function FakturyZKsefPoZmianieBiuraArticle() {
             <section>
               <h2 className="mb-4 h2-sekcji">Co zrobić krok po kroku</h2>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                Osoba uprawniona nadaje biuru w Aplikacji Podatnika KSeF, po
+                <Link
+                  href="/strefa-wiedzy/zaw-fa-ksef"
+                  className="text-accent hover:underline"
+                >
+                  Osoba uprawniona
+                </Link>{" "}
+                nadaje biuru w Aplikacji Podatnika KSeF, po
                 NIP, uprawnienie do przeglądania faktur, tak jak nabywcy przy{" "}
                 <Link
                   href="/strefa-wiedzy/samofakturowanie-ksef"

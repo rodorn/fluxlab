@@ -333,6 +333,12 @@ export const categories: Category[] = [
         bezOkladki: true,
       },
       {
+        href: "/strefa-wiedzy/zaw-fa-ksef",
+        title: "ZAW-FA w spółce",
+        description: "Jedna osoba w zgłoszeniu nadaje uprawnienia pozostałym; gdy odejdzie, nowe ZAW-FA.",
+        bezOkladki: true,
+      },
+      {
         href: "/strefa-wiedzy/zalacznik-do-faktury-ksef",
         title: "Załącznik do faktury w KSeF",
         description: "Tylko XML i po zgłoszeniu w e-US; PDF i protokół wysyłasz osobno.",
