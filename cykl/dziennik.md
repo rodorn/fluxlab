@@ -5505,3 +5505,217 @@ Otwarte decyzje: tytuł biur rachunkowych (Z5 „nie”, wyświetlenia 13,6 → 
 **Dowód:** Z7 i Z22 w liniach planu. Resend: ADREAM 01a14382 delivered. Zoho INBOX od 9:00: 0. GSC (aktualizacja 5 h temu) nadal dane tylko do 13.10: /e-doreczenia-integracja 6.10 do 13.10 wyświetlenia 34, 25, 45, 21, 0, 0, 1, 2; /automatyzacja-dla-biur-rachunkowych 18, 41, 2, 2, 1, 2, 0, 3. Zmiana w `cykl/pomiar-kanalow.py`, commit f69ea2b. budzet 09:45: rytm dociśnij, prognoza 82%.
 **Dla Pawła:**
 **Zostało otwarte:** Z10 (16:46, bez plików do wysłania), Z15, Z18 do Z21, Z23 według godzin. Dla stratega: wejścia z utm w 7 dniach po odsiewie par to prawie zero (ksiegowe 2: 9.10 14:31 i 15.10 15:39; Facebook z utm 0; YouTube 0), więc „ksiegowe jako jedyny kanał mailowy z wejściami" i „Facebook 9 z utm" w planie 16.10 były zawyżone przez skanery i podglądy linków; ludzie w dobie to ok. 39, nie 52.
+
+## 2026-10-16 10:45
+**Kanał:** outreach (Z10 z planu stratega).
+**Co zrobione:** domknięcie okna wysyłek: biura rachunkowe nie mają dziś żadnego maila (Z4 i Z6 [!], segment bez BAE wyczerpany), jedyna wysyłka dnia (ADREAM, Z3) ma status delivered.
+**Ruch:** doba 94 odsłony, 82 osoby; źródła: Facebook 11 (l. 5, www 4, m. 2), Google 2, mail 2; narzędzia 3 uruchomienia (2 skany, 1 kalkulator, 1 audyt z wynikiem).
+**Dowód:** Resend 01a14382-c95a-7440-973d-be910d5df6b8 delivered; `wyslane_ks.json` 0 wpisów z 16.10.
+**Dla Pawła:** 
+**Zostało otwarte:** Z15 (21:46), Z18 do Z23 po północy, wszystkie z godziną. Budżet 10:43: rytm zwolnij, prognoza 124%, hamulec alarm, więc bez pracy kanałowej poza planem.
+
+<!-- WYSLANO 2026-10-16 11:11 -->
+
+## 2026-10-16 11:45
+**Kanał:** brak (plan stratega, wszystkie otwarte zadania mają okna godzin).
+**Co zrobione:** nic nie dowiezione: otwarte Z15 (liczy od 13:00), Z18 (od 21:00), Z19 (żądania nie wcześniej niż 17.10 00:10), Z20, Z21 (seria 16.10 po dobie, czyli po 17.10 00:06) i Z23 są jeszcze przed swoim oknem, a `budzet` 11:44 daje rytm wstrzymaj (prognoza 190%, hamulec krytyczny, nowy cykl NIE), więc bez pracy poza planem.
+**Ruch:** raport 11:43: doba 109 odsłon, 80 osób; źródła l.facebook.com 5, www.facebook.com 4, Google 3, mail 2, m.facebook.com 2; narzędzia 5 uruchomień (skan 4, kalkulator 1, audyt 1 z wynikiem dobry).
+**Dowód:** brak zmian w kodzie i wysyłek.
+**Dla Pawła:**
+**Zostało otwarte:** Z15, Z18 do Z21, Z23 według godzin; budżet sprawdzić ponownie ok. 14:45.
+
+## 2026-10-16 12:45
+**Kanał:** brak (plan stratega, wszystkie otwarte zadania mają okna godzin).
+**Co zrobione:** nic nie dowiezione: Z15 liczy od 13:00, Z18 od 21:00, Z19 nie wcześniej niż 17.10 00:10, Z20, Z21 (seria 16.10 po dobie) i Z23 są przed swoim oknem; `budzet` 12:43 daje rytm wstrzymaj (prognoza 236%, hamulec krytyczny, nowy cykl NIE), więc bez pracy poza planem.
+**Ruch:** raport 12:43: doba 112 odsłon, 80 osób; źródła l.facebook.com 5, www.facebook.com 4, mail 2, m.facebook.com 2, Google 2; narzędzia 5 uruchomień (skan 4, kalkulator 1, audyt 1 z wynikiem dobry).
+**Dowód:** brak zmian w kodzie i wysyłek.
+**Dla Pawła:**
+**Zostało otwarte:** Z15, Z18 do Z21, Z23 według godzin; budżet sprawdzić ponownie ok. 15:45.
+
+## 2026-10-16 13:45
+**Kanał:** brak (plan stratega, wszystkie otwarte zadania mają okna godzin).
+**Co zrobione:** nic nie dowiezione: pierwsze otwarte Z15 to pomiar wieczorny (21:46, liczy od 13:00, o 13:45 nie ma czego mierzyć), Z18 od 21:00, Z19 nie wcześniej niż 17.10 00:10, Z20, Z21 i Z23 po północy; `budzet` 13:43 daje rytm wstrzymaj (prognoza 242%, hamulec krytyczny, nowy cykl NIE), więc bez pracy poza planem.
+**Ruch:** raport 13:43: doba 108 odsłon, 76 osób; źródła l.facebook.com 5, www.facebook.com 4, mail 2, m.facebook.com 2, Google 2; narzędzia 5 uruchomień (skan 4, kalkulator 1, audyt 1 z wynikiem dobry).
+**Dowód:** brak zmian w kodzie i wysyłek.
+**Dla Pawła:**
+**Zostało otwarte:** Z15, Z18 do Z21, Z23 według godzin; budżet sprawdzić ponownie ok. 16:45.
+
+## 2026-10-16 14:45
+**Kanał:** brak (plan stratega, wszystkie otwarte zadania mają okna godzin).
+**Co zrobione:** nic nie dowiezione: pierwsze otwarte Z15 to pomiar wieczorny od 13:00 do 21:46 (o 14:45 obejmowałby 1,5 h z 8,5 h), Z18 od 21:00, Z19 nie wcześniej niż 17.10 00:10, Z20, Z21 i Z23 po północy; `budzet` 14:44 daje rytm wstrzymaj (prognoza 261%, hamulec krytyczny, nowy cykl NIE, przerwa 180 min), więc bez pracy poza planem.
+**Ruch:** raport 14:43: doba 115 odsłon, 81 osób; źródła b2b-email 7, l.facebook.com 5, www.facebook.com 4, mail 2, m.facebook.com 2; narzędzia 5 uruchomień (skan 4, kalkulator 1, audyt 1 z wynikiem dobry); zdarzenia otwarcie_maila 5, klik_maila 2.
+**Dowód:** brak zmian w kodzie i wysyłek.
+**Dla Pawła:**
+**Zostało otwarte:** Z15, Z18 do Z21, Z23 według godzin; nowe źródło b2b-email (7 odsłon w dobie) do rozbicia w Z15; budżet sprawdzić ponownie ok. 17:45.
+
+<!-- WYSLANO 2026-10-16 15:10 -->
+
+## 2026-10-16 15:45
+**Kanał:** brak (plan stratega, wszystkie otwarte zadania mają okna godzin).
+**Co zrobione:** nic nie dowiezione: pierwsze otwarte Z15 to pomiar wieczorny od 13:00 do 21:46 (o 15:45 obejmowałby 2,75 h z 8,75 h), Z18 od 21:00, Z19 nie wcześniej niż 17.10 00:10, Z20, Z21 i Z23 po północy; `budzet` 15:43 daje rytm wstrzymaj (prognoza 243%, hamulec krytyczny, nowy cykl NIE, przerwa 180 min), więc bez pracy poza planem.
+**Ruch:** raport 15:43: doba 112 odsłon, 77 osób; źródła b2b-email 7, l.facebook.com 5, www.facebook.com 4, m.facebook.com 2, Google 2; narzędzia 5 uruchomień (skan 4, kalkulator 1, audyt 1 z wynikiem dobry); zdarzenia otwarcie_maila 5, klik_maila 2.
+**Dowód:** brak zmian w kodzie i wysyłek.
+**Dla Pawła:**
+**Zostało otwarte:** Z15, Z18 do Z21, Z23 według godzin; źródło b2b-email (7 odsłon) do rozbicia w Z15; budżet sprawdzić ponownie ok. 18:45.
+
+## 2026-10-16 16:45
+**Kanał:** brak (plan stratega, wszystkie otwarte zadania mają okna godzin).
+**Co zrobione:** nic nie dowiezione: pierwsze otwarte Z15 to pomiar wieczorny od 13:00 do 21:46 (o 16:45 obejmowałby 3,75 h z 8,75 h), Z18 od 21:00, Z19 nie wcześniej niż 17.10 00:10, Z20, Z21 i Z23 po północy; `budzet` 16:43 daje rytm wstrzymaj (prognoza 210%, hamulec krytyczny, nowy cykl NIE, przerwa 180 min), więc bez pracy poza planem.
+**Ruch:** raport 16:43: doba 114 odsłon, 78 osób; źródła b2b-email 9, l.facebook.com 5, www.facebook.com 4, m.facebook.com 2, Google 2; narzędzia 5 uruchomień (skan 4, kalkulator 1, audyt 1 z wynikiem dobry); zdarzenia otwarcie_maila 7, klik_maila 2.
+**Dowód:** brak zmian w kodzie i wysyłek.
+**Dla Pawła:**
+**Zostało otwarte:** Z15, Z18 do Z21, Z23 według godzin; źródło b2b-email (9 odsłon) do rozbicia w Z15; budżet sprawdzić ponownie ok. 19:45.
+
+## 2026-10-16 17:45
+**Kanał:** brak (plan stratega, wszystkie otwarte zadania mają okna godzin).
+**Co zrobione:** nic nie dowiezione w planie: Z15 (pomiar od 13:00 do 21:46), Z18 od 21:00, Z19 nie wcześniej niż 17.10 00:10, Z20, Z21 i Z23 po północy; `budzet` 17:43 daje rytm wstrzymaj (prognoza 172%, hamulec krytyczny, nowy cykl NIE). Rozbite tylko źródło b2b-email (jedno zapytanie do VPS): to piksel otwarć innej kampanii (ścieżki `/mail/<id>`, kampania `b2b`), od 14:02 test curl `test000001` z 2 klikami, potem 8 otwarć z 7 identyfikatorów (14:04 do 17:37, Android, Windows, macOS), 0 kliknięć ludzi, 0 wejść na strony.
+**Ruch:** raport 17:43: doba 108 odsłon, 72 osoby; źródła b2b-email 11 (piksel otwarć, nie wejścia), l.facebook.com 5, www.facebook.com 4, m.facebook.com 2, Google 2; narzędzia 5 uruchomień (skan 4, kalkulator 1, audyt 1 z wynikiem dobry).
+**Dowód:** brak zmian w kodzie i wysyłek.
+**Dla Pawła:**
+**Zostało otwarte:** Z15, Z18 do Z21, Z23 według godzin; w Z15 liczyć b2b-email jako otwarcia maili, nie ludzi na stronie; budżet sprawdzić ponownie ok. 20:45.
+
+## 2026-10-16 18:45
+**Kanał:** brak (plan stratega, wszystkie otwarte zadania mają okna godzin).
+**Co zrobione:** nic nie dowiezione: pierwsze otwarte Z15 to pomiar wieczorny od 13:00 do 21:46 (o 18:45 zostawiłby lukę do 21:00, od której liczy Z18), Z18 od 21:00, Z19 nie wcześniej niż 17.10 00:10, Z20, Z21 (seria 16.10 po dobie) i Z23 po północy; `budzet` 18:44 daje rytm wstrzymaj (prognoza 142%, hamulec alarm, nowy cykl NIE, przerwa 180 min), więc bez pracy poza planem.
+**Ruch:** raport 18:43: doba 121 odsłon, 78 osób; źródła b2b-email 24 (piksel otwarć innej kampanii, nie wejścia), l.facebook.com 5, www.facebook.com 4, m.facebook.com 2, Google 2; narzędzia 5 uruchomień (skan 4, kalkulator 1, audyt 1 z wynikiem dobry); zdarzenia otwarcie_maila 22, klik_maila 2.
+**Dowód:** brak zmian w kodzie i wysyłek.
+**Dla Pawła:**
+**Zostało otwarte:** Z15 o 21:46, Z18 do Z21, Z23 według godzin; budżet sprawdzić ponownie ok. 21:45.
+
+## 2026-10-16 19:06
+Raport zbiorczy: od 15:10 cztery godziny minęły bez zmian (wpisy 15:45 do 18:45 bez prac, bez commitów, bez wysyłek), mail nie został wysłany.
+
+## 2026-10-16 19:45
+**Kanał:** brak (plan stratega, wszystkie otwarte zadania mają okna godzin).
+**Co zrobione:** nic nie dowiezione: pierwsze otwarte Z15 to pomiar wieczorny od 13:00 do 21:46 (o 19:45 zostawiłby lukę do 21:00, od której liczy Z18), Z18 od 21:00, Z19 nie wcześniej niż 17.10 00:10, Z20, Z21 i Z23 po północy; `budzet` 19:43 daje rytm wstrzymaj (prognoza 139%, hamulec alarm, nowy cykl NIE, przerwa 180 min), więc bez pracy poza planem.
+**Ruch:** raport 19:43: doba 124 odsłony, 79 osób; źródła b2b-email 27 (piksel otwarć innej kampanii, nie wejścia), www.facebook.com 6, l.facebook.com 5, m.facebook.com 4, Google 2; narzędzia 5 uruchomień (skan 4, kalkulator 1, audyt 1 z wynikiem dobry); zdarzenia otwarcie_maila 25, klik_maila 2.
+**Dowód:** brak zmian w kodzie i wysyłek.
+**Dla Pawła:**
+**Zostało otwarte:** Z15 o 21:46, Z18 do Z21, Z23 według godzin; budżet sprawdzić ponownie ok. 21:45.
+
+## 2026-10-16 20:45
+**Kanał:** pomiar (Z15 z planu stratega).
+**Co zrobione:** Z15 zamknięte godzinę przed terminem, bo `budzet` 20:43 dał rytm utrzymaj (prognoza 88%); okno 13:00 do 20:45, Z18 liczy od 20:45. Pierwszy człowiek z kampanii agencje: 19:46 utm mail/agencje, Opera Windows, 8 odsłon (e-Doręczenia, polityka prywatności, regulamin, główna, realizacje, narzędzia), bez uruchomienia narzędzia.
+**Ruch:** VPS od 13:00: ludzie 4 (w tym 1 z maila agencje), pary 4 (podglądy FB), serie 0; pomiar 24 h: ludzie 26, pary 23, serie 15; Google 2, FB 2, mail 1; narzędzia 0, lead_* 0; b2b-email 28 to piksel otwarć innej kampanii.
+**Dowód:** linia Z15 w `cykl/plan-ruchu.md`; Resend 24 h 30 delivered, 0 odbić; Zoho od 13:00: 0 wiadomości.
+**Dla Pawła:**
+**Zostało otwarte:** Z18 (od 20:45, o 00:46), Z19 nie wcześniej niż 17.10 00:10, Z20, Z21, Z23 według godzin.
+
+## 2026-10-16 21:45
+**Kanał:** asystenci AI (poza planem; wszystkie otwarte zadania Z18 do Z23 mają okna po północy, `budzet` 21:43 rytm dociśnij, prognoza 89%).
+**Co zrobione:** /wlasny-crm, jedyna usługa bez opisu w llms.txt i jeden z 6 adresów poza Google, dostała wpis w sekcji „Co robimy” (lead do opiekuna z zadaniem na 15 minut, trzy tygodnie, pilotaż 1 zł, 499 zł netto miesięcznie); pozostałe brakujące w llms.txt to strony techniczne i prawne.
+**Ruch:** raport 21:43: doba 127 odsłon, 78 osób; źródła b2b-email 29 (piksel otwarć innej kampanii), www.facebook.com 6, m.facebook.com 4, mail 2, Google 2; narzędzia 4 uruchomienia (skan 4, audyt 1 z wynikiem dobry); otwarcie_maila 27, klik_maila 2.
+**Dowód:** commit 343e333; `curl` z VPS https://fluxlab.pl/llms.txt 200 z wpisem wlasny-crm; IndexNow llms.txt i /wlasny-crm: Yandex 202, Naver 200; build, SPOJNOSC OK, JAKOSC OK.
+**Dla Pawła:**
+**Zostało otwarte:** Z18 (od 20:45, o 00:46), Z19 nie wcześniej niż 17.10 00:10, Z20, Z21, Z23 według godzin.
+
+## 2026-10-16 22:45
+**Kanał:** pomiar i Google (Z18 i Z21 z planu stratega, wzięte przed terminem, `budzet` 22:43 rytm dociśnij, prognoza 93%).
+**Co zrobione:** seria żądań indeksowania z 16.10 00:06 sprawdzona po ok. 22,5 h: 10 z 10 adresów w Google (Z8 rano 5, teraz pozostałe 5: najczestsze-bledy-w-raportowaniu-sprzedazy, panel-do-sesji-ai, integracje-api-w-firmie-kiedy-warto, /automatyzacja-salesforce, /case-study); pomiar nocny od 20:45 zamknięty.
+**Ruch:** raport 22:43: doba 127 odsłon, 79 osób; źródła b2b-email 30 (piksel otwarć innej kampanii), www.facebook.com 6, m.facebook.com 4, mail 2, Google 2; narzędzia 4 uruchomienia. VPS 20:45 do 22:43: ludzie 1 (22:30 z Facebooka na /), pary 0, serie 0, lead_* 0.
+**Dowód:** linie Z18 i Z21 w `cykl/plan-ruchu.md`; Kontrola adresu GSC 22:44:03 do 22:45:19, 5 × „Adres URL znajduje się w Google”; Resend od 20:45 0 nowych, Zoho od 20:45 0 wiadomości.
+**Dla Pawła:**
+**Zostało otwarte:** Z19 nie wcześniej niż 17.10 00:10 (6 adresów z Z16), Z20 od 00:00 po serii, Z23 bilans o 05:46.
+
+<!-- WYSLANO 2026-10-16 23:04 -->
+
+## 2026-10-17 00:45
+**Kanał:** Google (Z19 z planu stratega, `budzet` 00:43 rytm dociśnij, prognoza 93%).
+**Co zrobione:** żądania indeksowania dla 6 ostatnich adresów poza Google (/slownik, /strefa-wiedzy/ryczalt-czy-liniowy, /wlasny-crm, trzy kategorie strefy wiedzy: ai, narzedzia, raportowanie); wszystkie 6 przyjęte, przed żądaniem każdy „nie znajduje się w Google”.
+**Ruch:** raport 00:43: doba 127 odsłon, 79 osób; źródła b2b-email 30 (piksel otwarć innej kampanii), www.facebook.com 6, m.facebook.com 4, mail 2, Google 2; narzędzia 4 uruchomienia (skan 4, audyt 1 z wynikiem dobry); otwarcie_maila 28, klik_maila 2.
+**Dowód:** linia Z19 w `cykl/plan-ruchu.md`; GSC 00:43:42 do 00:46:24, 6 × „prośba przesłana”, 0 odmów limitu; następne okno 18.10 00:47.
+**Dla Pawła:**
+**Zostało otwarte:** Z20 (render Google po serii, o 02:46), Z23 bilans o 05:46.
+
+## 2026-10-17 01:45
+**Kanał:** pomiar (Z20 z planu stratega, wzięte przed 02:46, `budzet` 01:43 rytm dociśnij, prognoza 90%).
+**Co zrobione:** render serii z 00:43 sprawdzony: wszystkie 6 adresów pobrane przez Google (para Chrome Linux + Android) w sekundzie żądania; osobnego renderu po żądaniu do 01:45 brak.
+**Ruch:** raport 01:43: doba 134 odsłony, 80 osób; źródła b2b-email 30 (piksel otwarć innej kampanii), www.facebook.com 6, m.facebook.com 4, mail 2, Google 2; narzędzia 4 uruchomienia; zdarzenia otwarcie_maila 28, uruchomiono_skan 4, klik_maila 2. VPS od 00:00: ludzie 1 (01:36 Safari iOS, 5 odsłon, filtry katalogu na /produkty), pary 6 (render GSC), serie 0.
+**Dowód:** linia Z20 w `cykl/plan-ruchu.md`; Zoho od 00:00 0 wiadomości od ludzi; Resend od 00:00 0 wysyłek cyklu.
+**Dla Pawła:**
+**Zostało otwarte:** Z23 bilans planu 2026-10-16/17 o 05:46 (wcześniej zostawiłby niepoliczone 4 h doby).
+
+## 2026-10-17 02:45
+**Kanał:** asystenci AI (poza planem; jedyne otwarte Z23 to bilans doby o 05:46, wcześniej uciąłby 4 h; `budzet` 02:43 rytm dociśnij, prognoza 85%).
+**Co zrobione:** nowa krótka strona /strefa-wiedzy/faktura-dla-kontrahenta-zagranicznego-ksef, jedyne częste pytanie o KSeF bez własnej odpowiedzi (wystawiasz w KSeF, klientowi PDF z kodem QR, otrzymana w dniu doręczenia, dane nabywcy z UE i spoza UE, OSS/IOSS poza KSeF; 3 akapity, 4 pytania FAQ), wpis w llms.txt, strefie wiedzy i spisie stron.
+**Ruch:** raport 02:43: doba 134 odsłony, 80 osób; źródła b2b-email 30 (piksel otwarć innej kampanii), www.facebook.com 6, m.facebook.com 4, mail 2, Google 2; narzędzia 4 uruchomienia (skan 4, audyt 1).
+**Dowód:** commit 133a1e2; `curl` z VPS strona 200 z treścią, llms.txt i sitemap.xml zawierają adres; IndexNow 3 adresy: Yandex 200, Naver 200; build, SPOJNOSC OK, JAKOSC OK.
+**Dla Pawła:**
+**Zostało otwarte:** Z23 bilans planu 2026-10-16/17 o 05:46; żądanie indeksowania nowej strony w GSC (w dobie zużyte 6 z 10, Z19).
+
+<!-- WYSLANO 2026-10-17 03:04 -->
+
+## 2026-10-17 03:45
+**Kanał:** KSeF i Google (poza planem; jedyne otwarte Z23 to bilans doby o 05:46, wcześniej uciąłby 2 h; `budzet` 03:43 rytm przyspiesz, prognoza 69%).
+**Co zrobione:** /strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef ma w GSC pozycję 2,6, 80 wyświetleń i 0 kliknięć, bo opis w wynikach dawał całą odpowiedź; nowy tytuł „Kiedy odliczyć VAT z faktury KSeF? Data w numerze” i opis, który prowadzi do darmowego sprawdzenia numeru (/numer-ksef); do tego żądania indeksowania tej strony i nowej strony o fakturze dla kontrahenta zagranicznego.
+**Ruch:** raport 03:43: doba 137 odsłon, 83 osoby; źródła b2b-email 30 (piksel otwarć innej kampanii), www.facebook.com 6, m.facebook.com 4, mail 2, Google 2; narzędzia 4 uruchomienia (skan 4, audyt 1 z wynikiem dobry).
+**Dowód:** commit c7d6d8b, produkcja 03:47 z nowym title i meta description (200); IndexNow: Yandex i Naver przyjęły; GSC 03:44 faktura-dla-kontrahenta-zagranicznego-ksef „nie znajduje się w Google” → prośba przesłana, 03:48 kiedy-odliczyc-vat-z-faktury-ksef prośba przesłana (w dobie 8 z 10). Inne strony bez kliknięć: /ksef-2027 pozycja 8,1, 110 wyświetleń, 2 kliknięcia; /strefa-wiedzy/ai-w-automatyzacji-firm pozycja 31, 55 wyświetleń, głównie „automatyzacja ai”.
+**Dla Pawła:**
+**Zostało otwarte:** Z23 bilans planu 2026-10-16/17 o 05:46; za ok. 7 dni sprawdzić CTR strony o odliczeniu VAT (punkt odniesienia: 0 z 80).
+
+## 2026-10-17 04:50
+**Kanał:** pomiar (Z23 planu 2026-10-16/17, wzięte o 04:43, przed 05:46, bo to jedyne otwarte zadanie).
+**Co zrobione:** Bilans planu 2026-10-16/17 (niżej). Kodu nie zmieniałem.
+**Ruch:** `pomiar-kanalow.py` 04:43, 24 h: ludzie 26, pary 23, serie testowe 15; źródła ludzi: bez odsyłacza 22, Google 2, Facebook 2, mail 1 (utm `agencje`). 7 dni: ludzie 172. `raport_ruchu.py`: doba 137 odsłon, 81 osób, ale 30 odsłon to b2b-email (piksel otwarć innej kampanii, nie wejścia).
+**Dowód:** linia Z23 w `cykl/plan-ruchu.md`; VPS `wizyty` 24 h; `poczta szukaj zoho --dni 1`, `poczta lista sent`.
+
+### Bilans planu 2026-10-16/17
+| Zad. | Kanał | Zrobione | Godzina | Efekt, co przyprowadziło |
+|---|---|---|---|---|
+| Z1 | pomiar | tak | 16.10 07:46 | filtr serii testowych, commit 9bcf4c6 |
+| Z2 | Google i Bing | tak | 06:47 | IndexNow 111 adresów, daty w mapie, commit 031a73d |
+| Z3 | outreach | tak | 09:00 | 1 mail (adream.pl), delivered; segment agencje zamknięty |
+| Z4 | outreach | nie [!] | 16.10 | 0 plików, 0 z 195 domen biur bez BAE |
+| Z5 | narzędzia | tak, bez zmian | 16.10 | 7 wyników audytu, 0 klik_po_wyniku, warunek niespełniony |
+| Z6 | outreach | nie [!] | 16.10 | 0 z 20 domen, segment ksiegowe wyczerpany |
+| Z7 | pomiar | tak | 09:50 | ok. 5 ludzi od 06:00, utm ksiegowe to skaner linków |
+| Z8 | Google | tak | 07:44 | GSC 7 dni 11 kl., 749 wyśw. (dane do 13.10) |
+| Z9 | Google | tak | 08:10 | linki wewnętrzne, commit a4462dd; poza Google tylko 6 adresów |
+| Z10 | outreach | tak, nic do wysłania | 10:45 | 0 plików ks |
+| Z11 | asystenci AI | tak | 08:14 | 5 stron, HTML z serwera poprawny |
+| Z12 | Google | tak | 08:50 | 0 zapytań bez kliknięć z pozycją ≤12 |
+| Z13 | Google i Bing | tak | 09:06 | daty w mapie, commit d840944, IndexNow |
+| Z14 | Facebook i YouTube | tak | 09:07 | brief dla fluxlab-meta; YouTube 0 ludzi (to były sprawdzenia linków) |
+| Z15 | pomiar | tak | 20:45 | 4 ludzi od 13:00, 1 z utm agencje (8 odsłon) |
+| Z16 | Google | tak | 09:08 | lista 6 adresów zamiast 10 |
+| Z17 | treści | tak | 09:10 | notatki do artykułu na 19.10 |
+| Z18 | pomiar | tak | 22:43 | 1 człowiek (Facebook) |
+| Z19 | Google | tak | 17.10 00:46 | 6 z 6 żądań przyjętych |
+| Z20 | pomiar | tak | 01:45 | 6 renderów w chwili żądania, 1 człowiek |
+| Z21 | Google | tak | 16.10 22:45 | 10 z 10 serii 16.10 w Google |
+| Z22 | Google | tak | 09:58 | spadek e-Doręczeń od 10.10, biur od 8.10, dane do 13.10 |
+| Z23 | pomiar | tak | 17.10 04:50 | ten wpis |
+
+Plan 21 z 23, 2 [!] (Z4, Z6: brak adresów). Mierzalnie z zadań: 1 osoba, wejście z utm `agencje` 16.10 19:46 (Opera Windows, 8 odsłon: e-Doręczenia, polityka prywatności, regulamin, /, realizacje); nie da się ustalić, z którego z 19 maili.
+
+Ludzie w dobie: 26 wobec 48 z 15.10 (po filtrze z Z1; plan szacował ok. 36). Ze źródeł mierzalnych 4 (Google 2, Facebook 2) plus mail 1; reszta 22 bez odsyłacza.
+
+Maile dnia: agencje 1 (Z3), delivered, wejście z utm 1 (segment łącznie: 19 wysłanych, 18 delivered, 1 człowiek, 0 odpowiedzi); ksiegowe 0 (brak adresów). Inna kampania (źródło b2b-email, piksel z commita c4c54cf): 16 otwarć różnych maili 16.10 14:04 do 21:51, 0 kliknięć do strony poza testem curl.
+
+Dla stratega, 3 liczby, które zmieniły się najbardziej:
+1. Ludzie w dobie: 48 → 26. Spadek w ruchu bez odsyłacza i z Facebooka; źródła mierzalne bez zmian (ok. 4 do 8).
+2. Indeksowanie: 10 z 10 serii 16.10 w Google w ciągu doby, dodatkowe 6 żądań 17.10 00:46. Poza Google zostało 0 znanych adresów, więc seria 18.10 nie ma czego zgłaszać, dopóki nie powstaną nowe strony.
+3. Outreach do biur: 0 adresów z 410 sprawdzonych domen (Z4 195, Z6 215); segment ksiegowe bez BAE wyczerpany, a był jedynym mailowym, który przyprowadzał ludzi.
+
+Otwarte decyzje: nowy segment albo nowy fakt do maili (biura z BAE odpadają); tytuł biur rachunkowych i e-Doręczeń 18.10 (GSC nadal z danymi tylko do 13.10); artykuł o limicie 10 tys. zł na 19.10 (notatki gotowe); co z kampanią b2b innej sesji (otwarcia bez kliknięć).
+
+**Dla Pawła:** comparic.pl (`INBOX::136`, 16.10 12:10) przysłał ofertę reklamową w załączniku; w Wysłanych do 17.10 04:50 brak odpowiedzi, decyzja Twoja. Ola Gościniak odmówiła, Artur Jabłoński nieobecny do 3.11, Taxeon przyjął zgłoszenie (kampania „Współpraca reklamowa” innej sesji).
+**Poza planem (budżet „przyspiesz”, plan pusty), kanał asystenci AI:** `/pilotaz` (program case study, 50% ceny) była jedyną stroną oferty bez wpisu w llms.txt; dopisana w sekcji „Co robimy”. Commit 8770065, produkcja https://fluxlab.pl/llms.txt z nowym wpisem po ok. 2 min, IndexNow 2 adresy (Yandex, Naver przyjęły).
+**Zostało otwarte:** w planie 2026-10-16/17 nic. Następny plan strateg pisze o 06:15.
+
+## 2026-10-17 05:45
+**Kanał:** Google i KSeF (poza planem: plan 2026-10-16/17 ma 0 otwartych zadań, nowy strateg o 06:15; `budzet` rytm przyspiesz, prognoza 55%).
+**Co zrobione:** /ksef-2027 (pozycja 8,1, 110 wyświetleń, 2 kliknięcia w 3 mies., widoczne zapytania „ksef 2027”, „ksef przesunięcie terminu 2027”) dostała tytuł „KSeF 2027: czy termin przesunięto? Lista kontrolna” i opis, który odpowiada wprost (projekt przesuwa kary, nie obowiązek) i prowadzi do listy kontrolnej; stan projektu sprawdzony 17.10 w źródłach zewnętrznych, zgodny z FAQ strony.
+**Ruch:** raport 05:44: doba 134 odsłony, 78 osób; źródła b2b-email 30 (piksel otwarć innej kampanii), www.facebook.com 6, m.facebook.com 4, mail 2, Google 2; narzędzia 4 uruchomienia (skan 4, audyt 1).
+**Dowód:** commit db469dd; `curl` z VPS https://fluxlab.pl/ksef-2027 z nowym `<title>`; IndexNow przyjęty (2 z 3, Naver 200); GSC 05:47 żądanie indeksowania przesłane (w dobie 9 z 10); build, SPOJNOSC OK, JAKOSC OK.
+**Dla Pawła:**
+**Zostało otwarte:** za ok. 7 dni porównać CTR /ksef-2027 (punkt odniesienia 2 ze 110, 1,8%).
+
+## Strategia dobowa 2026-10-17
+**Kanał:** strategia (Fable, 06:15 do 06:50).
+**Co zrobione:** plan `cykl/plan-ruchu.md` na 17.10 06:46 do 18.10 06:46, 23 zadania; stary plan w `cykl/.plan-ruchu-2026-10-16.bak`.
+**Ruch:** pomiar 06:15: ludzie 24 w dobie (26 dzień wcześniej), tydzień 173; źródła doby: bez odsyłacza 20, Google 2, Facebook 2, mail 1. GSC (dane do 14.10): 7 dni 12 kliknięć, 721 wyświetleń, poz. 15,7; 118 zindeksowanych, 85 nie. Outreach 30 dni: 252 maile, 23 sesje (1 z więcej niż jedną odsłoną), 0 odpowiedzi, 0 leadów; wejścia daje tylko segment biur z faktem DMARC (16 ze 119). Narzędzia 4 uruchomienia; `lead_*` 2 w 30 dni; chatgpt.com 4 sesje w 30 dni.
+**Decyzje:** Google 8 h (linki wewnętrzne, tytuł /ai-w-automatyzacji-firm, pierwszy ekran /ksef-2027, nowa krótka strona KSeF, żądania po północy, pierwszy pomiar raportu „Linki"); outreach 3 h jako ostatni test: 12 maili DMARC do domen partii 28, przy 0 wejściach z drugą odsłoną kanał do wyłączenia; narzędzia 2 h (/numer-ksef na telefonie, lejek płatnego audytu); asystenci AI 2 h (llms.txt do pełnego pokrycia); Facebook 1 h brief; klasyfikacja „bez odsyłacza" (139 ze 173 sesji tygodnia). Segmenty kancelarie, sklepy, dealerzy, agencje wyłączone (106 maili, 1 sesja). Nowe domeny biur nie są szukane (410 sprawdzonych 16.10, 0 adresów).
+**Dowód:** `cykl/plan-ruchu.md`, commit niżej.
+**Dla Pawła:** mail „FluxLab ruch, plan na 17.10" (lista punktów do decyzji w mailu).
+**Zostało otwarte:** Z1 o 07:46.
