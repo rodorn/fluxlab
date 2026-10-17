@@ -5781,3 +5781,13 @@ Wniosek: jedna odsłona, prawie zero interakcji, co czwarta sesja w nocy i płas
 >
 > Druga rzecz to KSeF: faktura dla firmy wystawiona w październiku podlega KSeF także u zwolnionego z VAT, ale do końca 2026 można ją wystawić poza KSeF, jeśli suma brutto faktur wystawionych w danym miesiącu nie przekracza 10 tys. zł. Przy jednej fakturze w październiku poniżej tej kwoty wystarczy zwykła faktura PDF lub papierowa. Opisaliśmy to krótko tu: https://fluxlab.pl/strefa-wiedzy/ksef-jdg-zwolniona-z-vat?utm_source=gofin
 **Zostało otwarte:** Z11 (17:46), Z22 (gdy GSC pokaże 15.10), Z18 po 00:10, Z19, Z20, Z23; wysyłka 24 maili do biur (Z3/Z8) w pn 19.10 od 9:00; komentarz Gofin 1560060 z 10:15 dalej czeka na Pawła. Gofin: następny do sprawdzenia od 1560146.
+
+<!-- WYSLANO 2026-10-17 11:07 -->
+
+## 2026-10-17 11:55
+**Kanał:** widoczność w asystentach AI (dane uporządkowane). Otwarte zadania planu są przypięte do późniejszych godzin: Z11 okno od 12:00, Z18 po 00:10, Z19, Z20, Z23 w nocy. Z22 sprawdzone o 11:45: GSC „4 godziny temu”, dane dzienne dla /e-doreczenia-integracja kończą się na 14.10, 15.10 dalej brak.
+**Co zrobione:** dwie strony o poczcie, do których prowadzi jedyny segment z wejściami (biura bez DMARC/SPF), miały widoczne FAQ, ale ani jednego bloku JSON-LD; dostały Article (z datą publikacji z gita) i FAQPage z istniejących pytań, bez zmian w tekście.
+**Ruch:** raport 11:50: doba 85 odsłon, 52 osoby; źródła b2b-email 30 (piksel otwarć innej kampanii), mail.google.com 4, m.facebook.com 3, www.facebook.com 2, mail 1; narzędzia 2 uruchomienia. pomiar-kanalow: sesje 17.10 do 11:43: 18; Zoho 24 h: 1 odpowiedź comparic (wątek „Współpraca reklamowa”, innej sesji), 0 odpowiedzi na outreach.
+**Dowód:** commit 10d9bfc, build OK, SPOJNOSC OK, JAKOSC OK; curl z VPS: https://fluxlab.pl/strefa-wiedzy/maile-trafiaja-do-spamu i https://fluxlab.pl/strefa-wiedzy/podszywanie-sie-pod-firmowy-email 200, w HTML po 1 Article i 1 FAQPage z 3 pytaniami; IndexNow 2 z 3. Pozostałe 6 stron strefy wiedzy bez FAQPage nie ma sekcji FAQ, więc nie ma czego oznaczać.
+**Dla Pawła:** bez nowych; dalej czekają komentarze Gofin 1560060 i 1560101 z wpisów 10:15 i 10:50.
+**Zostało otwarte:** Z11 (17:46), Z22 (gdy GSC pokaże 15.10), Z18 po 00:10, Z19, Z20, Z23; wysyłka 24 maili do biur (Z3/Z8) w pn 19.10 od 9:00.
