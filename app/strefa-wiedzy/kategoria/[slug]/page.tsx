@@ -88,7 +88,7 @@ export default async function CategoryPage({ params }: Props) {
                   {akapit}
                 </p>
               ))}
-              <div className="grid md:grid-cols-2 gap-4 mt-6">
+              <div className="sierota-md-2 grid md:grid-cols-2 gap-4 mt-6">
                 {category.articles.map((article) => (
                   <Link
                     key={article.href}

@@ -149,7 +149,7 @@ export default function AutomatycznePrzypisywanieLeadow() {
                 </TrackedCTA>
               </div>
               <p className="mt-6 text-sm text-gray-500 dark:text-gray-500">
-                Bezpłatna diagnoza w 24h · wstępna mapa pierwszego kroku ·
+                Bezpłatna diagnoza, odpowiedź zwykle tego samego dnia · wstępna mapa pierwszego kroku ·
                 szacowany ROI
               </p>
             </div>

@@ -8,12 +8,12 @@ import LiveDiagnosis from "@/components/LiveDiagnosis";
 export const metadata: Metadata = {
   title: "Kontakt | Fluxlab",
   description:
-    "Napisz, z czym potrzebujesz pomocy, strony WWW, automatyzacja, dane. Bezpłatna diagnoza, odpowiedź w 24h.",
+    "Napisz, z czym potrzebujesz pomocy, strony WWW, automatyzacja, dane. Bezpłatna diagnoza, odpowiedź zwykle tego samego dnia.",
   alternates: { canonical: "/kontakt" },
   openGraph: {
     title: "Kontakt | Fluxlab",
     description:
-      "Napisz, z czym potrzebujesz pomocy. Bezpłatna diagnoza, odpowiedź w 24h.",
+      "Napisz, z czym potrzebujesz pomocy. Bezpłatna diagnoza, odpowiedź zwykle tego samego dnia.",
     locale: "pl_PL",
     type: "website",
     images: ["/opengraph-image"],

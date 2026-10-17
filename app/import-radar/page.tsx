@@ -313,7 +313,7 @@ export default function ImportRadarPage() {
               heading="Zamów analizę opłacalności importu"
               intro="Wklej link do oferty albo podaj budżet i typ auta."
               submitLabel="Wyślij auto do analizy"
-              microCopy="Odpowiedź w 24h. Bez opłat."
+              microCopy="Odpowiedź zwykle tego samego dnia. Bez opłat."
             />
           </section>
         </div>

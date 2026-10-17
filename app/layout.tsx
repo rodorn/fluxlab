@@ -6,6 +6,7 @@ import GoogleAnalytics from "@/components/GoogleAnalytics";
 import LicznikWizyt from "@/components/LicznikWizyt";
 import ContactClickTracker from "@/components/ContactClickTracker";
 import ScrollProgress from "@/components/ScrollProgress";
+import Czat from "@/components/Czat";
 import ScrollToTop from "@/components/ScrollToTop";
 import "./globals.css";
 
@@ -84,7 +85,7 @@ export default function RootLayout({
                     value: "366862577",
                   },
                   url: "https://fluxlab.pl",
-                  logo: "https://fluxlab.pl/opengraph-image",
+                  logo: "https://fluxlab.pl/icon.svg",
                   image: "https://fluxlab.pl/opengraph-image",
                   description:
                     "Automatyzacja obsługi leadów, CRM i raportowania dla firm B2B. Leady trafiają do CRM, dostają handlowca, zadanie i raport bez ręcznej pracy.",
@@ -167,15 +168,6 @@ export default function RootLayout({
                   name: "Fluxlab",
                   publisher: { "@id": "https://fluxlab.pl/#organization" },
                   inLanguage: "pl-PL",
-                  potentialAction: {
-                    "@type": "SearchAction",
-                    target: {
-                      "@type": "EntryPoint",
-                      urlTemplate:
-                        "https://fluxlab.pl/strefa-wiedzy?q={search_term_string}",
-                    },
-                    "query-input": "required name=search_term_string",
-                  },
                 },
               ],
             }),
@@ -194,6 +186,7 @@ export default function RootLayout({
         <ScrollProgress />
         {children}
         <ScrollToTop />
+        <Czat />
         <SpeedInsights />
         <Analytics />
       </body>

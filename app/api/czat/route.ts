@@ -1,0 +1,128 @@
+import { NextResponse } from "next/server";
+
+import { PRODUCTS } from "@/lib/products";
+
+const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
+
+const RATE_LIMIT_WINDOW_MS = 60_000;
+const RATE_LIMIT_MAX = 10;
+const requestLog = new Map<string, number[]>();
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const hits = (requestLog.get(ip) ?? []).filter(
+    (t) => now - t < RATE_LIMIT_WINDOW_MS,
+  );
+  if (hits.length >= RATE_LIMIT_MAX) {
+    requestLog.set(ip, hits);
+    return true;
+  }
+  hits.push(now);
+  requestLog.set(ip, hits);
+  return false;
+}
+
+// Cennik prosto z katalogu, żeby czat nie podawał innych kwot niż strona.
+const KATALOG = PRODUCTS.map(
+  (p) => `- ${p.name}: ${p.price}. ${p.tagline} (https://fluxlab.pl${p.href})`,
+).join("\n");
+
+const INSTRUKCJE = `Jesteś asystentem na stronie fluxlab.pl. Odpowiadasz odwiedzającym na pytania o firmę i ofertę.
+
+O FIRMIE:
+- FluxLab robi strony internetowe, własny CRM i automatyzacje procesów dla firm. Działalność Pawła Iwanka, NIP 7123336008.
+- Kontakt: formularz na stronie (https://fluxlab.pl/#kontakt) albo pawel@fluxlab.pl. Odpowiadamy z ceną i terminem zwykle tego samego dnia, bez spotkań.
+- Strona powstaje w 2–3 tygodnie. Cena jest ustalana z góry, bez rozliczania godzin. Ceny netto, doliczamy 23% VAT.
+- Główne pakiety: landing do 5 podstron 4 500 zł, strona firmowa z CMS od 9 000 zł, sklep z integracją od 15 000 zł. Własny CRM: abonament 499 zł/mies. do 3 osób, potem 99 zł za osobę; pilotaż do 3 osób z wdrożeniem za 1 zł, miejsca ograniczone; wersja z dowolnymi integracjami 12 900 zł, z narzędziami AI 24 900 zł. Automatyzacja: jeden etap od 1 500 zł, cała ścieżka od 2 500 zł.
+- Darmowy audyt strony: https://fluxlab.pl/audyt-strony (wynik w minutę, bez rejestracji).
+
+KATALOG USŁUG:
+${KATALOG}
+
+ZASADY:
+- Pisz po polsku, krótko: 1–4 zdania. Do klienta na „ty”, o firmie „my”.
+- Używaj tylko faktów z tej instrukcji. Jeśli czegoś nie wiesz (termin konkretnego projektu, nietypowa integracja, rabat), powiedz, że to ustalimy przy wycenie, i zaproś do formularza.
+- Nie wymyślaj klientów, realizacji, opinii ani liczb. Nie podawaj nazw klientów.
+- Podawaj link do właściwej podstrony, gdy pasuje.
+- Nie zbierasz danych i nie wracasz do nikogo sam. Gdy ktoś chce wyceny, kieruj do formularza https://fluxlab.pl/#kontakt, gdzie odpisujemy z ceną i terminem.
+- Bez długich myślników, bez emoji, bez markdownu poza zwykłymi linkami.
+- Pytania niezwiązane z ofertą FluxLab zbywaj jednym zdaniem i wracaj do tematu.`;
+
+type Wiadomosc = { rola: "ja" | "bot"; tekst: string };
+
+export async function POST(req: Request) {
+  if (!OPENAI_API_KEY) {
+    return NextResponse.json({ error: "Brak klucza API" }, { status: 500 });
+  }
+
+  const ip =
+    req.headers.get("x-forwarded-for")?.split(",")[0].trim() || "unknown";
+  if (isRateLimited(ip)) {
+    return NextResponse.json(
+      { error: "Za dużo pytań naraz, odczekaj chwilę." },
+      { status: 429 },
+    );
+  }
+
+  let historia: Wiadomosc[];
+  try {
+    const body = await req.json();
+    historia = Array.isArray(body.historia) ? body.historia : [];
+  } catch {
+    return NextResponse.json({ error: "Nieprawidłowe dane" }, { status: 400 });
+  }
+
+  const input = historia
+    .filter((w) => typeof w?.tekst === "string" && w.tekst.trim())
+    .slice(-8)
+    .map((w) => ({
+      role: w.rola === "bot" ? "assistant" : "user",
+      content: w.tekst.slice(0, 600),
+    }));
+  if (!input.length || input[input.length - 1].role !== "user") {
+    return NextResponse.json({ error: "Brak pytania" }, { status: 400 });
+  }
+
+  try {
+    const response = await fetch("https://api.openai.com/v1/responses", {
+      method: "POST",
+      signal: AbortSignal.timeout(30_000),
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${OPENAI_API_KEY}`,
+      },
+      body: JSON.stringify({
+        model: "gpt-5.4-mini",
+        max_output_tokens: 600,
+        instructions: INSTRUKCJE,
+        input,
+      }),
+    });
+
+    if (!response.ok) {
+      console.error("OpenAI error:", await response.text());
+      return NextResponse.json(
+        { error: `OpenAI error: ${response.status}` },
+        { status: 502 },
+      );
+    }
+
+    const json = await response.json();
+    const tekst: string = (json.output ?? [])
+      .filter((o: { type: string }) => o.type === "message")
+      .flatMap(
+        (o: { content?: { type: string; text?: string }[] }) => o.content ?? [],
+      )
+      .filter((c: { type: string }) => c.type === "output_text")
+      .map((c: { text?: string }) => c.text ?? "")
+      .join("")
+      .trim();
+
+    if (!tekst) {
+      return NextResponse.json({ error: "Pusta odpowiedź" }, { status: 502 });
+    }
+    return NextResponse.json({ tekst });
+  } catch {
+    return NextResponse.json({ error: "Błąd przetwarzania" }, { status: 500 });
+  }
+}

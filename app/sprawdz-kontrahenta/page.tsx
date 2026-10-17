@@ -57,7 +57,7 @@ const pricing = [
     features: [
       "status VAT i numer konta w wykazie",
       "werdykt zielony, żółty albo czerwony",
-      "odpowiedź w 24h na maila",
+      "odpowiedź na maila zwykle tego samego dnia",
     ],
     featured: false,
   },

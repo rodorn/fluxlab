@@ -10,6 +10,31 @@ const inputClass =
   "w-full px-4 py-2.5 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-sm text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-colors disabled:opacity-50 disabled:cursor-not-allowed";
 
 
+type Kontakt = "email" | "phone" | "meet";
+
+const FORMY: { id: Kontakt; nazwa: string; opis: string }[] = [
+  { id: "email", nazwa: "Mailem", opis: "odpiszemy z ceną" },
+  { id: "phone", nazwa: "Telefon", opis: "oddzwonimy" },
+  { id: "meet", nazwa: "Google Meet", opis: "30 minut online" },
+];
+
+const GODZINY = ["9:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00"];
+
+// Najbliższe dni robocze od jutra, do wyboru terminu spotkania.
+function dniRobocze(ile: number) {
+  const dni: Date[] = [];
+  const d = new Date();
+  while (dni.length < ile) {
+    d.setDate(d.getDate() + 1);
+    if (d.getDay() !== 0 && d.getDay() !== 6) dni.push(new Date(d));
+  }
+  return dni;
+}
+
+function iso(d: Date) {
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+}
+
 interface Props {
   /** Identyfikator formularza w GA, np. "diagnosis_lp_leadow". */
   formId: string;
@@ -40,6 +65,16 @@ export default function LandingForm({
     referrer: "",
   }));
   const formStartedRef = useRef(false);
+  const [kontakt, setKontakt] = useState<Kontakt>("email");
+  const [dni, setDni] = useState<Date[]>([]);
+  const [dzien, setDzien] = useState("");
+  const [godzina, setGodzina] = useState("");
+
+  useEffect(() => {
+    const d = dniRobocze(6);
+    setDni(d);
+    setDzien(iso(d[0]));
+  }, []);
 
   useEffect(() => {
     setUtm(readUtm());
@@ -71,6 +106,10 @@ export default function LandingForm({
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (kontakt === "meet" && !godzina) {
+      setErrorMsg("Wybierz godzinę spotkania.");
+      return;
+    }
     setLoading(true);
     setErrorMsg(null);
     const form = e.currentTarget;
@@ -82,7 +121,15 @@ export default function LandingForm({
       problemScale: "nie-wiemy",
       message: (form.elements.namedItem("message") as HTMLTextAreaElement)
         .value,
-      contactPref: "email",
+      contactPref: kontakt,
+      phone:
+        kontakt === "phone"
+          ? (form.elements.namedItem("phone") as HTMLInputElement).value
+          : "",
+      termin:
+        kontakt === "meet"
+          ? `${dzien} ${godzina.padStart(5, "0")}`
+          : "",
       website:
         (form.elements.namedItem("website") as HTMLInputElement | null)
           ?.value ?? "",
@@ -223,6 +270,118 @@ export default function LandingForm({
           />
         </div>
 
+        <fieldset>
+          <legend className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
+            Jak mamy się odezwać?
+          </legend>
+          <div className="grid grid-cols-3 gap-2">
+            {FORMY.map((f) => (
+              <button
+                key={f.id}
+                type="button"
+                aria-pressed={kontakt === f.id}
+                onClick={() => {
+                  setKontakt(f.id);
+                  setErrorMsg(null);
+                }}
+                className={`rounded-lg border px-2 py-2.5 text-center transition-colors ${
+                  kontakt === f.id
+                    ? "border-accent bg-accent/10"
+                    : "border-gray-200 hover:border-accent/50 dark:border-gray-700"
+                }`}
+              >
+                <span className="block text-sm font-semibold text-gray-900 dark:text-white">
+                  {f.nazwa}
+                </span>
+                <span className="block text-xs text-gray-500 dark:text-gray-400">
+                  {f.opis}
+                </span>
+              </button>
+            ))}
+          </div>
+        </fieldset>
+
+        {kontakt === "phone" && (
+          <div className="scena-wjazd">
+            <label
+              htmlFor="phone"
+              className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5"
+            >
+              Numer telefonu <span className="text-accent">*</span>
+            </label>
+            <input
+              id="phone"
+              name="phone"
+              type="tel"
+              required
+              autoComplete="tel"
+              placeholder="np. 600 100 200"
+              pattern="[+0-9 ()-]{9,20}"
+              className={inputClass}
+            />
+          </div>
+        )}
+
+        {kontakt === "meet" && (
+          <div className="scena-wjazd space-y-3">
+            <div>
+              <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
+                Dzień
+              </p>
+              <div className="grid grid-cols-3 gap-2 sm:grid-cols-6">
+                {dni.map((d) => (
+                  <button
+                    key={iso(d)}
+                    type="button"
+                    aria-pressed={dzien === iso(d)}
+                    onClick={() => setDzien(iso(d))}
+                    className={`rounded-lg border px-2 py-2 text-center text-xs transition-colors ${
+                      dzien === iso(d)
+                        ? "border-accent bg-accent/10"
+                        : "border-gray-200 hover:border-accent/50 dark:border-gray-700"
+                    }`}
+                  >
+                    <span className="block font-semibold capitalize text-gray-900 dark:text-white">
+                      {d.toLocaleDateString("pl-PL", { weekday: "short" })}
+                    </span>
+                    <span className="block text-gray-500 dark:text-gray-400">
+                      {d.toLocaleDateString("pl-PL", { day: "numeric", month: "short" })}
+                    </span>
+                  </button>
+                ))}
+              </div>
+            </div>
+            <div>
+              <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
+                Godzina
+              </p>
+              <div className="grid grid-cols-4 gap-2 sm:grid-cols-8">
+                {GODZINY.map((g) => (
+                  <button
+                    key={g}
+                    type="button"
+                    aria-pressed={godzina === g}
+                    onClick={() => {
+                      setGodzina(g);
+                      setErrorMsg(null);
+                    }}
+                    className={`rounded-lg border py-2 text-center text-sm tabular-nums transition-colors ${
+                      godzina === g
+                        ? "border-accent bg-accent-solid text-white"
+                        : "border-gray-200 text-gray-900 hover:border-accent/50 dark:border-gray-700 dark:text-white"
+                    }`}
+                  >
+                    {g}
+                  </button>
+                ))}
+              </div>
+            </div>
+            <p className="text-xs text-gray-500 dark:text-gray-400">
+              Potwierdzimy termin zaproszeniem z linkiem do Meet.
+            </p>
+          </div>
+        )}
+
         <button
           type="submit"
           disabled={loading}
@@ -232,7 +391,7 @@ export default function LandingForm({
         </button>
 
         {errorMsg && (
-          <p className="text-center text-sm text-red-700 dark:text-red-400">{errorMsg}</p>
+          <p role="alert" className="text-center text-sm text-red-700 dark:text-red-400">{errorMsg}</p>
         )}
 
         <p className="text-center text-xs text-gray-600 dark:text-gray-400">

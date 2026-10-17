@@ -256,7 +256,7 @@ export default function Narzedzia() {
                   <p className="mt-1 mb-6 text-sm text-gray-600 dark:text-gray-400 max-w-2xl">
                     {GRUPA_INTRO_NARZEDZI[grupa]}
                   </p>
-                  <div className="grid md:grid-cols-3 gap-6">
+                  <div className="sierota-md-3 grid md:grid-cols-3 gap-6">
                     {wGrupie.map((tool) => (
                       <KafelekNarzedzia key={tool.href} tool={tool} />
                     ))}

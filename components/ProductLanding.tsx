@@ -255,7 +255,7 @@ export default function ProductLanding(p: ProductLandingProps) {
               <h2 className="h2-sekcji inline">Jak to działa</h2>
               <span className="ml-3 text-sm font-semibold text-accent group-open:hidden">Rozwiń</span>
             </summary>
-          <div className="mt-6 grid gap-6 md:grid-cols-2 mx-auto max-w-3xl">
+          <div className="sierota-md-2 mt-6 grid gap-6 md:grid-cols-2 mx-auto max-w-3xl">
             {p.checks.map((c) => (
               <div
                 key={c.title}

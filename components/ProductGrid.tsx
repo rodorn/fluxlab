@@ -42,15 +42,17 @@ export default function ProductGrid({
           sprawdzenia auta i nie widac, ze to zupelnie inny rodzaj pracy. */}
       {grupy.map(([grupa, pozycje]) => (
         <section key={grupa} className="mt-10">
-          <h3 className="text-lg font-bold text-gray-900 dark:text-white">
+          <h3 className="text-center text-lg font-bold text-gray-900 dark:text-white">
             {GROUP_LABEL[grupa]}
           </h3>
-          <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+          <p className="mt-1 text-center text-sm text-gray-600 dark:text-gray-400">
             {GROUP_INTRO[grupa]}
           </p>
-          <div className="mt-5 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-5 flex flex-wrap justify-center gap-6">
             {pozycje.map((p) => (
-              <ProductCard key={p.name} p={p} />
+              <div key={p.name} className="karta-w-rzedzie flex">
+                <ProductCard p={p} />
+              </div>
             ))}
           </div>
         </section>

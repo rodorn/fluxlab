@@ -66,20 +66,88 @@ async function wyslijPrzezSmtp(to: string, subject: string, text: string) {
 const FROM_PAWEL =
   process.env.RESEND_FROM_PAWEL ?? "Paweł, Fluxlab <pawel@fluxlab.pl>";
 
-const POTWIERDZENIE_TEXT = `Cześć,
+function potwierdzenie(pref: string, termin: string, telefon: string) {
+  const kontakt =
+    pref === "meet" && termin
+      ? `Prosisz o spotkanie na Google Meet ${termin}. Potwierdzimy termin zaproszeniem z linkiem do rozmowy, a jeśli ta godzina będzie zajęta, zaproponujemy najbliższą wolną.`
+      : pref === "phone" && telefon
+        ? `Prosisz o telefon pod numer ${telefon}. Zadzwonimy w godzinach pracy, zwykle tego samego dnia.`
+        : "Pracujemy i ustalamy wszystko mailowo, więc możesz po prostu odpisać na tę wiadomość.";
+  return `Cześć,
 
-dzięki za opis procesu. Przejrzymy zgłoszenie i wrócimy z informacją, czy widzimy potencjał na automatyzację oraz jaki byłby sensowny pierwszy krok, zwykle w ciągu 24h.
+dzięki za opis procesu. Przejrzymy zgłoszenie i wrócimy z informacją, czy widzimy potencjał na automatyzację oraz jaki byłby sensowny pierwszy krok, zwykle tego samego dnia.
 
 Jeśli widzimy dopasowanie, odpiszemy z konkretną propozycją zakresu i wyceną. Jeśli proces wygląda na zbyt mały albo nieopłacalny do automatyzacji na tym etapie, napiszemy to wprost, i uzasadnimy dlaczego.
 
-Pracujemy i ustalamy wszystko mailowo, więc możesz po prostu odpisać na tę wiadomość.
+${kontakt}
 
 Paweł
 Fluxlab, automatyzacja leadów, CRM i raportowania dla firm B2B
 fluxlab.pl
 `;
+}
+
+// Link "dodaj do Kalendarza Google" na 30 minut od terminu (czas warszawski),
+// z klientem jako gościem. Meet dokłada się przyciskiem w oknie wydarzenia.
+function linkKalendarza(termin: string, email: string, company: string) {
+  const m = /^(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2})$/.exec(termin);
+  if (!m) return "";
+  const [, r, mi, d, g, mn] = m;
+  const start = `${r}${mi}${d}T${g}${mn}00`;
+  const koniecMin = Number(g) * 60 + Number(mn) + 30;
+  const koniec = `${r}${mi}${d}T${String(Math.floor(koniecMin / 60)).padStart(2, "0")}${String(koniecMin % 60).padStart(2, "0")}00`;
+  const q = new URLSearchParams({
+    action: "TEMPLATE",
+    text: `FluxLab: rozmowa${company ? ` z ${company}` : ""}`,
+    dates: `${start}/${koniec}`,
+    ctz: "Europe/Warsaw",
+    add: email,
+    details: "Rozmowa o zgłoszeniu z formularza fluxlab.pl",
+  });
+  return `https://calendar.google.com/calendar/render?${q.toString()}`;
+}
+
+const RATE_LIMIT_WINDOW_MS = 60_000;
+const RATE_LIMIT_MAX = 5;
+const requestLog = new Map<string, number[]>();
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const hits = (requestLog.get(ip) ?? []).filter(
+    (t) => now - t < RATE_LIMIT_WINDOW_MS,
+  );
+  if (hits.length >= RATE_LIMIT_MAX) {
+    requestLog.set(ip, hits);
+    return true;
+  }
+  hits.push(now);
+  requestLog.set(ip, hits);
+  return false;
+}
+
+function originDozwolony(origin: string): boolean {
+  return (
+    origin === "https://fluxlab.pl" ||
+    origin === "https://www.fluxlab.pl" ||
+    /^http:\/\/localhost(:\d+)?$/.test(origin)
+  );
+}
 
 export async function POST(req: Request) {
+  const origin = req.headers.get("origin");
+  if (origin && !originDozwolony(origin)) {
+    return NextResponse.json({ error: "Niedozwolone źródło żądania." }, { status: 403 });
+  }
+
+  const ip =
+    req.headers.get("x-forwarded-for")?.split(",")[0].trim() || "unknown";
+  if (isRateLimited(ip)) {
+    return NextResponse.json(
+      { error: "Za dużo zapytań, odczekaj chwilę i spróbuj ponownie." },
+      { status: 429 },
+    );
+  }
+
   let body: Record<string, unknown>;
   try {
     body = await req.json();
@@ -98,6 +166,8 @@ export async function POST(req: Request) {
   const problemScale = str(body.problemScale, MAX_VALUE);
   const message = str(body.message, MAX_MESSAGE);
   const contactPref = str(body.contactPref, MAX_VALUE) || "email";
+  const telefon = str(body.phone, 40);
+  const termin = str(body.termin, 20);
 
   if (!email || !problemType || !problemScale) {
     return NextResponse.json(
@@ -132,7 +202,13 @@ export async function POST(req: Request) {
       rodzaj_problemu: problemType,
       skala: problemScale,
       preferowany_kontakt: contactPref,
-      opis: message,
+      opis: [
+        telefon && `Telefon: ${telefon}`,
+        termin && `Termin Meet: ${termin}`,
+        message,
+      ]
+        .filter(Boolean)
+        .join("\n"),
       ...utm,
     }),
   );
@@ -152,6 +228,9 @@ export async function POST(req: Request) {
     `Co chce usprawnić: ${problemTypeLabel}`,
     `Skala: ${problemScaleLabel}`,
     `Preferowany kontakt: ${contactPrefLabel}`,
+    telefon ? `Telefon: ${telefon}` : "",
+    termin ? `Termin Meet: ${termin}` : "",
+    termin ? `Dodaj do kalendarza: ${linkKalendarza(termin, email, company)}` : "",
     "",
     "Opis:",
     message || "(brak)",
@@ -167,7 +246,13 @@ export async function POST(req: Request) {
     from: FROM_FORMULARZ,
     to: "iwanekpawel55@gmail.com",
     replyTo: email,
-    subject: `Nowa diagnoza: ${problemTypeLabel}${subjectCompany}`,
+    subject: `${
+      contactPref === "meet" && termin
+        ? `MEET ${termin}: `
+        : contactPref === "phone" && telefon
+          ? `ZADZWOŃ ${telefon}: `
+          : ""
+    }Nowa diagnoza: ${problemTypeLabel}${subjectCompany}`,
     text,
   });
 
@@ -188,7 +273,7 @@ export async function POST(req: Request) {
       from: FROM_PAWEL,
       to: email,
       subject: "Dostaliśmy zgłoszenie, Fluxlab",
-      text: POTWIERDZENIE_TEXT,
+      text: potwierdzenie(contactPref, termin, telefon),
     });
 
     if (replyError) {
@@ -203,7 +288,7 @@ export async function POST(req: Request) {
       await wyslijPrzezSmtp(
         email,
         "Dostaliśmy zgłoszenie, Fluxlab",
-        POTWIERDZENIE_TEXT,
+        potwierdzenie(contactPref, termin, telefon),
       );
       return NextResponse.json({ ok: true });
     } catch (e2) {

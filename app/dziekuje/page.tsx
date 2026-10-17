@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Dziękujemy, zgłoszenie odebrane | Fluxlab",
   description:
-    "Twoje zgłoszenie do diagnozy procesu trafiło do nas. Odpowiedź w ciągu 24h.",
+    "Twoje zgłoszenie do diagnozy procesu trafiło do nas. Odpowiedź zwykle tego samego dnia.",
   robots: {
     index: false,
     follow: false,
@@ -47,7 +47,7 @@ export default function Dziekuje() {
               </h1>
 
               <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
-                Odezwiemy się z odpowiedzią w ciągu 24h. Jeśli widzimy potencjał na
+                Odezwiemy się z odpowiedzią zwykle tego samego dnia. Jeśli widzimy potencjał na
                 automatyzację, odpiszemy z konkretnym zakresem i wyceną. Jeśli
                 nie, napiszemy wprost, dlaczego nie warto tego automatyzować na
                 tym etapie. Wszystko ustalamy mailowo, więc nie musisz nigdzie
@@ -59,7 +59,7 @@ export default function Dziekuje() {
                   <strong className="text-gray-900 dark:text-white">
                     Tymczasem:
                   </strong>{" "}
-                  jeśli chcesz przyspieszyć diagnozę, odpowiedz na ten mail
+                  jeśli chcesz przyspieszyć diagnozę, odpisz na mail z potwierdzeniem
                   trzema rzeczami: skąd dziś wpadają leady, gdzie trafiają i co
                   zespół robi z nimi ręcznie. To zwykle wystarczy, żeby pokazać,
                   od którego kroku zacząć.
@@ -109,7 +109,7 @@ export default function Dziekuje() {
               </div>
 
               <p className="mt-8 text-xs text-gray-600 dark:text-gray-400 text-center">
-                Brak maila od nas po 24h? Sprawdź spam albo napisz wprost na{" "}
+                Brak maila od nas do końca dnia? Sprawdź spam albo napisz wprost na{" "}
                 <a
                   href="mailto:pawel@fluxlab.pl"
                   className="text-accent hover:underline"

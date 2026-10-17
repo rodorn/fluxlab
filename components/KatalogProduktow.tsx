@@ -269,17 +269,19 @@ export default function KatalogProduktow() {
                 pasuje.some((p) => p.category === f && p.grupa === g),
               ).map((g) => (
                 <section key={g} className="mt-10">
-                  <h3 className="text-lg font-bold text-gray-900 dark:text-white">
+                  <h3 className="text-center text-lg font-bold text-gray-900 dark:text-white">
                     {GROUP_LABEL[g]}
                   </h3>
-                  <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                  <p className="mt-1 text-center text-sm text-gray-600 dark:text-gray-400">
                     {GROUP_INTRO[g]}
                   </p>
-                  <div className="mt-5 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                  <div className="mt-5 flex flex-wrap justify-center gap-6">
                     {pasuje
                       .filter((p) => p.category === f && p.grupa === g)
                       .map((p) => (
-                        <ProductCard key={p.name} p={p} krotko />
+                        <div key={p.name} className="karta-w-rzedzie flex">
+                          <ProductCard p={p} krotko />
+                        </div>
                       ))}
                   </div>
                 </section>

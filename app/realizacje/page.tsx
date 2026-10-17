@@ -226,7 +226,7 @@ export default function RealizacjePage() {
                   </p>
                 </div>
 
-                <div className="grid gap-5 sm:grid-cols-2">
+                <div className="sierota-sm-2 grid gap-5 sm:grid-cols-2">
                   {group.items.map((item) => (
                     <div
                       key={item.repo}

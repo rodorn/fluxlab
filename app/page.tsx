@@ -1,8 +1,12 @@
 import Link from "next/link";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import KartaPoswiata from "@/components/KartaPoswiata";
 import LandingForm from "@/components/LandingForm";
+import PasekAkcji from "@/components/PasekAkcji";
+import PoleAudytu from "@/components/PoleAudytu";
 import RevealOnScroll from "@/components/RevealOnScroll";
+import ScenaLeada from "@/components/ScenaLeada";
 import { nazwaFilaru } from "@/lib/filary";
 
 // Oferta jak w szkoleniu produktowym (16.10.2026): projekty z ceną z góry,
@@ -86,11 +90,11 @@ export default function Home() {
             Oferta
           </h2>
           <div className="grid gap-5 md:grid-cols-3">
-            {OFERTA.map((o) => (
-              <Link
-                key={o.href}
+            {OFERTA.map((o, i) => (
+              <RevealOnScroll key={o.href} delay={(i + 1) as 1 | 2 | 3} className="flex">
+              <KartaPoswiata
                 href={o.href}
-                className={`group flex flex-col rounded-2xl border p-7 transition-colors hover:border-accent ${
+                className={`group flex w-full flex-col rounded-2xl border p-7 transition-all duration-300 hover:-translate-y-1 hover:border-accent hover:shadow-xl hover:shadow-accent/10 ${
                   o.wyrozniona
                     ? "border-accent/60 bg-accent/5"
                     : "border-gray-200 dark:border-white/10"
@@ -114,7 +118,8 @@ export default function Home() {
                 <span className="mt-auto pt-6 text-sm font-semibold text-accent group-hover:underline">
                   {o.cta} →
                 </span>
-              </Link>
+              </KartaPoswiata>
+              </RevealOnScroll>
             ))}
           </div>
           <p className="mt-6 text-center text-sm text-gray-600 dark:text-white/60">
@@ -137,9 +142,33 @@ export default function Home() {
           </p>
         </section>
 
+        <section className="border-t border-gray-200 dark:border-white/10 py-20 lg:py-24">
+          <div className="container-wide">
+            <RevealOnScroll className="text-center">
+              <h2 className="text-balance text-4xl font-bold tracking-tighter lg:text-5xl">
+                Sprawdź swoją stronę w minutę
+              </h2>
+            </RevealOnScroll>
+            <RevealOnScroll delay={1}>
+              <PoleAudytu />
+            </RevealOnScroll>
+          </div>
+        </section>
+
         <section className="border-t border-gray-200 dark:border-white/10 py-20 lg:py-28">
           <div className="container-wide">
-            <ol className="mx-auto grid max-w-5xl gap-4 md:grid-cols-3">
+            <RevealOnScroll className="mb-12 text-center">
+              <h2 className="text-balance text-4xl font-bold tracking-tighter lg:text-5xl">
+                Zgłoszenie trafia do handlowca, nie do skrzynki
+              </h2>
+              <p className="mx-auto mt-4 max-w-xl text-gray-600 dark:text-white/65">
+                Wpisz imię i wyślij próbne zgłoszenie.
+              </p>
+            </RevealOnScroll>
+            <RevealOnScroll delay={1}>
+              <ScenaLeada />
+            </RevealOnScroll>
+            <ol className="mx-auto mt-20 grid max-w-5xl gap-4 md:grid-cols-3">
               {KROKI.map(([tytul, opis], i) => (
                 <RevealOnScroll
                   as="li"
@@ -176,6 +205,7 @@ export default function Home() {
           </div>
         </section>
       </main>
+      <PasekAkcji />
       <Footer />
     </>
   );
