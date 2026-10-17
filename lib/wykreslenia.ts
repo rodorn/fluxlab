@@ -40,14 +40,14 @@ async function ileWDniu(dzien: string): Promise<number | null> {
   try {
     const rc = await fetch(BAZA + "SearchCount?" + parametry(dzien, dzien, 1), {
       headers: NAGLOWKI,
-      signal: AbortSignal.timeout(15000),
+      signal: AbortSignal.timeout(8000),
     });
     if (!rc.ok) return null;
     const stron = Number(await rc.json());
     if (!stron || stron < 1) return 0;
     const ro = await fetch(BAZA + "Search?" + parametry(dzien, dzien, stron), {
       headers: NAGLOWKI,
-      signal: AbortSignal.timeout(15000),
+      signal: AbortSignal.timeout(8000),
     });
     if (!ro.ok) return null;
     const d = await ro.json();
@@ -58,14 +58,21 @@ async function ileWDniu(dzien: string): Promise<number | null> {
 }
 
 export async function wykreslenia() {
-  const dni: Dzien[] = [];
+  const robocze: Date[] = [];
   const dzis = new Date();
-  for (let i = 0; i < 14 && dni.length < 7; i++) {
+  for (let i = 0; i < 14 && robocze.length < 7; i++) {
     const d = new Date(dzis);
     d.setDate(d.getDate() - i);
     if (d.getDay() === 0 || d.getDay() === 6) continue;
-    dni.push({ data: d.toISOString().slice(0, 10), ile: await ileWDniu(nastr(d)) });
+    robocze.push(d);
   }
+  // Dni rownolegle: po kolei przy wolnym MSiG build przekraczal 60 s.
+  const dni: Dzien[] = await Promise.all(
+    robocze.map(async (d) => ({
+      data: d.toISOString().slice(0, 10),
+      ile: await ileWDniu(nastr(d)),
+    })),
+  );
   const znane = dni.filter((x) => x.ile !== null && x.ile > 0);
   const suma = znane.reduce((a, x) => a + (x.ile || 0), 0);
   const srednia = znane.length ? Math.round(suma / znane.length) : null;

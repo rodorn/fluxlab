@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
@@ -50,6 +51,12 @@ const KROKI = [
   ["Piszesz, czego potrzebujesz", "Dwa zdania w formularzu albo mail."],
   ["Dostajesz cenę i termin", "Zwykle tego samego dnia, bez spotkań."],
   ["Strona działa po 2–3 tygodniach", "Płacisz za efekt, nie za godziny."],
+];
+
+const WYNIKI = [
+  ["12 dni", "od startu prac do publikacji, przy terminie 5 tygodni"],
+  ["97/100", "w audycie technicznym, stara strona miała 45"],
+  ["6,4×", "mniej danych do pobrania niż na starej stronie"],
 ];
 
 export default function Home() {
@@ -145,26 +152,48 @@ export default function Home() {
           </p>
         </section>
 
-        <section className="border-t border-gray-200 dark:border-white/10 py-14">
-          <div className="container-wide grid gap-8 md:grid-cols-2 md:items-center">
-            <div>
+        <section className="border-t border-gray-200 dark:border-white/10 py-16">
+          <div className="container-wide">
+            <div className="text-center">
               <p className="section-label mb-3">Ostatnia realizacja</p>
-              <h2 className="text-2xl font-bold lg:text-3xl">
+              <h2 className="text-balance text-3xl font-bold lg:text-4xl">
                 Nowa strona pośrednika kredytowego w 12 dni
               </h2>
-              <p className="mt-3 text-gray-600 dark:text-white/70">
-                Stara strona miała 45 punktów w audycie technicznym i ładowała
-                się na telefonie 11 sekund. Nowa ma 97 punktów i waży 6,4 raza
-                mniej. Oddaliśmy ją 12 dni od startu prac, przy terminie 5 tygodni.
-              </p>
-              <Link
-                href="/realizacje"
-                className="mt-4 inline-block text-sm font-semibold text-accent hover:underline"
-              >
-                Zobacz realizacje →
-              </Link>
             </div>
-            <ol className="grid gap-4">
+            <Link
+              href="/realizacje"
+              className="group mx-auto mt-10 block max-w-5xl overflow-hidden rounded-2xl border border-gray-200 dark:border-white/10 shadow-xl shadow-black/5 transition-colors hover:border-accent"
+            >
+              <div className="flex items-center gap-1.5 border-b border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-white/5 px-4 py-2.5">
+                <span className="h-2.5 w-2.5 rounded-full bg-gray-300 dark:bg-white/20" />
+                <span className="h-2.5 w-2.5 rounded-full bg-gray-300 dark:bg-white/20" />
+                <span className="h-2.5 w-2.5 rounded-full bg-gray-300 dark:bg-white/20" />
+                <span className="ml-3 text-xs text-gray-500 dark:text-white/50">
+                  finreal.pl
+                </span>
+              </div>
+              <Image
+                src="/photos/realizacja-finreal.webp"
+                alt="Strona główna finreal.pl zrobiona przez FluxLab"
+                width={1440}
+                height={675}
+                sizes="(min-width: 1024px) 1024px, 100vw"
+                className="h-auto w-full transition-transform duration-500 group-hover:scale-[1.01]"
+              />
+            </Link>
+            <dl className="mx-auto mt-10 grid max-w-4xl grid-cols-1 gap-8 text-center sm:grid-cols-3">
+              {WYNIKI.map(([liczba, opis]) => (
+                <div key={liczba}>
+                  <dt className="text-4xl font-bold tracking-tight text-accent lg:text-5xl">
+                    {liczba}
+                  </dt>
+                  <dd className="mt-2 text-sm text-gray-600 dark:text-white/65">
+                    {opis}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+            <ol className="mx-auto mt-14 grid max-w-5xl gap-4 md:grid-cols-3">
               {KROKI.map(([tytul, opis], i) => (
                 <li
                   key={tytul}
