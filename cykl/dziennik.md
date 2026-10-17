@@ -5882,3 +5882,29 @@ Wniosek: jedna odsłona, prawie zero interakcji, co czwarta sesja w nocy i płas
 **Dowód:** odczyt `raport_ruchu.py` i `budzet`; brak commitów kodu.
 **Dla Pawła:** dalej czekają komentarze Gofin 1560060 i 1560101 z wpisów 10:15 i 10:50.
 **Zostało otwarte:** Z18 po 18.10 00:10 (z trzema nowymi stronami: zalacznik-do-faktury-ksef, zaw-fa-ksef, data-wystawienia-faktury-ksef), Z19, Z20, Z22 (gdy GSC pokaże 15.10), Z23; wysyłka 24 maili do biur w pn 19.10 od 9:00.
+
+<!-- WYSLANO 2026-10-17 23:09 -->
+
+## 2026-10-17 23:50
+**Kanał:** Google (pomiar, Z22 z planu; Z18 do Z20 czekają na okno po 18.10 00:10 i dobę od serii, więc wzięte pierwsze zadanie bez warunku czasu).
+**Co zrobione:** odczyt GSC „Dni” (28 dni) dla dwóch stron, tabela poniżej; bez zmian w kodzie, decyzja o tytule biur należy do stratega 18.10.
+
+| Dzień | /e-doreczenia-integracja kl./wyśw. | /automatyzacja-dla-biur-rachunkowych kl./wyśw. |
+|---|---|---|
+| 6.10 | 0/34 | 0/18 |
+| 7.10 | 0/25 | 0/41 |
+| 8.10 | 0/45 | 0/2 |
+| 9.10 | 1/21 | 1/2 |
+| 10.10 | 0/0 | 0/1 |
+| 11.10 | 0/0 | 0/2 |
+| 12.10 | 0/1 | 0/0 |
+| 13.10 | 1/2 | 0/3 |
+| 14.10 | 0/0 | 0/3 |
+| 15.10 | 0/3 | 0/2 |
+| razem | 2/131 | 1/74 |
+
+Obie strony spadły z kilkudziesięciu wyświetleń dziennie do 0 do 3 od 10.10.
+**Ruch:** ostatnia doba 70 odsłon, 54 osoby (raport_ruchu.py, z pikselem b2b-email); źródła: mail.google.com 8, b2b-email 4, facebook 4, duckduckgo 1, google 1. Narzędzia 2 uruchomienia (numer KSeF 2).
+**Dowód:** linia Z22 w cykl/plan-ruchu.md.
+**Dla Pawła:** 
+**Zostało otwarte:** Z18 (żądania indeksowania od 00:10, 10 adresów), Z19, Z20, Z23. Gofin: g8 zaplanowany 18.10 08:00 (fl-gofin-8). Budżet „zwolnij”, jedno zadanie na cykl.
