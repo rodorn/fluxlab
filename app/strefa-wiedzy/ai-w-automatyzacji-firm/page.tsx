@@ -7,13 +7,13 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 
 export const metadata: Metadata = {
-  title: "AI w automatyzacji firm, praktyczne zastosowania | Fluxlab",
+  title: "Automatyzacja AI w firmie: gdzie działa, gdzie nie | Fluxlab",
   description:
-    "Jak wykorzystać AI w automatyzacji firm: klasyfikacja zapytań, streszczenia, analiza treści, wsparcie obsługi i sprzedaży. Bez marketingowej mgły.",
+    "Automatyzacja AI w firmie: model sortuje zapytania i streszcza dokumenty, a człowiek zatwierdza ryzykowne decyzje. Zobacz, jak wdrażamy AI w procesach.",
   openGraph: {
-    title: "AI w automatyzacji firm, praktyczne zastosowania | Fluxlab",
+    title: "Automatyzacja AI w firmie: gdzie działa, gdzie nie | Fluxlab",
     description:
-      "Jak wykorzystać AI w automatyzacji firm: klasyfikacja zapytań, streszczenia, analiza treści, wsparcie obsługi i sprzedaży. Bez marketingowej mgły.",
+      "Automatyzacja AI w firmie: model sortuje zapytania i streszcza dokumenty, a człowiek zatwierdza ryzykowne decyzje. Zobacz, jak wdrażamy AI w procesach.",
     locale: "pl_PL",
     type: "article",
     images: [
@@ -52,9 +52,9 @@ export default function AiWAutomatyzacjiFirmPage() {
               <Link href="/automatyzacja-ai" className="text-accent hover:underline">
                 Automatyzacja AI dla firm
               </Link>{" "}
-              ma sens, gdy przyspiesza konkretny proces i nie obniża jakości.
-              Najlepiej działa tam, gdzie trzeba zrozumieć dużo wiadomości albo
-              dokumentów.
+              to oddanie modelowi AI czytania i sortowania wiadomości oraz
+              dokumentów. Ma sens, gdy przyspiesza konkretny proces i nie obniża
+              jakości.
             </p>
 
             <h2 className="mt-12 mb-4 h2-sekcji">
@@ -108,7 +108,7 @@ export default function AiWAutomatyzacjiFirmPage() {
             "@type": "Article",
             headline: "AI w automatyzacji firm",
             description:
-              "Jak wykorzystać AI w automatyzacji firm: klasyfikacja zapytań, streszczenia, analiza treści, wsparcie obsługi i sprzedaży. Bez marketingowej mgły.",
+              "Automatyzacja AI w firmie: model sortuje zapytania i streszcza dokumenty, a człowiek zatwierdza ryzykowne decyzje. Zobacz, jak wdrażamy AI w procesach.",
             datePublished: "2026-03-30",
             author: {
               "@type": "Organization",
