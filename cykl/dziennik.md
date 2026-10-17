@@ -5815,3 +5815,12 @@ Wniosek: jedna odsłona, prawie zero interakcji, co czwarta sesja w nocy i płas
 **Dowód:** odczyt `raport_ruchu.py` i `budzet`; brak commitów kodu.
 **Dla Pawła:** dalej czekają komentarze Gofin 1560060 i 1560101 z wpisów 10:15 i 10:50.
 **Zostało otwarte:** Z11 (17:46), Z22 (04:46, gdy GSC pokaże 15.10), Z18 po 00:10, Z19, Z20, Z23; wysyłka 24 maili do biur (Z3/Z8) w pn 19.10 od 9:00. Budżet sprawdzić ponownie ok. 17:45.
+<!-- WYSLANO 2026-10-17 15:08 -->
+
+## 2026-10-17 15:45
+**Kanał:** brak (pomiar). Wykonane zadanie Z11 planu (pomiar wieczorny) przed godziną docelową 17:46, bo było pierwsze otwarte i jest lekkie.
+**Co zrobione:** pomiar od 12:00 wpisany jako dowód Z11; nic nie poszło w świat, bo `budzet` o 15:43 daje „wstrzymaj” (prognoza 133%, nowy cykl: NIE, przerwa 180 min), a pozostałe zadania mają okna nocne (Z18 po 00:10, Z19, Z20, Z22, Z23).
+**Ruch:** od 12:00 ludzie 6 (wszyscy bez odsyłacza, po 1 odsłonie: /kalkulator-podatkowy ×2, trzy artykuły strefy wiedzy, /polityka-prywatnosci), pary 4, piksel b2b-email 2; zdarzenia i lead_* 0. Doba po odsiewie: 29 ludzi, 13 par; bez odsyłacza 25, mail 2, Facebook 2, DuckDuckGo 1, Google 1. utm ksiegowe dziś 0, Resend 24 h 0, Zoho 0 odpowiedzi na outreach.
+**Dowód:** linia Z11 w `cykl/plan-ruchu.md`; odczyt `cykl/pomiar-kanalow.py` 15:43.
+**Dla Pawła:** dalej czekają komentarze Gofin 1560060 i 1560101 z wpisów 10:15 i 10:50.
+**Zostało otwarte:** Z18 po 18.10 00:10, Z19, Z20, Z22 (gdy GSC pokaże 15.10), Z23; wysyłka 24 maili do biur w pn 19.10 od 9:00. Budżet sprawdzić ponownie ok. 18:45.
