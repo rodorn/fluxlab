@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
 import Znak from "./Znak";
+import Wyszukiwarka from "./Wyszukiwarka";
 import { SEKCJE, type Sekcja } from "@/lib/sekcje";
 
 const sekcja = (slug: string): Sekcja => SEKCJE.find((x) => x.slug === slug)!;
@@ -22,6 +23,13 @@ const LINK_PODMENU =
   "block rounded-md px-2 py-1 text-[13px] leading-snug text-gray-600 hover:bg-gray-50 hover:text-accent dark:text-white/65 dark:hover:bg-white/5";
 const NAGLOWEK_PODMENU =
   "block px-2 pb-1 text-sm font-semibold text-gray-900 hover:text-accent dark:text-white";
+
+const IKONA_LUPY = (
+  <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+    <circle cx="9" cy="9" r="6" stroke="currentColor" strokeWidth="1.7" />
+    <path d="M14 14l3.5 3.5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+  </svg>
+);
 
 function Strzalka({ otwarte }: { otwarte: boolean }) {
   return (
@@ -48,6 +56,7 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menu, setMenu] = useState<string | null>(null);
   const [mobGrupa, setMobGrupa] = useState<string | null>(null);
+  const [szukaj, setSzukaj] = useState(false);
   const przyciski = useRef<Record<string, HTMLButtonElement | null>>({});
 
   useEffect(() => {
@@ -55,6 +64,23 @@ export default function Header() {
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
+        e.preventDefault();
+        setSzukaj((s) => !s);
+        return;
+      }
+      if (e.key !== "/" || e.ctrlKey || e.metaKey || e.altKey) return;
+      const t = e.target as HTMLElement | null;
+      if (t?.closest("input, textarea, select, [contenteditable]")) return;
+      e.preventDefault();
+      setSzukaj(true);
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
   }, []);
 
   useEffect(() => {
@@ -241,6 +267,16 @@ export default function Header() {
 
         {/* Right */}
         <div className="hidden lg:flex items-center gap-3 shrink-0">
+          <button
+            type="button"
+            onClick={() => setSzukaj(true)}
+            aria-label="Szukaj na stronie (Ctrl K)"
+            aria-haspopup="dialog"
+            className="flex items-center gap-2 rounded-lg border border-gray-200 px-2.5 py-1.5 text-gray-500 transition-colors hover:text-gray-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent dark:border-white/10 dark:text-gray-400 dark:hover:text-white"
+          >
+            {IKONA_LUPY}
+            <kbd className="text-[11px] font-sans">Ctrl K</kbd>
+          </button>
           <ThemeToggle />
           <Link href="/kontakt" className="btn-primary text-sm">
             Zamów wycenę
@@ -249,6 +285,15 @@ export default function Header() {
 
         {/* Mobile */}
         <div className="lg:hidden flex items-center gap-1">
+          <button
+            type="button"
+            onClick={() => setSzukaj(true)}
+            aria-label="Szukaj na stronie"
+            aria-haspopup="dialog"
+            className="p-2 text-gray-700 dark:text-gray-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-lg"
+          >
+            {IKONA_LUPY}
+          </button>
           <ThemeToggle />
           <button
             type="button"
@@ -371,6 +416,7 @@ export default function Header() {
           </nav>
         </div>
       )}
+      <Wyszukiwarka otwarte={szukaj} onZamknij={() => setSzukaj(false)} />
     </header>
   );
 }

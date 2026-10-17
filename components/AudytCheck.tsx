@@ -382,6 +382,16 @@ export default function AudytCheck() {
       }
       setWynik(dane);
       setStan("gotowe");
+      try {
+        localStorage.setItem(
+          "fluxlab_ostatni_audyt",
+          JSON.stringify({
+            domena: dane.domena ?? cel,
+            kiedy: new Date().toISOString(),
+            ileProblemow: Array.isArray(dane.ustalenia) ? dane.ustalenia.length : 0,
+          }),
+        );
+      } catch {}
       zglosZdarzenie(
         `audyt_wynik_${dane.punkty >= 75 ? "dobry" : dane.punkty >= 45 ? "sredni" : "slaby"}`,
       );

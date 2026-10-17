@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { zglosZdarzenie } from "@/lib/zdarzenie";
+import { kodujWycene } from "@/lib/wycenaPdf";
 
 type Rodzaj = {
   id: string;
@@ -86,6 +87,11 @@ export default function KonfiguratorStrony() {
 
   const notka = (o: Opcja) =>
     o.wCenie.includes(rodzajId) ? "w cenie" : "wycenimy";
+
+  const pobierzPdf = () => {
+    const d = kodujWycene({ t: "s", r: rodzajId, o: wybrane });
+    window.open(`/wycena?d=${d}`, "_blank", "noopener");
+  };
 
   const wyslij = () => {
     zglosZdarzenie("konfigurator_strony");
@@ -221,13 +227,14 @@ export default function KonfiguratorStrony() {
           <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
             Termin: {rodzaj.termin}. Hosting w cenie wdrożenia.
           </p>
-          <button
-            type="button"
-            onClick={wyslij}
-            className="btn-primary mt-5"
-          >
-            Wyślij tę konfigurację
-          </button>
+          <div className="mt-5 flex flex-wrap justify-center gap-3">
+            <button type="button" onClick={wyslij} className="btn-primary">
+              Wyślij tę konfigurację
+            </button>
+            <button type="button" onClick={pobierzPdf} className="btn-secondary">
+              Pobierz wycenę PDF
+            </button>
+          </div>
         </div>
       </div>
     </section>

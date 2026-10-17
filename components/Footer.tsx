@@ -3,6 +3,7 @@ import Link from "next/link";
 import { SEKCJE, type Sekcja } from "@/lib/sekcje";
 import { categories } from "@/lib/categories";
 import Znak from "./Znak";
+import StatusOnline from "./StatusOnline";
 
 const sekcja = (slug: string): Sekcja => SEKCJE.find((x) => x.slug === slug)!;
 
@@ -135,6 +136,7 @@ export default function Footer() {
             </a>
           </div>
         </div>
+        <StatusOnline />
         <p className="mt-4 text-xs text-gray-600 dark:text-gray-400">
           © {new Date().getFullYear()} Fluxlab. Wszelkie prawa zastrzeżone.
         </p>

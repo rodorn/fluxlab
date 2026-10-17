@@ -10,6 +10,8 @@ const inputClass =
   "w-full px-4 py-2.5 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-sm text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-colors disabled:opacity-50 disabled:cursor-not-allowed";
 
 
+const SZKIC_KLUCZ = "fluxlab_szkic";
+
 type Kontakt = "email" | "phone" | "meet";
 
 const FORMY: { id: Kontakt; nazwa: string; opis: string }[] = [
@@ -80,6 +82,56 @@ export default function LandingForm({
   useEffect(() => {
     setUtm(readUtm());
   }, []);
+
+  // Szkic: email, firma i treść wiadomości zostają w przeglądarce do wysyłki.
+  const formRef = useRef<HTMLFormElement>(null);
+  const szkicTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [szkicOdtworzony, setSzkicOdtworzony] = useState(false);
+
+  useEffect(() => {
+    const form = formRef.current;
+    if (!form) return;
+    try {
+      const raw = localStorage.getItem(SZKIC_KLUCZ);
+      if (!raw) return;
+      const szkic = JSON.parse(raw) as Record<string, string>;
+      let odtworzono = false;
+      for (const nazwa of ["email", "company", "message"]) {
+        const pole = form.elements.namedItem(nazwa) as
+          | HTMLInputElement
+          | HTMLTextAreaElement
+          | null;
+        if (pole && !pole.value && typeof szkic[nazwa] === "string" && szkic[nazwa]) {
+          pole.value = szkic[nazwa];
+          odtworzono = true;
+        }
+      }
+      if (odtworzono) setSzkicOdtworzony(true);
+    } catch {}
+    return () => {
+      if (szkicTimer.current) clearTimeout(szkicTimer.current);
+    };
+  }, []);
+
+  function zapiszSzkic(e: React.FormEvent<HTMLFormElement>) {
+    if ((e.target as HTMLElement).id === "message") setSzkicOdtworzony(false);
+    const form = e.currentTarget;
+    if (szkicTimer.current) clearTimeout(szkicTimer.current);
+    szkicTimer.current = setTimeout(() => {
+      try {
+        const wartosc = (nazwa: string) =>
+          (form.elements.namedItem(nazwa) as HTMLInputElement | null)?.value ?? "";
+        localStorage.setItem(
+          SZKIC_KLUCZ,
+          JSON.stringify({
+            email: wartosc("email"),
+            company: wartosc("company"),
+            message: wartosc("message"),
+          }),
+        );
+      } catch {}
+    }, 400);
+  }
 
   function handleFormStart() {
     if (formStartedRef.current) return;
@@ -155,6 +207,10 @@ export default function LandingForm({
         // mamy podlaczonego. Zgloszenie ma keepalive, wiec przezyje
         // przekierowanie na strone z podziekowaniem.
         if (!bot) zglosZdarzenie("lead_landing");
+        if (szkicTimer.current) clearTimeout(szkicTimer.current);
+        try {
+          localStorage.removeItem(SZKIC_KLUCZ);
+        } catch {}
         const params = new URLSearchParams({
           type: data.problemType,
           scale: data.problemScale,
@@ -191,7 +247,9 @@ export default function LandingForm({
       </div>
 
       <form
+        ref={formRef}
         onSubmit={handleSubmit}
+        onInput={zapiszSzkic}
         onFocus={handleFormStart}
         className="bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-2xl p-6 lg:p-8 shadow-sm text-left space-y-5"
       >
@@ -269,6 +327,11 @@ export default function LandingForm({
             placeholder="Jedno, dwa zdania wystarczą."
             className={`${inputClass} resize-none`}
           />
+          {szkicOdtworzony && (
+            <p className="mt-1.5 text-xs text-gray-500 dark:text-gray-400">
+              Zapisaliśmy Twój szkic
+            </p>
+          )}
         </div>
 
         <fieldset>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import StreszczenieAI from "@/components/StreszczenieAI";
 import { sekcjaStrony, wszystkieStrony } from "@/lib/sekcje";
 
 interface BreadcrumbItem {
@@ -129,6 +130,7 @@ export default function Breadcrumbs({
           })}
         </ol>
       </nav>
+      <StreszczenieAI />
     </>
   );
 }

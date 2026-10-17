@@ -836,6 +836,47 @@ html.dark {
   }
 }
 
+/* Demo leada: kropka spływa z formularza do CRM, pas skanu przemiata kartę,
+   telefon wibruje przy powiadomieniu. */
+.przeplyw-spada {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 8px;
+  height: 8px;
+  margin-left: -4px;
+  border-radius: 9999px;
+  background: rgb(var(--accent));
+  box-shadow: 0 0 14px 3px rgb(var(--accent) / 0.7);
+  animation: przeplyw-spada 0.9s ease-in infinite;
+}
+@keyframes przeplyw-spada {
+  from { top: 0; opacity: 0; }
+  20% { opacity: 1; }
+  to { top: 100%; opacity: 0.2; }
+}
+.skan {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(100deg, transparent 30%, rgb(var(--accent) / 0.16) 50%, transparent 70%);
+  animation: skan 1.3s ease-in-out infinite;
+}
+@keyframes skan {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(100%); }
+}
+.wibracja {
+  animation: wibracja 0.45s ease-in-out 2;
+}
+@keyframes wibracja {
+  0%, 100% { transform: translateX(0) rotate(0); }
+  20% { transform: translateX(-3px) rotate(-1.5deg); }
+  40% { transform: translateX(3px) rotate(1.5deg); }
+  60% { transform: translateX(-2px) rotate(-1deg); }
+  80% { transform: translateX(2px) rotate(1deg); }
+}
+
 /* Respect user preference for reduced motion — wyłącz wszystkie animacje */
 @media (prefers-reduced-motion: reduce) {
   *,

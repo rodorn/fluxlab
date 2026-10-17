@@ -46,6 +46,8 @@ export default function ScenaLeada() {
   const [karta, setKarta] = useState<Karta | null>(null);
   const [pisane, setPisane] = useState("");
   const [blad, setBlad] = useState("");
+  // Telefon dostaje powiadomienie dopiero, gdy dane „przejdą” łącznikiem z CRM.
+  const [telefon, setTelefon] = useState(false);
   const zegar = useRef<number | null>(null);
 
   useEffect(
@@ -57,7 +59,14 @@ export default function ScenaLeada() {
 
   // Szkic odpowiedzi „pisze się” na ekranie telefonu.
   useEffect(() => {
+    setTelefon(false);
     if (!karta) return;
+    const t = window.setTimeout(() => setTelefon(true), 1300);
+    return () => window.clearTimeout(t);
+  }, [karta]);
+
+  useEffect(() => {
+    if (!karta || !telefon) return;
     let i = 0;
     const t = window.setInterval(() => {
       i += 3;
@@ -65,7 +74,7 @@ export default function ScenaLeada() {
       if (i >= karta.odpowiedz.length) window.clearInterval(t);
     }, 18);
     return () => window.clearInterval(t);
-  }, [karta]);
+  }, [karta, telefon]);
 
   async function wyslij(e: React.FormEvent) {
     e.preventDefault();
@@ -160,14 +169,19 @@ export default function ScenaLeada() {
         </div>
       </form>
 
-      <div className="mt-10 grid items-start gap-6 md:grid-cols-[3fr_2fr]">
+      <div aria-hidden="true" className="relative mx-auto mt-4 h-12 w-px bg-gradient-to-b from-transparent to-gray-300 dark:to-white/15">
+        {stan === "czeka" && <span className="przeplyw-spada" />}
+      </div>
+
+      <div className="grid items-center gap-0 md:grid-cols-[3fr_auto_2fr]">
         <div
-          className={`rounded-2xl border bg-white p-6 text-left transition-all duration-500 dark:bg-gray-900 ${
+          className={`relative overflow-hidden rounded-2xl border bg-white p-6 text-left transition-all duration-500 dark:bg-gray-900 ${
             karta
               ? "border-accent shadow-xl shadow-accent/10"
               : "border-gray-200 dark:border-white/10"
           }`}
         >
+          {stan === "czeka" && <span aria-hidden="true" className="skan" />}
           <div className="flex items-center justify-between gap-3">
             <span className="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-white/50">
               CRM: nowy lead
@@ -248,13 +262,21 @@ export default function ScenaLeada() {
           )}
         </div>
 
-        <div className="mx-auto w-full max-w-[300px] rounded-[2.2rem] border-[6px] border-gray-900 bg-gray-950 p-3 shadow-2xl dark:border-white/15">
+        <div aria-hidden="true" className="relative mx-auto h-10 w-px bg-gray-300 md:h-px md:w-12 dark:bg-white/15">
+          {karta && !telefon && <span key={karta.temat} className="scena-kropka" style={{ animationDelay: "700ms" }} />}
+        </div>
+
+        <div
+          className={`mx-auto w-full max-w-[300px] rounded-[2.2rem] border-[6px] border-gray-900 bg-gray-950 p-3 shadow-2xl transition-shadow duration-500 dark:border-white/15 ${
+            telefon ? "wibracja shadow-accent/30" : ""
+          }`}
+        >
           <div className="mx-auto mb-3 h-1.5 w-16 rounded-full bg-white/15" />
           <p className="text-center text-[11px] text-white/40">
             Telefon handlowca
           </p>
           <div className="mt-3 min-h-[230px] rounded-2xl bg-white/[0.06] p-3.5 text-left">
-            {karta ? (
+            {karta && telefon ? (
               <div className="scena-wjazd">
                 <p className="text-[11px] font-semibold uppercase tracking-wider text-accent">
                   Nowy lead · zadzwoń w 15 min
@@ -274,7 +296,7 @@ export default function ScenaLeada() {
               </div>
             ) : (
               <p className="pt-16 text-center text-sm text-white/35">
-                {stan === "czeka" ? "…" : "Brak powiadomień"}
+                {karta ? "Przychodzi…" : stan === "czeka" ? "…" : "Brak powiadomień"}
               </p>
             )}
           </div>

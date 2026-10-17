@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { zglosZdarzenie } from "@/lib/zdarzenie";
+import { kodujWycene } from "@/lib/wycenaPdf";
 
 // Ceny: app/page.tsx (OFERTA: abonament 499 zł do 3 osób, 99 zł za osobę,
 // 12 900 zł, 24 900 zł) oraz app/wlasny-crm/page.tsx (pilotaż 1 zł).
@@ -73,6 +74,11 @@ export default function KonfiguratorCrm() {
   const aMies = useAnimowana(miesiecznie);
   const aWdr = useAnimowana(cenaWdrozenia);
   const aRok = useAnimowana(rok);
+
+  function pobierzPdf() {
+    const d = kodujWycene({ t: "c", n: osoby, w: wariant });
+    window.open(`/wycena?d=${d}`, "_blank", "noopener");
+  }
 
   function wyslij() {
     zglosZdarzenie("konfigurator_crm");
@@ -216,9 +222,14 @@ export default function KonfiguratorCrm() {
             </div>
           </div>
 
-          <button type="button" onClick={wyslij} className="btn-primary mt-8">
-            Wyślij tę konfigurację
-          </button>
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <button type="button" onClick={wyslij} className="btn-primary">
+              Wyślij tę konfigurację
+            </button>
+            <button type="button" onClick={pobierzPdf} className="btn-secondary">
+              Pobierz wycenę PDF
+            </button>
+          </div>
         </div>
       </div>
     </section>

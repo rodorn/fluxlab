@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { flushSync } from "react-dom";
 
 export default function ThemeToggle() {
   const [mounted, setMounted] = useState(false);
@@ -11,8 +12,7 @@ export default function ThemeToggle() {
     setMounted(true);
   }, []);
 
-  function toggle() {
-    const next = !isDark;
+  function apply(next: boolean) {
     setIsDark(next);
     if (next) {
       document.documentElement.classList.add("dark");
@@ -23,7 +23,39 @@ export default function ThemeToggle() {
     }
   }
 
+  function toggle(e: React.MouseEvent<HTMLButtonElement>) {
+    const next = !isDark;
+    const doc = document as Document & {
+      startViewTransition?: (cb: () => void) => { ready: Promise<void> };
+    };
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!doc.startViewTransition || reduce) {
+      apply(next);
+      return;
+    }
+    const r = e.currentTarget.getBoundingClientRect();
+    const x = r.left + r.width / 2;
+    const y = r.top + r.height / 2;
+    const radius = Math.hypot(
+      Math.max(x, window.innerWidth - x),
+      Math.max(y, window.innerHeight - y),
+    );
+    const t = doc.startViewTransition(() => flushSync(() => apply(next)));
+    t.ready
+      .then(() => {
+        document.documentElement.animate(
+          {
+            clipPath: [`circle(0px at ${x}px ${y}px)`, `circle(${radius}px at ${x}px ${y}px)`],
+          },
+          { duration: 500, easing: "ease-out", pseudoElement: "::view-transition-new(root)" },
+        );
+      })
+      .catch(() => {});
+  }
+
   return (
+    <>
+    <style>{`::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal}`}</style>
     <button
       type="button"
       onClick={toggle}
@@ -64,5 +96,6 @@ export default function ThemeToggle() {
         </svg>
       )}
     </button>
+    </>
   );
 }

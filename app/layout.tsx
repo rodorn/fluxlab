@@ -9,6 +9,7 @@ import ScrollProgress from "@/components/ScrollProgress";
 import Czat from "@/components/Czat";
 import ScrollToTop from "@/components/ScrollToTop";
 import TytulKarty from "@/components/TytulKarty";
+import MagnesPrzyciskow from "@/components/MagnesPrzyciskow";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -188,6 +189,7 @@ export default function RootLayout({
         {children}
         <ScrollToTop />
         <TytulKarty />
+        <MagnesPrzyciskow />
         <Czat />
         <SpeedInsights />
         <Analytics />
