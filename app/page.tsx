@@ -159,10 +159,10 @@ export default function Home() {
           <div className="container-wide">
             <RevealOnScroll className="mb-12 text-center">
               <h2 className="text-balance text-4xl font-bold tracking-tighter lg:text-5xl">
-                Zgłoszenie trafia do handlowca, nie do skrzynki
+                Twój CRM czyta zapytanie, zanim Ty je przeczytasz
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-gray-600 dark:text-white/65">
-                Wpisz imię i wyślij próbne zgłoszenie.
+                Napisz zapytanie, jakbyś był klientem. AI założy kartę leada i przygotuje odpowiedź, na żywo.
               </p>
             </RevealOnScroll>
             <RevealOnScroll delay={1}>

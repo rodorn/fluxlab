@@ -4,132 +4,282 @@ import { useEffect, useRef, useState } from "react";
 
 import { zglosZdarzenie } from "@/lib/zdarzenie";
 
-/* Próbne zgłoszenie: imię z pola przechodzi przez CRM do handlowca, który
-   dostaje zadanie z odliczaniem 15 minut. Nic nie jest wysyłane. */
-const KROK_MS = 900;
+/* Na żywo: AI czyta zapytanie wpisane przez odwiedzającego, zakłada kartę
+   leada i pisze szkic odpowiedzi handlowca (/api/demo-lead). Stoper mierzy
+   prawdziwy czas od kliknięcia do gotowej karty. Nic nie jest wysyłane. */
 
-function czas(s: number) {
-  return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
+type Karta = {
+  temat: string;
+  branza: string;
+  miasto: string;
+  budzet: string;
+  termin: string;
+  pilnosc: "niska" | "średnia" | "wysoka";
+  ocena: number;
+  nastepny_krok: string;
+  odpowiedz: string;
+};
+
+const PRZYKLADY = [
+  "Salon fryzjerski w Krakowie, potrzebuję strony z rezerwacją wizyt. Budżet ok. 5 tys., najlepiej przed świętami.",
+  "Biuro rachunkowe, 40 klientów. Chcemy przestać przepisywać faktury ręcznie, od stycznia KSeF.",
+  "Mam sklep z częściami rowerowymi, leady z formularza giną w skrzynce. Pilne.",
+];
+
+const POLA: [keyof Karta, string][] = [
+  ["branza", "Branża"],
+  ["miasto", "Miasto"],
+  ["budzet", "Budżet"],
+  ["termin", "Termin"],
+];
+
+function sekundy(ms: number) {
+  return (ms / 1000).toFixed(2).replace(".", ",");
 }
 
 export default function ScenaLeada() {
-  const [imie, setImie] = useState("Anna");
-  const [etap, setEtap] = useState(0);
-  const [zostalo, setZostalo] = useState(900);
-  const timery = useRef<number[]>([]);
-
-  useEffect(() => {
-    if (etap !== 4) return;
-    const t = window.setInterval(
-      () => setZostalo((s) => Math.max(0, s - 1)),
-      1000,
-    );
-    return () => window.clearInterval(t);
-  }, [etap]);
+  const [tekst, setTekst] = useState(PRZYKLADY[0]);
+  const [stan, setStan] = useState<"start" | "czeka" | "gotowe" | "blad">(
+    "start",
+  );
+  const [czas, setCzas] = useState(0);
+  const [karta, setKarta] = useState<Karta | null>(null);
+  const [pisane, setPisane] = useState("");
+  const [blad, setBlad] = useState("");
+  const zegar = useRef<number | null>(null);
 
   useEffect(
-    () => () => timery.current.forEach((t) => window.clearTimeout(t)),
+    () => () => {
+      if (zegar.current) window.clearInterval(zegar.current);
+    },
     [],
   );
 
-  function wyslij(e: React.FormEvent) {
+  // Szkic odpowiedzi „pisze się” na ekranie telefonu.
+  useEffect(() => {
+    if (!karta) return;
+    let i = 0;
+    const t = window.setInterval(() => {
+      i += 3;
+      setPisane(karta.odpowiedz.slice(0, i));
+      if (i >= karta.odpowiedz.length) window.clearInterval(t);
+    }, 18);
+    return () => window.clearInterval(t);
+  }, [karta]);
+
+  async function wyslij(e: React.FormEvent) {
     e.preventDefault();
-    timery.current.forEach((t) => window.clearTimeout(t));
+    if (stan === "czeka" || tekst.trim().length < 10) return;
     zglosZdarzenie("scena_leada");
-    setZostalo(900);
-    setEtap(1);
-    timery.current = [2, 3, 4].map((n, i) =>
-      window.setTimeout(() => setEtap(n), KROK_MS * (i + 1)),
+    setKarta(null);
+    setPisane("");
+    setBlad("");
+    setStan("czeka");
+    const start = performance.now();
+    setCzas(0);
+    zegar.current = window.setInterval(
+      () => setCzas(performance.now() - start),
+      31,
     );
+    try {
+      const r = await fetch("/api/demo-lead", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ tekst }),
+      });
+      const d = await r.json();
+      if (!r.ok) throw new Error(d.error || "Błąd");
+      setCzas(performance.now() - start);
+      setKarta({ ...d, temat: d.temat.charAt(0).toUpperCase() + d.temat.slice(1) });
+      setStan("gotowe");
+    } catch (err) {
+      setBlad(err instanceof Error ? err.message : "Błąd");
+      setStan("blad");
+    } finally {
+      if (zegar.current) window.clearInterval(zegar.current);
+    }
   }
 
-  const kto = imie.trim() || "Klient";
-  const wezel = (aktywny: boolean) =>
-    `scena-wezel relative flex flex-1 flex-col rounded-2xl border bg-white p-5 text-left transition-all duration-500 dark:bg-gray-900 ${
-      aktywny
-        ? "border-accent shadow-lg shadow-accent/15 -translate-y-1"
-        : "border-gray-200 dark:border-white/10"
-    }`;
+  const kolorPilnosci =
+    karta?.pilnosc === "wysoka"
+      ? "bg-red-500/15 text-red-600 dark:text-red-400"
+      : karta?.pilnosc === "średnia"
+        ? "bg-amber-500/15 text-amber-700 dark:text-amber-400"
+        : "bg-gray-500/15 text-gray-600 dark:text-gray-300";
 
   return (
-    <div className="mx-auto w-full max-w-4xl">
-      <div className="flex flex-col items-stretch gap-3 md:flex-row md:items-stretch">
-        <form onSubmit={wyslij} className={wezel(etap === 0 || etap === 1)}>
-          <span className="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-white/50">
-            1. Formularz na stronie
-          </span>
-          <label htmlFor="scena-imie" className="mt-3 text-sm font-medium">
-            Imię
-          </label>
-          <input
-            id="scena-imie"
-            value={imie}
-            maxLength={24}
-            onChange={(e) => setImie(e.target.value)}
-            className="mt-1 rounded-lg border border-gray-300 bg-white px-3 py-2 text-base outline-none focus:border-accent dark:border-white/15 dark:bg-white/[0.04]"
-          />
+    <div className="mx-auto w-full max-w-5xl">
+      <form onSubmit={wyslij} className="mx-auto max-w-2xl">
+        <label htmlFor="scena-tekst" className="sr-only">
+          Zapytanie klienta
+        </label>
+        <textarea
+          id="scena-tekst"
+          value={tekst}
+          maxLength={500}
+          rows={3}
+          onChange={(e) => setTekst(e.target.value)}
+          className="w-full resize-none rounded-2xl border border-gray-300 bg-white px-5 py-4 text-base leading-relaxed outline-none transition-colors focus:border-accent dark:border-white/15 dark:bg-white/[0.04]"
+        />
+        <div className="mt-3 flex flex-wrap justify-center gap-2">
+          {PRZYKLADY.map((p, i) => (
+            <button
+              key={p}
+              type="button"
+              onClick={() => setTekst(p)}
+              className={`rounded-full border px-3 py-1.5 text-xs transition-colors ${
+                tekst === p
+                  ? "border-accent bg-accent/10 text-accent"
+                  : "border-gray-200 text-gray-600 hover:border-accent/50 dark:border-white/10 dark:text-white/60"
+              }`}
+            >
+              {["Fryzjer", "Biuro rachunkowe", "Sklep rowerowy"][i]}
+            </button>
+          ))}
+        </div>
+        <div className="mt-5 flex flex-col items-center gap-3">
           <button
             type="submit"
-            className="btn-primary mt-3 justify-center rounded-full px-5 py-2.5 text-sm"
+            disabled={stan === "czeka"}
+            className="btn-primary rounded-full px-8 py-3.5 text-base disabled:opacity-60"
           >
-            Wyślij próbne zgłoszenie
+            {stan === "czeka" ? "AI czyta zapytanie…" : "Wyślij jako klient"}
           </button>
-        </form>
+          <p
+            className={`text-sm tabular-nums transition-opacity ${
+              stan === "start" ? "opacity-0" : "opacity-100"
+            } ${stan === "gotowe" ? "text-accent" : "text-gray-500 dark:text-white/50"}`}
+            aria-live="polite"
+          >
+            {stan === "gotowe"
+              ? `Karta w CRM i szkic odpowiedzi gotowe po ${sekundy(czas)} s`
+              : stan === "blad"
+                ? blad
+                : `${sekundy(czas)} s`}
+          </p>
+        </div>
+      </form>
 
-        <Lacznik aktywny={etap === 1} />
-
-        <div className={wezel(etap === 2 || etap === 3)}>
-          <span className="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-white/50">
-            2. CRM
-          </span>
-          {etap >= 2 ? (
-            <div className="scena-wjazd mt-3 rounded-xl bg-accent/10 p-3">
-              <p className="text-sm font-semibold">Nowy lead: {kto}</p>
-              <p className="mt-1 text-xs text-gray-600 dark:text-white/65">
-                źródło: formularz, strona główna
+      <div className="mt-10 grid items-start gap-6 md:grid-cols-[3fr_2fr]">
+        <div
+          className={`rounded-2xl border bg-white p-6 text-left transition-all duration-500 dark:bg-gray-900 ${
+            karta
+              ? "border-accent shadow-xl shadow-accent/10"
+              : "border-gray-200 dark:border-white/10"
+          }`}
+        >
+          <div className="flex items-center justify-between gap-3">
+            <span className="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-white/50">
+              CRM: nowy lead
+            </span>
+            {karta && (
+              <span
+                className={`scena-wjazd rounded-full px-2.5 py-1 text-xs font-semibold ${kolorPilnosci}`}
+              >
+                pilność {karta.pilnosc}
+              </span>
+            )}
+          </div>
+          {karta ? (
+            <>
+              <p className="scena-wjazd mt-3 text-xl font-bold">
+                {karta.temat}
+              </p>
+              <dl className="mt-4 grid grid-cols-2 gap-x-6 gap-y-3">
+                {POLA.map(([k, nazwa], i) => (
+                  <div
+                    key={k}
+                    className="scena-wjazd"
+                    style={{ animationDelay: `${120 + i * 90}ms` }}
+                  >
+                    <dt className="text-xs text-gray-500 dark:text-white/50">
+                      {nazwa}
+                    </dt>
+                    <dd
+                      className={`text-sm font-medium ${
+                        karta[k] === "nie podano"
+                          ? "text-gray-400 dark:text-white/35"
+                          : ""
+                      }`}
+                    >
+                      {String(karta[k])}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+              <div
+                className="scena-wjazd mt-5"
+                style={{ animationDelay: "500ms" }}
+              >
+                <div className="flex justify-between text-xs text-gray-500 dark:text-white/50">
+                  <span>Szansa na sprzedaż</span>
+                  <span className="font-semibold text-accent">
+                    {karta.ocena}/100
+                  </span>
+                </div>
+                <div className="mt-1.5 h-2 overflow-hidden rounded-full bg-gray-100 dark:bg-white/10">
+                  <div
+                    className="h-full rounded-full bg-accent-solid transition-all duration-1000 ease-out"
+                    style={{ width: `${pisane ? karta.ocena : 0}%` }}
+                  />
+                </div>
+              </div>
+              <p
+                className="scena-wjazd mt-5 rounded-xl bg-accent/10 px-4 py-3 text-sm"
+                style={{ animationDelay: "650ms" }}
+              >
+                <span className="font-semibold">Zadanie dla handlowca:</span>{" "}
+                {karta.nastepny_krok}
+              </p>
+            </>
+          ) : (
+            <div className="mt-4 space-y-3" aria-hidden="true">
+              {[70, 45, 55, 35].map((w, i) => (
+                <div
+                  key={i}
+                  className={`h-3 rounded-full bg-gray-100 dark:bg-white/[0.06] ${stan === "czeka" ? "animate-pulse" : ""}`}
+                  style={{ width: `${w}%` }}
+                />
+              ))}
+              <p className="pt-2 text-sm text-gray-400 dark:text-white/40">
+                {stan === "czeka" ? "AI wypełnia kartę…" : "Czeka na zapytanie"}
               </p>
             </div>
-          ) : (
-            <p className="mt-3 text-sm text-gray-400 dark:text-white/40">
-              Czeka na zgłoszenie
-            </p>
           )}
         </div>
 
-        <Lacznik aktywny={etap === 3} />
-
-        <div className={wezel(etap === 4)}>
-          <span className="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-white/50">
-            3. Telefon handlowca
-          </span>
-          {etap === 4 ? (
-            <div className="scena-wjazd mt-3">
-              <p className="text-sm font-semibold">Zadzwoń: {kto}</p>
-              <p className="mt-1 text-3xl font-bold tabular-nums tracking-tight text-accent">
-                {czas(zostalo)}
+        <div className="mx-auto w-full max-w-[300px] rounded-[2.2rem] border-[6px] border-gray-900 bg-gray-950 p-3 shadow-2xl dark:border-white/15">
+          <div className="mx-auto mb-3 h-1.5 w-16 rounded-full bg-white/15" />
+          <p className="text-center text-[11px] text-white/40">
+            Telefon handlowca
+          </p>
+          <div className="mt-3 min-h-[230px] rounded-2xl bg-white/[0.06] p-3.5 text-left">
+            {karta ? (
+              <div className="scena-wjazd">
+                <p className="text-[11px] font-semibold uppercase tracking-wider text-accent">
+                  Nowy lead · zadzwoń w 15 min
+                </p>
+                <p className="mt-1 text-sm font-semibold text-white">
+                  {karta.temat}
+                </p>
+                <p className="mt-3 text-[11px] text-white/45">
+                  Szkic odpowiedzi od AI:
+                </p>
+                <p className="mt-1 text-[13px] leading-relaxed text-white/85">
+                  {pisane}
+                  {pisane.length < karta.odpowiedz.length && (
+                    <span className="ml-0.5 inline-block h-3.5 w-1.5 animate-pulse bg-accent align-middle" />
+                  )}
+                </p>
+              </div>
+            ) : (
+              <p className="pt-16 text-center text-sm text-white/35">
+                {stan === "czeka" ? "…" : "Brak powiadomień"}
               </p>
-              <p className="text-xs text-gray-600 dark:text-white/65">
-                na pierwszy telefon
-              </p>
-            </div>
-          ) : (
-            <p className="mt-3 text-sm text-gray-400 dark:text-white/40">
-              Brak zadań
-            </p>
-          )}
+            )}
+          </div>
         </div>
       </div>
-    </div>
-  );
-}
-
-function Lacznik({ aktywny }: { aktywny: boolean }) {
-  return (
-    <div
-      aria-hidden="true"
-      className="relative mx-auto h-8 w-px shrink-0 bg-gray-200 md:mx-0 md:h-px md:w-10 md:self-center dark:bg-white/10"
-    >
-      {aktywny && <span className="scena-kropka" />}
     </div>
   );
 }
