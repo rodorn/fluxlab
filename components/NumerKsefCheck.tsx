@@ -165,27 +165,12 @@ export default function NumerKsefCheck() {
         tytuły przelewów, numery wyłuskamy sami. Liczymy wszystko w
         przeglądarce, nic nie wysyłamy.
       </p>
-      <Przyklady
-        pozycje={[
-          {
-            wartosc: "5265877635-20250826-0100001AF629-AF",
-            etykieta: "Numer z dokumentacji MF",
-          },
-          {
-            wartosc:
-              "Zapłata za FV 12/08/2025, KSeF 5265877635-20250826-0100001AF629-A7",
-            etykieta: "Tytuł przelewu z literówką",
-          },
-        ]}
-        onWybor={uruchom}
-        wstep="Nie masz pod ręką numeru? Zobacz na gotowym przykładzie:"
-      />
       <form
         onSubmit={(e) => {
           e.preventDefault();
           uruchom(tekst, false);
         }}
-        className="mt-5 flex flex-col gap-3"
+        className="mt-4 flex flex-col gap-3"
       >
         <textarea
           value={tekst}
@@ -204,6 +189,21 @@ export default function NumerKsefCheck() {
           Sprawdź numery
         </button>
       </form>
+      <Przyklady
+        pozycje={[
+          {
+            wartosc: "5265877635-20250826-0100001AF629-AF",
+            etykieta: "Numer z dokumentacji MF",
+          },
+          {
+            wartosc:
+              "Zapłata za FV 12/08/2025, KSeF 5265877635-20250826-0100001AF629-A7",
+            etykieta: "Tytuł przelewu z literówką",
+          },
+        ]}
+        onWybor={uruchom}
+        wstep="Nie masz pod ręką numeru? Zobacz na gotowym przykładzie:"
+      />
 
       {wyniki && (
         <div className="mt-5">
