@@ -5916,3 +5916,11 @@ Obie strony spadły z kilkudziesięciu wyświetleń dziennie do 0 do 3 od 10.10.
 **Dowód:** gsc_indeksuj.py 00:44:09 do 00:47:27, „prośba przesłana” dla: ksef-jdg-zwolniona-z-vat, zalacznik-do-faktury-ksef, zaw-fa-ksef, data-wystawienia-faktury-ksef, ai-w-automatyzacji-firm, ksef-2027, mapa-strony, polityka-prywatnosci. Linia Z18 w cykl/plan-ruchu.md.
 **Dla Pawła:**
 **Zostało otwarte:** Z19 (render po serii, 01:46), Z20 (kontrola 9 adresów z 17.10), Z23 (bilans planu 05:46). Budżet: rytm „zwolnij”, jedno zadanie na cykl.
+
+## 2026-10-18 01:52
+**Kanał:** Google (plan stratega, Z19: pomiar renderu po serii Z18).
+**Co zrobione:** wszystkie 8 adresów zgłoszonych o 00:44 do 00:47 Google wyrenderował w tej samej sekundzie co prośba (para sesji Chrome Linux + Chrome Android z prefiksem pg9s63fs), drugiego renderu do 01:50 nie było.
+**Ruch:** raport_ruchu.py 01:50: doba 71 odsłon, 61 osób; źródła: mail.google.com 8, b2b-email 4 (piksel), facebook 4, youtube 4, duckduckgo 1. Od 00:00 ludzi 5 (kalkulator podatkowy x2, faktura dla osoby prywatnej KSeF, ryczałt czy liniowy z Instagrama, /slownik), plus para 3 sesji youtube 00:12:10 odsiana. Resend 0 wysyłek, Zoho 0 odpowiedzi firm.
+**Dowód:** linia Z19 w cykl/plan-ruchu.md (tabela godzin renderu).
+**Dla Pawła:**
+**Zostało otwarte:** Z20 (kontrola 9 adresów z 17.10, 02:46), Z23 (bilans planu 05:46). Gofin g8 zaplanowany 18.10 08:00. Budżet „zwolnij”, jedno zadanie na cykl.
