@@ -18,21 +18,15 @@ const FORMY: { id: Kontakt; nazwa: string; opis: string }[] = [
   { id: "meet", nazwa: "Google Meet", opis: "30 minut online" },
 ];
 
-const GODZINY = ["9:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00"];
+// Spotkania 11:00–24:00, ostatnie zaczyna się o 23:00.
+const GODZINY = Array.from({ length: 13 }, (_, i) => `${11 + i}:00`);
 
-// Najbliższe dni robocze od jutra, do wyboru terminu spotkania.
-function dniRobocze(ile: number) {
-  const dni: Date[] = [];
-  const d = new Date();
-  while (dni.length < ile) {
-    d.setDate(d.getDate() + 1);
-    if (d.getDay() !== 0 && d.getDay() !== 6) dni.push(new Date(d));
-  }
-  return dni;
-}
+// Wolne godziny z kalendarza Pawła (/api/terminy, lib/terminy.ts).
+type DzienTerminow = { data: string; godziny: string[] };
 
-function iso(d: Date) {
-  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+function dataLokalna(iso: string) {
+  const [r, m, d] = iso.split("-").map(Number);
+  return new Date(r, m - 1, d);
 }
 
 interface Props {
@@ -66,15 +60,22 @@ export default function LandingForm({
   }));
   const formStartedRef = useRef(false);
   const [kontakt, setKontakt] = useState<Kontakt>("email");
-  const [dni, setDni] = useState<Date[]>([]);
+  const [dni, setDni] = useState<DzienTerminow[] | null>(null);
   const [dzien, setDzien] = useState("");
   const [godzina, setGodzina] = useState("");
 
   useEffect(() => {
-    const d = dniRobocze(6);
-    setDni(d);
-    setDzien(iso(d[0]));
-  }, []);
+    if (kontakt !== "meet" || dni) return;
+    fetch("/api/terminy")
+      .then((r) => r.json())
+      .then((d: { dni: DzienTerminow[] }) => {
+        setDni(d.dni);
+        setDzien(d.dni.find((x) => x.godziny.length)?.data ?? d.dni[0]?.data ?? "");
+      })
+      .catch(() => setDni([]));
+  }, [kontakt, dni]);
+
+  const wolneDzis = dni?.find((x) => x.data === dzien)?.godziny ?? [];
 
   useEffect(() => {
     setUtm(readUtm());
@@ -328,56 +329,77 @@ export default function LandingForm({
               <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
                 Dzień
               </p>
-              <div className="grid grid-cols-3 gap-2 sm:grid-cols-6">
-                {dni.map((d) => (
-                  <button
-                    key={iso(d)}
-                    type="button"
-                    aria-pressed={dzien === iso(d)}
-                    onClick={() => setDzien(iso(d))}
-                    className={`rounded-lg border px-2 py-2 text-center text-xs transition-colors ${
-                      dzien === iso(d)
-                        ? "border-accent bg-accent/10"
-                        : "border-gray-200 hover:border-accent/50 dark:border-gray-700"
-                    }`}
-                  >
-                    <span className="block font-semibold capitalize text-gray-900 dark:text-white">
-                      {d.toLocaleDateString("pl-PL", { weekday: "short" })}
-                    </span>
-                    <span className="block text-gray-500 dark:text-gray-400">
-                      {d.toLocaleDateString("pl-PL", { day: "numeric", month: "short" })}
-                    </span>
-                  </button>
-                ))}
-              </div>
+              {!dni ? (
+                <div className="grid grid-cols-4 gap-2 sm:grid-cols-8">
+                  {Array.from({ length: 8 }, (_, i) => (
+                    <div key={i} className="h-[52px] animate-pulse rounded-lg bg-gray-100 dark:bg-white/5" />
+                  ))}
+                </div>
+              ) : (
+                <div className="grid grid-cols-4 gap-2 sm:grid-cols-8">
+                  {dni.map((d) => {
+                    const data = dataLokalna(d.data);
+                    const pelny = d.godziny.length === 0;
+                    return (
+                      <button
+                        key={d.data}
+                        type="button"
+                        disabled={pelny}
+                        aria-pressed={dzien === d.data}
+                        onClick={() => {
+                          setDzien(d.data);
+                          setGodzina("");
+                        }}
+                        className={`rounded-lg border px-2 py-2 text-center text-xs transition-colors disabled:cursor-not-allowed disabled:opacity-40 ${
+                          dzien === d.data
+                            ? "border-accent bg-accent/10"
+                            : "border-gray-200 hover:border-accent/50 dark:border-gray-700"
+                        }`}
+                      >
+                        <span className="block font-semibold capitalize text-gray-900 dark:text-white">
+                          {data.toLocaleDateString("pl-PL", { weekday: "short" })}
+                        </span>
+                        <span className="block text-gray-500 dark:text-gray-400">
+                          {data.toLocaleDateString("pl-PL", { day: "numeric", month: "short" })}
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
+              )}
             </div>
             <div>
               <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
                 Godzina
               </p>
-              <div className="grid grid-cols-4 gap-2 sm:grid-cols-8">
-                {GODZINY.map((g) => (
-                  <button
-                    key={g}
-                    type="button"
-                    aria-pressed={godzina === g}
-                    onClick={() => {
-                      setGodzina(g);
-                      setErrorMsg(null);
-                    }}
-                    className={`rounded-lg border py-2 text-center text-sm tabular-nums transition-colors ${
-                      godzina === g
-                        ? "border-accent bg-accent-solid text-white"
-                        : "border-gray-200 text-gray-900 hover:border-accent/50 dark:border-gray-700 dark:text-white"
-                    }`}
-                  >
-                    {g}
-                  </button>
-                ))}
+              <div className="flex flex-wrap justify-center gap-2">
+                {GODZINY.map((g) => {
+                  const wolna = wolneDzis.includes(g);
+                  return (
+                    <button
+                      key={g}
+                      type="button"
+                      disabled={!wolna}
+                      aria-pressed={godzina === g}
+                      title={wolna ? undefined : "Zajęte"}
+                      onClick={() => {
+                        setGodzina(g);
+                        setErrorMsg(null);
+                      }}
+                      className={`w-[calc((100%-1.5rem)/4)] rounded-lg border py-2 text-center text-sm tabular-nums transition-colors disabled:cursor-not-allowed disabled:line-through disabled:opacity-35 sm:w-[calc((100%-3.5rem)/8)] ${
+                        godzina === g
+                          ? "border-accent bg-accent-solid text-white"
+                          : "border-gray-200 text-gray-900 hover:border-accent/50 dark:border-gray-700 dark:text-white"
+                      }`}
+                    >
+                      {g}
+                    </button>
+                  );
+                })}
               </div>
             </div>
-            <p className="text-xs text-gray-500 dark:text-gray-400">
-              Potwierdzimy termin zaproszeniem z linkiem do Meet.
+            <p className="text-center text-xs text-gray-500 dark:text-gray-400">
+              Pokazujemy tylko godziny wolne w naszym kalendarzu. Potwierdzimy zaproszeniem z linkiem do Meet.
             </p>
           </div>
         )}

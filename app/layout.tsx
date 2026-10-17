@@ -8,6 +8,7 @@ import ContactClickTracker from "@/components/ContactClickTracker";
 import ScrollProgress from "@/components/ScrollProgress";
 import Czat from "@/components/Czat";
 import ScrollToTop from "@/components/ScrollToTop";
+import TytulKarty from "@/components/TytulKarty";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -186,6 +187,7 @@ export default function RootLayout({
         <ScrollProgress />
         {children}
         <ScrollToTop />
+        <TytulKarty />
         <Czat />
         <SpeedInsights />
         <Analytics />

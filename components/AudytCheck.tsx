@@ -7,6 +7,7 @@ import Przyklady from "@/components/Przyklady";
 import { zglosZdarzenie } from "@/lib/zdarzenie";
 import DalejPoWyniku from "@/components/DalejPoWyniku";
 import ZamowAudytCalosci from "@/components/ZamowAudytCalosci";
+import PopravTo from "@/components/PopravTo";
 
 /**
  * Darmowy audyt zbiorczy.
@@ -572,6 +573,14 @@ export default function AudytCheck() {
               </div>
             </div>
           </div>
+
+          <PopravTo
+            domena={wynik.domena}
+            pozycje={wynik.ustalenia.map((u) => ({
+              waga: u.waga,
+              tytul: u.tytul,
+            }))}
+          />
 
           {/* Płatny audyt całej strony */}
           {wynik.osiagalna && (

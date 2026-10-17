@@ -25,6 +25,7 @@ function str(v: unknown, max: number): string {
   return v.trim().slice(0, max);
 }
 
+import { terminWolny } from "@/lib/terminy";
 import { PROBLEM_TYPE_LABELS, PROBLEM_SCALE_LABELS } from "@/lib/form-options";
 
 const CONTACT_PREF_LABELS: Record<string, string> = {
@@ -179,6 +180,13 @@ export async function POST(req: Request) {
     return NextResponse.json(
       { error: "Nieprawidłowy adres e-mail." },
       { status: 400 },
+    );
+  }
+
+  if (contactPref === "meet" && !(await terminWolny(termin))) {
+    return NextResponse.json(
+      { error: "Ten termin właśnie się zajął. Wybierz inną godzinę." },
+      { status: 409 },
     );
   }
 

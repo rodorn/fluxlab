@@ -821,6 +821,9 @@ html.dark {
     justify-self: center;
     width: calc(50% - 0.75rem);
   }
+  .sierota-sm-2.gap-3 > :last-child:nth-child(odd) {
+    width: calc(50% - 0.375rem);
+  }
 }
 @media (min-width: 768px) {
   .sierota-md-2 > :last-child:nth-child(odd) {

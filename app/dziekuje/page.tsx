@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import AnimacjaWyslania from "@/components/AnimacjaWyslania";
 
 export const metadata: Metadata = {
   title: "Dziękujemy, zgłoszenie odebrane | Fluxlab",
@@ -24,34 +25,19 @@ export default function Dziekuje() {
         <div className="container-wide">
           <div className="max-w-2xl mx-auto">
             <div className="bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-2xl p-10 lg:p-14 shadow-sm">
-              <div className="w-14 h-14 bg-accent rounded-full flex items-center justify-center mb-6">
-                <svg
-                  width="26"
-                  height="26"
-                  viewBox="0 0 26 26"
-                  fill="none"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M5 13l5 5 11-11"
-                    stroke="white"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+              <div className="flex justify-center">
+                <AnimacjaWyslania />
               </div>
 
-              <h1 className="h1-strony mb-4">
+              <h1 className="h1-strony mb-4 text-center">
                 Mamy Twoje zgłoszenie
               </h1>
 
-              <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
+              <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-6 text-center">
                 Odezwiemy się z odpowiedzią zwykle tego samego dnia. Jeśli widzimy potencjał na
                 automatyzację, odpiszemy z konkretnym zakresem i wyceną. Jeśli
                 nie, napiszemy wprost, dlaczego nie warto tego automatyzować na
-                tym etapie. Wszystko ustalamy mailowo, więc nie musisz nigdzie
-                dzwonić ani rezerwować terminu.
+                tym etapie.
               </p>
 
               <div className="bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-xl p-5 mb-8">
