@@ -197,6 +197,44 @@ export default function PodszywanieEmailArticle() {
             </details>
           ))}
         </div>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Article",
+              headline: "Mail firmowy: czy ktoś może się pod niego podszyć?",
+              description:
+                "Mail firmowy na własnej domenie: co jest potrzebne, ile kosztuje skrzynka w Google i Microsoft oraz jak SPF, DKIM i DMARC chronią przed podszywaniem.",
+              datePublished: "2026-09-08",
+              author: {
+                "@type": "Organization",
+                name: "Fluxlab",
+                url: "https://fluxlab.pl",
+              },
+              publisher: {
+                "@type": "Organization",
+                name: "Fluxlab",
+                url: "https://fluxlab.pl",
+              },
+            }),
+          }}
+        />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: faqItems.map((f) => ({
+                "@type": "Question",
+                name: f.question,
+                acceptedAnswer: { "@type": "Answer", text: f.answer },
+              })),
+            }),
+          }}
+        />
       </main>
       <CTA />
       <Footer />

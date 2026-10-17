@@ -207,6 +207,44 @@ export default function MaileSpamArticle() {
             Czy ktoś może podszyć się pod Twój firmowy e-mail?
           </Link>
         </p>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Article",
+              headline: "Dlaczego firmowe maile trafiają do spamu i jak to naprawić",
+              description:
+                "Twoje oferty i faktury trafiają do spamu klientów? Najczęstsze przyczyny (SPF, DKIM, DMARC, reputacja) i konkretne kroki naprawy. Plus darmowy audyt domeny.",
+              datePublished: "2026-09-16",
+              author: {
+                "@type": "Organization",
+                name: "Fluxlab",
+                url: "https://fluxlab.pl",
+              },
+              publisher: {
+                "@type": "Organization",
+                name: "Fluxlab",
+                url: "https://fluxlab.pl",
+              },
+            }),
+          }}
+        />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: faqItems.map((f) => ({
+                "@type": "Question",
+                name: f.question,
+                acceptedAnswer: { "@type": "Answer", text: f.answer },
+              })),
+            }),
+          }}
+        />
       </main>
       <CTA />
       <Footer />
