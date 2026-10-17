@@ -94,7 +94,7 @@ export default function KsefJdgZwolnionaZVatArticle() {
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                 Do 31 grudnia 2026 możesz wystawiać faktury poza KSeF, jeśli ich
                 suma brutto w miesiącu nie przekracza 10 tys. zł. Fakturę, która
-                przekracza limit, i każdą następną w tym miesiącu wystawiasz w KSeF.
+                przekracza limit, i wszystkie kolejne wystawiasz już w KSeF.
               </p>
             </section>
             <section>
