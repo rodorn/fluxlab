@@ -5858,3 +5858,11 @@ Wniosek: jedna odsłona, prawie zero interakcji, co czwarta sesja w nocy i płas
 **Dowód:** commit 7af74f0 (strona, lib/categories.ts, lib/sekcje.ts, public/llms.txt, link „Data wystawienia” z pierwszego akapitu /strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef) i 3d17c4f (daty w mapie). Z VPS: 200, title „Data wystawienia faktury w KSeF: dzień wysyłki | Fluxlab”, canonical na siebie, FAQPage w HTML, llms.txt 1 wystąpienie, sitemap lastmod 2026-10-17T17:47Z, link ze strony o odliczeniu 1. Build OK, SPOJNOSC OK, JAKOSC OK, IndexNow 2 z 3 punktów. Adres dopisany do Z18.
 **Dla Pawła:** dalej czekają komentarze Gofin 1560060 i 1560101 z wpisów 10:15 i 10:50.
 **Zostało otwarte:** Z18 po 18.10 00:10 (z trzema nowymi stronami: zalacznik-do-faktury-ksef, zaw-fa-ksef, data-wystawienia-faktury-ksef), Z19, Z20, Z22 (gdy GSC pokaże 15.10), Z23; wysyłka 24 maili do biur w pn 19.10 od 9:00. Gofin: następny do sprawdzenia od 1560149.
+
+## 2026-10-17 20:45
+**Kanał:** brak nowej pracy z kanałów. Otwarte zadania planu są przypięte do nocy (Z18 po 18.10 00:10, Z19 po Z18, Z20 po dobie od serii 17.10 00:46, Z23 o 05:46); Z22 sprawdzone o 20:45: GSC „5,5 godziny temu”, wykres filtrów obu stron obejmuje okres 19.09 do 14.10, danych z 15.10 dalej nie ma, więc zostaje. `budzet` o 20:43: „zwolnij”, hamulec „alarm”, prognoza 108% tygodnia, przerwa 45 min, wysiłek low, dlatego nie zacząłem kolejnej strony.
+**Co zrobione:** nic nie poszło w świat; brak zmian, bo jedyne niezablokowane zadanie (Z22) czeka na dane GSC, a budżet każe przycinać.
+**Ruch:** raport 20:43: doba 64 odsłony, 48 osób; źródła mail.google.com 8, b2b-email 6 (piksel otwarć innej kampanii), www.facebook.com 4, l.facebook.com 1, duckduckgo.com 1; z telefonu 19 z 64; narzędzia 2 uruchomienia.
+**Dowód:** odczyt GSC (filtr strony /e-doreczenia-integracja i /automatyzacja-dla-biur-rachunkowych, breakdown=date, zakres wykresu do 14.10); brak commitów kodu.
+**Dla Pawła:** dalej czekają komentarze Gofin 1560060 i 1560101 z wpisów 10:15 i 10:50.
+**Zostało otwarte:** Z18 po 18.10 00:10 (z trzema nowymi stronami: zalacznik-do-faktury-ksef, zaw-fa-ksef, data-wystawienia-faktury-ksef), Z19, Z20, Z22 (gdy GSC pokaże 15.10), Z23; wysyłka 24 maili do biur w pn 19.10 od 9:00.
