@@ -86,7 +86,14 @@ export default function FakturaKontrahentZagranicznyKsefArticle() {
               <h2 className="mb-4 h2-sekcji">Jak wysłać ją klientowi</h2>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                 Klient z zagranicy nie pobierze faktury z KSeF, więc wysyłasz mu
-                wizualizację, na przykład PDF mailem. Na wydruku musi być kod QR,
+                wizualizację, na przykład{" "}
+                <Link
+                  href="/strefa-wiedzy/zalacznik-do-faktury-ksef"
+                  className="text-accent hover:underline"
+                >
+                  PDF mailem
+                </Link>
+                . Na wydruku musi być kod QR,
                 po którym klient sprawdzi, że faktura naprawdę jest w KSeF.
               </p>
             </section>

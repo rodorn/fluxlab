@@ -333,6 +333,12 @@ export const categories: Category[] = [
         bezOkladki: true,
       },
       {
+        href: "/strefa-wiedzy/zalacznik-do-faktury-ksef",
+        title: "Załącznik do faktury w KSeF",
+        description: "Tylko XML i po zgłoszeniu w e-US; PDF i protokół wysyłasz osobno.",
+        bezOkladki: true,
+      },
+      {
         href: "/strefa-wiedzy/numeracja-faktur-ksef-2027",
         title: "Numeracja faktur w KSeF w 2027",
         description: "Numer bez roku da w 2027 błąd 440, duplikat faktury.",
