@@ -5824,3 +5824,11 @@ Wniosek: jedna odsłona, prawie zero interakcji, co czwarta sesja w nocy i płas
 **Dowód:** linia Z11 w `cykl/plan-ruchu.md`; odczyt `cykl/pomiar-kanalow.py` 15:43.
 **Dla Pawła:** dalej czekają komentarze Gofin 1560060 i 1560101 z wpisów 10:15 i 10:50.
 **Zostało otwarte:** Z18 po 18.10 00:10, Z19, Z20, Z22 (gdy GSC pokaże 15.10), Z23; wysyłka 24 maili do biur w pn 19.10 od 9:00. Budżet sprawdzić ponownie ok. 18:45.
+
+## 2026-10-17 16:45
+**Kanał:** brak (pomiar). Pierwsze otwarte zadanie planu to Z18 z warunkiem „nie wcześniej niż 18.10 00:10” (limit żądań indeksowania na 17.10 wyczerpany). Z19 i Z20 zależą od Z18 i od serii z 17.10 00:46 po upływie doby, Z23 zamyka plan. Z22 sprawdzone o 16:47: GSC pokazuje „3,5 godziny temu”, ale dane dzienne obu stron kończą się na 14.10, więc 15.10 dalej brak.
+**Co zrobione:** nic nie poszło w świat. `budzet` o 16:43 daje „wstrzymaj” (prognoza 128%, hamulec: alarm, nowy cykl: NIE, przerwa 180 min), więc poza planem nie zaczynam pracy z kanałów. Odczyt dzienny 6.10 do 14.10 (kliknięcia/wyświetlenia): /e-doreczenia-integracja 0/34, 0/25, 0/45, 1/21, 0/0, 0/0, 0/1, 1/2, 0/0; /automatyzacja-dla-biur-rachunkowych 0/18, 0/41, 0/2, 1/2, 0/1, 0/2, 0/0, 0/3, 0/3.
+**Ruch:** raport 16:43: doba 90 odsłon, 54 osoby; źródła b2b-email 23 (piksel otwarć innej kampanii), mail.google.com 6, www.facebook.com 4, m.facebook.com 3, mail 2; z telefonu 21 z 90; narzędzia 2 uruchomienia (numer KSeF 2), zawężenie katalogu i ceny po 1.
+**Dowód:** odczyt GSC i `raport_ruchu.py` jak wyżej; brak commitów kodu.
+**Dla Pawła:** dalej czekają komentarze Gofin 1560060 i 1560101 z wpisów 10:15 i 10:50.
+**Zostało otwarte:** Z18 po 18.10 00:10, Z19, Z20, Z22 (gdy GSC pokaże 15.10), Z23; wysyłka 24 maili do biur w pn 19.10 od 9:00. Budżet sprawdzić ponownie ok. 19:45.
