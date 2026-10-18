@@ -1274,3 +1274,8 @@ p {
 /* Przewijany tekst bez widocznego paska (szkic odpowiedzi w telefonie demo) */
 .bez-paska { scrollbar-width: none; }
 .bez-paska::-webkit-scrollbar { display: none; }
+/* Kalkulator osadzony w artykule: opisy w kartach bez justowania i dzielenia. */
+.prose-justify .kalkulator-osadzony p {
+  text-align: left;
+  hyphens: manual;
+}

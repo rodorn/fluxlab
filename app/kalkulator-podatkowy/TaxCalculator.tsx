@@ -1213,7 +1213,8 @@ function ResultCard({
    MAIN COMPONENT
    ═══════════════════════════════════════════════════ */
 
-export default function TaxCalculator() {
+/** `waski`: osadzony w artykule (max 1152 px), wyniki pod polami zamiast obok. */
+export default function TaxCalculator({ waski = false }: { waski?: boolean }) {
   useEffect(() => {
     gaEvent("calculator_viewed", { calculator: "tax" });
   }, []);
@@ -1234,7 +1235,7 @@ export default function TaxCalculator() {
     {
       id: 1,
       name: "",
-      amount: 0,
+      amount: 10000,
       rate: 8.5,
       isNajem: false,
       brutto: false,
@@ -1535,8 +1536,8 @@ export default function TaxCalculator() {
   const malyPlusBase = zusBase("malyPlus", prevYearIncome);
 
   return (
-    <div className="max-w-[120rem] mx-auto">
-      <div className="grid min-[1800px]:grid-cols-[1fr_1fr] gap-6">
+    <div className="kalkulator-osadzony max-w-[120rem] mx-auto">
+      <div className={`grid gap-6 ${waski ? "" : "min-[1800px]:grid-cols-[1fr_1fr]"}`}>
         {/* ══════ LEFT COLUMN (inputs) ══════ */}
         <div className="max-w-6xl space-y-6">
           {/* ── INPUTS ── */}
