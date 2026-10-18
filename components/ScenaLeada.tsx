@@ -25,6 +25,9 @@ const PRZYKLADY = [ // głos klienta
   "Salon fryzjerski w Krakowie, potrzebuję strony z rezerwacją wizyt. Budżet ok. 5 tys., najlepiej przed świętami.", // głos klienta
   "Biuro rachunkowe, 40 klientów. Chcemy przestać przepisywać faktury ręcznie, od stycznia KSeF.",
   "Mam sklep z częściami rowerowymi, leady z formularza giną w skrzynce. Pilne.",
+  "Kancelaria prawna w Warszawie, prawo rodzinne. Zapytania przychodzą mailem i telefonem, gubimy część z nich. Szukamy porządku przed nowym rokiem.",
+  "Robimy kuchnie na wymiar pod Poznaniem. Klienci wysyłają wymiary i zdjęcia, a wycena zajmuje nam tydzień. Budżet do 15 tys.",
+  "Salon medycyny estetycznej w Gdańsku. Chcemy, żeby klientka sama umawiała zabieg i dostawała przypomnienie SMS. Start w listopadzie.",
 ];
 
 const POLA: [keyof Karta, string][] = [
@@ -158,7 +161,7 @@ export default function ScenaLeada() {
                   : "border-gray-200 text-gray-600 hover:border-accent/50 dark:border-white/10 dark:text-white/60"
               }`}
             >
-              {["Fryzjer", "Biuro rachunkowe", "Sklep rowerowy"][i]}
+              {["Fryzjer", "Biuro rachunkowe", "Sklep rowerowy", "Kancelaria", "Kuchnie na wymiar", "Medycyna estetyczna"][i]}
             </button>
           ))}
         </div>

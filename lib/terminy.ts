@@ -1,9 +1,12 @@
 /** Wolne terminy Meet z kalendarza Pawła. Zajęte przedziały wysyła co 5 minut
  *  skrypt na jego komputerze (~/Projekty/fluxlab-kalendarz/sync.py) do Global
- *  Config Vercela; tu liczymy z nich wolne pełne godziny 11:00–23:00. */
+ *  Config Vercela; tu liczymy z nich wolne starty co 15 minut, 11:00–23:30. */
 
 export const GODZ_OD = 11;
 export const GODZ_DO = 23;
+/** Krok osi czasu w minutach; ostatnie spotkanie zaczyna się 23:30. */
+export const KROK_MIN = 15;
+const OSTATNI_START_MIN = 23 * 60 + 30;
 const DLUGOSC_MIN = 30;
 const ZAPAS_MIN = 15;
 const DNI = 8;
@@ -46,6 +49,10 @@ function dataWarszawska(ms: number): string {
   });
 }
 
+function hhmm(min: number): string {
+  return `${String(Math.floor(min / 60)).padStart(2, "0")}:${String(min % 60).padStart(2, "0")}`;
+}
+
 function kolizja(start: number, zajete: [number, number][]) {
   const od = start - ZAPAS_MIN * 60_000;
   const doo = start + (DLUGOSC_MIN + ZAPAS_MIN) * 60_000;
@@ -65,8 +72,10 @@ export async function wolneTerminy(): Promise<{
   for (let i = 1; i <= DNI; i++) {
     const data = new Date(Date.UTC(r, m - 1, d + i)).toISOString().slice(0, 10);
     const godziny: string[] = [];
-    for (let g = GODZ_OD; g <= GODZ_DO; g++) {
-      if (!kolizja(warszawa(data, g), zajete)) godziny.push(`${g}:00`);
+    for (let m = GODZ_OD * 60; m <= OSTATNI_START_MIN; m += KROK_MIN) {
+      // Od pełnej godziny, nie od północy: w dniu zmiany czasu przesunięcie zmienia się o 3:00.
+      const start = warszawa(data, Math.floor(m / 60)) + (m % 60) * 60_000;
+      if (!kolizja(start, zajete)) godziny.push(hhmm(m));
     }
     dni.push({ data, godziny });
   }
@@ -75,11 +84,11 @@ export async function wolneTerminy(): Promise<{
 
 /** Czy termin „RRRR-MM-DD GG:MM” jest nadal wolny (sprawdzenie przy wysyłce). */
 export async function terminWolny(termin: string): Promise<boolean> {
-  const m = /^(\d{4}-\d{2}-\d{2}) (\d{2}):00$/.exec(termin);
+  const m = /^(\d{4}-\d{2}-\d{2}) (\d{2}):(\d{2})$/.exec(termin);
   if (!m) return false;
-  const g = Number(m[2]);
-  if (g < GODZ_OD || g > GODZ_DO) return false;
-  const start = warszawa(m[1], g);
+  const min = Number(m[2]) * 60 + Number(m[3]);
+  if (min % KROK_MIN || min < GODZ_OD * 60 || min > OSTATNI_START_MIN) return false;
+  const start = warszawa(m[1], Math.floor(min / 60)) + (min % 60) * 60_000;
   if (start < Date.now()) return false;
   const cfg = await pobierzConfig();
   return !kolizja(start, cfg?.zajete ?? []);

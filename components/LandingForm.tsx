@@ -1,5 +1,6 @@
 "use client";
 
+import OsTerminu from "@/components/OsTerminu";
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { event as gaEvent } from "@/lib/gtag";
@@ -20,8 +21,6 @@ const FORMY: { id: Kontakt; nazwa: string; opis: string }[] = [
   { id: "meet", nazwa: "Google Meet", opis: "30 minut online" },
 ];
 
-// Spotkania 11:00–24:00, ostatnie zaczyna się o 23:00.
-const GODZINY = Array.from({ length: 13 }, (_, i) => `${11 + i}:00`);
 
 // Wolne godziny z kalendarza Pawła (/api/terminy, lib/terminy.ts).
 type DzienTerminow = { data: string; godziny: string[] };
@@ -572,31 +571,15 @@ export default function LandingForm({
               <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
                 Godzina
               </p>
-              <div className="flex flex-wrap justify-center gap-2">
-                {GODZINY.map((g) => {
-                  const wolna = wolneDzis.includes(g);
-                  return (
-                    <button
-                      key={g}
-                      type="button"
-                      disabled={!wolna}
-                      aria-pressed={godzina === g}
-                      title={wolna ? undefined : "Zajęte"}
-                      onClick={() => {
-                        setGodzina(g);
-                        setErrorMsg(null);
-                      }}
-                      className={`w-[calc((100%-1.5rem)/4)] rounded-lg border py-2 text-center text-sm tabular-nums transition-colors disabled:cursor-not-allowed disabled:line-through disabled:opacity-35 sm:w-[calc((100%-3.5rem)/8)] ${
-                        godzina === g
-                          ? "border-accent bg-accent-solid text-white"
-                          : "border-gray-200 text-gray-900 hover:border-accent/50 dark:border-gray-700 dark:text-white"
-                      }`}
-                    >
-                      {g}
-                    </button>
-                  );
-                })}
-              </div>
+              <OsTerminu
+                key={dzien}
+                wolne={wolneDzis}
+                wybrana={godzina}
+                onWybierz={(t) => {
+                  setGodzina(t);
+                  setErrorMsg(null);
+                }}
+              />
             </div>
             <p className="text-center text-xs text-gray-500 dark:text-gray-400">
               Pokazujemy tylko godziny wolne w naszym kalendarzu. Potwierdzimy zaproszeniem z linkiem do Meet.
