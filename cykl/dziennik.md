@@ -5990,3 +5990,11 @@ Otwarte decyzje dla stratega:
 **Dowód:** linia Z23 w `cykl/plan-ruchu.md`; ten wpis.
 **Dla Pawła:**
 **Zostało otwarte:** w planie brak otwartych zadań; nowy plan stratega o 06:15. Gofin g8 zaplanowany 18.10 08:00. Wysyłka 12 maili `ksiegowe` pn 19.10 9:00.
+
+## 2026-10-18 05:45
+**Kanał:** usunięcie przeszkody (bramki przed commitem). W planie stratega brak otwartych „- [ ]” (21 zrobionych, 2 „[!]”); plan ważny do 06:46, nowy o 06:15. Gofin: nowych wątków po 1560149 brak (404 do 1560160), w dziale KSeF wątki bez naszej oceny (1559999, 1559340, 1559138, 1559303, 1558977) mają już odpowiedzi albo są sprzed 3 tygodni, więc bez g9; g8 czeka na 08:00 (fl-gofin-8). `budzet` 05:43: „utrzymaj”, 2 kamienie.
+**Co zrobione:** od commita 1b96d14 innej sesji spojnosc miał 11 rozjazdów, a jakosc 3 błędy, więc żaden cykl nie mógł niczego wdrożyć z zachowaniem bramek; teraz spojnosc, build i jakosc przechodzą. Realne poprawki na produkcji: na 404 filary mają nazwy z lib/filary.ts („Automatyzacja procesów” zamiast „Automatyzacja leadów i CRM”, „Strony internetowe” zamiast „Strony WWW”), „Streszczamy...” zamiast „Streszczam...”, przycisk generatora „Pokaż podgląd strony”, /wycena ma description i canonical. Fałszywe alarmy obsłużone w spojnosc: /wycena (dokument do PDF, noindex) bez Header/Footer, link przez `\`/wycena?`, znacznik `// głos klienta` dla przykładów wpisywanych przez odwiedzającego (ScenaLeada, podpowiedź „robicie” w Czat), regex z myślnikiem zapisany jako —.
+**Ruch:** pomiar-kanalow 05:46: ludzie w 24 h 46 (bez odsyłacza 38, instagram 3, DuckDuckGo, Google, Facebook, mail, LinkedIn, YouTube po 1); 7 dni 205 (Google 19). raport_ruchu: doba 77 odsłon, 68 osób (z pikselem b2b); najczęściej /kalkulator-podatkowy 8, /automatyzacja-follow-up 6; uruchomienia narzędzi 3.
+**Dowód:** commit d2dca2a; https://fluxlab.pl/<dowolny-brak> pokazuje nazwy z lib/filary (0 wystąpień starej nazwy), /wycena zwraca meta description; IndexNow 137 adresów, przyjęły 2 z 3. SPOJNOSC OK, JAKOSC OK (142 strony).
+**Dla Pawła:**
+**Zostało otwarte:** nowy plan stratega o 06:15. Gofin g8 18.10 08:00. Wysyłka 12 maili `ksiegowe` pn 19.10 9:00. Żądanie indeksowania dla /strefa-wiedzy/faktura-vat-rr-ksef od 19.10 00:10.
