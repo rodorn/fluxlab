@@ -200,7 +200,7 @@ export default function Home() {
                 Twój CRM czyta zapytanie, zanim Ty je przeczytasz
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-gray-600 dark:text-white/65">
-                Napisz zapytanie, jakbyś był klientem. AI założy kartę leada i
+                Wybierz firmę i wyślij zapytanie jak jej klient. AI założy kartę leada w jej CRM i
                 przygotuje odpowiedź, na żywo.
               </p>
             </RevealOnScroll>

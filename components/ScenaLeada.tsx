@@ -21,13 +21,24 @@ type Karta = {
 };
 
 // Przykłady wpisuje odwiedzający, więc mówią jego głosem.
+const ETYKIETY = ["JDG: doradca podatkowy", "Mała firma: pompy ciepła", "Średnia firma: hurtownia", "Kancelaria", "Kuchnie na wymiar", "Medycyna estetyczna"];
+/** Firma, do której CRM trafia zapytanie z danego przykładu. */
+const FIRMY = [
+  "biuro doradztwa podatkowego (jednoosobowa działalność)",
+  "mała firma montująca pompy ciepła",
+  "hurtownia materiałów budowlanych",
+  "kancelaria prawna, prawo rodzinne",
+  "producent kuchni na wymiar",
+  "salon medycyny estetycznej",
+];
+
 const PRZYKLADY = [ // głos klienta
-  "Prowadzę JDG, doradztwo podatkowe. Klienci piszą z formularza i z Facebooka, odpisuję wieczorami i część ucieka. Potrzebuję strony i prostego CRM, budżet ok. 6 tys.", // głos klienta
-  "Firma instalacyjna z Wrocławia, 8 osób. Zapytania o pompy ciepła przychodzą mailem, telefonem i z formularza, oferty robimy w Excelu. Chcemy CRM z przydziałem do handlowca.", // głos klienta
-  "Hurtownia materiałów budowlanych, 60 pracowników i 12 handlowców. Leady z formularza, telefonu i maila trzeba połączyć z ERP. Budżet do 40 tys., start w pierwszym kwartale.", // głos klienta
-  "Kancelaria prawna w Warszawie, prawo rodzinne. Zapytania przychodzą mailem i telefonem, gubimy część z nich. Szukamy porządku przed nowym rokiem.", // głos klienta
-  "Robimy kuchnie na wymiar pod Poznaniem. Klienci wysyłają wymiary i zdjęcia, a wycena zajmuje nam tydzień. Budżet do 15 tys.", // głos klienta
-  "Salon medycyny estetycznej w Gdańsku. Chcemy, żeby klientka sama umawiała zabieg i dostawała przypomnienie SMS. Start w listopadzie.", // głos klienta
+  "Dzień dobry, od stycznia otwieram sklep internetowy z odzieżą. Szukam kogoś, kto poprowadzi księgowość i doradzi, czy ryczałt się opłaca. Mogę przesłać biznesplan.", // głos klienta
+  "Dom 160 m² pod Wrocławiem, chcemy zamienić piec gazowy na pompę ciepła. Budżet ok. 50 tys., montaż najlepiej przed końcem lutego. Czy robicie audyt na miejscu?", // głos klienta
+  "Firma budowlana z Opola. Potrzebujemy 40 palet bloczków i 120 worków cementu na budowę w przyszłym tygodniu, z dostawą. Prosimy o ofertę z rabatem przy stałej współpracy.", // głos klienta
+  "Dzień dobry, chcę złożyć pozew o rozwód, mamy dwoje dzieci i wspólne mieszkanie w Warszawie. Kiedy mogę umówić pierwszą konsultację i ile kosztuje?", // głos klienta
+  "Kuchnia w kształcie L, 3,2 na 2,4 m, fronty matowe białe, sprzęt AGD już mamy. Mieszkam w Poznaniu, montaż przed świętami. Ile to mniej więcej kosztuje?", // głos klienta
+  "Chciałabym pierwszy raz zrobić botoks okolic oczu. Gdańsk, najlepiej sobota przed południem. Czy jest wcześniej konsultacja i ile kosztuje zabieg?", // głos klienta
 ];
 
 const POLA: [keyof Karta, string][] = [
@@ -231,7 +242,7 @@ export default function ScenaLeada() {
       const r = await fetch("/api/demo-lead", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ tekst }),
+        body: JSON.stringify({ tekst, firma: FIRMY[PRZYKLADY.indexOf(tekst)] ?? "" }),
       });
       const d = await r.json();
       if (!r.ok) throw new Error(d.error || "Błąd");
@@ -280,7 +291,7 @@ export default function ScenaLeada() {
                   : "border-gray-200 text-gray-600 hover:border-accent/50 dark:border-white/10 dark:text-white/60"
               }`}
             >
-              {["JDG", "Mała firma", "Średnia firma", "Kancelaria", "Kuchnie na wymiar", "Medycyna estetyczna"][i]}
+              {ETYKIETY[i]}
             </button>
           ))}
         </div>

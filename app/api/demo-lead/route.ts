@@ -32,7 +32,7 @@ const tools = [
         temat: { type: "string", description: "Czego klient chce, max 6 słów" },
         branza: {
           type: "string",
-          description: "Branża klienta albo „nie podano”",
+          description: "Branża firmowego klienta albo rodzaj usługi, o którą pyta klient prywatny",
         },
         miasto: { type: "string", description: "Miasto albo „nie podano”" },
         budzet: {
@@ -89,9 +89,11 @@ export async function POST(req: Request) {
   }
 
   let tekst = "";
+  let firma = "";
   try {
     const body = await req.json();
     tekst = typeof body.tekst === "string" ? body.tekst.trim() : "";
+    firma = typeof body.firma === "string" ? body.firma.trim().slice(0, 120) : "";
   } catch {
     return NextResponse.json({ error: "Nieprawidłowe dane" }, { status: 400 });
   }
@@ -113,7 +115,7 @@ export async function POST(req: Request) {
       body: JSON.stringify({
         model: "gpt-5.4-mini",
         max_output_tokens: 700,
-        instructions: `Jesteś systemem CRM firmy usługowej. Dostajesz zapytanie, które klient wpisał w formularz na stronie tej firmy. Zakładasz kartę leada i piszesz szkic pierwszej odpowiedzi handlowca.
+        instructions: `Jesteś systemem CRM firmy: ${firma || "firma usługowa"}. Dostajesz zapytanie, które klient wpisał w formularz na stronie tej firmy. Zakładasz kartę leada i piszesz szkic pierwszej odpowiedzi handlowca.
 Zasady: wyciągaj tylko to, co jest w tekście, niczego nie zmyślaj (brak danych = „nie podano”). Ocena wyżej, gdy jest budżet, termin i konkret. Odpowiedź po polsku, uprzejma, rzeczowa, odnosi się do szczegółów zapytania, bez obiecywania cen ani terminów, bez długich myślników i emoji. Jeśli tekst nie jest zapytaniem klienta, potraktuj go jako ogólne zapytanie i ustaw niską ocenę.
 Wywołaj karta_leada.`,
         input: [{ role: "user", content: tekst }],
