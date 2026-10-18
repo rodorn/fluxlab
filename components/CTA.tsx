@@ -7,6 +7,7 @@ import { event as gaEvent } from "@/lib/gtag";
 import { zglosZdarzenie } from "@/lib/zdarzenie";
 import { readUtm, type UtmFields } from "@/lib/zrodlo";
 import { PROBLEM_TYPES, getScalesForType } from "@/lib/form-options";
+import PoleWyboru from "@/components/PoleWyboru";
 
 const inputClass =
   "w-full px-4 py-2.5 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-sm text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-colors disabled:opacity-50 disabled:cursor-not-allowed";
@@ -92,10 +93,10 @@ function CTAFormularz() {
     const data = {
       email: (form.elements.namedItem("email") as HTMLInputElement).value,
       company: (form.elements.namedItem("company") as HTMLInputElement).value,
-      problemType: (form.elements.namedItem("problemType") as HTMLSelectElement)
+      problemType: (form.elements.namedItem("problemType") as HTMLInputElement)
         .value,
       problemScale: (
-        form.elements.namedItem("problemScale") as HTMLSelectElement
+        form.elements.namedItem("problemScale") as HTMLInputElement
       ).value,
       message: (form.elements.namedItem("message") as HTMLTextAreaElement)
         .value,
@@ -239,27 +240,18 @@ function CTAFormularz() {
                 >
                   Co chcesz usprawnić? <span className="text-accent">*</span>
                 </label>
-                <select
+                <PoleWyboru
                   id="problemType"
                   name="problemType"
                   required
-                  value={problemType}
-                  onChange={(e) => {
-                    setProblemType(e.target.value);
+                  wartosc={problemType}
+                  opcje={PROBLEM_TYPES}
+                  placeholder="Wybierz obszar"
+                  onZmiana={(v) => {
+                    setProblemType(v);
                     setProblemScale("");
                   }}
-                  className={inputClass}
-                >
-                  {PROBLEM_TYPES.map((opt) => (
-                    <option
-                      key={opt.value}
-                      value={opt.value}
-                      disabled={opt.value === ""}
-                    >
-                      {opt.label}
-                    </option>
-                  ))}
-                </select>
+                />
               </div>
               <div>
                 <label
@@ -268,29 +260,16 @@ function CTAFormularz() {
                 >
                   Skala / typ <span className="text-accent">*</span>
                 </label>
-                <select
+                <PoleWyboru
                   id="problemScale"
                   name="problemScale"
                   required
-                  value={problemScale}
-                  onChange={(e) => setProblemScale(e.target.value)}
+                  wartosc={problemScale}
+                  opcje={scaleOptions}
+                  placeholder={problemType ? "Wybierz" : "Najpierw wybierz obszar"}
                   disabled={!problemType}
-                  className={inputClass}
-                >
-                  {scaleOptions.map((opt) => (
-                    <option
-                      key={opt.value}
-                      value={opt.value}
-                      disabled={opt.value === ""}
-                    >
-                      {problemType
-                        ? opt.label
-                        : opt.value === ""
-                          ? "Najpierw wybierz obszar..."
-                          : opt.label}
-                    </option>
-                  ))}
-                </select>
+                  onZmiana={setProblemScale}
+                />
               </div>
             </div>
 
