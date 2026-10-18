@@ -6,6 +6,7 @@ import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 import Tabs from "@/components/Tabs";
+import TaxCalculator from "@/app/kalkulator-podatkowy/TaxCalculator";
 
 export const metadata: Metadata = {
   title: "Ryczałt czy liniowy w 2026, co się opłaca | Fluxlab",
@@ -78,7 +79,7 @@ export default function RyczaltCzyLiniowyArticle() {
               sięga kilku tysięcy złotych rocznie.
             </p>
             <div className="mt-8">
-              <Link href="/kalkulator-podatkowy" className="btn-primary">
+              <Link href="#kalkulator" className="btn-primary">
                 Policz w kalkulatorze JDG 2026
               </Link>
             </div>
@@ -89,6 +90,17 @@ export default function RyczaltCzyLiniowyArticle() {
           <Tabs
             ariaLabel="Rozdziały artykułu Ryczałt czy liniowy"
             tabs={[
+              {
+                label: "Kalkulator",
+                kotwica: "kalkulator",
+                content: (
+                  <div className="py-6 lg:py-8">
+                    <div className="mx-auto max-w-6xl">
+                      <TaxCalculator />
+                    </div>
+                  </div>
+                ),
+              },
               {
                 label: "Jak działają obie formy",
                 content: (
@@ -198,7 +210,7 @@ export default function RyczaltCzyLiniowyArticle() {
                         <p className="text-gray-600 dark:text-gray-400 mb-4">
                           Wpisz przychód, koszty i stawkę ryczałtu, a kalkulator pokaże, która forma jest tańsza.
                         </p>
-                        <Link href="/kalkulator-podatkowy" className="btn-primary">
+                        <Link href="#kalkulator" className="btn-primary">
                           Sprawdź w kalkulatorze JDG 2026
                         </Link>
                       </div>
@@ -278,7 +290,7 @@ export default function RyczaltCzyLiniowyArticle() {
                           </li>
                           <li>
                             <Link
-                              href="/kalkulator-podatkowy"
+                              href="#kalkulator"
                               className="text-accent hover:underline"
                             >
                               Kalkulator JDG 2026

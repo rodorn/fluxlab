@@ -6,6 +6,7 @@ import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 import Tabs from "@/components/Tabs";
+import TaxCalculator from "@/app/kalkulator-podatkowy/TaxCalculator";
 
 export const metadata: Metadata = {
   title: "Jaka forma opodatkowania JDG w 2026 | Fluxlab",
@@ -83,6 +84,17 @@ export default function JakaFormaOpodatkowaniaJdgArticle() {
           <Tabs
             ariaLabel="Rozdziały artykułu o formie opodatkowania JDG w 2026"
             tabs={[
+              {
+                label: "Kalkulator",
+                kotwica: "kalkulator",
+                content: (
+                  <div className="py-6 lg:py-8">
+                    <div className="mx-auto max-w-6xl">
+                      <TaxCalculator />
+                    </div>
+                  </div>
+                ),
+              },
               {
                 label: "Trzy formy",
                 content: (
@@ -195,7 +207,7 @@ export default function JakaFormaOpodatkowaniaJdgArticle() {
                         Porównaj trzy formy razem ze składką zdrowotną.
                       </p>
                       <Link
-                        href="/kalkulator-podatkowy"
+                        href="#kalkulator"
                         className="btn-primary"
                       >
                         Sprawdź w kalkulatorze JDG 2026

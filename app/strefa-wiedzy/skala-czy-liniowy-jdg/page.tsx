@@ -6,6 +6,7 @@ import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 import Tabs from "@/components/Tabs";
+import TaxCalculator from "@/app/kalkulator-podatkowy/TaxCalculator";
 
 export const metadata: Metadata = {
   title: "Skala czy liniowy dla JDG w 2026 | Fluxlab",
@@ -84,6 +85,17 @@ export default function SkalaCzyLiniowyJdgArticle() {
           <Tabs
             ariaLabel="Rozdziały artykułu Skala czy liniowy"
             tabs={[
+              {
+                label: "Kalkulator",
+                kotwica: "kalkulator",
+                content: (
+                  <div className="py-6 lg:py-8">
+                    <div className="mx-auto max-w-6xl">
+                      <TaxCalculator />
+                    </div>
+                  </div>
+                ),
+              },
               {
                 label: "Zasady obu form",
                 content: (
@@ -174,7 +186,7 @@ export default function SkalaCzyLiniowyJdgArticle() {
                         <h2 className="h2-sekcji mb-6">
                           Porównaj na swoich danych
                         </h2>
-                        <Link href="/kalkulator-podatkowy" className="btn-primary">
+                        <Link href="#kalkulator" className="btn-primary">
                           Sprawdź w kalkulatorze JDG 2026
                         </Link>
                       </div>
@@ -305,7 +317,7 @@ export default function SkalaCzyLiniowyJdgArticle() {
                           <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400">
                             <li>
                               <Link
-                                href="/kalkulator-podatkowy"
+                                href="#kalkulator"
                                 className="text-accent hover:underline"
                               >
                                 Kalkulator JDG 2026

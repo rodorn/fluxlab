@@ -6,6 +6,7 @@ import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 import Tabs from "@/components/Tabs";
+import TaxCalculator from "@/app/kalkulator-podatkowy/TaxCalculator";
 
 export const metadata: Metadata = {
   title: "Jak liczyć składkę zdrowotną w JDG w 2026 | Fluxlab",
@@ -83,6 +84,17 @@ export default function SkladkaZdrowotnaJDGArticle() {
           <Tabs
             ariaLabel="Rozdziały artykułu o składce zdrowotnej w JDG"
             tabs={[
+              {
+                label: "Kalkulator",
+                kotwica: "kalkulator",
+                content: (
+                  <div className="py-6 lg:py-8">
+                    <div className="mx-auto max-w-6xl">
+                      <TaxCalculator />
+                    </div>
+                  </div>
+                ),
+              },
               {
                 label: "Zasady",
                 content: (
@@ -190,7 +202,7 @@ export default function SkladkaZdrowotnaJDGArticle() {
                         Sprawdź wpływ zdrowotnej na Twój wynik
                       </p>
                       <Link
-                        href="/kalkulator-podatkowy"
+                        href="#kalkulator"
                         className="btn-primary"
                       >
                         Sprawdź w kalkulatorze JDG 2026
@@ -259,7 +271,7 @@ export default function SkladkaZdrowotnaJDGArticle() {
                         </li>
                         <li>
                           <Link
-                            href="/kalkulator-podatkowy"
+                            href="#kalkulator"
                             className="text-accent hover:underline"
                           >
                             Kalkulator podatkowy JDG 2026

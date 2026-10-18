@@ -6,6 +6,7 @@ import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 import Tabs from "@/components/Tabs";
+import TaxCalculator from "@/app/kalkulator-podatkowy/TaxCalculator";
 
 export const metadata: Metadata = {
   title: "VAT w JDG, kiedy warto być vatowcem w 2026? | Fluxlab",
@@ -61,6 +62,17 @@ export default function VatWJdgArticle() {
           <Tabs
             ariaLabel="Rozdziały artykułu VAT w JDG"
             tabs={[
+              {
+                label: "Kalkulator",
+                kotwica: "kalkulator",
+                content: (
+                  <div className="py-6 lg:py-8">
+                    <div className="mx-auto max-w-6xl">
+                      <TaxCalculator />
+                    </div>
+                  </div>
+                ),
+              },
               {
                 label: "Zwolnienie i obowiązek",
                 content: (
@@ -160,7 +172,7 @@ export default function VatWJdgArticle() {
                         <p className="text-gray-600 dark:text-gray-400 mb-4">
                           Sprawdź wpływ VAT na Twoje rozliczenie
                         </p>
-                        <Link href="/kalkulator-podatkowy" className="btn-primary">
+                        <Link href="#kalkulator" className="btn-primary">
                           Sprawdź w kalkulatorze JDG 2026
                         </Link>
                       </div>
@@ -354,7 +366,7 @@ export default function VatWJdgArticle() {
                         <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400">
                           <li>
                             <Link
-                              href="/kalkulator-podatkowy"
+                              href="#kalkulator"
                               className="text-accent hover:underline"
                             >
                               Kalkulator podatkowy JDG 2026
