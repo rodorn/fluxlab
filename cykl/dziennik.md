@@ -6005,3 +6005,13 @@ Otwarte decyzje dla stratega:
 **Decyzje:** niedziela bez maili (24 pliki na pn 9:00, Z9 tylko sprawdza partię); 2 żądania indeksowania dziś (8 z 10 zużyte 00:44), 10 po 00:50; tytuły e-Doręczeń i biur bez zmian do 25.10; nocna przebudowa strony głównej innej sesji nie jest cofana, Z8 mierzy szybkość i tylko przy przekroczonych progach odracza dekoracje; Gofin 3 wpisy (12:00, 16:00, 20:00) i pierwszy pomiar efektu (Z16); artykuł z kalendarza idzie w planie na pn 19.10 jako pierwszy, dziś Z23 sprawdza szkic. Nowy kanał w tabeli: social `seria-podatki` innej sesji (brief Z5 dla fluxlab-meta, prośba o LinkedIn osobisty do Pawła w mailu).
 **Dla Pawła (mail 06:50, temat „FluxLab ruch, plan na 18.10.2026: 45 osób w dobie, Google 11 kliknięć w tygodniu"):** ocena strony głównej po nocy na telefonie (2 min); udostępnienie kalkulatora podatkowego z profilu osobistego LinkedIn z utm `seria-podatki-pawel` (5 min).
 **Zostało otwarte:** Z1 do Z23 w planie; pierwsze: Z1 07:46 (lista adresów bez indeksu, frazy), Z2 08:46 (2 żądania, mapa), Z3 09:46 (kalkulator podatkowy).
+
+<!-- WYSLANO 2026-10-18 07:04 -->
+
+## 2026-10-18 07:20
+**Kanał:** Google (Z1, Z2), narzędzia (Z3), Gofin (Z4), wg planu stratega z 18.10 06:23.
+**Co zrobione:** kalkulator podatkowy (najczęstsza strona doby z social) ma pole na pierwszym ekranie w telefonie, zdarzenie uruchomienia i jedno przejście dalej pod wynikiem; mapa witryny odczytana przez Google dziś (137 stron), faktura-vat-rr-ksef zgłoszona do indeksu, g9 zaplanowany.
+**Ruch:** ostatnia doba 80 odsłon, 72 osoby (+10% wobec średniej 72,9); źródła: mail.google.com 6, b2b-email 4, facebook 4, youtube 4, instagram 3; najczęściej /kalkulator-podatkowy 8; uruchomienia narzędzi 3 (numer KSeF 2, skan 1). Uwaga: o 07:15 jedno własne zdarzenie testowe `uruchomiono_kalkulator_podatkowy` (przeglądarka 9228, flaga nie-licz zdjęta na test), odejmij je w Z5/Z13.
+**Dowód:** Z1: L1 = 22 adresy z raportu Indeksowanie (stan 12.10), kontrola adresów: 22 z 22 już w Google; „automatyzacja podatków” to zapytanie w cudzysłowie, 24 wyśw., strony /automatyzacja-raportowania i /narzedzia; /numer-ksef 7 dni 3/65. Z2: faktura-vat-rr-ksef „prośba przesłana” 07:02, /wycena odrzucona (celowo noindex); sitemap przesłana 18.10, odczyt 18.10, 137 = 137 loc. Z3: commit 6cc9087, 200 z VPS, IndexNow 2 z 3, zdarzenie w ruch.sqlite 05:15:25 UTC. Z4: wątek https://forum.gofin.pl/1560143/odliczenie-od-rr, termin 2026-10-18 12:00, unit fl-gofin-9.
+**Dla Pawła:**
+**Zostało otwarte:** Z5 i dalej wg planu; L1 pusta, więc Z15 i Z18 muszą brać adresy spoza raportu z 12.10 (nowe strony z bieżącego dnia).
