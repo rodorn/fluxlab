@@ -1,3 +1,4 @@
+import { zrzutPrzezZyte } from "@/lib/zyte";
 import { NextResponse } from "next/server";
 import { BladAdresu, pobierzStrone } from "@/lib/bezpieczny-fetch";
 import { originDozwolony, utworzLimit } from "@/lib/limit-ip";
@@ -171,6 +172,9 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Ta strona nie ma treści, z której można zacząć (może być wczytywana skryptem)." }, { status: 422 });
   }
 
+  // Zrzut obecnej strony leci równolegle z tekstem od AI.
+  const zrzut = zrzutPrzezZyte(url.toString());
+
   try {
     const r = await fetch("https://api.openai.com/v1/responses", {
       method: "POST",
@@ -198,6 +202,7 @@ Wywołaj nowe_hero.`,
     return NextResponse.json({
       strona: { adres: url.toString(), host: url.hostname, nazwa, tytul, opis, naglowki: naglowki.slice(0, 4), kolor, logo, favicon },
       hero,
+      zrzut: await zrzut,
     });
   } catch {
     return NextResponse.json({ error: "Błąd przetwarzania" }, { status: 500 });

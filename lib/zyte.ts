@@ -59,3 +59,33 @@ export async function pobierzPrzezZyte(
     return null;
   }
 }
+
+/** Zrzut ekranu górnej części strony przez Zyte (przeglądarka po ich stronie),
+ *  jako data URL JPEG. Bez klucza albo przy błędzie zwraca null. */
+export async function zrzutPrzezZyte(url: string, limitMs = 25000): Promise<string | null> {
+  const klucz = process.env.ZYTE_API_KEY;
+  if (!klucz) return null;
+  try {
+    const odp = await fetch("https://api.zyte.com/v1/extract", {
+      method: "POST",
+      signal: AbortSignal.timeout(limitMs),
+      headers: {
+        authorization: `Basic ${Buffer.from(`${klucz}:`).toString("base64")}`,
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({
+        url,
+        screenshot: true,
+        screenshotOptions: { format: "jpeg", fullPage: false },
+      }),
+    });
+    if (!odp.ok) {
+      console.error("Zyte zrzut:", odp.status, (await odp.text()).slice(0, 300));
+      return null;
+    }
+    const d = (await odp.json()) as { screenshot?: string };
+    return d.screenshot ? `data:image/jpeg;base64,${d.screenshot}` : null;
+  } catch {
+    return null;
+  }
+}
