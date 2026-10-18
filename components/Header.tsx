@@ -1,18 +1,13 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
 import Znak from "./Znak";
 import Wyszukiwarka from "./Wyszukiwarka";
-import { MENU, type PozycjaMenu } from "@/lib/menu";
+import MenuDesktop from "./MenuDesktop";
+import { MENU } from "@/lib/menu";
 
-const LINK_NAV =
-  "relative whitespace-nowrap text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors";
-const LINK_PODMENU =
-  "block rounded-md px-2 py-1 text-[13px] leading-snug text-gray-600 hover:bg-gray-50 hover:text-accent dark:text-white/65 dark:hover:bg-white/5";
-const NAGLOWEK_PODMENU =
-  "block px-2 pb-1 text-sm font-semibold text-gray-900 hover:text-accent dark:text-white";
 
 const IKONA_LUPY = (
   <svg
@@ -55,10 +50,8 @@ function Strzalka({ otwarte }: { otwarte: boolean }) {
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [menu, setMenu] = useState<string | null>(null);
   const [mobGrupa, setMobGrupa] = useState<string | null>(null);
   const [szukaj, setSzukaj] = useState(false);
-  const przyciski = useRef<Record<string, HTMLButtonElement | null>>({});
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -85,105 +78,18 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
-    if (!menu && !open) return;
+    if (!open) return;
     const onKey = (e: KeyboardEvent) => {
       if (e.key !== "Escape") return;
-      if (menu) przyciski.current[menu]?.focus();
-      setMenu(null);
       setOpen(false);
     };
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
-  }, [menu, open]);
+  }, [open]);
 
   const zamknij = () => {
-    setMenu(null);
     setOpen(false);
   };
-
-  const rozwijane = (
-    id: string,
-    etykieta: string,
-    panel: React.ReactNode,
-    wrapperClass = "relative",
-  ) => (
-    <div
-      className={wrapperClass}
-      onMouseEnter={() => setMenu(id)}
-      onMouseLeave={() => setMenu((m) => (m === id ? null : m))}
-      onBlur={(e) => {
-        if (!e.currentTarget.contains(e.relatedTarget as Node | null))
-          setMenu((m) => (m === id ? null : m));
-      }}
-    >
-      <button
-        type="button"
-        ref={(el) => {
-          przyciski.current[id] = el;
-        }}
-        className={`${LINK_NAV} inline-flex items-center gap-1 py-5`}
-        aria-haspopup="true"
-        aria-expanded={menu === id}
-        aria-controls={`menu-${id}`}
-        onClick={() => setMenu((m) => (m === id ? null : id))}
-      >
-        {etykieta}
-        <Strzalka otwarte={menu === id} />
-      </button>
-      <div id={`menu-${id}`} hidden={menu !== id}>
-        {panel}
-      </div>
-    </div>
-  );
-
-  const panel = (p: PozycjaMenu) => (
-    <div className="absolute left-1/2 top-full w-[min(64rem,calc(100vw-2rem))] -translate-x-1/2 rounded-2xl border border-gray-200 bg-white p-5 shadow-xl dark:border-white/10 dark:bg-gray-900">
-      <div className="grid auto-cols-fr grid-flow-col gap-5">
-        {p.kolumny.map((k, i) => (
-          <div key={i}>
-            <p className="px-2 pb-1.5 text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-white/50">
-              {k.tytul}
-            </p>
-            <ul>
-              {k.linki.map((x) => (
-                <li key={x.href + (x.cena ?? "")}>
-                  <Link
-                    href={x.href}
-                    onClick={zamknij}
-                    className={LINK_PODMENU}
-                  >
-                    {x.nazwa}
-                    {x.cena && (
-                      <span className="mt-0.5 block text-xs font-semibold text-accent">
-                        {x.cena}
-                      </span>
-                    )}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
-        <Link
-          href={p.kafel.href}
-          onClick={zamknij}
-          className="group flex flex-col justify-between rounded-2xl bg-accent/[0.07] p-4 transition-colors hover:bg-accent/[0.12] dark:bg-accent/15 dark:hover:bg-accent/25"
-        >
-          <span>
-            <span className="block text-base font-bold text-gray-900 dark:text-white">
-              {p.kafel.tytul}
-            </span>
-            <span className="mt-1 block text-[13px] leading-snug text-gray-600 dark:text-white/65">
-              {p.kafel.opis}
-            </span>
-          </span>
-          <span className="mt-4 text-sm font-semibold text-accent">
-            {p.kafel.cta} →
-          </span>
-        </Link>
-      </div>
-    </div>
-  );
 
   const MOB_LINK =
     "block py-2 text-sm text-gray-700 dark:text-gray-200 hover:text-accent transition-colors";
@@ -232,14 +138,7 @@ export default function Header() {
         </Link>
 
         {/* Desktop nav */}
-        <nav
-          aria-label="Menu główne"
-          className="relative hidden xl:flex flex-1 items-center justify-center gap-6 px-6"
-        >
-          {MENU.map((p) => (
-            <div key={p.id}>{rozwijane(p.id, p.etykieta, panel(p), "")}</div>
-          ))}
-        </nav>
+        <MenuDesktop />
 
         {/* Right */}
         <div className="hidden xl:flex items-center gap-3 shrink-0">

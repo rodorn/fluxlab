@@ -1202,3 +1202,33 @@ p {
 [data-streszczenie] + article {
   padding-top: 1.5rem;
 }
+
+/* Menu w nagłówku: panel wysuwa się, treść jedzie w bok przy zmianie pozycji */
+.menu-panel {
+  animation: menu-panel-wjazd 0.22s cubic-bezier(0.22, 1, 0.36, 1) both;
+  transform-origin: top center;
+}
+@keyframes menu-panel-wjazd {
+  from { opacity: 0; transform: translateY(-6px) scale(0.985); }
+  to { opacity: 1; transform: none; }
+}
+.menu-wjazd { animation: menu-tresc 0.25s ease-out both; }
+.menu-z-prawej { animation: menu-z-prawej 0.3s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.menu-z-lewej { animation: menu-z-lewej 0.3s cubic-bezier(0.22, 1, 0.36, 1) both; }
+@keyframes menu-tresc { from { opacity: 0; } to { opacity: 1; } }
+@keyframes menu-z-prawej { from { opacity: 0; transform: translateX(28px); } to { opacity: 1; transform: none; } }
+@keyframes menu-z-lewej { from { opacity: 0; transform: translateX(-28px); } to { opacity: 1; transform: none; } }
+.suwak-menu::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 18px; width: 18px; border-radius: 9999px;
+  background: #fff; box-shadow: 0 2px 6px rgb(0 0 0 / 0.3);
+  transition: transform 0.15s;
+}
+.suwak-menu::-webkit-slider-thumb:hover { transform: scale(1.15); }
+.suwak-menu::-moz-range-thumb {
+  height: 18px; width: 18px; border: 0; border-radius: 9999px;
+  background: #fff; box-shadow: 0 2px 6px rgb(0 0 0 / 0.3);
+}
+@media (prefers-reduced-motion: reduce) {
+  .menu-panel, .menu-wjazd, .menu-z-prawej, .menu-z-lewej { animation: none; }
+}
