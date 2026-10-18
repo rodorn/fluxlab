@@ -1,0 +1,47 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
+const DOMYSLNY = "Formularz podpięty do CRM, cena z góry, gotowe w 2–3 tygodnie.";
+
+const WARIANTY: Record<string, string> = {
+  linkedin: "CRM dla firm B2B: lead trafia od razu do handlowca, cena z góry, gotowe w 2–3 tygodnie.",
+  google: "Strona z formularzem podpiętym do CRM, cena z góry, gotowe w 2–3 tygodnie.",
+  facebook: "Prosta strona i CRM dla Twojej firmy, cena z góry, gotowe w 2–3 tygodnie.",
+};
+
+function zrodlo(): string | null {
+  const p = new URLSearchParams(window.location.search);
+  const s = `${p.get("utm_source") ?? ""} ${p.get("utm_campaign") ?? ""}`.toLowerCase();
+  if (s.includes("linkedin")) return "linkedin";
+  if (s.includes("facebook") || /\b(fb|meta|instagram)\b/.test(s)) return "facebook";
+  if (s.includes("google")) return "google";
+  if (s.trim()) return null;
+  let host = "";
+  try {
+    host = new URL(document.referrer).hostname.toLowerCase();
+  } catch {
+    return null;
+  }
+  if (host.includes("linkedin.") || host === "lnkd.in") return "linkedin";
+  if (host.includes("facebook.") || host.includes("fb.com") || host.includes("instagram.")) return "facebook";
+  if (/(^|\.)google\./.test(host)) return "google";
+  return null;
+}
+
+export default function PodtytulZrodlo() {
+  const [tekst, setTekst] = useState(DOMYSLNY);
+
+  useEffect(() => {
+    try {
+      const z = zrodlo();
+      if (z) setTekst(WARIANTY[z]);
+    } catch {}
+  }, []);
+
+  return (
+    <p className="animate-fade-up-1 mx-auto mt-7 max-w-xl text-lg text-gray-600 sm:text-xl dark:text-white/65">
+      {tekst}
+    </p>
+  );
+}

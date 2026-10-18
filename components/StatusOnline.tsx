@@ -13,12 +13,26 @@ function czyOnline(): boolean {
   return h >= 9 && h < 23;
 }
 
+function godzina(): string {
+  return new Intl.DateTimeFormat("pl-PL", {
+    hour: "2-digit",
+    minute: "2-digit",
+    hourCycle: "h23",
+    timeZone: "Europe/Warsaw",
+  }).format(new Date());
+}
+
 export default function StatusOnline() {
   const [online, setOnline] = useState<boolean | null>(null);
+  const [czas, setCzas] = useState("");
 
   useEffect(() => {
-    setOnline(czyOnline());
-    const id = setInterval(() => setOnline(czyOnline()), 60_000);
+    const odswiez = () => {
+      setOnline(czyOnline());
+      setCzas(godzina());
+    };
+    odswiez();
+    const id = setInterval(odswiez, 30_000);
     return () => clearInterval(id);
   }, []);
 
@@ -35,6 +49,8 @@ export default function StatusOnline() {
         />
       </span>
       {online ? "Jesteśmy online, odpisujemy na bieżąco" : "Odpiszemy od 9:00"}
+      <span aria-hidden="true">·</span>
+      <span>Warszawa, {czas}</span>
     </p>
   );
 }

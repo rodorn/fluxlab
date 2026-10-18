@@ -202,7 +202,7 @@ export default function MakeVsN8nArticle() {
                         <p className="text-gray-600 dark:text-gray-400 mb-4">
                           Krótka rozmowa o Twojej skali i procesach.
                         </p>
-                        <Link href="/automatyzacja-procesow-biznesowych" className="btn-primary inline-block">
+                        <Link href="/automatyzacja-procesow-biznesowych" className="btn-primary">
                           Zobacz usługę automatyzacji procesów
                         </Link>
                       </div>

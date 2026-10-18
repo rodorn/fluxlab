@@ -230,7 +230,7 @@ export default function N8nVsZapierArticle() {
                         <p className="text-gray-600 dark:text-gray-400 mb-4">
                           Wdrażamy n8n na Twoim serwerze albo zarządzamy nim za ciebie.
                         </p>
-                        <Link href="/n8n" className="btn-primary inline-block">
+                        <Link href="/n8n" className="btn-primary">
                           Zobacz usługę n8n
                         </Link>
                       </div>

@@ -174,7 +174,7 @@ export default function SkalaCzyLiniowyJdgArticle() {
                         <h2 className="h2-sekcji mb-6">
                           Porównaj na swoich danych
                         </h2>
-                        <Link href="/kalkulator-podatkowy" className="btn-primary inline-block">
+                        <Link href="/kalkulator-podatkowy" className="btn-primary">
                           Sprawdź w kalkulatorze JDG 2026
                         </Link>
                       </div>

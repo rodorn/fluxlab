@@ -702,7 +702,7 @@ export default function KalkulatorDecyzji() {
           href="/kontakt"
           location="calc_choice_result"
           eventName="cta_click_calc_choice"
-          className="btn-primary px-8 py-3 text-base"
+          className="btn-primary btn-lg"
         >
           Sprawdź, ile zaoszczędzisz konkretnie
         </TrackedCTA>

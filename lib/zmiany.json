@@ -1,0 +1,162 @@
+[
+  {
+    "data": "2026-10-18T10:42:57+02:00",
+    "opis": "Brief głosowy w formularzu, tło hero z paralaksą, płynne przejścia między stronami, mail potwierdzenia w HTML"
+  },
+  {
+    "data": "2026-10-18T09:48:18+02:00",
+    "opis": "Strefa wiedzy: Gutschrift od klienta z Niemiec a KSeF"
+  },
+  {
+    "data": "2026-10-18T07:49:05+02:00",
+    "opis": "Audyt strony: pole adresu i przycisk na pierwszym ekranie telefonu"
+  },
+  {
+    "data": "2026-10-18T07:12:54+02:00",
+    "opis": "Kalkulator podatkowy: zdarzenie uruchomiono_kalkulator_podatkowy przy pierwszym przeliczeniu, zdjęcie ukryte w telefonie, link do ryczałt czy liniowy pod wynikami"
+  },
+  {
+    "data": "2026-10-18T03:46:55+02:00",
+    "opis": "Strefa wiedzy: faktura VAT RR w KSeF"
+  },
+  {
+    "data": "2026-10-18T01:27:15+02:00",
+    "opis": "Animacja przepływu w demo leada, wyszukiwarka Ctrl+K, streszczenie AI artykułów, wyścig szybkości stron, wycena PDF z konfiguratorów, szkic formularza i powitanie po…"
+  },
+  {
+    "data": "2026-10-18T01:01:13+02:00",
+    "opis": "Strona główna: demo na żywo, AI zakłada kartę leada i pisze szkic odpowiedzi z zapytania wpisanego przez odwiedzającego"
+  },
+  {
+    "data": "2026-10-18T00:59:12+02:00",
+    "opis": "Terminy Meet z kalendarza Pawła, konfiguratory ceny strony i abonamentu CRM, generator hasła AI, audyt do formularza, nowa 404, tytuł karty, animacja wysłania"
+  },
+  {
+    "data": "2026-10-18T00:37:08+02:00",
+    "opis": "Strona główna: interaktywna scena zgłoszenia, karty z poświatą, pole audytu, pasek akcji w telefonie"
+  },
+  {
+    "data": "2026-10-17T19:47:51+02:00",
+    "opis": "Strefa wiedzy: data wystawienia faktury w KSeF"
+  },
+  {
+    "data": "2026-10-17T18:49:56+02:00",
+    "opis": "Strefa wiedzy: ZAW-FA w spółce"
+  },
+  {
+    "data": "2026-10-17T17:49:36+02:00",
+    "opis": "Strefa wiedzy: załącznik do faktury w KSeF"
+  },
+  {
+    "data": "2026-10-17T11:46:19+02:00",
+    "opis": "Strefa wiedzy: dane Article i FAQPage na stronach o spamie i podszywaniu"
+  },
+  {
+    "data": "2026-10-17T09:50:09+02:00",
+    "opis": "/sprawdzenie-nip: data i podstawa wykreślenia z rejestru VAT w wyniku"
+  },
+  {
+    "data": "2026-10-17T07:59:38+02:00",
+    "opis": "/strefa-wiedzy/ksef-jdg-zwolniona-z-vat: po przekroczeniu limitu 10 tys. zł KSeF dla wszystkich kolejnych faktur, nie tylko w tym miesiącu"
+  },
+  {
+    "data": "2026-10-17T07:57:13+02:00",
+    "opis": "llms.txt: wpis dla /strefa-wiedzy"
+  },
+  {
+    "data": "2026-10-17T07:54:16+02:00",
+    "opis": "/numer-ksef: pole i przycisk przed przykładami, na telefonie 390 px oba na pierwszym ekranie"
+  },
+  {
+    "data": "2026-10-17T07:51:34+02:00",
+    "opis": "Strefa wiedzy: KSeF w JDG zwolnionej z VAT"
+  },
+  {
+    "data": "2026-10-17T07:45:06+02:00",
+    "opis": "/strefa-wiedzy/ai-w-automatyzacji-firm: tytuł i opis pod zapytanie „automatyzacja AI”, pierwsze zdanie odpowiada wprost"
+  },
+  {
+    "data": "2026-10-17T07:02:52+02:00",
+    "opis": "/ksef-2027: pierwszy akapit prowadzi do /numer-ksef, zdanie wymienione na zdanie tej samej długości"
+  },
+  {
+    "data": "2026-10-17T07:00:04+02:00",
+    "opis": "Link wewnętrzny do /mapa-strony na istniejącej frazie w badaniu stron dealerów"
+  },
+  {
+    "data": "2026-10-17T06:26:32+02:00",
+    "opis": "Strategia dobowa 17.10: plan 23 zadań, ostatni test outreachu DMARC, Google 8 h, klasyfikacja ruchu bez odsyłacza"
+  },
+  {
+    "data": "2026-10-17T05:45:12+02:00",
+    "opis": "KSeF 2027: tytuł i opis w wynikach odpowiadają na zapytanie o przesunięcie terminu i prowadzą do listy kontrolnej"
+  },
+  {
+    "data": "2026-10-17T04:45:44+02:00",
+    "opis": "llms.txt: program case study, jedyna strona oferty bez opisu dla asystentów AI"
+  },
+  {
+    "data": "2026-10-17T03:46:07+02:00",
+    "opis": "Kiedy odliczyć VAT z faktury KSeF: tytuł i opis w wynikach prowadzą do sprawdzenia numeru"
+  },
+  {
+    "data": "2026-10-17T02:45:16+02:00",
+    "opis": "Strefa wiedzy: faktura dla kontrahenta zagranicznego w KSeF"
+  },
+  {
+    "data": "2026-10-16T21:44:13+02:00",
+    "opis": "llms.txt: wpis o własnym CRM, jedynej usłudze bez opisu dla asystentów AI"
+  },
+  {
+    "data": "2026-10-16T14:36:40+02:00",
+    "opis": "Audyt: mniej fałszywych alarmów"
+  },
+  {
+    "data": "2026-10-16T14:36:05+02:00",
+    "opis": "Link /cennik na głównej poprawiony na /produkty, e-mail w stopce, kontrola linków wewnętrznych w jakosc.mjs"
+  },
+  {
+    "data": "2026-10-16T14:25:48+02:00",
+    "opis": "Audyt: punktacja z karą procentową zamiast stałej, duże strony nie spadają do zera"
+  },
+  {
+    "data": "2026-10-16T14:18:39+02:00",
+    "opis": "Audyt: przez Zyte najwyżej 6 plików tekstowych na domenę, limit funkcji 120 s"
+  },
+  {
+    "data": "2026-10-16T14:12:28+02:00",
+    "opis": "Audyt: po odmowie serwera także mapa strony, robots.txt i style przez Zyte"
+  },
+  {
+    "data": "2026-10-16T14:05:20+02:00",
+    "opis": "Audyt: gdy serwer odrzuca pomiar, drugie podejście przez Zyte; ustalenie o blokowaniu robotów, bez pomiaru czasu z pośrednika"
+  },
+  {
+    "data": "2026-10-16T14:00:08+02:00",
+    "opis": "Pomiar maili do firm: piksel otwarcia /api/o/<token> i link z kliknięciem /m/<token>?d=<ścieżka>, zdarzenia do kolektora ruchu"
+  },
+  {
+    "data": "2026-10-16T12:53:43+02:00",
+    "opis": "Audyt jednej strony mieści się w minucie: opis modelu z limitem czasu, wersje językowe pobierane równolegle, pisownia z limitem 8 s"
+  },
+  {
+    "data": "2026-10-16T12:47:57+02:00",
+    "opis": "Audyt: wersje językowe i literówki"
+  },
+  {
+    "data": "2026-10-16T12:01:42+02:00",
+    "opis": "Audyt: formularz kontaktowy rozpoznawany też po nazwie pola, bez fałszywego braku formularza na carmore.pl"
+  },
+  {
+    "data": "2026-10-16T12:00:25+02:00",
+    "opis": "Własny CRM: og:image"
+  },
+  {
+    "data": "2026-10-16T11:57:32+02:00",
+    "opis": "Oś symetrii: wyśrodkowany nagłówek, przyciski, tytuły sekcji, pytania i formularz na stronach usług, /strony-www i głównej"
+  },
+  {
+    "data": "2026-10-16T11:54:41+02:00",
+    "opis": "Audyt: DKIM sprawdzany także pod selektorami Zoho, Resend, Mailjet i innymi, brak trafienia jako uwaga drobna"
+  }
+]

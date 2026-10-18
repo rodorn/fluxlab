@@ -3,6 +3,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnimacjaWyslania from "@/components/AnimacjaWyslania";
+import Konfetti from "@/components/Konfetti";
 
 export const metadata: Metadata = {
   title: "Dziękujemy, zgłoszenie odebrane | Fluxlab",
@@ -21,6 +22,7 @@ export default function Dziekuje() {
   return (
     <>
       <Header />
+      <Konfetti />
       <main className="pt-24 pb-16">
         <div className="container-wide">
           <div className="max-w-2xl mx-auto">
@@ -32,6 +34,35 @@ export default function Dziekuje() {
               <h1 className="h1-strony mb-4 text-center">
                 Mamy Twoje zgłoszenie
               </h1>
+
+              <ol className="flex items-start justify-between gap-2 mb-8 max-w-md mx-auto" aria-label="Co dalej">
+                {[
+                  "Dostaliśmy zgłoszenie",
+                  "Odpisujemy zwykle tego samego dnia",
+                  "Rozmowa albo Meet",
+                ].map((krok, i) => (
+                  <li key={krok} className="relative flex-1 flex flex-col items-center text-center">
+                    {i > 0 && (
+                      <span
+                        aria-hidden="true"
+                        className="absolute top-3 right-1/2 w-full h-0.5 bg-accent/30"
+                      />
+                    )}
+                    <span
+                      className={`relative z-10 flex h-6 w-6 items-center justify-center rounded-full text-xs font-bold ${
+                        i === 0
+                          ? "bg-accent-solid text-white"
+                          : "bg-white dark:bg-gray-800 border-2 border-accent/50 text-accent"
+                      }`}
+                    >
+                      {i === 0 ? "✓" : i + 1}
+                    </span>
+                    <span className="mt-2 text-xs text-gray-700 dark:text-gray-300 leading-snug">
+                      {krok}
+                    </span>
+                  </li>
+                ))}
+              </ol>
 
               <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-6 text-center">
                 Odezwiemy się z odpowiedzią zwykle tego samego dnia. Jeśli widzimy potencjał na

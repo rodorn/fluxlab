@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { zglosZdarzenie } from "@/lib/zdarzenie";
 import DalejPoWyniku from "@/components/DalejPoWyniku";
+import WykresSlupkowy from "@/components/WykresSlupkowy";
 import Scenariusze, { type Scenariusz } from "@/components/Scenariusze";
 
 interface Wynik {
@@ -201,7 +202,7 @@ export default function KalkulatorAutomatyzacji() {
         <button
           type="submit"
           disabled={stan === "ladowanie"}
-          className="btn-primary w-full justify-center px-6 py-3 text-sm disabled:opacity-50"
+          className="btn-primary w-full disabled:opacity-50"
         >
           {stan === "ladowanie" ? "Liczymy..." : "Policz oszczędność"}
         </button>
@@ -263,6 +264,17 @@ export default function KalkulatorAutomatyzacji() {
             </div>
           </div>
 
+          <WykresSlupkowy
+            tytul="Miesięczny koszt: dziś i na własnym serwerze"
+            jednostka=" zł"
+            slupki={[
+              { etykieta: "Dziś, szacunkowo", wartosc: wynik.zapierPln, wyroznij: true },
+              { etykieta: "Własny serwer, górna wartość", wartosc: wynik.n8nMaxPln },
+              { etykieta: "Własny serwer, dolna wartość", wartosc: wynik.n8nMinPln },
+            ]}
+            zrodlo="Szacunek z wyliczenia powyżej."
+          />
+
           {wynik.zwrotMiesiecy !== null && (
             <p className="mt-4 text-sm text-gray-800 dark:text-gray-200">
               Przeniesienie wyceniamy od{" "}
@@ -315,7 +327,7 @@ export default function KalkulatorAutomatyzacji() {
                   <button
                     type="submit"
                     disabled={leadStan === "wysylamy"}
-                    className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
+                    className="btn-primary disabled:opacity-50"
                   >
                     {leadStan === "wysylamy" ? "Wysyłamy..." : "Wyślij zgłoszenie"}
                   </button>

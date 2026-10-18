@@ -168,7 +168,7 @@ export default function NipCheck() {
         <button
           type="submit"
           disabled={stan === "ladowanie" || nip.replace(/\D/g, "").length < 10}
-          className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
+          className="btn-primary disabled:opacity-50"
         >
           {stan === "ladowanie" ? "Sprawdzamy..." : "Sprawdź NIP"}
         </button>
@@ -291,7 +291,7 @@ export default function NipCheck() {
                   <button
                     type="submit"
                     disabled={leadStan === "wysylamy"}
-                    className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
+                    className="btn-primary disabled:opacity-50"
                   >
                     {leadStan === "wysylamy"
                       ? "Wysyłamy..."

@@ -43,7 +43,7 @@ export default function PoleAudytu() {
           placeholder="twojafirma.pl"
           className="flex-1 rounded-lg border border-gray-300 bg-white px-4 py-3 text-base text-gray-900 outline-none transition-colors focus:border-accent dark:border-white/15 dark:bg-white/[0.04] dark:text-white"
         />
-        <button type="submit" className="btn-primary justify-center px-6 py-3 text-sm">
+        <button type="submit" className="btn-primary">
           Zrób darmowy audyt
         </button>
       </form>

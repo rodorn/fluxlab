@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { FILARY } from "@/lib/filary";
+import GraZlapLeada from "@/components/GraZlapLeada";
 
 const STRONY = [
   ...FILARY.map((f) => ({ t: f.nazwa, h: f.href })),
@@ -110,6 +111,10 @@ export default function Strona404() {
         <Link href="/audyt-strony" className="btn-secondary">
           Zrób darmowy audyt
         </Link>
+      </div>
+
+      <div className="mt-12 pt-8 border-t border-gray-100 dark:border-gray-800">
+        <GraZlapLeada />
       </div>
     </div>
   );

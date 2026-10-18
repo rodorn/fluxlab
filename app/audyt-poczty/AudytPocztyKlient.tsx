@@ -151,7 +151,7 @@ export default function AudytPocztyKlient({
             className={`${poleClass} min-w-0 flex-1 px-4 py-3`}
           />
           <button
-            className="btn-primary px-6 py-3 disabled:opacity-60"
+            className="btn-primary disabled:opacity-60"
             disabled={laduje || !domena.trim()}
           >
             {laduje ? "Sprawdzamy..." : "Sprawdź"}
@@ -226,7 +226,7 @@ export default function AudytPocztyKlient({
                       />
                       <button
                         type="submit"
-                        className="btn-primary px-5 py-2.5 disabled:opacity-60"
+                        className="btn-primary disabled:opacity-60"
                         disabled={leadStan === "laduje"}
                       >
                         {leadStan === "laduje"

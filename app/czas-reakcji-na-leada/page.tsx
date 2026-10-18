@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TrackedCTA from "@/components/TrackedCTA";
+import GraZlapLeada from "@/components/GraZlapLeada";
 
 export const metadata: Metadata = {
   title: "Jak skrócić czas reakcji na leada do kilku minut | Fluxlab",
@@ -183,6 +184,10 @@ export default function CzasReakcjiNaLeada() {
               dwóch tygodniach na żywych danych dokładamy eskalacje i obsługę po
               godzinach.
             </p>
+          </section>
+
+          <section className="mt-12 pt-12 border-t border-gray-100 dark:border-gray-800 max-w-3xl mx-auto">
+            <GraZlapLeada />
           </section>
 
           <section className="mt-12 pt-12 border-t border-gray-100 dark:border-gray-800 max-w-4xl mx-auto">

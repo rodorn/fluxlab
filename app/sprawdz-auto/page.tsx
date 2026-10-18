@@ -111,7 +111,7 @@ export default function SprawdzAutoPage() {
               a ty dostajesz argumenty do negocjacji przed oględzinami.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-4">
-              <a href="#zamow" className="btn-primary inline-flex">
+              <a href="#zamow" className="btn-primary">
                 Sprawdź auto od 5 zł
               </a>
             </div>

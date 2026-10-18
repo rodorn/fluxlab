@@ -278,7 +278,7 @@ export default function ZapierVsMakeArticle() {
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Dobierzemy i wdrożymy platformę bez przepłacania za zbędne funkcje.
                       </p>
-                      <Link href="/zapier-make" className="btn-primary inline-block">
+                      <Link href="/zapier-make" className="btn-primary">
                         Zobacz usługę Zapier i Make
                       </Link>
                     </div>

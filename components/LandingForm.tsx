@@ -184,6 +184,19 @@ export default function LandingForm({
   const [szkicOdtworzony, setSzkicOdtworzony] = useState(false);
 
   useEffect(() => {
+    try {
+      const opis = new URLSearchParams(window.location.search).get("opis");
+      const pole = formRef.current?.elements.namedItem("message") as
+        | HTMLTextAreaElement
+        | null;
+      if (opis && pole && !pole.value) {
+        pole.value = opis.slice(0, 1000);
+        pole.dispatchEvent(new Event("input", { bubbles: true }));
+      }
+    } catch {}
+  }, []);
+
+  useEffect(() => {
     const form = formRef.current;
     if (!form) return;
     try {
@@ -594,7 +607,7 @@ export default function LandingForm({
         <button
           type="submit"
           disabled={loading}
-          className="btn-primary w-full py-3.5 text-base disabled:opacity-60"
+          className="btn-primary btn-lg w-full disabled:opacity-60"
         >
           {loading ? "Wysyłanie..." : submitLabel}
         </button>

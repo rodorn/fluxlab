@@ -42,7 +42,7 @@ export default function PasekAkcji() {
       <a
         href="#kontakt"
         tabIndex={widoczny ? 0 : -1}
-        className="btn-primary w-full justify-center rounded-full px-6 py-3.5 text-base"
+        className="btn-primary btn-lg w-full"
       >
         Zamów wycenę
       </a>

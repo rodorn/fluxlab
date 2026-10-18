@@ -589,7 +589,7 @@ export default function AudytCRM() {
               href="/kontakt"
               location="audit_crm_result"
               eventName="cta_click_audit_crm"
-              className="btn-primary px-8 py-3 text-base"
+              className="btn-primary btn-lg"
             >
               Bezpłatna diagnoza
             </TrackedCTA>

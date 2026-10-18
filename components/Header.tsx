@@ -242,9 +242,9 @@ export default function Header() {
         {/* Logo */}
         <Link
           href="/"
-          className="flex items-center gap-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white shrink-0"
+          className="znak-link flex items-center gap-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white shrink-0"
         >
-          <Znak className="h-7 w-7" />
+          <Znak className="znak-ikona h-7 w-7" />
           <span>
             flux<span className="text-accent">lab</span>
           </span>
@@ -278,7 +278,7 @@ export default function Header() {
             <kbd className="text-[11px] font-sans">Ctrl K</kbd>
           </button>
           <ThemeToggle />
-          <Link href="/kontakt" className="btn-primary text-sm">
+          <Link href="/kontakt" className="btn-primary">
             Zamów wycenę
           </Link>
         </div>
@@ -409,7 +409,7 @@ export default function Header() {
             <Link
               href="/kontakt"
               onClick={zamknij}
-              className="btn-primary mt-4 text-sm"
+              className="btn-primary mt-4"
             >
               Zamów wycenę
             </Link>

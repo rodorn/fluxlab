@@ -247,7 +247,7 @@ export default function ListaKsef2027({
               <button
                 type="button"
                 onClick={kopiuj}
-                className="btn-primary mt-4 justify-center px-6 text-sm"
+                className="btn-primary mt-4"
               >
                 {skopiowano
                   ? "Skopiowane, wklej w maila"

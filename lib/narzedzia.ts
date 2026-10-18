@@ -211,6 +211,13 @@ export const businessTools: Narzedzie[] = [
 
 export const otherTools: Narzedzie[] = [
   {
+    title: "Darmowe szablony",
+    description:
+      "Brief strony internetowej, checklista przed startem strony i checklista KSeF dla małej firmy do pobrania.",
+    href: "/szablony",
+    ikona: "lista",
+  },
+  {
     title: "Sprawdź auto przed zakupem",
     description:
       "Wklej link do ogłoszenia, a porównamy cenę z podobnymi ofertami i pokażemy typowe usterki modelu.",
@@ -258,6 +265,7 @@ export const GRUPY_NARZEDZI: string[] = GRUPY.map((g) => g.nazwa);
 /** Kalkulator wbudowany w artykuł nie ma własnej pozycji w sekcjach. */
 const GRUPA_SPOZA_SEKCJI: Record<string, string> = {
   "/strefa-wiedzy/automatyzacja-vs-zatrudnienie": "Koszt automatyzacji",
+  "/szablony": "Koszt automatyzacji",
 };
 
 /** Jedno zdanie pod nazwą grupy na liście narzędzi. */

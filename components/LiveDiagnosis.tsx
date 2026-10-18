@@ -254,7 +254,7 @@ export default function LiveDiagnosis() {
               type="button"
               onClick={handleSubmit}
               disabled={tooShort || loading}
-              className="btn-primary w-full mt-5 py-3.5 text-base disabled:opacity-50 disabled:cursor-not-allowed"
+              className="btn-primary btn-lg w-full mt-5 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {loading ? "Analizujemy..." : "Pokaż mi automatyzację"}
             </button>
@@ -445,7 +445,7 @@ export default function LiveDiagnosis() {
                       <button
                         type="submit"
                         disabled={leadStan === "wysylamy"}
-                        className="btn-primary justify-center px-6 py-3.5 text-base disabled:opacity-50"
+                        className="btn-primary btn-lg disabled:opacity-50"
                       >
                         {leadStan === "wysylamy"
                           ? "Wysyłamy..."

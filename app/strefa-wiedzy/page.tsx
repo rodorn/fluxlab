@@ -165,7 +165,7 @@ export default function StrefaWiedzy() {
               </p>
               <Link
                 href="/kontakt"
-                className="btn-primary px-8 py-3.5 text-base"
+                className="btn-primary btn-lg"
               >
                 Bezpłatna diagnoza
               </Link>

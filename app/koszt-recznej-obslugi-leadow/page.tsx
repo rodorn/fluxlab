@@ -279,7 +279,7 @@ export default function KosztRecznejObslugiLeadow() {
                 location="article_koszt_cta_block"
                 label="Bezpłatna diagnoza"
                 eventName="cta_click_article_audit"
-                className="btn-primary px-8 py-3.5 text-base"
+                className="btn-primary btn-lg"
               >
                 Bezpłatna diagnoza
               </TrackedCTA>
@@ -288,7 +288,7 @@ export default function KosztRecznejObslugiLeadow() {
                 location="article_koszt_cta_block"
                 label="oferta"
                 eventName="cta_click_article_audit"
-                className="btn-secondary px-8 py-3.5 text-base"
+                className="btn-secondary btn-lg"
               >
                 Automatyzacja leadów i CRM
               </TrackedCTA>

@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { event as gaEvent } from "@/lib/gtag";
 import { zglosZdarzenie } from "@/lib/zdarzenie";
 import TrackedCTA from "@/components/TrackedCTA";
+import WykresSlupkowy from "@/components/WykresSlupkowy";
 import Scenariusze, { type Scenariusz } from "@/components/Scenariusze";
 import {
   DOMYSLNE_LEADOW,
@@ -342,6 +343,16 @@ export default function KalkulatorLeadow() {
           />
         </div>
 
+        <WykresSlupkowy
+          tytul="Z czego składa się miesięczny koszt"
+          jednostka=" zł"
+          slupki={[
+            { etykieta: "Ręczna praca", wartosc: Math.round(result.kosztRecznejPracy) },
+            { etykieta: "Zgubione leady", wartosc: Math.round(result.kosztZgubionychMies), wyroznij: true },
+          ]}
+          zrodlo="Wyliczenie z danych wpisanych powyżej, szacunek."
+        />
+
         <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
           Uproszczenie modelu: zakładamy, że 30% leadów z opóźnioną reakcją
           efektywnie konwertuje gorzej i są to leady realnie utracone. Wynik to
@@ -363,7 +374,7 @@ export default function KalkulatorLeadow() {
           href="/kontakt"
           location="calc_leads_result"
           eventName="cta_click_calc_leads"
-          className="btn-primary px-8 py-3 text-base"
+          className="btn-primary btn-lg"
         >
           Zamawiam bezpłatną diagnozę
         </TrackedCTA>

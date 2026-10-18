@@ -127,7 +127,7 @@ export default function MalyZusPlusArticle() {
                         <p className="text-gray-600 dark:text-gray-400 mb-4">
                           Sprawdź różnicę między pełnym i małym ZUS
                         </p>
-                        <Link href="/kalkulator-podatkowy" className="btn-primary inline-block">
+                        <Link href="/kalkulator-podatkowy" className="btn-primary">
                           Sprawdź w kalkulatorze JDG 2026
                         </Link>
                       </div>

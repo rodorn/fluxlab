@@ -160,7 +160,7 @@ export default function VatWJdgArticle() {
                         <p className="text-gray-600 dark:text-gray-400 mb-4">
                           Sprawdź wpływ VAT na Twoje rozliczenie
                         </p>
-                        <Link href="/kalkulator-podatkowy" className="btn-primary inline-block">
+                        <Link href="/kalkulator-podatkowy" className="btn-primary">
                           Sprawdź w kalkulatorze JDG 2026
                         </Link>
                       </div>

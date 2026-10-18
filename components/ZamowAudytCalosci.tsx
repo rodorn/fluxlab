@@ -133,7 +133,7 @@ export default function ZamowAudytCalosci({
               <button
                 type="submit"
                 disabled={stan === "wysylamy"}
-                className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
+                className="btn-primary disabled:opacity-50"
               >
                 {stan === "wysylamy" ? "Przyjmujemy..." : "Zamawiam"}
               </button>

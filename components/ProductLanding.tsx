@@ -239,7 +239,7 @@ export default function ProductLanding(p: ProductLandingProps) {
                   </ul>
                   <a
                     href={t.href ?? "#zamow"}
-                    className="btn-primary mt-6 w-full justify-center text-center text-sm"
+                    className="btn-primary mt-6 w-full text-center"
                   >
                     {t.cta ?? "Zamawiam"}
                   </a>

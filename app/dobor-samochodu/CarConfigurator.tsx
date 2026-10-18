@@ -2079,7 +2079,7 @@ export default function CarConfigurator() {
           <button
             type="button"
             onClick={fetchRecommendations}
-            className="mt-3 btn-primary text-sm"
+            className="mt-3 btn-primary"
           >
             Spróbuj ponownie
           </button>
@@ -2099,7 +2099,7 @@ export default function CarConfigurator() {
           <button
             type="button"
             onClick={() => setStep(Math.max(0, lastStep - 2))}
-            className="btn-secondary text-sm mt-2"
+            className="btn-secondary mt-2"
           >
             Zmień kryteria
           </button>

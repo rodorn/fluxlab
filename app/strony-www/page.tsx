@@ -9,6 +9,7 @@ import OsCzasuStrony from "@/components/OsCzasuStrony";
 import KonfiguratorStrony from "@/components/KonfiguratorStrony";
 import GeneratorHasla from "@/components/GeneratorHasla";
 import WyscigStron from "@/components/WyscigStron";
+import MakietaStrony from "@/components/MakietaStrony";
 
 export const metadata: Metadata = {
   title: "Tworzenie stron WWW i poprawki w obecnych | Fluxlab",
@@ -125,6 +126,8 @@ export default function StronyWww() {
         <KonfiguratorStrony />
 
         <GeneratorHasla />
+
+        <MakietaStrony />
 
         <WyscigStron />
 

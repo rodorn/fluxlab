@@ -348,7 +348,7 @@ function CTAFormularz() {
             <button
               type="submit"
               disabled={loading}
-              className="btn-primary w-full py-3.5 text-base disabled:opacity-60"
+              className="btn-primary btn-lg w-full disabled:opacity-60"
             >
               {loading ? "Wysyłanie..." : "Chcemy diagnozę procesu"}
             </button>

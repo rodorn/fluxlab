@@ -7,6 +7,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import LandingForm from "@/components/LandingForm";
 import Tabs from "@/components/Tabs";
 import WybierzBranze from "@/components/WybierzBranze";
+import SkladajAutomatyzacje from "@/components/SkladajAutomatyzacje";
 
 export const metadata: Metadata = {
   title: "Automatyzacja procesów biznesowych dla firm | Fluxlab",
@@ -89,6 +90,10 @@ export default function AutomatyzacjaProcesowBiznesowych() {
           className="scroll-mt-20 container-wide max-w-4xl mx-auto pb-14"
         >
           <WybierzBranze wariant="filar" />
+        </div>
+
+        <div className="container-wide pb-14">
+          <SkladajAutomatyzacje />
         </div>
 
         {/* Treść w zakładkach */}

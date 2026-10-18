@@ -250,7 +250,7 @@ export default function ZapierMakeN8nPorownanieArticle() {
                         <p className="text-gray-600 dark:text-gray-400 mb-4">
                           Policzymy roczny koszt każdego z trzech narzędzi i zbudujemy pierwsze scenariusze.
                         </p>
-                        <Link href="/automatyzacja-leadow-crm" className="btn-primary inline-block">
+                        <Link href="/automatyzacja-leadow-crm" className="btn-primary">
                           Zobacz usługę automatyzacji procesów
                         </Link>
                       </div>

@@ -92,7 +92,7 @@ export default function ProductCard({
       </div>
       <Link
         href={p.href}
-        className="btn-primary mt-4 w-full justify-center text-center text-sm"
+        className="btn-primary mt-4 w-full text-center"
       >
         {p.cta}
       </Link>

@@ -4,6 +4,8 @@ import { SEKCJE, type Sekcja } from "@/lib/sekcje";
 import { categories } from "@/lib/categories";
 import Znak from "./Znak";
 import StatusOnline from "./StatusOnline";
+import CzasZmiany from "./CzasZmiany";
+import zmiany from "@/lib/zmiany.json";
 
 const sekcja = (slug: string): Sekcja => SEKCJE.find((x) => x.slug === slug)!;
 
@@ -106,7 +108,15 @@ export default function Footer() {
               Strony, automatyzacja, dane dla firm B2B
             </p>
             <p className="mt-1 text-xs text-gray-600 dark:text-gray-400">
-              Paweł Iwanek, NIP 7123336008, REGON 366862577
+              Paweł Iwanek, NIP 7123336008, REGON 366862577.{" "}
+              <a
+                href="https://www.podatki.gov.pl/wykaz-podatnikow-vat-wyszukiwarka"
+                target="_blank"
+                rel="noopener"
+                className="underline underline-offset-2 hover:text-accent transition-colors"
+              >
+                Sprawdź w białej liście VAT
+              </a>
             </p>
             <p className="mt-1 text-xs">
               <a
@@ -137,6 +147,15 @@ export default function Footer() {
           </div>
         </div>
         <StatusOnline />
+        <p className="mt-2 text-center text-xs text-gray-600 dark:text-gray-400">
+          <Link href="/zmiany" className="hover:text-accent transition-colors">
+            <CzasZmiany iso={zmiany[0].data} />
+          </Link>
+          {" · "}
+          <Link href="/jak-zbudowana" className="hover:text-accent transition-colors">
+            Jak zbudowana jest ta strona
+          </Link>
+        </p>
         <p className="mt-4 text-xs text-gray-600 dark:text-gray-400">
           © {new Date().getFullYear()} Fluxlab. Wszelkie prawa zastrzeżone.
         </p>

@@ -11,6 +11,7 @@ import Czat from "@/components/Czat";
 import ScrollToTop from "@/components/ScrollToTop";
 import TytulKarty from "@/components/TytulKarty";
 import MagnesPrzyciskow from "@/components/MagnesPrzyciskow";
+import KomunikatKonsoli from "@/components/KomunikatKonsoli";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -191,6 +192,7 @@ export default function RootLayout({
         <ScrollToTop />
         <TytulKarty />
         <MagnesPrzyciskow />
+        <KomunikatKonsoli />
         <Czat />
         <SpeedInsights />
         <Analytics />

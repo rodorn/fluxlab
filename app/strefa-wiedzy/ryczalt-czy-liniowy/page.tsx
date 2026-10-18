@@ -193,7 +193,7 @@ export default function RyczaltCzyLiniowyArticle() {
                         <p className="text-gray-600 dark:text-gray-400 mb-4">
                           Wpisz przychód, koszty i stawkę ryczałtu, a kalkulator pokaże, która forma jest tańsza.
                         </p>
-                        <Link href="/kalkulator-podatkowy" className="btn-primary inline-block">
+                        <Link href="/kalkulator-podatkowy" className="btn-primary">
                           Sprawdź w kalkulatorze JDG 2026
                         </Link>
                       </div>

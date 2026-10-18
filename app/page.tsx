@@ -7,8 +7,16 @@ import LandingForm from "@/components/LandingForm";
 import PasekAkcji from "@/components/PasekAkcji";
 import PoleAudytu from "@/components/PoleAudytu";
 import WitajPonownie from "@/components/WitajPonownie";
+import IntroZnaku from "@/components/IntroZnaku";
+import EtykietaNocna from "@/components/EtykietaNocna";
+import NaglowekSklada from "@/components/NaglowekSklada";
+import PodtytulZrodlo from "@/components/PodtytulZrodlo";
+import MiastoHero from "@/components/MiastoHero";
 import RevealOnScroll from "@/components/RevealOnScroll";
 import ScenaLeada from "@/components/ScenaLeada";
+import CountUp from "@/components/CountUp";
+import KrokiSticky from "@/components/KrokiSticky";
+import Manifest from "@/components/Manifest";
 import { nazwaFilaru } from "@/lib/filary";
 
 // Oferta jak w szkoleniu produktowym (16.10.2026): projekty z ceną z góry,
@@ -59,6 +67,8 @@ const KROKI = [
   ["Strona działa po 2–3 tygodniach", "Płacisz za efekt, nie za godziny."],
 ];
 
+const MANIFEST = KROKI[2][1];
+
 export default function Home() {
   return (
     <>
@@ -67,26 +77,25 @@ export default function Home() {
         <TloHero />
         <section className="relative z-10 mx-auto flex min-h-[72vh] w-full max-w-6xl flex-col items-center justify-center px-6 pt-16 pb-16 text-center lg:pt-20">
           <WitajPonownie />
-          <h1 className="animate-fade-up text-balance text-5xl font-bold leading-[0.95] tracking-tighter sm:text-7xl lg:text-8xl">
-            Strony internetowe i CRM dla firm
-          </h1>
-          <p className="animate-fade-up-1 mx-auto mt-7 max-w-xl text-lg text-gray-600 sm:text-xl dark:text-white/65">
-            Formularz podpięty do CRM, cena z góry, gotowe w 2–3 tygodnie.
-          </p>
+          <IntroZnaku />
+          <EtykietaNocna />
+          <NaglowekSklada tekst="Strony internetowe i CRM dla firm" />
+          <PodtytulZrodlo />
           <div className="animate-fade-up-1 mt-10 flex w-full flex-col items-center justify-center gap-3 sm:w-auto sm:flex-row">
             <a
               href="#kontakt"
-              className="btn-primary w-full rounded-full px-8 py-4 text-base sm:w-60"
+              className="btn-primary btn-lg w-full sm:w-60"
             >
               Zamów wycenę
             </a>
             <Link
               href="/audyt-strony"
-              className="btn-secondary w-full rounded-full px-8 py-4 text-base sm:w-60"
+              className="btn-secondary btn-lg w-full sm:w-60"
             >
               Sprawdź swoją stronę
             </Link>
           </div>
+          <MiastoHero />
         </section>
 
         <section aria-labelledby="oferta" className="container-wide pb-16">
@@ -95,38 +104,55 @@ export default function Home() {
           </h2>
           <div className="grid gap-5 md:grid-cols-3">
             {OFERTA.map((o, i) => (
-              <RevealOnScroll key={o.href} delay={(i + 1) as 1 | 2 | 3} className="flex">
-              <KartaPoswiata
-                href={o.href}
-                className={`group flex w-full flex-col rounded-2xl border p-7 transition-all duration-300 hover:-translate-y-1 hover:border-accent hover:shadow-xl hover:shadow-accent/10 ${
-                  o.wyrozniona
-                    ? "border-accent/60 bg-accent/5"
-                    : "border-gray-200 dark:border-white/10"
-                }`}
+              <RevealOnScroll
+                key={o.href}
+                delay={(i + 1) as 1 | 2 | 3}
+                className="flex"
               >
-                <h3 className="text-xl font-bold">{o.nazwa}</h3>
-                <p className="mt-2 text-2xl font-bold text-accent">{o.cena}</p>
-                <p className="mt-3 text-sm leading-relaxed text-gray-600 dark:text-white/70">
-                  {o.opis}
-                </p>
-                <ul className="mt-4 space-y-1.5 text-sm text-gray-700 dark:text-white/80">
-                  {o.punkty.map((p) => (
-                    <li key={p} className="flex gap-2">
-                      <span aria-hidden="true" className="text-accent">
-                        ✓
-                      </span>
-                      {p}
-                    </li>
-                  ))}
-                </ul>
-                <span className="mt-auto pt-6 text-sm font-semibold text-accent group-hover:underline">
-                  {o.cta} →
-                </span>
-              </KartaPoswiata>
+                <KartaPoswiata
+                  href={o.href}
+                  className={`group flex w-full flex-col rounded-2xl border p-7 transition-all duration-300 hover:-translate-y-1 hover:border-accent hover:shadow-xl hover:shadow-accent/10 ${
+                    o.wyrozniona
+                      ? "border-accent/60 bg-accent/5"
+                      : "border-gray-200 dark:border-white/10"
+                  }`}
+                >
+                  <h3 className="text-xl font-bold">{o.nazwa}</h3>
+                  <p className="mt-2 text-2xl font-bold text-accent">
+                    <CountUp value={o.cena} />
+                  </p>
+                  <p className="mt-3 text-sm leading-relaxed text-gray-600 dark:text-white/70">
+                    {o.opis}
+                  </p>
+                  <div className="oferta-detale">
+                    <ul className="space-y-1.5 pt-4 text-sm text-gray-700 dark:text-white/80">
+                      {o.punkty.map((p) => (
+                        <li key={p} className="flex gap-2">
+                          <svg
+                            aria-hidden="true"
+                            viewBox="0 0 16 16"
+                            className="mt-0.5 h-4 w-4 shrink-0 text-accent"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          >
+                            <path className="oferta-ptak" d="M3 8.5l3.2 3.2L13 4.5" />
+                          </svg>
+                          {p}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <span className="mt-auto pt-6 text-sm font-semibold text-accent group-hover:underline">
+                    {o.cta} →
+                  </span>
+                </KartaPoswiata>
               </RevealOnScroll>
             ))}
           </div>
-          <p className="mt-6 text-center text-sm text-gray-600 dark:text-white/60">
+          <RevealOnScroll as="p" className="mt-6 text-center text-sm text-gray-600 dark:text-white/60">
             Ceny netto. Na start bez rozmowy:{" "}
             <Link href="/audyt-strony" className="text-accent hover:underline">
               audyt strony 0 zł
@@ -143,7 +169,14 @@ export default function Home() {
               cenniku
             </Link>
             .
-          </p>
+          </RevealOnScroll>
+        </section>
+
+        <section aria-label="Zasada" className="container-wide py-16 lg:py-24">
+          <Manifest
+            tekst={MANIFEST}
+            className="mx-auto max-w-3xl text-balance text-center text-4xl font-bold leading-tight tracking-tighter lg:text-6xl"
+          />
         </section>
 
         <section className="border-t border-gray-200 dark:border-white/10 py-20 lg:py-24">
@@ -166,32 +199,14 @@ export default function Home() {
                 Twój CRM czyta zapytanie, zanim Ty je przeczytasz
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-gray-600 dark:text-white/65">
-                Napisz zapytanie, jakbyś był klientem. AI założy kartę leada i przygotuje odpowiedź, na żywo.
+                Napisz zapytanie, jakbyś był klientem. AI założy kartę leada i
+                przygotuje odpowiedź, na żywo.
               </p>
             </RevealOnScroll>
             <RevealOnScroll delay={1}>
               <ScenaLeada />
             </RevealOnScroll>
-            <ol className="mx-auto mt-20 grid max-w-5xl gap-4 md:grid-cols-3">
-              {KROKI.map(([tytul, opis], i) => (
-                <RevealOnScroll
-                  as="li"
-                  key={tytul}
-                  delay={(i + 1) as 1 | 2 | 3}
-                  className="flex gap-4 rounded-2xl border border-gray-200 dark:border-white/10 p-5"
-                >
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent-solid text-sm font-bold text-white">
-                    {i + 1}
-                  </span>
-                  <div>
-                    <p className="font-semibold">{tytul}</p>
-                    <p className="text-sm text-gray-600 dark:text-white/60">
-                      {opis}
-                    </p>
-                  </div>
-                </RevealOnScroll>
-              ))}
-            </ol>
+            <KrokiSticky kroki={KROKI} />
           </div>
         </section>
 
@@ -200,12 +215,14 @@ export default function Home() {
           className="scroll-mt-20 border-t border-gray-200 dark:border-white/10 py-16"
         >
           <div className="container-wide">
-            <LandingForm
+            <RevealOnScroll>
+<LandingForm
               formId="home"
               heading="Napisz, czego potrzebujesz"
               intro="Odpiszemy z ceną i terminem, zwykle tego samego dnia."
               submitLabel="Wyślij"
             />
+</RevealOnScroll>
           </div>
         </section>
       </main>

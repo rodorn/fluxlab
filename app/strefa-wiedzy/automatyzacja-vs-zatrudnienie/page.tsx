@@ -235,7 +235,7 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
                         </p>
                         <Link
                           href="/automatyzacja-leadow-crm"
-                          className="btn-primary inline-block"
+                          className="btn-primary"
                         >
                           Zobacz usługę automatyzacji procesów
                         </Link>

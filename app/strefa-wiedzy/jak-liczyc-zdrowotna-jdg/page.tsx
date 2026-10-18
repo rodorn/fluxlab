@@ -191,7 +191,7 @@ export default function SkladkaZdrowotnaJDGArticle() {
                       </p>
                       <Link
                         href="/kalkulator-podatkowy"
-                        className="btn-primary inline-block"
+                        className="btn-primary"
                       >
                         Sprawdź w kalkulatorze JDG 2026
                       </Link>

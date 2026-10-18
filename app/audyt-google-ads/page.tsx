@@ -86,7 +86,7 @@ export default function AudytGoogleAdsPage() {
               gwarancją zwrotu.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-4">
-              <a href="#zamow" className="btn-primary inline-flex">
+              <a href="#zamow" className="btn-primary">
                 Zamawiam mini-audyt za 69 zł
               </a>
             </div>
@@ -214,7 +214,7 @@ export default function AudytGoogleAdsPage() {
                 </p>
                 <a
                   href="#zamow"
-                  className="btn-primary mt-6 w-full justify-center text-center text-sm"
+                  className="btn-primary mt-6 w-full text-center"
                 >
                   Zamawiam mini-audyt
                 </a>

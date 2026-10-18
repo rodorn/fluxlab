@@ -405,7 +405,7 @@ export default function CrmJakoSystemPracy() {
                           location="article_crm-jako-system-pracy_pricing"
                           label="zobacz pełną ofertę"
                           eventName="cta_click_article_audit"
-                          className="btn-secondary px-6 py-3 text-base"
+                          className="btn-secondary btn-lg"
                         >
                           Zobacz pełną ofertę
                         </TrackedCTA>
@@ -414,7 +414,7 @@ export default function CrmJakoSystemPracy() {
                           location="article_crm-jako-system-pracy_pricing"
                           label="Bezpłatna diagnoza"
                           eventName="cta_click_article_audit"
-                          className="btn-primary px-8 py-3.5 text-base"
+                          className="btn-primary btn-lg"
                         >
                 Bezpłatna diagnoza
               </TrackedCTA>

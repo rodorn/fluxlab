@@ -184,7 +184,7 @@ export default function NumerKsefCheck() {
         <button
           type="submit"
           disabled={!tekst.trim()}
-          className="btn-primary justify-center px-6 text-sm disabled:opacity-50 sm:self-start"
+          className="btn-primary disabled:opacity-50 sm:self-start"
         >
           Sprawdź numery
         </button>

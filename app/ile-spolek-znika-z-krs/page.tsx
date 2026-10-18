@@ -118,7 +118,7 @@ export default async function Page() {
           </p>
           <Link
             href="/czujka-rejestrowa"
-            className="btn-primary mt-4 inline-flex px-5 py-2.5 text-sm"
+            className="btn-primary mt-4"
           >
             Sprawdź kontrahenta
           </Link>

@@ -99,7 +99,7 @@ export default function StreszczenieAI() {
         type="button"
         onClick={streszcz}
         disabled={stan === "laduje"}
-        className="btn-secondary rounded-full inline-flex items-center gap-2 disabled:opacity-70"
+        className="btn-secondary gap-2 disabled:opacity-70"
       >
         <svg
           aria-hidden="true"

@@ -180,7 +180,7 @@ export default function SprawdzPoBadaniu({
       )}
 
       <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
-        <Link href={narzedzie.href} className="btn-primary px-5 py-2.5 text-sm">
+        <Link href={narzedzie.href} className="btn-primary">
           {narzedzie.etykieta}
         </Link>
         <span className="text-gray-600 dark:text-gray-400">

@@ -116,7 +116,7 @@ export default function ImportRadarPage() {
               Polsce. Dostajesz jedną liczbę: ile zostaje na czysto.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-4">
-              <a href="#zamow" className="btn-primary inline-flex">
+              <a href="#zamow" className="btn-primary">
                 Zamawiam analizę za darmo
               </a>
             </div>

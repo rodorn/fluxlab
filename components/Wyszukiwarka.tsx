@@ -180,16 +180,19 @@ export default function Wyszukiwarka({
     router.push(url);
   };
 
-  const zapytajAsystenta = () => {
+  const zapytajAsystenta = (pytanie?: string) => {
     onZamknij();
     setTimeout(
       () =>
-        (
-          document.querySelector(".przycisk-czatu") as HTMLButtonElement | null
-        )?.click(),
+        window.dispatchEvent(
+          new CustomEvent("fluxlab:czat", { detail: pytanie ?? "" }),
+        ),
       200,
     );
   };
+
+  const wygladaNaPytanie =
+    zapytanie.includes("?") || zapytanie.trim().split(/\s+/).length >= 3;
 
   const brak = slowa.length > 0 && wiersze.length > 0 && wyniki.length === 0;
 
@@ -285,6 +288,18 @@ export default function Wyszukiwarka({
         </div>
 
         <div className="max-h-[min(26rem,60vh)] overflow-y-auto p-2">
+          {wygladaNaPytanie && zapytanie.trim() && (
+            <button
+              type="button"
+              onClick={() => zapytajAsystenta(zapytanie.trim())}
+              className="mb-1 flex w-full items-center gap-2 rounded-lg border border-accent/40 px-3 py-2 text-left text-sm font-medium text-accent transition-colors hover:bg-accent/10"
+            >
+              <span>Zapytaj AI</span>
+              <span className="truncate text-xs font-normal text-gray-500 dark:text-white/55">
+                {zapytanie.trim()}
+              </span>
+            </button>
+          )}
           {!slowa.length && wyniki.length > 0 && (
             <p className="px-3 pb-1 pt-1.5 text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-white/50">
               Polecane
@@ -295,7 +310,7 @@ export default function Wyszukiwarka({
               Nic nie znaleźliśmy.{" "}
               <button
                 type="button"
-                onClick={zapytajAsystenta}
+                onClick={() => zapytajAsystenta(zapytanie.trim())}
                 className="font-medium text-accent underline underline-offset-2 hover:text-accent-hover"
               >
                 Zapytaj asystenta

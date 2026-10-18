@@ -134,7 +134,7 @@ html.dark {
   }
 
   .btn-primary {
-    @apply relative inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl text-white font-semibold text-sm tracking-tight transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2;
+    @apply relative inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-white font-semibold text-sm tracking-tight transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2;
     background-image: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
     box-shadow:
       0 4px 12px -2px rgba(99, 102, 241, 0.35),
@@ -167,7 +167,11 @@ html.dark {
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl border-2 border-gray-200/80 dark:border-gray-700 bg-white/60 dark:bg-gray-900/40 backdrop-blur-sm text-gray-800 dark:text-gray-100 font-semibold text-sm tracking-tight transition-all duration-300 hover:border-accent hover:text-accent hover:-translate-y-0.5 hover:bg-accent/[0.04] dark:hover:bg-accent/[0.08] hover:shadow-md hover:shadow-accent/10 active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 dark:focus-visible:ring-offset-gray-950;
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border-2 border-gray-200/80 dark:border-gray-700 bg-white/60 dark:bg-gray-900/40 backdrop-blur-sm text-gray-800 dark:text-gray-100 font-semibold text-sm tracking-tight transition-all duration-300 hover:border-accent hover:text-accent hover:-translate-y-0.5 hover:bg-accent/[0.04] dark:hover:bg-accent/[0.08] hover:shadow-md hover:shadow-accent/10 active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 dark:focus-visible:ring-offset-gray-950;
+  }
+
+  .btn-lg {
+    @apply px-8 py-3.5 text-base;
   }
 
   .section-label {
@@ -990,4 +994,188 @@ main[class*="max-w-"]:has(> nav[aria-label="Breadcrumb"]) {
   ::view-transition-new(.vt-page) {
     animation: none;
   }
+}
+
+/* hero: wow (składanie H1, intro znaku) */
+.h1-sklada {
+  display: inline-block;
+  animation: h1-sklada-wejscie 400ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@keyframes h1-sklada-wejscie {
+  from { opacity: 0; transform: translate3d(0, 0.35em, 0); }
+  to { opacity: 1; transform: none; }
+}
+.intro-znaku {
+  animation: intro-znaku-tlo 700ms ease-out forwards;
+}
+.intro-znaku__znak {
+  animation: intro-znaku-znak 700ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+@keyframes intro-znaku-tlo {
+  0%, 55% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@keyframes intro-znaku-znak {
+  0% { opacity: 0; transform: scale(0.7); }
+  40% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1.25); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .h1-sklada, .intro-znaku, .intro-znaku__znak { animation: none; }
+}
+
+/* ruch strony głównej: kroki sticky, karty oferty z rozwijanymi szczegółami */
+.kroki-pierscien {
+  animation: kroki-rysuj 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+@keyframes kroki-rysuj {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.kroki-zmiana {
+  animation: kroki-wejscie 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@keyframes kroki-wejscie {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+.oferta-detale {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition:
+    grid-template-rows 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.3s ease;
+}
+.oferta-detale > * {
+  overflow: hidden;
+}
+.group:hover .oferta-detale,
+.group:focus-visible .oferta-detale,
+.group:focus-within .oferta-detale {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+@media (hover: none) {
+  .oferta-detale {
+    grid-template-rows: 1fr;
+    opacity: 1;
+  }
+}
+.oferta-ptak {
+  stroke-dasharray: 16;
+  stroke-dashoffset: 16;
+  transition: stroke-dashoffset 0.5s ease 0.15s;
+}
+.group:hover .oferta-ptak,
+.group:focus-within .oferta-ptak {
+  stroke-dashoffset: 0;
+}
+@media (hover: none) {
+  .oferta-ptak {
+    stroke-dashoffset: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .kroki-pierscien {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+  .kroki-zmiana {
+    animation: none;
+  }
+  .oferta-detale,
+  .oferta-ptak {
+    transition: none;
+  }
+}
+
+/* czat: dymek przy przycisku */
+.czat-dymek { animation: czat-dymek 0.3s ease-out; }
+@keyframes czat-dymek { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .czat-dymek, .czat-kropka { animation: none; } }
+
+/* typografia: zawijanie wierszy */
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+p {
+  text-wrap: pretty;
+}
+
+/* znak w nagłówku: lekka animacja przy najechaniu */
+.znak-ikona {
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.znak-link:hover .znak-ikona,
+.znak-link:focus-visible .znak-ikona {
+  transform: rotate(-6deg) scale(1.1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .znak-ikona {
+    transition: none;
+  }
+  .znak-link:hover .znak-ikona,
+  .znak-link:focus-visible .znak-ikona {
+    transform: none;
+  }
+}
+
+/* Druk */
+@media print {
+  header,
+  footer,
+  .pasek-akcji,
+  .przycisk-czatu,
+  .czat-dymek,
+  .tlo-hero__warstwa,
+  button,
+  [role="tablist"],
+  .btn-primary,
+  .btn-secondary,
+  canvas,
+  nav[aria-label="Menu mobilne"],
+  [aria-hidden="true"].fixed {
+    display: none !important;
+  }
+  [role="tabpanel"][hidden] {
+    display: block !important;
+  }
+  html,
+  body,
+  main,
+  main * {
+    background: #fff !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  main a {
+    text-decoration: underline;
+  }
+  main {
+    padding-top: 0 !important;
+  }
+  h1,
+  h2,
+  h3 {
+    break-after: avoid;
+  }
+  img,
+  table,
+  pre,
+  blockquote {
+    break-inside: avoid;
+  }
+}
+
+/* Plamy tła: miękkie wygaszenie zamiast ostrej krawędzi sekcji */
+.overflow-hidden > div:has(> .blob) {
+  -webkit-mask-image: linear-gradient(to bottom, #000 45%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 45%, transparent 100%);
 }

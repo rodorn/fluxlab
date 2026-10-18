@@ -259,7 +259,7 @@ export default function LokalizacjaCheck() {
         <button
           type="submit"
           disabled={stan === "ladowanie"}
-          className="btn-primary w-full justify-center px-6 py-3 text-sm disabled:opacity-50"
+          className="btn-primary w-full disabled:opacity-50"
         >
           {stan === "ladowanie" ? "Liczymy..." : "Sprawdź okolicę"}
         </button>
@@ -394,7 +394,7 @@ export default function LokalizacjaCheck() {
                   <button
                     type="submit"
                     disabled={leadStan === "wysylamy"}
-                    className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
+                    className="btn-primary disabled:opacity-50"
                   >
                     {leadStan === "wysylamy"
                       ? "Wysyłamy..."

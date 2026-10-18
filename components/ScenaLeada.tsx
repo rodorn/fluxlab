@@ -151,7 +151,7 @@ export default function ScenaLeada() {
           <button
             type="submit"
             disabled={stan === "czeka"}
-            className="btn-primary rounded-full px-8 py-3.5 text-base disabled:opacity-60"
+            className="btn-primary btn-lg disabled:opacity-60"
           >
             {stan === "czeka" ? "AI czyta zapytanie…" : "Wyślij jako klient"}
           </button>

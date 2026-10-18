@@ -1102,7 +1102,7 @@ export default function CarCostCalculator() {
             if (savedCars.length > 0)
               setTimeout(() => scrollToRef(compareRef), 100);
           }}
-          className="btn-primary flex-1 text-center text-lg"
+          className="btn-primary btn-lg flex-1 text-center"
         >
           Oblicz koszty
         </button>

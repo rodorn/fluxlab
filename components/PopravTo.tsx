@@ -14,9 +14,11 @@ const KOLEJNOSC = ["krytyczne", "wazne", "drobne"];
  */
 export default function PopravTo({
   domena,
+  punkty,
   pozycje,
 }: {
   domena: string;
+  punkty?: number | null;
   pozycje: Pozycja[];
 }) {
   const [widoczny, setWidoczny] = useState(false);
@@ -28,6 +30,14 @@ export default function PopravTo({
   }, []);
 
   if (!pozycje.length) return null;
+
+  const glowne = pozycje
+    .slice()
+    .sort((a, b) => KOLEJNOSC.indexOf(a.waga) - KOLEJNOSC.indexOf(b.waga))
+    .slice(0, 3)
+    .map((u) => u.tytul.replace(/\s+/g, " ").trim());
+  const opis = `Audyt ${domena}${typeof punkty === "number" ? `, wynik ${punkty}/100` : ""}. Główne problemy: ${glowne.join("; ")}.`.slice(0, 400);
+  const hrefProsba = `/?opis=${encodeURIComponent(opis)}#kontakt`;
 
   function wstaw() {
     zglosZdarzenie("audyt_do_formularza");
@@ -72,10 +82,17 @@ export default function PopravTo({
       <button
         type="button"
         onClick={wstaw}
-        className="btn-primary mt-4 inline-flex justify-center rounded-full px-6 py-3 text-sm"
+        className="btn-primary mt-4"
       >
         {wstawiono ? "Wynik jest w formularzu" : "Wyślij wynik do wyceny"}
       </button>
+      <a
+        href={hrefProsba}
+        onClick={() => zglosZdarzenie("audyt_popros_o_poprawki")}
+        className="mt-3 block text-sm font-medium text-accent hover:underline"
+      >
+        Poproś o poprawki
+      </a>
     </div>
   );
 }

@@ -19,7 +19,7 @@ export default function CountUp({ value, className }: Props) {
   const startedRef = useRef(false);
 
   // Parsuje "30+" → { prefix:"", num:30, suffix:"+" }
-  const match = value.match(/^(\D*)(\d+)(.*)$/);
+  const match = value.match(/^(\D*)(\d+(?: \d{3})*)(.*)$/);
 
   useEffect(() => {
     const el = ref.current;
@@ -35,7 +35,7 @@ export default function CountUp({ value, className }: Props) {
     }
 
     const prefix = match[1];
-    const target = parseInt(match[2], 10);
+    const target = parseInt(match[2].replace(/ /g, ""), 10);
     const suffix = match[3];
 
     const observer = new IntersectionObserver(
@@ -52,7 +52,10 @@ export default function CountUp({ value, className }: Props) {
             const t = Math.min(1, elapsed / duration);
             // ease-out cubic
             const eased = 1 - Math.pow(1 - t, 3);
-            const current = Math.round(target * eased);
+            const current = String(Math.round(target * eased)).replace(
+              /\B(?=(\d{3})+(?!\d))/g,
+              " ",
+            );
             setDisplay(`${prefix}${current}${suffix}`);
             if (t < 1) requestAnimationFrame(tick);
           }

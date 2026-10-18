@@ -160,7 +160,7 @@ export default function RaportowanieZPipedrive() {
                   location="article_raportowanie_pipedrive_hero"
                   label="Bezpłatna diagnoza"
                   eventName="cta_click_article_audit"
-                  className="btn-primary text-base px-7 py-3"
+                  className="btn-primary btn-lg"
                 >
                   Bezpłatna diagnoza
                 </TrackedCTA>

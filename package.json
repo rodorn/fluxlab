@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node skrypty/zmiany.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"

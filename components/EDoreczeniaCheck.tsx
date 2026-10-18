@@ -332,7 +332,7 @@ export default function EDoreczeniaCheck({
               <button
                 type="submit"
                 disabled={krsStan === "szukamy"}
-                className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
+                className="btn-primary disabled:opacity-50"
               >
                 {krsStan === "szukamy" ? "Sprawdzamy..." : "Sprawdź odpis"}
               </button>
@@ -536,7 +536,7 @@ export default function EDoreczeniaCheck({
                       <button
                         type="submit"
                         disabled={leadStan === "wysylamy"}
-                        className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
+                        className="btn-primary disabled:opacity-50"
                       >
                         {leadStan === "wysylamy"
                           ? "Wysyłamy..."

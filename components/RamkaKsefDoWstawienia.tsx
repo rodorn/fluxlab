@@ -60,7 +60,7 @@ export default function RamkaKsefDoWstawienia() {
       <button
         type="button"
         onClick={kopiuj}
-        className="btn-primary mt-4 justify-center px-6 text-sm"
+        className="btn-primary mt-4"
       >
         {skopiowano
           ? "Skopiowane, wklej w edytor strony"

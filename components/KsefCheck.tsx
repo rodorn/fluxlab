@@ -400,7 +400,7 @@ export default function KsefCheck() {
                   <button
                     type="submit"
                     disabled={leadStan === "wysylamy"}
-                    className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
+                    className="btn-primary disabled:opacity-50"
                   >
                     {leadStan === "wysylamy"
                       ? "Wysyłamy..."

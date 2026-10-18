@@ -46,9 +46,18 @@ ZASADY:
 - Podawaj link do właściwej podstrony, gdy pasuje.
 - Nie zbierasz danych i nie wracasz do nikogo sam. Gdy ktoś chce wyceny, kieruj do formularza https://fluxlab.pl/#kontakt, gdzie odpisujemy z ceną i terminem.
 - Bez długich myślników, bez emoji, bez markdownu poza zwykłymi linkami.
-- Pytania niezwiązane z ofertą FluxLab zbywaj jednym zdaniem i wracaj do tematu.`;
+- Pytania niezwiązane z ofertą FluxLab zbywaj jednym zdaniem i wracaj do tematu.
+- Gdy rozmowa doszła do wyceny (klient opisał, czego potrzebuje, i chce ceny albo terminu), dopisz w ostatniej linii znacznik [[WYCENA: opis potrzeb klienta w 1–3 zdaniach, na ty, bez danych osobowych]]. Znacznika nie używaj w innych sytuacjach i nie wspominaj o nim w treści.`;
 
 type Wiadomosc = { rola: "ja" | "bot"; tekst: string };
+
+function opisStrony(pathname: unknown, tytul: unknown): string {
+  if (typeof pathname !== "string" || !pathname.startsWith("/")) return "";
+  const sciezka = pathname.slice(0, 120).replace(/[\r\n]/g, " ");
+  const t =
+    typeof tytul === "string" ? tytul.slice(0, 120).replace(/[\r\n]/g, " ") : "";
+  return `\n\nKONTEKST: odwiedzający jest teraz na stronie ${sciezka}${t ? ` (tytuł: ${t})` : ""}. Jeśli pytanie dotyczy tej strony, odpowiadaj w jej kontekście.`;
+}
 
 export async function POST(req: Request) {
   if (!OPENAI_API_KEY) {
@@ -65,8 +74,10 @@ export async function POST(req: Request) {
   }
 
   let historia: Wiadomosc[];
+  let kontekst = "";
   try {
     const body = await req.json();
+    kontekst = opisStrony(body.pathname, body.tytul);
     historia = Array.isArray(body.historia) ? body.historia : [];
   } catch {
     return NextResponse.json({ error: "Nieprawidłowe dane" }, { status: 400 });
@@ -94,7 +105,7 @@ export async function POST(req: Request) {
       body: JSON.stringify({
         model: "gpt-5.4-mini",
         max_output_tokens: 600,
-        instructions: INSTRUKCJE,
+        instructions: INSTRUKCJE + kontekst,
         input,
       }),
     });
@@ -121,7 +132,12 @@ export async function POST(req: Request) {
     if (!tekst) {
       return NextResponse.json({ error: "Pusta odpowiedź" }, { status: 502 });
     }
-    return NextResponse.json({ tekst });
+    const m = tekst.match(/\[\[WYCENA:\s*([\s\S]*?)\]\]/);
+    const czysty = tekst.replace(/\[\[WYCENA:[\s\S]*?\]\]/g, "").trim();
+    return NextResponse.json({
+      tekst: czysty || tekst,
+      ...(m ? { opisWyceny: m[1].trim().slice(0, 500) } : {}),
+    });
   } catch {
     return NextResponse.json({ error: "Błąd przetwarzania" }, { status: 500 });
   }

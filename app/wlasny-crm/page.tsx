@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import ProductLanding from "@/components/ProductLanding";
 import KalkulatorLeadow from "@/components/KalkulatorLeadow";
 import KonfiguratorCrm from "@/components/KonfiguratorCrm";
+import PodgladCrm from "@/components/PodgladCrm";
 
 export const metadata: Metadata = {
   title: "Własny CRM dla firmy w trzy tygodnie | Fluxlab",
@@ -27,6 +28,9 @@ export default function WlasnyCrm() {
         <>
           <KalkulatorLeadow />
           <KonfiguratorCrm />
+          <div className="mt-16">
+            <PodgladCrm />
+          </div>
         </>
       }
       cena="Wdrożenie od 1 zł w pilotażu, abonament 499 zł miesięcznie, ceny netto"
