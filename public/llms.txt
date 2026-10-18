@@ -235,7 +235,7 @@ Ceny energii na jutro, godzina po godzinie, na https://fluxlab.pl/ceny-energii-j
 - [Lista na 1 stycznia 2027 w KSeF](https://fluxlab.pl/ksef-2027): siedem pytań, na końcu lista braków do wysłania księgowej.
 - [Sprawdzenie numeru KSeF](https://fluxlab.pl/numer-ksef): suma kontrolna, NIP sprzedawcy i data przyjęcia, także dla listy tytułów przelewów.
 - [Od kiedy adres do e-Doręczeń](https://fluxlab.pl/e-doreczenia-integracja): dwa kliknięcia, data z ustawy.
-- [Pełny audyt techniczny strony](https://fluxlab.pl/audyt-strony): szybkość, certyfikat, widoczność w Google i w AI, poczta.
+- [Pełny audyt techniczny strony](https://fluxlab.pl/audyt-strony): szybkość, certyfikat, widoczność w Google i w AI, poczta, wersje WordPressa, PHP i jQuery z oceną, czy są przestarzałe.
 - [Dlaczego maile trafiają do spamu](https://fluxlab.pl/audyt-poczty): SPF, DKIM i DMARC domeny.
 - [Mail firmowy we własnej domenie](https://fluxlab.pl/mail-firmowy): koszt Google Workspace, Microsoft 365 i Zoho oraz test DNS domeny.
 - [Czy przeglądarka ostrzega przed stroną](https://fluxlab.pl/naprawa-https): certyfikat i przekierowania.
