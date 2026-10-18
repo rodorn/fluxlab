@@ -371,6 +371,8 @@ function Skladane({
   );
 }
 
+const KLUCZ_WYNIKU = "fluxlab_audyt_wynik";
+
 export default function AudytCheck() {
   const [domena, setDomena] = useState("");
   const [stan, setStan] = useState<"idle" | "ladowanie" | "gotowe" | "blad">(
@@ -380,6 +382,8 @@ export default function AudytCheck() {
   const [sekundy, setSekundy] = useState(0);
   const [blad, setBlad] = useState("");
   const [wynik, setWynik] = useState<Wynik | null>(null);
+  // Kiedy powstał pokazany wynik, gdy wczytaliśmy go z przeglądarki.
+  const [zapisany, setZapisany] = useState<string | null>(null);
   const [filtr, setFiltr] = useState<Waga | "wszystko">("wszystko");
 
   const [email, setEmail] = useState("");
@@ -406,6 +410,23 @@ export default function AudytCheck() {
     const z = new URLSearchParams(window.location.search).get("domena");
     if (!z) return;
     wystartowano.current = true;
+    // „Zobacz wynik” z powitania otwiera zapisany wynik od razu, bez badania.
+    try {
+      const raw = localStorage.getItem(KLUCZ_WYNIKU);
+      const d = raw ? (JSON.parse(raw) as { kiedy: string; dane: Wynik }) : null;
+      const bez = (x: string) => x.toLowerCase().replace(/^https?:\/\//, "").replace(/^www\./, "").replace(/\/.*$/, "");
+      if (
+        d?.dane &&
+        bez(d.dane.domena ?? "") === bez(z) &&
+        Date.now() - Date.parse(d.kiedy) < 30 * 24 * 60 * 60 * 1000
+      ) {
+        setDomena(z);
+        setWynik(d.dane);
+        setZapisany(d.kiedy);
+        setStan("gotowe");
+        return;
+      }
+    } catch {}
     void uruchom(z);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -422,6 +443,7 @@ export default function AudytCheck() {
     setStan("ladowanie");
     setBlad("");
     setWynik(null);
+    setZapisany(null);
     setMailStan("idle");
     setEtap(0);
     setSekundy(0);
@@ -457,6 +479,10 @@ export default function AudytCheck() {
             kiedy: new Date().toISOString(),
             ileProblemow: Array.isArray(dane.ustalenia) ? dane.ustalenia.length : 0,
           }),
+        );
+        localStorage.setItem(
+          KLUCZ_WYNIKU,
+          JSON.stringify({ kiedy: new Date().toISOString(), dane }),
         );
       } catch {}
       zglosZdarzenie(
@@ -584,6 +610,25 @@ export default function AudytCheck() {
 
       {wynik && p && (
         <div className="mt-8 space-y-8">
+          {zapisany && (
+            <p className="text-center text-sm text-gray-500 dark:text-gray-400">
+              Wynik z{" "}
+              {new Date(zapisany).toLocaleString("pl-PL", {
+                day: "numeric",
+                month: "long",
+                hour: "2-digit",
+                minute: "2-digit",
+              })}
+              .{" "}
+              <button
+                type="button"
+                onClick={() => void uruchom(wynik.domena)}
+                className="font-semibold text-accent hover:underline"
+              >
+                Sprawdź ponownie
+              </button>
+            </p>
+          )}
           {/* Nagłówek wyniku */}
           <div className="flex flex-col items-center gap-6 rounded-2xl border border-gray-200 bg-gray-50/60 p-6 dark:border-gray-800 dark:bg-gray-900/40 sm:flex-row sm:items-start">
             {wynik.punkty !== null && <Ocena punkty={wynik.punkty} />}
