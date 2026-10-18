@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 const pricing = [
   {
     title: "Poprawki i nowe podstrony",
-    price: "od 99 zł",
+    price: "od 150 zł",
     description: "Zmiana w istniejącej stronie albo nowa podstrona.",
   },
   {

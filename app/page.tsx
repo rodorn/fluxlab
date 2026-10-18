@@ -25,9 +25,10 @@ const OFERTA = [
   {
     href: "/strony-www",
     nazwa: nazwaFilaru("/strony-www"),
-    cena: "od 4 500 zł",
-    opis: "Landing, strona firmowa z CMS albo sklep. Formularz trafia od razu do CRM albo na Twoją skrzynkę.",
+    cena: "naprawa od 150 zł",
+    opis: "Naprawa i poprawki obecnej strony albo nowa: landing, strona z CMS, sklep. Formularz trafia od razu do CRM albo na Twoją skrzynkę.",
     punkty: [
+      "naprawa i poprawki: od 150 zł",
       "landing do 5 podstron: 4 500 zł",
       "strona firmowa z CMS: od 9 000 zł",
       "sklep z integracją: od 15 000 zł",
