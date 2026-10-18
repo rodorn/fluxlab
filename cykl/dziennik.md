@@ -6023,3 +6023,11 @@ Otwarte decyzje dla stratega:
 **Dowód:** Z5: ~/Projekty/fluxlab-meta/briefy/od-cyklu-ruchu-2026-10-18.md (026 nadal pozycja 12 z utm narzedzia). Z6: commit 4d02319 + 0900230, produkcja 390 px: pole y=625, przycisk 683 do 731 (dymek czatu od 764), 1280 px pole y=613; audyt carmore.pl z telefonu: wynik po 46 s, widoczny bez przewijania; błędy JS 0; IndexNow 137 adresów.
 **Dla Pawła:**
 **Zostało otwarte:** Z7 (linki ze strony głównej) i dalej wg planu.
+
+## 2026-10-18 09:15
+**Kanał:** Google (Z7), wydajność (Z8), outreach (Z9, bez wysyłki), wg planu stratega z 18.10.
+**Co zrobione:** sprawdzone, że nocna przebudowa strony głównej nie zabrała żadnego linku i jej nie spowolniła (LCP 2,1 s w telefonie), a poniedziałkowa partia 24 maili do biur rachunkowych jest aktualna i ma tematy skrócone do 64 znaków.
+**Ruch:** ostatnia doba 86 odsłon, 73 osoby (+17% wobec średniej 73,3); źródła: mail.google.com 6, b2b-email 5, facebook 4, youtube 4, instagram 3; najczęściej /kalkulator-podatkowy 10, /automatyzacja-follow-up 6, /wycena 6; uruchomienia narzędzi 4 (numer KSeF 2, skan 1, kalkulator podatkowy 1 = własny test z 07:15).
+**Dowód:** Z7: 0 strat (linki do 7 adresów tylko z Header/Footer, same dodania od 7af74f0), 0 zmian. Z8: PSI API bez kwoty, Lighthouse 12 lokalnie: / 0,99 (LCP 2,1 s, TBT 40 ms, CLS 0), /kalkulator-podatkowy 1,00 (1,4 s), /numer-ksef 1,00 (1,2 s), błędy konsoli 0. Z9: 24/24 bez v=DMARC1, SPF zgodny, 0 wysłanych wcześniej, `~/Projekty/mail-audyt/maile_ks/kolejnosc-2026-10-19.txt`.
+**Dla Pawła:**
+**Zostało otwarte:** Z10 (g10, nie wcześniej niż 16:00) i dalej wg planu. Uwaga dla wysyłki pn: `wyslij_ks.py` bierze cały katalog `maile_ks/` naraz, więc podział 9:00/12:00 z pliku kolejności trzeba zrobić, przenosząc 013 do 024 na czas pierwszej partii.
