@@ -5941,3 +5941,52 @@ Obie strony spadły z kilkudziesięciu wyświetleń dziennie do 0 do 3 od 10.10.
 **Dowód:** commit f5dbf88; strona zwraca 200, jest w llms.txt i w sitemap.xml; IndexNow: 137 adresów, przyjęły 2 z 3 punktów.
 **Dla Pawła:**
 **Zostało otwarte:** Z23 o 05:46. Bramki przed commitem nie przechodzą z powodu commita 1b96d14 innej sesji: spojnosc ma 11 rozjazdów (/wycena bez Header, Footer, description i canonical, do tego sierota; em-dash w app/api/streszczenie/route.ts; not-found nie bierze filarów z lib; „Streszczam” w StreszczenieAI.tsx; „robicie” w Czat.tsx), a jakosc ma 3 błędy pisowni na /_not-found (leadow, narzedzia, wlasny). Nie poprawiałem ich, bo to cudza praca w toku. Żądanie indeksowania RR można wysłać od 19.10 00:10, bo limit z 18.10 jest już zużyty.
+
+## 2026-10-18 04:45
+**Kanał:** pomiar (Z23 planu stratega, bilans planu 2026-10-17/18). `budzet` 04:43: „utrzymaj”, 2 kamienie.
+**Co zrobione:** bilans doby planu poniżej; plan zamknięty (21 z 23 zrobione, 2 wysyłki nie poszły, bo sobota).
+
+### Bilans planu 2026-10-17/18
+| Zad. | Kanał | Stan | Godzina | Co przyprowadziło |
+|---|---|---|---|---|
+| Z1 | Google, pomiar GSC | zrobione | 17.10 06:45 | 0, lista adresów dla Z4 i Z18 |
+| Z2 | outreach, partia DMARC | zrobione | 06:50 | 0, 24 pliki w `maile_ks/` |
+| Z3 | outreach, wysyłka | nie (sobota) | 17.10 | 0, czeka na pn 19.10 9:00 |
+| Z4 | Google, linki wewnętrzne | zrobione | 07:00 | 0 mierzalnych wejść |
+| Z5 | pomiar południe | zrobione | 07:45 | 0 |
+| Z6 | Google/KSeF, /ksef-2027 | zrobione | 07:15 | 0 mierzalnych wejść (ponowny render 18.10 00:46) |
+| Z7 | AI/Google, „automatyzacja ai” | zrobione | 08:05 | 0 mierzalnych wejść (ocena po 7 dniach) |
+| Z8 | outreach, domknięcie okna | nie (sobota) | 17.10 | 0 |
+| Z9 | Google, linki z zewnątrz | zrobione | 08:10 | 0, 1 link zewnętrzny (zleca.pl) |
+| Z10 | Facebook, brief | zrobione | 08:20 | 0 |
+| Z11 | pomiar wieczór | zrobione | 15:45 | 0 |
+| Z12 | KSeF/AI, nowa strona JDG zwolniona | zrobione | 08:55 | 0, zindeksowana po Z18 |
+| Z13 | narzędzia, /numer-ksef na telefonie | zrobione | 09:15 | uruchomień numeru KSeF w tygodniu 4 (było 2) |
+| Z14 | Google/Bing, kontrola zmian | zrobione | 09:20 | 0 |
+| Z15 | pomiar noc, „bez odsyłacza” | zrobione | 08:50 | 0 |
+| Z16 | AI, llms.txt | zrobione | 09:35 | 0 |
+| Z17 | treści, szkic na pn | zrobione | 09:55 | 0, szkic `cykl/artykul-2026-10-19-szkic.md` |
+| Z18 | Google, żądania indeksowania | zrobione | 18.10 00:44 | 8 z 8 przyjętych |
+| Z19 | pomiar renderu | zrobione | 01:50 | 8 z 8 wyrenderowane |
+| Z20 | Google, seria 17.10 | zrobione | 02:44 | 9 z 9 w indeksie |
+| Z21 | narzędzia, lejek audytu | zrobione | 17.10 10:05 | 0 uruchomień u ludzi od przebudowy |
+| Z22 | Google, e-Doręczenia i biura | zrobione | 17.10 23:50 | 0, obie strony tracą wyświetlenia od 9–10.10 |
+| Z23 | pomiar, bilans | zrobione | 18.10 04:45 | ten wpis |
+
+Ludzie w dobie (pomiar-kanalow 04:43, po odsiewie): **42** wobec 24 z 16/17.10 (pary 18, serie 0). Źródła: bez odsyłacza 34, instagram 3, DuckDuckGo 1, Google 1, Facebook 1, mail 1, LinkedIn 1, YouTube 1. Tydzień 200 ludzi (Google 19, bez odsyłacza 161).
+Maile dnia: wysłane 0 (sobota, Z3 i Z8), delivered 0 (Resend 24 h: 0), sesje utm `ksiegowe` z >1 odsłoną 0 (w tygodniu 1 sesja `ksiegowe`), odpowiedzi 0 (Zoho 24 h: newsletter Dobra Treść i 2 kody X).
+Trzy liczby, które zmieniły się najbardziej:
+1. Ludzie w dobie 24 → 42 (+18), ale przyrost to głównie „bez odsyłacza” (20 → 34) i nowe utm `seria-podatki` innej sesji (instagram 3, linkedin 1, youtube 1); Google bez zmian (2 → 1).
+2. Zindeksowane nowe adresy: 6 nowych stron weszło do kolejki przez Z18 i 9 z 17.10 jest już w indeksie (Z20).
+3. Uruchomienia numeru KSeF w tygodniu 2 → 4 po zmianie mobilnej (Z13); audyt po przebudowie 16.10: 0 uruchomień u ludzi.
+Otwarte decyzje dla stratega:
+- Outreach: test 12 maili partii 28 nie poszedł (sobota), więc warunek wyłączenia („0 wejść z drugą odsłoną z 12 maili”) nie jest jeszcze rozstrzygnięty; 24 pliki czekają na pn 19.10 9:00. Decyzja o wyłączeniu po pomiarze 19/20.10.
+- Lejek audytu: 0 uruchomień u ludzi od przebudowy 5bcf057 (16.10 10:35), wcześniej 1 dziennie; do sprawdzenia, czy nowy pierwszy ekran nie zniechęca.
+- Bramki przed commitem: spojnosc nadal ma rozjazdy z commita 1b96d14 innej sesji („robicie” w Czat.tsx, „Streszczam”, „potrzebuję” w ScenaLeada.tsx i inne z wpisu 03:55); każdy cykl zmieniający kod będzie się o to potykał.
+- `seria-podatki` (social innej sesji) dała 5 wejść w dobie, więcej niż Google; warto uwzględnić w planie jako kanał.
+- e-Doręczenia i biura tracą wyświetlenia od 9–10.10 (Z22).
+
+**Ruch:** 42 ludzi w 24 h po odsiewie (48 odsłon); bez odsyłacza 34, instagram 3, DuckDuckGo, Google, Facebook, mail, LinkedIn, YouTube po 1.
+**Dowód:** linia Z23 w `cykl/plan-ruchu.md`; ten wpis.
+**Dla Pawła:**
+**Zostało otwarte:** w planie brak otwartych zadań; nowy plan stratega o 06:15. Gofin g8 zaplanowany 18.10 08:00. Wysyłka 12 maili `ksiegowe` pn 19.10 9:00.
