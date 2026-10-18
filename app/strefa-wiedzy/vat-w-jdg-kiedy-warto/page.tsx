@@ -11,11 +11,11 @@ import TaxCalculator from "@/app/kalkulator-podatkowy/TaxCalculator";
 export const metadata: Metadata = {
   title: "VAT w JDG, kiedy warto być vatowcem w 2026? | Fluxlab",
   description:
-    "Kiedy warto zarejestrować się jako czynny VAT w JDG? Zwolnienie podmiotowe, próg 200 000 zł, wpływ na cashflow, koszty i współpracę z firmami.",
+    "Kiedy warto zarejestrować się jako czynny VAT w JDG? Zwolnienie podmiotowe, próg 240 000 zł, wpływ na cashflow, koszty i współpracę z firmami.",
   openGraph: {
     title: "VAT w JDG, kiedy warto być vatowcem w 2026? | Fluxlab",
     description:
-      "Kiedy warto zarejestrować się jako czynny VAT w JDG? Zwolnienie podmiotowe, próg 200 000 zł, wpływ na cashflow, koszty i współpracę z firmami.",
+      "Kiedy warto zarejestrować się jako czynny VAT w JDG? Zwolnienie podmiotowe, próg 240 000 zł, wpływ na cashflow, koszty i współpracę z firmami.",
     locale: "pl_PL",
     type: "article",
     images: [
@@ -82,7 +82,7 @@ export default function VatWJdgArticle() {
                         Zwolnienie podmiotowe
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Przy rocznej sprzedaży netto do 200 000 zł możesz
+                        Przy rocznej sprzedaży netto do 240 000 zł możesz
                         korzystać{" "}
                         <Link
                           href="/strefa-wiedzy/ksef-jdg-zwolniona-z-vat"
@@ -104,7 +104,7 @@ export default function VatWJdgArticle() {
                       </h2>
                       <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
                         <li>
-                          Po przekroczeniu 200 000 zł obrotu, od transakcji,
+                          Po przekroczeniu 240 000 zł obrotu, od transakcji,
                           która spowodowała przekroczenie
                         </li>
                         <li>
@@ -243,7 +243,7 @@ export default function VatWJdgArticle() {
                         B2B i koszty z VAT: rejestracja prawie zawsze się
                         opłaca. B2C i niskie koszty: zwolnienie jest prostsze i
                         daje niższą cenę brutto. Z VAT możesz zrezygnować po
-                        roku, jeśli obrót nie przekracza 200 000 zł.
+                        roku, jeśli obrót nie przekracza 240 000 zł.
                       </p>
                     </div>
                   </div>
@@ -276,7 +276,7 @@ export default function VatWJdgArticle() {
                             </span>
                           </summary>
                           <p className="px-6 pb-6 text-gray-600 dark:text-gray-400">
-                            Tak, najwcześniej po roku, jeśli obrót nie przekroczył 200 000 zł. Rezygnację zgłaszasz na VAT-R.
+                            Tak, najwcześniej po roku, jeśli obrót nie przekroczył 240 000 zł. Rezygnację zgłaszasz na VAT-R.
                           </p>
                         </details>
 
@@ -413,7 +413,7 @@ export default function VatWJdgArticle() {
                 name: "Czy możemy zrezygnować z VAT po rejestracji?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Tak, najwcześniej po roku, jeśli obrót nie przekroczył 200 000 zł. Rezygnację zgłaszasz na VAT-R.",
+                  text: "Tak, najwcześniej po roku, jeśli obrót nie przekroczył 240 000 zł. Rezygnację zgłaszasz na VAT-R.",
                 },
               },
               {

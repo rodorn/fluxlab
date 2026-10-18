@@ -312,7 +312,7 @@ export const categories: Category[] = [
         href: "/strefa-wiedzy/vat-w-jdg-kiedy-warto",
         title: "VAT w JDG, kiedy warto być vatowcem",
         description:
-          "Zwolnienie podmiotowe, próg 200 000 zł i wpływ na cashflow.",
+          "Zwolnienie podmiotowe, próg 240 000 zł i wpływ na cashflow.",
       },
       {
         href: "/strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef",

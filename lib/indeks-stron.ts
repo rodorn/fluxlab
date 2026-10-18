@@ -620,7 +620,7 @@ export const INDEKS_STRON: WpisIndeksu[] = [
   {
     "url": "/strefa-wiedzy/vat-w-jdg-kiedy-warto",
     "tytul": "VAT w JDG, kiedy warto być vatowcem w 2026?",
-    "opis": "Kiedy warto zarejestrować się jako czynny VAT w JDG? Zwolnienie podmiotowe, próg 200 000 zł, wpływ na cashflow, koszty i współpracę z firmami."
+    "opis": "Kiedy warto zarejestrować się jako czynny VAT w JDG? Zwolnienie podmiotowe, próg 240 000 zł, wpływ na cashflow, koszty i współpracę z firmami."
   },
   {
     "url": "/strefa-wiedzy/zalacznik-do-faktury-ksef",
