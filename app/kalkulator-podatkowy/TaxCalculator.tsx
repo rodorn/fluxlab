@@ -3,6 +3,7 @@
 import { useState, useMemo, useRef, useCallback, useEffect } from "react";
 import Image from "next/image";
 import { event as gaEvent } from "@/lib/gtag";
+import { zglosZdarzenie } from "@/lib/zdarzenie";
 
 /* ═══════════════════════════════════════════════════
    STAŁE PODATKOWE 2026
@@ -1506,6 +1507,14 @@ export default function TaxCalculator() {
     ],
   );
 
+  const pierwszyWynik = useRef(results);
+  const zgloszono = useRef(false);
+  useEffect(() => {
+    if (zgloszono.current || results === pierwszyWynik.current) return;
+    zgloszono.current = true;
+    zglosZdarzenie("uruchomiono_kalkulator_podatkowy");
+  }, [results]);
+
   // Limity
   const annualRevenue = monthlyRevenue * 12;
   const vatExemptExceeded =
@@ -2379,6 +2388,16 @@ export default function TaxCalculator() {
               />
             ))}
           </div>
+          <p className="text-sm text-gray-700 dark:text-gray-300">
+            Kiedy która forma wygrywa:{" "}
+            <a
+              href="/strefa-wiedzy/ryczalt-czy-liniowy"
+              className="font-semibold text-accent underline underline-offset-2"
+            >
+              ryczałt czy liniowy w 2026
+            </a>
+            .
+          </p>
 
           {/* Disclaimer */}
           <div className="rounded-xl bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 p-4 text-sm text-amber-800 dark:text-amber-200">
