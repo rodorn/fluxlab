@@ -7,7 +7,7 @@
  "/audyt-kurierski": "2026-10-16T10:14:11+02:00",
  "/audyt-marz": "2026-10-16T10:14:11+02:00",
  "/audyt-poczty": "2026-10-16T10:14:11+02:00",
- "/audyt-strony": "2026-10-16T10:35:11+02:00",
+ "/audyt-strony": "2026-10-18T07:49:05+02:00",
  "/automatyczne-przypisywanie-leadow": "2026-10-18T00:37:08+02:00",
  "/automatyzacja-ai": "2026-10-16T10:14:11+02:00",
  "/automatyzacja-crm-leasing": "2026-10-17T16:26:21+02:00",
@@ -38,7 +38,7 @@
  "/integracje-api": "2026-10-16T10:14:11+02:00",
  "/jak-pracuje": "2026-10-16T10:14:11+02:00",
  "/kalkulator-kosztow": "2026-10-17T16:26:21+02:00",
- "/kalkulator-podatkowy": "2026-10-17T16:26:21+02:00",
+ "/kalkulator-podatkowy": "2026-10-18T07:12:54+02:00",
  "/kontakt": "2026-10-18T00:37:08+02:00",
  "/kontrola-jezykow": "2026-10-16T10:14:11+02:00",
  "/kontrola-paliwa": "2026-10-16T10:14:11+02:00",
@@ -87,6 +87,7 @@
  "/strefa-wiedzy/faktura-dla-kontrahenta-zagranicznego-ksef": "2026-10-17T17:49:36+02:00",
  "/strefa-wiedzy/faktura-dla-osoby-prywatnej-ksef": "2026-10-16T10:14:11+02:00",
  "/strefa-wiedzy/faktura-gdy-ksef-nie-dziala": "2026-10-16T10:14:11+02:00",
+ "/strefa-wiedzy/faktura-vat-rr-ksef": "2026-10-18T03:46:55+02:00",
  "/strefa-wiedzy/faktura-zaliczkowa-ksef": "2026-10-16T10:14:11+02:00",
  "/strefa-wiedzy/faktury-z-ksef-po-zmianie-biura": "2026-10-17T18:49:56+02:00",
  "/strefa-wiedzy/hubspot-vs-pipedrive": "2026-10-16T10:14:11+02:00",
@@ -130,6 +131,6 @@
  "/widocznosc-w-google": "2026-10-16T10:14:11+02:00",
  "/wlasnosc-domeny": "2026-10-16T10:14:11+02:00",
  "/wlasny-crm": "2026-10-18T00:59:12+02:00",
- "/wycena": "2026-10-18T01:27:15+02:00",
+ "/wycena": "2026-10-18T05:46:56+02:00",
  "/zapier-make": "2026-10-16T10:14:11+02:00"
 }
