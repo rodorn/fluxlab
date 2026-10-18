@@ -23,7 +23,7 @@ export default function MiastoHero() {
         miasto ? "opacity-100" : "opacity-0"
       }`}
     >
-      {miasto ? `Pracujemy też z firmami ${miasto}` : ""}
+      {miasto ? `Robimy strony i CRM dla firm ${miasto}` : ""}
     </p>
   );
 }
