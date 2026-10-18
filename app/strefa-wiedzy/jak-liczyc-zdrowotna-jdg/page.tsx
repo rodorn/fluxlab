@@ -165,7 +165,7 @@ export default function SkladkaZdrowotnaJDGArticle() {
                         </thead>
                         <tbody>
                           {[
-                            ["6 000 zł", "6 480 zł", "5 190,48 zł (minimum)", "5 980,20 zł"],
+                            ["6 000 zł", "6 480 zł", "5 072,90 zł (minimum)", "9 966,96 zł"],
                             ["15 000 zł", "16 200 zł", "8 820 zł", "9 966,96 zł"],
                             ["30 000 zł", "32 400 zł", "17 640 zł", "17 940,48 zł"],
                           ].map(([d, a, b, c]) => (
@@ -185,7 +185,7 @@ export default function SkladkaZdrowotnaJDGArticle() {
                       </table>
                     </div>
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Skala jest najdroższa przy każdym dochodzie. Liniowy
+                      Przy 6 000 zł najdroższy jest ryczałt, bo roczny przychód przekracza 60 000 zł, wyżej skala. Liniowy
                       dodatkowo pozwala odliczyć składkę od dochodu. Sam wybór
                       formy opisujemy w artykule{" "}
                       <Link

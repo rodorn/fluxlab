@@ -37,7 +37,7 @@ export default function SkalaCzyLiniowyJdgArticle() {
     {
       question: "Od jakiego dochodu liniowy się opłaca?",
       answer:
-        "Zwykle od ok. 100 do 120 tys. zł rocznego dochodu, licząc podatek razem ze składką zdrowotną.",
+        "Od ok. 150 tys. zł rocznego dochodu, licząc podatek razem ze składką zdrowotną.",
     },
     {
       question: "Czy na skali możemy rozliczać się z małżonkiem?",
@@ -76,7 +76,7 @@ export default function SkalaCzyLiniowyJdgArticle() {
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
               Obie formy opierają się na dochodzie i pozwalają odliczać koszty.
               Różnią się stawkami, kwotą wolną i składką zdrowotną. Próg
-              opłacalności liniowego to zwykle 100 do 120 tys. zł dochodu.
+              opłacalności liniowego to ok. 150 tys. zł dochodu.
             </p>
           </div>
         </section>
@@ -139,9 +139,9 @@ export default function SkalaCzyLiniowyJdgArticle() {
                         </table>
                       </div>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Licząc sam podatek, skala wygrywa do ok. 135 do 140 tys.
+                        Licząc sam podatek, skala wygrywa do ok. 200 tys.
                         zł dochodu. Wyższa i nieodliczalna składka zdrowotna
-                        przesuwa ten próg do ok. 100 do 120 tys. zł. Więcej w
+                        przesuwa ten próg do ok. 150 tys. zł. Więcej w
                         artykule{" "}
                         <Link
                           href="/strefa-wiedzy/jak-liczyc-zdrowotna-jdg"
@@ -206,7 +206,7 @@ export default function SkalaCzyLiniowyJdgArticle() {
                         Skala, gdy:
                       </h3>
                       <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
-                        <li>dochód nie przekracza 100 do 120 tys. zł,</li>
+                        <li>dochód nie przekracza ok. 150 tys. zł,</li>
                         <li>chcesz rozliczać się z małżonkiem,</li>
                         <li>korzystasz z ulg dostępnych tylko na skali.</li>
                       </ul>
@@ -214,7 +214,7 @@ export default function SkalaCzyLiniowyJdgArticle() {
                         Liniowy, gdy:
                       </h3>
                       <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
-                        <li>dochód przekracza 120 do 150 tys. zł,</li>
+                        <li>dochód przekracza ok. 150 tys. zł,</li>
                         <li>nie rozliczasz się z małżonkiem,</li>
                         <li>niższa składka zdrowotna daje realną oszczędność.</li>
                       </ul>

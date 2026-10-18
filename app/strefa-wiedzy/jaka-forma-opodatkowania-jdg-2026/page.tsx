@@ -126,7 +126,7 @@ export default function JakaFormaOpodatkowaniaJdgArticle() {
                         rocznie
                       </li>
                       <li>
-                        opłaca się przy dochodzie powyżej ok. 120 tys. zł i
+                        opłaca się przy dochodzie powyżej ok. 150 tys. zł i
                         wysokich kosztach
                       </li>
                     </ul>
@@ -178,7 +178,7 @@ export default function JakaFormaOpodatkowaniaJdgArticle() {
                         mocnym kandydatem.
                       </li>
                       <li>
-                        Dochód do 120 000 zł? Skala może wygrać z liniowym.
+                        Dochód do 150 000 zł? Skala zwykle wygrywa z liniowym.
                       </li>
                       <li>
                         Licz podatek razem ze składką zdrowotną, bo potrafi
