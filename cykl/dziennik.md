@@ -6015,3 +6015,11 @@ Otwarte decyzje dla stratega:
 **Dowód:** Z1: L1 = 22 adresy z raportu Indeksowanie (stan 12.10), kontrola adresów: 22 z 22 już w Google; „automatyzacja podatków” to zapytanie w cudzysłowie, 24 wyśw., strony /automatyzacja-raportowania i /narzedzia; /numer-ksef 7 dni 3/65. Z2: faktura-vat-rr-ksef „prośba przesłana” 07:02, /wycena odrzucona (celowo noindex); sitemap przesłana 18.10, odczyt 18.10, 137 = 137 loc. Z3: commit 6cc9087, 200 z VPS, IndexNow 2 z 3, zdarzenie w ruch.sqlite 05:15:25 UTC. Z4: wątek https://forum.gofin.pl/1560143/odliczenie-od-rr, termin 2026-10-18 12:00, unit fl-gofin-9.
 **Dla Pawła:**
 **Zostało otwarte:** Z5 i dalej wg planu; L1 pusta, więc Z15 i Z18 muszą brać adresy spoza raportu z 12.10 (nowe strony z bieżącego dnia).
+
+## 2026-10-18 08:05
+**Kanał:** social (Z5, brief) i narzędzia (Z6, lejek audytu), wg planu stratega z 18.10.
+**Co zrobione:** na telefonie pole i przycisk darmowego audytu są teraz na pierwszym ekranie (wcześniej pole na y=1095 przy ekranie 844, pod „Za darmo” stało „Od 10 zł netto”); brief dla fluxlab-meta prosi o utm na Facebooku dla serii podatkowej i 026.
+**Ruch:** ostatnia doba 90 odsłon, 77 osób (+23% wobec średniej 73); źródła: mail.google.com 6, b2b-email 4, facebook 4, youtube 4, instagram 3; najczęściej /kalkulator-podatkowy 10. Po odsiewie (pomiar-kanalow): 52 ludzi, bez odsyłacza 43, instagram 3, linkedin 2, Google 1, DuckDuckGo 1, Facebook 1, mail 1, YouTube 1. Utm `ksef-2027` 0 w 7 dniach. Uruchomienia narzędzi 4 (numer KSeF 2, skan 1, kalkulator podatkowy 1 = własny test).
+**Dowód:** Z5: ~/Projekty/fluxlab-meta/briefy/od-cyklu-ruchu-2026-10-18.md (026 nadal pozycja 12 z utm narzedzia). Z6: commit 4d02319 + 0900230, produkcja 390 px: pole y=625, przycisk 683 do 731 (dymek czatu od 764), 1280 px pole y=613; audyt carmore.pl z telefonu: wynik po 46 s, widoczny bez przewijania; błędy JS 0; IndexNow 137 adresów.
+**Dla Pawła:**
+**Zostało otwarte:** Z7 (linki ze strony głównej) i dalej wg planu.
