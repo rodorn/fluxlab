@@ -161,6 +161,47 @@ const ETAPY = [
   "Składamy raport i układamy naprawy w kolejności",
 ];
 
+/** Typowy czas etapu w sekundach (razem ok. 50 s, tyle trwa zwykle badanie). */
+const CZAS_ETAPU = [5, 6, 7, 8, 8, 6, 10];
+const START_ETAPU = CZAS_ETAPU.map((_, i) => CZAS_ETAPU.slice(0, i).reduce((a, b) => a + b, 0));
+
+function procentEtapu(i: number, sekundy: number): number {
+  const p = ((sekundy - START_ETAPU[i]) / CZAS_ETAPU[i]) * 100;
+  // Ostatni etap czeka na prawdziwy wynik, więc nie dochodzi sam do 100%.
+  return Math.round(Math.max(0, Math.min(i === CZAS_ETAPU.length - 1 ? 95 : 100, p)));
+}
+
+function KolkoProcent({ p }: { p: number }) {
+  const r = 11;
+  const obwod = 2 * Math.PI * r;
+  const gotowe = p >= 100;
+  return (
+    <span aria-hidden="true" className="relative inline-flex h-7 w-7 shrink-0 items-center justify-center">
+      <svg viewBox="0 0 28 28" className="absolute inset-0 -rotate-90">
+        <circle cx="14" cy="14" r={r} fill="none" strokeWidth="2.5" className="stroke-gray-200 dark:stroke-white/10" />
+        <circle
+          cx="14"
+          cy="14"
+          r={r}
+          fill="none"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          strokeDasharray={obwod}
+          strokeDashoffset={obwod * (1 - p / 100)}
+          className={`transition-[stroke-dashoffset] duration-200 ${gotowe ? "stroke-emerald-500" : "stroke-accent"}`}
+        />
+      </svg>
+      {gotowe ? (
+        <svg width="12" height="12" viewBox="0 0 12 12" className="text-emerald-500">
+          <path d="M2.5 6.5l2.3 2.3L9.5 3.8" stroke="currentColor" strokeWidth="1.8" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      ) : (
+        <span className="text-[8px] font-semibold tabular-nums text-gray-600 dark:text-gray-300">{p}%</span>
+      )}
+    </span>
+  );
+}
+
 const NAZWA_OBSZARU: Record<string, string> = {
   zapytania: "Zapytania i CRM",
   dostepnosc: "Dostępność i zaufanie",
@@ -336,6 +377,7 @@ export default function AudytCheck() {
     "idle",
   );
   const [etap, setEtap] = useState(0);
+  const [sekundy, setSekundy] = useState(0);
   const [blad, setBlad] = useState("");
   const [wynik, setWynik] = useState<Wynik | null>(null);
   const [filtr, setFiltr] = useState<Waga | "wszystko">("wszystko");
@@ -382,13 +424,16 @@ export default function AudytCheck() {
     setWynik(null);
     setMailStan("idle");
     setEtap(0);
+    setSekundy(0);
     if (timer.current) clearInterval(timer.current);
-    // Etapy idą wolniej niż w lżejszych narzędziach, bo to badanie naprawdę
-    // trwa. Pasek, który dobiega do końca i staje, wygląda na zawieszony.
-    timer.current = setInterval(
-      () => setEtap((e) => Math.min(e + 1, ETAPY.length - 1)),
-      2600,
-    );
+    // Każdy etap ma swój typowy czas, procent w kółku liczy się z upływu czasu.
+    const t0 = performance.now();
+    timer.current = setInterval(() => {
+      const sek = (performance.now() - t0) / 1000;
+      setSekundy(sek);
+      const i = START_ETAPU.findLastIndex((st) => sek >= st);
+      setEtap(Math.max(0, Math.min(i, ETAPY.length - 1)));
+    }, 200);
     try {
       const res = await fetch("/api/audyt-www", {
         method: "POST",
@@ -521,16 +566,7 @@ export default function AudytCheck() {
                     : "text-gray-600 dark:text-gray-600"
                 }`}
               >
-                <span
-                  aria-hidden="true"
-                  className={`h-2 w-2 shrink-0 rounded-full ${
-                    i < etap
-                      ? "bg-emerald-500"
-                      : i === etap
-                        ? "animate-pulse bg-accent"
-                        : "bg-gray-300 dark:bg-gray-700"
-                  }`}
-                />
+                <KolkoProcent p={procentEtapu(i, sekundy)} />
                 {tekst}
               </li>
             ))}
