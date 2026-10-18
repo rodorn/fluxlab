@@ -42,7 +42,7 @@ const faqs = [
   {
     question: "Jak liczy się składkę zdrowotną na ryczałcie w 2026?",
     answer:
-      "9% od podstawy zależnej od rocznego przychodu (do 60 000 zł, do 300 000 zł, powyżej). Miesięcznie: 498,35 zł, 830,58 zł albo 1 495,04 zł.",
+      "9% od podstawy zależnej od rocznego przychodu po odliczeniu składek społecznych (do 60 000 zł, do 300 000 zł, powyżej). Miesięcznie: 498,35 zł, 830,58 zł albo 1 495,04 zł.",
   },
   {
     question: "Ile wynosi ZUS dla JDG w 2026?",

@@ -412,7 +412,8 @@ function calculate(p: {
   const linearBurden = annZus + annFP + linearHealthAnn + linearTax;
 
   // ── RYCZAŁT ──
-  const ryczHealthM = healthRyczalt(annRev);
+  // Próg zdrowotnej liczy się od przychodu pomniejszonego o składki społeczne (art. 81 ust. 2h)
+  const ryczHealthM = healthRyczalt(annRev - annZus);
   const ryczHealthAnn = Math.round(ryczHealthM * 12);
   const ryczHealthDed = Math.round(ryczHealthAnn * 0.5);
 

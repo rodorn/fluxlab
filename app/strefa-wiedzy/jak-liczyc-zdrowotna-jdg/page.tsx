@@ -46,7 +46,7 @@ const faqItems = [
   {
     question: "Czy na ryczałcie zdrowotna zależy od dochodu?",
     answer:
-      "Nie. Zależy od progu rocznego przychodu: do 60 tys., do 300 tys. albo powyżej 300 tys. zł.",
+      "Nie. Zależy od rocznego przychodu po odjęciu składek społecznych: do 60 tys., do 300 tys. albo powyżej 300 tys. zł.",
   },
   {
     question: "Dlaczego zdrowotna na liniowym jest niższa?",
@@ -165,7 +165,7 @@ export default function SkladkaZdrowotnaJDGArticle() {
                         </thead>
                         <tbody>
                           {[
-                            ["6 000 zł", "6 480 zł", "5 072,90 zł (minimum)", "9 966,96 zł"],
+                            ["6 000 zł", "6 480 zł", "5 072,90 zł (minimum)", "5 980,20 zł"],
                             ["15 000 zł", "16 200 zł", "8 820 zł", "9 966,96 zł"],
                             ["30 000 zł", "32 400 zł", "17 640 zł", "17 940,48 zł"],
                           ].map(([d, a, b, c]) => (
@@ -185,7 +185,7 @@ export default function SkladkaZdrowotnaJDGArticle() {
                       </table>
                     </div>
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Przy 6 000 zł najdroższy jest ryczałt, bo roczny przychód przekracza 60 000 zł, wyżej skala. Liniowy
+                      Najdroższa jest skala. Ryczałt przy 6 000 zł zostaje w progu do 60 000 zł, bo próg liczy się od przychodu po odjęciu składek społecznych. Liniowy
                       dodatkowo pozwala odliczyć składkę od dochodu. Sam wybór
                       formy opisujemy w artykule{" "}
                       <Link
