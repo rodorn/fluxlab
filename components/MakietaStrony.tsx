@@ -116,7 +116,7 @@ export default function MakietaStrony() {
   const poleKlasa =
     "min-w-0 flex-1 rounded-xl border border-gray-300 bg-white px-4 py-3 text-base text-gray-900 placeholder:text-gray-400 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100";
   const zakladkaKlasa = (aktywna: boolean) =>
-    `rounded-full px-5 py-2 text-sm font-semibold transition-colors ${
+    `rounded-2xl px-5 py-2 text-sm font-semibold transition-colors ${
       aktywna
         ? "bg-accent-solid text-white"
         : "border border-gray-300 text-gray-700 hover:border-accent dark:border-gray-700 dark:text-gray-300"
@@ -278,7 +278,7 @@ export default function MakietaStrony() {
                 {naglowki.map((n, i) => (
                   <li key={n} className="flex items-center justify-between gap-4 rounded-xl border border-gray-200 bg-white px-4 py-3 dark:border-gray-800 dark:bg-gray-900">
                     <span className="text-base font-semibold text-gray-900 dark:text-white">{n}</span>
-                    <button type="button" onClick={() => kopiuj(n, i)} className="shrink-0 rounded-full border border-gray-300 px-4 py-1.5 text-sm font-semibold text-gray-700 hover:border-accent dark:border-gray-700 dark:text-gray-300">
+                    <button type="button" onClick={() => kopiuj(n, i)} className="shrink-0 rounded-xl border border-gray-300 px-4 py-1.5 text-sm font-semibold text-gray-700 hover:border-accent dark:border-gray-700 dark:text-gray-300">
                       {skopiowano === i ? "Skopiowano" : "Kopiuj"}
                     </button>
                   </li>

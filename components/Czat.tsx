@@ -269,7 +269,7 @@ export default function Czat() {
         }}
         aria-expanded={otwarty}
         aria-label={otwarty ? "Zamknij czat" : "Zapytaj o ofertę"}
-        className="przycisk-czatu fixed bottom-6 right-6 z-50 flex h-14 items-center gap-2 rounded-full bg-accent-solid px-5 text-sm font-semibold text-white shadow-xl shadow-accent/30 transition-all duration-300 hover:scale-105"
+        className="btn-primary przycisk-czatu fixed bottom-6 right-6 z-50 h-14 px-5"
       >
         <svg
           viewBox="0 0 24 24"
@@ -333,7 +333,7 @@ export default function Czat() {
                 {w.opisWyceny && (
                   <a
                     href={`/?opis=${encodeURIComponent(w.opisWyceny)}#kontakt`}
-                    className="mt-2 inline-flex rounded-full bg-accent-solid px-4 py-2 text-xs font-semibold text-white"
+                    className="btn-primary mt-2 px-4 py-2 text-xs"
                   >
                     Przejdź do formularza z tym opisem
                   </a>
@@ -393,7 +393,7 @@ export default function Czat() {
               type="submit"
               disabled={czeka || !pole.trim()}
               aria-label="Wyślij"
-              className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-accent-solid text-white transition-opacity disabled:opacity-40"
+              className="btn-primary h-11 w-11 shrink-0 p-0 disabled:opacity-40"
             >
               <svg
                 viewBox="0 0 24 24"
