@@ -339,6 +339,12 @@ export const categories: Category[] = [
         bezOkladki: true,
       },
       {
+        href: "/strefa-wiedzy/faktura-vat-rr-ksef",
+        title: "Faktura VAT RR w KSeF",
+        description: "Dobrowolnie od 1 kwietnia 2026; obowiązek, gdy rolnik wskaże nabywcę.",
+        bezOkladki: true,
+      },
+      {
         href: "/strefa-wiedzy/zaw-fa-ksef",
         title: "ZAW-FA w spółce",
         description: "Jedna osoba w zgłoszeniu nadaje uprawnienia pozostałym; gdy odejdzie, nowe ZAW-FA.",

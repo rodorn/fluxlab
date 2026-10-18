@@ -638,6 +638,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Praktyczne porównanie Zapier i Make w 2026: pricing, integracje, logika, krzywa nauki i koszt na dużą skalę. Konkretne kryteria wyboru dla firm B2B."
   },
   {
+    "url": "/strefa-wiedzy/faktura-vat-rr-ksef",
+    "tytul": "Faktura VAT RR w KSeF: kiedy trzeba, kiedy papier",
+    "opis": "Od 1 kwietnia 2026 fakturę VAT RR wolno wystawić w KSeF, ale nie trzeba. Decyduje rolnik: gdy wskaże Cię w KSeF, wystawiasz tam wszystkie, aż cofnie wskazanie."
+  },
+  {
     "url": "/strefa-wiedzy/zaw-fa-ksef",
     "tytul": "ZAW-FA w spółce: kogo wskazać i co, gdy odejdzie",
     "opis": "Spółka bez pieczęci kwalifikowanej wskazuje w ZAW-FA jedną osobę do KSeF. Ona nadaje uprawnienia innym. Gdy odejdzie, składasz nowe ZAW-FA z następcą."
