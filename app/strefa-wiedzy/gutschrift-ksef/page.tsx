@@ -37,6 +37,7 @@ const faq: { q: string; a: string; linki?: LinkWTekscie[] }[] = [
   {
     q: "Czy Gutschrift trafia do KSeF?",
     a: "Nie musi. Samofaktury wystawiane przez firmy zagraniczne nie są objęte obowiązkowym KSeF. Nabywca z Unii może je tam wystawić dobrowolnie tylko przy WDT.",
+    linki: [{ fraza: "Samofaktury", href: "/strefa-wiedzy/samofakturowanie-ksef" }],
   },
   {
     q: "Kto nadaje uprawnienie do samofakturowania?",

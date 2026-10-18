@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
+import { zLinkami, type LinkWTekscie } from "@/lib/zLinkami";
 
 const OPIS =
   "W JPK_VAT faktura ma numer KSeF albo oznaczenie: OFF dla awarii KSeF, BFK dla faktury spoza KSeF, DI dla dowodu innego niż faktura, np. paragonu.";
@@ -32,10 +33,11 @@ export const metadata: Metadata = {
   },
 };
 
-const faq = [
+const faq: { q: string; a: string; linki?: LinkWTekscie[] }[] = [
   {
     q: "Rachunek oznaczasz DI czy BFK?",
     a: "Rachunek nie jest fakturą, więc DI. Rachunek od sprzedawcy zwolnionego z VAT nie daje odliczenia, więc w ewidencji zakupu zwykle go nie ma.",
+    linki: [{ fraza: "sprzedawcy zwolnionego z VAT", href: "/strefa-wiedzy/ksef-jdg-zwolniona-z-vat" }],
   },
   {
     q: "Faktura offline24 nie ma numeru w dniu złożenia JPK?",
@@ -121,7 +123,7 @@ export default function OznaczeniaJpkKsefArticle() {
                       {f.q}
                     </summary>
                     <p className="px-6 pb-6 text-gray-600 dark:text-gray-400">
-                      {f.a}
+                      {zLinkami(f.a, f.linki)}
                     </p>
                   </details>
                 ))}

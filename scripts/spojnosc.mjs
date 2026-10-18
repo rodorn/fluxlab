@@ -699,7 +699,9 @@ if (sankcjeDaty.size > 1) {
         // dla czytelnika, a ich zmiana zerwalaby ciaglosc danych w statystykach.
         const bezCytatow = l
           .replace(CYTAT, "")
-          .replace(/[a-z]+_[a-z_]+/gi, " ");
+          .replace(/[a-z]+_[a-z_]+/gi, " ")
+          // Typy i nazwy w camelCase (MediaStream) to kod, nie tekst.
+          .replace(/\b[A-Za-z]*[a-z][A-Z][A-Za-z]*/g, " ");
         const slowa = bezCytatow.match(SLOWO) ?? [];
         const trafione = slowa.find(pierwszaOsoba);
         if (trafione)

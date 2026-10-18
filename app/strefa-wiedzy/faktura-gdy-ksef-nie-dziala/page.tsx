@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
+import { zLinkami, type LinkWTekscie } from "@/lib/zLinkami";
 
 const OPIS =
   "Gdy KSeF nie działa, fakturę wystawia się offline i dosyła następnego dnia roboczego albo w 7 dni roboczych po awarii. Poza KSeF idzie z dwoma kodami QR.";
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
   },
 };
 
-const faq = [
+const faq: { q: string; a: string; linki?: LinkWTekscie[] }[] = [
   {
     q: "Nie mamy internetu, a klient czeka na fakturę. Co robimy?",
     a: "Wystawiasz ją w trybie offline24 w strukturze FA(3) i wysyłasz do KSeF najpóźniej następnego dnia roboczego. Ogłoszenie awarii nie jest do tego potrzebne.",
@@ -40,10 +41,12 @@ const faq = [
   {
     q: "Jaka jest data wystawienia takiej faktury?",
     a: "Data z pola P_1, czyli ta wpisana na fakturze, a nie dzień wysłania do KSeF.",
+    linki: [{ fraza: "Data z pola P_1", href: "/strefa-wiedzy/data-wystawienia-faktury-ksef" }],
   },
   {
     q: "Kiedy nabywca ją otrzymuje?",
     a: "Firma z NIP otrzymuje ją w dniu nadania numeru KSeF i od tego dnia liczy odliczenie VAT. Konsument i firma zagraniczna otrzymują ją w dniu faktycznego doręczenia.",
+    linki: [{ fraza: "firma zagraniczna", href: "/strefa-wiedzy/faktura-dla-kontrahenta-zagranicznego-ksef" }],
   },
   {
     q: "Po co certyfikat KSeF?",
@@ -138,7 +141,7 @@ export default function FakturaGdyKsefNieDzialaArticle() {
                       {f.q}
                     </summary>
                     <p className="px-6 pb-6 text-gray-600 dark:text-gray-400">
-                      {f.a}
+                      {zLinkami(f.a, f.linki)}
                     </p>
                   </details>
                 ))}
