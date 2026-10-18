@@ -50,6 +50,21 @@ export default function ScenaLeada() {
   // Telefon dostaje powiadomienie dopiero, gdy dane „przejdą” łącznikiem z CRM.
   const [telefon, setTelefon] = useState(false);
   const zegar = useRef<number | null>(null);
+  // Godzina na ekranie telefonu dopiero po hydracji, bo strona jest statyczna.
+  const [godzina, setGodzina] = useState("");
+  useEffect(() => {
+    const ustaw = () =>
+      setGodzina(
+        new Date().toLocaleTimeString("pl-PL", {
+          hour: "2-digit",
+          minute: "2-digit",
+          timeZone: "Europe/Warsaw",
+        }),
+      );
+    ustaw();
+    const t = window.setInterval(ustaw, 30_000);
+    return () => window.clearInterval(t);
+  }, []);
 
   useEffect(
     () => () => {
@@ -137,7 +152,7 @@ export default function ScenaLeada() {
               key={p}
               type="button"
               onClick={() => setTekst(p)}
-              className={`rounded-full border px-3 py-1.5 text-xs transition-colors ${
+              className={`rounded-xl border px-3 py-1.5 text-xs transition-colors ${
                 tekst === p
                   ? "border-accent bg-accent/10 text-accent"
                   : "border-gray-200 text-gray-600 hover:border-accent/50 dark:border-white/10 dark:text-white/60"
@@ -256,7 +271,7 @@ export default function ScenaLeada() {
                   style={{ width: `${w}%` }}
                 />
               ))}
-              <p className="pt-2 text-sm text-gray-400 dark:text-white/40">
+              <p className="pt-2 text-sm text-gray-500 dark:text-white/60">
                 {stan === "czeka" ? "AI wypełnia kartę…" : "Czeka na zapytanie"}
               </p>
             </div>
@@ -268,39 +283,44 @@ export default function ScenaLeada() {
         </div>
 
         <div
-          className={`mx-auto w-full max-w-[300px] rounded-[2.2rem] border-[6px] border-gray-900 bg-gray-950 p-3 shadow-2xl transition-shadow duration-500 dark:border-white/15 ${
-            telefon ? "wibracja shadow-accent/30" : ""
+          className={`relative mx-auto h-[460px] w-[240px] rounded-[2.6rem] border-[7px] border-gray-900 bg-gradient-to-b from-accent/15 via-white to-white p-3 shadow-2xl transition-shadow duration-500 dark:border-gray-700 dark:from-accent/25 dark:via-gray-900 dark:to-gray-900 ${
+            telefon ? "wibracja shadow-accent/30" : "shadow-gray-900/20"
           }`}
         >
-          <div className="mx-auto mb-3 h-1.5 w-16 rounded-full bg-white/15" />
-          <p className="text-center text-[11px] text-white/40">
+          <div className="mx-auto h-5 w-20 rounded-full bg-gray-900 dark:bg-black" />
+          <p className="mt-6 text-center text-4xl font-semibold tabular-nums tracking-tight text-gray-900 dark:text-white">
+            {godzina || "\u00a0"}
+          </p>
+          <p className="text-center text-[11px] text-gray-500 dark:text-white/50">
             Telefon handlowca
           </p>
-          <div className="mt-3 min-h-[230px] rounded-2xl bg-white/[0.06] p-3.5 text-left">
+          <div className="mt-5 text-left">
             {karta && telefon ? (
-              <div className="scena-wjazd">
-                <p className="text-[11px] font-semibold uppercase tracking-wider text-accent">
-                  Nowy lead · zadzwoń w 15 min
+              <div className="scena-wjazd rounded-2xl bg-white/90 p-3 shadow-lg ring-1 ring-gray-900/5 backdrop-blur dark:bg-white/10 dark:ring-white/10">
+                <p className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wider text-accent">
+                  <span className="h-1.5 w-1.5 rounded-full bg-accent-solid" />
+                  CRM · zadzwoń w 15 min
                 </p>
-                <p className="mt-1 text-sm font-semibold text-white">
+                <p className="mt-1 text-sm font-semibold text-gray-900 dark:text-white">
                   {karta.temat}
                 </p>
-                <p className="mt-3 text-[11px] text-white/45">
+                <p className="mt-2 text-[10px] text-gray-500 dark:text-white/50">
                   Szkic odpowiedzi od AI:
                 </p>
-                <p className="mt-1 text-[13px] leading-relaxed text-white/85">
+                <p className="mt-0.5 max-h-[170px] overflow-hidden text-[12px] leading-relaxed text-gray-700 dark:text-white/80">
                   {pisane}
                   {pisane.length < karta.odpowiedz.length && (
-                    <span className="ml-0.5 inline-block h-3.5 w-1.5 animate-pulse bg-accent align-middle" />
+                    <span className="ml-0.5 inline-block h-3 w-1 animate-pulse bg-accent align-middle" />
                   )}
                 </p>
               </div>
             ) : (
-              <p className="pt-16 text-center text-sm text-white/35">
+              <p className="pt-10 text-center text-xs text-gray-400 dark:text-white/40">
                 {karta ? "Przychodzi…" : stan === "czeka" ? "…" : "Brak powiadomień"}
               </p>
             )}
           </div>
+          <div className="absolute bottom-2 left-1/2 h-1 w-24 -translate-x-1/2 rounded-full bg-gray-900/30 dark:bg-white/30" />
         </div>
       </div>
     </div>
