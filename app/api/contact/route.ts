@@ -25,6 +25,7 @@ function str(v: unknown, max: number): string {
   return v.trim().slice(0, max);
 }
 
+import { potwierdzenieHtml, zdanieKontaktu } from "@/lib/mailPotwierdzenia";
 import { terminWolny } from "@/lib/terminy";
 import { PROBLEM_TYPE_LABELS, PROBLEM_SCALE_LABELS } from "@/lib/form-options";
 
@@ -51,7 +52,12 @@ const SMTP_USER = process.env.SMTP_USER;
 const SMTP_PASS = process.env.SMTP_PASS;
 const SMTP_FROM = process.env.SMTP_FROM ?? SMTP_USER;
 
-async function wyslijPrzezSmtp(to: string, subject: string, text: string) {
+async function wyslijPrzezSmtp(
+  to: string,
+  subject: string,
+  text: string,
+  html: string,
+) {
   if (!SMTP_HOST || !SMTP_USER || !SMTP_PASS) {
     throw new Error("Brak konfiguracji SMTP");
   }
@@ -61,19 +67,14 @@ async function wyslijPrzezSmtp(to: string, subject: string, text: string) {
     secure: true,
     auth: { user: SMTP_USER, pass: SMTP_PASS },
   });
-  await transport.sendMail({ from: SMTP_FROM, to, subject, text });
+  await transport.sendMail({ from: SMTP_FROM, to, subject, text, html });
 }
 
 const FROM_PAWEL =
   process.env.RESEND_FROM_PAWEL ?? "Paweł, Fluxlab <pawel@fluxlab.pl>";
 
 function potwierdzenie(pref: string, termin: string, telefon: string) {
-  const kontakt =
-    pref === "meet" && termin
-      ? `Prosisz o spotkanie na Google Meet ${termin}. Potwierdzimy termin zaproszeniem z linkiem do rozmowy, a jeśli ta godzina będzie zajęta, zaproponujemy najbliższą wolną.`
-      : pref === "phone" && telefon
-        ? `Prosisz o telefon pod numer ${telefon}. Zadzwonimy w godzinach pracy, zwykle tego samego dnia.`
-        : "Pracujemy i ustalamy wszystko mailowo, więc możesz po prostu odpisać na tę wiadomość.";
+  const kontakt = zdanieKontaktu(pref, termin, telefon);
   return `Cześć,
 
 dzięki za opis procesu. Przejrzymy zgłoszenie i wrócimy z informacją, czy widzimy potencjał na automatyzację oraz jaki byłby sensowny pierwszy krok, zwykle tego samego dnia.
@@ -276,12 +277,19 @@ export async function POST(req: Request) {
   // nie uda (np. nadawca z piaskownicy Resend moze pisac tylko do wlasciciela
   // konta), leci alert do Pawla, zeby odpisal recznie. Bez tego lead wyglada
   // dla klienta jak wrzucony w prozne.
+  const htmlPotwierdzenia = potwierdzenieHtml(
+    contactPref,
+    termin,
+    telefon,
+    termin ? linkKalendarza(termin, email, company) : "",
+  );
   try {
     const { error: replyError } = await resendKlient().emails.send({
       from: FROM_PAWEL,
       to: email,
       subject: "Dostaliśmy zgłoszenie, Fluxlab",
       text: potwierdzenie(contactPref, termin, telefon),
+      html: htmlPotwierdzenia,
     });
 
     if (replyError) {
@@ -297,6 +305,7 @@ export async function POST(req: Request) {
         email,
         "Dostaliśmy zgłoszenie, Fluxlab",
         potwierdzenie(contactPref, termin, telefon),
+        htmlPotwierdzenia,
       );
       return NextResponse.json({ ok: true });
     } catch (e2) {

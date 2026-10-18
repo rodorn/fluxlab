@@ -83,6 +83,101 @@ export default function LandingForm({
     setUtm(readUtm());
   }, []);
 
+  // Brief głosowy: nagranie do 60 s przepisywane na tekst i dopisywane do wiadomości.
+  const [nagrywanieDostepne, setNagrywanieDostepne] = useState(false);
+  const [nagrywa, setNagrywa] = useState(false);
+  const [przepisuje, setPrzepisuje] = useState(false);
+  const [sekundy, setSekundy] = useState(0);
+  const recorderRef = useRef<MediaRecorder | null>(null);
+  const strumienRef = useRef<MediaStream | null>(null);
+  const tickRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  useEffect(() => {
+    setNagrywanieDostepne(
+      typeof MediaRecorder !== "undefined" &&
+        !!navigator.mediaDevices?.getUserMedia,
+    );
+    return () => {
+      if (tickRef.current) clearInterval(tickRef.current);
+      if (recorderRef.current && recorderRef.current.state !== "inactive") {
+        recorderRef.current.onstop = null;
+        recorderRef.current.stop();
+      }
+      strumienRef.current?.getTracks().forEach((t) => t.stop());
+    };
+  }, []);
+
+  function zatrzymajNagrywanie() {
+    if (recorderRef.current && recorderRef.current.state !== "inactive") {
+      recorderRef.current.stop();
+    }
+  }
+
+  async function przepisz(blob: Blob) {
+    setPrzepisuje(true);
+    try {
+      const fd = new FormData();
+      const rozszerzenie = blob.type.includes("mp4") ? "mp4" : "webm";
+      fd.append("audio", blob, `brief.${rozszerzenie}`);
+      const res = await fetch("/api/transkrypcja", { method: "POST", body: fd });
+      const d = (await res.json().catch(() => null)) as {
+        tekst?: string;
+        error?: string;
+      } | null;
+      if (!res.ok || !d?.tekst) {
+        setErrorMsg(d?.error ?? "Nie udało się przepisać nagrania. Wpisz wiadomość ręcznie.");
+        return;
+      }
+      const pole = formRef.current?.elements.namedItem("message") as
+        | HTMLTextAreaElement
+        | null;
+      if (pole) {
+        pole.value = pole.value.trim() ? `${pole.value.trim()} ${d.tekst}` : d.tekst;
+        pole.dispatchEvent(new Event("input", { bubbles: true }));
+      }
+    } catch {
+      setErrorMsg("Problem z połączeniem. Wpisz wiadomość ręcznie.");
+    } finally {
+      setPrzepisuje(false);
+    }
+  }
+
+  async function przelaczNagrywanie() {
+    if (nagrywa) {
+      zatrzymajNagrywanie();
+      return;
+    }
+    setErrorMsg(null);
+    try {
+      const strumien = await navigator.mediaDevices.getUserMedia({ audio: true });
+      strumienRef.current = strumien;
+      const rec = new MediaRecorder(strumien);
+      const kawalki: Blob[] = [];
+      rec.ondataavailable = (ev) => {
+        if (ev.data.size) kawalki.push(ev.data);
+      };
+      rec.onstop = () => {
+        if (tickRef.current) clearInterval(tickRef.current);
+        strumien.getTracks().forEach((t) => t.stop());
+        setNagrywa(false);
+        const blob = new Blob(kawalki, { type: rec.mimeType || "audio/webm" });
+        if (blob.size > 0) void przepisz(blob);
+      };
+      recorderRef.current = rec;
+      rec.start();
+      setSekundy(0);
+      setNagrywa(true);
+      const start = Date.now();
+      tickRef.current = setInterval(() => {
+        const s = Math.floor((Date.now() - start) / 1000);
+        setSekundy(Math.min(s, 60));
+        if (s >= 60) zatrzymajNagrywanie();
+      }, 250);
+    } catch {
+      setErrorMsg("Brak dostępu do mikrofonu. Wpisz wiadomość ręcznie.");
+    }
+  }
+
   // Szkic: email, firma i treść wiadomości zostają w przeglądarce do wysyłki.
   const formRef = useRef<HTMLFormElement>(null);
   const szkicTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -327,6 +422,35 @@ export default function LandingForm({
             placeholder="Jedno, dwa zdania wystarczą."
             className={`${inputClass} resize-none`}
           />
+          {nagrywanieDostepne && (
+            <button
+              type="button"
+              onClick={przelaczNagrywanie}
+              disabled={przepisuje}
+              aria-pressed={nagrywa}
+              className="mt-2 inline-flex items-center gap-2 rounded-lg border border-gray-200 px-3 py-1.5 text-sm text-gray-700 transition-colors hover:border-accent/50 disabled:opacity-60 dark:border-gray-700 dark:text-gray-300"
+            >
+              {nagrywa ? (
+                <>
+                  <span className="h-2.5 w-2.5 animate-pulse rounded-full bg-red-600" aria-hidden="true" />
+                  <span className="tabular-nums">
+                    0:{String(sekundy).padStart(2, "0")} / 1:00
+                  </span>
+                  <span>Zatrzymaj</span>
+                </>
+              ) : przepisuje ? (
+                "Przepisujemy nagranie..."
+              ) : (
+                <>
+                  <svg className="h-4 w-4 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <rect x="9" y="2" width="6" height="12" rx="3" />
+                    <path d="M5 11a7 7 0 0 0 14 0M12 18v4" />
+                  </svg>
+                  Nagraj zamiast pisać
+                </>
+              )}
+            </button>
+          )}
           {szkicOdtworzony && (
             <p className="mt-1.5 text-xs text-gray-500 dark:text-gray-400">
               Zapisaliśmy Twój szkic

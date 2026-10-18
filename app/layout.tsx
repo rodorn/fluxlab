@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ViewTransition } from "react";
 import { Geist } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
@@ -186,7 +187,7 @@ export default function RootLayout({
         <LicznikWizyt />
         <ContactClickTracker />
         <ScrollProgress />
-        {children}
+        <ViewTransition default="vt-page">{children}</ViewTransition>
         <ScrollToTop />
         <TytulKarty />
         <MagnesPrzyciskow />
