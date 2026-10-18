@@ -1270,3 +1270,7 @@ p {
   body[data-zgoda] .przycisk-czatu,
   body[data-zgoda] .przycisk-do-gory { display: none; }
 }
+
+/* Przewijany tekst bez widocznego paska (szkic odpowiedzi w telefonie demo) */
+.bez-paska { scrollbar-width: none; }
+.bez-paska::-webkit-scrollbar { display: none; }

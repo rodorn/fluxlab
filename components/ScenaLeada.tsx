@@ -148,6 +148,29 @@ export default function ScenaLeada() {
   const zrodlo = useRef<HTMLParagraphElement | null>(null);
   const crmRef = useRef<HTMLDivElement | null>(null);
   const telRef = useRef<HTMLDivElement | null>(null);
+  const szkic = useRef<HTMLParagraphElement | null>(null);
+  const ramka = useRef(0);
+
+  // Najechanie przewija szkic odpowiedzi w dół w tempie czytania, zjechanie wraca na górę.
+  const przewin = (wDol: boolean) => {
+    const el = szkic.current;
+    if (!el) return;
+    cancelAnimationFrame(ramka.current);
+    const cel = wDol ? el.scrollHeight - el.clientHeight : 0;
+    const predkosc = wDol ? 0.045 : 0.6; // px na ms
+    let poprzedni = performance.now();
+    const krok = (t: number) => {
+      const dt = t - poprzedni;
+      poprzedni = t;
+      const roznica = cel - el.scrollTop;
+      if (Math.abs(roznica) < 1) return;
+      el.scrollTop += Math.sign(roznica) * Math.min(Math.abs(roznica), predkosc * dt);
+      ramka.current = requestAnimationFrame(krok);
+    };
+    ramka.current = requestAnimationFrame(krok);
+  };
+
+  useEffect(() => () => cancelAnimationFrame(ramka.current), []);
   // Godzina na ekranie telefonu dopiero po hydracji, bo strona jest statyczna.
   const [godzina, setGodzina] = useState("");
   useEffect(() => {
@@ -405,7 +428,12 @@ export default function ScenaLeada() {
                 <p className="mt-2 text-[10px] text-gray-500 dark:text-white/50">
                   Szkic odpowiedzi od AI:
                 </p>
-                <p className="mt-0.5 max-h-[170px] overflow-hidden text-[12px] leading-relaxed text-gray-700 dark:text-white/80">
+                <p
+                  ref={szkic}
+                  onMouseEnter={() => przewin(true)}
+                  onMouseLeave={() => przewin(false)}
+                  className="bez-paska mt-0.5 max-h-[170px] overflow-y-auto [mask-image:linear-gradient(to_bottom,black_82%,transparent)] text-[12px] leading-relaxed text-gray-700 dark:text-white/80"
+                >
                   {pisane}
                   {pisane.length < karta.odpowiedz.length && (
                     <span className="ml-0.5 inline-block h-3 w-1 animate-pulse bg-accent align-middle" />
