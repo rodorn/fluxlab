@@ -9,7 +9,8 @@ import MenuDesktop from "./MenuDesktop";
 import { MENU, type LinkMenu, type PozycjaMenu } from "@/lib/menu";
 
 /** Na telefonie w kategorii pokazujemy tylko 5 linków, po kolei z każdej
- *  kolumny, bo pełna lista przytłaczała. Resztę daje „Zobacz wszystko”. */
+ *  kolumny, bo pełna lista przytłaczała. Resztę daje „Zobacz wszystko”.
+ *  Cennik zostaje w całości, z nagłówkami i cenami. */
 const najwazniejsze = (p: PozycjaMenu): LinkMenu[] => {
   const wynik: LinkMenu[] = [];
   const najdluzsza = Math.max(...p.kolumny.map((k) => k.linki.length));
@@ -225,18 +226,30 @@ export default function Header() {
                   p.id,
                   p.etykieta,
                   <>
-                    {najwazniejsze(p).map((x) => (
-                      <Link
-                        key={x.href + (x.cena ?? "")}
-                        href={x.href}
-                        onClick={zamknij}
-                        className={MOB_LINK}
-                      >
-                        {x.nazwa}
-                        {x.cena && (
-                          <span className="text-accent"> · {x.cena}</span>
+                    {(p.id === "cennik"
+                      ? p.kolumny
+                      : [{ tytul: "", linki: najwazniejsze(p) }]
+                    ).map((k, i) => (
+                      <div key={i} className="mb-1">
+                        {k.tytul && (
+                          <p className="pt-1 text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-white/50">
+                            {k.tytul}
+                          </p>
                         )}
-                      </Link>
+                        {k.linki.map((x) => (
+                          <Link
+                            key={x.href + (x.cena ?? "")}
+                            href={x.href}
+                            onClick={zamknij}
+                            className={MOB_LINK}
+                          >
+                            {x.nazwa}
+                            {x.cena && (
+                              <span className="text-accent"> · {x.cena}</span>
+                            )}
+                          </Link>
+                        ))}
+                      </div>
                     ))}
                     <Link
                       href={p.href}
