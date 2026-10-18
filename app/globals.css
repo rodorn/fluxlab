@@ -1261,3 +1261,12 @@ p {
   fill: rgb(var(--accent));
   filter: drop-shadow(0 0 6px rgb(var(--accent) / 0.9));
 }
+
+/* Okno zgody nad paskiem akcji w telefonie */
+@media (max-width: 767px) {
+  body[data-pasek-akcji] .cookie-consent { bottom: 5.5rem; }
+}
+@media (max-width: 767px) {
+  body[data-zgoda] .przycisk-czatu,
+  body[data-zgoda] .przycisk-do-gory { display: none; }
+}

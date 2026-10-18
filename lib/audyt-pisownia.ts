@@ -26,6 +26,8 @@ const MARKI = new Set([
   "telegram", "signal", "threads", "snapchat", "vimeo", "wordpress", "shopify",
   // zwroty łacińskie z tekstów prawnych i finansowych
   "minimis", "facto", "iure", "jure", "lege", "artis", "vacatio", "legis", "bona", "fide",
+  // spolszczone słowa sprzedażowe odmieniane jak polskie („karta leada”)
+  "lead", "leada", "leadem", "leadów", "leadowi", "leadzie", "leady", "leadach", "leadami",
 ]);
 
 /** Odległość Damerau-Levenshteina (wariant z jedną zamianą sąsiednich liter). */

@@ -20,8 +20,10 @@ export default function GoogleAnalytics() {
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
+          var zgoda = null;
+          try { zgoda = localStorage.getItem('fluxlab_zgoda'); } catch (e) {}
           gtag('consent', 'default', {
-            'analytics_storage': 'granted',
+            'analytics_storage': zgoda === 'tak' ? 'granted' : 'denied',
             'ad_storage': 'denied',
             'ad_user_data': 'denied',
             'ad_personalization': 'denied',

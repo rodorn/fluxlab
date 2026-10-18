@@ -80,9 +80,7 @@ export default function CountUp({ value, className, spadek = false }: Props) {
 
   return (
     <span ref={ref} className={className}>
-      {/* Czytnik ekranu dostaje od razu wartość docelową, nie „0 zł” z animacji. */}
-      <span aria-hidden="true">{match ? display : value}</span>
-      <span className="sr-only">{value}</span>
+      {match ? display : value}
     </span>
   );
 }

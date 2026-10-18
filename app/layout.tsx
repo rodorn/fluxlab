@@ -4,6 +4,7 @@ import { Geist } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import ZgodaCookies from "@/components/ZgodaCookies";
 import LicznikWizyt from "@/components/LicznikWizyt";
 import ContactClickTracker from "@/components/ContactClickTracker";
 import ScrollProgress from "@/components/ScrollProgress";
@@ -186,6 +187,7 @@ export default function RootLayout({
       </head>
       <body className={`${geistSans.variable} font-sans`}>
         <GoogleAnalytics />
+        <ZgodaCookies />
         <LicznikWizyt />
         <ContactClickTracker />
         <ScrollProgress />
