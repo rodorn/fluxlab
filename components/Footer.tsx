@@ -115,7 +115,7 @@ export default function Footer() {
                 rel="noopener"
                 className="underline underline-offset-2 hover:text-accent transition-colors"
               >
-                Sprawdź w białej liście VAT
+                Sprawdź na białej liście VAT
               </a>
             </p>
             <p className="mt-1 text-xs">
