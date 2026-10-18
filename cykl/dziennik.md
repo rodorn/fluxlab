@@ -6031,3 +6031,11 @@ Otwarte decyzje dla stratega:
 **Dowód:** Z7: 0 strat (linki do 7 adresów tylko z Header/Footer, same dodania od 7af74f0), 0 zmian. Z8: PSI API bez kwoty, Lighthouse 12 lokalnie: / 0,99 (LCP 2,1 s, TBT 40 ms, CLS 0), /kalkulator-podatkowy 1,00 (1,4 s), /numer-ksef 1,00 (1,2 s), błędy konsoli 0. Z9: 24/24 bez v=DMARC1, SPF zgodny, 0 wysłanych wcześniej, `~/Projekty/mail-audyt/maile_ks/kolejnosc-2026-10-19.txt`.
 **Dla Pawła:**
 **Zostało otwarte:** Z10 (g10, nie wcześniej niż 16:00) i dalej wg planu. Uwaga dla wysyłki pn: `wyslij_ks.py` bierze cały katalog `maile_ks/` naraz, więc podział 9:00/12:00 z pliku kolejności trzeba zrobić, przenosząc 013 do 024 na czas pierwszej partii.
+
+## 2026-10-18 10:05
+**Kanał:** dystrybucja (Gofin, Z10), Google (Z11), KSeF + asystenci AI (Z12), wg planu stratega z 18.10.
+**Co zrobione:** zaplanowany komentarz g10 o Gutschrift od niemieckiego kontrahenta i wdrożona krótka strona /strefa-wiedzy/gutschrift-ksef z odpowiedzią na to samo pytanie (źródła MF i ustawa); opis /numer-ksef bez zmian, bo frazy z GSC już w nim są.
+**Ruch:** ostatnia doba 93 odsłony, 78 osób (+27% wobec średniej 73,3); źródła: youtube 8, mail.google.com 6, b2b-email 5, facebook 4, instagram 3; najczęściej /kalkulator-podatkowy 10, /strefa-wiedzy/ryczalt-czy-liniowy 7; uruchomienia narzędzi 4 (numer KSeF 2, skan 1, kalkulator podatkowy 1).
+**Dowód:** Z10: wątek https://forum.gofin.pl/1560141/gurschrifty-a-faktury-sprzedazy, termin 2026-10-18 16:00, unit fl-gofin-10 (nowe wątki sprawdzone do 1560150). Z11: fraza obecna, 0 zmian. Z12: https://fluxlab.pl/strefa-wiedzy/gutschrift-ksef, commity ab053ce i 41635d7, 200 z VPS, IndexNow 138 adresów.
+**Dla Pawła:**
+**Zostało otwarte:** Z13 (pomiar wieczorny 19:46) i dalej wg planu; g9 o 12:00 i g10 o 16:00 czekają w timerach. Z18 (seria indeksowania po 00:50): pierwszy adres to nowa /strefa-wiedzy/gutschrift-ksef.
