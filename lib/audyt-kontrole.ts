@@ -25,7 +25,8 @@ export type ObszarKontroli =
   | "seo"
   | "bezpieczenstwo"
   | "prawo"
-  | "poczta";
+  | "poczta"
+  | "zapytania";
 
 export type OpisKontroli = {
   tytul: string;
@@ -185,7 +186,7 @@ export const KATALOG_E: Record<string, OpisKontroli> = {
     skutek:
       "Na telefonie klient nie zadzwoni jednym dotknięciem, tylko musi przepisać numer, a część osób w tym miejscu rezygnuje.",
     waga: "drobne",
-    obszar: "prawo",
+    obszar: "zapytania",
     koszt: 50,
     dostep: PANEL,
     zakres: "witryna",
@@ -195,7 +196,7 @@ export const KATALOG_E: Record<string, OpisKontroli> = {
     skutek:
       "Kto woli napisać niż dzwonić, musi szukać adresu albo go przepisywać, więc część zapytań w ogóle nie powstaje.",
     waga: "drobne",
-    obszar: "prawo",
+    obszar: "zapytania",
     koszt: 50,
     dostep: PANEL,
     zakres: "witryna",
@@ -215,7 +216,7 @@ export const KATALOG_E: Record<string, OpisKontroli> = {
     skutek:
       "Klient, który nie chce dzwonić ani otwierać poczty, nie ma jak zostawić zapytania, więc odchodzi do konkurencji.",
     waga: "drobne",
-    obszar: "prawo",
+    obszar: "zapytania",
     koszt: 300,
     dostep: KOD,
     zakres: "witryna",
@@ -225,7 +226,7 @@ export const KATALOG_E: Record<string, OpisKontroli> = {
     skutek:
       "Klient wypełnia formularz, klika wyślij i trafia na błąd, a zapytanie przepada, zanim ktokolwiek je zobaczy.",
     waga: "wazne",
-    obszar: "prawo",
+    obszar: "zapytania",
     koszt: 200,
     dostep: KOD,
     zakres: "witryna",

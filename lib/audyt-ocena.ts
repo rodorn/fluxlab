@@ -25,7 +25,8 @@ export type Ustalenie = {
     | "ai"
     | "poczta"
     | "bezpieczenstwo"
-    | "prawo";
+    | "prawo"
+    | "zapytania";
   waga: Waga;
   tytul: string;
   /** Co dokładnie zmierzono. Zawsze z liczbą albo cytatem, nigdy ogólnik. */
@@ -81,6 +82,7 @@ const POMIJANE: Record<string, string[]> = {
   malo_tresci: ["pusta_tresc"],
   og_niepelne: ["brak_og"],
   brak_lazy_dalszych: ["brak_lazy"],
+  brak_formularza: ["tylko_telefon_mail"],
 };
 
 export function ocenStrone(p: Pomiar): Ustalenie[] {
@@ -795,9 +797,56 @@ export function ocenStrone(p: Pomiar): Ustalenie[] {
     });
   }
 
+  // --- zapytania i CRM: co dzieje się z zapytaniem klienta ----------------
+  const zq = p.zapytania;
+  if (zq) {
+    if (zq.formularz && zq.doSkrzynki && !zq.crm.length) {
+      dodaj({
+        klucz: "formularz_bez_crm",
+        obszar: "zapytania",
+        waga: "wazne",
+        tytul: "Zapytania z formularza trafiają do skrzynki, nie do CRM",
+        fakt: `Formularz: ${zq.typyFormularza.join(", ")}. W kodzie strony nie widać żadnego CRM${zq.marketing.length ? ` (jest tylko ${zq.marketing.join(", ")}, czyli narzędzie do newslettera)` : ""}.`,
+        skutek:
+          "Zapytanie czeka w mailu, nikt nie dostaje zadania ani przypomnienia, więc odpowiedź przychodzi po godzinach, a klient w tym czasie pisze do konkurencji.",
+        koszt: 1500,
+        samodzielnie: false,
+        dostep: "dostęp do panelu strony",
+        zysk: "Każde zapytanie od razu ląduje w CRM z przypisanym handlowcem i przypomnieniem, więc odpowiadasz szybciej i żadne nie ginie w skrzynce.",
+      });
+    }
+    if (!zq.formularz && !zq.czat.length && !zq.rezerwacje.length) {
+      dodaj({
+        klucz: "tylko_telefon_mail",
+        obszar: "zapytania",
+        waga: "wazne",
+        tytul: "Klient może tylko zadzwonić albo napisać maila",
+        fakt: `Na stronie głównej${zq.podstrona ? ` ani na ${new URL(zq.podstrona).pathname}` : ""} nie ma formularza, czatu ani rezerwacji online.`,
+        skutek:
+          "Kto nie chce dzwonić ani otwierać poczty, wychodzi bez zostawienia kontaktu, a zapytania z maila i telefonu nigdzie się nie zapisują.",
+        koszt: 300,
+        samodzielnie: false,
+        dostep: "dostęp do kodu strony",
+        zysk: "Klient zostawia zapytanie o każdej porze jednym formularzem, a Ty masz je wszystkie w jednym miejscu.",
+      });
+    }
+  }
+
   // --- wspólne kontrole (lib/audyt-kontrole.ts) ---------------------------
+  // Kontakt sprawdzamy też na stronie kontaktu: brak telefonu czy formularza
+  // na głównej nie jest problemem, gdy stoją jedną stronę dalej.
+  const jestDalej: Record<string, boolean | undefined> = {
+    brak_formularza: zq?.formularz,
+    brak_telefonu: zq?.telefon,
+    brak_emaila: zq?.email,
+  };
   const juz = new Set(u.map((x) => x.klucz));
-  for (const z of p.znaleziska ?? []) {
+  for (const z0 of p.znaleziska ?? []) {
+    if (jestDalej[z0.klucz]) continue;
+    const z =
+      zq?.podstrona && z0.klucz in jestDalej
+        ? { ...z0, szczegol: z0.szczegol.replace(/ na stronie głównej\.$/, ` na stronie głównej ani na ${new URL(zq.podstrona).pathname}.`) }
+        : z0;
     const x = zZnaleziska(z);
     if (!x || juz.has(z.klucz) || POMIJANE[z.klucz]?.some((k) => juz.has(k)))
       continue;

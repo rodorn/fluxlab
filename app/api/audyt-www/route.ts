@@ -146,6 +146,7 @@ export async function POST(request: Request) {
       mobile: pomiar.mobile,
       kursor: pomiar.kursor,
       technologie: pomiar.technologie,
+      zapytania: pomiar.zapytania,
       zasoby: {
         znalezione: pomiar.zasoby.length,
         zwazone: pomiar.zasoby.filter((z) => z.bajty !== null).length,

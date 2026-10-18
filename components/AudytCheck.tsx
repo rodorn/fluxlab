@@ -109,6 +109,18 @@ type Wynik = {
       status: "aktualna" | "starsza" | "przestarzala" | "bez_oceny";
       powod: string;
     }[];
+    zapytania?: {
+      podstrona: string | null;
+      formularz: boolean;
+      typyFormularza: string[];
+      wlasnySkrypt: boolean;
+      crm: { nazwa: string; formularz: boolean }[];
+      marketing: string[];
+      czat: string[];
+      rezerwacje: string[];
+      telefon: boolean;
+      email: boolean;
+    } | null;
     kursor?: {
       klikalnych: number;
       bezRaczki: number;
@@ -150,6 +162,7 @@ const ETAPY = [
 ];
 
 const NAZWA_OBSZARU: Record<string, string> = {
+  zapytania: "Zapytania i CRM",
   dostepnosc: "Dostępność i zaufanie",
   szybkosc: "Szybkość",
   mobile: "Wersja na telefon",
@@ -161,6 +174,7 @@ const NAZWA_OBSZARU: Record<string, string> = {
 };
 
 const KOLEJNOSC_OBSZAROW = [
+  "zapytania",
   "dostepnosc",
   "szybkosc",
   "mobile",
@@ -452,8 +466,10 @@ export default function AudytCheck() {
       }
     : { krytyczne: 0, wazne: 0, drobne: 0 };
 
-  const obszary = KOLEJNOSC_OBSZAROW.filter((o) =>
-    widoczne.some((u) => u.obszar === o),
+  const zapytania = filtr === "wszystko" ? (wynik?.pomiar.zapytania ?? null) : null;
+  const obszary = KOLEJNOSC_OBSZAROW.filter(
+    (o) =>
+      widoczne.some((u) => u.obszar === o) || (o === "zapytania" && zapytania),
   );
   const sekcjeOpisu = new Map(
     wynik?.opis?.sekcje.map((s) => [s.obszar, s]) ?? [],
@@ -712,6 +728,9 @@ export default function AudytCheck() {
                       <h4 className="text-sm font-bold uppercase tracking-wider text-accent">
                         {NAZWA_OBSZARU[obszar] ?? obszar}
                       </h4>
+                      {obszar === "zapytania" && zapytania && (
+                        <ZapytaniaKlienta z={zapytania} />
+                      )}
                       {komentarz && (
                         <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
                           {komentarz.tekst}
@@ -1230,6 +1249,56 @@ export default function AudytCheck() {
             </div>
           </Skladane>
         </div>
+      )}
+    </div>
+  );
+}
+
+type DaneZapytan = NonNullable<Wynik["pomiar"]["zapytania"]>;
+
+/** Którędy klient zostawia zapytanie i czy trafia ono do CRM. */
+function ZapytaniaKlienta({ z }: { z: DaneZapytan }) {
+  const crmFormularz = z.crm.filter((c) => c.formularz).map((c) => c.nazwa);
+  const wiersze: [string, string][] = [
+    [
+      "Formularz",
+      z.formularz ? z.typyFormularza.join(", ") || "jest" : "nie znaleźliśmy",
+    ],
+    ["CRM", z.crm.length ? z.crm.map((c) => c.nazwa).join(", ") : "nie wykryto"],
+    ["Czat", z.czat.length ? z.czat.join(", ") : "brak"],
+    ["Rezerwacje online", z.rezerwacje.length ? z.rezerwacje.join(", ") : "brak"],
+    [
+      "Klikalny telefon i e-mail",
+      `${z.telefon ? "telefon jest" : "brak telefonu"}, ${z.email ? "e-mail jest" : "brak e-maila"}`,
+    ],
+  ];
+  if (z.marketing.length) wiersze.splice(2, 0, ["Newsletter", z.marketing.join(", ")]);
+  return (
+    <div className="mt-2">
+      <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-400">
+        Sprawdzamy, którędy klient zostawia zapytanie i czy trafia ono do CRM,
+        gdzie ktoś dostaje zadanie, czy tylko do skrzynki.
+        {z.podstrona ? ` Czytaliśmy stronę główną i ${new URL(z.podstrona).pathname}.` : ""}
+      </p>
+      <dl className="mt-3 divide-y divide-gray-200 rounded-lg border border-gray-200 text-sm dark:divide-gray-800 dark:border-gray-800">
+        {wiersze.map(([n, w]) => (
+          <div key={n} className="flex flex-wrap justify-between gap-x-4 gap-y-0.5 px-4 py-2">
+            <dt className="text-gray-600 dark:text-gray-400">{n}</dt>
+            <dd className="font-semibold text-gray-900 dark:text-white">{w}</dd>
+          </div>
+        ))}
+      </dl>
+      {z.crm.length > 0 && (
+        <p className="mt-3 rounded-r-lg border-l-4 border-l-emerald-500 bg-emerald-50 p-3 text-sm text-emerald-900 dark:bg-emerald-950/40 dark:text-emerald-300">
+          {crmFormularz.length
+            ? `Formularz przekazuje dane do ${crmFormularz.join(", ")}, więc zapytania nie czekają w skrzynce.`
+            : `Na stronie działa ${z.crm.map((c) => c.nazwa).join(", ")}, więc zapytania mogą trafiać prosto do CRM.`}
+        </p>
+      )}
+      {z.wlasnySkrypt && z.crm.length === 0 && (
+        <p className="mt-3 text-sm text-gray-600 dark:text-gray-400">
+          Formularz wysyła dane do własnego skryptu strony, więc dalszej drogi zapytania nie widać z zewnątrz.
+        </p>
       )}
     </div>
   );

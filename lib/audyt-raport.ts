@@ -14,6 +14,14 @@ import type { Ustalenie, Wycena } from "./audyt-ocena";
 
 /** Artykuł, który realnie rozwija dane ustalenie. Bez naciągania. */
 const MATERIALY: Record<string, { tytul: string; href: string }> = {
+  formularz_bez_crm: {
+    tytul: "Automatyzacja leadów i CRM",
+    href: "/automatyzacja-leadow-crm",
+  },
+  tylko_telefon_mail: {
+    tytul: "Jak skrócić czas reakcji na zapytanie",
+    href: "/czas-reakcji-na-leada",
+  },
   pusta_tresc: {
     tytul: "Czy asystenci AI widzą Twoją stronę",
     href: "/strefa-wiedzy/czy-ai-widzi-strony-dealerow",
@@ -118,7 +126,7 @@ JĘZYK:
 CZĘŚCI:
 - werdykt: jedno zdanie, najwyżej 25 słów, mówiące w jakim stanie jest strona.
 - streszczenie: 4 do 6 zdań dla kogoś, kto przeczyta tylko to. Ma zawierać najważniejsze ustalenia, skutek każdego z nich, jeśli zostanie bez poprawki, i to, od czego zacząć.
-- sekcje: po jednej na obszar, w którym COKOLWIEK ustalono. Pole obszar to dokładnie jedna z wartości: dostepnosc, szybkosc, mobile, seo, ai, bezpieczenstwo, prawo, poczta. Naglowek to zwięzły tytuł. Tekst to 3 do 6 zdań wiążących ustalenia z tego obszaru w całość i tłumaczących, co z nich wynika razem i jaki jest skutek, jeśli zostaną bez poprawki. Nie powtarzaj suchej listy, ona jest obok w raporcie.
+- sekcje: po jednej na obszar, w którym COKOLWIEK ustalono. Pole obszar to dokładnie jedna z wartości: zapytania, dostepnosc, szybkosc, mobile, seo, ai, bezpieczenstwo, prawo, poczta. Sekcję zapytania pisz ZAWSZE, gdy w danych jest pole zapytania_i_crm, także bez ustaleń: opisz, jakim kanałem klient zostawia zapytanie (formularz, czat, rezerwacja, telefon, e-mail) i czy trafia ono do CRM. Gdy wykryto CRM, napisz to jako zaletę. Gdy formularz wysyła do własnego skryptu strony, napisz, że dalszej drogi zapytania nie widać z zewnątrz, bez oceniania. Naglowek to zwięzły tytuł. Tekst to 3 do 6 zdań wiążących ustalenia z tego obszaru w całość i tłumaczących, co z nich wynika razem i jaki jest skutek, jeśli zostaną bez poprawki. Nie powtarzaj suchej listy, ona jest obok w raporcie.
 - kolejnosc: od 3 do 6 kroków w kolejności wykonania. Krok to czynność. Powod to wyjaśnienie, dlaczego akurat teraz, na przykład że bez tego kolejne prace nie dadzą efektu albo że to najtańsza rzecz o największym skutku.
 - mocneStrony: od 1 do 5 rzeczy, które są zrobione dobrze, wyłącznie na podstawie danych. Jeżeli naprawdę nie ma czego pochwalić, zwróć pustą listę.`;
 
@@ -179,6 +187,21 @@ export function materialDlaModelu(
         obrazy: p.obrazy,
       },
       kursor_nad_klikalnymi: p.kursor,
+      zapytania_i_crm: p.zapytania
+        ? {
+            sprawdzona_strona_kontaktu: p.zapytania.podstrona,
+            formularz: p.zapytania.formularz,
+            rodzaj_formularza: p.zapytania.typyFormularza,
+            formularz_wysyla_do_wlasnego_skryptu_nie_da_sie_sprawdzic: p.zapytania.wlasnySkrypt,
+            crm: p.zapytania.crm.map((c) => (c.formularz ? `${c.nazwa} (formularz przekazuje dane)` : c.nazwa)),
+            newsletter_nie_crm: p.zapytania.marketing,
+            czat: p.zapytania.czat,
+            rezerwacje_online: p.zapytania.rezerwacje,
+            klikalny_telefon: p.zapytania.telefon,
+            klikalny_email: p.zapytania.email,
+            kontakt_w_gornej_czesci_strony: p.zapytania.kontaktNaGorze,
+          }
+        : null,
       certyfikat: p.cert,
       poczta: p.poczta,
       ustalenia: ustalenia.map((u) => ({

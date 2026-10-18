@@ -41,6 +41,7 @@ const ETYKIETA_WAGI: Record<string, string> = {
 };
 
 const NAZWA_OBSZARU: Record<string, string> = {
+  zapytania: "Zapytania i CRM",
   dostepnosc: "Dostępność i zaufanie",
   szybkosc: "Szybkość",
   mobile: "Wersja na telefon",
@@ -86,6 +87,31 @@ function slownie(p: number): string {
   return "wymaga pilnej interwencji";
 }
 
+function blokZapytan(z: Pomiar["zapytania"]): string {
+  if (!z) return "";
+  const crmFormularz = z.crm.filter((c) => c.formularz).map((c) => c.nazwa);
+  return `<p style="margin:0 0 10px;font-size:14px;line-height:1.7;color:#374151">Sprawdzamy, którędy klient zostawia zapytanie i czy trafia ono do CRM, gdzie ktoś dostaje zadanie, czy tylko do skrzynki.${z.podstrona ? ` Czytaliśmy stronę główną i ${esc(new URL(z.podstrona).pathname)}.` : ""}</p>
+  <table style="width:100%;border-collapse:collapse;margin:0 0 14px">
+    ${wiersz("Formularz", z.formularz ? esc(z.typyFormularza.join(", ") || "jest") : "nie znaleźliśmy")}
+    ${wiersz("CRM", z.crm.length ? esc(z.crm.map((c) => c.nazwa).join(", ")) : "nie wykryto")}
+    ${z.marketing.length ? wiersz("Newsletter", esc(z.marketing.join(", "))) : ""}
+    ${wiersz("Czat", z.czat.length ? esc(z.czat.join(", ")) : "brak")}
+    ${wiersz("Rezerwacje online", z.rezerwacje.length ? esc(z.rezerwacje.join(", ")) : "brak")}
+    ${wiersz("Klikalny telefon i e-mail", `${z.telefon ? "telefon jest" : "brak telefonu"}, ${z.email ? "e-mail jest" : "brak e-maila"}`)}
+  </table>
+  ${
+    z.crm.length
+      ? `<div style="border-left:3px solid #059669;background:#ecfdf5;padding:10px 14px;margin-bottom:10px;border-radius:0 6px 6px 0;font-size:14px;color:#065f46">${esc(
+          crmFormularz.length
+            ? `Formularz przekazuje dane do ${crmFormularz.join(", ")}, więc zapytania nie czekają w skrzynce.`
+            : `Na stronie działa ${z.crm.map((c) => c.nazwa).join(", ")}, więc zapytania mogą trafiać prosto do CRM.`,
+        )}</div>`
+      : z.wlasnySkrypt
+        ? `<p style="margin:0 0 10px;font-size:13px;color:#4b5563">Formularz wysyła dane do własnego skryptu strony, więc dalszej drogi zapytania nie widać z zewnątrz.</p>`
+        : ""
+  }`;
+}
+
 export function zlozRaportHtml(
   d: DaneRaportu,
   dlaWlasciciela: boolean,
@@ -108,6 +134,9 @@ export function zlozRaportHtml(
           : "#dc2626";
 
   const grupy = new Map<string, typeof d.ustalenia>();
+  // Zapytania i CRM idą pierwsze, bo to droga klienta do firmy, a sekcja
+  // stoi także bez ustaleń: pokazuje, jakie narzędzia znaleźliśmy.
+  if (p.zapytania) grupy.set("zapytania", []);
   for (const u of d.ustalenia) {
     if (!grupy.has(u.obszar)) grupy.set(u.obszar, []);
     grupy.get(u.obszar)!.push(u);
@@ -119,6 +148,7 @@ export function zlozRaportHtml(
     .map(([obszar, lista]) => {
       const komentarz = sekcjeOpisu.get(obszar);
       return `${naglowekSekcji(NAZWA_OBSZARU[obszar] ?? obszar)}
+      ${obszar === "zapytania" ? blokZapytan(p.zapytania) : ""}
       ${
         komentarz
           ? `<p style="margin:0 0 16px;font-size:14px;line-height:1.7;color:#374151">${esc(komentarz.tekst)}</p>`
@@ -373,6 +403,16 @@ export function zlozRaportTekst(d: DaneRaportu): string {
     l.push("TECHNOLOGIE STRONY");
     for (const t of d.pomiar.technologie)
       l.push(`- ${t.nazwa} ${t.wersja ?? "wersja ukryta"}${t.status === "przestarzala" ? " [przestarzałe]" : t.status === "starsza" ? " [starsza wersja]" : ""}${t.powod && t.status !== "bez_oceny" ? `: ${t.powod}` : ""}`);
+    l.push("");
+  }
+  const z = d.pomiar.zapytania;
+  if (z) {
+    l.push("ZAPYTANIA I CRM");
+    l.push(`- Formularz: ${z.formularz ? z.typyFormularza.join(", ") || "jest" : "nie znaleźliśmy"}`);
+    l.push(`- CRM: ${z.crm.length ? z.crm.map((c) => c.nazwa).join(", ") : "nie wykryto"}`);
+    if (z.marketing.length) l.push(`- Newsletter: ${z.marketing.join(", ")}`);
+    l.push(`- Czat: ${z.czat.length ? z.czat.join(", ") : "brak"}`);
+    l.push(`- Rezerwacje online: ${z.rezerwacje.length ? z.rezerwacje.join(", ") : "brak"}`);
     l.push("");
   }
   l.push(`USTALENIA (${d.ustalenia.length})`);

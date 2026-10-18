@@ -18,6 +18,7 @@ import tls from "tls";
 
 import { kontroleJezykoweGlownej, type AnalizaJezyka } from "./audyt-jezyki";
 import { wykryjTechnologie, type Technologia } from "./audyt-technologie";
+import { adresKontaktu, wykryjZapytania, type Zapytania } from "./audyt-zapytania";
 import { znajdzLiterowki } from "./audyt-pisownia";
 import { arkuszeStrony, przygotujCss, sprawdzKursor } from "./kursor";
 import {
@@ -145,6 +146,8 @@ export type Pomiar = {
   znaleziska: Znalezisko[];
   /** Wykryte biblioteki, frameworki i serwer, z oceną wersji. */
   technologie: Technologia[];
+  /** Formularz, CRM, czat i rezerwacje ze strony głównej i strony kontaktu. */
+  zapytania: Zapytania | null;
 };
 
 function pusty(domena: string): Pomiar {
@@ -204,6 +207,7 @@ function pusty(domena: string): Pomiar {
     kursor: null,
     znaleziska: [],
     technologie: [],
+    zapytania: null,
   };
 }
 
@@ -941,7 +945,9 @@ export async function zmierz(domenaWejscie: string): Promise<Pomiar> {
   const tekstyCss: string[] = [
     ...[...html.matchAll(/<style[^>]*>([\s\S]*?)<\/style>/gi)].map((m) => m[1]),
   ];
-  const [zasoby, kursor, domenowe, glowna, jezyki] = await Promise.all([
+  // Strona kontaktu idzie równolegle z zasobami, więc nie wydłuża audytu.
+  const adresKont = adresKontaktu(html, adresKoncowy);
+  const [zasoby, kursor, domenowe, glowna, jezyki, kontakt] = await Promise.all([
     zmierzZasoby(zasobyZHtml(html, baza)),
     zmierzKursor(html, adresKoncowy, tekstyCss),
     kontroleDomeny({
@@ -952,7 +958,21 @@ export async function zmierz(domenaWejscie: string): Promise<Pomiar> {
     }).catch(() => [] as Znalezisko[]),
     kontroleGlownej(html, adresKoncowy).catch(() => [] as Znalezisko[]),
     kontroleJezykoweGlownej(domena, html, adresKoncowy).catch(() => null),
+    adresKont ? pobierz(adresKont, CZAS_ZASOBU_MS) : Promise.resolve(null),
   ]);
+  const kontaktOk =
+    kontakt && kontakt.odp.ok && /<html|<body/i.test(kontakt.tekst.slice(0, 5_000))
+      ? kontakt
+      : null;
+  wynik.zapytania = wykryjZapytania(
+    [
+      { html, adres: adresKoncowy },
+      ...(kontaktOk
+        ? [{ html: kontaktOk.tekst.slice(0, 1_500_000), adres: kontaktOk.odp.url || adresKont! }]
+        : []),
+    ],
+    kontaktOk ? kontaktOk.odp.url || adresKont : null,
+  );
   wynik.zasoby = zasoby;
   wynik.kursor = kursor;
   wynik.znaleziska = [

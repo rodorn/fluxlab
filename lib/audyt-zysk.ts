@@ -130,6 +130,7 @@ const ZYSK_OBSZARU: Record<string, string> = {
   poczta: "Maile do Ciebie i od Ciebie docierają, więc nie tracisz zapytań klientów.",
   bezpieczenstwo: "Mniejsze ryzyko włamania i przestoju sprzedaży oraz mniej kosztownych napraw po ataku.",
   prawo: "Mniejsze ryzyko kary i skargi klienta, a firma wygląda bardziej wiarygodnie.",
+  zapytania: "Klient łatwiej zostawia zapytanie, a Ty szybciej na nie odpowiadasz, więc mniej kontaktów ucieka do konkurencji.",
 };
 
 /** Jedno zdanie o tym, co firma zyska po naprawie. Zawsze coś zwraca. */
