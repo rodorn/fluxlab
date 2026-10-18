@@ -351,6 +351,12 @@ export const categories: Category[] = [
         bezOkladki: true,
       },
       {
+        href: "/strefa-wiedzy/gutschrift-ksef",
+        title: "Gutschrift a KSeF",
+        description: "Bez umowy o samofakturowanie to nie faktura; własną wystawiasz w KSeF.",
+        bezOkladki: true,
+      },
+      {
         href: "/strefa-wiedzy/zalacznik-do-faktury-ksef",
         title: "Załącznik do faktury w KSeF",
         description: "Tylko XML i po zgłoszeniu w e-US; PDF i protokół wysyłasz osobno.",

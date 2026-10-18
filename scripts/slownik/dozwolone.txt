@@ -225,3 +225,5 @@ zapier
 zapów
 zapy
 zoho
+gutschrift
+samofaktury

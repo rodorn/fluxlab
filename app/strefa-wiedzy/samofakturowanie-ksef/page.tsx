@@ -77,8 +77,13 @@ export default function SamofakturowanieKsefArticle() {
               <h2 className="mb-4 h2-sekcji">Co musi być</h2>
               <ul className="list-disc pl-6 space-y-2 text-gray-600 dark:text-gray-400 leading-relaxed">
                 <li>
-                  Umowa o samofakturowanie i procedura akceptacji faktur przez
-                  sprzedawcę, jak przed KSeF.
+                  <Link
+                    href="/strefa-wiedzy/gutschrift-ksef"
+                    className="text-accent hover:underline"
+                  >
+                    Umowa o samofakturowanie
+                  </Link>{" "}
+                  i procedura akceptacji faktur przez sprzedawcę, jak przed KSeF.
                 </li>
                 <li>
                   Uprawnienie do samofakturowania nadane nabywcy przez

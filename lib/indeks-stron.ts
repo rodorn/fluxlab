@@ -648,6 +648,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Spółka bez pieczęci kwalifikowanej wskazuje w ZAW-FA jedną osobę do KSeF. Ona nadaje uprawnienia innym. Gdy odejdzie, składasz nowe ZAW-FA z następcą."
   },
   {
+    "url": "/strefa-wiedzy/gutschrift-ksef",
+    "tytul": "Gutschrift od klienta z Niemiec a KSeF",
+    "opis": "Gutschrift bez umowy o samofakturowanie nie jest fakturą. Fakturę za usługę wystawiasz w KSeF, a korygujesz ją tylko wtedy, gdy zmieniła się cena."
+  },
+  {
     "url": "/strefa-wiedzy/kategoria/procesy",
     "tytul": "Procesy, Strefa wiedzy",
     "opis": "Artykuły o automatyzacji procesów biznesowych, czym jest, jak liczyć ROI i od czego zacząć."
