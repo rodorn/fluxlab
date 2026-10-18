@@ -38,7 +38,7 @@ export default function LandingForm({
   heading,
   intro,
   submitLabel = "Wyślij",
-  microCopy = "Odpowiedź zwykle tego samego dnia.",
+  microCopy = "Odpowiedź tego samego dnia.",
 }: Props) {
   const router = useRouter();
   const [loading, setLoading] = useState(false);

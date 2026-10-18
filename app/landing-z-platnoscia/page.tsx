@@ -110,7 +110,7 @@ export default function LandingZPlatnoscia() {
       formHeading="Napisz, co sprzedajesz i komu"
       formIntro="Jedno zdanie o produkcie, cena i czy masz bramkę płatniczą. Odpiszemy, który wariant ma sens."
       submitLabel="Wyślij opis kampanii"
-      microCopy="Odpisujemy zwykle tego samego dnia. Ustalenia prowadzimy mailowo."
+      microCopy="Odpisujemy tego samego dnia. Ustalenia prowadzimy mailowo."
       serviceName="Landing z formularzem i płatnością"
       serviceDesc="Strona sprzedażowa pod jedną kampanię, z formularzem zapisującym zgłoszenie przed płatnością i bramką płatniczą potwierdzaną webhookiem."
       serviceType="Tworzenie stron internetowych"

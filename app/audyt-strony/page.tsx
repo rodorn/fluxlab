@@ -134,7 +134,7 @@ export default function Page() {
       formHeading="Raport pokazał coś, czego nie chcesz ruszać sam"
       formIntro="Wklej adres strony i napisz, która pozycja z raportu cię niepokoi. Odpiszemy, ile to zajmie."
       submitLabel="Napisz w sprawie naprawy"
-      microCopy="Odpisujemy zwykle tego samego dnia. Ustalenia prowadzimy mailowo."
+      microCopy="Odpisujemy tego samego dnia. Ustalenia prowadzimy mailowo."
       serviceName="Darmowy audyt techniczny strony internetowej"
       serviceDesc="Bezpłatne badanie strony: szybkość na komputerze i na telefonie, waga plików, certyfikat, widoczność w wyszukiwarce, dostęp dla asystentów AI i zabezpieczenia poczty, z listą poprawek w kolejności i wyceną naprawy."
       serviceType="Audyt techniczny strony internetowej"

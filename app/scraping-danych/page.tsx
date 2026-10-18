@@ -268,7 +268,7 @@ export default function ScrapingDanychPage() {
                     <LandingForm
                       formId="diagnosis_scraping"
                       heading="Bezpłatna diagnoza scrapingu"
-                      intro="Opisz, jakich danych potrzebujesz i skąd. Wrócimy zwykle tego samego dnia z odpowiedzią, czy da się je zebrać."
+                      intro="Opisz, jakich danych potrzebujesz i skąd. Wrócimy tego samego dnia z odpowiedzią, czy da się je zebrać."
                       submitLabel="Zamawiam diagnozę"
                     />
                   </section>

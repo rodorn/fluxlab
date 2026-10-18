@@ -113,7 +113,7 @@ export default function WdrozenieN8nCena() {
       formHeading="Opisz proces, odeślemy widełki"
       formIntro="Napisz, co dziś robisz ręcznie i co ma się stać na końcu. Odeślemy widełki."
       submitLabel="Poproś o wycenę"
-      microCopy="Odpisujemy zwykle tego samego dnia. Bez rozmowy telefonicznej, jeśli nie chcesz."
+      microCopy="Odpisujemy tego samego dnia. Bez rozmowy telefonicznej, jeśli nie chcesz."
       serviceName="Wdrożenie n8n"
       serviceDesc="Postawienie n8n na własnym serwerze i zbudowanie przepływów automatyzujących obsługę leadów, synchronizację danych i raportowanie."
       serviceType="Automatyzacja procesów biznesowych"

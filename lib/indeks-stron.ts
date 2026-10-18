@@ -30,7 +30,7 @@ export const INDEKS_STRON: WpisIndeksu[] = [
   {
     "url": "/kontakt",
     "tytul": "Kontakt",
-    "opis": "Napisz, z czym potrzebujesz pomocy, strony WWW, automatyzacja, dane. Bezpłatna diagnoza, odpowiedź zwykle tego samego dnia."
+    "opis": "Napisz, z czym potrzebujesz pomocy, strony WWW, automatyzacja, dane. Bezpłatna diagnoza, odpowiedź tego samego dnia."
   },
   {
     "url": "/automatyzacja-procesow-biznesowych",

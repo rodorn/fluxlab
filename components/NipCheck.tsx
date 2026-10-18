@@ -267,7 +267,7 @@ export default function NipCheck() {
 
             {leadStan === "ok" ? (
               <p className="mt-4 text-sm font-semibold text-emerald-700 dark:text-emerald-400">
-                Mamy zgłoszenie. Odpiszemy na {email} z pełnym raportem, zwykle
+                Mamy zgłoszenie. Odpiszemy na {email} z pełnym raportem
                 tego samego dnia.
               </p>
             ) : (

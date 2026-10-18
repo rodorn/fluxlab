@@ -244,7 +244,7 @@ export const MENU: PozycjaMenu[] = [
     ],
     kafel: {
       tytul: "Napisz do nas",
-      opis: "Odpisujemy z ceną i terminem, zwykle tego samego dnia.",
+      opis: "Odpisujemy z ceną i terminem, tego samego dnia.",
       href: "/kontakt",
       cta: "Kontakt",
     },

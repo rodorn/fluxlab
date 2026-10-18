@@ -265,7 +265,7 @@ export default function AudytGoogleAdsPage() {
               heading="Zamów mini-audyt Google Ads"
               intro="Napisz, jaki masz miesięczny budżet i od kiedy działają kampanie. Potem ustalimy dostęp albo eksport raportu."
               submitLabel="Zamawiam mini-audyt za 69 zł"
-              microCopy="Odpowiedź zwykle tego samego dnia. Zwrot całej kwoty przy odzysku poniżej 500 zł/mc."
+              microCopy="Odpowiedź tego samego dnia. Zwrot całej kwoty przy odzysku poniżej 500 zł/mc."
             />
           </section>
         </div>

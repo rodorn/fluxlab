@@ -17,7 +17,7 @@ export function zdanieKontaktu(
   return pref === "meet" && termin
     ? `Prosisz o spotkanie na Google Meet ${termin}. Potwierdzimy termin zaproszeniem z linkiem do rozmowy, a jeśli ta godzina będzie zajęta, zaproponujemy najbliższą wolną.`
     : pref === "phone" && telefon
-      ? `Prosisz o telefon pod numer ${telefon}. Zadzwonimy w godzinach pracy, zwykle tego samego dnia.`
+      ? `Prosisz o telefon pod numer ${telefon}. Zadzwonimy w godzinach pracy, tego samego dnia.`
       : "Pracujemy i ustalamy wszystko mailowo, więc możesz po prostu odpisać na tę wiadomość.";
 }
 
@@ -66,7 +66,7 @@ ${przycisk}
 <tr><td style="padding:24px 32px;border-top:4px solid ${AKCENT};border-bottom:1px solid #e5e7eb;font-family:${font};font-size:22px;line-height:28px;font-weight:bold;color:#111827;">Flux<span style="color:${AKCENT};">Lab</span></td></tr>
 <tr><td style="padding:28px 32px 12px 32px;">
 <p style="${p}">Cześć,</p>
-<p style="${p}">dzięki za opis procesu. Przejrzymy zgłoszenie i wrócimy z informacją, czy widzimy potencjał na automatyzację oraz jaki byłby sensowny pierwszy krok, zwykle tego samego dnia.</p>
+<p style="${p}">dzięki za opis procesu. Przejrzymy zgłoszenie i wrócimy z informacją, czy widzimy potencjał na automatyzację oraz jaki byłby sensowny pierwszy krok, tego samego dnia.</p>
 <p style="${p}">Jeśli widzimy dopasowanie, odpiszemy z konkretną propozycją zakresu i wyceną. Jeśli proces wygląda na zbyt mały albo nieopłacalny do automatyzacji na tym etapie, napiszemy to wprost, i uzasadnimy dlaczego.</p>
 ${blok}
 <p style="${p}">Paweł</p>

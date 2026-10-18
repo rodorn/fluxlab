@@ -64,7 +64,7 @@ const OFERTA = [
 
 const KROKI = [
   ["Piszesz, czego potrzebujesz", "Dwa zdania w formularzu albo mail."],
-  ["Dostajesz cenę i termin", "Zwykle tego samego dnia, bez spotkań."],
+  ["Dostajesz cenę i termin", "Tego samego dnia, bez spotkań."],
   ["Strona albo CRM działa po 2\u2060–\u20603\u00a0tygodniach", "Płacisz za efekt, nie za godziny."],
 ];
 
@@ -219,7 +219,7 @@ export default function Home() {
 <LandingForm
               formId="home"
               heading="Napisz, czego potrzebujesz"
-              intro="Odpiszemy z ceną i terminem, zwykle tego samego dnia."
+              intro="Odpiszemy z ceną i terminem, tego samego dnia."
               submitLabel="Wyślij"
             />
 </RevealOnScroll>

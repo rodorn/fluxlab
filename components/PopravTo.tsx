@@ -77,7 +77,7 @@ export default function PopravTo({
         Popraw to za mnie
       </h3>
       <p className="mx-auto mt-2 max-w-md text-sm text-gray-700 dark:text-gray-300">
-        Wyślij wynik, odpiszemy z ceną poprawek, zwykle tego samego dnia.
+        Wyślij wynik, odpiszemy z ceną poprawek, tego samego dnia.
       </p>
       <button
         type="button"

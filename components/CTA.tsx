@@ -375,7 +375,7 @@ function CTAFormularz() {
             )}
 
             <p className="text-center text-xs text-gray-600 dark:text-gray-400">
-              Odpowiedź zwykle tego samego dnia. Bez spamu, bez newslettera, bez &bdquo;szybkiej
+              Odpowiedź tego samego dnia. Bez spamu, bez newslettera, bez &bdquo;szybkiej
               rozmowy&rdquo; wciskanej na siłę.
             </p>
           </form>

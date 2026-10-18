@@ -32,7 +32,7 @@ export default function IntegracjaCrmZErp() {
       h1="Integracja CRM z ERP"
       lead="Integracja CRM z ERP łączy CRM handlowców z księgowością i magazynem w ERP. Spinamy oba systemy: CRM z danymi z ERP, bez przepisywania."
       ctaLabel="Opisz swoje dwa systemy"
-      ctaNote="Odpisujemy zwykle tego samego dnia"
+      ctaNote="Odpisujemy tego samego dnia"
       powiazane={[
         {
           przed: "Połączenie CRM z ERP to zwykle pierwszy krok szerszej",

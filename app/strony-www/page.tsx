@@ -207,7 +207,7 @@ export default function StronyWww() {
           <LandingForm
             formId="diagnosis_web"
             heading="Napisz, jakiej strony potrzebujesz"
-            intro="Odpiszemy z ceną i terminem, zwykle tego samego dnia."
+            intro="Odpiszemy z ceną i terminem, tego samego dnia."
             submitLabel="Wyślij"
           />
         </section>

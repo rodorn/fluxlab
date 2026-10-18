@@ -115,7 +115,7 @@ export default function WidocznoscWAi() {
       formHeading="Wynik wyszedł na czerwono i nie wiesz, od czego zacząć"
       formIntro="Podaj adres strony. Odeślemy kolejność działań i napiszemy, co zrobisz sam, a co wymaga dostępu do kodu."
       submitLabel="Poproś o kolejność działań"
-      microCopy="Odpisujemy zwykle tego samego dnia. Ustalenia prowadzimy mailowo."
+      microCopy="Odpisujemy tego samego dnia. Ustalenia prowadzimy mailowo."
       serviceName="Audyt widoczności strony dla asystentów AI"
       serviceDesc="Sprawdzenie, czy roboty zbierające treść na potrzeby asystentów AI mogą przeczytać stronę: dostęp w robots.txt, treść bez skryptów, dane uporządkowane, metadane, mapa strony i llms.txt."
       serviceType="Audyt techniczny strony internetowej"

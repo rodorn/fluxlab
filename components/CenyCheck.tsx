@@ -346,8 +346,8 @@ export default function CenyCheck() {
 
             {leadStan === "ok" ? (
               <p className="mt-4 text-sm font-semibold text-emerald-700 dark:text-emerald-400">
-                Mamy zgłoszenie razem z wynikiem tego skanu. Odpiszemy na {email},
-                zwykle tego samego dnia.
+                Mamy zgłoszenie razem z wynikiem tego skanu. Odpiszemy na {email}
+                tego samego dnia.
               </p>
             ) : (
               <form onSubmit={zamow} className="mt-4">
