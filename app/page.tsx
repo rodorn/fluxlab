@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
@@ -68,6 +69,12 @@ const KROKI = [
 ];
 
 const MANIFEST = KROKI[2][1];
+
+const WYNIKI = [
+  ["12 dni", "od startu prac do publikacji, przy terminie 5 tygodni"],
+  ["97/100", "w audycie technicznym, stara strona miała 45"],
+  ["6,4×", "mniej danych do pobrania niż na starej stronie"],
+];
 
 export default function Home() {
   return (
@@ -176,6 +183,52 @@ export default function Home() {
             tekst={MANIFEST}
             className="mx-auto max-w-3xl text-balance text-center text-4xl font-bold leading-tight tracking-tighter lg:text-6xl"
           />
+        </section>
+
+        <section className="border-t border-gray-200 dark:border-white/10 py-20 lg:py-28">
+          <div className="container-wide">
+            <RevealOnScroll className="text-center">
+              <p className="section-label mb-3">Ostatnia realizacja</p>
+              <h2 className="text-balance text-4xl font-bold tracking-tighter lg:text-5xl">
+                Nowa strona FINREAL w 12 dni
+              </h2>
+            </RevealOnScroll>
+            <RevealOnScroll delay={1}>
+              <Link
+                href="/realizacje"
+                className="group mx-auto mt-12 block max-w-5xl overflow-hidden rounded-2xl border border-gray-200 shadow-2xl shadow-black/10 transition-colors hover:border-accent dark:border-white/10"
+              >
+                <div className="flex items-center gap-1.5 border-b border-gray-200 bg-gray-50 px-4 py-2.5 dark:border-white/10 dark:bg-gray-900">
+                  <span className="h-2.5 w-2.5 rounded-full bg-gray-300 dark:bg-white/20" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-gray-300 dark:bg-white/20" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-gray-300 dark:bg-white/20" />
+                  <span className="ml-3 text-xs text-gray-500 dark:text-white/50">
+                    finreal.pl
+                  </span>
+                </div>
+                <Image
+                  src="/photos/realizacja-finreal-ostra.webp"
+                  alt="Strona główna finreal.pl zrobiona przez FluxLab"
+                  width={2048}
+                  height={1152}
+                  sizes="(min-width: 1024px) 1024px, 100vw"
+                  className="h-auto w-full transition-transform duration-700 group-hover:scale-[1.015]"
+                />
+              </Link>
+            </RevealOnScroll>
+            <dl className="mx-auto mt-16 grid max-w-4xl grid-cols-1 gap-10 text-center sm:grid-cols-3">
+              {WYNIKI.map(([liczba, opis], i) => (
+                <RevealOnScroll key={liczba} delay={(i + 1) as 1 | 2 | 3}>
+                  <dt className="text-5xl font-bold tracking-tighter lg:text-6xl">
+                    {liczba}
+                  </dt>
+                  <dd className="mx-auto mt-2 max-w-[15rem] text-balance text-sm text-gray-600 dark:text-white/65">
+                    {opis}
+                  </dd>
+                </RevealOnScroll>
+              ))}
+            </dl>
+          </div>
         </section>
 
         <section className="border-t border-gray-200 dark:border-white/10 py-20 lg:py-24">

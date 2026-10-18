@@ -106,7 +106,7 @@ export default function StronyWww() {
               className="group rounded-2xl border border-accent/40 bg-white/60 dark:bg-gray-900/40 p-6 hover:border-accent transition-colors"
             >
               <p className="text-sm font-semibold text-gray-900 dark:text-white">
-                Ostatnia realizacja: strona pośrednika kredytowego
+                Ostatnia realizacja: strona FINREAL, pośrednika kredytowego
               </p>
               <p className="mt-3 text-4xl font-bold text-accent">45 → 97</p>
               <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">

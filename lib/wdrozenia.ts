@@ -6,12 +6,12 @@ export interface Wdrozenie {
   liczbaOpis: string;
 }
 
-/* Pierwsza pozycja to klient Fluxlab bez nazwy, bo zgody na marke jeszcze nie
-   ma. Reszta to wdrozenia Pawla w Carmore (leasing i sprzedaz samochodow).
+/* Pierwsza pozycja to klient Fluxlab FINREAL (zgoda na pokazanie marki od
+   18.10.2026). Reszta to wdrozenia Pawla w Carmore (leasing i sprzedaz samochodow).
    Same fakty z produkcji, liczby z wlasnych pomiarow. */
 export const WDROZENIA: Wdrozenie[] = [
   {
-    tytul: "Nowa strona pośrednika kredytowego",
+    tytul: "Nowa strona FINREAL, pośrednika kredytowego",
     problem:
       "Strona ważyła 6,2 MB, blog na telefonie pokazywał treść po 11 sekundach, a audyt techniczny dawał 45 na 100.",
     efekt:

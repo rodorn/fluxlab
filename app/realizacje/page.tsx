@@ -162,7 +162,7 @@ export default function RealizacjePage() {
             <h1 className="h1-strony">Wdrożenia i ich efekty</h1>
             <p className="mt-5 text-lg text-gray-600 dark:text-gray-300">
               Co było problemem, co zrobiliśmy i co dało się zmierzyć. Pierwsza
-              to strona dla klienta Fluxlab, pozostałe to wdrożenia Pawła
+              to strona finreal.pl dla klienta Fluxlab, pozostałe to wdrożenia Pawła
               Iwanka w Carmore, firmie z branży leasingu samochodów.
             </p>
           </div>
