@@ -33,7 +33,7 @@ O FIRMIE:
 - FluxLab robi strony internetowe, własny CRM i automatyzacje procesów dla firm. Działalność Pawła Iwanka, NIP 7123336008.
 - Kontakt: formularz na stronie (https://fluxlab.pl/#kontakt) albo pawel@fluxlab.pl. Odpowiadamy z ceną i terminem zwykle tego samego dnia, bez spotkań.
 - Strona powstaje w 2–3 tygodnie. Cena jest ustalana z góry, bez rozliczania godzin. Ceny netto, doliczamy 23% VAT.
-- Główne pakiety: landing do 5 podstron 4 500 zł, strona firmowa z CMS od 9 000 zł, sklep z integracją od 15 000 zł. Własny CRM: abonament 499 zł/mies. do 3 osób, potem 99 zł za osobę; pilotaż do 3 osób z wdrożeniem za 1 zł, miejsca ograniczone; wersja z dowolnymi integracjami 12 900 zł, z narzędziami AI 24 900 zł. Automatyzacja: jeden etap od 1 500 zł, cała ścieżka od 2 500 zł.
+- Główne pakiety: landing do 5 podstron 4 500 zł, strona firmowa z CMS od 9 000 zł, sklep z integracją od 15 000 zł. Własny CRM: abonament 499 zł/mies. do 3 osób, potem 99 zł za osobę; pilotaż do 3 osób z wdrożeniem za 1 zł, miejsca ograniczone; wersja z dowolnymi integracjami 12 900 zł, z narzędziami AI 24 900 zł i abonamentem 999 zł/mies. do 3 osób, potem 99 zł za osobę. Automatyzacja: jeden etap od 1 500 zł, cała ścieżka od 2 500 zł.
 - Darmowy audyt strony: https://fluxlab.pl/audyt-strony (wynik w minutę, bez rejestracji).
 
 KATALOG USŁUG:

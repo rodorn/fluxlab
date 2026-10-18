@@ -7,6 +7,8 @@ import { kodujWycene } from "@/lib/wycenaPdf";
 // Ceny: app/page.tsx (OFERTA: abonament 499 zł do 3 osób, 99 zł za osobę,
 // 12 900 zł, 24 900 zł) oraz app/wlasny-crm/page.tsx (pilotaż 1 zł).
 const ABONAMENT = 499;
+// Pakiet z narzędziami AI ma wyższy abonament (Paweł 18.10.2026).
+const ABONAMENT_AI = 999;
 const W_ABONAMENCIE = 3;
 const OSOBA_DODATKOWA = 99;
 const MAX_PILOTAZ = 3;
@@ -68,7 +70,8 @@ export default function KonfiguratorCrm() {
   const wariant = wybor === "pilotaz" && !pilotazMozliwy ? "integracje" : wybor;
   const cenaWdrozenia = WARIANTY.find((w) => w.id === wariant)!.cena;
   const miesiecznie =
-    ABONAMENT + Math.max(0, osoby - W_ABONAMENCIE) * OSOBA_DODATKOWA;
+    (wariant === "ai" ? ABONAMENT_AI : ABONAMENT) +
+    Math.max(0, osoby - W_ABONAMENCIE) * OSOBA_DODATKOWA;
   const rok = cenaWdrozenia + 12 * miesiecznie;
 
   const aMies = useAnimowana(miesiecznie);

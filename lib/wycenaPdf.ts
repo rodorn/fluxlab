@@ -38,6 +38,7 @@ const WARIANTY: Record<string, { nazwa: string; cena: number }> = {
 };
 
 const ABONAMENT = 499;
+const ABONAMENT_AI = 999;
 const W_ABONAMENCIE = 3;
 const OSOBA_DODATKOWA = 99;
 const MAX_PILOTAZ = 3;
@@ -91,7 +92,8 @@ export function dekodujWycene(d: string | undefined): Wycena | null {
     const w = typeof c.w === "string" ? WARIANTY[c.w] : undefined;
     if (typeof n !== "number" || !Number.isInteger(n) || n < 1 || n > 30 || !w) return null;
     if (c.w === "pilotaz" && n > MAX_PILOTAZ) return null;
-    const mies = ABONAMENT + Math.max(0, n - W_ABONAMENCIE) * OSOBA_DODATKOWA;
+    const baza = c.w === "ai" ? ABONAMENT_AI : ABONAMENT;
+    const mies = baza + Math.max(0, n - W_ABONAMENCIE) * OSOBA_DODATKOWA;
     return {
       tytul: "FluxCRM",
       pozycje: [
@@ -100,8 +102,8 @@ export function dekodujWycene(d: string | undefined): Wycena | null {
           nazwa: "Abonament miesięczny",
           opis:
             n <= W_ABONAMENCIE
-              ? `${n} ${n === 1 ? "osoba" : "osoby"}, ${ABONAMENT} zł obejmuje do ${W_ABONAMENCIE} osób`
-              : `${n} osób: ${ABONAMENT} zł za ${W_ABONAMENCIE} osoby plus ${n - W_ABONAMENCIE} × ${OSOBA_DODATKOWA} zł`,
+              ? `${n} ${n === 1 ? "osoba" : "osoby"}, ${baza} zł obejmuje do ${W_ABONAMENCIE} osób`
+              : `${n} osób: ${baza} zł za ${W_ABONAMENCIE} osoby plus ${n - W_ABONAMENCIE} × ${OSOBA_DODATKOWA} zł`,
           netto: mies,
         },
       ],

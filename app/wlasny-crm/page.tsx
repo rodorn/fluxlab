@@ -87,8 +87,8 @@ export default function WlasnyCrm() {
         {
           name: "CRM z narzędziami AI",
           price: "24 900 zł",
-          monthly: "499 zł / mies.",
-          desc: "Wszystko z pakietu za 12 900 zł plus narzędzia AI. Abonament obejmuje 3 konta, każde kolejne 99 zł miesięcznie.",
+          monthly: "999 zł / mies.",
+          desc: "Wszystko z pakietu za 12 900 zł plus narzędzia AI. Abonament 999 zł obejmuje 3 konta, każde kolejne 99 zł miesięcznie.",
           features: [
             "Dowolne narzędzia AI do tekstu i nagrań, jakich potrzebujesz",
             "Na przykład streszczenia i ocena rozmów, analiza dokumentów",
@@ -99,7 +99,7 @@ export default function WlasnyCrm() {
       faq={[
         {
           q: "Ile kosztuje własny CRM?",
-          a: "Abonament to 499 zł miesięcznie za 3 konta i 99 zł za każde kolejne. Wdrożenie zależy od wielkości firmy: do 3 osób w pilotażu 1 zł zamiast 1 900 zł (liczba miejsc ograniczona), większy zespół 12 900 zł z dowolnymi integracjami i automatyzacjami, a 24 900 zł dodatkowo z dowolnymi narzędziami AI do tekstu i nagrań. Ceny netto. W abonamencie są serwer w UE, kopie i aktualizacje.",
+          a: "Abonament to 499 zł miesięcznie za 3 konta i 99 zł za każde kolejne. Wdrożenie zależy od wielkości firmy: do 3 osób w pilotażu 1 zł zamiast 1 900 zł (liczba miejsc ograniczona), większy zespół 12 900 zł z dowolnymi integracjami i automatyzacjami, a 24 900 zł dodatkowo z dowolnymi narzędziami AI do tekstu i nagrań, z abonamentem 999 zł miesięcznie za 3 konta i 99 zł za każde kolejne. Ceny netto. W abonamencie są serwer w UE, kopie i aktualizacje.",
         },
         {
           q: "Czym to się różni od Pipedrive?",

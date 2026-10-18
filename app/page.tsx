@@ -44,7 +44,7 @@ const OFERTA = [
     punkty: [
       "abonament 499 zł/mies. do 3 osób, potem 99 zł za osobę",
       "pilotaż do 3 osób: wdrożenie 1 zł, miejsca ograniczone",
-      "z dowolnymi integracjami: 12 900 zł, z narzędziami AI: 24 900 zł",
+      "z dowolnymi integracjami: 12 900 zł, z narzędziami AI: 24 900 zł i 999 zł/mies.",
     ],
     cta: "Zobacz CRM",
   },
