@@ -103,7 +103,7 @@ export default function GraZlapLeada() {
         )}
         {stan === "start" && (
           <div className="absolute inset-0 flex items-center justify-center">
-            <button type="button" onClick={start} className="btn-primary">Zaczynam</button>
+            <button type="button" onClick={start} className="btn-primary">Start</button>
           </div>
         )}
         {stan === "koniec" && (

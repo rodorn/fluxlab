@@ -132,7 +132,8 @@ export function zlozRaportHtml(
           <div style="font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:${KOLOR[u.waga]};font-weight:700;margin-bottom:3px">${ETYKIETA_WAGI[u.waga]}${u.koszt ? ` · naprawa ${u.koszt} zł` : ""}</div>
           <div style="font-size:15px;font-weight:700;color:#111827;margin-bottom:5px">${esc(u.tytul)}</div>
           <div style="font-size:13px;color:#374151;margin-bottom:5px"><strong>Zmierzono:</strong> ${esc(u.fakt)}</div>
-          <div style="font-size:13px;color:#4b5563;line-height:1.6">${esc(u.skutek)}</div>
+          <div style="font-size:13px;color:#4b5563;line-height:1.6"><strong>Bez poprawki:</strong> ${esc(u.skutek)}</div>
+          ${u.zysk ? `<div style="font-size:13px;color:#065f46;line-height:1.6;margin-top:4px"><strong>Co zyskasz:</strong> ${esc(u.zysk)}</div>` : ""}
           ${
             u.samodzielnie
               ? `<div style="font-size:12px;color:#059669;margin-top:6px">Da się zrobić samodzielnie, bez programisty.</div>`
@@ -186,6 +187,25 @@ export function zlozRaportHtml(
     ${wiersz("Certyfikat", p.cert ? `${esc(p.cert.wystawca)}, ważny do ${p.cert.waznyDo} (${p.cert.dniDoKonca} dni)` : "nie odczytano")}
     ${wiersz("SPF / DMARC", `${p.poczta.spf ? "SPF jest" : "brak SPF"} · ${p.poczta.dmarc ? `DMARC ${p.poczta.dmarcPolityka ?? "jest"}` : "brak DMARC"}`)}
   </table>`;
+
+  const technologie = d.pomiar.technologie ?? [];
+  const ETYKIETA_TECH: Record<string, [string, string]> = {
+    przestarzala: ["Przestarzałe", "#dc2626"],
+    starsza: ["Starsza wersja", "#d97706"],
+    aktualna: ["Aktualne", "#059669"],
+    bez_oceny: ["", "#6b7280"],
+  };
+  const blokTechnologii = technologie.length
+    ? `${naglowekSekcji("Technologie strony")}
+    <table style="width:100%;border-collapse:collapse;margin:8px 0 0">
+      ${technologie
+        .map((t) => {
+          const [et, kol] = ETYKIETA_TECH[t.status] ?? ["", "#6b7280"];
+          return `<tr><td style="padding:6px 0;border-bottom:1px solid #e5e7eb;font-size:13px;color:#111827;vertical-align:top"><strong>${esc(t.nazwa)}</strong> ${esc(t.wersja ?? (t.id === "universal-analytics" ? "" : "wersja ukryta"))}${et ? ` <span style="color:${kol};font-weight:700">${et}</span>` : ""}${t.powod && t.status !== "bez_oceny" ? `<div style="font-size:12px;color:#4b5563;margin-top:2px">${esc(t.powod)}${t.status === "przestarzala" || t.status === "starsza" ? " Poprawiamy to w ramach napraw." : ""}</div>` : ""}</td></tr>`;
+        })
+        .join("")}
+    </table>`
+    : "";
 
   const blokWyceny = d.wycena.pakiet
     ? `${naglowekSekcji("Ile kosztuje doprowadzenie tego do porządku")}
@@ -285,6 +305,8 @@ export function zlozRaportHtml(
 
     ${blokiUstalen}
 
+    ${blokTechnologii}
+
     ${naglowekSekcji("Pomiar szybkości")}
     ${tabelaPomiaru}
 
@@ -347,11 +369,18 @@ export function zlozRaportTekst(d: DaneRaportu): string {
     l.push(d.opis.streszczenie);
     l.push("");
   }
+  if (d.pomiar.technologie?.length) {
+    l.push("TECHNOLOGIE STRONY");
+    for (const t of d.pomiar.technologie)
+      l.push(`- ${t.nazwa} ${t.wersja ?? "wersja ukryta"}${t.status === "przestarzala" ? " [przestarzałe]" : t.status === "starsza" ? " [starsza wersja]" : ""}${t.powod && t.status !== "bez_oceny" ? `: ${t.powod}` : ""}`);
+    l.push("");
+  }
   l.push(`USTALENIA (${d.ustalenia.length})`);
   for (const u of d.ustalenia) {
     l.push(`- [${ETYKIETA_WAGI[u.waga]}] ${u.tytul}`);
     l.push(`  Zmierzono: ${u.fakt}`);
-    l.push(`  Skutek: ${u.skutek}`);
+    l.push(`  Bez poprawki: ${u.skutek}`);
+    if (u.zysk) l.push(`  Co zyskasz: ${u.zysk}`);
     if (u.koszt)
       l.push(
         `  Naprawa: ${u.koszt} zł${u.samodzielnie ? " (da się samodzielnie)" : ""}`,

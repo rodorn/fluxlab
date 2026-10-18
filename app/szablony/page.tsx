@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import NazwaNarzedzia from "@/components/NazwaNarzedzia";
 
 export const metadata: Metadata = {
   title: "Darmowe szablony do pobrania | Fluxlab",
@@ -37,7 +38,7 @@ export default function Szablony() {
         <section className="pt-12 lg:pt-20 pb-20">
           <div className="container-wide">
             <div className="max-w-3xl mx-auto text-center mb-10">
-              <p className="section-label mb-4">Szablony</p>
+              <NazwaNarzedzia href="/szablony" />
               <h1 className="text-3xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
                 Trzy pliki do pobrania, bez rejestracji
               </h1>

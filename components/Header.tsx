@@ -233,8 +233,8 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/85 dark:bg-gray-950/85 backdrop-blur-xl border-b border-gray-200/70 dark:border-gray-800/70 shadow-sm shadow-gray-900/5"
-          : "bg-white/60 dark:bg-gray-950/55 backdrop-blur-md border-b border-transparent"
+          ? "bg-white/90 dark:bg-gray-950/90 backdrop-blur-xl border-b border-gray-200/70 dark:border-gray-800/70 shadow-sm shadow-gray-900/5"
+          : "bg-white/90 dark:bg-gray-950/90 backdrop-blur-xl border-b border-gray-200/70 dark:border-gray-800/70"
       }`}
     >
       {/* Pełna szerokość, bez container-wide */}

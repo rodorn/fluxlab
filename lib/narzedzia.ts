@@ -265,7 +265,6 @@ export const GRUPY_NARZEDZI: string[] = GRUPY.map((g) => g.nazwa);
 /** Kalkulator wbudowany w artykuł nie ma własnej pozycji w sekcjach. */
 const GRUPA_SPOZA_SEKCJI: Record<string, string> = {
   "/strefa-wiedzy/automatyzacja-vs-zatrudnienie": "Koszt automatyzacji",
-  "/szablony": "Koszt automatyzacji",
 };
 
 /** Jedno zdanie pod nazwą grupy na liście narzędzi. */

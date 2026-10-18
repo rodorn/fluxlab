@@ -17,6 +17,7 @@ import dns from "dns/promises";
 import tls from "tls";
 
 import { kontroleJezykoweGlownej, type AnalizaJezyka } from "./audyt-jezyki";
+import { wykryjTechnologie, type Technologia } from "./audyt-technologie";
 import { znajdzLiterowki } from "./audyt-pisownia";
 import { arkuszeStrony, przygotujCss, sprawdzKursor } from "./kursor";
 import {
@@ -142,6 +143,8 @@ export type Pomiar = {
   /** Wyniki wspólnych kontroli (lib/audyt-kontrole.ts) dla strony głównej
    *  i domeny. Opis każdej stoi w KATALOGU. */
   znaleziska: Znalezisko[];
+  /** Wykryte biblioteki, frameworki i serwer, z oceną wersji. */
+  technologie: Technologia[];
 };
 
 function pusty(domena: string): Pomiar {
@@ -200,6 +203,7 @@ function pusty(domena: string): Pomiar {
     },
     kursor: null,
     znaleziska: [],
+    technologie: [],
   };
 }
 
@@ -812,6 +816,7 @@ export async function zmierz(domenaWejscie: string): Promise<Pomiar> {
   wynik.serwer = dok.odp.headers.get("server");
 
   const html = dok.tekst;
+  wynik.technologie = wykryjTechnologie(html, dok.odp.headers);
   wynik.tytul =
     html
       .match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1]

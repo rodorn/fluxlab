@@ -120,6 +120,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.85,
     },
     {
+      url: `${baseUrl}/szablony`,
+      changeFrequency: "monthly" as const,
+      priority: 0.5,
+    },
+    {
+      url: `${baseUrl}/zmiany`,
+      changeFrequency: "monthly" as const,
+      priority: 0.5,
+    },
+    {
+      url: `${baseUrl}/jak-zbudowana`,
+      changeFrequency: "monthly" as const,
+      priority: 0.5,
+    },
+    {
       url: `${baseUrl}/pilotaz`,
       changeFrequency: "monthly" as const,
       priority: 0.85,

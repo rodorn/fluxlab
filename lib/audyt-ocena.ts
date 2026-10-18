@@ -11,6 +11,7 @@
 import { odmien, orzeczenieMnogie } from "./odmiana";
 import type { Pomiar } from "./audyt-pomiar";
 import { KATALOG, type Znalezisko } from "./audyt-kontrole";
+import { zyskZaNaprawe } from "./audyt-zysk";
 
 export type Waga = "krytyczne" | "wazne" | "drobne";
 
@@ -37,6 +38,8 @@ export type Ustalenie = {
   samodzielnie: boolean;
   /** Czego potrzebuję, żeby to naprawić. */
   dostep?: string;
+  /** Co firma zyska po naprawie, jedno zdanie. Brak w raportach sprzed zmiany. */
+  zysk?: string;
 };
 
 /** Progi, na które umiem wskazać źródło albo powód. */
@@ -68,6 +71,7 @@ export function zZnaleziska(z: Znalezisko): Ustalenie | null {
     koszt: k.koszt,
     samodzielnie: false,
     dostep: k.dostep,
+    zysk: zyskZaNaprawe(z.klucz, k.obszar),
   };
 }
 
@@ -801,6 +805,37 @@ export function ocenStrone(p: Pomiar): Ustalenie[] {
     dodaj(x);
   }
 
+  // --- technologie: przestarzałe biblioteki, frameworki i serwer ----------
+  // Pomijamy te, które wspólne kontrole już opisały osobnym ustaleniem.
+  const opisane = new Set((p.znaleziska ?? []).map((z) => z.klucz));
+  const doNaprawy = (p.technologie ?? []).filter(
+    (t) =>
+      t.status === "przestarzala" &&
+      !(t.id === "jquery" && opisane.has("stare_jquery")) &&
+      !(t.id === "wordpress" && opisane.has("stary_wordpress")) &&
+      !(t.id === "universal-analytics" && (opisane.has("stara_analityka") || juz.has("stara_analityka"))) &&
+      !(t.id === "universal-analytics" && p.tylkoUniversalAnalytics),
+  );
+  if (doNaprawy.length) {
+    const zLukami = doNaprawy.some((t) => t.bezpieczenstwo);
+    dodaj({
+      klucz: "przestarzale_technologie",
+      obszar: "bezpieczenstwo",
+      waga: zLukami ? "wazne" : "drobne",
+      tytul: "Przestarzałe oprogramowanie strony",
+      fakt: doNaprawy
+        .map((t) => `${t.nazwa} ${t.wersja ?? ""}`.trim() + (t.najnowsza ? ` (aktualna ${t.najnowsza})` : ""))
+        .join("; ") + ".",
+      skutek:
+        "Te wersje mają znane luki albo nie dostają już poprawek bezpieczeństwa, więc strona jest łatwiejszym celem ataku i działa wolniej niż na aktualnych. Aktualizujemy je w ramach poprawek.",
+      koszt: Math.min(500, 200 + 80 * (doNaprawy.length - 1)),
+      samodzielnie: false,
+      dostep: doNaprawy.every((t) => t.kategoria === "serwer")
+        ? "konfiguracja serwera"
+        : "dostęp do kodu strony",
+    });
+  }
+
   // --- poczta, bo idzie tym samym kanałem co formularz --------------------
   if (p.poczta.mx && !p.poczta.spf) {
     dodaj({
@@ -832,6 +867,7 @@ export function ocenStrone(p: Pomiar): Ustalenie[] {
   }
 
   const kolejnosc: Record<Waga, number> = { krytyczne: 0, wazne: 1, drobne: 2 };
+  for (const x of u) x.zysk ??= zyskZaNaprawe(x.klucz, x.obszar);
   return u.sort(
     (a, b) => kolejnosc[a.waga] - kolejnosc[b.waga] || b.koszt - a.koszt,
   );

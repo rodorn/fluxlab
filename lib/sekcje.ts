@@ -34,10 +34,7 @@ export const SEKCJE: Sekcja[] = [
         strony: [
           s("/wlasny-crm", "Własny CRM (FluxCRM)"),
           s("/automatyzacja-leadow-crm", "Automatyzacja leadów w CRM"),
-          s(
-            "/automatyzacja-procesow-biznesowych",
-            "Automatyzacja procesów biznesowych",
-          ),
+          s("/automatyzacja-procesow-biznesowych", "Automatyzacja procesów biznesowych"),
           s("/automatyzacja-formularza-do-pipedrive", "Formularz do Pipedrive"),
           s("/automatyczne-przypisywanie-leadow", "Przypisywanie leadów"),
           s("/automatyzacja-follow-up", "Automatyzacja follow-upów"),
@@ -71,14 +68,8 @@ export const SEKCJE: Sekcja[] = [
         nazwa: "Branże",
         strony: [
           s("/automatyzacja-dla-ecommerce", "Automatyzacja dla e-commerce"),
-          s(
-            "/automatyzacja-dla-biur-rachunkowych",
-            "Automatyzacja dla biur rachunkowych",
-          ),
-          s(
-            "/automatyzacja-dla-agencji-marketingowych",
-            "Automatyzacja dla agencji marketingowych",
-          ),
+          s("/automatyzacja-dla-biur-rachunkowych", "Automatyzacja dla biur rachunkowych"),
+          s("/automatyzacja-dla-agencji-marketingowych", "Automatyzacja dla agencji marketingowych"),
           s("/automatyzacja-crm-leasing", "CRM dla firm leasingowych"),
         ],
       },
@@ -137,6 +128,7 @@ export const SEKCJE: Sekcja[] = [
           s("/tansze-automatyzacje", "Tańsze automatyzacje"),
           s("/koszt-recznej-obslugi-leadow", "Koszt ręcznej obsługi leadów"),
           s("/audyt-crm", "Audyt CRM"),
+          s("/szablony", "Darmowe szablony"),
         ],
       },
       {
@@ -178,151 +170,52 @@ export const SEKCJE: Sekcja[] = [
           s("/strefa-wiedzy", "Strefa wiedzy"),
           s("/slownik", "Słownik pojęć"),
           s("/strefa-wiedzy/kategoria/[slug]", "Kategoria artykułów"),
-          s(
-            "/strefa-wiedzy/ai-w-automatyzacji-firm",
-            "AI w automatyzacji firm",
-          ),
-          s(
-            "/strefa-wiedzy/automatyzacja-crm-od-czego-zaczac",
-            "Automatyzacja CRM z AI, od czego zacząć",
-          ),
-          s(
-            "/strefa-wiedzy/automatyzacja-vs-zatrudnienie",
-            "Automatyzacja vs zatrudnienie",
-          ),
-          s(
-            "/strefa-wiedzy/bledy-w-rejestrze-obiektow-hotelarskich",
-            "Błędy w rejestrze hoteli",
-          ),
-          s(
-            "/strefa-wiedzy/co-jest-nie-tak-ze-stronami-dealerow",
-            "Badanie stron dealerów",
-          ),
-          s(
-            "/strefa-wiedzy/co-to-jest-automatyzacja-procesow-biznesowych",
-            "Czym jest automatyzacja procesów",
-          ),
-          s(
-            "/strefa-wiedzy/crm-dla-jednoosobowej-firmy",
-            "CRM dla jednoosobowej firmy",
-          ),
-          s(
-            "/strefa-wiedzy/czy-ai-widzi-strony-dealerow",
-            "Czy AI widzi strony dealerów",
-          ),
+          s("/strefa-wiedzy/ai-w-automatyzacji-firm", "AI w automatyzacji firm"),
+          s("/strefa-wiedzy/automatyzacja-crm-od-czego-zaczac", "Automatyzacja CRM z AI, od czego zacząć"),
+          s("/strefa-wiedzy/automatyzacja-vs-zatrudnienie", "Automatyzacja vs zatrudnienie"),
+          s("/strefa-wiedzy/bledy-w-rejestrze-obiektow-hotelarskich", "Błędy w rejestrze hoteli"),
+          s("/strefa-wiedzy/co-jest-nie-tak-ze-stronami-dealerow", "Badanie stron dealerów"),
+          s("/strefa-wiedzy/co-to-jest-automatyzacja-procesow-biznesowych", "Czym jest automatyzacja procesów"),
+          s("/strefa-wiedzy/crm-dla-jednoosobowej-firmy", "CRM dla jednoosobowej firmy"),
+          s("/strefa-wiedzy/czy-ai-widzi-strony-dealerow", "Czy AI widzi strony dealerów"),
           s("/strefa-wiedzy/hubspot-vs-pipedrive", "HubSpot vs Pipedrive"),
-          s(
-            "/strefa-wiedzy/integracje-api-w-firmie-kiedy-warto",
-            "Integracje API, kiedy warto",
-          ),
-          s(
-            "/strefa-wiedzy/e-doreczenia-adres-prywatny-i-firmowy",
-            "e-Doręczenia: adres prywatny i firmowy",
-          ),
-          s(
-            "/strefa-wiedzy/faktury-z-ksef-po-zmianie-biura",
-            "Faktury z KSeF po zmianie biura",
-          ),
-          s(
-            "/strefa-wiedzy/faktura-gdy-ksef-nie-dziala",
-            "Faktura, gdy KSeF nie działa",
-          ),
+          s("/strefa-wiedzy/integracje-api-w-firmie-kiedy-warto", "Integracje API, kiedy warto"),
+          s("/strefa-wiedzy/e-doreczenia-adres-prywatny-i-firmowy", "e-Doręczenia: adres prywatny i firmowy"),
+          s("/strefa-wiedzy/faktury-z-ksef-po-zmianie-biura", "Faktury z KSeF po zmianie biura"),
+          s("/strefa-wiedzy/faktura-gdy-ksef-nie-dziala", "Faktura, gdy KSeF nie działa"),
           s("/strefa-wiedzy/blad-w-fakturze-ksef", "Błąd w fakturze w KSeF"),
-          s(
-            "/strefa-wiedzy/faktura-zaliczkowa-ksef",
-            "Faktura zaliczkowa w KSeF",
-          ),
+          s("/strefa-wiedzy/faktura-zaliczkowa-ksef", "Faktura zaliczkowa w KSeF"),
           s("/strefa-wiedzy/oznaczenia-jpk-ksef", "Oznaczenia KSeF w JPK_VAT"),
           s("/strefa-wiedzy/samofakturowanie-ksef", "Samofakturowanie w KSeF"),
-          s(
-            "/strefa-wiedzy/faktura-dla-osoby-prywatnej-ksef",
-            "Faktura dla osoby prywatnej a KSeF",
-          ),
-          s(
-            "/strefa-wiedzy/faktura-dla-kontrahenta-zagranicznego-ksef",
-            "Faktura dla firmy zagranicznej a KSeF",
-          ),
-          s(
-            "/strefa-wiedzy/ksef-jdg-zwolniona-z-vat",
-            "KSeF w JDG zwolnionej z VAT",
-          ),
-          s(
-            "/strefa-wiedzy/zalacznik-do-faktury-ksef",
-            "Załącznik do faktury w KSeF",
-          ),
+          s("/strefa-wiedzy/faktura-dla-osoby-prywatnej-ksef", "Faktura dla osoby prywatnej a KSeF"),
+          s("/strefa-wiedzy/faktura-dla-kontrahenta-zagranicznego-ksef", "Faktura dla firmy zagranicznej a KSeF"),
+          s("/strefa-wiedzy/ksef-jdg-zwolniona-z-vat", "KSeF w JDG zwolnionej z VAT"),
+          s("/strefa-wiedzy/zalacznik-do-faktury-ksef", "Załącznik do faktury w KSeF"),
           s("/strefa-wiedzy/zaw-fa-ksef", "ZAW-FA w spółce"),
           s("/strefa-wiedzy/gutschrift-ksef", "Gutschrift a KSeF"),
           s("/strefa-wiedzy/faktura-vat-rr-ksef", "Faktura VAT RR w KSeF"),
-          s(
-            "/strefa-wiedzy/data-wystawienia-faktury-ksef",
-            "Data wystawienia faktury w KSeF",
-          ),
-          s(
-            "/strefa-wiedzy/jaka-forma-opodatkowania-jdg-2026",
-            "Forma opodatkowania JDG 2026",
-          ),
-          s(
-            "/strefa-wiedzy/jak-liczyc-zdrowotna-jdg",
-            "Składka zdrowotna w JDG",
-          ),
-          s(
-            "/strefa-wiedzy/jak-polaczyc-crm-z-innymi-systemami",
-            "Łączenie CRM z systemami",
-          ),
-          s(
-            "/strefa-wiedzy/jak-policzyc-roi-z-automatyzacji",
-            "ROI z automatyzacji",
-          ),
-          s(
-            "/strefa-wiedzy/jak-uporzadkowac-proces-sprzedazy-w-crm",
-            "Proces sprzedaży w CRM",
-          ),
-          s(
-            "/strefa-wiedzy/jak-zautomatyzowac-raportowanie-w-firmie",
-            "Automatyzacja raportowania w firmie",
-          ),
+          s("/strefa-wiedzy/data-wystawienia-faktury-ksef", "Data wystawienia faktury w KSeF"),
+          s("/strefa-wiedzy/jaka-forma-opodatkowania-jdg-2026", "Forma opodatkowania JDG 2026"),
+          s("/strefa-wiedzy/jak-liczyc-zdrowotna-jdg", "Składka zdrowotna w JDG"),
+          s("/strefa-wiedzy/jak-polaczyc-crm-z-innymi-systemami", "Łączenie CRM z systemami"),
+          s("/strefa-wiedzy/jak-policzyc-roi-z-automatyzacji", "ROI z automatyzacji"),
+          s("/strefa-wiedzy/jak-uporzadkowac-proces-sprzedazy-w-crm", "Proces sprzedaży w CRM"),
+          s("/strefa-wiedzy/jak-zautomatyzowac-raportowanie-w-firmie", "Automatyzacja raportowania w firmie"),
           s("/strefa-wiedzy/kiedy-ai-ma-sens-a-kiedy-nie", "Kiedy AI ma sens"),
-          s(
-            "/strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef",
-            "Odliczenie VAT z faktury KSeF",
-          ),
-          s(
-            "/strefa-wiedzy/konwersje-pokazuja-zero",
-            "Konwersje pokazują zero",
-          ),
-          s(
-            "/strefa-wiedzy/maile-trafiaja-do-spamu",
-            "Maile trafiają do spamu",
-          ),
+          s("/strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef", "Odliczenie VAT z faktury KSeF"),
+          s("/strefa-wiedzy/konwersje-pokazuja-zero", "Konwersje pokazują zero"),
+          s("/strefa-wiedzy/maile-trafiaja-do-spamu", "Maile trafiają do spamu"),
           s("/strefa-wiedzy/make-vs-n8n", "Make vs n8n"),
           s("/strefa-wiedzy/maly-zus-plus-kiedy-sie-oplaca", "Mały ZUS Plus"),
           s("/strefa-wiedzy/n8n-vs-zapier", "n8n vs Zapier"),
-          s(
-            "/strefa-wiedzy/najczestsze-bledy-w-raportowaniu-sprzedazy",
-            "Błędy w raportowaniu sprzedaży",
-          ),
-          s(
-            "/strefa-wiedzy/numeracja-faktur-ksef-2027",
-            "Numeracja faktur w KSeF w 2027",
-          ),
+          s("/strefa-wiedzy/najczestsze-bledy-w-raportowaniu-sprzedazy", "Błędy w raportowaniu sprzedaży"),
+          s("/strefa-wiedzy/numeracja-faktur-ksef-2027", "Numeracja faktur w KSeF w 2027"),
           s("/strefa-wiedzy/panel-do-sesji-ai", "Panel do sesji AI"),
-          s(
-            "/strefa-wiedzy/pipedrive-vs-salesforce",
-            "Pipedrive vs Salesforce",
-          ),
-          s(
-            "/strefa-wiedzy/podszywanie-pod-salony-samochodowe",
-            "Podszywanie pod salony samochodowe",
-          ),
-          s(
-            "/strefa-wiedzy/podszywanie-sie-pod-firmowy-email",
-            "Podszywanie pod firmowy adres",
-          ),
+          s("/strefa-wiedzy/pipedrive-vs-salesforce", "Pipedrive vs Salesforce"),
+          s("/strefa-wiedzy/podszywanie-pod-salony-samochodowe", "Podszywanie pod salony samochodowe"),
+          s("/strefa-wiedzy/podszywanie-sie-pod-firmowy-email", "Podszywanie pod firmowy adres"),
           s("/strefa-wiedzy/ryczalt-czy-liniowy", "Ryczałt czy liniowy"),
-          s(
-            "/strefa-wiedzy/salesforce-dla-malej-firmy",
-            "Salesforce dla małej firmy",
-          ),
+          s("/strefa-wiedzy/salesforce-dla-malej-firmy", "Salesforce dla małej firmy"),
           s("/strefa-wiedzy/skala-czy-liniowy-jdg", "Skala czy liniowy w JDG"),
           s("/strefa-wiedzy/vat-w-jdg-kiedy-warto", "VAT w JDG"),
           s("/strefa-wiedzy/zapier-make-n8n-porownanie", "Zapier, Make i n8n"),
@@ -348,7 +241,6 @@ export const SEKCJE: Sekcja[] = [
           s("/jak-pracuje", "Jak pracujemy"),
           s("/jak-zbudowana", "Jak zbudowana jest ta strona"),
           s("/zmiany", "Ostatnie zmiany na stronie"),
-          s("/szablony", "Darmowe szablony"),
           s("/pilotaz", "Program pilotażowy"),
           s("/kontakt", "Kontakt"),
         ],
@@ -394,9 +286,7 @@ export function sekcjaStrony(
   if (h.startsWith("/strefa-wiedzy/")) {
     const sekcja = SEKCJE.find((x) => x.slug === "strefa-wiedzy")!;
     const grupa = sekcja.grupy.find((g) => g.nazwa === "Artykuły")!;
-    const kategoria = grupa.strony.find(
-      (x) => x.href === "/strefa-wiedzy/kategoria/[slug]",
-    )!;
+    const kategoria = grupa.strony.find((x) => x.href === "/strefa-wiedzy/kategoria/[slug]")!;
     const strona = h.startsWith("/strefa-wiedzy/kategoria/")
       ? kategoria
       : { href: h, nazwa: "Artykuł" };
@@ -409,8 +299,7 @@ export function nazwaStrony(href: string): string | undefined {
   const h = normalizuj(href);
   for (const sekcja of SEKCJE)
     for (const grupa of sekcja.grupy)
-      for (const strona of grupa.strony)
-        if (strona.href === h) return strona.nazwa;
+      for (const strona of grupa.strony) if (strona.href === h) return strona.nazwa;
   return undefined;
 }
 

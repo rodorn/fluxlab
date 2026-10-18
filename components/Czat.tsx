@@ -35,11 +35,11 @@ function podpowiedzi(sciezka: string): string[] {
     return [
       "Jak działa pilotaż CRM za 1 zł?",
       "Ile kosztuje CRM dla 5 osób?",
-      "Czy CRM połączycie z moimi narzędziami?",
+      "Czy CRM połączy się z moimi narzędziami?",
     ];
   if (sciezka.includes("ksef"))
     return [
-      "Czy pomożecie z integracją z KSeF?",
+      "Jak wygląda integracja z KSeF?",
       "Ile kosztuje integracja z KSeF?",
       "Od kiedy KSeF jest obowiązkowy?",
     ];

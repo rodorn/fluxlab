@@ -227,3 +227,5 @@ zapy
 zoho
 gutschrift
 samofaktury
+App
+Vercelu

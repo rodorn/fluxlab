@@ -35,6 +35,7 @@ type Ustalenie = {
   koszt: number;
   samodzielnie: boolean;
   dostep?: string;
+  zysk?: string;
   material?: { tytul: string; href: string } | null;
 };
 
@@ -101,6 +102,13 @@ type Wynik = {
       wagaCalosci: number;
       cssZnakow: number;
     };
+    technologie?: {
+      id: string;
+      nazwa: string;
+      wersja: string | null;
+      status: "aktualna" | "starsza" | "przestarzala" | "bez_oceny";
+      powod: string;
+    }[];
     kursor?: {
       klikalnych: number;
       bezRaczki: number;
@@ -471,7 +479,7 @@ export default function AudytCheck() {
         <button
           type="submit"
           disabled={stan === "ladowanie"}
-          className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
+          className="btn-primary disabled:opacity-50"
         >
           {stan === "ladowanie" ? "Badamy stronę..." : "Zrób darmowy audyt"}
         </button>
@@ -579,6 +587,7 @@ export default function AudytCheck() {
 
           <PopravTo
             domena={wynik.domena}
+            punkty={wynik.punkty}
             pozycje={wynik.ustalenia.map((u) => ({
               waga: u.waga,
               tytul: u.tytul,
@@ -624,7 +633,7 @@ export default function AudytCheck() {
                     <button
                       type="submit"
                       disabled={mailStan === "wysylamy" || !zgoda}
-                      className="btn-primary justify-center px-6 text-sm disabled:opacity-50"
+                      className="btn-primary disabled:opacity-50"
                     >
                       {mailStan === "wysylamy"
                         ? "Wysyłamy..."
@@ -733,9 +742,22 @@ export default function AudytCheck() {
                               <span className="font-semibold">Zmierzono: </span>
                               {u.fakt}
                             </p>
-                            <p className="mt-1.5 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
-                              {u.skutek}
-                            </p>
+                            <div className="mt-2 grid gap-2 text-sm leading-relaxed sm:grid-cols-2">
+                              <p className="text-gray-600 dark:text-gray-400">
+                                <span className="block text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400">
+                                  Bez poprawki
+                                </span>
+                                {u.skutek}
+                              </p>
+                              {u.zysk && (
+                                <p className="text-gray-700 dark:text-gray-300">
+                                  <span className="block text-xs font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-400">
+                                    Co zyskasz
+                                  </span>
+                                  {u.zysk}
+                                </p>
+                              )}
+                            </div>
                             <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs">
                               {u.samodzielnie && (
                                 <span className="font-medium text-emerald-700 dark:text-emerald-400">
@@ -758,6 +780,49 @@ export default function AudytCheck() {
                   );
                 })}
               </div>
+            </div>
+          )}
+
+          {/* Technologie strony */}
+          {(wynik.pomiar.technologie?.length ?? 0) > 0 && (
+            <div>
+              <h3 className="mb-3 text-lg font-bold text-gray-900 dark:text-white">
+                Technologie strony
+              </h3>
+              <ul className="divide-y divide-gray-200 rounded-2xl border border-gray-200 dark:divide-gray-800 dark:border-gray-800">
+                {wynik.pomiar.technologie!.map((t) => (
+                  <li key={t.id} className="px-4 py-3">
+                    <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+                      <span className="font-semibold text-gray-900 dark:text-white">
+                        {t.nazwa}
+                      </span>
+                      <span className="text-sm text-gray-600 dark:text-gray-400">
+                        {t.wersja ?? (t.id === "universal-analytics" ? "" : "wersja ukryta")}
+                      </span>
+                      {t.status === "przestarzala" && (
+                        <span className="rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-bold text-red-700 dark:bg-red-950 dark:text-red-400">
+                          Przestarzałe
+                        </span>
+                      )}
+                      {t.status === "starsza" && (
+                        <span className="rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-bold text-amber-800 dark:bg-amber-950 dark:text-amber-400">
+                          Starsza wersja
+                        </span>
+                      )}
+                      {t.status === "aktualna" && (
+                        <span className="rounded-full bg-emerald-100 px-2.5 py-0.5 text-xs font-bold text-emerald-800 dark:bg-emerald-950 dark:text-emerald-400">
+                          Aktualne
+                        </span>
+                      )}
+                    </div>
+                    {(t.status === "przestarzala" || t.status === "starsza") && (
+                      <p className="mt-1 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
+                        {t.powod} Poprawiamy to w ramach napraw.
+                      </p>
+                    )}
+                  </li>
+                ))}
+              </ul>
             </div>
           )}
 
@@ -1098,7 +1163,7 @@ export default function AudytCheck() {
               <a
                 href={`/kontakt?temat=${encodeURIComponent(`Naprawa po audycie ${wynik.domena}`)}`}
                 onClick={() => zglosZdarzenie("audyt_klik_zlecam")}
-                className="btn-primary mt-5 inline-flex px-6 py-3 text-sm"
+                className="btn-primary mt-5"
               >
                 Zlecamy naprawę
               </a>
