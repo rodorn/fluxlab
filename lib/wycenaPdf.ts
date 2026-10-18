@@ -1,3 +1,4 @@
+import { OPCJE_STRONY, cenaOpcji } from "@/lib/opcjeStrony";
 // Konfiguracja wyceny przekazywana w linku /wycena?d=<base64url(JSON)>.
 // Ceny zgodne z components/KonfiguratorStrony.tsx i components/KonfiguratorCrm.tsx.
 
@@ -28,13 +29,7 @@ const RODZAJE: Record<string, { nazwa: string; cena: number; termin: string }> =
   sklep: { nazwa: "Sklep z integracją", cena: 15000, termin: "ustalimy przy wycenie" },
 };
 
-const OPCJE: Record<string, { nazwa: string; wCenie: string[] }> = {
-  crm: { nazwa: "Formularz podpięty do CRM", wCenie: ["landing"] },
-  cms: { nazwa: "Panel do edycji treści (CMS)", wCenie: ["firmowa"] },
-  en: { nazwa: "Wersja angielska", wCenie: [] },
-  blog: { nazwa: "Blog", wCenie: [] },
-  platnosci: { nazwa: "Integracja płatności", wCenie: [] },
-};
+const OPCJE = OPCJE_STRONY;
 
 const WARIANTY: Record<string, { nazwa: string; cena: number }> = {
   pilotaz: { nazwa: "Pilotaż", cena: 1 },
@@ -75,21 +70,19 @@ export function dekodujWycene(d: string | undefined): Wycena | null {
       { nazwa: r.nazwa, opis: "Wdrożenie, hosting w cenie wdrożenia", netto: r.cena },
       ...unikalne.map((id) => {
         const o = OPCJE[id];
-        return o.wCenie.includes(c.r as string)
-          ? { nazwa: o.nazwa, info: "w cenie" }
-          : { nazwa: o.nazwa, info: "wycenimy przy zapytaniu" };
+        const kwota = cenaOpcji(id, c.r as string, r.cena);
+        return kwota ? { nazwa: o.nazwa, netto: kwota } : { nazwa: o.nazwa, info: "w cenie" };
       }),
     ];
+    const suma = r.cena + unikalne.reduce((s, id) => s + cenaOpcji(id, c.r as string, r.cena), 0);
     return {
       tytul: "Strona internetowa",
       pozycje,
       sumaEtykieta: "Razem",
       sumaOd: true,
-      suma: r.cena,
+      suma,
       termin: r.termin,
-      uwaga: unikalne.some((id) => !OPCJE[id].wCenie.includes(c.r as string))
-        ? "Pozycje oznaczone jako wyceniane przy zapytaniu nie wchodzą do kwoty."
-        : undefined,
+      uwaga: "Ceny dodatków orientacyjne, dokładną kwotę potwierdzimy po rozmowie.",
     };
   }
 

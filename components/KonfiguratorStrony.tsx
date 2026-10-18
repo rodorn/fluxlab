@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { zglosZdarzenie } from "@/lib/zdarzenie";
 import { kodujWycene } from "@/lib/wycenaPdf";
+import { OPCJE_STRONY, cenaOpcji, type OpcjaStrony } from "@/lib/opcjeStrony";
 
 type Rodzaj = {
   id: string;
@@ -37,19 +38,9 @@ const RODZAJE: Rodzaj[] = [
   },
 ];
 
-type Opcja = {
-  id: string;
-  nazwa: string;
-  wCenie: string[];
-};
+type Opcja = OpcjaStrony & { id: string };
 
-const OPCJE: Opcja[] = [
-  { id: "crm", nazwa: "Formularz podpięty do CRM", wCenie: ["landing"] },
-  { id: "cms", nazwa: "Panel do edycji treści (CMS)", wCenie: ["firmowa"] },
-  { id: "en", nazwa: "Wersja angielska", wCenie: [] },
-  { id: "blog", nazwa: "Blog", wCenie: [] },
-  { id: "platnosci", nazwa: "Integracja płatności", wCenie: [] },
-];
+const OPCJE: Opcja[] = Object.entries(OPCJE_STRONY).map(([id, o]) => ({ id, ...o }));
 
 const zl = (n: number) =>
   String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, "\u00a0") + " zł";
@@ -80,13 +71,16 @@ export default function KonfiguratorStrony() {
   const [rodzajId, setRodzajId] = useState("firmowa");
   const [wybrane, setWybrane] = useState<string[]>([]);
   const rodzaj = RODZAJE.find((r) => r.id === rodzajId)!;
-  const cena = useAnimowana(rodzaj.cena);
+  const dodatki = wybrane.reduce((s, id) => s + cenaOpcji(id, rodzajId, rodzaj.cena), 0);
+  const cena = useAnimowana(rodzaj.cena + dodatki);
 
   const przelacz = (id: string) =>
     setWybrane((w) => (w.includes(id) ? w.filter((x) => x !== id) : [...w, id]));
 
-  const notka = (o: Opcja) =>
-    o.wCenie.includes(rodzajId) ? "w cenie" : "wycenimy";
+  const notka = (o: Opcja) => {
+    const k = cenaOpcji(o.id, rodzajId, rodzaj.cena);
+    return k ? `+${zl(k)}` : "w cenie";
+  };
 
   const pobierzPdf = () => {
     const d = kodujWycene({ t: "s", r: rodzajId, o: wybrane });
@@ -101,6 +95,7 @@ export default function KonfiguratorStrony() {
     const tekst = [
       "Konfiguracja ze strony:",
       `Rodzaj: ${rodzaj.nazwa}, od ${zl(rodzaj.cena)} netto`,
+      `Razem z opcjami: od ${zl(rodzaj.cena + dodatki)} netto`,
       `Opcje: ${opcje.length ? opcje.join(", ") : "bez dodatków"}`,
       `Termin: ${rodzaj.termin}`,
     ].join("\n");
@@ -176,7 +171,6 @@ export default function KonfiguratorStrony() {
         <div className="sierota-sm-2 mx-auto grid max-w-2xl gap-3 sm:grid-cols-2">
           {OPCJE.map((o) => {
             const aktywna = wybrane.includes(o.id);
-            const wCenie = o.wCenie.includes(rodzajId);
             return (
               <button
                 key={o.id}
@@ -195,7 +189,7 @@ export default function KonfiguratorStrony() {
                     {o.nazwa}
                   </span>
                   <span className="block text-xs text-gray-600 dark:text-gray-400">
-                    {wCenie ? "w cenie" : "wycenimy przy zapytaniu"}
+                    {notka(o)}
                   </span>
                 </span>
                 <span
