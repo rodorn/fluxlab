@@ -1791,6 +1791,16 @@ export default function TaxCalculator({ waski = false }: { waski?: boolean }) {
                       {pln(monthlyRevenue)}/mies.
                     </span>
                   </div>
+                  <a
+                    href="#porownanie-form"
+                    className={`mt-3 flex items-center justify-between gap-3 rounded-xl bg-accent/10 px-4 py-3 text-sm ${waski ? "" : "min-[1800px]:hidden"}`}
+                  >
+                    <span className="text-gray-700 dark:text-gray-300">
+                      Najkorzystniej: <strong className="text-gray-900 dark:text-white">{best.label}</strong>,{" "}
+                      <span className="tabular-nums">{pln(Math.round(best.disposable / 12))}</span>/mies. do dyspozycji
+                    </span>
+                    <span className="shrink-0 font-semibold text-accent">Porównanie ↓</span>
+                  </a>
                 </div>
               </div>
 
@@ -2339,7 +2349,7 @@ export default function TaxCalculator({ waski = false }: { waski?: boolean }) {
           </div>
 
           {/* ── COMPARISON BAR ── */}
-          <div className="rounded-2xl border border-gray-200 dark:border-gray-700 p-5 bg-white dark:bg-gray-900/50">
+          <div id="porownanie-form" className="scroll-mt-24 rounded-2xl border border-gray-200 dark:border-gray-700 p-5 bg-white dark:bg-gray-900/50">
             <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-4">
               Do dyspozycji {viewMode === "monthly" ? "miesięcznie" : "rocznie"}
             </h3>
