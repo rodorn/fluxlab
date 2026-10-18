@@ -200,7 +200,7 @@ export default function MenuDesktop() {
   const [kierunek, setKierunek] = useState(0);
   const [pigulka, setPigulka] = useState<{ x: number; w: number } | null>(null);
   const nav = useRef<HTMLElement | null>(null);
-  const przyciski = useRef<Record<string, HTMLButtonElement | null>>({});
+  const przyciski = useRef<Record<string, HTMLAnchorElement | null>>({});
   const poprzedni = useRef<string | null>(null);
 
   const otworz = (id: string) => {
@@ -256,9 +256,9 @@ export default function MenuDesktop() {
           }}
         />
         {MENU.map((p) => (
-          <button
+          <Link
             key={p.id}
-            type="button"
+            href={p.href}
             ref={(el) => {
               przyciski.current[p.id] = el;
             }}
@@ -270,12 +270,15 @@ export default function MenuDesktop() {
               najedz(p.id);
               otworz(p.id);
             }}
-            onFocus={() => najedz(p.id)}
-            onClick={() => (menu === p.id ? zamknij() : otworz(p.id))}
+            onFocus={() => {
+              najedz(p.id);
+              otworz(p.id);
+            }}
+            onClick={zamknij}
           >
             {p.etykieta}
             <Strzalka otwarte={menu === p.id} />
-          </button>
+          </Link>
         ))}
       </span>
 
