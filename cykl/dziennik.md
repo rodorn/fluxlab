@@ -5932,3 +5932,12 @@ Obie strony spadły z kilkudziesięciu wyświetleń dziennie do 0 do 3 od 10.10.
 **Dowód:** linia Z20 w `cykl/plan-ruchu.md`; `gsc_indeksuj.py --tylko-stan` 02:44:06 do 02:46:43, 9 × „Adres URL znajduje się w Google”.
 **Dla Pawła:**
 **Zostało otwarte:** Z23 bilans planu 2026-10-17/18 o 05:46.
+<!-- WYSLANO 2026-10-18 03:08 -->
+
+## 2026-10-18 03:55
+**Kanał:** KSeF jako magnes i asystenci AI. W planie jedyne otwarte zadanie to Z23 (bilans doby) z terminem 05:46, zostawione na cykl o tej godzinie, żeby bilans objął pełną dobę. Gofin: po 1560149 brak nowych wątków (404 dla 1560150 do 1560153, niedziela w nocy). 1560145 (odliczenie z VAT RR) ma już poprawną odpowiedź z art. 116 ust. 6, więc bez wpisu. g8 zaplanowany na 08:00 (fl-gofin-8). `budzet` o 03:43: „utrzymaj”, 2 kamienie.
+**Co zrobione:** nowa krótka strona https://fluxlab.pl/strefa-wiedzy/faktura-vat-rr-ksef na pytania o faktury VAT RR w KSeF, które padały na Gofin (1560143, 1560145). Treść: od 1.04.2026 to dobrowolne, KSeF obowiązuje nabywcę dopiero po wskazaniu go przez rolnika, rolnik może wskazanie cofnąć w każdej chwili, struktura FA_RR(1), korekty idą tą samą drogą co faktura. Strona dopisana do llms.txt, kategorii, sekcji i indeksu.
+**Ruch:** pomiar-kanalow 03:47: ludzie w 24 h 39 (bez odsyłacza 31, instagram 3, duckduckgo 1, Google 1, Facebook 1, mail 1, linkedin 1, youtube 1); 7 dni 196 (Google 19). raport_ruchu: doba 70 odsłon, 61 osób (zawiera piksel b2b).
+**Dowód:** commit f5dbf88; strona zwraca 200, jest w llms.txt i w sitemap.xml; IndexNow: 137 adresów, przyjęły 2 z 3 punktów.
+**Dla Pawła:**
+**Zostało otwarte:** Z23 o 05:46. Bramki przed commitem nie przechodzą z powodu commita 1b96d14 innej sesji: spojnosc ma 11 rozjazdów (/wycena bez Header, Footer, description i canonical, do tego sierota; em-dash w app/api/streszczenie/route.ts; not-found nie bierze filarów z lib; „Streszczam” w StreszczenieAI.tsx; „robicie” w Czat.tsx), a jakosc ma 3 błędy pisowni na /_not-found (leadow, narzedzia, wlasny). Nie poprawiałem ich, bo to cudza praca w toku. Żądanie indeksowania RR można wysłać od 19.10 00:10, bo limit z 18.10 jest już zużyty.
