@@ -199,6 +199,9 @@ export default function MenuDesktop() {
   const [menu, setMenu] = useState<string | null>(null);
   const [kierunek, setKierunek] = useState(0);
   const [pigulka, setPigulka] = useState<{ x: number; w: number } | null>(null);
+  // Panel centrujemy na oknie, nie na pasku menu, bo pasek stoi bliżej lewej
+  // i przy węższych ekranach panel wychodził poza lewą krawędź.
+  const [korekta, ustawKorekte] = useState(0);
   const nav = useRef<HTMLElement | null>(null);
   const przyciski = useRef<Record<string, HTMLAnchorElement | null>>({});
   const poprzedni = useRef<string | null>(null);
@@ -209,6 +212,8 @@ export default function MenuDesktop() {
     const j = stary ? MENU.findIndex((m) => m.id === stary) : -1;
     setKierunek(j < 0 ? 0 : Math.sign(i - j));
     poprzedni.current = id;
+    const r = nav.current?.getBoundingClientRect();
+    if (r) ustawKorekte(window.innerWidth / 2 - (r.left + r.width / 2));
     setMenu(id);
   };
   const zamknij = () => {
@@ -285,7 +290,8 @@ export default function MenuDesktop() {
       <div
         id="menu-panel"
         hidden={!aktywna}
-        className="absolute left-1/2 top-full w-[min(76rem,calc(100vw-2rem))] -translate-x-1/2 pt-2"
+        className="absolute left-1/2 top-full w-[min(76rem,calc(100vw-2rem))] pt-2"
+        style={{ transform: `translateX(calc(-50% + ${korekta}px))` }}
       >
         {aktywna && (
           <div className="menu-panel overflow-hidden rounded-2xl border border-gray-200 bg-white p-5 shadow-2xl shadow-gray-900/10 dark:border-white/10 dark:bg-gray-900">

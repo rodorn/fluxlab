@@ -2,12 +2,12 @@
 
 import { useEffect, useState } from "react";
 
-const DOMYSLNY = "Formularz podpięty do CRM, cena z góry, gotowe w 2–3 tygodnie.";
+const DOMYSLNY = "Formularz podpięty do CRM, cena z góry, gotowe w 2\u2060–\u20603\u00a0tygodnie.";
 
 const WARIANTY: Record<string, string> = {
-  linkedin: "CRM dla firm B2B: lead trafia od razu do handlowca, cena z góry, gotowe w 2–3 tygodnie.",
-  google: "Strona z formularzem podpiętym do CRM, cena z góry, gotowe w 2–3 tygodnie.",
-  facebook: "Prosta strona i CRM dla Twojej firmy, cena z góry, gotowe w 2–3 tygodnie.",
+  linkedin: "CRM dla firm B2B: lead trafia od razu do handlowca, cena z góry, gotowe w 2\u2060–\u20603\u00a0tygodnie.",
+  google: "Strona z formularzem podpiętym do CRM, cena z góry, gotowe w 2\u2060–\u20603\u00a0tygodnie.",
+  facebook: "Prosta strona i CRM dla Twojej firmy, cena z góry, gotowe w 2\u2060–\u20603\u00a0tygodnie.",
 };
 
 function zrodlo(): string | null {

@@ -6,7 +6,24 @@ import ThemeToggle from "./ThemeToggle";
 import Znak from "./Znak";
 import Wyszukiwarka from "./Wyszukiwarka";
 import MenuDesktop from "./MenuDesktop";
-import { MENU } from "@/lib/menu";
+import { MENU, type LinkMenu, type PozycjaMenu } from "@/lib/menu";
+
+/** Na telefonie w kategorii pokazujemy tylko 5 linków, po kolei z każdej
+ *  kolumny, bo pełna lista przytłaczała. Resztę daje „Zobacz wszystko”. */
+const najwazniejsze = (p: PozycjaMenu): LinkMenu[] => {
+  const wynik: LinkMenu[] = [];
+  const najdluzsza = Math.max(...p.kolumny.map((k) => k.linki.length));
+  for (let i = 0; i < najdluzsza && wynik.length < 5; i++)
+    for (const k of p.kolumny)
+      if (
+        k.linki[i] &&
+        k.linki[i].href !== p.href &&
+        wynik.length < 5 &&
+        !wynik.some((x) => x.href === k.linki[i].href)
+      )
+        wynik.push(k.linki[i]);
+  return wynik;
+};
 
 
 const IKONA_LUPY = (
@@ -200,7 +217,7 @@ export default function Header() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="xl:hidden max-h-[calc(100vh-4rem)] overflow-y-auto border-t border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-950 px-5 py-4">
+        <div className="xl:hidden h-[calc(100dvh-4rem)] overflow-y-auto border-t border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-950 px-5 py-4">
           <nav aria-label="Menu mobilne" className="flex flex-col">
             {MENU.map((p) => (
               <div key={p.id}>
@@ -208,34 +225,25 @@ export default function Header() {
                   p.id,
                   p.etykieta,
                   <>
-                    {p.kolumny.map((k, i) => (
-                      <div key={i} className="mb-2">
-                        {k.tytul.trim() && (
-                          <p className="pt-1 text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-white/50">
-                            {k.tytul}
-                          </p>
+                    {najwazniejsze(p).map((x) => (
+                      <Link
+                        key={x.href + (x.cena ?? "")}
+                        href={x.href}
+                        onClick={zamknij}
+                        className={MOB_LINK}
+                      >
+                        {x.nazwa}
+                        {x.cena && (
+                          <span className="text-accent"> · {x.cena}</span>
                         )}
-                        {k.linki.map((x) => (
-                          <Link
-                            key={x.href + (x.cena ?? "")}
-                            href={x.href}
-                            onClick={zamknij}
-                            className={MOB_LINK}
-                          >
-                            {x.nazwa}
-                            {x.cena && (
-                              <span className="text-accent"> · {x.cena}</span>
-                            )}
-                          </Link>
-                        ))}
-                      </div>
+                      </Link>
                     ))}
                     <Link
-                      href={p.kafel.href}
+                      href={p.href}
                       onClick={zamknij}
                       className="block py-2 text-sm font-semibold text-accent"
                     >
-                      {p.kafel.tytul} →
+                      Zobacz wszystko →
                     </Link>
                   </>,
                 )}
