@@ -6039,3 +6039,11 @@ Otwarte decyzje dla stratega:
 **Dowód:** Z10: wątek https://forum.gofin.pl/1560141/gurschrifty-a-faktury-sprzedazy, termin 2026-10-18 16:00, unit fl-gofin-10 (nowe wątki sprawdzone do 1560150). Z11: fraza obecna, 0 zmian. Z12: https://fluxlab.pl/strefa-wiedzy/gutschrift-ksef, commity ab053ce i 41635d7, 200 z VPS, IndexNow 138 adresów.
 **Dla Pawła:**
 **Zostało otwarte:** Z13 (pomiar wieczorny 19:46) i dalej wg planu; g9 o 12:00 i g10 o 16:00 czekają w timerach. Z18 (seria indeksowania po 00:50): pierwszy adres to nowa /strefa-wiedzy/gutschrift-ksef.
+
+## 2026-10-18 11:10
+**Kanał:** pomiar (Z13), dystrybucja Gofin (Z14), Google (Z15), wg planu stratega z 18.10.
+**Co zrobione:** cztery nowe strony KSeF dostały drugi link z treści pokrewnych stron (samofakturowanie, data wystawienia, kontrahent zagraniczny, JDG zwolniona z VAT), a bramka spojnosc przestała blokować wdrożenia na fałszywym alarmie „MediaStream”; g11 nie powstał, bo na Gofinie nie ma nowego wątku bez odpowiedzi.
+**Ruch:** ostatnia doba 94 odsłony, 78 osób (+28% wobec średniej 73,6); najczęściej /kalkulator-podatkowy 10, / 7, /strefa-wiedzy/ryczalt-czy-liniowy 7; uruchomienia narzędzi 4. Po odsiewie (pomiar-kanalow): 48 ludzi, bez odsyłacza 39, instagram 3, linkedin 2, youtube 2, Google 1, Facebook 1, mail 1. Od 06:46: 13 sesji; kalkulator podatkowy 0 uruchomień u ludzi (1 = własny test 07:15), audyt 0; seria-podatki 1 sesja (youtube). Zoho 0 odpowiedzi firm, Resend 2 wysyłki spoza outreachu.
+**Dowód:** Z13: linia w planie. Z14: 0 wątków, sprawdzone do 1560172 (404 od 1560151); dział KSeF i VAT z 2 tygodni ma odpowiedzi. Z15: commity 02a9edc i e225da9, 4 linki obecne z VPS (200), sitemap lastmod 2026-10-18T08:48Z dla 3 stron, IndexNow 141 adresów (2 z 3). Bramki w czystym worktree: build, SPOJNOSC OK, JAKOSC OK (143 strony).
+**Dla Pawła:**
+**Zostało otwarte:** Z16 (pomiar Gofin, 22:46) i dalej wg planu; g9 12:00 i g10 16:00 w timerach. Jeśli do 22:00 pojawi się nowy wątek KSeF, można jeszcze dać g11 (20:00 do 22:30). W repo leżą niezacommitowane zmiany innej sesji (strona główna, czat, /szablony, /zmiany): przez nie `daty-stron.mjs` i bramki w głównym katalogu dają fałszywe wyniki, więc cykle zmieniające kod powinny budować w czystym worktree albo commitować tylko swoje pliki. faktura-vat-rr-ksef nadal bez linku z treści (brak frazy w innych stronach).
