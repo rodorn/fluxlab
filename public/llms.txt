@@ -167,6 +167,8 @@ JDG w 2026: ZUS, składka zdrowotna i forma opodatkowania, kalkulator na https:/
 - Ryczałt, składka zdrowotna miesięcznie: przychód roczny po odjęciu składek społecznych (art. 81 ust. 2h ustawy o świadczeniach) do 60 000 zł 498,35 zł, do 300 000 zł 830,58 zł, powyżej 1 495,04 zł (podstawa: przeciętne wynagrodzenie z IV kwartału 2025, 9 228,64 zł).
 - Na liniowym zapłaconą składkę zdrowotną odlicza się od dochodu do 14 100 zł w 2026 (w 2025 do 12 900 zł). Na ryczałcie połowę zapłaconej składki zdrowotnej odlicza się od przychodu (art. 11 ust. 1c ustawy o zryczałtowanym podatku dochodowym). Na skali odliczenia nie ma.
 - Skala: 12% do 120 000 zł dochodu, 32% powyżej, kwota wolna 30 000 zł. Liniowy: 19% od pierwszej złotówki. Ryczałt: stawka zależna od rodzaju usługi, od przychodu, bez kosztów.
+- Skala czy liniowy: licząc sam podatek, skala wygrywa do ok. 200 tys. zł rocznego dochodu; z podatkiem i składką zdrowotną (9% na skali bez odliczenia, 4,9% na liniowym z odliczeniem) liniowy opłaca się od ok. 150 tys. zł dochodu. Porównanie: https://fluxlab.pl/strefa-wiedzy/skala-czy-liniowy-jdg
+- Na ryczałcie zapłacone składki społeczne ZUS odlicza się od przychodu przed naliczeniem podatku (art. 11 ust. 1 ustawy o zryczałtowanym podatku dochodowym).
 
 Dopłata paliwowa na fakturach kurierskich, sprawdzenie jednej pozycji na https://fluxlab.pl/audyt-kurierski:
 - Publiczna tabela DPD dla okresu od 1 do 15 października 2026: paczka do 20 kg 35,9% ceny bazowej, powyżej 20 do 31,5 kg 41,7%, powyżej 31,5 kg 44,7%. Stawka zmienia się co dwa tygodnie, więc każdą linię faktury porównuje się ze stawką z daty nadania.
