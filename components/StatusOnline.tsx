@@ -39,7 +39,7 @@ export default function StatusOnline() {
   if (online === null) return null;
 
   return (
-    <p className="mt-6 flex items-center justify-center gap-2 text-xs text-gray-600 dark:text-gray-400">
+    <p className="mt-3 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-xs text-gray-600 dark:text-gray-400">
       <span className="relative flex h-2 w-2" aria-hidden="true">
         {online && (
           <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75" />
@@ -48,9 +48,9 @@ export default function StatusOnline() {
           className={`relative inline-flex h-2 w-2 rounded-full ${online ? "bg-green-500" : "bg-gray-400"}`}
         />
       </span>
-      {online ? "Jesteśmy online, odpisujemy na bieżąco" : "Odpiszemy od 9:00"}
-      <span aria-hidden="true">·</span>
-      <span>Warszawa, {czas}</span>
+      <span>{online ? "Jesteśmy online, odpisujemy na bieżąco" : "Odpiszemy od 9:00"}</span>
+      <span aria-hidden="true" className="hidden sm:inline">·</span>
+      <span className="w-full sm:w-auto">Warszawa, {czas}</span>
     </p>
   );
 }

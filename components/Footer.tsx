@@ -96,69 +96,61 @@ export default function Footer() {
           </Kolumna>
         </div>
 
-        <div className="border-t border-gray-100 dark:border-gray-800 mt-8 pt-6 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-          <div>
-            <span className="flex items-center gap-2 text-sm font-bold tracking-tight text-gray-900 dark:text-white">
-              <Znak className="h-5 w-5" />
-              <span>
-                flux<span className="text-accent">lab</span>
-              </span>
+        {/* Dół stopki jak u Tesli: jedna oś, drobne pozycje w rzędzie. */}
+        <div className="mt-8 border-t border-gray-100 pt-6 text-center text-xs text-gray-600 dark:border-gray-800 dark:text-gray-400">
+          <span className="inline-flex items-center gap-2 text-sm font-bold tracking-tight text-gray-900 dark:text-white">
+            <Znak className="h-5 w-5" />
+            <span>
+              flux<span className="text-accent">lab</span>
             </span>
-            <p className="mt-1 text-xs text-gray-600 dark:text-gray-400">
-              Strony, automatyzacja, dane dla firm B2B
-            </p>
-            <p className="mt-1 text-xs text-gray-600 dark:text-gray-400">
-              Paweł Iwanek, NIP 7123336008, REGON 366862577.{" "}
-              <a
-                href="https://www.podatki.gov.pl/wykaz-podatnikow-vat-wyszukiwarka"
-                target="_blank"
-                rel="noopener"
-                className="underline underline-offset-2 hover:text-accent transition-colors"
-              >
-                Sprawdź na białej liście VAT
-              </a>
-            </p>
-            <p className="mt-1 text-xs">
-              <a
-                href="mailto:pawel@fluxlab.pl"
-                className="text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
-              >
-                pawel@fluxlab.pl
-              </a>
-            </p>
-          </div>
-          <div className="flex flex-wrap gap-x-4 gap-y-2">
+          </span>
+          <p className="mx-auto mt-3 flex max-w-4xl flex-col items-center gap-y-1.5 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-x-2">
+            <span>Fluxlab © {new Date().getFullYear()}</span>
+            <span aria-hidden="true" className="hidden sm:inline">·</span>
+            <span>Paweł Iwanek, NIP 7123336008, REGON 366862577</span>
+            <span aria-hidden="true" className="hidden sm:inline">·</span>
+            <a
+              href="https://www.podatki.gov.pl/wykaz-podatnikow-vat-wyszukiwarka"
+              target="_blank"
+              rel="noopener"
+              className="hover:text-accent transition-colors"
+            >
+              Sprawdź na białej liście VAT
+            </a>
+            <span aria-hidden="true" className="hidden sm:inline">·</span>
+            <a href="mailto:pawel@fluxlab.pl" className="hover:text-accent transition-colors">
+              pawel@fluxlab.pl
+            </a>
+            <span aria-hidden="true" className="hidden sm:inline">·</span>
             <a
               href="https://www.facebook.com/profile.php?id=61595121744837"
               target="_blank"
               rel="noopener"
-              className="text-xs text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
+              className="hover:text-accent transition-colors"
             >
-              Obserwuj nas na Facebooku
+              Facebook
             </a>
+            <span aria-hidden="true" className="hidden sm:inline">·</span>
             <a
               href="https://zleca.pl/wykonawca/fluxlab-strony-internetowe-i-automatyzacja-1790016801"
               target="_blank"
               rel="noopener"
-              className="text-xs text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
+              className="hover:text-accent transition-colors"
             >
-              Nasza wizytówka w Zleca.pl
+              Zleca.pl
             </a>
-          </div>
+          </p>
+          <StatusOnline />
+          <p className="mt-2 flex flex-col items-center gap-y-1.5 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-x-2">
+            <Link href="/zmiany" className="hover:text-accent transition-colors">
+              <CzasZmiany iso={zmiany[0].data} />
+            </Link>
+            <span aria-hidden="true" className="hidden sm:inline">·</span>
+            <Link href="/jak-zbudowana" className="hover:text-accent transition-colors">
+              Jak zbudowana jest ta strona
+            </Link>
+          </p>
         </div>
-        <StatusOnline />
-        <p className="mt-2 text-center text-xs text-gray-600 dark:text-gray-400">
-          <Link href="/zmiany" className="hover:text-accent transition-colors">
-            <CzasZmiany iso={zmiany[0].data} />
-          </Link>
-          {" · "}
-          <Link href="/jak-zbudowana" className="hover:text-accent transition-colors">
-            Jak zbudowana jest ta strona
-          </Link>
-        </p>
-        <p className="mt-4 text-xs text-gray-600 dark:text-gray-400">
-          © {new Date().getFullYear()} Fluxlab. Wszelkie prawa zastrzeżone.
-        </p>
       </div>
     </footer>
   );
