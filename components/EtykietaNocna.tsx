@@ -6,8 +6,9 @@ import { useEffect, useState } from "react";
 export default function EtykietaNocna() {
   const [pokaz, setPokaz] = useState(false);
 
+  // Sprawdzamy co minutę, bo karta otwarta przed 22 też ma pokazać etykietę.
   useEffect(() => {
-    try {
+    const sprawdz = () => {
       const h = Number(
         new Intl.DateTimeFormat("pl-PL", {
           hour: "numeric",
@@ -15,8 +16,11 @@ export default function EtykietaNocna() {
           timeZone: "Europe/Warsaw",
         }).format(new Date()),
       );
-      if (h >= 22 || h < 6) setPokaz(true);
-    } catch {}
+      setPokaz(h >= 22 || h < 6);
+    };
+    sprawdz();
+    const t = window.setInterval(sprawdz, 60_000);
+    return () => window.clearInterval(t);
   }, []);
 
   if (!pokaz) return null;
