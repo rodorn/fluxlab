@@ -1,6 +1,6 @@
 "use client";
 
-import OsTerminu from "@/components/OsTerminu";
+import WyborTerminu from "@/components/WyborTerminu";
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { event as gaEvent } from "@/lib/gtag";
@@ -22,13 +22,6 @@ const FORMY: { id: Kontakt; nazwa: string; opis: string }[] = [
 ];
 
 
-// Wolne godziny z kalendarza Pawła (/api/terminy, lib/terminy.ts).
-type DzienTerminow = { data: string; godziny: string[] };
-
-function dataLokalna(iso: string) {
-  const [r, m, d] = iso.split("-").map(Number);
-  return new Date(r, m - 1, d);
-}
 
 interface Props {
   /** Identyfikator formularza w GA, np. "diagnosis_lp_leadow". */
@@ -61,22 +54,7 @@ export default function LandingForm({
   }));
   const formStartedRef = useRef(false);
   const [kontakt, setKontakt] = useState<Kontakt>("email");
-  const [dni, setDni] = useState<DzienTerminow[] | null>(null);
-  const [dzien, setDzien] = useState("");
-  const [godzina, setGodzina] = useState("");
-
-  useEffect(() => {
-    if (kontakt !== "meet" || dni) return;
-    fetch("/api/terminy")
-      .then((r) => r.json())
-      .then((d: { dni: DzienTerminow[] }) => {
-        setDni(d.dni);
-        setDzien(d.dni.find((x) => x.godziny.length)?.data ?? d.dni[0]?.data ?? "");
-      })
-      .catch(() => setDni([]));
-  }, [kontakt, dni]);
-
-  const wolneDzis = dni?.find((x) => x.data === dzien)?.godziny ?? [];
+  const [termin, setTermin] = useState("");
 
   useEffect(() => {
     setUtm(readUtm());
@@ -266,7 +244,7 @@ export default function LandingForm({
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    if (kontakt === "meet" && !godzina) {
+    if (kontakt === "meet" && !termin) {
       setErrorMsg("Wybierz godzinę spotkania.");
       return;
     }
@@ -288,7 +266,7 @@ export default function LandingForm({
           : "",
       termin:
         kontakt === "meet"
-          ? `${dzien} ${godzina.padStart(5, "0")}`
+          ? termin
           : "",
       website:
         (form.elements.namedItem("website") as HTMLInputElement | null)
@@ -523,68 +501,12 @@ export default function LandingForm({
         )}
 
         {kontakt === "meet" && (
-          <div className="scena-wjazd space-y-3">
-            <div>
-              <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
-                Dzień
-              </p>
-              {!dni ? (
-                <div className="grid grid-cols-4 gap-2 sm:grid-cols-8">
-                  {Array.from({ length: 8 }, (_, i) => (
-                    <div key={i} className="h-[52px] animate-pulse rounded-lg bg-gray-100 dark:bg-white/5" />
-                  ))}
-                </div>
-              ) : (
-                <div className="grid grid-cols-4 gap-2 sm:grid-cols-8">
-                  {dni.map((d) => {
-                    const data = dataLokalna(d.data);
-                    const pelny = d.godziny.length === 0;
-                    return (
-                      <button
-                        key={d.data}
-                        type="button"
-                        disabled={pelny}
-                        aria-pressed={dzien === d.data}
-                        onClick={() => {
-                          setDzien(d.data);
-                          setGodzina("");
-                        }}
-                        className={`rounded-lg border px-2 py-2 text-center text-xs transition-colors disabled:cursor-not-allowed disabled:opacity-40 ${
-                          dzien === d.data
-                            ? "border-accent bg-accent/10"
-                            : "border-gray-200 hover:border-accent/50 dark:border-gray-700"
-                        }`}
-                      >
-                        <span className="block font-semibold capitalize text-gray-900 dark:text-white">
-                          {data.toLocaleDateString("pl-PL", { weekday: "short" })}
-                        </span>
-                        <span className="block text-gray-500 dark:text-gray-400">
-                          {data.toLocaleDateString("pl-PL", { day: "numeric", month: "short" })}
-                        </span>
-                      </button>
-                    );
-                  })}
-                </div>
-              )}
-            </div>
-            <div>
-              <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
-                Godzina
-              </p>
-              <OsTerminu
-                key={dzien}
-                wolne={wolneDzis}
-                wybrana={godzina}
-                onWybierz={(t) => {
-                  setGodzina(t);
-                  setErrorMsg(null);
-                }}
-              />
-            </div>
-            <p className="text-center text-xs text-gray-500 dark:text-gray-400">
-              Pokazujemy tylko godziny wolne w naszym kalendarzu. Potwierdzimy zaproszeniem z linkiem do Meet.
-            </p>
-          </div>
+          <WyborTerminu
+            onZmiana={(t) => {
+              setTermin(t);
+              if (t) setErrorMsg(null);
+            }}
+          />
         )}
 
         <button

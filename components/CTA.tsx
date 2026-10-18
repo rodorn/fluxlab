@@ -8,6 +8,7 @@ import { zglosZdarzenie } from "@/lib/zdarzenie";
 import { readUtm, type UtmFields } from "@/lib/zrodlo";
 import { PROBLEM_TYPES, getScalesForType } from "@/lib/form-options";
 import PoleWyboru from "@/components/PoleWyboru";
+import WyborTerminu from "@/components/WyborTerminu";
 
 const inputClass =
   "w-full px-4 py-2.5 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-sm text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-colors disabled:opacity-50 disabled:cursor-not-allowed";
@@ -61,6 +62,7 @@ function CTAFormularz() {
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [contactPref, setContactPref] = useState("email");
+  const [termin, setTermin] = useState("");
   const [problemType, setProblemType] = useState("");
   const [problemScale, setProblemScale] = useState("");
   const scaleOptions = getScalesForType(problemType);
@@ -87,20 +89,26 @@ function CTAFormularz() {
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (contactPref === "meet" && !termin) {
+      setErrorMsg("Wybierz dzień i godzinę spotkania.");
+      return;
+    }
     setLoading(true);
     setErrorMsg(null);
     const form = e.currentTarget;
     const data = {
       email: (form.elements.namedItem("email") as HTMLInputElement).value,
       company: (form.elements.namedItem("company") as HTMLInputElement).value,
-      problemType: (form.elements.namedItem("problemType") as HTMLInputElement)
-        .value,
-      problemScale: (
-        form.elements.namedItem("problemScale") as HTMLInputElement
-      ).value,
+      problemType,
+      problemScale,
       message: (form.elements.namedItem("message") as HTMLTextAreaElement)
         .value,
       contactPref,
+      phone:
+        contactPref === "phone"
+          ? ((form.elements.namedItem("phone") as HTMLInputElement | null)?.value ?? "")
+          : "",
+      termin: contactPref === "meet" ? termin : "",
       website:
         (form.elements.namedItem("website") as HTMLInputElement | null)
           ?.value ?? "",
@@ -297,10 +305,7 @@ function CTAFormularz() {
                 id="contact-pref-label"
                 className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
               >
-                Preferowany kontakt{" "}
-                <span className="text-gray-600 dark:text-gray-400 font-normal text-xs">
-                  (opcjonalnie)
-                </span>
+                Jak mamy się odezwać?
               </p>
               <div className="flex flex-wrap gap-2">
                 {CONTACT_PREFS.map((opt) => (
@@ -320,6 +325,36 @@ function CTAFormularz() {
                 ))}
               </div>
             </div>
+
+            {contactPref === "phone" && (
+              <div className="scena-wjazd">
+                <label
+                  htmlFor="phone"
+                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5"
+                >
+                  Numer telefonu <span className="text-accent">*</span>
+                </label>
+                <input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  required
+                  autoComplete="tel"
+                  placeholder="np. 600 100 200"
+                  pattern="[+0-9 ()-]{9,20}"
+                  className={inputClass}
+                />
+              </div>
+            )}
+
+            {contactPref === "meet" && (
+              <WyborTerminu
+                onZmiana={(t) => {
+                  setTermin(t);
+                  if (t) setErrorMsg(null);
+                }}
+              />
+            )}
 
             <button
               type="submit"
