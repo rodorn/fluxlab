@@ -32,9 +32,10 @@ export default function Page() {
       slug="audyt-strony"
       tool={<AudytCheck />}
       breadcrumb="Audyt strony"
+      cena=""
       eyebrow="Darmowy audyt techniczny"
       h1="Zobacz, co jest nie tak z Twoją stroną, zanim komukolwiek zapłacisz"
-      lead="Wpisz adres i poczekaj kilkadziesiąt sekund. Zmierzymy szybkość na komputerze i telefonie, certyfikat, widoczność w wyszukiwarce, dostęp dla asystentów AI i zabezpieczenia poczty. Dostaniesz listę poprawek w kolejności, z ceną naprawy. Za darmo i bez rejestracji."
+      lead="Wpisz adres i poczekaj kilkadziesiąt sekund. Dostaniesz listę poprawek w kolejności, z ceną naprawy. Za darmo i bez rejestracji."
       ctaLabel="Zrób darmowy audyt"
       ctaNote="Diagnoza nic nie kosztuje"
       powiazane={[

@@ -453,24 +453,11 @@ export default function AudytCheck() {
 
   return (
     <div className="rounded-2xl border border-gray-200/80 bg-white/70 p-6 dark:border-gray-800/80 dark:bg-gray-900/50 md:p-8">
-      <h2 className="text-xl font-bold text-gray-900 dark:text-white">
+      <h2 className="sr-only text-xl sm:not-sr-only font-bold text-gray-900 dark:text-white">
         Darmowy audyt techniczny Twojej strony
       </h2>
-      <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-        Wpisz adres, a w kilkadziesiąt sekund zmierzymy szybkość na komputerze i
-        na telefonie, sprawdzimy certyfikat, widoczność w wyszukiwarce, dostęp
-        dla asystentów AI oraz zabezpieczenia poczty. Dostaniesz gotowy raport z
-        listą poprawek w kolejności i z ceną za naprawę. Bez rejestracji, bez
-        podawania adresu e-mail i bez żadnych dostępów do Twoich systemów.
-      </p>
 
-      <Przyklady
-        pozycje={[{ wartosc: "fluxlab.pl" }, { wartosc: "example.com" }]}
-        onWybor={uruchom}
-        zablokowane={stan === "ladowanie"}
-      />
-
-      <form onSubmit={sprawdz} className="mt-5 flex flex-col gap-3 sm:flex-row">
+      <form onSubmit={sprawdz} className="flex flex-col gap-3 sm:mt-5 sm:flex-row">
         <input
           type="text"
           inputMode="url"
@@ -489,6 +476,12 @@ export default function AudytCheck() {
           {stan === "ladowanie" ? "Badamy stronę..." : "Zrób darmowy audyt"}
         </button>
       </form>
+
+      <Przyklady
+        pozycje={[{ wartosc: "fluxlab.pl" }, { wartosc: "example.com" }]}
+        onWybor={uruchom}
+        zablokowane={stan === "ladowanie"}
+      />
 
       {stan === "ladowanie" && (
         // Wysokość zbliżona do wyniku, żeby w trakcie badania cennik nie
