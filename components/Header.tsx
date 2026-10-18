@@ -5,17 +5,7 @@ import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
 import Znak from "./Znak";
 import Wyszukiwarka from "./Wyszukiwarka";
-import { SEKCJE, type Sekcja } from "@/lib/sekcje";
-
-const sekcja = (slug: string): Sekcja => SEKCJE.find((x) => x.slug === slug)!;
-const USLUGI = sekcja("uslugi");
-const NARZEDZIA = sekcja("narzedzia");
-const CENNIK = sekcja("cennik");
-const WIEDZA = sekcja("strefa-wiedzy");
-const O_NAS = sekcja("o-nas");
-
-const BRANZE = USLUGI.grupy.find((g) => g.nazwa === "Branże")!;
-const FILARY_MENU = USLUGI.grupy.filter((g) => g.hub);
+import { MENU, type PozycjaMenu } from "@/lib/menu";
 
 const LINK_NAV =
   "relative whitespace-nowrap text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors";
@@ -25,9 +15,20 @@ const NAGLOWEK_PODMENU =
   "block px-2 pb-1 text-sm font-semibold text-gray-900 hover:text-accent dark:text-white";
 
 const IKONA_LUPY = (
-  <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+  <svg
+    width="18"
+    height="18"
+    viewBox="0 0 20 20"
+    fill="none"
+    aria-hidden="true"
+  >
     <circle cx="9" cy="9" r="6" stroke="currentColor" strokeWidth="1.7" />
-    <path d="M14 14l3.5 3.5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+    <path
+      d="M14 14l3.5 3.5"
+      stroke="currentColor"
+      strokeWidth="1.7"
+      strokeLinecap="round"
+    />
   </svg>
 );
 
@@ -135,73 +136,53 @@ export default function Header() {
     </div>
   );
 
-  const panelUslug = (
-    <div className="absolute left-1/2 top-full w-[min(60rem,calc(100vw-2rem))] -translate-x-1/2 rounded-xl border border-gray-200 bg-white p-4 shadow-xl dark:border-white/10 dark:bg-gray-900">
-      <div className="grid grid-cols-3 gap-4">
-        {FILARY_MENU.map((g) => (
-          <div key={g.nazwa}>
-            <Link href={g.hub!} onClick={zamknij} className={NAGLOWEK_PODMENU}>
-              {g.nazwa}
-            </Link>
+  const panel = (p: PozycjaMenu) => (
+    <div className="absolute left-1/2 top-full w-[min(64rem,calc(100vw-2rem))] -translate-x-1/2 rounded-2xl border border-gray-200 bg-white p-5 shadow-xl dark:border-white/10 dark:bg-gray-900">
+      <div className="grid auto-cols-fr grid-flow-col gap-5">
+        {p.kolumny.map((k, i) => (
+          <div key={i}>
+            <p className="px-2 pb-1.5 text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-white/50">
+              {k.tytul}
+            </p>
             <ul>
-              {g.strony
-                .filter((x) => x.href !== g.hub)
-                .map((x) => (
-                  <li key={x.href}>
-                    <Link
-                      href={x.href}
-                      onClick={zamknij}
-                      className={LINK_PODMENU}
-                    >
-                      {x.nazwa}
-                    </Link>
-                  </li>
-                ))}
+              {k.linki.map((x) => (
+                <li key={x.href + (x.cena ?? "")}>
+                  <Link
+                    href={x.href}
+                    onClick={zamknij}
+                    className={LINK_PODMENU}
+                  >
+                    {x.nazwa}
+                    {x.cena && (
+                      <span className="mt-0.5 block text-xs font-semibold text-accent">
+                        {x.cena}
+                      </span>
+                    )}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         ))}
-      </div>
-      <div className="mt-3 border-t border-gray-100 pt-3 dark:border-white/10">
-        <p className="px-2 pb-1 text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-white/50">
-          {BRANZE.nazwa}
-        </p>
-        <ul className="grid grid-cols-2 gap-x-4">
-          {BRANZE.strony.map((x) => (
-            <li key={x.href}>
-              <Link href={x.href} onClick={zamknij} className={LINK_PODMENU}>
-                {x.nazwa}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <Link
+          href={p.kafel.href}
+          onClick={zamknij}
+          className="group flex flex-col justify-between rounded-2xl bg-accent/[0.07] p-4 transition-colors hover:bg-accent/[0.12] dark:bg-accent/15 dark:hover:bg-accent/25"
+        >
+          <span>
+            <span className="block text-base font-bold text-gray-900 dark:text-white">
+              {p.kafel.tytul}
+            </span>
+            <span className="mt-1 block text-[13px] leading-snug text-gray-600 dark:text-white/65">
+              {p.kafel.opis}
+            </span>
+          </span>
+          <span className="mt-4 text-sm font-semibold text-accent">
+            {p.kafel.cta} →
+          </span>
+        </Link>
       </div>
     </div>
-  );
-
-  const panelONas = (
-    <div className="absolute right-0 top-full w-60 rounded-xl border border-gray-200 bg-white p-2 shadow-xl dark:border-white/10 dark:bg-gray-900">
-      <ul>
-        {O_NAS.grupy
-          .flatMap((g) => g.strony)
-          .map((x) => (
-            <li key={x.href}>
-              <Link
-                href={x.href}
-                onClick={zamknij}
-                className={`${LINK_PODMENU} px-3 py-2 text-sm`}
-              >
-                {x.nazwa}
-              </Link>
-            </li>
-          ))}
-      </ul>
-    </div>
-  );
-
-  const prosty = (s: Sekcja, etykieta: string) => (
-    <Link href={s.hub!} className={LINK_NAV}>
-      {etykieta}
-    </Link>
   );
 
   const MOB_LINK =
@@ -253,20 +234,15 @@ export default function Header() {
         {/* Desktop nav */}
         <nav
           aria-label="Menu główne"
-          className="hidden lg:flex items-center gap-7 absolute left-1/2 -translate-x-1/2"
+          className="relative hidden xl:flex flex-1 items-center justify-center gap-6 px-6"
         >
-          <Link href="/strony-www" className={LINK_NAV}>
-            Strony internetowe
-          </Link>
-          {rozwijane("uslugi", "Usługi", panelUslug, "")}
-          {prosty(NARZEDZIA, "Narzędzia")}
-          {prosty(CENNIK, "Cennik")}
-          {prosty(WIEDZA, "Strefa wiedzy")}
-          {rozwijane("o-nas", "O nas", panelONas)}
+          {MENU.map((p) => (
+            <div key={p.id}>{rozwijane(p.id, p.etykieta, panel(p), "")}</div>
+          ))}
         </nav>
 
         {/* Right */}
-        <div className="hidden lg:flex items-center gap-3 shrink-0">
+        <div className="hidden xl:flex items-center gap-3 shrink-0">
           <button
             type="button"
             onClick={() => setSzukaj(true)}
@@ -284,7 +260,7 @@ export default function Header() {
         </div>
 
         {/* Mobile */}
-        <div className="lg:hidden flex items-center gap-1">
+        <div className="xl:hidden flex items-center gap-1">
           <button
             type="button"
             onClick={() => setSzukaj(true)}
@@ -325,87 +301,47 @@ export default function Header() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="lg:hidden max-h-[calc(100vh-4rem)] overflow-y-auto border-t border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-950 px-5 py-4">
+        <div className="xl:hidden max-h-[calc(100vh-4rem)] overflow-y-auto border-t border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-950 px-5 py-4">
           <nav aria-label="Menu mobilne" className="flex flex-col">
-            <Link
-              href="/strony-www"
-              onClick={zamknij}
-              className="border-b border-gray-100 py-2.5 text-sm font-medium text-gray-700 hover:text-accent transition-colors dark:border-gray-800 dark:text-gray-200"
-            >
-              Strony internetowe
-            </Link>
-            {mobGrupaPrzycisk(
-              "uslugi",
-              "Usługi",
-              <>
-                {FILARY_MENU.map((g) => (
-                  <div key={g.nazwa} className="mb-2">
+            {MENU.map((p) => (
+              <div key={p.id}>
+                {mobGrupaPrzycisk(
+                  p.id,
+                  p.etykieta,
+                  <>
+                    {p.kolumny.map((k, i) => (
+                      <div key={i} className="mb-2">
+                        {k.tytul.trim() && (
+                          <p className="pt-1 text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-white/50">
+                            {k.tytul}
+                          </p>
+                        )}
+                        {k.linki.map((x) => (
+                          <Link
+                            key={x.href + (x.cena ?? "")}
+                            href={x.href}
+                            onClick={zamknij}
+                            className={MOB_LINK}
+                          >
+                            {x.nazwa}
+                            {x.cena && (
+                              <span className="text-accent"> · {x.cena}</span>
+                            )}
+                          </Link>
+                        ))}
+                      </div>
+                    ))}
                     <Link
-                      href={g.hub!}
+                      href={p.kafel.href}
                       onClick={zamknij}
-                      className="block py-2 text-sm font-semibold text-gray-900 dark:text-white"
+                      className="block py-2 text-sm font-semibold text-accent"
                     >
-                      {g.nazwa}
+                      {p.kafel.tytul} →
                     </Link>
-                    {g.strony
-                      .filter((x) => x.href !== g.hub)
-                      .map((x) => (
-                        <Link
-                          key={x.href}
-                          href={x.href}
-                          onClick={zamknij}
-                          className={MOB_LINK}
-                        >
-                          {x.nazwa}
-                        </Link>
-                      ))}
-                  </div>
-                ))}
-                <p className="pt-1 text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-white/50">
-                  {BRANZE.nazwa}
-                </p>
-                {BRANZE.strony.map((x) => (
-                  <Link
-                    key={x.href}
-                    href={x.href}
-                    onClick={zamknij}
-                    className={MOB_LINK}
-                  >
-                    {x.nazwa}
-                  </Link>
-                ))}
-              </>,
-            )}
-            {[
-              [NARZEDZIA, "Narzędzia"],
-              [CENNIK, "Cennik"],
-              [WIEDZA, "Strefa wiedzy"],
-            ].map(([s, etykieta]) => (
-              <Link
-                key={(s as Sekcja).slug}
-                href={(s as Sekcja).hub!}
-                onClick={zamknij}
-                className="border-b border-gray-100 py-2.5 text-sm font-medium text-gray-700 hover:text-accent transition-colors dark:border-gray-800 dark:text-gray-200"
-              >
-                {etykieta as string}
-              </Link>
+                  </>,
+                )}
+              </div>
             ))}
-            {mobGrupaPrzycisk(
-              "o-nas",
-              "O nas",
-              O_NAS.grupy
-                .flatMap((g) => g.strony)
-                .map((x) => (
-                  <Link
-                    key={x.href}
-                    href={x.href}
-                    onClick={zamknij}
-                    className={MOB_LINK}
-                  >
-                    {x.nazwa}
-                  </Link>
-                )),
-            )}
             <Link
               href="/kontakt"
               onClick={zamknij}

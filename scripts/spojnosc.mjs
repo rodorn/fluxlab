@@ -248,11 +248,13 @@ const POWIERZCHNIE_NAWIGACJI = [
   "components/Footer.tsx",
   "app/page.tsx",
   "components/Strona404.tsx",
+  "lib/menu.ts",
 ];
 for (const plik of POWIERZCHNIE_NAWIGACJI) {
   if (!exists(plik)) continue;
   const tresc = read(plik);
-  if (!tresc.includes("@/lib/filary") && !tresc.includes("@/lib/sekcje")) {
+  // Header bierze całe menu z lib/menu.ts, które samo jest tu sprawdzane.
+  if (!tresc.includes("@/lib/filary") && !tresc.includes("@/lib/sekcje") && !tresc.includes("@/lib/menu")) {
     add("filar", `${plik}: nazywa filary, nie biorac ich z lib/filary.ts ani lib/sekcje.ts`);
     continue;
   }
