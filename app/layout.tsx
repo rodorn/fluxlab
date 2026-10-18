@@ -8,6 +8,7 @@ import LicznikWizyt from "@/components/LicznikWizyt";
 import ContactClickTracker from "@/components/ContactClickTracker";
 import ScrollProgress from "@/components/ScrollProgress";
 import Czat from "@/components/Czat";
+import NowaWersja from "@/components/NowaWersja";
 import ScrollToTop from "@/components/ScrollToTop";
 import TytulKarty from "@/components/TytulKarty";
 import MagnesPrzyciskow from "@/components/MagnesPrzyciskow";
@@ -194,6 +195,7 @@ export default function RootLayout({
         <MagnesPrzyciskow />
         <KomunikatKonsoli />
         <Czat />
+        <NowaWersja />
         <SpeedInsights />
         <Analytics />
       </body>
