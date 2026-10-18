@@ -15,7 +15,7 @@ const POWITANIE: Wiadomosc = {
 const PODPOWIEDZI = [
   "Ile kosztuje strona firmowa?",
   "Jak działa pilotaż CRM za 1 zł?",
-  "Jak szybko robicie stronę?",
+  "Jak szybko robicie stronę?", // głos klienta
 ];
 
 function zLinkami(tekst: string) {

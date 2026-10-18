@@ -129,7 +129,7 @@ export default function GeneratorHasla() {
             disabled={ladowanie}
             className="btn-primary disabled:opacity-60"
           >
-            {ladowanie ? "Piszemy..." : "Pokaż moją stronę"}
+            {ladowanie ? "Piszemy..." : "Pokaż podgląd strony"}
           </button>
         </form>
         {blad && (

@@ -149,7 +149,7 @@ export async function POST(req: Request) {
     }
 
     const czyste = (punkty as string[]).map((p) =>
-      p.trim().replace(/\s*[—–]\s*/g, ", "),
+      p.trim().replace(/\s*[\u2014\u2013]\s*/g, ", "),
     );
     if (cache.size >= CACHE_MAX) {
       const pierwszy = cache.keys().next().value;

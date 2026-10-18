@@ -5,6 +5,8 @@ import { dekodujWycene } from "@/lib/wycenaPdf";
 
 export const metadata: Metadata = {
   title: "Wycena orientacyjna | FluxLab",
+  description: "Wycena orientacyjna z konfiguratora FluxLab, do zapisania jako PDF.",
+  alternates: { canonical: "/wycena" },
   robots: { index: false, follow: false },
 };
 

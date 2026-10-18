@@ -20,8 +20,9 @@ type Karta = {
   odpowiedz: string;
 };
 
-const PRZYKLADY = [
-  "Salon fryzjerski w Krakowie, potrzebuję strony z rezerwacją wizyt. Budżet ok. 5 tys., najlepiej przed świętami.",
+// Przykłady wpisuje odwiedzający, więc mówią jego głosem.
+const PRZYKLADY = [ // głos klienta
+  "Salon fryzjerski w Krakowie, potrzebuję strony z rezerwacją wizyt. Budżet ok. 5 tys., najlepiej przed świętami.", // głos klienta
   "Biuro rachunkowe, 40 klientów. Chcemy przestać przepisywać faktury ręcznie, od stycznia KSeF.",
   "Mam sklep z częściami rowerowymi, leady z formularza giną w skrzynce. Pilne.",
 ];

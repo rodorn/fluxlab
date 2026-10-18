@@ -110,7 +110,7 @@ export default function StreszczenieAI() {
           <path d="M12 2l1.9 5.6a3 3 0 001.9 1.9L21.5 11.5l-5.7 2a3 3 0 00-1.9 1.9L12 21l-1.9-5.6a3 3 0 00-1.9-1.9L2.5 11.5l5.7-2a3 3 0 001.9-1.9L12 2z" />
           <path d="M19 2l.7 2.1a1.5 1.5 0 00.9.9L22.7 6l-2.1.7a1.5 1.5 0 00-.9.9L19 9.7l-.7-2.1a1.5 1.5 0 00-.9-.9L15.3 6l2.1-.7a1.5 1.5 0 00.9-.9L19 2z" />
         </svg>
-        {stan === "laduje" ? "Streszczam..." : "Streść w 3 punktach"}
+        {stan === "laduje" ? "Streszczamy..." : "Streść w 3 punktach"}
       </button>
 
       <div aria-live="polite">

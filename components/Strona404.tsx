@@ -2,11 +2,11 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { FILARY } from "@/lib/filary";
 
 const STRONY = [
-  { t: "Strony WWW", h: "/strony-www" },
+  ...FILARY.map((f) => ({ t: f.nazwa, h: f.href })),
   { t: "Własny CRM", h: "/wlasny-crm" },
-  { t: "Automatyzacja leadów i CRM", h: "/automatyzacja-leadow-crm" },
   { t: "Darmowy audyt strony", h: "/audyt-strony" },
   { t: "Produkty", h: "/produkty" },
   { t: "Narzędzia", h: "/narzedzia" },
@@ -92,7 +92,7 @@ export default function Strona404() {
               className="flex items-center justify-between rounded-xl px-4 py-2 bg-white/70 dark:bg-white/5 ring-1 ring-gray-200/60 dark:ring-white/10 hover:ring-accent/40 text-gray-900 dark:text-white hover:text-accent transition-colors"
             >
               <span className="font-medium">{s.t}</span>
-              <span className="text-xs text-gray-500 dark:text-gray-400">{s.h}</span>
+              <code className="font-sans text-xs text-gray-500 dark:text-gray-400">{s.h}</code>
             </Link>
           </li>
         ))}

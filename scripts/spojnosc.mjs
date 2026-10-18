@@ -247,7 +247,7 @@ const POWIERZCHNIE_NAWIGACJI = [
   "components/Header.tsx",
   "components/Footer.tsx",
   "app/page.tsx",
-  "app/not-found.tsx",
+  "components/Strona404.tsx",
 ];
 for (const plik of POWIERZCHNIE_NAWIGACJI) {
   if (!exists(plik)) continue;
@@ -333,7 +333,7 @@ for (const f of sourceFiles) {
 // regulaminu, polityki prywatnosci i danych firmy, a /audyt-poczty nie miala
 // ani menu, ani stopki. Wchodzacy z Google na te dwa adresy nie widzial, kto
 // stoi za strona. /cv jest osobnym dokumentem, nie czescia oferty.
-const BEZ_RAMY = new Set(["app/cv/page.tsx"]);
+const BEZ_RAMY = new Set(["app/cv/page.tsx", "app/wycena/page.tsx"]);
 for (const plik of walk("app").filter(
   (f) => f.endsWith("/page.tsx") && !BEZ_RAMY.has(f),
 )) {
@@ -470,7 +470,8 @@ for (const f of pages) {
   const linked =
     allSource.includes(`href="${route}"`) ||
     allSource.includes(`href: "${route}"`) ||
-    allSource.includes(`"${route}"`);
+    allSource.includes(`"${route}"`) ||
+    allSource.includes(`\`${route}?`);
   if (!linked) add("sierota", `${route}: zadna strona do niej nie linkuje`);
 }
 
@@ -692,6 +693,8 @@ if (sankcjeDaty.size > 1) {
         const t = l.trim();
         if (t.startsWith("//") || t.startsWith("*") || t.startsWith("/*"))
           return;
+        // Zdanie wpisywane przez odwiedzającego, oznaczone na końcu linii.
+        if (l.includes("// głos klienta")) return;
         // Identyfikatory zdarzen licznika (audyt_klik_zlecam) nie sa tekstem
         // dla czytelnika, a ich zmiana zerwalaby ciaglosc danych w statystykach.
         const bezCytatow = l
@@ -746,6 +749,7 @@ if (sankcjeDaty.size > 1) {
             return;
           // Pytanie FAQ zadaje klient do nas („Czy robicie sklepy?”).
           if (/^(q|question|pytanie):/.test(t)) return;
+          if (l.includes("// głos klienta")) return;
           const tekst = l
             .replace(CYTAT, "")
             .replace(/[\p{L}\w]+\s*[(:]/gu, " ")
