@@ -143,6 +143,39 @@ function Polaczenia({
   );
 }
 
+/** Ikona pogody wg kodu WMO z Open-Meteo: słońce, chmura, deszcz albo śnieg. */
+function IkonaPogody({ kod }: { kod: number }) {
+  const snieg = (kod >= 71 && kod <= 77) || kod === 85 || kod === 86;
+  const deszcz = !snieg && kod >= 51;
+  const slonce = kod <= 1;
+  return (
+    <svg
+      width="14"
+      height="14"
+      viewBox="0 0 16 16"
+      aria-hidden="true"
+      className={slonce ? "text-amber-500" : "text-gray-500 dark:text-white/60"}
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.4"
+      strokeLinecap="round"
+    >
+      {slonce ? (
+        <>
+          <circle cx="8" cy="8" r="3" fill="currentColor" />
+          <path d="M8 1.5v1.5M8 13v1.5M1.5 8H3M13 8h1.5M3.4 3.4l1 1M11.6 11.6l1 1M3.4 12.6l1-1M11.6 4.4l1-1" />
+        </>
+      ) : (
+        <>
+          <path d="M4.5 10.5a2.8 2.8 0 0 1 .3-5.6 3.6 3.6 0 0 1 6.9 1 2.3 2.3 0 0 1-.2 4.6z" />
+          {deszcz && <path d="M5.5 12.5l-.6 1.5M8.5 12.5l-.6 1.5M11.5 12.5l-.6 1.5" />}
+          {snieg && <path d="M5.5 13.2h.01M8.5 13.8h.01M11.5 13.2h.01" strokeWidth="2" />}
+        </>
+      )}
+    </svg>
+  );
+}
+
 export default function ScenaLeada() {
   const [tekst, setTekst] = useState(PRZYKLADY[0]);
   const [stan, setStan] = useState<"start" | "czeka" | "gotowe" | "blad">(
@@ -196,6 +229,22 @@ export default function ScenaLeada() {
     ustaw();
     const t = window.setInterval(ustaw, 30_000);
     return () => window.clearInterval(t);
+  }, []);
+  // Miasto i temperatura pod zegarem, jak na ekranie blokady Androida.
+  const [pogoda, setPogoda] = useState<{
+    miasto: string;
+    temp: number | null;
+    kod: number | null;
+  } | null>(null);
+  useEffect(() => {
+    const ac = new AbortController();
+    fetch("/api/miasto", { signal: ac.signal })
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d) => {
+        if (d && typeof d.miasto === "string") setPogoda(d);
+      })
+      .catch(() => {});
+    return () => ac.abort();
   }, []);
 
   useEffect(
@@ -423,7 +472,20 @@ export default function ScenaLeada() {
           <p className="mt-6 text-center text-4xl font-semibold tabular-nums tracking-tight text-gray-900 dark:text-white">
             {godzina || "\u00a0"}
           </p>
-          <p className="text-center text-[11px] text-gray-500 dark:text-white/50">
+          <p
+            className={`flex h-4 items-center justify-center gap-1 text-xs font-medium text-gray-700 transition-opacity duration-700 dark:text-white/75 ${
+              pogoda ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            {pogoda && (
+              <>
+                {pogoda.kod !== null && <IkonaPogody kod={pogoda.kod} />}
+                {pogoda.miasto}
+                {pogoda.temp !== null && ` ${pogoda.temp}°`}
+              </>
+            )}
+          </p>
+          <p className="mt-1 text-center text-[11px] text-gray-500 dark:text-white/50">
             Telefon handlowca
           </p>
           <div className="mt-5 text-left">

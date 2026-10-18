@@ -11,7 +11,6 @@ import IntroZnaku from "@/components/IntroZnaku";
 import EtykietaNocna from "@/components/EtykietaNocna";
 import NaglowekSklada from "@/components/NaglowekSklada";
 import PodtytulZrodlo from "@/components/PodtytulZrodlo";
-import MiastoHero from "@/components/MiastoHero";
 import RevealOnScroll from "@/components/RevealOnScroll";
 import ScenaLeada from "@/components/ScenaLeada";
 import CountUp from "@/components/CountUp";
@@ -96,7 +95,6 @@ export default function Home() {
               Sprawdź swoją stronę
             </Link>
           </div>
-          <MiastoHero />
         </section>
 
         <section aria-labelledby="oferta" className="container-wide pb-16">
