@@ -64,7 +64,7 @@ const OFERTA = [
 const KROKI = [
   ["Piszesz, czego potrzebujesz", "Dwa zdania w formularzu albo mail."],
   ["Dostajesz cenę i termin", "Zwykle tego samego dnia, bez spotkań."],
-  ["Strona działa po 2–3 tygodniach", "Płacisz za efekt, nie za godziny."],
+  ["Strona albo CRM działa po 2\u2060–\u20603\u00a0tygodniach", "Płacisz za efekt, nie za godziny."],
 ];
 
 const MANIFEST = KROKI[2][1];
@@ -206,7 +206,6 @@ export default function Home() {
             <RevealOnScroll delay={1}>
               <ScenaLeada />
             </RevealOnScroll>
-            <KrokiSticky kroki={KROKI} />
           </div>
         </section>
 
@@ -223,6 +222,7 @@ export default function Home() {
               submitLabel="Wyślij"
             />
 </RevealOnScroll>
+            <KrokiSticky kroki={KROKI} />
           </div>
         </section>
       </main>
