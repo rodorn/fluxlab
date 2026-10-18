@@ -34,7 +34,7 @@ function idSesji(): string {
 function sterowanaSkryptem(): boolean {
   try {
     if (navigator.webdriver) return true;
-    return /HeadlessChrome|Puppeteer|Playwright|bot|crawler|spider/i.test(
+    return /HeadlessChrome|Puppeteer|Playwright|Lighthouse|InspectionTool|bot|crawler|spider/i.test(
       navigator.userAgent,
     );
   } catch {

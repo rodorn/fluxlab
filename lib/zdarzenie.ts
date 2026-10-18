@@ -10,7 +10,7 @@ export function zglosZdarzenie(zdarzenie: string, sciezka?: string): void {
   try {
     if (
       navigator.webdriver ||
-      /HeadlessChrome|Puppeteer|Playwright|bot|crawler|spider/i.test(
+      /HeadlessChrome|Puppeteer|Playwright|Lighthouse|InspectionTool|bot|crawler|spider/i.test(
         navigator.userAgent,
       )
     ) {
