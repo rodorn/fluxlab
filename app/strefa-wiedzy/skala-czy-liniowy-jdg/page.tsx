@@ -166,7 +166,7 @@ export default function SkalaCzyLiniowyJdgArticle() {
                       <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
                         <li>
                           <strong>Dochód 80 000 zł:</strong> skala 13 200 zł,
-                          liniowy 18 375 zł. Skala tańsza o ok. 5 175 zł.
+                          liniowy 19 309 zł. Skala tańsza o ok. 6 109 zł.
                         </li>
                         <li>
                           <strong>Dochód 110 000 zł:</strong> skala 19 500 zł,

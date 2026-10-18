@@ -125,14 +125,14 @@ export default function MalyZusPlusArticle() {
                         Ile można zaoszczędzić
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Podstawa to roczny dochód podzielony przez liczbę dni
-                        działalności, razy 30. Nie mniej niż 1 441,80 zł i nie
-                        więcej niż 5 652 zł.
+                        Podstawa to połowa dochodu: roczny dochód przez liczbę
+                        dni działalności, razy 30, razy 0,5. Nie mniej niż
+                        1 441,80 zł i nie więcej niż 5 652 zł.
                       </p>
                       <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
                         <li>Pełny ZUS: ok. 1 788 zł/mies. składek społecznych</li>
-                        <li>Dochód 5 000 zł/mies.: ok. 1 560 zł, oszczędność ok. 228 zł/mies.</li>
-                        <li>Dochód 3 000 zł/mies.: ok. 936 zł, oszczędność ok. 852 zł/mies.</li>
+                        <li>Dochód 5 000 zł/mies.: ok. 780 zł, oszczędność ok. 1 008 zł/mies.</li>
+                        <li>Dochód 3 000 zł/mies.: ok. 468 zł, oszczędność ok. 1 320 zł/mies.</li>
                       </ul>
 
                       <div className="bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-8 text-center mt-12">
