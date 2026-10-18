@@ -59,7 +59,7 @@ export default function ZapierVsMakeArticle() {
     <>
       <Header />
       <main className="pt-16">
-        <Breadcrumbs href="/strefa-wiedzy/zapier-vs-make" kolumna="srodek"
+        <Breadcrumbs href="/strefa-wiedzy/zapier-vs-make"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Zapier vs Make" },

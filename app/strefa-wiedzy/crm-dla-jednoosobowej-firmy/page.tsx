@@ -67,7 +67,7 @@ export default function CrmDlaJednoosobowejFirmyArticle() {
     <>
       <Header />
       <main className="pt-16 prose-justify">
-        <Breadcrumbs href="/strefa-wiedzy/crm-dla-jednoosobowej-firmy" kolumna="waska"
+        <Breadcrumbs href="/strefa-wiedzy/crm-dla-jednoosobowej-firmy"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "CRM dla jednoosobowej firmy, co wybrać" },
@@ -75,12 +75,12 @@ export default function CrmDlaJednoosobowejFirmyArticle() {
         />
 
         <section className="pt-24 pb-10">
-          <div className="container-wide max-w-3xl mx-auto">
+          <div className="container-wide max-w-3xl mx-auto text-center">
             <span className="section-label">Strefa wiedzy</span>
             <h1 className="mt-4 h1-artykulu">
               CRM dla jednoosobowej firmy, co wybrać
             </h1>
-            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed !text-left">
+            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
               W jednoosobowej firmie CRM ma przypominać, do kogo wrócić, i
               pokazywać, gdzie utknęły rozmowy. Wszystko poza tym to
               overengineering.

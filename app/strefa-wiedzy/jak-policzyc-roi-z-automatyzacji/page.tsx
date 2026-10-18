@@ -62,7 +62,7 @@ export default function RoiAutomatyzacjiArticle() {
     <>
       <Header />
       <main className="pt-16 prose-justify">
-        <Breadcrumbs href="/strefa-wiedzy/jak-policzyc-roi-z-automatyzacji" kolumna="srodek"
+        <Breadcrumbs href="/strefa-wiedzy/jak-policzyc-roi-z-automatyzacji"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Jak policzyć ROI z automatyzacji" },
@@ -74,7 +74,7 @@ export default function RoiAutomatyzacjiArticle() {
             <h1 className="mt-4 h1-artykulu">
               Jak policzyć ROI z automatyzacji
             </h1>
-            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed !text-left">
+            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
               Wdrożenie jest odwlekane, bo nikt nie umie go obronić liczbami. A
               ROI da się policzyć prościej, niż się wydaje, bez idealnego modelu
               na start.

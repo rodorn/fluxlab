@@ -55,7 +55,7 @@ export default function MalyZusPlusArticle() {
     <>
       <Header />
       <main className="pt-16">
-        <Breadcrumbs href="/strefa-wiedzy/maly-zus-plus-kiedy-sie-oplaca" kolumna="srodek"
+        <Breadcrumbs href="/strefa-wiedzy/maly-zus-plus-kiedy-sie-oplaca"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Mały ZUS Plus, kiedy się opłaca" },

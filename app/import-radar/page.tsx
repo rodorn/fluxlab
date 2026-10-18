@@ -104,10 +104,9 @@ export default function ImportRadarPage() {
 
         {/* Hero */}
         <section className="relative overflow-hidden pt-24 pb-12">
-          <div className="blob blob-accent -z-10 -top-32 -right-24 h-96 w-96" />
           <div className="container-wide">
-          <div className="max-w-3xl mx-auto">
-            <p className="section-label mb-5">Narzędzie</p>
+          <div className="max-w-3xl mx-auto text-center">
+            <p className="section-label mb-3">Narzędzie</p>
             <h1 className="h1-strony text-gray-900 dark:text-white">
               Sprawdź, czy import z Niemiec naprawdę się opłaca
             </h1>

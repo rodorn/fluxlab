@@ -58,7 +58,7 @@ export default function AutomatyzacjaProcesowArticle() {
     <>
       <Header />
       <main className="pt-16 prose-justify">
-        <Breadcrumbs href="/strefa-wiedzy/co-to-jest-automatyzacja-procesow-biznesowych" kolumna="waska"
+        <Breadcrumbs href="/strefa-wiedzy/co-to-jest-automatyzacja-procesow-biznesowych"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Co to jest automatyzacja procesów biznesowych?" },
@@ -66,15 +66,17 @@ export default function AutomatyzacjaProcesowArticle() {
         />
 
         <article className="max-w-3xl mx-auto px-6 lg:px-8 pt-16 pb-8">
+          <div className="text-center">
           <span className="section-label">Strefa wiedzy</span>
           <h1 className="mt-4 h1-artykulu">
             Co to jest automatyzacja procesów biznesowych?
           </h1>
-          <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed !text-left">
+          <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
             To przeniesienie powtarzalnej pracy z ludzi na systemy. Zamiast
             przepisywania danych i pilnowania kroków z pamięci, proces działa
             sam, szybciej i z mniejszą liczbą błędów.
           </p>
+          </div>
 
           <h2 className={h2}>Czym jest w praktyce</h2>
           <p className={p}>

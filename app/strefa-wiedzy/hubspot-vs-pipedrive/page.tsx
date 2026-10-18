@@ -62,7 +62,7 @@ export default function HubspotVsPipedriveArticle() {
     <>
       <Header />
       <main className="pt-16 prose-justify">
-        <Breadcrumbs href="/strefa-wiedzy/hubspot-vs-pipedrive" kolumna="waska"
+        <Breadcrumbs href="/strefa-wiedzy/hubspot-vs-pipedrive"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "HubSpot vs Pipedrive, który CRM dla małej firmy" },
@@ -71,15 +71,17 @@ export default function HubspotVsPipedriveArticle() {
 
         <section className="pt-16 pb-6">
           <div className="container-wide max-w-3xl mx-auto">
+            <div className="text-center">
             <span className="section-label">Strefa wiedzy</span>
             <h1 className="mt-4 h1-artykulu">
               HubSpot vs Pipedrive, który CRM dla małej firmy
             </h1>
-            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed !text-left">
+            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
               HubSpot to platforma marketingowa, w której CRM jest jedną z
               części. Pipedrive to czysty pipeline sprzedażowy. O wyborze
               decyduje sposób, w jaki firma pozyskuje klientów.
             </p>
+            </div>
 
             <h2 className={h2}>Cennik 2026, orientacyjnie</h2>
             <ul className={ul}>

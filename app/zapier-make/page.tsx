@@ -69,13 +69,12 @@ export default function ZapierMake() {
     <>
       <Header />
       <main>
-        <Breadcrumbs href="/zapier-make" kolumna="srodek" items={[{ label: "Zapier vs Make" }]} />
+        <Breadcrumbs href="/zapier-make" items={[{ label: "Zapier vs Make" }]} />
 
         {/* Hero, kompaktowy */}
         <section className="relative overflow-hidden pt-24 pb-12">
-          <div className="blob blob-accent -z-10 top-[-10%] right-[-5%]" />
-          <div className="container-wide max-w-3xl mx-auto">
-            <p className="section-label mb-5">Usługa</p>
+          <div className="container-wide max-w-3xl mx-auto text-center">
+            <p className="section-label mb-3">Usługa</p>
             <h1 className="h1-strony mb-6">
               Zapier vs Make
             </h1>

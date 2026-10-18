@@ -129,11 +129,11 @@ export default function KosztRecznejObslugiLeadow() {
     <>
       <Header />
       <main className="pt-16">
-        <Breadcrumbs href="/koszt-recznej-obslugi-leadow" kolumna="srodek" items={[{ label: "Koszt ręcznej obsługi leadów" }]} />
+        <Breadcrumbs href="/koszt-recznej-obslugi-leadow" items={[{ label: "Koszt ręcznej obsługi leadów" }]} />
 
         <section className="pt-16 pb-10 bg-gradient-to-b from-accent/10 to-transparent border-b border-gray-100 dark:border-gray-800">
           <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
+            <div className="max-w-3xl mx-auto text-center">
               <span className="section-label">Narzędzie</span>
               <h1 className="h1-strony mt-4 mb-6">
                 Ile kosztuje ręczna obsługa leadów w firmie B2B?

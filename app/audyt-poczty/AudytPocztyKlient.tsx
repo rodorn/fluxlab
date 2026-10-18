@@ -114,8 +114,8 @@ export default function AudytPocztyKlient({
     <main>
       {breadcrumbs}
       <section className="pt-24 pb-8">
-        <div className="container-wide max-w-3xl">
-          <p className="section-label mb-5">Narzędzie</p>
+        <div className="container-wide max-w-3xl text-center">
+          <p className="section-label mb-3">Narzędzie</p>
           <h1 className="h1-strony">
             Sprawdź, czy ktoś może podszyć się pod Twoją firmową pocztę
           </h1>

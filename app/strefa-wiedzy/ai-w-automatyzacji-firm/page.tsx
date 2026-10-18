@@ -35,7 +35,7 @@ export default function AiWAutomatyzacjiFirmPage() {
     <>
       <Header />
       <main className="pt-16 prose-justify">
-        <Breadcrumbs href="/strefa-wiedzy/ai-w-automatyzacji-firm" kolumna="waska"
+        <Breadcrumbs href="/strefa-wiedzy/ai-w-automatyzacji-firm"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "AI w automatyzacji firm" },
@@ -44,11 +44,12 @@ export default function AiWAutomatyzacjiFirmPage() {
 
         <section className="pt-24 pb-12">
           <div className="container-wide max-w-3xl mx-auto">
+            <div className="text-center">
             <span className="section-label">Strefa wiedzy</span>
             <h1 className="mt-4 h1-artykulu">
               Automatyzacja AI w firmach
             </h1>
-            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed !text-left">
+            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
               <Link href="/automatyzacja-ai" className="text-accent hover:underline">
                 Automatyzacja AI dla firm
               </Link>{" "}
@@ -56,6 +57,7 @@ export default function AiWAutomatyzacjiFirmPage() {
               dokumentów. Ma sens, gdy przyspiesza konkretny proces i nie obniża
               jakości.
             </p>
+            </div>
 
             <h2 className="mt-12 mb-4 h2-sekcji">
               Gdzie AI daje efekt

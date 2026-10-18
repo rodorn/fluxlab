@@ -59,7 +59,7 @@ export default function SkladkaZdrowotnaJDGArticle() {
     <>
       <Header />
       <main className="pt-16 prose-justify">
-        <Breadcrumbs href="/strefa-wiedzy/jak-liczyc-zdrowotna-jdg" kolumna="srodek"
+        <Breadcrumbs href="/strefa-wiedzy/jak-liczyc-zdrowotna-jdg"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Jak liczyć składkę zdrowotną w JDG" },
@@ -71,7 +71,7 @@ export default function SkladkaZdrowotnaJDGArticle() {
             <h1 className="mt-4 h1-artykulu">
               Jak liczyć składkę zdrowotną w JDG w 2026
             </h1>
-            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed !text-left">
+            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
               Składka zdrowotna potrafi zmienić wynik porównania form
               opodatkowania o kilka tysięcy złotych rocznie. Na skali, liniowym i
               ryczałcie liczy się ją inaczej.

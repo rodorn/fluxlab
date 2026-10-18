@@ -59,7 +59,6 @@ export default function FakturaVatRrKsefArticle() {
       <main className="pt-16 prose-justify">
         <Breadcrumbs
           href="/strefa-wiedzy/faktura-vat-rr-ksef"
-          kolumna="srodek"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Faktura VAT RR w KSeF" },
@@ -71,7 +70,7 @@ export default function FakturaVatRrKsefArticle() {
             <h1 className="mt-4 h1-artykulu">
               Faktura VAT RR w KSeF: kiedy trzeba
             </h1>
-            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed !text-left">
+            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
               Fakturę VAT RR za skup od rolnika ryczałtowego wystawia nabywca. Od
               1 kwietnia 2026 może to zrobić w KSeF, ale co do zasady nie musi.
               O tym, czy faktura trafia do systemu, rozstrzyga rolnik.

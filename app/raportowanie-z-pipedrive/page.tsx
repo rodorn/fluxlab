@@ -138,13 +138,13 @@ export default function RaportowanieZPipedrive() {
     <>
       <Header />
       <main>
-        <Breadcrumbs href="/raportowanie-z-pipedrive" kolumna="srodek"
+        <Breadcrumbs href="/raportowanie-z-pipedrive"
           items={[{ label: "Automatyczne raportowanie z Pipedrive" }]}
         />
 
         <section className="pt-24 pb-12 bg-gradient-to-b from-accent/10 to-transparent border-b border-gray-100 dark:border-gray-800">
           <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
+            <div className="max-w-3xl mx-auto text-center">
               <span className="section-label">Usługa</span>
               <h1 className="h1-strony mt-4 mb-6">
                 Automatyczne raporty z Pipedrive bez ręcznego Excela

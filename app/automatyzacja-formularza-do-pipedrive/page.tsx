@@ -137,13 +137,13 @@ export default function AutomatyzacjaFormularzaDoPipedrive() {
     <>
       <Header />
       <main className="pt-16">
-        <Breadcrumbs href="/automatyzacja-formularza-do-pipedrive" kolumna="srodek"
+        <Breadcrumbs href="/automatyzacja-formularza-do-pipedrive"
           items={[{ label: "Integracja formularza z Pipedrive" }]}
         />
 
         <section className="pt-16 pb-10 bg-gradient-to-b from-accent/10 to-transparent border-b border-gray-100 dark:border-gray-800">
           <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
+            <div className="max-w-3xl mx-auto text-center">
               <span className="section-label">Usługa</span>
               <h1 className="h1-strony mt-4 mb-6">
                 Integracja formularza z Pipedrive bez ręcznego przepisywania

@@ -60,7 +60,6 @@ export default function GutschriftKsefArticle() {
       <main className="pt-16 prose-justify">
         <Breadcrumbs
           href="/strefa-wiedzy/gutschrift-ksef"
-          kolumna="srodek"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Gutschrift a KSeF" },
@@ -72,7 +71,7 @@ export default function GutschriftKsefArticle() {
             <h1 className="mt-4 h1-artykulu">
               Gutschrift od klienta z Niemiec a KSeF
             </h1>
-            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed !text-left">
+            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
               Niemieccy kontrahenci często wysyłają Gutschrift zamiast przyjąć
               polską fakturę. Po polsku to samofakturowanie, a ono ma swoje
               warunki.

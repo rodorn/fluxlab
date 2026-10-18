@@ -10,6 +10,7 @@ import WyborNarzedzia from "@/components/WyborNarzedzia";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
@@ -220,15 +221,15 @@ export default function Narzedzia() {
     <>
       <Header />
       <main className="pt-16">
-        <Breadcrumbs href="/narzedzia" kolumna="srodek" items={[{ label: "Narzędzia" }]} />
-        <section className="pt-12 lg:pt-24 pb-10 lg:pb-12 bg-gray-50 dark:bg-gray-900/50 border-b border-gray-100 dark:border-gray-800">
+        <Breadcrumbs href="/narzedzia" items={[{ label: "Narzędzia" }]} />
+        <section className="pt-6 pb-10 lg:pb-12">
           <div className="container-wide">
             <div className="max-w-3xl mx-auto text-center">
-              <p className="section-label mb-4">Narzędzia</p>
-              <h1 className="text-3xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+              <p className="section-label mb-3">Narzędzia</p>
+              <h1 className="h1-strony">
                 Sprawdź swoją firmę, zanim komukolwiek zapłacisz
               </h1>
-              <p className="text-lg text-gray-600 dark:text-gray-400">
+              <p className="hero-lead">
                 Każde kończy się liczbą albo werdyktem, bez rejestracji i
                 adresu.{" "}
                 <Link href="/realizacje" className="text-accent hover:underline">
@@ -266,6 +267,7 @@ export default function Narzedzia() {
             })}
           </div>
         </div>
+        <CTA />
       </main>
       <Footer />
     </>

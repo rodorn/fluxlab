@@ -62,13 +62,12 @@ export default function AutomatyzacjaProcesowBiznesowych() {
     <>
       <Header />
       <main>
-        <Breadcrumbs href="/automatyzacja-procesow-biznesowych" kolumna="srodek" items={[{ label: "Automatyzacja procesów biznesowych" }]} />
+        <Breadcrumbs href="/automatyzacja-procesow-biznesowych" items={[{ label: "Automatyzacja procesów biznesowych" }]} />
 
         {/* Hero */}
         <section className="relative overflow-hidden pt-24 pb-12">
-          <div className="blob blob-accent -z-10 top-[-10%] left-[-5%]" />
-          <div className="container-wide max-w-3xl mx-auto">
-            <p className="section-label mb-5">Usługa</p>
+          <div className="container-wide max-w-3xl mx-auto text-center">
+            <p className="section-label mb-3">Usługa</p>
             <h1 className="h1-strony mb-6">
               Automatyzacja procesów biznesowych
             </h1>

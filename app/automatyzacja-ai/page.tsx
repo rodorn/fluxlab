@@ -61,13 +61,12 @@ export default function AutomatyzacjaAI() {
     <>
       <Header />
       <main>
-        <Breadcrumbs href="/automatyzacja-ai" kolumna="srodek" items={[{ label: "Automatyzacja AI" }]} />
+        <Breadcrumbs href="/automatyzacja-ai" items={[{ label: "Automatyzacja AI" }]} />
 
         {/* Hero, kompaktowy */}
         <section className="relative overflow-hidden pt-24 pb-12">
-          <div className="blob blob-accent absolute -top-32 -right-20 h-96 w-96" />
-          <div className="container-wide max-w-3xl mx-auto">
-            <p className="section-label mb-5">Usługa</p>
+          <div className="container-wide max-w-3xl mx-auto text-center">
+            <p className="section-label mb-3">Usługa</p>
             <h1 className="h1-strony mb-6">
               Automatyzacja AI dla firm
             </h1>

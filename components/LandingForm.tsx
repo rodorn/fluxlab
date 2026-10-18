@@ -345,7 +345,7 @@ export default function LandingForm({
   return (
     <div className="mx-auto max-w-2xl">
       <div className="mb-8 text-center">
-        <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+        <h2 className="h2-sekcji mb-4">
           {heading}
         </h2>
         <p className="text-gray-600 dark:text-gray-400 text-base lg:text-lg leading-relaxed">

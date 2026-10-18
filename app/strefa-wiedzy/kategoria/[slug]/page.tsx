@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import OkladkaArtykulu from "@/components/OkladkaArtykulu";
 import {
@@ -54,7 +55,6 @@ export default async function CategoryPage({ params }: Props) {
       <Header />
       <main className="pt-16 prose-justify">
         <Breadcrumbs
-          kolumna="srodek"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: category.name },
@@ -62,14 +62,14 @@ export default async function CategoryPage({ params }: Props) {
         />
 
         {/* Hero */}
-        <section className="py-16 lg:py-24 bg-gray-50 dark:bg-gray-900/50 border-b border-gray-100 dark:border-gray-800">
+        <section className="pt-6 pb-6">
           <div className="container-wide">
             <div className="max-w-3xl mx-auto text-center">
-              <p className="section-label mb-4">Strefa wiedzy</p>
-              <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+              <p className="section-label mb-3">Strefa wiedzy</p>
+              <h1 className="h1-strony">
                 {category.name}
               </h1>
-              <p className="text-lg text-gray-600 dark:text-gray-400">
+              <p className="hero-lead">
                 {category.description}
               </p>
             </div>
@@ -147,6 +147,7 @@ export default async function CategoryPage({ params }: Props) {
             </div>
           </div>
         </section>
+        <CTA />
       </main>
       <Footer />
     </>

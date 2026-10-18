@@ -3,7 +3,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import TrackedCTA from "@/components/TrackedCTA";
+import CTA from "@/components/CTA";
 import KatalogProduktow from "@/components/KatalogProduktow";
 import { CENNIK as PRODUCTS } from "@/lib/products";
 
@@ -36,17 +36,16 @@ export default function ProduktyPage() {
       <main className="pt-16">
         <Breadcrumbs
           href="/produkty"
-          kolumna="srodek"
           items={[{ label: "Cennik" }]}
         />
-        <section className="pt-12 lg:pt-24 pb-10 lg:pb-12 bg-gray-50 dark:bg-gray-900/50 border-b border-gray-100 dark:border-gray-800">
+        <section className="pt-6 pb-10 lg:pb-12">
           <div className="container-wide">
             <div className="max-w-3xl mx-auto text-center">
-              <p className="section-label mb-4">Cennik</p>
-              <h1 className="text-3xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+              <p className="section-label mb-3">Cennik</p>
+              <h1 className="h1-strony">
                 Usługi ze stałą ceną
               </h1>
-              <p className="text-lg text-gray-600 dark:text-gray-400">
+              <p className="hero-lead">
                 Każda pozycja ma podaną kwotę wejścia i konkretny efekt, a wynik
                 odsyłamy mailem.
               </p>
@@ -69,28 +68,19 @@ export default function ProduktyPage() {
             <KatalogProduktow />
           </div>
 
-          <div className="mt-16 rounded-2xl border border-gray-200/80 dark:border-gray-800/80 bg-gray-50/60 dark:bg-gray-900/40 p-8 text-center">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
-              Potrzebujesz czegoś szytego pod Twój proces?
-            </h2>
-            <p className="mt-3 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+        </section>
+        <CTA
+          naglowek="Potrzebujesz czegoś szytego pod Twój proces?"
+          opis={
+            <>
               Zaczynamy od diagnozy,{" "}
               <Link href="/jak-pracuje" className="text-accent hover:underline">
                 tak pracujemy
               </Link>
               .
-            </p>
-            <div className="mt-6">
-              <TrackedCTA
-                href="/kontakt"
-                location="produkty_cta"
-                className="btn-primary"
-              >
-                Bezpłatna diagnoza
-              </TrackedCTA>
-            </div>
-          </div>
-        </section>
+            </>
+          }
+        />
       </main>
 
       <script

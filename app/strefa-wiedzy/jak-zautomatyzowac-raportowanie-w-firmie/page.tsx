@@ -36,7 +36,7 @@ export default function AutomatyzacjaRaportowaniaArticle() {
     <>
       <Header />
       <main className="pt-16 prose-justify">
-        <Breadcrumbs href="/strefa-wiedzy/jak-zautomatyzowac-raportowanie-w-firmie" kolumna="srodek"
+        <Breadcrumbs href="/strefa-wiedzy/jak-zautomatyzowac-raportowanie-w-firmie"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Jak zautomatyzować raportowanie w firmie" },
@@ -49,7 +49,7 @@ export default function AutomatyzacjaRaportowaniaArticle() {
             <h1 className="mt-4 h1-artykulu">
               Jak zautomatyzować raportowanie w firmie
             </h1>
-            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed !text-left">
+            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
               Dane leżą w CRM, arkuszach i kampaniach, a ktoś co tydzień skleja
               je ręcznie. Automatyzacja raportowania daje spójne liczby i raport
               gotowy wtedy, kiedy jest potrzebny.

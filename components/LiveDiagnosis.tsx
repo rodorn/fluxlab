@@ -183,26 +183,14 @@ export default function LiveDiagnosis() {
       aria-labelledby="generator-heading"
       className="scroll-mt-16 py-16 lg:py-24 relative overflow-hidden"
     >
-      <div
-        aria-hidden="true"
-        className="blob blob-accent"
-        style={{ top: "-6rem", right: "-8rem" }}
-      />
-      <div
-        aria-hidden="true"
-        className="blob blob-accent"
-        style={{ bottom: "-10rem", left: "-10rem" }}
-      />
 
       <div className="container-wide relative">
         <div className="max-w-2xl mx-auto text-center mb-10">
           <p className="section-label mb-3">Generator AI</p>
-          {/* H1, bo ten blok otwiera `/kontakt` i jest jedynym miejscem, gdzie
-              komponent sie pojawia. Strona nie miala zadnego H1. */}
-          <h1 id="generator-heading" className="display-lg mb-4">
+          <h2 id="generator-heading" className="h2-sekcji mb-4">
             Zobacz swoją automatyzację, teraz
-          </h1>
-          <p className="text-gray-500 dark:text-gray-400 text-lg">
+          </h2>
+          <p className="text-gray-600 dark:text-gray-300 text-lg">
             Opisz proces, który pochłania Twój czas. Działający na żywo model AI w
             kilka sekund nazwie go, rozpisze na konkretne kroki i ostrożnie
             oszacuje, ile godzin miesięcznie da się odzyskać.

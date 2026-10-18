@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Tabs from "@/components/Tabs";
+import CTA from "@/components/CTA";
 import OkladkaArtykulu from "@/components/OkladkaArtykulu";
 import { categories } from "@/lib/categories";
 
@@ -38,18 +39,17 @@ export default function StrefaWiedzy() {
       <main className="pt-16 prose-justify">
         <Breadcrumbs
           href="/strefa-wiedzy"
-          kolumna="srodek"
           items={[{ label: "Strefa wiedzy" }]}
         />
         {/* Hero, kompaktowy */}
-        <section className="pt-16 pb-6 bg-gray-50 dark:bg-gray-900/50 border-b border-gray-100 dark:border-gray-800">
+        <section className="pt-6 pb-6">
           <div className="container-wide">
             <div className="max-w-3xl mx-auto text-center">
               <p className="section-label mb-3">Wiedza</p>
-              <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4 leading-tight">
+              <h1 className="h1-strony">
                 Automatyzacja CRM i AI
               </h1>
-              <p className="text-lg text-gray-600 dark:text-gray-400">
+              <p className="hero-lead">
                 Od{" "}
                 <Link
                   href="/strefa-wiedzy/automatyzacja-crm-od-czego-zaczac"
@@ -142,9 +142,9 @@ export default function StrefaWiedzy() {
                     </div>
                     <Link
                       href={`/strefa-wiedzy/kategoria/${category.slug}`}
-                      className="mt-4 inline-block text-sm font-medium text-accent hover:underline"
+                      className="mt-4 inline-block text-sm font-semibold text-accent hover:underline"
                     >
-                      Wszystkie w tej kategorii
+                      Wszystkie w tej kategorii →
                     </Link>
                   </div>
                 </div>
@@ -153,25 +153,10 @@ export default function StrefaWiedzy() {
           />
         </div>
 
-        {/* CTA */}
-        <section className="py-8 lg:py-10 border-t border-gray-100 dark:border-gray-800">
-          <div className="container-wide">
-            <div className="max-w-2xl mx-auto text-center bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-8">
-              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-3">
-                Porozmawiajmy o automatyzacji w Twojej firmie
-              </h2>
-              <p className="text-gray-600 dark:text-gray-400 mb-6">
-                Bezpłatna diagnoza, bez zobowiązań.
-              </p>
-              <Link
-                href="/kontakt"
-                className="btn-primary btn-lg"
-              >
-                Bezpłatna diagnoza
-              </Link>
-            </div>
-          </div>
-        </section>
+        <CTA
+          naglowek="Porozmawiajmy o automatyzacji w Twojej firmie"
+          opis="Bezpłatna diagnoza, bez zobowiązań."
+        />
       </main>
       <Footer />
     </>

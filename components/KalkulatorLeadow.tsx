@@ -362,7 +362,7 @@ export default function KalkulatorLeadow() {
       </div>
 
       {/* ── CTA ── */}
-      <div className="rounded-2xl border border-accent/20 bg-accent/5 dark:bg-accent/10 p-8 text-center">
+      <div className="cta-koncowe">
         <h3 className="text-xl lg:text-2xl font-bold text-gray-900 dark:text-white mb-3">
           Chcesz sprawdzić, które kroki da się usunąć?
         </h3>
@@ -374,7 +374,7 @@ export default function KalkulatorLeadow() {
           href="/kontakt"
           location="calc_leads_result"
           eventName="cta_click_calc_leads"
-          className="btn-primary btn-lg"
+          className="btn-primary"
         >
           Zamawiam bezpłatną diagnozę
         </TrackedCTA>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import zmiany from "@/lib/zmiany.json";
 
 export const metadata: Metadata = {
@@ -29,16 +30,19 @@ export default function Zmiany() {
   return (
     <>
       <Header />
-      <main className="pt-28 pb-20">
-        <div className="container-wide max-w-3xl">
+      <main className="pt-16 pb-20">
+        <Breadcrumbs href="/zmiany" items={[{ label: "Ostatnie zmiany na stronie" }]} />
+        <section className="container-wide max-w-3xl pt-6">
+          <div className="text-center">
           <p className="section-label mb-3">Dziennik zmian</p>
-          <h1 className="text-3xl lg:text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
+          <h1 className="h1-strony">
             Co zmieniło się na stronie
           </h1>
-          <p className="mt-3 text-gray-600 dark:text-gray-400">
+          <p className="hero-lead">
             Ostatnie {zmiany.length} zmian widocznych dla odwiedzających. Lista powstaje
             z historii naszego repozytorium przy każdym wdrożeniu.
           </p>
+          </div>
           <ol className="mt-10 space-y-5 border-l border-gray-200 dark:border-gray-800 pl-6">
             {zmiany.map((z, i) => (
               <li key={i} className="relative">
@@ -56,7 +60,7 @@ export default function Zmiany() {
               </li>
             ))}
           </ol>
-        </div>
+        </section>
       </main>
       <Footer />
     </>

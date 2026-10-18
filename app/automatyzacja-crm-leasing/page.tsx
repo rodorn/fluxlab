@@ -119,7 +119,7 @@ export default function AutomatyzacjaCrmLeasing() {
     <>
       <Header />
       <main>
-        <Breadcrumbs href="/automatyzacja-crm-leasing" kolumna="srodek"
+        <Breadcrumbs href="/automatyzacja-crm-leasing"
           items={[
             { label: "Automatyzacja CRM dla firm leasingowych i finansowych" },
           ]}
@@ -127,8 +127,8 @@ export default function AutomatyzacjaCrmLeasing() {
 
         <section className="pt-16 pb-6 bg-gradient-to-b from-accent/10 to-transparent border-b border-gray-100 dark:border-gray-800">
           <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <p className="section-label mb-4">Branża</p>
+            <div className="max-w-3xl mx-auto text-center">
+              <p className="section-label mb-3">Branża</p>
               <h1 className="h1-strony mb-6">
                 CRM dla firm leasingowych, finansowych i brokerskich
               </h1>

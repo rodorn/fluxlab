@@ -35,7 +35,7 @@ export default function KiedyAiMaSensPage() {
     <>
       <Header />
       <main className="pt-16 prose-justify">
-        <Breadcrumbs href="/strefa-wiedzy/kiedy-ai-ma-sens-a-kiedy-nie" kolumna="srodek"
+        <Breadcrumbs href="/strefa-wiedzy/kiedy-ai-ma-sens-a-kiedy-nie"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Kiedy AI ma sens, a kiedy nie" },
@@ -48,7 +48,7 @@ export default function KiedyAiMaSensPage() {
               <h1 className="mt-4 mb-6 h1-artykulu">
                 Kiedy AI ma sens, a kiedy nie
               </h1>
-              <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed !text-left">
+              <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
                 Drogo kosztuje zarówno AI wdrożone „bo wszyscy to robią", jak i
                 AI odrzucone tam, gdzie szybko odciążyłoby zespół. Wystarczy
                 prosty filtr.

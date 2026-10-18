@@ -97,7 +97,7 @@ export default function SprawdzKontrahentaPage() {
         <Breadcrumbs href="/sprawdz-kontrahenta" items={[{ label: "Sprawdź kontrahenta" }]} />
 
         <section className="container-wide pt-6 pb-14">
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-3xl mx-auto text-center">
             <p className="section-label mb-3">Narzędzie</p>
             <h1 className="h1-strony">
               Sprawdź firmę, zanim wyślesz przelew

@@ -64,7 +64,6 @@ export default function KsefJdgZwolnionaZVatArticle() {
       <main className="pt-16 prose-justify">
         <Breadcrumbs
           href="/strefa-wiedzy/ksef-jdg-zwolniona-z-vat"
-          kolumna="srodek"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "KSeF w JDG zwolnionej z VAT" },
@@ -76,7 +75,7 @@ export default function KsefJdgZwolnionaZVatArticle() {
             <h1 className="mt-4 h1-artykulu">
               KSeF w JDG zwolnionej z VAT: czy musisz?
             </h1>
-            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed !text-left">
+            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
               Tak, gdy wystawiasz fakturę firmie. Zwolnienie z VAT nie zwalnia z{" "}
               <Link href="/slownik#ksef" className="text-accent hover:underline">
                 KSeF

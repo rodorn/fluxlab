@@ -199,17 +199,17 @@ export default function JakPracuje() {
     <>
       <Header />
       <main>
-        <Breadcrumbs href="/jak-pracuje" kolumna="srodek" items={[{ label: "Jak pracujemy" }]} />
+        <Breadcrumbs href="/jak-pracuje" items={[{ label: "Jak pracujemy" }]} />
 
         {/* Hero, kompaktowy */}
-        <section className="pt-16 pb-6 bg-gray-50 dark:bg-gray-900/50 border-b border-gray-100 dark:border-gray-800">
+        <section className="pt-6 pb-6">
           <div className="container-wide">
             <div className="max-w-3xl mx-auto text-center">
               <p className="section-label mb-3">O nas</p>
-              <h1 className="h1-strony mb-4">
+              <h1 className="h1-strony">
                 Jak pracujemy
               </h1>
-              <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+              <p className="hero-lead">
                 Wąski skład, stała cena projektowa i postęp co tydzień.
               </p>
             </div>

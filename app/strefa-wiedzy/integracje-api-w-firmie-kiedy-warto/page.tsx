@@ -56,7 +56,7 @@ export default function IntegracjeApiArticle() {
     <>
       <Header />
       <main className="pt-16 prose-justify">
-        <Breadcrumbs href="/strefa-wiedzy/integracje-api-w-firmie-kiedy-warto" kolumna="waska"
+        <Breadcrumbs href="/strefa-wiedzy/integracje-api-w-firmie-kiedy-warto"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Integracje API w firmie, kiedy warto?" },
@@ -64,12 +64,12 @@ export default function IntegracjeApiArticle() {
         />
 
         <section className="pt-16 pb-6">
-          <div className="max-w-3xl mx-auto px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
             <span className="section-label">Strefa wiedzy</span>
             <h1 className="mt-4 h1-artykulu">
               Integracje API w firmie, kiedy warto?
             </h1>
-            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed !text-left">
+            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
               Chodzi o jedno: czy dane między systemami przepływają same, czy
               przenoszą je ludzie. Gdy firma używa kilku narzędzi, które żyją
               osobno, integracja staje się elementem sprawnej operacji.

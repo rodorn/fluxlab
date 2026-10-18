@@ -58,7 +58,6 @@ export default function FakturyZKsefPoZmianieBiuraArticle() {
       <main className="pt-16 prose-justify">
         <Breadcrumbs
           href="/strefa-wiedzy/faktury-z-ksef-po-zmianie-biura"
-          kolumna="srodek"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Faktury z KSeF po zmianie biura" },
@@ -70,7 +69,7 @@ export default function FakturyZKsefPoZmianieBiuraArticle() {
             <h1 className="mt-4 h1-artykulu">
               Faktury z KSeF po zmianie biura rachunkowego
             </h1>
-            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed !text-left">
+            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
               Gdy poprzednie biuro nie oddało dokumentów, faktury z 2026 i tak
               są w KSeF. Firma nadaje nowemu biuru uprawnienie, a biuro pobiera
               sprzedaż i zakupy samo.

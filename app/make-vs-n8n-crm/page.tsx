@@ -153,13 +153,13 @@ export default function MakeVsN8nCrm() {
     <>
       <Header />
       <main>
-        <Breadcrumbs href="/make-vs-n8n-crm" kolumna="srodek" items={[{ label: "Make czy n8n do CRM" }]} />
+        <Breadcrumbs href="/make-vs-n8n-crm" items={[{ label: "Make czy n8n do CRM" }]} />
 
         {/* Hero, kompaktowy */}
         <section className="pt-24 pb-12 bg-gradient-to-b from-accent/10 to-transparent border-b border-gray-100 dark:border-gray-800">
           <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
-              <p className="section-label mb-4">Usługa</p>
+            <div className="max-w-3xl mx-auto text-center">
+              <p className="section-label mb-3">Usługa</p>
               <h1 className="h1-strony mb-6">
                 Make czy n8n: co wybrać do automatyzacji CRM i leadów?
               </h1>

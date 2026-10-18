@@ -47,14 +47,11 @@ function poziomPosredni(
 
 export default function Breadcrumbs({
   items,
-  kolumna,
   href,
 }: {
   items: BreadcrumbItem[];
   /** Ścieżka bieżącej strony. Bez niej wnioskujemy z ostatniego elementu items z href. */
   href?: string;
-  /** Szerokość kolumny nagłówka pod okruszkami: wąska (max-w-3xl) albo wąska wyśrodkowana. */
-  kolumna?: "waska" | "srodek";
 }) {
   const posredni = poziomPosredni(items, href);
   const fullItems: BreadcrumbItem[] = [
@@ -84,10 +81,10 @@ export default function Breadcrumbs({
           okruszki nie dokładają drugiego wcięcia ani górnego odstępu. */}
       <nav
         aria-label="Breadcrumb"
-        className={`container-wide pt-20 pb-0 ${kolumna ? "max-w-3xl" : ""} [.container-wide_&]:mb-6 [.container-wide_&]:max-w-none [.container-wide_&]:px-0 [.container-wide_&]:pt-0 [main[class*='max-w-']_&]:mb-6 [main[class*='max-w-']_&]:max-w-none [main[class*='max-w-']_&]:px-0 [main[class*='max-w-']_&]:pt-0`}
+        className={`container-wide pt-20 pb-0 [.container-wide_&]:mb-6 [.container-wide_&]:max-w-none [.container-wide_&]:px-0 [.container-wide_&]:pt-0 [main[class*='max-w-']_&]:mb-6 [main[class*='max-w-']_&]:max-w-none [main[class*='max-w-']_&]:px-0 [main[class*='max-w-']_&]:pt-0`}
       >
         <ol
-          className={`flex flex-wrap items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400 ${kolumna === "srodek" ? "justify-center" : ""}`}
+          className="flex flex-wrap items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400"
         >
           {fullItems.map((item, index) => {
             const isFirst = index === 0;

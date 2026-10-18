@@ -59,7 +59,7 @@ export default function ZapierMakeN8nPorownanieArticle() {
     <>
       <Header />
       <main className="pt-16">
-        <Breadcrumbs href="/strefa-wiedzy/zapier-make-n8n-porownanie" kolumna="srodek"
+        <Breadcrumbs href="/strefa-wiedzy/zapier-make-n8n-porownanie"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Zapier vs Make vs n8n" },

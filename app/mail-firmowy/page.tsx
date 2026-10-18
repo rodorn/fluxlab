@@ -63,7 +63,7 @@ export default function MailFirmowy() {
           items={[{ label: "Mail firmowy", href: "/mail-firmowy" }]}
         />
 
-        <p className="section-label mb-5">Usługa</p>
+        <p className="section-label mb-3">Usługa</p>
         <h1 className="h1-strony mb-6">
           Mail firmowy we własnej domenie: koszt, konfiguracja i test, czy nie
           wpada do spamu

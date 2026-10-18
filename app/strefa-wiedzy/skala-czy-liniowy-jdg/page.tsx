@@ -59,7 +59,7 @@ export default function SkalaCzyLiniowyJdgArticle() {
     <>
       <Header />
       <main className="pt-16">
-        <Breadcrumbs href="/strefa-wiedzy/skala-czy-liniowy-jdg" kolumna="srodek"
+        <Breadcrumbs href="/strefa-wiedzy/skala-czy-liniowy-jdg"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Skala czy liniowy, JDG" },

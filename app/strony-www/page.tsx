@@ -74,12 +74,9 @@ export default function StronyWww() {
           aria-labelledby="hero-heading"
           className="relative pt-24 pb-12 overflow-hidden"
         >
-          <div className="absolute inset-0 -z-10" aria-hidden="true">
-            <div className="blob blob-accent w-[520px] h-[520px] -top-32 -left-32 animate-drift" />
-          </div>
           <div className="container-wide">
             <div className="mx-auto max-w-3xl text-center">
-              <p className="section-label mb-4 animate-fade-up-1">Usługa</p>
+              <p className="section-label mb-3 animate-fade-up-1">Usługa</p>
               <h1
                 id="hero-heading"
                 className="h1-strony mb-6 animate-fade-up-2"

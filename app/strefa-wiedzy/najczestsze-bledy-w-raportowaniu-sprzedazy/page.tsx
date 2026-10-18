@@ -35,7 +35,7 @@ export default function BledyRaportowanieArticle() {
     <>
       <Header />
       <main className="pt-16">
-        <Breadcrumbs href="/strefa-wiedzy/najczestsze-bledy-w-raportowaniu-sprzedazy" kolumna="srodek"
+        <Breadcrumbs href="/strefa-wiedzy/najczestsze-bledy-w-raportowaniu-sprzedazy"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Najczęstsze błędy w raportowaniu sprzedaży" },

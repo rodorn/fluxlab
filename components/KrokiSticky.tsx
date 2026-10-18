@@ -76,7 +76,7 @@ export default function KrokiSticky({ kroki }: Props) {
               className={`relative z-10 flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-sm font-bold transition-all duration-500 ${
                 wlaczony
                   ? "scale-110 bg-accent-solid text-white shadow-lg shadow-accent/30"
-                  : "bg-gray-100 text-gray-400 dark:bg-white/10 dark:text-white/40"
+                  : "bg-gray-100 text-gray-600 dark:bg-white/10 dark:text-white/70"
               }`}
             >
               {i + 1}

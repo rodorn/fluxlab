@@ -576,7 +576,7 @@ export default function AudytCRM() {
           )}
 
           {/* CTA */}
-          <div className="rounded-2xl border border-accent/20 bg-accent/5 dark:bg-accent/10 p-8 text-center">
+          <div className="cta-koncowe">
             <h3 className="text-xl lg:text-2xl font-bold text-gray-900 dark:text-white mb-3">
               Chcesz konkretną mapę automatyzacji dla tego pipeline'u?
             </h3>
@@ -589,7 +589,7 @@ export default function AudytCRM() {
               href="/kontakt"
               location="audit_crm_result"
               eventName="cta_click_audit_crm"
-              className="btn-primary btn-lg"
+              className="btn-primary"
             >
               Bezpłatna diagnoza
             </TrackedCTA>

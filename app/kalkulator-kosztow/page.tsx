@@ -60,12 +60,12 @@ export default function KalkulatorKosztowPage() {
     <>
       <Header />
       <main>
-        <Breadcrumbs href="/kalkulator-kosztow" kolumna="srodek" items={[{ label: "Kalkulator kosztów" }]} />
+        <Breadcrumbs href="/kalkulator-kosztow" items={[{ label: "Kalkulator kosztów" }]} />
 
         {/* Hero, kompaktowy */}
         <section className="pt-24 pb-12">
-          <div className="container-wide max-w-3xl">
-            <p className="section-label mb-4">Narzędzie</p>
+          <div className="container-wide max-w-3xl text-center">
+            <p className="section-label mb-3">Narzędzie</p>
             <h1 className="h1-strony">
               Kalkulator kosztów samochodu
             </h1>

@@ -784,7 +784,7 @@ html.dark {
     bottom: 5.5rem;
   }
   body[data-pasek-akcji] .przycisk-do-gory {
-    bottom: 10rem;
+    display: none;
   }
   body[data-pasek-akcji] .czat-okno {
     bottom: 10rem;

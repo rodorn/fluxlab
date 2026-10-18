@@ -61,7 +61,7 @@ export default function AudytCRMPage() {
     <>
       <Header />
       <main>
-        <Breadcrumbs href="/audyt-crm" kolumna="srodek"
+        <Breadcrumbs href="/audyt-crm"
           items={[
             { label: "Narzędzia", href: "/narzedzia" },
             { label: "Audyt CRM" },
@@ -70,8 +70,8 @@ export default function AudytCRMPage() {
 
         {/* Hero, kompaktowy */}
         <section className="pt-16 pb-6">
-          <div className="container-wide max-w-3xl">
-            <p className="section-label mb-4">Narzędzie</p>
+          <div className="container-wide max-w-3xl text-center">
+            <p className="section-label mb-3">Narzędzie</p>
             <h1 className="h1-strony">
               Audyt CRM: czy Twój pipeline nadaje się do automatyzacji?
             </h1>

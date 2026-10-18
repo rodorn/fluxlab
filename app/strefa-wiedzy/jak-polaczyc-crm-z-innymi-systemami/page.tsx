@@ -36,7 +36,7 @@ export default function CrmIntegracjaArticle() {
     <>
       <Header />
       <main className="pt-16 prose-justify">
-        <Breadcrumbs href="/strefa-wiedzy/jak-polaczyc-crm-z-innymi-systemami" kolumna="srodek"
+        <Breadcrumbs href="/strefa-wiedzy/jak-polaczyc-crm-z-innymi-systemami"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Jak połączyć CRM z innymi systemami" },
@@ -49,7 +49,7 @@ export default function CrmIntegracjaArticle() {
             <h1 className="mt-4 h1-artykulu">
               Jak połączyć CRM z innymi systemami
             </h1>
-            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed !text-left">
+            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
               CRM działający obok reszty firmy nie usuwa chaosu. Dopiero
               połączony z formularzami i raportami zaczyna pracować.
             </p>

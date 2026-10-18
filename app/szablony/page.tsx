@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import NazwaNarzedzia from "@/components/NazwaNarzedzia";
 
@@ -34,15 +35,15 @@ export default function Szablony() {
     <>
       <Header />
       <main className="pt-16">
-        <Breadcrumbs href="/szablony" kolumna="srodek" items={[{ label: "Szablony" }]} />
+        <Breadcrumbs href="/szablony" items={[{ label: "Szablony" }]} />
         <section className="pt-12 lg:pt-20 pb-20">
           <div className="container-wide">
             <div className="max-w-3xl mx-auto text-center mb-10">
               <NazwaNarzedzia href="/szablony" />
-              <h1 className="text-3xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+              <h1 className="h1-strony">
                 Trzy pliki do pobrania, bez rejestracji
               </h1>
-              <p className="text-lg text-gray-600 dark:text-gray-400">
+              <p className="hero-lead">
                 Zwykłe pliki tekstowe, które otworzysz w każdym edytorze.
               </p>
             </div>
@@ -66,6 +67,7 @@ export default function Szablony() {
             </div>
           </div>
         </section>
+        <CTA />
       </main>
       <Footer />
     </>

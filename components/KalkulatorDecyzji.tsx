@@ -689,7 +689,7 @@ export default function KalkulatorDecyzji() {
       </div>
 
       {/* ── CTA, primary ── */}
-      <div className="rounded-2xl border border-accent/20 bg-accent/5 dark:bg-accent/10 p-8 text-center">
+      <div className="cta-koncowe">
         <h3 className="text-xl lg:text-2xl font-bold text-gray-900 dark:text-white mb-3">
           Chcesz konkretnie sprawdzić, ile zaoszczędzisz?
         </h3>
@@ -702,7 +702,7 @@ export default function KalkulatorDecyzji() {
           href="/kontakt"
           location="calc_choice_result"
           eventName="cta_click_calc_choice"
-          className="btn-primary btn-lg"
+          className="btn-primary"
         >
           Sprawdź, ile zaoszczędzisz konkretnie
         </TrackedCTA>

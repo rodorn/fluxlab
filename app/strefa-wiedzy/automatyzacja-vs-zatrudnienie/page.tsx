@@ -62,7 +62,7 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
     <>
       <Header />
       <main className="pt-16 prose-justify">
-        <Breadcrumbs href="/strefa-wiedzy/automatyzacja-vs-zatrudnienie" kolumna="waska"
+        <Breadcrumbs href="/strefa-wiedzy/automatyzacja-vs-zatrudnienie"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Automatyzacja vs zatrudnienie" },
@@ -70,12 +70,12 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
         />
 
         <section className="pt-16 pb-6">
-          <div className="max-w-3xl mx-auto px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
             <span className="section-label">Strefa wiedzy</span>
             <h1 className="mt-4 h1-artykulu">
               Automatyzacja vs zatrudnienie, co się bardziej opłaca w MŚP
             </h1>
-            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed !text-left">
+            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
               Pracy przybywa, zespół ma pełne ręce. Kalkulator po czterech
               ustawieniach pokazuje, czy taniej wychodzi ręczna praca, etat, czy
               wdrożenie.

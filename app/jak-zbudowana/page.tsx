@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import CzasLadowania from "@/components/CzasLadowania";
 import sitemap from "@/app/sitemap";
 import { businessTools, otherTools } from "@/lib/narzedzia";
@@ -33,17 +34,20 @@ export default function JakZbudowana() {
   return (
     <>
       <Header />
-      <main className="pt-28 pb-20">
-        <div className="container-wide max-w-3xl">
-          <p className="section-label mb-3">Za kulisami</p>
-          <h1 className="text-3xl lg:text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
-            Jak zbudowana jest ta strona
-          </h1>
+      <main className="pt-16 pb-20">
+        <Breadcrumbs href="/jak-zbudowana" items={[{ label: "Jak zbudowana jest ta strona" }]} />
+        <section className="container-wide max-w-3xl pt-6">
+          <div className="text-center">
+            <p className="section-label mb-3">Za kulisami</p>
+            <h1 className="h1-strony">
+              Jak zbudowana jest ta strona
+            </h1>
+          </div>
           <div className="mt-8 grid grid-cols-2 gap-4">
             {liczby.map((l) => (
               <div
                 key={l.o}
-                className="rounded-2xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800/60 p-5 text-center"
+                className="rounded-2xl border border-gray-200/80 bg-white/60 p-5 text-center dark:border-gray-800/80 dark:bg-gray-900/40"
               >
                 <p className="text-4xl font-bold tabular-nums text-accent">{l.v}</p>
                 <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">{l.o}</p>
@@ -68,7 +72,7 @@ export default function JakZbudowana() {
             </a>
             .
           </p>
-        </div>
+        </section>
       </main>
       <Footer />
     </>

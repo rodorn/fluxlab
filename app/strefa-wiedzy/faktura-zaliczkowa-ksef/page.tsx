@@ -58,7 +58,6 @@ export default function FakturaZaliczkowaKsefArticle() {
       <main className="pt-16 prose-justify">
         <Breadcrumbs
           href="/strefa-wiedzy/faktura-zaliczkowa-ksef"
-          kolumna="srodek"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Faktura zaliczkowa w KSeF" },
@@ -68,7 +67,7 @@ export default function FakturaZaliczkowaKsefArticle() {
           <div className="container-wide max-w-3xl mx-auto text-center">
             <span className="section-label">Strefa wiedzy</span>
             <h1 className="mt-4 h1-artykulu">Faktura zaliczkowa w KSeF</h1>
-            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed !text-left">
+            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
               Zaliczka idzie do KSeF jak każda faktura, z rodzajem „zaliczkowa”.
               Kłopot zaczyna się przy rozliczeniu, bo trzeba w nim wskazać
               numery KSeF wcześniejszych zaliczek.

@@ -59,10 +59,9 @@ export default function AutomatyzacjaPipedrive() {
 
         {/* Hero, kompaktowy */}
         <section className="relative overflow-hidden pt-24 pb-12">
-          <div className="blob blob-accent -top-32 -right-24 w-[420px] h-[420px]" />
-          <div className="container-wide max-w-3xl mx-auto relative">
+          <div className="container-wide max-w-3xl mx-auto relative text-center">
             <div>
-              <p className="section-label mb-5">Usługa</p>
+              <p className="section-label mb-3">Usługa</p>
               <h1 className="h1-strony mb-6">
                 Wykorzystaj Pipedrive w 100%
               </h1>

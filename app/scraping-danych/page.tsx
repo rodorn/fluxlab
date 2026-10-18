@@ -75,15 +75,7 @@ export default function ScrapingDanychPage() {
           aria-labelledby="hero-heading"
           className="relative pt-24 pb-12 overflow-hidden"
         >
-          <div
-            aria-hidden="true"
-            className="blob blob-accent -z-10 top-[-15%] left-[-10%] w-[600px] h-[600px]"
-          />
-          <div
-            aria-hidden="true"
-            className="blob blob-accent -z-10 bottom-[-20%] right-[-10%] w-[500px] h-[500px]"
-          />
-          <div className="container-wide max-w-3xl mx-auto relative">
+          <div className="container-wide max-w-3xl mx-auto relative text-center">
             <div>
               <p className="section-label animate-fade-up-1 mb-4">Usługa</p>
               <h1

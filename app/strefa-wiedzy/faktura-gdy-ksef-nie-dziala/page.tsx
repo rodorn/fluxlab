@@ -61,7 +61,6 @@ export default function FakturaGdyKsefNieDzialaArticle() {
       <main className="pt-16 prose-justify">
         <Breadcrumbs
           href="/strefa-wiedzy/faktura-gdy-ksef-nie-dziala"
-          kolumna="srodek"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Faktura, gdy KSeF nie działa" },
@@ -71,7 +70,7 @@ export default function FakturaGdyKsefNieDzialaArticle() {
           <div className="container-wide max-w-3xl mx-auto text-center">
             <span className="section-label">Strefa wiedzy</span>
             <h1 className="mt-4 h1-artykulu">Faktura, gdy KSeF nie działa</h1>
-            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed !text-left">
+            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
               Wystawiasz ją dalej, w tej samej strukturze FA(3), i dosyłasz do
               KSeF później. Termin zależy od tego, czyja to przerwa.
             </p>

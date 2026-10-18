@@ -23,7 +23,7 @@ export default function SpisStron() {
       <main className="pt-16">
         <section className="container-wide py-14 md:py-20">
           <Breadcrumbs href="/spis-stron" items={[{ label: "Spis stron" }]} />
-          <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white">
+          <h1 className="h1-strony">
             Spis stron
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-gray-600 dark:text-gray-300">

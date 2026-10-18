@@ -59,7 +59,7 @@ export default function N8nVsZapierArticle() {
     <>
       <Header />
       <main className="pt-16">
-        <Breadcrumbs href="/strefa-wiedzy/n8n-vs-zapier" kolumna="srodek"
+        <Breadcrumbs href="/strefa-wiedzy/n8n-vs-zapier"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "n8n vs Zapier" },

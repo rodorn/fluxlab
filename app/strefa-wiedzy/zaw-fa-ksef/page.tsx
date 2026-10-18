@@ -59,7 +59,6 @@ export default function ZawFaKsefArticle() {
       <main className="pt-16 prose-justify">
         <Breadcrumbs
           href="/strefa-wiedzy/zaw-fa-ksef"
-          kolumna="srodek"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "ZAW-FA w spółce" },
@@ -71,7 +70,7 @@ export default function ZawFaKsefArticle() {
             <h1 className="mt-4 h1-artykulu">
               ZAW-FA w spółce: kto ma dostęp do KSeF
             </h1>
-            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed !text-left">
+            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
               Spółka loguje się do KSeF pieczęcią kwalifikowaną z NIP albo przez
               osobę wskazaną w ZAW-FA. W zgłoszeniu jest zawsze jedna osoba, a
               resztę uprawnień nadaje ona sama.

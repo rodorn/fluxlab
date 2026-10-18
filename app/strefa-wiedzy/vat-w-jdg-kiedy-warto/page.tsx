@@ -36,7 +36,7 @@ export default function VatWJdgArticle() {
     <>
       <Header />
       <main className="pt-16">
-        <Breadcrumbs href="/strefa-wiedzy/vat-w-jdg-kiedy-warto" kolumna="srodek"
+        <Breadcrumbs href="/strefa-wiedzy/vat-w-jdg-kiedy-warto"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "VAT w JDG, kiedy warto" },

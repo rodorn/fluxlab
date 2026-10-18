@@ -74,9 +74,8 @@ export default function AudytGoogleAdsPage() {
 
         {/* Hero */}
         <section className="relative overflow-hidden pt-24 pb-12">
-          <div className="blob blob-accent -z-10 -top-32 -right-24 h-96 w-96" />
-          <div className="container-wide max-w-3xl">
-            <p className="section-label mb-5">Usługa</p>
+          <div className="container-wide max-w-3xl text-center">
+            <p className="section-label mb-3">Usługa</p>
             <h1 className="h1-strony text-gray-900 dark:text-white">
               Przestań przepalać budżet Google Ads na frazy bez konwersji
             </h1>

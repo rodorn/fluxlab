@@ -59,7 +59,6 @@ export default function DataWystawieniaFakturyKsefArticle() {
       <main className="pt-16 prose-justify">
         <Breadcrumbs
           href="/strefa-wiedzy/data-wystawienia-faktury-ksef"
-          kolumna="srodek"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Data wystawienia faktury w KSeF" },
@@ -71,7 +70,7 @@ export default function DataWystawieniaFakturyKsefArticle() {
             <h1 className="mt-4 h1-artykulu">
               Data wystawienia faktury w KSeF
             </h1>
-            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed !text-left">
+            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
               Fakturę online uznaje się za wystawioną w dniu, w którym plik
               trafił do KSeF. Dzień nadania numeru KSeF nie ma tu znaczenia.
             </p>

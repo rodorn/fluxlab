@@ -60,12 +60,12 @@ export default function DoborSamochoduPage() {
     <>
       <Header />
       <main>
-        <Breadcrumbs href="/dobor-samochodu" kolumna="srodek" items={[{ label: "Dobór samochodu" }]} />
+        <Breadcrumbs href="/dobor-samochodu" items={[{ label: "Dobór samochodu" }]} />
 
         {/* Hero, kompaktowy */}
         <section className="pt-24 pb-12">
-          <div className="container-wide max-w-3xl">
-            <p className="section-label mb-4">Narzędzie</p>
+          <div className="container-wide max-w-3xl text-center">
+            <p className="section-label mb-3">Narzędzie</p>
             <h1 className="h1-strony">
               Dobierz idealny samochód
             </h1>

@@ -60,7 +60,6 @@ export default function ZalacznikDoFakturyKsefArticle() {
       <main className="pt-16 prose-justify">
         <Breadcrumbs
           href="/strefa-wiedzy/zalacznik-do-faktury-ksef"
-          kolumna="srodek"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Załącznik do faktury w KSeF" },
@@ -72,7 +71,7 @@ export default function ZalacznikDoFakturyKsefArticle() {
             <h1 className="mt-4 h1-artykulu">
               Załącznik do faktury w KSeF
             </h1>
-            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed !text-left">
+            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
               Od 1 lutego 2026 faktura w KSeF może mieć załącznik, ale tylko w
               XML. PDF, zdjęcie, protokół odbioru czy list przewozowy dalej
               wysyłasz klientowi osobno.

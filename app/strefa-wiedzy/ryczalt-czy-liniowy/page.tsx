@@ -59,7 +59,7 @@ export default function RyczaltCzyLiniowyArticle() {
     <>
       <Header />
       <main className="pt-16">
-        <Breadcrumbs href="/strefa-wiedzy/ryczalt-czy-liniowy" kolumna="srodek"
+        <Breadcrumbs href="/strefa-wiedzy/ryczalt-czy-liniowy"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Ryczałt czy liniowy" },

@@ -189,7 +189,7 @@ export default function ProductLanding(p: ProductLandingProps) {
                   </h3>
                   <p className="mt-1 text-3xl font-bold text-gray-900 dark:text-white">
                     {t.oldPrice && (
-                      <s className="mr-3 text-xl font-semibold text-gray-400 dark:text-gray-500">
+                      <s className="mr-3 text-xl font-semibold text-gray-500 dark:text-gray-400">
                         {t.oldPrice}
                       </s>
                     )}

@@ -119,7 +119,7 @@ export default function Home() {
                 >
                   <h3 className="text-xl font-bold">{o.nazwa}</h3>
                   <p className="mt-2 text-2xl font-bold text-accent">
-                    <CountUp value={o.cena} />
+                    <CountUp value={o.cena} spadek />
                   </p>
                   <p className="mt-3 text-sm leading-relaxed text-gray-600 dark:text-white/70">
                     {o.opis}

@@ -59,7 +59,7 @@ export default function JakaFormaOpodatkowaniaJdgArticle() {
     <>
       <Header />
       <main className="pt-16 prose-justify">
-        <Breadcrumbs href="/strefa-wiedzy/jaka-forma-opodatkowania-jdg-2026" kolumna="srodek"
+        <Breadcrumbs href="/strefa-wiedzy/jaka-forma-opodatkowania-jdg-2026"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Jaka forma opodatkowania JDG w 2026?" },
@@ -72,7 +72,7 @@ export default function JakaFormaOpodatkowaniaJdgArticle() {
             <h1 className="mt-4 h1-artykulu">
               Jaka forma opodatkowania JDG w 2026?
             </h1>
-            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed !text-left">
+            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
               W 2026 roku JDG wybiera między skalą, podatkiem liniowym i
               ryczałtem. Różnią się stawką, kosztami i składką zdrowotną.
             </p>

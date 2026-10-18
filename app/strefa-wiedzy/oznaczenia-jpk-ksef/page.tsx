@@ -60,7 +60,6 @@ export default function OznaczeniaJpkKsefArticle() {
       <main className="pt-16 prose-justify">
         <Breadcrumbs
           href="/strefa-wiedzy/oznaczenia-jpk-ksef"
-          kolumna="srodek"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Oznaczenia KSeF w JPK_VAT" },
@@ -70,7 +69,7 @@ export default function OznaczeniaJpkKsefArticle() {
           <div className="container-wide max-w-3xl mx-auto text-center">
             <span className="section-label">Strefa wiedzy</span>
             <h1 className="mt-4 h1-artykulu">Numer KSeF, OFF, BFK czy DI w JPK_VAT</h1>
-            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed !text-left">
+            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
               Od lutego 2026 każdy dokument w ewidencji sprzedaży i zakupu ma
               numer KSeF albo jedno z trzech oznaczeń. Decyduje stan w dniu
               złożenia JPK_VAT.

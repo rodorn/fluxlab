@@ -58,7 +58,6 @@ export default function BladWFakturzeKsefArticle() {
       <main className="pt-16 prose-justify">
         <Breadcrumbs
           href="/strefa-wiedzy/blad-w-fakturze-ksef"
-          kolumna="srodek"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Błąd w fakturze w KSeF" },
@@ -68,7 +67,7 @@ export default function BladWFakturzeKsefArticle() {
           <div className="container-wide max-w-3xl mx-auto text-center">
             <span className="section-label">Strefa wiedzy</span>
             <h1 className="mt-4 h1-artykulu">Błąd w fakturze w KSeF</h1>
-            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed !text-left">
+            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
               Faktury przyjętej przez KSeF nie da się edytować ani usunąć.
               Poprawia ją sprzedawca, a sposób zależy od rodzaju błędu.
             </p>

@@ -61,7 +61,6 @@ export default function FakturaKontrahentZagranicznyKsefArticle() {
       <main className="pt-16 prose-justify">
         <Breadcrumbs
           href="/strefa-wiedzy/faktura-dla-kontrahenta-zagranicznego-ksef"
-          kolumna="srodek"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Faktura dla kontrahenta zagranicznego w KSeF" },
@@ -73,7 +72,7 @@ export default function FakturaKontrahentZagranicznyKsefArticle() {
             <h1 className="mt-4 h1-artykulu">
               Faktura dla kontrahenta zagranicznego w KSeF
             </h1>
-            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed !text-left">
+            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
               Polska firma wystawia ją w KSeF tak samo jak fakturę krajową.
               Różnica jest tylko w tym, jak klient ją dostaje.
             </p>

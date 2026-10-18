@@ -60,7 +60,6 @@ export default function KiedyOdliczycVatKsefArticle() {
       <main className="pt-16 prose-justify">
         <Breadcrumbs
           href="/strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef"
-          kolumna="srodek"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Kiedy odliczyć VAT z faktury z KSeF" },
@@ -72,7 +71,7 @@ export default function KiedyOdliczycVatKsefArticle() {
             <h1 className="mt-4 h1-artykulu">
               Kiedy odliczyć VAT z faktury z KSeF
             </h1>
-            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed !text-left">
+            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
               Najwcześniej w rozliczeniu za miesiąc, w którym KSeF nadał
               fakturze numer.{" "}
               <Link

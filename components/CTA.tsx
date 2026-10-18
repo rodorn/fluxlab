@@ -19,7 +19,7 @@ const CONTACT_PREFS = [
 
 interface CTAProps {
   naglowek?: string;
-  opis?: string;
+  opis?: React.ReactNode;
   etykieta?: string;
   href?: string;
 }
@@ -158,13 +158,10 @@ function CTAFormularz() {
       <div className="container-wide">
         <div className="max-w-2xl mx-auto text-center">
           <p className="section-label mb-3">Kontakt</p>
-          <h2
-            id="kontakt-heading"
-            className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4"
-          >
+          <h1 id="kontakt-heading" className="h1-strony">
             Sprawdźmy, czy automatyzacja ma u ciebie sens
-          </h2>
-          <p className="text-gray-500 dark:text-gray-400 text-lg mb-12">
+          </h1>
+          <p className="hero-lead mb-12">
             Wyślij krótki opis problemu. W odpowiedzi dostaniesz informację, czy
             widzimy potencjał na automatyzację, co można poprawić jako pierwsze i
             jaki byłby sensowny kolejny krok.

@@ -156,12 +156,12 @@ export default function CrmJakoSystemPracy() {
     <>
       <Header />
       <main>
-        <Breadcrumbs href="/crm-jako-system-pracy" kolumna="srodek" items={[{ label: "CRM jako system pracy" }]} />
+        <Breadcrumbs href="/crm-jako-system-pracy" items={[{ label: "CRM jako system pracy" }]} />
 
         {/* Hero, kompaktowy */}
         <section className="pt-24 pb-12 bg-gradient-to-b from-accent/10 to-transparent border-b border-gray-100 dark:border-gray-800">
           <div className="container-wide">
-            <div className="max-w-3xl mx-auto">
+            <div className="max-w-3xl mx-auto text-center">
               <span className="section-label">Usługa</span>
               <h1 className="h1-strony mt-4 mb-6">
                 Jak zmienić CRM z notatnika w system pracy handlowców

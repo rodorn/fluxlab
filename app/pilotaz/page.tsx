@@ -122,7 +122,7 @@ export default function Pilotaz() {
     <>
       <Header />
       <main className="pt-16 prose-justify">
-        <Breadcrumbs href="/pilotaz" kolumna="srodek" items={[{ label: "Program case study" }]} />
+        <Breadcrumbs href="/pilotaz" items={[{ label: "Program case study" }]} />
 
         {/* Hero, kompaktowy */}
         <section className="pt-24 pb-12 bg-gradient-to-b from-accent/10 to-transparent border-b border-gray-100 dark:border-gray-800">

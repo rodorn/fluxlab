@@ -58,7 +58,6 @@ export default function EDoreczeniaAdresPrywatnyIFirmowyArticle() {
       <main className="pt-16 prose-justify">
         <Breadcrumbs
           href="/strefa-wiedzy/e-doreczenia-adres-prywatny-i-firmowy"
-          kolumna="srodek"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "e-Doręczenia: adres prywatny i firmowy" },
@@ -70,7 +69,7 @@ export default function EDoreczeniaAdresPrywatnyIFirmowyArticle() {
             <h1 className="mt-4 h1-artykulu">
               e-Doręczenia w JDG: adres prywatny i firmowy
             </h1>
-            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed !text-left">
+            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
               Tak, można mieć oba i to nie koliduje. Adres prywatny służy do
               Twoich spraw jako osoby, adres firmowy do spraw działalności z
               CEIDG.

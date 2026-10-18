@@ -136,9 +136,8 @@ export default function AutomatyzacjaLeadowCRM() {
 
         {/* Hero, kompaktowy */}
         <section className="relative overflow-hidden pt-24 pb-12">
-          <div className="blob blob-accent w-[40rem] h-[40rem] -top-40 -right-40 animate-drift-slow" />
           <div className="container-wide relative">
-            <div className="max-w-3xl mx-auto">
+            <div className="max-w-3xl mx-auto text-center">
               <span className="section-label">Usługa</span>
               <h1 className="h1-strony mt-4">
                 Automatyzacja CRM z AI bez pracy ręcznej
@@ -176,7 +175,7 @@ export default function AutomatyzacjaLeadowCRM() {
         </section>
 
         <section className="container-wide pb-16">
-          <h2 className="h2-sekcji">Zobacz, jak to wdrażamy</h2>
+          <h2 className="h2-sekcji text-center">Zobacz, jak to wdrażamy</h2>
           <div className="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {PRODUCTS.filter((p) => POWIAZANE_Z_CRM.includes(p.href)).map(
               (p) => (
@@ -184,9 +183,9 @@ export default function AutomatyzacjaLeadowCRM() {
               ),
             )}
           </div>
-          <p className="mt-6">
-            <Link href="/produkty" className="text-accent hover:underline">
-              Zobacz cały cennik
+          <p className="mt-6 text-center">
+            <Link href="/produkty" className="text-sm font-semibold text-accent hover:underline">
+              Zobacz cały cennik →
             </Link>
           </p>
         </section>

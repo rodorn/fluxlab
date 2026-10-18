@@ -228,14 +228,6 @@ export default function CVPage() {
 
       {/* Hero */}
       <section className="relative overflow-hidden bg-mesh">
-        <div
-          aria-hidden="true"
-          className="blob blob-accent animate-drift-slow -z-10 top-[-30%] left-[-10%] w-[520px] h-[520px]"
-        />
-        <div
-          aria-hidden="true"
-          className="blob blob-violet animate-drift -z-10 bottom-[-40%] right-[-10%] w-[440px] h-[440px]"
-        />
         <div className="container-wide relative py-16 lg:py-20">
           <div className="grid lg:grid-cols-[auto,1fr] gap-8 lg:gap-12 items-start">
             {/* Zdjęcie */}
@@ -322,7 +314,7 @@ export default function CVPage() {
           {/* Pionowa linia */}
           <div
             aria-hidden="true"
-            className="absolute left-[7px] top-2 bottom-2 w-0.5 bg-gradient-to-b from-accent via-violet-500 to-transparent"
+            className="absolute left-[7px] top-2 bottom-2 w-0.5 bg-gradient-to-b from-accent via-accent/50 to-transparent"
           />
           <div className="space-y-10">
             {EXPERIENCE.map((job, idx) => (
@@ -466,7 +458,7 @@ export default function CVPage() {
                       </div>
                       <div className="h-1.5 rounded-full bg-gray-200 dark:bg-gray-800 overflow-hidden">
                         <div
-                          className="h-full rounded-full bg-gradient-to-r from-accent to-violet-500"
+                          className="h-full rounded-full bg-accent-solid"
                           style={{ width: `${lang.pct}%` }}
                         />
                       </div>

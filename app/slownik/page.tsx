@@ -37,7 +37,6 @@ export default function SlownikPage() {
       <main className="pt-16">
         <Breadcrumbs
           href="/slownik"
-          kolumna="srodek"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Słownik pojęć" },

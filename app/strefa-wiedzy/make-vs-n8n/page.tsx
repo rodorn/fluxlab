@@ -59,7 +59,7 @@ export default function MakeVsN8nArticle() {
     <>
       <Header />
       <main className="pt-16">
-        <Breadcrumbs href="/strefa-wiedzy/make-vs-n8n" kolumna="srodek"
+        <Breadcrumbs href="/strefa-wiedzy/make-vs-n8n"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Make vs n8n" },

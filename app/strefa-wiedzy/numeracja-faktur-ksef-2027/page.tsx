@@ -58,7 +58,6 @@ export default function NumeracjaFakturKsef2027Article() {
       <main className="pt-16 prose-justify">
         <Breadcrumbs
           href="/strefa-wiedzy/numeracja-faktur-ksef-2027"
-          kolumna="srodek"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Numeracja faktur w KSeF w 2027" },
@@ -70,7 +69,7 @@ export default function NumeracjaFakturKsef2027Article() {
             <h1 className="mt-4 h1-artykulu">
               Numeracja faktur w KSeF w 2027: błąd 440 „Duplikat faktury”
             </h1>
-            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed !text-left">
+            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
               Jeśli numer faktury nie zawiera roku, w 2027 zacznie powtarzać
               numery z 2026, a KSeF takiej faktury nie przyjmie. Wystarczy
               dopisać rok do wzoru numeru przed pierwszą fakturą w styczniu.

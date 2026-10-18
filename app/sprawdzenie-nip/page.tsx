@@ -75,7 +75,7 @@ export default function SprawdzenieNipPage() {
           ]}
         />
         <section className="container-wide pb-14 md:pb-20 pt-6">
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-3xl mx-auto text-center">
             <p className="section-label mb-3">Narzędzie</p>
             <h1 className="h1-strony">
               Sprawdzenie NIP VAT w wykazie MF

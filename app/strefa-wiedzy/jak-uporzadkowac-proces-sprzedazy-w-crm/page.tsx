@@ -35,7 +35,7 @@ export default function JakUporzadkowacProcesSprzedazyArticle() {
     <>
       <Header />
       <main className="pt-16 prose-justify">
-        <Breadcrumbs href="/strefa-wiedzy/jak-uporzadkowac-proces-sprzedazy-w-crm" kolumna="srodek"
+        <Breadcrumbs href="/strefa-wiedzy/jak-uporzadkowac-proces-sprzedazy-w-crm"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Jak uporządkować proces sprzedaży w CRM" },
@@ -48,7 +48,7 @@ export default function JakUporzadkowacProcesSprzedazyArticle() {
             <h1 className="mt-4 h1-artykulu">
               Jak uporządkować proces sprzedaży w CRM
             </h1>
-            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed !text-left">
+            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
               Problemy z CRM rzadko wynikają z narzędzia. Częściej z procesu,
               którego nikt nie opisał.
             </p>
