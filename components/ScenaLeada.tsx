@@ -41,6 +41,97 @@ function sekundy(ms: number) {
   return (ms / 1000).toFixed(2).replace(".", ",");
 }
 
+type R = React.RefObject<HTMLElement | null>;
+
+/** Linie przepływu liczone z prawdziwych pozycji: od wyniku pod przyciskiem do
+ *  karty CRM i od karty do telefonu. Kropki jadą po tych samych ścieżkach. */
+function Polaczenia({
+  scena,
+  zrodlo,
+  crm,
+  tel,
+  stan,
+  karta,
+  telefon,
+}: {
+  scena: R;
+  zrodlo: R;
+  crm: R;
+  tel: R;
+  stan: string;
+  karta: boolean;
+  telefon: boolean;
+}) {
+  const [d, setD] = useState<{ w: number; h: number; p1: string; p2: string } | null>(null);
+
+  useEffect(() => {
+    const licz = () => {
+      const s = scena.current?.getBoundingClientRect();
+      const z = zrodlo.current?.getBoundingClientRect();
+      const c = crm.current?.getBoundingClientRect();
+      const t = tel.current?.getBoundingClientRect();
+      if (!s || !z || !c || !t) return;
+      const x = (v: number) => Math.round(v - s.left) + 0.5;
+      const y = (v: number) => Math.round(v - s.top) + 0.5;
+      const zx = x(z.left + z.width / 2);
+      const zy = y(z.bottom + 6);
+      const cx = x(c.left + c.width / 2);
+      const cy = y(c.top);
+      const sr = Math.round((zy + cy) / 2);
+      const p1 = `M ${zx} ${zy} V ${sr} H ${cx} V ${cy}`;
+      let p2: string;
+      if (t.left >= c.right) {
+        const ay = y(c.top + c.height / 2);
+        const by = y(t.top + t.height / 2);
+        const mx = Math.round((x(c.right) + x(t.left)) / 2);
+        p2 = `M ${x(c.right)} ${ay} H ${mx} V ${by} H ${x(t.left)}`;
+      } else {
+        p2 = `M ${cx} ${y(c.bottom)} V ${y(t.top)}`;
+      }
+      setD({ w: Math.round(s.width), h: Math.round(s.height), p1, p2 });
+    };
+    licz();
+    const ro = new ResizeObserver(licz);
+    [scena, zrodlo, crm, tel].forEach((r) => r.current && ro.observe(r.current));
+    window.addEventListener("resize", licz);
+    return () => {
+      ro.disconnect();
+      window.removeEventListener("resize", licz);
+    };
+  }, [scena, zrodlo, crm, tel]);
+
+  if (!d) return null;
+  const linia = "stroke-gray-300 dark:stroke-white/15";
+  return (
+    <svg
+      key={`${stan}-${karta}-${telefon}`}
+      aria-hidden="true"
+      className="pointer-events-none absolute left-0 top-0"
+      width={d.w}
+      height={d.h}
+      fill="none"
+    >
+      <path id="sciezka-1" d={d.p1} className={`${linia} transition-colors ${stan === "czeka" || karta ? "stroke-accent/60" : ""}`} strokeWidth="1.5" strokeLinejoin="round" />
+      <path id="sciezka-2" d={d.p2} className={`${linia} ${telefon ? "stroke-accent/60" : ""}`} strokeWidth="1.5" strokeLinejoin="round" />
+      {stan === "czeka" && (
+        <circle r="4.5" className="scena-kropka-svg">
+          <animateMotion dur="1s" repeatCount="indefinite" rotate="auto">
+            <mpath href="#sciezka-1" />
+          </animateMotion>
+        </circle>
+      )}
+      {karta && !telefon && (
+        <circle r="5" opacity="0" className="scena-kropka-svg">
+          <set attributeName="opacity" to="1" begin="0.35s" />
+          <animateMotion dur="0.9s" begin="0.35s" fill="freeze">
+            <mpath href="#sciezka-2" />
+          </animateMotion>
+        </circle>
+      )}
+    </svg>
+  );
+}
+
 export default function ScenaLeada() {
   const [tekst, setTekst] = useState(PRZYKLADY[0]);
   const [stan, setStan] = useState<"start" | "czeka" | "gotowe" | "blad">(
@@ -53,6 +144,10 @@ export default function ScenaLeada() {
   // Telefon dostaje powiadomienie dopiero, gdy dane „przejdą” łącznikiem z CRM.
   const [telefon, setTelefon] = useState(false);
   const zegar = useRef<number | null>(null);
+  const scena = useRef<HTMLDivElement | null>(null);
+  const zrodlo = useRef<HTMLParagraphElement | null>(null);
+  const crmRef = useRef<HTMLDivElement | null>(null);
+  const telRef = useRef<HTMLDivElement | null>(null);
   // Godzina na ekranie telefonu dopiero po hydracji, bo strona jest statyczna.
   const [godzina, setGodzina] = useState("");
   useEffect(() => {
@@ -136,7 +231,8 @@ export default function ScenaLeada() {
         : "bg-gray-500/15 text-gray-600 dark:text-gray-300";
 
   return (
-    <div className="mx-auto w-full max-w-5xl">
+    <div ref={scena} className="relative mx-auto w-full max-w-5xl">
+      <Polaczenia scena={scena} zrodlo={zrodlo} crm={crmRef} tel={telRef} stan={stan} karta={!!karta} telefon={telefon} />
       <form onSubmit={wyslij} className="mx-auto max-w-2xl">
         <label htmlFor="scena-tekst" className="sr-only">
           Zapytanie klienta
@@ -174,6 +270,7 @@ export default function ScenaLeada() {
             {stan === "czeka" ? "AI czyta zapytanie…" : "Wyślij jako klient"}
           </button>
           <p
+            ref={zrodlo}
             className={`text-sm tabular-nums transition-opacity ${
               stan === "start" ? "opacity-0" : "opacity-100"
             } ${stan === "gotowe" ? "text-accent" : "text-gray-500 dark:text-white/50"}`}
@@ -188,13 +285,12 @@ export default function ScenaLeada() {
         </div>
       </form>
 
-      <div aria-hidden="true" className="relative mx-auto mt-4 h-12 w-px bg-gradient-to-b from-transparent to-gray-300 dark:to-white/15">
-        {stan === "czeka" && <span className="przeplyw-spada" />}
-      </div>
+      <div aria-hidden="true" className="h-16" />
 
       <div className="grid items-center gap-0 md:grid-cols-[3fr_auto_2fr]">
         <div
-          className={`relative overflow-hidden rounded-2xl border bg-white p-6 text-left transition-all duration-500 dark:bg-gray-900 ${
+          ref={crmRef}
+          className={`relative z-10 overflow-hidden rounded-2xl border bg-white p-6 text-left transition-all duration-500 dark:bg-gray-900 ${
             karta
               ? "border-accent shadow-xl shadow-accent/10"
               : "border-gray-200 dark:border-white/10"
@@ -281,12 +377,11 @@ export default function ScenaLeada() {
           )}
         </div>
 
-        <div aria-hidden="true" className="relative mx-auto h-10 w-px bg-gray-300 md:h-px md:w-12 dark:bg-white/15">
-          {karta && !telefon && <span key={karta.temat} className="scena-kropka" style={{ animationDelay: "700ms" }} />}
-        </div>
+        <div aria-hidden="true" className="h-12 md:h-px md:w-12" />
 
         <div
-          className={`relative mx-auto h-[460px] w-[240px] rounded-[2.6rem] border-[7px] border-gray-900 bg-gradient-to-b from-accent/15 via-white to-white p-3 shadow-2xl transition-shadow duration-500 dark:border-gray-700 dark:from-accent/25 dark:via-gray-900 dark:to-gray-900 ${
+          ref={telRef}
+          className={`relative z-10 mx-auto h-[460px] w-[240px] rounded-[2.6rem] border-[7px] border-gray-900 bg-gradient-to-b from-accent/15 via-white to-white p-3 shadow-2xl transition-shadow duration-500 dark:border-gray-700 dark:from-accent/25 dark:via-gray-900 dark:to-gray-900 ${
             telefon ? "wibracja shadow-accent/30" : "shadow-gray-900/20"
           }`}
         >

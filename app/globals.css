@@ -1255,3 +1255,9 @@ p {
   border: 3px solid #4f46e5; box-shadow: 0 2px 8px rgb(0 0 0 / 0.25);
 }
 .suwak-terminu:focus-visible { outline: 2px solid #4f46e5; outline-offset: 4px; border-radius: 0.75rem; }
+
+/* Kropki przepływu w demo leada, jadą po liniach SVG */
+.scena-kropka-svg {
+  fill: rgb(var(--accent));
+  filter: drop-shadow(0 0 6px rgb(var(--accent) / 0.9));
+}
