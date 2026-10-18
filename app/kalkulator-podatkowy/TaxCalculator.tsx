@@ -420,16 +420,19 @@ function calculate(p: {
     (s, src) => s + src.amount * 12,
     0,
   );
-  // Ryczałt: IKZE odliczane od przychodu proporcjonalnie do źródeł
+  // Ryczałt: ZUS społeczny, 50% zdrowotnej i IKZE odliczane od przychodu proporcjonalnie do źródeł
   let ryczTax = 0;
   let ryczTaxNoIkze = 0;
+  let ryczTaxBase = 0;
   for (const src of p.ryczaltSources) {
     const srcAnn = src.amount * 12;
     const proportion = totalRyczRev > 0 ? srcAnn / totalRyczRev : 0;
+    const srcZusDed = Math.round(annZus * proportion);
     const srcHealthDed = Math.round(ryczHealthDed * proportion);
     const srcIkzeDed = Math.round(ikze * proportion);
-    const srcTaxableNoIkze = Math.max(0, srcAnn - srcHealthDed);
-    const srcTaxable = Math.max(0, srcAnn - srcHealthDed - srcIkzeDed);
+    const srcTaxableNoIkze = Math.max(0, srcAnn - srcZusDed - srcHealthDed);
+    const srcTaxable = Math.max(0, srcAnn - srcZusDed - srcHealthDed - srcIkzeDed);
+    ryczTaxBase += srcTaxable;
 
     if (src.isNajem) {
       ryczTaxNoIkze += calcRyczaltNajem(srcTaxableNoIkze);
@@ -532,7 +535,7 @@ function calculate(p: {
       0,
       ryczHealthAnn,
       ryczHealthDed,
-      totalRyczRev,
+      ryczTaxBase,
       ryczTax,
       ryczBurden,
       0,
@@ -1060,7 +1063,7 @@ function ResultCard({
       dimmed: true,
       tip:
         r.label === "Ryczałt"
-          ? `DEBUG: przychód roczny netto ${pln(r.dbgMonthlyRevenue * 12)} − 50% zdrowotnej (${pln(r.healthDeduction)}) − IKZE (${pln(r.ikzeContribution)}) = ${pln(r.taxBase)}/rok. Wyświetlane: ${v(r.taxBase)}${sfx}.`
+          ? `DEBUG: przychód roczny netto ${pln(r.dbgMonthlyRevenue * 12)} − ZUS (${pln(r.zusSpoleczne)}) − 50% zdrowotnej (${pln(r.healthDeduction)}) − IKZE (${pln(r.ikzeContribution)}) = ${pln(r.taxBase)}/rok. Wyświetlane: ${v(r.taxBase)}${sfx}.`
           : `DEBUG: przychód roczny netto ${pln(r.dbgMonthlyRevenue * 12)} − koszty odliczone (${pln(r.deductibleCosts)}) − ZUS (${pln(r.zusSpoleczne)})${r.healthDeduction > 0 ? ` − odliczenie zdrowotnej (${pln(r.healthDeduction)})` : ""} − IKZE (${pln(r.ikzeContribution)}) = ${pln(r.taxBase)}/rok. Wyświetlane: ${v(r.taxBase)}${sfx}.`,
     },
     {
@@ -1074,7 +1077,7 @@ function ResultCard({
             : `12% × ${pln(BRACKET_LIMIT)} − ${pln(TAX_REDUCTION)} + 32% × ${v(r.taxBase - BRACKET_LIMIT)} = ${v(r.incomeTax)}`
           : r.label === "Podatek liniowy"
             ? `19% × ${v(r.taxBase)} = ${v(r.incomeTax)} (bez kwoty wolnej)`
-            : `Ryczałt wg stawek od przychodu po odliczeniu zdrowotnej. Podatek: ${v(r.incomeTax)}${sfx}.`,
+            : `Ryczałt wg stawek od przychodu po odliczeniu ZUS i zdrowotnej. Podatek: ${v(r.incomeTax)}${sfx}.`,
     },
     {
       label: "Obciążenia łącznie",
