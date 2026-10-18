@@ -11,7 +11,7 @@ const ETAPY: { id: Etap; nazwa: string }[] = [
   { id: "wygrany", nazwa: "Wygrany" },
 ];
 
-type Zdarzenie = { typ: "formularz" | "mail" | "telefon" | "zadanie"; tekst: string; kiedy: string };
+type Zdarzenie = { typ: "formularz" | "mail" | "telefon" | "zadanie" | "automat"; tekst: string; kiedy: string };
 type Lead = { id: number; firma: string; osoba: string; zrodlo: string; etap: Etap; historia: Zdarzenie[] };
 
 const START: Lead[] = [
@@ -53,11 +53,40 @@ const START: Lead[] = [
   },
 ];
 
+function Blysk() {
+  return (
+    <svg width="11" height="11" viewBox="0 0 12 12" aria-hidden="true" className="inline-block shrink-0">
+      <path d="M7 1L2.5 7h3l-1 4L9.5 5h-3z" fill="currentColor" />
+    </svg>
+  );
+}
+
 const IKONA: Record<Zdarzenie["typ"], string> = {
   formularz: "Formularz",
   mail: "Mail",
   telefon: "Telefon",
   zadanie: "Zadanie",
+  automat: "Automat",
+};
+
+/** Co CRM robi sam po wejściu karty do etapu. */
+const AUTOMATY: Record<Etap, { skrot: string; kroki: string[] }> = {
+  nowy: {
+    skrot: "opiekun i zadanie",
+    kroki: ["Przypisano opiekuna według regionu: Marek", "Zadanie: zadzwoń w 15 minut"],
+  },
+  kontakt: {
+    skrot: "SMS i przypomnienie",
+    kroki: ["SMS do klienta: dziękujemy, oddzwonimy dziś", "Zadanie: rozmowa do 16:00, przypomnienie 15 min wcześniej"],
+  },
+  oferta: {
+    skrot: "oferta PDF i follow-up",
+    kroki: ["Oferta PDF wygenerowana z cennika i wysłana mailem", "Follow-up za 3 dni, jeśli klient nie odpisze"],
+  },
+  wygrany: {
+    skrot: "faktura, Slack, powitanie",
+    kroki: ["Faktura wystawiona i wysłana do KSeF", "Zespół dostał powiadomienie na Slacku", "Mail powitalny z planem startu"],
+  },
 };
 
 export default function PodgladCrm() {
@@ -65,8 +94,13 @@ export default function PodgladCrm() {
   const [otwarty, setOtwarty] = useState<number | null>(1);
   const [drag, setDrag] = useState<{ id: number; x: number; y: number; nad: Etap | null } | null>(null);
   const [komunikat, setKomunikat] = useState("");
+  const [automat, setAutomat] = useState<{ firma: string; etap: string; kroki: string[]; n: number } | null>(null);
   const dragRef = useRef(drag);
   dragRef.current = drag;
+  const start = useRef<{ id: number; x: number; y: number } | null>(null);
+  const czasy = useRef<number[]>([]);
+
+  useEffect(() => () => czasy.current.forEach((t) => window.clearTimeout(t)), []);
 
   const przenies = (id: number, etap: Etap) => {
     const l = leady.find((x) => x.id === id);
@@ -80,6 +114,20 @@ export default function PodgladCrm() {
       ),
     );
     setKomunikat(`${l.firma}: etap ${nazwa}`);
+    setOtwarty(id);
+    // Automatyzacje etapu dopisują się do historii po kolei, jak w prawdziwym CRM.
+    czasy.current.forEach((t) => window.clearTimeout(t));
+    const { kroki } = AUTOMATY[etap];
+    setAutomat({ firma: l.firma, etap: nazwa, kroki, n: 0 });
+    czasy.current = kroki.map((tekst, i) =>
+      window.setTimeout(() => {
+        setLeady((p) =>
+          p.map((x) => (x.id === id ? { ...x, historia: [...x.historia, { typ: "automat", tekst, kiedy: "teraz" }] } : x)),
+        );
+        setAutomat((a) => (a ? { ...a, n: i + 1 } : a));
+      }, 450 * (i + 1)),
+    );
+    czasy.current.push(window.setTimeout(() => setAutomat(null), 450 * (kroki.length + 1) + 2500));
   };
 
   const krok = (id: number, kier: -1 | 1) => {
@@ -95,6 +143,27 @@ export default function PodgladCrm() {
     return (el?.dataset.etap as Etap) ?? null;
   };
 
+  // Mysz: przeciąga się cała karta (od 6 px ruchu, krótsze kliknięcie otwiera kartę).
+  // Dotyk: tylko za uchwyt, żeby nie blokować przewijania strony.
+  useEffect(() => {
+    const ruch = (e: PointerEvent) => {
+      const s0 = start.current;
+      if (!s0 || dragRef.current) return;
+      if (Math.hypot(e.clientX - s0.x, e.clientY - s0.y) > 6) {
+        setDrag({ id: s0.id, x: e.clientX, y: e.clientY, nad: znajdzKolumne(e.clientX, e.clientY) });
+      }
+    };
+    const koniec = () => {
+      start.current = null;
+    };
+    window.addEventListener("pointermove", ruch);
+    window.addEventListener("pointerup", koniec);
+    return () => {
+      window.removeEventListener("pointermove", ruch);
+      window.removeEventListener("pointerup", koniec);
+    };
+  }, []);
+
   useEffect(() => {
     if (!drag) return;
     const move = (e: PointerEvent) =>
@@ -104,6 +173,8 @@ export default function PodgladCrm() {
       const nad = znajdzKolumne(e.clientX, e.clientY);
       if (d && nad) przenies(d.id, nad);
       setDrag(null);
+      // Kliknięcie, które zakończyło przeciąganie, nie otwiera karty.
+      window.addEventListener("click", (ev) => ev.stopPropagation(), { capture: true, once: true });
     };
     window.addEventListener("pointermove", move);
     window.addEventListener("pointerup", up);
@@ -124,11 +195,26 @@ export default function PodgladCrm() {
       <div className="text-center mb-6">
         <h2 id="podglad-crm-h" className="h2-sekcji mb-2">Tak wygląda panel FluxCRM</h2>
         <p className="text-gray-600 dark:text-gray-400">
-          Przeciągnij kartę do innej kolumny albo kliknij ją, żeby zobaczyć historię klienta.
+          Przeciągnij kartę do innej kolumny i zobacz, co CRM zrobi sam. Kliknięcie otwiera historię klienta.
         </p>
         <p className="mt-3 inline-block rounded-full bg-amber-100 dark:bg-amber-900/40 text-amber-900 dark:text-amber-200 text-xs font-semibold px-3 py-1">
           Dane przykładowe, fikcyjne firmy i osoby
         </p>
+      </div>
+
+      <div className="mb-3 flex min-h-[2.75rem] items-center justify-center" aria-hidden="true">
+        {automat ? (
+          <div key={automat.firma + automat.etap} className="scena-wjazd flex flex-wrap items-center justify-center gap-x-2 gap-y-1 rounded-xl bg-accent/10 px-4 py-2 text-sm text-accent">
+            <span className="flex items-center gap-1 font-semibold"><Blysk /> {automat.firma} → {automat.etap}:</span>
+            {automat.kroki.map((k, i) => (
+              <span key={k} className={`transition-opacity duration-300 ${i < automat.n ? "opacity-100" : "opacity-30"}`}>
+                {i < automat.n ? "✓" : "…"} {k.split(":")[0]}
+              </span>
+            ))}
+          </div>
+        ) : (
+          <p className="text-xs text-gray-500 dark:text-gray-400">Przenieś kartę, a CRM sam wykona automatyzacje etapu.</p>
+        )}
       </div>
 
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
@@ -145,26 +231,35 @@ export default function PodgladCrm() {
                   : "ring-gray-200 dark:ring-white/10 bg-gray-50 dark:bg-gray-800/40"
               }`}
             >
-              <h3 className="text-sm font-bold text-gray-900 dark:text-white mb-2 flex justify-between">
+              <h3 className="text-sm font-bold text-gray-900 dark:text-white flex justify-between">
                 {e.nazwa}
                 <span className="text-gray-500 dark:text-gray-400 tabular-nums">{wKolumnie.length}</span>
               </h3>
+              <p className="mb-2 mt-0.5 flex items-center gap-1 text-[11px] text-accent">
+                <Blysk />
+                {AUTOMATY[e.id].skrot}
+              </p>
               <ul className="space-y-2">
                 {wKolumnie.map((l) => {
                   const i = ETAPY.findIndex((x) => x.id === l.etap);
                   return (
                     <li
                       key={l.id}
-                      className={`rounded-xl bg-white dark:bg-gray-900 ring-1 p-2.5 ${
+                      onPointerDown={(ev) => {
+                        const t = ev.target as HTMLElement;
+                        if (ev.button !== 0 || t.closest("[data-krok]")) return;
+                        if (ev.pointerType !== "mouse" && !t.closest("[data-uchwyt]")) return;
+                        if (ev.pointerType === "mouse") ev.preventDefault();
+                        start.current = { id: l.id, x: ev.clientX, y: ev.clientY };
+                        if (ev.pointerType !== "mouse") setDrag({ id: l.id, x: ev.clientX, y: ev.clientY, nad: l.etap });
+                      }}
+                      className={`select-none rounded-xl bg-white dark:bg-gray-900 ring-1 p-2.5 transition-shadow hover:shadow-md md:cursor-grab ${
                         otwarty === l.id ? "ring-accent" : "ring-gray-200 dark:ring-white/10"
                       } ${drag?.id === l.id ? "opacity-40" : ""}`}
                     >
                       <div className="flex items-start gap-2">
                         <span
-                          onPointerDown={(ev) => {
-                            ev.preventDefault();
-                            setDrag({ id: l.id, x: ev.clientX, y: ev.clientY, nad: l.etap });
-                          }}
+                          data-uchwyt
                           style={{ touchAction: "none" }}
                           className="cursor-grab select-none text-gray-400 px-1 -ml-1 leading-5"
                           title="Przeciągnij"
@@ -189,6 +284,7 @@ export default function PodgladCrm() {
                       <div className="mt-2 flex justify-end gap-1">
                         <button
                           type="button"
+                          data-krok
                           disabled={i === 0}
                           onClick={() => krok(l.id, -1)}
                           aria-label={`Przenieś ${l.firma} do poprzedniego etapu`}
@@ -198,6 +294,7 @@ export default function PodgladCrm() {
                         </button>
                         <button
                           type="button"
+                          data-krok
                           disabled={i === ETAPY.length - 1}
                           onClick={() => krok(l.id, 1)}
                           aria-label={`Przenieś ${l.firma} do następnego etapu`}
@@ -227,8 +324,8 @@ export default function PodgladCrm() {
           </div>
           <ol className="space-y-2">
             {wybrany.historia.map((h, i) => (
-              <li key={i} className="flex gap-3 text-sm">
-                <span className="shrink-0 w-20 font-semibold text-accent">{IKONA[h.typ]}</span>
+              <li key={i} className={`flex gap-3 text-sm ${h.typ === "automat" ? "scena-wjazd" : ""}`}>
+                <span className="shrink-0 w-20 font-semibold text-accent">{h.typ === "automat" && <Blysk />} {IKONA[h.typ]}</span>
                 <span className="flex-1 text-gray-700 dark:text-gray-300">{h.tekst}</span>
                 <span className="shrink-0 text-xs text-gray-500 dark:text-gray-400">{h.kiedy}</span>
               </li>
