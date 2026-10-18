@@ -77,6 +77,11 @@ export default function RyczaltCzyLiniowyArticle() {
               decydują stawka ryczałtu, koszty i składka zdrowotna, a różnica
               sięga kilku tysięcy złotych rocznie.
             </p>
+            <div className="mt-8">
+              <Link href="/kalkulator-podatkowy" className="btn-primary">
+                Policz w kalkulatorze JDG 2026
+              </Link>
+            </div>
           </div>
         </section>
 
