@@ -11,23 +11,15 @@ export default function MagnesPrzyciskow() {
     if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-    const pominiete = new WeakSet<HTMLElement>();
     const ruszone = new Set<HTMLElement>();
     let x = 0;
     let y = 0;
     let ramka = 0;
 
+    // Własność CSS translate nie koliduje z transform przycisku (hover, wjazd),
+    // więc każdy przycisk zachowuje się tak samo.
     const przesun = (el: HTMLElement, dx: number, dy: number) => {
-      if (pominiete.has(el)) return;
-      if (!ruszone.has(el)) {
-        const t = getComputedStyle(el).transform;
-        if ((t && t !== "none" && !el.matches(":hover")) || el.style.transform) {
-          pominiete.add(el);
-          return;
-        }
-        el.style.transition = "transform 0.25s ease-out";
-      }
-      el.style.transform = dx === 0 && dy === 0 ? "" : `translate(${dx}px, ${dy}px)`;
+      el.style.translate = dx === 0 && dy === 0 ? "" : `${dx}px ${dy}px`;
       if (dx === 0 && dy === 0) ruszone.delete(el);
       else ruszone.add(el);
     };
@@ -37,11 +29,10 @@ export default function MagnesPrzyciskow() {
       const wh = window.innerHeight;
       const ww = window.innerWidth;
       const widoczne = new Set<HTMLElement>();
-      document.querySelectorAll<HTMLElement>(".btn-primary").forEach((el) => {
+      document.querySelectorAll<HTMLElement>(".btn-primary, .btn-secondary").forEach((el) => {
         const r = el.getBoundingClientRect();
         if (r.bottom < 0 || r.top > wh || r.right < 0 || r.left > ww) return;
         widoczne.add(el);
-        if (pominiete.has(el)) return;
         const dx = x - (r.left + r.width / 2);
         const dy = y - (r.top + r.height / 2);
         if (Math.hypot(dx, dy) > PROMIEN) {
@@ -66,7 +57,7 @@ export default function MagnesPrzyciskow() {
     return () => {
       window.removeEventListener("pointermove", naRuch);
       if (ramka) cancelAnimationFrame(ramka);
-      ruszone.forEach((el) => (el.style.transform = ""));
+      ruszone.forEach((el) => (el.style.translate = ""));
     };
   }, []);
 

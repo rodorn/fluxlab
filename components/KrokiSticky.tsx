@@ -4,88 +4,98 @@ import { useEffect, useRef, useState } from "react";
 
 type Props = { kroki: readonly (readonly string[])[] };
 
-const OBWOD = 2 * Math.PI * 44;
-
 /**
- * Kroki: na desktopie lewa kolumna jest przyklejona i pokazuje bieżący krok,
- * prawa przewija się obok. Na telefonie zwykła lista.
+ * Trzy kroki w jednym rzędzie. Po wejściu w widok linia między nimi się
+ * wypełnia, a kroki zapalają się po kolei. Na telefonie pionowo.
  */
 export default function KrokiSticky({ kroki }: Props) {
-  const [aktywny, setAktywny] = useState(0);
-  const refy = useRef<(HTMLLIElement | null)[]>([]);
+  const [aktywny, setAktywny] = useState(-1);
+  const ref = useRef<HTMLOListElement | null>(null);
 
   useEffect(() => {
-    const wezly = refy.current.filter(Boolean) as HTMLLIElement[];
-    if (!("IntersectionObserver" in window)) return;
+    const el = ref.current;
+    if (!el) return;
+    const reduced = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    if (reduced || !("IntersectionObserver" in window)) {
+      setAktywny(kroki.length - 1);
+      return;
+    }
+    const czasy: number[] = [];
     const obs = new IntersectionObserver(
-      (wpisy) => {
-        for (const w of wpisy) {
-          if (w.isIntersecting) {
-            const i = wezly.indexOf(w.target as HTMLLIElement);
-            if (i >= 0) setAktywny(i);
-          }
-        }
+      ([w]) => {
+        if (!w.isIntersecting) return;
+        obs.disconnect();
+        kroki.forEach((_, i) =>
+          czasy.push(window.setTimeout(() => setAktywny(i), 150 + i * 550)),
+        );
       },
-      { rootMargin: "-45% 0px -45% 0px" },
+      { threshold: 0.4 },
     );
-    wezly.forEach((w) => obs.observe(w));
-    return () => obs.disconnect();
-  }, []);
+    obs.observe(el);
+    return () => {
+      obs.disconnect();
+      czasy.forEach((t) => window.clearTimeout(t));
+    };
+  }, [kroki]);
+
+  const postep = aktywny < 0 ? 0 : (aktywny / (kroki.length - 1)) * 100;
 
   return (
-    <div className="mx-auto mt-20 grid max-w-5xl gap-8 lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] lg:gap-16">
-      <div
+    <ol
+      ref={ref}
+      className="relative mx-auto mt-20 grid max-w-5xl gap-8 md:grid-cols-3 md:gap-6"
+    >
+      <span
         aria-hidden="true"
-        className="hidden lg:sticky lg:top-32 lg:block lg:self-start"
+        className="absolute bottom-4 left-4 top-4 w-0.5 bg-gray-200 dark:bg-white/10 md:hidden"
       >
-        <div className="relative flex h-28 w-28 items-center justify-center">
-          <svg viewBox="0 0 100 100" className="absolute inset-0 h-full w-full -rotate-90">
-            <circle cx="50" cy="50" r="44" fill="none" strokeWidth="3" className="stroke-gray-200 dark:stroke-white/10" />
-            <circle
-              key={aktywny}
-              cx="50"
-              cy="50"
-              r="44"
-              fill="none"
-              strokeWidth="3"
-              strokeLinecap="round"
-              className="kroki-pierscien stroke-accent"
-              strokeDasharray={OBWOD}
-              strokeDashoffset={OBWOD}
-            />
-          </svg>
-          <span key={aktywny} className="kroki-zmiana text-5xl font-bold tracking-tighter">
-            {aktywny + 1}
-          </span>
-        </div>
-        <p key={`t${aktywny}`} className="kroki-zmiana mt-6 text-balance text-3xl font-bold tracking-tighter">
-          {kroki[aktywny][0]}
-        </p>
-      </div>
-
-      <ol className="space-y-4 lg:space-y-0">
-        {kroki.map(([tytul, opis], i) => (
+        <span
+          className="absolute inset-0 origin-top bg-accent-solid transition-transform duration-[1100ms] ease-out"
+          style={{ transform: `scaleY(${postep / 100})` }}
+        />
+      </span>
+      <span
+        aria-hidden="true"
+        className="absolute left-[16.66%] right-[16.66%] top-[17px] hidden h-0.5 bg-gray-200 dark:bg-white/10 md:block"
+      >
+        <span
+          className="absolute inset-0 origin-left bg-accent-solid transition-transform duration-[1100ms] ease-out"
+          style={{ transform: `scaleX(${postep / 100})` }}
+        />
+      </span>
+      {kroki.map(([tytul, opis], i) => {
+        const wlaczony = i <= aktywny;
+        return (
           <li
             key={tytul}
-            ref={(el) => {
-              refy.current[i] = el;
-            }}
-            className={`flex gap-4 rounded-2xl border border-gray-200 p-5 transition-opacity duration-500 dark:border-white/10 lg:min-h-[45vh] lg:items-center lg:border-0 lg:p-0 ${
-              i === aktywny ? "lg:opacity-100" : "lg:opacity-35"
-            }`}
+            className="relative flex gap-4 pl-0 md:flex-col md:items-center md:text-center"
           >
-            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent-solid text-sm font-bold text-white">
+            <span
+              className={`relative z-10 flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-sm font-bold transition-all duration-500 ${
+                wlaczony
+                  ? "scale-110 bg-accent-solid text-white shadow-lg shadow-accent/30"
+                  : "bg-gray-100 text-gray-400 dark:bg-white/10 dark:text-white/40"
+              }`}
+            >
               {i + 1}
             </span>
-            <div>
-              <p className="font-semibold lg:text-2xl">{tytul}</p>
-              <p className="text-sm text-gray-600 dark:text-white/60 lg:mt-2 lg:text-lg">
+            <div
+              className={`transition-all duration-500 ${
+                wlaczony
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-2 opacity-40"
+              }`}
+            >
+              <p className="text-lg font-semibold md:mt-4">{tytul}</p>
+              <p className="mt-1 text-sm text-gray-600 dark:text-white/60">
                 {opis}
               </p>
             </div>
           </li>
-        ))}
-      </ol>
-    </div>
+        );
+      })}
+    </ol>
   );
 }
