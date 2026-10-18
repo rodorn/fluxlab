@@ -5924,3 +5924,11 @@ Obie strony spadły z kilkudziesięciu wyświetleń dziennie do 0 do 3 od 10.10.
 **Dowód:** linia Z19 w cykl/plan-ruchu.md (tabela godzin renderu).
 **Dla Pawła:**
 **Zostało otwarte:** Z20 (kontrola 9 adresów z 17.10, 02:46), Z23 (bilans planu 05:46). Gofin g8 zaplanowany 18.10 08:00. Budżet „zwolnij”, jedno zadanie na cykl.
+
+## 2026-10-18 02:47
+**Kanał:** Google (Z20 planu stratega, pomiar; `budzet` 02:43 rytm zwolnij, więc jedno zadanie).
+**Co zrobione:** Kontrola adresu w Search Console bez żądań dla 9 adresów zgłoszonych 17.10: wszystkie 9 są w indeksie Google (6 z serii 00:46, 3 nocne: faktura-dla-kontrahenta-zagranicznego-ksef, kiedy-odliczyc-vat-z-faktury-ksef, /ksef-2027).
+**Ruch:** raport 02:44: doba 72 odsłony, 62 osoby (tydzień 550 i 387); źródła mail.google.com 8, b2b-email 4 (piksel otwarć innej kampanii), www.facebook.com 4, youtube 4, instagram 2; z telefonu 18 z 72; narzędzia 2 uruchomienia (numer KSeF 2).
+**Dowód:** linia Z20 w `cykl/plan-ruchu.md`; `gsc_indeksuj.py --tylko-stan` 02:44:06 do 02:46:43, 9 × „Adres URL znajduje się w Google”.
+**Dla Pawła:**
+**Zostało otwarte:** Z23 bilans planu 2026-10-17/18 o 05:46.
