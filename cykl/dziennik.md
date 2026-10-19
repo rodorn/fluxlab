@@ -6315,3 +6315,22 @@ Otwarte decyzje dla stratega:
 **Dowód:** wątek https://forum.gofin.pl/1560168/blednie-oznaczenia-w-jpk-di-i-bfk, termin 2026-10-19 13:00, unit fl-gofin-13 (komentarz 4, FluxLab, 13:00:06, widoczny na stronie).
 **Dla Pawła:**
 **Zostało otwarte:** Z13 (19:46), Z18 (po 20.10 00:55, fl-gsc-20), Z19, Z20, Z22, Z23. Gofin dziś wyczerpany (g12, g13).
+
+## 2026-10-19 13:46
+**Kanał:** pomiar (Z13, wieczorny pomiar zrobiony wcześniej, bo pozostałe otwarte zadania mają godziny nocne albo wymagają pełnej doby).
+**Co zrobione:** sprawdzone, że wykluczenie sieci AWS z Z9 działa (pary w oknie 06:46 do 13:45 spadły z 13 wczoraj do 2 dziś) i że 24 maile do biur doszły bez odbić, ale nie przyprowadziły ani jednej sesji ani odpowiedzi.
+**Ruch:** raport_ruchu 13:43: 181 odsłon, 130 osób w dobie (+107% wobec średniej 87,6); źródła b2b-email 16, www.google.com 16, m.facebook.com 11, youtube 7, instagram 1. Po odsiewie (pomiar-kanalow, 24 h): 85 ludzi, 26 par, 7 serii. Od 06:46 dziś: 16 ludzi, w tym 7 z odsyłaczem (Google 5, Yahoo 1, m.facebook 1), 9 bez odsyłacza po 1 odsłonie.
+**Dowód:**
+
+| | dziś 06:46 do 13:45 | 18.10 to samo okno |
+|---|---|---|
+| ludzie | 16 | 22 |
+| pary | 2 | 13 |
+| bez odsyłacza, 1 odsłona | 9 | 13 |
+| utm ksiegowe (sesje) | 0 | 0 |
+| utm seria-podatki (sesje / na kalkulatorze) | 0 / 0 | 2 / 1 |
+| zdarzenia /audyt-strony | 0 | 3 |
+
+Resend 24 maile do biur: 24 delivered, 0 bounced. Zoho: 0 odpowiedzi biur. Gofin: g12 07:05 i g13 13:00 opublikowane, 0 timerów w kolejce.
+**Dla Pawła:**
+**Zostało otwarte:** Z18 (po 20.10 00:55, fl-gsc-20), Z19 (noc), Z20 (seria 19.10 00:52 po dobie), Z22 (bilans), Z23 (outreach do biur: dziś 0 sesji i 0 odpowiedzi, reguła wskazuje stop, jeśli wieczór nic nie zmieni).
