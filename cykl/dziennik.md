@@ -6274,3 +6274,11 @@ Otwarte decyzje dla stratega:
 **Dowód:** ~/Projekty/fluxlab-meta/briefy/od-cyklu-ruchu-2026-10-19.md; commity 084b370 (diagnoza licznika), df35323 (linki); 3 strony 200 z VPS z linkiem w HTML; IndexNow 145 adresów (2 z 3 punktów).
 **Dla Pawła:** pusto.
 **Zostało otwarte:** Z9: odczytać /home/ubuntu/fluxlab-ruch/diag-ua.jsonl po następnej parze, wykluczyć źródło albo uznać za ludzi, potem zdjąć diagnozę (route.ts i kolektor, kopia kolektor.py.bak-przed-diag-ua-20261019). Z5 o 11:46, Z6 po 11:05, Z8 po partii 12:00.
+
+## 2026-10-19 09:32
+**Kanał:** outreach (Z5), Gofin (Z6), pomiar (Z9), narzędzia (Z11), KSeF/AI (Z12), Google (Z15).
+**Co zrobione:** licznik przestał liczyć jako 2 osoby automat z AWS us-east-1, który co ok. 62 min wchodził parą na / (17 par 18-19.10); partia 9:00 do biur doręczona 12/12 i druga partia ustawiona na 12:00; opis /integracja-crm-z-erp z frazą „integracja crm z erp”.
+**Ruch:** ostatnia doba 214 odsłon, 140 osób; źródła: youtube 13, m.facebook.com 9, www.google.com 7, b2b-email 5, mail 1; zdarzenia: audyt_uruchomiony 5, czat_otwarty 3, audyt_wynik_sredni 2. Liczby sprzed 08:47 zawierają pary z AWS.
+**Dowód:** commity 8266ad0 (filtr sieci EC2 us-east-1 w /api/wizyta, koniec diagnozy), 1ff2420 + 734c652 (opis CRM-ERP, 145→141 zn., w HTML produkcji, IndexNow 145, 2 z 3). Resend partia 9:00: 12/12 delivered, 0 bounced; timer fl-ks-1200 na 12:00 (12 maili). Gofin: 0 wątków do naszych stron, sprawdzone do 1560163, bez g13. Z11: pod wynikiem audytu w 1. ekranie 390 px stoi „Wyślij wynik do wyceny” w kolorze marki, 0 zmian (zrzuty skrypty-raport/z11-audyt-390-ekran1/2.png). Z12: 5 stron KSeF mają Article+FAQPage, wpis llms.txt i opis ≤160, 0 zmian. Z15: /audyt-kurierski bez widocznych zapytań, /automatyzacja-dla-ecommerce poz. 64,9 z frazą o systemie ticketowym, którego nie oferujemy: 0 zmian.
+**Dla Pawła:**
+**Zostało otwarte:** Z8 po partii 12:00 (14:46), Z13 liczy też audyt_do_formularza i audyt_popros_o_poprawki, Z19 sprawdza noc bez par AWS, Z14, Z16 do Z23 według planu. Sesje utm ksiegowe od 9:00: 0 (09:08).
