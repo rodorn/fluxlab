@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
+import { zLinkami, type LinkWTekscie } from "@/lib/zLinkami";
 
 const OPIS =
   "W KSeF zaliczka to faktura zaliczkowa, a rozliczenie to faktura rozliczeniowa z numerami KSeF zaliczek. Gdy zaliczki pokryły całość, ostatnia zamyka sprzedaż.";
@@ -32,14 +33,15 @@ export const metadata: Metadata = {
   },
 };
 
-const faq = [
+const faq: { q: string; a: string; linki?: LinkWTekscie[] }[] = [
   {
     q: "Do kiedy wystawić fakturę zaliczkową?",
     a: "Do 15. dnia miesiąca po miesiącu, w którym przyszła zaliczka. Najwcześniej 30 dni przed jej otrzymaniem.",
   },
   {
     q: "Zaliczka i dostawa w tym samym miesiącu?",
-    a: "Wtedy faktura zaliczkowa nie jest obowiązkowa. Wystarczy jedna zwykła faktura na całą sprzedaż.",
+    a: "Wtedy zaliczkowa nie jest konieczna. Wystarczy jedna faktura, a do wpłaty proforma spoza KSeF.",
+    linki: [{ fraza: "proforma spoza KSeF", href: "/strefa-wiedzy/proforma-ksef" }],
   },
   {
     q: "Zaliczkowa poszła przed obowiązkiem KSeF, rozliczenie już w KSeF?",
@@ -115,7 +117,7 @@ export default function FakturaZaliczkowaKsefArticle() {
                       {f.q}
                     </summary>
                     <p className="px-6 pb-6 text-gray-600 dark:text-gray-400">
-                      {f.a}
+                      {zLinkami(f.a, f.linki)}
                     </p>
                   </details>
                 ))}

@@ -50,6 +50,7 @@ const faq: { q: string; a: string; linki?: LinkWTekscie[] }[] = [
   {
     q: "Faktura od zagranicznego dostawcy?",
     a: "BFK, bo powstała poza KSeF. Tak samo dokumenty do WNT i importu usług.",
+    linki: [{ fraza: "dokumenty do WNT i importu usług", href: "/strefa-wiedzy/faktura-wewnetrzna-ksef" }],
   },
 ];
 
