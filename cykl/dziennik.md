@@ -6307,3 +6307,11 @@ Otwarte decyzje dla stratega:
 **Dowód:** mail-audyt/maile_ks/wysylka-1200.log (12 id Resend, 0 BLAD, „KONIEC wyslanych: 143”); Resend 12:04: partia 9:00 12/12 delivered, partia 12:00 11 delivered + 1 sent (rona.pomorze.pl), 0 bounced. Maile do biur są tekstowe, więc otwarć nie widać; 7 zdarzeń otwarcie_maila od 9:00 należy do kampanii b2b.
 **Dla Pawła:** w Zoho czeka zapytanie M. Piekarczyka z 11:55 („Budowa systemu MVP Nieruchomości”, mvpmarcin@gmail.com), w Wysłanych do 12:04 brak odpowiedzi. Jest też prośba W. Jagielskiej z 12:00 o zmianę zdjęcia w sekcji „Jak działamy” (FINREAL). Oba maile spoza outreachu.
 **Zostało otwarte:** w planie zostały tylko zadania z ustaloną godziną: Z13 (19:46), Z18 (po 20.10 00:55, fl-gsc-20), Z19, Z20, Z22, Z23 (decyzja, czy kontynuować outreach do biur; na razie 0 sesji i 0 odpowiedzi).
+
+## 2026-10-19 13:01
+**Kanał:** dystrybucja narzędzi (Gofin). W planie otwarte jest tylko Z13, wieczorny pomiar zaplanowany na 19:46, więc ten cykl poszedł w kanał.
+**Co zrobione:** komentarz g13 w wątku o oznaczeniu DI zamiast BFK w JPK, na temat naszej strony /strefa-wiedzy/oznaczenia-jpk-ksef (869 znaków, bez linków); to drugi i ostatni dziś wpis na Gofinie.
+**Ruch:** raport_ruchu 12:43: 211 odsłon, 139 osób w dobie (+156% wobec średniej 82,4); źródła b2b-email 16, m.facebook.com 11, www.google.com 11, youtube 9, instagram 1; zdarzenia: otwarcie_maila 16, scena_leada 11, audyt_uruchomiony 5, czat_otwarty 3. Po odsiewie (pomiar-kanalow, 24 h): 88 ludzi, 32 pary, 7 serii testowych.
+**Dowód:** wątek https://forum.gofin.pl/1560168/blednie-oznaczenia-w-jpk-di-i-bfk, termin 2026-10-19 13:00, unit fl-gofin-13 (komentarz 4, FluxLab, 13:00:06, widoczny na stronie).
+**Dla Pawła:**
+**Zostało otwarte:** Z13 (19:46), Z18 (po 20.10 00:55, fl-gsc-20), Z19, Z20, Z22, Z23. Gofin dziś wyczerpany (g12, g13).
