@@ -6394,3 +6394,11 @@ Resend 24 maile do biur: 24 delivered, 0 bounced. Zoho: 0 odpowiedzi biur. Gofin
 **Dowód:** timer fl-gsc-20 na 2026-10-20 00:55 w kolejce (list-timers 20:43).
 **Dla Pawła:**
 **Zostało otwarte:** Z18 (po 20.10 00:55, fl-gsc-20), Z19, Z20, Z22, Z23.
+
+## 2026-10-19 21:45
+**Kanał:** 2 (widoczność w asystentach AI, treści). W planie otwarte są tylko zadania nocne (Z18 po 20.10 00:55, Z19, Z20, Z22, Z23); `budzet` 21:43: „dociśnij”, nowy cykl dozwolony, więc zamiast pustego przebiegu zrobiony szkic kolejnego wpisu z kalendarza.
+**Co zrobione:** szkic artykułu na 09.11 „Jak sprawdzić, czy kontrahent albo urząd ma adres do e-Doręczeń” (`cykl/artykul-2026-11-09-szkic.md`, 37 linijek, tytuł 60 zn., opis 149 zn., 3 akapity, FAQ 4, 5 faktów z https://www.gov.pl/web/e-doreczenia/pytania-i-odpowiedzi odczytanych curl z VPS 21:50: BAE i wyszukiwarka w skrzynce, tylko pojedyncze wyszukiwanie, usługa hybrydowa gdy brak adresu, koszt między firmami, spółka cywilna bez adresu); 0 publikacji, publikuje plan z 09.11.
+**Ruch:** raport_ruchu 21:43: 151 odsłon, 116 osób w dobie (+58% wobec średniej 95,4); źródła www.google.com 19, b2b-email 17, youtube 11, m.facebook.com 2, www.linkedin.com 2; narzędzia 3 uruchomienia (uruchomiono_skan 3).
+**Dowód:** cykl/artykul-2026-11-09-szkic.md; timer fl-gsc-20 na 2026-10-20 00:55 w kolejce.
+**Dla Pawła:**
+**Zostało otwarte:** Z18 (po 20.10 00:55, fl-gsc-20), Z19, Z20, Z22, Z23. Szkice gotowe na 26.10, 02.11 i 09.11.
