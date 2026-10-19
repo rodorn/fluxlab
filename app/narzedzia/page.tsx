@@ -16,7 +16,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 export const metadata: Metadata = {
   title: "Narzędzia: kalkulatory, audyty i decyzje | Fluxlab",
   description:
-    "Bezpłatne narzędzia dla firm: kalkulator kosztu ręcznej obsługi leadów, decyzja zatrudnić czy zautomatyzować i inne. Bez rejestracji.",
+    "Automatyzacja podatków bez rejestracji: kalkulator podatkowy JDG, sprawdzenie numeru KSeF, koszt ręcznej obsługi leadów i inne.",
   openGraph: {
     title: "Narzędzia: kalkulatory, audyty i decyzje | Fluxlab",
     description:
