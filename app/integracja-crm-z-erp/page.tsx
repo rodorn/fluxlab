@@ -4,7 +4,7 @@ import ProductLanding from "@/components/ProductLanding";
 export const metadata: Metadata = {
   title: "Integracja CRM z ERP bez rozjazdu danych | Fluxlab",
   description:
-    "Spinamy CRM z systemem magazynowo-księgowym: kontrahenci, oferty, zamówienia, faktury i stany. Opisujemy cztery decyzje, które o tym przesądzają.",
+    "Integracja CRM z ERP: kontrahenci, oferty, zamówienia, faktury i stany zgodne w obu systemach. Cztery decyzje, które przesądzają o wdrożeniu.",
   alternates: { canonical: "/integracja-crm-z-erp" },
   openGraph: {
     title: "Integracja CRM z ERP bez rozjazdu danych | Fluxlab",

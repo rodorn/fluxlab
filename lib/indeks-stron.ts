@@ -165,7 +165,7 @@ export const INDEKS_STRON: WpisIndeksu[] = [
   {
     "url": "/integracja-crm-z-erp",
     "tytul": "Integracja CRM z ERP bez rozjazdu danych",
-    "opis": "Spinamy CRM z systemem magazynowo-księgowym: kontrahenci, oferty, zamówienia, faktury i stany. Opisujemy cztery decyzje, które o tym przesądzają."
+    "opis": "Integracja CRM z ERP: kontrahenci, oferty, zamówienia, faktury i stany zgodne w obu systemach. Cztery decyzje, które przesądzają o wdrożeniu."
   },
   {
     "url": "/widocznosc-w-ai",
