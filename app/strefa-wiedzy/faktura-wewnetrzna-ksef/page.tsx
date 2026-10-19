@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
@@ -68,7 +69,11 @@ export default function FakturaWewnetrznaKsefArticle() {
               Faktura wewnętrzna a KSeF: czy ją wysyłać
             </h1>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-              Nie. KSeF przyjmuje tylko faktury, a faktura wewnętrzna nią nie
+              Nie. KSeF przyjmuje{" "}
+              <Link href="/strefa-wiedzy/proforma-ksef" className="text-accent hover:underline">
+                tylko faktury
+              </Link>
+              , a faktura wewnętrzna nią nie
               jest. Zostaje w Twoim programie jako dokument do ewidencji VAT.
             </p>
           </div>

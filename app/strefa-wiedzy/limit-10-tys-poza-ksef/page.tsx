@@ -96,7 +96,14 @@ export default function Limit10TysPozaKsefArticle() {
                 >
                   Faktury dla osób prywatnych
                 </Link>
-                , faktury z kasy i paragony z NIP do 450 zł zostają poza
+                ,{" "}
+                <Link
+                  href="/strefa-wiedzy/faktura-do-paragonu-ksef"
+                  className="text-accent hover:underline"
+                >
+                  faktury z kasy
+                </Link>{" "}
+                i paragony z NIP do 450 zł zostają poza
                 limitem.
               </p>
             </section>

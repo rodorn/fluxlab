@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
@@ -83,7 +84,14 @@ export default function ProformaKsefArticle() {
             <section>
               <h2 className="mb-4 h2-sekcji">Dlaczego poza KSeF</h2>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                KSeF przyjmuje tylko faktury, a proforma w rozumieniu ustawy o
+                KSeF przyjmuje{" "}
+                <Link
+                  href="/strefa-wiedzy/faktura-wewnetrzna-ksef"
+                  className="text-accent hover:underline"
+                >
+                  tylko faktury
+                </Link>
+                , a proforma w rozumieniu ustawy o
                 VAT fakturą nie jest. Ministerstwo Finansów potwierdza to
                 wprost w pytaniach o KSeF 2.0.
               </p>
