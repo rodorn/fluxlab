@@ -6342,3 +6342,13 @@ Resend 24 maile do biur: 24 delivered, 0 bounced. Zoho: 0 odpowiedzi biur. Gofin
 **Dowód:** cykl/artykul-2026-11-02-szkic.md (36 linijek): /strefa-wiedzy/faktury-kosztowe-z-ksef, tytuł 55 zn., opis 154 zn., 3 akapity, FAQ 4, linki /ksef-integracja, kiedy-odliczyc-vat-z-faktury-ksef, /slownik#ksef, przychodzący z /ksef-integracja (pakiet „Odbiór faktur kosztowych”). 4 fakty z https://ksef.podatki.gov.pl/pytania-i-odpowiedzi-ksef-20/ (curl z VPS 14:50): KSeF nie powiadamia o nowych fakturach, sprzedawca nie widzi pobrania, data numeru KSeF = data otrzymania, masowe pobieranie przez API tylko XML. 0 publikacji.
 **Dla Pawła:**
 **Zostało otwarte:** Z18 (po 20.10 00:55, fl-gsc-20), Z19 (noc), Z20, Z22, Z23. Szkice gotowe na 26.10 (certyfikat KSeF) i 02.11 (faktury kosztowe).
+
+<!-- WYSLANO 2026-10-19 15:12 -->
+
+## 2026-10-19 15:55
+**Kanał:** widoczność w asystentach AI. W planie stratega otwarte są tylko zadania z godziną nocną albo po pełnej dobie (Z18 po 00:55, Z19, Z20, Z22, Z23), Gofin dziś wyczerpany.
+**Co zrobione:** 19 adresów wysłanych w Bing Webmaster (URL Submission), czyli 17 stron dodanych od 14.10, których Bing nie dostał (ostatnie ręczne zgłoszenie 16.10), plus 2 z opisami zmienionymi dziś; to z indeksu Binga korzysta wyszukiwanie w ChatGPT i w Copilocie.
+**Ruch:** raport_ruchu 15:43: 147 odsłon, 117 osób w dobie (+56% wobec średniej 94,4); źródła www.google.com 17, b2b-email 16, youtube 10, instagram 2, m.facebook.com 2; narzędzia 2 uruchomienia.
+**Dowód:** Bing URL Submission 15:52: „URLs submitted today 19”, limit 100→81. Adresy: /jak-zbudowana, /zmiany, /szablony, /wlasny-crm, /automatyzacja-raportowania, /narzedzia oraz strefa-wiedzy/ data-wystawienia-faktury-ksef, faktura-dla-kontrahenta-zagranicznego-ksef, faktura-do-paragonu-ksef, faktura-vat-rr-ksef, faktura-wewnetrzna-ksef, gutschrift-ksef, ksef-jdg-zwolniona-z-vat, limit-10-tys-poza-ksef, proforma-ksef, zalacznik-do-faktury-ksef, zaw-fa-ksef, faktura-zaliczkowa-ksef, faktura-dla-osoby-prywatnej-ksef (wszystkie w sitemap.xml). Bing AI Performance (Copilot i partnerzy, 7.10 do 17.10): 23 cytowania (7.10 7, 12.10 10, 13.10 4, 16.10 2), cytowane strony: jaka-forma-opodatkowania-jdg-2026 8, jak-zautomatyzowac-raportowanie-w-firmie 4, ryczalt-czy-liniowy 4, /automatyzacja-raportowania 3, /kalkulator-podatkowy 2, /sprawdzenie-nip 2; zapytań Bing nie pokazuje. 4 z 6 cytowanych stron dotyczą podatków JDG, czyli tematu serii podatkowej.
+**Dla Pawła:**
+**Zostało otwarte:** Z18 (po 20.10 00:55, fl-gsc-20), Z19, Z20, Z22, Z23. Do stratega: cytowania Copilota jako miernik kanału AI (Bing AI Performance, adres aiperformance?siteUrl=https://fluxlab.pl/); stan 19 zgłoszonych adresów w Bing sprawdzić 21.10 w URL Inspection.
