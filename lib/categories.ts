@@ -357,6 +357,12 @@ export const categories: Category[] = [
         bezOkladki: true,
       },
       {
+        href: "/strefa-wiedzy/limit-10-tys-poza-ksef",
+        title: "Limit 10 tys. zł poza KSeF",
+        description: "Faktura, którą przekraczasz 10 tys. zł w miesiącu, i wszystkie kolejne idą przez KSeF.",
+        bezOkladki: true,
+      },
+      {
         href: "/strefa-wiedzy/proforma-ksef",
         title: "Proforma a KSeF",
         description: "Proforma nie jest fakturą i zostaje poza KSeF; fakturę wystawiasz po zapłacie.",

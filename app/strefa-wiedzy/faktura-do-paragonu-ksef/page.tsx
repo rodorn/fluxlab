@@ -49,6 +49,7 @@ const faq: { q: string; a: string; linki?: LinkWTekscie[] }[] = [
   {
     q: "Czy faktury z kasy wliczają się do limitu 10 tys. zł?",
     a: "Nie. Do limitu liczą się tylko faktury, które obowiązkowo idą do KSeF, a faktur z kasy i paragonów z NIP do 450 zł to nie dotyczy.",
+    linki: [{ fraza: "Do limitu", href: "/strefa-wiedzy/limit-10-tys-poza-ksef" }],
   },
 ];
 

@@ -653,6 +653,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Do końca 2026 fakturę z kasy wystawiasz poza KSeF. Od 2027 fakturę do paragonu dla firmy wystawiasz już w KSeF, a dla osoby prywatnej nadal nie musisz."
   },
   {
+    "url": "/strefa-wiedzy/limit-10-tys-poza-ksef",
+    "tytul": "Limit 10 tys. zł poza KSeF: co po pierwszym przekroczeniu",
+    "opis": "Przekroczysz 10 tys. zł brutto w miesiącu, a ta faktura i wszystkie kolejne idą już przez KSeF, bez powrotu do papieru. Sprawdź, co wlicza się do limitu."
+  },
+  {
     "url": "/strefa-wiedzy/proforma-ksef",
     "tytul": "Proforma a KSeF: czy wystawiać ją w systemie",
     "opis": "Proformy nie wystawiasz w KSeF, bo w rozumieniu ustawy o VAT nie jest fakturą. Wysyłasz ją PDF-em jak dotąd, a fakturę wystawiasz w KSeF po zapłacie."

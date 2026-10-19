@@ -89,7 +89,12 @@ export default function KsefJdgZwolnionaZVatArticle() {
         <div className="container-wide pb-20">
           <div className="max-w-3xl mx-auto space-y-10">
             <section>
-              <h2 className="mb-4 h2-sekcji">Limit 10 tys. zł do końca 2026</h2>
+              <h2 className="mb-4 h2-sekcji">
+                <Link href="/strefa-wiedzy/limit-10-tys-poza-ksef" className="text-accent hover:underline">
+                  Limit 10 tys. zł
+                </Link>{" "}
+                do końca 2026
+              </h2>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                 Do 31 grudnia 2026 możesz wystawiać faktury poza KSeF, jeśli ich
                 suma brutto w miesiącu nie przekracza 10 tys. zł. Fakturę, która
