@@ -6290,3 +6290,11 @@ Otwarte decyzje dla stratega:
 **Dowód:** cykl/artykul-2026-10-26-szkic.md (36 linijek, /strefa-wiedzy/certyfikat-ksef). GSC 28 dni do 17.10: kiedy-odliczyc-vat 0/123, /ksef-2027 2/129, /numer-ksef 5/108, /e-doreczenia-integracja 3/168, biura 2/113; „automatyzacja podatków” 0/37, poz. 6,4 (szczegóły dni w Z14). Stan bez żądań: poza Google limit-10-tys-poza-ksef, faktura-do-paragonu-ksef, /polityka-prywatnosci. Timer fl-gsc-20 (20.10 00:55), log cykl/z18-indeksowanie.log.
 **Dla Pawła:**
 **Zostało otwarte:** Z8 po 12:00 (24 maile: Resend, sesje ksiegowe, Zoho), Z13 wieczorem, Z17 przed północą, Z18 po 00:55 z logu fl-gsc-20, Z19, Z20 (po 00:52), Z22, Z23.
+
+## 2026-10-19 10:46
+**Kanał:** Google + asystenci AI (Z17, porządek dnia zrobiony wcześniej, bo pozostałe zadania są pomiarami i stron już nie zmieniają).
+**Co zrobione:** sprawdzone, że 11 stron zmienionych dziś ma aktualny lastmod, wpis w llms.txt i miejsce w mapie witryny; adresy zgłoszone ponownie przez IndexNow. Nic nie wymagało poprawki.
+**Ruch:** raport_ruchu 10:43: 217 odsłon, 141 osób w dobie (+163% wobec średniej 82,4); źródła b2b-email 12, youtube 9, m.facebook.com 9, www.google.com 9, mail 1; zdarzenia: otwarcie_maila 12, audyt_uruchomiony 5, czat_otwarty 3, audyt_wynik_sredni 2. Liczby sprzed 08:47 zawierają pary z AWS.
+**Dowód:** daty-stron.mjs 142 trasy, 0 zmian; sitemap.xml 200, 145 `<loc>` = 142 + 9 kategorii − 6 poza mapą; IndexNow 145 adresów, 2 z 3 punktów.
+**Dla Pawła:**
+**Zostało otwarte:** Z8 po partii 12:00 (timer fl-ks-1200, 24 maile: Resend, sesje ksiegowe, Zoho), Z13 wieczorem, Z18 po 00:55 (fl-gsc-20), Z19, Z20, Z22, Z23.
