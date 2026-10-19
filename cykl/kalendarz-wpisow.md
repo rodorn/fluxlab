@@ -11,7 +11,7 @@ Zasady dla każdego wpisu:
 - Po wdrożeniu: 200 z VPS, żądanie indeksowania (w limicie 10 na dobę), wpis w dzienniku.
 
 ## Tematy
-- [ ] 19.10 | KSeF | Limit 10 tys. zł poza KSeF w 2026: co się dzieje po pierwszym przekroczeniu. Link: /ksef-2027, /slownik#ksef.
+- [x] 19.10 | KSeF | Limit 10 tys. zł poza KSeF w 2026: co się dzieje po pierwszym przekroczeniu. Link: /ksef-2027, /slownik#ksef. => 19.10 https://fluxlab.pl/strefa-wiedzy/limit-10-tys-poza-ksef
 - [ ] 26.10 | KSeF | Certyfikat KSeF: do czego jest potrzebny, gdzie go wyrobić i dlaczego przed pierwszą awarią. Link: /strefa-wiedzy/faktura-gdy-ksef-nie-dziala.
 - [ ] 02.11 | KSeF | Faktury kosztowe z KSeF prosto do programu księgowego: jak to zautomatyzować i ile pracy zdejmuje. Link: /ksef-integracja.
 - [ ] 09.11 | e-Doręczenia | Jak sprawdzić, czy kontrahent albo urząd ma adres do e-Doręczeń (BAE) i co, gdy go nie ma. Link: /e-doreczenia-integracja, /slownik#bae.
