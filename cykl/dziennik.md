@@ -6352,3 +6352,11 @@ Resend 24 maile do biur: 24 delivered, 0 bounced. Zoho: 0 odpowiedzi biur. Gofin
 **Dowód:** Bing URL Submission 15:52: „URLs submitted today 19”, limit 100→81. Adresy: /jak-zbudowana, /zmiany, /szablony, /wlasny-crm, /automatyzacja-raportowania, /narzedzia oraz strefa-wiedzy/ data-wystawienia-faktury-ksef, faktura-dla-kontrahenta-zagranicznego-ksef, faktura-do-paragonu-ksef, faktura-vat-rr-ksef, faktura-wewnetrzna-ksef, gutschrift-ksef, ksef-jdg-zwolniona-z-vat, limit-10-tys-poza-ksef, proforma-ksef, zalacznik-do-faktury-ksef, zaw-fa-ksef, faktura-zaliczkowa-ksef, faktura-dla-osoby-prywatnej-ksef (wszystkie w sitemap.xml). Bing AI Performance (Copilot i partnerzy, 7.10 do 17.10): 23 cytowania (7.10 7, 12.10 10, 13.10 4, 16.10 2), cytowane strony: jaka-forma-opodatkowania-jdg-2026 8, jak-zautomatyzowac-raportowanie-w-firmie 4, ryczalt-czy-liniowy 4, /automatyzacja-raportowania 3, /kalkulator-podatkowy 2, /sprawdzenie-nip 2; zapytań Bing nie pokazuje. 4 z 6 cytowanych stron dotyczą podatków JDG, czyli tematu serii podatkowej.
 **Dla Pawła:**
 **Zostało otwarte:** Z18 (po 20.10 00:55, fl-gsc-20), Z19, Z20, Z22, Z23. Do stratega: cytowania Copilota jako miernik kanału AI (Bing AI Performance, adres aiperformance?siteUrl=https://fluxlab.pl/); stan 19 zgłoszonych adresów w Bing sprawdzić 21.10 w URL Inspection.
+
+## 2026-10-19 16:45
+**Kanał:** brak (pomiar ruchu). W planie stratega otwarte są tylko zadania z godziną nocną albo po pełnej dobie (Z18 po 20.10 00:55, Z19, Z20, Z22, Z23), Gofin dziś wyczerpany (g12, g13), a `budzet` 16:43 daje „zwolnij” (prognoza 106% przy celu 97%, praca przycięta do 50%, tylko najważniejsze).
+**Co zrobione:** brak zmian, bo jedyne zadania do zrobienia mają termin po północy, a kanały z poprzednich dwóch cykli (szkic 02.11, 19 adresów w Bing) wyczerpały dzisiejszą tanią pracę; dokładanie treści przy rytmie „zwolnij” łamie profil budżetu.
+**Ruch:** raport_ruchu 16:43: 146 odsłon, 113 osób w dobie (+53% wobec średniej 95,1); źródła www.google.com 19, b2b-email 16, youtube 10, m.facebook.com 2, pl.search.yahoo.com 1; narzędzia 2 uruchomienia (uruchomiono_skan 2).
+**Dowód:** timer fl-gsc-20 na 2026-10-20 00:55 w kolejce (list-timers 16:43).
+**Dla Pawła:**
+**Zostało otwarte:** Z18 (po 20.10 00:55, fl-gsc-20), Z19, Z20, Z22, Z23.
