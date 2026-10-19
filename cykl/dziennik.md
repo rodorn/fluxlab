@@ -6282,3 +6282,11 @@ Otwarte decyzje dla stratega:
 **Dowód:** commity 8266ad0 (filtr sieci EC2 us-east-1 w /api/wizyta, koniec diagnozy), 1ff2420 + 734c652 (opis CRM-ERP, 145→141 zn., w HTML produkcji, IndexNow 145, 2 z 3). Resend partia 9:00: 12/12 delivered, 0 bounced; timer fl-ks-1200 na 12:00 (12 maili). Gofin: 0 wątków do naszych stron, sprawdzone do 1560163, bez g13. Z11: pod wynikiem audytu w 1. ekranie 390 px stoi „Wyślij wynik do wyceny” w kolorze marki, 0 zmian (zrzuty skrypty-raport/z11-audyt-390-ekran1/2.png). Z12: 5 stron KSeF mają Article+FAQPage, wpis llms.txt i opis ≤160, 0 zmian. Z15: /audyt-kurierski bez widocznych zapytań, /automatyzacja-dla-ecommerce poz. 64,9 z frazą o systemie ticketowym, którego nie oferujemy: 0 zmian.
 **Dla Pawła:**
 **Zostało otwarte:** Z8 po partii 12:00 (14:46), Z13 liczy też audyt_do_formularza i audyt_popros_o_poprawki, Z19 sprawdza noc bez par AWS, Z14, Z16 do Z23 według planu. Sesje utm ksiegowe od 9:00: 0 (09:08).
+
+## 2026-10-19 10:02
+**Kanał:** KSeF jako magnes (Z21), Google (Z14, Z16); Z8 czeka na partię 12:00.
+**Co zrobione:** gotowy szkic artykułu na 26.10 o certyfikacie KSeF (4 fakty z FAQ MF odczytane dziś z VPS), seria 10 żądań indeksowania ustawiona timerem na 20.10 00:55, w tym nowa strona o limicie 10 tys. zł, która jeszcze nie jest w Google.
+**Ruch:** raport_ruchu 10:01: 216 odsłon, 140 osób w dobie (+162% wobec średniej 82,3); źródła b2b-email 10, youtube 9, m.facebook.com 9, www.google.com 9, mail 1; zdarzenia: otwarcie_maila 10, audyt_uruchomiony 5, czat_otwarty 3. Liczby sprzed 08:47 zawierają pary z AWS.
+**Dowód:** cykl/artykul-2026-10-26-szkic.md (36 linijek, /strefa-wiedzy/certyfikat-ksef). GSC 28 dni do 17.10: kiedy-odliczyc-vat 0/123, /ksef-2027 2/129, /numer-ksef 5/108, /e-doreczenia-integracja 3/168, biura 2/113; „automatyzacja podatków” 0/37, poz. 6,4 (szczegóły dni w Z14). Stan bez żądań: poza Google limit-10-tys-poza-ksef, faktura-do-paragonu-ksef, /polityka-prywatnosci. Timer fl-gsc-20 (20.10 00:55), log cykl/z18-indeksowanie.log.
+**Dla Pawła:**
+**Zostało otwarte:** Z8 po 12:00 (24 maile: Resend, sesje ksiegowe, Zoho), Z13 wieczorem, Z17 przed północą, Z18 po 00:55 z logu fl-gsc-20, Z19, Z20 (po 00:52), Z22, Z23.
