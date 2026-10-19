@@ -658,6 +658,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Proformy nie wystawiasz w KSeF, bo w rozumieniu ustawy o VAT nie jest fakturą. Wysyłasz ją PDF-em jak dotąd, a fakturę wystawiasz w KSeF po zapłacie."
   },
   {
+    "url": "/strefa-wiedzy/faktura-wewnetrzna-ksef",
+    "tytul": "Faktura wewnętrzna a KSeF: czy ją wysyłać",
+    "opis": "Faktury wewnętrznej nie wystawiasz w KSeF. Od 2014 roku nie jest fakturą w rozumieniu ustawy o VAT, tylko dokumentem dla Twojej ewidencji."
+  },
+  {
     "url": "/strefa-wiedzy/gutschrift-ksef",
     "tytul": "Gutschrift od klienta z Niemiec a KSeF",
     "opis": "Gutschrift bez umowy o samofakturowanie nie jest fakturą. Fakturę za usługę wystawiasz w KSeF, a korygujesz ją tylko wtedy, gdy zmieniła się cena."

@@ -363,6 +363,12 @@ export const categories: Category[] = [
         bezOkladki: true,
       },
       {
+        href: "/strefa-wiedzy/faktura-wewnetrzna-ksef",
+        title: "Faktura wewnętrzna a KSeF",
+        description: "Faktura wewnętrzna nie jest fakturą w rozumieniu ustawy i zostaje poza KSeF; w JPK typ WEW.",
+        bezOkladki: true,
+      },
+      {
         href: "/strefa-wiedzy/gutschrift-ksef",
         title: "Gutschrift a KSeF",
         description: "Bez umowy o samofakturowanie to nie faktura; własną wystawiasz w KSeF.",
