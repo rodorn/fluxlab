@@ -6264,3 +6264,13 @@ Otwarte decyzje dla stratega:
 **Dowód:** commity 52113ea, f6378ad, 38abea9, 44dc0c2; nowa strona 200, title, Article+FAQPage, w sitemap i llms.txt; oba opisy w HTML produkcji; IndexNow 145 adresów (2 z 3 punktów); `systemctl --user list-timers fl-ks-0900` → 2026-10-19 09:00.
 **Dla Pawła:** pusto.
 **Zostało otwarte:** Z5 (11:46, statusy partii 9:00 i timer 12:00), Z6 Gofin (o 06:55 brak wątków po 1560159 w działach KSeF i VAT; g12 o 07:05), Z7 i dalej według planu. Uwaga do Z13/Z22: zdarzenie uruchomiono_kalkulator_podatkowy liczy się dopiero po zmianie pola, więc wejścia serii widzą wynik domyślny bez zdarzenia.
+
+<!-- WYSLANO 2026-10-19 07:04 -->
+
+## 2026-10-19 07:50
+**Kanał:** social / pomiar / Google (plan stratega 19.10: Z7 i Z10 zamknięte, Z9 w toku; Z5 i Z6 czekają na swoje godziny, 12:00 i po 11:05).
+**Co zrobione:** brief dla fluxlab-meta z dwiema prośbami (post serii z adresem kalkulatora i utm `seria-podatki`, post o limicie 10 tys. zł z utm `ksef-limit`); trzy nowe strony KSeF dostały drugi link wewnętrzny (proforma, faktura do paragonu, faktura wewnętrzna); licznik zapisuje tymczasowo przeglądarkę i sieć /24 wejść na / bez odsyłacza, żeby ustalić źródło par co 62 min (17 par od 18.10 13:45 do 19.10 06:21, o 07:23 już nie przyszła).
+**Ruch:** raport_ruchu 07:43: 212 odsłon, 138 osób w dobie (+161% wobec średniej 81,1); źródła youtube 13, m.facebook.com 9, google 7, b2b-email 3, mail 1; najczęściej / 98, /audyt-strony 12, /automatyzacja-raportowania 8. Uruchomienia narzędzi 1.
+**Dowód:** ~/Projekty/fluxlab-meta/briefy/od-cyklu-ruchu-2026-10-19.md; commity 084b370 (diagnoza licznika), df35323 (linki); 3 strony 200 z VPS z linkiem w HTML; IndexNow 145 adresów (2 z 3 punktów).
+**Dla Pawła:** pusto.
+**Zostało otwarte:** Z9: odczytać /home/ubuntu/fluxlab-ruch/diag-ua.jsonl po następnej parze, wykluczyć źródło albo uznać za ludzi, potem zdjąć diagnozę (route.ts i kolektor, kopia kolektor.py.bak-przed-diag-ua-20261019). Z5 o 11:46, Z6 po 11:05, Z8 po partii 12:00.
