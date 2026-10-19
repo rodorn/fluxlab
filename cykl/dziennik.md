@@ -6402,3 +6402,11 @@ Resend 24 maile do biur: 24 delivered, 0 bounced. Zoho: 0 odpowiedzi biur. Gofin
 **Dowód:** cykl/artykul-2026-11-09-szkic.md; timer fl-gsc-20 na 2026-10-20 00:55 w kolejce.
 **Dla Pawła:**
 **Zostało otwarte:** Z18 (po 20.10 00:55, fl-gsc-20), Z19, Z20, Z22, Z23. Szkice gotowe na 26.10, 02.11 i 09.11.
+
+## 2026-10-19 22:45
+**Kanał:** 1 (dystrybucja, Gofin). W planie otwarte są tylko zadania nocne (Z18 po 20.10 00:55, Z19, Z20, Z22, Z23); `budzet` 22:43: „dociśnij”, nowy cykl dozwolony.
+**Co zrobione:** komentarz g14 (848 zn., bez linków) do nowego wątku KSeF bez odpowiedzi o numerze KSeF w przelewie z Symfonii, zaplanowany na jutro rano, pierwszy z dwóch wpisów Gofin na 20.10.
+**Ruch:** raport_ruchu 22:43: 133 odsłony, 104 osoby w dobie (+38% wobec średniej 96,3); źródła b2b-email 17, www.google.com 15, youtube 11, linkedin 3, m.facebook.com 2; narzędzia 3 uruchomienia (uruchomiono_skan 3).
+**Dowód:** wątek https://forum.gofin.pl/1560205/symfonia-export-przelelw-z-ksef, termin 2026-10-20 08:00, unit fl-gofin-14 (list-timers OK); timer fl-gsc-20 na 00:55 w kolejce.
+**Dla Pawła:**
+**Zostało otwarte:** Z18 (po 20.10 00:55, fl-gsc-20), Z19, Z20, Z22, Z23. Wątek 1560208 (faktury zakupowe z KSeF a kontrola merytoryczna, 0 odpowiedzi) do ewentualnego g15 po 12:00.
