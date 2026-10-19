@@ -357,6 +357,12 @@ export const categories: Category[] = [
         bezOkladki: true,
       },
       {
+        href: "/strefa-wiedzy/proforma-ksef",
+        title: "Proforma a KSeF",
+        description: "Proforma nie jest fakturą i zostaje poza KSeF; fakturę wystawiasz po zapłacie.",
+        bezOkladki: true,
+      },
+      {
         href: "/strefa-wiedzy/gutschrift-ksef",
         title: "Gutschrift a KSeF",
         description: "Bez umowy o samofakturowanie to nie faktura; własną wystawiasz w KSeF.",

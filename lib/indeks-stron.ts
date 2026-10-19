@@ -653,6 +653,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Do końca 2026 fakturę z kasy wystawiasz poza KSeF. Od 2027 fakturę do paragonu dla firmy wystawiasz już w KSeF, a dla osoby prywatnej nadal nie musisz."
   },
   {
+    "url": "/strefa-wiedzy/proforma-ksef",
+    "tytul": "Proforma a KSeF: czy wystawiać ją w systemie",
+    "opis": "Proformy nie wystawiasz w KSeF, bo w rozumieniu ustawy o VAT nie jest fakturą. Wysyłasz ją PDF-em jak dotąd, a fakturę wystawiasz w KSeF po zapłacie."
+  },
+  {
     "url": "/strefa-wiedzy/gutschrift-ksef",
     "tytul": "Gutschrift od klienta z Niemiec a KSeF",
     "opis": "Gutschrift bez umowy o samofakturowanie nie jest fakturą. Fakturę za usługę wystawiasz w KSeF, a korygujesz ją tylko wtedy, gdy zmieniła się cena."
