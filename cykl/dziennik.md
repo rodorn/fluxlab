@@ -6298,3 +6298,12 @@ Otwarte decyzje dla stratega:
 **Dowód:** daty-stron.mjs 142 trasy, 0 zmian; sitemap.xml 200, 145 `<loc>` = 142 + 9 kategorii − 6 poza mapą; IndexNow 145 adresów, 2 z 3 punktów.
 **Dla Pawła:**
 **Zostało otwarte:** Z8 po partii 12:00 (timer fl-ks-1200, 24 maile: Resend, sesje ksiegowe, Zoho), Z13 wieczorem, Z18 po 00:55 (fl-gsc-20), Z19, Z20, Z22, Z23.
+<!-- WYSLANO 2026-10-19 11:12 -->
+
+## 2026-10-19 12:05
+**Kanał:** outreach (Z8, pomiar po obu partiach do biur rachunkowych).
+**Co zrobione:** druga partia 12 maili do biur wyszła o 12:00 z timera; pomiar 24 maili z dziś: 23 delivered, 1 sent, 0 bounced, ale 0 sesji z `utm_campaign=ksiegowe` i 0 odpowiedzi biur w Zoho po 3 godzinach od pierwszej partii.
+**Ruch:** raport_ruchu 11:43: 212 odsłon, 136 osób w dobie (+161% wobec średniej 81,3); źródła b2b-email 15, youtube 9, m.facebook.com 9, www.google.com 9, instagram 1; zdarzenia: otwarcie_maila 15, audyt_uruchomiony 5, czat_otwarty 3. Od 9:00 tylko 2 odsłony ludzi (Google 09:58, Yahoo 11:51) i 7 otwarć maili z kampanii b2b.
+**Dowód:** mail-audyt/maile_ks/wysylka-1200.log (12 id Resend, 0 BLAD, „KONIEC wyslanych: 143”); Resend 12:04: partia 9:00 12/12 delivered, partia 12:00 11 delivered + 1 sent (rona.pomorze.pl), 0 bounced. Maile do biur są tekstowe, więc otwarć nie widać; 7 zdarzeń otwarcie_maila od 9:00 należy do kampanii b2b.
+**Dla Pawła:** w Zoho czeka zapytanie M. Piekarczyka z 11:55 („Budowa systemu MVP Nieruchomości”, mvpmarcin@gmail.com), w Wysłanych do 12:04 brak odpowiedzi. Jest też prośba W. Jagielskiej z 12:00 o zmianę zdjęcia w sekcji „Jak działamy” (FINREAL). Oba maile spoza outreachu.
+**Zostało otwarte:** w planie zostały tylko zadania z ustaloną godziną: Z13 (19:46), Z18 (po 20.10 00:55, fl-gsc-20), Z19, Z20, Z22, Z23 (decyzja, czy kontynuować outreach do biur; na razie 0 sesji i 0 odpowiedzi).
