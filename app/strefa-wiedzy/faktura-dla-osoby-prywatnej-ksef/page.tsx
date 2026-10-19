@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
+import { zLinkami, type LinkWTekscie } from "@/lib/zLinkami";
 
 const OPIS =
   "Fakturę dla osoby prywatnej nie trzeba wystawiać w KSeF. Wolno na papierze albo w PDF; wystawiona w KSeF trafia do klienta jako PDF lub wydruk z kodem QR.";
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
   },
 };
 
-const faq = [
+const faq: { q: string; a: string; linki?: LinkWTekscie[] }[] = [
   {
     q: "Klient bez firmy prosi o fakturę. Musi przejść przez KSeF?",
     a: "Nie. Faktura dla konsumenta może być papierowa albo w PDF, a KSeF jest dla niej dobrowolny także po 1 lutego 2026.",
@@ -48,6 +49,7 @@ const faq = [
   {
     q: "A faktura do paragonu?",
     a: "Ta sama zasada: dla konsumenta możesz wystawić ją w KSeF albo poza nim.",
+    linki: [{ fraza: "w KSeF albo poza nim", href: "/strefa-wiedzy/faktura-do-paragonu-ksef" }],
   },
 ];
 
@@ -111,7 +113,7 @@ export default function FakturaDlaOsobyPrywatnejKsefArticle() {
                       {f.q}
                     </summary>
                     <p className="px-6 pb-6 text-gray-600 dark:text-gray-400">
-                      {f.a}
+                      {zLinkami(f.a, f.linki)}
                     </p>
                   </details>
                 ))}

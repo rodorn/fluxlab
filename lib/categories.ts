@@ -351,6 +351,12 @@ export const categories: Category[] = [
         bezOkladki: true,
       },
       {
+        href: "/strefa-wiedzy/faktura-do-paragonu-ksef",
+        title: "Faktura do paragonu a KSeF",
+        description: "Faktura z kasy poza KSeF do końca 2026; od 2027 dla firm już w KSeF.",
+        bezOkladki: true,
+      },
+      {
         href: "/strefa-wiedzy/gutschrift-ksef",
         title: "Gutschrift a KSeF",
         description: "Bez umowy o samofakturowanie to nie faktura; własną wystawiasz w KSeF.",

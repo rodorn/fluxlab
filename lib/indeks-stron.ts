@@ -648,6 +648,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Spółka bez pieczęci kwalifikowanej wskazuje w ZAW-FA jedną osobę do KSeF. Ona nadaje uprawnienia innym. Gdy odejdzie, składasz nowe ZAW-FA z następcą."
   },
   {
+    "url": "/strefa-wiedzy/faktura-do-paragonu-ksef",
+    "tytul": "Faktura do paragonu a KSeF w 2026 i 2027",
+    "opis": "Do końca 2026 fakturę z kasy wystawiasz poza KSeF. Od 2027 fakturę do paragonu dla firmy wystawiasz już w KSeF, a dla osoby prywatnej nadal nie musisz."
+  },
+  {
     "url": "/strefa-wiedzy/gutschrift-ksef",
     "tytul": "Gutschrift od klienta z Niemiec a KSeF",
     "opis": "Gutschrift bez umowy o samofakturowanie nie jest fakturą. Fakturę za usługę wystawiasz w KSeF, a korygujesz ją tylko wtedy, gdy zmieniła się cena."
