@@ -37,7 +37,17 @@ export async function POST(request: Request) {
   try {
     await fetch(KOLEKTOR, {
       method: "POST",
-      headers: { "Content-Type": "application/json", "X-Sekret": SEKRET },
+      headers: {
+        "Content-Type": "application/json",
+        "X-Sekret": SEKRET,
+        // Tymczasowa diagnoza par wejść co ok. 62 min: przeglądarka i sieć /24.
+        "X-UA": (request.headers.get("user-agent") ?? "").slice(0, 300),
+        "X-Siec": (request.headers.get("x-forwarded-for") ?? "")
+          .split(",")[0]
+          .trim()
+          .replace(/\.\d+$/, ".0")
+          .replace(/(:[0-9a-f]*){4}$/i, "::"),
+      },
       body: JSON.stringify(ladunek),
       signal: AbortSignal.timeout(3000),
     });
