@@ -6420,3 +6420,45 @@ Resend 24 maile do biur: 24 delivered, 0 bounced. Zoho: 0 odpowiedzi biur. Gofin
 **Dowód:** gsc_indeksuj.py --tylko-stan 23:43:33 do 23:46:35, 10 × „Adres URL znajduje się w Google”, 0 żądań; Z20 [x] w cykl/plan-ruchu.md.
 **Dla Pawła:**
 **Zostało otwarte:** Z18 (po 20.10 00:55, fl-gsc-20), Z19, Z22, Z23. g14 Gofin 20.10 08:00 (fl-gofin-14).
+
+## Bilans planu 2026-10-19/20
+Stan 20.10 01:10, `pomiar-kanalow.py` i licznik z VPS (doby kalendarzowe, po odsiewie par i serii).
+
+| Zadanie | Stan | Godzina | Co przyprowadziło |
+|---|---|---|---|
+| Z1 artykuł limit 10 tys. zł | zrobione | 07:46 | 0 wejść; strona w Google sama w dobę |
+| Z2, Z5 outreach biura 2 × 12 | zrobione | 09:00, 12:00 | 0 sesji, 0 odpowiedzi |
+| Z3 opisy „automatyzacja podatków” | zrobione | 09:46 | ocena w GSC 26.10 |
+| Z4 strony serii podatkowej | 0 przeszkód | 10:46 | 0 |
+| Z6 Gofin g13 | zrobione (g13 13:00) | 12:46 | 0 mierzalnych |
+| Z7 brief dla fluxlab-meta | zrobione | 13:46 | 0 bezpośrednio |
+| Z8, Z13 pomiary | zrobione | 12:04, 13:45 | pomiar |
+| Z9 wykluczenie EC2 us-east-1 | zrobione (8266ad0) | 08:47 | pary 27 → 0 nocą |
+| Z10 linki do stron KSeF | zrobione (df35323) | 16:46 | 0 w dobie |
+| Z11 audyt po wyniku | 0 przeszkód | 17:46 | 0 |
+| Z12 dane 5 stron KSeF | komplet | 08:49 | 0 |
+| Z14, Z20 GSC | zrobione | 09:59, 23:46 | seria 19.10: 10 z 10 w Google |
+| Z15 opis /integracja-crm-z-erp | zrobione (1ff2420) | 08:54 | ocena 26.10 |
+| Z16, Z18 seria 10 żądań | zrobione | 00:55 do 01:00 | 10 z 10 przesłanych |
+| Z17 porządek | zrobione | 10:46 | 145 loc, 0 zgubionych |
+| Z19 noc po Z9 | zrobione | 00:43 | potwierdza Z9 |
+| Z21 szkic 26.10 | zrobione | 09:50 | publikacja 26.10 |
+| Z22 bilans | ten wpis | 01:10 | pomiar |
+| Z23 outreach dalej czy stop | otwarte | 05:46 | decyzja po pełnej dobie od 9:00 |
+
+**Ludzie w dobie:** 19.10: 59 (z odsyłaczem 16, 2+ odsłon 7) wobec 18.10: 92 (z odsyłaczem 15, 2+ odsłon 12). Spadek to prawie w całości sesje bez odsyłacza (75 → 31), czyli efekt odsiewu automatu EC2, nie utrata ludzi; ludzi z odsyłaczem jest tyle samo (15 → 16).
+**Źródła 19.10:** b2b-email 12 (otwarcia maili kampanii b2b, piksel), Google 7, LinkedIn 5, Yahoo 1, m.facebook 1, Instagram 1, hajsmetrics 1.
+**Outreach do biur:** 24 maile → 24 delivered, 0 bounced, 0 sesji `ksiegowe` od 19.10 9:00, 0 z drugą odsłoną, 0 odpowiedzi w Zoho (otwarć Resend nie mierzy, maile tekstowe).
+**Seria podatkowa:** 18.10 9 sesji, 1 uruchomienie kalkulatora; 19.10 3 sesje, 0 uruchomień.
+**Audyt po Z11:** 0 zdarzeń audytu 19.10 (18.10: 5 uruchomień, 2 wyniki średnie, 0 przejść).
+**Gofin:** g12 07:05 i g13 13:00 opublikowane, g14 w kolejce na 20.10 08:00.
+**Trzy liczby, które zmieniły się najbardziej:** sesje bez odsyłacza 75 → 31 (Z9); pary nocą 27 → 0; seria-podatki 9 → 3 sesje.
+**Otwarte decyzje dla stratega:** (1) outreach do biur: 0 z 24 po 16 h, rozstrzyga Z23 o 05:46 według reguły z planu; (2) tytuły zmienione 17.10 oceniać 24.10, opisy z 19.10 (Z3, Z15) 26.10; (3) Gofin zostaje na 2 dziennie? Trzy doby bez mierzalnego wejścia z forum, koszt niski, wartość tylko marki.
+
+## 2026-10-20 01:10
+**Kanał:** Google i pomiar (Z18, Z19, Z22 z planu).
+**Co zrobione:** seria 10 żądań indeksowania przeszła w całości (timer fl-gsc-20), noc po wykluczeniu automatu EC2 bez ani jednej pary na stronie głównej (wczoraj 11 fałszywych sesji o 23:00, dziś 0), bilans planu doby zapisany wyżej.
+**Ruch:** raport_ruchu 00:43: 129 odsłon, 95 osób w dobie (+32% wobec średniej 97,9); źródła b2b-email 19, www.google.com 14, youtube 11, linkedin 3, m.facebook.com 2; narzędzia 4 uruchomienia (uruchomiono_skan 4). Po odsiewie par (pomiar-kanalow): ludzie 53 w 24 h.
+**Dowód:** cykl/z18-indeksowanie.log, 10 × „prośba przesłana” 00:55:27 do 01:00:01; Z18, Z19, Z22 [x] w cykl/plan-ruchu.md.
+**Dla Pawła:**
+**Zostało otwarte:** Z23 (05:46, po pełnej dobie od wysyłki 9:00). g14 Gofin 20.10 08:00 (fl-gofin-14).
