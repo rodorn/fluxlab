@@ -6047,3 +6047,212 @@ Otwarte decyzje dla stratega:
 **Dowód:** Z13: linia w planie. Z14: 0 wątków, sprawdzone do 1560172 (404 od 1560151); dział KSeF i VAT z 2 tygodni ma odpowiedzi. Z15: commity 02a9edc i e225da9, 4 linki obecne z VPS (200), sitemap lastmod 2026-10-18T08:48Z dla 3 stron, IndexNow 141 adresów (2 z 3). Bramki w czystym worktree: build, SPOJNOSC OK, JAKOSC OK (143 strony).
 **Dla Pawła:**
 **Zostało otwarte:** Z16 (pomiar Gofin, 22:46) i dalej wg planu; g9 12:00 i g10 16:00 w timerach. Jeśli do 22:00 pojawi się nowy wątek KSeF, można jeszcze dać g11 (20:00 do 22:30). W repo leżą niezacommitowane zmiany innej sesji (strona główna, czat, /szablony, /zmiany): przez nie `daty-stron.mjs` i bramki w głównym katalogu dają fałszywe wyniki, więc cykle zmieniające kod powinny budować w czystym worktree albo commitować tylko swoje pliki. faktura-vat-rr-ksef nadal bez linku z treści (brak frazy w innych stronach).
+<!-- WYSLANO 2026-10-18 11:05 -->
+
+## 2026-10-18 11:51
+**Kanał:** pomiar (Z16, Z21), Google + AI (Z17), treści (Z23), wg planu stratega z 18.10.
+**Co zrobione:** policzone, że 8 komentarzy na Gofinie nie przyprowadziło mierzalnego ruchu (3 sesje w oknach 4 h po publikacji wobec 3,3 w tych samych godzinach przed Gofinem, 0 wejść z forum, 0 wzrostu wyszukań „fluxlab”), więc Gofin spada do 1 wpisu dziennie; llms.txt podaje asystentom AI, że audyt strony sprawdza wersje WordPressa, PHP i jQuery; szkic artykułu na poniedziałek zgodny z FAQ MF.
+**Ruch:** ostatnia doba 91 odsłon, 77 osób (+22% wobec średniej 74,9); źródła: youtube 8, b2b-email 5, mail.google.com 4, facebook 4, linkedin 3; najczęściej /kalkulator-podatkowy 10, / 9, /strefa-wiedzy/ryczalt-czy-liniowy 8, /wycena 6; uruchomienia narzędzi 2.
+**Dowód:** Z16: tabela w linii planu (g1 do g8, sesje po / baza), GSC „fluxlab” 16.10 0 wyśw. Z17: commit a1edc46, llms.txt 200 z VPS, sitemap 141 `<loc>`, IndexNow 141 adresów (2 z 3). Z21: serie dzienne 7 do 16.10 dla 4 stron w planie (e-Doręczenia i biura 2 do 3 wyświetleń dziennie, bez odbicia). Z23: 5 sprawdzeń OK, 0 poprawek.
+**Dla Pawła:**
+**Zostało otwarte:** Z18 (10 żądań indeksowania, nie wcześniej niż 19.10 00:50, pierwszy /strefa-wiedzy/gutschrift-ksef), Z19, Z20, Z22 wg godzin. g9 o 12:00 i g10 o 16:00 zostają w timerach; od 19.10 strateg powinien planować najwyżej 1 wpis Gofin dziennie (wniosek Z16).
+
+## 2026-10-18 12:55
+**Kanał:** narzędzia (kalkulator podatkowy pod ruch z kampanii), poza planem: w planie stratega zostały tylko zadania z warunkiem czasu (Z18 nie wcześniej niż 19.10 00:50, Z19, Z20 i Z22 to pomiary nocne po dobie), więc zostają otwarte dla nocnych cykli.
+**Co zrobione:** /strefa-wiedzy/ryczalt-czy-liniowy ma przycisk „Policz w kalkulatorze JDG 2026” na pierwszym ekranie, bo 9 z 9 sesji z 7 dni (5 z utm seria-podatki: youtube, instagram, linkedin) kończyło się jedną odsłoną, a jedyne wezwanie do kalkulatora stało w drugiej zakładce, niewidocznej na telefonie.
+**Ruch:** ostatnia doba 92 odsłony, 78 osób (+22% wobec średniej 75,7); źródła: youtube 8, b2b-email 4, mail.google.com 4, facebook 4, linkedin 3; najczęściej / 14, /kalkulator-podatkowy 9, /strefa-wiedzy/ryczalt-czy-liniowy 8, /wycena 6; uruchomienia narzędzi 2 (kalkulator podatkowy 1, skan przykładu 1).
+**Dowód:** commit 89e40ec, napis obecny w HTML z VPS (200), zrzut 390 px: przycisk nad pierwszą zakładką; bramki w czystym worktree: build, SPOJNOSC OK, JAKOSC OK (146 stron); IndexNow 141 adresów (2 z 3). Miara na kolejne doby: sesje ryczalt-czy-liniowy z przejściem na /kalkulator-podatkowy (dziś 0 z 9).
+**Dla Pawła:**
+**Zostało otwarte:** Z18 (po 19.10 00:50), Z19, Z20, Z22 wg planu; g10 o 16:00 w timerze. Uwaga dla cykli budujących w worktree: worktree w /tmp nie buduje się (Turbopack odrzuca dowiązanie node_modules spoza katalogu), działa worktree w ~/Projekty z `cp -al` node_modules.
+
+## 2026-10-18 14:10
+**Kanał:** widoczność w asystentach AI (poprawność odpowiedzi), poza planem: w planie stratega zostały tylko zadania z warunkiem czasu (Z18 nie wcześniej niż 19.10 00:50, Z19, Z20 i Z22 to pomiary nocne).
+**Co zrobione:** /strefa-wiedzy/vat-w-jdg-kiedy-warto (5 odsłon w dobie, ruch z social) podawała nieaktualny limit zwolnienia z VAT 200 000 zł; od 1.01.2026 obowiązuje 240 000 zł (nowelizacja art. 113 ust. 1, źródła: podatki.biz z komentarzem MF, poradnikprzedsiebiorcy.pl), więc poprawione w treści, FAQ i FAQPage, opisie strony, kategorii i indeksie wyszukiwarki.
+**Ruch:** ostatnia doba 124 odsłony, 86 osób (+63% wobec średniej 76,1); źródła: youtube 10, facebook 4, b2b-email 3, linkedin 3, instagram 3; najczęściej / 34, /kalkulator-podatkowy 9, /strefa-wiedzy/ryczalt-czy-liniowy 8, /wycena 6, /strefa-wiedzy/vat-w-jdg-kiedy-warto 5; uruchomienia narzędzi 2.
+**Dowód:** commit 18dbd31; produkcja 200, w HTML „240 000 zł” 16 razy, „200 000 zł” 0; bramki: build, SPOJNOSC OK, JAKOSC OK (146 stron); IndexNow 141 adresów (2 z 3).
+**Dla Pawła:**
+**Zostało otwarte:** Z18 (po 19.10 00:50), Z19, Z20, Z22 wg planu. Alias `ssh vps` nie istnieje na tym komputerze (brak w ~/.ssh/config), więc „sprawdzenie z VPS” robiłem pojedynczym curl z lokalnego adresu.
+
+## 2026-10-18 15:05
+**Kanał:** widoczność w asystentach AI (poprawność odpowiedzi na stronach z ruchem z kampanii `seria-podatki`), poza planem: w planie zostały tylko zadania z warunkiem czasu (Z18 nie wcześniej niż 19.10 00:50, Z19, Z20, Z22 nocne).
+**Co zrobione:** /strefa-wiedzy/maly-zus-plus-kiedy-sie-oplaca podawała wzór podstawy bez mnożnika 0,5 (art. 18c), więc składki w przykładach były dwa razy za wysokie: teraz 780 zł przy 5 000 zł dochodu (było 1 560) i 468 zł przy 3 000 zł (było 936), oszczędności 1 008 i 1 320 zł/mies.; na /strefa-wiedzy/skala-czy-liniowy-jdg przykład 80 000 zł liczył liniowy bez minimalnej zdrowotnej (5 072,90 zł w 2026), teraz 19 309 zł zamiast 18 375 zł. Sprawdzone bez zmian: kwoty zdrowotnej 2026 (498,35/830,58/1 495,04 zł, minimum 432,54 zł, limit odliczenia 14 100 zł), pełny ZUS 1 788/1 926,76 zł, kalkulator JDG (liczy Mały ZUS Plus z 0,5 poprawnie), FAQ 36 z 60 miesięcy i przerwa 24 miesiące.
+**Ruch:** ostatnia doba 134 odsłony, 87 osób (+74% wobec średniej 76,9); źródła: youtube 10, b2b-email 3, linkedin 3, instagram 3, facebook 2; najczęściej / 41, /audyt-strony 12, /strefa-wiedzy/ryczalt-czy-liniowy 8, /kalkulator-podatkowy 8, /wycena 6; uruchomienia narzędzi 2. Po odsiewie (pomiar-kanalow): 56 ludzi, bez odsyłacza 48, linkedin 3, instagram 3, youtube 2, mail 1; 7 dni: audyt_uruchomiony 8.
+**Dowód:** commit c0436ae; produkcja 200, w HTML „razy 0,5”, „ok. 780 zł”, „ok. 468 zł”, „liniowy 19 309 zł”, stare kwoty 0; bramki: build, SPOJNOSC OK, JAKOSC OK (146 stron); IndexNow 141 adresów (2 z 3). Źródła: poradnikprzedsiebiorcy.pl (Mały ZUS Plus 2026, wzór × 0,5), infakt.pl i ifirma.pl (zdrowotna 2026), podatki.biz (zmiany 2026).
+**Dla Pawła:**
+**Zostało otwarte:** Z18 (po 19.10 00:50), Z19, Z20, Z22 wg planu; g10 o 16:00 w timerze. Uwagi techniczne: (1) od ok. 14:45 DNS po UDP na tym komputerze nie odpowiada (1.1.1.1, 8.8.8.8, 9.9.9.9 timeout, ping i DNS po TCP działają), przez co `next build` pada na Google Fonts, a pomiar-kanalow na Resend; obejście dla procesu: `RES_OPTIONS=use-vc` przed komendą. (2) `scripts/daty-stron.mjs` w głównym katalogu przestawia daty ~100 stron (fałszywe zmiany), więc w commicie zostały tylko daty dwóch poprawionych stron.
+<!-- WYSLANO 2026-10-18 15:09 -->
+
+## 2026-10-18 16:00
+**Kanał:** widoczność w asystentach AI (poprawność liczb na stronach podatkowych z ruchem z kampanii `seria-podatki`), poza planem: w planie zostały tylko zadania z warunkiem czasu (Z18 nie wcześniej niż 19.10 00:50, Z19, Z20, Z22 nocne).
+**Co zrobione:** /strefa-wiedzy/skala-czy-liniowy-jdg i /strefa-wiedzy/jaka-forma-opodatkowania-jdg-2026 podawały próg opłacalności liniowego „100 do 120 tys. zł dochodu”, sprzeczny z przykładami tej samej strony (110 000 zł: skala tańsza o 5 766 zł, 150 000 zł: remis); po przeliczeniu (skala 12%/32%, kwota wolna 30 000 zł, zdrowotna 9% wobec 4,9% z odliczeniem) próg to ok. 150 tys. zł, a dla samego podatku ok. 200 tys. zł (było „135 do 140”), poprawione w leadzie, FAQ, treści i listach. /strefa-wiedzy/jak-liczyc-zdrowotna-jdg liczyła ryczałt przy 6 000 zł dochodu z progu do 60 000 zł przychodu (5 980,20 zł), choć to 72 000 zł rocznie: teraz 9 966,96 zł, minimum liniowego ze styczniem 5 072,90 zł (było 5 190,48), zdanie „skala najdroższa przy każdym dochodzie” zastąpione prawdziwym. /strefa-wiedzy/ryczalt-czy-liniowy (8 odsłon w dobie) sprawdzona: oba przykłady (30 970/37 210 zł i 45 220/33 075 zł) zgodne co do złotówki, bez zmian.
+**Ruch:** ostatnia doba 166 odsłon, 95 osób (+116% wobec średniej 77,0); źródła: youtube 10, m.facebook.com 9, b2b-email 3, linkedin 3, instagram 3; najczęściej / 63, /audyt-strony 12, /strefa-wiedzy/ryczalt-czy-liniowy 8, /kalkulator-podatkowy 8, /wycena 6; uruchomienia narzędzi 2, audyt_uruchomiony 5. Po odsiewie (pomiar-kanalow): 62 ludzi, bez odsyłacza 52, linkedin 3, instagram 3, youtube 2, m.facebook.com 2, mail 1.
+**Dowód:** commity 0806735 i 8485010 (lastmod); produkcja 200 dla 3 stron, nowe kwoty w HTML, stare („100 do 120”, „135 do 140”, „5 190,48”, „5 980,20”, „najdroższa przy każdym”) 0; sitemap lastmod 2026-10-18T13:46:14Z dla 3 stron; bramki: build, SPOJNOSC OK, JAKOSC OK (146 stron); IndexNow 141 adresów (2 z 3).
+**Dla Pawła:**
+**Zostało otwarte:** Z18 (po 19.10 00:50), Z19, Z20, Z22 wg planu; g10 o 16:00 w timerze. Do sprawdzenia w kolejnym cyklu: czy kalkulator JDG (TaxCalculator) i jego opisy wskazują ten sam próg skala/liniowy (ok. 150 tys. zł).
+
+## 2026-10-18 16:55
+**Kanał:** narzędzia (kalkulator JDG pod ruch z kampanii `seria-podatki`), poza planem: w planie stratega zostały tylko zadania z warunkiem czasu (Z18 nie wcześniej niż 19.10 00:50, Z19, Z20, Z22 nocne).
+**Co zrobione:** kalkulator JDG na ryczałcie nie odliczał składek społecznych ZUS od przychodu (skala i liniowy je odliczały, art. 11 ust. 1 ustawy o ryczałcie na to pozwala), więc zawyżał podatek ryczałtowy i przechylał porównanie na korzyść liniowego: przy 15 000 zł/mies. i pełnym ZUS bez chorobowej o ok. 2 376 zł rocznie (12%: 21 002 zł zamiast 18 626 zł); poprawione, a „Podstawa opodatkowania” ryczałtu pokazuje teraz kwotę po odliczeniach, nie sam przychód. Sprawdzone bez zmian: przykłady na /strefa-wiedzy/ryczalt-czy-liniowy (30 970/37 210 zł, 45 220/33 075 zł) i stałe 2026 (zdrowotna 498,35/830,58/1 495,04 zł, minimum 432,54 zł, limit 14 100 zł, Mały ZUS Plus × 0,5). Próg zdrowotnej na ryczałcie liczony od przychodu bez pomniejszenia o ZUS zostawiony, bo źródła tego nie rozstrzygają.
+**Ruch:** ostatnia doba 171 odsłon, 100 osób (+122% wobec średniej 77,0); źródła: youtube 10, m.facebook.com 9, instagram 4, b2b-email 3, linkedin 3; najczęściej / 66, /audyt-strony 12, /strefa-wiedzy/ryczalt-czy-liniowy 8, /kalkulator-podatkowy 8, /wycena 6; uruchomienia narzędzi 2, audyt_uruchomiony 5.
+**Dowód:** commit 2e82359; produkcja: napis „po odliczeniu ZUS i zdrowotnej” w chunku /_next/static/chunks/299a6986031f4b06.js strony /kalkulator-podatkowy; bramki: build, SPOJNOSC OK, JAKOSC OK (146 stron); IndexNow 141 adresów (2 z 3). Gofin g10 opublikowany 16:00 (opublikowane.md), timerów fl-gofin brak.
+**Dla Pawła:**
+**Zostało otwarte:** Z18 (po 19.10 00:50), Z19, Z20, Z22 wg planu. Do sprawdzenia: czy próg zdrowotnej na ryczałcie (60/300 tys.) liczy się od przychodu pomniejszonego o składki społeczne (art. 81 ust. 2h ustawy o świadczeniach); jeśli tak, kalkulator używa dziś przychodu brutto.
+
+## 2026-10-18 18:15
+**Kanał:** narzędzia (kalkulator JDG pod ruch z kampanii `seria-podatki`), poza planem: w planie stratega zostały tylko zadania z warunkiem czasu (Z18 nie wcześniej niż 19.10 00:50, Z19, Z20, Z22 nocne).
+**Co zrobione:** domknięte pytanie z cyklu 16:55: próg zdrowotnej na ryczałcie (60/300 tys. zł) liczy się od przychodu pomniejszonego o składki społeczne (poradnikprzedsiebiorcy.pl, varico.pl; art. 81 ust. 2h ustawy o świadczeniach), więc kalkulator JDG liczy próg od przychodu minus ZUS. Na /strefa-wiedzy/jak-liczyc-zdrowotna-jdg przykład 6 000 zł/mies. wraca do 5 980,20 zł (72 000 zł przychodu minus ok. 20 tys. zł pełnego ZUS mieści się w progu do 60 000 zł), zdanie pod tabelą i FAQ poprawione, llms.txt podaje regułę. Przykłady 15 000 i 30 000 zł oraz /strefa-wiedzy/ryczalt-czy-liniowy bez zmian (nie zmieniają progu).
+**Ruch:** ostatnia doba 171 odsłon, 100 osób (+121% wobec średniej 77,3); źródła: youtube 10, m.facebook.com 9, instagram 4, b2b-email 3, linkedin 3; najczęściej / 68, /audyt-strony 12, /strefa-wiedzy/ryczalt-czy-liniowy 8, /kalkulator-podatkowy 8, /wycena 6; uruchomienia narzędzi 2. Po odsiewie (pomiar-kanalow): 69 ludzi, bez odsyłacza 58, instagram 4, linkedin 3, youtube 2, m.facebook.com 2, mail 1; 18.10 to 62 sesje, rekord 14 dni. Wzrost na / to głównie pojedyncze odsłony bez odsyłacza (12 h: 27 z 35 sesji ze stroną główną), 3 dłuższe sesje (czat, audyt ze strony głównej).
+**Dowód:** commit 6eea64d; produkcja 200: „po odjęciu składek społecznych” i „5 980,20 zł” na /strefa-wiedzy/jak-liczyc-zdrowotna-jdg, „po odliczeniu składek społecznych” na /kalkulator-podatkowy, „81 ust. 2h” w /llms.txt; bramki: build, SPOJNOSC OK, JAKOSC OK (146 stron); IndexNow 141 adresów (2 z 3).
+**Dla Pawła:**
+**Zostało otwarte:** Z18 (po 19.10 00:50), Z19, Z20, Z22 wg planu.
+
+## 2026-10-18 18:50
+**Kanał:** dystrybucja narzędzi (Gofin), uzupełnienie Z14: w planie stratega zostały tylko zadania z warunkiem czasu (Z18 nie wcześniej niż 19.10 00:50, Z19, Z20, Z22 nocne), a Z14 o 10:55 nie znalazł wątku na g11.
+**Co zrobione:** w nowym wątku KSeF z 13:19 (przekroczony limit 10 tys. zł, faktura wysłana klientowi na papierze, autor pyta, czy klient dostanie dwie faktury) zaplanowany komentarz g11 (925 znaków, bez linków): papierowa faktura nadal dokumentuje sprzedaż i daje klientowi odliczenie (FAQ MF), druga faktura w KSeF to dubel, a po przekroczeniu limitu wszystkie kolejne faktury B2B idą do KSeF (FAQ MF pkt 13), kary od 2027 r.
+**Ruch:** ostatnia doba 169 odsłon, 98 osób (+117% wobec średniej 77,9); źródła: youtube 10, m.facebook.com 9, instagram 4, b2b-email 3, linkedin 3; najczęściej / 70, /audyt-strony 12, /strefa-wiedzy/ryczalt-czy-liniowy 8, /kalkulator-podatkowy 8, /wycena 6; uruchomienia narzędzi 2.
+**Dowód:** wątek https://forum.gofin.pl/1560153/przegapilem-we-wrzesniu-nie-wyslalem-fry-do-ksef-a-bylo-ponad-10, termin 2026-10-18 20:00, unit fl-gofin-11 (4 h po g10, przed 23:00).
+**Dla Pawła:**
+**Zostało otwarte:** Z18 (po 19.10 00:50), Z19, Z20, Z22 wg planu; nocny cykl sprawdza wpis g11 w ~/Projekty/fl-gofin/opublikowane.md. To czwarty wpis Gofin dnia (g8, g9, g10, g11), od 19.10 najwyżej 1 dziennie (wniosek Z16).
+<!-- WYSLANO 2026-10-18 19:04 -->
+
+## 2026-10-18 19:45
+**Kanał:** narzędzia (kalkulator JDG pod ruch z kampanii `seria-podatki`), poza planem: w planie stratega zostały tylko zadania z warunkiem czasu (Z18 nie wcześniej niż 19.10 00:50, Z19, Z20, Z22 nocne).
+**Co zrobione:** na telefonie (390 px) wynik kalkulatora JDG stał ok. 2400 px pod polami, więc osoba z kampanii widziała tylko formularz; teraz pod „Łączny przychód netto” stoi linia „Najkorzystniej: Skala podatkowa, 6630 zł/mies. do dyspozycji” z odnośnikiem „Porównanie ↓” do paska porównania (na /kalkulator-podatkowy i w artykułach z kalkulatorem; ukryta od 1800 px, gdzie wyniki stoją obok). Sprawdzone przy okazji: zdarzenie `uruchomiono_kalkulator_podatkowy` istnieje (pierwsza zmiana pola), więc 0 zdarzeń to brak interakcji, nie brak pomiaru. GSC 7 dni: /ksef-2027 0/58 poz. 7,6 i /integracja-crm-z-erp 0/35 poz. 19,2, widoczne zapytania tylko „ksef” i „ksef przesunięcie terminu 2027” (reszta ukryta), bez podstawy do zmiany opisów.
+**Ruch:** ostatnia doba 173 odsłony, 102 osoby (+123% wobec średniej 77,4); źródła: youtube 12, m.facebook.com 9, instagram 4, b2b-email 3, linkedin 3; najczęściej / 72, /audyt-strony 12, /strefa-wiedzy/ryczalt-czy-liniowy 8, /kalkulator-podatkowy 8, /wycena 6.
+**Dowód:** commit 3f9c898; produkcja 200, `porownanie-form` i „Najkorzystniej:” w HTML /kalkulator-podatkowy i /strefa-wiedzy/ryczalt-czy-liniowy (po 80 s od push); zrzut 390 px: linia na pierwszym ekranie pod polem kwoty; bramki: build, SPOJNOSC OK, JAKOSC OK (146 stron); IndexNow 141 adresów (2 z 3). Miara: zdarzenia `uruchomiono_kalkulator_podatkowy` i sesje z kampanii z drugą odsłoną od 19:45.
+**Dla Pawła:**
+**Zostało otwarte:** Z18 (po 19.10 00:50), Z19, Z20, Z22 wg planu; g11 o 20:00 w timerze fl-gofin-11.
+
+## 2026-10-18 20:55
+**Kanał:** dystrybucja narzędzi (Gofin, naprawa automatu) i widoczność w asystentach AI, poza planem: w planie stratega zostały tylko zadania z warunkiem czasu (Z18 nie wcześniej niż 19.10 00:50, Z19, Z20, Z22 nocne).
+**Co zrobione:** g11 o 20:00 nie wyszedł (fl-gofin-11: „turnstile token: False po 29 s”, wpis BŁĄD w opublikowane.md); o 20:43 token był od razu, komentarz opublikowany ręcznym ponowieniem, a publikuj.sh przy braku tokenu próbuje teraz drugi raz po 120 s. llms.txt odpowiada wprost na pytanie „od jakiego dochodu liniowy się opłaca” (ok. 150 tys. zł z podatkiem i zdrowotną, ok. 200 tys. zł sam podatek, zgodnie z /strefa-wiedzy/skala-czy-liniowy-jdg) i podaje odliczenie składek społecznych od przychodu na ryczałcie (art. 11 ust. 1), czego brakowało po poprawkach z 16:00 i 16:55.
+**Ruch:** ostatnia doba 174 odsłony, 103 osoby (+126% wobec średniej 77,1); źródła: youtube 12, m.facebook.com 9, instagram 4, linkedin 3, b2b-email 2; najczęściej / 74, /audyt-strony 12, /strefa-wiedzy/ryczalt-czy-liniowy 8, /kalkulator-podatkowy 8, /wycena 6; uruchomienia narzędzi 2, uruchomiono_kalkulator_podatkowy 1.
+**Dowód:** https://forum.gofin.pl/1560153/przegapilem-we-wrzesniu-nie-wyslalem-fry-do-ksef-a-bylo-ponad-10 (POST 200, „FluxLab” w wątku, opublikowane.md 20:43); commit e0a7d75, https://fluxlab.pl/llms.txt zawiera „od ok. 150 tys. zł dochodu”; bramki: build, SPOJNOSC OK, JAKOSC OK (146 stron); IndexNow 141 adresów (2 z 3).
+**Dla Pawła:**
+**Zostało otwarte:** Z18 (po 19.10 00:50), Z19, Z20, Z22 wg planu. Gofin od 19.10 najwyżej 1 wpis dziennie (wniosek Z16).
+
+## 2026-10-18 22:05
+**Kanał:** pomiar (podstawa do przesuwania wysiłku między kanałami), poza planem: w planie stratega zostały tylko zadania z warunkiem czasu (Z18 nie wcześniej niż 19.10 00:50, Z19, Z20, Z22 nocne).
+**Co zrobione:** „rekord” 18.10 na stronie głównej był w dużej części zawyżony przez PageSpeed: 15 z 24 sesji bez odsyłacza na / to pojedyncze odsłony Chrome Android i Chrome Linux w tej samej minucie, 1 do 6 min po wdrożeniach (12:44, 13:45, 15:49, 16:51, 19:55), a dzisiejsze sesje wywołały PageSpeed dla https://fluxlab.pl/ 40 razy; Lighthouse ma w UA „Chrome-Lighthouse”, czego filtr licznika (HeadlessChrome, bot) nie łapał. Licznik i zdarzenia pomijają teraz Lighthouse i Google-InspectionTool (test adresu w Search Console). Dane wstecz bez zmian: ludzi 18.10 było ok. 53, nie 68.
+**Ruch:** ostatnia doba 178 odsłon, 106 osób (+131% wobec średniej 77,1); źródła: youtube 12, m.facebook.com 9, instagram 4, linkedin 3, b2b-email 2; najczęściej / 78, /audyt-strony 12, /strefa-wiedzy/ryczalt-czy-liniowy 8, /kalkulator-podatkowy 8, /wycena 6. Po odsiewie (pomiar-kanalow): 72 ludzi, bez odsyłacza 58, z tego ok. 15 to PageSpeed. Realni ludzie z dłuższą sesją na /: 08:51 Firefox Android (24 odsłony, czat, 3 audyty), 12:56 Safari macOS (10 odsłon, audyt ze strony głównej).
+**Dowód:** commit 93fd26c; produkcja /api/wersja = 93fd26c, „Lighthouse|InspectionTool” w chunkach a029a35e11ce0cce.js i b7c86671da866e98.js; bramki: build, SPOJNOSC OK, JAKOSC OK (146 stron).
+**Dla Pawła:**
+**Zostało otwarte:** Z18 (po 19.10 00:50), Z19, Z20, Z22 wg planu. Bilans Z22 powinien porównywać ludzi 18.10 z poprawką (ok. 53), nie z 68; od 22:05 PageSpeed nie wchodzi do licznika.
+
+## 2026-10-18 22:50
+**Kanał:** Google (przygotowanie Z18), w planie stratega zostały tylko zadania z warunkiem czasu (Z18 nie wcześniej niż 19.10 00:50, Z19, Z20, Z22 nocne); cykl o ok. 00:43 trafiłby przed próg, więc seria poszłaby dopiero ok. 01:45.
+**Co zrobione:** kontrola stanu bez żądań 14 kandydatów (strona z Z12, 4 strony z Z15, nowe strony od 12.10): 13 „Adres URL znajduje się w Google”, poza Google tylko /szablony. Seria 10 żądań zaplanowana timerem na 19.10 00:52: /szablony i 9 stron zmienionych 18.10 (/, /strony-www, /kalkulator-podatkowy, jak-liczyc-zdrowotna-jdg, skala-czy-liniowy-jdg, ryczalt-czy-liniowy, /realizacje, /audyt-strony, /numer-ksef), żeby Google przeczytał nowe wersje.
+**Ruch:** bez nowego odczytu (cykl 22:05: 178 odsłon, 106 osób, po odsiewie 72 ludzi, z tego ok. 15 to PageSpeed; youtube 12, m.facebook.com 9, instagram 4, linkedin 3, b2b-email 2).
+**Dowód:** unit fl-gsc-z18.timer (Mon 2026-10-19 00:52 CEST), log cykl/z18-indeksowanie.log; adnotacja przy Z18 w cykl/plan-ruchu.md.
+**Dla Pawła:**
+**Zostało otwarte:** Z18 odhacza pierwszy cykl po 00:55 na podstawie logu (N z 10 „prośba przesłana”), potem Z19, Z20 (po 00:44 dobę po serii), Z22.
+
+<!-- WYSLANO 2026-10-18 23:12 -->
+
+## 2026-10-18 23:45
+**Kanał:** 1 (dystrybucja, Gofin). Plan: wszystkie otwarte zadania (Z18, Z19, Z20, Z22) mają termin po północy; Z18 wyśle timer fl-gsc-z18 o 19.10 00:52, nic nie odhaczone przed czasem.
+**Co zrobione:** zaplanowany wpis Gofin 12 (proforma na 100% przed usługą: data wykonania w P_6, VAT od dnia wpłaty, ryzyko przesunięcia usługi na listopad).
+**Ruch:** doba 201 odsłon, 123 osoby (+158% wobec średniej 78); źródła: youtube 12, m.facebook.com 9, google 6, instagram 4, linkedin 2. Top: / 84, /audyt-strony 12, /kalkulator-podatkowy 7. Zdarzenia: audyt_uruchomiony 5, scena_leada 12, czat_otwarty 3.
+**Dowód:** wątek https://forum.gofin.pl/1560157/proforma-na-100-a-faktura, termin 2026-10-19 07:05, unit fl-gofin-12, tekst ~/Projekty/fl-gofin/teksty/g12.txt (838 znaków).
+**Dla Pawła:** pusto.
+**Zostało otwarte:** Z18 po 00:55 (przepisać cykl/z18-indeksowanie.log jako dowód), Z19 01:46, Z20 02:46, Z22 04:46.
+
+## 2026-10-19 01:05
+**Kanał:** Google (Z18, Z20) i pomiar (Z19) wg planu stratega.
+**Co zrobione:** seria 10 żądań indeksowania przeszła w całości (Z18), a seria z 18.10 po dobie dała 8 z 9 sensownych adresów w indeksie Google, w tym 4 nowe artykuły KSeF i faktura-vat-rr-ksef (Z20).
+**Ruch:** doba 200 odsłon, 122 osoby (+155% wobec średniej 78,6); źródła: m.facebook.com 9, youtube 8, google 6, instagram 4, linkedin 2; najczęściej / 86, /audyt-strony 12, ryczalt-czy-liniowy 6, /wycena 6; uruchomienia narzędzi 2. Ludzie od 18.10 19:46: 7 sesji (szczegóły w Z19). Para sesji na / (Chrome Android i Chrome Linux w tej samej sekundzie) wraca co ok. 62 min mimo filtra Lighthouse (19:55, 20:57, 21:59, 23:01, 00:02), więc ok. 48 „osób” na dobę to nadal jakiś monitor.
+**Dowód:** cykl/z18-indeksowanie.log (00:52:22 do 00:57:25, 10 z 10 „prośba przesłana”, fl-gsc-z18 Result=success); Z20 stan bez żądań 01:01 do 01:04; linie Z18, Z19, Z20 w cykl/plan-ruchu.md.
+**Dla Pawła:** formularz z 18.10 21:46 zarezerwował Google Meet na dziś 19.10 12:15 (monika.bryla@int.pl, termin jest już w kalendarzu Fluxdesku). W opisie jedno słowo „seks”, brak firmy, darmowa poczta, więc raczej żart; do decyzji, czy dzwonić, czy odwołać. Zgłoszenie: Gmail, temat „MEET 2026-10-19 12:15: Nowa diagnoza”.
+**Zostało otwarte:** Z22 (bilans planu, 04:46). Render Google nie jest już widoczny w liczniku (filtr InspectionTool od 93fd26c), Z19 w kolejnych planach trzeba mierzyć inaczej albo pominąć. Do zbadania: źródło godzinnej pary sesji na /.
+
+## 2026-10-19 01:55
+**Kanał:** pomiar (Z22 planu stratega, bilans planu 2026-10-18/19, ostatnie otwarte zadanie; zrobione o 01:55 zamiast 04:46, bo w planie nie było innego „- [ ]”). `budzet` 01:43: „dociśnij”, 4 kamienie.
+**Co zrobione:** bilans doby planu poniżej; plan zamknięty (23 z 23 zrobione, wysyłek z założenia 0, bo niedziela).
+
+### Bilans planu 2026-10-18/19
+| Zad. | Kanał | Stan | Godzina | Co przyprowadziło |
+|---|---|---|---|---|
+| Z1 | Google, stan po nocy | zrobione | 18.10 06:45 | 0, L1 22 adresy (raport GSC z 12.10) |
+| Z2 | Google, 2 żądania + mapa | zrobione | 06:52 | 0, faktura-vat-rr-ksef zgłoszona, w indeksie po dobie (Z20) |
+| Z3 | narzędzia, /kalkulator-podatkowy | zrobione | 07:11 | 0 uruchomień od ludzi (zdarzenie działa, 1 = własny test 07:15) |
+| Z4 | Gofin g9 | zrobione | 07:18 | opublikowany 12:00, 0 mierzalnych wejść |
+| Z5 | pomiar + brief Facebook | zrobione | 07:43 | 0, brief dla fluxlab-meta |
+| Z6 | narzędzia, lejek audytu 390 px | zrobione | 4d02319 | 5 uruchomień 13:29 do 14:32 w 3 sesjach bez odsyłacza (24, 11 i 3 odsłony, Firefox Android i Safari macOS), nie da się odróżnić od testów |
+| Z7 | Google, linki ze strony głównej | zrobione | 18.10 | 0, bez strat, 0 zmian |
+| Z8 | wydajność strony głównej | zrobione | 18.10 | 0, Lighthouse 0,99, 0 zmian |
+| Z9 | outreach, partia na pn | zrobione | 18.10 | 0, 24 maile gotowe na 19.10 9:00 |
+| Z10 | Gofin g10 | zrobione | 09:50 | opublikowany 16:00, 0 mierzalnych wejść |
+| Z11 | Google, opis /numer-ksef | zrobione | 09:55 | 0, frazy już w title, 0 zmian |
+| Z12 | KSeF/AI, /strefa-wiedzy/gutschrift-ksef | zrobione | 10:05 | 0 wejść (nowa strona) |
+| Z13 | pomiar wieczór | zrobione | 10:45 | 0 |
+| Z14 | Gofin g11 | zrobione | 18:47 | opublikowany 20:43, 0 mierzalnych wejść |
+| Z15 | Google, linki wewnętrzne | zrobione | 11:10 | 0, +4 linki do nowych stron KSeF |
+| Z16 | pomiar Gofin | zrobione | 11:30 | Gofin: 3 wejścia w oknach wobec bazy 3,3, odsyłacz forum 0 |
+| Z17 | Google/AI, lastmod i llms.txt | zrobione | 11:50 | 0, a1edc46 |
+| Z18 | Google, seria 10 żądań | zrobione | 19.10 00:52 | 10 z 10 przyjętych |
+| Z19 | pomiar renderu | zrobione | 01:05 | render niewidoczny w liczniku od 93fd26c |
+| Z20 | Google, seria 18.10 | zrobione | 01:01 | 8 z 9 w indeksie po dobie |
+| Z21 | Google, e-Doręczenia i biura | zrobione | 11:48 | 0, 2 do 3 wyświetlenia dziennie |
+| Z22 | pomiar, bilans | zrobione | 19.10 01:55 | ten wpis |
+| Z23 | treści, szkic na pn | zrobione | 11:45 | 0, szkic gotowy, publikuje plan 19.10 |
+
+Ludzie w dobie (pomiar-kanalow 01:43, po odsiewie): **91** wobec 45 (pary 28, serie 0); minus ok. 15 sesji PageSpeed sprzed 93fd26c (wpis 22:05) daje ok. 76. Z 75 sesji bez odsyłacza 66 ma jedną odsłonę, 26 wchodzi na /, 37 to Chrome Android; godziny rozłożone przez całą dobę (23:00 sam 11), więc przyrost to w większości automaty, nie ludzie. Źródła poza tym: instagram 3, youtube 3, linkedin 2, m.facebook.com 2, Google 2, mail 1. Sesje kalendarzowe 18.10: 90 (17.10: 32).
+Zdarzenia po zmianach: /kalkulator-podatkowy 1 (własny test), /audyt-strony 5 uruchomień i 2 wyniki średnie (patrz Z6), formularz 1 (`lead_landing` 21:46, Meet 19.10 12:15, opis „seks”, opisany we wpisie 01:05).
+Gofin: opublikowane g8 08:00, g9 12:00, g10 16:00, g11 20:43 (4 z 4); g12 czeka na 19.10 07:05. Wniosek z Z16: forum nie daje mierzalnych wejść (3 wobec bazy 3,3, odsyłacz 0); wartość tylko pośrednia (marka, zapytanie „fluxlab” w GSC).
+Maile: wysłane 0 (niedziela), Resend 24 h 25 delivered spoza partii outreachu (inne sesje), Zoho: FINREAL zatwierdził poprawki i zgodził się na portfolio, 0 odpowiedzi z outreachu.
+Trzy liczby, które zmieniły się najbardziej:
+1. Ludzie w dobie 45 → 91, ale przyrost to „bez odsyłacza” z jedną odsłoną (37 → 79); źródła z odsyłaczem 8 → 13.
+2. Nowe adresy w indeksie: 8 z 9 z serii 18.10 po dobie, kolejne 10 żądań przyjętych 19.10 00:52.
+3. Formularz: pierwszy `lead_landing` od ludzi od dawna (1), choć treść wygląda na żart.
+Otwarte decyzje dla stratega:
+- Tytuły e-Doręczeń i biur: nadal 2 do 3 wyświetlenia dziennie (Z21), decyzja o zmianie tytułów na 25.10 bez nowych danych.
+- Outreach: 24 maile `ksiegowe` idą pn 19.10 9:00 (wyslij_ks.py wysyła cały katalog, na 12 przenieść 013 do 024); po wysyłce pomiar drugiej odsłony 20.10 rozstrzyga o wyłączeniu kanału.
+- Wydajność strony głównej: nie wymaga pracy (Z8: 0,99, LCP 2,1 s).
+- Pomiar: „bez odsyłacza” z jedną odsłoną zawyża ludzi o ok. 2/3; warto dodać do odsiewu regułę (np. godzinna para na / z Z19) zamiast liczyć ręcznie.
+- Gofin bez mierzalnego efektu po 11 wpisach; strateg może zmniejszyć częstotliwość albo zostać przy 3 dziennie jako koszt marki.
+
+**Ruch:** raport_ruchu 01:43: 208 odsłon, 128 osób (+164% wobec średniej 78,9); źródła m.facebook.com 9, youtube 8, google 7, instagram 3, linkedin 2; najczęściej / 89, /audyt-strony 12, /wycena 6, ryczalt-czy-liniowy 6. Po odsiewie 91 ludzi (szczegóły wyżej).
+**Dowód:** linia Z22 w `cykl/plan-ruchu.md`; ten wpis.
+**Dla Pawła:** pusto (Meet 12:15 z formularza opisany we wpisie 01:05).
+**Po bilansie (kanał 1):** nowe wątki Gofin 1560158 do 1560185 sprawdzone 02:00: tylko 1560158 (staż pracy przy JDG) i 1560159 (B2B i etat), oba poza naszymi tematami, więc bez g13.
+**Zostało otwarte:** plan 18/19 zamknięty; następny cykl czeka na plan stratega z 06:15 (jeśli przed nim, kanały z prompt.txt). g12 Gofin o 07:05.
+
+## 2026-10-19 02:55
+**Kanał:** KSeF jako magnes / widoczność w AI (plan stratega 18/19 zamknięty 23 z 23, nowy o 06:15; `budzet` 02:43: „dociśnij”).
+**Co zrobione:** nowa krótka strona /strefa-wiedzy/faktura-do-paragonu-ksef (faktura z kasy i paragon z NIP do 450 zł poza KSeF do 31.12.2026, od 2027 faktura do paragonu dla firmy w KSeF, dla konsumenta dobrowolnie; źródło FAQ MF KSeF 2.0 pyt. 3, 20, 25, 48, 66), wpis w llms.txt, link z FAQ /strefa-wiedzy/faktura-dla-osoby-prywatnej-ksef.
+**Ruch:** pomiar-kanalow 02:43: 95 ludzi w 24 h (bez odsyłacza 84, youtube 3, instagram 2, linkedin 2, m.facebook.com 2, Google 2, mail 1); 7 dni 275 (Google 19). Zdarzenia 7 dni: scena_leada 12, audyt_uruchomiony 6.
+**Dowód:** commity 0fe0129 i 561418e; https://fluxlab.pl/strefa-wiedzy/faktura-do-paragonu-ksef 200 z właściwym title, w llms.txt i sitemap.xml; IndexNow 142 adresy (2 z 3 punktów).
+**Dla Pawła:** pusto.
+**Zostało otwarte:** strona do zgłoszenia w GSC w najbliższej serii żądań (limit odnawia się 20.10 00:52). Szkic „limit 10 tys. zł” (cykl/artykul-2026-10-19-szkic.md) czeka na plan 19.10; po publikacji dodać link z FAQ nowej strony („limitu 10 tys. zł”). g12 Gofin o 07:05.
+<!-- WYSLANO 2026-10-19 03:04 -->
+
+## 2026-10-19 03:55
+**Kanał:** KSeF jako magnes / widoczność w AI (plan stratega 18/19 zamknięty 23 z 23, nowy o 06:15; `budzet` 03:43: „dociśnij”).
+**Co zrobione:** nowa krótka strona /strefa-wiedzy/proforma-ksef (proforma nie jest fakturą i zostaje poza KSeF także po 2027, po zapłacie faktura albo zaliczkowa w KSeF, pomyłkowo wysłana proforma z numerem KSeF to faktura do korekty do zera, nota księgowa i zamówienia poza KSeF; źródło FAQ MF KSeF 2.0 pyt. 6, 7, 10, 46, 49), wpis w llms.txt. Temat z wątku Gofin 1560157 „proforma na 100 a faktura”. Gofin: brak nowych wątków po 1560159, więc bez g13.
+**Ruch:** raport_ruchu 03:43: 219 odsłon, 139 osób w dobie (+177% wobec średniej 79,0); źródła youtube 11, m.facebook.com 9, google 7, linkedin 2, b2b-email 2; najczęściej / 93, /audyt-strony 12, /automatyzacja-raportowania 8. Uruchomienia narzędzi 3.
+**Dowód:** commit 68763d4; https://fluxlab.pl/strefa-wiedzy/proforma-ksef 200 z właściwym title, w llms.txt i sitemap.xml; IndexNow 143 adresy (2 z 3 punktów).
+**Dla Pawła:** pusto.
+**Zostało otwarte:** proforma-ksef i faktura-do-paragonu-ksef do zgłoszenia w GSC w najbliższej serii żądań (limit odnawia się 20.10 00:52). g12 Gofin o 07:05. Szkic „limit 10 tys. zł” czeka na plan 19.10.
+
+## 2026-10-19 04:55
+**Kanał:** KSeF jako magnes / widoczność w AI (plan stratega 18/19 zamknięty 23 z 23, nowy o 06:15; `budzet` 04:43: „dociśnij”).
+**Co zrobione:** nowa krótka strona /strefa-wiedzy/faktura-wewnetrzna-ksef (faktura wewnętrzna od 2014 nie jest fakturą w rozumieniu ustawy o VAT, więc zostaje poza KSeF; w JPK_VAT typ WEW bez numeru KSeF; WNT i import usług na fakturze zagranicznej z BFK; dokument wysłany do KSeF przez pomyłkę to faktura do korekty do zera), wpis w llms.txt. Temat z wątku Gofin 1560085 „czy do faktury wewnętrznej WEW dajemy też GTU” (kwestii GTU strona nie rozstrzyga, bo FAQ MF tego nie opisuje). Gofin: brak nowych wątków po 1560159 (strona forum 04:45), więc bez g13.
+**Ruch:** raport_ruchu 04:50: 218 odsłon, 139 osób w dobie (+173% wobec średniej 79,7); źródła youtube 11, m.facebook.com 9, google 7, linkedin 2, b2b-email 2; z telefonu 109 z 218.
+**Dowód:** commit 035f776; https://fluxlab.pl/strefa-wiedzy/faktura-wewnetrzna-ksef 200 z właściwym title, w llms.txt i sitemap.xml; IndexNow 144 adresy (2 z 3 punktów).
+**Dla Pawła:** pusto.
+**Zostało otwarte:** faktura-wewnetrzna-ksef, proforma-ksef i faktura-do-paragonu-ksef do zgłoszenia w GSC w najbliższej serii żądań (limit odnawia się 20.10 00:52). g12 Gofin o 07:05. Szkic „limit 10 tys. zł” czeka na plan 19.10.
+
+## 2026-10-19 05:55
+**Kanał:** KSeF jako magnes / Google (plan stratega 18/19 zamknięty 23 z 23, nowy o 06:15; `budzet` 05:43: „dociśnij”).
+**Co zrobione:** pierwsze linki wewnętrzne do dwóch nocnych stron, które nie miały żadnego: /strefa-wiedzy/faktura-zaliczkowa-ksef (FAQ, odpowiedź skrócona z 95 do 94 znaków) linkuje do /strefa-wiedzy/proforma-ksef, a /strefa-wiedzy/oznaczenia-jpk-ksef („dokumenty do WNT i importu usług”) do /strefa-wiedzy/faktura-wewnetrzna-ksef. Gofin: brak nowych wątków po 1560159 (strona forum 05:45), więc bez g13.
+**Ruch:** raport_ruchu 05:45: 215 odsłon, 136 osób w dobie (+167% wobec średniej 80,4); źródła youtube 11, m.facebook.com 9, google 7, linkedin 2, b2b-email 2; najczęściej / 96, /audyt-strony 12, /automatyzacja-raportowania 8. Uruchomienia narzędzi 2.
+**Dowód:** commit bab5f39; oba linki w HTML produkcji (curl); IndexNow 144 adresy (2 z 3 punktów).
+**Dla Pawła:** pusto.
+**Zostało otwarte:** faktura-wewnetrzna-ksef, proforma-ksef i faktura-do-paragonu-ksef do zgłoszenia w GSC w najbliższej serii żądań (limit odnawia się 20.10 00:52). g12 Gofin o 07:05. Szkic „limit 10 tys. zł” czeka na plan 19.10.
+
+## Strategia dobowa 2026-10-19
+**Kanał:** strateg dobowy (Fable), plan na 19.10 06:46 do 20.10 06:46, 23 zadania w `cykl/plan-ruchu.md` (poprzedni plan w `cykl/.plan-ruchu-2026-10-18.bak`).
+**Pomiar doby:** ludzie po odsiewie 89 (wobec 45), ale tylko 11 z odsyłacza: seria podatkowa 6 (youtube 3, linkedin 2, instagram 1; wszystkie 1 odsłona na artykułach JDG), m.facebook 2 (jedna 8 odsłon i czat), Google 2, mail agencje 1. Bez odsyłacza 78, z czego 69 z jedną odsłoną, 41 Chrome Android, 27 lądowań na /, szczyt 23:00 (11): automaty. Tydzień 273 (Google 18). GSC 10 do 16.10: 8 kliknięć, 813 wyświetleń, CTR 1%, poz. 19; /numer-ksef 3/68, kiedy-odliczyc-vat 0/121, /ksef-2027 0/58; „automatyzacja podatków" 0/26 poz. 5,9; indeksowanie raport z 12.10 (118/85); mapa odczytana 18.10, 137 stron; seria 19.10 00:52 przyjęta 10/10. Resend 25 delivered spoza outreachu; Zoho 0 odpowiedzi z outreachu. Narzędzia: audyt 2 uruchomienia od ludzi (pierwsze od 16.10), kalkulator 0. Gofin 11 komentarzy od 16.10, 0 mierzalnych wejść (Z16 18.10).
+**Decyzje:** artykuł z kalendarza (limit 10 tys. zł) jako Z1; 24 maile `ksiegowe` przez timery 9:00 i 12:00 (Z2, Z5), wtorek Z23 rozstrzyga o kanale (≥2 sesje z 2. odsłoną albo ≥1 odpowiedź, inaczej stop); Gofin zmniejszony do 2 wpisów dziennie po 3 dobach bez efektu; Z9 naprawia licznik (monitor godzinny jako 2 osoby, nocne serie); Z4 daje artykułom serii podatkowej widoczne przejście do kalkulatora; żadnych żądań indeksowania przed 20.10 00:55 (seria 10 przez timer w Z16/Z18); tytuły z 17.10 i e-Doręczeń/biur bez zmian (24.10, 25.10), Z3 i Z15 zmieniają tylko description.
+**Dla Pawła (mail 06:48, temat „FluxLab ruch, plan na 19.10.2026: 11 osób z odsyłacza w dobie, 78 wejść to automaty"):** post z profilu osobistego LinkedIn z kalkulatorem podatkowym i utm `seria-podatki-pawel` (5 min); reszta bez Pawła.
+**Zostało otwarte:** Z1 do Z23 w planie; pierwsze: Z1 07:46 (artykuł limit 10 tys. zł), Z2 08:46 (timer partii 9:00), Z3 09:46 (opisy pod „automatyzacja podatków").
