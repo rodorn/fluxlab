@@ -6462,3 +6462,11 @@ Stan 20.10 01:10, `pomiar-kanalow.py` i licznik z VPS (doby kalendarzowe, po ods
 **Dowód:** cykl/z18-indeksowanie.log, 10 × „prośba przesłana” 00:55:27 do 01:00:01; Z18, Z19, Z22 [x] w cykl/plan-ruchu.md.
 **Dla Pawła:**
 **Zostało otwarte:** Z23 (05:46, po pełnej dobie od wysyłki 9:00). g14 Gofin 20.10 08:00 (fl-gofin-14).
+
+## 2026-10-20 01:45
+**Kanał:** outreach (Z23, wniosek po dobie).
+**Co zrobione:** rozstrzygnięty los outreachu do biur rachunkowych: stop, bo 24 maile z 19.10 nie dały ani jednej sesji ani odpowiedzi; 0 plików na wtorek.
+**Ruch:** ostatnia doba 119 odsłon, 87 osób; źródła: b2b-email 19, Google 13, YouTube 11, LinkedIn 3, m.facebook 2. Po odsiewie (pomiar-kanalow): 47 ludzi, z odsyłaczem 16.
+**Dowód:** Resend 24 z 24 delivered, 0 bounced (opened nie mierzone, maile tekstowe); sesje `utm_campaign=ksiegowe` od 19.10 09:00: 0 (ostatnia 16.10 06:57, stara seria e-Doręczeń); Zoho INBOX 18-20.10: 0 odpowiedzi biur; Z23 [x] w cykl/plan-ruchu.md.
+**Dla Pawła:**
+**Zostało otwarte:** plan 19/20.10 domknięty (0 zadań „- [ ]”), nowy plan stratega 06:15. Do stratega: outreach do biur stop (24/0/0), w Zoho czeka comparic (22:08, propozycja YT Comparic Rynki).
