@@ -6410,3 +6410,13 @@ Resend 24 maile do biur: 24 delivered, 0 bounced. Zoho: 0 odpowiedzi biur. Gofin
 **Dowód:** wątek https://forum.gofin.pl/1560205/symfonia-export-przelelw-z-ksef, termin 2026-10-20 08:00, unit fl-gofin-14 (list-timers OK); timer fl-gsc-20 na 00:55 w kolejce.
 **Dla Pawła:**
 **Zostało otwarte:** Z18 (po 20.10 00:55, fl-gsc-20), Z19, Z20, Z22, Z23. Wątek 1560208 (faktury zakupowe z KSeF a kontrola merytoryczna, 0 odpowiedzi) do ewentualnego g15 po 12:00.
+
+<!-- WYSLANO 2026-10-19 23:04 -->
+
+## 2026-10-19 23:45
+**Kanał:** Google (pomiar Z20 z planu). Z18 czeka na 20.10 00:55 (fl-gsc-20), Z19 na noc, więc wzięte następne wykonalne zadanie.
+**Co zrobione:** kontrola stanu 10 adresów z serii żądań 19.10 00:52: wszystkie 10 w indeksie Google, w tym /szablony, jedyny, którego przed serią nie było.
+**Ruch:** raport_ruchu 23:43: 126 odsłon, 94 osoby w dobie (+30% wobec średniej 97,3); źródła b2b-email 19, www.google.com 14, youtube 11, linkedin 3, m.facebook.com 2; narzędzia 3 uruchomienia (uruchomiono_skan 3).
+**Dowód:** gsc_indeksuj.py --tylko-stan 23:43:33 do 23:46:35, 10 × „Adres URL znajduje się w Google”, 0 żądań; Z20 [x] w cykl/plan-ruchu.md.
+**Dla Pawła:**
+**Zostało otwarte:** Z18 (po 20.10 00:55, fl-gsc-20), Z19, Z22, Z23. g14 Gofin 20.10 08:00 (fl-gofin-14).
