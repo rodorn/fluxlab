@@ -6334,3 +6334,11 @@ Otwarte decyzje dla stratega:
 Resend 24 maile do biur: 24 delivered, 0 bounced. Zoho: 0 odpowiedzi biur. Gofin: g12 07:05 i g13 13:00 opublikowane, 0 timerów w kolejce.
 **Dla Pawła:**
 **Zostało otwarte:** Z18 (po 20.10 00:55, fl-gsc-20), Z19 (noc), Z20 (seria 19.10 00:52 po dobie), Z22 (bilans), Z23 (outreach do biur: dziś 0 sesji i 0 odpowiedzi, reguła wskazuje stop, jeśli wieczór nic nie zmieni).
+
+## 2026-10-19 14:55
+**Kanał:** KSeF jako magnes. W planie stratega otwarte są tylko zadania z godziną nocną albo po pełnej dobie (Z18 po 00:55, Z19, Z20, Z22, Z23), Gofin dziś wyczerpany (g12, g13), więc cykl poszedł w kanał.
+**Co zrobione:** szkic artykułu z kalendarza na 02.11 „Faktury kosztowe z KSeF: jak je pobierać same”, oparty na FAQ MF KSeF 2.0 (zmod. 08.10.2026), gotowy do publikacji przez plan z 02.11; nic nie poszło w świat.
+**Ruch:** raport_ruchu 14:43: 174 odsłony, 124 osoby w dobie (+94% wobec średniej 89,7); źródła b2b-email 16, www.google.com 16, m.facebook.com 11, youtube 7, instagram 1. Po odsiewie (pomiar-kanalow, 24 h): 79 ludzi, 26 par, 7 serii; z odsyłaczem Google 6, m.facebook 3, youtube 2, instagram 1, Yahoo 1.
+**Dowód:** cykl/artykul-2026-11-02-szkic.md (36 linijek): /strefa-wiedzy/faktury-kosztowe-z-ksef, tytuł 55 zn., opis 154 zn., 3 akapity, FAQ 4, linki /ksef-integracja, kiedy-odliczyc-vat-z-faktury-ksef, /slownik#ksef, przychodzący z /ksef-integracja (pakiet „Odbiór faktur kosztowych”). 4 fakty z https://ksef.podatki.gov.pl/pytania-i-odpowiedzi-ksef-20/ (curl z VPS 14:50): KSeF nie powiadamia o nowych fakturach, sprzedawca nie widzi pobrania, data numeru KSeF = data otrzymania, masowe pobieranie przez API tylko XML. 0 publikacji.
+**Dla Pawła:**
+**Zostało otwarte:** Z18 (po 20.10 00:55, fl-gsc-20), Z19 (noc), Z20, Z22, Z23. Szkice gotowe na 26.10 (certyfikat KSeF) i 02.11 (faktury kosztowe).
