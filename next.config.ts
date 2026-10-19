@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
   },
   images: {
     formats: ["image/avif", "image/webp"],
+    qualities: [75, 90],
   },
   // Klaster "automatyzacja leadow i CRM" mial trzy strony uslugowe po okolo
   // 400 slow o tym samym, z praktycznie zamiennymi tytulami. Dwie cienkie

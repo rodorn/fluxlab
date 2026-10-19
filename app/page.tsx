@@ -185,7 +185,7 @@ export default function Home() {
           />
         </section>
 
-        <section className="border-t border-gray-200 dark:border-white/10 py-20 lg:py-28">
+        <section className="border-t border-gray-200 dark:border-white/10 overflow-x-clip py-20 lg:py-28">
           <div className="container-wide">
             <RevealOnScroll className="text-center">
               <p className="section-label mb-3">Ostatnia realizacja</p>
@@ -194,27 +194,41 @@ export default function Home() {
               </h2>
             </RevealOnScroll>
             <RevealOnScroll delay={1}>
-              <Link
-                href="/realizacje"
-                className="group mx-auto mt-12 block max-w-5xl overflow-hidden rounded-2xl border border-gray-200 shadow-2xl shadow-black/10 transition-colors hover:border-accent dark:border-white/10"
-              >
-                <div className="flex items-center gap-1.5 border-b border-gray-200 bg-gray-50 px-4 py-2.5 dark:border-white/10 dark:bg-gray-900">
-                  <span className="h-2.5 w-2.5 rounded-full bg-gray-300 dark:bg-white/20" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-gray-300 dark:bg-white/20" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-gray-300 dark:bg-white/20" />
-                  <span className="ml-3 text-xs text-gray-500 dark:text-white/50">
-                    finreal.pl
-                  </span>
-                </div>
-                <Image
-                  src="/photos/realizacja-finreal-ostra.webp"
-                  alt="Strona główna finreal.pl zrobiona przez FluxLab"
-                  width={2048}
-                  height={1152}
-                  sizes="(min-width: 1024px) 1024px, 100vw"
-                  className="h-auto w-full transition-transform duration-700 group-hover:scale-[1.015]"
+              <div className="relative mx-auto mt-12 max-w-5xl">
+                <span
+                  aria-hidden="true"
+                  className="absolute -right-6 -top-6 h-28 w-28 rounded-full bg-gradient-to-br from-accent-solid to-indigo-800 sm:-right-10 sm:-top-10 sm:h-40 sm:w-40"
                 />
-              </Link>
+                <span
+                  aria-hidden="true"
+                  className="absolute -bottom-6 -left-6 h-24 w-24 rounded-full border-2 border-accent/40 sm:-bottom-10 sm:-left-10 sm:h-36 sm:w-36"
+                />
+                <Link
+                  href="/realizacje"
+                  className="group relative block rounded-[1.75rem] bg-gradient-to-br from-accent-solid via-indigo-500/60 to-indigo-800 p-[3px] shadow-2xl shadow-accent/20 transition-shadow hover:shadow-accent/40"
+                >
+                  <div className="overflow-hidden rounded-[1.6rem] bg-white dark:bg-gray-900">
+                    <div className="flex items-center gap-1.5 bg-gray-900 px-5 py-3">
+                      <span className="h-2.5 w-2.5 rounded-full bg-white/25" />
+                      <span className="h-2.5 w-2.5 rounded-full bg-white/25" />
+                      <span className="h-2.5 w-2.5 rounded-full bg-white/25" />
+                      <span className="mx-auto rounded-full bg-white/10 px-4 py-1 text-xs text-white/70">
+                        finreal.pl
+                      </span>
+                      <span className="w-[2.6rem]" />
+                    </div>
+                    <Image
+                      src="/photos/realizacja-finreal-2x.webp"
+                      alt="Strona główna finreal.pl zrobiona przez FluxLab"
+                      width={2880}
+                      height={1620}
+                      quality={90}
+                      sizes="(min-width: 1024px) 1024px, 100vw"
+                      className="h-auto w-full"
+                    />
+                  </div>
+                </Link>
+              </div>
             </RevealOnScroll>
             <dl className="mx-auto mt-16 grid max-w-4xl grid-cols-1 gap-10 text-center sm:grid-cols-3">
               {WYNIKI.map(([liczba, opis], i) => (
