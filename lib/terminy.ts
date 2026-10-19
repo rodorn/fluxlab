@@ -1,6 +1,6 @@
-/** Wolne terminy Meet z kalendarza Pawła. Zajęte przedziały wysyła co 5 minut
- *  skrypt na jego komputerze (~/Projekty/fluxlab-kalendarz/sync.py) do Global
- *  Config Vercela; tu liczymy z nich wolne starty co 15 minut, 11:00–23:30. */
+/** Wolne terminy Meet z kalendarza Pawła. Zajęte przedziały wysyła skrypt na
+ *  jego komputerze (~/Projekty/fluxlab-kalendarz/sync.py) do kolektora na VPS
+ *  (/terminy); tu liczymy z nich wolne starty co 15 minut, 11:00–23:30. */
 
 export const GODZ_OD = 11;
 export const GODZ_DO = 23;
@@ -16,11 +16,14 @@ type Config = { zajete?: [number, number][]; aktualizacja?: number };
 export type DzienTerminow = { data: string; godziny: string[] };
 
 async function pobierzConfig(): Promise<Config | null> {
-  const adres = process.env.KALENDARZ_CONFIG;
-  if (!adres) return null;
-  const [baza, zapytanie] = adres.split("?");
+  const sekret = process.env.RUCH_SEKRET;
+  if (!sekret) return null;
+  const adres = (
+    process.env.RUCH_URL ?? "http://146.59.80.185:8087/wizyta"
+  ).replace(/\/wizyta$/, "/terminy");
   try {
-    const r = await fetch(`${baza}/items?${zapytanie}`, {
+    const r = await fetch(adres, {
+      headers: { "X-Sekret": sekret },
       cache: "no-store",
       signal: AbortSignal.timeout(5000),
     });
