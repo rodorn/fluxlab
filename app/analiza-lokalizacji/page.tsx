@@ -5,7 +5,7 @@ import LokalizacjaCheck from "@/components/LokalizacjaCheck";
 export const metadata: Metadata = {
   title: "Analiza lokalizacji pod lokal, od 190 zł | Fluxlab",
   description:
-    "Zanim podpiszesz najem, sprawdź nasycenie rynku: konkurenci w promieniu 1, 3 i 5 km i liczba mieszkańców na punkt. Darmowe sprawdzenie, raport od 190 zł.",
+    "Analiza lokalizacji przed najmem: konkurenci w promieniu 1, 3 i 5 km i mieszkańcy na punkt. Lokalizacja biura, sklepu, gabinetu. Raport od 190 zł.",
   alternates: { canonical: "/analiza-lokalizacji" },
   openGraph: {
     title: "Analiza lokalizacji pod lokal, od 190 zł | Fluxlab",

@@ -205,7 +205,7 @@ export const INDEKS_STRON: WpisIndeksu[] = [
   {
     "url": "/analiza-lokalizacji",
     "tytul": "Analiza lokalizacji pod lokal, od 190 zł",
-    "opis": "Zanim podpiszesz najem, sprawdź nasycenie rynku: konkurenci w promieniu 1, 3 i 5 km i liczba mieszkańców na punkt. Darmowe sprawdzenie, raport od 190 zł."
+    "opis": "Analiza lokalizacji przed najmem: konkurenci w promieniu 1, 3 i 5 km i mieszkańcy na punkt. Lokalizacja biura, sklepu, gabinetu. Raport od 190 zł."
   },
   {
     "url": "/kontrola-jezykow",
@@ -395,7 +395,7 @@ export const INDEKS_STRON: WpisIndeksu[] = [
   {
     "url": "/automatyzacja-crm-leasing",
     "tytul": "CRM dla firm leasingowych i brokerów leasingu",
-    "opis": "CRM w leasingu, który sam przypisze lead po regionie, uzupełni dane po NIP z CEIDG i KRS, przygotuje wniosek do leasingodawcy i policzy prowizję."
+    "opis": "CRM dla firm leasingowych przypisze lead po regionie, uzupełni dane po NIP z CEIDG i KRS, przygotuje wniosek do leasingodawcy i policzy prowizję."
   },
   {
     "url": "/audyt-crm",
@@ -439,7 +439,7 @@ export const INDEKS_STRON: WpisIndeksu[] = [
   },
   {
     "url": "/strefa-wiedzy/co-to-jest-automatyzacja-procesow-biznesowych",
-    "tytul": "Co to jest automatyzacja procesów biznesowych",
+    "tytul": "Automatyzacja procesów biznesowych: co to jest",
     "opis": "Czym jest automatyzacja procesów biznesowych, gdzie daje największy efekt i od czego zacząć wdrożenie w firmie. Przykłady, błędy, ROI i praktyczne wskazówki."
   },
   {
