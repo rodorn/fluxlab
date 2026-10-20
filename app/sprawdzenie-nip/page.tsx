@@ -10,7 +10,7 @@ import NazwaNarzedzia from "@/components/NazwaNarzedzia";
 export const metadata: Metadata = {
   title: "Sprawdzenie NIP w 10 s: status VAT, bez logowania | Fluxlab",
   description:
-    "NIP sprawdzisz w 10 s, bez logowania: status VAT w wykazie Ministerstwa Finansów i rachunki firmy. Przykład działa jednym kliknięciem.",
+    "Co to za NIP i czy firma jest płatnikiem VAT? W 10 s nazwa firmy, status VAT z wykazu Ministerstwa Finansów i rachunki, bez logowania.",
   alternates: { canonical: "/sprawdzenie-nip" },
   openGraph: {
     title: "Sprawdzenie NIP w 10 s: status VAT, bez logowania | Fluxlab",
