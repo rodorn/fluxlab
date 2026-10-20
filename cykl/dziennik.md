@@ -6571,3 +6571,11 @@ Wniosek: `scena_leada` to wysłanie dema AI (ScenaLeada.tsx:279), a `lead_*` wys
 - Z17: `~/Projekty/fluxlab-ruch/raport_ruchu.py` funkcja `bez_salw`, commit fdaa464; bez odsyłacza w dobie 26 → 17.
 **Dla Pawła:**
 **Zostało otwarte:** Z8 wysyłka 2 maili audyt-wynik o 09:05 (timer `fl-audyt-wynik-20`), sprawdza Z12 o 18:30. Z12, Z15, Z16 (GSC ma dane tylko do 17.10, 18.10 jeszcze brak), Z18, Z19, Z22, Z23 są przypięte do pór wieczornych i nocnych. Dla stratega: `node scripts/indexnow.mjs` przyjmuje adresy jako argumenty, a cykle (także ten) zgłaszają za każdym razem wszystkie 145; Copilot cytuje nas 27 razy, a nikt z copilot.microsoft.com nie wszedł; pomiar botów AI wymaga zapisu UA w kodzie licznika.
+
+## 2026-10-20 10:08
+**Kanał:** Google + AI (Z15), Google (Z16); Z12 czeka na wieczór (18:30).
+**Co zrobione:** mapa witryny podaje nową datę zmiany artykułu o automatyzacji raportowania (opis z Z21), IndexNow przyjął 145 adresów; serie dzienne GSC nie dały się dopisać, bo Google nadal pokazuje dane tylko do 17.10.
+**Ruch:** raport_ruchu 09:43: doba 108 odsłon, 69 osób (+14% wobec średniej 95); tydzień 690 odsłon, 467 osób; źródła b2b-email 33, www.google.com 12, youtube 8, linkedin 4, m.facebook.com 2; zdarzenia otwarcie_maila 33, uruchomiono_skan 3, scena_leada 1, audyt_uruchomiony 1; odrzucone salwy 78 sesji.
+**Dowód:** commit 7bff862 (lib/daty-stron.json), /api/wersja = 7bff862, sitemap 145 <loc>, IndexNow 2 z 3. Z8: wysyłka 09:05, Resend 01a15820-b33b… (sekretariat@kancelaria-skarbiec.pl) i 01a15820-eea1… (recepcja@bajkowyzakatek.pl), oba delivered. Z16 [!]: GSC „aktualizacja 4 godziny temu”, ostatni dzień 17.10; /numer-ksef 13-17.10: 12, 18, 11, 10, 3 wyśw.; "automatyzacja podatków" 28 dni 0/37.
+**Dla Pawła:**
+**Zostało otwarte:** Z12 (18:30), Z18 (00:30), Z19 (po 21.10 01:05, timer fl-gsc-21), Z22, Z23; Z16 do powtórzenia, gdy GSC pokaże 18.10. Dla stratega: zmiany w komponentach (NumerKsefCheck, ListaKsef2027) nie przesuwają lastmod, bo daty-stron.mjs czyta tylko page.tsx.
