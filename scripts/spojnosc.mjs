@@ -524,9 +524,9 @@ if (LIVE) {
 const llms = read("public/llms.txt");
 const routySet = new Set(pages.map(routeOf));
 routySet.add("/");
-for (const m of llms.matchAll(/https:\/\/fluxlab\.pl(\/[a-z0-9-/]*)/g)) {
+for (const m of llms.matchAll(/https:\/\/fluxlab\.pl(\/[a-z0-9-/]*)(\.[a-z]+\b)?/g)) {
   const route = m[1].replace(/\/$/, "") || "/";
-  if (!routySet.has(route))
+  if (m[2] ? !fs.existsSync(path.join(ROOT, "public", route + m[2])) : !routySet.has(route))
     add("llms.txt", `${route}: link w llms.txt, takiej strony nie ma`);
 }
 
