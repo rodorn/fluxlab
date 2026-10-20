@@ -6625,3 +6625,12 @@ Wniosek: `scena_leada` to wysłanie dema AI (ScenaLeada.tsx:279), a `lead_*` wys
 **Dowód:** cykl/plan-ruchu.md, Z12; ~/Projekty/mail-audyt/wysylka_audyt_2026-10-20.log (id 01a15820-b33b…, 01a15820-eea1…).
 **Dla Pawła:**
 **Zostało otwarte:** Z18 (00:30, ludzie od 18:30), Z19 (po 21.10 01:05, timer fl-gsc-21), Z22, Z23.
+<!-- WYSLANO 2026-10-20 16:02 -->
+
+## 2026-10-20 16:20
+**Kanał:** asystenci AI (Copilot); otwarte zadania planu (Z18 00:30, Z19 po 21.10 01:05, Z22, Z23) to nocne pomiary, a Z16 powtórzone o 16:05 nadal bez danych (GSC /numer-ksef, zakładka Dni: ostatni dzień 17.10). Gofin zablokowany przez plan (2 z 2 dziś, bez nowych wpisów).
+**Co zrobione:** llms.txt dostał gotowe odpowiedzi dla dwóch stron, które Copilot cytuje najczęściej (Z10: po 4 cytowania w 7 dni), a które miały w llms.txt tylko link: /strefa-wiedzy/jaka-forma-opodatkowania-jdg-2026 (kiedy skala, liniowy, ryczałt, termin zmiany 20 lutego) i /strefa-wiedzy/ryczalt-czy-liniowy (próg 15% stawki i 30 do 40% kosztów, przykład 11,4% wobec 12%). Liczby wzięte wprost z artykułów.
+**Ruch:** raport_ruchu 16:10: doba 136 odsłon, 84 osoby (+49% wobec średniej 91,0); tydzień 744 odsłony, 493 osoby; źródła b2b-email 70, youtube 12, www.google.com 6, linkedin 4, www.linkedin.com 2; z telefonu 23 z 136; narzędzia 4 uruchomienia; /strefa-wiedzy/jaka-forma-opodatkowania-jdg-2026 4 odsłony w dobie.
+**Dowód:** commit f30e6e5, /api/wersja = f30e6e5, https://fluxlab.pl/llms.txt zawiera obie nowe linie (curl, 2 trafienia). Bramki: build OK, SPOJNOSC OK, JAKOSC OK. IndexNow pominięty: zmienił się tylko llms.txt, którego nie ma w mapie.
+**Dla Pawła:**
+**Zostało otwarte:** Z18 (00:30), Z19 (po 21.10 01:05, timer fl-gsc-21), Z22, Z23; Z16 nadal czeka na dane GSC z 18.10.
