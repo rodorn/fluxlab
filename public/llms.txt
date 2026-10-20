@@ -176,6 +176,7 @@ Dopłata paliwowa na fakturach kurierskich, sprawdzenie jednej pozycji na https:
 - Pierwsza faktura sprawdzana za darmo w 48 godzin, audyt 12 miesięcy od 290 zł albo 25% odzyskanej kwoty.
 
 Biała lista podatników VAT, stan z 25.09.2026, sprawdzenie na https://fluxlab.pl/sprawdzenie-nip:
+- Co to za NIP i czy firma jest płatnikiem VAT: wykaz Ministerstwa Finansów podaje dla numeru NIP nazwę, adres, REGON, KRS, status VAT (Czynny albo Zwolniony) i zgłoszone rachunki, także na wybrany dzień wstecz. Brak numeru w wykazie znaczy, że podmiot nie jest zarejestrowany jako podatnik VAT albo został wykreślony; sama firma może wtedy dalej figurować w CEIDG lub KRS.
 - Obowiązek sprawdzenia rachunku w wykazie Ministerstwa Finansów dotyczy jednorazowej transakcji od 15 000 zł brutto, niezależnie od liczby przelewów, którymi jest opłacana.
 - Przelew na rachunek spoza wykazu przy transakcji od 15 000 zł: wydatek wypada z kosztów podatkowych, a nabywca odpowiada solidarnie za VAT niezapłacony przez kontrahenta (art. 117ba Ordynacji podatkowej).
 - Zawiadomienie ZAW-NR do naczelnika urzędu skarbowego właściwego dla nabywcy, złożone w ciągu 7 dni od dnia zlecenia przelewu, wyłącza obie sankcje. Po terminie nie da się już tego naprawić.
