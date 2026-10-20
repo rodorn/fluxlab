@@ -19,6 +19,8 @@ import tls from "tls";
 import { kontroleJezykoweGlownej, type AnalizaJezyka } from "./audyt-jezyki";
 import { wykryjTechnologie, type Technologia } from "./audyt-technologie";
 import { adresKontaktu, wykryjZapytania, type Zapytania } from "./audyt-zapytania";
+import { zmierzKontrast } from "./audyt-kontrast";
+import { odmien } from "./odmiana";
 import { znajdzLiterowki } from "./audyt-pisownia";
 import { arkuszeStrony, przygotujCss, sprawdzKursor } from "./kursor";
 import {
@@ -947,7 +949,7 @@ export async function zmierz(domenaWejscie: string): Promise<Pomiar> {
   ];
   // Strona kontaktu idzie równolegle z zasobami, więc nie wydłuża audytu.
   const adresKont = adresKontaktu(html, adresKoncowy);
-  const [zasoby, kursor, domenowe, glowna, jezyki, kontakt] = await Promise.all([
+  const [zasoby, kursor, domenowe, glowna, jezyki, kontakt, kontrast] = await Promise.all([
     zmierzZasoby(zasobyZHtml(html, baza)),
     zmierzKursor(html, adresKoncowy, tekstyCss),
     kontroleDomeny({
@@ -959,6 +961,7 @@ export async function zmierz(domenaWejscie: string): Promise<Pomiar> {
     kontroleGlownej(html, adresKoncowy).catch(() => [] as Znalezisko[]),
     kontroleJezykoweGlownej(domena, html, adresKoncowy).catch(() => null),
     adresKont ? pobierz(adresKont, CZAS_ZASOBU_MS) : Promise.resolve(null),
+    zmierzKontrast(adresKoncowy),
   ]);
   const kontaktOk =
     kontakt && kontakt.odp.ok && /<html|<body/i.test(kontakt.tekst.slice(0, 5_000))
@@ -981,6 +984,21 @@ export async function zmierz(domenaWejscie: string): Promise<Pomiar> {
     ...obrazy404(zasoby),
     ...(jezyki?.znaleziska ?? []),
     ...(await pisownia(jezyki?.glowna ?? null, adresKoncowy, domena)),
+    ...(kontrast && kontrast.elementow
+      ? [
+          {
+            klucz: "niski_kontrast",
+            szczegol:
+              `${kontrast.elementow} ${odmien(kontrast.elementow, "element", "elementy", "elementów")} poniżej normy WCAG 2.2 AA. ` +
+              kontrast.przyklady
+                .map(
+                  (x) =>
+                    `${x.tekst ? `„${x.tekst}”: ` : ""}${x.kolor} na ${x.tlo}, ${x.stosunek.toFixed(2).replace(".", ",")}:1 zamiast ${String(x.wymagany).replace(".", ",")}:1`,
+                )
+                .join("; "),
+          },
+        ]
+      : []),
     ...(await kontroleZasobow(zasoby, html, adresKoncowy, tekstyCss).catch(
       () => [] as Znalezisko[],
     )),

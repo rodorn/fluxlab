@@ -471,7 +471,7 @@ export default function LandingForm({
                 <span className="block text-sm font-semibold text-gray-900 dark:text-white">
                   {f.nazwa}
                 </span>
-                <span className="block text-xs text-gray-500 dark:text-gray-400">
+                <span className="block text-xs text-gray-600 dark:text-gray-300">
                   {f.opis}
                 </span>
               </button>

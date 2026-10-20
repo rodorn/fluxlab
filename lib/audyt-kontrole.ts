@@ -576,6 +576,16 @@ export const KATALOG_C: Record<string, OpisKontroli> = {
     dostep: KOD,
     zakres: "strona",
   },
+  niski_kontrast: {
+    tytul: "Za słaby kontrast tekstu",
+    skutek:
+      "Jasny tekst na jasnym tle albo ciemny na ciemnym trudno przeczytać, zwłaszcza na telefonie w słońcu i osobom słabiej widzącym. Norma WCAG 2.2 AA wymaga 4,5:1 dla zwykłego tekstu i 3:1 dla dużego.",
+    waga: "wazne",
+    obszar: "dostepnosc",
+    koszt: 100,
+    dostep: KOD,
+    zakres: "strona",
+  },
   tabindex_dodatni: {
     tytul: "Wymuszona kolejność przechodzenia klawiszem Tab",
     skutek:
