@@ -6530,3 +6530,31 @@ Wniosek: `scena_leada` to wysłanie dema AI (ScenaLeada.tsx:279), a `lead_*` wys
 **Dowód:** commity 528b1a9 (Z3), 25e6404 (Z4), 6ee2c98 (Z6, /api/wersja zgodna); produkcja: nowe `<title>` i opisy (curl); IndexNow 3 × 145 adresów, 2 z 3; maile ~/Projekty/mail-audyt/maile_audyt/001.txt (sekretariat@kancelaria-skarbiec.pl, 67/100) i 002.txt (recepcja@bajkowyzakatek.pl, 57/100); brief ~/Projekty/fluxlab-meta/briefy/od-cyklu-ruchu-2026-10-20.md; `list-timers fl-gofin-*` = 2 (g14 08:00, g15 12:00).
 **Dla Pawła:**
 **Zostało otwarte:** Z8 wysyłka 001 i 002 w godzinach 9 do 17 (pipeline wyslij_ks z katalogiem maile_audyt, wyslane_audyt.json); dalej Z9 (mapa zapytań GSC) i kolejne wg planu.
+<!-- WYSLANO 2026-10-20 07:04 -->
+
+## 2026-10-20 08:58
+**Kanał:** outreach z gotowym raportem (Z8), Google (Z9, Z11), Bing i asystenci AI (Z10).
+**Co zrobione:** 2 maile `audyt-wynik` do firm, które same uruchomiły audyt (kancelaria-skarbiec.pl 67/100, bajkowyzakatek.pl 57/100), zaplanowane na 09:05, bo skrypt nie wysyła przed 9:00; pierwsze pełne odczyty mapy zapytań GSC i Bing Webmaster.
+**Ruch:** doba 101 odsłon, 68 osób; źródła: b2b-email 27, www.google.com 13, youtube 6, linkedin 4, m.facebook.com 2; narzędzia 4 uruchomienia (skan 4), scena_leada 1.
+**Dowód:**
+- Z8: segment `audyt` w `~/Projekty/mail-audyt/wyslij_segment.py` (kampania audyt-wynik, `wyslane_audyt.json`), `--proba` 2 adresatów i 2 linki z utm; timer `fl-audyt-wynik-20` 20.10 09:05, log `~/Projekty/mail-audyt/wysylka_audyt_2026-10-20.log`.
+- Z9: `cykl/gsc-zapytania-2026-10-20.txt` (99 wierszy, 11-17.10). 10 zapytań z 0 kliknięć:
+
+| zapytanie | wyśw. | poz. | strony (poz.) | title ma frazę |
+|---|---|---|---|---|
+| "automatyzacja podatków" | 23 | 6,4 | /automatyzacja-raportowania 6,2; /narzedzia 5,2; /slownik 6,0; /blad-w-fakturze-ksef 8,0; /kategoria/poczta 10; /kategoria/badania 7; /faktura-zaliczkowa-ksef 10 | nie (żadna) |
+| automatyzacja procesów biznesowych | 15 | 64,7 | /strefa-wiedzy/co-to-jest-automatyzacja-procesow-biznesowych | tak (Z3) |
+| automatyzacja crm | 10 | 18,3 | /strefa-wiedzy 18,3; /automatyzacja-leadow-crm 73,7; /automatyzacja-crm-od-czego-zaczac 66,8 | tak (/strefa-wiedzy) |
+| lokalizacja biura | 8 | 82,5 | /analiza-lokalizacji | nie (opis tak, Z4) |
+| crm w branży meblowej | 8 | 82,0 | /automatyzacja-crm-leasing | nie (strona nie na temat) |
+| automatyzacja raportowania | 8 | 19,3 | /automatyzacja-raportowania 19,5; /strefa-wiedzy 20,3; /jak-zautomatyzowac-raportowanie-w-firmie 10,0 | tak / nie / nie |
+| proces biznesowy | 7 | 82,7 | /co-to-jest-automatyzacja-procesow-biznesowych | nie |
+| poczta firmowa | 7 | 89,4 | /mail-firmowy | nie |
+| analiza lokalizacji | 7 | 29,3 | /analiza-lokalizacji | nie (opis tak, Z4) |
+| system ticketowy dla e-commerce | 6 | 63,7 | /automatyzacja-dla-ecommerce | nie |
+
+  Kandydat do Z21 (poz. ≤12, title bez frazy, strona zmieniana ostatnio 18.10): /slownik (6,0), /strefa-wiedzy/blad-w-fakturze-ksef (8,0), /strefa-wiedzy/jak-zautomatyzowac-raportowanie-w-firmie (10,0). Zapytanie w cudzysłowie z 7 stron naraz wygląda na narzędzie do śledzenia pozycji, nie na człowieka.
+- Z10 (Bing, dane do 18.10): 7 dni 1 klik / 38 wyśw., 30 dni 3 / 75; /sprawdzenie-nip 31 wyśw. poz. 7,2 z zapytań „co to za nip …”; Copilot 27 cytowań od 7.10, 10 w 7 dni (jaka-forma-opodatkowania-jdg-2026 4, ryczalt-czy-liniowy 4, sprawdzenie-nip 2); 80 zaindeksowanych, 6 wykluczonych, 2 linki zwrotne; mapa 136 adresów, Success 17.10; IndexNow 6,6 tys. zgłoszeń, 18.10 3,5 tys., 1,4 tys. w 5 h.
+- Z11: 0 zmian, przyczyna w planie.
+**Dla Pawła:**
+**Zostało otwarte:** Z12 (18:30) sprawdza id Resend i delivered z Z8. Dla stratega: IndexNow dostaje ok. 145 adresów przy każdym wdrożeniu, czyli tysiące dziennie, a powinien dostawać tylko zmienione strony. W Bing najmocniejsze są /sprawdzenie-nip i artykuły o formie opodatkowania JDG.
