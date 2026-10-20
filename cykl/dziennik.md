@@ -6470,3 +6470,11 @@ Stan 20.10 01:10, `pomiar-kanalow.py` i licznik z VPS (doby kalendarzowe, po ods
 **Dowód:** Resend 24 z 24 delivered, 0 bounced (opened nie mierzone, maile tekstowe); sesje `utm_campaign=ksiegowe` od 19.10 09:00: 0 (ostatnia 16.10 06:57, stara seria e-Doręczeń); Zoho INBOX 18-20.10: 0 odpowiedzi biur; Z23 [x] w cykl/plan-ruchu.md.
 **Dla Pawła:**
 **Zostało otwarte:** plan 19/20.10 domknięty (0 zadań „- [ ]”), nowy plan stratega 06:15. Do stratega: outreach do biur stop (24/0/0), w Zoho czeka comparic (22:08, propozycja YT Comparic Rynki).
+
+## 2026-10-20 02:45
+**Kanał:** dystrybucja narzędzi (Gofin). Plan 19/20.10 domknięty (0 zadań „- [ ]”), plan ma 20 h, nowy od stratega o 06:15.
+**Co zrobione:** komentarz g15 w kolejce: wątek o fakturach z KSeF wpadających od razu do programu księgowego bez sprawdzenia merytorycznego (bufor, korekta do zera u wystawcy, data otrzymania = nadanie numeru KSeF).
+**Ruch:** raport_ruchu 02:43: 113 odsłon, 81 osób w dobie (+13% wobec średniej 100); źródła b2b-email 19, www.google.com 13, youtube 11, linkedin 3, m.facebook.com 2; narzędzia 3 uruchomienia (uruchomiono_skan 3).
+**Dowód:** wątek https://forum.gofin.pl/1560208/f-ry-z-ksef-od-razu-w-programie-ksiegowym-a-spr-merytoryczne, termin 20.10 12:00, unit fl-gofin-15 (tekst ~/Projekty/fl-gofin/teksty/g15.txt, 827 znaków, bez linków).
+**Dla Pawła:**
+**Zostało otwarte:** g14 20.10 08:00 (fl-gofin-14), g15 12:00 (fl-gofin-15); nowy plan stratega 06:15.
