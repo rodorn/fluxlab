@@ -6686,3 +6686,11 @@ Wniosek: `scena_leada` to wysłanie dema AI (ScenaLeada.tsx:279), a `lead_*` wys
 **Dowód:** `systemctl --user list-timers 'fl-*'`: 3 timery; `budzet`: zwolnij, kamieni 1.
 **Dla Pawła:**
 **Zostało otwarte:** Z19 (log cykl/z19-indeksowanie.log po 01:05), Z22 bilans (04:30), Z23 wniosek (05:30).
+
+## 2026-10-20 22:45
+**Kanał:** brak (otwarte zadania planu są nocne: Z19 nie przed 21.10 01:05, Z22 04:30, Z23 05:30 wymaga ≥14 h od wysyłki 09:05 i pełnej doby lejka; Gofin na 21.10 ma 2 z 2 wpisów).
+**Co zrobione:** nic nie poszło w świat: jedyne otwarte zadania mają godziny nocne, budżet „zwolnij” (prognoza 99% przy celu 95%, praca przycięta do 15%); timery fl-gsc-21 (01:05), fl-gofin-16 (07:30), fl-gofin-17 (12:00) stoją.
+**Ruch:** doba 134 odsłony, 85 osób (+43% wobec średniej 93,6); tydzień 760 odsłon, 505 osób; źródła b2b-email 74, youtube 12, www.google.com 4, linkedin 3, mail 2; z telefonu 21 z 134; narzędzia 3 uruchomienia (audyt 1, skan 3 zdarzenia); salwy odrzucone 82 sesje.
+**Dowód:** `systemctl --user list-timers 'fl-*'`: 3 timery; `budzet`: zwolnij, kamieni 1.
+**Dla Pawła:**
+**Zostało otwarte:** Z19 (log cykl/z19-indeksowanie.log po 01:05), Z22 bilans (04:30), Z23 wniosek (05:30).
