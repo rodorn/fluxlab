@@ -6495,3 +6495,11 @@ Stan 20.10 01:10, `pomiar-kanalow.py` i licznik z VPS (doby kalendarzowe, po ods
 **Dowód:** commit 500def6, https://fluxlab.pl/ksef-2027 zawiera href do /strefa-wiedzy/limit-10-tys-poza-ksef (sprawdzone curl), IndexNow 145 adresów 2 z 3.
 **Dla Pawła:**
 **Zostało otwarte:** g14 Gofin 08:00 (fl-gofin-14), g15 12:00 (fl-gofin-15); nowy plan stratega 06:15.
+
+## 2026-10-20 05:50
+**Kanał:** dystrybucja narzędzi (Gofin). Plan 19/20.10 domknięty (0 zadań „- [ ]”), nowy od stratega o 06:15.
+**Co zrobione:** komentarz g16 w kolejce: wątek o fakturze powyżej 15 tys. zł z rachunkiem z białej listy, ale przypisanym do firmy żony wykonawcy (biała lista liczy się dla NIP wystawcy, ZAW-NR w 7 dni zdejmuje obie sankcje, MPP kieruje VAT na rachunek innej firmy, dyspozycja zapłaty na rachunek osoby trzeciej do akt).
+**Ruch:** raport_ruchu 05:48: 109 odsłon, 76 osób w dobie (+8% wobec średniej 101,0); źródła b2b-email 23, www.google.com 13, youtube 8, linkedin 4, m.facebook.com 2; narzędzia 4 uruchomienia (uruchomiono_skan 4).
+**Dowód:** wątek https://forum.gofin.pl/1560166/rachunek-biala-lista, termin 20.10 16:00, unit fl-gofin-16 (tekst ~/Projekty/fl-gofin/teksty/g16.txt, 813 znaków, bez linków).
+**Dla Pawła:**
+**Zostało otwarte:** g14 Gofin 08:00 (fl-gofin-14), g15 12:00 (fl-gofin-15), g16 16:00 (fl-gofin-16); nowy plan stratega 06:15.
