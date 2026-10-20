@@ -251,12 +251,13 @@ export default function NumerKsefCheck() {
               </li>
             ))}
           </ul>
-          <p className="mt-4 text-xs text-gray-500 dark:text-gray-400">
+          <p className="mt-4 text-sm text-gray-700 dark:text-gray-300">
             Poprawna suma oznacza brak literówki, a istnienie faktury potwierdza
             KSeF. Numery bez przepisywania daje{" "}
             <Link
-              href="/ksef-integracja"
-              className="font-semibold text-accent hover:underline"
+              href="/ksef-integracja?utm_source=narzedzie&utm_campaign=numer-ksef"
+              onClick={() => zglosZdarzenie("klik_po_wyniku")}
+              className="font-semibold text-accent underline underline-offset-2"
             >
               integracja z KSeF
             </Link>
