@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { ViewTransition } from "react";
 import { Geist, Instrument_Serif } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -29,6 +29,13 @@ const instrumentSerif = Instrument_Serif({
   weight: "400",
   style: "italic",
 });
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#030712" },
+  ],
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://fluxlab.pl"),

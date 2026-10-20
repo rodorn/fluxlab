@@ -89,7 +89,7 @@ html.dark {
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-gray-300 dark:bg-gray-700;
+    @apply bg-accent/40 dark:bg-accent/40;
     border-radius: 9999px;
     border: 3px solid transparent;
     background-clip: padding-box;
@@ -103,12 +103,12 @@ html.dark {
   /* Firefox */
   html {
     scrollbar-width: thin;
-    scrollbar-color: rgb(209 213 219) transparent;
+    scrollbar-color: rgb(var(--accent) / 0.5) transparent;
   }
 
   .dark html,
   html.dark {
-    scrollbar-color: rgb(55 65 81) transparent;
+    scrollbar-color: rgb(var(--accent) / 0.5) transparent;
   }
 }
 
@@ -1333,4 +1333,18 @@ html.lenis body {
   border: 0;
   background: transparent;
   cursor: ew-resize;
+}
+
+/* cyfry tabelaryczne w cenach i liczbach, kerning w nagłówkach */
+dl dt,
+table,
+.tabular,
+[class*="text-accent"] {
+  font-variant-numeric: tabular-nums;
+}
+h1,
+h2 {
+  font-kerning: normal;
+  font-feature-settings: "kern", "liga";
+  text-rendering: optimizeLegibility;
 }

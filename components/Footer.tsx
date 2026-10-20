@@ -3,6 +3,7 @@ import Link from "next/link";
 import { SEKCJE, type Sekcja } from "@/lib/sekcje";
 import { categories } from "@/lib/categories";
 import Znak from "./Znak";
+import KopiujMail from "./KopiujMail";
 import StatusOnline from "./StatusOnline";
 import CzasZmiany from "./CzasZmiany";
 import zmiany from "@/lib/zmiany.json";
@@ -118,9 +119,7 @@ export default function Footer() {
               Sprawdź na białej liście VAT
             </a>
             <span aria-hidden="true" className="hidden sm:inline">·</span>
-            <a href="mailto:pawel@fluxlab.pl" className="hover:text-accent transition-colors">
-              pawel@fluxlab.pl
-            </a>
+            <KopiujMail adres="pawel@fluxlab.pl" className="hover:text-accent transition-colors" />
             <span aria-hidden="true" className="hidden sm:inline">·</span>
             <a
               href="https://www.facebook.com/profile.php?id=61595121744837"
@@ -151,6 +150,12 @@ export default function Footer() {
             </Link>
           </p>
         </div>
+        <p
+          aria-hidden="true"
+          className="mt-12 select-none text-center text-[22vw] font-bold leading-none tracking-tighter text-gray-100 dark:text-white/[0.04] lg:text-[14rem]"
+        >
+          fluxlab
+        </p>
       </div>
     </footer>
   );
