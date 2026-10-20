@@ -4,12 +4,15 @@
 // logowania ani konta, wystarczy plik z kluczem lezacy na tej samej domenie.
 //
 // Uzycie:
-//   node scripts/indexnow.mjs                 zglasza wszystko z mapy strony
+//   node scripts/indexnow.mjs                 zglasza adresy z mapy, ktorych lastmod
+//                                             jest nowszy niz ostatnie zgloszenie
+//   node scripts/indexnow.mjs --wszystko      zglasza cala mape strony
 //   node scripts/indexnow.mjs /jakas-strona   zglasza podane adresy
 //
-// Dzienny limit po stronie IndexNow to 10 000 adresow, wiec caly serwis
-// mozna zglosic bez obaw, ale robimy to tylko po realnej zmianie tresci.
-import { readdir, readFile } from "node:fs/promises";
+// Wysylanie calej mapy po kazdym wdrozeniu dawalo tysiace zgloszen dziennie
+// niezmienionych stron, dlatego domyslnie idzie tylko to, co sie zmienilo.
+import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
+import { homedir } from "node:os";
 
 const HOST = "fluxlab.pl";
 const BAZA = `https://${HOST}`;
@@ -29,18 +32,43 @@ async function klucz() {
   return w;
 }
 
-async function adresyZMapy() {
+const STAN_KATALOG = `${homedir()}/.cache/fluxlab-indexnow`;
+const STAN = `${STAN_KATALOG}/ostatnio`;
+
+async function adresyZMapy(od) {
   const r = await fetch(`${BAZA}/sitemap.xml`);
   if (!r.ok) throw new Error(`Mapa strony odpowiedziala kodem ${r.status}`);
   const xml = await r.text();
-  return [...xml.matchAll(/<loc>\s*([^<\s]+)\s*<\/loc>/g)].map((m) => m[1]);
+  return [...xml.matchAll(/<url>([\s\S]*?)<\/url>/g)]
+    .map((m) => ({
+      loc: m[1].match(/<loc>\s*([^<\s]+)\s*<\/loc>/)?.[1],
+      lastmod: Date.parse(m[1].match(/<lastmod>\s*([^<\s]+)\s*<\/lastmod>/)?.[1] ?? ""),
+    }))
+    .filter((u) => u.loc && (od === undefined || u.lastmod > od))
+    .map((u) => u.loc);
+}
+
+async function ostatnieZgloszenie() {
+  try {
+    return Date.parse((await readFile(STAN, "utf8")).trim());
+  } catch {
+    return Date.now() - 24 * 3600 * 1000;
+  }
 }
 
 const k = await klucz();
-const podane = process.argv.slice(2);
+const argumenty = process.argv.slice(2);
+const wszystko = argumenty.includes("--wszystko");
+const podane = argumenty.filter((a) => a !== "--wszystko");
+const start = new Date().toISOString();
 const urlList = podane.length
   ? podane.map((p) => (p.startsWith("http") ? p : `${BAZA}${p}`))
-  : await adresyZMapy();
+  : await adresyZMapy(wszystko ? undefined : await ostatnieZgloszenie());
+
+if (!urlList.length) {
+  console.log("Brak adresow zmienionych od ostatniego zgloszenia, nic nie wysylam.");
+  process.exit(0);
+}
 
 // Wspolny punkt api.indexnow.org odrzuca domeny, ktorych Bing jeszcze nie zna
 // (403 UserForbiddedToAccessSite), a Yandex te same adresy przyjmuje. Dlatego
@@ -74,6 +102,11 @@ for (const [nazwa, punkt] of PUNKTY) {
   } catch (e) {
     console.log(`${nazwa}: blad polaczenia, ${e.message}`);
   }
+}
+
+if (udane > 0 && !podane.length) {
+  await mkdir(STAN_KATALOG, { recursive: true });
+  await writeFile(STAN, start);
 }
 
 console.log(`Zgloszono ${urlList.length} adresow, punktow, ktore przyjely: ${udane} z ${PUNKTY.length}`);

@@ -6579,3 +6579,11 @@ Wniosek: `scena_leada` to wysłanie dema AI (ScenaLeada.tsx:279), a `lead_*` wys
 **Dowód:** commit 7bff862 (lib/daty-stron.json), /api/wersja = 7bff862, sitemap 145 <loc>, IndexNow 2 z 3. Z8: wysyłka 09:05, Resend 01a15820-b33b… (sekretariat@kancelaria-skarbiec.pl) i 01a15820-eea1… (recepcja@bajkowyzakatek.pl), oba delivered. Z16 [!]: GSC „aktualizacja 4 godziny temu”, ostatni dzień 17.10; /numer-ksef 13-17.10: 12, 18, 11, 10, 3 wyśw.; "automatyzacja podatków" 28 dni 0/37.
 **Dla Pawła:**
 **Zostało otwarte:** Z12 (18:30), Z18 (00:30), Z19 (po 21.10 01:05, timer fl-gsc-21), Z22, Z23; Z16 do powtórzenia, gdy GSC pokaże 18.10. Dla stratega: zmiany w komponentach (NumerKsefCheck, ListaKsef2027) nie przesuwają lastmod, bo daty-stron.mjs czyta tylko page.tsx.
+
+## 2026-10-20 10:43
+**Kanał:** Google + AI (porządek zgłoszeń); otwarte zadania planu (Z12, Z18, Z19, Z22, Z23) są przypięte do 18:30 i nocy.
+**Co zrobione:** `scripts/indexnow.mjs` zgłasza domyślnie tylko adresy, których lastmod w mapie jest nowszy niż ostatnie udane zgłoszenie (stan w `~/.cache/fluxlab-indexnow/ostatnio`), zamiast 145 adresów przy każdym wdrożeniu; pełna mapa dalej przez `--wszystko`. Usuwa problem zgłoszony strategowi w dwóch wpisach (tysiące zgłoszeń dziennie, 18.10 3,5 tys. w Bing).
+**Ruch:** raport_ruchu 10:43: doba 115 odsłon, 73 osoby (+21% wobec średniej 95,3); tydzień 699 odsłon, 472 osoby; źródła b2b-email 38, www.google.com 11, youtube 11, linkedin 4, m.facebook.com 2; narzędzia 3 uruchomienia; zdarzenia scena_leada 1, wynik_zielony 1, audyt_uruchomiony 1.
+**Dowód:** pierwsze uruchomienie 14 adresów (zmienione od 19.10 10:43), drugie zaraz potem „Brak adresow zmienionych od ostatniego zgloszenia”, ręczne `/numer-ksef` 1 adres; Yandex i Naver 200, wspólny punkt 403 jak dotąd. Commit poniżej.
+**Dla Pawła:**
+**Zostało otwarte:** Z12 (18:30), Z18 (00:30), Z19 (po 21.10 01:05), Z22, Z23; Z16 do powtórzenia, gdy GSC pokaże 18.10. Dla stratega: kategorie strefy wiedzy nie mają lastmod w mapie, więc w trybie domyślnym IndexNow ich nie zgłasza.
