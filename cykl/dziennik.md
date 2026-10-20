@@ -6605,3 +6605,23 @@ Wniosek: `scena_leada` to wysłanie dema AI (ScenaLeada.tsx:279), a `lead_*` wys
 **Dowód:** commit fd5d7e2, /api/wersja = fd5d7e2, https://fluxlab.pl/llms.txt zawiera nowy punkt (curl, 1 trafienie). Bramki: build OK, SPOJNOSC OK, JAKOSC OK. IndexNow pominięty: zmienił się tylko llms.txt, którego nie ma w mapie.
 **Dla Pawła:**
 **Zostało otwarte:** Z12 (18:30), Z18 (00:30), Z19 (po 21.10 01:05), Z22, Z23; Z16 do powtórzenia, gdy GSC pokaże 18.10.
+
+## 2026-10-20 13:45
+**Kanał:** pomiar (Z12 z planu, wykonane przed 18:30 wg kolejności).
+**Co zrobione:** stan dnia od 06:30: lejek strony głównej, narzędzia, maile audyt-wynik z Z8, Zoho, Gofin.
+**Ruch:** doba 85 osób / 138 odsłon (b2b-email 60, youtube 15, google 7, linkedin 6); od 06:30 50 sesji.
+
+| Miara od 06:30 | Wynik |
+|---|---|
+| Sesje: b2b-email / youtube / bez odsyłacza / mail / google | 29 / 9 / 8 / 2 / 2 |
+| scena_leada, lead_*, formularz (/dziekuje) | 0 / 0 / 0 |
+| klik_po_wyniku (/numer-ksef, po Z6) | 0 (0 uruchomień /numer-ksef od 06:30) |
+| Uruchomienia narzędzi | 2: audyt 09:10 (telefon, kampania audyt-wynik, wynik średni), skan /wlasny-crm |
+| Z8 audyt-wynik: Resend | 2 z 2 delivered (sekretariat@kancelaria-skarbiec.pl, recepcja@bajkowyzakatek.pl) |
+| Z8 audyt-wynik: sesje / odpowiedzi | 1 sesja (09:10, 5 min po wysyłce, ponowny audyt) / 0 |
+| Zoho od 06:30 | 0 zapytań od ludzi; 3 bounce z kampanii innej sesji (info@finansowanie.biz, admin@trydo.com, marketing@lamintex.pl); comparic 12:19 podał cenę artykułu 1200 zł netto, odpowiedź jest w kolejce szkiców innej sesji |
+| Gofin | g14 08:00, g15 12:00 w opublikowane.md (2 z 2) |
+
+**Dowód:** cykl/plan-ruchu.md, Z12; ~/Projekty/mail-audyt/wysylka_audyt_2026-10-20.log (id 01a15820-b33b…, 01a15820-eea1…).
+**Dla Pawła:**
+**Zostało otwarte:** Z18 (00:30, ludzie od 18:30), Z19 (po 21.10 01:05, timer fl-gsc-21), Z22, Z23.
