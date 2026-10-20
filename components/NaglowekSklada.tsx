@@ -1,12 +1,19 @@
 /** H1 w HTML od razu; słowa wjeżdżają kolejno wyłącznie przez CSS (opacity/transform). */
-export default function NaglowekSklada({ tekst }: { tekst: string }) {
+export default function NaglowekSklada({
+  tekst,
+  wyroznione = [],
+}: {
+  tekst: string;
+  /** Słowa pisane drugim krojem, kursywą. */
+  wyroznione?: string[];
+}) {
   const slowa = tekst.split(" ");
   return (
     <h1 className="text-balance text-5xl font-bold leading-[0.95] tracking-tighter sm:text-7xl lg:text-8xl">
       {slowa.map((s, i) => (
         <span key={i}>
           <span
-            className="h1-sklada"
+            className={`h1-sklada${wyroznione.includes(s) ? " slowo-szeryf" : ""}`}
             style={{ animationDelay: `${Math.round((i * 400) / Math.max(slowa.length - 1, 1))}ms` }}
           >
             {s}

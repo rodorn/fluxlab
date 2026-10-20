@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { ViewTransition } from "react";
-import { Geist } from "next/font/google";
+import { Geist, Instrument_Serif } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
@@ -14,11 +14,20 @@ import ScrollToTop from "@/components/ScrollToTop";
 import TytulKarty from "@/components/TytulKarty";
 import MagnesPrzyciskow from "@/components/MagnesPrzyciskow";
 import KomunikatKonsoli from "@/components/KomunikatKonsoli";
+import PlynnePrzewijanie from "@/components/PlynnePrzewijanie";
 import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+});
+
+// Drugi krój tylko na wyróżnione słowa w nagłówkach, kursywą.
+const instrumentSerif = Instrument_Serif({
+  variable: "--font-serif",
+  subsets: ["latin", "latin-ext"],
+  weight: "400",
+  style: "italic",
 });
 
 export const metadata: Metadata = {
@@ -185,12 +194,13 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${geistSans.variable} font-sans`}>
+      <body className={`${geistSans.variable} ${instrumentSerif.variable} font-sans`}>
         <GoogleAnalytics />
         <ZgodaCookies />
         <LicznikWizyt />
         <ContactClickTracker />
         <ScrollProgress />
+        <PlynnePrzewijanie />
         <ViewTransition default="vt-page">{children}</ViewTransition>
         <ScrollToTop />
         <TytulKarty />

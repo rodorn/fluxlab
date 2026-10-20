@@ -71,6 +71,7 @@ export default function TloHero() {
           <div className="tlo-hero__plama tlo-hero__plama--b" />
         </div>
       </div>
+      <div className="ziarno" />
     </div>
   );
 }

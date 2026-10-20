@@ -1,4 +1,4 @@
-import Image from "next/image";
+import PrzedPo from "@/components/PrzedPo";
 import Link from "next/link";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
@@ -86,7 +86,7 @@ export default function Home() {
           <WitajPonownie />
           <IntroZnaku />
           <EtykietaNocna />
-          <NaglowekSklada tekst="Strony internetowe i CRM dla firm" />
+          <NaglowekSklada tekst="Strony internetowe i CRM dla firm" wyroznione={["dla", "firm"]} />
           <PodtytulZrodlo />
           <div className="animate-fade-up-1 mt-10 flex w-full flex-col items-center justify-center gap-3 sm:w-auto sm:flex-row">
             <a
@@ -203,10 +203,7 @@ export default function Home() {
                   aria-hidden="true"
                   className="absolute -bottom-6 -left-6 h-24 w-24 rounded-full border-2 border-accent/40 sm:-bottom-10 sm:-left-10 sm:h-36 sm:w-36"
                 />
-                <Link
-                  href="/realizacje"
-                  className="group relative block rounded-[1.75rem] bg-gradient-to-br from-accent-solid via-indigo-500/60 to-indigo-800 p-[3px] shadow-2xl shadow-accent/20 transition-shadow hover:shadow-accent/40"
-                >
+                <div className="relative rounded-[1.75rem] bg-gradient-to-br from-accent-solid via-indigo-500/60 to-indigo-800 p-[3px] shadow-2xl shadow-accent/20">
                   <div className="overflow-hidden rounded-[1.6rem] bg-white dark:bg-gray-900">
                     <div className="flex items-center gap-1.5 bg-gray-900 px-5 py-3">
                       <span className="h-2.5 w-2.5 rounded-full bg-white/25" />
@@ -215,19 +212,19 @@ export default function Home() {
                       <span className="mx-auto rounded-full bg-white/10 px-4 py-1 text-xs text-white/70">
                         finreal.pl
                       </span>
-                      <span className="w-[2.6rem]" />
+                      <Link href="/realizacje" className="text-xs text-white/70 transition-colors hover:text-white">
+                        Realizacje →
+                      </Link>
                     </div>
-                    <Image
-                      src="/photos/realizacja-finreal-2x.webp"
-                      alt="Strona główna finreal.pl zrobiona przez FluxLab"
-                      width={2880}
-                      height={1620}
-                      quality={90}
-                      sizes="(min-width: 1024px) 1024px, 100vw"
-                      className="h-auto w-full"
+                    <PrzedPo
+                      przed="/photos/realizacja-finreal-przed.webp"
+                      po="/photos/realizacja-finreal-2x.webp"
+                      alt={["Stara strona finreal.pl", "Nowa strona finreal.pl zrobiona przez FluxLab"]}
+                      szer={2880}
+                      wys={1620}
                     />
                   </div>
-                </Link>
+                </div>
               </div>
             </RevealOnScroll>
             <dl className="mx-auto mt-16 grid max-w-4xl grid-cols-1 gap-10 text-center sm:grid-cols-3">
