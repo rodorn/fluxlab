@@ -6478,3 +6478,12 @@ Stan 20.10 01:10, `pomiar-kanalow.py` i licznik z VPS (doby kalendarzowe, po ods
 **Dowód:** wątek https://forum.gofin.pl/1560208/f-ry-z-ksef-od-razu-w-programie-ksiegowym-a-spr-merytoryczne, termin 20.10 12:00, unit fl-gofin-15 (tekst ~/Projekty/fl-gofin/teksty/g15.txt, 827 znaków, bez linków).
 **Dla Pawła:**
 **Zostało otwarte:** g14 20.10 08:00 (fl-gofin-14), g15 12:00 (fl-gofin-15); nowy plan stratega 06:15.
+<!-- WYSLANO 2026-10-20 03:04 -->
+
+## 2026-10-20 03:55
+**Kanał:** widoczność w asystentach AI. Plan 19/20.10 domknięty (0 zadań „- [ ]”), nowy od stratega o 06:15.
+**Co zrobione:** llms.txt dostał wpis o /szablony z bezpośrednimi adresami trzech plików .md (checklista KSeF dla małej firmy, brief strony, checklista przed startem), jedynej podstrony z treścią, której w llms.txt brakowało; bramka spojnosc sprawdza teraz także linki do plików w public/ zamiast odrzucać je jako nieistniejące strony.
+**Ruch:** raport_ruchu 03:45: 105 odsłon, 73 osoby w dobie (+4% wobec średniej 100,7); źródła b2b-email 19, www.google.com 13, youtube 8, linkedin 3, m.facebook.com 2; narzędzia 3 uruchomienia (uruchomiono_skan 3).
+**Dowód:** commit 7558fd6, https://fluxlab.pl/llms.txt zawiera wpis (1 trafienie na produkcji), 3 pliki .md 200 text/markdown, IndexNow 145 adresów 2 z 3.
+**Dla Pawła:**
+**Zostało otwarte:** g14 Gofin 08:00 (fl-gofin-14), g15 12:00 (fl-gofin-15); nowy plan stratega 06:15.
