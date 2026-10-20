@@ -6558,3 +6558,16 @@ Wniosek: `scena_leada` to wysłanie dema AI (ScenaLeada.tsx:279), a `lead_*` wys
 - Z11: 0 zmian, przyczyna w planie.
 **Dla Pawła:**
 **Zostało otwarte:** Z12 (18:30) sprawdza id Resend i delivered z Z8. Dla stratega: IndexNow dostaje ok. 145 adresów przy każdym wdrożeniu, czyli tysiące dziennie, a powinien dostawać tylko zmienione strony. W Bing najmocniejsze są /sprawdzenie-nip i artykuły o formie opodatkowania JDG.
+
+## 2026-10-20 08:58
+**Kanał:** Google (Z13, Z14, Z21), asystenci AI (Z20), pomiar (Z17).
+**Co zrobione:** opis artykułu o raportowaniu (poz. 10,0) dostał frazę „automatyzacja raportowania” i jest na produkcji; seria indeksowania na 21.10 01:05 zaplanowana dla 5 stron zmienionych dziś; licznik przestał liczyć jako ludzi salwy automatu z Chrome Windows (9 sesji w dobie, 78 od 13.10).
+**Ruch:** doba 108 odsłon, 75 osób przed filtrem salw, 93 / 63 po nim; źródła: b2b-email 26, www.google.com 12, youtube 8, linkedin 4, m.facebook.com 2; narzędzia 3 uruchomienia (skan), scena_leada 1.
+**Dowód:**
+- Z13: seria 20.10 00:55, 10 z 10 w Google (w tym faktura-do-paragonu-ksef i polityka-prywatnosci, których o 00:55 nie było); /strefa-wiedzy/limit-10-tys-poza-ksef w GSC 28 dni: 0 wyświetleń.
+- Z14: timer `fl-gsc-21` 21.10 01:05, adresy /strefa-wiedzy/co-to-jest-automatyzacja-procesow-biznesowych, /analiza-lokalizacji, /automatyzacja-crm-leasing, /numer-ksef, /strefa-wiedzy/jak-zautomatyzowac-raportowanie-w-firmie; wszystkie dziś „znajduje się w Google”.
+- Z21: commit caac2b9, /api/wersja zgodna, nowy `<meta name="description">` w curl, IndexNow 2 z 3. /slownik i /blad-w-fakturze-ksef pominięte: fraza „automatyzacja podatków” nie pasuje do ich treści.
+- Z20: licznik 30 dni: chatgpt.com 4 sesje (ostatnia 06.10), perplexity, copilot, gemini, claude 0; www.bing.com 4 i bing.com 2. Pobrań llms.txt przez boty nie da się odczytać: strona stoi na Vercelu, nginx na VPS obsługuje tylko licznik (0 linii z „llms”).
+- Z17: `~/Projekty/fluxlab-ruch/raport_ruchu.py` funkcja `bez_salw`, commit fdaa464; bez odsyłacza w dobie 26 → 17.
+**Dla Pawła:**
+**Zostało otwarte:** Z8 wysyłka 2 maili audyt-wynik o 09:05 (timer `fl-audyt-wynik-20`), sprawdza Z12 o 18:30. Z12, Z15, Z16 (GSC ma dane tylko do 17.10, 18.10 jeszcze brak), Z18, Z19, Z22, Z23 są przypięte do pór wieczornych i nocnych. Dla stratega: `node scripts/indexnow.mjs` przyjmuje adresy jako argumenty, a cykle (także ten) zgłaszają za każdym razem wszystkie 145; Copilot cytuje nas 27 razy, a nikt z copilot.microsoft.com nie wszedł; pomiar botów AI wymaga zapisu UA w kodzie licznika.
