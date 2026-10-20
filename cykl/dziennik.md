@@ -6644,3 +6644,11 @@ Wniosek: `scena_leada` to wysłanie dema AI (ScenaLeada.tsx:279), a `lead_*` wys
 **Dowód:** commit 6d8b632, /api/wersja = 6d8b632, https://fluxlab.pl/llms.txt zawiera obie nowe linie (curl, 2 trafienia). Bramki: build OK, SPOJNOSC OK, JAKOSC OK. IndexNow pominięty (tylko llms.txt). Tabela stron: cykl/gsc-strony-2026-10-20.txt.
 **Dla Pawła:**
 **Zostało otwarte:** Z18 (00:30), Z19 (po 21.10 01:05, timer fl-gsc-21), Z22, Z23. Dla stratega: wysokie pozycje z 0 kliknięć i ukrytymi zapytaniami (pozycja 2,6 do 3,8) wyglądają na tryb AI Google, nie na słaby opis; Chrome 9228 nie działał, uruchomiony ponownie poleceniem z usługi chrome-2cw (bez `--remote-allow-origins=*` port się nie otwiera).
+
+## 2026-10-20 17:47
+**Kanał:** Google (odblokowanie Z19); otwarte zadania planu (Z18 od 18:30 do 00:30, Z19 po 21.10 01:05, Z22, Z23) są przypisane do godzin nocnych, Gofin wstrzymany przez plan (2 z 2 dziś).
+**Co zrobione:** restart komputera o 16:24 skasował przejściowy timer fl-gsc-21 (list-timers: 0 timerów fl-*), a Chrome 9228 też nie działał, więc seria z Z14/Z21 o 01:05 by nie ruszyła; timer odtworzony z tymi samymi 5 adresami, teraz przez nowy skrypt skrypty-raport/gsc_seria.sh, który sam podnosi Chrome 9228, gdy port nie odpowiada.
+**Ruch:** raport_ruchu 17:43: doba 137 odsłon, 85 osób (+51% wobec średniej 91,0); tydzień 747 odsłon, 495 osób; źródła b2b-email 72, youtube 12, www.google.com 5, linkedin 4, www.linkedin.com 2; narzędzia 4 uruchomienia.
+**Dowód:** `systemctl --user list-timers fl-gsc-21`: Wed 2026-10-21 01:05; test tej samej ścieżki w usłudze systemd (fl-gsc-test, --tylko-stan /numer-ksef): Chrome wstał, wynik „Adres URL znajduje się w Google”, bez żądania, 35 s.
+**Dla Pawła:**
+**Zostało otwarte:** Z18 (00:30), Z19 (log cykl/z19-indeksowanie.log po 01:05), Z22, Z23. Dla stratega: timery systemd-run giną przy restarcie; serie planować przez gsc_seria.sh i sprawdzać list-timers.
