@@ -6652,3 +6652,21 @@ Wniosek: `scena_leada` to wysłanie dema AI (ScenaLeada.tsx:279), a `lead_*` wys
 **Dowód:** `systemctl --user list-timers fl-gsc-21`: Wed 2026-10-21 01:05; test tej samej ścieżki w usłudze systemd (fl-gsc-test, --tylko-stan /numer-ksef): Chrome wstał, wynik „Adres URL znajduje się w Google”, bez żądania, 35 s.
 **Dla Pawła:**
 **Zostało otwarte:** Z18 (00:30), Z19 (log cykl/z19-indeksowanie.log po 01:05), Z22, Z23. Dla stratega: timery systemd-run giną przy restarcie; serie planować przez gsc_seria.sh i sprawdzać list-timers.
+
+## 2026-10-20 18:47
+**Kanał:** dystrybucja narzędzi (Gofin); otwarte zadania planu (Z18 liczy ludzi od 18:30 do 00:30, Z19 po 21.10 01:05, Z22, Z23) są nocne, więc ten cykl odblokował wpis zatrzymany w Z1.
+**Co zrobione:** g16 (biała lista, rachunek wykonawcy przypisany do firmy żony: ZAW-NR w 7 dni, MPP, dyspozycja na piśmie) zaplanowany na jutro rano; wątek sprawdzony, nadal bez merytorycznej odpowiedzi i bez naszego wpisu, tekst 812 znaków, 0 linków.
+**Ruch:** raport_ruchu 18:45: doba 138 odsłon, 86 osób (+51% wobec średniej 91,4); tydzień 751 odsłon, 496 osób; źródła b2b-email 73, youtube 12, www.google.com 5, linkedin 4, www.linkedin.com 2; z telefonu 21 z 138; narzędzia 4 uruchomienia.
+**Dowód:** wątek https://forum.gofin.pl/1560166/rachunek-biala-lista, termin 2026-10-21 07:30, unit fl-gofin-16 (list-timers: Wed 2026-10-21 07:30). Liczy się do limitu 2 wpisów na 21.10.
+**Dla Pawła:**
+**Zostało otwarte:** Z18 (00:30), Z19 (log cykl/z19-indeksowanie.log po 01:05, timer fl-gsc-21), Z22, Z23. Dla stratega: g16 już zajmuje jeden z dwóch wpisów Gofin na 21.10.
+
+<!-- WYSLANO 2026-10-20 19:06 -->
+
+## 2026-10-20 19:55
+**Kanał:** dystrybucja narzędzi (Gofin); otwarte zadania planu (Z18 liczy ludzi od 18:30 do 00:30, Z19 po 21.10 01:05, Z22, Z23) są nocne.
+**Co zrobione:** g17 (korekta zbiorcza rabatów i skont w KSeF: wariant poza KSeF z BFK to większy błąd, przy rabacie na część towarów nazwa lub rodzaj towaru z art. 106j ust. 3 musi stać w samej fakturze, wystarczą grupy towarowe zamiast setek indeksów, pełny wykaz jako zestawienie handlowe obok) zaplanowany na jutro 12:00; w wątku 5 komentarzy, bez merytorycznej odpowiedzi na pytanie, który wariant gorszy; tekst 925 znaków, 0 linków.
+**Ruch:** raport_ruchu 19:43: doba 134 odsłony, 83 osoby (+45% wobec średniej 92,1); tydzień 750 odsłon, 495 osób; źródła b2b-email 73, youtube 9, www.google.com 4, linkedin 3, www.linkedin.com 2; z telefonu 22 z 134; narzędzia 3 uruchomienia. pomiar-kanalow 24 h: 32 sesje ludzi, 19 bez odsyłacza.
+**Dowód:** wątek https://forum.gofin.pl/1560249/co-uwazalibyscie-za-wiekszy-blad-w-ksef, termin 2026-10-21 12:00, unit fl-gofin-17 (list-timers: g16 07:30, g17 12:00).
+**Dla Pawła:**
+**Zostało otwarte:** Z18 (00:30), Z19 (log cykl/z19-indeksowanie.log po 01:05, timer fl-gsc-21), Z22, Z23. Dla stratega: Gofin na 21.10 ma już 2 z 2 wpisów (g16, g17).
