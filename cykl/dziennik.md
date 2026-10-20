@@ -6597,3 +6597,11 @@ Wniosek: `scena_leada` to wysłanie dema AI (ScenaLeada.tsx:279), a `lead_*` wys
 **Dowód:** commity 3012c00 (opis) i 3a5ac68 (lastmod), /api/wersja = 3a5ac68, nowy `<meta name="description">` w curl z produkcji, IndexNow 1 adres (nowy tryb tylko zmienionych), 2 z 3.
 **Dla Pawła:**
 **Zostało otwarte:** Z12 (18:30), Z18 (00:30), Z19 (po 21.10 01:05), Z22, Z23; Z16 do powtórzenia, gdy GSC pokaże 18.10. Efekt opisu /sprawdzenie-nip ocenić w Bing (Skuteczność, strona /sprawdzenie-nip) po 27.10.
+
+## 2026-10-20 12:55
+**Kanał:** asystenci AI (Copilot cytuje /sprawdzenie-nip); otwarte zadania planu (Z12 18:30, Z18 00:30, Z19 po 21.10 01:05, Z22, Z23) to pomiary przypięte do wieczoru i nocy, a Gofin ma już dziś 2 z 2 wpisów (g14 08:00, g15 12:00).
+**Co zrobione:** llms.txt w bloku o białej liście dostał wprost odpowiedź na pytania, z których /sprawdzenie-nip ma wyświetlenia w Bing („co to za nip”, „czy jest płatnikiem vat”): co wykaz MF podaje dla NIP (nazwa, adres, REGON, KRS, status Czynny albo Zwolniony, rachunki, stan na dzień wstecz) i co znaczy brak numeru w wykazie.
+**Ruch:** raport_ruchu 12:43: doba 128 odsłon, 77 osób (+38% wobec średniej 92,7); tydzień 721 odsłon, 482 osoby; źródła b2b-email 50, youtube 14, www.google.com 9, linkedin 4, www.linkedin.com 2; z telefonu 25 z 128; narzędzia 3 uruchomienia; zdarzenia otwarcie_maila 50, uruchomiono_skan 3, scena_leada 1, audyt_uruchomiony 1; odrzucone salwy 78 sesji.
+**Dowód:** commit fd5d7e2, /api/wersja = fd5d7e2, https://fluxlab.pl/llms.txt zawiera nowy punkt (curl, 1 trafienie). Bramki: build OK, SPOJNOSC OK, JAKOSC OK. IndexNow pominięty: zmienił się tylko llms.txt, którego nie ma w mapie.
+**Dla Pawła:**
+**Zostało otwarte:** Z12 (18:30), Z18 (00:30), Z19 (po 21.10 01:05), Z22, Z23; Z16 do powtórzenia, gdy GSC pokaże 18.10.
