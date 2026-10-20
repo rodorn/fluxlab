@@ -6670,3 +6670,11 @@ Wniosek: `scena_leada` to wysłanie dema AI (ScenaLeada.tsx:279), a `lead_*` wys
 **Dowód:** wątek https://forum.gofin.pl/1560249/co-uwazalibyscie-za-wiekszy-blad-w-ksef, termin 2026-10-21 12:00, unit fl-gofin-17 (list-timers: g16 07:30, g17 12:00).
 **Dla Pawła:**
 **Zostało otwarte:** Z18 (00:30), Z19 (log cykl/z19-indeksowanie.log po 01:05, timer fl-gsc-21), Z22, Z23. Dla stratega: Gofin na 21.10 ma już 2 z 2 wpisów (g16, g17).
+
+## 2026-10-20 20:45
+**Kanał:** pomiar (Z18 z planu, wcześniej wg kolejności).
+**Co zrobione:** odczyt wieczoru: od 18:30 3 sesje (1 z b2b-email, 2 bez odsyłacza), lejek od 06:30 bez ruchu (scena_leada 0, lead_* 0, klik_po_wyniku 0), timer serii fl-gsc-21 na 21.10 01:05 stoi.
+**Ruch:** doba 81 osób / 130 odsłon (+40% wobec średniej 92,7); źródła: b2b-email 73, youtube 9, www.google.com 4, linkedin 3, mail 2; uruchomienia narzędzi 3; odrzucone salwy 78 sesji, boty 7.
+**Dowód:** cykl/plan-ruchu.md Z18 [x]; `systemctl --user list-timers fl-gsc-21` = Wed 2026-10-21 01:05; budzet: utrzymaj, 1 kamień.
+**Dla Pawła:**
+**Zostało otwarte:** Z19 (nie przed 21.10 01:05, odczyt cykl/z19-indeksowanie.log), Z22 bilans (04:30) i Z23 wniosek (05:30, maile audyt-wynik po ≥14 h od 09:05, czyli od 23:05); robione teraz straciłyby noc, więc zostają na swoje godziny.
