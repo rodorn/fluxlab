@@ -22,7 +22,7 @@ export const metadata: Metadata = {
       "Wyciągamy strukturalne dane ze stron, PDF-ów, maili. AI rozpoznaje pola.",
     locale: "pl_PL",
     type: "website",
-    images: ["/opengraph-image"],
+    images: ["/og?t=Scraping%20i%20ekstrakcja%20danych%2C%20web%2C%20PDF%2C%20maile%2C%20dokumenty%20%7C%20Fluxlab"],
   },
 };
 

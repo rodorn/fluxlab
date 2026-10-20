@@ -108,12 +108,12 @@ export default function Home() {
           <h2 id="oferta" className="sr-only">
             Oferta
           </h2>
-          <div className="grid gap-5 md:grid-cols-3">
+          <div className="grid gap-5 md:grid-cols-2">
             {OFERTA.map((o, i) => (
               <RevealOnScroll
                 key={o.href}
                 delay={(i + 1) as 1 | 2 | 3}
-                className="flex"
+                className={`flex ${i === 0 ? "md:col-span-2" : ""}`}
               >
                 <KartaPoswiata
                   href={o.href}
@@ -131,7 +131,7 @@ export default function Home() {
                     {o.opis}
                   </p>
                   <div className="oferta-detale">
-                    <ul className="space-y-1.5 pt-4 text-sm text-gray-700 dark:text-white/80">
+                    <ul className={`gap-x-8 gap-y-1.5 pt-4 text-sm text-gray-700 dark:text-white/80 ${o.wyrozniona ? "md:grid md:grid-cols-2" : "space-y-1.5"}`}>
                       {o.punkty.map((p) => (
                         <li key={p} className="flex gap-2">
                           <svg
@@ -178,11 +178,13 @@ export default function Home() {
           </RevealOnScroll>
         </section>
 
-        <section aria-label="Zasada" className="container-wide py-16 lg:py-24">
+        <section aria-label="Zasada" className="bg-accent-solid py-20 text-white lg:py-32">
+          <div className="container-wide">
           <Manifest
             tekst={MANIFEST}
             className="mx-auto max-w-3xl text-balance text-center text-4xl font-bold leading-tight tracking-tighter lg:text-6xl"
           />
+          </div>
         </section>
 
         <section className="border-t border-gray-200 dark:border-white/10 overflow-x-clip py-20 lg:py-28">
@@ -231,7 +233,7 @@ export default function Home() {
               {WYNIKI.map(([liczba, opis], i) => (
                 <RevealOnScroll key={liczba} delay={(i + 1) as 1 | 2 | 3}>
                   <dt className="text-5xl font-bold tracking-tighter lg:text-6xl">
-                    {liczba}
+                    <CountUp value={liczba} />
                   </dt>
                   <dd className="mx-auto mt-2 max-w-[15rem] text-balance text-sm text-gray-600 dark:text-white/65">
                     {opis}

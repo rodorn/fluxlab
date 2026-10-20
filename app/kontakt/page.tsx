@@ -16,7 +16,7 @@ export const metadata: Metadata = {
       "Napisz, z czym potrzebujesz pomocy. Bezpłatna diagnoza, odpowiedź tego samego dnia.",
     locale: "pl_PL",
     type: "website",
-    images: ["/opengraph-image"],
+    images: ["/og?t=Kontakt%20%7C%20Fluxlab"],
   },
 };
 

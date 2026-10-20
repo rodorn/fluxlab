@@ -15,28 +15,30 @@ export default function KrokiSticky({ kroki }: Props) {
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    const reduced = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
-    if (reduced || !("IntersectionObserver" in window)) {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       setAktywny(kroki.length - 1);
       return;
     }
-    const czasy: number[] = [];
-    const obs = new IntersectionObserver(
-      ([w]) => {
-        if (!w.isIntersecting) return;
-        obs.disconnect();
-        kroki.forEach((_, i) =>
-          czasy.push(window.setTimeout(() => setAktywny(i), 150 + i * 550)),
-        );
-      },
-      { threshold: 0.4 },
-    );
-    obs.observe(el);
+    let ramka = 0;
+    const licz = () => {
+      ramka = 0;
+      const r = el.getBoundingClientRect();
+      const h = window.innerHeight;
+      // Oś rysuje się razem z przewijaniem: od dołu ekranu do 45% wysokości.
+      const p = (h * 0.85 - r.top) / (r.height + h * 0.4);
+      const i = Math.floor(Math.min(1, Math.max(0, p)) * (kroki.length + 0.999)) - 1;
+      setAktywny(Math.min(kroki.length - 1, i));
+    };
+    const onScroll = () => {
+      if (!ramka) ramka = requestAnimationFrame(licz);
+    };
+    licz();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
     return () => {
-      obs.disconnect();
-      czasy.forEach((t) => window.clearTimeout(t));
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      if (ramka) cancelAnimationFrame(ramka);
     };
   }, [kroki]);
 

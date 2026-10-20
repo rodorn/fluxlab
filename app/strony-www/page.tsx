@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     description: "Nowa strona albo poprawki w obecnej. Szybko, mobilnie, z AI.",
     locale: "pl_PL",
     type: "website",
-    images: ["/opengraph-image"],
+    images: ["/og?t=Tworzenie%20stron%20WWW%20i%20poprawki%20w%20obecnych%20%7C%20Fluxlab"],
   },
 };
 

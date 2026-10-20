@@ -15,7 +15,7 @@ export const metadata: Metadata = {
       "Lead z każdego źródła trafia sam do opiekuna z zadaniem na 15 minut. Uruchomienie w trzy tygodnie, dane zawsze Twoje.",
     locale: "pl_PL",
     type: "website",
-    images: ["/opengraph-image"],
+    images: ["/og?t=W%C5%82asny%20CRM%20dla%20firmy%20w%20trzy%20tygodnie%20%7C%20Fluxlab"],
   },
 };
 

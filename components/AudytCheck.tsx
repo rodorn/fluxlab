@@ -271,13 +271,15 @@ function kolorOceny(p: number): string {
   return "text-red-700 dark:text-red-400";
 }
 
-/** Pierścień z oceną. Liczba sama w sobie nic nie znaczy, więc obok jest skala. */
+/** Tarcza z oceną. Obrys wypełnia się do wyniku, a liczba stoi w środku. */
 function Ocena({ punkty }: { punkty: number }) {
-  const obwod = 2 * Math.PI * 52;
   const [narysowane, setNarysowane] = useState(0);
 
   useEffect(() => {
-    // Animacja od zera, żeby było widać, w którą stronę poszła wskazówka.
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setNarysowane(punkty);
+      return;
+    }
     const start = Date.now();
     const id = setInterval(() => {
       const t = Math.min(1, (Date.now() - start) / 900);
@@ -288,31 +290,31 @@ function Ocena({ punkty }: { punkty: number }) {
   }, [punkty]);
 
   const kolor = punkty >= 75 ? "#059669" : punkty >= 45 ? "#d97706" : "#dc2626";
+  const tarcza = "M60 8 L106 24 V58 C106 86 86 106 60 116 C34 106 14 86 14 58 V24 Z";
 
   return (
-    <div className="relative h-32 w-32 shrink-0">
-      <svg viewBox="0 0 120 120" className="h-full w-full -rotate-90">
-        <circle
-          cx="60"
-          cy="60"
-          r="52"
+    <div className="relative h-36 w-32 shrink-0">
+      <svg viewBox="0 0 120 124" className="h-full w-full" aria-hidden="true">
+        <path
+          d={tarcza}
           fill="none"
-          strokeWidth="10"
+          strokeWidth="8"
+          strokeLinejoin="round"
           className="stroke-gray-200 dark:stroke-gray-800"
         />
-        <circle
-          cx="60"
-          cy="60"
-          r="52"
+        <path
+          d={tarcza}
           fill="none"
-          strokeWidth="10"
-          stroke={kolor}
+          strokeWidth="8"
+          strokeLinejoin="round"
           strokeLinecap="round"
-          strokeDasharray={obwod}
-          strokeDashoffset={obwod - (obwod * narysowane) / 100}
+          stroke={kolor}
+          pathLength={100}
+          strokeDasharray={100}
+          strokeDashoffset={100 - narysowane}
         />
       </svg>
-      <div className="absolute inset-0 flex flex-col items-center justify-center">
+      <div className="absolute inset-0 flex flex-col items-center justify-center pb-2">
         <span className={`text-3xl font-extrabold ${kolorOceny(punkty)}`}>
           {narysowane}
         </span>
