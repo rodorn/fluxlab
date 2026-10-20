@@ -6587,3 +6587,13 @@ Wniosek: `scena_leada` to wysłanie dema AI (ScenaLeada.tsx:279), a `lead_*` wys
 **Dowód:** pierwsze uruchomienie 14 adresów (zmienione od 19.10 10:43), drugie zaraz potem „Brak adresow zmienionych od ostatniego zgloszenia”, ręczne `/numer-ksef` 1 adres; Yandex i Naver 200, wspólny punkt 403 jak dotąd. Commit poniżej.
 **Dla Pawła:**
 **Zostało otwarte:** Z12 (18:30), Z18 (00:30), Z19 (po 21.10 01:05), Z22, Z23; Z16 do powtórzenia, gdy GSC pokaże 18.10. Dla stratega: kategorie strefy wiedzy nie mają lastmod w mapie, więc w trybie domyślnym IndexNow ich nie zgłasza.
+
+<!-- WYSLANO 2026-10-20 11:05 -->
+
+## 2026-10-20 11:55
+**Kanał:** asystenci AI / Bing (Copilot cytuje /sprawdzenie-nip); otwarte zadania planu (Z12 18:30, Z18 00:30, Z19 po 21.10 01:05, Z22, Z23) są przypięte do wieczoru i nocy, Gofin wstrzymany przez plan (2 dziennie, bez nowych wpisów).
+**Co zrobione:** opis /sprawdzenie-nip odpowiada teraz dosłownie na zapytania z Bing, z których strona ma 31 wyświetleń w 7 dni na poz. 7,2 i 0 kliknięć („co to za nip …”, „czy jest płatnikiem vat”); przed: „NIP sprawdzisz w 10 s, bez logowania: status VAT…” (134 zn.), po: „Co to za NIP i czy firma jest płatnikiem VAT? W 10 s nazwa firmy, status VAT z wykazu Ministerstwa Finansów i rachunki, bez logowania.” (134 zn.); title bez zmian.
+**Ruch:** raport_ruchu 11:43: doba 122 odsłony, 74 osoby (+28% wobec średniej 95,4); tydzień 709 odsłon, 475 osób; źródła b2b-email 45, www.google.com 11, youtube 11, linkedin 4, m.facebook.com 2; narzędzia 3 uruchomienia; zdarzenia otwarcie_maila 45, uruchomiono_skan 3, scena_leada 1, audyt_uruchomiony 1.
+**Dowód:** commity 3012c00 (opis) i 3a5ac68 (lastmod), /api/wersja = 3a5ac68, nowy `<meta name="description">` w curl z produkcji, IndexNow 1 adres (nowy tryb tylko zmienionych), 2 z 3.
+**Dla Pawła:**
+**Zostało otwarte:** Z12 (18:30), Z18 (00:30), Z19 (po 21.10 01:05), Z22, Z23; Z16 do powtórzenia, gdy GSC pokaże 18.10. Efekt opisu /sprawdzenie-nip ocenić w Bing (Skuteczność, strona /sprawdzenie-nip) po 27.10.
