@@ -27,7 +27,10 @@ type Punkt = {
 const PUNKTY: Punkt[] = [
   {
     klucz: "poza-ksef",
-    linki: [{ fraza: "każda faktura dla firmy", href: "/strefa-wiedzy/faktura-dla-osoby-prywatnej-ksef" }],
+    linki: [
+      { fraza: "limit 10 tys. zł brutto miesięcznie", href: "/strefa-wiedzy/limit-10-tys-poza-ksef" },
+      { fraza: "każda faktura dla firmy", href: "/strefa-wiedzy/faktura-dla-osoby-prywatnej-ksef" },
+    ],
     pytanie: "Czy wszystkie faktury dla firm wystawiacie już w KSeF?",
     zmiana:
       "1 stycznia 2027 znika limit 10 tys. zł brutto miesięcznie na faktury wystawiane poza KSeF. Od tego dnia każda faktura dla firmy musi przejść przez system.",
