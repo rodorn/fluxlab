@@ -3,6 +3,11 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   // Chromium do pomiaru kontrastu w audycie: binarka nie może przejść przez bundler.
   serverExternalPackages: ["@sparticuz/chromium", "puppeteer-core", "axe-core"],
+  // Binarka Chromium jest czytana z dysku, a nie importowana, więc trzeba ją
+  // dołączyć do funkcji wprost.
+  outputFileTracingIncludes: {
+    "/api/audyt-www": ["./node_modules/@sparticuz/chromium/bin/**"],
+  },
   experimental: {
     viewTransition: true,
   },
