@@ -6510,3 +6510,23 @@ Stan 20.10 01:10, `pomiar-kanalow.py` i licznik z VPS (doby kalendarzowe, po ods
 **Decyzje:** 0 zimnych maili (252 w 30 dni: 23 sesje, 0 odpowiedzi); jedyny outreach do ludzi, którzy sami uruchomili audyt (Z5, Z8, ≤3). Godziny do Google (8: opisy pod zapytania z wyświetleniami bez kliknięć Z3, Z4, Z21; linki Z11; mapa zapytań Z9; seria żądań 21.10 01:05 Z14/Z19) i do lejka (Z1, Z2 scena leada, Z6 numer KSeF po wyniku). Gofin: g16 zatrzymany w Z1, 2 dziennie. Pierwsze pomiary Bing (Z10) i pobrań llms.txt (Z20). Inna sesja (`fluxlab-marketing/b2b/biura_ecom`) wysyła od 05:00 propozycje partnerstwa do dużych biur: nie dublować, nie odpowiadać.
 **Dla Pawła (mail 06:42, temat „FluxLab ruch, plan na 20.10.2026: 18 osób z odsyłacza w dobie, 0 z 13 przeszło scenę leada"):** decyzja o zimnym mailingu (stop albo inny kanał, 5 min); comparic, reklama płatna, decyzja o budżecie (5 min).
 **Zostało otwarte:** Z1 do Z23 w planie; pierwsze: Z1 07:30 (g16 stop, lejek 13 sesji), Z2 08:30 (scena leada), Z3 09:30 (opis pod „automatyzacja procesów biznesowych").
+
+## 2026-10-20 07:06
+**Kanał:** wykonawca planu stratega (Z1 do Z7): Google (opisy pod zapytania), narzędzia (lejek strony głównej, /numer-ksef), outreach (obcy z audytu), social (brief).
+**Co zrobione:** /numer-ksef ma pod wynikiem czytelne przejście do /ksef-integracja liczone jako `klik_po_wyniku`; tytuł artykułu o automatyzacji procesów biznesowych zaczyna się od frazy; opisy /analiza-lokalizacji („analiza lokalizacji”, „lokalizacja biura”) i /automatyzacja-crm-leasing („CRM dla firm leasingowych”, poz. 2,0) z frazą dosłownie; 2 maile audyt-wynik gotowe do wysyłki w Z8; g16 Gofin zatrzymany (limit 2 dziennie).
+**Ruch:** raport_ruchu 06:54: 104 odsłony, 71 osób w dobie (+2% wobec średniej 101,7); źródła b2b-email 25, www.google.com 13, youtube 8, linkedin 4, m.facebook.com 2; narzędzia 4 uruchomienia.
+**Lejek strony głównej (Z1), 7 dni:**
+
+| sesja | urządzenie | odsyłacz | scena_leada | po scenie | czas na / |
+|---|---|---|---|---|---|
+| 30wc9rrh | tel, Firefox Android | brak | 3 (18.10) | /strefa-wiedzy/kategoria/poczta, /audyt-strony (3 audyty) | 5 h, wiele powrotów |
+| kt9o178b | pc, Safari macOS | brak | 5 (18.10) | /produkty, /panel-zwrotow, / | ok. 1 h |
+| 8bj404cx | tel, Chrome Android | brak | 1 | /slownik | 5 min |
+| q8m9gjaf | tel, Firefox Android | brak | 2 | koniec na / | 1 h (2 wejścia) |
+| 4pypkv0e | tel, Firefox Android | www.google.com | 1 | 4 powroty na / z Google | 1 doba |
+| bsrez6yr | pc, Opera Windows | brak | 1 | /strefa-wiedzy/kategoria/ai (4×) | 9 h |
+
+Wniosek: `scena_leada` to wysłanie dema AI (ScenaLeada.tsx:279), a `lead_*` wysyłają tylko formularze (CTA.tsx, LandingForm.tsx), więc „0 z 13” nie znaczy odpadania w scenie. Z2: scena przechodzi się dotykiem bez pisania, wynik po 1,81 s, formularz działa (test „test cyklu 20.10”, Resend „Dostaliśmy zgłoszenie” delivered), 0 przeszkód, 0 zmian. Zgłoszenia 7 dni: 7, wszystkie testy albo spam.
+**Dowód:** commity 528b1a9 (Z3), 25e6404 (Z4), 6ee2c98 (Z6, /api/wersja zgodna); produkcja: nowe `<title>` i opisy (curl); IndexNow 3 × 145 adresów, 2 z 3; maile ~/Projekty/mail-audyt/maile_audyt/001.txt (sekretariat@kancelaria-skarbiec.pl, 67/100) i 002.txt (recepcja@bajkowyzakatek.pl, 57/100); brief ~/Projekty/fluxlab-meta/briefy/od-cyklu-ruchu-2026-10-20.md; `list-timers fl-gofin-*` = 2 (g14 08:00, g15 12:00).
+**Dla Pawła:**
+**Zostało otwarte:** Z8 wysyłka 001 i 002 w godzinach 9 do 17 (pipeline wyslij_ks z katalogiem maile_audyt, wyslane_audyt.json); dalej Z9 (mapa zapytań GSC) i kolejne wg planu.
