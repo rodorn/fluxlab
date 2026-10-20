@@ -6532,7 +6532,7 @@ Wniosek: `scena_leada` to wysłanie dema AI (ScenaLeada.tsx:279), a `lead_*` wys
 **Zostało otwarte:** Z8 wysyłka 001 i 002 w godzinach 9 do 17 (pipeline wyslij_ks z katalogiem maile_audyt, wyslane_audyt.json); dalej Z9 (mapa zapytań GSC) i kolejne wg planu.
 <!-- WYSLANO 2026-10-20 07:04 -->
 
-## 2026-10-20 08:58
+## 2026-10-20 08:01
 **Kanał:** outreach z gotowym raportem (Z8), Google (Z9, Z11), Bing i asystenci AI (Z10).
 **Co zrobione:** 2 maile `audyt-wynik` do firm, które same uruchomiły audyt (kancelaria-skarbiec.pl 67/100, bajkowyzakatek.pl 57/100), zaplanowane na 09:05, bo skrypt nie wysyła przed 9:00; pierwsze pełne odczyty mapy zapytań GSC i Bing Webmaster.
 **Ruch:** doba 101 odsłon, 68 osób; źródła: b2b-email 27, www.google.com 13, youtube 6, linkedin 4, m.facebook.com 2; narzędzia 4 uruchomienia (skan 4), scena_leada 1.
