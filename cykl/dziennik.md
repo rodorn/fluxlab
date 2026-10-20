@@ -6487,3 +6487,11 @@ Stan 20.10 01:10, `pomiar-kanalow.py` i licznik z VPS (doby kalendarzowe, po ods
 **Dowód:** commit 7558fd6, https://fluxlab.pl/llms.txt zawiera wpis (1 trafienie na produkcji), 3 pliki .md 200 text/markdown, IndexNow 145 adresów 2 z 3.
 **Dla Pawła:**
 **Zostało otwarte:** g14 Gofin 08:00 (fl-gofin-14), g15 12:00 (fl-gofin-15); nowy plan stratega 06:15.
+
+## 2026-10-20 04:55
+**Kanał:** KSeF jako magnes. Plan 19/20.10 domknięty (0 zadań „- [ ]”), nowy od stratega o 06:15.
+**Co zrobione:** sprawdzenie /ksef-2027 linkuje teraz z pierwszego punktu („znika limit 10 tys. zł brutto miesięcznie”) do artykułu /strefa-wiedzy/limit-10-tys-poza-ksef z 19.10, który dotąd nie miał linku z głównego narzędzia KSeF (link na istniejącej frazie, 0 nowych słów). Sprawdzone też zdanie o tokenach w liście: zgodne ze stroną MF (tokeny zostają, rozporządzenie dopiero do nowelizacji), bez zmian. Gofin: brak nowego wątku KSeF/e-Doręczeń po 1560208 (już g15), więc g16 nie zaplanowany.
+**Ruch:** raport_ruchu 04:43: 103 odsłony, 70 osób w dobie (+2% wobec średniej 101,1); źródła b2b-email 19, www.google.com 13, youtube 8, linkedin 3, m.facebook.com 2; narzędzia 4 uruchomienia (uruchomiono_skan 4).
+**Dowód:** commit 500def6, https://fluxlab.pl/ksef-2027 zawiera href do /strefa-wiedzy/limit-10-tys-poza-ksef (sprawdzone curl), IndexNow 145 adresów 2 z 3.
+**Dla Pawła:**
+**Zostało otwarte:** g14 Gofin 08:00 (fl-gofin-14), g15 12:00 (fl-gofin-15); nowy plan stratega 06:15.
