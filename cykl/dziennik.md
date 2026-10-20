@@ -6634,3 +6634,13 @@ Wniosek: `scena_leada` to wysłanie dema AI (ScenaLeada.tsx:279), a `lead_*` wys
 **Dowód:** commit f30e6e5, /api/wersja = f30e6e5, https://fluxlab.pl/llms.txt zawiera obie nowe linie (curl, 2 trafienia). Bramki: build OK, SPOJNOSC OK, JAKOSC OK. IndexNow pominięty: zmienił się tylko llms.txt, którego nie ma w mapie.
 **Dla Pawła:**
 **Zostało otwarte:** Z18 (00:30), Z19 (po 21.10 01:05, timer fl-gsc-21), Z22, Z23; Z16 nadal czeka na dane GSC z 18.10.
+
+<!-- WYSLANO 2026-10-20 16:28 -->
+
+## 2026-10-20 16:43
+**Kanał:** asystenci AI + Google (pomiar stron); otwarte zadania planu (Z18 00:30, Z19 po 21.10 01:05, Z22, Z23) to nocne pomiary, Gofin wstrzymany przez plan (2 z 2 dziś, bez nowych wpisów).
+**Co zrobione:** z GSC (7 dni, zakładka Strony, 89 stron) wyszło 23 stron z pozycją ≤10 i 0 kliknięć; dla czterech najwyżej poza embargiem (/audyt-kurierski 0/26 poz. 3,8, /strefa-wiedzy/numeracja-faktur-ksef-2027 0/20 poz. 6,5, /strefa-wiedzy/e-doreczenia-adres-prywatny-i-firmowy 0/16 poz. 2,8, /strefa-wiedzy/oznaczenia-jpk-ksef 0/11 poz. 2,6) zapytania są ukryte („Brak danych”, jedno „osf” 0/1), więc opisów w ciemno nie zmieniano; zamiast tego llms.txt dostał pełne odpowiedzi dla dwóch z nich, które miały tylko link (oznaczenia numer KSeF, OFF, BFK, DI w JPK_VAT oraz adres prywatny i firmowy do e-Doręczeń w JDG), fakty wprost z artykułów. Numeracja i błąd 440 już miała pełną odpowiedź.
+**Ruch:** raport_ruchu 16:43: doba 137 odsłon, 85 osób (+51% wobec średniej 91,0); tydzień 748 odsłon, 496 osób; źródła b2b-email 72, youtube 12, www.google.com 5, linkedin 4, www.linkedin.com 2; narzędzia 4 uruchomienia.
+**Dowód:** commit 6d8b632, /api/wersja = 6d8b632, https://fluxlab.pl/llms.txt zawiera obie nowe linie (curl, 2 trafienia). Bramki: build OK, SPOJNOSC OK, JAKOSC OK. IndexNow pominięty (tylko llms.txt). Tabela stron: cykl/gsc-strony-2026-10-20.txt.
+**Dla Pawła:**
+**Zostało otwarte:** Z18 (00:30), Z19 (po 21.10 01:05, timer fl-gsc-21), Z22, Z23. Dla stratega: wysokie pozycje z 0 kliknięć i ukrytymi zapytaniami (pozycja 2,6 do 3,8) wyglądają na tryb AI Google, nie na słaby opis; Chrome 9228 nie działał, uruchomiony ponownie poleceniem z usługi chrome-2cw (bez `--remote-allow-origins=*` port się nie otwiera).
