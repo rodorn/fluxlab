@@ -96,7 +96,7 @@ export default function RyczaltCzyLiniowyArticle() {
                 content: (
                   <div className="py-6 lg:py-8">
                     <div className="mx-auto max-w-6xl">
-                      <TaxCalculator waski />
+                      <TaxCalculator />
                     </div>
                   </div>
                 ),

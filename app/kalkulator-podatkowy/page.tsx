@@ -147,7 +147,7 @@ export default function KalkulatorPodatkowyPage() {
                 label: "Kalkulator",
                 content: (
                   <div className="py-6 lg:py-8">
-                    <div className="max-w-6xl min-[1800px]:max-w-none mx-auto">
+                    <div className="max-w-6xl mx-auto">
                       <NazwaNarzedzia href="/kalkulator-podatkowy" />
                       <TaxCalculator />
                     </div>

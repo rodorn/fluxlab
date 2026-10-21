@@ -1214,8 +1214,7 @@ function ResultCard({
    MAIN COMPONENT
    ═══════════════════════════════════════════════════ */
 
-/** `waski`: osadzony w artykule (max 1152 px), wyniki pod polami zamiast obok. */
-export default function TaxCalculator({ waski = false }: { waski?: boolean }) {
+export default function TaxCalculator() {
   useEffect(() => {
     gaEvent("calculator_viewed", { calculator: "tax" });
   }, []);
@@ -1538,7 +1537,7 @@ export default function TaxCalculator({ waski = false }: { waski?: boolean }) {
 
   return (
     <div className="kalkulator-osadzony max-w-[120rem] mx-auto">
-      <div className={`grid gap-6 ${waski ? "" : "min-[1800px]:grid-cols-[1fr_1fr]"}`}>
+      <div className="grid gap-6">
         {/* ══════ LEFT COLUMN (inputs) ══════ */}
         <div className="max-w-6xl space-y-6">
           {/* ── INPUTS ── */}
@@ -1794,7 +1793,7 @@ export default function TaxCalculator({ waski = false }: { waski?: boolean }) {
                   </div>
                   <a
                     href="#porownanie-form"
-                    className={`mt-3 flex items-center justify-between gap-3 rounded-xl bg-accent/10 px-4 py-3 text-sm ${waski ? "" : "min-[1800px]:hidden"}`}
+                    className="mt-3 flex items-center justify-between gap-3 rounded-xl bg-accent/10 px-4 py-3 text-sm"
                   >
                     <span className="text-gray-700 dark:text-gray-300">
                       Najkorzystniej: <strong className="text-gray-900 dark:text-white">{best.label}</strong>,{" "}
