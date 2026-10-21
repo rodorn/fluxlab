@@ -85,6 +85,13 @@ export default function RootLayout({
   return (
     <html lang="pl" suppressHydrationWarning>
       <head>
+        <style>{"html[data-zgoda-zapisana] .cookie-consent{display:none}"}</style>
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "try{if(localStorage.getItem('fluxlab_zgoda'))document.documentElement.dataset.zgodaZapisana=''}catch(e){}",
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

@@ -4,8 +4,11 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 
 /** Okno zgody na Google Analytics. Bez zgody GA działa w trybie bez ciasteczek
- *  (consent mode, analytics_storage: denied). Okno jest w HTML od początku,
- *  ukryte, i pokazuje się tylko, gdy nie ma zapisanego wyboru. */
+ *  (consent mode, analytics_storage: denied). Okno jest w HTML od początku
+ *  i widoczne, żeby malowało się razem ze stroną (inaczej Lighthouse bierze
+ *  je za największy element, który pojawia się późno). Gdy wybór jest już
+ *  zapisany, skrypt w <head> (app/layout.tsx) chowa je przed pierwszym
+ *  malowaniem. */
 
 declare global {
   interface Window {
@@ -14,14 +17,14 @@ declare global {
 }
 
 export default function ZgodaCookies() {
-  const [widoczne, setWidoczne] = useState(false);
+  const [widoczne, setWidoczne] = useState(true);
 
   useEffect(() => {
     let wybor: string | null = null;
     try {
       wybor = localStorage.getItem("fluxlab_zgoda");
     } catch {}
-    if (!wybor) setWidoczne(true);
+    if (wybor) setWidoczne(false);
   }, []);
 
   // Na telefonie pływające przyciski chowają się, dopóki okno jest otwarte.
