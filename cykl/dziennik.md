@@ -6869,3 +6869,27 @@ Adresy: /strefa-wiedzy/co-to-jest-automatyzacja-procesow-biznesowych, /analiza-l
 **Dowód:** przed/po: ludzie 24 h 48 → 48, z odsyłaczem 14 → 14, bez 34 → 34; nowy wiersz: 24 h salwy 7 (Chrome Windows 7, z odsyłaczem 0), 7 dni 59 (Chrome Windows 48, Chrome Linux 9, Safari iOS 2, z odsyłaczem 0). Sygnatura nie zjada ani jednej sesji z odsyłaczem. Commit 750d844.
 **Dla Pawła:**
 **Zostało otwarte:** Z11 (17:30) i dalej wg planu. Dla stratega: wiersz salw obejmuje też Chrome Linux (9 w tygodniu), to mogą być nasze własne przebiegi.
+<!-- WYSLANO 2026-10-21 11:07 -->
+
+## 2026-10-21 11:50
+**Kanał:** pomiar (Z11 z planu stratega, wzięty o 11:50 zamiast 17:30, bo to następne otwarte zadanie; okno 06:30 do 11:50).
+**Co zrobione:** pomiar dnia od 06:30, nic nie poszło w świat.
+
+| od 06:30 | wartość |
+|---|---|
+| ludzie (po odsiewie par i serii) | 8 |
+| z odsyłaczem | 5 (youtube 1, linkedin 1, threads 1, m.facebook.com 1, www.google.com 1) |
+| bez odsyłacza | 3 |
+| salwy / pary i serie | 3 / 13 |
+| strony wejścia | / 5, /audyt-strony 1, /strefa-wiedzy/limit-10-tys-poza-ksef 1, /kalkulator-kosztow 1 |
+| scena_leada / lead_* | 1 (07:13) / 0 |
+| klik_po_wyniku od 20.10 12:30 | 0 (także w danych surowych) |
+| uruchomienia narzędzi | 0 |
+| sesje utm audyt-wynik po Z6 | 0 (Z6 wysłał 0 maili) |
+| Zoho, nowe zapytania od ludzi | 0; odmowy holding.olsztyn.pl i NOVO to odpowiedzi do innych sesji, comparic dostał odpowiedź 10:51 (Wysłane) |
+| Gofin | 0 publikacji, 0 timerów fl-gofin-* |
+
+**Ruch:** raport_ruchu 11:43: doba 149 odsłon, 110 osób (+47% wobec średniej 101,3); źródła b2b-email 42 (piksel otwarć), youtube 26, www.google.com 8, linkedin 3, instagram 3; narzędzia 1 uruchomienie; pomiar-kanalow 24 h: ludzie 48, z odsyłaczem 14, bez 34, salwy 7.
+**Dowód:** plan Z11 oznaczony [x]; liczby z `cykl/pomiar-kanalow.py` (funkcje `wiersze`, `odsiew`) zawężone do 21.10 06:30.
+**Dla Pawła:**
+**Zostało otwarte:** Z12 (stan serii indeksowania, nowa strona limit-10-tys) i dalej wg planu. Klik_po_wyniku w /numer-ksef ma 0 zdarzeń od wdrożenia 20.10 12:30, przy 3 uruchomieniach numeru KSeF w tygodniu: warto sprawdzić, czy zdarzenie w ogóle się wysyła.
