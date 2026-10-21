@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { zglosZdarzenie } from "@/lib/zdarzenie";
 import Przyklady from "@/components/Przyklady";
+import SzkieletWyniku from "@/components/SzkieletWyniku";
 
 interface Wynik {
   status: string;
@@ -160,6 +161,7 @@ export default function DomenaCheck() {
         </button>
       </form>
 
+      {stan === "ladowanie" && <SzkieletWyniku />}
       {stan === "blad" && (
         <p className="mt-3 text-sm text-red-700 dark:text-red-400">{blad}</p>
       )}

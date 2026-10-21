@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import TloHero from "@/components/TloHero";
 import KartaPoswiata from "@/components/KartaPoswiata";
-import LandingForm from "@/components/LandingForm";
+import LeniwyFormularz from "@/components/LeniwyFormularz";
 import PasekAkcji from "@/components/PasekAkcji";
 import PoleAudytu from "@/components/PoleAudytu";
 import WitajPonownie from "@/components/WitajPonownie";
@@ -13,12 +13,14 @@ import EtykietaNocna from "@/components/EtykietaNocna";
 import NaglowekSklada from "@/components/NaglowekSklada";
 import PodtytulZrodlo from "@/components/PodtytulZrodlo";
 import RevealOnScroll from "@/components/RevealOnScroll";
-import ScenaLeada from "@/components/ScenaLeada";
+import LeniwaScena from "@/components/LeniwaScena";
 import CountUp from "@/components/CountUp";
 import KrokiSticky from "@/components/KrokiSticky";
 import Manifest from "@/components/Manifest";
 import PisanyTekst from "@/components/PisanyTekst";
 import { nazwaFilaru } from "@/lib/filary";
+import NapisBoczny from "@/components/NapisBoczny";
+import SiatkaNaStart from "@/components/SiatkaNaStart";
 import { Ikona, type NazwaIlustracji } from "@/components/Ilustracje";
 
 // Oferta jak w szkoleniu produktowym (16.10.2026): projekty z ceną z góry,
@@ -87,6 +89,7 @@ export default function Home() {
       <Header />
       <main className="relative flex flex-col bg-white text-gray-900 dark:bg-gray-950 dark:text-white pt-16">
         <TloHero />
+        <SiatkaNaStart />
         <section className="relative z-10 mx-auto flex min-h-[72vh] w-full max-w-6xl flex-col items-center justify-center px-6 pt-16 pb-16 text-center lg:pt-20">
           <WitajPonownie />
           <IntroZnaku />
@@ -109,7 +112,8 @@ export default function Home() {
           </div>
         </section>
 
-        <section aria-labelledby="oferta" className="container-wide pb-16">
+        <section aria-labelledby="oferta" className="container-wide relative pb-16">
+          <NapisBoczny tekst="Oferta" />
           <h2 id="oferta" className="sr-only">
             Oferta
           </h2>
@@ -196,7 +200,8 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="border-t border-gray-200 dark:border-white/10 overflow-x-clip py-24 lg:py-32">
+        <section className="relative border-t border-gray-200 dark:border-white/10 overflow-x-clip py-24 lg:py-32">
+          <NapisBoczny tekst="Realizacja" />
           <div className="container-wide">
             <RevealOnScroll className="text-center">
               <p className="section-label mb-3"><span className="tabular-nums opacity-60">02</span> Ostatnia realizacja</p>
@@ -253,7 +258,8 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="border-t border-gray-200 dark:border-white/10 py-20 lg:py-24">
+        <section className="relative border-t border-gray-200 dark:border-white/10 py-20 lg:py-24">
+          <NapisBoczny tekst="Audyt" />
           <div className="container-wide">
             <RevealOnScroll className="text-center">
               <Ikona nazwa="audyt" className="mx-auto mb-4 h-11 w-11" />
@@ -268,7 +274,8 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="border-t border-gray-200 dark:border-white/10 py-24 lg:py-32">
+        <section className="relative border-t border-gray-200 dark:border-white/10 py-24 lg:py-32">
+          <NapisBoczny tekst="CRM" />
           <div className="container-wide">
             <RevealOnScroll className="mb-12 text-center">
               <p className="section-label mb-3"><span className="tabular-nums opacity-60">04</span> CRM</p>
@@ -281,7 +288,7 @@ export default function Home() {
               </p>
             </RevealOnScroll>
             <RevealOnScroll delay={1}>
-              <ScenaLeada />
+              <LeniwaScena />
             </RevealOnScroll>
           </div>
         </section>
@@ -292,7 +299,7 @@ export default function Home() {
         >
           <div className="container-wide">
             <RevealOnScroll>
-<LandingForm
+<LeniwyFormularz
               formId="home"
               heading="Napisz, czego potrzebujesz"
               intro="Odpiszemy z ceną i terminem, tego samego dnia."

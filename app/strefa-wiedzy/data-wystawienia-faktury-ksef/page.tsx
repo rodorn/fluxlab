@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import HasloSlownika from "@/components/HasloSlownika";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
@@ -83,9 +84,7 @@ export default function DataWystawieniaFakturyKsefArticle() {
               <h2 className="mb-4 h2-sekcji">Faktura online</h2>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                 Data w polu P_1 musi być zgodna z dniem przesłania pliku XML do{" "}
-                <Link href="/slownik#ksef" className="text-accent hover:underline">
-                  KSeF
-                </Link>
+                <HasloSlownika slug="ksef">KSeF</HasloSlownika>
                 . Wysyłasz fakturę 1 lutego, a numer przychodzi 2 lutego: faktura
                 jest wystawiona 1 lutego. P_1 jest obowiązkowe, bez niego KSeF
                 faktury nie przyjmie.

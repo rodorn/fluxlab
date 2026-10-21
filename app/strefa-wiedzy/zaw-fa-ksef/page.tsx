@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import HasloSlownika from "@/components/HasloSlownika";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
@@ -86,9 +87,7 @@ export default function ZawFaKsefArticle() {
                 Jedną osobę fizyczną, niekoniecznie z zarządu, na przykład
                 dyrektora finansowego. ZAW-FA podpisuje osoba reprezentująca
                 spółkę. Wskazana osoba wystawia i odbiera faktury w{" "}
-                <Link href="/slownik#ksef" className="text-accent hover:underline">
-                  KSeF
-                </Link>{" "}
+                <HasloSlownika slug="ksef">KSeF</HasloSlownika>{" "}
                 oraz nadaje i odbiera uprawnienia innym.
               </p>
             </section>

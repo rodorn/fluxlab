@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import HasloSlownika from "@/components/HasloSlownika";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
@@ -86,9 +87,7 @@ export default function ZalacznikDoFakturyKsefArticle() {
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                 Załącznik jest częścią faktury, więc musi być w tym samym
                 formacie, czyli w{" "}
-                <Link href="/slownik#fa3" className="text-accent hover:underline">
-                  strukturze FA(3)
-                </Link>
+                <HasloSlownika slug="fa3">strukturze FA(3)</HasloSlownika>
                 . Krótką informację, na przykład numer licznika, wpiszesz bez
                 załącznika w pole DodatkowyOpis albo StopkaFaktury.
               </p>

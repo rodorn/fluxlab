@@ -1,20 +1,10 @@
 import type { Metadata, Viewport } from "next";
 import { ViewTransition } from "react";
 import { Geist, Instrument_Serif } from "next/font/google";
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Analytics } from "@vercel/analytics/next";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import ZgodaCookies from "@/components/ZgodaCookies";
-import LicznikWizyt from "@/components/LicznikWizyt";
-import ContactClickTracker from "@/components/ContactClickTracker";
-import ScrollProgress from "@/components/ScrollProgress";
-import Czat from "@/components/Czat";
-import NowaWersja from "@/components/NowaWersja";
-import ScrollToTop from "@/components/ScrollToTop";
 import TytulKarty from "@/components/TytulKarty";
-import MagnesPrzyciskow from "@/components/MagnesPrzyciskow";
-import KomunikatKonsoli from "@/components/KomunikatKonsoli";
-import PlynnePrzewijanie from "@/components/PlynnePrzewijanie";
+import Opoznione, { PoPierwszymMalowaniu } from "@/components/Opoznione";
 import "./globals.css";
 import "./runda3.css";
 
@@ -219,19 +209,10 @@ export default function RootLayout({
         />
         <GoogleAnalytics />
         <ZgodaCookies />
-        <LicznikWizyt />
-        <ContactClickTracker />
-        <ScrollProgress />
-        <PlynnePrzewijanie />
         <ViewTransition default="vt-page">{children}</ViewTransition>
-        <ScrollToTop />
         <TytulKarty />
-        <MagnesPrzyciskow />
-        <KomunikatKonsoli />
-        <Czat />
-        <NowaWersja />
-        <SpeedInsights />
-        <Analytics />
+        <Opoznione />
+        <PoPierwszymMalowaniu />
       </body>
     </html>
   );

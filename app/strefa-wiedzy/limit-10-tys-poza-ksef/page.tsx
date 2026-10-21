@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import HasloSlownika from "@/components/HasloSlownika";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
@@ -75,9 +76,7 @@ export default function Limit10TysPozaKsefArticle() {
               W kwietniu 2026 masz faktury dla firm na 9 tys. zł brutto, a 28
               kwietnia wystawiasz kolejną na 2 tys. zł. Ta faktura i wszystkie
               następne idą już przez{" "}
-              <Link href="/slownik#ksef" className="text-accent hover:underline">
-                KSeF
-              </Link>
+              <HasloSlownika slug="ksef">KSeF</HasloSlownika>
               . Jeśli w maju sprzedasz za 3 tys. zł, papier nie wraca.
             </p>
           </div>

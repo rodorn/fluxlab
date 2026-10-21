@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { zglosZdarzenie } from "@/lib/zdarzenie";
 import Przyklady from "@/components/Przyklady";
+import SzkieletWyniku from "@/components/SzkieletWyniku";
 
 interface Produkt {
   nazwa: string;
@@ -262,6 +263,7 @@ export default function CenyCheck() {
         </ol>
       )}
 
+      {stan === "ladowanie" && <SzkieletWyniku />}
       {stan === "blad" && (
         <p className="mt-3 text-sm text-red-700 dark:text-red-400">{blad}</p>
       )}

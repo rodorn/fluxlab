@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Przyklady from "@/components/Przyklady";
 import { zglosZdarzenie } from "@/lib/zdarzenie";
+import SzkieletWyniku from "@/components/SzkieletWyniku";
 
 interface Wynik {
   status: "OK";
@@ -219,6 +220,7 @@ export default function DoplataCheck() {
         </button>
       </form>
 
+      {stan === "ladowanie" && <SzkieletWyniku />}
       {stan === "blad" && (
         <p className="mt-3 text-sm text-red-700 dark:text-red-400">{blad}</p>
       )}

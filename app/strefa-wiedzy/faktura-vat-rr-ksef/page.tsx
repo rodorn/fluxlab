@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import HasloSlownika from "@/components/HasloSlownika";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
@@ -84,9 +85,7 @@ export default function FakturaVatRrKsefArticle() {
               <h2 className="mb-4 h2-sekcji">Gdy rolnik Cię wskazał</h2>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                 Rolnik składa w{" "}
-                <Link href="/slownik#ksef" className="text-accent hover:underline">
-                  KSeF
-                </Link>{" "}
+                <HasloSlownika slug="ksef">KSeF</HasloSlownika>{" "}
                 oświadczenie, że jest rolnikiem ryczałtowym, i wskazuje nabywcę.
                 Od tej chwili wystawiasz mu faktury VAT RR i korekty tylko w KSeF,
                 aż rolnik cofnie wskazanie, co może zrobić w każdej chwili.

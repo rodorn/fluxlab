@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import HasloSlownika from "@/components/HasloSlownika";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
@@ -72,7 +73,7 @@ export default function IntegracjeApiArticle() {
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
               Chodzi o jedno: czy dane między systemami przepływają same, czy
               przenoszą je ludzie. Gdy firma używa kilku narzędzi, które żyją
-              osobno, integracja staje się elementem sprawnej operacji.
+              osobno, <HasloSlownika slug="integracja">integracja</HasloSlownika> staje się elementem sprawnej operacji.
             </p>
           </div>
         </section>

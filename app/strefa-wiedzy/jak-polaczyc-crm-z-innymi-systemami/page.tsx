@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import HasloSlownika from "@/components/HasloSlownika";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
@@ -107,7 +108,7 @@ export default function CrmIntegracjaArticle() {
                       Najczęstszy model połączenia
                     </h2>
                     <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                      Formularz tworzy leada w CRM, system przypisuje go do
+                      Formularz tworzy <HasloSlownika slug="lead">leada</HasloSlownika> w <HasloSlownika slug="crm">CRM</HasloSlownika>, system przypisuje go do
                       osoby, a dane trafiają dalej do raportów i faktur. Łączą
                       to{" "}
                       <Link

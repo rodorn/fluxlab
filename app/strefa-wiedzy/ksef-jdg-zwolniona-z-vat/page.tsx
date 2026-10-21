@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import HasloSlownika from "@/components/HasloSlownika";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
@@ -77,9 +78,7 @@ export default function KsefJdgZwolnionaZVatArticle() {
             </h1>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
               Tak, gdy wystawiasz fakturę firmie. Zwolnienie z VAT nie zwalnia z{" "}
-              <Link href="/slownik#ksef" className="text-accent hover:underline">
-                KSeF
-              </Link>
+              <HasloSlownika slug="ksef">KSeF</HasloSlownika>
               , obowiązek obejmuje podatników czynnych i zwolnionych od{" "}
               {OD_KIEDY}.
             </p>

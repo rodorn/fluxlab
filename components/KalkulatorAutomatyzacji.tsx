@@ -5,6 +5,7 @@ import { zglosZdarzenie } from "@/lib/zdarzenie";
 import DalejPoWyniku from "@/components/DalejPoWyniku";
 import WykresSlupkowy from "@/components/WykresSlupkowy";
 import Scenariusze, { type Scenariusz } from "@/components/Scenariusze";
+import SzkieletWyniku from "@/components/SzkieletWyniku";
 
 interface Wynik {
   status: "OK";
@@ -208,6 +209,7 @@ export default function KalkulatorAutomatyzacji() {
         </button>
       </form>
 
+      {stan === "ladowanie" && <SzkieletWyniku />}
       {stan === "blad" && (
         <p className="mt-3 text-sm text-red-700 dark:text-red-400">{blad}</p>
       )}

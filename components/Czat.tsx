@@ -181,7 +181,11 @@ export default function Czat() {
       }
     };
     window.addEventListener("fluxlab:czat", h);
-    return () => window.removeEventListener("fluxlab:czat", h);
+    document.documentElement.dataset.czatGotowy = "1";
+    return () => {
+      window.removeEventListener("fluxlab:czat", h);
+      delete document.documentElement.dataset.czatGotowy;
+    };
   }, []);
 
   async function wyslij(tekst: string) {
