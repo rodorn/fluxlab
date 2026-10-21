@@ -8,6 +8,7 @@ import StatusOnline from "./StatusOnline";
 import CzasZmiany from "./CzasZmiany";
 import StopkaCta from "./StopkaCta";
 import zmiany from "@/lib/zmiany.json";
+import lighthouse from "@/lib/lighthouse.json";
 
 const sekcja = (slug: string): Sekcja => SEKCJE.find((x) => x.slug === slug)!;
 
@@ -143,6 +144,22 @@ export default function Footer() {
             </a>
           </p>
           <StatusOnline />
+          {/* Wynik z prawdziwego pomiaru (lib/lighthouse.json). Pokazujemy go tylko
+              przy 100 we wszystkich kategoriach; link pozwala sprawdzić samemu. */}
+          {[lighthouse.wydajnosc, lighthouse.dostepnosc, lighthouse.praktyki, lighthouse.seo].every((x) => x === 100) && (
+            <p className="mt-2">
+              <a
+                href="https://pagespeed.web.dev/analysis?url=https%3A%2F%2Ffluxlab.pl%2F&form_factor=desktop"
+                target="_blank"
+                rel="noopener"
+                className="inline-flex min-h-6 items-center gap-1.5 hover:text-accent transition-colors"
+              >
+                <span aria-hidden="true" className="h-2 w-2 rounded-full bg-emerald-500" />
+                Lighthouse na komputerze: 100 / 100 / 100 / 100, pomiar{" "}
+                {new Date(lighthouse.data).toLocaleDateString("pl-PL")}
+              </a>
+            </p>
+          )}
           <p className="mt-2 flex flex-col items-center gap-y-1.5 [&_a]:inline-flex [&_a]:min-h-6 [&_a]:items-center sm:flex-row sm:flex-wrap sm:justify-center sm:gap-x-2">
             <Link href="/zmiany" className="hover:text-accent transition-colors">
               <CzasZmiany iso={zmiany[0].data} />
