@@ -144,8 +144,8 @@ export default function HeaderKlient({
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/60 dark:bg-gray-950/55 backdrop-blur-xl border-b border-gray-200/60 dark:border-gray-800/60 shadow-sm shadow-gray-900/5"
-          : "bg-white/60 dark:bg-gray-950/55 backdrop-blur-xl border-b border-transparent"
+          ? "bg-white/95 dark:bg-gray-950/95 lg:bg-white/60 lg:dark:bg-gray-950/55 lg:backdrop-blur-xl border-b border-gray-200/60 dark:border-gray-800/60 shadow-sm shadow-gray-900/5"
+          : "bg-white/95 dark:bg-gray-950/95 lg:bg-white/60 lg:dark:bg-gray-950/55 lg:backdrop-blur-xl border-b border-transparent"
       }`}
     >
       {/* Pełna szerokość, bez container-wide */}

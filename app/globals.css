@@ -874,9 +874,19 @@ main[class*="max-w-"]:has(> nav[aria-label="Breadcrumb"]) {
 .tlo-hero__plama {
   position: absolute;
   border-radius: 9999px;
-  background: rgb(var(--accent-solid));
-  filter: blur(90px);
-  opacity: 0.16;
+  /* Miękka plama z gradientu zamiast filter: blur(90px) na kole: wygląda tak
+     samo, a słabsze karty graficzne (telefony, Safari) nie muszą rozmywać
+     dużej warstwy. Pudełko jest większe o zasięg dawnego rozmycia. */
+  margin: -90px;
+  padding: 90px;
+  box-sizing: content-box;
+  background: radial-gradient(
+    closest-side,
+    rgb(var(--accent-solid) / 0.16) 0%,
+    rgb(var(--accent-solid) / 0.12) 45%,
+    rgb(var(--accent-solid) / 0.05) 75%,
+    transparent 100%
+  );
 }
 .tlo-hero__plama--a {
   width: 38rem;
@@ -899,7 +909,7 @@ main[class*="max-w-"]:has(> nav[aria-label="Breadcrumb"]) {
   to { transform: translate3d(-7rem, 5rem, 0); }
 }
 @media (max-width: 640px) {
-  .tlo-hero__plama { width: 20rem; height: 20rem; filter: blur(60px); }
+  .tlo-hero__plama { width: 20rem; height: 20rem; margin: -60px; padding: 60px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .tlo-hero__plama { animation: none; }

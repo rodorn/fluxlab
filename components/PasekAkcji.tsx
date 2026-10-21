@@ -34,7 +34,7 @@ export default function PasekAkcji() {
 
   return (
     <div
-      className={`pasek-akcji fixed inset-x-0 bottom-0 z-40 border-t border-gray-200 bg-white/90 px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] backdrop-blur md:hidden dark:border-white/10 dark:bg-gray-950/90 ${
+      className={`pasek-akcji fixed inset-x-0 bottom-0 z-40 border-t border-gray-200 bg-white px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] md:hidden dark:border-white/10 dark:bg-gray-950 ${
         widoczny ? "translate-y-0" : "translate-y-full"
       }`}
       aria-hidden={!widoczny}

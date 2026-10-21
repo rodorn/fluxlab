@@ -71,14 +71,6 @@ export default function TloHero() {
           <div className="tlo-hero__plama tlo-hero__plama--b" />
         </div>
       </div>
-      {/* Ziarno jako SVG z filtrem, nie obrazek w tle: obrazek Lighthouse
-          brał za największy element strony (LCP). */}
-      <svg className="absolute inset-0 h-full w-full opacity-[0.07] mix-blend-overlay dark:opacity-[0.12]">
-        <filter id="ziarno-hero">
-          <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves={3} stitchTiles="stitch" />
-        </filter>
-        <rect width="100%" height="100%" filter="url(#ziarno-hero)" />
-      </svg>
     </div>
   );
 }
