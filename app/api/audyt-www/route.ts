@@ -1,6 +1,7 @@
 import { after, NextResponse } from "next/server";
 
 import { czystaDomena, zmierz } from "@/lib/audyt-pomiar";
+import { ostatniBladLighthouse } from "@/lib/audyt-lighthouse";
 import { ocenStrone, potrzebneDostepy, punktacja, wycenNaprawe } from "@/lib/audyt-ocena";
 import { materialDo, napiszRaport } from "@/lib/audyt-raport";
 import { podpisz } from "@/lib/audyt-podpis";
@@ -149,6 +150,7 @@ export async function POST(request: Request) {
       mobile: pomiar.mobile,
       kursor: pomiar.kursor,
       lighthouse: pomiar.lighthouse,
+      lighthouseBlad: ostatniBladLighthouse,
       technologie: pomiar.technologie,
       zapytania: pomiar.zapytania,
       zasoby: {
