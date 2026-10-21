@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title:
       "Od kiedy KSeF obowiązuje Twoją firmę? Sprawdzenie w dwóch kliknięciach",
+    images: ["/og?t=Od%20kiedy%20KSeF%20obowi%C4%85zuje%20Twoj%C4%85%20firm%C4%99%3F%20Sprawdzenie%20w%20dw%C3%B3ch%20klikni%C4%99ciach"],
     description:
       "Wybierasz rodzaj sprzedaży i sposób wystawiania faktur, a wynik pokazuje termin, liczbę dni do 1 stycznia 2027 i co zrobić przy Twoim programie. Bez rejestracji.",
     locale: "pl_PL",
@@ -125,7 +126,7 @@ export default function KsefIntegracja() {
       formId="ksef"
       formHeading="Napisz, w czym dziś wystawiasz faktury"
       formIntro="Nazwa programu i liczba faktur miesięcznie wystarczą. Odpiszemy, czy integracja ma sens."
-      submitLabel="Wyślij opis"
+      submitLabel="Wyślij opis i poproś o cenę"
       microCopy="Ustalenia prowadzimy mailowo. Telefon, jeśli tak Ci wygodniej."
       serviceName="Integracja z KSeF"
       serviceDesc="Spięcie systemu sprzedażowego, ERP albo programu księgowego z Krajowym Systemem e-Faktur: wysyłka faktur w schemacie FA(3) przez API v2, zapis numeru KSeF i UPO, pobieranie faktur kosztowych."

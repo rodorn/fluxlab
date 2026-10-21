@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title:
       "Od kiedy Twoja firma musi mieć adres do e-Doręczeń? Sprawdzenie w jednym kliknięciu",
+    images: ["/og?t=Od%20kiedy%20Twoja%20firma%20musi%20mie%C4%87%20adres%20do%20e-Dor%C4%99cze%C5%84%3F%20Sprawdzenie%20w%20jednym%20klikni%C4%99ciu"],
     description:
       "Wybierasz formę działalności, a wynik pokazuje termin obowiązku, ile dni zostało albo minęło i co zrobić dalej. Firmy z CEIDG wpisane przed 2025 mają obowiązek od 1 października 2026. Bez rejestracji.",
     locale: "pl_PL",
@@ -150,7 +151,7 @@ export default function EDoreczeniaIntegracja() {
       formId="edoreczenia"
       formHeading="Napisz, z jakiego systemu korzystasz"
       formIntro="Nazwa systemu i liczba pism miesięcznie wystarczą. Odpiszemy, czy integracja ma sens, czy panel wystarczy."
-      submitLabel="Wyślij opis"
+      submitLabel="Wyślij opis i poproś o cenę"
       microCopy="Ustalenia prowadzimy mailowo. Telefon, jeśli tak ci wygodniej."
       serviceName="Integracja z e-Doręczeniami"
       serviceDesc="Spięcie skrzynki do doręczeń elektronicznych z systemem obiegu dokumentów, CRM albo inną aplikacją: odbiór pism, pobieranie dowodów doręczenia, wysyłka z załącznikami."
