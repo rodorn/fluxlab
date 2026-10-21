@@ -65,7 +65,10 @@ export async function POST(request: Request) {
   const punkty = punktacja(ustalenia);
   const dostepy = potrzebneDostepy(ustalenia);
 
-  const klucz = process.env.OPENAI_API_KEY;
+  // Audyt fluxlab.pl to punkt odniesienia w porównaniu po audycie klienta:
+  // bez opisu z modelu i bez kopii mailem, bo porównanie bierze tylko wynik.
+  const wlasna = domena === "fluxlab.pl";
+  const klucz = wlasna ? undefined : process.env.OPENAI_API_KEY;
   // Raport opisowy jest dodatkiem do pomiaru, nie warunkiem. Gdy model nie
   // odpowie, klient i tak dostaje wszystkie ustalenia, kolejność i cenę,
   // bo te nie pochodzą od modelu. Lepszy raport bez eseju niż błąd.
@@ -106,7 +109,7 @@ export async function POST(request: Request) {
   // skrzynce w ciągu minuty zamieniają powiadomienie w szum, po którym
   // przestaje się czytać także te prawdziwe. Gdy ktoś zostawi kontakt,
   // kopia idzie mimo wszystko, bo wtedy to już jest zgłoszenie od człowieka.
-  if (pomiar.osiagalna) {
+  if (pomiar.osiagalna && !wlasna) {
     after(async () => {
       await wyslijKopie(pelne, {
         zrodlo: request.headers.get("referer") ?? undefined,
