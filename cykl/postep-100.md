@@ -18,5 +18,9 @@ Pominięte: 55 (ikona gradientowa czytelna na obu tłach).
 7 nagłówki sekcji pisane raz na sesję, 15 ramka FINREAL prostuje się przy przewijaniu, 16 paralaksa kół, 23 menu mobilne na sprężynie, 26 maska clip-path sekcji Zasada, 29 drżenie pola po błędzie.
 Pominięte: 18 (ramka to suwak z kursorem ew-resize, karty mają własne CTA), 24 (animacja wysyłki z ptaszkiem już jest), 22 (brak sensownego miejsca na ikony), 30 (jest jedna realizacja).
 
+## Paczka 5
+34 więcej oddechu (sekcje strony głównej), 35 numeracja sekcji 01-04, 38 stopka z ekranem wezwania (poza /, /kontakt, /dziekuje, /panel, /cv), 47 szkło tylko w nagłówku i menu (przycisk wtórny bez blur), 49 kolor P3 na przycisku i pełnym kolorze marki, 50 oddychająca poświata pod głównym przyciskiem, 52 gradientowa ramka karty przy najechaniu.
+Pominięte: 32 (asymetria łamie oś symetrii), 36 (pionowy napis koliduje z układem na telefonie), 40 (pasek akcji już jest), 41 (jedna ramka realizacji już jest), 48 (trzy odcienie już są: 950, 900, 800), 51 (siatka i plamy w hero już są), 57 i 58 (brak ilustratora i zdjęć do tonowania).
+
 ## Niezrobione (do kolejnych cykli)
 Reszta listy: wymaga większych zmian lub budżetu tygodnia. 74, 80, 86 celowo bez zgody.

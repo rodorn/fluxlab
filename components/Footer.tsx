@@ -6,6 +6,7 @@ import Znak from "./Znak";
 import KopiujMail from "./KopiujMail";
 import StatusOnline from "./StatusOnline";
 import CzasZmiany from "./CzasZmiany";
+import StopkaCta from "./StopkaCta";
 import zmiany from "@/lib/zmiany.json";
 
 const sekcja = (slug: string): Sekcja => SEKCJE.find((x) => x.slug === slug)!;
@@ -76,6 +77,8 @@ export default function Footer() {
   }));
 
   return (
+    <>
+    <StopkaCta />
     <footer className="border-t border-gray-100 dark:border-gray-800 py-10">
       <div className="container-wide">
         <div className="grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-5">
@@ -163,5 +166,6 @@ export default function Footer() {
         </svg>
       </div>
     </footer>
+    </>
   );
 }

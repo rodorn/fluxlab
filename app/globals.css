@@ -167,7 +167,7 @@ html.dark {
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-2xl border-2 border-gray-200/80 dark:border-gray-700 bg-white/60 dark:bg-gray-900/40 backdrop-blur-sm text-gray-800 dark:text-gray-100 font-semibold text-sm tracking-tight transition-all duration-300 hover:border-accent hover:text-accent hover:-translate-y-0.5 hover:bg-accent/[0.04] dark:hover:bg-accent/[0.08] hover:shadow-md hover:shadow-accent/10 active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 dark:focus-visible:ring-offset-gray-950;
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-2xl border-2 border-gray-200/80 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 font-semibold text-sm tracking-tight transition-all duration-300 hover:border-accent hover:text-accent hover:-translate-y-0.5 hover:bg-accent/[0.04] dark:hover:bg-accent/[0.08] hover:shadow-md hover:shadow-accent/10 active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 dark:focus-visible:ring-offset-gray-950;
   }
 
   .btn-lg {
@@ -1501,4 +1501,55 @@ textarea[aria-invalid="true"] {
 @media (prefers-reduced-motion: reduce) {
   input:user-invalid, textarea:user-invalid, select:user-invalid,
   input[aria-invalid="true"], textarea[aria-invalid="true"] { animation: none; }
+}
+
+/* 50: poświata pod kluczowym przyciskiem, oddycha */
+.poswiata-przycisku::after {
+  content: "";
+  position: absolute;
+  inset: 8px 12px -10px;
+  z-index: -1;
+  border-radius: inherit;
+  background: rgb(var(--accent-solid));
+  filter: blur(22px);
+  opacity: 0.4;
+  animation: poswiata-oddech 3.2s ease-in-out infinite;
+}
+@keyframes poswiata-oddech {
+  0%, 100% { opacity: 0.28; transform: scale(0.96); }
+  50% { opacity: 0.55; transform: scale(1.03); }
+}
+.poswiata-przycisku { isolation: isolate; }
+@media (prefers-reduced-motion: reduce) {
+  .poswiata-przycisku::after { animation: none; }
+}
+
+/* 52: obramowanie z gradientem na najechanej karcie */
+.karta-poswiata::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1.5px;
+  pointer-events: none;
+  background: linear-gradient(135deg, rgb(var(--accent)), rgb(var(--accent) / 0) 45%, rgb(var(--accent-hover)));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.karta-poswiata:hover::after,
+.karta-poswiata:focus-visible::after {
+  opacity: 1;
+}
+
+/* 49: szerszy gamut P3 tam, gdzie ekran go ma, na przycisku i pełnym kolorze marki */
+@media (color-gamut: p3) {
+  .btn-primary {
+    background-image: linear-gradient(135deg, color(display-p3 0.29 0.25 0.93) 0%, color(display-p3 0.24 0.2 0.8) 100%);
+  }
+  .bg-accent-solid {
+    background-color: color(display-p3 0.29 0.25 0.93);
+  }
 }

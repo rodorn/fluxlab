@@ -92,7 +92,7 @@ export default function Home() {
           <div className="animate-fade-up-1 mt-10 flex w-full flex-col items-center justify-center gap-3 sm:w-auto sm:flex-row">
             <a
               href="#kontakt"
-              className="btn-primary btn-lg w-full sm:w-60"
+              className="btn-primary btn-lg poswiata-przycisku w-full sm:w-60"
             >
               Zamów wycenę
             </a>
@@ -109,6 +109,9 @@ export default function Home() {
           <h2 id="oferta" className="sr-only">
             Oferta
           </h2>
+          <p aria-hidden="true" className="section-label mb-6 text-center">
+            <span className="tabular-nums opacity-60">01</span> Oferta
+          </p>
           <div className="grid gap-5 md:grid-cols-2">
             {OFERTA.map((o, i) => (
               <RevealOnScroll
@@ -188,10 +191,10 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="border-t border-gray-200 dark:border-white/10 overflow-x-clip py-20 lg:py-28">
+        <section className="border-t border-gray-200 dark:border-white/10 overflow-x-clip py-24 lg:py-32">
           <div className="container-wide">
             <RevealOnScroll className="text-center">
-              <p className="section-label mb-3">Ostatnia realizacja</p>
+              <p className="section-label mb-3"><span className="tabular-nums opacity-60">02</span> Ostatnia realizacja</p>
               <h2 className="text-balance text-4xl font-bold tracking-tighter lg:text-5xl">
                 Nowa strona FINREAL w 12 dni
               </h2>
@@ -248,6 +251,7 @@ export default function Home() {
         <section className="border-t border-gray-200 dark:border-white/10 py-20 lg:py-24">
           <div className="container-wide">
             <RevealOnScroll className="text-center">
+              <p className="section-label mb-3"><span className="tabular-nums opacity-60">03</span> Audyt</p>
               <h2 className="text-balance text-4xl font-bold tracking-tighter lg:text-5xl">
                 <PisanyTekst id="audyt" tekst="Sprawdź swoją stronę w minutę" />
               </h2>
@@ -258,9 +262,10 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="border-t border-gray-200 dark:border-white/10 py-20 lg:py-28">
+        <section className="border-t border-gray-200 dark:border-white/10 py-24 lg:py-32">
           <div className="container-wide">
             <RevealOnScroll className="mb-12 text-center">
+              <p className="section-label mb-3"><span className="tabular-nums opacity-60">04</span> CRM</p>
               <h2 className="text-balance text-4xl font-bold tracking-tighter lg:text-5xl">
                 <PisanyTekst id="crm" tekst="Twój CRM czyta zapytanie, zanim Ty je przeczytasz" />
               </h2>
