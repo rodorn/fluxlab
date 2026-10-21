@@ -14,7 +14,8 @@ export const dynamic = "force-dynamic";
 export const maxDuration = 30;
 
 const EMAIL_RX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const DO_WLASCICIELA = process.env.AUDYT_KOPIA_DO ?? "iwanekpawel55@gmail.com";
+// Kopie zgłoszeń idą do Wojtka (handlowiec), nie do Pawła (zasada 21.10).
+const DO_WLASCICIELA = process.env.AUDYT_KOPIA_DO ?? "skiwojtner@gmail.com";
 
 const tekst = (v: unknown, max: number) =>
   typeof v === "string" ? v.replace(/\s+/g, " ").trim().slice(0, max) : "";
@@ -71,8 +72,9 @@ export async function POST(request: Request) {
     wyslano = await wyslij(email, m.temat, m.html, m.tekst, naglowkiWypisu(email));
   }
 
-  // Odpowiedź na pytanie kwalifikujące to lead, więc trafia od razu do Pawła.
-  await wyslij(
+  // Zgłoszenie z adresem to lead i trafia do handlowca. Anonimowa odpowiedź
+  // bez adresu nie wysyła maila; widać ją w raporcie ruchu jako zdarzenie.
+  if (email) await wyslij(
     DO_WLASCICIELA,
     `[bramka] ${NARZEDZIA_BRAMKI[narzedzie].nazwa} · ${email || "anonim"}${pytanie ? " · LEAD" : ""}`,
     `<p><b>Narzędzie:</b> ${NARZEDZIA_BRAMKI[narzedzie].nazwa}<br><b>E-mail:</b> ${email || "nie podano"}${email ? " (zgoda TAK)" : ""}<br><b>Pytanie kwalifikujące:</b> ${pytanie || "bez odpowiedzi"}<br><b>Źródło:</b> ${zrodlo || "nieznane"}</p><p><b>${tytul}</b></p>${linie.map((l) => `<p>${l.replace(/</g, "&lt;")}</p>`).join("")}`,
