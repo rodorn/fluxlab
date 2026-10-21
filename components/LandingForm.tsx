@@ -583,16 +583,21 @@ export default function LandingForm({
                 Wstecz
               </button>
             )}
-            <button type="button" onClick={dalej} className="btn-primary btn-lg flex-1">
+            {/* Osobne klucze dla „Dalej” i „Wyślij”: bez nich React podmienia
+                tylko typ tego samego przycisku i kliknięcie „Dalej” w drugim
+                kroku kończyło się już na przycisku wysyłki, czyli formularz
+                wysyłał się, zanim klient wybrał sposób kontaktu. */}
+            <button key="dalej" type="button" onClick={dalej} className="btn-primary btn-lg flex-1">
               Dalej
             </button>
           </div>
         ) : (
           <div className="flex gap-3">
-            <button type="button" onClick={() => setKrok(1)} className="btn-secondary">
+            <button key="wstecz-2" type="button" onClick={() => setKrok(1)} className="btn-secondary">
               Wstecz
             </button>
             <button
+              key="wyslij"
               type="submit"
               disabled={loading}
               className="btn-primary btn-lg flex-1 disabled:opacity-60"
