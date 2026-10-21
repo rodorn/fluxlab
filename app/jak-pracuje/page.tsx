@@ -46,7 +46,7 @@ const steps = [
   {
     number: "02",
     title: "Audyt procesu",
-    duration: "3-7 dni roboczych",
+    duration: "1–2 dni robocze",
     description:
       "Sprawdzamy proces, dane i narzędzia. Koszt audytu odliczamy od wdrożenia, jeśli idziemy dalej.",
     deliverables: [
@@ -58,13 +58,13 @@ const steps = [
   {
     number: "03",
     title: "Wdrożenie",
-    duration: "2-8 tygodni zależnie od zakresu",
+    duration: "od 2 dni do 3 tygodni, zależnie od zakresu",
     description:
-      "Pracujemy w krótkich iteracjach, z postępem co tydzień. Płacisz transzami po odbiorze etapów.",
+      "Pracujemy w krótkich iteracjach, z postępem co kilka dni. Płacisz transzami po odbiorze etapów.",
     deliverables: [
       "Środowisko testowe przed produkcją",
       "Dokumentacja każdej automatyzacji",
-      "Szkolenie zespołu (1-2 h)",
+      "Szkolenie zespołu (1–2 h)",
     ],
   },
   {
@@ -106,7 +106,7 @@ const faq = [
   {
     question: "Ile trwa najkrótszy projekt?",
     answer:
-      "Prosta integracja, np. formularz do CRM z powiadomieniem, to 2-4 dni robocze. Wdrożenie CRM zwykle 3-6 tygodni.",
+      "Prosta integracja, np. formularz do CRM z powiadomieniem, to 2–4 dni robocze. Wdrożenie CRM zwykle 2–3 tygodnie.",
   },
   {
     question: "Kto to potem utrzymuje?",
@@ -146,7 +146,7 @@ function renderStep(step: Step) {
           </p>
           <div>
             <p className="text-sm font-semibold text-gray-900 dark:text-white mb-2">
-              Co dostajecie:
+              Co dostajesz:
             </p>
             <ul className="space-y-1.5">
               {step.deliverables.map((d) => (
