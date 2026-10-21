@@ -2,6 +2,7 @@
 
 import { odmien } from "@/lib/odmiana";
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 
 import Przyklady from "@/components/Przyklady";
 import SkanAdresu from "@/components/SkanAdresu";
@@ -468,6 +469,7 @@ export default function AudytCheck() {
 
   const [email, setEmail] = useState("");
   const [zgoda, setZgoda] = useState(false);
+  const [pytanie, setPytanie] = useState("");
   const [mailStan, setMailStan] = useState<"idle" | "wysylamy" | "ok" | "blad">(
     "idle",
   );
@@ -589,6 +591,7 @@ export default function AudytCheck() {
           podpis: wynik.podpis,
           email,
           zgoda,
+          pytanie: pytanie.trim(),
         }),
       });
       const dane = await res.json().catch(() => null);
@@ -599,6 +602,8 @@ export default function AudytCheck() {
       }
       setMailStan("ok");
       zglosZdarzenie("audyt_raport_na_maila");
+      zglosZdarzenie("zapis_email");
+      if (pytanie.trim()) zglosZdarzenie("odpowiedz_kwalifikujaca");
     } catch {
       setMailBlad("Brak połączenia. Spróbuj ponownie za chwilę.");
       setMailStan("blad");
@@ -799,6 +804,24 @@ export default function AudytCheck() {
                   Jeżeli nie dotrze w ciągu kilku minut, zajrzyj do spamu.
                   Zgodę wycofasz, odpisując jednym słowem.
                 </p>
+                <div className="mt-4 flex flex-col gap-2 sm:flex-row">
+                  <Link
+                    href="/kontakt?utm_source=bramka&utm_campaign=audyt-strony"
+                    onClick={() => zglosZdarzenie("klik_umow_15")}
+                    className="btn-primary"
+                  >
+                    Umów 15 minut
+                  </Link>
+                  <a
+                    href="https://www.facebook.com/groups/2196867334594283/"
+                    target="_blank"
+                    rel="noopener"
+                    onClick={() => zglosZdarzenie("klik_grupa")}
+                    className="btn-secondary"
+                  >
+                    Dołącz do grupy o stronach dla małych firm
+                  </a>
+                </div>
               </div>
             ) : (
               <>
@@ -841,6 +864,19 @@ export default function AudytCheck() {
                       kontakt w sprawie jego wyników. Zgodę mogę wycofać w
                       każdej chwili, odpisując na wiadomość.
                     </span>
+                  </label>
+                  <label className="block">
+                    <span className="text-sm text-gray-700 dark:text-gray-300">
+                      Czym zajmuje się Twoja firma i co teraz najbardziej Cię
+                      męczy? (nieobowiązkowe)
+                    </span>
+                    <textarea
+                      value={pytanie}
+                      onChange={(e) => setPytanie(e.target.value)}
+                      rows={2}
+                      placeholder="Na przykład: salon kosmetyczny, mało zapytań ze strony"
+                      className="mt-1 w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm text-gray-900 outline-none focus:border-accent dark:border-gray-700 dark:bg-gray-950 dark:text-white"
+                    />
                   </label>
                   {mailStan === "blad" && (
                     <p className="text-sm text-red-700 dark:text-red-400">

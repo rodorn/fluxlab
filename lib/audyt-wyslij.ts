@@ -37,6 +37,7 @@ async function przezResend(
   temat: string,
   html: string,
   tekst: string,
+  naglowki?: Record<string, string>,
 ): Promise<boolean> {
   const klucz = process.env.RESEND_API_KEY;
   if (!klucz || klucz.startsWith("re_placeholder")) return false;
@@ -48,6 +49,7 @@ async function przezResend(
       subject: temat,
       html,
       text: tekst,
+      ...(naglowki ? { headers: naglowki } : {}),
     });
     return !wynik.error;
   } catch {
@@ -60,6 +62,7 @@ async function przezSmtp(
   temat: string,
   html: string,
   tekst: string,
+  naglowki?: Record<string, string>,
 ): Promise<boolean> {
   const { SMTP_HOST, SMTP_USER, SMTP_PASS } = process.env;
   if (!SMTP_HOST || !SMTP_USER || !SMTP_PASS) return false;
@@ -77,6 +80,7 @@ async function przezSmtp(
       subject: temat,
       html,
       text: tekst,
+      ...(naglowki ? { headers: naglowki } : {}),
     });
     return true;
   } catch {
@@ -90,8 +94,12 @@ export async function wyslij(
   temat: string,
   html: string,
   tekst: string,
+  naglowki?: Record<string, string>,
 ): Promise<boolean> {
-  return (await przezResend(to, temat, html, tekst)) || przezSmtp(to, temat, html, tekst);
+  return (
+    (await przezResend(to, temat, html, tekst, naglowki)) ||
+    przezSmtp(to, temat, html, tekst, naglowki)
+  );
 }
 
 export type WpisZgody = {
@@ -106,7 +114,10 @@ export type WpisZgody = {
  * skasować albo przeoczyć, a przy pytaniu, na co dokładnie ktoś się zgodził,
  * potrzebny jest zapis z datą i treścią.
  */
-export async function zapiszZgode(w: WpisZgody): Promise<boolean> {
+export async function zapiszZgode(
+  w: WpisZgody,
+  tresc: string = TRESC_ZGODY,
+): Promise<boolean> {
   // Ta sama zmienna, z której korzysta licznik wizyt. Druga nazwa na ten
   // sam kolektor skończyłaby się tym, że jedna z nich kiedyś nie zostanie
   // ustawiona i zgody po cichu przestaną się zapisywać.
@@ -119,7 +130,7 @@ export async function zapiszZgode(w: WpisZgody): Promise<boolean> {
         "Content-Type": "application/json",
         ...(sekret ? { "X-Sekret": sekret } : {}),
       },
-      body: JSON.stringify({ ...w, tresc_zgody: TRESC_ZGODY }),
+      body: JSON.stringify({ ...w, tresc_zgody: tresc }),
       signal: AbortSignal.timeout(6000),
     });
     return odp.ok;
@@ -148,18 +159,18 @@ export async function wyslijDoKlienta(
  */
 export async function wyslijKopie(
   dane: DaneRaportu,
-  kontekst: { email?: string; zgoda?: boolean; zrodlo?: string },
+  kontekst: { email?: string; zgoda?: boolean; zrodlo?: string; pytanie?: string },
 ): Promise<boolean> {
   const kto = kontekst.email
     ? `${kontekst.email}${kontekst.zgoda ? " (zgoda marketingowa TAK)" : " (bez zgody)"}`
     : "nie zostawił adresu";
   const naglowek = `<div style="background:#111827;color:#f9fafb;padding:12px 16px;font-family:monospace;font-size:13px">
-    kontakt: ${kto}<br>źródło: ${kontekst.zrodlo ?? "nieznane"}
+    kontakt: ${kto}<br>źródło: ${kontekst.zrodlo ?? "nieznane"}${kontekst.pytanie ? `<br>pytanie kwalifikujące: ${kontekst.pytanie.replace(/</g, "&lt;")}` : ""}
   </div>`;
   return wyslij(
     DO_WLASCICIELA,
     `[audyt] ${dane.domena} · ${dane.punkty}/100 · ${kontekst.email ? "LEAD" : "anonim"}`,
     naglowek + zlozRaportHtml(dane, true),
-    `Kontakt: ${kto}\nŹródło: ${kontekst.zrodlo ?? "nieznane"}\n\n` + zlozRaportTekst(dane),
+    `Kontakt: ${kto}\nŹródło: ${kontekst.zrodlo ?? "nieznane"}${kontekst.pytanie ? `\nPytanie kwalifikujące: ${kontekst.pytanie}` : ""}\n\n` + zlozRaportTekst(dane),
   );
 }

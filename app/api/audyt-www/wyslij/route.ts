@@ -15,12 +15,14 @@ export async function POST(request: Request) {
   let podpis = "";
   let email = "";
   let zgoda = false;
+  let pytanie = "";
   try {
     const body = await request.json();
     dokument = typeof body?.dokument === "string" ? body.dokument : "";
     podpis = typeof body?.podpis === "string" ? body.podpis : "";
     email = typeof body?.email === "string" ? body.email.trim().toLowerCase().slice(0, 320) : "";
     zgoda = body?.zgoda === true;
+    pytanie = typeof body?.pytanie === "string" ? body.pytanie.replace(/\s+/g, " ").trim().slice(0, 1000) : "";
   } catch {
     return NextResponse.json({ error: "Nieprawidłowe zapytanie." }, { status: 400 });
   }
@@ -58,7 +60,7 @@ export async function POST(request: Request) {
   const zapisano = await zapiszZgode({
     email,
     okazja: "audyt_strony",
-    szczegol: dane.domena,
+    szczegol: pytanie ? `${dane.domena} | ${pytanie}` : dane.domena,
     zrodlo: request.headers.get("referer") ?? "",
   });
 
@@ -77,6 +79,7 @@ export async function POST(request: Request) {
     email,
     zgoda: true,
     zrodlo: request.headers.get("referer") ?? undefined,
+    pytanie,
   });
 
   return NextResponse.json({ ok: true, zapisanoZgode: zapisano });
