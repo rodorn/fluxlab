@@ -4,6 +4,7 @@ import { useState, useMemo, useRef, useCallback, useEffect } from "react";
 import Image from "next/image";
 import { event as gaEvent } from "@/lib/gtag";
 import { zglosZdarzenie } from "@/lib/zdarzenie";
+import BramkaEmail from "@/components/BramkaEmail";
 
 /* ═══════════════════════════════════════════════════
    STAŁE PODATKOWE 2026
@@ -2413,6 +2414,19 @@ export default function TaxCalculator({ waski = false }: { waski?: boolean }) {
             </a>
             .
           </p>
+
+          <BramkaEmail
+            narzedzie="kalkulator-podatkowy"
+            tytul={`Najkorzystniej: ${best.label}, ${pln(Math.round(best.disposable / 12))} miesięcznie do dyspozycji`}
+            linie={[
+              `Przychód ${pln(monthlyRevenue)} miesięcznie, rok ${YEAR}.`,
+              ...([results.skala, results.linear, results.ryczalt] as TaxResult[]).map(
+                (r) =>
+                  `${r.label}: do dyspozycji ${pln(Math.round(r.disposable / 12))} miesięcznie; podatek ${pln(Math.round(r.incomeTax))}, składka zdrowotna ${pln(Math.round(r.healthInsurance))}, ZUS społeczny ${pln(Math.round(r.zusSpoleczne))} rocznie.`,
+              ),
+              "Kalkulator ma charakter poglądowy. Przed zmianą formy opodatkowania warto potwierdzić wynik z księgowym.",
+            ]}
+          />
 
           {/* Disclaimer */}
           <div className="rounded-xl bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 p-4 text-sm text-amber-800 dark:text-amber-200">

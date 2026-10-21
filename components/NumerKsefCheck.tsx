@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Przyklady from "@/components/Przyklady";
 import { zglosZdarzenie } from "@/lib/zdarzenie";
+import BramkaEmail from "@/components/BramkaEmail";
 
 // Wszystko liczymy w przegladarce. Numer KSeF ma sume kontrolna CRC-8
 // (wielomian 0x07, start 0x00) liczona z pierwszych 32 znakow razem z
@@ -263,6 +264,14 @@ export default function NumerKsefCheck() {
             </Link>
             .
           </p>
+          <BramkaEmail
+            narzedzie="numer-ksef"
+            tytul={`Poprawnych numerów KSeF: ${dobre} z ${wyniki.length}`}
+            linie={wyniki.map(
+              (w) =>
+                `${w.numer ?? w.wejscie}: ${w.poprawny ? "poprawny" : "błędny"}${w.nip ? `, NIP sprzedawcy ${w.nip}` : ""}${w.data ? `, przyjęty w KSeF ${w.data}` : ""}. ${w.uwagi.join(" ")}`.trim(),
+            )}
+          />
         </div>
       )}
     </div>

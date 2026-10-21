@@ -117,6 +117,40 @@ export default function PolitykaPrywatnosci() {
                         </ul>
                       </section>
 
+                      {/* Bramka e-mail w narzędziach */}
+                      <section id="bramka" className="scroll-mt-24">
+                        <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+                          Pełny wynik narzędzia na e-mail
+                        </h2>
+                        <p>
+                          W wybranych narzędziach (sprawdzenie numeru KSeF,
+                          kalkulator podatkowy, audyt strony) możesz poprosić
+                          o pełny wynik na e-mail. Podanie adresu jest
+                          dobrowolne, a wynik skrócony widzisz na ekranie bez
+                          niego. Gdy podasz adres i zaznaczysz zgodę,
+                          zapisujemy: adres e-mail, nazwę narzędzia, datę,
+                          treść zgody, stronę, z której przyszło zgłoszenie, i
+                          odpowiedź na pytanie o firmę, jeśli ją wpiszesz.
+                        </p>
+                        <p className="mt-2">
+                          Cel: wysłanie wyniku i trzech maili z poradami do
+                          niego. Podstawa: Twoja zgoda (art. 6 ust. 1 lit. a
+                          RODO). Zgodę wycofujesz w każdej chwili jednym
+                          kliknięciem w link „Wypisz mnie” w każdej wiadomości
+                          albo pisząc na pawel@fluxlab.pl. Po wycofaniu nie
+                          wysyłamy już nic, a sam zapis zgody z datą wycofania
+                          przechowujemy do 3 lat jako dowód, że wysyłka była
+                          zgodna z prawem. Dane nie są sprzedawane ani
+                          przekazywane innym firmom poza dostawcą wysyłki
+                          poczty (Resend) i serwerem w OVH (Polska).
+                        </p>
+                        <p className="mt-2">
+                          Odpowiedź na pytanie o firmę możesz wysłać także bez
+                          adresu e-mail. Wtedy trafia do nas jako anonimowa
+                          wskazówka i nie da się jej powiązać z Tobą.
+                        </p>
+                      </section>
+
                       {/* 3 */}
                       <section>
                         <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
