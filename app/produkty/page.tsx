@@ -5,7 +5,13 @@ import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import CTA from "@/components/CTA";
 import KatalogProduktow from "@/components/KatalogProduktow";
-import { CENNIK as PRODUCTS } from "@/lib/products";
+import ZaZlotowke from "@/components/ZaZlotowke";
+import { CENNIK as PRODUCTS, cenaWejscia } from "@/lib/products";
+
+const DO_KALKULATORA = PRODUCTS.flatMap((p) => {
+  const cena = cenaWejscia(p.price);
+  return cena && !/\/mc/.test(p.price) ? [{ nazwa: p.name, href: p.href, cena }] : [];
+});
 
 export const metadata: Metadata = {
   title: "Cennik: usługi ze stałą ceną | Fluxlab",
@@ -64,6 +70,7 @@ export default function ProduktyPage() {
         </section>
 
         <section className="container-wide pb-14 md:pb-20">
+          <ZaZlotowke pozycje={DO_KALKULATORA} />
           <div className="mt-8 lg:mt-12">
             <KatalogProduktow />
           </div>

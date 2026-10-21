@@ -187,6 +187,8 @@ export default function ScenaLeada() {
   const [blad, setBlad] = useState("");
   // Telefon dostaje powiadomienie dopiero, gdy dane „przejdą” łącznikiem z CRM.
   const [telefon, setTelefon] = useState(false);
+  const [rozmowa, setRozmowa] = useState(false);
+  const [sekRozmowy, setSekRozmowy] = useState(0);
   const zegar = useRef<number | null>(null);
   const scena = useRef<HTMLDivElement | null>(null);
   const zrodlo = useRef<HTMLParagraphElement | null>(null);
@@ -255,6 +257,17 @@ export default function ScenaLeada() {
   );
 
   // Szkic odpowiedzi „pisze się” na ekranie telefonu.
+  useEffect(() => {
+    setRozmowa(false);
+  }, [karta]);
+
+  useEffect(() => {
+    if (!rozmowa) return;
+    setSekRozmowy(0);
+    const t = window.setInterval(() => setSekRozmowy((v) => v + 1), 1000);
+    return () => window.clearInterval(t);
+  }, [rozmowa]);
+
   useEffect(() => {
     setTelefon(false);
     if (!karta) return;
@@ -489,7 +502,33 @@ export default function ScenaLeada() {
             Telefon handlowca
           </p>
           <div className="mt-5 text-left">
-            {karta && telefon ? (
+            {karta && telefon && rozmowa ? (
+              <div className="scena-wjazd rounded-2xl bg-white/90 p-3 shadow-lg ring-1 ring-gray-900/5 backdrop-blur dark:bg-white/10 dark:ring-white/10">
+                <p className="flex items-center justify-between text-[10px] font-semibold uppercase tracking-wider text-accent">
+                  <span>Rozmowa z klientem</span>
+                  <span className="tabular-nums">
+                    {String(Math.floor(sekRozmowy / 60)).padStart(2, "0")}:{String(sekRozmowy % 60).padStart(2, "0")}
+                  </span>
+                </p>
+                <p className="mt-1 text-sm font-semibold text-gray-900 dark:text-white">{karta.temat}</p>
+                <dl className="mt-2 space-y-1 text-[11px] text-gray-700 dark:text-white/80">
+                  {POLA.map(([k, nazwa]) => (
+                    <div key={k} className="flex justify-between gap-2">
+                      <dt className="text-gray-500 dark:text-white/50">{nazwa}</dt>
+                      <dd className="text-right font-medium">{String(karta[k])}</dd>
+                    </div>
+                  ))}
+                </dl>
+                <p className="mt-2 text-[11px] leading-snug text-gray-700 dark:text-white/80">{karta.nastepny_krok}</p>
+                <button
+                  type="button"
+                  onClick={() => setRozmowa(false)}
+                  className="mt-3 w-full rounded-full bg-red-600 py-2 text-xs font-semibold text-white"
+                >
+                  Rozłącz
+                </button>
+              </div>
+            ) : karta && telefon ? (
               <div className="scena-wjazd rounded-2xl bg-white/90 p-3 shadow-lg ring-1 ring-gray-900/5 backdrop-blur dark:bg-white/10 dark:ring-white/10">
                 <p className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wider text-accent">
                   <span className="h-1.5 w-1.5 rounded-full bg-accent-solid" />
@@ -512,6 +551,16 @@ export default function ScenaLeada() {
                     <span className="ml-0.5 inline-block h-3 w-1 animate-pulse bg-accent align-middle" />
                   )}
                 </p>
+                <button
+                  type="button"
+                  onClick={() => {
+                    zglosZdarzenie("scena_leada_odbierz");
+                    setRozmowa(true);
+                  }}
+                  className="mt-2 w-full rounded-full bg-green-600 py-2 text-xs font-semibold text-white"
+                >
+                  Odbierz
+                </button>
               </div>
             ) : (
               <p className="pt-10 text-center text-xs text-gray-400 dark:text-white/40">

@@ -23,6 +23,8 @@ const FORMY: { id: Kontakt; nazwa: string; opis: string }[] = [
 
 
 
+const KROKI = ["Czego potrzebujesz", "Gdzie odpisać", "Jak się odezwać"];
+
 interface Props {
   /** Identyfikator formularza w GA, np. "diagnosis_lp_leadow". */
   formId: string;
@@ -55,6 +57,7 @@ export default function LandingForm({
   const formStartedRef = useRef(false);
   const [kontakt, setKontakt] = useState<Kontakt>("email");
   const [termin, setTermin] = useState("");
+  const [krok, setKrok] = useState(0);
 
   useEffect(() => {
     setUtm(readUtm());
@@ -242,8 +245,42 @@ export default function LandingForm({
     } catch {}
   }
 
+  /** Pierwsze niepoprawne pole w danym kroku (walidacja przeglądarki jak dotąd). */
+  function niepoprawne(k: number) {
+    const el = formRef.current?.querySelector(`[data-krok="${k}"]`);
+    if (!el) return null;
+    const pola = Array.from(el.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>("input, textarea"));
+    return pola.find((p) => !p.checkValidity()) ?? null;
+  }
+
+  function pokazBlad(k: number, pole: HTMLInputElement | HTMLTextAreaElement) {
+    setKrok(k);
+    window.setTimeout(() => pole.reportValidity(), 0);
+  }
+
+  function dalej() {
+    const zle = niepoprawne(krok);
+    if (zle) {
+      zle.reportValidity();
+      return;
+    }
+    setErrorMsg(null);
+    setKrok(Math.min(2, krok + 1));
+  }
+
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (krok < 2) {
+      dalej();
+      return;
+    }
+    for (const k of [0, 1, 2]) {
+      const zle = niepoprawne(k);
+      if (zle) {
+        pokazBlad(k, zle);
+        return;
+      }
+    }
     if (kontakt === "meet" && !termin) {
       setErrorMsg("Wybierz godzinę spotkania.");
       return;
@@ -333,6 +370,7 @@ export default function LandingForm({
 
       <form
         ref={formRef}
+        noValidate
         onSubmit={handleSubmit}
         onInput={zapiszSzkic}
         onFocus={handleFormStart}
@@ -359,44 +397,27 @@ export default function LandingForm({
           />
         </div>
 
-        <div className="grid sm:grid-cols-2 gap-5">
-          <div>
-            <label
-              htmlFor="email"
-              className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5"
-            >
-              E-mail <span className="text-accent">*</span>
-            </label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              required
-              placeholder="np. pawel@firma.pl"
-              className={inputClass}
-            />
-          </div>
-          <div>
-            <label
-              htmlFor="company"
-              className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5"
-            >
-              Firma{" "}
-              <span className="text-gray-600 dark:text-gray-400 font-normal text-xs">
-                (opcjonalnie)
+        <ol aria-label="Postęp formularza" className="flex items-center justify-center gap-2 text-xs text-gray-600 dark:text-gray-400">
+          {KROKI.map((n, i) => (
+            <li key={n} className="flex items-center gap-2" aria-current={krok === i ? "step" : undefined}>
+              <span
+                className={`flex h-6 w-6 items-center justify-center rounded-full border text-[11px] font-semibold transition-colors ${
+                  i < krok
+                    ? "border-accent bg-accent-solid text-white"
+                    : i === krok
+                      ? "border-accent text-accent"
+                      : "border-gray-300 dark:border-gray-600"
+                }`}
+              >
+                {i < krok ? "✓" : i + 1}
               </span>
-            </label>
-            <input
-              id="company"
-              name="company"
-              type="text"
-              placeholder="Nazwa firmy albo NIP"
-              onBlur={uzupelnijZNip}
-              className={inputClass}
-            />
-          </div>
-        </div>
+              <span className={i === krok ? "font-semibold text-gray-900 dark:text-white" : "hidden sm:inline"}>{n}</span>
+              {i < KROKI.length - 1 && <span aria-hidden="true" className="h-px w-5 bg-gray-300 dark:bg-gray-600" />}
+            </li>
+          ))}
+        </ol>
 
+        <div data-krok="0" hidden={krok !== 0} className="space-y-5">
         <div>
           <label
             htmlFor="message"
@@ -448,6 +469,50 @@ export default function LandingForm({
           )}
         </div>
 
+        </div>
+
+        <div data-krok="1" hidden={krok !== 1} className="space-y-5">
+        <div className="grid sm:grid-cols-2 gap-5">
+          <div>
+            <label
+              htmlFor="email"
+              className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5"
+            >
+              E-mail <span className="text-accent">*</span>
+            </label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              required
+              placeholder="np. pawel@firma.pl"
+              className={inputClass}
+            />
+          </div>
+          <div>
+            <label
+              htmlFor="company"
+              className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5"
+            >
+              Firma{" "}
+              <span className="text-gray-600 dark:text-gray-400 font-normal text-xs">
+                (opcjonalnie)
+              </span>
+            </label>
+            <input
+              id="company"
+              name="company"
+              type="text"
+              placeholder="Nazwa firmy albo NIP"
+              onBlur={uzupelnijZNip}
+              className={inputClass}
+            />
+          </div>
+        </div>
+
+        </div>
+
+        <div data-krok="2" hidden={krok !== 2} className="space-y-5">
         <fieldset>
           <legend className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
             Jak mamy się odezwać?
@@ -509,13 +574,33 @@ export default function LandingForm({
           />
         )}
 
-        <button
-          type="submit"
-          disabled={loading}
-          className="btn-primary btn-lg w-full disabled:opacity-60"
-        >
-          {loading ? "Wysyłanie..." : submitLabel}
-        </button>
+        </div>
+
+        {krok < 2 ? (
+          <div className="flex gap-3">
+            {krok > 0 && (
+              <button type="button" onClick={() => setKrok(krok - 1)} className="btn-secondary">
+                Wstecz
+              </button>
+            )}
+            <button type="button" onClick={dalej} className="btn-primary btn-lg flex-1">
+              Dalej
+            </button>
+          </div>
+        ) : (
+          <div className="flex gap-3">
+            <button type="button" onClick={() => setKrok(1)} className="btn-secondary">
+              Wstecz
+            </button>
+            <button
+              type="submit"
+              disabled={loading}
+              className="btn-primary btn-lg flex-1 disabled:opacity-60"
+            >
+              {loading ? "Wysyłanie..." : submitLabel}
+            </button>
+          </div>
+        )}
 
         {errorMsg && (
           <p role="alert" className="text-center text-sm text-red-700 dark:text-red-400">{errorMsg}</p>

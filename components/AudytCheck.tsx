@@ -4,6 +4,8 @@ import { odmien } from "@/lib/odmiana";
 import { useEffect, useRef, useState } from "react";
 
 import Przyklady from "@/components/Przyklady";
+import SkanAdresu from "@/components/SkanAdresu";
+import PorownanieZFluxlab from "@/components/PorownanieZFluxlab";
 import { zglosZdarzenie } from "@/lib/zdarzenie";
 import DalejPoWyniku from "@/components/DalejPoWyniku";
 import ZamowAudytCalosci from "@/components/ZamowAudytCalosci";
@@ -584,6 +586,7 @@ export default function AudytCheck() {
         // Wysokość zbliżona do wyniku, żeby w trakcie badania cennik nie
         // podjeżdżał pod pole, a potem nie uciekał w dół.
         <div className="min-h-[70vh]">
+          <SkanAdresu domena={domena} etap={etap} liczbaEtapow={ETAPY.length} />
           <ol className="mt-5 space-y-2">
             {ETAPY.map((tekst, i) => (
               <li
@@ -683,6 +686,17 @@ export default function AudytCheck() {
               </div>
             </div>
           </div>
+
+          {wynik.punkty !== null && (
+            <PorownanieZFluxlab
+              domena={wynik.domena}
+              wynik={{
+                punkty: wynik.punkty,
+                krytyczne: liczby.krytyczne ?? 0,
+                wazne: liczby.wazne ?? 0,
+              }}
+            />
+          )}
 
           <PopravTo
             domena={wynik.domena}

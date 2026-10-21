@@ -67,6 +67,88 @@ function useAnimowana(cel: number) {
   return wartosc;
 }
 
+/** Schemat strony składa się na żywo z wybranych opcji. To makieta, nie projekt. */
+function PodgladMakiety({ rodzajId, wybrane }: { rodzajId: string; wybrane: string[] }) {
+  const ma = (id: string) => wybrane.includes(id) || OPCJE_STRONY[id].wCenie.includes(rodzajId);
+  const blok = "rounded bg-gray-200 dark:bg-white/10";
+  const menu = rodzajId === "landing" ? 2 : rodzajId === "firmowa" ? 5 : 4;
+  return (
+    <div
+      aria-hidden="true"
+      className="mx-auto mt-8 max-w-2xl overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-lg dark:border-gray-700 dark:bg-gray-900"
+    >
+      <div className="flex items-center gap-1.5 border-b border-gray-200 bg-gray-50 px-3 py-2 dark:border-gray-700 dark:bg-gray-950">
+        <span className="h-2 w-2 rounded-full bg-gray-300 dark:bg-white/20" />
+        <span className="h-2 w-2 rounded-full bg-gray-300 dark:bg-white/20" />
+        <span className="h-2 w-2 rounded-full bg-gray-300 dark:bg-white/20" />
+        <span className="ml-2 h-4 flex-1 rounded bg-white dark:bg-gray-900" />
+      </div>
+      <div className="space-y-3 p-4">
+        <div className="flex items-center gap-2 transition-all duration-300">
+          <span className="h-4 w-12 rounded bg-accent-solid" />
+          <span className="flex-1" />
+          {Array.from({ length: menu }).map((_, i) => (
+            <span key={i} className={`h-2 w-8 ${blok} transition-all duration-300`} />
+          ))}
+          {ma("en") && (
+            <span className="rounded border border-accent px-1 text-[9px] font-semibold text-accent">PL / EN</span>
+          )}
+        </div>
+        <div className="grid grid-cols-[1.4fr_1fr] gap-3 rounded-xl bg-accent/10 p-4">
+          <div className="space-y-2">
+            <span className={`block h-3 w-4/5 ${blok}`} />
+            <span className={`block h-3 w-3/5 ${blok}`} />
+            <span className={`block h-2 w-full ${blok}`} />
+            <span className="mt-1 inline-block h-5 w-16 rounded-full bg-accent-solid" />
+          </div>
+          {rodzajId === "landing" ? (
+            <div className="space-y-1.5 rounded-lg border border-accent/40 bg-white p-2 dark:bg-gray-900">
+              <span className={`block h-2 ${blok}`} />
+              <span className={`block h-2 ${blok}`} />
+              <span className="block h-3 rounded bg-accent-solid" />
+              {ma("crm") && <span className="block text-[9px] font-semibold text-accent">do CRM</span>}
+            </div>
+          ) : (
+            <span className="rounded-lg bg-gray-200/70 dark:bg-white/10" />
+          )}
+        </div>
+        {rodzajId === "sklep" ? (
+          <div className="grid grid-cols-4 gap-2">
+            {[0, 1, 2, 3].map((i) => (
+              <div key={i} className="space-y-1">
+                <span className={`block aspect-square ${blok}`} />
+                <span className={`block h-2 w-3/4 ${blok}`} />
+                <span className="block h-2 w-1/2 rounded bg-accent/50" />
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="grid grid-cols-3 gap-2">
+            {[0, 1, 2].map((i) => (
+              <span key={i} className={`h-10 ${blok}`} />
+            ))}
+          </div>
+        )}
+        {wybrane.includes("blog") && (
+          <div className="grid grid-cols-3 gap-2 border-t border-dashed border-accent/50 pt-3">
+            {[0, 1, 2].map((i) => (
+              <div key={i} className="space-y-1">
+                <span className="block h-1.5 w-1/3 rounded bg-accent/60" />
+                <span className={`block h-2 ${blok}`} />
+              </div>
+            ))}
+          </div>
+        )}
+        <div className="flex flex-wrap items-center gap-2 text-[10px] font-semibold text-accent">
+          {ma("cms") && <span className="rounded-full border border-accent/50 px-2 py-0.5">panel treści</span>}
+          {ma("crm") && rodzajId !== "landing" && <span className="rounded-full border border-accent/50 px-2 py-0.5">formularz do CRM</span>}
+          {ma("platnosci") && <span className="rounded-full border border-accent/50 px-2 py-0.5">płatności</span>}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function KonfiguratorStrony() {
   const [rodzajId, setRodzajId] = useState("firmowa");
   const [wybrane, setWybrane] = useState<string[]>([]);
@@ -207,6 +289,8 @@ export default function KonfiguratorStrony() {
             );
           })}
         </div>
+
+        <PodgladMakiety rodzajId={rodzajId} wybrane={wybrane} />
 
         <div className="mx-auto mt-8 max-w-2xl rounded-2xl border border-accent bg-white p-6 text-center shadow-lg shadow-accent/10 dark:bg-gray-800/60">
           <p className="text-sm font-semibold text-gray-900 dark:text-white">

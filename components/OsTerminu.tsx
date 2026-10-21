@@ -1,5 +1,7 @@
 "use client";
 
+import { useState } from "react";
+
 /** Oś czasu 11:00–24:00 z suwakiem co 15 minut. Zajęte kwadranse są
  *  zaszarzone, a suwak przeskakuje na najbliższy wolny start. */
 
@@ -26,6 +28,9 @@ export default function OsTerminu({
   wybrana: string;
   onWybierz: (t: string) => void;
 }) {
+  // Podczas przeciągania suwak idzie za palcem co minutę, a rezerwacja
+  // przeskakuje na najbliższy wolny start. Po puszczeniu ramka dojeżdża płynnie.
+  const [reka, setReka] = useState<number | null>(null);
   const wolneMin = wolne.map(naMin);
   const wolny = new Set(wolneMin);
   const startMin = wybrana ? naMin(wybrana) : null;
@@ -48,6 +53,22 @@ export default function OsTerminu({
     if (t !== null) onWybierz(hhmm(t));
   };
 
+  const kierunek = (od: number, k: 1 | -1) => {
+    const kolejne = wolneMin.filter((t) => (k === 1 ? t > od : t < od));
+    return kolejne.length ? (k === 1 ? Math.min(...kolejne) : Math.max(...kolejne)) : null;
+  };
+  const klawisz = (e: React.KeyboardEvent) => {
+    const od = startMin ?? OD;
+    let t: number | null | undefined;
+    if (e.key === "ArrowRight" || e.key === "ArrowUp") t = kierunek(od, 1);
+    else if (e.key === "ArrowLeft" || e.key === "ArrowDown") t = kierunek(od, -1);
+    else if (e.key === "Home") t = Math.min(...wolneMin);
+    else if (e.key === "End") t = Math.max(...wolneMin);
+    else return;
+    e.preventDefault();
+    if (t !== null && t !== undefined) onWybierz(hhmm(t));
+  };
+  const pokazana = reka ?? startMin;
   const pelne = wolneMin.filter((t) => t % 60 === 0).slice(0, 6);
 
   if (!wolneMin.length) {
@@ -103,13 +124,33 @@ export default function OsTerminu({
             );
           })}
         </div>
+        {pokazana !== null && (
+          <span
+            aria-hidden="true"
+            className={`pointer-events-none absolute top-0 h-10 rounded-lg border-2 border-accent bg-white/30 shadow-md dark:bg-white/10 ${
+              reka === null ? "transition-[left] duration-200 ease-out" : ""
+            }`}
+            style={{
+              width: `${(DLUGOSC / (DO - OD)) * 100}%`,
+              left: `${((pokazana - OD) / (OSTATNI - OD)) * (100 - (DLUGOSC / (DO - OD)) * 100)}%`,
+            }}
+          />
+        )}
         <input
           type="range"
           min={OD}
           max={OSTATNI}
-          step={KROK}
-          value={startMin ?? OD}
-          onChange={(e) => przesun(+e.target.value)}
+          step={1}
+          value={pokazana ?? OD}
+          onChange={(e) => {
+            const v = +e.target.value;
+            setReka(v);
+            przesun(v);
+          }}
+          onPointerUp={() => setReka(null)}
+          onPointerCancel={() => setReka(null)}
+          onBlur={() => setReka(null)}
+          onKeyDown={klawisz}
           aria-label="Godzina spotkania"
           aria-valuetext={
             startMin !== null
