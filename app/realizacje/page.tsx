@@ -5,6 +5,8 @@ import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import CTA from "@/components/CTA";
 import { WDROZENIA } from "@/lib/wdrozenia";
+import RealizacjaFinreal from "@/components/RealizacjaFinreal";
+import KursorZobacz from "@/components/KursorZobacz";
 
 export const metadata: Metadata = {
   title: "Realizacje: wdrożenia i ich efekty | Fluxlab",
@@ -167,7 +169,9 @@ export default function RealizacjePage() {
             </p>
           </div>
 
-          <div className="mt-12 grid gap-5 md:grid-cols-2">
+          <RealizacjaFinreal />
+
+          <div className="mt-16 grid gap-5 md:grid-cols-2">
             {WDROZENIA.map((w) => (
               <article
                 key={w.tytul}
@@ -230,7 +234,8 @@ export default function RealizacjePage() {
                   {group.items.map((item) => (
                     <div
                       key={item.repo}
-                      className="flex flex-col rounded-2xl border border-gray-200/80 dark:border-gray-800/80 bg-white/60 dark:bg-gray-900/40 p-6 transition-colors hover:border-accent/50"
+                      data-kursor-zobacz
+                      className="relative flex flex-col rounded-2xl border border-gray-200/80 dark:border-gray-800/80 bg-white/60 dark:bg-gray-900/40 p-6 transition-colors hover:border-accent/50"
                     >
                       <h4 className="text-lg font-semibold text-gray-900 dark:text-white">
                         {item.name}
@@ -252,7 +257,7 @@ export default function RealizacjePage() {
                         {item.landing && (
                           <Link
                             href={item.landing}
-                            className="text-sm font-semibold text-accent hover:underline"
+                            className="relative z-10 text-sm font-semibold text-accent hover:underline"
                           >
                             Zamawiam / szczegóły →
                           </Link>
@@ -261,7 +266,7 @@ export default function RealizacjePage() {
                           href={item.repo}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className={`text-sm font-semibold hover:underline ${
+                          className={`text-sm font-semibold hover:underline after:absolute after:inset-0 after:content-[''] ${
                             item.landing
                               ? "text-gray-900 dark:text-white"
                               : "text-accent"
@@ -274,7 +279,7 @@ export default function RealizacjePage() {
                             href={item.live}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-sm font-semibold text-gray-900 dark:text-white hover:underline"
+                            className="relative z-10 text-sm font-semibold text-gray-900 dark:text-white hover:underline"
                           >
                             Zobacz na żywo →
                           </a>
@@ -288,6 +293,7 @@ export default function RealizacjePage() {
           </div>
         </section>
         <CTA />
+        <KursorZobacz />
       </main>
       <Footer />
     </>
