@@ -271,7 +271,6 @@ html.dark {
       ),
       radial-gradient(at 70% 80%, rgba(99, 102, 241, 0.08) 0px, transparent 50%),
       radial-gradient(at 10% 90%, rgba(99, 102, 241, 0.1) 0px, transparent 50%);
-    animation: mesh-shift 20s ease-in-out infinite;
   }
 
   .dark .bg-mesh {
@@ -677,24 +676,6 @@ html.dark {
     }
   }
 
-  /* Mesh gradient shift */
-  @keyframes mesh-shift {
-    0%,
-    100% {
-      background-position:
-        0% 0%,
-        100% 0%,
-        100% 100%,
-        0% 100%;
-    }
-    50% {
-      background-position:
-        10% 10%,
-        90% 5%,
-        85% 90%,
-        5% 95%;
-    }
-  }
 
   /* Marquee — nieskończony scroll */
   @keyframes marquee {
@@ -721,32 +702,7 @@ html.dark {
   }
 }
 
-/* Scena leada na stronie głównej: kropka biegnie łącznikiem, karta wjeżdża */
-.scena-kropka {
-  position: absolute;
-  left: 50%;
-  top: 0;
-  width: 10px;
-  height: 10px;
-  margin: -5px 0 0 -5px;
-  border-radius: 9999px;
-  background: rgb(var(--accent));
-  box-shadow: 0 0 12px rgb(var(--accent) / 0.8);
-  animation: scena-pion 0.9s ease-in-out forwards;
-}
-@media (min-width: 768px) {
-  .scena-kropka {
-    top: 50%;
-    left: 0;
-    animation-name: scena-poziom;
-  }
-}
-@keyframes scena-pion {
-  to { top: 100%; }
-}
-@keyframes scena-poziom {
-  to { left: 100%; }
-}
+/* Scena leada na stronie głównej: karta wjeżdża */
 .scena-wjazd {
   animation: scena-wjazd 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) both;
 }
@@ -840,25 +796,7 @@ html.dark {
   }
 }
 
-/* Demo leada: kropka spływa z formularza do CRM, pas skanu przemiata kartę,
-   telefon wibruje przy powiadomieniu. */
-.przeplyw-spada {
-  position: absolute;
-  left: 50%;
-  top: 0;
-  width: 8px;
-  height: 8px;
-  margin-left: -4px;
-  border-radius: 9999px;
-  background: rgb(var(--accent));
-  box-shadow: 0 0 14px 3px rgb(var(--accent) / 0.7);
-  animation: przeplyw-spada 0.9s ease-in infinite;
-}
-@keyframes przeplyw-spada {
-  from { top: 0; opacity: 0; }
-  20% { opacity: 1; }
-  to { top: 100%; opacity: 0.2; }
-}
+/* Demo leada: pas skanu przemiata kartę, telefon wibruje przy powiadomieniu. */
 .skan {
   position: absolute;
   inset: 0;
@@ -1324,9 +1262,11 @@ h2 {
     animation-timeline: scroll(root);
     animation-range: 0 70vh;
   }
+  /* Wcześniej font-weight: przeliczał tekst w każdej klatce i litery
+     pływały. Teraz tylko transform i opacity, które liczy karta graficzna. */
   @keyframes h1-waga {
-    from { font-weight: 700; }
-    to { font-weight: 450; }
+    from { opacity: 1; transform: none; }
+    to { opacity: 0.35; transform: translate3d(0, -2.5rem, 0) scale(0.97); }
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -1411,18 +1351,33 @@ blockquote {
   }
   @keyframes paralaksa-a { from { transform: translateY(48px); } to { transform: translateY(-48px); } }
   @keyframes paralaksa-b { from { transform: translateY(-40px); } to { transform: translateY(40px); } }
+  /* Tło sekcji rośnie do pełnej szerokości. Skalowana jest osobna warstwa
+     tła (transform), a nie clip-path, który malował całą sekcję co klatkę. */
   .maska-sekcji {
+    position: relative;
+    isolation: isolate;
+    background-color: transparent !important;
+    view-timeline-name: --maska-sekcji;
+  }
+  .maska-sekcji::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: 2rem;
+    background-color: rgb(var(--accent-solid));
+    will-change: transform;
     animation: maska-sekcji linear both;
-    animation-timeline: view();
-    animation-range: entry 0% entry 60%;
+    animation-timeline: --maska-sekcji;
+    animation-range: entry 0% cover 45%;
   }
   @keyframes maska-sekcji {
-    from { clip-path: inset(10% 6% 0 6% round 2.5rem); }
-    to { clip-path: inset(0 0 0 0 round 0); }
+    from { transform: scale(0.88, 0.9); }
+    to { transform: none; }
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .ramka-3d, .paralaksa-a, .paralaksa-b, .maska-sekcji { animation: none; }
+  .ramka-3d, .paralaksa-a, .paralaksa-b, .maska-sekcji::before { animation: none; }
 }
 
 /* 23: menu mobilne na sprężynie, pozycje wchodzą kolejno */
@@ -1545,8 +1500,22 @@ html.blueprint video {
 /* 83 i 22: kroki na /jak-pracuje zapalają się w miarę przewijania, ptaszki same się rysują */
 @supports (animation-timeline: view()) {
   .krok-karta {
+    position: relative;
+    view-timeline-name: --krok-karta;
+  }
+  /* Ramka i cień w osobnej warstwie: przy przewijaniu zmienia się tylko jej
+     przezroczystość, więc karta nie jest przemalowywana. */
+  .krok-karta::after {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    border: 1px solid rgb(var(--accent) / 0.6);
+    box-shadow: 0 12px 32px -12px rgb(var(--accent) / 0.35);
+    pointer-events: none;
+    opacity: 0;
     animation: krok-aktywny linear both;
-    animation-timeline: view();
+    animation-timeline: --krok-karta;
     animation-range: cover 25% cover 75%;
   }
   .krok-karta .krok-numer {
@@ -1555,7 +1524,7 @@ html.blueprint video {
     animation-range: cover 25% cover 55%;
   }
   @keyframes krok-aktywny {
-    50% { border-color: rgb(var(--accent) / 0.6); box-shadow: 0 12px 32px -12px rgb(var(--accent) / 0.35); }
+    50% { opacity: 1; }
   }
   @keyframes krok-numer {
     from { transform: scale(0.85); opacity: 0.55; }
@@ -1571,7 +1540,7 @@ html.blueprint video {
   @keyframes rysuj-ptak { to { stroke-dashoffset: 0; } }
 }
 @media (prefers-reduced-motion: reduce) {
-  .krok-karta, .krok-karta .krok-numer, .rysuj-ptak { animation: none; }
+  .krok-karta::after, .krok-karta .krok-numer, .rysuj-ptak { animation: none; }
   .rysuj-ptak { stroke-dashoffset: 0; }
 }
 
@@ -1590,14 +1559,24 @@ html.blueprint video {
   left: 0;
   right: 0;
   top: 0;
+  bottom: 0;
+  pointer-events: none;
+  will-change: transform;
+  animation: skan-linia 1.8s ease-in-out infinite alternate;
+}
+/* Linia rysowana na górze toru, który ma wysokość schematu; przesuwany jest
+   cały tor (transform), a nie samo „top” linii. */
+.skan-linia::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
   height: 2px;
   background: rgb(var(--accent));
   box-shadow: 0 0 14px 4px rgb(var(--accent) / 0.45);
-  animation: skan-linia 1.8s ease-in-out infinite alternate;
 }
 @keyframes skan-linia {
-  from { top: 0; }
-  to { top: calc(100% - 2px); }
+  from { transform: none; }
+  to { transform: translate3d(0, calc(100% - 2px), 0); }
 }
 @media (prefers-reduced-motion: reduce) {
   .skan-linia { animation: none; top: 50%; }
