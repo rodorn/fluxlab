@@ -7091,6 +7091,6 @@ Z odsyłaczem w dobie: Google 5 (wobec 3; dwie sesje doszły do /kontakt: Chrome
 **Kanał:** Google (Z18 z planu) + widoczność w asystentach AI (plan wyczerpany).
 **Co zrobione:** Z18 zamknięte: timer fl-gsc-22 zadziałał 01:10, 2 z 2 „prośba przesłana”; potem, przy braku otwartych zadań, /kalkulator-podatkowy (jedyne wejście z chatgpt.com w dobie) dostał dane `WebApplication` (darmowe narzędzie, FinanceApplication), których miał brak, w przeciwieństwie do /sprawdzenie-nip.
 **Ruch:** ostatnia doba 157 odsłon, 113 osób (+41% wobec średniej 111,7); źródła: youtube 22, b2b-email 17, www.google.com 13, x 4, t.co 4; uruchomienia narzędzi 2.
-**Dowód:** `cykl/z18-indeksowanie-22.log` (proforma-ksef 01:10:25, faktura-wewnetrzna-ksef 01:11:00); commit 5d50bb9, https://fluxlab.pl/kalkulator-podatkowy 200 z `"@type":"WebApplication"` w HTML; build, spojnosc, jakosc OK; indexnow uruchomiony.
+**Dowód:** `cykl/z18-indeksowanie-22.log` (proforma-ksef 01:10:25, faktura-wewnetrzna-ksef 01:11:00); commit 5d50bb9, https://fluxlab.pl/kalkulator-podatkowy 200 z `"@type":"WebApplication"` w HTML; build, spojnosc, jakosc OK; indexnow nic nie zgłosił (lastmod bez zmian, sama zmiana danych strukturalnych).
 **Dla Pawła:**
 **Zostało otwarte:** plan 21/22 bez „- [ ]”; nowy plan stratega o 06:15. /audyt-strony (cel ulepszeń z Z19) też nie ma `WebApplication`, bo idzie przez wspólny ProductLanding z danymi `Service`; zmiana dotyczyłaby wszystkich stron narzędzi, decyzja dla stratega.
