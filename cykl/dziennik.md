@@ -7037,3 +7037,52 @@ Nowe zapytanie z 15 wyświetleniami z operatorami `site:` (amodit, archman, sald
 **Dowód:** plan Z20 „- [x]”; budzet „utrzymaj”, prognoza 99% przy celu 100%.
 **Dla Pawła:**
 **Zostało otwarte:** Z18 (nie przed 01:10 22.10, timer fl-gsc-22), Z21 bilans (04:30), Z22 wniosek dla stratega (05:30). Te zadania czekają na swoją godzinę, więc ten cykl ich nie wykonał.
+
+## 2026-10-22 00:50
+**Kanał:** pomiar (Z21 bilans planu i Z22 wniosek dla stratega, wcześniej niż 04:30 i 05:30, bo Z18 czeka na timer 01:10, a wcześniejsze zadania są zamknięte; okno doby 21.10 00:43 do 22.10 00:43).
+**Co zrobione:** bilans planu 2026-10-21/22 i trzy linijki dla stratega; nic nie poszło w świat.
+**Ruch:** raport_ruchu 00:43: doba 149 odsłon, 109 osób; źródła youtube 25, b2b-email 17 (piksel), www.google.com 13, x 4, t.co 4; 1 uruchomienie narzędzia (numer KSeF, przykład).
+
+### Bilans planu 2026-10-21/22
+`pomiar-kanalow.py` 00:43, 24 h: ludzie 61 (z odsyłaczem 19 wobec 11, bez 42 wobec 36), pary 32, serie testowe 5, salwy 9 (Chrome Windows 3, z odsyłaczem 0). 7 dni: ludzie 327, salwy 61.
+Z odsyłaczem w dobie: Google 5 (wobec 3; dwie sesje doszły do /kontakt: Chrome macOS 10:33, Opera Windows 12:38, bez zgłoszenia), X/t.co 3 sesje Safari iOS (14:20-14:34, /strony-www, /realizacje, /wlasny-crm), Instagram 2, YouTube 2, fb-ads 2 (maly-zus-plus, vat-240), LinkedIn 1, Threads 1, m.facebook 1, google-ads 1, checklista 1, chatgpt.com 1 (18:14 → /kalkulator-podatkowy, pierwsze wejście z ChatGPT od 6.10).
+
+| zad. | stan | godz. | co przyprowadziło |
+|---|---|---|---|
+| Z1 gofin wyłączenie | x | 06:46 | 0 (od 13:30 kanał prowadzi FL_gofin) |
+| Z2 GSC strony | x | 07:55 | 0, 0 kandydatów |
+| Z3 odpowiedzi/obcy audyt | x | 08:55 | 0 odpowiedzi, 0 plików |
+| Z4 opis kandydata 1 | x | 08:57 | 0 zmian, brak kandydata |
+| Z5 linki /numer-ksef | x | 10:05 | 2 linki (943bcbf), efekt po indeksie |
+| Z6 maile audyt-wynik | x | 08:57 | 0 maili |
+| Z7 brief social | x | 09:45 | brief, publikują inne sesje |
+| Z8 Bing | x | 10:48 | 8/8 adresów przyjętych |
+| Z9 opis kandydata 2 | ! | 10:50 | 0, fraza nie pasuje do treści |
+| Z10 salwy w pomiarze | x | 10:55 | pomiar (750d844) |
+| Z11 pomiar wieczór | x | 11:50 | pomiar |
+| Z12 stan serii | x | 11:50 | 5/5 w Google |
+| Z13 timer fl-gsc-22 | x | 12:44 | 2 adresy na 01:10 |
+| Z14 porządek | x | 12:58 | 965a096, 145 loc, IndexNow 21 |
+| Z15 serie dzienne | x | 13:10 | pomiar pod 24.10 |
+| Z16 pomiar noc | x | 21:43 | pomiar |
+| Z17 różnica zapytań | x | 22:55 | 0 kandydatów |
+| Z18 seria żądań | otwarte | | timer 01:10 |
+| Z19 narzędzia 7 dni | x | 13:15 | cel 22.10: audyt strony |
+| Z20 opis kandydata 3 | x | 23:46 | brak kandydata |
+| Z21 bilans | x | 00:50 | ten wpis |
+| Z22 wniosek | x | 00:50 | ten wpis |
+
+- Google w dobie: 5 sesji wobec 3. GSC stoi na 18.10 (12-18.10: 12 klik./918 wyśw.).
+- `audyt-wynik`: 0 maili, 0 sesji, 0 odpowiedzi w dobie (20.10: 2 maile, 1 sesja, 0 odpowiedzi).
+- Bing 12-18.10: 2 klik./48 wyśw. wobec 1/38; Copilot 6 cytowań w 7 dni wobec 10 (ryczalt-czy-liniowy 4, sprawdzenie-nip 2).
+- Trzy największe zmiany: (1) ludzie z odsyłaczem 11 → 19, w tym nowy odsyłacz X/t.co (3 sesje, wielostronicowe); (2) chatgpt.com wraca po 15 dniach, na kalkulator podatkowy; (3) Copilot spada 10 → 6 cytowań, a dane GSC nie odświeżyły się od 18.10, więc zmiany opisów i linków z 20-21.10 są jeszcze niemierzalne.
+- Otwarte decyzje dla stratega: Z9 zapasowa fraza „automatyzacja podatków” (37 wyśw., poz. 6,4) nie ma strony, której treść jej odpowiada, więc to temat na krótką nową stronę albo nic; embargo /automatyzacja-dla-biur-rachunkowych do 25.10 trzyma "enova" (29 wyśw., poz. 4,6, 0 klik.).
+
+### Dla stratega (Z22)
+1. Maile `audyt-wynik`: w dobie 0 wysłanych (Z6 bez kandydatów), więc nic do zmierzenia po 14 h; z 20.10 nadal 1 sesja i 0 odpowiedzi.
+2. Lejek strony głównej od 20.10 06:46: scena_leada 2 razy, obie w jednej sesji (8b05hu…, 21.10 00:13 i 07:13), `lead_*` 0, zgłoszeń 0; 1 wejście < 5, kroku odpadania nie da się wskazać. Dwie sesje z Google doszły do /kontakt i nie wysłały formularza.
+3. Zoho INBOX od 21.10 06:30: 0 nowych zapytań od ludzi spoza outreachu (Division to test spamu). Odpowiedzi na działania innych sesji: HAJS METRICS przyjmuje 500 zł netto + 5% (odpisane 22:17), gazeta-msp.pl przyjęła tekst o KSeF, marketerplus.pl proponuje publikację płatną, Tax Office podziękował za webinar, FINREAL (Wiktoria Jagielska 00:00) prowadzi sesja klienta.
+
+**Dowód:** plan Z21 i Z22 „- [x]”; `pomiar-kanalow.py` 00:43; Zoho `poczta szukaj zoho --dni 2`, Wysłane.
+**Dla Pawła:**
+**Zostało otwarte:** Z18 (timer fl-gsc-22 o 01:10, odczyt logu `cykl/z18-indeksowanie-22.log` w następnym cyklu).
