@@ -148,6 +148,7 @@ export async function POST(request: Request) {
       poczta: pomiar.poczta,
       mobile: pomiar.mobile,
       kursor: pomiar.kursor,
+      lighthouse: pomiar.lighthouse,
       technologie: pomiar.technologie,
       zapytania: pomiar.zapytania,
       zasoby: {

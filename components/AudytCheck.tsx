@@ -54,6 +54,16 @@ type Wynik = {
   powodBlokady: string | null;
   punkty: number | null;
   pomiar: {
+    lighthouse?: {
+      wydajnosc: number | null;
+      dostepnosc: number | null;
+      praktyki: number | null;
+      seo: number | null;
+      fcpMs: number | null;
+      lcpMs: number | null;
+      tbtMs: number | null;
+      cls: number | null;
+    } | null;
     ttfbMs: number | null;
     pelnyMs: number | null;
     htmlBajty: number | null;
@@ -376,6 +386,72 @@ function Skladane({
 }
 
 const KLUCZ_WYNIKU = "fluxlab_audyt_wynik";
+
+function KoloLighthouse({ nazwa, wynik }: { nazwa: string; wynik: number | null }) {
+  const kolor =
+    wynik === null
+      ? "text-gray-400"
+      : wynik >= 90
+        ? "text-emerald-600 dark:text-emerald-400"
+        : wynik >= 50
+          ? "text-amber-600 dark:text-amber-400"
+          : "text-red-600 dark:text-red-400";
+  const obwod = 2 * Math.PI * 26;
+  return (
+    <div className="flex flex-col items-center gap-2">
+      <div className={`relative h-16 w-16 ${kolor}`}>
+        <svg viewBox="0 0 60 60" className="h-16 w-16 -rotate-90" aria-hidden="true">
+          <circle cx="30" cy="30" r="26" fill="none" stroke="currentColor" strokeOpacity="0.15" strokeWidth="5" />
+          <circle
+            cx="30"
+            cy="30"
+            r="26"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="5"
+            strokeLinecap="round"
+            strokeDasharray={obwod}
+            strokeDashoffset={obwod * (1 - (wynik ?? 0) / 100)}
+          />
+        </svg>
+        <span className="absolute inset-0 flex items-center justify-center text-lg font-bold tabular-nums">
+          {wynik ?? "–"}
+        </span>
+      </div>
+      <span className="text-center text-xs text-gray-600 dark:text-gray-400">{nazwa}</span>
+    </div>
+  );
+}
+
+function WynikiLighthouse({
+  l,
+}: {
+  l: NonNullable<Wynik["pomiar"]["lighthouse"]>;
+}) {
+  const s = (ms: number | null) => (ms === null ? "–" : `${(ms / 1000).toFixed(1).replace(".", ",")} s`);
+  return (
+    <div className="space-y-4 rounded-2xl border border-gray-200 p-5 dark:border-white/10">
+      <div>
+        <h3 className="text-lg font-bold text-gray-900 dark:text-white">Wynik Lighthouse na telefonie</h3>
+        <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+          Ten sam test, którego używa Google w PageSpeed Insights. Od 90 punktów jest dobrze.
+        </p>
+      </div>
+      <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+        <KoloLighthouse nazwa="Wydajność" wynik={l.wydajnosc} />
+        <KoloLighthouse nazwa="Dostępność" wynik={l.dostepnosc} />
+        <KoloLighthouse nazwa="Dobre praktyki" wynik={l.praktyki} />
+        <KoloLighthouse nazwa="SEO" wynik={l.seo} />
+      </div>
+      <dl className="grid grid-cols-2 gap-x-4 gap-y-1 text-sm sm:grid-cols-4">
+        <div><dt className="text-gray-500 dark:text-gray-400">Pierwsza treść</dt><dd className="font-semibold tabular-nums">{s(l.fcpMs)}</dd></div>
+        <div><dt className="text-gray-500 dark:text-gray-400">Główna treść</dt><dd className="font-semibold tabular-nums">{s(l.lcpMs)}</dd></div>
+        <div><dt className="text-gray-500 dark:text-gray-400">Blokowanie</dt><dd className="font-semibold tabular-nums">{l.tbtMs === null ? "–" : `${l.tbtMs} ms`}</dd></div>
+        <div><dt className="text-gray-500 dark:text-gray-400">Przesunięcia układu</dt><dd className="font-semibold tabular-nums">{l.cls === null ? "–" : String(l.cls).replace(".", ",")}</dd></div>
+      </dl>
+    </div>
+  );
+}
 
 export default function AudytCheck() {
   const [domena, setDomena] = useState("");
@@ -988,6 +1064,8 @@ export default function AudytCheck() {
               </ul>
             </div>
           )}
+
+          {p.lighthouse && <WynikiLighthouse l={p.lighthouse} />}
 
           {/* Pomiary */}
           <div className="space-y-3">

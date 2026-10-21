@@ -20,6 +20,7 @@ import { kontroleJezykoweGlownej, type AnalizaJezyka } from "./audyt-jezyki";
 import { wykryjTechnologie, type Technologia } from "./audyt-technologie";
 import { adresKontaktu, wykryjZapytania, type Zapytania } from "./audyt-zapytania";
 import { zmierzKontrast } from "./audyt-kontrast";
+import { zmierzLighthouse, type WynikLighthouse } from "./audyt-lighthouse";
 import { odmien } from "./odmiana";
 import { znajdzLiterowki } from "./audyt-pisownia";
 import { arkuszeStrony, przygotujCss, sprawdzKursor } from "./kursor";
@@ -137,6 +138,8 @@ export type Pomiar = {
   mobile: Mobile;
   /** Klikalne elementy strony głównej, nad którymi kursor nie zmienia się
    *  w rączkę. Null, gdy nie badaliśmy dokumentu. */
+  /** Lighthouse na telefon (te same liczby co PageSpeed). Null, gdy pomiar się nie udał. */
+  lighthouse: WynikLighthouse | null;
   kursor: {
     klikalnych: number;
     bezRaczki: number;
@@ -206,6 +209,7 @@ function pusty(domena: string): Pomiar {
       cssZnakow: 0,
       arkuszyNieprzeczytanych: 0,
     },
+    lighthouse: null,
     kursor: null,
     znaleziska: [],
     technologie: [],
@@ -949,7 +953,7 @@ export async function zmierz(domenaWejscie: string): Promise<Pomiar> {
   ];
   // Strona kontaktu idzie równolegle z zasobami, więc nie wydłuża audytu.
   const adresKont = adresKontaktu(html, adresKoncowy);
-  const [zasoby, kursor, domenowe, glowna, jezyki, kontakt, kontrast] = await Promise.all([
+  const [zasoby, kursor, domenowe, glowna, jezyki, kontakt, kontrast, lighthouse] = await Promise.all([
     zmierzZasoby(zasobyZHtml(html, baza)),
     zmierzKursor(html, adresKoncowy, tekstyCss),
     kontroleDomeny({
@@ -962,7 +966,9 @@ export async function zmierz(domenaWejscie: string): Promise<Pomiar> {
     kontroleJezykoweGlownej(domena, html, adresKoncowy).catch(() => null),
     adresKont ? pobierz(adresKont, CZAS_ZASOBU_MS) : Promise.resolve(null),
     zmierzKontrast(adresKoncowy),
+    zmierzLighthouse(adresKoncowy),
   ]);
+  wynik.lighthouse = lighthouse;
   const kontaktOk =
     kontakt && kontakt.odp.ok && /<html|<body/i.test(kontakt.tekst.slice(0, 5_000))
       ? kontakt
