@@ -6,7 +6,15 @@ const nextConfig: NextConfig = {
   // Binarka Chromium jest czytana z dysku, a nie importowana, więc trzeba ją
   // dołączyć do funkcji wprost.
   outputFileTracingIncludes: {
-    "/api/audyt-www": ["./node_modules/@sparticuz/chromium/bin/**"],
+    "/api/audyt-www": [
+      "./node_modules/@sparticuz/chromium/bin/**",
+      // Lighthouse czyta tłumaczenia, dane o skryptach zewnętrznych i
+      // własne moduły z dysku, więc śledzenie importów ich nie znajdzie.
+      "./node_modules/lighthouse/**",
+      "./node_modules/third-party-web/**",
+      "./node_modules/lighthouse-stack-packs/**",
+      "./node_modules/js-library-detector/**",
+    ],
   },
   experimental: {
     viewTransition: true,
