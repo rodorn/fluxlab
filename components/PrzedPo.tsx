@@ -3,6 +3,10 @@
 import { useState } from "react";
 import Image from "next/image";
 
+// Rozmyty podgląd 8x5 px w kolorze strony, widoczny, zanim dojdzie AVIF.
+const PODGLAD =
+  "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4IDUiPjxyZWN0IHdpZHRoPSI4IiBoZWlnaHQ9IjUiIGZpbGw9IiNlZWYyZmYiLz48L3N2Zz4=";
+
 /** Dwa zrzuty jeden na drugim; suwak odsłania nową wersję. */
 export default function PrzedPo({
   przed,
@@ -20,9 +24,9 @@ export default function PrzedPo({
   const [x, ustawX] = useState(50);
   return (
     <div className="przed-po relative select-none">
-      <Image src={przed} alt={alt[0]} width={szer} height={wys} quality={90} sizes="(min-width: 1024px) 1024px, 100vw" className="h-auto w-full" />
+      <Image src={przed} alt={alt[0]} width={szer} height={wys} quality={90} placeholder="blur" blurDataURL={PODGLAD} sizes="(min-width: 1024px) 1024px, 100vw" className="h-auto w-full" />
       <div className="absolute inset-0" style={{ clipPath: `inset(0 0 0 ${x}%)` }}>
-        <Image src={po} alt={alt[1]} width={szer} height={wys} quality={90} sizes="(min-width: 1024px) 1024px, 100vw" className="h-auto w-full" />
+        <Image src={po} alt={alt[1]} width={szer} height={wys} quality={90} placeholder="blur" blurDataURL={PODGLAD} sizes="(min-width: 1024px) 1024px, 100vw" className="h-auto w-full" />
       </div>
       <span className="absolute left-3 top-3 rounded-full bg-gray-900/75 px-3 py-1 text-xs font-medium text-white backdrop-blur">
         Przed

@@ -113,7 +113,7 @@ export default function WlasnyCrm() {
       formId="wlasny_crm"
       formHeading="Napisz, skąd dziś przychodzą Twoje leady"
       formIntro="Formularz, telefon, poczta, polecenia. Odpiszemy z zakresem i ceną."
-      submitLabel="Wyślij opis"
+      submitLabel="Wyślij opis i poproś o cenę"
       microCopy="Ustalenia prowadzimy mailowo."
       serviceName="Własny CRM (FluxCRM)"
       serviceDesc="Wdrożenie własnego systemu CRM na osobnym serwerze w UE: przydział leadów z formularza, telefonu i poczty, karta klienta z historią rozmów i dokumentów, aplikacja na komputer i telefon."

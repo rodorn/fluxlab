@@ -26,5 +26,9 @@ Pominięte: 32 (asymetria łamie oś symetrii), 36 (pionowy napis koliduje z uk�
 63 tryb blueprint po kodzie Konami (przełącza się ponownie tym samym kodem), 72 podgląd linków wewnętrznych w artykułach (karta z tytułem i opisem, lazy), 79 taśma szkic, makieta, gotowa strona na /strony-www, 84 podpis autora i data aktualizacji z gita pod artykułami, 98 skrypt spójności pilnuje wartości spoza skali (rounded, shadow, odstępy), 99 tytuł karty przy nowej odpowiedzi czatu w tle (kropka w ikonie już była), 100 komentarz w źródle HTML.
 Pominięte: 85 (podświetlanie pojęć wymagałoby zmiany DOM zarządzanego przez React, ryzyko błędów hydracji), 76 i 81 (Manifest i /zmiany już są), 83 (oś kroków już interaktywna na /jak-pracuje).
 
+## Paczka 7
+83 kroki na /jak-pracuje zapalają się przy przewijaniu, 22 ptaszki w krokach same się rysują, 88 rozmyty podgląd przed zdjęciem realizacji (AVIF i WebP były już w next.config), 93 druk z adresami linków i translate="no" na nazwie marki, 95 przyciski formularzy z efektem („Wyślij i poproś o cenę”), 87 zmierzone lokalnie: LCP strony głównej 164 ms (element H1, tekst bez obrazka), Lighthouse niedostępny w środowisku.
+Pominięte: 77 i 78 (są tylko dwa zrzuty FINREAL, brak wideo), 94 (literówki sprawdza już scripts/jakosc.mjs hunspellem pl_PL, w każdej paczce), 96 (komunikaty błędów są już po ludzku: „Nie udało się sprawdzić tego adresu”), 97 (app/loading.tsx opakowuje całą stronę w Suspense i psuł statyczny HTML, cofnięte; stany puste i „Wysyłanie...” już są).
+
 ## Niezrobione (do kolejnych cykli)
 Reszta listy: wymaga większych zmian lub budżetu tygodnia. 74, 80, 86 celowo bez zgody.

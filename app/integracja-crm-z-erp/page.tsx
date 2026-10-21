@@ -126,7 +126,7 @@ export default function IntegracjaCrmZErp() {
       formId="integracja_erp"
       formHeading="Napisz, co masz po obu stronach"
       formIntro="Podaj nazwę CRM i ERP oraz co dziś ktoś przepisuje ręcznie. Odpiszemy, czy da się to spiąć i za ile."
-      submitLabel="Wyślij opis"
+      submitLabel="Wyślij opis i poproś o cenę"
       microCopy="Bez rozmowy telefonicznej, jeśli nie chcesz. Ustalenia prowadzimy mailowo."
       serviceName="Integracja CRM z ERP"
       serviceDesc="Spięcie systemu CRM z systemem magazynowo-księgowym: kontrahenci, dokumenty sprzedaży, stany magazynowe i ceny, z obsługą błędów i ponowień."

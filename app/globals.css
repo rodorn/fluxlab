@@ -1573,3 +1573,45 @@ html.blueprint video {
   html.blueprint main { background-image: none; }
   html.blueprint main * { outline: none; }
 }
+
+/* 83 i 22: kroki na /jak-pracuje zapalają się w miarę przewijania, ptaszki same się rysują */
+@supports (animation-timeline: view()) {
+  .krok-karta {
+    animation: krok-aktywny linear both;
+    animation-timeline: view();
+    animation-range: cover 25% cover 75%;
+  }
+  .krok-karta .krok-numer {
+    animation: krok-numer linear both;
+    animation-timeline: view();
+    animation-range: cover 25% cover 55%;
+  }
+  @keyframes krok-aktywny {
+    50% { border-color: rgb(var(--accent) / 0.6); box-shadow: 0 12px 32px -12px rgb(var(--accent) / 0.35); }
+  }
+  @keyframes krok-numer {
+    from { transform: scale(0.85); opacity: 0.55; }
+    to { transform: scale(1); opacity: 1; }
+  }
+  .rysuj-ptak {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: rysuj-ptak linear both;
+    animation-timeline: view();
+    animation-range: entry 10% entry 90%;
+  }
+  @keyframes rysuj-ptak { to { stroke-dashoffset: 0; } }
+}
+@media (prefers-reduced-motion: reduce) {
+  .krok-karta, .krok-karta .krok-numer, .rysuj-ptak { animation: none; }
+  .rysuj-ptak { stroke-dashoffset: 0; }
+}
+
+/* 93: druk z adresami linków zewnętrznych, nazwa marki bez tłumaczenia */
+@media print {
+  article a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.85em;
+    word-break: break-all;
+  }
+}

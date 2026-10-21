@@ -126,11 +126,11 @@ function renderStep(step: Step) {
   return (
     <div
       key={step.number}
-      className="bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-6 lg:p-8"
+      className="krok-karta bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-6 lg:p-8"
     >
       <div className="flex flex-col lg:flex-row lg:items-start gap-6">
         <div className="w-16 shrink-0 tabular-nums">
-          <span className="text-4xl lg:text-5xl font-bold text-accent">
+          <span className="krok-numer inline-block text-4xl lg:text-5xl font-bold text-accent">
             {step.number}
           </span>
         </div>
@@ -162,12 +162,13 @@ function renderStep(step: Step) {
                     fill="none"
                   >
                     <path
+                      pathLength={1}
+                      className="rysuj-ptak text-accent"
                       d="M3 8l3 3 7-7"
                       stroke="currentColor"
                       strokeWidth="2"
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      className="text-accent"
                     />
                   </svg>
                   <span>{d}</span>

@@ -150,7 +150,7 @@ export default function Header() {
           className="znak-link flex items-center gap-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white shrink-0"
         >
           <Znak className="znak-ikona h-7 w-7" />
-          <span>
+          <span translate="no">
             flux<span className="text-accent">lab</span>
           </span>
         </Link>
