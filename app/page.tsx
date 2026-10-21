@@ -19,7 +19,6 @@ import Manifest from "@/components/Manifest";
 import PisanyTekst from "@/components/PisanyTekst";
 import { nazwaFilaru } from "@/lib/filary";
 import NapisBoczny from "@/components/NapisBoczny";
-import SiatkaNaStart from "@/components/SiatkaNaStart";
 import { Ikona, type NazwaIlustracji } from "@/components/Ilustracje";
 
 // Oferta jak w szkoleniu produktowym (16.10.2026): projekty z ceną z góry,
@@ -88,7 +87,6 @@ export default function Home() {
       <Header />
       <main className="relative flex flex-col bg-white text-gray-900 dark:bg-gray-950 dark:text-white pt-16">
         <TloHero />
-        <SiatkaNaStart />
         <section className="relative z-10 mx-auto flex min-h-[72vh] w-full max-w-6xl flex-col items-center justify-center px-6 pt-16 pb-16 text-center lg:pt-20">
           <WitajPonownie />
           <IntroZnaku />

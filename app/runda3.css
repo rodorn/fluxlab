@@ -88,7 +88,3 @@
   white-space: nowrap;
 }
 
-/* 31: siatka 12 kolumn na chwile */
-.siatka-start { animation: siatka-start 1.6s ease-in-out both; }
-@keyframes siatka-start { 0% { opacity: 0; } 25%, 70% { opacity: 1; } 100% { opacity: 0; } }
-@media (prefers-reduced-motion: reduce) { .siatka-start { display: none; } }
