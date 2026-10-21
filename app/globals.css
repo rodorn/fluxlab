@@ -1614,8 +1614,6 @@ html.blueprint video {
     word-break: break-all;
   }
 }
-||||||| parent of 4e00df4 (Paczka narzedzi: odbieranie telefonu w demo leada, podglad makiety w konfiguratorze, skan adresu w audycie, plynniejszy suwak terminow, kalkulator budzetu w cenniku, formularz w trzech krokach, porownanie audytu z fluxlab.pl)
-
 
 /* 61: linia skanu na schemacie badanej strony */
 .skan-linia {
