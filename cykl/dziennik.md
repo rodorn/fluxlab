@@ -6866,6 +6866,6 @@ Adresy: /strefa-wiedzy/co-to-jest-automatyzacja-procesow-biznesowych, /analiza-l
 **Kanał:** pomiar (Z10 z planu stratega).
 **Co zrobione:** `cykl/pomiar-kanalow.py` pokazuje osobny wiersz salw. Okazało się, że od 20.10 (fdaa464) `bez_botow` wycinał je już po cichu, więc „bez odsyłacza” było czyste, tylko nie było widać ile odpadło.
 **Ruch:** jak we wpisie 10:55 (doba 159 odsłon, 112 osób; pomiar-kanalow: ludzie 24 h 48, z odsyłaczem 14, bez 34).
-**Dowód:** przed/po: ludzie 24 h 48 → 48, z odsyłaczem 14 → 14, bez 34 → 34; nowy wiersz: 24 h salwy 7 (Chrome Windows 7, z odsyłaczem 0), 7 dni 59 (Chrome Windows 48, Chrome Linux 9, Safari iOS 2, z odsyłaczem 0). Sygnatura nie zjada ani jednej sesji z odsyłaczem. Commit poniżej.
+**Dowód:** przed/po: ludzie 24 h 48 → 48, z odsyłaczem 14 → 14, bez 34 → 34; nowy wiersz: 24 h salwy 7 (Chrome Windows 7, z odsyłaczem 0), 7 dni 59 (Chrome Windows 48, Chrome Linux 9, Safari iOS 2, z odsyłaczem 0). Sygnatura nie zjada ani jednej sesji z odsyłaczem. Commit 750d844.
 **Dla Pawła:**
 **Zostało otwarte:** Z11 (17:30) i dalej wg planu. Dla stratega: wiersz salw obejmuje też Chrome Linux (9 w tygodniu), to mogą być nasze własne przebiegi.
