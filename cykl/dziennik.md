@@ -6842,3 +6842,30 @@ Kandydaci na Z4/Z9/Z20 (pozycja ≤12 i fraza nie w description): 0. Najbliżej:
 **Dowód:** commit 943bcbf, 200 z VPS, `href="/numer-ksef"` w HTML produkcji obu stron; ~/Projekty/fluxlab-meta/briefy/od-cyklu-ruchu-2026-10-21.md. `indexnow.mjs`: „brak adresów zmienionych od ostatniego zgłoszenia” (lastmod nie zmieniony, dojdzie w Z14).
 **Dla Pawła:**
 **Zostało otwarte:** Z8 (Bing: zgłoszenie adresów, w tym dwóch z Z5, i odczyt Copilota), dalej Z9 do Z22. Uwaga: inna sesja budowała w tym samym repo równolegle (stopka, Lighthouse), co raz nadpisało `.next` w trakcie `jakosc.mjs`; powtórzone, JAKOSC OK.
+
+## 2026-10-21 10:55
+**Kanał:** widoczność w asystentach AI / Bing (Z8 z planu stratega).
+**Co zrobione:** Bing dostał ręczne zgłoszenie 8 stron zmienionych 20 i 21.10 (przyjęte 8 z 8), po ponownym zalogowaniu do Bing Webmaster, którego sesja wygasła.
+**Ruch:** raport_ruchu 10:43: doba 159 odsłon, 112 osób (+59% wobec średniej 99,9); tydzień 835 odsłon, 560 osób; źródła b2b-email 52, youtube 26, www.google.com 8, linkedin 3, instagram 3; narzędzia 1 uruchomienie; zdarzenia otwarcie_maila 52, scena_leada 2, uruchomiono_skan 1; odrzucone salwy 85 sesji.
+**Dowód:**
+
+| Bing | Wartość | Poprzednio |
+|---|---|---|
+| URL Submission | 8 z 8 przyjętych | 19 (19.10) |
+| Skuteczność 12-18.10 (dane nadal do 18.10) | 2 klik. / 48 wyśw. | 1 / 38 |
+| Skuteczność 7-18.10 | 3 / 75 | 3 / 75 |
+| Copilot, cytowania 7 dni | 6: ryczalt-czy-liniowy 4, sprawdzenie-nip 2 | 10 |
+| Zaindeksowane (Site Explorer) | 87, wykluczone 10, błędy 0 | 66+8 (14.10) |
+| IndexNow | ostatnie 20.10 11:46, 0 w 8 h | |
+
+Adresy: /strefa-wiedzy/co-to-jest-automatyzacja-procesow-biznesowych, /analiza-lokalizacji, /automatyzacja-crm-leasing, /numer-ksef, /strefa-wiedzy/jak-zautomatyzowac-raportowanie-w-firmie, /sprawdzenie-nip, /strefa-wiedzy/proforma-ksef, /strefa-wiedzy/faktura-wewnetrzna-ksef. Logowanie: https://www.bing.com/webmaster/login/AuthorizeGoogle (przycisk „Sign In” w tle nie otwiera okna).
+**Dla Pawła:**
+**Zostało otwarte:** Z9 oznaczone [!] (brak kandydata, fraza „automatyzacja podatków” nie pasuje do /slownik i /blad-w-fakturze-ksef); dalej Z10 (16:30). Dla Z14: zmiana linków z Z5 (proforma-ksef, faktura-wewnetrzna-ksef) nie przesunęła lastmod w `lib/daty-stron.json` (nadal 19.10), więc `indexnow.mjs` w Z5 nic nie zgłosił; trzeba `node scripts/daty-stron.mjs` i zgłoszenie.
+
+## 2026-10-21 10:58
+**Kanał:** pomiar (Z10 z planu stratega).
+**Co zrobione:** `cykl/pomiar-kanalow.py` pokazuje osobny wiersz salw. Okazało się, że od 20.10 (fdaa464) `bez_botow` wycinał je już po cichu, więc „bez odsyłacza” było czyste, tylko nie było widać ile odpadło.
+**Ruch:** jak we wpisie 10:55 (doba 159 odsłon, 112 osób; pomiar-kanalow: ludzie 24 h 48, z odsyłaczem 14, bez 34).
+**Dowód:** przed/po: ludzie 24 h 48 → 48, z odsyłaczem 14 → 14, bez 34 → 34; nowy wiersz: 24 h salwy 7 (Chrome Windows 7, z odsyłaczem 0), 7 dni 59 (Chrome Windows 48, Chrome Linux 9, Safari iOS 2, z odsyłaczem 0). Sygnatura nie zjada ani jednej sesji z odsyłaczem. Commit poniżej.
+**Dla Pawła:**
+**Zostało otwarte:** Z11 (17:30) i dalej wg planu. Dla stratega: wiersz salw obejmuje też Chrome Linux (9 w tygodniu), to mogą być nasze własne przebiegi.

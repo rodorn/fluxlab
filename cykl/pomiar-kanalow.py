@@ -13,7 +13,22 @@ from email.header import decode_header
 from email.utils import parsedate_to_datetime
 
 sys.path.insert(0, os.path.expanduser("~/Projekty/fluxlab-ruch"))
-from raport_ruchu import VPS, BAZA, bez_botow  # noqa: E402
+import raport_ruchu  # noqa: E402
+from raport_ruchu import VPS, BAZA, bez_botow, bez_salw  # noqa: E402
+
+# Salwy Chrome Windows (Z17 20.10) wycina bez_salw wewnatrz bez_botow; tu
+# zapamietujemy, co odrzucila, zeby pokazac je osobnym wierszem odsiewu.
+SALWY = []
+
+
+def _bez_salw(w):
+    zostaja = bez_salw(w)
+    sesje = {r[3] for r in zostaja}
+    SALWY[:] = [r for r in w if r[3] not in sesje]
+    return zostaja
+
+
+raport_ruchu.bez_salw = _bez_salw
 
 PL = timezone(timedelta(hours=2))
 MAIL = os.path.expanduser("~/Projekty/mail-audyt")
@@ -101,9 +116,13 @@ def ruch(w):
     pary, serie = odsiew(w)
     for nazwa, od in (("24 h", DOBA), ("7 dni", TYDZIEN)):
         sesje = {r[3] for r in w if r[0] > od and r[5] == "odslona"}
+        salwy = [r for r in SALWY if r[0] > od]
         print(
             f"\n## Odsiew, {nazwa}: ludzie {len(sesje - pary - serie)}, "
-            f"pary {len(sesje & pary)}, serie testowe {len(sesje & serie)}"
+            f"pary {len(sesje & pary)}, serie testowe {len(sesje & serie)}, "
+            f"salwy {len({r[3] for r in salwy})} (Chrome Windows "
+            f"{len({r[3] for r in salwy if r[6:8] == ['Chrome', 'Windows']})}, "
+            f"z odsyłaczem {len({r[3] for r in salwy if r[2]})})"
         )
     w = [r for r in w if r[3] not in pary and r[3] not in serie]
     odslony = [r for r in w if r[5] == "odslona"]
