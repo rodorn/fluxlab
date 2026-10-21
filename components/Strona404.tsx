@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { FILARY } from "@/lib/filary";
 import GraZlapLeada from "@/components/GraZlapLeada";
+import { Ilustracja404 } from "@/components/Ilustracje";
 
 const STRONY = [
   ...FILARY.map((f) => ({ t: f.nazwa, h: f.href })),
@@ -41,33 +42,14 @@ export default function Strona404() {
     return () => window.removeEventListener("mousemove", onMove);
   }, []);
 
-  const cyfra = (c: string, i: number) => (
-    <span
-      key={i}
-      className="inline-block text-gradient-flow transition-transform duration-200 ease-out"
-      style={{
-        transform: `translate(calc(var(--mx, 0) * ${(i + 1) * 7}px), calc(var(--my, 0) * ${(i + 1) * 5}px)) rotate(calc(var(--mx, 0) * ${(i - 1) * 4}deg))`,
-        animation: `k404-float 4s ease-in-out ${i * 0.4}s infinite`,
-      }}
-    >
-      {c}
-    </span>
-  );
-
   return (
     <div className="text-center max-w-2xl mx-auto">
-      <style
-        dangerouslySetInnerHTML={{
-          __html: `@keyframes k404-float{0%,100%{margin-top:0}50%{margin-top:-10px}}@media (prefers-reduced-motion:reduce){.k404 span{animation:none!important;transition:none!important}}`,
-        }}
-      />
-      <div
-        ref={ref}
-        className="k404 font-bold leading-none text-[7rem] sm:text-[9rem] tracking-tight mb-2 select-none"
-        aria-hidden="true"
-      >
-        {["4", "0", "4"].map(cyfra)}
+      <div ref={ref} aria-hidden="true" className="select-none">
+        <Ilustracja404 className="mx-auto h-auto w-full max-w-sm" />
       </div>
+      <p className="mt-2 mb-3 text-sm font-semibold uppercase tracking-widest text-accent">
+        Błąd 404
+      </p>
       <h1 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
         Tej strony nie ma, ale mamy coś lepszego
       </h1>

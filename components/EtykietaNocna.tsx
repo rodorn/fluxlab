@@ -30,7 +30,7 @@ export default function EtykietaNocna() {
 
   if (!tekst) return null;
   return (
-    <p className="mb-5 inline-flex animate-fade-up rounded-full border border-accent/40 bg-accent/5 px-4 py-1.5 text-sm font-medium text-accent">
+    <p className="hero-pigulka mb-5 inline-flex animate-fade-up rounded-full border border-accent/40 bg-accent/5 px-4 py-1.5 text-sm font-medium text-accent">
       {tekst}
     </p>
   );

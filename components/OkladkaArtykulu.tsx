@@ -41,7 +41,7 @@ export default function OkladkaArtykulu({
 
   return (
     <div
-      className={`relative overflow-hidden rounded-lg ${wysoka ? "aspect-[21/9]" : "aspect-[16/7]"}`}
+      className={`relative overflow-hidden rounded-lg ${src ? "foto-ton" : ""} ${wysoka ? "aspect-[21/9]" : "aspect-[16/7]"}`}
       aria-hidden="true"
     >
       {src ? (

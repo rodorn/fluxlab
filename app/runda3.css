@@ -1,0 +1,34 @@
+/* Runda 3 wdrozenia 100 pomyslow: osobny plik, zeby nie kolidowac z globals.css. */
+
+/* 58: ilustracje liniowe */
+.ilustracja-linia { color: rgb(var(--accent)); overflow: visible; }
+.ilustracja-linia .ilustracja-akcent {
+  fill: rgb(var(--accent) / 0.16);
+  stroke: rgb(var(--accent));
+}
+.ilustracja-lupa {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform 0.2s ease-out;
+  transform: translate(calc(var(--mx, 0) * 10px), calc(var(--my, 0) * 6px));
+}
+@media (prefers-reduced-motion: reduce) {
+  .ilustracja-lupa { transform: none; transition: none; }
+}
+
+/* 57: jedno tonowanie zdjec: lekko wyciszone kolory i chlodny odcien marki */
+.foto-ton { position: relative; isolation: isolate; }
+.foto-ton > img,
+.foto-ton > picture img { filter: saturate(0.88) contrast(1.03); }
+.foto-ton::after {
+  content: "";
+  border-radius: inherit;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(135deg, rgb(var(--accent-solid) / 0.16), rgb(var(--accent-solid) / 0.04));
+  mix-blend-mode: soft-light;
+}
+
+/* 39: w hero tylko jedna pigulka naraz (pierwsza w kodzie wygrywa) */
+.hero-pigulka ~ .hero-pigulka { display: none; }

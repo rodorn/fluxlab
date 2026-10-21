@@ -16,6 +16,7 @@ import MagnesPrzyciskow from "@/components/MagnesPrzyciskow";
 import KomunikatKonsoli from "@/components/KomunikatKonsoli";
 import PlynnePrzewijanie from "@/components/PlynnePrzewijanie";
 import "./globals.css";
+import "./runda3.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

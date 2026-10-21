@@ -19,6 +19,7 @@ import KrokiSticky from "@/components/KrokiSticky";
 import Manifest from "@/components/Manifest";
 import PisanyTekst from "@/components/PisanyTekst";
 import { nazwaFilaru } from "@/lib/filary";
+import { Ikona, type NazwaIlustracji } from "@/components/Ilustracje";
 
 // Oferta jak w szkoleniu produktowym (16.10.2026): projekty z ceną z góry,
 // FluxCRM jako produkt flagowy, katalog małych usług jako wejście.
@@ -35,6 +36,7 @@ const OFERTA = [
       "sklep z integracją: od 15 000 zł",
     ],
     cta: "Zobacz strony",
+    ikona: "strony" as NazwaIlustracji,
     wyrozniona: true,
   },
   {
@@ -48,6 +50,7 @@ const OFERTA = [
       "z dowolnymi integracjami: 12 900 zł, z narzędziami AI: 24 900 zł i 999 zł/mies.",
     ],
     cta: "Zobacz CRM",
+    ikona: "crm" as NazwaIlustracji,
   },
   {
     href: "/automatyzacja-leadow-crm",
@@ -60,6 +63,7 @@ const OFERTA = [
       "cena z góry, bez rozliczania godzin",
     ],
     cta: "Zobacz automatyzacje",
+    ikona: "automatyzacje" as NazwaIlustracji,
   },
 ];
 
@@ -127,6 +131,7 @@ export default function Home() {
                       : "border-gray-200 dark:border-white/10"
                   }`}
                 >
+                  <Ikona nazwa={o.ikona} className="mb-4 h-11 w-11" />
                   <h3 className="text-xl font-bold">{o.nazwa}</h3>
                   <p className="mt-2 text-2xl font-bold text-accent">
                     <CountUp value={o.cena} spadek />
@@ -251,6 +256,7 @@ export default function Home() {
         <section className="border-t border-gray-200 dark:border-white/10 py-20 lg:py-24">
           <div className="container-wide">
             <RevealOnScroll className="text-center">
+              <Ikona nazwa="audyt" className="mx-auto mb-4 h-11 w-11" />
               <p className="section-label mb-3"><span className="tabular-nums opacity-60">03</span> Audyt</p>
               <h2 className="text-balance text-4xl font-bold tracking-tighter lg:text-5xl">
                 <PisanyTekst id="audyt" tekst="Sprawdź swoją stronę w minutę" />

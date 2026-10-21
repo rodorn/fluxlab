@@ -41,7 +41,7 @@ export default function WitajPonownie() {
 
   return (
     <div
-      className={`mb-8 inline-flex max-w-full items-center gap-3 rounded-full border border-accent/40 bg-accent/5 py-2 pl-5 pr-2 text-sm text-gray-700 transition-all duration-300 dark:text-gray-200 ${
+      className={`hero-pigulka mb-8 inline-flex max-w-full items-center gap-3 rounded-full border border-accent/40 bg-accent/5 py-2 pl-5 pr-2 text-sm text-gray-700 transition-all duration-300 dark:text-gray-200 ${
         widoczny ? "translate-y-0 opacity-100" : "-translate-y-4 opacity-0"
       }`}
     >

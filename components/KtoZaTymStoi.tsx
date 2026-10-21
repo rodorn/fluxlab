@@ -4,13 +4,15 @@ import Link from "next/link";
 export default function KtoZaTymStoi() {
   return (
     <div className="mx-auto flex max-w-3xl flex-col items-center gap-6 rounded-2xl border border-gray-200 bg-white/60 p-6 text-center dark:border-white/10 dark:bg-white/[0.03] sm:flex-row sm:items-start sm:p-8 sm:text-left">
-      <Image
-        src="/pawel.webp"
-        alt="Paweł Iwanek, założyciel Fluxlab"
-        width={120}
-        height={152}
-        className="h-[152px] w-[120px] shrink-0 rounded-xl object-cover ring-1 ring-gray-200 dark:ring-white/10"
-      />
+      <div className="foto-ton h-[152px] w-[120px] shrink-0 rounded-xl ring-1 ring-gray-200 dark:ring-white/10">
+        <Image
+          src="/pawel.webp"
+          alt="Paweł Iwanek, założyciel Fluxlab"
+          width={120}
+          height={152}
+          className="h-full w-full rounded-xl object-cover"
+        />
+      </div>
       <div>
         <p className="text-sm font-semibold uppercase tracking-wider text-accent">
           Kto za tym stoi
