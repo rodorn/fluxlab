@@ -6921,3 +6921,119 @@ Wyświetlenia kiedy-odliczyc-vat i /ksef-2027 spadły do zera lub prawie zera 17
 Narzędzia 7 dni (obce z odsyłaczem albo ludzkim śladem / niepewne lub testy): audyt strony 3 / 5, numer KSeF 2 / 0, analiza lokalizacji 2 / 0, sprawdzenie NIP 1 / 0, kalkulator n8n 1 / 0, skan /wlasny-crm 1 / 0, sprawdź kontrahenta 0 / 3, audyt poczty 0 / 3, własność domeny 0 / 2, kalkulator podatkowy 0 / 1. `klik_po_wyniku` od 20.10 12:30: 0. Cel ulepszeń na 22.10: audyt strony.
 **Dla Pawła:**
 **Zostało otwarte:** Z16 (22:30), Z17 (23:30, GSC dalej kończy się na 18.10), Z18 (po 01:10, timer fl-gsc-22), Z20 (po Z17), Z21, Z22. Dla stratega: spadek wyświetleń kiedy-odliczyc-vat i /ksef-2027 od 17.10 (do oceny tytułów 24.10).
+
+## 2026-10-21 13:45
+**Kanał:** brak (plan).
+**Co zrobione:** nic nowego nie poszło w świat. Otwarte zadania planu mają terminy wieczorne i nocne (Z16 22:30, okno od 18:30; Z17 23:30; Z18 po 01:10 22.10; Z20 po Z17; Z21 i Z22 nad ranem), a `budzet` pokazuje „wstrzymaj”, hamulec krytyczny (prognoza 1037%). Wykonane teraz dałyby pusty pomiar. Poprawione tylko oznaczenie Z13 w planie: było „- [ ]”, chociaż dowód już był (timer fl-gsc-22).
+**Ruch:** raport_ruchu 13:43: doba 158 odsłon, 117 osób (+50% wobec średniej 105,3); źródła b2b-email 32 (otwarcia maili), youtube 25, www.google.com 12, linkedin 3, instagram 3; 0 uruchomień narzędzi; zdarzenia scena_leada 2, pobranie 1.
+**Dowód:** `systemctl --user list-timers fl-gsc-22` → 22.10 01:10 (11 h); plan: 6 zadań „- [ ]” (Z16, Z17, Z18, Z20, Z21, Z22).
+**Dla Pawła:**
+**Zostało otwarte:** Z16 od 22:30, potem Z17, Z18, Z20, Z21, Z22 w swoich godzinach.
+
+## 2026-10-21 14:43
+**Kanał:** brak (plan).
+**Co zrobione:** nic nowego nie poszło w świat. Otwarte zadania planu (Z16 22:30, Z17 23:30, Z18 po 01:10 22.10, Z20, Z21, Z22) mają terminy wieczorne i nocne, wykonane teraz dałyby pusty pomiar; `budzet` nadal „wstrzymaj”, hamulec krytyczny (prognoza 914%, nowy cykl: NIE).
+**Ruch:** raport_ruchu 14:43: doba 169 odsłon, 126 osób (+59% wobec średniej 106,0); źródła youtube 29, b2b-email 24 (otwarcia maili), www.google.com 14, x 4, t.co 4; 0 uruchomień narzędzi; zdarzenia otwarcie_maila 24, scena_leada 2.
+**Dowód:** `systemctl --user list-timers fl-gsc-22` → 22.10 01:10 (10 h); plan: 6 zadań „- [ ]”.
+**Dla Pawła:**
+**Zostało otwarte:** Z16 od 22:30, potem Z17, Z18, Z20, Z21, Z22 w swoich godzinach.
+<!-- WYSLANO 2026-10-21 15:05 -->
+
+## 2026-10-21 15:43
+**Kanał:** brak (plan).
+**Co zrobione:** nic nowego nie poszło w świat. Otwarte zadania planu (Z16 22:30 z oknem od 18:30, Z17 23:30, Z18 po 01:10 22.10, Z20, Z21, Z22) mają terminy wieczorne i nocne, wykonane teraz dałyby pusty pomiar; `budzet` „wstrzymaj”, hamulec krytyczny (prognoza 753%, nowy cykl: NIE).
+**Ruch:** raport_ruchu 15:43: doba 174 odsłony, 130 osób (+64% wobec średniej 106,3); źródła youtube 29, b2b-email 24 (otwarcia maili), www.google.com 14, x 4, t.co 4; 0 uruchomień narzędzi; zdarzenia otwarcie_maila 24, scena_leada 2.
+**Dowód:** `systemctl --user list-timers fl-gsc-22` → 22.10 01:10 (9 h); plan: 6 zadań „- [ ]”.
+**Dla Pawła:**
+**Zostało otwarte:** Z16 od 22:30, potem Z17, Z18, Z20, Z21, Z22 w swoich godzinach.
+
+## 2026-10-21 16:43
+**Kanał:** brak (plan).
+**Co zrobione:** nic nowego nie poszło w świat. Otwarte zadania planu (Z16 22:30 z oknem od 18:30, Z17 23:30, Z18 po 01:10 22.10, Z20, Z21, Z22) mają terminy wieczorne i nocne, wykonane teraz dałyby pusty pomiar; `budzet` „wstrzymaj”, hamulec krytyczny (prognoza 625%, nowy cykl: NIE).
+**Ruch:** raport_ruchu 16:43: doba 170 odsłon, 126 osób (+59% wobec średniej 106,9); źródła youtube 29, b2b-email 22 (otwarcia maili), www.google.com 13, x 4, t.co 4; 0 uruchomień narzędzi; zdarzenia otwarcie_maila 22, scena_leada 2.
+**Dowód:** `systemctl --user list-timers fl-gsc-22` → 22.10 01:10; plan: 6 zadań „- [ ]”.
+**Dla Pawła:**
+**Zostało otwarte:** Z16 od 22:30, potem Z17, Z18, Z20, Z21, Z22 w swoich godzinach.
+
+## 2026-10-21 17:43
+**Kanał:** brak (plan).
+**Co zrobione:** nic nowego nie poszło w świat. Otwarte zadania planu (Z16 22:30 z oknem od 18:30, Z17 23:30, Z18 po 01:10 22.10, Z20, Z21, Z22) mają terminy wieczorne i nocne, wykonane teraz dałyby pusty pomiar; `budzet` „wstrzymaj”, hamulec krytyczny (prognoza 567%, nowy cykl: NIE).
+**Ruch:** raport_ruchu 17:43: doba 173 odsłony, 129 osób (+62% wobec średniej 106,7); źródła youtube 32, b2b-email 22 (otwarcia maili), www.google.com 13, x 4, t.co 4; 0 uruchomień narzędzi; zdarzenia otwarcie_maila 22, scena_leada 2. pomiar-kanalow 24 h: ludzie 67, bez odsyłacza 46; odsyłacze: Google 5, Instagram 3, X 3, LinkedIn 3, YouTube 2, fb-ads 2, t.co 2, threads, m.facebook.com, google-ads, checklista po 1 (suma źródeł 70, bo część sesji ma kilka odsłon z różnych źródeł); salwy 13.
+**Dowód:** `systemctl --user list-timers fl-gsc-22` → 22.10 01:10; plan: 6 zadań „- [ ]”.
+**Dla Pawła:**
+**Zostało otwarte:** Z16 od 22:30, potem Z17, Z18, Z20, Z21, Z22 w swoich godzinach.
+
+## 2026-10-21 18:43
+**Kanał:** brak (plan).
+**Co zrobione:** nic nowego nie poszło w świat. Otwarte zadania planu (Z16 22:30 z oknem od 18:30, Z17 23:30, Z18 po 01:10 22.10, Z20, Z21, Z22) mają terminy wieczorne i nocne, wykonane teraz dałyby pusty pomiar; `budzet` „wstrzymaj”, hamulec krytyczny (prognoza 474%, nowy cykl: NIE).
+**Ruch:** raport_ruchu 18:43: doba 172 odsłony, 129 osób (+60% wobec średniej 107,3); źródła youtube 32, b2b-email 20 (otwarcia maili), www.google.com 13, x 4, t.co 4; 0 uruchomień narzędzi; zdarzenia otwarcie_maila 20, scena_leada 2. pomiar-kanalow 24 h: ludzie 68, bez odsyłacza 46; odsyłacze: Google 5, Instagram 3, X 3, LinkedIn 2, YouTube 2, fb-ads 2, t.co 2, com.linkedin.android, threads, m.facebook.com, google-ads, checklista po 1; salwy 13.
+**Dowód:** `systemctl --user list-timers fl-gsc-22` → 22.10 01:10; plan: 6 zadań „- [ ]”.
+**Dla Pawła:**
+**Zostało otwarte:** Z16 od 22:30, potem Z17, Z18, Z20, Z21, Z22 w swoich godzinach.
+
+## 2026-10-21 19:43
+**Kanał:** brak (plan).
+**Co zrobione:** nic nowego nie poszło w świat. Otwarte zadania planu (Z16 22:30, Z17 23:30, Z18 po 01:10 22.10, Z20, Z21, Z22) mają terminy wieczorne i nocne; `budzet` „wstrzymaj”, hamulec krytyczny (prognoza 328%, nowy cykl: NIE).
+**Ruch:** raport_ruchu 19:43: doba 170 odsłon, 127 osób (+59% wobec średniej 107,1); źródła youtube 32, b2b-email 20 (otwarcia maili), www.google.com 13, x 4, t.co 4; 0 uruchomień narzędzi; zdarzenia otwarcie_maila 20, scena_leada 2. pomiar-kanalow 24 h: ludzie 66, bez odsyłacza 44; odsyłacze: Google 5, Instagram 3, X 3, LinkedIn 2, YouTube 2, fb-ads 2, t.co 2, com.linkedin.android, threads, m.facebook.com, google-ads, checklista, chatgpt.com po 1 (pierwsza sesja z chatgpt.com od 6.10); salwy 13.
+**Dowód:** `systemctl --user list-timers fl-gsc-22` → 22.10 01:10; plan: 6 zadań „- [ ]”.
+**Dla Pawła:**
+**Zostało otwarte:** Z16 od 22:30, potem Z17, Z18, Z20, Z21, Z22 w swoich godzinach.
+
+## 2026-10-21 20:43
+**Kanał:** brak (plan).
+**Co zrobione:** nic nowego nie poszło w świat. Otwarte zadania planu (Z16 22:30, Z17 23:30, Z18 po 01:10 22.10, Z20, Z21, Z22) mają terminy wieczorne i nocne; `budzet` „wstrzymaj”, hamulec krytyczny (prognoza 268%, nowy cykl: NIE).
+**Ruch:** raport_ruchu 20:43: doba 173 odsłony, 129 osób (+61% wobec średniej 107,1); źródła youtube 32, b2b-email 20 (otwarcia maili), www.google.com 13, x 4, t.co 4; 0 uruchomień narzędzi; zdarzenia otwarcie_maila 20, scena_leada 2. pomiar-kanalow 24 h: ludzie 68, bez odsyłacza 46; odsyłacze: Google 5, Instagram 3, X 3, LinkedIn 2, YouTube 2, fb-ads 2, t.co 2, com.linkedin.android, threads, m.facebook.com, google-ads, checklista, chatgpt.com po 1; salwy 13 (Chrome Windows 7, z odsyłaczem 0).
+**Dowód:** `systemctl --user list-timers fl-gsc-22` → 22.10 01:10 (4 h 26 min); plan: 6 zadań „- [ ]”.
+**Dla Pawła:**
+**Zostało otwarte:** Z16 od 22:30, potem Z17, Z18, Z20, Z21, Z22 w swoich godzinach.
+
+## 2026-10-21 21:43
+**Kanał:** pomiar (plan, Z16).
+**Co zrobione:** Z16 wykonane wcześniej niż 22:30 (okno 18:30-21:43): wieczorem 3 osoby, wszystkie bez odsyłacza; od 06:30 0 leadów i 0 `klik_po_wyniku`. Nic nowego nie poszło w świat, `budzet` „wstrzymaj”, hamulec krytyczny (prognoza 177%, nowy cykl: NIE).
+
+| miara | wartość |
+|---|---|
+| ludzie od 18:30 | 3 |
+| z odsyłaczem / bez | 0 / 3 |
+| salwy / pary i serie od 18:30 | 0 / 0 |
+| `lead_*` od 06:30 | 0 |
+| `klik_po_wyniku` od 06:30 | 0 |
+| `scena_leada` od 06:30 | 1 |
+| fl-gsc-22 | 22.10 01:10 |
+
+**Ruch:** raport_ruchu 21:43: doba 166 odsłon, 122 osoby (+53% wobec średniej 108,3); źródła youtube 29, b2b-email 20 (piksel otwarć), www.google.com 13, x 4, t.co 4; 0 uruchomień narzędzi. pomiar-kanalow 24 h: ludzie 67, bez odsyłacza 46; Google 5, Instagram 3, X 3, YouTube 2, fb-ads 2, t.co 2, pozostałe po 1; salwy 9 (Chrome Windows 3, z odsyłaczem 0).
+**Dowód:** plan Z16 „- [x]”; `systemctl --user list-timers fl-gsc-22` → 1 timer.
+**Dla Pawła:**
+**Zostało otwarte:** Z17 (23:30, GSC zapytania), Z18 po 01:10 22.10, Z20, Z21, Z22.
+
+## 2026-10-21 22:55
+**Kanał:** Google (Z17 z planu, pomiar).
+**Co zrobione:** różnica zapytań GSC 7 dni dzień do dnia; nic nie poszło w świat, to wejście dla Z20 i stratega.
+**Ruch:** doba 164 odsłony, 120 osób; źródła: youtube 29, b2b-email 19, www.google.com 13, x 4, t.co 4; narzędzia 0 uruchomień; zdarzenia otwarcie_maila 19, scena_leada 2.
+**Dowód:** `cykl/gsc-zapytania-2026-10-21.txt` (100 z 292 zapytań, 12-18.10, 12 klik./918 wyśw.). Wobec 20.10: 193 nowe, 0 zniknęło.
+
+| zapytanie | 20.10 wyśw. | 21.10 wyśw. | klik. | poz. | strona |
+|---|---|---|---|---|---|
+| "enova" (wzrost) | 5 | 29 | 0 | 4,6 | |
+| fluxlab (wzrost) | 4 | 26 | 16 | 3,3 | |
+| automatyzacja ai (wzrost) | 1 | 21 | 0 | 32,8 | |
+| automatyzacja procesów biznesowych (wzrost) | 15 | 34 | 0 | 67,6 | |
+| "automatyzacja podatków" (wzrost) | 23 | 37 | 0 | 6,4 | |
+| krajowy system e-faktur (nowe) | 0 | 6 | 1 | 16,8 | nieodczytana |
+| audyt google ads (nowe) | 0 | 8 | 0 | 27,6 | nieodczytana |
+| system dla biura rachunkowego (nowe) | 0 | 7 | 0 | 91,4 | /automatyzacja-dla-biur-rachunkowych |
+| automatyzacja biznesu (nowe) | 0 | 7 | 0 | 56,6 | /strefa-wiedzy/co-to-jest-automatyzacja-procesow-biznesowych |
+
+Nowe zapytanie z 15 wyświetleniami z operatorami `site:` (amodit, archman, saldeosmart, partner) to wyszukiwanie automatu, pominięte. Żadne nowe zapytanie nie ma pozycji ≤12, więc Z17 nie daje kandydata na Z20. Przy okazji zamknięte 27 zostawionych kart GSC w Chrome 9228.
+**Dla Pawła:**
+**Zostało otwarte:** Z18 (nie przed 01:10, timer fl-gsc-22), Z20 (budzet „wstrzymaj”, alarm 131%; kandydat tylko z Z2/Z17, dziś 0), Z21, Z22 rano.
+
+<!-- WYSLANO 2026-10-21 23:29 -->
+
+## 2026-10-21 23:46
+**Kanał:** Google (Z20 z planu).
+**Co zrobione:** nic nie poszło w świat, bo nie ma kandydata. Z2 i Z17 dały 0 stron z pozycją ≤12 i frazą spoza description. Jedyne takie zapytanie z listy wzrostów, "enova" (29 wyśw., poz. 4,6), trafia na /automatyzacja-dla-biur-rachunkowych. Ta strona jest pod embargiem do 25.10 i ma już „enova” w title i description. Wynik: 0 zmian.
+**Ruch:** raport_ruchu 23:43: doba 158 odsłon, 114 osób (+45% wobec średniej 109,3); źródła youtube 25, b2b-email 17 (piksel otwarć), www.google.com 13, x 4, t.co 4; 0 uruchomień narzędzi; zdarzenia otwarcie_maila 17, scena_leada 2; salwy 91 sesji odrzucone.
+**Dowód:** plan Z20 „- [x]”; budzet „utrzymaj”, prognoza 99% przy celu 100%.
+**Dla Pawła:**
+**Zostało otwarte:** Z18 (nie przed 01:10 22.10, timer fl-gsc-22), Z21 bilans (04:30), Z22 wniosek dla stratega (05:30). Te zadania czekają na swoją godzinę, więc ten cykl ich nie wykonał.
