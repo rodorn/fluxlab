@@ -97,7 +97,13 @@ export default function LandingForm({
     setPrzepisuje(true);
     try {
       const fd = new FormData();
-      const rozszerzenie = blob.type.includes("mp4") ? "mp4" : "webm";
+      // Rozszerzenie musi zgadzać się z formatem: Firefox nagrywa OGG, Safari
+      // MP4, Chrome WebM. OGG pod nazwą .webm OpenAI odrzucało.
+      const rozszerzenie = blob.type.includes("ogg")
+        ? "ogg"
+        : blob.type.includes("mp4")
+          ? "mp4"
+          : "webm";
       fd.append("audio", blob, `brief.${rozszerzenie}`);
       const res = await fetch("/api/transkrypcja", { method: "POST", body: fd });
       const d = (await res.json().catch(() => null)) as {

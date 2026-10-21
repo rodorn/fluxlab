@@ -66,7 +66,19 @@ export async function POST(req: Request) {
 
   try {
     const out = new FormData();
-    out.append("file", plik, plik.name || "brief.webm");
+    // Nazwę pliku ustalamy z typu, bo OpenAI rozpoznaje format po rozszerzeniu,
+    // a starsze wersje formularza wysyłały nagranie OGG z Firefoksa jako .webm.
+    const typ = plik.type || "";
+    const rozszerzenie = typ.includes("ogg")
+      ? "ogg"
+      : typ.includes("mp4") || typ.includes("m4a")
+        ? "mp4"
+        : typ.includes("mpeg")
+          ? "mp3"
+          : typ.includes("wav")
+            ? "wav"
+            : "webm";
+    out.append("file", plik, `brief.${rozszerzenie}`);
     out.append("model", "gpt-4o-mini-transcribe");
     out.append("language", "pl");
     const r = await fetch("https://api.openai.com/v1/audio/transcriptions", {
