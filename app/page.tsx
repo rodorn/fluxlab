@@ -1,4 +1,4 @@
-import PrzedPo from "@/components/PrzedPo";
+import Image from "next/image";
 import Link from "next/link";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
@@ -232,12 +232,14 @@ export default function Home() {
                         Realizacje →
                       </Link>
                     </div>
-                    <PrzedPo
-                      przed="/photos/realizacja-finreal-przed.webp"
-                      po="/photos/realizacja-finreal-2x.webp"
-                      alt={["Stara strona finreal.pl", "Nowa strona finreal.pl zrobiona przez FluxLab"]}
-                      szer={2880}
-                      wys={1620}
+                    <Image
+                      src="/photos/realizacja-finreal-2x.webp"
+                      alt="Nowa strona finreal.pl zrobiona przez FluxLab"
+                      width={2880}
+                      height={1620}
+                      quality={90}
+                      sizes="(min-width: 1024px) 1024px, 100vw"
+                      className="h-auto w-full"
                     />
                   </div>
                 </div>
