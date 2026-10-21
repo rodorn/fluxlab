@@ -218,7 +218,7 @@ export default function Header() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="xl:hidden h-[calc(100dvh-4rem)] overflow-y-auto border-t border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-950 px-5 py-4">
+        <div className="menu-mob xl:hidden h-[calc(100dvh-4rem)] overflow-y-auto border-t border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-950 px-5 py-4">
           <nav aria-label="Menu mobilne" className="flex flex-col">
             {MENU.map((p) => (
               <div key={p.id}>

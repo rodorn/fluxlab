@@ -17,6 +17,7 @@ import ScenaLeada from "@/components/ScenaLeada";
 import CountUp from "@/components/CountUp";
 import KrokiSticky from "@/components/KrokiSticky";
 import Manifest from "@/components/Manifest";
+import PisanyTekst from "@/components/PisanyTekst";
 import { nazwaFilaru } from "@/lib/filary";
 
 // Oferta jak w szkoleniu produktowym (16.10.2026): projekty z ceną z góry,
@@ -178,7 +179,7 @@ export default function Home() {
           </RevealOnScroll>
         </section>
 
-        <section aria-label="Zasada" className="bg-accent-solid py-20 text-white lg:py-32">
+        <section aria-label="Zasada" className="maska-sekcji bg-accent-solid py-20 text-white lg:py-32">
           <div className="container-wide">
           <Manifest
             tekst={MANIFEST}
@@ -196,14 +197,14 @@ export default function Home() {
               </h2>
             </RevealOnScroll>
             <RevealOnScroll delay={1}>
-              <div className="relative mx-auto mt-12 max-w-5xl">
+              <div className="ramka-3d relative mx-auto mt-12 max-w-5xl">
                 <span
                   aria-hidden="true"
-                  className="absolute -right-6 -top-6 h-28 w-28 rounded-full bg-gradient-to-br from-accent-solid to-indigo-800 sm:-right-10 sm:-top-10 sm:h-40 sm:w-40"
+                  className="paralaksa-a absolute -right-6 -top-6 h-28 w-28 rounded-full bg-gradient-to-br from-accent-solid to-indigo-800 sm:-right-10 sm:-top-10 sm:h-40 sm:w-40"
                 />
                 <span
                   aria-hidden="true"
-                  className="absolute -bottom-6 -left-6 h-24 w-24 rounded-full border-2 border-accent/40 sm:-bottom-10 sm:-left-10 sm:h-36 sm:w-36"
+                  className="paralaksa-b absolute -bottom-6 -left-6 h-24 w-24 rounded-full border-2 border-accent/40 sm:-bottom-10 sm:-left-10 sm:h-36 sm:w-36"
                 />
                 <div className="relative rounded-[1.75rem] bg-gradient-to-br from-accent-solid via-indigo-500/60 to-indigo-800 p-[3px] shadow-2xl shadow-accent/20">
                   <div className="overflow-hidden rounded-[1.6rem] bg-white dark:bg-gray-900">
@@ -248,7 +249,7 @@ export default function Home() {
           <div className="container-wide">
             <RevealOnScroll className="text-center">
               <h2 className="text-balance text-4xl font-bold tracking-tighter lg:text-5xl">
-                Sprawdź swoją stronę w minutę
+                <PisanyTekst id="audyt" tekst="Sprawdź swoją stronę w minutę" />
               </h2>
             </RevealOnScroll>
             <RevealOnScroll delay={1}>
@@ -261,7 +262,7 @@ export default function Home() {
           <div className="container-wide">
             <RevealOnScroll className="mb-12 text-center">
               <h2 className="text-balance text-4xl font-bold tracking-tighter lg:text-5xl">
-                Twój CRM czyta zapytanie, zanim Ty je przeczytasz
+                <PisanyTekst id="crm" tekst="Twój CRM czyta zapytanie, zanim Ty je przeczytasz" />
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-gray-600 dark:text-white/65">
                 Wybierz firmę i wyślij zapytanie jak jej klient. AI założy kartę leada w jej CRM i

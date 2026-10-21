@@ -1420,3 +1420,85 @@ blockquote {
   .border-l { border-left-width: 0.5px; }
   .border-r { border-right-width: 0.5px; }
 }
+
+/* 15, 16, 26: ruch sterowany przewijaniem (CSS, bez JS) */
+@supports (animation-timeline: view()) {
+  .ramka-3d {
+    transform-origin: 50% 100%;
+    animation: ramka-prostuj linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 100%;
+  }
+  @keyframes ramka-prostuj {
+    from { transform: perspective(1400px) rotateX(14deg) scale(0.92); }
+    to { transform: perspective(1400px) rotateX(0deg) scale(1); }
+  }
+  .paralaksa-a {
+    animation: paralaksa-a linear both;
+    animation-timeline: view();
+  }
+  .paralaksa-b {
+    animation: paralaksa-b linear both;
+    animation-timeline: view();
+  }
+  @keyframes paralaksa-a { from { transform: translateY(48px); } to { transform: translateY(-48px); } }
+  @keyframes paralaksa-b { from { transform: translateY(-40px); } to { transform: translateY(40px); } }
+  .maska-sekcji {
+    animation: maska-sekcji linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 60%;
+  }
+  @keyframes maska-sekcji {
+    from { clip-path: inset(10% 6% 0 6% round 2.5rem); }
+    to { clip-path: inset(0 0 0 0 round 0); }
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ramka-3d, .paralaksa-a, .paralaksa-b, .maska-sekcji { animation: none; }
+}
+
+/* 23: menu mobilne na sprężynie, pozycje wchodzą kolejno */
+.menu-mob {
+  transform-origin: top center;
+  animation: menu-mob-wjazd 0.6s linear(0, 0.4 7%, 0.82 15%, 1.05 25%, 1.07 31%, 1.02 44%, 0.99 58%, 1 75%, 1) both;
+}
+.menu-mob nav > * {
+  animation: menu-mob-pozycja 0.5s ease-out both;
+}
+.menu-mob nav > *:nth-child(1) { animation-delay: 40ms; }
+.menu-mob nav > *:nth-child(2) { animation-delay: 80ms; }
+.menu-mob nav > *:nth-child(3) { animation-delay: 120ms; }
+.menu-mob nav > *:nth-child(4) { animation-delay: 160ms; }
+.menu-mob nav > *:nth-child(5) { animation-delay: 200ms; }
+.menu-mob nav > *:nth-child(n + 6) { animation-delay: 240ms; }
+@keyframes menu-mob-wjazd {
+  from { opacity: 0; transform: translateY(-16px) scaleY(0.94); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes menu-mob-pozycja {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .menu-mob, .menu-mob nav > * { animation: none; }
+}
+
+/* 29: drżenie pola po błędzie */
+@keyframes drzenie-pola {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-5px); }
+  40% { transform: translateX(5px); }
+  60% { transform: translateX(-3px); }
+  80% { transform: translateX(3px); }
+}
+input:user-invalid,
+textarea:user-invalid,
+select:user-invalid,
+input[aria-invalid="true"],
+textarea[aria-invalid="true"] {
+  animation: drzenie-pola 0.4s ease-in-out;
+}
+@media (prefers-reduced-motion: reduce) {
+  input:user-invalid, textarea:user-invalid, select:user-invalid,
+  input[aria-invalid="true"], textarea[aria-invalid="true"] { animation: none; }
+}

@@ -11,5 +11,12 @@ Budżet tygodnia przycięty (rytm zwolnij, alarm), więc wdrożono najważniejsz
 Zrobione już wcześniej: 3, 92.
 Pominięte: 55 (ikona gradientowa czytelna na obu tłach).
 
+## Paczka 3, commit 9565c1d
+1 waga H1 przy przewijaniu (CSS scroll timeline), 4 liczby wyników z obrysem, 5 wisząca interpunkcja, 8 gradient w słowie H1, 10 węższa kolumna artykułów, 11 inicjał, 43 linie 0,5 px na 2x, 45 cienie warstwowe (tailwind). 44: skala już spójna, bez zmian.
+
+## Paczka 4
+7 nagłówki sekcji pisane raz na sesję, 15 ramka FINREAL prostuje się przy przewijaniu, 16 paralaksa kół, 23 menu mobilne na sprężynie, 26 maska clip-path sekcji Zasada, 29 drżenie pola po błędzie.
+Pominięte: 18 (ramka to suwak z kursorem ew-resize, karty mają własne CTA), 24 (animacja wysyłki z ptaszkiem już jest), 22 (brak sensownego miejsca na ikony), 30 (jest jedna realizacja).
+
 ## Niezrobione (do kolejnych cykli)
 Reszta listy: wymaga większych zmian lub budżetu tygodnia. 74, 80, 86 celowo bez zgody.
