@@ -22,5 +22,9 @@ Pominięte: 18 (ramka to suwak z kursorem ew-resize, karty mają własne CTA), 2
 34 więcej oddechu (sekcje strony głównej), 35 numeracja sekcji 01-04, 38 stopka z ekranem wezwania (poza /, /kontakt, /dziekuje, /panel, /cv), 47 szkło tylko w nagłówku i menu (przycisk wtórny bez blur), 49 kolor P3 na przycisku i pełnym kolorze marki, 50 oddychająca poświata pod głównym przyciskiem, 52 gradientowa ramka karty przy najechaniu.
 Pominięte: 32 (asymetria łamie oś symetrii), 36 (pionowy napis koliduje z układem na telefonie), 40 (pasek akcji już jest), 41 (jedna ramka realizacji już jest), 48 (trzy odcienie już są: 950, 900, 800), 51 (siatka i plamy w hero już są), 57 i 58 (brak ilustratora i zdjęć do tonowania).
 
+## Paczka 6
+63 tryb blueprint po kodzie Konami (przełącza się ponownie tym samym kodem), 72 podgląd linków wewnętrznych w artykułach (karta z tytułem i opisem, lazy), 79 taśma szkic, makieta, gotowa strona na /strony-www, 84 podpis autora i data aktualizacji z gita pod artykułami, 98 skrypt spójności pilnuje wartości spoza skali (rounded, shadow, odstępy), 99 tytuł karty przy nowej odpowiedzi czatu w tle (kropka w ikonie już była), 100 komentarz w źródle HTML.
+Pominięte: 85 (podświetlanie pojęć wymagałoby zmiany DOM zarządzanego przez React, ryzyko błędów hydracji), 76 i 81 (Manifest i /zmiany już są), 83 (oś kroków już interaktywna na /jak-pracuje).
+
 ## Niezrobione (do kolejnych cykli)
 Reszta listy: wymaga większych zmian lub budżetu tygodnia. 74, 80, 86 celowo bez zgody.

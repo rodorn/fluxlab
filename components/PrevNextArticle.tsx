@@ -1,4 +1,6 @@
 import Link from "next/link";
+import PodpisAutora from "./PodpisAutora";
+import PodgladLinkow from "./PodgladLinkow";
 import { categories, type Article } from "@/lib/categories";
 
 interface PrevNextArticleProps {
@@ -17,6 +19,9 @@ export default function PrevNextArticle({ currentHref }: PrevNextArticleProps) {
   if (!prev && !next) return null;
 
   return (
+    <>
+    <PodpisAutora href={currentHref} />
+    <PodgladLinkow />
     <nav
       aria-label="Nawigacja między artykułami"
       className="grid md:grid-cols-2 gap-4"
@@ -55,5 +60,6 @@ export default function PrevNextArticle({ currentHref }: PrevNextArticleProps) {
         <div className="hidden md:block" aria-hidden="true" />
       )}
     </nav>
+    </>
   );
 }

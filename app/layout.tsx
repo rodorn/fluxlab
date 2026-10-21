@@ -202,6 +202,13 @@ export default function RootLayout({
         />
       </head>
       <body className={`${geistSans.variable} ${instrumentSerif.variable} font-sans`}>
+        <div
+          hidden
+          dangerouslySetInnerHTML={{
+            __html:
+              "<!-- Czytasz źródło strony? To Next.js, Tailwind i Vercel, bez gotowych szablonów. Jeśli lubisz takie szczegóły, napisz: pawel@fluxlab.pl. Klawisze: Ctrl K szukaj, a góra góra dół dół lewo prawo lewo prawo B A pokazuje szkielet strony. -->",
+          }}
+        />
         <GoogleAnalytics />
         <ZgodaCookies />
         <LicznikWizyt />

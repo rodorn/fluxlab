@@ -219,6 +219,7 @@ export default function Czat() {
             typeof d.opisWyceny === "string" ? d.opisWyceny : undefined,
         },
       ]);
+      window.dispatchEvent(new Event("fluxlab:nowa-wiadomosc"));
     } catch {
       setHistoria((h) => [
         ...h,

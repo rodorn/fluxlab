@@ -145,6 +145,14 @@ export default function TytulKarty() {
     };
     document.addEventListener("visibilitychange", onChange);
 
+    // Nowa odpowiedź czatu, gdy karta jest w tle: tytuł zmienia się obok kropki w ikonie.
+    const onCzat = () => {
+      if (!document.hidden) return;
+      if (zapamietany === null) zapamietany = document.title;
+      document.title = "Nowa wiadomość od Fluxlab";
+    };
+    window.addEventListener("fluxlab:nowa-wiadomosc", onCzat);
+
     let idx = 0;
     let bufor = "";
     const onKey = (e: KeyboardEvent) => {
@@ -156,6 +164,7 @@ export default function TytulKarty() {
       if (e.key.length === 1) bufor = (bufor + k).slice(-7);
       if (idx === KONAMI.length) {
         idx = 0;
+        document.documentElement.classList.toggle("blueprint");
         deszcz();
       } else if (bufor === "fluxlab") {
         bufor = "";
@@ -174,6 +183,7 @@ export default function TytulKarty() {
     }
     return () => {
       document.removeEventListener("visibilitychange", onChange);
+      window.removeEventListener("fluxlab:nowa-wiadomosc", onCzat);
       window.removeEventListener("keydown", onKey);
       przywrocIkone();
     };

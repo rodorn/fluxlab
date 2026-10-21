@@ -810,6 +810,29 @@ if (sankcjeDaty.size > 1) {
   }
 }
 
+// --- 98. odstepy, promienie i cienie tylko ze skali ---
+// Wartosci w nawiasach kwadratowych omijaja skale Tailwinda. Dozwolone sa
+// te, ktore wpisano swiadomie (ramka realizacji, poswiata tla); nowa wymaga
+// decyzji i dopisania tutaj.
+const DOZWOLONE_ARBITRALNE = new Set([
+  "rounded-[2.6rem]",
+  "rounded-[1.75rem]",
+  "rounded-[1.6rem]",
+  "shadow-[0_0_14px_4px_rgba(99,102,241,0.55)]",
+  "shadow-[0_0_14px_4px_rgba(107,114,128,0.5)]",
+  "shadow-[0_0_12px_rgba(0,0,0,0.35)]",
+  "px-[max(1.5rem,calc((100%-72rem)/2+1.5rem))]",
+  "p-[3px]",
+  "pb-[max(0.75rem,env(safe-area-inset-bottom))]",
+  "pt-[12vh]",
+]);
+for (const f of sourceFiles) {
+  for (const m of read(f).matchAll(/\b(?:rounded|shadow|[pm][xytblr]?|gap(?:-[xy])?|space-[xy])-\[[^\]\s"'`]*\]/g)) {
+    if (!DOZWOLONE_ARBITRALNE.has(m[0]))
+      add("skala", `${f}: wartosc spoza skali ${m[0]}`);
+  }
+}
+
 const byKind = {};
 for (const p of problems) (byKind[p.kind] ||= []).push(p.msg);
 

@@ -1553,3 +1553,23 @@ textarea[aria-invalid="true"] {
     background-color: color(display-p3 0.29 0.25 0.93);
   }
 }
+
+/* 63: tryb blueprint po kodzie Konami, szkielet strony na siatce */
+html.blueprint main {
+  background-image:
+    linear-gradient(rgb(var(--accent) / 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(var(--accent) / 0.1) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+html.blueprint main * {
+  outline: 1px dashed rgb(var(--accent) / 0.45);
+  outline-offset: -1px;
+}
+html.blueprint img,
+html.blueprint video {
+  filter: grayscale(1) contrast(1.1);
+}
+@media print {
+  html.blueprint main { background-image: none; }
+  html.blueprint main * { outline: none; }
+}

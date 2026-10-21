@@ -10,6 +10,7 @@ import KonfiguratorStrony from "@/components/KonfiguratorStrony";
 import GeneratorHasla from "@/components/GeneratorHasla";
 import WyscigStron from "@/components/WyscigStron";
 import MakietaStrony from "@/components/MakietaStrony";
+import TasmaEtapow from "@/components/TasmaEtapow";
 
 export const metadata: Metadata = {
   title: "Tworzenie stron WWW i poprawki w obecnych | Fluxlab",
@@ -127,6 +128,8 @@ export default function StronyWww() {
         <MakietaStrony />
 
         <WyscigStron />
+
+        <TasmaEtapow />
 
         <section id="cennik" className="scroll-mt-20 container-wide">
           <div className="py-10 lg:py-12">
