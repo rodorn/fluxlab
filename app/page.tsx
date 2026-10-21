@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
@@ -232,14 +231,20 @@ export default function Home() {
                         Realizacje →
                       </Link>
                     </div>
-                    <Image
-                      src="/photos/realizacja-finreal-2x.webp"
+                    {/* Zwykły <img> z tym samym srcset co next/image: sam komponent
+                        dokłada do pierwszego ładunku skryptów ok. 5 kB. */}
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src="/_next/image?url=%2Fphotos%2Frealizacja-finreal-2x.webp&w=3840&q=90"
+                      srcSet="/_next/image?url=%2Fphotos%2Frealizacja-finreal-2x.webp&w=640&q=90 640w, /_next/image?url=%2Fphotos%2Frealizacja-finreal-2x.webp&w=750&q=90 750w, /_next/image?url=%2Fphotos%2Frealizacja-finreal-2x.webp&w=828&q=90 828w, /_next/image?url=%2Fphotos%2Frealizacja-finreal-2x.webp&w=1080&q=90 1080w, /_next/image?url=%2Fphotos%2Frealizacja-finreal-2x.webp&w=1200&q=90 1200w, /_next/image?url=%2Fphotos%2Frealizacja-finreal-2x.webp&w=1920&q=90 1920w, /_next/image?url=%2Fphotos%2Frealizacja-finreal-2x.webp&w=2048&q=90 2048w, /_next/image?url=%2Fphotos%2Frealizacja-finreal-2x.webp&w=3840&q=90 3840w"
                       alt="Nowa strona finreal.pl zrobiona przez FluxLab"
                       width={2880}
                       height={1620}
-                      quality={90}
+                      loading="lazy"
+                      decoding="async"
                       sizes="(min-width: 1024px) 1024px, 100vw"
                       className="h-auto w-full"
+                      style={{ color: "transparent" }}
                     />
                   </div>
                 </div>

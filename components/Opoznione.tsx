@@ -1,24 +1,17 @@
 "use client";
 
-import dynamic from "next/dynamic";
-import { useEffect, useState } from "react";
-
-const Czat = dynamic(() => import("@/components/Czat"), { ssr: false });
-const ScrollToTop = dynamic(() => import("@/components/ScrollToTop"), { ssr: false });
-const MagnesPrzyciskow = dynamic(() => import("@/components/MagnesPrzyciskow"), { ssr: false });
-const KomunikatKonsoli = dynamic(() => import("@/components/KomunikatKonsoli"), { ssr: false });
-const LicznikWizyt = dynamic(() => import("@/components/LicznikWizyt"), { ssr: false });
-const ContactClickTracker = dynamic(() => import("@/components/ContactClickTracker"), { ssr: false });
-const ScrollProgress = dynamic(() => import("@/components/ScrollProgress"), { ssr: false });
-const PlynnePrzewijanie = dynamic(() => import("@/components/PlynnePrzewijanie"), { ssr: false });
-const SpeedInsights = dynamic(() => import("@vercel/speed-insights/next").then((m) => m.SpeedInsights), { ssr: false });
-const Analytics = dynamic(() => import("@vercel/analytics/next").then((m) => m.Analytics), { ssr: false });
-const NowaWersja = dynamic(() => import("@/components/NowaWersja"), { ssr: false });
+import { useEffect, useState, type ComponentType } from "react";
 
 /** Nakładki, bez których pierwszy ekran działa: ładują się przy pierwszym
  *  geście użytkownika (ruch, klawisz, dotyk) albo po 6 s, nie razem z pierwszym malowaniem. */
 export default function Opoznione() {
   const [gotowe, ustawGotowe] = useState(false);
+  const [Nakladki, ustawNakladki] = useState<ComponentType | null>(null);
+
+  useEffect(() => {
+    if (!gotowe) return;
+    import("@/components/NakladkiOpoznione").then((m) => ustawNakladki(() => m.default));
+  }, [gotowe]);
 
   useEffect(() => {
     const start = () => ustawGotowe(true);
@@ -48,22 +41,19 @@ export default function Opoznione() {
     return posprzataj;
   }, []);
 
-  if (!gotowe) return null;
-  return (
-    <>
-      <ScrollToTop />
-      <MagnesPrzyciskow />
-      <KomunikatKonsoli />
-      <Czat />
-      <NowaWersja />
-    </>
-  );
+  return Nakladki ? <Nakladki /> : null;
 }
 
 /** Pomiary i drobne dodatki: ładowane, gdy przeglądarka skończy pierwsze
  *  malowanie i ma wolną chwilę, żeby nie wydłużały blokowania głównego wątku. */
 export function PoPierwszymMalowaniu() {
   const [gotowe, ustawGotowe] = useState(false);
+  const [Pomiary, ustawPomiary] = useState<ComponentType | null>(null);
+
+  useEffect(() => {
+    if (!gotowe) return;
+    import("@/components/NakladkiPomiary").then((m) => ustawPomiary(() => m.default));
+  }, [gotowe]);
 
   useEffect(() => {
     const start = () => ustawGotowe(true);
@@ -76,15 +66,5 @@ export function PoPierwszymMalowaniu() {
     return () => window.removeEventListener("load", odpal);
   }, []);
 
-  if (!gotowe) return null;
-  return (
-    <>
-      <LicznikWizyt />
-      <ContactClickTracker />
-      <ScrollProgress />
-      <PlynnePrzewijanie />
-      <SpeedInsights />
-      <Analytics />
-    </>
-  );
+  return Pomiary ? <Pomiary /> : null;
 }

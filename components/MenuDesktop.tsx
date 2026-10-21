@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { MENU, OPIS_MENU, type LinkMenu, type PozycjaMenu } from "@/lib/menu";
+import type { LinkMenu, PozycjaMenu } from "@/lib/menu";
 
 /** Menu desktopowe: podświetlenie jeździ za kursorem po pasku, panel jest
  *  jeden i przesuwa treść w bok przy zmianie pozycji, kafel pokazuje podgląd
@@ -99,15 +99,17 @@ function SuwakiCen({ zamknij }: { zamknij: () => void }) {
 
 function Panel({
   p,
+  opisy,
   kierunek,
   zamknij,
 }: {
   p: PozycjaMenu;
+  opisy: Record<string, string>;
   kierunek: number;
   zamknij: () => void;
 }) {
   const [podglad, setPodglad] = useState<LinkMenu | null>(null);
-  const opis = podglad ? OPIS_MENU[podglad.href] : null;
+  const opis = podglad ? opisy[podglad.href] : null;
 
   return (
     <div
@@ -145,7 +147,7 @@ function Panel({
                       →
                     </span>
                   </span>
-                  {(x.cena || OPIS_MENU[x.href]) && (
+                  {(x.cena || opisy[x.href]) && (
                     <span
                       className={`block text-xs leading-snug ${
                         x.cena
@@ -153,7 +155,7 @@ function Panel({
                           : "text-gray-500 dark:text-white/50"
                       }`}
                     >
-                      {x.cena ?? OPIS_MENU[x.href]}
+                      {x.cena ?? opisy[x.href]}
                     </span>
                   )}
                 </Link>
@@ -195,7 +197,13 @@ function Panel({
   );
 }
 
-export default function MenuDesktop() {
+export default function MenuDesktop({
+  pozycje,
+  opisy,
+}: {
+  pozycje: PozycjaMenu[];
+  opisy: Record<string, string>;
+}) {
   const [menu, setMenu] = useState<string | null>(null);
   const [kierunek, setKierunek] = useState(0);
   const [pigulka, setPigulka] = useState<{ x: number; w: number } | null>(null);
@@ -208,8 +216,8 @@ export default function MenuDesktop() {
 
   const otworz = (id: string) => {
     const stary = poprzedni.current;
-    const i = MENU.findIndex((m) => m.id === id);
-    const j = stary ? MENU.findIndex((m) => m.id === stary) : -1;
+    const i = pozycje.findIndex((m) => m.id === id);
+    const j = stary ? pozycje.findIndex((m) => m.id === stary) : -1;
     setKierunek(j < 0 ? 0 : Math.sign(i - j));
     poprzedni.current = id;
     const r = nav.current?.getBoundingClientRect();
@@ -237,7 +245,7 @@ export default function MenuDesktop() {
     return () => document.removeEventListener("keydown", onKey);
   }, [menu]);
 
-  const aktywna = MENU.find((m) => m.id === menu);
+  const aktywna = pozycje.find((m) => m.id === menu);
 
   return (
     <nav
@@ -260,7 +268,7 @@ export default function MenuDesktop() {
             opacity: pigulka ? 1 : 0,
           }}
         />
-        {MENU.map((p) => (
+        {pozycje.map((p) => (
           <Link
             key={p.id}
             href={p.href}
@@ -298,6 +306,7 @@ export default function MenuDesktop() {
             <Panel
               key={aktywna.id}
               p={aktywna}
+              opisy={opisy}
               kierunek={kierunek}
               zamknij={zamknij}
             />
