@@ -26,6 +26,8 @@ export const SEKCJE: Sekcja[] = [
           s("/landing-z-platnoscia", "Landing z płatnością"),
           s("/strona-po-wlamaniu", "Ratunek po włamaniu na stronę"),
           s("/mail-firmowy", "Mail firmowy"),
+          s("/profil-firmy-google", "Prowadzenie wizytówki Google"),
+          s("/benchmarking-konkurencji", "Benchmarking konkurencji"),
         ],
       },
       {

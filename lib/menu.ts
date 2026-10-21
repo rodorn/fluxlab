@@ -50,6 +50,8 @@ export const MENU: PozycjaMenu[] = [
           l("/strona-po-wlamaniu"),
           l("/mail-firmowy"),
           l("/naprawa-https"),
+          l("/profil-firmy-google"),
+          l("/benchmarking-konkurencji"),
         ],
       },
       {
@@ -260,6 +262,8 @@ export const OPIS_MENU: Record<string, string> = {
   "/naprawa-https": "Koniec z ostrzeżeniem w przeglądarce",
   "/audyt-strony": "Wynik w minutę, lista poprawek z ceną",
   "/widocznosc-w-google": "Czy Google w ogóle Cię widzi",
+  "/profil-firmy-google": "Wizytówka w Mapach, 349 zł/mc",
+  "/benchmarking-konkurencji": "Co zmienia konkurencja, od 39 zł/mc",
   "/widocznosc-w-ai": "Czy ChatGPT poleca Twoją firmę",
   "/mapa-strony": "Mapa dla Google bez błędów",
   "/audyt-poczty": "SPF, DKIM, DMARC w jednym sprawdzeniu",
