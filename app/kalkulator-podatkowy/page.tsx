@@ -330,6 +330,25 @@ export default function KalkulatorPodatkowyPage() {
       </main>
       <CTA />
 
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            name: "Kalkulator JDG 2026: ryczałt, liniowy, skala i ZUS",
+            url: "https://fluxlab.pl/kalkulator-podatkowy",
+            applicationCategory: "FinanceApplication",
+            operatingSystem: "Dowolna przeglądarka",
+            offers: {
+              "@type": "Offer",
+              price: "0",
+              priceCurrency: "PLN",
+            },
+            provider: { "@type": "Organization", name: "Fluxlab" },
+          }),
+        }}
+      />
       {/* FAQPage Schema */}
       <script
         type="application/ld+json"
