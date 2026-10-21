@@ -232,7 +232,7 @@ export default function Home() {
             <dl className="mx-auto mt-16 grid max-w-4xl grid-cols-1 gap-10 text-center sm:grid-cols-3">
               {WYNIKI.map(([liczba, opis], i) => (
                 <RevealOnScroll key={liczba} delay={(i + 1) as 1 | 2 | 3}>
-                  <dt className="text-5xl font-bold tracking-tighter lg:text-6xl">
+                  <dt className="liczba-obrys text-5xl font-bold tracking-tighter lg:text-6xl">
                     <CountUp value={liczba} />
                   </dt>
                   <dd className="mx-auto mt-2 max-w-[15rem] text-balance text-sm text-gray-600 dark:text-white/65">

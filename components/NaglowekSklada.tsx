@@ -9,7 +9,7 @@ export default function NaglowekSklada({
 }) {
   const slowa = tekst.split(" ");
   return (
-    <h1 className="text-balance text-5xl font-bold leading-[0.95] tracking-tighter sm:text-7xl lg:text-8xl">
+    <h1 className="h1-waga text-balance text-5xl font-bold leading-[0.95] tracking-tighter sm:text-7xl lg:text-8xl">
       {slowa.map((s, i) => (
         <span key={i}>
           <span
