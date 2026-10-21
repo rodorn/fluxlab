@@ -6834,3 +6834,11 @@ Kandydaci na Z4/Z9/Z20 (pozycja ≤12 i fraza nie w description): 0. Najbliżej:
 **Dowód:** VPS 48 h: jedyna sesja z audytem to pubcs1… 20.10 09:10 z utm mail/audyt-wynik (adresat bajkowyzakatek.pl otworzył wynik ponownie, 53/100, i nie odpisał). Pozostałe powiadomienia „[audyt]”: carmore.pl, fluxlab.pl, finreal.pl, news.ycombinator.com (test). Zoho od 20.10 06:30: 0 odpowiedzi na `audyt-wynik`. NOVO i Naszkiewicz odmówili, ale to odpowiedzi do sesji dużych biur, więc ich nie liczę.
 **Dla Pawła:**
 **Zostało otwarte:** Z5 (linki do /numer-ksef i /analiza-lokalizacji) wstrzymane, bo budżet pokazuje „wstrzymaj” (99% tygodnia, reset za 0 h); do wzięcia po odnowieniu limitu. Dalej Z7 i kolejne wg planu.
+
+## 2026-10-21 10:08
+**Kanał:** Google (Z5, linki wewnętrzne) + social przez brief (Z7).
+**Co zrobione:** Z5: dwa istniejące wyrażenia „numerem/numeru KSeF” w /strefa-wiedzy/proforma-ksef i /strefa-wiedzy/faktura-wewnetrzna-ksef są teraz linkami do /numer-ksef (15 → 17 plików z linkiem, 0 nowych słów); analiza lokalizacji: 0 zmian, jedyna strona z frazą (/widocznosc-w-google) już linkuje. Z7: brief dla fluxlab-meta i serii podatkowej z liczbami z VPS i prośbą o link prosto do kalkulatora.
+**Ruch:** doba 149 odsłon, 100 osób; źródła: b2b-email 57, youtube 20, google 4, linkedin 3, instagram 3. Social po odsiewie (VPS): doba IG 3, YT 3, LI 3; tydzień LI 12, IG 8, FB 7, YT 7; `seria-podatki` 19 sesji w tygodniu, 0 uruchomień kalkulatora z serii.
+**Dowód:** commit 943bcbf, 200 z VPS, `href="/numer-ksef"` w HTML produkcji obu stron; ~/Projekty/fluxlab-meta/briefy/od-cyklu-ruchu-2026-10-21.md. `indexnow.mjs`: „brak adresów zmienionych od ostatniego zgłoszenia” (lastmod nie zmieniony, dojdzie w Z14).
+**Dla Pawła:**
+**Zostało otwarte:** Z8 (Bing: zgłoszenie adresów, w tym dwóch z Z5, i odczyt Copilota), dalej Z9 do Z22. Uwaga: inna sesja budowała w tym samym repo równolegle (stopka, Lighthouse), co raz nadpisało `.next` w trakcie `jakosc.mjs`; powtórzone, JAKOSC OK.
