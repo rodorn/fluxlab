@@ -6893,3 +6893,11 @@ Adresy: /strefa-wiedzy/co-to-jest-automatyzacja-procesow-biznesowych, /analiza-l
 **Dowód:** plan Z11 oznaczony [x]; liczby z `cykl/pomiar-kanalow.py` (funkcje `wiersze`, `odsiew`) zawężone do 21.10 06:30.
 **Dla Pawła:**
 **Zostało otwarte:** Z12 (stan serii indeksowania, nowa strona limit-10-tys) i dalej wg planu. Klik_po_wyniku w /numer-ksef ma 0 zdarzeń od wdrożenia 20.10 12:30, przy 3 uruchomieniach numeru KSeF w tygodniu: warto sprawdzić, czy zdarzenie w ogóle się wysyła.
+
+## 2026-10-21 11:52
+**Kanał:** Google (Z12, pomiar).
+**Co zrobione:** stan indeksu serii z 19/20.10: 5 z 5 adresów „Adres URL znajduje się w Google”, nowa strona /strefa-wiedzy/limit-10-tys-poza-ksef też jest w indeksie. W Search Console (28 dni) ta strona ma 0 wyświetleń, bo dane kończą się na 18.10.
+**Ruch:** jak we wpisie 11:50 (doba 149 odsłon, 110 osób).
+**Dowód:** `gsc_indeksuj.py --tylko-stan` 11:47-11:48, 0 żądań: co-to-jest-automatyzacja-procesow-biznesowych, /analiza-lokalizacji, /automatyzacja-crm-leasing, /numer-ksef, jak-zautomatyzowac-raportowanie-w-firmie, limit-10-tys-poza-ksef.
+**Dla Pawła:**
+**Zostało otwarte:** Z13 (lista do serii 22.10 01:10): z Z12 nie ma adresów „nie ma w Google”, więc lista to tylko strony zmienione dziś (Z5: proforma-ksef, faktura-wewnetrzna-ksef).
