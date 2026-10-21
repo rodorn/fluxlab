@@ -84,7 +84,7 @@
   font-weight: 600;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: rgb(var(--accent) / 0.6);
+  color: rgb(var(--accent));
   white-space: nowrap;
 }
 
