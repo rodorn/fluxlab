@@ -93,7 +93,11 @@ export default function FakturaWewnetrznaKsefArticle() {
               <h2 className="mb-4 h2-sekcji">Jak ją ująć w JPK_VAT</h2>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                 W ewidencji sprzedaży dokument wewnętrzny oznaczasz typem WEW.
-                Nie ma numeru KSeF, także po 2027 roku.
+                Nie ma{" "}
+                <Link href="/numer-ksef" className="text-accent hover:underline">
+                  numeru KSeF
+                </Link>
+                , także po 2027 roku.
               </p>
             </section>
             <section>

@@ -100,7 +100,10 @@ export default function ProformaKsefArticle() {
               <h2 className="mb-4 h2-sekcji">Jak ją wysyłać</h2>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                 Tak jak dotąd: PDF-em, mailem albo z programu do faktur. Nie
-                wysyłaj jej do KSeF nawet na próbę, bo dokument z numerem KSeF
+                wysyłaj jej do KSeF nawet na próbę, bo dokument z{" "}
+                <Link href="/numer-ksef" className="text-accent hover:underline">
+                  numerem KSeF
+                </Link>{" "}
                 staje się fakturą.
               </p>
             </section>
