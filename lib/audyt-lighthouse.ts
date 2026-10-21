@@ -18,8 +18,6 @@ export type WynikLighthouse = {
 
 const CZAS_MS = 60_000;
 
-export let ostatniBladLighthouse: string | null = null;
-
 async function przegladarka(): Promise<Browser> {
   const puppeteer = (await import("puppeteer-core")).default;
   const port = ["--remote-debugging-port=0"];
@@ -92,7 +90,6 @@ export async function zmierzLighthouse(
     ]);
   } catch (e) {
     console.error("audyt lighthouse:", e);
-    ostatniBladLighthouse = String((e as Error)?.stack ?? e).slice(0, 600);
     return null;
   } finally {
     clearTimeout(stop);

@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import TloHero from "@/components/TloHero";
 import KartaPoswiata from "@/components/KartaPoswiata";
-import LeniwyFormularz from "@/components/LeniwyFormularz";
+import LandingForm from "@/components/LandingForm";
 import PasekAkcji from "@/components/PasekAkcji";
 import PoleAudytu from "@/components/PoleAudytu";
 import WitajPonownie from "@/components/WitajPonownie";
@@ -13,7 +13,7 @@ import EtykietaNocna from "@/components/EtykietaNocna";
 import NaglowekSklada from "@/components/NaglowekSklada";
 import PodtytulZrodlo from "@/components/PodtytulZrodlo";
 import RevealOnScroll from "@/components/RevealOnScroll";
-import LeniwaScena from "@/components/LeniwaScena";
+import ScenaLeada from "@/components/ScenaLeada";
 import CountUp from "@/components/CountUp";
 import KrokiSticky from "@/components/KrokiSticky";
 import Manifest from "@/components/Manifest";
@@ -288,7 +288,7 @@ export default function Home() {
               </p>
             </RevealOnScroll>
             <RevealOnScroll delay={1}>
-              <LeniwaScena />
+              <ScenaLeada />
             </RevealOnScroll>
           </div>
         </section>
@@ -299,7 +299,7 @@ export default function Home() {
         >
           <div className="container-wide">
             <RevealOnScroll>
-<LeniwyFormularz
+<LandingForm
               formId="home"
               heading="Napisz, czego potrzebujesz"
               intro="Odpiszemy z ceną i terminem, tego samego dnia."
