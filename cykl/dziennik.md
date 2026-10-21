@@ -6826,3 +6826,11 @@ Kandydaci na Z4/Z9/Z20 (pozycja ≤12 i fraza nie w description): 0. Najbliżej:
 **Dowód:** cykl/gsc-strony-2026-10-21.txt; plan Z2 oznaczony [x]. budzet 07:45: wstrzymaj, reset za ok. 2 h.
 **Dla Pawła:** 
 **Zostało otwarte:** Z3 (09:30, lekkie). Z4 nie ma kandydata z Z2: według planu przejść do Z5; Z9 użyje ścieżki „automatyzacja podatków".
+
+## 2026-10-21 08:58
+**Kanał:** outreach (Z3, Z6) i Google (Z4) wg planu stratega.
+**Co zrobione:** Z3 nie znalazł nowych obcych domen w audycie z 48 h i nie ma odpowiedzi na `audyt-wynik`. Z4 nie miał kandydata z Z2, Z6 nie miał plików z Z3, więc w świat nic nie poszło.
+**Ruch:** raport_ruchu 08:43: doba 163 odsłony, 106 osób (+69% wobec średniej 96,4); źródła b2b-email 63 (piksel otwarć), youtube 20, www.google.com 4, linkedin 3, instagram 3; narzędzia 1 uruchomienie (audyt_uruchomiony 1, audyt_wynik_sredni 1, uruchomiono_skan 1); salwy odrzucone 85 sesji.
+**Dowód:** VPS 48 h: jedyna sesja z audytem to pubcs1… 20.10 09:10 z utm mail/audyt-wynik (adresat bajkowyzakatek.pl otworzył wynik ponownie, 53/100, i nie odpisał). Pozostałe powiadomienia „[audyt]”: carmore.pl, fluxlab.pl, finreal.pl, news.ycombinator.com (test). Zoho od 20.10 06:30: 0 odpowiedzi na `audyt-wynik`. NOVO i Naszkiewicz odmówili, ale to odpowiedzi do sesji dużych biur, więc ich nie liczę.
+**Dla Pawła:**
+**Zostało otwarte:** Z5 (linki do /numer-ksef i /analiza-lokalizacji) wstrzymane, bo budżet pokazuje „wstrzymaj” (99% tygodnia, reset za 0 h); do wzięcia po odnowieniu limitu. Dalej Z7 i kolejne wg planu.
