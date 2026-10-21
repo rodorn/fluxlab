@@ -6694,3 +6694,107 @@ Wniosek: `scena_leada` to wysłanie dema AI (ScenaLeada.tsx:279), a `lead_*` wys
 **Dowód:** `systemctl --user list-timers 'fl-*'`: 3 timery; `budzet`: zwolnij, kamieni 1.
 **Dla Pawła:**
 **Zostało otwarte:** Z19 (log cykl/z19-indeksowanie.log po 01:05), Z22 bilans (04:30), Z23 wniosek (05:30).
+
+<!-- WYSLANO 2026-10-20 23:08 -->
+
+## 2026-10-20 23:45
+**Kanał:** brak (otwarte zadania planu są nocne: Z19 nie przed 21.10 01:05, Z22 04:30, Z23 05:30 wymaga pełnej doby lejka od Z2; Gofin na 21.10 ma 2 z 2 wpisów).
+**Co zrobione:** nic nie poszło w świat: jedyne otwarte zadania mają godziny nocne, budżet „zwolnij” z hamulcem w trybie alarm (prognoza 108% przy celu 95%, praca przycięta do 15%, reset za 9 h); timery fl-gsc-21 (01:05), fl-gofin-16 (07:30), fl-gofin-17 (12:00) stoją.
+**Ruch:** doba 137 odsłon, 88 osób (+46% wobec średniej 93,9); tydzień 765 odsłon, 508 osób; źródła b2b-email 74, youtube 16, www.google.com 4, linkedin 3, mail 2; z telefonu 21 z 137; narzędzia 3 uruchomienia (audyt 1, skan 3 zdarzenia); salwy odrzucone 82 sesje.
+**Dowód:** `systemctl --user list-timers 'fl-*'`: 3 timery; `budzet`: zwolnij, hamulec alarm, kamieni 1.
+**Dla Pawła:**
+**Zostało otwarte:** Z19 (log cykl/z19-indeksowanie.log po 01:05), Z22 bilans (04:30), Z23 wniosek (05:30).
+
+## 2026-10-21 01:08
+**Kanał:** Google (Z19, seria żądań indeksowania).
+**Co zrobione:** timer fl-gsc-21 wysłał żądania ponownego indeksowania dla 5 stron zmienionych 20.10 (Z3, Z4, Z6, Z21), 5 z 5 przyjętych bez limitu.
+**Ruch:** doba 142 odsłony, 91 osób (+50% wobec średniej 94,9); źródła b2b-email 74, youtube 16, www.google.com 4, linkedin 3, mail 2; z telefonu 27 z 142; narzędzia 2 uruchomienia; pomiar-kanalow 24 h: 32 ludzi, z odsyłaczem 12 (Google 3, LinkedIn 3, YouTube 2, Instagram 2, Bing 1, mail 1), bez 20.
+**Dowód:** cykl/z19-indeksowanie.log: 01:05:27 do 01:07:53, 5 × „prośba przesłana”; plan Z19 [x].
+**Dla Pawła:**
+**Zostało otwarte:** Z22 bilans (04:30), Z23 wniosek (05:30, pełna doba lejka od Z2 06:46). Budżet: zwolnij, hamulec alarm, reset za 8 h.
+
+## 2026-10-21 01:45
+**Kanał:** brak (otwarte zadania planu to Z22 bilans 04:30 i Z23 wniosek 05:30, oba liczą pełną dobę do 06:30; zrobione teraz straciłyby 5 h danych; Gofin na 21.10 ma 2 z 2 wpisów).
+**Co zrobione:** nic nie poszło w świat; budżet „zwolnij” z hamulcem alarm (prognoza 106% przy celu 95%, praca przycięta do 15%, reset za 7 h). Timery fl-gofin-16 (07:30) i fl-gofin-17 (12:00) stoją.
+**Ruch:** raport_ruchu: doba 146 odsłon, 95 osób (+54% wobec średniej 94,9); źródła b2b-email 74, youtube 19, www.google.com 4, linkedin 3, mail 2; z telefonu 27 z 146; narzędzia 2 uruchomienia; zdarzenia: scena_leada 1, audyt_uruchomiony 1. pomiar-kanalow 24 h: 33 ludzi, z odsyłaczem 12 (Google 3, LinkedIn 3, YouTube 2, Instagram 2, Bing 1, mail 1), bez 21.
+**Dowód:** `systemctl --user list-timers 'fl-*'`: fl-gofin-16, fl-eprawnik, fl-gofin-17; `budzet`: zwolnij, hamulec alarm, kamieni 1.
+**Dla Pawła:**
+**Zostało otwarte:** Z22 bilans (04:30), Z23 wniosek (05:30). W Zoho odpowiedź Michała Naszkiewicza na „Propozycja współpracy z Państwa biurem” należy do kampanii innej sesji (biura_ecom), ten cykl jej nie obsługuje.
+
+## 2026-10-21 02:45
+**Kanał:** brak (otwarte zadania planu to Z22 bilans 04:30 i Z23 wniosek 05:30, oba liczą pełną dobę do 06:30; zrobione teraz straciłyby prawie 4 h danych; Gofin na 21.10 ma 2 z 2 wpisów).
+**Co zrobione:** nic nie poszło w świat; budżet „zwolnij” z hamulcem alarm (prognoza 104% przy celu 95%, praca przycięta do 15%, reset za 6 h). Timery fl-gofin-16 (07:30) i fl-gofin-17 (12:00) stoją.
+**Ruch:** raport_ruchu: doba 161 odsłon, 110 osób (+70% wobec średniej 94,9), w tym piksel otwarć b2b-email 74; źródła b2b-email 74, youtube 19, www.google.com 4, linkedin 3, mail 2; z telefonu 31 z 161; narzędzia 2 uruchomienia; zdarzenia: scena_leada 1, audyt_uruchomiony 1, uruchomiono_skan 2. pomiar-kanalow 24 h: 40 ludzi, z odsyłaczem 12 (Google 3, LinkedIn 3, YouTube 2, Instagram 2, Bing 1, mail 1), bez 28.
+**Dowód:** `systemctl --user list-timers 'fl-*'`: fl-gofin-16, fl-eprawnik, fl-gofin-17; `budzet`: zwolnij, hamulec alarm, kamieni 1.
+**Dla Pawła:**
+**Zostało otwarte:** Z22 bilans (04:30), Z23 wniosek (05:30). Bez odsyłacza wzrosło z 21 (01:45) do 28 przy tej samej liczbie z odsyłaczem; Z22 sprawdzi, czy to nowa salwa poniżej progu filtra.
+
+<!-- WYSLANO 2026-10-21 03:12 -->
+
+## 2026-10-21 03:50
+**Kanał:** pomiar (Z22 z planu stratega: bilans planu 2026-10-20/21).
+**Co zrobione:** bilans doby: 21 z 23 zadań zamknięte przed Z22 (19 zrobione, 2 „!”), tabela niżej jako wejście dla stratega 06:15.
+**Ruch:** `pomiar-kanalow.py` 24 h: 44 ludzi, z odsyłaczem 12 (Google 3, LinkedIn 3, YouTube 2, Instagram 2, Bing 1, mail 1), bez odsyłacza 32. `raport_ruchu.py`: 165 odsłon, 114 osób, z tego piksel b2b-email innej sesji 74 (to nie wejścia). Tydzień: 311 ludzi, Google 23, LinkedIn 11, Instagram 7, YouTube 6, Facebook 7, mail 5, Bing 4.
+
+| Zad. | Stan | Godz. | Co przyprowadziło |
+|---|---|---|---|
+| Z1 Gofin timery + lejek | zrobione | 06:50 | 0 (pomiar: 6 sesji / 13 zdarzeń scena_leada) |
+| Z2 scena leada | zrobione, 0 przeszkód | 06:46 | 0 (`lead_landing` 1 w 7 dni) |
+| Z3 opis „automatyzacja procesów biznesowych” | zrobione | rano 20.10 | 0 (ocena 27.10) |
+| Z4 opisy /analiza-lokalizacji i CRM meble | zrobione | rano 20.10 | 0 |
+| Z5 odpowiedzi + obcy z audytu | zrobione | rano 20.10 | 2 kandydatów |
+| Z6 /numer-ksef przejście po wyniku | zrobione, 6ee2c98 | rano 20.10 | `klik_po_wyniku` 0 |
+| Z7 brief social | zrobione | rano 20.10 | LinkedIn 3 w dobie |
+| Z8 audyt-wynik | zrobione, 2 maile 09:05 | 07:48 | 1 sesja 5 min po wysyłce, 0 odpowiedzi |
+| Z9 mapa zapytań GSC | zrobione | 07:56 | 0 (pomiar) |
+| Z10 Bing | zrobione | 07:59 | 0 (pomiar) |
+| Z11 linki wewnętrzne | ! (brak istniejącego słowa) | 08:00 | 0 |
+| Z12 pomiar wieczór | zrobione | 13:45 | 0 |
+| Z13 stan serii 20.10 | zrobione, 10 z 10 w Google | 08:49 | 0 |
+| Z14 timer serii | zrobione | 08:51 | 0 |
+| Z15 porządek (7bff862) | zrobione | 10:05 | 0 |
+| Z16 serie dzienne GSC | ! (GSC tylko do 17.10) | 09:55 | 0 |
+| Z17 bez odsyłacza | zrobione (salwy Chrome Windows) | 08:57 | 0 (poprawka liczby) |
+| Z18 pomiar noc | zrobione | 20:45 | 0 |
+| Z19 seria żądań | zrobione, 5 z 5 | 01:08 | 0 |
+| Z20 llms.txt | zrobione częściowo (Vercel CDN bez logu) | 08:58 | 0 |
+| Z21 opis „automatyzacja raportowania” | zrobione, 1 strona | 08:54 | 0 (ocena 27.10) |
+
+- Ludzie w dobie: z odsyłaczem 12 wobec 18, bez 32 wobec 22.
+- Lejek /: scena_leada 14 zdarzeń w 7 dni, w ostatniej dobie 1; `lead_*` 1 (`lead_landing`), formularz od ludzi 0.
+- /numer-ksef po Z6: `klik_po_wyniku` 0, uruchomienia 4 w 7 dni (bez zmiany).
+- `audyt-wynik`: 2 maile delivered, 1 sesja, 0 odpowiedzi (stan Z12; pełny odczyt Zoho w Z23).
+- Bing (Z10, dane do 18.10): 7 dni 1 klik / 38 wyświetleń, 30 dni 3 / 75; Copilot 27 cytowań od 7.10, 10 w 7 dni (forma opodatkowania JDG 4, ryczałt czy liniowy 4, /sprawdzenie-nip 2). AI (Z20): chatgpt.com 4 sesje w 30 dni, ostatnia 06.10; pobrań llms.txt nie da się zmierzyć z VPS.
+- Gofin: 2 z 2 (g14 08:00, g15 12:00), odsyłacz forum.gofin.pl 0. Poza planem 21.10 00:17 opublikowano e-prawnik 1 (inny przebieg, nie ten plan).
+- Trzy największe zmiany: bez odsyłacza 22 → 32 (+10, salwy Chrome Windows z Z17 nadal liczone), z odsyłaczem 18 → 12 (−6, głównie Google 7 → 3), piksel b2b-email innej sesji 23 → 74.
+- Otwarte decyzje dla stratega: (1) czy wykluczyć salwy Chrome Windows z liczenia ludzi (Z17 znalazł 11 z 26, wykluczenia nie wdrożono); (2) Google 7 → 3 w dobie przy niezmienionych danych GSC (do 17.10), czy to szum; (3) Copilot cytuje strony podatkowe JDG częściej niż ChatGPT daje wejść, czy przesunąć godzinę z llms.txt na Bing.
+
+**Dowód:** ten wpis; `cykl/plan-ruchu.md` Z22.
+**Dla Pawła:**
+**Zostało otwarte:** Z23 (05:30): odpowiedzi audyt-wynik, lejek po pełnej dobie od Z2, Zoho od 20.10 06:30.
+
+## 2026-10-21 04:58
+**Kanał:** outreach + pomiar (Z23 z planu stratega).
+**Co zrobione:** odczyt wyniku jedynego ciepłego outreachu, lejka sceny po pełnej dobie od Z2 i skrzynki Zoho; nic nowego nie poszło w świat.
+**Ruch:** bez zmian wobec bilansu Z22 z 03:50 (44 ludzi w dobie, z odsyłaczem 12, bez 32).
+**Dowód:** Resend 01a15820-b33b-75e9-9b4f-7a6001cd7de3 i 01a15820-eea1-7bfe-ad25-d9e2c28c45b3 delivered; licznik VPS od 20.10 06:46; `cykl/plan-ruchu.md` Z23.
+- Dla stratega 1: `audyt-wynik` 2 maile, 2 delivered, 1 sesja (5 min po wysyłce, 1 odsłona /audyt-strony), 0 odpowiedzi po 20 h. Przy 2 adresatach to za mało na wniosek; kanał tani, ale wymaga obcych użytkowników audytu, których w tygodniu było 2.
+- Dla stratega 2: lejek / od Z2: 1 wejście w scenę (telefon, 53 s, wyjście), 0 `lead_*`, 0 zgłoszeń od ludzi; /dziekuje 2 odsłony jednej sesji Chrome Windows bez formularza (salwy z Z17). Próg 5 wejść niespełniony, godziny na lejek nie mają podstawy, dopóki na / nie trafia więcej ludzi.
+- Dla stratega 3: Zoho od 20.10 06:30: 2 wątki od ludzi spoza outreachu (comparic: artykuł sponsorowany 1200 zł netto + 350 zł/24 h strona główna; FINREAL: zakres strony), oba z odpowiedzią (13:55, 21:10); 1 odmowa na outreach innej sesji (naszkiewicz.com.pl).
+**Dla Pawła:**
+**Zostało otwarte:** w planie 20/21.10 brak „- [ ]”; nowy plan stratega 06:15.
+
+## 2026-10-21 05:45
+**Kanał:** brak (plan wyczerpany).
+**Co zrobione:** nic nie poszło w świat. W planie 20/21.10 nie ma „- [ ]”, Gofin ma na 21.10 już limit 2 wpisów (g16 07:30, g17 12:00), a `budzet` daje rytm „zwolnij”, pracę przyciętą do 15% i 4 h do resetu, więc bez nowej pracy przed planem stratega z 06:15.
+**Ruch:** raport_ruchu, ostatnia doba: 162 odsłony, 113 osób; źródła b2b-email 70 (piksel otwarć innej sesji, nie wejścia), youtube 19, google 4, mail 2, linkedin 2. Narzędzia: 1 uruchomienie (audyt).
+**Dowód:** `systemctl --user list-timers 'fl-gofin-*'` = fl-gofin-16 (07:30), fl-gofin-17 (12:00).
+**Dla Pawła:**
+**Zostało otwarte:** nowy plan stratega 06:15.
+
+## Strategia dobowa 2026-10-21 (06:30, Fable)
+**Pomiar doby:** pomiar-kanalow 24 h: 47 ludzi, z odsyłaczem 11 (Google 3, Instagram 3, YouTube 2, LinkedIn 2, mail 1), bez 36; tydzień 316 (Google 23, LinkedIn 11, Instagram 8, Facebook 7, YouTube 6, mail 5, Bing 4). raport_ruchu: 163 odsłony, 114 osób, w tym piksel b2b-email 70; narzędzia 1 uruchomienie; scena_leada 1, lead_* 0. GSC (12.10 do 18.10): 12 kliknięć / 918 wyświetleń / CTR 1,3% / pozycja 24,3; strony z kliknięciami /numer-ksef 4/75, / 4/20, /analiza-lokalizacji 1/25, /automatyzacja-crm-leasing 1/18, /e-doreczenia-integracja 1/9, /mapa-strony 1/3; 98 stron, 160 zapytań; raport Indeksowanie nadal z 12.10; mapa 137 stron, odczyt 18.10, sukces. Resend API: 403 (klucz bez odczytu), log wysyłek nieodczytany. Zoho od 19.10: 0 odpowiedzi na nasz outreach; odmowa naszkiewicz.com.pl dotyczy kampanii innej sesji. audyt-wynik: 2 maile, 1 sesja, 0 odpowiedzi.
+**Ocena kanałów:** Google 3/23 (jedyny rosnący, 918 wyświetleń przy CTR 1,3%); seria podatkowa w social 7/25 (inne sesje); zimny outreach 0/0 przy 254 mailach w 30 dni (zamknięty); ciepły outreach do użytkowników audytu 0 odpowiedzi z 2; Gofin 0/0 po 15 komentarzach w 5 dób: WYŁĄCZONY (Z1 zatrzymuje fl-gofin-16 i -17); Bing 0/4 i Copilot 10 cytowań: godzina z llms.txt przeniesiona na Bing; lejek strony głównej 1 wejście, 0 lead_*: tylko pomiar.
+**Decyzje w sprawach otwartych z bilansu Z22:** (1) salwy Chrome Windows: wykluczenie tylko w pomiar-kanalow.py jako osobny wiersz (Z10), licznik produkcyjny bez zmian; (2) Google 7 → 3 w dobie to szum przy wzroście tygodnia 8 → 12 kliknięć; (3) tak, llms.txt 0 h, Bing 1 h (Z8).
+**Plan:** `cykl/plan-ruchu.md` na 21.10 06:30 do 22.10 06:30, 22 zadania; Google 9 h (mapa stron bez kliknięć, do 3 opisów poza embargiem, linki wewnętrzne na istniejących słowach, seria żądań przez timer fl-gsc-22 o 01:10), pomiar 5 h, outreach ciepły 2 h, Bing 1 h, social brief 1 h. Budżet 06:20: wstrzymaj, nowy cykl NIE, reset ok. 09:30; Z1 do Z3 lekkie, zadania (zmiana) dopiero przy „zwolnij" lub lepiej.
+**Mail do Pawła:** „FluxLab ruch, plan na 21.10.2026: 12 kliknięć z Google w tygodniu, 11 osób z odsyłacza w dobie"; Dla Pawła: klucz Resend z odczytem (2 min), decyzja o zimnym outreachu (1 min).
