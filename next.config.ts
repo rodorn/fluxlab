@@ -217,6 +217,9 @@ const nextConfig: NextConfig = {
   },
   experimental: {
     viewTransition: true,
+    // CSS wbudowany w HTML: bez osobnego arkusza blokującego pierwsze
+    // wyświetlenie (na wolnym łączu to większość czasu do LCP).
+    inlineCss: true,
   },
   images: {
     formats: ["image/avif", "image/webp"],
