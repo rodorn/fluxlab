@@ -84,7 +84,7 @@ export default function Tabs({ tabs, ariaLabel = "Sekcje strony" }: Props) {
   return (
     <div ref={wrapRef}>
       {/* Pasek zakładek, sticky pod headerem */}
-      <div className="sticky top-16 z-30 -mx-6 lg:-mx-8 px-6 lg:px-8 bg-white/95 dark:bg-gray-950/95 lg:bg-white/85 lg:dark:bg-gray-950/85 lg:backdrop-blur-md">
+      <div className="sticky top-16 z-30 -mx-6 lg:-mx-8 px-6 lg:px-8 bg-white dark:bg-gray-950">
         <div
           role="tablist"
           aria-label={ariaLabel}

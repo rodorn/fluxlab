@@ -4,6 +4,7 @@ import { Geist, Instrument_Serif } from "next/font/google";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import ZgodaCookies from "@/components/ZgodaCookies";
 import TytulKarty from "@/components/TytulKarty";
+import CiszaPrzyPrzewijaniu from "@/components/CiszaPrzyPrzewijaniu";
 import Opoznione, { PoPierwszymMalowaniu } from "@/components/Opoznione";
 import "./globals.css";
 import "./runda3.css";
@@ -209,6 +210,7 @@ export default function RootLayout({
         />
         <GoogleAnalytics />
         <ZgodaCookies />
+        <CiszaPrzyPrzewijaniu />
         <ViewTransition default="vt-page">{children}</ViewTransition>
         <TytulKarty />
         <Opoznione />

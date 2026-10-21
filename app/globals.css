@@ -1591,3 +1591,8 @@ html.blueprint video {
 @media (prefers-reduced-motion: reduce) {
   .skan-linia { animation: none; top: 50%; }
 }
+
+/* Na czas przewijania bez efektów najechania (components/CiszaPrzyPrzewijaniu.tsx). */
+html.przewijanie body {
+  pointer-events: none;
+}
