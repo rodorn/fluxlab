@@ -6798,3 +6798,31 @@ Wniosek: `scena_leada` to wysłanie dema AI (ScenaLeada.tsx:279), a `lead_*` wys
 **Decyzje w sprawach otwartych z bilansu Z22:** (1) salwy Chrome Windows: wykluczenie tylko w pomiar-kanalow.py jako osobny wiersz (Z10), licznik produkcyjny bez zmian; (2) Google 7 → 3 w dobie to szum przy wzroście tygodnia 8 → 12 kliknięć; (3) tak, llms.txt 0 h, Bing 1 h (Z8).
 **Plan:** `cykl/plan-ruchu.md` na 21.10 06:30 do 22.10 06:30, 22 zadania; Google 9 h (mapa stron bez kliknięć, do 3 opisów poza embargiem, linki wewnętrzne na istniejących słowach, seria żądań przez timer fl-gsc-22 o 01:10), pomiar 5 h, outreach ciepły 2 h, Bing 1 h, social brief 1 h. Budżet 06:20: wstrzymaj, nowy cykl NIE, reset ok. 09:30; Z1 do Z3 lekkie, zadania (zmiana) dopiero przy „zwolnij" lub lepiej.
 **Mail do Pawła:** „FluxLab ruch, plan na 21.10.2026: 12 kliknięć z Google w tygodniu, 11 osób z odsyłacza w dobie"; Dla Pawła: klucz Resend z odczytem (2 min), decyzja o zimnym outreachu (1 min).
+
+## 2026-10-21 06:46
+**Kanał:** dystrybucja narzędzi (Gofin, wyłączenie wg planu Z1).
+**Co zrobione:** kanał Gofin wyłączony: timery fl-gofin-16 (07:30) i fl-gofin-17 (12:00) zatrzymane przed publikacją, wpis o wyłączeniu w ~/Projekty/fl-gofin/opublikowane.md.
+**Ruch:** raport_ruchu: doba 162 odsłony, 113 osób; źródła: b2b-email 69 (piksel otwarć innej sesji, nie wejścia), youtube 19, www.google.com 4, instagram 3, mail 2. Narzędzia: 1 uruchomienie (audyt, wynik średni). VPS: 0 sesji z odsyłaczem gofin w 30 dni.
+**Dowód:** `systemctl --user list-timers 'fl-gofin-*'` = 0 timerów; plan Z1 oznaczony [x]. budzet: rytm wstrzymaj, nowy cykl NIE, prognoza 96% przy celu 94%, reset około 09:30.
+**Dla Pawła:** 
+**Zostało otwarte:** Z2 (GSC strony bez kliknięć, 08:30) i dalej; przy rytmie „wstrzymaj” tylko zadania lekkie, Z4 czeka na „zwolnij”.
+
+<!-- WYSLANO 2026-10-21 07:04 -->
+
+## 2026-10-21 07:55
+**Kanał:** Google (plan Z2, pomiar).
+**Co zrobione:** tabela stron z Search Console (7 dni, 12-18.10, 98 wierszy) zapisana do cykl/gsc-strony-2026-10-21.txt; 29 stron ma 0 kliknięć i ≥8 wyświetleń, z nich 5 największych poza embargiem sprawdzone pod kątem głównego zapytania.
+
+| adres | wyśw. | główne zapytanie | pozycja | w title | w description |
+|---|---|---|---|---|---|
+| /strefa-wiedzy | 26 | automatyzacja crm (9) | 18,9 | tak | tak |
+| /mail-firmowy | 24 | poczta firmowa (7) | 89,4 | nie | nie |
+| /strefa-wiedzy/numeracja-faktur-ksef-2027 | 21 | brak danych (zapytania ukryte), pozycja strony 6,2 | 6,2 | n/d | n/d |
+| /wdrozenie-n8n-cena | 21 | wdrożenie n8n (7) | 12,7 | tak | tak |
+| /strefa-wiedzy/make-vs-n8n | 20 | n8n vs make (4) | 14,8 | nie | nie |
+
+Kandydaci na Z4/Z9/Z20 (pozycja ≤12 i fraza nie w description): 0. Najbliżej: /wdrozenie-n8n-cena, drugie zapytanie „ile kosztuje n8n" 3 wyśw., pozycja 10,3, w description jest „ile realnie kosztuje wdrożenie n8n" (nie dosłownie); /strefa-wiedzy/make-vs-n8n „n8n vs make" 14,8, poza progiem pozycji.
+**Ruch:** raport_ruchu, doba: 169 odsłon, 114 osób; źródła b2b-email 65 (piksel otwarć innej sesji, nie wejścia), youtube 22, www.google.com 4, linkedin 3, instagram 3. Narzędzia: 1 uruchomienie (audyt, wynik średni), scena_leada 2.
+**Dowód:** cykl/gsc-strony-2026-10-21.txt; plan Z2 oznaczony [x]. budzet 07:45: wstrzymaj, reset za ok. 2 h.
+**Dla Pawła:** 
+**Zostało otwarte:** Z3 (09:30, lekkie). Z4 nie ma kandydata z Z2: według planu przejść do Z5; Z9 użyje ścieżki „automatyzacja podatków".
