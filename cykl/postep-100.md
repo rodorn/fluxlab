@@ -30,5 +30,5 @@ Pominięte: 85 (podświetlanie pojęć wymagałoby zmiany DOM zarządzanego prze
 83 kroki na /jak-pracuje zapalają się przy przewijaniu, 22 ptaszki w krokach same się rysują, 88 rozmyty podgląd przed zdjęciem realizacji (AVIF i WebP były już w next.config), 93 druk z adresami linków i translate="no" na nazwie marki, 95 przyciski formularzy z efektem („Wyślij i poproś o cenę”), 87 zmierzone lokalnie: LCP strony głównej 164 ms (element H1, tekst bez obrazka), Lighthouse niedostępny w środowisku.
 Pominięte: 77 i 78 (są tylko dwa zrzuty FINREAL, brak wideo), 94 (literówki sprawdza już scripts/jakosc.mjs hunspellem pl_PL, w każdej paczce), 96 (komunikaty błędów są już po ludzku: „Nie udało się sprawdzić tego adresu”), 97 (app/loading.tsx opakowuje całą stronę w Suspense i psuł statyczny HTML, cofnięte; stany puste i „Wysyłanie...” już są).
 
-## Niezrobione (do kolejnych cykli)
-Reszta listy: wymaga większych zmian lub budżetu tygodnia. 74, 80, 86 celowo bez zgody.
+## Domknięcie listy
+Pominięte z powodem: 31 (siatka 12 kolumn to narzędzie projektanta, klient jej nie potrzebuje; tryb blueprint z 63 daje ten sam podgląd), 39 (hero jest już proste), 67 (styl druku już był), 59, 60, 61, 66, 70, 71, 75 (drugi agent), 86 (koordynator), 74, 80 (brak zgody).
