@@ -43,7 +43,7 @@ export default function Manifest({ tekst, className }: { tekst: string; classNam
         return (
           <span
             key={i}
-            className={`transition-opacity duration-300 ${zapalone ? "opacity-100" : "opacity-20"}`}
+            className={`transition-opacity duration-300 ${zapalone ? "opacity-100" : "opacity-60"}`}
           >
             {s}
             {i < slowa.length - 1 ? " " : ""}

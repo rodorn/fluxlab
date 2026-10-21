@@ -163,7 +163,7 @@ export default function Header() {
           <button
             type="button"
             onClick={() => setSzukaj(true)}
-            aria-label="Szukaj na stronie (Ctrl K)"
+            aria-label="Ctrl K, szukaj na stronie"
             aria-haspopup="dialog"
             className="flex items-center gap-2 rounded-lg border border-gray-200 px-2.5 py-1.5 text-gray-500 transition-colors hover:text-gray-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent dark:border-white/10 dark:text-gray-400 dark:hover:text-white"
           >

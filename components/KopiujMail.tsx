@@ -24,8 +24,8 @@ export default function KopiujMail({ adres, className }: { adres: string; classN
       <button
         type="button"
         onClick={kopiuj}
-        aria-label={`Skopiuj adres ${adres}`}
-        className="cursor-pointer rounded-md border border-gray-200 px-2 py-0.5 text-xs text-gray-600 transition-colors hover:border-accent hover:text-accent dark:border-white/15 dark:text-white/70"
+        aria-label={`${skopiowano ? "Skopiowano" : "Kopiuj"} adres ${adres}`}
+        className="min-h-6 cursor-pointer rounded-md border border-gray-200 px-2 py-0.5 text-xs text-gray-600 transition-colors hover:border-accent hover:text-accent dark:border-white/15 dark:text-white/70"
       >
         <span role="status">{skopiowano ? "Skopiowano" : "Kopiuj"}</span>
       </button>

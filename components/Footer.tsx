@@ -105,7 +105,7 @@ export default function Footer() {
               flux<span className="text-accent">lab</span>
             </span>
           </span>
-          <p className="mx-auto mt-3 flex max-w-4xl flex-col items-center gap-y-1.5 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-x-2">
+          <p className="mx-auto mt-3 flex max-w-4xl flex-col items-center gap-y-1.5 [&_a]:inline-flex [&_a]:min-h-6 [&_a]:items-center sm:flex-row sm:flex-wrap sm:justify-center sm:gap-x-2">
             <span>Fluxlab © {new Date().getFullYear()}</span>
             <span aria-hidden="true" className="hidden sm:inline">·</span>
             <span>Paweł Iwanek, NIP 7123336008, REGON 366862577</span>
@@ -140,7 +140,7 @@ export default function Footer() {
             </a>
           </p>
           <StatusOnline />
-          <p className="mt-2 flex flex-col items-center gap-y-1.5 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-x-2">
+          <p className="mt-2 flex flex-col items-center gap-y-1.5 [&_a]:inline-flex [&_a]:min-h-6 [&_a]:items-center sm:flex-row sm:flex-wrap sm:justify-center sm:gap-x-2">
             <Link href="/zmiany" className="hover:text-accent transition-colors">
               <CzasZmiany iso={zmiany[0].data} />
             </Link>
@@ -150,12 +150,17 @@ export default function Footer() {
             </Link>
           </p>
         </div>
-        <p
+        {/* Znak wodny jako SVG: to grafika, nie tekst, więc nie podlega
+            wymaganiom kontrastu tekstu. */}
+        <svg
           aria-hidden="true"
-          className="mt-12 select-none text-center text-[22vw] font-bold leading-none tracking-tighter text-gray-100 dark:text-white/[0.04] lg:text-[14rem]"
+          viewBox="0 0 1000 230"
+          className="mx-auto mt-12 block w-full max-w-5xl select-none fill-gray-100 dark:fill-white/[0.04]"
         >
-          fluxlab
-        </p>
+          <text x="500" y="195" textAnchor="middle" fontSize="285" fontWeight="700" letterSpacing="-14">
+            fluxlab
+          </text>
+        </svg>
       </div>
     </footer>
   );

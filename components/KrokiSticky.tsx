@@ -87,7 +87,7 @@ export default function KrokiSticky({ kroki }: Props) {
               className={`transition-all duration-500 ${
                 wlaczony
                   ? "translate-y-0 opacity-100"
-                  : "translate-y-2 opacity-40"
+                  : "translate-y-2"
               }`}
             >
               <p className="text-lg font-semibold md:mt-4">{tytul}</p>
