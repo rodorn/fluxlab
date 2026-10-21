@@ -6901,3 +6901,23 @@ Adresy: /strefa-wiedzy/co-to-jest-automatyzacja-procesow-biznesowych, /analiza-l
 **Dowód:** `gsc_indeksuj.py --tylko-stan` 11:47-11:48, 0 żądań: co-to-jest-automatyzacja-procesow-biznesowych, /analiza-lokalizacji, /automatyzacja-crm-leasing, /numer-ksef, jak-zautomatyzowac-raportowanie-w-firmie, limit-10-tys-poza-ksef.
 **Dla Pawła:**
 **Zostało otwarte:** Z13 (lista do serii 22.10 01:10): z Z12 nie ma adresów „nie ma w Google”, więc lista to tylko strony zmienione dziś (Z5: proforma-ksef, faktura-wewnetrzna-ksef).
+
+## 2026-10-21 13:18
+**Kanał:** Google (higiena indeksowania i pomiar), narzędzia (pomiar).
+**Co zrobione:** Z13 timer serii indeksowania na 22.10 01:10 dla dwóch stron z nowym linkiem do /numer-ksef; Z14 21 przesuniętych dat w mapie witryny wdrożonych i zgłoszonych przez IndexNow; Z15 serie dzienne GSC do 18.10; Z19 przegląd uruchomień narzędzi za 7 dni.
+**Ruch:** doba 159 odsłon, 117 osób; źródła: b2b-email 41 (otwarcia maili), youtube 26, www.google.com 15, linkedin 3, instagram 3; 1 uruchomienie narzędzia.
+**Dowód:** `systemctl --user list-timers fl-gsc-22` → 22.10 01:10 (proforma-ksef, faktura-wewnetrzna-ksef, oba już w Google, log cykl/z18-indeksowanie-22.log); commit 965a096 = /api/wersja, sitemap 200, 145 `<loc>`, IndexNow 21 adresów (2 z 3 punktów).
+Serie GSC (klik/wyśw., 12→18.10):
+
+| strona | 12 | 13 | 14 | 15 | 16 | 17 | 18 |
+|---|---|---|---|---|---|---|---|
+| kiedy-odliczyc-vat | 0/29 | 0/30 | 0/15 | 0/23 | 0/18 | 0/2 | 0/3 |
+| /ksef-2027 | 0/16 | 0/8 | 0/7 | 0/15 | 0/4 | 0/0 | 0/0 |
+| /numer-ksef | 0/14 | 1/12 | 1/18 | 1/11 | 0/10 | 1/3 | 0/7 |
+| /e-doreczenia-integracja | 0/1 | 1/2 | 0/0 | 0/3 | 0/3 | 0/0 | 0/0 |
+| biura rachunkowe | 0/0 | 0/3 | 0/3 | 0/2 | 0/2 | 0/1 | 0/0 |
+
+Wyświetlenia kiedy-odliczyc-vat i /ksef-2027 spadły do zera lub prawie zera 17-18.10; /numer-ksef trzyma się.
+Narzędzia 7 dni (obce z odsyłaczem albo ludzkim śladem / niepewne lub testy): audyt strony 3 / 5, numer KSeF 2 / 0, analiza lokalizacji 2 / 0, sprawdzenie NIP 1 / 0, kalkulator n8n 1 / 0, skan /wlasny-crm 1 / 0, sprawdź kontrahenta 0 / 3, audyt poczty 0 / 3, własność domeny 0 / 2, kalkulator podatkowy 0 / 1. `klik_po_wyniku` od 20.10 12:30: 0. Cel ulepszeń na 22.10: audyt strony.
+**Dla Pawła:**
+**Zostało otwarte:** Z16 (22:30), Z17 (23:30, GSC dalej kończy się na 18.10), Z18 (po 01:10, timer fl-gsc-22), Z20 (po Z17), Z21, Z22. Dla stratega: spadek wyświetleń kiedy-odliczyc-vat i /ksef-2027 od 17.10 (do oceny tytułów 24.10).
