@@ -11,7 +11,8 @@ import { Resend } from "resend";
 
 import { zlozRaportHtml, zlozRaportTekst, type DaneRaportu } from "./audyt-mail";
 
-const DO_WLASCICIELA = process.env.AUDYT_KOPIA_DO ?? "iwanekpawel55@gmail.com";
+// Kopie wysyłek do klientów idą do Wojtka (handlowiec), nie do Pawła (zasada 21.10).
+const DO_WLASCICIELA = process.env.AUDYT_KOPIA_DO ?? "skiwojtner@gmail.com";
 const FROM =
   process.env.RESEND_FROM_FORMULARZ ?? "Fluxlab <formularz@fluxlab.pl>";
 

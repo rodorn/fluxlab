@@ -18,7 +18,8 @@ export const dynamic = "force-dynamic";
 // 170 s, linki 215 s, a reszta zostaje na pomiar domeny i wysyłkę.
 export const maxDuration = 300;
 
-const DO_WLASCICIELA = process.env.AUDYT_KOPIA_DO ?? "iwanekpawel55@gmail.com";
+// Kopie wysyłek do klientów idą do Wojtka (handlowiec), nie do Pawła (zasada 21.10).
+const DO_WLASCICIELA = process.env.AUDYT_KOPIA_DO ?? "skiwojtner@gmail.com";
 const EMAIL_RX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const GODZINA = 3_600_000;
 

@@ -1,11 +1,10 @@
-import { after, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 
 import { czystaDomena, zmierz } from "@/lib/audyt-pomiar";
 import { ocenStrone, potrzebneDostepy, punktacja, wycenNaprawe } from "@/lib/audyt-ocena";
 import { materialDo, napiszRaport } from "@/lib/audyt-raport";
 import { podpisz } from "@/lib/audyt-podpis";
 import type { DaneRaportu } from "@/lib/audyt-mail";
-import { wyslijKopie } from "@/lib/audyt-wyslij";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -100,22 +99,9 @@ export async function POST(request: Request) {
   const dokument = JSON.stringify(pelne);
   const podpis = podpisz(dokument);
 
-  // Kopia leci po każdym audycie realnej strony, także anonimowym, i leci po
-  // odpowiedzi, żeby nie kazać człowiekowi czekać na serwer pocztowy.
-  //
-  // Wyjątkiem jest adres, który w ogóle nie odpowiedział. Taki raport nie ma
-  // treści poza jednym zdaniem, a bierze się prawie zawsze z literówki albo
-  // z czyjegoś sprawdzenia, czy narzędzie żyje. Trzy takie wiadomości w
-  // skrzynce w ciągu minuty zamieniają powiadomienie w szum, po którym
-  // przestaje się czytać także te prawdziwe. Gdy ktoś zostawi kontakt,
-  // kopia idzie mimo wszystko, bo wtedy to już jest zgłoszenie od człowieka.
-  if (pomiar.osiagalna && !wlasna) {
-    after(async () => {
-      await wyslijKopie(pelne, {
-        zrodlo: request.headers.get("referer") ?? undefined,
-      });
-    });
-  }
+  // Anonimowy audyt nie wysyła już kopii mailem (Paweł 21.10: za dużo maili).
+  // To, że ktoś użył narzędzia, widać w raporcie ruchu (audyt_uruchomiony);
+  // mail idzie dopiero, gdy ktoś zostawi adres (trasa /wyslij).
 
   return NextResponse.json({
     podpis,
