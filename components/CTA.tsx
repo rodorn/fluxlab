@@ -106,7 +106,8 @@ function CTAFormularz() {
       contactPref,
       phone:
         contactPref === "phone"
-          ? ((form.elements.namedItem("phone") as HTMLInputElement | null)?.value ?? "")
+          ? ((form.elements.namedItem("phone") as HTMLInputElement | null)
+              ?.value ?? "")
           : "",
       termin: contactPref === "meet" ? termin : "",
       website:
@@ -124,12 +125,13 @@ function CTAFormularz() {
         // Serwer udaje sukces, gdy bot wypelni ukryte pole, i nie wysyla maila.
         // Takie wejscie nie moze trafic do konwersji.
         const bot = data.website.trim().length > 0;
-        if (!bot) gaEvent("generate_lead", {
-          form_id: "diagnosis",
-          lead_type: data.problemType,
-          lead_scale: data.problemScale,
-          contact_pref: contactPref,
-        });
+        if (!bot)
+          gaEvent("generate_lead", {
+            form_id: "diagnosis",
+            lead_type: data.problemType,
+            lead_scale: data.problemScale,
+            contact_pref: contactPref,
+          });
         // Zapytanie od klienta to jedyna konwersja, ktora sie liczy, a do tej
         // pory nie byla mierzona nigdzie poza Google Analytics, ktorego nie
         // mamy podlaczonego. Zgloszenie ma keepalive, wiec przezyje
@@ -171,9 +173,16 @@ function CTAFormularz() {
             Sprawdźmy, czy automatyzacja ma u ciebie sens
           </h1>
           <p className="hero-lead mb-12">
-            Wyślij krótki opis problemu. W odpowiedzi dostaniesz informację, czy
-            widzimy potencjał na automatyzację, co można poprawić jako pierwsze i
-            jaki byłby sensowny kolejny krok.
+            Wyślij krótki opis problemu, a odpowiemy, co warto poprawić jako
+            pierwsze. Wolisz zwykły mail? Napisz na{" "}
+            <a
+              href="mailto:pawel@fluxlab.pl"
+              onClick={() => zglosZdarzenie("klik_mail_kontakt")}
+              className="text-accent underline underline-offset-2"
+            >
+              pawel@fluxlab.pl
+            </a>
+            .
           </p>
 
           <form
@@ -274,7 +283,9 @@ function CTAFormularz() {
                   required
                   wartosc={problemScale}
                   opcje={scaleOptions}
-                  placeholder={problemType ? "Wybierz" : "Najpierw wybierz obszar"}
+                  placeholder={
+                    problemType ? "Wybierz" : "Najpierw wybierz obszar"
+                  }
                   disabled={!problemType}
                   onZmiana={setProblemScale}
                 />
@@ -375,8 +386,8 @@ function CTAFormularz() {
             )}
 
             <p className="text-center text-xs text-gray-600 dark:text-gray-400">
-              Odpowiedź tego samego dnia. Bez spamu, bez newslettera, bez &bdquo;szybkiej
-              rozmowy&rdquo; wciskanej na siłę.
+              Odpowiedź tego samego dnia. Bez spamu, bez newslettera, bez
+              &bdquo;szybkiej rozmowy&rdquo; wciskanej na siłę.
             </p>
           </form>
         </div>
