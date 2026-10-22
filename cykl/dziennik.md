@@ -7118,3 +7118,11 @@ Z odsyłaczem w dobie: Google 5 (wobec 3; dwie sesje doszły do /kontakt: Chrome
 **Dowód:** commit 552b2f0, /api/wersja = 552b2f0, https://fluxlab.pl/analiza-lokalizacji 200 z `"@type":"WebApplication","name":"Darmowe sprawdzenie konkurencji w okolicy lokalu"` w HTML; build, spojnosc, jakosc OK; indexnow nic nie zgłosił (lastmod bez zmian).
 **Dla Pawła:**
 **Zostało otwarte:** nowy plan stratega o 06:15. /numer-ksef ma już `WebApplication`; pozostałe strony narzędzi przez ProductLanding (np. /audyt-poczty, /wlasnosc-domeny) bez niego, do decyzji stratega. Niezacommitowane zmiany w /ksef-2027 i /numer-ksef należą do innej sesji, zostawione.
+
+## 2026-10-22 05:55
+**Kanał:** widoczność w asystentach AI (plan 21/22 wyczerpany).
+**Co zrobione:** /wdrozenie-n8n-cena (kalkulator n8n, 1 obce uruchomienie z l.facebook w 7 dni wg Z19) dostała dane `WebApplication` dla darmowego kalkulatora (cena 0 zł), tak jak /analiza-lokalizacji w cyklu 04:55; /wlasny-crm pominięty, bo to strona usługi (`typ="usluga"`), a nie darmowe narzędzie.
+**Ruch:** ostatnia doba 137 odsłon, 93 osoby (+19% wobec średniej 115,1); źródła: youtube 22, b2b-email 17, www.google.com 13, x 4, t.co 4; uruchomienia narzędzi 2.
+**Dowód:** commit 26ad3fb, /api/wersja = 26ad3fb, https://fluxlab.pl/wdrozenie-n8n-cena 200 z `"@type":"WebApplication","name":"Darmowy kalkulator kosztu Zapiera i Make wobec n8n"` w HTML; build, spojnosc, jakosc OK; indexnow nic nie zgłosił (lastmod bez zmian).
+**Dla Pawła:**
+**Zostało otwarte:** nowy plan stratega o 06:15. Bez `WebApplication` zostały jeszcze /audyt-poczty, /wlasnosc-domeny, /sprawdz-kontrahenta, /tansze-automatyzacje. Niezacommitowane zmiany w /ksef-2027 i /numer-ksef należą do innej sesji, zostawione.
