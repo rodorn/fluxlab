@@ -7133,3 +7133,26 @@ Z odsyłaczem w dobie: Google 5 (wobec 3; dwie sesje doszły do /kontakt: Chrome
 **Decyzje w sprawach otwartych z bilansu Z21/Z22:** (1) „automatyzacja podatków" jest w GSC w cudzysłowie, czyli to sprawdzanie pozycji narzędziem, nie ludzie: żadnej nowej strony, zapytanie pomijane; (2) "enova" zostaje pod embargiem do 25.10; (3) WebApplication dla pozostałych darmowych narzędzi: tak, jeden blok w ProductLanding warunkowany `typ === "narzedzie"` (Z12), bez duplikatu na stronach z własnym blokiem; (4) lastmod dla 4 stron z nocy podnosi Z14, żeby IndexNow i Bing je zobaczyły.
 **Plan:** `cykl/plan-ruchu.md` na 22.10 06:30 do 23.10 06:30, 23 zadania; Google 9 h (mapa stron i zapytań po nowym dniu, do 2 opisów poza embargiem, ponowne przesłanie sitemapy, serie dzienne, seria żądań przez timer fl-gsc-23 o 01:20), pomiar 5 h (w tym rozbiór „bez odsyłacza" i lejek /kontakt), lejek 1 h zmiany, narzędzia 2 h (po wyniku audytu, WebApplication w ProductLanding), outreach ciepły 2 h, Bing 1 h, social brief 1 h (z adresem posta X). Budżet 06:15: dociśnij, nowy cykl TAK, prognoza 73% przy celu 100%.
 **Mail do Pawła:** „FluxLab ruch, plan na 22.10.2026: 16 kliknięć z Google w tygodniu, 18 osób z odsyłacza w dobie", msgid <179264293540.941469.13188802086831206938@fluxlab.pl>; Dla Pawła: Profil Firmy w Google (10 min), zimny outreach zamknięty do odwołania.
+
+## 2026-10-22 07:05
+**Kanał:** Google (Z1, Z2, Z4, Z6), outreach (Z3, Z5), social przez brief (Z7), wg planu stratega.
+**Co zrobione:** opis /wdrozenie-n8n-cena zaczyna się teraz od frazy „ile kosztuje n8n” (pozycja 8,4, 0 kliknięć) z cenami ze strony; mapa witryny przesłana ponownie i odczytana od razu (148 wykrytych zamiast 137); brief dla fluxlab-meta i fluxlab-x wskazuje komentarz na X, który dał najlepsze wejścia tygodnia.
+**Ruch:** ostatnia doba 136 odsłon, 92 osoby (+18% wobec średniej 114,9); źródła: youtube 22, b2b-email 17 (piksel otwarć), www.google.com 13, x 4, t.co 4; z telefonu 47 z 136; uruchomienia narzędzi 2 (audyt 2, oba wynik dobry).
+
+Z1, strony z 0 kliknięć poza embargiem (GSC 13-19.10: 16 klik./1071 wyśw. w 106 adresach; wobec pliku 21.10 największe wzrosty: co-to-jest-automatyzacja-procesow-biznesowych +44 i integracja-crm-z-erp +40, obie pod embargiem):
+
+| Strona | Wyśw. | Główne zapytanie (wyśw.) | Poz. | W title | W description |
+|---|---|---|---|---|---|
+| /wdrozenie-n8n-cena | 28 | wdrożenie n8n (9); ile kosztuje n8n (5) | 13,1; 8,4 | tak; nie | tak; nie |
+| /strefa-wiedzy | 25 | automatyzacja crm (9) | 19,6 | tak | tak |
+| /mail-firmowy | 23 | poczta firmowa (7) | 89,4 | nie | nie |
+| /strefa-wiedzy/make-vs-n8n | 21 | n8n vs make (5) | 13,0 | n/d | n/d |
+| /kalkulator-kosztow | 19 | kalkulator samochodowy (2) | 34,0 | nie | nie |
+
+Kandydaci: 1 (/wdrozenie-n8n-cena, „ile kosztuje n8n”), zużyty w Z4. Na Z20 brak kandydata z pozycją ≤12.
+Z2: 167 zapytań, 0 nowych z ≥5 wyświetleniami i pozycją ≤15, więc 0 filtrów zapytań. Seria dzienna: 13.10 3/126, 14.10 2/119, 15.10 1/151, 16.10 1/138, 17.10 1/96, 18.10 4/156, 19.10 4/191 (kliknięcia/wyświetlenia). Plik 21.10 z „12-18.10” ma inne liczby dla tych samych zapytań (fluxlab 16/26 wobec 5/8), więc porównanie wzrostów między plikami jest niemiarodajne.
+Z3/Z5: Zoho 0 odpowiedzi na `audyt-wynik`; 2 obce audyty w 48 h (22.10 00:56 i 01:07, Chrome Android, bez odsyłacza), oba z wynikiem dobrym, więc 0 plików i 0 maili.
+Z6: --tylko-stan: kalkulator-podatkowy, audyt-strony, analiza-lokalizacji, wdrozenie-n8n-cena są w Google (4/4); daty ostatniego skanowania nie udało się odczytać przez cdp.
+**Dowód:** commit 954c400, /api/wersja = 954c400, `curl https://fluxlab.pl/wdrozenie-n8n-cena` pokazuje nowy meta description; build, spojnosc, jakosc OK; indexnow „brak adresów zmienionych” (lastmod dojdzie w Z14); GSC Mapy witryn: „Mapa witryny została przesłana pomyślnie”, 22.10, Sukces, 148; cykl/gsc-strony-2026-10-22.txt, cykl/gsc-zapytania-2026-10-22.txt; briefy ~/Projekty/fluxlab-meta/briefy/od-cyklu-ruchu-2026-10-22.md i ~/Projekty/fluxlab-x/briefy/od-cyklu-ruchu-2026-10-22.md.
+**Dla Pawła:**
+**Zostało otwarte:** Z8 (Bing) i dalej wg planu; /wdrozenie-n8n-cena pod embargiem do 29.10 i na liście serii Z13.
