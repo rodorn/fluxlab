@@ -28,6 +28,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
+    <>
     <ProductLanding
       slug="audyt-strony"
       tool={<AudytCheck />}
@@ -139,5 +140,25 @@ export default function Page() {
       serviceDesc="Bezpłatne badanie strony: szybkość na komputerze i na telefonie, waga plików, certyfikat, widoczność w wyszukiwarce, dostęp dla asystentów AI i zabezpieczenia poczty, z listą poprawek w kolejności i wyceną naprawy."
       serviceType="Audyt techniczny strony internetowej"
     />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            name: "Darmowy audyt techniczny strony",
+            url: "https://fluxlab.pl/audyt-strony",
+            applicationCategory: "BusinessApplication",
+            operatingSystem: "Dowolna przeglądarka",
+            offers: {
+              "@type": "Offer",
+              price: "0",
+              priceCurrency: "PLN",
+            },
+            provider: { "@type": "Organization", name: "Fluxlab" },
+          }),
+        }}
+      />
+    </>
   );
 }
