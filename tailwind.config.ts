@@ -32,7 +32,7 @@ const config: Config = {
         "2xl": "0 2px 4px rgb(0 0 0 / 0.05), 0 8px 16px -4px rgb(0 0 0 / 0.08), 0 24px 48px -12px rgb(0 0 0 / 0.14), 0 48px 96px -24px rgb(0 0 0 / 0.14)",
       },
       fontFamily: {
-        sans: ["var(--font-geist-sans)", "system-ui", "sans-serif"],
+        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
         // Krój systemowy zamiast wczytywanego: font-mono stoi przy 22 drobnych
         // etykietach, a wczytywany plik kosztowal 23 KB wymuszonego pobrania
         // na kazdej stronie serwisu, takze tam, gdzie zadnej z nich nie ma.

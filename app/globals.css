@@ -1265,7 +1265,7 @@ h2 {
   text-rendering: optimizeLegibility;
 }
 
-/* 1: nagłówek strony głównej traci grubość przy przewijaniu (Geist jest zmienny) */
+/* 1: nagłówek strony głównej traci grubość przy przewijaniu (krój jest zmienny) */
 @supports (animation-timeline: scroll()) {
   .h1-waga {
     animation: h1-waga linear both;

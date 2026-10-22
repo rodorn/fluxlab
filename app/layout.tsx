@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { ViewTransition } from "react";
-import { Geist, Instrument_Serif } from "next/font/google";
+import { Instrument_Sans, Instrument_Serif } from "next/font/google";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import ZgodaCookies from "@/components/ZgodaCookies";
 import TytulKarty from "@/components/TytulKarty";
@@ -9,9 +9,9 @@ import Opoznione, { PoPierwszymMalowaniu } from "@/components/Opoznione";
 import "./globals.css";
 import "./runda3.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const instrumentSans = Instrument_Sans({
+  variable: "--font-sans",
+  subsets: ["latin", "latin-ext"],
 });
 
 // Drugi krój tylko na wyróżnione słowa w nagłówkach, kursywą.
@@ -200,7 +200,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${geistSans.variable} ${instrumentSerif.variable} font-sans`}>
+      <body className={`${instrumentSans.variable} ${instrumentSerif.variable} font-sans`}>
         <div
           hidden
           dangerouslySetInnerHTML={{
