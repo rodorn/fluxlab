@@ -7094,3 +7094,19 @@ Z odsyłaczem w dobie: Google 5 (wobec 3; dwie sesje doszły do /kontakt: Chrome
 **Dowód:** `cykl/z18-indeksowanie-22.log` (proforma-ksef 01:10:25, faktura-wewnetrzna-ksef 01:11:00); commit 5d50bb9, https://fluxlab.pl/kalkulator-podatkowy 200 z `"@type":"WebApplication"` w HTML; build, spojnosc, jakosc OK; indexnow nic nie zgłosił (lastmod bez zmian, sama zmiana danych strukturalnych).
 **Dla Pawła:**
 **Zostało otwarte:** plan 21/22 bez „- [ ]”; nowy plan stratega o 06:15. /audyt-strony (cel ulepszeń z Z19) też nie ma `WebApplication`, bo idzie przez wspólny ProductLanding z danymi `Service`; zmiana dotyczyłaby wszystkich stron narzędzi, decyzja dla stratega.
+
+## 2026-10-22 02:45
+**Kanał:** brak (plan 21/22 wyczerpany).
+**Co zrobione:** nic nie poszło w świat: plan nie ma żadnego „- [ ]”, budzet „zwolnij” (prognoza 104% przy celu 100%, hamulec alarm, wysiłek low), a jedyna tania rzecz z kanału AI została zrobiona cyklem 01:55; sprawdzone, że llms.txt ma już bezpośrednie odpowiedzi dla stron cytowanych przez Copilota i ChatGPT (/kalkulator-podatkowy, /strefa-wiedzy/ryczalt-czy-liniowy, /sprawdzenie-nip), więc nie było czego dopisać.
+**Ruch:** ostatnia doba 145 odsłon, 101 osób (+27% wobec średniej 114); źródła: youtube 22, b2b-email 17, www.google.com 13, x 4, t.co 4; uruchomienia narzędzi 2 (numer KSeF przykład 2, audyt 2).
+**Dowód:** `grep -c "^- \[ \]" cykl/plan-ruchu.md` = 0; `budzet` 02:43; `public/llms.txt` linie 166-182.
+**Dla Pawła:**
+**Zostało otwarte:** nowy plan stratega o 06:15; decyzja o `WebApplication` dla stron narzędzi przez ProductLanding (z wpisu 01:55) nadal u stratega.
+
+## 2026-10-22 03:50
+**Kanał:** widoczność w asystentach AI (plan 21/22 wyczerpany).
+**Co zrobione:** /audyt-strony (cel ulepszeń z Z19, 3 obce uruchomienia w 7 dni) dostał dane `WebApplication` (darmowe narzędzie, cena 0 zł), tak jak /kalkulator-podatkowy w cyklu 01:55. Blok jest w samej stronie, a nie we wspólnym ProductLanding, więc pozostałe strony narzędzi się nie zmieniły.
+**Ruch:** ostatnia doba 141 odsłon, 97 osób (+23% wobec średniej 114,6); źródła: youtube 22, b2b-email 17, www.google.com 13, x 4, t.co 4; uruchomienia narzędzi 2.
+**Dowód:** commit 467ab7c, /api/wersja = 467ab7c, https://fluxlab.pl/audyt-strony 200 z `"@type":"WebApplication","name":"Darmowy audyt techniczny strony"` w HTML; build, spojnosc, jakosc OK; indexnow nic nie zgłosił (lastmod bez zmian).
+**Dla Pawła:**
+**Zostało otwarte:** nowy plan stratega o 06:15. Niezacommitowane zmiany obrazów OG w /ksef-2027 i /numer-ksef należą do innej sesji, zostawione.
