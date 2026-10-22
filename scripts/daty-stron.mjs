@@ -2,7 +2,7 @@
 // Mapa strony bez dat nie daje wyszukiwarce powodu, zeby wrocic: nasza byla
 // ostatnio odczytana 15 kwietnia, mimo dziesiatek zmian od tamtej pory.
 import { execSync } from "node:child_process";
-import { readdirSync, statSync, writeFileSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync, statSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
 const KORZEN = "app";
@@ -32,5 +32,13 @@ function obejdz(katalog) {
 }
 
 obejdz(KORZEN);
+// Strony zmienione tylko przez wspolny komponent (bez zmiany page.tsx) dopisujemy
+// recznie w lib/daty-stron-komponenty.json; wygrywa pozniejsza data.
+const RECZNE = "lib/daty-stron-komponenty.json";
+if (existsSync(RECZNE)) {
+  for (const [trasa, data] of Object.entries(JSON.parse(readFileSync(RECZNE, "utf8")))) {
+    if (trasa in wynik && new Date(data) > new Date(wynik[trasa])) wynik[trasa] = data;
+  }
+}
 writeFileSync("lib/daty-stron.json", JSON.stringify(wynik, null, 1) + "\n");
 console.log("zapisano dat:", Object.keys(wynik).length);
