@@ -26,6 +26,7 @@ export const metadata: Metadata = {
 
 export default function WdrozenieN8nCena() {
   return (
+    <>
     <ProductLanding
       slug="wdrozenie-n8n-cena"
       breadcrumb="Wdrożenie n8n, cena"
@@ -118,5 +119,25 @@ export default function WdrozenieN8nCena() {
       serviceDesc="Postawienie n8n na własnym serwerze i zbudowanie przepływów automatyzujących obsługę leadów, synchronizację danych i raportowanie."
       serviceType="Automatyzacja procesów biznesowych"
     />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            name: "Darmowy kalkulator kosztu Zapiera i Make wobec n8n",
+            url: "https://fluxlab.pl/wdrozenie-n8n-cena",
+            applicationCategory: "BusinessApplication",
+            operatingSystem: "Dowolna przeglądarka",
+            offers: {
+              "@type": "Offer",
+              price: "0",
+              priceCurrency: "PLN",
+            },
+            provider: { "@type": "Organization", name: "Fluxlab" },
+          }),
+        }}
+      />
+    </>
   );
 }
