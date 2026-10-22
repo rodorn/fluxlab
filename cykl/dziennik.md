@@ -7191,3 +7191,11 @@ Z9, sesje z /kontakt od 15.10 (po odsiewie salw i serii):
 Formularz: 6 pól widocznych, wymagane 3 (e-mail, obszar, skala), telefon wymagany tylko przy wyborze „Telefon”. Adres e-mail był tylko w stopce i w komunikacie błędu. Pierwsze pole na 390 widoczne bez przewijania. `form_start` idzie tylko do GA (za zgodą), więc z VPS nie widać, czy ktoś zaczął wypełniać. Rekomendacja: mailto nad formularzem (10 sesji). Wdrożone: commit 237371c, wstęp 160 → 118 znaków, zdarzenie `klik_mail_kontakt` liczy kliknięcia w adres; produkcja potwierdzona curl, zrzut `skrypty-raport/kontakt-390-po.png`.
 **Dla Pawła:**
 **Zostało otwarte:** Z11 (pomiar wieczorny 17:30, liczy od 06:30), Z12 (WebApplication w ProductLanding) i dalej; Z11 i Z23 mają doliczyć `klik_mail_kontakt`.
+
+## 2026-10-22 08:05
+**Kanał:** widoczność w asystentach AI (Z12 z planu stratega).
+**Co zrobione:** darmowe narzędzia bez własnych danych WebApplication dostały je z jednego miejsca (`components/NazwaNarzedzia.tsx`, flaga `dane`): łącznie 32 strony z dokładnie jednym blokiem, żadna z dwoma.
+**Ruch:** jak we wpisie 07:52 (doba 126 odsłon, 87 osób).
+**Dowód:** commit 3b202b1, /api/wersja = 3b202b1; curl produkcji: /audyt-poczty 1, /wlasnosc-domeny 1, /audyt-strony 1 (nie 2); validator.schema.org dla /audyt-poczty: WebApplication 0 błędów, 0 ostrzeżeń. Nazwa i opis pochodzą z `lib/narzedzia.ts` (te same co na kafelku w /narzedzia). /wlasny-crm (typ usługa) bez bloku.
+**Dla Pawła:**
+**Zostało otwarte:** Z11 (17:30), Z13 (lista do serii 23.10: dziś zmienione /kontakt i strony narzędzi z Z12), Z14 (lastmod dla stron z Z12 i 4 stron z nocy, potem IndexNow), dalej Z15 do Z23.
