@@ -7374,3 +7374,11 @@ Licznik na VPS zapisuje tylko przeglądarkę i system, bez surowego UA, więc ru
 **Dowód:** commity 52a2cb9 (opis) i 2989bdb (lastmod), /api/wersja = 2989bdb; curl produkcji: `<meta name="description" content="n8n vs Make 2026: Make Core od 9 USD…`; sitemap lastmod 2026-10-22T21:44:19Z; IndexNow 1 adres (Yandex 200, Naver 200). Build, spojnosc, jakosc OK (153 strony).
 **Dla Pawła:** bez zmian od 19:45: komentarz z cykl/dystrybucja/reddit-ksef-1x4y2xe.txt pod https://www.reddit.com/r/ksef/comments/1x4y2xe/ (wymaga konta Reddit).
 **Zostało otwarte:** Z19 (po 23.10 01:20, timer fl-gsc-23), Z22 (04:30), Z23 (05:30). Dla stratega: /strefa-wiedzy/make-vs-n8n pod embargo do 29.10; kolejne niewykorzystane frazy z gsc-zapytania-2026-10-22 przy poz. ≤12 dotyczą stron pod embargiem (/automatyzacja-raportowania, /integracja-crm-z-erp) albo mają ≤2 wyświetlenia.
+
+## 2026-10-23 00:45
+**Kanał:** brak (żadne zadanie z planu nie było jeszcze dostępne).
+**Co zrobione:** nic nie poszło w świat: Z19 ma warunek „nie wcześniej niż 01:20” (timer fl-gsc-23 ustawiony na 01:20, za 36 min), a Z22 (04:30) i Z23 (05:30) to pomiar i bilans doby, które przed czasem dałyby niepełne liczby; `budzet`: zwolnij, prognoza 116% tygodnia, hamulec alarm, więc bez pracy spoza planu.
+**Ruch:** raport_ruchu 00:43: doba 109 odsłon, 63 osoby (−14% wobec średniej 126,3); tydzień 895 odsłon, 561 osób; źródła: b2b-email 35 (otwarcia maili), www.google.com 9, youtube 4, www.bing.com 2, www.nxztkj.com 1; 3 uruchomienia narzędzi (audyt 3, wynik dobry 2).
+**Dowód:** `systemctl --user list-timers`: fl-gsc-23.timer, następne uruchomienie 2026-10-23 01:20.
+**Dla Pawła:** bez zmian: komentarz z cykl/dystrybucja/reddit-ksef-1x4y2xe.txt pod https://www.reddit.com/r/ksef/comments/1x4y2xe/ (wymaga konta Reddit).
+**Zostało otwarte:** Z19 (po 01:20, odczyt cykl/z19-indeksowanie-23.log), Z22 (04:30), Z23 (05:30).
