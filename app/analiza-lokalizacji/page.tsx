@@ -26,6 +26,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
+    <>
     <ProductLanding
       slug="analiza-lokalizacji"
       tool={<LokalizacjaCheck />}
@@ -114,5 +115,25 @@ export default function Page() {
       serviceDesc="Ocena nasycenia rynku w zasięgu dojazdu: konkurenci, mieszkańcy na punkt, porównanie z sąsiednimi gminami, z jednoznacznym wnioskiem. Od 190 zł."
       serviceType="Analiza rynku lokalnego pod działalność usługową"
     />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            name: "Darmowe sprawdzenie konkurencji w okolicy lokalu",
+            url: "https://fluxlab.pl/analiza-lokalizacji",
+            applicationCategory: "BusinessApplication",
+            operatingSystem: "Dowolna przeglądarka",
+            offers: {
+              "@type": "Offer",
+              price: "0",
+              priceCurrency: "PLN",
+            },
+            provider: { "@type": "Organization", name: "Fluxlab" },
+          }),
+        }}
+      />
+    </>
   );
 }
