@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Arial dopasowany do Instrument Sans: ta sama szerokość wierszy (zmierzone
+   0,98 do 1,01) i te same wysokości, więc podmiana kroju nic nie przesuwa. */
+@font-face {
+  font-family: "Instrument Sans Zastepczy";
+  src: local("Arial"), local("ArialMT"), local("Helvetica"), local("Liberation Sans");
+  size-adjust: 99.5%;
+  ascent-override: 97.5%;
+  descent-override: 25.1%;
+  line-gap-override: 0%;
+}
+
+
 /* Kolory treści artykułów. Wpisane wprost w style artykułów nie reagowały
    na tryb ciemny, przez co jasne tła zostawały białe. */
 :root {

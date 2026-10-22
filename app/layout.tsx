@@ -9,9 +9,15 @@ import Opoznione, { PoPierwszymMalowaniu } from "@/components/Opoznione";
 import "./globals.css";
 import "./runda3.css";
 
+// display optional: gdy krój nie zdąży w 100 ms, zostaje zastępczy do końca
+// wizyty, zamiast podmiany, po której nagłówki zmieniały liczbę wierszy
+// i treść podskakiwała (CLS). Zastępczy dopasowany jest w globals.css.
 const instrumentSans = Instrument_Sans({
   variable: "--font-sans",
   subsets: ["latin", "latin-ext"],
+  display: "optional",
+  adjustFontFallback: false,
+  fallback: ["Instrument Sans Zastepczy", "system-ui", "sans-serif"],
 });
 
 // Drugi krój tylko na wyróżnione słowa w nagłówkach, kursywą.
@@ -20,6 +26,7 @@ const instrumentSerif = Instrument_Serif({
   subsets: ["latin", "latin-ext"],
   weight: "400",
   style: "italic",
+  display: "optional",
 });
 
 export const viewport: Viewport = {
