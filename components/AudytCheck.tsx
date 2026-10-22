@@ -768,6 +768,15 @@ export default function AudytCheck() {
             </div>
           </div>
 
+          <PopravTo
+            domena={wynik.domena}
+            punkty={wynik.punkty}
+            pozycje={wynik.ustalenia.map((u) => ({
+              waga: u.waga,
+              tytul: u.tytul,
+            }))}
+          />
+
           {wynik.punkty !== null && (
             <PorownanieZFluxlab
               domena={wynik.domena}
@@ -778,15 +787,6 @@ export default function AudytCheck() {
               }}
             />
           )}
-
-          <PopravTo
-            domena={wynik.domena}
-            punkty={wynik.punkty}
-            pozycje={wynik.ustalenia.map((u) => ({
-              waga: u.waga,
-              tytul: u.tytul,
-            }))}
-          />
 
           {/* Płatny audyt całej strony */}
           {wynik.osiagalna && (
