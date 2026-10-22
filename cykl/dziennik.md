@@ -7156,3 +7156,38 @@ Z6: --tylko-stan: kalkulator-podatkowy, audyt-strony, analiza-lokalizacji, wdroz
 **Dowód:** commit 954c400, /api/wersja = 954c400, `curl https://fluxlab.pl/wdrozenie-n8n-cena` pokazuje nowy meta description; build, spojnosc, jakosc OK; indexnow „brak adresów zmienionych” (lastmod dojdzie w Z14); GSC Mapy witryn: „Mapa witryny została przesłana pomyślnie”, 22.10, Sukces, 148; cykl/gsc-strony-2026-10-22.txt, cykl/gsc-zapytania-2026-10-22.txt; briefy ~/Projekty/fluxlab-meta/briefy/od-cyklu-ruchu-2026-10-22.md i ~/Projekty/fluxlab-x/briefy/od-cyklu-ruchu-2026-10-22.md.
 **Dla Pawła:**
 **Zostało otwarte:** Z8 (Bing) i dalej wg planu; /wdrozenie-n8n-cena pod embargiem do 29.10 i na liście serii Z13.
+<!-- WYSLANO 2026-10-22 07:05 -->
+
+## 2026-10-22 07:52
+**Kanał:** Bing / widoczność w asystentach AI (Z8) i lejek /kontakt (Z9, Z10 z planu stratega).
+**Co zrobione:** Bing dostał 5 adresów zmienionych w nocy (przyjęte 5 z 5), a /kontakt ma adres pawel@fluxlab.pl jako link mailto nad formularzem dla 10 sesji od 15.10, które weszły na /kontakt i wyszły bez zgłoszenia.
+**Ruch:** raport_ruchu 07:43: doba 126 odsłon, 87 osób (+8% wobec średniej 116,4); tydzień 892 odsłony, 587 osób; źródła youtube 19, b2b-email 18 (piksel innej sesji), www.google.com 13, x 4, t.co 4; narzędzia 2 uruchomienia (audyt 2, wynik dobry).
+**Dowód:**
+
+| Bing | 22.10 | Poprzednio (21.10) |
+|---|---|---|
+| URL Submission | 5 z 5, quota 95 | 8 z 8 |
+| Skuteczność 7 dni (dane nadal do 18.10) | 2 klik. / 48 wyśw. | 2 / 48 |
+| Copilot 7 dni | 6 (ryczalt-czy-liniowy 4, sprawdzenie-nip 2); 30 dni 27 | 6 |
+| Site Explorer | 87 zaindeksowanych, 10 wykluczonych, 0 błędów | 87 / 10 |
+
+Adresy Bing: /kalkulator-podatkowy, /audyt-strony, /analiza-lokalizacji, /wdrozenie-n8n-cena, /strefa-wiedzy/limit-10-tys-poza-ksef.
+
+Z9, sesje z /kontakt od 15.10 (po odsiewie salw i serii):
+
+| Start | Skąd | Strona przed | Czas na /kontakt | Zgłoszenie |
+|---|---|---|---|---|
+| 16.10 11:12 | bez | / | powroty po dniach | 0 |
+| 16.10 11:34 | bez | 17 odsłon, / | 3,9 h (karta otwarta) | 0 |
+| 17.10 08:38 | bez | wejście wprost | koniec | 0 |
+| 19.10 13:23 | Google | / | 16 s | 0 |
+| 20.10 09:17 | bez (Firefox Android) | / | koniec | 0 |
+| 20.10 12:21 | bez (Firefox Android) | wejście wprost | 8 s | 0 |
+| 20.10 16:24 | bez (Firefox Android) | wejście wprost | koniec | 0 |
+| 21.10 00:31 | LinkedIn | / | koniec | 0 |
+| 21.10 10:33 | Google | /jak-pracuje | 8 s | 0 |
+| 21.10 12:38 | Google | / | 22 s i 1 s | 0 |
+
+Formularz: 6 pól widocznych, wymagane 3 (e-mail, obszar, skala), telefon wymagany tylko przy wyborze „Telefon”. Adres e-mail był tylko w stopce i w komunikacie błędu. Pierwsze pole na 390 widoczne bez przewijania. `form_start` idzie tylko do GA (za zgodą), więc z VPS nie widać, czy ktoś zaczął wypełniać. Rekomendacja: mailto nad formularzem (10 sesji). Wdrożone: commit 237371c, wstęp 160 → 118 znaków, zdarzenie `klik_mail_kontakt` liczy kliknięcia w adres; produkcja potwierdzona curl, zrzut `skrypty-raport/kontakt-390-po.png`.
+**Dla Pawła:**
+**Zostało otwarte:** Z11 (pomiar wieczorny 17:30, liczy od 06:30), Z12 (WebApplication w ProductLanding) i dalej; Z11 i Z23 mają doliczyć `klik_mail_kontakt`.
