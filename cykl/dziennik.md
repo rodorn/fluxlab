@@ -7219,3 +7219,23 @@ Z13: timer `fl-gsc-23.timer` pt 23.10 01:20, log `cykl/z19-indeksowanie-23.log`,
 Z14: commit 30b3f20, `scripts/daty-stron.mjs` bierze późniejszą datę z `lib/daty-stron-komponenty.json`; sitemap 200, 148 `<loc>`; IndexNow 37 adresów (Yandex 200, Naver 200, wspólny 403).
 **Dla Pawła:**
 **Zostało otwarte:** Z15 (serie dzienne 5 stron pod embargiem, GSC), Z16 (pomiar nocny, pełny zamiast Z11), Z17, Z18, Z19 (nie przed 23.10 01:20), Z20 do Z23. Gdy kolejna zmiana pójdzie przez wspólny komponent, dopisz trasy do `lib/daty-stron-komponenty.json`, inaczej mapa nie pokaże zmiany.
+
+## 2026-10-22 10:05
+**Kanał:** Google (pomiar), narzędzia (pomiar).
+**Co zrobione:** Z15 serie dzienne GSC dla 5 stron pod embargiem dopisane o 19.10; Z17 przegląd sesji z audytem strony za 14 dni i zrzut ekranu wyniku na 390 z lokalnego buildu, z rekomendacją dla Z21.
+**Ruch:** doba 126 odsłon, 87 osób; źródła: youtube 19, b2b-email 16 (otwarcia maili), www.google.com 14, x 4, t.co 4; 2 uruchomienia narzędzi (audyt, oba z wynikiem dobrym).
+**Dowód:** plan Z15 i Z17 z dowodami; zrzut skrypty-raport/audyt-z17-390-wynik.png (lokalnie, plik poza repo).
+Serie GSC (klik./wyśw.), uzupełnienie tabeli z 21.10 13:18:
+
+| strona | 10 | 11 | 17 | 18 | 19 | wyśw./dzień przed → po |
+|---|---|---|---|---|---|---|
+| kiedy-odliczyc-vat (zmiana 17.10) | 0/2 | 0/4 | 0/2 | 0/3 | 0/17 | 17,3 → 7,3 |
+| /ksef-2027 (17.10) | 0/2 | 0/6 | 0/0 | 0/0 | 0/9 | 8,3 → 3,0 |
+| ai-w-automatyzacji-firm (17.10) | 0/7 | 0/3 | 0/0 | 0/3 | 0/6 | 2,6 → 3,0 |
+| /e-doreczenia-integracja (18.10) | 0/0 | 0/0 | 0/0 | 0/0 | 0/1 | 1,3 → 0,5 |
+| biura rachunkowe (18.10) | 0/1 | 0/2 | 0/1 | 0/0 | 0/1 | 1,9 → 0,5 |
+
+„Po” to dopiero 3 dni (17.10) i 2 dni (18.10), więc to podgląd; 19.10 odbija na trzech stronach. Kliknięcia po zmianie: 0 wszędzie.
+Audyt strony, 14 dni: 19 sesji z uruchomieniem, 16 z wynikiem (dobry 10, średni 6, słaby 0). Po wyniku 12 sesji się kończy, 4 idą dalej (/ po 51 s, 6 min i 20 min, /rejestr-cen po 2,5 min). Kliknięcia w „Wyślij wynik do wyceny”, „Poproś o poprawki”, „Napisz, odpowiadamy mailem”: 0; /kontakt i /strony-www po wyniku: 0. Na 390 bezpośrednio pod wynikiem stoi „Porównaj z fluxlab.pl”, a przycisk wyceny dopiero przy dolnej krawędzi pierwszego ekranu, bez ceny. 9 z 16 wyników to Chrome Android rano bez odsyłacza (prawdopodobnie automat, do sprawdzenia w Z18).
+**Dla Pawła:**
+**Zostało otwarte:** Z16 (22:30, okno od 18:30, więc nie teraz), Z18, Z19 (po 23.10 01:20, timer fl-gsc-23), Z20, Z21 (PopravTo nad PorownanieZFluxlab w components/AudytCheck.tsx), Z22, Z23.
