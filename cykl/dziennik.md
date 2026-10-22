@@ -7258,3 +7258,11 @@ Audyt strony, 14 dni: 19 sesji z uruchomieniem, 16 z wynikiem (dobry 10, średni
 Licznik na VPS zapisuje tylko przeglądarkę i system, bez surowego UA, więc ruchu z aplikacji (wv, FBAN, Instagram, LinkedIn) nie da się wyodrębnić. Wniosek: ludzi z aplikacji jest najwyżej ok. 30 w tygodniu (sesje dzienne z ≥2 odsłonami i Safari iOS), reszta to nocne pojedyncze odsłony o wzorze automatu. Utm w linkach postów warto dopisywać, ale obrazu to nie zmieni.
 **Dla Pawła:**
 **Zostało otwarte:** Z16 (22:30, okno od 18:30), Z19 (po 23.10 01:20, timer fl-gsc-23), Z20 (kandydat 2: Z1 i Z2 dały tylko 1 kandydata, prawdopodobnie „brak kandydata”), Z22, Z23. Dla stratega: flaga webview (wv/FBAN/Instagram/LinkedIn) w liczniku VPS, inaczej „bez odsyłacza” zostaje nieczytelne.
+
+## 2026-10-22 11:45
+**Kanał:** Google (Z20 z planu stratega).
+**Co zrobione:** nic nie poszło w świat: Z20 bez kandydata (Z1 dał jedną stronę, /wdrozenie-n8n-cena, zużytą w Z4; reszta tabeli Z1 ma pozycję 13 do 89, Z2 0 nowych zapytań z poz. ≤15), więc 0 zmian.
+**Ruch:** raport_ruchu 11:43: doba 120 odsłon, 78 osób (+1% wobec średniej 119,3); tydzień 853 odsłony, 547 osób; źródła: b2b-email 18 (otwarcia maili), youtube 12, www.google.com 11, x 4, t.co 4; 2 uruchomienia narzędzi (audyt, oba wynik dobry), lead_landing 1.
+**Dowód:** plan Z20 z dowodem; budzet 11:43 „zwolnij”, prognoza 117%, hamulec alarm, przerwa 45 min.
+**Dla Pawła:**
+**Zostało otwarte:** Z16 (22:30, okno od 18:30), Z19 (po 23.10 01:20, timer fl-gsc-23), Z22 (04:30), Z23 (05:30). Do 18:30 w planie nie ma zadania wykonalnego; przy alarmie budżetu cykle do tego czasu bez pracy poza planem.
