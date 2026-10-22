@@ -7239,3 +7239,22 @@ Serie GSC (klik./wyśw.), uzupełnienie tabeli z 21.10 13:18:
 Audyt strony, 14 dni: 19 sesji z uruchomieniem, 16 z wynikiem (dobry 10, średni 6, słaby 0). Po wyniku 12 sesji się kończy, 4 idą dalej (/ po 51 s, 6 min i 20 min, /rejestr-cen po 2,5 min). Kliknięcia w „Wyślij wynik do wyceny”, „Poproś o poprawki”, „Napisz, odpowiadamy mailem”: 0; /kontakt i /strony-www po wyniku: 0. Na 390 bezpośrednio pod wynikiem stoi „Porównaj z fluxlab.pl”, a przycisk wyceny dopiero przy dolnej krawędzi pierwszego ekranu, bez ceny. 9 z 16 wyników to Chrome Android rano bez odsyłacza (prawdopodobnie automat, do sprawdzenia w Z18).
 **Dla Pawła:**
 **Zostało otwarte:** Z16 (22:30, okno od 18:30, więc nie teraz), Z18, Z19 (po 23.10 01:20, timer fl-gsc-23), Z20, Z21 (PopravTo nad PorownanieZFluxlab w components/AudytCheck.tsx), Z22, Z23.
+
+## 2026-10-22 10:50
+**Kanał:** pomiar (Z18) i narzędzia (Z21) z planu stratega.
+**Co zrobione:** pod wynikiem audytu strony przycisk „Wyślij wynik do wyceny” stoi teraz zaraz pod liczbą punktów, a porównanie z fluxlab.pl niżej (16 sesji z wynikiem w 14 dni, 0 kliknięć po wyniku); policzone, kim są wejścia bez odsyłacza.
+**Ruch:** raport_ruchu 10:43: doba 108 odsłon, 73 osoby (−9% wobec średniej 119,3); tydzień 846 odsłon, 547 osób; źródła: b2b-email 15 (otwarcia maili), www.google.com 10, youtube 10, x 4, t.co 4; 2 uruchomienia narzędzi (audyt, oba wynik dobry).
+**Dowód:** commit bf5e5af, /api/wersja = bf5e5af, zrzut skrypty-raport/audyt-z21-390-po.png. Z18, 7 dni, sesje bez odsyłacza i bez utm po odsiewie:
+
+| Podział | Sesje |
+|---|---|
+| Razem | 308 |
+| Lądowanie / (z 1 odsłoną) | 92 (73) |
+| Lądowanie na podstronie (seria podatkowa i narzędzia) | 216 (132) |
+| ≥2 odsłony | 31 |
+| Noc 00-06 (z 1 odsłoną) | 111 (105), głównie Chrome Android |
+| UA: Chrome Android / Windows / macOS / Linux / Safari iOS | 136 / 61 / 47 / 31 / 11 |
+
+Licznik na VPS zapisuje tylko przeglądarkę i system, bez surowego UA, więc ruchu z aplikacji (wv, FBAN, Instagram, LinkedIn) nie da się wyodrębnić. Wniosek: ludzi z aplikacji jest najwyżej ok. 30 w tygodniu (sesje dzienne z ≥2 odsłonami i Safari iOS), reszta to nocne pojedyncze odsłony o wzorze automatu. Utm w linkach postów warto dopisywać, ale obrazu to nie zmieni.
+**Dla Pawła:**
+**Zostało otwarte:** Z16 (22:30, okno od 18:30), Z19 (po 23.10 01:20, timer fl-gsc-23), Z20 (kandydat 2: Z1 i Z2 dały tylko 1 kandydata, prawdopodobnie „brak kandydata”), Z22, Z23. Dla stratega: flaga webview (wv/FBAN/Instagram/LinkedIn) w liczniku VPS, inaczej „bez odsyłacza” zostaje nieczytelne.
