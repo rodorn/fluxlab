@@ -10,11 +10,11 @@ import Tabs from "@/components/Tabs";
 export const metadata: Metadata = {
   title: "Zapier vs Make, co wybrać do automatyzacji w 2026 | Fluxlab",
   description:
-    "Praktyczne porównanie Zapier i Make w 2026: pricing, integracje, logika, krzywa nauki i koszt na dużą skalę. Konkretne kryteria wyboru dla firm B2B.",
+    "Zapier cennik 2026: Free 100 tasków, Professional od ok. 19,99 USD, Team od 69 USD miesięcznie. Porównanie z Make i koszt przy 100 leadach dziennie.",
   openGraph: {
     title: "Zapier vs Make, co wybrać do automatyzacji w 2026 | Fluxlab",
     description:
-      "Praktyczne porównanie Zapier i Make w 2026: pricing, integracje, logika, krzywa nauki i koszt na dużą skalę. Konkretne kryteria wyboru dla firm B2B.",
+      "Zapier cennik 2026: Free 100 tasków, Professional od ok. 19,99 USD, Team od 69 USD miesięcznie. Porównanie z Make i koszt przy 100 leadach dziennie.",
     locale: "pl_PL",
     type: "article",
     images: [
@@ -383,7 +383,7 @@ export default function ZapierVsMakeArticle() {
             "@type": "Article",
             headline: "Zapier vs Make, co wybrać do automatyzacji w 2026",
             description:
-              "Praktyczne porównanie Zapier i Make w 2026: pricing, integracje, logika, krzywa nauki i koszt na dużą skalę. Konkretne kryteria wyboru dla firm B2B.",
+              "Zapier cennik 2026: Free 100 tasków, Professional od ok. 19,99 USD, Team od 69 USD miesięcznie. Porównanie z Make i koszt przy 100 leadach dziennie.",
             datePublished: "2026-04-19",
             author: {
               "@type": "Organization",
