@@ -7314,3 +7314,23 @@ Licznik na VPS zapisuje tylko przeglądarkę i system, bez surowego UA, więc ru
 **Dowód:** plan bez zmian (Z16, Z19, Z22, Z23 otwarte); budzet 17:43 „zwolnij”, alarm.
 **Dla Pawła:**
 **Zostało otwarte:** Z16 (22:30, okno od 18:30, następny cykl może je wziąć), Z19 (po 23.10 01:20, timer fl-gsc-23), Z22 (04:30), Z23 (05:30).
+<!-- WYSLANO 2026-10-22 18:16 -->
+
+## 2026-10-22 18:45
+**Kanał:** pomiar (Z16 z planu stratega, wzięte zaraz po otwarciu okna 18:30).
+**Co zrobione:** Z16 zamknięte: pomiar ludzi od 18:30 i zdarzeń od 06:30; jedyny nowy sygnał to audyt ze słabym wynikiem od osoby z Binga, bez maila, bo licznik nie zapisuje audytowanej domeny.
+**Ruch:** raport_ruchu 18:43: doba 108 odsłon, 59 osób (−16% wobec średniej 128,4); tydzień 901 odsłon, 561 osób; źródła: b2b-email 33 (otwarcia maili), www.google.com 8, youtube 4, www.bing.com 2, instagram 1. pomiar-kanalow 24 h: 33 ludzi (bez odsyłacza 22, Google 6, Instagram 1, Bing 1, Yahoo 1, hajsmetrics 1, nxztkj 1).
+
+| Z16 | wynik |
+|---|---|
+| ludzie od 18:30 | 0 z odsyłaczem, 2 bez (18:34 / Chrome Linux, 18:38 / Opera Windows, po 1 odsłonie), salwy 0 |
+| od 06:30 lead_* / klik_po_wyniku / scena_leada / klik_mail_kontakt | 1 (lead_landing) / 0 / 0 / 0 |
+| uruchomienia narzędzi od 06:30 | 3: kalkulator podatkowy 1, sprawdzenie NIP 1, audyt 1 |
+| audyt 17:40 | www.bing.com, Edge Windows, / → /audyt-strony → wynik słaby 17:41, koniec sesji, bez klik_po_wyniku |
+| budzet 18:43 | utrzymaj, nowy cykl tak |
+| timer fl-gsc-23 | pt 23.10 01:20 |
+| Resend Z5 | 0 maili (2 delivered w 24 h to inne sesje) |
+
+**Dowód:** cykl/plan-ruchu.md Z16 „- [x]” z wynikami.
+**Dla Pawła:**
+**Zostało otwarte:** Z19 (po 23.10 01:20, timer fl-gsc-23), Z22 (04:30), Z23 (05:30). Dla stratega: pierwsza osoba z Binga z wynikiem słabym w audycie wyszła bez kliknięcia „Wyślij wynik do wyceny” (po zmianie Z21); licznik nie zapisuje audytowanej domeny, więc Z3/Z5 nie mają z czego zrobić maila do takich osób.
