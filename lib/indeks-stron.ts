@@ -160,7 +160,7 @@ export const INDEKS_STRON: WpisIndeksu[] = [
   {
     "url": "/wdrozenie-n8n-cena",
     "tytul": "Wdrożenie n8n, cena: z czego składa się koszt",
-    "opis": "Ile realnie kosztuje wdrożenie n8n: licencja, serwer, praca nad przepływami i opieka. Widełki za jeden przepływ i za komplet, plus kalkulator."
+    "opis": "Ile kosztuje n8n: licencja 0 zł, serwer 30 do 90 zł miesięcznie, praca od 790 zł za przepływ, opieka 190 zł. Policz w kalkulatorze."
   },
   {
     "url": "/integracja-crm-z-erp",
