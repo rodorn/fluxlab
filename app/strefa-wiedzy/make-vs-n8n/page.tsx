@@ -10,11 +10,11 @@ import Tabs from "@/components/Tabs";
 export const metadata: Metadata = {
   title: "Make vs n8n, porównanie dla firm MŚP | Fluxlab",
   description:
-    "Make i n8n w boju: koszt, elastyczność, krzywa nauki i lokalizacja danych. Praktyczne porównanie dla małych i średnich firm w 2026 roku.",
+    "n8n vs Make 2026: Make Core od 9 USD za 10 tys. operacji, n8n na własnym serwerze ok. 25 zł miesięcznie. Co wybrać w małej firmie.",
   openGraph: {
     title: "Make vs n8n, porównanie dla firm MŚP | Fluxlab",
     description:
-      "Make i n8n w boju: koszt, elastyczność, krzywa nauki i lokalizacja danych. Praktyczne porównanie dla małych i średnich firm w 2026 roku.",
+      "n8n vs Make 2026: Make Core od 9 USD za 10 tys. operacji, n8n na własnym serwerze ok. 25 zł miesięcznie. Co wybrać w małej firmie.",
     locale: "pl_PL",
     type: "article",
     images: [
@@ -309,7 +309,7 @@ export default function MakeVsN8nArticle() {
             "@type": "Article",
             headline: "Make vs n8n, porównanie dla firm MŚP",
             description:
-              "Make i n8n w boju: koszt, elastyczność, krzywa nauki i lokalizacja danych. Praktyczne porównanie dla małych i średnich firm w 2026 roku.",
+              "n8n vs Make 2026: Make Core od 9 USD za 10 tys. operacji, n8n na własnym serwerze ok. 25 zł miesięcznie. Co wybrać w małej firmie.",
             datePublished: "2026-04-19",
             author: {
               "@type": "Organization",
