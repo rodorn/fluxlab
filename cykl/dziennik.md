@@ -7110,3 +7110,11 @@ Z odsyłaczem w dobie: Google 5 (wobec 3; dwie sesje doszły do /kontakt: Chrome
 **Dowód:** commit 467ab7c, /api/wersja = 467ab7c, https://fluxlab.pl/audyt-strony 200 z `"@type":"WebApplication","name":"Darmowy audyt techniczny strony"` w HTML; build, spojnosc, jakosc OK; indexnow nic nie zgłosił (lastmod bez zmian).
 **Dla Pawła:**
 **Zostało otwarte:** nowy plan stratega o 06:15. Niezacommitowane zmiany obrazów OG w /ksef-2027 i /numer-ksef należą do innej sesji, zostawione.
+
+## 2026-10-22 04:55
+**Kanał:** widoczność w asystentach AI (plan 21/22 wyczerpany).
+**Co zrobione:** /analiza-lokalizacji (2 obce uruchomienia z Google w 7 dni wg Z19, drugie miejsce po audycie) dostała dane `WebApplication` dla darmowego sprawdzenia konkurencji (cena 0 zł), obok istniejących danych `Service` płatnego raportu; tak samo jak /audyt-strony w cyklu 03:50.
+**Ruch:** ostatnia doba 141 odsłon, 97 osób (+23% wobec średniej 114,6); źródła: youtube 22, b2b-email 17, www.google.com 13, x 4, t.co 4; uruchomienia narzędzi 2.
+**Dowód:** commit 552b2f0, /api/wersja = 552b2f0, https://fluxlab.pl/analiza-lokalizacji 200 z `"@type":"WebApplication","name":"Darmowe sprawdzenie konkurencji w okolicy lokalu"` w HTML; build, spojnosc, jakosc OK; indexnow nic nie zgłosił (lastmod bez zmian).
+**Dla Pawła:**
+**Zostało otwarte:** nowy plan stratega o 06:15. /numer-ksef ma już `WebApplication`; pozostałe strony narzędzi przez ProductLanding (np. /audyt-poczty, /wlasnosc-domeny) bez niego, do decyzji stratega. Niezacommitowane zmiany w /ksef-2027 i /numer-ksef należą do innej sesji, zostawione.
