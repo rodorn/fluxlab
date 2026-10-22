@@ -1,0 +1,8 @@
+Do punktu o numerze KSeF w przelewach, bo to dotknie każdego, kto płaci faktury ręcznie:
+
+- Numer KSeF to nie numer faktury (FV 12/2026). Ma 35 znaków: NIP sprzedawcy, data przyjęcia przez KSeF (RRRRMMDD), 12 znaków technicznych i 2 znaki sumy kontrolnej, np. 5265877635-20250826-0100001AF629-AF.
+- Znajdziesz go na liście faktur otrzymanych w Aplikacji Podatnika i na wizualizacji PDF pod kodem QR.
+- Ostatnie dwa znaki to CRC-8 z pierwszych 32. Literówkę przy przepisywaniu da się więc wyłapać przed wysłaniem przelewu, bez logowania do KSeF.
+- Przy jednym przelewie za kilka faktur tego samego sprzedawcy zamiast listy numerów idzie identyfikator zbiorczy nadawany przez KSeF.
+
+Zrobiliśmy do tego darmowe sprawdzenie, które liczy sumę kontrolną i pokazuje NIP oraz datę zaszyte w numerze (liczy w przeglądarce, numeru nigdzie nie wysyła): https://fluxlab.pl/numer-ksef?utm_source=reddit&utm_campaign=dystrybucja

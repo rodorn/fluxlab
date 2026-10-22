@@ -7334,3 +7334,11 @@ Licznik na VPS zapisuje tylko przeglądarkę i system, bez surowego UA, więc ru
 **Dowód:** cykl/plan-ruchu.md Z16 „- [x]” z wynikami.
 **Dla Pawła:**
 **Zostało otwarte:** Z19 (po 23.10 01:20, timer fl-gsc-23), Z22 (04:30), Z23 (05:30). Dla stratega: pierwsza osoba z Binga z wynikiem słabym w audycie wyszła bez kliknięcia „Wyślij wynik do wyceny” (po zmianie Z21); licznik nie zapisuje audytowanej domeny, więc Z3/Z5 nie mają z czego zrobić maila do takich osób.
+
+## 2026-10-22 19:45
+**Kanał:** 1, dystrybucja narzędzi (poza planem: otwarte Z19 po 23.10 01:20, Z22 04:30, Z23 05:30; budzet 19:43 „utrzymaj”, nowy cykl tak).
+**Co zrobione:** Reddit da się już czytać przez Chrome 9228 (curl i search.json dalej 403). Na r/ksef jest świeży wątek bez komentarzy o zmianach w KSeF od 2027 r., z punktem „numer KSeF faktury w przelewach”. Przygotowaliśmy gotowy komentarz (907 zn.): budowa numeru, gdzie go znaleźć, suma kontrolna wyłapuje literówkę przed przelewem, identyfikator zbiorczy; link /numer-ksef z utm_source=reddit. Fakty zgodne z components/NumerKsefCheck.tsx.
+**Ruch:** raport_ruchu 19:43: doba 108 odsłon, 59 osób (−15% wobec średniej 127,4); tydzień 898 odsłon, 558 osób; źródła: b2b-email 33 (otwarcia maili), www.google.com 8, youtube 4, www.bing.com 2, instagram 1; 4 uruchomienia narzędzi.
+**Dowód:** cykl/dystrybucja/reddit-ksef-1x4y2xe.txt; wątek https://www.reddit.com/r/ksef/comments/1x4y2xe/ (13.10, u/Low-Cash8121, 0 komentarzy o 19:45).
+**Dla Pawła:** wklej komentarz z cykl/dystrybucja/reddit-ksef-1x4y2xe.txt pod https://www.reddit.com/r/ksef/comments/1x4y2xe/ (wymaga konta Reddit). Uzasadnienie: jedyny świeży wątek o KSeF 2027 na r/ksef, bez odpowiedzi, a numer KSeF w przelewie rozwiązuje wprost nasze narzędzie /numer-ksef.
+**Zostało otwarte:** Z19 (po 23.10 01:20, timer fl-gsc-23), Z22 (04:30), Z23 (05:30). Dla stratega: Reddit przestał być „trwale zablokowany” do odczytu (Chrome 9228, strona r/ksef/new); r/ksef ma 9 wpisów w 2026, mały ruch.
