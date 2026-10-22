@@ -7199,3 +7199,23 @@ Formularz: 6 pól widocznych, wymagane 3 (e-mail, obszar, skala), telefon wymaga
 **Dowód:** commit 3b202b1, /api/wersja = 3b202b1; curl produkcji: /audyt-poczty 1, /wlasnosc-domeny 1, /audyt-strony 1 (nie 2); validator.schema.org dla /audyt-poczty: WebApplication 0 błędów, 0 ostrzeżeń. Nazwa i opis pochodzą z `lib/narzedzia.ts` (te same co na kafelku w /narzedzia). /wlasny-crm (typ usługa) bez bloku.
 **Dla Pawła:**
 **Zostało otwarte:** Z11 (17:30), Z13 (lista do serii 23.10: dziś zmienione /kontakt i strony narzędzi z Z12), Z14 (lastmod dla stron z Z12 i 4 stron z nocy, potem IndexNow), dalej Z15 do Z23.
+
+## 2026-10-22 08:55
+**Kanał:** pomiar (Z11), Google (Z13) i Google + AI (Z14) z planu stratega, wzięte po kolei mimo godzin docelowych 17:30-20:30.
+**Co zrobione:** 20 stron zmienionych 22.10 (w tym 16, których zmiana szła przez wspólny komponent i nie ruszała daty w mapie) ma w mapie witryny dzisiejszy lastmod i poszło do IndexNow; seria indeksowania GSC na 23.10 01:20 ustawiona na 8 adresów.
+**Ruch:** raport_ruchu 08:43: doba 124 odsłony, 87 osób (+6% wobec średniej 116,6); tydzień 864 odsłony, 567 osób; źródła youtube 19, b2b-email 15 (piksel innej sesji), www.google.com 13, x 4, t.co 4. Pomiar-kanalow 24 h: ludzie 45, z odsyłaczem 15 (Google 5, x 3, fb-ads 2, t.co 2, m.facebook 1, youtube 1, google-ads 1, checklista 1, chatgpt.com 1, instagram 1), bez 30, salwy 6.
+**Dowód:**
+
+| Z11 (okno 06:30-08:50) | Wynik |
+|---|---|
+| Ludzie z odsyłaczem / bez / salwy | 0 / 2 (weryfikacja Z12 na /audyt-poczty) / 0 |
+| scena_leada, lead_*, klik_mail_kontakt | 0, 0, 0 |
+| klik_po_wyniku od 20.10 12:30 | 0 |
+| Uruchomienia narzędzi | 0 |
+| audyt-wynik (maile / sesje) | 0 / 0 |
+| Zoho, nowe zapytania od ludzi | 0 |
+
+Z13: timer `fl-gsc-23.timer` pt 23.10 01:20, log `cykl/z19-indeksowanie-23.log`, adresy /wdrozenie-n8n-cena, /kontakt, /audyt-poczty, /wlasnosc-domeny, /sprawdz-kontrahenta, /kalkulator-podatkowy, /audyt-strony, /analiza-lokalizacji; `--tylko-stan` dla 4 nowych: wszystkie w Google, 0 żądań.
+Z14: commit 30b3f20, `scripts/daty-stron.mjs` bierze późniejszą datę z `lib/daty-stron-komponenty.json`; sitemap 200, 148 `<loc>`; IndexNow 37 adresów (Yandex 200, Naver 200, wspólny 403).
+**Dla Pawła:**
+**Zostało otwarte:** Z15 (serie dzienne 5 stron pod embargiem, GSC), Z16 (pomiar nocny, pełny zamiast Z11), Z17, Z18, Z19 (nie przed 23.10 01:20), Z20 do Z23. Gdy kolejna zmiana pójdzie przez wspólny komponent, dopisz trasy do `lib/daty-stron-komponenty.json`, inaczej mapa nie pokaże zmiany.
