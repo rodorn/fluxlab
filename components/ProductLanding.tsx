@@ -108,6 +108,9 @@ function cenaOd(pricing: Tier[]): string | null {
   return `Od ${String(Math.min(...kwoty)).replace(/\B(?=(\d{3})+$)/g, "\u00a0")} zł netto`;
 }
 
+/** Strony z własnym blokiem WebApplication w page.tsx. */
+const WLASNA_WEBAPP = new Set(["audyt-strony", "analiza-lokalizacji", "wdrozenie-n8n-cena"]);
+
 export default function ProductLanding(p: ProductLandingProps) {
   const typ = p.typ ?? (p.tool ? "narzedzie" : "usluga");
   const etykietaTypu = typ === "narzedzie" ? "Narzędzie" : "Usługa";
@@ -117,7 +120,7 @@ export default function ProductLanding(p: ProductLandingProps) {
       id="narzedzie"
       className="mt-6 md:mt-12 scroll-mt-24 [&>*]:!mx-0 [&>*]:!max-w-none"
     >
-      <NazwaNarzedzia href={`/${p.slug}`} />
+      <NazwaNarzedzia href={`/${p.slug}`} dane={typ === "narzedzie" && !WLASNA_WEBAPP.has(p.slug)} />
       {p.tool}
     </div>
   );

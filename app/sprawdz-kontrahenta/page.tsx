@@ -109,7 +109,7 @@ export default function SprawdzKontrahentaPage() {
           </div>
 
           <div className="mt-12">
-            <NazwaNarzedzia href="/sprawdz-kontrahenta" />
+            <NazwaNarzedzia href="/sprawdz-kontrahenta" dane />
             <NipCheck />
           </div>
 

@@ -59,7 +59,7 @@ export default async function Page() {
         </p>
 
         <div className="mt-8 -mb-5">
-          <NazwaNarzedzia href="/ceny-energii-jutro" />
+          <NazwaNarzedzia href="/ceny-energii-jutro" dane />
         </div>
 
         {!naJutro && (

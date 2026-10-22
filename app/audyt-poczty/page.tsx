@@ -54,7 +54,7 @@ export default function Page() {
     <>
       <Header />
       <AudytPocztyKlient
-        nazwa={<NazwaNarzedzia href="/audyt-poczty" />}
+        nazwa={<NazwaNarzedzia href="/audyt-poczty" dane />}
         breadcrumbs={
           <Breadcrumbs href="/audyt-poczty" items={[{ label: "Audyt poczty firmowej" }]} />
         }

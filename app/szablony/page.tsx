@@ -39,7 +39,7 @@ export default function Szablony() {
         <section className="pt-12 lg:pt-20 pb-20">
           <div className="container-wide">
             <div className="max-w-3xl mx-auto text-center mb-10">
-              <NazwaNarzedzia href="/szablony" />
+              <NazwaNarzedzia href="/szablony" dane />
               <h1 className="h1-strony">
                 Trzy pliki do pobrania, bez rejestracji
               </h1>

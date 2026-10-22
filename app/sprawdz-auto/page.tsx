@@ -101,7 +101,7 @@ export default function SprawdzAutoPage() {
         <section className="relative overflow-hidden pt-24 pb-12">
           <div className="container-wide max-w-3xl text-center">
             <p className="section-label mb-3">Narzędzie</p>
-            <NazwaNarzedzia href="/sprawdz-auto" />
+            <NazwaNarzedzia href="/sprawdz-auto" dane />
             <h1 className="h1-strony text-gray-900 dark:text-white">
               Nie przepłać za używane auto
             </h1>
