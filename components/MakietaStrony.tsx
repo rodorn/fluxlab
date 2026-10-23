@@ -14,12 +14,13 @@ type Wynik = {
     kolor: string;
     logo: string;
     favicon: string;
+    obraz: string;
   };
   hero: { naglowek: string; podtytul: string; korzysci: string[]; przycisk: string };
   zrzut: string | null;
 };
 
-function Ramka({ adres, children }: { adres: string; children: React.ReactNode }) {
+function Ramka({ adres, children, wnetrze = "aspect-[16/10]" }: { adres: string; children: React.ReactNode; wnetrze?: string }) {
   return (
     <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-lg dark:border-gray-800 dark:bg-gray-900">
       <div className="flex items-center gap-2 border-b border-gray-200 bg-gray-50 px-3 py-2 dark:border-gray-800 dark:bg-gray-950">
@@ -30,7 +31,7 @@ function Ramka({ adres, children }: { adres: string; children: React.ReactNode }
           {adres}
         </span>
       </div>
-      <div className="relative aspect-[16/10] overflow-hidden">{children}</div>
+      <div className={`relative overflow-hidden ${wnetrze}`}>{children}</div>
     </div>
   );
 }
@@ -63,6 +64,7 @@ export default function MakietaStrony() {
   const [blad, setBlad] = useState("");
   const [wynik, setWynik] = useState<Wynik | null>(null);
   const [bezLogo, setBezLogo] = useState(false);
+  const [bezObrazu, setBezObrazu] = useState(false);
 
   const [opis, setOpis] = useState("");
   const [lad2, setLad2] = useState(false);
@@ -91,6 +93,7 @@ export default function MakietaStrony() {
       const w = (await wywolaj("/api/makieta", { adres })) as Wynik;
       setWynik(w);
       setBezLogo(false);
+      setBezObrazu(false);
     } catch (err) {
       setBlad(err instanceof Error ? err.message : "Brak połączenia. Spróbuj jeszcze raz.");
     } finally {
@@ -204,7 +207,7 @@ export default function MakietaStrony() {
 
                   <div className="min-w-0">
                     <p className="mb-2 text-center text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">Nasza wersja</p>
-                    <Ramka adres={wynik?.strona.host ?? adres}>
+                    <Ramka adres={wynik?.strona.host ?? adres} wnetrze="min-h-[22rem] md:aspect-[16/10] md:min-h-0">
                       {ladowanie || !wynik ? (
                         <div role="status" aria-label="Piszemy" className="flex h-full flex-col items-center justify-center gap-3 p-8">
                           <div className="h-7 w-4/5 animate-pulse rounded bg-gray-200 dark:bg-gray-700" />
@@ -212,35 +215,48 @@ export default function MakietaStrony() {
                           <div className="mt-3 h-10 w-36 animate-pulse rounded-xl bg-gray-200 dark:bg-gray-700" />
                         </div>
                       ) : (
-                        <div className="flex h-full flex-col">
-                          <div className="flex items-center justify-between gap-3 px-5 py-3" style={{ background: kolor, color: na }}>
+                        <div className="flex h-full min-h-[inherit] flex-col bg-white text-gray-900">
+                          <div className="flex items-center justify-between gap-3 border-b border-gray-100 px-4 py-2.5">
                             <span className="flex min-w-0 items-center gap-2">
                               {wynik.strona.logo && !bezLogo ? (
                                 // eslint-disable-next-line @next/next/no-img-element
-                                <img src={wynik.strona.logo} alt="" width={22} height={22} referrerPolicy="no-referrer" onError={() => setBezLogo(true)} className="h-[22px] w-[22px] rounded bg-white/90 object-contain" />
-                              ) : null}
-                              <span className="truncate text-xs font-semibold">{wynik.strona.nazwa}</span>
+                                <img src={wynik.strona.logo} alt="" width={20} height={20} referrerPolicy="no-referrer" onError={() => setBezLogo(true)} className="h-5 w-5 rounded object-contain" />
+                              ) : (
+                                <span aria-hidden="true" className="h-5 w-5 rounded" style={{ background: kolor }} />
+                              )}
+                              <span className="truncate text-xs font-bold">{wynik.strona.nazwa}</span>
                             </span>
-                            <span className="hidden gap-3 text-[11px] opacity-85 sm:flex">
-                              <span>Oferta</span>
-                              <span>O nas</span>
-                              <span>Kontakt</span>
+                            <span className="flex items-center gap-3 text-[10px] text-gray-500">
+                              <span className="hidden sm:inline">Oferta</span>
+                              <span className="hidden sm:inline">O nas</span>
+                              <span className="rounded-full px-2.5 py-1 font-semibold" style={{ background: kolor, color: na }}>Kontakt</span>
                             </span>
                           </div>
-                          <div className="flex flex-1 flex-col items-center justify-center overflow-hidden px-6 py-4 text-center">
-                            <h3 className="text-xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white lg:text-2xl">{wynik.hero.naglowek}</h3>
-                            <p className="mt-2 text-xs text-gray-600 dark:text-gray-300 lg:text-sm">{wynik.hero.podtytul}</p>
-                            <ul className="mt-3 flex flex-wrap justify-center gap-x-4 gap-y-1 text-xs text-gray-800 dark:text-gray-200">
-                              {wynik.hero.korzysci.map((k) => (
-                                <li key={k} className="flex items-center gap-1.5">
-                                  <span aria-hidden="true" className="h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: kolor }} />
-                                  <span>{k}</span>
-                                </li>
-                              ))}
-                            </ul>
-                            <span className="mt-4 inline-block rounded-xl px-5 py-2.5 text-xs font-semibold" style={{ background: kolor, color: na }}>
-                              {wynik.hero.przycisk}
-                            </span>
+                          <div
+                            className="relative flex flex-1 flex-col items-center justify-center overflow-hidden px-5 py-4 text-center"
+                            style={wynik.strona.obraz && !bezObrazu ? undefined : { background: `radial-gradient(120% 90% at 50% 0%, ${kolor}2e, #ffffff 70%)` }}
+                          >
+                            {wynik.strona.obraz && !bezObrazu && (
+                              <>
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
+                                <img src={wynik.strona.obraz} alt="" referrerPolicy="no-referrer" onError={() => setBezObrazu(true)} className="absolute inset-0 h-full w-full scale-110 object-cover blur-[3px]" />
+                                <span aria-hidden="true" className="absolute inset-0 bg-gradient-to-b from-gray-950/85 via-gray-950/80 to-gray-950/90" />
+                              </>
+                            )}
+                            <div className={`relative ${wynik.strona.obraz && !bezObrazu ? "text-white" : ""}`}>
+                              <h3 className="text-lg font-bold leading-tight tracking-tight lg:text-2xl">{wynik.hero.naglowek}</h3>
+                              <p className={`mx-auto mt-2 max-w-md text-xs lg:text-sm ${wynik.strona.obraz && !bezObrazu ? "text-white/85" : "text-gray-600"}`}>{wynik.hero.podtytul}</p>
+                              <ul className="mt-3 flex flex-wrap justify-center gap-1.5 text-[10px] lg:text-xs">
+                                {wynik.hero.korzysci.map((k) => (
+                                  <li key={k} className={`rounded-full px-2.5 py-1 ${wynik.strona.obraz && !bezObrazu ? "bg-white/15 text-white backdrop-blur" : "bg-white text-gray-800 shadow-sm ring-1 ring-gray-200"}`}>
+                                    {k}
+                                  </li>
+                                ))}
+                              </ul>
+                              <span className="mt-4 inline-block rounded-xl px-5 py-2.5 text-xs font-semibold shadow-lg" style={{ background: kolor, color: na }}>
+                                {wynik.hero.przycisk}
+                              </span>
+                            </div>
                           </div>
                         </div>
                       )}

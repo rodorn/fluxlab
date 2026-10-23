@@ -169,6 +169,13 @@ export default function Czat() {
     return () => clearTimeout(t);
   }, [sciezka, otwarty]);
 
+  // Dymek znika sam, żeby nie zasłaniał treści na telefonie.
+  useEffect(() => {
+    if (!dymek) return;
+    const t = setTimeout(() => setDymek(false), 8_000);
+    return () => clearTimeout(t);
+  }, [dymek]);
+
   // Pytanie z wyszukiwarki Ctrl+K.
   const wyslijRef = useRef<(t: string) => void>(() => {});
   useEffect(() => {

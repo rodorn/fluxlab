@@ -156,9 +156,10 @@ export async function POST(req: Request) {
   const naglowki = tekstNaglowkow(html);
   const { kolor } = kolorMotywu(html);
   const logo =
-    absolutny(meta(html, "og:image"), url) ||
+    absolutny(link(html, /apple-touch-icon/i), url) ||
     absolutny(link(html, /icon/i), url) ||
     absolutny("/favicon.ico", url);
+  const obraz = absolutny(meta(html, "og:image"), url);
   const favicon = absolutny(link(html, /icon/i), url) || absolutny("/favicon.ico", url);
   const nazwa = meta(html, "og:site_name") || url.hostname.replace(/^www\./, "");
 
@@ -200,7 +201,7 @@ Wywołaj nowe_hero.`,
     if (!call?.arguments) return NextResponse.json({ error: "Pusta odpowiedź" }, { status: 502 });
     const hero = JSON.parse(call.arguments);
     return NextResponse.json({
-      strona: { adres: url.toString(), host: url.hostname, nazwa, tytul, opis, naglowki: naglowki.slice(0, 4), kolor, logo, favicon },
+      strona: { adres: url.toString(), host: url.hostname, nazwa, tytul, opis, naglowki: naglowki.slice(0, 4), kolor, logo, favicon, obraz },
       hero,
       zrzut: await zrzut,
     });

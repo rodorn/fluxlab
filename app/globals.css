@@ -1608,3 +1608,13 @@ html.blueprint video {
 html.przewijanie body {
   pointer-events: none;
 }
+
+.tasma-postep {
+  width: 0;
+  animation: tasma-postep linear forwards;
+}
+@keyframes tasma-postep {
+  to {
+    width: 100%;
+  }
+}
