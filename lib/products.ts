@@ -110,7 +110,7 @@ export const PRODUCTS: Product[] = [
     category: "www",
     name: "Strony internetowe",
     tagline: "Nowa strona albo poprawki w obecnej",
-    desc: "Poprawki na działającej stronie od 150 zł, landing do 5 podstron od 4 500 zł, strona firmowa z CMS od 9 000 zł. Formularz trafia prosto do CRM albo skrzynki.",
+    desc: "Naprawy 150, 290 albo 490 zł, strona w tydzień 2 900 zł, strona firmowa z CMS 5 900 zł, opieka od 300 zł/mies. Formularz trafia prosto do CRM albo skrzynki.",
     price: "od 150 zł",
     href: "/strony-www",
     grupa: "budowa",

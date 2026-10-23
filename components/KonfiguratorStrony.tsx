@@ -17,24 +17,24 @@ type Rodzaj = {
 const RODZAJE: Rodzaj[] = [
   {
     id: "landing",
-    nazwa: "Landing do 5 podstron",
-    opis: "Formularz prosto do CRM albo skrzynki.",
-    cena: 4500,
-    termin: "3-5 dni roboczych",
+    nazwa: "Strona w tydzień, do 5 podstron",
+    opis: "Formularz i kalendarz spotkań.",
+    cena: 2900,
+    termin: "7 dni",
   },
   {
     id: "firmowa",
     nazwa: "Strona firmowa z CMS",
-    opis: "Next.js, panel do edycji treści, audyt przed startem.",
-    cena: 9000,
-    termin: "2-3 tygodnie",
+    opis: "Do 15 podstron, blog, panel edycji, Profil Google.",
+    cena: 5900,
+    termin: "3 tygodnie",
   },
   {
     id: "sklep",
     nazwa: "Sklep z integracją",
     opis: "Sklep połączony z Twoimi systemami.",
-    cena: 15000,
-    termin: "ustalimy przy wycenie",
+    cena: 9900,
+    termin: "po rozmowie",
   },
 ];
 

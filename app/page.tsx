@@ -30,10 +30,10 @@ const OFERTA = [
     cena: "naprawa od 150 zł",
     opis: "Naprawa i poprawki obecnej strony albo nowa: landing, strona z CMS, sklep. Formularz trafia od razu do CRM albo na Twoją skrzynkę.",
     punkty: [
-      "naprawa i poprawki: od 150 zł",
-      "landing do 5 podstron: 4 500 zł",
-      "strona firmowa z CMS: od 9 000 zł",
-      "sklep z integracją: od 15 000 zł",
+      "naprawa i poprawki: 150 / 290 / 490 zł",
+      "strona w tydzień, do 5 podstron: 2 900 zł",
+      "strona firmowa z CMS: 5 900 zł, sklep od 9 900 zł",
+      "opieka nad stroną i Profilem Google: od 300 zł/mies.",
     ],
     cta: "Zobacz strony",
     ikona: "strony" as NazwaIlustracji,
@@ -55,10 +55,10 @@ const OFERTA = [
   {
     href: "/automatyzacja-leadow-crm",
     nazwa: nazwaFilaru("/automatyzacja-leadow-crm"),
-    cena: "od 1 500 zł",
+    cena: "od 900 zł",
     opis: "Jeden proces od początku do końca: dokumenty, raporty, KSeF, połączenie CRM z ERP.",
     punkty: [
-      "jeden etap od 1 500 zł, cała ścieżka od 2 500 zł",
+      "pierwszy krok: 900 / 1 200 / 1 500 zł w 5 dni, cała ścieżka od 2 500 zł",
       "integracje przez API",
       "cena z góry, bez rozliczania godzin",
     ],

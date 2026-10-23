@@ -67,7 +67,7 @@ export const MENU: PozycjaMenu[] = [
     ],
     kafel: {
       tytul: "Naprawa od 150\u00a0zł",
-      opis: "Nowa strona od 4 500 zł, gotowa w 2–3 tygodnie.",
+      opis: "Strona w tydzień za 2 900 zł, firmowa z CMS za 5 900 zł.",
       href: "/strony-www",
       cta: "Zobacz ofertę",
     },
@@ -182,7 +182,7 @@ export const MENU: PozycjaMenu[] = [
         linki: [
           l("/strony-www", "naprawa od 150 zł"),
           l("/wlasny-crm", "wdrożenie od 1 zł"),
-          l("/automatyzacja-leadow-crm", "od 1 500 zł"),
+          l("/automatyzacja-leadow-crm", "od 900 zł"),
         ],
       },
       {

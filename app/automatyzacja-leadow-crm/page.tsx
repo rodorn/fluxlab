@@ -60,7 +60,7 @@ const steps = [
 
 const pricing = [
   { name: "Diagnoza procesu", price: "0 zł" },
-  { name: "Automatyzacja leadów", price: "od 1 500 zł" },
+  { name: "Pierwszy krok automatyzacji", price: "900 / 1 200 / 1 500 zł" },
   { name: "CRM + raportowanie", price: "od 2 500 zł" },
   { name: "Integracje API", price: "wycena indywidualna" },
 ];
@@ -82,7 +82,7 @@ const faq = [
   {
     question: "Ile to kosztuje?",
     answer:
-      "Jeden etap od 1 500 zł, cała ścieżka z raportem od 2 500 zł. Diagnoza jest bezpłatna.",
+      "Pierwszy krok 900, 1 200 albo 1 500 zł, gotowy w 5 dni, płatny z góry. Cała ścieżka od 2 500 zł. Diagnoza jest bezpłatna.",
   },
 ];
 
@@ -118,11 +118,11 @@ export default function AutomatyzacjaLeadowCRM() {
     offers: {
       "@type": "Offer",
       priceCurrency: "PLN",
-      price: "1500",
+      price: "900",
       priceSpecification: {
         "@type": "PriceSpecification",
         priceCurrency: "PLN",
-        minPrice: "1500",
+        minPrice: "900",
       },
     },
     url: "https://fluxlab.pl/automatyzacja-leadow-crm",

@@ -15,7 +15,7 @@ import TasmaEtapow from "@/components/TasmaEtapow";
 export const metadata: Metadata = {
   title: "Tworzenie stron WWW i poprawki w obecnych | Fluxlab",
   description:
-    "Nowa strona albo poprawki w obecnej. Szybko, mobilnie, z AI w treści, obrazach i kodzie. Hosting w cenie wdrożenia. Pierwsza wersja w 2-3 tygodnie.",
+    "Nowa strona albo poprawki w obecnej. Szybko, mobilnie, z AI w treści, obrazach i kodzie. Hosting w cenie wdrożenia. Strona w tydzień za 2 900 zł.",
   alternates: { canonical: "/strony-www" },
   openGraph: {
     title: "Tworzenie stron WWW i poprawki w obecnych | Fluxlab",
@@ -28,20 +28,35 @@ export const metadata: Metadata = {
 
 const pricing = [
   {
-    title: "Poprawki i nowe podstrony",
-    price: "od 150 zł",
-    description: "Zmiana w istniejącej stronie albo nowa podstrona.",
+    title: "Naprawa i poprawki",
+    price: "150 / 290 / 490 zł",
+    description: "Jedna rzecz: szybkość, formularz, certyfikat albo błąd. Płacisz po sprawdzeniu efektu.",
   },
   {
-    title: "Landing do 5 podstron",
-    price: "od 4 500 zł",
-    description: "Formularz prosto do CRM albo skrzynki, z pomiarem źródła zapytań.",
+    title: "Strona w tydzień",
+    price: "2 900 zł",
+    description: "Do 5 podstron, formularz, kalendarz spotkań. Gotowa w 7 dni, płatność z góry przez Useme albo 50% proformą.",
     accent: true,
   },
   {
     title: "Strona firmowa z CMS",
-    price: "od 9 000 zł",
-    description: "Strona w Next.js z panelem do edycji treści i audytem przed startem. Sklep z integracją od 15 000 zł.",
+    price: "5 900 zł",
+    description: "Do 15 podstron, blog i panel edycji, Profil Google podpięty. 3 tygodnie, 30% z góry.",
+  },
+  {
+    title: "Sklep z integracją",
+    price: "od 9 900 zł",
+    description: "Katalog, płatności, kurier i faktury. Cenę ustalamy po rozmowie.",
+  },
+  {
+    title: "Opieka: strona i Profil Google",
+    price: "od 300 zł/mies.",
+    description: "300, 600 albo 1 280 zł miesięcznie: odpowiedzi na opinie, post co tydzień, 2, 5 albo 10 poprawek na kwartał, monitoring.",
+  },
+  {
+    title: "Audyt strony",
+    price: "0 zł",
+    description: "Szybkość, SEO i formularz w minutę. Od wyniku zaczyna się naprawa.",
   },
 ];
 
@@ -49,7 +64,7 @@ const faq = [
   {
     question: "Ile czasu zajmuje wdrożenie?",
     answer:
-      "Poprawka: zwykle ten sam lub następny dzień. Landing: 3-5 dni roboczych. Strona firmowa: 2-3 tygodnie.",
+      "Naprawa: zwykle ten sam lub następny dzień. Strona w tydzień: 7 dni. Strona firmowa z CMS: 3 tygodnie.",
   },
   {
     question: "Czy możemy modyfikować treści samodzielnie?",
@@ -85,8 +100,8 @@ export default function StronyWww() {
                 Strony internetowe dla firm
               </h1>
               <p className="text-lg lg:text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed animate-fade-up-3">
-                Nowa strona od zera albo poprawki w istniejącej. Pierwsza wersja
-                w 2-3 tygodnie.
+                Nowa strona od zera albo poprawki w istniejącej. Prosta strona
+                w 7 dni, firmowa w 3 tygodnie.
               </p>
               <div className="animate-fade-up-4 flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
                 <a href="#kontakt" className="btn-primary">
@@ -159,10 +174,9 @@ export default function StronyWww() {
                       ))}
                     </div>
                     <p className="mt-6 mx-auto max-w-3xl text-center text-sm text-gray-600 dark:text-gray-400">
-                      Masz już stronę i chcesz, żeby zaczęła zbierać zapytania?
-                      Pakiet START: porządki po audycie, tytuły dla Google, zbieranie
-                      opinii, wizytówka Google przez 3 miesiące i 2 landingi za
-                      3 900 zł netto, z opieką 590 zł miesięcznie.
+                      Ceny netto. Zakres spisany w punktach i zamknięty, zmiana
+                      poza zakresem to pozycja z cennika napraw. Płatność z góry,
+                      bez rabatów.
                     </p>
                   </div>
         </section>
@@ -225,7 +239,7 @@ export default function StronyWww() {
             "@type": "Service",
             name: "Tworzenie stron WWW",
             description:
-              "Tworzenie nowych stron WWW i poprawki w obecnych. Next.js, Tailwind, mobile-first, AI w treści i obrazach. Pierwsza wersja w 2-3 tygodnie.",
+              "Tworzenie nowych stron WWW i poprawki w obecnych. Next.js, Tailwind, mobile-first, AI w treści i obrazach. Strona w tydzień za 2 900 zł.",
             provider: { "@id": "https://fluxlab.pl/#organization" },
             areaServed: { "@type": "Country", name: "Polska" },
             serviceType: "Tworzenie stron internetowych",
@@ -241,19 +255,19 @@ export default function StronyWww() {
               },
               {
                 "@type": "Offer",
-                name: "Landing do 5 podstron",
-                price: "4500",
+                name: "Strona w tydzień",
+                price: "2900",
                 priceCurrency: "PLN",
                 description:
-                  "Do 5 podstron, formularz do CRM albo skrzynki, pomiar źródła zapytań.",
+                  "Do 5 podstron, formularz, kalendarz spotkań, gotowa w 7 dni.",
               },
               {
                 "@type": "Offer",
                 name: "Strona firmowa z CMS",
-                price: "9000",
+                price: "5900",
                 priceCurrency: "PLN",
                 description:
-                  "Strona w Next.js z panelem do edycji treści, SEO i audytem przed startem.",
+                  "Do 15 podstron, blog, panel edycji treści, Profil Google podpięty.",
               },
             ],
           }),

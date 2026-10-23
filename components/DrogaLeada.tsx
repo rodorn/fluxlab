@@ -145,7 +145,7 @@ const SKALE: Skala[] = [
     werdykt:
       "To skala, przy której ręczne pilnowanie zaczyna kosztować więcej niż automat. Jeden etap wystarczy naprawić osobno, nie trzeba przebudowywać całego procesu naraz.",
     koszt:
-      "Orientacyjnie od 1 500 zł za ten etap. Diagnoza przed wyceną: 0 zł.",
+      "Pierwszy krok 900, 1 200 albo 1 500 zł. Diagnoza przed wyceną: 0 zł.",
   },
   {
     klucz: "duze",

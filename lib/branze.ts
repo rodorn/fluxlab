@@ -152,7 +152,7 @@ export const DANE: Dane[] = [
     werdykt:
       "Da się, ale drogą okrężną, przez to, co program potrafi wyeksportować i przyjąć: eksport do pliku, import, czasem baza pod spodem. Działa i bywa stabilne, tyle że każda aktualizacja programu jest momentem, w którym trzeba to sprawdzić. Mówimy o tym przed wyceną, nie po.",
     koszt:
-      "Orientacyjnie od 1 500 zł, zależnie od tego, co program eksportuje. Diagnoza przed wyceną: 0 zł.",
+      "Pierwszy krok 900, 1 200 albo 1 500 zł, zależnie od tego, co program eksportuje. Diagnoza przed wyceną: 0 zł.",
   },
   {
     klucz: "api",
@@ -160,7 +160,7 @@ export const DANE: Dane[] = [
     warto: true,
     werdykt:
       "To najprostszy przypadek. Dane da się czytać i zapisywać wprost, bez plików pośrednich, więc proces działa na bieżąco, a nie raz na dobę. Wąskim gardłem jest tu zwykle decyzja, co ma się dziać, a nie technika.",
-    koszt: "Orientacyjnie od 1 500 zł za proces. Diagnoza przed wyceną: 0 zł.",
+    koszt: "Pierwszy krok 900, 1 200 albo 1 500 zł. Diagnoza przed wyceną: 0 zł.",
   },
   {
     klucz: "kilka",

@@ -24,9 +24,9 @@ export type Wycena = {
 };
 
 const RODZAJE: Record<string, { nazwa: string; cena: number; termin: string }> = {
-  landing: { nazwa: "Landing do 5 podstron", cena: 4500, termin: "3-5 dni roboczych" },
-  firmowa: { nazwa: "Strona firmowa z CMS", cena: 9000, termin: "2-3 tygodnie" },
-  sklep: { nazwa: "Sklep z integracją", cena: 15000, termin: "ustalimy przy wycenie" },
+  landing: { nazwa: "Strona w tydzień, do 5 podstron", cena: 2900, termin: "7 dni" },
+  firmowa: { nazwa: "Strona firmowa z CMS", cena: 5900, termin: "3 tygodnie" },
+  sklep: { nazwa: "Sklep z integracją", cena: 9900, termin: "po rozmowie" },
 };
 
 const OPCJE = OPCJE_STRONY;

@@ -257,7 +257,7 @@ export const categories: Category[] = [
       "Praktyczne zastosowania AI w firmie, klasyfikacja, streszczenia, wsparcie obsługi i framework decyzji.",
     wstep: [
       "AI w CRM czyta treść zapytania, streszcza ją i wypełnia pola, na przykład segment albo pilność leada. Nie decyduje o rabatach ani nie wysyła wiadomości do klienta bez człowieka. Nie naprawi też procesu, którego nie ma: najpierw przydział i follow-upy na regułach, AI tam, gdzie reguła nie wystarcza.",
-      "Pojedynczy krok AI w istniejącym CRM wyceniamy od 1 500 zł. Więcej w artykule o AI w automatyzacji firm poniżej.",
+      "Pojedynczy krok AI w istniejącym CRM to 900, 1 200 albo 1 500 zł. Więcej w artykule o AI w automatyzacji firm poniżej.",
     ],
     articles: [
       {
