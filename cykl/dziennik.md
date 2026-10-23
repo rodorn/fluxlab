@@ -7590,3 +7590,11 @@ Otwarte decyzje dla stratega:
 **Dowód:** cykl/z13-lista-24.txt; stan GSC 17:45: /asystent-ai-na-stronie nie w Google, /widocznosc-w-ai i /audyt-kurierski w Google; linia Z11 „- [x]”.
 **Dla Pawła:** pusto.
 **Zostało otwarte:** Z12 o 18:30 (pomiar audytu przed/po), dalej Z13-Z19 według godzin; Z13 zaczyna od /asystent-ai-na-stronie, jedynego adresu z listy spoza indeksu.
+
+## 2026-10-23 18:45
+**Kanał:** narzędzia (pomiar Z12, audyt po zmianie Z21).
+**Co zrobione:** policzony lejek /audyt-strony przed i po deployu bf5e5af z 22.10 06:30: po zmianie 1 sesja z audytem (wynik słaby), 0 klików po wyniku, 0 formularzy, 0 przejść na /kontakt; przed (14 dni) 18 sesji, wyniki 11 dobry i 4 średni, też 0 klików i 0 formularzy. Za mało prób na ocenę CTA, bez zmian w kodzie.
+**Ruch:** raport_ruchu 18:43: doba 118 odsłon, 82 osoby (−8% wobec średniej 128,9); źródła b2b-email 62 (piksel otwarć), youtube 6, facebook 4, m.facebook.com 3, www.google.com 2; narzędzia 0 uruchomień; tydzień 913 odsłon, 575 osób.
+**Dowód:** cykl/plan-ruchu.md linia Z12 z tabelą przed/po.
+**Dla Pawła:**
+**Zostało otwarte:** Z13 o 19:30 (timer fl-gsc-24 na 24.10 01:30), dalej Z14-Z19 według godzin.
