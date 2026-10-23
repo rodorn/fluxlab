@@ -7406,3 +7406,56 @@ Licznik na VPS zapisuje tylko przeglądarkę i system, bez surowego UA, więc ru
 **Dowód:** cykl/plan-ruchu.md: jedyne „- [ ]” to Z22 i Z23.
 **Dla Pawła:** bez zmian: komentarz z cykl/dystrybucja/reddit-ksef-1x4y2xe.txt pod https://www.reddit.com/r/ksef/comments/1x4y2xe/ (wymaga konta Reddit).
 **Zostało otwarte:** Z22 (04:30) i Z23 (05:30).
+
+### Bilans planu 2026-10-22/23
+`pomiar-kanalow.py` 04:43, 24 h: ludzie 38 (z odsyłaczem 12 wobec 18, bez 26 wobec 30), pary 4, serie testowe 0, salwy 0. 7 dni: ludzie 322 (wobec 327), salwy 50.
+Z odsyłaczem w dobie: Google 7 (wobec 5), Bing 1, Yahoo 1, useme.com 1, hajsmetrics 1 (partner), nxztkj.com 1 (śmieciowy odsyłacz). X/t.co 0 wobec 5 (7 dni: x 3, t.co 2). Seria podatkowa w 7 dniach: LinkedIn 7, YouTube 6, Instagram 6 (publikują inne sesje).
+
+| zad. | stan | godz. | co przyprowadziło |
+|---|---|---|---|
+| Z1 | zrobione | 06:50 | pomiar: GSC 13-19.10 16 klik./1071 wyśw., kandydat /wdrozenie-n8n-cena |
+| Z2 | zrobione | 06:50 | pomiar: 167 zapytań, 0 nowych z poz. ≤15 |
+| Z3 | zrobione | rano | pomiar: 0 odpowiedzi, 2 obce audyty z wynikiem dobrym |
+| Z4 | zrobione | rano | opis /wdrozenie-n8n-cena z „ile kosztuje n8n”; efekt w GSC najwcześniej 25.10 |
+| Z5 | zrobione | rano | 0 maili (brak kandydatów) |
+| Z6 | zrobione | 06:56 | mapa odczytana 22.10, 148 adresów (było 137) |
+| Z7 | zrobione | rano | brief dla fluxlab-meta i fluxlab-x; X w dobie 0 sesji |
+| Z8 | zrobione | 07:44 | Bing: 5 adresów zgłoszonych; 2/48 i Copilot 6 bez zmian (dane do 18.10) |
+| Z9 | zrobione | rano | pomiar: 10 sesji na /kontakt od 15.10, 0 zgłoszeń |
+| Z10 | zrobione | dzień | commit 237371c, mailto na /kontakt; 0 klik_mail_kontakt, 0 zgłoszeń |
+| Z11 | zrobione | 08:50 | pomiar (wcześnie, kolejność cyklu) |
+| Z12 | zrobione | dzień | commit 3b202b1, WebApplication dla narzędzi; efekt niemierzalny do indeksu |
+| Z13 | zrobione | dzień | timer fl-gsc-23 na 01:20 |
+| Z14 | zrobione | dzień | commit 30b3f20, lastmod dla zmienionych stron |
+| Z15 | zrobione | dzień | serie dzienne pod ocenę tytułów 24-25.10 |
+| Z16 | zrobione | 18:45 | pomiar: 2 sesje bez odsyłacza |
+| Z17 | zrobione | noc | 19 audytów w 14 dniach, 12 kończy sesję po wyniku, klik_po_wyniku 0 |
+| Z18 | zrobione | 00:30 | 308 sesji bez odsyłacza w 7 dniach, 216 na podstronach |
+| Z19 | zrobione | 01:24 | 9 z 9 próśb o indeksowanie, bez limitu |
+| Z20 | zrobione | 02:30 | brak kandydata, 0 zmian |
+| Z21 | zrobione | 03:30 | commit bf5e5af, CTA pod wynikiem audytu |
+| Z22 | zrobione | 04:43 | ten wpis |
+| Z23 | otwarte | 05:30 | |
+
+- `audyt-wynik`: maile 0 (Z5), sesje 1 w 7 dniach (sprzed doby), odpowiedzi 0. Resend 24 h: 2 wysyłki spoza `wyslane*.json` (inne sesje), delivered.
+- Bing 2 klik./48 wyśw. i Copilot 6 bez zmian (Bing nie odświeżył danych po 18.10). GSC 7 dni: 16/1071 za 13-19.10 (wobec 16/977); 20.10 w tym cyklu nie sprawdzane.
+- Narzędzia 7 dni: audyt 8, skan lokalizacji 3, numer KSeF 2, kalkulator podatkowy 2, audyt poczty 2, NIP 2, lead_landing 2, scena_leada 15, zgłoszeń 0.
+- Zoho 24 h: 8 przychodzących, żadne nowe zapytanie od obcej osoby (FINREAL, portal ogłoszeniowy, HAJS METRICS, 2 zwroty, raport TLS).
+
+Trzy największe zmiany:
+1. Ruch z odsyłaczem spadł 18 → 12, ale Google wzrósł 5 → 7; spadek to social (X/t.co 5 → 0, Instagram/YouTube/LinkedIn 0 w dobie).
+2. Google ma pełną mapę (148 adresów odczytanych) i 9 świeżych próśb o indeksowanie; opisy w GSC wyczerpane (Z20 bez kandydata).
+3. Lejek: trzy poprawki (Z10 mailto, Z21 CTA pod wynikiem, Z12 dane) i nadal 0 zgłoszeń, 0 klik_po_wyniku.
+
+Otwarte decyzje dla stratega:
+- Outreach `audyt-wynik` drugi dzień bez kandydatów (obce audyty dają wynik dobry); albo inne źródło kandydatów, albo zdjąć z planu.
+- Opisy pod GSC nie mają już kandydatów z poz. ≤12; dalszy wzrost Google wymaga nowych krótkich stron pod zapytania z poz. 13-30, nie przeróbek opisów.
+- Social dał 0 w dobie; brief Z7 nie przełożył się na wejścia, do sprawdzenia, czy inne sesje publikują serię 23.10.
+
+## 2026-10-23 04:45
+**Kanał:** pomiar (Z22, bilans planu).
+**Co zrobione:** bilans doby 22/23.10 z tabelą Z1-Z23 i trzema decyzjami dla stratega; nic nie poszło w świat.
+**Ruch:** pomiar-kanalow 04:43, 24 h: 38 osób, z odsyłaczem 12 (Google 7, Bing 1, Yahoo 1, useme.com 1, hajsmetrics 1, nxztkj.com 1), bez odsyłacza 26; 7 dni 322.
+**Dowód:** cykl/dziennik.md „Bilans planu 2026-10-22/23”, Z22 oznaczone w cykl/plan-ruchu.md.
+**Dla Pawła:** bez zmian: komentarz z cykl/dystrybucja/reddit-ksef-1x4y2xe.txt pod https://www.reddit.com/r/ksef/comments/1x4y2xe/ (wymaga konta Reddit).
+**Zostało otwarte:** Z23 (05:30).
