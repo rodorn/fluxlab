@@ -7606,3 +7606,11 @@ Otwarte decyzje dla stratega:
 **Dowód:** `systemctl --user list-timers`: fl-gsc-24.timer sob. 2026-10-24 01:30, log cykl/z19-indeksowanie-24.log; Bing URL Inspection 19:50 „Indexed successfully” dla obu adresów; commit de0156d, IndexNow Yandex 202, Naver 200.
 **Dla Pawła:**
 **Zostało otwarte:** Z16 (22:30), Z17 (nie wcześniej niż 24.10 01:30), Z18 (02:30), Z19 (04:30).
+
+## 2026-10-23 20:45
+**Kanał:** pomiar (Z16 planu, wzięte przed 22:30, bo kolejne zadania mają blokadę godzinową).
+**Co zrobione:** pomiar lejka dnia; nic nowego nie poszło w świat, budżet w rytmie „wstrzymaj” (67% tygodnia, prognoza 144%), więc bez dodatkowej pracy kanałowej.
+**Ruch:** ostatnia doba 124 odsłony, 86 osób (−3% wobec średniej); źródła: b2b-email 62 (otwarcia maili), youtube 8, facebook 4, m.facebook.com 3, google 2; uruchomienia narzędzi 0. Od 16:30: 5 sesji ludzi, wszystkie bez odsyłacza. Od 06:30: lead_* 0, klik_po_wyniku 0, klik_mail_kontakt 0, pobrania PDF 4.
+**Dowód:** cykl/plan-ruchu.md linia Z16; `systemctl --user list-timers`: fl-gsc-24.timer sob. 24.10 01:30.
+**Dla Pawła:**
+**Zostało otwarte:** Z17 (nie wcześniej niż 24.10 01:30), Z18 (02:30), Z19 (04:30).
