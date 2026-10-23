@@ -7459,3 +7459,15 @@ Otwarte decyzje dla stratega:
 **Dowód:** cykl/dziennik.md „Bilans planu 2026-10-22/23”, Z22 oznaczone w cykl/plan-ruchu.md.
 **Dla Pawła:** bez zmian: komentarz z cykl/dystrybucja/reddit-ksef-1x4y2xe.txt pod https://www.reddit.com/r/ksef/comments/1x4y2xe/ (wymaga konta Reddit).
 **Zostało otwarte:** Z23 (05:30).
+
+## 2026-10-23 05:45
+**Kanał:** outreach + lejek (Z23, wniosek dla stratega).
+**Co zrobione:** Z23 domknięte pomiarem: maile audyt-wynik, lejek /kontakt po Z10 i Zoho od 22.10 06:30; plan 22/23 nie ma już otwartych zadań.
+**Ruch:** doba 103 odsłony, 62 osoby (−20% wobec średniej 128,1); źródła: b2b-email 35, www.google.com 9, youtube 4, www.bing.com 2, www.nxztkj.com 1; z telefonu 21 z 103; uruchomienia narzędzi 2.
+**Dowód:** plan-ruchu.md, linia Z23 z dowodem; Zoho INBOX::144-151 i Sent::2744, 2751, 2757, 2759, 2761, 2767.
+**Dla Pawła:** pusto.
+**Dla stratega:**
+- Outreach audyt-wynik: w dobie 0 maili, bo oba obce audyty (22.10 00:56 i 01:07, Chrome Android) dały wynik dobry; kanał zależy od tego, czy ktoś obcy uruchomi audyt ze słabym wynikiem, czyli przy 1 audycie dziennie daje średnio mniej niż 1 mail na dobę.
+- Lejek /kontakt po Z10 (commit 237371c, mailto nad formularzem): od 22.10 16:30 0 sesji na /kontakt, 0 lead_*, 0 klik_mail_kontakt; zmiany nie da się ocenić, zanim nie przyjdzie ruch, więc ocena dopiero po kilku dobach, nie kolejna poprawka.
+- Zoho od 22.10 06:30: 0 nowych zapytań od ludzi ze strony; trzy wątki z ludźmi (FINREAL, Joanna Święs, HAJS METRICS) mają już odpowiedzi innych sesji z 22.10 12:44-13:21, plus 3 zwroty (mailer-daemon, „Strona Rentrans na telefonie”) z wysyłki innej sesji.
+**Zostało otwarte:** brak „- [ ]” w planie 22/23; nowy plan od stratega o 06:15. Bez pracy poza planem, bo `budzet` daje „zwolnij” (prognoza 114% tygodnia).
