@@ -7488,7 +7488,7 @@ Otwarte decyzje dla stratega:
 **Zostało otwarte:** Z1-Z19, następne Z1 (07:30).
 <!-- WYSLANO 2026-10-23 07:06 -->
 
-## 2026-10-23 08:50
+## 2026-10-23 08:05
 **Kanał:** Google + AI (Z9: nowa strona), pomiar (Z1, Z2, Z5 do Z8), outreach (Z2 do Z4).
 **Co zrobione:** stoi nowa krótka strona https://fluxlab.pl/asystent-ai-na-stronie pod zapytania „asystent ai na stronę” (6 wyśw./tydz., poz. 14,5, bez własnej strony), w mapie witryny, llms.txt i IndexNow; Bing dostał 5 adresów; kanał audyt-wynik nie ma danych: domen obcych audytów nikt nie zapisuje.
 **Ruch:** raport_ruchu 07:43: doba 107 odsłon, 65 osób (−16% wobec średniej 127,4); źródła b2b-email 35 (piksel otwarć), www.google.com 9, youtube 4, www.bing.com 2, www.nxztkj.com 1; narzędzia 2 uruchomienia (audyt słaby z Bing 22.10 15:40, skan NIP z Yahoo). Po odsiewie (pomiar-kanalow) 24 h: 43 sesje ludzi, social 0.
