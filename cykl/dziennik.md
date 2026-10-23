@@ -7574,3 +7574,11 @@ Otwarte decyzje dla stratega:
 **Dowód:** cykl/plan-ruchu.md: Z1-Z9 „- [x]”, Z10-Z19 „- [ ]”, najbliższe Z10 16:30.
 **Dla Pawła:** pusto.
 **Zostało otwarte:** Z10-Z19 według godzin planu; przy „wstrzymaj” tylko zadania pomiarowe.
+
+## 2026-10-23 16:45
+**Kanał:** pomiar (Z10 planu).
+**Co zrobione:** Z10 zamknięte: pomiar wieczorny od 06:30, nic nie poszło w świat; `budzet` nadal „wstrzymaj” (luz −42 pkt, 0 kamieni).
+**Ruch:** raport_ruchu 16:44: doba 121 odsłon, 81 osób (−5% wobec średniej 127,9); źródła b2b-email 61 (piksel otwarć), youtube 6, www.google.com 4, facebook 3, www.bing.com 2; z telefonu 17 z 121; narzędzia 0 uruchomień. Od 06:30: ludzie 18 (z odsyłaczem 6, bez 12, salwy 0), lead_* 0, klik_po_wyniku 0, klik_mail_kontakt 0, pobrania PDF 2.
+**Dowód:** cykl/plan-ruchu.md, linia Z10 „- [x]” z liczbami.
+**Dla Pawła:** pusto (odpowiedź Business Media House z 14:33 ma szkic w sesji Poczta FluxLab, wyjdzie po czasie akceptacji).
+**Zostało otwarte:** Z11 o 17:30 (lista 9 adresów do serii 24.10), dalej Z12-Z19 według godzin; przy „wstrzymaj” tylko zadania pomiarowe.
