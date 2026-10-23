@@ -7486,3 +7486,27 @@ Otwarte decyzje dla stratega:
 **Dowód:** cykl/plan-ruchu.md (06:20), 19 × „- [ ]”, najwcześniejsze Z1 07:30.
 **Dla Pawła:** pusto.
 **Zostało otwarte:** Z1-Z19, następne Z1 (07:30).
+<!-- WYSLANO 2026-10-23 07:06 -->
+
+## 2026-10-23 08:50
+**Kanał:** Google + AI (Z9: nowa strona), pomiar (Z1, Z2, Z5 do Z8), outreach (Z2 do Z4).
+**Co zrobione:** stoi nowa krótka strona https://fluxlab.pl/asystent-ai-na-stronie pod zapytania „asystent ai na stronę” (6 wyśw./tydz., poz. 14,5, bez własnej strony), w mapie witryny, llms.txt i IndexNow; Bing dostał 5 adresów; kanał audyt-wynik nie ma danych: domen obcych audytów nikt nie zapisuje.
+**Ruch:** raport_ruchu 07:43: doba 107 odsłon, 65 osób (−16% wobec średniej 127,4); źródła b2b-email 35 (piksel otwarć), www.google.com 9, youtube 4, www.bing.com 2, www.nxztkj.com 1; narzędzia 2 uruchomienia (audyt słaby z Bing 22.10 15:40, skan NIP z Yahoo). Po odsiewie (pomiar-kanalow) 24 h: 43 sesje ludzi, social 0.
+**Dowód:**
+- Z1: `cykl/gsc-zapytania-2026-10-23.txt` (100 z 180, 14-20.10). Nowe: system ticketowy dla e-commerce 8 wyśw. (62,4), pipedrive vs hubspot 2 (7,5), faktura wewnętrzna a ksef 2 (8,0). Wzrost przy poz. ≤15: wdrożenie n8n 9→11 (13,5), asystent ai na stronę 5→6 (14,5), crm dla firm leasingowych 2→4 (1,8), porównanie kosztów automatyzacji vs zatrudniania 2→4 (4,8). „zapier cennik” 6 wyśw., poz. 10,8, rankuje tylko /strefa-wiedzy/zapier-vs-make, której opis od 22.10 21:44 (aa91548) już zaczyna się od „Zapier cennik 2026”: kandydat NIE, więc Z3 0 zmian.
+- Z2/Z4: Zoho od 22.10 06:30 0 odpowiedzi na audyt-wynik. VPS 48 h: 3 sesje z audytem, 1 obca ze słabym wynikiem (Bing, Edge/Windows), domeny brak: licznik zapisuje ścieżkę, źródło, zdarzenie, przeglądarkę i system; /api/audyt-www niczego nie loguje; kopia „[audyt]” w Resend idzie tylko przy zamówieniu raportu mailem (anonimowe wyłączone w 18f481a 21.10 15:22). 0 kandydatów, 0 maili; `~/Projekty/mail-audyt/kandydaci-audyt-wynik-2026-10-23.txt`.
+- Z5 Bing: URLs submitted today 0 → 5 (/kontakt, /wlasnosc-domeny, /sprawdz-kontrahenta, /audyt-poczty, /strefa-wiedzy/zapier-vs-make). Dane do 19.10: 7 dni 3 klik./46 wyśw.; Copilot 7 dni 15 cytowań (było 6), od 7.10 32 (było 27); Indexed 87 bez zmian, backlinki 2.
+- Z6: `cykl/gsc-strony-2026-10-23.txt` (100 z 106). Tabela pod embargo 24.10 (wyśw./dzień):
+
+| strona | 20.10 klik./wyśw. | przed 17.10 | po 17.10 (17-20.10) |
+|---|---|---|---|
+| /ksef-2027 | 0/2 | 8,3 | 2,8 |
+| /strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef | 0/16 | 17,3 | 9,5 |
+| /strefa-wiedzy/ai-w-automatyzacji-firm | 0/6 | 2,6 | 3,8 |
+
+  Największe zmiany 7 dni wobec 22.10: co-to-jest-automatyzacja-procesow-biznesowych 125→164, faktura-wewnetrzna-ksef 1→10.
+- Z7: brief 22.10 nieużyty, social publikują inne sesje (X 4 posty podatkowe i KSeF, FB 10 zdjęć, 0 o n8n, raportowaniu, lokalizacji; rolka „licze-raport-recznie” czeka na 26.10), wejścia z social od 22.10 06:30: seria-podatki/youtube 2 sesje, x/t.co 0.
+- Z8: useme.com 23.10 00:15, 1 odsłona /audyt-strony, bez utm; Yahoo w tygodniu: 19.10 /, 22.10 /sprawdzenie-nip ze skanem.
+- Z9: commit c63c6d0, title z produkcji „Asystent AI na stronie: co robi, ile kosztuje, jak zacząć”, `<loc>` w sitemap.xml, wpis w llms.txt, IndexNow 2 z 3 punktów.
+**Dla Pawła:** profil Useme: wejście z useme.com trafiło na /audyt-strony bez utm. W profilu albo portfolio na https://useme.com dopisz do linku fluxlab.pl końcówkę `?utm_source=useme` (3 min), wtedy licznik pokaże, ile daje ten kanał.
+**Zostało otwarte:** Z10 (16:30) i dalsze wg planu; Z11 ma dopisać /asystent-ai-na-stronie na początek listy serii 24.10. Dla stratega: kanał audyt-wynik bez domen nie ma z czego żyć; jeśli ma trwać, trzeba przywrócić zapis domeny (np. sama domena i wynik do licznika VPS, bez maila do Pawła).
