@@ -7601,8 +7601,8 @@ Otwarte decyzje dla stratega:
 
 ## 2026-10-23 19:45
 **Kanał:** Google + widoczność w AI (Z13 i Z14 planu).
-**Co zrobione:** ustawiony timer fl-gsc-24 na serię 9 żądań indeksowania w GSC 24.10 01:30 (Z13); Bing potwierdza indeks /audyt-poczty i /wlasnosc-domeny bez problemów SEO/GEO, z rozpoznanym JSON-LD (WebApplication w serwowanym HTML), źródła AI w 7 dniach: chatgpt 1 sesja, bing 2, copilot i perplexity 0 (Z14).
+**Co zrobione:** ustawiony timer fl-gsc-24 na serię 9 żądań indeksowania w GSC 24.10 01:30 (Z13); Bing potwierdza indeks /audyt-poczty i /wlasnosc-domeny bez problemów SEO/GEO, z rozpoznanym JSON-LD (WebApplication w serwowanym HTML), źródła AI w 7 dniach: chatgpt 1 sesja, bing 2, copilot i perplexity 0 (Z14); lastmod 23.10 dla /, /strony-www, /automatyzacja-leadow-crm i IndexNow dla nich (Z15).
 **Ruch:** ostatnia doba 120 odsłon, 82 osoby (−6% wobec średniej 7 dni); źródła: b2b-email 63 (otwarcia maili), youtube 6, facebook 4, m.facebook.com 3, google 2; uruchomienia narzędzi 0.
-**Dowód:** `systemctl --user list-timers`: fl-gsc-24.timer sob. 2026-10-24 01:30, log cykl/z19-indeksowanie-24.log; Bing URL Inspection 19:50 „Indexed successfully” dla obu adresów.
+**Dowód:** `systemctl --user list-timers`: fl-gsc-24.timer sob. 2026-10-24 01:30, log cykl/z19-indeksowanie-24.log; Bing URL Inspection 19:50 „Indexed successfully” dla obu adresów; commit de0156d, IndexNow Yandex 202, Naver 200.
 **Dla Pawła:**
-**Zostało otwarte:** Z15 (21:30), Z16 (22:30), Z17 (nie wcześniej niż 24.10 01:30), Z18 (02:30), Z19 (04:30).
+**Zostało otwarte:** Z16 (22:30), Z17 (nie wcześniej niż 24.10 01:30), Z18 (02:30), Z19 (04:30).
