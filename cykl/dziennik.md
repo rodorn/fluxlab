@@ -7647,3 +7647,11 @@ Otwarte decyzje dla stratega:
 **Dowód:** cykl/plan-ruchu.md bez zmian (Z1–Z16 „- [x]”, Z17–Z19 czekają na godzinę).
 **Dla Pawła:**
 **Zostało otwarte:** Z17 (nie wcześniej niż 24.10 01:30, log timera fl-gsc-24), Z18 (02:30, bilans planu), Z19 (04:30, wniosek dla stratega).
+
+## 2026-10-24 01:45
+**Kanał:** Google (Z17, seria żądań indeksowania).
+**Co zrobione:** timer z Z13 wysłał o 01:30–01:34 prośby o indeksowanie dla 9 z 9 adresów z `cykl/z13-lista-24.txt`, bez „Przekroczono limit”; /asystent-ai-na-stronie był jeszcze poza Google, pozostałe 8 już w indeksie.
+**Ruch:** ostatnia doba 139 odsłon, 97 osób (+9% wobec średniej 127,9); źródła: b2b-email 64 (otwarcia maili), youtube 12, facebook 5, m.facebook.com 4, www.facebook.com 2; YouTube 2 sesje, LinkedIn 1 sesja; uruchomienia narzędzi 0; z telefonu 27 z 139.
+**Dowód:** cykl/z19-indeksowanie-24.log (9 linii „prośba przesłana”), Z17 „- [x]” w cykl/plan-ruchu.md.
+**Dla Pawła:**
+**Zostało otwarte:** Z18 (02:30, bilans planu), Z19 (04:30, wniosek dla stratega); `budzet` w rytmie „wstrzymaj” (68% tygodnia, prognoza 128%).
