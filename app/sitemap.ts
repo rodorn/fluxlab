@@ -365,6 +365,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/asystent-ai-na-stronie`,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/audyt-marz`,
       changeFrequency: "monthly" as const,
       priority: 0.8,

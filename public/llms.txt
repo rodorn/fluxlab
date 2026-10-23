@@ -275,6 +275,7 @@ Ceny energii na jutro, godzina po godzinie, na https://fluxlab.pl/ceny-energii-j
 
 - [Audyt faktur kurierskich](https://fluxlab.pl/audyt-kurierski): jedną pozycję z dopłatą paliwową sprawdzisz od ręki za darmo, całą fakturę od 290 zł.
 - [Sprawdzenie kontrahenta przed przelewem](https://fluxlab.pl/sprawdz-kontrahenta): wykaz VAT, KRS i dane domeny, w tym czy numer konta figuruje w wykazie. Od 9 zł.
+- [Asystent AI na stronie](https://fluxlab.pl/asystent-ai-na-stronie): odpowiada z cennika i regulaminu firmy, nie tylko z FAQ. Wdrożenie w n8n od 790 zł, opieka 190 zł miesięcznie albo zero, audyt działającego bota 69 zł.
 - [Pogotowie automatyzacji](https://fluxlab.pl/pogotowie-automatyzacji): stanęła integracja w n8n albo Make, czytamy logi wykonań i szukamy wygasłych poświadczeń. Diagnoza 49 zł, naprawa od 490 zł.
 - [Strona po włamaniu](https://fluxlab.pl/strona-po-wlamaniu): WordPress przekierowuje na obce serwisy albo Google go oznaczył; porównujemy pliki z oryginałami i usuwamy furtki. Od 49 zł.
 - [Audyt marż sklepu](https://fluxlab.pl/audyt-marz): zysk netto na sztuce po prowizjach, zwrotach i dopłatach do wysyłki, martwy stok. 49 zł.

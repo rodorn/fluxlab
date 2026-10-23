@@ -1,0 +1,101 @@
+# GSC fluxlab.pl, 7 dni 14-20.10 (stan 23.10.2026 07:55, 180 zapytań, zapisane pierwsze 100 w kolejności GSC), zapytanie<TAB>kliknięcia<TAB>wyświetlenia<TAB>pozycja
+fluxlab	7	13	1,1
+automatyzacja procesów biznesowych	0	44	68,6
+proces biznesowy	0	21	84,5
+automatyzacja procesów	0	18	59,1
+"automatyzacja podatków"	0	12	6,2
+wdrożenie n8n	0	11	13,5
+automatyzacja raportowania	0	11	18,8
+automatyzacja firmy	0	11	64,2
+lokalizacja biura	0	9	83,9
+automatyzacja crm	0	8	20,3
+analiza lokalizacji	0	8	27,0
+integracja crm	0	8	53,1
+system ticketowy dla e-commerce	0	8	62,4
+integracja api	0	7	55,1
+poczta firmowa	0	7	90,3
+ile kosztuje n8n	0	6	7,2
+zapier cennik	0	6	10,8
+asystent ai na stronę	0	6	14,5
+automatyzacja obsługi zgłoszeń	0	6	43,3
+automatyzacja biznesu	0	6	47,0
+automatyzacja ai	0	6	51,8
+integracja systemu ticketowego z e-commerce	0	6	77,3
+crm w branży meblowej	0	6	82,3
+"enova"	0	5	7,6
+n8n vs make	0	5	13,0
+asystent na strone ai	0	5	21,4
+automatyzacja w firmie	0	5	53,4
+integracje api	0	5	55,0
+digitalizacja procesów	0	5	82,2
+system dla biura rachunkowego	0	5	92,8
+jak zautomatyzować raportowanie w firmie	0	4	1,0
+oferta pracy integracja podpis elektroniczny api	0	4	1,5
+crm dla firm leasingowych	0	4	1,8
+porównanie kosztów automatyzacji vs zatrudniania	0	4	4,8
+"ksef"	0	4	7,0
+zapier cena	0	4	8,8
+integracja crm z erp	0	4	13,3
+asystent ai na stronie	0	4	17,0
+automatyzacja raportów	0	4	49,5
+automatyzacja crm ai	0	4	55,8
+automatyzacja procesów obsługi klienta	0	4	66,5
+automatyzacja procesów sprzedażowych	0	4	72,0
+n8n ile kosztuje	0	3	9,3
+crm i erp integracja	0	3	21,7
+jak sprawdzić firmę przed przelewem	0	3	33,0
+automatyzacje dla firm	0	3	42,7
+automatyzacje ai dla firm	0	3	49,7
+automatyzacja procesów w firmie	0	3	58,3
+automatyzacje ai	0	3	60,7
+automatyzacja procesów biznesowych firmy	0	3	72,7
+baza klientów według miasta	0	3	78,3
+"baselinker" "błąd"	0	2	1,5
+pipedrive vs hubspot	0	2	7,5
+"marketing automation"	0	2	8,0
+"plus" "abonament"	0	2	8,0
+faktura wewnętrzna a ksef	0	2	8,0
+błąd 440 ksef	0	2	8,5
+kto wdraża integrację crm z erp w polsce	0	2	9,0
+crm dla branzy leasingowej	0	2	10,5
+wdrożenia n8n	0	2	13,0
+make vs n8n	0	2	15,0
+wdrożenie crm z integracją erp	0	2	25,5
+automatyzacja ai dla firm	0	2	28,0
+automatyzacja b2b	0	2	29,5
+kalkulator samochodowy	0	2	34,0
+automatyzacja obsługi klienta ai	0	2	41,5
+integracja systemów erp i crm	0	2	44,0
+e-mail firmowy za darmo	0	2	54,0
+kalkulator ryczałt samochodowy	0	2	65,5
+mail firmowy	0	2	66,0
+e mail firmowy	0	2	71,0
+digitalizacja procesów biznesowych	0	2	72,5
+system raportowania	0	2	78,0
+oprogramowanie dla e-commerce	0	2	80,0
+email firmowy	0	2	86,0
+procesy biznesowe	0	2	87,5
+poczta biznesowa	0	2	89,5
+kalkulator ryczałtu	0	2	95,0
+co jeszcze	0	1	1,0
+flux lab	0	1	1,0
+jak policzyć całkowity koszt posiadania toyoty rav4 hybrid przez 5 lat? chcę uwzględnić zakup, ubezpieczenie, serwis, paliwo, opony i wartość końcową auta — gdzie znaleźć rzetelny kalkulator?	0	1	1,0
+ai24900	0	1	2,0
+ryczałt 2026 kalkulator	0	1	2,0
+"pipedrive"	0	1	3,0
+kalkulator jdg 2026	0	1	3,0
+osf	0	1	3,0
+flux b2b	0	1	5,0
+ile kosztuje integracje erp z crm	0	1	6,0
+integracja erp z crm	0	1	6,0
+kalkulator kosztów importu auta	0	1	6,0
+ksef	0	1	6,0
+"komputer w abonamencie"	0	1	7,0
+"vps"	0	1	7,0
+zapy flow	0	1	7,0
+najlepsze firmy do automatyzacji raportowania finansowego?	0	1	8,0
+"hostingu" -"darmowego" -"gier"	0	1	9,0
+ksef identyfikator zbiorczy	0	1	9,0
+n8n czy jest darmowy	0	1	9,0
+"krajowy system e-faktur"	0	1	10,0
+gutschrift co to	0	1	10,0
