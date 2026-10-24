@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import { SEKCJE, type Sekcja } from "@/lib/sekcje";
 import { categories } from "@/lib/categories";
-import Znak from "./Znak";
+import ZnakFl from "./ZnakFl";
 import KopiujMail from "./KopiujMail";
 import StatusOnline from "./StatusOnline";
 import Kolofon from "./Kolofon";
@@ -114,7 +114,7 @@ export default function Footer() {
         {/* Dół stopki jak u Tesli: jedna oś, drobne pozycje w rzędzie. */}
         <div className="mt-8 border-t border-gray-100 pt-6 text-center text-xs text-gray-600 dark:border-gray-800 dark:text-gray-400">
           <span className="inline-flex items-center gap-2 text-sm font-bold tracking-tight text-gray-900 dark:text-white">
-            <Znak className="h-5 w-5" />
+            <ZnakFl className="h-5 w-5" />
             <span>
               flux<span className="text-accent">lab</span>
             </span>

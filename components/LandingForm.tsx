@@ -8,7 +8,22 @@ import { zglosZdarzenie } from "@/lib/zdarzenie";
 import { readUtm, type UtmFields } from "@/lib/zrodlo";
 
 const inputClass =
-  "w-full px-4 py-2.5 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-sm text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-colors disabled:opacity-50 disabled:cursor-not-allowed";
+  "w-full px-0 py-2 rounded-none border-0 border-b border-gray-400 dark:border-gray-500 bg-transparent text-base text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 placeholder:italic focus:outline-none focus:border-accent focus:border-b-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed";
+
+const etykietaClass =
+  "block text-sm italic text-gray-600 dark:text-gray-400 mb-1";
+
+const przyciskWsteczClass =
+  "text-sm italic text-gray-600 dark:text-gray-400 underline underline-offset-4 hover:text-accent transition-colors";
+
+const podpisClass =
+  "text-xl italic text-gray-900 dark:text-white border-b-2 border-accent px-2 pb-1 hover:text-accent dark:hover:text-accent transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 dark:focus-visible:ring-offset-gray-800";
+
+const linkaPisma = {
+  backgroundImage:
+    "linear-gradient(to bottom, transparent calc(2rem - 1px), currentColor 0)",
+  backgroundSize: "100% 2rem",
+};
 
 
 const SZKIC_KLUCZ = "fluxlab_szkic";
@@ -58,9 +73,17 @@ export default function LandingForm({
   const [kontakt, setKontakt] = useState<Kontakt>("email");
   const [termin, setTermin] = useState("");
   const [krok, setKrok] = useState(0);
+  const [dzis, setDzis] = useState("");
 
   useEffect(() => {
     setUtm(readUtm());
+    setDzis(
+      new Date().toLocaleDateString("pl-PL", {
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+      }),
+    );
   }, []);
 
   // Brief głosowy: nagranie do 60 s przepisywane na tekst i dopisywane do wiadomości.
@@ -380,7 +403,7 @@ export default function LandingForm({
         onSubmit={handleSubmit}
         onInput={zapiszSzkic}
         onFocus={handleFormStart}
-        className="bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-2xl p-6 lg:p-8 shadow-sm text-left space-y-5"
+        className="bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-sm p-6 lg:p-10 shadow-sm font-serif text-left space-y-6"
       >
         <div
           aria-hidden="true"
@@ -403,11 +426,16 @@ export default function LandingForm({
           />
         </div>
 
+        <div className="flex items-baseline justify-between gap-4 border-b border-gray-300 dark:border-gray-600 pb-3 text-sm italic text-gray-600 dark:text-gray-400">
+          <span>Do: FluxLab</span>
+          <span suppressHydrationWarning>{dzis}</span>
+        </div>
+
         <ol aria-label="Postęp formularza" className="flex items-center justify-center gap-2 text-xs text-gray-600 dark:text-gray-400">
           {KROKI.map((n, i) => (
             <li key={n} className="flex items-center gap-2" aria-current={krok === i ? "step" : undefined}>
               <span
-                className={`flex h-6 w-6 items-center justify-center rounded-full border text-[11px] font-semibold transition-colors ${
+                className={`flex h-6 w-6 items-center justify-center rounded-full border text-xs font-semibold transition-colors ${
                   i < krok
                     ? "border-accent bg-accent-solid text-white"
                     : i === krok
@@ -427,25 +455,28 @@ export default function LandingForm({
         <div>
           <label
             htmlFor="message"
-            className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5"
+            className={etykietaClass}
           >
             Czego potrzebujesz? <span className="text-accent">*</span>
           </label>
-          <textarea
-            id="message"
-            name="message"
-            rows={3}
-            required
-            placeholder="Jedno, dwa zdania wystarczą."
-            className={`${inputClass} resize-none`}
-          />
+          <div className="text-gray-400 dark:text-gray-600" style={linkaPisma}>
+            <textarea
+              id="message"
+              name="message"
+              rows={4}
+              required
+              placeholder="Jedno, dwa zdania wystarczą."
+              style={{ lineHeight: "2rem" }}
+              className="block w-full resize-none border-0 bg-transparent p-0 text-base text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 placeholder:italic focus:outline-none"
+            />
+          </div>
           {nagrywanieDostepne && (
             <button
               type="button"
               onClick={przelaczNagrywanie}
               disabled={przepisuje}
               aria-pressed={nagrywa}
-              className="mt-2 inline-flex items-center gap-2 rounded-lg border border-gray-200 px-3 py-1.5 text-sm text-gray-700 transition-colors hover:border-accent/50 disabled:opacity-60 dark:border-gray-700 dark:text-gray-300"
+              className="mt-3 inline-flex items-center gap-2 border-b border-gray-400 pb-0.5 text-sm italic text-gray-700 transition-colors hover:border-accent disabled:opacity-60 dark:border-gray-500 dark:text-gray-300"
             >
               {nagrywa ? (
                 <>
@@ -482,7 +513,7 @@ export default function LandingForm({
           <div>
             <label
               htmlFor="email"
-              className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5"
+              className={etykietaClass}
             >
               E-mail <span className="text-accent">*</span>
             </label>
@@ -498,7 +529,7 @@ export default function LandingForm({
           <div>
             <label
               htmlFor="company"
-              className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5"
+              className={etykietaClass}
             >
               Firma{" "}
               <span className="text-gray-600 dark:text-gray-400 font-normal text-xs">
@@ -520,10 +551,10 @@ export default function LandingForm({
 
         <div data-krok="0" hidden={krok !== 0} className="space-y-5">
         <fieldset>
-          <legend className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
+          <legend className={etykietaClass}>
             Jak mamy się odezwać?
           </legend>
-          <div className="grid grid-cols-3 gap-2">
+          <div className="grid grid-cols-3 gap-4">
             {FORMY.map((f) => (
               <button
                 key={f.id}
@@ -533,16 +564,16 @@ export default function LandingForm({
                   setKontakt(f.id);
                   setErrorMsg(null);
                 }}
-                className={`rounded-lg border px-2 py-2.5 text-center transition-colors ${
+                className={`border-0 border-b px-1 pb-2 pt-1 text-center transition-colors ${
                   kontakt === f.id
-                    ? "border-accent bg-accent/10"
-                    : "border-gray-200 hover:border-accent/50 dark:border-gray-700"
+                    ? "border-b-2 border-accent"
+                    : "border-gray-400 hover:border-accent dark:border-gray-500"
                 }`}
               >
-                <span className="block text-sm font-semibold text-gray-900 dark:text-white">
+                <span className="block text-base text-gray-900 dark:text-white">
                   {f.nazwa}
                 </span>
-                <span className="block text-xs text-gray-600 dark:text-gray-300">
+                <span className="block text-xs italic text-gray-600 dark:text-gray-300">
                   {f.opis}
                 </span>
               </button>
@@ -554,7 +585,7 @@ export default function LandingForm({
           <div className="scena-wjazd">
             <label
               htmlFor="phone"
-              className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5"
+              className={etykietaClass}
             >
               Numer telefonu <span className="text-accent">*</span>
             </label>
@@ -583,30 +614,32 @@ export default function LandingForm({
         </div>
 
         {krok < 2 ? (
-          <div className="flex gap-3">
-            {krok > 0 && (
-              <button type="button" onClick={() => setKrok(krok - 1)} className="btn-secondary">
+          <div className="flex items-baseline justify-between gap-4 pt-2">
+            {krok > 0 ? (
+              <button type="button" onClick={() => setKrok(krok - 1)} className={przyciskWsteczClass}>
                 Wstecz
               </button>
+            ) : (
+              <span />
             )}
             {/* Osobne klucze dla „Dalej” i „Wyślij”: bez nich React podmienia
                 tylko typ tego samego przycisku i kliknięcie „Dalej” w drugim
                 kroku kończyło się już na przycisku wysyłki, czyli formularz
                 wysyłał się, zanim klient wybrał sposób kontaktu. */}
-            <button key="dalej" type="button" onClick={dalej} className="btn-primary btn-lg flex-1">
+            <button key="dalej" type="button" onClick={dalej} className={podpisClass}>
               Dalej
             </button>
           </div>
         ) : (
-          <div className="flex gap-3">
-            <button key="wstecz-2" type="button" onClick={() => setKrok(1)} className="btn-secondary">
+          <div className="flex items-baseline justify-between gap-4 pt-2">
+            <button key="wstecz-2" type="button" onClick={() => setKrok(1)} className={przyciskWsteczClass}>
               Wstecz
             </button>
             <button
               key="wyslij"
               type="submit"
               disabled={loading}
-              className="btn-primary btn-lg flex-1 disabled:opacity-60"
+              className={`${podpisClass} disabled:opacity-60`}
             >
               {loading ? "Wysyłanie..." : submitLabel}
             </button>
@@ -617,7 +650,7 @@ export default function LandingForm({
           <p role="alert" className="text-center text-sm text-red-700 dark:text-red-400">{errorMsg}</p>
         )}
 
-        <p className="text-center text-xs text-gray-600 dark:text-gray-400">
+        <p className="text-center text-xs italic text-gray-600 dark:text-gray-400">
           {microCopy}
         </p>
       </form>

@@ -29,6 +29,34 @@
   --accent-hover: 67 56 202;
   --accent-solid: 79 70 229;
 
+  /* Biel i szarosci (tailwind.config.ts czyta te zmienne). Jasny motyw to
+     domyslna paleta Tailwinda. */
+  --biel: 255 255 255;
+  --gray-50: 249 250 251;
+  --gray-100: 243 244 246;
+  --gray-200: 229 231 235;
+  --gray-300: 209 213 219;
+  --gray-400: 156 163 175;
+  --gray-500: 107 114 128;
+  --gray-600: 75 85 99;
+  --gray-700: 55 65 81;
+  --gray-800: 31 41 55;
+  --gray-900: 17 24 39;
+  --gray-950: 3 7 18;
+
+  /* Siatka punktow w hero */
+  --siatka-punkt: rgb(var(--accent) / 0.35);
+  --siatka-widocznosc: 0.5;
+  --siatka-swiatlo: 0.55;
+
+  /* Zaslona tla przy przyciskach i kartach: w jasnym motywie cien */
+  --przycisk-cien: 0 4px 12px -2px rgba(99, 102, 241, 0.35), inset 0 1px 0 0 rgba(255, 255, 255, 0.15);
+  --przycisk-cien-hover: 0 12px 24px -6px rgba(99, 102, 241, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.2);
+  --przycisk-cien-active: 0 2px 6px -1px rgba(99, 102, 241, 0.4), inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+  --karta-cien-hover: 0 12px 24px -8px rgba(99, 102, 241, 0.15), 0 4px 8px -2px rgba(0, 0, 0, 0.06);
+  --karta-cien-glow: 0 0 40px -8px rgba(99, 102, 241, 0.35);
+  --szklo-cien: 0 8px 32px -8px rgba(15, 23, 42, 0.12), inset 0 1px 0 0 rgba(255, 255, 255, 0.6);
+
   /* Werdykt narzedzia. Czerwien i zielen ustawione tak, zeby obie mialy
      na swoim tle co najmniej 4,5:1: #16a34a na bieli daje tylko 3,30:1. */
   --stan-zle: #b91c1c;
@@ -37,10 +65,10 @@
 
 .dark,
 html.dark {
-  --article-text: #d1d5db;
-  --article-muted: #9ca3af;
-  --article-box: rgba(17, 24, 39, 0.6);
-  --article-box-border: #1f2937;
+  --article-text: #c4c3d0;
+  --article-muted: #9897a8;
+  --article-box: rgba(18, 17, 23, 0.7);
+  --article-box-border: #1a1920;
   --article-link: #a5b4fc;
 
   /* Ciemny motyw: indygo 400, 6,75:1 na tle strony i 4,92:1 na najjasniejszej
@@ -51,6 +79,36 @@ html.dark {
 
   --stan-zle: #f87171;
   --stan-dobrze: #4ade80;
+
+  /* Ciemny motyw projektowany osobno: ciepla, gleboka czern z lekkim
+     fioletem zamiast szarosci. Powierzchnie rosna o 2-3% jasnosci na krok
+     (950 tlo, 900 karta, 800 podniesiona). Kontrast na 950 / 900 / 800:
+     400 = 6,8 / 6,5 / 6,1; 500 = 5,3 / 5,1 / 4,7; akcent = 6,6 / 6,3 / 5,9. */
+  --biel: 244 242 248;
+  --gray-50: 238 236 243;
+  --gray-100: 226 224 233;
+  --gray-200: 208 206 219;
+  --gray-300: 184 183 197;
+  --gray-400: 152 151 168;
+  --gray-500: 128 127 144;
+  --gray-600: 58 57 69;
+  --gray-700: 38 37 46;
+  --gray-800: 26 25 32;
+  --gray-900: 18 17 23;
+  --gray-950: 12 11 16;
+
+  --siatka-punkt: rgb(var(--accent) / 0.26);
+  --siatka-widocznosc: 0.6;
+  --siatka-swiatlo: 0.5;
+
+  /* W ciemnym cienie nie dzialaja: zamiast nich cienki obrys i jasniejsza
+     krawedz od gory, jak na szklanej plycie. */
+  --przycisk-cien: 0 0 0 1px rgb(var(--accent) / 0.35), inset 0 1px 0 0 rgba(255, 255, 255, 0.14);
+  --przycisk-cien-hover: 0 0 0 1px rgb(var(--accent) / 0.6), inset 0 1px 0 0 rgba(255, 255, 255, 0.2);
+  --przycisk-cien-active: 0 0 0 1px rgb(var(--accent) / 0.45), inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+  --karta-cien-hover: 0 0 0 1px rgb(var(--accent) / 0.28), inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+  --karta-cien-glow: 0 0 0 1px rgb(var(--accent) / 0.3);
+  --szklo-cien: inset 0 1px 0 0 rgba(255, 255, 255, 0.06);
 }
 
 @layer base {
@@ -150,34 +208,16 @@ html.dark {
   .btn-primary {
     @apply relative inline-flex items-center justify-center gap-2 px-6 py-3 rounded-2xl text-white font-semibold text-sm tracking-tight transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2;
     background-image: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
-    box-shadow:
-      0 4px 12px -2px rgba(99, 102, 241, 0.35),
-      inset 0 1px 0 0 rgba(255, 255, 255, 0.15);
+    box-shadow: var(--przycisk-cien);
   }
 
   .btn-primary:hover {
     background-image: linear-gradient(135deg, #4338ca 0%, #3730a3 100%);
-    box-shadow:
-      0 12px 24px -6px rgba(99, 102, 241, 0.5),
-      inset 0 1px 0 0 rgba(255, 255, 255, 0.2);
+    box-shadow: var(--przycisk-cien-hover);
   }
 
   .btn-primary:active {
-    box-shadow:
-      0 2px 6px -1px rgba(99, 102, 241, 0.4),
-      inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
-  }
-
-  .dark .btn-primary {
-    box-shadow:
-      0 4px 12px -2px rgba(99, 102, 241, 0.5),
-      inset 0 1px 0 0 rgba(255, 255, 255, 0.2);
-  }
-
-  .dark .btn-primary:hover {
-    box-shadow:
-      0 12px 28px -6px rgba(99, 102, 241, 0.7),
-      inset 0 1px 0 0 rgba(255, 255, 255, 0.25);
+    box-shadow: var(--przycisk-cien-active);
   }
 
   .btn-secondary {
@@ -291,16 +331,16 @@ html.dark {
     background-image:
       radial-gradient(
         at 20% 30%,
-        rgba(99, 102, 241, 0.28) 0px,
+        rgba(99, 102, 241, 0.14) 0px,
         transparent 50%
       ),
       radial-gradient(
         at 80% 20%,
-        rgba(99, 102, 241, 0.2) 0px,
+        rgba(99, 102, 241, 0.1) 0px,
         transparent 50%
       ),
-      radial-gradient(at 70% 80%, rgba(99, 102, 241, 0.12) 0px, transparent 50%),
-      radial-gradient(at 10% 90%, rgba(99, 102, 241, 0.15) 0px, transparent 50%);
+      radial-gradient(at 70% 80%, rgba(99, 102, 241, 0.06) 0px, transparent 50%),
+      radial-gradient(at 10% 90%, rgba(99, 102, 241, 0.08) 0px, transparent 50%);
   }
 
   /* Subtle noise overlay — drobne ziarno, prawie niewidoczne */
@@ -316,7 +356,7 @@ html.dark {
   }
 
   .dark .noise-overlay::before {
-    opacity: 0.04;
+    opacity: 0.03;
   }
 
   /* Card lift on hover — subtle 3D */
@@ -327,20 +367,12 @@ html.dark {
 
   .card-lift:hover {
     transform: translateY(-4px);
-    box-shadow:
-      0 12px 24px -8px rgba(99, 102, 241, 0.15),
-      0 4px 8px -2px rgba(0, 0, 0, 0.06);
-  }
-
-  .dark .card-lift:hover {
-    box-shadow:
-      0 12px 24px -8px rgba(99, 102, 241, 0.3),
-      0 4px 8px -2px rgba(0, 0, 0, 0.4);
+    box-shadow: var(--karta-cien-hover);
   }
 
   /* Glow under element — subtle radial accent */
   .glow-accent {
-    box-shadow: 0 0 40px -8px rgba(99, 102, 241, 0.35);
+    box-shadow: var(--karta-cien-glow);
   }
 
   /* Stat number — gigantic gradient */
@@ -364,30 +396,22 @@ html.dark {
 
   /* Glass card — większa transparentność, mocny blur, biały ring — wygląda jak szkło */
   .glass-card {
-    @apply bg-white/40 dark:bg-gray-900/30 ring-1 ring-white/40 dark:ring-white/15;
+    @apply bg-white/40 dark:bg-gray-900/30 ring-1 ring-white/40 dark:ring-white/10;
     -webkit-backdrop-filter: blur(28px) saturate(180%);
     backdrop-filter: blur(28px) saturate(180%);
-    box-shadow:
-      0 8px 32px -8px rgba(15, 23, 42, 0.12),
-      inset 0 1px 0 0 rgba(255, 255, 255, 0.6);
-  }
-
-  .dark .glass-card {
-    box-shadow:
-      0 8px 32px -8px rgba(0, 0, 0, 0.4),
-      inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+    box-shadow: var(--szklo-cien);
   }
 
   /* Decorative gradient blobs — używane jako tło sekcji hero */
   .blob {
-    @apply absolute pointer-events-none opacity-70 dark:opacity-50 blur-2xl;
+    @apply absolute pointer-events-none opacity-70 dark:opacity-30 blur-2xl;
     border-radius: 50%;
     will-change: transform;
   }
 
   /* Stronger blob variant — mniej blur, większa intensywność */
   .blob-strong {
-    @apply absolute pointer-events-none opacity-80 dark:opacity-60;
+    @apply absolute pointer-events-none opacity-80 dark:opacity-35;
     filter: blur(60px);
     border-radius: 50%;
     will-change: transform;
@@ -445,7 +469,7 @@ html.dark {
   .dark .section-amber {
     background-image: linear-gradient(
       to bottom,
-      rgba(245, 158, 11, 0.06),
+      rgba(245, 158, 11, 0.035),
       transparent 60%
     );
   }
@@ -461,9 +485,9 @@ html.dark {
   .dark .section-violet {
     background-image: linear-gradient(
       to bottom,
-      rgba(139, 92, 246, 0.1),
+      rgba(139, 92, 246, 0.055),
       transparent 55%,
-      rgba(139, 92, 246, 0.06)
+      rgba(139, 92, 246, 0.035)
     );
   }
 
@@ -477,7 +501,7 @@ html.dark {
   .dark .section-emerald {
     background-image: linear-gradient(
       to bottom,
-      rgba(16, 185, 129, 0.09),
+      rgba(16, 185, 129, 0.05),
       transparent 60%
     );
   }
@@ -492,7 +516,7 @@ html.dark {
   .dark .section-cyan {
     background-image: linear-gradient(
       to bottom,
-      rgba(6, 182, 212, 0.08),
+      rgba(6, 182, 212, 0.045),
       transparent 60%
     );
   }
@@ -846,9 +870,9 @@ main[class*="max-w-"]:has(> nav[aria-label="Breadcrumb"]) {
 .tlo-hero__siatka {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(rgb(var(--accent) / 0.35) 1px, transparent 1.5px);
+  background-image: radial-gradient(var(--siatka-punkt) 1px, transparent 1.5px);
   background-size: 28px 28px;
-  opacity: 0.5;
+  opacity: var(--siatka-widocznosc);
   -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 40%, #000 20%, transparent 75%);
   mask-image: radial-gradient(ellipse 70% 70% at 50% 40%, #000 20%, transparent 75%);
 }
@@ -859,8 +883,8 @@ main[class*="max-w-"]:has(> nav[aria-label="Breadcrumb"]) {
   background-size: 28px 28px;
   opacity: 0;
   transition: opacity 0.6s ease;
-  -webkit-mask-image: radial-gradient(160px circle at var(--mx, -999px) var(--my, -999px), rgb(0 0 0 / 0.55), transparent);
-  mask-image: radial-gradient(160px circle at var(--mx, -999px) var(--my, -999px), rgb(0 0 0 / 0.55), transparent);
+  -webkit-mask-image: radial-gradient(160px circle at var(--mx, -999px) var(--my, -999px), rgb(0 0 0 / var(--siatka-swiatlo)), transparent);
+  mask-image: radial-gradient(160px circle at var(--mx, -999px) var(--my, -999px), rgb(0 0 0 / var(--siatka-swiatlo)), transparent);
 }
 
 /* Przejścia stron */
@@ -1160,7 +1184,7 @@ p {
 /* Kropki przepływu w demo leada, jadą po liniach SVG */
 .scena-kropka-svg {
   fill: rgb(var(--accent));
-  filter: drop-shadow(0 0 6px rgb(var(--accent) / 0.9));
+  filter: drop-shadow(0 0 var(--kropka-promien, 6px) rgb(var(--accent) / 0.9));
 }
 
 /* Okno zgody nad paskiem akcji w telefonie */
@@ -1245,7 +1269,7 @@ h2 {
   paint-order: stroke fill;
   transition: color 0.4s ease;
 }
-.dark .liczba-obrys { color: #030712; }
+.dark .liczba-obrys { color: rgb(var(--gray-950)); }
 .liczba-obrys:hover { color: rgb(var(--accent)); }
 .dark .liczba-obrys:hover { color: rgb(var(--accent)); }
 
@@ -1457,7 +1481,7 @@ html.blueprint video {
     inset: -1px;
     border-radius: inherit;
     border: 1px solid rgb(var(--accent) / 0.6);
-    box-shadow: 0 12px 32px -12px rgb(var(--accent) / 0.35);
+    box-shadow: var(--karta-cien-glow);
     pointer-events: none;
     opacity: 0;
     animation: krok-aktywny linear both;
@@ -1518,7 +1542,7 @@ html.blueprint video {
   inset: 0 0 auto 0;
   height: 2px;
   background: rgb(var(--accent));
-  box-shadow: 0 0 14px 4px rgb(var(--accent) / 0.45);
+  box-shadow: 0 0 10px 1px rgb(var(--accent) / var(--skan-poswiata, 0.45));
 }
 @keyframes skan-linia {
   from { transform: none; }
@@ -1555,7 +1579,7 @@ body::after {
   background-size: 240px 240px;
 }
 .dark body::after {
-  opacity: 0.06;
+  opacity: 0.035;
 }
 @media print {
   body::after {
@@ -1588,4 +1612,30 @@ main figure > figcaption:not(:has(p))::before {
   font-weight: 600;
   color: rgb(var(--accent));
   font-variant-numeric: tabular-nums;
+}
+
+/* Ciemny motyw: cienie Tailwinda zamienione na obrys i jasniejsza krawedz.
+   Plyty podniesione (xl, 2xl) dostaja cienki obrys, karty tylko krawedz od
+   gory, zeby przy ramce nie powstawala podwojna linia. Selektor bierze tez
+   warianty (hover:shadow-md, dark:shadow-black/30). */
+.dark [class*="shadow-"]:not([class*="shadow-none"]) {
+  --tw-shadow: inset 0 1px 0 0 rgb(255 255 255 / 0.04);
+  --tw-shadow-colored: inset 0 1px 0 0 rgb(255 255 255 / 0.04);
+}
+.dark :is(.shadow-xl, .shadow-2xl) {
+  --tw-shadow: 0 0 0 1px rgb(255 255 255 / 0.07), inset 0 1px 0 0 rgb(255 255 255 / 0.05);
+  --tw-shadow-colored: 0 0 0 1px rgb(255 255 255 / 0.07), inset 0 1px 0 0 rgb(255 255 255 / 0.05);
+}
+.dark .btn-secondary:hover {
+  --tw-shadow: 0 0 0 1px rgb(var(--accent) / 0.3);
+  --tw-shadow-colored: 0 0 0 1px rgb(var(--accent) / 0.3);
+}
+.dark {
+  --skan-poswiata: 0.25;
+  --kropka-promien: 3px;
+}
+
+.slowo-szeryf.kursywa-jasna {
+  background-image: none;
+  -webkit-text-fill-color: rgb(255 255 255 / 0.8);
 }

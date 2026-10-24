@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Znak from "@/components/Znak";
+import ZnakFl from "@/components/ZnakFl";
 
 const KLUCZ = "fluxlab_intro_znaku";
 
@@ -28,7 +28,7 @@ export default function IntroZnaku() {
       aria-hidden="true"
       className="intro-znaku pointer-events-none fixed inset-0 z-[60] flex items-center justify-center bg-white dark:bg-gray-950"
     >
-      <Znak className="intro-znaku__znak h-24 w-24" />
+      <ZnakFl className="intro-znaku__znak h-24 w-24" />
     </div>
   );
 }

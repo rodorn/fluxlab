@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
-import Znak from "./Znak";
+import ZnakFl from "./ZnakFl";
 import Wyszukiwarka from "./Wyszukiwarka";
 import MenuDesktop from "./MenuDesktop";
 import type { LinkMenu, PozycjaMenu } from "@/lib/menu";
@@ -155,7 +155,7 @@ export default function HeaderKlient({
           href="/"
           className="znak-link flex items-center gap-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white shrink-0"
         >
-          <Znak className="znak-ikona h-7 w-7" />
+          <ZnakFl className="znak-ikona h-7 w-7" />
           <span translate="no">
             flux<span className="text-accent">lab</span>
           </span>

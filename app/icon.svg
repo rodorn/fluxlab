@@ -1,28 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">
-  <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" class="s1" stop-color="#6366f1"/>
-      <stop offset="1" class="s2" stop-color="#8b5cf6"/>
-    </linearGradient>
-  </defs>
   <style>
     @media (prefers-color-scheme: dark) {
-      .s1 { stop-color: #3730a3; }
-      .s2 { stop-color: #5b21b6; }
-      .tile { stroke: #a5b4fc; stroke-width: 36; }
-      .ink { stroke: #e0e7ff; }
-      .dot { fill: #e0e7ff; }
+      .tile { fill: #818cf8; }
+      .ink { stroke: #1e1b4b; }
     }
   </style>
-  <rect class="tile" width="1080" height="1080" rx="240" fill="url(#g)"/>
-  <g class="ink" fill="none" stroke="#ffffff" stroke-width="100" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M380 800 V410 Q380 290 500 290 H590"/>
-    <path d="M270 540 H500"/>
-    <path d="M760 290 V800"/>
-  </g>
-  <g class="dot" fill="#ffffff">
-    <circle cx="590" cy="540" r="36" opacity="0.95"/>
-    <circle cx="660" cy="540" r="26" opacity="0.7"/>
-    <circle cx="702" cy="540" r="14" opacity="0.45"/>
+  <rect class="tile" width="1080" height="1080" rx="240" fill="#4f46e5"/>
+  <g class="ink" fill="none" stroke="#ffffff" stroke-width="124" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M400 790 V420 A130 130 0 0 1 530 290 H550"/>
+    <path d="M330 540 H750"/>
+    <path d="M750 290 V790"/>
   </g>
 </svg>

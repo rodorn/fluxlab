@@ -75,6 +75,12 @@ const KROKI = [
 
 const MANIFEST = KROKI[2][1];
 
+const ZASADA = [
+  ["Cena z góry", "Znasz kwotę przed startem, bez rozliczania godzin."],
+  ["Termin w ofercie", "Cenę i termin dostajesz tego samego dnia."],
+  ["Odbierasz działające", "Strona albo CRM działa po 2\u2060–\u20603\u00a0tygodniach."],
+];
+
 const WYNIKI = [
   ["12 dni", "od startu prac do publikacji, przy terminie 5 tygodni"],
   ["97/100", "w audycie technicznym, stara strona miała 45"],
@@ -189,12 +195,28 @@ export default function Home() {
           </RevealOnScroll>
         </section>
 
-        <section aria-label="Zasada" className="maska-sekcji bg-accent-solid py-20 text-white lg:py-32">
+        <section aria-label="Zasada" className="maska-sekcji relative overflow-hidden bg-accent-solid py-20 text-white lg:py-32">
           <div className="container-wide">
-          <Manifest
-            tekst={MANIFEST}
-            className="mx-auto max-w-3xl text-balance text-center text-4xl font-bold leading-tight tracking-tighter lg:text-6xl"
-          />
+            <div className="flex items-baseline justify-between border-b border-white/30 pb-4 text-xs font-medium uppercase tracking-widest text-white/70">
+              <span>Zasada</span>
+              <span className="tabular-nums">FluxLab</span>
+            </div>
+            <Manifest
+              tekst={MANIFEST}
+              klasaPoPrzecinku="slowo-szeryf kursywa-jasna"
+              className="mt-12 !text-left text-balance text-5xl font-bold leading-none tracking-tighter sm:text-6xl lg:mt-16 lg:text-8xl xl:text-9xl"
+            />
+            <ul className="mt-12 grid gap-6 border-t border-white/30 pt-6 text-sm text-white/80 sm:grid-cols-3 lg:mt-16">
+              {ZASADA.map(([tytul, opis], i) => (
+                <li key={tytul} className="flex gap-4">
+                  <span className="tabular-nums text-white/50">{String(i + 1).padStart(2, "0")}</span>
+                  <span>
+                    <span className="block font-semibold text-white">{tytul}</span>
+                    {opis}
+                  </span>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
 

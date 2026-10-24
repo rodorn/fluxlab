@@ -3,9 +3,19 @@
 import { useEffect, useRef, useState } from "react";
 
 /** Zdanie, którego słowa zapalają się kolejno w miarę przewijania. */
-export default function Manifest({ tekst, className }: { tekst: string; className?: string }) {
+export default function Manifest({
+  tekst,
+  className,
+  klasaPoPrzecinku = "",
+}: {
+  tekst: string;
+  className?: string;
+  /** Klasa słów po pierwszym przecinku, np. kursywa drugiej części zdania. */
+  klasaPoPrzecinku?: string;
+}) {
   const ref = useRef<HTMLParagraphElement | null>(null);
   const slowa = tekst.split(" ");
+  const przecinek = slowa.findIndex((s) => s.endsWith(","));
   const [p, setP] = useState<number | null>(null);
 
   useEffect(() => {
@@ -43,10 +53,11 @@ export default function Manifest({ tekst, className }: { tekst: string; classNam
         return (
           <span
             key={i}
-            className={`transition-opacity duration-300 ${zapalone ? "opacity-100" : "opacity-60"}`}
+            className={`transition-opacity duration-300 ${zapalone ? "opacity-100" : "opacity-60"} ${przecinek >= 0 && i > przecinek ? klasaPoPrzecinku : ""}`}
           >
+            {przecinek >= 0 && i === przecinek + 1 && klasaPoPrzecinku ? <br /> : null}
             {s}
-            {i < slowa.length - 1 ? " " : ""}
+            {i < slowa.length - 1 && i !== przecinek ? " " : ""}
           </span>
         );
       })}
