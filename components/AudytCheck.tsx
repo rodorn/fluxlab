@@ -179,9 +179,12 @@ const CZAS_ETAPU = [5, 6, 7, 8, 8, 6, 10];
 const START_ETAPU = CZAS_ETAPU.map((_, i) => CZAS_ETAPU.slice(0, i).reduce((a, b) => a + b, 0));
 
 function procentEtapu(i: number, sekundy: number): number {
-  const p = ((sekundy - START_ETAPU[i]) / CZAS_ETAPU[i]) * 100;
-  // Ostatni etap czeka na prawdziwy wynik, więc nie dochodzi sam do 100%.
-  return Math.round(Math.max(0, Math.min(i === CZAS_ETAPU.length - 1 ? 95 : 100, p)));
+  const t = sekundy - START_ETAPU[i];
+  if (t <= 0) return 0;
+  // Ostatni etap czeka na prawdziwy wynik: rośnie coraz wolniej, ale nie staje
+  // i nie dochodzi sam do 100%.
+  if (i === CZAS_ETAPU.length - 1) return Math.round(99 * (1 - Math.exp(-t / CZAS_ETAPU[i])));
+  return Math.round(Math.min(100, (t / CZAS_ETAPU[i]) * 100));
 }
 
 function KolkoProcent({ p }: { p: number }) {
@@ -685,7 +688,8 @@ export default function AudytCheck() {
           </ol>
           <p className="mt-4 text-xs text-gray-500 dark:text-gray-400">
             Pełne badanie trwa zwykle od trzydziestu sekund do minuty, bo ważymy
-            każdy plik osobno, zamiast wierzyć deklaracjom serwera.
+            każdy plik osobno, zamiast wierzyć deklaracjom serwera.{" "}
+            <span className="tabular-nums">Mija {Math.floor(sekundy)} s.</span>
           </p>
         </div>
       )}
