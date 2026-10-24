@@ -3,44 +3,25 @@
 import { useEffect, useRef, useState } from "react";
 import { zglosZdarzenie } from "@/lib/zdarzenie";
 import { kodujWycene } from "@/lib/wycenaPdf";
-import { OPCJE_STRONY, cenaOpcji, type OpcjaStrony } from "@/lib/opcjeStrony";
-
-type Rodzaj = {
-  id: string;
-  nazwa: string;
-  opis: string;
-  cena: number;
-  termin: string;
-};
-
-// Ceny i terminy z app/strony-www/page.tsx (pricing, faq) i lib/products.ts.
-const RODZAJE: Rodzaj[] = [
-  {
-    id: "landing",
-    nazwa: "Strona w tydzień, do 5 podstron",
-    opis: "Formularz i kalendarz spotkań.",
-    cena: 2900,
-    termin: "7 dni",
-  },
-  {
-    id: "firmowa",
-    nazwa: "Strona firmowa z CMS",
-    opis: "Do 15 podstron, blog, panel edycji, Profil Google.",
-    cena: 5900,
-    termin: "3 tygodnie",
-  },
-  {
-    id: "sklep",
-    nazwa: "Sklep z integracją",
-    opis: "Sklep połączony z Twoimi systemami.",
-    cena: 9900,
-    termin: "po rozmowie",
-  },
-];
+import {
+  OPCJE_STRONY,
+  RODZAJE,
+  TRESCI,
+  PRODUKTY,
+  OPIEKA,
+  MAX_PODSTRON,
+  MAX_JEZYKOW,
+  ZA_PODSTRONE,
+  wycenStrone,
+  terminTekst,
+  type OpcjaStrony,
+} from "@/lib/opcjeStrony";
 
 type Opcja = OpcjaStrony & { id: string };
 
-const OPCJE: Opcja[] = Object.entries(OPCJE_STRONY).map(([id, o]) => ({ id, ...o }));
+const OPCJE: Opcja[] = Object.entries(OPCJE_STRONY)
+  .map(([id, o]) => ({ id, ...o }))
+  .filter((o) => o.wCenie.length < RODZAJE.length);
 
 const zl = (n: number) =>
   String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, "\u00a0") + " zł";
@@ -68,10 +49,20 @@ function useAnimowana(cel: number) {
 }
 
 /** Schemat strony składa się na żywo z wybranych opcji. To makieta, nie projekt. */
-function PodgladMakiety({ rodzajId, wybrane }: { rodzajId: string; wybrane: string[] }) {
+function PodgladMakiety({
+  rodzajId,
+  wybrane,
+  podstron,
+  jezyki,
+}: {
+  rodzajId: string;
+  wybrane: string[];
+  podstron: number;
+  jezyki: number;
+}) {
   const ma = (id: string) => wybrane.includes(id) || OPCJE_STRONY[id].wCenie.includes(rodzajId);
   const blok = "rounded bg-gray-200 dark:bg-white/10";
-  const menu = rodzajId === "landing" ? 2 : rodzajId === "firmowa" ? 5 : 4;
+  const menu = Math.min(6, Math.max(2, Math.ceil(podstron / 3)));
   return (
     <div
       aria-hidden="true"
@@ -90,8 +81,10 @@ function PodgladMakiety({ rodzajId, wybrane }: { rodzajId: string; wybrane: stri
           {Array.from({ length: menu }).map((_, i) => (
             <span key={i} className={`h-2 w-8 ${blok} transition-all duration-300`} />
           ))}
-          {ma("en") && (
-            <span className="rounded border border-accent px-1 text-[9px] font-semibold text-accent">PL / EN</span>
+          {jezyki > 0 && (
+            <span className="rounded border border-accent px-1 text-[9px] font-semibold text-accent">
+              {["PL", "EN", "DE", "UA"].slice(0, jezyki + 1).join(" / ")}
+            </span>
           )}
         </div>
         <div className="grid grid-cols-[1.4fr_1fr] gap-3 rounded-xl bg-accent/10 p-4">
@@ -129,7 +122,7 @@ function PodgladMakiety({ rodzajId, wybrane }: { rodzajId: string; wybrane: stri
             ))}
           </div>
         )}
-        {wybrane.includes("blog") && (
+        {ma("blog") && (
           <div className="grid grid-cols-3 gap-2 border-t border-dashed border-accent/50 pt-3">
             {[0, 1, 2].map((i) => (
               <div key={i} className="space-y-1">
@@ -143,8 +136,49 @@ function PodgladMakiety({ rodzajId, wybrane }: { rodzajId: string; wybrane: stri
           {ma("cms") && <span className="rounded-full border border-accent/50 px-2 py-0.5">panel treści</span>}
           {ma("crm") && rodzajId !== "landing" && <span className="rounded-full border border-accent/50 px-2 py-0.5">formularz do CRM</span>}
           {ma("platnosci") && <span className="rounded-full border border-accent/50 px-2 py-0.5">płatności</span>}
+          {ma("projekt") && <span className="rounded-full border border-accent/50 px-2 py-0.5">własny projekt</span>}
+          <span className="rounded-full border border-accent/50 px-2 py-0.5">podstron: {podstron}</span>
         </div>
       </div>
+    </div>
+  );
+}
+
+
+const naglowek = "mb-3 mt-8 text-center text-sm font-semibold text-gray-900 dark:text-white";
+const przycisk = (aktywny: boolean) =>
+  `rounded-xl border px-3 py-2 text-sm transition-colors ${
+    aktywny
+      ? "border-accent bg-accent/10 font-semibold text-gray-900 dark:text-white"
+      : "border-gray-200 bg-white text-gray-600 hover:border-accent/50 dark:border-gray-700 dark:bg-gray-800/60 dark:text-gray-300"
+  }`;
+
+function Wybor<T extends string | number>({
+  etykieta,
+  wartosc,
+  opcje,
+  zmien,
+}: {
+  etykieta: string;
+  wartosc: T;
+  opcje: { id: T; nazwa: string; notka?: string }[];
+  zmien: (v: T) => void;
+}) {
+  return (
+    <div role="radiogroup" aria-label={etykieta} className="flex flex-wrap justify-center gap-2">
+      {opcje.map((o) => (
+        <button
+          key={String(o.id)}
+          type="button"
+          role="radio"
+          aria-checked={o.id === wartosc}
+          onClick={() => zmien(o.id)}
+          className={przycisk(o.id === wartosc)}
+        >
+          {o.nazwa}
+          {o.notka && <span className="ml-1 text-xs text-gray-500 dark:text-gray-400">{o.notka}</span>}
+        </button>
+      ))}
     </div>
   );
 }
@@ -152,35 +186,38 @@ function PodgladMakiety({ rodzajId, wybrane }: { rodzajId: string; wybrane: stri
 export default function KonfiguratorStrony() {
   const [rodzajId, setRodzajId] = useState("firmowa");
   const [wybrane, setWybrane] = useState<string[]>([]);
-  const rodzaj = RODZAJE.find((r) => r.id === rodzajId)!;
-  const dodatki = wybrane.reduce((s, id) => s + cenaOpcji(id, rodzajId, rodzaj.cena), 0);
-  const cena = useAnimowana(rodzaj.cena + dodatki);
+  const [podstron, setPodstron] = useState(10);
+  const [jezyki, setJezyki] = useState(0);
+  const [tresci, setTresci] = useState<string>("mam");
+  const [produkty, setProdukty] = useState<string>("do100");
+  const [opieka, setOpieka] = useState(0);
+
+  const konf = { r: rodzajId, o: wybrane, p: podstron, j: jezyki, tr: tresci, pr: produkty, op: opieka };
+  const w = wycenStrone(konf)!;
+  const rodzaj = w.rodzaj;
+  const cena = useAnimowana(w.suma);
+  const firmowa = rodzajId === "landing" ? wycenStrone({ ...konf, r: "firmowa" })! : null;
 
   const przelacz = (id: string) =>
-    setWybrane((w) => (w.includes(id) ? w.filter((x) => x !== id) : [...w, id]));
-
-  const notka = (o: Opcja) => {
-    const k = cenaOpcji(o.id, rodzajId, rodzaj.cena);
-    return k ? `+${zl(k)}` : "w cenie";
-  };
+    setWybrane((x) => (x.includes(id) ? x.filter((y) => y !== id) : [...x, id]));
 
   const pobierzPdf = () => {
-    const d = kodujWycene({ t: "s", r: rodzajId, o: wybrane });
+    const d = kodujWycene({ t: "s", ...konf });
     window.open(`/wycena?d=${d}`, "_blank", "noopener");
   };
 
   const wyslij = () => {
     zglosZdarzenie("konfigurator_strony");
-    const opcje = OPCJE.filter((o) => wybrane.includes(o.id)).map(
-      (o) => `${o.nazwa} (${notka(o)})`,
-    );
     const tekst = [
       "Konfiguracja ze strony:",
-      `Rodzaj: ${rodzaj.nazwa}, od ${zl(rodzaj.cena)} netto`,
-      `Razem z opcjami: od ${zl(rodzaj.cena + dodatki)} netto`,
-      `Opcje: ${opcje.length ? opcje.join(", ") : "bez dodatków"}`,
-      `Termin: ${rodzaj.termin}`,
-    ].join("\n");
+      ...w.pozycje.map((p) => `${p.nazwa}: ${zl(p.netto)}`),
+      w.wCenie.length ? `W cenie: ${w.wCenie.join(", ")}` : "",
+      `Razem: ${rodzajId === "sklep" ? "od " : ""}${zl(w.suma)} netto`,
+      w.miesiecznie ? `Opieka: ${zl(w.miesiecznie)}/mies.` : "",
+      `Termin: ${terminTekst(w.tygodnie)}`,
+    ]
+      .filter(Boolean)
+      .join("\n");
     const pole = document.getElementById("message");
     if (pole instanceof HTMLTextAreaElement) {
       pole.value = tekst;
@@ -207,17 +244,13 @@ export default function KonfiguratorStrony() {
           Policz cenę swojej strony
         </h2>
         <p className="mx-auto mb-8 max-w-2xl text-center text-gray-600 dark:text-gray-400">
-          Wybierz rodzaj i opcje. Cena jest orientacyjna, netto, bez VAT.
+          Ustaw rodzaj, zakres i dodatki. Każda pozycja ma swoją kwotę, netto, bez VAT.
         </p>
 
         <p className="mb-3 text-center text-sm font-semibold text-gray-900 dark:text-white">
           1. Rodzaj strony
         </p>
-        <div
-          role="radiogroup"
-          aria-label="Rodzaj strony"
-          className="grid gap-3 md:grid-cols-3"
-        >
+        <div role="radiogroup" aria-label="Rodzaj strony" className="grid gap-3 md:grid-cols-3">
           {RODZAJE.map((r) => {
             const aktywny = r.id === rodzajId;
             return (
@@ -233,45 +266,111 @@ export default function KonfiguratorStrony() {
                     : "border-gray-200 bg-white hover:border-accent/50 dark:border-gray-700 dark:bg-gray-800/60"
                 }`}
               >
-                <span className="block font-bold text-gray-900 dark:text-white">
-                  {r.nazwa}
-                </span>
-                <span className="mt-1 block text-sm text-gray-600 dark:text-gray-400">
-                  {r.opis}
-                </span>
-                <span className="mt-auto block pt-3 text-lg font-bold text-accent">
-                  od {zl(r.cena)}
-                </span>
+                <span className="block font-bold text-gray-900 dark:text-white">{r.nazwa}</span>
+                <span className="mt-1 block text-sm text-gray-600 dark:text-gray-400">{r.opis}</span>
+                <span className="mt-auto block pt-3 text-lg font-bold text-accent">od {zl(r.cena)}</span>
               </button>
             );
           })}
         </div>
 
-        <p className="mb-3 mt-8 text-center text-sm font-semibold text-gray-900 dark:text-white">
-          2. Opcje
-        </p>
+        <p className={naglowek}>2. Zakres</p>
+        <div className="mx-auto max-w-2xl space-y-6 rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-700 dark:bg-gray-800/60">
+          <div>
+            <label htmlFor="konf-podstron" className="flex items-baseline justify-between text-sm">
+              <span className="font-semibold text-gray-900 dark:text-white">Liczba podstron</span>
+              <span className="tabular-nums text-accent">
+                <span className="text-lg font-bold">{podstron}</span>{" "}
+                <span className="text-xs text-gray-500 dark:text-gray-400">
+                  {podstron > rodzaj.podstron
+                    ? `w pakiecie ${rodzaj.podstron}, każda kolejna ${ZA_PODSTRONE} zł`
+                    : `w pakiecie do ${rodzaj.podstron}`}
+                </span>
+              </span>
+            </label>
+            <input
+              id="konf-podstron"
+              type="range"
+              min={1}
+              max={MAX_PODSTRON}
+              value={podstron}
+              onChange={(e) => setPodstron(Number(e.target.value))}
+              className="mt-3 w-full cursor-pointer accent-[rgb(var(--accent))]"
+            />
+            <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
+              Podstrona to osobny adres: oferta, cennik, kontakt, każda usługa.
+            </p>
+          </div>
+
+          <div>
+            <p className="mb-2 text-center text-sm font-semibold text-gray-900 dark:text-white">Teksty na stronę</p>
+            <Wybor
+              etykieta="Teksty"
+              wartosc={tresci}
+              zmien={setTresci}
+              opcje={TRESCI.map((t) => ({
+                id: t.id,
+                nazwa: t.nazwa,
+                notka: t.zaPodstrone ? `${t.zaPodstrone} zł za podstronę` : undefined,
+              }))}
+            />
+          </div>
+
+          <div>
+            <p className="mb-2 text-center text-sm font-semibold text-gray-900 dark:text-white">
+              Języki oprócz polskiego
+            </p>
+            <Wybor
+              etykieta="Języki"
+              wartosc={jezyki}
+              zmien={setJezyki}
+              opcje={Array.from({ length: MAX_JEZYKOW + 1 }, (_, i) => ({
+                id: i,
+                nazwa: i === 0 ? "Tylko polski" : `+${i}`,
+              }))}
+            />
+          </div>
+
+          {rodzajId === "sklep" && (
+            <div>
+              <p className="mb-2 text-center text-sm font-semibold text-gray-900 dark:text-white">Produkty w sklepie</p>
+              <Wybor
+                etykieta="Produkty"
+                wartosc={produkty}
+                zmien={setProdukty}
+                opcje={PRODUKTY.map((x) => ({
+                  id: x.id,
+                  nazwa: x.nazwa,
+                  notka: x.cena ? `+${zl(x.cena)}` : "w cenie",
+                }))}
+              />
+            </div>
+          )}
+        </div>
+
+        <p className={naglowek}>3. Dodatki</p>
         <div className="sierota-sm-2 mx-auto grid max-w-2xl gap-3 sm:grid-cols-2">
           {OPCJE.map((o) => {
-            const aktywna = wybrane.includes(o.id);
+            const wCenie = o.wCenie.includes(rodzajId);
+            const aktywna = wCenie || wybrane.includes(o.id);
             return (
               <button
                 key={o.id}
                 type="button"
                 role="switch"
                 aria-checked={aktywna}
+                disabled={wCenie}
                 onClick={() => przelacz(o.id)}
-                className={`flex items-center justify-between gap-3 rounded-2xl border px-4 py-3 text-left transition-all duration-200 ${
+                className={`flex items-center justify-between gap-3 rounded-2xl border px-4 py-3 text-left transition-all duration-200 disabled:cursor-default ${
                   aktywna
                     ? "border-accent bg-accent/10"
                     : "border-gray-200 bg-white hover:border-accent/50 dark:border-gray-700 dark:bg-gray-800/60"
                 }`}
               >
                 <span>
-                  <span className="block text-sm font-semibold text-gray-900 dark:text-white">
-                    {o.nazwa}
-                  </span>
+                  <span className="block text-sm font-semibold text-gray-900 dark:text-white">{o.nazwa}</span>
                   <span className="block text-xs text-gray-600 dark:text-gray-400">
-                    {notka(o)}
+                    {wCenie ? "w cenie" : `+${zl(o.cena)}`}
                   </span>
                 </span>
                 <span
@@ -281,8 +380,9 @@ export default function KonfiguratorStrony() {
                   }`}
                 >
                   <span
-                    className="absolute top-0.5 h-5 w-5 rounded-full bg-white shadow transition-all duration-200"
-                    style={{ left: aktywna ? "22px" : "2px" }}
+                    className={`absolute top-0.5 h-5 w-5 rounded-full bg-white shadow transition-all duration-200 ${
+                      aktywna ? "left-[22px]" : "left-0.5"
+                    }`}
                   />
                 </span>
               </button>
@@ -290,24 +390,56 @@ export default function KonfiguratorStrony() {
           })}
         </div>
 
-        <PodgladMakiety rodzajId={rodzajId} wybrane={wybrane} />
+        <p className={naglowek}>4. Opieka po starcie</p>
+        <Wybor
+          etykieta="Opieka"
+          wartosc={opieka}
+          zmien={setOpieka}
+          opcje={OPIEKA.map((o) => ({ id: o.cena, nazwa: o.cena ? `${zl(o.cena)}/mies.` : "Bez opieki" }))}
+        />
+        <p className="mt-2 min-h-5 text-center text-xs text-gray-500 dark:text-gray-400">
+          {(OPIEKA.find((o) => o.cena === opieka) as { opis?: string } | undefined)?.opis ??
+            "Poprawki zamawiasz wtedy, gdy są potrzebne."}
+        </p>
 
-        <div className="mx-auto mt-8 max-w-2xl rounded-2xl border border-accent bg-white p-6 text-center shadow-lg shadow-accent/10 dark:bg-gray-800/60">
-          <p className="text-sm font-semibold text-gray-900 dark:text-white">
-            3. Wynik
+        <PodgladMakiety rodzajId={rodzajId} wybrane={wybrane} podstron={podstron} jezyki={jezyki} />
+
+        <div className="mx-auto mt-8 max-w-2xl rounded-2xl border border-accent bg-white p-6 shadow-lg shadow-accent/10 dark:bg-gray-800/60">
+          <p className="text-center text-sm font-semibold text-gray-900 dark:text-white">5. Wycena</p>
+          <ul className="mt-4 divide-y divide-gray-100 text-sm dark:divide-white/10">
+            {w.pozycje.map((p) => (
+              <li key={p.nazwa} className="flex items-baseline justify-between gap-4 py-2">
+                <span>
+                  <span className="text-gray-900 dark:text-white">{p.nazwa}</span>
+                  {p.opis && <span className="block text-xs text-gray-500 dark:text-gray-400">{p.opis}</span>}
+                </span>
+                <span className="whitespace-nowrap font-semibold tabular-nums text-gray-900 dark:text-white">
+                  {zl(p.netto)}
+                </span>
+              </li>
+            ))}
+          </ul>
+          {w.wCenie.length > 0 && (
+            <p className="mt-2 text-xs text-gray-500 dark:text-gray-400">W cenie: {w.wCenie.join(", ")}.</p>
+          )}
+          <p className="mt-4 text-center text-4xl font-bold text-accent sm:text-5xl" aria-live="polite">
+            {rodzajId === "sklep" ? "od " : ""}
+            {zl(cena)} <span className="text-lg font-semibold">netto</span>
           </p>
-          <p
-            className="mt-2 text-4xl font-bold text-accent sm:text-5xl"
-            aria-live="polite"
-          >
-            od {zl(cena)} <span className="text-lg font-semibold">netto</span>
+          <p className="mt-2 text-center text-sm text-gray-600 dark:text-gray-400">
+            Termin: {terminTekst(w.tygodnie)}. Hosting w cenie wdrożenia, domena 50-150 zł rocznie.
+            {w.miesiecznie > 0 && ` Opieka ${zl(w.miesiecznie)} miesięcznie, poza sumą.`}
           </p>
-          <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-            Termin: {rodzaj.termin}. Hosting w cenie wdrożenia.
-          </p>
+          {firmowa && firmowa.suma <= w.suma && (
+            <p className="mt-3 text-center text-sm">
+              <button type="button" onClick={() => setRodzajId("firmowa")} className="font-semibold text-accent hover:underline">
+                Strona firmowa z CMS wyjdzie {firmowa.suma < w.suma ? "taniej" : "tyle samo"} ({zl(firmowa.suma)}), a ma panel edycji i blog
+              </button>
+            </p>
+          )}
           <div className="mt-5 flex flex-wrap justify-center gap-3">
             <button type="button" onClick={wyslij} className="btn-primary">
-              Wyślij tę konfigurację
+              Wyślij tę wycenę
             </button>
             <button type="button" onClick={pobierzPdf} className="btn-secondary">
               Pobierz wycenę PDF

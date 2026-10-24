@@ -1,9 +1,9 @@
-import { OPCJE_STRONY, cenaOpcji } from "@/lib/opcjeStrony";
+import { OPCJE_STRONY, wycenStrone, terminTekst, type KonfiguracjaStrony } from "@/lib/opcjeStrony";
 // Konfiguracja wyceny przekazywana w linku /wycena?d=<base64url(JSON)>.
 // Ceny zgodne z components/KonfiguratorStrony.tsx i components/KonfiguratorCrm.tsx.
 
 export type KonfiguracjaWyceny =
-  | { t: "s"; r: string; o: string[] }
+  | ({ t: "s" } & KonfiguracjaStrony)
   | { t: "c"; n: number; w: string };
 
 export type Pozycja = {
@@ -22,14 +22,6 @@ export type Wycena = {
   termin?: string;
   uwaga?: string;
 };
-
-const RODZAJE: Record<string, { nazwa: string; cena: number; termin: string }> = {
-  landing: { nazwa: "Strona w tydzień, do 5 podstron", cena: 2900, termin: "7 dni" },
-  firmowa: { nazwa: "Strona firmowa z CMS", cena: 5900, termin: "3 tygodnie" },
-  sklep: { nazwa: "Sklep z integracją", cena: 9900, termin: "po rozmowie" },
-};
-
-const OPCJE = OPCJE_STRONY;
 
 const WARIANTY: Record<string, { nazwa: string; cena: number }> = {
   pilotaz: { nazwa: "Pilotaż", cena: 1 },
@@ -62,28 +54,34 @@ export function dekodujWycene(d: string | undefined): Wycena | null {
   const c = k as Record<string, unknown>;
 
   if (c.t === "s") {
-    const r = typeof c.r === "string" ? RODZAJE[c.r] : undefined;
-    if (!r || !Array.isArray(c.o)) return null;
+    if (!Array.isArray(c.o)) return null;
     const ids = c.o as unknown[];
-    if (ids.length > 10 || !ids.every((x) => typeof x === "string" && x in OPCJE)) return null;
-    const unikalne = Array.from(new Set(ids as string[]));
+    if (ids.length > 10 || !ids.every((x) => typeof x === "string" && x in OPCJE_STRONY)) return null;
+    const liczba = (x: unknown) => (typeof x === "number" ? x : undefined);
+    const w = wycenStrone({
+      r: String(c.r),
+      o: ids as string[],
+      p: liczba(c.p),
+      j: liczba(c.j),
+      tr: typeof c.tr === "string" ? c.tr : undefined,
+      pr: typeof c.pr === "string" ? c.pr : undefined,
+      op: liczba(c.op),
+    });
+    if (!w) return null;
     const pozycje: Pozycja[] = [
-      { nazwa: r.nazwa, opis: "Wdrożenie, hosting w cenie wdrożenia", netto: r.cena },
-      ...unikalne.map((id) => {
-        const o = OPCJE[id];
-        const kwota = cenaOpcji(id, c.r as string, r.cena);
-        return kwota ? { nazwa: o.nazwa, netto: kwota } : { nazwa: o.nazwa, info: "w cenie" };
-      }),
+      ...w.pozycje,
+      ...w.wCenie.map((nazwa) => ({ nazwa, info: "w cenie" })),
     ];
-    const suma = r.cena + unikalne.reduce((s, id) => s + cenaOpcji(id, c.r as string, r.cena), 0);
+    if (w.miesiecznie)
+      pozycje.push({ nazwa: "Opieka nad stroną", opis: "płatna co miesiąc, poza sumą", info: `${w.miesiecznie} zł/mies.` });
     return {
       tytul: "Strona internetowa",
       pozycje,
       sumaEtykieta: "Razem",
-      sumaOd: true,
-      suma,
-      termin: r.termin,
-      uwaga: "Ceny dodatków orientacyjne, dokładną kwotę potwierdzimy po rozmowie.",
+      sumaOd: w.rodzaj.id === "sklep",
+      suma: w.suma,
+      termin: terminTekst(w.tygodnie),
+      uwaga: "Wycena orientacyjna, dokładną kwotę potwierdzimy po rozmowie.",
     };
   }
 
