@@ -8,16 +8,15 @@ import { zglosZdarzenie } from "@/lib/zdarzenie";
 import { readUtm, type UtmFields } from "@/lib/zrodlo";
 
 const inputClass =
-  "w-full px-0 py-2 rounded-none border-0 border-b border-gray-400 dark:border-gray-500 bg-transparent text-base text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 placeholder:italic focus:outline-none focus:border-accent focus:border-b-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed";
+  "w-full px-0 py-2 rounded-none border-0 border-b border-gray-400 dark:border-gray-500 bg-transparent text-base text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:border-accent focus:border-b-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed";
 
 const etykietaClass =
-  "block text-sm italic text-gray-600 dark:text-gray-400 mb-1";
+  "block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1";
 
 const przyciskWsteczClass =
-  "text-sm italic text-gray-600 dark:text-gray-400 underline underline-offset-4 hover:text-accent transition-colors";
+  "text-sm text-gray-600 dark:text-gray-400 underline underline-offset-4 hover:text-accent transition-colors";
 
-const podpisClass =
-  "text-xl italic text-gray-900 dark:text-white border-b-2 border-accent px-2 pb-1 hover:text-accent dark:hover:text-accent transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 dark:focus-visible:ring-offset-gray-800";
+const podpisClass = "btn-primary";
 
 const linkaPisma = {
   backgroundImage:
@@ -403,7 +402,7 @@ export default function LandingForm({
         onSubmit={handleSubmit}
         onInput={zapiszSzkic}
         onFocus={handleFormStart}
-        className="bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-sm p-6 lg:p-10 shadow-sm font-serif text-left space-y-6"
+        className="bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-sm p-6 lg:p-10 shadow-sm text-left space-y-6"
       >
         <div
           aria-hidden="true"
@@ -426,12 +425,12 @@ export default function LandingForm({
           />
         </div>
 
-        <div className="flex items-baseline justify-between gap-4 border-b border-gray-300 dark:border-gray-600 pb-3 text-sm italic text-gray-600 dark:text-gray-400">
+        <div className="!mt-0 flex items-baseline justify-between gap-4 border-b border-gray-300 dark:border-gray-600 pb-3 font-serif text-base italic text-gray-600 dark:text-gray-400">
           <span>Do: FluxLab</span>
           <span suppressHydrationWarning>{dzis}</span>
         </div>
 
-        <ol aria-label="Postęp formularza" className="flex items-center justify-center gap-2 text-xs text-gray-600 dark:text-gray-400">
+        <ol aria-label="Postęp formularza" className="flex items-center justify-center gap-2 text-sm text-gray-600 dark:text-gray-400">
           {KROKI.map((n, i) => (
             <li key={n} className="flex items-center gap-2" aria-current={krok === i ? "step" : undefined}>
               <span
@@ -467,7 +466,7 @@ export default function LandingForm({
               required
               placeholder="Jedno, dwa zdania wystarczą."
               style={{ lineHeight: "2rem" }}
-              className="block w-full resize-none border-0 bg-transparent p-0 text-base text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 placeholder:italic focus:outline-none"
+              className="block w-full resize-none border-0 bg-transparent p-0 text-base text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none"
             />
           </div>
           {nagrywanieDostepne && (
@@ -476,7 +475,7 @@ export default function LandingForm({
               onClick={przelaczNagrywanie}
               disabled={przepisuje}
               aria-pressed={nagrywa}
-              className="mt-3 inline-flex items-center gap-2 border-b border-gray-400 pb-0.5 text-sm italic text-gray-700 transition-colors hover:border-accent disabled:opacity-60 dark:border-gray-500 dark:text-gray-300"
+              className="mt-3 inline-flex items-center gap-2 border-b border-gray-400 pb-0.5 text-sm text-gray-700 transition-colors hover:border-accent disabled:opacity-60 dark:border-gray-500 dark:text-gray-300"
             >
               {nagrywa ? (
                 <>
@@ -564,16 +563,16 @@ export default function LandingForm({
                   setKontakt(f.id);
                   setErrorMsg(null);
                 }}
-                className={`border-0 border-b px-1 pb-2 pt-1 text-center transition-colors ${
+                className={`rounded-lg border px-2 py-3 text-center transition-colors ${
                   kontakt === f.id
-                    ? "border-b-2 border-accent"
-                    : "border-gray-400 hover:border-accent dark:border-gray-500"
+                    ? "border-accent bg-accent/5 ring-1 ring-accent"
+                    : "border-gray-300 hover:border-accent dark:border-gray-600"
                 }`}
               >
                 <span className="block text-base text-gray-900 dark:text-white">
                   {f.nazwa}
                 </span>
-                <span className="block text-xs italic text-gray-600 dark:text-gray-300">
+                <span className="block text-xs text-gray-600 dark:text-gray-300">
                   {f.opis}
                 </span>
               </button>
@@ -614,7 +613,7 @@ export default function LandingForm({
         </div>
 
         {krok < 2 ? (
-          <div className="flex items-baseline justify-between gap-4 pt-2">
+          <div className="flex items-center justify-between gap-4 pt-2">
             {krok > 0 ? (
               <button type="button" onClick={() => setKrok(krok - 1)} className={przyciskWsteczClass}>
                 Wstecz
@@ -631,7 +630,7 @@ export default function LandingForm({
             </button>
           </div>
         ) : (
-          <div className="flex items-baseline justify-between gap-4 pt-2">
+          <div className="flex items-center justify-between gap-4 pt-2">
             <button key="wstecz-2" type="button" onClick={() => setKrok(1)} className={przyciskWsteczClass}>
               Wstecz
             </button>
@@ -650,7 +649,7 @@ export default function LandingForm({
           <p role="alert" className="text-center text-sm text-red-700 dark:text-red-400">{errorMsg}</p>
         )}
 
-        <p className="text-center text-xs italic text-gray-600 dark:text-gray-400">
+        <p className="text-center font-serif text-sm italic text-gray-600 dark:text-gray-400">
           {microCopy}
         </p>
       </form>
