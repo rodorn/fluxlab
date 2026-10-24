@@ -2,7 +2,8 @@ import Link from "next/link";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import TloHero from "@/components/TloHero";
-import HeroZrzut from "@/components/HeroZrzut";
+import HeroNic from "@/components/HeroNic";
+import Nic from "@/components/Nic";
 import LandingForm from "@/components/LandingForm";
 import PasekAkcji from "@/components/PasekAkcji";
 import PoleAudytu from "@/components/PoleAudytu";
@@ -93,14 +94,16 @@ export default function Home() {
       <Header />
       <main className="relative flex flex-col text-gray-900 dark:text-white pt-16">
         <TloHero />
+        <Nic />
         <section className="relative z-10 mx-auto flex w-full max-w-6xl flex-col items-center px-6 pt-16 pb-16 text-center lg:pt-20">
           <WitajPonownie />
           <IntroZnaku />
           <EtykietaNocna />
-          <NaglowekSklada tekst="Strony internetowe i CRM dla firm" wyroznione={["dla", "firm"]} />
+          <NaglowekSklada tekst={"Strony internetowe i\u00a0CRM dla firm"} wyroznione={["dla", "firm"]} />
           <PodtytulZrodlo />
           <div className="animate-fade-up-1 mt-10 flex w-full flex-col items-center justify-center gap-3 sm:w-auto sm:flex-row">
             <a
+              id="cta-hero"
               href="#kontakt"
               className="btn-primary btn-lg w-full sm:w-60"
             >
@@ -113,7 +116,7 @@ export default function Home() {
               Sprawdź swoją stronę
             </Link>
           </div>
-          <HeroZrzut />
+          <HeroNic />
         </section>
 
         <section aria-labelledby="oferta" className="container-wide relative pb-16">
@@ -121,8 +124,9 @@ export default function Home() {
           <h2 id="oferta" className="sr-only">
             Oferta
           </h2>
+          <span data-nic aria-hidden="true" className="wezel-nici" />
           <p aria-hidden="true" className="section-label mb-6 text-center">
-            <span className="tabular-nums opacity-60">01</span> Oferta
+            <span className="numer-sekcji">01</span> Oferta
           </p>
           <div className="grid gap-5 md:grid-cols-2">
             {OFERTA.map((o, i) => (
@@ -195,7 +199,7 @@ export default function Home() {
           </RevealOnScroll>
         </section>
 
-        <section aria-label="Zasada" className="maska-sekcji relative overflow-hidden bg-accent-solid py-20 text-white lg:py-32">
+        <section data-nic-jasne aria-label="Zasada" className="maska-sekcji relative overflow-hidden bg-accent-solid py-20 text-white lg:py-32">
           <div className="container-wide">
             <div className="flex items-baseline justify-between border-b border-white/30 pb-4 text-xs font-medium uppercase tracking-widest text-white/70">
               <span>Zasada</span>
@@ -223,24 +227,17 @@ export default function Home() {
         <section className="relative border-t border-gray-200 dark:border-white/10 overflow-x-clip py-24 lg:py-32">
           <NapisBoczny tekst="Realizacja" />
           <div className="container-wide">
+            <span data-nic aria-hidden="true" className="wezel-nici" />
             <RevealOnScroll className="text-center">
-              <p className="section-label mb-3"><span className="tabular-nums opacity-60">02</span> Ostatnia realizacja</p>
+              <p className="section-label mb-3"><span className="numer-sekcji">02</span> Ostatnia realizacja</p>
               <h2 className="text-balance text-4xl font-bold tracking-tighter lg:text-5xl">
                 Nowa strona FINREAL w 12 dni
               </h2>
             </RevealOnScroll>
             <RevealOnScroll delay={1}>
               <div className="ramka-3d relative mx-auto mt-12 max-w-5xl">
-                <span
-                  aria-hidden="true"
-                  className="paralaksa-a absolute -right-6 -top-6 h-28 w-28 rounded-full bg-gradient-to-br from-accent-solid to-indigo-800 sm:-right-10 sm:-top-10 sm:h-40 sm:w-40"
-                />
-                <span
-                  aria-hidden="true"
-                  className="paralaksa-b absolute -bottom-6 -left-6 h-24 w-24 rounded-full border-2 border-accent/40 sm:-bottom-10 sm:-left-10 sm:h-36 sm:w-36"
-                />
-                <div className="relative rounded-[1.75rem] bg-gradient-to-br from-accent-solid via-indigo-500/60 to-indigo-800 p-[3px] shadow-2xl shadow-accent/20">
-                  <div className="overflow-hidden rounded-[1.6rem] bg-white dark:bg-gray-900">
+                <div className="relative">
+                  <div className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-2xl dark:border-white/10 dark:bg-gray-900">
                     <div className="flex items-center gap-1.5 bg-gray-900 px-5 py-3">
                       <span className="h-2.5 w-2.5 rounded-full bg-white/25" />
                       <span className="h-2.5 w-2.5 rounded-full bg-white/25" />
@@ -289,9 +286,10 @@ export default function Home() {
         <section className="relative border-t border-gray-200 dark:border-white/10 py-20 lg:py-24">
           <NapisBoczny tekst="Audyt" />
           <div className="container-wide">
+            <span data-nic aria-hidden="true" className="wezel-nici" />
             <RevealOnScroll className="text-center">
               <Ikona nazwa="audyt" className="mx-auto mb-4 h-11 w-11" />
-              <p className="section-label mb-3"><span className="tabular-nums opacity-60">03</span> Audyt</p>
+              <p className="section-label mb-3"><span className="numer-sekcji">03</span> Audyt</p>
               <h2 className="text-balance text-4xl font-bold tracking-tighter lg:text-5xl">
                 <PisanyTekst id="audyt" tekst="Sprawdź swoją stronę w minutę" />
               </h2>
@@ -305,8 +303,9 @@ export default function Home() {
         <section className="relative border-t border-gray-200 dark:border-white/10 py-24 lg:py-32">
           <NapisBoczny tekst="CRM" />
           <div className="container-wide">
+            <span data-nic aria-hidden="true" className="wezel-nici" />
             <RevealOnScroll className="mb-12 text-center">
-              <p className="section-label mb-3"><span className="tabular-nums opacity-60">04</span> CRM</p>
+              <p className="section-label mb-3"><span className="numer-sekcji">04</span> CRM</p>
               <h2 className="text-balance text-4xl font-bold tracking-tighter lg:text-5xl">
                 <PisanyTekst id="crm" tekst="Twój CRM czyta zapytanie, zanim Ty je przeczytasz" />
               </h2>
@@ -326,6 +325,7 @@ export default function Home() {
           className="scroll-mt-20 border-t border-gray-200 dark:border-white/10 py-16"
         >
           <div className="container-wide">
+            <span data-nic aria-hidden="true" className="wezel-nici" />
             <RevealOnScroll>
 <LandingForm
               formId="home"

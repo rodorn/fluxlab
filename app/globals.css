@@ -1063,6 +1063,7 @@ p {
   .czat-dymek,
   .tlo-hero__warstwa,
   .tlo-kursora,
+  .nic,
   button,
   [role="tablist"],
   .btn-primary,
@@ -1332,16 +1333,6 @@ blockquote {
     from { transform: perspective(1400px) rotateX(14deg) scale(0.92); }
     to { transform: perspective(1400px) rotateX(0deg) scale(1); }
   }
-  .paralaksa-a {
-    animation: paralaksa-a linear both;
-    animation-timeline: view();
-  }
-  .paralaksa-b {
-    animation: paralaksa-b linear both;
-    animation-timeline: view();
-  }
-  @keyframes paralaksa-a { from { transform: translateY(48px); } to { transform: translateY(-48px); } }
-  @keyframes paralaksa-b { from { transform: translateY(-40px); } to { transform: translateY(40px); } }
   /* Tło sekcji rośnie do pełnej szerokości. Skalowana jest osobna warstwa
      tła (transform), a nie clip-path, który malował całą sekcję co klatkę. */
   .maska-sekcji {
@@ -1368,7 +1359,7 @@ blockquote {
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .ramka-3d, .paralaksa-a, .paralaksa-b, .maska-sekcji::before { animation: none; }
+  .ramka-3d, .maska-sekcji::before { animation: none; }
 }
 
 /* 23: menu mobilne na sprężynie, pozycje wchodzą kolejno */
@@ -1641,4 +1632,82 @@ main figure > figcaption:not(:has(p))::before {
 .slowo-szeryf.kursywa-jasna {
   background-image: none;
   -webkit-text-fill-color: rgb(255 255 255 / 0.8);
+}
+
+/* Nić: rysunek drogi zapytania w hero i linia przez stronę główną */
+.hero-nic__tusz {
+  stroke: rgb(var(--gray-300));
+  stroke-width: 1.25;
+}
+.hero-nic__tusz * { vector-effect: non-scaling-stroke; }
+.hero-nic__mocny { stroke: rgb(var(--gray-400)); stroke-width: 2.5; }
+.hero-nic__siatka { stroke: rgb(var(--gray-200)); }
+.dark .hero-nic__tusz { stroke: rgb(255 255 255 / 0.18); }
+.dark .hero-nic__mocny { stroke: rgb(255 255 255 / 0.32); }
+.dark .hero-nic__siatka { stroke: rgb(255 255 255 / 0.07); }
+.hero-nic__linia {
+  stroke: rgb(var(--accent));
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: hero-nic-rysuj 2.4s cubic-bezier(0.65, 0, 0.35, 1) 0.5s forwards;
+}
+.hero-nic__kropka {
+  fill: rgb(var(--accent));
+  opacity: 0;
+  animation: hero-nic-kropka 0.4s ease 2.8s forwards;
+}
+.hero-nic__podpis {
+  font-family: var(--font-serif), Georgia, serif;
+  font-style: italic;
+  font-size: 0.9375rem;
+  white-space: nowrap;
+  color: rgb(var(--gray-500));
+}
+@media (max-width: 639px) {
+  .hero-nic__linia { stroke-width: 5; }
+  .hero-nic__kropka { r: 8px; }
+  .hero-nic__podpis { font-size: 0.8125rem; }
+}
+@keyframes hero-nic-rysuj { to { stroke-dashoffset: 0; } }
+@keyframes hero-nic-kropka { to { opacity: 1; } }
+
+.nic__linia,
+.nic__jasna {
+  stroke: rgb(var(--accent));
+  stroke-width: 1.5;
+  stroke-linecap: round;
+}
+.nic__jasna { stroke: rgb(255 255 255 / 0.85); }
+.nic__czubek { fill: rgb(var(--accent)); opacity: 0; }
+.nic__wezel {
+  fill: rgb(var(--biel));
+  stroke: rgb(var(--accent));
+  stroke-width: 1.5;
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: fill 0.3s ease, transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.dark .nic__wezel { fill: rgb(var(--gray-950)); }
+.nic__wezel--jest,
+.dark .nic__wezel--jest { fill: rgb(var(--accent)); transform: scale(1.25); }
+.wezel-nici { display: block; height: 3rem; }
+
+.numer-sekcji {
+  font-family: var(--font-serif), Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.375rem;
+  letter-spacing: 0;
+  text-transform: none;
+  margin-right: 0.3em;
+  vertical-align: -0.1em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-nic__linia { animation: none; stroke-dashoffset: 0; }
+  .hero-nic__kropka { display: none; }
+  .nic__wezel { transition: none; }
 }

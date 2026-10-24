@@ -3,13 +3,23 @@
 import { useEffect, useState } from "react";
 
 /* Pasek „Zamów wycenę” w telefonie: pokazuje się po zjechaniu z pierwszego
-   ekranu, chowa przy formularzu, żeby nie zasłaniał pól. */
+   ekranu, gdy przycisk z hero zniknął z widoku, chowa przy formularzu,
+   żeby nie zasłaniał pól. */
 export default function PasekAkcji() {
   const [widoczny, setWidoczny] = useState(false);
 
   useEffect(() => {
     const formularz = document.getElementById("kontakt");
+    const ctaHero = document.getElementById("cta-hero");
     let przyFormularzu = false;
+    let ctaWidoczne = !!ctaHero;
+    const obsCta = ctaHero
+      ? new IntersectionObserver(([w]) => {
+          ctaWidoczne = w.isIntersecting;
+          sprawdz();
+        })
+      : null;
+    if (ctaHero) obsCta?.observe(ctaHero);
     const obs = formularz
       ? new IntersectionObserver(([w]) => {
           przyFormularzu = w.isIntersecting;
@@ -19,7 +29,7 @@ export default function PasekAkcji() {
     if (formularz) obs?.observe(formularz);
 
     function sprawdz() {
-      const w = window.scrollY > window.innerHeight * 0.6 && !przyFormularzu;
+      const w = window.scrollY > window.innerHeight * 0.6 && !przyFormularzu && !ctaWidoczne;
       setWidoczny(w);
       document.body.toggleAttribute("data-pasek-akcji", w);
     }
@@ -28,6 +38,7 @@ export default function PasekAkcji() {
     return () => {
       window.removeEventListener("scroll", sprawdz);
       obs?.disconnect();
+      obsCta?.disconnect();
       document.body.removeAttribute("data-pasek-akcji");
     };
   }, []);
