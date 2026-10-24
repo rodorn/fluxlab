@@ -7802,3 +7802,11 @@ Otwarte decyzje dla stratega: kanał `audyt-wynik` zamknąć (4 doby bez maila, 
 **Dowód:** `cykl/plan-ruchu.md` bez zmian (Z11, Z13, Z14, Z15 otwarte); `python3 ~/Projekty/fluxlab-ruch/raport_ruchu.py` 13:43.
 **Dla Pawła:**
 **Zostało otwarte:** Z11 (18:30), Z13 (25.10 01:45), Z14 (02:30), Z15 (25.10 03:00). W drzewie leżą niezacommitowane obrazy OG w `app/ksef-2027/page.tsx` i `app/numer-ksef/page.tsx` z innej sesji, ten cykl ich nie rusza.
+
+## 2026-10-24 14:45
+**Kanał:** brak (otwarte Z11 ma godzinę 18:30 i okno „od 13:30”, Z13 i Z15 nie wcześniej niż 25.10 01:45 i 03:00, Z14 to bilans o 02:30).
+**Co zrobione:** nic nie poszło w świat; Z11 o 14:45 dałoby pomiar z 75 minut, a plan zabrania dziś treści, outreachu, social i żądań indeksowania, więc nie ma innej dozwolonej pracy.
+**Ruch:** doba 85 odsłon, 67 osób (−28% wobec średniej 118,4); źródła: b2b-email 16 (piksel otwarcia, nie ludzie), facebook 4, instagram 4, l.facebook.com 3, m.facebook.com 3; LinkedIn 2 sesje, X 1, YouTube 0; uruchomienia narzędzi 0.
+**Dowód:** `cykl/plan-ruchu.md` bez zmian (Z11, Z13, Z14, Z15 otwarte); `python3 ~/Projekty/fluxlab-ruch/raport_ruchu.py` 14:43.
+**Dla Pawła:**
+**Zostało otwarte:** Z11 (18:30), Z13 (25.10 01:45), Z14 (02:30), Z15 (25.10 03:00). Budżet o 14:45: „utrzymaj” (rano „wstrzymaj”).
