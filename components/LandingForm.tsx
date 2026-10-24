@@ -23,7 +23,7 @@ const FORMY: { id: Kontakt; nazwa: string; opis: string }[] = [
 
 
 
-const KROKI = ["Czego potrzebujesz", "Gdzie odpisać", "Jak się odezwać"];
+const KROKI = ["Jak się odezwać", "Czego potrzebujesz", "Gdzie odpisać"];
 
 interface Props {
   /** Identyfikator formularza w GA, np. "diagnosis_lp_leadow". */
@@ -423,7 +423,7 @@ export default function LandingForm({
           ))}
         </ol>
 
-        <div data-krok="0" hidden={krok !== 0} className="space-y-5">
+        <div data-krok="1" hidden={krok !== 1} className="space-y-5">
         <div>
           <label
             htmlFor="message"
@@ -477,7 +477,7 @@ export default function LandingForm({
 
         </div>
 
-        <div data-krok="1" hidden={krok !== 1} className="space-y-5">
+        <div data-krok="2" hidden={krok !== 2} className="space-y-5">
         <div className="grid sm:grid-cols-2 gap-5">
           <div>
             <label
@@ -518,7 +518,7 @@ export default function LandingForm({
 
         </div>
 
-        <div data-krok="2" hidden={krok !== 2} className="space-y-5">
+        <div data-krok="0" hidden={krok !== 0} className="space-y-5">
         <fieldset>
           <legend className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
             Jak mamy się odezwać?
