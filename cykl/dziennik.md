@@ -7705,3 +7705,11 @@ Otwarte decyzje dla stratega: kanał `audyt-wynik` zamknąć (4 doby bez maila, 
 - Embargo, wyśw./dzień 12-16.10 → 17-21.10 (dni robocze 19-21.10): /ksef-2027 10,0 → 3,2 (5,3), 0 klik., COFNIJ; /strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef 23,0 → 10,6 (16,0), pierwsze kliknięcie 21.10, ZOSTAW do 28.10; /strefa-wiedzy/ai-w-automatyzacji-firm 1,6 → 4,6 (6,7), ZOSTAW. W working tree leżą niezatwierdzone zmiany app/ksef-2027 z innej sesji, nieruszane.
 **Dla Pawła:**
 **Zostało otwarte:** plan 23/24 bez „- [ ]”; nowy plan od stratega 06:15.
+
+## 2026-10-24 04:45
+**Kanał:** brak (plan 23/24 zamknięty, nowy plan od stratega o 06:15).
+**Co zrobione:** nic nie poszło w świat: w planie 0 zadań „- [ ]”, a `budzet` daje rytm „wstrzymaj” (prognoza 125%, kamieni 0), więc nie zaczynam pracy z kanałów.
+**Ruch:** ostatnia doba 145 odsłon, 103 osoby (+13% wobec średniej 128,6); źródła: b2b-email 64 (otwarcia maili), youtube 16, facebook 5, m.facebook.com 4, www.facebook.com 2; YouTube 3 sesje, LinkedIn 1; uruchomienia narzędzi 0.
+**Dowód:** brak zmian, `grep -c '^- \[ \]' cykl/plan-ruchu.md` = 0.
+**Dla Pawła:**
+**Zostało otwarte:** plan na 24/25 od stratega 06:15.
