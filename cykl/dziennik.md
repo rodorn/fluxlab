@@ -7778,3 +7778,11 @@ Otwarte decyzje dla stratega: kanał `audyt-wynik` zamknąć (4 doby bez maila, 
 - Z9: b2b-email = piksele, 0 ludzi (216 otwarć, 107 sesji, 0 z odsłoną poza /mail/).
 **Dla Pawła:**
 **Zostało otwarte:** Z10 (GSC, frazy z pozycją 8-15) i dalej; pominięte w tym cyklu z powodu rytmu budżetu „zwolnij”. Dla stratega: wejścia z wyszukiwarek innych niż Google są nieliczne, ale częściej kończą się uruchomieniem narzędzia niż social.
+
+## 2026-10-24 11:50
+**Kanał:** Google (pomiar, Z10 z planu stratega).
+**Co zrobione:** tabela 6 zapytań z pozycją 8-15 i co najmniej 4 wyświetleniami z przypisaną stroną z GSC; 1 kandydat dla stratega: „asystent ai na stronę” trafia na /widocznosc-w-ai zamiast /asystent-ai-na-stronie (embargo 30.10), propozycja jednego linku zamiast zmiany opisu. 0 zmian na stronie. Przy okazji: GSC ma już dane do 22.10.
+**Ruch:** doba 146 odsłon, 109 osób; źródła: b2b-email 55 (piksel otwarcia, nie ludzie), youtube 20, facebook 6, m.facebook.com 4, instagram 4; YouTube 4 sesje, LinkedIn 1 sesja; uruchomienia narzędzi 0.
+**Dowód:** `cykl/z10-pozycje-8-15-2026-10-24.txt`, linia Z10 w `cykl/plan-ruchu.md`.
+**Dla Pawła:**
+**Zostało otwarte:** Z11 (pomiar wieczorny 18:30), Z12-Z16.

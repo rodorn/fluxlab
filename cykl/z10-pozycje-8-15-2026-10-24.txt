@@ -1,0 +1,8 @@
+# Z10 24.10.2026 11:50: zapytania z pozycją 8-15 i >=4 wyśw. (źródło gsc-zapytania-2026-10-23.txt, 14-20.10), strona z GSC filtr query=!, 7 dni = 16-22.10
+fraza	wyśw.(16-22.10)	poz.	strona	fraza w title/description	embargo	kandydat
+wdrożenie n8n	14	14,3	/wdrozenie-n8n-cena	tak (title)	29.10	nie
+zapier cennik	4	10,8	/strefa-wiedzy/zapier-vs-make	tak (description)	29.10	nie
+asystent ai na stronę	6	14,3	/widocznosc-w-ai	nie (title „Asystent AI a Twoja strona”)	brak	TAK, ale kanibalizacja: fraza należy do /asystent-ai-na-stronie (embargo 30.10, fraza w description); /widocznosc-w-ai nie linkuje do niej (0 odnośników)
+n8n vs make	5	13,0	/strefa-wiedzy/make-vs-n8n	tak (description, zmiana 22.10)	brak na liście, ale w ocenie 7 dni od 22.10	nie
+zapier cena	4	8,8	/strefa-wiedzy/zapier-make-n8n-porownanie (2) + /strefa-wiedzy/zapier-vs-make (2)	nie / nie (jest „cennik”)	brak / 29.10	nie (2 wyśw.)
+integracja crm z erp	2	12,0	/integracja-crm-z-erp	tak (title)	26.10	nie
