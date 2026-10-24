@@ -1209,7 +1209,7 @@ p {
 .slowo-szeryf {
   font-family: var(--font-serif), Georgia, serif;
   font-style: italic;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: -0.01em;
   padding-right: 0.04em;
   color: rgb(var(--accent));

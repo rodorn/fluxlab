@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { ViewTransition } from "react";
-import { Instrument_Sans, Instrument_Serif } from "next/font/google";
+import { Fraunces, Instrument_Sans } from "next/font/google";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import ZgodaCookies from "@/components/ZgodaCookies";
 import TytulKarty from "@/components/TytulKarty";
@@ -23,11 +23,11 @@ const instrumentSans = Instrument_Sans({
 
 // Drugi krój tylko na wyróżnione słowa w nagłówkach, kursywą. Tu swap:
 // zastępcza kursywa (DejaVu Serif na Linuksie) psuje ogonki ą i ę.
-const instrumentSerif = Instrument_Serif({
+const fraunces = Fraunces({
   variable: "--font-serif",
   subsets: ["latin", "latin-ext"],
-  weight: "400",
   style: "italic",
+  axes: ["opsz"],
   display: "swap",
   fallback: ["Times New Roman", "Liberation Serif", "Georgia", "serif"],
 });
@@ -213,7 +213,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${instrumentSans.variable} ${instrumentSerif.variable} font-sans`}
+        className={`${instrumentSans.variable} ${fraunces.variable} font-sans`}
       >
         <div
           hidden
