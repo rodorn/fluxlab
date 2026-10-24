@@ -1681,7 +1681,24 @@ main figure > figcaption:not(:has(p))::before {
   stroke-linecap: round;
 }
 .nic__jasna { stroke: rgb(255 255 255 / 0.85); }
-.nic__czubek { fill: rgb(var(--accent)); opacity: 0; }
+.nic__okno,
+.nic__wnetrze {
+  position: absolute;
+  inset: 0;
+  will-change: transform;
+}
+.nic__okno { overflow: hidden; }
+.nic__czubek {
+  position: absolute;
+  top: -3.5px;
+  left: -3.5px;
+  width: 7px;
+  height: 7px;
+  border-radius: 9999px;
+  background: rgb(var(--accent));
+  opacity: 0;
+  will-change: transform;
+}
 .nic__wezel {
   fill: rgb(var(--biel));
   stroke: rgb(var(--accent));

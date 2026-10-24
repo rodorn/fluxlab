@@ -5,27 +5,32 @@ import { useEffect, useRef } from "react";
 /** Jedna linia przez całą stronę główną. Zaczyna się na końcu rysunku w hero,
  *  przechodzi marginesami i przecina oś w każdym punkcie [data-nic], na zmianę
  *  z prawej i z lewej, jak ścieg. Rysuje się przy przewijaniu. Nad sekcją
- *  [data-nic-jasne] (fioletowe tło) biegnie biała kopia linii. */
+ *  [data-nic-jasne] (fioletowe tło) biegnie biała kopia linii. Linia jest
+ *  rysowana raz, a odsłania ją okno przesuwane samymi transformacjami, więc
+ *  przewijanie nie przemalowuje strony. */
 export default function Nic() {
-  const ref = useRef<SVGSVGElement | null>(null);
+  const ref = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const svg = ref.current;
-    const main = svg?.parentElement;
-    if (!svg || !main) return;
+    const nic = ref.current;
+    const main = nic?.parentElement;
+    if (!nic || !main) return;
+    const [svg, svgWezlow] = nic.querySelectorAll<SVGSVGElement>("svg");
+    const okno = nic.querySelector<HTMLElement>(".nic__okno")!;
+    const wnetrze = nic.querySelector<HTMLElement>(".nic__wnetrze")!;
     const linia = svg.querySelector<SVGPathElement>(".nic__linia")!;
     const jasna = svg.querySelector<SVGPathElement>(".nic__jasna")!;
-    const okno = svg.querySelector<SVGRectElement>(".nic__okno rect")!;
-    const czubek = svg.querySelector<SVGCircleElement>(".nic__czubek")!;
-    const grupaWezlow = svg.querySelector<SVGGElement>(".nic__wezly")!;
+    const przyciecie = svg.querySelector<SVGRectElement>(".nic__przyciecie rect")!;
+    const czubek = nic.querySelector<HTMLElement>(".nic__czubek")!;
     const spokojny = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     ).matches;
 
     let dlugosc = 0;
+    let wysokosc = 0;
     let gora = 0;
     let probki: number[] = [];
-    let wezly: { s: number; el: SVGCircleElement }[] = [];
+    let wezly: { y: number; el: SVGCircleElement }[] = [];
     let teraz = 0;
     let cel = 0;
     let ramkaRuchu = 0;
@@ -38,8 +43,9 @@ export default function Nic() {
       gora = m.top + window.scrollY;
       const W = main!.clientWidth;
       const H = main!.scrollHeight;
-      svg!.setAttribute("viewBox", `0 0 ${W} ${H}`);
-      svg!.style.height = `${H}px`;
+      wysokosc = H;
+      for (const s of [svg, svgWezlow]) s.setAttribute("viewBox", `0 0 ${W} ${H}`);
+      nic!.style.height = `${H}px`;
 
       const kotwice = [
         ...main!.querySelectorAll<HTMLElement>("[data-nic]"),
@@ -77,11 +83,9 @@ export default function Nic() {
       linia.setAttribute("d", d);
       jasna.setAttribute("d", d);
       dlugosc = linia.getTotalLength();
-      for (const p of [linia, jasna])
-        p.style.strokeDasharray = `${dlugosc} ${dlugosc}`;
 
-      // Najniższy dotąd punkt linii dla każdej próbki: z niego liczony jest
-      // zasięg rysowania, więc poziome przejścia nie cofają czubka.
+      // Najniższy dotąd punkt linii dla każdej próbki: z nich czubek znajduje
+      // miejsce na linii dla danej wysokości okna.
       probki = [];
       let max = -Infinity;
       for (let s = 0; s <= dlugosc; s += KROK) {
@@ -89,7 +93,7 @@ export default function Nic() {
         probki.push(max);
       }
 
-      grupaWezlow.replaceChildren();
+      svgWezlow.replaceChildren();
       wezly = kotwice.slice(1).map((k, i, lista) => {
         const c = document.createElementNS(
           "http://www.w3.org/2000/svg",
@@ -99,23 +103,21 @@ export default function Nic() {
         c.setAttribute("cy", String(k.y));
         c.setAttribute("r", i === lista.length - 1 ? "7" : "5");
         c.setAttribute("class", "nic__wezel");
-        grupaWezlow.appendChild(c);
-        let s = probki.findIndex((y) => y >= k.y - 0.5) * KROK;
-        if (s < 0) s = dlugosc;
-        return { s, el: c };
+        svgWezlow.appendChild(c);
+        return { y: k.y, el: c };
       });
 
       const jasne = main!.querySelector<HTMLElement>("[data-nic-jasne]");
       if (jasne) {
         const r = jasne.getBoundingClientRect();
-        okno.setAttribute("x", String(r.left - m.left));
-        okno.setAttribute("y", String(r.top - m.top));
-        okno.setAttribute("width", String(r.width));
-        okno.setAttribute("height", String(r.height));
+        przyciecie.setAttribute("x", String(r.left - m.left));
+        przyciecie.setAttribute("y", String(r.top - m.top));
+        przyciecie.setAttribute("width", String(r.width));
+        przyciecie.setAttribute("height", String(r.height));
       }
 
       if (spokojny) {
-        teraz = cel = dlugosc;
+        teraz = cel = H;
         rysuj();
       } else {
         przewin();
@@ -136,18 +138,18 @@ export default function Nic() {
     }
 
     function rysuj() {
-      const offset = String(dlugosc - teraz);
-      linia.style.strokeDashoffset = offset;
-      jasna.style.strokeDashoffset = offset;
+      const ukryte = wysokosc - teraz;
+      okno.style.transform = `translate3d(0,${-ukryte}px,0)`;
+      wnetrze.style.transform = `translate3d(0,${ukryte}px,0)`;
       for (const w of wezly)
-        w.el.classList.toggle("nic__wezel--jest", teraz >= w.s - 1);
-      if (spokojny || teraz <= 0 || teraz >= dlugosc) {
+        w.el.classList.toggle("nic__wezel--jest", teraz >= w.y - 1);
+      const s = zasieg(teraz);
+      if (spokojny || teraz <= 0 || s >= dlugosc) {
         czubek.style.opacity = "0";
         return;
       }
-      const p = linia.getPointAtLength(teraz);
-      czubek.setAttribute("cx", String(p.x));
-      czubek.setAttribute("cy", String(p.y));
+      const p = linia.getPointAtLength(s);
+      czubek.style.transform = `translate3d(${p.x}px,${p.y}px,0)`;
       czubek.style.opacity = "1";
     }
 
@@ -162,7 +164,9 @@ export default function Nic() {
     function przewin() {
       const naDole =
         window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2;
-      cel = naDole ? dlugosc : zasieg(window.scrollY + window.innerHeight * 0.72 - gora);
+      cel = naDole
+        ? wysokosc
+        : Math.min(wysokosc, Math.max(0, window.scrollY + window.innerHeight * 0.72 - gora));
       if (!ramkaRuchu && !spokojny) ramkaRuchu = requestAnimationFrame(krok);
     }
 
@@ -185,20 +189,26 @@ export default function Nic() {
   }, []);
 
   return (
-    <svg
+    <div
       ref={ref}
       aria-hidden="true"
-      className="nic pointer-events-none absolute inset-x-0 top-0 z-20 w-full overflow-visible"
+      className="nic pointer-events-none absolute inset-x-0 top-0 z-20"
     >
-      <defs>
-        <clipPath id="nic-okno" className="nic__okno">
-          <rect />
-        </clipPath>
-      </defs>
-      <path className="nic__linia" fill="none" />
-      <path className="nic__jasna" fill="none" clipPath="url(#nic-okno)" />
-      <g className="nic__wezly" />
-      <circle className="nic__czubek" r="3.5" />
-    </svg>
+      <div className="nic__okno">
+        <div className="nic__wnetrze">
+          <svg className="absolute inset-0 h-full w-full overflow-visible">
+            <defs>
+              <clipPath id="nic-okno" className="nic__przyciecie">
+                <rect />
+              </clipPath>
+            </defs>
+            <path className="nic__linia" fill="none" />
+            <path className="nic__jasna" fill="none" clipPath="url(#nic-okno)" />
+          </svg>
+        </div>
+      </div>
+      <svg className="absolute inset-0 h-full w-full overflow-visible" />
+      <span className="nic__czubek" />
+    </div>
   );
 }
