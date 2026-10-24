@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import TloHero from "@/components/TloHero";
 import HeroNic from "@/components/HeroNic";
+import Nic from "@/components/Nic";
 import LandingForm from "@/components/LandingForm";
 import PasekAkcji from "@/components/PasekAkcji";
 import PoleAudytu from "@/components/PoleAudytu";
@@ -92,6 +93,7 @@ export default function Home() {
       <Header />
       <main className="relative flex flex-col text-gray-900 dark:text-white pt-16">
         <TloHero />
+        <Nic />
         <section className="relative z-10 mx-auto flex w-full max-w-6xl flex-col items-center px-6 pt-16 pb-16 text-center lg:pt-20">
           <WitajPonownie />
           <EtykietaNocna />
@@ -120,6 +122,7 @@ export default function Home() {
           <h2 id="oferta" className="sr-only">
             Oferta
           </h2>
+          <span data-nic aria-hidden="true" className="wezel-nici" />
           <p aria-hidden="true" className="section-label mb-6 text-center">
             <span className="numer-sekcji">01</span> Oferta
           </p>
@@ -194,7 +197,7 @@ export default function Home() {
           </RevealOnScroll>
         </section>
 
-        <section aria-label="Zasada" className="maska-sekcji relative overflow-hidden bg-accent-solid py-20 text-white lg:py-32">
+        <section data-nic-jasne aria-label="Zasada" className="maska-sekcji relative overflow-hidden bg-accent-solid py-20 text-white lg:py-32">
           <div className="container-wide">
             <div className="flex items-baseline justify-between border-b border-white/30 pb-4 text-xs font-medium uppercase tracking-widest text-white/70">
               <span>Zasada</span>
@@ -222,6 +225,7 @@ export default function Home() {
         <section className="relative border-t border-gray-200 dark:border-white/10 overflow-x-clip py-24 lg:py-32">
           <NapisBoczny tekst="Realizacja" />
           <div className="container-wide">
+            <span data-nic aria-hidden="true" className="wezel-nici" />
             <RevealOnScroll className="text-center">
               <p className="section-label mb-3"><span className="numer-sekcji">02</span> Ostatnia realizacja</p>
               <h2 className="text-balance text-4xl font-bold tracking-tighter lg:text-5xl">
@@ -280,6 +284,7 @@ export default function Home() {
         <section className="relative border-t border-gray-200 dark:border-white/10 py-20 lg:py-24">
           <NapisBoczny tekst="Audyt" />
           <div className="container-wide">
+            <span data-nic aria-hidden="true" className="wezel-nici" />
             <RevealOnScroll className="text-center">
               <Ikona nazwa="audyt" className="mx-auto mb-4 h-11 w-11" />
               <p className="section-label mb-3"><span className="numer-sekcji">03</span> Audyt</p>
@@ -296,6 +301,7 @@ export default function Home() {
         <section className="relative border-t border-gray-200 dark:border-white/10 py-24 lg:py-32">
           <NapisBoczny tekst="CRM" />
           <div className="container-wide">
+            <span data-nic aria-hidden="true" className="wezel-nici" />
             <RevealOnScroll className="mb-12 text-center">
               <p className="section-label mb-3"><span className="numer-sekcji">04</span> CRM</p>
               <h2 className="text-balance text-4xl font-bold tracking-tighter lg:text-5xl">
@@ -317,6 +323,7 @@ export default function Home() {
           className="scroll-mt-20 border-t border-gray-200 dark:border-white/10 py-16"
         >
           <div className="container-wide">
+            <span data-nic aria-hidden="true" className="wezel-nici" />
             <RevealOnScroll>
 <LandingForm
               formId="home"

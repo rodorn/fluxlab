@@ -1,6 +1,7 @@
-/** Rysunek w hero: jedna linia przechodzi przez formularz, kartę w CRM i raport. */
+/** Rysunek w hero: jedna linia przechodzi przez formularz, kartę w CRM i raport.
+ *  Kończy się kotwicą, od której Nic prowadzi linię dalej przez stronę. */
 const NIC =
-  "M0 210C40 210 60 166 110 166H210C300 166 340 84 436 84A16 16 0 1 1 436 116A16 16 0 1 1 436 84C500 84 530 40 610 40C690 40 700 196 750 196L778 186L806 191L834 160L862 140L890 96";
+  "M0 210C40 210 60 166 110 166H210C300 166 340 84 436 84A16 16 0 1 1 436 116A16 16 0 1 1 436 84C500 84 530 40 610 40C690 40 700 196 750 196L778 186L806 191L834 160L862 140L890 96C910 68 950 120 950 280";
 
 const PODPISY = [
   ["16.67%", "zapytanie"],
@@ -18,11 +19,7 @@ export default function HeroNic() {
           role="img"
           aria-label="Zapytanie z formularza trafia do CRM jako karta leada i do raportu"
         >
-          <g
-            className="hero-nic__tusz"
-            fill="none"
-            strokeLinecap="round"
-          >
+          <g className="hero-nic__tusz" fill="none" strokeLinecap="round">
             <rect x="90" y="50" width="140" height="180" rx="10" />
             <path className="hero-nic__mocny" d="M110 78H170" />
             <path d="M110 104H140M110 124H210M110 146H150" />
@@ -64,9 +61,6 @@ export default function HeroNic() {
               pathLength={1}
             />
           </g>
-          <circle className="hero-nic__kropka" r="4">
-            <animateMotion dur="3.2s" begin="2.8s" fill="freeze" path={NIC} />
-          </circle>
         </svg>
         {PODPISY.map(([x, tekst]) => (
           <span
@@ -78,6 +72,11 @@ export default function HeroNic() {
             {tekst}
           </span>
         ))}
+        <span
+          data-nic
+          aria-hidden="true"
+          className="absolute bottom-0 left-[98.96%] h-0 w-0"
+        />
       </div>
       <figcaption className="mt-12 text-xs tracking-wide text-gray-500 dark:text-gray-400">
         Jedno zapytanie: od formularza przez CRM do raportu, bez przepisywania.
