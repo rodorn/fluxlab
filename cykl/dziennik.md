@@ -7753,3 +7753,17 @@ Otwarte decyzje dla stratega: kanał `audyt-wynik` zamknąć (4 doby bez maila, 
 **Dowód:** Bing URL Submission „URLs submitted today 0 → 10”, quota 100 → 90 (/asystent-ai-na-stronie, /widocznosc-w-ai, /audyt-kurierski, /ksef-integracja, /e-doreczenia-integracja, /dane-sprzedawcy, /tansze-automatyzacje, /podwojny-adres, /strony-www, /automatyzacja-leadow-crm). Bing AI Performance: dane do 19.10, 13-19.10 15 cytowań (bez zmian); cytowane: www.fluxlab.pl/strefa-wiedzy/jak-liczyc-zdrowotna-jdg 5, /strefa-wiedzy/ryczalt-czy-liniowy 4. GSC `--tylko-stan`: 5 z 5 „znajduje się w Google”. Commit bcdb160, produkcja `<title>KSeF od 1 stycznia 2027: lista kontrolna dla firm | Fluxlab`, IndexNow 2 z 3.
 **Dla Pawła:**
 **Zostało otwarte:** Z6 do Z16 według godzin planu. Copilot cytuje adres z www (jak-liczyc-zdrowotna-jdg), do sprawdzenia przez stratega, czy www przekierowuje 308 na wersję bez www. Budżet „zwolnij”, przerwa 45 min.
+
+## 2026-10-24 10:05
+**Kanał:** pomiar social (plan dobowy Z6).
+**Co zrobione:** dopasowane kampanie utm z 7 dni (po odsiewie par, serii i salw w `pomiar-kanalow.py`) do 49 postów z linkiem utm z dzienników instagram, x, meta, youtube z 17-24.10.
+**Ruch:** raport_ruchu 10:00: doba 145 odsłon, 107 osób (+14% wobec średniej 126,9); źródła b2b-email 57 (piksel otwarć), youtube 20, facebook 5, m.facebook.com 4, instagram 4; uruchomienia narzędzi 0.
+**Dowód:** tematy z wejściami i bez:
+- WEJŚCIA 1. Seria podatkowa JDG (`seria-podatki`): 22 sesje (instagram 9, linkedin 7, youtube 6) plus fb-ads 2 i checklista 1; najmocniej mały ZUS plus 5, forma opodatkowania 2026 3, ryczałt czy liniowy 3, kalkulator podatkowy 2, VAT 240 tys. 2.
+- WEJŚCIA 2. KSeF w 60 s (`ksef60`): 7 sesji (instagram 3, youtube 2, linkedin 1, x 1); faktury po zmianie biura 3 (24.10, post z 24.10), limit 10 tys. poza KSeF 2, /ksef-2027 2.
+- WEJŚCIA 3. Shorts YouTube w formatach (`format-humor` 2, `format-mit` 1, `format-licze` 1): 4 sesje; CRM jako system pracy 1, KSeF integracja 1, /ksef-2027 1, automatyzacja raportowania 1. Do tego pojedyncze posty FB 23.10 (119 HTTPS, 127 audyt poczty, 130 PageSpeed, 133 kalkulator kosztów) po 1 sesji.
+- BEZ WEJŚĆ 1. Pakiet FB 21.10 `narzedzia` (7 postów bez tekstu: audyt Google Ads, audyt poczty, audyt strony, ceny energii, e-Doręczenia, sprawdź kontrahenta, sprawdzenie NIP): 0 sesji z kampanii.
+- BEZ WEJŚĆ 2. Instagram narzędzia (`narzedzie-https` 20.10, `narzedzie-google` 21.10, `narzedzie-czujka` 24.10): 0 sesji; w bazie nie ma żadnej kampanii `narzedzie-*`.
+- BEZ WEJŚĆ 3. Instagram ulgi i relacje podatkowe z własną nazwą kampanii (`seria-podatki-ulga-br` 23.10, `-ulga-na-start`, `-ulga-prototyp` 24.10, `-sprzet-do-pracy` 24.10) oraz rolki `rolka-ksef-limit`, `rolka-ksef-kary`: 0 sesji pod tymi nazwami (w bazie tylko ogólne `seria-podatki`, więc wejście IG 24.10 06:47 na /strefa-wiedzy/kategoria/jdg-i-podatki może pochodzić z ulgi przez link w bio).
+**Dla Pawła:**
+**Zostało otwarte:** Z7 (pomiar południe, 13:30) i dalej. Dla stratega: tematy podatkowe JDG i KSeF przyprowadzają ludzi, posty z samym narzędziem nie przyprowadziły nikogo.
