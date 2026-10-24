@@ -873,20 +873,33 @@ main[class*="max-w-"]:has(> nav[aria-label="Breadcrumb"]) {
   background-image: radial-gradient(var(--siatka-punkt) 1px, transparent 1.5px);
   background-size: 28px 28px;
   opacity: var(--siatka-widocznosc);
-  -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 40%, #000 20%, transparent 75%);
-  mask-image: radial-gradient(ellipse 70% 70% at 50% 40%, #000 20%, transparent 75%);
+}
+/* Wygaszenie siatki kolorem tła zamiast mask-image: maska na pełnej szerokości
+   przemalowywała się przy każdej klatce przewijania. */
+.tlo-hero__warstwa::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 70% at 50% 40%, rgb(var(--biel) / 0) 20%, rgb(var(--biel)) 75%);
+}
+.dark .tlo-hero__warstwa::after {
+  background: radial-gradient(ellipse 70% 70% at 50% 40%, rgb(var(--gray-950) / 0) 20%, rgb(var(--gray-950)) 75%);
 }
 .tlo-kursora {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 320px;
+  height: 320px;
   z-index: -1;
   pointer-events: none;
   background-image: radial-gradient(rgb(var(--accent)) 1.25px, transparent 1.75px);
   background-size: 28px 28px;
   opacity: 0;
   transition: opacity 0.6s ease;
-  -webkit-mask-image: radial-gradient(160px circle at var(--mx, -999px) var(--my, -999px), rgb(0 0 0 / var(--siatka-swiatlo)), transparent);
-  mask-image: radial-gradient(160px circle at var(--mx, -999px) var(--my, -999px), rgb(0 0 0 / var(--siatka-swiatlo)), transparent);
+  will-change: transform;
+  -webkit-mask-image: radial-gradient(closest-side, rgb(0 0 0 / var(--siatka-swiatlo)), transparent);
+  mask-image: radial-gradient(closest-side, rgb(0 0 0 / var(--siatka-swiatlo)), transparent);
 }
 
 /* Przejścia stron */
@@ -1665,7 +1678,7 @@ main figure > figcaption:not(:has(p))::before {
 .hero-nic__kropka {
   fill: rgb(var(--accent));
   opacity: 0;
-  animation: hero-nic-kropka 0.4s ease 2.8s forwards;
+  animation: hero-nic-kropka 3.2s linear 2.8s forwards;
 }
 .hero-nic__podpis {
   font-family: var(--font-serif), Georgia, serif;
@@ -1690,7 +1703,7 @@ main figure > figcaption:not(:has(p))::before {
   .hero-nic__podpis { font-size: 0.8125rem; }
 }
 @keyframes hero-nic-rysuj { to { stroke-dashoffset: 0; } }
-@keyframes hero-nic-kropka { to { opacity: 1; } }
+@keyframes hero-nic-kropka { 8%, 85% { opacity: 1; } 100% { opacity: 0; } }
 
 .nic__linia,
 .nic__jasna {

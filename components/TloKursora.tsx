@@ -13,9 +13,13 @@ export default function TloKursora() {
     const dotyk = window.matchMedia("(hover: none), (pointer: coarse)");
     if (spokojny.matches || dotyk.matches) return;
 
+    // Małe okno jedzie za kursorem transformacją, a tło przesuwa się
+    // w przeciwną stronę, więc punkty stoją w miejscu względem ekranu.
     const onMove = (e: PointerEvent) => {
-      el.style.setProperty("--mx", `${e.clientX}px`);
-      el.style.setProperty("--my", `${e.clientY}px`);
+      const x = e.clientX - 160;
+      const y = e.clientY - 160;
+      el.style.transform = `translate3d(${x}px,${y}px,0)`;
+      el.style.backgroundPosition = `${-x}px ${-y}px`;
       el.style.opacity = "1";
     };
     const onLeave = () => {

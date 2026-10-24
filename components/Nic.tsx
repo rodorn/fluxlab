@@ -60,10 +60,13 @@ export default function Nic() {
         const b = kotwice[i + 1];
         const x = strony[i % 2];
         const r = Math.min(140, (b.y - a.y) / 3);
-        d +=
-          i === 0
-            ? `C${a.x} ${a.y + r * 0.6} ${x} ${a.y + r * 0.3} ${x} ${a.y + r}`
-            : `C${x} ${a.y} ${x} ${a.y} ${x} ${a.y + r}`;
+        if (i === 0) {
+          const kat = Math.min(r, Math.abs(a.x - b.x));
+          const zwrot = Math.sign(b.x - a.x);
+          d += `L${a.x} ${b.y - kat}Q${a.x} ${b.y} ${a.x + zwrot * kat} ${b.y}L${b.x} ${b.y}`;
+          continue;
+        }
+        d += `C${x} ${a.y} ${x} ${a.y} ${x} ${a.y + r}`;
         d += `L${x} ${b.y - r}C${x} ${b.y} ${x} ${b.y} ${b.x} ${b.y}`;
       }
       linia.setAttribute("d", d);
