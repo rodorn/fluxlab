@@ -31,7 +31,8 @@
 }
 
 /* 39: w hero tylko jedna pigulka naraz (pierwsza w kodzie wygrywa) */
-.hero-pigulka ~ .hero-pigulka { display: none; }
+.hero-pigulka ~ .hero-pigulka,
+.hero-pigulka ~ div > .hero-pigulka { display: none; }
 
 /* 30, 77: pasek ekranow realizacji bez widocznego paska przewijania */
 .finreal-tor { scrollbar-width: none; scroll-padding-inline: 1rem; }

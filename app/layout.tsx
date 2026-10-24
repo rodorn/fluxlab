@@ -24,12 +24,14 @@ const instrumentSans = Instrument_Sans({
 
 // Drugi krój tylko na wyróżnione słowa w nagłówkach, kursywą. Tu swap:
 // zastępcza kursywa (DejaVu Serif na Linuksie) psuje ogonki ą i ę.
+// Bez preload: 154 kB pliku zmiennego opóźniało na słabym łączu LCP podtytułu.
 const fraunces = Fraunces({
   variable: "--font-serif",
   subsets: ["latin", "latin-ext"],
   style: "italic",
   axes: ["opsz"],
   display: "swap",
+  preload: false,
   fallback: ["Times New Roman", "Liberation Serif", "Georgia", "serif"],
 });
 

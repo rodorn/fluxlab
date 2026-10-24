@@ -7,7 +7,6 @@ import LandingForm from "@/components/LandingForm";
 import PasekAkcji from "@/components/PasekAkcji";
 import PoleAudytu from "@/components/PoleAudytu";
 import WitajPonownie from "@/components/WitajPonownie";
-import IntroZnaku from "@/components/IntroZnaku";
 import EtykietaNocna from "@/components/EtykietaNocna";
 import NaglowekSklada from "@/components/NaglowekSklada";
 import PodtytulZrodlo from "@/components/PodtytulZrodlo";
@@ -95,7 +94,6 @@ export default function Home() {
         <TloHero />
         <section className="relative z-10 mx-auto flex w-full max-w-6xl flex-col items-center px-6 pt-16 pb-16 text-center lg:pt-20">
           <WitajPonownie />
-          <IntroZnaku />
           <EtykietaNocna />
           <NaglowekSklada tekst={"Strony internetowe i\u00a0CRM dla firm"} wyroznione={["dla", "firm"]} />
           <PodtytulZrodlo />

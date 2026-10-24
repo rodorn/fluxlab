@@ -28,10 +28,14 @@ export default function EtykietaNocna() {
     return () => window.clearInterval(t);
   }, []);
 
+  // Etykieta leży w górnym marginesie sekcji, poza przepływem: pojawia się
+  // dopiero po hydracji i w przepływie spychała całe hero (CLS 0,05).
   if (!tekst) return null;
   return (
-    <p className="hero-pigulka mb-5 inline-flex animate-fade-up rounded-full border border-accent/40 bg-accent/5 px-4 py-1.5 text-sm font-medium text-accent">
-      {tekst}
-    </p>
+    <div className="pointer-events-none absolute inset-x-0 top-3 flex justify-center lg:top-5">
+      <p className="hero-pigulka pointer-events-auto inline-flex animate-fade-up rounded-full border border-accent/40 bg-accent/5 px-4 py-1.5 text-sm font-medium text-accent">
+        {tekst}
+      </p>
+    </div>
   );
 }

@@ -4,21 +4,28 @@ import { useEffect, useState } from "react";
 
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
-/** Tag ładuje się po zdarzeniu load i w wolnej chwili przeglądarki, żeby jego
- *  177 kB nie konkurowało z pierwszym malowaniem. Pierwsza odsłona jest liczona
- *  tak samo, tylko kilkaset milisekund później. */
+/** Tag (540 kB po rozpakowaniu) ładuje się przy pierwszym ruchu odwiedzającego
+ *  albo po 8 s, a nie zaraz po zdarzeniu load: na słabym telefonie jego
+ *  wykonanie blokowało stronę na pół sekundy w chwili, gdy ktoś zaczynał czytać.
+ *  Odsłona jest liczona tak samo, tylko później. */
 export default function GoogleAnalytics() {
   const [gotowe, ustawGotowe] = useState(false);
 
   useEffect(() => {
-    const start = () => ustawGotowe(true);
-    const odpal = () => {
-      if ("requestIdleCallback" in window) window.requestIdleCallback(start, { timeout: 2000 });
-      else setTimeout(start, 1000);
+    const zdarzenia = ["pointerdown", "keydown", "scroll", "touchstart"] as const;
+    const start = () => {
+      ustawGotowe(true);
+      sprzatnij();
     };
-    if (document.readyState === "complete") odpal();
-    else window.addEventListener("load", odpal, { once: true });
-    return () => window.removeEventListener("load", odpal);
+    const zegar = setTimeout(start, 8000);
+    const sprzatnij = () => {
+      clearTimeout(zegar);
+      zdarzenia.forEach((z) => window.removeEventListener(z, start));
+    };
+    zdarzenia.forEach((z) =>
+      window.addEventListener(z, start, { once: true, passive: true }),
+    );
+    return sprzatnij;
   }, []);
 
   useEffect(() => {
