@@ -7810,3 +7810,13 @@ Otwarte decyzje dla stratega: kanał `audyt-wynik` zamknąć (4 doby bez maila, 
 **Dowód:** `cykl/plan-ruchu.md` bez zmian (Z11, Z13, Z14, Z15 otwarte); `python3 ~/Projekty/fluxlab-ruch/raport_ruchu.py` 14:43.
 **Dla Pawła:**
 **Zostało otwarte:** Z11 (18:30), Z13 (25.10 01:45), Z14 (02:30), Z15 (25.10 03:00). Budżet o 14:45: „utrzymaj” (rano „wstrzymaj”).
+
+<!-- WYSLANO 2026-10-24 15:15 -->
+
+## 2026-10-24 15:43
+**Kanał:** brak (Z11 ma godzinę 18:30, Z13 i Z15 nie wcześniej niż 25.10 01:45 i 03:00, Z14 to bilans o 02:30).
+**Co zrobione:** nic nie poszło w świat; plan na 24.10 zabrania treści, outreachu, social i żądań indeksowania, a pomiar Z11 przed 18:30 byłby niepełny.
+**Ruch:** doba 75 odsłon, 60 osób (−37% wobec średniej 119,9); źródła: b2b-email 10 (piksel otwarcia, nie ludzie), facebook 4, instagram 4, l.facebook.com 3, m.facebook.com 3; LinkedIn 2 sesje, X 1, YouTube 0; uruchomienia narzędzi 0.
+**Dowód:** `cykl/plan-ruchu.md` bez zmian (Z11, Z13, Z14, Z15 otwarte); `python3 ~/Projekty/fluxlab-ruch/raport_ruchu.py` 15:43.
+**Dla Pawła:**
+**Zostało otwarte:** Z11 (18:30), Z13 (25.10 01:45), Z14 (02:30), Z15 (25.10 03:00).
