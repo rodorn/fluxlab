@@ -7727,3 +7727,11 @@ Otwarte decyzje dla stratega: kanał `audyt-wynik` zamknąć (4 doby bez maila, 
 **Kanały (godziny → ludzie w dobie):** Google 8 h → 1 (tydzień 25, spadek do potwierdzenia po dojściu 22.10); pomiar 6 h → 0; outreach 2 h → 0, `audyt-wynik` zamknięty (4 doby bez kandydata); Bing/AI 2 h → 0 (tydzień 2, Copilot 15 cytowań); social innych sesji 14 (0 h cyklu). „b2b-email 64" to piksele otwarć, nie ludzie.
 **Decyzje:** `budzet` „wstrzymaj" (prognoza 124%, kamieni 0), więc plan 16 zadań lekkich: pomiar, przyczyny braku indeksu i seria 25.10 01:40, Bing, AI, social bez publikacji. Jedyna zmiana Z5 (cofnięcie title i description /ksef-2027 sprzed db469dd, wyśw./dzień 10,0 → 3,2) tylko poza „wstrzymaj". kiedy-odliczyc-vat i ai-w-automatyzacji-firm zostają. Szkic artykułu 26.10 do kontroli w Z16.
 **Mail do Pawła:** wysłany 06:35 („FluxLab ruch, plan na 24.10: 44 osoby w dobie, 15 z odsyłaczem"); Dla Pawła: utm w profilu Useme (3 min), decyzja o zapisie domeny w audycie (2 min).
+
+## 2026-10-24 06:50
+**Kanał:** pomiar (Google), zadanie Z1 planu 24/25.
+**Co zrobione:** odczyt GSC: 22.10 jeszcze nie doszedł (zakres 7 dni nadal 15-21.10), zapisane kliknięcia po dniu: 1, 1, 1, 4, 4, 2, 6 (razem 19, 21.10 najlepszy dzień tygodnia, 196 wyświetleń).
+**Ruch:** raport_ruchu, doba: 141 odsłon / 99 osób; źródła b2b-email 64 (otwarcia piksela starych maili, nie ludzie), youtube 16, facebook 5, m.facebook.com 4, www.facebook.com 2; YouTube 3 sesje, LinkedIn 1; uruchomienia narzędzi 0.
+**Dowód:** cykl/plan-ruchu.md, linia Z1 z liczbami po dniu.
+**Dla Pawła:** 
+**Zostało otwarte:** Z2 i dalej; budżet „wstrzymaj”, więc jedno lekkie zadanie na cykl.
