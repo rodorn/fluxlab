@@ -111,6 +111,25 @@ function cenaOd(pricing: Tier[]): string | null {
 /** Strony z własnym blokiem WebApplication w page.tsx. */
 const WLASNA_WEBAPP = new Set(["audyt-strony", "analiza-lokalizacji", "wdrozenie-n8n-cena"]);
 
+// Końcówka H1 szeryfową kursywą: część po ostatnim przecinku (do 4 słów),
+// a bez niej dwa ostatnie słowa (w krótkim nagłówku jedno).
+function zSzeryfem(h1: string) {
+  const przecinek = h1.lastIndexOf(", ");
+  const ogon = przecinek > 0 ? h1.slice(przecinek + 2) : "";
+  const slowa = h1.split(" ");
+  const podzial =
+    ogon && ogon.split(" ").length <= 4
+      ? przecinek + 2
+      : h1.length - slowa.slice(slowa.length > 4 ? -2 : -1).join(" ").length;
+  if (podzial <= 0) return h1;
+  return (
+    <>
+      {h1.slice(0, podzial)}
+      <span className="slowo-szeryf">{h1.slice(podzial)}</span>
+    </>
+  );
+}
+
 export default function ProductLanding(p: ProductLandingProps) {
   const typ = p.typ ?? (p.tool ? "narzedzie" : "usluga");
   const etykietaTypu = typ === "narzedzie" ? "Narzędzie" : "Usługa";
@@ -133,8 +152,8 @@ export default function ProductLanding(p: ProductLandingProps) {
         <section className="container-wide pt-6 pb-14">
           <div className="mx-auto max-w-3xl text-center">
             <p className="section-label mb-3">{etykietaTypu}</p>
-            <h1 className="h1-strony">
-              {p.h1}
+            <h1 className="h1-strony" style={{ viewTransitionName: "vt-cel" }}>
+              {zSzeryfem(p.h1)}
             </h1>
             <p className="mt-5 text-lg text-gray-600 dark:text-gray-300">
               {p.lead}

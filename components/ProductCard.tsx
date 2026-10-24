@@ -17,6 +17,7 @@ export default function ProductCard({
 }) {
   return (
     <div
+      data-vt-karta
       className={`flex flex-col rounded-2xl border p-6 transition-colors ${
         p.featured
           ? "border-accent/60 bg-white/80 dark:bg-gray-900/60"
@@ -26,7 +27,7 @@ export default function ProductCard({
       <p className="text-xs font-semibold uppercase tracking-wider text-accent">
         {p.tagline}
       </p>
-      <h3 className="mt-2 text-xl font-bold text-gray-900 dark:text-white">
+      <h3 data-vt-tytul className="mt-2 text-xl font-bold text-gray-900 dark:text-white">
         {p.name}
       </h3>
       {p.narzedzie && (

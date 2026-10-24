@@ -113,9 +113,10 @@ export default function ProduktyPage() {
               <li key={p.href}>
                 <Link
                   href={p.href}
+                  data-vt-karta
                   className="flex h-full flex-col rounded-2xl border border-gray-200 p-5 transition-colors hover:border-accent dark:border-white/10"
                 >
-                  <span className="text-sm font-semibold text-gray-900 dark:text-white">{p.name}</span>
+                  <span data-vt-tytul className="text-sm font-semibold text-gray-900 dark:text-white">{p.name}</span>
                   <span className="mt-1 flex-1 text-sm text-gray-600 dark:text-gray-400">{p.tagline}</span>
                   <span className="mt-4 text-lg font-bold text-accent">{p.price}</span>
                 </Link>
