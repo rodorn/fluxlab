@@ -1,10 +1,4 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">
-  <style>
-    @media (prefers-color-scheme: dark) {
-      .tile { fill: #818cf8; }
-      .ink { stroke: #1e1b4b; }
-    }
-  </style>
   <rect class="tile" width="1080" height="1080" rx="240" fill="#4f46e5"/>
   <g class="ink" fill="none" stroke="#ffffff" stroke-width="124" stroke-linecap="round" stroke-linejoin="round">
     <path d="M400 790 V420 A130 130 0 0 1 530 290 H550"/>
