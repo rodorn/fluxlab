@@ -64,6 +64,15 @@ function Pogrupowana({ s }: { s: Sekcja }) {
   );
 }
 
+const PROFILE = [
+  ["Facebook", "https://www.facebook.com/profile.php?id=61595121744837"],
+  ["YouTube", "https://www.youtube.com/channel/UC2SCC43QCFkncFMNK1AxXfA"],
+  ["TikTok", "https://www.tiktok.com/@fluxlab.pl"],
+  ["Instagram", "https://www.instagram.com/fluxlab.pl/"],
+  ["X", "https://x.com/PaweIwanek"],
+  ["LinkedIn", "https://www.linkedin.com/company/fluxlab-pl"],
+] as const;
+
 export default function Footer() {
   const uslugi = sekcja("uslugi");
   const narzedzia = sekcja("narzedzia");
@@ -124,24 +133,21 @@ export default function Footer() {
             </a>
             <span aria-hidden="true" className="hidden sm:inline">·</span>
             <KopiujMail adres="pawel@fluxlab.pl" className="hover:text-accent transition-colors" />
-            <span aria-hidden="true" className="hidden sm:inline">·</span>
-            <a
-              href="https://www.facebook.com/profile.php?id=61595121744837"
-              target="_blank"
-              rel="noopener"
-              className="hover:text-accent transition-colors"
-            >
-              Facebook
-            </a>
-            <span aria-hidden="true" className="hidden sm:inline">·</span>
-            <a
-              href="https://zleca.pl/wykonawca/fluxlab-strony-internetowe-i-automatyzacja-1790016801"
-              target="_blank"
-              rel="noopener"
-              className="hover:text-accent transition-colors"
-            >
-              Zleca.pl
-            </a>
+            <span className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 sm:basis-full sm:gap-x-2">
+            {PROFILE.map(([nazwa, href], i) => (
+              <span key={nazwa} className="contents">
+                {i > 0 && <span aria-hidden="true" className="hidden sm:inline">·</span>}
+                <a
+                  href={href}
+                  target="_blank"
+                  rel="noopener"
+                  className="hover:text-accent transition-colors"
+                >
+                  {nazwa}
+                </a>
+              </span>
+            ))}
+            </span>
           </p>
           <StatusOnline />
           {/* Wynik z prawdziwego pomiaru (lib/lighthouse.json). Pokazujemy go tylko
