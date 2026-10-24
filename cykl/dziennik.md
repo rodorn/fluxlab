@@ -7693,3 +7693,15 @@ Otwarte decyzje dla stratega: kanał `audyt-wynik` zamknąć (4 doby bez maila, 
 **Dowód:** „Bilans planu 2026-10-23/24” wyżej, Z18 „- [x]” w cykl/plan-ruchu.md.
 **Dla Pawła:**
 **Zostało otwarte:** Z19 (04:30, wniosek dla stratega).
+
+## 2026-10-24 03:45
+**Kanał:** outreach + lejek (Z19, wniosek dla stratega).
+**Co zrobione:** pomiar lejka /kontakt, Zoho i ocena embarga 3 stron z dziennej serii GSC (dane do 21.10); nic nie poszło w świat, ostatnie zadanie planu 23/24 zamknięte.
+**Ruch:** ostatnia doba 142 odsłony, 100 osób (+10% wobec średniej 128,6); źródła: b2b-email 64 (otwarcia maili), youtube, facebook; po odsiewie 45 ludzi, 15 z odsyłaczem (YouTube 5, Facebook 6, Google 1, LinkedIn 1, X 1, Instagram 1); uruchomienia narzędzi 0.
+**Dowód:** Z19 „- [x]” w cykl/plan-ruchu.md. Dla stratega:
+- audyt-wynik: 0 maili w Z4, więc 0 sesji i 0 odpowiedzi; kanał bez domen nie ma kandydatów.
+- /kontakt od 22.10 16:30: 1 sesja (powracająca, bez odsyłacza), lead_* 0, klik_mail_kontakt 0.
+- Zoho od 23.10 06:30: 0 nowych zapytań od ludzi; jedyna odpowiedź (Business Media House) obsłużona przez inną sesję 23.10 22:30.
+- Embargo, wyśw./dzień 12-16.10 → 17-21.10 (dni robocze 19-21.10): /ksef-2027 10,0 → 3,2 (5,3), 0 klik., COFNIJ; /strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef 23,0 → 10,6 (16,0), pierwsze kliknięcie 21.10, ZOSTAW do 28.10; /strefa-wiedzy/ai-w-automatyzacji-firm 1,6 → 4,6 (6,7), ZOSTAW. W working tree leżą niezatwierdzone zmiany app/ksef-2027 z innej sesji, nieruszane.
+**Dla Pawła:**
+**Zostało otwarte:** plan 23/24 bez „- [ ]”; nowy plan od stratega 06:15.
