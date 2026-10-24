@@ -21,13 +21,15 @@ const instrumentSans = Instrument_Sans({
   fallback: ["Instrument Sans Zastepczy", "system-ui", "sans-serif"],
 });
 
-// Drugi krój tylko na wyróżnione słowa w nagłówkach, kursywą.
+// Drugi krój tylko na wyróżnione słowa w nagłówkach, kursywą. Tu swap:
+// zastępcza kursywa (DejaVu Serif na Linuksie) psuje ogonki ą i ę.
 const instrumentSerif = Instrument_Serif({
   variable: "--font-serif",
   subsets: ["latin", "latin-ext"],
   weight: "400",
   style: "italic",
-  display: "optional",
+  display: "swap",
+  fallback: ["Times New Roman", "Liberation Serif", "Georgia", "serif"],
 });
 
 export const viewport: Viewport = {
@@ -85,7 +87,9 @@ export default function RootLayout({
   return (
     <html lang="pl" suppressHydrationWarning>
       <head>
-        <style>{"html[data-zgoda-zapisana] .cookie-consent{display:none}"}</style>
+        <style>
+          {"html[data-zgoda-zapisana] .cookie-consent{display:none}"}
+        </style>
         <script
           dangerouslySetInnerHTML={{
             __html:
@@ -208,7 +212,9 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${instrumentSans.variable} ${instrumentSerif.variable} font-sans`}>
+      <body
+        className={`${instrumentSans.variable} ${instrumentSerif.variable} font-sans`}
+      >
         <div
           hidden
           dangerouslySetInnerHTML={{
