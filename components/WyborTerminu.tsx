@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import OsTerminu from "@/components/OsTerminu";
 
 /** Wybór dnia i godziny spotkania Google Meet z wolnych terminów kalendarza
  *  (/api/terminy). Oddaje termin „RRRR-MM-DD GG:MM” albo pusty napis. */
@@ -33,7 +32,10 @@ export default function WyborTerminu({ onZmiana }: { onZmiana: (termin: string) 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dzien, godzina]);
 
-  const wolneDzis = dni?.find((x) => x.data === dzien)?.godziny ?? [];
+  // Jeden przycisk na godzinę zegarową: pierwszy wolny kwadrans w tej godzinie.
+  const godziny = (dni?.find((x) => x.data === dzien)?.godziny ?? []).filter(
+    (g, i, lista) => i === 0 || g.slice(0, 2) !== lista[i - 1].slice(0, 2),
+  );
 
   return (
     <div className="scena-wjazd space-y-3">
@@ -82,7 +84,29 @@ export default function WyborTerminu({ onZmiana }: { onZmiana: (termin: string) 
       </div>
       <div>
         <p className="mb-1.5 text-sm font-medium text-gray-700 dark:text-gray-300">Godzina</p>
-        <OsTerminu key={dzien} wolne={wolneDzis} wybrana={godzina} onWybierz={setGodzina} />
+        {godziny.length ? (
+          <div className="grid grid-cols-4 gap-2 sm:grid-cols-7">
+            {godziny.map((g) => (
+              <button
+                key={g}
+                type="button"
+                aria-pressed={godzina === g}
+                onClick={() => setGodzina(g)}
+                className={`rounded-lg border py-2 text-sm tabular-nums transition-colors ${
+                  godzina === g
+                    ? "border-accent bg-accent/10 font-semibold text-accent"
+                    : "border-gray-200 text-gray-700 hover:border-accent/50 dark:border-gray-700 dark:text-gray-300"
+                }`}
+              >
+                {g}
+              </button>
+            ))}
+          </div>
+        ) : (
+          <p className="text-sm text-gray-500 dark:text-gray-400">
+            {dni ? "Tego dnia nie ma już wolnych godzin." : "\u00a0"}
+          </p>
+        )}
       </div>
       <p className="text-center text-xs text-gray-500 dark:text-gray-400">
         Pokazujemy tylko godziny wolne w naszym kalendarzu. Potwierdzimy zaproszeniem z linkiem do Meet.

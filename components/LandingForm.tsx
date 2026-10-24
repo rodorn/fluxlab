@@ -23,9 +23,9 @@ const SZKIC_KLUCZ = "fluxlab_szkic";
 type Kontakt = "email" | "phone" | "meet";
 
 const FORMY: { id: Kontakt; nazwa: string; opis: string }[] = [
-  { id: "meet", nazwa: "Google Meet", opis: "30 minut online" },
+  { id: "meet", nazwa: "Spotkanie", opis: "Meet, 30 min" },
   { id: "phone", nazwa: "Telefon", opis: "oddzwonimy" },
-  { id: "email", nazwa: "Mailem", opis: "odpiszemy z ceną" },
+  { id: "email", nazwa: "Mail", opis: "z ceną" },
 ];
 
 
