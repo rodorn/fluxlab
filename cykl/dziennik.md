@@ -7655,3 +7655,41 @@ Otwarte decyzje dla stratega:
 **Dowód:** cykl/z19-indeksowanie-24.log (9 linii „prośba przesłana”), Z17 „- [x]” w cykl/plan-ruchu.md.
 **Dla Pawła:**
 **Zostało otwarte:** Z18 (02:30, bilans planu), Z19 (04:30, wniosek dla stratega); `budzet` w rytmie „wstrzymaj” (68% tygodnia, prognoza 128%).
+
+### Bilans planu 2026-10-23/24
+`pomiar-kanalow.py` 02:43, 24 h: ludzie 45, z odsyłaczem 15 (wobec 12), bez 30 (wobec 30), pary 20, salwy 0. 7 dni: ludzie 334 (wobec 322).
+Z odsyłaczem w dobie: Google 1 (wobec 7), social 14 (wobec 0: YouTube 5, Facebook 6, LinkedIn 1, X 1, Instagram 1; posty innych sesji, nie z tego planu), Bing 0 (wobec 1). Copilot 7 dni 15 cytowań (wobec 6, Z5). GSC 15-21.10 (doszedł 21.10): 19 klik. / 1,12 tys. wyśw. / CTR 1,7% / poz. 28,1 (wobec 15/1040/1,4%/28).
+`audyt-wynik`: 0 maili / 0 sesji w dobie (7 dni 1 sesja, sprzed doby) / 0 odpowiedzi. Uruchomienia narzędzi w dobie 0, lead_* 0, klik_po_wyniku 0, klik_mail_kontakt 0, Resend 0 wysyłek.
+
+| zad. | stan | godz. | co przyprowadziło |
+|---|---|---|---|
+| Z1 | zrobione | rano | pomiar: 180 zapytań, kandydat „zapier cennik” NIE (opis już z frazą) |
+| Z2 | zrobione | rano | 0 kandydatów, log nie zapisuje domen audytu |
+| Z3 | zrobione | rano | brak kandydata, 0 zmian |
+| Z4 | zrobione | rano | 0 maili |
+| Z5 | zrobione | 08:00 | Bing: 5 adresów; 3/46 w 7 dniach, Copilot 15 |
+| Z6 | zrobione | rano | pomiar embarga: wyśw./dzień po 17.10 niżej na 2 z 3 stron |
+| Z7 | zrobione | dzień | brief 22.10 nieużyty |
+| Z8 | zrobione | dzień | useme: 1 sesja; punkt Dla Pawła (utm w profilu) |
+| Z9 | zrobione | dzień | /asystent-ai-na-stronie (c63c6d0), 0 wejść jeszcze |
+| Z10 | zrobione | 16:45 | pomiar: 18 ludzi od 06:30, 0 leadów |
+| Z11 | zrobione | 17:45 | lista 9 adresów do serii |
+| Z12 | zrobione | 18:30 | lejek audytu: 1 sesja po Z21, za mało na ocenę |
+| Z13 | zrobione | 19:44 | timer fl-gsc-24 |
+| Z14 | zrobione | 19:50 | Bing indeksuje /audyt-poczty i /wlasnosc-domeny z JSON-LD |
+| Z15 | zrobione | 20:12 | lastmod 3 stron (de0156d), sitemap 149 |
+| Z16 | zrobione | 20:45 | pomiar: 5 ludzi od 16:30, 0 leadów |
+| Z17 | zrobione | 01:30 | 9 z 9 próśb o indeksowanie |
+| Z18 | zrobione | 02:45 | ten bilans |
+| Z19 | otwarte | 04:30 | wniosek dla stratega |
+
+Trzy największe zmiany: (1) Google w dobie spadł z 7 do 1 sesji, choć GSC 7 dni rośnie (19 klik. wobec 15); (2) social 14 sesji wobec 0, w całości z publikacji innych sesji; (3) Copilot 15 cytowań w 7 dniach wobec 6.
+Otwarte decyzje dla stratega: kanał `audyt-wynik` zamknąć (4 doby bez maila, log audytu nie zapisuje domen, więc kandydatów nie będzie bez zmiany w kodzie); Z9 poszło (strona na produkcji, prośba o indeksowanie 24.10 01:30), ocena po zaindeksowaniu; spadek Google w dobie 7 → 1 sprawdzić w GSC po dojściu 22-23.10, zanim uzna się go za trend.
+
+## 2026-10-24 02:45
+**Kanał:** pomiar (Z18, bilans planu).
+**Co zrobione:** bilans planu 2026-10-23/24 z tabelą Z1 do Z19 i decyzjami dla stratega; nic nie poszło w świat, `budzet` w rytmie „wstrzymaj” (prognoza 127%).
+**Ruch:** ostatnia doba 142 odsłony, 100 osób (+11% wobec średniej 128); źródła: b2b-email 64 (otwarcia maili), youtube 16, facebook 5, m.facebook.com 4, www.facebook.com 2; po odsiewie 45 ludzi, 15 z odsyłaczem; uruchomienia narzędzi 0.
+**Dowód:** „Bilans planu 2026-10-23/24” wyżej, Z18 „- [x]” w cykl/plan-ruchu.md.
+**Dla Pawła:**
+**Zostało otwarte:** Z19 (04:30, wniosek dla stratega).
