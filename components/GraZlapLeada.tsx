@@ -95,7 +95,7 @@ export default function GraZlapLeada() {
                 className="absolute w-11 h-11 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent-solid text-white flex items-center justify-center shadow-md active:scale-90 transition-transform"
               >
                 <svg viewBox="0 0 24 24" className="w-5 h-5" aria-hidden="true">
-                  <path d="M3 6h18v12H3z M3 6l9 7 9-7" fill="none" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" strokeLinecap="round" />
+                  <path d="M3 6h18v12H3z M3 6l9 7 9-7" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" strokeLinecap="round" />
                 </svg>
               </button>
             ))}

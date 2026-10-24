@@ -114,7 +114,7 @@ function Glosnik({ tekst }: { tekst: string }) {
         className="h-4 w-4"
         fill="none"
         stroke="currentColor"
-        strokeWidth="2"
+        strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
         aria-hidden="true"
@@ -276,7 +276,7 @@ export default function Czat() {
             aria-label="Zamknij podpowiedź"
             className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-gray-500 hover:text-accent dark:text-white/50"
           >
-            <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
+            <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" aria-hidden="true">
               <path d="M6 6l12 12M18 6L6 18" />
             </svg>
           </button>
@@ -304,7 +304,7 @@ export default function Czat() {
           className="h-5 w-5"
           fill="none"
           stroke="currentColor"
-          strokeWidth="2"
+          strokeWidth="1.5"
           strokeLinecap="round"
           strokeLinejoin="round"
           aria-hidden="true"
@@ -436,7 +436,7 @@ export default function Czat() {
                 className="h-5 w-5"
                 fill="none"
                 stroke="currentColor"
-                strokeWidth="2"
+                strokeWidth="1.5"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 aria-hidden="true"

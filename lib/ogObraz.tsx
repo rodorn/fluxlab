@@ -28,13 +28,13 @@ export async function ogObraz(tytul: string, nadtytul: string) {
           <g
             fill="none"
             stroke="#fff"
-            strokeWidth="110"
+            strokeWidth="120"
             strokeLinecap="round"
             strokeLinejoin="round"
           >
-            <path d="M400 790 V420 A130 130 0 0 1 530 290 H550" />
-            <path d="M330 540 H750" />
-            <path d="M750 290 V790" />
+            <path d="M390 800 V440 A130 130 0 0 1 520 310 H540" />
+            <path d="M270 560 H490" />
+            <path d="M750 310 V800" />
           </g>
         </svg>
         <div style={{ fontSize: 44, fontWeight: 700, letterSpacing: "-1px" }}>

@@ -71,7 +71,7 @@ export default function ProductCard({
                 <path
                   d="M2.5 7l3 3 6-6"
                   stroke="currentColor"
-                  strokeWidth="1.6"
+                  strokeWidth="1.5"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 />

@@ -240,7 +240,7 @@ export default function Pilotaz() {
                               <path
                                 d="M4 10l4 4 8-8"
                                 stroke="currentColor"
-                                strokeWidth="2"
+                                strokeWidth="1.5"
                                 strokeLinecap="round"
                                 strokeLinejoin="round"
                               />
@@ -281,7 +281,7 @@ export default function Pilotaz() {
                               <path
                                 d="M5 5l10 10M15 5L5 15"
                                 stroke="currentColor"
-                                strokeWidth="2"
+                                strokeWidth="1.5"
                                 strokeLinecap="round"
                                 strokeLinejoin="round"
                               />

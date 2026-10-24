@@ -306,7 +306,7 @@ export default function RaportowanieZPipedrive() {
                               <path
                                 d="M4 10l4 4 8-8"
                                 stroke="currentColor"
-                                strokeWidth="2"
+                                strokeWidth="1.5"
                                 strokeLinecap="round"
                                 strokeLinejoin="round"
                               />

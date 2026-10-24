@@ -1182,7 +1182,7 @@ function ResultCard({
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
-                  strokeWidth={2}
+                  strokeWidth="1.5"
                 >
                   <circle cx="12" cy="12" r="10" />
                   <path d="M12 16v-4M12 8h.01" />
@@ -1550,7 +1550,7 @@ export default function TaxCalculator() {
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
-                  strokeWidth={2}
+                  strokeWidth="1.5"
                 >
                   <path
                     strokeLinecap="round"
@@ -1658,7 +1658,7 @@ export default function TaxCalculator() {
                                 fill="none"
                                 viewBox="0 0 24 24"
                                 stroke="currentColor"
-                                strokeWidth={2}
+                                strokeWidth="1.5"
                               >
                                 <path
                                   strokeLinecap="round"
@@ -1853,7 +1853,7 @@ export default function TaxCalculator() {
                               fill="none"
                               viewBox="0 0 24 24"
                               stroke="currentColor"
-                              strokeWidth={2}
+                              strokeWidth="1.5"
                             >
                               <path
                                 strokeLinecap="round"
@@ -1905,7 +1905,7 @@ export default function TaxCalculator() {
                                     fill="none"
                                     viewBox="0 0 24 24"
                                     stroke="currentColor"
-                                    strokeWidth={2}
+                                    strokeWidth="1.5"
                                   >
                                     <path
                                       strokeLinecap="round"
@@ -2081,7 +2081,7 @@ export default function TaxCalculator() {
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
-                  strokeWidth={2}
+                  strokeWidth="1.5"
                 >
                   <path
                     strokeLinecap="round"

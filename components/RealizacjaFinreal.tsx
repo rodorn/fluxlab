@@ -1,38 +1,65 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { WDROZENIA } from "@/lib/wdrozenia";
 
 const W = WDROZENIA[0];
 
-const EKRANY = [
-  {
-    etykieta: "Problem",
-    tytul: "Strona, która ważyła 6,2 MB",
-    tekst: W.problem,
-    obraz: { src: "/photos/realizacja-finreal-przed.webp", alt: "Stara strona finreal.pl", szer: 2880, wys: 1620 },
-  },
-  {
-    etykieta: "Decyzja",
-    tytul: "Projekt z Figmy na Next.js z CMS",
-    tekst:
-      "Nie poprawiamy starej strony. Przenosimy projekt z Figmy na Next.js z CMS, a stare adresy przekierowujemy, żeby nic nie zniknęło z Google.",
-    obraz: { src: "/photos/finreal-makieta.webp", alt: "Makieta strony głównej FINREAL z Figmy", szer: 720, wys: 620 },
-  },
-  {
-    etykieta: "Wynik",
-    tytul: "12 dni zamiast 5 tygodni",
-    tekst: "Strona na produkcji 12 dni od startu prac, przy terminie 5 tygodni.",
-    obraz: null,
-  },
-] as const;
+const RAMKA =
+  "overflow-hidden rounded-xl border border-gray-200 bg-white shadow-xl dark:border-white/10 dark:bg-gray-900";
 
-/** Trzy ekrany realizacji FINREAL w poziomo przewijanym pasku (problem, decyzja, wynik). */
+function PasekAdresu({ adres }: { adres: string }) {
+  return (
+    <div className="flex items-center gap-3 border-b border-gray-200 bg-gray-50 px-4 py-2.5 dark:border-white/10 dark:bg-white/5">
+      <span aria-hidden="true" className="flex gap-1.5">
+        <i className="h-2 w-2 rounded-full bg-gray-300 dark:bg-white/20" />
+        <i className="h-2 w-2 rounded-full bg-gray-300 dark:bg-white/20" />
+        <i className="h-2 w-2 rounded-full bg-gray-300 dark:bg-white/20" />
+      </span>
+      <span className="mx-auto min-w-0 truncate rounded-md bg-white px-4 py-1 text-xs tracking-wide text-gray-500 dark:bg-white/5 dark:text-gray-400">
+        {adres}
+      </span>
+      <span aria-hidden="true" className="w-9" />
+    </div>
+  );
+}
+
+function Akt({
+  numer,
+  etykieta,
+  tytul,
+  children,
+}: {
+  numer: string;
+  etykieta: string;
+  tytul: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="mx-auto max-w-2xl text-center">
+      <p className="text-xs font-medium uppercase tracking-widest text-accent">
+        <span className="tabular-nums">{numer}</span>
+        <span aria-hidden="true" className="mx-3 inline-block h-px w-8 bg-gray-300 align-middle dark:bg-gray-700" />
+        {etykieta}
+      </p>
+      <h3 className="mt-4 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white md:text-3xl">
+        {tytul}
+      </h3>
+      {children}
+    </div>
+  );
+}
+
+function Linia() {
+  return (
+    <div aria-hidden="true" className="mx-auto my-16 h-16 w-px bg-gradient-to-b from-transparent via-gray-300 to-transparent dark:via-gray-700 md:my-20" />
+  );
+}
+
+/** Reportaż o realizacji FINREAL w trzech aktach: problem klienta, co zrobiliśmy, efekt. */
 export default function RealizacjaFinreal() {
-  const tor = useRef<HTMLDivElement>(null);
   const wideo = useRef<HTMLVideoElement>(null);
-  const [numer, ustawNumer] = useState(0);
 
   useEffect(() => {
     const v = wideo.current;
@@ -49,130 +76,100 @@ export default function RealizacjaFinreal() {
     return () => obs.disconnect();
   }, []);
 
-  function przy() {
-    const t = tor.current;
-    if (!t) return;
-    const srodek = t.scrollLeft + t.clientWidth / 2;
-    let best = 0;
-    let dyst = Infinity;
-    Array.from(t.children).forEach((c, i) => {
-      const el = c as HTMLElement;
-      const d = Math.abs(el.offsetLeft + el.offsetWidth / 2 - srodek);
-      if (d < dyst) {
-        dyst = d;
-        best = i;
-      }
-    });
-    ustawNumer(best);
-  }
-
-  function idz(i: number) {
-    const t = tor.current;
-    const el = t?.children[i] as HTMLElement | undefined;
-    if (!t || !el) return;
-    const spokojny = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    t.scrollTo({
-      left: el.offsetLeft - (t.clientWidth - el.offsetWidth) / 2,
-      behavior: spokojny ? "auto" : "smooth",
-    });
-  }
-
   return (
-    <section aria-labelledby="finreal-ekrany" className="mt-14">
+    <section aria-labelledby="finreal-reportaz" className="mt-20">
       <div className="mx-auto max-w-3xl text-center">
-        <p className="section-label mb-3">FINREAL w trzech ekranach</p>
-        <h2 id="finreal-ekrany" className="h2-sekcji">
-          Od problemu do wyniku
+        <p className="section-label mb-3">Reportaż: finreal.pl</p>
+        <h2 id="finreal-reportaz" className="h2-sekcji">
+          Strona pośrednika kredytowego, w trzech aktach
         </h2>
       </div>
 
-      <div
-        ref={tor}
-        onScroll={przy}
-        tabIndex={0}
-        role="region"
-        aria-label="Realizacja FINREAL, przewijany pasek ekranów"
-        className="finreal-tor mt-8 flex snap-x snap-mandatory gap-5 overflow-x-auto rounded-2xl pb-4"
-      >
-        {EKRANY.map((e, i) => (
-          <article
-            key={e.etykieta}
-            aria-label={`${i + 1} z ${EKRANY.length}: ${e.etykieta}`}
-            className="flex w-[88%] shrink-0 snap-center flex-col overflow-hidden rounded-2xl border border-gray-200/80 bg-white/60 dark:border-gray-800/80 dark:bg-gray-900/40 md:w-[46rem]"
-          >
-            <div className="relative flex aspect-[16/10] items-center justify-center overflow-hidden bg-gray-100 dark:bg-gray-800">
-              {e.obraz ? (
-                <Image
-                  src={e.obraz.src}
-                  alt={e.obraz.alt}
-                  width={e.obraz.szer}
-                  height={e.obraz.wys}
-                  sizes="(min-width: 768px) 736px, 88vw"
-                  className="h-full w-full object-cover object-top"
-                />
-              ) : (
-                <div className="relative aspect-[390/844] h-[92%] overflow-hidden rounded-[1.6rem] border-[5px] border-gray-900 bg-gray-900 shadow-xl">
-                  <video
-                    ref={wideo}
-                    className="h-full w-full object-cover"
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    preload="metadata"
-                    poster="/photos/finreal-przewijanie-plakat.webp"
-                    aria-label="Przewijanie nowej strony finreal.pl na telefonie"
-                  >
-                    <source src="/photos/finreal-przewijanie.webm" type="video/webm" />
-                    <source src="/photos/finreal-przewijanie.mp4" type="video/mp4" />
-                  </video>
-                </div>
-              )}
-              <span className="absolute left-3 top-3 rounded-full bg-gray-900/75 px-3 py-1 text-xs font-medium text-white backdrop-blur">
-                {`0${i + 1}`} {e.etykieta}
-              </span>
-            </div>
-            <div className="p-6">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{e.tytul}</h3>
-              <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">{e.tekst}</p>
-              {i === 2 && (
-                <p className="mt-4 border-t border-gray-200 pt-4 dark:border-gray-800">
-                  <span className="text-2xl font-bold tabular-nums text-accent">{W.liczba}</span>{" "}
-                  <span className="text-sm text-gray-600 dark:text-gray-400">{W.liczbaOpis}</span>
-                </p>
-              )}
-            </div>
-          </article>
-        ))}
-      </div>
-
-      <div className="mt-2 flex items-center justify-center gap-4">
-        <button
-          type="button"
-          onClick={() => idz(Math.max(numer - 1, 0))}
-          disabled={numer === 0}
-          aria-label="Poprzedni ekran"
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-300 text-gray-700 transition-colors hover:border-accent hover:text-accent disabled:opacity-30 dark:border-gray-700 dark:text-gray-200"
-        >
-          <span aria-hidden="true">←</span>
-        </button>
-        <div className="flex gap-2" aria-hidden="true">
-          {EKRANY.map((e, i) => (
-            <span
-              key={e.etykieta}
-              className={`h-2 rounded-full transition-all ${i === numer ? "w-6 bg-accent" : "w-2 bg-gray-300 dark:bg-gray-700"}`}
+      <div className="mt-16">
+        <Akt numer="I" etykieta="Problem klienta" tytul="Strona, która ważyła 6,2 megabajta">
+          <p className="mt-4 text-base text-gray-600 dark:text-gray-400">
+            Blog na telefonie pokazywał treść po 11 sekundach. Audyt techniczny dawał 45 punktów na 100.
+          </p>
+        </Akt>
+        <figure className="mx-auto mt-10 max-w-3xl">
+          <div className={RAMKA}>
+            <PasekAdresu adres="finreal.pl" />
+            <Image
+              src="/photos/realizacja-finreal-przed.webp"
+              alt="Stara strona finreal.pl"
+              width={2880}
+              height={1620}
+              sizes="(min-width: 768px) 768px, 100vw"
+              className="block h-auto w-full"
             />
-          ))}
+          </div>
+          <figcaption className="mt-3 text-center text-xs tracking-wide text-gray-500 dark:text-gray-400">
+            Przed: stara strona
+          </figcaption>
+        </figure>
+
+        <Linia />
+
+        <Akt numer="II" etykieta="Co zrobiliśmy" tytul="Projekt z Figmy na Next.js">
+          <p className="mt-4 text-base text-gray-600 dark:text-gray-400">
+            Nie poprawialiśmy starej strony. Przenieśliśmy projekt z Figmy na Next.js z systemem zarządzania treścią,
+            a stare adresy przekierowaliśmy, żeby nic nie zniknęło z Google.
+          </p>
+        </Akt>
+        <figure className="mx-auto mt-10 max-w-xl">
+          <div className={RAMKA}>
+            <Image
+              src="/photos/finreal-makieta.webp"
+              alt="Makieta strony głównej FINREAL z Figmy"
+              width={720}
+              height={620}
+              sizes="(min-width: 640px) 576px, 100vw"
+              className="block h-auto w-full"
+            />
+          </div>
+          <figcaption className="mt-3 text-center text-xs tracking-wide text-gray-500 dark:text-gray-400">
+            Makieta z Figmy
+          </figcaption>
+        </figure>
+
+        <Linia />
+
+        <Akt numer="III" etykieta="Efekt" tytul="12 dni zamiast 5 tygodni">
+          <p className="mt-4 text-base text-gray-600 dark:text-gray-400">
+            Strona na produkcji 12 dni od startu prac, przy terminie 5 tygodni.
+          </p>
+        </Akt>
+        <div className="mx-auto mt-10 flex max-w-3xl flex-col items-center gap-10 md:flex-row md:justify-center md:gap-14">
+          <figure className="w-44 shrink-0 sm:w-52">
+            <div className="aspect-[390/844] overflow-hidden rounded-3xl border-4 border-gray-900 bg-gray-900 shadow-xl dark:border-gray-700">
+              <video
+                ref={wideo}
+                className="h-full w-full object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                poster="/photos/finreal-przewijanie-plakat.webp"
+                aria-label="Przewijanie nowej strony finreal.pl na telefonie"
+              >
+                <source src="/photos/finreal-przewijanie.webm" type="video/webm" />
+                <source src="/photos/finreal-przewijanie.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <figcaption className="mt-3 text-center text-xs tracking-wide text-gray-500 dark:text-gray-400">
+              Po: nowa strona na telefonie
+            </figcaption>
+          </figure>
+          <p className="text-center">
+            <span className="block text-5xl font-bold tabular-nums tracking-tight text-accent md:text-6xl">
+              {W.liczba}
+            </span>
+            <span className="mx-auto mt-3 block max-w-xs text-sm text-gray-600 dark:text-gray-400">
+              {W.liczbaOpis}
+            </span>
+          </p>
         </div>
-        <button
-          type="button"
-          onClick={() => idz(Math.min(numer + 1, EKRANY.length - 1))}
-          disabled={numer === EKRANY.length - 1}
-          aria-label="Następny ekran"
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-300 text-gray-700 transition-colors hover:border-accent hover:text-accent disabled:opacity-30 dark:border-gray-700 dark:text-gray-200"
-        >
-          <span aria-hidden="true">→</span>
-        </button>
       </div>
     </section>
   );

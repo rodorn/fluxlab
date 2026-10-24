@@ -157,7 +157,7 @@ export default function Home() {
                             className="mt-0.5 h-4 w-4 shrink-0 text-accent"
                             fill="none"
                             stroke="currentColor"
-                            strokeWidth="2"
+                            strokeWidth="1.5"
                             strokeLinecap="round"
                             strokeLinejoin="round"
                           >

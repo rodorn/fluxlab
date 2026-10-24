@@ -35,11 +35,11 @@ const IKONA_LUPY = (
     fill="none"
     aria-hidden="true"
   >
-    <circle cx="9" cy="9" r="6" stroke="currentColor" strokeWidth="1.7" />
+    <circle cx="9" cy="9" r="6" stroke="currentColor" strokeWidth="1.5" />
     <path
       d="M14 14l3.5 3.5"
       stroke="currentColor"
-      strokeWidth="1.7"
+      strokeWidth="1.5"
       strokeLinecap="round"
     />
   </svg>

@@ -37,7 +37,39 @@ const FORMY: { id: Kontakt; nazwa: string; opis: string }[] = [
 
 
 
-const KROKI = ["Jak się odezwać", "Czego potrzebujesz", "Gdzie odpisać"];
+const KROKI = ["Czego potrzebujesz", "Jak się odezwać", "Gdzie odpisać"];
+
+const PODPOWIEDZI = [
+  "Nowa strona",
+  "Sklep internetowy",
+  "Automatyzacja",
+  "Połączenie z CRM",
+  "Raporty",
+];
+
+const ZAPEWNIENIA = ["Bez zobowiązań", "Cena i termin w odpowiedzi", "Odpisujemy tego samego dnia"];
+
+function IkonaFormy({ id }: { id: Kontakt }) {
+  return (
+    <svg className="mx-auto mb-2 h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      {id === "email" && (
+        <>
+          <rect x="3" y="5" width="18" height="14" rx="2" />
+          <path d="m3 7 9 6 9-6" />
+        </>
+      )}
+      {id === "phone" && (
+        <path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2" />
+      )}
+      {id === "meet" && (
+        <>
+          <rect x="3" y="6" width="13" height="12" rx="2" />
+          <path d="m16 10 5-3v10l-5-3" />
+        </>
+      )}
+    </svg>
+  );
+}
 
 interface Props {
   /** Identyfikator formularza w GA, np. "diagnosis_lp_leadow". */
@@ -56,7 +88,7 @@ export default function LandingForm({
   heading,
   intro,
   submitLabel = "Wyślij",
-  microCopy = "Odpowiedź tego samego dnia.",
+  microCopy,
   h1 = false,
 }: Props) {
   const Naglowek = h1 ? "h1" : "h2";
@@ -406,7 +438,7 @@ export default function LandingForm({
         onSubmit={handleSubmit}
         onInput={zapiszSzkic}
         onFocus={handleFormStart}
-        className="bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-sm p-6 lg:p-10 shadow-sm text-left space-y-6"
+        className="relative overflow-hidden bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-6 lg:p-10 shadow-xl shadow-accent/10 text-left space-y-6 before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-accent-solid"
       >
         <div
           aria-hidden="true"
@@ -434,41 +466,58 @@ export default function LandingForm({
           <span suppressHydrationWarning>{dzis}</span>
         </div>
 
-        <ol aria-label="Postęp formularza" className="flex items-center justify-center gap-2 text-sm text-gray-600 dark:text-gray-400">
-          {KROKI.map((n, i) => (
-            <li key={n} className="flex items-center gap-2" aria-current={krok === i ? "step" : undefined}>
-              <span
-                className={`flex h-6 w-6 items-center justify-center rounded-full border text-xs font-semibold transition-colors ${
-                  i < krok
-                    ? "border-accent bg-accent-solid text-white"
-                    : i === krok
-                      ? "border-accent text-accent"
-                      : "border-gray-300 dark:border-gray-600"
-                }`}
-              >
-                {i < krok ? "✓" : i + 1}
-              </span>
-              <span className={i === krok ? "font-semibold text-gray-900 dark:text-white" : "hidden sm:inline"}>{n}</span>
-              {i < KROKI.length - 1 && <span aria-hidden="true" className="h-px w-5 bg-gray-300 dark:bg-gray-600" />}
-            </li>
-          ))}
-        </ol>
+        <div>
+          <ol aria-label="Postęp formularza" className="grid grid-cols-3 gap-2">
+            {KROKI.map((n, i) => (
+              <li key={n} aria-current={krok === i ? "step" : undefined}>
+                <span className="sr-only">{n}</span>
+                <span
+                  aria-hidden="true"
+                  className={`block h-1 rounded-full transition-colors duration-500 ${
+                    i <= krok ? "bg-accent-solid" : "bg-gray-200 dark:bg-gray-700"
+                  }`}
+                />
+              </li>
+            ))}
+          </ol>
+          <p className="mt-3 text-right text-xs text-gray-500 dark:text-gray-400">
+            Krok {krok + 1} z 3
+          </p>
+        </div>
 
-        <div data-krok="1" hidden={krok !== 1} className="space-y-5">
+        <div data-krok="0" hidden={krok !== 0} className="space-y-5">
         <div>
           <label
             htmlFor="message"
-            className={etykietaClass}
+            className="block text-xl font-semibold tracking-tight text-gray-900 dark:text-white"
           >
-            Czego potrzebujesz? <span className="text-accent">*</span>
+            Z czym możemy pomóc?
           </label>
+          <div className="mt-3 mb-4 flex flex-wrap gap-2">
+            {PODPOWIEDZI.map((p) => (
+              <button
+                key={p}
+                type="button"
+                onClick={() => {
+                  const pole = formRef.current?.querySelector<HTMLTextAreaElement>("#message");
+                  if (!pole) return;
+                  pole.value = pole.value.trim() ? `${pole.value.trim()}, ${p.toLowerCase()}` : `${p}: `;
+                  pole.focus();
+                  pole.dispatchEvent(new Event("input", { bubbles: true }));
+                }}
+                className="rounded-full border border-gray-300 px-3 py-1.5 text-sm text-gray-700 transition-colors hover:border-accent hover:bg-accent/5 hover:text-accent dark:border-gray-600 dark:text-gray-300"
+              >
+                {p}
+              </button>
+            ))}
+          </div>
           <div className="text-gray-400 dark:text-gray-600" style={linkaPisma}>
             <textarea
               id="message"
               name="message"
               rows={4}
               required
-              placeholder="Jedno, dwa zdania wystarczą."
+              placeholder="Albo opisz własnymi słowami. Jedno, dwa zdania wystarczą."
               style={{ lineHeight: "2rem" }}
               className="block w-full resize-none border-0 bg-transparent p-0 text-base text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none"
             />
@@ -493,7 +542,7 @@ export default function LandingForm({
                 "Przepisujemy nagranie..."
               ) : (
                 <>
-                  <svg className="h-4 w-4 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <svg className="h-4 w-4 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                     <rect x="9" y="2" width="6" height="12" rx="3" />
                     <path d="M5 11a7 7 0 0 0 14 0M12 18v4" />
                   </svg>
@@ -512,6 +561,7 @@ export default function LandingForm({
         </div>
 
         <div data-krok="2" hidden={krok !== 2} className="space-y-5">
+        <p className="block text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Gdzie odpisać?</p>
         <div className="grid sm:grid-cols-2 gap-5">
           <div>
             <label
@@ -552,12 +602,12 @@ export default function LandingForm({
 
         </div>
 
-        <div data-krok="0" hidden={krok !== 0} className="space-y-5">
+        <div data-krok="1" hidden={krok !== 1} className="space-y-5">
         <fieldset>
-          <legend className={etykietaClass}>
+          <legend className="block text-xl font-semibold tracking-tight text-gray-900 dark:text-white mb-4">
             Jak mamy się odezwać?
           </legend>
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-3 gap-3">
             {FORMY.map((f) => (
               <button
                 key={f.id}
@@ -567,12 +617,13 @@ export default function LandingForm({
                   setKontakt(f.id);
                   setErrorMsg(null);
                 }}
-                className={`rounded-lg border px-2 py-3 text-center transition-colors ${
+                className={`flex flex-col items-center justify-start rounded-xl border px-2 py-4 text-center transition-all ${
                   kontakt === f.id
-                    ? "border-accent bg-accent/5 ring-1 ring-accent"
-                    : "border-gray-300 hover:border-accent dark:border-gray-600"
+                    ? "border-accent bg-accent/5 text-accent ring-1 ring-accent"
+                    : "border-gray-300 text-gray-500 hover:-translate-y-0.5 hover:border-accent hover:text-accent dark:border-gray-600 dark:text-gray-400"
                 }`}
               >
+                <IkonaFormy id={f.id} />
                 <span className="block text-base text-gray-900 dark:text-white">
                   {f.nazwa}
                 </span>
@@ -629,8 +680,9 @@ export default function LandingForm({
                 tylko typ tego samego przycisku i kliknięcie „Dalej” w drugim
                 kroku kończyło się już na przycisku wysyłki, czyli formularz
                 wysyłał się, zanim klient wybrał sposób kontaktu. */}
-            <button key="dalej" type="button" onClick={dalej} className={podpisClass}>
+            <button key="dalej" type="button" onClick={dalej} className={`${podpisClass} group`}>
               Dalej
+              <span aria-hidden="true" className="ml-2 inline-block transition-transform group-hover:translate-x-1">→</span>
             </button>
           </div>
         ) : (
@@ -653,9 +705,19 @@ export default function LandingForm({
           <p role="alert" className="text-center text-sm text-red-700 dark:text-red-400">{errorMsg}</p>
         )}
 
-        <p className="text-center font-serif text-sm italic text-gray-600 dark:text-gray-400">
-          {microCopy}
-        </p>
+        {microCopy && (
+          <p className="text-center text-sm text-gray-600 dark:text-gray-400">{microCopy}</p>
+        )}
+        <ul className="flex flex-wrap justify-center gap-x-5 gap-y-2 border-t border-gray-200 pt-5 text-xs text-gray-600 dark:border-gray-700 dark:text-gray-400">
+          {ZAPEWNIENIA.map((z) => (
+            <li key={z} className="flex items-center gap-1.5">
+              <svg className="h-3.5 w-3.5 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M5 13l4 4L19 7" />
+              </svg>
+              {z}
+            </li>
+          ))}
+        </ul>
       </form>
     </div>
   );

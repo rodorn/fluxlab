@@ -46,7 +46,7 @@ export default function ZgodaCookies() {
       role="dialog"
       aria-label="Zgoda na cookies"
       hidden={!widoczne}
-      className="cookie-consent fixed bottom-4 left-4 right-4 z-[45] rounded-2xl border border-gray-200 bg-white p-4 text-sm shadow-2xl dark:border-white/10 dark:bg-gray-900 md:right-auto md:max-w-sm"
+      className="cookie-consent print:hidden fixed bottom-4 left-4 right-4 z-[45] rounded-2xl border border-gray-200 bg-white p-4 text-sm shadow-2xl dark:border-white/10 dark:bg-gray-900 md:right-auto md:max-w-sm"
     >
       <p className="text-gray-700 dark:text-gray-300">
         Liczymy odwiedziny w Google Analytics. Ciasteczka zapiszemy tylko za Twoją zgodą.{" "}

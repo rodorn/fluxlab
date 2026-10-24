@@ -157,7 +157,7 @@ function IkonaPogody({ kod }: { kod: number }) {
       className={slonce ? "text-amber-500" : "text-gray-500 dark:text-white/60"}
       fill="none"
       stroke="currentColor"
-      strokeWidth="1.4"
+      strokeWidth="1.5"
       strokeLinecap="round"
     >
       {slonce ? (
@@ -169,7 +169,7 @@ function IkonaPogody({ kod }: { kod: number }) {
         <>
           <path d="M4.5 10.5a2.8 2.8 0 0 1 .3-5.6 3.6 3.6 0 0 1 6.9 1 2.3 2.3 0 0 1-.2 4.6z" />
           {deszcz && <path d="M5.5 12.5l-.6 1.5M8.5 12.5l-.6 1.5M11.5 12.5l-.6 1.5" />}
-          {snieg && <path d="M5.5 13.2h.01M8.5 13.8h.01M11.5 13.2h.01" strokeWidth="2" />}
+          {snieg && <path d="M5.5 13.2h.01M8.5 13.8h.01M11.5 13.2h.01" strokeWidth="1.5" />}
         </>
       )}
     </svg>

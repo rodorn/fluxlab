@@ -1,5 +1,6 @@
 "use client";
 
+import ZnakFl from "@/components/ZnakFl";
 import type { Wycena } from "@/lib/wycenaPdf";
 
 const kw = (n: number) => {
@@ -12,22 +13,27 @@ const kw = (n: number) => {
 export default function WycenaDokument({ w, data }: { w: Wycena; data: string }) {
   const vat = (n: number) => n * 0.23;
   return (
-    <div className="wycena-root min-h-screen bg-white text-black">
+    <div className="wycena-root min-h-screen bg-stone-100 text-stone-900 print:bg-white">
       <style>{`
-        @page { size: A4; margin: 16mm }
-        html, body { background: #fff !important; color: #000 }
+        @page { size: A4; margin: 0 }
+        .wycena-serif { font-family: var(--font-serif), Georgia, "Times New Roman", serif; font-weight: 400 }
+        .wycena-kartka { width: 100%; max-width: 210mm; min-height: 297mm; padding: 14mm 8mm 12mm }
+        .wycena-kartka td, .wycena-kartka th { padding-left: 0.5rem; padding-right: 0.5rem }
+        @media (min-width: 640px) {
+          .wycena-kartka { padding: 22mm 22mm 16mm }
+        }
         @media print {
-          .przycisk-czatu, .przycisk-do-gory, .czat-okno { display: none !important }
           html, body { background: #fff !important }
-          .wycena-root { min-height: 0 }
-          .wycena-kartka { box-shadow: none !important; margin: 0 !important; padding: 0 !important; max-width: none !important }
+          .przycisk-czatu, .przycisk-do-gory, .czat-okno { display: none !important }
+          .wycena-root { min-height: 0; background: #fff !important }
+          .wycena-kartka { box-shadow: none !important; margin: 0 !important; max-width: none !important; width: 210mm; min-height: 297mm; padding: 20mm 22mm 14mm !important }
           tr, .nie-lam { break-inside: avoid }
           * { -webkit-print-color-adjust: exact; print-color-adjust: exact }
         }
       `}</style>
 
-      <div className="print:hidden mx-auto flex max-w-[210mm] items-center justify-between gap-4 px-4 py-4">
-        <a href="/strony-www" className="text-sm text-gray-600 underline">
+      <div className="print:hidden mx-auto flex max-w-3xl items-center justify-between gap-4 px-4 py-5">
+        <a href="/strony-www" className="text-sm text-stone-600 underline">
           Wróć do strony
         </a>
         <button type="button" onClick={() => window.print()} className="btn-primary">
@@ -35,39 +41,61 @@ export default function WycenaDokument({ w, data }: { w: Wycena; data: string })
         </button>
       </div>
 
-      <main className="wycena-kartka mx-auto mb-10 max-w-[210mm] bg-white px-10 py-10 shadow-lg print:shadow-none sm:px-14">
-        <header className="flex items-end justify-between border-b-2 border-black pb-4">
-          <p className="text-3xl font-bold tracking-tight">FluxLab</p>
-          <p className="text-sm">Data: {data}</p>
-        </header>
+      <main className="wycena-kartka mx-auto mb-10 flex flex-col bg-white shadow-lg print:mb-0 print:shadow-none">
+        <div className="flex items-start justify-between gap-6">
+          <div className="flex items-center gap-3">
+            <ZnakFl className="h-10 w-10" />
+            <div>
+              <p className="wycena-serif text-2xl leading-none tracking-tight">FluxLab</p>
+              <p className="mt-1 text-xs tracking-wide text-stone-500">fluxlab.pl</p>
+            </div>
+          </div>
+          <div className="text-right text-xs leading-relaxed text-stone-600">
+            <p className="font-semibold text-stone-900">Paweł Iwanek</p>
+            <p>ul. Żołnierska 10/36</p>
+            <p>20-801 Lublin</p>
+            <p>NIP 7123336008</p>
+            <p>pawel@fluxlab.pl</p>
+          </div>
+        </div>
 
-        <h1 className="mt-10 text-3xl font-bold">Wycena orientacyjna</h1>
-        <p className="mt-1 text-base text-gray-700">{w.tytul}</p>
+        <div className="mt-10 border-t border-stone-900" />
+        <div className="mt-px border-t border-stone-300" />
 
-        <table className="mt-8 w-full border-collapse text-sm">
+        <div className="mt-10 flex flex-wrap items-end justify-between gap-x-6 gap-y-2">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-widest text-stone-500">Wycena orientacyjna</p>
+            <h1 className="wycena-serif mt-2 text-4xl leading-tight tracking-tight">{w.tytul}</h1>
+          </div>
+          <p className="text-sm text-stone-600">Data wystawienia: {data}</p>
+        </div>
+
+        <table className="mt-10 w-full border-collapse text-sm">
           <thead>
-            <tr style={{ background: "#4f46e5", color: "#fff" }}>
-              <th className="px-3 py-2 text-left font-semibold">Pozycja</th>
-              <th className="px-3 py-2 text-right font-semibold">Netto</th>
-              <th className="px-3 py-2 text-right font-semibold">VAT 23%</th>
-              <th className="px-3 py-2 text-right font-semibold">Brutto</th>
+            <tr className="border-b border-stone-900 text-xs uppercase tracking-widest text-stone-500">
+              <th className="w-8 py-2 text-left font-semibold">Lp.</th>
+              <th className="py-2 text-left font-semibold">Pozycja</th>
+              <th className="py-2 text-right font-semibold">Netto</th>
+              <th className="py-2 text-right font-semibold">VAT 23%</th>
+              <th className="py-2 text-right font-semibold">Brutto</th>
             </tr>
           </thead>
           <tbody>
             {w.pozycje.map((p, i) => (
-              <tr key={i} className="border-b border-gray-300 align-top">
-                <td className="px-3 py-3">
-                  <span className="block font-semibold">{p.nazwa}</span>
-                  {p.opis && <span className="block text-xs text-gray-600">{p.opis}</span>}
+              <tr key={i} className="border-b border-stone-200 align-top">
+                <td className="py-3 text-xs tabular-nums text-stone-400">{i + 1}</td>
+                <td className="py-3">
+                  <span className="block font-semibold leading-snug">{p.nazwa}</span>
+                  {p.opis && <span className="mt-0.5 block text-xs leading-snug text-stone-500">{p.opis}</span>}
                 </td>
                 {p.netto !== undefined ? (
                   <>
-                    <td className="whitespace-nowrap px-3 py-3 text-right tabular-nums">{kw(p.netto)}</td>
-                    <td className="whitespace-nowrap px-3 py-3 text-right tabular-nums">{kw(vat(p.netto))}</td>
-                    <td className="whitespace-nowrap px-3 py-3 text-right tabular-nums">{kw(p.netto * 1.23)}</td>
+                    <td className="whitespace-nowrap py-3 text-right tabular-nums">{kw(p.netto)}</td>
+                    <td className="whitespace-nowrap py-3 text-right tabular-nums text-stone-500">{kw(vat(p.netto))}</td>
+                    <td className="whitespace-nowrap py-3 text-right tabular-nums">{kw(p.netto * 1.23)}</td>
                   </>
                 ) : (
-                  <td colSpan={3} className="px-3 py-3 text-right text-xs italic text-gray-700">
+                  <td colSpan={3} className="py-3 text-right text-xs italic text-stone-500">
                     {p.info}
                   </td>
                 )}
@@ -75,34 +103,50 @@ export default function WycenaDokument({ w, data }: { w: Wycena; data: string })
             ))}
           </tbody>
           <tfoot>
-            <tr className="border-t-2 border-black font-bold">
-              <td className="px-3 py-3">
+            <tr className="border-t border-stone-900">
+              <td />
+              <td className="pb-1 pt-4 text-xs font-semibold uppercase tracking-widest text-stone-500">
                 {w.sumaEtykieta}
                 {w.sumaOd ? " (od)" : ""}
               </td>
-              <td className="whitespace-nowrap px-3 py-3 text-right tabular-nums">{kw(w.suma)}</td>
-              <td className="whitespace-nowrap px-3 py-3 text-right tabular-nums">{kw(vat(w.suma))}</td>
-              <td className="whitespace-nowrap px-3 py-3 text-right tabular-nums">{kw(w.suma * 1.23)}</td>
+              <td className="whitespace-nowrap pb-1 pt-4 text-right tabular-nums text-stone-500">{kw(w.suma)}</td>
+              <td className="whitespace-nowrap pb-1 pt-4 text-right tabular-nums text-stone-500">{kw(vat(w.suma))}</td>
+              <td className="wycena-serif whitespace-nowrap pb-1 pt-3 text-right text-2xl tabular-nums">{kw(w.suma * 1.23)}</td>
             </tr>
           </tfoot>
         </table>
+        <p className="mt-1 text-right text-xs text-stone-500">Kwota brutto do zapłaty</p>
 
-        {w.uwaga && <p className="mt-3 text-xs text-gray-700">{w.uwaga}</p>}
+        {w.uwaga && <p className="mt-6 text-xs leading-relaxed text-stone-600">{w.uwaga}</p>}
+
         {w.termin && (
-          <p className="mt-6 text-sm">
-            <span className="font-semibold">Termin realizacji:</span> {w.termin}
-          </p>
+          <div className="nie-lam mt-8 border-t border-stone-300 pt-4">
+            <p className="text-xs font-semibold uppercase tracking-widest text-stone-500">Termin realizacji</p>
+            <p className="mt-1 text-sm">{w.termin}</p>
+          </div>
         )}
 
-        <p className="nie-lam mt-8 border-l-4 py-1 pl-4 text-sm" style={{ borderColor: "#4f46e5" }}>
-          Wycena orientacyjna, ważna 14 dni. Wiążąca wycena po krótkiej rozmowie.
-        </p>
+        <div className="nie-lam mt-8 border-t border-stone-300 pt-4">
+          <p className="text-xs font-semibold uppercase tracking-widest text-stone-500">Ważność</p>
+          <p className="mt-1 text-sm">Wycena orientacyjna, ważna 14 dni. Wiążącą wycenę przygotujemy po krótkiej rozmowie.</p>
+        </div>
 
-        <footer className="nie-lam mt-16 border-t border-gray-400 pt-4 text-xs leading-relaxed text-gray-800">
-          <p className="font-semibold">Paweł Iwanek (FluxLab)</p>
-          <p>ul. Żołnierska 10/36, 20-801 Lublin, NIP 7123336008</p>
-          <p>pawel@fluxlab.pl, fluxlab.pl</p>
-        </footer>
+        <div className="nie-lam mt-auto grid grid-cols-2 gap-10 pt-20">
+          <div>
+            <div className="border-t border-stone-900" />
+            <p className="mt-2 text-xs font-semibold">Paweł Iwanek</p>
+            <p className="text-xs text-stone-500">w imieniu FluxLab</p>
+          </div>
+          <div>
+            <div className="border-t border-stone-900" />
+            <p className="mt-2 text-xs font-semibold">Akceptacja zamawiającego</p>
+            <p className="text-xs text-stone-500">data i podpis</p>
+          </div>
+        </div>
+
+        <div className="nie-lam mt-10 text-center text-xs tracking-wide text-stone-400">
+          FluxLab, Paweł Iwanek, NIP 7123336008, fluxlab.pl
+        </div>
       </main>
     </div>
   );

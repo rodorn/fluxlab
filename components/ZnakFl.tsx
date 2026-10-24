@@ -1,6 +1,6 @@
-/** Znak „fl”: ligatura, w której poprzeczka f przechodzi w pień l.
- *  Jedna grubość kreski (110), wspólna linia bazowa (790) i wspólna
- *  wysokość wzniosów (290), więc obie litery trzymają ten sam rytm. */
+/** Znak „fl”: dwie osobne litery z wyraźnym odstępem, krótka poprzeczka f
+ *  nie dochodzi do l. Jedna grubość kreski (120), wspólna linia bazowa (800)
+ *  i wspólna wysokość wzniosów (310). */
 export default function ZnakFl({
   className = "h-7 w-7",
 }: {
@@ -12,13 +12,13 @@ export default function ZnakFl({
       <g
         fill="none"
         stroke="#fff"
-        strokeWidth="110"
+        strokeWidth="120"
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        <path d="M400 790 V420 A130 130 0 0 1 530 290 H550" />
-        <path d="M330 540 H750" />
-        <path d="M750 290 V790" />
+        <path d="M390 800 V440 A130 130 0 0 1 520 310 H540" />
+        <path d="M270 560 H490" />
+        <path d="M750 310 V800" />
       </g>
     </svg>
   );

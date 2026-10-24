@@ -166,7 +166,7 @@ function renderStep(step: Step) {
                       className="rysuj-ptak text-accent"
                       d="M3 8l3 3 7-7"
                       stroke="currentColor"
-                      strokeWidth="2"
+                      strokeWidth="1.5"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     />
