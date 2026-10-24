@@ -724,25 +724,6 @@ html.dark {
   from { opacity: 0; transform: translateY(8px) scale(0.97); }
 }
 
-/* Karta z poświatą pod kursorem, pozycja w --mx i --my z KartaPoswiata */
-.karta-poswiata {
-  position: relative;
-  isolation: isolate;
-}
-.karta-poswiata::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  border-radius: inherit;
-  opacity: 0;
-  transition: opacity 0.3s;
-  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgb(var(--accent) / 0.12), transparent 60%);
-}
-.karta-poswiata:hover::before {
-  opacity: 1;
-}
-
 /* Pasek akcji w telefonie wysuwa się od dołu */
 .pasek-akcji {
   transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -940,7 +921,7 @@ main[class*="max-w-"]:has(> nav[aria-label="Breadcrumb"]) {
 ::view-transition-new(.vt-page) {
   animation: 180ms ease-in both vt-page-in;
 }
-/* Karta katalogu przechodzi w H1 podstrony (nazwa vt-cel z PoswiataKursora). */
+/* Karta katalogu przechodzi w H1 podstrony (nazwa vt-cel z PrzejscieKarty). */
 ::view-transition-group(vt-cel) {
   animation-duration: 320ms;
   animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -1478,7 +1459,10 @@ textarea[aria-invalid="true"] {
 }
 
 /* 52: obramowanie z gradientem na najechanej karcie */
-.karta-poswiata::after {
+.karta-obrys {
+  position: relative;
+}
+.karta-obrys::after {
   content: "";
   position: absolute;
   inset: -1px;
@@ -1492,8 +1476,8 @@ textarea[aria-invalid="true"] {
   opacity: 0;
   transition: opacity 0.3s;
 }
-.karta-poswiata:hover::after,
-.karta-poswiata:focus-visible::after {
+.karta-obrys:hover::after,
+.karta-obrys:focus-visible::after {
   opacity: 1;
 }
 
@@ -1627,7 +1611,7 @@ html.przewijanie body {
   }
 }
 
-/* Ziarno papieru na całej stronie i poświata za kursorem (PoswiataKursora). */
+/* Ziarno papieru na całej stronie. */
 body::after {
   content: "";
   position: fixed;
@@ -1641,21 +1625,8 @@ body::after {
 .dark body::after {
   opacity: 0.06;
 }
-.poswiata-kursora {
-  position: fixed;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 400ms ease;
-  background: radial-gradient(520px circle at var(--px, 50%) var(--py, 50%), rgb(var(--accent) / 0.07), transparent 65%);
-}
-.dark .poswiata-kursora {
-  background: radial-gradient(520px circle at var(--px, 50%) var(--py, 50%), rgb(var(--accent) / 0.1), transparent 65%);
-}
 @media print {
-  body::after,
-  .poswiata-kursora {
+  body::after {
     display: none;
   }
 }

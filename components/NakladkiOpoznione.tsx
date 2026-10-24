@@ -5,7 +5,7 @@ import MagnesPrzyciskow from "@/components/MagnesPrzyciskow";
 import KomunikatKonsoli from "@/components/KomunikatKonsoli";
 import Czat from "@/components/Czat";
 import NowaWersja from "@/components/NowaWersja";
-import PoswiataKursora from "@/components/PoswiataKursora";
+import PrzejscieKarty from "@/components/PrzejscieKarty";
 
 export default function NakladkiOpoznione() {
   return (
@@ -15,7 +15,7 @@ export default function NakladkiOpoznione() {
       <KomunikatKonsoli />
       <Czat />
       <NowaWersja />
-      <PoswiataKursora />
+      <PrzejscieKarty />
     </>
   );
 }

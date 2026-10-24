@@ -2,7 +2,6 @@ import Link from "next/link";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import TloHero from "@/components/TloHero";
-import KartaPoswiata from "@/components/KartaPoswiata";
 import LandingForm from "@/components/LandingForm";
 import PasekAkcji from "@/components/PasekAkcji";
 import PoleAudytu from "@/components/PoleAudytu";
@@ -124,9 +123,9 @@ export default function Home() {
                 delay={(i + 1) as 1 | 2 | 3}
                 className={`flex ${i === 0 ? "md:col-span-2" : ""}`}
               >
-                <KartaPoswiata
+                <Link
                   href={o.href}
-                  className={`group flex w-full flex-col rounded-2xl border p-7 transition-all duration-300 hover:-translate-y-1 hover:border-accent hover:shadow-xl hover:shadow-accent/10 ${
+                  className={`karta-obrys group flex w-full flex-col rounded-2xl border p-7 transition-all duration-300 hover:-translate-y-1 hover:border-accent hover:shadow-xl hover:shadow-accent/10 ${
                     o.wyrozniona
                       ? "border-accent/60 bg-accent/5"
                       : "border-gray-200 dark:border-white/10"
@@ -164,7 +163,7 @@ export default function Home() {
                   <span className="mt-auto pt-6 text-sm font-semibold text-accent group-hover:underline">
                     {o.cta} →
                   </span>
-                </KartaPoswiata>
+                </Link>
               </RevealOnScroll>
             ))}
           </div>
