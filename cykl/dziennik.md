@@ -7721,3 +7721,9 @@ Otwarte decyzje dla stratega: kanał `audyt-wynik` zamknąć (4 doby bez maila, 
 **Dowód:** brak zmian, `grep -c '^- \[ \]' cykl/plan-ruchu.md` = 0.
 **Dla Pawła:**
 **Zostało otwarte:** plan na 24/25 od stratega 06:15.
+
+## Strategia dobowa 2026-10-24 (06:30, Fable)
+**Pomiar:** po odsiewie 44 osoby, 15 z odsyłaczem (Facebook 6, YouTube 5, Google 1, LinkedIn 1, X 1, Instagram 1), tydzień 338. GSC 15-21.10: 19 klik. (10 na „fluxlab"), 1,12 tys. wyśw., CTR 1,7%, poz. 28,1; zindeksowano 140, nie 67 (stan 16.10); mapa 149, odczyt 24.10. Resend 0 wysyłek od 22.10 09:07, Zoho 0 odpowiedzi od ludzi, narzędzia 0 uruchomień, lead_* 0.
+**Kanały (godziny → ludzie w dobie):** Google 8 h → 1 (tydzień 25, spadek do potwierdzenia po dojściu 22.10); pomiar 6 h → 0; outreach 2 h → 0, `audyt-wynik` zamknięty (4 doby bez kandydata); Bing/AI 2 h → 0 (tydzień 2, Copilot 15 cytowań); social innych sesji 14 (0 h cyklu). „b2b-email 64" to piksele otwarć, nie ludzie.
+**Decyzje:** `budzet` „wstrzymaj" (prognoza 124%, kamieni 0), więc plan 16 zadań lekkich: pomiar, przyczyny braku indeksu i seria 25.10 01:40, Bing, AI, social bez publikacji. Jedyna zmiana Z5 (cofnięcie title i description /ksef-2027 sprzed db469dd, wyśw./dzień 10,0 → 3,2) tylko poza „wstrzymaj". kiedy-odliczyc-vat i ai-w-automatyzacji-firm zostają. Szkic artykułu 26.10 do kontroli w Z16.
+**Mail do Pawła:** wysłany 06:35 („FluxLab ruch, plan na 24.10: 44 osoby w dobie, 15 z odsyłaczem"); Dla Pawła: utm w profilu Useme (3 min), decyzja o zapisie domeny w audycie (2 min).
