@@ -7745,3 +7745,11 @@ Otwarte decyzje dla stratega: kanał `audyt-wynik` zamknąć (4 doby bez maila, 
 **Dowód:** `cykl/gsc-niezindeksowane-2026-10-24.txt`. GSC Indeksowanie nadal z 16.10: 140 / 67. „Zeskanowana, nie zindeksowana” 19, z czego stron z sitemap 3 (/mapa-strony, /strefa-wiedzy/zaw-fa-ksef, /strefa-wiedzy/ai-w-automatyzacji-firm) plus www-duplikat /strefa-wiedzy/automatyzacja-vs-zatrudnienie; 15 to obrazy OG, fonty, adresy www i 1 przekierowanie. „Wykryta” 1: /polityka-prywatnosci.
 **Dla Pawła:**
 **Zostało otwarte:** Z3 (Bing, 09:30) i dalej; budżet „wstrzymaj”, jedno lekkie zadanie na cykl.
+
+## 2026-10-24 08:52
+**Kanał:** wyszukiwarki i AI (plan dobowy Z3, Z4, Z5).
+**Co zrobione:** 10 stron serii zgłoszonych w Bing Webmaster (z indeksu Binga korzystają Copilot i ChatGPT), potwierdzony indeks Google 5 stron serii, w tym /asystent-ai-na-stronie, i przywrócony na produkcji tytuł oraz opis /ksef-2027 sprzed 17.10.
+**Ruch:** raport_ruchu 08:43: doba 143 odsłony, 107 osób (+12% wobec średniej 127,3); źródła b2b-email 59 (piksel otwarć), youtube 20, facebook 5, m.facebook.com 4, instagram 4; uruchomienia narzędzi 0.
+**Dowód:** Bing URL Submission „URLs submitted today 0 → 10”, quota 100 → 90 (/asystent-ai-na-stronie, /widocznosc-w-ai, /audyt-kurierski, /ksef-integracja, /e-doreczenia-integracja, /dane-sprzedawcy, /tansze-automatyzacje, /podwojny-adres, /strony-www, /automatyzacja-leadow-crm). Bing AI Performance: dane do 19.10, 13-19.10 15 cytowań (bez zmian); cytowane: www.fluxlab.pl/strefa-wiedzy/jak-liczyc-zdrowotna-jdg 5, /strefa-wiedzy/ryczalt-czy-liniowy 4. GSC `--tylko-stan`: 5 z 5 „znajduje się w Google”. Commit bcdb160, produkcja `<title>KSeF od 1 stycznia 2027: lista kontrolna dla firm | Fluxlab`, IndexNow 2 z 3.
+**Dla Pawła:**
+**Zostało otwarte:** Z6 do Z16 według godzin planu. Copilot cytuje adres z www (jak-liczyc-zdrowotna-jdg), do sprawdzenia przez stratega, czy www przekierowuje 308 na wersję bez www. Budżet „zwolnij”, przerwa 45 min.
