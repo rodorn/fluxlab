@@ -7767,3 +7767,14 @@ Otwarte decyzje dla stratega: kanał `audyt-wynik` zamknąć (4 doby bez maila, 
 - BEZ WEJŚĆ 3. Instagram ulgi i relacje podatkowe z własną nazwą kampanii (`seria-podatki-ulga-br` 23.10, `-ulga-na-start`, `-ulga-prototyp` 24.10, `-sprzet-do-pracy` 24.10) oraz rolki `rolka-ksef-limit`, `rolka-ksef-kary`: 0 sesji pod tymi nazwami (w bazie tylko ogólne `seria-podatki`, więc wejście IG 24.10 06:47 na /strefa-wiedzy/kategoria/jdg-i-podatki może pochodzić z ulgi przez link w bio).
 **Dla Pawła:**
 **Zostało otwarte:** Z7 (pomiar południe, 13:30) i dalej. Dla stratega: tematy podatkowe JDG i KSeF przyprowadzają ludzi, posty z samym narzędziem nie przyprowadziły nikogo.
+
+## 2026-10-24 11:05
+**Kanał:** pomiar (plan dobowy Z7, Z8, Z9; wzięte przed godziną docelową).
+**Co zrobione:** policzone wejścia od 06:30, odsyłacze z asystentów AI za 7 dni i piksele b2b-email; nic nie poszło w świat, to zadania pomiarowe.
+**Ruch:** raport_ruchu 10:45: doba 142 odsłony, 105 osób (+13% wobec średniej 126,1); YouTube 4 sesje, LinkedIn 1; uruchomienia narzędzi 0. `pomiar-kanalow.py` 24 h: ludzie 46, bez odsyłacza 25, youtube 6, instagram 4, facebook 7 (trzy domeny), google 2.
+**Dowód:**
+- Z7, od 06:30: ludzie 9, z odsyłaczem 6 (instagram/seria-podatki 3, youtube/format-licze 1, l.facebook.com 1, google 1 na /strefa-wiedzy/data-wystawienia-faktury-ksef), bez 3, salwy 0; uruchomienia, lead_*, klik_po_wyniku, klik_mail_kontakt po 0. Zoho INBOX od 06:30: 0 zapytań od ludzi.
+- Z8, AI 7 dni: 5 sesji (chatgpt.com 1, bing 2, yahoo 2; perplexity, copilot, duckduckgo, gemini 0); 3 z 5 uruchomiły narzędzie (/sprawdzenie-nip 2, /audyt-strony 1). Strony cytowane przez Copilota (jak-liczyc-zdrowotna-jdg, ryczalt-czy-liniowy) mają 0 wejść z AI: 15 cytowań = 0 kliknięć.
+- Z9: b2b-email = piksele, 0 ludzi (216 otwarć, 107 sesji, 0 z odsłoną poza /mail/).
+**Dla Pawła:**
+**Zostało otwarte:** Z10 (GSC, frazy z pozycją 8-15) i dalej; pominięte w tym cyklu z powodu rytmu budżetu „zwolnij”. Dla stratega: wejścia z wyszukiwarek innych niż Google są nieliczne, ale częściej kończą się uruchomieniem narzędzia niż social.
