@@ -11,9 +11,9 @@ import RamkaKsefDoWstawienia from "@/components/RamkaKsefDoWstawienia";
 import NazwaNarzedzia from "@/components/NazwaNarzedzia";
 
 export const metadata: Metadata = {
-  title: "KSeF 2027: czy termin przesunięto? Lista kontrolna | Fluxlab",
+  title: "KSeF od 1 stycznia 2027: lista kontrolna dla firm | Fluxlab",
   description:
-    "Projekt przesuwa kary KSeF, a nie obowiązek od 1 stycznia 2027. Sprawdź w kilka minut, czego brakuje w Twojej firmie, i wyślij wykaz braków księgowej.",
+    "1 stycznia 2027 kończą się przepisy przejściowe KSeF: znika limit 10 tys. zł, faktury z kas wchodzą do KSeF, a przelew ma zawierać numer KSeF.",
   alternates: { canonical: "/ksef-2027" },
   openGraph: {
     title: "KSeF od 1 stycznia 2027: co musisz mieć domknięte",
