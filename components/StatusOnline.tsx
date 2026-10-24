@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-function czyOnline(): boolean {
+export function czyOnline(): boolean {
   const h = Number(
     new Intl.DateTimeFormat("en-GB", {
       hour: "numeric",
@@ -10,7 +10,7 @@ function czyOnline(): boolean {
       timeZone: "Europe/Warsaw",
     }).format(new Date()),
   );
-  return h >= 9 && h < 23;
+  return h >= 11 && h < 23;
 }
 
 function godzina(): string {
@@ -48,7 +48,7 @@ export default function StatusOnline() {
           className={`relative inline-flex h-2 w-2 rounded-full ${online ? "bg-green-500" : "bg-gray-400"}`}
         />
       </span>
-      <span>{online ? "Jesteśmy online, odpisujemy na bieżąco" : "Odpiszemy od 9:00"}</span>
+      <span>{online ? "Jesteśmy online, odpisujemy na bieżąco" : "Odpiszemy od 11:00"}</span>
       <span aria-hidden="true" className="hidden sm:inline">·</span>
       <span className="w-full sm:w-auto">Warszawa, {czas}</span>
     </p>

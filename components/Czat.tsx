@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 
 import { zglosZdarzenie } from "@/lib/zdarzenie";
+import { czyOnline } from "@/components/StatusOnline";
 
 type Wiadomosc = {
   rola: "ja" | "bot";
@@ -138,6 +139,7 @@ export default function Czat() {
   const [historia, setHistoria] = useState<Wiadomosc[]>([POWITANIE]);
   const [pole, setPole] = useState("");
   const [czeka, setCzeka] = useState(false);
+  const [online, setOnline] = useState(false);
   const lista = useRef<HTMLDivElement>(null);
   const wejscie = useRef<HTMLInputElement>(null);
 
@@ -147,6 +149,13 @@ export default function Czat() {
       behavior: "smooth",
     });
   }, [historia, czeka]);
+
+  useEffect(() => {
+    const odswiez = () => setOnline(czyOnline());
+    odswiez();
+    const id = setInterval(odswiez, 60_000);
+    return () => clearInterval(id);
+  }, []);
 
   useEffect(() => {
     if (otwarty) wejscie.current?.focus();
@@ -281,8 +290,15 @@ export default function Czat() {
         }}
         aria-expanded={otwarty}
         aria-label={otwarty ? "Zamknij czat" : "Zapytaj o ofertę"}
+        title={online && !otwarty ? "Jesteśmy online, zaraz odpowiemy" : undefined}
         className="btn-primary przycisk-czatu fixed bottom-6 right-6 z-50 h-14 px-5"
       >
+        {online && !otwarty && (
+          <span className="absolute -right-0.5 -top-0.5 flex h-3.5 w-3.5" aria-hidden="true">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
+            <span className="relative inline-flex h-3.5 w-3.5 rounded-full border-2 border-white bg-green-500 dark:border-gray-950" />
+          </span>
+        )}
         <svg
           viewBox="0 0 24 24"
           className="h-5 w-5"
