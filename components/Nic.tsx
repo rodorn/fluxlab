@@ -39,21 +39,14 @@ export default function Nic() {
     let ruch = 0;
     let czas = 0;
     let ruszyl = false;
-    let szer = 0;
-    let wys = 0;
+    let uklad = "";
     let ramka = 0;
 
     function uloz() {
       ramka = 0;
       const W = main!.clientWidth;
       const H = main!.scrollHeight;
-      if (W === szer && H === wys) return;
-      szer = W;
-      wys = H;
       const m = main!.getBoundingClientRect();
-      svg!.setAttribute("viewBox", `0 0 ${W} ${H}`);
-      svg!.style.height = `${H}px`;
-
       const elementy = [...main!.querySelectorAll<HTMLElement>("[data-nic]")];
       const kotwice = elementy.map((k) => {
         const r = k.getBoundingClientRect();
@@ -62,6 +55,17 @@ export default function Nic() {
           y: r.top - m.top + r.height / 2,
         };
       });
+      const jasne = main!.querySelector<HTMLElement>("[data-nic-jasne]");
+      const rj = jasne?.getBoundingClientRect();
+      // Treść nad węzłem może się przesunąć bez zmiany wysokości strony,
+      // więc układ porównujemy po położeniu węzłów i jasnej sekcji.
+      const nowy = [W, H, rj && rj.top - m.top, ...kotwice.map((k) => k.y)]
+        .map((v) => Math.round(v ?? 0))
+        .join();
+      if (nowy === uklad) return;
+      uklad = nowy;
+      svg!.setAttribute("viewBox", `0 0 ${W} ${H}`);
+      svg!.style.height = `${H}px`;
       if (kotwice.length < 2) return;
 
       const kontener = main!.querySelector<HTMLElement>(".container-wide");
@@ -107,13 +111,11 @@ export default function Nic() {
       });
       narysowane = -1;
 
-      const jasne = main!.querySelector<HTMLElement>("[data-nic-jasne]");
-      if (jasne) {
-        const r = jasne.getBoundingClientRect();
-        maska.setAttribute("x", String(r.left - m.left));
-        maska.setAttribute("y", String(r.top - m.top));
-        maska.setAttribute("width", String(r.width));
-        maska.setAttribute("height", String(r.height));
+      if (rj) {
+        maska.setAttribute("x", String(rj.left - m.left));
+        maska.setAttribute("y", String(rj.top - m.top));
+        maska.setAttribute("width", String(rj.width));
+        maska.setAttribute("height", String(rj.height));
       }
       gora = m.top + window.scrollY;
       if (ruszyl) probkuj();
@@ -219,6 +221,7 @@ export default function Nic() {
     }
 
     const przewijanie = () => {
+      zaplanuj();
       if (!ruszyl) return;
       celPrzewijania();
       jedz();
