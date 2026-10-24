@@ -1,0 +1,26 @@
+# GSC Indeksowanie → Strony, odczyt 2026-10-24 07:50, raport „Ostatnia aktualizacja: 16.10.2026”
+# Zindeksowano 140, nie zindeksowano 67 (bez zmian wobec 16.10), 6 przyczyn:
+# kanoniczna alternatywa 40, przekierowanie 5, noindex 1, 404 1, zeskanowana-nie-zindeksowana 19, wykryta-niezindeksowana 1
+# kolumny: adres | przyczyna | ostatnie skanowanie | w sitemap | uwagi | kandydat Z12
+https://fluxlab.pl/mapa-strony | zeskanowana | 18.10.2026 | tak | 200, kanoniczna własna | nie (seria 23/24.10)
+https://fluxlab.pl/strefa-wiedzy/zaw-fa-ksef | zeskanowana | 18.10.2026 | tak | 200, kanoniczna własna | TAK
+https://fluxlab.pl/strefa-wiedzy/ai-w-automatyzacji-firm | zeskanowana | 17.10.2026 | tak | 200, kanoniczna własna | TAK
+https://fluxlab.pl/numer-ksef/opengraph-image?be747acd0cb50fb0 | zeskanowana | 9.10.2026 | nie | obraz OG | nie
+https://fluxlab.pl/ksef-2027/opengraph-image | zeskanowana | 9.10.2026 | nie | obraz OG | nie
+https://fluxlab.pl/ksef-2027/opengraph-image?2b0ea57f5d2015ac | zeskanowana | 6.10.2026 | nie | obraz OG | nie
+https://fluxlab.pl/e-doreczenia-integracja/opengraph-image?88f8e01096332793 | zeskanowana | 3.10.2026 | nie | obraz OG | nie
+https://fluxlab.pl/opengraph-image?62095b685b2e73e7 | zeskanowana | 3.10.2026 | nie | obraz OG | nie
+https://fluxlab.pl/ksef-integracja/opengraph-image?ed5e971932c8da61 | zeskanowana | 3.10.2026 | nie | obraz OG | nie
+https://fluxlab.pl/photos/Factory.avif | zeskanowana | 3.10.2026 | nie | obraz | nie
+https://fluxlab.pl/opengraph-image?9f82fff65c01486e | zeskanowana | 26.09.2026 | nie | obraz OG | nie
+https://www.fluxlab.pl/strefa-wiedzy/ai-w-automatyzacji-firm | zeskanowana | 10.09.2026 | nie | www, duplikat | nie
+https://www.fluxlab.pl/zatrudnic-czy-zautomatyzowac | zeskanowana | 24.08.2026 | nie | www; https://fluxlab.pl/zatrudnic-czy-zautomatyzowac = 301 | nie
+https://fluxlab.pl/opengraph-image | zeskanowana | 9.08.2026 | nie | obraz OG | nie
+https://fluxlab.pl/opengraph-image?2b3ec801eabf6d0 | zeskanowana | 9.08.2026 | nie | obraz OG | nie
+https://www.fluxlab.pl/strefa-wiedzy/automatyzacja-vs-zatrudnienie | zeskanowana | 21.07.2026 | nie (bez www: tak) | www; wersja bez www 200, kanoniczna własna | TAK (bez www)
+https://www.fluxlab.pl/photos/digital_eye.avif | zeskanowana | 25.05.2026 | nie | obraz | nie
+https://www.fluxlab.pl/_next/static/media/797e433ab948586e-s.p.479bea2b.woff2 | zeskanowana | 15.05.2026 | nie | font | nie
+https://www.fluxlab.pl/_next/static/media/caa3a2e1cccd8315-s.p.3b6cae6d.woff2 | zeskanowana | 15.05.2026 | nie | font | nie
+https://fluxlab.pl/polityka-prywatnosci | wykryta | nie dotyczy | tak | 200, kanoniczna własna | TAK (niski priorytet)
+# Kandydaci dla Z12 (w sitemap, 200, nie przekierowanie, poza seriami 23-24.10):
+# /strefa-wiedzy/zaw-fa-ksef, /strefa-wiedzy/ai-w-automatyzacji-firm, /strefa-wiedzy/automatyzacja-vs-zatrudnienie, /polityka-prywatnosci

@@ -7735,3 +7735,13 @@ Otwarte decyzje dla stratega: kanał `audyt-wynik` zamknąć (4 doby bez maila, 
 **Dowód:** cykl/plan-ruchu.md, linia Z1 z liczbami po dniu.
 **Dla Pawła:** 
 **Zostało otwarte:** Z2 i dalej; budżet „wstrzymaj”, więc jedno lekkie zadanie na cykl.
+
+<!-- WYSLANO 2026-10-24 07:04 -->
+
+## 2026-10-24 07:55
+**Kanał:** Google (Z2: przyczyny braku indeksu).
+**Co zrobione:** spisane adresy z dwóch przyczyn braku indeksu w GSC i zestawione z sitemap.xml; 4 strony do serii 25.10 (Z12).
+**Ruch:** doba 143 odsłony, 103 osoby; źródła: b2b-email 63 (piksele), youtube 20, facebook 5, m.facebook.com 4, l.facebook.com 3; YouTube 4 sesje, LinkedIn 1; uruchomienia narzędzi 0.
+**Dowód:** `cykl/gsc-niezindeksowane-2026-10-24.txt`. GSC Indeksowanie nadal z 16.10: 140 / 67. „Zeskanowana, nie zindeksowana” 19, z czego stron z sitemap 3 (/mapa-strony, /strefa-wiedzy/zaw-fa-ksef, /strefa-wiedzy/ai-w-automatyzacji-firm) plus www-duplikat /strefa-wiedzy/automatyzacja-vs-zatrudnienie; 15 to obrazy OG, fonty, adresy www i 1 przekierowanie. „Wykryta” 1: /polityka-prywatnosci.
+**Dla Pawła:**
+**Zostało otwarte:** Z3 (Bing, 09:30) i dalej; budżet „wstrzymaj”, jedno lekkie zadanie na cykl.
