@@ -23,7 +23,7 @@ export default function Kolofon() {
 
   return (
     <p className="mt-2 min-h-6">
-      Złożono krojem Instrument Sans i Instrument Serif. {pomiar}
+      Złożono krojem Instrument Sans. {pomiar}
     </p>
   );
 }
