@@ -2,9 +2,10 @@
 
 import { useEffect, useRef } from "react";
 
-/** Dekoracyjne tło hero: sama siatka punktów, z lekką paralaksą przy przewijaniu. */
+/** Dekoracyjne tło hero: siatka punktów z lekką paralaksą; pod kursorem punkty jaśnieją. */
 export default function TloHero() {
   const ref = useRef<HTMLDivElement | null>(null);
+  const swiatlo = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const el = ref.current;
@@ -22,13 +23,29 @@ export default function TloHero() {
     const onScroll = () => {
       if (!ramka) ramka = requestAnimationFrame(aktualizuj);
     };
+    const onMove = (e: PointerEvent) => {
+      const s = swiatlo.current;
+      if (!s) return;
+      const r = el.getBoundingClientRect();
+      const x = e.clientX - r.left;
+      const y = e.clientY - r.top;
+      s.style.setProperty("--mx", `${x}px`);
+      s.style.setProperty("--my", `${y}px`);
+      s.style.opacity = y < el.parentElement!.clientHeight ? "1" : "0";
+    };
+    const onLeave = () => {
+      if (swiatlo.current) swiatlo.current.style.opacity = "0";
+    };
     window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("pointermove", onMove, { passive: true });
+    document.documentElement.addEventListener("pointerleave", onLeave);
     return () => {
       window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("pointermove", onMove);
+      document.documentElement.removeEventListener("pointerleave", onLeave);
       if (ramka) cancelAnimationFrame(ramka);
     };
   }, []);
-
 
   return (
     <div
@@ -37,6 +54,7 @@ export default function TloHero() {
     >
       <div ref={ref} className="tlo-hero__warstwa will-change-transform">
         <div className="tlo-hero__siatka" />
+        <div ref={swiatlo} className="tlo-hero__swiatlo" />
       </div>
     </div>
   );
