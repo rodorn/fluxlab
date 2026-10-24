@@ -145,7 +145,7 @@ function Strona({ etap }: { etap: Etap }) {
           etykieta="zdjęcie"
           className="h-full min-h-28"
           makieta="bg-gray-200"
-          gotowa="bg-gradient-to-br from-accent-solid via-indigo-600 to-fuchsia-500"
+          gotowa="bg-gradient-to-br from-accent-solid via-indigo-600 to-indigo-800"
         >
           {gotowa ? (
             <span className="absolute inset-0">

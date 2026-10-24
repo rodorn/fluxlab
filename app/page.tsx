@@ -95,7 +95,7 @@ export default function Home() {
           <div className="animate-fade-up-1 mt-10 flex w-full flex-col items-center justify-center gap-3 sm:w-auto sm:flex-row">
             <a
               href="#kontakt"
-              className="btn-primary btn-lg poswiata-przycisku w-full sm:w-60"
+              className="btn-primary btn-lg w-full sm:w-60"
             >
               Zamów wycenę
             </a>

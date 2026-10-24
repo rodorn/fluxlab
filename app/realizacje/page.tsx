@@ -6,7 +6,6 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import CTA from "@/components/CTA";
 import { WDROZENIA } from "@/lib/wdrozenia";
 import RealizacjaFinreal from "@/components/RealizacjaFinreal";
-import KursorZobacz from "@/components/KursorZobacz";
 
 export const metadata: Metadata = {
   title: "Realizacje: wdrożenia i ich efekty | Fluxlab",
@@ -234,7 +233,6 @@ export default function RealizacjePage() {
                   {group.items.map((item) => (
                     <div
                       key={item.repo}
-                      data-kursor-zobacz
                       className="relative flex flex-col rounded-2xl border border-gray-200/80 dark:border-gray-800/80 bg-white/60 dark:bg-gray-900/40 p-6 transition-colors hover:border-accent/50"
                     >
                       <h4 className="text-lg font-semibold text-gray-900 dark:text-white">
@@ -293,7 +291,6 @@ export default function RealizacjePage() {
           </div>
         </section>
         <CTA />
-        <KursorZobacz />
       </main>
       <Footer />
     </>

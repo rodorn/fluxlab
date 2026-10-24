@@ -338,20 +338,6 @@ html.dark {
       0 4px 8px -2px rgba(0, 0, 0, 0.4);
   }
 
-  /* Card tilt — 3D perspective per mouse position (set via inline style by JS) */
-  .card-tilt {
-    @apply transition-transform duration-200 ease-out;
-    transform-style: preserve-3d;
-    transform: perspective(1000px) rotateX(var(--tilt-x, 0deg))
-      rotateY(var(--tilt-y, 0deg)) translateZ(0);
-  }
-
-  /* Magnetic CTA — pointer-tracking pull (set via inline style) */
-  .magnetic {
-    @apply transition-transform duration-150 ease-out;
-    transform: translate(var(--magnet-x, 0px), var(--magnet-y, 0px));
-  }
-
   /* Glow under element — subtle radial accent */
   .glow-accent {
     box-shadow: 0 0 40px -8px rgba(99, 102, 241, 0.35);
@@ -1435,27 +1421,6 @@ textarea[aria-invalid="true"] {
 @media (prefers-reduced-motion: reduce) {
   input:user-invalid, textarea:user-invalid, select:user-invalid,
   input[aria-invalid="true"], textarea[aria-invalid="true"] { animation: none; }
-}
-
-/* 50: poświata pod kluczowym przyciskiem, oddycha */
-.poswiata-przycisku::after {
-  content: "";
-  position: absolute;
-  inset: 8px 12px -10px;
-  z-index: -1;
-  border-radius: inherit;
-  background: rgb(var(--accent-solid));
-  filter: blur(22px);
-  opacity: 0.4;
-  animation: poswiata-oddech 3.2s ease-in-out infinite;
-}
-@keyframes poswiata-oddech {
-  0%, 100% { opacity: 0.28; transform: scale(0.96); }
-  50% { opacity: 0.55; transform: scale(1.03); }
-}
-.poswiata-przycisku { isolation: isolate; }
-@media (prefers-reduced-motion: reduce) {
-  .poswiata-przycisku::after { animation: none; }
 }
 
 /* 52: obramowanie z gradientem na najechanej karcie */
