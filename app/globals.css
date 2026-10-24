@@ -1668,6 +1668,14 @@ main figure > figcaption:not(:has(p))::before {
   white-space: nowrap;
   color: rgb(var(--gray-500));
 }
+/* Strona główna: hero ma osadzony podzbiór Fraunces, a pełny krój dociąga
+   się dopiero po załadowaniu strony (klasa .fraunces na html). */
+html:not(.fraunces) [data-szeryf-pozniej] {
+  --font-serif: "Times New Roman", "Liberation Serif";
+}
+[data-szeryf-hero] :is(.slowo-szeryf, .hero-nic__podpis) {
+  font-family: "Fraunces Hero", var(--font-serif), Georgia, serif;
+}
 @media (max-width: 639px) {
   .hero-nic__linia { stroke-width: 5; }
   .nic__linia,

@@ -20,6 +20,7 @@ import PisanyTekst from "@/components/PisanyTekst";
 import { nazwaFilaru } from "@/lib/filary";
 import NapisBoczny from "@/components/NapisBoczny";
 import { Ikona, type NazwaIlustracji } from "@/components/Ilustracje";
+import "./fraunces-hero.css";
 
 // Oferta jak w szkoleniu produktowym (16.10.2026): projekty z ceną z góry,
 // FluxCRM jako produkt flagowy, katalog małych usług jako wejście.
@@ -70,7 +71,10 @@ const OFERTA = [
 const KROKI = [
   ["Piszesz, czego potrzebujesz", "Dwa zdania w formularzu albo mail."],
   ["Dostajesz cenę i termin", "Na spotkaniu albo w mailu, tego samego dnia."],
-  ["Strona albo CRM działa po 2\u2060–\u20603\u00a0tygodniach", "Płacisz za efekt, nie za godziny."],
+  [
+    "Strona albo CRM działa po 2\u2060–\u20603\u00a0tygodniach",
+    "Płacisz za efekt, nie za godziny.",
+  ],
 ];
 
 const MANIFEST = KROKI[2][1];
@@ -78,7 +82,10 @@ const MANIFEST = KROKI[2][1];
 const ZASADA = [
   ["Cena z góry", "Znasz kwotę przed startem, bez rozliczania godzin."],
   ["Termin w ofercie", "Cenę i termin dostajesz tego samego dnia."],
-  ["Odbierasz działające", "Strona albo CRM działa po 2\u2060–\u20603\u00a0tygodniach."],
+  [
+    "Odbierasz działające",
+    "Strona albo CRM działa po 2\u2060–\u20603\u00a0tygodniach.",
+  ],
 ];
 
 const WYNIKI = [
@@ -91,13 +98,22 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main className="relative flex flex-col text-gray-900 dark:text-white pt-16">
+      <main
+        data-szeryf-pozniej
+        className="relative flex flex-col text-gray-900 dark:text-white pt-16"
+      >
         <TloHero />
         <Nic />
-        <section className="relative z-10 mx-auto flex w-full max-w-6xl flex-col items-center px-6 pt-16 pb-16 text-center lg:pt-20">
+        <section
+          data-szeryf-hero
+          className="relative z-10 mx-auto flex w-full max-w-6xl flex-col items-center px-6 pt-16 pb-16 text-center lg:pt-20"
+        >
           <WitajPonownie />
           <EtykietaNocna />
-          <NaglowekSklada tekst={"Strony internetowe i\u00a0CRM dla firm"} wyroznione={["dla", "firm"]} />
+          <NaglowekSklada
+            tekst={"Strony internetowe i\u00a0CRM dla firm"}
+            wyroznione={["dla", "firm"]}
+          />
           <PodtytulZrodlo />
           <div className="animate-fade-up-1 mt-10 flex w-full flex-col items-center justify-center gap-3 sm:w-auto sm:flex-row">
             <a
@@ -117,7 +133,10 @@ export default function Home() {
           <HeroNic />
         </section>
 
-        <section aria-labelledby="oferta" className="container-wide relative pb-16">
+        <section
+          aria-labelledby="oferta"
+          className="container-wide relative pb-16"
+        >
           <NapisBoczny tekst="Oferta" />
           <h2 id="oferta" className="sr-only">
             Oferta
@@ -150,7 +169,9 @@ export default function Home() {
                     {o.opis}
                   </p>
                   <div className="oferta-detale">
-                    <ul className={`gap-x-8 gap-y-1.5 pt-4 text-sm text-gray-700 dark:text-white/80 ${o.wyrozniona ? "md:grid md:grid-cols-2" : "space-y-1.5"}`}>
+                    <ul
+                      className={`gap-x-8 gap-y-1.5 pt-4 text-sm text-gray-700 dark:text-white/80 ${o.wyrozniona ? "md:grid md:grid-cols-2" : "space-y-1.5"}`}
+                    >
                       {o.punkty.map((p) => (
                         <li key={p} className="flex gap-2">
                           <svg
@@ -163,7 +184,10 @@ export default function Home() {
                             strokeLinecap="round"
                             strokeLinejoin="round"
                           >
-                            <path className="oferta-ptak" d="M3 8.5l3.2 3.2L13 4.5" />
+                            <path
+                              className="oferta-ptak"
+                              d="M3 8.5l3.2 3.2L13 4.5"
+                            />
                           </svg>
                           {p}
                         </li>
@@ -177,7 +201,10 @@ export default function Home() {
               </RevealOnScroll>
             ))}
           </div>
-          <RevealOnScroll as="p" className="mt-6 text-center text-sm text-gray-600 dark:text-white/60">
+          <RevealOnScroll
+            as="p"
+            className="mt-6 text-center text-sm text-gray-600 dark:text-white/60"
+          >
             Ceny netto. Na start bez rozmowy:{" "}
             <Link href="/audyt-strony" className="text-accent hover:underline">
               audyt strony 0 zł
@@ -197,7 +224,11 @@ export default function Home() {
           </RevealOnScroll>
         </section>
 
-        <section data-nic-jasne aria-label="Zasada" className="maska-sekcji relative overflow-hidden bg-accent-solid py-20 text-white lg:py-32">
+        <section
+          data-nic-jasne
+          aria-label="Zasada"
+          className="maska-sekcji relative overflow-hidden bg-accent-solid py-20 text-white lg:py-32"
+        >
           <div className="container-wide">
             <div className="flex items-baseline justify-between border-b border-white/30 pb-4 text-xs font-medium uppercase tracking-widest text-white/70">
               <span>Zasada</span>
@@ -211,9 +242,13 @@ export default function Home() {
             <ul className="mt-12 grid gap-6 border-t border-white/30 pt-6 text-sm text-white/80 sm:grid-cols-3 lg:mt-16">
               {ZASADA.map(([tytul, opis], i) => (
                 <li key={tytul} className="flex gap-4">
-                  <span className="tabular-nums text-white/50">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="tabular-nums text-white/50">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
                   <span>
-                    <span className="block font-semibold text-white">{tytul}</span>
+                    <span className="block font-semibold text-white">
+                      {tytul}
+                    </span>
                     {opis}
                   </span>
                 </li>
@@ -227,7 +262,9 @@ export default function Home() {
           <div className="container-wide">
             <span data-nic aria-hidden="true" className="wezel-nici" />
             <RevealOnScroll className="text-center">
-              <p className="section-label mb-3"><span className="numer-sekcji">02</span> Ostatnia realizacja</p>
+              <p className="section-label mb-3">
+                <span className="numer-sekcji">02</span> Ostatnia realizacja
+              </p>
               <h2 className="text-balance text-4xl font-bold tracking-tighter lg:text-5xl">
                 Nowa strona FINREAL w 12 dni
               </h2>
@@ -243,7 +280,10 @@ export default function Home() {
                       <span className="mx-auto rounded-full bg-white/10 px-4 py-1 text-xs text-white/70">
                         finreal.pl
                       </span>
-                      <Link href="/realizacje" className="text-xs text-white/70 transition-colors hover:text-white">
+                      <Link
+                        href="/realizacje"
+                        className="text-xs text-white/70 transition-colors hover:text-white"
+                      >
                         Realizacje →
                       </Link>
                     </div>
@@ -287,7 +327,9 @@ export default function Home() {
             <span data-nic aria-hidden="true" className="wezel-nici" />
             <RevealOnScroll className="text-center">
               <Ikona nazwa="audyt" className="mx-auto mb-4 h-11 w-11" />
-              <p className="section-label mb-3"><span className="numer-sekcji">03</span> Audyt</p>
+              <p className="section-label mb-3">
+                <span className="numer-sekcji">03</span> Audyt
+              </p>
               <h2 className="text-balance text-4xl font-bold tracking-tighter lg:text-5xl">
                 <PisanyTekst id="audyt" tekst="Sprawdź swoją stronę w minutę" />
               </h2>
@@ -303,13 +345,18 @@ export default function Home() {
           <div className="container-wide">
             <span data-nic aria-hidden="true" className="wezel-nici" />
             <RevealOnScroll className="mb-12 text-center">
-              <p className="section-label mb-3"><span className="numer-sekcji">04</span> CRM</p>
+              <p className="section-label mb-3">
+                <span className="numer-sekcji">04</span> CRM
+              </p>
               <h2 className="text-balance text-4xl font-bold tracking-tighter lg:text-5xl">
-                <PisanyTekst id="crm" tekst="Twój CRM czyta zapytanie, zanim Ty je przeczytasz" />
+                <PisanyTekst
+                  id="crm"
+                  tekst="Twój CRM czyta zapytanie, zanim Ty je przeczytasz"
+                />
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-gray-600 dark:text-white/65">
-                Wybierz firmę i wyślij zapytanie jak jej klient. AI założy kartę leada w jej CRM i
-                przygotuje odpowiedź, na żywo.
+                Wybierz firmę i wyślij zapytanie jak jej klient. AI założy kartę
+                leada w jej CRM i przygotuje odpowiedź, na żywo.
               </p>
             </RevealOnScroll>
             <RevealOnScroll delay={1}>
@@ -325,13 +372,13 @@ export default function Home() {
           <div className="container-wide">
             <span data-nic aria-hidden="true" className="wezel-nici" />
             <RevealOnScroll>
-<LandingForm
-              formId="home"
-              heading="Napisz, czego potrzebujesz"
-              intro="Odpiszemy z ceną i terminem, tego samego dnia."
-              submitLabel="Wyślij i poproś o cenę"
-            />
-</RevealOnScroll>
+              <LandingForm
+                formId="home"
+                heading="Napisz, czego potrzebujesz"
+                intro="Odpiszemy z ceną i terminem, tego samego dnia."
+                submitLabel="Wyślij i poproś o cenę"
+              />
+            </RevealOnScroll>
             <KrokiSticky kroki={KROKI} />
           </div>
         </section>

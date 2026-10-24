@@ -10,7 +10,9 @@ export default function Opoznione() {
 
   useEffect(() => {
     if (!gotowe) return;
-    import("@/components/NakladkiOpoznione").then((m) => ustawNakladki(() => m.default));
+    import("@/components/NakladkiOpoznione").then((m) =>
+      ustawNakladki(() => m.default),
+    );
   }, [gotowe]);
 
   useEffect(() => {
@@ -25,19 +27,26 @@ export default function Opoznione() {
       const t = setInterval(() => {
         if (document.documentElement.dataset.czatGotowy || ++proby > 50) {
           clearInterval(t);
-          if (proby <= 50) window.dispatchEvent(new CustomEvent("fluxlab:czat", { detail }));
+          if (proby <= 50)
+            window.dispatchEvent(new CustomEvent("fluxlab:czat", { detail }));
         }
       }, 100);
     };
     window.addEventListener("fluxlab:czat", wczesne);
-    const zdarzenia = ["pointerdown", "keydown", "scroll", "touchstart"] as const;
+    const zdarzenia = [
+      "pointerdown",
+      "keydown",
+      "scroll",
+      "touchstart",
+    ] as const;
     const posprzataj = () => {
       for (const z of zdarzenia) window.removeEventListener(z, start);
       clearTimeout(t);
       window.removeEventListener("fluxlab:czat", wczesne);
     };
     const t = setTimeout(start, 6000);
-    for (const z of zdarzenia) window.addEventListener(z, start, { once: true, passive: true });
+    for (const z of zdarzenia)
+      window.addEventListener(z, start, { once: true, passive: true });
     return posprzataj;
   }, []);
 
@@ -52,13 +61,20 @@ export function PoPierwszymMalowaniu() {
 
   useEffect(() => {
     if (!gotowe) return;
-    import("@/components/NakladkiPomiary").then((m) => ustawPomiary(() => m.default));
+    import("@/components/NakladkiPomiary").then((m) =>
+      ustawPomiary(() => m.default),
+    );
   }, [gotowe]);
 
   useEffect(() => {
-    const start = () => ustawGotowe(true);
+    const start = () => {
+      // Pełny Fraunces na stronie głównej (globals.css, [data-szeryf-pozniej]).
+      document.documentElement.classList.add("fraunces");
+      ustawGotowe(true);
+    };
     const odpal = () => {
-      if ("requestIdleCallback" in window) window.requestIdleCallback(start, { timeout: 3000 });
+      if ("requestIdleCallback" in window)
+        window.requestIdleCallback(start, { timeout: 3000 });
       else setTimeout(start, 1500);
     };
     if (document.readyState === "complete") odpal();
