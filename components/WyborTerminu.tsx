@@ -67,7 +67,9 @@ export default function WyborTerminu({ onZmiana }: { onZmiana: (termin: string) 
                   }`}
                 >
                   <span className="block font-semibold capitalize text-gray-900 dark:text-white">
-                    {data.toLocaleDateString("pl-PL", { weekday: "short" })}
+                    {d.data === dni[0]?.data
+                      ? "Dziś"
+                      : data.toLocaleDateString("pl-PL", { weekday: "short" })}
                   </span>
                   <span className="block text-gray-500 dark:text-gray-400">
                     {data.toLocaleDateString("pl-PL", { day: "numeric", month: "short" })}

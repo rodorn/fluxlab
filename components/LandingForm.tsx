@@ -8,7 +8,7 @@ import { zglosZdarzenie } from "@/lib/zdarzenie";
 import { readUtm, type UtmFields } from "@/lib/zrodlo";
 
 const inputClass =
-  "w-full px-0 py-2 rounded-none border-0 border-b border-gray-400 dark:border-gray-500 bg-transparent text-base text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:border-accent focus:border-b-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed";
+  "w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 px-3.5 py-2.5 text-base text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-colors aria-[invalid=true]:border-red-600 disabled:opacity-50 disabled:cursor-not-allowed";
 
 const etykietaClass =
   "block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1";
@@ -18,26 +18,19 @@ const przyciskWsteczClass =
 
 const podpisClass = "btn-primary";
 
-const linkaPisma = {
-  backgroundImage:
-    "linear-gradient(to bottom, transparent calc(2rem - 1px), currentColor 0)",
-  backgroundSize: "100% 2rem",
-};
-
-
 const SZKIC_KLUCZ = "fluxlab_szkic";
 
 type Kontakt = "email" | "phone" | "meet";
 
 const FORMY: { id: Kontakt; nazwa: string; opis: string }[] = [
-  { id: "email", nazwa: "Mailem", opis: "odpiszemy z ceną" },
-  { id: "phone", nazwa: "Telefon", opis: "oddzwonimy" },
   { id: "meet", nazwa: "Google Meet", opis: "30 minut online" },
+  { id: "phone", nazwa: "Telefon", opis: "oddzwonimy" },
+  { id: "email", nazwa: "Mailem", opis: "odpiszemy z ceną" },
 ];
 
 
 
-const KROKI = ["Czego potrzebujesz", "Jak się odezwać", "Gdzie odpisać"];
+const KROKI = ["Jak się odezwać", "Czego potrzebujesz", "Gdzie odpisać"];
 
 const PODPOWIEDZI = [
   "Nowa strona",
@@ -105,20 +98,31 @@ export default function LandingForm({
     referrer: "",
   }));
   const formStartedRef = useRef(false);
-  const [kontakt, setKontakt] = useState<Kontakt>("email");
+  const [kontakt, setKontakt] = useState<Kontakt>("meet");
   const [termin, setTermin] = useState("");
   const [krok, setKrok] = useState(0);
-  const [dzis, setDzis] = useState("");
+  // Kalendarz pobiera wolne terminy z API, więc montujemy go dopiero przy
+  // formularzu, a nie przy każdym wejściu na stronę.
+  const [blisko, setBlisko] = useState(false);
 
   useEffect(() => {
     setUtm(readUtm());
-    setDzis(
-      new Date().toLocaleDateString("pl-PL", {
-        day: "numeric",
-        month: "long",
-        year: "numeric",
-      }),
+  }, []);
+
+  useEffect(() => {
+    const el = formRef.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      ([w]) => {
+        if (w.isIntersecting) {
+          setBlisko(true);
+          io.disconnect();
+        }
+      },
+      { rootMargin: "600px 0px" },
     );
+    io.observe(el);
+    return () => io.disconnect();
   }, []);
 
   // Brief głosowy: nagranie do 60 s przepisywane na tekst i dopisywane do wiadomości.
@@ -309,7 +313,7 @@ export default function LandingForm({
     } catch {}
   }
 
-  /** Pierwsze niepoprawne pole w danym kroku (walidacja przeglądarki jak dotąd). */
+  /** Pierwsze niepoprawne pole w danym kroku. */
   function niepoprawne(k: number) {
     const el = formRef.current?.querySelector(`[data-krok="${k}"]`);
     if (!el) return null;
@@ -317,19 +321,41 @@ export default function LandingForm({
     return pola.find((p) => !p.checkValidity()) ?? null;
   }
 
+  function komunikat(pole: HTMLInputElement | HTMLTextAreaElement) {
+    if (pole.name === "message") return "Napisz choć jedno zdanie albo wybierz temat.";
+    if (pole.name === "phone") return pole.validity.valueMissing ? "Podaj numer telefonu." : "Sprawdź numer telefonu.";
+    if (pole.name === "email") return pole.validity.valueMissing ? "Podaj adres e-mail." : "Sprawdź adres e-mail.";
+    return "Uzupełnij to pole.";
+  }
+
+  // Własny komunikat po polsku zamiast dymka przeglądarki.
   function pokazBlad(k: number, pole: HTMLInputElement | HTMLTextAreaElement) {
     setKrok(k);
-    window.setTimeout(() => pole.reportValidity(), 0);
+    setErrorMsg(komunikat(pole));
+    pole.setAttribute("aria-invalid", "true");
+    window.setTimeout(() => pole.focus(), 0);
+  }
+
+  function przejdz(k: number) {
+    setKrok(k);
+    const form = formRef.current;
+    if (form && form.getBoundingClientRect().top < 0) {
+      form.scrollIntoView({ block: "start" });
+    }
   }
 
   function dalej() {
     const zle = niepoprawne(krok);
     if (zle) {
-      zle.reportValidity();
+      pokazBlad(krok, zle);
+      return;
+    }
+    if (krok === 0 && kontakt === "meet" && !termin) {
+      setErrorMsg("Wybierz dzień i godzinę spotkania.");
       return;
     }
     setErrorMsg(null);
-    setKrok(Math.min(2, krok + 1));
+    przejdz(Math.min(2, krok + 1));
   }
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -346,7 +372,8 @@ export default function LandingForm({
       }
     }
     if (kontakt === "meet" && !termin) {
-      setErrorMsg("Wybierz godzinę spotkania.");
+      setKrok(0);
+      setErrorMsg("Wybierz dzień i godzinę spotkania.");
       return;
     }
     setLoading(true);
@@ -436,7 +463,10 @@ export default function LandingForm({
         ref={formRef}
         noValidate
         onSubmit={handleSubmit}
-        onInput={zapiszSzkic}
+        onInput={(e) => {
+          (e.target as HTMLElement).removeAttribute("aria-invalid");
+          zapiszSzkic(e);
+        }}
         onFocus={handleFormStart}
         className="relative overflow-hidden bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-6 lg:p-10 shadow-xl shadow-accent/10 text-left space-y-6 before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-accent-solid"
       >
@@ -461,12 +491,7 @@ export default function LandingForm({
           />
         </div>
 
-        <div className="!mt-0 flex items-baseline justify-between gap-4 border-b border-gray-300 dark:border-gray-600 pb-3 font-serif text-base italic text-gray-600 dark:text-gray-400">
-          <span>Do: FluxLab</span>
-          <span suppressHydrationWarning>{dzis}</span>
-        </div>
-
-        <div>
+        <div className="!mt-0">
           <ol aria-label="Postęp formularza" className="grid grid-cols-3 gap-2">
             {KROKI.map((n, i) => (
               <li key={n} aria-current={krok === i ? "step" : undefined}>
@@ -480,12 +505,12 @@ export default function LandingForm({
               </li>
             ))}
           </ol>
-          <p className="mt-3 text-right text-xs text-gray-500 dark:text-gray-400">
-            Krok {krok + 1} z 3
+          <p className="mt-3 text-xs text-gray-500 dark:text-gray-400">
+            Krok {krok + 1} z 3: {KROKI[krok].toLowerCase()}
           </p>
         </div>
 
-        <div data-krok="0" hidden={krok !== 0} className="space-y-5">
+        <div data-krok="1" hidden={krok !== 1} className="space-y-5">
         <div>
           <label
             htmlFor="message"
@@ -511,24 +536,21 @@ export default function LandingForm({
               </button>
             ))}
           </div>
-          <div className="text-gray-400 dark:text-gray-600" style={linkaPisma}>
-            <textarea
-              id="message"
-              name="message"
-              rows={4}
-              required
-              placeholder="Albo opisz własnymi słowami. Jedno, dwa zdania wystarczą."
-              style={{ lineHeight: "2rem" }}
-              className="block w-full resize-none border-0 bg-transparent p-0 text-base text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none"
-            />
-          </div>
+          <textarea
+            id="message"
+            name="message"
+            rows={4}
+            required
+            placeholder="Albo opisz własnymi słowami. Jedno, dwa zdania wystarczą."
+            className={`${inputClass} block resize-y leading-relaxed`}
+          />
           {nagrywanieDostepne && (
             <button
               type="button"
               onClick={przelaczNagrywanie}
               disabled={przepisuje}
               aria-pressed={nagrywa}
-              className="mt-3 inline-flex items-center gap-2 border-b border-gray-400 pb-0.5 text-sm text-gray-700 transition-colors hover:border-accent disabled:opacity-60 dark:border-gray-500 dark:text-gray-300"
+              className="mt-3 inline-flex items-center gap-2 rounded-lg border border-gray-300 px-3 py-1.5 text-sm text-gray-700 transition-colors hover:border-accent hover:text-accent disabled:opacity-60 dark:border-gray-600 dark:text-gray-300"
             >
               {nagrywa ? (
                 <>
@@ -602,7 +624,7 @@ export default function LandingForm({
 
         </div>
 
-        <div data-krok="1" hidden={krok !== 1} className="space-y-5">
+        <div data-krok="0" hidden={krok !== 0} className="space-y-5">
         <fieldset>
           <legend className="block text-xl font-semibold tracking-tight text-gray-900 dark:text-white mb-4">
             Jak mamy się odezwać?
@@ -656,7 +678,7 @@ export default function LandingForm({
           </div>
         )}
 
-        {kontakt === "meet" && (
+        {kontakt === "meet" && blisko && (
           <WyborTerminu
             onZmiana={(t) => {
               setTermin(t);
@@ -670,7 +692,7 @@ export default function LandingForm({
         {krok < 2 ? (
           <div className="flex items-center justify-between gap-4 pt-2">
             {krok > 0 ? (
-              <button type="button" onClick={() => setKrok(krok - 1)} className={przyciskWsteczClass}>
+              <button type="button" onClick={() => przejdz(krok - 1)} className={przyciskWsteczClass}>
                 Wstecz
               </button>
             ) : (

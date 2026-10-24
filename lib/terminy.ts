@@ -1,6 +1,7 @@
 /** Wolne terminy Meet z kalendarza Pawła. Zajęte przedziały wysyła skrypt na
  *  jego komputerze (~/Projekty/fluxlab-kalendarz/sync.py) do kolektora na VPS
- *  (/terminy); tu liczymy z nich wolne starty co 15 minut, 11:00–23:30. */
+ *  (/terminy); tu liczymy z nich wolne starty co 15 minut, 11:00–23:30,
+ *  od dziś, najwcześniej 3 godziny od teraz. */
 
 export const GODZ_OD = 11;
 export const GODZ_DO = 23;
@@ -10,6 +11,7 @@ const OSTATNI_START_MIN = 23 * 60 + 30;
 const DLUGOSC_MIN = 30;
 const ZAPAS_MIN = 15;
 const DNI = 8;
+const WYPRZEDZENIE_MIN = 3 * 60;
 
 type Config = { zajete?: [number, number][]; aktualizacja?: number };
 
@@ -72,13 +74,14 @@ export async function wolneTerminy(): Promise<{
   const dni: DzienTerminow[] = [];
   // Dni po dacie kalendarzowej, nie po 24 h: przy zmianie czasu doba ma 23 albo 25 h.
   const [r, m, d] = dataWarszawska(teraz).split("-").map(Number);
-  for (let i = 1; i <= DNI; i++) {
+  const najwczesniej = teraz + WYPRZEDZENIE_MIN * 60_000;
+  for (let i = 0; i < DNI; i++) {
     const data = new Date(Date.UTC(r, m - 1, d + i)).toISOString().slice(0, 10);
     const godziny: string[] = [];
     for (let m = GODZ_OD * 60; m <= OSTATNI_START_MIN; m += KROK_MIN) {
       // Od pełnej godziny, nie od północy: w dniu zmiany czasu przesunięcie zmienia się o 3:00.
       const start = warszawa(data, Math.floor(m / 60)) + (m % 60) * 60_000;
-      if (!kolizja(start, zajete)) godziny.push(hhmm(m));
+      if (start >= najwczesniej && !kolizja(start, zajete)) godziny.push(hhmm(m));
     }
     dni.push({ data, godziny });
   }
