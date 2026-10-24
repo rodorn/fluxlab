@@ -5,6 +5,7 @@ import { categories } from "@/lib/categories";
 import Znak from "./Znak";
 import KopiujMail from "./KopiujMail";
 import StatusOnline from "./StatusOnline";
+import Kolofon from "./Kolofon";
 import CzasZmiany from "./CzasZmiany";
 import StopkaCta from "./StopkaCta";
 import zmiany from "@/lib/zmiany.json";
@@ -150,6 +151,7 @@ export default function Footer() {
             </span>
           </p>
           <StatusOnline />
+          <Kolofon />
           {/* Wynik z prawdziwego pomiaru (lib/lighthouse.json). Pokazujemy go tylko
               przy 100 we wszystkich kategoriach; link pozwala sprawdzić samemu. */}
           {[lighthouse.wydajnosc, lighthouse.dostepnosc, lighthouse.praktyki, lighthouse.seo].every((x) => x === 100) && (
