@@ -1654,6 +1654,14 @@ main figure > figcaption:not(:has(p))::before {
   stroke-dashoffset: 1;
   animation: hero-nic-rysuj 2.4s cubic-bezier(0.65, 0, 0.35, 1) 0.5s forwards;
 }
+.hero-nic__twarz {
+  stroke: rgb(var(--accent));
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: hero-nic-rysuj 0.9s cubic-bezier(0.65, 0, 0.35, 1) 1.5s forwards;
+}
 .hero-nic__kropka {
   fill: rgb(var(--accent));
   opacity: 0;
@@ -1668,7 +1676,17 @@ main figure > figcaption:not(:has(p))::before {
 }
 @media (max-width: 639px) {
   .hero-nic__linia { stroke-width: 5; }
-  .hero-nic__kropka { r: 8px; }
+  .nic__linia,
+  .nic__jasna { stroke-width: 1.75; }
+  .hero-nic__twarz {
+  stroke: rgb(var(--accent));
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: hero-nic-rysuj 0.9s cubic-bezier(0.65, 0, 0.35, 1) 1.5s forwards;
+}
+.hero-nic__kropka { r: 8px; }
   .hero-nic__podpis { font-size: 0.8125rem; }
 }
 @keyframes hero-nic-rysuj { to { stroke-dashoffset: 0; } }
@@ -1677,28 +1695,10 @@ main figure > figcaption:not(:has(p))::before {
 .nic__linia,
 .nic__jasna {
   stroke: rgb(var(--accent));
-  stroke-width: 1.5;
+  stroke-width: 2.25;
   stroke-linecap: round;
 }
 .nic__jasna { stroke: rgb(255 255 255 / 0.85); }
-.nic__okno,
-.nic__wnetrze {
-  position: absolute;
-  inset: 0;
-  will-change: transform;
-}
-.nic__okno { overflow: hidden; }
-.nic__czubek {
-  position: absolute;
-  top: -3.5px;
-  left: -3.5px;
-  width: 7px;
-  height: 7px;
-  border-radius: 9999px;
-  background: rgb(var(--accent));
-  opacity: 0;
-  will-change: transform;
-}
 .nic__wezel {
   fill: rgb(var(--biel));
   stroke: rgb(var(--accent));
@@ -1724,7 +1724,16 @@ main figure > figcaption:not(:has(p))::before {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-nic__linia { animation: none; stroke-dashoffset: 0; }
-  .hero-nic__kropka { display: none; }
+  .hero-nic__linia,
+  .hero-nic__twarz { animation: none; stroke-dashoffset: 0; }
+  .hero-nic__twarz {
+  stroke: rgb(var(--accent));
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: hero-nic-rysuj 0.9s cubic-bezier(0.65, 0, 0.35, 1) 1.5s forwards;
+}
+.hero-nic__kropka { display: none; }
   .nic__wezel { transition: none; }
 }

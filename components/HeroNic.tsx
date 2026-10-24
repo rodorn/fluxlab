@@ -46,13 +46,27 @@ export default function HeroNic() {
             pathLength={1}
             fill="none"
           />
-          <circle className="hero-nic__kropka" r="4">
-            <animateMotion
-              dur="6s"
-              begin="2.8s"
-              repeatCount="indefinite"
-              path={NIC}
+          <defs>
+            <clipPath id="hero-nic-awatar">
+              <circle cx="436" cy="100" r="15" />
+            </clipPath>
+          </defs>
+          <g clipPath="url(#hero-nic-awatar)" fill="none">
+            <circle
+              className="hero-nic__twarz"
+              cx="436"
+              cy="96"
+              r="5.5"
+              pathLength={1}
             />
+            <path
+              className="hero-nic__twarz"
+              d="M424 116C424 108 429 104 436 104C443 104 448 108 448 116"
+              pathLength={1}
+            />
+          </g>
+          <circle className="hero-nic__kropka" r="4">
+            <animateMotion dur="3.2s" begin="2.8s" fill="freeze" path={NIC} />
           </circle>
         </svg>
         {PODPISY.map(([x, tekst]) => (
