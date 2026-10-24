@@ -199,12 +199,17 @@ const LIGHTHOUSE_ZALEZNOSCI = [
   "node_modules/image-ssim",
   "node_modules/tldts-icann",
   "node_modules/tldts-core",
-  "node_modules/lighthouse/node_modules/ws"
+  "node_modules/lighthouse/node_modules/ws",
 ];
 
 const nextConfig: NextConfig = {
   // Chromium do pomiaru kontrastu w audycie: binarka nie może przejść przez bundler.
-  serverExternalPackages: ["@sparticuz/chromium", "puppeteer-core", "axe-core", "lighthouse"],
+  serverExternalPackages: [
+    "@sparticuz/chromium",
+    "puppeteer-core",
+    "axe-core",
+    "lighthouse",
+  ],
   // Binarka Chromium jest czytana z dysku, a nie importowana, więc trzeba ją
   // dołączyć do funkcji wprost.
   outputFileTracingIncludes: {
@@ -217,9 +222,9 @@ const nextConfig: NextConfig = {
   },
   experimental: {
     viewTransition: true,
-    // CSS wbudowany w HTML: bez osobnego arkusza blokującego pierwsze
-    // wyświetlenie (na wolnym łączu to większość czasu do LCP).
-    inlineCss: true,
+    // Bez wbudowanego CSS: inline powielał cały arkusz w danych RSC
+    // (HTML 378 kB zamiast 129 kB), co wydłużało parsowanie i LCP na telefonie.
+    inlineCss: false,
   },
   images: {
     formats: ["image/avif", "image/webp"],
