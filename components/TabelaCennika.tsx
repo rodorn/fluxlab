@@ -1,6 +1,6 @@
 import { RODZAJE } from "@/lib/opcjeStrony";
+import { zl } from "@/lib/wycena";
 
-const zl = (n: number) => `${n.toLocaleString("pl-PL").replace(/ /g, " ")} zł`;
 
 const OD = new Set(["sklep"]);
 const PLATNOSC: Record<string, string> = {
