@@ -68,7 +68,7 @@ const OFERTA = [
 
 const KROKI = [
   ["Piszesz, czego potrzebujesz", "Dwa zdania w formularzu albo mail."],
-  ["Dostajesz cenę i termin", "Tego samego dnia, bez spotkań."],
+  ["Dostajesz cenę i termin", "Na spotkaniu albo w mailu, tego samego dnia."],
   ["Strona albo CRM działa po 2\u2060–\u20603\u00a0tygodniach", "Płacisz za efekt, nie za godziny."],
 ];
 
