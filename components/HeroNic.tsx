@@ -1,7 +1,6 @@
-/** Rysunek w hero: jedna linia przechodzi przez formularz, kartę w CRM i raport.
- *  Kończy się kotwicą, od której Nic prowadzi linię dalej przez stronę. */
+/** Rysunek w hero: jedna linia przechodzi przez formularz, kartę w CRM i raport. */
 const NIC =
-  "M0 210C40 210 60 166 110 166H210C300 166 340 84 436 84A16 16 0 1 1 436 116A16 16 0 1 1 436 84C500 84 530 40 610 40C690 40 700 196 750 196L778 186L806 191L834 160L862 140L890 96C910 68 950 120 950 280";
+  "M0 210C40 210 60 166 110 166H210C300 166 340 84 436 84A16 16 0 1 1 436 116A16 16 0 1 1 436 84C500 84 530 40 610 40C690 40 700 196 750 196L778 186L806 191L834 160L862 140L890 96";
 
 const PODPISY = [
   ["16.67%", "zapytanie"],
@@ -79,11 +78,6 @@ export default function HeroNic() {
             {tekst}
           </span>
         ))}
-        <span
-          data-nic
-          aria-hidden="true"
-          className="absolute bottom-0 left-[98.96%] h-0 w-0"
-        />
       </div>
       <figcaption className="mt-12 text-xs tracking-wide text-gray-500 dark:text-gray-400">
         Jedno zapytanie: od formularza przez CRM do raportu, bez przepisywania.
