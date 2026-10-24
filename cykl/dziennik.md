@@ -7794,3 +7794,11 @@ Otwarte decyzje dla stratega: kanał `audyt-wynik` zamknąć (4 doby bez maila, 
 **Dowód:** `cykl/z13-lista-25.txt` (9 adresów, wszystkie 200), `systemctl --user list-timers`: fl-gsc-25.timer Sun 2026-10-25 01:40 CEST, log `cykl/z19-indeksowanie-25.log`; `cykl/artykul-2026-10-26-szkic.md`; linie Z12 i Z16 w `cykl/plan-ruchu.md`.
 **Dla Pawła:**
 **Zostało otwarte:** Z11 (pomiar od 13:30, nie da się zrobić przed 13:30, zostawione na 18:30), Z13 (nie wcześniej niż 25.10 01:45), Z14, Z15 (nie wcześniej niż 25.10 03:00). Dla stratega: Z2 dało tylko 4 kandydatów do serii, 9. adres to /strefa-wiedzy/numeracja-faktur-ksef-2027 (21 wyśw.); 25.10 o 03:00 zmiana czasu, timer 01:40 jest przed nią.
+
+## 2026-10-24 13:43
+**Kanał:** brak (otwarte Z11 ma godzinę 18:30 i okno „od 13:30”, Z13 i Z15 nie wcześniej niż 25.10 01:45 i 03:00, Z14 to bilans o 02:30).
+**Co zrobione:** nic nie poszło w świat; Z11 wzięte o 13:43 dałoby pomiar z 13 minut, więc zostaje na 18:30.
+**Ruch:** doba 119 odsłon, 94 osoby (−6% wobec średniej 126,9); źródła: b2b-email 32 (piksel otwarcia, nie ludzie), youtube 19, facebook 4, instagram 4, l.facebook.com 3; YouTube 3 sesje, LinkedIn 2, X 1; uruchomienia narzędzi 0.
+**Dowód:** `cykl/plan-ruchu.md` bez zmian (Z11, Z13, Z14, Z15 otwarte); `python3 ~/Projekty/fluxlab-ruch/raport_ruchu.py` 13:43.
+**Dla Pawła:**
+**Zostało otwarte:** Z11 (18:30), Z13 (25.10 01:45), Z14 (02:30), Z15 (25.10 03:00). W drzewie leżą niezacommitowane obrazy OG w `app/ksef-2027/page.tsx` i `app/numer-ksef/page.tsx` z innej sesji, ten cykl ich nie rusza.
