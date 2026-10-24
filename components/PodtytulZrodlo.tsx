@@ -40,7 +40,7 @@ export default function PodtytulZrodlo() {
   }, []);
 
   return (
-    <p className="animate-fade-up-1 mx-auto mt-7 max-w-xl text-lg text-gray-600 sm:text-xl dark:text-white/65">
+    <p className="animate-fade-up-1 mx-auto mt-7 max-w-xl text-lg text-gray-600 sm:text-xl lg:max-w-none lg:whitespace-nowrap dark:text-white/65">
       {tekst}
     </p>
   );
