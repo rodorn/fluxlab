@@ -1683,17 +1683,21 @@ main figure > figcaption:not(:has(p))::before {
   stroke-linecap: round;
 }
 .nic__jasna { stroke: rgb(255 255 255 / 0.85); }
+.nic { will-change: transform; }
+.nic:not(.nic--rysuje) .nic__linia,
+.nic:not(.nic--rysuje) .nic__jasna { visibility: hidden; }
 .nic__wezel {
+  opacity: 0;
   fill: rgb(var(--biel));
   stroke: rgb(var(--accent));
   stroke-width: 1.5;
   transform-box: fill-box;
   transform-origin: center;
-  transition: fill 0.3s ease, transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: opacity 0.3s ease, fill 0.3s ease, transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 .dark .nic__wezel { fill: rgb(var(--gray-950)); }
 .nic__wezel--jest,
-.dark .nic__wezel--jest { fill: rgb(var(--accent)); transform: scale(1.25); }
+.dark .nic__wezel--jest { opacity: 1; fill: rgb(var(--accent)); transform: scale(1.25); }
 .wezel-nici { display: block; height: 3rem; }
 .nic__koralik {
   position: absolute;
@@ -1727,6 +1731,8 @@ main figure > figcaption:not(:has(p))::before {
 @media (prefers-reduced-motion: reduce) {
   .hero-nic__linia,
   .hero-nic__twarz { animation: none; stroke-dashoffset: 0; }
-  .nic__wezel { transition: none; }
+  .nic__wezel { transition: none; opacity: 1; }
+  .nic .nic__linia,
+  .nic .nic__jasna { visibility: visible; stroke-dasharray: none !important; }
   .nic__koralik { display: none; }
 }

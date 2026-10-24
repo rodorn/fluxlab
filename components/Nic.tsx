@@ -5,9 +5,9 @@ import { useEffect, useRef } from "react";
 /** Jedna linia przez całą stronę główną. Zaczyna się na końcu rysunku w hero,
  *  przechodzi marginesami i przecina oś w każdym punkcie [data-nic], na zmianę
  *  z prawej i z lewej, jak ścieg. Nad sekcją [data-nic-jasne] (fioletowe tło)
- *  biegnie biała kopia linii. Linia jest statyczna; przy przewijaniu zapalają
- *  się węzły, przez IntersectionObserver. Koralik jedzie ze stałą prędkością
- *  przez rysunek w hero i dalej po nici, za miejscem czytania. */
+ *  biegnie biała kopia linii. Koralik jedzie ze stałą prędkością przez rysunek
+ *  w hero i dalej po nici, za miejscem czytania. Nić jest narysowana tylko
+ *  tam, gdzie koralik już był, i tam zapalają się węzły. */
 const KROK = 4;
 const PREDKOSC = 420;
 // Koralik rusza, gdy linia w hero jest już narysowana (0,5 s + 2,4 s).
@@ -27,6 +27,10 @@ export default function Nic() {
     const koralik = main.querySelector<HTMLElement>(".nic__koralik")!;
     const liniaHero = main.querySelector<SVGPathElement>(".hero-nic__linia");
     let punkty = new Float32Array(0);
+    let wezly: { x: number; y: number; kolo: SVGCircleElement }[] = [];
+    let indeksyWezlow: number[] = [];
+    let zasieg = 0;
+    let narysowane = -1;
     let yNici = new Float32Array(0);
     let koniecHero = 0;
     let gora = 0;
@@ -38,7 +42,6 @@ export default function Nic() {
     let szer = 0;
     let wys = 0;
     let ramka = 0;
-    let obserwatorWezlow: IntersectionObserver | null = null;
 
     function uloz() {
       ramka = 0;
@@ -89,10 +92,8 @@ export default function Nic() {
       linia.setAttribute("d", d);
       jasna.setAttribute("d", d);
 
-      obserwatorWezlow?.disconnect();
       grupaWezlow.replaceChildren();
-      const kola = new Map<Element, SVGCircleElement>();
-      kotwice.slice(1).forEach((k, i, lista) => {
+      wezly = kotwice.slice(1).map((k, i, lista) => {
         const c = document.createElementNS(
           "http://www.w3.org/2000/svg",
           "circle",
@@ -102,17 +103,9 @@ export default function Nic() {
         c.setAttribute("r", i === lista.length - 1 ? "7" : "5");
         c.setAttribute("class", "nic__wezel");
         grupaWezlow.appendChild(c);
-        kola.set(elementy[i + 1], c);
+        return { ...k, kolo: c };
       });
-      obserwatorWezlow = new IntersectionObserver(
-        (wpisy) => {
-          for (const w of wpisy)
-            if (w.isIntersecting || w.boundingClientRect.top < 0)
-              kola.get(w.target)?.classList.add("nic__wezel--jest");
-        },
-        { rootMargin: "0px 0px -28% 0px" },
-      );
-      for (const el of kola.keys()) obserwatorWezlow.observe(el);
+      narysowane = -1;
 
       const jasne = main!.querySelector<HTMLElement>("[data-nic-jasne]");
       if (jasne) {
@@ -144,8 +137,12 @@ export default function Nic() {
       koniecHero = lista.length / 2;
       const dl = linia.getTotalLength();
       const y: number[] = [];
+      indeksyWezlow = [];
       for (let l = 0; l <= dl; l += KROK) {
         const p = linia.getPointAtLength(l);
+        const w = wezly[indeksyWezlow.length];
+        if (w && Math.hypot(p.x - w.x, p.y - w.y) <= KROK)
+          indeksyWezlow.push(koniecHero + y.length);
         lista.push(p.x, p.y);
         y.push(Math.max(p.y, y.length ? y[y.length - 1] : -Infinity));
       }
@@ -157,7 +154,11 @@ export default function Nic() {
         ruszyl = true;
         poz = 0;
         koralik.classList.add("nic__koralik--jest");
-      } else poz = Math.min(poz, punkty.length / 2 - 1);
+      } else {
+        poz = Math.min(poz, punkty.length / 2 - 1);
+        zasieg = Math.min(zasieg, punkty.length / 2 - 1);
+        narysowane = -1;
+      }
       pokaz();
       jedz();
     }
@@ -181,6 +182,24 @@ export default function Nic() {
       const x = punkty[i * 2] + (punkty[j * 2] - punkty[i * 2]) * t;
       const y = punkty[i * 2 + 1] + (punkty[j * 2 + 1] - punkty[i * 2 + 1]) * t;
       koralik.style.transform = `translate(${x}px,${y}px)`;
+      if (poz > zasieg) zasieg = poz;
+      rysuj();
+    }
+
+    function rysuj() {
+      const dl = Math.max(0, Math.round((zasieg - koniecHero) * KROK));
+      if (dl === narysowane) return;
+      narysowane = dl;
+      const kreska = dl ? `${dl} 1000000` : "";
+      linia.style.strokeDasharray = kreska;
+      jasna.style.strokeDasharray = kreska;
+      svg!.classList.toggle("nic--rysuje", dl > 0);
+      wezly.forEach((w, i) =>
+        w.kolo.classList.toggle(
+          "nic__wezel--jest",
+          indeksyWezlow[i] !== undefined && zasieg >= indeksyWezlow[i],
+        ),
+      );
     }
 
     function krok(teraz: number) {
@@ -224,7 +243,6 @@ export default function Nic() {
       window.removeEventListener("scroll", przewijanie);
       cancelAnimationFrame(ruch);
       obserwator.disconnect();
-      obserwatorWezlow?.disconnect();
       cancelAnimationFrame(ramka);
     };
   }, []);
