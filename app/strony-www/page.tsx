@@ -11,6 +11,7 @@ import GeneratorHasla from "@/components/GeneratorHasla";
 import WyscigStron from "@/components/WyscigStron";
 import MakietaStrony from "@/components/MakietaStrony";
 import TasmaEtapow from "@/components/TasmaEtapow";
+import TabelaCennika from "@/components/TabelaCennika";
 
 export const metadata: Metadata = {
   title: "Tworzenie stron WWW i poprawki w obecnych | Fluxlab",
@@ -151,28 +152,22 @@ export default function StronyWww() {
                     <h2 className="h2-sekcji mb-10 text-center">
                       Ceny
                     </h2>
-                    <div className="grid md:grid-cols-3 gap-5 lg:gap-6">
-                      {pricing.map((track) => (
-                        <div
-                          key={track.title}
-                          className={`card-lift flex flex-col bg-white dark:bg-gray-800/60 border rounded-2xl p-7 ${
-                            track.accent
-                              ? "border-accent shadow-lg shadow-accent/10 ring-1 ring-accent/30"
-                              : "border-gray-100 dark:border-gray-700"
-                          }`}
-                        >
-                          <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">
+                    <TabelaCennika />
+                    <dl className="mt-10 grid gap-x-8 gap-y-6 border-t border-gray-300 pt-8 dark:border-gray-600 md:grid-cols-3">
+                      {[pricing[0], pricing[4], pricing[5]].map((track) => (
+                        <div key={track.title}>
+                          <dt className="text-[11px] font-semibold uppercase tracking-[0.14em] text-gray-500 dark:text-gray-400">
                             {track.title}
-                          </h3>
-                          <p className="text-3xl font-bold text-accent mb-4">
+                          </dt>
+                          <dd className="mt-2 text-xl font-semibold tracking-tight text-accent [font-variant-numeric:tabular-nums]">
                             {track.price}
-                          </p>
-                          <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                          </dd>
+                          <dd className="mt-1 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
                             {track.description}
-                          </p>
+                          </dd>
                         </div>
                       ))}
-                    </div>
+                    </dl>
                     <p className="mt-6 mx-auto max-w-3xl text-center text-sm text-gray-600 dark:text-gray-400">
                       Ceny netto. Zakres spisany w punktach i zamknięty, zmiana
                       poza zakresem to pozycja z cennika napraw. Płatność z góry,

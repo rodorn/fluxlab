@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 
-/** Dekoracyjne tło hero: siatka punktów i dwie rozmyte plamy w kolorze akcentu, z lekką paralaksą przy przewijaniu. */
+/** Dekoracyjne tło hero: sama siatka punktów, z lekką paralaksą przy przewijaniu. */
 export default function TloHero() {
   const ref = useRef<HTMLDivElement | null>(null);
 
@@ -37,10 +37,6 @@ export default function TloHero() {
     >
       <div ref={ref} className="tlo-hero__warstwa will-change-transform">
         <div className="tlo-hero__siatka" />
-        <div className="absolute inset-0">
-          <div className="tlo-hero__plama tlo-hero__plama--a" />
-          <div className="tlo-hero__plama tlo-hero__plama--b" />
-        </div>
       </div>
     </div>
   );

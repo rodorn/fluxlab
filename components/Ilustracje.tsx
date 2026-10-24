@@ -42,7 +42,14 @@ export function Ikona({
           <rect x="9.5" y="16" width="7" height="6" rx="2" />
           <rect x="9.5" y="26" width="7" height="6" rx="2" />
           <rect x="28.5" y="16" width="7" height="6" rx="2" />
-          <rect x="47.5" y="16" width="7" height="6" rx="2" className="ilustracja-akcent" />
+          <rect
+            x="47.5"
+            y="16"
+            width="7"
+            height="6"
+            rx="2"
+            className="ilustracja-akcent"
+          />
         </>
       )}
       {nazwa === "automatyzacje" && (
@@ -70,25 +77,59 @@ export function Ilustracja404({ className = "" }: { className?: string }) {
   return (
     <svg
       aria-hidden="true"
-      viewBox="0 0 320 200"
-      className={`ilustracja-linia ${className}`}
-      {...KRESKA}
+      viewBox="0 0 640 280"
+      className={`overflow-visible ${className}`}
+      fill="none"
     >
-      <path d="M30 150h260" opacity="0.35" />
-      <path d="M60 150c0-6 40-6 40 0" opacity="0.35" />
-      <g>
-        <path d="M92 150V30a8 8 0 0 1 8-8h58l30 30v28" />
-        <path d="M158 22v22a8 8 0 0 0 8 8h22" />
-        <path d="M110 70h36M110 88h56M110 106h30" opacity="0.6" />
-        <path d="M92 150h28l8-10 10 10 10-8 10 8h20" />
+      <style>{`
+        .z404-orbita{transform-box:view-box;transform-origin:320px 142px;animation:z404-orbita 14s linear infinite}
+        @keyframes z404-orbita{to{transform:rotate(360deg)}}
+        @media (prefers-reduced-motion:reduce){.z404-orbita{animation:none}}
+      `}</style>
+      <g
+        className="fill-gray-900 dark:fill-white"
+        style={{
+          fontFamily: "var(--font-sans), system-ui, sans-serif",
+          fontWeight: 800,
+          letterSpacing: "-0.06em",
+        }}
+      >
+        <text x="118" y="236" fontSize="300" textAnchor="middle">
+          4
+        </text>
+        <text x="522" y="236" fontSize="300" textAnchor="middle">
+          4
+        </text>
       </g>
-      <g className="ilustracja-lupa">
-        <circle cx="222" cy="108" r="36" className="ilustracja-akcent" />
-        <path d="m248 134 34 34" strokeWidth="4" />
-        <path d="M212 98a10 10 0 1 1 14 9c-3 2-4 4-4 8" />
-        <circle cx="222" cy="125" r="1.5" fill="currentColor" />
+      <text
+        x="320"
+        y="236"
+        fontSize="300"
+        textAnchor="middle"
+        className="fill-accent"
+        style={{
+          fontFamily: "var(--font-serif), Georgia, serif",
+          fontStyle: "italic",
+          fontWeight: 400,
+        }}
+      >
+        0
+      </text>
+      <circle
+        cx="320"
+        cy="142"
+        r="128"
+        className="stroke-gray-900/15 dark:stroke-white/20"
+        strokeWidth="1"
+      />
+      <g className="z404-orbita">
+        <circle cx="320" cy="14" r="6" className="fill-accent" />
       </g>
-      <path d="M40 60h8M52 60h8M270 60h8M262 82h8" opacity="0.4" />
+      <path
+        d="M0 262H640"
+        className="stroke-gray-900/20 dark:stroke-white/20"
+        strokeWidth="1"
+      />
     </svg>
   );
 }

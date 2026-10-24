@@ -3,9 +3,8 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import Tabs from "@/components/Tabs";
 import CTA from "@/components/CTA";
-import OkladkaArtykulu from "@/components/OkladkaArtykulu";
+import BlogDzial from "@/components/BlogDzial";
 import { categories } from "@/lib/categories";
 
 export const metadata: Metadata = {
@@ -94,63 +93,25 @@ export default function StrefaWiedzy() {
           </div>
         </section>
 
-        {/* Kategorie w zakładkach */}
+        {/* Spis treści: kategorie jako działy */}
         <div className="container-wide py-6 lg:py-8">
-          <Tabs
-            ariaLabel="Kategorie strefy wiedzy"
-            tabs={categories.map((category) => ({
-              label: category.name,
-              content: (
-                <div className="py-6 lg:py-8">
-                  <div className="max-w-4xl mx-auto">
-                    <p className="text-sm text-gray-500 dark:text-gray-400 mb-5 max-w-2xl">
-                      {category.description}
-                    </p>
-                    {category.wstep?.map((akapit) => (
-                      <p
-                        key={akapit}
-                        className="text-gray-600 dark:text-gray-400 leading-relaxed mb-4 max-w-3xl mx-auto"
-                      >
-                        {akapit}
-                      </p>
-                    ))}
-                    <div className="grid md:grid-cols-2 gap-3">
-                      {category.articles.map((article) => (
-                        <Link
-                          key={article.href}
-                          href={article.href}
-                          className="block overflow-hidden rounded-xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800/60 hover:border-accent/30 dark:hover:border-accent/50 transition-colors group"
-                        >
-                          <OkladkaArtykulu
-                            tytul={article.title}
-                            src={
-                              article.bezOkladki
-                                ? undefined
-                                : `/okladki/${article.href.split("/").pop()}.webp`
-                            }
-                          />
-                          <div className="p-4">
-                            <h2 className="text-base font-semibold text-gray-900 dark:text-white group-hover:text-accent transition-colors mb-1">
-                              {article.title}
-                            </h2>
-                            <p className="text-sm text-gray-500 dark:text-gray-400">
-                              {article.description}
-                            </p>
-                          </div>
-                        </Link>
-                      ))}
-                    </div>
-                    <Link
-                      href={`/strefa-wiedzy/kategoria/${category.slug}`}
-                      className="mt-4 inline-block text-sm font-semibold text-accent hover:underline"
-                    >
-                      Wszystkie w tej kategorii →
-                    </Link>
-                  </div>
-                </div>
-              ),
-            }))}
-          />
+          <nav aria-label="Działy strefy wiedzy" className="mb-10 lg:mb-14">
+            <ol className="flex flex-wrap gap-x-6 gap-y-2 list-none p-0 m-0 text-sm">
+              {categories.map((c, i) => (
+                <li key={c.slug}>
+                  <a href={`#${c.slug}`} className="text-gray-700 dark:text-gray-300 hover:text-accent">
+                    <span className="tabular-nums text-gray-400 dark:text-gray-500 mr-1.5">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    {c.name}
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </nav>
+          {categories.map((category, i) => (
+            <BlogDzial key={category.slug} category={category} numer={i + 1} />
+          ))}
         </div>
 
         <CTA

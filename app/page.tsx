@@ -2,6 +2,7 @@ import Link from "next/link";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import TloHero from "@/components/TloHero";
+import HeroZrzut from "@/components/HeroZrzut";
 import LandingForm from "@/components/LandingForm";
 import PasekAkcji from "@/components/PasekAkcji";
 import PoleAudytu from "@/components/PoleAudytu";
@@ -86,7 +87,7 @@ export default function Home() {
       <Header />
       <main className="relative flex flex-col bg-white text-gray-900 dark:bg-gray-950 dark:text-white pt-16">
         <TloHero />
-        <section className="relative z-10 mx-auto flex min-h-[72vh] w-full max-w-6xl flex-col items-center justify-center px-6 pt-16 pb-16 text-center lg:pt-20">
+        <section className="relative z-10 mx-auto flex w-full max-w-6xl flex-col items-center px-6 pt-16 pb-16 text-center lg:pt-20">
           <WitajPonownie />
           <IntroZnaku />
           <EtykietaNocna />
@@ -106,6 +107,7 @@ export default function Home() {
               Sprawdź swoją stronę
             </Link>
           </div>
+          <HeroZrzut />
         </section>
 
         <section aria-labelledby="oferta" className="container-wide relative pb-16">

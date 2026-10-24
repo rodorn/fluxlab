@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { FILARY } from "@/lib/filary";
 import GraZlapLeada from "@/components/GraZlapLeada";
@@ -25,29 +25,14 @@ const norm = (s: string) =>
 
 export default function Strona404() {
   const [q, setQ] = useState("");
-  const ref = useRef<HTMLDivElement>(null);
   const wyniki = STRONY.filter((s) => norm(s.t + " " + s.h).includes(norm(q.trim())));
 
-  useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const onMove = (e: MouseEvent) => {
-      const el = ref.current;
-      if (!el) return;
-      const x = (e.clientX / window.innerWidth - 0.5) * 2;
-      const y = (e.clientY / window.innerHeight - 0.5) * 2;
-      el.style.setProperty("--mx", String(x));
-      el.style.setProperty("--my", String(y));
-    };
-    window.addEventListener("mousemove", onMove);
-    return () => window.removeEventListener("mousemove", onMove);
-  }, []);
-
   return (
-    <div className="text-center max-w-2xl mx-auto">
-      <div ref={ref} aria-hidden="true" className="select-none">
-        <Ilustracja404 className="mx-auto h-auto w-full max-w-sm" />
+    <div className="text-center max-w-2xl mx-auto overflow-x-clip">
+      <div aria-hidden="true" className="select-none">
+        <Ilustracja404 className="mx-auto h-auto w-full max-w-2xl" />
       </div>
-      <p className="mt-2 mb-3 text-sm font-semibold uppercase tracking-widest text-accent">
+      <p className="mt-8 mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-gray-500 dark:text-gray-400">
         Błąd 404
       </p>
       <h1 className="h1-strony mb-6">
