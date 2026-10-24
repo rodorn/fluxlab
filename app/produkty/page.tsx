@@ -6,7 +6,27 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import CTA from "@/components/CTA";
 import KatalogProduktow from "@/components/KatalogProduktow";
 import ZaZlotowke from "@/components/ZaZlotowke";
-import { CENNIK as PRODUCTS, cenaWejscia } from "@/lib/products";
+import WycenaAI from "@/components/WycenaAI";
+import { CENNIK as PRODUCTS, PRODUCTS as PRODUCTS_ALL, cenaWejscia } from "@/lib/products";
+
+// Kolejność z licznika ruchu (sesje na stronie produktu, 20.09–24.10.2026).
+const NAJCZESCIEJ = ["/audyt-strony", "/e-doreczenia-integracja", "/strony-www", "/audyt-kurierski"]
+  .map((h) => PRODUCTS_ALL.find((p) => p.href === h))
+  .filter((p) => p !== undefined);
+
+const ZASADY = [
+  ["Stała cena", "Nie liczymy godzin. Przed startem dostajesz jedną kwotę za całość."],
+  ["Płatność po odbiorze", "Za każdy etap płacisz dopiero, gdy go odbierzesz."],
+  ["Bez ukrytych kosztów", "Licencje, serwery i abonamenty ustalamy przed startem."],
+  ["30 dni poprawek", "Błędy po naszej stronie poprawiamy po wdrożeniu bez opłat."],
+];
+
+const ZASADY_AUDYTU = [
+  ["Audyt strony 0 zł", "Raport od ręki, bez konta: telefon i komputer, wyszukiwarka, AI, poczta."],
+  ["Cała strona 10 zł", "Do 200 podstron, raport mailem, płacisz po otrzymaniu."],
+  ["Cena naprawy w raporcie", "Przy każdym problemie koszt usunięcia. Wycena wiąże 30 dni."],
+  ["Audyt procesu odliczamy", "Koszt audytu procesu odejmujemy od wdrożenia, jeśli idziemy dalej."],
+];
 
 const DO_KALKULATORA = PRODUCTS.flatMap((p) => {
   const cena = cenaWejscia(p.price);
@@ -66,6 +86,62 @@ export default function ProduktyPage() {
                 .
               </p>
             </div>
+          </div>
+        </section>
+
+        <section className="container-wide pb-10" aria-label="Wycena przez AI">
+          <WycenaAI />
+          <p className="mt-4 text-center text-sm text-gray-600 dark:text-gray-400">
+            Wolisz porozmawiać?{" "}
+            <Link href="/kontakt?forma=meet&utm_source=produkty" className="font-semibold text-accent hover:underline">
+              Umów 30 minut w Google Meet
+            </Link>{" "}
+            albo napisz na{" "}
+            <a href="mailto:pawel@fluxlab.pl" className="font-semibold text-accent hover:underline">
+              pawel@fluxlab.pl
+            </a>
+            , co chcesz zrobić.
+          </p>
+        </section>
+
+        <section className="container-wide pb-12" aria-labelledby="najczesciej">
+          <h2 id="najczesciej" className="h2-sekcji mb-6 text-center">
+            Najczęściej wybierane
+          </h2>
+          <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {NAJCZESCIEJ.map((p) => (
+              <li key={p.href}>
+                <Link
+                  href={p.href}
+                  className="flex h-full flex-col rounded-2xl border border-gray-200 p-5 transition-colors hover:border-accent dark:border-white/10"
+                >
+                  <span className="text-sm font-semibold text-gray-900 dark:text-white">{p.name}</span>
+                  <span className="mt-1 flex-1 text-sm text-gray-600 dark:text-gray-400">{p.tagline}</span>
+                  <span className="mt-4 text-lg font-bold text-accent">{p.price}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section className="container-wide pb-12" aria-label="Zasady">
+          <div className="grid gap-6 lg:grid-cols-2">
+            {[
+              ["Zasady wyceny", ZASADY],
+              ["Zasady audytu", ZASADY_AUDYTU],
+            ].map(([tytul, lista]) => (
+              <div key={tytul as string} className="rounded-2xl bg-gray-50 p-6 dark:bg-white/5">
+                <h2 className="text-lg font-bold text-gray-900 dark:text-white">{tytul as string}</h2>
+                <dl className="mt-4 space-y-3">
+                  {(lista as string[][]).map(([t, o]) => (
+                    <div key={t}>
+                      <dt className="text-sm font-semibold text-gray-900 dark:text-white">{t}</dt>
+                      <dd className="text-sm text-gray-600 dark:text-gray-400">{o}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+            ))}
           </div>
         </section>
 

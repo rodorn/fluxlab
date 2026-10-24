@@ -79,6 +79,11 @@ function CTAFormularz() {
 
   useEffect(() => {
     setUtm(readUtm());
+    const q = new URLSearchParams(window.location.search);
+    if (q.get("forma") === "meet") setContactPref("meet");
+    const opis = q.get("opis");
+    const pole = document.getElementById("message") as HTMLTextAreaElement | null;
+    if (opis && pole && !pole.value) pole.value = opis.slice(0, 1000);
   }, []);
 
   function handleFormStart() {

@@ -343,12 +343,20 @@ export default function Czat() {
                   </div>
                 )}
                 {w.opisWyceny && (
-                  <a
-                    href={`/?opis=${encodeURIComponent(w.opisWyceny)}#kontakt`}
-                    className="btn-primary mt-2 px-4 py-2 text-xs"
-                  >
-                    Przejdź do formularza z tym opisem
-                  </a>
+                  <div className="mt-2 flex flex-wrap gap-2">
+                    <a
+                      href={`/kontakt?forma=meet&opis=${encodeURIComponent(w.opisWyceny)}&utm_source=czat`}
+                      className="btn-primary px-4 py-2 text-xs"
+                    >
+                      Umów 30 min w Google Meet
+                    </a>
+                    <a
+                      href={`/kontakt?forma=email&opis=${encodeURIComponent(w.opisWyceny)}&utm_source=czat`}
+                      className="btn-secondary px-4 py-2 text-xs"
+                    >
+                      Wyślij opis mailem
+                    </a>
+                  </div>
                 )}
               </div>
             ))}
