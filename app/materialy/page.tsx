@@ -94,7 +94,7 @@ export default async function MaterialyPage() {
         <div className="container-wide pt-10 pb-20">
           <Breadcrumbs href="/materialy" items={[{ label: "Materiały" }]} />
           <div className="mx-auto max-w-3xl text-center">
-            <h1 className="mt-6 text-balance text-4xl font-bold tracking-tighter text-gray-900 dark:text-white lg:text-5xl">
+            <h1 className="h1-strony mt-6">
               Materiały do pobrania
             </h1>
             <p className="mt-4 text-gray-600 dark:text-gray-400">

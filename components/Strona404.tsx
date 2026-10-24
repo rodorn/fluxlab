@@ -50,7 +50,7 @@ export default function Strona404() {
       <p className="mt-2 mb-3 text-sm font-semibold uppercase tracking-widest text-accent">
         Błąd 404
       </p>
-      <h1 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+      <h1 className="h1-strony mb-6">
         Tej strony nie ma, ale mamy coś lepszego
       </h1>
 
