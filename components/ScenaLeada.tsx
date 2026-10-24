@@ -143,11 +143,12 @@ function Polaczenia({
   );
 }
 
-/** Ikona pogody wg kodu WMO z Open-Meteo: słońce, chmura, deszcz albo śnieg. */
-function IkonaPogody({ kod }: { kod: number }) {
+/** Ikona pogody wg kodu WMO z Open-Meteo: słońce (w nocy księżyc), chmura, deszcz albo śnieg. */
+function IkonaPogody({ kod, dzien }: { kod: number; dzien: boolean }) {
   const snieg = (kod >= 71 && kod <= 77) || kod === 85 || kod === 86;
   const deszcz = !snieg && kod >= 51;
-  const slonce = kod <= 1;
+  const slonce = kod <= 1 && dzien;
+  const ksiezyc = kod <= 1 && !dzien;
   return (
     <svg
       width="14"
@@ -160,7 +161,9 @@ function IkonaPogody({ kod }: { kod: number }) {
       strokeWidth="1.5"
       strokeLinecap="round"
     >
-      {slonce ? (
+      {ksiezyc ? (
+        <path d="M12.5 10.2A5 5 0 0 1 5.8 3.5a5 5 0 1 0 6.7 6.7z" fill="currentColor" />
+      ) : slonce ? (
         <>
           <circle cx="8" cy="8" r="3" fill="currentColor" />
           <path d="M8 1.5v1.5M8 13v1.5M1.5 8H3M13 8h1.5M3.4 3.4l1 1M11.6 11.6l1 1M3.4 12.6l1-1M11.6 4.4l1-1" />
@@ -237,6 +240,7 @@ export default function ScenaLeada() {
     miasto: string;
     temp: number | null;
     kod: number | null;
+    dzien?: boolean;
   } | null>(null);
   useEffect(() => {
     const ac = new AbortController();
@@ -492,7 +496,7 @@ export default function ScenaLeada() {
           >
             {pogoda && (
               <>
-                {pogoda.kod !== null && <IkonaPogody kod={pogoda.kod} />}
+                {pogoda.kod !== null && <IkonaPogody kod={pogoda.kod} dzien={pogoda.dzien !== false} />}
                 {pogoda.miasto}
                 {pogoda.temp !== null && ` ${pogoda.temp}°`}
               </>

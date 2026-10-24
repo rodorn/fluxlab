@@ -39,20 +39,22 @@ export async function GET(request: Request) {
 
   let temp: number | null = null;
   let kod: number | null = null;
+  let dzien = true;
   try {
     const r = await fetch(
-      `https://api.open-meteo.com/v1/forecast?latitude=${miejsce.lat.toFixed(1)}&longitude=${miejsce.lon.toFixed(1)}&current=temperature_2m,weather_code`,
+      `https://api.open-meteo.com/v1/forecast?latitude=${miejsce.lat.toFixed(1)}&longitude=${miejsce.lon.toFixed(1)}&current=temperature_2m,weather_code,is_day`,
       { next: { revalidate: 1800 }, signal: AbortSignal.timeout(2000) },
     );
     if (r.ok) {
       const d = await r.json();
       temp = Math.round(d.current.temperature_2m);
       kod = d.current.weather_code;
+      dzien = d.current.is_day !== 0;
     }
   } catch {}
 
   return NextResponse.json(
-    { miasto: miejsce.miasto, temp, kod },
+    { miasto: miejsce.miasto, temp, kod, dzien },
     { headers: { "Cache-Control": "private, no-store" } },
   );
 }
