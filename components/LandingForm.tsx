@@ -47,6 +47,8 @@ interface Props {
   submitLabel?: string;
   /** Mikrotekst pod przyciskiem. */
   microCopy?: string;
+  /** Nagłówek jako h1, gdy formularz jest główną treścią strony. */
+  h1?: boolean;
 }
 
 export default function LandingForm({
@@ -55,7 +57,9 @@ export default function LandingForm({
   intro,
   submitLabel = "Wyślij",
   microCopy = "Odpowiedź tego samego dnia.",
+  h1 = false,
 }: Props) {
+  const Naglowek = h1 ? "h1" : "h2";
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
@@ -387,9 +391,9 @@ export default function LandingForm({
   return (
     <div className="mx-auto max-w-2xl">
       <div className="mb-8 text-center">
-        <h2 className="h2-sekcji mb-4">
+        <Naglowek className={`${h1 ? "h1-strony" : "h2-sekcji"} mb-4`}>
           {heading}
-        </h2>
+        </Naglowek>
         <p className="text-gray-600 dark:text-gray-400 text-base lg:text-lg leading-relaxed">
           {intro}
         </p>
