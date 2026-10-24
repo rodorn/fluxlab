@@ -1,4 +1,4 @@
-Szkic na 26.10 (NIE w app/). Źródło faktów: MF, „Certyfikaty KSeF”, https://ksef.podatki.gov.pl/informacje-ogolne-ksef-20/certyfikaty-ksef/ (opublikowano 01.11.2025, zmodyfikowano 21.07.2026), odczyt z VPS (curl) 19.10.2026 09:50. Oznaczenia [F1] do [F4] do usunięcia przy publikacji.
+Szkic na 26.10 (NIE w app/). Źródło faktów: MF, „Certyfikaty KSeF”, https://ksef.podatki.gov.pl/informacje-ogolne-ksef-20/certyfikaty-ksef/ (opublikowano 01.11.2025, zmodyfikowano 21.07.2026), odczyt z VPS (curl) 19.10.2026 09:50; ponowny odczyt 24.10.2026 12:55: strona pokazuje „Opublikowano 30.06.2025, Zmodyfikowano 01.09.2026”, F4 i tokeny bezterminowo bez zmian. Oznaczenia [F1] do [F4] do usunięcia przy publikacji.
 
 Adres: /strefa-wiedzy/certyfikat-ksef
 Tytuł (49 zn.): Certyfikat KSeF: po co jest i jak go wyrobić | Fluxlab
@@ -14,15 +14,13 @@ Typ 1 służy do logowania w KSeF, także z programu do faktur. Typ 2 (offline) 
 H2: Gdzie go wyrobić
 W Aplikacji Podatnika KSeF albo przez API, po zalogowaniu Profilem Zaufanym, podpisem kwalifikowanym lub pieczęcią spółki. Certyfikat jest ważny najwyżej 2 lata, więc wpisz sobie datę wymiany. [F2, F4]
 
-FAQ (4):
+FAQ (3):
 
 1. Czy certyfikat KSeF jest obowiązkowy?
-   Do zwykłego wystawiania nie, logować się możesz też Profilem Zaufanym albo tokenem. Bez certyfikatu typu offline nie wystawisz jednak faktury w trybie offline ani w awarii. [F1, F3]
+   Do zwykłego wystawiania nie, logować się możesz też Profilem Zaufanym albo tokenem. Potrzebny jest dopiero do faktur offline i w awarii. [F1, F3]
 2. Czy pracownik może używać certyfikatu firmy?
    Tak. Spółka po zalogowaniu pieczęcią może pobrać kilka certyfikatów na swoje dane i przekazać je pracownikom; w KSeF widać wtedy spółkę, nie osobę. [F2]
-3. Jak długo certyfikat jest ważny?
-   Najwyżej 2 lata od wytworzenia albo od wskazanej daty początkowej. [F4]
-4. Czy tokeny znikną z końcem 2026?
+3. Czy tokeny znikną z końcem 2026?
    Nie. MF zdecydowało, że tokeny zostają bezterminowo, a rozporządzenie zostanie znowelizowane. [strona F, sekcja „Certyfikaty KSeF a tokeny”]
 
 Fakty ze źródła (dosłowny sens):

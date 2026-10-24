@@ -7786,3 +7786,11 @@ Otwarte decyzje dla stratega: kanał `audyt-wynik` zamknąć (4 doby bez maila, 
 **Dowód:** `cykl/z10-pozycje-8-15-2026-10-24.txt`, linia Z10 w `cykl/plan-ruchu.md`.
 **Dla Pawła:**
 **Zostało otwarte:** Z11 (pomiar wieczorny 18:30), Z12-Z16.
+
+## 2026-10-24 12:57
+**Kanał:** Google (Z12) i treść pod KSeF (Z16), z planu stratega.
+**Co zrobione:** ustawiona seria 9 żądań indeksowania na 25.10 01:40 (timer fl-gsc-25, m.in. /ksef-2027 z przywróconym tytułem i 3 strony „zeskanowane, nie zindeksowane”) oraz skrócony szkic artykułu „Certyfikat KSeF” na 26.10 (FAQ 4 → 3, słowa 298 → 276, fakty potwierdzone na stronie MF).
+**Ruch:** doba 136 odsłon, 101 osób; źródła: b2b-email 45 (piksel otwarcia, nie ludzie), youtube 19, facebook 6, m.facebook.com 4, instagram 4; YouTube 3 sesje, LinkedIn 1, X 1; uruchomienia narzędzi 0.
+**Dowód:** `cykl/z13-lista-25.txt` (9 adresów, wszystkie 200), `systemctl --user list-timers`: fl-gsc-25.timer Sun 2026-10-25 01:40 CEST, log `cykl/z19-indeksowanie-25.log`; `cykl/artykul-2026-10-26-szkic.md`; linie Z12 i Z16 w `cykl/plan-ruchu.md`.
+**Dla Pawła:**
+**Zostało otwarte:** Z11 (pomiar od 13:30, nie da się zrobić przed 13:30, zostawione na 18:30), Z13 (nie wcześniej niż 25.10 01:45), Z14, Z15 (nie wcześniej niż 25.10 03:00). Dla stratega: Z2 dało tylko 4 kandydatów do serii, 9. adres to /strefa-wiedzy/numeracja-faktur-ksef-2027 (21 wyśw.); 25.10 o 03:00 zmiana czasu, timer 01:40 jest przed nią.
