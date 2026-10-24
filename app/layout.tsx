@@ -3,6 +3,7 @@ import { ViewTransition } from "react";
 import { Fraunces, Instrument_Sans } from "next/font/google";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import ZgodaCookies from "@/components/ZgodaCookies";
+import TloKursora from "@/components/TloKursora";
 import TytulKarty from "@/components/TytulKarty";
 import Mikrotypografia from "@/components/Mikrotypografia";
 import CiszaPrzyPrzewijaniu from "@/components/CiszaPrzyPrzewijaniu";
@@ -222,6 +223,7 @@ export default function RootLayout({
               "<!-- Czytasz źródło strony? To Next.js, Tailwind i Vercel, bez gotowych szablonów. Jeśli lubisz takie szczegóły, napisz: pawel@fluxlab.pl. Klawisze: Ctrl K szukaj, a góra góra dół dół lewo prawo lewo prawo B A pokazuje szkielet strony. -->",
           }}
         />
+        <TloKursora />
         <GoogleAnalytics />
         <ZgodaCookies />
         <CiszaPrzyPrzewijaniu />

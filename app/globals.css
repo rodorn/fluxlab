@@ -876,9 +876,11 @@ main[class*="max-w-"]:has(> nav[aria-label="Breadcrumb"]) {
   -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 40%, #000 20%, transparent 75%);
   mask-image: radial-gradient(ellipse 70% 70% at 50% 40%, #000 20%, transparent 75%);
 }
-.tlo-hero__swiatlo {
-  position: absolute;
+.tlo-kursora {
+  position: fixed;
   inset: 0;
+  z-index: -1;
+  pointer-events: none;
   background-image: radial-gradient(rgb(var(--accent)) 1.25px, transparent 1.75px);
   background-size: 28px 28px;
   opacity: 0;
@@ -1060,6 +1062,7 @@ p {
   .przycisk-czatu,
   .czat-dymek,
   .tlo-hero__warstwa,
+  .tlo-kursora,
   button,
   [role="tablist"],
   .btn-primary,

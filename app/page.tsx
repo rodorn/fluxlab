@@ -91,7 +91,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main className="relative flex flex-col bg-white text-gray-900 dark:bg-gray-950 dark:text-white pt-16">
+      <main className="relative flex flex-col text-gray-900 dark:text-white pt-16">
         <TloHero />
         <section className="relative z-10 mx-auto flex w-full max-w-6xl flex-col items-center px-6 pt-16 pb-16 text-center lg:pt-20">
           <WitajPonownie />
