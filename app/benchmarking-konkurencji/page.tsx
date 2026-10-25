@@ -29,7 +29,7 @@ export default function Page() {
       slug="benchmarking-konkurencji"
       breadcrumb="Benchmarking konkurencji"
       eyebrow="Raport o konkurencji"
-      h1="Wiesz, co zmienia konkurencja, zanim zrobią to Twoi klienci"
+      h1="Wiesz, co zmienia konkurencja, zanim zauważą to Twoi klienci"
       lead="Wskazujesz firmy, z którymi walczysz o klientów. My sprawdzamy ich ceny, nowe usługi, social media, szybkość stron i opinie w Google, a Ty dostajesz krótki raport z tym, co się zmieniło i co z tego wynika dla Ciebie."
       ctaLabel="Zamów raport"
       ctaNote="Od 39 zł netto miesięcznie, rezygnacja z miesiąca na miesiąc"
