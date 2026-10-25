@@ -256,6 +256,14 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // Subdomena mta-sts sluzy tylko polityce poczty; reszta nie moze byc
+      // druga kopia strony w Google.
+      {
+        source: "/:sciezka((?!\\.well-known/mta-sts\\.txt$).*)",
+        has: [{ type: "host", value: "mta-sts.fluxlab.pl" }],
+        destination: "https://fluxlab.pl/:sciezka",
+        statusCode: 301,
+      },
       // Krotkie linki dla partnerow z YouTube: widz wpisuje je z ekranu, a
       // utm_medium sprawia, ze zrodlo zostaje zapamietane do formularza.
       {
