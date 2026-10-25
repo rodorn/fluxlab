@@ -8,6 +8,7 @@ import LandingForm from "@/components/LandingForm";
 import OsCzasuStrony from "@/components/OsCzasuStrony";
 import KonfiguratorStrony from "@/components/KonfiguratorStrony";
 import GeneratorHasla from "@/components/GeneratorHasla";
+import PoleAudytu from "@/components/PoleAudytu";
 import WyscigStron from "@/components/WyscigStron";
 import MakietaStrony from "@/components/MakietaStrony";
 import TasmaEtapow from "@/components/TasmaEtapow";
@@ -138,6 +139,13 @@ export default function StronyWww() {
         </section>
 
         <KonfiguratorStrony />
+
+        <section id="audyt" className="scroll-mt-20 container-wide">
+          <div className="mx-auto max-w-5xl py-10 text-center lg:py-12">
+            <h2 className="h2-sekcji mb-3">Sprawdź swoją stronę w minutę</h2>
+            <PoleAudytu />
+          </div>
+        </section>
 
         <GeneratorHasla />
 

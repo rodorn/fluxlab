@@ -606,6 +606,7 @@ if (sankcjeDaty.size > 1) {
     "program",
     "harmonogram",
     "spam",
+    "stream",
     "team",
     "reklam",
     "gram",

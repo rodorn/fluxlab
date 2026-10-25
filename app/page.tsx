@@ -6,7 +6,7 @@ import HeroNic from "@/components/HeroNic";
 import Nic from "@/components/Nic";
 import LandingForm from "@/components/LandingForm";
 import PasekAkcji from "@/components/PasekAkcji";
-import PoleAudytu from "@/components/PoleAudytu";
+import WirtualnyHandlowiec from "@/components/WirtualnyHandlowiec";
 import WitajPonownie from "@/components/WitajPonownie";
 import EtykietaNocna from "@/components/EtykietaNocna";
 import NaglowekSklada from "@/components/NaglowekSklada";
@@ -158,12 +158,9 @@ export default function Home() {
             >
               Zamów wycenę
             </a>
-            <Link
-              href="/audyt-strony"
-              className="btn-secondary btn-lg w-full sm:w-60"
-            >
-              Sprawdź swoją stronę
-            </Link>
+            <a href="#handlowiec" className="btn-secondary btn-lg w-full sm:w-60">
+              Dobierz usługi
+            </a>
           </div>
           <HeroNic />
         </section>
@@ -364,21 +361,27 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="relative border-t border-gray-200 dark:border-white/10 py-20 lg:py-24">
-          <NapisBoczny tekst="Audyt" />
+        <section
+          id="handlowiec"
+          className="relative scroll-mt-20 border-t border-gray-200 dark:border-white/10 py-20 lg:py-24"
+        >
+          <NapisBoczny tekst="Propozycja" />
           <div className="container-wide">
             <span data-nic aria-hidden="true" className="wezel-nici" />
             <RevealOnScroll className="text-center">
               <Ikona nazwa="audyt" className="mx-auto mb-4 h-11 w-11" />
               <p className="section-label mb-3">
-                <span className="numer-sekcji">03</span> Audyt
+                <span className="numer-sekcji">03</span> Propozycja
               </p>
               <h2 className="text-balance text-4xl font-bold tracking-tighter lg:text-5xl">
-                <PisanyTekst id="audyt" tekst="Sprawdź swoją stronę w minutę" />
+                <PisanyTekst
+                  id="handlowiec"
+                  tekst="Powiemy, co zrobimy dla Twojej firmy"
+                />
               </h2>
             </RevealOnScroll>
             <RevealOnScroll delay={1}>
-              <PoleAudytu />
+              <WirtualnyHandlowiec />
             </RevealOnScroll>
           </div>
         </section>

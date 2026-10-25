@@ -63,20 +63,22 @@ export async function pobierzPrzezZyte(
 /** Baner zgody na cookies zasłania i rozmywa zrzut. Usuwamy duże warstwy fixed
  *  z wysokim z-index, znane kontenery CMP oraz blokadę przewijania i rozmycie. */
 const BEZ_ZGOD = `(() => {
-  const sel = '[id*=cookie i],[class*=cookie i],[id*=consent i],[class*=consent i],[id*=gdpr i],[class*=gdpr i],[id*=onetrust i],[id*=didomi i],[id*=usercentrics i],#CybotCookiebotDialog,.cmp-container,[aria-modal=true]';
-  document.querySelectorAll(sel).forEach(e => { const p = getComputedStyle(e).position; if (p === 'fixed' || p === 'sticky' || e.getAttribute('aria-modal') === 'true') e.remove(); });
+  const sel = '[id*=cookie i],[class*=cookie i],[id*=consent i],[class*=consent i],[id*=gdpr i],[class*=gdpr i],[id*=onetrust i],[id*=didomi i],[id*=usercentrics i],#CybotCookiebotDialog,.cmp-container,[aria-modal=true],[role=dialog]';
   const vw = innerWidth * innerHeight;
+  const naWierzchu = (e) => { const p = getComputedStyle(e).position; return p === 'fixed' || p === 'sticky'; };
+  const zewnetrzny = (e) => { let x = e; for (let p = e.parentElement; p && p !== document.body; p = p.parentElement) if (naWierzchu(p)) x = p; return x; };
+  document.querySelectorAll(sel).forEach(e => { if (naWierzchu(e) || e.getAttribute('aria-modal') === 'true' || e.getAttribute('role') === 'dialog') zewnetrzny(e).remove(); });
   document.querySelectorAll('body *').forEach(e => {
-    const st = getComputedStyle(e);
-    if (st.position !== 'fixed') return;
+    if (!e.isConnected || getComputedStyle(e).position !== 'fixed') return;
     const r = e.getBoundingClientRect();
-    if (r.width * r.height > vw * 0.25 && (+st.zIndex || 0) >= 100) e.remove();
+    if (r.width * r.height > vw * 0.25 || /cookie|prywatno|zgod|consent|privacy/i.test(e.textContent || '')) e.remove();
   });
-  for (const e of [document.documentElement, document.body, ...document.querySelectorAll('body > *')]) {
-    e.style.setProperty('filter', 'none', 'important');
-    e.style.setProperty('overflow', 'visible', 'important');
-  }
-  document.documentElement.style.setProperty('overflow', 'auto', 'important');
+  document.querySelectorAll('*').forEach(e => {
+    const st = getComputedStyle(e);
+    if (st.filter.includes('blur')) e.style.setProperty('filter', 'none', 'important');
+    if (st.backdropFilter && st.backdropFilter !== 'none') e.style.setProperty('backdrop-filter', 'none', 'important');
+  });
+  for (const e of [document.documentElement, document.body]) e.style.setProperty('overflow', 'auto', 'important');
 })()`;
 
 /** Zrzut ekranu górnej części strony przez Zyte (przeglądarka po ich stronie),
@@ -98,6 +100,7 @@ export async function zrzutPrzezZyte(url: string, limitMs = 25000): Promise<stri
         screenshotOptions: { format: "jpeg", fullPage: false },
         viewport: { width: 1280, height: 800 },
         actions: [
+          { action: "waitForTimeout", timeout: 2 },
           { action: "evaluate", source: BEZ_ZGOD },
           { action: "waitForTimeout", timeout: 0.5 },
         ],
