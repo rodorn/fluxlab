@@ -5,7 +5,7 @@ import { wykryjTechnologie } from "@/lib/audyt-technologie";
 import { daneliczbowe, zbadajCalosc } from "@/lib/audyt-calosc";
 import { punktacja, wycenNaprawe } from "@/lib/audyt-ocena";
 import { czystaDomena } from "@/lib/audyt-pomiar";
-import type { AudytHandlowca } from "@/lib/uslugiHandlowca";
+import { odm, type AudytHandlowca } from "@/lib/uslugiHandlowca";
 
 /** Wirtualny handlowiec, etap 1: fakty ze strony i rejestru od razu, potem
  *  wyszukiwanie w sieci. Wynik płynie jako NDJSON, żeby klient widział postęp,
@@ -47,7 +47,16 @@ async function audytuj(
       })),
       ...d.grupy.slice(0, 3).map((g) => ({
         tytul: g.tytul,
-        fakt: `${g.wpisy.length} podstron`,
+        fakt: [
+          odm(g.wpisy.length, "podstrona", "podstrony", "podstron"),
+          ...g.wpisy
+            .slice(0, 2)
+            .map((x) =>
+              [new URL(x.adres).pathname, x.szczegol?.slice(0, 120)]
+                .filter(Boolean)
+                .join(": "),
+            ),
+        ].join("; "),
         waga: g.waga,
         koszt: 0,
       })),

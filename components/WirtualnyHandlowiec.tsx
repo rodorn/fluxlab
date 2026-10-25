@@ -92,7 +92,10 @@ const OBSZARY: Record<string, string> = {
 const zl = (n: number) => `${n.toLocaleString("pl-PL")} zł`;
 
 function doFormularza(tekst: string, telefon = false) {
-  if (telefon) window.dispatchEvent(new CustomEvent("ustaw-forme-kontaktu", { detail: "phone" }));
+  if (telefon)
+    window.dispatchEvent(
+      new CustomEvent("ustaw-forme-kontaktu", { detail: "phone" }),
+    );
   const msg = document.getElementById("message") as HTMLTextAreaElement | null;
   if (msg) {
     Object.getOwnPropertyDescriptor(
@@ -106,7 +109,9 @@ function doFormularza(tekst: string, telefon = false) {
     ?.scrollIntoView({ behavior: "smooth", block: "start" });
   window.setTimeout(() => {
     (
-      document.getElementById(telefon ? "phone" : "email") as HTMLInputElement | null
+      document.getElementById(
+        telefon ? "phone" : "email",
+      ) as HTMLInputElement | null
     )?.focus({
       preventScroll: true,
     });
@@ -489,7 +494,12 @@ export default function WirtualnyHandlowiec() {
                         </Chip>
                       )}
                       <Chip dobrze>
-                        {odm(audyt.sprawdzone, "podstrona", "podstrony", "podstron")}
+                        {odm(
+                          audyt.sprawdzone,
+                          "podstrona",
+                          "podstrony",
+                          "podstron",
+                        )}
                       </Chip>
                       <Chip dobrze={audyt.zBledem === 0}>
                         {audyt.zBledem
@@ -498,7 +508,12 @@ export default function WirtualnyHandlowiec() {
                       </Chip>
                       <Chip dobrze={audyt.zlamane === 0}>
                         {audyt.zlamane
-                          ? odm(audyt.zlamane, "martwy link", "martwe linki", "martwych linków")
+                          ? odm(
+                              audyt.zlamane,
+                              "martwy link",
+                              "martwe linki",
+                              "martwych linków",
+                            )
                           : "bez martwych linków"}
                       </Chip>
                     </div>
@@ -516,7 +531,14 @@ export default function WirtualnyHandlowiec() {
                             >
                               ●
                             </span>
-                            {u.tytul}
+                            <span>
+                              {u.tytul}
+                              {u.fakt && (
+                                <span className="block text-xs text-gray-500 dark:text-gray-400">
+                                  {u.fakt}
+                                </span>
+                              )}
+                            </span>
                           </li>
                         ))}
                       </ul>
@@ -659,8 +681,8 @@ export default function WirtualnyHandlowiec() {
                     : profil && audytTrwa
                       ? "Kończymy audyt strony..."
                       : profil
-                      ? "Pokaż propozycję"
-                      : `Sprawdzamy firmę: ${postep}%`}
+                        ? "Pokaż propozycję"
+                        : `Sprawdzamy firmę: ${postep}%`}
                 </button>
               </>
             ) : (
