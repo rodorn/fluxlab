@@ -168,7 +168,14 @@ export function blokiTekstu(html: string): string[] {
 
 export function tekstStrony(html: string): string {
   const body = html.match(/<body\b[\s\S]*$/i)?.[0] ?? html;
-  return dekoduj(bezKodu(body).replace(INLINE, "").replace(/<[^>]+>/g, " "))
+  // Zamknięty element tuż przed otwarciem następnego to zwykle dwa osobne
+  // napisy (tytuł i cena w karcie), więc rozdzielamy je spacją.
+  return dekoduj(
+    bezKodu(body)
+      .replace(/(<\/[a-z]+>)(<[a-z])/gi, "$1 $2")
+      .replace(INLINE, "")
+      .replace(/<[^>]+>/g, " "),
+  )
     .replace(/\s+/g, " ")
     .trim();
 }
