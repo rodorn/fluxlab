@@ -123,8 +123,8 @@ export const MENU: PozycjaMenu[] = [
       },
     ],
     kafel: {
-      tytul: "Własny CRM od 1\u00a0zł",
-      opis: "Pilotaż do 3 osób, abonament 499 zł miesięcznie.",
+      tytul: "Własny CRM, wdrożenie 0\u00a0zł",
+      opis: "Wdrożenie 0 zł, abonament od 499 zł miesięcznie.",
       href: "/wlasny-crm",
       cta: "Zobacz CRM",
     },

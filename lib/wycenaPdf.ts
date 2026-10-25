@@ -1,4 +1,4 @@
-import { MODULY_CRM, modulyPlatne } from "@/lib/modulyCrm";
+import { MODULY_CRM, OSOBA_DODATKOWA, W_ABONAMENCIE, WARIANTY_CRM, abonamentCrm } from "@/lib/modulyCrm";
 import { OPCJE_STRONY, wycenStrone, terminTekst, type KonfiguracjaStrony } from "@/lib/opcjeStrony";
 // Konfiguracja wyceny przekazywana w linku /wycena?d=<base64url(JSON)>.
 // Ceny zgodne z components/KonfiguratorStrony.tsx i components/KonfiguratorCrm.tsx.
@@ -23,18 +23,6 @@ export type Wycena = {
   termin?: string;
   uwaga?: string;
 };
-
-const WARIANTY: Record<string, { nazwa: string; cena: number }> = {
-  pilotaz: { nazwa: "Pilotaż", cena: 1 },
-  integracje: { nazwa: "Dowolne integracje", cena: 12900 },
-  ai: { nazwa: "Z narzędziami AI", cena: 24900 },
-};
-
-const ABONAMENT = 499;
-const ABONAMENT_AI = 999;
-const W_ABONAMENCIE = 3;
-const OSOBA_DODATKOWA = 99;
-const MAX_PILOTAZ = 3;
 
 export function kodujWycene(k: KonfiguracjaWyceny): string {
   const bajty = new TextEncoder().encode(JSON.stringify(k));
@@ -88,38 +76,31 @@ export function dekodujWycene(d: string | undefined): Wycena | null {
 
   if (c.t === "c") {
     const n = c.n;
-    const w = typeof c.w === "string" ? WARIANTY[c.w] : undefined;
+    const w = WARIANTY_CRM.find((x) => x.id === c.w);
     if (typeof n !== "number" || !Number.isInteger(n) || n < 1 || n > 30 || !w) return null;
-    if (c.w === "pilotaz" && n > MAX_PILOTAZ) return null;
-    const baza = c.w === "ai" ? ABONAMENT_AI : ABONAMENT;
     const ids: string[] = Array.isArray(c.m) ? c.m : [];
-    const platne = modulyPlatne(String(c.w), ids);
-    const mies =
-      baza +
-      Math.max(0, n - W_ABONAMENCIE) * OSOBA_DODATKOWA +
-      platne.reduce((s, m) => s + m.miesiecznie, 0);
-    const wdrozenie = w.cena + platne.reduce((s, m) => s + m.cena, 0);
+    const { baza, miesiecznie } = abonamentCrm(w.id, n, ids);
     return {
       tytul: "FluxCRM",
       pozycje: [
-        { nazwa: `Wdrożenie: ${w.nazwa}`, opis: "Płatność jednorazowa", netto: w.cena },
+        { nazwa: `Wdrożenie: ${w.nazwa}`, opis: "Bez opłaty", netto: 0 },
         {
           nazwa: "Abonament miesięczny",
           opis:
             n <= W_ABONAMENCIE
-              ? `${n} ${n === 1 ? "osoba" : "osoby"}, ${baza} zł obejmuje do ${W_ABONAMENCIE} osób`
-              : `${n} osób: ${baza} zł za ${W_ABONAMENCIE} osoby plus ${n - W_ABONAMENCIE} × ${OSOBA_DODATKOWA} zł`,
-          netto: mies,
+              ? `${n} ${n === 1 ? "osoba" : "osoby"}, ${String(baza).replace(/\B(?=(\d{3})+$)/g, "\u00a0")} zł obejmuje do ${W_ABONAMENCIE} osób`
+              : `${n} osób: ${String(baza).replace(/\B(?=(\d{3})+$)/g, "\u00a0")} zł za ${W_ABONAMENCIE} osoby plus ${n - W_ABONAMENCIE} × ${OSOBA_DODATKOWA} zł`,
+          netto: miesiecznie,
         },
-        ...MODULY_CRM.filter((m) => c.w === "ai" || ids.includes(m.id)).map((m) =>
-          c.w === "ai"
+        ...MODULY_CRM.filter((m) => w.id === "ai" || ids.includes(m.id)).map((m) =>
+          w.id === "ai"
             ? { nazwa: m.nazwa, info: "w cenie" }
             : { nazwa: m.nazwa, info: `${m.miesiecznie} zł/mies., doliczone wyżej` },
         ),
       ],
-      sumaEtykieta: "Koszt pierwszego roku (wdrożenie plus 12 miesięcy abonamentu)",
+      sumaEtykieta: "Rok abonamentu (12 miesięcy, rezygnacja w dowolnym dniu)",
       sumaOd: false,
-      suma: wdrozenie + 12 * mies,
+      suma: 12 * miesiecznie,
     };
   }
   return null;

@@ -7,7 +7,7 @@ import PodgladCrm from "@/components/PodgladCrm";
 export const metadata: Metadata = {
   title: "Własny CRM dla firmy w trzy tygodnie | Fluxlab",
   description:
-    "Własny CRM: lead z formularza, telefonu i poczty sam trafia do handlowca. Pilotaż: wdrożenie za 1 zł, abonament 499 zł miesięcznie do 3 osób.",
+    "Własny CRM: lead z formularza, telefonu i poczty sam trafia do handlowca. Wdrożenie 0 zł, abonament od 499 zł miesięcznie za 3 osoby.",
   alternates: { canonical: "/wlasny-crm" },
   openGraph: {
     title: "Własny CRM dla firmy w trzy tygodnie | Fluxlab",
@@ -33,7 +33,7 @@ export default function WlasnyCrm() {
           </div>
         </>
       }
-      cena="Wdrożenie od 1 zł w pilotażu, abonament 499 zł miesięcznie, ceny netto"
+      cena="Wdrożenie 0 zł, abonament od 499 zł miesięcznie, ceny netto"
       breadcrumb="Własny CRM"
       eyebrow="FluxCRM"
       h1="Własny CRM dla Twojej firmy"
@@ -59,12 +59,9 @@ export default function WlasnyCrm() {
       ]}
       pricing={[
         {
-          name: "Startup",
-          oldPrice: "1 900 zł",
-          price: "1 zł",
-          badge: "Pilotaż, ograniczona liczba miejsc",
-          monthly: "499 zł / mies.",
-          desc: "Do 3 osób, pilotaż. Rozwiązania wypracowujemy razem z Tobą.",
+          name: "Gotowy CRM",
+          price: "499 zł / mies.",
+          desc: "Wdrożenie 0 zł. Abonament obejmuje 3 konta, każde kolejne 99 zł miesięcznie.",
           features: [
             "Gotowy lejek, leady z formularza i poczty",
             "Aplikacja na komputer i telefon",
@@ -72,10 +69,9 @@ export default function WlasnyCrm() {
           ],
         },
         {
-          name: "Większa firma",
-          price: "12 900 zł",
-          monthly: "499 zł / mies.",
-          desc: "Większy zespół, oddziały. Abonament obejmuje 3 konta, każde kolejne 99 zł miesięcznie.",
+          name: "Z integracjami",
+          price: "1 490 zł / mies.",
+          desc: "Wdrożenie 0 zł. Integracje i automatyzacje dokładamy co miesiąc w abonamencie. 3 konta, każde kolejne 99 zł.",
           features: [
             "Dowolne integracje i automatyzacje, jakich potrzebujesz",
             "Lejek pod Twoją branżę, także leady z telefonu",
@@ -86,9 +82,8 @@ export default function WlasnyCrm() {
         },
         {
           name: "CRM z narzędziami AI",
-          price: "24 900 zł",
-          monthly: "999 zł / mies.",
-          desc: "Wszystko z pakietu za 12 900 zł plus narzędzia AI. Abonament 999 zł obejmuje 3 konta, każde kolejne 99 zł miesięcznie.",
+          price: "2 490 zł / mies.",
+          desc: "Wszystko z wariantu z integracjami plus narzędzia AI. Wdrożenie 0 zł, 3 konta, każde kolejne 99 zł.",
           features: [
             "Ocena handlowców przez AI z notatek, SMS-ów, maili i rozmów",
             "Szkice maili i SMS-ów dopasowane do sytuacji klienta",
@@ -100,7 +95,7 @@ export default function WlasnyCrm() {
       faq={[
         {
           q: "Ile kosztuje własny CRM?",
-          a: "Abonament to 499 zł miesięcznie za 3 konta i 99 zł za każde kolejne. Wdrożenie zależy od wielkości firmy: do 3 osób w pilotażu 1 zł zamiast 1 900 zł (liczba miejsc ograniczona), większy zespół 12 900 zł z dowolnymi integracjami i automatyzacjami, a 24 900 zł dodatkowo z dowolnymi narzędziami AI do tekstu i nagrań, z abonamentem 999 zł miesięcznie za 3 konta i 99 zł za każde kolejne. Ceny netto. W abonamencie są serwer w UE, kopie i aktualizacje.",
+          a: "Wdrożenie 0 zł, płacisz tylko abonament za 3 konta i 99 zł za każde kolejne: gotowy CRM 499 zł miesięcznie, z dowolnymi integracjami i automatyzacjami 1 490 zł, z narzędziami AI do tekstu i nagrań 2 490 zł. Ceny netto. W abonamencie są serwer w UE, kopie, aktualizacje i rozwój.",
         },
         {
           q: "Czym to się różni od Pipedrive?",
@@ -117,7 +112,7 @@ export default function WlasnyCrm() {
       submitLabel="Wyślij opis i poproś o cenę"
       microCopy="Ustalenia prowadzimy mailowo."
       serviceName="Własny CRM (FluxCRM)"
-      serviceDesc="Wdrożenie własnego systemu CRM na osobnym serwerze w UE: przydział leadów z formularza, telefonu i poczty, karta klienta z historią rozmów i dokumentów, aplikacja na komputer i telefon."
+      serviceDesc="Własny system CRM w abonamencie, bez opłaty za wdrożenie, na osobnym serwerze w UE: przydział leadów z formularza, telefonu i poczty, karta klienta z historią rozmów i dokumentów, aplikacja na komputer i telefon."
       serviceType="Wdrożenie systemu CRM"
     />
   );

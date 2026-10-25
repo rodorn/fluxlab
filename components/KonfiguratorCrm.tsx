@@ -3,39 +3,14 @@
 import { useEffect, useRef, useState } from "react";
 import { zglosZdarzenie } from "@/lib/zdarzenie";
 import { kodujWycene } from "@/lib/wycenaPdf";
-import { MODULY_CRM, modulyPlatne } from "@/lib/modulyCrm";
-
-// Ceny: app/page.tsx (OFERTA: abonament 499 zł do 3 osób, 99 zł za osobę,
-// 12 900 zł, 24 900 zł) oraz app/wlasny-crm/page.tsx (pilotaż 1 zł).
-const ABONAMENT = 499;
-// Pakiet z narzędziami AI ma wyższy abonament (Paweł 18.10.2026).
-const ABONAMENT_AI = 999;
-const W_ABONAMENCIE = 3;
-const OSOBA_DODATKOWA = 99;
-const MAX_PILOTAZ = 3;
-
-type Wariant = "pilotaz" | "integracje" | "ai";
-
-const WARIANTY: { id: Wariant; nazwa: string; opis: string; cena: number }[] = [
-  {
-    id: "pilotaz",
-    nazwa: "Pilotaż",
-    opis: "do 3 osób, miejsca ograniczone",
-    cena: 1,
-  },
-  {
-    id: "integracje",
-    nazwa: "Dowolne integracje",
-    opis: "automatyzacje, jakich potrzebujesz",
-    cena: 12900,
-  },
-  {
-    id: "ai",
-    nazwa: "Z narzędziami AI",
-    opis: "integracje plus AI do tekstu i nagrań",
-    cena: 24900,
-  },
-];
+import {
+  MODULY_CRM,
+  OSOBA_DODATKOWA,
+  W_ABONAMENCIE,
+  WARIANTY_CRM,
+  abonamentCrm,
+  type WariantCrm,
+} from "@/lib/modulyCrm";
 
 const zl = (n: number) =>
   String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, "\u00a0");
@@ -65,24 +40,13 @@ function useAnimowana(cel: number) {
 
 export default function KonfiguratorCrm() {
   const [osoby, setOsoby] = useState(5);
-  const [wybor, setWybor] = useState<Wariant>("integracje");
   const [moduly, setModuly] = useState<string[]>([]);
 
-  const pilotazMozliwy = osoby <= MAX_PILOTAZ;
-  const wariant = wybor === "pilotaz" && !pilotazMozliwy ? "integracje" : wybor;
-  const platne = modulyPlatne(wariant, moduly);
-  const baza = wariant === "ai" ? ABONAMENT_AI : ABONAMENT;
-  const cenaWdrozenia =
-    WARIANTY.find((w) => w.id === wariant)!.cena +
-    platne.reduce((s, m) => s + m.cena, 0);
-  const miesiecznie =
-    baza +
-    Math.max(0, osoby - W_ABONAMENCIE) * OSOBA_DODATKOWA +
-    platne.reduce((s, m) => s + m.miesiecznie, 0);
-  const rok = cenaWdrozenia + 12 * miesiecznie;
+  const [wariant, setWariant] = useState<WariantCrm>("integracje");
+  const { baza, platne, miesiecznie } = abonamentCrm(wariant, osoby, moduly);
+  const rok = 12 * miesiecznie;
 
   const aMies = useAnimowana(miesiecznie);
-  const aWdr = useAnimowana(cenaWdrozenia);
   const aRok = useAnimowana(rok);
 
   function pobierzPdf() {
@@ -92,14 +56,14 @@ export default function KonfiguratorCrm() {
 
   function wyslij() {
     zglosZdarzenie("konfigurator_crm");
-    const nazwa = WARIANTY.find((w) => w.id === wariant)!.nazwa;
+    const nazwa = WARIANTY_CRM.find((w) => w.id === wariant)!.nazwa;
     const tekst =
       `Konfiguracja FluxCRM: ${osoby} ${osoby === 1 ? "osoba" : "osób"}, wariant: ${nazwa}. ` +
       (moduly.length
         ? `Moduły AI: ${MODULY_CRM.filter((m) => moduly.includes(m.id)).map((m) => m.nazwa).join(", ")}. `
         : "") +
-      `Abonament ${zl(miesiecznie)} zł netto miesięcznie, wdrożenie jednorazowo ${zl(cenaWdrozenia)} zł netto, ` +
-      `pierwszy rok ${zl(rok)} zł netto.`;
+      `Abonament ${zl(miesiecznie)} zł netto miesięcznie, wdrożenie 0 zł, ` +
+      `rok ${zl(rok)} zł netto.`;
     const pole = document.getElementById(
       "message",
     ) as HTMLTextAreaElement | null;
@@ -126,7 +90,7 @@ export default function KonfiguratorCrm() {
           Policz abonament dla swojego zespołu
         </h2>
         <p className="mt-3 text-gray-600 dark:text-gray-300">
-          Wybierz liczbę osób i wariant wdrożenia. Ceny netto.
+          Wybierz liczbę osób i wariant. Wdrożenie 0 zł, ceny netto.
         </p>
 
         <div className="mt-8 rounded-2xl border border-gray-200/80 bg-white/60 p-6 text-center dark:border-gray-800/80 dark:bg-gray-900/40 sm:p-8">
@@ -159,11 +123,10 @@ export default function KonfiguratorCrm() {
 
           <div
             role="radiogroup"
-            aria-label="Wariant wdrożenia"
+            aria-label="Wariant CRM"
             className="mt-6 flex flex-wrap justify-center gap-3"
           >
-            {WARIANTY.map((w) => {
-              const wylaczony = w.id === "pilotaz" && !pilotazMozliwy;
+            {WARIANTY_CRM.map((w) => {
               const aktywny = wariant === w.id;
               return (
                 <button
@@ -171,19 +134,18 @@ export default function KonfiguratorCrm() {
                   type="button"
                   role="radio"
                   aria-checked={aktywny}
-                  disabled={wylaczony}
-                  onClick={() => setWybor(w.id)}
+                  onClick={() => setWariant(w.id)}
                   className={`w-full rounded-xl border px-4 py-3 text-center transition sm:w-[calc(33.333%-0.5rem)] ${
                     aktywny
                       ? "border-accent bg-accent/10 ring-2 ring-accent/40"
                       : "border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-900"
-                  } ${wylaczony ? "cursor-not-allowed opacity-40" : "hover:border-accent"}`}
+                  } hover:border-accent`}
                 >
                   <span className="block text-sm font-semibold text-gray-900 dark:text-white">
                     {w.nazwa}
                   </span>
                   <span className="block text-lg font-bold tabular-nums text-accent">
-                    {zl(w.cena)}&nbsp;zł
+                    {zl(w.abonament)}&nbsp;zł/mies.
                   </span>
                   <span className="block text-xs text-gray-600 dark:text-gray-400">
                     {w.opis}
@@ -192,13 +154,6 @@ export default function KonfiguratorCrm() {
               );
             })}
           </div>
-          {!pilotazMozliwy && (
-            <p className="mt-3 text-sm text-gray-600 dark:text-gray-400">
-              Pilotaż obejmuje do {MAX_PILOTAZ} osób. Zmniejsz liczbę osób, żeby
-              go wybrać.
-            </p>
-          )}
-
           <p className="mt-8 text-sm font-medium text-gray-700 dark:text-gray-300">
             Moduły AI
           </p>
@@ -266,23 +221,23 @@ export default function KonfiguratorCrm() {
             </p>
             <p className="mt-1 text-xs text-gray-600 dark:text-gray-400">
               {osoby <= W_ABONAMENCIE
-                ? `${baza} zł obejmuje do ${W_ABONAMENCIE} osób`
-                : `${baza} zł za ${W_ABONAMENCIE} osoby plus ${osoby - W_ABONAMENCIE} × ${OSOBA_DODATKOWA} zł`}
+                ? `${zl(baza)} zł obejmuje do ${W_ABONAMENCIE} osób`
+                : `${zl(baza)} zł za ${W_ABONAMENCIE} osoby plus ${osoby - W_ABONAMENCIE} × ${OSOBA_DODATKOWA} zł`}
               {platne.map((m) => `, ${m.miesiecznie} zł ${m.skrot}`).join("")}
             </p>
 
             <div className="mx-auto mt-6 grid max-w-md grid-cols-1 gap-4 sm:grid-cols-2">
               <div>
                 <p className="text-sm text-gray-600 dark:text-gray-400">
-                  Wdrożenie jednorazowo
+                  Wdrożenie
                 </p>
                 <p className="text-2xl font-bold tabular-nums text-gray-900 dark:text-white">
-                  {zl(aWdr)}&nbsp;zł
+                  0&nbsp;zł
                 </p>
               </div>
               <div>
                 <p className="text-sm text-gray-600 dark:text-gray-400">
-                  Koszt pierwszego roku
+                  Rok abonamentu
                 </p>
                 <p className="text-2xl font-bold tabular-nums text-gray-900 dark:text-white">
                   {zl(aRok)}&nbsp;zł

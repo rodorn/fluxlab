@@ -21,7 +21,7 @@ const POWITANIE: Wiadomosc = {
 
 const PODPOWIEDZI_DOMYSLNE = [
   "Ile kosztuje strona firmowa?",
-  "Jak działa pilotaż CRM za 1 zł?",
+  "Co obejmuje abonament CRM?",
   "Jak szybko robicie stronę?", // głos klienta
 ];
 
@@ -34,7 +34,7 @@ function podpowiedzi(sciezka: string): string[] {
     ];
   if (sciezka.startsWith("/wlasny-crm"))
     return [
-      "Jak działa pilotaż CRM za 1 zł?",
+      "Co obejmuje abonament CRM?",
       "Ile kosztuje CRM dla 5 osób?",
       "Czy CRM połączy się z moimi narzędziami?",
     ];

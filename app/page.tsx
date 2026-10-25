@@ -43,12 +43,12 @@ const OFERTA = [
   {
     href: "/wlasny-crm",
     nazwa: "Własny CRM",
-    cena: "wdrożenie od 1 zł",
+    cena: "od 499 zł/mies.",
     opis: "Lead z formularza, telefonu i poczty trafia sam do handlowca, z zadaniem „zadzwoń w 15 minut”.",
     punkty: [
-      "abonament 499 zł/mies. do 3 osób, potem 99 zł za osobę",
-      "pilotaż do 3 osób: wdrożenie 1 zł, miejsca ograniczone",
-      "z dowolnymi integracjami: 12 900 zł, z narzędziami AI: 24 900 zł i 999 zł/mies.",
+      "wdrożenie 0 zł, abonament 499 zł/mies. za 3 osoby, potem 99 zł za osobę",
+      "z integracjami 1 490 zł/mies., z narzędziami AI 2 490 zł/mies.",
+      "rezygnujesz w dowolnym dniu, płacisz za dni korzystania",
     ],
     cta: "Zobacz CRM",
     ikona: "crm" as NazwaIlustracji,
