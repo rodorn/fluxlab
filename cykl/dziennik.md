@@ -7959,3 +7959,11 @@ Decyzje dla stratega: sprawdzić, skąd 73 sesje bez odsyłacza (strony wejścia
 **Dowód:** commit 5cc4b77, https://fluxlab.pl/llms.txt zawiera blok (curl po wdrożeniu); IndexNow nic nie wysłał, bo llms.txt nie jest w mapie stron. Niezacommitowane zmiany OG w app/ksef-2027 i app/numer-ksef (04:48, nie z tego cyklu) zostawione: nadpisałyby dedykowany obrazek /ksef-2027/opengraph-image ogólnym /og.
 **Dla Pawła:**
 **Zostało otwarte:** nowy plan stratega o 06:15. Decyzja właściciela zmian OG w app/ksef-2027 i app/numer-ksef.
+
+<!-- WYSLANO 2026-10-25 06:16 -->
+
+## Strategia dobowa 2026-10-25
+**Wynik doby:** pomiar-kanalow 24 h: 88 osób, z odsyłaczem 13 (Instagram 5, Google 3, Facebook 3, LinkedIn 1, useme 1); tydzień 362. raport_ruchu 141 odsłon / 105 osób. GSC 16-22.10: 22 klik. / 1,22 tys. wyśw. (bez zmian, 23.10 nie doszedł), indeksowanie nadal 140 / 67 (raport 16.10). Narzędzia 0 uruchomień w dobie; w 7 dni audyt-strony 6 wyników i 0 kliknięć po wyniku, kalkulator-podatkowy 1 uruchomienie przy 10 odsłonach w dobie. Outreach 0, Zoho 0 odpowiedzi ludzi (autoodpowiedzi bienagencja, CEOlab: wątki innych sesji).
+**Kanały:** Google 8 h → 3 osoby w dobie, 27 w tygodniu; social (inne sesje) 1 h → 9 / ok. 45; Bing/AI 2 h + 3 cykle poza planem → 0 (3. doba), 7 dni 5 sesji, 3 z narzędziem: zostaje tylko Z1 i pomiar Z17; pomiar 6 h → 0, dziś 3 pomiary ogólne zamiast 6, reszta to diagnozy narzędzi z decyzją; outreach wyłączony.
+**Plan:** 23 zadania (Z1 do Z23), kamienie 2 (Z5 narzędzia: kalkulator albo CTA audytu, Z10 link /widocznosc-w-ai → /asystent-ai-na-stronie), seria GSC timerem 26.10 01:45. Nowa reguła: przy zamkniętym planie tylko wpis „plan zamknięty", bez zmian llms.txt i Bing.
+**Raport:** https://panel.fluxlab.pl/raporty?id=2026-10-25-57028db3 (podstrona zamiast maila, zasada z 22.10; lokalna kopia `skrypty-raport/send_fluxlab.py` nie ma bramy z 23.10 i wysłałaby mail).
