@@ -3,7 +3,8 @@
  *  Podstrona ponad pakiet: 300 zł, bo firmowa (15) kosztuje o 3 000 zł więcej
  *  niż strona w tydzień (5). Płatności jak dodatek na /landing-z-platnoscia
  *  (790 zł), każdy język 30% strony, bo to tłumaczenie i kopia każdej podstrony.
- *  Opieka jak w cenniku /strony-www: 300, 600 albo 1 280 zł miesięcznie. */
+ *  Opieka jak w cenniku /strony-www: 300, 600 albo 1 280 zł miesięcznie.
+ *  Chatbot: wdrożenie raz, potem opłata za model AI i aktualizację bazy wiedzy. */
 
 export type Rodzaj = {
   id: string;
@@ -49,6 +50,8 @@ export type OpcjaStrony = {
   /** Rodzaje strony, w których opcja jest już w cenie. */
   wCenie: string[];
   cena: number;
+  /** Opłata co miesiąc, poza sumą wdrożenia. */
+  miesiecznie?: number;
 };
 
 export const OPCJE_STRONY: Record<string, OpcjaStrony> = {
@@ -74,6 +77,12 @@ export const OPCJE_STRONY: Record<string, OpcjaStrony> = {
     nazwa: "Przeniesienie treści ze starej strony z przekierowaniami",
     wCenie: [],
     cena: 290,
+  },
+  chatbot: {
+    nazwa: "Chatbot AI na bazie wiedzy o firmie",
+    wCenie: [],
+    cena: 1900,
+    miesiecznie: 199,
   },
 };
 
@@ -130,6 +139,7 @@ export type WynikWyceny = {
   wCenie: string[];
   suma: number;
   miesiecznie: number;
+  abonamenty: PozycjaWyceny[];
   tygodnie: number;
 };
 
@@ -186,10 +196,14 @@ export function wycenStrone(k: KonfiguracjaStrony): WynikWyceny | null {
   const wCenie = Object.values(OPCJE_STRONY)
     .filter((o) => o.wCenie.includes(rodzaj.id))
     .map((o) => o.nazwa);
+  const abonamenty: PozycjaWyceny[] = opieka.cena
+    ? [{ nazwa: "Opieka nad stroną", netto: opieka.cena }]
+    : [];
   for (const id of new Set(k.o)) {
     const o = OPCJE_STRONY[id];
-    if (o && !o.wCenie.includes(rodzaj.id))
-      pozycje.push({ nazwa: o.nazwa, netto: o.cena });
+    if (!o || o.wCenie.includes(rodzaj.id)) continue;
+    pozycje.push({ nazwa: o.nazwa, netto: o.cena });
+    if (o.miesiecznie) abonamenty.push({ nazwa: o.nazwa, netto: o.miesiecznie });
   }
 
   const tygodnie =
@@ -198,6 +212,7 @@ export function wycenStrone(k: KonfiguracjaStrony): WynikWyceny | null {
     (tresci.id === "piszemy" ? 1 : 0) +
     (j ? 1 : 0) +
     (k.o.includes("projekt") ? 1 : 0) +
+    (k.o.includes("chatbot") ? 1 : 0) +
     (produkty && produkty.cena ? 1 : 0);
 
   return {
@@ -205,7 +220,8 @@ export function wycenStrone(k: KonfiguracjaStrony): WynikWyceny | null {
     pozycje,
     wCenie,
     suma: pozycje.reduce((s, x) => s + x.netto, 0),
-    miesiecznie: opieka.cena,
+    miesiecznie: abonamenty.reduce((s, x) => s + x.netto, 0),
+    abonamenty,
     tygodnie,
   };
 }

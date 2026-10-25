@@ -213,7 +213,7 @@ export default function KonfiguratorStrony() {
       ...w.pozycje.map((p) => `${p.nazwa}: ${zl(p.netto)}`),
       w.wCenie.length ? `W cenie: ${w.wCenie.join(", ")}` : "",
       `Razem: ${rodzajId === "sklep" ? "od " : ""}${zl(w.suma)} netto`,
-      w.miesiecznie ? `Opieka: ${zl(w.miesiecznie)}/mies.` : "",
+      ...w.abonamenty.map((a) => `${a.nazwa}: ${zl(a.netto)}/mies.`),
       `Termin: ${terminTekst(w.tygodnie)}`,
     ]
       .filter(Boolean)
@@ -370,7 +370,7 @@ export default function KonfiguratorStrony() {
                 <span>
                   <span className="block text-sm font-semibold text-gray-900 dark:text-white">{o.nazwa}</span>
                   <span className="block text-xs text-gray-600 dark:text-gray-400">
-                    {wCenie ? "w cenie" : `+${zl(o.cena)}`}
+                    {wCenie ? "w cenie" : `+${zl(o.cena)}${o.miesiecznie ? ` i ${zl(o.miesiecznie)}/mies.` : ""}`}
                   </span>
                 </span>
                 <span
@@ -428,7 +428,8 @@ export default function KonfiguratorStrony() {
           </p>
           <p className="mt-2 text-center text-sm text-gray-600 dark:text-gray-400">
             Termin: {terminTekst(w.tygodnie)}. Hosting w cenie wdrożenia, domena 50-150 zł rocznie.
-            {w.miesiecznie > 0 && ` Opieka ${zl(w.miesiecznie)} miesięcznie, poza sumą.`}
+            {w.miesiecznie > 0 &&
+              ` Co miesiąc, poza sumą: ${w.abonamenty.map((x) => `${x.nazwa.split(" ")[0].toLowerCase()} ${zl(x.netto)}`).join(", ")}.`}
           </p>
           {firmowa && firmowa.suma <= w.suma && (
             <p className="mt-3 text-center text-sm">

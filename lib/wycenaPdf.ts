@@ -72,8 +72,8 @@ export function dekodujWycene(d: string | undefined): Wycena | null {
       ...w.pozycje,
       ...w.wCenie.map((nazwa) => ({ nazwa, info: "w cenie" })),
     ];
-    if (w.miesiecznie)
-      pozycje.push({ nazwa: "Opieka nad stroną", opis: "płatna co miesiąc, poza sumą", info: `${w.miesiecznie} zł/mies.` });
+    for (const a of w.abonamenty)
+      pozycje.push({ nazwa: a.nazwa, opis: "płatne co miesiąc, poza sumą", info: `${a.netto} zł/mies.` });
     return {
       tytul: "Strona internetowa",
       pozycje,
