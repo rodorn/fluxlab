@@ -90,8 +90,9 @@ export default function WlasnyCrm() {
           monthly: "999 zł / mies.",
           desc: "Wszystko z pakietu za 12 900 zł plus narzędzia AI. Abonament 999 zł obejmuje 3 konta, każde kolejne 99 zł miesięcznie.",
           features: [
-            "Dowolne narzędzia AI do tekstu i nagrań, jakich potrzebujesz",
-            "Na przykład streszczenia i ocena rozmów, analiza dokumentów",
+            "Ocena handlowców przez AI z notatek, SMS-ów, maili i rozmów",
+            "Szkice maili i SMS-ów dopasowane do sytuacji klienta",
+            "Inne narzędzia AI do tekstu i nagrań, jakich potrzebujesz",
             "Dowolne integracje i automatyzacje",
           ],
         },

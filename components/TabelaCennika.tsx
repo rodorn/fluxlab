@@ -16,13 +16,17 @@ const kol = (i: number) =>
   i === SRODEK ? "bg-gray-50/80 dark:bg-white/[0.04]" : "";
 
 export default function TabelaCennika() {
-  const wiersze: { nazwa: string; wartosc: (i: number) => string; duze?: boolean }[] = [
+  const wiersze: { nazwa: string; wartosc: (i: number) => string; przyklad?: (i: number) => string; duze?: boolean }[] = [
     {
       nazwa: "Cena netto",
       duze: true,
       wartosc: (i) => `${OD.has(RODZAJE[i].id) ? "od " : ""}${zl(RODZAJE[i].cena)}`,
     },
-    { nazwa: "Podstrony", wartosc: (i) => `do ${RODZAJE[i].podstron}` },
+    {
+      nazwa: "Podstrony",
+      wartosc: (i) => `do ${RODZAJE[i].podstron}`,
+      przyklad: (i) => RODZAJE[i].przyklad,
+    },
     {
       nazwa: "Czas",
       wartosc: (i) =>
@@ -75,6 +79,11 @@ export default function TabelaCennika() {
                     }`}
                   >
                     {w.wartosc(i)}
+                    {w.przyklad && (
+                      <span className="mt-1 block text-xs text-gray-500 dark:text-gray-400">
+                        {w.przyklad(i)}
+                      </span>
+                    )}
                   </td>
                 ))}
               </tr>

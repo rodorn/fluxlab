@@ -13,6 +13,7 @@ import {
   MAX_JEZYKOW,
   ZA_PODSTRONE,
   wycenStrone,
+  przykladPodstron,
   terminTekst,
   type OpcjaStrony,
 } from "@/lib/opcjeStrony";
@@ -298,7 +299,7 @@ export default function KonfiguratorStrony() {
               className="mt-3 w-full cursor-pointer accent-[rgb(var(--accent))]"
             />
             <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
-              Podstrona to osobny adres: oferta, cennik, kontakt, każda usługa.
+              Przykład: {przykladPodstron(podstron)}. Wpisy na blogu się nie liczą.
             </p>
           </div>
 

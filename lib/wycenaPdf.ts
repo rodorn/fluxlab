@@ -1,10 +1,11 @@
+import { MODULY_CRM, modulyPlatne } from "@/lib/modulyCrm";
 import { OPCJE_STRONY, wycenStrone, terminTekst, type KonfiguracjaStrony } from "@/lib/opcjeStrony";
 // Konfiguracja wyceny przekazywana w linku /wycena?d=<base64url(JSON)>.
 // Ceny zgodne z components/KonfiguratorStrony.tsx i components/KonfiguratorCrm.tsx.
 
 export type KonfiguracjaWyceny =
   | ({ t: "s" } & KonfiguracjaStrony)
-  | { t: "c"; n: number; w: string };
+  | { t: "c"; n: number; w: string; m?: string[] };
 
 export type Pozycja = {
   nazwa: string;
@@ -91,7 +92,13 @@ export function dekodujWycene(d: string | undefined): Wycena | null {
     if (typeof n !== "number" || !Number.isInteger(n) || n < 1 || n > 30 || !w) return null;
     if (c.w === "pilotaz" && n > MAX_PILOTAZ) return null;
     const baza = c.w === "ai" ? ABONAMENT_AI : ABONAMENT;
-    const mies = baza + Math.max(0, n - W_ABONAMENCIE) * OSOBA_DODATKOWA;
+    const ids: string[] = Array.isArray(c.m) ? c.m : [];
+    const platne = modulyPlatne(String(c.w), ids);
+    const mies =
+      baza +
+      Math.max(0, n - W_ABONAMENCIE) * OSOBA_DODATKOWA +
+      platne.reduce((s, m) => s + m.miesiecznie, 0);
+    const wdrozenie = w.cena + platne.reduce((s, m) => s + m.cena, 0);
     return {
       tytul: "FluxCRM",
       pozycje: [
@@ -104,10 +111,15 @@ export function dekodujWycene(d: string | undefined): Wycena | null {
               : `${n} osób: ${baza} zł za ${W_ABONAMENCIE} osoby plus ${n - W_ABONAMENCIE} × ${OSOBA_DODATKOWA} zł`,
           netto: mies,
         },
+        ...MODULY_CRM.filter((m) => c.w === "ai" || ids.includes(m.id)).map((m) =>
+          c.w === "ai"
+            ? { nazwa: m.nazwa, info: "w cenie" }
+            : { nazwa: m.nazwa, opis: `Wdrożenie jednorazowo, abonament ${m.miesiecznie} zł/mies. doliczony wyżej`, netto: m.cena },
+        ),
       ],
       sumaEtykieta: "Koszt pierwszego roku (wdrożenie plus 12 miesięcy abonamentu)",
       sumaOd: false,
-      suma: w.cena + 12 * mies,
+      suma: wdrozenie + 12 * mies,
     };
   }
   return null;

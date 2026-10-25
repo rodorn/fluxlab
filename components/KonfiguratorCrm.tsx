@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { zglosZdarzenie } from "@/lib/zdarzenie";
 import { kodujWycene } from "@/lib/wycenaPdf";
+import { MODULY_CRM, modulyPlatne } from "@/lib/modulyCrm";
 
 // Ceny: app/page.tsx (OFERTA: abonament 499 zł do 3 osób, 99 zł za osobę,
 // 12 900 zł, 24 900 zł) oraz app/wlasny-crm/page.tsx (pilotaż 1 zł).
@@ -37,7 +38,7 @@ const WARIANTY: { id: Wariant; nazwa: string; opis: string; cena: number }[] = [
 ];
 
 const zl = (n: number) =>
-  Math.round(n).toLocaleString("pl-PL").replace(/\s/g, " ");
+  String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, "\u00a0");
 
 function useAnimowana(cel: number) {
   const [v, setV] = useState(cel);
@@ -65,13 +66,19 @@ function useAnimowana(cel: number) {
 export default function KonfiguratorCrm() {
   const [osoby, setOsoby] = useState(5);
   const [wybor, setWybor] = useState<Wariant>("integracje");
+  const [moduly, setModuly] = useState<string[]>([]);
 
   const pilotazMozliwy = osoby <= MAX_PILOTAZ;
   const wariant = wybor === "pilotaz" && !pilotazMozliwy ? "integracje" : wybor;
-  const cenaWdrozenia = WARIANTY.find((w) => w.id === wariant)!.cena;
+  const platne = modulyPlatne(wariant, moduly);
+  const baza = wariant === "ai" ? ABONAMENT_AI : ABONAMENT;
+  const cenaWdrozenia =
+    WARIANTY.find((w) => w.id === wariant)!.cena +
+    platne.reduce((s, m) => s + m.cena, 0);
   const miesiecznie =
-    (wariant === "ai" ? ABONAMENT_AI : ABONAMENT) +
-    Math.max(0, osoby - W_ABONAMENCIE) * OSOBA_DODATKOWA;
+    baza +
+    Math.max(0, osoby - W_ABONAMENCIE) * OSOBA_DODATKOWA +
+    platne.reduce((s, m) => s + m.miesiecznie, 0);
   const rok = cenaWdrozenia + 12 * miesiecznie;
 
   const aMies = useAnimowana(miesiecznie);
@@ -79,7 +86,7 @@ export default function KonfiguratorCrm() {
   const aRok = useAnimowana(rok);
 
   function pobierzPdf() {
-    const d = kodujWycene({ t: "c", n: osoby, w: wariant });
+    const d = kodujWycene({ t: "c", n: osoby, w: wariant, m: moduly });
     window.open(`/wycena?d=${d}`, "_blank", "noopener");
   }
 
@@ -88,6 +95,9 @@ export default function KonfiguratorCrm() {
     const nazwa = WARIANTY.find((w) => w.id === wariant)!.nazwa;
     const tekst =
       `Konfiguracja FluxCRM: ${osoby} ${osoby === 1 ? "osoba" : "osób"}, wariant: ${nazwa}. ` +
+      (moduly.length
+        ? `Moduły AI: ${MODULY_CRM.filter((m) => moduly.includes(m.id)).map((m) => m.nazwa).join(", ")}. `
+        : "") +
       `Abonament ${zl(miesiecznie)} zł netto miesięcznie, wdrożenie jednorazowo ${zl(cenaWdrozenia)} zł netto, ` +
       `pierwszy rok ${zl(rok)} zł netto.`;
     const pole = document.getElementById(
@@ -189,6 +199,61 @@ export default function KonfiguratorCrm() {
             </p>
           )}
 
+          <p className="mt-8 text-sm font-medium text-gray-700 dark:text-gray-300">
+            Moduły AI
+          </p>
+          <div className="mt-3 grid gap-3 text-left sm:grid-cols-2">
+            {MODULY_CRM.map((m) => {
+              const wCenie = wariant === "ai";
+              const aktywny = wCenie || moduly.includes(m.id);
+              return (
+                <button
+                  key={m.id}
+                  type="button"
+                  role="switch"
+                  aria-checked={aktywny}
+                  disabled={wCenie}
+                  onClick={() =>
+                    setModuly((x) =>
+                      x.includes(m.id) ? x.filter((y) => y !== m.id) : [...x, m.id],
+                    )
+                  }
+                  className={`flex items-start justify-between gap-3 rounded-xl border px-4 py-3 transition disabled:cursor-default ${
+                    aktywny
+                      ? "border-accent bg-accent/10"
+                      : "border-gray-200 bg-white hover:border-accent dark:border-gray-700 dark:bg-gray-900"
+                  }`}
+                >
+                  <span>
+                    <span className="block text-sm font-semibold text-gray-900 dark:text-white">
+                      {m.nazwa}
+                    </span>
+                    <span className="mt-1 block text-xs text-gray-600 dark:text-gray-400">
+                      {m.opis}
+                    </span>
+                    <span className="mt-2 block text-xs font-semibold tabular-nums text-accent">
+                      {wCenie
+                        ? "w cenie wariantu z AI"
+                        : `+${zl(m.cena)} zł i ${m.miesiecznie} zł/mies.`}
+                    </span>
+                  </span>
+                  <span
+                    aria-hidden="true"
+                    className={`relative mt-0.5 h-6 w-11 shrink-0 rounded-full transition-all duration-200 ${
+                      aktywny ? "bg-accent-solid" : "bg-gray-300 dark:bg-gray-600"
+                    }`}
+                  >
+                    <span
+                      className={`absolute top-0.5 h-5 w-5 rounded-full bg-white shadow transition-all duration-200 ${
+                        aktywny ? "left-[22px]" : "left-0.5"
+                      }`}
+                    />
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+
           <div className="mt-8 border-t border-gray-200/80 pt-6 dark:border-gray-800/80">
             <p className="text-sm text-gray-600 dark:text-gray-400">
               Abonament miesięcznie
@@ -201,8 +266,9 @@ export default function KonfiguratorCrm() {
             </p>
             <p className="mt-1 text-xs text-gray-600 dark:text-gray-400">
               {osoby <= W_ABONAMENCIE
-                ? `${ABONAMENT} zł obejmuje do ${W_ABONAMENCIE} osób`
-                : `${ABONAMENT} zł za ${W_ABONAMENCIE} osoby plus ${osoby - W_ABONAMENCIE} × ${OSOBA_DODATKOWA} zł`}
+                ? `${baza} zł obejmuje do ${W_ABONAMENCIE} osób`
+                : `${baza} zł za ${W_ABONAMENCIE} osoby plus ${osoby - W_ABONAMENCIE} × ${OSOBA_DODATKOWA} zł`}
+              {platne.map((m) => `, ${m.miesiecznie} zł ${m.skrot}`).join("")}
             </p>
 
             <div className="mx-auto mt-6 grid max-w-md grid-cols-1 gap-4 sm:grid-cols-2">

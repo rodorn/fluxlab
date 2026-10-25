@@ -1,7 +1,8 @@
 /** Wycena strony w konfiguratorze /strony-www i w wycenie PDF. Jedno źródło cen,
  *  żeby konfigurator i dokument liczyły tak samo. Ceny netto, orientacyjne.
- *  Podstrona ponad pakiet: 300 zł, bo firmowa (15) kosztuje o 3 000 zł więcej
- *  niż strona w tydzień (5). Płatności jak dodatek na /landing-z-platnoscia
+ *  Podstrona ponad pakiet: 150 zł, bo kolejne powstają z szablonu w CMS. Strona
+ *  jak FINREAL (35 podstron, blog, kalkulator, przeniesienie treści) wychodzi
+ *  ok. 9 900 zł (decyzja Pawła 25.10.2026). Płatności jak dodatek na /landing-z-platnoscia
  *  (790 zł), każdy język 30% strony, bo to tłumaczenie i kopia każdej podstrony.
  *  Opieka jak w cenniku /strony-www: 300, 600 albo 1 280 zł miesięcznie.
  *  Chatbot: wdrożenie raz, potem opłata za model AI i aktualizację bazy wiedzy. */
@@ -13,6 +14,8 @@ export type Rodzaj = {
   cena: number;
   podstron: number;
   tygodnie: number;
+  /** Co zwykle wchodzi w pakiet podstron. */
+  przyklad: string;
 };
 
 export const RODZAJE: Rodzaj[] = [
@@ -23,6 +26,7 @@ export const RODZAJE: Rodzaj[] = [
     cena: 2900,
     podstron: 5,
     tygodnie: 1,
+    przyklad: "strona główna, oferta, o nas, realizacje, kontakt",
   },
   {
     id: "firmowa",
@@ -31,6 +35,7 @@ export const RODZAJE: Rodzaj[] = [
     cena: 5900,
     podstron: 15,
     tygodnie: 3,
+    przyklad: "do tego osobna podstrona każdej usługi, cennik, pytania, zespół",
   },
   {
     id: "sklep",
@@ -39,10 +44,11 @@ export const RODZAJE: Rodzaj[] = [
     cena: 9900,
     podstron: 15,
     tygodnie: 5,
+    przyklad: "kategorie, koszyk, konto klienta, regulamin; produkty nie są liczone",
   },
 ];
 
-export const ZA_PODSTRONE = 300;
+export const ZA_PODSTRONE = 150;
 export const MAX_PODSTRON = 50;
 
 export type OpcjaStrony = {
@@ -78,6 +84,11 @@ export const OPCJE_STRONY: Record<string, OpcjaStrony> = {
     wCenie: [],
     cena: 290,
   },
+  kalkulator: {
+    nazwa: "Kalkulator lub konfigurator dla klienta",
+    wCenie: [],
+    cena: 690,
+  },
   chatbot: {
     nazwa: "Chatbot AI na bazie wiedzy o firmie",
     wCenie: [],
@@ -85,6 +96,14 @@ export const OPCJE_STRONY: Record<string, OpcjaStrony> = {
     miesiecznie: 199,
   },
 };
+
+/** Przykład dla liczby podstron na suwaku konfiguratora. */
+export const przykladPodstron = (n: number) =>
+  n <= 5
+    ? RODZAJE[0].przyklad
+    : n <= 15
+      ? `strona główna, kontakt i ${n - 2} podstron z usługami, cennikiem i pytaniami`
+      : `jak FINREAL: 35 podstron, w tym 21 z ofertą kredytów, zespół, kalkulator i regulaminy`;
 
 export const TRESCI = [
   { id: "mam", nazwa: "Mam gotowe teksty", zaPodstrone: 0 },
