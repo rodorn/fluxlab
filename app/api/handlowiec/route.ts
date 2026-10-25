@@ -177,6 +177,37 @@ async function odpisKrs(krs: string): Promise<string | null> {
   }
 }
 
+async function finanseKrs(krs: string): Promise<string | null> {
+  const adres = `https://analizafirm.pl/firma/${krs}`;
+  try {
+    const r = await fetch(adres, {
+      headers: { "User-Agent": "Mozilla/5.0 (compatible; FluxLab/1.0)" },
+      signal: AbortSignal.timeout(8000),
+    });
+    if (!r.ok) return null;
+    const h = await r.text();
+    const rok = h.match(/Rachunek zysków i strat \((\d{4})\)/)?.[1];
+    const wiersz = (n: string) => {
+      const m = h.match(
+        new RegExp(
+          `<td>${n}</td><td[^>]*>([^<]+)</td><td[^>]*>([^<]+)</td><td[^>]*>([^<]+)</td>`,
+        ),
+      );
+      return (
+        m && `${n.toLowerCase()} ${m[1]} (rok wcześniej ${m[2]}, r/r ${m[3]})`
+      );
+    };
+    const dane = [
+      wiersz("Przychody netto ze sprzedaży"),
+      wiersz("Zysk / strata netto"),
+    ].filter(Boolean);
+    if (!rok || !dane.length) return null;
+    return `Sprawozdanie finansowe za ${rok} (źródło ${adres}): ${dane.join(", ")}`;
+  } catch {
+    return null;
+  }
+}
+
 async function analizaStrony(adres: string) {
   const start = Date.now();
   const { url, html } = await pobierzStrone(adres);
@@ -287,7 +318,7 @@ const SCHEMAT = {
 };
 
 const INSTRUKCJE = `Jesteś analitykiem sprzedaży FluxLab (strony WWW, CRM, automatyzacje, dane z sieci). Przygotuj rzetelny profil firmy klienta z publicznych źródeł.
-Wykonaj kilka wyszukiwań: strona firmy, wizytówka Google i opinie (ocena, liczba, czy firma odpowiada), media społecznościowe (czy aktywne), rejestry (KRS, CEIDG, rok założenia), dane z ostatniego sprawozdania finansowego (przychody, zysk netto, zatrudnienie, z rokiem; szukaj w serwisach publikujących dane z KRS, np. rejestr.io, aleo.com, krs-pobierz.pl), ogłoszenia o pracę (wielkość zespołu), 2-3 konkurentów w tym samym mieście.
+Wykonaj kilka wyszukiwań: strona firmy, wizytówka Google i opinie (ocena, liczba, czy firma odpowiada), media społecznościowe (czy aktywne), rejestry (KRS, CEIDG, rok założenia), dane z ostatniego sprawozdania finansowego (przychody, zysk netto, zatrudnienie, z rokiem; gdy materiał już je zawiera, użyj ich i nie szukaj ponownie; inaczej szukaj po numerze KRS w serwisach publikujących dane z KRS, np. analizafirm.pl, rejestr.io, aleo.com), ogłoszenia o pracę (wielkość zespołu), 2-3 konkurentów w tym samym mieście.
 Opisuj wyłącznie firmę, nigdy prywatne dane osób. Nie zmyślaj: czego nie znalazłeś, tego nie wpisuj. Jeśli nie da się ustalić, o jaką firmę chodzi, w polu nazwa wpisz "nie znaleziono".
 Pisz po polsku, do klienta na "ty", o sobie "my" (sprawdziliśmy, nie znaleźliśmy), nigdy "znalazłem". Każdy fakt i wniosek najwyżej 20 słów. Bez długich myślników i emoji.`;
 
@@ -364,8 +395,11 @@ export async function POST(req: Request) {
           material.push(
             `Rejestr VAT (MF): ${r.nazwa}, status ${r.status}, adres ${r.adres}, VAT od ${r.od || "brak danych"}`,
           );
-          const k = r.krs && (await odpisKrs(r.krs));
+          const [k, f] = r.krs
+            ? await Promise.all([odpisKrs(r.krs), finanseKrs(r.krs)])
+            : [null, null];
           if (k) material.push(k);
+          if (f) material.push(f);
         }
       }
 
