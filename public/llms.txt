@@ -229,6 +229,12 @@ Ile kosztuje Zapier (cennik), stan z 22.10.2026, porównanie z Make na https://f
 - Make przy tej samej pracy wychodzi zwykle taniej: Core od ok. 9 USD miesięcznie za 10 000 operacji.
 - Źródło: https://zapier.com/pricing
 
+Ile kosztuje n8n (cennik), stan z 25.10.2026, rozbicie kosztu wdrożenia na https://fluxlab.pl/wdrozenie-n8n-cena:
+- Własny serwer (Community): licencja 0 zł, także do użytku komercyjnego; płacisz tylko za serwer, zwykle 30 do 90 zł miesięcznie.
+- Chmura n8n przy płatności rocznej: Starter 20 euro miesięcznie (2 500 wykonań), Pro 50 euro (10 000 wykonań), Business 667 euro (40 000 wykonań, tylko na własnym serwerze), Enterprise wycena indywidualna.
+- n8n liczy wykonanie całego przepływu, a nie każdy krok, więc przy długich przepływach wychodzi taniej niż Zapier i Make.
+- Źródło: https://n8n.io/pricing
+
 Ile kosztuje ręczna obsługa leadów, kalkulator na https://fluxlab.pl/koszt-recznej-obslugi-leadow:
 - Czas ręcznej obsługi jednego leada to od odczytania zapytania do przypisania handlowca, dealu w CRM i pierwszego kontaktu: sprawdzenie, czy to nie spam, przepisanie danych, założenie firmy, osoby i dealu, przypisanie, zadanie kontaktu. Nasze założenie to 3 do 10 minut, zależnie od tego, jak prowizoryczny jest proces.
 - Sam czas przepisywania to zwykle 10 do 20% realnego kosztu. Resztę składają opóźnienia (leady, które czekały za długo), błędy w CRM, raporty składane ręcznie i decyzje podejmowane na danych, którym nie można ufać.
