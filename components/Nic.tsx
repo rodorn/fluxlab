@@ -13,6 +13,45 @@ const PREDKOSC = 420;
 // Koralik rusza, gdy linia w hero jest już narysowana (0,5 s + 2,4 s).
 const START = 2900;
 
+type Punkt = [number, number];
+
+// Punkty co KROK wzdłuż odcinków Béziera, liczone w JS: getPointAtLength
+// na całej nici blokował stronę na pół sekundy przy każdej zmianie układu.
+function rozloz(odcinki: Punkt[][]) {
+  const wynik: number[] = [];
+  if (!odcinki.length) return wynik;
+  let [px, py] = odcinki[0][0];
+  wynik.push(px, py);
+  let droga = 0;
+  let nastepny = KROK;
+  for (const o of odcinki) {
+    let dl = 0;
+    for (let i = 1; i < o.length; i++)
+      dl += Math.hypot(o[i][0] - o[i - 1][0], o[i][1] - o[i - 1][1]);
+    const n = Math.max(1, Math.ceil(dl));
+    for (let k = 1; k <= n; k++) {
+      const t = k / n;
+      let q = o.map((p) => [...p]);
+      while (q.length > 1)
+        q = q.slice(1).map((p, i) => [
+          q[i][0] + (p[0] - q[i][0]) * t,
+          q[i][1] + (p[1] - q[i][1]) * t,
+        ]);
+      const [x, y] = q[0];
+      const d = Math.hypot(x - px, y - py);
+      while (d && droga + d >= nastepny) {
+        const u = (nastepny - droga) / d;
+        wynik.push(px + (x - px) * u, py + (y - py) * u);
+        nastepny += KROK;
+      }
+      droga += d;
+      px = x;
+      py = y;
+    }
+  }
+  return wynik;
+}
+
 export default function Nic() {
   const ref = useRef<SVGSVGElement | null>(null);
 
@@ -28,6 +67,9 @@ export default function Nic() {
     const liniaHero = main.querySelector<SVGPathElement>(".hero-nic__linia");
     let punkty = new Float32Array(0);
     let wezly: { x: number; y: number; kolo: SVGCircleElement }[] = [];
+    let odcinki: Punkt[][] = [];
+    let hero: number[] = [];
+    let skalaHero = 0;
     let indeksyWezlow: number[] = [];
     let zasieg = 0;
     let narysowane = -1;
@@ -79,6 +121,7 @@ export default function Nic() {
 
       const [start] = kotwice;
       let d = `M${start.x} ${start.y}`;
+      odcinki = [];
       for (let i = 0; i < kotwice.length - 1; i++) {
         const a = kotwice[i];
         const b = kotwice[i + 1];
@@ -88,10 +131,20 @@ export default function Nic() {
           const kat = Math.min(r, Math.abs(a.x - b.x));
           const zwrot = Math.sign(b.x - a.x);
           d += `L${a.x} ${b.y - kat}Q${a.x} ${b.y} ${a.x + zwrot * kat} ${b.y}L${b.x} ${b.y}`;
+          odcinki.push(
+            [[a.x, a.y], [a.x, b.y - kat]],
+            [[a.x, b.y - kat], [a.x, b.y], [a.x + zwrot * kat, b.y]],
+            [[a.x + zwrot * kat, b.y], [b.x, b.y]],
+          );
           continue;
         }
         d += `C${x} ${a.y} ${x} ${a.y} ${x} ${a.y + r}`;
         d += `L${x} ${b.y - r}C${x} ${b.y} ${x} ${b.y} ${b.x} ${b.y}`;
+        odcinki.push(
+          [[a.x, a.y], [x, a.y], [x, a.y], [x, a.y + r]],
+          [[x, a.y + r], [x, b.y - r]],
+          [[x, b.y - r], [x, b.y], [x, b.y], [b.x, b.y]],
+        );
       }
       linia.setAttribute("d", d);
       jasna.setAttribute("d", d);
@@ -127,26 +180,33 @@ export default function Nic() {
       if (liniaHero) {
         const r = liniaHero.ownerSVGElement!.getBoundingClientRect();
         const skala = r.width / 960;
-        const dl = liniaHero.getTotalLength();
-        for (let l = 0; l < dl; l += KROK / skala) {
-          const p = liniaHero.getPointAtLength(l);
-          lista.push(
-            r.left - m.left + p.x * skala,
-            r.top - m.top + p.y * skala,
-          );
+        if (skala !== skalaHero) {
+          skalaHero = skala;
+          hero = [];
+          const dl = liniaHero.getTotalLength();
+          for (let l = 0; l < dl; l += KROK / skala) {
+            const p = liniaHero.getPointAtLength(l);
+            hero.push(p.x, p.y);
+          }
         }
+        for (let i = 0; i < hero.length; i += 2)
+          lista.push(
+            r.left - m.left + hero[i] * skala,
+            r.top - m.top + hero[i + 1] * skala,
+          );
       }
       koniecHero = lista.length / 2;
-      const dl = linia.getTotalLength();
+      const nic = rozloz(odcinki);
       const y: number[] = [];
       indeksyWezlow = [];
-      for (let l = 0; l <= dl; l += KROK) {
-        const p = linia.getPointAtLength(l);
+      for (let i = 0; i < nic.length; i += 2) {
+        const px = nic[i];
+        const py = nic[i + 1];
         const w = wezly[indeksyWezlow.length];
-        if (w && Math.hypot(p.x - w.x, p.y - w.y) <= KROK)
+        if (w && Math.hypot(px - w.x, py - w.y) <= KROK)
           indeksyWezlow.push(koniecHero + y.length);
-        lista.push(p.x, p.y);
-        y.push(Math.max(p.y, y.length ? y[y.length - 1] : -Infinity));
+        lista.push(px, py);
+        y.push(Math.max(py, y.length ? y[y.length - 1] : -Infinity));
       }
       punkty = Float32Array.from(lista);
       yNici = Float32Array.from(y);
