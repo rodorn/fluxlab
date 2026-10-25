@@ -7,25 +7,41 @@ const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 /** Tag (540 kB po rozpakowaniu) ładuje się przy pierwszym ruchu odwiedzającego
  *  albo po 8 s, a nie zaraz po zdarzeniu load: na słabym telefonie jego
  *  wykonanie blokowało stronę na pół sekundy w chwili, gdy ktoś zaczynał czytać.
- *  Odsłona jest liczona tak samo, tylko później. */
+ *  Samo wykonanie trwa ok. 100 ms, więc czeka, aż strona przestanie się
+ *  przewijać, żeby nie przycinać ruchu. Odsłona jest liczona tak samo, tylko później. */
 export default function GoogleAnalytics() {
   const [gotowe, ustawGotowe] = useState(false);
 
   useEffect(() => {
     const zdarzenia = ["pointerdown", "keydown", "scroll", "touchstart"] as const;
-    const start = () => {
-      ustawGotowe(true);
-      sprzatnij();
+    let cisza = 0;
+    const wczytaj = () =>
+      "requestIdleCallback" in window
+        ? requestIdleCallback(() => ustawGotowe(true), { timeout: 2000 })
+        : ustawGotowe(true);
+    const poCiszy = () => {
+      clearTimeout(cisza);
+      cisza = window.setTimeout(() => {
+        window.removeEventListener("scroll", poCiszy);
+        wczytaj();
+      }, 1500);
     };
-    const zegar = setTimeout(start, 8000);
-    const sprzatnij = () => {
+    const start = () => {
       clearTimeout(zegar);
       zdarzenia.forEach((z) => window.removeEventListener(z, start));
+      window.addEventListener("scroll", poCiszy, { passive: true });
+      poCiszy();
     };
+    const zegar = setTimeout(start, 8000);
     zdarzenia.forEach((z) =>
       window.addEventListener(z, start, { once: true, passive: true }),
     );
-    return sprzatnij;
+    return () => {
+      clearTimeout(zegar);
+      clearTimeout(cisza);
+      zdarzenia.forEach((z) => window.removeEventListener(z, start));
+      window.removeEventListener("scroll", poCiszy);
+    };
   }, []);
 
   useEffect(() => {
