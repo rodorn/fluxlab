@@ -1,94 +1,162 @@
 [
   {
-    "data": "2026-10-18T10:42:57+02:00",
-    "opis": "Brief głosowy w formularzu, tło hero z paralaksą, płynne przejścia między stronami, mail potwierdzenia w HTML"
+    "data": "2026-10-25T10:27:09+01:00",
+    "opis": "Scena leada: karta w telefonie nie wychodzi poza ekran"
   },
   {
-    "data": "2026-10-18T09:48:18+02:00",
-    "opis": "Strefa wiedzy: Gutschrift od klienta z Niemiec a KSeF"
+    "data": "2026-10-25T10:24:25+01:00",
+    "opis": "Nić: efekt na końcu, kropka zlewa się z węzłem, start od przycisku; font hero bez blokowania; stopka bez prefetchu przy przewijaniu"
   },
   {
-    "data": "2026-10-18T03:46:55+02:00",
-    "opis": "Strefa wiedzy: faktura VAT RR w KSeF"
+    "data": "2026-10-25T00:09:44+02:00",
+    "opis": "Formularz: jedna siatka godzin zamiast suwaka, krótsze nazwy kafli"
   },
   {
-    "data": "2026-10-18T01:01:13+02:00",
-    "opis": "Strona główna: demo na żywo, AI zakłada kartę leada i pisze szkic odpowiedzi z zapytania wpisanego przez odwiedzającego"
+    "data": "2026-10-25T00:02:55+02:00",
+    "opis": "Telefon w scenie leada: przy bezchmurnym niebie w nocy księżyc zamiast słońca"
   },
   {
-    "data": "2026-10-17T18:49:56+02:00",
-    "opis": "Strefa wiedzy: ZAW-FA w spółce"
+    "data": "2026-10-24T23:59:05+02:00",
+    "opis": "Hero strony głównej z osadzonym podzbiorem Fraunces, pełny krój kursywy dociąga się po załadowaniu strony, poza ścieżką LCP"
   },
   {
-    "data": "2026-10-17T17:49:36+02:00",
-    "opis": "Strefa wiedzy: załącznik do faktury w KSeF"
+    "data": "2026-10-24T23:46:28+02:00",
+    "opis": "Nić przelicza się, gdy węzły albo fioletowa sekcja przesuną się bez zmiany wysokości strony"
   },
   {
-    "data": "2026-10-17T09:50:09+02:00",
-    "opis": "/sprawdzenie-nip: data i podstawa wykreślenia z rejestru VAT w wyniku"
+    "data": "2026-10-24T23:38:45+02:00",
+    "opis": "Nić rysuje się za koralikiem: na starcie jest tylko rysunek w hero, dalsza linia i węzły pojawiają się tam, gdzie koralik już dojechał"
   },
   {
-    "data": "2026-10-17T07:54:16+02:00",
-    "opis": "/numer-ksef: pole i przycisk przed przykładami, na telefonie 390 px oba na pierwszym ekranie"
+    "data": "2026-10-24T23:30:17+02:00",
+    "opis": "Jedna linia przez stronę: nić wraca jako przedłużenie rysunku w hero, koralik jedzie ze stałą prędkością przez hero i dalej po nici za przewijaniem"
   },
   {
-    "data": "2026-10-17T07:02:52+02:00",
-    "opis": "/ksef-2027: pierwszy akapit prowadzi do /numer-ksef, zdanie wymienione na zdanie tej samej długości"
+    "data": "2026-10-24T23:21:55+02:00",
+    "opis": "Kroki pod formularzem zgodne z Meet jako domyślną formą kontaktu"
   },
   {
-    "data": "2026-10-17T02:45:16+02:00",
-    "opis": "Strefa wiedzy: faktura dla kontrahenta zagranicznego w KSeF"
+    "data": "2026-10-24T23:19:13+02:00",
+    "opis": "Formularz kontaktu: Meet domyślnie jako pierwszy krok, zwykłe pola, komunikaty po polsku, terminy tego samego dnia z wyprzedzeniem 3 h"
   },
   {
-    "data": "2026-10-16T11:57:32+02:00",
-    "opis": "Oś symetrii: wyśrodkowany nagłówek, przyciski, tytuły sekcji, pytania i formularz na stronach usług, /strony-www i głównej"
+    "data": "2026-10-24T22:58:15+02:00",
+    "opis": "Podtytuł hero w jednej linii na desktopie"
   },
   {
-    "data": "2026-10-16T11:34:34+02:00",
-    "opis": "Własny CRM: opis strony w limicie 160 znaków"
+    "data": "2026-10-24T22:56:49+02:00",
+    "opis": "Szybsze ładowanie na telefonie: GA po interakcji, bez intro, LCP od razu, Fraunces bez preload, etykieta nocna bez CLS"
   },
   {
-    "data": "2026-10-16T11:04:26+02:00",
-    "opis": "Główna: zrozumiała linijka o realizacji zamiast 45 → 97"
+    "data": "2026-10-24T22:43:40+02:00",
+    "opis": "Usunięcie nici ze strony głównej, linia hero kończy się na wykresie"
   },
   {
-    "data": "2026-10-16T10:59:36+02:00",
-    "opis": "Główna: nagłówek Strony internetowe i CRM dla firm"
+    "data": "2026-10-24T22:38:46+02:00",
+    "opis": "Płynne przewijanie: tło bez pełnoekranowych masek, nić bez objazdu przy hero, kropka znika"
   },
   {
-    "data": "2026-10-16T02:04:07+02:00",
-    "opis": "Dostępność: kontrast nagłówków stopki, etykiety pól kalkulatora"
+    "data": "2026-10-24T22:28:09+02:00",
+    "opis": "Płynne przewijanie: nić statyczna, węzły przez IntersectionObserver, tło kursora bez obsługi scrolla; twarz w awatarze, połączenie linii"
   },
   {
-    "data": "2026-10-16T01:38:32+02:00",
-    "opis": "Strony WWW: szybki kontakt w nagłówku"
+    "data": "2026-10-24T22:19:55+02:00",
+    "opis": "Nić bez przemalowywania strony przy przewijaniu: odsłanianie transformacjami"
   },
   {
-    "data": "2026-10-16T01:35:20+02:00",
-    "opis": "Strony internetowe na pierwszym planie: hasło głównej, pierwszy kafel, pozycja w menu"
+    "data": "2026-10-24T21:26:13+02:00",
+    "opis": "Światło kursora na tle każdej podstrony"
   },
   {
-    "data": "2026-10-14T19:11:07+02:00",
-    "opis": "Audyt: raport do klienta w liczbie mnogiej i ze skutkami każdego problemu"
+    "data": "2026-10-24T21:13:32+02:00",
+    "opis": "Kursywa nagłówków: Fraunces 500 zamiast cienkiego Instrument Serif"
   },
   {
-    "data": "2026-10-14T18:49:39+02:00",
-    "opis": "Kalkulator podatkowy: link do „VAT w JDG, kiedy warto” na istniejących słowach, 0 nowych słów"
+    "data": "2026-10-24T21:06:17+02:00",
+    "opis": "Kursywa nagłówków: display swap, żeby ą i ę nie zostawały w kroju zastępczym"
   },
   {
-    "data": "2026-10-14T09:49:25+02:00",
-    "opis": "Audyt: formularz raportu nad streszczeniem, widoczny bez przewijania na telefonie"
+    "data": "2026-10-24T20:11:10+02:00",
+    "opis": "Kontakt: ten sam formularz co na stronie głównej zamiast starego z 6 polami"
   },
   {
-    "data": "2026-10-09T12:44:15+02:00",
-    "opis": "Strefa wiedzy: CRM i AI we wstępie linkują do wpisów"
+    "data": "2026-10-24T19:41:39+02:00",
+    "opis": "Ikona karty w jednym kolorze jak znak w nagłówku"
   },
   {
-    "data": "2026-10-08T17:58:41+02:00",
-    "opis": "Strona główna: nagłówek sekcji badań „Co sami zmierzyliśmy” zamiast pytania o kompetencje"
+    "data": "2026-10-24T19:41:10+02:00",
+    "opis": "Pasek Zasada, tryb ciemny, formularz jak list, znak fl"
   },
   {
-    "data": "2026-10-08T17:12:50+02:00",
-    "opis": "Strefa wiedzy: własne okładki obrazkowe dla 33 artykułów"
+    "data": "2026-10-24T19:29:19+02:00",
+    "opis": "Hero: punkty siatki jaśnieją pod kursorem"
+  },
+  {
+    "data": "2026-10-24T18:54:50+02:00",
+    "opis": "Audyt: ostatni etap rośnie płynnie zamiast stać na 95%, licznik sekund"
+  },
+  {
+    "data": "2026-10-24T18:11:54+02:00",
+    "opis": "Formularz: najpierw forma kontaktu, potem potrzeba i dane"
+  },
+  {
+    "data": "2026-10-24T18:04:54+02:00",
+    "opis": "Kolofon: bez obcego słowa"
+  },
+  {
+    "data": "2026-10-24T18:04:15+02:00",
+    "opis": "Stopka: kolofon z krojem i pomiarem odsłony na żywo"
+  },
+  {
+    "data": "2026-10-24T17:56:03+02:00",
+    "opis": "Rysowane podkreślenia linków, jedna skala H1 na /materialy i 404"
+  },
+  {
+    "data": "2026-10-24T17:53:22+02:00",
+    "opis": "Mniej ruchu: bez magnesu, kursora i tiltu; polska mikrotypografia; węższa paleta"
+  },
+  {
+    "data": "2026-10-24T17:42:14+02:00",
+    "opis": "Usuń poświatę pod kursorem, zostaw przejście karty i obrys"
+  },
+  {
+    "data": "2026-10-24T16:40:49+02:00",
+    "opis": "Kalkulator strony: podstrony, teksty, języki, produkty, opieka, pozycje z kwotami"
+  },
+  {
+    "data": "2026-10-24T16:31:27+02:00",
+    "opis": "Wygląd: większe H1 z szeryfową końcówką, ziarno i poświata za kursorem, przejście karta→podstrona"
+  },
+  {
+    "data": "2026-10-24T16:22:44+02:00",
+    "opis": "Czat: zielona kropka online 11-23, status w stopce od 11:00"
+  },
+  {
+    "data": "2026-10-24T16:16:54+02:00",
+    "opis": "Stopka: profile YouTube, TikTok, Instagram, X, LinkedIn zamiast Zleca.pl"
+  },
+  {
+    "data": "2026-10-23T22:08:33+02:00",
+    "opis": "Strony WWW: taśma etapów buduje stronę w jednej ramce, makieta w barwach klienta jak prawdziwa strona, dymek czatu znika po 8 s"
+  },
+  {
+    "data": "2026-10-22T14:34:13+02:00",
+    "opis": "Czcionki bez podmiany po załadowaniu: koniec skoków układu"
+  },
+  {
+    "data": "2026-10-22T14:26:45+02:00",
+    "opis": "Czcionka Instrument Sans zamiast Geist, z polskimi znakami"
+  },
+  {
+    "data": "2026-10-21T23:34:21+02:00",
+    "opis": "Kalkulator podatkowy: bez podziału na pół od 1800 px, wyniki zawsze pod danymi"
+  },
+  {
+    "data": "2026-10-21T16:58:58+02:00",
+    "opis": "Nagrywanie w formularzu: nagranie OGG z Firefoksa wysyłane z poprawnym rozszerzeniem, serwer ustala rozszerzenie z typu pliku"
+  },
+  {
+    "data": "2026-10-21T16:45:07+02:00",
+    "opis": "Jak pracujemy: krótsze, spójne terminy, forma na ty"
   }
 ]
