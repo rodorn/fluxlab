@@ -5,7 +5,7 @@
  *  ok. 9 900 zł (decyzja Pawła 25.10.2026). Płatności jak dodatek na /landing-z-platnoscia
  *  (790 zł), każdy język 30% strony, bo to tłumaczenie i kopia każdej podstrony.
  *  Opieka jak w cenniku /strony-www: 300, 600 albo 1 280 zł miesięcznie.
- *  Chatbot: wdrożenie raz, potem opłata za model AI i aktualizację bazy wiedzy. */
+ *  Chatbot: tylko opłata miesięczna, bez wdrożenia (decyzja Pawła 25.10.2026). */
 
 export type Rodzaj = {
   id: string;
@@ -92,7 +92,7 @@ export const OPCJE_STRONY: Record<string, OpcjaStrony> = {
   chatbot: {
     nazwa: "Chatbot AI na bazie wiedzy o firmie",
     wCenie: [],
-    cena: 1900,
+    cena: 0,
     miesiecznie: 199,
   },
 };
@@ -221,7 +221,7 @@ export function wycenStrone(k: KonfiguracjaStrony): WynikWyceny | null {
   for (const id of new Set(k.o)) {
     const o = OPCJE_STRONY[id];
     if (!o || o.wCenie.includes(rodzaj.id)) continue;
-    pozycje.push({ nazwa: o.nazwa, netto: o.cena });
+    if (o.cena) pozycje.push({ nazwa: o.nazwa, netto: o.cena });
     if (o.miesiecznie) abonamenty.push({ nazwa: o.nazwa, netto: o.miesiecznie });
   }
 

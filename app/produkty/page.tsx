@@ -73,7 +73,7 @@ export default function ProduktyPage() {
                 Usługi ze stałą ceną
               </h1>
               <p className="hero-lead">
-                Na górze trzy usługi w abonamencie, niżej prace jednorazowe.
+                Na górze usługi w abonamencie, niżej prace jednorazowe.
                 Każda pozycja ma podaną kwotę wejścia i konkretny efekt.
               </p>
               <p className="mt-4 text-sm text-gray-600 dark:text-gray-400">

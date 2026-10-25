@@ -114,7 +114,7 @@ export function dekodujWycene(d: string | undefined): Wycena | null {
         ...MODULY_CRM.filter((m) => c.w === "ai" || ids.includes(m.id)).map((m) =>
           c.w === "ai"
             ? { nazwa: m.nazwa, info: "w cenie" }
-            : { nazwa: m.nazwa, opis: `Wdrożenie jednorazowo, abonament ${m.miesiecznie} zł/mies. doliczony wyżej`, netto: m.cena },
+            : { nazwa: m.nazwa, info: `${m.miesiecznie} zł/mies., doliczone wyżej` },
         ),
       ],
       sumaEtykieta: "Koszt pierwszego roku (wdrożenie plus 12 miesięcy abonamentu)",

@@ -1,5 +1,6 @@
 /** Moduły AI do FluxCRM, wspólne dla konfiguratora /wlasny-crm i wyceny PDF.
- *  W wariancie „Z narzędziami AI” są w cenie wdrożenia i abonamentu. */
+ *  W wariancie „Z narzędziami AI” są w cenie wdrożenia i abonamentu, w innych
+ *  tylko opłata miesięczna, bez wdrożenia (decyzja Pawła 25.10.2026). */
 
 export type ModulCrm = {
   id: string;
@@ -16,7 +17,7 @@ export const MODULY_CRM: ModulCrm[] = [
     nazwa: "Ocena handlowców przez AI",
     skrot: "ocena handlowców",
     opis: "Model czyta notatki, SMS-y, maile i rozmowy, zestawia je z wiedzą firmy i ocenia pracę każdej osoby.",
-    cena: 3900,
+    cena: 0,
     miesiecznie: 199,
   },
   {
@@ -24,7 +25,7 @@ export const MODULY_CRM: ModulCrm[] = [
     nazwa: "Szkice maili i SMS-ów przez AI",
     skrot: "szkice wiadomości",
     opis: "Gotowa odpowiedź dopasowana do klienta i etapu sprzedaży. Handlowiec poprawia i wysyła.",
-    cena: 1900,
+    cena: 0,
     miesiecznie: 99,
   },
 ];

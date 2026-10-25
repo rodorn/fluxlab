@@ -371,7 +371,7 @@ export default function KonfiguratorStrony() {
                 <span>
                   <span className="block text-sm font-semibold text-gray-900 dark:text-white">{o.nazwa}</span>
                   <span className="block text-xs text-gray-600 dark:text-gray-400">
-                    {wCenie ? "w cenie" : `+${zl(o.cena)}${o.miesiecznie ? ` i ${zl(o.miesiecznie)}/mies.` : ""}`}
+                    {wCenie ? "w cenie" : o.miesiecznie ? `+${zl(o.miesiecznie)}/mies.` : `+${zl(o.cena)}`}
                   </span>
                 </span>
                 <span

@@ -234,7 +234,7 @@ export default function KonfiguratorCrm() {
                     <span className="mt-2 block text-xs font-semibold tabular-nums text-accent">
                       {wCenie
                         ? "w cenie wariantu z AI"
-                        : `+${zl(m.cena)} zł i ${m.miesiecznie} zł/mies.`}
+                        : `+${m.miesiecznie} zł/mies.`}
                     </span>
                   </span>
                   <span

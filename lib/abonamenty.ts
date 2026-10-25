@@ -1,23 +1,27 @@
-/** Trzy usługi w abonamencie na górze cennika i w menu, z dodatkami płatnymi
- *  co miesiąc. Kwoty jak na stronach usług; zmiana tutaj nie zmienia tamtych. */
+/** Usługi w abonamencie na górze cennika i w menu (lista Pawła 25.10.2026).
+ *  Przy usłudze miesięcznej nie pokazujemy kosztu wdrożenia (decyzja Pawła
+ *  25.10.2026). Kwoty jak na stronach usług; zmiana tutaj nie zmienia tamtych.
+ *  `kwota` to najniższy pakiet netto, który można opłacić kartą przez Stripe. */
 
 export type Dodatek = { nazwa: string; href: string; cena: string };
 
 export type Abonament = {
+  id: string;
   nazwa: string;
   href: string;
   miesiecznie: string;
-  wdrozenie: string;
+  kwota: number;
   wCenie: string[];
   dodatki: Dodatek[];
 };
 
 export const ABONAMENTY: Abonament[] = [
   {
-    nazwa: "Strona z opieką",
+    id: "strona",
+    nazwa: "Opieka nad stroną",
     href: "/strony-www",
     miesiecznie: "od 300 zł/mies.",
-    wdrozenie: "wdrożenie od 2 900 zł",
+    kwota: 300,
     wCenie: [
       "monitoring działania strony",
       "2, 5 albo 10 poprawek na kwartał",
@@ -30,16 +34,6 @@ export const ABONAMENTY: Abonament[] = [
         cena: "199 zł/mies.",
       },
       {
-        nazwa: "Prowadzenie wizytówki Google",
-        href: "/profil-firmy-google",
-        cena: "349 zł/mies.",
-      },
-      {
-        nazwa: "Raport o konkurencji",
-        href: "/benchmarking-konkurencji",
-        cena: "od 39 zł/mies.",
-      },
-      {
         nazwa: "Pilnowanie mapy strony",
         href: "/mapa-strony",
         cena: "99 zł/mies.",
@@ -49,29 +43,52 @@ export const ABONAMENTY: Abonament[] = [
         href: "/wlasnosc-domeny",
         cena: "49 zł/mies.",
       },
+    ],
+  },
+  {
+    id: "wizytowka",
+    nazwa: "Opieka nad wizytówką Google",
+    href: "/profil-firmy-google",
+    miesiecznie: "349 zł/mies.",
+    kwota: 349,
+    wCenie: [
+      "uporządkowanie wpisu na start",
+      "post co tydzień i odpowiedzi na opinie",
+      "pomiar telefonów i wejść z Map co miesiąc",
+    ],
+    dodatki: [],
+  },
+  {
+    id: "konkurencja",
+    nazwa: "Benchmarking konkurencji",
+    href: "/benchmarking-konkurencji",
+    miesiecznie: "od 39 zł/mies.",
+    kwota: 39,
+    wCenie: [
+      "ceny, usługi, social media, strony i opinie",
+      "raport co miesiąc, co tydzień albo codziennie",
+      "wnioski dla Twojej firmy",
+    ],
+    dodatki: [
       {
-        nazwa: "Pilnowanie danych sprzedawcy",
-        href: "/dane-sprzedawcy",
-        cena: "od 120 zł/mies.",
+        nazwa: "Dostosowanie Twoich cen do konkurencji",
+        href: "/kontakt?utm_source=abonament-ceny",
+        cena: "wycena po rozmowie",
       },
     ],
   },
   {
+    id: "crm",
     nazwa: "Własny CRM",
     href: "/wlasny-crm",
     miesiecznie: "od 499 zł/mies.",
-    wdrozenie: "wdrożenie od 1 zł w pilotażu",
+    kwota: 499,
     wCenie: [
       "3 konta, każde kolejne 99 zł/mies.",
       "serwer w UE, kopie i aktualizacje",
       "aplikacja na komputer i telefon",
     ],
     dodatki: [
-      {
-        nazwa: "Ocena handlowców przez AI",
-        href: "/wlasny-crm#konf-crm-h",
-        cena: "199 zł/mies.",
-      },
       {
         nazwa: "Szkice maili i SMS-ów przez AI",
         href: "/wlasny-crm#konf-crm-h",
@@ -80,26 +97,16 @@ export const ABONAMENTY: Abonament[] = [
     ],
   },
   {
-    nazwa: "Automatyzacje z opieką",
-    href: "/wdrozenie-n8n-cena",
-    miesiecznie: "od 190 zł/mies.",
-    wdrozenie: "wdrożenie od 790 zł",
+    id: "ocena",
+    nazwa: "Ocena handlowców przez AI",
+    href: "/wlasny-crm#konf-crm-h",
+    miesiecznie: "199 zł/mies.",
+    kwota: 199,
     wCenie: [
-      "aktualizacje n8n i serwera",
-      "powiadomienie, gdy przepływ się zatrzyma",
-      "poprawki po zmianach w podpiętych systemach",
+      "notatki, SMS-y, maile i transkrypcje rozmów",
+      "zestawienie z wiedzą firmy",
+      "ocena pracy każdej osoby w zespole",
     ],
-    dodatki: [
-      {
-        nazwa: "Pilnowanie kontrahentów w rejestrach",
-        href: "/czujka-rejestrowa",
-        cena: "od 99 zł/mies.",
-      },
-      {
-        nazwa: "Panel zwrotów i reklamacji",
-        href: "/panel-zwrotow",
-        cena: "od 200 zł/mies.",
-      },
-    ],
+    dodatki: [],
   },
 ];

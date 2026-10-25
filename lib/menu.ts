@@ -67,7 +67,7 @@ export const MENU: PozycjaMenu[] = [
     ],
     kafel: {
       tytul: "Strona z opieką od 300\u00a0zł/mies.",
-      opis: "Wdrożenie od 2 900 zł, poprawki od 150 zł.",
+      opis: "Nowa strona od 2 900 zł, poprawki od 150 zł.",
       href: "/strony-www",
       cta: "Zobacz ofertę",
     },
@@ -180,9 +180,10 @@ export const MENU: PozycjaMenu[] = [
       {
         tytul: "W abonamencie",
         linki: [
-          l("/strony-www", "od 300 zł/mies."),
+          l("/strony-www", "opieka od 300 zł/mies."),
+          l("/profil-firmy-google", "349 zł/mies."),
+          l("/benchmarking-konkurencji", "od 39 zł/mies."),
           l("/wlasny-crm", "od 499 zł/mies."),
-          l("/wdrozenie-n8n-cena", "opieka 190 zł/mies."),
         ],
       },
       {
@@ -191,12 +192,13 @@ export const MENU: PozycjaMenu[] = [
           l("/audyt-strony", "0 zł"),
           l("/pogotowie-automatyzacji", "diagnoza 49 zł"),
           l("/automatyzacja-leadow-crm", "od 900 zł"),
+          l("/wdrozenie-n8n-cena", "od 790 zł"),
         ],
       },
     ],
     kafel: {
       tytul: "Pełny cennik",
-      opis: "Trzy abonamenty z dodatkami i prace jednorazowe z ceną z góry.",
+      opis: "Abonamenty bez opłaty za wdrożenie i prace jednorazowe z ceną z góry.",
       href: "/produkty",
       cta: "Zobacz cennik",
     },
