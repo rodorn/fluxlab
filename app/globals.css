@@ -1162,6 +1162,28 @@ p {
   .menu-panel, .menu-wjazd, .menu-z-prawej, .menu-z-lewej { animation: none; }
 }
 
+/* Oś czasu terminu Meet: zajęte kwadranse w paski, uchwyt suwaka jak znacznik */
+.os-zajete {
+  background: repeating-linear-gradient(135deg, rgb(0 0 0 / 0.06) 0 4px, transparent 4px 8px);
+}
+.dark .os-zajete {
+  background: repeating-linear-gradient(135deg, rgb(255 255 255 / 0.08) 0 4px, transparent 4px 8px);
+}
+.suwak-terminu::-webkit-slider-runnable-track { height: 2.5rem; background: transparent; }
+.suwak-terminu::-moz-range-track { height: 2.5rem; background: transparent; }
+.suwak-terminu::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: var(--szer, 14px); height: 2.5rem;
+  border-radius: 8px; background: transparent; border: 0;
+  cursor: grab;
+}
+.suwak-terminu:active::-webkit-slider-thumb { cursor: grabbing; }
+.suwak-terminu::-moz-range-thumb {
+  width: var(--szer, 14px); height: 2.5rem; border-radius: 8px;
+  background: transparent; border: 0; box-sizing: border-box;
+}
+.suwak-terminu:focus-visible { outline: 2px solid #4f46e5; outline-offset: 4px; border-radius: 0.75rem; }
+
 /* Kropki przepływu w demo leada, jadą po liniach SVG */
 .scena-kropka-svg {
   fill: rgb(var(--accent));
