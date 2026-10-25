@@ -8009,3 +8009,35 @@ Decyzje dla stratega: sprawdzić, skąd 73 sesje bez odsyłacza (strony wejścia
 **Dowód:** commit 426afa5; `curl -s https://fluxlab.pl/widocznosc-w-ai | grep -c 'href="/asystent-ai-na-stronie"'` = 1; IndexNow Yandex 200, Naver 200; telefon: dotknięcie linku otwiera /asystent-ai-na-stronie.
 **Dla Pawła:**
 **Zostało otwarte:** Z11 i dalsze według godzin z planu; link stoi w zwiniętej sekcji „Jak to działa” (details), co dla robotów nie ma znaczenia, ale człowiek widzi go dopiero po rozwinięciu. Budżet: rytm „zwolnij”, więc ten cykl kończy na jednym zadaniu.
+
+## 2026-10-25 11:58
+**Kanał:** pomiar (Z11 planu).
+**Co zrobione:** sprawdzone dwa zdarzenia `lead_landing`: 18.10 21:46 to formularz od znajomej Pawła (monika.bryla@int.pl, Meet 19.10 12:15), czyli test lub żart; 22.10 11:07 to prawdziwy lead, Joanna Święs (portal ogłoszeniowy znamtemat.pl, przegląd techniczny i poprawki), obsłużony mailami z pawel@fluxlab.pl 22.10 12:08 i 12:47, od niej nic później.
+**Ruch:** ostatnia doba 170 odsłon, 129 osób (+44% wobec średniej 117,9); najczęściej /, /ksef-2027, /kalkulator-podatkowy, /audyt-strony, /czas-reakcji-na-leada; źródła: google 5, b2b-email 4, facebook 4, linkedin 3, facebook.com 3; uruchomienia narzędzi 2.
+**Dowód:** licznik sesje cpflwh4xk57mve8j6ph i 1g7strrvvr4mvjbghy5; Gmail ::33787 i ::34195; Zoho INBOX::196 i Wysłane 22.10 12:08, 12:47; linia Z11 w `cykl/plan-ruchu.md`.
+**Dla Pawła:** lead Joanna Święs (znamtemat.pl): nasza ostatnia wiadomość z 22.10 12:47, od tej pory brak odpowiedzi; decyzja, czy ponowić kontakt.
+**Zostało otwarte:** Z13 zrobione w tym samym cyklu (lista `cykl/z13-lista-26.txt`, 9 adresów; timer `fl-gsc-26.timer` na 26.10 01:45 CET w list-timers). Dalej Z12 (pomiar 18:30), Z14 do Z20 według godzin; wynik serii sprawdza Z19 po 01:50.
+
+## 2026-10-25 12:50
+**Kanał:** strona i pomiar (Z15 i Z16 planu, wzięte przed godziną docelową; Z12 i Z14 czekają na wieczór, bo mierzą okno od 12:30 i odpowiedzi sesji).
+**Co zrobione:** pięć najczęstszych stron wejścia sprawdzone na iPhonie (390x844) i opisane wady pierwszego ekranu; ustalone, że czat nie zapisuje treści pytań.
+**Ruch:** ostatnia doba 170 odsłon, 129 osób; źródła: google 5, b2b-email 4, facebook 4, linkedin 3, facebook.com 3; uruchomienia narzędzi 2 (raport 12:43).
+**Dowód:** linie Z15 i Z16 w `cykl/plan-ruchu.md`. Najważniejsze: baner cookies zasłania dół pierwszego ekranu na wszystkich 5 stronach; /ksef-2027, /kalkulator-podatkowy i /produkty nie mają wezwania nad zgięciem; strona główna obiecuje „2–3 tygodnie”, a /strony-www „7, 12, 21 dni” (commit 5937c61).
+**Dla Pawła:**
+**Zostało otwarte:** Z12 (pomiar 18:30), Z14 (20:30), Z17 i dalej według godzin; wady z Z15 do kamienia w planie 26.10 (najtańsza: termin w nagłówku strony głównej zgodny z /strony-www); zapis treści pytań czatu do decyzji stratega.
+
+## 2026-10-25 14:00
+**Kanał:** widoczność w asystentach AI (pomiar Z17) i treść (gotowość artykułu Z23).
+**Co zrobione:** policzone wejścia z AI i wyszukiwarek poza Google z 14 dni (11 sesji, 4 z narzędziem, od 129 zgłoszeń w Bing 0 nowych) i sprawdzony szkic artykułu o certyfikacie KSeF na 26.10 (3 z 3 linków 200, 6 z 8 liczb zgodnych, 2 długości tytułu i opisu poprawione w szkicu).
+**Ruch:** ostatnia doba 170 odsłon, 128 osób; źródła: www.google.com 5, b2b-email 4, facebook 4, www.facebook.com 3, instagram 2; telefon 85 z 170; uruchomienia narzędzi 2.
+**Dowód:** linie Z17 i Z23 w `cykl/plan-ruchu.md`; `cykl/artykul-2026-10-26-szkic.md` (Tytuł 54 zn., Opis 147 zn.).
+**Dla Pawła:**
+**Zostało otwarte:** Z12 (pomiar od 12:30, godz. 18:30), Z14 (20:30, zależy od postów sesji social), Z18 (00:30), Z19 (nie przed 26.10 01:50), Z20 bilans (02:30), Z21 (03:30), Z22 (04:30). Z17 i Z23 wzięte przed godziną, bo nie zależą od pory; zadania mierzące efekt od rana zostawione na ich godziny.
+
+## 2026-10-25 15:15
+**Kanał:** Google (Z18 i Z21 planu, wzięte przed godziną, bo dane GSC kończą się 23.10 bez względu na porę).
+**Co zrobione:** z Search Console pobrane dzienne serie z 28 dni dla 7 stron i oceniona blokada zmian w opisach trzech stron zmienionych 19.10: zostają, bo dwie strony bez żadnej zmiany spadły bardziej (o 41% i 69%) niż zmienione (o 31%, o 30% i wzrost o 144%).
+**Ruch:** ostatnia doba 211 odsłon, 129 osób (+80% wobec średniej 117,4); źródła: www.google.com 8, b2b-email 4, facebook 4, www.facebook.com 3, instagram 2; LinkedIn 1 sesja, YouTube 0, X 0, Threads 0; uruchomienia narzędzi 2.
+**Dowód:** `cykl/gsc-dni-2026-10-25.txt`; linie Z18 i Z21 w `cykl/plan-ruchu.md`. 17-23.10: /kalkulator-podatkowy 0 kliknięć przy 18 wyświetleniach, /ksef-2027 1 kliknięcie przy 30 (22.10).
+**Dla Pawła:**
+**Zostało otwarte:** Z12 (18:30), Z14 (20:30), Z19 (nie przed 26.10 01:50), Z20 bilans (02:30), Z22 (04:30). /audyt-kurierski i /automatyzacja-dla-ecommerce nie miały zmiany title ani description w okolicy 19.10, więc embargo 26.10 ich nie dotyczy (plan je wymienia). Pełny tydzień po zmianie (19-25.10) będzie w GSC 27.10.
