@@ -481,7 +481,7 @@ export default function ScenaLeada() {
 
         <div
           ref={telRef}
-          className={`relative z-10 mx-auto h-[460px] w-[240px] rounded-[2.6rem] border-[7px] border-gray-900 bg-gradient-to-b from-accent/15 via-white to-white p-3 shadow-2xl transition-shadow duration-500 dark:border-gray-700 dark:from-accent/25 dark:via-gray-900 dark:to-gray-900 ${
+          className={`relative z-10 mx-auto flex h-[460px] w-[240px] flex-col rounded-[2.6rem] border-[7px] border-gray-900 bg-gradient-to-b from-accent/15 via-white to-white p-3 shadow-2xl transition-shadow duration-500 dark:border-gray-700 dark:from-accent/25 dark:via-gray-900 dark:to-gray-900 ${
             telefon ? "wibracja shadow-accent/30" : "shadow-gray-900/20"
           }`}
         >
@@ -505,9 +505,9 @@ export default function ScenaLeada() {
           <p className="mt-1 text-center text-[11px] text-gray-500 dark:text-white/50">
             Telefon handlowca
           </p>
-          <div className="mt-5 text-left">
+          <div className="mt-5 flex min-h-0 flex-1 flex-col pb-4 text-left">
             {karta && telefon && rozmowa ? (
-              <div className="scena-wjazd rounded-2xl bg-white/90 p-3 shadow-lg ring-1 ring-gray-900/5 backdrop-blur dark:bg-white/10 dark:ring-white/10">
+              <div className="scena-wjazd flex min-h-0 flex-col rounded-2xl bg-white/90 p-3 shadow-lg ring-1 ring-gray-900/5 backdrop-blur dark:bg-white/10 dark:ring-white/10">
                 <p className="flex items-center justify-between text-[10px] font-semibold uppercase tracking-wider text-accent">
                   <span>Rozmowa z klientem</span>
                   <span className="tabular-nums">
@@ -515,7 +515,7 @@ export default function ScenaLeada() {
                   </span>
                 </p>
                 <p className="mt-1 text-sm font-semibold text-gray-900 dark:text-white">{karta.temat}</p>
-                <dl className="mt-2 space-y-1 text-[11px] text-gray-700 dark:text-white/80">
+                <dl className="mt-2 shrink-0 space-y-1 text-[11px] text-gray-700 dark:text-white/80">
                   {POLA.map(([k, nazwa]) => (
                     <div key={k} className="flex justify-between gap-2">
                       <dt className="text-gray-500 dark:text-white/50">{nazwa}</dt>
@@ -523,17 +523,17 @@ export default function ScenaLeada() {
                     </div>
                   ))}
                 </dl>
-                <p className="mt-2 text-[11px] leading-snug text-gray-700 dark:text-white/80">{karta.nastepny_krok}</p>
+                <p className="bez-paska mt-2 min-h-0 overflow-y-auto [mask-image:linear-gradient(to_bottom,black_82%,transparent)] text-[11px] leading-snug text-gray-700 dark:text-white/80">{karta.nastepny_krok}</p>
                 <button
                   type="button"
                   onClick={() => setRozmowa(false)}
-                  className="mt-3 w-full rounded-full bg-red-600 py-2 text-xs font-semibold text-white"
+                  className="mt-3 w-full shrink-0 rounded-full bg-red-600 py-2 text-xs font-semibold text-white"
                 >
                   Rozłącz
                 </button>
               </div>
             ) : karta && telefon ? (
-              <div className="scena-wjazd rounded-2xl bg-white/90 p-3 shadow-lg ring-1 ring-gray-900/5 backdrop-blur dark:bg-white/10 dark:ring-white/10">
+              <div className="scena-wjazd flex min-h-0 flex-col rounded-2xl bg-white/90 p-3 shadow-lg ring-1 ring-gray-900/5 backdrop-blur dark:bg-white/10 dark:ring-white/10">
                 <p className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wider text-accent">
                   <span className="h-1.5 w-1.5 rounded-full bg-accent-solid" />
                   CRM · zadzwoń w 15 min
@@ -548,7 +548,7 @@ export default function ScenaLeada() {
                   ref={szkic}
                   onMouseEnter={() => przewin(true)}
                   onMouseLeave={() => przewin(false)}
-                  className="bez-paska mt-0.5 max-h-[170px] overflow-y-auto [mask-image:linear-gradient(to_bottom,black_82%,transparent)] text-[12px] leading-relaxed text-gray-700 dark:text-white/80"
+                  className="bez-paska mt-0.5 min-h-0 overflow-y-auto [mask-image:linear-gradient(to_bottom,black_82%,transparent)] text-[12px] leading-relaxed text-gray-700 dark:text-white/80"
                 >
                   {pisane}
                   {pisane.length < karta.odpowiedz.length && (
@@ -561,7 +561,7 @@ export default function ScenaLeada() {
                     zglosZdarzenie("scena_leada_odbierz");
                     setRozmowa(true);
                   }}
-                  className="mt-2 w-full rounded-full bg-green-600 py-2 text-xs font-semibold text-white"
+                  className="mt-2 w-full shrink-0 rounded-full bg-green-600 py-2 text-xs font-semibold text-white"
                 >
                   Odbierz
                 </button>
