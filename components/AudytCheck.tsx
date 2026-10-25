@@ -1395,11 +1395,14 @@ export default function AudytCheck() {
                 </p>
               )}
               <a
-                href={`/kontakt?temat=${encodeURIComponent(`Naprawa po audycie ${wynik.domena}`)}`}
-                onClick={() => zglosZdarzenie("audyt_klik_zlecam")}
+                href={`/kontakt?opis=${encodeURIComponent(`Naprawa po audycie ${wynik.domena}, wycena ${wynik.wycena.pakiet} zł netto.`)}#kontakt`}
+                onClick={() => {
+                  zglosZdarzenie("audyt_klik_zlecam");
+                  zglosZdarzenie("klik_po_wyniku");
+                }}
                 className="btn-primary mt-5"
               >
-                Zlecamy naprawę
+                Zleć naprawę
               </a>
             </div>
           )}
