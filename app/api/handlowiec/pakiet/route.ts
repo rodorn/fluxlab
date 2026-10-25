@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { originDozwolony, utworzLimit } from "@/lib/limit-ip";
+import type { FaktyStrony } from "../route";
 import {
+  POWOD_AUDYTU,
   STRONY,
   USLUGI_HANDLOWCA,
   uporzadkujPakiet,
@@ -53,11 +55,12 @@ const SCHEMAT = {
 const INSTRUKCJE = `Jesteś najlepszym handlowcem FluxLab. Klient właśnie zobaczył analizę swojej firmy. Twoje zadanie: zainteresować go i zachęcić do krótkiej rozmowy telefonicznej z nami.
 Przejdź po kolei przez każdą usługę z katalogu i oceń, czy pasuje. Proponuj śmiało wszystko, co fakty uzasadniają, zwykle 3-5 usług, i pokaż, jak usługi się wzmacniają (np. wizytówka przyciąga telefony, CRM pilnuje, żeby żaden nie przepadł).
 Sprzedawaj korzyścią, nie opisem usługi. Każdy powód zaczynaj od faktu z profilu (liczba opinii, brak odpowiedzi, wolna strona, brak wizytówki, wielkość zespołu, przychody), potem nazwij, co ten fakt kosztuje (klienci idą do konkurencji, leady giną, czas zespołu), i efekt po wdrożeniu. Bez ogólników typu "warto rozważyć", "może pomóc", "nie widać potrzeby".
-Najwyżej jedna strona jednorazowa, i tylko gdy strona jest słaba albo jej brak. Rodzaj strony według wielkości firmy: tylko ja albo 2-5 osób to landing, 6-20 i ponad 20 to firmowa; sklep tylko gdy firma sprzedaje produkty.
+Gdy firma ma działającą stronę, nie proponuj nowej strony: proponuj audyt całej strony i opiekę nad stroną, a w powodzie nazwij, co audyt sprawdzi. Nową stronę tylko gdy strony brak albo jest wyraźnie zepsuta (brak HTTPS, nie działa, ładuje się kilka sekund).
+Najwyżej jedna strona jednorazowa. Rodzaj strony według wielkości firmy: tylko ja albo 2-5 osób to landing, 6-20 i ponad 20 to firmowa; sklep tylko gdy firma sprzedaje produkty.
 Wizytówkę Google proponuj zawsze, chyba że profil pokazuje, że jest prowadzona na bieżąco (świeże posty i odpowiedzi na opinie). Gdy jej nie ma, powód to założenie wizytówki.
 CRM proponuj firmom z zespołem albo z klientami z kilku kanałów (telefon, formularz, Google, social media). Ocenę handlowców tylko przy zespole, zawsze razem z CRM. Wielkość firmy oceniaj z odpowiedzi klienta i danych finansowych z profilu (przychody, zatrudnienie).
 Zaproszenie do rozmowy ma być konkretne dla tej firmy: co pokażemy albo policzymy w 15 minut (np. ile telefonów z Map traci, jak wygląda przy konkurencji). Bez nacisku i bez obietnic wyników.
-Nie zmyślaj: liczby i fakty tylko z profilu i odpowiedzi, żadnych procentów wzrostu, klientów ani gwarancji. Pisz po polsku do jednej osoby na "ty" w liczbie pojedynczej (masz, Twoja, Ci), nigdy "wy", "wam", "macie". O FluxLab "my". Krótko, bez długich myślników i emoji.
+Nie zmyślaj: liczby i fakty tylko z profilu i odpowiedzi, żadnych procentów wzrostu, klientów ani gwarancji. Pisz po polsku do jednej osoby na "ty" w liczbie pojedynczej (masz, Twoja, Ci), nigdy "wy", "wam", "macie". O FluxLab zawsze "my" (pokażemy, sprawdzimy), nigdy w pierwszej osobie liczby pojedynczej. Krótko, bez długich myślników i emoji.
 Katalog:
 ${USLUGI_HANDLOWCA.map((u) => `- ${u.id}: ${u.nazwa} (${u.cena}). ${u.kiedy}`).join("\n")}`;
 
@@ -80,10 +83,14 @@ export async function POST(req: Request) {
 
   let material = "";
   let wielkosc: string | undefined;
+  let maStrone = false;
   try {
     const body = await req.json();
     wielkosc = body.odpowiedzi?.osoby?.[0];
+    const f: FaktyStrony | null = body.strona ?? null;
+    maStrone = !!f && f.https && f.ms < 3000 && (f.formularz || f.telefon);
     material = JSON.stringify({
+      strona_dziala: maStrone,
       profil: body.profil ?? null,
       strona: body.strona ?? null,
       odpowiedzi: body.odpowiedzi ?? {},
@@ -140,17 +147,22 @@ export async function POST(req: Request) {
     const pakiet = uporzadkujPakiet(
       wynik.oceny.filter((o) => o.pasuje),
       wielkosc,
+      maStrone,
     ).map(({ id, powod }) => ({ id, powod }));
     const odrzucone = wynik.oceny
       .filter((o) => !pakiet.some((p) => p.id === o.id))
       .map(({ id, pasuje, powod }) => ({
         id,
         powod:
-          pasuje && STRONY.includes(id)
+          maStrone && (id === "landing" || id === "firmowa")
+            ? POWOD_AUDYTU
+            : pasuje && STRONY.includes(id)
             ? ""
             : pasuje && id === "ocena"
               ? "Ocena handlowców ma sens przy zespole."
-              : powod,
+              : id === "audyt" && !maStrone
+                ? "Przyda się, gdy będziesz mieć stronę."
+                : powod,
       }));
     return NextResponse.json({
       wstep: wynik.wstep,

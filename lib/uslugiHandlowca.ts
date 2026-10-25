@@ -29,6 +29,8 @@ const KIEDY: Record<string, string> = {
   crm: "Gdy leady przychodzą z kilku kanałów, a firma prowadzi je w mailu lub arkuszu.",
   ocena: "Gdy firma ma zespół handlowców lub obsługi klienta.",
   sklep_ai: "Gdy firma ma sklep z większym katalogiem produktów.",
+  audyt:
+    "Gdy firma ma działającą stronę: zamiast nowej sprawdzamy każdą podstronę (do 200), błędy, tytuły, opisy, martwe linki, i poprawiamy to, co jest.",
 };
 
 export const USLUGI_HANDLOWCA: UslugaHandlowca[] = [
@@ -41,6 +43,15 @@ export const USLUGI_HANDLOWCA: UslugaHandlowca[] = [
     miesiecznie: 0,
     kiedy: KIEDY[r.id],
   })),
+  {
+    id: "audyt",
+    nazwa: "Audyt całej strony",
+    href: "/audyt-strony",
+    cena: "10 zł jednorazowo",
+    jednorazowo: 10,
+    miesiecznie: 0,
+    kiedy: KIEDY.audyt,
+  },
   ...ABONAMENTY.map((a) => {
     const id = a.id === "sklep" ? "sklep_ai" : a.id;
     return {
@@ -112,17 +123,26 @@ export const PROGI: Record<
   ],
 };
 
+export const POWOD_AUDYTU =
+  "Twoja strona działa, więc zamiast nowej zaczynamy od audytu każdej podstrony i poprawiamy to, co masz.";
+
 /** Najwyżej jedna strona (sklep zostaje, landing i firmowa według wielkości),
- *  ocena handlowców tylko z CRM i tylko przy zespole. */
-export function uporzadkujPakiet<T extends { id: string; powod?: string }>(
+ *  ocena handlowców tylko z CRM i tylko przy zespole. Działająca strona
+ *  dostaje audyt zamiast nowej, a bez strony audytu nie ma czego sprawdzać. */
+export function uporzadkujPakiet<T extends { id: string; powod: string }>(
   pakiet: T[],
-  wielkosc?: string,
+  wielkosc: string | undefined,
+  maStrone: boolean,
 ): T[] {
   const w = wielkosc ? WIELKOSC[wielkosc] : undefined;
   let strona = false;
   const wynik: T[] = [];
+  if (maStrone && !pakiet.some((p) => p.id === "audyt"))
+    wynik.push({ ...pakiet[0], id: "audyt", powod: POWOD_AUDYTU });
   for (const p of pakiet) {
     if (wynik.some((x) => x.id === p.id)) continue;
+    if (p.id === "audyt" && !maStrone) continue;
+    if (maStrone && (p.id === "landing" || p.id === "firmowa")) continue;
     if (STRONY.includes(p.id)) {
       if (strona) continue;
       strona = true;
