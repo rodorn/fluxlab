@@ -34,10 +34,13 @@ function werdykt(w: Wynik): string {
   if (k <= f * 1.15) {
     return "Wynik jest bardzo zbliżony. Różnicę widać głównie na wolniejszych telefonach.";
   }
+  if (k < 600) {
+    return "Twój serwer odpowiada szybko. Nasz jest jeszcze szybszy, ale tu nie ma pilnej potrzeby zmian.";
+  }
   const razy = k / f;
   const t =
-    razy >= 1.5 ? `Twoja strona ładuje się około ${razy.toLocaleString("pl-PL", { maximumFractionDigits: 1 })} razy dłużej.` : "Twoja strona ładuje się wyraźnie dłużej.";
-  return `${t} Da się to skrócić.`;
+    razy >= 1.5 ? `Twój serwer odpowiada około ${razy.toLocaleString("pl-PL", { maximumFractionDigits: 1 })} razy wolniej.` : "Twój serwer odpowiada wyraźnie wolniej.";
+  return `${t} Klient czeka na to przy każdym wejściu na stronę.`;
 }
 
 function Tor({

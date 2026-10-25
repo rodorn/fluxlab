@@ -58,7 +58,6 @@ function doFormularza(tekst: string) {
 }
 
 export default function MakietaStrony() {
-  const [zakladka, setZakladka] = useState<"makieta" | "naglowek">("makieta");
   const [adres, setAdres] = useState("");
   const [ladowanie, setLadowanie] = useState(false);
   const [blad, setBlad] = useState("");
@@ -66,11 +65,6 @@ export default function MakietaStrony() {
   const [bezLogo, setBezLogo] = useState(false);
   const [bezObrazu, setBezObrazu] = useState(false);
 
-  const [opis, setOpis] = useState("");
-  const [lad2, setLad2] = useState(false);
-  const [blad2, setBlad2] = useState("");
-  const [naglowki, setNaglowki] = useState<string[]>([]);
-  const [skopiowano, setSkopiowano] = useState(-1);
 
   async function wywolaj(url: string, dane: object) {
     const res = await fetch(url, {
@@ -101,44 +95,9 @@ export default function MakietaStrony() {
     }
   }
 
-  async function zrobNaglowki(e: React.FormEvent) {
-    e.preventDefault();
-    if (lad2) return;
-    if (opis.trim().length < 10) {
-      setBlad2("Napisz o firmie choć jedno krótkie zdanie (min. 10 znaków).");
-      return;
-    }
-    setBlad2("");
-    setLad2(true);
-    zglosZdarzenie("naglowek_ai");
-    try {
-      const w = await wywolaj("/api/naglowek", { opis: opis.trim() });
-      setNaglowki(w.naglowki as string[]);
-      setSkopiowano(-1);
-    } catch (err) {
-      setBlad2(err instanceof Error ? err.message : "Brak połączenia. Spróbuj jeszcze raz.");
-    } finally {
-      setLad2(false);
-    }
-  }
-
-  async function kopiuj(t: string, i: number) {
-    try {
-      await navigator.clipboard.writeText(t);
-      setSkopiowano(i);
-    } catch {
-      setBlad2("Nie udało się skopiować, zaznacz tekst ręcznie.");
-    }
-  }
 
   const poleKlasa =
     "min-w-0 flex-1 rounded-xl border border-gray-300 bg-white px-4 py-3 text-base text-gray-900 placeholder:text-gray-400 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100";
-  const zakladkaKlasa = (aktywna: boolean) =>
-    `rounded-2xl px-5 py-2 text-sm font-semibold transition-colors ${
-      aktywna
-        ? "bg-accent-solid text-white"
-        : "border border-gray-300 text-gray-700 hover:border-accent dark:border-gray-700 dark:text-gray-300"
-    }`;
 
   const kolor = wynik?.strona.kolor ?? "#4f46e5";
   const na = tekstNa(kolor);
@@ -152,18 +111,7 @@ export default function MakietaStrony() {
         <p className="mx-auto mb-6 max-w-2xl text-center text-gray-600 dark:text-gray-400">
           Wpisz adres swojej strony. Zrobimy jej zrzut, a obok pokażemy, jak mogłoby wyglądać jej górne okno w Twoich barwach.
         </p>
-
-        <div role="tablist" aria-label="Narzędzie" className="mb-6 flex flex-wrap justify-center gap-2">
-          <button type="button" role="tab" aria-selected={zakladka === "makieta"} onClick={() => setZakladka("makieta")} className={zakladkaKlasa(zakladka === "makieta")}>
-            Twoja strona obok naszej
-          </button>
-          <button type="button" role="tab" aria-selected={zakladka === "naglowek"} onClick={() => setZakladka("naglowek")} className={zakladkaKlasa(zakladka === "naglowek")}>
-            Nagłówek dla firmy
-          </button>
-        </div>
-
-        {zakladka === "makieta" && (
-          <div role="tabpanel">
+          <div>
             <form onSubmit={zrob} className="mx-auto flex max-w-2xl flex-col gap-3 sm:flex-row">
               <label htmlFor="mk-adres" className="sr-only">Adres Twojej strony</label>
               <input
@@ -281,40 +229,6 @@ export default function MakietaStrony() {
               </div>
             )}
           </div>
-        )}
-
-        {zakladka === "naglowek" && (
-          <div role="tabpanel">
-            <form onSubmit={zrobNaglowki} className="mx-auto flex max-w-2xl flex-col gap-3 sm:flex-row">
-              <label htmlFor="ng-opis" className="sr-only">Czym zajmuje się Twoja firma</label>
-              <input
-                id="ng-opis"
-                type="text"
-                value={opis}
-                maxLength={300}
-                onChange={(e) => setOpis(e.target.value)}
-                placeholder="Czym zajmuje się Twoja firma? np. księgowość dla małych sklepów"
-                className={poleKlasa}
-              />
-              <button type="submit" disabled={lad2} className="btn-primary disabled:opacity-60">
-                {lad2 ? "Piszemy..." : "Podaj 3 nagłówki"}
-              </button>
-            </form>
-            {blad2 && <p role="alert" className="mt-3 text-center text-sm text-red-600 dark:text-red-400">{blad2}</p>}
-            {naglowki.length > 0 && (
-              <ul className="mx-auto mt-8 max-w-2xl space-y-3">
-                {naglowki.map((n, i) => (
-                  <li key={n} className="flex items-center justify-between gap-4 rounded-xl border border-gray-200 bg-white px-4 py-3 dark:border-gray-800 dark:bg-gray-900">
-                    <span className="text-base font-semibold text-gray-900 dark:text-white">{n}</span>
-                    <button type="button" onClick={() => kopiuj(n, i)} className="shrink-0 rounded-xl border border-gray-300 px-4 py-1.5 text-sm font-semibold text-gray-700 hover:border-accent dark:border-gray-700 dark:text-gray-300">
-                      {skopiowano === i ? "Skopiowano" : "Kopiuj"}
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </div>
-        )}
       </div>
     </section>
   );
