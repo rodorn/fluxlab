@@ -7935,3 +7935,11 @@ Decyzje dla stratega: sprawdzić, skąd 73 sesje bez odsyłacza (strony wejścia
 **Dowód:** Z15 „- [x]” w `cykl/plan-ruchu.md`. /e-doreczenia-integracja: 11-17.10 9 wyśw. (1,3/dz.), 1 klik; 18-22.10 6 wyśw. (1,2/dz.), 0 klik.; spadek był 9.10 (45 → 0), od 10.10 poziom stały. /automatyzacja-dla-biur-rachunkowych: 11-17.10 13 wyśw. (1,9/dz.), 0 klik.; 18-22.10 8 wyśw. (1,6/dz.), 0 klik.; w obu oknach jedna niedziela z zerem. Ostatnie zmiany metadanych: e-doręczenia b231a13 16.10 (jedno słowo), biura 97fcbf8 11.10; commity z 18 i 21.10 nie zmieniały title ani description.
 **Dla Pawła:**
 **Zostało otwarte:** plan 24/25 zamknięty, 0 otwartych zadań. Innych kanałów nie ruszałem, bo „Czego nie robić” blokuje nowe treści, maile i social, a plan pozwala na jedno zadanie w cyklu. Uwaga dla timerów: od 25.10 obowiązuje czas zimowy CET, a pętla czekająca na „03:00” zawisła, bo o 03:00 CEST zegar cofnął się na 02:00.
+
+## 2026-10-25 03:45
+**Kanał:** widoczność w asystentach AI (Bing, z którego indeksu korzystają Copilot i ChatGPT).
+**Co zrobione:** plan 24/25 był zamknięty (16 z 16, 0 „- [ ]”), więc zgłosiliśmy w Bing Webmaster 83 adresy z sitemap.xml, których żaden wcześniejszy cykl nie zgłaszał (narzędzia, strony CRM, część strefy wiedzy).
+**Ruch:** raport_ruchu 03:43 CET: 137 odsłon, 101 osób w dobie (+15% wobec średniej 119,0); źródła: www.google.com 6, instagram 5, b2b-email 4 (piksel), facebook 4, www.facebook.com 3; LinkedIn 1; uruchomienia narzędzi 0. Tydzień 906 odsłon, 550 osób.
+**Dowód:** Bing URL Submission „URLs submitted today 0 → 83”, „Quota left 17”, lista „1 — 25 of 129” z wpisami „Today at 03:44”. Adresy: `cykl/bing-zgloszone-2026-10-25.txt` (sitemap 149 adresów minus zgłoszone 14-24.10 minus polityka, regulamin, spis i mapa strony). Do Google 0 żądań, 0 zmian w treści.
+**Dla Pawła:**
+**Zostało otwarte:** nowy plan stratega o 06:15. Efekt zgłoszenia w Bing sprawdzać w AI Performance (cytowania, było 15 w 13-19.10) i w liczniku (odsyłacze bing, copilot) za 3-7 dni; pozostały limit Bing na dziś 17.
