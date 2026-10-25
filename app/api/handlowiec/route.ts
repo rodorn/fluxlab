@@ -2,6 +2,10 @@ import { NextResponse } from "next/server";
 import { BladAdresu, pobierzStrone } from "@/lib/bezpieczny-fetch";
 import { originDozwolony, utworzLimit } from "@/lib/limit-ip";
 import { wykryjTechnologie } from "@/lib/audyt-technologie";
+import { daneliczbowe, zbadajCalosc } from "@/lib/audyt-calosc";
+import { punktacja, wycenNaprawe } from "@/lib/audyt-ocena";
+import { czystaDomena } from "@/lib/audyt-pomiar";
+import type { AudytHandlowca } from "@/lib/uslugiHandlowca";
 
 /** Wirtualny handlowiec, etap 1: fakty ze strony i rejestru od razu, potem
  *  wyszukiwanie w sieci. Wynik płynie jako NDJSON, żeby klient widział postęp,
@@ -10,6 +14,49 @@ import { wykryjTechnologie } from "@/lib/audyt-technologie";
 export const maxDuration = 120;
 
 const limit = utworzLimit();
+
+/** Audyt całej strony w trakcie analizy: na nim handlowiec opiera decyzję,
+ *  czy poprawić stronę, czy postawić nową. */
+async function audytuj(
+  host: string,
+  terminMs: number,
+): Promise<AudytHandlowca | null> {
+  const w = await Promise.race([
+    zbadajCalosc(host, {
+      terminStronMs: terminMs - 15_000,
+      terminLinkowMs: terminMs,
+    }),
+    new Promise<null>((r) => setTimeout(() => r(null), terminMs + 15_000)),
+  ]);
+  if (!w?.osiagalna || !w.strony.length) return null;
+  const d = daneliczbowe(w);
+  const wycena = wycenNaprawe(w.domenowe);
+  return {
+    host,
+    punkty: punktacja(w.domenowe),
+    sprawdzone: d.sprawdzone,
+    zBledem: d.zBledem,
+    problemow: d.problemow + w.domenowe.length,
+    zlamane: w.zlamane.length,
+    ustalenia: [
+      ...w.domenowe.slice(0, 4).map((u) => ({
+        tytul: u.tytul,
+        fakt: u.fakt,
+        waga: u.waga,
+        koszt: u.koszt,
+      })),
+      ...d.grupy.slice(0, 3).map((g) => ({
+        tytul: g.tytul,
+        fakt: `${g.wpisy.length} podstron`,
+        waga: g.waga,
+        koszt: 0,
+      })),
+    ],
+    naprawa: wycena.pakiet,
+    pozycji: w.domenowe.filter((u) => u.koszt > 0).length,
+    dni: wycena.dniRobocze,
+  };
+}
 
 function dekoduj(s: string): string {
   return s
@@ -278,6 +325,9 @@ export async function POST(req: Request) {
   const enc = new TextEncoder();
   const strumien = new ReadableStream({
     async start(ctrl) {
+      const t0 = Date.now();
+      let audyt: Promise<AudytHandlowca | null> | null = null;
+      let bladProfilu = false;
       const wyslij = (o: object) =>
         ctrl.enqueue(enc.encode(JSON.stringify(o) + "\n"));
       const material: string[] = [`Klient wpisał: ${firma}`];
@@ -292,6 +342,8 @@ export async function POST(req: Request) {
         try {
           const s = await analizaStrony(adres);
           wyslij({ typ: "strona", dane: s.fakty });
+          wyslij({ typ: "audyt_start" });
+          audyt = audytuj(s.fakty.host, 70_000).catch(() => null);
           material.push(s.opis);
           if (s.nip) nip = s.nip;
         } catch (e) {
@@ -386,19 +438,41 @@ export async function POST(req: Request) {
         }
         const profil = JSON.parse(tekst);
         if (profil.firma.nazwa === "nie znaleziono") {
+          bladProfilu = true;
           wyslij({
             typ: "blad",
             error: "Nie znaleźliśmy tej firmy. Wpisz adres strony albo NIP.",
           });
         } else {
           wyslij({ typ: "profil", dane: profil });
+          const host = czystaDomena(profil.firma.strona ?? "");
+          const zostalo = 110_000 - (Date.now() - t0);
+          if (
+            !audyt &&
+            /^[a-z0-9.-]+\.[a-z]{2,}$/.test(host) &&
+            zostalo > 40_000
+          ) {
+            wyslij({ typ: "audyt_start" });
+            audyt = audytuj(host, Math.min(70_000, zostalo - 20_000)).catch(
+              () => null,
+            );
+          }
         }
       } catch (e) {
+        bladProfilu = true;
         console.error("handlowiec", e);
         wyslij({
           typ: "blad",
           error: "Nie udało się dokończyć analizy. Spróbuj jeszcze raz.",
         });
+      }
+      if (audyt && !bladProfilu) {
+        const a = await audyt;
+        wyslij(
+          a
+            ? { typ: "audyt", dane: a }
+            : { typ: "audyt", blad: "Nie udało się zbadać całej strony." },
+        );
       }
       ctrl.close();
     },

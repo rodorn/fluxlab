@@ -29,8 +29,8 @@ const KIEDY: Record<string, string> = {
   crm: "Gdy leady przychodzą z kilku kanałów, a firma prowadzi je w mailu lub arkuszu.",
   ocena: "Gdy firma ma zespół handlowców lub obsługi klienta.",
   sklep_ai: "Gdy firma ma sklep z większym katalogiem produktów.",
-  audyt:
-    "Gdy firma ma działającą stronę: zamiast nowej sprawdzamy każdą podstronę (do 200), błędy, tytuły, opisy, martwe linki, i poprawiamy to, co jest.",
+  poprawki:
+    "Gdy audyt strony pokazał błędy, a naprawa wychodzi taniej niż nowa strona. Cenę liczy audyt.",
 };
 
 export const USLUGI_HANDLOWCA: UslugaHandlowca[] = [
@@ -44,13 +44,13 @@ export const USLUGI_HANDLOWCA: UslugaHandlowca[] = [
     kiedy: KIEDY[r.id],
   })),
   {
-    id: "audyt",
-    nazwa: "Audyt całej strony",
+    id: "poprawki",
+    nazwa: "Poprawki z audytu strony",
     href: "/audyt-strony",
-    cena: "10 zł jednorazowo",
-    jednorazowo: 10,
+    cena: "według audytu",
+    jednorazowo: 0,
     miesiecznie: 0,
-    kiedy: KIEDY.audyt,
+    kiedy: KIEDY.poprawki,
   },
   ...ABONAMENTY.map((a) => {
     const id = a.id === "sklep" ? "sklep_ai" : a.id;
@@ -123,30 +123,101 @@ export const PROGI: Record<
   ],
 };
 
-export const POWOD_AUDYTU =
-  "Twoja strona działa, więc zamiast nowej zaczynamy od audytu każdej podstrony i poprawiamy to, co masz.";
+export const odm = (n: number, jeden: string, kilka: string, wiele: string) =>
+  `${n} ${n === 1 ? jeden : [2, 3, 4].includes(n % 10) && ![12, 13, 14].includes(n % 100) ? kilka : wiele}`;
+
+/** Streszczenie audytu całej strony, który handlowiec robi w trakcie analizy. */
+export type AudytHandlowca = {
+  host: string;
+  punkty: number | null;
+  sprawdzone: number;
+  zBledem: number;
+  problemow: number;
+  zlamane: number;
+  ustalenia: { tytul: string; fakt: string; waga: string; koszt: number }[];
+  naprawa: number;
+  pozycji: number;
+  dni: number;
+};
+
+export type DecyzjaStrony = {
+  decyzja: "nowa" | "poprawki" | "opieka";
+  powod: string;
+  strona: string;
+};
+
+/** Poprawki czy nowa strona: nowa, gdy wynik jest słaby, naprawa kosztuje
+ *  co najmniej połowę nowej strony albo co trzecia podstrona zwraca błąd. */
+export function decyzjaStrony(
+  a: AudytHandlowca,
+  wielkosc: string | undefined,
+): DecyzjaStrony | null {
+  if (a.punkty === null || !a.sprawdzone) return null;
+  const strona = (wielkosc && WIELKOSC[wielkosc]?.strona) || "firmowa";
+  const cena = USLUGI_HANDLOWCA.find((u) => u.id === strona)!.jednorazowo;
+  const zl = (n: number) => `${n.toLocaleString("pl-PL")} zł`;
+  const audyt = `Audyt ${odm(a.sprawdzone, "podstrony", "podstron", "podstron")}: wynik ${a.punkty}/100`;
+  if (a.punkty < 40)
+    return {
+      decyzja: "nowa",
+      strona,
+      powod: `${audyt}, ${odm(a.problemow, "problem", "problemy", "problemów")}. Przy takim stanie łatanie się nie opłaca, nowa strona za ${zl(cena)} zaczyna od czystej karty.`,
+    };
+  if (a.zBledem / a.sprawdzone > 0.3)
+    return {
+      decyzja: "nowa",
+      strona,
+      powod: `${audyt}, ale ${a.zBledem} z ${a.sprawdzone} podstron zwraca błąd. Lepiej postawić nową stronę za ${zl(cena)} niż łatać.`,
+    };
+  if (a.naprawa >= cena / 2)
+    return {
+      decyzja: "nowa",
+      strona,
+      powod: `${audyt}. Naprawa kosztowałaby ${zl(a.naprawa)}, ponad połowę nowej strony za ${zl(cena)}, więc lepiej postawić nową.`,
+    };
+  if (!a.naprawa)
+    return {
+      decyzja: "opieka",
+      strona,
+      powod: `${audyt}, nic do płatnej naprawy. Nowa strona nie jest potrzebna.`,
+    };
+  return {
+    decyzja: "poprawki",
+    strona,
+    powod: `${audyt}, ${odm(a.pozycji, "rzecz", "rzeczy", "rzeczy")} do poprawy. Naprawa za ${zl(a.naprawa)} w ${odm(a.dni, "dzień roboczy", "dni robocze", "dni roboczych")} zamiast nowej strony za ${zl(cena)}.`,
+  };
+}
 
 /** Najwyżej jedna strona (sklep zostaje, landing i firmowa według wielkości),
- *  ocena handlowców tylko z CRM i tylko przy zespole. Działająca strona
- *  dostaje audyt zamiast nowej, a bez strony audytu nie ma czego sprawdzać. */
+ *  ocena handlowców tylko z CRM i tylko przy zespole. O nowej stronie albo
+ *  poprawkach decyduje audyt; bez audytu poprawek nie ma z czego wycenić. */
 export function uporzadkujPakiet<T extends { id: string; powod: string }>(
   pakiet: T[],
   wielkosc: string | undefined,
-  maStrone: boolean,
+  d: DecyzjaStrony | null,
 ): T[] {
   const w = wielkosc ? WIELKOSC[wielkosc] : undefined;
+  const nowa = (id: string) => id === "landing" || id === "firmowa";
   let strona = false;
   const wynik: T[] = [];
-  if (maStrone && !pakiet.some((p) => p.id === "audyt"))
-    wynik.push({ ...pakiet[0], id: "audyt", powod: POWOD_AUDYTU });
+  if (d?.decyzja === "poprawki")
+    wynik.push({ ...pakiet[0], id: "poprawki", powod: d.powod });
+  if (d?.decyzja === "nowa" && !pakiet.some((p) => STRONY.includes(p.id))) {
+    wynik.push({ ...pakiet[0], id: d.strona, powod: d.powod });
+    strona = true;
+  }
   for (const p of pakiet) {
     if (wynik.some((x) => x.id === p.id)) continue;
-    if (p.id === "audyt" && !maStrone) continue;
-    if (maStrone && (p.id === "landing" || p.id === "firmowa")) continue;
+    if (p.id === "poprawki") continue;
+    if (nowa(p.id) && d && d.decyzja !== "nowa") continue;
     if (STRONY.includes(p.id)) {
       if (strona) continue;
       strona = true;
-      wynik.push(w && p.id !== "sklep" ? { ...p, id: w.strona } : p);
+      wynik.push(
+        p.id === "sklep"
+          ? p
+          : { ...p, id: w?.strona ?? p.id, powod: d ? d.powod : p.powod },
+      );
     } else if (p.id === "ocena") {
       if (wielkosc === "tylko ja") continue;
       if (!pakiet.some((x) => x.id === "crm")) wynik.push({

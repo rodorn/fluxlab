@@ -1,11 +1,12 @@
 import { NextResponse } from "next/server";
 import { originDozwolony, utworzLimit } from "@/lib/limit-ip";
-import type { FaktyStrony } from "../route";
 import {
-  POWOD_AUDYTU,
   STRONY,
   USLUGI_HANDLOWCA,
+  decyzjaStrony,
   uporzadkujPakiet,
+  type AudytHandlowca,
+  type DecyzjaStrony,
 } from "@/lib/uslugiHandlowca";
 
 /** Wirtualny handlowiec, etap 2: z profilu firmy i odpowiedzi klienta
@@ -55,7 +56,7 @@ const SCHEMAT = {
 const INSTRUKCJE = `Jesteś najlepszym handlowcem FluxLab. Klient właśnie zobaczył analizę swojej firmy. Twoje zadanie: zainteresować go i zachęcić do krótkiej rozmowy telefonicznej z nami.
 Przejdź po kolei przez każdą usługę z katalogu i oceń, czy pasuje. Proponuj śmiało wszystko, co fakty uzasadniają, zwykle 3-5 usług, i pokaż, jak usługi się wzmacniają (np. wizytówka przyciąga telefony, CRM pilnuje, żeby żaden nie przepadł).
 Sprzedawaj korzyścią, nie opisem usługi. Każdy powód zaczynaj od faktu z profilu (liczba opinii, brak odpowiedzi, wolna strona, brak wizytówki, wielkość zespołu, przychody), potem nazwij, co ten fakt kosztuje (klienci idą do konkurencji, leady giną, czas zespołu), i efekt po wdrożeniu. Bez ogólników typu "warto rozważyć", "może pomóc", "nie widać potrzeby".
-Gdy firma ma działającą stronę, nie proponuj nowej strony: proponuj audyt całej strony i opiekę nad stroną, a w powodzie nazwij, co audyt sprawdzi. Nową stronę tylko gdy strony brak albo jest wyraźnie zepsuta (brak HTTPS, nie działa, ładuje się kilka sekund).
+Stronę firmy już zbadaliśmy audytem (pole audyt: wynik, podstrony, błędy, najważniejsze ustalenia, koszt naprawy). Decyzję o stronie podjął audyt (pole decyzja_strony): "poprawki" to naprawa obecnej strony, "nowa" to nowa strona, "opieka" to brak potrzeby zmian. Trzymaj się tej decyzji, a we wstępie oprzyj się na liczbach z audytu. Gdy audytu nie ma, nową stronę proponuj tylko, gdy strony brak albo jest wyraźnie zepsuta.
 Najwyżej jedna strona jednorazowa. Rodzaj strony według wielkości firmy: tylko ja albo 2-5 osób to landing, 6-20 i ponad 20 to firmowa; sklep tylko gdy firma sprzedaje produkty.
 Wizytówkę Google proponuj zawsze, chyba że profil pokazuje, że jest prowadzona na bieżąco (świeże posty i odpowiedzi na opinie). Gdy jej nie ma, powód to założenie wizytówki.
 CRM proponuj firmom z zespołem albo z klientami z kilku kanałów (telefon, formularz, Google, social media). Ocenę handlowców tylko przy zespole, zawsze razem z CRM. Wielkość firmy oceniaj z odpowiedzi klienta i danych finansowych z profilu (przychody, zatrudnienie).
@@ -83,18 +84,20 @@ export async function POST(req: Request) {
 
   let material = "";
   let wielkosc: string | undefined;
-  let maStrone = false;
+  let audyt: AudytHandlowca | null = null;
+  let decyzja: DecyzjaStrony | null = null;
   try {
     const body = await req.json();
     wielkosc = body.odpowiedzi?.osoby?.[0];
-    const f: FaktyStrony | null = body.strona ?? null;
-    maStrone = !!f && f.https && f.ms < 3000 && (f.formularz || f.telefon);
+    audyt = body.audyt ?? null;
+    decyzja = audyt && decyzjaStrony(audyt, wielkosc);
     material = JSON.stringify({
-      strona_dziala: maStrone,
+      decyzja_strony: decyzja,
+      audyt,
       profil: body.profil ?? null,
       strona: body.strona ?? null,
       odpowiedzi: body.odpowiedzi ?? {},
-    }).slice(0, 8000);
+    }).slice(0, 12000);
   } catch {
     return NextResponse.json({ error: "Nieprawidłowe dane" }, { status: 400 });
   }
@@ -147,28 +150,38 @@ export async function POST(req: Request) {
     const pakiet = uporzadkujPakiet(
       wynik.oceny.filter((o) => o.pasuje),
       wielkosc,
-      maStrone,
+      decyzja,
     ).map(({ id, powod }) => ({ id, powod }));
     const odrzucone = wynik.oceny
       .filter((o) => !pakiet.some((p) => p.id === o.id))
       .map(({ id, pasuje, powod }) => ({
         id,
         powod:
-          maStrone && (id === "landing" || id === "firmowa")
-            ? POWOD_AUDYTU
-            : pasuje && STRONY.includes(id)
-            ? ""
-            : pasuje && id === "ocena"
-              ? "Ocena handlowców ma sens przy zespole."
-              : id === "audyt" && !maStrone
-                ? "Przyda się, gdy będziesz mieć stronę."
-                : powod,
+          decyzja &&
+          decyzja.decyzja !== "nowa" &&
+          (id === "landing" || id === "firmowa")
+            ? decyzja.powod
+            : id === "poprawki"
+              ? decyzja?.decyzja === "nowa"
+                ? "Przy takim wyniku audytu poprawki się nie opłacają."
+                : decyzja?.decyzja === "opieka"
+                  ? "Audyt nie znalazł nic do płatnej naprawy."
+                  : "Wyceniamy je po audycie Twojej strony."
+              : pasuje && STRONY.includes(id)
+                ? ""
+                : pasuje && id === "ocena"
+                  ? "Ocena handlowców ma sens przy zespole."
+                  : powod,
       }));
     return NextResponse.json({
       wstep: wynik.wstep,
       zaproszenie: wynik.zaproszenie,
       pakiet,
       odrzucone,
+      poprawki:
+        decyzja?.decyzja === "poprawki" && audyt
+          ? { cena: audyt.naprawa, dni: audyt.dni }
+          : null,
     });
   } catch {
     return NextResponse.json(

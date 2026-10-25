@@ -7,6 +7,8 @@ import {
   STRONY,
   USLUGI_HANDLOWCA,
   WIELKOSC,
+  odm,
+  type AudytHandlowca,
   type UslugaHandlowca,
 } from "@/lib/uslugiHandlowca";
 import { WARIANTY_CRM, abonamentCrm, type WariantCrm } from "@/lib/modulyCrm";
@@ -40,6 +42,7 @@ type Pakiet = {
   zaproszenie: string;
   pakiet: { id: string; powod: string }[];
   odrzucone: { id: string; powod: string }[];
+  poprawki: { cena: number; dni: number } | null;
 };
 
 const PYTANIA = [
@@ -140,6 +143,8 @@ export default function WirtualnyHandlowiec() {
   const [rejestr, setRejestr] = useState<Rejestr | null>(null);
   const [zapytania, setZapytania] = useState<string[]>([]);
   const [profil, setProfil] = useState<Profil | null>(null);
+  const [audyt, setAudyt] = useState<AudytHandlowca | null>(null);
+  const [audytTrwa, setAudytTrwa] = useState(false);
   const [odpowiedzi, setOdpowiedzi] = useState<Record<string, string[]>>({});
   const [pakiet, setPakiet] = useState<Pakiet | null>(null);
   const [wybrane, setWybrane] = useState<string[]>([]);
@@ -174,6 +179,8 @@ export default function WirtualnyHandlowiec() {
     setRejestr(null);
     setZapytania([]);
     setProfil(null);
+    setAudyt(null);
+    setAudytTrwa(false);
     setPakiet(null);
     setWybrane([]);
     setPostep(0);
@@ -210,17 +217,24 @@ export default function WirtualnyHandlowiec() {
             setZapytania((q) =>
               q.includes(z.zapytanie) ? q : [...q, z.zapytanie],
             );
-          else if (z.typ === "profil") gotowyProfil = z.dane;
-          else if (z.typ === "blad") throw new Error(z.error);
+          else if (z.typ === "audyt_start") setAudytTrwa(true);
+          else if (z.typ === "audyt") {
+            if (z.dane) setAudyt(z.dane);
+            setAudytTrwa(false);
+          } else if (z.typ === "profil") {
+            gotowyProfil = z.dane;
+            setProfil(z.dane);
+            setEtap("gotowe");
+            zglosZdarzenie("handlowiec_profil");
+          } else if (z.typ === "blad") throw new Error(z.error);
         }
       }
+      setAudytTrwa(false);
       if (!gotowyProfil)
         throw new Error("Analiza się nie zakończyła. Spróbuj jeszcze raz.");
-      setProfil(gotowyProfil);
       setPostep(100);
-      setEtap("gotowe");
-      zglosZdarzenie("handlowiec_profil");
     } catch (err) {
+      setAudytTrwa(false);
       if (ac.signal.aborted) return;
       setBlad(
         err instanceof Error
@@ -239,7 +253,7 @@ export default function WirtualnyHandlowiec() {
       const res = await fetch("/api/handlowiec/pakiet", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ profil, strona, odpowiedzi }),
+        body: JSON.stringify({ profil, strona, audyt, odpowiedzi }),
       });
       const j = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(j.error || "Nie udało się dobrać pakietu.");
@@ -266,9 +280,9 @@ export default function WirtualnyHandlowiec() {
   const komplet = PYTANIA.every((p) => (odpowiedzi[p.id] ?? []).length > 0);
 
   useEffect(() => {
-    if (profil && komplet && !pakiet && !ladPakiet) dobierz();
+    if (profil && komplet && !audytTrwa && !pakiet && !ladPakiet) dobierz();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [profil, komplet]);
+  }, [profil, komplet, audytTrwa]);
 
   function zaznacz(pid: string, opcja: string, wiele: boolean) {
     setOdpowiedzi((o) => {
@@ -286,8 +300,13 @@ export default function WirtualnyHandlowiec() {
   const prog = (id: string) => PROGI[id]?.[progi[id] ?? 0];
   const mies = (u: UslugaHandlowca) =>
     u.id === "crm" ? crmMies : (prog(u.id)?.cena ?? u.miesiecznie);
+  const poprawki = pakiet?.poprawki;
+  const jedn = (u: UslugaHandlowca) =>
+    u.id === "poprawki" ? (poprawki?.cena ?? 0) : u.jednorazowo;
   const cena = (u: UslugaHandlowca) => {
     const p = prog(u.id);
+    if (u.id === "poprawki" && poprawki)
+      return `${zl(poprawki.cena)} jednorazowo, ${odm(poprawki.dni, "dzień roboczy", "dni robocze", "dni roboczych")}`;
     return u.id === "crm"
       ? `${zl(crmMies)}/mies., ${osobyCrm} ${osobyCrm === 1 ? "osoba" : osobyCrm < 5 ? "osoby" : "osób"}`
       : p
@@ -295,7 +314,7 @@ export default function WirtualnyHandlowiec() {
         : u.cena;
   };
   const uslugi = USLUGI_HANDLOWCA.filter((u) => wybrane.includes(u.id));
-  const jednorazowo = uslugi.reduce((s, u) => s + u.jednorazowo, 0);
+  const jednorazowo = uslugi.reduce((s, u) => s + jedn(u), 0);
   const miesiecznie = uslugi.reduce((s, u) => s + mies(u), 0);
   const od = wybrane.includes("sklep_ai") ? "od " : "";
 
@@ -303,9 +322,14 @@ export default function WirtualnyHandlowiec() {
     setWybrane((w) => {
       if (w.includes(id))
         return w.filter((x) => x !== id && !(id === "crm" && x === "ocena"));
+      const nowa = (x: string) => x === "landing" || x === "firmowa";
       const bez = STRONY.includes(id)
-        ? w.filter((x) => !STRONY.includes(x))
-        : w;
+        ? w.filter(
+            (x) => !STRONY.includes(x) && !(nowa(id) && x === "poprawki"),
+          )
+        : id === "poprawki"
+          ? w.filter((x) => !nowa(x))
+          : w;
       return id === "ocena" && !bez.includes("crm")
         ? [...bez, "crm", id]
         : [...bez, id];
@@ -324,9 +348,10 @@ export default function WirtualnyHandlowiec() {
   const pozostale = [
     ...(pakiet?.odrzucone ?? [])
       .map((p) => USLUGI_HANDLOWCA.find((u) => u.id === p.id)!)
-      .filter(Boolean),
+      .filter((u) => u && (u.id !== "poprawki" || poprawki)),
     ...USLUGI_HANDLOWCA.filter(
       (u) =>
+        (u.id !== "poprawki" || poprawki) &&
         !pakiet?.pakiet.some((p) => p.id === u.id) &&
         !pakiet?.odrzucone.some((p) => p.id === u.id),
     ),
@@ -450,6 +475,60 @@ export default function WirtualnyHandlowiec() {
                 {rejestr.od && `, od ${rejestr.od.slice(0, 4)}`}
               </p>
             )}
+            {(audytTrwa || audyt) && (
+              <div className="mb-4">
+                <p className="mb-2 text-sm font-semibold text-gray-900 dark:text-white">
+                  Audyt strony
+                </p>
+                {audyt ? (
+                  <>
+                    <div className="flex flex-wrap gap-2">
+                      {audyt.punkty !== null && (
+                        <Chip dobrze={audyt.punkty >= 70}>
+                          wynik {audyt.punkty}/100
+                        </Chip>
+                      )}
+                      <Chip dobrze>
+                        {odm(audyt.sprawdzone, "podstrona", "podstrony", "podstron")}
+                      </Chip>
+                      <Chip dobrze={audyt.zBledem === 0}>
+                        {audyt.zBledem
+                          ? `${audyt.zBledem} z błędem`
+                          : "bez błędów"}
+                      </Chip>
+                      <Chip dobrze={audyt.zlamane === 0}>
+                        {audyt.zlamane
+                          ? odm(audyt.zlamane, "martwy link", "martwe linki", "martwych linków")
+                          : "bez martwych linków"}
+                      </Chip>
+                    </div>
+                    {audyt.ustalenia.length > 0 && (
+                      <ul className="mt-3 space-y-1 text-sm text-gray-700 dark:text-gray-300">
+                        {audyt.ustalenia.slice(0, 5).map((u) => (
+                          <li key={u.tytul} className="flex gap-2">
+                            <span
+                              aria-hidden="true"
+                              className={
+                                u.waga === "krytyczne"
+                                  ? "text-red-600 dark:text-red-400"
+                                  : "text-amber-600 dark:text-amber-400"
+                              }
+                            >
+                              ●
+                            </span>
+                            {u.tytul}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </>
+                ) : (
+                  <p className="animate-pulse text-sm text-gray-600 dark:text-gray-400">
+                    Sprawdzamy podstrony, linki, tytuły i szybkość...
+                  </p>
+                )}
+              </div>
+            )}
 
             {!profil && (
               <ul className="space-y-2">
@@ -572,12 +651,14 @@ export default function WirtualnyHandlowiec() {
                 <button
                   type="button"
                   onClick={dobierz}
-                  disabled={!profil || ladPakiet}
+                  disabled={!profil || ladPakiet || audytTrwa}
                   className="btn-primary mt-6 w-full disabled:opacity-60"
                 >
                   {ladPakiet
                     ? "Dobieramy pakiet..."
-                    : profil
+                    : profil && audytTrwa
+                      ? "Kończymy audyt strony..."
+                      : profil
                       ? "Pokaż propozycję"
                       : `Sprawdzamy firmę: ${postep}%`}
                 </button>
