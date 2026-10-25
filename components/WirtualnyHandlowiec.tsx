@@ -37,6 +37,7 @@ type Profil = {
 };
 type Pakiet = {
   wstep: string;
+  zaproszenie: string;
   pakiet: { id: string; powod: string }[];
   odrzucone: { id: string; powod: string }[];
 };
@@ -87,7 +88,8 @@ const OBSZARY: Record<string, string> = {
 
 const zl = (n: number) => `${n.toLocaleString("pl-PL")} zł`;
 
-function doFormularza(tekst: string) {
+function doFormularza(tekst: string, telefon = false) {
+  if (telefon) window.dispatchEvent(new CustomEvent("ustaw-forme-kontaktu", { detail: "phone" }));
   const msg = document.getElementById("message") as HTMLTextAreaElement | null;
   if (msg) {
     Object.getOwnPropertyDescriptor(
@@ -100,7 +102,9 @@ function doFormularza(tekst: string) {
     .getElementById("kontakt")
     ?.scrollIntoView({ behavior: "smooth", block: "start" });
   window.setTimeout(() => {
-    (document.getElementById("email") as HTMLInputElement | null)?.focus({
+    (
+      document.getElementById(telefon ? "phone" : "email") as HTMLInputElement | null
+    )?.focus({
       preventScroll: true,
     });
   }, 600);
@@ -328,8 +332,8 @@ export default function WirtualnyHandlowiec() {
     ),
   ];
 
-  function wyslijPakiet() {
-    zglosZdarzenie("handlowiec_do_formularza");
+  function wyslijPakiet(telefon: boolean) {
+    zglosZdarzenie(telefon ? "handlowiec_telefon" : "handlowiec_do_formularza");
     doFormularza(
       [
         `Pakiet dla: ${profil?.firma.nazwa ?? firma}`,
@@ -343,6 +347,7 @@ export default function WirtualnyHandlowiec() {
       ]
         .filter(Boolean)
         .join("\n"),
+      telefon,
     );
   }
 
@@ -718,13 +723,26 @@ export default function WirtualnyHandlowiec() {
                       .join(" + ") || "nic nie wybrano"}
                   </span>
                 </div>
+                {pakiet.zaproszenie && (
+                  <p className="mt-5 text-sm font-medium text-gray-900 dark:text-white">
+                    {pakiet.zaproszenie}
+                  </p>
+                )}
                 <button
                   type="button"
-                  onClick={wyslijPakiet}
+                  onClick={() => wyslijPakiet(true)}
                   disabled={!uslugi.length}
-                  className="btn-primary mt-5 w-full disabled:opacity-60"
+                  className="btn-primary mt-4 w-full disabled:opacity-60"
                 >
-                  Wyślij nam ten pakiet
+                  Poproś o telefon
+                </button>
+                <button
+                  type="button"
+                  onClick={() => wyslijPakiet(false)}
+                  disabled={!uslugi.length}
+                  className="mt-3 w-full text-center text-sm text-gray-600 underline-offset-4 hover:text-accent hover:underline disabled:opacity-60 dark:text-gray-400"
+                >
+                  Wolisz mail? Wyślij nam ten pakiet
                 </button>
               </>
             )}

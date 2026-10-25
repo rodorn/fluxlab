@@ -16,12 +16,17 @@ const limit = utworzLimit();
 const SCHEMAT = {
   type: "object",
   additionalProperties: false,
-  required: ["wstep", "oceny"],
+  required: ["wstep", "oceny", "zaproszenie"],
   properties: {
     wstep: {
       type: "string",
       description:
-        "Jedno zdanie do klienta: co najbardziej mu pomoże i dlaczego",
+        "2-3 zdania: konkretny fakt z profilu, co on kosztuje firmę i co zmienimy. Najwyżej 50 słów",
+    },
+    zaproszenie: {
+      type: "string",
+      description:
+        "1-2 zdania zachęty do krótkiej rozmowy telefonicznej: co konkretnie dla tej firmy pokażemy albo policzymy w 15 minut. Najwyżej 35 słów",
     },
     oceny: {
       type: "array",
@@ -37,7 +42,7 @@ const SCHEMAT = {
           powod: {
             type: "string",
             description:
-              "Jedno zdanie oparte na konkretnym fakcie z profilu albo odpowiedzi: dlaczego pasuje albo dlaczego nie",
+              "Najwyżej 25 słów. Gdy pasuje: fakt z profilu, problem i efekt dla klienta. Gdy nie pasuje: kiedy ta usługa się przyda",
           },
         },
       },
@@ -45,11 +50,14 @@ const SCHEMAT = {
   },
 };
 
-const INSTRUKCJE = `Jesteś handlowcem FluxLab. Na podstawie profilu firmy i odpowiedzi klienta przejdź po kolei przez każdą usługę z katalogu i oceń, czy pasuje. Zwykle pasuje 3-5 usług.
+const INSTRUKCJE = `Jesteś najlepszym handlowcem FluxLab. Klient właśnie zobaczył analizę swojej firmy. Twoje zadanie: zainteresować go i zachęcić do krótkiej rozmowy telefonicznej z nami.
+Przejdź po kolei przez każdą usługę z katalogu i oceń, czy pasuje. Proponuj śmiało wszystko, co fakty uzasadniają, zwykle 3-5 usług, i pokaż, jak usługi się wzmacniają (np. wizytówka przyciąga telefony, CRM pilnuje, żeby żaden nie przepadł).
+Sprzedawaj korzyścią, nie opisem usługi. Każdy powód zaczynaj od faktu z profilu (liczba opinii, brak odpowiedzi, wolna strona, brak wizytówki, wielkość zespołu, przychody), potem nazwij, co ten fakt kosztuje (klienci idą do konkurencji, leady giną, czas zespołu), i efekt po wdrożeniu. Bez ogólników typu "warto rozważyć", "może pomóc", "nie widać potrzeby".
 Najwyżej jedna strona jednorazowa, i tylko gdy strona jest słaba albo jej brak. Rodzaj strony według wielkości firmy: tylko ja albo 2-5 osób to landing, 6-20 i ponad 20 to firmowa; sklep tylko gdy firma sprzedaje produkty.
 Wizytówkę Google proponuj zawsze, chyba że profil pokazuje, że jest prowadzona na bieżąco (świeże posty i odpowiedzi na opinie). Gdy jej nie ma, powód to założenie wizytówki.
-CRM proponuj firmom z zespołem albo z leadami z kilku kanałów. Ocenę handlowców tylko przy zespole, zawsze razem z CRM. Wielkość firmy oceniaj z odpowiedzi klienta i danych finansowych z profilu (przychody, zatrudnienie). Nie proponuj usług, których fakty nie uzasadniają.
-Każdy powód oprzyj na fakcie. Pisz po polsku do jednej osoby na "ty" w liczbie pojedynczej (masz, Twoja, Ci), nigdy "wy", "wam", "macie". O FluxLab "my". Krótko, bez długich myślników i emoji.
+CRM proponuj firmom z zespołem albo z klientami z kilku kanałów (telefon, formularz, Google, social media). Ocenę handlowców tylko przy zespole, zawsze razem z CRM. Wielkość firmy oceniaj z odpowiedzi klienta i danych finansowych z profilu (przychody, zatrudnienie).
+Zaproszenie do rozmowy ma być konkretne dla tej firmy: co pokażemy albo policzymy w 15 minut (np. ile telefonów z Map traci, jak wygląda przy konkurencji). Bez nacisku i bez obietnic wyników.
+Nie zmyślaj: liczby i fakty tylko z profilu i odpowiedzi, żadnych procentów wzrostu, klientów ani gwarancji. Pisz po polsku do jednej osoby na "ty" w liczbie pojedynczej (masz, Twoja, Ci), nigdy "wy", "wam", "macie". O FluxLab "my". Krótko, bez długich myślników i emoji.
 Katalog:
 ${USLUGI_HANDLOWCA.map((u) => `- ${u.id}: ${u.nazwa} (${u.cena}). ${u.kiedy}`).join("\n")}`;
 
@@ -126,6 +134,7 @@ export async function POST(req: Request) {
       .join("");
     const wynik: {
       wstep: string;
+      zaproszenie: string;
       oceny: { id: string; pasuje: boolean; powod: string }[];
     } = JSON.parse(tekst);
     const pakiet = uporzadkujPakiet(
@@ -143,7 +152,12 @@ export async function POST(req: Request) {
               ? "Ocena handlowców ma sens przy zespole."
               : powod,
       }));
-    return NextResponse.json({ wstep: wynik.wstep, pakiet, odrzucone });
+    return NextResponse.json({
+      wstep: wynik.wstep,
+      zaproszenie: wynik.zaproszenie,
+      pakiet,
+      odrzucone,
+    });
   } catch {
     return NextResponse.json(
       { error: "Nie udało się dobrać pakietu. Spróbuj jeszcze raz." },

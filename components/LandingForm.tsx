@@ -160,6 +160,18 @@ export default function LandingForm({
   const tickRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   useEffect(() => {
+    const ustaw = (e: Event) => {
+      const forma = (e as CustomEvent<Kontakt>).detail;
+      setKontakt(forma);
+      setKrok(0);
+      setErrorMsg(null);
+      window.dispatchEvent(new CustomEvent("forma-kontaktu", { detail: forma }));
+    };
+    window.addEventListener("ustaw-forme-kontaktu", ustaw);
+    return () => window.removeEventListener("ustaw-forme-kontaktu", ustaw);
+  }, []);
+
+  useEffect(() => {
     setNagrywanieDostepne(
       typeof MediaRecorder !== "undefined" &&
         !!navigator.mediaDevices?.getUserMedia,
