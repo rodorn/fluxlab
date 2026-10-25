@@ -8001,3 +8001,11 @@ Decyzje dla stratega: sprawdzić, skąd 73 sesje bez odsyłacza (strony wejścia
 **Dowód:** `cykl/z9-frazy-2026-10-25.txt`, linia Z9 w `cykl/plan-ruchu.md`.
 **Dla Pawła:**
 **Zostało otwarte:** Z10 (link /widocznosc-w-ai → /asystent-ai-na-stronie, kamień 2) i dalej według planu; rytm „zwolnij”, jedno zadanie na cykl.
+
+## 2026-10-25 10:58
+**Kanał:** widoczność w AI / Google (Z10 planu, kamień 2 z 2).
+**Co zrobione:** na /widocznosc-w-ai jedno zdanie wymienione na zdanie o tej samej długości z linkiem „asystent AI na stronę” do /asystent-ai-na-stronie (wcześniej 0 odnośników, kanibalizacja frazy).
+**Ruch:** ostatnia doba 161 odsłon, 124 osoby (+35% wobec średniej 118,9); najczęściej /, /ksef-2027, /kalkulator-podatkowy; LinkedIn 2 sesje, YouTube 0, X 0, Threads 0; uruchomienia narzędzi 2.
+**Dowód:** commit 426afa5; `curl -s https://fluxlab.pl/widocznosc-w-ai | grep -c 'href="/asystent-ai-na-stronie"'` = 1; IndexNow Yandex 200, Naver 200; telefon: dotknięcie linku otwiera /asystent-ai-na-stronie.
+**Dla Pawła:**
+**Zostało otwarte:** Z11 i dalsze według godzin z planu; link stoi w zwiniętej sekcji „Jak to działa” (details), co dla robotów nie ma znaczenia, ale człowiek widzi go dopiero po rozwinięciu. Budżet: rytm „zwolnij”, więc ten cykl kończy na jednym zadaniu.
