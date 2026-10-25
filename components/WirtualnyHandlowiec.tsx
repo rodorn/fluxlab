@@ -160,15 +160,17 @@ export default function WirtualnyHandlowiec() {
   const [postep, setPostep] = useState(0);
   const przerwij = useRef<AbortController | null>(null);
 
+  const start = useRef(0);
+  const trwa = etap === "analiza" || audytTrwa;
+
   useEffect(() => {
-    if (etap !== "analiza") return;
-    const t0 = Date.now();
+    if (!trwa) return;
     const id = window.setInterval(() => {
-      const s = (Date.now() - t0) / 1000;
-      setPostep(Math.min(94, Math.round(100 * (1 - Math.exp(-s / 30)))));
+      const s = (Date.now() - start.current) / 1000;
+      setPostep(Math.min(94, Math.round(100 * (1 - Math.exp(-s / 25)))));
     }, 400);
     return () => window.clearInterval(id);
-  }, [etap]);
+  }, [trwa]);
 
   useEffect(() => () => przerwij.current?.abort(), []);
 
@@ -189,6 +191,7 @@ export default function WirtualnyHandlowiec() {
     setPakiet(null);
     setWybrane([]);
     setPostep(0);
+    start.current = Date.now();
     setEtap("analiza");
     zglosZdarzenie("handlowiec_start");
     try {
@@ -679,7 +682,7 @@ export default function WirtualnyHandlowiec() {
                   {ladPakiet
                     ? "Dobieramy pakiet..."
                     : profil && audytTrwa
-                      ? "Kończymy audyt strony..."
+                      ? `Kończymy audyt strony: ${postep}%`
                       : profil
                         ? "Pokaż propozycję"
                         : `Sprawdzamy firmę: ${postep}%`}
