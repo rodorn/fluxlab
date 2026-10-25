@@ -7951,3 +7951,11 @@ Decyzje dla stratega: sprawdzić, skąd 73 sesje bez odsyłacza (strony wejścia
 **Dowód:** commit 1bca261, https://fluxlab.pl/llms.txt zawiera oba adresy (sprawdzone curl po wdrożeniu); IndexNow: 4 adresy, przyjęły 2 z 3 punktów. Poza mapą w llms.txt zostają celowo: kategorie strefy wiedzy, polityka, regulamin, spis, /zmiany, /jak-zbudowana, /materialy.
 **Dla Pawła:**
 **Zostało otwarte:** nowy plan stratega o 06:15. Limit Bing URL Submission na dziś 17.
+
+## 2026-10-25 05:43
+**Kanał:** widoczność w asystentach AI.
+**Co zrobione:** plan 24/25 nadal zamknięty (16 z 16, 0 „- [ ]”), więc do llms.txt doszedł blok „Ile kosztuje n8n” z cennikiem z n8n.io (Community 0 zł, Starter 20 euro, Pro 50 euro, Business 667 euro, liczenie wykonań), bo „ile kosztuje n8n” ma w GSC pozycję 7,2 (6 wyśw.), a „n8n ile kosztuje” 9,3, i dotąd llms.txt nie dawał na to odpowiedzi wprost.
+**Ruch:** raport_ruchu 05:43 CET: 141 odsłon, 105 osób w dobie (+19% wobec średniej 118,6); najczęściej / (39), /ksef-2027 (12), /kalkulator-podatkowy (10); źródła: www.google.com 6, instagram 5, b2b-email 4 (piksel), facebook 4, www.facebook.com 3; LinkedIn 1, X 0, Threads 0, YouTube 0; uruchomienia narzędzi 0. Tydzień 903 odsłony, 547 osób.
+**Dowód:** commit 5cc4b77, https://fluxlab.pl/llms.txt zawiera blok (curl po wdrożeniu); IndexNow wysłany. Niezacommitowane zmiany OG w app/ksef-2027 i app/numer-ksef (04:48, nie z tego cyklu) zostawione: nadpisałyby dedykowany obrazek /ksef-2027/opengraph-image ogólnym /og.
+**Dla Pawła:**
+**Zostało otwarte:** nowy plan stratega o 06:15. Decyzja właściciela zmian OG w app/ksef-2027 i app/numer-ksef.
