@@ -46,7 +46,7 @@ const OFERTA = [
     cena: "od 499 zł/mies.",
     opis: "Lead z formularza, telefonu i poczty trafia sam do handlowca, z zadaniem „zadzwoń w 15 minut”.",
     punkty: [
-      "wdrożenie 0 zł, abonament 499 zł/mies. za 3 osoby, potem 99 zł za osobę",
+      "wdrożenie 1 zł, abonament 499 zł/mies. za 3 osoby, potem 99 zł za osobę",
       "z integracjami 1 490 zł/mies., z narzędziami AI 2 490 zł/mies.",
       "rezygnujesz w dowolnym dniu, płacisz za dni korzystania",
     ],

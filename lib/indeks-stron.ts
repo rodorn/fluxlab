@@ -20,7 +20,7 @@ export const INDEKS_STRON: WpisIndeksu[] = [
   {
     "url": "/wlasny-crm",
     "tytul": "Własny CRM dla firmy w trzy tygodnie",
-    "opis": "Własny CRM: lead z formularza, telefonu i poczty sam trafia do handlowca. Wdrożenie 0 zł, abonament od 499 zł miesięcznie za 3 osoby."
+    "opis": "Własny CRM: lead z formularza, telefonu i poczty sam trafia do handlowca. Wdrożenie 1 zł, abonament od 499 zł miesięcznie za 3 osoby."
   },
   {
     "url": "/scraping-danych",

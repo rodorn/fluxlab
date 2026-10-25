@@ -1,5 +1,5 @@
 /** Warianty i moduły AI do FluxCRM, wspólne dla konfiguratora /wlasny-crm i wyceny PDF.
- *  Wdrożenie 0 zł, CRM zarabia na abonamencie (Paweł 25.10.2026). Moduły AI
+ *  Wdrożenie 1 zł, CRM zarabia na abonamencie (Paweł 25.10.2026). Moduły AI
  *  w wariancie „Z narzędziami AI” są w cenie, w innych płatne co miesiąc. */
 
 export type WariantCrm = "pilotaz" | "integracje" | "ai";

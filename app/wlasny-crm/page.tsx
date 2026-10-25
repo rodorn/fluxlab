@@ -7,7 +7,7 @@ import PodgladCrm from "@/components/PodgladCrm";
 export const metadata: Metadata = {
   title: "Własny CRM dla firmy w trzy tygodnie | Fluxlab",
   description:
-    "Własny CRM: lead z formularza, telefonu i poczty sam trafia do handlowca. Wdrożenie 0 zł, abonament od 499 zł miesięcznie za 3 osoby.",
+    "Własny CRM: lead z formularza, telefonu i poczty sam trafia do handlowca. Wdrożenie 1 zł, abonament od 499 zł miesięcznie za 3 osoby.",
   alternates: { canonical: "/wlasny-crm" },
   openGraph: {
     title: "Własny CRM dla firmy w trzy tygodnie | Fluxlab",
@@ -33,7 +33,7 @@ export default function WlasnyCrm() {
           </div>
         </>
       }
-      cena="Wdrożenie 0 zł, abonament od 499 zł miesięcznie, ceny netto"
+      cena="Wdrożenie 1 zł, abonament od 499 zł miesięcznie, ceny netto"
       breadcrumb="Własny CRM"
       eyebrow="FluxCRM"
       h1="Własny CRM dla Twojej firmy"
@@ -61,7 +61,7 @@ export default function WlasnyCrm() {
         {
           name: "Gotowy CRM",
           price: "499 zł / mies.",
-          desc: "Wdrożenie 0 zł. Abonament obejmuje 3 konta, każde kolejne 99 zł miesięcznie.",
+          desc: "Wdrożenie 1 zł. Abonament obejmuje 3 konta, każde kolejne 99 zł miesięcznie.",
           features: [
             "Gotowy lejek, leady z formularza i poczty",
             "Aplikacja na komputer i telefon",
@@ -71,7 +71,7 @@ export default function WlasnyCrm() {
         {
           name: "Z integracjami",
           price: "1 490 zł / mies.",
-          desc: "Wdrożenie 0 zł. Integracje i automatyzacje dokładamy co miesiąc w abonamencie. 3 konta, każde kolejne 99 zł.",
+          desc: "Wdrożenie 1 zł. Integracje i automatyzacje dokładamy co miesiąc w abonamencie. 3 konta, każde kolejne 99 zł.",
           features: [
             "Dowolne integracje i automatyzacje, jakich potrzebujesz",
             "Lejek pod Twoją branżę, także leady z telefonu",
@@ -83,7 +83,7 @@ export default function WlasnyCrm() {
         {
           name: "CRM z narzędziami AI",
           price: "2 490 zł / mies.",
-          desc: "Wszystko z wariantu z integracjami plus narzędzia AI. Wdrożenie 0 zł, 3 konta, każde kolejne 99 zł.",
+          desc: "Wszystko z wariantu z integracjami plus narzędzia AI. Wdrożenie 1 zł, 3 konta, każde kolejne 99 zł.",
           features: [
             "Ocena handlowców przez AI z notatek, SMS-ów, maili i rozmów",
             "Szkice maili i SMS-ów dopasowane do sytuacji klienta",
@@ -95,7 +95,7 @@ export default function WlasnyCrm() {
       faq={[
         {
           q: "Ile kosztuje własny CRM?",
-          a: "Wdrożenie 0 zł, płacisz tylko abonament za 3 konta i 99 zł za każde kolejne: gotowy CRM 499 zł miesięcznie, z dowolnymi integracjami i automatyzacjami 1 490 zł, z narzędziami AI do tekstu i nagrań 2 490 zł. Ceny netto. W abonamencie są serwer w UE, kopie, aktualizacje i rozwój.",
+          a: "Wdrożenie 1 zł, płacisz tylko abonament za 3 konta i 99 zł za każde kolejne: gotowy CRM 499 zł miesięcznie, z dowolnymi integracjami i automatyzacjami 1 490 zł, z narzędziami AI do tekstu i nagrań 2 490 zł. Ceny netto. W abonamencie są serwer w UE, kopie, aktualizacje i rozwój.",
         },
         {
           q: "Czym to się różni od Pipedrive?",

@@ -83,7 +83,7 @@ export function dekodujWycene(d: string | undefined): Wycena | null {
     return {
       tytul: "FluxCRM",
       pozycje: [
-        { nazwa: `Wdrożenie: ${w.nazwa}`, opis: "Bez opłaty", netto: 0 },
+        { nazwa: `Wdrożenie: ${w.nazwa}`, opis: "Płatność jednorazowa", netto: 1 },
         {
           nazwa: "Abonament miesięczny",
           opis:
@@ -98,9 +98,9 @@ export function dekodujWycene(d: string | undefined): Wycena | null {
             : { nazwa: m.nazwa, info: `${m.miesiecznie} zł/mies., doliczone wyżej` },
         ),
       ],
-      sumaEtykieta: "Rok abonamentu (12 miesięcy, rezygnacja w dowolnym dniu)",
+      sumaEtykieta: "Pierwszy rok (wdrożenie plus 12 miesięcy abonamentu, rezygnacja w dowolnym dniu)",
       sumaOd: false,
-      suma: 12 * miesiecznie,
+      suma: 1 + 12 * miesiecznie,
     };
   }
   return null;

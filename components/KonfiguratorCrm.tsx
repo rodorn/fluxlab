@@ -44,7 +44,7 @@ export default function KonfiguratorCrm() {
 
   const [wariant, setWariant] = useState<WariantCrm>("integracje");
   const { baza, platne, miesiecznie } = abonamentCrm(wariant, osoby, moduly);
-  const rok = 12 * miesiecznie;
+  const rok = 1 + 12 * miesiecznie;
 
   const aMies = useAnimowana(miesiecznie);
   const aRok = useAnimowana(rok);
@@ -62,7 +62,7 @@ export default function KonfiguratorCrm() {
       (moduly.length
         ? `Moduły AI: ${MODULY_CRM.filter((m) => moduly.includes(m.id)).map((m) => m.nazwa).join(", ")}. `
         : "") +
-      `Abonament ${zl(miesiecznie)} zł netto miesięcznie, wdrożenie 0 zł, ` +
+      `Abonament ${zl(miesiecznie)} zł netto miesięcznie, wdrożenie 1 zł, ` +
       `rok ${zl(rok)} zł netto.`;
     const pole = document.getElementById(
       "message",
@@ -90,7 +90,7 @@ export default function KonfiguratorCrm() {
           Policz abonament dla swojego zespołu
         </h2>
         <p className="mt-3 text-gray-600 dark:text-gray-300">
-          Wybierz liczbę osób i wariant. Wdrożenie 0 zł, ceny netto.
+          Wybierz liczbę osób i wariant. Wdrożenie 1 zł, ceny netto.
         </p>
 
         <div className="mt-8 rounded-2xl border border-gray-200/80 bg-white/60 p-6 text-center dark:border-gray-800/80 dark:bg-gray-900/40 sm:p-8">
@@ -232,12 +232,12 @@ export default function KonfiguratorCrm() {
                   Wdrożenie
                 </p>
                 <p className="text-2xl font-bold tabular-nums text-gray-900 dark:text-white">
-                  0&nbsp;zł
+                  1&nbsp;zł
                 </p>
               </div>
               <div>
                 <p className="text-sm text-gray-600 dark:text-gray-400">
-                  Rok abonamentu
+                  Pierwszy rok
                 </p>
                 <p className="text-2xl font-bold tabular-nums text-gray-900 dark:text-white">
                   {zl(aRok)}&nbsp;zł
