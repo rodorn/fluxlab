@@ -14,7 +14,7 @@ export type Rodzaj = {
   opis: string;
   cena: number;
   podstron: number;
-  tygodnie: number;
+  dni: number;
   /** Co zwykle wchodzi w pakiet podstron. */
   przyklad: string;
 };
@@ -26,7 +26,7 @@ export const RODZAJE: Rodzaj[] = [
     opis: "Formularz i kalendarz spotkań.",
     cena: 2900,
     podstron: 5,
-    tygodnie: 1,
+    dni: 7,
     przyklad: "strona główna, oferta, o nas, realizacje, kontakt",
   },
   {
@@ -35,7 +35,7 @@ export const RODZAJE: Rodzaj[] = [
     opis: "Do 15 podstron, blog, panel edycji, Profil Google.",
     cena: 5900,
     podstron: 15,
-    tygodnie: 3,
+    dni: 12,
     przyklad: "do tego osobna podstrona każdej usługi, cennik, pytania, zespół",
   },
   {
@@ -44,7 +44,7 @@ export const RODZAJE: Rodzaj[] = [
     opis: "Katalog, płatności, kurier i faktury.",
     cena: 9900,
     podstron: 15,
-    tygodnie: 5,
+    dni: 21,
     przyklad: "kategorie, koszyk, konto klienta, regulamin; produkty nie są liczone",
   },
 ];
@@ -183,7 +183,7 @@ export type WynikWyceny = {
   suma: number;
   miesiecznie: number;
   abonamenty: PozycjaWyceny[];
-  tygodnie: number;
+  dni: number;
 };
 
 const sto = (n: number) => Math.round(n / 100) * 100;
@@ -249,14 +249,15 @@ export function wycenStrone(k: KonfiguracjaStrony): WynikWyceny | null {
     if (o.miesiecznie) abonamenty.push({ nazwa: o.nazwa, netto: o.miesiecznie });
   }
 
-  const tygodnie =
-    rodzaj.tygodnie +
+  const dni =
+    rodzaj.dni +
+    5 * (
     Math.ceil(ponad / 10) +
     (tresci.id === "piszemy" ? 1 : 0) +
     (j ? 1 : 0) +
     (k.o.includes("projekt") ? 1 : 0) +
     (k.o.includes("chatbot") ? 1 : 0) +
-    (produkty && produkty.cena ? 1 : 0);
+    (produkty && produkty.cena ? 1 : 0));
 
   return {
     rodzaj,
@@ -265,9 +266,8 @@ export function wycenStrone(k: KonfiguracjaStrony): WynikWyceny | null {
     suma: pozycje.reduce((s, x) => s + x.netto, 0),
     miesiecznie: abonamenty.reduce((s, x) => s + x.netto, 0),
     abonamenty,
-    tygodnie,
+    dni,
   };
 }
 
-export const terminTekst = (t: number) =>
-  t === 1 ? "7 dni" : `${t} ${t < 5 ? "tygodnie" : "tygodni"}`;
+export const terminTekst = (dni: number) => `${dni} dni`;

@@ -15,7 +15,7 @@ export const INDEKS_STRON: WpisIndeksu[] = [
   {
     "url": "/strony-www",
     "tytul": "Tworzenie stron WWW i poprawki w obecnych",
-    "opis": "Nowa strona albo poprawki w obecnej. Szybko, mobilnie, z AI w treści, obrazach i kodzie. Hosting w cenie wdrożenia. Pierwsza wersja w 2-3 tygodnie."
+    "opis": "Nowa strona albo poprawki w obecnej. Szybko, mobilnie, z AI w treści, obrazach i kodzie. Hosting w cenie wdrożenia. Strona w 7 dni, firmowa w 12, sklep w 21."
   },
   {
     "url": "/wlasny-crm",

@@ -69,7 +69,7 @@ export function dekodujWycene(d: string | undefined): Wycena | null {
       sumaEtykieta: "Razem",
       sumaOd: w.rodzaj.id === "sklep",
       suma: w.suma,
-      termin: terminTekst(w.tygodnie),
+      termin: terminTekst(w.dni),
       uwaga: "Wycena orientacyjna, dokładną kwotę potwierdzimy po rozmowie.",
     };
   }

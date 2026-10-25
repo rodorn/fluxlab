@@ -36,18 +36,18 @@ const pricing = [
   {
     title: "Strona w tydzień",
     price: "2 900 zł",
-    description: "Do 5 podstron, formularz, kalendarz spotkań. Gotowa w 7 dni, płatność z góry przez Useme albo 50% proformą.",
+    description: "Do 5 podstron, formularz, kalendarz spotkań. Gotowa w 7 dni, płatność przez Useme albo fakturą z góry.",
     accent: true,
   },
   {
     title: "Strona firmowa z CMS",
     price: "5 900 zł",
-    description: "Do 15 podstron, blog i panel edycji, Profil Google podpięty. 3 tygodnie, 30% z góry.",
+    description: "Do 15 podstron, blog i panel edycji, Profil Google podpięty. Gotowa w 12 dni.",
   },
   {
     title: "Sklep z integracją",
     price: "od 9 900 zł",
-    description: "Katalog, płatności, kurier i faktury. Cenę ustalamy po rozmowie.",
+    description: "Katalog, płatności, kurier i faktury. Gotowy w 21 dni, cenę ustalamy po rozmowie.",
   },
   {
     title: "Opieka: strona i Profil Google",
@@ -65,7 +65,7 @@ const faq = [
   {
     question: "Ile czasu zajmuje wdrożenie?",
     answer:
-      "Naprawa: zwykle ten sam lub następny dzień. Strona w tydzień: 7 dni. Strona firmowa z CMS: 3 tygodnie.",
+      "Naprawa: zwykle ten sam lub następny dzień. Strona w tydzień: 7 dni. Strona firmowa z CMS: 12 dni. Sklep: 21 dni.",
   },
   {
     question: "Czy możemy modyfikować treści samodzielnie?",
@@ -102,7 +102,7 @@ export default function StronyWww() {
               </h1>
               <p className="text-lg lg:text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed animate-fade-up-3">
                 Nowa strona od zera albo poprawki w istniejącej. Prosta strona
-                w 7 dni, firmowa w 3 tygodnie.
+                w 7 dni, firmowa w 12 dni, sklep w 21 dni.
               </p>
               <div className="animate-fade-up-4 flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
                 <a href="#kontakt" className="btn-primary">

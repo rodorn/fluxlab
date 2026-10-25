@@ -1,12 +1,12 @@
-import { RODZAJE } from "@/lib/opcjeStrony";
+import { RODZAJE, terminTekst } from "@/lib/opcjeStrony";
 import { zl } from "@/lib/wycena";
 
 
 const OD = new Set(["sklep"]);
 const PLATNOSC: Record<string, string> = {
-  landing: "Useme albo 50% proformą",
-  firmowa: "30% z góry",
-  sklep: "Po rozmowie",
+  landing: "Useme albo faktura z góry",
+  firmowa: "Useme albo faktura z góry",
+  sklep: "Useme albo faktura z góry",
 };
 const SRODEK = 1;
 
@@ -30,7 +30,7 @@ export default function TabelaCennika() {
     {
       nazwa: "Czas",
       wartosc: (i) =>
-        RODZAJE[i].tygodnie === 1 ? "7 dni" : `${RODZAJE[i].tygodnie} tyg.`,
+        terminTekst(RODZAJE[i].dni),
     },
     { nazwa: "W zakresie", wartosc: (i) => RODZAJE[i].opis },
     { nazwa: "Płatność", wartosc: (i) => PLATNOSC[RODZAJE[i].id] ?? "" },
