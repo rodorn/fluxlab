@@ -8,8 +8,7 @@ export default function Abonamenty() {
         W abonamencie
       </h2>
       <p className="mb-6 text-center text-sm text-gray-600 dark:text-gray-400">
-        Stała opłata co miesiąc, bez opłaty za wdrożenie. Dodatki doliczamy do
-        abonamentu.
+        Stała opłata co miesiąc, bez opłaty za wdrożenie. Rezygnujesz w dowolnym dniu, płacisz za dni korzystania.
       </p>
       <ul className="grid gap-4 lg:grid-cols-3">
         {ABONAMENTY.map((a) => (

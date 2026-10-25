@@ -116,7 +116,7 @@ export const ABONAMENTY: Abonament[] = [
     miesiecznie: "od 149 zł/mies.",
     kwota: 149,
     wCenie: [
-      "każdy dodatek osobno, bez umowy na lata",
+      "każdy dodatek osobno, rezygnacja w dowolnym dniu",
       "raport wyszukiwań bez wyników co miesiąc",
       "pomiar sprzedaży przed i po",
     ],

@@ -98,7 +98,7 @@ export const WYCENA_INTEGRACJE: Wycena = {
   opieka: {
     id: "opieka",
     co: "Opieka po wdrożeniu, miesięcznie",
-    opis: "Alert, gdy przepływ przestanie działać, i poprawka, gdy zewnętrzne API zmieni format. Nieobowiązkowa, rezygnacja z miesiąca na miesiąc.",
+    opis: "Alert, gdy przepływ przestanie działać, i poprawka, gdy zewnętrzne API zmieni format. Nieobowiązkowa, rezygnacja w dowolnym dniu.",
     min: 190,
     max: 190,
   },
@@ -158,7 +158,7 @@ export const WYCENA_RAPORTOWANIE: Wycena = {
   opieka: {
     id: "opieka",
     co: "Opieka po wdrożeniu, miesięcznie",
-    opis: "Reakcja, gdy źródło zmieni format albo cofnie dostęp, i drobne zmiany w gotowym raporcie. Nieobowiązkowa, rezygnacja z miesiąca na miesiąc.",
+    opis: "Reakcja, gdy źródło zmieni format albo cofnie dostęp, i drobne zmiany w gotowym raporcie. Nieobowiązkowa, rezygnacja w dowolnym dniu.",
     min: 190,
     max: 190,
   },

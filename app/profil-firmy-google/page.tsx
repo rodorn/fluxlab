@@ -32,7 +32,7 @@ export default function Page() {
       h1="Prowadzimy Twoją wizytówkę w Google, żeby klienci z Map dzwonili do Ciebie"
       lead="Klient szuka usługi w okolicy, widzi trzy firmy na mapie i dzwoni do tej, która ma zdjęcia, świeże posty i odpowiedzi na opinie. Dbamy o to co tydzień, a Ty widzisz, ile telefonów i wejść przyszło z Map."
       ctaLabel="Zamów prowadzenie"
-      ctaNote="349 zł netto miesięcznie, rezygnacja z miesiąca na miesiąc"
+      ctaNote="349 zł netto miesięcznie, rezygnacja w dowolnym dniu"
       powiazane={[
         {
           przed: "Strona w ogóle nie pokazuje się w wynikach? Zobacz",
@@ -79,7 +79,7 @@ export default function Page() {
             "uporządkowanie wpisu na start w cenie",
             "post co tydzień i odpowiedzi na opinie",
             "pomiar telefonów i wejść z Map co miesiąc",
-            "rezygnacja z miesiąca na miesiąc",
+            "rezygnacja w dowolnym dniu",
           ],
           featured: true,
         },

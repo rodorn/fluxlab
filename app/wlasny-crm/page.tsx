@@ -50,7 +50,7 @@ export default function WlasnyCrm() {
         },
         {
           title: "System i dane są Twoje",
-          desc: "Osobna instancja na serwerze w UE, kopie i aktualizacje w abonamencie. Eksport danych w każdej chwili, wypowiedzenie miesięczne.",
+          desc: "Osobna instancja na serwerze w UE, kopie i aktualizacje w abonamencie. Eksport danych w każdej chwili, rezygnacja w dowolnym dniu.",
         },
         {
           title: "Kiedy to się nie opłaca",
@@ -108,7 +108,7 @@ export default function WlasnyCrm() {
         },
         {
           q: "Co się stanie, gdy zrezygnujemy?",
-          a: "Okres wypowiedzenia jest miesięczny. Dane i ich eksport zostają u ciebie.",
+          a: "Rezygnujesz w dowolnym dniu i płacisz tylko za dni korzystania. Dane i ich eksport zostają u ciebie.",
         },
       ]}
       formId="wlasny_crm"

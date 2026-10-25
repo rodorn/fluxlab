@@ -32,7 +32,7 @@ export default function Page() {
       h1="Wiesz, co zmienia konkurencja, zanim zauważą to Twoi klienci"
       lead="Wskazujesz firmy, z którymi walczysz o klientów. My sprawdzamy ich ceny, nowe usługi, social media, szybkość stron i opinie w Google, a Ty dostajesz krótki raport z tym, co się zmieniło i co z tego wynika dla Ciebie."
       ctaLabel="Zamów raport"
-      ctaNote="Od 39 zł netto miesięcznie, rezygnacja z miesiąca na miesiąc"
+      ctaNote="Od 39 zł netto miesięcznie, rezygnacja w dowolnym dniu"
       powiazane={[
         {
           przed: "Chcesz porównać swoją stronę z konkurencją? Zrób",
@@ -113,7 +113,7 @@ export default function Page() {
       formHeading="Zamów benchmarking konkurencji"
       formIntro="Podaj swoją stronę i firmy, które chcesz obserwować. Odeślemy przykładowy raport."
       submitLabel="Zamawiam raport"
-      microCopy="Rezygnacja z miesiąca na miesiąc."
+      microCopy="Rezygnacja w dowolnym dniu, płacisz za dni korzystania."
       serviceName="Benchmarking konkurencji"
       serviceDesc="Cykliczny raport o konkurencji: ceny, nowe usługi, social media, szybkość stron i wnioski z opinii Google. Codziennie 69 zł, co tydzień 49 zł, co miesiąc 39 zł netto miesięcznie."
       serviceType="Analiza konkurencji"

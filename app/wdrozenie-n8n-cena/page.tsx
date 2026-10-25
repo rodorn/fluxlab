@@ -88,7 +88,7 @@ export default function WdrozenieN8nCena() {
           features: [
             "aktualizacje n8n i serwera",
             "poprawki po zmianach API",
-            "rezygnacja z miesiąca na miesiąc",
+            "rezygnacja w dowolnym dniu",
           ],
         },
       ]}
