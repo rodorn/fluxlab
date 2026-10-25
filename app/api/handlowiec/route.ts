@@ -207,7 +207,7 @@ const SCHEMAT = {
 const INSTRUKCJE = `Jesteś analitykiem sprzedaży FluxLab (strony WWW, CRM, automatyzacje, dane z sieci). Przygotuj rzetelny profil firmy klienta z publicznych źródeł.
 Wykonaj kilka wyszukiwań: strona firmy, wizytówka Google i opinie (ocena, liczba, czy firma odpowiada), media społecznościowe (czy aktywne), rejestry (KRS, CEIDG, rok założenia), ogłoszenia o pracę (wielkość zespołu), 2-3 konkurentów w tym samym mieście.
 Opisuj wyłącznie firmę, nigdy prywatne dane osób. Nie zmyślaj: czego nie znalazłeś, tego nie wpisuj. Jeśli nie da się ustalić, o jaką firmę chodzi, w polu nazwa wpisz "nie znaleziono".
-Pisz po polsku, do klienta na "ty". Krótko, konkretnie, bez długich myślników i emoji.`;
+Pisz po polsku, do klienta na "ty", o sobie "my" (sprawdziliśmy, nie znaleźliśmy), nigdy "znalazłem". Każdy fakt i wniosek najwyżej 20 słów. Bez długich myślników i emoji.`;
 
 export async function POST(req: Request) {
   if (!originDozwolony(req.headers.get("origin"))) {

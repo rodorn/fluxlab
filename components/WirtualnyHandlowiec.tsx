@@ -459,7 +459,7 @@ export default function WirtualnyHandlowiec() {
             )}
           </div>
 
-          <div className={ramka}>
+          <div className={`${ramka} order-first lg:order-none`}>
             {!pakiet ? (
               <>
                 <h3 className="mb-1 text-base font-semibold text-gray-900 dark:text-white">
@@ -507,7 +507,7 @@ export default function WirtualnyHandlowiec() {
                     ? "Dobieramy pakiet..."
                     : profil
                       ? "Pokaż propozycję"
-                      : "Propozycja po zakończeniu analizy"}
+                      : `Sprawdzamy firmę: ${postep}%`}
                 </button>
               </>
             ) : (
