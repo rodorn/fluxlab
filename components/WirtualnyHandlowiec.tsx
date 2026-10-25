@@ -2,7 +2,13 @@
 
 import { useEffect, useRef, useState } from "react";
 import { zglosZdarzenie } from "@/lib/zdarzenie";
-import { USLUGI_HANDLOWCA } from "@/lib/uslugiHandlowca";
+import {
+  STRONY,
+  USLUGI_HANDLOWCA,
+  WIELKOSC,
+  type UslugaHandlowca,
+} from "@/lib/uslugiHandlowca";
+import { WARIANTY_CRM, abonamentCrm, type WariantCrm } from "@/lib/modulyCrm";
 
 type FaktyStrony = {
   host: string;
@@ -28,7 +34,11 @@ type Profil = {
   obserwacje: { obszar: string; fakt: string; wniosek: string }[];
   zrodla: string[];
 };
-type Pakiet = { wstep: string; pakiet: { id: string; powod: string }[] };
+type Pakiet = {
+  wstep: string;
+  pakiet: { id: string; powod: string }[];
+  odrzucone: { id: string; powod: string }[];
+};
 
 const PYTANIA = [
   {
@@ -71,6 +81,7 @@ const OBSZARY: Record<string, string> = {
   rejestr: "Rejestr",
   konkurencja: "Konkurencja",
   zespol: "Zespół",
+  finanse: "Finanse",
 };
 
 const zl = (n: number) => `${n.toLocaleString("pl-PL")} zł`;
@@ -127,6 +138,8 @@ export default function WirtualnyHandlowiec() {
   const [odpowiedzi, setOdpowiedzi] = useState<Record<string, string[]>>({});
   const [pakiet, setPakiet] = useState<Pakiet | null>(null);
   const [wybrane, setWybrane] = useState<string[]>([]);
+  const [osobyCrm, setOsobyCrm] = useState(3);
+  const [wariantCrm, setWariantCrm] = useState<WariantCrm>("pilotaz");
   const [ladPakiet, setLadPakiet] = useState(false);
   const [postep, setPostep] = useState(0);
   const przerwij = useRef<AbortController | null>(null);
@@ -226,6 +239,11 @@ export default function WirtualnyHandlowiec() {
       if (!res.ok) throw new Error(j.error || "Nie udało się dobrać pakietu.");
       setPakiet(j);
       setWybrane((j as Pakiet).pakiet.map((p) => p.id));
+      const w = WIELKOSC[odpowiedzi.osoby?.[0] ?? ""];
+      if (w) {
+        setOsobyCrm(w.osoby);
+        setWariantCrm(w.wariant);
+      }
       zglosZdarzenie("handlowiec_pakiet");
     } catch (err) {
       setBlad(
@@ -257,20 +275,60 @@ export default function WirtualnyHandlowiec() {
     });
   }
 
+  const crmMies = abonamentCrm(wariantCrm, osobyCrm, []).miesiecznie;
+  const mies = (u: UslugaHandlowca) =>
+    u.id === "crm" ? crmMies : u.miesiecznie;
+  const cena = (u: UslugaHandlowca) =>
+    u.id === "crm"
+      ? `${zl(crmMies)} / mies., ${osobyCrm} ${osobyCrm === 1 ? "osoba" : osobyCrm < 5 ? "osoby" : "osób"}`
+      : u.cena;
   const uslugi = USLUGI_HANDLOWCA.filter((u) => wybrane.includes(u.id));
   const jednorazowo = uslugi.reduce((s, u) => s + u.jednorazowo, 0);
-  const miesiecznie = uslugi.reduce((s, u) => s + u.miesiecznie, 0);
-  const powod = (id: string) => pakiet?.pakiet.find((p) => p.id === id)?.powod;
-  const pozostale = USLUGI_HANDLOWCA.filter(
-    (u) => !pakiet?.pakiet.some((p) => p.id === u.id),
-  );
+  const miesiecznie = uslugi.reduce((s, u) => s + mies(u), 0);
+
+  function przelacz(id: string) {
+    setWybrane((w) => {
+      if (w.includes(id))
+        return w.filter((x) => x !== id && !(id === "crm" && x === "ocena"));
+      const bez = STRONY.includes(id)
+        ? w.filter((x) => !STRONY.includes(x))
+        : w;
+      return id === "ocena" && !bez.includes("crm")
+        ? [...bez, "crm", id]
+        : [...bez, id];
+    });
+  }
+  const powod = (id: string) => {
+    if (STRONY.includes(id) && !wybrane.includes(id)) {
+      if (wybrane.some((x) => STRONY.includes(x)))
+        return "Wystarczy jedna strona.";
+      if (pakiet?.pakiet.some((p) => p.id === id)) return undefined;
+    }
+    return [...(pakiet?.pakiet ?? []), ...(pakiet?.odrzucone ?? [])].find(
+      (p) => p.id === id,
+    )?.powod;
+  };
+  const pozostale = [
+    ...(pakiet?.odrzucone ?? [])
+      .map((p) => USLUGI_HANDLOWCA.find((u) => u.id === p.id)!)
+      .filter(Boolean),
+    ...USLUGI_HANDLOWCA.filter(
+      (u) =>
+        !pakiet?.pakiet.some((p) => p.id === u.id) &&
+        !pakiet?.odrzucone.some((p) => p.id === u.id),
+    ),
+  ];
 
   function wyslijPakiet() {
     zglosZdarzenie("handlowiec_do_formularza");
     doFormularza(
       [
         `Pakiet dla: ${profil?.firma.nazwa ?? firma}`,
-        ...uslugi.map((u) => `- ${u.nazwa} (${u.cena})`),
+        ...uslugi.map((u) =>
+          u.id === "crm"
+            ? `- ${u.nazwa}: ${WARIANTY_CRM.find((w) => w.id === wariantCrm)!.nazwa} (${cena(u)})`
+            : `- ${u.nazwa} (${u.cena})`,
+        ),
         jednorazowo ? `Jednorazowo: ${zl(jednorazowo)} netto` : "",
         miesiecznie ? `Miesięcznie: od ${zl(miesiecznie)} netto` : "",
       ]
@@ -539,11 +597,7 @@ export default function WirtualnyHandlowiec() {
                           <input
                             type="checkbox"
                             checked={on}
-                            onChange={() =>
-                              setWybrane((w) =>
-                                on ? w.filter((x) => x !== u.id) : [...w, u.id],
-                              )
-                            }
+                            onChange={() => przelacz(u.id)}
                             className="mt-1 h-4 w-4 shrink-0 accent-[rgb(var(--accent-solid))]"
                           />
                           <span className="min-w-0 flex-1">
@@ -552,7 +606,7 @@ export default function WirtualnyHandlowiec() {
                                 {u.nazwa}
                               </span>
                               <span className="text-xs tabular-nums text-gray-600 dark:text-gray-400">
-                                {u.cena}
+                                {cena(u)}
                               </span>
                             </span>
                             {p && (
@@ -562,6 +616,56 @@ export default function WirtualnyHandlowiec() {
                             )}
                           </span>
                         </label>
+                        {u.id === "crm" && on && (
+                          <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-2 pl-7 text-xs text-gray-600 dark:text-gray-400">
+                            <span className="flex items-center gap-2">
+                              Osób w CRM
+                              <button
+                                type="button"
+                                aria-label="Mniej osób"
+                                disabled={osobyCrm <= 1}
+                                onClick={() => setOsobyCrm((n) => n - 1)}
+                                className="h-8 w-8 rounded-lg border border-gray-200 text-sm font-semibold text-gray-900 hover:border-accent disabled:opacity-40 dark:border-white/10 dark:text-white"
+                              >
+                                −
+                              </button>
+                              <span className="w-6 text-center text-sm font-semibold tabular-nums text-gray-900 dark:text-white">
+                                {osobyCrm}
+                              </span>
+                              <button
+                                type="button"
+                                aria-label="Więcej osób"
+                                disabled={osobyCrm >= 30}
+                                onClick={() => setOsobyCrm((n) => n + 1)}
+                                className="h-8 w-8 rounded-lg border border-gray-200 text-sm font-semibold text-gray-900 hover:border-accent disabled:opacity-40 dark:border-white/10 dark:text-white"
+                              >
+                                +
+                              </button>
+                            </span>
+                            <span
+                              role="radiogroup"
+                              aria-label="Wariant CRM"
+                              className="flex rounded-lg border border-gray-200 p-0.5 dark:border-white/10"
+                            >
+                              {WARIANTY_CRM.map((w) => (
+                                <button
+                                  key={w.id}
+                                  type="button"
+                                  role="radio"
+                                  aria-checked={wariantCrm === w.id}
+                                  onClick={() => setWariantCrm(w.id)}
+                                  className={`rounded-md px-2.5 py-1.5 transition-colors ${
+                                    wariantCrm === w.id
+                                      ? "bg-accent-solid text-white"
+                                      : "hover:text-gray-900 dark:hover:text-white"
+                                  }`}
+                                >
+                                  {w.nazwa}
+                                </button>
+                              ))}
+                            </span>
+                          </div>
+                        )}
                       </li>
                     );
                   })}

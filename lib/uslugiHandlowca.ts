@@ -3,6 +3,7 @@
 
 import { ABONAMENTY } from "./abonamenty";
 import { RODZAJE } from "./opcjeStrony";
+import type { WariantCrm } from "./modulyCrm";
 
 export type UslugaHandlowca = {
   id: string;
@@ -22,7 +23,7 @@ const KIEDY: Record<string, string> = {
   strona:
     "Gdy firma ma albo dostanie stronę i potrzebuje opieki, poprawek i pomiaru.",
   wizytowka:
-    "Gdy wizytówka Google jest pusta, bez postów albo z opiniami bez odpowiedzi.",
+    "Prawie każdej firmie: gdy wizytówki Google nie ma, trzeba ją założyć; gdy jest, a nie ma świeżych postów, zdjęć albo odpowiedzi na każdą opinię, trzeba ją prowadzić.",
   konkurencja:
     "Gdy branża jest konkurencyjna cenowo albo firma nie wie, co robi konkurencja.",
   crm: "Gdy leady przychodzą z kilku kanałów, a firma prowadzi je w mailu lub arkuszu.",
@@ -53,3 +54,45 @@ export const USLUGI_HANDLOWCA: UslugaHandlowca[] = [
     };
   }),
 ];
+
+export const STRONY = RODZAJE.map((r) => r.id);
+
+/** Wielkość firmy z odpowiedzi „Ile osób pracuje w firmie?”: liczba kont CRM,
+ *  wariant CRM i rodzaj strony domyślnie dobrane do zespołu. */
+export const WIELKOSC: Record<
+  string,
+  { osoby: number; wariant: WariantCrm; strona: string }
+> = {
+  "tylko ja": { osoby: 1, wariant: "pilotaz", strona: "landing" },
+  "2-5": { osoby: 4, wariant: "pilotaz", strona: "landing" },
+  "6-20": { osoby: 12, wariant: "integracje", strona: "firmowa" },
+  "ponad 20": { osoby: 25, wariant: "integracje", strona: "firmowa" },
+};
+
+/** Najwyżej jedna strona (sklep zostaje, landing i firmowa według wielkości),
+ *  ocena handlowców tylko z CRM i tylko przy zespole. */
+export function uporzadkujPakiet<T extends { id: string; powod?: string }>(
+  pakiet: T[],
+  wielkosc?: string,
+): T[] {
+  const w = wielkosc ? WIELKOSC[wielkosc] : undefined;
+  let strona = false;
+  const wynik: T[] = [];
+  for (const p of pakiet) {
+    if (wynik.some((x) => x.id === p.id)) continue;
+    if (STRONY.includes(p.id)) {
+      if (strona) continue;
+      strona = true;
+      wynik.push(w && p.id !== "sklep" ? { ...p, id: w.strona } : p);
+    } else if (p.id === "ocena") {
+      if (wielkosc === "tylko ja") continue;
+      if (!pakiet.some((x) => x.id === "crm")) wynik.push({
+          ...p,
+          id: "crm",
+          powod: "Ocena handlowców działa w CRM, więc dokładamy CRM.",
+        });
+      wynik.push(p);
+    } else wynik.push(p);
+  }
+  return wynik;
+}

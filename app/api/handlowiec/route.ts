@@ -70,6 +70,7 @@ export type Rejestr = {
   status: string;
   adres: string;
   od: string;
+  krs: string;
 };
 
 async function bialaLista(nip: string): Promise<Rejestr | null> {
@@ -90,7 +91,40 @@ async function bialaLista(nip: string): Promise<Rejestr | null> {
       status: s.statusVat,
       adres: s.workingAddress || s.residenceAddress || "",
       od: s.registrationLegalDate || "",
+      krs: s.krs || "",
     };
+  } catch {
+    return null;
+  }
+}
+
+async function odpisKrs(krs: string): Promise<string | null> {
+  try {
+    const r = await fetch(
+      `https://api-krs.ms.gov.pl/api/krs/OdpisAktualny/${krs}?rejestr=P&format=json`,
+      { signal: AbortSignal.timeout(8000) },
+    );
+    if (!r.ok) return null;
+    const d = (await r.json())?.odpis?.dane;
+    if (!d) return null;
+    const kapital = d.dzial1?.kapital?.wysokoscKapitaluZakladowego?.wartosc;
+    const pkd =
+      d.dzial3?.przedmiotDzialalnosci?.przedmiotPrzewazajacejDzialalnosci?.[0]
+        ?.opis;
+    const spr: { dataZlozenia: string; zaOkresOdDo: string }[] =
+      d.dzial3?.wzmiankiOZlozonychDokumentach
+        ?.wzmiankaOZlozeniuRocznegoSprawozdaniaFinansowego ?? [];
+    const ost = spr.at(-1);
+    return [
+      `KRS ${krs}: ${d.dzial1?.danePodmiotu?.formaPrawna ?? ""}`,
+      kapital && `kapitał zakładowy ${kapital} zł`,
+      pkd && `główna działalność: ${pkd}`,
+      ost
+        ? `ostatnie sprawozdanie finansowe za ${ost.zaOkresOdDo}, złożone ${ost.dataZlozenia}`
+        : "brak złożonych sprawozdań finansowych",
+    ]
+      .filter(Boolean)
+      .join(", ");
   } catch {
     return null;
   }
@@ -173,7 +207,7 @@ const SCHEMAT = {
     obserwacje: {
       type: "array",
       description:
-        "4-6 konkretnych faktów o obecności firmy w sieci, każdy z krótkim wnioskiem",
+        "4-7 konkretnych faktów o obecności firmy w sieci, każdy z krótkim wnioskiem",
       items: {
         type: "object",
         additionalProperties: false,
@@ -189,6 +223,7 @@ const SCHEMAT = {
               "rejestr",
               "konkurencja",
               "zespol",
+              "finanse",
             ],
           },
           fakt: { type: "string" },
@@ -205,7 +240,7 @@ const SCHEMAT = {
 };
 
 const INSTRUKCJE = `Jesteś analitykiem sprzedaży FluxLab (strony WWW, CRM, automatyzacje, dane z sieci). Przygotuj rzetelny profil firmy klienta z publicznych źródeł.
-Wykonaj kilka wyszukiwań: strona firmy, wizytówka Google i opinie (ocena, liczba, czy firma odpowiada), media społecznościowe (czy aktywne), rejestry (KRS, CEIDG, rok założenia), ogłoszenia o pracę (wielkość zespołu), 2-3 konkurentów w tym samym mieście.
+Wykonaj kilka wyszukiwań: strona firmy, wizytówka Google i opinie (ocena, liczba, czy firma odpowiada), media społecznościowe (czy aktywne), rejestry (KRS, CEIDG, rok założenia), dane z ostatniego sprawozdania finansowego (przychody, zysk netto, zatrudnienie, z rokiem; szukaj w serwisach publikujących dane z KRS, np. rejestr.io, aleo.com, krs-pobierz.pl), ogłoszenia o pracę (wielkość zespołu), 2-3 konkurentów w tym samym mieście.
 Opisuj wyłącznie firmę, nigdy prywatne dane osób. Nie zmyślaj: czego nie znalazłeś, tego nie wpisuj. Jeśli nie da się ustalić, o jaką firmę chodzi, w polu nazwa wpisz "nie znaleziono".
 Pisz po polsku, do klienta na "ty", o sobie "my" (sprawdziliśmy, nie znaleźliśmy), nigdy "znalazłem". Każdy fakt i wniosek najwyżej 20 słów. Bez długich myślników i emoji.`;
 
@@ -277,6 +312,8 @@ export async function POST(req: Request) {
           material.push(
             `Rejestr VAT (MF): ${r.nazwa}, status ${r.status}, adres ${r.adres}, VAT od ${r.od || "brak danych"}`,
           );
+          const k = r.krs && (await odpisKrs(r.krs));
+          if (k) material.push(k);
         }
       }
 
