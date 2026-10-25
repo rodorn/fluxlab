@@ -1,12 +1,10 @@
-import SlowoZrodlo from "@/components/SlowoZrodlo";
-
 /** H1 w HTML od razu; słowa wjeżdżają kolejno wyłącznie przez CSS (opacity/transform). */
 export default function NaglowekSklada({
   tekst,
   wyroznione = [],
 }: {
   tekst: string;
-  /** Słowa pisane drugim krojem, kursywą. Słowo {zrodlo} zależy od źródła wejścia. */
+  /** Słowa pisane drugim krojem, kursywą. */
   wyroznione?: string[];
 }) {
   const slowa = tekst.split(" ");
@@ -18,14 +16,7 @@ export default function NaglowekSklada({
             className={`h1-sklada${wyroznione.includes(s) ? " slowo-szeryf" : ""}`}
             style={{ animationDelay: `${Math.round((i * 400) / Math.max(slowa.length - 1, 1))}ms` }}
           >
-            {s.endsWith("{zrodlo}") ? (
-              <>
-                {s.slice(0, -8)}
-                <SlowoZrodlo />
-              </>
-            ) : (
-              s
-            )}
+            {s}
           </span>
           {i < slowa.length - 1 ? " " : ""}
         </span>

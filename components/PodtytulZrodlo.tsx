@@ -2,15 +2,14 @@
 
 import { useEffect, useState } from "react";
 
-const DOMYSLNY = "Formularz podpięty do CRM, cena z góry, gotowe w 2\u2060–\u20603\u00a0tygodnie.";
+const DOMYSLNY = "Strona, formularze i automatyzacje, które oszczędzają czas. Cena z góry, gotowe w 2\u2060–\u20603\u00a0tygodnie.";
 
 const WARIANTY: Record<string, string> = {
-  linkedin: "CRM dla firm B2B: lead trafia od razu do handlowca, cena z góry, gotowe w 2\u2060–\u20603\u00a0tygodnie.",
-  google: "Strona z formularzem podpiętym do CRM, cena z góry, gotowe w 2\u2060–\u20603\u00a0tygodnie.",
-  facebook: "Prosta strona i CRM dla Twojej firmy, cena z góry, gotowe w 2\u2060–\u20603\u00a0tygodnie.",
+  linkedin: "Lead B2B trafia od razu do handlowca, bez przepisywania. Cena z góry, gotowe w 2\u2060–\u20603\u00a0tygodnie.",
+  google: "Strona, z której zapytania trafiają prosto na Twoją skrzynkę. Cena z góry, gotowe w 2\u2060–\u20603\u00a0tygodnie.",
 };
 
-export function zrodlo(): string | null {
+function zrodlo(): string | null {
   const p = new URLSearchParams(window.location.search);
   const s = `${p.get("utm_source") ?? ""} ${p.get("utm_campaign") ?? ""}`.toLowerCase();
   if (s.includes("linkedin")) return "linkedin";
@@ -35,7 +34,7 @@ export default function PodtytulZrodlo() {
   useEffect(() => {
     try {
       const z = zrodlo();
-      if (z) setTekst(WARIANTY[z]);
+      if (z && WARIANTY[z]) setTekst(WARIANTY[z]);
     } catch {}
   }, []);
 
