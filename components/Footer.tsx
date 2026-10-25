@@ -24,7 +24,7 @@ function Kolumna({ s, children }: { s: Sekcja; children: React.ReactNode }) {
   return (
     <div>
       {s.hub ? (
-        <Link href={s.hub} className={NAGLOWEK_KOLUMNY}>
+        <Link href={s.hub} prefetch={false} className={NAGLOWEK_KOLUMNY}>
           {s.nazwa}
         </Link>
       ) : (
@@ -42,7 +42,7 @@ function Lista({ strony }: { strony: { href: string; nazwa: string }[] }) {
         .filter((x) => !POMIN.has(x.href))
         .map((x) => (
           <li key={x.href}>
-            <Link href={x.href} className={LINK}>
+            <Link href={x.href} prefetch={false} className={LINK}>
               {x.nazwa}
             </Link>
           </li>
@@ -169,11 +169,11 @@ export default function Footer() {
             </p>
           )}
           <p className="mt-2 flex flex-col items-center gap-y-1.5 [&_a]:inline-flex [&_a]:min-h-6 [&_a]:items-center sm:flex-row sm:flex-wrap sm:justify-center sm:gap-x-2">
-            <Link href="/zmiany" className="hover:text-accent transition-colors">
+            <Link href="/zmiany" prefetch={false} className="hover:text-accent transition-colors">
               <CzasZmiany iso={zmiany[0].data} />
             </Link>
             <span aria-hidden="true" className="hidden sm:inline">·</span>
-            <Link href="/jak-zbudowana" className="hover:text-accent transition-colors">
+            <Link href="/jak-zbudowana" prefetch={false} className="hover:text-accent transition-colors">
               Jak zbudowana jest ta strona
             </Link>
           </p>

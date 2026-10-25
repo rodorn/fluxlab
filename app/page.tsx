@@ -20,7 +20,7 @@ import PisanyTekst from "@/components/PisanyTekst";
 import { nazwaFilaru } from "@/lib/filary";
 import NapisBoczny from "@/components/NapisBoczny";
 import { Ikona, type NazwaIlustracji } from "@/components/Ilustracje";
-import "./fraunces-hero.css";
+import { preload } from "react-dom";
 
 // Oferta jak w szkoleniu produktowym (16.10.2026): projekty z ceną z góry,
 // FluxCRM jako produkt flagowy, katalog małych usług jako wejście.
@@ -95,6 +95,7 @@ const WYNIKI = [
 ];
 
 export default function Home() {
+  preload("/fonts/fraunces-hero.woff2", { as: "font", type: "font/woff2", crossOrigin: "anonymous" });
   return (
     <>
       <Header />

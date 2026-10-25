@@ -1,7 +1,7 @@
 /** Rysunek w hero: jedna linia przechodzi przez formularz, kartę w CRM i raport.
- *  Kończy się kotwicą, od której Nic prowadzi linię dalej przez stronę. */
+ *  Zaczyna się na przycisku formularza, kończy kotwicą, od której Nic prowadzi linię dalej przez stronę. */
 const NIC =
-  "M0 210C40 210 60 166 110 166H210C300 166 340 84 436 84A16 16 0 1 1 436 116A16 16 0 1 1 436 84C500 84 530 40 610 40C690 40 700 196 750 196L778 186L806 191L834 160L862 140L890 96C910 68 950 120 950 280";
+  "M166 200C260 200 320 84 436 84A16 16 0 1 1 436 116A16 16 0 1 1 436 84C500 84 530 40 610 40C690 40 700 196 750 196L778 186L806 191L834 160L862 140L890 96C910 68 950 120 950 280";
 
 const PODPISY = [
   ["16.67%", "zapytanie"],
@@ -23,7 +23,7 @@ export default function HeroNic() {
             <rect x="90" y="50" width="140" height="180" rx="10" />
             <path className="hero-nic__mocny" d="M110 78H170" />
             <path d="M110 104H140M110 124H210M110 146H150" />
-            <rect x="110" y="190" width="56" height="20" rx="6" />
+            <rect className="hero-nic__przycisk" x="110" y="190" width="56" height="20" rx="6" />
 
             <rect x="400" y="60" width="160" height="160" rx="12" />
             <path className="hero-nic__mocny" d="M462 96H530" />

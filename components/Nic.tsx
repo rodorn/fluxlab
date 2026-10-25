@@ -63,6 +63,7 @@ export default function Nic() {
     const jasna = svg.querySelector<SVGPathElement>(".nic__jasna")!;
     const maska = svg.querySelector<SVGRectElement>(".nic__maska rect")!;
     const grupaWezlow = svg.querySelector<SVGGElement>(".nic__wezly")!;
+    const meta = svg.querySelector<SVGGElement>(".nic__meta")!;
     const koralik = main.querySelector<HTMLElement>(".nic__koralik")!;
     const liniaHero = main.querySelector<SVGPathElement>(".hero-nic__linia");
     let punkty = new Float32Array(0);
@@ -83,6 +84,8 @@ export default function Nic() {
     let ruszyl = false;
     let uklad = "";
     let ramka = 0;
+    let wWezle = -1;
+    let koniec = false;
 
     function uloz() {
       ramka = 0;
@@ -149,19 +152,25 @@ export default function Nic() {
       linia.setAttribute("d", d);
       jasna.setAttribute("d", d);
 
-      grupaWezlow.replaceChildren();
-      wezly = kotwice.slice(1).map((k, i, lista) => {
-        const c = document.createElementNS(
-          "http://www.w3.org/2000/svg",
-          "circle",
-        );
+      // Kółka zostają między przeliczeniami, inaczej zapalone węzły
+      // gasłyby i zapalały się od nowa przy każdej zmianie układu.
+      const nowe = kotwice.slice(1);
+      while (grupaWezlow.childElementCount > nowe.length)
+        grupaWezlow.lastElementChild!.remove();
+      wezly = nowe.map((k, i, lista) => {
+        let c = grupaWezlow.children[i] as SVGCircleElement | undefined;
+        if (!c) {
+          c = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+          c.setAttribute("class", "nic__wezel");
+          grupaWezlow.appendChild(c);
+        }
         c.setAttribute("cx", String(k.x));
         c.setAttribute("cy", String(k.y));
         c.setAttribute("r", i === lista.length - 1 ? "7" : "5");
-        c.setAttribute("class", "nic__wezel");
-        grupaWezlow.appendChild(c);
         return { ...k, kolo: c };
       });
+      const ostatni = wezly[wezly.length - 1];
+      meta.setAttribute("transform", `translate(${ostatni.x} ${ostatni.y})`);
       narysowane = -1;
 
       if (rj) {
@@ -244,6 +253,17 @@ export default function Nic() {
       const x = punkty[i * 2] + (punkty[j * 2] - punkty[i * 2]) * t;
       const y = punkty[i * 2 + 1] + (punkty[j * 2 + 1] - punkty[i * 2 + 1]) * t;
       koralik.style.transform = `translate(${x}px,${y}px)`;
+      // Nad węzłem koralik traci obwódkę i zlewa się z kółkiem, zamiast
+      // przykrywać je białym pierścieniem.
+      const blisko = wezly.findIndex((w) => Math.hypot(w.x - x, w.y - y) < 7);
+      if (blisko !== wWezle) {
+        wWezle = blisko;
+        koralik.classList.toggle("nic__koralik--w-wezle", blisko >= 0);
+        koralik.classList.toggle(
+          "nic__koralik--na-koncu",
+          blisko >= 0 && blisko === wezly.length - 1,
+        );
+      }
       if (poz > zasieg) zasieg = poz;
       rysuj();
     }
@@ -262,6 +282,12 @@ export default function Nic() {
           indeksyWezlow[i] !== undefined && zasieg >= indeksyWezlow[i],
         ),
       );
+      const ostatni = indeksyWezlow[wezly.length - 1];
+      const nowyKoniec = ostatni !== undefined && zasieg >= ostatni;
+      if (nowyKoniec !== koniec) {
+        koniec = nowyKoniec;
+        svg!.classList.toggle("nic--koniec", koniec);
+      }
     }
 
     function krok(teraz: number) {
@@ -325,6 +351,11 @@ export default function Nic() {
         <path className="nic__linia" fill="none" />
         <path className="nic__jasna" fill="none" clipPath="url(#nic-okno)" />
         <g className="nic__wezly" />
+        <g className="nic__meta">
+          <circle className="nic__fala" r="9" />
+          <circle className="nic__fala" r="9" />
+          <path className="nic__ptaszek" d="M-4.5 0.5L-1.5 3.5L4.5 -3" pathLength={1} />
+        </g>
       </svg>
       <span aria-hidden="true" className="nic__koralik" />
     </>
