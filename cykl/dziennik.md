@@ -7993,3 +7993,11 @@ Decyzje dla stratega: sprawdzić, skąd 73 sesje bez odsyłacza (strony wejścia
 **Dowód:** `cykl/gsc-zapytania-2026-10-25.txt`, `cykl/gsc-strony-2026-10-25.txt`; GSC --tylko-stan 9 z 9 „znajduje się w Google”; linie Z6-Z8 w `cykl/plan-ruchu.md`. Poprawka `cykl/pomiar-kanalow.py`: strefa Europe/Warsaw zamiast stałego +2 (od zmiany czasu 25.10 nagłówek i podział dni były o godzinę do przodu).
 **Dla Pawła:**
 **Zostało otwarte:** Z9 (frazy ogólne, GSC 28 dni) i dalej według planu; Z18 robi serie dzienne /kalkulator-podatkowy i /ksef-2027, bo Z8 miało pliki.
+
+## 2026-10-25 09:55
+**Kanał:** Google (Z9 planu 25/26, pomiar fraz ogólnych).
+**Co zrobione:** odczyt GSC 28 dni dla 6 fraz z wyświetleniami bez kliknięć: 5 fraz ogólnych („automatyzacja procesów biznesowych” 72 wyśw., „automatyzacja procesów” 32, „proces biznesowy” 30, „automatyzacja biznesu” 18, „automatyzacja firmy” 13) trafia na /strefa-wiedzy/co-to-jest-automatyzacja-procesow-biznesowych na pozycji 57-84, więc zmiana tytułu 27.10 nic tu nie da bez poprawy pozycji; jedyna fraza z pozycją 3,4 to „porównanie kosztów automatyzacji vs zatrudniania” (/strefa-wiedzy/automatyzacja-vs-zatrudnienie, 20 wyśw., 0 kliknięć, bez embarga), kandydat na description.
+**Ruch:** raport_ruchu 09:50: 148 odsłon, 112 osób w dobie (+24% wobec średniej 119,4); źródła google 5, facebook 4+3, b2b-email 4, instagram 2; uruchomienia narzędzi 2.
+**Dowód:** `cykl/z9-frazy-2026-10-25.txt`, linia Z9 w `cykl/plan-ruchu.md`.
+**Dla Pawła:**
+**Zostało otwarte:** Z10 (link /widocznosc-w-ai → /asystent-ai-na-stronie, kamień 2) i dalej według planu; rytm „zwolnij”, jedno zadanie na cykl.

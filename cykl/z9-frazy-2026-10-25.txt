@@ -1,0 +1,9 @@
+# Z9 25.10 09:50, GSC 28 dni (26.09-23.10), filtr query=!<fraza>, zakładka Strony. Pozycja = średnia frazy (tabela Stron jej nie podaje). Kliknięcia 0 we wszystkich.
+fraza | wyśw. | poz. | strona (wyśw.) | fraza w title / description | embargo
+automatyzacja procesów biznesowych | 72 | 67,3 | /strefa-wiedzy/co-to-jest-automatyzacja-procesow-biznesowych (72) | title tak, description tak | do 27.10
+proces biznesowy | 30 | 84,4 | /strefa-wiedzy/co-to-jest-automatyzacja-procesow-biznesowych (30) | title nie (jest „procesów biznesowych”), description nie | do 27.10
+automatyzacja procesów | 32 | 57,7 | /strefa-wiedzy/co-to-jest-automatyzacja-procesow-biznesowych (32) | title tak, description tak | do 27.10
+automatyzacja firmy | 13 | 65,8 | /strefa-wiedzy/co-to-jest-automatyzacja-procesow-biznesowych (13) | title nie, description nie | do 27.10
+automatyzacja biznesu | 18 | 56,7 | /strefa-wiedzy/co-to-jest-automatyzacja-procesow-biznesowych (16), /automatyzacja-procesow-biznesowych (2) | title nie, description nie (obie) | do 27.10 / brak
+porównanie kosztów automatyzacji vs zatrudniania | 20 | 3,4 | /strefa-wiedzy/automatyzacja-vs-zatrudnienie (20) | title prawie („Koszt automatyzacji vs zatrudnienia”), description „Porównanie kosztów automatyzacji i zatrudnienia” | brak
+# Wniosek: 5 fraz ogólnych to jedna strona na poz. 57-84, problem pozycji, nie tytułu (0 kliknięć na 2.-9. stronie wyników to norma). Jedyny kandydat na CTR: automatyzacja-vs-zatrudnienie, poz. 3,4 przy 20 wyśw. i 0 kliknięć.
