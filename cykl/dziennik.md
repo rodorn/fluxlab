@@ -7975,3 +7975,13 @@ Decyzje dla stratega: sprawdzić, skąd 73 sesje bez odsyłacza (strony wejścia
 **Dowód:** Bing „URLs submitted today” 83 → 100, „Quota left” 17 → 0, lista zgłoszonych 129 → 146, wpisy „Today at 06:45”. Lista `cykl/bing-zgloszone-2026-10-25b.txt`. AI Performance (dane do 22.10): cytowania Copilota 16-22.10 24 wobec 15 w 13-19.10, 22.10 9 cytowań; od 7.10 razem 45.
 **Dla Pawła:**
 **Zostało otwarte:** Z2 (czy kalkulator podatkowy liczy uruchomienia). Bing od teraz tylko pomiarowo (Z17, Z21).
+
+<!-- WYSLANO 2026-10-25 07:04 -->
+
+## 2026-10-25 07:43
+**Kanał:** dystrybucja narzędzi (Z2-Z5 planu 25/26).
+**Co zrobione:** pod wynikiem audytu strony jedno wezwanie „Wyślij wynik do wyceny” prowadzi do /kontakt z wpisanym wynikiem i liczy się jako klik_po_wyniku; wcześniej 5 konkurujących wezwań i 0 kliknięć na 6 wyników, a dolny link „Zlecamy naprawę” podawał parametr ?temat=, którego formularz nie czyta. Social: prośby o post z serii podatki doręczone do FL_meta, FL_instagram, FL_linkedin.
+**Ruch:** raport_ruchu 07:43 CET: 142 odsłony, 106 osób w dobie (+19% wobec średniej 118,9); najczęściej / (36), /ksef-2027 (12), /kalkulator-podatkowy (10); źródła google 6, facebook 4+3, b2b-email 4, instagram 2; LinkedIn 1, X 0, Threads 0, YouTube 0; uruchomienia narzędzi 0. Tydzień 900 odsłon, 548 osób.
+**Dowód:** commit a669167 (produkcja: chunk z kontakt?opis=, telefon-test z klikiem w nowe wezwanie → formularz /kontakt, 0 błędów konsoli). Z2: kalkulator podatkowy zgłasza uruchomienie przy pierwszej zmianie wyniku po dowolnym polu, bez przycisku; 7 dni: 24 odsłony ludzi, 1 uruchomienie; 23 z 24 sesji to jedna odsłona, 17 z 24 w nocy bez źródła; błąd pomiaru: nie. Z3: 6 sesji z wynikiem audytu, 4 kończą się w chwili wyniku, 0 kliknięć.
+**Dla Pawła:**
+**Zostało otwarte:** Z6 i dalej według planu; Z22 mierzy klik_po_wyniku od 25.10 07:50.
