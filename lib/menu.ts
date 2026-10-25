@@ -66,8 +66,8 @@ export const MENU: PozycjaMenu[] = [
       },
     ],
     kafel: {
-      tytul: "Naprawa od 150\u00a0zł",
-      opis: "Strona w tydzień za 2 900 zł, firmowa z CMS za 5 900 zł.",
+      tytul: "Strona z opieką od 300\u00a0zł/mies.",
+      opis: "Wdrożenie od 2 900 zł, poprawki od 150 zł.",
       href: "/strony-www",
       cta: "Zobacz ofertę",
     },
@@ -178,25 +178,25 @@ export const MENU: PozycjaMenu[] = [
     href: "/produkty",
     kolumny: [
       {
-        tytul: "Usługi",
+        tytul: "W abonamencie",
         linki: [
-          l("/strony-www", "naprawa od 150 zł"),
-          l("/wlasny-crm", "wdrożenie od 1 zł"),
-          l("/automatyzacja-leadow-crm", "od 900 zł"),
+          l("/strony-www", "od 300 zł/mies."),
+          l("/wlasny-crm", "od 499 zł/mies."),
+          l("/wdrozenie-n8n-cena", "opieka 190 zł/mies."),
         ],
       },
       {
-        tytul: "Na start",
+        tytul: "Jednorazowo",
         linki: [
           l("/audyt-strony", "0 zł"),
           l("/pogotowie-automatyzacji", "diagnoza 49 zł"),
-          l("/wdrozenie-n8n-cena", "cena z góry"),
+          l("/automatyzacja-leadow-crm", "od 900 zł"),
         ],
       },
     ],
     kafel: {
       tytul: "Pełny cennik",
-      opis: "Wszystkie usługi z ceną z góry, bez rozliczania godzin.",
+      opis: "Trzy abonamenty z dodatkami i prace jednorazowe z ceną z góry.",
       href: "/produkty",
       cta: "Zobacz cennik",
     },

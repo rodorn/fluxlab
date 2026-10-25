@@ -7,6 +7,7 @@ import CTA from "@/components/CTA";
 import KatalogProduktow from "@/components/KatalogProduktow";
 import ZaZlotowke from "@/components/ZaZlotowke";
 import WycenaAI from "@/components/WycenaAI";
+import Abonamenty from "@/components/Abonamenty";
 import { CENNIK as PRODUCTS, PRODUCTS as PRODUCTS_ALL, cenaWejscia } from "@/lib/products";
 
 // Kolejność z licznika ruchu (sesje na stronie produktu, 20.09–24.10.2026).
@@ -72,8 +73,8 @@ export default function ProduktyPage() {
                 Usługi ze stałą ceną
               </h1>
               <p className="hero-lead">
-                Każda pozycja ma podaną kwotę wejścia i konkretny efekt, a wynik
-                odsyłamy mailem.
+                Na górze trzy usługi w abonamencie, niżej prace jednorazowe.
+                Każda pozycja ma podaną kwotę wejścia i konkretny efekt.
               </p>
               <p className="mt-4 text-sm text-gray-600 dark:text-gray-400">
                 Darmowe sprawdzenia i kalkulatory są w dziale{" "}
@@ -88,6 +89,8 @@ export default function ProduktyPage() {
             </div>
           </div>
         </section>
+
+        <Abonamenty />
 
         <section className="container-wide pb-10" aria-label="Wycena przez AI">
           <WycenaAI />
@@ -106,7 +109,7 @@ export default function ProduktyPage() {
 
         <section className="container-wide pb-12" aria-labelledby="najczesciej">
           <h2 id="najczesciej" className="h2-sekcji mb-6 text-center">
-            Najczęściej wybierane
+            Jednorazowo: najczęściej wybierane
           </h2>
           <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {NAJCZESCIEJ.map((p) => (
