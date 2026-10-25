@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import ProductLanding from "@/components/ProductLanding";
 import AiCheck from "@/components/AiCheck";
 
@@ -58,7 +59,19 @@ export default function WidocznoscWAi() {
         },
         {
           title: "Czego nie obiecujemy",
-          desc: "Nikt nie gwarantuje miejsca w odpowiedzi asystenta. Sprawdzamy warunki wstępne: czy robot ma co przeczytać.",
+          desc: (
+            <>
+              Nikt nie gwarantuje miejsca w odpowiedzi asystenta. Szukasz czatu
+              dla klientów? To{" "}
+              <Link
+                href="/asystent-ai-na-stronie"
+                className="text-accent hover:underline"
+              >
+                asystent AI na stronę
+              </Link>
+              .
+            </>
+          ),
         },
       ]}
       pricing={[
