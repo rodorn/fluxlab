@@ -7,7 +7,9 @@ import { useEffect, useRef } from "react";
  *  z prawej i z lewej, jak ścieg. Nad sekcją [data-nic-jasne] (fioletowe tło)
  *  biegnie biała kopia linii. Koralik jedzie ze stałą prędkością przez rysunek
  *  w hero i dalej po nici, za miejscem czytania. Nić jest narysowana tylko
- *  tam, gdzie koralik już był, i tam zapalają się węzły. */
+ *  tam, gdzie koralik już był, i tam zapalają się węzły. Z ostatniego węzła
+ *  nić rozdziela się na dwie, obszywa kartę formularza i zawiązuje się pod
+ *  nią, a przycisk formularza wtedy się zapala. */
 const KROK = 4;
 const PREDKOSC = 420;
 // Koralik rusza, gdy linia w hero jest już narysowana (0,5 s + 2,4 s).
@@ -66,6 +68,10 @@ export default function Nic() {
     const meta = svg.querySelector<SVGGElement>(".nic__meta")!;
     const koralik = main.querySelector<HTMLElement>(".nic__koralik")!;
     const liniaHero = main.querySelector<SVGPathElement>(".hero-nic__linia");
+    const szwy = [...svg.querySelectorAll<SVGPathElement>(".nic__szew")];
+    const supel = svg.querySelector<SVGGElement>(".nic__supel")!;
+    const paciorki = [...main.querySelectorAll<HTMLElement>(".nic__koralik--szew")];
+    const bezRuchu = matchMedia("(prefers-reduced-motion: reduce)").matches;
     let punkty = new Float32Array(0);
     let wezly: { x: number; y: number; kolo: SVGCircleElement }[] = [];
     let odcinki: Punkt[][] = [];
@@ -86,6 +92,28 @@ export default function Nic() {
     let ramka = 0;
     let wWezle = -1;
     let koniec = false;
+    let forma: HTMLElement | null = null;
+    let dlSzwu = [0, 0];
+    let szewY: ((y: number) => number) | null = null;
+    let szew = 0;
+    let celSzwu = 0;
+    let zasiegSzwu = 0;
+    let ruchSzwu = 0;
+    let czasSzwu = 0;
+    let zszyte = false;
+    let zgas = 0;
+
+    // Położenie bez transformacji: karta wjeżdża przez RevealOnScroll,
+    // a szew ma leżeć tam, gdzie karta stanie.
+    function wMain(el: HTMLElement) {
+      let x = 0;
+      let y = 0;
+      for (let e: HTMLElement | null = el; e && e !== main; e = e.offsetParent as HTMLElement | null) {
+        x += e.offsetLeft;
+        y += e.offsetTop;
+      }
+      return { x, y };
+    }
 
     function uloz() {
       ramka = 0;
@@ -102,9 +130,11 @@ export default function Nic() {
       });
       const jasne = main!.querySelector<HTMLElement>("[data-nic-jasne]");
       const rj = jasne?.getBoundingClientRect();
+      forma = main!.querySelector<HTMLElement>("#kontakt form");
+      const pf = forma && { ...wMain(forma), w: forma.offsetWidth, h: forma.offsetHeight };
       // Treść nad węzłem może się przesunąć bez zmiany wysokości strony,
       // więc układ porównujemy po położeniu węzłów i jasnej sekcji.
-      const nowy = [W, H, rj && rj.top - m.top, ...kotwice.map((k) => k.y)]
+      const nowy = [W, H, rj && rj.top - m.top, pf?.x, pf?.y, pf?.w, pf?.h, ...kotwice.map((k) => k.y)]
         .map((v) => Math.round(v ?? 0))
         .join();
       if (nowy === uklad) return;
@@ -172,6 +202,40 @@ export default function Nic() {
       const ostatni = wezly[wezly.length - 1];
       meta.setAttribute("transform", `translate(${ostatni.x} ${ostatni.y})`);
       narysowane = -1;
+
+      if (pf) {
+        const { x: nx, y: ny } = ostatni;
+        const l = pf.x + 0.5;
+        const p = pf.x + pf.w - 0.5;
+        const b = pf.y + pf.h - 0.5;
+        const r = parseFloat(getComputedStyle(forma!).borderTopLeftRadius) || 16;
+        szwy[0].setAttribute(
+          "d",
+          `M${nx} ${ny}H${l + r}A${r} ${r} 0 0 0 ${l} ${ny + r}V${b - r}A${r} ${r} 0 0 0 ${l + r} ${b}H${nx}`,
+        );
+        szwy[1].setAttribute(
+          "d",
+          `M${nx} ${ny}H${p - r}A${r} ${r} 0 0 1 ${p} ${ny + r}V${b - r}A${r} ${r} 0 0 1 ${p - r} ${b}H${nx}`,
+        );
+        dlSzwu = szwy.map((s) => s.getTotalLength());
+        // Droga po szwie do wysokości y, liczona wprost z łuków i odcinków.
+        const h = Math.abs(nx - l - r);
+        const luk = (Math.PI * r) / 2;
+        const v = b - ny - 2 * r;
+        szewY = (y) =>
+          y <= ny
+            ? 0
+            : y <= ny + r
+              ? h + r * Math.acos(1 - (y - ny) / r)
+              : y <= b - r
+                ? h + luk + y - ny - r
+                : y < b
+                  ? h + luk + v + r * Math.asin((y - b + r) / r)
+                  : dlSzwu[0];
+        supel.setAttribute("transform", `translate(${nx} ${b})`);
+        pokazSzew();
+        prowadzSzew();
+      }
 
       if (rj) {
         maska.setAttribute("x", String(rj.left - m.left));
@@ -287,7 +351,55 @@ export default function Nic() {
       if (nowyKoniec !== koniec) {
         koniec = nowyKoniec;
         svg!.classList.toggle("nic--koniec", koniec);
+        prowadzSzew();
       }
+    }
+
+    // Szew, jak cała nić, idzie za miejscem czytania: obie nici spotykają
+    // się pod kartą, gdy czytelnik dojeżdża do przycisku formularza.
+    function prowadzSzew() {
+      celSzwu = 0;
+      if (koniec && szewY)
+        celSzwu = szewY(window.scrollY + window.innerHeight * 0.6 - gora) / dlSzwu[0];
+      if (bezRuchu) {
+        szew = celSzwu;
+        pokazSzew();
+      } else if (!ruchSzwu && szew !== celSzwu) {
+        czasSzwu = performance.now();
+        ruchSzwu = requestAnimationFrame(szyj);
+      }
+    }
+
+    function szyj(teraz: number) {
+      const dt = Math.min(0.05, (teraz - czasSzwu) / 1000);
+      czasSzwu = teraz;
+      const reszta = celSzwu - szew;
+      const v = (Math.max(PREDKOSC, Math.abs(reszta) * dlSzwu[0] * 2) * dt) / dlSzwu[0];
+      szew = Math.abs(reszta) <= v ? celSzwu : szew + Math.sign(reszta) * v;
+      pokazSzew();
+      ruchSzwu = szew === celSzwu ? 0 : requestAnimationFrame(szyj);
+    }
+
+    function pokazSzew() {
+      if (szew > zasiegSzwu) zasiegSzwu = szew;
+      svg!.classList.toggle("nic--szyje", zasiegSzwu > 0);
+      szwy.forEach((s, i) => {
+        const dl = dlSzwu[i];
+        s.style.strokeDasharray = `${dl} ${dl + 1}`;
+        s.style.strokeDashoffset = String(dl * (1 - zasiegSzwu));
+        const pt = s.getPointAtLength(dl * szew);
+        paciorki[i].style.transform = `translate(${pt.x}px,${pt.y}px)`;
+        paciorki[i].classList.toggle("nic__koralik--jest", koniec && szew > 0 && szew < 1);
+      });
+      const teraz = zasiegSzwu === 1;
+      if (teraz === zszyte) return;
+      zszyte = teraz;
+      svg!.classList.toggle("nic--zszyta", zszyte);
+      clearTimeout(zgas);
+      forma?.toggleAttribute("data-obszyta", zszyte);
+      // Przycisk zapala się raz; bez zdjęcia znacznika błysk wracałby
+      // przy każdym przejściu do kolejnego kroku formularza.
+      if (zszyte) zgas = window.setTimeout(() => forma?.removeAttribute("data-obszyta"), 2000);
     }
 
     function krok(teraz: number) {
@@ -311,6 +423,7 @@ export default function Nic() {
       if (!ruszyl) return;
       celPrzewijania();
       jedz();
+      prowadzSzew();
     };
 
     const zaplanuj = () => {
@@ -331,6 +444,8 @@ export default function Nic() {
       clearTimeout(start);
       window.removeEventListener("scroll", przewijanie);
       cancelAnimationFrame(ruch);
+      cancelAnimationFrame(ruchSzwu);
+      clearTimeout(zgas);
       obserwator.disconnect();
       cancelAnimationFrame(ramka);
     };
@@ -350,7 +465,13 @@ export default function Nic() {
         </defs>
         <path className="nic__linia" fill="none" />
         <path className="nic__jasna" fill="none" clipPath="url(#nic-okno)" />
+        <path className="nic__szew" fill="none" />
+        <path className="nic__szew" fill="none" />
         <g className="nic__wezly" />
+        <g className="nic__supel">
+          <circle className="nic__fala" r="6" />
+          <circle className="nic__supel-kolo" r="5" />
+        </g>
         <g className="nic__meta">
           <circle className="nic__fala" r="9" />
           <circle className="nic__fala" r="9" />
@@ -358,6 +479,8 @@ export default function Nic() {
         </g>
       </svg>
       <span aria-hidden="true" className="nic__koralik" />
+      <span aria-hidden="true" className="nic__koralik nic__koralik--szew" />
+      <span aria-hidden="true" className="nic__koralik nic__koralik--szew" />
     </>
   );
 }

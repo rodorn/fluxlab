@@ -1668,7 +1668,8 @@ html:not(.fraunces) [data-szeryf-pozniej] {
 @media (max-width: 639px) {
   .hero-nic__linia { stroke-width: 5; }
   .nic__linia,
-  .nic__jasna { stroke-width: 1.75; }
+  .nic__jasna,
+  .nic__szew { stroke-width: 1.75; }
   .hero-nic__podpis { font-size: 0.8125rem; }
 }
 @keyframes hero-nic-rysuj { to { stroke-dashoffset: 0; } }
@@ -1745,6 +1746,41 @@ html:not(.fraunces) [data-szeryf-pozniej] {
 @keyframes nic-fala {
   from { opacity: 0.55; transform: scale(1); }
   to { opacity: 0; transform: scale(4.5); }
+}
+
+/* Z ostatniego węzła dwie nici obszywają kartę formularza, spotykają się
+   pod nią w supełku, a przycisk formularza raz się zapala. */
+.nic__szew {
+  stroke: rgb(var(--accent));
+  stroke-width: 2.25;
+  stroke-linecap: round;
+  visibility: hidden;
+}
+.nic--szyje .nic__szew { visibility: visible; }
+.nic__koralik--szew { z-index: 20; }
+.nic__supel-kolo {
+  fill: rgb(var(--accent));
+  transform: scale(0);
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform 0.25s ease;
+}
+.nic--zszyta .nic__supel-kolo { transform: scale(1); transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); }
+.nic--zszyta .nic__supel .nic__fala { animation: nic-fala 1.4s cubic-bezier(0.22, 1, 0.36, 1); }
+form[data-obszyta] .btn-primary::after {
+  content: "";
+  position: absolute;
+  inset: -5px;
+  border-radius: 1.25rem;
+  box-shadow: 0 0 0 2px rgb(var(--accent));
+  opacity: 0;
+  pointer-events: none;
+  animation: nic-przycisk 1.6s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;
+}
+@keyframes nic-przycisk {
+  0% { opacity: 0; transform: scale(0.94); }
+  25% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1.15); }
 }
 
 .numer-sekcji {
