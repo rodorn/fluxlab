@@ -146,8 +146,8 @@ export default function Home() {
           <WitajPonownie />
           <EtykietaNocna />
           <NaglowekSklada
-            tekst={"Twoja firma bez przepisywania danych"}
-            wyroznione={["przepisywania", "danych"]}
+            tekst={"Strony internetowe i\u00a0CRM dla firm"}
+            wyroznione={["dla", "firm"]}
           />
           <PodtytulZrodlo />
           <div className="animate-fade-up-1 mt-10 flex w-full flex-col items-center justify-center gap-3 sm:w-auto sm:flex-row">
