@@ -7967,3 +7967,11 @@ Decyzje dla stratega: sprawdzić, skąd 73 sesje bez odsyłacza (strony wejścia
 **Kanały:** Google 8 h → 3 osoby w dobie, 27 w tygodniu; social (inne sesje) 1 h → 9 / ok. 45; Bing/AI 2 h + 3 cykle poza planem → 0 (3. doba), 7 dni 5 sesji, 3 z narzędziem: zostaje tylko Z1 i pomiar Z17; pomiar 6 h → 0, dziś 3 pomiary ogólne zamiast 6, reszta to diagnozy narzędzi z decyzją; outreach wyłączony.
 **Plan:** 23 zadania (Z1 do Z23), kamienie 2 (Z5 narzędzia: kalkulator albo CTA audytu, Z10 link /widocznosc-w-ai → /asystent-ai-na-stronie), seria GSC timerem 26.10 01:45. Nowa reguła: przy zamkniętym planie tylko wpis „plan zamknięty", bez zmian llms.txt i Bing.
 **Raport:** https://panel.fluxlab.pl/raporty?id=2026-10-25-57028db3 (podstrona zamiast maila, zasada z 22.10; lokalna kopia `skrypty-raport/send_fluxlab.py` nie ma bramy z 23.10 i wysłałaby mail).
+
+## 2026-10-25 06:45
+**Kanał:** widoczność w asystentach AI (Bing, Z1 planu 25/26).
+**Co zrobione:** zgłoszono w Bing URL Submission ostatnie 17 adresów z mapy witryny, których Bing jeszcze nie dostał (strona główna, /ksef-2027, /n8n, /pilotaz, artykuły podatkowe JDG, kategorie strefy wiedzy); zostaje 1 adres (/strefa-wiedzy/kategoria/raportowanie).
+**Ruch:** raport_ruchu 06:43 CET: 142 odsłony, 106 osób w dobie (+19% wobec średniej 118,9); najczęściej /, /ksef-2027 (12), /kalkulator-podatkowy (10); LinkedIn 1, X 0, YouTube 0, Threads 0; uruchomienia narzędzi 0. Tydzień 896 odsłon, 545 osób.
+**Dowód:** Bing „URLs submitted today” 83 → 100, „Quota left” 17 → 0, lista zgłoszonych 129 → 146, wpisy „Today at 06:45”. Lista `cykl/bing-zgloszone-2026-10-25b.txt`. AI Performance (dane do 22.10): cytowania Copilota 16-22.10 24 wobec 15 w 13-19.10, 22.10 9 cytowań; od 7.10 razem 45.
+**Dla Pawła:**
+**Zostało otwarte:** Z2 (czy kalkulator podatkowy liczy uruchomienia). Bing od teraz tylko pomiarowo (Z17, Z21).
