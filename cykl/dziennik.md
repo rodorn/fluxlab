@@ -7820,3 +7820,118 @@ Otwarte decyzje dla stratega: kanał `audyt-wynik` zamknąć (4 doby bez maila, 
 **Dowód:** `cykl/plan-ruchu.md` bez zmian (Z11, Z13, Z14, Z15 otwarte); `python3 ~/Projekty/fluxlab-ruch/raport_ruchu.py` 15:43.
 **Dla Pawła:**
 **Zostało otwarte:** Z11 (18:30), Z13 (25.10 01:45), Z14 (02:30), Z15 (25.10 03:00).
+
+## 2026-10-24 16:45
+**Kanał:** pomiar (Z11 z planu 24.10).
+**Co zrobione:** pomiar wieczorny: od 13:30 16 sesji ludzi, 1 z odsyłaczem (b2b-email, otwarcie piksela starego maila, nie człowiek), 15 bez; od 06:30 0 uruchomień narzędzi, 0 lead_*, 0 pobrań PDF; tytuł /ksef-2027 na produkcji przywrócony (Z5).
+**Ruch:** raport_ruchu: 85 odsłon, 63 osoby w dobie (−30% wobec średniej 121,1); źródła: b2b-email 7, instagram 4, facebook 3, m.facebook.com 2, www.facebook.com 2; LinkedIn 2 sesje, X 1, YouTube 0; uruchomienia narzędzi 0.
+**Dowód:** cykl/plan-ruchu.md Z11 => z liczbami; curl https://fluxlab.pl/ksef-2027 → „KSeF od 1 stycznia 2027: lista kontrolna dla firm | Fluxlab”.
+**Dla Pawła:**
+**Zostało otwarte:** Z13 (nie wcześniej niż 25.10 01:45), Z14 (02:30, bilans planu), Z15 (nie wcześniej niż 25.10 03:00). Do 01:45 brak zadań do wzięcia w kolejności.
+
+## 2026-10-24 17:45
+**Kanał:** brak (Z13 nie wcześniej niż 25.10 01:45, Z14 to bilans o 02:30 po Z13, Z15 nie wcześniej niż 25.10 03:00).
+**Co zrobione:** nic nie poszło w świat; budżet o 17:45 jest już na „utrzymaj”, ale plan na 24.10 i tak wyklucza nowe treści (kamieni 0) i outreach w weekend, a żądania indeksowania idą serią 25.10 01:40, a do 01:45 żadnego zadania nie da się wziąć po kolei.
+**Ruch:** raport_ruchu: 91 odsłon, 66 osób w dobie (−25% wobec średniej 121,0); źródła: b2b-email 6, facebook 4, instagram 4, www.facebook.com 3, m.facebook.com 2; LinkedIn 2 sesje, X 1, YouTube 0; uruchomienia narzędzi 0.
+**Dowód:** `cykl/plan-ruchu.md` bez zmian (Z13, Z14, Z15 otwarte); `python3 ~/Projekty/fluxlab-ruch/raport_ruchu.py` 17:43.
+**Dla Pawła:**
+**Zostało otwarte:** Z13 (25.10 01:45), Z14 (02:30), Z15 (25.10 03:00).
+
+## 2026-10-24 18:43
+**Kanał:** brak (Z13 nie wcześniej niż 25.10 01:45, Z14 to bilans o 02:30 po Z13, Z15 nie wcześniej niż 25.10 03:00).
+**Co zrobione:** nic nie poszło w świat; wszystkie trzy otwarte zadania mają okno od nocy 25.10, a plan na sobotę wyklucza outreach i nowe treści.
+**Ruch:** raport_ruchu 18:43: 95 odsłon, 67 osób w dobie (−21% wobec średniej 119,7); tydzień 854 odsłony, 510 osób; LinkedIn 2 sesje, X 1, YouTube 0; najczęściej / (26), /ksef-2027 (8), /strony-www (7); uruchomienia narzędzi 0; zdarzenia: otwarcie_maila 8, pobranie 1, czat_pytanie 1.
+**Dowód:** `cykl/plan-ruchu.md` bez zmian (Z13, Z14, Z15 otwarte); niezacommitowane `openGraph.images` w app/ksef-2027 i app/numer-ksef to cudza zmiana, nie ruszana.
+**Dla Pawła:**
+**Zostało otwarte:** Z13 (25.10 01:45), Z14 (02:30), Z15 (25.10 03:00).
+
+## 2026-10-24 19:43
+**Kanał:** brak. Z13 można zacząć najwcześniej 25.10 o 01:45, Z14 to bilans o 02:30 po Z13, a Z15 najwcześniej 25.10 o 03:00. Pozostałe kanały plan na sobotę blokuje: outreach, social, fora, poprawki stron i nowe treści.
+**Co zrobione:** w świat nic nie poszło. Odblokowania nie trzeba, bo timer `fl-gsc-25.timer` jest aktywny (nd. 25.10 01:40), a lista `cykl/z13-lista-25.txt` ma 9 adresów, zaczynając od /ksef-2027.
+**Ruch:** raport_ruchu 19:43: 102 odsłony, 69 osób w dobie (−14% wobec średniej 119,0); źródła: b2b-email 7 (piksel), instagram 5, www.google.com 5, facebook 3, www.facebook.com 3; LinkedIn 2 sesje, X 1, YouTube 0; najczęściej / (26), /ksef-2027 (10), /strony-www (7); uruchomienia narzędzi 0.
+**Dowód:** `systemctl list-timers` pokazuje fl-gsc-25.timer na Sun 2026-10-25 01:40; `cykl/plan-ruchu.md` bez zmian.
+**Dla Pawła:**
+**Zostało otwarte:** Z13 (25.10 01:45), Z14 (02:30), Z15 (25.10 03:00).
+
+## 2026-10-24 20:43
+**Kanał:** brak. Z13 można zacząć najwcześniej 25.10 o 01:45, Z14 to bilans o 02:30 po Z13, a Z15 najwcześniej 25.10 o 03:00. Pozostałych kanałów plan na sobotę nie dopuszcza: wyklucza outreach, social, fora, poprawki stron i nowe treści.
+**Co zrobione:** nic nie poszło w świat, kolejność planu na to nie pozwala.
+**Ruch:** raport_ruchu 20:43: 104 odsłony, 71 osób w dobie (−12% wobec średniej 117,7); źródła: b2b-email 7 (piksel), www.google.com 6, instagram 5, facebook 3, www.facebook.com 3; LinkedIn 2 sesje, X 1, YouTube 0; najczęściej / (26), /ksef-2027 (10), /strony-www (7); uruchomienia narzędzi 0.
+**Dowód:** `cykl/plan-ruchu.md` bez zmian (Z13, Z14, Z15 otwarte); timer fl-gsc-25 czeka na 25.10 01:40.
+**Dla Pawła:**
+**Zostało otwarte:** Z13 (25.10 01:45), Z14 (02:30), Z15 (25.10 03:00).
+
+## 2026-10-24 21:43
+**Kanał:** brak. Otwarte zostały tylko Z13 (najwcześniej 25.10 01:45), Z14 (bilans o 02:30, po Z13) i Z15 (najwcześniej 25.10 03:00). Na sobotę plan nie przewiduje outreachu, social, forów ani nowych treści.
+**Co zrobione:** nic nie poszło w świat, bo plan nie pozwala ruszyć kolejnych zadań przed ich godziną.
+**Ruch:** raport_ruchu 21:43: 105 odsłon, 74 osoby w dobie (−12% wobec średniej 118,7); źródła: www.google.com 6, instagram 5, b2b-email 5, www.facebook.com 2, facebook 2; LinkedIn 1 sesja (15 w 7 dni); najczęściej / (25), /ksef-2027 (12), /strony-www (7), /kalkulator-podatkowy (6), /produkty (6); uruchomienia narzędzi 0.
+**Dowód:** `cykl/plan-ruchu.md` bez zmian (Z13, Z14, Z15 otwarte); timer fl-gsc-25 czeka na 25.10 01:40.
+**Dla Pawła:**
+**Zostało otwarte:** Z13 (25.10 01:45), Z14 (02:30), Z15 (25.10 03:00).
+
+## 2026-10-24 22:43
+**Kanał:** brak. Otwarte są tylko Z13 (najwcześniej 25.10 01:45), Z14 (bilans o 02:30, po Z13) i Z15 (najwcześniej 25.10 03:00). Na sobotę plan wyklucza outreach, social, fora, poprawki stron i nowe treści.
+**Co zrobione:** nic nie poszło w świat, bo plan nie pozwala zacząć zadań przed ich godziną.
+**Ruch:** raport_ruchu 22:43: 121 odsłon, 93 osoby w dobie (+2% wobec średniej 118,9); tydzień 889 odsłon, 540 osób; źródła: www.google.com 6, instagram 5, b2b-email 5 (piksel), facebook 4, www.facebook.com 3; LinkedIn 1 sesja (15 w 7 dni), X 1 (3 w 7 dni), YouTube 0; najczęściej / (30), /ksef-2027 (12), /kalkulator-podatkowy (6), /produkty (6), /strony-www (5); uruchomienia narzędzi 0.
+**Dowód:** `cykl/plan-ruchu.md` bez zmian (Z13, Z14, Z15 otwarte); timer fl-gsc-25 ustawiony na nd. 25.10 01:40.
+**Dla Pawła:**
+**Zostało otwarte:** Z13 (25.10 01:45), Z14 (02:30), Z15 (25.10 03:00).
+
+## 2026-10-24 23:43
+**Kanał:** brak. Otwarte są tylko Z13 (najwcześniej 25.10 01:45), Z14 (bilans o 02:30, po Z13) i Z15 (najwcześniej 25.10 03:00). Budżet „zwolnij”, a sobotni plan wyklucza outreach, social, fora, poprawki stron i nowe treści.
+**Co zrobione:** nic nie poszło w świat, bo plan nie pozwala zacząć tych zadań przed ich godziną.
+**Ruch:** raport_ruchu 23:43: 134 odsłony, 100 osób w dobie (+13% wobec średniej 119,0); tydzień 902 odsłony, 547 osób; źródła: www.google.com 6, instagram 5, b2b-email 5 (piksel), facebook 4, www.facebook.com 3; LinkedIn 1 sesja (14 w 7 dni), X 0 (3 w 7 dni), YouTube 0; najczęściej / (38), /ksef-2027 (11), /kalkulator-podatkowy (6), /produkty (6), /strony-www (5); uruchomienia narzędzi 0.
+**Dowód:** `cykl/plan-ruchu.md` bez zmian; `systemctl --user list-timers`: fl-gsc-25.timer nd. 25.10 01:40.
+**Dla Pawła:**
+**Zostało otwarte:** Z13 (25.10 01:45), Z14 (02:30), Z15 (25.10 03:00).
+
+## 2026-10-25 00:43
+**Kanał:** brak. Otwarte są tylko Z13 (najwcześniej 25.10 01:45), Z14 (bilans o 02:30, po Z13) i Z15 (najwcześniej 25.10 03:00), a sobotnio-niedzielny plan wyklucza outreach i nowe treści.
+**Co zrobione:** nic nie poszło w świat, bo plan nie pozwala zacząć tych zadań przed ich godziną.
+**Ruch:** raport_ruchu 00:43: 131 odsłon, 97 osób w dobie (+9% wobec średniej 119,9); tydzień 903 odsłony, 548 osób; źródła: www.google.com 6, instagram 5, b2b-email 4, facebook 4, www.facebook.com 3; LinkedIn 1 sesja (14 w 7 dni), X 0 (3 w 7 dni), YouTube 0, Threads 0; najczęściej / (38), /ksef-2027 (11), /produkty (6), /strony-www (5), /kalkulator-podatkowy (4); uruchomienia narzędzi 0.
+**Dowód:** `cykl/plan-ruchu.md` bez zmian; `systemctl --user list-timers`: fl-gsc-25.timer nd. 25.10 01:40 (za 56 min).
+**Dla Pawła:**
+**Zostało otwarte:** Z13 (25.10 01:45), Z14 (02:30), Z15 (25.10 03:00).
+
+### Bilans planu 2026-10-24/25
+`pomiar-kanalow.py` 01:44, 24 h: ludzie 87, z odsyłaczem 14 (wobec 15), bez 73 (wobec 29), pary 13, salwy 0. 7 dni: ludzie 372 (wobec 334).
+Z odsyłaczem w dobie: Google 3 (wobec 1), social 11 (wobec 14: Instagram 6, Facebook 4, LinkedIn 1; posty innych sesji), useme 1, Bing 0 (wobec 0). Copilot 15 cytowań (wobec 15, panel Bing nadal z danymi do 19.10). GSC 16-22.10 (23.10 nie doszedł, „Ostatnia aktualizacja: 4 godziny temu”): 22 klik. / 1,22 tys. wyśw. / CTR 1,8% / poz. 27,1 (wobec 19/1120/1,7%/28,1).
+Uruchomienia narzędzi w dobie 0, lead_* 0, klik_po_wyniku 0; b2b-email to piksele, 0 ludzi (Z9).
+
+| zad. | stan | godz. | co przyprowadziło |
+|---|---|---|---|
+| Z1 | zrobione | 06:50 | pomiar: 22.10 nie doszedł, 21.10 najlepszy dzień (6 klik.) |
+| Z2 | zrobione | 07:55 | 4 kandydatów do serii (zeskanowane, nie zindeksowane) |
+| Z3 | zrobione | 08:45 | Bing: 10 adresów zgłoszonych, Copilot 15 bez zmian |
+| Z4 | zrobione | 08:48 | 5 z 5 stron serii w Google, w tym /asystent-ai-na-stronie |
+| Z5 | zrobione | 08:51 | /ksef-2027 tytuł cofnięty (bcdb160), embargo do 31.10 |
+| Z6 | zrobione | 10:05 | seria-podatki 22 sesje w 7 dni, pakiet FB narzędzia 0 |
+| Z7 | zrobione | 10:50 | pomiar: 9 ludzi od 06:30, 0 leadów, 0 zapytań w Zoho |
+| Z8 | zrobione | 10:55 | AI 5 sesji w 7 dni, 3 z nich uruchomiły narzędzie |
+| Z9 | zrobione | 11:00 | b2b-email = piksele, 0 ludzi |
+| Z10 | zrobione | 11:50 | 1 kandydat: „asystent ai na stronę” trafia na /widocznosc-w-ai |
+| Z11 | zrobione | 16:45 | pomiar: 16 ludzi od 13:30, realnie 0 z odsyłaczem |
+| Z12 | zrobione | 12:50 | lista 9 adresów, timer fl-gsc-25 |
+| Z13 | zrobione | 01:44 | 9 z 9 próśb o indeksowanie |
+| Z14 | zrobione | 01:50 | ten bilans |
+| Z15 | otwarte | 03:30 | ocena embarga /e-doreczenia-integracja i /automatyzacja-dla-biur-rachunkowych |
+| Z16 | zrobione | 12:56 | szkic 26.10: FAQ 4 → 3, słowa 298 → 276 |
+
+Trzy największe zmiany: (1) ludzie bez odsyłacza w dobie 73 wobec 29, przy z odsyłaczem 14 wobec 15, więc wzrost nie pochodzi z żadnego mierzonego kanału; (2) GSC 7 dni 22 klik. wobec 19 i 1,22 tys. wyśw. wobec 1,12 tys., Google w dobie 3 wobec 1, czyli spadek 7 → 1 z 23.10 się nie potwierdził; (3) asystenci AI dali tylko 5 sesji w 7 dni, ale 3 z nich uruchomiły narzędzie, a 15 cytowań Copilota to 0 kliknięć.
+Decyzje dla stratega: sprawdzić, skąd 73 sesje bez odsyłacza (strony wejścia, godziny, przeglądarki), zanim uzna się je za ludzi; kandydat z Z10 (link z /widocznosc-w-ai do /asystent-ai-na-stronie) do decyzji, embargo /asystent-ai-na-stronie do 30.10; /ksef-2027 pod embargiem do 31.10, ocena po dojściu danych od 24.10.
+
+## 2026-10-25 01:50
+**Kanał:** Google (Z13, wynik serii indeksowania) i pomiar (Z14, bilans planu).
+**Co zrobione:** timer fl-gsc-25 wysłał prośby o indeksowanie dla 9 z 9 adresów z `cykl/z13-lista-25.txt` (01:40-01:44, bez „Przekroczono limit”), dopisany bilans planu 2026-10-24/25.
+**Ruch:** raport_ruchu 01:43: 140 odsłon, 104 osoby w dobie (+18% wobec średniej 118,9); źródła: www.google.com 6, instagram 5, b2b-email 4, facebook 4, www.facebook.com 3; LinkedIn 1 sesja, X 0, YouTube 0, Threads 0; uruchomienia narzędzi 0.
+**Dowód:** `cykl/z19-indeksowanie-25.log` (9 linii „prośba przesłana”), „Bilans planu 2026-10-24/25” wyżej, Z13 i Z14 „- [x]” w `cykl/plan-ruchu.md`.
+**Dla Pawła:**
+**Zostało otwarte:** Z15 (nie wcześniej niż 25.10 03:00, ocena embarga).
+
+## 2026-10-25 02:20
+**Kanał:** Google (Z15, ocena embarga tytułów i opisów).
+**Co zrobione:** odczyt GSC (filtr strony, 28 dni, zakładka Dni, dane do 22.10) dla dwóch stron pod embargiem do 25.10; oba zalecenia „zostaw”, w okolicach 18.10 nie było żadnej zmiany title ani description, więc nie ma czego cofać.
+**Ruch:** raport_ruchu 02:43 CEST: 144 odsłony, 108 osób w dobie (+21% wobec średniej 118,9); źródła: www.google.com 6, instagram 5, b2b-email 4 (piksel), facebook 4, www.facebook.com 3; LinkedIn 1, X 0, YouTube 0, Threads 0; uruchomienia narzędzi 0. Tydzień 913 odsłon, 556 osób.
+**Dowód:** Z15 „- [x]” w `cykl/plan-ruchu.md`. /e-doreczenia-integracja: 11-17.10 9 wyśw. (1,3/dz.), 1 klik; 18-22.10 6 wyśw. (1,2/dz.), 0 klik.; spadek był 9.10 (45 → 0), od 10.10 poziom stały. /automatyzacja-dla-biur-rachunkowych: 11-17.10 13 wyśw. (1,9/dz.), 0 klik.; 18-22.10 8 wyśw. (1,6/dz.), 0 klik.; w obu oknach jedna niedziela z zerem. Ostatnie zmiany metadanych: e-doręczenia b231a13 16.10 (jedno słowo), biura 97fcbf8 11.10; commity z 18 i 21.10 nie zmieniały title ani description.
+**Dla Pawła:**
+**Zostało otwarte:** plan 24/25 zamknięty, 0 otwartych zadań. Innych kanałów nie ruszałem, bo „Czego nie robić” blokuje nowe treści, maile i social, a plan pozwala na jedno zadanie w cyklu. Uwaga dla timerów: od 25.10 obowiązuje czas zimowy CET, a pętla czekająca na „03:00” zawisła, bo o 03:00 CEST zegar cofnął się na 02:00.
