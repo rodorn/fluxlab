@@ -432,15 +432,24 @@ export default function Nic() {
     const obserwator = new ResizeObserver(zaplanuj);
     obserwator.observe(main);
     uloz();
-    const start = setTimeout(
-      () =>
+    // Po przejściu z podstrony zegar dokumentu dawno minął START, więc
+    // czekamy na koniec animacji linii hero, a nie na stałą porę.
+    let start = 0;
+    let odpiety = false;
+    const ruszaj = () => {
+      if (odpiety) return;
+      start = window.setTimeout(() =>
         "requestIdleCallback" in window
           ? requestIdleCallback(probkuj, { timeout: 500 })
           : probkuj(),
-      Math.max(0, START - performance.now()),
-    );
+      );
+    };
+    const animacjaHero = liniaHero?.getAnimations()[0];
+    if (animacjaHero) animacjaHero.finished.then(ruszaj, ruszaj);
+    else start = window.setTimeout(ruszaj, Math.max(0, START - performance.now()));
     window.addEventListener("scroll", przewijanie, { passive: true });
     return () => {
+      odpiety = true;
       clearTimeout(start);
       window.removeEventListener("scroll", przewijanie);
       cancelAnimationFrame(ruch);

@@ -686,6 +686,7 @@ export default function LandingForm({
                 onClick={() => {
                   setKontakt(f.id);
                   setErrorMsg(null);
+                  window.dispatchEvent(new CustomEvent("forma-kontaktu", { detail: f.id }));
                 }}
                 className={`flex flex-col items-center justify-start rounded-xl border px-2 py-4 text-center transition-all ${
                   kontakt === f.id

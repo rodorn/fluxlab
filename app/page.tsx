@@ -79,6 +79,25 @@ const KROKI = [
 
 const MANIFEST = KROKI[2][1];
 
+// Kroki pod formularzem opowiadają drogę dla formy kontaktu wybranej w pierwszym kroku.
+const KROKI_KONTAKTU = {
+  meet: [
+    ["Wybierasz termin", "Dwa zdania i godzina z kalendarza."],
+    ["Rozmawiamy 30 minut na Meet", "Na spotkaniu dostajesz cenę i termin."],
+    KROKI[2],
+  ],
+  phone: [
+    ["Zostawiasz numer", "Dwa zdania i numer telefonu."],
+    ["Oddzwaniamy tego samego dnia", "W rozmowie dostajesz cenę i termin."],
+    KROKI[2],
+  ],
+  email: [
+    ["Piszesz, czego potrzebujesz", "Dwa zdania w formularzu."],
+    ["Dostajesz cenę i termin", "W mailu, tego samego dnia."],
+    KROKI[2],
+  ],
+};
+
 const ZASADA = [
   ["Cena z góry", "Znasz kwotę przed startem, bez rozliczania godzin."],
   ["Termin w ofercie", "Cenę i termin dostajesz tego samego dnia."],
@@ -380,7 +399,7 @@ export default function Home() {
                 submitLabel="Wyślij i poproś o cenę"
               />
             </RevealOnScroll>
-            <KrokiSticky kroki={KROKI} />
+            <KrokiSticky kroki={KROKI_KONTAKTU.meet} warianty={KROKI_KONTAKTU} />
           </div>
         </section>
       </main>

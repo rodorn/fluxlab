@@ -2,15 +2,28 @@
 
 import { useEffect, useRef, useState } from "react";
 
-type Props = { kroki: readonly (readonly string[])[] };
+type Kroki = readonly (readonly string[])[];
+type Props = { kroki: Kroki; warianty?: Record<string, Kroki> };
 
 /**
  * Trzy kroki w jednym rzędzie. Po wejściu w widok linia między nimi się
  * wypełnia, a kroki zapalają się po kolei. Na telefonie pionowo.
  */
-export default function KrokiSticky({ kroki }: Props) {
+export default function KrokiSticky({ kroki: poczatkowe, warianty }: Props) {
   const [aktywny, setAktywny] = useState(-1);
+  const [kroki, setKroki] = useState(poczatkowe);
   const ref = useRef<HTMLOListElement | null>(null);
+
+  // Formularz ogłasza wybraną formę kontaktu; kroki mówią wtedy o niej.
+  useEffect(() => {
+    if (!warianty) return;
+    const zmien = (e: Event) => {
+      const nowe = warianty[(e as CustomEvent<string>).detail];
+      if (nowe) setKroki(nowe);
+    };
+    window.addEventListener("forma-kontaktu", zmien);
+    return () => window.removeEventListener("forma-kontaktu", zmien);
+  }, [warianty]);
 
   useEffect(() => {
     const el = ref.current;
@@ -40,7 +53,7 @@ export default function KrokiSticky({ kroki }: Props) {
       window.removeEventListener("resize", onScroll);
       if (ramka) cancelAnimationFrame(ramka);
     };
-  }, [kroki]);
+  }, [kroki.length]);
 
   const postep = aktywny < 0 ? 0 : (aktywny / (kroki.length - 1)) * 100;
 
@@ -71,7 +84,7 @@ export default function KrokiSticky({ kroki }: Props) {
         const wlaczony = i <= aktywny;
         return (
           <li
-            key={tytul}
+            key={i}
             className="relative flex gap-4 pl-0 md:flex-col md:items-center md:text-center"
           >
             <span
