@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { zglosZdarzenie } from "@/lib/zdarzenie";
 import {
+  PROGI,
   STRONY,
   USLUGI_HANDLOWCA,
   WIELKOSC,
@@ -140,6 +141,7 @@ export default function WirtualnyHandlowiec() {
   const [wybrane, setWybrane] = useState<string[]>([]);
   const [osobyCrm, setOsobyCrm] = useState(3);
   const [wariantCrm, setWariantCrm] = useState<WariantCrm>("pilotaz");
+  const [progi, setProgi] = useState<Record<string, number>>({});
   const [ladPakiet, setLadPakiet] = useState(false);
   const [postep, setPostep] = useState(0);
   const przerwij = useRef<AbortController | null>(null);
@@ -243,6 +245,7 @@ export default function WirtualnyHandlowiec() {
       if (w) {
         setOsobyCrm(w.osoby);
         setWariantCrm(w.wariant);
+        setProgi(w.progi);
       }
       zglosZdarzenie("handlowiec_pakiet");
     } catch (err) {
@@ -276,15 +279,21 @@ export default function WirtualnyHandlowiec() {
   }
 
   const crmMies = abonamentCrm(wariantCrm, osobyCrm, []).miesiecznie;
+  const prog = (id: string) => PROGI[id]?.[progi[id] ?? 0];
   const mies = (u: UslugaHandlowca) =>
-    u.id === "crm" ? crmMies : u.miesiecznie;
-  const cena = (u: UslugaHandlowca) =>
-    u.id === "crm"
-      ? `${zl(crmMies)} / mies., ${osobyCrm} ${osobyCrm === 1 ? "osoba" : osobyCrm < 5 ? "osoby" : "osób"}`
-      : u.cena;
+    u.id === "crm" ? crmMies : (prog(u.id)?.cena ?? u.miesiecznie);
+  const cena = (u: UslugaHandlowca) => {
+    const p = prog(u.id);
+    return u.id === "crm"
+      ? `${zl(crmMies)}/mies., ${osobyCrm} ${osobyCrm === 1 ? "osoba" : osobyCrm < 5 ? "osoby" : "osób"}`
+      : p
+        ? `${zl(p.cena)}/mies., ${p.opis}`
+        : u.cena;
+  };
   const uslugi = USLUGI_HANDLOWCA.filter((u) => wybrane.includes(u.id));
   const jednorazowo = uslugi.reduce((s, u) => s + u.jednorazowo, 0);
   const miesiecznie = uslugi.reduce((s, u) => s + mies(u), 0);
+  const od = wybrane.includes("sklep_ai") ? "od " : "";
 
   function przelacz(id: string) {
     setWybrane((w) => {
@@ -327,10 +336,10 @@ export default function WirtualnyHandlowiec() {
         ...uslugi.map((u) =>
           u.id === "crm"
             ? `- ${u.nazwa}: ${WARIANTY_CRM.find((w) => w.id === wariantCrm)!.nazwa} (${cena(u)})`
-            : `- ${u.nazwa} (${u.cena})`,
+            : `- ${u.nazwa} (${cena(u)})`,
         ),
         jednorazowo ? `Jednorazowo: ${zl(jednorazowo)} netto` : "",
-        miesiecznie ? `Miesięcznie: od ${zl(miesiecznie)} netto` : "",
+        miesiecznie ? `Miesięcznie: ${od}${zl(miesiecznie)} netto` : "",
       ]
         .filter(Boolean)
         .join("\n"),
@@ -616,6 +625,32 @@ export default function WirtualnyHandlowiec() {
                             )}
                           </span>
                         </label>
+                        {PROGI[u.id] && on && (
+                          <div
+                            role="radiogroup"
+                            aria-label={`Pakiet: ${u.nazwa}`}
+                            className="mt-2 ml-7 inline-flex rounded-lg border border-gray-200 p-0.5 text-xs text-gray-600 dark:border-white/10 dark:text-gray-400"
+                          >
+                            {PROGI[u.id].map((x, i) => (
+                              <button
+                                key={x.cena}
+                                type="button"
+                                role="radio"
+                                aria-checked={(progi[u.id] ?? 0) === i}
+                                onClick={() =>
+                                  setProgi((p) => ({ ...p, [u.id]: i }))
+                                }
+                                className={`rounded-md px-2.5 py-1.5 transition-colors ${
+                                  (progi[u.id] ?? 0) === i
+                                    ? "bg-accent-solid text-white"
+                                    : "hover:text-gray-900 dark:hover:text-white"
+                                }`}
+                              >
+                                {x.etykieta}
+                              </button>
+                            ))}
+                          </div>
+                        )}
                         {u.id === "crm" && on && (
                           <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-2 pl-7 text-xs text-gray-600 dark:text-gray-400">
                             <span className="flex items-center gap-2">
@@ -677,7 +712,7 @@ export default function WirtualnyHandlowiec() {
                   <span className="text-base font-semibold tabular-nums text-gray-900 dark:text-white">
                     {[
                       jednorazowo ? `${zl(jednorazowo)} raz` : "",
-                      miesiecznie ? `od ${zl(miesiecznie)}/mies.` : "",
+                      miesiecznie ? `${od}${zl(miesiecznie)}/mies.` : "",
                     ]
                       .filter(Boolean)
                       .join(" + ") || "nic nie wybrano"}

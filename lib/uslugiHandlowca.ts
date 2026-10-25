@@ -2,7 +2,7 @@
  *  z RODZAJE i usługi miesięczne z ABONAMENTY, więc ceny mają jedno źródło. */
 
 import { ABONAMENTY } from "./abonamenty";
-import { RODZAJE } from "./opcjeStrony";
+import { OPIEKA, RODZAJE } from "./opcjeStrony";
 import type { WariantCrm } from "./modulyCrm";
 
 export type UslugaHandlowca = {
@@ -61,12 +61,55 @@ export const STRONY = RODZAJE.map((r) => r.id);
  *  wariant CRM i rodzaj strony domyślnie dobrane do zespołu. */
 export const WIELKOSC: Record<
   string,
-  { osoby: number; wariant: WariantCrm; strona: string }
+  {
+    osoby: number;
+    wariant: WariantCrm;
+    strona: string;
+    progi: Record<string, number>;
+  }
 > = {
-  "tylko ja": { osoby: 1, wariant: "pilotaz", strona: "landing" },
-  "2-5": { osoby: 4, wariant: "pilotaz", strona: "landing" },
-  "6-20": { osoby: 12, wariant: "integracje", strona: "firmowa" },
-  "ponad 20": { osoby: 25, wariant: "integracje", strona: "firmowa" },
+  "tylko ja": {
+    osoby: 1,
+    wariant: "pilotaz",
+    strona: "landing",
+    progi: { strona: 0, konkurencja: 0 },
+  },
+  "2-5": {
+    osoby: 4,
+    wariant: "pilotaz",
+    strona: "landing",
+    progi: { strona: 0, konkurencja: 1 },
+  },
+  "6-20": {
+    osoby: 12,
+    wariant: "integracje",
+    strona: "firmowa",
+    progi: { strona: 1, konkurencja: 1 },
+  },
+  "ponad 20": {
+    osoby: 25,
+    wariant: "integracje",
+    strona: "firmowa",
+    progi: { strona: 2, konkurencja: 2 },
+  },
+};
+
+/** Pakiety usług miesięcznych z kilkoma cenami: opieka jak w OPIEKA,
+ *  benchmarking jak w cenniku /benchmarking-konkurencji. */
+export const PROGI: Record<
+  string,
+  { etykieta: string; opis: string; cena: number }[]
+> = {
+  strona: OPIEKA.filter((o) => o.cena).map((o) => ({
+    etykieta: `${o.cena.toLocaleString("pl-PL")} zł`,
+    opis: "opis" in o ? o.opis : "",
+    cena: o.cena,
+  })),
+  konkurencja: [
+    { etykieta: "co miesiąc", opis: "raport co miesiąc", cena: 39 },
+    { etykieta: "co tydzień", opis: "raport co tydzień", cena: 49 },
+    { etykieta: "codziennie", opis: "raport codziennie", cena: 69 },
+  ],
 };
 
 /** Najwyżej jedna strona (sklep zostaje, landing i firmowa według wielkości),
