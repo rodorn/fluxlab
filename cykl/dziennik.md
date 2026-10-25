@@ -7943,3 +7943,11 @@ Decyzje dla stratega: sprawdzić, skąd 73 sesje bez odsyłacza (strony wejścia
 **Dowód:** Bing URL Submission „URLs submitted today 0 → 83”, „Quota left 17”, lista „1 — 25 of 129” z wpisami „Today at 03:44”. Adresy: `cykl/bing-zgloszone-2026-10-25.txt` (sitemap 149 adresów minus zgłoszone 14-24.10 minus polityka, regulamin, spis i mapa strony). Do Google 0 żądań, 0 zmian w treści.
 **Dla Pawła:**
 **Zostało otwarte:** nowy plan stratega o 06:15. Efekt zgłoszenia w Bing sprawdzać w AI Performance (cytowania, było 15 w 13-19.10) i w liczniku (odsyłacze bing, copilot) za 3-7 dni; pozostały limit Bing na dziś 17.
+
+## 2026-10-25 04:43
+**Kanał:** widoczność w asystentach AI.
+**Co zrobione:** plan 24/25 nadal zamknięty (16 z 16, 0 „- [ ]”), więc porównaliśmy llms.txt z sitemap.xml i dopisaliśmy do „Usługi z ceną podaną na stronie” dwie płatne usługi, których asystenci nie mieli skąd wziąć: prowadzenie wizytówki Google (349 zł/mies.) i benchmarking konkurencji (39/49/69 zł/mies.).
+**Ruch:** raport_ruchu 04:43 CET: 141 odsłon, 105 osób w dobie (+19% wobec średniej 118,9); najczęściej / (39), /ksef-2027 (12), /kalkulator-podatkowy (10); LinkedIn 1, X 0, Threads 0, YouTube 0; uruchomienia narzędzi 0. Tydzień 905 odsłon, 549 osób.
+**Dowód:** commit 1bca261, https://fluxlab.pl/llms.txt zawiera oba adresy (sprawdzone curl po wdrożeniu); IndexNow: 4 adresy, przyjęły 2 z 3 punktów. Poza mapą w llms.txt zostają celowo: kategorie strefy wiedzy, polityka, regulamin, spis, /zmiany, /jak-zbudowana, /materialy.
+**Dla Pawła:**
+**Zostało otwarte:** nowy plan stratega o 06:15. Limit Bing URL Submission na dziś 17.
