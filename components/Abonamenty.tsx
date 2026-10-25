@@ -11,11 +11,11 @@ export default function Abonamenty() {
         Stała opłata co miesiąc, bez opłaty za wdrożenie. Dodatki doliczamy do
         abonamentu.
       </p>
-      <ul className="grid gap-4 lg:grid-cols-6">
-        {ABONAMENTY.map((a, i) => (
+      <ul className="grid gap-4 lg:grid-cols-3">
+        {ABONAMENTY.map((a) => (
           <li
             key={a.id}
-            className={`flex flex-col rounded-2xl border border-gray-200 p-6 dark:border-white/10 ${i < 3 ? "lg:col-span-2" : "lg:col-span-3"}`}
+            className="flex flex-col rounded-2xl border border-gray-200 p-6 dark:border-white/10"
           >
             <Link href={a.href} className="group">
               <span className="text-lg font-bold text-gray-900 group-hover:text-accent dark:text-white">

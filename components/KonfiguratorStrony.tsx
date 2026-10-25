@@ -351,7 +351,7 @@ export default function KonfiguratorStrony() {
 
         <p className={naglowek}>3. Dodatki</p>
         <div className="sierota-sm-2 mx-auto grid max-w-2xl gap-3 sm:grid-cols-2">
-          {OPCJE.map((o) => {
+          {OPCJE.filter((o) => !o.tylko || o.tylko.includes(rodzajId)).map((o) => {
             const wCenie = o.wCenie.includes(rodzajId);
             const aktywna = wCenie || wybrane.includes(o.id);
             return (

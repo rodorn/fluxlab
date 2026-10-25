@@ -57,7 +57,7 @@ export function dekodujWycene(d: string | undefined): Wycena | null {
   if (c.t === "s") {
     if (!Array.isArray(c.o)) return null;
     const ids = c.o as unknown[];
-    if (ids.length > 10 || !ids.every((x) => typeof x === "string" && x in OPCJE_STRONY)) return null;
+    if (ids.length > 15 || !ids.every((x) => typeof x === "string" && x in OPCJE_STRONY)) return null;
     const liczba = (x: unknown) => (typeof x === "number" ? x : undefined);
     const w = wycenStrone({
       r: String(c.r),

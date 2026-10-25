@@ -5,7 +5,8 @@
  *  ok. 9 900 zł (decyzja Pawła 25.10.2026). Płatności jak dodatek na /landing-z-platnoscia
  *  (790 zł), każdy język 30% strony, bo to tłumaczenie i kopia każdej podstrony.
  *  Opieka jak w cenniku /strony-www: 300, 600 albo 1 280 zł miesięcznie.
- *  Chatbot: tylko opłata miesięczna, bez wdrożenia (decyzja Pawła 25.10.2026). */
+ *  Chatbot: tylko opłata miesięczna, bez wdrożenia (decyzja Pawła 25.10.2026).
+ *  Dodatki AI do sklepu na wzór Luigi's Box, tylko co miesiąc (Paweł 25.10.2026). */
 
 export type Rodzaj = {
   id: string;
@@ -56,6 +57,8 @@ export type OpcjaStrony = {
   /** Rodzaje strony, w których opcja jest już w cenie. */
   wCenie: string[];
   cena: number;
+  /** Rodzaje strony, w których opcję można wybrać; brak = wszystkie. */
+  tylko?: string[];
   /** Opłata co miesiąc, poza sumą wdrożenia. */
   miesiecznie?: number;
 };
@@ -92,6 +95,27 @@ export const OPCJE_STRONY: Record<string, OpcjaStrony> = {
   chatbot: {
     nazwa: "Chatbot AI na bazie wiedzy o firmie",
     wCenie: [],
+    cena: 0,
+    miesiecznie: 199,
+  },
+  szukaj: {
+    nazwa: "Wyszukiwarka AI: literówki, synonimy, podpowiedzi",
+    wCenie: [],
+    tylko: ["sklep"],
+    cena: 0,
+    miesiecznie: 149,
+  },
+  polecane: {
+    nazwa: "Polecane produkty i kolejność w kategoriach",
+    wCenie: [],
+    tylko: ["sklep"],
+    cena: 0,
+    miesiecznie: 149,
+  },
+  asystent: {
+    nazwa: "Asystent zakupowy AI na bazie katalogu",
+    wCenie: [],
+    tylko: ["sklep"],
     cena: 0,
     miesiecznie: 199,
   },
@@ -220,7 +244,7 @@ export function wycenStrone(k: KonfiguracjaStrony): WynikWyceny | null {
     : [];
   for (const id of new Set(k.o)) {
     const o = OPCJE_STRONY[id];
-    if (!o || o.wCenie.includes(rodzaj.id)) continue;
+    if (!o || o.wCenie.includes(rodzaj.id) || (o.tylko && !o.tylko.includes(rodzaj.id))) continue;
     if (o.cena) pozycje.push({ nazwa: o.nazwa, netto: o.cena });
     if (o.miesiecznie) abonamenty.push({ nazwa: o.nazwa, netto: o.miesiecznie });
   }

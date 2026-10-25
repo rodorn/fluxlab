@@ -109,4 +109,33 @@ export const ABONAMENTY: Abonament[] = [
     ],
     dodatki: [],
   },
+  {
+    id: "sklep",
+    nazwa: "Sprzedaż w sklepie z AI",
+    href: "/strony-www#konfigurator",
+    miesiecznie: "od 149 zł/mies.",
+    kwota: 149,
+    wCenie: [
+      "każdy dodatek osobno, bez umowy na lata",
+      "raport wyszukiwań bez wyników co miesiąc",
+      "pomiar sprzedaży przed i po",
+    ],
+    dodatki: [
+      {
+        nazwa: "Wyszukiwarka AI: literówki, synonimy, podpowiedzi",
+        href: "/strony-www#konfigurator",
+        cena: "149 zł/mies.",
+      },
+      {
+        nazwa: "Polecane produkty i kolejność w kategoriach",
+        href: "/strony-www#konfigurator",
+        cena: "149 zł/mies.",
+      },
+      {
+        nazwa: "Asystent zakupowy AI na bazie katalogu",
+        href: "/strony-www#konfigurator",
+        cena: "199 zł/mies.",
+      },
+    ],
+  },
 ];
