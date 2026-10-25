@@ -42,9 +42,33 @@ const PODPOWIEDZI = [
 
 const ZAPEWNIENIA = ["Bez zobowiązań", "Cena i termin w odpowiedzi", "Odpisujemy tego samego dnia"];
 
-function IkonaFormy({ id }: { id: Kontakt }) {
+// Ostatni krok mówi to, co klient wybrał w pierwszym: zaproszenie, telefon albo mail.
+const KONIEC: Record<Kontakt, { krok: string; pytanie: string; wyslij?: string; zapewnienia: string[] }> = {
+  meet: {
+    krok: "Gdzie wysłać zaproszenie",
+    pytanie: "Gdzie wysłać zaproszenie?",
+    wyslij: "Umów spotkanie",
+    zapewnienia: ["Bez zobowiązań", "Link do Meet w zaproszeniu", "Cena na spotkaniu"],
+  },
+  phone: {
+    krok: "Gdzie potwierdzić",
+    pytanie: "Gdzie potwierdzić rozmowę?",
+    wyslij: "Poproś o telefon",
+    zapewnienia: ["Bez zobowiązań", "Oddzwaniamy tego samego dnia", "Cena w rozmowie"],
+  },
+  email: { krok: "Gdzie odpisać", pytanie: "Gdzie odpisać?", zapewnienia: ZAPEWNIENIA },
+};
+
+function terminSlownie(t: string) {
+  const [d, g] = t.split(" ");
+  const [r, m, dz] = d.split("-").map(Number);
+  const dzien = new Date(r, m - 1, dz).toLocaleDateString("pl-PL", { weekday: "long", day: "numeric", month: "long" });
+  return `${dzien[0].toUpperCase()}${dzien.slice(1)}, ${g}`;
+}
+
+function IkonaFormy({ id, className = "mx-auto mb-2 h-6 w-6" }: { id: Kontakt; className?: string }) {
   return (
-    <svg className="mx-auto mb-2 h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       {id === "email" && (
         <>
           <rect x="3" y="5" width="18" height="14" rx="2" />
@@ -100,6 +124,7 @@ export default function LandingForm({
   const formStartedRef = useRef(false);
   const [kontakt, setKontakt] = useState<Kontakt>("meet");
   const [termin, setTermin] = useState("");
+  const [telefon, setTelefon] = useState("");
   const [krok, setKrok] = useState(0);
   // Kalendarz pobiera wolne terminy z API, więc montujemy go dopiero przy
   // formularzu, a nie przy każdym wejściu na stronę.
@@ -506,7 +531,7 @@ export default function LandingForm({
             ))}
           </ol>
           <p className="mt-3 text-xs text-gray-500 dark:text-gray-400">
-            Krok {krok + 1} z 3: {KROKI[krok].toLowerCase()}
+            Krok {krok + 1} z 3: {(krok === 2 ? KONIEC[kontakt].krok : KROKI[krok]).toLowerCase()}
           </p>
         </div>
 
@@ -583,7 +608,30 @@ export default function LandingForm({
         </div>
 
         <div data-krok="2" hidden={krok !== 2} className="space-y-5">
-        <p className="block text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Gdzie odpisać?</p>
+        <p className="block text-xl font-semibold tracking-tight text-gray-900 dark:text-white">{KONIEC[kontakt].pytanie}</p>
+        {kontakt !== "email" && (
+          <div className="flex items-center justify-between gap-4 rounded-xl border border-accent/30 bg-accent/5 px-4 py-3">
+            <div className="flex items-center gap-3 text-accent">
+                <IkonaFormy id={kontakt} className="h-5 w-5 shrink-0" />
+              <p className="text-sm text-gray-900 dark:text-white">
+                {kontakt === "meet" ? (
+                  <>
+                    <span className="font-semibold">{termin && terminSlownie(termin)}</span>
+                    <span className="block text-xs text-gray-600 dark:text-gray-400">Google Meet, 30 min</span>
+                  </>
+                ) : (
+                  <>
+                    <span className="font-semibold">{telefon}</span>
+                    <span className="block text-xs text-gray-600 dark:text-gray-400">Oddzwonimy na ten numer</span>
+                  </>
+                )}
+              </p>
+            </div>
+            <button type="button" onClick={() => przejdz(0)} className={przyciskWsteczClass}>
+              Zmień
+            </button>
+          </div>
+        )}
         <div className="grid sm:grid-cols-2 gap-5">
           <div>
             <label
@@ -672,6 +720,8 @@ export default function LandingForm({
               required
               autoComplete="tel"
               placeholder="np. 600 100 200"
+              value={telefon}
+              onChange={(e) => setTelefon(e.target.value)}
               pattern="[+0-9 ()-]{9,20}"
               className={inputClass}
             />
@@ -718,7 +768,7 @@ export default function LandingForm({
               disabled={loading}
               className={`${podpisClass} disabled:opacity-60`}
             >
-              {loading ? "Wysyłanie..." : submitLabel}
+              {loading ? "Wysyłanie..." : KONIEC[kontakt].wyslij ?? submitLabel}
             </button>
           </div>
         )}
@@ -731,7 +781,7 @@ export default function LandingForm({
           <p className="text-center text-sm text-gray-600 dark:text-gray-400">{microCopy}</p>
         )}
         <ul className="flex flex-wrap justify-center gap-x-5 gap-y-2 border-t border-gray-200 pt-5 text-xs text-gray-600 dark:border-gray-700 dark:text-gray-400">
-          {ZAPEWNIENIA.map((z) => (
+          {(krok === 2 ? KONIEC[kontakt].zapewnienia : ZAPEWNIENIA).map((z) => (
             <li key={z} className="flex items-center gap-1.5">
               <svg className="h-3.5 w-3.5 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="M5 13l4 4L19 7" />
