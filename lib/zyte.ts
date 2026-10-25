@@ -73,6 +73,7 @@ const BEZ_ZGOD = `(() => {
     const r = e.getBoundingClientRect();
     if (r.width * r.height > vw * 0.25 || /cookie|prywatno|zgod|consent|privacy/i.test(e.textContent || '')) e.remove();
   });
+  document.querySelectorAll('*').forEach(e => { if (e.shadowRoot && /cookie|prywatno|zgod|consent|privacy/i.test(e.shadowRoot.textContent || '')) e.remove(); });
   document.querySelectorAll('*').forEach(e => {
     const st = getComputedStyle(e);
     if (st.filter.includes('blur')) e.style.setProperty('filter', 'none', 'important');
