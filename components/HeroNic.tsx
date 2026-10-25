@@ -5,7 +5,7 @@ const NIC =
 
 const PODPISY = [
   ["16.67%", "zapytanie"],
-  ["50%", "karta w CRM"],
+  ["50%", "karta klienta"],
   ["85.42%", "raport"],
 ];
 
@@ -79,7 +79,7 @@ export default function HeroNic() {
         />
       </div>
       <figcaption className="mt-12 text-xs tracking-wide text-gray-500 dark:text-gray-400">
-        Jedno zapytanie: od formularza przez CRM do raportu, bez przepisywania.
+        Jedno zapytanie: od formularza do raportu, bez przepisywania.
       </figcaption>
     </figure>
   );

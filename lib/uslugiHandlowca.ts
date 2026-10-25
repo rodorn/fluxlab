@@ -26,7 +26,7 @@ const KIEDY: Record<string, string> = {
     "Prawie każdej firmie: gdy wizytówki Google nie ma, trzeba ją założyć; gdy jest, a nie ma świeżych postów, zdjęć albo odpowiedzi na każdą opinię, trzeba ją prowadzić.",
   konkurencja:
     "Gdy branża jest konkurencyjna cenowo albo firma nie wie, co robi konkurencja.",
-  crm: "Gdy leady przychodzą z kilku kanałów, a firma prowadzi je w mailu lub arkuszu.",
+  crm: "Tylko firmom od 6 osób z kilkoma handlowcami, gdy leady z kilku kanałów giną w mailu lub arkuszu.",
   ocena: "Gdy firma ma zespół handlowców lub obsługi klienta.",
   sklep_ai: "Gdy firma ma sklep z większym katalogiem produktów.",
   poprawki:
@@ -189,7 +189,7 @@ export function decyzjaStrony(
 }
 
 /** Najwyżej jedna strona (sklep zostaje, landing i firmowa według wielkości),
- *  ocena handlowców tylko z CRM i tylko przy zespole. O nowej stronie albo
+ *  CRM i ocena handlowców tylko od 6 osób, ocena zawsze z CRM. O nowej stronie albo
  *  poprawkach decyduje audyt; bez audytu poprawek nie ma z czego wycenić. */
 export function uporzadkujPakiet<T extends { id: string; powod: string }>(
   pakiet: T[],
@@ -218,9 +218,9 @@ export function uporzadkujPakiet<T extends { id: string; powod: string }>(
           ? p
           : { ...p, id: w?.strona ?? p.id, powod: d ? d.powod : p.powod },
       );
-    } else if (p.id === "ocena") {
-      if (wielkosc === "tylko ja") continue;
-      if (!pakiet.some((x) => x.id === "crm")) wynik.push({
+    } else if (p.id === "crm" || p.id === "ocena") {
+      if (wielkosc === "tylko ja" || wielkosc === "2-5") continue;
+      if (p.id === "ocena" && !pakiet.some((x) => x.id === "crm")) wynik.push({
           ...p,
           id: "crm",
           powod: "Ocena handlowców działa w CRM, więc dokładamy CRM.",

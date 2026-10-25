@@ -26,6 +26,20 @@ import { preload } from "react-dom";
 // FluxCRM jako produkt flagowy, katalog małych usług jako wejście.
 const OFERTA = [
   {
+    href: "/automatyzacja-leadow-crm",
+    nazwa: nazwaFilaru("/automatyzacja-leadow-crm"),
+    cena: "od 900 zł",
+    opis: "Jeden proces od początku do końca: dokumenty, raporty, KSeF, połączenie CRM z ERP.",
+    punkty: [
+      "pierwszy krok: 900 / 1 200 / 1 500 zł w 5 dni, cała ścieżka od 2 500 zł",
+      "integracje przez API",
+      "cena z góry, bez rozliczania godzin",
+    ],
+    cta: "Zobacz automatyzacje",
+    ikona: "automatyzacje" as NazwaIlustracji,
+    wyrozniona: true,
+  },
+  {
     href: "/strony-www",
     nazwa: nazwaFilaru("/strony-www"),
     cena: "naprawa od 150 zł",
@@ -38,7 +52,6 @@ const OFERTA = [
     ],
     cta: "Zobacz strony",
     ikona: "strony" as NazwaIlustracji,
-    wyrozniona: true,
   },
   {
     href: "/wlasny-crm",
@@ -52,19 +65,6 @@ const OFERTA = [
     ],
     cta: "Zobacz CRM",
     ikona: "crm" as NazwaIlustracji,
-  },
-  {
-    href: "/automatyzacja-leadow-crm",
-    nazwa: nazwaFilaru("/automatyzacja-leadow-crm"),
-    cena: "od 900 zł",
-    opis: "Jeden proces od początku do końca: dokumenty, raporty, KSeF, połączenie CRM z ERP.",
-    punkty: [
-      "pierwszy krok: 900 / 1 200 / 1 500 zł w 5 dni, cała ścieżka od 2 500 zł",
-      "integracje przez API",
-      "cena z góry, bez rozliczania godzin",
-    ],
-    cta: "Zobacz automatyzacje",
-    ikona: "automatyzacje" as NazwaIlustracji,
   },
   {
     href: "#kontakt",
@@ -146,8 +146,8 @@ export default function Home() {
           <WitajPonownie />
           <EtykietaNocna />
           <NaglowekSklada
-            tekst={"Strony internetowe i\u00a0CRM dla firm"}
-            wyroznione={["dla", "firm"]}
+            tekst={"Twoja firma bez ręcznej roboty"}
+            wyroznione={["ręcznej", "roboty"]}
           />
           <PodtytulZrodlo />
           <div className="animate-fade-up-1 mt-10 flex w-full flex-col items-center justify-center gap-3 sm:w-auto sm:flex-row">
