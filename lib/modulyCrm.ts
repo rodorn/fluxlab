@@ -1,8 +1,8 @@
 /** Warianty i moduły AI do FluxCRM, wspólne dla konfiguratora /wlasny-crm i wyceny PDF.
- *  Wdrożenie 1 zł, CRM zarabia na abonamencie (Paweł 25.10.2026). Moduły AI
- *  w wariancie „Z narzędziami AI” są w cenie, w innych płatne co miesiąc. */
+ *  Wdrożenie 1 zł, CRM zarabia na abonamencie (Paweł 25.10.2026). Narzędzia AI
+ *  to moduły dokładane do każdego wariantu, bez osobnego wariantu z AI. */
 
-export type WariantCrm = "pilotaz" | "integracje" | "ai";
+export type WariantCrm = "pilotaz" | "integracje";
 
 export const WARIANTY_CRM: {
   id: WariantCrm;
@@ -21,12 +21,6 @@ export const WARIANTY_CRM: {
     nazwa: "Z integracjami",
     opis: "integracje i automatyzacje, jakich potrzebujesz",
     abonament: 1490,
-  },
-  {
-    id: "ai",
-    nazwa: "Z narzędziami AI",
-    opis: "integracje plus AI do tekstu i nagrań",
-    abonament: 2490,
   },
 ];
 
@@ -58,8 +52,8 @@ export const MODULY_CRM: ModulCrm[] = [
   },
 ];
 
-export const modulyPlatne = (wariant: string, ids: string[]) =>
-  wariant === "ai" ? [] : MODULY_CRM.filter((m) => ids.includes(m.id));
+export const modulyPlatne = (ids: string[]) =>
+  MODULY_CRM.filter((m) => ids.includes(m.id));
 
 export function abonamentCrm(
   wariant: WariantCrm,
@@ -67,7 +61,7 @@ export function abonamentCrm(
   ids: string[],
 ) {
   const baza = WARIANTY_CRM.find((w) => w.id === wariant)!.abonament;
-  const platne = modulyPlatne(wariant, ids);
+  const platne = modulyPlatne(ids);
   return {
     baza,
     platne,

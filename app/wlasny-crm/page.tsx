@@ -81,21 +81,19 @@ export default function WlasnyCrm() {
           featured: true,
         },
         {
-          name: "CRM z narzędziami AI",
-          price: "2 490 zł / mies.",
-          desc: "Wszystko z wariantu z integracjami plus narzędzia AI. Wdrożenie 1 zł, 3 konta, każde kolejne 99 zł.",
+          name: "Moduły AI",
+          price: "od 99 zł / mies.",
+          desc: "Dokładasz do dowolnego wariantu i wyłączasz w każdej chwili.",
           features: [
-            "Ocena handlowców przez AI z notatek, SMS-ów, maili i rozmów",
-            "Szkice maili i SMS-ów dopasowane do sytuacji klienta",
-            "Inne narzędzia AI do tekstu i nagrań, jakich potrzebujesz",
-            "Dowolne integracje i automatyzacje",
+            "Ocena handlowców przez AI z notatek, SMS-ów, maili i rozmów: 199 zł/mies.",
+            "Szkice maili i SMS-ów dopasowane do sytuacji klienta: 99 zł/mies.",
           ],
         },
       ]}
       faq={[
         {
           q: "Ile kosztuje własny CRM?",
-          a: "Wdrożenie 1 zł, płacisz tylko abonament za 3 konta i 99 zł za każde kolejne: gotowy CRM 499 zł miesięcznie, z dowolnymi integracjami i automatyzacjami 1 490 zł, z narzędziami AI do tekstu i nagrań 2 490 zł. Ceny netto. W abonamencie są serwer w UE, kopie, aktualizacje i rozwój.",
+          a: "Wdrożenie 1 zł, płacisz tylko abonament za 3 konta i 99 zł za każde kolejne: gotowy CRM 499 zł miesięcznie, z dowolnymi integracjami i automatyzacjami 1 490 zł, do każdego wariantu możesz dołożyć moduły AI: ocenę handlowców za 199 zł i szkice maili i SMS-ów za 99 zł miesięcznie. Ceny netto. W abonamencie są serwer w UE, kopie, aktualizacje i rozwój.",
         },
         {
           q: "Czym to się różni od Pipedrive?",

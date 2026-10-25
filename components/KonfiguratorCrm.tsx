@@ -135,7 +135,7 @@ export default function KonfiguratorCrm() {
                   role="radio"
                   aria-checked={aktywny}
                   onClick={() => setWariant(w.id)}
-                  className={`w-full rounded-xl border px-4 py-3 text-center transition sm:w-[calc(33.333%-0.5rem)] ${
+                  className={`w-full rounded-xl border px-4 py-3 text-center transition sm:w-[calc(50%-0.375rem)] ${
                     aktywny
                       ? "border-accent bg-accent/10 ring-2 ring-accent/40"
                       : "border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-900"
@@ -159,15 +159,13 @@ export default function KonfiguratorCrm() {
           </p>
           <div className="mt-3 grid gap-3 text-left sm:grid-cols-2">
             {MODULY_CRM.map((m) => {
-              const wCenie = wariant === "ai";
-              const aktywny = wCenie || moduly.includes(m.id);
+              const aktywny = moduly.includes(m.id);
               return (
                 <button
                   key={m.id}
                   type="button"
                   role="switch"
                   aria-checked={aktywny}
-                  disabled={wCenie}
                   onClick={() =>
                     setModuly((x) =>
                       x.includes(m.id) ? x.filter((y) => y !== m.id) : [...x, m.id],
@@ -187,9 +185,7 @@ export default function KonfiguratorCrm() {
                       {m.opis}
                     </span>
                     <span className="mt-2 block text-xs font-semibold tabular-nums text-accent">
-                      {wCenie
-                        ? "w cenie wariantu z AI"
-                        : `+${m.miesiecznie} zł/mies.`}
+                      +{m.miesiecznie} zł/mies.
                     </span>
                   </span>
                   <span

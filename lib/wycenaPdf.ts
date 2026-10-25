@@ -92,11 +92,10 @@ export function dekodujWycene(d: string | undefined): Wycena | null {
               : `${n} osób: ${String(baza).replace(/\B(?=(\d{3})+$)/g, "\u00a0")} zł za ${W_ABONAMENCIE} osoby plus ${n - W_ABONAMENCIE} × ${OSOBA_DODATKOWA} zł`,
           netto: miesiecznie,
         },
-        ...MODULY_CRM.filter((m) => w.id === "ai" || ids.includes(m.id)).map((m) =>
-          w.id === "ai"
-            ? { nazwa: m.nazwa, info: "w cenie" }
-            : { nazwa: m.nazwa, info: `${m.miesiecznie} zł/mies., doliczone wyżej` },
-        ),
+        ...MODULY_CRM.filter((m) => ids.includes(m.id)).map((m) => ({
+          nazwa: m.nazwa,
+          info: `${m.miesiecznie} zł/mies., doliczone wyżej`,
+        })),
       ],
       sumaEtykieta: "Pierwszy rok (wdrożenie plus 12 miesięcy abonamentu, rezygnacja w dowolnym dniu)",
       sumaOd: false,
