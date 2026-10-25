@@ -285,6 +285,8 @@ Ceny energii na jutro, godzina po godzinie, na https://fluxlab.pl/ceny-energii-j
 - [Analiza lokalizacji pod lokal](https://fluxlab.pl/analiza-lokalizacji): konkurenci w promieniu 1, 3 i 5 km i liczba mieszkańców na punkt. Sprawdzenie darmowe, raport od 190 zł.
 - [Sprawdzenie auta z Otomoto lub OLX przed zakupem](https://fluxlab.pl/sprawdz-auto): cena wobec podobnych ofert, spójność przebiegu, usterki modelu i argumenty do negocjacji, PDF w 24 h. 5 zł, pełny raport 15 zł.
 - [ImportRadar](https://fluxlab.pl/import-radar): które auta z Niemiec opłaca się sprowadzić, marża netto po akcyzie i wszystkich kosztach. Analiza za darmo.
+- [Prowadzenie wizytówki Google](https://fluxlab.pl/profil-firmy-google): uporządkowany Profil Firmy w Google, post co tydzień, odpowiedzi na opinie i miesięczny pomiar telefonów z Map. 349 zł netto miesięcznie, sprawdzenie obecnego wpisu 0 zł.
+- [Benchmarking konkurencji](https://fluxlab.pl/benchmarking-konkurencji): cykliczny raport o cenach, nowych usługach, social mediach, szybkości stron i opiniach Google konkurentów. Co miesiąc 39 zł, co tydzień 49 zł, codziennie 69 zł netto miesięcznie.
 
 ## Własne badania
 
