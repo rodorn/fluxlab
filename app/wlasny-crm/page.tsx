@@ -61,6 +61,8 @@ export default function WlasnyCrm() {
         {
           name: "Gotowy CRM",
           price: "499 zł / mies.",
+          href: "#kup-pilotaz",
+          cta: "Kup online",
           desc: "Wdrożenie 1 zł. Abonament obejmuje 3 konta, każde kolejne 99 zł miesięcznie.",
           features: [
             "Gotowy lejek, leady z formularza i poczty",
@@ -71,6 +73,8 @@ export default function WlasnyCrm() {
         {
           name: "Z integracjami",
           price: "1 490 zł / mies.",
+          href: "#kup-integracje",
+          cta: "Kup online",
           desc: "Wdrożenie 1 zł. Integracje i automatyzacje dokładamy co miesiąc w abonamencie. 3 konta, każde kolejne 99 zł.",
           features: [
             "Dowolne integracje i automatyzacje, jakich potrzebujesz",

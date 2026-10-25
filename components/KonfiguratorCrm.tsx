@@ -48,6 +48,42 @@ export default function KonfiguratorCrm() {
 
   const aMies = useAnimowana(miesiecznie);
   const aRok = useAnimowana(rok);
+  const brutto = Math.round((miesiecznie + 1) * 123) / 100;
+  const [kupuje, setKupuje] = useState(false);
+  const [bladZakupu, setBladZakupu] = useState("");
+
+  useEffect(() => {
+    const zHasha = () => {
+      const w = window.location.hash.match(/^#kup-(pilotaz|integracje)$/)?.[1];
+      if (!w) return;
+      setWariant(w as WariantCrm);
+      document.getElementById("kup")?.scrollIntoView({ behavior: "smooth" });
+    };
+    zHasha();
+    window.addEventListener("hashchange", zHasha);
+    return () => window.removeEventListener("hashchange", zHasha);
+  }, []);
+
+  async function kup() {
+    zglosZdarzenie("kup_crm");
+    setKupuje(true);
+    setBladZakupu("");
+    try {
+      const r = await fetch("/api/crm-zakup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ wariant, osoby, moduly }),
+      });
+      const d = await r.json();
+      if (!d.url) throw new Error(d.error);
+      window.location.href = d.url;
+    } catch (e) {
+      setBladZakupu(
+        (e as Error).message || "Płatność chwilowo niedostępna. Napisz do nas.",
+      );
+      setKupuje(false);
+    }
+  }
 
   function pobierzPdf() {
     const d = kodujWycene({ t: "c", n: osoby, w: wariant, m: moduly });
@@ -84,7 +120,7 @@ export default function KonfiguratorCrm() {
   }
 
   return (
-    <section className="mt-16" aria-labelledby="konf-crm-h">
+    <section id="kup" className="mt-16 scroll-mt-24" aria-labelledby="konf-crm-h">
       <div className="mx-auto max-w-3xl text-center">
         <h2 id="konf-crm-h" className="h2-sekcji">
           Policz abonament dla swojego zespołu
@@ -242,14 +278,35 @@ export default function KonfiguratorCrm() {
             </div>
           </div>
 
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <button type="button" onClick={wyslij} className="btn-primary">
+          <p className="mt-6 text-sm text-gray-600 dark:text-gray-400">
+            Pierwsza płatność:{" "}
+            <span className="font-semibold tabular-nums text-gray-900 dark:text-white">
+              {brutto.toLocaleString("pl-PL", { minimumFractionDigits: 2 })}&nbsp;zł
+              brutto
+            </span>{" "}
+            (abonament i wdrożenie z VAT 23%)
+          </p>
+          <div className="mt-4 flex flex-wrap justify-center gap-3">
+            <button
+              type="button"
+              onClick={kup}
+              disabled={kupuje}
+              className="btn-primary disabled:opacity-60"
+            >
+              {kupuje ? "Przechodzimy do płatności…" : "Kup online"}
+            </button>
+            <button type="button" onClick={wyslij} className="btn-secondary">
               Wyślij tę konfigurację
             </button>
             <button type="button" onClick={pobierzPdf} className="btn-secondary">
               Pobierz wycenę PDF
             </button>
           </div>
+          {bladZakupu && (
+            <p role="alert" className="mt-3 text-sm text-red-600 dark:text-red-400">
+              {bladZakupu}
+            </p>
+          )}
         </div>
       </div>
     </section>
