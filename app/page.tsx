@@ -66,6 +66,21 @@ const OFERTA = [
     cta: "Zobacz automatyzacje",
     ikona: "automatyzacje" as NazwaIlustracji,
   },
+  {
+    href: "#kontakt",
+    nazwa: "Większe projekty",
+    cena: "po rozmowie",
+    opis: "Podejmujemy się też dużych zleceń, od pomysłu do działającego systemu. Zakres i termin ustalamy wspólnie.",
+    punkty: [
+      "kompletna aplikacja na dowolną platformę: web, telefon, komputer",
+      "automatyzacja i AI w każdym procesie w firmie",
+      "zaawansowana analityka i raporty z danych firmy",
+      "integracje między wszystkimi systemami, jakich używasz",
+    ],
+    cta: "Opisz projekt",
+    ikona: "automatyzacje" as NazwaIlustracji,
+    wyrozniona: true,
+  },
 ];
 
 const KROKI = [
@@ -169,8 +184,8 @@ export default function Home() {
             {OFERTA.map((o, i) => (
               <RevealOnScroll
                 key={o.href}
-                delay={(i + 1) as 1 | 2 | 3}
-                className={`flex ${i === 0 ? "md:col-span-2" : ""}`}
+                delay={Math.min(i + 1, 3) as 1 | 2 | 3}
+                className={`flex ${i === 0 || i === OFERTA.length - 1 ? "md:col-span-2" : ""}`}
               >
                 <Link
                   href={o.href}
@@ -241,6 +256,14 @@ export default function Home() {
               cenniku
             </Link>
             .
+          </RevealOnScroll>
+          <RevealOnScroll
+            as="p"
+            className="mx-auto mt-2 max-w-2xl text-center text-sm text-gray-600 dark:text-white/60"
+          >
+            Pierwsze zlecenie proponujemy przez Useme. Przy kolejnych faktura
+            płatna przed startem prac, a przy usługach miesięcznych na początku
+            miesiąca. Bez zaliczek.
           </RevealOnScroll>
         </section>
 
