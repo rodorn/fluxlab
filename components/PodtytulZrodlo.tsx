@@ -10,7 +10,7 @@ const WARIANTY: Record<string, string> = {
   facebook: "Prosta strona i CRM dla Twojej firmy, cena z góry, gotowe w 2\u2060–\u20603\u00a0tygodnie.",
 };
 
-function zrodlo(): string | null {
+export function zrodlo(): string | null {
   const p = new URLSearchParams(window.location.search);
   const s = `${p.get("utm_source") ?? ""} ${p.get("utm_campaign") ?? ""}`.toLowerCase();
   if (s.includes("linkedin")) return "linkedin";

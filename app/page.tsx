@@ -146,7 +146,7 @@ export default function Home() {
           <WitajPonownie />
           <EtykietaNocna />
           <NaglowekSklada
-            tekst={"Strony internetowe i\u00a0CRM dla firm"}
+            tekst={"Strony internetowe i\u00a0{zrodlo} dla firm"}
             wyroznione={["dla", "firm"]}
           />
           <PodtytulZrodlo />
