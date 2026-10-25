@@ -7985,3 +7985,11 @@ Decyzje dla stratega: sprawdzić, skąd 73 sesje bez odsyłacza (strony wejścia
 **Dowód:** commit a669167 (produkcja: chunk z kontakt?opis=, telefon-test z klikiem w nowe wezwanie → formularz /kontakt, 0 błędów konsoli). Z2: kalkulator podatkowy zgłasza uruchomienie przy pierwszej zmianie wyniku po dowolnym polu, bez przycisku; 7 dni: 24 odsłony ludzi, 1 uruchomienie; 23 z 24 sesji to jedna odsłona, 17 z 24 w nocy bez źródła; błąd pomiaru: nie. Z3: 6 sesji z wynikiem audytu, 4 kończą się w chwili wyniku, 0 kliknięć.
 **Dla Pawła:**
 **Zostało otwarte:** Z6 i dalej według planu; Z22 mierzy klik_po_wyniku od 25.10 07:50.
+
+## 2026-10-25 09:07
+**Kanał:** pomiar i Google (Z6, Z7, Z8 planu 25/26).
+**Co zrobione:** Google podał dane do 23.10: w tygodniu 17-23.10 strona ma 22 kliknięcia z wyszukiwarki (tydzień wcześniej 15), w tym 10 na strony inne niż główna; 9 adresów z serii 25.10 jest w indeksie.
+**Ruch:** raport_ruchu 08:43: 143 odsłony, 108 osób w dobie (+20% wobec średniej 119,3); najczęściej / (34), /ksef-2027 (12), /kalkulator-podatkowy (10); źródła google 5, facebook 4+3, b2b-email 4, instagram 2; LinkedIn 1, uruchomienia narzędzi 0. Od 06:30: 10 osób, 1 z odsyłaczem (b2b-email), salwy 0, lead_* 0, klik_po_wyniku 0, Zoho 0 zapytań od ludzi.
+**Dowód:** `cykl/gsc-zapytania-2026-10-25.txt`, `cykl/gsc-strony-2026-10-25.txt`; GSC --tylko-stan 9 z 9 „znajduje się w Google”; linie Z6-Z8 w `cykl/plan-ruchu.md`. Poprawka `cykl/pomiar-kanalow.py`: strefa Europe/Warsaw zamiast stałego +2 (od zmiany czasu 25.10 nagłówek i podział dni były o godzinę do przodu).
+**Dla Pawła:**
+**Zostało otwarte:** Z9 (frazy ogólne, GSC 28 dni) i dalej według planu; Z18 robi serie dzienne /kalkulator-podatkowy i /ksef-2027, bo Z8 miało pliki.

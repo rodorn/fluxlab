@@ -11,6 +11,7 @@ from collections import Counter, defaultdict
 from datetime import datetime, timedelta, timezone
 from email.header import decode_header
 from email.utils import parsedate_to_datetime
+from zoneinfo import ZoneInfo
 
 sys.path.insert(0, os.path.expanduser("~/Projekty/fluxlab-ruch"))
 import raport_ruchu  # noqa: E402
@@ -30,7 +31,7 @@ def _bez_salw(w):
 
 raport_ruchu.bez_salw = _bez_salw
 
-PL = timezone(timedelta(hours=2))
+PL = ZoneInfo("Europe/Warsaw")
 MAIL = os.path.expanduser("~/Projekty/mail-audyt")
 TERAZ = datetime.now(timezone.utc)
 T = int(TERAZ.timestamp())
