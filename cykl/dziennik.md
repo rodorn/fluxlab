@@ -8240,3 +8240,11 @@ Decyzje dla stratega: klik_po_wyniku oceniać tylko przy wynikach „uwaga”/�
 **Dowód:** GSC: zindeksowano 167, nie 153 (kanoniczna 116, przekierowanie 5, noindex 2, 404 1, zeskanowana 28, inny 4xx 1, wykryta 0); `cykl/gsc-niezindeksowane-2026-10-26.txt`, z 28 zeskanowanych w sitemap tylko /strefa-wiedzy/maly-zus-plus-kiedy-sie-oplaca. Stan w Google 30 kolejnych adresów z sitemap: 30 z 30 zindeksowane (razem 80 z 80 dziś). `cykl/z13-lista-27.txt` (2 adresy), `fl-gsc-27.timer` enabled na 27.10 01:45.
 **Dla Pawła:**
 **Zostało otwarte:** Z11 (Bing AI Performance) i dalej; 32 adresy z sitemap bez sprawdzonego stanu w `cykl/z8-niesprawdzone-2026-10-26.txt`.
+
+## 2026-10-26 10:55
+**Kanał:** AI i pomiar (plan dobowy Z11, Z12).
+**Co zrobione:** odczyt cytowań Copilota w Bing AI Performance i sesji z asystentów AI w liczniku; sprawdzenie, czy licznik pozwala rozpoznać przeglądarki w aplikacjach social.
+**Ruch:** doba 209 odsłon, 83 osoby (+59% wobec średniej 131,1); źródła: b2b-email 54, www.google.com 4, chatgpt.com 4, facebook 3, www.facebook.com 3. Uruchomienia narzędzi 4.
+**Dowód:** Bing AI Performance 7 D (dane do 24.10): 22 cytowania (16-22.10 było 24), od 7.10 razem 49; /strefa-wiedzy/jak-liczyc-zdrowotna-jdg 9, /strefa-wiedzy/jaka-forma-opodatkowania-jdg-2026 4, /strefa-wiedzy/jak-zautomatyzowac-raportowanie-w-firmie 4, /automatyzacja-raportowania 3, /sprawdzenie-nip 2; Grounding Queries bez danych. Licznik 7 dni: 2 sesje z chatgpt.com (21.10 /kalkulator-podatkowy, bez narzędzia; 25.10 /analiza-lokalizacji, 4 skany i czat), copilot, perplexity, gemini 0. Tabela `wizyty` nie ma surowego User-Agenta (tylko sklasyfikowane przegladarka i system), więc Instagram/FBAN/LinkedInApp są nierozróżnialne; sesje bez odsyłacza: doba 37 z 83 (telefon 24, start 00-06 13), 7 dni 302 z 527 (telefon 168, start 00-06 107), pustego UA 0 po odsiewie.
+**Dla Pawła:**
+**Zostało otwarte:** Z13 i dalej (Z13, Z14 to pomiary z oknem od 12:30 i z wieczornych publikacji, nie robić przed czasem). Do stratega: rozpoznawanie przeglądarek w aplikacjach (Instagram, FBAN/FBAV, LinkedInApp) w kolektorze na VPS, inaczej social zostaje w „bez odsyłacza".
