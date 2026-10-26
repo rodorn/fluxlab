@@ -8214,3 +8214,13 @@ Decyzje dla stratega: klik_po_wyniku oceniać tylko przy wynikach „uwaga”/�
 **Dowód:** commity 50f3588 (odsiew), 7be3be7 (artykuł), afd2c58 (tytuł); IndexNow Yandex i Naver 200 dla obu adresów; zrzuty telefonu bez błędów konsoli; „Doręczono do FL_meta, FL_instagram, FL_linkedin (06:52)”, „Doręczono do FL_rolki (06:46)” z prośbą o localStorage fl_nie_licz=1 w rolka_ekran.py.
 **Dla Pawła:**
 **Zostało otwarte:** Z3 (prośba o indeksowanie artykułu w GSC, nie wcześniej niż 09:00), Z6 i dalej; odpowiedź FL_rolki w sprawie fl_nie_licz.
+
+<!-- WYSLANO 2026-10-26 07:04 -->
+
+## 2026-10-26 07:58
+**Kanał:** pomiar i Google (Z6 planu 26/27; Z3 czeka do 09:00).
+**Co zrobione:** odczytany nowy tydzień Search Console 18-24.10: 23 kliknięcia z Google (tydzień wcześniej 22), 1395 wyświetleń stron, 9 stron innych niż główna z kliknięciem.
+**Ruch:** raport_ruchu 07:43: 207 odsłon, 91 osób w dobie (+61% wobec średniej 128,7); najczęściej / (48), /audyt-strony (39), pobrania PDF ebook KSeF (10) i checklist (9+9); źródła b2b-email 31, chatgpt.com 4, google 3, instagram 3, linkedin 2; YouTube 0, X 0; uruchomienia narzędzi 6. Tydzień 916 odsłon, 522 osoby.
+**Dowód:** `cykl/gsc-zapytania-2026-10-26.txt` (170 zapytań, 100 zapisanych), `cykl/gsc-strony-2026-10-26.txt` (119 stron, 100 zapisanych), linia Z6 w `cykl/plan-ruchu.md` z 5 zmianami. Raport Strony (indeksowanie) pokazuje 116 adresów „Alternatywna strona zawierająca prawidłowy tag kanoniczny”, do sprawdzenia w Z9.
+**Dla Pawła:**
+**Zostało otwarte:** Z3 od 09:00, Z7 o 12:30 i dalej według planu.
