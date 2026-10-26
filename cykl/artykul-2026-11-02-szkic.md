@@ -1,36 +1,73 @@
-Szkic na 02.11 (NIE w app/). Źródło faktów: MF, „Pytania i odpowiedzi KSeF 2.0”, https://ksef.podatki.gov.pl/pytania-i-odpowiedzi-ksef-20/ (opublikowano 17.09.2025, zmodyfikowano 08.10.2026), odczyt z VPS (curl) 19.10.2026 14:50. Oznaczenia [F1] do [F4] do usunięcia przy publikacji. Przed publikacją odczytaj stronę ponownie i potwierdź F1 do F4.
+# Szkic artykułu 02.11.2026: faktury kosztowe z KSeF prosto do programu księgowego
+
+Temat z cykl/kalendarz-wpisow.md (02.11, KSeF, link /ksef-integracja). Duplikaty sprawdzone 26.10:
+`grep -ril kosztow app/strefa-wiedzy` daje 4 strony, w żadnej faktury kosztowe nie są tematem
+(wzmianki przy okazji). Najbliższa: /strefa-wiedzy/faktury-z-ksef-po-zmianie-biura (uprawnienie dla
+biura, dostęp do faktur z 2026), więc nowy tekst ma mówić o automatycznym pobieraniu do programu,
+nie o zmianie biura; link do niej zamiast powtarzania. /ksef-integracja już mówi: „faktury zakupowe
+pobierane z KSeF automatycznie”, „integracja ma sens, gdy faktury kosztowe trzeba pobierać ręcznie”.
+
+## Fakty (odczyt 26.10.2026)
+
+F1 Faktura jest uznana za otrzymaną w momencie, gdy system nada jej numer KSeF; nabywca nie musi jej
+   akceptować ani potwierdzać. Datę widać w UPO w polu „Data przyjęcia dokumentu do systemu
+   teleinformatycznego MF”. Źródło: https://ksef.podatki.gov.pl/pytania-i-odpowiedzi-ksef-20/ (26.10.2026)
+F2 „KSeF nie wysyła powiadomień”: program musi sam sprawdzać, czy są nowe faktury. Ten sam adres.
+F3 „System pozwala na integrację, dzięki której faktury będą automatycznie pobierane.” Ten sam adres.
+F4 Sprzedawca nie sprawdzi, czy nabywca pobrał fakturę („Nie, system nie daje takiej informacji”), i nie
+   musi wysyłać mu numeru KSeF. Ten sam adres.
+F5 Otrzymywanie faktur przez KSeF obowiązuje od 1.02.2026, także podatników z limitem 10 tys. zł
+   (ich wyjątek dotyczy wystawiania do 31.12.2026). Ten sam adres; terminy wystawiania: lib/terminy-ksef.ts
+   (1.02.2026 powyżej 200 mln zł, 1.04.2026 pozostali, 1.01.2027 limit 10 tys. zł i kasy).
+F6 Bezpłatne narzędzia MF: Aplikacja Podatnika KSeF i Aplikacja Mobilna KSeF (od 1.02.2026), w której
+   można się zalogować i sprawdzić faktury wystawione dla firmy. Ten sam adres.
+F7 Masowe pobieranie faktur jest możliwe wyłącznie w postaci XML. Ten sam adres (część techniczna).
+F8 Faktury są archiwizowane w KSeF przez 10 lat. Ten sam adres („Co to jest e-Faktura?”).
+F9 Uprawnienie do przeglądania faktur (InvoiceRead) można nadać osobie albo całemu biuru rachunkowemu,
+   z możliwością delegowania pracownikom; nadaje się je w Aplikacji Podatnika albo w programie przez API.
+   Źródła: https://ksef.podatki.gov.pl/pytania-i-odpowiedzi-ksef-20/ oraz
+   https://github.com/CIRFMF/ksef-docs/blob/main/uprawnienia.md (26.10.2026)
+F10 Token do programu komercyjnego działa, jeśli wygenerowała go osoba z odpowiednimi uprawnieniami;
+   token jest ważny do unieważnienia przez użytkownika (MF 26.10: tokeny zostają bezterminowo, patrz
+   /strefa-wiedzy/certyfikat-ksef). Źródło: https://ksef.podatki.gov.pl/pytania-i-odpowiedzi-ksef-20/
+F11 Przyrostowe pobieranie w API KSeF 2.0: eksport paczek po dacie trwałego zapisu (PermanentStorage),
+   okna przylegające; najwyżej 20 eksportów na godzinę łącznie, przy ciągłej synchronizacji 4 na godzinę
+   na typ podmiotu, interwał nie krótszy niż 15 minut. Źródło:
+   https://github.com/CIRFMF/ksef-docs/blob/main/pobieranie-faktur/przyrostowe-pobieranie-faktur.md (26.10.2026)
+F12 Domyślne limity API (wersja 1.1, 9.06.2026): eksport paczki faktur 8/s, 16/min, 20/h; lista metadanych
+   8/16/20; pobranie faktury po numerze KSeF 8/16/64; limity można podnieść wnioskiem z uzasadnieniem.
+   Źródło: https://ksef.podatki.gov.pl/media/uq4pq4mo/zalacznik-do-wniosku-o-zwiekszenie-limitow-wer-1_1-09062026.pdf (26.10.2026)
+
+Czego NIE piszemy (brak źródła): ile minut pracy zdejmuje automat na fakturze; konkretne programy
+księgowe i ich funkcje; maksymalna liczba faktur w jednej paczce.
+
+## Szkic (Z22, 26.10.2026)
 
 Adres: /strefa-wiedzy/faktury-kosztowe-z-ksef
-Tytuł (55 zn.): Faktury kosztowe z KSeF: jak je pobierać same | Fluxlab
-Opis (154 zn.): KSeF nie powiadamia o nowej fakturze zakupowej. Program musi sam ją pobrać, a data w KSeF to data jej otrzymania. Jak to zautomatyzować bez przepisywania.
-H1: Faktury kosztowe z KSeF: jak pobierać je automatycznie
+Tytuł: Faktury kosztowe z KSeF prosto do programu księgowego
+Opis: KSeF nie powiadamia o nowych fakturach zakupowych. Sprawdź, jak program ma je pobierać sam, jakie uprawnienie nadać i jakie limity ma API.
 
-Akapit 1 (wstęp, przykład):
-Dostawca wystawił fakturę w piątek o 16:00. KSeF nikomu o tym nie powie: nie wyśle maila ani powiadomienia, a sprzedawca nie zobaczy, czy ją pobrałeś. Jeśli nikt nie zajrzy do KSeF, faktura czeka tam do końca miesiąca. [F1, F2]
+### Faktura kosztowa jest Twoja w chwili nadania numeru
+Nie musisz jej akceptować ani odbierać. Fakturę uznaje się za otrzymaną, gdy KSeF nada jej numer, a datę widać w UPO. [F1] Od 1 lutego 2026 tak dostaje faktury każda firma, także ta, która sama wystawia jeszcze poza systemem. [F5]
 
-H2: Data w KSeF liczy się jak data otrzymania
-Fakturę uznaje się za otrzymaną w dniu nadania jej numeru KSeF, nie w dniu, w którym ją otworzysz. Od tej daty liczysz moment odliczenia VAT, więc pobieranie raz w miesiącu oznacza pracę pod presją terminu. [F3]
+### KSeF nic Ci nie powie
+System nie wysyła powiadomień, a sprzedawca nie musi przesyłać numeru faktury. [F2, F4] Jeśli nikt nie zajrzy do KSeF, koszt czeka tam niezauważony, choć faktury leżą w systemie przez 10 lat. [F8]
 
-H2: Jak to zautomatyzować
-Program księgowy albo osobny skrypt co kilka godzin pyta KSeF przez API o nowe faktury i pobiera je jako XML. Dalej trafiają do księgowości, obiegu dokumentów albo arkusza, z numerem KSeF przy każdej. [F4]
+### Ręcznie czy automatem
+Przy kilku fakturach wystarczy Aplikacja Podatnika albo Aplikacja Mobilna KSeF. [F6] Przy większej liczbie program może pobierać faktury sam, przez integrację z API. [F3] Masowo pobierzesz je wyłącznie jako XML, więc program musi umieć je odczytać. [F7]
 
-FAQ (4):
+### Jedno uprawnienie i token
+Program albo biuro potrzebuje uprawnienia do przeglądania faktur. Nadasz je w Aplikacji Podatnika, a biuro może przekazać je swoim pracownikom. [F9] Token do programu generuje osoba z uprawnieniami i działa on do unieważnienia. [F10] Szczegóły przy zmianie biura: /strefa-wiedzy/faktury-z-ksef-po-zmianie-biura.
 
-1. Czy KSeF wyśle mi powiadomienie o nowej fakturze?
-   Nie. Nowe faktury sprawdzasz sam w Aplikacji Podatnika KSeF, w aplikacji mobilnej albo programem, który robi to regularnie. [F1]
-2. Czy sprzedawca widzi, że pobrałem fakturę?
-   Nie, KSeF nie daje takiej informacji. Dla sprzedawcy liczy się nadanie numeru, nie twoje pobranie. [F2]
-3. W jakim formacie pobiorę faktury hurtem?
-   Przez API tylko jako XML. PDF z kodem QR program robi sam z tego pliku. [F4]
-4. Czy mogę wymagać od sprzedawcy faktury mailem?
-   Nie. Przy krajowym nabywcy z NIP mail jest tylko kanałem pomocniczym, a przepisy nie każą wysyłać faktury poza KSeF. [strona F, pytanie o XML lub wizualizację przez e-mail]
+### Jak często program może pytać
+API pozwala na najwyżej 20 eksportów faktur na godzinę, a przy stałej synchronizacji zalecane jest sprawdzanie nie częściej niż co 15 minut. [F11, F12] Firma, której to nie wystarcza, może wnioskować o wyższe limity z uzasadnieniem. [F12]
 
-Fakty ze źródła (dosłowny sens):
-F1 KSeF nie wysyła powiadomień; oprogramowanie musi regularnie sprawdzać nowe faktury; do sprawdzenia ręcznego Aplikacja Podatnika KSeF i Aplikacja Mobilna KSeF.
-F2 Nie da się sprawdzić, czy nabywca pobrał fakturę z KSeF.
-F3 Data nadania numeru KSeF (UPO, „Data przyjęcia dokumentu do systemu teleinformatycznego MF”) decyduje o momencie otrzymania faktury przez nabywcę.
-F4 Automatyczne pobieranie przez integrację jest możliwe; masowe pobieranie przez API wyłącznie w XML.
+Link wychodzący do narzędzia: numer z faktury sprawdzisz w /numer-ksef. Linki: /ksef-integracja, /slownik#ksef.
 
-Linki w tekście: /ksef-integracja (na „Jak to zautomatyzować” w H2 albo „osobny skrypt”), /strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef (na „moment odliczenia VAT”), /slownik#ksef (pierwsze „KSeF” we wstępie).
-Link przychodzący: z /ksef-integracja na istniejącej frazie „Faktury zakupowe pobierane z KSeF automatycznie” (pakiet „Odbiór faktur kosztowych”, linia 87) albo z FAQ kiedy-odliczyc-vat-z-faktury-ksef, 0 nowych słów.
-Sprawdzone 19.10: `ls app/strefa-wiedzy | grep -iE "kosztow|zakup"` puste; /ksef-integracja, kiedy-odliczyc-vat-z-faktury-ksef i slug „ksef” w słowniku istnieją. Bez numerów artykułów ustawy.
+FAQ (3):
+1. Czy muszę potwierdzić odbiór faktury w KSeF?
+   Nie. Faktura jest otrzymana w chwili nadania numeru KSeF. [F1]
+2. Czy KSeF wyśle mi maila o nowej fakturze?
+   Nie, system nie wysyła powiadomień. Sprawdza program albo Ty. [F2]
+3. Czy biuro rachunkowe może pobierać moje faktury kosztowe?
+   Tak, po nadaniu mu uprawnienia do przeglądania faktur. [F9]

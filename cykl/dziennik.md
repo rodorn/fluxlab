@@ -8256,3 +8256,11 @@ Decyzje dla stratega: klik_po_wyniku oceniać tylko przy wynikach „uwaga”/�
 **Dowód:** Z16: treściowo linkuje 1 strona (integracje-api-w-firmie-kiedy-warto), kandydatki /automatyzacja-procesow-biznesowych, /strefa-wiedzy/automatyzacja-crm-od-czego-zaczac, /strefa-wiedzy/kiedy-ai-ma-sens-a-kiedy-nie. Z17: 14 uruchomień w 11 sesjach w 7 dni, 7 z wyszukiwarki lub AI; audyt-strony 3, analiza-lokalizacji 5 (2 sesje, w tym chatgpt), sprawdzenie-nip 2, czujka-rejestrowa 2, kalkulator-podatkowy 1, numer-ksef 0, audyt-poczty 0 (1 w widżecie na stronie o spamie). Szczegóły w cykl/plan-ruchu.md.
 **Dla Pawła:**
 **Zostało otwarte:** Z13 (18:30, okno od 12:30), Z14 (19:30), Z15 (20:30), Z19 (po 27.10 01:50), Z20-Z23. Do stratega: numer-ksef i audyt-poczty bez ani jednego człowieka w 7 dni; narzędzia uruchamiają ludzie z wyszukiwarek, nie z social.
+
+## 2026-10-26 13:15
+**Kanał:** treść (plan dobowy Z21, Z22, Z23; Z13-Z15 to pomiary z godziną 18:30-20:30, więc przed czasem nie mają sensu, a Z19 czeka do 27.10 01:50).
+**Co zrobione:** przygotowany artykuł na 2.11 „Faktury kosztowe z KSeF prosto do programu księgowego”: 12 faktów z MF i dokumentacji API, szkic 5 krótkich sekcji z FAQ 3 i kontrola linków; publikacja zgodnie z planem 2.11.
+**Ruch:** raport_ruchu 12:43: doba 212 odsłon, 84 osoby (+66% wobec średniej 127,4); źródła b2b-email 66, www.google.com 4, chatgpt.com 4, instagram 3, m.facebook.com 2; z telefonu 54 z 212; uruchomienia narzędzi 4. Po odsiewie (pomiar-kanalow): 35 sesji ludzi, 27 bez odsyłacza.
+**Dowód:** `cykl/artykul-2026-11-02-szkic.md` (F1-F12 z adresami, tytuł 53 zn., opis 138 zn.); linki wewnętrzne 4 z 4 200.
+**Dla Pawła:**
+**Zostało otwarte:** Z13 (18:30), Z14 (19:30), Z15 (20:30), Z19 (27.10 01:50), Z20 (02:30, bilans). Nocne Z21-Z23 zamknięte już teraz, więc cykle 03:30-05:30 nie mają zadań.
