@@ -8280,3 +8280,13 @@ Decyzje dla stratega: klik_po_wyniku oceniać tylko przy wynikach „uwaga”/�
 **Dowód:** commit af38d6a; https://fluxlab.pl/llms.txt zawiera link do certyfikat-ksef (sprawdzone curl po wdrożeniu); IndexNow: brak zmienionych adresów z mapy, nic nie wysłano.
 **Dla Pawła:** 
 **Zostało otwarte:** Z19 (nie wcześniej niż 27.10 01:50), Z20 bilans 27.10 02:30. /ksef-2027 FAQ i components/ListaKsef2027.tsx:79 mówią o tokenach „stan 4.10”, do odświeżenia przy najbliższej zmianie tych plików (app/ksef-2027/page.tsx ma niezatwierdzoną zmianę innej sesji, nie ruszałem).
+
+<!-- WYSLANO 2026-10-26 15:16 -->
+
+## 2026-10-26 15:45
+**Kanał:** brak (plan dobowy bez zadań do wzięcia teraz).
+**Co zrobione:** nic nie poszło w świat, bo w planie zostały tylko Z19 (nie wcześniej niż 27.10 01:50) i Z20 (bilans doby 27.10 02:30), a nagłówek planu przy zamkniętych zadaniach każe wpisać same liczby.
+**Ruch:** raport_ruchu 15:43: doba 164 odsłony, 87 osób (+25% wobec średniej 131,3); tydzień 950 odsłon, 537 osób; źródła: b2b-email 94, chatgpt.com 4, m.facebook.com 2, www.facebook.com 2, facebook 2; z telefonu 38 z 164; uruchomienia narzędzi 4; LinkedIn 0, X 1, Threads 0, YouTube 0 w dobie.
+**Dowód:** cykl/plan-ruchu.md: 21 z 23 „- [x]”, otwarte Z19 i Z20 z warunkiem czasu.
+**Dla Pawła:**
+**Zostało otwarte:** Z19 (27.10 01:50), Z20 (27.10 02:30). Cykle 16:45-00:45 nie mają zadań z planu.
