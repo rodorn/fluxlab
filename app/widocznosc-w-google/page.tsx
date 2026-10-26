@@ -87,6 +87,7 @@ export default function Page() {
         {
           name: "Monitoring",
           price: "39 zł/mc",
+          kup: "google-monitoring",
           desc: "Żeby nie wróciła niezauważona.",
           features: [
             "codzienne sprawdzanie trzech miejsc",

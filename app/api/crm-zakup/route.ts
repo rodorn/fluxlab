@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { originDozwolony, utworzLimit } from "@/lib/limit-ip";
+import { stripe } from "@/lib/stripe";
 import { MODULY_CRM, W_ABONAMENCIE, type WariantCrm } from "@/lib/modulyCrm";
 
 const limit = utworzLimit();
@@ -13,20 +14,6 @@ const MODUL_KLUCZ: Record<string, string> = {
   ocena: "crm_ocena_mies",
   drafty: "crm_drafty_mies",
 };
-
-async function stripe(sciezka: string, body?: URLSearchParams) {
-  const r = await fetch(`https://api.stripe.com/v1/${sciezka}`, {
-    method: body ? "POST" : "GET",
-    headers: {
-      Authorization: `Bearer ${process.env.STRIPE_SECRET_KEY}`,
-      ...(body && { "Content-Type": "application/x-www-form-urlencoded" }),
-    },
-    body,
-  });
-  const dane = await r.json();
-  if (!r.ok) throw new Error(dane?.error?.message ?? `Stripe ${r.status}`);
-  return dane;
-}
 
 export async function POST(req: Request) {
   if (!originDozwolony(req.headers.get("origin")))

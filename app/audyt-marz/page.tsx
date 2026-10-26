@@ -56,6 +56,7 @@ export default function Page() {
         {
           name: "Audyt marż",
           price: "49 zł",
+          kup: "marze-audyt",
           desc: "Katalog do pięciuset pozycji.",
           features: [
             "zysk netto na każdej sztuce",
@@ -68,6 +69,7 @@ export default function Page() {
         {
           name: "Comiesięczny rachunek",
           price: "149 zł/mc",
+          kup: "marze-rachunek",
           desc: "Ten sam rachunek co miesiąc.",
           features: [
             "wszystko z audytu",

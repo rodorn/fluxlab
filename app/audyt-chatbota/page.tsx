@@ -56,6 +56,7 @@ export default function Page() {
         {
           name: "Audyt",
           price: "69 zł",
+          kup: "chatbot-audyt",
           desc: "Jednorazowe sprawdzenie bota.",
           features: [
             "150 realnych pytań klienta",
@@ -68,6 +69,7 @@ export default function Page() {
         {
           name: "Audyt z regresją",
           price: "199 zł/mc",
+          kup: "chatbot-regresja",
           desc: "Testy co miesiąc, po każdej zmianie modelu.",
           features: [
             "wszystko z audytu",

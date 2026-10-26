@@ -112,13 +112,59 @@ export default function Regulamin() {
                             Przeglądać materiały informacyjne dotyczące
                             automatyzacji procesów biznesowych.
                           </li>
+                          <li>
+                            Kupić online wybrane usługi i abonamenty o stałej
+                            cenie.
+                          </li>
                         </ul>
                         <p className="mt-2">
                           Szczegółowy zakres, warunki realizacji i wynagrodzenie
                           za usługi konsultingowe ustalane są indywidualnie w
                           odrębnej umowie zawieranej między Usługodawcą a
-                          klientem.
+                          klientem, z wyjątkiem usług kupowanych online, których
+                          zakres i cenę opisuje strona danej usługi.
                         </p>
+                        <h3 className="mt-6 mb-2 font-semibold text-gray-900 dark:text-white">
+                          Zakup online
+                        </h3>
+                        <ul className="list-disc pl-6 space-y-1">
+                          <li>
+                            Zakup online jest przeznaczony dla firm. Ceny na
+                            stronach są cenami netto, do których doliczany jest
+                            VAT 23%. Kwotę brutto pokazuje strona płatności.
+                          </li>
+                          <li>
+                            Płatności obsługuje Stripe Payments Europe Ltd.
+                            Usługodawca nie otrzymuje danych karty płatniczej.
+                          </li>
+                          <li>
+                            Umowa zostaje zawarta z chwilą przyjęcia płatności.
+                            W ciągu 1 dnia roboczego Usługodawca wysyła fakturę
+                            VAT na adres e-mail podany przy płatności i kontaktuje
+                            się w sprawie rozpoczęcia pracy.
+                          </li>
+                          <li>
+                            Abonament jest opłacany z góry za każdy miesiąc i
+                            odnawia się automatycznie. Można go wypowiedzieć w
+                            dowolnym momencie, pisząc na pawel@fluxlab.pl.
+                            Abonament działa do końca opłaconego miesiąca.
+                          </li>
+                          <li>
+                            Jeśli Usługodawca nie może wykonać kupionej usługi,
+                            zwraca całą zapłaconą kwotę w ciągu 14 dni.
+                          </li>
+                          <li>
+                            Osoba fizyczna prowadząca działalność gospodarczą,
+                            dla której umowa nie ma charakteru zawodowego (art.
+                            38a ustawy o prawach konsumenta), może odstąpić od
+                            umowy w ciągu 14 dni od jej zawarcia bez podania
+                            przyczyny. Prawo to wygasa, gdy na jej wyraźne
+                            żądanie usługa zostanie w tym czasie wykonana w
+                            całości. Przy odstąpieniu w trakcie realizacji
+                            płaci ona za część usługi wykonaną do chwili
+                            odstąpienia.
+                          </li>
+                        </ul>
                       </section>
 
                       {/* 3 */}

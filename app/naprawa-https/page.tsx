@@ -87,6 +87,7 @@ export default function Page() {
         {
           name: "Pilnowanie ważności",
           price: "39 zł/mc",
+          kup: "https-pilnowanie",
           desc: "Żeby to się nie powtórzyło.",
           features: [
             "sprawdzanie certyfikatu co dobę",

@@ -59,6 +59,7 @@ export default function Page() {
         {
           name: "Diagnoza",
           price: "49 zł",
+          kup: "wlamanie-diagnoza",
           desc: "Chcesz wiedzieć, jak głęboko sięga problem.",
           features: [
             "lista zainfekowanych i obcych plików",

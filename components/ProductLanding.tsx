@@ -10,6 +10,7 @@ import { cenaWejscia } from "@/lib/products";
 import { kotwica } from "@/lib/kotwica";
 import { zLinkami, type LinkWTekscie } from "@/lib/zLinkami";
 import FaqOtwieracz from "@/components/FaqOtwieracz";
+import KupOnline from "@/components/KupOnline";
 
 export interface Tier {
   name: string;
@@ -26,6 +27,8 @@ export interface Tier {
   /** Dokąd prowadzi przycisk, domyślnie do formularza na dole. */
   href?: string;
   cta?: string;
+  /** Klucz z `OFERTA`: przycisk płatności online obok „Zamawiam”. */
+  kup?: string;
 }
 
 export interface ProductLandingProps {
@@ -259,12 +262,21 @@ export default function ProductLanding(p: ProductLandingProps) {
                       </li>
                     ))}
                   </ul>
-                  <a
-                    href={t.href ?? "#zamow"}
-                    className="btn-primary mt-6 w-full text-center"
-                  >
-                    {t.cta ?? "Zamawiam"}
-                  </a>
+                  {t.kup ? (
+                    <div className="mt-6 flex flex-col gap-2">
+                      <KupOnline id={t.kup} className="btn-primary w-full text-center" />
+                      <a href={t.href ?? "#zamow"} className="btn-secondary w-full text-center">
+                        Najpierw zapytaj
+                      </a>
+                    </div>
+                  ) : (
+                    <a
+                      href={t.href ?? "#zamow"}
+                      className="btn-primary mt-6 w-full text-center"
+                    >
+                      {t.cta ?? "Zamawiam"}
+                    </a>
+                  )}
                 </div>
               ))}
             </div>

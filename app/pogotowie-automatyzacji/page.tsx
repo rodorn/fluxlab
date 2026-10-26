@@ -55,6 +55,7 @@ export default function Page() {
         {
           name: "Diagnoza",
           price: "49 zł",
+          kup: "pogotowie-diagnoza",
           desc: "Wiesz, co się dzieje i ile kosztuje naprawa.",
           features: [
             "przegląd logów wykonań",
@@ -76,6 +77,7 @@ export default function Page() {
         {
           name: "Opieka",
           price: "299 zł/mc",
+          kup: "pogotowie-opieka",
           desc: "O awarii nie dowiadujesz się od klienta.",
           features: [
             "monitoring i alarmy",

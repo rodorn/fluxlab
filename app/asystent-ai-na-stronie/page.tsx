@@ -65,6 +65,7 @@ export default function Page() {
         {
           name: "Audyt asystenta",
           price: "69 zł",
+          kup: "asystent-audyt",
           desc: "Dla bota, który już działa.",
           features: [
             "150 realnych pytań klienta",

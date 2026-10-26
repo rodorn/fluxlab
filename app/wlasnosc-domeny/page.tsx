@@ -79,6 +79,7 @@ export default function Page() {
         {
           name: "Pilnowanie",
           price: "49 zł/mc",
+          kup: "domena-pilnowanie",
           desc: "Dla firm z kilkoma domenami.",
           features: [
             "codzienne sprawdzanie abonenta",

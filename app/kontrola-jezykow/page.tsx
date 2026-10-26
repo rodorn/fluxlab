@@ -79,6 +79,7 @@ export default function Page() {
         {
           name: "Monitoring",
           price: "99 zł/mc",
+          kup: "jezyki-monitoring",
           desc: "Nowe podstrony wracają do polskiego same z siebie.",
           features: [
             "cykliczne sprawdzanie całego serwisu",

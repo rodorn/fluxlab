@@ -55,6 +55,7 @@ export default function LandingZPlatnoscia() {
         {
           name: "Jedna kampania",
           price: "299 zł",
+          kup: "landing-kampania",
           desc: "Strona, formularz, powiadomienia.",
           features: [
             "Jedna strona sprzedażowa na Twojej domenie",
@@ -66,6 +67,7 @@ export default function LandingZPlatnoscia() {
         {
           name: "Z płatnością",
           price: "790 zł",
+          kup: "landing-platnosc",
           desc: "Z podpiętą bramką i obsługą statusów.",
           features: [
             "Wszystko z wariantu podstawowego",
@@ -79,6 +81,7 @@ export default function LandingZPlatnoscia() {
         {
           name: "Kolejna kampania",
           price: "190 zł",
+          kup: "landing-kolejna",
           desc: "Gdy szablon już stoi.",
           features: [
             "Nowa treść i grafiki na istniejącym szablonie",

@@ -92,6 +92,7 @@ export default function Page() {
         {
           name: "Monitoring",
           price: "149 zł/mc",
+          kup: "paliwo-monitoring",
           desc: "Chcesz wiedzieć na bieżąco, nie po roku.",
           features: [
             "comiesięczne przeliczenie reguł",

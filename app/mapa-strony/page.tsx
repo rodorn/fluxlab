@@ -77,6 +77,7 @@ export default function Page() {
         {
           name: "Pilnowanie",
           price: "99 zł/mc",
+          kup: "mapa-pilnowanie",
           desc: "Dla serwisów, które rosną.",
           features: [
             "cykliczne sprawdzanie całej listy",

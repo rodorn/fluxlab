@@ -57,6 +57,7 @@ export default function Page() {
         {
           name: "Skan sklepu",
           price: "49 zł",
+          kup: "ceny-skan",
           desc: "Jednorazowe sprawdzenie wszystkich przecen.",
           features: [
             "lista pozycji bez wymaganej informacji",
@@ -77,6 +78,7 @@ export default function Page() {
         {
           name: "Rejestr cen",
           price: "99 zł/mc",
+          kup: "ceny-rejestr",
           desc: "Codzienny zapis cen jako dowód.",
           features: [
             "historia ceny każdego produktu",

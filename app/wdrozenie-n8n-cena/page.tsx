@@ -62,6 +62,7 @@ export default function WdrozenieN8nCena() {
         {
           name: "Pojedynczy przepływ",
           price: "790 zł",
+          kup: "n8n-przeplyw",
           desc: "Jedna uciążliwość rozwiązana na stałe.",
           features: [
             "przepływ od zdarzenia do zapisu",
@@ -84,6 +85,7 @@ export default function WdrozenieN8nCena() {
         {
           name: "Opieka",
           price: "190 zł / mc",
+          kup: "n8n-opieka",
           desc: "Gdy nie chcesz tego pilnować sam.",
           features: [
             "aktualizacje n8n i serwera",

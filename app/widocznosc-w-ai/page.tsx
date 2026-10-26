@@ -87,6 +87,7 @@ export default function WidocznoscWAi() {
         {
           name: "Naprawa warunków wstępnych",
           price: "890 zł",
+          kup: "ai-warunki",
           desc: "Gdy sprawdzenie wyszło na czerwono.",
           features: [
             "Usunięcie przypadkowych blokad z robots.txt",
