@@ -8380,3 +8380,13 @@ Decyzje dla stratega: klik_po_wyniku oceniać tylko przy wynikach „uwaga”/�
 - Wynik Z2: artykuł w Google, 0 ludzi w pierwszej dobie. Z4: 3 publikacje (Instagram relacja, Facebook post, LinkedIn komentarz), 0 ludzi. Z5: 0 odsłon, ocena po 7 dniach (embargo do 2.11).
 - Zoho: wątki Joanna Święs (portal ogłoszeniowy) i Atlantic Stairs mają odpowiedzi w Wysłanych (19:08, 21:18), nikt nie czeka.
 - Decyzje dla stratega: (1) social na temat certyfikatu KSeF dał 0 ludzi z 3 publikacji, a stare serie (ksef60, format-licze, format-mit) wciąż przyprowadzają po 1; zamiast nowych zleceń tematu prosić sesje social o link w istniejących seriach. (2) /grupa-ksef liczyć osobno, bo to wyjścia do Facebooka, nie wejścia na stronę. (3) Google przyprowadza na artykuły podatkowe (kiedy-odliczyc-vat, jak-liczyc-zdrowotna); kolejny kamień treści w tym temacie, nie w automatyzacji. (4) Z16: w planie 27.10 wstawić 3 linki do co-to-jest-automatyzacja-procesow-biznesowych. (5) Narzędzia: 0 ludzi w dobie, numer-ksef i audyt-poczty 0 w 7 dni; wejścia do narzędzi tylko z wyszukiwarki, więc linki do narzędzi w artykułach podatkowych z ruchem z Google.
+
+<!-- WYSLANO 2026-10-26 23:16 -->
+
+## 2026-10-26 23:45
+**Kanał:** brak (plan czeka na Z19).
+**Co zrobione:** nic nie poszło w świat; jedyne otwarte zadanie Z19 ma warunek „nie wcześniej niż 27.10 01:50”, reszta planu zamknięta, a plan każe wtedy zapisać tylko liczby. Timer fl-gsc-27 uzbrojony na 27.10 01:45 (systemctl --user list-timers).
+**Ruch:** raport_ruchu 23:43: doba 169 odsłon, 93 osoby (+31% wobec średniej 129,0); tydzień 963 / 538; źródła: b2b-email 108, facebook 5, www.google.com 4, instagram 2, www.bing.com 1; X 1 sesja; uruchomienia narzędzi 0.
+**Dowód:** cykl/plan-ruchu.md, Z19 „- [ ]” z warunkiem czasu; fl-gsc-27.timer Tue 2026-10-27 01:45 CET.
+**Dla Pawła:**
+**Zostało otwarte:** Z19 (wynik serii 27.10 01:50, log cykl/z19-indeksowanie-27.log).
