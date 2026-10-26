@@ -317,7 +317,8 @@ export const categories: Category[] = [
       {
         href: "/strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef",
         title: "Kiedy odliczyć VAT z faktury z KSeF",
-        description: "Liczy się dzień nadania numeru KSeF, nie data wystawienia.",
+        description:
+          "Liczy się dzień nadania numeru KSeF, nie data wystawienia.",
         bezOkladki: true,
       },
       {
@@ -329,61 +330,78 @@ export const categories: Category[] = [
       {
         href: "/strefa-wiedzy/ksef-jdg-zwolniona-z-vat",
         title: "KSeF w JDG zwolnionej z VAT",
-        description: "Faktury dla firm w KSeF od 1 kwietnia 2026, mimo zwolnienia.",
+        description:
+          "Faktury dla firm w KSeF od 1 kwietnia 2026, mimo zwolnienia.",
         bezOkladki: true,
       },
       {
         href: "/strefa-wiedzy/data-wystawienia-faktury-ksef",
         title: "Data wystawienia faktury w KSeF",
-        description: "Faktura online jest wystawiona w dniu wysyłki do KSeF, nie nadania numeru.",
+        description:
+          "Faktura online jest wystawiona w dniu wysyłki do KSeF, nie nadania numeru.",
         bezOkladki: true,
       },
       {
         href: "/strefa-wiedzy/faktura-vat-rr-ksef",
         title: "Faktura VAT RR w KSeF",
-        description: "Dobrowolnie od 1 kwietnia 2026; obowiązek, gdy rolnik wskaże nabywcę.",
+        description:
+          "Dobrowolnie od 1 kwietnia 2026; obowiązek, gdy rolnik wskaże nabywcę.",
         bezOkladki: true,
       },
       {
         href: "/strefa-wiedzy/zaw-fa-ksef",
         title: "ZAW-FA w spółce",
-        description: "Jedna osoba w zgłoszeniu nadaje uprawnienia pozostałym; gdy odejdzie, nowe ZAW-FA.",
+        description:
+          "Jedna osoba w zgłoszeniu nadaje uprawnienia pozostałym; gdy odejdzie, nowe ZAW-FA.",
         bezOkladki: true,
       },
       {
         href: "/strefa-wiedzy/faktura-do-paragonu-ksef",
         title: "Faktura do paragonu a KSeF",
-        description: "Faktura z kasy poza KSeF do końca 2026; od 2027 dla firm już w KSeF.",
+        description:
+          "Faktura z kasy poza KSeF do końca 2026; od 2027 dla firm już w KSeF.",
         bezOkladki: true,
       },
       {
         href: "/strefa-wiedzy/limit-10-tys-poza-ksef",
         title: "Limit 10 tys. zł poza KSeF",
-        description: "Faktura, którą przekraczasz 10 tys. zł w miesiącu, i wszystkie kolejne idą przez KSeF.",
+        description:
+          "Faktura, którą przekraczasz 10 tys. zł w miesiącu, i wszystkie kolejne idą przez KSeF.",
+        bezOkladki: true,
+      },
+      {
+        href: "/strefa-wiedzy/certyfikat-ksef",
+        title: "Certyfikat KSeF",
+        description:
+          "Bez certyfikatu typu offline nie wystawisz faktury w awarii KSeF; wyrób go wcześniej.",
         bezOkladki: true,
       },
       {
         href: "/strefa-wiedzy/proforma-ksef",
         title: "Proforma a KSeF",
-        description: "Proforma nie jest fakturą i zostaje poza KSeF; fakturę wystawiasz po zapłacie.",
+        description:
+          "Proforma nie jest fakturą i zostaje poza KSeF; fakturę wystawiasz po zapłacie.",
         bezOkladki: true,
       },
       {
         href: "/strefa-wiedzy/faktura-wewnetrzna-ksef",
         title: "Faktura wewnętrzna a KSeF",
-        description: "Faktura wewnętrzna nie jest fakturą w rozumieniu ustawy i zostaje poza KSeF; w JPK typ WEW.",
+        description:
+          "Faktura wewnętrzna nie jest fakturą w rozumieniu ustawy i zostaje poza KSeF; w JPK typ WEW.",
         bezOkladki: true,
       },
       {
         href: "/strefa-wiedzy/gutschrift-ksef",
         title: "Gutschrift a KSeF",
-        description: "Bez umowy o samofakturowanie to nie faktura; własną wystawiasz w KSeF.",
+        description:
+          "Bez umowy o samofakturowanie to nie faktura; własną wystawiasz w KSeF.",
         bezOkladki: true,
       },
       {
         href: "/strefa-wiedzy/zalacznik-do-faktury-ksef",
         title: "Załącznik do faktury w KSeF",
-        description: "Tylko XML i po zgłoszeniu w e-US; PDF i protokół wysyłasz osobno.",
+        description:
+          "Tylko XML i po zgłoszeniu w e-US; PDF i protokół wysyłasz osobno.",
         bezOkladki: true,
       },
       {
@@ -395,25 +413,29 @@ export const categories: Category[] = [
       {
         href: "/strefa-wiedzy/e-doreczenia-adres-prywatny-i-firmowy",
         title: "e-Doręczenia: adres prywatny i firmowy",
-        description: "W JDG to dwie osobne skrzynki, prywatna nie zastąpi firmowej.",
+        description:
+          "W JDG to dwie osobne skrzynki, prywatna nie zastąpi firmowej.",
         bezOkladki: true,
       },
       {
         href: "/strefa-wiedzy/faktury-z-ksef-po-zmianie-biura",
         title: "Faktury z KSeF po zmianie biura",
-        description: "Nowe biuro pobierze faktury z 2026 z KSeF po nadaniu uprawnienia.",
+        description:
+          "Nowe biuro pobierze faktury z 2026 z KSeF po nadaniu uprawnienia.",
         bezOkladki: true,
       },
       {
         href: "/strefa-wiedzy/faktura-gdy-ksef-nie-dziala",
         title: "Faktura, gdy KSeF nie działa",
-        description: "Offline24, niedostępność i awaria: kiedy dosłać fakturę do KSeF.",
+        description:
+          "Offline24, niedostępność i awaria: kiedy dosłać fakturę do KSeF.",
         bezOkladki: true,
       },
       {
         href: "/strefa-wiedzy/faktura-zaliczkowa-ksef",
         title: "Faktura zaliczkowa w KSeF",
-        description: "Zaliczka, rozliczenie i numery KSeF zaliczek w fakturze końcowej.",
+        description:
+          "Zaliczka, rozliczenie i numery KSeF zaliczek w fakturze końcowej.",
         bezOkladki: true,
       },
       {
@@ -431,13 +453,15 @@ export const categories: Category[] = [
       {
         href: "/strefa-wiedzy/blad-w-fakturze-ksef",
         title: "Błąd w fakturze w KSeF",
-        description: "Korekta, zły NIP i odrzucony plik: jak poprawić fakturę w KSeF.",
+        description:
+          "Korekta, zły NIP i odrzucony plik: jak poprawić fakturę w KSeF.",
         bezOkladki: true,
       },
       {
         href: "/strefa-wiedzy/faktura-dla-osoby-prywatnej-ksef",
         title: "Faktura dla osoby prywatnej a KSeF",
-        description: "Dla konsumenta KSeF jest dobrowolny; jak przekazać fakturę z KSeF.",
+        description:
+          "Dla konsumenta KSeF jest dobrowolny; jak przekazać fakturę z KSeF.",
         bezOkladki: true,
       },
     ],

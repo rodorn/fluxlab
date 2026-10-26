@@ -240,3 +240,5 @@ prefetchu
 preload
 Serif
 tiltu
+Payments
+Stripe

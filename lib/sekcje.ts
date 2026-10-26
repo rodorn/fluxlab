@@ -199,6 +199,7 @@ export const SEKCJE: Sekcja[] = [
           s("/strefa-wiedzy/faktura-do-paragonu-ksef", "Faktura do paragonu a KSeF"),
           s("/strefa-wiedzy/proforma-ksef", "Proforma a KSeF"),
           s("/strefa-wiedzy/limit-10-tys-poza-ksef", "Limit 10 tys. zł poza KSeF"),
+          s("/strefa-wiedzy/certyfikat-ksef", "Certyfikat KSeF"),
           s("/strefa-wiedzy/faktura-wewnetrzna-ksef", "Faktura wewnętrzna a KSeF"),
           s("/strefa-wiedzy/faktura-vat-rr-ksef", "Faktura VAT RR w KSeF"),
           s("/strefa-wiedzy/data-wystawienia-faktury-ksef", "Data wystawienia faktury w KSeF"),

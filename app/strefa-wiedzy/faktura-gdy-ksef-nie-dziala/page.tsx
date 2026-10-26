@@ -41,12 +41,22 @@ const faq: { q: string; a: string; linki?: LinkWTekscie[] }[] = [
   {
     q: "Jaka jest data wystawienia takiej faktury?",
     a: "Data z pola P_1, czyli ta wpisana na fakturze, a nie dzień wysłania do KSeF.",
-    linki: [{ fraza: "Data z pola P_1", href: "/strefa-wiedzy/data-wystawienia-faktury-ksef" }],
+    linki: [
+      {
+        fraza: "Data z pola P_1",
+        href: "/strefa-wiedzy/data-wystawienia-faktury-ksef",
+      },
+    ],
   },
   {
     q: "Kiedy nabywca ją otrzymuje?",
     a: "Firma z NIP otrzymuje ją w dniu nadania numeru KSeF i od tego dnia liczy odliczenie VAT. Konsument i firma zagraniczna otrzymują ją w dniu faktycznego doręczenia.",
-    linki: [{ fraza: "firma zagraniczna", href: "/strefa-wiedzy/faktura-dla-kontrahenta-zagranicznego-ksef" }],
+    linki: [
+      {
+        fraza: "firma zagraniczna",
+        href: "/strefa-wiedzy/faktura-dla-kontrahenta-zagranicznego-ksef",
+      },
+    ],
   },
   {
     q: "Po co certyfikat KSeF?",
@@ -104,8 +114,15 @@ export default function FakturaGdyKsefNieDzialaArticle() {
               <h2 className="mb-4 h2-sekcji">Dwa kody QR</h2>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                 Fakturę przekazaną klientowi poza KSeF, zanim dostanie numer,
-                oznacza się dwoma kodami QR. Pierwszy pozwala ją sprawdzić, drugi
-                potwierdza wystawcę i wymaga certyfikatu KSeF typu offline.
+                oznacza się dwoma kodami QR. Pierwszy pozwala ją sprawdzić,
+                drugi potwierdza wystawcę i wymaga{" "}
+                <Link
+                  href="/strefa-wiedzy/certyfikat-ksef"
+                  className="text-accent hover:underline"
+                >
+                  certyfikatu KSeF typu offline
+                </Link>
+                .
               </p>
             </section>
             <section>

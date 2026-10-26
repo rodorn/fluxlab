@@ -658,6 +658,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Przekroczysz 10 tys. zł brutto w miesiącu, a ta faktura i wszystkie kolejne idą już przez KSeF, bez powrotu do papieru. Sprawdź, co wlicza się do limitu."
   },
   {
+    "url": "/strefa-wiedzy/certyfikat-ksef",
+    "tytul": "Certyfikat KSeF: po co jest i jak go wyrobić",
+    "opis": "Bez certyfikatu KSeF typu offline nie wystawisz faktury, gdy KSeF nie działa. Wyrobisz go w Aplikacji Podatnika KSeF, a ważny jest najwyżej 2 lata."
+  },
+  {
     "url": "/strefa-wiedzy/proforma-ksef",
     "tytul": "Proforma a KSeF: czy wystawiać ją w systemie",
     "opis": "Proformy nie wystawiasz w KSeF, bo w rozumieniu ustawy o VAT nie jest fakturą. Wysyłasz ją PDF-em jak dotąd, a fakturę wystawiasz w KSeF po zapłacie."
