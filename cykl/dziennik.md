@@ -8272,3 +8272,11 @@ Decyzje dla stratega: klik_po_wyniku oceniać tylko przy wynikach „uwaga”/�
 **Dowód:** gsc_indeksuj.py --tylko-stan 13:43:48 „Adres URL znajduje się w Google”; sitemap.xml 1 wystąpienie; artykuł: 2 odsłony z Facebooka w tej samej sekundzie 10:17:00 (Chrome Windows, bez zdarzeń), czyli sprawdzenie publikacji, ludzi 0; /strefa-wiedzy/automatyzacja-vs-zatrudnienie od zmiany z Z5: 0 odsłon.
 **Dla Pawła:**
 **Zostało otwarte:** Z13 (18:30), Z14 (19:30), Z19 (27.10 01:50), Z20 (02:30, bilans).
+
+## 2026-10-26 15:05
+**Kanał:** pomiar (Z13, Z14 z planu) i widoczność w asystentach AI.
+**Co zrobione:** Z13 i Z14 odhaczone (wcześniej niż w planie, okno do 14:50); w llms.txt zdanie o tokenach KSeF zaktualizowane do decyzji MF (tokeny bezterminowo, rozporządzenie do nowelizacji) z linkiem do /strefa-wiedzy/certyfikat-ksef, którego llms.txt wcześniej nie znał.
+**Ruch:** raport_ruchu doba 182 odsłony, 88 osób; źródła: b2b-email 82, chatgpt.com 4, instagram 3, m.facebook.com 2, www.facebook.com 2. Po odsiewie Z1 (pomiar-kanalow): 32 sesje ludzi, 23 bez odsyłacza, instagram 3, m.facebook.com 2, chatgpt.com 1, google 1, bing 1, x 1, l.facebook.com 1. Od 12:30 ludzie 2 sesje (x 1, bez 1); od 06:30 uruchomień narzędzi przez ludzi 0, lead 0. Kampania certyfikat-ksef: 1 sesja (para, odsiana), czyli 0 ludzi mimo 3 postów (IG relacja 06:56, FB 09:23, LinkedIn komentarz 11:16).
+**Dowód:** commit af38d6a; https://fluxlab.pl/llms.txt zawiera link do certyfikat-ksef (sprawdzone curl po wdrożeniu); IndexNow wysłany.
+**Dla Pawła:** 
+**Zostało otwarte:** Z19 (nie wcześniej niż 27.10 01:50), Z20 bilans 27.10 02:30. /ksef-2027 FAQ i components/ListaKsef2027.tsx:79 mówią o tokenach „stan 4.10”, do odświeżenia przy najbliższej zmianie tych plików (app/ksef-2027/page.tsx ma niezatwierdzoną zmianę innej sesji, nie ruszałem).
