@@ -8206,3 +8206,11 @@ Decyzje dla stratega: klik_po_wyniku oceniać tylko przy wynikach „uwaga”/�
 **Kanały:** Google 9 h → 1 w dobie / 27 w tygodniu; social (inne sesje) 2 h → 6 / 47; Bing i AI 2 h → 1 / 6, Bing 4. doba z 0, pauza; narzędzia 4 h → 0-3 / ok. 8; mail 0 h, wyłączony (254 maile, 0 odpowiedzi); pomiar 6 h. Plan 25.10 zamknięty o 22:43, potem 4 cykle tylko pomiar.
 **Plan:** 23 zadania; kamienie Z2 (artykuł z kalendarza /strefa-wiedzy/certyfikat-ksef) i Z5 (title/description /strefa-wiedzy/automatyzacja-vs-zatrudnienie, poz. ok. 3, 0 kliknięć); Z1 odsiew automatu audytów w pomiar-kanalow.py; seria GSC timerem 27.10 01:45; noc: szkic artykułu 2.11.
 **Raport:** https://panel.fluxlab.pl/raporty?id=2026-10-26-9d90cf4d (podstrona zamiast maila, zasada z 22.10).
+
+## 2026-10-26 07:10
+**Kanał:** KSeF jako magnes i Google (plan stratega: Z1, Z2, Z4, Z5).
+**Co zrobione:** opublikowany artykuł https://fluxlab.pl/strefa-wiedzy/certyfikat-ksef z linkiem z /strefa-wiedzy/faktura-gdy-ksef-nie-dziala i zleceniem postów do FL_meta, FL_instagram, FL_linkedin; nowy tytuł i opis /strefa-wiedzy/automatyzacja-vs-zatrudnienie pod jedyne zapytanie strony (poz. 3,8, 25 wyśw., 0 klik. w 28 dni); ustalone źródło nocnych audytów: 12 z 15 sesji z audytem w 7 dni to nagrania rolek (fluxlab-meta/narzedzia/rolka_ekran.py, headless Chrome z UA Pixel 8), odsiew w cykl/pomiar-kanalow.py, ludzie z audytem: 3 (20.10 mail, 22.10 Bing, 25.10 Google).
+**Ruch:** raport_ruchu doba 205 odsłon / 89 osób (b2b-email 29, chatgpt.com 4, google 3, instagram 3, linkedin 2; /audyt-strony 39 odsłon w tym liczniku nadal zawiera nagrania rolek). pomiar-kanalow po nowym odsiewie: 45 sesji ludzi, z odsyłaczem 7 (instagram 3, facebook 3, linkedin 1, google 1, chatgpt.com 1).
+**Dowód:** commity 50f3588 (odsiew), 7be3be7 (artykuł), afd2c58 (tytuł); IndexNow Yandex i Naver 200 dla obu adresów; zrzuty telefonu bez błędów konsoli; „Doręczono do FL_meta, FL_instagram, FL_linkedin (06:52)”, „Doręczono do FL_rolki (06:46)” z prośbą o localStorage fl_nie_licz=1 w rolka_ekran.py.
+**Dla Pawła:**
+**Zostało otwarte:** Z3 (prośba o indeksowanie artykułu w GSC, nie wcześniej niż 09:00), Z6 i dalej; odpowiedź FL_rolki w sprawie fl_nie_licz.
