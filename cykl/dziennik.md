@@ -8224,3 +8224,11 @@ Decyzje dla stratega: klik_po_wyniku oceniać tylko przy wynikach „uwaga”/�
 **Dowód:** `cykl/gsc-zapytania-2026-10-26.txt` (170 zapytań, 100 zapisanych), `cykl/gsc-strony-2026-10-26.txt` (119 stron, 100 zapisanych), linia Z6 w `cykl/plan-ruchu.md` z 5 zmianami. Raport Strony (indeksowanie) pokazuje 116 adresów „Alternatywna strona zawierająca prawidłowy tag kanoniczny”, do sprawdzenia w Z9.
 **Dla Pawła:**
 **Zostało otwarte:** Z3 od 09:00, Z7 o 12:30 i dalej według planu.
+
+## 2026-10-26 09:01
+**Kanał:** Google (Z8 i Z3 planu 26/27).
+**Co zrobione:** wysłana prośba o zaindeksowanie nowego artykułu https://fluxlab.pl/strefa-wiedzy/certyfikat-ksef (przed prośbą: nie znajduje się w Google); sprawdzono 50 adresów z mapy spoza dotychczasowych serii: wszystkie 50 są już w Google.
+**Ruch:** raport_ruchu 08:43: 218 odsłon, 95 osób w dobie (+69% wobec średniej 128,7); najczęściej / (50), /audyt-strony (38), PDF ebook KSeF (10), checklisty (9+9); źródła b2b-email 42, chatgpt.com 4, google 3, instagram 3, linkedin 2; uruchomienia narzędzi 6. Tydzień 922 odsłony, 522 osoby.
+**Dowód:** wynik gsc_indeksuj.py 09:00:51 „prośba przesłana”; `cykl/z8-stan-2026-10-26.txt` (50 × tak), `cykl/z8-niesprawdzone-2026-10-26.txt` (62 niesprawdzone).
+**Dla Pawła:**
+**Zostało otwarte:** Z7 o 12:30; Z10 nie dostanie adresów „nie znajduje się” z Z8, więc lista 27.10 musi oprzeć się na Z9 (zeskanowane/wykryte, niezindeksowane) albo na 62 niesprawdzonych.
