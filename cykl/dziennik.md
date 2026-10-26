@@ -8232,3 +8232,11 @@ Decyzje dla stratega: klik_po_wyniku oceniać tylko przy wynikach „uwaga”/�
 **Dowód:** wynik gsc_indeksuj.py 09:00:51 „prośba przesłana”; `cykl/z8-stan-2026-10-26.txt` (50 × tak), `cykl/z8-niesprawdzone-2026-10-26.txt` (62 niesprawdzone).
 **Dla Pawła:**
 **Zostało otwarte:** Z7 o 12:30; Z10 nie dostanie adresów „nie znajduje się” z Z8, więc lista 27.10 musi oprzeć się na Z9 (zeskanowane/wykryte, niezindeksowane) albo na 62 niesprawdzonych.
+
+## 2026-10-26 10:05
+**Kanał:** pomiar i Google (plan dobowy Z7, Z9, Z10).
+**Co zrobione:** pomiar od 06:30, odczyt przyczyn nieindeksowania z GSC (raport 19.10) i timer serii indeksowania na 27.10 01:45 z 2 adresami.
+**Ruch:** od 06:30 po odsiewie 7 sesji ludzi (google 1, bing 1, bez odsyłacza 5); uruchomienia narzędzi przez ludzi 0, lead_* 0, klik_po_wyniku 0; /strefa-wiedzy/certyfikat-ksef 0 odsłon ludzi. Doba (pomiar-kanalow): 40 sesji, 63 odsłony; bez odsyłacza 31, instagram 3, google 2, m.facebook 2, linkedin 1, chatgpt 1, l.facebook 1, bing 1. Zoho od 06:30: 0 zapytań od ludzi.
+**Dowód:** GSC: zindeksowano 167, nie 153 (kanoniczna 116, przekierowanie 5, noindex 2, 404 1, zeskanowana 28, inny 4xx 1, wykryta 0); `cykl/gsc-niezindeksowane-2026-10-26.txt`, z 28 zeskanowanych w sitemap tylko /strefa-wiedzy/maly-zus-plus-kiedy-sie-oplaca. Stan w Google 30 kolejnych adresów z sitemap: 30 z 30 zindeksowane (razem 80 z 80 dziś). `cykl/z13-lista-27.txt` (2 adresy), `fl-gsc-27.timer` enabled na 27.10 01:45.
+**Dla Pawła:**
+**Zostało otwarte:** Z11 (Bing AI Performance) i dalej; 32 adresy z sitemap bez sprawdzonego stanu w `cykl/z8-niesprawdzone-2026-10-26.txt`.

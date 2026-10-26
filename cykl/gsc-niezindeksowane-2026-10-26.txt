@@ -1,0 +1,35 @@
+# GSC Indeksowanie → Strony, odczyt 2026-10-26 09:58, raport „Ostatnia aktualizacja: 19.10.2026”
+# Zindeksowano 167, nie zindeksowano 153 (16.10: 140 / 67), 6 przyczyn:
+# kanoniczna alternatywa 116, przekierowanie 5, noindex 2, 404 1, zeskanowana-nie-zindeksowana 28, inny błąd 4xx 1; wykryta-niezindeksowana 0, błąd przekierowania 0
+# mta-sts.fluxlab.pl (7 adresów z 20.10) odpowiada teraz 301 na fluxlab.pl, więc to już tylko ślad
+# kolumny: adres | przyczyna | ostatnie skanowanie | w sitemap | uwagi
+https://mta-sts.fluxlab.pl/widocznosc-w-google | zeskanowana | 20 paź 2026 | nie | mta-sts, 301 na fluxlab.pl
+https://mta-sts.fluxlab.pl/_next/static/media/caa3a2e1cccd8315-s.p.3b6cae6d.woff2 | zeskanowana | 20 paź 2026 | nie | obraz/font
+https://mta-sts.fluxlab.pl/strefa-wiedzy/bledy-w-rejestrze-obiektow-hotelarskich | zeskanowana | 20 paź 2026 | nie | mta-sts, 301 na fluxlab.pl
+https://mta-sts.fluxlab.pl/make-vs-n8n-crm | zeskanowana | 20 paź 2026 | nie | mta-sts, 301 na fluxlab.pl
+https://mta-sts.fluxlab.pl/dane/widocznosc-ai-braki.csv | zeskanowana | 20 paź 2026 | nie | mta-sts, 301 na fluxlab.pl
+https://fluxlab.pl/szablony/checklista-przed-startem-strony.md | zeskanowana | 19 paź 2026 | nie | plik do pobrania
+https://fluxlab.pl/strefa-wiedzy/maly-zus-plus-kiedy-sie-oplaca | zeskanowana | 19 paź 2026 | tak | 200, kanoniczna własna
+https://mta-sts.fluxlab.pl/dane/widocznosc-ai-tresc.csv | zeskanowana | 19 paź 2026 | nie | mta-sts, 301 na fluxlab.pl
+https://fluxlab.pl/szablony/brief-strony-internetowej.md | zeskanowana | 19 paź 2026 | nie | plik do pobrania
+https://mta-sts.fluxlab.pl/dane/widocznosc-ai-polaczenie.csv | zeskanowana | 19 paź 2026 | nie | mta-sts, 301 na fluxlab.pl
+https://fluxlab.pl/szablony/checklista-ksef-dla-malej-firmy.md | zeskanowana |  | nie | plik do pobrania
+https://fluxlab.pl/ksef-integracja/opengraph-image?8fe74f49c02a6642 | zeskanowana | 19 paź 2026 | nie | obraz/font
+https://fluxlab.pl/numer-ksef/opengraph-image?be747acd0cb50fb0 | zeskanowana | 9 paź 2026 | nie | obraz/font
+https://fluxlab.pl/ksef-2027/opengraph-image | zeskanowana | 9 paź 2026 | nie | obraz/font
+https://fluxlab.pl/ksef-2027/opengraph-image?2b0ea57f5d2015ac | zeskanowana | 6 paź 2026 | nie | obraz/font
+https://fluxlab.pl/e-doreczenia-integracja/opengraph-image?88f8e01096332793 | zeskanowana | 3 paź 2026 | nie | obraz/font
+https://fluxlab.pl/opengraph-image?62095b685b2e73e7 | zeskanowana | 3 paź 2026 | nie | obraz/font
+https://fluxlab.pl/ksef-integracja/opengraph-image?ed5e971932c8da61 | zeskanowana | 3 paź 2026 | nie | obraz/font
+https://fluxlab.pl/photos/Factory.avif | zeskanowana | 3 paź 2026 | nie | obraz/font
+https://fluxlab.pl/opengraph-image?9f82fff65c01486e | zeskanowana | 26 wrz 2026 | nie | obraz/font
+https://www.fluxlab.pl/strefa-wiedzy/ai-w-automatyzacji-firm | zeskanowana | 10 wrz 2026 | nie | www, 308 na fluxlab.pl
+https://www.fluxlab.pl/zatrudnic-czy-zautomatyzowac | zeskanowana | 24 sie 2026 | nie | www, 308 na fluxlab.pl
+https://fluxlab.pl/opengraph-image | zeskanowana | 9 sie 2026 | nie | obraz/font
+https://fluxlab.pl/opengraph-image?2b3ec801eabf6d0 | zeskanowana | 9 sie 2026 | nie | obraz/font
+https://www.fluxlab.pl/strefa-wiedzy/automatyzacja-vs-zatrudnienie | zeskanowana | 21 lip 2026 | nie | www, 308 na fluxlab.pl
+https://www.fluxlab.pl/photos/digital_eye.avif | zeskanowana | 25 maj 2026 | nie | obraz/font
+https://www.fluxlab.pl/_next/static/media/797e433ab948586e-s.p.479bea2b.woff2 | zeskanowana | 15 maj 2026 | nie | obraz/font
+https://www.fluxlab.pl/_next/static/media/caa3a2e1cccd8315-s.p.3b6cae6d.woff2 | zeskanowana | 15 maj 2026 | nie | obraz/font
+# wykryta-niezindeksowana: 0 adresów
+# do serii (w sitemap, 200, bez przekierowania): https://fluxlab.pl/strefa-wiedzy/maly-zus-plus-kiedy-sie-oplaca
