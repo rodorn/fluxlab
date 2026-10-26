@@ -8338,3 +8338,45 @@ Decyzje dla stratega: klik_po_wyniku oceniać tylko przy wynikach „uwaga”/�
 **Dowód:** cykl/plan-ruchu.md: 21 z 23 „- [x]”, otwarte Z19 i Z20.
 **Dla Pawła:**
 **Zostało otwarte:** Z19 (27.10 01:50), Z20 (27.10 02:30).
+
+## 2026-10-26 22:45
+**Kanał:** pomiar (Z20, bilans planu; wzięty teraz, bo nie ma warunku „nie wcześniej niż”, a Z19 czeka na 27.10 01:50).
+**Co zrobione:** bilans planu 2026-10-26/27 poniżej; nic nie poszło w świat.
+**Ruch:** raport_ruchu 22:43: doba 167 odsłon, 92 osoby (+29% wobec średniej 129,7); tydzień 969 / 543; źródła: b2b-email 107, facebook 5, www.google.com 4, instagram 2, www.bing.com 1; uruchomienia narzędzi 0. pomiar-kanalow (z odsiewem Z1): doba 30 ludzi, tydzień 325.
+**Dowód:** wpis „Bilans planu 2026-10-26/27” niżej; cykl/plan-ruchu.md Z20 „- [x]”.
+**Dla Pawła:**
+**Zostało otwarte:** Z19 (27.10 01:50, timer fl-gsc-27); cykl 02:45 dopisuje jego wynik pod bilansem.
+
+### Bilans planu 2026-10-26/27 (stan 26.10 22:45)
+
+| Zadanie | Stan | Co przyprowadziło |
+|---|---|---|
+| Z1 kto robi nocne audyty | x | 0; 12 z 15 sesji z audytem w 7 dni to nagrania rolek, odsiew w pomiar-kanalow.py |
+| Z2 artykuł /strefa-wiedzy/certyfikat-ksef | x | 0 ludzi (w Google od 13:44) |
+| Z3 indeksowanie artykułu | x | 0; zindeksowany 4,5 h po prośbie |
+| Z4 zlecenie dla social | x | 0 ludzi z utm_campaign=certyfikat-ksef (1 sesja, para, odsiana) |
+| Z5 tytuł automatyzacja-vs-zatrudnienie | x | 0 odsłon od wdrożenia |
+| Z6 tydzień GSC | x | 0 (pomiar: 23 klik. / 1,4 tys. wyśw.) |
+| Z7 pomiar południe | x | 0 (pomiar) |
+| Z8 kandydaci do serii | x | 0; 80 z 80 sprawdzonych już w Google |
+| Z9 przyczyny nieindeksowania | x | 0; 1 realny adres (maly-zus-plus) |
+| Z10 lista i timer serii 27.10 | x | 0; 2 adresy zamiast 9 |
+| Z11 cytowania AI | x | 0 (pomiar: Bing 22 cytowania, chatgpt 2 sesje w 7 dni) |
+| Z12 kim są „bez odsyłacza” | x | 0; licznik nie zapisuje surowego UA |
+| Z13 pomiar wieczór | x | 0 (pomiar) |
+| Z14 publikacje social | x | 0; 3 posty, 0 ludzi |
+| Z15 artykuł po wdrożeniu | x | 0 (pomiar) |
+| Z16 embargo 27.10 | x | 0; 3 strony do linku wewnętrznego |
+| Z17 ludzie w narzędziach | x | 0 (pomiar: 14 uruchomień w 7 dni, 7 z wyszukiwarki/AI) |
+| Z18 baner cookies | x | 0; telefon odbija się o 8 pkt częściej, decyzja Pawła |
+| Z19 wynik serii | czeka | timer 27.10 01:45 |
+| Z20 bilans | x | ten wpis |
+| Z21-Z23 artykuł 2.11 | x | 0 dziś; szkic gotowy, 4 z 4 linków 200 |
+
+- Ludzie po odsiewie, 24 h: 30 (wobec 58), z odsyłaczem 12 (wobec 7), bez 18 (wobec 51). Spadek „bez odsyłacza” to głównie odsiew Z1 i mniej nocnych wejść; z odsyłaczem przybyło.
+- Google: 4 sesje (wobec 1): / 08:46, /strefa-wiedzy/jak-liczyc-zdrowotna-jdg 17:24, /strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef 2× 20:44-20:45 (prawdopodobnie ta sama osoba). Bing 1 (/).
+- Social: 7 (wobec 6): facebook 4, wszystkie na /grupa-ksef 19:29-19:33 (krótki link przekierowujący do grupy KSeF na Facebooku, czyli ruch do grupy, nie na stronę), instagram 2 (ksef60 → faktura-gdy-ksef-nie-dziala, format-licze → automatyzacja-raportowania), x 1 (format-mit → kategoria jdg-i-podatki). Z certyfikat-ksef 0.
+- Uruchomienia narzędzi przez ludzi: 0 w dobie; lead_* 0, klik_po_wyniku 0.
+- Wynik Z2: artykuł w Google, 0 ludzi w pierwszej dobie. Z4: 3 publikacje (Instagram relacja, Facebook post, LinkedIn komentarz), 0 ludzi. Z5: 0 odsłon, ocena po 7 dniach (embargo do 2.11).
+- Zoho: wątki Joanna Święs (portal ogłoszeniowy) i Atlantic Stairs mają odpowiedzi w Wysłanych (19:08, 21:18), nikt nie czeka.
+- Decyzje dla stratega: (1) social na temat certyfikatu KSeF dał 0 ludzi z 3 publikacji, a stare serie (ksef60, format-licze, format-mit) wciąż przyprowadzają po 1; zamiast nowych zleceń tematu prosić sesje social o link w istniejących seriach. (2) /grupa-ksef liczyć osobno, bo to wyjścia do Facebooka, nie wejścia na stronę. (3) Google przyprowadza na artykuły podatkowe (kiedy-odliczyc-vat, jak-liczyc-zdrowotna); kolejny kamień treści w tym temacie, nie w automatyzacji. (4) Z16: w planie 27.10 wstawić 3 linki do co-to-jest-automatyzacja-procesow-biznesowych. (5) Narzędzia: 0 ludzi w dobie, numer-ksef i audyt-poczty 0 w 7 dni; wejścia do narzędzi tylko z wyszukiwarki, więc linki do narzędzi w artykułach podatkowych z ruchem z Google.
