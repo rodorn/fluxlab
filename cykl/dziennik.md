@@ -8250,9 +8250,9 @@ Decyzje dla stratega: klik_po_wyniku oceniać tylko przy wynikach „uwaga”/�
 **Zostało otwarte:** Z13 i dalej (Z13, Z14 to pomiary z oknem od 12:30 i z wieczornych publikacji, nie robić przed czasem). Do stratega: rozpoznawanie przeglądarek w aplikacjach (Instagram, FBAN/FBAV, LinkedInApp) w kolektorze na VPS, inaczej social zostaje w „bez odsyłacza".
 
 ## 2026-10-26 11:55
-**Kanał:** Google i narzędzia (plan dobowy Z16, Z17; analiza bez zmian na stronie).
+**Kanał:** Google, narzędzia, strona (plan dobowy Z16, Z17, Z18; analiza bez zmian na stronie). Z18: z telefonu 1 odsłona bez zdarzenia na /ksef-2027 19 z 19 i /kalkulator-podatkowy 20 z 20, cała strona telefon 86% wobec komputera 78%; baner znika tylko po kliknięciu (components/ZgodaCookies.tsx:49).
 **Co zrobione:** policzone linki do /strefa-wiedzy/co-to-jest-automatyzacja-procesow-biznesowych z 3 kandydatkami na nowe linki oraz uruchomienia narzędzi przez ludzi w 7 dni po odsiewie rolek.
 **Ruch:** doba 204 odsłony, 80 osób (+55% wobec średniej 131,6); najczęściej /, /audyt-strony, pobrania PDF; uruchomienia narzędzi 4; LinkedIn, X, Threads, YouTube 0 w dobie.
 **Dowód:** Z16: treściowo linkuje 1 strona (integracje-api-w-firmie-kiedy-warto), kandydatki /automatyzacja-procesow-biznesowych, /strefa-wiedzy/automatyzacja-crm-od-czego-zaczac, /strefa-wiedzy/kiedy-ai-ma-sens-a-kiedy-nie. Z17: 14 uruchomień w 11 sesjach w 7 dni, 7 z wyszukiwarki lub AI; audyt-strony 3, analiza-lokalizacji 5 (2 sesje, w tym chatgpt), sprawdzenie-nip 2, czujka-rejestrowa 2, kalkulator-podatkowy 1, numer-ksef 0, audyt-poczty 0 (1 w widżecie na stronie o spamie). Szczegóły w cykl/plan-ruchu.md.
 **Dla Pawła:**
-**Zostało otwarte:** Z13 (18:30, okno od 12:30), Z14 (19:30), Z15 (20:30), Z18, Z19 (po 27.10 01:50), Z20-Z23. Do stratega: numer-ksef i audyt-poczty bez ani jednego człowieka w 7 dni; narzędzia uruchamiają ludzie z wyszukiwarek, nie z social.
+**Zostało otwarte:** Z13 (18:30, okno od 12:30), Z14 (19:30), Z15 (20:30), Z19 (po 27.10 01:50), Z20-Z23. Do stratega: numer-ksef i audyt-poczty bez ani jednego człowieka w 7 dni; narzędzia uruchamiają ludzie z wyszukiwarek, nie z social.
