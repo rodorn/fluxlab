@@ -8041,3 +8041,168 @@ Decyzje dla stratega: sprawdzić, skąd 73 sesje bez odsyłacza (strony wejścia
 **Dowód:** `cykl/gsc-dni-2026-10-25.txt`; linie Z18 i Z21 w `cykl/plan-ruchu.md`. 17-23.10: /kalkulator-podatkowy 0 kliknięć przy 18 wyświetleniach, /ksef-2027 1 kliknięcie przy 30 (22.10).
 **Dla Pawła:**
 **Zostało otwarte:** Z12 (18:30), Z14 (20:30), Z19 (nie przed 26.10 01:50), Z20 bilans (02:30), Z22 (04:30). /audyt-kurierski i /automatyzacja-dla-ecommerce nie miały zmiany title ani description w okolicy 19.10, więc embargo 26.10 ich nie dotyczy (plan je wymienia). Pełny tydzień po zmianie (19-25.10) będzie w GSC 27.10.
+
+<!-- WYSLANO 2026-10-25 15:18 -->
+
+## 2026-10-25 15:45
+**Kanał:** brak (plan stratega ma 5 otwartych zadań, wszystkie z oknem pomiaru lub godziną, której jeszcze nie ma).
+**Co zrobione:** nic nie poszło w świat; Z12 mierzy okno od 12:30 do 18:30, Z14 czeka na posty sesji social, Z19 nie przed 26.10 01:50, Z20 i Z22 to bilans nocny. Wzięcie ich teraz dałoby niepełne liczby, a plan zakazuje pracy poza nim.
+**Ruch:** ostatnia doba 223 odsłony, 128 osób (+85% wobec średniej 120,4); źródła: www.google.com 8, b2b-email 6, facebook 4, www.facebook.com 3, instagram 3; LinkedIn 1 sesja, YouTube 0, X 0, Threads 0; uruchomienia narzędzi 2.
+**Dowód:** `grep -n "^- \[ \]" cykl/plan-ruchu.md`: Z12, Z14, Z19, Z20, Z22.
+**Dla Pawła:**
+**Zostało otwarte:** Z12 (18:30), Z14 (20:30), Z19 (26.10 01:50), Z20 (02:30), Z22 (04:30).
+
+## 2026-10-25 16:57
+**Kanał:** pomiar (Z12) i social (Z14) z planu stratega.
+**Co zrobione:** policzone okno popołudnia i efekt serii podatkowej w social: 3 publikacje z utm seria-podatki dały 1 sesję, wezwanie pod wynikiem audytu (Z5) jeszcze bez kliknięcia, bo 3 dzisiejsze audyty dały dobry wynik.
+**Ruch:** raport_ruchu: doba 224 odsłony, 130 osób (+85% wobec średniej); źródła b2b-email 11, www.google.com 8, instagram 3, facebook 3, m.facebook.com 3. pomiar-kanalow po odsiewie: od 12:30 12 ludzi (4 z odsyłaczem, 8 bez); od 06:30 uruchomienia 6, lead_* 0, klik_po_wyniku 0. 45 zdarzeń pobranie 14:28-14:43 w paczkach po 5 PDF naraz to automat.
+**Dowód:** plan-ruchu.md, linie Z12 i Z14 z „=> ”; publikacje: fluxlab-instagram/dziennik.jsonl 08:03, fluxlab-meta/posty/aktywnosc.jsonl 10:57, youtube shorts/D9w54fuDOZs 10:51.
+**Dla Pawła:**
+**Zostało otwarte:** Z19 (nie przed 26.10 01:50), Z20 (02:30), Z22 (04:30).
+
+## 2026-10-25 17:43
+**Kanał:** brak, plan stratega bez zadania na tę godzinę.
+**Co zrobione:** nic nie poszło w świat, bo otwarte są tylko Z19 (warunek: nie przed 26.10 01:50), Z20 (bilans planu, 02:30) i Z22 (efekt Z5, 04:30); pomiar wcześniej dałby niepełne liczby, a plan zabrania pracy spoza listy.
+**Ruch:** raport_ruchu: najczęściej / 61, /audyt-strony 16, /kalkulator-podatkowy 12, /analiza-lokalizacji 11, /czas-reakcji-na-leada 10; źródła b2b-email 11, www.google.com 8, chatgpt.com 4, instagram 3, facebook 3; LinkedIn 1 sesja w dobie (13 w 7 dni), YouTube 0, X 0, Threads 0; uruchomienia narzędzi 6.
+**Dowód:** `grep -n "^- \[ \]" cykl/plan-ruchu.md`: Z19, Z20, Z22. Budżet 17:43: rytm utrzymaj.
+**Dla Pawła:**
+**Zostało otwarte:** Z19 (nie przed 26.10 01:50), Z20 (02:30), Z22 (04:30).
+
+## 2026-10-25 18:43
+**Kanał:** brak, plan stratega bez zadania na tę godzinę.
+**Co zrobione:** nic nie poszło w świat; otwarte są tylko Z19 (nie przed 26.10 01:50), Z20 (bilans planu, 02:30) i Z22 (efekt Z5, 04:30), a wzięcie ich teraz dałoby niepełne liczby.
+**Ruch:** raport_ruchu: doba 225 odsłon, 128 osób (+83% wobec średniej 123,3); źródła b2b-email 14, www.google.com 4, chatgpt.com 4, facebook 3, m.facebook.com 3; LinkedIn 1 sesja (13 w 7 dni), YouTube 0, X 0, Threads 0; uruchomienia narzędzi 6.
+**Dowód:** `grep -n "^- \[ \]" cykl/plan-ruchu.md`: Z19, Z20, Z22.
+**Dla Pawła:**
+**Zostało otwarte:** Z19 (26.10 01:50), Z20 (02:30), Z22 (04:30).
+
+## 2026-10-25 19:43
+**Kanał:** brak, plan stratega nie ma zadania na tę godzinę.
+**Co zrobione:** nic nie poszło w świat; otwarte są tylko Z19 (nie przed 26.10 01:50), Z20 (bilans planu, 02:30) i Z22 (efekt Z5, 04:30). Wzięcie Z20 i Z22 teraz dałoby bilans i licznik bez 7-9 godzin doby.
+**Ruch:** raport_ruchu: doba 222 odsłony, 124 osoby (+79% wobec średniej 123,7); źródła b2b-email 14, chatgpt.com 4, facebook 3, m.facebook.com 3, www.google.com 3; LinkedIn 1 sesja (13 w 7 dni), YouTube 0, X 0, Threads 0; uruchomienia narzędzi 6.
+**Dowód:** `grep -n "^- \[ \]" cykl/plan-ruchu.md`: Z19, Z20, Z22. Budżet 19:43: rytm utrzymaj, 77% tygodnia.
+**Dla Pawła:**
+**Zostało otwarte:** Z19 (26.10 01:50), Z20 (02:30), Z22 (04:30).
+
+## 2026-10-25 20:43
+**Kanał:** brak, plan stratega nie ma zadania na tę godzinę.
+**Co zrobione:** nic nie poszło w świat; otwarte są tylko Z19 (nie przed 26.10 01:50), Z20 (bilans planu, 02:30) i Z22 (efekt Z5, 04:30), a wzięcie Z20 i Z22 teraz dałoby liczby bez 6-8 godzin doby.
+**Ruch:** raport_ruchu: doba 214 odsłon, 116 osób (+71% wobec średniej 124,9); najczęściej / 61, /audyt-strony 15, /kalkulator-podatkowy 10, /analiza-lokalizacji 10, /czas-reakcji-na-leada 10; źródła b2b-email 14, chatgpt.com 4, facebook 3, m.facebook.com 3, www.google.com 3; LinkedIn 1 sesja (13 w 7 dni), YouTube 0, X 0, Threads 0; uruchomienia narzędzi 6.
+**Dowód:** `grep -n "^- \[ \]" cykl/plan-ruchu.md`: Z19, Z20, Z22.
+**Dla Pawła:**
+**Zostało otwarte:** Z19 (26.10 01:50), Z20 (02:30), Z22 (04:30).
+
+## 2026-10-25 21:45
+**Kanał:** narzędzia (Z22 z planu stratega, pomiar efektu kamienia 1).
+**Co zrobione:** policzony efekt zmiany pod wynikiem audytu strony (a669167): od 07:46 ludzie zrobili 3 audyty, wszystkie z wynikiem „dobry”, 0 kliknięć „Wyślij wynik do wyceny” i „Zleć naprawę”; automatyka 0 zdarzeń. Bez poprawek, zgodnie z planem.
+**Ruch:** raport_ruchu: doba 197 odsłon, 98 osób (+55% wobec średniej 127); źródła b2b-email 14, chatgpt.com 4, www.google.com 3, instagram 2, www.linkedin.com 2; z telefonu 76. pomiar-kanalow (ostrzejszy odsiew): 69 sesji ludzi w 24 h, 63 bez odsyłacza.
+**Dowód:** cykl/plan-ruchu.md linia Z22.
+**Dla Pawła:**
+**Zostało otwarte:** Z19 (nie wcześniej niż 26.10 01:50, log cykl/z19-indeksowanie-26.log), Z20 bilans planu 02:30 po Z19. Do stratega: klik_po_wyniku sprawdzać dopiero przy wynikach „uwaga”/„źle”, bo przy „dobry” brak powodu do wyceny.
+
+### Bilans planu 2026-10-25/26
+`pomiar-kanalow.py` 22:43 (wcześniej niż 02:30, bo Z19 czeka do 01:50, a plan każe brać następne zadanie bez warunku; brakuje nocnych godzin 22:43-06:30), 24 h: ludzie 64, z odsyłaczem 6 (wobec 13), bez 58 (wobec 75), pary 17, salwy 3. 7 dni: ludzie 349 (wobec 372).
+Z odsyłaczem w dobie: Google 1 (wobec 3), social 6 (wobec 9: Instagram 2, Facebook 3, LinkedIn 1), Bing/AI 1 (chatgpt.com, wobec 0). 7 dni: Google 27, Instagram 12, LinkedIn 12, Facebook 15, Bing 2, Yahoo 2, chatgpt.com 2, X 3, Threads 1.
+Uruchomienia narzędzi w dobie 9 (wobec 0): uruchomiono_skan 6 (/analiza-lokalizacji 4, /czujka-rejestrowa 2), audyt_uruchomiony 3 (wszystkie audyt_wynik_dobry); generator_hasla 1; lead_* 0, klik_po_wyniku 0. Wirtualny handlowiec: 1 sesja (Firefox Android, 15:22-15:40, bez odsyłacza) przeszła start, profil, pakiet i „handlowiec_telefon”, czyli przejście do formularza z prośbą o telefon, formularza nie wysłała (lead_* 0).
+Z5 (a669167, od 07:46): /audyt-strony 9 odsłon ludzi, 3 audyty, 3 × „dobry”, 0 klik_po_wyniku. Z10 (426afa5, od 10:58): /widocznosc-w-ai 0 odsłon ludzi, /asystent-ai-na-stronie 0, więc link nie miał jeszcze kogo poprowadzić.
+
+| zad. | stan | godz. | co przyprowadziło |
+|---|---|---|---|
+| Z1 | zrobione | 06:45 | Bing: 17 adresów (limit 100/100), Copilot 24 cytowania 16-22.10 (wobec 15) |
+| Z2 | zrobione | 07:43 | kalkulator liczy uruchomienia; 1 na 24 sesje w 7 dni |
+| Z3 | zrobione | 09:07 | 5 wezwań pod wynikiem audytu, podstawa do Z5 |
+| Z4 | zrobione | 07:44 | zlecenie do FL_meta, FL_instagram, FL_linkedin |
+| Z5 | zrobione | 07:46 | jedno wezwanie pod wynikiem; 3 audyty, 0 kliknięć |
+| Z6 | zrobione | 08:45 | pomiar: 10 ludzi od 06:30, 0 leadów |
+| Z7 | zrobione | 08:47 | 9 z 9 adresów serii w Google |
+| Z8 | zrobione | 09:05 | GSC 17-23.10: 22 klik., 1,28 tys. wyśw., poz. 26,6 |
+| Z9 | zrobione | 09:55 | frazy ogólne: problem pozycji (56-84), nie tytułu |
+| Z10 | zrobione | 10:58 | link do /asystent-ai-na-stronie; 0 odsłon od wdrożenia |
+| Z11 | zrobione | 11:58 | 2 lead_landing: znajoma Pawła, nie lead |
+| Z12 | zrobione | 16:50 | 12 ludzi od 12:30, 4 z odsyłaczem, 6 uruchomień |
+| Z13 | zrobione | 11:55 | lista 9 adresów na 26.10, timer |
+| Z14 | zrobione | 16:55 | 3 posty seria-podatki, wejścia z nich w tabeli źródeł |
+| Z15 | zrobione | 12:45 | baner cookies zasłania dół pierwszego ekranu na 5 stronach (zapisane) |
+| Z16 | zrobione | 12:50 | treść czatu niezapisywana, brak danych |
+| Z17 | zrobione | 13:50 | AI 14 dni: 11 sesji, 4 z narzędziem |
+| Z18 | zrobione | 15:00 | serie dzienne: /kalkulator-podatkowy 0/18, /ksef-2027 bez wyśw. |
+| Z19 | otwarte | 01:50 | czeka (nie przed 26.10 01:50) |
+| Z20 | zrobione | 22:43 | ten bilans |
+| Z21 | zrobione | 15:10 | ocena embarga opisów 26.10 |
+| Z22 | zrobione | 21:45 | efekt Z5: 0 kliknięć przy 3 wynikach „dobry” |
+| Z23 | zrobione | 14:00 | szkic 26.10 gotowy, 2 liczby poprawione |
+
+Trzy największe zmiany: (1) ludzie z odsyłaczem 6 wobec 13, Google w dobie 1 wobec 3, przy niedzieli i niepełnej dobie; (2) uruchomienia narzędzi 9 wobec 0, ale wszystkie bez odsyłacza i bez leada; (3) Copilot 24 cytowania w tygodniu wobec 15, przy 1 wejściu z AI w dobie.
+Decyzje dla stratega: klik_po_wyniku oceniać tylko przy wynikach „uwaga”/„źle” (3 z 3 audytów „dobry”); efekt Z10 ocenić po co najmniej 5 odsłonach /widocznosc-w-ai; baner cookies z Z15 do decyzji, bo zasłania pierwszy ekran na telefonie.
+
+## 2026-10-25 22:43
+**Kanał:** pomiar (Z20 z planu stratega, bilans planu).
+**Co zrobione:** dopisany bilans planu 2026-10-25/26 (tabela Z1-Z23, efekty Z5 i Z10); nic nie poszło w świat, to zadanie pomiarowe.
+**Ruch:** raport_ruchu 22:43: doba 186 odsłon, 93 osoby (+44% wobec średniej 128,9); najczęściej / 48, /audyt-strony 15, /kalkulator-podatkowy 10, /analiza-lokalizacji 10; LinkedIn 1 sesja, X 0, YouTube 0, Threads 0; uruchomienia narzędzi 6. pomiar-kanalow: 64 sesje ludzi, 6 z odsyłaczem (instagram 2, m.facebook.com 2, linkedin 1, google 1, chatgpt.com 1, l.facebook.com 1).
+**Dowód:** „Bilans planu 2026-10-25/26” wyżej, Z20 „- [x]” w cykl/plan-ruchu.md.
+**Dla Pawła:**
+**Zostało otwarte:** Z19 (nie wcześniej niż 26.10 01:50, log cykl/z19-indeksowanie-26.log).
+
+<!-- WYSLANO 2026-10-25 23:17 -->
+
+## 2026-10-25 23:43
+**Kanał:** brak (czeka Z19 z warunkiem „nie wcześniej niż 26.10 01:50”, innych otwartych zadań w planie nie ma).
+**Co zrobione:** nic nie poszło w świat; sprawdzone, że timer fl-gsc-26.timer startuje 26.10 01:45, log cykl/z19-indeksowanie-26.log jeszcze nie istnieje.
+**Ruch:** raport_ruchu 23:43: doba 183 odsłony, 90 osób (+42% wobec średniej 129,0); najczęściej / 48, /audyt-strony 15, /kalkulator-podatkowy 10, /analiza-lokalizacji 10, /czas-reakcji-na-leada 10; źródła b2b-email 15, chatgpt.com 4, google 3, linkedin 2, facebook 2; uruchomienia narzędzi 6.
+**Dowód:** `systemctl --user list-timers`: fl-gsc-26.timer Mon 2026-10-26 01:45 CET.
+**Dla Pawła:**
+**Zostało otwarte:** Z19 po 01:50 (N z 9 z cykl/z19-indeksowanie-26.log).
+
+## 2026-10-26 00:43
+**Kanał:** brak (jedyne otwarte zadanie Z19 ma warunek „nie wcześniej niż 26.10 01:50”, plan nie ma innych „- [ ]”; zgodnie z planem nic poza wpisem).
+**Co zrobione:** nic nie poszło w świat; timer fl-gsc-26.timer nadal zaplanowany na 01:45.
+**Ruch:** raport_ruchu 00:43: doba 176 odsłon, 83 osoby (+35% wobec średniej 130,0); tydzień 895 odsłon, 524 osoby; najczęściej / 47, /audyt-strony 15, /analiza-lokalizacji 10, /czas-reakcji-na-leada 10, /pobierz/ebook-ksef-2027-w-firmie.pdf 10; źródła b2b-email 16, chatgpt.com 4, google 3, linkedin 2, facebook 2.
+**Dowód:** `systemctl --user list-timers`: fl-gsc-26.timer Mon 2026-10-26 01:45 CET.
+**Dla Pawła:**
+**Zostało otwarte:** Z19 po 01:50 (N z 9 z cykl/z19-indeksowanie-26.log); plan strategu na 26.10 o 06:15.
+
+## 2026-10-26 01:50
+**Kanał:** wyszukiwarka (zadanie Z19 z planu stratega).
+**Co zrobione:** seria indeksowania 26.10 przeszła w całości: 9 z 9 adresów z cykl/z13-lista-26.txt dostało „prośba przesłana" w Search Console, bez limitu.
+**Ruch:** ostatnia doba 186 odsłon, 85 osób (+43% wobec średniej 130,4); źródła: b2b-email 17, chatgpt.com 4, www.google.com 3, instagram 3, www.linkedin.com 2; z telefonu 69. Tydzień 902 odsłony, 523 osoby.
+**Dowód:** cykl/z19-indeksowanie-26.log, 01:45:27–01:49:34 (/audyt-strony, /widocznosc-w-ai, /czas-reakcji-na-leada, /produkty, /strefa-wiedzy/jak-liczyc-zdrowotna-jdg, /strefa-wiedzy/blad-w-fakturze-ksef, /strefa-wiedzy/data-wystawienia-faktury-ksef, /sprawdzenie-nip, /automatyzacja-dla-biur-rachunkowych).
+**Dla Pawła:**
+**Zostało otwarte:** w planie z 25.10 brak otwartych zadań; kolejny plan strateg pisze o 06:15.
+
+## 2026-10-26 02:43
+**Kanał:** brak, plan zamknięty.
+**Co zrobione:** plan zamknięty (23 z 23 zadań „- [x]" w cykl/plan-ruchu.md z 25.10); zgodnie z planem stratega cykl nie robi nic poza pomiarem.
+**Ruch:** raport_ruchu 02:43: doba 198 odsłon, 88 osób (+52% wobec średniej 130,1); tydzień 913 odsłon, 525 osób; najczęściej / 47, /audyt-strony 39, /czas-reakcji-na-leada 10, /pobierz/ebook-ksef-2027-w-firmie.pdf 10, /pobierz/checklista-koniec-roku-jdg.pdf 9; źródła b2b-email 18, chatgpt.com 4, www.google.com 3, instagram 3, www.linkedin.com 2; z telefonu 81; uruchomienia narzędzi w dobie 6.
+**Dowód:** brak zmian w świecie, bo plan nie ma otwartych zadań.
+**Dla Pawła:**
+**Zostało otwarte:** nowy plan stratega o 06:15 (w nim publikacja artykułu z cykl/artykul-2026-10-26-szkic.md).
+
+## 2026-10-26 03:43
+**Kanał:** brak, plan zamknięty.
+**Co zrobione:** plan zamknięty (23 z 23 zadań „- [x]" w cykl/plan-ruchu.md z 25.10); zgodnie z linią 4 planu cykl robi tylko pomiar.
+**Ruch:** raport_ruchu 03:43: doba 199 odsłon, 89 osób (+54% wobec średniej 129,4); tydzień 910 odsłon, 522 osoby; najczęściej / 48, /audyt-strony 39, /czas-reakcji-na-leada 10, /pobierz/ebook-ksef-2027-w-firmie.pdf 10, /pobierz/checklista-koniec-roku-jdg.pdf 9; źródła b2b-email 18, chatgpt.com 4, www.google.com 3, instagram 3, www.linkedin.com 2; z telefonu 81; uruchomienia narzędzi w dobie 6; salwy odrzucone 94 sesje.
+**Dowód:** brak zmian w świecie, bo plan nie ma otwartych zadań.
+**Dla Pawła:**
+**Zostało otwarte:** nowy plan stratega o 06:15 (w nim publikacja artykułu z cykl/artykul-2026-10-26-szkic.md).
+
+## 2026-10-26 04:43
+**Kanał:** brak, plan zamknięty.
+**Co zrobione:** plan zamknięty (23 z 23 zadań „- [x]" w cykl/plan-ruchu.md z 25.10); zgodnie z linią 4 planu cykl robi tylko pomiar.
+**Ruch:** raport_ruchu 04:43: doba 195 odsłon, 85 osób (+51% wobec średniej 129,3); tydzień 908 odsłon, 520 osób; najczęściej / 48, /audyt-strony 39, /pobierz/ebook-ksef-2027-w-firmie.pdf 10, /pobierz/checklista-koniec-roku-jdg.pdf 9, /pobierz/checklista-forma-opodatkowania-2027.pdf 9; źródła b2b-email 18, chatgpt.com 4, www.google.com 3, instagram 3, www.linkedin.com 2; z telefonu 77; uruchomienia narzędzi w dobie 6; salwy odrzucone 94 sesje.
+**Dowód:** brak zmian w świecie, bo plan nie ma otwartych zadań.
+**Dla Pawła:**
+**Zostało otwarte:** nowy plan stratega o 06:15 (w nim publikacja artykułu z cykl/artykul-2026-10-26-szkic.md).
+
+## 2026-10-26 05:43
+**Kanał:** brak, plan zamknięty.
+**Co zrobione:** plan zamknięty (0 zadań „- [ ]" w cykl/plan-ruchu.md z 25.10); zgodnie z linią 4 planu cykl robi tylko pomiar.
+**Ruch:** raport_ruchu 05:43: doba 207 odsłon, 92 osoby (+60% wobec średniej 129,0); tydzień 915 odsłon, 522 osoby; najczęściej / 48, /audyt-strony 39, /pobierz/ebook-ksef-2027-w-firmie.pdf 10, /pobierz/checklista-koniec-roku-jdg.pdf 9, /pobierz/checklista-forma-opodatkowania-2027.pdf 9; źródła b2b-email 26, chatgpt.com 4, www.google.com 3, instagram 3, www.linkedin.com 2; z telefonu 81; uruchomienia narzędzi w dobie 6; LinkedIn 1 sesja w dobie (13 w 7 dni).
+**Dowód:** brak zmian w świecie, bo plan nie ma otwartych zadań.
+**Dla Pawła:**
+**Zostało otwarte:** nowy plan stratega o 06:15 (w nim publikacja artykułu z cykl/artykul-2026-10-26-szkic.md).
+
+## Strategia dobowa 2026-10-26
+**Wynik doby:** pomiar-kanalow 24 h: 58 osób, z odsyłaczem 7 (Instagram 3, Facebook 3, LinkedIn 1, Google 1, chatgpt.com 1); tydzień 337 (było 362). raport_ruchu 207 odsłon / 91 osób (z pikselem b2b-email 28 i paczkami PDF). GSC 18-24.10: 23 klik. / 1,29 tys. wyśw. / poz. 25,9; indeksowanie 167 zindeksowanych (raport 19.10), 153 nie. Audyty strony: 17 z 24 sesji w 7 dni (8 z 11 w dobie) to nocny wzór 3 wierszy bez przeglądarki, wynik „dobry”: automat. Outreach 0, Resend 0, Zoho 0 odpowiedzi na nasz outreach.
+**Kanały:** Google 9 h → 1 w dobie / 27 w tygodniu; social (inne sesje) 2 h → 6 / 47; Bing i AI 2 h → 1 / 6, Bing 4. doba z 0, pauza; narzędzia 4 h → 0-3 / ok. 8; mail 0 h, wyłączony (254 maile, 0 odpowiedzi); pomiar 6 h. Plan 25.10 zamknięty o 22:43, potem 4 cykle tylko pomiar.
+**Plan:** 23 zadania; kamienie Z2 (artykuł z kalendarza /strefa-wiedzy/certyfikat-ksef) i Z5 (title/description /strefa-wiedzy/automatyzacja-vs-zatrudnienie, poz. ok. 3, 0 kliknięć); Z1 odsiew automatu audytów w pomiar-kanalow.py; seria GSC timerem 27.10 01:45; noc: szkic artykułu 2.11.
+**Raport:** https://panel.fluxlab.pl/raporty?id=2026-10-26-9d90cf4d (podstrona zamiast maila, zasada z 22.10).
