@@ -110,6 +110,21 @@ def odsiew(w):
             okno = [s for t, s in lista[i:] if t - t0 < 900]
             if len(okno) >= 5:
                 serie.update(okno)
+    # Nagrania rolek: rolka_ekran.py z fluxlab-meta (headless Chrome, UA Pixel 8)
+    # otwiera /audyt-strony i sprawdza fluxlab.pl. Slad: 3 wiersze bez odsylacza,
+    # Chrome na Android, odslona + audyt_uruchomiony + audyt_wynik_dobry.
+    wiersze_sesji = defaultdict(list)
+    for r in w:
+        if r[3]:
+            wiersze_sesji[r[3]].append(r)
+    for s, v in wiersze_sesji.items():
+        if (
+            len(v) == 3
+            and {r[5] for r in v} == {"odslona", "audyt_uruchomiony", "audyt_wynik_dobry"}
+            and all(r[1] == "/audyt-strony" and not r[2] for r in v)
+            and [(r[6], r[7]) for r in v if r[5] == "odslona"] == [("Chrome", "Android")]
+        ):
+            serie.add(s)
     return pary, serie
 
 
