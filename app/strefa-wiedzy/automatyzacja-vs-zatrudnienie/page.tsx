@@ -10,13 +10,13 @@ import KalkulatorDecyzji from "@/components/KalkulatorDecyzji";
 import NazwaNarzedzia from "@/components/NazwaNarzedzia";
 
 export const metadata: Metadata = {
-  title: "Koszt automatyzacji vs zatrudnienia | Fluxlab",
+  title: "Porównanie kosztów: etat 7 240 zł vs automat",
   description:
-    "Porównanie kosztów automatyzacji i zatrudnienia: kiedy nowa osoba, kiedy automat. Realne kwoty, ryzyka i kalkulator dla MŚP.",
+    "Porównanie kosztów automatyzacji vs zatrudniania: pensja 6 000 zł to ok. 7 240 zł kosztu miesięcznie, automat od 990 zł.",
   openGraph: {
-    title: "Koszt automatyzacji vs zatrudnienia | Fluxlab",
+    title: "Porównanie kosztów: etat 7 240 zł vs automat",
     description:
-      "Porównanie kosztów automatyzacji i zatrudnienia: kiedy nowa osoba, kiedy automat. Realne kwoty, ryzyka i kalkulator dla MŚP.",
+      "Porównanie kosztów automatyzacji vs zatrudniania: pensja 6 000 zł to ok. 7 240 zł kosztu miesięcznie, automat od 990 zł.",
     locale: "pl_PL",
     type: "article",
     images: [

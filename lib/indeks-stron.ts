@@ -429,8 +429,8 @@ export const INDEKS_STRON: WpisIndeksu[] = [
   },
   {
     "url": "/strefa-wiedzy/automatyzacja-vs-zatrudnienie",
-    "tytul": "Koszt automatyzacji vs zatrudnienia",
-    "opis": "Porównanie kosztów automatyzacji i zatrudnienia: kiedy nowa osoba, kiedy automat. Realne kwoty, ryzyka i kalkulator dla MŚP."
+    "tytul": "Porównanie kosztów: etat 7 240 zł vs automat",
+    "opis": "Porównanie kosztów automatyzacji vs zatrudniania: pensja 6 000 zł to ok. 7 240 zł kosztu miesięcznie, automat od 990 zł."
   },
   {
     "url": "/strefa-wiedzy/blad-w-fakturze-ksef",
