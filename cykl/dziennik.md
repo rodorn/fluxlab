@@ -8330,3 +8330,11 @@ Decyzje dla stratega: klik_po_wyniku oceniać tylko przy wynikach „uwaga”/�
 **Dowód:** cykl/plan-ruchu.md: 21 z 23 „- [x]”, otwarte Z19 i Z20.
 **Dla Pawła:**
 **Zostało otwarte:** Z19 (27.10 01:50), Z20 (27.10 02:30).
+
+## 2026-10-26 21:45
+**Kanał:** brak (plan zamknięty do nocy: otwarte tylko Z19 z warunkiem „nie wcześniej niż 27.10 01:50” i Z20, bilans po Z19).
+**Co zrobione:** nic nie poszło w świat; nagłówek planu przy zamkniętych zadaniach każe wpisać same liczby.
+**Ruch:** raport_ruchu 21:43: doba 169 odsłon, 95 osób (+29% wobec średniej 130,6); tydzień 970 odsłon, 544 osoby; źródła: b2b-email 106, facebook 6, www.google.com 4, www.facebook.com 2, instagram 2; z telefonu 42 z 169; uruchomienia narzędzi 0; LinkedIn 0, X 1, Threads 0, YouTube 0 w dobie.
+**Dowód:** cykl/plan-ruchu.md: 21 z 23 „- [x]”, otwarte Z19 i Z20.
+**Dla Pawła:**
+**Zostało otwarte:** Z19 (27.10 01:50), Z20 (27.10 02:30).
