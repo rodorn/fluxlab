@@ -8264,3 +8264,11 @@ Decyzje dla stratega: klik_po_wyniku oceniać tylko przy wynikach „uwaga”/�
 **Dowód:** `cykl/artykul-2026-11-02-szkic.md` (F1-F12 z adresami, tytuł 53 zn., opis 138 zn.); linki wewnętrzne 4 z 4 200.
 **Dla Pawła:**
 **Zostało otwarte:** Z13 (18:30), Z14 (19:30), Z15 (20:30), Z19 (27.10 01:50), Z20 (02:30, bilans). Nocne Z21-Z23 zamknięte już teraz, więc cykle 03:30-05:30 nie mają zadań.
+
+## 2026-10-26 13:44
+**Kanał:** treść, pomiar (plan dobowy Z15, wzięty przed 20:30, bo nie zależy od wieczornego okna; Z13 i Z14 mierzą okno od 12:30 i wieczorne posty, Z19 czeka do 27.10 01:50).
+**Co zrobione:** sprawdzony artykuł /strefa-wiedzy/certyfikat-ksef po wdrożeniu: jest już w Google, w mapie witryny i na liście Strefy wiedzy.
+**Ruch:** raport_ruchu 13:43: doba 212 odsłon, 83 osoby (+68% wobec średniej 125,9); źródła b2b-email 69, www.google.com 4, chatgpt.com 4, instagram 3, m.facebook.com 2; uruchomienia narzędzi 4. Po odsiewie (pomiar-kanalow): 34 sesje ludzi, 25 bez odsyłacza, instagram 3, google 2, m.facebook 2, chatgpt 1, l.facebook 1, bing 1, x 1.
+**Dowód:** gsc_indeksuj.py --tylko-stan 13:43:48 „Adres URL znajduje się w Google”; sitemap.xml 1 wystąpienie; artykuł: 2 odsłony z Facebooka w tej samej sekundzie 10:17:00 (Chrome Windows, bez zdarzeń), czyli sprawdzenie publikacji, ludzi 0; /strefa-wiedzy/automatyzacja-vs-zatrudnienie od zmiany z Z5: 0 odsłon.
+**Dla Pawła:**
+**Zostało otwarte:** Z13 (18:30), Z14 (19:30), Z19 (27.10 01:50), Z20 (02:30, bilans).
