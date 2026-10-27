@@ -8494,3 +8494,11 @@ Decyzje dla stratega: klik_po_wyniku oceniać tylko przy wynikach „uwaga”/�
 **Dowód:** commit 808553d, https://fluxlab.pl/llms.txt zawiera „[Materiały PDF](https://fluxlab.pl/materialy)”; build, SPOJNOSC OK, JAKOSC OK. IndexNow: brak zmienionych adresów stron (zmiana tylko w llms.txt).
 **Dla Pawła:**
 **Zostało otwarte:** Z7 12:30, Z13 18:30, Z14 19:30, Z15 20:30, Z16 22:30 (bilans), Z17 28.10 01:50. Poza llms.txt nadal brak /jak-zbudowana i /zmiany (strony o samej witrynie, celowo pominięte).
+
+## 2026-10-27 12:50
+**Kanał:** pomiar (Z7 z planu stratega).
+**Co zrobione:** pomiar południowy od 06:30: 5 osób, żadna nie uruchomiła narzędzia ani nie zostawiła kontaktu; strony zmienione w Z2 i Z5 bez odsłon (efekt oczekiwany po 7-14 dniach).
+**Ruch:** pomiar-kanalow 12:43, 24 h: ludzie 26 (bez odsyłacza 13, github 6, www.google.com 3, facebook 2, x 1, chatgpt.com 1), pary 8, salwy 3; wyjścia do grupy KSeF 5. Od 06:30: ludzie 5 (facebook 2, chatgpt.com 1, bez odsyłacza 2), wejścia na /strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef 2, / 2, /dobor-samochodu 1.
+**Dowód:** cykl/plan-ruchu.md Z7 [x] z 6 liczbami; Zoho INBOX od 06:30: 0 zapytań od ludzi, Spam 0.
+**Dla Pawła:**
+**Zostało otwarte:** Z13 18:30, Z14 19:30, Z15 20:30, Z16 22:30 (bilans), Z17 28.10 01:50.
