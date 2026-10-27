@@ -1,0 +1,206 @@
+# GSC Indeksowanie → Strony, odczyt 2026-10-27 07:00, raport „Ostatnia aktualizacja: 23.10.2026”
+# Zindeksowano 165, nie zindeksowano 212 (19.10: 167 / 153), 6 przyczyn, 23.10 wobec 19.10:
+# kanoniczna alternatywa 159 (116, +43), przekierowanie 5 (5), noindex 2 (2), 404 2 (1), zeskanowana-nie-zindeksowana 40 (28, +12), inny 4xx 4 (1); wykryta-niezindeksowana 0, błąd przekierowania 0
+# najbardziej urosła kanoniczna (+43): 110 z 159 to kopie z mta-sts.fluxlab.pl (skanowane 18-24.10), 48 z www.fluxlab.pl, 1 inny; Google sam wskazał fluxlab.pl jako kanoniczny, to nie są strony do naprawy
+# zeskanowana (+12): przybyły pliki .md/.csv/.pdf, fonty i obrazy OG, w tym kopie z mta-sts; strona HTML z sitemap: 1
+# kolumny: adres | przyczyna | ostatnie skanowanie | typ | w sitemap | uwagi
+https://mta-sts.fluxlab.pl/numer-ksef | kanoniczna | 24 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/n8n | kanoniczna | 24 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/strefa-wiedzy/crm-dla-jednoosobowej-firmy | kanoniczna | 23 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/strefa-wiedzy/podszywanie-pod-salony-samochodowe | kanoniczna | 23 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/strefa-wiedzy/faktura-dla-kontrahenta-zagranicznego-ksef | kanoniczna | 23 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/automatyzacja-ai | kanoniczna | 23 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/automatyzacja-dla-agencji-marketingowych | kanoniczna | 23 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/strefa-wiedzy/zalacznik-do-faktury-ksef | kanoniczna | 23 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/strefa-wiedzy/faktura-zaliczkowa-ksef | kanoniczna | 23 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/wlasnosc-domeny | kanoniczna | 23 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/strefa-wiedzy/jaka-forma-opodatkowania-jdg-2026 | kanoniczna | 23 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/slownik | kanoniczna |  | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/strefa-wiedzy/hubspot-vs-pipedrive | kanoniczna | 22 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/strefa-wiedzy/zaw-fa-ksef | kanoniczna | 22 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/integracja-crm-z-erp | kanoniczna | 22 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/dane-sprzedawcy | kanoniczna | 22 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/mapa-strony | kanoniczna | 22 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/automatyzacja-procesow-biznesowych | kanoniczna | 22 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/automatyzacja-salesforce | kanoniczna | 22 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/strefa-wiedzy/kiedy-ai-ma-sens-a-kiedy-nie | kanoniczna | 21 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/dobor-samochodu | kanoniczna | 21 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/strefa-wiedzy/integracje-api-w-firmie-kiedy-warto | kanoniczna | 21 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/strefa-wiedzy/podszywanie-sie-pod-firmowy-email | kanoniczna | 21 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/automatyczne-przypisywanie-leadow | kanoniczna | 21 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/jak-zbudowana | kanoniczna | 21 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/integracje-api | kanoniczna | 21 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/strefa-wiedzy/jak-zautomatyzowac-raportowanie-w-firmie | kanoniczna | 21 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/strefa-wiedzy/maile-trafiaja-do-spamu | kanoniczna | 21 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/sprawdzenie-nip | kanoniczna | 20 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/narzedzia | kanoniczna | 20 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/widocznosc-w-google | kanoniczna | 20 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/strefa-wiedzy/najczestsze-bledy-w-raportowaniu-sprzedazy | kanoniczna | 20 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/strefa-wiedzy/kategoria/ai | kanoniczna | 20 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/realizacje | kanoniczna | 20 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/strefa-wiedzy/kategoria/integracje | kanoniczna | 20 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/n8n-dla-crm | kanoniczna | 20 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/strefa-wiedzy/jak-uporzadkowac-proces-sprzedazy-w-crm | kanoniczna | 20 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/analiza-lokalizacji | kanoniczna | 20 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/szablony | kanoniczna | 20 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/automatyzacja-dla-biur-rachunkowych | kanoniczna | 20 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/strefa-wiedzy/bledy-w-rejestrze-obiektow-hotelarskich | kanoniczna | 20 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/audyt-marz | kanoniczna | 20 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/strefa-wiedzy/automatyzacja-crm-od-czego-zaczac | kanoniczna | 20 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/strefa-wiedzy/co-jest-nie-tak-ze-stronami-dealerow | kanoniczna | 20 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/spis-stron | kanoniczna | 20 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/automatyzacja-crm-leasing | kanoniczna | 20 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/strefa-wiedzy/kategoria/narzedzia | kanoniczna | 20 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/ile-spolek-znika-z-krs | kanoniczna | 20 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/zmiany | kanoniczna | 20 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/case-study | kanoniczna | 20 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/polityka-prywatnosci | kanoniczna | 20 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/automatyzacja-dla-ecommerce | kanoniczna | 20 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/make-vs-n8n-crm | kanoniczna | 20 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/podwojny-adres | kanoniczna | 20 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/strefa-wiedzy/kategoria/crm | kanoniczna | 20 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/raportowanie-z-pipedrive | kanoniczna | 20 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/wdrozenie-n8n-cena | kanoniczna | 20 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/kontrola-jezykow | kanoniczna | 20 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/kalkulator-kosztow | kanoniczna | 20 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/scraping-danych | kanoniczna | 20 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/audyt-kurierski | kanoniczna | 20 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/automatyzacja-follow-up | kanoniczna | 20 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/czujka-rejestrowa | kanoniczna | 20 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/kontrola-paliwa | kanoniczna | 20 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/strona-po-wlamaniu | kanoniczna | 20 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/naprawa-https | kanoniczna | 20 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/strefa-wiedzy/faktura-dla-osoby-prywatnej-ksef | kanoniczna | 20 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/rejestr-cen | kanoniczna | 20 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/regulamin | kanoniczna | 20 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/produkty | kanoniczna | 20 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/strefa-wiedzy/czy-ai-widzi-strony-dealerow | kanoniczna | 20 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/audyt-chatbota | kanoniczna | 20 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/ksef-2027 | kanoniczna | 20 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/audyt-poczty | kanoniczna | 20 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/wlasny-crm | kanoniczna | 20 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/strefa-wiedzy/numeracja-faktur-ksef-2027 | kanoniczna | 20 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/strefa-wiedzy/faktura-do-paragonu-ksef | kanoniczna | 20 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/landing-z-platnoscia | kanoniczna | 20 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/panel-zwrotow | kanoniczna | 20 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/pilotaz | kanoniczna | 20 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/automatyzacja-raportowania | kanoniczna | 20 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/strefa-wiedzy/kategoria/procesy | kanoniczna | 20 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/audyt-strony | kanoniczna | 20 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/strony-www | kanoniczna | 20 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/automatyzacja-formularza-do-pipedrive | kanoniczna | 20 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/tansze-automatyzacje | kanoniczna | 19 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/jak-pracuje | kanoniczna | 19 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/automatyzacja-pipedrive | kanoniczna | 19 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/strefa-wiedzy/oznaczenia-jpk-ksef | kanoniczna | 19 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/strefa-wiedzy/limit-10-tys-poza-ksef | kanoniczna | 19 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/widocznosc-w-ai | kanoniczna | 19 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/strefa-wiedzy/kategoria/jdg-i-podatki | kanoniczna | 19 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/strefa-wiedzy/proforma-ksef | kanoniczna | 19 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/koszt-recznej-obslugi-leadow | kanoniczna | 19 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/crm-jako-system-pracy | kanoniczna | 19 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/strefa-wiedzy/skala-czy-liniowy-jdg | kanoniczna | 19 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/strefa-wiedzy/ryczalt-czy-liniowy | kanoniczna | 19 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/strefa-wiedzy/blad-w-fakturze-ksef | kanoniczna | 19 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/kalkulator-podatkowy | kanoniczna | 19 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/strefa-wiedzy/jak-liczyc-zdrowotna-jdg | kanoniczna | 18 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/strefa-wiedzy/maly-zus-plus-kiedy-sie-oplaca | kanoniczna | 18 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/ksef-integracja | kanoniczna | 18 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/strefa-wiedzy/pipedrive-vs-salesforce | kanoniczna | 18 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/strefa-wiedzy/jak-policzyc-roi-z-automatyzacji | kanoniczna | 18 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/dane-z-badan | kanoniczna | 18 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/strefa-wiedzy/kategoria/poczta | kanoniczna | 18 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/czas-reakcji-na-leada | kanoniczna | 18 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/strefa-wiedzy | kanoniczna | 18 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/strefa-wiedzy/kategoria/badania | kanoniczna | 18 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/automatyzacja-leadow-crm | kanoniczna | 18 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl, odpowiednik w sitemap
+https://mta-sts.fluxlab.pl/ | kanoniczna | 18 paź 2026 | strona | nie | mta-sts, dziś 301 na fluxlab.pl
+https://www.fluxlab.pl/pogotowie-automatyzacji | kanoniczna | 20 wrz 2026 | strona | nie | www, przekierowanie na fluxlab.pl, odpowiednik w sitemap
+https://www.fluxlab.pl/import-radar | kanoniczna | 20 wrz 2026 | strona | nie | www, przekierowanie na fluxlab.pl, odpowiednik w sitemap
+https://www.fluxlab.pl/audyt-poczty | kanoniczna | 20 wrz 2026 | strona | nie | www, przekierowanie na fluxlab.pl, odpowiednik w sitemap
+https://www.fluxlab.pl/sprawdz-auto | kanoniczna | 20 wrz 2026 | strona | nie | www, przekierowanie na fluxlab.pl, odpowiednik w sitemap
+https://www.fluxlab.pl/tansze-automatyzacje | kanoniczna | 20 wrz 2026 | strona | nie | www, przekierowanie na fluxlab.pl, odpowiednik w sitemap
+https://www.fluxlab.pl/audyt-google-ads | kanoniczna | 20 wrz 2026 | strona | nie | www, przekierowanie na fluxlab.pl, odpowiednik w sitemap
+https://www.fluxlab.pl/naprawa-https | kanoniczna | 20 wrz 2026 | strona | nie | www, przekierowanie na fluxlab.pl, odpowiednik w sitemap
+https://www.fluxlab.pl/automatyzacja-leadow-crm | kanoniczna | 20 wrz 2026 | strona | nie | www, przekierowanie na fluxlab.pl, odpowiednik w sitemap
+https://www.fluxlab.pl/produkty | kanoniczna | 20 wrz 2026 | strona | nie | www, przekierowanie na fluxlab.pl, odpowiednik w sitemap
+https://www.fluxlab.pl/automatyczne-przypisywanie-leadow | kanoniczna | 15 wrz 2026 | strona | nie | www, przekierowanie na fluxlab.pl, odpowiednik w sitemap
+https://www.fluxlab.pl/polityka-prywatnosci | kanoniczna | 14 wrz 2026 | strona | nie | www, przekierowanie na fluxlab.pl, odpowiednik w sitemap
+https://www.fluxlab.pl/strony-www | kanoniczna | 14 wrz 2026 | strona | nie | www, przekierowanie na fluxlab.pl, odpowiednik w sitemap
+https://www.fluxlab.pl/crm-jako-system-pracy | kanoniczna | 14 wrz 2026 | strona | nie | www, przekierowanie na fluxlab.pl, odpowiednik w sitemap
+https://www.fluxlab.pl/strefa-wiedzy/kategoria/crm | kanoniczna | 12 wrz 2026 | strona | nie | www, przekierowanie na fluxlab.pl, odpowiednik w sitemap
+https://www.fluxlab.pl/kontakt | kanoniczna | 11 wrz 2026 | strona | nie | www, przekierowanie na fluxlab.pl, odpowiednik w sitemap
+https://www.fluxlab.pl/strefa-wiedzy/hubspot-vs-pipedrive | kanoniczna | 11 wrz 2026 | strona | nie | www, przekierowanie na fluxlab.pl, odpowiednik w sitemap
+https://www.fluxlab.pl/automatyzacja-procesow-biznesowych | kanoniczna | 10 wrz 2026 | strona | nie | www, przekierowanie na fluxlab.pl, odpowiednik w sitemap
+https://www.fluxlab.pl/strefa-wiedzy/kategoria/ai | kanoniczna | 10 wrz 2026 | strona | nie | www, przekierowanie na fluxlab.pl, odpowiednik w sitemap
+https://www.fluxlab.pl/strefa-wiedzy/crm-dla-jednoosobowej-firmy | kanoniczna | 8 wrz 2026 | strona | nie | www, przekierowanie na fluxlab.pl, odpowiednik w sitemap
+https://www.fluxlab.pl/strefa-wiedzy/kategoria/procesy | kanoniczna | 8 wrz 2026 | strona | nie | www, przekierowanie na fluxlab.pl, odpowiednik w sitemap
+https://www.fluxlab.pl/automatyzacja-formularza-do-pipedrive | kanoniczna | 8 wrz 2026 | strona | nie | www, przekierowanie na fluxlab.pl, odpowiednik w sitemap
+https://www.fluxlab.pl/strefa-wiedzy | kanoniczna | 6 wrz 2026 | strona | nie | www, przekierowanie na fluxlab.pl, odpowiednik w sitemap
+https://www.fluxlab.pl/czas-reakcji-na-leada | kanoniczna | 31 sie 2026 | strona | nie | www, przekierowanie na fluxlab.pl, odpowiednik w sitemap
+https://www.fluxlab.pl/strefa-wiedzy/kategoria/integracje | kanoniczna | 30 sie 2026 | strona | nie | www, przekierowanie na fluxlab.pl, odpowiednik w sitemap
+https://www.fluxlab.pl/n8n | kanoniczna | 30 sie 2026 | strona | nie | www, przekierowanie na fluxlab.pl, odpowiednik w sitemap
+https://www.fluxlab.pl/scraping-danych | kanoniczna | 30 sie 2026 | strona | nie | www, przekierowanie na fluxlab.pl, odpowiednik w sitemap
+https://www.fluxlab.pl/pilotaz | kanoniczna | 29 sie 2026 | strona | nie | www, przekierowanie na fluxlab.pl, odpowiednik w sitemap
+https://www.fluxlab.pl/automatyzacja-salesforce | kanoniczna | 24 sie 2026 | strona | nie | www, przekierowanie na fluxlab.pl, odpowiednik w sitemap
+https://www.fluxlab.pl/strefa-wiedzy/jak-uporzadkowac-proces-sprzedazy-w-crm | kanoniczna | 23 sie 2026 | strona | nie | www, przekierowanie na fluxlab.pl, odpowiednik w sitemap
+https://www.fluxlab.pl/strefa-wiedzy/salesforce-dla-malej-firmy | kanoniczna | 23 sie 2026 | strona | nie | www, przekierowanie na fluxlab.pl, odpowiednik w sitemap
+https://www.fluxlab.pl/strefa-wiedzy/kategoria/narzedzia | kanoniczna | 23 sie 2026 | strona | nie | www, przekierowanie na fluxlab.pl, odpowiednik w sitemap
+https://www.fluxlab.pl/strefa-wiedzy/kategoria/raportowanie | kanoniczna | 22 sie 2026 | strona | nie | www, przekierowanie na fluxlab.pl, odpowiednik w sitemap
+https://www.fluxlab.pl/audyt-crm | kanoniczna | 22 sie 2026 | strona | nie | www, przekierowanie na fluxlab.pl, odpowiednik w sitemap
+https://www.fluxlab.pl/strefa-wiedzy/automatyzacja-crm-od-czego-zaczac | kanoniczna | 21 sie 2026 | strona | nie | www, przekierowanie na fluxlab.pl, odpowiednik w sitemap
+https://www.fluxlab.pl/kalkulator-leadow | kanoniczna | 20 sie 2026 | strona | nie | www, przekierowanie na fluxlab.pl
+https://www.fluxlab.pl/strefa-wiedzy/jak-policzyc-roi-z-automatyzacji | kanoniczna | 20 sie 2026 | strona | nie | www, przekierowanie na fluxlab.pl, odpowiednik w sitemap
+https://www.fluxlab.pl/dobor-samochodu | kanoniczna | 16 sie 2026 | strona | nie | www, przekierowanie na fluxlab.pl, odpowiednik w sitemap
+https://www.fluxlab.pl/strefa-wiedzy/n8n-vs-zapier | kanoniczna | 9 sie 2026 | strona | nie | www, przekierowanie na fluxlab.pl, odpowiednik w sitemap
+https://www.fluxlab.pl/strefa-wiedzy/pipedrive-vs-salesforce | kanoniczna | 9 sie 2026 | strona | nie | www, przekierowanie na fluxlab.pl, odpowiednik w sitemap
+https://www.fluxlab.pl/strefa-wiedzy/zapier-vs-make | kanoniczna | 9 sie 2026 | strona | nie | www, przekierowanie na fluxlab.pl, odpowiednik w sitemap
+https://www.fluxlab.pl/zapier-make | kanoniczna | 3 sie 2026 | strona | nie | www, przekierowanie na fluxlab.pl, odpowiednik w sitemap
+https://www.fluxlab.pl/strefa-wiedzy/zapier-make-n8n-porownanie | kanoniczna | 31 lip 2026 | strona | nie | www, przekierowanie na fluxlab.pl, odpowiednik w sitemap
+https://www.fluxlab.pl/strefa-wiedzy/kategoria/jdg-i-podatki | kanoniczna | 24 lip 2026 | strona | nie | www, przekierowanie na fluxlab.pl, odpowiednik w sitemap
+https://www.fluxlab.pl/automatyzacja-leadow | kanoniczna | 20 lip 2026 | strona | nie | www, przekierowanie na fluxlab.pl
+https://www.fluxlab.pl/automatyzacja-follow-up | kanoniczna | 7 lip 2026 | strona | nie | www, przekierowanie na fluxlab.pl, odpowiednik w sitemap
+https://www.fluxlab.pl/case-study | kanoniczna | 5 lip 2026 | strona | nie | www, przekierowanie na fluxlab.pl, odpowiednik w sitemap
+https://www.fluxlab.pl/raportowanie-z-pipedrive | kanoniczna | 3 lip 2026 | strona | nie | www, przekierowanie na fluxlab.pl, odpowiednik w sitemap
+https://www.fluxlab.pl/strefa-wiedzy/make-vs-n8n | kanoniczna | 2 lip 2026 | strona | nie | www, przekierowanie na fluxlab.pl, odpowiednik w sitemap
+https://fluxlab.pl/strefa-wiedzy/maly-zus-plus-kiedy-sie-oplaca | zeskanowana | 24 paź 2026 | strona | tak | 
+https://fluxlab.pl/pobierz/checklista-ksef-2027.pdf | zeskanowana | 24 paź 2026 | plik do pobrania | nie | 
+https://fluxlab.pl/pobierz/poradnik-seo-mala-firma.pdf | zeskanowana | 24 paź 2026 | plik do pobrania | nie | 
+https://fluxlab.pl/_next/static/media/fc0a7394b875fa43-s.p.614a1c00.woff2 | zeskanowana | 24 paź 2026 | obraz/font | nie | 
+https://mta-sts.fluxlab.pl/dane/widocznosc-ai-braki.csv | zeskanowana | 24 paź 2026 | plik do pobrania | nie | mta-sts, dziś 301 na fluxlab.pl
+https://fluxlab.pl/og?t=Od kiedy Twoja firma musi mieć adres do e-Doręczeń? Sprawdzenie w jednym kliknięciu | zeskanowana | 24 paź 2026 | obraz/font | nie | 
+https://mta-sts.fluxlab.pl/_next/static/media/fc0a7394b875fa43-s.p.614a1c00.woff2 | zeskanowana | 24 paź 2026 | obraz/font | nie | mta-sts, dziś 301 na fluxlab.pl
+https://fluxlab.pl/og?t=Kontakt%20%7C%20Fluxlab | zeskanowana | 24 paź 2026 | obraz/font | nie | 
+https://fluxlab.pl/_next/static/media/f06bf9da926bae75.p.c68a79fb.woff2 | zeskanowana | 23 paź 2026 | obraz/font | nie | 
+https://fluxlab.pl/_next/static/media/c7f47671e39f7787.p.088ba3ed.woff2 | zeskanowana | 23 paź 2026 | obraz/font | nie | 
+https://mta-sts.fluxlab.pl/_next/static/media/7ebf22b5a21034f8-s.p.d8bad3ab.woff2 | zeskanowana | 23 paź 2026 | obraz/font | nie | mta-sts, dziś 301 na fluxlab.pl
+https://mta-sts.fluxlab.pl/_next/static/media/c7f47671e39f7787.p.088ba3ed.woff2 | zeskanowana |  | obraz/font | nie | mta-sts, dziś 301 na fluxlab.pl
+https://mta-sts.fluxlab.pl/szablony/checklista-przed-startem-strony.md | zeskanowana | 23 paź 2026 | plik do pobrania | nie | mta-sts, dziś 301 na fluxlab.pl
+https://mta-sts.fluxlab.pl/dane/widocznosc-ai-tresc.csv | zeskanowana | 23 paź 2026 | plik do pobrania | nie | mta-sts, dziś 301 na fluxlab.pl
+https://mta-sts.fluxlab.pl/dane/widocznosc-ai-dostepnosc.csv | zeskanowana | 23 paź 2026 | plik do pobrania | nie | mta-sts, dziś 301 na fluxlab.pl
+https://mta-sts.fluxlab.pl/dane/widocznosc-ai-polaczenie.csv | zeskanowana | 23 paź 2026 | plik do pobrania | nie | mta-sts, dziś 301 na fluxlab.pl
+https://fluxlab.pl/szablony/checklista-przed-startem-strony.md | zeskanowana | 22 paź 2026 | plik do pobrania | nie | 
+https://mta-sts.fluxlab.pl/_next/static/media/f06bf9da926bae75.p.c68a79fb.woff2 | zeskanowana | 22 paź 2026 | obraz/font | nie | mta-sts, dziś 301 na fluxlab.pl
+https://mta-sts.fluxlab.pl/szablony/checklista-ksef-dla-malej-firmy.md | zeskanowana | 22 paź 2026 | plik do pobrania | nie | mta-sts, dziś 301 na fluxlab.pl
+https://mta-sts.fluxlab.pl/szablony/brief-strony-internetowej.md | zeskanowana | 21 paź 2026 | plik do pobrania | nie | mta-sts, dziś 301 na fluxlab.pl
+https://fluxlab.pl/szablony/brief-strony-internetowej.md | zeskanowana | 21 paź 2026 | plik do pobrania | nie | 
+https://fluxlab.pl/szablony/checklista-ksef-dla-malej-firmy.md | zeskanowana | 21 paź 2026 | plik do pobrania | nie | 
+https://fluxlab.pl/_next/static/media/7ebf22b5a21034f8-s.p.d8bad3ab.woff2 | zeskanowana | 21 paź 2026 | obraz/font | nie | 
+https://fluxlab.pl/ksef-integracja/opengraph-image?8fe74f49c02a6642 | zeskanowana | 21 paź 2026 | obraz/font | nie | 
+https://fluxlab.pl/numer-ksef/opengraph-image?be747acd0cb50fb0 | zeskanowana | 9 paź 2026 | obraz/font | nie | 
+https://fluxlab.pl/ksef-2027/opengraph-image | zeskanowana | 9 paź 2026 | obraz/font | nie | 
+https://fluxlab.pl/ksef-2027/opengraph-image?2b0ea57f5d2015ac | zeskanowana | 6 paź 2026 | obraz/font | nie | 
+https://fluxlab.pl/e-doreczenia-integracja/opengraph-image?88f8e01096332793 | zeskanowana | 3 paź 2026 | obraz/font | nie | 
+https://fluxlab.pl/opengraph-image?62095b685b2e73e7 | zeskanowana | 3 paź 2026 | obraz/font | nie | 
+https://fluxlab.pl/ksef-integracja/opengraph-image?ed5e971932c8da61 | zeskanowana | 3 paź 2026 | obraz/font | nie | 
+https://fluxlab.pl/photos/Factory.avif | zeskanowana | 3 paź 2026 | obraz/font | nie | 
+https://fluxlab.pl/opengraph-image?9f82fff65c01486e | zeskanowana | 26 wrz 2026 | obraz/font | nie | 
+https://www.fluxlab.pl/strefa-wiedzy/ai-w-automatyzacji-firm | zeskanowana | 10 wrz 2026 | strona | nie | www, przekierowanie na fluxlab.pl, odpowiednik w sitemap
+https://www.fluxlab.pl/zatrudnic-czy-zautomatyzowac | zeskanowana | 24 sie 2026 | strona | nie | www, przekierowanie na fluxlab.pl
+https://fluxlab.pl/opengraph-image | zeskanowana | 9 sie 2026 | obraz/font | nie | 
+https://fluxlab.pl/opengraph-image?2b3ec801eabf6d0 | zeskanowana | 9 sie 2026 | obraz/font | nie | 
+https://www.fluxlab.pl/strefa-wiedzy/automatyzacja-vs-zatrudnienie | zeskanowana | 21 lip 2026 | strona | nie | www, przekierowanie na fluxlab.pl, odpowiednik w sitemap
+https://www.fluxlab.pl/photos/digital_eye.avif | zeskanowana | 25 maj 2026 | obraz/font | nie | www, przekierowanie na fluxlab.pl
+https://www.fluxlab.pl/_next/static/media/797e433ab948586e-s.p.479bea2b.woff2 | zeskanowana | 15 maj 2026 | obraz/font | nie | www, przekierowanie na fluxlab.pl
+https://www.fluxlab.pl/_next/static/media/caa3a2e1cccd8315-s.p.3b6cae6d.woff2 | zeskanowana | 15 maj 2026 | obraz/font | nie | www, przekierowanie na fluxlab.pl
+# do serii (w sitemap, 200, poza Google): https://fluxlab.pl/strefa-wiedzy/maly-zus-plus-kiedy-sie-oplaca

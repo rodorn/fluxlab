@@ -79,7 +79,11 @@ export default function KiedyAiMaSensPage() {
               Najpierw proces, potem AI
             </h2>
             <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-              AI nie naprawi słabego procesu. Najpierw ustalamy logikę,
+              AI nie naprawi{" "}
+              <Link href="/strefa-wiedzy/co-to-jest-automatyzacja-procesow-biznesowych" className="text-accent hover:underline">
+                słabego procesu
+              </Link>
+              . Najpierw ustalamy logikę,
               odpowiedzialność i przepływ danych w ramach{" "}
               <Link
                 href="/automatyzacja-procesow-biznesowych"

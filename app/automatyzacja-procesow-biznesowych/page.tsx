@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -72,7 +73,11 @@ export default function AutomatyzacjaProcesowBiznesowych() {
               Automatyzacja procesów biznesowych
             </h1>
             <p className="text-lg lg:text-xl text-gray-600 dark:text-gray-300">
-              Zastępujemy ręczną, powtarzalną pracę procesami, które działają
+              Zastępujemy ręczną, powtarzalną pracę{" "}
+              <Link href="/strefa-wiedzy/co-to-jest-automatyzacja-procesow-biznesowych" className="text-accent hover:underline">
+                procesami
+              </Link>
+              , które działają
               same. Mniej błędów, szybsza realizacja.
             </p>
             <div className="mt-8">

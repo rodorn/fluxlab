@@ -41,6 +41,7 @@ const steps = [
   },
   {
     title: "Uporządkuj zasady procesu",
+    link: { text: "Automatyzacja bez zasad", href: "/strefa-wiedzy/co-to-jest-automatyzacja-procesow-biznesowych" },
     text: "Automatyzacja bez zasad przyspiesza chaos. Ustal, kiedy lead zmienia etap, kto odpowiada za kolejny ruch i kiedy sprawa jest zamknięta.",
   },
   {
@@ -83,7 +84,16 @@ export default function AutomatyzacjaCrmOdCzegoZaczacArticle() {
                     {i + 1}. {step.title}
                   </h2>
                   <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                    {step.text}
+                    {step.link ? (
+                      <>
+                        <Link href={step.link.href} className="text-accent hover:underline">
+                          {step.link.text}
+                        </Link>
+                        {step.text.slice(step.link.text.length)}
+                      </>
+                    ) : (
+                      step.text
+                    )}
                   </p>
                 </li>
               ))}
