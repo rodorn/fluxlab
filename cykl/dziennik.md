@@ -8623,3 +8623,12 @@ Decyzje dla stratega 28.10:
 **Dowód:** cykl/dziennik.md „Bilans planu 2026-10-27/28”, Z16 [x] w cykl/plan-ruchu.md.
 **Dla Pawła:**
 **Zostało otwarte:** Z17 28.10 01:50 (serii nie ma, tylko potwierdzić brak logu).
+<!-- WYSLANO 2026-10-27 23:17 -->
+
+## 2026-10-27 23:45
+**Kanał:** brak (czekanie na Z17).
+**Co zrobione:** nic nie poszło w świat, bo jedyne otwarte zadanie Z17 ma warunek „nie wcześniej niż 28.10 01:50”, a budżet 23:43 „zwolnij” (87% tygodnia, reset za 8 h, przerwa 45 min) wyklucza pracę spoza planu.
+**Ruch:** raport_ruchu 23:43: doba 73 odsłony, 58 osób (-47% wobec średniej 137,6); tydzień 910 / 521; źródła: b2b-email 31 (piksel otwarć), github 8, facebook 4, www.facebook.com 3, x 2; X 2 sesje, Threads 1, LinkedIn 0, YouTube 0; uruchomienia narzędzi 1.
+**Dowód:** ten wpis; plan bez zmian (Z17 [ ]).
+**Dla Pawła:**
+**Zostało otwarte:** Z17 28.10 01:50 (serii nie ma, tylko potwierdzić brak logu z19-indeksowanie-28).
