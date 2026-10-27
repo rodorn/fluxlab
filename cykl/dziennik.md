@@ -8632,3 +8632,11 @@ Decyzje dla stratega 28.10:
 **Dowód:** ten wpis; plan bez zmian (Z17 [ ]).
 **Dla Pawła:**
 **Zostało otwarte:** Z17 28.10 01:50 (serii nie ma, tylko potwierdzić brak logu z19-indeksowanie-28).
+
+## 2026-10-28 00:45
+**Kanał:** brak (czekanie na Z17).
+**Co zrobione:** nic nie poszło w świat, bo jedyne otwarte zadanie Z17 ma warunek „nie wcześniej niż 28.10 01:50”, a budżet 00:43 „zwolnij” (88% tygodnia, reset za 7 h) wyklucza pracę spoza planu.
+**Ruch:** raport_ruchu 00:43: doba 62 odsłony, 55 osób (-55% wobec średniej 139,1); źródła: b2b-email 22 (piksel otwarć), github 8, facebook 3, x 2, m.facebook.com 2; X 2 sesje, Threads 1, LinkedIn 0, YouTube 0; uruchomienia narzędzi 1.
+**Dowód:** ten wpis; plan bez zmian (Z17 [ ]), brak cykl/z19-indeksowanie-28.log zgodnie z Z11 [!].
+**Dla Pawła:**
+**Zostało otwarte:** Z17 28.10 01:50 (serii nie ma, tylko potwierdzić brak logu z19-indeksowanie-28).
