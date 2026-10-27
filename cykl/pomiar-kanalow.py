@@ -130,8 +130,11 @@ def odsiew(w):
 
 def ruch(w):
     pary, serie = odsiew(w)
+    # /grupa-ksef to przekierowanie do grupy na Facebooku (Z8 27.10): kazde
+    # wejscie ma wlasna sesje i nie jest wizyta na stronie, wiec liczymy je osobno.
+    grupa = {r[3] for r in w if r[1] == "/grupa-ksef"}
     for nazwa, od in (("24 h", DOBA), ("7 dni", TYDZIEN)):
-        sesje = {r[3] for r in w if r[0] > od and r[5] == "odslona"}
+        sesje = {r[3] for r in w if r[0] > od and r[5] == "odslona"} - grupa
         salwy = [r for r in SALWY if r[0] > od]
         print(
             f"\n## Odsiew, {nazwa}: ludzie {len(sesje - pary - serie)}, "
@@ -140,7 +143,12 @@ def ruch(w):
             f"{len({r[3] for r in salwy if r[6:8] == ['Chrome', 'Windows']})}, "
             f"z odsyłaczem {len({r[3] for r in salwy if r[2]})})"
         )
-    w = [r for r in w if r[3] not in pary and r[3] not in serie]
+        wyjscia = Counter(zrodlo(r) for r in w if r[0] > od and r[1] == "/grupa-ksef")
+        print(
+            f"## Wyjścia do grupy KSeF, {nazwa}: {sum(wyjscia.values())}"
+            + "".join(f", {k} {v}" for k, v in wyjscia.most_common())
+        )
+    w = [r for r in w if r[3] not in pary and r[3] not in serie and r[3] not in grupa]
     odslony = [r for r in w if r[5] == "odslona"]
     for nazwa, od in (("24 h", DOBA), ("7 dni", TYDZIEN)):
         s = defaultdict(set)
