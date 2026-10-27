@@ -1,4 +1,4 @@
-Szkic na 09.11 (NIE w app/). Źródło faktów: gov.pl, „Najczęściej zadawane pytania” e-Doręczeń, https://www.gov.pl/web/e-doreczenia/pytania-i-odpowiedzi, odczyt z VPS (curl) 19.10.2026 21:50. Oznaczenia [F1] do [F4] do usunięcia przy publikacji. Przed publikacją odczytaj stronę ponownie i potwierdź F1 do F4.
+Szkic na 09.11 (NIE w app/). Źródło faktów: gov.pl, „Najczęściej zadawane pytania” e-Doręczeń, https://www.gov.pl/web/e-doreczenia/pytania-i-odpowiedzi, odczyt z VPS (curl) 19.10.2026 21:50. Oznaczenia [F1] do [F4] do usunięcia przy publikacji. Przed publikacją odczytaj stronę ponownie i potwierdź F1 do F4. Ponowny odczyt 27.10.2026 08:43 (curl lokalnie, 200): F1-F5 zgodne, F4 dosłownie „jeżeli nie będzie w niej uczestniczyć podmiot publiczny”; zdanie o liście poleconym skrócone do „tradycyjna przesyłka”.
 
 Adres: /strefa-wiedzy/czy-firma-ma-adres-do-e-doreczen
 Tytuł (60 zn.): Czy firma ma adres do e-Doręczeń? Jak to sprawdzić | Fluxlab
@@ -12,7 +12,7 @@ H2: Gdzie szukać
 Wyszukiwarka BAE działa w twojej skrzynce do e-Doręczeń, a adres urzędu sprawdzisz też narzędziem na gov.pl. Szuka się po jednym adresie, masowej wyszukiwarki nie ma. Spółkę z KRS sprawdzisz dodatkowo w odpisie, w dziale 1. [F1, F2]
 
 H2: Gdy adresu nie ma
-Urząd wyśle wtedy pismo usługą hybrydową: elektronicznie do Poczty Polskiej, która je drukuje i doręcza. Firma takiej drogi do innej firmy nie ma, zostaje list polecony. Za wysyłkę między firmami płaci nadawca. [F3, F4]
+Urząd wyśle wtedy pismo usługą hybrydową: elektronicznie do Poczty Polskiej, która je drukuje i doręcza. Firma takiej drogi do innej firmy nie ma, zostaje tradycyjna przesyłka. Za wysyłkę między firmami płaci nadawca. [F3, F4]
 
 FAQ (4):
 

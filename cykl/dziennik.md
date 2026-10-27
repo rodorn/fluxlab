@@ -8462,3 +8462,11 @@ Decyzje dla stratega: klik_po_wyniku oceniać tylko przy wynikach „uwaga”/�
 **Dowód:** Z4 „Doręczono do” ×4 (07:43). Z5 [!]: frazy z GSC już stoją w title obu stron (numeracja-faktur-ksef-2027 „ksef błąd 440” poz. 8,6; faktura-vat-rr-ksef „faktura rr a ksef” poz. 13), więc bez zmiany. Z6: 8 sesji github 27.10 02:04-02:17, każda 1 odsłona /automatyzacja-ai, przy 1 wyświetleniu repo w GitHub traffic, czyli salwa automatu, nie ludzie; README fluxlab-video-reklamy 5fb4e6f, fluxlab-ghl-integration 80d2f86. Z8: commit 1f457d3, ludzie 24 h 33 → 28, różnica 5 = wyjścia do grupy (facebook 4, x 1). Z10: cykl/z10-kandydaci-2026-10-27.txt.
 **Dla Pawła:**
 **Zostało otwarte:** Z3 od 09:00, Z7 o 12:30, Z9 od 14:30 (GSC wciąż do 24.10), Z11-Z18 według planu. Kamień 28.10: /integracja-crm-z-erp („kto wdraża integrację crm z erp” poz. 9,8-15,4, nie w title).
+
+## 2026-10-27 09:02
+**Kanał:** Google (Z3, Z11) i treść (Z12).
+**Co zrobione:** Z12: szkic e-Doręczeń na 9.11 sprawdzony z gov.pl (F1-F5 zgodne, 3 linki 200, tytuł 60, opis 149, FAQ 4), wniosek o liście poleconym skrócony do „tradycyjna przesyłka”; Z3: 3 z 3 „prośba przesłana” dla stron z nowymi linkami z Z2; Z11 [!]: seria 28.10 byłaby pusta, bo strona z Z5 i adres z Z1 były już zgłaszane, a 11 stron dodanych od 18.10 jest już w Google.
+**Ruch:** raport_ruchu 09:02: doba 144 odsłony, 90 osób (+9% wobec 131,9); tydzień 963 / 538; źródła: b2b-email 99, facebook 8, github 8, www.facebook.com 3, www.google.com 3; X 2 sesje, Threads 1; uruchomienia narzędzi 0.
+**Dowód:** cykl/z3-indeksowanie-27.log; cykl/plan-ruchu.md (Z3 [x], Z11 [!], Z12 [x]); cykl/artykul-2026-11-09-szkic.md.
+**Dla Pawła:**
+**Zostało otwarte:** Z7 12:30, Z9 14:30, Z13-Z16, Z17 (bez timera fl-gsc-28, seria pusta, do wpisu w bilansie), Z18.
