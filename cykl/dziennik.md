@@ -8502,3 +8502,11 @@ Decyzje dla stratega: klik_po_wyniku oceniać tylko przy wynikach „uwaga”/�
 **Dowód:** cykl/plan-ruchu.md Z7 [x] z 6 liczbami; Zoho INBOX od 06:30: 0 zapytań od ludzi, Spam 0.
 **Dla Pawła:**
 **Zostało otwarte:** Z13 18:30, Z14 19:30, Z15 20:30, Z16 22:30 (bilans), Z17 28.10 01:50.
+
+## 2026-10-27 13:45
+**Kanał:** brak (czekanie na godziny planu).
+**Co zrobione:** nic nie poszło w świat: otwarte zadania to Z13 18:30, Z14 19:30, Z15 20:30, Z16 22:30, Z17 28.10 01:50; pomiar Z13 „od 12:30" zrobiony teraz dałby okno 1 h, a budżet 13:43 mówi „poprawki: nie, praca przycięta do 30%", więc bez pracy poza planem.
+**Ruch:** raport_ruchu 13:43: doba 123 odsłony, 82 osoby (-7% wobec średniej 132,7); tydzień 926 / 532; źródła: b2b-email 82 (piksel otwarć, nie ludzie), github 8, facebook 7, www.google.com 3, www.facebook.com 2; X 1 sesja, Threads 1, LinkedIn 0, YouTube 0; uruchomienia narzędzi 0.
+**Dowód:** cykl/plan-ruchu.md: Z1-Z4, Z6-Z10, Z12, Z18 [x], Z5 i Z11 [!], otwarte Z13-Z17.
+**Dla Pawła:**
+**Zostało otwarte:** Z13 18:30, Z14 19:30, Z15 20:30, Z16 22:30 (bilans), Z17 28.10 01:50.
