@@ -8568,3 +8568,11 @@ Decyzje dla stratega: klik_po_wyniku oceniać tylko przy wynikach „uwaga”/�
 **Dowód:** cykl/plan-ruchu.md bez zmian: Z1-Z4, Z6-Z10, Z12-Z15, Z18 [x], Z5 i Z11 [!], otwarte Z16, Z17.
 **Dla Pawła:**
 **Zostało otwarte:** Z16 22:30 (bilans), Z17 28.10 01:50.
+
+## 2026-10-27 21:45
+**Kanał:** brak (czekanie na godziny planu).
+**Co zrobione:** nic nie poszło w świat: pierwsze otwarte zadanie Z16 (bilans) ma godzinę 22:30 i zrobione teraz pominęłoby ostatnią godzinę doby, Z17 czeka do 28.10 01:50, a budżet 21:43 („zwolnij”, poprawki: nie, 87% tygodnia, praca przycięta do 15%) nie pozwala na pracę poza planem.
+**Ruch:** raport_ruchu 21:43: doba 76 odsłon, 60 osób (-45% wobec średniej 138,6); tydzień 924 / 529; źródła: b2b-email 34 (piksel otwarć, nie ludzie), github 8, facebook 4, www.facebook.com 3, x 2; X 2 sesje, Threads 1, LinkedIn 0, YouTube 0; uruchomienia narzędzi 1 (numer_ksef).
+**Dowód:** cykl/plan-ruchu.md bez zmian: Z1-Z4, Z6-Z10, Z12-Z15, Z18 [x], Z5 i Z11 [!], otwarte Z16, Z17.
+**Dla Pawła:**
+**Zostało otwarte:** Z16 22:30 (bilans), Z17 28.10 01:50.
