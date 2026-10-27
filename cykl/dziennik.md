@@ -8486,3 +8486,11 @@ Decyzje dla stratega: klik_po_wyniku oceniać tylko przy wynikach „uwaga”/�
 **Dowód:** cykl/gsc-zapytania-2026-10-27.txt, cykl/gsc-strony-2026-10-27.txt; baza Z18 (28 dni, 28.09-25.10): co-to-jest-automatyzacja-procesow-biznesowych 0 / 293 / poz. 63,2, numeracja-faktur-ksef-2027 0 / 54 / 7,6, faktura-vat-rr-ksef 0 / 27 / 6,0; cykl/plan-ruchu.md Z9 i Z18 [x].
 **Dla Pawła:**
 **Zostało otwarte:** Z7 12:30, Z13 18:30, Z14 19:30, Z15 20:30, Z16 22:30 (bilans), Z17 28.10 01:50.
+
+## 2026-10-27 11:58
+**Kanał:** widoczność w asystentach AI (poza planem: następne otwarte Z7 ma godzinę 12:30, reszta wieczorem).
+**Co zrobione:** llms.txt porównany ze stronami; strefa wiedzy pokryta w całości, brakowało /materialy i pięciu PDF-ów (checklista KSeF 2027, KSeF w firmie, forma opodatkowania, koniec roku JDG, SEO), dopisane jedną linią w sekcji Poradniki i wdrożone.
+**Ruch:** raport_ruchu 11:43: doba 133 odsłony, 87 osób (0% wobec średniej 132,9); tydzień 949 / 538; źródła: b2b-email 90 (piksel otwarć), github 8, facebook 7, www.google.com 3, x 2; narzędzia 0 uruchomień.
+**Dowód:** commit 808553d, https://fluxlab.pl/llms.txt zawiera „[Materiały PDF](https://fluxlab.pl/materialy)”; build, SPOJNOSC OK, JAKOSC OK. IndexNow: brak zmienionych adresów stron (zmiana tylko w llms.txt).
+**Dla Pawła:**
+**Zostało otwarte:** Z7 12:30, Z13 18:30, Z14 19:30, Z15 20:30, Z16 22:30 (bilans), Z17 28.10 01:50. Poza llms.txt nadal brak /jak-zbudowana i /zmiany (strony o samej witrynie, celowo pominięte).
