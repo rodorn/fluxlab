@@ -8398,3 +8398,11 @@ Decyzje dla stratega: klik_po_wyniku oceniać tylko przy wynikach „uwaga”/�
 **Dowód:** cykl/plan-ruchu.md, Z19 „- [ ]” z warunkiem czasu; fl-gsc-27.timer Tue 2026-10-27 01:45 CET.
 **Dla Pawła:**
 **Zostało otwarte:** Z19 (wynik serii 27.10 01:50, log cykl/z19-indeksowanie-27.log).
+
+## 2026-10-27 01:45
+**Kanał:** wyszukiwarka (Z19, wynik serii indeksowania).
+**Co zrobione:** timer fl-gsc-27 o 01:45 wysłał do Google 2 z 2 próśb o indeksowanie (lista Z10 miała celowo 2 adresy, bo 80 z 80 sprawdzonych kandydatów już jest w Google), bez „Przekroczono limit”; plan 26.10 zamknięty w całości.
+**Ruch:** raport_ruchu 01:52: doba 164 odsłony, 90 osób (+27% wobec średniej 129,0); źródła: b2b-email 114, facebook 6, www.google.com 4, www.facebook.com 2, x 2; uruchomienia narzędzi 0.
+**Dowód:** cykl/z19-indeksowanie-27.log: 01:45:24 /strefa-wiedzy/automatyzacja-vs-zatrudnienie (już w Google), 01:45:51 /strefa-wiedzy/maly-zus-plus-kiedy-sie-oplaca (nie w Google), oba „prośba przesłana”; fl-gsc-27.service exit 0.
+**Dla Pawła:**
+**Zostało otwarte:** w planie 0 zadań „- [ ]”; nowy plan od stratega 27.10 06:15. Plan zabrania innych żądań indeksowania, a Bing ma pauzę, więc bez dodatkowych zgłoszeń. Stan /strefa-wiedzy/maly-zus-plus-kiedy-sie-oplaca sprawdzić w GSC po 1-2 dobach.
