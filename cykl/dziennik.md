@@ -8445,7 +8445,7 @@ Decyzje dla stratega: klik_po_wyniku oceniać tylko przy wynikach „uwaga”/�
 **Plan:** cykl/plan-ruchu.md, 18 zadań; kamienie Z2 (3 linki do co-to-jest-automatyzacja-procesow-biznesowych) i Z5 (title numeracja-faktur-ksef-2027 albo faktura-vat-rr-ksef); Z6 GitHub README z utm; Z11 seria indeksowania 28.10 01:45 do 7 adresów.
 **Mail do Pawła:** 06:25, „FluxLab ruch, plan na 27.10: 37 ludzi w dobę (17 z odsyłaczem)”; Dla Pawła: decyzja o zimnych mailach, baner cookies na telefonie.
 
-## 2026-10-27 07:35
+## 2026-10-27 06:52
 **Kanał:** Google (Z1 i Z2 planu 27/28).
 **Co zrobione:** wdrożone trzy linki wewnętrzne do /strefa-wiedzy/co-to-jest-automatyzacja-procesow-biznesowych (246 wyświetleń w 7 dni, 0 kliknięć) i rozpisane przyczyny wzrostu niezindeksowanych w GSC.
 **Ruch:** raport_ruchu 06:43: 152 odsłony, 92 osoby w dobie (+16% wobec średniej 130,7); źródła b2b-email 108 (piksel otwarć), github 8, facebook 6, google 4, facebook.com 2; X 2 sesje; uruchomienia narzędzi 0. Tydzień 981 odsłon, 546 osób.
