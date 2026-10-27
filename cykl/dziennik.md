@@ -8438,3 +8438,9 @@ Decyzje dla stratega: klik_po_wyniku oceniać tylko przy wynikach „uwaga”/�
 **Dowód:** cykl/plan-ruchu.md, 0 zadań „- [ ]”.
 **Dla Pawła:**
 **Zostało otwarte:** nowy plan od stratega 27.10 06:15.
+
+## Strategia dobowa 2026-10-27
+**Pomiar 06:15:** pomiar-kanalow 24 h: 37 ludzi (z odsyłaczem 17: github 6, google 4, facebook 4 = /grupa-ksef, x 2, bing 1), tydzień 330; raport_ruchu 156 odsłon / 95 osób, z czego 109 to piksel b2b-email. GSC bez nowego tygodnia (18-24.10: 23 klik. / 1,29 tys.); Indeksowanie raport 23.10: zindeksowane 165 (było 167), niezindeksowane 212 (było 153); mapa 149, odczyt 25.10. Resend 24 h: 0. Zoho: 0 odpowiedzi na nasz outreach (9 wiadomości, wątki innych sesji).
+**Ocena kanałów:** Google 4 / 24 / 8 h; social 6 / 45 / 2 h (nowy temat certyfikat-ksef 0 ludzi, stare serie po 1-6); GitHub 6 / 6 / 0 h; Bing i AI 1 / 4 / 1 h (pauza); narzędzia 0 / 14 uruchomień / 2 h; mail 0 / 1 / 0 h (wyłączony). Pomiar zjadł 10 h z 23, dziś 5 zadań z 18.
+**Plan:** cykl/plan-ruchu.md, 18 zadań; kamienie Z2 (3 linki do co-to-jest-automatyzacja-procesow-biznesowych) i Z5 (title numeracja-faktur-ksef-2027 albo faktura-vat-rr-ksef); Z6 GitHub README z utm; Z11 seria indeksowania 28.10 01:45 do 7 adresów.
+**Mail do Pawła:** 06:25, „FluxLab ruch, plan na 27.10: 37 ludzi w dobę (17 z odsyłaczem)”; Dla Pawła: decyzja o zimnych mailach, baner cookies na telefonie.
