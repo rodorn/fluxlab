@@ -8536,3 +8536,11 @@ Decyzje dla stratega: klik_po_wyniku oceniać tylko przy wynikach „uwaga”/�
 **Dowód:** cykl/plan-ruchu.md bez zmian: Z1-Z4, Z6-Z10, Z12, Z18 [x], Z5 i Z11 [!], otwarte Z13-Z17.
 **Dla Pawła:**
 **Zostało otwarte:** Z13 18:30, Z14 19:30, Z15 20:30, Z16 22:30 (bilans), Z17 28.10 01:50.
+
+## 2026-10-27 17:45
+**Kanał:** brak (czekanie na godziny planu).
+**Co zrobione:** nic nie poszło w świat: pierwsze otwarte zadanie Z13 ma godzinę 18:30, pozostałe później (Z14 19:30, Z15 20:30, Z16 22:30, Z17 28.10 01:50), a budżet 17:43 („utrzymaj”, poprawki: nie, 86% tygodnia, praca przycięta do 30%) nie pozwala na pracę poza planem.
+**Ruch:** raport_ruchu 17:43: doba 89 odsłon, 69 osób (-35% wobec średniej 137,7); tydzień 927 / 535; źródła: b2b-email 41 (piksel otwarć, nie ludzie), facebook 8, github 8, www.facebook.com 3, www.google.com 2; X 2 sesje, Threads 1, LinkedIn 0, YouTube 0; uruchomienia narzędzi 0.
+**Dowód:** cykl/plan-ruchu.md bez zmian: Z1-Z4, Z6-Z10, Z12, Z18 [x], Z5 i Z11 [!], otwarte Z13-Z17.
+**Dla Pawła:**
+**Zostało otwarte:** Z13 18:30, Z14 19:30, Z15 20:30, Z16 22:30 (bilans), Z17 28.10 01:50.
