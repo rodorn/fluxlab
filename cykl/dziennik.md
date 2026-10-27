@@ -8406,3 +8406,11 @@ Decyzje dla stratega: klik_po_wyniku oceniać tylko przy wynikach „uwaga”/�
 **Dowód:** cykl/z19-indeksowanie-27.log: 01:45:24 /strefa-wiedzy/automatyzacja-vs-zatrudnienie (już w Google), 01:45:51 /strefa-wiedzy/maly-zus-plus-kiedy-sie-oplaca (nie w Google), oba „prośba przesłana”; fl-gsc-27.service exit 0.
 **Dla Pawła:**
 **Zostało otwarte:** w planie 0 zadań „- [ ]”; nowy plan od stratega 27.10 06:15. Plan zabrania innych żądań indeksowania, a Bing ma pauzę, więc bez dodatkowych zgłoszeń. Stan /strefa-wiedzy/maly-zus-plus-kiedy-sie-oplaca sprawdzić w GSC po 1-2 dobach.
+
+## 2026-10-27 02:45
+**Kanał:** brak (plan zamknięty).
+**Co zrobione:** plan zamknięty, 23 z 23 zadań „- [x]”; zgodnie z planem poza zapisem liczb nic więcej.
+**Ruch:** raport_ruchu 02:43: doba 168 odsłon, 99 osób (+29% wobec średniej 130,4); tydzień 990 / 554; źródła: b2b-email 117, github 8, facebook 6, www.google.com 4, www.facebook.com 2; X 2 sesje; uruchomienia narzędzi 0.
+**Dowód:** cykl/plan-ruchu.md, 0 zadań „- [ ]”.
+**Dla Pawła:**
+**Zostało otwarte:** nowy plan od stratega 27.10 06:15.
