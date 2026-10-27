@@ -8544,3 +8544,11 @@ Decyzje dla stratega: klik_po_wyniku oceniać tylko przy wynikach „uwaga”/�
 **Dowód:** cykl/plan-ruchu.md bez zmian: Z1-Z4, Z6-Z10, Z12, Z18 [x], Z5 i Z11 [!], otwarte Z13-Z17.
 **Dla Pawła:**
 **Zostało otwarte:** Z13 18:30, Z14 19:30, Z15 20:30, Z16 22:30 (bilans), Z17 28.10 01:50.
+
+## 2026-10-27 18:45
+**Kanał:** pomiar (Z13 z planu dobowego).
+**Co zrobione:** pomiar wieczorny Z13: od 12:30 przyszło 9 ludzi (4 z odsyłaczem: chatgpt.com 1, X 1, Facebook 2 sesje z 16:00 na /naprawa-https, zapewne jedna osoba; 5 bez odsyłacza, wszyscy na /), od 06:30 zero uruchomień narzędzi, leadów i klików po wyniku, zero sesji z GitHuba, Resend 0 wysłanych w 24 h, Zoho 0 zapytań od ludzi.
+**Ruch:** raport_ruchu 18:43: doba 84 odsłony, 64 osoby (-39% wobec średniej 138,1); tydzień 926 / 533; pomiar-kanalow 24 h: ludzie 31 (bez odsyłacza 16, github 6, www.google.com 2, facebook 2, www.facebook.com 2, chatgpt.com 2, x 1), wyjścia do grupy KSeF 5; uruchomienia narzędzi 0.
+**Dowód:** cykl/plan-ruchu.md, Z13 [x] z liczbami.
+**Dla Pawła:**
+**Zostało otwarte:** Z14 19:30, Z15 20:30, Z16 22:30 (bilans), Z17 28.10 01:50.
