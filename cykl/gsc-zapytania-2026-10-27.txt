@@ -1,0 +1,101 @@
+# GSC fluxlab.pl, 7 dni 19-25.10 (stan 27.10.2026 10:55, zapisane pierwsze 100 w kolejności GSC), zapytanie	kliknięcia	wyświetlenia	pozycja
+fluxlab	9	17	1,1
+automatyzacja procesów biznesowych	0	62	66,7
+automatyzacja procesów	0	30	57,2
+proces biznesowy	0	19	84,9
+automatyzacja biznesu	0	16	53,3
+porównanie kosztów automatyzacji vs zatrudniania	0	15	2,6
+"ksef"	0	14	3,7
+wdrożenie n8n	0	14	15,3
+integracja crm	0	11	42,3
+integracja api	0	9	56,8
+n8n ile kosztuje	0	8	9,4
+asystent ai na stronie	0	8	16,3
+automatyzacja ai	0	8	50,8
+integracje api	0	8	57,0
+automatyzacja procesów sprzedażowych	0	8	74,0
+asystent na strone ai	0	7	14,7
+automatyzacja crm	0	7	24,9
+system ticketowy dla e-commerce	0	7	66,3
+poczta firmowa	0	7	89,3
+ile kosztuje n8n	0	6	6,8
+n8n cena	0	6	7,8
+asystent ai na stronę	0	6	11,3
+automatyzacja crm ai	0	6	27,5
+automatyzacja procesów w firmie	0	6	60,5
+automatyzacja firmy	0	6	67,2
+jak zautomatyzować raportowanie w firmie	0	5	1,0
+czy potrzebuję repricera ai, a jeśli tak — który wybrać?	0	5	8,2
+ksef błąd 440	0	5	8,6
+automatyzacja ai dla firm	0	5	31,8
+automatyzacje ai dla firm	0	5	52,4
+automatyzacja w firmie	0	5	53,2
+automatyzacja procesów biznesowych firmy	0	5	74,2
+crm na zamówienie	0	5	86,0
+system dla biura rachunkowego	0	5	94,4
+crm dla firm leasingowych	0	4	1,8
+błąd 440 ksef	0	4	8,8
+zapier co to	0	4	25,0
+"prowadzenie wizytówki"	0	3	5,0
+"automatyzacja podatków"	0	3	6,7
+automatyzacja raportowania	0	3	6,7
+zapier cena	0	3	8,7
+faktury wewnętrzne a ksef	0	3	10,0
+zapier cennik	0	3	10,7
+kto wdraża integrację crm z erp	0	3	11,3
+jak sprawdzić firmę przed przelewem	0	3	18,7
+automatyzacja zakupu paliwa	0	3	20,0
+analiza lokalizacji	0	3	25,3
+raportowanie sprzedaży w firmie	0	3	26,3
+integracja systemów api	0	3	53,7
+automatyzacja procesów obsługi klienta	0	3	68,0
+digitalizacja procesów	0	3	82,0
+"system do faktur"	0	2	5,0
+ai24900	0	2	5,0
+"e-doręczeń"	0	2	6,0
+"vps"	0	2	6,5
+pipedrive vs hubspot	0	2	7,5
+faktura wewnętrzna a ksef	0	2	8,0
+make vs zapier	0	2	9,0
+czy faktury wewnętrzne idą do ksef	0	2	10,0
+integracja crm z erp	0	2	11,5
+ile trwa integracja erp z crm?	0	2	22,5
+kalkulator jdg	0	2	26,5
+wirtualny asystent ai	0	2	33,0
+automatyzacje dla firm	0	2	35,0
+automatyzacja raportów	0	2	35,5
+agencja marketing automation	0	2	47,0
+scraping danych	0	2	51,0
+automatyzacje procesów	0	2	60,0
+100 kwh cena	0	2	60,5
+automatyzacje ai	0	2	60,5
+raportowanie sprzedaży	0	2	62,0
+automatyczne raportowanie	0	2	65,0
+system raportowania	0	2	78,0
+crm w branży meblowej	0	2	82,5
+automatyzacja procesów erp	0	2	85,5
+co jeszcze	0	1	1,0
+czy wdrożenie automatyzacji ai opłaca się dla startupów	0	1	1,0
+flux lab	0	1	1,0
+ile kosztuje automatyzacja procesu sprzedażowego	0	1	1,0
+jak policzyć całkowity koszt posiadania toyoty rav4 hybrid przez 5 lat? chcę uwzględnić zakup, ubezpieczenie, serwis, paliwo, opony i wartość końcową auta — gdzie znaleźć rzetelny kalkulator?	0	1	1,0
+ksef limity api	0	1	3,0
+n8n co to jest	0	1	5,0
+kalkulator kosztów importu auta	0	1	6,0
+n8n vs make	0	1	6,0
+czy integracja erp z crm się opłaca	0	1	7,0
+najlepsze firmy do automatyzacji raportowania finansowego?	0	1	8,0
+ksef identyfikator zbiorczy	0	1	9,0
+n8n czy jest darmowy	0	1	9,0
+gutschrift co to	0	1	10,0
+znajdz fakture ksef	0	1	10,0
+co to jest ?	0	1	11,0
+kto wdraża integrację crm z erp w polsce	0	1	11,0
+make zapier	0	1	11,0
+przesyłanie danych z erp do crm	0	1	11,0
+sprawdz numer ksef	0	1	11,0
+symbol off	0	1	11,0
+zapier/make	0	1	11,0
+ksef	0	1	12,0
+faktura rr a ksef	0	1	13,0
+integracje api dla firm	0	1	14,0

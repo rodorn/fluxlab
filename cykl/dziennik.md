@@ -8478,3 +8478,11 @@ Decyzje dla stratega: klik_po_wyniku oceniać tylko przy wynikach „uwaga”/�
 **Dowód:** cykl/plan-ruchu.md: Z1-Z4, Z6, Z8, Z10, Z12 [x], Z5 i Z11 [!], otwarte Z7, Z9, Z13-Z18, najwcześniejsze 12:30.
 **Dla Pawła:**
 **Zostało otwarte:** Z7 12:30, Z9 14:30, Z13-Z16, Z17 (28.10 01:50), Z18 (28.10 05:30).
+
+## 2026-10-27 10:45
+**Kanał:** Google (pomiar, plan dobowy Z9 i Z18).
+**Co zrobione:** GSC pokazał już tydzień 19-25.10, więc Z9 zrobione przed 14:30 (zapytania i strony zapisane, diff z 26.10), a Z18 od razu po nim: baza 28 dni dla stron zmienianych w Z2 i ocenianych w Z5, do oceny od 03.11.
+**Ruch:** raport_ruchu 10:44: doba 136 odsłon, 89 osób (+2% wobec średniej 133,3); tydzień 958 / 541; źródła: b2b-email 92 (piksel otwarć), github 8, facebook 7, www.google.com 3, x 2. GSC 19-25.10: 21 kliknięć, 1,28 tys. wyświetleń; z kliknięć tylko „fluxlab" 9 widoczne w tabeli zapytań, reszta z ukrytych zapytań; strony z klikiem: główna 11, kiedy-odliczyc-vat-z-faktury-ksef 3, po 1 ksef-2027, faktura-wewnetrzna-ksef, data-wystawienia-faktury-ksef, kontakt, analiza-lokalizacji, audyt-strony, audyt-kurierski, sprawdzenie-nip. Największe zmiany wyświetleń wobec 18-24.10: co-to-jest-automatyzacja-procesow-biznesowych 246→212, /ksef-2027 39→53, zapytanie „ksef" 4→14, /automatyzacja-dla-ecommerce 29→18, kiedy-odliczyc-vat 108→115.
+**Dowód:** cykl/gsc-zapytania-2026-10-27.txt, cykl/gsc-strony-2026-10-27.txt; baza Z18 (28 dni, 28.09-25.10): co-to-jest-automatyzacja-procesow-biznesowych 0 / 293 / poz. 63,2, numeracja-faktur-ksef-2027 0 / 54 / 7,6, faktura-vat-rr-ksef 0 / 27 / 6,0; cykl/plan-ruchu.md Z9 i Z18 [x].
+**Dla Pawła:**
+**Zostało otwarte:** Z7 12:30, Z13 18:30, Z14 19:30, Z15 20:30, Z16 22:30 (bilans), Z17 28.10 01:50.
