@@ -8576,3 +8576,50 @@ Decyzje dla stratega: klik_po_wyniku oceniać tylko przy wynikach „uwaga”/�
 **Dowód:** cykl/plan-ruchu.md bez zmian: Z1-Z4, Z6-Z10, Z12-Z15, Z18 [x], Z5 i Z11 [!], otwarte Z16, Z17.
 **Dla Pawła:**
 **Zostało otwarte:** Z16 22:30 (bilans), Z17 28.10 01:50.
+
+## Bilans planu 2026-10-27/28
+Pomiar 22:43 (`cykl/pomiar-kanalow.py`, 24 h, odsiew par, salw i /grupa-ksef): ludzie 31 (doba wcześniej 37), z odsyłaczem 15 (wobec 17), bez 16 (wobec 20). Tydzień 325 (było 330).
+
+| Kanał | 24 h | doba wcześniej | uwaga |
+|---|---|---|---|
+| Google (www.google.com) | 2 | 4 | GSC 19-25.10: 21 kliknięć / 1,28 tys. wyśw. |
+| social (facebook 2, www.facebook.com 2, x 1) | 5 | 6 | FB to dwie pary 07:48 i jedna para 16:00, realnie ok. 3 osoby |
+| GitHub (faceless-ai-video) | 6 | 6 | Z6: salwa automatu 02:04-02:17, GitHub traffic 1 wyśw., czyli 0 ludzi |
+| chatgpt.com | 2 | 0 | /dobor-samochodu i / |
+| uruchomienia narzędzi | 1 (numer_ksef) | 0 | lead_* 0, klik_po_wyniku 0 |
+| mail | 0 | 0 | outreach wyłączony, Resend 0, Zoho 0 zapytań |
+
+| Zad. | Stan | Co przyprowadziło |
+|---|---|---|
+| Z1 | x | 0; +59 niezindeksowanych to kopie z mta-sts (111) i www (48), nie problem treści |
+| Z2 | x | 0 na razie (a6fb76d, 3 linki do co-to-jest-automatyzacja); ocena od 03.11 wobec bazy 0/293/poz. 63,2 |
+| Z3 | x | 0; 3 prośby przesłane |
+| Z4 | x | zlecenie dla 4 sesji social doręczone |
+| Z5 | ! | warunek nie zaszedł: fraza „błąd 440” już w title, poz. 7,6 |
+| Z6 | x | 0; 6-8 sesji github to automat; linki w README 2 repo (5fb4e6f) |
+| Z7, Z13 | x | pomiar: 5 + 9 ludzi w oknach dnia, 0 leadów |
+| Z8 | x | pomiar oczyszczony z /grupa-ksef (−5 tygodniowo) |
+| Z9, Z18 | x | nowy tydzień GSC zapisany, baza 28 dni dla Z2 i Z5 |
+| Z10 | x | kandydat na 28.10 gotowy |
+| Z11 | ! | 0 kandydatów do serii, timer fl-gsc-28 nie założony |
+| Z12 | x | szkic 9.11 sprawdzony, 5 z 5 faktów |
+| Z14 | x | FB 07:47 i X 09:27 z linkiem do kiedy-odliczyc-vat: do 2 osób z FB, 0 z X |
+| Z15 | x | maly-zus-plus i certyfikat-ksef w Google, 0 ludzi |
+| Z16 | x | ten wpis |
+| Z17 | otwarte | serii nie ma (Z11 [!]), do sprawdzenia tylko, że log nie powstał |
+
+Wynik kamieni: Z2 bez efektu w pierwszej dobie (embargo oceny do 03.11), Z5 bez zmiany, bo strona już ma frazę w title. Z4: link wyszedł w 2 z 4 kanałów, ruch z nich najwyżej 2 osoby. Z6: GitHub nie przyprowadza ludzi, liczba 6 to automat.
+
+Decyzje dla stratega 28.10:
+1. Kamień 28.10: `/integracja-crm-z-erp` (z Z10: 0/89 w 28 dni, poz. 19,1; „kto wdraża integrację crm z erp” poz. ok. 10, nie ma jej w title). `/automatyzacja-dla-ecommerce` odpada, poz. 59,4.
+2. W `pomiar-kanalow.py` odsiać `utm_campaign=fluxlab-faceless-ai-video` (salwa 02:00, 0 potwierdzonych w GitHub traffic), inaczej GitHub zawyża „z odsyłaczem” o 6.
+3. Pula indeksowania 28.10 wolna (Z11 nie zużył żądań); nowych stron poza Google brak, więc żądania tylko dla strony z kamieniem.
+4. Budżet 22:43 „zwolnij”, kamieni 1, reset za 9 h: na 28.10 rano jeden kamień, reszta lekka.
+
+## 2026-10-27 22:45
+**Kanał:** pomiar (Z16, bilans planu).
+**Co zrobione:** bilans planu 27/28.10 w dzienniku z tabelą zadań, kanałów i decyzją: kamień 28.10 to /integracja-crm-z-erp; nic nie poszło w świat, budżet „zwolnij” pozwala na jedno zadanie.
+**Ruch:** raport_ruchu 22:43: doba 75 odsłon, 59 osób (-46% wobec średniej 138,4); tydzień 923 / 529; źródła: b2b-email 32 (piksel otwarć, nie ludzie), github 8, facebook 4, www.facebook.com 3, x 2; X 2 sesje, Threads 1, LinkedIn 0, YouTube 0; uruchomienia narzędzi 1. pomiar-kanalow 24 h: ludzie 31, z odsyłaczem 15.
+**Dowód:** cykl/dziennik.md „Bilans planu 2026-10-27/28”, Z16 [x] w cykl/plan-ruchu.md.
+**Dla Pawła:**
+**Zostało otwarte:** Z17 28.10 01:50 (serii nie ma, tylko potwierdzić brak logu).
