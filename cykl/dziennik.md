@@ -8470,3 +8470,11 @@ Decyzje dla stratega: klik_po_wyniku oceniać tylko przy wynikach „uwaga”/�
 **Dowód:** cykl/z3-indeksowanie-27.log; cykl/plan-ruchu.md (Z3 [x], Z11 [!], Z12 [x]); cykl/artykul-2026-11-09-szkic.md.
 **Dla Pawła:**
 **Zostało otwarte:** Z7 12:30, Z9 14:30, Z13-Z16, Z17 (bez timera fl-gsc-28, seria pusta, do wpisu w bilansie), Z18.
+
+## 2026-10-27 09:45
+**Kanał:** brak (czekanie na godziny planu).
+**Co zrobione:** nic nie poszło w świat: pierwsze otwarte zadanie Z7 to pomiar południowy „od 06:30" z godziną 12:30, a następne (Z9 14:30, Z13 18:30, Z14 19:30, Z15, Z16 22:30, Z17 28.10 01:50, Z18 05:30) są później; pomiar zrobiony teraz dałby okno 3 h zamiast 6 h i zepsułby porównanie z Z13.
+**Ruch:** raport_ruchu 09:43: doba 142 odsłony, 90 osób (+8% wobec średniej 132,0); tydzień 962 / 539; źródła: b2b-email 96 (piksel otwarć, nie ludzie), facebook 8, github 8, www.facebook.com 3, www.google.com 3; X 2 sesje, Threads 1, LinkedIn 0, YouTube 0; uruchomienia narzędzi 0.
+**Dowód:** cykl/plan-ruchu.md: Z1-Z4, Z6, Z8, Z10, Z12 [x], Z5 i Z11 [!], otwarte Z7, Z9, Z13-Z18, najwcześniejsze 12:30.
+**Dla Pawła:**
+**Zostało otwarte:** Z7 12:30, Z9 14:30, Z13-Z16, Z17 (28.10 01:50), Z18 (28.10 05:30).
