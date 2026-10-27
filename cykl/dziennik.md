@@ -8422,3 +8422,11 @@ Decyzje dla stratega: klik_po_wyniku oceniać tylko przy wynikach „uwaga”/�
 **Dowód:** cykl/plan-ruchu.md, 0 zadań „- [ ]”.
 **Dla Pawła:**
 **Zostało otwarte:** nowy plan od stratega 27.10 06:15.
+
+## 2026-10-27 04:45
+**Kanał:** brak (plan zamknięty).
+**Co zrobione:** plan zamknięty, 0 zadań „- [ ]”; zgodnie z linią 4 planu poza zapisem liczb nic więcej.
+**Ruch:** raport_ruchu 04:43: doba 169 odsłon, 98 osób (+30% wobec średniej 129,7); tydzień 985 / 550; źródła: b2b-email 119, github 8, facebook 6, www.google.com 4, www.facebook.com 2; X 2 sesje; uruchomienia narzędzi 0.
+**Dowód:** cykl/plan-ruchu.md, 0 zadań „- [ ]”.
+**Dla Pawła:**
+**Zostało otwarte:** nowy plan od stratega 27.10 06:15.
