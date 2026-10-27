@@ -8552,3 +8552,11 @@ Decyzje dla stratega: klik_po_wyniku oceniać tylko przy wynikach „uwaga”/�
 **Dowód:** cykl/plan-ruchu.md, Z13 [x] z liczbami.
 **Dla Pawła:**
 **Zostało otwarte:** Z14 19:30, Z15 20:30, Z16 22:30 (bilans), Z17 28.10 01:50.
+
+## 2026-10-27 19:45
+**Kanał:** dystrybucja (social, Z14) i Google (Z15), pomiar.
+**Co zrobione:** Z14: sprawdzone publikacje ze zlecenia Z4, link do /strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef poszedł dziś na Facebooku (07:47, komentarz w grupie) i na X (09:27), LinkedIn ma go w kolejce na 28.10, Instagram w opisie nieopublikowanej rolki sp8; Z15: oba artykuły (maly-zus-plus, certyfikat-ksef) są w indeksie Google.
+**Ruch:** ostatnia doba 81 odsłon, 62 osoby (-41% wobec średniej 138); źródła: b2b-email 35, github 8, facebook 4, google 3, www.facebook.com 3; X 2 sesje, Threads 1, LinkedIn 0; uruchomienia narzędzi 0.
+**Dowód:** https://x.com/PaweIwanek/status/2114997265702244570; komentarz FB fbid=122115404547504058 (fluxlab-meta/posty/aktywnosc.jsonl 07:47:43); sesje z kampanii od 00:00: 4, wszystkie z Facebooka 07:48:07-07:48:26 w parach (Android, Windows, z utm i bez w tej samej sekundzie), czyli najwyżej 2 osoby, możliwe że podgląd linku; z X 0, z Instagrama 0. GSC --tylko-stan 19:44 2 × „Adres URL znajduje się w Google”; ludzie na maly-zus-plus od prośby 0, na certyfikat-ksef od publikacji 0. Linie Z14, Z15 w cykl/plan-ruchu.md.
+**Dla Pawła:**
+**Zostało otwarte:** Z16 bilans planu 22:30, Z17 wynik serii indeksowania 28.10 01:50 (Z11 było „[!]”, więc timer fl-gsc-28 może nie istnieć).
