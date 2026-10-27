@@ -8444,3 +8444,11 @@ Decyzje dla stratega: klik_po_wyniku oceniać tylko przy wynikach „uwaga”/�
 **Ocena kanałów:** Google 4 / 24 / 8 h; social 6 / 45 / 2 h (nowy temat certyfikat-ksef 0 ludzi, stare serie po 1-6); GitHub 6 / 6 / 0 h; Bing i AI 1 / 4 / 1 h (pauza); narzędzia 0 / 14 uruchomień / 2 h; mail 0 / 1 / 0 h (wyłączony). Pomiar zjadł 10 h z 23, dziś 5 zadań z 18.
 **Plan:** cykl/plan-ruchu.md, 18 zadań; kamienie Z2 (3 linki do co-to-jest-automatyzacja-procesow-biznesowych) i Z5 (title numeracja-faktur-ksef-2027 albo faktura-vat-rr-ksef); Z6 GitHub README z utm; Z11 seria indeksowania 28.10 01:45 do 7 adresów.
 **Mail do Pawła:** 06:25, „FluxLab ruch, plan na 27.10: 37 ludzi w dobę (17 z odsyłaczem)”; Dla Pawła: decyzja o zimnych mailach, baner cookies na telefonie.
+
+## 2026-10-27 07:35
+**Kanał:** Google (Z1 i Z2 planu 27/28).
+**Co zrobione:** wdrożone trzy linki wewnętrzne do /strefa-wiedzy/co-to-jest-automatyzacja-procesow-biznesowych (246 wyświetleń w 7 dni, 0 kliknięć) i rozpisane przyczyny wzrostu niezindeksowanych w GSC.
+**Ruch:** raport_ruchu 06:43: 152 odsłony, 92 osoby w dobie (+16% wobec średniej 130,7); źródła b2b-email 108 (piksel otwarć), github 8, facebook 6, google 4, facebook.com 2; X 2 sesje; uruchomienia narzędzi 0. Tydzień 981 odsłon, 546 osób.
+**Dowód:** commit a6fb76d; `curl | grep -c` = 1 na /automatyzacja-procesow-biznesowych, /strefa-wiedzy/automatyzacja-crm-od-czego-zaczac, /strefa-wiedzy/kiedy-ai-ma-sens-a-kiedy-nie; IndexNow Yandex 200, Naver 200; telefon-test OK. GSC Indeksowanie (raport 23.10 wobec 19.10): kanoniczna 159/116, przekierowanie 5/5, noindex 2/2, 404 2/1, zeskanowana 40/28, inny 4xx 4/1. Wzrost kanonicznej to kopie z mta-sts.fluxlab.pl (111, dziś 301) i www (48), więc nic do naprawy; z 40 zeskanowanych tylko 1 strona HTML z sitemap (maly-zus-plus, już w serii 27.10). `cykl/gsc-niezindeksowane-2026-10-27.txt`.
+**Dla Pawła:**
+**Zostało otwarte:** Z3 od 09:00 (gsc_indeksuj dla 3 adresów z Z2), Z4 o 09:30 i dalej według planu. Z1 nie daje nowych adresów do serii Z11, lista 28.10 musi wziąć adresy z innego źródła.
