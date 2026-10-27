@@ -8452,3 +8452,13 @@ Decyzje dla stratega: klik_po_wyniku oceniać tylko przy wynikach „uwaga”/�
 **Dowód:** commit a6fb76d; `curl | grep -c` = 1 na /automatyzacja-procesow-biznesowych, /strefa-wiedzy/automatyzacja-crm-od-czego-zaczac, /strefa-wiedzy/kiedy-ai-ma-sens-a-kiedy-nie; IndexNow Yandex 200, Naver 200; telefon-test OK. GSC Indeksowanie (raport 23.10 wobec 19.10): kanoniczna 159/116, przekierowanie 5/5, noindex 2/2, 404 2/1, zeskanowana 40/28, inny 4xx 4/1. Wzrost kanonicznej to kopie z mta-sts.fluxlab.pl (111, dziś 301) i www (48), więc nic do naprawy; z 40 zeskanowanych tylko 1 strona HTML z sitemap (maly-zus-plus, już w serii 27.10). `cykl/gsc-niezindeksowane-2026-10-27.txt`.
 **Dla Pawła:**
 **Zostało otwarte:** Z3 od 09:00 (gsc_indeksuj dla 3 adresów z Z2), Z4 o 09:30 i dalej według planu. Z1 nie daje nowych adresów do serii Z11, lista 28.10 musi wziąć adresy z innego źródła.
+
+<!-- WYSLANO 2026-10-27 07:04 -->
+
+## 2026-10-27 07:52
+**Kanał:** social, GitHub, Google, pomiar (Z4, Z5, Z6, Z8, Z10 planu 27/28).
+**Co zrobione:** prośba do FL_meta, FL_instagram, FL_linkedin i FL_twitter o link do kiedy-odliczyc-vat-z-faktury-ksef w istniejących seriach, linki z utm w README dwóch kolejnych repo, osobna linia /grupa-ksef w pomiarze i odczyt kandydatów na kamień 28.10.
+**Ruch:** raport_ruchu 07:43: 150 odsłon, 92 osoby w dobie (+15% wobec średniej 130,9); tydzień 975 odsłon, 542 osoby; X 2 sesje, Threads 1, LinkedIn 0, YouTube 0; uruchomienia narzędzi 0. Pomiar kanałów po odsiewie /grupa-ksef: ludzie 24 h 28 (bez odsyłacza 16, github 6, google 4, bing 1, x 1), 7 dni 322.
+**Dowód:** Z4 „Doręczono do” ×4 (07:43). Z5 [!]: frazy z GSC już stoją w title obu stron (numeracja-faktur-ksef-2027 „ksef błąd 440” poz. 8,6; faktura-vat-rr-ksef „faktura rr a ksef” poz. 13), więc bez zmiany. Z6: 8 sesji github 27.10 02:04-02:17, każda 1 odsłona /automatyzacja-ai, przy 1 wyświetleniu repo w GitHub traffic, czyli salwa automatu, nie ludzie; README fluxlab-video-reklamy 5fb4e6f, fluxlab-ghl-integration 80d2f86. Z8: commit 1f457d3, ludzie 24 h 33 → 28, różnica 5 = wyjścia do grupy (facebook 4, x 1). Z10: cykl/z10-kandydaci-2026-10-27.txt.
+**Dla Pawła:**
+**Zostało otwarte:** Z3 od 09:00, Z7 o 12:30, Z9 od 14:30 (GSC wciąż do 24.10), Z11-Z18 według planu. Kamień 28.10: /integracja-crm-z-erp („kto wdraża integrację crm z erp” poz. 9,8-15,4, nie w title).

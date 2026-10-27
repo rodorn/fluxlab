@@ -1,0 +1,34 @@
+Z10 27.10 07:50, GSC Skuteczność, filtr strony, 28 dni (27.09-24.10), bez zmian na stronach
+
+/integracja-crm-z-erp: 0 kliknięć, 89 wyświetleń, poz. śr. 19,1
+  title: "Integracja CRM z ERP bez rozjazdu danych | Fluxlab"
+  zapytania (wyśw., pozycja):
+    integracja crm                            9  34,0
+    integracja crm z erp                      6  12,7   (w title: tak)
+    kto wdraża integrację crm z erp           5  15,4   (w title: nie, „kto wdraża”)
+    kto wdraża integrację crm z erp w polsce  4   9,8   (w title: nie)
+    crm księgowość                            3  14,0
+    crm z danymi z erp                        3  15,3
+    crm i erp integracja                      3  21,7
+    ile trwa integracja erp z crm?            3  24,3
+    integracja systemów erp i crm             3  29,7
+    integracja erp z crm                      3  30,0
+  główna fraza: „integracja crm z erp” 6 wyśw. poz. 12,7, już w title; rodzina „kto wdraża … w Polsce” 9 wyśw. poz. 9,8-15,4, nie w title
+
+/automatyzacja-dla-ecommerce: 0 kliknięć, 82 wyświetleń, poz. śr. 59,4
+  title: "Automatyzacja dla e-commerce, Shopify i Allegro | Fluxlab"
+  zapytania (wyśw., pozycja):
+    system ticketowy dla e-commerce               17  67,4  (w title: nie)
+    integracja systemu ticketowego z e-commerce    6  77,3
+    oprogramowanie dla e-commerce                  6  81,0
+    automatyzacja e-commerce                       4  68,3  (w title: tak)
+    program do obsługi zamówień                    4  89,8
+    automatyzacja sprzedaży e-commerce             3  83,0
+    "e-mail marketing"                             2   5,0
+    automatyzacja allegro                          2  61,0
+    automatyzacja sprzedaży internetowej           2  83,0
+    "infaktem"                                     1   2,0
+  główna fraza: „system ticketowy dla e-commerce” 17 wyśw. poz. 67,4, nie w title, pozycje poza 50
+
+Wniosek dla stratega: kamień 28.10 lepiej na /integracja-crm-z-erp (poz. 10-15, czyli strona 1-2 Google);
+/automatyzacja-dla-ecommerce stoi na poz. ~60-90, zmiana title tam nie da kliknięć.
