@@ -8860,3 +8860,11 @@ Decyzje dla stratega:
 **Dowód:** sesja napisz FL_marketing doręczono 21:45; odpowiedź Zoho INBOX::245 (28.10 19:21).
 **Dla Pawła:**
 **Zostało otwarte:** Z18 nie wcześniej niż 29.10 05:30; odpowiedź FL_marketing w sprawie szablonu przypomnień.
+
+## 2026-10-28 22:43
+**Kanał:** widoczność w asystentach AI (poza planem, bo jedyne otwarte zadanie Z18 ma warunek „nie wcześniej niż 29.10 05:30”).
+**Co zrobione:** /kalkulator-podatkowy, na który ChatGPT przyprowadził 2 z 7 sesji AI w 30 dni (Z6: pierwszy akapit „NIE”), ma teraz w pierwszym akapicie odpowiedź, która forma się opłaca (ryczałt przy niskich kosztach i stawce do 12%, liniowy albo skala przy wysokich); zdublowane pytanie FAQ o to samo usunięte, więc strona jest krótsza (FAQ 3 pytania).
+**Ruch:** ostatnia doba 143 odsłony, 66 osób (+8% wobec średniej 131,9); źródła b2b-email 82, b2b 8, www.google.com 3, com.linkedin.android 2, facebook 2; uruchomienia narzędzi 8.
+**Dowód:** commit 05f5086, tekst odczytany z produkcji https://fluxlab.pl/kalkulator-podatkowy, zrzut z telefonu bez błędów konsoli, IndexNow 1 adres (przyjęte 2 z 3).
+**Dla Pawła:**
+**Zostało otwarte:** Z18 nie wcześniej niż 29.10 05:30; /dobor-samochodu ma ten sam problem z pierwszym akapitem (Z6), do decyzji stratega; niezacommitowane obrazy OG w app/ksef-2027 i app/numer-ksef należą do innej sesji, nie ruszane.
