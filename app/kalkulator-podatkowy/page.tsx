@@ -35,11 +35,6 @@ export const metadata: Metadata = {
 
 const faqs = [
   {
-    question: "Która forma opodatkowania jest najlepsza dla JDG w 2026?",
-    answer:
-      "Zależy od przychodu, kosztów i stawki ryczałtu. Przy niskich kosztach i stawce do 12% często wygrywa ryczałt, przy wysokich kosztach liniowy lub skala.",
-  },
-  {
     question: "Jak liczy się składkę zdrowotną na ryczałcie w 2026?",
     answer:
       "9% od podstawy zależnej od rocznego przychodu po odliczeniu składek społecznych (do 60 000 zł, do 300 000 zł, powyżej). Miesięcznie: 498,35 zł, 830,58 zł albo 1 495,04 zł.",
@@ -73,7 +68,9 @@ export default function KalkulatorPodatkowyPage() {
                 <p className="section-label mb-3">Narzędzie</p>
                 <h1 className="h1-strony">Kalkulator JDG 2026</h1>
                 <p className="mt-3 text-lg text-gray-600 dark:text-gray-400">
-                  Porównaj ryczałt, podatek liniowy i skalę podatkową.
+                  Przy niskich kosztach i stawce ryczałtu do 12% zwykle
+                  wygrywa ryczałt, przy wysokich kosztach liniowy albo skala.
+                  Wpisz przychód i koszty, a policzymy wszystkie trzy formy.
                 </p>
                 <ul className="mt-4 space-y-2">
                   {[
