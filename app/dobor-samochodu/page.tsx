@@ -39,12 +39,7 @@ const faqs = [
       "Kreator działa na regułach, nie zgaduje. Każda odpowiedź odsiewa segmenty, nadwozia i moce, które nie spełniają warunków. Na końcu dostajesz profil auta, nie jeden model.",
   },
   {
-    question: "Elektryk, hybryda czy spalinowy, jak wybrać napęd?",
-    answer:
-      "Do 10 tys. km rocznie w mieście i z ładowaniem w domu: elektryk. 10 do 20 tys. km bez gniazdka: pełna hybryda. Powyżej 25 tys. km po trasach: diesel.",
-  },
-  {
-    question: "Dlaczego sugerujesz segmenty, a nie konkretne modele?",
+    question: "Dlaczego sugerujecie segmenty, a nie konkretne modele?",
     answer:
       "Modele i wersje zmieniają się co roku, a profil (segment, nadwozie, napęd, moc) zostaje aktualny. Z nim przeglądasz bieżący rynek.",
   },
@@ -70,8 +65,10 @@ export default function DoborSamochoduPage() {
               Dobierz idealny samochód
             </h1>
             <p className="mt-4 text-lg text-gray-600 dark:text-gray-400">
-              Odpowiedz na kilka pytań, a podpowiemy segment, nadwozie i moc
-              pasujące do Twojego stylu jazdy.
+              Do 10 tys. km rocznie w mieście z ładowaniem w domu wybierz
+              elektryka, przy 10-20 tys. km bez gniazdka pełną hybrydę, a
+              powyżej 25 tys. km po trasach diesla. Odpowiedz na kilka pytań,
+              a podpowiemy też segment, nadwozie i moc.
             </p>
           </div>
         </section>
