@@ -8658,3 +8658,11 @@ Wynik Z17 (28.10 01:44): seria 0 z 0, timer fl-gsc-28 nie istnieje, logu brak, �
 **Dowód:** ten wpis; cykl/plan-ruchu.md bez otwartych zadań.
 **Dla Pawła:**
 **Zostało otwarte:** nowy plan od stratega 06:15 (kamień 28.10: /integracja-crm-z-erp).
+
+## 2026-10-28 03:45
+**Kanał:** brak (plan 27/28 zamknięty).
+**Co zrobione:** nic nie poszło w świat, bo plan 27/28 nie ma żadnego „- [ ]”, a plan każe wtedy zapisać tylko liczby; nowy plan od stratega 06:15.
+**Ruch:** raport_ruchu 03:43: doba 50 odsłon, 43 osoby (-65% wobec średniej 141,4); tydzień 896 / 505; źródła: b2b-email 17 (piksel otwarć), facebook 3, www.google.com 3, m.facebook.com 2, www.facebook.com 2; X 1 sesja, Threads 1, LinkedIn 0, YouTube 0; uruchomienia narzędzi 2 (numer_ksef 1, skan 1).
+**Dowód:** ten wpis; cykl/plan-ruchu.md: 0 otwartych zadań.
+**Dla Pawła:**
+**Zostało otwarte:** nowy plan od stratega 06:15 (kamień 28.10: /integracja-crm-z-erp).
