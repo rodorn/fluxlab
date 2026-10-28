@@ -44,7 +44,7 @@ księgowe i ich funkcje; maksymalna liczba faktur w jednej paczce.
 ## Szkic (Z22, 26.10.2026)
 
 Adres: /strefa-wiedzy/faktury-kosztowe-z-ksef
-Tytuł: Faktury kosztowe z KSeF prosto do programu księgowego
+Tytuł: Faktury kosztowe z KSeF do programu księgowego (46 zn., z „ | Fluxlab” 55; poprzedni z „prosto” miał 63)
 Opis: KSeF nie powiadamia o nowych fakturach zakupowych. Sprawdź, jak program ma je pobierać sam, jakie uprawnienie nadać i jakie limity ma API.
 
 ### Faktura kosztowa jest Twoja w chwili nadania numeru
@@ -71,3 +71,9 @@ FAQ (3):
    Nie, system nie wysyła powiadomień. Sprawdza program albo Ty. [F2]
 3. Czy biuro rachunkowe może pobierać moje faktury kosztowe?
    Tak, po nadaniu mu uprawnienia do przeglądania faktur. [F9]
+
+
+## Kontrola Z2, 28.10.2026 07:05
+Źródła odczytane ponownie 28.10 (curl raz na źródło, 200): FAQ MF KSeF 2.0, CIRFMF uprawnienia.md, przyrostowe-pobieranie-faktur.md, PDF limitów wer. 1.1. F1-F12: 12 z 12 zgodnych ze źródłem (F1 pyt. 11 i 37, F2 pyt. 38, F3 pyt. 40, F4 pyt. 39 i 41, F5 „Obowiązek otrzymywania faktur w KSeF będzie istniał od 1.02.2026”, F6, F7 „wyłącznie w postaci xml”, F8 „archiwizowana przez 10 lat”, F9 InvoiceRead + canDelegate, F10 „ważny do czasu jego unieważnienia”, F11 20/h, 4/h na typ, min. 15 minut, F12 20/h eksport i metadane, 64/h po numerze).
+Linki wewnętrzne 4 z 4 = 200: /ksef-integracja, /strefa-wiedzy/faktury-z-ksef-po-zmianie-biura, /numer-ksef, /slownik.
+Title skrócony do 55 zn. z sufiksem, description 138 zn., FAQ 3, akapity 2-3 zdania.

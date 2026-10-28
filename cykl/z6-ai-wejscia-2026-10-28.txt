@@ -1,0 +1,20 @@
+Z6 2026-10-28, wejścia z asystentów AI, 30 dni (28.09-28.10), licznik ruch.sqlite po filtrach botów z raport_ruchu.py
+Szukane odsyłacze: chatgpt.com, perplexity, copilot, gemini. Perplexity, Copilot, Gemini: 0.
+
+sesji AI 30 dni: 7
+2026-10-02 12:45 chatgpt /kalkulator-podatkowy odsłon 1 zdarzenia -
+2026-10-05 11:35 chatgpt /audyt-kurierski odsłon 1 zdarzenia -
+2026-10-06 10:39 chatgpt /audyt-kurierski odsłon 2 zdarzenia -
+2026-10-21 18:14 chatgpt /kalkulator-podatkowy odsłon 1 zdarzenia -
+2026-10-25 17:30 chatgpt /analiza-lokalizacji odsłon 13 zdarzenia ['uruchomiono_skan', 'czat_otwarty', 'uruchomiono_skan', 'uruchomiono_skan', 'uruchomiono_skan']
+2026-10-27 09:51 chatgpt /dobor-samochodu odsłon 1 zdarzenia -
+2026-10-27 14:06 chatgpt /dobor-samochodu odsłon 1 zdarzenia -
+
+W tygodniu 21-28.10: 4 sesje, w ostatniej dobie: 0 (ostatnia 27.10 14:06). Uruchomienie narzędzia: 1 sesja (25.10, /analiza-lokalizacji, 4 skany i czat).
+
+Strony wejścia: /kalkulator-podatkowy 2, /audyt-kurierski 2, /dobor-samochodu 2, /analiza-lokalizacji 1. Remis, wzięte 2 najświeższe z remisu + trzecia dla porządku.
+/dobor-samochodu: NIE. Pierwszy akapit to instrukcja („Odpowiedz na kilka pytań, a podpowiemy segment…”), nie odpowiedź, jak dobrać samochód.
+/kalkulator-podatkowy: NIE. Jedno zdanie „Porównaj ryczałt, podatek liniowy i skalę podatkową.”, bez odpowiedzi, która forma się opłaca.
+/audyt-kurierski: TAK. Dwa zdania: dopłata paliwowa do 45% ceny bazowej, zmienia się co dwa tygodnie, nikt nie sprawdza linii faktury.
+
+Próg kamienia (4 w tygodniu i 2 w ostatniej dobie): 4 w tygodniu tak, 2 w dobie nie (0). Kamień „pierwszy akapit” warunkowo, kandydaci /dobor-samochodu i /kalkulator-podatkowy.

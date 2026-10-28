@@ -1,0 +1,14 @@
+Z1 2026-10-28, GSC Skuteczność, filtr page=!<adres>, 28 dni (28.09-25.10.2026), odczyt 06:50
+
+/n8n                 kliknięcia 0, wyświetlenia 1,  poz. śr. 9,0   zapytania: brak (ukryte)
+  title: "n8n, automatyzacja workflow z pełną kontrolą | Fluxlab"
+/wdrozenie-n8n-cena  kliknięcia 0, wyświetlenia 78, poz. śr. 9,5
+  zapytania: wdrożenie n8n 21 wyśw. poz. 14,4 | ile kosztuje n8n 9 / 8,0 | n8n ile kosztuje 8 / 9,4 | n8n cena 6 / 7,8 | "vps" 3 / 6,7 | wdrożenia n8n 2 / 13,0
+  title: "Wdrożenie n8n, cena: z czego składa się koszt | Fluxlab"  (fraza „wdrożenie n8n" JEST w title, „n8n cena" częściowo, „ile kosztuje n8n" NIE)
+/n8n-dla-crm         kliknięcia 0, wyświetlenia 5,  poz. śr. 7,8   zapytania: wdrożenie n8n 1 / 23,0
+  title: "n8n dla CRM: automatyzacja leadów i raportów | Fluxlab"
+/make-vs-n8n-crm     kliknięcia 0, wyświetlenia 0,  poz. śr. -     zapytania: brak
+  title: "Make czy n8n do automatyzacji CRM? | Fluxlab"
+
+Wniosek: główna fraza „wdrożenie n8n" (poz. 14,4) już stoi w title /wdrozenie-n8n-cena, więc zmiana title jej nie pomoże; drugą grupą są pytania o koszt („ile kosztuje n8n" + „n8n ile kosztuje", 17 wyśw., poz. 8-9,4), których dosłownie w title nie ma.
+kandydat: https://fluxlab.pl/wdrozenie-n8n-cena (fraza „ile kosztuje n8n", 17 wyśw. w 28 dni, poz. 8-9,4, brak w title)

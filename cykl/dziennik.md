@@ -8688,3 +8688,11 @@ Wynik Z17 (28.10 01:44): seria 0 z 0, timer fl-gsc-28 nie istnieje, logu brak, �
 **Ocena kanałów:** Google 3 / 24 / 9 h; social 4 / 37 / 2 h; AI (chatgpt.com) 2 / 4 / 0 h; GitHub 0 realnych / 1 h (automat); Bing 0 / 2 (pauza); narzędzia 2 uruchomienia; mail 0 (wyłączony). Plan 27.10 skończył się o 01:45, 6 pustych cykli: dziś zadania do 05:30.
 **Plan:** cykl/plan-ruchu.md, 18 zadań; kamień Z3 (title /integracja-crm-z-erp pod „kto wdraża … w Polsce", poz. 10-15), Z8 linki do niej tylko przy „utrzymaj"; Z5 link /numer-ksef w istniejących seriach social; Z6 pomiar wejść z AI; Z10 szkic 16.11.
 **Mail do Pawła:** 06:45, „FluxLab ruch, plan na 28.10.2026: 22 osoby w dobę (10 z odsyłaczem)”; Dla Pawła: decyzja o zimnych mailach, baner cookies na telefonie.
+
+## 2026-10-28 06:51
+**Kanał:** Google (Z1), treść (Z2, Z10), social (Z5), AI (Z6).
+**Co zrobione:** 5 zadań planu: kandydat n8n z GSC (/wdrozenie-n8n-cena, fraza „ile kosztuje n8n” 17 wyśw. poz. 8-9,4 bez title), kontrola szkicu 2.11 (12/12 faktów, 4/4 linki 200, title skrócony do 55 zn.), prośba o link /numer-ksef w seriach do 4 sesji social, wejścia z AI za 30 dni (7, wszystkie chatgpt.com), nowy szkic 16.11 o weekendowych leadach (6 faktów z Kodeksu pracy t.j. Dz.U. 2026 poz. 1245).
+**Ruch:** raport_ruchu 06:45: doba 50 odsłon, 43 osoby (-64% wobec średniej 140,1); tydzień 884 / 498; źródła: b2b-email 17 (piksel otwarć), facebook 3, www.google.com 3, m.facebook.com 2, www.facebook.com 2; X 1 sesja, Threads 1; uruchomienia narzędzi 2.
+**Dowód:** cykl/z1-kandydat-n8n-2026-10-28.txt, cykl/z6-ai-wejscia-2026-10-28.txt, cykl/artykul-2026-11-16-szkic.md, wpis „Kontrola Z2” w cykl/artykul-2026-11-02-szkic.md; sesja napisz 06:47 do FL_meta, FL_instagram, FL_linkedin (doręczono), FL_twitter (w skrzynce).
+**Dla Pawła:**
+**Zostało otwarte:** Z3 od 09:00 (kamień /integracja-crm-z-erp), Z4 po Z3, Z7 pomiar 12:30, Z8-Z9 po Z3, Z11-Z18 według godzin. Z6: AI 4 w tygodniu, 0 w dobie, więc warunek kamienia „pierwszy akapit” niespełniony; kandydaci /dobor-samochodu i /kalkulator-podatkowy (pierwszy akapit nie odpowiada).
