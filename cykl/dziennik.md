@@ -8746,3 +8746,11 @@ Wynik Z17 (28.10 01:44): seria 0 z 0, timer fl-gsc-28 nie istnieje, logu brak, �
 **Dowód:** plan Z7 [x]: z odsyłaczem 0 / bez 11, uruchomienia 3, lead_* 0, klik_po_wyniku 0, /integracja-crm-z-erp 0 i /numer-ksef 0 odsłon ludzi, Zoho INBOX 1 (OLX marketing), zapytań od ludzi 0.
 **Dla Pawła:**
 **Zostało otwarte:** Z13 (18:30), Z14 (19:30), Z16 (21:30), Z17 (22:30), Z18 nie wcześniej niż 29.10 05:30.
+
+## 2026-10-28 13:43
+**Kanał:** żaden (plan ruchu: otwarte Z13-Z18 to pomiary przypięte do godzin 18:30-05:30; budżet „wstrzymaj”, prognoza 154% tygodnia).
+**Co zrobione:** brak zmian, bo każde otwarte zadanie mierzy okno, które jeszcze trwa (Z13 od 12:30, Z14 publikacje po zleceniu Z5, Z16 stan indeksowania po Z4), a zrobione teraz dałoby niepełne liczby; przy „wstrzymaj” nie biorę pracy spoza planu.
+**Ruch:** ostatnia doba 51 odsłon, 33 osoby (−61% wobec średniej 132,3); wejścia najczęściej / 18, /kalkulator-podatkowy 7, /audyt-strony 5; X 1 sesja, LinkedIn 0, YouTube 0; uruchomienia narzędzi 5 (kalkulator_podatkowy 3, numer_ksef 1, skan 1).
+**Dowód:** cykl/plan-ruchu.md bez zmian (12 z 18 [x]); `budzet`: rytm wstrzymaj.
+**Dla Pawła:**
+**Zostało otwarte:** Z13 (18:30), Z14 (19:30), Z16 (21:30), Z17 (22:30), Z18 nie wcześniej niż 29.10 05:30.
