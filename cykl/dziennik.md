@@ -8738,3 +8738,11 @@ Wynik Z17 (28.10 01:44): seria 0 z 0, timer fl-gsc-28 nie istnieje, logu brak, �
 **Dowód:** cykl/gsc-zapytania-2026-10-28.txt, cykl/gsc-strony-2026-10-28.txt (kliknięcia stron 22→20, wyśw. 1377→1371, co-to-jest-automatyzacja-procesow-biznesowych 212→168, ebook KSeF 13→25); cykl/z15-narzedzia-2026-10-28.txt (z zewnątrz /analiza-lokalizacji 7 uruchomień w 3 sesjach z Google i chatgpt.com, /numer-ksef 3 sesje z Google, social 1 uruchomienie); plan Z12 i Z15 [x].
 **Dla Pawła:**
 **Zostało otwarte:** Z7 (12:30), Z13, Z14, Z16, Z17 według godzin, Z18 nie wcześniej niż 29.10 05:30 (Z12 zapisał pliki, więc Z18 to baza 28 dni dla /integracja-crm-z-erp).
+
+## 2026-10-28 12:47
+**Kanał:** pomiar (plan ruchu Z7).
+**Co zrobione:** pomiar okna 06:30-12:47 po odsiewie par i serii: 11 sesji ludzi, wszystkie bez odsyłacza, 3 uruchomienia kalkulatora podatkowego, zero leadów i zapytań; kolejne zadania planu (Z13 od 18:30) czekają na swoje godziny.
+**Ruch:** ostatnia doba 50 odsłon, 34 osoby (−63% wobec średniej 133,6); źródła: b2b-email 5 (piksel), www.google.com 3, chatgpt.com 1, x 1, facebook 1; uruchomienia narzędzi 5.
+**Dowód:** plan Z7 [x]: z odsyłaczem 0 / bez 11, uruchomienia 3, lead_* 0, klik_po_wyniku 0, /integracja-crm-z-erp 0 i /numer-ksef 0 odsłon ludzi, Zoho INBOX 1 (OLX marketing), zapytań od ludzi 0.
+**Dla Pawła:**
+**Zostało otwarte:** Z13 (18:30), Z14 (19:30), Z16 (21:30), Z17 (22:30), Z18 nie wcześniej niż 29.10 05:30.
