@@ -8696,3 +8696,13 @@ Wynik Z17 (28.10 01:44): seria 0 z 0, timer fl-gsc-28 nie istnieje, logu brak, �
 **Dowód:** cykl/z1-kandydat-n8n-2026-10-28.txt, cykl/z6-ai-wejscia-2026-10-28.txt, cykl/artykul-2026-11-16-szkic.md, wpis „Kontrola Z2” w cykl/artykul-2026-11-02-szkic.md; sesja napisz 06:47 do FL_meta, FL_instagram, FL_linkedin (doręczono), FL_twitter (w skrzynce).
 **Dla Pawła:**
 **Zostało otwarte:** Z3 od 09:00 (kamień /integracja-crm-z-erp), Z4 po Z3, Z7 pomiar 12:30, Z8-Z9 po Z3, Z11-Z18 według godzin. Z6: AI 4 w tygodniu, 0 w dobie, więc warunek kamienia „pierwszy akapit” niespełniony; kandydaci /dobor-samochodu i /kalkulator-podatkowy (pierwszy akapit nie odpowiada).
+
+<!-- WYSLANO 2026-10-28 07:04 -->
+
+## 2026-10-28 07:50
+**Kanał:** pomiar (GitHub, Z11 z planu ruchu).
+**Co zrobione:** Z11 zamknięte: linki w README dwóch repo nie przyprowadziły nikogo, GitHub zostaje bez godzin.
+**Ruch:** raport_ruchu 07:43: doba 48 odsłon, 41 osób (-66% wobec średniej 139,3); tydzień 880 / 496; najczęstsze strony: / 11, /strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef 4, /audyt-strony 3, /dobor-samochodu 2; X 1 sesja, LinkedIn 0, Threads 0, YouTube 0; uruchomienia narzędzi 2 (numer_ksef 1, skan 1).
+**Dowód:** licznik: 0 sesji github od 27.10 11:30 po odsiewie; gh api traffic: fluxlab-video-reklamy 1 wyświetlenie w 14 dni (25.10), fluxlab-ghl-integration 1 (14.10).
+**Dla Pawła:**
+**Zostało otwarte:** Z3 (title /integracja-crm-z-erp) od 09:00, potem Z4; Z7 o 12:30; Z8 zależy od budżetu (teraz „zwolnij”, czyli pominięte, jeśli się nie zmieni).
