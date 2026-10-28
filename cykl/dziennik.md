@@ -8731,7 +8731,7 @@ Wynik Z17 (28.10 01:44): seria 0 z 0, timer fl-gsc-28 nie istnieje, logu brak, �
 **Dla Pawła:**
 **Zostało otwarte:** Z7 (12:30), Z12-Z17 według godzin planu, Z18 nie wcześniej niż 29.10 05:30.
 
-## 2026-10-28 12:00
+## 2026-10-28 11:46
 **Kanał:** pomiar (plan ruchu Z12, Z15; Z7 przypięty do okna 06:30-12:30, zostaje).
 **Co zrobione:** Search Console pokazał nowy tydzień 20-26.10, więc zapisano tabele zapytań i stron z porównaniem do 19-25.10; policzono uruchomienia narzędzi przez ludzi z 14 dni z kanałem i stroną wejścia.
 **Ruch:** ostatnia doba 51 odsłon, 35 osób (raport_ruchu); źródła b2b-email 6 (piksel, nie ludzie), www.google.com 3, chatgpt.com 1, x 1, facebook 1; pomiar-kanalow 24 h: 27 sesji ludzi, 20 bez odsyłacza.

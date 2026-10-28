@@ -1,4 +1,4 @@
-# GSC fluxlab.pl, 7 dni (20-26.10), zakładka Strony, stan 28.10.2026 11:58: adres	kliknięcia	wyświetlenia (123 wiersze, zapisane pierwsze 100)
+# GSC fluxlab.pl, 7 dni (20-26.10), zakładka Strony, stan 28.10.2026 11:45: adres	kliknięcia	wyświetlenia (123 wiersze, zapisane pierwsze 100)
 https://fluxlab.pl/	10	30
 https://fluxlab.pl/strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef	4	123
 https://fluxlab.pl/strefa-wiedzy/faktura-wewnetrzna-ksef	1	62

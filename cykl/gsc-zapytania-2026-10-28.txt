@@ -1,4 +1,4 @@
-# GSC fluxlab.pl, 7 dni 20-26.10 (stan 28.10.2026 11:58, 159 wierszy, zapisane pierwsze 100 w kolejności GSC), zapytanie	kliknięcia	wyświetlenia	pozycja
+# GSC fluxlab.pl, 7 dni 20-26.10 (stan 28.10.2026 11:45, 159 wierszy, zapisane pierwsze 100 w kolejności GSC), zapytanie	kliknięcia	wyświetlenia	pozycja
 fluxlab	9	18	1,1
 automatyzacja procesów biznesowych	0	51	66,0
 automatyzacja procesów	0	25	57,3
