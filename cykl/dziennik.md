@@ -8682,3 +8682,9 @@ Wynik Z17 (28.10 01:44): seria 0 z 0, timer fl-gsc-28 nie istnieje, logu brak, �
 **Dowód:** ten wpis; cykl/plan-ruchu.md: 0 otwartych zadań.
 **Dla Pawła:**
 **Zostało otwarte:** nowy plan od stratega 06:15 (kamień 28.10: /integracja-crm-z-erp).
+
+## Strategia dobowa 2026-10-28
+**Pomiar 06:15:** pomiar-kanalow 24 h: 22 ludzi (z odsyłaczem 10: google 3, facebook 4 = dwie pary, chatgpt.com 2, x 1), tydzień 304; raport_ruchu 49 odsłon / 42 osoby, z czego 17 to piksel b2b-email. GSC bez nowego tygodnia (19-25.10: 21 klik. / 1,28 tys. / poz. 24); Indeksowanie raport 23.10: 165 / 212; mapa odczyt 27.10, 150 stron. Resend 24 h: 0. Zoho: 1 wiadomość (raport TLS), 0 odpowiedzi.
+**Ocena kanałów:** Google 3 / 24 / 9 h; social 4 / 37 / 2 h; AI (chatgpt.com) 2 / 4 / 0 h; GitHub 0 realnych / 1 h (automat); Bing 0 / 2 (pauza); narzędzia 2 uruchomienia; mail 0 (wyłączony). Plan 27.10 skończył się o 01:45, 6 pustych cykli: dziś zadania do 05:30.
+**Plan:** cykl/plan-ruchu.md, 18 zadań; kamień Z3 (title /integracja-crm-z-erp pod „kto wdraża … w Polsce", poz. 10-15), Z8 linki do niej tylko przy „utrzymaj"; Z5 link /numer-ksef w istniejących seriach social; Z6 pomiar wejść z AI; Z10 szkic 16.11.
+**Mail do Pawła:** 06:45, „FluxLab ruch, plan na 28.10.2026: 22 osoby w dobę (10 z odsyłaczem)”; Dla Pawła: decyzja o zimnych mailach, baner cookies na telefonie.
