@@ -8616,6 +8616,8 @@ Decyzje dla stratega 28.10:
 3. Pula indeksowania 28.10 wolna (Z11 nie zużył żądań); nowych stron poza Google brak, więc żądania tylko dla strony z kamieniem.
 4. Budżet 22:43 „zwolnij”, kamieni 1, reset za 9 h: na 28.10 rano jeden kamień, reszta lekka.
 
+Wynik Z17 (28.10 01:44): seria 0 z 0, timer fl-gsc-28 nie istnieje, logu brak, „przekroczono limit” nie wystąpiło; pula 10 żądań na 28.10 nietknięta.
+
 ## 2026-10-27 22:45
 **Kanał:** pomiar (Z16, bilans planu).
 **Co zrobione:** bilans planu 27/28.10 w dzienniku z tabelą zadań, kanałów i decyzją: kamień 28.10 to /integracja-crm-z-erp; nic nie poszło w świat, budżet „zwolnij” pozwala na jedno zadanie.
@@ -8640,3 +8642,11 @@ Decyzje dla stratega 28.10:
 **Dowód:** ten wpis; plan bez zmian (Z17 [ ]), brak cykl/z19-indeksowanie-28.log zgodnie z Z11 [!].
 **Dla Pawła:**
 **Zostało otwarte:** Z17 28.10 01:50 (serii nie ma, tylko potwierdzić brak logu z19-indeksowanie-28).
+
+## 2026-10-28 01:45
+**Kanał:** Google (Z17, wynik serii).
+**Co zrobione:** zamknięte Z17: seria indeksowania 28.10 nie istniała (lista Z11 pusta), więc 0 z 0 i nic do ręcznego wysłania; plan 27/28 nie ma już otwartych zadań, a budżet 01:43 „zwolnij” (88% tygodnia, reset za 6 h) wyklucza pracę spoza planu.
+**Ruch:** raport_ruchu 01:43: doba 68 odsłon, 58 osób (-51% wobec średniej 139,1); tydzień 900 / 509; źródła: b2b-email 22 (piksel otwarć), github 8, facebook 3, www.google.com 3, m.facebook.com 2; YouTube 0; uruchomienia narzędzi 2 (numer_ksef 1, skan 1).
+**Dowód:** Z17 [x] w cykl/plan-ruchu.md; wynik dopisany pod „Bilans planu 2026-10-27/28”; brak cykl/z19-indeksowanie-28.log i timera fl-gsc-28.
+**Dla Pawła:**
+**Zostało otwarte:** nic w planie 27/28; nowy plan od stratega 06:15.
