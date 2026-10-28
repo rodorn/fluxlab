@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -35,7 +36,12 @@ export const metadata: Metadata = {
 
 const useCases = [
   "CRM z formularzami i źródłami leadów.",
-  "Systemy operacyjne i finansowe: statusy, klienci, zamówienia.",
+  <>
+    <Link href="/integracja-crm-z-erp" className="text-accent hover:underline">
+      Systemy operacyjne i finansowe
+    </Link>
+    : statusy, klienci, zamówienia.
+  </>,
   "Bazy danych i raporty z jednego przepływu danych.",
 ];
 

@@ -66,7 +66,15 @@ const diagramSteps = [
   {
     n: "5",
     title: "Sync i raport",
-    desc: "Zmiana etapu aktualizuje fakturowanie i księgowość, a raport KPI przychodzi sam.",
+    desc: (
+      <>
+        Zmiana etapu aktualizuje{" "}
+        <Link href="/integracja-crm-z-erp" className="text-accent hover:underline">
+          fakturowanie i księgowość
+        </Link>
+        , a raport KPI przychodzi sam.
+      </>
+    ),
     accent: false,
   },
 ];
