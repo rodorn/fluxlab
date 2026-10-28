@@ -8754,3 +8754,11 @@ Wynik Z17 (28.10 01:44): seria 0 z 0, timer fl-gsc-28 nie istnieje, logu brak, �
 **Dowód:** cykl/plan-ruchu.md bez zmian (12 z 18 [x]); `budzet`: rytm wstrzymaj.
 **Dla Pawła:**
 **Zostało otwarte:** Z13 (18:30), Z14 (19:30), Z16 (21:30), Z17 (22:30), Z18 nie wcześniej niż 29.10 05:30.
+
+## 2026-10-28 14:43
+**Kanał:** żaden (plan ruchu: otwarte Z13-Z18 to pomiary przypięte do godzin 18:30-05:30; budżet „wstrzymaj”, prognoza 154% tygodnia).
+**Co zrobione:** brak zmian, bo każde otwarte zadanie mierzy okno, które jeszcze trwa, a zrobione teraz dałoby niepełne liczby; przy „wstrzymaj” nie biorę pracy spoza planu.
+**Ruch:** ostatnia doba 52 odsłony, 32 osoby (−61% wobec średniej 132,3); wejścia najczęściej / 17, /kalkulator-podatkowy 7, /audyt-strony 6, /wlasny-crm 5; źródła b2b-email 5, google 3, facebook 2, X 1; uruchomienia narzędzi 5 (kalkulator_podatkowy 3, numer_ksef 1, skan 1).
+**Dowód:** cykl/plan-ruchu.md bez zmian (12 z 18 [x]); `budzet`: rytm wstrzymaj.
+**Dla Pawła:**
+**Zostało otwarte:** Z13 (18:30), Z14 (19:30), Z16 (21:30), Z17 (22:30), Z18 nie wcześniej niż 29.10 05:30.
