@@ -1,0 +1,22 @@
+Z15 2026-10-28 11:50, uruchomienia narzędzi przez ludzi, 14 dni (14-28.10), licznik ruch.sqlite po filtrach botów, automatyki, salw i skanerów z raport_ruchu.py
+Kanał = pierwszy niepusty odsyłacz sesji; strona wejścia = pierwsza odsłona sesji. Zdarzenie uruchomiono_skan rozbite na stronę, na której padło.
+
+narzędzie | uruchomienia | sesje | sesje z odsyłaczem | kanał (sesje) | strona wejścia (sesje) | klik_po_wyniku | lead_*
+skan /analiza-lokalizacji | 7 | 3 | 3 | www.google.com 2, chatgpt.com 1 | /analiza-lokalizacji 3 | 0 | 0
+kalkulator_podatkowy | 5 | 3 | 0 | (bez odsyłacza) 3 | /kalkulator-podatkowy 3 | 0 | 0
+numer_ksef | 4 | 3 | 3 | www.google.com 3 | /numer-ksef 3 | 0 | 0
+skan_przyklad /sprawdz-kontrahenta | 3 | 3 | 0 | (bez odsyłacza) 3 | /sprawdz-kontrahenta 3 | 0 | 0
+skan /wlasnosc-domeny | 2 | 2 | 0 | (bez odsyłacza) 2 | /wlasnosc-domeny 2 | 0 | 0
+skan /audyt-poczty | 2 | 2 | 0 | (bez odsyłacza) 2 | /audyt-poczty 2 | 0 | 0
+skan /sprawdzenie-nip | 2 | 2 | 2 | www.bing.com 1, pl.search.yahoo.com 1 | /sprawdzenie-nip 2 | 0 | 0
+skan /wlasny-crm | 2 | 2 | 1 | www.google.com 1, (bez odsyłacza) 1 | / 1, /audyt-strony 1 | 0 | 0
+numer_ksef_przyklad | 2 | 2 | 0 | (bez odsyłacza) 2 | /numer-ksef 2 | 0 | 0
+skan /czujka-rejestrowa | 2 | 2 | 0 | (bez odsyłacza) 2 | /czujka-rejestrowa 2 | 0 | 0
+kalkulator | 1 | 1 | 1 | l.facebook.com 1 | / 1 | 0 | 0
+skan /strefa-wiedzy/maile-trafiaja-do-spamu | 1 | 1 | 0 | (bez odsyłacza) 1 | /strefa-wiedzy/maile-trafiaja-do-spamu 1 | 0 | 0
+
+Razem 14 dni: klik_po_wyniku 0 | lead_* {'lead_landing': 2}
+
+Z zewnątrz (sesje z odsyłaczem): numer_ksef 3 (Google 3), /analiza-lokalizacji 3 (Google 2, chatgpt.com 1), /sprawdzenie-nip 2 (Bing 1, Yahoo 1), /wlasny-crm 1, kalkulator 1 (Facebook). Social poza 1 Facebookiem nie przyprowadził żadnego uruchomienia; klik_po_wyniku 0, lead_landing 2 w sesjach bez uruchomień.
+
+Najwięcej uruchomień z zewnątrz: /analiza-lokalizacji (7 uruchomień w 3 sesjach, Google i chatgpt.com), na równi w sesjach z /numer-ksef (3 sesje, wszystkie z Google); do linkowania w social 29.10 /numer-ksef, bo social nie dał tam jeszcze żadnej sesji, a Google potwierdza popyt.

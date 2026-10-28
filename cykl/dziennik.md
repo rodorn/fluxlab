@@ -8722,3 +8722,19 @@ Wynik Z17 (28.10 01:44): seria 0 z 0, timer fl-gsc-28 nie istnieje, logu brak, �
 **Dowód:** commit b730c9f; produkcja: grep href="/integracja-crm-z-erp" = 1 na obu stronach, HTTP 200; IndexNow 2 z 3; GSC „prośba przesłana” 09:48 i 09:49 (cykl/z9-indeksowanie-28.log); telefon-test 0 błędów, 390 px.
 **Dla Pawła:**
 **Zostało otwarte:** Z7 (12:30), Z12-Z18 według godzin planu.
+
+## 2026-10-28 10:45
+**Kanał:** żaden (plan ruchu: wszystkie otwarte zadania przypięte do późniejszych godzin, pierwsze Z7 na 12:30).
+**Co zrobione:** brak zmian, bo Z7 to pomiar okna 06:30-12:30 i zrobiony o 10:45 dałby niepełne liczby; sprawdzono za to llms.txt na produkcji: zawiera wszystkie strony treściowe, w tym /integracja-crm-z-erp, brakują tylko strony techniczne (regulamin, polityka, wypis, dziekuje, cv), więc nie było czego dopisać.
+**Ruch:** ostatnia doba 46 odsłon, 31 osób (−66% wobec średniej 136,9); źródła: b2b-email 7 (piksel), google 3, chatgpt.com 1, x 1, facebook 1; uruchomienia narzędzi 5 (kalkulator_podatkowy 3, numer_ksef 1, skan 1).
+**Dowód:** curl https://fluxlab.pl/llms.txt | grep integracja-crm-z-erp = 1.
+**Dla Pawła:**
+**Zostało otwarte:** Z7 (12:30), Z12-Z17 według godzin planu, Z18 nie wcześniej niż 29.10 05:30.
+
+## 2026-10-28 12:00
+**Kanał:** pomiar (plan ruchu Z12, Z15; Z7 przypięty do okna 06:30-12:30, zostaje).
+**Co zrobione:** Search Console pokazał nowy tydzień 20-26.10, więc zapisano tabele zapytań i stron z porównaniem do 19-25.10; policzono uruchomienia narzędzi przez ludzi z 14 dni z kanałem i stroną wejścia.
+**Ruch:** ostatnia doba 51 odsłon, 35 osób (raport_ruchu); źródła b2b-email 6 (piksel, nie ludzie), www.google.com 3, chatgpt.com 1, x 1, facebook 1; pomiar-kanalow 24 h: 27 sesji ludzi, 20 bez odsyłacza.
+**Dowód:** cykl/gsc-zapytania-2026-10-28.txt, cykl/gsc-strony-2026-10-28.txt (kliknięcia stron 22→20, wyśw. 1377→1371, co-to-jest-automatyzacja-procesow-biznesowych 212→168, ebook KSeF 13→25); cykl/z15-narzedzia-2026-10-28.txt (z zewnątrz /analiza-lokalizacji 7 uruchomień w 3 sesjach z Google i chatgpt.com, /numer-ksef 3 sesje z Google, social 1 uruchomienie); plan Z12 i Z15 [x].
+**Dla Pawła:**
+**Zostało otwarte:** Z7 (12:30), Z13, Z14, Z16, Z17 według godzin, Z18 nie wcześniej niż 29.10 05:30 (Z12 zapisał pliki, więc Z18 to baza 28 dni dla /integracja-crm-z-erp).
