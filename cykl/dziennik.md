@@ -8868,3 +8868,11 @@ Decyzje dla stratega:
 **Dowód:** commit 05f5086, tekst odczytany z produkcji https://fluxlab.pl/kalkulator-podatkowy, zrzut z telefonu bez błędów konsoli, IndexNow 1 adres (przyjęte 2 z 3).
 **Dla Pawła:**
 **Zostało otwarte:** Z18 nie wcześniej niż 29.10 05:30; /dobor-samochodu ma ten sam problem z pierwszym akapitem (Z6), do decyzji stratega; niezacommitowane obrazy OG w app/ksef-2027 i app/numer-ksef należą do innej sesji, nie ruszane.
+
+## 2026-10-28 23:43
+**Kanał:** widoczność w asystentach AI (poza planem, bo jedyne otwarte zadanie Z18 ma warunek „nie wcześniej niż 29.10 05:30”).
+**Co zrobione:** /dobor-samochodu, na który ChatGPT przyprowadził 2 z 7 sesji AI w 30 dni (Z6: pierwszy akapit „NIE”), ma teraz w pierwszym akapicie odpowiedź, jaki napęd wybrać (do 10 tys. km w mieście z ładowaniem elektryk, 10-20 tys. km bez gniazdka pełna hybryda, powyżej 25 tys. km po trasach diesel); zdublowane pytanie FAQ o napęd usunięte (FAQ 3 pytania), a pytanie „Dlaczego sugerujesz” poprawione na „sugerujecie” (forma Wy w pytaniach do nas).
+**Ruch:** ostatnia doba 147 odsłon, 68 osób (+13% wobec średniej 130); źródła b2b-email 83, b2b 8, www.google.com 3, com.linkedin.android 2, facebook 2; uruchomienia narzędzi 8.
+**Dowód:** commit d9968a2, tekst odczytany z produkcji https://fluxlab.pl/dobor-samochodu (stare pytanie FAQ 0 wystąpień), telefon-test 390/390 px, 0 błędów konsoli, IndexNow 1 adres (przyjęte 2 z 3); build, SPOJNOSC OK, JAKOSC OK 156 stron.
+**Dla Pawła:**
+**Zostało otwarte:** Z18 nie wcześniej niż 29.10 05:30; obie strony z Z6 (kalkulator, dobór samochodu) mają już odpowiedź w pierwszym akapicie, efekt w wejściach z chatgpt.com do oceny od ok. 4.11; niezacommitowane zmiany w app/ksef-2027 i app/numer-ksef należą do innej sesji, nie ruszane.
