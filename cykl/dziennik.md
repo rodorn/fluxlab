@@ -8706,3 +8706,11 @@ Wynik Z17 (28.10 01:44): seria 0 z 0, timer fl-gsc-28 nie istnieje, logu brak, �
 **Dowód:** licznik: 0 sesji github od 27.10 11:30 po odsiewie; gh api traffic: fluxlab-video-reklamy 1 wyświetlenie w 14 dni (25.10), fluxlab-ghl-integration 1 (14.10).
 **Dla Pawła:**
 **Zostało otwarte:** Z3 (title /integracja-crm-z-erp) od 09:00, potem Z4; Z7 o 12:30; Z8 zależy od budżetu (teraz „zwolnij”, czyli pominięte, jeśli się nie zmieni).
+
+## 2026-10-28 09:31
+**Kanał:** Google (plan ruchu Z3, Z4).
+**Co zrobione:** /integracja-crm-z-erp ma nowy title „Integracja CRM z ERP: wdrożenie w Polsce | Fluxlab” i opis zaczynający się od „Kto wdraża integrację CRM z ERP w Polsce?” (fraza z 9 wyśw. na poz. 9,8-15,4), wdrożone i zgłoszone do indeksowania.
+**Ruch:** ostatnia doba 44 odsłony, 37 osób (−68% wobec średniej 138); źródła: b2b-email 13 (piksel), www.google.com 3, chatgpt.com 2, x 1, facebook 1. Uruchomienia narzędzi 2 (numer_ksef 1, skan 1).
+**Dowód:** commit 569446b; produkcja 09:02 title zgodny, HTTP 200; build, SPOJNOSC OK, JAKOSC OK; IndexNow 2 z 3; telefon-test 0 błędów; GSC 09:30:42 „prośba przesłana” (cykl/z4-indeksowanie-28.log). Baza do oceny od 4.11: 0 kliknięć / 89 wyśw. / poz. 19,1 (28 dni do 24.10).
+**Dla Pawła:** 
+**Zostało otwarte:** Z7 o 12:30 (pomiar), Z8 o 13:30 (linki do /integracja-crm-z-erp), dalej według planu.
