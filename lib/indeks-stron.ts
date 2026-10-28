@@ -164,8 +164,8 @@ export const INDEKS_STRON: WpisIndeksu[] = [
   },
   {
     "url": "/integracja-crm-z-erp",
-    "tytul": "Integracja CRM z ERP bez rozjazdu danych",
-    "opis": "Integracja CRM z ERP: kontrahenci, oferty, zamówienia, faktury i stany zgodne w obu systemach. Cztery decyzje, które przesądzają o wdrożeniu."
+    "tytul": "Integracja CRM z ERP: wdrożenie w Polsce",
+    "opis": "Kto wdraża integrację CRM z ERP w Polsce? My: spinamy oba systemy, żeby kontrahenci, zamówienia i faktury się zgadzały. Kierunek trwa 2-3 tygodnie."
   },
   {
     "url": "/widocznosc-w-ai",

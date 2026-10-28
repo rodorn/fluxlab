@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import ProductLanding from "@/components/ProductLanding";
 
 export const metadata: Metadata = {
-  title: "Integracja CRM z ERP bez rozjazdu danych | Fluxlab",
+  title: "Integracja CRM z ERP: wdrożenie w Polsce | Fluxlab",
   description:
-    "Integracja CRM z ERP: kontrahenci, oferty, zamówienia, faktury i stany zgodne w obu systemach. Cztery decyzje, które przesądzają o wdrożeniu.",
+    "Kto wdraża integrację CRM z ERP w Polsce? My: spinamy oba systemy, żeby kontrahenci, zamówienia i faktury się zgadzały. Kierunek trwa 2-3 tygodnie.",
   alternates: { canonical: "/integracja-crm-z-erp" },
   openGraph: {
-    title: "Integracja CRM z ERP bez rozjazdu danych | Fluxlab",
+    title: "Integracja CRM z ERP: wdrożenie w Polsce | Fluxlab",
     description:
-      "Kierunek prawdy, klucz dopasowania kontrahenta, moment wypchnięcia dokumentu i obsługa błędów. Cztery decyzje, od których zależy, czy integracja przeżyje pierwszy kwartał.",
+      "Kto wdraża integrację CRM z ERP w Polsce? My: spinamy oba systemy, żeby kontrahenci, zamówienia i faktury się zgadzały. Kierunek trwa 2-3 tygodnie.",
     locale: "pl_PL",
     type: "website",
     images: [
