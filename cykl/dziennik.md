@@ -8876,3 +8876,11 @@ Decyzje dla stratega:
 **Dowód:** commit d9968a2, tekst odczytany z produkcji https://fluxlab.pl/dobor-samochodu (stare pytanie FAQ 0 wystąpień), telefon-test 390/390 px, 0 błędów konsoli, IndexNow 1 adres (przyjęte 2 z 3); build, SPOJNOSC OK, JAKOSC OK 156 stron.
 **Dla Pawła:**
 **Zostało otwarte:** Z18 nie wcześniej niż 29.10 05:30; obie strony z Z6 (kalkulator, dobór samochodu) mają już odpowiedź w pierwszym akapicie, efekt w wejściach z chatgpt.com do oceny od ok. 4.11; niezacommitowane zmiany w app/ksef-2027 i app/numer-ksef należą do innej sesji, nie ruszane.
+
+## 2026-10-29 00:43
+**Kanał:** AI (poza planem, bo jedyne otwarte zadanie Z18 ma warunek „nie wcześniej niż 29.10 05:30”).
+**Co zrobione:** /analiza-lokalizacji, jedyna strona, na której gość z chatgpt.com uruchomił narzędzie (25.10, 4 skany i czat, Z6), ma teraz w pierwszym akapicie odpowiedź, jak ocenić lokal: „Lokal ocenisz dwiema liczbami: konkurenci w promieniu 1, 3 i 5 km i mieszkańcy na punkt.”; akapit krótszy niż wcześniej (113 zn. zamiast 116), FAQ bez zmian (4 pytania). Trzecia i ostatnia strona wejścia z AI z Z6 domknięta.
+**Ruch:** ostatnia doba 149 odsłon, 69 osób (+15% wobec średniej 130); źródła b2b-email 83, b2b 8, www.google.com 3, com.linkedin.android 2, facebook 2; uruchomienia narzędzi 8.
+**Dowód:** commit 9cd606e, tekst odczytany z produkcji https://fluxlab.pl/analiza-lokalizacji (200, wdrożone po 100 s), telefon-test 390/390 px, 0 błędów konsoli, IndexNow 1 adres (przyjęte 2 z 3); build, SPOJNOSC OK, JAKOSC OK 156 stron.
+**Dla Pawła:**
+**Zostało otwarte:** Z18 nie wcześniej niż 29.10 05:30; wszystkie 4 strony wejścia z chatgpt.com mają odpowiedź w pierwszym akapicie, efekt do oceny od ok. 4.11; niezacommitowane zmiany w app/ksef-2027 i app/numer-ksef należą do innej sesji, nie ruszane.
