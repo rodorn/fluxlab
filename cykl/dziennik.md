@@ -8786,3 +8786,11 @@ Wynik Z17 (28.10 01:44): seria 0 z 0, timer fl-gsc-28 nie istnieje, logu brak, �
 **Dowód:** cykl/plan-ruchu.md bez zmian (13 z 18 zamkniętych); `budzet`: rytm utrzymaj.
 **Dla Pawła:**
 **Zostało otwarte:** Z13 (18:30), Z14 (19:30), Z16 (21:30), Z17 (22:30), Z18 nie wcześniej niż 29.10 05:30.
+
+## 2026-10-28 18:43
+**Kanał:** pomiar i social (plan ruchu Z13, Z14).
+**Co zrobione:** Z13 i Z14 zamknięte z liczbami; link do /numer-ksef z kampanią numer-ksef-seria wyszedł dotąd tylko w komentarzu na LinkedIn (ok. 15:17), na Instagramie i Facebooku czeka w kolejce.
+**Ruch:** ostatnia doba 94 odsłony, 46 osób (−29% wobec średniej 132,3), po odsiewie pomiar-kanalow.py 26 sesji ludzi; źródła b2b-email 44 (piksel i kliki maili), google 3, b2b 3, LinkedIn 2, duckduckgo 1; od 12:30 ludzie z odsyłaczem 5 / bez 5; od 06:30 uruchomienia narzędzi 7 (skan 4, kalkulator_podatkowy 3), lead_* 0, numer-ksef-seria 0 sesji.
+**Dowód:** cykl/plan-ruchu.md, Z13 i Z14 [x]; post LinkedIn https://www.linkedin.com/feed/update/urn:li:activity:7521213418058690560.
+**Dla Pawła:** w Zoho mail od krystian.krasuski@finreal.pl (18:24, temat „lo”, pusta treść, załącznik Log.pdf), bez wcześniejszego kontaktu z nami; wygląda na phishing z przejętego konta, nie otwierać załącznika. Temida Tax odpisała na outreach grzeczną odmową, odpowiedź niepotrzebna.
+**Zostało otwarte:** Z16 (21:30), Z17 (22:30), Z18 nie wcześniej niż 29.10 05:30.
