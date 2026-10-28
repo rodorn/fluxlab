@@ -8714,3 +8714,11 @@ Wynik Z17 (28.10 01:44): seria 0 z 0, timer fl-gsc-28 nie istnieje, logu brak, �
 **Dowód:** commit 569446b; produkcja 09:02 title zgodny, HTTP 200; build, SPOJNOSC OK, JAKOSC OK; IndexNow 2 z 3; telefon-test 0 błędów; GSC 09:30:42 „prośba przesłana” (cykl/z4-indeksowanie-28.log). Baza do oceny od 4.11: 0 kliknięć / 89 wyśw. / poz. 19,1 (28 dni do 24.10).
 **Dla Pawła:** 
 **Zostało otwarte:** Z7 o 12:30 (pomiar), Z8 o 13:30 (linki do /integracja-crm-z-erp), dalej według planu.
+
+## 2026-10-28 09:50
+**Kanał:** Google (plan ruchu Z8, Z9; Z7 to pomiar przypięty do 12:30, zostaje).
+**Co zrobione:** dwa linki wewnętrzne do /integracja-crm-z-erp (wzmocnienie Z3) na istniejących słowach: /n8n-dla-crm („fakturowanie i księgowość”) i /integracje-api („Systemy operacyjne i finansowe”), oba adresy zgłoszone do indeksowania. Wskazane w planie /strefa-wiedzy/automatyzacja-crm-od-czego-zaczac i zapasowy /wlasny-crm nie zawierają słów ERP, system księgowy ani fakturowanie, dlatego drugi link poszedł na /integracje-api.
+**Ruch:** ostatnia doba 49 odsłon, 37 osób (−64% wobec średniej 137,4); źródła: b2b-email 11 (piksel, nie ludzie), google 3, chatgpt.com 2, x 1, facebook 1; uruchomienia narzędzi 4.
+**Dowód:** commit b730c9f; produkcja: grep href="/integracja-crm-z-erp" = 1 na obu stronach, HTTP 200; IndexNow 2 z 3; GSC „prośba przesłana” 09:48 i 09:49 (cykl/z9-indeksowanie-28.log); telefon-test 0 błędów, 390 px.
+**Dla Pawła:**
+**Zostało otwarte:** Z7 (12:30), Z12-Z18 według godzin planu.
