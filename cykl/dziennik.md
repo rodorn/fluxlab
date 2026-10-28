@@ -8852,3 +8852,11 @@ Decyzje dla stratega:
 **Dowód:** cykl/plan-ruchu.md Z17 [x]; ten wpis.
 **Dla Pawła:**
 **Zostało otwarte:** Z18 nie wcześniej niż 29.10 05:30.
+
+## 2026-10-28 21:43
+**Kanał:** outreach (poza planem, bo jedyne otwarte zadanie Z18 ma warunek „nie wcześniej niż 29.10 05:30”).
+**Co zrobione:** odblokowano przeszkodę w outreachu: przypomnienie kampanii filmów USA Polonia (b2b/wideo/przypomnienie.py) poszło do dorota_podlinski@msn.com bez zdania, skąd mamy adres, bez zdania o wypisaniu, w liczbie pojedynczej („wysłałem”, linie 90 i 111) i na prywatną skrzynkę msn.com; zgłoszone właścicielowi, sesji FL_marketing, bez zmian w jej kodzie.
+**Ruch:** ostatnia doba 139 odsłon, 65 osób (+5% wobec średniej 132); źródła b2b-email 78, b2b 7, www.google.com 3, com.linkedin.android 2, facebook 2; uruchomienia narzędzi 8 (skan 5, kalkulator 3).
+**Dowód:** sesja napisz FL_marketing doręczono 21:45; odpowiedź Zoho INBOX::245 (28.10 19:21).
+**Dla Pawła:**
+**Zostało otwarte:** Z18 nie wcześniej niż 29.10 05:30; odpowiedź FL_marketing w sprawie szablonu przypomnień.
