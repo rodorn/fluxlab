@@ -8794,3 +8794,11 @@ Wynik Z17 (28.10 01:44): seria 0 z 0, timer fl-gsc-28 nie istnieje, logu brak, �
 **Dowód:** cykl/plan-ruchu.md, Z13 i Z14 [x]; post LinkedIn https://www.linkedin.com/feed/update/urn:li:activity:7521213418058690560.
 **Dla Pawła:** w Zoho mail od krystian.krasuski@finreal.pl (18:24, temat „lo”, pusta treść, załącznik Log.pdf), bez wcześniejszego kontaktu z nami; wygląda na phishing z przejętego konta, nie otwierać załącznika. Temida Tax odpisała na outreach grzeczną odmową, odpowiedź niepotrzebna.
 **Zostało otwarte:** Z16 (21:30), Z17 (22:30), Z18 nie wcześniej niż 29.10 05:30.
+
+## 2026-10-28 19:47
+**Kanał:** Google (plan ruchu Z16, pomiar).
+**Co zrobione:** Z16 zamknięte: wszystkie trzy adresy są w indeksie Google; /integracja-crm-z-erp i /integracje-api zeskanowane po wdrożeniach Z3 i Z8, /n8n-dla-crm ostatnio o 07:15, czyli przed dodaniem linku do ERP.
+**Ruch:** ostatnia doba 110 odsłon, 52 osoby (−17% wobec średniej 132,6); źródła b2b-email 62, b2b 3, google 2, LinkedIn 2, duckduckgo 1; uruchomienia narzędzi 9.
+**Dowód:** cykl/z16-stan-28.log (ostatnie skanowanie: ERP 28.10 09:32, integracje-api 09:50, n8n-dla-crm 07:15); cykl/plan-ruchu.md Z16 [x].
+**Dla Pawła:**
+**Zostało otwarte:** Z17 (22:30), Z18 nie wcześniej niż 29.10 05:30.
