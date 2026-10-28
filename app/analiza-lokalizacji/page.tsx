@@ -33,7 +33,7 @@ export default function Page() {
       breadcrumb="Analiza lokalizacji"
       eyebrow="Decyzja o lokalu"
       h1="Umowa najmu na pięć lat, a rynek sprawdzony na oko"
-      lead="Mapy pokazują pinezki, ale nie mówią, czy rynek jest już obsadzony. Sprawdzamy to liczbami, zanim podpiszesz najem."
+      lead="Lokal ocenisz dwiema liczbami: konkurenci w promieniu 1, 3 i 5 km i mieszkańcy na punkt. Sprawdź je przed najmem."
       ctaLabel="Zamawiam pełny raport"
       ctaNote="Raport w 24 godziny"
       checks={[
