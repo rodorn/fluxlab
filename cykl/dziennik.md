@@ -8802,3 +8802,53 @@ Wynik Z17 (28.10 01:44): seria 0 z 0, timer fl-gsc-28 nie istnieje, logu brak, �
 **Dowód:** cykl/z16-stan-28.log (ostatnie skanowanie: ERP 28.10 09:32, integracje-api 09:50, n8n-dla-crm 07:15); cykl/plan-ruchu.md Z16 [x].
 **Dla Pawła:**
 **Zostało otwarte:** Z17 (22:30), Z18 nie wcześniej niż 29.10 05:30.
+
+## 2026-10-28 20:50
+**Kanał:** pomiar (plan ruchu Z17).
+**Co zrobione:** Bilans planu 2026-10-28/29, zrobiony o 20:50 zamiast 22:30, bo był jedynym otwartym zadaniem bez warunku godziny.
+
+### Bilans planu 2026-10-28/29
+Kanały, ludzie po odsiewie `pomiar-kanalow.py` (24 h do 20:43; 29 sesji, 44 odsłony, bez odsyłacza 18):
+
+| Kanał | 24 h | doba wcześniej |
+|---|---|---|
+| Google (+ DuckDuckGo) | 4 (+1) | 3 |
+| social (LinkedIn) | 1 | 4 |
+| AI (chatgpt.com) | 0 | 2 |
+| GitHub | 0 | 0 |
+| narzędzia (uruchomienia: skan 5, kalkulator 3, numer-ksef 1) | 9 | 2 |
+| mail (utm b2b, kliki z outreachu) | 6 | 0 |
+
+Zadania:
+
+| Zad. | Stan | Co przyprowadziło |
+|---|---|---|
+| Z1 kandydat n8n | [x] | kandydat /wdrozenie-n8n-cena („ile kosztuje n8n”, poz. 8-9,4, brak frazy w title) |
+| Z2 kontrola szkicu 2.11 | [x] | 0, przygotowanie publikacji |
+| Z3 title /integracja-crm-z-erp | [x] | 0 wejść jeszcze; Google zeskanował nowy title 09:32 |
+| Z4 indeksowanie po Z3 | [x] | 0, prośba przyjęta |
+| Z5 seria numer-ksef w social | [x] | 0 sesji utm_campaign=numer-ksef-seria |
+| Z6 skąd chatgpt.com | [x] | 7 sesji / 30 dni, wszystkie chatgpt.com, 1 z uruchomieniem narzędzia |
+| Z7 pomiar południe | [x] | pomiar |
+| Z8 linki do ERP | [x] | 0 |
+| Z9 indeksowanie po Z8 | [x] | 0; /n8n-dla-crm nie zeskanowane od 07:15 |
+| Z10 szkic 16.11 | [x] | 0, przygotowanie |
+| Z11 GitHub README | [x] | 0 sesji ludzi z github od 27.10 |
+| Z12 nowy tydzień GSC | [x] | 20-26.10: 20 kliknięć stron, 1371 wyśw. |
+| Z13 pomiar wieczór | [x] | pomiar |
+| Z14 publikacje ze zlecenia Z5 | [x] | 1 post LinkedIn, 1 sesja z LinkedIn w dobie |
+| Z15 kto uruchamia narzędzia | [x] | /analiza-lokalizacji i /numer-ksef ciągną z Google i chatgpt.com |
+| Z16 stan po Z3 i Z8 | [x] | wszystkie 3 adresy w indeksie |
+| Z17 bilans | [x] | ten wpis |
+| Z18 GSC rano | [ ] | nie wcześniej niż 29.10 05:30 |
+
+Decyzje dla stratega:
+- Kamień 29.10: /wdrozenie-n8n-cena pod frazę „ile kosztuje n8n” (17 wyśw., poz. 8-9,4, fraza poza title), wynik Z1.
+- AI (Z6): jedyne źródło AI to chatgpt.com, 7 sesji w 30 dni, 0 w dobie; ruch tam idzie na narzędzia (/analiza-lokalizacji), nie na artykuły, więc odpowiedzi dla asystentów pisać pod narzędzia.
+- GitHub (Z11): 0 sesji ludzi od README, 1 wyświetlenie repo w 7 dni; GitHub zostaje bez godzin.
+- Mail outreach dał w dobie 6 sesji b2b, więcej niż Google; odmowy: Temida Tax i Dorota Podlinski DDS (19:21, „na telefonie wyświetla się poprawnie”, czyli audyt mógł zgłosić problem, którego klientka nie widzi).
+
+**Ruch:** raport_ruchu ostatnia doba 130 odsłon, 62 osoby (−2% wobec średniej 132); po odsiewie 29 sesji ludzi: bez odsyłacza 18, b2b 6, google 4, LinkedIn 1, duckduckgo 1; uruchomienia narzędzi 9.
+**Dowód:** cykl/plan-ruchu.md Z17 [x]; ten wpis.
+**Dla Pawła:**
+**Zostało otwarte:** Z18 nie wcześniej niż 29.10 05:30.
