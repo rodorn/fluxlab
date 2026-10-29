@@ -8991,3 +8991,11 @@ Decyzje dla stratega:
 **Dowód:** `cykl/z7-indeksowanie-29.log` (12:43:47, 12:44:16, „prośba przesłana”), `cykl/z8-pomiar-2026-10-29.txt`.
 **Dla Pawła:** 
 **Zostało otwarte:** Z9 (narzędzia na telefonie, od 13:30), dalej Z10-Z22. Zoho INBOX: odpowiedź Tom Bastard „Re: Współpraca reklamowa: FluxLab x HAJS METRICS” to wątek innej sesji, nie zapytanie o usługę.
+
+## 2026-10-29 13:55
+**Kanał:** dystrybucja narzędzi (Z9 planu: czy narzędzia z ruchem działają na telefonie).
+**Co zrobione:** naprawiona /analiza-lokalizacji, która na produkcji zwracała każdemu „Żaden serwer z danymi map nie odpowiedział” (główny serwer Overpass przeciążony, dwa zapasowe milczą); dodana zapasowa instancja overpass.openstreetmap.fr, pozostałe trzy narzędzia działają.
+**Ruch:** ostatnia doba 181 odsłon, 87 osób; źródła: b2b-email 119, b2b 9, m.facebook.com 10, google 5; uruchomienia narzędzi 4.
+**Dowód:** commit 0e06bed; telefon-test po wdrożeniu: Apteka, Grodzisk Mazowiecki → 11/17/22 apteki w 1/3/5 km, 2609 mieszkańców na punkt; /numer-ksef, /kalkulator-podatkowy, /wlasny-crm wynik widoczny, 0 błędów konsoli.
+**Dla Pawła:**
+**Zostało otwarte:** Z10 (Copilot) od 14:30; instancja francuska ma dane z 10.08.2026, gdy overpass-api.de wróci, pierwszeństwo i tak ma on.
