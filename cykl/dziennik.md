@@ -8951,3 +8951,11 @@ Decyzje dla stratega:
 **Dowód:** commit bedf7c0; https://fluxlab.pl/wdrozenie-n8n-cena zwraca nowy <title> i og:title; telefon-test 200, 0 błędów konsoli. Baza: 0 kliknięć / 78 wyśw. / poz. 9,5 (28 dni).
 **Dla Pawła:**
 **Zostało otwarte:** Z3 (indeksowanie /wdrozenie-n8n-cena, od 09:50), Z4 (od 10:00). IndexNow nie wysłał nic („brak adresów zmienionych").
+
+## 2026-10-29 08:43
+**Kanał:** brak (plan Z3-Z22 zablokowany godzinami).
+**Co zrobione:** nic nie wyszło w świat: pierwsze otwarte zadanie Z3 ma blokadę „nie wcześniej niż 09:50", a nagłówek planu zabrania brać zadania przed godziną, nawet gdy nic innego nie ma.
+**Ruch:** doba 167 odsłon, 76 osób (+33% wobec średniej 125,9); źródła: b2b-email 101, b2b 8, m.facebook.com 10, com.linkedin.android 2; narzędzia 7 uruchomień; tydzień 942 odsłony, 500 osób.
+**Dowód:** brak zmian, bo żadne zadanie nie przekroczyło blokady godziny.
+**Dla Pawła:**
+**Zostało otwarte:** Z3 (indeksowanie /wdrozenie-n8n-cena, od 09:50), Z4 (raport Strony, od 10:00), dalej Z5-Z22 według godzin.
