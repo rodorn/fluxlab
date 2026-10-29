@@ -103,8 +103,8 @@ export default function SprawdzKontrahentaPage() {
               Sprawdź firmę, zanim wyślesz przelew
             </h1>
             <p className="mt-5 text-lg text-gray-600 dark:text-gray-300">
-              Podajesz NIP, numer konta i adres strony. Dostajesz jeden werdykt
-              z wykazu VAT, odpisu KRS i danych domeny.
+              Sprawdź konto na białej liście, firmę w KRS i wiek domeny.
+              Podaj NIP, konto i stronę, dostaniesz werdykt.
             </p>
           </div>
 
