@@ -72,9 +72,9 @@ export default function GutschriftKsefArticle() {
               Gutschrift od klienta z Niemiec a KSeF
             </h1>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-              Niemieccy kontrahenci często wysyłają Gutschrift zamiast przyjąć
-              polską fakturę. Po polsku to samofakturowanie, a ono ma swoje
-              warunki.
+              Gutschrift od klienta z Niemiec nie trafia do KSeF. Bez umowy o
+              samofakturowanie nie jest fakturą, więc fakturę za usługę
+              wystawiasz w KSeF Ty.
             </p>
           </div>
         </section>
