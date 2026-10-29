@@ -159,7 +159,7 @@ export const INDEKS_STRON: WpisIndeksu[] = [
   },
   {
     "url": "/wdrozenie-n8n-cena",
-    "tytul": "Wdrożenie n8n, cena: z czego składa się koszt",
+    "tytul": "Ile kosztuje n8n? Wdrożenie i cena",
     "opis": "Ile kosztuje n8n: licencja 0 zł, serwer 30 do 90 zł miesięcznie, praca od 790 zł za przepływ, opieka 190 zł. Policz w kalkulatorze."
   },
   {
