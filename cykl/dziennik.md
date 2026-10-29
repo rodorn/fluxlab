@@ -9065,3 +9065,53 @@ Decyzje dla stratega:
 **Dowód:** `cykl/z17-baza-2026-10-29.txt`: /integracje-api 0 klik. / 29 wyśw. / poz. 56,7 (integracja api 58,4, integracje api 56,4, fraza w title); /n8n-dla-crm 0 / 5 / poz. 7,8 (wdrożenie n8n 23,0, reszta ukryta, embargo do 4.11).
 **Dla Pawła:**
 **Zostało otwarte:** Z18 od 22:30 (bilans planu), Z19-Z22 po północy.
+
+## 2026-10-29 22:45
+**Kanał:** pomiar (plan ruchu Z18).
+**Co zrobione:** Bilans planu 2026-10-29/30 z tabelą kanałów, stanem Z1-Z22 i decyzjami dla stratega.
+
+### Bilans planu 2026-10-29/30
+Kanały, ludzie po odsiewie `pomiar-kanalow.py` (24 h do 22:43; 23 sesje, 27 odsłon, bez odsyłacza 12):
+
+| Kanał | 24 h | doba wcześniej |
+|---|---|---|
+| Google (+ Bing) | 5 (+1) | 2 |
+| social (facebook 2, x 1) | 3 | 4 |
+| AI (chatgpt.com) | 0 | 0 |
+| mail (utm b2b) | 1 | 8 |
+| narzędzia (uruchomienia: kalkulator podatkowy 1) | 1 | 7 |
+
+Zadania:
+
+| Zad. | Stan | Co przyprowadziło |
+|---|---|---|
+| Z1 baza nocnych zmian | [x] | baza 6 stron, 3 sesje chatgpt.com w 7 dni |
+| Z2 title /wdrozenie-n8n-cena | [x] | 0 odsłon w dobie; Google ma jeszcze stary title (skan 08:02, przed wdrożeniem) |
+| Z3 indeksowanie po Z2 | [x] | 0, prośba przyjęta |
+| Z4 raport Strony | [x] | dane z 23.10: 165 zindeksowanych |
+| Z5 b2b | [x] | 148 maili, 9 sesji, 1 czytająca, 0 leadów |
+| Z6 linki do /wdrozenie-n8n-cena | [x] | 0 |
+| Z7 indeksowanie po Z6 | [x] | 0, oba zeskanowane 12:44 po wdrożeniu |
+| Z8 pomiar południe | [x] | pomiar |
+| Z9 narzędzia na telefonie | [x] | naprawa /analiza-lokalizacji (Overpass 502), commit 0e06bed |
+| Z10 Copilot | [x] | 13 cytowań w 7 dni, 49 w 30 dni, 0 wejść z bing.com do narzędzi |
+| Z11 seria numer-ksef | [x] | 1 post FB, 0 sesji, 0 uruchomień |
+| Z12 GSC nowy tydzień | [x] | 21-27.10: 20 klik. / 1343 wyśw.; kandydat brak |
+| Z13 szkic 23.11 | [x] | 0, przygotowanie |
+| Z14 pomiar wieczór | [x] | pomiar |
+| Z15 kontrola szkicu 9.11 | [x] | 0, 5/5 faktów, 3/3 linki |
+| Z16 stan po Z2 i Z6 | [x] | 3 adresy w indeksie |
+| Z17 baza /integracje-api | [x] | poz. 56,7, kandydat zapasowy brak |
+| Z18 bilans | [x] | ten wpis |
+| Z19-Z22 | [ ] | 30.10 od 00:30 |
+
+Decyzje dla stratega:
+- Kandydat na kamień 30.10: brak z Z12 i Z17; zamiast nowego kamienia ponowna prośba o indeksowanie /wdrozenie-n8n-cena (Z16, Google zeskanował przed wdrożeniem nowego title).
+- Z5: na 100 maili b2b ok. 6 sesji, 1 czytająca, 0 leadów; w dobie b2b spadło z 8 do 1, a 3 odpowiedzi to odmowy „na telefonie wyświetla się poprawnie”.
+- Z9: /analiza-lokalizacji była zepsuta przez Overpass, naprawiona zapasową instancją; pozostałe 3 narzędzia działają, ale uruchomień w dobie 1 (było 7).
+- Z10: Copilot cytuje 13 razy w tydzień, głównie artykuły JDG (forma opodatkowania, zdrowotna), więc kanał AI to Bing, nie chatgpt.com; warto rozwijać te tematy.
+
+**Ruch:** raport_ruchu ostatnia doba 100 odsłon, 65 osób (−25% wobec średniej 133,4); źródła b2b-email 53, m.facebook.com 6+2, google 5, facebook 5; po odsiewie 23 sesje ludzi: bez odsyłacza 12, google 5, facebook 2, b2b 1, x 1, bing 1; uruchomienia narzędzi 1.
+**Dowód:** cykl/plan-ruchu.md Z18 [x]; ten wpis.
+**Dla Pawła:**
+**Zostało otwarte:** Z19 nie wcześniej niż 30.10 00:30, Z20 02:00, Z21 04:30, Z22 05:30; niezacommitowane zmiany w app/ksef-2027 i app/numer-ksef należą do innej sesji, nie ruszane.
