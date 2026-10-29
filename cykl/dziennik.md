@@ -9033,3 +9033,11 @@ Decyzje dla stratega:
 **Dowód:** plik szkicu, commit poniżej. RODO pominięte, bo EUR-Lex zwrócił 202 z pustą treścią, UODO bez tekstu artykułu.
 **Dla Pawła:**
 **Zostało otwarte:** Z14 od 18:30 (pomiar wieczorny), Z15 od 19:30 (kontrola szkicu 9.11).
+
+## 2026-10-29 18:45
+**Kanał:** pomiar (Z14 planu, wieczór).
+**Co zrobione:** pomiar od 12:30 i od 06:30 zapisany; nic nie poszło w świat, zadanie było pomiarem.
+**Ruch:** raport_ruchu: doba 149 odsłon, 84 osoby (+18% wobec średniej 126), źródła: b2b-email (piksel otwarć), google, facebook, X 1. Od 12:30 ludzie 7 (google 3, x 1, bez odsyłacza 3); od 06:30 uruchomienia narzędzi 1 (kalkulator podatkowy), lead_* 0, klik_po_wyniku 0, czat 2 otwarcia i 1 pytanie; sesje b2b 1.
+**Dowód:** `cykl/z14-pomiar-2026-10-29.txt`; Resend 24 h 2 (1 delivered, 1 bounced wojtnerski@gmail.com, spoza wyslane*.json); Zoho od 12:30: 0 zapytań o usługi.
+**Dla Pawła:** 
+**Zostało otwarte:** Z15 od 19:30 (kontrola szkicu 9.11), dalej Z16-Z22. Odpowiedzi na kampanię „Strona … na telefonie” (Brozynski & Dalton 15:19, Dorota Podlinski DDS 28.10) to odmowy z wątku innej sesji, nie zapytania.

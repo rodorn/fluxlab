@@ -1,0 +1,93 @@
+# Z14, okna: źródła i Zoho od 12:30, zdarzenia i kampanie od 06:30 (sekcje „24 h” = od 12:30, „7 dni” = od 06:30)
+# Pomiar kanałów, 2026-10-29 18:43
+
+## Odsiew, 24 h: ludzie 7, pary 2, serie testowe 0, salwy 0 (Chrome Windows 0, z odsyłaczem 0)
+## Wyjścia do grupy KSeF, 24 h: 4, facebook 4
+
+## Odsiew, 7 dni: ludzie 14, pary 2, serie testowe 0, salwy 0 (Chrome Windows 0, z odsyłaczem 0)
+## Wyjścia do grupy KSeF, 7 dni: 4, facebook 4
+
+## Źródła, 24 h: 7 sesji, 9 odsłon
+  www.google.com                               3
+  (bez odsyłacza)                              3
+  x                                            1
+
+## Źródła, 7 dni: 14 sesji, 18 odsłon
+  (bez odsyłacza)                              8
+  www.google.com                               4
+  b2b                                          1
+  x                                            1
+
+## Kampanie utm, 7 dni (sesje)
+  b2b / b2b-firmy                              1
+
+## Zdarzenia, 7 dni (uruchomienia narzędzi, lead_*, klik_po_wyniku)
+  otwarcie_maila  /mail/769203a55c             5
+  otwarcie_maila  /mail/d7976d4aec             2
+  otwarcie_maila  /mail/00f33cbfe4             2
+  otwarcie_maila  /mail/b0080ffa9f             2
+  otwarcie_maila  /mail/108c0a3b42             2
+  czat_otwarty  /                              2
+  otwarcie_maila  /mail/dfa1ec7f71             2
+  otwarcie_maila  /mail/6712ba8856             1
+  otwarcie_maila  /mail/74e9198c38             1
+  otwarcie_maila  /mail/460702b560             1
+  klik_maila  /mail/98d8c8e489?cel=/           1
+  otwarcie_maila  /mail/74e825597a             1
+  otwarcie_maila  /mail/7f7a1e970d             1
+  otwarcie_maila  /mail/6ff58e4164             1
+  otwarcie_maila  /mail/970431051a             1
+  otwarcie_maila  /mail/667fa79870             1
+  otwarcie_maila  /mail/ed7f89ee15             1
+  otwarcie_maila  /mail/0ab6a0368d             1
+  czat_pytanie  /                              1
+  otwarcie_maila  /mail/71cb21e746             1
+  otwarcie_maila  /mail/c2a1783a73             1
+  otwarcie_maila  /mail/0abaf37ff0             1
+  otwarcie_maila  /mail/09e13254ec             1
+  otwarcie_maila  /mail/8bc8090a23             1
+  uruchomiono_kalkulator_podatkowy  /kalkulator-podatkowy     1
+  otwarcie_maila  /mail/9a20981a86             1
+  otwarcie_maila  /mail/9e6cb8dc94             1
+
+## Sesje dziennie, 14 dni
+  2026-10-15 Thu     4  ####
+  2026-10-16 Fri    28  ############################
+  2026-10-17 Sat    30  ##############################
+  2026-10-18 Sun    86  ######################################################################################
+  2026-10-19 Mon    47  ###############################################
+  2026-10-20 Tue    28  ############################
+  2026-10-21 Wed    62  ##############################################################
+  2026-10-22 Thu    34  ##################################
+  2026-10-23 Fri    40  ########################################
+  2026-10-24 Sat    84  ####################################################################################
+  2026-10-25 Sun    60  ############################################################
+  2026-10-26 Mon    27  ###########################
+  2026-10-27 Tue    30  ##############################
+  2026-10-28 Wed    30  ##############################
+  2026-10-29 Thu    19  ###################
+
+## Resend, wysłane w 24 h: 0
+
+## Zoho, wiadomości przychodzące w 24 h
+  INBOX: 2
+    Kasia Brozynski <kasia@bdlegalgroup.com> | Re: Strona Brozynski & Dalton na telefonie
+    mailer-daemon@mail.zoho.eu | Undelivered Mail Returned to Sender
+  Spam: 0
+
+# Resend i Zoho, pełne 24 h
+## Resend, wysłane w 24 h: 2
+  spoza wyslane*.json          bounced           1
+  spoza wyslane*.json          delivered         1
+  ! wojtnerski@gmail.com -> bounced
+
+## Zoho, wiadomości przychodzące w 24 h
+  INBOX: 7
+    mailer-daemon@mail.zoho.eu | Mail Delivery Status Notification (Delay)
+    Dorota Podlinski <dorota_podlinski@msn.com> | Re: Strona Dorota Podlinski DDS na telefonie
+    Tom Bastard <ddbehance@gmail.com> | Re: Współpraca reklamowa: FluxLab x HAJS METRICS
+    mailer-daemon@mail.zoho.eu | Undelivered Mail Returned to Sender
+    <marcin@marefoods.pl> | Autoresponder
+    Kasia Brozynski <kasia@bdlegalgroup.com> | Re: Strona Brozynski & Dalton na telefonie
+    mailer-daemon@mail.zoho.eu | Undelivered Mail Returned to Sender
+  Spam: 0
