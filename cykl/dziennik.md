@@ -9111,6 +9111,8 @@ Decyzje dla stratega:
 - Z9: /analiza-lokalizacji była zepsuta przez Overpass, naprawiona zapasową instancją; pozostałe 3 narzędzia działają, ale uruchomień w dobie 1 (było 7).
 - Z10: Copilot cytuje 13 razy w tydzień, głównie artykuły JDG (forma opodatkowania, zdrowotna), więc kanał AI to Bing, nie chatgpt.com; warto rozwijać te tematy.
 
+Z19 (30.10 00:47): 6 nocnych stron w indeksie, ostatnie skanowanie 19.10-28.10 05:57, wszystkie przed commitami 28.10 22:44-29.10 04:44; ocena 5.11 wymaga ponownego skanu (0 żądań, `cykl/z19-stan-30.log`).
+
 **Ruch:** raport_ruchu ostatnia doba 100 odsłon, 65 osób (−25% wobec średniej 133,4); źródła b2b-email 53, m.facebook.com 6+2, google 5, facebook 5; po odsiewie 23 sesje ludzi: bez odsyłacza 12, google 5, facebook 2, b2b 1, x 1, bing 1; uruchomienia narzędzi 1.
 **Dowód:** cykl/plan-ruchu.md Z18 [x]; ten wpis.
 **Dla Pawła:**
@@ -9123,3 +9125,11 @@ Decyzje dla stratega:
 **Dowód:** cykl/plan-ruchu.md bez zmian (Z19 [ ] od 00:30).
 **Dla Pawła:**
 **Zostało otwarte:** Z19 od 30.10 00:30, Z20 02:00, Z21 04:30, Z22 05:30.
+
+## 2026-10-30 00:48
+**Kanał:** AI (pomiar, Z19).
+**Co zrobione:** sprawdzony stan skanowania 6 stron zmienionych w nocy 28/29.10: wszystkie w indeksie, ale Google ostatnio czytał je przed zmianami, więc żadna nocna zmiana nie jest jeszcze widoczna.
+**Ruch:** raport_ruchu ostatnia doba 104 odsłony, 68 osób (−21% wobec średniej 132,0); źródła b2b-email 55, google 7, m.facebook.com 6+3, facebook 5; X 1 sesja; uruchomienia narzędzi 1.
+**Dowód:** cykl/z19-stan-30.log; cykl/plan-ruchu.md Z19 [x].
+**Dla Pawła:**
+**Zostało otwarte:** Z20 od 02:00, Z21 04:30, Z22 05:30. Dla stratega: ocena nocnych zmian 5.11 nie ma sensu bez skanu; rozważyć żądania indeksowania dla 6 stron (pula ok. 10/24 h).
