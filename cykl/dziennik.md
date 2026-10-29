@@ -9049,3 +9049,11 @@ Decyzje dla stratega:
 **Dowód:** wpis „Kontrola Z15” w `cykl/artykul-2026-11-09-szkic.md`: 5 z 5 faktów zgodnych z gov.pl (odczyt 29.10, 200), 3 z 3 linków 200, title 60, description 149, FAQ 4; commit poniżej.
 **Dla Pawła:** 
 **Zostało otwarte:** Z16 od 20:30 (stan skanowania po Z2 i Z6), dalej Z17-Z22.
+
+## 2026-10-29 20:46
+**Kanał:** Google (Z16, pomiar stanu po Z2 i Z6).
+**Co zrobione:** odczyt w Search Console daty ostatniego skanowania trzech stron; /wdrozenie-n8n-cena Google zeskanował o 08:02:00, minutę przed końcem wdrożenia nowego title (Vercel 08:03:13), więc indeks ma jeszcze stary title; /n8n i /make-vs-n8n-crm zeskanowane 12:44:48, już z linkiem z Z6.
+**Ruch:** ostatnia doba 114 odsłon, 72 osoby (−13% wobec średniej); źródła: b2b-email 61, facebook 6, m.facebook.com 6, www.google.com 4, b2b 3; X 1 sesja; uruchomienia narzędzi 1.
+**Dowód:** `cykl/z16-stan-2026-10-29.log`, plan Z16 [x]; produkcja curl: title „Ile kosztuje n8n? Wdrożenie i cena | Fluxlab”, po 1 href="/wdrozenie-n8n-cena" na /n8n i /make-vs-n8n-crm.
+**Dla Pawła:**
+**Zostało otwarte:** Z17 od 21:30 (baza /integracje-api i /n8n-dla-crm), Z18 od 22:30; dla stratega ponowna prośba o indeksowanie /wdrozenie-n8n-cena 30.10.

@@ -1,0 +1,8 @@
+20:43:35 | https://fluxlab.pl/wdrozenie-n8n-cena | Adres URL znajduje się w Google | bez żądania
+20:43:53 | https://fluxlab.pl/n8n | Adres URL znajduje się w Google | bez żądania
+20:44:11 | https://fluxlab.pl/make-vs-n8n-crm | Adres URL znajduje się w Google | bez żądania
+Ostatnie skanowanie (rozwinięte „Indeksowanie stron”, 20:4x):
+/wdrozenie-n8n-cena | 29.10 08:02:00 | wdrożenie bedf7c0 gotowe 08:03:13 (Vercel) => skan PRZED wdrożeniem, Google ma stary title
+/n8n                | 29.10 12:44:48 | wdrożenie 201abeb (commit 11:45:50) => skan po wdrożeniu, link widoczny
+/make-vs-n8n-crm    | 29.10 12:44:48 | wdrożenie 201abeb => skan po wdrożeniu
+Produkcja (curl): /wdrozenie-n8n-cena <title>Ile kosztuje n8n? Wdrożenie i cena | Fluxlab; /n8n i /make-vs-n8n-crm po 1 href="/wdrozenie-n8n-cena"
