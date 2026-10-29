@@ -61,10 +61,13 @@ async function get(url: string, ms: number): Promise<string | null> {
 // drugie zapytanie, a to samo zapytanie powtorzone po chwili przechodzilo.
 // Stad lista prob, a nie lista serwerow: glowna instancja, ktora jako jedyna
 // odpowiada stabilnie, wchodzi trzy razy, a miedzy nia stoja instancje
-// zapasowe na wypadek, gdyby padla na dluzej.
+// zapasowe na wypadek, gdyby padla na dluzej. 29.10.2026 glowna oddawala
+// "at capacity", a kumi i private.coffee milczaly; odpowiedziala tylko
+// instancja francuska (dane sprzed kilku tygodni, ale pelna Polska).
 const PROBY = [
   "https://overpass-api.de/api/interpreter",
   "https://overpass-api.de/api/interpreter",
+  "https://overpass.openstreetmap.fr/api/interpreter",
   "https://overpass.kumi.systems/api/interpreter",
   "https://overpass-api.de/api/interpreter",
   "https://overpass.private.coffee/api/interpreter",
