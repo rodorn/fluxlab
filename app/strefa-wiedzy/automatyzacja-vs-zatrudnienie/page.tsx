@@ -62,7 +62,8 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
     <>
       <Header />
       <main className="pt-16 prose-justify">
-        <Breadcrumbs href="/strefa-wiedzy/automatyzacja-vs-zatrudnienie"
+        <Breadcrumbs
+          href="/strefa-wiedzy/automatyzacja-vs-zatrudnienie"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Automatyzacja vs zatrudnienie" },
@@ -76,9 +77,9 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
               Automatyzacja vs zatrudnienie, co się bardziej opłaca w MŚP
             </h1>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-              Pracy przybywa, zespół ma pełne ręce. Kalkulator po czterech
-              ustawieniach pokazuje, czy taniej wychodzi ręczna praca, etat, czy
-              wdrożenie.
+              Przy 10 do 40 godzinach powtarzalnej pracy miesięcznie taniej
+              wychodzi automat, wdrożenie od 990 zł raz. Etat z pensją 6 000 zł kosztuje firmę
+              ok. 7 240 zł miesięcznie.
             </p>
             <div className="mt-6">
               <Link href="#kalkulator" className="btn-primary">
@@ -206,9 +207,7 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
                 content: (
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
-                      <h2 className="mb-6 h2-sekcji">
-                        Ryzyka po obu stronach
-                      </h2>
+                      <h2 className="mb-6 h2-sekcji">Ryzyka po obu stronach</h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Etat to rotacja, urlopy i L4, utrata wiedzy przy
                         odejściu oraz kosztowne zwolnienia przy spadku
@@ -250,9 +249,7 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
                 content: (
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
-                      <h2 className="mb-6 h2-sekcji">
-                        FAQ
-                      </h2>
+                      <h2 className="mb-6 h2-sekcji">FAQ</h2>
                       <div className="space-y-4">
                         {faqItems.map((item, index) => (
                           <details
@@ -295,7 +292,10 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
           </div>
         </section>
 
-        <CTA naglowek="Policzmy to dla Twojej firmy" opis="30 minut, konkretne liczby dla Twoich procesów." />
+        <CTA
+          naglowek="Policzmy to dla Twojej firmy"
+          opis="30 minut, konkretne liczby dla Twoich procesów."
+        />
 
         <section className="py-12 lg:py-16">
           <div className="max-w-3xl mx-auto px-6 lg:px-8">
