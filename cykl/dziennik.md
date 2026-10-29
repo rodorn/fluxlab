@@ -8908,3 +8908,11 @@ Decyzje dla stratega:
 **Dowód:** commit a1adaac, na produkcji po 140 s (curl), telefon-test 390/390 px, 0 błędów konsoli; build, SPOJNOSC OK, JAKOSC OK 156 stron; IndexNow: „brak adresów zmienionych”, nic nie wysłano.
 **Dla Pawła:**
 **Zostało otwarte:** Z18 o 05:30; niezacommitowane zmiany w app/ksef-2027 i app/numer-ksef należą do innej sesji, nie ruszane.
+
+## 2026-10-29 04:43
+**Kanał:** 2, widoczność w asystentach AI (plan dobowy wyczerpany do 05:30, jedyne otwarte Z18 ma warunek „nie wcześniej niż 05:30”).
+**Co zrobione:** pierwszy akapit /strefa-wiedzy/automatyzacja-vs-zatrudnienie (zapytanie „porównanie kosztów automatyzacji vs zatrudniania”: poz. 2,3, 16 wyświetleń, 0 kliknięć w tygodniu 20-26.10) odpowiada wprost: przy 10 do 40 godzinach powtarzalnej pracy miesięcznie taniej wychodzi automat (wdrożenie od 990 zł raz), etat z pensją 6 000 zł to ok. 7 240 zł miesięcznie; tekst tej samej długości co poprzedni.
+**Ruch:** ostatnia doba 165 odsłon, 75 osób (+29% wobec średniej 127); źródła b2b-email 97, b2b 8, m.facebook.com 10, com.linkedin.android 2; uruchomienia narzędzi 7; tydzień 943 odsłony / 500 osób.
+**Dowód:** commit 7c9ec9a, na produkcji po 125 s (curl, 200), telefon-test 390/390 px, 0 błędów konsoli; build, SPOJNOSC OK, JAKOSC OK 156 stron; IndexNow 2 z 3 punktów przyjęło.
+**Dla Pawła:**
+**Zostało otwarte:** Z18 o 05:30; niezacommitowane zmiany w app/ksef-2027 i app/numer-ksef należą do innej sesji, nie ruszane.
