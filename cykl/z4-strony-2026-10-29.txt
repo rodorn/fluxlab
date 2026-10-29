@@ -1,0 +1,13 @@
+Jak otworzyć: cdp (port 9228) -> https://search.google.com/search-console?resource_id=sc-domain%3Afluxlab.pl, wait 12 s, klik(tab, "Strony", 0) z skrypty-raport/gsc_klik.py, sleep 20 s, tab.text(). Zadziałało za pierwszym razem (adres po kliku: /search-console/index?resource_id=sc-domain%3Afluxlab.pl). Skrypt: /tmp/z4/z4.py, odczyt 29.10 10:00.
+
+Raport Indeksowanie > Strony, ostatnia aktualizacja: 23.10.2026 (bez nowych danych od 23.10)
+Zindeksowano: 165
+Nie zindeksowano: 212 (6 przyczyn z niezerową liczbą)
+
+Przyczyny niezindeksowania:
+1. Alternatywna strona zawierająca prawidłowy tag strony kanonicznej: 159
+2. Strona zeskanowana, ale jeszcze nie zindeksowana: 40
+3. Strona zawiera przekierowanie: 5
+dalej: zablokowana z powodu innego błędu 4xx 4 (weryfikacja rozpoczęta), noindex 2, 404 2, błąd przekierowania 0, wykryta obecnie niezindeksowana 0.
+
+Uwaga: plan pisał „165 z 212”; w raporcie to 165 zindeksowanych i 212 niezindeksowanych (razem 377 znanych adresów). 159 to warianty z kanonicznym wskazującym inną stronę (dobrze, nie problem); realna kolejka do pracy to 40 „zeskanowana, niezindeksowana”.

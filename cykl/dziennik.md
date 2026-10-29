@@ -8959,3 +8959,11 @@ Decyzje dla stratega:
 **Dowód:** brak zmian, bo żadne zadanie nie przekroczyło blokady godziny.
 **Dla Pawła:**
 **Zostało otwarte:** Z3 (indeksowanie /wdrozenie-n8n-cena, od 09:50), Z4 (raport Strony, od 10:00), dalej Z5-Z22 według godzin.
+
+## 2026-10-29 10:02
+**Kanał:** Google (wykonanie planu: Z3, Z4).
+**Co zrobione:** Z3: prośba o indeksowanie /wdrozenie-n8n-cena po zmianie title z Z2 przesłana; Z4: odczyt raportu Strony w GSC, raport nadal z 23.10: 165 zindeksowanych, 212 niezindeksowanych (159 kanoniczne alternatywy, 40 zeskanowane niezindeksowane, 5 przekierowań).
+**Ruch:** doba 161 odsłon, 77 osób (+28% wobec średniej 125,9); źródła: b2b-email 103, b2b 8, m.facebook.com 10, com.linkedin.android 2; narzędzia 5 uruchomień; tydzień 943 odsłony, 501 osób.
+**Dowód:** `cykl/z3-indeksowanie-29.log` (09:50:36 „prośba przesłana”), `cykl/z4-strony-2026-10-29.txt` (pierwsza linijka: działający sposób otwarcia raportu, klik „Strony” zadziałał od razu).
+**Dla Pawła:**
+**Zostało otwarte:** Z5 (b2b na 100 maili, od 10:30), Z6 (linki do /wdrozenie-n8n-cena, od 11:00), dalej według godzin.
