@@ -1,0 +1,13 @@
+Z1 2026-10-29, baza dla 6 stron zmienionych w nocy 28/29.10 (ocena 5.11), odczyt 06:50
+GSC: Skuteczność, filtr page=!<adres>, 28 dni = 29.09-26.10.2026 (zmiany nocne jeszcze niewidoczne)
+Licznik: 7 dni do 29.10 06:50, sesje ludzi po odsiewie (pomiar-kanalow: bez botów, salw, par, serii, b2b-email), odsłona danej strony; zdarzenia na tej ścieżce
+
+strona                                        | klik | wyśw | poz.  | główne zapytanie (wyśw. / poz.)                         | sesje 7d | odsyłacze 7d             | uruchomienia 7d
+/kalkulator-podatkowy                         | 0    | 50   | 21,6  | kalkulator jdg (5 / 27,2)                                | 22       | bez odsyłacza 22         | kalkulator 4
+/dobor-samochodu                              | 0    | 8    | 17,9  | wizualizacja samochodu online (2 / 54,0)                 | 2        | chatgpt.com 2            | 0
+/analiza-lokalizacji                          | 2    | 41   | 43,3  | analiza lokalizacji (12 / 28,0)                          | 3        | bez 2, chatgpt.com 1     | skan 4, czat 1
+/sprawdz-kontrahenta                          | 0    | 17   | 20,1  | jak sprawdzić firmę przed przelewem (5 / 24,6)           | 3        | bez 2, duckduckgo.com 1  | skan 4
+/strefa-wiedzy/gutschrift-ksef                | 0    | 19   | 5,6   | gutschrift co to (1 / 10,0), gutschrift po polsku (1 / 3,0) | 1     | www.google.com 1         | 0
+/strefa-wiedzy/automatyzacja-vs-zatrudnienie  | 0    | 29   | 3,4   | porównanie kosztów automatyzacji vs zatrudniania (26 / 3,0) | 1     | bez 1                    | 0
+
+Commity nocne: 05f5086, d9968a2, 9cd606e, b3005af, a1adaac, 7c9ec9a. chatgpt.com w 7 dni na tych stronach: 3 sesje (dobor-samochodu 2, analiza-lokalizacji 1).
