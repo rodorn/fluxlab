@@ -9041,3 +9041,11 @@ Decyzje dla stratega:
 **Dowód:** `cykl/z14-pomiar-2026-10-29.txt`; Resend 24 h 2 (1 delivered, 1 bounced wojtnerski@gmail.com, spoza wyslane*.json); Zoho od 12:30: 0 zapytań o usługi.
 **Dla Pawła:** 
 **Zostało otwarte:** Z15 od 19:30 (kontrola szkicu 9.11), dalej Z16-Z22. Odpowiedzi na kampanię „Strona … na telefonie” (Brozynski & Dalton 15:19, Dorota Podlinski DDS 28.10) to odmowy z wątku innej sesji, nie zapytania.
+
+## 2026-10-29 19:45
+**Kanał:** treść (Z15 planu, kontrola szkicu 9.11).
+**Co zrobione:** szkic „Czy firma ma adres do e-Doręczeń” sprawdzony ponownie ze źródłem, gotowy do publikacji 9.11 bez poprawek; nic nie poszło w świat.
+**Ruch:** raport_ruchu: doba 132 odsłony, 82 osoby (+3% wobec średniej 128); źródła: b2b-email 72, facebook 7, b2b 6, www.google.com 6, m.facebook.com 6; X 1 sesja; uruchomienia narzędzi 1.
+**Dowód:** wpis „Kontrola Z15” w `cykl/artykul-2026-11-09-szkic.md`: 5 z 5 faktów zgodnych z gov.pl (odczyt 29.10, 200), 3 z 3 linków 200, title 60, description 149, FAQ 4; commit poniżej.
+**Dla Pawła:** 
+**Zostało otwarte:** Z16 od 20:30 (stan skanowania po Z2 i Z6), dalej Z17-Z22.
