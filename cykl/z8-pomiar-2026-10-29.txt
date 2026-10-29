@@ -1,0 +1,66 @@
+# Pomiar kanałów, 2026-10-29 12:44
+
+## Odsiew, 24 h: ludzie 10, pary 0, serie testowe 0, salwy 0 (Chrome Windows 0, z odsyłaczem 0)
+## Wyjścia do grupy KSeF, 24 h: 0
+
+## Odsiew, 7 dni: ludzie 10, pary 0, serie testowe 0, salwy 0 (Chrome Windows 0, z odsyłaczem 0)
+## Wyjścia do grupy KSeF, 7 dni: 0
+
+## Źródła, 24 h: 10 sesji, 10 odsłon
+  (bez odsyłacza)                              7
+  www.google.com                               2
+  b2b                                          1
+
+## Źródła, 7 dni: 10 sesji, 10 odsłon
+  (bez odsyłacza)                              7
+  www.google.com                               2
+  b2b                                          1
+
+## Kampanie utm, 7 dni (sesje)
+  b2b / b2b-firmy                              1
+
+## Zdarzenia, 7 dni (uruchomienia narzędzi, lead_*, klik_po_wyniku)
+  otwarcie_maila  /mail/108c0a3b42             2
+  otwarcie_maila  /mail/6712ba8856             1
+  otwarcie_maila  /mail/d7976d4aec             1
+  otwarcie_maila  /mail/74e9198c38             1
+  otwarcie_maila  /mail/460702b560             1
+  klik_maila  /mail/98d8c8e489?cel=/           1
+  otwarcie_maila  /mail/00f33cbfe4             1
+  otwarcie_maila  /mail/b0080ffa9f             1
+  otwarcie_maila  /mail/74e825597a             1
+  otwarcie_maila  /mail/7f7a1e970d             1
+  otwarcie_maila  /mail/6ff58e4164             1
+  otwarcie_maila  /mail/970431051a             1
+  otwarcie_maila  /mail/667fa79870             1
+
+## Sesje dziennie, 14 dni
+  2026-10-15 Thu    17  #################
+  2026-10-16 Fri    28  ############################
+  2026-10-17 Sat    30  ##############################
+  2026-10-18 Sun    86  ######################################################################################
+  2026-10-19 Mon    47  ###############################################
+  2026-10-20 Tue    28  ############################
+  2026-10-21 Wed    62  ##############################################################
+  2026-10-22 Thu    34  ##################################
+  2026-10-23 Fri    40  ########################################
+  2026-10-24 Sat    84  ####################################################################################
+  2026-10-25 Sun    60  ############################################################
+  2026-10-26 Mon    27  ###########################
+  2026-10-27 Tue    30  ##############################
+  2026-10-28 Wed    30  ##############################
+  2026-10-29 Thu    15  ###############
+
+## Resend, wysłane w 24 h: 2
+  spoza wyslane*.json          bounced           1
+  spoza wyslane*.json          delivered         1
+  ! wojtnerski@gmail.com -> bounced
+
+## Zoho, wiadomości przychodzące w 24 h
+  INBOX: 3
+    Tom Bastard <ddbehance@gmail.com> | Re: Współpraca reklamowa: FluxLab x HAJS METRICS
+    mailer-daemon@mail.zoho.eu | Undelivered Mail Returned to Sender
+    <marcin@marefoods.pl> | Autoresponder
+  Spam: 0
+
+Odsłony ludzi od 06:30: /wdrozenie-n8n-cena 0, /integracja-crm-z-erp 1

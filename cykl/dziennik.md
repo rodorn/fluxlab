@@ -8983,3 +8983,11 @@ Decyzje dla stratega:
 **Dowód:** commit 201abeb; curl prod `href="/wdrozenie-n8n-cena"` = 1 na obu stronach, 200; IndexNow 2 adresy.
 **Dla Pawła:**
 **Zostało otwarte:** Z7 (indeksowanie /n8n i /make-vs-n8n-crm) od 12:00.
+
+## 2026-10-29 12:46
+**Kanał:** Google (Z7) i pomiar (Z8).
+**Co zrobione:** Z7: prośby o indeksowanie /n8n i /make-vs-n8n-crm po linkach do /wdrozenie-n8n-cena z Z6; Z8: pomiar od 06:30.
+**Ruch:** raport_ruchu: doba 170 odsłon / 86 osób, źródła b2b-email 112 (piksel), b2b 9, m.facebook.com 10, google 4. Od 06:30 ludzie 10 (google 2, b2b 1, bez odsyłacza 7); uruchomienia narzędzi 0, lead_* 0, klik_po_wyniku 0; /wdrozenie-n8n-cena 0, /integracja-crm-z-erp 1.
+**Dowód:** `cykl/z7-indeksowanie-29.log` (12:43:47, 12:44:16, „prośba przesłana”), `cykl/z8-pomiar-2026-10-29.txt`.
+**Dla Pawła:** 
+**Zostało otwarte:** Z9 (narzędzia na telefonie, od 13:30), dalej Z10-Z22. Zoho INBOX: odpowiedź Tom Bastard „Re: Współpraca reklamowa: FluxLab x HAJS METRICS” to wątek innej sesji, nie zapytanie o usługę.
