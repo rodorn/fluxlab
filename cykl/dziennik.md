@@ -8900,3 +8900,11 @@ Decyzje dla stratega:
 **Dowód:** commit b3005af, na produkcji po 150 s (curl), telefon-test bez błędów konsoli; IndexNow: „brak adresów zmienionych”, nic nie wysłano.
 **Dla Pawła:**
 **Zostało otwarte:** Z18 o 05:30; niezacommitowane zmiany w app/ksef-2027 i app/numer-ksef należą do innej sesji, nie ruszane.
+
+## 2026-10-29 03:43
+**Kanał:** 2, widoczność w asystentach AI (plan dobowy wyczerpany do 05:30, jedyne otwarte Z18 ma warunek „nie wcześniej niż 05:30”).
+**Co zrobione:** pierwszy akapit /strefa-wiedzy/gutschrift-ksef (17 wyświetleń w Google w tygodniu 20-26.10) odpowiada wprost na pytanie z tytułu: Gutschrift od klienta z Niemiec nie trafia do KSeF, bez umowy o samofakturowanie nie jest fakturą, fakturę wystawiasz w KSeF Ty; tekst krótszy niż poprzedni (132 zn. zamiast 137). Sprawdzono też leady 7 innych stron z wyświetleniami w GSC: odpowiadają wprost, bez zmian.
+**Ruch:** ostatnia doba 163 odsłony, 75 osób (+27% wobec średniej 128); źródła b2b-email 95, b2b 8, m.facebook.com 10, com.linkedin.android 2; uruchomienia narzędzi 7; tydzień 941 odsłon / 500 osób.
+**Dowód:** commit a1adaac, na produkcji po 140 s (curl), telefon-test 390/390 px, 0 błędów konsoli; build, SPOJNOSC OK, JAKOSC OK 156 stron; IndexNow: „brak adresów zmienionych”, nic nie wysłano.
+**Dla Pawła:**
+**Zostało otwarte:** Z18 o 05:30; niezacommitowane zmiany w app/ksef-2027 i app/numer-ksef należą do innej sesji, nie ruszane.
