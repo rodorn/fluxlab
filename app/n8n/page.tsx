@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -42,6 +43,7 @@ const faq = [
     question: "Czym n8n różni się od Zapier i Make?",
     answer:
       "Działa na własnym serwerze, pozwala pisać kod i nie płacisz za każde wykonanie.",
+    anchor: "nie płacisz za każde wykonanie",
   },
   {
     question: "Czy możemy przenieść automatyzacje z Zapier/Make?",
@@ -136,7 +138,20 @@ export default function N8nPage() {
                               </svg>
                             </summary>
                             <div className="px-6 pb-6 text-sm text-gray-500 dark:text-gray-400">
-                              {item.answer}
+                              {"anchor" in item && item.anchor ? (
+                                <>
+                                  {item.answer.split(item.anchor)[0]}
+                                  <Link
+                                    href="/wdrozenie-n8n-cena"
+                                    className="text-accent hover:underline"
+                                  >
+                                    {item.anchor}
+                                  </Link>
+                                  {item.answer.split(item.anchor)[1]}
+                                </>
+                              ) : (
+                                item.answer
+                              )}
                             </div>
                           </details>
                         ))}

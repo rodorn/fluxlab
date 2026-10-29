@@ -361,7 +361,13 @@ export default function MakeVsN8nCrm() {
                         Ile kosztuje wdrożenie
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
-                        Stała cena za etap, płatność po odbiorze. Cena zależy od
+                        <Link
+                          href="/wdrozenie-n8n-cena"
+                          className="text-accent hover:underline"
+                        >
+                          Stała cena za etap
+                        </Link>
+                        , płatność po odbiorze. Cena zależy od
                         zakresu, nie od wyboru narzędzia.
                       </p>
                       <div className="grid md:grid-cols-2 gap-6 mb-8">
