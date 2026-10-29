@@ -1,0 +1,11 @@
+Z17 2026-10-29 21:50, baza /integracje-api i /n8n-dla-crm (link do ERP 28.10), bez zmian
+GSC: Skuteczność, filtr page=!<adres>, 28 dni = 30.09-27.10.2026
+
+/integracje-api: 0 klik. / 29 wyśw. / poz. śr. 56,7
+  zapytania (3 z pozycją): integracja api 15 wyśw. poz. 58,4; integracje api 12 wyśw. poz. 56,4; integracja systemów api 1 wyśw. poz. 82,0
+  title: „Integracje API i łączenie systemów w firmie | Fluxlab” (główna fraza „integracje api” jest w title)
+/n8n-dla-crm: 0 klik. / 5 wyśw. / poz. śr. 7,8
+  zapytania (1 z pozycją): wdrożenie n8n 1 wyśw. poz. 23,0 (pozostałe 4 wyśw. ukryte)
+  title: „n8n dla CRM: automatyzacja leadów i raportów | Fluxlab” (fraza „wdrożenie n8n” nie, ale należy do /wdrozenie-n8n-cena); embargo do 4.11
+
+kandydat zapasowy: brak (/integracje-api poz. 56-58 daleko od 8-15, fraza już w title; /n8n-dla-crm 5 wyśw. i embargo)

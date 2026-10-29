@@ -9057,3 +9057,11 @@ Decyzje dla stratega:
 **Dowód:** `cykl/z16-stan-2026-10-29.log`, plan Z16 [x]; produkcja curl: title „Ile kosztuje n8n? Wdrożenie i cena | Fluxlab”, po 1 href="/wdrozenie-n8n-cena" na /n8n i /make-vs-n8n-crm.
 **Dla Pawła:**
 **Zostało otwarte:** Z17 od 21:30 (baza /integracje-api i /n8n-dla-crm), Z18 od 22:30; dla stratega ponowna prośba o indeksowanie /wdrozenie-n8n-cena 30.10.
+
+## 2026-10-29 21:50
+**Kanał:** Google (Z17 planu, baza /integracje-api i /n8n-dla-crm).
+**Co zrobione:** odczyt GSC 28 dni dla dwóch stron z linkiem do ERP z 28.10; kandydat zapasowy na kamień: brak, nic nie poszło w świat.
+**Ruch:** ostatnia doba 104 odsłony, 67 osób (−22% wobec średniej 133); źródła: b2b-email 57, m.facebook.com 6, facebook 5, www.google.com 4, b2b 2; uruchomienia narzędzi 1.
+**Dowód:** `cykl/z17-baza-2026-10-29.txt`: /integracje-api 0 klik. / 29 wyśw. / poz. 56,7 (integracja api 58,4, integracje api 56,4, fraza w title); /n8n-dla-crm 0 / 5 / poz. 7,8 (wdrożenie n8n 23,0, reszta ukryta, embargo do 4.11).
+**Dla Pawła:**
+**Zostało otwarte:** Z18 od 22:30 (bilans planu), Z19-Z22 po północy.
