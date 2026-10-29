@@ -8999,3 +8999,11 @@ Decyzje dla stratega:
 **Dowód:** commit 0e06bed; telefon-test po wdrożeniu: Apteka, Grodzisk Mazowiecki → 11/17/22 apteki w 1/3/5 km, 2609 mieszkańców na punkt; /numer-ksef, /kalkulator-podatkowy, /wlasny-crm wynik widoczny, 0 błędów konsoli.
 **Dla Pawła:**
 **Zostało otwarte:** Z10 (Copilot) od 14:30; instancja francuska ma dane z 10.08.2026, gdy overpass-api.de wróci, pierwszeństwo i tak ma on.
+
+## 2026-10-29 14:49
+**Kanał:** widoczność w asystentach AI (Z10 planu: cytowania Copilota).
+**Co zrobione:** odczyt Bing AI Performance: 13 cytowań w 7 dniach (22-26.10), 49 w 30 dniach, wzrost o 26 od 19.10; Copilot cytuje głównie artykuły JDG i raportowanie, zapytań Bing nie pokazuje.
+**Ruch:** ostatnia doba 181 odsłon, 84 osoby (+52% wobec średniej); źródła: b2b-email 118, b2b 9, m.facebook.com 10, google 5; narzędzia 4 uruchomienia.
+**Dowód:** cykl/z10-copilot-2026-10-29.txt; strony 30 d: jaka-forma-opodatkowania-jdg-2026 12, jak-liczyc-zdrowotna-jdg 9, jak-zautomatyzowac-raportowanie-w-firmie 8, ryczalt-czy-liniowy 8, /automatyzacja-raportowania 6, /sprawdzenie-nip 4, /kalkulator-podatkowy 2.
+**Dla Pawła:**
+**Zostało otwarte:** Z11 (efekt serii /numer-ksef) od 15:30; dane Bing kończą się na 26.10, 24-26.10 bez cytowań.

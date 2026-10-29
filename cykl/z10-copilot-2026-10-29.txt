@@ -1,0 +1,25 @@
+Z10 29.10.2026 14:48, Bing Webmaster Tools > AI Performance (Microsoft Copilots and Partners), fluxlab.pl
+Dane Bing kończą się na 26.10 (opóźnienie ok. 3 dni).
+
+Cytowania 7 dni (22-26.10): 13   (22.10: 9, 23.10: 4, 24-26.10: 0)
+Cytowania 30 dni (7-26.10): 49   (7.10: 7, 12.10: 10, 13.10: 4, 16.10: 2, 18.10: 4, 19.10: 5, 20.10: 4, 22.10: 9, 23.10: 4)
+Średnio cytowanych stron na dzień: 1
+
+Cytowane strony, 30 dni:
+12  /strefa-wiedzy/jaka-forma-opodatkowania-jdg-2026
+ 9  /strefa-wiedzy/jak-liczyc-zdrowotna-jdg
+ 8  /strefa-wiedzy/jak-zautomatyzowac-raportowanie-w-firmie
+ 8  /strefa-wiedzy/ryczalt-czy-liniowy
+ 6  /automatyzacja-raportowania
+ 4  /sprawdzenie-nip
+ 2  /kalkulator-podatkowy
+
+Cytowane strony, 7 dni:
+ 4  /strefa-wiedzy/jaka-forma-opodatkowania-jdg-2026
+ 4  /strefa-wiedzy/jak-zautomatyzowac-raportowanie-w-firmie
+ 3  /automatyzacja-raportowania
+ 2  /sprawdzenie-nip
+
+Zapytania (Grounding Queries): brak danych, 0 wierszy w 7 i 30 dniach.
+Wzgl. 19.10 (23 cytowania od 7.10): +26 w tydzień. Trzy ostatnie dni (24-26.10) bez cytowań.
+Nic nie zgłaszano.
