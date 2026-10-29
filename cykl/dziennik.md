@@ -8975,3 +8975,11 @@ Decyzje dla stratega:
 **Dowód:** cykl/z5-b2b-2026-10-29.txt; na 100 maili ~6 sesji, 1 czytająca, 0 leadów.
 **Dla Pawła:** liczba do decyzji o zimnych mailach: 148 maili w tydzień, 0 leadów, 3 odmowy.
 **Zostało otwarte:** Z6 (linki do /wdrozenie-n8n-cena na /n8n i /make-vs-n8n-crm, od 11:00), Z7 (od 12:00), dalej Z8-Z22.
+
+## 2026-10-29 11:55
+**Kanał:** Google (plan Z6, wzmacnia Z2).
+**Co zrobione:** dwa linki wewnętrzne do /wdrozenie-n8n-cena na istniejących słowach: /n8n (FAQ, „nie płacisz za każde wykonanie”) i /make-vs-n8n-crm (Cennik, „Stała cena za etap”).
+**Ruch:** ostatnia doba 165 odsłon, 82 osoby; źródła: b2b-email 109, b2b 9, m.facebook.com 10, google.com 3; LinkedIn 1 sesja.
+**Dowód:** commit 201abeb; curl prod `href="/wdrozenie-n8n-cena"` = 1 na obu stronach, 200; IndexNow 2 adresy.
+**Dla Pawła:**
+**Zostało otwarte:** Z7 (indeksowanie /n8n i /make-vs-n8n-crm) od 12:00.
