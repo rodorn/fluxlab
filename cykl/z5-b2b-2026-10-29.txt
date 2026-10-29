@@ -1,0 +1,16 @@
+Z5, kampania mailowa b2b, okno 22.10 10:43 – 29.10 10:43 (licznik po odsiewie botów, automatyki, salw i skanerów)
+
+Kto wysyła: sesja FL_marketing, katalog ~/Projekty/fluxlab-marketing/b2b (redirect /m/[id] dokleja utm_source=b2b, utm_campaign=b2b-firmy).
+Maile wysłane w 7 dni: 148 = 128 z pomiar/tokeny.tsv (hurtownie portal 40 + przypomnienie 25, USA Polonia fala 2 16 + przypomnienie 47) + 20 z biura_ecom2 (23.10).
+
+4 liczby:
+1. Sesje z odsłoną strony z b2b: 9 (139 dalszych sesji b2b-email to tylko piksel otwarcia, 0 odsłon). 8 z 9 wylądowało na /, 0 s na stronie.
+   8 z 9 to ten sam token a895f71ac8 (info@cpaadvisorsgroup.com, USA przypomnienie), 25 klików 28.10 17:32–21:37 z różnych przeglądarek, wzorzec skanera linków albo przekazania dalej.
+   Jedyna sesja z czytaniem: 28.10 19:57, Safari iOS, / -> /wlasny-crm, 17 s.
+2. Uruchomienia narzędzi i lead_* z b2b: 0.
+3. klik_maila 7 dni: 29; cel zawsze "/" (a895f71ac8 25, ac8845f393 1, 4b4d08a3a8 1, 25d8286e86 1, 98d8c8e489 1). otwarcie_maila: 324 zdarzenia.
+4. Odpowiedzi w Zoho INBOX na „Strona … na telefonie": 3, wszystkie z USA Polonia, ton grzeczny, zero zainteresowania
+   (Dorota Podlinski DDS 28.10: „wyświetla się poprawnie, nie potrzebujemy pomocy”; Temida Tax 28.10: „na razie dziękuję, odezwę się”; Atlantic Stairs 26.10: „dziękuję za punkty”).
+   Poza tym tematem: OSM Bieruń 26.10 (strona w trakcie zmian, odmowa), 2 zwroty mailer-daemon.
+
+Na 100 maili: około 6 sesji ze stroną, z czego realnie 1 osoba czytała dłużej niż chwilę, 2 grzeczne odmowy i 0 leadów ani uruchomień narzędzi.

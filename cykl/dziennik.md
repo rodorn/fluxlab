@@ -8967,3 +8967,11 @@ Decyzje dla stratega:
 **Dowód:** `cykl/z3-indeksowanie-29.log` (09:50:36 „prośba przesłana”), `cykl/z4-strony-2026-10-29.txt` (pierwsza linijka: działający sposób otwarcia raportu, klik „Strony” zadziałał od razu).
 **Dla Pawła:**
 **Zostało otwarte:** Z5 (b2b na 100 maili, od 10:30), Z6 (linki do /wdrozenie-n8n-cena, od 11:00), dalej według godzin.
+
+## 2026-10-29 10:46
+**Kanał:** outreach (plan Z5, pomiar kampanii b2b innej sesji, bez wysyłki).
+**Co zrobione:** policzony efekt 7 dni maili b2b FL_marketing: 148 maili dało 9 sesji ze stroną (8 z jednego tokenu info@cpaadvisorsgroup.com, 0 s, wzorzec skanera), 1 osobę czytającą (Safari iOS, / → /wlasny-crm, 17 s), 0 uruchomień narzędzi i leadów, 3 grzeczne odmowy na „Strona … na telefonie”.
+**Ruch:** doba 165 odsłon, 81 osób (+31% wobec średniej); źródła: b2b-email 105, b2b 9, m.facebook.com 10, www.google.com 3; narzędzia 4 uruchomienia.
+**Dowód:** cykl/z5-b2b-2026-10-29.txt; na 100 maili ~6 sesji, 1 czytająca, 0 leadów.
+**Dla Pawła:** liczba do decyzji o zimnych mailach: 148 maili w tydzień, 0 leadów, 3 odmowy.
+**Zostało otwarte:** Z6 (linki do /wdrozenie-n8n-cena na /n8n i /make-vs-n8n-crm, od 11:00), Z7 (od 12:00), dalej Z8-Z22.
