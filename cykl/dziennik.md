@@ -8941,3 +8941,13 @@ Decyzje dla stratega:
 **Dowód:** cykl/z1-baza-nocne-2026-10-29.txt: wyświetlenia 50/8/41/17/19/29, kliknięcia 2 (tylko /analiza-lokalizacji); sesje 7 dni 22/2/3/3/1/1, z chatgpt.com 3.
 **Dla Pawła:**
 **Zostało otwarte:** Z2 (title /wdrozenie-n8n-cena) od 08:00, Z3-Z22 według godzin w planie.
+
+<!-- WYSLANO 2026-10-29 07:05 -->
+
+## 2026-10-29 08:06
+**Kanał:** Google (plan Z2, kamień „ile kosztuje n8n").
+**Co zrobione:** title i og:title `/wdrozenie-n8n-cena` zmienione na „Ile kosztuje n8n? Wdrożenie i cena | Fluxlab", żeby frazy „ile kosztuje n8n" (17 wyśw., poz. 8-9,4) były w tytule; treść i H1 bez zmian. Cykl czekał na blokadę 08:00, przed nią nie było zadania do wzięcia.
+**Ruch:** doba 168 odsłon, 75 osób (+34% wobec średniej); źródła: b2b-email 99, b2b 8, m.facebook.com 10, com.linkedin.android 2; narzędzia 7 uruchomień; tydzień 944 odsłony, 499 osób.
+**Dowód:** commit bedf7c0; https://fluxlab.pl/wdrozenie-n8n-cena zwraca nowy <title> i og:title; telefon-test 200, 0 błędów konsoli. Baza: 0 kliknięć / 78 wyśw. / poz. 9,5 (28 dni).
+**Dla Pawła:**
+**Zostało otwarte:** Z3 (indeksowanie /wdrozenie-n8n-cena, od 09:50), Z4 (od 10:00). IndexNow nie wysłał nic („brak adresów zmienionych").
