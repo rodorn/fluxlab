@@ -9025,3 +9025,11 @@ Decyzje dla stratega:
 **Dowód:** `cykl/gsc-zapytania-2026-10-29.txt`, `cykl/gsc-strony-2026-10-29.txt`, `cykl/z12-kandydat-2026-10-29.txt`. GSC 21-27.10: 20 kliknięć / 1343 wyśw. (20-26.10: 19 / 1,28 tys.), kliknięcia poza główną 12 na 9 stronach (kiedy-odliczyc-vat-z-faktury-ksef 4). Frazy z poz. 8-15 tylko „wdrożenie n8n" i „n8n cena" na /wdrozenie-n8n-cena (title zmieniony dziś w Z2) i „asystent ai na stronie" (już w title).
 **Dla Pawła:**
 **Zostało otwarte:** Z13 od 17:30 (szkic 23.11), Z17 jako kandydat zapasowy, bo Z12 dał „brak".
+
+## 2026-10-29 17:58
+**Kanał:** treść (plan dobowy Z13, kamień: szkic na 23.11).
+**Co zrobione:** szkic „Zamknięcie roku w CRM w jeden dzień” w `cykl/artykul-2026-11-23-szkic.md` (adres docelowy /strefa-wiedzy/zamkniecie-roku-w-crm), 5 faktów ze źródłem: przedawnienie 31.12 z KC art. 118 i 554 (Dz.U. 2026 poz. 795), Wigilia wolna (Dz.U. 2025 poz. 296), kalendarz; bez publikacji. Budżet: rytm „utrzymaj”.
+**Ruch:** doba 171 odsłon, 86 osób; źródła: b2b-email 113, b2b 8, google 6, m.facebook.com 10, X 1 sesja; uruchomienia narzędzi 1.
+**Dowód:** plik szkicu, commit poniżej. RODO pominięte, bo EUR-Lex zwrócił 202 z pustą treścią, UODO bez tekstu artykułu.
+**Dla Pawła:**
+**Zostało otwarte:** Z14 od 18:30 (pomiar wieczorny), Z15 od 19:30 (kontrola szkicu 9.11).
