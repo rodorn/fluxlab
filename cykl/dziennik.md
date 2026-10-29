@@ -9017,3 +9017,11 @@ Decyzje dla stratega:
 **Dowód:** https://www.facebook.com/photo/?fbid=122116479579504058; X: plik ~/Projekty/fluxlab-x/stan/ksef60-link z 28.10 06:49 nadal czeka na odcinek K; IG: rolka rolki/261021-pytanie-korekta-faktury-ksef z linkiem nie jest w kolejce.
 **Dla Pawła:**
 **Zostało otwarte:** Z12 od 16:30 (nowy tydzień GSC). Zlecenie /numer-ksef na X i IG nie zostało wykonane przez sesje kanałów; bez nowych zleceń zgodnie z Z11, do oceny w bilansie Z18.
+
+## 2026-10-29 16:58
+**Kanał:** Google (Z12 z planu).
+**Co zrobione:** GSC pokazał nowy tydzień 21-27.10: zapisane zapytania i strony (po 100 wierszy), diff z 28.10, kandydat na kamień 30.10: brak.
+**Ruch:** doba 189 odsłon / 87 osób (125 to piksel b2b-email); źródła: b2b-email 125, b2b 9, google 6, m.facebook.com 10, X 1. Uruchomienia narzędzi 5.
+**Dowód:** `cykl/gsc-zapytania-2026-10-29.txt`, `cykl/gsc-strony-2026-10-29.txt`, `cykl/z12-kandydat-2026-10-29.txt`. GSC 21-27.10: 20 kliknięć / 1343 wyśw. (20-26.10: 19 / 1,28 tys.), kliknięcia poza główną 12 na 9 stronach (kiedy-odliczyc-vat-z-faktury-ksef 4). Frazy z poz. 8-15 tylko „wdrożenie n8n" i „n8n cena" na /wdrozenie-n8n-cena (title zmieniony dziś w Z2) i „asystent ai na stronie" (już w title).
+**Dla Pawła:**
+**Zostało otwarte:** Z13 od 17:30 (szkic 23.11), Z17 jako kandydat zapasowy, bo Z12 dał „brak".

@@ -1,0 +1,7 @@
+# Z12 29.10.2026 16:58, dane GSC 7 dni 21-27.10 (nowy tydzień), pliki gsc-zapytania-2026-10-29.txt i gsc-strony-2026-10-29.txt
+Razem (Strony): 20 kliknięć / 1343 wyśw. (20-26.10: 19 / 1,28 tys.). Kliknięcia na zapytaniach: tylko „fluxlab" 7; reszta zanonimizowana.
+Kliknięcia spoza strony głównej (Strony): kiedy-odliczyc-vat-z-faktury-ksef 4, numer-ksef 1, faktura-wewnetrzna-ksef 1, ksef-2027 1, gutschrift-ksef 1, kontakt 1, audyt-kurierski 1, data-wystawienia-faktury-ksef 1, audyt-strony 1.
+5 największych zmian wyświetleń wobec 28.10 (zapytania): automatyzacja procesów biznesowych 51→41, automatyzacja procesów 25→20, proces biznesowy 14→9, fluxlab 18→14, automatyzacja ai 5→2.
+5 największych zmian (strony): co-to-jest-automatyzacja-procesow-biznesowych 168→129, numeracja-faktur-ksef-2027 42→51, checklista-ksef-2027.pdf 5→10, / 30→25, asystent-ai-na-stronie 11→16.
+Frazy ≥8 wyśw. na poz. 8-15: „wdrożenie n8n" 13 / 12,8 i „n8n cena" 8 / 8,6 (obie /wdrozenie-n8n-cena, title zmieniony dziś w Z2, ocena po skanie), „asystent ai na stronie" 9 / 14,4 (fraza już w title).
+kandydat: brak
