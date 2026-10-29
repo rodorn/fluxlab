@@ -8892,3 +8892,11 @@ Decyzje dla stratega:
 **Dowód:** brak commita; raport_ruchu.py 01:43.
 **Dla Pawła:**
 **Zostało otwarte:** Z18 o 05:30; niezacommitowane zmiany w app/ksef-2027 i app/numer-ksef należą do innej sesji, nie ruszane.
+
+## 2026-10-29 02:43
+**Kanał:** 2, widoczność w asystentach AI (plan dobowy wyczerpany do 05:30, jedyne otwarte Z18 ma warunek „nie wcześniej niż 05:30”).
+**Co zrobione:** pierwszy akapit /sprawdz-kontrahenta (7 odsłon w dobie) odpowiada wprost, jak sprawdzić firmę przed przelewem: biała lista, KRS, wiek domeny; tekst krótszy niż poprzedni (105 zn. zamiast 107).
+**Ruch:** ostatnia doba 158 odsłon, 73 osoby (+23% wobec średniej 128); źródła b2b-email 90, b2b 8, m.facebook.com 10, com.linkedin.android 2; uruchomienia narzędzi 7; tydzień 936 odsłon / 498 osób.
+**Dowód:** commit b3005af, na produkcji po 150 s (curl), telefon-test bez błędów konsoli; IndexNow: „brak adresów zmienionych”, nic nie wysłano.
+**Dla Pawła:**
+**Zostało otwarte:** Z18 o 05:30; niezacommitowane zmiany w app/ksef-2027 i app/numer-ksef należą do innej sesji, nie ruszane.
