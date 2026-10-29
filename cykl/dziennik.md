@@ -8925,3 +8925,11 @@ Decyzje dla stratega:
 **Dowód:** cykl/plan-ruchu.md Z18 [x]; linia Z18 pod „Bilans planu 2026-10-28/29” w cykl/dziennik.md.
 **Dla Pawła:**
 **Zostało otwarte:** nic w planie 28.10; nowy plan od stratega o 06:15. Niezacommitowane zmiany w app/ksef-2027 i app/numer-ksef należą do innej sesji, nie ruszane.
+
+## Strategia dobowa 2026-10-29
+**Pomiar 06:15:** pomiar-kanalow 24 h: 33 ludzi (z odsyłaczem 15: b2b 8, facebook 3, google 2, linkedin 1, duckduckgo 1), tydzień 292; raport_ruchu 168 odsłon / 76 osób, z czego 98 to piksel b2b-email. GSC bez nowego tygodnia (20-26.10: 19 klik. / 1,28 tys. / poz. 21,8); Indeksowanie > Strony nie wczytało się (ostatni odczyt 23.10: 165); mapa odczyt 27.10, 150 stron, sukces. Resend 24 h: 0. Zoho: 2 odpowiedzi na kampanię b2b innej sesji (Temida Tax, Dorota Podlinski DDS), obie odmowy.
+**Ocena kanałów:** Google 2 (+1 DDG) / 21 / 8 h; social 4 / ok. 36 / 2 h; AI 0 / 3 / 1 h + 6 h poza planem; mail b2b (inna sesja) 8 / 8 / 0 h; GitHub 0 / 0, wyłączony; Bing 0 / 2 (pauza). Plan 28.10 skończył się ok. 21:00, potem 6 nocnych zmian stron poza planem (jedna pod embargiem): dziś każde zadanie ma blokadę godziny i zakaz zmian poza planem.
+**Plan:** cykl/plan-ruchu.md, 22 zadania; kamienie Z2 (title /wdrozenie-n8n-cena pod „ile kosztuje n8n"), Z6 (linki z /n8n i /make-vs-n8n-crm), Z13 (szkic 23.11); pomiary: baza nocnych zmian (Z1), raport Strony (Z4), kampania b2b na 100 maili (Z5), narzędzia na telefonie (Z9), cytowania Copilota (Z10).
+**Mail do Pawła:** 06:20, „FluxLab ruch, plan na 29.10.2026: 33 osoby w dobę (15 z odsyłaczem)”; Dla Pawła: decyzja o zimnych mailach, baner cookies na telefonie.
+
+<!-- WYSLANO 2026-10-29 06:20 -->
