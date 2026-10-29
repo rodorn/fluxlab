@@ -9007,3 +9007,13 @@ Decyzje dla stratega:
 **Dowód:** cykl/z10-copilot-2026-10-29.txt; strony 30 d: jaka-forma-opodatkowania-jdg-2026 12, jak-liczyc-zdrowotna-jdg 9, jak-zautomatyzowac-raportowanie-w-firmie 8, ryczalt-czy-liniowy 8, /automatyzacja-raportowania 6, /sprawdzenie-nip 4, /kalkulator-podatkowy 2.
 **Dla Pawła:**
 **Zostało otwarte:** Z11 (efekt serii /numer-ksef) od 15:30; dane Bing kończą się na 26.10, 24-26.10 bez cytowań.
+
+<!-- WYSLANO 2026-10-29 15:08 -->
+
+## 2026-10-29 15:55
+**Kanał:** social (plan Z11, pomiar).
+**Co zrobione:** sprawdzono, co dało zlecenie linku /numer-ksef z 28.10: poszedł 1 post (FB, komentarz z linkiem 29.10 07:52), wejść z kampanii numer-ksef-seria 0, uruchomień numer_ksef 0.
+**Ruch:** 24 h po odsiewie 32 sesje ludzi, 37 odsłon: bez odsyłacza 12, b2b 9, google 6, facebook 3, duckduckgo 1; uruchomienia narzędzi 5.
+**Dowód:** https://www.facebook.com/photo/?fbid=122116479579504058; X: plik ~/Projekty/fluxlab-x/stan/ksef60-link z 28.10 06:49 nadal czeka na odcinek K; IG: rolka rolki/261021-pytanie-korekta-faktury-ksef z linkiem nie jest w kolejce.
+**Dla Pawła:**
+**Zostało otwarte:** Z12 od 16:30 (nowy tydzień GSC). Zlecenie /numer-ksef na X i IG nie zostało wykonane przez sesje kanałów; bez nowych zleceń zgodnie z Z11, do oceny w bilansie Z18.
