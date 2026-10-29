@@ -8847,6 +8847,7 @@ Decyzje dla stratega:
 - AI (Z6): jedyne źródło AI to chatgpt.com, 7 sesji w 30 dni, 0 w dobie; ruch tam idzie na narzędzia (/analiza-lokalizacji), nie na artykuły, więc odpowiedzi dla asystentów pisać pod narzędzia.
 - GitHub (Z11): 0 sesji ludzi od README, 1 wyświetlenie repo w 7 dni; GitHub zostaje bez godzin.
 - Mail outreach dał w dobie 6 sesji b2b, więcej niż Google; odmowy: Temida Tax i Dorota Podlinski DDS (19:21, „na telefonie wyświetla się poprawnie”, czyli audyt mógł zgłosić problem, którego klientka nie widzi).
+- Z18 (29.10 05:45), baza do oceny Z3: GSC Skuteczność 28 dni (29.09-26.10), filtr page=!https://fluxlab.pl/integracja-crm-z-erp: 0 kliknięć, 92 wyświetlenia, CTR 0%, średnia pozycja 20,2; 31 zapytań, czołowe „integracja crm” (11), „integracja crm z erp” (6), „kto wdraża integrację crm z erp” (5).
 
 **Ruch:** raport_ruchu ostatnia doba 130 odsłon, 62 osoby (−2% wobec średniej 132); po odsiewie 29 sesji ludzi: bez odsyłacza 18, b2b 6, google 4, LinkedIn 1, duckduckgo 1; uruchomienia narzędzi 9.
 **Dowód:** cykl/plan-ruchu.md Z17 [x]; ten wpis.
@@ -8916,3 +8917,11 @@ Decyzje dla stratega:
 **Dowód:** commit 7c9ec9a, na produkcji po 125 s (curl, 200), telefon-test 390/390 px, 0 błędów konsoli; build, SPOJNOSC OK, JAKOSC OK 156 stron; IndexNow 2 z 3 punktów przyjęło.
 **Dla Pawła:**
 **Zostało otwarte:** Z18 o 05:30; niezacommitowane zmiany w app/ksef-2027 i app/numer-ksef należą do innej sesji, nie ruszane.
+
+## 2026-10-29 05:43
+**Kanał:** pomiar (Z18 z planu dobowego), potem plan zamknięty.
+**Co zrobione:** Z18: GSC 28 dni (29.09-26.10) dla /integracja-crm-z-erp: 0 kliknięć, 92 wyświetlenia, CTR 0%, poz. 20,2, 31 zapytań; dopisane pod bilansem Z17 jako baza do oceny Z3. W planie nie ma już żadnego „- [ ]”, plan zamknięty.
+**Ruch:** ostatnia doba 166 odsłon, 76 osób (+30% wobec średniej 127); źródła b2b-email 97, b2b 8, m.facebook.com 10, com.linkedin.android 2; uruchomienia narzędzi 7; tydzień 944 odsłony / 501 osób.
+**Dowód:** cykl/plan-ruchu.md Z18 [x]; linia Z18 pod „Bilans planu 2026-10-28/29” w cykl/dziennik.md.
+**Dla Pawła:**
+**Zostało otwarte:** nic w planie 28.10; nowy plan od stratega o 06:15. Niezacommitowane zmiany w app/ksef-2027 i app/numer-ksef należą do innej sesji, nie ruszane.
