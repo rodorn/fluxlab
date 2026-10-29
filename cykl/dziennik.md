@@ -9115,3 +9115,11 @@ Decyzje dla stratega:
 **Dowód:** cykl/plan-ruchu.md Z18 [x]; ten wpis.
 **Dla Pawła:**
 **Zostało otwarte:** Z19 nie wcześniej niż 30.10 00:30, Z20 02:00, Z21 04:30, Z22 05:30; niezacommitowane zmiany w app/ksef-2027 i app/numer-ksef należą do innej sesji, nie ruszane.
+
+## 2026-10-29 23:45
+**Kanał:** brak (plan).
+**Co zrobione:** nic nie dowiezione, bo wszystkie otwarte zadania planu (Z19-Z22) mają okno od 30.10 00:30; Z1-Z18 zamknięte.
+**Ruch:** raport_ruchu ostatnia doba 105 odsłon, 68 osób (−21% wobec średniej 133,4); źródła b2b-email 55, m.facebook.com 6+3, google 6, facebook 5; X 1 sesja; uruchomienia narzędzi 1.
+**Dowód:** cykl/plan-ruchu.md bez zmian (Z19 [ ] od 00:30).
+**Dla Pawła:**
+**Zostało otwarte:** Z19 od 30.10 00:30, Z20 02:00, Z21 04:30, Z22 05:30.
