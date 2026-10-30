@@ -9133,3 +9133,11 @@ Z19 (30.10 00:47): 6 nocnych stron w indeksie, ostatnie skanowanie 19.10-28.10 0
 **Dowód:** cykl/z19-stan-30.log; cykl/plan-ruchu.md Z19 [x].
 **Dla Pawła:**
 **Zostało otwarte:** Z20 od 02:00, Z21 04:30, Z22 05:30. Dla stratega: ocena nocnych zmian 5.11 nie ma sensu bez skanu; rozważyć żądania indeksowania dla 6 stron (pula ok. 10/24 h).
+
+## 2026-10-30 02:05
+**Kanał:** treść (Z20, kontrola szkicu na 16.11).
+**Co zrobione:** szkic „Kto odpowiada na leada w sobotę po Black Friday” sprawdzony ze źródłem: 5 z 5 faktów z Kodeksu pracy zgodnych z Dz.U. 2026 poz. 1245, data Black Friday 27.11 potwierdzona, 3 z 3 linków 200; poprawek brak.
+**Ruch:** raport_ruchu ostatnia doba 100 odsłon, 65 osób (−24% wobec średniej 132,0); źródła b2b-email 52, google 7, m.facebook.com 6+3, facebook 5; X 1 sesja; uruchomienia narzędzi 1.
+**Dowód:** cykl/artykul-2026-11-16-szkic.md (wpis „Kontrola Z20”); cykl/plan-ruchu.md Z20 [x].
+**Dla Pawła:**
+**Zostało otwarte:** Z21 od 04:30, Z22 od 05:30.
