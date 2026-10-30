@@ -9251,3 +9251,11 @@ Z22 (30.10 05:43): ludzie po odsiewie 24 h 21 (25 odsłon; o 22:43 było 23), z 
 **Dowód:** cykl/artykul-2026-11-02-szkic.md (wpis „Kontrola Z8”), cykl/plan-ruchu.md Z8 [x].
 **Dla Pawła:**
 **Zostało otwarte:** Z9 od 14:30 (kalkulatory w artykułach cytowanych przez Copilota), dalej Z10-Z21.
+
+## 2026-10-30 14:50
+**Kanał:** dystrybucja narzędzi (plan Z9: kalkulatory w artykułach cytowanych przez Copilota).
+**Co zrobione:** sprawdzono na telefonie kalkulator JDG w 3 artykułach cytowanych przez Copilota (jaka-forma-opodatkowania-jdg-2026, jak-liczyc-zdrowotna-jdg, ryczalt-czy-liniowy): we wszystkich wynik widoczny od razu, 0 błędów konsoli, naprawa niepotrzebna.
+**Ruch:** ostatnia doba 96 odsłon, 63 osoby (−27% wobec średniej 131,9); źródła: b2b-email 65, google 5, facebook 5+2, bing 4; uruchomienia narzędzi 3.
+**Dowód:** cykl/plan-ruchu.md Z9 [x]; zrzuty /tmp/z9-*.png.
+**Dla Pawła:**
+**Zostało otwarte:** Z10 (indeksowanie 3 adresów, od 15:30), dalej Z11-Z21.
