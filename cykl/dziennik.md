@@ -9115,6 +9115,8 @@ Z19 (30.10 00:47): 6 nocnych stron w indeksie, ostatnie skanowanie 19.10-28.10 0
 
 Z21 (30.10 04:50): /wdrozenie-n8n-cena 7 dni 21-27.10: 0 klik. / 60 wyśw. / poz. 8,6 (wdrożenie n8n 13, n8n cena 8, n8n ile kosztuje 7, wdrożenia n8n 4, ile kosztuje n8n 3); GSC nie ma jeszcze dni po Z2 (29.10), to baza, nie efekt.
 
+Z22 (30.10 05:43): ludzie po odsiewie 24 h 21 (25 odsłon; o 22:43 było 23), z odsyłaczem 10: google 7, b2b 1, x 1, bing 1; bez odsyłacza 11; uruchomienia narzędzi 1 (kalkulator podatkowy), lead\_\* 0 (1 scena_leada, 1 czat_pytanie); raport_ruchu 85 odsłon / 61 osób, z tego 45 to piksel `b2b-email`. Plan zamknięty.
+
 **Ruch:** raport_ruchu ostatnia doba 100 odsłon, 65 osób (−25% wobec średniej 133,4); źródła b2b-email 53, m.facebook.com 6+2, google 5, facebook 5; po odsiewie 23 sesje ludzi: bez odsyłacza 12, google 5, facebook 2, b2b 1, x 1, bing 1; uruchomienia narzędzi 1.
 **Dowód:** cykl/plan-ruchu.md Z18 [x]; ten wpis.
 **Dla Pawła:**
@@ -9167,3 +9169,11 @@ Z21 (30.10 04:50): /wdrozenie-n8n-cena 7 dni 21-27.10: 0 klik. / 60 wyśw. / poz
 **Dowód:** GSC Skuteczność, filtr page=!https://fluxlab.pl/wdrozenie-n8n-cena, 7 dni 21-27.10; linia Z21 pod bilansem Z18; cykl/plan-ruchu.md Z21 [x].
 **Dla Pawła:**
 **Zostało otwarte:** Z22 od 05:30. Dla stratega: porównanie title po Z2 najwcześniej z danymi od 29.10 (GSC ma opóźnienie ok. 2 dni), ocena 5.11.
+
+## 2026-10-30 05:45
+**Kanał:** pomiar (Z22).
+**Co zrobione:** Z22, ostatnie zadanie planu: dopisana linijka pomiaru pod bilansem Z18, plan zamknięty.
+**Ruch:** raport_ruchu 85 odsłon / 61 osób (−37% wobec średniej), w tym 45 piksel b2b-email; po odsiewie 21 ludzi: bez odsyłacza 11, google 7, b2b 1, x 1, bing 1; uruchomienia narzędzi 1, lead\_\* 0.
+**Dowód:** cykl/plan-ruchu.md Z22 [x]; linijka „Z22 (30.10 05:43)” pod bilansem planu 2026-10-29/30.
+**Dla Pawła:**
+**Zostało otwarte:** brak otwartych zadań; nowy plan od stratega o 06:15.
