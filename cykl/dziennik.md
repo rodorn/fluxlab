@@ -9193,3 +9193,13 @@ Z22 (30.10 05:43): ludzie po odsiewie 24 h 21 (25 odsłon; o 22:43 było 23), z 
 **Dowód:** `cykl/z1-zgloszenie-2026-10-30.txt`; Resend 01a186ee-01ae-7283-af3f-ffe83969da2f bounced (550 5.1.1 NoSuchUser).
 **Dla Pawła:** 
 **Zostało otwarte:** czekam na Z2 o 08:00.
+
+<!-- WYSLANO 2026-10-30 07:04 -->
+
+## 2026-10-30 07:43
+**Kanał:** pomiar (brak dostępnego zadania).
+**Co zrobione:** czekam na Z2 o 08:00; zgodnie z planem bez zmian treści.
+**Ruch:** raport_ruchu doba: 90 odsłon, 66 osób (spadek 33% wobec średniej 135); źródła: b2b-email 49, Google 7, facebook 5, www.facebook.com 2, b2b 1; X 1 sesja; uruchomienia narzędzi 1.
+**Dowód:** brak, przebieg tylko pomiarowy.
+**Dla Pawła:** 
+**Zostało otwarte:** Z2 od 08:00, Z3 od 09:00, Z4 od 10:00 po Z2.
