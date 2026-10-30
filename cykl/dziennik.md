@@ -9227,3 +9227,11 @@ Z22 (30.10 05:43): ludzie po odsiewie 24 h 21 (25 odsłon; o 22:43 było 23), z 
 **Dowód:** cykl/z4-indeksowanie-30.log, 10:43:59 „Adres URL znajduje się w Google | prośba przesłana”.
 **Dla Pawła:**
 **Zostało otwarte:** Z5 od 11:00 (zmiana na faktura-vat-rr-ksef albo proforma-ksef), potem Z6 od 12:00.
+
+## 2026-10-30 12:05
+**Kanał:** Google (Z5 planu).
+**Co zrobione:** Z5: nowy description /strefa-wiedzy/faktura-vat-rr-ksef zaczyna się od odpowiedzi („Faktura RR w KSeF nie jest obowiązkowa…”, 155 zn. zamiast 159); proforma-ksef bez zmiany, bo jej fraza „czy proformy idą do ksef” (poz. 1) pasuje do description.
+**Ruch:** raport_ruchu doba: 86 odsłon, 61 osób (spadek 36% wobec średniej 134); źródła: b2b-email 49, www.google.com 6, facebook 5, www.facebook.com 2, www.bing.com 2; X 1 sesja; uruchomienia narzędzi 1.
+**Dowód:** commit d0f34404; curl produkcji pokazuje nowy description; `cykl/z5-kandydaci-2026-10-30.txt` (RR 0/38/poz. 6,1, proforma 0/30/poz. 5,7, 28 dni).
+**Dla Pawła:**
+**Zostało otwarte:** Z6 od 12:00 (indeksowanie faktura-vat-rr-ksef i 3 stron z nocy), Z7 od 12:30.
