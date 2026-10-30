@@ -9285,3 +9285,11 @@ Z22 (30.10 05:43): ludzie po odsiewie 24 h 21 (25 odsłon; o 22:43 było 23), z 
 **Dowód:** wpis „Kontrola Z12” w `cykl/artykul-2026-11-23-szkic.md`: 5 z 5 faktów (KC Dz.U. 2026 poz. 795 art. 118, 120 § 1, 554; ustawa o dniach wolnych Dz.U. 2025 poz. 296 art. 1 pkt 1 lit. ka; kalendarz `date`; cena 790 do 1 500 zł na /automatyzacja-raportowania), 3 z 3 linków 200, /strefa-wiedzy/zamkniecie-roku-w-crm 404, title 59, description 126, FAQ 3.
 **Dla Pawła:**
 **Zostało otwarte:** Z13 od 18:30 (pomiar wieczorny), Z14 od 19:30 (/analiza-lokalizacji na telefonie), Z15-Z17 wieczorem, Z18-Z21 w nocy 31.10.
+
+## 2026-10-30 18:50
+**Kanał:** pomiar (Z13 planu, wieczór).
+**Co zrobione:** pomiar od 12:30 i od 06:30 zapisany; nic nie poszło w świat, zadanie było pomiarem.
+**Ruch:** raport_ruchu: doba 86 odsłon, 51 osób (-35% wobec średniej 132,6); źródła: b2b-email 58 (piksel otwarć), www.bing.com 4, www.google.com 4, facebook 2; uruchomienia narzędzi 2. Od 12:30 ludzie 4 (bing 1, google 1, bez odsyłacza 2); od 06:30 uruchomienia 3 (skan NIP 2, audyt 1), lead_* 0, klik_po_wyniku 1, sesje b2b 0.
+**Dowód:** `cykl/z13-pomiar-2026-10-30.txt`; Resend 24 h: 0 wysłanych; Zoho od 12:30: 2 wiadomości w wątku FINREAL (inna sesja), 0 zapytań o usługi.
+**Dla Pawła:**
+**Zostało otwarte:** brak otwartych zadań w planie 30.10; następny plan od stratega 31.10 06:15.
