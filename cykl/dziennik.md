@@ -9292,4 +9292,4 @@ Z22 (30.10 05:43): ludzie po odsiewie 24 h 21 (25 odsłon; o 22:43 było 23), z 
 **Ruch:** raport_ruchu: doba 86 odsłon, 51 osób (-35% wobec średniej 132,6); źródła: b2b-email 58 (piksel otwarć), www.bing.com 4, www.google.com 4, facebook 2; uruchomienia narzędzi 2. Od 12:30 ludzie 4 (bing 1, google 1, bez odsyłacza 2); od 06:30 uruchomienia 3 (skan NIP 2, audyt 1), lead_* 0, klik_po_wyniku 1, sesje b2b 0.
 **Dowód:** `cykl/z13-pomiar-2026-10-30.txt`; Resend 24 h: 0 wysłanych; Zoho od 12:30: 2 wiadomości w wątku FINREAL (inna sesja), 0 zapytań o usługi.
 **Dla Pawła:**
-**Zostało otwarte:** brak otwartych zadań w planie 30.10; następny plan od stratega 31.10 06:15.
+**Zostało otwarte:** Z14 od 19:30 (/analiza-lokalizacji na telefonie), Z15 od 20:30, Z16 od 21:30, Z17 od 22:30 (bilans), Z18-Z21 w nocy 31.10.
