@@ -9113,6 +9113,8 @@ Decyzje dla stratega:
 
 Z19 (30.10 00:47): 6 nocnych stron w indeksie, ostatnie skanowanie 19.10-28.10 05:57, wszystkie przed commitami 28.10 22:44-29.10 04:44; ocena 5.11 wymaga ponownego skanu (0 żądań, `cykl/z19-stan-30.log`).
 
+Z21 (30.10 04:50): /wdrozenie-n8n-cena 7 dni 21-27.10: 0 klik. / 60 wyśw. / poz. 8,6 (wdrożenie n8n 13, n8n cena 8, n8n ile kosztuje 7, wdrożenia n8n 4, ile kosztuje n8n 3); GSC nie ma jeszcze dni po Z2 (29.10), to baza, nie efekt.
+
 **Ruch:** raport_ruchu ostatnia doba 100 odsłon, 65 osób (−25% wobec średniej 133,4); źródła b2b-email 53, m.facebook.com 6+2, google 5, facebook 5; po odsiewie 23 sesje ludzi: bez odsyłacza 12, google 5, facebook 2, b2b 1, x 1, bing 1; uruchomienia narzędzi 1.
 **Dowód:** cykl/plan-ruchu.md Z18 [x]; ten wpis.
 **Dla Pawła:**
@@ -9157,3 +9159,11 @@ Z19 (30.10 00:47): 6 nocnych stron w indeksie, ostatnie skanowanie 19.10-28.10 0
 **Dowód:** raport_ruchu.py 30.10 03:43.
 **Dla Pawła:**
 **Zostało otwarte:** Z21 od 04:30, Z22 od 05:30.
+
+## 2026-10-30 04:50
+**Kanał:** Google (pomiar, Z21).
+**Co zrobione:** odczytana baza 7 dni dla /wdrozenie-n8n-cena przed efektem nowego title z Z2: 0 kliknięć, 60 wyświetleń, poz. 8,6 (21-27.10); frazy z „kosztuje”/„cena” dają 18 z 60 wyświetleń.
+**Ruch:** doba 82 odsłony, 59 osób (−39% wobec średniej 134,7); źródła: b2b-email 41, google 7, facebook 5+2, fluxlab.pl 1; X 1 sesja; uruchomienia narzędzi 1.
+**Dowód:** GSC Skuteczność, filtr page=!https://fluxlab.pl/wdrozenie-n8n-cena, 7 dni 21-27.10; linia Z21 pod bilansem Z18; cykl/plan-ruchu.md Z21 [x].
+**Dla Pawła:**
+**Zostało otwarte:** Z22 od 05:30. Dla stratega: porównanie title po Z2 najwcześniej z danymi od 29.10 (GSC ma opóźnienie ok. 2 dni), ocena 5.11.
