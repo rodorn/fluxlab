@@ -6,6 +6,7 @@ import ZnakFl from "./ZnakFl";
 import KopiujMail from "./KopiujMail";
 import StatusOnline from "./StatusOnline";
 import Kolofon from "./Kolofon";
+import PrzelacznikDzwieku from "./PrzelacznikDzwieku";
 import CzasZmiany from "./CzasZmiany";
 import StopkaCta from "./StopkaCta";
 import zmiany from "@/lib/zmiany.json";
@@ -176,6 +177,8 @@ export default function Footer() {
             <Link href="/jak-zbudowana" prefetch={false} className="hover:text-accent transition-colors">
               Jak zbudowana jest ta strona
             </Link>
+            <span aria-hidden="true" className="hidden sm:inline">·</span>
+            <PrzelacznikDzwieku />
           </p>
         </div>
         {/* Znak wodny jako SVG: to grafika, nie tekst, więc nie podlega

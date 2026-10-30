@@ -5,6 +5,7 @@
 // platnej wersji.
 export function zglosZdarzenie(zdarzenie: string, sciezka?: string): void {
   if (typeof window === "undefined") return;
+  window.dispatchEvent(new CustomEvent("fl:zdarzenie", { detail: zdarzenie }));
   // Przeglądarka sterowana skryptem, czyli moje własne sprawdzenia, nie jest
   // odwiedzającym. Patrz komentarz w LicznikWizyt.
   try {

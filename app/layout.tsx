@@ -5,6 +5,7 @@ import GoogleAnalytics from "@/components/GoogleAnalytics";
 import ZgodaCookies from "@/components/ZgodaCookies";
 import TloKursora from "@/components/TloKursora";
 import TytulKarty from "@/components/TytulKarty";
+import Dzwieki from "@/components/Dzwieki";
 import Mikrotypografia from "@/components/Mikrotypografia";
 import CiszaPrzyPrzewijaniu from "@/components/CiszaPrzyPrzewijaniu";
 import Opoznione, { PoPierwszymMalowaniu } from "@/components/Opoznione";
@@ -232,6 +233,7 @@ export default function RootLayout({
         <ViewTransition default="vt-page">{children}</ViewTransition>
         <TytulKarty />
         <Mikrotypografia />
+        <Dzwieki />
         <Opoznione />
         <PoPierwszymMalowaniu />
       </body>
