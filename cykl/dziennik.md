@@ -9309,3 +9309,11 @@ Z22 (30.10 05:43): ludzie po odsiewie 24 h 21 (25 odsłon; o 22:43 było 23), z 
 **Dowód:** `cykl/z15-stan-30.log`; /kiedy-odliczyc-vat-z-faktury-ksef skan 27.10 07:41 (Z2 bez zmiany); curl produkcji zgodny z commitami bedf7c0 i d0f3440; 0 żądań indeksowania.
 **Dla Pawła:**
 **Zostało otwarte:** Z16 od 21:30 (kandydat na kamień 31.10), Z17 od 22:30 (bilans), Z18-Z21 w nocy 31.10. Efekt nowych meta w GSC widoczny najwcześniej w tygodniu 29.10-4.11.
+
+## 2026-10-30 21:45
+**Kanał:** Google (Z16 planu, kandydat na kamień 31.10).
+**Co zrobione:** wybrany kandydat na jutrzejszą zmianę: /strefa-wiedzy/faktura-wewnetrzna-ksef (7 dni 0 klik. / 53 wyśw. / poz. 5,4; 28 dni 1 / 77 / poz. 4,5), z 7 stron spełniających próg 6 odpadło (embargo, zmiana Z5, PDF); title i description już zawierają frazę, a frazy w liczbie mnogiej stoją na poz. 10.
+**Ruch:** ostatnia doba 84 odsłony, 48 osób (-37% wobec średniej 132,9); tydzień 890 odsłon, 480 osób; uruchomienia narzędzi 2; YouTube, LinkedIn, X, Threads 0 w dobie.
+**Dowód:** `cykl/z16-kandydat-2026-10-30.txt`; GSC filtr strony 1-28.10, 3 widoczne zapytania; 0 zmian na produkcji.
+**Dla Pawła:**
+**Zostało otwarte:** Z17 od 22:30 (bilans), Z18-Z21 w nocy 31.10.

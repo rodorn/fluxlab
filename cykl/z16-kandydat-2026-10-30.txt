@@ -1,0 +1,11 @@
+# Z16 30.10.2026 21:55, kandydat na kamień 31.10
+kandydat: https://fluxlab.pl/strefa-wiedzy/faktura-wewnetrzna-ksef ("faktura wewnętrzna a ksef", 4 wyśw., poz. 6,3)
+Filtr z gsc-strony-2026-10-30.txt (22-28.10): poz. <= 8, >= 20 wyśw., <= 1 klik.: 7 stron.
+Odpadły: /numer-ksef, /ksef-2027 (embargo, cudza zmiana), /strefa-wiedzy/numeracja-faktur-ksef-2027 (embargo), /strefa-wiedzy/faktura-vat-rr-ksef (zmiana Z5 30.10), /strefa-wiedzy/proforma-ksef (Z5: pasuje, bez zmiany), /pobierz/checklista-forma-opodatkowania-2027.pdf (PDF, title/description poza metadata Next).
+Kandydat 7 dni: 0 klik. / 53 wyśw. / poz. 5,4; ostatnia zmiana page.tsx 21.10 09:54.
+GSC filtr strony 28 dni (1-28.10): 1 klik. / 77 wyśw. / CTR 1,3% / poz. 4,5. Widoczne zapytania (3, reszta zanonimizowana):
+  faktura wewnętrzna a ksef 0/4 poz. 6,3
+  faktury wewnętrzne a ksef 0/4 poz. 10,0
+  czy faktury wewnętrzne idą do ksef 0/2 poz. 10,0
+Produkcja: title "Faktura wewnętrzna a KSeF: czy ją wysyłać | Fluxlab"; description "Faktury wewnętrznej nie wystawiasz w KSeF. Od 2014 roku nie jest fakturą w rozumieniu ustawy o VAT, tylko dokumentem dla Twojej ewidencji."
+Uwaga dla stratega: title i description już zawierają główną frazę i zaczynają się od odpowiedzi, więc sama zmiana metadanych ma mały zasięg; frazy z poz. 10 („faktury wewnętrzne", „czy idą do ksef") wskazują raczej na H2/FAQ w liczbie mnogiej niż na nowy description.
