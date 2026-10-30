@@ -9211,3 +9211,11 @@ Z22 (30.10 05:43): ludzie po odsiewie 24 h 21 (25 odsłon; o 22:43 było 23), z 
 **Dowód:** cykl/z2-vat-ksef-2026-10-30.txt
 **Dla Pawła:**
 **Zostało otwarte:** Z3 o 09:00, Z4 o 10:00 (tylko /wdrozenie-n8n-cena, 1 żądanie, bo Z2 nic nie zmienił).
+
+## 2026-10-30 09:47
+**Kanał:** Google (Z3 planu).
+**Co zrobione:** Z3: raport Indeksowanie > Strony nadal z 23.10, bez nowych danych (165 zindeksowanych, 212 nie); mapa witryny odczytana 29.10, stan Sukces, 150 wykrytych stron.
+**Ruch:** raport_ruchu, ostatnia doba: 95 odsłon, 66 osób (spadek 30% wobec średniej 135); źródła: b2b-email 54, www.google.com 7, facebook 5, www.facebook.com 2, www.bing.com 2; X 1 sesja; uruchomienia narzędzi 2.
+**Dowód:** cykl/z3-strony-2026-10-30.txt
+**Dla Pawła:**
+**Zostało otwarte:** Z4 od 10:00 (tylko /wdrozenie-n8n-cena, 1 żądanie), Z5 od 11:00.

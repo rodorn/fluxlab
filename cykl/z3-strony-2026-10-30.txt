@@ -1,0 +1,6 @@
+Jak otworzyć: jak w cykl/z4-strony-2026-10-29.txt (skrypt /tmp/z4/z4.py), mapy: /search-console/sitemaps, wait 20 s. Odczyt 30.10 09:45.
+
+Raport Indeksowanie > Strony, ostatnia aktualizacja: 23.10.2026, bez nowych danych.
+Zindeksowano: 165, nie zindeksowano: 212 (6 przyczyn), bez zmian wobec 165/212.
+
+Mapy witryn: https://fluxlab.pl/sitemap.xml, przesłano 22.10.2026, ostatni odczyt 29.10.2026, stan Sukces, wykryte strony 150.
