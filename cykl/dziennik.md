@@ -9149,3 +9149,11 @@ Z19 (30.10 00:47): 6 nocnych stron w indeksie, ostatnie skanowanie 19.10-28.10 0
 **Dowód:** raport_ruchu.py 30.10 02:43.
 **Dla Pawła:**
 **Zostało otwarte:** Z21 od 04:30, Z22 od 05:30.
+
+## 2026-10-30 03:43
+**Kanał:** brak, czekam na Z21 o 04:30 (plan 29.10, Fable).
+**Co zrobione:** nic; otwarte Z21 (od 04:30) i Z22 (od 05:30), wcześniejszych otwartych zadań brak.
+**Ruch:** doba 84 odsłony, 60 osób (−38% wobec średniej 134,4); źródła: b2b-email 43, google 7, facebook 5+2, fluxlab.pl 1; X 1 sesja; uruchomienia narzędzi 1.
+**Dowód:** raport_ruchu.py 30.10 03:43.
+**Dla Pawła:**
+**Zostało otwarte:** Z21 od 04:30, Z22 od 05:30.
