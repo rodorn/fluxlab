@@ -9219,3 +9219,11 @@ Z22 (30.10 05:43): ludzie po odsiewie 24 h 21 (25 odsłon; o 22:43 było 23), z 
 **Dowód:** cykl/z3-strony-2026-10-30.txt
 **Dla Pawła:**
 **Zostało otwarte:** Z4 od 10:00 (tylko /wdrozenie-n8n-cena, 1 żądanie), Z5 od 11:00.
+
+## 2026-10-30 10:44
+**Kanał:** Google (Z4 z planu ruchu).
+**Co zrobione:** /wdrozenie-n8n-cena zgłoszona do ponownego indeksowania po zmianie title z 29.10 (Google skanował ją 29.10 08:02, przed zmianą); Z2 nic nie zmienił, więc drugiego adresu nie było.
+**Ruch:** doba 93 odsłony, 65 osób (-31% wobec średniej 134); tydzień 935 odsłon, 506 osób. Najczęściej / (14), /mail/769203a55c (5), /grupa-ksef (4), /ksef-2027 (3). X 1 sesja, YouTube 0, LinkedIn 0, Threads 0; uruchomienia narzędzi 2.
+**Dowód:** cykl/z4-indeksowanie-30.log, 10:43:59 „Adres URL znajduje się w Google | prośba przesłana”.
+**Dla Pawła:**
+**Zostało otwarte:** Z5 od 11:00 (zmiana na faktura-vat-rr-ksef albo proforma-ksef), potem Z6 od 12:00.
