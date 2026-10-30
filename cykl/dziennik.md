@@ -9362,6 +9362,7 @@ Decyzje dla stratega:
 - Kandydat Z16: /strefa-wiedzy/faktura-wewnetrzna-ksef, ale title i description już pasują; sensowna zmiana to H2/FAQ w liczbie mnogiej („czy faktury wewnętrzne idą do KSeF”, poz. 10), nie nowe meta.
 - Z15: Google ma nowe meta obu zmienionych stron (n8n-cena 30.10 10:45, VAT RR 30.10 12:45); ocena CTR 5-6.11.
 - Google spada: tydzień 22-28.10 13 klik. wobec 20 tydzień wcześniej, doba 3 wobec 7. Bing rośnie (3 w dobie).
+- Z18 (31.10 00:48, 0 żądań): 7 z 7 stron z Z6 i Z10 w Google i zeskanowane 30.10 po commitach 28.10 22:44-29.10 04:44: faktura-vat-rr-ksef i kalkulator-podatkowy 12:45, analiza-lokalizacji i dobor-samochodu 12:47, sprawdz-kontrahenta 15:45, automatyzacja-vs-zatrudnienie 15:47, gutschrift-ksef 15:57. Ocena 5.11 ma podstawę. Log cykl/z18-stan-31.log.
 
 ## 2026-10-30 22:45
 **Kanał:** pomiar (Z17 planu, bilans doby).
@@ -9370,3 +9371,19 @@ Decyzje dla stratega:
 **Dowód:** wpis „Bilans planu 2026-10-30/31” wyżej; cykl/plan-ruchu.md Z17.
 **Dla Pawła:**
 **Zostało otwarte:** czekam na Z18 o 00:30 31.10, potem Z19 02:00, Z20 04:30, Z21 05:30.
+
+## 2026-10-30 23:43
+**Kanał:** brak, czekam na Z18 o 31.10 00:30.
+**Co zrobione:** nic, Z1-Z17 zamknięte, Z18-Z21 mają godziny po północy; plan zakazuje zmian poza planem.
+**Ruch:** raport_ruchu, ostatnia doba 82 odsłony, 41 osób (średnia 133,4): b2b-email 55, google 3, bing 3, instagram 1; zdarzenia: otwarcie_maila 55, uruchomiono_numer_ksef 4, uruchomiono_skan 2, audyt_uruchomiony 1, klik_po_wyniku 1.
+**Dowód:** brak.
+**Dla Pawła:** 
+**Zostało otwarte:** Z18 (00:30), Z19 (02:00), Z20 (04:30), Z21 (05:30).
+
+## 2026-10-31 00:43
+**Kanał:** Google (Z18 planu, pomiar).
+**Co zrobione:** sprawdzony stan 7 stron z Z6 i Z10 bez żądań indeksowania: wszystkie w Google, zeskanowane 30.10 12:45-15:57, czyli po nocnych zmianach 28/29.10; Google widzi nowe pierwsze akapity.
+**Ruch:** raport_ruchu, ostatnia doba 99 odsłon, 41 osób (spadek 26% wobec średniej 133,6): b2b-email 55, t.co 8, bing 3, google 2, instagram 1; zdarzenia: otwarcie_maila 55, uruchomiono_skan 4, uruchomiono_numer_ksef 4, audyt_uruchomiony 2.
+**Dowód:** cykl/z18-stan-31.log; linijka Z18 pod bilansem Z17.
+**Dla Pawła:** 
+**Zostało otwarte:** Z19 (02:00), Z20 (04:30), Z21 (05:30).
