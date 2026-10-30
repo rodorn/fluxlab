@@ -9269,3 +9269,11 @@ Z22 (30.10 05:43): ludzie po odsiewie 24 h 21 (25 odsłon; o 22:43 było 23), z 
 **Dowód:** `cykl/z10-indeksowanie-30.log`: 15:44:27 /sprawdz-kontrahenta, 15:44:59 /strefa-wiedzy/gutschrift-ksef, 15:45:31 /strefa-wiedzy/automatyzacja-vs-zatrudnienie, każdy „Adres URL znajduje się w Google | prośba przesłana”. Pula żądań dziś 9 z 10.
 **Dla Pawła:**
 **Zostało otwarte:** Z11 od 16:30 (GSC 7 dni, /wdrozenie-n8n-cena), Z12 od 17:30, Z13-Z17 wieczorem, Z18-Z21 w nocy 31.10. Dalszych żądań indeksowania dziś nie wysyłać.
+
+## 2026-10-30 16:55
+**Kanał:** Google (plan Z11, pomiar pod kanały 2 i 3).
+**Co zrobione:** Search Console pokazał nowy tydzień 22-28.10; zapisane 100 stron z pozycją i odczyt /wdrozenie-n8n-cena: 0 kliknięć, 58 wyświetleń, poz. 8,4, frazy „n8n ile kosztuje” (7, poz. 9,0) i „ile kosztuje n8n” (2, poz. 9,0) już są, ale nowy title z 29.10 jest poza okresem.
+**Ruch:** ostatnia doba 89 odsłon, 58 osób (spadek 33% wobec średniej 132,0); źródła: b2b-email 60, facebook 5, www.bing.com 4, www.google.com 4, www.facebook.com 2; uruchomienia narzędzi 2; tydzień 902 odsłony, 489 osób.
+**Dowód:** `cykl/gsc-strony-2026-10-30.txt`. GSC 22-28.10: 13 kliknięć / 1,22 tys. wyśw., poz. 19 (21-27.10: 20 / 1343); strona główna 4 klik. (było 8), /strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef 3 / 126 / poz. 3,3 (było 4 / 126 / 3,5).
+**Dla Pawła:**
+**Zostało otwarte:** Z12 od 17:30 (kontrola szkicu 23.11), Z13-Z17 wieczorem, Z18-Z21 w nocy 31.10. Z20 rano: Z11 zapisał nowy tydzień, więc Z20 robi filtr /kiedy-odliczyc-vat-z-faktury-ksef 7 dni.
