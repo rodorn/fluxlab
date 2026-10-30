@@ -1,0 +1,22 @@
+Z1, zgłoszenie z 29.10 10:11 CET (09:11 UTC), odczyt 30.10 06:44
+WERDYKT: test (nie człowiek-klient)
+
+Zgłoszenie (powiadomienie w Gmailu Pawła, "MEET 2026-10-29 19:15: Nowa diagnoza..."):
+  e-mail wojtnerski@gmail.com, firma "-", skala "Nie wiemy", Meet 29.10 19:15,
+  opis z WirtualnyHandlowiec (components/WirtualnyHandlowiec.tsx:372):
+  "Pakiet dla: Car&More sp. z o.o." 1110 zł jedn. + 998 zł/mies., landing_page /.
+
+Powody werdyktu:
+  1. Adres nie istnieje: Gmail odrzucił potwierdzenie (550 5.1.1 NoSuchUser).
+  2. Pakiet złożony dla Car&More sp. z o.o., czyli firmy, dla której pracuje Paweł.
+  3. Licznik: w oknie 09:40-10:25 CET 29.10 tylko 4 wiersze (otwarcie/klik maila b2b,
+     /gutschrift-ksef z Google na iOS, / z b2b na Edge 10:22). Zero odsłon i zero
+     scena_leada w sesji, która wysłała formularz, więc przeglądarka nie była liczona
+     (/nie-licz-mnie albo bloker), typowe dla urządzenia Pawła lub testu.
+  Sesje scena_leada z 29.10 (00:34 Firefox Android, 22:45 Safari macOS z Google) nie
+  mają związku czasowego z wysyłką.
+
+Resend: id 01a186ee-01ae-7283-af3f-ffe83969da2f, last_event bounced, Permanent/General,
+  "smtp; 550-5.1.1 The email account that you tried to reach does not exist" (gmail-smtp).
+
+Bez odpowiedzi na zgłoszenie, bez maili.
