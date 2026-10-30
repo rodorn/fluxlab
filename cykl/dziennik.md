@@ -9277,3 +9277,11 @@ Z22 (30.10 05:43): ludzie po odsiewie 24 h 21 (25 odsłon; o 22:43 było 23), z 
 **Dowód:** `cykl/gsc-strony-2026-10-30.txt`. GSC 22-28.10: 13 kliknięć / 1,22 tys. wyśw., poz. 19 (21-27.10: 20 / 1343); strona główna 4 klik. (było 8), /strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef 3 / 126 / poz. 3,3 (było 4 / 126 / 3,5).
 **Dla Pawła:**
 **Zostało otwarte:** Z12 od 17:30 (kontrola szkicu 23.11), Z13-Z17 wieczorem, Z18-Z21 w nocy 31.10. Z20 rano: Z11 zapisał nowy tydzień, więc Z20 robi filtr /kiedy-odliczyc-vat-z-faktury-ksef 7 dni.
+
+## 2026-10-30 17:50
+**Kanał:** AI i Google przez treść (plan Z12, kontrola szkicu 23.11).
+**Co zrobione:** szkic „Zamknięcie roku w CRM” sprawdzony przed publikacją 23.11: wszystkie fakty o przedawnieniu i Wigilii zgodne z aktualnymi tekstami jednolitymi, linki działają, adres wolny; bez poprawek, bez publikacji.
+**Ruch:** ostatnia doba 88 odsłon, 57 osób (spadek 33% wobec średniej 131,7); źródła: b2b-email 58, facebook 5, www.bing.com 4, www.google.com 4, www.facebook.com 2; uruchomienia narzędzi 2; tydzień 898 odsłon, 488 osób.
+**Dowód:** wpis „Kontrola Z12” w `cykl/artykul-2026-11-23-szkic.md`: 5 z 5 faktów (KC Dz.U. 2026 poz. 795 art. 118, 120 § 1, 554; ustawa o dniach wolnych Dz.U. 2025 poz. 296 art. 1 pkt 1 lit. ka; kalendarz `date`; cena 790 do 1 500 zł na /automatyzacja-raportowania), 3 z 3 linków 200, /strefa-wiedzy/zamkniecie-roku-w-crm 404, title 59, description 126, FAQ 3.
+**Dla Pawła:**
+**Zostało otwarte:** Z13 od 18:30 (pomiar wieczorny), Z14 od 19:30 (/analiza-lokalizacji na telefonie), Z15-Z17 wieczorem, Z18-Z21 w nocy 31.10.

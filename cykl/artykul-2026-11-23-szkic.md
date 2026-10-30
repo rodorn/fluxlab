@@ -47,3 +47,9 @@ FAQ (3):
    Tak, od 2025 roku Wigilia jest ustawowo wolna. [F3]
 3. Czy przegrane szanse usunąć z CRM?
    Nie. Zamknij je z powodem, inaczej raport roczny nie pokaże, gdzie lejek traci najwięcej.
+
+## Kontrola Z12 (30.10.2026 17:50)
+
+Fakty: 5 z 5 zgodnych ze źródłem. F1 art. 118 i art. 120 § 1, F2 art. 554 (Dz.U. 2026 poz. 795, obwieszczenie z 27.05.2026, PDF 200, 1 228 384 B); F3 art. 1 pkt 1 lit. ka, przypis: dodana ustawą z 6.12.2024, Dz.U. poz. 1965, w mocy od 1.02.2025 (Dz.U. 2025 poz. 296, PDF 200); F4 `date`: 24.12.2026 czwartek, 31.12.2026 czwartek, 1.01.2027 piątek; F5 /automatyzacja-raportowania nadal „Raport z jednego źródła to 790 do 1 500 zł” (treść i FAQPage). Odczyt 30.10.2026.
+Linki: 3 z 3 wychodzących 200 (/automatyzacja-raportowania, /slownik, /strefa-wiedzy/jak-uporzadkowac-proces-sprzedazy-w-crm); kotwica lejek w lib/slownik.ts:113; kategoria raportowanie w lib/categories.ts:235; „Pola obowiązkowe” na stronie źródłowej linku przychodzącego w page.tsx:75. Docelowy adres /strefa-wiedzy/zamkniecie-roku-w-crm 404, czyli bez kolizji; brak duplikatu w app/strefa-wiedzy.
+Długości: title 59, description 126, FAQ 3, akapity po 2 zdania, 0 długich myślników. Poprawki: brak.
