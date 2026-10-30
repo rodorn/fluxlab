@@ -1,0 +1,6 @@
+# Z2 30.10.2026 08:50, GSC filtr strony https://fluxlab.pl/strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef, 28 dni (do 27.10)
+Razem: 4 klik. / 285 wyśw. / CTR 1,4% / poz. 3,7
+Zapytania widoczne (4 wiersze, reszta zanonimizowana, ok. 281 wyśw. bez frazy): "03.10" 0/1, "pipedrive" 0/1, "vat" 0/1, "ksef" 0/1
+Title: "Kiedy odliczyć VAT z faktury KSeF? Data w numerze | Fluxlab" (zawiera intencję z adresu i H1)
+Description: zaczyna się od odpowiedzi ("Liczy się dzień nadania numeru KSeF, nie data wystawienia..."), 150 zn.
+Werdykt: GSC nie pokazuje frazy głównej, której brakowałoby w title/description; bez zmiany (plan: "pasuje, baza zapisana").

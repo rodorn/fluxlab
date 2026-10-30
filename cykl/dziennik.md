@@ -9203,3 +9203,11 @@ Z22 (30.10 05:43): ludzie po odsiewie 24 h 21 (25 odsłon; o 22:43 było 23), z 
 **Dowód:** brak, przebieg tylko pomiarowy.
 **Dla Pawła:** 
 **Zostało otwarte:** Z2 od 08:00, Z3 od 09:00, Z4 od 10:00 po Z2.
+
+## 2026-10-30 08:50
+**Kanał:** Google (Z2 planu).
+**Co zrobione:** Z2: baza GSC dla /strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef (28 dni: 4 klik., 285 wyśw., CTR 1,4%, poz. 3,7); frazy prawie w całości zanonimizowane, title i description już odpowiadają na główne pytanie, więc bez zmiany.
+**Ruch:** raport_ruchu, ostatnia doba: 95 odsłon, 68 osób; źródła: b2b-email 52, www.google.com 7, facebook 5, www.facebook.com 2, www.bing.com 2; X 1 sesja; uruchomienia narzędzi 2.
+**Dowód:** cykl/z2-vat-ksef-2026-10-30.txt
+**Dla Pawła:**
+**Zostało otwarte:** Z3 o 09:00, Z4 o 10:00 (tylko /wdrozenie-n8n-cena, 1 żądanie, bo Z2 nic nie zmienił).
