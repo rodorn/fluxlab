@@ -9235,3 +9235,11 @@ Z22 (30.10 05:43): ludzie po odsiewie 24 h 21 (25 odsłon; o 22:43 było 23), z 
 **Dowód:** commit d0f34404; curl produkcji pokazuje nowy description; `cykl/z5-kandydaci-2026-10-30.txt` (RR 0/38/poz. 6,1, proforma 0/30/poz. 5,7, 28 dni).
 **Dla Pawła:**
 **Zostało otwarte:** Z6 od 12:00, nie wcześniej (indeksowanie faktura-vat-rr-ksef i 3 stron z nocy), Z7 od 12:30.
+
+## 2026-10-30 12:47
+**Kanał:** Google (Z6 planu) i pomiar (Z7 planu).
+**Co zrobione:** Z6: 4 adresy zgłoszone do indeksowania w GSC (faktura-vat-rr-ksef po Z5 oraz /kalkulator-podatkowy, /analiza-lokalizacji, /dobor-samochodu po zmianach z nocy 28/29.10); Z7: pomiar od 06:30, 7 ludzi, 1 uruchomienie narzędzia (skan NIP z Binga), 0 leadów.
+**Ruch:** raport_ruchu doba: 88 odsłon, 64 osoby (spadek 34% wobec średniej 132,6); źródła: b2b-email 51, www.google.com 5, facebook 5, www.bing.com 3, www.facebook.com 2; X 1 sesja; uruchomienia narzędzi 2. Od 06:30 po odsiewie: ludzie 7 (Bing 2, Instagram 1, wewnętrzny 1, bez odsyłacza 3).
+**Dowód:** `cykl/z6-indeksowanie-30.log` (12:43:58-12:45:38, 4 × „prośba przesłana”); `cykl/z7-pomiar-2026-10-30.txt`.
+**Dla Pawła:**
+**Zostało otwarte:** Z8 od 13:30 (kontrola szkicu 2.11), Z9 od 14:30.

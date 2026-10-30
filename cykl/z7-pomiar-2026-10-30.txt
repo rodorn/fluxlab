@@ -1,0 +1,78 @@
+# Z7, okno: wszystkie sekcje „24 h” i „7 dni” = od 2026-10-30 06:30
+# Pomiar kanałów, 2026-10-30 12:46
+
+## Odsiew, 24 h: ludzie 7, pary 0, serie testowe 0, salwy 0 (Chrome Windows 0, z odsyłaczem 0)
+## Wyjścia do grupy KSeF, 24 h: 0
+
+## Odsiew, 7 dni: ludzie 7, pary 0, serie testowe 0, salwy 0 (Chrome Windows 0, z odsyłaczem 0)
+## Wyjścia do grupy KSeF, 7 dni: 0
+
+## Źródła, 24 h: 7 sesji, 7 odsłon
+  (bez odsyłacza)                              3
+  www.bing.com                                 2
+  instagram                                    1
+  www.fluxlab.pl                               1
+
+## Źródła, 7 dni: 7 sesji, 7 odsłon
+  (bez odsyłacza)                              3
+  www.bing.com                                 2
+  instagram                                    1
+  www.fluxlab.pl                               1
+
+## Kampanie utm, 7 dni (sesje)
+  instagram / wrzutki-a                        1
+
+## Zdarzenia, 7 dni (uruchomienia narzędzi, lead_*, klik_po_wyniku)
+  otwarcie_maila  /mail/4743133562             3
+  otwarcie_maila  /mail/8e49e98e65             3
+  otwarcie_maila  /mail/6d1679a63b             3
+  otwarcie_maila  /mail/5c39e6cdc0             2
+  otwarcie_maila  /mail/00f760b96f             2
+  otwarcie_maila  /mail/31c42a02e3             1
+  otwarcie_maila  /mail/38bbb291d9             1
+  uruchomiono_skan  /sprawdzenie-nip           1
+  otwarcie_maila  /mail/21055f366c             1
+  otwarcie_maila  /mail/5fd39cef29             1
+  otwarcie_maila  /mail/e207aa94a2             1
+  otwarcie_maila  /mail/5080d7bb0a             1
+  otwarcie_maila  /mail/5c62bb9490             1
+  otwarcie_maila  /mail/afefd5daa2             1
+  otwarcie_maila  /mail/22cb797bad             1
+  otwarcie_maila  /mail/985e79b357             1
+  otwarcie_maila  /mail/f5437a9408             1
+
+## Sesje dziennie, 14 dni
+  2026-10-16 Fri     6  ######
+  2026-10-17 Sat    30  ##############################
+  2026-10-18 Sun    86  ######################################################################################
+  2026-10-19 Mon    47  ###############################################
+  2026-10-20 Tue    28  ############################
+  2026-10-21 Wed    62  ##############################################################
+  2026-10-22 Thu    34  ##################################
+  2026-10-23 Fri    40  ########################################
+  2026-10-24 Sat    84  ####################################################################################
+  2026-10-25 Sun    60  ############################################################
+  2026-10-26 Mon    27  ###########################
+  2026-10-27 Tue    30  ##############################
+  2026-10-28 Wed    30  ##############################
+  2026-10-29 Thu    26  ##########################
+  2026-10-30 Fri     7  #######
+
+## Resend, wysłane w 24 h: 0
+
+## Zoho, wiadomości przychodzące w 24 h
+  INBOX: 4
+    mailer-daemon@mail.zoho.eu | Mail Delivery Status Notification (Delay)
+    <postmaster@lukasikassociates.com> | Undeliverable: Strona Lukasik + Associates na telefonie
+    Tom Bastard <ddbehance@gmail.com> | Re: Współpraca reklamowa: FluxLab x HAJS METRICS
+    danny@brooklynlandmark.com | Your email requires verification verify#Em8QPotwpLy78g3GsQqT9-17933579
+  Spam: 0
+
+## Z7, podsumowanie (od 06:30 do 12:46)
+1. Ludzie z odsyłaczem: 4 (Bing 2: /sprawdzenie-nip 08:38 i /kalkulator-podatkowy 12:21, Edge Windows; Instagram wrzutki-a 1: /automatyzacja-ai; www.fluxlab.pl 1: Firefox Linux, wewnętrzny); bez odsyłacza: 3 (/ Safari iOS ×2, /jak-zbudowana Chrome macOS)
+2. Uruchomienia narzędzi przez ludzi: 1 (uruchomiono_skan /sprawdzenie-nip 08:38:42, 24 s po wejściu z Binga)
+3. lead_*: 0
+4. klik_po_wyniku: 0
+5. Odsłony ludzi: /strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef 0, /wdrozenie-n8n-cena 0
+6. Zoho INBOX: zapytania od ludzi 0 (4 przychodzące: 2 odbicia, 1 weryfikacja nadawcy, 1 odpowiedź „Re: Współpraca reklamowa: FluxLab x HAJS METRICS” od ddbehance@gmail.com, oferta reklamowa, nie zapytanie klienta)
+Poza ludźmi: 29 otwarć maili b2b (piksel), Resend 0 wysłanych.
