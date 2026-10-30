@@ -9317,3 +9317,56 @@ Z22 (30.10 05:43): ludzie po odsiewie 24 h 21 (25 odsłon; o 22:43 było 23), z 
 **Dowód:** `cykl/z16-kandydat-2026-10-30.txt`; GSC filtr strony 1-28.10, 3 widoczne zapytania; 0 zmian na produkcji.
 **Dla Pawła:**
 **Zostało otwarte:** Z17 od 22:30 (bilans), Z18-Z21 w nocy 31.10.
+
+## Bilans planu 2026-10-30/31 (Z17, 30.10 22:45)
+
+Kanały, ludzie po odsiewie (`pomiar-kanalow.py`, 24 h do 22:43; razem 16, z odsyłaczem 8, bez 8; tydzień 262, było 270):
+
+| Kanał | 24 h | doba wcześniej |
+|---|---|---|
+| Google | 3 | 7 |
+| social (Instagram) | 1 | 1 |
+| AI (chatgpt.com) | 0 | 0 |
+| Bing | 3 | 1 |
+| b2b (FL_marketing) | 0 | 1 |
+| narzędzia, uruchomienia | 2 | 1 |
+| lead\_\* | 0 | 0 |
+
+raport_ruchu: 84 odsłony, 48 osób (-37% wobec średniej 132,9), z czego 58 to piksel `b2b-email`.
+
+| Zadanie | Stan | Co przyprowadziło |
+|---|---|---|
+| Z1 zgłoszenie 29.10 | x | test (adres nie istnieje, 550 NoSuchUser), 0 leadów |
+| Z2 CTR /kiedy-odliczyc-vat | x | pasuje, bez zmiany, baza zapisana |
+| Z3 raport Strony | x | bez nowych danych (23.10, 165/212) |
+| Z4 indeksowanie n8n-cena | x | 1 prośba, skan 30.10 10:45 |
+| Z5 kamień faktura-vat-rr | x | nowy description d0f3440, ocena 6.11 |
+| Z6 indeksowanie 4 adresów | x | 4 prośby |
+| Z7 pomiar południe | x | 4 z odsyłaczem, 1 uruchomienie |
+| Z8 szkic 2.11 | x | 12/12 faktów, 4/4 linki |
+| Z9 kalkulatory Copilota | x | 3 × OK, bez naprawy |
+| Z10 indeksowanie 3 adresów | x | 3 prośby, pula 9/10 |
+| Z11 GSC 22-28.10 | x | 13 klik. / 1,22 tys. wyśw. (było 20 / 1343) |
+| Z12 szkic 23.11 | x | 5/5 faktów, 3/3 linki |
+| Z13 pomiar wieczór | x | 2 z odsyłaczem, 3 uruchomienia |
+| Z14 /analiza-lokalizacji | x | działa, 21,6 s, 0 uruchomień ludzi |
+| Z15 stan skanów | x | 2 z 2 zmian zeskanowane po wdrożeniu |
+| Z16 kandydat | x | /strefa-wiedzy/faktura-wewnetrzna-ksef |
+| Z17 bilans | x | ten wpis |
+| Z18-Z21 | otwarte | noc 31.10 |
+
+Bezpośrednio przyprowadzone w dobie: 0 osób (zmiany Z5 i n8n-cena mierzalne najwcześniej w tygodniu 29.10-4.11).
+
+Decyzje dla stratega:
+- Z1: werdykt test, nie lead; nie ma czego obsługiwać.
+- Kandydat Z16: /strefa-wiedzy/faktura-wewnetrzna-ksef, ale title i description już pasują; sensowna zmiana to H2/FAQ w liczbie mnogiej („czy faktury wewnętrzne idą do KSeF”, poz. 10), nie nowe meta.
+- Z15: Google ma nowe meta obu zmienionych stron (n8n-cena 30.10 10:45, VAT RR 30.10 12:45); ocena CTR 5-6.11.
+- Google spada: tydzień 22-28.10 13 klik. wobec 20 tydzień wcześniej, doba 3 wobec 7. Bing rośnie (3 w dobie).
+
+## 2026-10-30 22:45
+**Kanał:** pomiar (Z17 planu, bilans doby).
+**Co zrobione:** bilans planu 30/31.10 zapisany w dzienniku: 17 z 17 zadań dnia zamkniętych, tabela kanałów i decyzje dla stratega (Z1 test, kandydat faktura-wewnetrzna-ksef pod H2/FAQ, nowe meta zeskanowane).
+**Ruch:** ostatnia doba 84 odsłony, 48 osób (-37% wobec średniej 132,9); źródła: b2b-email 58, www.google.com 3, www.bing.com 3, m.facebook.com 1, www.facebook.com 1; po odsiewie 16 ludzi; uruchomienia narzędzi 2.
+**Dowód:** wpis „Bilans planu 2026-10-30/31” wyżej; cykl/plan-ruchu.md Z17.
+**Dla Pawła:**
+**Zostało otwarte:** czekam na Z18 o 00:30 31.10, potem Z19 02:00, Z20 04:30, Z21 05:30.
