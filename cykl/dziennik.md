@@ -9293,3 +9293,11 @@ Z22 (30.10 05:43): ludzie po odsiewie 24 h 21 (25 odsłon; o 22:43 było 23), z 
 **Dowód:** `cykl/z13-pomiar-2026-10-30.txt`; Resend 24 h: 0 wysłanych; Zoho od 12:30: 2 wiadomości w wątku FINREAL (inna sesja), 0 zapytań o usługi.
 **Dla Pawła:**
 **Zostało otwarte:** Z14 od 19:30 (/analiza-lokalizacji na telefonie), Z15 od 20:30, Z16 od 21:30, Z17 od 22:30 (bilans), Z18-Z21 w nocy 31.10.
+
+## 2026-10-30 19:50
+**Kanał:** dystrybucja narzędzi (Z14, kontrola /analiza-lokalizacji po naprawie 0e06bed).
+**Co zrobione:** potwierdzone na telefonie, że przykład „Apteka, Grodzisk Mazowiecki” daje wynik po 21,6 s bez błędów konsoli; zapasowa instancja Overpass działa.
+**Ruch:** ostatnia doba 86 odsłon, 51 osób (-35% wobec średniej); b2b-email 58, bing 4, google 4, facebook 2. Po odsiewie pomiar-kanalow: 18 ludzi. Uruchomienia narzędzi przez ludzi 24 h: 3 (sprawdzenie-nip 2, audyt 1), analiza_lokalizacji 0.
+**Dowód:** cykl/plan-ruchu.md Z14; API /api/sprawdz-lokalizacje 200 w 12,6 s.
+**Dla Pawła:**
+**Zostało otwarte:** Z15 od 20:30, Z16 od 21:30, Z17 od 22:30, Z18-Z21 w nocy. telefon-test --czekaj działa przed kliknięciem, do sprawdzania wyników narzędzi trzeba czekać po kliknięciu.
