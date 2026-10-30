@@ -9259,3 +9259,13 @@ Z22 (30.10 05:43): ludzie po odsiewie 24 h 21 (25 odsłon; o 22:43 było 23), z 
 **Dowód:** cykl/plan-ruchu.md Z9 [x]; zrzuty /tmp/z9-*.png.
 **Dla Pawła:**
 **Zostało otwarte:** Z10 (indeksowanie 3 adresów, od 15:30), dalej Z11-Z21.
+
+<!-- WYSLANO 2026-10-30 15:09 -->
+
+## 2026-10-30 15:46
+**Kanał:** Google (wspiera kanał 2 i 3, plan Z10).
+**Co zrobione:** Z10, trzy adresy zmienione w nocy zgłoszone do indeksowania w Search Console; Z11 i dalsze mają okno od 16:30.
+**Ruch:** ostatnia doba 88 odsłon, 58 osób (spadek 33% wobec średniej 132,3); źródła: b2b-email 59, facebook 5, www.bing.com 4, www.google.com 4, www.facebook.com 2; uruchomienia narzędzi 2; tydzień 899 odsłon, 489 osób.
+**Dowód:** `cykl/z10-indeksowanie-30.log`: 15:44:27 /sprawdz-kontrahenta, 15:44:59 /strefa-wiedzy/gutschrift-ksef, 15:45:31 /strefa-wiedzy/automatyzacja-vs-zatrudnienie, każdy „Adres URL znajduje się w Google | prośba przesłana”. Pula żądań dziś 9 z 10.
+**Dla Pawła:**
+**Zostało otwarte:** Z11 od 16:30 (GSC 7 dni, /wdrozenie-n8n-cena), Z12 od 17:30, Z13-Z17 wieczorem, Z18-Z21 w nocy 31.10. Dalszych żądań indeksowania dziś nie wysyłać.
