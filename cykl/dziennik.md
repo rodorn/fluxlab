@@ -9301,3 +9301,11 @@ Z22 (30.10 05:43): ludzie po odsiewie 24 h 21 (25 odsłon; o 22:43 było 23), z 
 **Dowód:** cykl/plan-ruchu.md Z14; API /api/sprawdz-lokalizacje 200 w 12,6 s.
 **Dla Pawła:**
 **Zostało otwarte:** Z15 od 20:30, Z16 od 21:30, Z17 od 22:30, Z18-Z21 w nocy. telefon-test --czekaj działa przed kliknięciem, do sprawdzania wyników narzędzi trzeba czekać po kliknięciu.
+
+## 2026-10-30 20:45
+**Kanał:** Google (Z15 planu, stan skanów po Z2, Z4, Z5).
+**Co zrobione:** potwierdzone, że Google zeskanował obie zmienione strony po wdrożeniu: /wdrozenie-n8n-cena 30.10 10:45 (nowy title „Ile kosztuje n8n?”) i /strefa-wiedzy/faktura-vat-rr-ksef 30.10 12:45 (nowy description); prośby z Z4 i Z6 zadziałały w 1-2 minuty.
+**Ruch:** ostatnia doba 84 odsłony, 48 osób (-37% wobec średniej 132,7); źródła: b2b-email 57 (piksel otwarć), www.google.com 4, www.bing.com 3, m.facebook.com 1, www.facebook.com 1; uruchomienia narzędzi 2; tydzień 892 odsłony, 479 osób.
+**Dowód:** `cykl/z15-stan-30.log`; /kiedy-odliczyc-vat-z-faktury-ksef skan 27.10 07:41 (Z2 bez zmiany); curl produkcji zgodny z commitami bedf7c0 i d0f3440; 0 żądań indeksowania.
+**Dla Pawła:**
+**Zostało otwarte:** Z16 od 21:30 (kandydat na kamień 31.10), Z17 od 22:30 (bilans), Z18-Z21 w nocy 31.10. Efekt nowych meta w GSC widoczny najwcześniej w tygodniu 29.10-4.11.

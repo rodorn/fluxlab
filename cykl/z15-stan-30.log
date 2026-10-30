@@ -1,0 +1,5 @@
+20:43:46 | https://fluxlab.pl/wdrozenie-n8n-cena | Adres URL znajduje się w Google | skan: 30 paź 2026, 10:45:06
+20:44:06 | https://fluxlab.pl/strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef | Adres URL znajduje się w Google | skan: 27 paź 2026, 07:41:56
+20:44:24 | https://fluxlab.pl/strefa-wiedzy/faktura-vat-rr-ksef | Adres URL znajduje się w Google | skan: 30 paź 2026, 12:45:34
+Wdrożenia: /wdrozenie-n8n-cena title bedf7c0 29.10 08:00 (prośba Z4 30.10 rano); /faktura-vat-rr-ksef description d0f3440 30.10 11:46 (prośba Z6 12:43); /kiedy-odliczyc-vat-z-faktury-ksef bez zmiany w Z2.
+Wynik: 2 z 2 zmienionych stron zeskanowane PO wdrożeniu (n8n-cena 30.10 10:45, VAT RR 30.10 12:45, ok. 1-2 min po prośbie), Google ma nowe title/description; VAT KSeF 27.10 07:41 (bez zmiany, nie trzeba). Produkcja (curl) zgodna z commitami. 0 żądań. Sposób: /tmp/z19/stan.py (pole „Ostatnie skanowanie”).
