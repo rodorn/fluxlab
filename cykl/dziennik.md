@@ -9177,3 +9177,11 @@ Z22 (30.10 05:43): ludzie po odsiewie 24 h 21 (25 odsłon; o 22:43 było 23), z 
 **Dowód:** cykl/plan-ruchu.md Z22 [x]; linijka „Z22 (30.10 05:43)” pod bilansem planu 2026-10-29/30.
 **Dla Pawła:**
 **Zostało otwarte:** brak otwartych zadań; nowy plan od stratega o 06:15.
+
+## Strategia dobowa 2026-10-30
+**Pomiar 06:15:** pomiar-kanalow 24 h: 21 ludzi (z odsyłaczem 10: Google 7, b2b 1, X 1, Bing 1), tydzień 270; raport_ruchu 85 odsłon / 61 osób, z czego 45 to piksel b2b-email. GSC bez nowego tygodnia (21-27.10: 20 klik. / 1343 wyśw.; /kiedy-odliczyc-vat-z-faktury-ksef 4 / 126 / poz. 3,5). Resend 24 h: 2 maile systemowe, w tym potwierdzenie zgłoszenia z 29.10 09:11 (wojtnerski@gmail.com, pakiet Car&More) odbite. Zoho 24 h: 0 zapytań o usługi.
+**Ocena kanałów:** Google 7 / 21 / 7 h; social 1 / ok. 38 / 1 h (bez nowych zleceń); AI chatgpt.com 0 / 3 (3. doba z 0, tylko pomiar), Copilot 13 cytowań w 7 dni; Bing 1 / 2; mail b2b (FL_marketing) 1 / 9, 148 maili, 0 leadów; GitHub 0, wyłączony. Plan 29.10: 22 z 22, bez zmian poza planem.
+**Plan:** cykl/plan-ruchu.md, 21 zadań; kamienie Z2 (description /kiedy-odliczyc-vat-z-faktury-ksef, CTR 3% na poz. 3,5) i Z5 (faktura-vat-rr-ksef albo proforma-ksef); 9 próśb o indeksowanie (Z4, Z6, Z10, w tym powtórka /wdrozenie-n8n-cena i 6 nocnych stron); Z1 klasyfikuje zgłoszenie z 29.10; kontrole szkiców 2.11 (Z8) i 23.11 (Z12).
+**Mail do Pawła:** 06:21, „FluxLab ruch, plan na 30.10.2026: 21 osób w dobę (7 z Google)”; Dla Pawła: zgłoszenie 29.10, decyzja o zimnych mailach, baner cookies.
+
+<!-- WYSLANO 2026-10-30 06:21 -->
