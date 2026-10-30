@@ -44,7 +44,7 @@ księgowe i ich funkcje; maksymalna liczba faktur w jednej paczce.
 ## Szkic (Z22, 26.10.2026)
 
 Adres: /strefa-wiedzy/faktury-kosztowe-z-ksef
-Tytuł: Faktury kosztowe z KSeF do programu księgowego (46 zn., z „ | Fluxlab” 55; poprzedni z „prosto” miał 63)
+Tytuł: Faktury kosztowe z KSeF do programu księgowego (46 zn., z „ | Fluxlab” 56; poprzedni z „prosto” miał 63)
 Opis: KSeF nie powiadamia o nowych fakturach zakupowych. Sprawdź, jak program ma je pobierać sam, jakie uprawnienie nadać i jakie limity ma API.
 
 ### Faktura kosztowa jest Twoja w chwili nadania numeru
@@ -77,3 +77,9 @@ FAQ (3):
 Źródła odczytane ponownie 28.10 (curl raz na źródło, 200): FAQ MF KSeF 2.0, CIRFMF uprawnienia.md, przyrostowe-pobieranie-faktur.md, PDF limitów wer. 1.1. F1-F12: 12 z 12 zgodnych ze źródłem (F1 pyt. 11 i 37, F2 pyt. 38, F3 pyt. 40, F4 pyt. 39 i 41, F5 „Obowiązek otrzymywania faktur w KSeF będzie istniał od 1.02.2026”, F6, F7 „wyłącznie w postaci xml”, F8 „archiwizowana przez 10 lat”, F9 InvoiceRead + canDelegate, F10 „ważny do czasu jego unieważnienia”, F11 20/h, 4/h na typ, min. 15 minut, F12 20/h eksport i metadane, 64/h po numerze).
 Linki wewnętrzne 4 z 4 = 200: /ksef-integracja, /strefa-wiedzy/faktury-z-ksef-po-zmianie-biura, /numer-ksef, /slownik.
 Title skrócony do 55 zn. z sufiksem, description 138 zn., FAQ 3, akapity 2-3 zdania.
+
+## Kontrola Z8, 30.10.2026 13:55
+Źródła odczytane ponownie 30.10 (curl raz na źródło, 4 × 200): FAQ MF KSeF 2.0, CIRFMF uprawnienia.md, przyrostowe-pobieranie-faktur.md, PDF limitów wer. 1.1. F1-F12: 12 z 12 zgodnych (F1 pyt. 11 i 37 z polem UPO, F2 pyt. 38, F3 pyt. 40, F4 pyt. 39, F5 „Obowiązek otrzymywania faktur w KSeF będzie istniał od 1.02.2026”, F6 Aplikacja Podatnika i Aplikacja Mobilna KSeF, F7 „wyłącznie w postaci xml”, F8 „archiwizowana przez 10 lat”, F9 InvoiceRead + canDelegate, biuro rachunkowe w uprawnienia.md, F10 „ważny do czasu jego unieważnienia”, F11 20 eksportów/h, 4/h na typ, min. 15 minut, F12 eksport 8/16/20, metadane 8/16/20, po numerze 8/16/64).
+Linki wewnętrzne 4 z 4 = 200. Strona /strefa-wiedzy/faktury-kosztowe-z-ksef jeszcze nie istnieje (brak kolizji adresu).
+Title 56 zn. z sufiksem (poprawiony zapis 55 → 56), description 138 zn., FAQ 3, akapity 2-3 zdania (5 sekcji).
+Duplikat z /ksef-integracja: brak (tam nie ma o powiadomieniach, uprawnieniu do przeglądania, InvoiceRead ani limitach eksportu; „10 lat” tam dotyczy duplikatu numeru, nie archiwum).

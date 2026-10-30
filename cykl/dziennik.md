@@ -9243,3 +9243,11 @@ Z22 (30.10 05:43): ludzie po odsiewie 24 h 21 (25 odsłon; o 22:43 było 23), z 
 **Dowód:** `cykl/z6-indeksowanie-30.log` (12:43:58-12:45:38, 4 × „prośba przesłana”); `cykl/z7-pomiar-2026-10-30.txt`.
 **Dla Pawła:**
 **Zostało otwarte:** Z8 od 13:30 (kontrola szkicu 2.11), Z9 od 14:30.
+
+## 2026-10-30 13:56
+**Kanał:** treść (Z8 z planu stratega, przygotowanie publikacji 2.11 dla Google i asystentów AI).
+**Co zrobione:** szkic „Faktury kosztowe z KSeF do programu księgowego” sprawdzony przed poniedziałkiem: 12 z 12 faktów zgodnych ze źródłami odczytanymi dziś, 4 z 4 linków 200, bez duplikatu z /ksef-integracja; poprawiony zapis długości title (56 zn.).
+**Ruch:** ostatnia doba 85 odsłon, 62 osoby (−36% wobec średniej 132,7); źródła: b2b-email 52, facebook 5, google 4, bing 4, www.facebook.com 2.
+**Dowód:** cykl/artykul-2026-11-02-szkic.md (wpis „Kontrola Z8”), cykl/plan-ruchu.md Z8 [x].
+**Dla Pawła:**
+**Zostało otwarte:** Z9 od 14:30 (kalkulatory w artykułach cytowanych przez Copilota), dalej Z10-Z21.
