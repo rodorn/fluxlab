@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { SEKCJE, type Sekcja } from "@/lib/sekcje";
+import { SEKCJE, type Sekcja, type Strona } from "@/lib/sekcje";
 import { categories } from "@/lib/categories";
 import ZnakFl from "./ZnakFl";
 import KopiujMail from "./KopiujMail";
@@ -52,8 +52,12 @@ function Lista({ strony }: { strony: { href: string; nazwa: string }[] }) {
   );
 }
 
-/** Kolumna z samymi nazwami grup; szczegóły są na stronie sekcji. */
-function Pogrupowana({ s }: { s: Sekcja }) {
+/** Kolumna z nazwami grup; szczegóły są na stronie sekcji. Pod nimi wybrane strony, które mają trafić do każdej podstrony. */
+function Pogrupowana({ s, wyroznione = [] }: { s: Sekcja; wyroznione?: string[] }) {
+  const strony = s.grupy.flatMap((g) => g.strony);
+  const wybrane = wyroznione
+    .map((href) => strony.find((x) => x.href === href))
+    .filter((x): x is Strona => Boolean(x));
   return (
     <Kolumna s={s}>
       <Lista
@@ -62,9 +66,27 @@ function Pogrupowana({ s }: { s: Sekcja }) {
           nazwa: g.nazwa,
         }))}
       />
+      {wybrane.length > 0 && (
+        <div className="border-t border-gray-100 pt-3 dark:border-gray-800">
+          <Lista strony={wybrane} />
+        </div>
+      )}
     </Kolumna>
   );
 }
+
+const USLUGI_W_STOPCE = [
+  "/automatyzacja-dla-biur-rachunkowych",
+  "/integracja-crm-z-erp",
+  "/automatyzacja-crm-leasing",
+  "/wdrozenie-n8n-cena",
+];
+const NARZEDZIA_W_STOPCE = [
+  "/numer-ksef",
+  "/ksef-2027",
+  "/e-doreczenia-integracja",
+  "/sprawdzenie-nip",
+];
 
 const PROFILE = [
   ["Facebook", "https://www.facebook.com/profile.php?id=61595121744837"],
@@ -94,8 +116,8 @@ export default function Footer() {
     <footer className="border-t border-gray-100 dark:border-gray-800 py-10">
       <div className="container-wide">
         <div className="grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-5">
-          <Pogrupowana s={uslugi} />
-          <Pogrupowana s={narzedzia} />
+          <Pogrupowana s={uslugi} wyroznione={USLUGI_W_STOPCE} />
+          <Pogrupowana s={narzedzia} wyroznione={NARZEDZIA_W_STOPCE} />
           <Kolumna s={wiedza}>
             <Lista strony={wiedzaStrony} />
           </Kolumna>
